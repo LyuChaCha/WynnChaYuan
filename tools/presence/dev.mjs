@@ -1,4 +1,4 @@
-// 在本機開網站來看：node tools/presence/dev.mjs [埠號]
+// 在本機開網站來看：node tools/presence/dev.mjs [埠號] [公會圖示.png] [公會旗幟.png]
 //
 // 用一個放在記憶體裡的假 KV 跑同一支 worker，先塞幾件 capes/templates 的示範披風與一筆封禁。
 // 只給改頁面的時候看樣子用——真的登入要連 Mojang，這裡沒有接，改成：
@@ -62,6 +62,15 @@ data.set('ban:' + '9'.repeat(32), {
 data.set('staff:u:' + 'c'.repeat(32), {
   value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
 data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
+
+// 一個貢獻公會。圖示與旗幟不在倉庫裡（是公會自己的圖）：指令列有給檔案就用，沒給就只有名字
+const guild = { slug: 'yuchayuan', name: 'YuChaYuan', tag: 'YCY', t: Date.now() - 7200000, by: developer, i: 0, b: 0 };
+[['icon', 'i', process.argv[3]], ['banner', 'b', process.argv[4]]].forEach(([kind, field, file]) => {
+  if (!file || !fs.existsSync(file)) return;
+  data.set('gimg:yuchayuan:' + kind, { value: new Uint8Array(fs.readFileSync(file)), metadata: { t: 'image/png' } });
+  guild[field] = Date.now();
+});
+data.set('guilds', { value: JSON.stringify([guild]), metadata: null });
 
 const port = Number(process.argv[2] || 8799);
 http.createServer(async (req, res) => {

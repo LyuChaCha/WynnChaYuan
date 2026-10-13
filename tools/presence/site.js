@@ -15,6 +15,7 @@
  */
 
 import { MORE_TEXT } from './site-text.js';
+import { DEMO } from './demo-data.js';
 
 const STYLE = String.raw`
   :root {
@@ -109,9 +110,9 @@ const STYLE = String.raw`
     .more a:hover .ico { transform: translateX(3px); }
     .seg button:hover { color: var(--ink); }
     .spec-nav a:hover { color: var(--ink); text-decoration: none; }
-    /* 滑鼠移到人身上：跳一下，腳下的影子跟著縮 */
-    .fig:hover .body img { transform: translateY(-7px); }
-    .fig:hover .body::after { transform: scale(.78); opacity: .28; }
+    a.who-row:hover, .guild:hover { border-color: var(--leaf-deep); background: var(--panel-2); text-decoration: none; }
+    a.who-row:hover .ico, .guild:hover .ico { color: var(--leaf); transform: translate(2px, -2px); }
+    .switch:hover { border-color: var(--leaf-deep); }
   }
   label { display: block; font-size: 13px; color: var(--ink-2); margin: 0 0 4px; }
   input[type="text"], select {
@@ -167,47 +168,121 @@ const STYLE = String.raw`
   .more { margin: 14px 0 0; font-size: 14px; }
   .more a { display: inline-flex; align-items: center; gap: 6px; }
   .more .ico { transition: transform var(--fast) var(--out); }
-  /* 團隊：三個身分各一段，人站成一排。頭上那一行照遊戲裡的名牌畫（葉子＋遊戲 ID） */
+  /* 團隊：三個身分各一段，一個人一列（頭像、名字、遊戲 ID、葉子）；點下去是他在 Wynncraft 的頁面 */
   .team { margin-top: 20px; border-bottom: 1px solid var(--line); }
-  .band { --w: 48px; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 14px 28px; padding: 26px 0 24px; border-top: 1px solid var(--line); }
-  .band[data-role="developers"] { --w: 80px; }
-  .band[data-role="sponsors"] { --w: 64px; }
+  .band { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 14px 28px; padding: 22px 0; border-top: 1px solid var(--line); }
   .band-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-content: start; }
-  .band-head > span { grid-row: span 2; margin-top: 1px; }
+  .band-head > span { grid-row: span 2; margin-top: 1px; display: flex; }
   .band-head svg { width: 24px; height: 24px; }
   .band-head h3 { margin: 0; font-size: 16px; font-weight: 650; }
   .band-head p { margin: 0; grid-column: 2; color: var(--ink-2); font-size: 13px; line-height: 1.55; }
-  .lineup { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px 6px; min-height: calc(var(--w) * 2 + 54px); }
-  .fig { display: flex; flex-direction: column; align-items: center; gap: 7px; width: calc(var(--w) + 70px); text-align: center; animation: fade 320ms ease both; animation-delay: calc(var(--i, 0) * 30ms); }
-  .plate { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; padding: 1px 6px 2px; background: #000000a8; color: #fff; font-size: 12px; line-height: 1.5; white-space: nowrap; }
-  .plate svg { width: 12px; height: 12px; flex: none; }
-  .plate span { overflow: hidden; text-overflow: ellipsis; }
-  .body { position: relative; display: grid; place-items: center; width: var(--w); aspect-ratio: 1 / 2; color: var(--line); }
-  .body::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: -5px; height: 9px; border-radius: 50%; background: #000; opacity: .42; filter: blur(4px); transition: transform 180ms var(--out), opacity 180ms ease; }
-  .body img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; image-rendering: pixelated; opacity: 0; transition: opacity 240ms ease, transform 180ms var(--out); }
-  .body img.in { opacity: 1; }
-  .body > svg { width: 70%; height: auto; }
-  .aka { max-width: 100%; min-height: 1.5em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+  .lineup { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 8px 12px; align-content: start; min-height: 58px; }
+  .fig { min-width: 0; animation: fade 320ms ease both; animation-delay: calc(var(--i, 0) * 25ms); }
+  .who-row, .guild {
+    display: flex; align-items: center; gap: 12px; min-width: 0; border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    transition: border-color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out);
+  }
+  .who-row { padding: 8px 12px; border-radius: 10px; }
+  a.who-row:active, .guild:active { transform: scale(.985); }
+  .who-row img, .who-row .blank { width: 40px; height: 40px; flex: none; border-radius: 6px; background: var(--panel-2); }
+  .who-row img { image-rendering: pixelated; opacity: 0; transition: opacity 240ms ease; }
+  .who-row img.in, .guild img.in { opacity: 1; }
+  .who-row .blank { display: grid; place-items: center; color: var(--line); }
+  .who-row .blank svg { width: 22px; height: 22px; }
+  .who-row b { min-width: 0; font-size: 14px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .who-row .mc { min-width: 0; margin-left: auto; padding-left: 6px; font-size: 13px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .who-row > svg { width: 18px; height: 18px; flex: none; }
+  .who-row b:only-of-type { flex: 1; }
+  .who-row b + svg { margin-left: auto; }
+  /* 貢獻公會：比一個人大一號——旗幟、圖示、名字與標籤 */
+  .lineup.guilds { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .guild { padding: 10px 14px 10px 12px; border-radius: 12px; }
+  .guild img { opacity: 0; transition: opacity 240ms ease; }
+  .g-banner { width: 28px; height: 56px; flex: none; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 4px 8px #0009); }
+  .g-icon { width: 56px; height: 56px; flex: none; border-radius: 12px; object-fit: contain; background: #f4f8f6; }
+  span.g-icon { display: grid; place-items: center; background: var(--panel-2); color: var(--ink-2); font-size: 13px; font-weight: 650; letter-spacing: .04em; }
+  .g-name { display: grid; min-width: 0; flex: 1; }
+  .g-name b { font-size: 16px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .g-name span { font-size: 13px; color: var(--ink-2); }
+  .guild .ico, .who-row .ico { color: var(--ink-2); transition: color var(--fast) ease, transform var(--fast) var(--out); }
   .everyone { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; color: var(--ink-2); font-size: 14px; }
   .everyone svg { width: 20px; height: 20px; }
   .everyone b { margin-right: .7em; color: var(--ink); font-weight: 600; }
 
-  /* 功能頁：上面一塊可以按的示範，下面照分類一列一列寫 */
-  .demo { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
-  .demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  /* 功能頁：最上面是即時預覽——照遊戲裡設定畫面右邊那一塊做，左邊幾個真的選項、右邊一張小場景 */
+  .play { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
+  .play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .play-lang { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 13px; color: var(--ink-2); }
   .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--ground); }
   .seg button { font: inherit; font-size: 13px; padding: 5px 12px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out); }
   .seg button:active { transform: scale(.97); }
   .seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
-  .scene { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 16px; min-height: 270px; padding: 30px 18px 34px; background: linear-gradient(180deg, #24392c 0%, #17241c 58%, #101813 100%); }
-  .tbox { width: min(100%, 440px); padding: 10px 14px 11px; border: 1px solid var(--leaf-deep); border-radius: 8px; background: #0b110eeb; box-shadow: 0 12px 28px #0009; transition: opacity var(--base) ease, transform var(--base) var(--out); }
-  .tbox.gone { opacity: 0; transform: translateY(8px) scale(.98); transition-duration: var(--fast); }
-  .tbox b { display: block; font-size: 12px; font-weight: 600; color: var(--leaf); }
-  .tbox p { margin: 2px 0 0; }
-  .dlg { position: relative; width: min(100%, 580px); padding: 20px 18px 14px; border: 2px solid #6d5a3a; border-radius: 6px; background: #1b1510f5; color: #f4ebd9; box-shadow: 0 14px 30px #000a; }
-  .dlg b { position: absolute; left: 14px; top: -13px; padding: 1px 10px; border-radius: 4px; background: #6d5a3a; color: #fff; font-size: 12px; font-weight: 600; }
-  .dlg p { margin: 0; min-height: 3.4em; font-size: 16px; line-height: 1.7; }
-  .demo-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin: 0; padding: 12px 14px 13px; border-top: 1px solid var(--line); font-size: 14px; }
+  .play-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+  .play-set { display: grid; align-content: start; padding: 6px 16px 10px; }
+  .set-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; min-height: 52px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; transition: opacity var(--base) ease; }
+  .set-row:last-child { border-bottom: 0; }
+  .set-row > span { font-weight: 600; }
+  .set-row.dim { opacity: .45; }
+  .switch { position: relative; width: 40px; height: 22px; flex: none; padding: 0; border: 1px solid var(--line); border-radius: 999px; background: var(--ground); cursor: pointer; transition: background-color var(--base) ease, border-color var(--base) ease; }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--ink-2); transition: transform var(--base) var(--out), background-color var(--base) ease; }
+  .switch[aria-checked="true"] { background: var(--leaf-deep); border-color: var(--leaf-deep); }
+  .switch[aria-checked="true"]::after { transform: translateX(18px); background: #fff; }
+  .range { display: flex; align-items: center; gap: 10px; }
+  .range input { width: 150px; }
+  .range output { min-width: 6ch; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  .play-view { padding: 12px 14px 14px; border-left: 1px solid var(--line); background: #0d1310; }
+  .play-view h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 12px; font-weight: 600; color: var(--ink-2); }
+  .play-view h3::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf); }
+  /* 場景：很淡的格線讓人一眼看出這是示意圖。裡面每一塊的位置照遊戲裡的擺 */
+  .pstage {
+    position: relative; height: 360px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; line-height: 1.45; color: #fff;
+    background-color: #0a0f0d; background-size: 24px 24px;
+    background-image: linear-gradient(#ffffff0d 1px, transparent 1px), linear-gradient(90deg, #ffffff0d 1px, transparent 1px);
+  }
+  .pstage > * { animation: fade 180ms ease both; }
+  .pstage.still > * { animation: none; }
+  .gbox { padding: 5px 9px 6px; border: 1px solid var(--leaf); background: #0a1018f2; color: var(--ink); box-shadow: 0 0 0 3px #7fd08a1c; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .tip { position: relative; padding: 5px 9px 6px; border: 1px solid #4b2a8a; background: #160a22f2; white-space: nowrap; }
+  .tip > div:nth-of-type(2), .tipside > div:nth-of-type(2) { color: #b8c0cc; }
+  .tip > div:nth-of-type(3), .tipside > div:nth-of-type(3) { color: #f08a8a; }
+  .tip > div:nth-of-type(4), .tipside > div:nth-of-type(4) { color: #7fc8e8; }
+  .tipside > div:first-child { color: #fff; }
+  .tip > svg { position: absolute; left: -11px; top: -13px; width: 14px; height: 18px; filter: drop-shadow(1px 1px 0 #000a); }
+  .duo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 12px; font-size: 16px; }
+  .gapmark { position: relative; align-self: stretch; flex: none; transition: width 160ms var(--out); }
+  .gapmark::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 7px; margin-top: -58px; border: solid var(--leaf); border-width: 0 1px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 1px no-repeat; }
+  .gapmark span { position: absolute; left: 50%; top: 50%; margin-top: -82px; transform: translateX(-50%); color: var(--leaf); font-size: 12px; white-space: nowrap; }
+  .stack { position: absolute; inset: 14px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 8px; }
+  .stack .gbox { white-space: normal; }
+  .stack .right { align-self: flex-end; }
+  .dlgbox { align-self: stretch; padding: 8px 12px 10px; border: 2px solid #7a5c2e; background: #22180ef2; color: #f1e3c4; }
+  .dlgbox b { display: block; font-weight: 600; color: #f5c56b; }
+  .dlgbox p { margin: 0 0 4px; min-height: 2.9em; }
+  .dlgbox .choice { color: #c9b38a; }
+  .w-boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; color: #f0a0a0; white-space: nowrap; }
+  .w-boss i { display: block; width: 130px; height: 4px; margin: 3px auto 0; background: linear-gradient(90deg, #c0392b 62%, #3a1414 62%); }
+  .w-track { position: absolute; top: 46px; right: 10px; max-width: 52%; display: grid; justify-items: end; gap: 4px; }
+  .w-track .box { padding: 4px 8px 5px; border: 1px solid #ffffff22; background: #080c12b8; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .w-track .box.framed { border-color: var(--leaf); }
+  .w-track .box div:first-child { color: #f5c56b; }
+  .w-track .box div:last-child { color: #8fd694; }
+  .w-npc { position: absolute; left: 14px; top: 112px; display: flex; align-items: flex-start; gap: 6px; max-width: 64%; }
+  .w-npc .plate { padding: 1px 6px 2px; background: #00000080; color: #fff; white-space: nowrap; }
+  .w-npc .man { display: grid; justify-items: center; gap: 4px; }
+  .w-npc .man::after { content: ""; width: 18px; height: 42px; background: linear-gradient(#b98b5e 0 18px, #4c6a8c 18px); clip-path: polygon(0 0, 100% 0, 100% 18px, 86% 18px, 86% 100%, 14% 100%, 14% 18px, 0 18px); }
+  .w-title { position: absolute; left: 0; right: 0; top: 214px; text-align: center; color: #f5c56b; font-size: 18px; font-weight: 600; text-shadow: 1px 1px 0 #000a; pointer-events: none; }
+  .w-board { position: absolute; right: 10px; top: 144px; max-width: 62%; padding: 3px 8px 4px; background: #00000066; color: #b8c0cc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .w-board div:first-child { color: #f5c56b; }
+  .w-chat { position: absolute; left: 10px; bottom: 52px; max-width: 66%; padding: 3px 8px 4px; background: #00000066; color: #b8c0cc; }
+  .w-chat div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .w-chat .ours { color: var(--leaf); }
+  .w-held { position: absolute; left: 0; right: 0; bottom: 8px; display: grid; justify-items: center; gap: 3px; }
+  .w-held i { display: flex; gap: 2px; }
+  .w-held u { width: 16px; height: 16px; border: 1px solid #55606a; background: #00000080; }
+  .w-held u:first-child { border-color: #e6edf5; }
+  .demo-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin: 0; padding: 12px 14px 13px; border-top: 1px solid var(--line); font-size: 14px; min-height: 3.2em; }
+  .demo-foot .hint { flex-basis: 100%; }
+  .wearbox { display: grid; gap: 8px; }
   .spec { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px 44px; align-items: start; margin-top: 48px; }
   .spec-nav { position: sticky; top: 78px; display: grid; gap: 2px; font-size: 14px; }
   .spec-nav a { padding: 5px 10px; border-radius: 8px; color: var(--ink-2); transition: color var(--fast) ease, background-color var(--fast) ease; }
@@ -314,20 +389,24 @@ const STYLE = String.raw`
     .menu { left: 0; right: auto; transform-origin: top left; }
     .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .band { grid-template-columns: 1fr; }
-    .lineup { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 24px 4px; }
-    .fig { width: auto; min-width: 0; }
+    .lineup, .lineup.guilds { grid-template-columns: 1fr; }
+    .play-body { grid-template-columns: 1fr; }
+    .play-view { order: -1; border-left: 0; border-bottom: 1px solid var(--line); }
+    .pstage { height: 350px; }
+    .range input { width: 120px; }
     .spec { grid-template-columns: 1fr; margin-top: 36px; }
     .spec-nav { position: static; display: flex; flex-wrap: wrap; gap: 4px; margin: 0 -10px 10px; }
     .rows > div { grid-template-columns: 1fr; }
-    .scene { min-height: 320px; padding: 24px 12px 28px; }
   }
   /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn:active, .card:active, .card:hover, .card:hover:active { transform: none; }
     .hero > div > *, .hero img, .card, .fig { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
-    .fig:hover .body img, .fig:hover .body::after, .more a:hover .ico, .seg button:active { transform: none; }
-    .menu, .menu.open, .tbox.gone { transform: none; }
+    .more a:hover .ico, .seg button:active, a.who-row:active, .guild:active, a.who-row:hover .ico, .guild:hover .ico { transform: none; }
+    .menu, .menu.open { transform: none; }
+    .pstage > * { animation: none; }
+    .gapmark, .switch::after { transition: none; }
     .card.skel { animation: none; }
     dialog, dialog[open] { transform: none; }
     @starting-style { dialog[open] { transform: none; } }
@@ -355,6 +434,7 @@ const ICON = {
   down: stroke('<path d="m7 10 5 5 5-5"/>'),
   out: stroke('<path d="M8 16 16 8"/><path d="M9.5 8H16v6.5"/>'),
   go: stroke('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>'),
+  flag: stroke('<path d="M6 21V4"/><path d="M6 5h12l-2.5 4 2.5 4H6"/>'),
 };
 
 // ------------------------------------------------------------------ 字
@@ -394,7 +474,8 @@ export const TEXT = {
     'home.about': '<b>關於譯文。</b>部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容經過人工校稿。其他語言目前多半是圍繞著繁體中文再做 AI 翻譯，可能有錯譯與用詞不一致。遇到問題請到 <a href="' + ISSUES + '">GitHub Issues</a> 回報。',
     'home.morefeatures': '看全部功能',
     'home.team': '團隊',
-    'home.teamlede': '做出 WynnChaYuan 的人。每個人頭上那一行，就是遊戲裡其他裝了模組的玩家看到的樣子：葉子的顏色代表身分。',
+    'home.teamlede': '做出 WynnChaYuan 的人。葉子的顏色代表身分，跟遊戲裡名字前面那一片一樣；點一下可以看他在 Wynncraft 的資料。',
+    'home.guilds': '貢獻公會', 'home.guildsb': '對模組提供巨大幫助，或成員之間互相協助的公會。',
     'home.teamfail': '名單現在讀不到，請重新整理。',
     'home.dev': '開發者', 'home.devb': '協助程式開發與維護。',
     'home.sponsor': '贊助者', 'home.sponsorb': '單次 20 USD 或每月 2 USD 以上。',
@@ -409,12 +490,13 @@ export const TEXT = {
 
     'capes.title': '披風一覽 - WynnChaYuan',
     'capes.h1': '披風一覽',
-    'capes.lede': 'WynnChaYuan 玩家上傳的披風。點一件可以轉著看。',
+    'capes.lede': 'WynnChaYuan 玩家上傳的披風。點一件可以轉著看，登入之後還能直接穿上。',
     'capes.mine': '上傳我的披風',
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
     'view.title': '披風', 'view.flat': '披風的範本圖：左邊正面、右邊背面',
     'view.type': '格式', 'view.dim': '尺寸', 'view.size': '檔案大小', 'view.users': '使用', 'view.date': '上傳',
     'view.del': '刪除這件披風', 'view.ban': '刪除並封禁上傳的人', 'view.close': '關閉',
+    'view.wear': '穿上這件披風', 'view.signin': '登入並綁定遊戲 ID 之後，就能穿上這一件。<a href="/account">前往帳號</a>',
 
     'account.title': '帳號 - WynnChaYuan',
     'account.h1': '帳號',
@@ -441,6 +523,7 @@ export const TEXT = {
     'account.banned': '這個帳號不能上傳披風。',
     'account.signout': '登出這個瀏覽器',
     'account.mine': '我的披風', 'account.none': '還沒有上傳。', 'account.remove': '移除我的披風',
+    'account.worn': '這一件是從披風一覽套用的。',
     'account.upload': '上傳披風',
     'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '。檔案大小：一般玩家 1 MB 以內，開發者、贊助者、貢獻者 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
     'account.pick': '選一張披風的圖', 'account.send': '上傳',
@@ -467,14 +550,17 @@ export const TEXT = {
     'admin.staffhow': '填他的 Minecraft ID、Minecraft UUID，或 Discord 使用者 ID（17 到 20 位數字：在 Discord 開「開發者模式」，對他按右鍵選「複製使用者 ID」）。用 Minecraft ID 加的，等他登入一次就會改記成 UUID。加了馬上生效。',
     'admin.who': 'Minecraft ID、UUID 或 Discord 使用者 ID',
     'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
+    'admin.guilds': '貢獻公會',
+    'admin.guildsnote': '會出現在首頁「團隊」那一段，點下去連到那個公會在 Wynncraft 的頁面。先加名字（要跟 Wynncraft 上的一模一樣），再各上傳一張圖示與旗幟。圖會先縮小再傳，PNG、JPEG、WebP 都可以。',
+    'admin.gname': '公會名稱', 'admin.gtag': '標籤（可以不填）', 'admin.gpics': '圖示與旗幟', 'admin.guild': '公會',
+    'admin.noguilds': '還沒有登記公會。',
 
     'features.title': '功能 - WynnChaYuan',
     'features.h1': '功能',
-    'features.lede': 'WynnChaYuan 把 Wynncraft 畫面上的英文換成你的語言，原文要不要留由你決定。先按按看三種顯示方式，下面是翻了哪些地方、附帶哪些工具。',
-    'demo.label': '顯示方式的示範',
-    'demo.mode': '顯示方式', 'demo.box': '另開小框', 'demo.replace': '就地取代', 'demo.off': '關閉',
-    'demo.lang': '譯文語言',
-    'demo.note': '這一句出自任務「King’s Recruit」，譯文直接取自模組的語料。',
+    'features.lede': 'WynnChaYuan 把 Wynncraft 畫面上的英文換成你的語言，原文要不要留由你決定。先動動看下面的預覽，再往下是翻了哪些地方、附帶哪些工具。',
+    'demo.label': '即時預覽',
+    'play.pages': '設定的分類',
+    'play.note': '左邊就是遊戲裡設定畫面的選項（在聊天輸入 <code>/wcy</code> 打開），預覽裡的譯文直接取自模組的語料。',
     'features.nav': '這一頁的內容',
     'features.t': '翻譯範圍', 'features.u': '附帶的工具', 'features.s': '葉子與披風', 'features.c': '相容的模組',
     'features.tnote': '裝備名稱預設保留原文：那是專有名詞，交易市場與 wiki 都用英文。想看譯名可以在設定裡打開。',
@@ -500,7 +586,7 @@ export const TEXT = {
     'feat.u7': '遊戲內更新', 'feat.u7b': '有新版的時候，在更新說明的畫面按一下就下載，關遊戲時自動換上。',
     'feat.u8': '設定', 'feat.u8b': '在聊天輸入 <code>/wcy</code> 或從 Mod Menu 打開。滑鼠移到項目上有說明，右邊的預覽會跟著你調的值變。',
     'feat.s1': '名字前面的葉子', 'feat.s1b': '裝了模組的玩家名字前面都有一片葉子，彼此看得到：開發者金色、贊助者青藍色、貢獻者綠色，其他人灰色。',
-    'feat.s2': '披風', 'feat.s2b': '上傳自己的披風，其他裝了模組的玩家看得到。PNG 大家都能傳；GIF 給開發者、贊助者、貢獻者。<a href="/capes">看看大家的披風</a>',
+    'feat.s2': '披風', 'feat.s2b': '上傳自己的披風，其他裝了模組的玩家看得到；在披風一覽看到喜歡的，也可以直接穿上，隨時能復原。PNG 大家都能用；GIF 給開發者、贊助者、貢獻者。<a href="/capes">看看大家的披風</a>',
     'feat.s3': '會送出的資料', 'feat.s3b': '為了上面兩項，模組在你進 Wynncraft 的時候向 wynnchayuan.com 報到一次：UUID、公開的個人檔案，以及披風與徽章的設定。不送任何遊戲內容。<a href="' + REPO + '#readme">完整的說明在 README</a>',
     'feat.c1b': '物品、任務、聊天的資料都從它來；它自己的畫面也會翻。',
     'feat.c2b': '跟 Wynntils 一樣是前置。',
@@ -538,6 +624,23 @@ export const TEXT = {
         'uploads off': '現在沒有開放上傳',
         'slow down': '剛剛才傳過，等一下再試',
         'login first': '登入過期了，請從遊戲裡重新開一次',
+        'no such cape': '這件披風已經不在了，請重新整理',
+        'nothing to restore': '沒有可以復原的披風',
+      },
+      onWynn: '在 Wynncraft 看 {n} 的資料',
+      wearingThis: '你正在穿這一件。', restoreOwn: '復原成我原本的披風', takeOff: '脫下這件披風',
+      wornOk: '穿上了，其他玩家幾分鐘內就會看到。', wornKept: '穿上了，其他玩家幾分鐘內就會看到。你原本那一件還留著，隨時可以復原。',
+      restored: '已經換回你原本的披風。', tookOff: '已經脫下。',
+      playStart: '動一下左邊的選項，右邊的預覽會跟著變。',
+      upIcon: '上傳圖示', upBanner: '上傳旗幟', picDone: '圖換好了', confirmUnguild: '把 {who} 從貢獻公會移除？',
+      guild: {
+        'bad name': '公會名稱只能是英文字母與空格，3 到 30 個字',
+        'bad tag': '標籤是 3 到 4 個英文字母',
+        already: '這個公會已經登記了',
+        'bad image': '這不是 PNG、JPEG 或 WebP 的圖',
+        'too large': '圖太大了（最多 512 KB）',
+        'too many': '登記的公會太多了',
+        'no such guild': '找不到這個公會',
       },
       previewHint: '試穿中：{w}×{h}，還沒上傳。',
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
@@ -547,11 +650,6 @@ export const TEXT = {
         'bad who': '看不懂這一格：要填 Minecraft ID、UUID，或 Discord 使用者 ID（17 到 20 位數字）',
         'bad note': '備註最多 60 個字',
         already: '這個人已經是管理員了',
-      },
-      demo: {
-        box: '原文不動，譯文顯示在另一個小框裡。',
-        replace: '譯文直接寫進 Wynncraft 自己的對話框，逐字打出的節奏跟原文同步。',
-        off: '不翻譯，畫面跟沒裝模組的時候一樣。',
       },
       perk: {
         'bad uuid': 'UUID 要是 32 個十六進位字元（有沒有連字號都可以）',
@@ -605,7 +703,8 @@ export const TEXT = {
     'home.about': '<b>About the translations.</b> Some text was written by people and passed through AI, a small part is AI translation, and most of the core content has been proofread by hand. Languages other than Traditional Chinese are mostly AI translations built from it, so expect some errors and inconsistent wording. Please report problems on <a href="' + ISSUES + '">GitHub Issues</a>.',
     'home.morefeatures': 'See every feature',
     'home.team': 'The team',
-    'home.teamlede': 'The people behind WynnChaYuan. The tag above each head is what other players with the mod see in game: the colour of the leaf tells you the role.',
+    'home.teamlede': 'The people behind WynnChaYuan. The colour of the leaf shows the role, the same leaf you see before their name in game; click someone to see their Wynncraft profile.',
+    'home.guilds': 'Contributing guilds', 'home.guildsb': 'Guilds that have given the mod a great deal of help, or whose members help one another with it.',
     'home.teamfail': 'The list could not be loaded. Please refresh.',
     'home.dev': 'Developers', 'home.devb': 'Help build and maintain the mod.',
     'home.sponsor': 'Sponsors', 'home.sponsorb': 'A one-off 20 USD or 2 USD a month and up.',
@@ -620,12 +719,13 @@ export const TEXT = {
 
     'capes.title': 'Cape gallery - WynnChaYuan',
     'capes.h1': 'Cape gallery',
-    'capes.lede': 'Capes uploaded by WynnChaYuan players. Click one to turn it around.',
+    'capes.lede': 'Capes uploaded by WynnChaYuan players. Click one to turn it around; once signed in, you can also wear it.',
     'capes.mine': 'Upload my cape',
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'view.title': 'Cape', 'view.flat': 'The cape template image: front on the left, back on the right',
     'view.type': 'Format', 'view.dim': 'Dimensions', 'view.size': 'File size', 'view.users': 'Players', 'view.date': 'Uploaded',
     'view.del': 'Delete this cape', 'view.ban': 'Delete and ban the uploaders', 'view.close': 'Close',
+    'view.wear': 'Wear this cape', 'view.signin': 'Sign in and link your game ID to wear this one. <a href="/account">Go to Account</a>',
 
     'account.title': 'Account - WynnChaYuan',
     'account.h1': 'Account',
@@ -652,6 +752,7 @@ export const TEXT = {
     'account.banned': 'This account cannot upload capes.',
     'account.signout': 'Sign out of this browser',
     'account.mine': 'My cape', 'account.none': 'Nothing uploaded yet.', 'account.remove': 'Remove my cape',
+    'account.worn': 'This one was picked from the cape gallery.',
     'account.upload': 'Upload a cape',
     'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + '. File size: up to 1 MB for regular players, 20 MB for developers, sponsors and contributors. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
     'account.pick': 'Choose a cape image', 'account.send': 'Upload',
@@ -678,14 +779,17 @@ export const TEXT = {
     'admin.staffhow': 'Enter their Minecraft ID, Minecraft UUID, or Discord user ID (17 to 20 digits: turn on Developer Mode in Discord, right-click them and choose “Copy User ID”). An entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
     'admin.who': 'Minecraft ID, UUID or Discord user ID',
     'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
+    'admin.guilds': 'Contributing guilds',
+    'admin.guildsnote': 'These appear in the team section of the home page and link to the guild’s page on Wynncraft. Add the name first (exactly as it is on Wynncraft), then upload an icon and a banner. Images are shrunk before upload; PNG, JPEG and WebP all work.',
+    'admin.gname': 'Guild name', 'admin.gtag': 'Tag (optional)', 'admin.gpics': 'Icon and banner', 'admin.guild': 'Guild',
+    'admin.noguilds': 'No guilds yet.',
 
     'features.title': 'Features - WynnChaYuan',
     'features.h1': 'Features',
-    'features.lede': 'WynnChaYuan puts the English on your Wynncraft screen into your language, and whether the original stays is up to you. Try the three display modes first; below is what gets translated and what else comes with it.',
-    'demo.label': 'Display mode demo',
-    'demo.mode': 'Display', 'demo.box': 'Separate box', 'demo.replace': 'Replace in place', 'demo.off': 'Off',
-    'demo.lang': 'Translation language',
-    'demo.note': 'A line from the quest “King’s Recruit”; the translations come straight from the mod’s corpus.',
+    'features.lede': 'WynnChaYuan puts the English on your Wynncraft screen into your language, and whether the original stays is up to you. Play with the preview below first; further down is what gets translated and what else comes with it.',
+    'demo.label': 'Live preview',
+    'play.pages': 'Settings pages',
+    'play.note': 'The options on the left are the ones in the mod’s settings screen (type <code>/wcy</code> in chat to open it); the translations in the preview come straight from the mod’s corpus.',
     'features.nav': 'On this page',
     'features.t': 'What gets translated', 'features.u': 'Tools that come with it', 'features.s': 'Leaves and capes', 'features.c': 'Works with',
     'features.tnote': 'Gear names stay in English by default: they are proper nouns, and the trade market and the wiki use the English ones. You can turn translated names on in the settings.',
@@ -711,7 +815,7 @@ export const TEXT = {
     'feat.u7': 'Update from inside the game', 'feat.u7b': 'When a new version is out, one click on the release notes screen downloads it, and it is swapped in when you close the game.',
     'feat.u8': 'Settings', 'feat.u8b': 'Type <code>/wcy</code> in chat, or open them from Mod Menu. Hover an option for an explanation; the preview on the right follows the values you set.',
     'feat.s1': 'A leaf before the name', 'feat.s1b': 'Everyone with the mod has a leaf before their name, and they see each other’s: gold for developers, cyan for sponsors, green for contributors, grey for everyone else.',
-    'feat.s2': 'Capes', 'feat.s2b': 'Upload your own cape and other players with the mod will see it. Anyone can upload a PNG; GIFs are for developers, sponsors and contributors. <a href="/capes">Browse the capes</a>',
+    'feat.s2': 'Capes', 'feat.s2b': 'Upload your own cape and other players with the mod will see it; if you like one in the gallery you can wear it too, and switch back whenever you want. Anyone can use a PNG; GIFs are for developers, sponsors and contributors. <a href="/capes">Browse the capes</a>',
     'feat.s3': 'What is sent', 'feat.s3b': 'For the two features above, the mod checks in with wynnchayuan.com once when you join Wynncraft: your UUID, your public profile, and your cape and badge settings. No game content is sent. <a href="' + REPO + '#readme">The README has the full details</a>',
     'feat.c1b': 'Item, quest and chat data all come from it; its own screens are translated too.',
     'feat.c2b': 'A dependency, like Wynntils.',
@@ -749,6 +853,23 @@ export const TEXT = {
         'uploads off': 'Uploads are closed right now',
         'slow down': 'You just uploaded - try again in a moment',
         'login first': 'Your sign-in expired - open the site from the game again',
+        'no such cape': 'This cape is no longer here. Please refresh',
+        'nothing to restore': 'There is no cape to switch back to',
+      },
+      onWynn: 'See {n} on Wynncraft',
+      wearingThis: 'You are wearing this one.', restoreOwn: 'Switch back to my own cape', takeOff: 'Take this cape off',
+      wornOk: 'You are wearing it now. Other players will see it within a few minutes.', wornKept: 'You are wearing it now. Other players will see it within a few minutes. Your own cape is kept, and you can switch back any time.',
+      restored: 'Your own cape is back.', tookOff: 'The cape is off.',
+      playStart: 'Change an option on the left and the preview on the right follows.',
+      upIcon: 'Upload icon', upBanner: 'Upload banner', picDone: 'Image updated', confirmUnguild: 'Remove {who} from the contributing guilds?',
+      guild: {
+        'bad name': 'A guild name is letters and spaces only, 3 to 30 characters',
+        'bad tag': 'A tag is 3 or 4 letters',
+        already: 'This guild is already listed',
+        'bad image': 'That is not a PNG, JPEG or WebP image',
+        'too large': 'The image is too large (512 KB at most)',
+        'too many': 'Too many guilds are listed',
+        'no such guild': 'That guild is not on the list',
       },
       previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
@@ -757,11 +878,6 @@ export const TEXT = {
         'bad who': 'That is not a Minecraft ID, a UUID, or a Discord user ID (17 to 20 digits)',
         'bad note': 'The note can be 60 characters at most',
         already: 'This person is already a moderator',
-      },
-      demo: {
-        box: 'The original stays put; the translation appears in a separate box.',
-        replace: 'The translation is written into Wynncraft’s own dialogue box, typed out in step with the original.',
-        off: 'Nothing is translated. The screen looks the way it does without the mod.',
       },
       revoke: 'Remove', confirmRevoke: 'Remove {who} from the special list?', perkDone: 'Added',
       perk: {
@@ -1017,6 +1133,7 @@ const HOME = String.raw`
   <h2 id="team">%%home.team%%</h2>
   <p class="lede">%%home.teamlede%%</p>
   <template id="leaf">` + LEAF + String.raw`</template>
+  <template id="out">` + ICON.out + String.raw`</template>
   <div class="team" id="team-list" aria-busy="true">
     <section class="band" id="band-developers" data-role="developers">
       <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
@@ -1029,6 +1146,10 @@ const HOME = String.raw`
     <section class="band" id="band-contributors" data-role="contributors">
       <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
       <ul class="lineup"></ul>
+    </section>
+    <section class="band" id="band-guilds" data-role="guilds" hidden>
+      <div class="band-head"><span style="color:var(--ink)">` + ICON.flag + String.raw`</span><h3>%%home.guilds%%</h3><p>%%home.guildsb%%</p></div>
+      <ul class="lineup guilds"></ul>
     </section>
   </div>
   <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
@@ -1050,48 +1171,97 @@ const HOME = String.raw`
   </div>
 `;
 
-/** 首頁的團隊：名單跟 /api/team 要（就是倉庫裡那份 credits.json），一個人畫一個站著的人。 */
+/**
+ * 首頁的團隊：名單跟 /api/team 要（倉庫裡那份 credits.json，加上管理頁登記的貢獻公會）。
+ * 一個人一列，點下去是他在 Wynncraft 的頁面；公會那一段多了旗幟與圖示。
+ */
 const HOME_JS = '<script>' + String.raw`
   (function () {
-    var WIDTH = { developers: 80, sponsors: 64, contributors: 48 };
+    var ROLES = { developers: 1, sponsors: 1, contributors: 1 };
     var shape = document.getElementById('leaf').content.firstElementChild;
+    var arrow = document.getElementById('out').content.firstElementChild;
+    function settle(img) {
+      img.onload = function () { img.classList.add('in'); };
+      img.onerror = function () { img.classList.add('in'); };
+    }
+    function outside(link, where) {
+      link.href = where;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
     fetch('/api/team').then(function (r) {
       if (!r.ok) throw new Error('team');
       return r.json();
     }).then(function (data) {
       data.team.forEach(function (section) {
-        var width = WIDTH[section.role];
-        if (!width) return;
+        if (!ROLES[section.role]) return;
         var band = document.getElementById('band-' + section.role);
         var list = band.querySelector('.lineup');
         list.replaceChildren();
         band.hidden = section.members.length === 0;
         section.members.forEach(function (member, i) {
           var item = el('li', 'fig');
-          item.style.setProperty('--i', Math.min(i, 12));
-          /* 頭上的名牌：葉子＋遊戲 ID，遊戲裡看到的就是這樣 */
-          var plate = el('span', 'plate');
-          var leaf = shape.cloneNode(true);
-          leaf.style.color = member.color || section.color || '';
-          plate.append(leaf, el('span', '', member.mc || member.name));
-          var body = el('span', 'body');
+          item.style.setProperty('--i', Math.min(i, 14));
+          var row = el(member.mc ? 'a' : 'span', 'who-row');
           if (member.mc) {
+            outside(row, 'https://wynncraft.com/stats/player/' + encodeURIComponent(member.mc));
+            row.title = fmt(L.onWynn, { n: member.mc });
             var img = el('img');
             img.alt = '';
-            img.width = width;
-            img.height = width * 2;
+            img.width = 40;
+            img.height = 40;
             img.decoding = 'async';
-            img.onload = function () { img.classList.add('in'); };
-            img.src = figure(member.mc, width);
-            body.append(img);
+            settle(img);
+            img.src = head(member.mc, 40);
+            row.append(img);
           } else {
-            body.append(shape.cloneNode(true));       /* 沒登記遊戲 ID 的人：畫一片葉子 */
+            var blank = el('span', 'blank');        /* 沒登記遊戲 ID 的人：一片葉子佔著頭像的位置 */
+            blank.append(shape.cloneNode(true));
+            row.append(blank);
           }
-          /* 名單上寫的名字跟遊戲 ID 不一樣才另外寫一行；一樣的留空，腳才會站在同一條線上 */
-          var aka = el('span', 'aka', member.mc && member.name !== member.mc ? member.name : '');
-          item.append(plate, body, aka);
+          row.append(el('b', '', member.name));
+          /* 名單上寫的名字跟遊戲 ID 不一樣，才把遊戲 ID 另外寫出來 */
+          if (member.mc && member.mc !== member.name) row.append(el('span', 'mc', member.mc));
+          var leaf = shape.cloneNode(true);
+          leaf.style.color = member.color || section.color || '';
+          row.append(leaf);
+          item.append(row);
           list.append(item);
         });
+      });
+      var guilds = data.guilds || [];
+      var band = document.getElementById('band-guilds');
+      var list = band.querySelector('.lineup');
+      list.replaceChildren();
+      band.hidden = guilds.length === 0;
+      guilds.forEach(function (guild, i) {
+        var item = el('li', 'fig');
+        item.style.setProperty('--i', Math.min(i, 14));
+        var link = el('a', 'guild');
+        outside(link, 'https://wynncraft.com/stats/guild/' + encodeURIComponent(guild.name));
+        link.title = fmt(L.onWynn, { n: guild.name });
+        if (guild.banner) {
+          var banner = el('img', 'g-banner');
+          banner.alt = '';
+          settle(banner);
+          banner.src = '/api/guild/' + guild.slug + '/banner?v=' + guild.banner;
+          link.append(banner);
+        }
+        if (guild.icon) {
+          var icon = el('img', 'g-icon');
+          icon.alt = '';
+          settle(icon);
+          icon.src = '/api/guild/' + guild.slug + '/icon?v=' + guild.icon;
+          link.append(icon);
+        } else {
+          link.append(el('span', 'g-icon', guild.tag || guild.name.slice(0, 3).toUpperCase()));
+        }
+        var name = el('span', 'g-name');
+        name.append(el('b', '', guild.name));
+        if (guild.tag) name.append(el('span', '', '[' + guild.tag + ']'));
+        link.append(name, arrow.cloneNode(true));
+        item.append(link);
+        list.append(item);
       });
       document.getElementById('team-list').removeAttribute('aria-busy');
     }).catch(function () {
@@ -1112,28 +1282,31 @@ const FEATURES = String.raw`
   <h1>%%features.h1%%</h1>
   <p class="lede">%%features.lede%%</p>
 
-  <section class="demo" aria-label="%%demo.label%%">
-    <div class="demo-bar">
-      <div class="seg" id="demo-modes" role="group" aria-label="%%demo.mode%%">
-        <button type="button" data-mode="box" aria-pressed="true">%%demo.box%%</button>
-        <button type="button" data-mode="replace" aria-pressed="false">%%demo.replace%%</button>
-        <button type="button" data-mode="off" aria-pressed="false">%%demo.off%%</button>
+  <section class="play" aria-label="%%demo.label%%">
+    <div class="play-bar">
+      <div class="seg" id="play-tabs" role="group" aria-label="%%play.pages%%">
+        <button type="button" data-tab="items" aria-pressed="true"></button>
+        <button type="button" data-tab="dialogue" aria-pressed="false"></button>
+        <button type="button" data-tab="world" aria-pressed="false"></button>
       </div>
-      <div class="seg" id="demo-langs" role="group" aria-label="%%demo.lang%%">
-        <button type="button" data-lang="zh_tw" lang="zh-Hant">繁體中文</button>
-        <button type="button" data-lang="zh_cn" lang="zh-Hans">简体中文</button>
-        <button type="button" data-lang="ja_jp" lang="ja">日本語</button>
-        <button type="button" data-lang="ko_kr" lang="ko">한국어</button>
-        <button type="button" data-lang="ru_ru" lang="ru">Русский</button>
-        <button type="button" data-lang="es_es" lang="es">Español</button>
-        <button type="button" data-lang="tr_tr" lang="tr">Türkçe</button>
+      <label class="play-lang" for="play-lang"><span id="play-lang-name"></span>
+        <select class="lang" id="play-lang">
+          <option value="zh_tw" lang="zh-Hant">繁體中文</option><option value="zh_cn" lang="zh-Hans">简体中文</option>
+          <option value="ja_jp" lang="ja">日本語</option><option value="ko_kr" lang="ko">한국어</option>
+          <option value="ru_ru" lang="ru">Русский</option><option value="es_es" lang="es">Español</option>
+          <option value="tr_tr" lang="tr">Türkçe</option>
+        </select>
+      </label>
+    </div>
+    <div class="play-body">
+      <div class="play-set" id="play-set"></div>
+      <div class="play-view">
+        <h3 id="play-title"></h3>
+        <div class="pstage" id="play-stage" aria-hidden="true"></div>
       </div>
     </div>
-    <div class="scene">
-      <div class="tbox" id="demo-box"><b>Tasim</b><p id="demo-box-line"></p></div>
-      <div class="dlg"><b>Tasim</b><p id="demo-line" lang="en">So this is Wynn we've all been hearing about... It's beautiful.</p></div>
-    </div>
-    <p class="demo-foot"><span id="demo-say" role="status"></span><span class="hint">%%demo.note%%</span></p>
+    <p class="demo-foot"><span id="play-hint" role="status"></span><span class="hint">%%play.note%%</span></p>
+    <template id="cursor"><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M1 1v13l3.5-3 2.4 5.2 2-.9L6.5 10H11z" fill="#fff" stroke="#000" stroke-width="1"/></svg></template>
   </section>
 
   <div class="spec">
@@ -1183,33 +1356,72 @@ const FEATURES = String.raw`
 `;
 
 /**
- * 功能頁的示範：同一句任務對話，三種顯示方式、七種語言。
- * 句子是語料裡真的那一條（quest/king-s-recruit.json，Tasim 的台詞），不是另外寫的。
+ * 功能頁的即時預覽：照遊戲裡設定畫面右邊那一塊做（client/ui/Preview.java）。
+ * 左邊幾個真的選項，右邊一張小場景，選項一動場景就跟著變。
+ * 選項的名稱與說明、場景裡的譯文都在 D 裡——build-demo.py 從模組的語言檔與語料產生的。
  */
-const FEATURES_JS = '<script>' + String.raw`
+const FEATURES_JS = '<script>var D = %%demo%%;' + String.raw`
   (function () {
-    var SOURCE = "So this is Wynn we've all been hearing about... It's beautiful.";
-    var LINES = {
-      zh_tw: '所以這就是我們一直聽說的 Wynn……真美。',
-      zh_cn: '原来这就是我们一直听说的 Wynn……真美。',
-      ja_jp: 'これがみんなが噂してた Wynn か……きれいだね。',
-      ko_kr: '이게 그렇게 듣던 Wynn이구나... 아름다워.',
-      ru_ru: 'Так вот он какой, Wynn, о котором все столько говорили... Как красиво.',
-      es_es: 'Así que este es el Wynn del que tanto hemos oído hablar... Es precioso.',
-      tr_tr: 'Demek hep duyduğumuz Wynn burası... Çok güzel.'
+    var ui = D.ui;
+    var TAGS = { zh_tw: 'zh-Hant', zh_cn: 'zh-Hans', ja_jp: 'ja', ko_kr: 'ko', ru_ru: 'ru', es_es: 'es', tr_tr: 'tr' };
+    var LINE = 'Well, what are we waiting for?';
+    var CHOICES = ['Yes', 'Goodbye.'];
+    /* 每一頁有哪幾列。options 是三段的選項（照遊戲裡的順序），toggle 是開關，range 是滑桿 */
+    var PAGES = {
+      items: [
+        { key: 'tooltip', label: 'items.tooltip', options: ['mode.panel', 'mode.replace', 'mode.off'] },
+        { key: 'names', label: 'items.names', options: ['mode.on', 'items.names.both', 'mode.off'] },
+        { key: 'gap', label: 'panel.gap', range: true }
+      ],
+      dialogue: [
+        { key: 'dialogue', label: 'dialogue.mode', options: ['mode.box', 'mode.replace', 'mode.off'] },
+        { key: 'choices', label: 'dialogue.choices', options: ['mode.box', 'mode.replace', 'mode.off'] }
+      ],
+      world: [
+        { key: 'nametag', label: 'world.nametag', options: ['mode.lookat', 'mode.replace', 'mode.off'] },
+        { key: 'chat', label: 'world.chat', options: ['mode.replace', 'mode.both', 'mode.off'] },
+        { key: 'tracker', label: 'world.tracker', options: ['mode.replace', 'mode.panel', 'mode.off'] },
+        { key: 'titles', label: 'world.titles', toggle: true },
+        { key: 'bossbar', label: 'world.bossbar', toggle: true },
+        { key: 'scoreboard', label: 'world.scoreboard', toggle: true },
+        { key: 'held', label: 'world.helditem', toggle: true }
+      ]
     };
-    var modes = Array.prototype.slice.call(document.querySelectorAll('#demo-modes button'));
-    var langs = Array.prototype.slice.call(document.querySelectorAll('#demo-langs button'));
-    var line = document.getElementById('demo-line');
-    var box = document.getElementById('demo-box');
-    var boxLine = document.getElementById('demo-box-line');
-    var say = document.getElementById('demo-say');
-    var mode = 'box';
-    /* 一開始用這一頁的語言；英文版的頁面沒有對應的譯文，先給繁體中文 */
+    /* 跟模組的預設值一樣 */
+    var state = { tooltip: 0, names: 2, gap: 12, dialogue: 1, choices: 1, nametag: 1, chat: 1, tracker: 0,
+      titles: true, bossbar: true, scoreboard: true, held: true };
+    var tab = 'items';
     var lang = 'zh_tw';
-    langs.forEach(function (button) { if (button.lang === document.documentElement.lang) lang = button.dataset.lang; });
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('#play-tabs button'));
+    var picker = document.getElementById('play-lang');
+    var set = document.getElementById('play-set');
+    var stage = document.getElementById('play-stage');
+    var hintNode = document.getElementById('play-hint');
+    var updaters = [];
+    /* 一開始用這一頁的語言；英文版的頁面沒有對應的譯文，先給繁體中文 */
+    Object.keys(TAGS).forEach(function (code) { if (TAGS[code] === document.documentElement.lang) lang = code; });
+    picker.value = lang;
+    document.getElementById('play-lang-name').textContent = ui['data.language'];
+    document.getElementById('play-title').textContent = ui['preview.title'];
+    tabs.forEach(function (button) { button.textContent = ui['tab.' + button.dataset.tab]; });
+
+    function T(src) { return D.text[lang][src] || src; }
+    /* 一塊字。translated 的那些標上語言：同一個漢字各語言的寫法不一樣，字型要跟著換 */
+    function bit(tag, className, text, translated) {
+      var node = el(tag, className, text);
+      if (translated) node.lang = TAGS[lang];
+      return node;
+    }
+    /* 把數字填回 {~}、{~2} 這種位置：譯文的語序不同時位置是有編號的 */
+    function fill(template, values) {
+      var next = 0;
+      return template.replace(/\{~(\d*)\}/g, function (all, n) {
+        var at = n ? Number(n) - 1 : next++;
+        return at < values.length ? values[at] : '0';
+      });
+    }
     var turn = 0;
-    /* 逐字打出來，跟遊戲裡的對話框一樣。中途又按了別的就停掉這一輪 */
+    /* 逐字打出來，跟遊戲裡的對話框一樣。中途又動了別的就停掉這一輪 */
     function type(node, text) {
       var mine = ++turn;
       var chars = Array.from(text);
@@ -1223,29 +1435,181 @@ const FEATURES_JS = '<script>' + String.raw`
         if (shown < chars.length) setTimeout(step, 26);
       })();
     }
-    function tagOf(code) {
-      var found = langs.filter(function (button) { return button.dataset.lang === code; })[0];
-      return found ? found.lang : 'en';
+
+    /* 物品：滑鼠旁邊的說明框，與我們另開的面板 */
+    function drawItems() {
+      var translatedName = T('Bony Bow');
+      var name = state.names === 0 ? translatedName : state.names === 1 ? translatedName + ' (Bony Bow)' : 'Bony Bow';
+      var rows = ['Durability', 'Health', 'Mana'];
+      var panel = state.tooltip === 0;
+      var replace = state.tooltip === 1;
+      var duo = el('div', 'duo');
+      var tip = el('div', 'tip');
+      tip.append(document.getElementById('cursor').content.firstElementChild.cloneNode(true));
+      tip.append(bit('div', '', replace ? name : 'Bony Bow', replace && state.names !== 2));
+      rows.forEach(function (row) { tip.append(bit('div', '', replace ? T(row) : row, replace)); });
+      duo.append(tip);
+      if (panel) {
+        var gap = el('div', 'gapmark');
+        gap.style.width = Math.round(state.gap * 0.5) + 'px';      /* 間距照比例縮：200 像素要塞得進這張小圖 */
+        gap.append(el('span', '', state.gap + ' px'));
+        var side = el('div', 'gbox tipside');
+        side.append(bit('div', '', name, state.names !== 2));
+        rows.forEach(function (row) { side.append(bit('div', '', T(row), true)); });
+        duo.append(gap, side);
+      }
+      stage.append(duo);
     }
-    function paint(typed) {
-      modes.forEach(function (button) { button.setAttribute('aria-pressed', button.dataset.mode === mode ? 'true' : 'false'); });
-      langs.forEach(function (button) { button.setAttribute('aria-pressed', button.dataset.lang === lang ? 'true' : 'false'); });
-      boxLine.textContent = LINES[lang];
-      boxLine.lang = tagOf(lang);
-      box.classList.toggle('gone', mode !== 'box');
-      box.setAttribute('aria-hidden', mode === 'box' ? 'false' : 'true');
-      line.lang = mode === 'replace' ? tagOf(lang) : 'en';
-      if (mode === 'replace' && typed) type(line, LINES[lang]);
-      else { turn++; line.textContent = mode === 'replace' ? LINES[lang] : SOURCE; }
-      if (say.textContent !== L.demo[mode]) { say.textContent = L.demo[mode]; flash(say); }
+
+    /* 對話：底下是遊戲自己的對話框，另開小框的時候譯文在它上面 */
+    function drawDialogue(typed) {
+      var stack = el('div', 'stack');
+      if (state.choices === 0) {
+        var choiceBox = el('div', 'gbox right');
+        CHOICES.forEach(function (choice, i) { choiceBox.append(bit('div', '', '[' + (i + 1) + '] ' + T(choice), true)); });
+        stack.append(choiceBox);
+      }
+      if (state.dialogue === 0) stack.append(bit('div', 'gbox', T(LINE), true));
+      var box = el('div', 'dlgbox');
+      box.append(el('b', '', 'Aledar'));
+      var line = bit('p', '', '', state.dialogue === 1);
+      box.append(line);
+      CHOICES.forEach(function (choice, i) {
+        box.append(bit('div', 'choice', '[' + (i + 1) + '] ' + (state.choices === 1 ? T(choice) : choice), state.choices === 1));
+      });
+      stack.append(box);
+      stage.append(stack);
+      if (state.dialogue === 1 && typed) type(line, T(LINE));
+      else { turn++; line.textContent = state.dialogue === 1 ? T(LINE) : LINE; }
     }
-    modes.forEach(function (button) {
-      button.onclick = function () { mode = button.dataset.mode; paint(true); };
+
+    /* 世界與聊天：Boss 血條在頂端、任務追蹤在右上、NPC 在左邊、聊天在左下、手上那件的名字在快捷列上面 */
+    function drawWorld() {
+      var boss = bit('div', 'w-boss', state.bossbar ? T('Zombie') : 'Zombie', state.bossbar);
+      boss.append(el('i'));
+      stage.append(boss);
+
+      var track = el('div', 'w-track');
+      var inPlace = state.tracker === 0;
+      var box = el('div', 'box');
+      box.append(bit('div', '', inPlace ? T('World Event') : 'World Event', inPlace),
+        bit('div', '', inPlace ? T('Click To Track') : 'Click To Track', inPlace));
+      track.append(box);
+      if (state.tracker === 1) track.append(bit('div', 'gbox', T('World Event'), true));
+      stage.append(track);
+
+      var npc = el('div', 'w-npc');
+      var man = el('div', 'man');
+      man.append(bit('div', 'plate', state.nametag === 1 ? T('Weapon Merchant') : 'Weapon Merchant', state.nametag === 1));
+      npc.append(man);
+      if (state.nametag === 0) npc.append(bit('div', 'gbox', T('Weapon Merchant'), true));
+      stage.append(npc);
+
+      stage.append(bit('div', 'w-title', state.titles ? T('Level Up!') : 'Level Up!', state.titles));
+
+      var on = state.scoreboard;
+      var board = el('div', 'w-board');
+      board.append(bit('div', '', on ? T('Daily Objective:') : 'Daily Objective:', on));
+      [['- Loot Chests T{~}+: {~}/{~}', ['2', '3', '5']], ['- Mobs slain: {~}/{~}', ['42', '100']]].forEach(function (row) {
+        board.append(bit('div', '', fill(on ? T(row[0]) : row[0], row[1]), on));
+      });
+      stage.append(board);
+
+      var chat = el('div', 'w-chat');
+      var said = 'The trade has been completed!';
+      if (state.chat !== 0) chat.append(el('div', '', said));
+      if (state.chat !== 2) chat.append(bit('div', state.chat === 1 ? 'ours' : '', T(said), true));
+      stage.append(chat);
+
+      var held = el('div', 'w-held');
+      held.append(bit('div', '', state.held ? T('Bony Bow') : 'Bony Bow', state.held));
+      var bar = el('i');
+      for (var i = 0; i < 4; i++) bar.append(el('u'));
+      held.append(bar);
+      stage.append(held);
+    }
+
+    function draw(typed) {
+      stage.replaceChildren();
+      if (tab === 'items') drawItems();
+      else if (tab === 'dialogue') drawDialogue(typed);
+      else drawWorld();
+    }
+    function explain(row) {
+      var text = row ? ui[row.label + '.hint'] : L.playStart;
+      if (hintNode.textContent === text) return;
+      hintNode.textContent = text;
+      flash(hintNode);
+    }
+    /* quiet：拖滑桿的時候一路重畫，不要每畫一次就淡入一次 */
+    function changed(row, typed, quiet) {
+      updaters.forEach(function (update) { update(); });
+      explain(row);
+      stage.classList.toggle('still', Boolean(quiet));
+      draw(typed);
+    }
+    /* 這一頁的幾列。每一列自己記得怎麼照 state 更新外觀，按了不必整塊重畫（焦點才不會跑掉） */
+    function build() {
+      set.replaceChildren();
+      updaters = [];
+      PAGES[tab].forEach(function (row) {
+        var line = el('div', 'set-row');
+        line.append(el('span', '', ui[row.label]));
+        if (row.options) {
+          var seg = el('div', 'seg');
+          seg.setAttribute('role', 'group');
+          seg.setAttribute('aria-label', ui[row.label]);
+          var buttons = row.options.map(function (key, i) {
+            var button = el('button', '', ui[key]);
+            button.type = 'button';
+            button.onclick = function () { state[row.key] = i; changed(row, true); };
+            seg.append(button);
+            return button;
+          });
+          updaters.push(function () {
+            buttons.forEach(function (button, i) { button.setAttribute('aria-pressed', state[row.key] === i ? 'true' : 'false'); });
+          });
+          line.append(seg);
+        } else if (row.toggle) {
+          var toggle = el('button', 'switch');
+          toggle.type = 'button';
+          toggle.setAttribute('role', 'switch');
+          toggle.setAttribute('aria-label', ui[row.label]);
+          toggle.onclick = function () { state[row.key] = !state[row.key]; changed(row, false); };
+          updaters.push(function () { toggle.setAttribute('aria-checked', state[row.key] ? 'true' : 'false'); });
+          line.append(toggle);
+        } else {
+          var wrap = el('div', 'range');
+          var input = el('input');
+          input.type = 'range';
+          input.min = 0;
+          input.max = 200;
+          input.value = state[row.key];
+          input.setAttribute('aria-label', ui[row.label]);
+          var output = el('output', '', state[row.key] + ' px');
+          input.oninput = function () { state[row.key] = Number(input.value); output.textContent = input.value + ' px'; changed(row, false, true); };
+          /* 間距只有「另開面板」的時候有東西可以調：別的模式這一列淡掉 */
+          updaters.push(function () { line.classList.toggle('dim', state.tooltip !== 0); });
+          wrap.append(input, output);
+          line.append(wrap);
+        }
+        set.append(line);
+      });
+      updaters.forEach(function (update) { update(); });
+    }
+    tabs.forEach(function (button) {
+      button.onclick = function () {
+        tab = button.dataset.tab;
+        tabs.forEach(function (other) { other.setAttribute('aria-pressed', other === button ? 'true' : 'false'); });
+        build();
+        explain(null);
+        draw(true);
+      };
     });
-    langs.forEach(function (button) {
-      button.onclick = function () { lang = button.dataset.lang; paint(true); };
-    });
-    paint(false);
+    picker.onchange = function () { lang = picker.value; draw(true); };
+    build();
+    explain(null);
+    draw(false);
 
     /* 左邊的目錄：捲到哪一段，哪一項就亮起來 */
     var links = Array.prototype.slice.call(document.querySelectorAll('.spec-nav a'));
@@ -1387,6 +1751,13 @@ const CAPES = String.raw`
         </dl>
         <ul class="owners" id="owners" hidden></ul>
         <p class="hint" id="hint"></p>
+        <div class="wearbox" id="wearbox" hidden>
+          <p class="hint" id="wear-note" hidden></p>
+          <button class="btn primary" id="wear">%%view.wear%%</button>
+          <button class="btn" id="unwear" hidden></button>
+        </div>
+        <p class="hint" id="wear-signin" hidden>%%view.signin%%</p>
+        <p class="msg" id="wear-msg" role="status" style="margin:0"></p>
         <div class="spacer"></div>
         <button class="btn danger" id="del" hidden>%%view.del%%</button>
         <button class="btn danger" id="ban" hidden>%%view.ban%%</button>
@@ -1402,6 +1773,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var current = null;
   var viewer = null;
   var developer = false;
+  var visitor = null;                    /* 登入的人（/api/me 回的那一份）；沒登入是 null */
   document.getElementById('count').textContent = L.loading;
   function url(cape) { return '/api/cape/' + cape.ids[0] + '?v=' + cape.v; }
   /* 還在載入：先放幾張空卡佔位置，資料到了整批換掉 */
@@ -1429,6 +1801,8 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     document.getElementById('d-date').textContent = new Date(cape.v).toLocaleDateString();
     document.getElementById('del').hidden = !developer;
     document.getElementById('ban').hidden = !developer;
+    tell('', true);
+    wearState();
     var owners = document.getElementById('owners');
     owners.replaceChildren();
     owners.hidden = !(developer && cape.owners);
@@ -1451,6 +1825,55 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     wear(viewer, url(cape), cape.t === 'gif');
   }
   function shut() { stopCape(); current = null; if (dialog.open) dialog.close(); }
+
+  /* 穿上這一件／復原。能不能穿由伺服器決定（GIF 只有成員能穿、檔案上限、封禁），這裡只管畫面 */
+  function tell(text, good) {
+    var msg = document.getElementById('wear-msg');
+    msg.className = 'msg ' + (good ? 'ok' : 'bad');
+    msg.textContent = text;
+    if (text) flash(msg);
+  }
+  function wearState() {
+    var cape = current;
+    var can = Boolean(visitor && visitor.linked !== false && !visitor.banned);
+    document.getElementById('wearbox').hidden = !can;
+    document.getElementById('wear-signin').hidden = Boolean(visitor && visitor.linked !== false);
+    if (!can || !cape) return;
+    var mine = visitor.cape;
+    var on = Boolean(mine && mine.h === cape.h);
+    var note = document.getElementById('wear-note');
+    note.hidden = !on;
+    note.textContent = L.wearingThis;
+    document.getElementById('wear').hidden = on;
+    var back = document.getElementById('unwear');
+    back.hidden = !(on && mine.worn);
+    back.textContent = mine && mine.back ? L.restoreOwn : L.takeOff;
+  }
+  function wearCall(path, body, done) {
+    var buttons = [document.getElementById('wear'), document.getElementById('unwear')];
+    buttons.forEach(function (button) { button.disabled = true; });
+    api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (answer) {
+          if (!r.ok) { tell(L.why[answer.why] || fmt(L.failed, { s: r.status }), false); return null; }
+          /* 換了一件：重新問一次「我是誰」，再把一覽上的人數更新 */
+          return api('/me').then(function (again) { return again.ok ? again.json() : visitor; }).then(function (me) {
+            visitor = me;
+            done(answer);
+            wearState();
+            return load();
+          });
+        });
+      }).catch(function () { tell(L.offline, false); })
+      .then(function () { buttons.forEach(function (button) { button.disabled = false; }); });
+  }
+  document.getElementById('wear').onclick = function () {
+    if (!current) return;
+    wearCall('/cape/wear', { hash: current.h }, function (answer) { tell(answer.back ? L.wornKept : L.wornOk, true); });
+  };
+  document.getElementById('unwear').onclick = function () {
+    wearCall('/cape/restore', {}, function (answer) { tell(answer.cape ? L.restored : L.tookOff, true); });
+  };
   document.getElementById('close').onclick = shut;
   dialog.addEventListener('close', stopCape);
   dialog.addEventListener('click', function (e) { if (e.target === dialog) shut(); });
@@ -1502,6 +1925,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   }
   whoami.then(function (me) {
     developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到誰傳的，能刪除與封禁 */
+    visitor = me;
     return load();
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
@@ -1564,7 +1988,11 @@ const ACCOUNT = String.raw`
         <p class="note" id="nocape" style="margin:8px 0 0">%%account.none%%</p>
         <canvas class="model" id="mine" width="400" height="320" hidden style="height:320px;border-radius:8px;margin-top:10px"></canvas>
         <p class="hint" id="minehint" hidden style="margin-top:6px"></p>
-        <div style="margin-top:12px"><button class="btn danger" id="remove" hidden>%%account.remove%%</button></div>
+        <p class="note" id="worn" hidden style="margin:10px 0 0">%%account.worn%%</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
+          <button class="btn" id="restore" hidden></button>
+          <button class="btn danger" id="remove" hidden>%%account.remove%%</button>
+        </div>
       </div>
     </div>
     <h2>%%account.upload%%</h2>
@@ -1604,6 +2032,11 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   function show(me) {
     document.getElementById('nocape').hidden = Boolean(me.cape);
     document.getElementById('remove').hidden = !me.cape;
+    /* 這一件是從一覽套用的：多一顆「復原」，換回自己原本那一件（原本沒有的話就是脫下） */
+    var worn = Boolean(me.cape && me.cape.worn);
+    document.getElementById('worn').hidden = !worn;
+    document.getElementById('restore').hidden = !worn;
+    document.getElementById('restore').textContent = me.cape && me.cape.back ? L.restoreOwn : L.takeOff;
     var canvas = document.getElementById('mine');
     var hint = document.getElementById('minehint');
     canvas.hidden = !me.cape;
@@ -1745,6 +2178,14 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
       .then(function () { location.reload(); });
   };
+  document.getElementById('restore').onclick = function () {
+    api('/cape/restore', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (answer) {
+        if (r.ok) { say(answer.cape ? L.restored : L.tookOff, true); refresh(); }
+        else say(L.why[answer.why] || L.tryLater, false);
+      });
+    }).catch(function () { say(L.offline, false); });
+  };
   document.getElementById('remove').onclick = function () {
     if (!confirm(L.confirmRemove)) return;
     api('/cape', { method: 'DELETE' }).then(function (r) {
@@ -1818,6 +2259,25 @@ const ADMIN = String.raw`
         <div><button class="btn primary" id="c-send">%%admin.send%%</button></div>
       </div>
       <p class="msg" id="c-msg" role="status"></p>
+    </div>
+
+    <h2>%%admin.guilds%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.guildsnote%%</p>
+      <div class="form">
+        <div><label for="g-name">%%admin.gname%%</label><input type="text" id="g-name" maxlength="30" autocomplete="off" spellcheck="false"></div>
+        <div><label for="g-tag">%%admin.gtag%%</label><input type="text" id="g-tag" maxlength="4" autocomplete="off" spellcheck="false"></div>
+        <div><button class="btn primary" id="g-send">%%admin.grant%%</button></div>
+      </div>
+      <p class="msg" id="g-msg" role="status"></p>
+      <input type="file" id="g-file" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>%%admin.gpics%%</th><th>%%admin.guild%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
+        <tbody id="guilds"></tbody>
+      </table>
+      <p class="note" id="noguilds" hidden style="margin:10px">%%admin.noguilds%%</p>
     </div>
 
     <div id="staff-block" hidden>
@@ -1917,6 +2377,111 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
+  /* 貢獻公會：名字與標籤先加，圖示與旗幟各傳一張 */
+  var gmsg = document.getElementById('g-msg');
+  function gsay(text, good) { gmsg.className = 'msg ' + (good ? 'ok' : 'bad'); gmsg.textContent = text; flash(gmsg); }
+  var picking = null;                    /* 正在替哪個公會挑哪一張圖 */
+  /* 圖先縮到 max 以內再傳：標誌動不動就是一千多像素，網頁上只畫幾十像素 */
+  function shrink(file, max, done) {
+    var probe = new Image();
+    var address = URL.createObjectURL(file);
+    probe.onload = function () {
+      var w = probe.naturalWidth;
+      var h = probe.naturalHeight;
+      var k = Math.min(1, max / Math.max(w, h));
+      if (k === 1 && file.size <= 300000) { URL.revokeObjectURL(address); done(file); return; }
+      var canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(w * k));
+      canvas.height = Math.max(1, Math.round(h * k));
+      canvas.getContext('2d').drawImage(probe, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(address);
+      canvas.toBlob(function (blob) { done(blob); }, 'image/png');
+    };
+    probe.onerror = function () { URL.revokeObjectURL(address); done(null); };
+    probe.src = address;
+  }
+  function loadGuilds() {
+    return api('/admin/guilds').then(function (r) { return r.json(); }).then(function (data) {
+      var body = document.getElementById('guilds');
+      body.replaceChildren();
+      document.getElementById('noguilds').hidden = data.guilds.length > 0;
+      data.guilds.forEach(function (guild) {
+        var row = el('tr');
+        var pics = el('td');
+        [['icon', guild.i], ['banner', guild.b]].forEach(function (pair) {
+          if (!pair[1]) return;
+          var img = el('img');
+          img.alt = '';
+          img.style.width = 'auto';
+          img.style.height = '36px';
+          img.style.imageRendering = pair[0] === 'banner' ? 'pixelated' : 'auto';
+          img.src = '/api/guild/' + guild.slug + '/' + pair[0] + '?v=' + pair[1];
+          pics.append(img);
+        });
+        if (!guild.i && !guild.b) pics.append('—');
+        var name = el('td');
+        var link = el('a', '', guild.name + (guild.tag ? ' [' + guild.tag + ']' : ''));
+        link.href = 'https://wynncraft.com/stats/guild/' + encodeURIComponent(guild.name);
+        link.target = '_blank';
+        link.rel = 'noopener';
+        name.append(link);
+        var action = el('td');
+        action.style.whiteSpace = 'nowrap';
+        [['icon', L.upIcon], ['banner', L.upBanner]].forEach(function (pair) {
+          var button = el('button', 'btn small', pair[1]);
+          button.style.marginRight = '6px';
+          button.onclick = function () {
+            picking = { slug: guild.slug, kind: pair[0] };
+            var input = document.getElementById('g-file');
+            input.value = '';
+            input.click();
+          };
+          action.append(button);
+        });
+        var drop = el('button', 'btn small', L.revoke);
+        drop.onclick = function () {
+          if (!confirm(fmt(L.confirmUnguild, { who: guild.name }))) return;
+          api('/admin/unguild', { method: 'POST', body: JSON.stringify({ slug: guild.slug }), headers: { 'content-type': 'application/json' } })
+            .then(function (r) { if (r.ok) loadGuilds(); else alert(fmt(L.liftFail, { s: r.status })); });
+        };
+        action.append(drop);
+        row.append(pics, name, el('td', '', guild.t ? new Date(guild.t).toLocaleString() : '—'), el('td', '', guild.by || '—'), action);
+        body.append(row);
+      });
+    });
+  }
+  document.getElementById('g-file').onchange = function () {
+    var file = this.files[0];
+    var target = picking;
+    if (!file || !target) return;
+    gsay(L.sending, true);
+    shrink(file, target.kind === 'icon' ? 256 : 512, function (blob) {
+      if (!blob) { gsay(L.guild['bad image'], false); return; }
+      api('/admin/guild/' + target.slug + '/' + target.kind, { method: 'PUT', body: blob, headers: { 'content-type': blob.type || 'image/png' } })
+        .then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (answer) {
+            if (r.ok) { gsay(L.picDone, true); loadGuilds(); }
+            else gsay(L.guild[answer.why] || fmt(L.prFail, { s: answer.why || r.status }), false);
+          });
+        }).catch(function () { gsay(L.offline, false); });
+    });
+  };
+  document.getElementById('g-send').onclick = function () {
+    var entry = { name: document.getElementById('g-name').value.trim(), tag: document.getElementById('g-tag').value.trim() };
+    gsay(L.sending, true);
+    api('/admin/guild', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (answer) {
+          if (r.ok) {
+            gsay(L.perkDone, true);
+            document.getElementById('g-name').value = '';
+            document.getElementById('g-tag').value = '';
+            loadGuilds();
+          } else gsay(L.guild[answer.why] || fmt(L.prFail, { s: answer.why || r.status }), false);
+        });
+      }).catch(function () { gsay(L.offline, false); });
+  };
+
   /* 管理員名單：只有開發者看得到、動得了 */
   var KIND = { u: 'Minecraft UUID', n: 'Minecraft ID', d: 'Discord' };
   function loadStaff() {
@@ -1979,6 +2544,7 @@ const ADMIN_JS = '<script>' + String.raw`
     document.getElementById('panel').hidden = false;
     loadBans();
     loadPerks();
+    loadGuilds();
     if (me.developer) {
       document.getElementById('staff-block').hidden = false;
       loadStaff();
@@ -2051,6 +2617,8 @@ export function render(path, lang, bare) {
     const html = layout(code, '%%' + title + '%%', path, body, script)
       .replace(/%%([\w.]+)%%/g, (all, name) => {
         if (name === 'js') return JSON.stringify(text.js).replace(/</g, '\\u003c');
+        // 功能頁的即時預覽：選項的名稱照這一頁的語言，場景裡的譯文七種都帶著（頁面上可以換）
+        if (name === 'demo') return JSON.stringify({ ui: DEMO.ui[code], text: DEMO.text }).replace(/</g, '\\u003c');
         return Object.hasOwn(text, name) ? text[name] : all;
       });
     built.set(key, html);
@@ -2077,7 +2645,7 @@ function filled(code) {
   js.why = { ...base.js.why, ...((own.js && own.js.why) || {}) };
   js.credit = { ...base.js.credit, ...((own.js && own.js.credit) || {}) };
   js.staff = { ...base.js.staff, ...((own.js && own.js.staff) || {}) };
-  js.demo = { ...base.js.demo, ...((own.js && own.js.demo) || {}) };
+  js.guild = { ...base.js.guild, ...((own.js && own.js.guild) || {}) };
   return { ...base, ...own, js };
 }
 

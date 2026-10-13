@@ -1,7 +1,7 @@
 // node tools/presence/worker.test.mjs
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
-  teamOf, staffKey,
+  teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
@@ -933,16 +933,39 @@ check('★ 選單多了「功能」', pages['/'].includes('<a href="/features">�
 check('★ 首頁有團隊那一段：三個身分各一區，名單跟 /api/team 要', ['band-developers', 'band-sponsors', 'band-contributors']
   .every((id) => pages['/'].includes('id="' + id + '"')) && pages['/'].includes("fetch('/api/team')")
   && pages['/'].includes('id="team"') && pages['/'].includes('id="install"') && pages['/'].includes('id="sponsoring"'));
-check('★ 頭像與全身圖從 minotar 來，網頁的安全規則也放行它（不再用 mc-heads）',
-  pages['/'].includes('https://minotar.net/armor/body/') && pages['/'].includes('https://minotar.net/helm/')
-  && !pages['/'].includes('mc-heads.net')
+check('★ 頭像從 minotar 來，網頁的安全規則也放行它（不再用 mc-heads）',
+  pages['/'].includes('https://minotar.net/helm/') && !pages['/'].includes('mc-heads.net')
   && (await inLang('/', {})).headers.get('content-security-policy').includes('https://minotar.net'));
-check('★ 功能頁：示範有三種顯示方式、七種語言，分四段', ['data-mode="box"', 'data-mode="replace"', 'data-mode="off"']
-  .every((w) => pages['/features'].includes(w))
-  && (pages['/features'].match(/data-lang="[a-z_]+"/g) || []).length === 7
-  && ['id="translate"', 'id="tools"', 'id="social"', 'id="compat"'].every((w) => pages['/features'].includes(w)));
-check('功能頁的示範每一種語言都有說明、三種方式各一句', LANGS.every((lang) =>
-  ['box', 'replace', 'off'].every((mode) => TEXT[lang].js.demo[mode].length > 8)));
+check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的頁面，另開分頁',
+  pages['/'].includes("'https://wynncraft.com/stats/player/' + encodeURIComponent(member.mc)")
+  && pages['/'].includes("'https://wynncraft.com/stats/guild/' + encodeURIComponent(guild.name)")
+  && pages['/'].includes("link.rel = 'noopener'") && pages['/'].includes('id="band-guilds"'));
+// 功能頁的即時預覽：選項的名稱與場景裡的譯文都是從模組的語言檔與語料產生的（demo-data.js）
+{
+  const { DEMO } = await import('./demo-data.js');
+  const embedded = (html) => JSON.parse((html.match(/<script>var D = (\{.*?\});\n/s) || [])[1] || '{}');
+  const zh = embedded(pages['/features']);
+  const en = embedded(english['/features']);
+  check('★ 功能頁有即時預覽：三個分頁、七種譯文語言，分四段', ['items', 'dialogue', 'world']
+    .every((tab) => pages['/features'].includes('data-tab="' + tab + '"'))
+    && (pages['/features'].match(/<option value="[a-z]{2}_[a-z]{2}"/g) || []).length === 7
+    && ['id="translate"', 'id="tools"', 'id="social"', 'id="compat"'].every((w) => pages['/features'].includes(w)));
+  check('★ 預覽的選項名稱照這一頁的語言（就是遊戲裡設定畫面的字）', zh.ui['items.tooltip'] === '物品翻譯'
+    && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
+    && en.ui['mode.replace'] === 'Replace in place');
+  check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
+    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 16 && Object.values(lang).every((v) => v.length > 0))
+    && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
+  check('預覽用到的每一個選項，八種語言都有名稱與說明', Object.keys(DEMO.ui).join() === 'zh,zh-cn,en,ja,ko,ru,es,tr'
+    && Object.values(DEMO.ui).every((lang) => Object.values(lang).every((v) => typeof v === 'string' && v.length > 0)
+      && ['items.tooltip', 'world.tracker', 'dialogue.choices'].every((k) => lang[k] && lang[k + '.hint'])));
+  check('數字的位置（{~}、{~2}）每一種語言都填得回去', Object.values(DEMO.text).every((lang) =>
+    (lang['- Loot Chests T{~}+: {~}/{~}'].match(/\{~\d?\}/g) || []).length === 3
+    && (lang['- Mobs slain: {~}/{~}'].match(/\{~\d?\}/g) || []).length === 2));
+  check('英文版的功能頁：預覽以外看得到的字裡沒有中文', !/[㐀-鿿]/.test(english['/features']
+    .replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
+    .replace(/<[^>]+>/g, ' ')));
+}
 check('功能頁的列都填了字（27 列）', (pages['/features'].match(/<dt>/g) || []).length === 27
   && !/<dd>\s*<\/dd>/.test(pages['/features']));
 check('teamOf：只留三個身分，欄位只有名字、遊戲 ID、顏色', JSON.stringify(teamOf([
@@ -1033,6 +1056,149 @@ check('★ 開發者移除之後，兩個人都馬上沒有權限', r.status ===
   && (await (await worker.fetch(get('/me', bobNow), env)).json()).staff === false);
 check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['/admin'].includes('<div id="staff-block" hidden>')
   && pages['/admin'].includes('if (me.developer) {') && pages['/admin'].includes('if (!me || !me.staff) return;'));
+
+// ---- ★ 套用一覽上的披風，與復原 ----
+{
+  const person = async (letter, name) => {
+    const uuid = letter.repeat(32);
+    return { uuid, name, id: await publicId(uuid), token: await issueWebToken(env, uuid, name, NOW) };
+  };
+  const wren = await person('1', 'Wren');
+  const finch = await person('2', 'Finch');
+  const robin = await person('3', 'Robin');
+  const lark = await person('4', 'Lark');
+  const dove = await person('5', 'Dove');
+  const carol = await person('6', 'Carol');                  // 名單上的贊助者：傳得了 GIF
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const OWN = await sha(png(44, 34));
+  const A = await sha(png(88, 68));
+  const B = await sha(png(176, 136));
+  const G = await sha(gif(22, 17, 2));
+  const upload = (who, bytes) => worker.fetch(put('/cape', bytes, who.token), env);
+  const wear = (who, hash) => worker.fetch(post('/cape/wear', { hash }, who.token), env);
+  const restore = (who) => worker.fetch(post('/cape/restore', {}, who.token), env);
+  const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json()).cape;
+  const later = (who) => { env.CORPUS.data.get('cape:' + who.id).metadata.v -= 60000; };
+  const has = (hash) => env.CORPUS.data.has('blob:' + hash);
+  check('四個人各傳一件', (await upload(wren, png(44, 34))).status === 200 && (await upload(finch, png(88, 68))).status === 200
+    && (await upload(robin, png(176, 136))).status === 200 && (await upload(carol, gif(22, 17, 2))).status === 200);
+  check('沒登入不能套用；亂寫的雜湊擋掉', (await worker.fetch(post('/cape/wear', { hash: A }), env)).status === 401
+    && (await wear(wren, 'xyz')).status === 400 && (await wear(wren, 'f'.repeat(64))).status === 404);
+  r = await wear(wren, A);
+  check('★ 剛傳完馬上換：請他等一下', r.status === 429 && (await r.json()).why === 'slow down');
+  later(wren);
+  r = await wear(wren, A);
+  body = await r.json();
+  let cape = await mine(wren);
+  check('★ 套用別人的披風：自己那一筆指到同一張圖，原本那一件收著', r.status === 200 && body.back === true
+    && cape.h === A && cape.worn === true && cape.back === true && has(OWN) && has(A));
+  let listed = (await (await worker.fetch(api('/capes'), env)).json()).capes;
+  check('★ 一覽上那一件多一個人穿；收著的那一件不在一覽上', listed.find((c) => c.h === A).ids.length === 2
+    && !listed.some((c) => c.h === OWN));
+  check('★ 別人收著的那一張不能套用（一覽上沒有的都不行）', (await wear(finch, OWN)).status === 404);
+  check('已經穿著的那一件再按一次：沒事', (await (await wear(wren, A)).json()).same === true);
+  later(wren);
+  r = await wear(wren, G);
+  check('★ GIF 只有成員穿得了：套用不是繞過規矩的路', r.status === 403 && (await r.json()).why === 'gif members only'
+    && (await mine(wren)).h === A);
+  r = await wear(wren, B);
+  cape = await mine(wren);
+  check('★ 再換一件：收著的還是自己傳的那一件', r.status === 200 && cape.h === B && cape.back === true
+    && env.CORPUS.data.get('cape:' + wren.id).metadata.p.h === OWN && has(OWN));
+  r = await restore(wren);
+  cape = await mine(wren);
+  check('★ 復原：換回自己原本那一件，別人的圖還在', r.status === 200 && (await r.json()).cape === true
+    && cape.h === OWN && cape.worn === false && cape.back === false && has(A) && has(B)
+    && env.CORPUS.data.get('cape:' + wren.id).metadata.p === undefined);
+  r = await restore(wren);
+  check('沒有套用過：沒得復原', r.status === 409 && (await r.json()).why === 'nothing to restore');
+  r = await wear(lark, A);
+  check('★ 原本沒有披風的人也能套用', r.status === 200 && (await r.json()).back === false && (await mine(lark)).worn === true);
+  r = await restore(lark);
+  check('★ 他復原就是脫下', r.status === 200 && (await r.json()).cape === false && (await mine(lark)) === null
+    && !env.CORPUS.data.has('cape:' + lark.id) && has(A));
+  // 自己傳新的：收著的那一件不必留
+  await wear(lark, A);
+  later(lark);
+  check('★ 套用之後自己又傳一件：不再是套用來的', (await upload(lark, png(352, 272))).status === 200
+    && (await mine(lark)).worn === false && env.CORPUS.data.get('cape:' + lark.id).metadata.p === undefined);
+  // 管理的人照圖刪：有人收著那張圖準備復原的，也要一起拿掉
+  later(wren);
+  await wear(wren, A);
+  check('另一個人傳了同一張圖', (await upload(dove, png(44, 34))).status === 200 && (await mine(wren)).back === true);
+  r = await worker.fetch(post('/admin/remove', { hash: OWN }, aliceWeb), env);
+  check('★ 照圖刪掉之後：圖沒了，收著它的人也復原不回去', r.status === 200 && !has(OWN)
+    && (await mine(wren)).back === false && (await mine(dove)) === null);
+  r = await restore(wren);
+  check('他復原就變成脫下', r.status === 200 && (await r.json()).cape === false && (await mine(wren)) === null);
+  env.CORPUS.data.set('ban:' + robin.uuid, { value: JSON.stringify({ t: NOW }), metadata: null });
+  later(robin);
+  check('★ 被封禁的人不能套用', (await wear(robin, A)).status === 403);
+  env.CORPUS.data.delete('ban:' + robin.uuid);
+  check('★ 披風一覽點開有「穿上這件」與復原，沒登入的看到的是去帳號頁的連結', pages['/capes'].includes('id="wear"')
+    && pages['/capes'].includes('id="unwear"') && pages['/capes'].includes("'/cape/wear'")
+    && pages['/capes'].includes("'/cape/restore'") && pages['/capes'].includes('id="wear-signin"')
+    && pages['/account'].includes('id="restore"'));
+}
+
+// ---- ★ 貢獻公會：管理頁加名字、上傳圖示與旗幟，首頁的團隊那一段畫出來 ----
+{
+  check('guildSlug：英文字母與空格，3 到 30 個字', guildSlug(' Yu  Cha Yuan ') === 'yu-cha-yuan' && guildSlug('YuChaYuan') === 'yuchayuan'
+    && guildSlug('ab') === null && guildSlug('Bad_Name1') === null && guildSlug('x'.repeat(31)) === null && guildSlug(null) === null);
+  const jpeg = new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0, 0, 0, 0]);
+  const webp = new Uint8Array([0x52, 0x49, 0x46, 0x46, 0, 0, 0, 0, 0x57, 0x45, 0x42, 0x50, 0, 0]);
+  check('imageType：只認 PNG、JPEG、WebP', imageType(png(8, 8)) === 'image/png' && imageType(jpeg) === 'image/jpeg'
+    && imageType(webp) === 'image/webp' && imageType(gif(8, 8, 1)) === null && imageType(new Uint8Array(4)) === null);
+  const visitor = await issueWebToken(env, '7'.repeat(32), 'Heron', NOW);
+  const helper = await issueWebToken(env, '8'.repeat(32), 'Stork', NOW);
+  env.CORPUS.data.set('staff:u:' + '8'.repeat(32), { value: '{}', metadata: null });      // 一位管理員
+  const send = (path, value, token) => worker.fetch(post(path, value, token), env);
+  const picture = (slug, kind, bytes, token) => worker.fetch(put('/admin/guild/' + slug + '/' + kind, bytes, token), env);
+  check('★ 一般玩家動不了公會名單', (await worker.fetch(get('/admin/guilds', visitor), env)).status === 403
+    && (await send('/admin/guild', { name: 'YuChaYuan' }, visitor)).status === 403
+    && (await picture('yuchayuan', 'icon', png(8, 8), visitor)).status === 403
+    && (await send('/admin/unguild', { slug: 'yuchayuan' }, visitor)).status === 403);
+  r = await send('/admin/guild', { name: 'Bad_Name1' }, aliceWeb);
+  check('名字不對：擋掉', r.status === 400 && (await r.json()).why === 'bad name');
+  r = await send('/admin/guild', { name: 'YuChaYuan', tag: 'TOOLONG' }, aliceWeb);
+  check('標籤不對：擋掉', r.status === 400 && (await r.json()).why === 'bad tag');
+  r = await send('/admin/guild', { name: 'YuChaYuan', tag: 'YCY' }, aliceWeb);
+  check('★ 開發者加一個公會', r.status === 200 && (await r.json()).slug === 'yuchayuan');
+  r = await send('/admin/guild', { name: 'yuchayuan' }, aliceWeb);
+  check('重複加：說已經登記了', r.status === 409 && (await r.json()).why === 'already');
+  check('★ 管理員也加得了', (await send('/admin/guild', { name: 'Tea Garden' }, helper)).status === 200);
+  check('還沒傳圖：圖的網址是 404', (await worker.fetch(api('/guild/yuchayuan/icon'), env)).status === 404);
+  r = await picture('yuchayuan', 'icon', gif(8, 8, 1), aliceWeb);
+  check('★ 不是圖（或不認的格式）：擋掉', r.status === 400 && (await r.json()).why === 'bad image');
+  const huge = new Uint8Array(MAX_GUILD_IMAGE + 1);
+  huge.set(png(8, 8));
+  r = await picture('yuchayuan', 'icon', huge, aliceWeb);
+  check('太大的圖：擋掉', r.status === 413 && (await r.json()).why === 'too large');
+  check('沒登記的公會傳不了圖', (await picture('nobody-here', 'icon', png(8, 8), aliceWeb)).status === 404);
+  check('★ 傳圖示與旗幟', (await picture('yuchayuan', 'icon', png(64, 64), aliceWeb)).status === 200
+    && (await picture('yuchayuan', 'banner', jpeg, aliceWeb)).status === 200);
+  r = await worker.fetch(api('/guild/yuchayuan/banner'), env);
+  check('★ 圖拿得到：種類照內容、不讓瀏覽器亂猜', r.status === 200 && r.headers.get('content-type') === 'image/jpeg'
+    && r.headers.get('x-content-type-options') === 'nosniff' && new Uint8Array(await r.arrayBuffer()).length === jpeg.length);
+  r = await worker.fetch(api('/team'), env);
+  body = await r.json();
+  check('★ /api/team 帶著公會：名字、標籤、圖的版本；沒有「誰加的」', r.status === 200 && body.guilds.length === 2
+    && body.guilds[0].name === 'YuChaYuan' && body.guilds[0].tag === 'YCY' && body.guilds[0].icon > 0 && body.guilds[0].banner > 0
+    && body.guilds[1].name === 'Tea Garden' && body.guilds[1].icon === 0 && !JSON.stringify(body.guilds).includes(ALICE.name));
+  r = await worker.fetch(get('/admin/guilds', aliceWeb), env);
+  check('管理的人看得到是誰加的', (await r.json()).guilds.map((g) => g.by).join() === ALICE.name + ',Stork');
+  check('亂寫的代碼：移除擋掉', (await send('/admin/unguild', { slug: '../x' }, aliceWeb)).status === 400);
+  r = await send('/admin/unguild', { slug: 'yuchayuan' }, aliceWeb);
+  body = await (await worker.fetch(api('/team'), env)).json();
+  check('★ 移除之後：名單上沒有了，圖也刪了', r.status === 200 && body.guilds.map((g) => g.slug).join() === 'tea-garden'
+    && (await worker.fetch(api('/guild/yuchayuan/icon'), env)).status === 404
+    && !env.CORPUS.data.has('gimg:yuchayuan:banner'));
+  await send('/admin/unguild', { slug: 'tea-garden' }, aliceWeb);
+  env.CORPUS.data.delete('staff:u:' + '8'.repeat(32));
+  check('管理頁有公會那一塊（名字、標籤、挑檔案）', ['id="g-name"', 'id="g-tag"', 'id="g-file"', 'id="guilds"']
+    .every((w) => pages['/admin'].includes(w)) && pages['/admin'].includes('accept="image/png,image/jpeg,image/webp"'));
+}
 
 r = await worker.fetch(get('/status'), env);
 check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
