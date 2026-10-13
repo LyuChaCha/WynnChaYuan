@@ -505,8 +505,19 @@ const pushBack = (id) => { env.CORPUS.data.get('cape:' + id).metadata.v -= 60000
 pushBack(aliceId);
 r = await worker.fetch(put('/cape', png(22, 17), aliceToken), env);
 check('她改傳跟他一樣的圖', r.status === 200);
-check('★ 兩個人同一張圖：只存一份，她原本那張沒人用了就刪掉（實際 ' + blobs().length + ' 份）',
-  blobs().length === 1);
+const histOf = (id) => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('hist:' + id + ':')).map((k) => k.split(':')[2]);
+check('★ 兩個人同一張圖只存一份；她原本那張留在她的使用紀錄裡（實際 ' + blobs().length + ' 份）',
+  blobs().length === 2 && histOf(aliceId).length === 2);
+{
+  // 她把舊的那一件從紀錄拿掉：沒人用的圖這時候才真的刪
+  const wearing = env.CORPUS.data.get('cape:' + aliceId).metadata.h;
+  const stale = histOf(aliceId).find((h) => h !== wearing);
+  r = await worker.fetch(post('/cape/forget', { hash: wearing }, aliceToken), env);
+  check('現在穿著的那一件不能從紀錄拿掉', r.status === 409 && (await r.json()).why === 'in use');
+  check('沒登入不能動紀錄', (await worker.fetch(post('/cape/forget', { hash: stale }), env)).status === 401);
+  r = await worker.fetch(post('/cape/forget', { hash: stale }, aliceToken), env);
+  check('★ 從紀錄拿掉之後，沒人用的圖才真的刪', r.status === 200 && blobs().length === 1 && histOf(aliceId).length === 1);
+}
 r = await worker.fetch(api('/capes'), env);
 const capes = (await r.json()).capes;
 check('★ 一覽把相同的圖併成一筆，列出兩個人', capes.length === 1 && capes[0].ids.length === 2
@@ -856,8 +867,10 @@ pushBack(bobId);
 await worker.fetch(put('/cape', png(22, 17), bobToken), env);
 r = await worker.fetch(del('/cape', bobToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
-check('自己拿掉披風：那一筆、圖檔、名單都沒了', r.status === 200
-  && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && blobs().length === 0);
+check('自己拿掉披風：那一筆與名單都沒了；圖還留在他的使用紀錄裡', r.status === 200
+  && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && histOf(bobId).length > 0);
+for (const hash of histOf(bobId)) await worker.fetch(post('/cape/forget', { hash }, bobToken), env);
+check('★ 紀錄也清掉之後，圖檔才都沒了', blobs().length === 0 && histOf(bobId).length === 0);
 
 // ---- ★ 檔案上限分級：一般玩家 1 MB，名單上的成員 20 MB ----
 const padded = (width, height, size) => {
@@ -1198,6 +1211,184 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.CORPUS.data.delete('staff:u:' + '8'.repeat(32));
   check('管理頁有公會那一塊（名字、標籤、挑檔案）', ['id="g-name"', 'id="g-tag"', 'id="g-file"', 'id="guilds"']
     .every((w) => pages['/admin'].includes(w)) && pages['/admin'].includes('accept="image/png,image/jpeg,image/webp"'));
+}
+
+// ---- ★ 披風一覽：排序用的資料、最愛、使用紀錄、公開與否、審核 ----
+{
+  const person = async (letter, name) => {
+    const uuid = letter.repeat(32);
+    return { uuid, name, id: await publicId(uuid), token: await issueWebToken(env, uuid, name, NOW) };
+  };
+  const ivy = await person('d', 'Ivy');
+  const oak = await person('9', 'Oak');
+  const elm = await person('0', 'Elm');
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  // 這一段要的是「別人都沒有的圖」：同樣的尺寸，在沒用到的位元組上做記號，雜湊就不同
+  const mark = (bytes, n) => { const out = bytes.slice(); out[40] = n; return out; };
+  const P1 = mark(png(704, 544), 1);
+  const P2 = mark(png(1056, 816), 2);
+  const P3 = mark(png(22, 17), 3);
+  const H1 = await sha(P1);
+  const H2 = await sha(P2);
+  const H3 = await sha(P3);
+  const send = (path, value, who) => worker.fetch(post(path, value, who && who.token), env);
+  const upload = (who, bytes, query = '') => worker.fetch(new Request('https://x.test/api/cape' + query, {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + who.token } }), env);
+  const gallery = async () => (await (await worker.fetch(api('/capes'), env)).json()).capes;
+  const meta = (who) => env.CORPUS.data.get('cape:' + who.id).metadata;
+  const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json());
+  const roster = async () => (await (await worker.fetch(get('/list'), env)).json()).capes;
+  const later = (who) => { meta(who).v -= 60000; };
+  const hist = (who) => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('hist:' + who.id + ':')).map((k) => k.split(':')[2]);
+  const picture = (who, key) => worker.fetch(new Request('https://x.test/api/cape/' + who.id + (key ? '?k=' + key : '')), env);
+
+  // 排序用的資料
+  check('兩個人各傳一件', (await upload(ivy, P1)).status === 200 && (await upload(oak, P2)).status === 200);
+  let list = await gallery();
+  let g1 = list.find((c) => c.h === H1);
+  check('★ 一覽的每一筆有：幾個人穿、最早什麼時候傳的、最近一次換上、幾個人加了最愛',
+    g1.ids.length === 1 && g1.c > 0 && g1.v >= g1.c && g1.stars === 0);
+  meta(ivy).c -= 86400000;                          // 她那一件是昨天傳的
+  check('groupCapes：最早上傳的時間取最小的那一個；沒記的拿換上的時間頂著', (() => {
+    const out = groupCapes([{ id: 'a', h: 'x', t: 'png', s: 1, v: 9, c: 5 }, { id: 'b', h: 'x', t: 'png', s: 1, v: 7, c: 3 },
+      { id: 'c', h: 'y', t: 'png', s: 1, v: 4 }]);
+    return out.find((g) => g.h === 'x').c === 3 && out.find((g) => g.h === 'y').c === 4;
+  })());
+
+  // 最愛
+  check('沒登入不能加最愛；亂寫的擋掉', (await send('/cape/star', { hash: H1, on: true })).status === 401
+    && (await send('/cape/star', { hash: 'nope', on: true }, oak)).status === 400
+    && (await send('/cape/star', { hash: H1 }, oak)).status === 400);
+  check('一覽上沒有的不能加', (await send('/cape/star', { hash: 'e'.repeat(64), on: true }, oak)).status === 404);
+  r = await send('/cape/star', { hash: H1, on: true }, oak);
+  body = await r.json();
+  check('★ 加進我的最愛：那一件的人數加一', r.status === 200 && body.on === true && body.stars === 1
+    && (await gallery()).find((c) => c.h === H1).stars === 1);
+  r = await send('/cape/star', { hash: H1, on: true }, oak);
+  check('連按：請他等一下', r.status === 429);
+  const cool = (who) => { const row = env.CORPUS.data.get('fav:' + who.uuid); row.value = JSON.stringify({ ...JSON.parse(row.value), t: 0 }); };
+  cool(oak);
+  r = await send('/cape/star', { hash: H1, on: true }, oak);
+  check('★ 已經加過的再加一次：人數不會多算', r.status === 200 && (await r.json()).stars === 1);
+  check('另一個人也加：兩個人', (await (await send('/cape/star', { hash: H1, on: true }, elm)).json()).stars === 2);
+  r = await worker.fetch(get('/capes/mine', oak.token), env);
+  body = await r.json();
+  check('★ 我的最愛與使用紀錄只有本人拿得到', r.status === 200 && body.favs.join() === H1 && body.history.length === 1
+    && body.history[0].h === H2 && (await worker.fetch(get('/capes/mine'), env)).status === 401);
+  cool(oak);
+  r = await send('/cape/star', { hash: H1, on: false }, oak);
+  check('★ 移出最愛：人數減一', r.status === 200 && (await r.json()).stars === 1
+    && (await (await worker.fetch(get('/capes/mine', oak.token), env)).json()).favs.length === 0);
+
+  // 使用紀錄：穿過的留著，從紀錄穿得回去
+  later(oak);
+  check('他穿上她那一件', (await send('/cape/wear', { hash: H1 }, oak)).status === 200);
+  check('★ 兩件都在他的使用紀錄裡，新的在前', (await (await worker.fetch(get('/capes/mine', oak.token), env)).json())
+    .history.map((one) => one.h).join() === H1 + ',' + H2);
+  later(oak);
+  check('自己再傳第三件', (await upload(oak, P3)).status === 200);
+  check('★ 一覽上已經沒有他最早那一件，圖還留著（在他的紀錄裡）', !(await gallery()).some((c) => c.h === H2)
+    && env.CORPUS.data.has('blob:' + H2) && hist(oak).length === 3);
+  check('★ 紀錄裡的圖本人照雜湊拿得到；沒在他紀錄裡的雜湊拿不到', (await picture(oak, H2)).status === 200
+    && (await picture(oak, 'e'.repeat(64))).status === 404 && (await picture(ivy, H2)).status === 404);
+  check('別人不能從他的紀錄穿（一覽上沒有）', (await send('/cape/wear', { hash: H2 }, elm)).status === 404);
+  later(oak);
+  r = await send('/cape/wear', { hash: H2 }, oak);
+  check('★ 他自己從紀錄穿回最早那一件', r.status === 200 && meta(oak).h === H2
+    && (await gallery()).some((c) => c.h === H2));
+  // 紀錄有上限：超過的把最舊的拿掉
+  for (let i = 0; i < 9; i++) {
+    env.CORPUS.data.set('hist:' + elm.id + ':' + String(i).repeat(64), { value: '', metadata: { t: 'png', s: 1, at: i + 1 } });
+  }
+  await upload(elm, mark(png(88, 68), 11));
+  check('★ 使用紀錄最多留 8 件，舊的先走', hist(elm).length === 8 && !hist(elm).includes('0'.repeat(64))
+    && !hist(elm).includes('1'.repeat(64)) && hist(elm).includes('8'.repeat(64)));
+
+  // 公開與否
+  check('沒登入不能改；沒有披風的人改不了', (await send('/cape/public', { on: false })).status === 401
+    && (await send('/cape/public', { on: false }, await person('e', 'Fir'))).status === 404);
+  r = await send('/cape/public', { on: false }, ivy);
+  check('★ 設成不公開：一覽上看不到她那一件（別人穿著同一張的還在）', r.status === 200 && (await r.json()).public === false
+    && (await mine(ivy)).cape.public === false && !(await gallery()).some((c) => c.ids.includes(ivy.id)));
+  check('★ 不公開不影響遊戲裡：名單上她還是有披風', ivy.id in (await roster()));
+  check('★ 管理的人看得到全部，標著誰不公開', await (async () => {
+    const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes;
+    const owner = seen.flatMap((c) => c.owners).find((o) => o.id === ivy.id);
+    return owner && owner.private === true && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
+  })());
+  check('★ 只有她一個人穿的不公開披風：別人不能穿、不能加最愛', await (async () => {
+    later(ivy);
+    await upload(ivy, mark(png(352, 272), 12));
+    const lone = meta(ivy).h;
+    return meta(ivy).q === 1 && (await send('/cape/wear', { hash: lone }, elm)).status === 404
+      && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
+  })());
+  later(ivy);
+  check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q
+    && (await gallery()).some((c) => c.ids.includes(ivy.id)));
+  later(ivy);
+  check('上傳的時候說不公開', (await upload(ivy, mark(png(44, 34), 14), '?public=0')).status === 200 && meta(ivy).q === 1);
+  check('改回公開', (await send('/cape/public', { on: true }, ivy)).status === 200 && !meta(ivy).q);
+
+  // 審核
+  check('★ 一般玩家動不了審核名單', (await worker.fetch(get('/admin/reviews', elm.token), env)).status === 403
+    && (await send('/admin/review', { uuid: elm.uuid }, elm)).status === 403
+    && (await send('/admin/unreview', { uuid: elm.uuid }, elm)).status === 403
+    && (await send('/admin/approve', { hash: H1 }, elm)).status === 403);
+  check('UUID 不對、備註太長：擋掉', (await send('/admin/review', { uuid: 'Elm' }, { token: aliceWeb })).status === 400
+    && (await send('/admin/review', { uuid: elm.uuid, note: 'x'.repeat(61) }, { token: aliceWeb })).status === 400);
+  const before = meta(elm).h;
+  r = await send('/admin/review', { uuid: elm.uuid, note: '測試' }, { token: aliceWeb });
+  check('★ 列入審核：他現在身上那一件不受影響', r.status === 200 && (await r.json()).added === 1
+    && !meta(elm).r && elm.id in (await roster()) && (await mine(elm)).review === true);
+  check('重複列入：說已經在了', (await send('/admin/review', { uuid: elm.uuid }, { token: aliceWeb })).status === 409);
+  later(elm);
+  r = await upload(elm, mark(png(352, 272), 15));
+  body = await r.json();
+  const WAIT = meta(elm).h;
+  check('★ 之後傳的要等審核：傳得上去，回覆說在等', r.status === 200 && body.pending === true && meta(elm).r === 1
+    && (await mine(elm)).cape.pending === true);
+  check('★ 等審核的披風：一覽沒有、遊戲裡的名單上也沒有', !(await gallery()).some((c) => c.h === WAIT) && !(elm.id in (await roster())));
+  check('★ 等審核的圖：不知道雜湊的人拿不到，本人與管理的人（帶雜湊）拿得到', (await picture(elm)).status === 404
+    && (await picture(elm, 'e'.repeat(64))).status === 404 && (await picture(elm, WAIT)).status === 200);
+  check('別人不能穿等審核的那一件', (await send('/cape/wear', { hash: WAIT }, oak)).status === 404);
+  const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === WAIT);
+  check('★ 管理的人看得到它，標著待審核', Boolean(seen) && seen.pending === true && seen.owners[0].pending === true);
+  r = await send('/admin/approve', { hash: WAIT }, { token: aliceWeb });
+  check('★ 通過審核：別人看得到了', r.status === 200 && (await r.json()).approved === 1 && !meta(elm).r
+    && (await gallery()).some((c) => c.h === WAIT) && elm.id in (await roster()));
+  later(elm);
+  await send('/cape/wear', { hash: before }, elm);
+  later(elm);
+  r = await send('/cape/wear', { hash: WAIT }, elm);
+  check('★ 通過過的那一張，他之後再穿不必再審', r.status === 200 && (await r.json()).pending === false && !meta(elm).r);
+  later(elm);
+  await upload(elm, mark(png(1056, 816), 16));
+  check('又傳一張新的：還是要等', meta(elm).r === 1 && !(elm.id in (await roster())));
+  r = await worker.fetch(get('/admin/reviews', aliceWeb), env);
+  body = await r.json();
+  check('名單看得到是誰加的、備註', body.reviews.some((one) => one.uuid === elm.uuid && one.note === '測試' && one.by === ALICE.name));
+  r = await send('/admin/unreview', { uuid: elm.uuid }, { token: aliceWeb });
+  check('★ 從審核名單移除：等著的那一件直接放行', r.status === 200 && !meta(elm).r && elm.id in (await roster())
+    && (await mine(elm)).review === false);
+  // 照圖列入：傳那張圖的人；穿別人那一件的不算
+  later(oak);
+  await send('/cape/wear', { hash: meta(ivy).h }, oak);
+  r = await send('/admin/review', { hash: meta(ivy).h }, { token: aliceWeb });
+  check('★ 照圖列入審核：只算上傳的人，套用的人不算', r.status === 200 && (await r.json()).added === 1
+    && env.CORPUS.data.has('review:' + ivy.uuid) && !env.CORPUS.data.has('review:' + oak.uuid));
+  await send('/admin/unreview', { uuid: ivy.uuid }, { token: aliceWeb });
+  // 管理的人刪掉某個人的披風：他的使用紀錄裡也不留
+  r = await send('/admin/remove', { hash: meta(elm).h }, { token: aliceWeb });
+  check('★ 照圖刪除：誰的使用紀錄裡都不留，最愛的人數也清掉', r.status === 200
+    && !hist(elm).includes(await sha(mark(png(1056, 816), 16))) && !env.CORPUS.data.has('cape:' + elm.id));
+
+  check('★ 披風一覽有排序、篩選與星星；管理的人多兩個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
+    'data-f="fav"', 'data-f="hist"', 'data-f="hidden"', 'data-f="pending"', 'id="fav"', 'id="approve"', 'id="review"', 'id="forget"']
+    .every((w) => pages['/capes'].includes(w)) && pages['/capes'].includes("'/cape/star'") && pages['/capes'].includes("'/capes/mine'"));
+  check('★ 帳號頁有公開的開關；管理頁有審核名單', pages['/account'].includes('id="public"') && pages['/account'].includes("'/cape/public'")
+    && pages['/account'].includes('id="pending"') && pages['/admin'].includes('id="reviews"') && pages['/admin'].includes("'/admin/review'"));
 }
 
 r = await worker.fetch(get('/status'), env);
