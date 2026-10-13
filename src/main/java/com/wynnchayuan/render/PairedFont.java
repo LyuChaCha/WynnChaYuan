@@ -93,6 +93,10 @@ public final class PairedFont {
         if (BOTTOM_SLOT.matcher(font).find()) {
             return "selector_bottom";
         }
+        // 衣櫃畫面正上方的標題（Character Wardrobe），前面帶定位標記
+        if (font.contains("hud/wardrobe/default/top_middle")) {
+            return "wardrobe_top";
+        }
         java.util.regex.Matcher m = SELECTOR_SLOT.matcher(font);
         if (!m.find()) {
             return null;
