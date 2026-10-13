@@ -21,9 +21,14 @@ const STYLE = String.raw`
     --ground: #0f1512; --panel: #161e19; --panel-2: #1c2620; --line: #2a382f;
     --ink: #e9efe9; --ink-2: #a3b3a7; --leaf: #7fd08a; --leaf-deep: #2f7d46;
     --gold: #d8b765; --cyan: #5bd8e8; --danger: #e08a8a;
+    /* 動作的節奏：進場用 --arrive（先快後慢），按壓與懸停用 --out；回饋 140ms、狀態 200ms */
+    --out: cubic-bezier(0.23, 1, 0.32, 1); --arrive: cubic-bezier(0.16, 1, 0.3, 1);
+    --fast: 140ms; --base: 200ms;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scrollbar-color: #2f4236 var(--ground); accent-color: var(--leaf); }
+  ::selection { background: var(--leaf-deep); color: #fff; }
+  input, textarea { caret-color: var(--leaf); }
   body {
     margin: 0; min-height: 100vh; display: flex; flex-direction: column;
     background: var(--ground); color: var(--ink);
@@ -31,7 +36,7 @@ const STYLE = String.raw`
     background-image: radial-gradient(1100px 520px at 50% -180px, #1d3324 0%, transparent 70%);
     background-repeat: no-repeat;
   }
-  a { color: var(--leaf); text-decoration: none; }
+  a { color: var(--leaf); text-decoration: none; text-underline-offset: 3px; }
   a:hover { text-decoration: underline; }
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
     outline: 2px solid var(--leaf); outline-offset: 2px;
@@ -43,11 +48,11 @@ const STYLE = String.raw`
   .brand span { color: var(--leaf); display: flex; }
   .brand svg { width: 26px; height: 26px; }
   nav { display: flex; gap: 4px; flex-wrap: wrap; }
-  nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; }
+  nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
   .tools { margin-left: auto; display: flex; align-items: center; gap: 14px; }
-  select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; }
+  select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease; }
   select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
   /* 同一個漢字在各語言的寫法不一樣：照頁面的語言挑字型，不要一律拿繁體中文的字型去畫 */
   :lang(zh-Hans) body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
@@ -65,17 +70,34 @@ const STYLE = String.raw`
   .btn {
     display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 14px; cursor: pointer;
     padding: 8px 16px; border-radius: 9px; border: 1px solid var(--line); background: var(--panel-2); color: var(--ink);
+    transition: transform var(--fast) var(--out), background-color 160ms ease, border-color 160ms ease, color 160ms ease, opacity 160ms ease;
   }
-  .btn:hover { border-color: var(--leaf-deep); text-decoration: none; }
+  .btn:hover { text-decoration: none; }
+  .btn:active { transform: scale(.97); }
   .btn.primary { background: var(--leaf); border-color: var(--leaf); color: #0c1a10; font-weight: 600; }
-  .btn.primary:hover { background: #93dba0; }
   .btn.danger { border-color: #5a2b2b; background: #2e1a1a; color: var(--danger); }
-  .btn.danger:hover { background: #3d2020; }
+  .btn[disabled] { opacity: .6; cursor: progress; }
+  .btn[disabled]:active { transform: none; }
+  /* 懸停只給真的有滑鼠的裝置：觸控螢幕點一下會卡在懸停的樣子 */
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover { border-color: var(--leaf-deep); }
+    .btn.primary:hover { background: #93dba0; border-color: #93dba0; }
+    .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
+    tbody tr:hover td { background: #ffffff06; }
+  }
   label { display: block; font-size: 13px; color: var(--ink-2); margin: 0 0 4px; }
   input[type="text"], select {
     width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink);
-    border: 1px solid var(--line); background: #0f1512;
+    border: 1px solid var(--line); background: #0f1512; transition: border-color var(--fast) ease;
   }
+  input[type="text"]:focus { border-color: var(--leaf-deep); }
+  input[type="file"] { font: inherit; font-size: 14px; color: var(--ink-2); max-width: 100%; }
+  input[type="file"]::file-selector-button {
+    font: inherit; font-size: 14px; cursor: pointer; margin-right: 10px; padding: 7px 14px; border-radius: 9px;
+    border: 1px solid var(--line); background: var(--panel-2); color: var(--ink);
+    transition: border-color 160ms ease;
+  }
+  td { transition: background-color var(--fast) ease; }
   .msg { margin: 10px 0 0; font-size: 14px; min-height: 1.4em; }
   .msg.ok { color: var(--leaf); } .msg.bad { color: var(--danger); }
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -92,6 +114,14 @@ const STYLE = String.raw`
   .hero h1 { font-size: 40px; line-height: 1.25; }
   .hero .lede { font-size: 16px; }
   .hero img { width: 100%; max-width: 380px; height: auto; justify-self: center; filter: drop-shadow(0 18px 40px #000a); }
+  .hero > div > * { animation: rise 520ms var(--arrive) both; }
+  .hero > div > :nth-child(2) { animation-delay: 60ms; }
+  .hero > div > :nth-child(3) { animation-delay: 120ms; }
+  .hero > div > :nth-child(4) { animation-delay: 180ms; }
+  .hero img { animation: settle 720ms var(--arrive) 80ms both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  @keyframes settle { from { opacity: 0; transform: scale(.94) rotate(-4deg); } }
+  @keyframes fade { from { opacity: 0; } }
   .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink-2); background: var(--panel); }
@@ -114,19 +144,39 @@ const STYLE = String.raw`
   .card {
     display: flex; flex-direction: column; padding: 0; text-align: left; color: inherit; font: inherit;
     background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
-    cursor: pointer; transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    cursor: pointer; transition: transform 180ms var(--out), border-color 180ms ease, box-shadow 180ms ease;
+    /* 一覽載進來的時候一張接一張出現；--i 是第幾張，最多排到第 10 張，後面的一起出來 */
+    animation: rise 360ms var(--arrive) both; animation-delay: calc(var(--i, 0) * 35ms);
   }
-  .card:hover { transform: translateY(-3px); border-color: var(--leaf-deep); box-shadow: 0 10px 26px #0008; }
+  .card:active { transform: scale(.98); }
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover { transform: translateY(-3px); border-color: var(--leaf-deep); box-shadow: 0 10px 26px #0008; }
+    .card:hover:active { transform: translateY(-1px) scale(.98); }
+  }
+  /* 還在跟伺服器要資料的時候：先放幾張同樣大小的空卡，版面不會跳 */
+  .card.skel { cursor: default; animation: pulse 1.4s ease-in-out infinite; }
+  .card.skel .stage { height: 190px; }
+  .card.skel .meta { height: 43px; }
+  @keyframes pulse { 50% { opacity: .55; } }
   .stage { display: grid; place-items: center; padding: 20px 0 16px; background: linear-gradient(180deg, #1b2a21 0%, #131b16 100%); }
   .face { width: 96px; aspect-ratio: 10 / 16; overflow: hidden; border-radius: 3px; box-shadow: 0 8px 18px #000a, 0 0 0 1px #0006; background: #0b0f0d; }
-  .face img { display: block; width: 220%; max-width: none; margin: -10% 0 0 -10%; image-rendering: pixelated; }
+  .face img { display: block; width: 220%; max-width: none; margin: -10% 0 0 -10%; image-rendering: pixelated; opacity: 0; transition: opacity 240ms ease; }
+  .face img.in { opacity: 1; }
   .meta { display: flex; align-items: center; gap: 8px; padding: 10px 12px 12px; font-size: 13px; color: var(--ink-2); }
   .tag { padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--ground); background: var(--ink-2); }
   .tag.gif { background: var(--gold); }
   .meta .who { margin-left: auto; font-variant-numeric: tabular-nums; }
   .empty { grid-column: 1 / -1; padding: 64px 0; text-align: center; color: var(--ink-2); }
-  dialog { width: min(92vw, 780px); padding: 0; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 30px 80px #000c; }
-  dialog::backdrop { background: #070a08cc; }
+  dialog {
+    width: min(92vw, 780px); padding: 0; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 30px 80px #000c;
+    opacity: 0; transform: scale(.96);
+    transition: opacity 150ms ease, transform 150ms var(--out), overlay 150ms allow-discrete, display 150ms allow-discrete;
+  }
+  dialog[open] { opacity: 1; transform: none; transition-duration: 260ms; transition-timing-function: ease, var(--arrive), ease, ease; }
+  @starting-style { dialog[open] { opacity: 0; transform: scale(.96); } }
+  dialog::backdrop { background: #070a0800; transition: background-color 150ms ease, overlay 150ms allow-discrete, display 150ms allow-discrete; }
+  dialog[open]::backdrop { background: #070a08cc; transition-duration: 260ms; }
+  @starting-style { dialog[open]::backdrop { background: #070a0800; } }
   .view { display: grid; grid-template-columns: minmax(0, 1fr) 260px; background: linear-gradient(180deg, #1d2e24, #121915); }
   .view .side { background: var(--panel); }
   canvas.model { display: block; width: 100%; height: 440px; align-self: center; cursor: grab; }
@@ -150,6 +200,10 @@ const STYLE = String.raw`
   .linkcode { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0; }
   .linkcode code { font-size: 18px; color: var(--ink); background: #0f1512; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; user-select: all; }
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
+  /* 上傳：可以把圖檔拖進來。拖到上面的時候框會亮起來 */
+  .drop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; transition: border-color var(--fast) ease, background-color var(--fast) ease; }
+  .drop.over { border-color: var(--leaf); background: #7fd08a12; }
+  .drop .hint { flex-basis: 100%; }
   @media (max-width: 720px) {
     .hero, .account { grid-template-columns: 1fr; }
     .hero h1 { font-size: 30px; }
@@ -158,7 +212,15 @@ const STYLE = String.raw`
     .side { border-left: 0; border-top: 1px solid var(--line); }
     .top .in { gap: 10px; flex-wrap: wrap; }
   }
-  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } html { scroll-behavior: auto; } }
+  /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:active, .card:active, .card:hover, .card:hover:active { transform: none; }
+    .hero > div > *, .hero img, .card { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
+    .card.skel { animation: none; }
+    dialog, dialog[open] { transform: none; }
+    @starting-style { dialog[open] { transform: none; } }
+  }
 `;
 
 const LEAF = String.raw`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c.5-4.5 2.5-8 7-10"/><path d="M9 18c6.2 0 10.5-3.3 11-12V4h-4C7 4 4 8 4 13c0 1 0 3 2 5h3z"/></svg>`;
@@ -255,6 +317,7 @@ export const TEXT = {
     'admin.section': '身分', 'admin.name': '顯示的名字', 'admin.mc': 'Minecraft ID', 'admin.color': '葉子顏色（可以不填）',
     'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
     'admin.send': '開 PR',
+    'account.drop': '也可以把圖檔拖到這裡。尺寸對的話，上面的人偶會先穿給你看。',
     'admin.perks': '特別名單',
     'admin.perksnote': '名單上的人可以上傳 GIF 披風、檔案上限 20 MB，跟開發者、贊助者、貢獻者一樣，但不會出現在貢獻者名單上，名字前面也不會多一片葉子。輸入他的 Minecraft UUID，有沒有連字號都可以；加了馬上生效。',
     'admin.uuid': 'Minecraft UUID', 'admin.note': '備註（可以不填）', 'admin.grant': '加入',
@@ -290,6 +353,7 @@ export const TEXT = {
         'slow down': '剛剛才傳過，等一下再試',
         'login first': '登入過期了，請從遊戲裡重新開一次',
       },
+      previewHint: '試穿中：{w}×{h}，還沒上傳。',
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
       perk: {
@@ -394,6 +458,7 @@ export const TEXT = {
     'admin.section': 'Role', 'admin.name': 'Display name', 'admin.mc': 'Minecraft ID', 'admin.color': 'Leaf colour (optional)',
     'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
     'admin.send': 'Open PR',
+    'account.drop': 'You can also drop the image here. If the size is right, the model above tries it on first.',
     'admin.perks': 'Special list',
     'admin.perksnote': 'People on this list can upload GIF capes and files up to 20 MB, the same as developers, sponsors and contributors, but they are not shown on the credits list and get no leaf before their name. Enter their Minecraft UUID, with or without hyphens. It takes effect immediately.',
     'admin.uuid': 'Minecraft UUID', 'admin.note': 'Note (optional)', 'admin.grant': 'Add',
@@ -429,6 +494,7 @@ export const TEXT = {
         'slow down': 'You just uploaded - try again in a moment',
         'login first': 'Your sign-in expired - open the site from the game again',
       },
+      previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
       revoke: 'Remove', confirmRevoke: 'Remove {who} from the special list?', perkDone: 'Added',
       perk: {
@@ -496,6 +562,26 @@ const COMMON = String.raw`
     return text.replace(/\{(\w+)\}/g, function (all, key) { return key in values ? values[key] : all; });
   }
   function bytes(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* 訊息換了字：淡進來（順便浮上來一點），眼睛才知道這裡變了 */
+  function flash(node) {
+    if (!node.animate) return;
+    node.animate(calm ? [{ opacity: 0 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
+      { duration: 200, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
+  }
+  /* 按鈕暫時換一個字（「已複製」），過一下換回來。寬度先定住，字換了按鈕不會縮 */
+  function blip(button, text) {
+    if (button.dataset.label) return;
+    button.dataset.label = button.textContent;
+    button.style.minWidth = button.offsetWidth + 'px';
+    button.textContent = text;
+    setTimeout(function () {
+      button.textContent = button.dataset.label;
+      delete button.dataset.label;
+      button.style.minWidth = '';
+    }, 1400);
+  }
   /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。 */
   document.getElementById('lang').onchange = function () {
     document.cookie = 'lang=' + this.value + '; path=/; max-age=31536000; samesite=lax';
@@ -543,8 +629,14 @@ function layout(lang, title, active, body, script) {
     + '<meta name="theme-color" content="#0f1512">\n'
     + '<link rel="icon" type="image/png" href="/favicon.png">\n'
     + '<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n'
+    + '<meta name="description" content="%%meta.desc%%">\n'
     + '<meta property="og:site_name" content="WynnChaYuan">\n'
+    + '<meta property="og:type" content="website">\n'
+    + '<meta property="og:url" content="https://wynnchayuan.com' + (active === '/' ? '/' : active) + '">\n'
+    + '<meta property="og:title" content="' + title + '">\n'
+    + '<meta property="og:description" content="%%meta.desc%%">\n'
     + '<meta property="og:image" content="https://wynnchayuan.com/icon-192.png">\n'
+    + '<meta name="twitter:card" content="summary">\n'
     + '<title>' + title + '</title>\n<style>' + STYLE + '</style>\n</head>\n<body>\n'
     + '<div class="top"><div class="in">'
     + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
@@ -664,6 +756,22 @@ const VIEWER = String.raw`
     }
     return viewer;
   }
+  /* 亮相：人偶從側面轉回背對著的位置，披風跟著甩進視線。每穿上一件新的做一次。 */
+  var REST = Math.PI + 0.5;
+  function reveal(viewer) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    viewer.turning = (viewer.turning || 0) + 1;
+    var mine = viewer.turning;
+    var started = performance.now();
+    function step(now) {
+      if (viewer.turning !== mine) return;
+      var t = Math.min(1, (now - started) / 900);
+      var eased = 1 - Math.pow(1 - t, 4);
+      viewer.playerWrapper.rotation.y = REST + (1 - eased) * 1.15;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
   /* 把一件披風穿到人偶身上。GIF 一格一格換：瀏覽器有 ImageDecoder 就動，沒有就停在第一格。 */
   function wear(viewer, source, isGif) {
     var mine = ++playing;
@@ -671,6 +779,7 @@ const VIEWER = String.raw`
     image.onload = function () {
       if (mine !== playing) return;
       viewer.loadCape(capeCanvas(image, image.naturalWidth));
+      reveal(viewer);
       if (!isGif || !('ImageDecoder' in window)) return;
       fetch(source).then(function (r) { return r.arrayBuffer(); }).then(function (data) {
         var decoder = new ImageDecoder({ data: data, type: 'image/gif' });
@@ -741,6 +850,15 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var developer = false;
   document.getElementById('count').textContent = L.loading;
   function url(cape) { return '/api/cape/' + cape.ids[0] + '?v=' + cape.v; }
+  /* 還在載入：先放幾張空卡佔位置，資料到了整批換掉 */
+  (function () {
+    for (var i = 0; i < 10; i++) {
+      var blank = el('div', 'card skel');
+      blank.setAttribute('aria-hidden', 'true');
+      blank.append(el('div', 'stage'), el('div', 'meta'));
+      grid.append(blank);
+    }
+  })();
 
   function open(cape) {
     current = cape;
@@ -805,15 +923,18 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       count.replaceChildren(parts[0], el('b', '', String(data.capes.length)), parts[1] || '');
       grid.replaceChildren();
       if (!data.capes.length) grid.append(el('div', 'empty', L.empty));
-      data.capes.forEach(function (cape) {
+      data.capes.forEach(function (cape, index) {
         var card = el('button', 'card');
         card.type = 'button';
+        card.style.setProperty('--i', Math.min(index, 10));
         card.setAttribute('aria-label', fmt(L.card, { t: cape.t.toUpperCase(), n: cape.ids.length }));
         var stage = el('div', 'stage');
         var face = el('div', 'face');
         var img = el('img');
         img.loading = 'lazy';
         img.alt = '';
+        img.onload = function () { this.classList.add('in'); };
+        img.onerror = function () { this.classList.add('in'); };
         img.src = url(cape);
         face.append(img);
         stage.append(face);
@@ -896,8 +1017,11 @@ const ACCOUNT = String.raw`
     <div class="panel" style="max-width:720px">
       <p class="note" style="margin:0 0 12px">%%account.spec%%</p>
       <p class="note" style="margin:0 0 12px">%%rules%%</p>
-      <input type="file" id="file" accept="image/png,image/gif" aria-label="%%account.pick%%">
-      <button class="btn primary" id="upload" style="margin-left:8px">%%account.send%%</button>
+      <div class="drop" id="drop">
+        <input type="file" id="file" accept="image/png,image/gif" aria-label="%%account.pick%%">
+        <button class="btn primary" id="upload">%%account.send%%</button>
+        <p class="hint">%%account.drop%%</p>
+      </div>
       <p class="msg" id="msg" role="status"></p>
     </div>
   </div>
@@ -905,8 +1029,23 @@ const ACCOUNT = String.raw`
 
 const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var msg = document.getElementById('msg');
-  function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); }
+  function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); flash(msg); }
   var viewer = null;
+  var trying = null;                       /* 正在試穿的那張圖的網址（還沒上傳） */
+  /* 選了一張尺寸對的圖：先穿到人偶身上看看，不必傳了才知道長怎樣 */
+  function tryOn(file, w, h) {
+    var canvas = document.getElementById('mine');
+    var hint = document.getElementById('minehint');
+    canvas.hidden = false;
+    if (!viewer) viewer = makeViewer(canvas);
+    if (!viewer) { canvas.hidden = true; return; }
+    if (trying) URL.revokeObjectURL(trying);
+    trying = URL.createObjectURL(file);
+    document.getElementById('nocape').hidden = true;
+    hint.hidden = false;
+    hint.textContent = fmt(L.previewHint, { w: w, h: h });
+    wear(viewer, trying, file.type === 'image/gif');
+  }
 
   function show(me) {
     document.getElementById('nocape').hidden = Boolean(me.cape);
@@ -915,6 +1054,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var hint = document.getElementById('minehint');
     canvas.hidden = !me.cape;
     hint.hidden = !me.cape;
+    if (trying) { URL.revokeObjectURL(trying); trying = null; }
     if (!me.cape) { stopCape(); return; }
     if (!viewer) viewer = makeViewer(canvas);
     if (!viewer) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
@@ -954,10 +1094,10 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     };
     document.getElementById('copy').onclick = function () {
       var text = document.getElementById('cmd').textContent;
+      var button = this;
       if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(function () {
-          linkMsg.className = 'msg ok';
-          linkMsg.textContent = L.copied;
+          blip(button, L.copied);
         }).catch(function () {});
       }
     };
@@ -1022,11 +1162,30 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       var fits = SIZES_OK.some(function (size) { return size[0] === w && size[1] === h; });
       if (!fits) say(fmt(L.pickedBad, { w: w, h: h }), false);
       else if (file.size > limit) say(L.why['too large'], false);
-      else say(fmt(L.picked, { w: w, h: h, s: bytes(file.size) }), true);
+      else { say(fmt(L.picked, { w: w, h: h, s: bytes(file.size) }), true); tryOn(file, w, h); }
     };
     probe.onerror = function () { URL.revokeObjectURL(address); say(L.why['bad format'], false); };
     probe.src = address;
   };
+  /* 把圖檔拖進上傳那一塊：框亮起來，放開就等於選了那個檔 */
+  (function () {
+    var drop = document.getElementById('drop');
+    var input = document.getElementById('file');
+    var depth = 0;
+    function has(e) { return e.dataTransfer && Array.prototype.indexOf.call(e.dataTransfer.types || [], 'Files') >= 0; }
+    drop.addEventListener('dragenter', function (e) { if (!has(e)) return; e.preventDefault(); depth++; drop.classList.add('over'); });
+    drop.addEventListener('dragover', function (e) { if (has(e)) e.preventDefault(); });
+    drop.addEventListener('dragleave', function () { depth = Math.max(0, depth - 1); if (!depth) drop.classList.remove('over'); });
+    drop.addEventListener('drop', function (e) {
+      if (!has(e)) return;
+      e.preventDefault();
+      depth = 0;
+      drop.classList.remove('over');
+      if (!e.dataTransfer.files.length) return;
+      input.files = e.dataTransfer.files;
+      input.onchange();
+    });
+  })();
   document.getElementById('unlink').onclick = function () {
     if (!confirm(L.confirmUnlink)) return;
     api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
@@ -1042,9 +1201,14 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var file = document.getElementById('file').files[0];
     if (!file) { say(L.pickFirst, false); return; }
     if (file.size > limit) { say(L.why['too large'], false); return; }
+    var button = this;
+    button.disabled = true;                 /* 傳的時候按鈕看得出來在忙，也不會被連按 */
+    button.setAttribute('aria-busy', 'true');
+    function idle() { button.disabled = false; button.removeAttribute('aria-busy'); }
     say(L.uploading, true);
     api('/cape', { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
       .then(function (r) {
+        idle();
         return r.json().catch(function () { return {}; }).then(function (body) {
           if (r.ok) { say(fmt(L.uploaded, { w: body.width, h: body.height }), true); refresh(); }
           else say(L.why[body.why] || fmt(L.failed, { s: r.status }), false);
@@ -1237,12 +1401,16 @@ const built = new Map();
  * @param lang 語言（LANGS 之一；別的當成英文）
  * @returns 沒有這一頁回 null
  */
-export function render(path, lang) {
+export function render(path, lang, bare) {
   if (!Object.hasOwn(PAGES, path)) return null;
   const code = Object.hasOwn(TEXT, lang) ? lang : 'en';
-  const key = code + ' ' + path;
+  const key = code + ' ' + path + (bare ? ' bare' : '');
   if (!built.has(key)) {
-    const text = filled(code);
+    const text = { ...filled(code) };
+    // 連結預覽的介紹：首頁那一段開場白。bare 是「什麼語言都沒說」的訪客——多半是
+    // Discord、LINE 這類抓預覽的機器人——給它中文與英文各一句，兩邊的人貼出去都看得懂。
+    text['meta.desc'] = attribute(bare ? plain(TEXT.zh['home.lede']) + ' ' + plain(TEXT.en['home.lede'])
+      : plain(text['home.lede']));
     const [title, body, script] = PAGES[path];
     const html = layout(code, '%%' + title + '%%', path, body, script)
       .replace(/%%([\w.]+)%%/g, (all, name) => {
@@ -1252,6 +1420,16 @@ export function render(path, lang) {
     built.set(key, html);
   }
   return built.get(key);
+}
+
+/** 拿掉標籤，只留字。 */
+function plain(html) {
+  return String(html).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+}
+
+/** 可以放進屬性值裡的字。 */
+function attribute(text) {
+  return text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
 /** 這個語言的字，缺的拿英文補：新加的字還沒翻到的語言不會冒出一個 %%鍵%%。 */

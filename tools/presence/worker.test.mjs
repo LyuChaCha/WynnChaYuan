@@ -519,7 +519,7 @@ check('groupCapes：新的排前面', groupCapes([
   { id: 'c', h: 'x', t: 'png', s: 1, v: 7 }]).map((g) => g.h + g.ids.length).join() === 'y1,x2');
 
 // ---- 網頁 ----
-const { LANGS, PATHS, TEXT, pickLang } = await import('./site.js');
+const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
@@ -554,6 +554,32 @@ for (const path of ['/favicon.ico', '/favicon.png', '/icon-192.png', '/apple-tou
 check('★ 每一頁都掛了圖示', Object.values(pages).concat(Object.values(english)).every((html) =>
   html.includes('<link rel="icon" type="image/png" href="/favicon.png">')
   && html.includes('<link rel="apple-touch-icon" href="/apple-touch-icon.png">')));
+// ---- ★ 連結預覽（Discord 貼連結出來的那一塊）與互動的底線 ----
+{
+  const bare = await (await worker.fetch(new Request('https://x.test/'), env)).text();
+  const meta = (html, name) => (html.match(new RegExp('<meta (?:name|property)="' + name + '" content="([^"]*)"')) || [])[1] || '';
+  check('★ 什麼語言都沒說的訪客（抓預覽的機器人）：介紹是中文與英文各一句',
+    /翻譯模組/.test(meta(bare, 'og:description')) && /translation mod/.test(meta(bare, 'og:description'))
+    && meta(bare, 'description') === meta(bare, 'og:description'));
+  check('預覽有標題、網址、類型，圖是我們的圖示', meta(bare, 'og:title').includes('WynnChaYuan')
+    && meta(bare, 'og:url') === 'https://wynnchayuan.com/' && meta(bare, 'og:type') === 'website'
+    && meta(bare, 'og:image') === 'https://wynnchayuan.com/icon-192.png' && meta(bare, 'twitter:card') === 'summary');
+  check('★ 有說語言的訪客：介紹只有那一種語言', /翻譯模組/.test(meta(pages['/'], 'og:description'))
+    && !/translation mod/.test(meta(pages['/'], 'og:description'))
+    && /translation mod/.test(meta(english['/'], 'og:description')) && !/翻譯/.test(meta(english['/'], 'og:description')));
+  check('介紹裡沒有標籤、也沒有會把屬性弄斷的引號', LANGS.every((lang) => {
+    const text = (render('/', lang).match(/<meta property="og:description" content="([^"]*)"/) || [])[1] || '';
+    return text.length > 40 && !/[<>]/.test(text);
+  }));
+  check('每一頁的預覽網址是自己那一頁', meta(pages['/capes'], 'og:url') === 'https://wynnchayuan.com/capes');
+  const css = pages['/'];
+  check('★ 動作有給「不想看動來動去」的人一條路，懸停只給有滑鼠的裝置',
+    css.includes('@media (prefers-reduced-motion: reduce)') && css.includes('@media (hover: hover) and (pointer: fine)'));
+  check('沒有 transition: all、沒有從 0 放大、沒有 ease-in', !/transition:\s*all/.test(css) && !/scale\(0\)/.test(css)
+    && !/ease-in[^-]/.test(css));
+  check('上傳那一塊可以拖放，也有試穿的說明', pages['/account'].includes('id="drop"')
+    && LANGS.every((lang) => TEXT[lang]['account.drop'] && TEXT[lang].js.previewHint.includes('{w}')));
+}
 check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
 check('★ 英文版的披風一覽也寫著不可以上傳什麼',
   ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
