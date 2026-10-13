@@ -1,6 +1,7 @@
 // node tools/presence/worker.test.mjs
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
+  teamOf, staffKey,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
@@ -97,7 +98,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 
 /** 網頁的路徑照原樣，其餘的都是 API。 */
-const at = (path) => 'https://x.test' + (['/', '/capes', '/account', '/admin'].includes(path) ? path : '/api' + path);
+const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin'].includes(path) ? path : '/api' + path);
 const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
@@ -523,7 +524,7 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
-for (const path of ['/', '/capes', '/account', '/admin']) {
+for (const path of ['/', '/features', '/capes', '/account', '/admin']) {
   english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
   r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
@@ -590,7 +591,7 @@ check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every(
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
 check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
-  && PATHS.join() === '/,/capes,/account,/admin');
+  && PATHS.join() === '/,/features,/capes,/account,/admin');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
@@ -624,6 +625,7 @@ check('html 上的語言標籤各不相同', new Set(LANGS.map((l) => TEXT[l].ht
 // 看得到的字：拿掉程式與樣式、標籤；語言選單與首頁的語言清單本來就是各寫各的
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
   .replace(/<span class="chip">[^<]*<\/span>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ')
+  .replace(/<div class="seg" id="demo-langs"[\s\S]*?<\/div>/g, ' ')        // 功能頁示範的語言鈕：各寫各的名字
   .replace(/<[^>]+>/g, ' ');
 const cjk = /[㐀-鿿＀-￯　-〿]/;
 for (const path of PATHS) {
@@ -910,6 +912,127 @@ body = await (await dc('/me', bobDc)).json();
 check('★ 登入完就綁好了：不必打指令', body.linked === true && body.name === BOB.name && body.discord.name === 'Bob 的 Discord');
 check('★ 單子用過就丟', [...env.CORPUS.data.keys()].filter((k) => k.startsWith('intent:')).length === 0);
 await dc('/unlink', bobDc, {});
+
+// ---- ★ 頁首、頁尾、首頁的團隊、功能頁 ----
+for (const path of PATHS) {
+  const html = pages[path];
+  check(path + ' 頁首有下載選單（三個地方）與贊助', html.includes('id="get-menu"')
+    && ['https://modrinth.com/mod/wynnchayuan', 'https://www.curseforge.com/minecraft/mc-mods/wynnchayuan',
+      'https://github.com/LyuChaCha/WynnChaYuan/releases/latest', 'https://ko-fi.com/lyuchacha']
+      .every((link) => html.split('<main>')[0].includes(link)));
+  const foot = html.split('<footer>')[1] || '';
+  check('★ ' + path + ' 頁尾有 GitHub、兩份授權、三個下載點、Ko-fi、聯絡方式',
+    ['href="https://github.com/LyuChaCha/WynnChaYuan"', '/blob/main/LICENSE"', '/blob/main/LICENSE-DATA"',
+      'modrinth.com/mod/wynnchayuan', 'curseforge.com/minecraft/mc-mods/wynnchayuan', 'ko-fi.com/lyuchacha',
+      '網站開發者：LyuChaCha', 'Discord：LyuChaCha', 'AGPL-3.0', 'CC BY-NC-SA 4.0'].every((w) => foot.includes(w)));
+  check('★ ' + path + ' 頁尾寫著跟 Wynncraft 官方沒有關係', /Wynncraft、Mojang、Microsoft 沒有關係/.test(foot)
+    && /Not affiliated with Wynncraft/.test(english[path].split('<footer>')[1]));
+}
+check('★ 選單多了「功能」', pages['/'].includes('<a href="/features">功能</a>')
+  && english['/features'].includes('<a href="/features" aria-current="page">Features</a>'));
+check('★ 首頁有團隊那一段：三個身分各一區，名單跟 /api/team 要', ['band-developers', 'band-sponsors', 'band-contributors']
+  .every((id) => pages['/'].includes('id="' + id + '"')) && pages['/'].includes("fetch('/api/team')")
+  && pages['/'].includes('id="team"') && pages['/'].includes('id="install"') && pages['/'].includes('id="sponsoring"'));
+check('★ 頭像與全身圖從 minotar 來，網頁的安全規則也放行它（不再用 mc-heads）',
+  pages['/'].includes('https://minotar.net/armor/body/') && pages['/'].includes('https://minotar.net/helm/')
+  && !pages['/'].includes('mc-heads.net')
+  && (await inLang('/', {})).headers.get('content-security-policy').includes('https://minotar.net'));
+check('★ 功能頁：示範有三種顯示方式、七種語言，分四段', ['data-mode="box"', 'data-mode="replace"', 'data-mode="off"']
+  .every((w) => pages['/features'].includes(w))
+  && (pages['/features'].match(/data-lang="[a-z_]+"/g) || []).length === 7
+  && ['id="translate"', 'id="tools"', 'id="social"', 'id="compat"'].every((w) => pages['/features'].includes(w)));
+check('功能頁的示範每一種語言都有說明、三種方式各一句', LANGS.every((lang) =>
+  ['box', 'replace', 'off'].every((mode) => TEXT[lang].js.demo[mode].length > 8)));
+check('功能頁的列都填了字（27 列）', (pages['/features'].match(/<dt>/g) || []).length === 27
+  && !/<dd>\s*<\/dd>/.test(pages['/features']));
+check('teamOf：只留三個身分，欄位只有名字、遊戲 ID、顏色', JSON.stringify(teamOf([
+  { key: 'credits.role.developers', color: '#FFD24A', members: [{ name: ' A ', mc: 'Alice_Dev', rainbow: true, cape: 'x.gif' }] },
+  { key: 'credits.role.sponsors', color: 'red', members: [{ name: 'C', mc: 'bad name!', color: '#123abc' }, { mc: 'NoName' }] },
+  { key: 'credits.role.sources', members: [{ name: 'Wynncraft' }] },
+  { key: 'credits.role.contributors', members: 'oops' }]))
+  === JSON.stringify([{ role: 'developers', color: '#FFD24A', members: [{ name: 'A', mc: 'Alice_Dev' }] },
+    { role: 'sponsors', color: null, members: [{ name: 'C', color: '#123abc' }] }]) && teamOf(null).length === 0);
+r = await worker.fetch(api('/team'), env);
+body = await r.json();
+check('★ /api/team：公開、可以快取，照名單回開發者與贊助者', r.status === 200
+  && /max-age=\d+/.test(r.headers.get('cache-control')) && body.team.map((s) => s.role).join() === 'developers,sponsors'
+  && body.team[0].members.some((m) => m.mc === 'Alice_Dev') && body.team[1].members[0].mc === 'Carol');
+
+// ---- ★ 管理員：開發者加的，做得到網站上的管理，但不在名單上、也動不了管理員名單 ----
+check('staffKey：UUID、Discord 代號、遊戲名字分得出來', staffKey(dashed(BOB.id).toUpperCase()) === 'u:' + BOB.id
+  && staffKey(' 123456789012345678 ') === 'd:123456789012345678' && staffKey('Bob_99') === 'n:bob_99'
+  && staffKey('1234567890123456') === 'n:1234567890123456' && staffKey('bad name!') === null
+  && staffKey('') === null && staffKey(null) === null && staffKey('123456789012345678901') === null);
+const bobNow = await issueWebToken(env, BOB.id, BOB.name, NOW);
+const staffPost = (path, bodyValue, token) => worker.fetch(post(path, bodyValue, token), env);
+check('★ 一般玩家：管理員名單看不到、加不了、移除不了', (await worker.fetch(get('/admin/staff', bobNow), env)).status === 403
+  && (await staffPost('/admin/staff', { who: BOB.name }, bobNow)).status === 403
+  && (await staffPost('/admin/unstaff', { key: 'u:' + BOB.id }, bobNow)).status === 403
+  && (await worker.fetch(get('/admin/staff'), env)).status === 403);
+me = await (await worker.fetch(get('/me', bobNow), env)).json();
+check('一般玩家的 /me：不是管理員', me.staff === false && me.developer === false);
+check('開發者的 /me：管理頁開得起來', (await (await worker.fetch(get('/me', aliceWeb), env)).json()).staff === true);
+r = await staffPost('/admin/staff', { who: 'not a name!' }, aliceWeb);
+check('看不懂的代號：擋掉', r.status === 400 && (await r.json()).why === 'bad who');
+r = await staffPost('/admin/staff', { who: BOB.name, note: 'x'.repeat(61) }, aliceWeb);
+check('備註太長：擋掉', r.status === 400 && (await r.json()).why === 'bad note');
+r = await staffPost('/admin/staff', { who: BOB.name, note: ' 幫忙看披風 ' }, aliceWeb);
+check('★ 開發者照遊戲名字加一個管理員', r.status === 200 && (await r.json()).key === 'n:bob'
+  && env.CORPUS.data.has('staff:n:bob'));
+r = await staffPost('/admin/staff', { who: 'BOB' }, aliceWeb);
+check('重複加：說已經在了', r.status === 409 && (await r.json()).why === 'already');
+me = await (await worker.fetch(get('/me', bobNow), env)).json();
+check('★ 他登入之後是管理員，但不是開發者、不是成員（沒有葉子、沒有上傳的待遇）',
+  me.staff === true && me.developer === false && me.member === false);
+check('★ 照名字加的，他一登入就改記成 UUID（名字之後被別人拿走也沒用）',
+  env.CORPUS.data.has('staff:u:' + BOB.id) && !env.CORPUS.data.has('staff:n:bob')
+  && JSON.parse(env.CORPUS.data.get('staff:u:' + BOB.id).value).m === BOB.name);
+const impostor = await issueWebToken(env, 'e'.repeat(32), BOB.name, NOW);
+check('★ 另一個帳號改成同一個名字：不是管理員',
+  (await (await worker.fetch(get('/me', impostor), env)).json()).staff === false
+  && (await worker.fetch(get('/admin/bans', impostor), env)).status === 403);
+check('★ 管理員進得了管理：披風、封禁、特別名單', (await worker.fetch(get('/admin/capes', bobNow), env)).status === 200
+  && (await worker.fetch(get('/admin/bans', bobNow), env)).status === 200
+  && (await worker.fetch(get('/admin/perks', bobNow), env)).status === 200);
+r = await staffPost('/admin/perk', { uuid: 'f'.repeat(32), note: '管理員加的' }, bobNow);
+check('管理員加的特別名單，紀錄上寫的是他', r.status === 200
+  && JSON.parse(env.CORPUS.data.get('perk:' + 'f'.repeat(32)).value).by === BOB.name);
+await staffPost('/admin/unperk', { uuid: 'f'.repeat(32) }, bobNow);
+check('★ 管理員動不了管理員名單：看不到、加不了、移除不了（連自己都不行）',
+  (await worker.fetch(get('/admin/staff', bobNow), env)).status === 403
+  && (await staffPost('/admin/staff', { who: 'Carol' }, bobNow)).status === 403
+  && (await staffPost('/admin/unstaff', { key: 'u:' + BOB.id }, bobNow)).status === 403
+  && env.CORPUS.data.has('staff:u:' + BOB.id));
+// 照 Discord 代號加的：只用 Discord 登入、還沒綁遊戲 ID 的人也能管理
+const DAVE = '444444444444444444';
+env.CORPUS.data.set('d:' + DAVE, { value: JSON.stringify({ n: 'Dave 的 Discord' }), metadata: null });
+const daveDc = await issueDiscordToken(env, DAVE, NOW);
+check('還沒加之前：Discord 帳號進不了管理', (await dc('/admin/bans', daveDc)).status === 403
+  && (await (await dc('/me', daveDc)).json()).staff === false);
+r = await staffPost('/admin/staff', { who: DAVE, note: 'DC' }, aliceWeb);
+check('★ 開發者照 Discord 代號加一個管理員', r.status === 200 && env.CORPUS.data.has('staff:d:' + DAVE));
+me = await (await dc('/me', daveDc)).json();
+check('★ 只用 Discord 登入（沒綁遊戲 ID）的管理員：進得了管理，動不了管理員名單',
+  me.linked === false && me.staff === true && (await dc('/admin/bans', daveDc)).status === 200
+  && (await dc('/admin/staff', daveDc)).status === 403);
+r = await worker.fetch(get('/admin/staff', aliceWeb), env);
+const staffList = (await r.json()).staff;
+check('★ 開發者看得到名單：類型、代號、名字、備註、誰加的', r.status === 200 && staffList.length === 2
+  && staffList.some((s) => s.kind === 'u' && s.id === BOB.id && s.name === BOB.name && s.note === '幫忙看披風' && s.by === ALICE.name)
+  && staffList.some((s) => s.kind === 'd' && s.id === DAVE && s.key === 'd:' + DAVE)
+  && r.headers.get('cache-control') === 'no-store');
+check('★ 公開的資料裡看不出誰是管理員', !(await (await worker.fetch(api('/list'), env)).text()).includes('staff')
+  && !JSON.stringify((await (await worker.fetch(api('/team'), env)).json())).includes(BOB.name));
+check('亂寫的鍵：移除擋掉', (await staffPost('/admin/unstaff', { key: 'perk:' + BOB.id }, aliceWeb)).status === 400
+  && (await staffPost('/admin/unstaff', {}, aliceWeb)).status === 400);
+r = await staffPost('/admin/unstaff', { key: 'u:' + BOB.id }, aliceWeb);
+await staffPost('/admin/unstaff', { key: 'd:' + DAVE }, aliceWeb);
+check('★ 開發者移除之後，兩個人都馬上沒有權限', r.status === 200
+  && (await worker.fetch(get('/admin/bans', bobNow), env)).status === 403
+  && (await dc('/admin/bans', daveDc)).status === 403
+  && (await (await worker.fetch(get('/me', bobNow), env)).json()).staff === false);
+check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['/admin'].includes('<div id="staff-block" hidden>')
+  && pages['/admin'].includes('if (me.developer) {') && pages['/admin'].includes('if (!me || !me.staff) return;'));
 
 r = await worker.fetch(get('/status'), env);
 check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));

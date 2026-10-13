@@ -1,7 +1,7 @@
 /**
- * wynnchayuan.com 的網頁：首頁、披風一覽、帳號、管理。中文與英文各一份。
+ * wynnchayuan.com 的網頁：首頁、功能、披風一覽、帳號、管理。中文與英文各一份。
  *
- * 四頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
+ * 五頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
  *
  * 語言：頁面的樣板用 %%鍵%% 標位置，render() 填進去。繁體中文與英文的字在下面的 TEXT
  * （這兩份是正本，改字先改這裡）；其他語言在 lang/<代碼>.json，由 build-site-text.mjs
@@ -26,7 +26,7 @@ const STYLE = String.raw`
     --fast: 140ms; --base: 200ms;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scrollbar-color: #2f4236 var(--ground); accent-color: var(--leaf); }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; scrollbar-color: #2f4236 var(--ground); accent-color: var(--leaf); }
   ::selection { background: var(--leaf-deep); color: #fff; }
   input, textarea { caret-color: var(--leaf); }
   body {
@@ -42,16 +42,35 @@ const STYLE = String.raw`
     outline: 2px solid var(--leaf); outline-offset: 2px;
   }
   .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
-  .top .in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 22px; }
+  /* 放不下的時候（字比較長的語言、登入後多了名字與「管理」）右邊那一組整組換到下一列，選單本身不折行 */
+  .top .in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; }
   .brand:hover { text-decoration: none; }
   .brand span { color: var(--leaf); display: flex; }
   .brand svg { width: 26px; height: 26px; }
   nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .top nav { flex-wrap: nowrap; white-space: nowrap; }
   nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
-  .tools { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+  .tools { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .ico { width: 16px; height: 16px; flex: none; }
+  .btn.small { padding: 5px 11px; font-size: 13px; border-radius: 8px; gap: 6px; }
+  /* 頁首右邊：贊助（Ko-fi）與下載。下載按了往下開一張小選單，三個地方挑一個 */
+  .kofi { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
+  .kofi:hover { text-decoration: none; }
+  .pop { position: relative; }
+  .menu {
+    position: absolute; right: 0; top: calc(100% + 8px); z-index: 6; width: 252px; padding: 6px;
+    border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: 0 18px 44px #000a;
+    opacity: 0; visibility: hidden; transform: translateY(-4px) scale(.97); transform-origin: top right;
+    transition: opacity var(--fast) ease, transform var(--fast) var(--out), visibility 0s linear var(--fast);
+  }
+  .menu.open { opacity: 1; visibility: visible; transform: none; transition: opacity var(--base) ease, transform var(--base) var(--arrive), visibility 0s; }
+  .menu > a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 8px; color: var(--ink); font-size: 14px; transition: background-color var(--fast) ease; }
+  .menu > a:hover { text-decoration: none; }
+  .menu > a .ico { color: var(--ink-2); }
+  .menu p { margin: 6px 0 0; padding: 9px 10px 5px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; line-height: 1.55; }
   select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease; }
   select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
   /* 同一個漢字在各語言的寫法不一樣：照頁面的語言挑字型，不要一律拿繁體中文的字型去畫 */
@@ -84,6 +103,15 @@ const STYLE = String.raw`
     .btn.primary:hover { background: #93dba0; border-color: #93dba0; }
     .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
     tbody tr:hover td { background: #ffffff06; }
+    .kofi:hover { color: #f2a7b6; background: var(--panel-2); }
+    .menu > a:hover { background: var(--panel-2); }
+    .foot-cols a:hover, .copy:hover { color: var(--ink); text-decoration: none; }
+    .more a:hover .ico { transform: translateX(3px); }
+    .seg button:hover { color: var(--ink); }
+    .spec-nav a:hover { color: var(--ink); text-decoration: none; }
+    /* 滑鼠移到人身上：跳一下，腳下的影子跟著縮 */
+    .fig:hover .body img { transform: translateY(-7px); }
+    .fig:hover .body::after { transform: scale(.78); opacity: .28; }
   }
   label { display: block; font-size: 13px; color: var(--ink-2); margin: 0 0 4px; }
   input[type="text"], select {
@@ -106,8 +134,16 @@ const STYLE = String.raw`
   td img { width: 22px; height: 22px; border-radius: 4px; vertical-align: middle; margin-right: 8px; image-rendering: pixelated; }
   .scroll { overflow-x: auto; }
   code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13px; color: var(--ink-2); }
-  footer { border-top: 1px solid var(--line); color: var(--ink-2); font-size: 13px; }
-  footer .in { max-width: 1120px; margin: 0 auto; padding: 22px 20px 28px; display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; }
+  footer { border-top: 1px solid var(--line); color: var(--ink-2); font-size: 13px; background: #0c110e; }
+  footer .in { max-width: 1120px; margin: 0 auto; padding: 40px 20px 26px; }
+  .foot { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 3fr); gap: 32px 56px; }
+  .foot-brand p { margin: 10px 0 0; max-width: 34ch; text-wrap: pretty; }
+  .foot-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 20px; }
+  .foot-cols h2 { margin: 0 0 10px; font-size: 13px; font-weight: 650; color: var(--ink); }
+  .foot-cols ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+  .foot-cols a { color: var(--ink-2); transition: color var(--fast) ease; }
+  .copy { font: inherit; color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; transition: color var(--fast) ease; }
+  .legal { display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
   [hidden] { display: none !important; }
 
   .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 18px 0 8px; }
@@ -128,11 +164,63 @@ const STYLE = String.raw`
   .features { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .features h3 { margin: 0 0 4px; font-size: 15px; font-weight: 650; }
   .features p { margin: 0; color: var(--ink-2); font-size: 14px; }
-  .roles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-  .role { display: flex; gap: 12px; align-items: flex-start; }
-  .role svg { flex: none; width: 26px; height: 26px; margin-top: 2px; }
-  .role b { display: block; font-weight: 650; }
-  .role span span { color: var(--ink-2); font-size: 14px; }
+  .more { margin: 14px 0 0; font-size: 14px; }
+  .more a { display: inline-flex; align-items: center; gap: 6px; }
+  .more .ico { transition: transform var(--fast) var(--out); }
+  /* 團隊：三個身分各一段，人站成一排。頭上那一行照遊戲裡的名牌畫（葉子＋遊戲 ID） */
+  .team { margin-top: 20px; border-bottom: 1px solid var(--line); }
+  .band { --w: 48px; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 14px 28px; padding: 26px 0 24px; border-top: 1px solid var(--line); }
+  .band[data-role="developers"] { --w: 80px; }
+  .band[data-role="sponsors"] { --w: 64px; }
+  .band-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-content: start; }
+  .band-head > span { grid-row: span 2; margin-top: 1px; }
+  .band-head svg { width: 24px; height: 24px; }
+  .band-head h3 { margin: 0; font-size: 16px; font-weight: 650; }
+  .band-head p { margin: 0; grid-column: 2; color: var(--ink-2); font-size: 13px; line-height: 1.55; }
+  .lineup { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px 6px; min-height: calc(var(--w) * 2 + 54px); }
+  .fig { display: flex; flex-direction: column; align-items: center; gap: 7px; width: calc(var(--w) + 70px); text-align: center; animation: fade 320ms ease both; animation-delay: calc(var(--i, 0) * 30ms); }
+  .plate { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; padding: 1px 6px 2px; background: #000000a8; color: #fff; font-size: 12px; line-height: 1.5; white-space: nowrap; }
+  .plate svg { width: 12px; height: 12px; flex: none; }
+  .plate span { overflow: hidden; text-overflow: ellipsis; }
+  .body { position: relative; display: grid; place-items: center; width: var(--w); aspect-ratio: 1 / 2; color: var(--line); }
+  .body::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: -5px; height: 9px; border-radius: 50%; background: #000; opacity: .42; filter: blur(4px); transition: transform 180ms var(--out), opacity 180ms ease; }
+  .body img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; image-rendering: pixelated; opacity: 0; transition: opacity 240ms ease, transform 180ms var(--out); }
+  .body img.in { opacity: 1; }
+  .body > svg { width: 70%; height: auto; }
+  .aka { max-width: 100%; min-height: 1.5em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+  .everyone { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; color: var(--ink-2); font-size: 14px; }
+  .everyone svg { width: 20px; height: 20px; }
+  .everyone b { margin-right: .7em; color: var(--ink); font-weight: 600; }
+
+  /* 功能頁：上面一塊可以按的示範，下面照分類一列一列寫 */
+  .demo { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
+  .demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--ground); }
+  .seg button { font: inherit; font-size: 13px; padding: 5px 12px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out); }
+  .seg button:active { transform: scale(.97); }
+  .seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+  .scene { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 16px; min-height: 270px; padding: 30px 18px 34px; background: linear-gradient(180deg, #24392c 0%, #17241c 58%, #101813 100%); }
+  .tbox { width: min(100%, 440px); padding: 10px 14px 11px; border: 1px solid var(--leaf-deep); border-radius: 8px; background: #0b110eeb; box-shadow: 0 12px 28px #0009; transition: opacity var(--base) ease, transform var(--base) var(--out); }
+  .tbox.gone { opacity: 0; transform: translateY(8px) scale(.98); transition-duration: var(--fast); }
+  .tbox b { display: block; font-size: 12px; font-weight: 600; color: var(--leaf); }
+  .tbox p { margin: 2px 0 0; }
+  .dlg { position: relative; width: min(100%, 580px); padding: 20px 18px 14px; border: 2px solid #6d5a3a; border-radius: 6px; background: #1b1510f5; color: #f4ebd9; box-shadow: 0 14px 30px #000a; }
+  .dlg b { position: absolute; left: 14px; top: -13px; padding: 1px 10px; border-radius: 4px; background: #6d5a3a; color: #fff; font-size: 12px; font-weight: 600; }
+  .dlg p { margin: 0; min-height: 3.4em; font-size: 16px; line-height: 1.7; }
+  .demo-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin: 0; padding: 12px 14px 13px; border-top: 1px solid var(--line); font-size: 14px; }
+  .spec { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px 44px; align-items: start; margin-top: 48px; }
+  .spec-nav { position: sticky; top: 78px; display: grid; gap: 2px; font-size: 14px; }
+  .spec-nav a { padding: 5px 10px; border-radius: 8px; color: var(--ink-2); transition: color var(--fast) ease, background-color var(--fast) ease; }
+  .spec-nav a[aria-current="true"] { color: var(--ink); background: var(--panel-2); }
+  .spec section + section { margin-top: 48px; }
+  .spec h2 { margin: 0 0 12px; }
+  .spec .note { margin: 14px 0 0; max-width: 68ch; }
+  .rows { margin: 0; border-bottom: 1px solid var(--line); }
+  .rows > div { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 2px 24px; padding: 13px 0; border-top: 1px solid var(--line); }
+  .rows dt { font-weight: 650; }
+  .rows dd { margin: 0; color: var(--ink-2); max-width: 64ch; }
+  .state { display: inline-block; margin-left: 6px; padding: 0 8px; border: 1px solid var(--line); border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.7; color: var(--ink-2); vertical-align: 1px; white-space: nowrap; }
+  .state.need { color: var(--gold); border-color: #5c4d27; }
   .plain { margin: 10px 0 0; padding-left: 1.2em; color: var(--ink-2); }
   .plain li { margin: 4px 0; } .plain b { color: var(--ink); font-weight: 600; }
   .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
@@ -204,19 +292,42 @@ const STYLE = String.raw`
   .drop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; transition: border-color var(--fast) ease, background-color var(--fast) ease; }
   .drop.over { border-color: var(--leaf); background: #7fd08a12; }
   .drop .hint { flex-basis: 100%; }
+  @media (max-width: 1240px) {
+    .kofi span { display: none; }
+  }
+  @media (max-width: 940px) {
+    .foot { grid-template-columns: 1fr; }
+    /* 窄一點的畫面：頁首拆成幾列（標誌與工具、選單），所以不黏在上面，免得佔掉半個畫面 */
+    .top { position: static; }
+    .top .in { gap: 8px 10px; flex-wrap: wrap; }
+    .top nav { order: 3; flex-basis: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -8px; }
+    .top nav a { white-space: nowrap; }
+    .tools { gap: 8px; }
+  }
   @media (max-width: 720px) {
     .hero, .account { grid-template-columns: 1fr; }
     .hero h1 { font-size: 30px; }
     .view { grid-template-columns: 1fr; }
     canvas.model { height: 320px; }
     .side { border-left: 0; border-top: 1px solid var(--line); }
-    .top .in { gap: 10px; flex-wrap: wrap; }
+    .me a { max-width: 96px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .menu { left: 0; right: auto; transform-origin: top left; }
+    .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .band { grid-template-columns: 1fr; }
+    .lineup { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 24px 4px; }
+    .fig { width: auto; min-width: 0; }
+    .spec { grid-template-columns: 1fr; margin-top: 36px; }
+    .spec-nav { position: static; display: flex; flex-wrap: wrap; gap: 4px; margin: 0 -10px 10px; }
+    .rows > div { grid-template-columns: 1fr; }
+    .scene { min-height: 320px; padding: 24px 12px 28px; }
   }
   /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn:active, .card:active, .card:hover, .card:hover:active { transform: none; }
-    .hero > div > *, .hero img, .card { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
+    .hero > div > *, .hero img, .card, .fig { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
+    .fig:hover .body img, .fig:hover .body::after, .more a:hover .ico, .seg button:active { transform: none; }
+    .menu, .menu.open, .tbox.gone { transform: none; }
     .card.skel { animation: none; }
     dialog, dialog[open] { transform: none; }
     @starting-style { dialog[open] { transform: none; } }
@@ -229,14 +340,40 @@ const LOGO = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/
 const TEMPLATES = 'https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates';
 const ISSUES = 'https://github.com/LyuChaCha/WynnChaYuan/issues';
 const SIZES = '22×17, 44×34, 88×68, 176×136, 352×272, 704×544, 1056×816';
+const REPO = 'https://github.com/LyuChaCha/WynnChaYuan';
+const MODRINTH = 'https://modrinth.com/mod/wynnchayuan';
+const CURSEFORGE = 'https://www.curseforge.com/minecraft/mc-mods/wynnchayuan';
+const RELEASES = REPO + '/releases/latest';
+const KOFI = 'https://ko-fi.com/lyuchacha';
+
+/** 小圖示：跟葉子同一種畫法（線條、圓頭、1.6 的粗細）。 */
+const stroke = (paths) => '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
+  + 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
+const ICON = {
+  get: stroke('<path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>'),
+  heart: stroke('<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/>'),
+  down: stroke('<path d="m7 10 5 5 5-5"/>'),
+  out: stroke('<path d="M8 16 16 8"/><path d="M9.5 8H16v6.5"/>'),
+  go: stroke('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>'),
+};
 
 // ------------------------------------------------------------------ 字
 
 export const TEXT = {
   zh: {
     html: 'zh-Hant',
-    'nav.home': '首頁', 'nav.capes': '披風', 'nav.account': '帳號', 'nav.admin': '管理', 'nav.label': '主選單',
+    'nav.home': '首頁', 'nav.features': '功能', 'nav.capes': '披風', 'nav.account': '帳號', 'nav.admin': '管理', 'nav.label': '主選單',
     'lang.label': '語言',
+    'top.get': '下載', 'top.sponsor': '贊助',
+    'top.getnote': '需要 Wynntils 與 Fabric API，jar 放進 mods 資料夾就好。<a href="/#install">安裝說明</a>',
+    'foot.label': '頁尾',
+    'foot.tagline': 'Wynncraft 的多語言翻譯模組。原文留著，譯文就在旁邊。',
+    'foot.get': '下載', 'foot.project': '專案', 'foot.support': '支持', 'foot.contact': '聯絡',
+    'foot.changelog': '更新日誌', 'foot.license': '程式授權：AGPL-3.0', 'foot.datalicense': '譯文授權：CC BY-NC-SA 4.0',
+    'foot.issues': '回報問題', 'foot.contribute': '怎麼參與', 'foot.team': '團隊', 'foot.sponsoring': '關於贊助',
+    'foot.kofi': '在 Ko-fi 贊助', 'foot.sitedev': '網站開發者：LyuChaCha', 'foot.discord': 'Discord：LyuChaCha',
+    'foot.copy': '複製 Discord 名稱',
+    'foot.unofficial': '玩家自製的模組，與 Wynncraft、Mojang、Microsoft 沒有關係。',
 
     'home.title': 'WynnChaYuan - Wynncraft 的多語言翻譯模組',
     'home.h1': '把 Wynncraft 翻成你的語言',
@@ -255,7 +392,10 @@ export const TEXT = {
     'home.need': '需要 <a href="https://modrinth.com/mod/wynntils">Wynntils</a> 4.2 以上與 <a href="https://modrinth.com/mod/fabric-api">Fabric API</a>。純客戶端，伺服器不需要裝。',
     'home.how': '把 jar 放進 mods 資料夾，進遊戲按 F6 開設定。',
     'home.about': '<b>關於譯文。</b>部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容經過人工校稿。其他語言目前多半是圍繞著繁體中文再做 AI 翻譯，可能有錯譯與用詞不一致。遇到問題請到 <a href="' + ISSUES + '">GitHub Issues</a> 回報。',
-    'home.badges': '徽章與披風',
+    'home.morefeatures': '看全部功能',
+    'home.team': '團隊',
+    'home.teamlede': '做出 WynnChaYuan 的人。每個人頭上那一行，就是遊戲裡其他裝了模組的玩家看到的樣子：葉子的顏色代表身分。',
+    'home.teamfail': '名單現在讀不到，請重新整理。',
     'home.dev': '開發者', 'home.devb': '協助程式開發與維護。',
     'home.sponsor': '贊助者', 'home.sponsorb': '單次 20 USD 或每月 2 USD 以上。',
     'home.contrib': '貢獻者', 'home.contribb': '替自己的語言翻譯、修正錯誤，或提供程式上的實質協助。',
@@ -307,7 +447,7 @@ export const TEXT = {
 
     'admin.title': '管理 - WynnChaYuan',
     'admin.h1': '管理',
-    'admin.gate': '這一頁只有名單上的開發者能用。請從遊戲裡登入。',
+    'admin.gate': '這一頁只有開發者與管理員能用，請先登入。',
     'admin.lede': '披風的刪除與封禁在<a href="/capes">披風一覽</a>：點開一件，就看得到是誰傳的。',
     'admin.bans': '封禁名單',
     'admin.player': '玩家', 'admin.when': '封禁的時間', 'admin.by': '誰封的',
@@ -322,6 +462,52 @@ export const TEXT = {
     'admin.perksnote': '名單上的人可以上傳 GIF 披風、檔案上限 20 MB，跟開發者、贊助者、貢獻者一樣，但不會出現在貢獻者名單上，名字前面也不會多一片葉子。輸入他的 Minecraft UUID，有沒有連字號都可以；加了馬上生效。',
     'admin.uuid': 'Minecraft UUID', 'admin.note': '備註（可以不填）', 'admin.grant': '加入',
     'admin.noperks': '名單是空的。', 'admin.pwhen': '加入的時間', 'admin.pby': '誰加的',
+    'admin.staff': '管理員',
+    'admin.staffnote': '管理員可以做開發者在這個網站上做的事：刪除披風、封禁與解除封禁、管理特別名單、替名單開 PR。差別是不會出現在團隊名單上、名字前面沒有葉子，也不能新增或移除管理員。',
+    'admin.staffhow': '填他的 Minecraft ID、Minecraft UUID，或 Discord 使用者 ID（17 到 20 位數字：在 Discord 開「開發者模式」，對他按右鍵選「複製使用者 ID」）。用 Minecraft ID 加的，等他登入一次就會改記成 UUID。加了馬上生效。',
+    'admin.who': 'Minecraft ID、UUID 或 Discord 使用者 ID',
+    'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
+
+    'features.title': '功能 - WynnChaYuan',
+    'features.h1': '功能',
+    'features.lede': 'WynnChaYuan 把 Wynncraft 畫面上的英文換成你的語言，原文要不要留由你決定。先按按看三種顯示方式，下面是翻了哪些地方、附帶哪些工具。',
+    'demo.label': '顯示方式的示範',
+    'demo.mode': '顯示方式', 'demo.box': '另開小框', 'demo.replace': '就地取代', 'demo.off': '關閉',
+    'demo.lang': '譯文語言',
+    'demo.note': '這一句出自任務「King’s Recruit」，譯文直接取自模組的語料。',
+    'features.nav': '這一頁的內容',
+    'features.t': '翻譯範圍', 'features.u': '附帶的工具', 'features.s': '葉子與披風', 'features.c': '相容的模組',
+    'features.tnote': '裝備名稱預設保留原文：那是專有名詞，交易市場與 wiki 都用英文。想看譯名可以在設定裡打開。',
+    'features.cnote': '沒列在上面的模組多半也能一起用：WynnChaYuan 只在你的電腦上換畫面上的字，伺服器不需要裝。',
+    'features.install': '安裝說明',
+    'feat.required': '必要', 'feat.optional': '選裝', 'feat.compatible': '相容',
+    'feat.t1': '物品說明', 'feat.t1b': '裝備敘述、屬性、Major ID。旁邊另開面板，或寫進原本的說明框。',
+    'feat.t2': '技能樹', 'feat.t2b': '五個職業的節點、說明與流派。',
+    'feat.t3': '任務對話與選項', 'feat.t3b': '寫進 Wynncraft 自己的對話框，框、名牌、頭像都不動，逐字打出的節奏跟原文同步；也可以另開小框。',
+    'feat.t4': '任務追蹤', 'feat.t4b': '獨立的小框，抬頭照實際追蹤的東西顯示：任務、世界事件、洞窟、討伐戰。',
+    'feat.t5': 'NPC 名牌與漂浮字', 'feat.t5b': '看著它的時候跳出小框，或就地取代；工作站與互動提示也算。',
+    'feat.t6': '聊天訊息', 'feat.t6b': '伺服器發的訊息：任務完成、獎勵、進出區域。分欄的訊息保持對齊；玩家的發言不翻。',
+    'feat.t7': '選單與介面', 'feat.t7b': '交易市場、公會、商城等畫面。',
+    'feat.t8': 'Lootrun、討伐戰、地城', 'feat.t8b': '使命、賜福、信標、Aspect、Gambit，還有結算與戰利品的面板。',
+    'feat.t9': '探索點與祕密發現', 'feat.t9b': '名稱、說明與故事。',
+    'feat.t10': '畫面中央的大字', 'feat.t10b': '標題與副標題。',
+    'feat.u1': '譯文自動更新', 'feat.u1b': '新的翻譯合併之後，下次進遊戲就生效，不必更新模組。離線時用上次抓到的那一份。',
+    'feat.u2': '市集搜尋', 'feat.u2b': '在交易市場用你的語言搜尋，送出前自動換回英文原名；打字的時候會列出候選。',
+    'feat.u3': '名稱要不要翻', 'feat.u3b': '任務、洞窟、探索點這些內容的名稱，可以選譯名、譯名加原文，或保留原文。',
+    'feat.u4': '輔助語言', 'feat.u4b': '你的語言還沒翻到的句子，可以改顯示另一種語言，或留著原文。',
+    'feat.u5': '面板隨你擺', 'feat.u5b': '小框都能拖曳定位；對話、選項、任務追蹤還能拉右下角改大小。',
+    'feat.u6': '複製聊天與譯文截圖', 'feat.u6b': '列出最近的聊天訊息，點一則就複製；翻譯面板可以存成圖片。回報問題的時候很方便。',
+    'feat.u7': '遊戲內更新', 'feat.u7b': '有新版的時候，在更新說明的畫面按一下就下載，關遊戲時自動換上。',
+    'feat.u8': '設定', 'feat.u8b': '在聊天輸入 <code>/wcy</code> 或從 Mod Menu 打開。滑鼠移到項目上有說明，右邊的預覽會跟著你調的值變。',
+    'feat.s1': '名字前面的葉子', 'feat.s1b': '裝了模組的玩家名字前面都有一片葉子，彼此看得到：開發者金色、贊助者青藍色、貢獻者綠色，其他人灰色。',
+    'feat.s2': '披風', 'feat.s2b': '上傳自己的披風，其他裝了模組的玩家看得到。PNG 大家都能傳；GIF 給開發者、贊助者、貢獻者。<a href="/capes">看看大家的披風</a>',
+    'feat.s3': '會送出的資料', 'feat.s3b': '為了上面兩項，模組在你進 Wynncraft 的時候向 wynnchayuan.com 報到一次：UUID、公開的個人檔案，以及披風與徽章的設定。不送任何遊戲內容。<a href="' + REPO + '#readme">完整的說明在 README</a>',
+    'feat.c1b': '物品、任務、聊天的資料都從它來；它自己的畫面也會翻。',
+    'feat.c2b': '跟 Wynntils 一樣是前置。',
+    'feat.c3b': '模組清單上多一顆設定按鈕。',
+    'feat.c4b': '它的搜尋面板打譯名也找得到，結果在英文名旁邊附上譯名。',
+    'feat.c5b': '它的價格框、獎勵畫面與設定畫面也翻成譯文；按住 Shift 看原文。',
+    'feat.c6b': '它用來判斷討伐戰結果的那幾句話保留英文，連勝才不會算錯。',
 
     js: {
       login: '登入', loading: '讀取中…',
@@ -356,6 +542,17 @@ export const TEXT = {
       previewHint: '試穿中：{w}×{h}，還沒上傳。',
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
+      confirmUnstaff: '把 {who} 從管理員移除？', notYet: '還沒登入過',
+      staff: {
+        'bad who': '看不懂這一格：要填 Minecraft ID、UUID，或 Discord 使用者 ID（17 到 20 位數字）',
+        'bad note': '備註最多 60 個字',
+        already: '這個人已經是管理員了',
+      },
+      demo: {
+        box: '原文不動，譯文顯示在另一個小框裡。',
+        replace: '譯文直接寫進 Wynncraft 自己的對話框，逐字打出的節奏跟原文同步。',
+        off: '不翻譯，畫面跟沒裝模組的時候一樣。',
+      },
       perk: {
         'bad uuid': 'UUID 要是 32 個十六進位字元（有沒有連字號都可以）',
         'bad note': '備註最多 60 個字',
@@ -376,8 +573,18 @@ export const TEXT = {
 
   en: {
     html: 'en',
-    'nav.home': 'Home', 'nav.capes': 'Capes', 'nav.account': 'Account', 'nav.admin': 'Admin', 'nav.label': 'Main menu',
+    'nav.home': 'Home', 'nav.features': 'Features', 'nav.capes': 'Capes', 'nav.account': 'Account', 'nav.admin': 'Admin', 'nav.label': 'Main menu',
     'lang.label': 'Language',
+    'top.get': 'Download', 'top.sponsor': 'Sponsor',
+    'top.getnote': 'Needs Wynntils and Fabric API; the jar goes in your mods folder. <a href="/#install">How to install</a>',
+    'foot.label': 'Footer',
+    'foot.tagline': 'A multilingual translation mod for Wynncraft. The original text stays; the translation sits beside it.',
+    'foot.get': 'Download', 'foot.project': 'Project', 'foot.support': 'Support', 'foot.contact': 'Contact',
+    'foot.changelog': 'Changelog', 'foot.license': 'Code licence: AGPL-3.0', 'foot.datalicense': 'Translation licence: CC BY-NC-SA 4.0',
+    'foot.issues': 'Report a problem', 'foot.contribute': 'How to contribute', 'foot.team': 'The team', 'foot.sponsoring': 'About sponsoring',
+    'foot.kofi': 'Sponsor on Ko-fi', 'foot.sitedev': 'Website developer: LyuChaCha', 'foot.discord': 'Discord: LyuChaCha',
+    'foot.copy': 'Copy the Discord name',
+    'foot.unofficial': 'A fan-made mod. Not affiliated with Wynncraft, Mojang or Microsoft.',
 
     'home.title': 'WynnChaYuan - Wynncraft in your language',
     'home.h1': 'Wynncraft, in your language',
@@ -396,7 +603,10 @@ export const TEXT = {
     'home.need': 'Requires <a href="https://modrinth.com/mod/wynntils">Wynntils</a> 4.2 or newer and <a href="https://modrinth.com/mod/fabric-api">Fabric API</a>. Client side only; nothing to install on the server.',
     'home.how': 'Drop the jar into your mods folder, then press F6 in game for settings.',
     'home.about': '<b>About the translations.</b> Some text was written by people and passed through AI, a small part is AI translation, and most of the core content has been proofread by hand. Languages other than Traditional Chinese are mostly AI translations built from it, so expect some errors and inconsistent wording. Please report problems on <a href="' + ISSUES + '">GitHub Issues</a>.',
-    'home.badges': 'Badges and capes',
+    'home.morefeatures': 'See every feature',
+    'home.team': 'The team',
+    'home.teamlede': 'The people behind WynnChaYuan. The tag above each head is what other players with the mod see in game: the colour of the leaf tells you the role.',
+    'home.teamfail': 'The list could not be loaded. Please refresh.',
     'home.dev': 'Developers', 'home.devb': 'Help build and maintain the mod.',
     'home.sponsor': 'Sponsors', 'home.sponsorb': 'A one-off 20 USD or 2 USD a month and up.',
     'home.contrib': 'Contributors', 'home.contribb': 'Translate for their language, fix mistakes, or help with the code.',
@@ -448,7 +658,7 @@ export const TEXT = {
 
     'admin.title': 'Admin - WynnChaYuan',
     'admin.h1': 'Admin',
-    'admin.gate': 'This page is for listed developers only. Please sign in from the game.',
+    'admin.gate': 'This page is for developers and moderators only. Please sign in first.',
     'admin.lede': 'Deleting capes and banning uploaders happens in the <a href="/capes">cape gallery</a>: open a cape to see who uploaded it.',
     'admin.bans': 'Bans',
     'admin.player': 'Player', 'admin.when': 'Banned at', 'admin.by': 'Banned by',
@@ -463,6 +673,52 @@ export const TEXT = {
     'admin.perksnote': 'People on this list can upload GIF capes and files up to 20 MB, the same as developers, sponsors and contributors, but they are not shown on the credits list and get no leaf before their name. Enter their Minecraft UUID, with or without hyphens. It takes effect immediately.',
     'admin.uuid': 'Minecraft UUID', 'admin.note': 'Note (optional)', 'admin.grant': 'Add',
     'admin.noperks': 'The list is empty.', 'admin.pwhen': 'Added at', 'admin.pby': 'Added by',
+    'admin.staff': 'Moderators',
+    'admin.staffnote': 'Moderators can do what developers do on this website: remove capes, ban and unban, manage the special list, and open pull requests for the credits. The difference: they are not shown on the team list, get no leaf before their name, and cannot add or remove moderators.',
+    'admin.staffhow': 'Enter their Minecraft ID, Minecraft UUID, or Discord user ID (17 to 20 digits: turn on Developer Mode in Discord, right-click them and choose “Copy User ID”). An entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
+    'admin.who': 'Minecraft ID, UUID or Discord user ID',
+    'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
+
+    'features.title': 'Features - WynnChaYuan',
+    'features.h1': 'Features',
+    'features.lede': 'WynnChaYuan puts the English on your Wynncraft screen into your language, and whether the original stays is up to you. Try the three display modes first; below is what gets translated and what else comes with it.',
+    'demo.label': 'Display mode demo',
+    'demo.mode': 'Display', 'demo.box': 'Separate box', 'demo.replace': 'Replace in place', 'demo.off': 'Off',
+    'demo.lang': 'Translation language',
+    'demo.note': 'A line from the quest “King’s Recruit”; the translations come straight from the mod’s corpus.',
+    'features.nav': 'On this page',
+    'features.t': 'What gets translated', 'features.u': 'Tools that come with it', 'features.s': 'Leaves and capes', 'features.c': 'Works with',
+    'features.tnote': 'Gear names stay in English by default: they are proper nouns, and the trade market and the wiki use the English ones. You can turn translated names on in the settings.',
+    'features.cnote': 'Mods not listed here usually work too: WynnChaYuan only changes the text on your own screen, and the server does not need it.',
+    'features.install': 'How to install',
+    'feat.required': 'Required', 'feat.optional': 'Optional', 'feat.compatible': 'Compatible',
+    'feat.t1': 'Item tooltips', 'feat.t1b': 'Gear lore, stats and Major IDs. In a panel beside the tooltip, or written into the tooltip itself.',
+    'feat.t2': 'Ability trees', 'feat.t2b': 'Nodes, descriptions and archetypes for all five classes.',
+    'feat.t3': 'Quest dialogue and choices', 'feat.t3b': 'Written into Wynncraft’s own dialogue box, with the frame, nameplate and portrait kept and the text typed out in step with the original; or shown in a separate box.',
+    'feat.t4': 'Quest tracker', 'feat.t4b': 'Its own box; the heading says what is being tracked: a quest, a world event, a cave, a raid.',
+    'feat.t5': 'NPC nameplates and floating text', 'feat.t5b': 'A box while you look at one, or replaced in place. Crafting stations and interaction prompts are included.',
+    'feat.t6': 'Chat messages', 'feat.t6b': 'Messages from the server: quest completions, rewards, entering and leaving areas. Column layouts stay aligned; what players say is never translated.',
+    'feat.t7': 'Menus and interfaces', 'feat.t7b': 'The trade market, guild, store and other screens.',
+    'feat.t8': 'Lootruns, raids, dungeons', 'feat.t8b': 'Missions, boons, beacons, aspects and gambits, plus the end-of-run and loot panels.',
+    'feat.t9': 'Discoveries and secret discoveries', 'feat.t9b': 'Names, descriptions and stories.',
+    'feat.t10': 'Title text', 'feat.t10b': 'The big title and subtitle in the middle of the screen.',
+    'feat.u1': 'Translations update themselves', 'feat.u1b': 'Once a new translation is merged it shows up the next time you start the game, with no mod update. Offline, the last copy you downloaded is used.',
+    'feat.u2': 'Market search', 'feat.u2b': 'Search the trade market in your language; the English name is what gets sent. Matches are listed as you type.',
+    'feat.u3': 'Names your way', 'feat.u3b': 'Names of quests, caves, discoveries and other content can be shown translated, translated with the original, or left in the original.',
+    'feat.u4': 'Fallback language', 'feat.u4b': 'For lines your language does not have yet, show another language instead, or keep the original.',
+    'feat.u5': 'Panels where you want them', 'feat.u5b': 'Every box can be dragged into place; dialogue, choices and the tracker can also be resized from the corner.',
+    'feat.u6': 'Copy chat and panel screenshots', 'feat.u6b': 'List recent chat messages and click one to copy it; save the translation panel as an image. Handy when you report a problem.',
+    'feat.u7': 'Update from inside the game', 'feat.u7b': 'When a new version is out, one click on the release notes screen downloads it, and it is swapped in when you close the game.',
+    'feat.u8': 'Settings', 'feat.u8b': 'Type <code>/wcy</code> in chat, or open them from Mod Menu. Hover an option for an explanation; the preview on the right follows the values you set.',
+    'feat.s1': 'A leaf before the name', 'feat.s1b': 'Everyone with the mod has a leaf before their name, and they see each other’s: gold for developers, cyan for sponsors, green for contributors, grey for everyone else.',
+    'feat.s2': 'Capes', 'feat.s2b': 'Upload your own cape and other players with the mod will see it. Anyone can upload a PNG; GIFs are for developers, sponsors and contributors. <a href="/capes">Browse the capes</a>',
+    'feat.s3': 'What is sent', 'feat.s3b': 'For the two features above, the mod checks in with wynnchayuan.com once when you join Wynncraft: your UUID, your public profile, and your cape and badge settings. No game content is sent. <a href="' + REPO + '#readme">The README has the full details</a>',
+    'feat.c1b': 'Item, quest and chat data all come from it; its own screens are translated too.',
+    'feat.c2b': 'A dependency, like Wynntils.',
+    'feat.c3b': 'Adds a settings button to the mod list.',
+    'feat.c4b': 'Its search panel accepts translated names, and shows them next to the English ones in the results.',
+    'feat.c5b': 'Its price box, reward screens and settings are translated too; hold Shift to see the original.',
+    'feat.c6b': 'The few lines it reads to tell how a raid ended stay in English, so your streak is counted right.',
 
     js: {
       login: 'Sign in', loading: 'Loading…',
@@ -496,6 +752,17 @@ export const TEXT = {
       },
       previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
+      confirmUnstaff: 'Remove {who} from the moderators?', notYet: 'Has not signed in yet',
+      staff: {
+        'bad who': 'That is not a Minecraft ID, a UUID, or a Discord user ID (17 to 20 digits)',
+        'bad note': 'The note can be 60 characters at most',
+        already: 'This person is already a moderator',
+      },
+      demo: {
+        box: 'The original stays put; the translation appears in a separate box.',
+        replace: 'The translation is written into Wynncraft’s own dialogue box, typed out in step with the original.',
+        off: 'Nothing is translated. The screen looks the way it does without the mod.',
+      },
       revoke: 'Remove', confirmRevoke: 'Remove {who} from the special list?', perkDone: 'Added',
       perk: {
         'bad uuid': 'A UUID is 32 hexadecimal characters, with or without hyphens',
@@ -550,7 +817,9 @@ const COMMON = String.raw`
     if (token()) options.headers.authorization = 'Bearer ' + token();
     return fetch('/api' + path, options);
   }
-  function head(name, size) { return 'https://mc-heads.net/avatar/' + encodeURIComponent(name) + '/' + (size || 32); }
+  /* 玩家的頭像與全身圖。用 minotar：有些帳號在別家只畫得出預設的 Steve */
+  function head(name, size) { return 'https://minotar.net/helm/' + encodeURIComponent(name) + '/' + (size || 32) + '.png'; }
+  function figure(name, width) { return 'https://minotar.net/armor/body/' + encodeURIComponent(name) + '/' + width + '.png'; }
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -582,6 +851,30 @@ const COMMON = String.raw`
       button.style.minWidth = '';
     }, 1400);
   }
+  /* 頁首的下載選單：按一下開、再按一下關；點別的地方、按 Esc 也關 */
+  (function () {
+    var button = document.getElementById('get');
+    var menu = document.getElementById('get-menu');
+    function set(open) {
+      menu.classList.toggle('open', open);
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    button.onclick = function () { set(!menu.classList.contains('open')); };
+    document.addEventListener('click', function (e) {
+      if (!button.contains(e.target) && !menu.contains(e.target)) set(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || !menu.classList.contains('open')) return;
+      set(false);
+      button.focus();
+    });
+  })();
+  /* 頁尾的 Discord 名稱：按一下複製（Discord 沒有「用名字開個人頁」的網址） */
+  document.getElementById('dc-copy').onclick = function () {
+    var button = this;
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText('LyuChaCha').then(function () { blip(button, L.copied); });
+  };
   /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。 */
   document.getElementById('lang').onchange = function () {
     document.cookie = 'lang=' + this.value + '; path=/; max-age=31536000; samesite=lax';
@@ -605,6 +898,7 @@ const COMMON = String.raw`
       var pending = el('a', '', (me.discord && me.discord.name) || 'Discord');
       pending.href = '/account';
       slot.append(pending);
+      if (me.staff) document.getElementById('nav-admin').hidden = false;
       return;
     }
     var img = el('img');
@@ -613,16 +907,19 @@ const COMMON = String.raw`
     var name = el('a', '', me.name);
     name.href = '/account';
     slot.append(img, name);
-    if (me.developer) document.getElementById('nav-admin').hidden = false;
+    if (me.staff) document.getElementById('nav-admin').hidden = false;
   });
 `;
 
 function layout(lang, title, active, body, script) {
-  const nav = [['/', 'nav.home'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
+  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
     .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
       + '>%%' + key + '%%</a>').join('');
   const switcher = LANGS.map((code) => '<option value="' + code + '"' + (code === lang ? ' selected' : '')
     + ' lang="' + tagOf(code) + '">' + LANG_NAMES[code] + '</option>').join('');
+  const column = (heading, links) => '<div><h2>%%' + heading + '%%</h2><ul>'
+    + links.map((link) => '<li>' + link + '</li>').join('') + '</ul></div>';
+  const to = (href, label) => '<a href="' + href + '">' + label + '</a>';
   return '<!doctype html>\n<html lang="%%html%%">\n<head>\n<meta charset="utf-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + '<meta name="color-scheme" content="dark">\n'
@@ -643,11 +940,35 @@ function layout(lang, title, active, body, script) {
     + '<nav aria-label="%%nav.label%%">' + nav
     + '<a href="/admin" id="nav-admin" hidden' + (active === '/admin' ? ' aria-current="page"' : '')
     + '>%%nav.admin%%</a></nav>'
-    + '<div class="tools"><select class="lang" id="lang" aria-label="%%lang.label%%">' + switcher + '</select>'
+    + '<div class="tools">'
+    + '<a class="kofi" href="' + KOFI + '" aria-label="%%foot.kofi%%">' + ICON.heart + '<span>%%top.sponsor%%</span></a>'
+    + '<div class="pop"><button class="btn primary small" id="get" type="button" aria-expanded="false" aria-controls="get-menu">'
+    + ICON.get + '%%top.get%%' + ICON.down + '</button>'
+    + '<div class="menu" id="get-menu">'
+    + '<a href="' + MODRINTH + '">Modrinth' + ICON.out + '</a>'
+    + '<a href="' + CURSEFORGE + '">CurseForge' + ICON.out + '</a>'
+    + '<a href="' + RELEASES + '">GitHub Releases' + ICON.out + '</a>'
+    + '<p>%%top.getnote%%</p></div></div>'
+    + '<select class="lang" id="lang" aria-label="%%lang.label%%">' + switcher + '</select>'
     + '<div class="me" id="me"></div></div>'
     + '</div></div>\n<main>' + body + '</main>\n'
-    + '<footer><div class="in"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
-    + '<span>Designed by LyuChaCha</span></div></footer>\n'
+    + '<footer><div class="in"><div class="foot">'
+    + '<div class="foot-brand"><a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
+    + '<p>%%foot.tagline%%</p></div>'
+    + '<div class="foot-cols" role="navigation" aria-label="%%foot.label%%">'
+    + column('foot.get', [to(MODRINTH, 'Modrinth'), to(CURSEFORGE, 'CurseForge'), to(RELEASES, 'GitHub Releases'),
+      to(REPO + '/blob/main/CHANGELOG.md', '%%foot.changelog%%')])
+    + column('foot.project', [to(REPO, 'GitHub'), to(REPO + '/blob/main/LICENSE', '%%foot.license%%'),
+      to(REPO + '/blob/main/LICENSE-DATA', '%%foot.datalicense%%'), to(ISSUES, '%%foot.issues%%')])
+    + column('foot.support', [to(KOFI, '%%foot.kofi%%'), to('/#sponsoring', '%%foot.sponsoring%%'),
+      to('/#team', '%%foot.team%%'), to(REPO + '/blob/main/CONTRIBUTING.md', '%%foot.contribute%%')])
+    + column('foot.contact', ['%%foot.sitedev%%',
+      '<button class="copy" id="dc-copy" type="button" title="%%foot.copy%%">%%foot.discord%%</button>'])
+    + '</div></div>'
+    + '<div class="legal"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
+    + '<span>%%foot.unofficial%%</span>'
+    + '<span>Designed by LyuChaCha</span></div>'
+    + '</div></footer>\n'
     + '<script>var L = %%js%%;' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
 }
 
@@ -682,8 +1003,9 @@ const HOME = String.raw`
     <div class="panel"><h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
     <div class="panel"><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
   </div>
+  <p class="more"><a href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></p>
 
-  <h2>%%home.install%%</h2>
+  <h2 id="install">%%home.install%%</h2>
   <div class="split">
     <div class="panel">
       <p style="margin:0">%%home.need%%</p>
@@ -692,13 +1014,26 @@ const HOME = String.raw`
     <div class="panel note">%%home.about%%</div>
   </div>
 
-  <h2>%%home.badges%%</h2>
-  <div class="roles">
-    <div class="panel role">` + leaf('#FFD24A') + String.raw`<span><b>%%home.dev%%</b><span>%%home.devb%%</span></span></div>
-    <div class="panel role">` + leaf('#5BD8E8') + String.raw`<span><b>%%home.sponsor%%</b><span>%%home.sponsorb%%</span></span></div>
-    <div class="panel role">` + leaf('#5BD86F') + String.raw`<span><b>%%home.contrib%%</b><span>%%home.contribb%%</span></span></div>
-    <div class="panel role">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b><span>%%home.userb%%</span></span></div>
+  <h2 id="team">%%home.team%%</h2>
+  <p class="lede">%%home.teamlede%%</p>
+  <template id="leaf">` + LEAF + String.raw`</template>
+  <div class="team" id="team-list" aria-busy="true">
+    <section class="band" id="band-developers" data-role="developers">
+      <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
+      <ul class="lineup"></ul>
+    </section>
+    <section class="band" id="band-sponsors" data-role="sponsors">
+      <div class="band-head">` + leaf('#5BD8E8') + String.raw`<h3>%%home.sponsor%%</h3><p>%%home.sponsorb%%</p></div>
+      <ul class="lineup"></ul>
+    </section>
+    <section class="band" id="band-contributors" data-role="contributors">
+      <div class="band-head">` + leaf('#5BD86F') + String.raw`<h3>%%home.contrib%%</h3><p>%%home.contribb%%</p></div>
+      <ul class="lineup"></ul>
+    </section>
   </div>
+  <p class="note" id="team-fail" hidden>%%home.teamfail%%</p>
+  <p class="everyone">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b>%%home.userb%%</span></p>
+
   <h2 id="sponsoring">%%home.support%%</h2>
   <div class="panel">
     <p style="margin:0">%%home.free%%</p>
@@ -714,6 +1049,225 @@ const HOME = String.raw`
     <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
   </div>
 `;
+
+/** 首頁的團隊：名單跟 /api/team 要（就是倉庫裡那份 credits.json），一個人畫一個站著的人。 */
+const HOME_JS = '<script>' + String.raw`
+  (function () {
+    var WIDTH = { developers: 80, sponsors: 64, contributors: 48 };
+    var shape = document.getElementById('leaf').content.firstElementChild;
+    fetch('/api/team').then(function (r) {
+      if (!r.ok) throw new Error('team');
+      return r.json();
+    }).then(function (data) {
+      data.team.forEach(function (section) {
+        var width = WIDTH[section.role];
+        if (!width) return;
+        var band = document.getElementById('band-' + section.role);
+        var list = band.querySelector('.lineup');
+        list.replaceChildren();
+        band.hidden = section.members.length === 0;
+        section.members.forEach(function (member, i) {
+          var item = el('li', 'fig');
+          item.style.setProperty('--i', Math.min(i, 12));
+          /* 頭上的名牌：葉子＋遊戲 ID，遊戲裡看到的就是這樣 */
+          var plate = el('span', 'plate');
+          var leaf = shape.cloneNode(true);
+          leaf.style.color = member.color || section.color || '';
+          plate.append(leaf, el('span', '', member.mc || member.name));
+          var body = el('span', 'body');
+          if (member.mc) {
+            var img = el('img');
+            img.alt = '';
+            img.width = width;
+            img.height = width * 2;
+            img.decoding = 'async';
+            img.onload = function () { img.classList.add('in'); };
+            img.src = figure(member.mc, width);
+            body.append(img);
+          } else {
+            body.append(shape.cloneNode(true));       /* 沒登記遊戲 ID 的人：畫一片葉子 */
+          }
+          /* 名單上寫的名字跟遊戲 ID 不一樣才另外寫一行；一樣的留空，腳才會站在同一條線上 */
+          var aka = el('span', 'aka', member.mc && member.name !== member.mc ? member.name : '');
+          item.append(plate, body, aka);
+          list.append(item);
+        });
+      });
+      document.getElementById('team-list').removeAttribute('aria-busy');
+    }).catch(function () {
+      document.getElementById('team-list').removeAttribute('aria-busy');
+      document.getElementById('team-fail').hidden = false;
+    });
+  })();
+` + '</script>';
+
+// ------------------------------------------------------------------ 功能
+
+const rows = (prefix, n) => Array.from({ length: n }, (unused, i) => '<div><dt>%%feat.' + prefix + (i + 1)
+  + '%%</dt><dd>%%feat.' + prefix + (i + 1) + 'b%%</dd></div>').join('\n          ');
+const mod = (name, slug, state, key) => '<div><dt><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
+  + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></dt><dd>%%feat.' + key + 'b%%</dd></div>';
+
+const FEATURES = String.raw`
+  <h1>%%features.h1%%</h1>
+  <p class="lede">%%features.lede%%</p>
+
+  <section class="demo" aria-label="%%demo.label%%">
+    <div class="demo-bar">
+      <div class="seg" id="demo-modes" role="group" aria-label="%%demo.mode%%">
+        <button type="button" data-mode="box" aria-pressed="true">%%demo.box%%</button>
+        <button type="button" data-mode="replace" aria-pressed="false">%%demo.replace%%</button>
+        <button type="button" data-mode="off" aria-pressed="false">%%demo.off%%</button>
+      </div>
+      <div class="seg" id="demo-langs" role="group" aria-label="%%demo.lang%%">
+        <button type="button" data-lang="zh_tw" lang="zh-Hant">繁體中文</button>
+        <button type="button" data-lang="zh_cn" lang="zh-Hans">简体中文</button>
+        <button type="button" data-lang="ja_jp" lang="ja">日本語</button>
+        <button type="button" data-lang="ko_kr" lang="ko">한국어</button>
+        <button type="button" data-lang="ru_ru" lang="ru">Русский</button>
+        <button type="button" data-lang="es_es" lang="es">Español</button>
+        <button type="button" data-lang="tr_tr" lang="tr">Türkçe</button>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="tbox" id="demo-box"><b>Tasim</b><p id="demo-box-line"></p></div>
+      <div class="dlg"><b>Tasim</b><p id="demo-line" lang="en">So this is Wynn we've all been hearing about... It's beautiful.</p></div>
+    </div>
+    <p class="demo-foot"><span id="demo-say" role="status"></span><span class="hint">%%demo.note%%</span></p>
+  </section>
+
+  <div class="spec">
+    <nav class="spec-nav" aria-label="%%features.nav%%">
+      <a href="#translate">%%features.t%%</a>
+      <a href="#tools">%%features.u%%</a>
+      <a href="#social">%%features.s%%</a>
+      <a href="#compat">%%features.c%%</a>
+    </nav>
+    <div>
+      <section id="translate">
+        <h2>%%features.t%%</h2>
+        <dl class="rows">
+          ` + rows('t', 10) + String.raw`
+        </dl>
+        <p class="note">%%features.tnote%%</p>
+      </section>
+      <section id="tools">
+        <h2>%%features.u%%</h2>
+        <dl class="rows">
+          ` + rows('u', 8) + String.raw`
+        </dl>
+      </section>
+      <section id="social">
+        <h2>%%features.s%%</h2>
+        <dl class="rows">
+          ` + rows('s', 3) + String.raw`
+        </dl>
+      </section>
+      <section id="compat">
+        <h2>%%features.c%%</h2>
+        <dl class="rows">
+          ` + [mod('Wynntils 4.2+', 'wynntils', 'required', 'c1'), mod('Fabric API', 'fabric-api', 'required', 'c2'),
+    mod('Mod Menu', 'modmenu', 'optional', 'c3'), mod('WynnMarketSearch', 'wynnmarketsearch', 'optional', 'c4'),
+    mod('Wynnventory', 'wynnventory', 'optional', 'c5'), mod('WynnMod', 'wynnmod', 'compatible', 'c6')].join('\n          ') + String.raw`
+        </dl>
+        <p class="note">%%features.cnote%%</p>
+        <div class="cta">
+          <a class="btn primary" href="` + MODRINTH + String.raw`">%%home.modrinth%%</a>
+          <a class="btn" href="` + CURSEFORGE + String.raw`">CurseForge</a>
+          <a class="btn" href="` + RELEASES + String.raw`">GitHub</a>
+          <a class="btn" href="/#install">%%features.install%%</a>
+        </div>
+      </section>
+    </div>
+  </div>
+`;
+
+/**
+ * 功能頁的示範：同一句任務對話，三種顯示方式、七種語言。
+ * 句子是語料裡真的那一條（quest/king-s-recruit.json，Tasim 的台詞），不是另外寫的。
+ */
+const FEATURES_JS = '<script>' + String.raw`
+  (function () {
+    var SOURCE = "So this is Wynn we've all been hearing about... It's beautiful.";
+    var LINES = {
+      zh_tw: '所以這就是我們一直聽說的 Wynn……真美。',
+      zh_cn: '原来这就是我们一直听说的 Wynn……真美。',
+      ja_jp: 'これがみんなが噂してた Wynn か……きれいだね。',
+      ko_kr: '이게 그렇게 듣던 Wynn이구나... 아름다워.',
+      ru_ru: 'Так вот он какой, Wynn, о котором все столько говорили... Как красиво.',
+      es_es: 'Así que este es el Wynn del que tanto hemos oído hablar... Es precioso.',
+      tr_tr: 'Demek hep duyduğumuz Wynn burası... Çok güzel.'
+    };
+    var modes = Array.prototype.slice.call(document.querySelectorAll('#demo-modes button'));
+    var langs = Array.prototype.slice.call(document.querySelectorAll('#demo-langs button'));
+    var line = document.getElementById('demo-line');
+    var box = document.getElementById('demo-box');
+    var boxLine = document.getElementById('demo-box-line');
+    var say = document.getElementById('demo-say');
+    var mode = 'box';
+    /* 一開始用這一頁的語言；英文版的頁面沒有對應的譯文，先給繁體中文 */
+    var lang = 'zh_tw';
+    langs.forEach(function (button) { if (button.lang === document.documentElement.lang) lang = button.dataset.lang; });
+    var turn = 0;
+    /* 逐字打出來，跟遊戲裡的對話框一樣。中途又按了別的就停掉這一輪 */
+    function type(node, text) {
+      var mine = ++turn;
+      var chars = Array.from(text);
+      var shown = 0;
+      if (calm) { node.textContent = text; return; }
+      node.textContent = '';
+      (function step() {
+        if (mine !== turn) return;
+        shown++;
+        node.textContent = chars.slice(0, shown).join('');
+        if (shown < chars.length) setTimeout(step, 26);
+      })();
+    }
+    function tagOf(code) {
+      var found = langs.filter(function (button) { return button.dataset.lang === code; })[0];
+      return found ? found.lang : 'en';
+    }
+    function paint(typed) {
+      modes.forEach(function (button) { button.setAttribute('aria-pressed', button.dataset.mode === mode ? 'true' : 'false'); });
+      langs.forEach(function (button) { button.setAttribute('aria-pressed', button.dataset.lang === lang ? 'true' : 'false'); });
+      boxLine.textContent = LINES[lang];
+      boxLine.lang = tagOf(lang);
+      box.classList.toggle('gone', mode !== 'box');
+      box.setAttribute('aria-hidden', mode === 'box' ? 'false' : 'true');
+      line.lang = mode === 'replace' ? tagOf(lang) : 'en';
+      if (mode === 'replace' && typed) type(line, LINES[lang]);
+      else { turn++; line.textContent = mode === 'replace' ? LINES[lang] : SOURCE; }
+      if (say.textContent !== L.demo[mode]) { say.textContent = L.demo[mode]; flash(say); }
+    }
+    modes.forEach(function (button) {
+      button.onclick = function () { mode = button.dataset.mode; paint(true); };
+    });
+    langs.forEach(function (button) {
+      button.onclick = function () { lang = button.dataset.lang; paint(true); };
+    });
+    paint(false);
+
+    /* 左邊的目錄：捲到哪一段，哪一項就亮起來 */
+    var links = Array.prototype.slice.call(document.querySelectorAll('.spec-nav a'));
+    function idOf(link) { return link.getAttribute('href').slice(1); }
+    if ('IntersectionObserver' in window) {
+      var seen = {};
+      var watch = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { seen[entry.target.id] = entry.isIntersecting; });
+        var current = links.filter(function (link) { return seen[idOf(link)]; })[0];
+        if (!current) return;
+        links.forEach(function (link) {
+          if (link === current) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      }, { rootMargin: '-90px 0px -55% 0px' });
+      links.forEach(function (link) {
+        var section = document.getElementById(idOf(link));
+        if (section) watch.observe(section);
+      });
+    }
+  })();
+` + '</script>';
 
 // ------------------------------------------------------------------ 披風一覽
 
@@ -947,7 +1501,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     });
   }
   whoami.then(function (me) {
-    developer = Boolean(me && me.developer);
+    developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到誰傳的，能刪除與封禁 */
     return load();
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
@@ -1265,6 +1819,27 @@ const ADMIN = String.raw`
       </div>
       <p class="msg" id="c-msg" role="status"></p>
     </div>
+
+    <div id="staff-block" hidden>
+      <h2>%%admin.staff%%</h2>
+      <div class="panel">
+        <p class="note" style="margin:0 0 8px">%%admin.staffnote%%</p>
+        <p class="note" style="margin:0 0 14px">%%admin.staffhow%%</p>
+        <div class="form">
+          <div><label for="s-who">%%admin.who%%</label><input type="text" id="s-who" maxlength="36" autocomplete="off" spellcheck="false"></div>
+          <div><label for="s-note">%%admin.note%%</label><input type="text" id="s-note" maxlength="60" autocomplete="off"></div>
+          <div><button class="btn primary" id="s-send">%%admin.grant%%</button></div>
+        </div>
+        <p class="msg" id="s-msg" role="status"></p>
+      </div>
+      <div class="panel scroll">
+        <table>
+          <thead><tr><th>%%admin.kind%%</th><th>%%admin.id%%</th><th>%%admin.player%%</th><th>%%admin.note%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
+          <tbody id="staff"></tbody>
+        </table>
+        <p class="note" id="nostaff" hidden style="margin:10px">%%admin.nostaff%%</p>
+      </div>
+    </div>
   </div>
 `;
 
@@ -1342,12 +1917,72 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
+  /* 管理員名單：只有開發者看得到、動得了 */
+  var KIND = { u: 'Minecraft UUID', n: 'Minecraft ID', d: 'Discord' };
+  function loadStaff() {
+    return api('/admin/staff').then(function (r) { return r.json(); }).then(function (data) {
+      var body = document.getElementById('staff');
+      body.replaceChildren();
+      document.getElementById('nostaff').hidden = data.staff.length > 0;
+      data.staff.forEach(function (one) {
+        var row = el('tr');
+        var id = el('td');
+        id.append(el('code', '', one.id));
+        var who = el('td');
+        var known = one.name || (one.kind === 'n' ? one.id : '');
+        if (known) {
+          var img = el('img');
+          img.alt = '';
+          img.src = head(known, 44);
+          who.append(img, known);
+        } else {
+          who.append(one.kind === 'u' ? L.notYet : '—');
+        }
+        var drop = el('button', 'btn', L.revoke);
+        drop.onclick = function () {
+          if (!confirm(fmt(L.confirmUnstaff, { who: one.name || one.note || one.id }))) return;
+          api('/admin/unstaff', { method: 'POST', body: JSON.stringify({ key: one.key }), headers: { 'content-type': 'application/json' } })
+            .then(function (r) { if (r.ok) loadStaff(); else alert(fmt(L.liftFail, { s: r.status })); });
+        };
+        var action = el('td');
+        action.append(drop);
+        row.append(el('td', '', KIND[one.kind] || one.kind), id, who, el('td', '', one.note || '—'),
+          el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'), el('td', '', one.by || '—'), action);
+        body.append(row);
+      });
+    });
+  }
+  document.getElementById('s-send').onclick = function () {
+    var msg = document.getElementById('s-msg');
+    var entry = { who: document.getElementById('s-who').value.trim(), note: document.getElementById('s-note').value.trim() };
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/staff', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          if (r.ok) {
+            msg.className = 'msg ok';
+            msg.textContent = L.perkDone;
+            document.getElementById('s-who').value = '';
+            document.getElementById('s-note').value = '';
+            loadStaff();
+          } else {
+            msg.className = 'msg bad';
+            msg.textContent = L.staff[body.why] || fmt(L.prFail, { s: body.why || r.status });
+          }
+        });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
+  };
   whoami.then(function (me) {
-    if (!me || !me.developer) return;
+    if (!me || !me.staff) return;
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
     loadBans();
     loadPerks();
+    if (me.developer) {
+      document.getElementById('staff-block').hidden = false;
+      loadStaff();
+    }
   });
   document.getElementById('c-send').onclick = function () {
     var msg = document.getElementById('c-msg');
@@ -1383,7 +2018,8 @@ const ADMIN_JS = '<script>' + String.raw`
 
 /** 每一頁：標題的鍵、內容、程式。 */
 const PAGES = {
-  '/': ['home.title', HOME, ''],
+  '/': ['home.title', HOME, HOME_JS],
+  '/features': ['features.title', FEATURES, FEATURES_JS],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],
@@ -1440,6 +2076,8 @@ function filled(code) {
   const js = { ...base.js, ...(own.js || {}) };
   js.why = { ...base.js.why, ...((own.js && own.js.why) || {}) };
   js.credit = { ...base.js.credit, ...((own.js && own.js.credit) || {}) };
+  js.staff = { ...base.js.staff, ...((own.js && own.js.staff) || {}) };
+  js.demo = { ...base.js.demo, ...((own.js && own.js.demo) || {}) };
   return { ...base, ...own, js };
 }
 

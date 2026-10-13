@@ -26,6 +26,10 @@
  *   GET    /api/admin/bans                        封禁名單（開發者）
  *   POST   /api/admin/unban    {uuid}             解除封禁（開發者）
  *   POST   /api/admin/credits  {section, name, mc, color}   替名單加一個人：開一個 PR（開發者）
+ *   GET    /api/team                  名單上的開發者、贊助者、貢獻者（首頁畫團隊用，公開）
+ *   GET    /api/admin/staff           管理員名單（只有開發者）
+ *   POST   /api/admin/staff    {who, note}   加一個管理員：Minecraft ID、UUID 或 Discord 代號（只有開發者）
+ *   POST   /api/admin/unstaff  {key}         移除一個管理員（只有開發者）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
  *
@@ -862,6 +866,38 @@ export function gifFrames(bytes) {
 
 let cachedCredits = null;
 
+const COLOUR = /^#[0-9a-fA-F]{6}$/;
+
+/**
+ * 首頁「團隊」那一段要畫的：開發者、贊助者、貢獻者三區，各自的葉子顏色與成員。
+ * 只留畫得出來的欄位（名字、遊戲 ID、自訂的葉子顏色）；資料來源那一區不是人，不放。
+ * 純函式，測試直接餵。
+ */
+export function teamOf(sections) {
+  const team = [];
+  for (const section of Array.isArray(sections) ? sections : []) {
+    const found = /\.(developers|sponsors|contributors)$/.exec(String(section && section.key));
+    if (!found || !Array.isArray(section.members)) continue;
+    const members = [];
+    for (const member of section.members) {
+      if (!member || typeof member.name !== 'string' || !member.name.trim()) continue;
+      const entry = { name: member.name.trim().slice(0, 40) };
+      if (typeof member.mc === 'string' && NAME.test(member.mc)) entry.mc = member.mc;
+      if (typeof member.color === 'string' && COLOUR.test(member.color)) entry.color = member.color;
+      members.push(entry);
+    }
+    team.push({ role: found[1], color: COLOUR.test(section.color || '') ? section.color : null, members });
+  }
+  return team;
+}
+
+/** 名單上的人。抓不到名單（GitHub 沒回）就請訪客等一下再來。 */
+async function handleTeam(now) {
+  const list = await credits(now);
+  if (!list) return no('try later', 503);
+  return json({ team: list.team }, 200, { 'cache-control': 'public, max-age=300' });
+}
+
 /**
  * credits.json 上有遊戲 ID 的人（小寫）：names 是所有成員（開發者、贊助者、貢獻者），
  * developers 是其中的開發者。抓不到就回上一次的；從來沒抓到過回 null。
@@ -873,7 +909,8 @@ async function credits(now) {
     if (answer.status === 200) {
       const names = new Set();
       const developers = new Set();
-      for (const section of (await answer.json()).sections || []) {
+      const sections = (await answer.json()).sections || [];
+      for (const section of sections) {
         const dev = typeof section.key === 'string' && section.key.endsWith('.developers');
         for (const member of section.members || []) {
           if (typeof member.mc !== 'string' || !member.mc) continue;
@@ -881,7 +918,7 @@ async function credits(now) {
           if (dev) developers.add(member.mc.toLowerCase());
         }
       }
-      cachedCredits = { t: now, names, developers };
+      cachedCredits = { t: now, names, developers, team: teamOf(sections) };
     }
   } catch (e) {
     // 用舊的
@@ -942,6 +979,119 @@ export function plainUuid(text) {
 async function isDeveloper(name, now) {
   const list = await credits(now);
   return Boolean(list && list.developers.has(name.toLowerCase()));
+}
+
+// ---------------------------------------------------------------- 管理員
+//
+// 使用者 2026-10-13：「新增管理員（需要 discord 或 minecraft id 方便綁定），可以移除披風和
+// 網站開發者的那些功能，區別是不展示而已（只是不能移除管理員、新增）」。
+//
+// 管理員做得到開發者在網站上做的事（刪披風、封禁與解除、特別名單、替名單開 PR），但不在
+// credits.json 裡——沒有葉子、不在團隊名單上——也不能動管理員名單本身。由開發者在管理頁加。
+//
+// KV：staff:u:<UUID>、staff:n:<遊戲名字，小寫>、staff:d:<Discord 代號> → {n 備註, t, by, m 遊戲名字}。
+// 用名字加的那一種只是「還不知道 UUID」：那個人登入一次就改記成 UUID（名字可以改，改掉的
+// 名字會被別人拿走，UUID 不會）。
+
+const DISCORD_SNOWFLAKE = /^\d{17,20}$/;
+
+/**
+ * 開發者填的那一格是哪一種：'u:<UUID>'、'd:<Discord 代號>'、'n:<名字>'；看不懂回 null。
+ * 三種不會混：UUID 是 32 個十六進位字元、Discord 代號是 17 到 20 位數字，遊戲名字最多 16 個字。
+ */
+export function staffKey(text) {
+  const raw = String(text == null ? '' : text).trim();
+  const uuid = plainUuid(raw);
+  if (uuid) return 'u:' + uuid;
+  if (DISCORD_SNOWFLAKE.test(raw)) return 'd:' + raw;
+  return NAME.test(raw) ? 'n:' + raw.toLowerCase() : null;
+}
+
+function parseRecord(raw) {
+  try {
+    const value = JSON.parse(raw || '{}');
+    return value && typeof value === 'object' ? value : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+/** 這個玩家是不是管理員：照 UUID、照他綁的 Discord、照名字（第一次對上就改記成 UUID）。 */
+async function isStaff(env, user) {
+  if (await env.CORPUS.get('staff:u:' + user.uuid)) return true;
+  const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
+  if (discord && await env.CORPUS.get('staff:d:' + discord)) return true;
+  const byName = await env.CORPUS.get('staff:n:' + user.name.toLowerCase());
+  if (!byName) return false;
+  await env.CORPUS.put('staff:u:' + user.uuid, JSON.stringify({ ...parseRecord(byName), m: user.name }));
+  await env.CORPUS.delete('staff:n:' + user.name.toLowerCase());
+  return true;
+}
+
+/**
+ * 這個請求在網站上的權限：{by 是誰（寫進紀錄用）, developer 是不是開發者}；沒有權限回 null。
+ * 開發者＝本人在名單上的開發者那一區（每次都重新查名單），或帶著 ADMIN_TOKEN。
+ * 管理員＝在 staff:* 裡；只用 Discord 登入、還沒綁遊戲 ID 的人也可以是（照 Discord 代號加的）。
+ */
+async function authority(request, env, now) {
+  const header = request.headers.get('authorization') || '';
+  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return { by: 'admin', developer: true };
+  const user = await who(request, env, now);
+  if (user) {
+    if (await isDeveloper(user.name, now)) return { by: user.name, developer: true };
+    return await isStaff(env, user) ? { by: user.name, developer: false } : null;
+  }
+  const session = await discordSession(request, env, now);
+  if (session && await env.CORPUS.get('staff:d:' + session.id)) {
+    return { by: 'Discord: ' + (session.account.n || session.id), developer: false };
+  }
+  return null;
+}
+
+/** 管理員名單。只有開發者看得到。 */
+async function handleStaff(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const staff = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'staff:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const record = parseRecord(await env.CORPUS.get(k.name));
+      const key = k.name.slice(6);
+      staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null,
+        note: record.n || '', t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  staff.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ staff }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleStaffAdd(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const key = staffKey(body.who);
+  if (!key) return no('bad who');
+  const note = body.note == null ? '' : body.note;
+  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  if (await env.CORPUS.get('staff:' + key)) return no('already', 409);
+  const record = { n: note.trim(), t: now, by: mine.by };
+  if (key.startsWith('n:')) record.m = String(body.who).trim();      // 名字照他打的大小寫記著，名單上好認
+  await env.CORPUS.put('staff:' + key, JSON.stringify(record));
+  return json({ ok: true, key });
+}
+
+async function handleStaffRemove(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const body = await readJson(request);
+  const key = body && typeof body.key === 'string' ? body.key : '';
+  if (!/^(?:u:[0-9a-f]{32}|d:\d{17,20}|n:[a-z0-9_]{1,16})$/.test(key)) return no('bad request');
+  await env.CORPUS.delete('staff:' + key);
+  return json({ ok: true });
 }
 
 async function handleUpload(request, env, now) {
@@ -1084,7 +1234,8 @@ async function handleMe(request, env, now) {
     // 用 Discord 登入了、還沒綁遊戲 ID：認得是誰，但還不是任何一個玩家
     const session = await discordSession(request, env, now);
     if (!session) return no('login first', 401);
-    return json({ ok: true, linked: false, discord: { name: session.account.n || '' } });
+    return json({ ok: true, linked: false, discord: { name: session.account.n || '' },
+      staff: Boolean(await env.CORPUS.get('staff:d:' + session.id)) });
   }
   const id = await publicId(user.uuid);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
@@ -1092,13 +1243,16 @@ async function handleMe(request, env, now) {
   const name = user.name.toLowerCase();
   // 特別名單上的人也算成員（上傳的待遇一樣），但不是開發者、也不會有葉子
   const member = Boolean(list && list.names.has(name)) || await hasPerk(env, user.uuid);
+  const developer = Boolean(list && list.developers.has(name));
   return json({
     ok: true,
     linked: true,
     discord: user.discord ? { name: user.discordName } : null,
     name: user.name,
     id,
-    developer: Boolean(list && list.developers.has(name)),
+    developer,
+    // 管理頁開不開：開發者，或開發者加的管理員（不在名單上、沒有葉子）
+    staff: developer || await isStaff(env, user),
     member,
     banned: Boolean(await env.CORPUS.get('ban:' + user.uuid)),
     uploads: env.UPLOADS || 'tiered',
@@ -1109,14 +1263,12 @@ async function handleMe(request, env, now) {
 }
 
 /**
- * 這個請求有沒有管理權。有的話回是誰（寫進紀錄用），沒有回 null。
- * 兩條路：本人在名單上是開發者（每次都重新查名單），或帶著 ADMIN_TOKEN。
+ * 這個請求有沒有管理權（開發者或管理員）。有的話回是誰（寫進紀錄用），沒有回 null。
+ * 只有開發者能做的事（動管理員名單）另外看 authority().developer。
  */
 async function moderator(request, env, now) {
-  const header = request.headers.get('authorization') || '';
-  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return 'admin';
-  const user = await who(request, env, now);
-  return user && await isDeveloper(user.name, now) ? user.name : null;
+  const mine = await authority(request, env, now);
+  return mine ? mine.by : null;
 }
 
 /**
@@ -1385,9 +1537,9 @@ function page(html, lang) {
       'referrer-policy': 'no-referrer',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'DENY',
-      // 只跑自己的程式與 jsDelivr 上的立體檢視；圖從自己這裡、玩家頭像與倉庫的標誌來
+      // 只跑自己的程式與 jsDelivr 上的立體檢視；圖從自己這裡、玩家的頭像與全身圖（minotar）、倉庫的標誌來
       'content-security-policy': "default-src 'self'; "
-        + "img-src 'self' data: blob: https://raw.githubusercontent.com https://mc-heads.net; "
+        + "img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; "
         + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
         + "connect-src 'self'; base-uri 'none'; form-action 'none'",
     },
@@ -1440,6 +1592,10 @@ export default {
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (route === 'GET /admin/staff') return handleStaff(request, env, now);
+    if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
+    if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
+    if (route === 'GET /team') return handleTeam(now);
     if (request.method === 'GET' && route.startsWith('GET /cape/')) {
       return handleCape(env, route.slice('GET /cape/'.length));
     }
