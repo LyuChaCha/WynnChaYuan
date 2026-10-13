@@ -572,7 +572,8 @@ public final class FlowedBlockTest {
         String[] src = {
                 "When casting Uproot, instead",
                 "wear one of the Mystic Masks.",
-                "(Shift + Uproot to remove it)",
+                // 面具重做之後的措辭；舊的「to remove it」那一條已經從語料清掉了
+                "(Shift + Uproot to equip the previous mask)",
         };
         List<StyledText> run = block(src);
         List<Component> out = LineTranslator.translateBlock(
