@@ -185,7 +185,8 @@ public final class Capes {
      */
     static String[] selfFiles() {
         return selfFiles(!com.wynnchayuan.render.Badges.registered(
-                com.wynnchayuan.render.Badges.selfName()).isEmpty());
+                com.wynnchayuan.render.Badges.selfName()).isEmpty()
+                || Presence.member());
     }
 
     static String[] selfFiles(boolean member) {

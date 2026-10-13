@@ -20,6 +20,9 @@
  *   GET    /api/status                            有幾個人、幾件披風
  *   GET    /api/admin/capes                       同上，多了每一件是誰傳的（開發者）
  *   POST   /api/admin/remove   {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者）
+ *   GET    /api/admin/perks                       特別名單（開發者）
+ *   POST   /api/admin/perk     {uuid, note?}      加進特別名單（開發者）
+ *   POST   /api/admin/unperk   {uuid}             從特別名單移除（開發者）
  *   GET    /api/admin/bans                        封禁名單（開發者）
  *   POST   /api/admin/unban    {uuid}             解除封禁（開發者）
  *   POST   /api/admin/credits  {section, name, mc, color}   替名單加一個人：開一個 PR（開發者）
@@ -625,7 +628,10 @@ async function handleLogin(request, env, now) {
   if (!name) return no('bad profile', 403);
   // 管理權是照名字認的：綁著網站帳號的話，那邊記的名字不可以比這裡舊
   await refreshLinkedName(env, body.uuid, name);
-  return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid) });
+  // member：模組在送出之前先擋 GIF 與 1 MB，它要知道這個人是不是有成員的待遇
+  // （credits.json 它自己看得到，特別名單只有這裡知道）
+  return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid),
+    member: await isMember(env, { uuid: body.uuid, name }, now) });
 }
 
 // ---------------------------------------------------------------- 報到與名單
@@ -895,16 +901,41 @@ async function mayUpload(env, user, now, type) {
   if (mode === 'off') return 'uploads off';
   if (await env.CORPUS.get('ban:' + user.uuid)) return 'banned';
   if (mode === 'anyone' || (mode === 'tiered' && type !== 'gif')) return null;
+  if (await hasPerk(env, user.uuid)) return null;
   const list = await credits(now);
   if (!list) return 'try later';
   if (list.names.has(user.name.toLowerCase())) return null;
   return mode === 'tiered' ? 'gif members only' : 'not listed';
 }
 
-/** 這個人的披風最大可以多大。 */
-async function capeLimit(name, now) {
+/**
+ * 特別名單（使用者 2026-10-13：「新增類似贊助者但不顯示的，我們自己輸入 minecraft uuid
+ * 讓他們可以使用 gif 和 20mb」）。
+ *
+ * 開發者在管理頁加的 UUID。上面的人上傳的待遇跟名單成員一樣（GIF、20 MB），
+ * 但不在 credits.json 裡——沒有葉子、不在貢獻者名單上、公開的 /api/list 也看不出來。
+ * 存在 KV 的 perk:<uuid>，內容是 {n 備註, t 什麼時候加的, by 誰加的}。
+ */
+async function hasPerk(env, uuid) {
+  return Boolean(await env.CORPUS.get('perk:' + uuid));
+}
+
+/** 上傳的待遇算不算成員：credits.json 上有名字，或在特別名單上。 */
+async function isMember(env, user, now) {
+  if (await hasPerk(env, user.uuid)) return true;
   const list = await credits(now);
-  return list && list.names.has(name.toLowerCase()) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES;
+  return Boolean(list && list.names.has(user.name.toLowerCase()));
+}
+
+/** 這個人的披風最大可以多大。 */
+async function capeLimit(env, user, now) {
+  return await isMember(env, user, now) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES;
+}
+
+/** UUID 寫成 32 個十六進位字元（去掉連字號、轉小寫）；不是 UUID 回 null。 */
+export function plainUuid(text) {
+  const plain = String(text == null ? '' : text).trim().toLowerCase().replace(/-/g, '');
+  return UUID.test(plain) ? plain : null;
 }
 
 /** 這個人是不是開發者（可以拿掉別人的披風）。 */
@@ -925,7 +956,7 @@ async function handleUpload(request, env, now) {
   const refusal = await mayUpload(env, user, now, found.type);
   if (refusal) return no(refusal, 403);
   // 一般玩家 1 MB，名單上的成員 20 MB。名單讀不到的時候當成一般玩家。
-  const limit = await capeLimit(user.name, now);
+  const limit = await capeLimit(env, user, now);
   if (bytes.length > limit) return json({ ok: false, why: 'too large', limit }, 413);
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
@@ -1059,6 +1090,8 @@ async function handleMe(request, env, now) {
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
   const list = await credits(now);
   const name = user.name.toLowerCase();
+  // 特別名單上的人也算成員（上傳的待遇一樣），但不是開發者、也不會有葉子
+  const member = Boolean(list && list.names.has(name)) || await hasPerk(env, user.uuid);
   return json({
     ok: true,
     linked: true,
@@ -1066,10 +1099,10 @@ async function handleMe(request, env, now) {
     name: user.name,
     id,
     developer: Boolean(list && list.developers.has(name)),
-    member: Boolean(list && list.names.has(name)),
+    member,
     banned: Boolean(await env.CORPUS.get('ban:' + user.uuid)),
     uploads: env.UPLOADS || 'tiered',
-    limit: list && list.names.has(name) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES,
+    limit: member ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES,
     cape: cape && cape.metadata ? { t: cape.metadata.t, v: cape.metadata.v, s: cape.metadata.s,
       x: cape.metadata.x || 0, y: cape.metadata.y || 0 } : null,
   });
@@ -1125,6 +1158,52 @@ async function handleAdminCapes(request, env, now) {
       .map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v }));
   }
   return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 特別名單：誰在上面。只給管理的人看。 */
+async function handlePerks(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const perks = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'perk:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      let record = {};
+      try {
+        record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
+      } catch (e) {
+        record = {};
+      }
+      if (typeof record !== 'object' || record === null) record = {};
+      perks.push({ uuid: k.name.slice(5), note: record.n || '', t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  perks.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ perks }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handlePerkAdd(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const uuid = plainUuid(body.uuid);
+  if (!uuid) return no('bad uuid');
+  const note = body.note == null ? '' : body.note;
+  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  if (await env.CORPUS.get('perk:' + uuid)) return no('already', 409);
+  await env.CORPUS.put('perk:' + uuid, JSON.stringify({ n: note.trim(), t: now, by }));
+  return json({ ok: true, uuid });
+}
+
+async function handlePerkRemove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const uuid = body ? plainUuid(body.uuid) : null;
+  if (!uuid) return no('bad request');
+  await env.CORPUS.delete('perk:' + uuid);
+  return json({ ok: true });
 }
 
 /** 封禁名單。 */
@@ -1352,6 +1431,9 @@ export default {
     if (route === 'GET /capes') return handleCapes(env);
     if (route === 'GET /admin/capes') return handleAdminCapes(request, env, now);
     if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
+    if (route === 'GET /admin/perks') return handlePerks(request, env, now);
+    if (route === 'POST /admin/perk') return handlePerkAdd(request, env, now);
+    if (route === 'POST /admin/unperk') return handlePerkRemove(request, env, now);
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);

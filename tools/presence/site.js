@@ -255,6 +255,10 @@ export const TEXT = {
     'admin.section': '身分', 'admin.name': '顯示的名字', 'admin.mc': 'Minecraft ID', 'admin.color': '葉子顏色（可以不填）',
     'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
     'admin.send': '開 PR',
+    'admin.perks': '特別名單',
+    'admin.perksnote': '名單上的人可以上傳 GIF 披風、檔案上限 20 MB，跟開發者、贊助者、貢獻者一樣，但不會出現在貢獻者名單上，名字前面也不會多一片葉子。輸入他的 Minecraft UUID，有沒有連字號都可以；加了馬上生效。',
+    'admin.uuid': 'Minecraft UUID', 'admin.note': '備註（可以不填）', 'admin.grant': '加入',
+    'admin.noperks': '名單是空的。', 'admin.pwhen': '加入的時間', 'admin.pby': '誰加的',
 
     js: {
       login: '登入', loading: '讀取中…',
@@ -287,6 +291,12 @@ export const TEXT = {
         'login first': '登入過期了，請從遊戲裡重新開一次',
       },
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
+      revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
+      perk: {
+        'bad uuid': 'UUID 要是 32 個十六進位字元（有沒有連字號都可以）',
+        'bad note': '備註最多 60 個字',
+        already: '這個 UUID 已經在名單上了',
+      },
       sending: '送出中…', prDone: 'PR 開好了', prFail: '沒有成功（{s}）',
       credit: {
         'bad name': '顯示的名字不能空白，也不能超過 40 個字',
@@ -384,6 +394,10 @@ export const TEXT = {
     'admin.section': 'Role', 'admin.name': 'Display name', 'admin.mc': 'Minecraft ID', 'admin.color': 'Leaf colour (optional)',
     'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
     'admin.send': 'Open PR',
+    'admin.perks': 'Special list',
+    'admin.perksnote': 'People on this list can upload GIF capes and files up to 20 MB, the same as developers, sponsors and contributors, but they are not shown on the credits list and get no leaf before their name. Enter their Minecraft UUID, with or without hyphens. It takes effect immediately.',
+    'admin.uuid': 'Minecraft UUID', 'admin.note': 'Note (optional)', 'admin.grant': 'Add',
+    'admin.noperks': 'The list is empty.', 'admin.pwhen': 'Added at', 'admin.pby': 'Added by',
 
     js: {
       login: 'Sign in', loading: 'Loading…',
@@ -416,6 +430,12 @@ export const TEXT = {
         'login first': 'Your sign-in expired - open the site from the game again',
       },
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
+      revoke: 'Remove', confirmRevoke: 'Remove {who} from the special list?', perkDone: 'Added',
+      perk: {
+        'bad uuid': 'A UUID is 32 hexadecimal characters, with or without hyphens',
+        'bad note': 'The note can be 60 characters at most',
+        already: 'This UUID is already on the list',
+      },
       sending: 'Sending…', prDone: 'Pull request opened', prFail: 'That did not work ({s})',
       credit: {
         'bad name': 'The display name cannot be empty or longer than 40 characters',
@@ -1050,6 +1070,24 @@ const ADMIN = String.raw`
       <p class="note" id="nobans" hidden style="margin:10px">%%admin.nobans%%</p>
     </div>
 
+    <h2>%%admin.perks%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.perksnote%%</p>
+      <div class="form">
+        <div><label for="p-uuid">%%admin.uuid%%</label><input type="text" id="p-uuid" maxlength="36" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off" spellcheck="false"></div>
+        <div><label for="p-note">%%admin.note%%</label><input type="text" id="p-note" maxlength="60" autocomplete="off"></div>
+        <div><button class="btn primary" id="p-send">%%admin.grant%%</button></div>
+      </div>
+      <p class="msg" id="p-msg" role="status"></p>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>UUID</th><th>%%admin.note%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
+        <tbody id="perks"></tbody>
+      </table>
+      <p class="note" id="noperks" hidden style="margin:10px">%%admin.noperks%%</p>
+    </div>
+
     <h2>%%admin.add%%</h2>
     <div class="panel">
       <p class="note" style="margin:0 0 14px">%%admin.addnote%%</p>
@@ -1097,11 +1135,55 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
+  function loadPerks() {
+    return api('/admin/perks').then(function (r) { return r.json(); }).then(function (data) {
+      var body = document.getElementById('perks');
+      body.replaceChildren();
+      document.getElementById('noperks').hidden = data.perks.length > 0;
+      data.perks.forEach(function (perk) {
+        var row = el('tr');
+        var uuid = el('td');
+        uuid.append(el('code', '', perk.uuid));
+        var drop = el('button', 'btn', L.revoke);
+        drop.onclick = function () {
+          if (!confirm(fmt(L.confirmRevoke, { who: perk.note || perk.uuid }))) return;
+          api('/admin/unperk', { method: 'POST', body: JSON.stringify({ uuid: perk.uuid }), headers: { 'content-type': 'application/json' } })
+            .then(function (r) { if (r.ok) loadPerks(); else alert(fmt(L.liftFail, { s: r.status })); });
+        };
+        var action = el('td');
+        action.append(drop);
+        row.append(uuid, el('td', '', perk.note || '—'), el('td', '', perk.t ? new Date(perk.t).toLocaleString() : '—'), el('td', '', perk.by || '—'), action);
+        body.append(row);
+      });
+    });
+  }
+  document.getElementById('p-send').onclick = function () {
+    var msg = document.getElementById('p-msg');
+    var entry = { uuid: document.getElementById('p-uuid').value.trim(), note: document.getElementById('p-note').value.trim() };
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/perk', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          if (r.ok) {
+            msg.className = 'msg ok';
+            msg.textContent = L.perkDone;
+            document.getElementById('p-uuid').value = '';
+            document.getElementById('p-note').value = '';
+            loadPerks();
+          } else {
+            msg.className = 'msg bad';
+            msg.textContent = L.perk[body.why] || fmt(L.prFail, { s: body.why || r.status });
+          }
+        });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
+  };
   whoami.then(function (me) {
     if (!me || !me.developer) return;
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
     loadBans();
+    loadPerks();
   });
   document.getElementById('c-send').onclick = function () {
     var msg = document.getElementById('c-msg');
