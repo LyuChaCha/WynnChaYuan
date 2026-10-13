@@ -4,6 +4,7 @@
 // 只給改頁面的時候看樣子用——真的登入要連 Mojang，這裡沒有接，改成：
 //   /dev-login?as=dev    當成名單上的開發者登入（名字用 credits.json 的第一位開發者）
 //   /dev-login?as=user   當成一般玩家登入
+//   /dev-login?as=staff  當成管理員登入（不在名單上，但管理頁開得起來）
 //   /dev-login?as=discord  當成剛用 Discord 註冊、還沒綁遊戲 ID 的人登入
 //   /dev-link?code=XXXXXXXX  假裝遊戲裡打了 /wcy link（當成一般玩家 Steve 送的）
 import http from 'node:http';
@@ -57,6 +58,11 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
 data.set('ban:' + '9'.repeat(32), {
   value: JSON.stringify({ n: 'Herobrine', t: Date.now() - 3 * 86400000, by: developer }), metadata: null });
 
+// 一位管理員（照 UUID 加的）與一位還沒登入過的（照名字加的）
+data.set('staff:u:' + 'c'.repeat(32), {
+  value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
+data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
+
 const port = Number(process.argv[2] || 8799);
 http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost:' + port);
@@ -77,8 +83,10 @@ http.createServer(async (req, res) => {
     return;
   }
   if (url.pathname === '/dev-login') {
-    const dev = url.searchParams.get('as') !== 'user';
-    const token = await issueWebToken(env, (dev ? 'a' : 'b').repeat(32), dev ? developer : 'Steve', Date.now());
+    const as = url.searchParams.get('as');
+    const [uuid, name] = as === 'user' ? ['b'.repeat(32), 'Steve']
+      : as === 'staff' ? ['c'.repeat(32), 'Alex'] : ['a'.repeat(32), developer];
+    const token = await issueWebToken(env, uuid, name, Date.now());
     res.writeHead(302, { location: '/account#t=' + token });
     res.end();
     return;

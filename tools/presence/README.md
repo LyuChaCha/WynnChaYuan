@@ -23,10 +23,13 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 | | |
 |---|---|
-| `/` | 首頁：模組是什麼、下載、徽章與披風 |
+| `/` | 首頁：模組是什麼、下載、團隊（開發者、贊助者、貢獻者，照 `credits.json` 畫，每個人是自己的 Minecraft 造型）、關於贊助 |
+| `/features` | 功能：一塊可以按的示範（同一句任務對話，三種顯示方式、七種語言），下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組 |
 | `/capes` | 披風一覽。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖） |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
-| `/admin` | 管理（開發者）：封禁名單、新增成員 |
+| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、新增成員；管理員名單只有開發者看得到 |
+
+每一頁的頁首有「下載」（Modrinth、CurseForge、GitHub Releases）與贊助（Ko-fi）；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
 
 ### 語言
 
@@ -114,6 +117,12 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/bans` | | 封禁名單（開發者） |
 | `POST /api/admin/unban` | `{uuid}` | 解除封禁（開發者） |
 | `POST /api/admin/credits` | `{section, name, mc, color}` | 替名單加一個人：開一個 PR（開發者） |
+| `GET /api/team` | | 名單上的開發者、贊助者、貢獻者：名字、遊戲 ID、葉子顏色（公開，首頁畫團隊用） |
+| `GET /api/admin/staff` | | 管理員名單（**只有開發者**） |
+| `POST /api/admin/staff` | `{who, note?}` | 加一個管理員：`who` 是 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID（**只有開發者**） |
+| `POST /api/admin/unstaff` | `{key}` | 移除一個管理員（**只有開發者**） |
+
+上面寫「開發者」的那幾條，管理員也做得到；寫「只有開發者」的不行。
 
 ## 它記什麼
 
@@ -170,6 +179,12 @@ npx wrangler secret put MOJANG_KEYS
 **不可以上傳的內容：政治、不雅或色情、違反法規、種族歧視或仇恨。**
 
 誰有管理權：`credits.json` 開發者那一區的人。每個請求都會重新查一次名單，所以從名單上拿掉就立刻沒有權限。
+
+**管理員**是開發者在 `/admin` 另外加的人：做得到下面這些管理（刪除、封禁與解除、特別名單、新增成員），但不在 `credits.json` 上——團隊名單沒有他、名字前面沒有葉子、上傳的待遇也跟一般玩家一樣——而且**不能新增或移除管理員**。加的時候填 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID 其中一種：
+
+- 照 Minecraft ID（名字）加的，那個人登入一次就改記成 UUID；名字之後改掉、被別人拿走也不會把權限帶走。
+- 照 Discord 使用者 ID 加的，那個人只用 Discord 登入、還沒綁遊戲 ID 也進得了管理頁。
+- 存在 KV 的 `staff:u:<UUID>`、`staff:n:<名字>`、`staff:d:<Discord ID>`；移除之後馬上沒有權限。
 
 - **刪除、封禁**：在 `/capes` 點開一件披風，開發者看得到是誰傳的，還有「刪除這件披風」與「刪除並封禁上傳的人」。刪除是照圖刪：所有用同一張圖的人一起拿掉。
 - **封禁名單**：`/admin`。誰、什麼時候、誰封的，可以解除。
