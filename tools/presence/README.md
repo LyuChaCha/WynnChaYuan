@@ -15,6 +15,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `site.js` | 四張網頁（共用樣式、頁首、頁尾），中文與英文 |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
+| `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |
 | `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
@@ -23,11 +24,11 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 | | |
 |---|---|
-| `/` | 首頁：模組是什麼、下載、團隊（開發者、贊助者、貢獻者，照 `credits.json` 畫，每個人是自己的 Minecraft 造型）、關於贊助 |
-| `/features` | 功能：一塊可以按的示範（同一句任務對話，三種顯示方式、七種語言），下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組 |
-| `/capes` | 披風一覽。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖） |
+| `/` | 首頁：模組是什麼、下載、團隊（開發者、贊助者、貢獻者照 `credits.json` 畫成名冊，一個人一列，點下去是他在 Wynncraft 的頁面；下面是管理頁登記的貢獻公會，有旗幟與圖示）、關於贊助 |
+| `/features` | 功能：最上面是即時預覽（照遊戲裡設定畫面右邊那一塊做：左邊幾個真的選項，右邊一張小場景，物品／對話／世界與聊天三頁、七種譯文語言），下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組 |
+| `/capes` | 披風一覽。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。登入的人可以直接**穿上這一件**，之後能**復原**成自己原本那一件 |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
-| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、新增成員；管理員名單只有開發者看得到 |
+| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員；管理員名單只有開發者看得到 |
 
 每一頁的頁首有「下載」（Modrinth、CurseForge、GitHub Releases）與贊助（Ko-fi）；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
 
@@ -106,6 +107,8 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/list` | | 名單：有裝的人、有上傳披風的人、關掉披風的人、葉子開了彩色的人、各人挑了哪幾片葉子 |
 | `PUT /api/cape` | 圖檔本體 | 上傳披風（要通行證） |
 | `DELETE /api/cape` | | 拿掉自己的披風（要通行證） |
+| `POST /api/cape/wear` | `{hash}` | 穿上披風一覽裡的某一件（要通行證）。上傳的規矩照舊：GIF 只有成員能穿、不能超過自己的檔案上限、被封禁的不行。原本自己傳的那一件收著 |
+| `POST /api/cape/restore` | | 復原（要通行證）：換回套用之前自己傳的那一件；原本沒有披風就是脫下 |
 | `GET /api/cape/<代碼>` | | 下載某個人的披風 |
 | `GET /api/capes` | | 所有上傳的披風，相同的圖併成一筆 |
 | `GET /api/status` | | 有幾個人、幾件披風 |
@@ -117,7 +120,12 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/bans` | | 封禁名單（開發者） |
 | `POST /api/admin/unban` | `{uuid}` | 解除封禁（開發者） |
 | `POST /api/admin/credits` | `{section, name, mc, color}` | 替名單加一個人：開一個 PR（開發者） |
-| `GET /api/team` | | 名單上的開發者、贊助者、貢獻者：名字、遊戲 ID、葉子顏色（公開，首頁畫團隊用） |
+| `GET /api/team` | | 名單上的開發者、贊助者、貢獻者（名字、遊戲 ID、葉子顏色），加上貢獻公會（名字、標籤、圖的版本）。公開，首頁畫團隊用 |
+| `GET /api/guild/<代碼>/<icon或banner>` | | 貢獻公會的圖示／旗幟（公開） |
+| `GET /api/admin/guilds` | | 貢獻公會的名單，含誰加的（開發者） |
+| `POST /api/admin/guild` | `{name, tag?}` | 加一個貢獻公會：`name` 要跟 Wynncraft 上的一樣（開發者） |
+| `PUT /api/admin/guild/<代碼>/<icon或banner>` | 圖檔本體 | 上傳那個公會的圖示／旗幟：PNG、JPEG、WebP，512 KB 以內（開發者） |
+| `POST /api/admin/unguild` | `{slug}` | 移除一個貢獻公會，連同它的圖（開發者） |
 | `GET /api/admin/staff` | | 管理員名單（**只有開發者**） |
 | `POST /api/admin/staff` | `{who, note?}` | 加一個管理員：`who` 是 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID（**只有開發者**） |
 | `POST /api/admin/unstaff` | `{key}` | 移除一個管理員（**只有開發者**） |
@@ -188,6 +196,8 @@ npx wrangler secret put MOJANG_KEYS
 
 - **刪除、封禁**：在 `/capes` 點開一件披風，開發者看得到是誰傳的，還有「刪除這件披風」與「刪除並封禁上傳的人」。刪除是照圖刪：所有用同一張圖的人一起拿掉。
 - **封禁名單**：`/admin`。誰、什麼時候、誰封的，可以解除。
+- **貢獻公會**：`/admin`。先加公會的名字（要跟 Wynncraft 上的一模一樣，首頁會連到 `wynncraft.com/stats/guild/<名字>`）與標籤，再各上傳一張圖示與旗幟。圖在瀏覽器裡先縮小才傳（圖示最長邊 256、旗幟 512）。整份名單存在 KV 的 `guilds` 一筆，圖在 `gimg:<代碼>:icon`／`gimg:<代碼>:banner`。首頁最多晚五分鐘看到（`/api/team` 讓瀏覽器存五分鐘）。
+- **套用來的披風**：玩家在披風一覽「穿上」別人的披風時，自己那一筆只是指到同一張圖，並把原本自己傳的那一件記在 `p`。照圖刪除（上面那一條）會連別人收著準備復原的那一份一起拿掉，刪了就穿不回來。
 - **新增成員**：`/admin` 的表單。送出之後在倉庫開一個分支、改 `credits.json`、開 PR；合併還是照倉庫的規矩來（檢查要過、要有人按）。要先設好 `GITHUB_TOKEN`：
 
   ```bash
