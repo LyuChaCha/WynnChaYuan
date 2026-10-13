@@ -1,6 +1,6 @@
 // node tools/presence/worker.test.mjs
 import worker, {
-  publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, inspectCape, gifFrames, groupCapes,
+  publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
@@ -679,6 +679,47 @@ check('★ 網頁的通行證一天就過期', await issueWebToken(env, BOB.id, 
 const aliceWeb = (await (await worker.fetch(post('/web-link', {}, aliceToken), env)).json()).url.split('#t=')[1];
 me = await (await worker.fetch(get('/me', aliceWeb), env)).json();
 check('她是開發者，/me 看得到她的披風', me.developer === true && me.member === true && me.cape && me.cape.t === 'png');
+
+// ---- ★ 特別名單：開發者輸入 UUID，那個人就有成員的上傳待遇，但不在名單上、沒有葉子 ----
+const dashed = (id) => [id.slice(0, 8), id.slice(8, 12), id.slice(12, 16), id.slice(16, 20), id.slice(20)].join('-');
+check('UUID 有沒有連字號、大小寫都認；不是 UUID 的不認', plainUuid(dashed(BOB.id).toUpperCase()) === BOB.id
+  && plainUuid(' ' + BOB.id + ' ') === BOB.id && plainUuid('Bob') === null && plainUuid(null) === null
+  && plainUuid(BOB.id + '0') === null);
+check('★ 不是開發者：看不到也加不了特別名單', (await worker.fetch(get('/admin/perks', bobWeb), env)).status === 403
+  && (await worker.fetch(post('/admin/perk', { uuid: BOB.id }, bobWeb), env)).status === 403
+  && (await worker.fetch(post('/admin/unperk', { uuid: BOB.id }, bobWeb), env)).status === 403
+  && (await worker.fetch(get('/admin/perks'), env)).status === 403);
+r = await worker.fetch(post('/admin/perk', { uuid: 'Bob', note: '' }, aliceWeb), env);
+check('不是 UUID 回 400 bad uuid', r.status === 400 && (await r.json()).why === 'bad uuid');
+r = await worker.fetch(post('/admin/perk', { uuid: BOB.id, note: 'x'.repeat(61) }, aliceWeb), env);
+check('備註太長回 400 bad note', r.status === 400 && (await r.json()).why === 'bad note');
+r = await worker.fetch(post('/admin/perk', { uuid: dashed(BOB.id), note: ' 朋友 ' }, aliceWeb), env);
+check('★ 開發者加得進去（帶連字號的 UUID 也行）', r.status === 200 && (await r.json()).uuid === BOB.id
+  && env.CORPUS.data.has('perk:' + BOB.id));
+r = await worker.fetch(post('/admin/perk', { uuid: BOB.id }, aliceWeb), env);
+check('已經在上面的不重複加', r.status === 409 && (await r.json()).why === 'already');
+me = await (await worker.fetch(get('/me', bobWeb), env)).json();
+check('★ 他現在有成員的待遇：20 MB，但不是開發者', me.member === true && me.developer === false
+  && me.limit === MAX_CAPE_BYTES);
+r = await worker.fetch(put('/cape', gif(44, 34, 4), bobToken), env);
+const perkUpload = r.status === 200 ? {} : await r.json();
+check('★ 他可以傳 GIF 了（實際 ' + r.status + ' ' + (perkUpload.why || '') + '）',
+  r.status !== 403 && perkUpload.why !== 'gif members only');
+check('★ 模組登入時知道他有這個待遇', (await (await login(bob)).json()).member === true
+  && (await (await login(alice)).json()).member === true);
+r = await worker.fetch(get('/admin/perks', aliceWeb), env);
+const perkList = (await r.json()).perks;
+check('★ 管理的人看得到名單：UUID、備註、誰加的', r.status === 200 && perkList.length === 1
+  && perkList[0].uuid === BOB.id && perkList[0].note === '朋友' && perkList[0].by === ALICE.name
+  && r.headers.get('cache-control') === 'no-store');
+env.CORPUS.data.delete('presence:list');
+const publicList = JSON.stringify(await (await worker.fetch(get('/list'), env)).json());
+check('★ 公開的名單上看不出誰在特別名單', !publicList.includes('perk') && !publicList.includes(BOB.id));
+r = await worker.fetch(post('/admin/unperk', { uuid: dashed(BOB.id) }, aliceWeb), env);
+me = await (await worker.fetch(get('/me', bobWeb), env)).json();
+check('★ 移除之後待遇就沒了', r.status === 200 && me.member === false && me.limit < MAX_CAPE_BYTES
+  && (await (await login(bob)).json()).member === false
+  && (await (await worker.fetch(get('/admin/perks', aliceWeb), env)).json()).perks.length === 0);
 
 // ---- ★ 開發者：看得到是誰傳的 ----
 r = await worker.fetch(get('/admin/capes', bobWeb), env);

@@ -108,6 +108,9 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/status` | | 有幾個人、幾件披風 |
 | `GET /api/admin/capes` | | 同上，多了每一件是誰傳的（開發者） |
 | `POST /api/admin/remove` | `{id}` 或 `{hash}`，加 `ban` | 拿掉披風、要不要封禁（開發者） |
+| `GET /api/admin/perks` | | 特別名單：誰在上面（開發者） |
+| `POST /api/admin/perk` | `{uuid, note?}` | 加進特別名單：那個人上傳的待遇跟名單成員一樣（GIF、20 MB），但不在 credits.json 上、沒有葉子（開發者） |
+| `POST /api/admin/unperk` | `{uuid}` | 從特別名單移除（開發者） |
 | `GET /api/admin/bans` | | 封禁名單（開發者） |
 | `POST /api/admin/unban` | `{uuid}` | 解除封禁（開發者） |
 | `POST /api/admin/credits` | `{section, name, mc, color}` | 替名單加一個人：開一個 PR（開發者） |

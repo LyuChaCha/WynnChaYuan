@@ -264,8 +264,10 @@ public final class SettingsScreen extends Screen {
             }
             // GIF 只有名單上的成員能傳，一般玩家的檔案上限也比較小（1 MB）。
             // 登記站會再擋一次，這裡先說，省一趟來回。
+            // 特別名單上的人不在 credits.json 裡，是登入時登記站說的（Presence#member）
             boolean member = !com.wynnchayuan.render.Badges.registered(
-                    com.wynnchayuan.render.Badges.selfName()).isEmpty();
+                    com.wynnchayuan.render.Badges.selfName()).isEmpty()
+                    || com.wynnchayuan.Presence.member();
             if (file.getFileName().toString().endsWith(".gif") && !member) {
                 say(T.s("fun.upload.gif_members_only"), Ui.RED);
                 return;
