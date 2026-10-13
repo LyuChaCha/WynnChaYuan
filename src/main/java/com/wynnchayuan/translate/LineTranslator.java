@@ -7563,8 +7563,20 @@ public final class LineTranslator {
         } finally {
             TranslationStore.barItemNames(was);
         }
-        return zh == null || zh.isBlank() ? null : name + " 的" + zh;
+        if (zh == null || zh.isBlank()) {
+            return null;
+        }
+        // 語序與所有格每個語言都不同（中文「X 的Y」、西文「Y de X」），所以句型放在
+        // misc.json 讓各語言自己寫。句型查不到就整行不翻，免得別的語言冒出「的」。
+        String form = store.lookup(OWNER_FORM);
+        if (form == null || !form.contains("{owner}") || !form.contains("{thing}")) {
+            return null;
+        }
+        return form.replace("{owner}", name).replace("{thing}", zh);
     }
+
+    /** 見 {@link #withOwner}：所有格的句型鍵，譯文放在 {@code misc.json}。 */
+    private static final String OWNER_FORM = "{owner}'s {thing}";
 
     /** 見 {@link #withOwner}：所有格的兩種撇號，材質包兩種都出現過。 */
     private static final String[] OWNER_MARKS = {"'s ", "’s "};

@@ -79,13 +79,23 @@ public final class PairedFont {
                     "hud/selector/default/center_left/([0-2])/"
                             + "(display_name|description)\\b");
 
+    /** {@code hud/<selector|wardrobe|emote>/default/bottom_middle} */
+    private static final java.util.regex.Pattern BOTTOM_SLOT =
+            java.util.regex.Pattern.compile(
+                    "hud/(selector|wardrobe|emote)/default/bottom_middle\\b");
+
     /** 這一段原本的字型對應到我們哪一份；只有檔名，沒有命名空間。 */
     public static String slot(String font) {
         if (font == null) {
             return null;
         }
-        if (font.contains("hud/selector/default/bottom_middle")) {
+        // 衣櫃與表情畫面的提示列字型只是 reference 到 selector 那一份，高度一樣
+        if (BOTTOM_SLOT.matcher(font).find()) {
             return "selector_bottom";
+        }
+        // 衣櫃畫面正上方的標題（Character Wardrobe），前面帶定位標記
+        if (font.contains("hud/wardrobe/default/top_middle")) {
+            return "wardrobe_top";
         }
         java.util.regex.Matcher m = SELECTOR_SLOT.matcher(font);
         if (!m.find()) {
@@ -191,6 +201,19 @@ public final class PairedFont {
     public static boolean isSelector(Style style) {
         return nameOf(style).contains("hud/selector/default/");
     }
+
+    /**
+     * 這一段是不是那種「一整行 action bar 拼出整個畫面」的 HUD：角色選擇、
+     * 衣櫃、表情。後兩個的提示列跟角色選擇共用同一份字型（reference），
+     * 同樣得走 {@code ActionBarListener#columnSwap}，否則譯文落回預設字型、
+     * 整段畫到別的高度（使用者 2026-10-13 衣櫃畫面的截圖）。
+     */
+    public static boolean isHudScreen(Style style) {
+        return HUD_SCREEN.matcher(nameOf(style)).find();
+    }
+
+    private static final java.util.regex.Pattern HUD_SCREEN =
+            java.util.regex.Pattern.compile("hud/(selector|wardrobe|emote)/default/");
 
     /** 這一段現在用的是不是我們自己備的那幾份之一。 */
     public static boolean isOurs(Style style) {

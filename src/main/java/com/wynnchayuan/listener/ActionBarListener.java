@@ -534,7 +534,7 @@ public final class ActionBarListener {
     private static boolean hasSelectorSlot(com.wynntils.core.text.StyledText line) {
         for (com.wynntils.core.text.StyledTextPart part : line) {
             com.wynntils.core.text.PartStyle ps = part.getPartStyle();
-            if (ps != null && com.wynnchayuan.render.PairedFont.isSelector(ps.getStyle())) {
+            if (ps != null && com.wynnchayuan.render.PairedFont.isHudScreen(ps.getStyle())) {
                 return true;
             }
         }

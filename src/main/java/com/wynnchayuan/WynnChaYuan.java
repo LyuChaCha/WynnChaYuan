@@ -647,7 +647,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.translate.TranslationUpdate.done(remote);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 reloadTranslations();
-                done.accept(result + "，共 " + translations.size() + " 條");
+                done.accept(com.wynnchayuan.client.T.s("status.sync_total", result, translations.size()));
             });
         }, MOD_ID + "-resync");
         worker.setDaemon(true);

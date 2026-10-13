@@ -73,7 +73,7 @@ public final class RemoteSync {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
-    private static volatile String lastResult = "尚未同步";
+    private static volatile String lastResult;
 
     private RemoteSync() {}
 
@@ -148,7 +148,7 @@ public final class RemoteSync {
     }
 
     public static String lastResult() {
-        return lastResult;
+        return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.sync_none");
     }
 
     /**
@@ -345,7 +345,7 @@ public final class RemoteSync {
         try {
             Files.createDirectories(cacheDir);
         } catch (Exception e) {
-            lastResult = "無法建立快取資料夾：" + e.getMessage();
+            lastResult = com.wynnchayuan.client.T.s("status.sync_cache_failed", e.getMessage());
             return 0;
         }
 
@@ -384,13 +384,13 @@ public final class RemoteSync {
             // 蓋上快取戳記，順便刪掉 repo 已經不列的舊檔——見 TranslationCache。
             changed += TranslationCache.record(cacheDir, fetched, names, index != FAILED);
         } catch (Exception e) {
-            lastResult = "連線失敗：" + e.getMessage() + "（改用本機快取）";
+            lastResult = com.wynnchayuan.client.T.s("status.sync_offline", e.getMessage());
             return changed;
         }
 
         lastResult = failed == 0
-                ? "已從 GitHub 同步 " + ok + " 個檔案（" + changed + " 個有更新）"
-                : "同步 " + ok + " 個檔案，" + failed + " 個失敗（失敗的用舊快取）";
+                ? com.wynnchayuan.client.T.s("status.sync_ok", ok, changed)
+                : com.wynnchayuan.client.T.s("status.sync_partial", ok, failed);
         return changed;
     }
 }
