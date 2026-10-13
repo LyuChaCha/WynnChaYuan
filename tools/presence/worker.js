@@ -31,7 +31,8 @@
  *   POST   /api/cape/restore          復原：換回套用之前自己的那一件；原本沒有就脫下
  *   POST   /api/cape/star      {hash, on}    把一覽上的某一件加進（或移出）我的最愛
  *   POST   /api/cape/public    {on}          我的披風要不要出現在披風一覽
- *   GET    /api/capes/mine            我的最愛與我用過的披風（要通行證）
+ *   GET    /api/capes/mine            我的最愛與我用過的披風（要通行證）；已經移除的順手清掉並回報幾件
+ *   GET    /api/idle/<雜湊>           沒有人穿、還在倒數的那一張圖（公開）
  *   POST   /api/cape/forget    {hash}        把一件從我的使用紀錄拿掉
  *   GET    /api/admin/reviews         審核名單（開發者）
  *   POST   /api/admin/review   {uuid, note?} 或 {hash}   列入審核：之後上傳的披風要先通過才給別人看（開發者）
@@ -45,6 +46,8 @@
  *   GET    /api/admin/staff           管理員名單（只有開發者）
  *   POST   /api/admin/staff    {who, note}   加一個管理員：Minecraft ID、UUID 或 Discord 代號（只有開發者）
  *   POST   /api/admin/unstaff  {key}         移除一個管理員（只有開發者）
+ *   GET    /font/px-<代號>.ttf        預覽畫面用的點陣字（demo-fonts.js）
+ *   （排程）每天一次                  沒有人穿滿七天的披風刪掉（tidy）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
  *
@@ -63,7 +66,8 @@
  * 部署方式見同一個資料夾的 README.md。
  */
 
-import { LANGS, PATHS, pickLang, render, tagOf } from './site.js';
+import { LANGS, PATHS, pickLang, render, renderLost, tagOf } from './site.js';
+import { FONTS } from './demo-fonts.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
 
@@ -1278,9 +1282,12 @@ async function handleUpload(request, env, now) {
   if (pending) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
-  if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h);
+  await revive(env, hash);
+  if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h, have.metadata, now);
   // 自己傳了新的：先前從一覽套用時收著的那一件就不必留了
-  if (have && have.metadata && have.metadata.p && have.metadata.p.h !== hash) await sweep(env, have.metadata.p.h);
+  if (have && have.metadata && have.metadata.p && have.metadata.p.h !== hash) {
+    await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
+  }
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
   return json({ ok: true, id, v: now, ...found, pending });
@@ -1298,8 +1305,9 @@ async function handleUpload(request, env, now) {
 //   r  1＝等審核：一覽與遊戲裡都不給別人看，通過了才算數
 //
 // 其他的鍵：
-//   hist:<代碼>:<雜湊>  我用過的披風（metadata：{t, s, x, y, at}），一個人最多留 HISTORY_MAX 件；
-//                      留著的圖算「有人在用」，所以從紀錄裡隨時穿得回去
+//   hist:<代碼>:<雜湊>  我用過的披風（metadata：{t, s, x, y, at}），一個人最多留 HISTORY_MAX 件。
+//                      只是一筆紀錄，不會把圖留住：那張圖沒有人穿滿七天就刪，紀錄跟著清掉
+//   idle                沒有人穿的披風與它從什麼時候開始沒人穿（見「沒有人穿的披風：留七天」）
 //   fav:<UUID>          我的最愛：{t 上一次改的時間, h [雜湊…]}
 //   stars               每張圖有幾個人加了最愛：{雜湊: 人數}。放同一筆，一覽讀一次就夠
 //   review:<UUID>       審核名單：{n 名字, note, t, by, ok [通過過的雜湊…]}
@@ -1330,16 +1338,13 @@ async function allHistory(env, prefix = 'hist:') {
   return out;
 }
 
-/** 記一筆「我用過這一件」；超過上限就把最舊的拿掉（那張圖沒人用了就刪）。 */
+/** 記一筆「我用過這一件」；超過上限就把最舊的拿掉。 */
 async function noteHistory(env, id, cape, now) {
   await env.CORPUS.put('hist:' + id + ':' + cape.h, '', {
     metadata: { t: cape.t, s: cape.s, x: cape.x || 0, y: cape.y || 0, at: now },
   });
   const mine = (await allHistory(env, 'hist:' + id + ':')).sort((a, b) => (b.at || 0) - (a.at || 0));
-  for (const old of mine.slice(HISTORY_MAX)) {
-    await env.CORPUS.delete(old.key);
-    await sweep(env, old.h);
-  }
+  for (const old of mine.slice(HISTORY_MAX)) await env.CORPUS.delete(old.key);
 }
 
 async function reviewOf(env, uuid) {
@@ -1371,8 +1376,11 @@ async function handleStar(request, env, now) {
   const hash = body && typeof body.hash === 'string' ? body.hash : '';
   if (!HASH.test(hash) || typeof body.on !== 'boolean') return no('bad request');
   const capes = await allCapes(env);
-  // 只能把一覽上看得到的加進來；移出去的話什麼時候都可以（那一件可能已經不在了）
-  if (body.on && !capes.some((cape) => cape.h === hash && listed(cape))) return no('no such cape', 404);
+  const idle = await idleMap(env);
+  // 只能把一覽上看得到的加進來（沒有人穿、還在倒數的也算）；移出去的話什麼時候都可以（那一件可能已經不在了）
+  if (body.on && !capes.some((cape) => cape.h === hash && listed(cape)) && !(idle[hash] && !idle[hash].q)) {
+    return no('no such cape', 404);
+  }
   const favs = await favsOf(env, user.uuid);
   if (now - favs.t < 1000) return no('slow down', 429);
   const has = favs.h.includes(hash);
@@ -1383,7 +1391,7 @@ async function handleStar(request, env, now) {
     await env.CORPUS.put('fav:' + user.uuid, JSON.stringify({ t: now, h: next }));
     map[hash] = Math.max(0, (Number(map[hash]) || 0) + (body.on ? 1 : -1));
     // 順手把已經不在的圖從人數表拿掉
-    const alive = new Set(capes.map((cape) => cape.h));
+    const alive = new Set([...capes.map((cape) => cape.h), ...Object.keys(idle)]);
     for (const key of Object.keys(map)) {
       if (!alive.has(key) || !map[key]) delete map[key];
     }
@@ -1392,14 +1400,38 @@ async function handleStar(request, env, now) {
   return json({ ok: true, on: body.on, stars: Number(map[hash]) || 0 });
 }
 
-/** 我的最愛與我用過的披風。 */
+/**
+ * 我的最愛與我用過的披風。
+ *
+ * <p>順手清掉已經不在的：沒有人穿滿七天的圖會被刪掉，紀錄與最愛裡指到它的那幾筆留著也沒用。
+ * removed 是這一次清了幾件（兩邊都有的算一件），網頁拿它告訴使用者「有幾件披風已經移除」。
+ */
 async function handleMine(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
   const id = await publicId(user.uuid);
-  const history = (await allHistory(env, 'hist:' + id + ':')).sort((a, b) => (b.at || 0) - (a.at || 0))
-    .map((one) => ({ h: one.h, t: one.t, s: one.s, x: one.x || 0, y: one.y || 0, at: one.at || 0 }));
-  return json({ ok: true, id, favs: (await favsOf(env, user.uuid)).h, history }, 200, { 'cache-control': 'no-store' });
+  const alive = new Set(Object.keys(await purge(env, now)));   // 還在倒數的也算還在
+  for (const cape of await allCapes(env)) {
+    alive.add(cape.h);
+    if (cape.p && cape.id === id) alive.add(cape.p.h);        // 自己收著準備復原的那一件
+  }
+  const gone = new Set();
+  const history = [];
+  for (const one of (await allHistory(env, 'hist:' + id + ':')).sort((a, b) => (b.at || 0) - (a.at || 0))) {
+    if (!alive.has(one.h)) {
+      gone.add(one.h);
+      await env.CORPUS.delete(one.key);
+      continue;
+    }
+    history.push({ h: one.h, t: one.t, s: one.s, x: one.x || 0, y: one.y || 0, at: one.at || 0 });
+  }
+  const favs = await favsOf(env, user.uuid);
+  const kept = favs.h.filter((hash) => alive.has(hash));
+  if (kept.length !== favs.h.length) {
+    favs.h.forEach((hash) => { if (!alive.has(hash)) gone.add(hash); });
+    await env.CORPUS.put('fav:' + user.uuid, JSON.stringify({ t: favs.t, h: kept }));
+  }
+  return json({ ok: true, id, favs: kept, history, removed: gone.size }, 200, { 'cache-control': 'no-store' });
 }
 
 /** 把一件從我的使用紀錄拿掉（那張圖沒別人用就真的刪了）。現在穿著的那一件不能拿。 */
@@ -1415,7 +1447,6 @@ async function handleForget(request, env, now) {
     return no('in use', 409);
   }
   await env.CORPUS.delete('hist:' + id + ':' + hash);
-  await sweep(env, hash);
   return json({ ok: true });
 }
 
@@ -1547,9 +1578,20 @@ async function handleWear(request, env, now) {
   if (!/^[0-9a-f]{64}$/.test(hash)) return no('bad request');
   // 只能套用一覽上看得到的（公開、通過審核的），或自己用過的；別人收著準備復原的那一張不算
   const id = await publicId(user.uuid);
-  const onShow = (await allCapes(env)).find((cape) => cape.h === hash && listed(cape));
+  let onShow = (await allCapes(env)).find((cape) => cape.h === hash && listed(cape));
+  if (!onShow) {
+    // 沒有人穿、還在倒數的那幾件也在一覽上
+    const waiting = (await idleMap(env))[hash];
+    if (waiting && !waiting.q) onShow = { ...waiting, h: hash };
+  }
   const past = onShow ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
-  const source = onShow || (past && past.metadata ? { ...past.metadata, h: hash } : null);
+  let source = onShow || (past && past.metadata ? { ...past.metadata, h: hash } : null);
+  if (source && !onShow) {
+    // 從自己的紀錄穿回去：那張圖要還在（沒有人穿滿七天的圖會被刪掉）
+    const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
+    if (blob && blob.value && blob.value.cancel) blob.value.cancel();
+    if (!blob || !blob.metadata) source = null;
+  }
   if (!source) return no('no such cape', 404);
   const refusal = await mayUpload(env, user, now, source.t);
   if (refusal) return no(refusal, 403);
@@ -1574,7 +1616,8 @@ async function handleWear(request, env, now) {
   if (pending) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
-  if (mine) await sweep(env, mine.h);
+  await revive(env, hash);
+  if (mine) await sweep(env, mine.h, mine, now);
   const shown = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(shown && shown.metadata && shown.metadata.c === 0), now);
   return json({ ok: true, id, v: now, t: source.t, back: Boolean(keep), pending });
@@ -1605,7 +1648,7 @@ async function handleRestore(request, env, now) {
   if (await needsReview(env, user.uuid, kept.h)) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
-  await sweep(env, mine.h);
+  await sweep(env, mine.h, mine, now);
   const shown = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(shown && shown.metadata && shown.metadata.c === 0), now);
   return json({ ok: true, cape: true, v: now });
@@ -1635,21 +1678,146 @@ async function allCapes(env) {
   return out;
 }
 
-/** 這張圖沒有人在用了就刪掉。有人收著它準備復原（p）、或留在誰的使用紀錄裡，都算在用。 */
-async function sweep(env, hash) {
-  if (!hash) return;
-  if ((await allCapes(env)).some((cape) => cape.h === hash || (cape.p && cape.p.h === hash))) return;
-  if ((await allHistory(env)).some((one) => one.h === hash)) return;
-  await env.CORPUS.delete('blob:' + hash);
+// ---------------------------------------------------------------- 沒有人穿的披風：留七天
+//
+// 使用者 2026-10-13：「披風部分如果沒人使用保留 7 天，7 天後沒人使用就移除，防止占用伺服器空間」
+// 「包含加星號（的也一樣），可以告知使用者披風已移除」。
+//
+// 最後一個人換掉、脫下之後，那張圖記進閒置清單（idle 這一筆：{雜湊: {t, s, x, y, c, at, q}}），
+// 圖本身先留著。這七天裡它照樣在披風一覽上（標著幾天後移除），誰都可以再穿——一穿上就從
+// 清單拿掉、不再倒數。期滿沒有人穿就刪圖。
+//
+//   - 有人收著它準備復原（p）算在用，不進清單——一個人只收一件。
+//   - 使用紀錄與最愛<b>不算</b>在用：加了星號的一樣期滿就刪。紀錄與最愛裡指到的圖不見了，
+//     /api/capes/mine 會順手清掉並回報清了幾件，網頁告訴他「有幾件披風已經移除」。
+//   - 最後一個穿的人設了不公開、或那一件還在等審核：清單上記 q，一覽上不出現，
+//     只有本人從自己的紀錄穿得回去。
+//   - 管理的人移除的不留，馬上刪（discard）。
+//
+// 清單放同一筆，讀一次就夠（不必 list）。兩個人同時動到它，後寫的會蓋掉先寫的那一筆——
+// 所以每天的整理（tidy，見 scheduled）會把「沒人在用、清單上也沒有」的圖補記回去，
+// 不會有圖永遠留在那裡。
+
+/** 沒有人穿的披風留多久才刪。 */
+const IDLE_KEEP_MS = 7 * 24 * 3600 * 1000;
+
+async function idleMap(env) {
+  return parseRecord(await env.CORPUS.get('idle'));
 }
 
-/** 拿掉一個人的披風：那一筆、沒人用的圖、名單上的記號。回傳那個人的 UUID。 */
+const inUse = (capes, hash) => capes.some((cape) => cape.h === hash || (cape.p && cape.p.h === hash));
+
+/**
+ * 這張圖沒有人在用了：記進閒置清單，開始倒數。已經在清單上的不重算。
+ *
+ * @param from 原本指到它的那一筆（要它的格式、尺寸、最早上傳的時間，以及公開與否）
+ */
+async function sweep(env, hash, from, now) {
+  if (!hash) return;
+  if (inUse(await allCapes(env), hash)) return;
+  const idle = await idleMap(env);
+  if (idle[hash]) return;
+  const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
+  if (blob && blob.value && blob.value.cancel) blob.value.cancel();
+  if (!blob || !blob.metadata) return;
+  const entry = { t: (from && from.t) || blob.metadata.t, s: (from && from.s) || blob.metadata.s, at: now };
+  if (from && from.x && from.y) {
+    entry.x = from.x;
+    entry.y = from.y;
+  }
+  if (from && (from.c || from.v)) entry.c = from.c || from.v;
+  if (!from || from.q || from.r) entry.q = 1;
+  idle[hash] = entry;
+  await env.CORPUS.put('idle', JSON.stringify(idle));
+}
+
+/** 有人穿上了：不再倒數。 */
+async function revive(env, hash) {
+  const idle = await idleMap(env);
+  if (!idle[hash]) return;
+  delete idle[hash];
+  await env.CORPUS.put('idle', JSON.stringify(idle));
+}
+
+/** 馬上刪掉這張圖（管理的人移除的）。還有人在用就不動。 */
+async function discard(env, hash) {
+  if (!hash || inUse(await allCapes(env), hash)) return;
+  await env.CORPUS.delete('blob:' + hash);
+  await revive(env, hash);
+}
+
+/** 期滿的刪掉。回傳整理過的閒置清單。 */
+async function purge(env, now) {
+  const idle = await idleMap(env);
+  const due = Object.keys(idle).filter((hash) => now - (Number(idle[hash] && idle[hash].at) || 0) >= IDLE_KEEP_MS);
+  if (!due.length) return idle;
+  const capes = await allCapes(env);
+  const stars = await starMap(env);
+  let starred = false;
+  for (const hash of due) {
+    delete idle[hash];
+    if (inUse(capes, hash)) continue;                       // 清單上漏拿掉的：有人在穿就不刪
+    await env.CORPUS.delete('blob:' + hash);
+    if (hash in stars) {
+      delete stars[hash];
+      starred = true;
+    }
+  }
+  await env.CORPUS.put('idle', JSON.stringify(idle));
+  if (starred) await env.CORPUS.put('stars', JSON.stringify(stars));
+  return idle;
+}
+
+/**
+ * 每天一次的整理：期滿的刪掉；沒有人在用、清單上也沒有的圖補記進去（從這一刻起算七天）。
+ *
+ * <p>後面那一種是漏網的：改成「留七天」之前只被使用紀錄留住的圖，或兩個人同時動到清單時
+ * 被蓋掉的那一筆。補記的一律不公開——不知道它原本是不是公開的。
+ */
+export async function tidy(env, now) {
+  const idle = await purge(env, now);
+  const capes = await allCapes(env);
+  let added = 0;
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'blob:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const hash = k.name.slice(5);
+      if (!HASH.test(hash) || idle[hash] || inUse(capes, hash)) continue;
+      idle[hash] = { t: (k.metadata && k.metadata.t) || 'png', s: (k.metadata && k.metadata.s) || 0, at: now, q: 1 };
+      added++;
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  if (added) await env.CORPUS.put('idle', JSON.stringify(idle));
+  return { idle: Object.keys(idle).length, added };
+}
+
+/** 閒置清單上某一張圖（披風一覽上「沒有人在穿」的那幾張卡用）。 */
+async function handleIdle(env, hash) {
+  if (!HASH.test(hash)) return no('not found', 404);
+  const one = (await idleMap(env))[hash];
+  if (!one) return no('not found', 404);
+  const have = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
+  if (!have || !have.value) return no('not found', 404);
+  return new Response(have.value, {
+    status: 200,
+    headers: {
+      'content-type': one.t === 'gif' ? 'image/gif' : 'image/png',
+      // 這張圖幾天後就不在了，別讓瀏覽器記太久
+      'cache-control': 'public, max-age=3600',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
+/** 拿掉一個人的披風：那一筆、名單上的記號；沒人用的圖開始倒數。回傳那個人的 UUID。 */
 async function dropCape(env, id, now) {
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (!have || !have.metadata) return null;
   await env.CORPUS.delete('cape:' + id);
-  await sweep(env, have.metadata.h);
-  if (have.metadata.p) await sweep(env, have.metadata.p.h);
+  await sweep(env, have.metadata.h, have.metadata, now);
+  if (have.metadata.p) await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
   const uuid = have.metadata.u;
   if (uuid && UUID.test(uuid)) {
     const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
@@ -1682,12 +1850,32 @@ export function groupCapes(capes) {
   return [...byHash.values()].sort((a, b) => b.v - a.v);
 }
 
-/** 披風一覽：公開、通過審核的那些，相同的圖併成一筆，附上幾個人加了最愛。 */
-async function handleCapes(env) {
-  const groups = groupCapes((await allCapes(env)).filter(listed));
+/** 閒置清單上的一筆，寫成一覽上的一筆：沒有人穿（ids 是空的），idle 是從什麼時候開始沒人穿。 */
+function idleGroup(hash, one) {
+  const group = { h: hash, t: one.t, s: one.s, v: one.at, c: one.c || one.at, ids: [], idle: one.at };
+  if (one.x && one.y) {
+    group.x = one.x;
+    group.y = one.y;
+  }
+  return group;
+}
+
+/**
+ * 披風一覽：公開、通過審核的那些，相同的圖併成一筆，附上幾個人加了最愛。
+ *
+ * <p>沒有人穿、還在倒數的也在上面（idle 有值的那幾筆）；keep 是留多久、now 是伺服器的時間，
+ * 網頁拿這兩個算「幾天後移除」，不靠訪客電腦的時鐘。
+ */
+async function handleCapes(env, now) {
+  const capes = await allCapes(env);
+  const groups = groupCapes(capes.filter(listed));
+  const idle = await purge(env, now);
+  for (const hash of Object.keys(idle)) {
+    if (!idle[hash].q && !capes.some((cape) => cape.h === hash)) groups.push(idleGroup(hash, idle[hash]));
+  }
   const stars = await starMap(env);
   for (const group of groups) group.stars = Number(stars[group.h]) || 0;
-  return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
+  return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
 
 /**
@@ -1828,8 +2016,17 @@ async function handleAdminRemove(request, env, now) {
     if (body.ban === true) {
       await env.CORPUS.put('ban:' + uuid, JSON.stringify({ n: cape.n || null, t: now, by }));
     }
+    // 管理的人拿掉的不留七天：沒有別人在用就馬上刪
+    await discard(env, cape.h);
+    if (cape.p) await discard(env, cape.p.h);
   }
-  return json({ ok: true, removed, banned: body.ban === true });
+  let gone = false;
+  if (typeof body.hash === 'string') {
+    // 沒有人穿、還在倒數的那一張也可以照圖刪
+    gone = Boolean((await idleMap(env))[body.hash]);
+    await discard(env, body.hash);
+  }
+  return json({ ok: true, removed: removed || (gone ? 1 : 0), banned: body.ban === true });
 }
 
 /** 所有上傳的披風，連同每一件是誰傳的。只給管理的人看。 */
@@ -1847,7 +2044,14 @@ async function handleAdminCapes(request, env, now) {
     group.hidden = wearers.every((cape) => cape.q || cape.r);
     group.pending = wearers.some((cape) => cape.r);
   }
-  return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
+  // 沒有人穿、還在倒數的：管理的人全部看得到（原本不公開的也是），要刪可以馬上刪
+  const idle = await purge(env, now);
+  for (const hash of Object.keys(idle)) {
+    if (capes.some((cape) => cape.h === hash)) continue;
+    groups.push({ ...idleGroup(hash, idle[hash]), owners: [], stars: Number(stars[hash]) || 0,
+      hidden: Boolean(idle[hash].q), pending: false });
+  }
+  return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
 
 /** 特別名單：誰在上面。只給管理的人看。 */
@@ -2065,8 +2269,9 @@ function icon(base64) {
   });
 }
 
-function page(html, lang) {
+function page(html, lang, status = 200) {
   return new Response(html, {
+    status,
     headers: {
       'content-type': 'text/html; charset=utf-8',
       'content-language': tagOf(lang),
@@ -2084,7 +2289,30 @@ function page(html, lang) {
   });
 }
 
+/**
+ * 預覽畫面用的點陣字（demo-fonts.js：從模組附的 Fusion Pixel 裁出來的幾百個字）。
+ * 網址帶著內容的雜湊（?v=），所以可以放心讓瀏覽器記一年。
+ */
+function font(path) {
+  const found = /^\/font\/px-([a-z]{2})\.ttf$/.exec(path);
+  const one = found && Object.hasOwn(FONTS, found[1]) ? FONTS[found[1]] : null;
+  if (!one) return no('not found', 404);
+  const bytes = Uint8Array.from(atob(one.data), (c) => c.charCodeAt(0));
+  return new Response(bytes, {
+    status: 200,
+    headers: {
+      'content-type': 'font/ttf',
+      'cache-control': 'public, max-age=31536000, immutable',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
 export default {
+  /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
+  async scheduled(event, env) {
+    await tidy(env, Date.now());
+  },
   async fetch(request, env) {
     const url = new URL(request.url);
     const now = Date.now();
@@ -2100,6 +2328,7 @@ export default {
       return page(render(path, lang, bare), lang);
     }
     if (request.method === 'GET' && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
+    if (request.method === 'GET' && path.startsWith('/font/')) return font(path);
     if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
     if (request.method === 'GET' && path === '/auth/discord/callback') {
       return handleDiscordCallback(request, env, now);
@@ -2107,7 +2336,12 @@ export default {
     if (request.method === 'GET' && path === '/gallery') {
       return Response.redirect(url.origin + '/capes', 302);
     }
-    if (!path.startsWith('/api/')) return no('not found', 404);
+    if (!path.startsWith('/api/')) {
+      // 找不到這一頁：給人看的是一頁有頁首頁尾的網頁（照他的語言），不是一行 JSON
+      if (request.method !== 'GET') return no('not found', 404);
+      const lang = pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
+      return page(renderLost(lang), lang, 404);
+    }
     const route = request.method + ' ' + path.slice(4);
     if (route === 'POST /challenge') return handleChallenge(env, now);
     if (route === 'POST /login') return handleLogin(request, env, now);
@@ -2121,7 +2355,7 @@ export default {
     if (route === 'GET /list') return handleList(env, now);
     if (route === 'PUT /cape') return handleUpload(request, env, now);
     if (route === 'DELETE /cape') return handleRemove(request, env, now);
-    if (route === 'GET /capes') return handleCapes(env);
+    if (route === 'GET /capes') return handleCapes(env, now);
     if (route === 'GET /admin/capes') return handleAdminCapes(request, env, now);
     if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
     if (route === 'GET /admin/perks') return handlePerks(request, env, now);
@@ -2153,6 +2387,9 @@ export default {
         if (picture[1] === 'PUT' && picture[2]) return handleGuildImage(request, env, now, picture[3], picture[4]);
         if (picture[1] === 'GET' && !picture[2]) return handleGuildPicture(env, picture[3], picture[4]);
       }
+    }
+    if (request.method === 'GET' && route.startsWith('GET /idle/')) {
+      return handleIdle(env, route.slice('GET /idle/'.length));
     }
     if (request.method === 'GET' && route.startsWith('GET /cape/')) {
       return handleCape(env, route.slice('GET /cape/'.length), url.searchParams.get('k'));

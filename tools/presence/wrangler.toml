@@ -12,6 +12,10 @@ routes = [
 # 有設 routes 的話 workers.dev 預設會關掉；留著，方便部署完先用那個網址看一眼。
 workers_dev = true
 
+# 每天一次的整理：沒有人穿滿七天的披風刪掉（worker.js 的 scheduled）。時間是 UTC。
+[triggers]
+crons = ["41 20 * * *"]
+
 [[kv_namespaces]]
 binding = "CORPUS"
 id = "70fa88851cfa4cee87b3e818dc40cb75"
