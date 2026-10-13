@@ -506,17 +506,35 @@ pushBack(aliceId);
 r = await worker.fetch(put('/cape', png(22, 17), aliceToken), env);
 check('她改傳跟他一樣的圖', r.status === 200);
 const histOf = (id) => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('hist:' + id + ':')).map((k) => k.split(':')[2]);
-check('★ 兩個人同一張圖只存一份；她原本那張留在她的使用紀錄裡（實際 ' + blobs().length + ' 份）',
-  blobs().length === 2 && histOf(aliceId).length === 2);
+// 沒有人穿的披風留七天（使用者 2026-10-13）：閒置清單與「把時間快轉」
+const idleNow = () => JSON.parse((env.CORPUS.data.get('idle') || { value: '{}' }).value || '{}');
+const expire = (hash) => {
+  const map = idleNow();
+  for (const h of Object.keys(map)) if (!hash || h === hash) map[h].at -= 8 * 86400000;
+  env.CORPUS.data.set('idle', { value: JSON.stringify(map), metadata: null });
+};
+check('★ 兩個人同一張圖只存一份；她原本那張沒有人穿了，先留著倒數（實際 ' + blobs().length + ' 份）',
+  blobs().length === 2 && histOf(aliceId).length === 2 && Object.keys(idleNow()).length === 1);
 {
-  // 她把舊的那一件從紀錄拿掉：沒人用的圖這時候才真的刪
+  // 她也可以自己從紀錄拿掉；那只是少一筆紀錄，圖照樣等七天
   const wearing = env.CORPUS.data.get('cape:' + aliceId).metadata.h;
   const stale = histOf(aliceId).find((h) => h !== wearing);
   r = await worker.fetch(post('/cape/forget', { hash: wearing }, aliceToken), env);
   check('現在穿著的那一件不能從紀錄拿掉', r.status === 409 && (await r.json()).why === 'in use');
   check('沒登入不能動紀錄', (await worker.fetch(post('/cape/forget', { hash: stale }), env)).status === 401);
   r = await worker.fetch(post('/cape/forget', { hash: stale }, aliceToken), env);
-  check('★ 從紀錄拿掉之後，沒人用的圖才真的刪', r.status === 200 && blobs().length === 1 && histOf(aliceId).length === 1);
+  check('★ 從紀錄拿掉：只是少一筆紀錄', r.status === 200 && blobs().length === 2 && histOf(aliceId).length === 1);
+  const seen = await (await worker.fetch(api('/capes'), env)).json();
+  const waiting = seen.capes.find((c) => c.h === stale);
+  check('★ 沒有人穿的那一張還在一覽上：0 個人、記著從什麼時候開始、伺服器說留七天', seen.capes.length === 2
+    && Boolean(waiting) && waiting.ids.length === 0 && waiting.idle > 0 && seen.keep === 7 * 86400000 && seen.now >= waiting.idle);
+  check('★ 它的圖照雜湊拿得到；不在清單上的雜湊拿不到', (await worker.fetch(get('/idle/' + stale), env)).status === 200
+    && (await worker.fetch(get('/idle/' + wearing), env)).status === 404
+    && (await worker.fetch(get('/idle/nope'), env)).status === 404);
+  expire(stale);
+  check('★ 滿七天沒有人穿：一覽上沒有了，圖也刪了', (await (await worker.fetch(api('/capes'), env)).json()).capes.length === 1
+    && blobs().length === 1 && Object.keys(idleNow()).length === 0
+    && (await worker.fetch(get('/idle/' + stale), env)).status === 404);
 }
 r = await worker.fetch(api('/capes'), env);
 const capes = (await r.json()).capes;
@@ -635,7 +653,7 @@ for (const lang of LANGS) {
 check('html 上的語言標籤各不相同', new Set(LANGS.map((l) => TEXT[l].html)).size === LANGS.length);
 // 看得到的字：拿掉程式與樣式、標籤；語言選單與首頁的語言清單本來就是各寫各的
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
-  .replace(/<span class="chip">[^<]*<\/span>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ')
+  .replace(/<button type="button" class="chip"[^>]*>[^<]*<\/button>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ')
   .replace(/<div class="seg" id="demo-langs"[\s\S]*?<\/div>/g, ' ')        // 功能頁示範的語言鈕：各寫各的名字
   .replace(/<[^>]+>/g, ' ');
 const cjk = /[㐀-鿿＀-￯　-〿]/;
@@ -867,10 +885,23 @@ pushBack(bobId);
 await worker.fetch(put('/cape', png(22, 17), bobToken), env);
 r = await worker.fetch(del('/cape', bobToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
-check('自己拿掉披風：那一筆與名單都沒了；圖還留在他的使用紀錄裡', r.status === 200
-  && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && histOf(bobId).length > 0);
-for (const hash of histOf(bobId)) await worker.fetch(post('/cape/forget', { hash }, bobToken), env);
-check('★ 紀錄也清掉之後，圖檔才都沒了', blobs().length === 0 && histOf(bobId).length === 0);
+check('自己拿掉披風：那一筆與名單都沒了；圖先留著倒數', r.status === 200
+  && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && histOf(bobId).length > 0
+  && blobs().length === 2 && Object.keys(idleNow()).length === 2);
+{
+  // 每天一次的整理：期滿的刪掉；沒有人在用、清單上也沒有的圖補記進去（不公開），再等七天
+  const stray = 'blob:' + 'ab'.repeat(32);
+  env.CORPUS.data.set(stray, { value: new Uint8Array([1, 2, 3]), metadata: { t: 'png', s: 3 } });
+  await worker.scheduled({}, env);
+  check('★ 整理：還沒滿七天的不動，漏網的圖補記進清單（不公開）', blobs().length === 3
+    && idleNow()['ab'.repeat(32)].q === 1
+    && !(await (await worker.fetch(api('/capes'), env)).json()).capes.some((c) => c.h === 'ab'.repeat(32)));
+  expire();
+  await worker.scheduled({}, env);
+  check('★ 整理：滿七天的全部刪掉', blobs().length === 0 && Object.keys(idleNow()).length === 0);
+  r = await worker.fetch(get('/capes/mine', bobToken), env);
+  check('★ 他的使用紀錄跟著清掉，告訴他移除了幾件', (await r.json()).removed === 2 && histOf(bobId).length === 0);
+}
 
 // ---- ★ 檔案上限分級：一般玩家 1 MB，名單上的成員 20 MB ----
 const padded = (width, height, size) => {
@@ -967,8 +998,59 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
     && en.ui['mode.replace'] === 'Replace in place');
   check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
-    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 16 && Object.values(lang).every((v) => v.length > 0))
+    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 19 && Object.values(lang).every((v) => v.length > 0))
     && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
+  // 預覽是一整面「遊戲畫面」：功能頁與首頁最上面用同一份程式，字是遊戲裡那一套點陣字
+  {
+    const { FONTS } = await import('./demo-fonts.js');
+    check('★ 功能頁與首頁都有那一面遊戲畫面（同一份 makeStage）', ['/features', '/'].every((p) =>
+      pages[p].includes('function makeStage(') && pages[p].includes('id="stage-parts"') && pages[p].includes('class="screen"'))
+      && pages['/'].includes('id="hero-stage"') && pages['/features'].includes('id="play-stage"')
+      && !pages['/capes'].includes('function makeStage('));
+    check('首頁的語言是七顆按鈕，各自標著要換成哪一種譯文', (pages['/'].match(/class="chip" data-lang="[a-z]{2}_[a-z]{2}"/g) || []).length === 7
+      && Object.keys(embedded(pages['/']).text).length === 7);
+    check('四份點陣字都宣告了，網址帶著內容的雜湊', Object.keys(FONTS).join() === 'tc,sc,ja,ko'
+      && Object.keys(FONTS).every((code) => pages['/features'].includes('/font/px-' + code + '.ttf?v=' + FONTS[code].v)));
+    // 場景裡每一個字，對應的那一份字型都要有（勾與叉是網頁自己畫的）
+    const need = { tc: ['zh_tw', 'ru_ru', 'es_es', 'tr_tr'], sc: ['zh_cn'], ja: ['ja_jp'], ko: ['ko_kr'] };
+    const missing = [];
+    for (const code of Object.keys(need)) {
+      for (const lang of need[code]) {
+        for (const value of Object.values(DEMO.text[lang])) {
+          for (const ch of value) if (!'✔✖✓'.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
+        }
+      }
+      for (const src of Object.keys(DEMO.text.zh_tw)) {
+        for (const ch of src) if (!'✔✖✓'.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
+      }
+    }
+    check('★ 場景裡的每一個字，字型裡都有' + (missing.length ? '（缺 ' + [...new Set(missing)].join(' ') + '）' : ''), missing.length === 0);
+    r = await worker.fetch(new Request('https://x.test/font/px-tc.ttf?v=' + FONTS.tc.v), env);
+    const bytes = new Uint8Array(await r.arrayBuffer());
+    check('★ 字型拿得到：是 TrueType、可以長期快取', r.status === 200 && r.headers.get('content-type') === 'font/ttf'
+      && r.headers.get('cache-control').includes('immutable') && bytes.length > 5000
+      && bytes[0] === 0 && bytes[1] === 1 && bytes[2] === 0 && bytes[3] === 0);
+    check('裁出來的字型留著版權與授權（OFL 的要求）', new TextDecoder('utf-16be').decode(bytes).includes('TakWolf')
+      || new TextDecoder('latin1').decode(bytes).includes('TakWolf'));
+    check('沒有這一份的字型：404', (await worker.fetch(new Request('https://x.test/font/px-xx.ttf'), env)).status === 404
+      && (await worker.fetch(new Request('https://x.test/font/../worker.js'), env)).status === 404);
+  }
+  // 找不到這一頁：一頁像樣的網頁，照訪客的語言
+  {
+    r = await worker.fetch(new Request('https://x.test/no-such-page', { headers: { 'accept-language': 'zh-TW' } }), env);
+    const lost = await r.text();
+    check('★ 找不到的網址：404，但是一頁有頁首與回去的路的網頁', r.status === 404
+      && r.headers.get('content-type').startsWith('text/html') && lost.includes('class="lost"')
+      && lost.includes('找不到這一頁') && lost.includes('href="/features"') && lost.includes('class="brand"')
+      && !/%%[\w.]+%%/.test(lost));
+    r = await worker.fetch(new Request('https://x.test/no-such-page', { headers: { 'accept-language': 'en-US' } }), env);
+    check('英文的訪客看到英文的', (await r.text()).includes('This page does not exist'));
+    check('不是 GET、或是 /api 底下的照舊回 JSON', (await worker.fetch(new Request('https://x.test/nope', { method: 'POST' }), env))
+      .headers.get('content-type').includes('json')
+      && (await worker.fetch(api('/nope'), env)).headers.get('content-type').includes('json'));
+    check('★ 每一頁第一個可以聚焦的是「跳到主要內容」', PATHS.every((p) => pages[p].includes('<a class="skip" href="#main">')
+      && pages[p].includes('<main id="main">')));
+  }
   check('預覽用到的每一個選項，八種語言都有名稱與說明', Object.keys(DEMO.ui).join() === 'zh,zh-cn,en,ja,ko,ru,es,tr'
     && Object.values(DEMO.ui).every((lang) => Object.values(lang).every((v) => typeof v === 'string' && v.length > 0)
       && ['items.tooltip', 'world.tracker', 'dialogue.choices'].every((k) => lang[k] && lang[k + '.hint'])));
@@ -1281,22 +1363,70 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 移出最愛：人數減一', r.status === 200 && (await r.json()).stars === 1
     && (await (await worker.fetch(get('/capes/mine', oak.token), env)).json()).favs.length === 0);
 
-  // 使用紀錄：穿過的留著，從紀錄穿得回去
+  // 使用紀錄：穿過的記著。他自己那一件收著等復原，所以圖還在
   later(oak);
   check('他穿上她那一件', (await send('/cape/wear', { hash: H1 }, oak)).status === 200);
-  check('★ 兩件都在他的使用紀錄裡，新的在前', (await (await worker.fetch(get('/capes/mine', oak.token), env)).json())
-    .history.map((one) => one.h).join() === H1 + ',' + H2);
+  body = await (await worker.fetch(get('/capes/mine', oak.token), env)).json();
+  check('★ 兩件都在他的使用紀錄裡，新的在前；沒有東西被移除', body.history.map((one) => one.h).join() === H1 + ',' + H2
+    && body.removed === 0 && env.CORPUS.data.has('blob:' + H2));
+  check('★ 收著等復原的那一件，本人照雜湊拿得到；別人拿不到', (await picture(oak, H2)).status === 200
+    && (await picture(oak, 'e'.repeat(64))).status === 404 && (await picture(ivy, H2)).status === 404);
+  // 沒有人穿的披風留七天，期滿才刪——加了最愛的也一樣（使用者 2026-10-13）
   later(oak);
   check('自己再傳第三件', (await upload(oak, P3)).status === 200);
-  check('★ 一覽上已經沒有他最早那一件，圖還留著（在他的紀錄裡）', !(await gallery()).some((c) => c.h === H2)
-    && env.CORPUS.data.has('blob:' + H2) && hist(oak).length === 3);
-  check('★ 紀錄裡的圖本人照雜湊拿得到；沒在他紀錄裡的雜湊拿不到', (await picture(oak, H2)).status === 200
-    && (await picture(oak, 'e'.repeat(64))).status === 404 && (await picture(ivy, H2)).status === 404);
-  check('別人不能從他的紀錄穿（一覽上沒有）', (await send('/cape/wear', { hash: H2 }, elm)).status === 404);
+  let waiting = (await gallery()).find((c) => c.h === H2);
+  check('★ 他最早那一件沒有人穿了：留在一覽上倒數，圖還在', Boolean(waiting) && waiting.ids.length === 0 && waiting.idle > 0
+    && waiting.x === 1056 && env.CORPUS.data.has('blob:' + H2) && (await worker.fetch(get('/idle/' + H2), env)).status === 200);
+  cool(elm);
+  check('★ 倒數中的照樣可以加最愛', (await (await send('/cape/star', { hash: H2, on: true }, elm)).json()).stars === 1
+    && (await gallery()).find((c) => c.h === H2).stars === 1);
   later(oak);
   r = await send('/cape/wear', { hash: H2 }, oak);
-  check('★ 他自己從紀錄穿回最早那一件', r.status === 200 && meta(oak).h === H2
-    && (await gallery()).some((c) => c.h === H2));
+  check('★ 有人再穿上：不再倒數', r.status === 200 && meta(oak).h === H2 && !(H2 in idleNow())
+    && (await gallery()).find((c) => c.h === H2).ids.length === 1 && !('idle' in (await gallery()).find((c) => c.h === H2)));
+  check('復原：換回自己傳的第三件，最早那一件重新開始倒數', (await send('/cape/restore', {}, oak)).status === 200
+    && meta(oak).h === H3 && H2 in idleNow());
+  expire(H2);
+  check('★ 滿七天沒有人穿：一覽上沒有，圖也刪了（就算在紀錄與別人的最愛裡），人數表也清掉', !(await gallery()).some((c) => c.h === H2)
+    && !env.CORPUS.data.has('blob:' + H2) && hist(oak).includes(H2)
+    && !(H2 in JSON.parse(env.CORPUS.data.get('stars').value)));
+  check('★ 刪掉的圖誰都拿不到、也穿不回去', (await picture(oak, H2)).status === 404
+    && (await worker.fetch(get('/idle/' + H2), env)).status === 404
+    && (await send('/cape/wear', { hash: H2 }, elm)).status === 404
+    && (await send('/cape/wear', { hash: H2 }, oak)).status === 404 && meta(oak).h !== H2);
+  body = await (await worker.fetch(get('/capes/mine', oak.token), env)).json();
+  check('★ 看「我的」的時候告訴他有一件已經移除，紀錄跟著清掉', body.removed === 1
+    && !body.history.some((one) => one.h === H2) && !hist(oak).includes(H2));
+  check('只說一次：再看就沒有了', (await (await worker.fetch(get('/capes/mine', oak.token), env)).json()).removed === 0);
+  body = await (await worker.fetch(get('/capes/mine', elm.token), env)).json();
+  check('★ 加了最愛的人也被告知，最愛裡清掉那一件、還在的留著', body.removed === 1 && body.favs.join() === H1
+    && JSON.parse(env.CORPUS.data.get('fav:' + elm.uuid).value).h.join() === H1);
+  cool(elm);
+  await send('/cape/star', { hash: H1, on: false }, elm);
+  // 不公開的披風沒有人穿了：一樣留七天，但不出現在一覽上；本人從紀錄穿得回去，管理的人看得到、可以馬上刪
+  {
+    const P9 = mark(png(88, 68), 9);
+    const H9 = await sha(P9);
+    later(oak);
+    check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).q === 1);
+    later(oak);
+    await upload(oak, P3, '?public=1');
+    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能穿', idleNow()[H9].q === 1
+      && !(await gallery()).some((c) => c.h === H9) && (await send('/cape/wear', { hash: H9 }, ivy)).status === 404);
+    const seenByStaff = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === H9);
+    check('★ 管理的人看得到它：沒有人穿、不公開、在倒數', Boolean(seenByStaff) && seenByStaff.hidden === true
+      && seenByStaff.owners.length === 0 && seenByStaff.idle > 0);
+    later(oak);
+    check('★ 本人從自己的紀錄穿得回去', (await send('/cape/wear', { hash: H9 }, oak)).status === 200 && meta(oak).h === H9
+      && !(H9 in idleNow()));
+    check('復原之後又開始倒數', (await send('/cape/restore', {}, oak)).status === 200 && H9 in idleNow());
+    r = await send('/admin/remove', { hash: H9 }, { token: aliceWeb });
+    check('★ 管理的人照圖刪：不必等七天', r.status === 200 && (await r.json()).removed === 1
+      && !env.CORPUS.data.has('blob:' + H9) && !(H9 in idleNow()));
+  }
+  later(oak);
+  r = await send('/cape/wear', { hash: H1 }, oak);
+  check('還在一覽上的照樣從紀錄穿得回去', r.status === 200 && meta(oak).h === H1);
   // 紀錄有上限：超過的把最舊的拿掉
   for (let i = 0; i < 9; i++) {
     env.CORPUS.data.set('hist:' + elm.id + ':' + String(i).repeat(64), { value: '', metadata: { t: 'png', s: 1, at: i + 1 } });
@@ -1359,7 +1489,9 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 通過審核：別人看得到了', r.status === 200 && (await r.json()).approved === 1 && !meta(elm).r
     && (await gallery()).some((c) => c.h === WAIT) && elm.id in (await roster()));
   later(elm);
-  await send('/cape/wear', { hash: before }, elm);
+  // 換穿一覽上別人的一件（自己那一件收著等復原），再穿回來
+  await send('/cape/wear', { hash: (await gallery()).find((c) => c.h !== WAIT && c.h !== before).h }, elm);
+  check('換穿別人的：自己傳的那一件收著', meta(elm).h !== WAIT && meta(elm).p && meta(elm).p.h === WAIT);
   later(elm);
   r = await send('/cape/wear', { hash: WAIT }, elm);
   check('★ 通過過的那一張，他之後再穿不必再審', r.status === 200 && (await r.json()).pending === false && !meta(elm).r);

@@ -67,6 +67,15 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
   if (alone[0]) alone[0].q = 1;
   if (alone[1]) alone[1].r = 1;
   data.set('stars', { value: JSON.stringify(stars), metadata: null });
+  // 沒有人穿的披風留七天：兩件已經沒有人穿，一件還剩四天、一件是最後一天
+  const idle = {};
+  [[alone[2], 3], [alone[3], 6.5]].forEach(([cape, days]) => {
+    if (!cape) return;
+    const key = [...data.keys()].find((k) => k.startsWith('cape:') && data.get(k).metadata === cape);
+    data.delete(key);
+    idle[cape.h] = { t: cape.t, s: cape.s, c: cape.c, at: Date.now() - days * 86400000 };
+  });
+  data.set('idle', { value: JSON.stringify(idle), metadata: null });
   data.set('review:' + '0'.repeat(32), {
     value: JSON.stringify({ n: people[1], note: '示範', t: Date.now() - 5400000, by: developer, ok: [] }), metadata: null });
 }
