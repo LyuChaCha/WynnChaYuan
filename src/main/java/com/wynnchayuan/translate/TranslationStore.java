@@ -288,6 +288,8 @@ public final class TranslationStore {
         terms.clear();
         uiLabels.clear();
         pageNames.clear();
+        pageTitleNames.clear();
+        pageTitleSplit.clear();
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
@@ -539,6 +541,10 @@ public final class TranslationStore {
                     String name = PageNames.nameOfTitle(key);
                     if (name != null && name.indexOf('{') < 0) {
                         pageNames.add(name.strip());   // 見 #isPageName
+                        JsonElement value = obj.get(key);
+                        if (value != null && value.isJsonPrimitive()) {
+                            notePageTitle(name.strip(), value.getAsString());   // 見 #pageTitleName
+                        }
                     }
                 }
                 if (file.getFileName().toString().equals(UI_LABELS)) {
@@ -1409,6 +1415,54 @@ public final class TranslationStore {
      */
     public boolean isPageName(String text) {
         return text != null && pageNames.contains(text.strip());
+    }
+
+    /**
+     * 卡片標題上這個內容叫什麼：{@code Scorched Earth [Cave]} 的譯文是「焦土 [洞窟]」，
+     * 這裡記的就是 {@code Scorched Earth -> 焦土}。
+     *
+     * <h2>為什麼要有（使用者 2026-10-13 的截圖）</h2>
+     * Wynntils 內容書左邊那一列寫著「燃燒大地」，右邊那張卡的標題是「焦土 [洞窟]」——
+     * 同一個洞窟兩個名字。清單送來的是裸名 {@code Scorched Earth}，照一般的查表拿到的是
+     * 弓箭手技能的譯名；卡片走的是帶 {@code [Cave]} 的那一條。兩個鍵各自都沒錯，
+     * 錯在清單問錯了人。裸名在語料裡補不進去——跟技能、裝備撞名的那幾個
+     * （{@code Dust Bowl} 是一雙靴子）會被「同一句原文只能一種譯法」擋下來。
+     *
+     * <p>所以清單不靠裸名的條目：卡片怎麼叫，清單就怎麼叫。
+     *
+     * <p>同一個名字有兩種類型、譯名又不一樣的（{@code Taproot} 是任務也是探索點）
+     * 不在這裡——光看名字分不出是哪一個，照舊走一般的查表。
+     *
+     * @return 卡片上的譯名；語料沒有這張卡、譯名跟原文一樣（還沒翻）、或上面說的
+     *         那種分不出來的，回傳 {@code null}
+     */
+    public String pageTitleName(String text) {
+        return text == null ? null : pageTitleNames.get(text.strip());
+    }
+
+    private final Map<String, String> pageTitleNames = new java.util.HashMap<>();
+
+    /** 兩種類型、兩種譯名的那幾個名字。見 {@link #pageTitleName}。 */
+    private final java.util.Set<String> pageTitleSplit = new java.util.HashSet<>();
+
+    private void notePageTitle(String name, String translated) {
+        if (translated == null || pageTitleSplit.contains(name)) {
+            return;
+        }
+        String shown = translated.strip();
+        int cut = shown.lastIndexOf(" [");
+        if (cut <= 0 || !shown.endsWith("]") || shown.indexOf('\n') >= 0) {
+            return;                            // 譯文不是「名字 [類型]」的形狀（空白、還沒翻）
+        }
+        String local = shown.substring(0, cut).strip();
+        if (local.isEmpty() || local.equals(name)) {
+            return;                            // 名字還是原文：不算一種譯法
+        }
+        String had = pageTitleNames.putIfAbsent(name, local);
+        if (had != null && !had.equals(local)) {
+            pageTitleNames.remove(name);
+            pageTitleSplit.add(name);
+        }
     }
 
     /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */

@@ -179,7 +179,11 @@ public final class WynntilsText {
         if (core.isEmpty()) {
             return null;
         }
-        String hit = store.lookup(core);
+        // 追蹤的那個內容的名字：照卡片標題的叫法（見 TranslationStore#pageTitleName）
+        String hit = store.pageTitleName(core);
+        if (hit == null) {
+            hit = store.lookup(core);
+        }
         return hit == null || hit.isBlank() ? null : text.substring(0, start) + hit;
     }
 
@@ -754,11 +758,14 @@ public final class WynntilsText {
             // 出了這一段要翻，進了快取就分不出來了。
             return text;
         }
+        // 現在是不是 Wynntils 的內容書或地圖：那裡的裸名是內容的名字。進快取的鍵——
+        // 同一個字串在別的畫面上可能是技能或裝備。
+        boolean content = contentScreen.getAsBoolean();
         Cached seen;
         synchronized (SCREEN_CACHE) {
             seen = SCREEN_CACHE.get(text);
         }
-        if (seen != null && seen.fresh(store)) {
+        if (seen != null && seen.fresh(store) && seen.content() == content) {
             // 查不到的那一種回傳<b>呼叫端那一個</b>，不是快取裡的——
             // 「沒翻到就原樣回去」在這個入口是用 == 比的（見 WynntilsTextTest）。
             return seen.out() == null ? text : seen.out();
@@ -782,6 +789,16 @@ public final class WynntilsText {
         if (hit != null && text.getString().indexOf('\n') < 0) {
             hit = ScoreboardFlow.oneLine(hit);
         }
+        // 內容書清單那一列：卡片標題怎麼叫，這裡就怎麼叫。裸名照一般的查表會對到
+        // 同名的技能或裝備（Scorched Earth、Dust Bowl）——清單一個名字、卡片另一個名字。
+        if (content) {
+            String title = store.pageTitleName(text.getStringWithoutFormatting());
+            if (title != null && (hit == null || !hit.getString().equals(title))) {
+                // 字型換回預設：那一列原本可能包著 language/wynncraft，那份字型沒有中文字
+                hit = net.minecraft.network.chat.Component.literal(title).withStyle(
+                        styleOf(text).withFont(net.minecraft.network.chat.FontDescription.DEFAULT));
+            }
+        }
         // 清單那一列的裸名（「Visceral Remains」）：照 F6「任務與洞窟名稱」的設定
         // 附原文或留原文。見 PageNames。
         if (hit != null && store.pageNameMode() != CollectorConfig.ItemNames.ON
@@ -793,9 +810,32 @@ public final class WynntilsText {
         synchronized (SCREEN_CACHE) {
             SCREEN_CACHE.put(text, new Cached(store.generation(),
                     store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), store.pageNameMode(), out));
+                    store.peeksPlainNames(), store.pageNameMode(), content, out));
         }
         return out == null ? text : out;
+    }
+
+    /**
+     * 現在開著的是不是 Wynntils 的內容書（任務、洞窟、探索點那一本）或地圖。
+     *
+     * <p>用類別的套件名比對，不必把那幾個畫面的型別帶進來；Wynntils 搬了套件的話
+     * 這裡安靜地變成「不是」，清單就回到照裸名查表的老樣子。測試換掉這一個來假裝。
+     */
+    static java.util.function.BooleanSupplier contentScreen = WynntilsText::onContentScreen;
+
+    private static boolean onContentScreen() {
+        try {
+            net.minecraft.client.Minecraft client = net.minecraft.client.Minecraft.getInstance();
+            Object screen = client == null ? null : client.screen;
+            if (screen == null) {
+                return false;
+            }
+            String name = screen.getClass().getName();
+            return name.startsWith("com.wynntils.screens.activities.")
+                    || name.startsWith("com.wynntils.screens.maps.");
+        } catch (Throwable t) {
+            return false;                      // headless 測試沒有 Minecraft
+        }
     }
 
     /**
@@ -846,7 +886,7 @@ public final class WynntilsText {
     /** 一次翻譯的結果；{@code out} 是 {@code null} 代表「查不到，原樣就是答案」。 */
     private record Cached(int generation, boolean namesWithOriginal,
                           boolean translateNames, boolean peekPlain,
-                          CollectorConfig.ItemNames pageNames, StyledText out) {
+                          CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
 
         boolean fresh(TranslationStore store) {
             return generation == store.generation()
