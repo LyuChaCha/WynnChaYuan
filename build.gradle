@@ -46,8 +46,12 @@ dependencies {
 // 少了 Wynntils jar 的話，錯誤會是一長串「找不到 com.wynntils.*」，很難看出真正原因。
 // 這裡先擋下來並講清楚該做什麼。
 tasks.register('checkWynntilsJar') {
+    // 在設定階段就把路徑拿好：執行階段不能再碰 project（configuration cache）
+    def libsDir = file('libs')
     doLast {
-        def jars = fileTree(dir: 'libs', include: ['wynntils-*-fabric*.jar']).files
+        def jars = (libsDir.listFiles() ?: [] as File[]).findAll {
+            it.name ==~ /wynntils-.*-fabric.*\.jar/
+        }
         if (jars.isEmpty()) {
             throw new GradleException(
                 "libs/ 裡找不到 Wynntils 的 fabric jar。\n" +
@@ -56,8 +60,10 @@ tasks.register('checkWynntilsJar') {
                 "注意要 fabric 版，不是 neoforge 版。")
         }
         jars.each { jar ->
-            def isFabric = zipTree(jar).matching { include 'fabric.mod.json' }.files
-            if (isFabric.isEmpty()) {
+            def isFabric = new java.util.zip.ZipFile(jar).withCloseable {
+                it.getEntry('fabric.mod.json') != null
+            }
+            if (!isFabric) {
                 throw new GradleException(
                     "${jar.name} 不是 fabric jar（缺少 fabric.mod.json）。\n" +
                     "很可能誤下載成 NeoForge 版，請換成 fabric 版。")
@@ -68,7 +74,9 @@ tasks.register('checkWynntilsJar') {
 tasks.named('compileJava') { dependsOn 'checkWynntilsJar' }
 
 processResources {
-    inputs.property "version", project.version
+    // 執行階段不能再碰 project（configuration cache），版本號先取出來
+    def modVersion = project.version
+    inputs.property "version", modVersion
     filesMatching("fabric.mod.json") {
         // escapeBackslash 一定要開。
         //
@@ -76,7 +84,7 @@ processResources {
         // 跳脫」而不是兩個字元——於是 description 裡那一個跳脫在 jar 裡變成
         // 真的換行，而 JSON 的字串不能有真的換行。結果是 fabric.mod.json
         // 解析失敗、模組整個載不起來，而原始碼看起來完全正常。
-        expand(["version": project.version]) {
+        expand(["version": modVersion]) {
             it.escapeBackslash = true
         }
     }
@@ -190,11 +198,13 @@ java {
 
 jar {
     // 程式碼 AGPLv3（LICENSE）、翻譯與資料 CC BY-NC-SA 4.0（LICENSE-DATA），兩份都跟著 jar 走
+    // rename 在執行階段才跑，不能再碰 project（configuration cache），名字先取出來
+    def baseName = project.archives_base_name
     from("LICENSE") {
-        rename { "${it}_${project.archives_base_name}" }
+        rename { "${it}_${baseName}" }
     }
     from("LICENSE-DATA") {
-        rename { "${it}_${project.archives_base_name}" }
+        rename { "${it}_${baseName}" }
     }
 }
 
@@ -1254,9 +1264,10 @@ tasks.named('check') { dependsOn 'runDialogueKinsokuChecks' }
 tasks.register('checkMixinPackage') {
     group = 'verification'
     description = 'mixin 套件底下不能放被直接引用的一般類別'
+    def mixinsJson = file('src/main/resources/wynnchayuan.mixins.json')
+    def mixinDir = file('src/main/java/com/wynnchayuan/mixin')
     doLast {
-        def cfg = new groovy.json.JsonSlurper()
-                .parse(file('src/main/resources/wynnchayuan.mixins.json'))
+        def cfg = new groovy.json.JsonSlurper().parse(mixinsJson)
         def allowed = [] as Set
         ['client', 'server', 'mixins'].each { key ->
             (cfg[key] ?: []).each { allowed << it.toString().tokenize('.').last() }
@@ -1264,7 +1275,7 @@ tasks.register('checkMixinPackage') {
         if (cfg.plugin) {
             allowed << cfg.plugin.toString().tokenize('.').last()
         }
-        def stray = file('src/main/java/com/wynnchayuan/mixin').listFiles()
+        def stray = mixinDir.listFiles()
                 .findAll { it.name.endsWith('.java') }
                 .collect { it.name - '.java' }
                 .findAll { !allowed.contains(it) }
