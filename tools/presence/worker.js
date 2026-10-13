@@ -1404,7 +1404,10 @@ export default {
       const asked = url.searchParams.get('lang');
       const lang = LANGS.includes(asked) ? asked
         : pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
-      return page(render(path, lang), lang);
+      // 什麼語言都沒說的訪客（沒有 ?lang、沒選過、瀏覽器也沒報）多半是抓連結預覽的機器人
+      const bare = !LANGS.includes(asked) && !request.headers.get('accept-language')
+        && !/(?:^|;\s*)lang=/.test(request.headers.get('cookie') || '');
+      return page(render(path, lang, bare), lang);
     }
     if (request.method === 'GET' && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
     if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
