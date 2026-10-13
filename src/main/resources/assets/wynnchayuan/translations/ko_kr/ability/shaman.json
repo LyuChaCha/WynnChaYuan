@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 363,
-  "translated": 363,
+  "count": 272,
+  "translated": 272,
   "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -178,59 +178,31 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0304": {
-   "src": "({#}{#}Damage: {~})\n({#}{#}Air: {~})",
-   "dst": "({#}{#}피해: {~})\n({#}{#}바람: {~})",
+   "src": "({#} Damage: {~})\n({#} Air: {~})",
+   "dst": "({#} 피해: {~})\n({#} 바람: {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Bloodletting"
    ],
    "lines": 2,
-   "flat": "({#}{#}Damage: {~}) ({#}{#}Air: {~})",
+   "flat": "({#} Damage: {~}) ({#} Air: {~})",
    "_raw": "( Damage: 10%)\n( Air: 5%)",
    "ability": "Bloodletting",
    "code": "SHAMAN"
   },
   "ability-shaman#0303": {
-   "src": "({#}{#}Damage: {~})\n({#}{#}Fire: {~})",
-   "dst": "({#}{#}피해: {~})\n({#}{#}화염: {~})",
+   "src": "({#} Damage: {~})\n({#} Fire: {~})",
+   "dst": "({#} 피해: {~})\n({#} 화염: {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Effuse"
    ],
    "lines": 2,
-   "flat": "({#}{#}Damage: {~}) ({#}{#}Fire: {~})",
+   "flat": "({#} Damage: {~}) ({#} Fire: {~})",
    "_raw": "( Damage: 20%)\n( Fire: 5%)",
    "ability": "Effuse",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0279": {
-   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
-   "dst": "어빌리티를 사용하거나 체력을 잃어\n궁극기 게이지 {#}{#}를 {~}까지 충전합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Monument to Gloom"
-   ],
-   "lines": 2,
-   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
-   "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
-   "ability": "Monument to Gloom",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0290": {
-   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}.",
-   "dst": "어빌리티를 사용하여\n궁극기 게이지 {#}{#}를 {~}까지 충전합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Patchwork Abomination"
-   ],
-   "lines": 2,
-   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}.",
-   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%.",
-   "ability": "Patchwork Abomination",
    "code": "SHAMAN"
   },
   "ability-shaman#0276": {
@@ -331,48 +303,6 @@
    "ability": "Awakened",
    "code": "SHAMAN"
   },
-  "ability-shaman#0250": {
-   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool{#}{#}.",
-   "dst": "출혈{#}{#}{#} 상태의 적은 {~}초마다 피해를 입습니다.\nTotem 범위 안에서 준 출혈{#}{#}{#} 피해는\n피웅덩이{#}{#}에 +{~}포인트를 더합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Lashing Lance"
-   ],
-   "lines": 3,
-   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's range also adds +{~} points to your Blood Pool{#}{#}.",
-   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
-   "ability": "Lashing Lance",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0249": {
-   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool{#}{#}.",
-   "dst": "출혈{#}{#}{#} 상태의 적은 {~}초마다 피해를 입습니다.\nTotem{#} 범위 안에서 준 출혈{#}{#}{#} 피해는\n피웅덩이{#}{#}에 +{~}포인트를 더합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Sanguine Strike"
-   ],
-   "lines": 3,
-   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool{#}{#}.",
-   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
-   "ability": "Sanguine Strike",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0248": {
-   "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#}{#}(per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
-   "dst": "Shift를 누른 채 Totem을 시전하면 Totem당\n피웅덩이 {#}{#}{~}포인트를 소모해\n주변 적을 공격하는 악몽 같은 촉수\n{~}개를 불러냅니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Eldritch Call"
-   ],
-   "lines": 4,
-   "flat": "Casting Totem while holding shift will spend {~} points of Blood Pool {#}{#}(per Totem) to call upon {~} nightmarish tentacles that attack nearby enemies.",
-   "_raw": "Casting Totem while holding shift will spend\n35 points of Blood Pool  (per Totem) to\ncall upon 4 nightmarish tentacles that attack\nnearby enemies.",
-   "ability": "Eldritch Call",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
    "dst": "기존 Totem을 바라보며\nTotem을 시전하면 절반의 마나로\nTotem을 앞으로 밀어내,\n부딪치는 모든 적에게\n피해를 줍니다.\n(웅크리면 방향 반전)",
@@ -457,34 +387,6 @@
    "ability": "Effuse",
    "code": "SHAMAN"
   },
-  "ability-shaman#0255": {
-   "src": "Flaming Tongue{#}gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding{#}{#} for\n+{~}s{#}per hit. (Max {~}s)",
-   "dst": "Flaming Tongue{#}의 타격 횟수가 +{~} 늘고 피해가 증가하며,\n이제 적에게 타격마다 출혈{#}{#}을\n+{~}초{#}부여합니다. (최대 {~}초)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Lashing Lance"
-   ],
-   "lines": 3,
-   "flat": "Flaming Tongue{#}gains +{~} hits, deals more damage, and now inflicts enemies with Bleeding{#}{#} for +{~}s{#}per hit. (Max {~}s)",
-   "_raw": "Flaming Tongue gains +2 hits, deals more damage,\nand now inflicts enemies with Bleeding  for\n+1s per hit. (Max 6s)",
-   "ability": "Lashing Lance",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0256": {
-   "src": "For each Transfused {#}{#}Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
-   "dst": "Eldritch Call이 가진 수혈 {#}{#}마다\n공격 피해가 증가합니다. Eldritch Call이 끝나면\n모든 수혈 {#}이 사라집니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Eldritch Transfusion"
-   ],
-   "lines": 3,
-   "flat": "For each Transfused {#}{#}Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
-   "_raw": "For each Transfused  Eldritch Call has, its\nattacks deal more damage. All Transfused \nis lost when Eldritch Call expires.",
-   "ability": "Eldritch Transfusion",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0281": {
    "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
    "dst": "당신 또는 Totem이 최소 {~3}개의\n샘 안에 있으면 {~2}초마다\n마나를 +{~1} 얻습니다.",
@@ -514,15 +416,15 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0267": {
-   "src": "Hitting enemies with your Main Attack\nwill consume {~}{#}Static per beam to\ncause a small explosion.",
-   "dst": "기본 공격으로 적을 맞히면\n광선마다 {~}{#}Static을 소모해\n작은 폭발을 일으킵니다.",
+   "src": "Hitting enemies with your Main Attack\nwill consume {~} Static per beam to\ncause a small explosion.",
+   "dst": "기본 공격으로 적을 맞히면\n광선마다 {~} Static을 소모해\n작은 폭발을 일으킵니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Malediction"
    ],
    "lines": 3,
-   "flat": "Hitting enemies with your Main Attack will consume {~}{#}Static per beam to cause a small explosion.",
+   "flat": "Hitting enemies with your Main Attack will consume {~} Static per beam to cause a small explosion.",
    "_raw": "Hitting enemies with your Main Attack\nwill consume 1 Static per beam to\ncause a small explosion.",
    "ability": "Malediction",
    "code": "SHAMAN"
@@ -555,78 +457,6 @@
    "ability": "Synchrony",
    "code": "SHAMAN"
   },
-  "ability-shaman#0296": {
-   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
-   "dst": "피웅덩이 {#}{#}최대치가 +{~} 증가합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Larger Blood Pool"
-   ],
-   "lines": 1,
-   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
-   "_raw": "Increase your maximum Blood Pool  by +30 points.",
-   "ability": "Larger Blood Pool",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0260": {
-   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.\nIncrease your maximum Bleeding {#}{#}duration by +{~}s.",
-   "dst": "피웅덩이 {#}{#}최대치가 +{~} 증가합니다.\n출혈 {#}{#}최대 지속 시간이 +{~}초 증가합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Bloody",
-    "shaman/Bloodier",
-    "shaman/Bloodiest"
-   ],
-   "lines": 2,
-   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points. Increase your maximum Bleeding {#}{#}duration by +{~}s.",
-   "_raw": "Increase your maximum Blood Pool  by +30 points.\nIncrease your maximum Bleeding  duration by +1.5s.",
-   "ability": "Bloody、Bloodier、Bloodiest",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0261": {
-   "src": "Nearby Bleeding {#}{#}enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "당신이 체력을 {~} 잃을 때마다 주변의\n출혈 {#}{#}상태인 적이 피해를 받습니다.\n(초당 최대 {~}회 발동)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Twisted Tether"
-   ],
-   "lines": 3,
-   "flat": "Nearby Bleeding {#}{#}enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
-   "_raw": "Nearby Bleeding  enemies will take\ndamage for every 2% Health you lose.\n(Max 10 activations per second)",
-   "ability": "Twisted Tether",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0300": {
-   "src": "Others receive +{~} Health {#}{#}every {~}s.",
-   "dst": "다른 아군은 {~2}초마다 체력 {#}{#}을 +{~1} 얻습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Monument to Gloom"
-   ],
-   "lines": 1,
-   "flat": "Others receive +{~} Health {#}{#}every {~}s.",
-   "_raw": "Others receive +5% Health  every 0.4s.",
-   "ability": "Monument to Gloom",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0246": {
-   "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each\nsecond of Bleeding{#}{#}{#}consumed.",
-   "dst": "Sacrificial Shrine이 Aura의 피해를 +{~} 높이고\n출혈{#}{#}을 최대 {~}초까지 소모하며, 소모한 출혈{#}{#}{#}\n1초마다 피웅덩이 {#}{#}을 +{~} 얻습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Rupture"
-   ],
-   "lines": 3,
-   "flat": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes up to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each second of Bleeding{#}{#}{#}consumed.",
-   "_raw": "Sacrificial Shrine boosts Aura's damage by +30% and consumes\nup to 2s of Bleeding , granting +2.2 Blood Pool  for each\nsecond of Bleeding  consumed.",
-   "ability": "Rupture",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
    "dst": "Sacrificial Shrine이 {~2}초마다 체력을 +{~1}\n흡수하고 Aura의 피해를 +{~3} 높입니다.",
@@ -642,45 +472,31 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0265": {
-   "src": "Switching Masks while your current Mask is\nover {~} Mantra will overclock the next\nMask to {~}{#}Mantra.",
-   "dst": "현재 가면의 만트라가 {~}을 넘은 상태에서\n가면을 바꾸면 다음 가면이 과부하되어\n{~}{#}만트라가 됩니다.",
+   "src": "Switching Masks while your current Mask is\nover {~} Mantra will overclock the next\nMask to {~} Mantra.",
+   "dst": "현재 가면의 만트라가 {~}을 넘은 상태에서\n가면을 바꾸면 다음 가면이 과부하되어\n{~} 만트라가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Overcharge"
    ],
    "lines": 3,
-   "flat": "Switching Masks while your current Mask is over {~} Mantra will overclock the next Mask to {~}{#}Mantra.",
+   "flat": "Switching Masks while your current Mask is over {~} Mantra will overclock the next Mask to {~} Mantra.",
    "_raw": "Switching Masks while your current Mask is\nover 150% Mantra will overclock the next\nMask to 250% Mantra.",
    "ability": "Overcharge",
    "code": "SHAMAN"
   },
   "ability-shaman#0280": {
-   "src": "Switching Masks will detonate the circle, inflicting\n{~}{#}Static per hit.",
-   "dst": "가면을 바꾸면 법진이 폭발하여\n타격마다 {~}{#}Static을 부여합니다.",
+   "src": "Switching Masks will detonate the circle, inflicting\n{~} Static per hit.",
+   "dst": "가면을 바꾸면 법진이 폭발하여\n타격마다 {~} Static을 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Ritual Circle"
    ],
    "lines": 2,
-   "flat": "Switching Masks will detonate the circle, inflicting {~}{#}Static per hit.",
+   "flat": "Switching Masks will detonate the circle, inflicting {~} Static per hit.",
    "_raw": "Switching Masks will detonate the circle, inflicting\n2 Static per hit.",
    "ability": "Ritual Circle",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0277": {
-   "src": "Tentacles will attack Bleeding{#}{#} enemies from an\nadditional +{~} blocks away.",
-   "dst": "촉수가 출혈{#}{#} 상태인 적을\n+{~}블록 더 먼 거리에서 공격합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Eldritch Call"
-   ],
-   "lines": 2,
-   "flat": "Tentacles will attack Bleeding{#}{#} enemies from an additional +{~} blocks away.",
-   "_raw": "Tentacles will attack Bleeding  enemies from an\nadditional +6 blocks away.",
-   "ability": "Eldritch Call",
    "code": "SHAMAN"
   },
   "ability-shaman#0275": {
@@ -695,20 +511,6 @@
    "flat": "The Acid Rain lasts for {~}s, inflicting{#}{~}s of Corroded every time it hits an enemy.",
    "_raw": "The Acid Rain lasts for 2s, inflicting 1.5s\nof Corroded every time it hits an enemy.",
    "ability": "Acid Rain",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0306": {
-   "src": "Totem summons Puppets{#}{~} faster.",
-   "dst": "Totem이 꼭두각시{#}을 {~} 더 빠르게 소환합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Puppetry"
-   ],
-   "lines": 1,
-   "flat": "Totem summons Puppets{#}{~} faster.",
-   "_raw": "Totem summons Puppets 25% faster.",
-   "ability": "Puppetry",
    "code": "SHAMAN"
   },
   "ability-shaman#0266": {
@@ -726,29 +528,29 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0247": {
-   "src": "When entering the {#}{#}Mask of the Heretic, knock back\nall nearby enemies, regenerate {~} of your Mana,\nand gain a large Walk Speed boost that decays\nover {~}s.",
-   "dst": "{#}{#}이단자의 가면을 쓸 때 주변의 모든 적을\n밀쳐내고, 마나를 {~} 회복하며,\n{~}초에 걸쳐 줄어드는 큰 이동 속도\n증가를 얻습니다.",
+   "src": "When entering the {#} Mask of the Heretic, knock back\nall nearby enemies, regenerate {~} of your Mana,\nand gain a large Walk Speed boost that decays\nover {~}s.",
+   "dst": "{#} 이단자의 가면을 쓸 때 주변의 모든 적을\n밀쳐내고, 마나를 {~} 회복하며,\n{~}초에 걸쳐 줄어드는 큰 이동 속도\n증가를 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Strides of Heresy"
    ],
    "lines": 4,
-   "flat": "When entering the {#}{#}Mask of the Heretic, knock back all nearby enemies, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
+   "flat": "When entering the {#} Mask of the Heretic, knock back all nearby enemies, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
    "_raw": "When entering the  Mask of the Heretic, knock back\nall nearby enemies, regenerate 30% of your Mana,\nand gain a large Walk Speed boost that decays\nover 6s.",
    "ability": "Strides of Heresy",
    "code": "SHAMAN"
   },
   "ability-shaman#0251": {
-   "src": "When wearing the {#} Mask of the Lunatic, casting Totem{#}\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
-   "dst": "{#} 광인의 가면을 쓴 상태에서 웅크린 채 Totem{#}을\n시전하면 토템이 땅에 내리꽂혀\n모든 Static을 폭발시킵니다.",
+   "src": "When wearing the {#} Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
+   "dst": "{#} 광인의 가면을 쓴 상태에서 웅크린 채 Totem 을\n시전하면 토템이 땅에 내리꽂혀\n모든 Static을 폭발시킵니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Charged Ritual"
    ],
    "lines": 3,
-   "flat": "When wearing the {#} Mask of the Lunatic, casting Totem{#} while sneaking will cause it to smash down onto the ground, detonating all Static.",
+   "flat": "When wearing the {#} Mask of the Lunatic, casting Totem while sneaking will cause it to smash down onto the ground, detonating all Static.",
    "_raw": "When wearing the  Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
    "ability": "Charged Ritual",
    "code": "SHAMAN"
@@ -768,29 +570,29 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0258": {
-   "src": "When wearing the {#}{#}Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "{#}{#}이단자의 가면을 쓴 상태에서\nFrog Dance로 땅에 닿으면 작은 샘을\n만듭니다. (최대 {~}개)",
+   "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
+   "dst": "{#} 이단자의 가면을 쓴 상태에서\nFrog Dance로 땅에 닿으면 작은 샘을\n만듭니다. (최대 {~}개)",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Pool of Rejuvenation"
    ],
    "lines": 3,
-   "flat": "When wearing the {#}{#}Mask of the Heretic, Frog Dance will create a small pool when hitting the ground. (Max {~})",
+   "flat": "When wearing the {#} Mask of the Heretic, Frog Dance will create a small pool when hitting the ground. (Max {~})",
    "_raw": "When wearing the  Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max 3)",
    "ability": "Pool of Rejuvenation",
    "code": "SHAMAN"
   },
   "ability-shaman#0253": {
-   "src": "When wearing the {#}{#}Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "{#}{#}이단자의 가면을 쓴 상태에서\nHaul이 대신 당신을 땅에서 튕겨 올리고\n주변 적에게 피해를 줍니다.\n(Shift를 눌러 취소)",
+   "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
+   "dst": "{#} 이단자의 가면을 쓴 상태에서\nHaul이 대신 당신을 땅에서 튕겨 올리고\n주변 적에게 피해를 줍니다.\n(Shift를 눌러 취소)",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Frog Dance"
    ],
    "lines": 4,
-   "flat": "When wearing the {#}{#}Mask of the Heretic, Haul will instead bounce you off the ground and damage nearby enemies. (Hold shift to cancel)",
+   "flat": "When wearing the {#} Mask of the Heretic, Haul will instead bounce you off the ground and damage nearby enemies. (Hold shift to cancel)",
    "_raw": "When wearing the  Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
    "ability": "Frog Dance",
    "code": "SHAMAN"
@@ -838,15 +640,15 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0252": {
-   "src": "While wearing the {#}{#}Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
-   "dst": "{#}{#}광신도의 가면을 쓴 상태에서\nTotem이 땅에 부딪히면 산산조각 나며\n{~}초 분량의 효과를\n빠르게 발동합니다.",
+   "src": "While wearing the {#} Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
+   "dst": "{#} 광신도의 가면을 쓴 상태에서\nTotem이 땅에 부딪히면 산산조각 나며\n{~}초 분량의 효과를\n빠르게 발동합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Totemic Shatter"
    ],
    "lines": 4,
-   "flat": "While wearing the {#}{#}Mask of the Fanatic, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
+   "flat": "While wearing the {#} Mask of the Fanatic, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
    "_raw": "While wearing the  Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering 4s\nworth of its effects.",
    "ability": "Totemic Shatter",
    "code": "SHAMAN"
@@ -879,34 +681,6 @@
    "ability": "Eye of the Storm",
    "code": "SHAMAN"
   },
-  "ability-shaman#0262": {
-   "src": "You and any allies within the beam will\nreceive +{~}{#}Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "광선 안에 있는 당신과 모든 아군은\n타격마다 {~}{#}추가 체력 ❤을 받습니다.\n추가 체력은 {~}초에 걸쳐 감소합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Blood Sorrow"
-   ],
-   "lines": 3,
-   "flat": "You and any allies within the beam will receive +{~}{#}Overhealth ❤ per hit. Bonus health decays over {~}s.",
-   "_raw": "You and any allies within the beam will\nreceive +2% Overhealth ❤ per hit.\nBonus health decays over 20s.",
-   "ability": "Blood Sorrow",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0284": {
-   "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#}{#}for +{~}s.",
-   "dst": "이제 기본 공격이 적에게\n출혈 {#}{#}을 +{~}초 부여합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Sanguine Strike"
-   ],
-   "lines": 2,
-   "flat": "Your Main Attack will now inflict enemies with Bleeding {#}{#}for +{~}s.",
-   "_raw": "Your Main Attack will now inflict enemies\nwith Bleeding  for +2s.",
-   "ability": "Sanguine Strike",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0297": {
    "src": "Your Masks grant a bonus effect\nto your Main Attack.",
    "dst": "가면이 기본 공격에\n추가 효과를 부여합니다.",
@@ -935,20 +709,6 @@
    "ability": "Artist's Immersion",
    "code": "SHAMAN"
   },
-  "ability-shaman#0259": {
-   "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#}{#}to nearby\nacolytes every {~}s.",
-   "dst": "Totem에 섬뜩한 악마가 깃들어\n{~2}초마다 주변 애콜라이트에게\n피웅덩이 {#}{#}을 +{~1} 부여합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Monument to Gloom"
-   ],
-   "lines": 3,
-   "flat": "Your Totem becomes possessed by an eldritch demon, granting +{~} Blood Pool {#}{#}to nearby acolytes every {~}s.",
-   "_raw": "Your Totem becomes possessed by an eldritch\ndemon, granting +5% Blood Pool  to nearby\nacolytes every 0.4s.",
-   "ability": "Monument to Gloom",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0298": {
    "src": "increase Ritual Circle's radius by +{~} blocks.",
    "dst": "Ritual Circle의 반경이 +{~}블록 증가합니다.",
@@ -975,34 +735,6 @@
    "flat": "radius by +{~} blocks.",
    "_raw": "radius by +1 blocks.",
    "ability": "Synchrony",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0289": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}자신의 피해 보너스",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Mystic Masks"
-   ],
-   "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
-   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -10% Damage Bonus to Self",
-   "ability": "Mystic Masks",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0287": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}자신의 저항 보너스",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Mystic Masks"
-   ],
-   "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
-   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -15% Resistance Bonus to Self",
-   "ability": "Mystic Masks",
    "code": "SHAMAN"
   },
   "ability-shaman#0311": {
@@ -1174,20 +906,6 @@
    "ability": "Tribal Chants",
    "code": "SHAMAN"
   },
-  "ability-shaman#0340": {
-   "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
-   "dst": "{#} 광신도: -{~} {#}{#}Totem 비용",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Artist's Immersion"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Fanatic: -65%  Totem Cost",
-   "ability": "Artist's Immersion",
-   "code": "SHAMAN"
-  },
   "ability-shaman#0345": {
    "src": "{#} Fanatic: Increased Knockback",
    "dst": "{#} 광신도: 밀쳐내기 증가",
@@ -1214,20 +932,6 @@
    "flat": null,
    "_raw": " Fanatic: Inflicting 1s worth of debuffs will increase",
    "ability": "Synchrony",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0342": {
-   "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
-   "dst": "{#} 이단자: -{~} {#}{#}Haul 비용",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Artist's Immersion"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Heretic: -50%  Haul Cost",
-   "ability": "Artist's Immersion",
    "code": "SHAMAN"
   },
   "ability-shaman#0313": {
@@ -1270,20 +974,6 @@
    "flat": null,
    "_raw": " Lunatic: +1 Main Attack Beam",
    "ability": "Transmute",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0344": {
-   "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
-   "dst": "{#} 광인: -{~} {#}{#}Aura 비용",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Artist's Immersion"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Lunatic: -50%  Aura Cost",
-   "ability": "Artist's Immersion",
    "code": "SHAMAN"
   },
   "ability-shaman#0314": {
@@ -1358,363 +1048,6 @@
    "flat": null,
    "_raw": "Ritual Circle's radius by +1 blocks.",
    "ability": "Synchrony",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0319": {
-   "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "{#}{#} 광신도: 적의 저항 보너스 -{~} ({#})",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Fanatic: -15% Resistance Bonus () to Enemies",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0326": {
-   "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#} 이단자: 적에게 둔화 +{~} ({#})",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Heretic: +30% Slowness () to Enemies",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0322": {
-   "src": "{#}{#} Lunatic: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "{#}{#} 광인: 적의 피해 보너스 -{~}{#}({#})",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Lunatic: -15% Damage Bonus () to Enemies",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0316": {
-   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "{#}{#}효과 범위: {~}블록 (원형, 폭발)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Patchwork Abomination"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Area of Effect: 12 Blocks (Circle-Shaped, Explosion)",
-   "ability": "Patchwork Abomination",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0327": {
-   "src": "{#}{#}Area of Effect: {~} Blocks (Line-Shaped)",
-   "dst": "{#}{#}효과 범위: {~}블록 (직선형)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Rain Dance"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Area of Effect: 3.5 Blocks (Line-Shaped)",
-   "ability": "Rain Dance",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0346": {
-   "src": "{#}{#}Cooldown: {~}s (per enemy)",
-   "dst": "{#}{#}재사용 대기시간: {~}초 (적당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Sanguine Strike",
-    "warrior/Counter",
-    "assassin/Satsujin"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Cooldown: 2s (per enemy)",
-   "ability": "Sanguine Strike、Counter、Satsujin",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0333": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
-   "dst": "{#}{#}효과: 꼭두각시의 공격 속도 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Commander"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +25% Attack Speed to Puppets",
-   "ability": "Commander",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0334": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
-   "dst": "{#}{#}효과: 소환수의 공격 속도 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Invigorating Wave"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +30% Attack Speed to Summons",
-   "ability": "Invigorating Wave",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0330": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#}{#}효과: 아군의 피해 보너스 (⚔) +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Vengeful Spirit",
-    "warrior/Emboldening Cry"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +20% Damage Bonus (⚔) to Allies",
-   "ability": "Vengeful Spirit、Emboldening Cry",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0328": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#}{#}효과: 꼭두각시의 피해 보너스 (⚔) +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Friendly Fire"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +10% Damage Bonus (⚔) to Puppets",
-   "ability": "Friendly Fire",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0335": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
-   "dst": "{#}{#}효과: 소환수의 피해 보너스 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Bullwhip"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +20% Damage Bonus to Summons",
-   "ability": "Bullwhip",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0339": {
-   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-   "dst": "{#}{#}효과: 자신의 이동 속도 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Hummingbird's Song"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +40% Walk Speed to Self",
-   "ability": "Hummingbird's Song",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0320": {
-   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#}{#}효과: Eldritch Call 피해 +{~} (중첩당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Eldritch Transfusion"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: +15% damage to Eldritch Call (Per stack)",
-   "ability": "Eldritch Transfusion",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0329": {
-   "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "{#}{#}효과: 자신의 저항 보너스 (❁) {~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Fortified Formation",
-    "archer/Repel",
-    "assassin/Braced Impact"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effect: 50% Resistance Bonus (❁) to Self",
-   "ability": "Fortified Formation、Repel、Braced Impact",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0347": {
-   "src": "{#}{#}Effects:",
-   "dst": "{#}{#}효과:",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effects:",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0338": {
-   "src": "{#}{#}Effects: +{~} Walk Speed to Self",
-   "dst": "{#}{#}효과: 자신의 이동 속도 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Soaring Wingbeats"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effects: +20% Walk Speed to Self",
-   "ability": "Soaring Wingbeats",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0332": {
-   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}효과: 적에게 둔화 {~} ({#})",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Maddening Roots"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Effects: 40% Slowness () to Enemies",
-   "ability": "Maddening Roots",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0348": {
-   "src": "{#}{#}Range: ~{~} Blocks",
-   "dst": "{#}{#}사거리: ~{~}블록",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "shaman/Totem Shove"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Range: ~12 Blocks",
-   "ability": "Totem Shove",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0317": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}총 피해: +{~} (DPS 대비, Uproot 타격당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Lashing Lance"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: +15% (of your DPS, for Uproot, per hit)",
-   "ability": "Lashing Lance",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0318": {
-   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}총 피해: -{~} (DPS 대비, Uproot 타격당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Flaming Tongue"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: -35% (of your DPS, for Uproot, per hit)",
-   "ability": "Flaming Tongue",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0331": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
-   "dst": "{#}{#}총 피해: {~} (DPS 대비, 공격)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Patchwork Abomination"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: 2400% (of your DPS, Attack)",
-   "ability": "Patchwork Abomination",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0325": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
-   "dst": "{#}{#}총 피해: {~} (DPS 대비, 폭발)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Patchwork Abomination"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: 5000% (of your DPS, Explosion)",
-   "ability": "Patchwork Abomination",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0323": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#}{#}총 피해: {~} (DPS 대비, 출혈)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Lashing Lance",
-    "shaman/Sanguine Strike"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: 60% (of your DPS, from Bleeding)",
-   "ability": "Lashing Lance、Sanguine Strike",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0324": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per strike)",
-   "dst": "{#}{#}총 피해: {~} (DPS 대비, 일격당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Eldritch Call",
-    "assassin/Lacerate"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: 850% (of your DPS, per strike)",
-   "ability": "Eldritch Call、Lacerate",
-   "code": "SHAMAN"
-  },
-  "ability-shaman#0321": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#}{#}총 피해: {~} (DPS 대비, 체력 {~}당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Twisted Tether"
-   ],
-   "lines": null,
-   "flat": null,
-   "_raw": " Total Damage: 50% (of your DPS, per 2% health)",
-   "ability": "Twisted Tether",
    "code": "SHAMAN"
   },
   "ability-shaman#0000": {
@@ -2160,21 +1493,6 @@
    "ability": "Flaming Tongue",
    "code": "SHAMAN-P3-R04-C08"
   },
-  "ability-shaman#0034": {
-   "src": "Haunting Memory will no longer\nattach Masks to enemies.",
-   "dst": "Haunting Memory가 더 이상\n적에게 가면을 붙이지 않습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Flaming Tongue"
-   ],
-   "lines": 2,
-   "flat": "Haunting Memory will no longer attach Masks to enemies.",
-   "_raw": "Haunting Memory will no longer\nattach Masks to enemies.",
-   "tree": "04/shaman/03/004/008",
-   "ability": "Flaming Tongue",
-   "code": "SHAMAN-P3-R04-C08"
-  },
   "ability-shaman#0035": {
    "src": "Uproot becomes lashing flames, which hit\n{~} times at {~} hits per second, but it will not\nexplode or knockback enemies.",
    "dst": "Uproot가 채찍 같은 불꽃으로 바뀌어 초당 {~2}회의 속도로\n{~1}회 타격하지만, 폭발하거나\n적을 밀쳐내지 않습니다.",
@@ -2199,19 +1517,6 @@
     "shaman/Flaming Tongue"
    ],
    "_raw": " Total Damage: -35% (of your DPS, for Uproot, per hit)",
-   "tree": "04/shaman/03/004/008",
-   "ability": "Flaming Tongue",
-   "code": "SHAMAN-P3-R04-C08"
-  },
-  "ability-shaman#0036": {
-   "src": "{#}({#}{#}Earth: -{~})",
-   "dst": "{#}({#}{#}대지: -{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "shaman/Flaming Tongue"
-   ],
-   "_raw": "( Earth: -30%)",
    "tree": "04/shaman/03/004/008",
    "ability": "Flaming Tongue",
    "code": "SHAMAN-P3-R04-C08"
@@ -2251,21 +1556,6 @@
    "ctx": [
     "shaman/技能名稱"
    ],
-   "tree": "04/shaman/04/001/003",
-   "ability": "Mystic Masks",
-   "code": "SHAMAN-P4-R01-C03"
-  },
-  "ability-shaman#0041": {
-   "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to remove it)",
-   "dst": "Uproot를 시전하는 대신\n신비한 가면 중 하나를 씁니다.\n(Shift + Uproot로 가면 벗기)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Mystic Masks"
-   ],
-   "lines": 3,
-   "flat": "When casting Uproot, instead wear one of the Mystic Masks. (Shift + Uproot to remove it)",
-   "_raw": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to remove it)",
    "tree": "04/shaman/04/001/003",
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
@@ -2362,21 +1652,6 @@
    "ctx": [
     "shaman/技能名稱"
    ],
-   "tree": "04/shaman/04/001/006",
-   "ability": "Hymn of Hate",
-   "code": "SHAMAN-P4-R01-C06"
-  },
-  "ability-shaman#0049": {
-   "src": "When wearing the Mask of the Lunatic {#}, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "광인의 가면 {#}을 쓴 상태에서 Aura로\n적을 처치하면 그 위치에 새 Aura를\n시전하며, 피해가 -{~} 감소합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Hymn of Hate"
-   ],
-   "lines": 3,
-   "flat": "When wearing the Mask of the Lunatic {#}, killing an enemy with Aura will cast a new Aura at its location, dealing -{~} of its damage.",
-   "_raw": "When wearing the Mask of the Lunatic , killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -50% of its damage.",
    "tree": "04/shaman/04/001/006",
    "ability": "Hymn of Hate",
    "code": "SHAMAN-P4-R01-C06"
@@ -2589,21 +1864,6 @@
    "ability": "Haunting Memory",
    "code": "SHAMAN-P4-R04-C03"
   },
-  "ability-shaman#0065": {
-   "src": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
-   "dst": "가면을 바꾸면 이전 가면을 앞으로 던집니다.\n적에게 맞으면 잠시 동안 붙어서\n약화 효과를 겁니다. 가면이 돌아올 때까지\n그 가면의 효과를 받지 못합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "lines": 4,
-   "flat": "When you switch Masks, throw your previous one forwards. If it hits an enemy, it will attach for a short time and debuff them. You will not receive the effects of your Mask until it returns.",
-   "_raw": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
-   "tree": "04/shaman/04/004/003",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN-P4-R04-C03"
-  },
   "ability-shaman#0069": {
    "src": "{#} Effects:",
    "dst": "{#} 효과:",
@@ -2764,21 +2024,6 @@
    "ability": "Frog Dance",
    "code": "SHAMAN-P5-R01-C04"
   },
-  "ability-shaman#0078": {
-   "src": "When wearing the Mask of the Heretic {#},\nHaul will instead bounce you off\nthe ground {~} times at an increasing\nspeed and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "이단자의 가면 {#}을 쓴 상태에서\nHaul이 대신 당신을 땅에서\n점점 빠르게 {~}회 튕겨 올리고\n주변 적에게 피해를 줍니다.\n(Shift를 눌러 취소)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Frog Dance"
-   ],
-   "lines": 5,
-   "flat": "When wearing the Mask of the Heretic {#}, Haul will instead bounce you off the ground {~} times at an increasing speed and damage nearby enemies. (Hold shift to cancel)",
-   "_raw": "When wearing the Mask of the Heretic ,\nHaul will instead bounce you off\nthe ground 3 times at an increasing\nspeed and damage nearby enemies.\n(Hold shift to cancel)",
-   "tree": "04/shaman/05/001/004",
-   "ability": "Frog Dance",
-   "code": "SHAMAN-P5-R01-C04"
-  },
   "ability-shaman#0079": {
    "src": "Larger Blood Pool",
    "dst": "피웅덩이 확장",
@@ -2857,63 +2102,6 @@
    "tree": "04/shaman/05/002/003",
    "ability": "Totemic Shatter",
    "code": "SHAMAN-P5-R02-C03"
-  },
-  "ability-shaman#0085": {
-   "src": "Regeneration will only heal\n{~} of its usual amount.",
-   "dst": "Regeneration의 치유량이\n평소의 {~}로 줄어듭니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Totemic Shatter"
-   ],
-   "lines": 2,
-   "flat": "Regeneration will only heal {~} of its usual amount.",
-   "_raw": "Regeneration will only heal\n50% of its usual amount.",
-   "tree": "04/shaman/05/002/003",
-   "ability": "Totemic Shatter",
-   "code": "SHAMAN-P5-R02-C03"
-  },
-  "ability-shaman#0086": {
-   "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
-   "dst": "광신도의 가면 {#}을 쓴 상태에서\nTotem이 땅에 부딪히면 산산조각 나며\n{~}초 분량의 효과를\n빠르게 발동합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Totemic Shatter"
-   ],
-   "lines": 4,
-   "flat": "While wearing the Mask of the Fanatic {#}, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
-   "_raw": "While wearing the Mask of the Fanatic ,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering 8s\nworth of its effects.",
-   "tree": "04/shaman/05/002/003",
-   "ability": "Totemic Shatter",
-   "code": "SHAMAN-P5-R02-C03"
-  },
-  "ability-shaman#0087": {
-   "src": "Masquerade",
-   "dst": "가면무도회",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/05/002/005",
-   "ability": "Masquerade",
-   "code": "SHAMAN-P5-R02-C05"
-  },
-  "ability-shaman#0088": {
-   "src": "Switching between Masks {~} times\nwill give you {~} Mana.",
-   "dst": "가면을 {~}번 바꿀 때마다\n마나를 {~} 얻습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Masquerade"
-   ],
-   "lines": 2,
-   "flat": "Switching between Masks {~} times will give you {~} Mana.",
-   "_raw": "Switching between Masks 2 times\nwill give you 30 Mana.",
-   "tree": "04/shaman/05/002/005",
-   "ability": "Masquerade",
-   "code": "SHAMAN-P5-R02-C05"
   },
   "ability-shaman#0089": {
    "src": "Lashing Lance",
@@ -3019,21 +2207,6 @@
    "ctx": [
     "shaman/技能名稱"
    ],
-   "tree": "04/shaman/05/003/004",
-   "ability": "Artist's Immersion",
-   "code": "SHAMAN-P5-R03-C04"
-  },
-  "ability-shaman#0097": {
-   "src": "Your Masks reduce the cost of different\nabilities based on the active Mask.",
-   "dst": "착용 중인 가면에 따라\n여러 어빌리티의 비용이 감소합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Artist's Immersion"
-   ],
-   "lines": 2,
-   "flat": "Your Masks reduce the cost of different abilities based on the active Mask.",
-   "_raw": "Your Masks reduce the cost of different\nabilities based on the active Mask.",
    "tree": "04/shaman/05/003/004",
    "ability": "Artist's Immersion",
    "code": "SHAMAN-P5-R03-C04"
@@ -3172,21 +2345,6 @@
    "ability": "Storm Dance",
    "code": "SHAMAN-P5-R04-C05"
   },
-  "ability-shaman#0108": {
-   "src": "Enemies hit by Aura will be\npulled towards your totem.",
-   "dst": "Aura에 맞은 적은\nTotem 쪽으로 끌려옵니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Storm Dance"
-   ],
-   "lines": 2,
-   "flat": "Enemies hit by Aura will be pulled towards your totem.",
-   "_raw": "Enemies hit by Aura will be\npulled towards your totem.",
-   "tree": "04/shaman/05/004/005",
-   "ability": "Storm Dance",
-   "code": "SHAMAN-P5-R04-C05"
-  },
   "ability-shaman#0109": {
    "src": "Cheaper Haul II",
    "dst": "끌어당기기 비용 절감 II",
@@ -3318,63 +2476,6 @@
    ],
    "tree": "04/shaman/06/001/004",
    "ability": "Tribal Chants",
-   "code": "SHAMAN-P6-R01-C04"
-  },
-  "ability-shaman#0119": {
-   "src": "(-{~} of the bonus decays every second)",
-   "dst": "(보너스가 매초 -{~}씩 감소)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Tribal Chants"
-   ],
-   "lines": 1,
-   "flat": "(-{~} of the bonus decays every second)",
-   "_raw": "(-10% of the bonus decays every second)",
-   "tree": "04/shaman/06/001/004",
-   "ability": "Tribal Chants",
-   "code": "SHAMAN-P6-R01-C04"
-  },
-  "ability-shaman#0120": {
-   "src": "Switching Masks buffs nearby allies.",
-   "dst": "가면을 바꾸면 주변 아군이 강화됩니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Tribal Chants"
-   ],
-   "lines": 1,
-   "flat": "Switching Masks buffs nearby allies.",
-   "_raw": "Switching Masks buffs nearby allies.",
-   "tree": "04/shaman/06/001/004",
-   "ability": "Tribal Chants",
-   "code": "SHAMAN-P6-R01-C04"
-  },
-  "ability-shaman#0124": {
-   "src": "{#} Cooldown: {~}s (per Chant)",
-   "dst": "{#} 재사용 대기시간: {~}초 (성가당)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Tribal Chants"
-   ],
-   "_raw": " Cooldown: 8s (per Chant)",
-   "tree": "04/shaman/06/001/004",
-   "ability": "Tribal Chants",
-   "code": "SHAMAN-P6-R01-C04"
-  },
-  "ability-shaman#0121": {
-   "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "{#} 광신도: 아군의 저항 보너스 (❁) +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Tribal Chants",
-    "shaman/Chorus of the Ancients"
-   ],
-   "_raw": " Fanatic: +45% Resistance Bonus (❁) to Allies",
-   "tree": "04/shaman/06/001/004",
-   "ability": "Tribal Chants、Chorus of the Ancients",
    "code": "SHAMAN-P6-R01-C04"
   },
   "ability-shaman#0122": {
@@ -3516,33 +2617,6 @@
    "tree": "04/shaman/06/002/000",
    "ability": "Maddening Roots",
    "code": "SHAMAN-P6-R02-C00"
-  },
-  "ability-shaman#0133": {
-   "src": "Seeking Totem",
-   "dst": "추적 토템",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/06/002/003",
-   "ability": "Seeking Totem",
-   "code": "SHAMAN-P6-R02-C03"
-  },
-  "ability-shaman#0134": {
-   "src": "While wearing the Mask of the Heretic {#},\nyour Totem will move towards you,\nunless you are within its range.",
-   "dst": "이단자의 가면 {#}을 쓴 상태에서\n당신이 Totem 범위 밖에 있으면\nTotem이 당신에게 다가옵니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Seeking Totem"
-   ],
-   "lines": 3,
-   "flat": "While wearing the Mask of the Heretic {#}, your Totem will move towards you, unless you are within its range.",
-   "_raw": "While wearing the Mask of the Heretic ,\nyour Totem will move towards you,\nunless you are within its range.",
-   "tree": "04/shaman/06/002/003",
-   "ability": "Seeking Totem",
-   "code": "SHAMAN-P6-R02-C03"
   },
   "ability-shaman#0135": {
    "src": "Cheaper Aura II",
@@ -3749,33 +2823,6 @@
    "ability": "Friendly Fire",
    "code": "SHAMAN-P6-R04-C02"
   },
-  "ability-shaman#0150": {
-   "src": "Depersonalization",
-   "dst": "이인증",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/06/004/005",
-   "ability": "Depersonalization",
-   "code": "SHAMAN-P6-R04-C05"
-  },
-  "ability-shaman#0151": {
-   "src": "Masquerade will trigger after -{~}\nless Mask switch. Reduces mana\nbonus by -{~}.",
-   "dst": "Masquerade 발동에 필요한 가면 전환\n횟수가 -{~} 줄어듭니다. 마나\n보너스가 -{~} 감소합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Depersonalization"
-   ],
-   "lines": 3,
-   "flat": "Masquerade will trigger after -{~} less Mask switch. Reduces mana bonus by -{~}.",
-   "_raw": "Masquerade will trigger after -1\nless Mask switch. Reduces mana\nbonus by -10.",
-   "tree": "04/shaman/06/004/005",
-   "ability": "Depersonalization",
-   "code": "SHAMAN-P6-R04-C05"
-  },
   "ability-shaman#0152": {
    "src": "Scourge",
    "dst": "재앙",
@@ -3802,72 +2849,6 @@
    "tree": "04/shaman/06/004/007",
    "ability": "Scourge",
    "code": "SHAMAN-P6-R04-C07"
-  },
-  "ability-shaman#0154": {
-   "src": "Meticulous Act",
-   "dst": "치밀한 연기",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/06/005/003",
-   "ability": "Meticulous Act",
-   "code": "SHAMAN-P6-R05-C03"
-  },
-  "ability-shaman#0155": {
-   "src": "Your Masks will give higher bonuses.",
-   "dst": "가면이 더 높은 보너스를 부여합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Meticulous Act"
-   ],
-   "lines": 1,
-   "flat": "Your Masks will give higher bonuses.",
-   "_raw": "Your Masks will give higher bonuses.",
-   "tree": "04/shaman/06/005/003",
-   "ability": "Meticulous Act",
-   "code": "SHAMAN-P6-R05-C03"
-  },
-  "ability-shaman#0156": {
-   "src": "{#} Fanatic: +{~} Resistance Bonus",
-   "dst": "{#} 광신도: 저항 보너스 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Meticulous Act"
-   ],
-   "_raw": " Fanatic: +20% Resistance Bonus",
-   "tree": "04/shaman/06/005/003",
-   "ability": "Meticulous Act",
-   "code": "SHAMAN-P6-R05-C03"
-  },
-  "ability-shaman#0157": {
-   "src": "{#} Heretic: +{~} Walk Speed",
-   "dst": "{#} 이단자: 이동 속도 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Meticulous Act"
-   ],
-   "_raw": " Heretic: +40% Walk Speed",
-   "tree": "04/shaman/06/005/003",
-   "ability": "Meticulous Act",
-   "code": "SHAMAN-P6-R05-C03"
-  },
-  "ability-shaman#0158": {
-   "src": "{#} Lunatic: +{~} Damage Bonus",
-   "dst": "{#} 광인: 피해 보너스 +{~}",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Meticulous Act"
-   ],
-   "_raw": " Lunatic: +25% Damage Bonus",
-   "tree": "04/shaman/06/005/003",
-   "ability": "Meticulous Act",
-   "code": "SHAMAN-P6-R05-C03"
   },
   "ability-shaman#0159": {
    "src": "Bloodletting",
@@ -4045,33 +3026,6 @@
    "ability": "Invigorating Wave",
    "code": "SHAMAN-P7-R02-C02"
   },
-  "ability-shaman#0172": {
-   "src": "Chorus of the Ancients",
-   "dst": "선조들의 합창",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/07/002/004",
-   "ability": "Chorus of the Ancients",
-   "code": "SHAMAN-P7-R02-C04"
-  },
-  "ability-shaman#0173": {
-   "src": "Increase the power of all Chants.",
-   "dst": "모든 성가의 효과가 강해집니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Chorus of the Ancients"
-   ],
-   "lines": 1,
-   "flat": "Increase the power of all Chants.",
-   "_raw": "Increase the power of all Chants.",
-   "tree": "04/shaman/07/002/004",
-   "ability": "Chorus of the Ancients",
-   "code": "SHAMAN-P7-R02-C04"
-  },
   "ability-shaman#0174": {
    "src": "Sanguine Strike",
    "dst": "핏빛 일격",
@@ -4169,15 +3123,15 @@
    "code": "SHAMAN-P7-R04-C01"
   },
   "ability-shaman#0181": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}자신의 점프 높이",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} 자신의 점프 높이",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Soaring Wingbeats"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
    "tree": "04/shaman/07/004/001",
    "ability": "Soaring Wingbeats",
@@ -4216,36 +3170,6 @@
    "ctx": [
     "shaman/技能名稱"
    ],
-   "tree": "04/shaman/07/004/005",
-   "ability": "Awakened",
-   "code": "SHAMAN-P7-R04-C05"
-  },
-  "ability-shaman#0185": {
-   "src": "After saving {~} mana from your Masks'\nmana reductions, switching Masks will\ncause you to become Awakened ♚,\ngiving you the upsides of all\nMasks at once with no downsides.",
-   "dst": "가면의 마나 감소 효과로 마나를\n{~} 아낀 뒤 가면을 바꾸면\n각성 ♚ 상태가 되어,\n모든 가면의 장점을 단점 없이\n한꺼번에 얻습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Awakened"
-   ],
-   "lines": 5,
-   "flat": "After saving {~} mana from your Masks' mana reductions, switching Masks will cause you to become Awakened ♚, giving you the upsides of all Masks at once with no downsides.",
-   "_raw": "After saving 150 mana from your Masks'\nmana reductions, switching Masks will\ncause you to become Awakened ♚,\ngiving you the upsides of all\nMasks at once with no downsides.",
-   "tree": "04/shaman/07/004/005",
-   "ability": "Awakened",
-   "code": "SHAMAN-P7-R04-C05"
-  },
-  "ability-shaman#0186": {
-   "src": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
-   "dst": "각성 ♚ 상태에서 적에게 붙은\n가면으로 바꾸면 그 가면이\n즉시 돌아옵니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Awakened"
-   ],
-   "lines": 3,
-   "flat": "Switching to an attached Mask while Awakened ♚ will immediately recall the Mask back to you.",
-   "_raw": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
    "tree": "04/shaman/07/004/005",
    "ability": "Awakened",
    "code": "SHAMAN-P7-R04-C05"
@@ -4509,21 +3433,6 @@
    "ability": "Effuse",
    "code": "SHAMAN-P8-R02-C08"
   },
-  "ability-shaman#0206": {
-   "src": "Flaming Tongue grants +{~} Blood Pool {#} per hit.",
-   "dst": "Flaming Tongue이 타격마다 피웅덩이 {#}을 +{~} 부여합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Effuse"
-   ],
-   "lines": 1,
-   "flat": "Flaming Tongue grants +{~} Blood Pool {#} per hit.",
-   "_raw": "Flaming Tongue grants +2.5 Blood Pool  per hit.",
-   "tree": "04/shaman/08/002/008",
-   "ability": "Effuse",
-   "code": "SHAMAN-P8-R02-C08"
-  },
   "ability-shaman#0207": {
    "src": "Slingshot",
    "dst": "새총",
@@ -4550,90 +3459,6 @@
    "tree": "04/shaman/08/003/000",
    "ability": "Slingshot",
    "code": "SHAMAN-P8-R03-C00"
-  },
-  "ability-shaman#0209": {
-   "src": "Egomania",
-   "dst": "자기애",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/08/003/003",
-   "ability": "Egomania",
-   "code": "SHAMAN-P8-R03-C03"
-  },
-  "ability-shaman#0210": {
-   "src": "Increase Aura's damage.",
-   "dst": "Aura의 피해가 증가합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Egomania"
-   ],
-   "lines": 1,
-   "flat": "Increase Aura's damage.",
-   "_raw": "Increase Aura's damage.",
-   "tree": "04/shaman/08/003/003",
-   "ability": "Egomania",
-   "code": "SHAMAN-P8-R03-C03"
-  },
-  "ability-shaman#0211": {
-   "src": "When wearing the Mask of the Fanatic {#},\nAura will radiate from yourself\ninstead of your Totem.",
-   "dst": "광신도의 가면 {#}을 쓴 상태에서\nAura가 Totem 대신\n당신에게서 방출됩니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Egomania"
-   ],
-   "lines": 3,
-   "flat": "When wearing the Mask of the Fanatic {#}, Aura will radiate from yourself instead of your Totem.",
-   "_raw": "When wearing the Mask of the Fanatic ,\nAura will radiate from yourself\ninstead of your Totem.",
-   "tree": "04/shaman/08/003/003",
-   "ability": "Egomania",
-   "code": "SHAMAN-P8-R03-C03"
-  },
-  "ability-shaman#0212": {
-   "src": "Totemic Hammer",
-   "dst": "토템 망치",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/08/003/005",
-   "ability": "Totemic Hammer",
-   "code": "SHAMAN-P8-R03-C05"
-  },
-  "ability-shaman#0213": {
-   "src": "Increase Totemic Smash's damage.",
-   "dst": "Totemic Smash의 피해가 증가합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Totemic Hammer"
-   ],
-   "lines": 1,
-   "flat": "Increase Totemic Smash's damage.",
-   "_raw": "Increase Totemic Smash's damage.",
-   "tree": "04/shaman/08/003/005",
-   "ability": "Totemic Hammer",
-   "code": "SHAMAN-P8-R03-C05"
-  },
-  "ability-shaman#0214": {
-   "src": "When wearing the Mask of the Lunatic {#},\nTotem will smash down onto the ground.",
-   "dst": "광인의 가면 {#}을 쓴 상태에서\nTotem이 땅에 내리꽂힙니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Totemic Hammer"
-   ],
-   "lines": 2,
-   "flat": "When wearing the Mask of the Lunatic {#}, Totem will smash down onto the ground.",
-   "_raw": "When wearing the Mask of the Lunatic ,\nTotem will smash down onto the ground.",
-   "tree": "04/shaman/08/003/005",
-   "ability": "Totemic Hammer",
-   "code": "SHAMAN-P8-R03-C05"
   },
   "ability-shaman#0215": {
    "src": "Bloodiest",
@@ -4701,36 +3526,6 @@
    "ability": "Pool of Rejuvenation",
    "code": "SHAMAN-P8-R04-C04"
   },
-  "ability-shaman#0220": {
-   "src": "Gain +{~} Mana every {~}s while\ninside of at least one pool.",
-   "dst": "샘 안에 하나 이상 있는 동안\n{~2}초마다 마나를 +{~1} 얻습니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Pool of Rejuvenation"
-   ],
-   "lines": 2,
-   "flat": "Gain +{~} Mana every {~}s while inside of at least one pool.",
-   "_raw": "Gain +1 Mana every 0.2s while\ninside of at least one pool.",
-   "tree": "04/shaman/08/004/004",
-   "ability": "Pool of Rejuvenation",
-   "code": "SHAMAN-P8-R04-C04"
-  },
-  "ability-shaman#0221": {
-   "src": "When wearing the Mask of the Heretic {#},\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "이단자의 가면 {#}을 쓴 상태에서\nFrog Dance로 땅에 닿으면 작은 샘을\n만듭니다. (최대 {~}개)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Pool of Rejuvenation"
-   ],
-   "lines": 3,
-   "flat": "When wearing the Mask of the Heretic {#}, Frog Dance will create a small pool when hitting the ground. (Max {~})",
-   "_raw": "When wearing the Mask of the Heretic ,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max 3)",
-   "tree": "04/shaman/08/004/004",
-   "ability": "Pool of Rejuvenation",
-   "code": "SHAMAN-P8-R04-C04"
-  },
   "ability-shaman#0222": {
    "src": "Haemomagnetic",
    "dst": "피의 자력",
@@ -4757,33 +3552,6 @@
    "tree": "04/shaman/08/004/008",
    "ability": "Haemomagnetic",
    "code": "SHAMAN-P8-R04-C08"
-  },
-  "ability-shaman#0224": {
-   "src": "Corporeal Manifestation",
-   "dst": "육신의 현현",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/08/005/005",
-   "ability": "Corporeal Manifestation",
-   "code": "SHAMAN-P8-R05-C05"
-  },
-  "ability-shaman#0225": {
-   "src": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
-   "dst": "각성의 가면 ♚을 쓴 상태에서\n다른 모든 가면이 당신 주위를\n돌며 피해를 주고\nHaunting Memory의 효과를 부여합니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Corporeal Manifestation"
-   ],
-   "lines": 4,
-   "flat": "When wearing the Mask of the Awakened ♚, all of your other Masks will spin around you, dealing damage and applying Haunting Memory's effects.",
-   "_raw": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
-   "tree": "04/shaman/08/005/005",
-   "ability": "Corporeal Manifestation",
-   "code": "SHAMAN-P8-R05-C05"
   },
   "ability-shaman#0226": {
    "src": "Patchwork Abomination",
@@ -4967,63 +3735,6 @@
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
    "code": "SHAMAN-P9-R02-C07"
-  },
-  "ability-shaman#0239": {
-   "src": "Sundered Skies",
-   "dst": "갈라진 하늘",
-   "role": "name",
-   "kind": "term",
-   "ctx": [
-    "shaman/技能名稱"
-   ],
-   "tree": "04/shaman/09/003/004",
-   "ability": "Sundered Skies",
-   "code": "SHAMAN-P9-R03-C04"
-  },
-  "ability-shaman#0240": {
-   "src": "Damage is split between all enemies.",
-   "dst": "피해는 모든 적에게 나뉘어 적용됩니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Sundered Skies"
-   ],
-   "lines": 1,
-   "flat": "Damage is split between all enemies.",
-   "_raw": "Damage is split between all enemies.",
-   "tree": "04/shaman/09/003/004",
-   "ability": "Sundered Skies",
-   "code": "SHAMAN-P9-R03-C04"
-  },
-  "ability-shaman#0241": {
-   "src": "When your Totem lands, it summons\na massive Thundercloud that zaps enemies\nevery {~}s, stunning them for {~}s.",
-   "dst": "Totem이 착지하면 거대한\n뇌운을 소환하여 {~}초마다 적을 감전시키고\n{~}초 동안 기절시킵니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Sundered Skies"
-   ],
-   "lines": 3,
-   "flat": "When your Totem lands, it summons a massive Thundercloud that zaps enemies every {~}s, stunning them for {~}s.",
-   "_raw": "When your Totem lands, it summons\na massive Thundercloud that zaps enemies\nevery 1s, stunning them for 1.5s.",
-   "tree": "04/shaman/09/003/004",
-   "ability": "Sundered Skies",
-   "code": "SHAMAN-P9-R03-C04"
-  },
-  "ability-shaman#0242": {
-   "src": "Your Totem massively grows in size,\ndoubling all of its effects.",
-   "dst": "Totem이 거대하게 커져\n모든 효과가 두 배가 됩니다.",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Sundered Skies"
-   ],
-   "lines": 2,
-   "flat": "Your Totem massively grows in size, doubling all of its effects.",
-   "_raw": "Your Totem massively grows in size,\ndoubling all of its effects.",
-   "tree": "04/shaman/09/003/004",
-   "ability": "Sundered Skies",
-   "code": "SHAMAN-P9-R03-C04"
   }
  }
 }
