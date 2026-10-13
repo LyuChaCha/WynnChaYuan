@@ -23,10 +23,16 @@ const STYLE = String.raw`
     --ink: #e9efe9; --ink-2: #a3b3a7; --leaf: #7fd08a; --leaf-deep: #2f7d46;
     --gold: #d8b765; --cyan: #5bd8e8; --danger: #e08a8a;
     /* 動作的節奏：進場用 --arrive（先快後慢），按壓與懸停用 --out；回饋 140ms、狀態 200ms */
-    --out: cubic-bezier(0.23, 1, 0.32, 1); --arrive: cubic-bezier(0.16, 1, 0.3, 1);
+    --out: cubic-bezier(0.23, 1, 0.32, 1); --arrive: cubic-bezier(0.16, 1, 0.3, 1); --move: cubic-bezier(0.77, 0, 0.175, 1);
     --fast: 140ms; --base: 200ms;
   }
   * { box-sizing: border-box; }
+  /* 換頁：內容淡過去，頁首留在原地不閃。很短——換頁是常做的事，動畫不該讓人等 */
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 150ms; animation-timing-function: ease; }
+  /* 披風一覽換排序、換篩選：每張卡滑到新的位置（在畫面上移動的東西用兩頭慢的曲線） */
+  ::view-transition-group(*) { animation-duration: 320ms; animation-timing-function: var(--move); }
+  ::view-transition-group(root), ::view-transition-group(top) { animation-duration: 150ms; }
   html { scroll-behavior: smooth; scroll-padding-top: 76px; scrollbar-color: #2f4236 var(--ground); accent-color: var(--leaf); }
   ::selection { background: var(--leaf-deep); color: #fff; }
   input, textarea { caret-color: var(--leaf); }
@@ -42,7 +48,7 @@ const STYLE = String.raw`
   a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
     outline: 2px solid var(--leaf); outline-offset: 2px;
   }
-  .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+  .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); view-transition-name: top; }
   /* 放不下的時候（字比較長的語言、登入後多了名字與「管理」）右邊那一組整組換到下一列，選單本身不折行 */
   .top .in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; }
@@ -84,8 +90,9 @@ const STYLE = String.raw`
   .me img { width: 22px; height: 22px; border-radius: 4px; image-rendering: pixelated; }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
   h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
-  h2 { margin: 44px 0 14px; font-size: 19px; font-weight: 650; }
-  .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; }
+  /* 大段之間留寬一點、標題貼著自己的內容：寬與緊的差距才看得出哪幾塊是一組 */
+  h2 { margin: 56px 0 14px; font-size: 19px; font-weight: 650; }
+  .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
   .panel { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
   .note { color: var(--ink-2); font-size: 14px; }
   .note b { color: var(--gold); font-weight: 600; }
@@ -164,9 +171,10 @@ const STYLE = String.raw`
   .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink-2); background: var(--panel); }
-  .features { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .features { display: grid; gap: 0 32px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .features > div { padding: 16px 0 20px; border-top: 1px solid var(--line); }
   .features h3 { margin: 0 0 4px; font-size: 15px; font-weight: 650; }
-  .features p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .features p { margin: 0; color: var(--ink-2); font-size: 14px; max-width: 38ch; }
   .more { margin: 14px 0 0; font-size: 14px; }
   .more a { display: inline-flex; align-items: center; gap: 6px; }
   .more .ico { transition: transform var(--fast) var(--out); }
@@ -215,7 +223,11 @@ const STYLE = String.raw`
   .play { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
   .play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
   .play-lang { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 13px; color: var(--ink-2); }
-  .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--ground); }
+  .seg { position: relative; display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--ground); }
+  /* 選到的那一顆底下的那一塊：換一顆就滑過去（程式放的，見 slide()）。沒有程式的時候照舊是按鈕自己的底色 */
+  .seg .pill { position: absolute; left: 0; top: 0; border-radius: 7px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line); pointer-events: none; transition: transform 220ms var(--out), width 220ms var(--out), height 220ms var(--out), opacity var(--fast) ease; }
+  .seg button { position: relative; }
+  .seg.live button[aria-pressed="true"] { background: none; box-shadow: none; }
   .seg button { font: inherit; font-size: 13px; padding: 5px 12px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out); }
   .seg button:active { transform: scale(.97); }
   .seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
@@ -397,6 +409,7 @@ const STYLE = String.raw`
   }
   @media (max-width: 940px) {
     .foot { grid-template-columns: 1fr; }
+    .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     /* 窄一點的畫面：頁首拆成幾列（標誌與工具、選單），所以不黏在上面，免得佔掉半個畫面 */
     .top { position: static; }
     .top .in { gap: 8px 10px; flex-wrap: wrap; }
@@ -415,6 +428,7 @@ const STYLE = String.raw`
     .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .band { grid-template-columns: 1fr; }
     .lineup, .lineup.guilds { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
     .play-body { grid-template-columns: 1fr; }
     .play-view { order: -1; border-left: 0; border-bottom: 1px solid var(--line); }
     .pstage { height: 350px; }
@@ -434,6 +448,8 @@ const STYLE = String.raw`
     .gapmark, .switch::after { transition: none; }
     .card.skel { animation: none; }
     dialog, dialog[open] { transform: none; }
+    .seg .pill { transition: none; }
+    @view-transition { navigation: none; }
     @starting-style { dialog[open] { transform: none; } }
   }
 `;
@@ -1026,6 +1042,35 @@ const COMMON = String.raw`
       : [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
       { duration: 200, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
   }
+  /* 分段選項底下那一塊：滑到選到的那一顆底下。第一次直接放好，之後才用滑的 */
+  function slide(seg) {
+    var on = seg.querySelector('button[aria-pressed="true"]:not([hidden])');
+    var pill = seg.querySelector('.pill');
+    var fresh = !pill;
+    if (fresh) {
+      pill = el('i', 'pill');
+      seg.prepend(pill);
+      seg.classList.add('live');
+    }
+    if (!on || !on.offsetWidth) { pill.style.opacity = '0'; return; }
+    if (fresh || pill.style.opacity === '0') pill.style.transition = 'none';
+    pill.style.opacity = '1';
+    pill.style.width = on.offsetWidth + 'px';
+    pill.style.height = on.offsetHeight + 'px';
+    pill.style.transform = 'translate(' + on.offsetLeft + 'px, ' + on.offsetTop + 'px)';
+    if (pill.style.transition === 'none') {
+      pill.getBoundingClientRect();        /* 先讓瀏覽器把位置算好，再把過場開回來，才不會從左上角滑進來 */
+      pill.style.transition = '';
+    }
+  }
+  function slideAll() { Array.prototype.forEach.call(document.querySelectorAll('.seg'), slide); }
+  /* 按了哪一組就更新那一組（等那一顆自己的程式先把選到的換好）；視窗變寬變窄、字型載好也要重新量 */
+  document.addEventListener('click', function (e) {
+    var seg = e.target.closest && e.target.closest('.seg');
+    if (seg) setTimeout(function () { slide(seg); }, 0);
+  });
+  window.addEventListener('resize', slideAll);
+  window.addEventListener('load', slideAll);
   /* 按鈕暫時換一個字（「已複製」），過一下換回來。寬度先定住，字換了按鈕不會縮 */
   function blip(button, text) {
     if (button.dataset.label) return;
@@ -1183,12 +1228,12 @@ const HOME = String.raw`
 
   <h2>%%home.what%%</h2>
   <div class="features">
-    <div class="panel"><h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
-    <div class="panel"><h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
-    <div class="panel"><h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
-    <div class="panel"><h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
-    <div class="panel"><h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
-    <div class="panel"><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
+    <div><h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
+    <div><h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
+    <div><h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
+    <div><h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
+    <div><h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
+    <div><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
   </div>
   <p class="more"><a href="/features">%%home.morefeatures%%` + ICON.go + String.raw`</a></p>
 
@@ -1667,6 +1712,7 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + String.raw`
         set.append(line);
       });
       updaters.forEach(function (update) { update(); });
+      slideAll();
     }
     tabs.forEach(function (button) {
       button.onclick = function () {
@@ -1824,8 +1870,8 @@ const CAPES = String.raw`
     <button type="button" data-f="hidden" aria-pressed="false" hidden>%%capes.f.hidden%%</button>
     <button type="button" data-f="pending" aria-pressed="false" hidden>%%capes.f.pending%%</button>
   </div>
-  <p class="panel note">%%rules%%</p>
-  <div class="grid" id="grid" style="margin-top:22px"></div>
+  <div class="grid" id="grid"></div>
+  <p class="note" style="margin:28px 0 0;max-width:72ch">%%rules%%</p>
   <template id="star">` + STAR + String.raw`</template>
 
   <dialog id="viewer" aria-labelledby="viewer-title">
@@ -1974,6 +2020,8 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       var card = el('div', 'card');
       if (still) card.style.animation = 'none';
       else card.style.setProperty('--i', Math.min(index, 10));
+      /* 每張卡有自己的名字：換排序的時候瀏覽器才知道哪一張移到哪裡。太多張就不取了（一次動太多反而亂） */
+      if (items.length <= 60) card.style.viewTransitionName = 'c' + cape.h.slice(0, 16);
       var open = el('button', 'open');
       open.type = 'button';
       open.setAttribute('aria-label', fmt(L.card, { t: cape.t.toUpperCase(), n: cape.ids.length }));
@@ -2159,6 +2207,11 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   };
 
   /* ---- 排序與篩選 ---- */
+  /* 換排序、換篩選：留下來的卡滑到新的位置，新來的淡進來。瀏覽器不支援、或不想看動來動去的人就直接換 */
+  function reorder() {
+    if (!document.startViewTransition || calm || document.visibilityState === 'hidden') { render(false); return; }
+    document.startViewTransition(function () { render(true); });
+  }
   var filters = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
   filters.forEach(function (button) {
     button.onclick = function () {
@@ -2166,10 +2219,10 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       filters.forEach(function (other) { other.setAttribute('aria-pressed', other === button ? 'true' : 'false'); });
       /* 「我用過的」照用的時間排，排序在那裡沒有用 */
       document.getElementById('sort').disabled = filter === 'hist';
-      render(false);
+      reorder();
     };
   });
-  document.getElementById('sort').onchange = function () { sort = this.value; render(false); };
+  document.getElementById('sort').onchange = function () { sort = this.value; reorder(); };
 
   function load(still) {
     var list = api(developer ? '/admin/capes' : '/capes').then(function (r) { return r.json(); });
@@ -2200,6 +2253,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       if (f === 'fav' || f === 'hist') button.hidden = !member();
       if (f === 'hidden' || f === 'pending') button.hidden = !developer;
     });
+    slideAll();
     return load(false);
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
