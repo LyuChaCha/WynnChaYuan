@@ -55,6 +55,21 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
   }
   n++;
 }
+// 披風一覽的幾種狀態：幾件有人加了最愛、一件不公開、一件在等審核，審核名單上一個人
+{
+  const seeded = [...data.keys()].filter((k) => k.startsWith('cape:')).map((k) => data.get(k).metadata);
+  const stars = {};
+  seeded.forEach((cape, i) => {
+    cape.c = cape.v - (i % 5) * 3600000;
+    if (i % 3 === 0) stars[cape.h] = 1 + (i % 4);
+  });
+  const alone = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 1);
+  if (alone[0]) alone[0].q = 1;
+  if (alone[1]) alone[1].r = 1;
+  data.set('stars', { value: JSON.stringify(stars), metadata: null });
+  data.set('review:' + '0'.repeat(32), {
+    value: JSON.stringify({ n: people[1], note: '示範', t: Date.now() - 5400000, by: developer, ok: [] }), metadata: null });
+}
 data.set('ban:' + '9'.repeat(32), {
   value: JSON.stringify({ n: 'Herobrine', t: Date.now() - 3 * 86400000, by: developer }), metadata: null });
 

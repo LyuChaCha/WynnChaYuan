@@ -74,6 +74,8 @@ const STYLE = String.raw`
   .menu p { margin: 6px 0 0; padding: 9px 10px 5px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; line-height: 1.55; }
   select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease; }
   select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
+  select.pick { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; transition: border-color var(--fast) ease; }
+  select.pick:hover { border-color: var(--leaf-deep); }
   /* 同一個漢字在各語言的寫法不一樣：照頁面的語言挑字型，不要一律拿繁體中文的字型去畫 */
   :lang(zh-Hans) body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
   :lang(ja) body { font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Meiryo", system-ui, sans-serif; }
@@ -304,17 +306,40 @@ const STYLE = String.raw`
   .count { font-variant-numeric: tabular-nums; color: var(--ink-2); }
   .count b { color: var(--ink); font-weight: 600; }
   .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
+  /* 一張卡：整張是「點開來看」的按鈕，右上角另外一顆星星（加進我的最愛）——按鈕不能包按鈕，所以是兩顆並排在同一個框裡 */
   .card {
-    display: flex; flex-direction: column; padding: 0; text-align: left; color: inherit; font: inherit;
+    position: relative; display: flex; flex-direction: column;
     background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
-    cursor: pointer; transition: transform 180ms var(--out), border-color 180ms ease, box-shadow 180ms ease;
+    transition: transform 180ms var(--out), border-color 180ms ease, box-shadow 180ms ease;
     /* 一覽載進來的時候一張接一張出現；--i 是第幾張，最多排到第 10 張，後面的一起出來 */
     animation: rise 360ms var(--arrive) both; animation-delay: calc(var(--i, 0) * 35ms);
   }
-  .card:active { transform: scale(.98); }
+  .card .open { display: flex; flex-direction: column; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  .card .open:focus-visible { outline-offset: -3px; }
+  .card:has(.open:active) { transform: scale(.98); }
+  .star {
+    position: absolute; top: 8px; right: 8px; display: grid; place-items: center; width: 32px; height: 32px; padding: 0;
+    border: 0; border-radius: 9px; background: #0b0f0d8c; color: var(--ink-2); cursor: pointer;
+    transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out);
+  }
+  .star svg, .stars svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+  .star[aria-pressed="true"] { color: var(--gold); }
+  .star[aria-pressed="true"] svg { fill: currentColor; }
+  .star:active { transform: scale(.88); }
+  .meta .stars { display: inline-flex; align-items: center; gap: 3px; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .meta .stars svg { width: 12px; height: 12px; fill: currentColor; stroke: none; }
+  .tag.off { background: none; color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
+  .tag.wait { background: #5c4d27; color: var(--gold); }
+  .tag.mine { background: var(--leaf-deep); color: #fff; }
+  .sortby { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 13px; color: var(--ink-2); }
+  .filters { margin: 0 0 14px; }
+  .set-line { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .set-line b { display: block; font-weight: 600; font-size: 14px; }
+  .set-line .hint { margin-top: 2px; }
   @media (hover: hover) and (pointer: fine) {
     .card:hover { transform: translateY(-3px); border-color: var(--leaf-deep); box-shadow: 0 10px 26px #0008; }
-    .card:hover:active { transform: translateY(-1px) scale(.98); }
+    .card:hover:has(.open:active) { transform: translateY(-1px) scale(.98); }
+    .star:hover { color: var(--gold); background: #0b0f0dd9; }
   }
   /* 還在跟伺服器要資料的時候：先放幾張同樣大小的空卡，版面不會跳 */
   .card.skel { cursor: default; animation: pulse 1.4s ease-in-out infinite; }
@@ -401,7 +426,7 @@ const STYLE = String.raw`
   /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .btn:active, .card:active, .card:hover, .card:hover:active { transform: none; }
+    .btn:active, .card:has(.open:active), .card:hover, .card:hover:has(.open:active), .star:active { transform: none; }
     .hero > div > *, .hero img, .card, .fig { animation-name: fade; animation-duration: 200ms; animation-delay: 0ms; }
     .more a:hover .ico, .seg button:active, a.who-row:active, .guild:active, a.who-row:hover .ico, .guild:hover .ico { transform: none; }
     .menu, .menu.open { transform: none; }
@@ -492,9 +517,13 @@ export const TEXT = {
     'capes.h1': '披風一覽',
     'capes.lede': 'WynnChaYuan 玩家上傳的披風。點一件可以轉著看，登入之後還能直接穿上。',
     'capes.mine': '上傳我的披風',
+    'capes.sort': '排序', 'capes.filter': '篩選',
+    'capes.s.new': '最新上傳', 'capes.s.old': '最早上傳', 'capes.s.worn': '最多人使用', 'capes.s.stars': '人氣最高', 'capes.s.recent': '最近有人穿上',
+    'capes.f.all': '全部', 'capes.f.fav': '我的最愛', 'capes.f.hist': '我用過的', 'capes.f.hidden': '不公開', 'capes.f.pending': '待審核',
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
     'view.title': '披風', 'view.flat': '披風的範本圖：左邊正面、右邊背面',
     'view.type': '格式', 'view.dim': '尺寸', 'view.size': '檔案大小', 'view.users': '使用', 'view.date': '上傳',
+    'view.stars': '加入最愛', 'view.approve': '通過審核', 'view.review': '上傳的人之後都要審核', 'view.forget': '從我的紀錄移除',
     'view.del': '刪除這件披風', 'view.ban': '刪除並封禁上傳的人', 'view.close': '關閉',
     'view.wear': '穿上這件披風', 'view.signin': '登入並綁定遊戲 ID 之後，就能穿上這一件。<a href="/account">前往帳號</a>',
 
@@ -524,6 +553,10 @@ export const TEXT = {
     'account.signout': '登出這個瀏覽器',
     'account.mine': '我的披風', 'account.none': '還沒有上傳。', 'account.remove': '移除我的披風',
     'account.worn': '這一件是從披風一覽套用的。',
+    'account.public': '公開在披風一覽',
+    'account.publichint': '關掉之後，別人在披風一覽上看不到你的披風，也不能穿上它；遊戲裡其他玩家照樣看得到你穿著。',
+    'account.pending': '這件披風正在等審核，通過之前別人看不到。',
+    'account.review': '你上傳的披風目前要先經過審核，通過之後別人才看得到。',
     'account.upload': '上傳披風',
     'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '。檔案大小：一般玩家 1 MB 以內，開發者、贊助者、貢獻者 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
     'account.pick': '選一張披風的圖', 'account.send': '上傳',
@@ -541,6 +574,9 @@ export const TEXT = {
     'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
     'admin.send': '開 PR',
     'account.drop': '也可以把圖檔拖到這裡。尺寸對的話，上面的人偶會先穿給你看。',
+    'admin.reviews': '審核名單',
+    'admin.reviewsnote': '比封禁輕的處置：名單上的人還是可以上傳，但之後傳的披風要先由管理的人在披風一覽按「通過審核」，別人才看得到（一覽與遊戲裡都是）。他現在身上那一件不受影響。等審核的披風在披風一覽的「待審核」。輸入他的 Minecraft UUID；也可以在披風一覽點開一件，直接把上傳的人列進來。',
+    'admin.noreviews': '沒有人在審核名單上。',
     'admin.perks': '特別名單',
     'admin.perksnote': '名單上的人可以上傳 GIF 披風、檔案上限 20 MB，跟開發者、贊助者、貢獻者一樣，但不會出現在貢獻者名單上，名字前面也不會多一片葉子。輸入他的 Minecraft UUID，有沒有連字號都可以；加了馬上生效。',
     'admin.uuid': 'Minecraft UUID', 'admin.note': '備註（可以不填）', 'admin.grant': '加入',
@@ -626,7 +662,19 @@ export const TEXT = {
         'login first': '登入過期了，請從遊戲裡重新開一次',
         'no such cape': '這件披風已經不在了，請重新整理',
         'nothing to restore': '沒有可以復原的披風',
+        'in use': '現在穿著的那一件不能從紀錄移除',
+        'too many': '我的最愛已經滿了（最多 200 件）',
+        'no cape': '你還沒有披風',
       },
+      favAdd: '加入我的最愛', favRemove: '從我的最愛移除',
+      emptyFav: '還沒有加入最愛的披風。點披風右上角的星星就能加進來。', emptyHist: '還沒有使用紀錄。', emptyFilter: '沒有符合的披風。',
+      tagPrivate: '不公開', tagPending: '待審核', tagMine: '我穿的', tagWorn: '套用',
+      confirmReview: '把上傳這件披風的人列入審核名單？之後他們傳的披風要先通過審核，別人才看得到。',
+      reviewed: '已列入審核名單（{n} 人）', reviewedNone: '上傳的人已經在審核名單上了', approved: '已通過審核',
+      confirmForget: '把這一件從你的使用紀錄移除？', forgot: '已從紀錄移除',
+      uploadedPending: '披風上傳好了（{w}×{h}）。要等審核通過，別人才會看到',
+      wornPending: '穿上了，但要等審核通過別人才會看到。',
+      confirmUnreview: '把 {who} 從審核名單移除？等審核的披風會直接放行。',
       onWynn: '在 Wynncraft 看 {n} 的資料',
       wearingThis: '你正在穿這一件。', restoreOwn: '復原成我原本的披風', takeOff: '脫下這件披風',
       wornOk: '穿上了，其他玩家幾分鐘內就會看到。', wornKept: '穿上了，其他玩家幾分鐘內就會看到。你原本那一件還留著，隨時可以復原。',
@@ -721,9 +769,13 @@ export const TEXT = {
     'capes.h1': 'Cape gallery',
     'capes.lede': 'Capes uploaded by WynnChaYuan players. Click one to turn it around; once signed in, you can also wear it.',
     'capes.mine': 'Upload my cape',
+    'capes.sort': 'Sort by', 'capes.filter': 'Filter',
+    'capes.s.new': 'Newest', 'capes.s.old': 'Oldest', 'capes.s.worn': 'Most worn', 'capes.s.stars': 'Most popular', 'capes.s.recent': 'Recently put on',
+    'capes.f.all': 'All', 'capes.f.fav': 'My favourites', 'capes.f.hist': 'Worn before', 'capes.f.hidden': 'Not public', 'capes.f.pending': 'Awaiting review',
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'view.title': 'Cape', 'view.flat': 'The cape template image: front on the left, back on the right',
     'view.type': 'Format', 'view.dim': 'Dimensions', 'view.size': 'File size', 'view.users': 'Players', 'view.date': 'Uploaded',
+    'view.stars': 'Favourited by', 'view.approve': 'Approve', 'view.review': 'Review the uploaders’ future capes', 'view.forget': 'Remove from my history',
     'view.del': 'Delete this cape', 'view.ban': 'Delete and ban the uploaders', 'view.close': 'Close',
     'view.wear': 'Wear this cape', 'view.signin': 'Sign in and link your game ID to wear this one. <a href="/account">Go to Account</a>',
 
@@ -753,6 +805,10 @@ export const TEXT = {
     'account.signout': 'Sign out of this browser',
     'account.mine': 'My cape', 'account.none': 'Nothing uploaded yet.', 'account.remove': 'Remove my cape',
     'account.worn': 'This one was picked from the cape gallery.',
+    'account.public': 'Show in the cape gallery',
+    'account.publichint': 'When this is off, others cannot see your cape in the gallery or wear it; other players still see you wearing it in game.',
+    'account.pending': 'This cape is awaiting review. Nobody else can see it until it is approved.',
+    'account.review': 'Capes you upload are reviewed first for now; others see them once they are approved.',
     'account.upload': 'Upload a cape',
     'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + '. File size: up to 1 MB for regular players, 20 MB for developers, sponsors and contributors. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
     'account.pick': 'Choose a cape image', 'account.send': 'Upload',
@@ -770,6 +826,9 @@ export const TEXT = {
     'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
     'admin.send': 'Open PR',
     'account.drop': 'You can also drop the image here. If the size is right, the model above tries it on first.',
+    'admin.reviews': 'Review list',
+    'admin.reviewsnote': 'A lighter measure than a ban: people on this list can still upload, but a cape they upload later is shown to others (in the gallery and in game) only after a moderator clicks “Approve” in the cape gallery. The cape they are wearing now is not affected. Capes awaiting review are under “Awaiting review” in the gallery. Enter their Minecraft UUID; you can also open a cape in the gallery and add its uploaders from there.',
+    'admin.noreviews': 'Nobody is on the review list.',
     'admin.perks': 'Special list',
     'admin.perksnote': 'People on this list can upload GIF capes and files up to 20 MB, the same as developers, sponsors and contributors, but they are not shown on the credits list and get no leaf before their name. Enter their Minecraft UUID, with or without hyphens. It takes effect immediately.',
     'admin.uuid': 'Minecraft UUID', 'admin.note': 'Note (optional)', 'admin.grant': 'Add',
@@ -855,7 +914,19 @@ export const TEXT = {
         'login first': 'Your sign-in expired - open the site from the game again',
         'no such cape': 'This cape is no longer here. Please refresh',
         'nothing to restore': 'There is no cape to switch back to',
+        'in use': 'You cannot remove the cape you are wearing from your history',
+        'too many': 'Your favourites are full (200 at most)',
+        'no cape': 'You do not have a cape yet',
       },
+      favAdd: 'Add to my favourites', favRemove: 'Remove from my favourites',
+      emptyFav: 'No favourites yet. Click the star on a cape to add it.', emptyHist: 'Nothing worn yet.', emptyFilter: 'No capes match.',
+      tagPrivate: 'Not public', tagPending: 'In review', tagMine: 'Wearing', tagWorn: 'picked',
+      confirmReview: 'Put the uploaders of this cape on the review list? Capes they upload from now on must be approved before others can see them.',
+      reviewed: 'Added to the review list ({n})', reviewedNone: 'The uploaders are already on the review list', approved: 'Approved',
+      confirmForget: 'Remove this one from your history?', forgot: 'Removed from your history',
+      uploadedPending: 'Cape uploaded ({w}×{h}). Others will see it once it has been approved',
+      wornPending: 'You are wearing it now, but others will only see it once it has been approved.',
+      confirmUnreview: 'Remove {who} from the review list? A cape awaiting review will be let through.',
       onWynn: 'See {n} on Wynncraft',
       wearingThis: 'You are wearing this one.', restoreOwn: 'Switch back to my own cape', takeOff: 'Take this cape off',
       wornOk: 'You are wearing it now. Other players will see it within a few minutes.', wornKept: 'You are wearing it now. Other players will see it within a few minutes. Your own cape is kept, and you can switch back any time.',
@@ -1726,15 +1797,36 @@ const VIEWER = String.raw`
 
 const SKINVIEW = '<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.1/bundles/skinview3d.bundle.js"></script>';
 
+const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg>';
+
 const CAPES = String.raw`
   <h1>%%capes.h1%%</h1>
   <p class="lede">%%capes.lede%%</p>
   <div class="bar">
     <span class="count" id="count"></span>
-    <a class="btn" href="/account">%%capes.mine%%</a>
+    <label class="sortby" for="sort">%%capes.sort%%
+      <select class="pick" id="sort">
+        <option value="new">%%capes.s.new%%</option>
+        <option value="old">%%capes.s.old%%</option>
+        <option value="worn">%%capes.s.worn%%</option>
+        <option value="stars">%%capes.s.stars%%</option>
+        <option value="recent">%%capes.s.recent%%</option>
+      </select>
+    </label>
+    <a class="btn" href="/account" style="margin-left:auto">%%capes.mine%%</a>
+  </div>
+  <div class="seg filters" id="filters" role="group" aria-label="%%capes.filter%%">
+    <button type="button" data-f="all" aria-pressed="true">%%capes.f.all%%</button>
+    <button type="button" data-f="png" aria-pressed="false">PNG</button>
+    <button type="button" data-f="gif" aria-pressed="false">GIF</button>
+    <button type="button" data-f="fav" aria-pressed="false" hidden>%%capes.f.fav%%</button>
+    <button type="button" data-f="hist" aria-pressed="false" hidden>%%capes.f.hist%%</button>
+    <button type="button" data-f="hidden" aria-pressed="false" hidden>%%capes.f.hidden%%</button>
+    <button type="button" data-f="pending" aria-pressed="false" hidden>%%capes.f.pending%%</button>
   </div>
   <p class="panel note">%%rules%%</p>
   <div class="grid" id="grid" style="margin-top:22px"></div>
+  <template id="star">` + STAR + String.raw`</template>
 
   <dialog id="viewer" aria-labelledby="viewer-title">
     <div class="view">
@@ -1747,6 +1839,7 @@ const CAPES = String.raw`
           <dt>%%view.dim%%</dt><dd id="d-dim"></dd>
           <dt>%%view.size%%</dt><dd id="d-size"></dd>
           <dt>%%view.users%%</dt><dd id="d-users"></dd>
+          <dt>%%view.stars%%</dt><dd id="d-stars"></dd>
           <dt>%%view.date%%</dt><dd id="d-date"></dd>
         </dl>
         <ul class="owners" id="owners" hidden></ul>
@@ -1755,10 +1848,14 @@ const CAPES = String.raw`
           <p class="hint" id="wear-note" hidden></p>
           <button class="btn primary" id="wear">%%view.wear%%</button>
           <button class="btn" id="unwear" hidden></button>
+          <button class="btn" id="fav"></button>
+          <button class="btn" id="forget" hidden>%%view.forget%%</button>
         </div>
         <p class="hint" id="wear-signin" hidden>%%view.signin%%</p>
         <p class="msg" id="wear-msg" role="status" style="margin:0"></p>
         <div class="spacer"></div>
+        <button class="btn" id="approve" hidden>%%view.approve%%</button>
+        <button class="btn" id="review" hidden>%%view.review%%</button>
         <button class="btn danger" id="del" hidden>%%view.del%%</button>
         <button class="btn danger" id="ban" hidden>%%view.ban%%</button>
         <button class="btn" id="close">%%view.close%%</button>
@@ -1770,12 +1867,24 @@ const CAPES = String.raw`
 const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var grid = document.getElementById('grid');
   var dialog = document.getElementById('viewer');
+  var starShape = document.getElementById('star').content.firstElementChild;
   var current = null;
   var viewer = null;
   var developer = false;
   var visitor = null;                    /* 登入的人（/api/me 回的那一份）；沒登入是 null */
+  var all = [];                          /* 伺服器回的那一份：一張圖一筆 */
+  var favs = {};                         /* 我的最愛：{雜湊: true} */
+  var past = [];                         /* 我用過的（新的在前） */
+  var sort = 'new';
+  var filter = 'all';
   document.getElementById('count').textContent = L.loading;
-  function url(cape) { return '/api/cape/' + cape.ids[0] + '?v=' + cape.v; }
+  function member() { return Boolean(visitor && visitor.linked !== false); }
+  /* 圖的網址。平常拿「穿著它的某個人」那一件；我用過、但現在沒人穿的，照雜湊從自己的紀錄拿。
+     管理的人多帶雜湊：等審核的那幾件要它才拿得到 */
+  function url(cape) {
+    if (!cape.ids.length) return '/api/cape/' + visitor.id + '?k=' + cape.h;
+    return '/api/cape/' + cape.ids[0] + '?v=' + cape.v + (developer || cape.own ? '&k=' + cape.h : '');
+  }
   /* 還在載入：先放幾張空卡佔位置，資料到了整批換掉 */
   (function () {
     for (var i = 0; i < 10; i++) {
@@ -1786,7 +1895,153 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     }
   })();
 
-  function open(cape) {
+  function tell(text, good) {
+    var msg = document.getElementById('wear-msg');
+    msg.className = 'msg ' + (good ? 'ok' : 'bad');
+    msg.textContent = text;
+    if (text) flash(msg);
+  }
+  function send(path, body) {
+    return api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (answer) {
+          answer.status = r.status;
+          answer.good = r.ok;
+          return answer;
+        });
+      });
+  }
+
+  /* ---- 這一頁現在該列哪幾件：照篩選挑、照排序排 ---- */
+  function listNow() {
+    if (filter === 'hist') {
+      /* 我用過的：照用的時間排。一覽上還有的拿一覽那一筆（才有人數與星星），沒有的自己拼一筆 */
+      return past.map(function (one) {
+        var found = all.filter(function (cape) { return cape.h === one.h; })[0];
+        return found || { h: one.h, t: one.t, s: one.s, x: one.x, y: one.y, v: one.at, c: one.at, ids: [], stars: 0, gone: true };
+      });
+    }
+    var out = all.filter(function (cape) {
+      if (filter === 'png' || filter === 'gif') return cape.t === filter;
+      if (filter === 'fav') return favs[cape.h];
+      if (filter === 'hidden') return cape.hidden && !cape.pending;
+      if (filter === 'pending') return cape.pending;
+      return true;
+    });
+    var by = {
+      'new': function (a, b) { return (b.c || 0) - (a.c || 0); },
+      old: function (a, b) { return (a.c || 0) - (b.c || 0); },
+      worn: function (a, b) { return b.ids.length - a.ids.length || (b.c || 0) - (a.c || 0); },
+      stars: function (a, b) { return (b.stars || 0) - (a.stars || 0) || b.ids.length - a.ids.length || (b.c || 0) - (a.c || 0); },
+      recent: function (a, b) { return (b.v || 0) - (a.v || 0); }
+    };
+    return out.sort(by[sort] || by['new']);
+  }
+
+  function starLabel(button, cape) {
+    var on = Boolean(favs[cape.h]);
+    button.setAttribute('aria-pressed', on ? 'true' : 'false');
+    button.setAttribute('aria-label', on ? L.favRemove : L.favAdd);
+    button.title = on ? L.favRemove : L.favAdd;
+  }
+  function toggleStar(cape, button) {
+    var on = !favs[cape.h];
+    send('/cape/star', { hash: cape.h, on: on }).then(function (answer) {
+      if (!answer.good) { if (dialog.open) tell(L.why[answer.why] || fmt(L.failed, { s: answer.status }), false); return; }
+      if (answer.on) favs[cape.h] = true; else delete favs[cape.h];
+      cape.stars = answer.stars;
+      /* 星星亮起來的時候彈一下 */
+      if (button && button.animate && !calm && answer.on) {
+        button.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.28)' }, { transform: 'scale(1)' }],
+          { duration: 260, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
+      }
+      render(true);
+      if (current === cape) favState();
+    }).catch(function () {});
+  }
+
+  /* still：只是星星或人數變了，卡片不要重新一張一張進場 */
+  function render(still) {
+    var items = listNow();
+    var count = document.getElementById('count');
+    var parts = L.count.split('{n}');
+    count.replaceChildren(parts[0], el('b', '', String(items.length)), parts[1] || '');
+    grid.replaceChildren();
+    if (!items.length) {
+      grid.append(el('div', 'empty', filter === 'fav' ? L.emptyFav : filter === 'hist' ? L.emptyHist : all.length ? L.emptyFilter : L.empty));
+    }
+    items.forEach(function (cape, index) {
+      var card = el('div', 'card');
+      if (still) card.style.animation = 'none';
+      else card.style.setProperty('--i', Math.min(index, 10));
+      var open = el('button', 'open');
+      open.type = 'button';
+      open.setAttribute('aria-label', fmt(L.card, { t: cape.t.toUpperCase(), n: cape.ids.length }));
+      var stage = el('div', 'stage');
+      var face = el('div', 'face');
+      var img = el('img');
+      img.loading = 'lazy';
+      img.alt = '';
+      img.onload = function () { this.classList.add('in'); };
+      img.onerror = function () { this.classList.add('in'); };
+      img.src = url(cape);
+      face.append(img);
+      stage.append(face);
+      var meta = el('div', 'meta');
+      meta.append(el('span', 'tag ' + cape.t, cape.t.toUpperCase()));
+      if (member() && visitor.cape && visitor.cape.h === cape.h) meta.append(el('span', 'tag mine', L.tagMine));
+      if (cape.pending) meta.append(el('span', 'tag wait', L.tagPending));
+      else if (cape.hidden) meta.append(el('span', 'tag off', L.tagPrivate));
+      if (cape.stars) {
+        var stars = el('span', 'stars');
+        stars.append(starShape.cloneNode(true), String(cape.stars));
+        meta.append(stars);
+      }
+      if (cape.ids.length) meta.append(el('span', 'who', fmt(L.wearing, { n: cape.ids.length })));
+      open.append(stage, meta);
+      open.onclick = function () { show(cape); };
+      card.append(open);
+      /* 星星：登入並綁定的人才有；一覽上看不到的那些（我用過但已經沒人穿、不公開、待審核）不能加 */
+      if (member() && !cape.gone && !cape.hidden) {
+        var star = el('button', 'star');
+        star.type = 'button';
+        star.append(starShape.cloneNode(true));
+        starLabel(star, cape);
+        star.onclick = function () { toggleStar(cape, star); };
+        card.append(star);
+      }
+      grid.append(card);
+    });
+  }
+
+  /* ---- 點開一件 ---- */
+  function favState() {
+    var cape = current;
+    var button = document.getElementById('fav');
+    document.getElementById('d-stars').textContent = fmt(L.users, { n: (cape && cape.stars) || 0 });
+    button.hidden = !(cape && member() && !cape.gone && !cape.hidden);
+    if (!cape) return;
+    button.textContent = favs[cape.h] ? L.favRemove : L.favAdd;
+  }
+  function wearState() {
+    var cape = current;
+    var can = Boolean(member() && !visitor.banned);
+    document.getElementById('wearbox').hidden = !can;
+    document.getElementById('wear-signin').hidden = member();
+    if (!can || !cape) return;
+    var mine = visitor.cape;
+    var on = Boolean(mine && mine.h === cape.h);
+    var note = document.getElementById('wear-note');
+    note.hidden = !on;
+    note.textContent = L.wearingThis;
+    document.getElementById('wear').hidden = on;
+    var back = document.getElementById('unwear');
+    back.hidden = !(on && mine.worn);
+    back.textContent = mine && mine.back ? L.restoreOwn : L.takeOff;
+    /* 我用過、現在沒穿的那幾件可以從紀錄拿掉 */
+    document.getElementById('forget').hidden = !(filter === 'hist' && !on);
+  }
+  function show(cape) {
     current = cape;
     document.getElementById('flat').src = url(cape);
     document.getElementById('d-type').textContent = cape.t.toUpperCase();
@@ -1798,11 +2053,14 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       if (!cape.x) dim.textContent = this.naturalWidth + '×' + this.naturalHeight;
     };
     document.getElementById('d-users').textContent = fmt(L.users, { n: cape.ids.length });
-    document.getElementById('d-date').textContent = new Date(cape.v).toLocaleDateString();
-    document.getElementById('del').hidden = !developer;
-    document.getElementById('ban').hidden = !developer;
+    document.getElementById('d-date').textContent = new Date(cape.c || cape.v).toLocaleDateString();
+    document.getElementById('del').hidden = !developer || cape.gone;
+    document.getElementById('ban').hidden = !developer || cape.gone;
+    document.getElementById('review').hidden = !developer || cape.gone;
+    document.getElementById('approve').hidden = !(developer && cape.pending);
     tell('', true);
     wearState();
+    favState();
     var owners = document.getElementById('owners');
     owners.replaceChildren();
     owners.hidden = !(developer && cape.owners);
@@ -1814,7 +2072,10 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         img.src = head(owner.name, 36);
         li.append(img);
       }
-      li.append(el('span', '', owner.name || owner.uuid));
+      /* 管理的人看得到每個人的狀態：不公開、待審核、是套用來的（圖不是他傳的） */
+      var marks = [owner.pending ? L.tagPending : '', owner.private ? L.tagPrivate : '', owner.worn ? L.tagWorn : '']
+        .filter(function (mark) { return mark; });
+      li.append(el('span', '', (owner.name || owner.uuid) + (marks.length ? ' (' + marks.join(', ') + ')' : '')));
       owners.append(li);
     });
     dialog.showModal();
@@ -1825,108 +2086,121 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     wear(viewer, url(cape), cape.t === 'gif');
   }
   function shut() { stopCape(); current = null; if (dialog.open) dialog.close(); }
-
-  /* 穿上這一件／復原。能不能穿由伺服器決定（GIF 只有成員能穿、檔案上限、封禁），這裡只管畫面 */
-  function tell(text, good) {
-    var msg = document.getElementById('wear-msg');
-    msg.className = 'msg ' + (good ? 'ok' : 'bad');
-    msg.textContent = text;
-    if (text) flash(msg);
-  }
-  function wearState() {
-    var cape = current;
-    var can = Boolean(visitor && visitor.linked !== false && !visitor.banned);
-    document.getElementById('wearbox').hidden = !can;
-    document.getElementById('wear-signin').hidden = Boolean(visitor && visitor.linked !== false);
-    if (!can || !cape) return;
-    var mine = visitor.cape;
-    var on = Boolean(mine && mine.h === cape.h);
-    var note = document.getElementById('wear-note');
-    note.hidden = !on;
-    note.textContent = L.wearingThis;
-    document.getElementById('wear').hidden = on;
-    var back = document.getElementById('unwear');
-    back.hidden = !(on && mine.worn);
-    back.textContent = mine && mine.back ? L.restoreOwn : L.takeOff;
-  }
-  function wearCall(path, body, done) {
-    var buttons = [document.getElementById('wear'), document.getElementById('unwear')];
-    buttons.forEach(function (button) { button.disabled = true; });
-    api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
-      .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (answer) {
-          if (!r.ok) { tell(L.why[answer.why] || fmt(L.failed, { s: r.status }), false); return null; }
-          /* 換了一件：重新問一次「我是誰」，再把一覽上的人數更新 */
-          return api('/me').then(function (again) { return again.ok ? again.json() : visitor; }).then(function (me) {
-            visitor = me;
-            done(answer);
-            wearState();
-            return load();
-          });
-        });
-      }).catch(function () { tell(L.offline, false); })
-      .then(function () { buttons.forEach(function (button) { button.disabled = false; }); });
-  }
-  document.getElementById('wear').onclick = function () {
-    if (!current) return;
-    wearCall('/cape/wear', { hash: current.h }, function (answer) { tell(answer.back ? L.wornKept : L.wornOk, true); });
-  };
-  document.getElementById('unwear').onclick = function () {
-    wearCall('/cape/restore', {}, function (answer) { tell(answer.cape ? L.restored : L.tookOff, true); });
-  };
   document.getElementById('close').onclick = shut;
   dialog.addEventListener('close', stopCape);
   dialog.addEventListener('click', function (e) { if (e.target === dialog) shut(); });
 
+  /* 穿上這一件／復原。能不能穿由伺服器決定（GIF 只有成員能穿、檔案上限、封禁），這裡只管畫面 */
+  function wearCall(path, body, done) {
+    var buttons = [document.getElementById('wear'), document.getElementById('unwear')];
+    buttons.forEach(function (button) { button.disabled = true; });
+    send(path, body).then(function (answer) {
+      if (!answer.good) { tell(L.why[answer.why] || fmt(L.failed, { s: answer.status }), false); return null; }
+      /* 換了一件：重新問一次「我是誰」，再把一覽更新（人數、我用過的） */
+      return api('/me').then(function (again) { return again.ok ? again.json() : visitor; }).then(function (me) {
+        visitor = me;
+        done(answer);
+        return load(true);
+      }).then(wearState);
+    }).catch(function () { tell(L.offline, false); })
+      .then(function () { buttons.forEach(function (button) { button.disabled = false; }); });
+  }
+  document.getElementById('wear').onclick = function () {
+    if (!current) return;
+    wearCall('/cape/wear', { hash: current.h }, function (answer) {
+      tell(answer.pending ? L.wornPending : answer.back ? L.wornKept : L.wornOk, true);
+    });
+  };
+  document.getElementById('unwear').onclick = function () {
+    wearCall('/cape/restore', {}, function (answer) { tell(answer.cape ? L.restored : L.tookOff, true); });
+  };
+  document.getElementById('fav').onclick = function () { if (current) toggleStar(current, null); };
+  document.getElementById('forget').onclick = function () {
+    var cape = current;
+    if (!cape || !confirm(L.confirmForget)) return;
+    send('/cape/forget', { hash: cape.h }).then(function (answer) {
+      if (!answer.good) { tell(L.why[answer.why] || fmt(L.failed, { s: answer.status }), false); return; }
+      shut();
+      load(true);
+    }).catch(function () { tell(L.offline, false); });
+  };
+
+  /* ---- 管理 ---- */
   function remove(ban) {
     var cape = current;
     if (!cape) return;
     if (!confirm(fmt(ban ? L.confirmBan : L.confirmDel, { n: cape.ids.length }))) return;
     var body = { hash: cape.h };
     if (ban) body.ban = true;
-    api('/admin/remove', { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
-      .then(function (r) {
-        if (r.ok) { shut(); load(); }
-        else alert(fmt(L.expired, { s: r.status }));
-      });
+    send('/admin/remove', body).then(function (answer) {
+      if (answer.good) { shut(); load(true); }
+      else alert(fmt(L.expired, { s: answer.status }));
+    });
   }
   document.getElementById('del').onclick = function () { remove(false); };
   document.getElementById('ban').onclick = function () { remove(true); };
+  document.getElementById('approve').onclick = function () {
+    var cape = current;
+    if (!cape) return;
+    send('/admin/approve', { hash: cape.h }).then(function (answer) {
+      if (!answer.good) { tell(fmt(L.failed, { s: answer.status }), false); return; }
+      tell(L.approved, true);
+      document.getElementById('approve').hidden = true;
+      load(true);
+    });
+  };
+  document.getElementById('review').onclick = function () {
+    var cape = current;
+    if (!cape || !confirm(L.confirmReview)) return;
+    send('/admin/review', { hash: cape.h }).then(function (answer) {
+      if (!answer.good) { tell(fmt(L.failed, { s: answer.status }), false); return; }
+      tell(answer.added ? fmt(L.reviewed, { n: answer.added }) : L.reviewedNone, true);
+    });
+  };
 
-  function load() {
-    return api(developer ? '/admin/capes' : '/capes').then(function (r) { return r.json(); }).then(function (data) {
-      var count = document.getElementById('count');
-      var parts = L.count.split('{n}');
-      count.replaceChildren(parts[0], el('b', '', String(data.capes.length)), parts[1] || '');
-      grid.replaceChildren();
-      if (!data.capes.length) grid.append(el('div', 'empty', L.empty));
-      data.capes.forEach(function (cape, index) {
-        var card = el('button', 'card');
-        card.type = 'button';
-        card.style.setProperty('--i', Math.min(index, 10));
-        card.setAttribute('aria-label', fmt(L.card, { t: cape.t.toUpperCase(), n: cape.ids.length }));
-        var stage = el('div', 'stage');
-        var face = el('div', 'face');
-        var img = el('img');
-        img.loading = 'lazy';
-        img.alt = '';
-        img.onload = function () { this.classList.add('in'); };
-        img.onerror = function () { this.classList.add('in'); };
-        img.src = url(cape);
-        face.append(img);
-        stage.append(face);
-        var meta = el('div', 'meta');
-        meta.append(el('span', 'tag ' + cape.t, cape.t.toUpperCase()), el('span', 'who', fmt(L.wearing, { n: cape.ids.length })));
-        card.append(stage, meta);
-        card.onclick = function () { open(cape); };
-        grid.append(card);
-      });
+  /* ---- 排序與篩選 ---- */
+  var filters = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
+  filters.forEach(function (button) {
+    button.onclick = function () {
+      filter = button.dataset.f;
+      filters.forEach(function (other) { other.setAttribute('aria-pressed', other === button ? 'true' : 'false'); });
+      /* 「我用過的」照用的時間排，排序在那裡沒有用 */
+      document.getElementById('sort').disabled = filter === 'hist';
+      render(false);
+    };
+  });
+  document.getElementById('sort').onchange = function () { sort = this.value; render(false); };
+
+  function load(still) {
+    var list = api(developer ? '/admin/capes' : '/capes').then(function (r) { return r.json(); });
+    var mine = member() ? api('/capes/mine').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      : Promise.resolve(null);
+    return Promise.all([list, mine]).then(function (got) {
+      all = got[0].capes;
+      if (got[1]) {
+        favs = {};
+        got[1].favs.forEach(function (hash) { favs[hash] = true; });
+        past = got[1].history;
+      }
+      /* 自己那一件：在等審核、或不公開的時候一覽上沒有它，圖要帶著雜湊才拿得到 */
+      all.forEach(function (cape) { if (member() && visitor.cape && visitor.cape.h === cape.h) cape.own = true; });
+      /* 點開著的那一件換成新的那一筆（人數、星星會變） */
+      if (current) {
+        var again = all.filter(function (cape) { return cape.h === current.h; })[0];
+        if (again) { current = again; favState(); }
+      }
+      render(still);
     });
   }
   whoami.then(function (me) {
-    developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到誰傳的，能刪除與封禁 */
+    developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到全部（含不公開、待審核）與誰傳的，能刪除與封禁 */
     visitor = me;
-    return load();
+    filters.forEach(function (button) {
+      var f = button.dataset.f;
+      if (f === 'fav' || f === 'hist') button.hidden = !member();
+      if (f === 'hidden' || f === 'pending') button.hidden = !developer;
+    });
+    return load(false);
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
 
@@ -1989,6 +2263,12 @@ const ACCOUNT = String.raw`
         <canvas class="model" id="mine" width="400" height="320" hidden style="height:320px;border-radius:8px;margin-top:10px"></canvas>
         <p class="hint" id="minehint" hidden style="margin-top:6px"></p>
         <p class="note" id="worn" hidden style="margin:10px 0 0">%%account.worn%%</p>
+        <p class="note" id="pending" hidden style="margin:10px 0 0;color:var(--gold)">%%account.pending%%</p>
+        <p class="note" id="review" hidden style="margin:10px 0 0">%%account.review%%</p>
+        <div class="set-line">
+          <span><b id="public-label">%%account.public%%</b><span class="hint">%%account.publichint%%</span></span>
+          <button class="switch" id="public" type="button" role="switch" aria-checked="true" aria-labelledby="public-label"></button>
+        </div>
         <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
           <button class="btn" id="restore" hidden></button>
           <button class="btn danger" id="remove" hidden>%%account.remove%%</button>
@@ -2029,8 +2309,13 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     wear(viewer, trying, file.type === 'image/gif');
   }
 
+  var shared = true;                     /* 要不要出現在披風一覽。還沒有披風的時候先記在這裡，上傳時帶去 */
   function show(me) {
     document.getElementById('nocape').hidden = Boolean(me.cape);
+    if (me.cape) shared = me.cape.public !== false;
+    document.getElementById('public').setAttribute('aria-checked', shared ? 'true' : 'false');
+    document.getElementById('pending').hidden = !(me.cape && me.cape.pending);
+    document.getElementById('review').hidden = !me.review;
     document.getElementById('remove').hidden = !me.cape;
     /* 這一件是從一覽套用的：多一顆「復原」，換回自己原本那一件（原本沒有的話就是脫下） */
     var worn = Boolean(me.cape && me.cape.worn);
@@ -2047,7 +2332,8 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     if (!viewer) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
     hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s),
       d: me.cape.x ? me.cape.x + '×' + me.cape.y + ' · ' : '' });
-    wear(viewer, '/api/cape/' + me.id + '?v=' + me.cape.v, me.cape.t === 'gif');
+    /* 帶著雜湊：等審核的那一件只有知道雜湊的人（本人、管理的人）拿得到 */
+    wear(viewer, '/api/cape/' + me.id + '?v=' + me.cape.v + '&k=' + me.cape.h, me.cape.t === 'gif');
   }
   function refresh() {
     return api('/me').then(function (r) { return r.ok ? r.json() : null; }).then(function (me) { if (me) show(me); });
@@ -2178,6 +2464,22 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
       .then(function () { location.reload(); });
   };
+  document.getElementById('public').onclick = function () {
+    var button = this;
+    var want = button.getAttribute('aria-checked') !== 'true';
+    shared = want;
+    button.setAttribute('aria-checked', want ? 'true' : 'false');
+    /* 有披風就馬上改那一件；還沒有的話先記著，等上傳的時候一起送 */
+    api('/me').then(function (r) { return r.ok ? r.json() : null; }).then(function (me) {
+      if (!me || !me.cape) return;
+      return api('/cape/public', { method: 'POST', body: JSON.stringify({ on: want }), headers: { 'content-type': 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error('public'); });
+    }).catch(function () {
+      shared = !want;
+      button.setAttribute('aria-checked', !want ? 'true' : 'false');
+      say(L.tryLater, false);
+    });
+  };
   document.getElementById('restore').onclick = function () {
     api('/cape/restore', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (answer) {
@@ -2201,11 +2503,11 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     button.setAttribute('aria-busy', 'true');
     function idle() { button.disabled = false; button.removeAttribute('aria-busy'); }
     say(L.uploading, true);
-    api('/cape', { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
+    api('/cape?public=' + (shared ? '1' : '0'), { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
       .then(function (r) {
         idle();
         return r.json().catch(function () { return {}; }).then(function (body) {
-          if (r.ok) { say(fmt(L.uploaded, { w: body.width, h: body.height }), true); refresh(); }
+          if (r.ok) { say(fmt(body.pending ? L.uploadedPending : L.uploaded, { w: body.width, h: body.height }), true); refresh(); }
           else say(L.why[body.why] || fmt(L.failed, { s: r.status }), false);
         });
       }).catch(function () { say(L.offline, false); });
@@ -2227,6 +2529,24 @@ const ADMIN = String.raw`
         <tbody id="bans"></tbody>
       </table>
       <p class="note" id="nobans" hidden style="margin:10px">%%admin.nobans%%</p>
+    </div>
+
+    <h2>%%admin.reviews%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.reviewsnote%%</p>
+      <div class="form">
+        <div><label for="r-uuid">%%admin.uuid%%</label><input type="text" id="r-uuid" maxlength="36" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off" spellcheck="false"></div>
+        <div><label for="r-note">%%admin.note%%</label><input type="text" id="r-note" maxlength="60" autocomplete="off"></div>
+        <div><button class="btn primary" id="r-send">%%admin.grant%%</button></div>
+      </div>
+      <p class="msg" id="r-msg" role="status"></p>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>%%admin.player%%</th><th>UUID</th><th>%%admin.note%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
+        <tbody id="reviews"></tbody>
+      </table>
+      <p class="note" id="noreviews" hidden style="margin:10px">%%admin.noreviews%%</p>
     </div>
 
     <h2>%%admin.perks%%</h2>
@@ -2334,6 +2654,59 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
+  /* 審核名單：名單上的人之後傳的披風要先通過 */
+  function loadReviews() {
+    return api('/admin/reviews').then(function (r) { return r.json(); }).then(function (data) {
+      var body = document.getElementById('reviews');
+      body.replaceChildren();
+      document.getElementById('noreviews').hidden = data.reviews.length > 0;
+      data.reviews.forEach(function (one) {
+        var row = el('tr');
+        var who = el('td');
+        if (one.name) {
+          var img = el('img');
+          img.alt = '';
+          img.src = head(one.name, 44);
+          who.append(img, one.name);
+        } else {
+          who.append('—');
+        }
+        var uuid = el('td');
+        uuid.append(el('code', '', one.uuid));
+        var drop = el('button', 'btn', L.revoke);
+        drop.onclick = function () {
+          if (!confirm(fmt(L.confirmUnreview, { who: one.name || one.uuid }))) return;
+          api('/admin/unreview', { method: 'POST', body: JSON.stringify({ uuid: one.uuid }), headers: { 'content-type': 'application/json' } })
+            .then(function (r) { if (r.ok) loadReviews(); else alert(fmt(L.liftFail, { s: r.status })); });
+        };
+        var action = el('td');
+        action.append(drop);
+        row.append(who, uuid, el('td', '', one.note || '—'), el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'), el('td', '', one.by || '—'), action);
+        body.append(row);
+      });
+    });
+  }
+  document.getElementById('r-send').onclick = function () {
+    var msg = document.getElementById('r-msg');
+    var entry = { uuid: document.getElementById('r-uuid').value.trim(), note: document.getElementById('r-note').value.trim() };
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/review', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          if (r.ok) {
+            msg.className = 'msg ok';
+            msg.textContent = L.perkDone;
+            document.getElementById('r-uuid').value = '';
+            document.getElementById('r-note').value = '';
+            loadReviews();
+          } else {
+            msg.className = 'msg bad';
+            msg.textContent = L.perk[body.why] || fmt(L.prFail, { s: body.why || r.status });
+          }
+        });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
+  };
   function loadPerks() {
     return api('/admin/perks').then(function (r) { return r.json(); }).then(function (data) {
       var body = document.getElementById('perks');
@@ -2543,6 +2916,7 @@ const ADMIN_JS = '<script>' + String.raw`
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
     loadBans();
+    loadReviews();
     loadPerks();
     loadGuilds();
     if (me.developer) {
