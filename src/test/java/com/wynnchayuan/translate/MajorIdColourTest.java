@@ -502,7 +502,7 @@ public final class MajorIdColourTest {
      * 取自使用者回報的 {@code majorid-debug.txt} 第 18 筆（秘術師流派）：
      *
      * <pre>
-     *   Meteor, Pyrokinesis and Powder Specials      ← 三個底線詞共 32 字
+     *   Meteor, Main Attack and Powder Specials      ← 三個底線詞共 32 字
      *   consume Unstable ⚡ to deal +100% damage.     ← 灰字共 32 字
      * </pre>
      *
@@ -521,7 +521,8 @@ public final class MajorIdColourTest {
         MutableComponent first = Component.empty();
         first.append(Component.literal("Meteor").withStyle(underlined));
         first.append(Component.literal(", ").withStyle(grey));
-        first.append(Component.literal("Pyrokinesis").withStyle(underlined));
+        // 遊戲改版後這裡是 Main Attack（原本是 Pyrokinesis，一樣 11 個字，平手的條件沒變）
+        first.append(Component.literal("Main Attack").withStyle(underlined));
         first.append(Component.literal(" and ").withStyle(grey));
         first.append(Component.literal("Powder Specials").withStyle(underlined));
 
@@ -552,7 +553,9 @@ public final class MajorIdColourTest {
         check("內文「傷害」沒有底線", underlinedAt(out, "傷害") == Boolean.FALSE);
         // 技能名稱現在是中文了（Meteor -> 隕石）。底線得跟著搬到譯名上——
         // 那正是 withTranslations 的用途：帶樣式的片段連同它的譯文一起登記。
-        check("術語「隕石」仍然有底線", underlinedAt(out, "隕石") == Boolean.TRUE);
+        // 不釘譯名寫成哪一種：這一條現在的譯文把 Meteor 留成英文，哪天改回「隕石」也一樣要過
+        check("術語 Meteor（或它的譯名）仍然有底線", underlinedAt(out, "隕石") == Boolean.TRUE
+                || underlinedAt(out, "Meteor") == Boolean.TRUE);
     }
 
     /** 含有 needle 的那一段有沒有底線；找不到回傳 null。 */

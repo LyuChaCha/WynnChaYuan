@@ -20,9 +20,31 @@
  *   GET    /api/status                            有幾個人、幾件披風
  *   GET    /api/admin/capes                       同上，多了每一件是誰傳的（開發者）
  *   POST   /api/admin/remove   {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者）
+ *   GET    /api/admin/perks                       特別名單（開發者）
+ *   POST   /api/admin/perk     {uuid, note?}      加進特別名單（開發者）
+ *   POST   /api/admin/unperk   {uuid}             從特別名單移除（開發者）
  *   GET    /api/admin/bans                        封禁名單（開發者）
  *   POST   /api/admin/unban    {uuid}             解除封禁（開發者）
  *   POST   /api/admin/credits  {section, name, mc, color}   替名單加一個人：開一個 PR（開發者）
+ *   GET    /api/team                  名單上的開發者、贊助者、貢獻者，加上貢獻公會（首頁畫團隊用，公開）
+ *   POST   /api/cape/wear      {hash} 穿上披風一覽裡的某一件（原本那一件收著）
+ *   POST   /api/cape/restore          復原：換回套用之前自己的那一件；原本沒有就脫下
+ *   POST   /api/cape/star      {hash, on}    把一覽上的某一件加進（或移出）我的最愛
+ *   POST   /api/cape/public    {on}          我的披風要不要出現在披風一覽
+ *   GET    /api/capes/mine            我的最愛與我用過的披風（要通行證）
+ *   POST   /api/cape/forget    {hash}        把一件從我的使用紀錄拿掉
+ *   GET    /api/admin/reviews         審核名單（開發者）
+ *   POST   /api/admin/review   {uuid, note?} 或 {hash}   列入審核：之後上傳的披風要先通過才給別人看（開發者）
+ *   POST   /api/admin/unreview {uuid}        從審核名單移除（開發者）
+ *   POST   /api/admin/approve  {hash}        通過審核：那張圖等審核的都放行（開發者）
+ *   GET    /api/guild/<代碼>/<icon|banner>   貢獻公會的圖示／旗幟（公開）
+ *   GET    /api/admin/guilds          貢獻公會的名單（開發者）
+ *   POST   /api/admin/guild    {name, tag?}  加一個貢獻公會（開發者）
+ *   PUT    /api/admin/guild/<代碼>/<icon|banner>   上傳那個公會的圖示／旗幟（開發者）
+ *   POST   /api/admin/unguild  {slug}        移除一個貢獻公會（開發者）
+ *   GET    /api/admin/staff           管理員名單（只有開發者）
+ *   POST   /api/admin/staff    {who, note}   加一個管理員：Minecraft ID、UUID 或 Discord 代號（只有開發者）
+ *   POST   /api/admin/unstaff  {key}         移除一個管理員（只有開發者）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
  *
@@ -625,7 +647,10 @@ async function handleLogin(request, env, now) {
   if (!name) return no('bad profile', 403);
   // 管理權是照名字認的：綁著網站帳號的話，那邊記的名字不可以比這裡舊
   await refreshLinkedName(env, body.uuid, name);
-  return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid) });
+  // member：模組在送出之前先擋 GIF 與 1 MB，它要知道這個人是不是有成員的待遇
+  // （credits.json 它自己看得到，特別名單只有這裡知道）
+  return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid),
+    member: await isMember(env, { uuid: body.uuid, name }, now) });
 }
 
 // ---------------------------------------------------------------- 報到與名單
@@ -679,7 +704,8 @@ async function remember(env, uuid, wantsCape, now, prefs) {
   const key = 'u:' + uuid;
   const have = await env.CORPUS.getWithMetadata(key);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id, { type: 'stream' });
-  const version = cape && cape.metadata ? cape.metadata.v : 0;
+  // 等審核的披風不給別人看：名單上當成沒有
+  const version = cape && cape.metadata && !cape.metadata.r ? cape.metadata.v : 0;
   if (cape && cape.value && cape.value.cancel) cape.value.cancel();
   const next = { i: id, c: wantsCape ? 1 : 0, d: day(now), v: version };
   const before = have && have.metadata;
@@ -856,6 +882,169 @@ export function gifFrames(bytes) {
 
 let cachedCredits = null;
 
+const COLOUR = /^#[0-9a-fA-F]{6}$/;
+
+/**
+ * 首頁「團隊」那一段要畫的：開發者、贊助者、貢獻者三區，各自的葉子顏色與成員。
+ * 只留畫得出來的欄位（名字、遊戲 ID、自訂的葉子顏色）；資料來源那一區不是人，不放。
+ * 純函式，測試直接餵。
+ */
+export function teamOf(sections) {
+  const team = [];
+  for (const section of Array.isArray(sections) ? sections : []) {
+    const found = /\.(developers|sponsors|contributors)$/.exec(String(section && section.key));
+    if (!found || !Array.isArray(section.members)) continue;
+    const members = [];
+    for (const member of section.members) {
+      if (!member || typeof member.name !== 'string' || !member.name.trim()) continue;
+      const entry = { name: member.name.trim().slice(0, 40) };
+      if (typeof member.mc === 'string' && NAME.test(member.mc)) entry.mc = member.mc;
+      if (typeof member.color === 'string' && COLOUR.test(member.color)) entry.color = member.color;
+      members.push(entry);
+    }
+    team.push({ role: found[1], color: COLOUR.test(section.color || '') ? section.color : null, members });
+  }
+  return team;
+}
+
+/** 名單上的人，加上貢獻公會。抓不到名單（GitHub 沒回）就請訪客等一下再來。 */
+async function handleTeam(env, now) {
+  const list = await credits(now);
+  if (!list) return no('try later', 503);
+  const guilds = (await guildList(env, now)).map((guild) => ({
+    slug: guild.slug, name: guild.name, tag: guild.tag || '', icon: guild.i || 0, banner: guild.b || 0 }));
+  return json({ team: list.team, guilds }, 200, { 'cache-control': 'public, max-age=300' });
+}
+
+// ---------------------------------------------------------------- 貢獻公會
+//
+// 使用者 2026-10-13：「新增貢獻者公會（該團體提供巨大幫助或成員之間協助），希望可以放上
+// WYNNCRAFT 的旗幟與 icon（我們自己上傳）」。
+//
+// 在管理頁加：公會的名字（連到 wynncraft.com/stats/guild/<名字>）、標籤，再各上傳一張圖示與旗幟。
+// KV：guilds → 整份名單（JSON 陣列：{slug, name, tag, t, by, i 圖示的版本, b 旗幟的版本}）。
+// 名單放在同一筆裡：首頁每開一次都要讀，一次 get 比一次 list 便宜得多。
+// 圖在 gimg:<代碼>:icon、gimg:<代碼>:banner，metadata 記它是哪一種圖。
+
+/** Wynncraft 的公會名：英文字母與空格，3 到 30 個字。 */
+const GUILD_NAME = /^[A-Za-z](?:[A-Za-z ]{1,28})[A-Za-z]$/;
+const GUILD_TAG = /^[A-Za-z]{3,4}$/;
+const GUILD_SLUG = /^[a-z](?:[a-z-]{1,28})[a-z]$/;
+
+/** 公會的圖最大可以多大（網頁上傳之前會先縮小，正常不會碰到）。 */
+export const MAX_GUILD_IMAGE = 512 * 1024;
+
+/** 最多登記幾個貢獻公會。 */
+const MAX_GUILDS = 24;
+
+/** 公會名在這裡的代碼：小寫、空格換成連字號；不像公會名回 null。 */
+export function guildSlug(name) {
+  const raw = String(name == null ? '' : name).trim().replace(/\s+/g, ' ');
+  return GUILD_NAME.test(raw) ? raw.toLowerCase().replace(/ /g, '-') : null;
+}
+
+/** 這些位元組是哪一種圖：只認 PNG、JPEG、WebP；別的回 null。 */
+export function imageType(bytes) {
+  const b = bytes;
+  if (b.length > 8 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return 'image/png';
+  if (b.length > 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'image/jpeg';
+  if (b.length > 12 && b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46
+    && b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return 'image/webp';
+  return null;
+}
+
+let cachedGuilds = null;
+
+async function guildList(env, now) {
+  if (cachedGuilds && cachedGuilds.kv === env.CORPUS && now - cachedGuilds.t < 60 * 1000) return cachedGuilds.list;
+  let list = [];
+  try {
+    const parsed = JSON.parse((await env.CORPUS.get('guilds')) || '[]');
+    if (Array.isArray(parsed)) {
+      list = parsed.filter((g) => g && typeof g.slug === 'string' && GUILD_SLUG.test(g.slug) && typeof g.name === 'string');
+    }
+  } catch (e) {
+    list = [];
+  }
+  cachedGuilds = { t: now, kv: env.CORPUS, list };
+  return list;
+}
+
+async function saveGuilds(env, list, now) {
+  await env.CORPUS.put('guilds', JSON.stringify(list));
+  cachedGuilds = { t: now, kv: env.CORPUS, list };
+}
+
+/** 寫入之前重讀一次：名單是整筆覆寫的，不能拿一分鐘前的那一份去改。 */
+async function freshGuilds(env, now) {
+  cachedGuilds = null;
+  return [...await guildList(env, now)];
+}
+
+async function handleGuilds(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  return json({ guilds: await freshGuilds(env, now) }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleGuildAdd(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const slug = guildSlug(body.name);
+  if (!slug) return no('bad name');
+  const tag = body.tag == null ? '' : String(body.tag).trim();
+  if (tag && !GUILD_TAG.test(tag)) return no('bad tag');
+  const list = await freshGuilds(env, now);
+  if (list.some((guild) => guild.slug === slug)) return no('already', 409);
+  if (list.length >= MAX_GUILDS) return no('too many', 409);
+  list.push({ slug, name: String(body.name).trim().replace(/\s+/g, ' '), tag, t: now, by, i: 0, b: 0 });
+  await saveGuilds(env, list, now);
+  return json({ ok: true, slug });
+}
+
+async function handleGuildImage(request, env, now, slug, kind) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (Number(request.headers.get('content-length') || 0) > MAX_GUILD_IMAGE) return no('too large', 413);
+  const bytes = new Uint8Array(await request.arrayBuffer());
+  if (bytes.length > MAX_GUILD_IMAGE) return no('too large', 413);
+  const type = imageType(bytes);
+  if (!type) return no('bad image');
+  const list = await freshGuilds(env, now);
+  const guild = list.find((one) => one.slug === slug);
+  if (!guild) return no('no such guild', 404);
+  await env.CORPUS.put('gimg:' + slug + ':' + kind, bytes, { metadata: { t: type } });
+  guild[kind === 'icon' ? 'i' : 'b'] = now;
+  await saveGuilds(env, list, now);
+  return json({ ok: true, v: now });
+}
+
+async function handleGuildRemove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const slug = body && typeof body.slug === 'string' ? body.slug : '';
+  if (!GUILD_SLUG.test(slug)) return no('bad request');
+  const list = await freshGuilds(env, now);
+  await saveGuilds(env, list.filter((guild) => guild.slug !== slug), now);
+  await env.CORPUS.delete('gimg:' + slug + ':icon');
+  await env.CORPUS.delete('gimg:' + slug + ':banner');
+  return json({ ok: true });
+}
+
+/** 公會的圖示／旗幟。網址帶著版本（?v=），所以可以放心讓瀏覽器存久一點。 */
+async function handleGuildPicture(env, slug, kind) {
+  const found = await env.CORPUS.getWithMetadata('gimg:' + slug + ':' + kind, { type: 'arrayBuffer' });
+  if (!found || !found.value || !found.metadata) return no('not found', 404);
+  return new Response(found.value, {
+    headers: {
+      'content-type': found.metadata.t,
+      'cache-control': 'public, max-age=86400',
+      'x-content-type-options': 'nosniff',
+      'content-security-policy': "default-src 'none'",
+    },
+  });
+}
+
 /**
  * credits.json 上有遊戲 ID 的人（小寫）：names 是所有成員（開發者、贊助者、貢獻者），
  * developers 是其中的開發者。抓不到就回上一次的；從來沒抓到過回 null。
@@ -867,7 +1056,8 @@ async function credits(now) {
     if (answer.status === 200) {
       const names = new Set();
       const developers = new Set();
-      for (const section of (await answer.json()).sections || []) {
+      const sections = (await answer.json()).sections || [];
+      for (const section of sections) {
         const dev = typeof section.key === 'string' && section.key.endsWith('.developers');
         for (const member of section.members || []) {
           if (typeof member.mc !== 'string' || !member.mc) continue;
@@ -875,7 +1065,7 @@ async function credits(now) {
           if (dev) developers.add(member.mc.toLowerCase());
         }
       }
-      cachedCredits = { t: now, names, developers };
+      cachedCredits = { t: now, names, developers, team: teamOf(sections) };
     }
   } catch (e) {
     // 用舊的
@@ -895,22 +1085,160 @@ async function mayUpload(env, user, now, type) {
   if (mode === 'off') return 'uploads off';
   if (await env.CORPUS.get('ban:' + user.uuid)) return 'banned';
   if (mode === 'anyone' || (mode === 'tiered' && type !== 'gif')) return null;
+  if (await hasPerk(env, user.uuid)) return null;
   const list = await credits(now);
   if (!list) return 'try later';
   if (list.names.has(user.name.toLowerCase())) return null;
   return mode === 'tiered' ? 'gif members only' : 'not listed';
 }
 
-/** 這個人的披風最大可以多大。 */
-async function capeLimit(name, now) {
+/**
+ * 特別名單（使用者 2026-10-13：「新增類似贊助者但不顯示的，我們自己輸入 minecraft uuid
+ * 讓他們可以使用 gif 和 20mb」）。
+ *
+ * 開發者在管理頁加的 UUID。上面的人上傳的待遇跟名單成員一樣（GIF、20 MB），
+ * 但不在 credits.json 裡——沒有葉子、不在貢獻者名單上、公開的 /api/list 也看不出來。
+ * 存在 KV 的 perk:<uuid>，內容是 {n 備註, t 什麼時候加的, by 誰加的}。
+ */
+async function hasPerk(env, uuid) {
+  return Boolean(await env.CORPUS.get('perk:' + uuid));
+}
+
+/** 上傳的待遇算不算成員：credits.json 上有名字，或在特別名單上。 */
+async function isMember(env, user, now) {
+  if (await hasPerk(env, user.uuid)) return true;
   const list = await credits(now);
-  return list && list.names.has(name.toLowerCase()) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES;
+  return Boolean(list && list.names.has(user.name.toLowerCase()));
+}
+
+/** 這個人的披風最大可以多大。 */
+async function capeLimit(env, user, now) {
+  return await isMember(env, user, now) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES;
+}
+
+/** UUID 寫成 32 個十六進位字元（去掉連字號、轉小寫）；不是 UUID 回 null。 */
+export function plainUuid(text) {
+  const plain = String(text == null ? '' : text).trim().toLowerCase().replace(/-/g, '');
+  return UUID.test(plain) ? plain : null;
 }
 
 /** 這個人是不是開發者（可以拿掉別人的披風）。 */
 async function isDeveloper(name, now) {
   const list = await credits(now);
   return Boolean(list && list.developers.has(name.toLowerCase()));
+}
+
+// ---------------------------------------------------------------- 管理員
+//
+// 使用者 2026-10-13：「新增管理員（需要 discord 或 minecraft id 方便綁定），可以移除披風和
+// 網站開發者的那些功能，區別是不展示而已（只是不能移除管理員、新增）」。
+//
+// 管理員做得到開發者在網站上做的事（刪披風、封禁與解除、特別名單、替名單開 PR），但不在
+// credits.json 裡——沒有葉子、不在團隊名單上——也不能動管理員名單本身。由開發者在管理頁加。
+//
+// KV：staff:u:<UUID>、staff:n:<遊戲名字，小寫>、staff:d:<Discord 代號> → {n 備註, t, by, m 遊戲名字}。
+// 用名字加的那一種只是「還不知道 UUID」：那個人登入一次就改記成 UUID（名字可以改，改掉的
+// 名字會被別人拿走，UUID 不會）。
+
+const DISCORD_SNOWFLAKE = /^\d{17,20}$/;
+
+/**
+ * 開發者填的那一格是哪一種：'u:<UUID>'、'd:<Discord 代號>'、'n:<名字>'；看不懂回 null。
+ * 三種不會混：UUID 是 32 個十六進位字元、Discord 代號是 17 到 20 位數字，遊戲名字最多 16 個字。
+ */
+export function staffKey(text) {
+  const raw = String(text == null ? '' : text).trim();
+  const uuid = plainUuid(raw);
+  if (uuid) return 'u:' + uuid;
+  if (DISCORD_SNOWFLAKE.test(raw)) return 'd:' + raw;
+  return NAME.test(raw) ? 'n:' + raw.toLowerCase() : null;
+}
+
+function parseRecord(raw) {
+  try {
+    const value = JSON.parse(raw || '{}');
+    return value && typeof value === 'object' ? value : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+/** 這個玩家是不是管理員：照 UUID、照他綁的 Discord、照名字（第一次對上就改記成 UUID）。 */
+async function isStaff(env, user) {
+  if (await env.CORPUS.get('staff:u:' + user.uuid)) return true;
+  const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
+  if (discord && await env.CORPUS.get('staff:d:' + discord)) return true;
+  const byName = await env.CORPUS.get('staff:n:' + user.name.toLowerCase());
+  if (!byName) return false;
+  await env.CORPUS.put('staff:u:' + user.uuid, JSON.stringify({ ...parseRecord(byName), m: user.name }));
+  await env.CORPUS.delete('staff:n:' + user.name.toLowerCase());
+  return true;
+}
+
+/**
+ * 這個請求在網站上的權限：{by 是誰（寫進紀錄用）, developer 是不是開發者}；沒有權限回 null。
+ * 開發者＝本人在名單上的開發者那一區（每次都重新查名單），或帶著 ADMIN_TOKEN。
+ * 管理員＝在 staff:* 裡；只用 Discord 登入、還沒綁遊戲 ID 的人也可以是（照 Discord 代號加的）。
+ */
+async function authority(request, env, now) {
+  const header = request.headers.get('authorization') || '';
+  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return { by: 'admin', developer: true };
+  const user = await who(request, env, now);
+  if (user) {
+    if (await isDeveloper(user.name, now)) return { by: user.name, developer: true };
+    return await isStaff(env, user) ? { by: user.name, developer: false } : null;
+  }
+  const session = await discordSession(request, env, now);
+  if (session && await env.CORPUS.get('staff:d:' + session.id)) {
+    return { by: 'Discord: ' + (session.account.n || session.id), developer: false };
+  }
+  return null;
+}
+
+/** 管理員名單。只有開發者看得到。 */
+async function handleStaff(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const staff = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'staff:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const record = parseRecord(await env.CORPUS.get(k.name));
+      const key = k.name.slice(6);
+      staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null,
+        note: record.n || '', t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  staff.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ staff }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleStaffAdd(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const key = staffKey(body.who);
+  if (!key) return no('bad who');
+  const note = body.note == null ? '' : body.note;
+  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  if (await env.CORPUS.get('staff:' + key)) return no('already', 409);
+  const record = { n: note.trim(), t: now, by: mine.by };
+  if (key.startsWith('n:')) record.m = String(body.who).trim();      // 名字照他打的大小寫記著，名單上好認
+  await env.CORPUS.put('staff:' + key, JSON.stringify(record));
+  return json({ ok: true, key });
+}
+
+async function handleStaffRemove(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const body = await readJson(request);
+  const key = body && typeof body.key === 'string' ? body.key : '';
+  if (!/^(?:u:[0-9a-f]{32}|d:\d{17,20}|n:[a-z0-9_]{1,16})$/.test(key)) return no('bad request');
+  await env.CORPUS.delete('staff:' + key);
+  return json({ ok: true });
 }
 
 async function handleUpload(request, env, now) {
@@ -925,7 +1253,7 @@ async function handleUpload(request, env, now) {
   const refusal = await mayUpload(env, user, now, found.type);
   if (refusal) return no(refusal, 403);
   // 一般玩家 1 MB，名單上的成員 20 MB。名單讀不到的時候當成一般玩家。
-  const limit = await capeLimit(user.name, now);
+  const limit = await capeLimit(env, user, now);
   if (bytes.length > limit) return json({ ok: false, why: 'too large', limit }, 413);
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
@@ -940,14 +1268,347 @@ async function handleUpload(request, env, now) {
   if (!blob || !blob.metadata) {
     await env.CORPUS.put('blob:' + hash, bytes, { metadata: { t: found.type, s: bytes.length } });
   }
-  await env.CORPUS.put('cape:' + id, '', {
-    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, n: user.name, h: hash,
-      x: found.width, y: found.height },
-  });
+  const metadata = { t: found.type, v: now, c: now, s: bytes.length, u: user.uuid, n: user.name, h: hash,
+    x: found.width, y: found.height };
+  // 要不要出現在一覽：這一次有說（?public=0／1）就照這一次，沒說（從遊戲裡傳的）照原本的
+  const asked = new URL(request.url).searchParams.get('public');
+  if (asked === '0' || (asked !== '1' && have && have.metadata && have.metadata.q)) metadata.q = 1;
+  // 在審核名單上的人：這張圖沒通過過，就先不給別人看
+  const pending = await needsReview(env, user.uuid, hash);
+  if (pending) metadata.r = 1;
+  await env.CORPUS.put('cape:' + id, '', { metadata });
+  await noteHistory(env, id, metadata, now);
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h);
+  // 自己傳了新的：先前從一覽套用時收著的那一件就不必留了
+  if (have && have.metadata && have.metadata.p && have.metadata.p.h !== hash) await sweep(env, have.metadata.p.h);
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
-  return json({ ok: true, id, v: now, ...found });
+  return json({ ok: true, id, v: now, ...found, pending });
+}
+
+// ---------------------------------------------------------------- 一覽：公開與否、審核、使用紀錄、最愛
+//
+// 使用者 2026-10-13：「披風麻煩多幾個篩選（使用人數、新增時間、人氣、上傳時間；新增愛心或星星，
+// 類似我的最愛）和使用紀錄；使用者可以開關是否要公開披風（管理員可以看到所有披風，包含不公開）；
+// 還有審核制度（輕度懲處）：管理員可以新增使用者進去，他之後上傳的披風都要審核」。
+//
+// 披風那一筆（cape:<代碼>）的 metadata 多了：
+//   c  這張圖最早是什麼時候傳的（穿別人的那一件就抄它的）——排序用
+//   q  1＝不公開：不出現在一覽上、別人不能穿；遊戲裡別的玩家照樣看得到
+//   r  1＝等審核：一覽與遊戲裡都不給別人看，通過了才算數
+//
+// 其他的鍵：
+//   hist:<代碼>:<雜湊>  我用過的披風（metadata：{t, s, x, y, at}），一個人最多留 HISTORY_MAX 件；
+//                      留著的圖算「有人在用」，所以從紀錄裡隨時穿得回去
+//   fav:<UUID>          我的最愛：{t 上一次改的時間, h [雜湊…]}
+//   stars               每張圖有幾個人加了最愛：{雜湊: 人數}。放同一筆，一覽讀一次就夠
+//   review:<UUID>       審核名單：{n 名字, note, t, by, ok [通過過的雜湊…]}
+
+const HASH = /^[0-9a-f]{64}$/;
+
+/** 一個人的使用紀錄最多留幾件。 */
+const HISTORY_MAX = 8;
+
+/** 我的最愛最多幾件。 */
+const FAVS_MAX = 200;
+
+/** 一覽上看得到的：公開，而且不是等審核的。 */
+const listed = (cape) => !cape.q && !cape.r;
+
+/** 所有人的使用紀錄（只有鍵：誰、哪張圖）。sweep 與管理的人照圖刪除的時候用。 */
+async function allHistory(env, prefix = 'hist:') {
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
+    for (const k of page.keys) {
+      const parts = k.name.split(':');
+      if (parts.length === 3 && HASH.test(parts[2])) out.push({ key: k.name, id: parts[1], h: parts[2], ...(k.metadata || {}) });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  return out;
+}
+
+/** 記一筆「我用過這一件」；超過上限就把最舊的拿掉（那張圖沒人用了就刪）。 */
+async function noteHistory(env, id, cape, now) {
+  await env.CORPUS.put('hist:' + id + ':' + cape.h, '', {
+    metadata: { t: cape.t, s: cape.s, x: cape.x || 0, y: cape.y || 0, at: now },
+  });
+  const mine = (await allHistory(env, 'hist:' + id + ':')).sort((a, b) => (b.at || 0) - (a.at || 0));
+  for (const old of mine.slice(HISTORY_MAX)) {
+    await env.CORPUS.delete(old.key);
+    await sweep(env, old.h);
+  }
+}
+
+async function reviewOf(env, uuid) {
+  const raw = await env.CORPUS.get('review:' + uuid);
+  return raw ? parseRecord(raw) : null;
+}
+
+/** 這個人穿這張圖要不要先審核：他在審核名單上，而且這張圖沒通過過。 */
+async function needsReview(env, uuid, hash) {
+  const record = await reviewOf(env, uuid);
+  return Boolean(record && !(Array.isArray(record.ok) && record.ok.includes(hash)));
+}
+
+async function favsOf(env, uuid) {
+  const record = parseRecord(await env.CORPUS.get('fav:' + uuid));
+  return { t: record.t || 0, h: Array.isArray(record.h) ? record.h.filter((h) => HASH.test(h)) : [] };
+}
+
+async function starMap(env) {
+  const map = parseRecord(await env.CORPUS.get('stars'));
+  return map && typeof map === 'object' ? map : {};
+}
+
+/** 加進／移出我的最愛。 */
+async function handleStar(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const body = await readJson(request);
+  const hash = body && typeof body.hash === 'string' ? body.hash : '';
+  if (!HASH.test(hash) || typeof body.on !== 'boolean') return no('bad request');
+  const capes = await allCapes(env);
+  // 只能把一覽上看得到的加進來；移出去的話什麼時候都可以（那一件可能已經不在了）
+  if (body.on && !capes.some((cape) => cape.h === hash && listed(cape))) return no('no such cape', 404);
+  const favs = await favsOf(env, user.uuid);
+  if (now - favs.t < 1000) return no('slow down', 429);
+  const has = favs.h.includes(hash);
+  const map = await starMap(env);
+  if (body.on !== has) {
+    if (body.on && favs.h.length >= FAVS_MAX) return no('too many', 409);
+    const next = body.on ? [hash, ...favs.h] : favs.h.filter((h) => h !== hash);
+    await env.CORPUS.put('fav:' + user.uuid, JSON.stringify({ t: now, h: next }));
+    map[hash] = Math.max(0, (Number(map[hash]) || 0) + (body.on ? 1 : -1));
+    // 順手把已經不在的圖從人數表拿掉
+    const alive = new Set(capes.map((cape) => cape.h));
+    for (const key of Object.keys(map)) {
+      if (!alive.has(key) || !map[key]) delete map[key];
+    }
+    await env.CORPUS.put('stars', JSON.stringify(map));
+  }
+  return json({ ok: true, on: body.on, stars: Number(map[hash]) || 0 });
+}
+
+/** 我的最愛與我用過的披風。 */
+async function handleMine(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const id = await publicId(user.uuid);
+  const history = (await allHistory(env, 'hist:' + id + ':')).sort((a, b) => (b.at || 0) - (a.at || 0))
+    .map((one) => ({ h: one.h, t: one.t, s: one.s, x: one.x || 0, y: one.y || 0, at: one.at || 0 }));
+  return json({ ok: true, id, favs: (await favsOf(env, user.uuid)).h, history }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 把一件從我的使用紀錄拿掉（那張圖沒別人用就真的刪了）。現在穿著的那一件不能拿。 */
+async function handleForget(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const body = await readJson(request);
+  const hash = body && typeof body.hash === 'string' ? body.hash : '';
+  if (!HASH.test(hash)) return no('bad request');
+  const id = await publicId(user.uuid);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  if (have && have.metadata && (have.metadata.h === hash || (have.metadata.p && have.metadata.p.h === hash))) {
+    return no('in use', 409);
+  }
+  await env.CORPUS.delete('hist:' + id + ':' + hash);
+  await sweep(env, hash);
+  return json({ ok: true });
+}
+
+/** 我的披風要不要出現在一覽上。 */
+async function handlePublic(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const body = await readJson(request);
+  if (!body || typeof body.on !== 'boolean') return no('bad request');
+  const id = await publicId(user.uuid);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  if (!have || !have.metadata) return no('no cape', 404);
+  const { q: before, ...rest } = have.metadata;
+  if (!body.on) rest.q = 1;
+  await env.CORPUS.put('cape:' + id, '', { metadata: rest });
+  return json({ ok: true, public: body.on });
+}
+
+/** 審核名單。 */
+async function handleReviews(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const reviews = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'review:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const record = parseRecord(await env.CORPUS.get(k.name));
+      reviews.push({ uuid: k.name.slice(7), name: record.n || null, note: record.note || '',
+        t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  reviews.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ reviews }, 200, { 'cache-control': 'no-store' });
+}
+
+/**
+ * 列入審核：{uuid} 是一個人；{hash} 是傳那張圖的人（穿別人那一件的不算——圖不是他傳的）。
+ * 現在身上那一件不動：審核管的是「之後」傳的。
+ */
+async function handleReviewAdd(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const note = body.note == null ? '' : body.note;
+  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  const people = [];
+  if (typeof body.hash === 'string' && HASH.test(body.hash)) {
+    for (const cape of await allCapes(env)) {
+      if (cape.h === body.hash && !cape.w && UUID.test(cape.u || '')) people.push({ uuid: cape.u, name: cape.n || null });
+    }
+  } else {
+    const uuid = plainUuid(body.uuid);
+    if (!uuid) return no('bad uuid');
+    people.push({ uuid, name: null });
+  }
+  let added = 0;
+  for (const person of people) {
+    if (await env.CORPUS.get('review:' + person.uuid)) continue;
+    await env.CORPUS.put('review:' + person.uuid, JSON.stringify({ n: person.name, note: note.trim(), t: now, by, ok: [] }));
+    added++;
+  }
+  if (!added && people.length === 1 && !body.hash) return no('already', 409);
+  return json({ ok: true, added });
+}
+
+/** 把一個人的披風那一筆（cape:<代碼>）的「等審核」拿掉，名單也跟著更新。 */
+async function release(env, id, uuid, now) {
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  if (!have || !have.metadata || !have.metadata.r) return false;
+  const { r: gone, ...rest } = have.metadata;
+  await env.CORPUS.put('cape:' + id, '', { metadata: rest });
+  const shown = await env.CORPUS.getWithMetadata('u:' + uuid);
+  if (shown && shown.metadata) await remember(env, uuid, shown.metadata.c !== 0, now);
+  return true;
+}
+
+async function handleReviewRemove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const uuid = body ? plainUuid(body.uuid) : null;
+  if (!uuid) return no('bad request');
+  await env.CORPUS.delete('review:' + uuid);
+  await release(env, await publicId(uuid), uuid, now);      // 不必審核了：等著的那一件直接放行
+  return json({ ok: true });
+}
+
+/** 通過審核：那張圖等審核的都放行，並記在那些人的「通過過」裡（之後再穿同一張不必再審）。 */
+async function handleApprove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const hash = body && typeof body.hash === 'string' ? body.hash : '';
+  if (!HASH.test(hash)) return no('bad request');
+  let approved = 0;
+  for (const cape of await allCapes(env)) {
+    if (cape.h !== hash || !cape.r || !UUID.test(cape.u || '')) continue;
+    const record = await reviewOf(env, cape.u);
+    if (record) {
+      const passed = Array.isArray(record.ok) ? record.ok.filter((h) => h !== hash) : [];
+      record.ok = [hash, ...passed].slice(0, 30);
+      await env.CORPUS.put('review:' + cape.u, JSON.stringify(record));
+    }
+    if (await release(env, cape.id, cape.u, now)) approved++;
+  }
+  return json({ ok: true, approved });
+}
+
+// ---------------------------------------------------------------- 套用一覽上的披風
+//
+// 使用者 2026-10-13：「希望點下去可以讓使用者自由選擇要不要套用該披風（以及復原）」。
+//
+// 套用＝自己那一筆改成指到同一張圖（圖本來就是照內容存的，不必再傳一次）。上傳的規矩
+// 照舊：GIF 只有成員能穿、檔案不能超過自己的上限、被封禁的人不行——不然套用就成了繞過
+// 那些規矩的路。
+//
+// 復原：套用的時候把原本「自己傳的那一件」收在 metadata 的 p（{t, s, h, x, y}），記號 w
+// 表示現在這件是套用來的。一路換好幾件，收著的始終是自己傳的那一件；復原就換回它，
+// 原本沒有披風就脫下。收著的圖還算「有人在用」，sweep 不會刪掉。
+
+/** 套用之後隔多久才能再換一件。 */
+const WEAR_EVERY_MS = 5 * 1000;
+
+async function handleWear(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const body = await readJson(request);
+  const hash = body && typeof body.hash === 'string' ? body.hash : '';
+  if (!/^[0-9a-f]{64}$/.test(hash)) return no('bad request');
+  // 只能套用一覽上看得到的（公開、通過審核的），或自己用過的；別人收著準備復原的那一張不算
+  const id = await publicId(user.uuid);
+  const onShow = (await allCapes(env)).find((cape) => cape.h === hash && listed(cape));
+  const past = onShow ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
+  const source = onShow || (past && past.metadata ? { ...past.metadata, h: hash } : null);
+  if (!source) return no('no such cape', 404);
+  const refusal = await mayUpload(env, user, now, source.t);
+  if (refusal) return no(refusal, 403);
+  const limit = await capeLimit(env, user, now);
+  if ((source.s || 0) > limit) return json({ ok: false, why: 'too large', limit }, 413);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  const mine = have && have.metadata ? have.metadata : null;
+  if (mine && mine.h === hash) return json({ ok: true, id, v: mine.v, same: true });
+  if (mine && now - mine.v < WEAR_EVERY_MS) return no('slow down', 429);
+  const keep = !mine ? null : mine.w ? mine.p || null
+    : { t: mine.t, s: mine.s, h: mine.h, x: mine.x || 0, y: mine.y || 0, c: mine.c || mine.v };
+  const metadata = { t: source.t, v: now, c: source.c || source.v || source.at || now, s: source.s,
+    u: user.uuid, n: user.name, h: hash, w: 1 };
+  if (source.x && source.y) {
+    metadata.x = source.x;
+    metadata.y = source.y;
+  }
+  if (keep) metadata.p = keep;
+  if (mine && mine.q) metadata.q = 1;                        // 公開與否照他原本的
+  // 一覽上看得到的本來就給大家看了；從自己的紀錄穿回去的，在審核名單上的人照樣要審
+  const pending = !onShow && await needsReview(env, user.uuid, hash);
+  if (pending) metadata.r = 1;
+  await env.CORPUS.put('cape:' + id, '', { metadata });
+  await noteHistory(env, id, metadata, now);
+  if (mine) await sweep(env, mine.h);
+  const shown = await env.CORPUS.getWithMetadata('u:' + user.uuid);
+  await remember(env, user.uuid, !(shown && shown.metadata && shown.metadata.c === 0), now);
+  return json({ ok: true, id, v: now, t: source.t, back: Boolean(keep), pending });
+}
+
+async function handleRestore(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  if (await env.CORPUS.get('ban:' + user.uuid)) return no('banned', 403);
+  const id = await publicId(user.uuid);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  const mine = have && have.metadata ? have.metadata : null;
+  if (!mine || !mine.w) return no('nothing to restore', 409);
+  const kept = mine.p && typeof mine.p.h === 'string' ? mine.p : null;
+  // 收著的那張圖要還在（管理的人可能把它刪了）；不在就當成原本沒有披風
+  const blob = kept ? await env.CORPUS.getWithMetadata('blob:' + kept.h, { type: 'stream' }) : null;
+  if (blob && blob.value && blob.value.cancel) blob.value.cancel();
+  if (!kept || !blob || !blob.metadata) {
+    await dropCape(env, id, now);
+    return json({ ok: true, cape: false });
+  }
+  const metadata = { t: kept.t, v: now, c: kept.c || now, s: kept.s, u: user.uuid, n: user.name, h: kept.h };
+  if (kept.x && kept.y) {
+    metadata.x = kept.x;
+    metadata.y = kept.y;
+  }
+  if (mine.q) metadata.q = 1;
+  if (await needsReview(env, user.uuid, kept.h)) metadata.r = 1;
+  await env.CORPUS.put('cape:' + id, '', { metadata });
+  await noteHistory(env, id, metadata, now);
+  await sweep(env, mine.h);
+  const shown = await env.CORPUS.getWithMetadata('u:' + user.uuid);
+  await remember(env, user.uuid, !(shown && shown.metadata && shown.metadata.c === 0), now);
+  return json({ ok: true, cape: true, v: now });
 }
 
 async function handleRemove(request, env, now) {
@@ -974,10 +1635,11 @@ async function allCapes(env) {
   return out;
 }
 
-/** 這張圖沒有人在用了就刪掉。 */
+/** 這張圖沒有人在用了就刪掉。有人收著它準備復原（p）、或留在誰的使用紀錄裡，都算在用。 */
 async function sweep(env, hash) {
   if (!hash) return;
-  if ((await allCapes(env)).some((cape) => cape.h === hash)) return;
+  if ((await allCapes(env)).some((cape) => cape.h === hash || (cape.p && cape.p.h === hash))) return;
+  if ((await allHistory(env)).some((one) => one.h === hash)) return;
   await env.CORPUS.delete('blob:' + hash);
 }
 
@@ -987,6 +1649,7 @@ async function dropCape(env, id, now) {
   if (!have || !have.metadata) return null;
   await env.CORPUS.delete('cape:' + id);
   await sweep(env, have.metadata.h);
+  if (have.metadata.p) await sweep(env, have.metadata.p.h);
   const uuid = have.metadata.u;
   if (uuid && UUID.test(uuid)) {
     const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
@@ -1003,7 +1666,7 @@ export function groupCapes(capes) {
   for (const cape of capes) {
     let group = byHash.get(cape.h);
     if (!group) {
-      group = { h: cape.h, t: cape.t, s: cape.s, v: 0, ids: [] };
+      group = { h: cape.h, t: cape.t, s: cape.s, v: 0, c: 0, ids: [] };
       if (cape.x && cape.y) {
         group.x = cape.x;                       // 早期上傳的沒有記尺寸，網頁會自己量
         group.y = cape.y;
@@ -1012,27 +1675,53 @@ export function groupCapes(capes) {
     }
     group.ids.push(cape.id);
     group.v = Math.max(group.v, cape.v || 0);
+    // 這張圖最早是什麼時候傳的：早期的那幾筆沒記（c），拿它換上的時間頂著
+    const first = cape.c || cape.v || 0;
+    if (first && (!group.c || first < group.c)) group.c = first;
   }
   return [...byHash.values()].sort((a, b) => b.v - a.v);
 }
 
+/** 披風一覽：公開、通過審核的那些，相同的圖併成一筆，附上幾個人加了最愛。 */
 async function handleCapes(env) {
-  return json({ capes: groupCapes(await allCapes(env)) }, 200, { 'cache-control': 'no-store' });
+  const groups = groupCapes((await allCapes(env)).filter(listed));
+  const stars = await starMap(env);
+  for (const group of groups) group.stars = Number(stars[group.h]) || 0;
+  return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
 }
 
-async function handleCape(env, id) {
+/**
+ * 某個人的披風。
+ *
+ * <p>平常給的是他現在穿的那一件。key（網址上的 ?k=<雜湊>）有兩個用途：等審核的那一件
+ * 只有知道雜湊的人拿得到（本人與管理的人——雜湊從 /api/me 與管理用的一覽來）；
+ * 以及拿他使用紀錄裡的某一件（紀錄也是本人才看得到雜湊）。
+ */
+async function handleCape(env, id, key) {
   if (!ID.test(id)) return no('not found', 404);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
-  if (!cape || !cape.metadata || !cape.metadata.h) return no('not found', 404);
-  const have = await env.CORPUS.getWithMetadata('blob:' + cape.metadata.h, { type: 'arrayBuffer' });
+  const now = cape && cape.metadata && cape.metadata.h ? cape.metadata : null;
+  let hash = null;
+  let type = null;
+  if (now && (!key || key === now.h) && (!now.r || key === now.h)) {
+    hash = now.h;
+    type = now.t;
+  } else if (key && HASH.test(key)) {
+    const past = await env.CORPUS.getWithMetadata('hist:' + id + ':' + key);
+    if (past && past.metadata && (!now || now.h !== key)) {
+      hash = key;
+      type = past.metadata.t;
+    }
+  }
+  if (!hash) return no('not found', 404);
+  const have = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
   if (!have || !have.value) return no('not found', 404);
-  have.metadata = cape.metadata;
   return new Response(have.value, {
     status: 200,
     headers: {
-      'content-type': have.metadata.t === 'gif' ? 'image/gif' : 'image/png',
-      // 網址帶著版本（?v=），同一個版本的內容不會變
-      'cache-control': 'public, max-age=86400, immutable',
+      'content-type': type === 'gif' ? 'image/gif' : 'image/png',
+      // 網址帶著版本（?v=）或雜湊（?k=），同一個網址的內容不會變
+      'cache-control': key ? 'private, max-age=86400, immutable' : 'public, max-age=86400, immutable',
       'x-content-type-options': 'nosniff',
     },
   });
@@ -1053,37 +1742,47 @@ async function handleMe(request, env, now) {
     // 用 Discord 登入了、還沒綁遊戲 ID：認得是誰，但還不是任何一個玩家
     const session = await discordSession(request, env, now);
     if (!session) return no('login first', 401);
-    return json({ ok: true, linked: false, discord: { name: session.account.n || '' } });
+    return json({ ok: true, linked: false, discord: { name: session.account.n || '' },
+      staff: Boolean(await env.CORPUS.get('staff:d:' + session.id)) });
   }
   const id = await publicId(user.uuid);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
   const list = await credits(now);
   const name = user.name.toLowerCase();
+  // 特別名單上的人也算成員（上傳的待遇一樣），但不是開發者、也不會有葉子
+  const member = Boolean(list && list.names.has(name)) || await hasPerk(env, user.uuid);
+  const developer = Boolean(list && list.developers.has(name));
   return json({
     ok: true,
     linked: true,
     discord: user.discord ? { name: user.discordName } : null,
     name: user.name,
     id,
-    developer: Boolean(list && list.developers.has(name)),
-    member: Boolean(list && list.names.has(name)),
+    developer,
+    // 管理頁開不開：開發者，或開發者加的管理員（不在名單上、沒有葉子）
+    staff: developer || await isStaff(env, user),
+    member,
     banned: Boolean(await env.CORPUS.get('ban:' + user.uuid)),
     uploads: env.UPLOADS || 'tiered',
-    limit: list && list.names.has(name) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES,
+    limit: member ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES,
+    // h 是那張圖的雜湊（一覽上的那一件就是它）；worn 表示這件是從一覽套用的，back 表示復原會換回自己傳的那一件
     cape: cape && cape.metadata ? { t: cape.metadata.t, v: cape.metadata.v, s: cape.metadata.s,
-      x: cape.metadata.x || 0, y: cape.metadata.y || 0 } : null,
+      x: cape.metadata.x || 0, y: cape.metadata.y || 0, h: cape.metadata.h,
+      worn: Boolean(cape.metadata.w), back: Boolean(cape.metadata.w && cape.metadata.p),
+      // public：出現在披風一覽上；pending：在等審核，通過之前別人看不到
+      public: !cape.metadata.q, pending: Boolean(cape.metadata.r) } : null,
+    // 在審核名單上：之後上傳的披風要先通過
+    review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
   });
 }
 
 /**
- * 這個請求有沒有管理權。有的話回是誰（寫進紀錄用），沒有回 null。
- * 兩條路：本人在名單上是開發者（每次都重新查名單），或帶著 ADMIN_TOKEN。
+ * 這個請求有沒有管理權（開發者或管理員）。有的話回是誰（寫進紀錄用），沒有回 null。
+ * 只有開發者能做的事（動管理員名單）另外看 authority().developer。
  */
 async function moderator(request, env, now) {
-  const header = request.headers.get('authorization') || '';
-  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return 'admin';
-  const user = await who(request, env, now);
-  return user && await isDeveloper(user.name, now) ? user.name : null;
+  const mine = await authority(request, env, now);
+  return mine ? mine.by : null;
 }
 
 /**
@@ -1103,8 +1802,26 @@ async function handleAdminRemove(request, env, now) {
   } else {
     return no('bad request');
   }
+  if (typeof body.hash === 'string') {
+    // 照圖刪的：有人把這張圖收著準備復原的，也一起拿掉——不然刪了還能被穿回來
+    for (const cape of capes) {
+      if (!cape.p || cape.p.h !== body.hash || cape.h === body.hash) continue;
+      const { id: owner, p: gone, ...rest } = cape;
+      await env.CORPUS.put('cape:' + owner, '', { metadata: rest });
+    }
+    // 留在別人使用紀錄裡的也拿掉，最愛的人數表也清掉這一張
+    for (const one of await allHistory(env)) {
+      if (one.h === body.hash) await env.CORPUS.delete(one.key);
+    }
+    const stars = await starMap(env);
+    if (body.hash in stars) {
+      delete stars[body.hash];
+      await env.CORPUS.put('stars', JSON.stringify(stars));
+    }
+  }
   let removed = 0;
   for (const cape of targets) {
+    await env.CORPUS.delete('hist:' + cape.id + ':' + cape.h);     // 他的使用紀錄裡也不留，不然穿得回來
     const uuid = await dropCape(env, cape.id, now);
     if (!uuid) continue;
     removed++;
@@ -1120,11 +1837,63 @@ async function handleAdminCapes(request, env, now) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
   const capes = await allCapes(env);
   const groups = groupCapes(capes);
+  const stars = await starMap(env);
   for (const group of groups) {
-    group.owners = capes.filter((cape) => cape.h === group.h)
-      .map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v }));
+    const wearers = capes.filter((cape) => cape.h === group.h);
+    group.owners = wearers.map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v,
+      private: Boolean(cape.q), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
+    group.stars = Number(stars[group.h]) || 0;
+    // 管理的人看得到全部：沒有人公開的標「不公開」，有人在等審核的標「待審核」
+    group.hidden = wearers.every((cape) => cape.q || cape.r);
+    group.pending = wearers.some((cape) => cape.r);
   }
   return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 特別名單：誰在上面。只給管理的人看。 */
+async function handlePerks(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const perks = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'perk:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      let record = {};
+      try {
+        record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
+      } catch (e) {
+        record = {};
+      }
+      if (typeof record !== 'object' || record === null) record = {};
+      perks.push({ uuid: k.name.slice(5), note: record.n || '', t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  perks.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ perks }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handlePerkAdd(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const uuid = plainUuid(body.uuid);
+  if (!uuid) return no('bad uuid');
+  const note = body.note == null ? '' : body.note;
+  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  if (await env.CORPUS.get('perk:' + uuid)) return no('already', 409);
+  await env.CORPUS.put('perk:' + uuid, JSON.stringify({ n: note.trim(), t: now, by }));
+  return json({ ok: true, uuid });
+}
+
+async function handlePerkRemove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const uuid = body ? plainUuid(body.uuid) : null;
+  if (!uuid) return no('bad request');
+  await env.CORPUS.delete('perk:' + uuid);
+  return json({ ok: true });
 }
 
 /** 封禁名單。 */
@@ -1306,9 +2075,9 @@ function page(html, lang) {
       'referrer-policy': 'no-referrer',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'DENY',
-      // 只跑自己的程式與 jsDelivr 上的立體檢視；圖從自己這裡、玩家頭像與倉庫的標誌來
+      // 只跑自己的程式與 jsDelivr 上的立體檢視；圖從自己這裡、玩家的頭像與全身圖（minotar）、倉庫的標誌來
       'content-security-policy': "default-src 'self'; "
-        + "img-src 'self' data: blob: https://raw.githubusercontent.com https://mc-heads.net; "
+        + "img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; "
         + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
         + "connect-src 'self'; base-uri 'none'; form-action 'none'",
     },
@@ -1325,7 +2094,10 @@ export default {
       const asked = url.searchParams.get('lang');
       const lang = LANGS.includes(asked) ? asked
         : pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
-      return page(render(path, lang), lang);
+      // 什麼語言都沒說的訪客（沒有 ?lang、沒選過、瀏覽器也沒報）多半是抓連結預覽的機器人
+      const bare = !LANGS.includes(asked) && !request.headers.get('accept-language')
+        && !/(?:^|;\s*)lang=/.test(request.headers.get('cookie') || '');
+      return page(render(path, lang, bare), lang);
     }
     if (request.method === 'GET' && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
     if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
@@ -1352,11 +2124,38 @@ export default {
     if (route === 'GET /capes') return handleCapes(env);
     if (route === 'GET /admin/capes') return handleAdminCapes(request, env, now);
     if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
+    if (route === 'GET /admin/perks') return handlePerks(request, env, now);
+    if (route === 'POST /admin/perk') return handlePerkAdd(request, env, now);
+    if (route === 'POST /admin/unperk') return handlePerkRemove(request, env, now);
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (route === 'GET /admin/staff') return handleStaff(request, env, now);
+    if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
+    if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
+    if (route === 'GET /team') return handleTeam(env, now);
+    if (route === 'POST /cape/wear') return handleWear(request, env, now);
+    if (route === 'POST /cape/restore') return handleRestore(request, env, now);
+    if (route === 'POST /cape/star') return handleStar(request, env, now);
+    if (route === 'POST /cape/public') return handlePublic(request, env, now);
+    if (route === 'POST /cape/forget') return handleForget(request, env, now);
+    if (route === 'GET /capes/mine') return handleMine(request, env, now);
+    if (route === 'GET /admin/reviews') return handleReviews(request, env, now);
+    if (route === 'POST /admin/review') return handleReviewAdd(request, env, now);
+    if (route === 'POST /admin/unreview') return handleReviewRemove(request, env, now);
+    if (route === 'POST /admin/approve') return handleApprove(request, env, now);
+    if (route === 'GET /admin/guilds') return handleGuilds(request, env, now);
+    if (route === 'POST /admin/guild') return handleGuildAdd(request, env, now);
+    if (route === 'POST /admin/unguild') return handleGuildRemove(request, env, now);
+    {
+      const picture = /^(GET|PUT) \/(admin\/)?guild\/([a-z-]{3,30})\/(icon|banner)$/.exec(route);
+      if (picture && GUILD_SLUG.test(picture[3])) {
+        if (picture[1] === 'PUT' && picture[2]) return handleGuildImage(request, env, now, picture[3], picture[4]);
+        if (picture[1] === 'GET' && !picture[2]) return handleGuildPicture(env, picture[3], picture[4]);
+      }
+    }
     if (request.method === 'GET' && route.startsWith('GET /cape/')) {
-      return handleCape(env, route.slice('GET /cape/'.length));
+      return handleCape(env, route.slice('GET /cape/'.length), url.searchParams.get('k'));
     }
     if (route === 'GET /status') {
       const list = await storedList(env);

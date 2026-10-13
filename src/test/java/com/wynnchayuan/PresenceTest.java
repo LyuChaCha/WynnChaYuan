@@ -123,6 +123,19 @@ public final class PresenceTest {
         Presence.load(Presence.parse("{\"t\":1,\"users\":[\"" + mine + "\",\"" + theirs
                 + "\"],\"capes\":{},\"hidden\":[],\"rainbow\":[\"" + theirs + "\",\"ffffffffffffffffffffffff\"],"
                 + "\"show\":{\"" + theirs + "\":\"developers,sponsors\",\"" + mine + "\":\"Dev!,contributors\"}}"));
+        // 特別名單：登入的回覆說這個人有沒有成員的上傳待遇
+        JsonObject yes = new JsonObject();
+        yes.addProperty("token", "x");
+        yes.addProperty("member", true);
+        JsonObject text = new JsonObject();
+        text.addProperty("token", "x");
+        text.addProperty("member", "true");
+        JsonObject old = new JsonObject();
+        old.addProperty("token", "x");
+        check("★ 登入的回覆有 member:true 才算有待遇；舊的登記站沒這一欄、寫成字串、不是 JSON 都當沒有",
+                Presence.memberOf(yes.toString()) && !Presence.memberOf(old.toString())
+                        && !Presence.memberOf(text.toString()) && !Presence.memberOf("oops")
+                        && !Presence.memberOf(null));
         Presence.BadgeChoice picked = Presence.badgeChoice(OTHER);
         check("★ 名單上讀得到別人開了彩色、挑了哪幾片", picked.rainbow()
                 && java.util.List.of("developers", "sponsors").equals(picked.shown()));

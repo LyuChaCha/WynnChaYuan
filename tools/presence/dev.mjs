@@ -1,9 +1,10 @@
-// 在本機開網站來看：node tools/presence/dev.mjs [埠號]
+// 在本機開網站來看：node tools/presence/dev.mjs [埠號] [公會圖示.png] [公會旗幟.png]
 //
 // 用一個放在記憶體裡的假 KV 跑同一支 worker，先塞幾件 capes/templates 的示範披風與一筆封禁。
 // 只給改頁面的時候看樣子用——真的登入要連 Mojang，這裡沒有接，改成：
 //   /dev-login?as=dev    當成名單上的開發者登入（名字用 credits.json 的第一位開發者）
 //   /dev-login?as=user   當成一般玩家登入
+//   /dev-login?as=staff  當成管理員登入（不在名單上，但管理頁開得起來）
 //   /dev-login?as=discord  當成剛用 Discord 註冊、還沒綁遊戲 ID 的人登入
 //   /dev-link?code=XXXXXXXX  假裝遊戲裡打了 /wcy link（當成一般玩家 Steve 送的）
 import http from 'node:http';
@@ -54,8 +55,37 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
   }
   n++;
 }
+// 披風一覽的幾種狀態：幾件有人加了最愛、一件不公開、一件在等審核，審核名單上一個人
+{
+  const seeded = [...data.keys()].filter((k) => k.startsWith('cape:')).map((k) => data.get(k).metadata);
+  const stars = {};
+  seeded.forEach((cape, i) => {
+    cape.c = cape.v - (i % 5) * 3600000;
+    if (i % 3 === 0) stars[cape.h] = 1 + (i % 4);
+  });
+  const alone = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 1);
+  if (alone[0]) alone[0].q = 1;
+  if (alone[1]) alone[1].r = 1;
+  data.set('stars', { value: JSON.stringify(stars), metadata: null });
+  data.set('review:' + '0'.repeat(32), {
+    value: JSON.stringify({ n: people[1], note: '示範', t: Date.now() - 5400000, by: developer, ok: [] }), metadata: null });
+}
 data.set('ban:' + '9'.repeat(32), {
   value: JSON.stringify({ n: 'Herobrine', t: Date.now() - 3 * 86400000, by: developer }), metadata: null });
+
+// 一位管理員（照 UUID 加的）與一位還沒登入過的（照名字加的）
+data.set('staff:u:' + 'c'.repeat(32), {
+  value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
+data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
+
+// 一個貢獻公會。圖示與旗幟不在倉庫裡（是公會自己的圖）：指令列有給檔案就用，沒給就只有名字
+const guild = { slug: 'yuchayuan', name: 'YuChaYuan', tag: 'YCY', t: Date.now() - 7200000, by: developer, i: 0, b: 0 };
+[['icon', 'i', process.argv[3]], ['banner', 'b', process.argv[4]]].forEach(([kind, field, file]) => {
+  if (!file || !fs.existsSync(file)) return;
+  data.set('gimg:yuchayuan:' + kind, { value: new Uint8Array(fs.readFileSync(file)), metadata: { t: 'image/png' } });
+  guild[field] = Date.now();
+});
+data.set('guilds', { value: JSON.stringify([guild]), metadata: null });
 
 const port = Number(process.argv[2] || 8799);
 http.createServer(async (req, res) => {
@@ -77,8 +107,10 @@ http.createServer(async (req, res) => {
     return;
   }
   if (url.pathname === '/dev-login') {
-    const dev = url.searchParams.get('as') !== 'user';
-    const token = await issueWebToken(env, (dev ? 'a' : 'b').repeat(32), dev ? developer : 'Steve', Date.now());
+    const as = url.searchParams.get('as');
+    const [uuid, name] = as === 'user' ? ['b'.repeat(32), 'Steve']
+      : as === 'staff' ? ['c'.repeat(32), 'Alex'] : ['a'.repeat(32), developer];
+    const token = await issueWebToken(env, uuid, name, Date.now());
     res.writeHead(302, { location: '/account#t=' + token });
     res.end();
     return;
