@@ -1249,6 +1249,26 @@ async function handleStaffRemove(request, env, now) {
   return json({ ok: true });
 }
 
+// 上傳冷卻（使用者 2026-10-14：「1 小時內若上傳 3 個披風以上，就需要等待 12 小時才能再傳一個」）。
+// KV upl:<UUID> → {t [最近一小時內每次上傳的時間], until 鎖到什麼時候}。12 小時多一點就自己過期。
+export const BURST_COUNT = 3;
+export const BURST_WINDOW_MS = 3600 * 1000;
+export const BURST_LOCK_MS = 12 * 3600 * 1000;
+
+/** 還在冷卻就回鎖到什麼時候，不然回 0。 */
+export function burstLock(log, now) {
+  return log && log.until > now ? log.until : 0;
+}
+
+/** 記一次上傳：一小時內湊滿 BURST_COUNT 次就鎖 12 小時。 */
+export function burstNote(log, now) {
+  const recent = (log && Array.isArray(log.t) ? log.t : []).filter((t) => now - t < BURST_WINDOW_MS);
+  recent.push(now);
+  const next = { t: recent };
+  if (recent.length >= BURST_COUNT) next.until = now + BURST_LOCK_MS;
+  return next;
+}
+
 async function handleUpload(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
@@ -1260,6 +1280,9 @@ async function handleUpload(request, env, now) {
   if (found.why) return no(found.why, found.why === 'too large' ? 413 : 400);
   const refusal = await mayUpload(env, user, now, found.type);
   if (refusal) return no(refusal, 403);
+  const log = parseRecord(await env.CORPUS.get('upl:' + user.uuid));
+  const until = burstLock(log, now);
+  if (until) return json({ ok: false, why: 'cooldown', until }, 429);
   // 一般玩家 1 MB，名單上的成員 20 MB。名單讀不到的時候當成一般玩家。
   const limit = await capeLimit(env, user, now);
   if (bytes.length > limit) return json({ ok: false, why: 'too large', limit }, 413);
@@ -1267,6 +1290,11 @@ async function handleUpload(request, env, now) {
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (have && have.metadata && now - have.metadata.v < UPLOAD_EVERY_MS) {
     return no('slow down', 429);
+  }
+  // 審核名單上的人只能有一件自己傳的披風（等審核的也算；使用者 2026-10-14）。
+  // 從一覽穿別人的那一件不算，但收著的自己那件（p）算。要換就先移除。
+  if (have && have.metadata && (!have.metadata.w || have.metadata.p) && await reviewOf(env, user.uuid)) {
+    return no('review one', 403);
   }
   // 圖檔照內容存（blob:<雜湊>），披風那一筆只記它指到哪一張——
   // 好幾個人傳同一張圖，只存一份。
@@ -1285,6 +1313,8 @@ async function handleUpload(request, env, now) {
   const pending = await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
+  await env.CORPUS.put('upl:' + user.uuid, JSON.stringify(burstNote(log, now)),
+    { expirationTtl: Math.ceil((BURST_LOCK_MS + BURST_WINDOW_MS) / 1000) });
   await noteHistory(env, id, metadata, now);
   await revive(env, hash);
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h, have.metadata, now);

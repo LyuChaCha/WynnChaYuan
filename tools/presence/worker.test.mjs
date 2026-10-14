@@ -3,7 +3,7 @@ import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
-  MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
+  MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 
@@ -136,6 +136,8 @@ function gif(width, height, frames, finished = true) {
 }
 
 const env = { CORPUS: fakeKv() };
+/** 「過了很久」：上傳冷卻的紀錄一起清掉（測試裡同一個人常常連傳好幾件）。 */
+const forgetBursts = () => { for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('upl:')) env.CORPUS.data.delete(k); };
 const NOW = Date.now();
 
 // ---- 代碼與通行證 ----
@@ -501,7 +503,7 @@ check('UPLOADS=off：誰都不能傳', r.status === 403 && (await r.json()).why 
 const blobs = () => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('blob:'));
 check('現在兩個人、兩張不同的圖', blobs().length === 2);
 // 把她那一筆的時間往前推，她才能馬上再傳
-const pushBack = (id) => { env.CORPUS.data.get('cape:' + id).metadata.v -= 60000; };
+const pushBack = (id) => { env.CORPUS.data.get('cape:' + id).metadata.v -= 60000; forgetBursts(); };
 pushBack(aliceId);
 r = await worker.fetch(put('/cape', png(22, 17), aliceToken), env);
 check('她改傳跟他一樣的圖', r.status === 200);
@@ -610,7 +612,7 @@ check('★ 每一頁都掛了圖示', Object.values(pages).concat(Object.values(
   check('上傳那一塊可以拖放，也有試穿的說明', pages['/account'].includes('id="drop"')
     && LANGS.every((lang) => TEXT[lang]['account.drop'] && TEXT[lang].js.previewHint.includes('{w}')));
 }
-check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
+check('★ 披風一覽上寫著不可以上傳什麼', ['廣告', '公會宣傳', '濫用', '政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
 check('★ 英文版的披風一覽也寫著不可以上傳什麼',
   ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
 check('英文版的帳號頁用的是遊戲裡英文介面的字',
@@ -1275,7 +1277,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const wear = (who, hash) => worker.fetch(post('/cape/wear', { hash }, who.token), env);
   const restore = (who) => worker.fetch(post('/cape/restore', {}, who.token), env);
   const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json()).cape;
-  const later = (who) => { env.CORPUS.data.get('cape:' + who.id).metadata.v -= 60000; };
+  const later = (who) => { env.CORPUS.data.get('cape:' + who.id).metadata.v -= 60000; forgetBursts(); };
   const has = (hash) => env.CORPUS.data.has('blob:' + hash);
   check('四個人各傳一件', (await upload(wren, png(44, 34))).status === 200 && (await upload(finch, png(88, 68))).status === 200
     && (await upload(robin, png(176, 136))).status === 200 && (await upload(carol, gif(22, 17, 2))).status === 200);
@@ -1422,7 +1424,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const meta = (who) => env.CORPUS.data.get('cape:' + who.id).metadata;
   const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json());
   const roster = async () => (await (await worker.fetch(get('/list'), env)).json()).capes;
-  const later = (who) => { meta(who).v -= 60000; };
+  const later = (who) => { meta(who).v -= 60000; forgetBursts(); };
   const hist = (who) => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('hist:' + who.id + ':')).map((k) => k.split(':')[2]);
   const picture = (who, key) => worker.fetch(new Request('https://x.test/api/cape/' + who.id + (key ? '?k=' + key : '')), env);
 
@@ -1576,6 +1578,10 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('重複列入：說已經在了', (await send('/admin/review', { uuid: elm.uuid }, { token: aliceWeb })).status === 409);
   later(elm);
   r = await upload(elm, mark(png(352, 272), 15));
+  check('★ 審核名單上的人已經有一件：要先移除才能再傳', r.status === 403 && (await r.json()).why === 'review one');
+  await worker.fetch(del('/cape', elm.token), env);
+  forgetBursts();
+  r = await upload(elm, mark(png(352, 272), 15));
   body = await r.json();
   const WAIT = meta(elm).h;
   check('★ 之後傳的要等審核：傳得上去，回覆說在等', r.status === 200 && body.pending === true && meta(elm).r === 1
@@ -1597,6 +1603,8 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   r = await send('/cape/wear', { hash: WAIT }, elm);
   check('★ 通過過的那一張，他之後再穿不必再審', r.status === 200 && (await r.json()).pending === false && !meta(elm).r);
   later(elm);
+  await worker.fetch(del('/cape', elm.token), env);
+  forgetBursts();
   await upload(elm, mark(png(1056, 816), 16));
   check('又傳一張新的：還是要等', meta(elm).r === 1 && !(elm.id in (await roster())));
   r = await worker.fetch(get('/admin/reviews', aliceWeb), env);
@@ -1616,6 +1624,55 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   r = await send('/admin/remove', { hash: meta(elm).h }, { token: aliceWeb });
   check('★ 照圖刪除：誰的使用紀錄裡都不留，最愛的人數也清掉', r.status === 200
     && !hist(elm).includes(await sha(mark(png(1056, 816), 16))) && !env.CORPUS.data.has('cape:' + elm.id));
+
+  // 上傳冷卻（使用者 2026-10-14：一小時內傳 3 件，之後要等 12 小時）
+  check('★ 冷卻：一小時內第三次上傳之後鎖 12 小時；隔超過一小時的不算', (() => {
+    const t0 = 1_000_000_000_000;
+    let log = burstNote(null, t0);
+    log = burstNote(log, t0 + 60_000);
+    const two = burstLock(log, t0 + 120_000) === 0;
+    log = burstNote(log, t0 + 120_000);
+    const locked = burstLock(log, t0 + 130_000) === t0 + 120_000 + BURST_LOCK_MS;
+    const free = burstLock(log, t0 + 120_000 + BURST_LOCK_MS + 1) === 0;
+    let spread = burstNote(null, t0);
+    spread = burstNote(spread, t0 + BURST_WINDOW_MS + 1);
+    spread = burstNote(spread, t0 + BURST_WINDOW_MS + 2);
+    return two && locked && free && burstLock(spread, t0 + BURST_WINDOW_MS + 3) === 0;
+  })());
+  forgetBursts();
+  env.CORPUS.data.delete('review:' + oak.uuid);
+  const C1 = mark(png(88, 68), 41);
+  const C2 = mark(png(88, 68), 42);
+  const C3 = mark(png(88, 68), 43);
+  const C4 = mark(png(88, 68), 44);
+  const step = () => { meta(oak).v -= 60000; };          // 只跳過 20 秒的間隔，不清冷卻
+  step();
+  let ok = (await upload(oak, C1)).status === 200;
+  step();
+  ok = ok && (await upload(oak, C2)).status === 200;
+  step();
+  ok = ok && (await upload(oak, C3)).status === 200;
+  step();
+  r = await upload(oak, C4);
+  body = await r.json();
+  check('★ 一小時內傳了 3 件：第 4 件要等 12 小時，回答裡有解鎖的時間',
+    ok && r.status === 429 && body.why === 'cooldown' && body.until > Date.now() + BURST_LOCK_MS - 60_000);
+  forgetBursts();
+  step();
+  check('冷卻過了就能再傳', (await upload(oak, C4)).status === 200);
+
+  // 審核名單上的人只能有一件自己傳的披風（等審核的也算）
+  forgetBursts();
+  env.CORPUS.data.set('review:' + oak.uuid, { value: JSON.stringify({ n: 'Oak', note: '', t: 1, by: 'x', ok: [] }), metadata: null });
+  step();
+  r = await upload(oak, C1);
+  check('★ 審核名單上的人已經有一件：不能再傳', r.status === 403 && (await r.json()).why === 'review one');
+  check('移除之後可以傳一件（等審核）', (await worker.fetch(del('/cape', oak.token), env)).status === 200
+    && await (async () => { forgetBursts(); const a = await upload(oak, C2); const b = await a.json(); return a.status === 200 && b.pending === true; })());
+  step();
+  check('★ 等審核的那一件也算：不能再傳第二件', (await (await upload(oak, C3)).json()).why === 'review one');
+  env.CORPUS.data.delete('review:' + oak.uuid);
+  forgetBursts();
 
   check('★ 披風一覽有排序、篩選與星星；管理的人多兩個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
     'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="hidden"', 'value="pending"', 'id="skinpick"',

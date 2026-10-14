@@ -765,7 +765,7 @@ export const TEXT = {
     'capes.sort': '排序', 'capes.filter': '篩選', 'capes.f.format': '格式', 'capes.f.show': '顯示',
     'capes.s.new': '最新上傳', 'capes.s.old': '最早上傳', 'capes.s.worn': '最多人使用', 'capes.s.stars': '人氣最高', 'capes.s.recent': '最近有人穿上',
     'capes.f.all': '全部', 'capes.f.fav': '我的最愛', 'capes.f.hist': '我用過的', 'capes.f.hidden': '不公開', 'capes.f.pending': '待審核',
-    'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
+    'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容；廣告（商業宣傳、宣傳其他伺服器、真錢交易例如用現金買賣 LE、現實生活的聯絡方式；公會宣傳不算）；以及其他違反 Wynncraft 規章的內容。也不可以濫用上傳（例如短時間內大量上傳）。違規的披風會被移除，上傳的人可能不能再傳。',
     'capes.keep': '沒有人穿的披風會保留 7 天；期滿還是沒有人穿就會移除，加了星號的也一樣。',
     'skip': '跳到主要內容',
     'capes.make': '做自己的披風', 'capes.makeb': '下載範本、畫上你的圖案、上傳，三步就好。',
@@ -813,9 +813,9 @@ export const TEXT = {
     'account.public': '公開在披風一覽',
     'account.publichint': '關掉之後，別人在披風一覽上看不到你的披風，也不能穿上它；遊戲裡其他玩家照樣看得到你穿著。',
     'account.pending': '這件披風正在等審核，通過之前別人看不到。',
-    'account.review': '你上傳的披風目前要先經過審核，通過之後別人才看得到。',
+    'account.review': '你上傳的披風目前要先經過審核，通過之後別人才看得到。審核期間只能有一件上傳的披風（等審核的也算）；要換一件，先移除現在這件。',
     'account.upload': '上傳披風',
-    'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '。檔案大小：一般玩家 1 MB 以內，開發者、贊助者、貢獻者 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
+    'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '。檔案大小：一般玩家 1 MB 以內，開發者、贊助者、貢獻者 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。一小時內上傳 3 次以上，要等 12 小時才能再傳。',
     'account.pick': '選一張披風的圖', 'account.send': '上傳',
 
     'admin.title': '管理 - WynnChaYuan',
@@ -917,6 +917,8 @@ export const TEXT = {
         banned: '這個帳號不能上傳披風',
         'uploads off': '現在沒有開放上傳',
         'slow down': '剛剛才傳過，等一下再試',
+        cooldown: '一小時內已經傳了 3 件，{t} 之後才能再傳',
+        'review one': '審核期間只能有一件上傳的披風（等審核的也算）；要換一件，先移除現在這件。',
         'login first': '登入過期了，請從遊戲裡重新開一次',
         'no such cape': '這件披風已經不在了，請重新整理',
         'nothing to restore': '沒有可以復原的披風',
@@ -1034,7 +1036,7 @@ export const TEXT = {
     'capes.sort': 'Sort by', 'capes.filter': 'Filter', 'capes.f.format': 'Format', 'capes.f.show': 'Show',
     'capes.s.new': 'Newest', 'capes.s.old': 'Oldest', 'capes.s.worn': 'Most worn', 'capes.s.stars': 'Most popular', 'capes.s.recent': 'Recently put on',
     'capes.f.all': 'All', 'capes.f.fav': 'My favourites', 'capes.f.hist': 'Worn before', 'capes.f.hidden': 'Not public', 'capes.f.pending': 'Awaiting review',
-    'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
+    'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content; advertising (commercial promotion, promoting other servers, real-money trading such as selling LE for cash, real-life contact details; guild promotion is fine); and anything else against Wynncraft’s rules. Do not abuse uploads either (for example, uploading many capes in a short time). Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'capes.keep': 'A cape nobody is wearing is kept for 7 days. If no one has put it on by then it is removed, starred or not.',
     'skip': 'Skip to content',
     'capes.make': 'Make your own cape', 'capes.makeb': 'Download the template, draw your design, upload. Three steps.',
@@ -1082,9 +1084,9 @@ export const TEXT = {
     'account.public': 'Show in the cape gallery',
     'account.publichint': 'When this is off, others cannot see your cape in the gallery or wear it; other players still see you wearing it in game.',
     'account.pending': 'This cape is awaiting review. Nobody else can see it until it is approved.',
-    'account.review': 'Capes you upload are reviewed first for now; others see them once they are approved.',
+    'account.review': 'Capes you upload are reviewed first for now; others see them once they are approved. While under review you can have only one uploaded cape, pending ones included; to change it, remove the current one first.',
     'account.upload': 'Upload a cape',
-    'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + '. File size: up to 1 MB for regular players, 20 MB for developers, sponsors and contributors. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
+    'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + '. File size: up to 1 MB for regular players, 20 MB for developers, sponsors and contributors. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors. If you upload 3 or more capes within an hour, you have to wait 12 hours before uploading again.',
     'account.pick': 'Choose a cape image', 'account.send': 'Upload',
 
     'admin.title': 'Admin - WynnChaYuan',
@@ -1186,6 +1188,8 @@ export const TEXT = {
         banned: 'This account cannot upload capes',
         'uploads off': 'Uploads are closed right now',
         'slow down': 'You just uploaded - try again in a moment',
+        cooldown: 'You uploaded 3 capes within an hour. You can upload again after {t}',
+        'review one': 'While under review you can have only one uploaded cape, pending ones included; to change it, remove the current one first.',
         'login first': 'Your sign-in expired - open the site from the game again',
         'no such cape': 'This cape is no longer here. Please refresh',
         'nothing to restore': 'There is no cape to switch back to',
@@ -3418,6 +3422,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         idle();
         return r.json().catch(function () { return {}; }).then(function (body) {
           if (r.ok) { say(fmt(body.pending ? L.uploadedPending : L.uploaded, { w: body.width, h: body.height }), true); refresh(); }
+          else if (body.why === 'cooldown' && body.until) say(fmt(L.why.cooldown, { t: new Date(body.until).toLocaleString(document.documentElement.lang) }), false);
           else say(L.why[body.why] || fmt(L.failed, { s: r.status }), false);
         });
       }).catch(function () { say(L.offline, false); });
