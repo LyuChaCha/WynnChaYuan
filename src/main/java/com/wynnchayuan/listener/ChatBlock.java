@@ -403,6 +403,18 @@ public final class ChatBlock {
             } catch (Throwable t) {
                 flowed = null;                 // 併句出事不能拖累逐列那條路
             }
+        } else if (rows.size() > 1) {
+            // 單欄的也試：Lootrun 的加持公告是單欄、一列一則，整句在語料裡。
+            // 見 LineTranslator#flowColumn。
+            try {
+                List<StyledText> originals = new ArrayList<>(rows.size());
+                for (Row row : rows) {
+                    originals.add(row.original());
+                }
+                flowed = LineTranslator.flowColumn(originals, store, centred);
+            } catch (Throwable t) {
+                flowed = null;
+            }
         }
         net.minecraft.network.chat.MutableComponent out = Component.empty();
         boolean any = false;

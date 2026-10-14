@@ -68,6 +68,7 @@ public final class PanelFlowTest {
         continuation(right, whole, store);
         untouched(store);
         leftCells(store);
+        singleColumn(store);
 
         finish();
     }
@@ -117,6 +118,54 @@ public final class PanelFlowTest {
         check("接回去還是整句（" + joined + "）",
                 squeeze(joined.toString()).equals(squeeze(whole)));
         check("接續列的行首偏移還在", leadOf(out[4]) == 180);
+    }
+
+    /**
+     * 單欄、一列一則、每列置中的加持公告（使用者 2026-10-14 的 log）：
+     * 整句在語料裡，要併起來翻，不能一列一列翻成半中半英。
+     */
+    private static void singleColumn(TranslationStore store) {
+        String[] lines = {
+            "For the rest of your Lootrun,",
+            "gain +150 Health (Max x15)",
+            "everytime you complete a",
+            "Challenge",
+        };
+        String whole = whole(lines, store);
+        check("前提：語料裡有這一整句（Persistent Champion）", whole != null && hasCjk(whole));
+        if (whole == null) {
+            return;
+        }
+        List<StyledText> rows = new ArrayList<>();
+        rows.add(indented(110, "[Persistent Champion]"));
+        int[] leads = {77, 87, 91, 130};
+        for (int i = 0; i < lines.length; i++) {
+            rows.add(indented(leads[i], lines[i]));
+        }
+        Component[] out = LineTranslator.flowColumn(rows, store, null);
+        check("標題那一列不在句子裡，交還給逐列那條路", out[0] == null);
+        boolean all = true;
+        for (int i = 1; i < out.length; i++) {
+            all &= out[i] != null;
+        }
+        check("★ 單欄的四列併成一句", all);
+        if (!all) {
+            return;
+        }
+        StringBuilder joined = new StringBuilder();
+        for (int i = 1; i < out.length; i++) {
+            String text = textOf(out[i]);
+            check("每一列還是一行（「" + text + "」）", text.indexOf('\n') < 0);
+            joined.append(text);
+        }
+        check("★ 接回去就是整句的譯文（" + joined + "）",
+                squeeze(joined.toString()).equals(squeeze(whole)));
+        check("沒有留下英文半句", joined.indexOf("gain") < 0 && joined.indexOf("everytime") < 0);
+
+        List<StyledText> chat = List.of(indented(89, "Welcome to Wynncraft!"),
+                indented(59, "play.wynncraft.com"));
+        Component[] none = LineTranslator.flowColumn(chat, store, null);
+        check("湊不成句的單欄訊息不碰", none[0] == null && none[1] == null);
     }
 
     /** 湊不成句的面板：一列都不該被動到。 */

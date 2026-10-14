@@ -414,7 +414,8 @@ public final class CaptureListener {
         }
         String[] lines = template.split("\n", -1);
         int keep = lines.length;
-        while (keep > 1 && !GlyphSplitter.hasWord(lines[keep - 1])) {
+        // 狀態詞（Distorted）也算狀態列的一部分，見 GlyphSplitter#STATUS_WORDS
+        while (keep > 1 && !GlyphSplitter.hasWordBesidesStatus(lines[keep - 1])) {
             keep--;
         }
         return keep == lines.length ? template

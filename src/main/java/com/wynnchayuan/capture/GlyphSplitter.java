@@ -290,6 +290,29 @@ public final class GlyphSplitter {
      * 兩個就把單位跟真正的字分開了：{@code NPC}、{@code to dock} 算字，
      * {@code {#}s ⬣ {~}s} 不算。
      */
+    /**
+     * 名牌狀態列裡會出現的<b>整個詞</b>。
+     *
+     * <h2>為什麼要有（使用者 2026-10-14 的 captured.json）</h2>
+     * 湮滅（Annihilation）一帶的怪物名牌，狀態列除了圖示與秒數，還會寫著
+     * {@code Distorted 12s}。那是一個真的詞，{@link #hasWord} 說「有字」，於是：
+     * <ul>
+     *   <li>翻譯端的逐行退路要求每個有字的行都查得到，查不到就整塊放棄——名字跟著變回英文；</li>
+     *   <li>收集端砍不掉這一行，每一種圖示與秒數的組合都收成一條新的鍵（已經累積 731 條）。</li>
+     * </ul>
+     * 這種詞跟單位字母一樣，是狀態列的一部分，不是要翻的句子。列在這裡的詞
+     * 由 {@link #hasWordBesidesStatus} 扣掉，翻譯端另外把它換成譯文。
+     */
+    public static final java.util.List<String> STATUS_WORDS = java.util.List.of("Distorted");
+
+    private static final java.util.regex.Pattern STATUS_WORD = java.util.regex.Pattern.compile(
+            "\\b(?:" + String.join("|", STATUS_WORDS) + ")\\b");
+
+    /** 扣掉 {@link #STATUS_WORDS} 之後，這一段還有沒有成字的字母。 */
+    public static boolean hasWordBesidesStatus(String s) {
+        return s != null && hasWord(STATUS_WORD.matcher(s).replaceAll(" "));
+    }
+
     public static boolean hasWord(String s) {
         if (s == null) {
             return false;
