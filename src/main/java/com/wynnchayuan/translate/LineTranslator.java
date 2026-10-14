@@ -4716,12 +4716,34 @@ public final class LineTranslator {
             }
             String hit = lookup(row, store);
             if (hit == null || hit.isBlank()) {
+                if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
+                    out.append(statusRow(row, store));   // 狀態列：只換狀態詞，其餘原樣
+                    continue;
+                }
                 return null;                   // 有字卻查不到，整塊放棄
             }
             out.append(hit);
             any = true;
         }
         return any ? out.toString() : null;
+    }
+
+    /**
+     * 狀態列裡的狀態詞換成譯文，圖示與數值一個位元都不動。語料沒有那個詞就留原文。
+     * 見 {@link com.wynnchayuan.capture.GlyphSplitter#STATUS_WORDS}。
+     */
+    private static String statusRow(String row, TranslationStore store) {
+        String out = row;
+        for (String word : com.wynnchayuan.capture.GlyphSplitter.STATUS_WORDS) {
+            if (!out.contains(word)) {
+                continue;
+            }
+            String shown = store.lookup(word);
+            if (shown != null && !shown.isBlank() && shown.indexOf('{') < 0) {
+                out = out.replace(word, shown.strip());
+            }
+        }
+        return out;
     }
 
     /**
@@ -4910,6 +4932,36 @@ public final class LineTranslator {
      */
     public static Component[] flowPanel(List<StyledText> rows, TranslationStore store,
                                         boolean[] centred) {
+        return flow(rows, store, centred, 2, true);
+    }
+
+    /**
+     * 單欄的區塊：伺服器折好的幾列，接起來是語料裡的一句話就整句翻。
+     *
+     * <h2>實機回報（使用者 2026-10-14 的 log）</h2>
+     * Lootrun 的加持公告是單欄、一列一則訊息、每列置中：
+     *
+     * <pre>
+     *   [Persistent Champion]
+     *   For the rest of your Lootrun,
+     *   gain +150 Health (Max x15)
+     *   everytime you complete a
+     *   Challenge
+     * </pre>
+     *
+     * 整句語料裡早就有，但 {@link #flowPanel} 只收兩欄以上的面板，這一塊進不來，
+     * 於是一列一列翻成「gain +150 生命 (Max x15)」這種半中半英。
+     *
+     * <p>做法跟面板一樣，只是只有一欄：連續幾列接起來<b>真的是語料裡的一句</b>才換，
+     * 湊不成句的列回 {@code null}，呼叫端照舊逐列翻。
+     */
+    public static Component[] flowColumn(List<StyledText> rows, TranslationStore store,
+                                         boolean[] centred) {
+        return flow(rows, store, centred, 1, false);
+    }
+
+    private static Component[] flow(List<StyledText> rows, TranslationStore store,
+                                    boolean[] centred, int minColumns, boolean inPanel) {
         int n = rows.size();
         Component[] out = new Component[n];
         List<PanelRow> parsed = new ArrayList<>(n);
@@ -4922,7 +4974,7 @@ public final class LineTranslator {
             parsed.add(one);
             columns = Math.max(columns, one.cells().size());
         }
-        if (columns < 2) {
+        if (columns < minColumns) {
             return out;                        // 不是多欄的面板
         }
         Component[][] made = new Component[n][];
@@ -4984,7 +5036,7 @@ public final class LineTranslator {
                 rebuilt.append(PanelRow.text(row.gaps().get(c)));
             }
             out[i] = unslant(realignChat(rows.get(i), rebuilt,
-                    centred == null ? null : centred[i], true));
+                    centred == null ? null : centred[i], inPanel));
         }
         return out;
     }

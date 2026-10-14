@@ -34,6 +34,13 @@ public final class NametagTrimTest {
              "Onyx Axon {#}{#}\n{#}\n☠ {~} {#} {~}s", "Onyx Axon {#}{#}");
         same("整條狀態列只有圖示",
              "Knightmare Guard {#}{#}\n{#}", "Knightmare Guard {#}{#}");
+        // 狀態列寫著 Distorted（湮滅一帶）：那是狀態詞不是句子，每種組合收一條會累積幾百條
+        same("★ 狀態列的 Distorted 也砍",
+             "Annihilation {#}{#}\n{#}\n{#} {#} {#} ✜ {~} ☠ {~}k {#} {~}s Distorted {~}s",
+             "Annihilation {#}{#}");
+        same("只有 Distorted 的狀態列",
+             "Fluffmuncher {#}{#}\n{#}\nDistorted {~}s", "Fluffmuncher {#}{#}");
+        keep("Distorted 後面還有別的字就不是狀態列", "Strange Altar\nDistorted Memories");
 
         // --- 真的有第二行的不能動 ---------------------------------------
         keep("傳送點的第二行是字", "Teleporter\nto dock");

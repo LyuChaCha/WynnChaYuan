@@ -109,6 +109,7 @@ public final class LabelReplaceTest {
         // 的鍵變了。為每種狀態組合各建一個鍵是排列組合，不可能。
         com.google.gson.JsonObject plates = new com.google.gson.JsonObject();
         plates.addProperty("Frosted Guard", "霜衛");
+        plates.addProperty("Distorted", "扭曲");
         Files.writeString(dir.resolve("npc.json"), plates.toString(),
                           StandardCharsets.UTF_8);
         store = new TranslationStore();
@@ -142,6 +143,22 @@ public final class LabelReplaceTest {
                              : out.getString().replace("\n", " ⏎ ")) + "）",
                   out != null && out.getString().contains("霜衛"));
         }
+
+        // ★ 狀態列寫著狀態詞（湮滅一帶的 Distorted）：名字照翻，狀態詞換成譯文。
+        //
+        // 使用者 2026-10-14 的 captured.json：Annihilation 名牌的狀態列有 Distorted 12s，
+        // 那是一個真的詞，逐行退路查不到就整塊放棄，名字跟著變回英文。
+        for (String status : new String[] {"Distorted 12s", "✦ 3 Distorted 5s", "⬤ 1s Distorted 9s"}) {
+            StyledText plate = label("Frosted Guard", status);
+            Component out = LineTranslator.translateLabel(plate, store);
+            String shown = out == null ? "null" : out.getString().replace("\n", " ⏎ ");
+            check("狀態列「" + status + "」：名字照翻、狀態詞換掉（實際：" + shown + "）",
+                  out != null && shown.contains("霜衛") && shown.contains("扭曲")
+                          && !shown.contains("Distorted"));
+        }
+        // 反方向：Distorted 後面還有別的字，就不是狀態列，查不到仍然整塊放棄
+        check("Distorted 後面還有字就不算狀態列",
+              LineTranslator.translateLabel(label("Frosted Guard", "Distorted Memories"), store) == null);
 
         report();
     }
