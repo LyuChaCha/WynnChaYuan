@@ -557,7 +557,7 @@
   },
   "ability-shaman#0254": {
    "src": "When wearing the {#} Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "戴着 {#} 赤狂假面时，用 Aura 击杀敌人\n会在该处再施放一次 Aura，\n伤害为原本的 -{~}。",
+   "dst": "戴着 {#} 赤狂假面时，用 Aura 击杀敌人\n会在该处再施放一次 Aura，\n伤害降低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -922,7 +922,7 @@
   },
   "ability-shaman#0315": {
    "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
-   "dst": "{#} 金虔: 附加相当于 {~} 秒的减益会提升",
+   "dst": "{#} 金虔: 附加相当于 {~} 秒的减益会让",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -936,7 +936,7 @@
   },
   "ability-shaman#0313": {
    "src": "{#} Heretic: Gaining +{~} mana will increase Ritual Circle's",
-   "dst": "{#} 苍逆: 获得 {~} 点法力会提升 Ritual Circle 的",
+   "dst": "{#} 苍逆: 获得 {~} 点法力会让 Ritual Circle 的",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1562,7 +1562,7 @@
   },
   "ability-shaman#0043": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身伤害加成",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 对自身 -{~} 伤害加成",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1577,7 +1577,7 @@
   },
   "ability-shaman#0044": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身抗性加成",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 对自身 -{~} 抗性加成",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1592,7 +1592,7 @@
   },
   "ability-shaman#0042": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身移动速度",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 对自身 -{~} 移动速度",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2398,7 +2398,7 @@
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "你每损失 {~1} 点生命，附近流血 {#} 的\n敌人就受到一次伤害。\n(每秒最多触发 {~2} 次)",
+   "dst": "你每损失 {~1} 生命，附近流血 {#} 的\n敌人就受到一次伤害。\n(每秒最多触发 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2413,7 +2413,7 @@
   },
   "ability-shaman#0114": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#} 总伤害: {~1} (你的每秒伤害，每 {~2} 点生命)",
+   "dst": "{#} 总伤害: {~1} (你的每秒伤害，每 {~2} 生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3124,7 +3124,7 @@
   },
   "ability-shaman#0181": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} 对自身跳跃高度",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 对自身 +{~} 跳跃高度",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3203,7 +3203,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "光束内的你与队友每被命中一次，\n就获得 +{~1} 点护盾值 ❤。\n这份额外生命会在 {~2} 秒内衰减。",
+   "dst": "光束内的你与队友每被命中一次，\n就获得 +{~1} 护盾值 ❤。\n这份额外生命会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3693,7 +3693,7 @@
   },
   "ability-shaman#0236": {
    "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#} to {~}.",
-   "dst": "发动技能或损失生命，将大招槽 {#} 充能至 {~}。",
+   "dst": "发动技能或损失生命，\n将大招 {#} 充能至 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "你的图腾被邪祟恶魔附身，\n每 {~2} 秒给附近的信徒\n+{~1} 点血池 {#}。",
+   "dst": "你的图腾被邪祟恶魔附身，\n每 {~2} 秒给附近的信徒\n+{~1} 血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

@@ -631,7 +631,7 @@
   },
   "ability-mage#0045": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "蹲下使用傳送將會在原地留下一個虛影。\n再度使用此技能時，傳送至虛影的位置。",
+   "dst": "蹲下時施放 Teleport，會在原地\n留下一個你自己的虛影。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -771,7 +771,7 @@
   },
   "ability-mage#0055": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "{#} 奧法尼姆總傷害增加: {~} (你的每秒傷害，Ophanim)",
+   "dst": "{#} 奧法尼姆總傷害增加: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1337,7 +1337,7 @@
   },
   "ability-mage#0096": {
    "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "從道具中獲得的每 {~}/{~}s 生命偷取，\n額外獲得 {~} 法術傷害。(最高 {~})",
+   "dst": "從道具中獲得的每 {~}/{~}s 生命竊取，\n額外獲得 {~} 法術傷害。(最高 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1432,7 +1432,7 @@
   },
   "ability-mage#0103": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
-   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#} 傷害 減少 {~1}，\n{#} 作用範圍 減少 -{~2}.",
+   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#} 傷害 減少 {~1}，\n{#} 作用範圍 減少 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1782,7 +1782,7 @@
   },
   "ability-mage#0129": {
    "src": "Shoots Meteor from you as a slow projectile.",
-   "dst": "隕石改為自玩家處發射。",
+   "dst": "隕石改為從你身上以緩慢的彈道發射。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2136,7 +2136,7 @@
   },
   "ability-mage#0155": {
    "src": "You gain +{~} Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "每有一個敵人被虛弱，你就獲得 {~1} 層 Distortion {#}。\n(最多 {~2} 層)",
+   "dst": "每弱化一個敵人，你就獲得 {~1} 層 Distortion {#}。\n(最多 {~2} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2433,7 +2433,7 @@
   },
   "ability-mage#0177": {
    "src": "Mana cost and damage increase by\n{~} every time it deals damage.",
-   "dst": "每造成一次傷害，它的魔力消耗\n與傷害就提升 {~}.",
+   "dst": "每造成一次傷害，它的魔力消耗\n與傷害就提升 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2529,7 +2529,7 @@
   },
   "ability-mage#0184": {
    "src": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining {#}.",
-   "dst": "用 Lightweaver 的光球命中友軍時，\n會消耗該光球並施加 Shining {#}.",
+   "dst": "用 Lightweaver 的光球命中友軍時，\n會消耗該光球並施加 Shining {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2571,7 +2571,7 @@
   },
   "ability-mage#0187": {
    "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
-   "dst": "在你的 Dimensional Tear 內施放 Frozen Tornado，\n會為它灌注異界能量，\n使其轉變為 Time Vortex.",
+   "dst": "在你的 Dimensional Tear 內施放 Frozen Tornado，\n會為它灌注異界能量，\n使其轉變為 Time Vortex。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2752,7 +2752,7 @@
   },
   "ability-mage#0200": {
    "src": "Lightweaver applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "Lightweaver 命中的敵人會被施加\n{~} 層 Crystallized {#}.",
+   "dst": "Lightweaver 命中的敵人會被施加\n{~} 層 Crystallized {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2833,7 +2833,7 @@
   },
   "ability-mage#0206": {
    "src": "For every +{~} Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "每有 {~1} 層 Distortion {#},\n魔力返還的速度就加快 {~2} 秒。",
+   "dst": "每有 {~1} 層 Distortion {#}，\n魔力返還的速度就加快 {~2} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2902,7 +2902,7 @@
   },
   "ability-mage#0212": {
    "src": "Ophanim also applies +{~} Crystallized {#}.",
-   "dst": "Ophanim 也會施加 {~} 層 Crystallized {#}.",
+   "dst": "Ophanim 也會施加 {~} 層 Crystallized {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3016,7 +3016,7 @@
   },
   "ability-mage#0220": {
    "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "{#} 靈體傷害: {~} (你的每秒傷害)",
+   "dst": "{#} 每個靈體傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3099,7 +3099,7 @@
   },
   "ability-mage#0226": {
    "src": "{#} Total Damage: {~} (of your DPS, Fire)",
-   "dst": "{#} 炎蛟傷害: {~} (你的每秒傷害，)",
+   "dst": "{#} 炎蛟傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3150,7 +3150,7 @@
   },
   "ability-mage#0230": {
    "src": "The Dimensional Tear collapses when it expires,\ndealing massive damage to nearby enemies.",
-   "dst": "Dimensional Tear 到期時會塌縮，\n對附近敵人造成巨量傷害。",
+   "dst": "Dimensional Tear 到期時會坍縮，\n對附近敵人造成巨量傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3165,7 +3165,7 @@
   },
   "ability-mage#0231": {
    "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
-   "dst": "過載期間，它造成的傷害提升 {~1}，\n並把你的 Teleport 變成一道致命光束，其將可以\n短時間內連射 {~2} 次，\n同時提供飛行並防止魔力消耗。",
+   "dst": "過載期間，它造成的傷害提升 {~1}，\n並把你的 Teleport 變成一道致命光束，其將可以\n短時間內連射 {~2} 次，\n同時提供飛行並防止魔力流失。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3208,7 +3208,7 @@
   },
   "ability-mage#0234": {
    "src": "{#} Total Damage: {~} (of your DPS, Collapse)",
-   "dst": "{#} 塌縮傷害: {~} (你的每秒傷害)",
+   "dst": "{#} 坍縮傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

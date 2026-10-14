@@ -2309,7 +2309,7 @@
   },
   "ability-assassin#0168": {
    "src": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +{~} Enkindled {#}\nwhenever you strike them.",
-   "dst": "Bamboozle 会在命中的敌人身上\n涂上易燃触媒，此后你每击中它们一次\n就使其 +{~} 层引燃 {#}。",
+   "dst": "Bamboozle 会在命中的敌人身上\n涂上易燃触媒，此后你每击中它们一次\n就为其叠加 +{~} 引燃 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2339,7 +2339,7 @@
   },
   "ability-assassin#0170": {
    "src": "The catalyst flares up when it reaches {~}\nor at the end of its duration, dealing damage\nbased on how Enkindled {#} the target was.",
-   "dst": "触媒叠到 {~} 层或持续时间结束时\n会猛然爆燃，伤害取决于目标身上\n引燃 {#} 的层数。",
+   "dst": "触媒叠到 {~} 或持续时间结束时\n会猛然爆燃，伤害取决于目标身上\n引燃 {#} 的程度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2367,7 +2367,7 @@
   },
   "ability-assassin#0172": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "{#} 总伤害: {~1} (你的每秒伤害，每 {~2} 层引燃)",
+   "dst": "{#} 总伤害: {~1} (你的每秒伤害，每 {~2} 引燃)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3064,7 +3064,7 @@
   },
   "ability-assassin#0223": {
    "src": "Pierce the Veil",
-   "dst": "刺刺破帷幕幕",
+   "dst": "刺破帷幕",
    "role": "name",
    "kind": "term",
    "ctx": [

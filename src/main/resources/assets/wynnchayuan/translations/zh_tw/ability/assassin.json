@@ -120,7 +120,7 @@
   },
   "ability-assassin#0008": {
    "src": "Poisoned Blade",
-   "dst": "粹毒之刃",
+   "dst": "淬毒之刃",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -201,7 +201,7 @@
   },
   "ability-assassin#0014": {
    "src": "Your Main Attack will hit twice,\nbut deal -{~} damage per hit.",
-   "dst": "你的普攻會命中兩次，但每次命中的傷害降低 -{~}。",
+   "dst": "你的普攻會命中兩次，但每次命中的傷害降低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-assassin#0026": {
    "src": "This damage is increased by +{~}\nfor every additional block you fall\nafterwards, up to +{~} blocks.",
-   "dst": "此傷害會隨你之後每多下落一格而增加 +{~}，最多增加至 +{~} 格。",
+   "dst": "此傷害會隨你之後每多下落一格而增加 +{~}，最多計算至 +{~} 格。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-assassin#0031": {
    "src": "{#} Effect: Invisibility to Self",
-   "dst": "{#} 效果: 隱形給自己",
+   "dst": "{#} 效果: 自身隱形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "受到攻擊時失去一個 Mirror Clone {#}，使受到的傷害降低 -{~}，並在 {~} 秒內獲得傷害加成。({~} 秒冷卻)",
+   "dst": "受到攻擊時失去一個 Mirror Clone {#}，使受到的傷害降低 {~}，並在 {~} 秒內獲得傷害加成。({~} 秒冷卻)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "使用 Backstab 從敵人背後命中後，Vanish 的冷卻時間降低 -{~} 秒。",
+   "dst": "使用 Backstab 從敵人背後命中後，Vanish 的冷卻時間降低 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "ability-assassin#0069": {
    "src": "Mirage Clones {#} disappear when an enemy\nis within {~} blocks or when they expire,\nand will cast Smoke Bomb with Last Laugh.",
-   "dst": "Mirage Clone {#} 會在敵人進入 {~} 格內或自身消失時消散，並透過 Last Laugh 施放 Smoke Bomb。",
+   "dst": "Mirage Clone {#} 會在敵人進入 {~} 格內或持續時間結束時消散，並透過 Last Laugh 施放 Smoke Bomb。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1088,7 +1088,7 @@
   },
   "ability-assassin#0079": {
    "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#} lures an enemy.",
-   "dst": "每當你受到低於最大生命 {~} 的傷害，或你的 Mirage Clone {#} 吸引敵人時，使所有技能的冷卻時間降低 {~}。",
+   "dst": "每當你受到低於最大生命 {~2} 的傷害，或你的 Mirage Clone {#} 吸引敵人時，使所有技能的冷卻時間降低 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1172,7 +1172,7 @@
   },
   "ability-assassin#0085": {
    "src": "Ripple consumes your Momentum {#},\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum {#}, this\nexplosion deals +{~} more damage.",
-   "dst": "Ripple 會消耗你的 Momentum {#},\n釋放一次威力強大的爆炸，造成\n大量傷害並短暫致盲敵人。\n每有一層 Momentum {#}，這次\n爆炸就多造成 +{~} 傷害。",
+   "dst": "Ripple 會消耗你的 Momentum {#}，\n釋放一次威力強大的爆炸，造成\n大量傷害並短暫致盲敵人。\n每有一層 Momentum {#}，這次\n爆炸就多造成 +{~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "使用擁有 {~}+ Momentum {#} 的 Swan Dive 時，你會在落地 {~} 秒後再次躍入空中。",
+   "dst": "在擁有 {~}+ 層 Momentum {#} 時使用 Swan Dive，你會在落地 {~} 秒後再次躍入空中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1708,7 +1708,7 @@
   },
   "ability-assassin#0124": {
    "src": "Reduces Hop's cooldown by\n-{~}s. Using Hop into a wall\nwill bounce you backward.\n(Hold shift to cancel)",
-   "dst": "使躍空的冷卻時間降低 -{~} 秒。使用躍空撞向牆壁時會向後彈回。(按住 Shift 取消)",
+   "dst": "使躍空的冷卻時間降低 {~} 秒。使用躍空撞向牆壁時會向後彈回。(按住 Shift 取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1747,7 +1747,7 @@
   },
   "ability-assassin#0127": {
    "src": "Confused {#} enemies take +{~} more",
-   "dst": "Confused {#} 的敵人受到的傷害提高 +{~}。",
+   "dst": "Confused {#} 的敵人多承受 +{~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1848,7 +1848,7 @@
   },
   "ability-assassin#0134": {
    "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Marks {#} consumed,\nsummon a Knife. (Max {~} Knives)",
-   "dst": "若在 Vanish 狀態下施放，Spin Attack 會消耗附近敵人的所有 Mark {#}。每消耗 {~} 層 Mark {#}，就召喚一枚飛刃。(最多 {~} 把飛刃)",
+   "dst": "若在 Vanish 狀態下施放，Spin Attack 會消耗附近敵人的所有 Mark {#}。每消耗 {~} 層 Mark {#}，就召喚一把飛刃。(最多 {~} 把飛刃)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2010,7 +2010,7 @@
   },
   "ability-assassin#0146": {
    "src": "Contaminated {#} enemies take +{~} more",
-   "dst": "Contaminated {#} 的敵人受到的傷害提高 +{~}。",
+   "dst": "Contaminated {#} 的敵人多承受 +{~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2025,7 +2025,7 @@
   },
   "ability-assassin#0147": {
    "src": "Detonating {~}+ Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
-   "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其受到 Contaminates {#} 的毒液污染。",
+   "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會以毒液 Contaminates {#} 它們。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2055,7 +2055,7 @@
   },
   "ability-assassin#0149": {
    "src": "on death, damaging nearby enemies.",
-   "dst": "死亡時對附近敵人造成傷害。",
+   "dst": "死亡時爆炸，對附近敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2070,7 +2070,7 @@
   },
   "ability-assassin#0150": {
    "src": "{#} Earth damage from you and will explode",
-   "dst": "{#} 來自你的地屬性傷害，並且會爆炸",
+   "dst": "{#} 來自你的地屬性傷害，並且會在",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2095,7 +2095,7 @@
   },
   "ability-assassin#0152": {
    "src": "After losing a Mirror Clone {#}, your\nnext Spin Attack or Smoke Bomb will be\ncopied by all active Clones {#}{#}{#}, but deal\n-{~} damage.",
-   "dst": "失去一個 Mirror Clone {#} 後，你的下一次 Spin Attack 或 Smoke Bomb 會被所有啟用中的 Clone {#}{#}{#} 複製，但造成的傷害降低 -{~}。",
+   "dst": "失去一個 Mirror Clone {#} 後，你的下一次 Spin Attack 或 Smoke Bomb 會被所有啟用中的 Clone {#}{#}{#} 複製，但造成的傷害降低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2309,7 +2309,7 @@
   },
   "ability-assassin#0168": {
    "src": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +{~} Enkindled {#}\nwhenever you strike them.",
-   "dst": "Bamboozle 會在命中的敵人身上塗上易燃催化劑，使你每次攻擊他們時都額外施加 +{~} 層 Enkindled {#}。",
+   "dst": "Bamboozle 會在命中的敵人身上塗上易燃催化劑，使你每次攻擊他們時都額外施加 +{~} 的 Enkindled {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2324,7 +2324,7 @@
   },
   "ability-assassin#0169": {
    "src": "Enkindled {#} enemies take +{~} more",
-   "dst": "Enkindled {#} 的敵人受到的傷害提高 +{~}。",
+   "dst": "Enkindled {#} 的敵人多承受 +{~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2339,7 +2339,7 @@
   },
   "ability-assassin#0170": {
    "src": "The catalyst flares up when it reaches {~}\nor at the end of its duration, dealing damage\nbased on how Enkindled {#} the target was.",
-   "dst": "催化劑達到 {~} 或持續時間結束時會爆發，根據目標的 Enkindled {#} 層數造成傷害。",
+   "dst": "催化劑達到 {~} 或持續時間結束時會爆發，根據目標的 Enkindled {#} 程度造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2367,7 +2367,7 @@
   },
   "ability-assassin#0172": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "{#} 總傷害: {~1} (你的每秒傷害，每 {~2} 層熾燃)",
+   "dst": "{#} 總傷害: {~1} (你的每秒傷害，每 {~2} 熾燃)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2558,7 +2558,7 @@
   },
   "ability-assassin#0186": {
    "src": "Detonating {~}+ Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
-   "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其陷入 {~} 層 Drained {#}，並從你受到額外 +{~} 的 {#} 水屬性傷害。",
+   "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其陷入 {~} 的 Drained {#}，並從你受到額外 +{~} 的 {#} 水屬性傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2952,7 +2952,7 @@
   },
   "ability-assassin#0215": {
    "src": "Hop will now prepare {~} shurikens.\nYou can prepare +{~} total shurikens. (Max {~})",
-   "dst": "躍空現在會準備 {~} 枚手裏劍。你總共可以準備 +{~} 枚手裏劍。(最多 {~} 枚)",
+   "dst": "躍空現在會準備 {~} 枚手裏劍。可準備的手裏劍總數提高 +{~}。(最多 {~} 枚)",
    "role": "desc",
    "kind": "block",
    "ctx": [

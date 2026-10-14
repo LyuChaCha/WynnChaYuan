@@ -337,7 +337,7 @@
   },
   "ability-warrior#0024": {
    "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
-   "dst": "发出怒吼造成伤害，把附近的敌人\n拉过来，并给你和附近的玩家\n抗性。",
+   "dst": "发出怒吼造成伤害，把附近的敌人\n拉过来，并让你和附近的玩家\n获得抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -732,7 +732,7 @@
   },
   "ability-warrior#0053": {
    "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "每 {~2} 层腐化 {#} 获得 +{~1} 固定伤害。(上限 +{~3})",
+   "dst": "每 {~2} 腐化 {#} 获得 +{~1} 固定伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -747,7 +747,7 @@
   },
   "ability-warrior#0054": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
-   "dst": "腐化 {#} 期间你无法恢复生命，\n而且每损失 {~1} 点生命就会\n获得 +{~2} 层腐化 {#}。",
+   "dst": "腐化 {#} 期间你无法恢复生命，\n而且每损失 {~1} 生命就会\n获得 +{~2} 腐化 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1005,7 +1005,7 @@
   },
   "ability-warrior#0073": {
    "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
-   "dst": "法力不够施放技能时，改用生命。\n(每点法力折 {~} 点生命)",
+   "dst": "法力不够施放技能时，\n改用生命支付。\n(每点法力折 {~} 生命)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "你受到的任何伤害，都会在接下来的\n{~2} 秒内恢复其中 {~1}。",
+   "dst": "你受到的任何伤害，都会在\n接下来的 {~2} 秒内\n恢复其中的 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1127,7 +1127,7 @@
   },
   "ability-warrior#0082": {
    "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "每 {~2} 层腐化 {#} 获得 +{~1} 伤害。(上限 +{~3})",
+   "dst": "每 {~2} 腐化 {#} 获得 +{~1} 伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "腐化 {#} 期间，用普攻命中\n敌人会每秒增加 +{~1} 层\n腐化 {#}。\n(粉末技能固定增加 +{~2})",
+   "dst": "腐化 {#} 期间，用普攻命中\n敌人会增加 +{~1}\n腐化 {#}，\n按每秒计算。\n(粉末技能固定增加 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-warrior#0109": {
    "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
-   "dst": "War Scream 会震荡地面，每 {~2} 秒\n在大范围内对敌人造成 {~1} 次伤害。",
+   "dst": "War Scream 会震荡地面，\n每 {~2} 秒对大范围内的敌人造成伤害，\n共 {~1} 次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1598,7 +1598,7 @@
   },
   "ability-warrior#0117": {
    "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "累积到 {~} 层腐化 {#} 时，你的下一次\nUppercut 会给你伤害提升。",
+   "dst": "累积获得 {~} 腐化 {#} 后，你的下一次\nUppercut 会给你伤害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1625,7 +1625,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "装备上每有 {~1} 点反射，就获得\n+{~2}/{~3} 秒法力恢复。(上限 {~4}/{~5} 秒)",
+   "dst": "装备上每有 {~1} 远程反伤，就获得\n+{~2}/{~3} 秒法力恢复。(上限 {~4}/{~5} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1843,7 +1843,7 @@
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "每 {~2} 层腐化 {#} 让 Bash 的作用\n范围半径增加 +{~1}。(上限 +{~3})",
+   "dst": "每 {~2} 腐化 {#} 让 Bash 的作用\n范围半径增加 +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1939,7 +1939,7 @@
   },
   "ability-warrior#0142": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "腐化期间，你的普攻与粉末技能\n改为消耗 {~} 点生命，\n并触发 Blood Pact。",
+   "dst": "腐化期间，你的普攻与粉末技能\n改为消耗 {~} 生命，\n并触发 Blood Pact。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2241,7 +2241,7 @@
   },
   "ability-warrior#0164": {
    "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
-   "dst": "脱离腐化 {#} 后，湮灭你身周所有的\n敌人。先前每有 {~1} 层腐化 {#}，\n伤害就提高 {~2}。",
+   "dst": "脱离腐化 {#} 后，湮灭你身周所有的\n敌人。先前每有 {~1} 腐化 {#}，\n伤害就提高 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2364,7 +2364,7 @@
   },
   "ability-warrior#0173": {
    "src": "Reduce Blood Pact's health cost.\n({~} health per mana)",
-   "dst": "降低 Blood Pact 的生命消耗。\n(每点法力折 {~} 点生命)",
+   "dst": "降低 Blood Pact 的生命消耗。\n(每点法力折 {~} 生命)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2430,7 +2430,7 @@
   },
   "ability-warrior#0178": {
    "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "每消耗一点神圣能量 ✧，附近所有队友\n就获得 +{~1} 点护盾值 ❤。\n护盾值 ❤ 会在 {~2} 秒内衰减。",
+   "dst": "每消耗一点神圣能量 ✧，附近所有队友\n就获得 +{~1} 护盾值 ❤。\n护盾值 ❤ 会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2514,7 +2514,7 @@
   },
   "ability-warrior#0184": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "{#} 冷却时间: {~} 分",
+   "dst": "{#} 冷却时间: {~} 分钟",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2579,7 +2579,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "Cyclone 造成伤害的频率快 {~} 秒。",
+   "dst": "Cyclone 造成伤害的间隔缩短 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2728,7 +2728,7 @@
   },
   "ability-warrior#0200": {
    "src": "Increase Bloodlust's bonus damage per\n{~} Corrupted {#} by +{~}.",
-   "dst": "Bloodlust 每 {~1} 层腐化 {#} 提供的\n额外伤害提高 +{~2}。",
+   "dst": "Bloodlust 每 {~1} 腐化 {#} 提供的\n额外伤害提高 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2755,7 +2755,7 @@
   },
   "ability-warrior#0202": {
    "src": "Increase your maximum\nDiscombobulated ⚙ by +{~}.",
-   "dst": "迷乱 ⚙ 的上限提高 +{~}。",
+   "dst": "你的迷乱 ⚙\n上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "潜行时施放 Bash，会消耗 {~1} 点\n神圣能量 ✧ 唤出一道缓缓前行的\n光柱，每 {~2} 秒对敌人造成伤害。",
+   "dst": "潜行时施放 Bash，会消耗\n{~1} 点神圣能量 ✧，\n唤出一道缓缓前行的光柱，\n每 {~2} 秒对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "用普攻或 Uppercut 打中尖刺会引爆它，\n造成伤害并给你 {~1} 点护盾值 ❤，\n腐化期间也一样。\n护盾值会在 {~2} 秒内衰减。",
+   "dst": "用普攻或 Uppercut 打中尖刺会引爆它，\n造成伤害并给你 {~1} 护盾值 ❤，\n腐化期间也一样。\n护盾值会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
