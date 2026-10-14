@@ -298,14 +298,16 @@ const STYLE = String.raw`
   .scr .soft { color: #aaaaaa; } .scr .dimmer { color: #6a6a6a; } .scr .good { color: #acfac6; } .scr .worse { color: #faacac; }
   /* 物品說明的框：遊戲的那一張貼圖用九宮格拉開（邊上下 12 格、左右 10 格）。
      f-rare、f-normal、f-ingredient 是遊戲照稀有度給的框，沒寫的（ours）是我們另開的面板——遊戲平常的那種深色框 */
-  .tip { position: relative; isolation: isolate; padding: .5em .6em .45em; white-space: nowrap; }
+  /* 字離框的外緣 12 格（遊戲畫說明框時，框比字的範圍四邊各大 3＋9 格；這裡一格是 .1em）。
+     框線在貼圖裡離外緣 2–5 格不等（素材那一張的側線最裡面），所以不能再少 */
+  .tip { position: relative; isolation: isolate; padding: 1.2em 1.2em 1.1em; white-space: nowrap; }
   .tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 1.2em 1em; border-image: var(--t-tip-plain) 12 10 fill / 1.2em 1em; }
   .tip.f-rare::before { border-image-source: var(--t-tip-rare); }
   .tip.f-normal::before { border-image-source: var(--t-tip-normal); }
   .tip.f-ingredient::before { border-image-source: var(--t-tip-ingredient); }
-  /* 物品那一面：背包與兩個框並排、不互相蓋住，上下置中——框的字小一級（18），
-     三塊加起來剛好是畫面的寬（7 + 374 + 6 + 281 + 4 + 281 + 7） */
-  .duo .tip { width: 15.6em; font-size: 18px; }
+  /* 物品那一面：背包在左、兩個框在右，框的字小一級（16）。框跟遊戲一樣照內容的寬度，但有上下限：最窄 15em、最寬 19.5em（再長才折行）。
+     兩個都到最寬時，左緣還在背包裡最右邊那一格物品的右邊 */
+  .duo .tip { width: max-content; min-width: 15em; max-width: 19.5em; font-size: 16px; }
   .tip-head { display: flex; align-items: center; gap: .5em; margin-bottom: .2em; }
   .tip .emblem { width: 3.2em; height: 3.2em; flex: none; }
   /* 名字與開頭那個數字的顏色跟著稀有度（t-rare、t-normal、t-ingredient） */
@@ -340,7 +342,7 @@ const STYLE = String.raw`
   .tip .kv span:last-child { margin-left: auto; text-align: right; }
   /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來。
      ghost 是沒穿裝備的格子裡那個淡淡的影子（slots.png 一條七個）；slot 是可以指的東西（按鈕），qty 是右下角的數量 */
-  .inv { position: absolute; left: 7px; top: 56px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
+  .inv { position: absolute; left: 5px; top: 56px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
   .scr .it { position: absolute; width: 32px; height: 32px; }
   .scr .it.smooth { image-rendering: auto; }
   .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; pointer-events: none; }
@@ -364,7 +366,7 @@ const STYLE = String.raw`
   .doll .over { inset: 0; }
   .doll i { position: absolute; left: 50%; top: 50%; background-image: var(--t-skin); background-repeat: no-repeat; }
   .scr .cursor { position: absolute; width: 16px; height: 22px; filter: drop-shadow(1px 1px 0 #000a); }
-  .duo { position: absolute; right: 7px; top: 44px; display: flex; align-items: flex-start; }
+  .duo { position: absolute; right: 5px; top: 34px; display: flex; align-items: flex-start; }
   .gapmark { position: relative; align-self: stretch; flex: none; min-width: 4px; transition: width 160ms var(--out); }
   /* 兩個框之間留多寬：框的上面量一段，數字寫在它上面 */
   .gapmark::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 8px; border: solid var(--leaf); border-width: 0 2px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 2px no-repeat; }
@@ -384,6 +386,9 @@ const STYLE = String.raw`
   .trk { position: absolute; top: 58px; right: 10px; display: grid; justify-items: end; gap: 8px; max-width: 46%; text-align: right; white-space: nowrap; }
   .trk .tip { text-align: left; }
   .board { position: absolute; right: 0; top: 172px; min-width: 210px; padding-bottom: 2px; background: #0000004d; color: #aaaaaa; white-space: nowrap; }
+  .board.below { top: 206px; }
+  /* 畫面上其他幾個小框（對話的譯文、追蹤欄、注視時的名字）比物品說明小，邊留少一點 */
+  .dlg-extra .tip, .trk .tip, .npc .look { padding: .8em 1em .7em; }
   .board div { padding: 0 12px 0 8px; }
   .board div:first-child { background: #00000066; color: #ffaa00; text-align: center; }
   /* 街上那個人是截圖裡真的 NPC（Detlas 的隊伍尋找器）；.npc 釘在他頭頂上。
@@ -419,15 +424,19 @@ const STYLE = String.raw`
   .scr.narrow { height: 470px; }
   .scr.narrow .tip { font-size: 14px; }
   /* 窄的那一面放不下並排：背包縮小放上面，兩個框在它下面（只壓到背包最底下那一條木框） */
-  .scr.narrow .duo .tip { font-size: 13px; }
-  .scr.narrow .inv { left: 139px; top: 2px; transform: scale(.54); transform-origin: 0 0; }
+  .scr.narrow .duo .tip { font-size: 12px; }
+  .scr.narrow .inv { left: 143px; top: 2px; transform: scale(.52); transform-origin: 0 0; }
   .scr.narrow .duo { left: 0; right: 0; top: 178px; justify-content: center; }
   .scr.narrow .gapmark span { padding: 2px 5px; background: #000000b0; }
   .scr.narrow .boss i { width: 250px; }
   .scr.narrow .trk { top: 50px; right: 6px; max-width: none; }
+  /* 窄的那一面：追蹤欄另開的小框放在原本那兩行的左邊（疊在下面會壓到大標題） */
+  .scr.narrow .trk { grid-auto-flow: column; align-items: start; }
+  .scr.narrow .trk .tip { padding: .6em .8em .5em; }
   /* 窄的那一面把街景往左挪，NPC 站在左邊三分之一：右邊留給記分板與注視時的小框 */
   .scr.narrow[data-tab="world"] .bg { background-position: -310px 0; background-size: auto 100%; }
   .scr.narrow .board { top: 138px; min-width: 0; font-size: 14px; }
+  .scr.narrow .board.below { top: 138px; }                 /* 窄的那一面小框在旁邊，記分板不必讓 */
   .scr.narrow .npc { left: 150px; top: 194px; }
   .scr.narrow .npc .plate { max-width: 236px; font-size: 16px; white-space: normal; }
   .scr.narrow .npc .look { left: 40px; right: auto; top: 14px; max-width: 250px; }
@@ -1892,7 +1901,7 @@ const STAGE_JS = String.raw`
       hud.append(track);
 
       var on = state.scoreboard;
-      var board = el('div', 'board');
+      var board = el('div', state.tracker === 1 ? 'board below' : 'board');     /* 追蹤欄另開小框時，記分板讓到它下面 */
       board.append(bit('div', '', on ? T('Daily Objective:') : 'Daily Objective:', on));
       [['- Loot Chests T{~}+: {~}/{~}', ['2', '3', '5']], ['- Mobs slain: {~}/{~}', ['42', '100']]].forEach(function (row) {
         board.append(bit('div', '', fill(on ? T(row[0]) : row[0], row[1]), on));
