@@ -238,7 +238,7 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | talisman | 護符 | 語料裡本來就這樣譯，補進表裡 |
 | Gravity's Monolith | 重力方尖碑 | Deraj 監獄的別稱，敘述裡當普通名詞用，不是地名 **(待討論)** |
 | Warden | 典獄長 | Deraj 監獄的 Oru。與 boss 稱號 `Warden of Wisdom`（智慧的看守者）分開 **(待討論)** |
-| recruit（Fruma 軍方） | 新兵 | Tericen 訓練營。公會階級的 `Recruit` 是「新成員」，兩者不同 **(待討論)** |
+| recruit（Fruma 軍方） | 新兵 | Tericen 訓練營。公會階級的 `Recruit` 是「新成員」，兩者不同（使用者 2026-10-14 定案：分開） |
 | Recruiter（Fruma 軍方） | 招募官 | 公會階級的 `Recruiter` 是「招募者」（見 `gui.json`），兩者不同 |
 | Instructor | 教官 |  |
 | Commander | 指揮官 | 與既有的「憲兵指揮官」一致 |

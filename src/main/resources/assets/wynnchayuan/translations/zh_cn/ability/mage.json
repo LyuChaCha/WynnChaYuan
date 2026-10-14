@@ -365,7 +365,7 @@
   },
   "ability-mage#0024": {
    "src": "Conjures a fast-moving ice snake that\ndamages and slows enemies.",
-   "dst": "召唤一条快速移动的冰蛇，\n对敌人造成伤害并使其缓速。",
+   "dst": "召唤一条快速移动的冰蛇，\n对敌人造成伤害并使其减速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -881,7 +881,7 @@
   },
   "ability-mage#0063": {
    "src": "{#} Slow Duration: {~}s",
-   "dst": "{#} 缓速持续时间: {~} 秒",
+   "dst": "{#} 减速持续时间: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake 会在你脚下留下冰封符印，\n每 {~} 秒对敌人造成一次伤害并使其缓速。\n站在印记上的友军\n不会被击退。",
+   "dst": "Ice Snake 会在你脚下留下冰封符印，\n每 {~} 秒对敌人造成一次伤害并使其减速。\n站在印记上的友军\n不会被击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1863,7 +1863,7 @@
   },
   "ability-mage#0135": {
    "src": "Ice Snake and Frozen Tornado now deal\nincreased damage and their slow is stronger.",
-   "dst": "Ice Snake 与 Frozen Tornado 的伤害提高，\n缓速效果也更强。",
+   "dst": "Ice Snake 与 Frozen Tornado 的伤害提高，\n减速效果也更强。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1878,7 +1878,7 @@
   },
   "ability-mage#0136": {
    "src": "{#} Effect: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#} 效果: 对敌人 +{~} 缓速 ({#})",
+   "dst": "{#} 效果: 对敌人 +{~} 减速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2722,7 +2722,7 @@
   },
   "ability-mage#0198": {
    "src": "Casting Ice Snake shatters\nenemies with {~} Crystallized {#},\ndamaging and slowing them.",
-   "dst": "施放 Ice Snake 会震碎带有\n{~} 层 Crystallized {#} 的敌人，\n对其造成伤害并使其缓速。",
+   "dst": "施放 Ice Snake 会震碎带有\n{~} 层 Crystallized {#} 的敌人，\n对其造成伤害并使其减速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
