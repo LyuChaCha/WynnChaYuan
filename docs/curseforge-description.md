@@ -42,7 +42,7 @@ Client-side only. The server does not need it.
 
 ### Capes, the grey leaf, and what the mod sends
 
-- **Capes**: wear your own WynnChaYuan cape, visible to other players who have this mod. Upload it under F6 > Badge & cape, or upload and browse at <https://wynnchayuan.com>. Anyone can upload a PNG (up to 1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Draw it on a template from [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates).
+- **Capes**: wear your own WynnChaYuan cape, visible to other players who have this mod. Upload and browse capes at <https://wynnchayuan.com> (F6 > Badge & cape > Cape gallery opens it signed in). Anyone can upload a PNG (up to 1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Draw it on a template from [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates).
 - **Leaves**: every player who has this mod gets a leaf before their name (grey if you have no role), visible to each other. A developer's rainbow mode and the roles you chose to show look the same to others as they do to you.
 - **These two features talk to our server (wynnchayuan.com).** The mod checks in once when you join Wynncraft and sends: your Minecraft UUID, your Mojang-signed public profile (name and skin), a public key and signature that prove the account is yours, whether to show your cape, and your badge settings (rainbow leaf, which roles to show). Uploading a cape also sends the image you chose. **Your private key and login credentials never leave the game; the mod does not send your world, chat or any game content, and the server does not store IP addresses.** The public list holds hashed codes only, not UUIDs or names.
 - **There is no switch for this**: the mod checks in whenever it is installed and you join Wynncraft, so every user has a leaf. If you do not want others to see your cape, turn off "Wear my cape" under F6 > Badge & cape.
@@ -138,7 +138,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 ### 披風、灰色葉子與會送出的資料
 
-- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。在 F6「徽章與披風」上傳，或到 <https://wynnchayuan.com> 上傳與瀏覽。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫。
+- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。到 <https://wynnchayuan.com> 上傳與瀏覽（F6「徽章與披風」→「披風一覽」會順便替你登入）。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫。
 - **葉子**：裝了本模組的玩家，名字前面都有一片葉子（沒有身分的是灰色），彼此看得到。開發者的彩色模式、要展示哪幾個身分的葉子，別人看到的跟你設的一樣。
 - **這兩項需要連到我們的伺服器（wynnchayuan.com）**。模組在你進 Wynncraft 時報到一次，送出的是：你的 Minecraft UUID、Mojang 簽過的公開個人檔案（名字與外觀）、用來證明帳號是本人的公鑰與簽章、要不要顯示披風，以及徽章的設定（葉子要不要彩色、要展示哪幾個身分）。上傳披風時另外送出你選的那張圖。**私鑰與登入憑證不會離開遊戲；不送所在的世界、聊天或任何遊戲內容，伺服器也不記 IP。** 公開的名單上只有雜湊過的代碼，沒有 UUID 與名字。
 - **這一項沒有開關**：只要裝了模組、進了 Wynncraft 就會報到，所以每個使用者都有葉子。不想讓別人看到自己的披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。

@@ -336,20 +336,6 @@ public final class CapeImageTest {
         check("★ 怪檔名不收——它要拿去拼網址與路徑（實際 " + table + "）",
                 !table.containsKey("someone") && !table.containsKey("shouty"));
         check("沒有披風、沒有遊戲 ID 的不在表上", table.size() == 1);
-        check("★ 自己資料夾的預覽：名單成員認 GIF 與 PNG，一般玩家只認 PNG",
-                java.util.Arrays.equals(Capes.selfFiles(true), new String[] {"self.gif", "self.png"})
-                        && java.util.Arrays.equals(Capes.selfFiles(false), new String[] {"self.png"}));
-        // 自己身上穿哪一件：預覽圖與登記站那一件，誰比較新就穿誰
-        check("★ 預覽圖改得比登記站那一件晚：先看到預覽圖（還沒上傳的那一張）",
-                "local:self.png:2000".equals(Capes.ownKey("local:self.png:2000", "up:abc:1000", 1000)));
-        check("★ 之後在網站換了一件（或復原）：登記站那一件比較新，自己也看得到",
-                "up:abc:3000".equals(Capes.ownKey("local:self.png:2000", "up:abc:3000", 3000)));
-        check("只有其中一個就用那一個；都沒有就沒有",
-                "up:abc:5".equals(Capes.ownKey(null, "up:abc:5", 5))
-                        && "local:self.gif:9".equals(Capes.ownKey("local:self.gif:9", null, 0))
-                        && Capes.ownKey(null, null, 0) == null);
-        check("預覽圖的時間看不懂：照舊，預覽圖優先",
-                "local:self.png:??".equals(Capes.ownKey("local:self.png:??", "up:abc:3000", 3000)));
         check("檔名的規則", Capes.FILE.matcher("my-cape_2.png").matches()
                 && !Capes.FILE.matcher("a/b.png").matches() && !Capes.FILE.matcher("x.jpg").matches()
                 && !Capes.FILE.matcher(".png").matches());

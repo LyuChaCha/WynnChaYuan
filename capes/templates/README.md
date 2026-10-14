@@ -6,7 +6,7 @@
 
 ![Cape template guide](guide.en.png)
 
-Draw your cape on one of the templates, then upload it in game (**F6 → Badge & cape**) or at <https://wynnchayuan.com>.
+Draw your cape on one of the templates, then upload it at <https://wynnchayuan.com> (in game, **F6 → Badge & cape → Cape gallery** opens it signed in).
 
 | File | What it is |
 | --- | --- |
@@ -24,7 +24,7 @@ Draw your cape on one of the templates, then upload it in game (**F6 → Badge &
 
 ![披風範本說明](guide.png)
 
-照範本畫好之後，在遊戲裡上傳（**F6 → 徽章與披風**），或到 <https://wynnchayuan.com> 上傳。
+照範本畫好之後，到 <https://wynnchayuan.com> 上傳（遊戲裡 **F6 → 徽章與披風 → 披風一覽** 會順便替你登入）。
 
 | 檔案 | 用途 |
 | --- | --- |
