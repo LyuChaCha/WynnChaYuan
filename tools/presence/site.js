@@ -288,12 +288,12 @@ const STYLE = String.raw`
   .scr b, .scr kbd { font-weight: 400; font-family: inherit; }
   .scr img, .scr canvas, .scr .hudbar, .scr .inv, .scr .dlgbox, .scr .option, .scr .tip::before, .scr i, .scr u { image-rendering: pixelated; }
   .scr .bg { position: absolute; inset: 0; background: var(--t-bg-world) center / cover no-repeat; }
-  .scr[data-tab="world"] .bg { background-image: var(--t-bg-town); }
+  .scr[data-tab="world"] .bg { background-image: var(--t-bg-street); }
   .scr .hud { position: absolute; inset: 0; }
   .scr .hud > * { animation: fade 180ms ease both; }
   .scr.still .hud > * { animation: none; }
   .scr .dim { position: absolute; inset: 0; background: #0a0a0a99; }
-  .c-y { color: #ffff55; } .c-g { color: #55ff55; } .c-gr { color: #aaaaaa; } .c-go { color: #ffaa00; }
+  .c-y { color: #ffff55; } .c-g { color: #55ff55; } .c-gr { color: #aaaaaa; } .c-go { color: #ffaa00; } .c-m { color: #ff55ff; }
   .scr .dimmer { color: #a8a8a8; } .scr .good { color: #55ff55; }
   /* 物品說明的框：遊戲的那一張貼圖用九宮格拉開（邊上下 12 格、左右 10 格）。
      rare 是稀有物品的紫框，ours 是我們另開的面板——遊戲平常的那種深色框 */
@@ -328,6 +328,13 @@ const STYLE = String.raw`
   .scr .it { position: absolute; width: 32px; height: 32px; }
   .scr .it.smooth { image-rendering: auto; }
   .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; }
+  /* 背包裡的人：皮膚貼在方塊的六個面上，用 CSS 的 3D 轉（makeDoll）。位置照實機截圖：
+     盔甲那一欄的右邊，頭頂在貼圖的第 16 列、腳在第 80 列。會看著滑鼠，跟遊戲裡一樣 */
+  .dollbox { position: absolute; left: 84px; top: 32px; width: 64px; height: 128px; pointer-events: none; }
+  .doll, .doll div { position: absolute; transform-style: preserve-3d; }
+  .doll { inset: 0; }
+  .doll .over { inset: 0; }
+  .doll i { position: absolute; left: 50%; top: 50%; background-image: var(--t-skin); background-repeat: no-repeat; }
   .scr .cursor { position: absolute; width: 16px; height: 22px; filter: drop-shadow(1px 1px 0 #000a); }
   .duo { position: absolute; right: 8px; top: 32px; display: flex; align-items: flex-start; }
   .gapmark { position: relative; align-self: stretch; flex: none; min-width: 4px; transition: width 160ms var(--out); }
@@ -341,37 +348,42 @@ const STYLE = String.raw`
   .hudbar .lv { left: 208px; top: 25px; width: 48px; color: #4a3320; text-shadow: none; }
   .held { position: absolute; left: 0; right: 0; bottom: 112px; text-align: center; white-space: nowrap; color: #ff55ff; }
   /* Boss 血條、右上的任務追蹤、記分板 */
-  .boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #ff7b7b; }
+  .boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #ff5555; }
+  /* 怪物的等級：遊戲裡是名字後面一顆灰底的小方框 */
+  .scr .lv { display: inline-block; margin-left: .45em; padding: 0 .5em; border-radius: 4px; font-size: .7em; line-height: 1.45; letter-spacing: .1em; vertical-align: .14em; color: #fff; background: #555; box-shadow: 0 2px 0 #2c2c2c; text-shadow: none; }
   .boss i { display: block; width: 364px; height: 10px; margin: 4px auto 0; background: linear-gradient(90deg, #e0358f 62%, #4a1232 62%); box-shadow: 0 0 0 2px #000000b0; }
   .trk { position: absolute; top: 58px; right: 10px; display: grid; justify-items: end; gap: 8px; max-width: 46%; text-align: right; white-space: nowrap; }
   .trk .tip { text-align: left; }
   .board { position: absolute; right: 0; top: 172px; min-width: 210px; padding-bottom: 2px; background: #0000004d; color: #aaaaaa; white-space: nowrap; }
   .board div { padding: 0 12px 0 8px; }
   .board div:first-child { background: #00000066; color: #ffaa00; text-align: center; }
-  /* 站在街上的人、頭上的名牌（名字與一顆 NPC）、注視時的小框 */
-  .npc { position: absolute; left: 110px; bottom: 186px; display: grid; justify-items: center; gap: 4px; }
-  .npc canvas { width: 48px; height: 96px; filter: brightness(.82) drop-shadow(0 6px 4px #00000080); }
-  .npc .plate { display: grid; justify-items: center; gap: 2px; white-space: nowrap; }
-  .npc .plate span { color: #55ff55; }
-  .npc .plate b { padding: 0 .4em; font-size: .7em; line-height: 1.4; background: #5a5a5ad9; color: #e6e6e6; text-shadow: none; }
-  .npc .look { position: absolute; left: 100%; top: 26px; margin-left: 14px; }
-  .title { position: absolute; left: 0; right: 0; top: 132px; text-align: center; color: #ffaa00; font-size: 2em; text-shadow: .1em .1em 0 #3f2a00; pointer-events: none; }
+  /* 街上那個人是截圖裡真的 NPC（Detlas 的隊伍尋找器）；.npc 釘在他頭頂上。
+     名牌兩行：名字、底下一行灰色的說明——截圖上原本那一塊拿掉了，換成這裡畫的，才能跟著語言換。
+     注視時的小框在他旁邊 */
+  .npc { position: absolute; left: 468px; top: 198px; width: 0; height: 0; }
+  .npc .plate { position: absolute; left: 0; bottom: 0; display: grid; justify-items: center; width: max-content; transform: translateX(-50%); text-align: center; white-space: nowrap; }
+  .npc .plate b { color: #ff55ff; }
+  .npc .plate span { color: #aaaaaa; }
+  .npc .look { position: absolute; right: 46px; top: 8px; width: max-content; max-width: 320px; white-space: normal; }
+  .title { position: absolute; left: 0; right: 0; top: 62px; text-align: center; color: #ffaa00; font-size: 2em; text-shadow: .1em .1em 0 #3f2a00; pointer-events: none; }
   .chat { position: absolute; left: 6px; bottom: 120px; max-width: 420px; }
   .chat div { padding: 0 6px; background: #00000080; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chat .ours { color: #9be7a5; }
   /* 對話：遊戲自己的對話框是一張疊好的圖（頭像、名牌、底下那一條），字放在量好的位置上。
      另開小框的時候，譯文在它上面；選項是右上方那兩條 */
-  .dlg { position: absolute; left: 50%; bottom: 30px; display: flex; flex-direction: column; gap: 6px; width: 574px; transform: translateX(-50%); }
+  .dlg { position: absolute; left: 50%; bottom: 96px; display: flex; flex-direction: column; gap: 6px; width: 574px; transform: translateX(-50%); }
   .dlg-extra { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding-left: 128px; }
   .dlg-extra .tip { white-space: normal; }
   .dlg-extra .right { margin-left: auto; }
   .options { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; margin-bottom: -2px; }
-  .option { position: relative; width: 288px; height: 32px; padding: 0 16px; line-height: 30px; white-space: nowrap; background: var(--t-choice) 0 0 / 288px 64px no-repeat; }
+  /* 那一條的貼圖只有上面 24 格是條子（底下是空的），字要對著條子的中間 */
+  .option { position: relative; width: 288px; height: 32px; padding: 0 16px; line-height: 22px; white-space: nowrap; background: var(--t-choice) 0 0 / 288px 64px no-repeat; }
   .option.on { background-position: 0 -32px; }
-  .option .pick { position: absolute; left: -30px; top: 0; width: 32px; height: 32px; }
+  .option .pick { position: absolute; left: -30px; top: -4px; width: 32px; height: 32px; }
   .dlgbox { position: relative; height: 212px; background: var(--t-dialogue) 0 0 / 100% 100% no-repeat; }
   .dlgbox b { position: absolute; left: 128px; top: 6px; width: 224px; line-height: 28px; text-align: center; white-space: nowrap; }
-  .dlgbox p { position: absolute; left: 136px; top: 42px; width: 416px; margin: 0; line-height: 24px; }
+  /* 字放在深色那一塊裡面（貼圖的 64–278 × 20–80 格），四邊各留一點 */
+  .dlgbox p { position: absolute; left: 142px; top: 48px; width: 404px; margin: 0; line-height: 24px; }
   .dlgbox .hint2 { position: absolute; left: 94px; top: 174px; display: flex; justify-content: center; align-items: center; gap: 8px; width: 448px; height: 36px; font-size: 16px; }
   .dlgbox kbd { padding: 0 6px; border-radius: 3px; background: #ece6dd; color: #3a2a22; line-height: 18px; box-shadow: 0 2px 0 #9a8f84; text-shadow: none; }
   /* 窄的那一面（480×470）：手機，與首頁最上面那一塊 */
@@ -380,13 +392,17 @@ const STYLE = String.raw`
   .scr.narrow .inv { left: 8px; top: 8px; transform: scale(.72); transform-origin: 0 0; }
   .scr.narrow .duo { right: 6px; top: 150px; }
   .scr.narrow .boss i { width: 250px; }
-  .scr.narrow .trk { top: 50px; right: 6px; }
-  .scr.narrow .board { top: 138px; min-width: 0; }
-  .scr.narrow .npc { left: 40px; bottom: 176px; }
-  .scr.narrow .title { top: 84px; font-size: 1.7em; }
+  .scr.narrow .trk { top: 50px; right: 6px; max-width: none; }
+  /* 窄的那一面把街景往左挪，NPC 站在左邊三分之一：右邊留給記分板與注視時的小框 */
+  .scr.narrow[data-tab="world"] .bg { background-position: -310px 0; background-size: auto 100%; }
+  .scr.narrow .board { top: 138px; min-width: 0; font-size: 14px; }
+  .scr.narrow .npc { left: 150px; top: 194px; }
+  .scr.narrow .npc .plate { max-width: 236px; font-size: 16px; white-space: normal; }
+  .scr.narrow .npc .look { left: 40px; right: auto; top: 14px; max-width: 250px; }
+  .scr.narrow .title { top: 96px; font-size: 1.7em; }
   .scr.narrow .chat { bottom: 112px; max-width: 300px; }
   .scr.narrow .held { display: none; }
-  .scr.narrow .dlg { bottom: 24px; transform: translateX(-50%) scale(.8); transform-origin: 50% 100%; }
+  .scr.narrow .dlg { bottom: 92px; transform: translateX(-50%) scale(.8); transform-origin: 50% 100%; }
   .demo-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin: 0; padding: 12px 14px 13px; border-top: 1px solid var(--line); font-size: 14px; min-height: 3.2em; }
   .demo-foot .hint { flex-basis: 100%; }
   .wearbox { display: grid; gap: 8px; }
@@ -1438,22 +1454,57 @@ const STAGE_JS = String.raw`
   var STAGE_DEFAULTS = { tooltip: 0, names: 1, gap: 12, dialogue: 1, choices: 1, nametag: 1, chat: 1, tracker: 0,
     titles: true, bossbar: true, scoreboard: true, held: true };
 
-  /* ---- 站在街上的人（16×32 格）。遊戲裡的人本來就是方塊，這個是程式畫的 ---- */
-  function paintFigure(canvas) {
-    var c = { skin: '#c8996b', hair: '#4a3320', top: '#3f7d54', sleeve: '#356b47', legs: '#5b4630', shoe: '#2a1f16' };
-    canvas.width = 16;
-    canvas.height = 32;
-    var g = canvas.getContext('2d');
-    function box(colour, x, y, w, h) { g.fillStyle = colour; g.fillRect(x, y, w, h); }
-    box(c.skin, 4, 0, 8, 8);
-    box(c.hair, 4, 0, 8, 3); box(c.hair, 4, 3, 1, 2); box(c.hair, 11, 3, 1, 2);
-    box('#ffffff', 5, 4, 2, 1); box('#ffffff', 9, 4, 2, 1); box('#2b3a67', 6, 4, 1, 1); box('#2b3a67', 9, 4, 1, 1);
-    box('#8a5a3c', 7, 6, 2, 1);
-    box(c.top, 4, 8, 8, 12); box(c.sleeve, 0, 8, 4, 5); box(c.sleeve, 12, 8, 4, 5);
-    box(c.skin, 0, 13, 4, 7); box(c.skin, 12, 13, 4, 7);
-    box(c.legs, 4, 20, 8, 12); box('#00000033', 8, 20, 1, 12);
-    box(c.shoe, 4, 30, 8, 2);
-    box('#00000026', 11, 0, 1, 32); box('#00000026', 15, 8, 1, 12);          /* 右邊暗一點，才有厚度 */
+  /* ---- 背包裡的人：一個方塊人，皮膚（textures/skin.png，64×64）貼在每一塊的六個面上，用 CSS 的 3D 轉。
+          不用 WebGL、不載別人的程式。每一塊：[名字, 皮膚上的位置, 寬高深, 外層（帽子、外套）的位置, 在身上的位置]，
+          單位是皮膚的一格；unit 是一格畫成幾個像素 ---- */
+  var DOLL_PARTS = [
+    ['head', 0, 0, 8, 8, 8, 32, 0, 4, 0, .5],
+    ['body', 16, 16, 8, 12, 4, 16, 32, 4, 8, .25],
+    ['armR', 40, 16, 4, 12, 4, 40, 32, 0, 8, .25],
+    ['armL', 32, 48, 4, 12, 4, 48, 48, 12, 8, .25],
+    ['legR', 0, 16, 4, 12, 4, 0, 32, 4, 20, .25],
+    ['legL', 16, 48, 4, 12, 4, 0, 48, 8, 20, .25]
+  ];
+  function makeDoll(unit) {
+    var doll = el('div', 'doll');
+    var parts = {};
+    function face(u, v, w, h, how, shade) {
+      var one = el('i', '');
+      one.style.cssText = 'width:' + (w * unit) + 'px;height:' + (h * unit) + 'px;margin:' + (-h * unit / 2) + 'px 0 0 ' + (-w * unit / 2) + 'px;'
+        + 'background-size:' + (64 * unit) + 'px ' + (64 * unit) + 'px;background-position:' + (-u * unit) + 'px ' + (-v * unit) + 'px;'
+        + 'transform:' + how + ';' + (shade < 1 ? 'filter:brightness(' + shade + ');' : '');
+      return one;
+    }
+    /* 一個方塊的六個面。皮膚上的排法：上面一列是頂與底，下面一列是右、前、左、後 */
+    function faces(into, u, v, w, h, d) {
+      into.append(
+        face(u + d, v + d, w, h, 'translateZ(' + (d * unit / 2) + 'px)', 1),
+        face(u + d + w + d, v + d, w, h, 'rotateY(180deg) translateZ(' + (d * unit / 2) + 'px)', .62),
+        face(u, v + d, d, h, 'rotateY(-90deg) translateZ(' + (w * unit / 2) + 'px)', .8),
+        face(u + d + w, v + d, d, h, 'rotateY(90deg) translateZ(' + (w * unit / 2) + 'px)', .8),
+        face(u + d, v, w, d, 'rotateX(90deg) translateZ(' + (h * unit / 2) + 'px)', 1),
+        face(u + d + w, v, w, d, 'rotateX(-90deg) translateZ(' + (h * unit / 2) + 'px)', .55));
+    }
+    DOLL_PARTS.forEach(function (p) {
+      var w = p[3], h = p[4], d = p[5], grow = p[10];
+      var part = el('div', '');
+      part.style.cssText = 'left:' + (p[8] * unit) + 'px;top:' + (p[9] * unit) + 'px;width:' + (w * unit) + 'px;height:' + (h * unit) + 'px;';
+      faces(part, p[1], p[2], w, h, d);
+      var over = el('div', 'over');                      /* 外層：同一個方塊，大一點點 */
+      over.style.transform = 'scale3d(' + ((w + 2 * grow) / w) + ',' + ((h + 2 * grow) / h) + ',' + ((d + 2 * grow) / d) + ')';
+      faces(over, p[6], p[7], w, h, d);
+      part.append(over);
+      doll.append(part);
+      parts[p[0]] = part;
+    });
+    parts.head.style.transformOrigin = '50% 100%';          /* 頭繞著脖子轉 */
+    /* yaw、pitch 是頭要轉到的角度。照遊戲裡背包那個人：身體只轉一半，整個人跟著上下微微傾 */
+    function look(yaw, pitch) {
+      doll.style.transform = 'rotateX(' + (pitch * .4).toFixed(2) + 'deg) rotateY(' + (yaw / 2).toFixed(2) + 'deg)';
+      parts.head.style.transform = 'rotateY(' + (yaw / 2).toFixed(2) + 'deg) rotateX(' + (pitch * .6).toFixed(2) + 'deg)';
+    }
+    look(26, -6);
+    return { node: doll, look: look };
   }
 
   /**
@@ -1504,6 +1555,27 @@ const STAGE_JS = String.raw`
       img.style.top = y + 'px';
       return img;
     }
+    /* 背包裡的人：只做一個，每次畫背包都放同一個回去（頭轉到哪裡也就留著）。
+       看著滑鼠——照遊戲的算法：離他 40 格（這裡是 80 像素）轉到一半，再遠也只到 40 度 */
+    var doll = null;
+    var dollBox = el('div', 'dollbox');
+    var aimAt = null;
+    function aim() {
+      var at = aimAt;
+      aimAt = null;
+      if (!at || !doll || !dollBox.isConnected) return;
+      var box = dollBox.getBoundingClientRect();
+      if (!box.width) return;
+      var scale = box.width / 64;
+      var dx = (at[0] - (box.left + box.width / 2)) / scale;
+      var dy = (at[1] - (box.top + box.height * .16)) / scale;
+      doll.look(Math.atan(dx / 80) * 40, -Math.atan(dy / 80) * 20);
+    }
+    window.addEventListener('pointermove', function (event) {
+      var waiting = aimAt;
+      aimAt = [event.clientX, event.clientY];
+      if (!waiting) requestAnimationFrame(aim);
+    }, { passive: true });
     /* 逐字打出來，跟遊戲裡的對話框一樣。中途又動了別的就停掉這一輪 */
     function type(node, text) {
       var mine = ++turn;
@@ -1588,6 +1660,8 @@ const STAGE_JS = String.raw`
     function drawItems(state) {
       hud.append(el('div', 'dim'));
       var inv = el('div', 'inv');
+      if (!doll) { doll = makeDoll(4); dollBox.append(doll.node); }
+      inv.append(dollBox);
       /* 格子的位置：背包那三列從 (15, 92) 起、快捷列在 150，一格 18（貼圖的格數；實機截圖量的） */
       function slot(column, row) { return [(15 + 18 * column) * 2, (row === 3 ? 150 : 92 + 18 * row) * 2]; }
       [['bow', 7, 0], ['wand', 1, 0], ['heal', 2, 1], ['emerald', 5, 1], ['relik', 0, 2], ['mana', 4, 2],
@@ -1640,7 +1714,6 @@ const STAGE_JS = String.raw`
     function drawDialogue(state, typed) {
       var LINE = 'Well, what are we waiting for?';
       var CHOICES = ['Yes', 'Goodbye.'];
-      drawBar(null);
       var stack = el('div', 'dlg');
       var extra = el('div', 'dlg-extra');
       if (state.dialogue === 0) extra.append(bit('div', 'tip ours say', T(LINE), true));
@@ -1666,14 +1739,17 @@ const STAGE_JS = String.raw`
       box.append(hint);
       stack.append(extra, options, box);
       hud.append(stack);
+      drawBar(null);                     /* 快捷列、生命與魔力在對話框的下面那一排，不被蓋住 */
       if (state.dialogue === 1 && typed) type(line, T(LINE));
       else { turn++; line.textContent = state.dialogue === 1 ? T(LINE) : LINE; }
     }
 
-    /* 世界與聊天：Boss 血條在頂端、任務追蹤在右上、記分板在右邊、NPC 站在街上、聊天在左下 */
+    /* 世界與聊天：怪物的名字與血條在頂端、任務追蹤在右上、記分板在右邊、街上那個 NPC 的名牌、聊天在左下。
+       等級都是這一帶的：背景是 Detlas 的街上，人物 22 等，怪物 13 等 */
     function drawWorld(state) {
-      var boss = bit('div', 'boss', (state.bossbar ? T('Zombie') : 'Zombie') + ' [Lv. 3]', state.bossbar);
-      boss.append(el('i'));
+      var MOB = 'Zombie {#}{#}';                  /* 名字後面那兩個圖示就是等級的小方框 */
+      var boss = bit('div', 'boss', (state.bossbar ? T(MOB) : MOB).replace(/\s*\{#\}/g, ''), state.bossbar);
+      boss.append(el('b', 'lv', 'LV 13'), el('i'));
       hud.append(boss);
 
       var track = el('div', 'trk');
@@ -1697,13 +1773,24 @@ const STAGE_JS = String.raw`
       });
       hud.append(board);
 
+      /* 名牌在語料裡是一整段：圖示、名字、說明各一行 */
+      var NPC = '{#}\nParty Finder\nFind a party of queue for a raid';
+      function plateLines(translated) {
+        var lines = (translated ? T(NPC) : NPC).split('\n');
+        return [lines[1] || '', lines.slice(2).join(' ')];
+      }
       var npc = el('div', 'npc');
+      var inPlace = state.nametag === 1;
+      var shown = plateLines(inPlace);
       var plate = el('div', 'plate');
-      plate.append(bit('span', '', state.nametag === 1 ? T('Weapon Merchant') : 'Weapon Merchant', state.nametag === 1), el('b', '', 'NPC'));
-      var figure = el('canvas', '');
-      paintFigure(figure);
-      npc.append(plate, figure);
-      if (state.nametag === 0) npc.append(bit('div', 'tip ours look', T('Weapon Merchant'), true));
+      plate.append(bit('b', '', shown[0], inPlace), bit('span', '', shown[1], inPlace));
+      npc.append(plate);
+      if (state.nametag === 0) {
+        var ours = plateLines(true);
+        var look = el('div', 'tip ours look');
+        look.append(bit('div', 'c-m', ours[0], true), bit('div', 'c-gr', ours[1], true));
+        npc.append(look);
+      }
       hud.append(npc);
 
       hud.append(bit('div', 'title', state.titles ? T('Level Up!') : 'Level Up!', state.titles));

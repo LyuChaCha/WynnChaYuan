@@ -65,9 +65,9 @@ SAMPLES = [
     ('Yes', 'quest.json'),
     ('Goodbye.', 'quest-dialogue.json'),
     ('to continue', 'misc.json'),
-    # 世界與聊天
-    ('Zombie', 'npc.json'),
-    ('Weapon Merchant', 'npc.json'),
+    # 世界與聊天。怪物的名字後面那兩個圖示是等級的小方框；NPC 的名牌是一整段（圖示、名字、說明）
+    ('Zombie {#}{#}', 'npc.json'),
+    ('{#}\nParty Finder\nFind a party of queue for a raid', 'npc.json'),
     ('Level Up!', 'misc.json'),
     ('World Event', 'wynntils.json'),
     ('Click To Track', 'wynntils.json'),
@@ -76,6 +76,7 @@ SAMPLES = [
     ('- Loot Chests T{~}+: {~}/{~}', 'raid.json'),
     ('- Mobs slain: {~}/{~}', 'raid.json'),
     # 功能頁卡片上的例句（別的幾句上面已經有了）
+    ('Weapon Merchant', 'npc.json'),
     ('Ability Points', 'gui.json'),
     ('Trade Market', 'npc.json'),
     ('Secret Discovery', 'quest-ui.json'),

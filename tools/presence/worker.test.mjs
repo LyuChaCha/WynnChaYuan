@@ -998,7 +998,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
     && en.ui['mode.replace'] === 'Replace in place');
   check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
-    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 23 && Object.values(lang).every((v) => v.length > 0))
+    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 24 && Object.values(lang).every((v) => v.length > 0))
     && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
   // 預覽是一整面「遊戲畫面」：功能頁與首頁最上面用同一份程式，字是遊戲裡那一套點陣字
   {
@@ -1013,15 +1013,16 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       && Object.keys(FONTS).every((code) => pages['/features'].includes('/font/px-' + code + '.ttf?v=' + FONTS[code].v)));
     // 場景裡每一個字，對應的那一份字型都要有（勾與叉是網頁自己畫的）
     const need = { tc: ['zh_tw', 'ru_ru', 'es_es', 'tr_tr'], sc: ['zh_cn'], ja: ['ja_jp'], ko: ['ko_kr'] };
+    const DRAWN = '✔✖✓\n';                 // 勾與叉是網頁畫的；換行是名牌那一段的分行，不是字
     const missing = [];
     for (const code of Object.keys(need)) {
       for (const lang of need[code]) {
         for (const value of Object.values(DEMO.text[lang])) {
-          for (const ch of value) if (!'✔✖✓'.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
+          for (const ch of value) if (!DRAWN.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
         }
       }
       for (const src of Object.keys(DEMO.text.zh_tw)) {
-        for (const ch of src) if (!'✔✖✓'.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
+        for (const ch of src) if (!DRAWN.includes(ch) && !FONTS[code].covers.includes(ch)) missing.push(code + ':' + ch);
       }
     }
     check('★ 場景裡的每一個字，字型裡都有' + (missing.length ? '（缺 ' + [...new Set(missing)].join(' ') + '）' : ''), missing.length === 0);
@@ -1041,7 +1042,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     const { CAPE_TEMPLATES } = await import('./cape-templates.js');
     const need = ['tip-rare.png', 'tip-plain.png', 'emblem-bow.png', 'req.png', 'mark.png', 'divider.png', 'socket.png',
       'dialogue.png', 'choice.png', 'cursor.png', 'hud.png', 'inventory.png', 'glyphs.png', 'item-bow.png',
-      'bg-world.webp', 'bg-town.webp'];
+      'bg-world.webp', 'bg-street.webp', 'skin.png'];
     check('★ 預覽要的材質都在', need.every((name) => Object.hasOwn(TEXTURES, name)));
     check('★ 每一張材質頁面上都取得到（樣式的 --t-*、程式的 D.tex），網址帶著雜湊', Object.keys(TEXTURES).every((name) =>
       pages['/features'].includes('--t-' + name.replace(/\.\w+$/, '') + ': url(/tex/' + name + '?v=' + TEXTURES[name].v + ')'))
@@ -1058,6 +1059,26 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     check('★ 預覽不再自己畫風景與物品（程式裡沒有那幾支了）', !pages['/features'].includes('paintScene')
       && !pages['/features'].includes('paintIcon') && pages['/features'].includes("pic('emblem-bow.png'"));
     check('★ 頁尾寫了材質是 Wynncraft 的', pages['/'].includes(TEXT.zh['foot.assets']) && english['/'].includes(TEXT.en['foot.assets']));
+    // 背包裡的人、對話框與快捷列的上下、街上的 NPC 與怪物的等級（使用者 2026-10-14 看了預覽之後要的）
+    const skin = new Uint8Array(await (await worker.fetch(new Request('https://x.test/tex/skin.png'), env)).arrayBuffer());
+    check('★ 背包裡有一個人：皮膚是 64×64 的 PNG，貼在方塊上、會看著滑鼠', skin[1] === 0x50 && skin[19] === 64 && skin[23] === 64
+      && pages['/features'].includes('--t-skin: url(/tex/skin.png?v=') && pages['/features'].includes('makeDoll(4)')
+      && pages['/features'].includes("addEventListener('pointermove'") && pages['/'].includes('makeDoll(4)'));
+    check('★ 街上的人是截圖裡真的 NPC：不再自己畫一個，名牌的兩行七種語言都有', !pages['/features'].includes('paintFigure')
+      && pages['/features'].includes('var(--t-bg-street)')
+      && Object.values(DEMO.text).every((lang) => {
+        const lines = (lang['{#}\nParty Finder\nFind a party of queue for a raid'] || '').split('\n');
+        return lines.length === 3 && lines[0] === '{#}' && lines[1] && lines[2];
+      }));
+    check('★ 怪物的等級是名字後面的小方框，跟人物的等級是同一帶的', pages['/features'].includes("el('b', 'lv', 'LV 13')")
+      && !pages['/features'].includes('[Lv. 3]') && Object.values(DEMO.text).every((lang) => /\S \{#\}\{#\}$/.test(lang['Zombie {#}{#}'] || '')));
+    {
+      const js = pages['/features'];
+      const dialogue = js.slice(js.indexOf('function drawDialogue'), js.indexOf('function drawWorld'));
+      check('★ 對話：快捷列畫在對話框之後（在它上面），對話框整個在那一排的上方', dialogue.indexOf('hud.append(stack)') > 0
+        && dialogue.indexOf('drawBar(null)') > dialogue.indexOf('hud.append(stack)')
+        && /\.dlg \{[^}]*bottom: 96px/.test(js) && /\.option \{[^}]*line-height: 22px/.test(js));
+    }
 
     // 披風範本：披風一覽與帳號頁都有一塊，每一種尺寸一顆下載鈕
     const sizes = ['22x17', '44x34', '88x68', '176x136', '352x272', '704x544', '1056x816'];
