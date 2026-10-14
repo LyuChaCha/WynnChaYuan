@@ -12,7 +12,7 @@
  "entries": {
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
-   "dst": "Meteor、普攻与粉末技能会消耗\n失衡 {#}，多造成 {~} 伤害。",
+   "dst": "Meteor、普攻与粉末技能会消耗\nUnstable {#}，额外造成 +{~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -562,7 +562,7 @@
   },
   "ability-mage#0040": {
    "src": "When they damage an enemy, they lose {~}\nof their Health. They can be healed back.",
-   "dst": "它们每对敌人造成一次伤害，就会失去 {~}\n的生命。它们可以被治疗回来。",
+   "dst": "它们每对敌人造成一次伤害，就会失去 {~}\n的生命，但可以通过治疗恢复。",
    "role": "desc",
    "kind": "block",
    "ctx": [
