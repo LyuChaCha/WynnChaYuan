@@ -102,7 +102,7 @@
   },
   "ability-shared#0054": {
    "src": "ÀÀÀÀ({#} Neutral: -{~})",
-   "dst": "ÀÀÀÀ({#} 無屬性傷害降低: -{~})",
+   "dst": "ÀÀÀÀ({#} 無屬性傷害降低: {~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
@@ -197,7 +197,7 @@
   },
   "ability-shared#0001": {
    "src": "{#} Main Attack Damage: +{~}",
-   "dst": "{#} 普攻傷害值增加: {~}",
+   "dst": "{#} 普攻傷害百分比增加: {~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -653,7 +653,7 @@
   },
   "ability-shared#0029": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#} 效果: +{~} 友軍傷害加成 (⚔)",
+   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -667,7 +667,7 @@
   },
   "ability-shared#0030": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Self",
-   "dst": "{#} 效果: {~} 自身傷害增加 (⚔)",
+   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -696,7 +696,7 @@
   },
   "ability-shared#0032": {
    "src": "{#} Area of Effect: +{~} Blocks (Circle-Shaped)",
-   "dst": "{#} 作用範圍: +{~} 格 (圓形)",
+   "dst": "{#} 技能範圍: +{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -727,7 +727,7 @@
   },
   "ability-shared#0034": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "使用技能或受到傷害以將你的 大招 {#} 充能至 {~}",
+   "dst": "使用技能或受到傷害，\n以將你的大招 {#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -791,7 +791,7 @@
   },
   "ability-shared#0038": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "{#} 效果: 每次命中給予敵人 {~1} 緩速 ({#})，最多 {~2} 層",
+   "dst": "{#} 效果: {~} 緩速 ({#}) 給敵人，每次命中 (最高 {~})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -805,7 +805,7 @@
   },
   "ability-shared#0039": {
    "src": "{#} Effect: {~} Resistance Bonus (❁)",
-   "dst": "{#} 效果: {~} 抗性增加 (❁)",
+   "dst": "{#} 效果: {~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -885,7 +885,7 @@
   },
   "ability-shared#0044": {
    "src": "{#} Effect: Blindness ({#}) to Enemies",
-   "dst": "{#} 效果: 敵方失明 ({#})",
+   "dst": "{#} 效果: 失明 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -900,7 +900,7 @@
   },
   "ability-shared#0045": {
    "src": "{#} Area of Effect: +{~} Blocks",
-   "dst": "{#} 作用範圍增加: {~} 格",
+   "dst": "{#} 技能範圍增加: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -914,7 +914,7 @@
   },
   "ability-shared#0046": {
    "src": "{#} Effects: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "{#} 效果: {~} 敵人傷害降低 ({#})",
+   "dst": "{#} 效果: -{~} 傷害加成 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -928,7 +928,7 @@
   },
   "ability-shared#0047": {
    "src": "{#} Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "{#} 作用範圍增加: {~} 格 (圓形)",
+   "dst": "{#} 技能範圍增加: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -944,7 +944,7 @@
   },
   "ability-shared#0048": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "{#} 效果: {~} 自身抗性加成 (❁)",
+   "dst": "{#} 效果: {~} 抗性加成 (❁) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

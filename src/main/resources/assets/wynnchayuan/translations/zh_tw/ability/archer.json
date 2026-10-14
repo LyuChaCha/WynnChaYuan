@@ -161,7 +161,7 @@
   },
   "ability-archer#0011": {
    "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
-   "dst": "普攻一次發射兩根箭矢，\n但每根箭矢的傷害降低\n(也會更難命中敵人)",
+   "dst": "普攻一次發射兩根箭矢，\n但每根箭矢的傷害降低\n(更難命中遠處的敵人)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -285,7 +285,7 @@
   },
   "ability-archer#0020": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "連續射出一串 {~} 跟箭矢的箭矢束，\n對近距離怪物造成大量傷害，\n同時擊退它們。",
+   "dst": "連續射出一串 {~} 根箭矢，\n對近距離怪物造成大量傷害，\n同時擊退它們。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -521,7 +521,7 @@
   },
   "ability-archer#0037": {
    "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
-   "dst": "普攻發射三根箭矢，\n但是每根箭矢只造成 {~} 的普攻傷害。",
+   "dst": "普攻發射三根箭矢，\n但每根箭矢的傷害比一般普攻箭矢低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -615,7 +615,7 @@
   },
   "ability-archer#0044": {
    "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
-   "dst": "將箭矢風暴壓縮成一道光束\n，每秒對敵人造成 {~} 次傷害。",
+   "dst": "將箭矢風暴壓縮成一道光束，\n每秒對敵人造成 {~} 次傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -724,7 +724,7 @@
   },
   "ability-archer#0052": {
    "src": "{#} Damage Bonus: +{~} (per Focus)",
-   "dst": "{#} 傷害加成: +{~} (每點 Focus)",
+   "dst": "{#} 傷害加成: +{~} (每層專注)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -958,7 +958,7 @@
   },
   "ability-archer#0069": {
    "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
-   "dst": "在設置好陷阱後，每經過一秒鐘，\n該陷阱造成的傷害增加 {~1}。(最大 {~2})。",
+   "dst": "在設置好陷阱後，每經過一秒鐘，\n該陷阱造成的傷害增加 {~1}。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1245,7 +1245,7 @@
   },
   "ability-archer#0090": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "若擁有 {~} 層專注以上{#}，\n按住 Shift 鍵召喚 Twain 之弧。\n蓄力後發射一道威力巨大的遠程光束。",
+   "dst": "若擁有 {~} 層以上的專注 {#}，\n按住 Shift 鍵召喚 Twain 之弧。\n蓄力後發射一道威力巨大的遠程光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1434,7 +1434,7 @@
   },
   "ability-archer#0104": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "施放 Arrow Storm 會讓它們在 Arrow Storm \n持續期間內射擊速度提高 {~} 倍。",
+   "dst": "施放 Arrow Storm 會讓它們在 Arrow Storm\n持續期間內射擊速度提高至 {~} 倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1504,7 +1504,7 @@
   },
   "ability-archer#0109": {
    "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
-   "dst": "提高箭矢護盾的範圍，擊退，和傷害。",
+   "dst": "提高箭矢護盾的範圍、擊退和傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1926,7 +1926,7 @@
   },
   "ability-archer#0140": {
    "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
-   "dst": "使用魅影光束時沒泡槍，\n會讓下一發的傷害提升 {~1}。(上限 {~2})",
+   "dst": "魅影光束每次沒有落空，\n傷害就會提升 {~1}。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2098,7 +2098,7 @@
   },
   "ability-archer#0153": {
    "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "抓鉤的射程，速度，和傷害增加。",
+   "dst": "抓鉤的射程、速度和拉力增加。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2278,7 +2278,7 @@
   },
   "ability-archer#0166": {
    "src": "{#} Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "{#} 效果: -{~} 抗性加成 ({#} ) 給敵人",
+   "dst": "{#} 效果: -{~} 抗性加成 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2411,7 +2411,7 @@
   },
   "ability-archer#0176": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "若你有 {~1} 層以上專注 {#}，\n在離地 {~2} 格的高度使用 Arrow Storm，\n將讓你進入浮空狀態，並每秒射出 {~3} 支追蹤箭\n，直至專注 {#} 耗盡。",
+   "dst": "若你有 {~1} 層以上專注 {#}，\n在離地 {~2} 格以上的高度使用 Arrow Storm，\n將讓你進入浮空狀態，並每秒射出 {~3} 支追蹤箭，\n直至專注 {#} 耗盡。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2585,7 +2585,7 @@
   },
   "ability-archer#0189": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "每當 Arrow Shield 數量減少，\n召喚一個跟隨並保護你的小精靈。(上限 {~})",
+   "dst": "每當 Arrow Shield 失去一層充能，\n召喚一個跟隨並保護你的小精靈。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2966,7 +2966,7 @@
   },
   "ability-archer#0217": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "Arrow Storm 持續時間增加 {~} 倍，\n而且發射的箭矢變得更加集中。",
+   "dst": "Arrow Storm 持續時間延長為 {~} 倍，\n而且發射的箭矢變得更加集中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3051,7 +3051,7 @@
   },
   "ability-archer#0223": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "屏氣凝神狀態結束時(或再次按下 F 提前結束)。\n向每個被標記的敵人發射法術傷害箭矢與普攻傷害箭矢。 \n根據目標身上的暮光 {#} 層數造成額外傷害。",
+   "dst": "屏氣凝神狀態結束時(或再次按下 F 提前結束)，\n向每個被標記的敵人發射法術傷害箭矢與普攻傷害箭矢，\n並根據目標身上的暮光 {#} 層數造成額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3081,7 +3081,7 @@
   },
   "ability-archer#0225": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "在此狀態下，你的跳躍高度增加，受到的重力降低。\n且視野內的所有敵人每隔 {~} 秒\n會被標記上一層暮光 {#} 效果。(上限 {~})",
+   "dst": "在此狀態下，你的跳躍高度增加，受到的重力降低，\n且視野內的所有敵人每隔 {~} 秒\n會被標記上一層暮光 {#} 效果。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [

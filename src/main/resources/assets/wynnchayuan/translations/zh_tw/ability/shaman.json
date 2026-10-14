@@ -263,7 +263,7 @@
   },
   "ability-shaman#0263": {
    "src": "Awakened ♚ grants you the upsides of all\nMasks at once with no downsides, and\nMantra at {~} with no decay.",
-   "dst": "覺醒 ♚ 給予你所有假面的正面效果，並且將 Mantra 固定於 {~}。",
+   "dst": "覺醒 ♚ 讓你同時獲得所有假面的正面效果，\n且沒有任何負面效果，\n並將 Mantra 固定於 {~}，不會衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "在看著一個圖騰時再次施放圖騰技能會消耗一半的魔法將其往前推擊，對敵人造成傷害。(蹲下以調轉其方向)",
+   "dst": "看著已存在的圖騰時\n再次施放圖騰技能，會以一半的魔力消耗\n將其往前推擊，\n對撞上的敵人\n造成傷害。\n(蹲下以調轉其方向)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -445,7 +445,7 @@
   },
   "ability-shaman#0292": {
    "src": "Increase Ritual Circle's maximum radius and hits by +{~}.",
-   "dst": "Ritual Circle 的半徑及攻擊次數增加 {~}。",
+   "dst": "Ritual Circle 的最大半徑及攻擊次數增加 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine 每 {~2} 秒吸取你 {~1} 的生命，並使 Aura 的傷害提升 {~3}。",
+   "dst": "Sacrificial Shrine 每 {~2} 秒額外吸取你 {~1} 的生命，\n並使 Aura 的傷害提升 {~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-shaman#0258": {
    "src": "When wearing the {#}{#}Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "當穿戴 {#}{#} 蒼逆假面 時，Frog Dance 落地時會生成最多 {~} 個池子。",
+   "dst": "當穿戴 {#}{#} 蒼逆假面 時，\nFrog Dance 落地時會生成一個小池子。\n(最多 {~} 個)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -641,7 +641,7 @@
   },
   "ability-shaman#0252": {
    "src": "While wearing the {#}{#}Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
-   "dst": "當穿戴 {#}{#} 金虔假面 時，Totem 會向地板衝擊，快速重複施展相當於 {~} 秒的效果。",
+   "dst": "當穿戴 {#}{#} 金虔假面 時，\nTotem 撞擊地面時會碎裂，\n快速觸發相當於 {~} 秒\n的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ 總傷害：{~} (你的每秒傷害，視為普攻傷害)",
+   "dst": "⚔ 總傷害: {~} (你的每秒傷害，\n視為普攻傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1267,7 +1267,7 @@
   },
   "ability-shaman#0016": {
    "src": "Emits a rapid projectile that will\nexplode and knock enemies away.\n(Hold shift to pull instead)",
-   "dst": "發射一枚接觸敵方後爆炸並推開敵人的子彈。\n(按下 Shift 改為拖拽)",
+   "dst": "發射一枚高速彈體，命中後\n爆炸並擊退敵人。\n(按住 Shift 改為將敵人拉近)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1322,7 +1322,7 @@
   },
   "ability-shaman#0020": {
    "src": "Radiates an aura from your Totem\nthat damages enemies.",
-   "dst": "由你的圖騰觸散發靈氣，傷害周圍敵人。",
+   "dst": "由你的圖騰散發靈氣，\n傷害周圍敵人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1670,7 +1670,7 @@
   },
   "ability-shaman#0051": {
    "src": "Aura will spend {~} points of Blood Pool {#}\nto deal +{~} damage and heal all allies.",
-   "dst": "Aura 會消耗 {~} 點 血池 {#} 以增加 {~} 點傷害並治療友軍。",
+   "dst": "Aura 會消耗 {~} 點 血池 {#}，\n以增加 {~} 傷害並治療所有友軍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2065,7 +2065,7 @@
   },
   "ability-shaman#0082": {
    "src": "Hitting enemies with Uproot or\nHaunting Memory will inflict them\nwith Whipped ⇶. Your Summons will\nfocus Whipped ⇶ enemies and deal\nadditional damage to them.",
-   "dst": "使用 Uproot 或 Haunting Memory 命中敵人將對其附加 鞭笞 ⇶。你的召喚物會擊中攻擊被 鞭笞 ⇶ 的目標並對其造成額外傷害。",
+   "dst": "使用 Uproot 或 Haunting Memory\n命中敵人將對其附加 鞭笞 ⇶。\n你的召喚物會集中攻擊\n被 鞭笞 ⇶ 的目標，\n並對其造成額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2291,7 +2291,7 @@
   },
   "ability-shaman#0104": {
    "src": "Increase your maximum Totems by +{~}.\nTotem and Aura will do {~} less damage.",
-   "dst": "你的圖騰數量增加 {~}。Totem 和 Aura 減少 {~} 傷害。",
+   "dst": "你的圖騰數量上限增加 {~}。\nTotem 和 Aura 減少 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2550,7 +2550,7 @@
   },
   "ability-shaman#0128": {
    "src": "Tentacles will attack Bleeding {#} enemies from an\nadditional +{~} blocks away.",
-   "dst": "觸手將攻擊 {~} 格外的 失血 {#} 敵人。",
+   "dst": "觸手對 失血 {#} 敵人的攻擊距離\n額外增加 {~} 格。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2727,7 +2727,7 @@
   },
   "ability-shaman#0143": {
    "src": "Casting Aura while holding shift will\nrally all active Puppets to your\nside, granting them increased\nattack speed and accuracy.",
-   "dst": "按下 Shift 施放 Aura 使所有人偶召集至你身後，使它們攻擊速度和準度提升。",
+   "dst": "按下 Shift 施放 Aura 會將\n所有人偶召集至你身邊，\n使它們的攻擊速度\n和準度提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2906,7 +2906,7 @@
   },
   "ability-shaman#0163": {
    "src": "Summon {~} Hummingbird Carvings\nwhich fly around you, passively\ngranting a walk speed buff.",
-   "dst": "生成 {~} 之蜂鳥雕刻在你周邊飛行，使你獲得移動速度加成。",
+   "dst": "生成 {~} 個蜂鳥雕刻\n在你周邊飛行，被動地\n使你獲得移動速度加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3124,7 +3124,7 @@
   },
   "ability-shaman#0181": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ {~} {#} 自身跳躍高度",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} {#} 自身跳躍高度",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3393,7 +3393,7 @@
   },
   "ability-shaman#0203": {
    "src": "Once Aura rebounds, it will radiate back out\nand deal its effects a third time.",
-   "dst": "當 Aura 回彈後，它將再次反彈並造成其效果。",
+   "dst": "當 Aura 回彈後，它將再次向外擴散，\n第三次造成其效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3486,7 +3486,7 @@
   },
   "ability-shaman#0217": {
    "src": "If your health drops to {~} or less,\nyour Effigies protect you until you\nare above {~} health again.",
-   "dst": "當你的生命在 {~} 以下時，塑像將保護你值到你的生命高於 {~}。",
+   "dst": "當你的生命降至 {~} 以下時，\n塑像將保護你，\n直到你的生命高於 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3642,7 +3642,7 @@
   },
   "ability-shaman#0232": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "{#} 作用範圍: {~} 格(圓形，爆炸)",
+   "dst": "{#} 技能範圍: {~} 格(圓形，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "你的 Totem 將被駭人惡魔接管，每 {~2} 秒使周圍的喚血侍者獲得 {~1} 點 血池 {#}。",
+   "dst": "你的 Totem 將被駭人惡魔接管，\n每 {~2} 秒使周圍的喚血侍者\n獲得 {~1} 血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

@@ -284,7 +284,7 @@
   },
   "ability-warrior#0020": {
    "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "{#} 作用範圍: {~1}-{~2} 格 (錐形)",
+   "dst": "{#} 技能範圍: {~1}-{~2} 格 (錐形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -337,7 +337,7 @@
   },
   "ability-warrior#0024": {
    "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
-   "dst": "發出怒吼造成傷害並拉進附近的敵人，\n同時使你與周圍友軍獲得傷害抗性。",
+   "dst": "發出怒吼造成傷害，\n並拉近附近的敵人，同時使你與\n周圍友軍獲得傷害抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -990,7 +990,7 @@
   },
   "ability-warrior#0072": {
    "src": "A spell cast using health will\ndeal +{~} to +{~} bonus damage, depending\non how much of its cost is paid in blood.",
-   "dst": "使用生命施放技能將根據由生命支付的比例，\n造成 +{~1} 至 +{~2} 額外傷害。",
+   "dst": "使用生命施放的技能將造成\n+{~1} 至 +{~2} 額外傷害，\n依由生命支付的消耗比例而定。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "處於 Corrupted {#} 狀態時，\n普攻命中敵人會依攻擊速度以每秒 +{~} \n的比例提升 Corrupted {#}。\n(Powder Specials 總是提升 +{~} )",
+   "dst": "處於 Corrupted {#} 狀態時，\n普攻命中敵人會依攻擊速度\n以每秒 +{~} 的比例\n提升 Corruption {#}。\n(Powder Specials 總是提升 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1598,7 +1598,7 @@
   },
   "ability-warrior#0117": {
    "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "當 Corrupted {#} 高於 {~} 時，\n下一次使用 Uppercut 將獲得傷害加成。",
+   "dst": "累積獲得 {~} Corrupted {#} 後，\n下一次使用 Uppercut 將獲得傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1843,7 +1843,7 @@
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "每擁有 {~1} Corrupted {#}，\nBash 的技能範圍 +{~2}。(最高 +{~3})",
+   "dst": "每擁有 {~2} Corrupted {#}，\nBash 的技能範圍 +{~1}。(最高 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2514,7 +2514,7 @@
   },
   "ability-warrior#0184": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "{#} 冷卻時間: {~}m",
+   "dst": "{#} 冷卻時間: {~} 分鐘",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2579,7 +2579,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "Cyclone 造成傷害的速度加快 {~} 秒。",
+   "dst": "Cyclone 造成傷害的間隔縮短 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-warrior#0225": {
    "src": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
-   "dst": "引召一把天堂之刃由天而降，\n造成極高傷害，\n並為周圍友軍提供增益效果。",
+   "dst": "引召一把天堂之刃由天而降，\n落地時造成傷害，\n並為周圍友軍提供增益效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
