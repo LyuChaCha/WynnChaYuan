@@ -913,6 +913,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             }
             // 上次在遊戲裡下載的更新沒套用成功的話，說一聲檔案在哪。見 SelfUpdate#tellLeftover。
             SelfUpdate.tellLeftover(client);
+            // 從聊天室按的更新：下載完或失敗時說一聲。見 SelfUpdate#startFromChat。
+            SelfUpdate.announceProgress(client);
             // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
             // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
@@ -990,6 +992,14 @@ public final class WynnChaYuan implements ClientModInitializer {
                                             openSettingsNextTick = true;
                                             return 1;
                                         })
+                                        // /wcy update：下載最新版，關閉遊戲時換上。聊天室的更新通知點的就是它。
+                                        .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+                                                .literal("update")
+                                                .executes(context -> {
+                                                    SelfUpdate.startFromChat(
+                                                            net.minecraft.client.Minecraft.getInstance());
+                                                    return 1;
+                                                }))
                                         // /wcy link <綁定碼>：把遊戲 ID 綁到網站帳號。見 Presence#link。
                                         .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
                                                 .literal("link")

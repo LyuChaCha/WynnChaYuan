@@ -195,6 +195,23 @@ public final class Releases {
                     "  " + notes.headline())
                     .withStyle(net.minecraft.ChatFormatting.GRAY), false);
         }
+        // 直接更新：點了就跑 /wcy update（Fabric 的客戶端指令會接住點擊送出的指令）。
+        //
+        // 使用者 2026-10-14：「目前我看也是沒有更新直接下載的按鈕」——那顆按鈕原本只在
+        // F6 的「更新說明」頁裡，聊天室這則通知只有 GitHub 連結。開發環境找不到自己的 jar，
+        // 那時不列這一行。
+        if (SelfUpdate.available()) {
+            tell(client,
+                    com.wynnchayuan.client.T.c("chat.update.direct")
+                    .withStyle(style -> style
+                            .withColor(net.minecraft.ChatFormatting.GREEN)
+                            .withUnderlined(true)
+                            .withClickEvent(new net.minecraft.network.chat.ClickEvent.RunCommand(
+                                    "/wcy update"))
+                            .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
+                                    com.wynnchayuan.client.T.c("chat.update.direct.hover")))),
+                    false);
+        }
         tell(client, 
                 com.wynnchayuan.client.T.c("chat.update.link")
                 .withStyle(style -> style
