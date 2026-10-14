@@ -1087,6 +1087,10 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
         && js.includes('var(--t-slots)'));
       check('★ 說明框的字離框的外緣 12 格（遊戲的規格），物品那一面的框照內容的寬度、有上下限', /\n  \.tip \{[^}]*padding: 1\.2em 1\.2em/.test(js)
         && /\.duo \.tip \{[^}]*width: max-content; min-width: [\d.]+em; max-width: [\d.]+em/.test(js));
+      check('★ 首頁與功能頁往下捲有淡進來的動畫；減少動態的設定下不做、一開始就看得到的不動', pages['/'].includes('<script>revealOnScroll("#main > h2')
+        && pages['/features'].includes('<script>revealOnScroll("section[id] > h2, .cards > .fcard")</script>')
+        && js.includes("matchMedia('(prefers-reduced-motion: reduce)').matches) return;") && js.includes('return node.getBoundingClientRect().top > fold;')
+        && !pages['/capes'].includes('<script>revealOnScroll('));
       check('★ 人物的等級是六角形上描邊的白字，不會被怪物等級那顆灰框的樣式蓋到', /\.hudbar \.lv \{[^}]*color: #fff/.test(js)
         && !/\.scr \.lv\b/.test(js) && js.includes('.scr .mlv {'));
     }

@@ -467,6 +467,11 @@ const STYLE = String.raw`
   .fcard p { margin: 0; color: var(--ink-2); font-size: 14px; text-wrap: pretty; }
   .fcard code { font-size: 13px; }
   .glyph { position: relative; display: block; width: 40px; height: 40px; border-radius: 9px; background: #0c120f; box-shadow: inset 0 0 0 1px var(--line); color: var(--leaf); }
+  /* 往下捲時淡進來的那幾塊（revealOnScroll）。卡片進來時，前面那顆圖示晚一點彈出來 */
+  .rv { opacity: 0; transform: translateY(22px); }
+  .rv.rv-on { opacity: 1; transform: none; transition: opacity 560ms var(--arrive), transform 700ms var(--arrive); transition-delay: var(--d, 0ms); }
+  .fcard.rv .glyph { opacity: 0; transform: scale(.6) rotate(-12deg); }
+  .fcard.rv.rv-on .glyph { opacity: 1; transform: none; transition: opacity 360ms var(--arrive), transform 620ms cubic-bezier(.34, 1.56, .64, 1); transition-delay: calc(var(--d, 0ms) + 220ms); }
   .glyph::after {
     content: ""; position: absolute; inset: 4px; background: currentColor; image-rendering: pixelated;
     -webkit-mask: var(--t-glyphs) calc(var(--c) * -32px) calc(var(--r) * -32px) / 512px 192px no-repeat;
@@ -1262,6 +1267,36 @@ const COMMON = String.raw`
     try { localStorage.setItem(TOKEN_KEY, found[1]); } catch (e) {}
     history.replaceState(null, '', location.pathname);     /* 通行證不留在網址列上 */
   })();
+  /* 往下捲時，還沒進到畫面的那幾塊從下面淡進來；同一批進來的照順序一個接一個。
+     一開始就看得到的不動（不然一進頁面就閃一下）；動完把加上的東西拿掉，原本的滑過效果照舊。
+     不想看動畫的人（系統設定減少動態）、或瀏覽器沒有 IntersectionObserver：什麼都不做 */
+  function revealOnScroll(selector) {
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var fold = window.innerHeight * 0.92;
+    var nodes = Array.prototype.filter.call(document.querySelectorAll(selector), function (node) {
+      return node.getBoundingClientRect().top > fold;
+    });
+    var watch = new IntersectionObserver(function (entries) {
+      var arriving = entries.filter(function (entry) { return entry.isIntersecting; }).map(function (entry) { return entry.target; });
+      arriving.sort(function (a, b) {
+        var p = a.getBoundingClientRect(), q = b.getBoundingClientRect();
+        return (p.top - q.top) || (p.left - q.left);
+      });
+      arriving.forEach(function (node, i) {
+        watch.unobserve(node);
+        node.style.setProperty('--d', Math.min(i * 70, 420) + 'ms');
+        node.classList.add('rv-on');
+        setTimeout(function () {
+          node.classList.remove('rv', 'rv-on');
+          node.style.removeProperty('--d');
+        }, 1200 + Math.min(i * 70, 420));
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    nodes.forEach(function (node) {
+      node.classList.add('rv');
+      watch.observe(node);
+    });
+  }
   function token() { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; } }
   function signOut() { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} location.reload(); }
   function api(path, options) {
@@ -1979,6 +2014,10 @@ const STAGE_JS = String.raw`
     return { draw: draw, quiet: function (on) { hush = Boolean(on); } };
   }
 `;
+
+/** 往下捲時淡進來的是哪幾塊（見 COMMON 的 revealOnScroll）。最上面那一段本來就有自己的進場動畫，不算 */
+const REVEAL_HOME = '#main > h2, #main > .lede, .features > div, #main > .more, .split > *, .band, .everyone, #main > .panel, #main > .cta';
+const REVEAL_FEATURES = 'section[id] > h2, .cards > .fcard';
 
 const HOME = String.raw`
   <section class="hero">
@@ -3782,8 +3821,8 @@ const LOST = String.raw`
 `;
 
 const PAGES = {
-  '/': ['home.title', HOME, HOME_JS],
-  '/features': ['features.title', FEATURES, FEATURES_JS],
+  '/': ['home.title', HOME, HOME_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')</script>'],
+  '/features': ['features.title', FEATURES, FEATURES_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')</script>'],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],
