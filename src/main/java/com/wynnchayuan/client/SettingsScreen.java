@@ -206,7 +206,7 @@ public final class SettingsScreen extends Screen {
      *
      * <p>第一列是「畫面上要不要有 WynnChaYuan 的披風」，每個人都有。第二列是自己那一件
      * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是去網站上傳。
-     * 上傳在網站上做（「披風一覽」那一列順便替瀏覽器登入），這裡只留移除。
+     * 上傳在網站上做：「上傳披風」打開網站的帳號頁，順便替瀏覽器登入。
      */
     private List<Row> fun() {
         List<Row> rows = new ArrayList<>();
@@ -219,6 +219,12 @@ public final class SettingsScreen extends Screen {
             rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
                     .label(t("fun.nocape.label")));
         }
+        // 上傳：打開網站的帳號頁（上傳在那裡），順便替瀏覽器登入
+        rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
+                .label(t("fun.upload.button"))
+                .run(() -> com.wynnchayuan.Presence.site("/account", true,
+                        url -> net.minecraft.client.Minecraft.getInstance().execute(
+                                () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
         rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
                 .label(t("fun.remove.button"))
                 .run(() -> com.wynnchayuan.Presence.remove(this::removed)));
