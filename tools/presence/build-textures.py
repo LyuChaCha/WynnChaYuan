@@ -5,7 +5,8 @@
     python tools/presence/build-textures.py                      把 textures/ 裡現有的檔打包成 demo-textures.js
     python tools/presence/build-textures.py --pack <資源包.zip>   先從資源包重組 textures/ 裡的介面材質，再打包
     python tools/presence/build-textures.py --icons              先重抓官方的物品圖示，再打包
-    python tools/presence/build-textures.py --shots <資料夾>      先重做兩張背景（world.png、town.png），再打包
+    python tools/presence/build-textures.py --shots <資料夾>      先重做兩張背景（world.png、street.png），再打包
+    python tools/presence/build-textures.py --skin <玩家名字>     先重抓背包裡那個人的皮膚（Mojang 的公開資料），再打包
     python tools/presence/build-textures.py --check              textures/ 與 demo-textures.js 對得上就以 0 結束
 
 使用者 2026-10-14：「材質部分可以使用 Wynncraft 的材質，可以不用生成」。功能頁與首頁那一面
@@ -17,7 +18,10 @@
 
   介面材質   伺服器資源包（玩過 Wynncraft 的人，客戶端的 downloads/ 底下有一份快取）
   物品圖示   官方的 CDN（cdn.wynncraft.com/nextgen/itemguide/，官方 API 的 icon 欄位指到的那一批）
-  背景       實機截圖（F1 拍的，畫面上沒有介面與玩家名字），裁切、縮小
+  背景       實機截圖（F1 拍的，畫面上沒有介面與玩家名字），裁切、縮小。兩張都在 Detlas 一帶——
+             預覽裡的人物是 22 等，背景要是那個等級會去的地方（使用者 2026-10-14 指出原本那兩張是 120 等的區域）。
+             street.png 是街上的隊伍尋找器：NPC 頭上的名牌先從截圖上拿掉了（網頁自己畫，才能跟著語言換）
+  皮膚       背包裡那個人：使用者自己的皮膚（Green_teaTW），Mojang 的 session server 查得到的公開資料
 
 資源包的 zip 被動過手腳（local header 的檔名長度是 0、PNG 的 zlib 校驗碼是錯的），一般的
 工具打不開，所以這裡自己解。材質裡 alpha 是 1 的像素是給它的 shader 看的記號，要當成透明。
@@ -269,9 +273,9 @@ def from_cdn():
 
 
 def from_shots(folder):
-    """背景：world.png、town.png 兩張實機截圖，裁成 960×480 的比例、縮到 960 寬。"""
+    """背景：world.png、street.png 兩張實機截圖，裁成 960×480 的比例、縮到 960 寬。"""
     from PIL import Image
-    for name in ('world', 'town'):
+    for name in ('world', 'street'):
         img = Image.open(os.path.join(folder, name + '.png')).convert('RGB')
         want = img.width * 480 // 960
         top = max(0, (img.height - want) * 2 // 5)
@@ -279,6 +283,26 @@ def from_shots(folder):
         os.makedirs(DIR, exist_ok=True)
         img.save(os.path.join(DIR, 'bg-' + name + '.webp'), quality=72, method=6)
         print('  bg-%s.webp' % name)
+
+
+def from_mojang(player):
+    """背包裡那個人的皮膚：名字 → UUID → 材質的網址，都是 Mojang 公開的查詢。"""
+    import urllib.request
+    from PIL import Image
+
+    def get(url):
+        with urllib.request.urlopen(url, timeout=30) as answer:
+            return answer.read()
+    uuid = json.loads(get('https://api.mojang.com/users/profiles/minecraft/' + player))['id']
+    profile = json.loads(get('https://sessionserver.mojang.com/session/minecraft/profile/' + uuid))
+    textures = json.loads(base64.b64decode(profile['properties'][0]['value']))['textures']
+    skin = textures['SKIN']
+    if (skin.get('metadata') or {}).get('model') == 'slim':
+        print('  注意：這個皮膚是細手臂的體型，網頁上那個人是照一般體型貼的')
+    img = Image.open(io.BytesIO(get(skin['url'].replace('http://', 'https://')))).convert('RGBA')
+    if img.size != (64, 64):
+        sys.exit('皮膚不是 64×64（%d×%d）：網頁上那個人只會貼這一種' % img.size)
+    save(img, 'skin.png')
 
 
 # ------------------------------------------------------------------ 打包
@@ -321,6 +345,8 @@ def main():
         from_cdn()
     if '--shots' in args:
         from_shots(args[args.index('--shots') + 1])
+    if '--skin' in args:
+        from_mojang(args[args.index('--skin') + 1])
     out = bundle()
     with io.open(TARGET, 'w', encoding='utf-8', newline='\n') as handle:
         handle.write(out)
