@@ -1618,7 +1618,8 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && !hist(elm).includes(await sha(mark(png(1056, 816), 16))) && !env.CORPUS.data.has('cape:' + elm.id));
 
   check('★ 披風一覽有排序、篩選與星星；管理的人多兩個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
-    'data-f="fav"', 'data-f="hist"', 'data-f="hidden"', 'data-f="pending"', 'id="fav"', 'id="approve"', 'id="review"', 'id="forget"']
+    'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="hidden"', 'value="pending"', 'id="skinpick"',
+    'id="fav"', 'id="approve"', 'id="review"', 'id="forget"']
     .every((w) => pages['/capes'].includes(w)) && pages['/capes'].includes("'/cape/star'") && pages['/capes'].includes("'/capes/mine'"));
   check('★ 帳號頁有公開的開關；管理頁有審核名單', pages['/account'].includes('id="public"') && pages['/account'].includes("'/cape/public'")
     && pages['/account'].includes('id="pending"') && pages['/admin'].includes('id="reviews"') && pages['/admin'].includes("'/admin/review'"));

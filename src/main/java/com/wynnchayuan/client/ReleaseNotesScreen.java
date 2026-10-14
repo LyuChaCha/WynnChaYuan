@@ -29,6 +29,7 @@ public final class ReleaseNotesScreen extends CanvasScreen {
 
     public ReleaseNotesScreen(Screen parent) {
         super(T.c("notes.title"), parent);
+        com.wynnchayuan.SelfUpdate.noteScreenOpened();
         this.view = new NotesView(SHELL, new NotesView.Host() {
             @Override
             public List<String> versions() {
