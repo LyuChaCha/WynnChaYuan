@@ -1390,7 +1390,13 @@ public final class TranslationStore {
      * 這一個預設是譯名——內容書的標題一直都是翻的。
      */
     public void setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
-        this.pageNameMode = mode == null ? com.wynnchayuan.CollectorConfig.ItemNames.ON : mode;
+        com.wynnchayuan.CollectorConfig.ItemNames next =
+                mode == null ? com.wynnchayuan.CollectorConfig.ItemNames.ON : mode;
+        if (next != pageNameMode) {
+            // Lootrun 使命名是在查表時改的（LootrunNames），繪製端的快取要跟著作廢
+            generation++;
+        }
+        this.pageNameMode = next;
     }
 
     /** 見 {@link #setPageNameMode}。 */
@@ -2097,7 +2103,8 @@ public final class TranslationStore {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return withOriginal(hit, template.strip());
         }
-        return hit;
+        // Lootrun 使命名跟著「任務與洞窟名稱」的設定，見 LootrunNames
+        return holdAppended ? hit : LootrunNames.apply(template, hit, pageNameMode);
     }
 
     /**
