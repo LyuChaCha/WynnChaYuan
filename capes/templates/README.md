@@ -18,7 +18,7 @@ Draw your cape on one of the templates, then upload it at <https://wynnchayuan.c
 - **Blue** is the front, the side others see from behind you (10×16 cells). **Red** is the back, the side against your body (10×16 cells). **Cyan** is the border: top, bottom, left and right, 1 cell thick. The two top corners are not used.
 - The image must be exactly one of the seven sizes: 22×17, 44×34, 88×68, 176×136, 352×272, 704×544 or 1056×816. In game a cape is drawn at 352×272 at most, so the two largest sizes look the same there; they are mainly sharper on the website.
 - PNG is static and open to everyone, up to 1 MB. GIF (up to 120 frames, every frame on this same layout) and the 20 MB limit are for developers, sponsors and contributors.
-- Political, obscene, unlawful or racist content is not allowed and will be removed.
+- Political, obscene, unlawful or racist content is not allowed, nor is advertising (commercial promotion, other servers, real-money trading such as selling LE for cash, real-life contact details; guild promotion is fine) or anything else against Wynncraft's rules. Such capes are removed. Do not abuse uploads: 3 uploads within an hour means a 12-hour wait.
 
 ## 中文
 
@@ -36,4 +36,4 @@ Draw your cape on one of the templates, then upload it at <https://wynnchayuan.c
 - **藍色**是正面，別人從你背後看到的那一面（10×16 格）；**紅色**是背面，貼著身體的那一面（10×16 格）；**青色**是邊框：上緣、下緣、左右兩邊，1 格厚。左上、右上兩個角用不到。
 - 圖片必須剛好是七種尺寸之一：22×17、44×34、88×68、176×136、352×272、704×544、1056×816。遊戲裡披風最多用到 352×272，更大的兩種在遊戲裡看起來一樣，主要是網站上比較清楚。
 - PNG 是靜態，大家都能傳，1 MB 以內。GIF（最多 120 格，每一格都照這個版型畫）與 20 MB 的上限給開發者、贊助者、貢獻者。
-- 不可以上傳政治、不雅、違反法規、種族歧視的內容，違規的會被移除。
+- 不可以上傳政治、不雅、違反法規、種族歧視的內容，也不可以打廣告（商業宣傳、其他伺服器、真錢交易例如用現金買賣 LE、現實生活的聯絡方式；公會宣傳不算）或其他違反 Wynncraft 規章的內容，違規的會被移除。不要濫用上傳：一小時內傳 3 次就要等 12 小時。
