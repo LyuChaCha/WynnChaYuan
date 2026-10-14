@@ -1085,6 +1085,8 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
         && js.includes("button.addEventListener('focus', pick)") && js.includes("el('button', 'slot')"));
       check('★ 沒穿裝備的格子有影子：四件防具、兩個戒指、手環、項鍊', (js.slice(js.indexOf('function drawItems'), js.indexOf('function drawBar')).match(/\[\d+, \d+, \d\]/g) || []).length === 8
         && js.includes('var(--t-slots)'));
+      check('★ 說明框的字離框的外緣 12 格（遊戲的規格），物品那一面的框照內容的寬度、有上下限', /\n  \.tip \{[^}]*padding: 1\.2em 1\.2em/.test(js)
+        && /\.duo \.tip \{[^}]*width: max-content; min-width: [\d.]+em; max-width: [\d.]+em/.test(js));
       check('★ 人物的等級是六角形上描邊的白字，不會被怪物等級那顆灰框的樣式蓋到', /\.hudbar \.lv \{[^}]*color: #fff/.test(js)
         && !/\.scr \.lv\b/.test(js) && js.includes('.scr .mlv {'));
     }
