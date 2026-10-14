@@ -1085,6 +1085,14 @@ tasks.register('runLootrunBoonChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLootrunBoonChecks' }
 
+tasks.register('runLootrunMissionChecks', JavaExec) {
+    group = 'verification'
+    description = 'Lootrun 使命名：不被同名裝備搶走，照內容名稱設定附原文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LootrunMissionTest'
+}
+tasks.named('check') { dependsOn 'runLootrunMissionChecks' }
+
 tasks.register('runSelfNameChecks', JavaExec) {
     group = 'verification'
     description = 'Wynncraft 的暱稱也要抽成 {u}'
