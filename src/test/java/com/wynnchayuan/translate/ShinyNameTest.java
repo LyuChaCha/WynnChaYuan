@@ -40,6 +40,13 @@ public final class ShinyNameTest {
         if (bare != null) {
             is(tw, "Shiny " + bare, twShiny + " " + bare);
         }
+        // ★ 實機的名稱列帶著外框圖示與結尾的 Shiny 記號（{#}Shiny Fatal֎{#}）。
+        // 使用者 2026-10-14：「Shiny Masterwork 武器名稱不會被翻譯到」——原本只認裸的「Shiny 名字」
+        is(tw, "{#}Shiny Masterwork Az֎{#}", "{#}" + twShiny + tw.lookup("Masterwork Az") + "֎{#}");
+        is(tw, "{#}{#}{#}Shiny Sunstar{#}", "{#}{#}{#}" + twShiny + sunstarTw + "{#}");
+        String mwFatal = tw.lookup("Masterwork Fatal");
+        check("繁中的 Masterwork Fatal 有譯名（實際 " + mwFatal + "）",
+              mwFatal != null && !mwFatal.contains("Fatal"));
         // 真的叫 Shiny 的物品照自己的譯名
         is(tw, "Shiny Mask", "閃亮面具");
         // 後面不是裝備名的不動

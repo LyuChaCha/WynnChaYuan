@@ -2443,7 +2443,40 @@ public final class TranslationStore {
         if (template == null || !translateNames) {
             return null;
         }
+        // 名稱列實際送來的樣子帶著外框圖示，結尾還黏著一個 Shiny 記號：
+        // 「{#}Shiny Fatal֎{#}」。原本只認裸的「Shiny 名字」，於是 Shiny 裝備的名稱
+        // 一律查不到（使用者 2026-10-14：「Shiny Masterwork 武器名稱不會被翻譯到」）。
+        // 圖示與記號剝掉再認，翻完原樣接回去。
         String key = template.strip();
+        String head = "";
+        String tail = "";
+        while (key.startsWith(ICON)) {
+            head += ICON;
+            key = key.substring(ICON.length());
+        }
+        while (key.endsWith(ICON)) {
+            tail = ICON + tail;
+            key = key.substring(0, key.length() - ICON.length());
+        }
+        int end = key.length();
+        while (end > 0 && shinyMark(key.charAt(end - 1))) {
+            end--;
+        }
+        tail = key.substring(end) + tail;
+        key = key.substring(0, end).strip();
+        if (head.isEmpty() && tail.isEmpty()) {
+            return shinyName(key);
+        }
+        String core = shinyName(key);
+        return core == null ? null : head + core + tail;
+    }
+
+    /** 名稱結尾的記號（֎ 之類）：不是字母、數字，也不是名字裡會出現的標點。 */
+    private static boolean shinyMark(char c) {
+        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c) && "'.)!?-".indexOf(c) < 0;
+    }
+
+    private String shinyName(String key) {
         if (!key.startsWith(SHINY)) {
             return null;
         }
