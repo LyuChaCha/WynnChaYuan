@@ -205,37 +205,23 @@ public final class SettingsScreen extends Screen {
      * 披風。
      *
      * <p>第一列是「畫面上要不要有 WynnChaYuan 的披風」，每個人都有。第二列是自己那一件
-     * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是怎麼先預覽。
+     * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是去網站上傳。
+     * 上傳在網站上做（「披風一覽」那一列順便替瀏覽器登入），這裡只留移除。
      */
     private List<Row> fun() {
         List<Row> rows = new ArrayList<>();
         rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
         String self = com.wynnchayuan.render.Badges.selfName();
         java.util.UUID me = this.minecraft == null ? null : this.minecraft.getUser().getProfileId();
-        if (com.wynnchayuan.cape.Capes.hasCape(self, me, true)) {
+        if (com.wynnchayuan.cape.Capes.hasCape(self, me)) {
             rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
         } else {
             rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
                     .label(t("fun.nocape.label")));
         }
-        rows.add(Row.action("fun.folder", t("fun.folder"), t("fun.folder.hint"))
-                .label(t("fun.folder.button"))
-                .run(() -> {
-                    try {
-                        java.nio.file.Path dir = com.wynnchayuan.cape.Capes.folder();
-                        java.nio.file.Files.createDirectories(dir);
-                        Util.getPlatform().openPath(dir);
-                    } catch (Exception e) {
-                        say(T.s("fun.folder.failed"), Ui.RED);
-                    }
-                }));
-        // 上傳：送的是資料夾裡那張 self.png／self.gif——先在自己身上看過，再決定要不要給別人看
-        rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
-                .label(t("fun.upload.button"))
-                .run(this::uploadCape));
         rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
                 .label(t("fun.remove.button"))
-                .run(() -> com.wynnchayuan.Presence.remove(result -> capeResult(result, true))));
+                .run(() -> com.wynnchayuan.Presence.remove(this::removed)));
         // 披風一覽：網站上的一頁。從這裡開會順便替瀏覽器登入（網站自己沒辦法確認帳號），
         // 登入之後可以在網站上傳；開發者還看得到管理的頁面。
         rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
@@ -246,57 +232,11 @@ public final class SettingsScreen extends Screen {
         return rows;
     }
 
-    private void uploadCape() {
-        java.nio.file.Path file = com.wynnchayuan.cape.Capes.localFile();
-        if (file == null) {
-            say(T.s("fun.upload.nofile"), Ui.RED);
-            return;
-        }
-        try {
-            byte[] bytes = java.nio.file.Files.size(file) > com.wynnchayuan.cape.CapeRules.MAX_BYTES
-                    ? new byte[com.wynnchayuan.cape.CapeRules.MAX_BYTES + 1]
-                    : java.nio.file.Files.readAllBytes(file);
-            com.wynnchayuan.cape.CapeRules.Problem problem =
-                    com.wynnchayuan.cape.CapeRules.check(bytes);
-            if (problem != null) {
-                say(T.s("fun.upload." + problem.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
-                return;
-            }
-            // GIF 只有名單上的成員能傳，一般玩家的檔案上限也比較小（1 MB）。
-            // 登記站會再擋一次，這裡先說，省一趟來回。
-            // 特別名單上的人不在 credits.json 裡，是登入時登記站說的（Presence#member）
-            boolean member = !com.wynnchayuan.render.Badges.registered(
-                    com.wynnchayuan.render.Badges.selfName()).isEmpty()
-                    || com.wynnchayuan.Presence.member();
-            if (file.getFileName().toString().endsWith(".gif") && !member) {
-                say(T.s("fun.upload.gif_members_only"), Ui.RED);
-                return;
-            }
-            if (bytes.length > com.wynnchayuan.cape.CapeRules.limitFor(member)) {
-                say(T.s("fun.upload.too_large"), Ui.RED);
-                return;
-            }
-            int[] size = com.wynnchayuan.cape.CapeRules.size(bytes);
-            uploadedSize = size == null ? "" : size[0] + "\u00d7" + size[1];
-            say(T.s("fun.upload.sending"), Ui.TEXT_3);
-            com.wynnchayuan.Presence.upload(bytes,
-                    file.getFileName().toString().endsWith(".gif") ? "image/gif" : "image/png",
-                    result -> capeResult(result, false));
-        } catch (Exception e) {
-            say(T.s("fun.upload.failed"), Ui.RED);
-        }
-    }
-
-    /** 剛剛送出去的那張圖多大（「176×136」），上傳成功時說給玩家聽。 */
-    private volatile String uploadedSize = "";
-
-    /** 上傳／移除的結果，回到畫圖的執行緒上說。 */
-    private void capeResult(com.wynnchayuan.Presence.Result result, boolean removing) {
+    /** 移除的結果，回到畫圖的執行緒上說。 */
+    private void removed(com.wynnchayuan.Presence.Result result) {
         net.minecraft.client.Minecraft.getInstance().execute(() -> {
             if (result == com.wynnchayuan.Presence.Result.DONE) {
-                // 上傳成功順便說這件披風多大（使用者 2026-10-12）
-                say(removing ? T.s("fun.remove.done") : T.s("fun.upload.done", uploadedSize),
-                        Ui.GREEN);
+                say(T.s("fun.remove.done"), Ui.GREEN);
             } else {
                 say(T.s("fun.upload." + result.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
             }

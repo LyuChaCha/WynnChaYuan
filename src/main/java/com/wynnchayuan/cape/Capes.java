@@ -39,13 +39,13 @@ import java.util.regex.Pattern;
  * 跟葉子徽章同一份名單——{@code credits.json} 的成員多一欄 {@code "cape": "檔名"}，
  * 圖檔放在倉庫根目錄的 {@code capes/}。名單與圖都是下載來的，模組不為披風送任何東西。
  *
- * <p>另外，自己的資料夾 {@code config/wynnchayuan/capes/} 裡放一個 {@code self.png} 或
- * {@code self.gif}，自己身上就會穿著它——<b>只有自己看得到</b>，給還沒登記的人先看效果、
- * 給做圖的人邊改邊看（存檔之後幾秒內就換上）。
- *
  * <h2>上傳的披風</h2>
- * 玩家也可以在 F6 上傳自己的披風（見 {@link Presence#upload}）。登記站的名單會寫誰傳了、
+ * 玩家在網站（wynnchayuan.com/capes）上傳自己的披風。登記站的名單會寫誰傳了、
  * 是哪一版；有上傳的人用上傳的那一件，沒有才看 {@code credits.json} 登記的。
+ *
+ * <p>原本還能把 {@code self.png}／{@code self.gif} 放進 {@code config/wynnchayuan/capes/}
+ * 先在自己身上預覽、再從 F6 上傳。網站有了上傳與預覽之後拿掉了（使用者 2026-10-14：
+ * 「披風部分希望可以把本地讀取移除掉了，現在都用網站上傳了」）。那個資料夾現在只放下載來的快取。
  *
  * <h2>別人看不看得到</h2>
  * 預設大家都看得到。本人在 F6 關掉「穿上我的披風」，那個選擇跟著報到送出去，
@@ -76,8 +76,6 @@ public final class Capes {
     /** 失敗之後多久再試。 */
     private static final long RETRY_MS = 5 * 60_000L;
 
-    /** 自己資料夾裡那張預覽圖多久看一次有沒有換。 */
-    private static final long LOCAL_CHECK_MS = 2000;
 
     private static final Duration TIMEOUT = Duration.ofSeconds(20);
 
@@ -140,106 +138,15 @@ public final class Capes {
         return Map.copyOf(out);
     }
 
-    /** 放自己預覽圖的資料夾。 */
-    public static Path folder() {
+    /** 下載來的披風放在這個資料夾底下的 {@code cache/}。 */
+    private static Path folder() {
         Path dir = WynnChaYuan.configDir();
         return dir == null ? null : dir.resolve("capes");
     }
 
-    private static volatile long localChecked;
-    private static volatile String localKey;
-
-    /** 自己資料夾裡的預覽圖（{@code self.gif} 優先）；沒有就回 {@code null}。隔幾秒才真的去看檔案。 */
-    private static String localKey() {
-        long now = System.currentTimeMillis();
-        if (now - localChecked < LOCAL_CHECK_MS) {
-            return localKey;
-        }
-        localChecked = now;
-        String found = null;
-        try {
-            Path dir = folder();
-            if (dir != null) {
-                for (String name : selfFiles()) {
-                    Path file = dir.resolve(name);
-                    if (Files.isRegularFile(file)) {
-                        // 改過的檔時間不同，鍵就不同：存檔之後自動換上新的
-                        found = "local:" + name + ":" + Files.getLastModifiedTime(file).toMillis();
-                        break;
-                    }
-                }
-            }
-        } catch (Exception e) {
-            found = null;
-        }
-        localKey = found;
-        return found;
-    }
-
-    /**
-     * 自己資料夾裡認哪幾個檔名。
-     *
-     * <p>會動的披風（GIF）是名單成員才有的（使用者 2026-10-12：「應該是只能用 PNG，否則別人
-     * 上傳 gif 一般用戶也能使用」）：不在名單上的人只認 {@code self.png}，放了 {@code self.gif}
-     * 也不會穿上——不然從一覽把別人的 GIF 抓下來放進資料夾，自己身上就有了。
-     */
-    static String[] selfFiles() {
-        return selfFiles(!com.wynnchayuan.render.Badges.registered(
-                com.wynnchayuan.render.Badges.selfName()).isEmpty()
-                || Presence.member());
-    }
-
-    static String[] selfFiles(boolean member) {
-        return member ? new String[] {"self.gif", "self.png"} : new String[] {"self.png"};
-    }
-
-    /** 自己資料夾裡那張預覽圖的路徑（{@code self.gif} 優先）；沒有就回 {@code null}。 */
-    public static Path localFile() {
-        try {
-            Path dir = folder();
-            if (dir != null) {
-                for (String name : selfFiles()) {
-                    if (Files.isRegularFile(dir.resolve(name))) {
-                        return dir.resolve(name);
-                    }
-                }
-            }
-        } catch (Exception e) {
-            // 當成沒有
-        }
-        return null;
-    }
-
-    /** 這個人有披風嗎（自己的話，資料夾裡的預覽圖也算）。 */
-    public static boolean hasCape(String account, java.util.UUID uuid, boolean self) {
-        return registered(account) != null || Presence.capeVersion(uuid) > 0
-                || (self && localKey() != null);
-    }
-
-    /**
-     * 自己身上穿哪一件：資料夾裡的預覽圖，還是登記站上的那一件。
-     *
-     * <p>原本預覽圖一律優先（它是「正在改的那一張」）。但登記站上的那一件現在也可能是後來才
-     * 換的——在網站的披風一覽按了「穿上這件」或「復原」（使用者 2026-10-13）——那時候別人
-     * 看到的已經換了，自己卻還穿著資料夾裡的舊圖。所以改成<b>誰比較新就穿誰</b>：預覽圖的
-     * 時間是檔案最後修改的時間，登記站那一件的版本就是它換上的時間。改了預覽圖（還沒上傳）
-     * 是它比較新，照舊先看到它；之後在網站換了一件，就是那一件比較新。
-     *
-     * @param local    預覽圖的鍵（{@code local:檔名:修改時間}）；沒有是 {@code null}
-     * @param uploaded 登記站那一件的鍵；沒有是 {@code null}
-     * @param version  登記站那一件的版本（換上的時間，毫秒）
-     */
-    static String ownKey(String local, String uploaded, long version) {
-        if (local == null || uploaded == null) {
-            return local != null ? local : uploaded;
-        }
-        long edited;
-        try {
-            edited = Long.parseLong(local.substring(local.lastIndexOf(':') + 1));
-        } catch (NumberFormatException e) {
-            return local;                  // 看不懂時間就照舊：預覽圖優先
-        }
-        return version > edited ? uploaded : local;
+    /** 這個人有披風嗎。 */
+    public static boolean hasCape(String account, java.util.UUID uuid) {
+        return registered(account) != null || Presence.capeVersion(uuid) > 0;
     }
 
     /** 上傳的披風在這裡的鍵：代碼加版本，換了一件鍵就不同。 */
@@ -258,24 +165,13 @@ public final class Capes {
         if (account == null || config == null || !config.capes()) {
             return null;
         }
-        String key;
-        if (self) {
-            if (!config.ownCape()) {
-                return null;
-            }
-            // 資料夾裡的預覽圖與登記站上的那一件：誰比較新就穿誰（見 ownKey）
-            key = ownKey(localKey(), uploadedKey(uuid), Presence.capeVersion(uuid));
-            if (key == null) {
-                key = registered(account);
-            }
-        } else {
-            if (Presence.capeHidden(uuid)) {
-                return null;               // 本人關掉了
-            }
-            key = uploadedKey(uuid);
-            if (key == null) {
-                key = registered(account);
-            }
+        if (self ? !config.ownCape() : Presence.capeHidden(uuid)) {
+            return null;                   // 自己關掉了「穿上我的披風」／本人關掉了
+        }
+        // 有上傳的用上傳的那一件，沒有才看 credits.json 登記的
+        String key = uploadedKey(uuid);
+        if (key == null) {
+            key = registered(account);
         }
         if (key == null) {
             return null;
@@ -356,8 +252,7 @@ public final class Capes {
 
     private static void load(String key) {
         try {
-            byte[] bytes = key.startsWith("local:") ? readLocal(key.split(":")[1])
-                    : key.startsWith("up:") ? readUploaded(key) : readRemote(key);
+            byte[] bytes = key.startsWith("up:") ? readUploaded(key) : readRemote(key);
             List<CapeImage.Frame> frames = bytes == null ? null : decode(bytes);
             if (frames == null || frames.isEmpty()) {
                 STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));
@@ -368,11 +263,6 @@ public final class Capes {
             com.wynnchayuan.translate.ErrorDebug.note("cape.load", key, t);
             STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));
         }
-    }
-
-    private static byte[] readLocal(String name) throws Exception {
-        Path file = folder().resolve(name);
-        return Files.size(file) > MAX_BYTES ? null : Files.readAllBytes(file);
     }
 
     /** 別人上傳的披風：鍵裡帶著版本，同一版的內容不會變，抓過一次就一直用本機那一份。 */
@@ -502,16 +392,6 @@ public final class Capes {
             }
             Object old = STATE.put(key, new Loaded(textures, ends));
             release(old);
-            // 預覽圖換了新的：舊的那幾張貼圖不會再用到
-            if (key.startsWith("local:")) {
-                STATE.entrySet().removeIf(e -> {
-                    boolean stale = e.getKey().startsWith("local:") && !e.getKey().equals(key);
-                    if (stale) {
-                        release(e.getValue());
-                    }
-                    return stale;
-                });
-            }
         } catch (Throwable t) {
             com.wynnchayuan.translate.ErrorDebug.note("cape.register", key, t);
             STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));

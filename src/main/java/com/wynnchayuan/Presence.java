@@ -41,7 +41,7 @@ import java.util.function.Consumer;
  *       （葉子要不要彩色、要展示哪幾個身分）——別人畫你的名牌時照這個畫。</li>
  *   <li><b>綁定網站帳號</b>（{@link #linkBody}）：玩家自己打 {@code /wcy link <綁定碼>} 才送，
  *       送的就是他打的那組碼。</li>
- *   <li><b>上傳披風</b>：玩家在 F6 按了「上傳」才送，送的是他自己放進資料夾的那張圖。</li>
+ *   <li><b>上傳披風</b>：模組不送圖了，玩家在網站上傳（見 {@link #gallery}）。</li>
  * </ul>
  * 沒有所在的世界、沒有任何遊戲內容。F6 可以關掉報到；關掉之後照樣看得到別人，
  * 只是別人看不到你。
@@ -661,7 +661,7 @@ public final class Presence {
 
     // ------------------------------------------------------------ 披風
 
-    /** 上傳／移除披風的結果。 */
+    /** 移除披風的結果（理由跟網站上傳共用一套，登記站回的都認得）。 */
     public enum Result {
         DONE, TOO_LARGE, BAD_SIZE, BAD_FORMAT, TOO_MANY_FRAMES, NOT_LISTED, GIF_MEMBERS_ONLY,
         BANNED, OFF,
@@ -692,18 +692,6 @@ public final class Presence {
             case "login first" -> Result.LOGIN_FAILED;
             default -> Result.FAILED;
         };
-    }
-
-    /**
-     * 上傳自己的披風。只有玩家在 F6 按了「上傳」才會走到這裡。
-     *
-     * @param bytes 圖檔本體（呼叫端已經照 {@code CapeRules} 驗過一次）
-     * @param done  結果，在背景執行緒上叫
-     */
-    public static void upload(byte[] bytes, String contentType, Consumer<Result> done) {
-        WORKER.execute(() -> done.accept(change(HttpRequest.newBuilder(
-                URI.create(API + "/cape")).header("Content-Type", contentType)
-                .PUT(HttpRequest.BodyPublishers.ofByteArray(bytes)))));
     }
 
     /** 拿掉自己上傳的披風。 */
