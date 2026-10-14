@@ -600,6 +600,7 @@ const STYLE = String.raw`
   .view .side { background: var(--panel); }
   canvas.model { display: block; width: 100%; height: 440px; align-self: center; cursor: grab; }
   canvas.model:active { cursor: grabbing; }
+  #skinpick { align-self: flex-start; }
   .side { padding: 18px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; min-width: 0; }
   .side h2 { margin: 0; font-size: 16px; }
   .side dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13px; }
@@ -756,7 +757,7 @@ export const TEXT = {
     'capes.h1': '披風一覽',
     'capes.lede': 'WynnChaYuan 玩家上傳的披風。點一件可以轉著看，登入之後還能直接穿上。',
     'capes.mine': '上傳我的披風',
-    'capes.sort': '排序', 'capes.filter': '篩選',
+    'capes.sort': '排序', 'capes.filter': '篩選', 'capes.f.format': '格式', 'capes.f.show': '顯示',
     'capes.s.new': '最新上傳', 'capes.s.old': '最早上傳', 'capes.s.worn': '最多人使用', 'capes.s.stars': '人氣最高', 'capes.s.recent': '最近有人穿上',
     'capes.f.all': '全部', 'capes.f.fav': '我的最愛', 'capes.f.hist': '我用過的', 'capes.f.hidden': '不公開', 'capes.f.pending': '待審核',
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
@@ -887,6 +888,7 @@ export const TEXT = {
       count: '共 {n} 件（相同的圖算一件）', empty: '還沒有人上傳披風。', users: '{n} 人', wearing: '{n} 人',
       card: '{t} 披風，{n} 人使用',
       drag: '拖曳可以旋轉。', no3d: '立體檢視載不起來，只能看平面的圖。',
+      skinPick: '人物的外觀', skinPlain: '無外觀',
       confirmDel: '刪除這件披風（{n} 個人在用）？',
       confirmBan: '刪除這件披風，並封禁用它的 {n} 個人（之後不能再上傳）？',
       expired: '沒有成功（{s}）。登入一天過期，請從遊戲裡重新開一次。',
@@ -1024,7 +1026,7 @@ export const TEXT = {
     'capes.h1': 'Cape gallery',
     'capes.lede': 'Capes uploaded by WynnChaYuan players. Click one to turn it around; once signed in, you can also wear it.',
     'capes.mine': 'Upload my cape',
-    'capes.sort': 'Sort by', 'capes.filter': 'Filter',
+    'capes.sort': 'Sort by', 'capes.filter': 'Filter', 'capes.f.format': 'Format', 'capes.f.show': 'Show',
     'capes.s.new': 'Newest', 'capes.s.old': 'Oldest', 'capes.s.worn': 'Most worn', 'capes.s.stars': 'Most popular', 'capes.s.recent': 'Recently put on',
     'capes.f.all': 'All', 'capes.f.fav': 'My favourites', 'capes.f.hist': 'Worn before', 'capes.f.hidden': 'Not public', 'capes.f.pending': 'Awaiting review',
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
@@ -1155,6 +1157,7 @@ export const TEXT = {
       count: '{n} capes (identical images count once)', empty: 'Nobody has uploaded a cape yet.', users: '{n}', wearing: '{n} wearing',
       card: '{t} cape, worn by {n}',
       drag: 'Drag to rotate.', no3d: 'The 3D view could not load; only the flat image is shown.',
+      skinPick: 'Player look', skinPlain: 'No skin',
       confirmDel: 'Delete this cape (worn by {n})?',
       confirmBan: 'Delete this cape and ban the {n} players wearing it from uploading?',
       expired: 'That did not work ({s}). A sign-in lasts one day - open the site from the game again.',
@@ -2532,6 +2535,17 @@ const VIEWER = String.raw`
     g.drawImage(source, 0, 0, 22 * k, 17 * k);
     return c;
   }
+  /* 人偶穿誰的外觀：預設是玩家自己的 skin（沒登入的人看 Green_teaTW），可以切回無外觀的灰木偶。
+     選擇只記在這個瀏覽器裡 */
+  var SKIN_KEY = 'wcy-cape-skin';
+  function skinMode() { try { return localStorage.getItem(SKIN_KEY) === 'plain' ? 'plain' : 'skin'; } catch (e) { return 'skin'; } }
+  function setSkinMode(mode) { try { localStorage.setItem(SKIN_KEY, mode); } catch (e) {} }
+  function dress(viewer, name) {
+    if (skinMode() === 'plain' || !name) { viewer.loadSkin(mannequin()); return; }
+    var asked = viewer.dressed = name;
+    Promise.resolve(viewer.loadSkin('https://minotar.net/skin/' + encodeURIComponent(name), { model: 'auto-detect' }))
+      .catch(function () { if (viewer.dressed === asked) viewer.loadSkin(mannequin()); });
+  }
   var playing = 0;
   function stopCape() { playing++; }
   function makeViewer(canvas) {
@@ -2614,6 +2628,22 @@ const CAPES = String.raw`
   </details>
   <div class="bar">
     <span class="count" id="count"></span>
+    <label class="sortby" for="kind">%%capes.f.format%%
+      <select class="pick" id="kind">
+        <option value="all">%%capes.f.all%%</option>
+        <option value="png">PNG</option>
+        <option value="gif">GIF</option>
+      </select>
+    </label>
+    <label class="sortby" for="scope" id="scope-box" hidden>%%capes.f.show%%
+      <select class="pick" id="scope">
+        <option value="all">%%capes.f.all%%</option>
+        <option value="fav">%%capes.f.fav%%</option>
+        <option value="hist">%%capes.f.hist%%</option>
+        <option value="hidden">%%capes.f.hidden%%</option>
+        <option value="pending">%%capes.f.pending%%</option>
+      </select>
+    </label>
     <label class="sortby" for="sort">%%capes.sort%%
       <select class="pick" id="sort">
         <option value="new">%%capes.s.new%%</option>
@@ -2624,15 +2654,6 @@ const CAPES = String.raw`
       </select>
     </label>
     <a class="btn" href="/account" style="margin-left:auto">%%capes.mine%%</a>
-  </div>
-  <div class="seg filters" id="filters" role="group" aria-label="%%capes.filter%%">
-    <button type="button" data-f="all" aria-pressed="true">%%capes.f.all%%</button>
-    <button type="button" data-f="png" aria-pressed="false">PNG</button>
-    <button type="button" data-f="gif" aria-pressed="false">GIF</button>
-    <button type="button" data-f="fav" aria-pressed="false" hidden>%%capes.f.fav%%</button>
-    <button type="button" data-f="hist" aria-pressed="false" hidden>%%capes.f.hist%%</button>
-    <button type="button" data-f="hidden" aria-pressed="false" hidden>%%capes.f.hidden%%</button>
-    <button type="button" data-f="pending" aria-pressed="false" hidden>%%capes.f.pending%%</button>
   </div>
   <p class="notice" id="gone" role="status" hidden></p>
   <div class="grid" id="grid"></div>
@@ -2656,6 +2677,10 @@ const CAPES = String.raw`
         <p class="hint" id="idle-note" hidden style="color:var(--gold)"></p>
         <ul class="owners" id="owners" hidden></ul>
         <p class="hint" id="hint"></p>
+        <div class="seg" id="skinpick" role="group">
+          <button type="button" data-s="skin" aria-pressed="true"></button>
+          <button type="button" data-s="plain" aria-pressed="false"></button>
+        </div>
         <div class="wearbox" id="wearbox" hidden>
           <p class="hint" id="wear-note" hidden></p>
           <button class="btn primary" id="wear">%%view.wear%%</button>
@@ -2688,7 +2713,8 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var favs = {};                         /* 我的最愛：{雜湊: true} */
   var past = [];                         /* 我用過的（新的在前） */
   var sort = 'new';
-  var filter = 'all';
+  var kind = 'all';                      /* 格式：all／png／gif */
+  var scope = 'all';                     /* 顯示哪些：all／fav／hist／hidden／pending；跟格式可以疊在一起 */
   var keep = 7 * 86400000;               /* 沒有人穿的披風留多久（伺服器說了算，見 load） */
   var serverNow = Date.now();
   document.getElementById('count').textContent = L.loading;
@@ -2733,18 +2759,19 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
 
   /* ---- 這一頁現在該列哪幾件：照篩選挑、照排序排 ---- */
   function listNow() {
-    if (filter === 'hist') {
+    function format(cape) { return kind === 'all' || cape.t === kind; }
+    if (scope === 'hist') {
       /* 我用過的：照用的時間排。一覽上還有的拿一覽那一筆（才有人數與星星），沒有的自己拼一筆 */
       return past.map(function (one) {
         var found = all.filter(function (cape) { return cape.h === one.h; })[0];
         return found || { h: one.h, t: one.t, s: one.s, x: one.x, y: one.y, v: one.at, c: one.at, ids: [], stars: 0, gone: true };
-      });
+      }).filter(format);
     }
     var out = all.filter(function (cape) {
-      if (filter === 'png' || filter === 'gif') return cape.t === filter;
-      if (filter === 'fav') return favs[cape.h];
-      if (filter === 'hidden') return cape.hidden && !cape.pending;
-      if (filter === 'pending') return cape.pending;
+      if (!format(cape)) return false;
+      if (scope === 'fav') return favs[cape.h];
+      if (scope === 'hidden') return cape.hidden && !cape.pending;
+      if (scope === 'pending') return cape.pending;
       return true;
     });
     var by = {
@@ -2787,7 +2814,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     count.replaceChildren(parts[0], el('b', '', String(items.length)), parts[1] || '');
     grid.replaceChildren();
     if (!items.length) {
-      grid.append(el('div', 'empty', filter === 'fav' ? L.emptyFav : filter === 'hist' ? L.emptyHist : all.length ? L.emptyFilter : L.empty));
+      grid.append(el('div', 'empty', scope === 'fav' && kind === 'all' ? L.emptyFav : scope === 'hist' && kind === 'all' ? L.emptyHist : all.length ? L.emptyFilter : L.empty));
     }
     items.forEach(function (cape, index) {
       var card = el('div', 'card');
@@ -2868,7 +2895,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     back.hidden = !(on && mine.worn);
     back.textContent = mine && mine.back ? L.restoreOwn : L.takeOff;
     /* 我用過、現在沒穿的那幾件可以從紀錄拿掉 */
-    document.getElementById('forget').hidden = !(filter === 'hist' && !on);
+    document.getElementById('forget').hidden = !(scope === 'hist' && !on);
   }
   function show(cape) {
     current = cape;
@@ -2913,10 +2940,27 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     dialog.showModal();
     var hint = document.getElementById('hint');
     if (!viewer) viewer = makeViewer(document.getElementById('model'));
+    document.getElementById('skinpick').hidden = !viewer;
     if (!viewer) { hint.textContent = L.no3d; return; }
     hint.textContent = L.drag;
+    pickSkin();
+    slideAll();
     wear(viewer, url(cape), cape.t === 'gif');
   }
+  /* 人偶穿誰：登入並綁定了帳號的穿自己的，其他人看 Green_teaTW */
+  function wearer() { return member() && visitor.name ? visitor.name : 'Green_teaTW'; }
+  var skinButtons = Array.prototype.slice.call(document.querySelectorAll('#skinpick button'));
+  document.getElementById('skinpick').setAttribute('aria-label', L.skinPick);
+  skinButtons[1].textContent = L.skinPlain;
+  function pickSkin() {
+    var mode = skinMode();
+    skinButtons[0].textContent = wearer();
+    skinButtons.forEach(function (button) { button.setAttribute('aria-pressed', button.dataset.s === mode ? 'true' : 'false'); });
+    if (viewer) dress(viewer, wearer());
+  }
+  skinButtons.forEach(function (button) {
+    button.onclick = function () { setSkinMode(button.dataset.s); pickSkin(); };
+  });
   function shut() { stopCape(); current = null; if (dialog.open) dialog.close(); }
   document.getElementById('close').onclick = shut;
   dialog.addEventListener('close', stopCape);
@@ -2999,16 +3043,13 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     if (!document.startViewTransition || calm || document.visibilityState === 'hidden') { render(false); return; }
     document.startViewTransition(function () { render(true); });
   }
-  var filters = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
-  filters.forEach(function (button) {
-    button.onclick = function () {
-      filter = button.dataset.f;
-      filters.forEach(function (other) { other.setAttribute('aria-pressed', other === button ? 'true' : 'false'); });
-      /* 「我用過的」照用的時間排，排序在那裡沒有用 */
-      document.getElementById('sort').disabled = filter === 'hist';
-      reorder();
-    };
-  });
+  document.getElementById('kind').onchange = function () { kind = this.value; reorder(); };
+  document.getElementById('scope').onchange = function () {
+    scope = this.value;
+    /* 「我用過的」照用的時間排，排序在那裡沒有用 */
+    document.getElementById('sort').disabled = scope === 'hist';
+    reorder();
+  };
   document.getElementById('sort').onchange = function () { sort = this.value; reorder(); };
 
   function load(still) {
@@ -3043,11 +3084,13 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   whoami.then(function (me) {
     developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到全部（含不公開、待審核）與誰傳的，能刪除與封禁 */
     visitor = me;
-    filters.forEach(function (button) {
-      var f = button.dataset.f;
-      if (f === 'fav' || f === 'hist') button.hidden = !member();
-      if (f === 'hidden' || f === 'pending') button.hidden = !developer;
+    /* 「顯示」只列這個人用得到的選項（option 的 hidden 有的瀏覽器不理，直接拿掉）；只剩「全部」就整個不出現 */
+    var scopes = document.getElementById('scope');
+    Array.prototype.slice.call(scopes.options).forEach(function (option) {
+      var f = option.value;
+      if (((f === 'fav' || f === 'hist') && !member()) || ((f === 'hidden' || f === 'pending') && !developer)) option.remove();
     });
+    document.getElementById('scope-box').hidden = scopes.options.length < 2;
     slideAll();
     return load(false);
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
@@ -3143,14 +3186,21 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var msg = document.getElementById('msg');
   function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); flash(msg); }
   var viewer = null;
+  var myName = null;                       /* 人偶穿自己的 skin（披風一覽選了「無外觀」就照那個選擇） */
+  function ready(canvas) {
+    if (!viewer) {
+      viewer = makeViewer(canvas);
+      if (viewer) dress(viewer, myName);
+    }
+    return viewer;
+  }
   var trying = null;                       /* 正在試穿的那張圖的網址（還沒上傳） */
   /* 選了一張尺寸對的圖：先穿到人偶身上看看，不必傳了才知道長怎樣 */
   function tryOn(file, w, h) {
     var canvas = document.getElementById('mine');
     var hint = document.getElementById('minehint');
     canvas.hidden = false;
-    if (!viewer) viewer = makeViewer(canvas);
-    if (!viewer) { canvas.hidden = true; return; }
+    if (!ready(canvas)) { canvas.hidden = true; return; }
     if (trying) URL.revokeObjectURL(trying);
     trying = URL.createObjectURL(file);
     document.getElementById('nocape').hidden = true;
@@ -3161,6 +3211,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
 
   var shared = true;                     /* 要不要出現在披風一覽。還沒有披風的時候先記在這裡，上傳時帶去 */
   function show(me) {
+    if (me.name && me.name !== myName) { myName = me.name; if (viewer) dress(viewer, myName); }
     document.getElementById('nocape').hidden = Boolean(me.cape);
     if (me.cape) shared = me.cape.public !== false;
     document.getElementById('public').setAttribute('aria-checked', shared ? 'true' : 'false');
@@ -3178,8 +3229,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     hint.hidden = !me.cape;
     if (trying) { URL.revokeObjectURL(trying); trying = null; }
     if (!me.cape) { stopCape(); return; }
-    if (!viewer) viewer = makeViewer(canvas);
-    if (!viewer) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
+    if (!ready(canvas)) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
     hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s),
       d: me.cape.x ? me.cape.x + '×' + me.cape.y + ' · ' : '' });
     /* 帶著雜湊：等審核的那一件只有知道雜湊的人（本人、管理的人）拿得到 */
