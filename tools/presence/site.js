@@ -294,23 +294,38 @@ const STYLE = String.raw`
   .scr.still .hud > * { animation: none; }
   .scr .dim { position: absolute; inset: 0; background: #0a0a0a99; }
   .c-y { color: #ffff55; } .c-g { color: #55ff55; } .c-gr { color: #aaaaaa; } .c-go { color: #ffaa00; } .c-m { color: #ff55ff; }
-  .scr .dimmer { color: #a8a8a8; } .scr .good { color: #55ff55; }
+  /* 說明裡的幾種字色，照實機截圖取的：次要的字、更淡的括號、加成、減損 */
+  .scr .soft { color: #aaaaaa; } .scr .dimmer { color: #6a6a6a; } .scr .good { color: #acfac6; } .scr .worse { color: #faacac; }
   /* 物品說明的框：遊戲的那一張貼圖用九宮格拉開（邊上下 12 格、左右 10 格）。
-     rare 是稀有物品的紫框，ours 是我們另開的面板——遊戲平常的那種深色框 */
+     f-rare、f-normal、f-ingredient 是遊戲照稀有度給的框，沒寫的（ours）是我們另開的面板——遊戲平常的那種深色框 */
   .tip { position: relative; isolation: isolate; padding: .5em .6em .45em; white-space: nowrap; }
   .tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 1.2em 1em; border-image: var(--t-tip-plain) 12 10 fill / 1.2em 1em; }
-  .tip.rare::before { border-image-source: var(--t-tip-rare); }
+  .tip.f-rare::before { border-image-source: var(--t-tip-rare); }
+  .tip.f-normal::before { border-image-source: var(--t-tip-normal); }
+  .tip.f-ingredient::before { border-image-source: var(--t-tip-ingredient); }
   /* 物品那一面：背包與兩個框並排、不互相蓋住，上下置中——框的字小一級（18），
      三塊加起來剛好是畫面的寬（7 + 374 + 6 + 281 + 4 + 281 + 7） */
   .duo .tip { width: 15.6em; font-size: 18px; }
   .tip-head { display: flex; align-items: center; gap: .5em; margin-bottom: .2em; }
   .tip .emblem { width: 3.2em; height: 3.2em; flex: none; }
+  /* 名字與開頭那個數字的顏色跟著稀有度（t-rare、t-normal、t-ingredient） */
   .tip .tname { color: #ff55ff; white-space: normal; }
+  .tip.t-normal .tname { color: #fff; } .tip.t-ingredient .tname { color: #20aa20; }
   .tip .pills { display: flex; gap: .2em; margin-top: .2em; }
-  .tip .pill { padding: 0 .35em; font-size: .6em; line-height: 1.5; letter-spacing: .06em; color: #1b1420; background: #dcdcdc; text-shadow: none; }
-  .tip .pill.rare { background: #ff55ff; }
+  .tip .pill { padding: 0 .35em; font-size: .6em; line-height: 1.5; letter-spacing: .06em; color: #1b1420; background: #e0e0e0; text-shadow: none; }
+  .tip .pill.p-rare { background: #ff55ff; } .tip .pill.p-normal { background: #fff; }
+  .tip .pill.p-stars { background: #555; color: #2e2e2e; letter-spacing: .12em; } .tip .pill.p-ingredient { background: #7dc97d; color: #12240f; }
   .tip .ico { width: 1.6em; height: 1.6em; margin: -.4em .1em -.4em -.25em; vertical-align: middle; }
-  .tip .dps { font-size: 1.2em; }
+  .tip .lead { margin-top: .15em; }
+  .tip .lead b { margin-right: .12em; font-size: 1.5em; line-height: 1; }
+  .tip.t-normal .lead b { color: #e0e0e0; } .tip.t-ingredient .lead b { color: #7dc97d; }
+  .tip .jobs { display: flex; flex-wrap: wrap; gap: 0 .9em; margin-bottom: .35em; white-space: nowrap; }
+  .tip .jobs .ico { margin-left: 0; }
+  /* 武器的說明有好幾頁：最底下一排圓點（遊戲裡是十字形的小點）與換頁的按鍵 */
+  .tip .pager { display: flex; justify-content: center; align-items: center; gap: .55em; margin-top: .5em; }
+  .tip .dot { width: .5em; height: .5em; background: #455449; clip-path: polygon(25% 0, 75% 0, 75% 25%, 100% 25%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0 75%, 0 25%, 25% 25%); }
+  .tip .dot.on { background: #ffea80; }
+  .tip kbd { margin-left: .3em; padding: 0 .35em; border-radius: 2px; font-size: .6em; line-height: 1.5; background: #ece6dd; color: #3a2a22; box-shadow: 0 2px 0 #9a8f84; text-shadow: none; }
   .tip .dmg .ico:not(:first-child) { margin-left: .5em; }
   .tip .divider { display: block; width: 11.2em; height: 1.6em; margin: -.08em auto; background: var(--t-divider) center / 100% 100% no-repeat; }
   .tip .reqs { display: flex; justify-content: space-between; margin: 0 .2em .2em; }
@@ -318,21 +333,32 @@ const STYLE = String.raw`
   .tip .req.on { color: #fff; }
   .tip .req i { grid-column: 1 / -1; width: 2.4em; height: 2.4em; background: var(--t-req) 0 0 / 12em 4.8em no-repeat; }
   .tip u { display: inline-block; width: 1em; height: 1em; margin-right: .3em; vertical-align: -.12em; text-decoration: none; background: var(--t-mark) 0 0 / 3em 1em no-repeat; }
-  .tip u.ok { background-position: -1em 0; }
+  .tip u.ok { background-position: -1em 0; } .tip u.no { background-position: -2em 0; }
   .tip .req u { margin: 0; }
   /* 標籤在左、值靠右；放不下的時候值掉到下一行（還是靠右），標籤不拆字 */
   .tip .kv { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 .8em; }
   .tip .kv span:last-child { margin-left: auto; text-align: right; }
-  .tip .sockets { display: flex; justify-content: flex-end; margin-bottom: .1em; }
-  .tip .sockets img { width: 1em; height: 1em; }
-  /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來 */
+  /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來。
+     ghost 是沒穿裝備的格子裡那個淡淡的影子（slots.png 一條七個）；slot 是可以指的東西（按鈕），qty 是右下角的數量 */
   .inv { position: absolute; left: 7px; top: 56px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
   .scr .it { position: absolute; width: 32px; height: 32px; }
   .scr .it.smooth { image-rendering: auto; }
-  .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; }
-  /* 背包裡的人：皮膚貼在方塊的六個面上，用 CSS 的 3D 轉（makeDoll）。位置照實機截圖：
-     盔甲那一欄的右邊，頭頂在貼圖的第 16 列、腳在第 80 列。會看著滑鼠，跟遊戲裡一樣 */
-  .dollbox { position: absolute; left: 84px; top: 32px; width: 64px; height: 128px; pointer-events: none; }
+  .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; pointer-events: none; }
+  .inv .ghost { position: absolute; width: 32px; height: 32px; background: var(--t-slots) 0 0 / 224px 32px no-repeat; }
+  .inv .slot { position: absolute; width: 32px; height: 32px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: inherit; text-shadow: inherit; }
+  .inv .slot img { display: block; width: 32px; height: 32px; }
+  .inv .slot img.smooth { image-rendering: auto; }
+  .inv .slot:focus-visible { outline: 2px solid #fff; outline-offset: 0; }
+  .inv .qty { position: absolute; right: -2px; bottom: -5px; font-size: 16px; line-height: 1; }
+  /* 訪客還沒指過任何一樣之前，另外幾樣輪流輕輕亮一下：這些可以指 */
+  .inv:not(.used) .slot[aria-pressed="false"]::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: 0; animation: beckon 2.6s ease-in-out infinite; }
+  .inv:not(.used) .slot[aria-pressed="false"] ~ .slot[aria-pressed="false"]::after { animation-delay: 1.3s; }
+  @keyframes beckon { 0%, 55%, 100% { opacity: 0; } 28% { opacity: .3; } }
+  /* 背包裡的人：皮膚貼在方塊的六個面上，用 CSS 的 3D 轉（makeDoll）。大小與位置照遊戲的算法：
+     人物格是貼圖的 (33,16)–(82,86)，人站在正中間、頭頂到腳 56 格多一點；轉頭時超出格子的部分裁掉，
+     跟遊戲一樣。會看著滑鼠 */
+  .dollclip { position: absolute; left: 66px; top: 32px; width: 98px; height: 140px; overflow: hidden; pointer-events: none; }
+  .dollbox { position: absolute; left: 21px; top: 16px; width: 56px; height: 112px; }
   .doll, .doll div { position: absolute; transform-style: preserve-3d; }
   .doll { inset: 0; }
   .doll .over { inset: 0; }
@@ -347,12 +373,13 @@ const STYLE = String.raw`
   .hudbar { position: absolute; left: 50%; bottom: -6px; width: 464px; height: 110px; transform: translateX(-50%); background: var(--t-hud) 0 0 / 100% 100% no-repeat; }
   .hudbar .num { position: absolute; top: 14px; width: 144px; font-size: 16px; line-height: 1; text-align: center; white-space: nowrap; }
   .hudbar .hp { left: 30px; } .hudbar .mp { left: 288px; }
-  .hudbar .lv { left: 208px; top: 25px; width: 48px; color: #4a3320; text-shadow: none; }
+  /* 等級：金色六角形上白色的數字，四邊描深色的邊（遊戲裡就是這樣） */
+  .hudbar .lv { left: 208px; top: 25px; width: 48px; color: #fff; text-shadow: 2px 0 #3a2414, -2px 0 #3a2414, 0 2px #3a2414, 0 -2px #3a2414, 2px 2px #3a2414, -2px 2px #3a2414, 2px -2px #3a2414, -2px -2px #3a2414; }
   .held { position: absolute; left: 0; right: 0; bottom: 112px; text-align: center; white-space: nowrap; color: #ff55ff; }
   /* Boss 血條、右上的任務追蹤、記分板 */
   .boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #ff5555; }
   /* 怪物的等級：遊戲裡是名字後面一顆灰底的小方框 */
-  .scr .lv { display: inline-block; margin-left: .45em; padding: 0 .5em; border-radius: 4px; font-size: .7em; line-height: 1.45; letter-spacing: .1em; vertical-align: .14em; color: #fff; background: #555; box-shadow: 0 2px 0 #2c2c2c; text-shadow: none; }
+  .scr .mlv { display: inline-block; margin-left: .45em; padding: 0 .5em; border-radius: 4px; font-size: .7em; line-height: 1.45; letter-spacing: .1em; vertical-align: .14em; color: #fff; background: #555; box-shadow: 0 2px 0 #2c2c2c; text-shadow: none; }
   .boss i { display: block; width: 364px; height: 10px; margin: 4px auto 0; background: linear-gradient(90deg, #e0358f 62%, #4a1232 62%); box-shadow: 0 0 0 2px #000000b0; }
   .trk { position: absolute; top: 58px; right: 10px; display: grid; justify-items: end; gap: 8px; max-width: 46%; text-align: right; white-space: nowrap; }
   .trk .tip { text-align: left; }
@@ -394,7 +421,7 @@ const STYLE = String.raw`
   /* 窄的那一面放不下並排：背包縮小放上面，兩個框在它下面（只壓到背包最底下那一條木框） */
   .scr.narrow .duo .tip { font-size: 13px; }
   .scr.narrow .inv { left: 139px; top: 2px; transform: scale(.54); transform-origin: 0 0; }
-  .scr.narrow .duo { left: 0; right: 0; top: 182px; justify-content: center; }
+  .scr.narrow .duo { left: 0; right: 0; top: 178px; justify-content: center; }
   .scr.narrow .gapmark span { padding: 2px 5px; background: #000000b0; }
   .scr.narrow .boss i { width: 250px; }
   .scr.narrow .trk { top: 50px; right: 6px; max-width: none; }
@@ -627,6 +654,7 @@ const STYLE = String.raw`
     .more a:hover .ico, .seg button:active, a.who-row:active, .guild:active, a.who-row:hover .ico, .guild:hover .ico { transform: none; }
     .menu, .menu.open { transform: none; }
     .scr .hud > * { animation: none; }
+    .inv .slot::after { animation: none !important; }
     .gapmark, .switch::after { transition: none; }
     .card.skel { animation: none; }
     dialog, dialog[open] { transform: none; }
@@ -1564,16 +1592,18 @@ const STAGE_JS = String.raw`
        看著滑鼠——照遊戲的算法：離他 40 格（這裡是 80 像素）轉到一半，再遠也只到 40 度 */
     var doll = null;
     var dollBox = el('div', 'dollbox');
+    var dollClip = el('div', 'dollclip');          /* 人物格：人在裡面，超出去的裁掉 */
+    dollClip.append(dollBox);
     var aimAt = null;
     function aim() {
       var at = aimAt;
       aimAt = null;
-      if (!at || !doll || !dollBox.isConnected) return;
-      var box = dollBox.getBoundingClientRect();
+      if (!at || !doll || !dollClip.isConnected) return;
+      var box = dollClip.getBoundingClientRect();     /* 遊戲是拿人物格的正中間當基準 */
       if (!box.width) return;
-      var scale = box.width / 64;
+      var scale = box.width / 98;
       var dx = (at[0] - (box.left + box.width / 2)) / scale;
-      var dy = (at[1] - (box.top + box.height * .16)) / scale;
+      var dy = (at[1] - (box.top + box.height / 2)) / scale;
       doll.look(Math.atan(dx / 80) * 40, -Math.atan(dy / 80) * 20);
     }
     window.addEventListener('pointermove', function (event) {
@@ -1596,109 +1626,200 @@ const STAGE_JS = String.raw`
       })();
     }
 
-    /* ---- 物品說明：照遊戲現在的版面（徽記、名字、兩顆標籤、傷害、需求、詞條）。
-            內容是 Bony Bow 真的數值（官方 API 查的）。translated 的那一份用語料裡同一句的譯文 ---- */
-    function tipBox(className, name, nameTranslated, translated) {
-      var box = el('div', 'tip ' + className);
+    /* ---- 背包裡的幾樣東西：滑鼠滑上去（或點一下、用鍵盤移過去）就換成它的說明，跟遊戲裡一樣。
+            數值是官方 API 查的，版面照實機截圖（武器：每秒傷害、攻速、傷害、需求、詞條、翻頁的圓點；
+            素材：製作等級、用在哪幾種配方、詞條）。每一行字用語料裡同一句的譯文。
+            slot 是背包的第幾欄、第幾列（第 3 列是快捷列）；needs 的最後一個是「人物符不符合」——人物 22 等 ---- */
+    var ITEMS = {
+      bony: { name: 'Bony Bow', icon: 'bow', slot: [0, 3], tier: 'rare', pills: [['RARE', 'p-rare'], ['BOW', '']],
+        emblem: ['emblem-bow.png', 3.2], dps: '89', speed: ['{#} Fast ({~} hits/s)', '2.5'],
+        damage: [['ico-neutral.png', '15-36'], ['ico-air.png', '8-12']], skills: [0, 0, 0, 0, 8],
+        needs: [['{#} Class Type{#}Archer/Hunter', [], true], ['{#} Combat Level{#}{~}', ['22'], true]],
+        ids: [['Agility', '+6', 'ico-air.png'], ['Main Attack Damage', '+8%']], pages: 3 },
+      oak: { name: 'Flawless Oak Bow', icon: 'oakbow', slot: [6, 0], tier: 'normal', pills: [['NORMAL', 'p-normal'], ['BOW', '']],
+        emblem: ['emblem-bow.png', 3.2], dps: '74', speed: ['{#} Slow ({~} hits/s)', '1.5'],
+        damage: [['ico-neutral.png', '41-58']],
+        needs: [['{#} Class Type{#}Archer/Hunter', [], true], ['{#} Combat Level{#}{~}', ['28'], false]], pages: 3 },
+      flesh: { name: 'Rotten Flesh', icon: 'flesh', qty: '7', slot: [7, 1], tier: 'ingredient',
+        pills: [['★★★', 'p-stars'], ['INGREDIENT', 'p-ingredient']],
+        emblem: ['emblem-ingredient.png', 2.6], level: '1',
+        jobs: [['prof-weaponsmithing.png', 'Weaponsmithing'], ['prof-woodworking.png', 'Woodworking']],
+        ids: [['Durability', '-17'], ['Main Attack Damage%', ['+2%', '+4%']]] }
+    };
+    var ITEM_ORDER = ['bony', 'oak', 'flesh'];
+    var picked = 'bony';                 /* 現在看的是哪一樣 */
+    var touched = false;                 /* 訪客自己指過了：示意的那支滑鼠就收起來 */
+
+    /* 一樣東西的說明。frame 是框（f-rare、f-normal、f-ingredient 是遊戲照稀有度給的框，ours 是我們另開的面板） */
+    function tipBox(frame, item, name, nameTranslated, translated) {
+      var box = el('div', 'tip ' + frame + ' t-' + item.tier);
       function word(src) { return translated ? T(src) : src; }
       function line(className, text) { return bit('div', className, text, translated); }
+      /* 開頭那個數字比旁邊的字大一級（「89 DPS」「1 Crafting Level」）；數字在句子的哪裡各語言不一樣 */
+      function lead(src, value) {
+        var row = line('lead', '');
+        var parts = word(src).replace('{#}', '').split(/\{~\d*\}/);
+        row.append(parts[0], el('b', '', value), parts.slice(1).join(''));
+        return row;
+      }
 
       var head = el('div', 'tip-head');
-      head.append(pic('emblem-bow.png', 'emblem'));
+      var emblem = pic(item.emblem[0], 'emblem');
+      emblem.style.width = emblem.style.height = item.emblem[1] + 'em';
+      head.append(emblem);
       var title = el('div', '');
       title.append(bit('div', 'tname', name, nameTranslated));
       var pills = el('div', 'pills');
-      pills.append(el('b', 'pill rare', 'RARE'), el('b', 'pill', 'BOW'));        /* 這兩顆在遊戲裡是圖，不會被翻 */
+      item.pills.forEach(function (pill) { pills.append(el('b', 'pill ' + pill[1], pill[0])); });   /* 這幾顆在遊戲裡是圖，不會被翻 */
       title.append(pills);
       head.append(title);
       box.append(head);
 
-      box.append(line('dps', fill(word('{~} DPS'), ['89'])));
-      var speed = line('row', '');
-      var said = fill(word('{#} Fast ({~} hits/s)'), ['2.5']).replace('{#}', '').replace(/^\s+/, '');
-      var cut = said.search(/[(（]/);
-      speed.append(pic('ico-speed.png', 'ico'), cut > 0 ? said.slice(0, cut) : said);
-      if (cut > 0) speed.append(el('span', 'dimmer', said.slice(cut)));
-      box.append(speed);
-      var damage = el('div', 'row dmg');
-      damage.append(pic('ico-neutral.png', 'ico'), '15-36', pic('ico-air.png', 'ico'), '8-12');
-      box.append(damage, el('i', 'divider'));
+      if (item.dps) {
+        box.append(lead('{~} DPS', item.dps));
+        var speed = line('row soft', '');
+        var said = fill(word(item.speed[0]), [item.speed[1]]).replace('{#}', '').replace(/^\s+/, '');
+        var cut = said.search(/[(（]/);
+        speed.append(pic('ico-speed.png', 'ico'), cut > 0 ? said.slice(0, cut) : said);
+        if (cut > 0) speed.append(el('span', 'dimmer', said.slice(cut)));
+        box.append(speed);
+        var damage = el('div', 'row soft dmg');
+        item.damage.forEach(function (one) { damage.append(pic(one[0], 'ico'), one[1]); });
+        box.append(damage);
+      }
+      if (item.level) {
+        box.append(lead('{#}{~} Crafting Level', item.level));
+        box.append(line('soft', word('{#}Can be used in recipes for').replace('{#}', '')));
+        var jobs = line('row soft jobs', '');
+        item.jobs.forEach(function (job) {
+          var one = el('span', '');
+          one.append(pic(job[0], 'ico'), word(job[1]));
+          jobs.append(one);
+        });
+        box.append(jobs);
+      }
+      box.append(el('i', 'divider'));
 
-      /* 五種屬性的需求：Bony Bow 只要敏捷 8，其餘是暗的 */
-      var reqs = el('div', 'reqs');
-      [0, 0, 0, 0, 8].forEach(function (need, i) {
-        var one = el('span', 'req' + (need ? ' on' : ''));
-        var sprite = el('i', '');
-        sprite.style.backgroundPosition = (-i * 2.4) + 'em ' + (need ? '0' : '-2.4em');
-        var mark = el('u', need ? 'ok' : '');
-        one.append(sprite, mark, String(need));
-        reqs.append(one);
+      /* 五種屬性的需求：有要求的那一格亮起來 */
+      if (item.skills) {
+        var reqs = el('div', 'reqs');
+        item.skills.forEach(function (need, i) {
+          var one = el('span', 'req' + (need ? ' on' : ''));
+          var sprite = el('i', '');
+          sprite.style.backgroundPosition = (-i * 2.4) + 'em ' + (need ? '0' : '-2.4em');
+          one.append(sprite, el('u', need ? 'ok' : ''), String(need));
+          reqs.append(one);
+        });
+        box.append(reqs);
+      }
+      /* 「{#} 標籤{#}值」：前面一格是勾或叉，後面是靠右的值 */
+      (item.needs || []).forEach(function (need) {
+        var parts = word(need[0]).split('{#}');
+        var row = el('div', 'kv');
+        var label = bit('span', '', '', translated);
+        label.append(el('u', need[2] ? 'ok' : 'no'), (parts[1] || '').trim());
+        row.append(label, bit('span', 'soft', fill((parts[2] || '').trim(), need[1]), translated));
+        box.append(row);
       });
-      box.append(reqs);
-      /* 「{#} 標籤{#}值」：兩個圖示之間是標籤，後面是靠右的值 */
-      function pair(src, values) {
-        var parts = word(src).split('{#}');
-        var row = el('div', 'kv');
-        var label = bit('span', '', '', translated);
-        label.append(el('u', 'ok'), (parts[1] || '').trim());
-        row.append(label, bit('span', 'dimmer', fill((parts[2] || '').trim(), values || []), translated));
-        return row;
+      if (item.ids) {
+        if (item.needs) box.append(el('i', 'divider'));
+        /* 詞條：標籤在左、值靠右。素材的值是一段範圍（「+2% to +4%」），中間那個字也查語料 */
+        item.ids.forEach(function (id) {
+          var row = el('div', 'kv');
+          var label = bit('span', '', '', translated);
+          if (id[2]) label.append(pic(id[2], 'ico'));
+          label.append(word(id[0]));
+          var value = el('span', '');
+          function number(text) { return el('span', text.charAt(0) === '-' ? 'worse' : 'good', text); }
+          if (typeof id[1] === 'string') value.append(number(id[1]));
+          else {
+            var between = word('{~} to {~}').split(/\{~\d*\}/);
+            value.append(number(id[1][0]), bit('span', 'dimmer', between[1] || ' ', translated), number(id[1][1]));
+          }
+          row.append(label, value);
+          box.append(row);
+        });
       }
-      box.append(pair('{#} Class Type{#}Archer/Hunter'), pair('{#} Combat Level{#}{~}', ['22']), el('i', 'divider'));
-
-      var sockets = el('div', 'sockets');
-      sockets.append(pic('socket.png', ''));
-      box.append(sockets);
-      function stat(src, value, icon) {
-        var row = el('div', 'kv');
-        var label = bit('span', '', '', translated);
-        if (icon) label.append(pic(icon, 'ico'));
-        label.append(word(src));
-        row.append(label, el('span', 'good', value));
-        return row;
+      /* 武器的說明有好幾頁（按 F 換頁），最底下一排圓點 */
+      if (item.pages) {
+        var pager = el('div', 'pager');
+        for (var p = 0; p < item.pages; p++) pager.append(el('span', 'dot' + (p ? '' : ' on')));
+        pager.append(el('kbd', '', 'F'));
+        box.append(pager);
       }
-      box.append(stat('Agility', '+6', 'ico-air.png'), stat('Main Attack Damage', '+8%'));
       return box;
     }
 
-    /* 物品：打開背包，滑鼠指著那把弓。旁邊是遊戲原本的說明，再旁邊是我們另開的面板 */
+    /* 物品：打開背包。左邊是人物與裝備格（沒穿的格子是淡淡的影子），右邊與下面是背包；
+       指著哪一樣，旁邊就是遊戲原本的說明，再旁邊是我們另開的面板 */
     function drawItems(state) {
       hud.append(el('div', 'dim'));
-      var inv = el('div', 'inv');
-      if (!doll) { doll = makeDoll(4); dollBox.append(doll.node); }
-      inv.append(dollBox);
+      var inv = el('div', touched ? 'inv used' : 'inv');
       /* 格子的位置：背包那三列從 (15, 92) 起、快捷列在 150，一格 18（貼圖的格數；實機截圖量的） */
       function slot(column, row) { return [(15 + 18 * column) * 2, (row === 3 ? 150 : 92 + 18 * row) * 2]; }
-      [['bow', 7, 0], ['wand', 1, 0], ['heal', 2, 1], ['emerald', 5, 1], ['relik', 0, 2], ['mana', 4, 2],
-        ['dagger', 0, 3], ['heal', 1, 3], ['book', 8, 3]].forEach(function (one) {
-        var at = slot(one[1], one[2]);
-        inv.append(item(one[0], at[0], at[1]));
+      function put(node, at) {
+        node.style.left = at[0] + 'px';
+        node.style.top = at[1] + 'px';
+        return node;
+      }
+      /* 沒穿裝備的格子：左邊一直排是頭盔到靴子，背包第一列的前四格是戒指、戒指、手環、項鍊 */
+      [[15, 16, 0], [15, 34, 1], [15, 52, 2], [15, 70, 3], [15, 92, 4], [33, 92, 4], [51, 92, 5], [69, 92, 6]].forEach(function (g) {
+        var ghost = put(el('i', 'ghost'), [g[0] * 2, g[1] * 2]);
+        ghost.style.backgroundPosition = (-g[2] * 32) + 'px 0';
+        inv.append(ghost);
       });
-      var pointer = slot(7, 0);
+      if (!doll) { doll = makeDoll(3.5); dollBox.append(doll.node); }
+      inv.append(dollClip);
+      /* 本來就在那裡的兩樣：素材袋、內容書 */
+      inv.append(put(pic('item-pouch.png', 'it'), slot(4, 0)), put(pic('item-book.png', 'it'), slot(8, 3)));
       var glow = el('i', 'hover');
-      glow.style.left = pointer[0] + 'px';
-      glow.style.top = pointer[1] + 'px';
       inv.append(glow);
+      var buttons = {};
+      ITEM_ORDER.forEach(function (key) {
+        var item = ITEMS[key];
+        var button = put(el('button', 'slot'), slot(item.slot[0], item.slot[1]));
+        button.type = 'button';
+        button.setAttribute('aria-label', T(item.name) === item.name ? item.name : T(item.name) + ' (' + item.name + ')');
+        button.append(pic('item-' + item.icon + '.png', item.icon === 'bow' ? 'smooth' : ''));
+        if (item.qty) button.append(el('b', 'qty', item.qty));
+        function pick() {
+          var first = !touched;
+          touched = true;
+          inv.classList.add('used');
+          if (picked !== key || first) { picked = key; show(); }
+        }
+        button.addEventListener('pointerenter', pick);
+        button.addEventListener('focus', pick);
+        button.addEventListener('click', pick);
+        buttons[key] = button;
+        inv.append(button);
+      });
       var cursor = document.getElementById('stage-parts').content.querySelector('[data-part="cursor"]').cloneNode(true);
       cursor.classList.add('cursor');
-      cursor.style.left = (pointer[0] + 16) + 'px';
-      cursor.style.top = (pointer[1] + 14) + 'px';
       inv.append(cursor);
-      hud.append(inv);
-
-      var translatedName = T('Bony Bow');
-      var name = state.names === 0 ? translatedName : state.names === 1 ? translatedName + ' (Bony Bow)' : 'Bony Bow';
-      var panel = state.tooltip === 0;
-      var replace = state.tooltip === 1;
       var duo = el('div', 'duo');
-      duo.append(tipBox('rare', replace ? name : 'Bony Bow', replace && state.names !== 2, replace));
-      if (panel) {
-        var gap = el('div', 'gapmark');
-        gap.style.width = Math.max(4, Math.round(state.gap * (wide ? 0.25 : 0.06))) + 'px';   /* 間距照比例縮：200 像素要塞得進這張圖 */
-        gap.append(el('span', '', state.gap + ' px'));
-        duo.append(gap, tipBox('ours', name, state.names !== 2, true));
+      hud.append(inv, duo);
+
+      function show() {
+        var item = ITEMS[picked];
+        var at = slot(item.slot[0], item.slot[1]);
+        put(glow, at);
+        put(cursor, [at[0] + 16, at[1] + 14]);
+        cursor.style.display = touched ? 'none' : '';
+        Object.keys(buttons).forEach(function (key) { buttons[key].setAttribute('aria-pressed', String(key === picked)); });
+        var translatedName = T(item.name);
+        var name = state.names === 0 ? translatedName : state.names === 1 ? translatedName + ' (' + item.name + ')' : item.name;
+        var panel = state.tooltip === 0;
+        var replace = state.tooltip === 1;
+        duo.replaceChildren(tipBox('f-' + item.tier, item, replace ? name : item.name, replace && state.names !== 2, replace));
+        if (panel) {
+          var gap = el('div', 'gapmark');
+          gap.style.width = Math.max(4, Math.round(state.gap * (wide ? 0.25 : 0.06))) + 'px';   /* 間距照比例縮：200 像素要塞得進這張圖 */
+          gap.append(el('span', '', state.gap + ' px'));
+          duo.append(gap, tipBox('ours', item, name, state.names !== 2, true));
+        }
       }
-      hud.append(duo);
+      show();
     }
 
     /* 底下那一排：快捷列、生命與魔力、等級。世界與對話兩張圖都有 */
@@ -1754,7 +1875,7 @@ const STAGE_JS = String.raw`
     function drawWorld(state) {
       var MOB = 'Zombie {#}{#}';                  /* 名字後面那兩個圖示就是等級的小方框 */
       var boss = bit('div', 'boss', (state.bossbar ? T(MOB) : MOB).replace(/\s*\{#\}/g, ''), state.bossbar);
-      boss.append(el('b', 'lv', 'LV 13'), el('i'));
+      boss.append(el('b', 'mlv', 'LV 13'), el('i'));
       hud.append(boss);
 
       var track = el('div', 'trk');

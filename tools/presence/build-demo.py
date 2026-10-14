@@ -60,6 +60,17 @@ SAMPLES = [
     ('{#} Combat Level{#}{~}', 'gui.json'),
     ('Agility', 'ui-labels.json'),
     ('Main Attack Damage', 'ui-labels.json'),
+    # 背包裡另外兩樣可以指的：無瑕橡木弓（普通的武器）、腐爛血肉（素材）
+    ('Flawless Oak Bow', 'gear-weapon.json'),
+    ('{#} Slow ({~} hits/s)', 'misc.json'),
+    ('Rotten Flesh', 'ingredient.json'),
+    ('{#}{~} Crafting Level', 'misc.json'),
+    ('{#}Can be used in recipes for', 'misc.json'),
+    ('Weaponsmithing', 'ui-labels.json'),
+    ('Woodworking', 'ui-labels.json'),
+    ('Durability', 'ui-labels.json'),
+    ('Main Attack Damage%', 'ui-labels.json'),
+    ('{~} to {~}', 'ui-labels.json'),
     # 對話
     ('Well, what are we waiting for?', 'quest/king-s-recruit.json'),
     ('Yes', 'quest.json'),

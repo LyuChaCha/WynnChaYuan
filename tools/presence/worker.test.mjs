@@ -998,7 +998,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
     && en.ui['mode.replace'] === 'Replace in place');
   check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
-    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 24 && Object.values(lang).every((v) => v.length > 0))
+    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 34 && Object.values(lang).every((v) => v.length > 0))
     && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
   // 預覽是一整面「遊戲畫面」：功能頁與首頁最上面用同一份程式，字是遊戲裡那一套點陣字
   {
@@ -1040,7 +1040,9 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
   {
     const { TEXTURES } = await import('./demo-textures.js');
     const { CAPE_TEMPLATES } = await import('./cape-templates.js');
-    const need = ['tip-rare.png', 'tip-plain.png', 'emblem-bow.png', 'req.png', 'mark.png', 'divider.png', 'socket.png',
+    const need = ['tip-rare.png', 'tip-normal.png', 'tip-ingredient.png', 'tip-plain.png', 'emblem-bow.png', 'emblem-ingredient.png',
+      'req.png', 'mark.png', 'divider.png', 'slots.png', 'item-oakbow.png', 'item-flesh.png', 'item-pouch.png',
+      'prof-weaponsmithing.png', 'prof-woodworking.png',
       'dialogue.png', 'choice.png', 'cursor.png', 'hud.png', 'inventory.png', 'glyphs.png', 'item-bow.png',
       'bg-world.webp', 'bg-street.webp', 'skin.png'];
     check('★ 預覽要的材質都在', need.every((name) => Object.hasOwn(TEXTURES, name)));
@@ -1057,20 +1059,42 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     check('沒有的材質：404', (await worker.fetch(new Request('https://x.test/tex/nope.png'), env)).status === 404
       && (await worker.fetch(new Request('https://x.test/tex/__proto__'), env)).status === 404);
     check('★ 預覽不再自己畫風景與物品（程式裡沒有那幾支了）', !pages['/features'].includes('paintScene')
-      && !pages['/features'].includes('paintIcon') && pages['/features'].includes("pic('emblem-bow.png'"));
+      && !pages['/features'].includes('paintIcon') && pages['/features'].includes("emblem: ['emblem-bow.png'"));
     check('★ 頁尾寫了材質是 Wynncraft 的', pages['/'].includes(TEXT.zh['foot.assets']) && english['/'].includes(TEXT.en['foot.assets']));
     // 背包裡的人、對話框與快捷列的上下、街上的 NPC 與怪物的等級（使用者 2026-10-14 看了預覽之後要的）
     const skin = new Uint8Array(await (await worker.fetch(new Request('https://x.test/tex/skin.png'), env)).arrayBuffer());
     check('★ 背包裡有一個人：皮膚是 64×64 的 PNG，貼在方塊上、會看著滑鼠', skin[1] === 0x50 && skin[19] === 64 && skin[23] === 64
-      && pages['/features'].includes('--t-skin: url(/tex/skin.png?v=') && pages['/features'].includes('makeDoll(4)')
-      && pages['/features'].includes("addEventListener('pointermove'") && pages['/'].includes('makeDoll(4)'));
+      && pages['/features'].includes('--t-skin: url(/tex/skin.png?v=') && pages['/features'].includes('makeDoll(3.5)')
+      && pages['/features'].includes("addEventListener('pointermove'") && pages['/'].includes('makeDoll(3.5)'));
+    check('★ 人站在人物格裡面：超出格子的部分裁掉（轉頭時頭不會蓋到木框上）', /\.dollclip \{[^}]*overflow: hidden/.test(pages['/features'])
+      && pages['/features'].includes('dollClip.append(dollBox)'));
+    {
+      // 背包裡可以指的幾樣東西：每一樣的每一行字，七種語言的語料都要有（不然那一行會留英文）
+      const js = pages['/features'];
+      const table = js.slice(js.indexOf('var ITEMS = {'), js.indexOf('var ITEM_ORDER'));
+      const used = [...table.matchAll(/'((?:[A-Z{]|\{#\})[^']*)'/g)].map((m) => m[1])
+        .filter((s) => !/^[A-Z★]+$/.test(s) && !/\.png$/.test(s));
+      const also = ['{~} DPS', '{#}{~} Crafting Level', '{#}Can be used in recipes for', '{~} to {~}'];
+      const missing = [];
+      for (const src of [...used, ...also]) {
+        for (const [code, lang] of Object.entries(DEMO.text)) if (!lang[src]) missing.push(code + ':' + src);
+      }
+      check('★ 背包裡三樣東西可以指（滑鼠、點、鍵盤），每一行字七種語言都有' + (missing.length ? '（缺 ' + missing.join('、') + '）' : ''),
+        missing.length === 0 && used.includes('Flawless Oak Bow') && used.includes('Rotten Flesh') && used.includes('Bony Bow')
+        && js.includes("var ITEM_ORDER = ['bony', 'oak', 'flesh']") && js.includes("button.addEventListener('pointerenter', pick)")
+        && js.includes("button.addEventListener('focus', pick)") && js.includes("el('button', 'slot')"));
+      check('★ 沒穿裝備的格子有影子：四件防具、兩個戒指、手環、項鍊', (js.slice(js.indexOf('function drawItems'), js.indexOf('function drawBar')).match(/\[\d+, \d+, \d\]/g) || []).length === 8
+        && js.includes('var(--t-slots)'));
+      check('★ 人物的等級是六角形上描邊的白字，不會被怪物等級那顆灰框的樣式蓋到', /\.hudbar \.lv \{[^}]*color: #fff/.test(js)
+        && !/\.scr \.lv\b/.test(js) && js.includes('.scr .mlv {'));
+    }
     check('★ 街上的人是截圖裡真的 NPC：不再自己畫一個，名牌的兩行七種語言都有', !pages['/features'].includes('paintFigure')
       && pages['/features'].includes('var(--t-bg-street)')
       && Object.values(DEMO.text).every((lang) => {
         const lines = (lang['{#}\nParty Finder\nFind a party of queue for a raid'] || '').split('\n');
         return lines.length === 3 && lines[0] === '{#}' && lines[1] && lines[2];
       }));
-    check('★ 怪物的等級是名字後面的小方框，跟人物的等級是同一帶的', pages['/features'].includes("el('b', 'lv', 'LV 13')")
+    check('★ 怪物的等級是名字後面的小方框，跟人物的等級是同一帶的', pages['/features'].includes("el('b', 'mlv', 'LV 13')")
       && !pages['/features'].includes('[Lv. 3]') && Object.values(DEMO.text).every((lang) => /\S \{#\}\{#\}$/.test(lang['Zombie {#}{#}'] || '')));
     {
       const js = pages['/features'];

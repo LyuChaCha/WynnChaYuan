@@ -43,8 +43,8 @@ TARGET = os.path.join(HERE, 'demo-textures.js')
 T = 'assets/minecraft/textures/'
 CDN = 'https://cdn.wynncraft.com/nextgen/itemguide/3.3/'
 # 官方的物品圖示：檔名 → CDN 上的名字。Bony Bow 的圖示就是 bow.air1（官方 API 查得到）
-ICONS = {'bow': 'bow.air1', 'spear': 'spear.fire2', 'wand': 'wand.water3', 'dagger': 'dagger.thunder3',
-         'relik': 'relik.earth2'}
+# （無瑕橡木弓是 bow.basicWood）。素材、藥水那幾類 CDN 上沒有，從資源包拿
+ICONS = {'bow': 'bow.air1', 'oakbow': 'bow.basicWood'}
 MIME = {'.png': 'image/png', '.webp': 'image/webp'}
 
 
@@ -168,24 +168,31 @@ def from_pack(path):
     print('資源包：' + path)
 
     # ---- 物品說明的框：底與邊疊成一張，網頁用九宮格拉開（上下 12、左右 10）
-    for out, base in (('tip-rare.png', 'rare_'), ('tip-plain.png', '')):
+    for out, base in (('tip-rare.png', 'rare_'), ('tip-normal.png', 'normal_'),
+                      ('tip-ingredient.png', 'profession_ingredient_'), ('tip-plain.png', '')):
         frame = tex('gui/sprites/tooltip/' + base + 'background.png')
         frame.alpha_composite(tex('gui/sprites/tooltip/' + base + 'frame.png'))
         save(frame, out)
 
     # ---- 說明框裡的小圖
     shapes = tex('font/tooltip/emblem/frame.png')            # 6 欄（形狀）× 6 列（等級），一格 64
-    kinds = tex('font/tooltip/emblem/sprite.png')            # 一格 32；第一列第五個是弓
-    emblem = shapes.crop((0, 2 * 64, 64, 3 * 64))            # 菱形、第三列：Bony Bow 的 emblem 是 diamond_2
-    emblem.alpha_composite(kinds.crop((4 * 32, 0, 5 * 32, 32)), (16, 16))
-    save(emblem.crop(emblem.getbbox()), 'emblem-bow.png')
+    kinds = tex('font/tooltip/emblem/sprite.png')            # 一格 32；第一列第五個是弓，第四列第五個是研缽
+    # 弓：官方 API 說 Bony Bow 與無瑕橡木弓的 emblem 都是 diamond_2——實機截圖上是銅色的菱形，也就是第二列。
+    # 素材：API 說 square，截圖上是金色的方框（第四列）
+    for out, (shape, row), (kind_row, kind_col) in (('emblem-bow.png', (0, 1), (0, 4)),
+                                                    ('emblem-ingredient.png', (1, 3), (3, 4))):
+        emblem = shapes.crop((shape * 64, row * 64, shape * 64 + 64, row * 64 + 64))
+        emblem.alpha_composite(kinds.crop((kind_col * 32, kind_row * 32, kind_col * 32 + 32, kind_row * 32 + 32)), (16, 16))
+        save(emblem.crop(emblem.getbbox()), out)
     attr = tex('font/tooltip/attribute/sprite.png')          # 一格 16：地、雷、水、火、風、無屬性、…、攻速
     for name, index in (('ico-air.png', 4), ('ico-neutral.png', 5), ('ico-speed.png', 7)):
         save(attr.crop((index * 16, 0, index * 16 + 16, 16)), name)
     save(tex('font/tooltip/requirement/sprite.png'), 'req.png')            # 力量…敏捷，上列亮、下列暗，一格 24
     save(tex('font/tooltip/requirement/linear.png'), 'mark.png')           # 空格、勾、叉，一格 10
     save(tex('font/tooltip/divider/line.png'), 'divider.png')
-    save(tex('font/tooltip/socket.png').crop((0, 0, 10, 10)), 'socket.png')
+    jobs = tex('font/profession.png')                        # 一格 16；最後兩個是鍛兵與木工
+    for name, index in (('prof-weaponsmithing.png', 10), ('prof-woodworking.png', 11)):
+        save(jobs.crop((index * 16, 0, index * 16 + 16, 16)), name)
 
     # ---- 對話框：頭像框（左）、對話框、名牌、底下那一條，照實機的相對位置疊成一張
     #      （實機截圖量的：框壓在對話框左邊 33 格上、名牌在框的右上、底條在對話框下面往右 16 格）
@@ -248,8 +255,15 @@ def from_pack(path):
     for name, source in (('item-book.png', 'wynn/gui/player/content_book.png'),
                          ('item-heal.png', 'wynn/potion/healing_full.png'),
                          ('item-mana.png', 'wynn/potion/mana_full.png'),
-                         ('item-emerald.png', 'wynn/pouch/emerald_full.png')):
+                         ('item-flesh.png', 'item/rotten_flesh.png')):
         save(tex(source), name)
+    save(tex('wynn/pouch/ingredient_default.png').crop((8, 8, 24, 24)), 'item-pouch.png')            # 32 格的畫布，袋子在中間那 16 格
+    # ---- 沒穿裝備的格子裡那幾個淡淡的影子（頭盔…靴子、戒指、手環、項鍊），排成一條，一格 16
+    ghosts = ('helmet', 'chestplate', 'leggings', 'boots', 'ring', 'bracelet', 'necklace')
+    strip = Image.new('RGBA', (16 * len(ghosts), 16), (0, 0, 0, 0))
+    for i, name in enumerate(ghosts):
+        strip.alpha_composite(tex('wynn/gui/slot/' + name + '.png'), (i * 16, 0))
+    save(strip, 'slots.png')
 
     # ---- 功能頁每一列前面的小圖：遊戲通用的白色圖示（一格 16），網頁用遮罩上色
     save(tex('font/common.png'), 'glyphs.png')
