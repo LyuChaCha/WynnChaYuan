@@ -730,8 +730,21 @@ public final class Presence {
      * @param open   拿到網址之後叫（在背景執行緒上）
      */
     public static void gallery(boolean signIn, Consumer<String> open) {
+        site("/capes", signIn, open);
+    }
+
+    /**
+     * 網站上的某一頁，跟 {@link #gallery} 一樣順便替瀏覽器登入。
+     *
+     * <p>F6 的「上傳披風」開的是帳號頁（{@code /account}）：上傳在那裡（使用者 2026-10-14：
+     * 「他們在 F6 上傳那部分可以直接引導到網頁」）。登記站給的登入網址指著披風一覽，
+     * 網站每一頁都認網址 {@code #} 後面的通行證，所以換掉路徑就好。
+     *
+     * @param page 網站上的路徑，像 {@code /account}
+     */
+    public static void site(String page, boolean signIn, Consumer<String> open) {
         WORKER.execute(() -> {
-            String url = BASE + "/capes";
+            String url = BASE + page;
             if (signIn) {
                 try {
                     if (login()) {
@@ -739,8 +752,8 @@ public final class Presence {
                                 URI.create(API + "/web-link"))
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString("{}")), true);
-                        String link = signedInLink(response.statusCode(),
-                                new String(response.body(), StandardCharsets.UTF_8));
+                        String link = onPage(signedInLink(response.statusCode(),
+                                new String(response.body(), StandardCharsets.UTF_8)), page);
                         if (link != null) {
                             url = link;
                         }
@@ -751,6 +764,15 @@ public final class Presence {
             }
             open.accept(url);
         });
+    }
+
+    /** 把披風一覽的登入網址換成網站上另一頁的（通行證照帶）；沒有登入網址回 {@code null}。 */
+    static String onPage(String link, String page) {
+        String gallery = BASE + "/capes";
+        if (link == null || !link.startsWith(gallery + "#")) {
+            return null;
+        }
+        return BASE + page + link.substring(gallery.length());
     }
 
     /** 登記站回的登入網址。只認指回我們網站的——別的網址不開。 */
