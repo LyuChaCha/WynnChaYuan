@@ -17,6 +17,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |
 | `demo-fonts.js` | 預覽畫面用的點陣字：從模組附的 Fusion Pixel 10px（SIL OFL 1.1，授權全文在 `assets/wynnchayuan/font/ofl-fusion.txt`）裁出場景裡出現的那幾百個字，四份共 75 KB 左右。同一支 `build-demo.py` 產生（要裝 fontTools；`--check` 不必裝，只看涵蓋的字夠不夠）。Worker 當成 `/font/px-<代號>.ttf` 送出去 |
+| `textures/`、`demo-textures.js` | 預覽畫面用的材質：遊戲裡真的那幾張（物品說明的框、背包、對話框與頭像、生命與魔力、快捷列、通用的小圖示）、官方的物品圖示、兩張實機截圖當背景。**這些圖是 Wynncraft 的（© Wynncraft），不在這個倉庫的授權範圍裡**，只用在網站的預覽上、不進模組的 jar；頁尾有一句說明。`python tools/presence/build-textures.py` 把 `textures/` 打包成 `demo-textures.js`（`--check` 比對）；要重做材質本身：`--pack` 從資源包重組（玩過 Wynncraft 的客戶端 `downloads/` 底下有快取；那個 zip 被動過手腳，腳本自己解）、`--icons` 重抓官方 CDN 的物品圖示、`--shots <資料夾>` 重做背景。Worker 當成 `/tex/<檔名>` 送出去 |
+| `cape-templates.js` | 披風範本每一種尺寸、兩份說明圖（中文、英文）與一張會動的示範，從 `capes/templates/` 打包的。`node tools/presence/build-cape-templates.mjs`（`--check` 比對）；範本改了要重跑。Worker 當成 `/template/<檔名>` 送出去，披風一覽與帳號頁的下載鈕用它 |
 | `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
@@ -26,8 +28,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | | |
 |---|---|
 | `/` | 首頁：模組是什麼、下載、團隊（開發者、贊助者、貢獻者照 `credits.json` 畫成名冊，一個人一列，點下去是他在 Wynncraft 的頁面；下面是管理頁登記的貢獻公會，有旗幟與圖示）、關於贊助 |
-| `/features` | 功能：最上面是即時預覽（照遊戲裡設定畫面右邊那一塊做）：上面一整面「遊戲畫面」——程式畫的像素風景，前面是 Minecraft 樣子的物品說明、對話框、Boss 血條、記分板、聊天與快捷列，字是遊戲裡那一套點陣字；下面幾列是真的選項，一動畫面就跟著變。物品／對話／世界與聊天三頁、七種譯文語言。首頁最上面那一塊用的是同一份（`site.js` 的 `makeStage`），自己輪著換語言與場景，下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組 |
-| `/capes` | 披風一覽。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。可以排序（最新、最早、最多人使用、人氣、最近有人穿上）與篩選（PNG／GIF／我的最愛／我用過的）；登入的人可以**穿上**、**復原**、按星星加進**我的最愛**。管理的人看得到全部，多「不公開」「待審核」兩個篩選 |
+| `/features` | 功能：最上面是即時預覽（照遊戲裡設定畫面右邊那一塊做）：上面一整面「遊戲畫面」——後面是實機截圖，前面是遊戲裡真的那幾張材質（物品說明照現在的版面：徽記、標籤、傷害、需求、詞條；背包；對話框與頭像；生命、魔力與快捷列），位置照實機截圖擺，字是遊戲裡那一套點陣字；下面幾列是真的選項，一動畫面就跟著變。物品／對話／世界與聊天三頁、七種譯文語言。首頁最上面那一塊用的是同一份（`site.js` 的 `makeStage`），自己輪著換語言與場景，下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組——每一項一張卡，前面一顆遊戲通用的圖示；翻譯範圍那十張各附一句預覽裡的例子（原文在上、譯文在下，跟著預覽選的語言換） |
+| `/capes` | 披風一覽。最上面一條「做自己的披風」，按了展開**披風範本**那一塊（說明圖、每一種尺寸的下載鈕、會動的示範；帳號頁上傳的地方也有同一塊）。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。可以排序（最新、最早、最多人使用、人氣、最近有人穿上）與篩選（PNG／GIF／我的最愛／我用過的）；登入的人可以**穿上**、**復原**、按星星加進**我的最愛**。管理的人看得到全部，多「不公開」「待審核」兩個篩選 |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
 | `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員；管理員名單只有開發者看得到 |
 | 其他網址 | 404，但是一頁有頁首頁尾、給幾條回去的路的網頁（照訪客的語言）；`/api/` 底下與不是 GET 的照舊回 JSON |
@@ -256,7 +258,7 @@ npx.cmd wrangler deploy
 
 第一次部署到自己的網域時，wrangler 會自己建好 DNS 紀錄與憑證，一兩分鐘後生效。
 
-要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
+要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`demo-textures.js`、`cape-templates.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
 
 ## 在本機看網站
 
