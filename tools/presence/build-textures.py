@@ -266,7 +266,17 @@ def from_pack(path):
     save(strip, 'slots.png')
 
     # ---- 功能頁每一列前面的小圖：遊戲通用的白色圖示（一格 16），網頁用遮罩上色
-    save(tex('font/common.png'), 'glyphs.png')
+    # 原圖每一格的圖都靠左上角放（偏左最多 3 格），網頁放在方框正中間會看起來歪：每一格各自置中
+    common = tex('font/common.png')
+    glyphs = Image.new('RGBA', common.size, (0, 0, 0, 0))
+    for top in range(0, common.height, 16):
+        for left in range(0, common.width, 16):
+            cell = common.crop((left, top, left + 16, top + 16))
+            box = cell.getbbox()
+            if box:
+                art = cell.crop(box)
+                glyphs.alpha_composite(art, (left + (16 - art.width) // 2, top + (16 - art.height) // 2))
+    save(glyphs, 'glyphs.png')
 
 
 def from_cdn():
