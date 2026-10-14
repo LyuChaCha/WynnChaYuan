@@ -1,12 +1,51 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.2",
+ "latest": "1.0.2_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.2_1": {
+   "headline": "1.0.2_1: fixes for the Wynntils content book, bomb names and Turkish",
+   "items": [
+    "Fixed: in the Wynntils content book, the list and the card showed two different names for the same cave (Scorched Earth, Dust Bowl). The tracker title now uses the card's name too.",
+    "Fixed: Loot Chest stayed in English in the Wynntils bomb bell.",
+    "Fixed: nameplates such as \"Someone's Totem\" are now translated in every language.",
+    "Fixed: the hint and title text on the wardrobe and emote screens.",
+    "Fixed: the status bar, screenshots and the dialogue panel showed Chinese text under other languages.",
+    "Capes: a cape you put on at wynnchayuan.com now shows on your own screen as well, even with a preview file in the capes folder.",
+    "Capes: players a developer has added to the special list can upload GIF capes and larger files in game.",
+    "Translations: Turkish proofreading by anilken, Japanese additions by yool141 carried to the other languages, and more lines recorded in game."
+   ],
+   "zh_tw": {
+    "headline": "1.0.2_1：修正 Wynntils 內容書、炸彈名稱與土耳其文",
+    "items": [
+     "修正：Wynntils 內容書裡，同一個洞窟在清單與卡片上是兩個名字（Scorched Earth、Dust Bowl）。追蹤欄的標題也改用卡片上的名字。",
+     "修正：Wynntils 炸彈鈴的 Loot Chest 留成英文。",
+     "修正：「某某的圖騰」這種名牌，現在每個語言都會翻。",
+     "修正：衣櫃與表情畫面的提示與標題文字。",
+     "修正：狀態列、截圖與對話小框在其他語言底下出現中文。",
+     "披風：在 wynnchayuan.com 穿上的披風，自己的畫面也會跟著換，資料夾裡放著預覽圖也一樣。",
+     "披風：開發者加進特別名單的玩家，可以在遊戲裡上傳 GIF 披風與比較大的檔案。",
+     "譯文：anilken 的土耳其文校對、yool141 的日文補充同步到其他語言，以及實機收到的新句子；炸彈公告改成「丟出了 寶箱炸彈」的寫法。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.2_1：修正 Wynntils 内容书、炸弹名称与土耳其文",
+    "items": [
+     "修正：Wynntils 内容书里，同一个洞窟在列表与卡片上是两个名字（Scorched Earth、Dust Bowl）。追踪栏的标题也改用卡片上的名字。",
+     "修正：Wynntils 炸弹铃的 Loot Chest 留成英文。",
+     "修正：「某某的图腾」这种名牌，现在每种语言都会翻。",
+     "修正：换装与表情界面的提示与标题文字。",
+     "修正：状态栏、截图与对话小框在其他语言下出现中文。",
+     "披风：在 wynnchayuan.com 穿上的披风，自己的画面也会跟着换，文件夹里放着预览图也一样。",
+     "披风：开发者加进特别名单的玩家，可以在游戏里上传 GIF 披风与比较大的文件。",
+     "译文：anilken 的土耳其文校对、yool141 的日文补充同步到其他语言，以及实机收到的新句子；炸弹公告改成「扔出了 宝箱炸弹」的写法。"
+    ]
+   }
+  },
   "1.0.2": {
    "headline": "1.0.2: capes, leaves for everyone, a website and in-game updates",
    "items": [

@@ -4430,7 +4430,8 @@ public final class LineTranslator {
         // 1. 後面幾段（或前面幾段）整串查得到，而且剛好是這一截的結尾（或開頭）
         for (int k = lo + 1; k < hi; k++) {
             String hit = labelLookup(joined(runs, k, hi), store);
-            if (hit != null && hit.length() < window.length() && window.endsWith(hit)) {
+            if (hit != null && hit.length() < window.length() && window.endsWith(hit)
+                    && coversEnds(runs, k, hi, hit)) {
                 int cut = y - hit.length();
                 alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
                 alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
@@ -4439,7 +4440,8 @@ public final class LineTranslator {
         }
         for (int k = hi - 1; k > lo; k--) {
             String hit = labelLookup(joined(runs, lo, k), store);
-            if (hit != null && hit.length() < window.length() && window.startsWith(hit)) {
+            if (hit != null && hit.length() < window.length() && window.startsWith(hit)
+                    && coversEnds(runs, lo, k, hit)) {
                 int cut = x + hit.length();
                 alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
                 alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
@@ -4491,6 +4493,29 @@ public final class LineTranslator {
             prevEnd = anchor[2];
         }
         alignLabel(runs, prevRun, hi, dst, prevEnd, y, regions, styles, store);
+    }
+
+    /**
+     * 幾段接起來查到的譯名，是不是真的涵蓋了頭尾那兩段：純符號的段（星星、括號）
+     * 要原樣出現在譯名裡。
+     *
+     * <p>{@link #labelLookup} 查不到整串時會剝掉頭尾的符號再查——「Loot Chest [✫✫✫✫」
+     * 剝成「Loot Chest」，語料裡有這一條（Wynntils 炸彈鈴用的）就查到了，可是星星不在
+     * 它的譯名裡。拿它當錨點，星星會被併進後面那一段，四顆同一個顏色（星星亮幾顆是
+     * 寶箱的等級）。只有一段的不必查：那一段自己就是整截。
+     */
+    private static boolean coversEnds(List<LabelRun> runs, int from, int to, String hit) {
+        if (to - from < 2) {
+            return true;
+        }
+        for (int i : new int[] {from, to - 1}) {
+            String core = runs.get(i).text().strip();
+            if (!core.isEmpty() && core.codePoints().noneMatch(Character::isLetterOrDigit)
+                    && !hit.contains(core)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static String joined(List<LabelRun> runs, int from, int to) {
