@@ -413,6 +413,61 @@ public final class SelfUpdate {
         client.player.displayClientMessage(line, false);
     }
 
+    /**
+     * 從聊天室（{@code /wcy update}）開始的更新：先說一聲，下載完或失敗時再說一聲。
+     *
+     * <p>「更新說明」頁的按鈕自己會顯示進度；從聊天室按的人不會開那一頁，
+     * 不說的話看起來就是點了沒反應。
+     */
+    public static void startFromChat(net.minecraft.client.Minecraft client) {
+        String latest = Releases.newer();
+        if (latest == null) {
+            chat(client, com.wynnchayuan.client.T.c("chat.update.none"));
+            return;
+        }
+        if (!available()) {
+            chat(client, com.wynnchayuan.client.T.c("chat.update.unavailable"));
+            return;
+        }
+        if (state == State.READY) {
+            chat(client, com.wynnchayuan.client.T.c("chat.update.ready", latest));
+            return;
+        }
+        start(latest);
+        if (state == State.FAILED) {
+            chat(client, com.wynnchayuan.client.T.c("chat.update.failed"));
+            return;
+        }
+        announce = true;
+        chat(client, com.wynnchayuan.client.T.c("chat.update.started", latest));
+    }
+
+    /** 每個 tick 叫：從聊天室開始的那一次下載完了（或失敗了）就說一聲。 */
+    public static void announceProgress(net.minecraft.client.Minecraft client) {
+        if (!announce || client == null || client.player == null) {
+            return;
+        }
+        if (state == State.READY) {
+            announce = false;
+            chat(client, com.wynnchayuan.client.T.c("chat.update.ready", target));
+        } else if (state == State.FAILED) {
+            announce = false;
+            chat(client, com.wynnchayuan.client.T.c("chat.update.failed"));
+        }
+    }
+
+    private static volatile boolean announce;
+
+    private static void chat(net.minecraft.client.Minecraft client,
+                             net.minecraft.network.chat.MutableComponent line) {
+        if (client == null || client.player == null) {
+            return;
+        }
+        net.minecraft.network.chat.Component shown = line.withStyle(net.minecraft.ChatFormatting.AQUA);
+        com.wynnchayuan.capture.OwnOutputs.note(shown);
+        client.player.displayClientMessage(shown, false);
+    }
+
     /** 測試用：回到還沒開始的樣子。 */
     static void reset() {
         state = State.IDLE;
