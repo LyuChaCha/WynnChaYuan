@@ -102,6 +102,9 @@ const STYLE = String.raw`
   :lang(ko) body { font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
   .me { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); }
   .me img { width: 22px; height: 22px; border-radius: 4px; image-rendering: pixelated; }
+  /* 名字旁邊的登出（使用者 2026-10-14：「網頁右上方希望可以放個登出」）。比名字安靜一點：只有框線 */
+  .btn.small.me-out { background: transparent; color: var(--ink-2); }
+  .btn.small.me-out:hover { color: var(--ink); border-color: var(--leaf-deep); }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
   h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
   /* 大段之間留寬一點、標題貼著自己的內容：寬與緊的差距才看得出哪幾塊是一組 */
@@ -645,6 +648,7 @@ const STYLE = String.raw`
     canvas.model { height: 320px; }
     .side { border-left: 0; border-top: 1px solid var(--line); }
     .me a { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .me-out span { display: none; }     /* 窄的時候只留圖示（按鈕本身有 aria-label） */
     /* 登入之後工具那一排多了頭像與名字：放不下就折到下一列，不要把整頁撐寬 */
     .tools { flex-wrap: wrap; justify-content: flex-end; row-gap: 6px; }
     .menu { left: 0; right: auto; transform-origin: top left; }
@@ -700,6 +704,7 @@ const ICON = {
   out: stroke('<path d="M8 16 16 8"/><path d="M9.5 8H16v6.5"/>'),
   go: stroke('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>'),
   flag: stroke('<path d="M6 21V4"/><path d="M6 5h12l-2.5 4 2.5 4H6"/>'),
+  exit: stroke('<path d="M9 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"/><path d="m15 16 4-4-4-4"/><path d="M19 12H9"/>'),
 };
 
 // ------------------------------------------------------------------ 字
@@ -709,7 +714,7 @@ export const TEXT = {
     html: 'zh-Hant',
     'nav.home': '首頁', 'nav.features': '功能', 'nav.capes': '披風', 'nav.account': '帳號', 'nav.admin': '管理', 'nav.label': '主選單',
     'lang.label': '語言',
-    'top.get': '下載', 'top.sponsor': '贊助',
+    'top.get': '下載', 'top.sponsor': '贊助', 'top.signout': '登出',
     'top.getnote': '需要 Wynntils 與 Fabric API，jar 放進 mods 資料夾就好。<a href="/#install">安裝說明</a>',
     'foot.label': '頁尾',
     'foot.tagline': 'Wynncraft 的多語言翻譯模組。原文留著，譯文就在旁邊。',
@@ -978,7 +983,7 @@ export const TEXT = {
     html: 'en',
     'nav.home': 'Home', 'nav.features': 'Features', 'nav.capes': 'Capes', 'nav.account': 'Account', 'nav.admin': 'Admin', 'nav.label': 'Main menu',
     'lang.label': 'Language',
-    'top.get': 'Download', 'top.sponsor': 'Sponsor',
+    'top.get': 'Download', 'top.sponsor': 'Sponsor', 'top.signout': 'Sign out',
     'top.getnote': 'Needs Wynntils and Fabric API; the jar goes in your mods folder. <a href="/#install">How to install</a>',
     'foot.label': 'Footer',
     'foot.tagline': 'A multilingual translation mod for Wynncraft. The original text stays; the translation sits beside it.',
@@ -1414,6 +1419,9 @@ const COMMON = String.raw`
       slot.append(link);
       return;
     }
+    var out = document.getElementById('me-out');
+    out.hidden = false;
+    out.onclick = signOut;
     if (me.linked === false) {              /* 用 Discord 登入了，還沒綁遊戲 ID */
       var pending = el('a', '', (me.discord && me.discord.name) || 'Discord');
       pending.href = '/account';
@@ -1490,7 +1498,9 @@ function layout(lang, title, active, body, script) {
     + '<a href="' + RELEASES + '">GitHub Releases' + ICON.out + '</a>'
     + '<p>%%top.getnote%%</p></div></div>'
     + '<select class="lang" id="lang" aria-label="%%lang.label%%">' + switcher + '</select>'
-    + '<div class="me" id="me"></div></div>'
+    + '<div class="me" id="me"></div>'
+    + '<button class="btn small me-out" id="me-out" type="button" hidden title="%%top.signout%%" aria-label="%%top.signout%%">'
+    + ICON.exit + '<span>%%top.signout%%</span></button></div>'
     + '</div></div>\n<main id="main">' + body + '</main>\n'
     + '<footer><div class="in"><div class="foot">'
     + '<div class="foot-brand"><a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'

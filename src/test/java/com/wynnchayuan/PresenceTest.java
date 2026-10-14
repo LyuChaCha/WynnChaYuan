@@ -203,6 +203,9 @@ public final class PresenceTest {
                         == null);
         check("沒有通行證（401）、不是 JSON：沒有登入網址", Presence.signedInLink(401, "{}") == null
                 && Presence.signedInLink(200, "<html>") == null);
+        check("★ F6 的上傳打開帳號頁，通行證照帶", (Presence.BASE + "/account#t=web.abc").equals(
+                Presence.onPage(link, "/account")) && link.equals(Presence.onPage(link, "/capes")));
+        check("沒有登入網址就沒有帳號頁的登入網址", Presence.onPage(null, "/account") == null);
         check("網站是 wynnchayuan.com", "https://wynnchayuan.com".equals(Presence.BASE));
 
         // ---- 上傳之前先驗 ----
