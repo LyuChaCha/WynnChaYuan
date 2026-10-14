@@ -96,10 +96,11 @@ public final class PartyPanelTest {
      * 所以整段收一條、逐行那些留空（空的不會載入，不會蓋掉整段）。
      */
     private static void lootrunBlocks(TranslationStore store) {
+        // 探針不用 Curse 的譯名：2026-10-14 從「詛咒」改成「怪物強化」
         block(store, "詛咒加傷", new String[] {
                 "For the rest of this Lootrun,",
                 "gain +100% Damage (Max x5)",
-                "everytime you get a Curse"}, "詛咒");
+                "everytime you get a Curse"}, "傷害");
         // 這一段最後一行帶著材質包圖示（「gain +{~} {#}Defence」），
         // 而 Component.literal 造不出真的圖示字元——照上面那樣畫一次會假失敗。
         // 改成直接問模板，至少釘住鍵的形狀沒被改壞。
@@ -167,7 +168,7 @@ public final class PartyPanelTest {
 
         block(store, "詛咒減半", new String[] {
                 "Curses are now half as",
-                "effective."}, "詛咒");
+                "effective."}, "減半");
         block(store, "逐險者說明", new String[] {
                 "Gain +1 Pull per Red Beacon",
                 "Challenge completed. This",
