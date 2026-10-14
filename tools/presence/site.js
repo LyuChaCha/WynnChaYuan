@@ -300,7 +300,9 @@ const STYLE = String.raw`
   .tip { position: relative; isolation: isolate; padding: .5em .6em .45em; white-space: nowrap; }
   .tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 1.2em 1em; border-image: var(--t-tip-plain) 12 10 fill / 1.2em 1em; }
   .tip.rare::before { border-image-source: var(--t-tip-rare); }
-  .duo .tip { width: 15.6em; }
+  /* 物品那一面：背包與兩個框並排、不互相蓋住，上下置中——框的字小一級（18），
+     三塊加起來剛好是畫面的寬（7 + 374 + 6 + 281 + 4 + 281 + 7） */
+  .duo .tip { width: 15.6em; font-size: 18px; }
   .tip-head { display: flex; align-items: center; gap: .5em; margin-bottom: .2em; }
   .tip .emblem { width: 3.2em; height: 3.2em; flex: none; }
   .tip .tname { color: #ff55ff; white-space: normal; }
@@ -324,7 +326,7 @@ const STYLE = String.raw`
   .tip .sockets { display: flex; justify-content: flex-end; margin-bottom: .1em; }
   .tip .sockets img { width: 1em; height: 1em; }
   /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來 */
-  .inv { position: absolute; left: 16px; top: 44px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
+  .inv { position: absolute; left: 7px; top: 56px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
   .scr .it { position: absolute; width: 32px; height: 32px; }
   .scr .it.smooth { image-rendering: auto; }
   .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; }
@@ -336,7 +338,7 @@ const STYLE = String.raw`
   .doll .over { inset: 0; }
   .doll i { position: absolute; left: 50%; top: 50%; background-image: var(--t-skin); background-repeat: no-repeat; }
   .scr .cursor { position: absolute; width: 16px; height: 22px; filter: drop-shadow(1px 1px 0 #000a); }
-  .duo { position: absolute; right: 8px; top: 32px; display: flex; align-items: flex-start; }
+  .duo { position: absolute; right: 7px; top: 44px; display: flex; align-items: flex-start; }
   .gapmark { position: relative; align-self: stretch; flex: none; min-width: 4px; transition: width 160ms var(--out); }
   /* 兩個框之間留多寬：框的上面量一段，數字寫在它上面 */
   .gapmark::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 8px; border: solid var(--leaf); border-width: 0 2px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 2px no-repeat; }
@@ -389,8 +391,11 @@ const STYLE = String.raw`
   /* 窄的那一面（480×470）：手機，與首頁最上面那一塊 */
   .scr.narrow { height: 470px; }
   .scr.narrow .tip { font-size: 14px; }
-  .scr.narrow .inv { left: 8px; top: 8px; transform: scale(.72); transform-origin: 0 0; }
-  .scr.narrow .duo { right: 6px; top: 150px; }
+  /* 窄的那一面放不下並排：背包縮小放上面，兩個框在它下面（只壓到背包最底下那一條木框） */
+  .scr.narrow .duo .tip { font-size: 13px; }
+  .scr.narrow .inv { left: 139px; top: 2px; transform: scale(.54); transform-origin: 0 0; }
+  .scr.narrow .duo { left: 0; right: 0; top: 182px; justify-content: center; }
+  .scr.narrow .gapmark span { padding: 2px 5px; background: #000000b0; }
   .scr.narrow .boss i { width: 250px; }
   .scr.narrow .trk { top: 50px; right: 6px; max-width: none; }
   /* 窄的那一面把街景往左挪，NPC 站在左邊三分之一：右邊留給記分板與注視時的小框 */
