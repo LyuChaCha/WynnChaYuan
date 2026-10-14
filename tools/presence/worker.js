@@ -47,6 +47,8 @@
  *   POST   /api/admin/staff    {who, note}   加一個管理員：Minecraft ID、UUID 或 Discord 代號（只有開發者）
  *   POST   /api/admin/unstaff  {key}         移除一個管理員（只有開發者）
  *   GET    /font/px-<代號>.ttf        預覽畫面用的點陣字（demo-fonts.js）
+ *   GET    /tex/<檔名>                預覽畫面用的材質（demo-textures.js）
+ *   GET    /template/<檔名>           披風範本、說明圖與示範（cape-templates.js）
  *   （排程）每天一次                  沒有人穿滿七天的披風刪掉（tidy）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
@@ -68,6 +70,8 @@
 
 import { LANGS, PATHS, pickLang, render, renderLost, tagOf } from './site.js';
 import { FONTS } from './demo-fonts.js';
+import { TEXTURES } from './demo-textures.js';
+import { CAPE_TEMPLATES } from './cape-templates.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
 
@@ -2308,6 +2312,27 @@ function font(path) {
   });
 }
 
+/**
+ * 預覽畫面用的材質（demo-textures.js：Wynncraft 的介面貼圖、物品圖示與實機截圖，© Wynncraft）。
+ * 網址帶著內容的雜湊，所以可以長期快取。
+ */
+function texture(path) {
+  // /tex/ 是預覽的材質，/template/ 是披風範本（cape-templates.js）
+  const from = path.startsWith('/template/') ? CAPE_TEMPLATES : TEXTURES;
+  const name = path.slice(path.indexOf('/', 1) + 1);
+  const one = Object.hasOwn(from, name) ? from[name] : null;
+  if (!one) return no('not found', 404);
+  const bytes = Uint8Array.from(atob(one.data), (c) => c.charCodeAt(0));
+  return new Response(bytes, {
+    status: 200,
+    headers: {
+      'content-type': one.type,
+      'cache-control': 'public, max-age=31536000, immutable',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
 export default {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
@@ -2329,6 +2354,7 @@ export default {
     }
     if (request.method === 'GET' && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
     if (request.method === 'GET' && path.startsWith('/font/')) return font(path);
+    if (request.method === 'GET' && (path.startsWith('/tex/') || path.startsWith('/template/'))) return texture(path);
     if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
     if (request.method === 'GET' && path === '/auth/discord/callback') {
       return handleDiscordCallback(request, env, now);

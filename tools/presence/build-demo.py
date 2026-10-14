@@ -52,18 +52,19 @@ UI_KEYS = [
 
 # 場景裡的原文，與它在語料的哪一個檔
 SAMPLES = [
-    # 物品：一把弓的說明——名字、傷害、兩條需求、兩條詞條、稀有度
+    # 物品：Bony Bow 的說明，照遊戲現在的版面——每秒傷害、攻速、兩條需求、兩條詞條
     ('Bony Bow', 'gear-weapon.json'),
-    ('{#} Neutral Damage: {~}-{~}', 'gui.json'),
-    ('✔ Class Req: Archer/Hunter', 'misc.json'),
-    ('✔ Combat Lv. Min: {~}', 'misc.json'),
-    ('Health', 'ui-labels.json'),
-    ('Walk Speed', 'ui-labels.json'),
-    ('Unique Item', 'misc.json'),
+    ('{~} DPS', 'misc.json'),
+    ('{#} Fast ({~} hits/s)', 'misc.json'),
+    ('{#} Class Type{#}Archer/Hunter', 'misc.json'),
+    ('{#} Combat Level{#}{~}', 'gui.json'),
+    ('Agility', 'ui-labels.json'),
+    ('Main Attack Damage', 'ui-labels.json'),
     # 對話
     ('Well, what are we waiting for?', 'quest/king-s-recruit.json'),
     ('Yes', 'quest.json'),
     ('Goodbye.', 'quest-dialogue.json'),
+    ('to continue', 'misc.json'),
     # 世界與聊天
     ('Zombie', 'npc.json'),
     ('Weapon Merchant', 'npc.json'),
@@ -74,6 +75,10 @@ SAMPLES = [
     ('Daily Objective:', 'raid.json'),
     ('- Loot Chests T{~}+: {~}/{~}', 'raid.json'),
     ('- Mobs slain: {~}/{~}', 'raid.json'),
+    # 功能頁卡片上的例句（別的幾句上面已經有了）
+    ('Ability Points', 'gui.json'),
+    ('Trade Market', 'npc.json'),
+    ('Secret Discovery', 'quest-ui.json'),
 ]
 
 # 字型：代號 → (模組附的那一份, 用它的譯文語言)。拉丁、西里爾、土耳其字母都用繁中那一份的

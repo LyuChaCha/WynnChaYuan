@@ -17,6 +17,8 @@
 import { MORE_TEXT } from './site-text.js';
 import { DEMO } from './demo-data.js';
 import { FONTS } from './demo-fonts.js';
+import { TEXTURES } from './demo-textures.js';
+import { CAPE_TEMPLATES } from './cape-templates.js';
 
 const STYLE = String.raw`
   :root {
@@ -126,6 +128,8 @@ const STYLE = String.raw`
     .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
     tbody tr:hover td { background: #ffffff06; }
     .kofi:hover { color: #f2a7b6; background: var(--panel-2); }
+    .fcard:hover { border-color: var(--leaf-deep); background: #18221c; }
+    .make > summary:hover { background: #1b2c21; }
     .chip:hover { border-color: var(--leaf-deep); color: var(--ink); }
     .chip[aria-pressed="true"]:hover { color: #0c1a10; }
     .hero-screen .screen:hover { border-color: var(--leaf-deep); transform: translateY(-2px); }
@@ -176,7 +180,7 @@ const STYLE = String.raw`
   .hero .lede { font-size: 16px; }
   /* 右邊那一面：真的在跑的預覽（跟功能頁同一份），不是圖 */
   .hero-screen { min-width: 0; animation: settle 720ms var(--arrive) 80ms both; }
-  .hero-screen .screen { display: block; aspect-ratio: 480 / 420; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 34px 70px -24px #000000e6, 0 0 0 6px #ffffff07; transition: border-color var(--base) ease, transform var(--base) var(--out); }
+  .hero-screen .screen { display: block; aspect-ratio: 480 / 470; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 34px 70px -24px #000000e6, 0 0 0 6px #ffffff07; transition: border-color var(--base) ease, transform var(--base) var(--out); }
   .hero-cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin: 12px 4px 0; font-size: 13px; color: var(--ink-2); }
   .hero-cap a { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .hero-cap svg { width: 14px; height: 14px; }
@@ -269,105 +273,120 @@ const STYLE = String.raw`
   .range input { width: 150px; }
   .range output { min-width: 6ch; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
 
-  /* 遊戲畫面。.screen 是外面那一格（高度由程式照寬度算），.scr 是固定邏輯大小、整塊縮放的那一面。
-     裡面的字是遊戲裡同一套點陣字，每一塊的樣子照 Minecraft 的介面畫 */
-  .screen { position: relative; display: block; width: 100%; overflow: hidden; background: #0a0f0c; aspect-ratio: 960 / 440; }
+  /* 遊戲畫面。.screen 是外面那一格（高度由比例決定），.scr 是固定邏輯大小、整塊縮放的那一面。
+     後面是實機截圖，前面每一塊是遊戲裡真的那張材質（網址在 --t-* 裡，見 TEX_CSS），
+     一格材質畫成兩格——所以下面的數字多半是「材質的格數 × 2」 */
+  .screen { position: relative; display: block; width: 100%; overflow: hidden; background: #0a0f0c; aspect-ratio: 960 / 480; }
   .scr {
-    position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; width: 960px; height: 440px;
-    color: #fff; font-family: PxTC, ui-monospace, monospace; font-size: 20px; line-height: 1.4; font-weight: 400;
+    position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; width: 960px; height: 480px;
+    color: #fff; font-family: PxTC, ui-monospace, monospace; font-size: 20px; line-height: 1.2; font-weight: 400;
     text-shadow: .1em .1em 0 #000000b8; user-select: none; -webkit-font-smoothing: none;
   }
-  .scr.narrow { font-size: 16px; }
   .scr :lang(zh-Hans) { font-family: PxSC, PxTC, monospace; }
   .scr :lang(ja) { font-family: PxJA, PxTC, monospace; }
   .scr :lang(ko) { font-family: PxKO, PxTC, monospace; }
-  .scr b { font-weight: 400; }
-  .scr canvas { image-rendering: pixelated; }
-  .scr .bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .scr b, .scr kbd { font-weight: 400; font-family: inherit; }
+  .scr img, .scr canvas, .scr .hudbar, .scr .inv, .scr .dlgbox, .scr .option, .scr .tip::before, .scr i, .scr u { image-rendering: pixelated; }
+  .scr .bg { position: absolute; inset: 0; background: var(--t-bg-world) center / cover no-repeat; }
+  .scr[data-tab="world"] .bg { background-image: var(--t-bg-town); }
   .scr .hud { position: absolute; inset: 0; }
   .scr .hud > * { animation: fade 180ms ease both; }
   .scr.still .hud > * { animation: none; }
-  .scr .dim { position: absolute; inset: 0; background: #0c0c0c8c; }
+  .scr .dim { position: absolute; inset: 0; background: #0a0a0a99; }
   .c-y { color: #ffff55; } .c-g { color: #55ff55; } .c-gr { color: #aaaaaa; } .c-go { color: #ffaa00; }
-  .scr svg.px-ico { display: inline-block; width: .7em; height: .7em; margin-right: .4em; vertical-align: -.02em; fill: currentColor; filter: drop-shadow(.1em .1em 0 #000000b8); }
-  .scr .c-gr svg.check { color: #55ff55; }
-  /* Minecraft 的說明框：深紫底、一圈漸層的邊、四個角缺一格。ours 是我們另開的面板——邊換成葉子的綠 */
-  .mctip {
-    padding: .2em .45em .15em; border: 2px solid; border-image: linear-gradient(180deg, #5a1cffb0, #2a0a7fb0) 1;
-    background: #100010f0; white-space: nowrap; box-shadow: 0 -2px 0 #100010f0, 0 2px 0 #100010f0, -2px 0 0 #100010f0, 2px 0 0 #100010f0;
-  }
-  .mctip.ours { border-image: linear-gradient(180deg, #7fd08a, #2f7d46) 1; background: #06130af0; box-shadow: 0 -2px 0 #06130af0, 0 2px 0 #06130af0, -2px 0 0 #06130af0, 2px 0 0 #06130af0; }
-  .mctip .gapline { height: .55em; }
-  /* 背包：淺灰的面板、一格一格凹下去的格子 */
-  .inv { position: absolute; left: 60px; top: 108px; display: grid; grid-template-columns: repeat(9, 36px); padding: 12px; background: #c6c6c6; box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #555555, 0 0 0 2px #000000; }
-  .inv u, .hot u { display: grid; place-items: center; text-decoration: none; }
-  .inv u { width: 36px; height: 36px; background: #8b8b8b; box-shadow: inset 2px 2px 0 #373737, inset -2px -2px 0 #ffffff; }
-  .inv u.gap { grid-column: 1 / -1; height: 8px; background: none; box-shadow: none; }
-  .inv u.on { background: #c9c9c9; }
-  .inv canvas, .hot canvas { width: 32px; height: 32px; }
-  .duo { position: absolute; left: 214px; top: 84px; display: flex; align-items: flex-start; }
-  .scr .cursor { position: absolute; left: 190px; top: 132px; width: 16px; height: 22px; filter: drop-shadow(1px 1px 0 #000a); }
-  .gapmark { position: relative; align-self: stretch; flex: none; min-width: 6px; transition: width 160ms var(--out); }
-  .gapmark::before { content: ""; position: absolute; left: 4px; right: 4px; top: -16px; height: 7px; border: solid var(--leaf); border-width: 0 2px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 2px no-repeat; }
-  .gapmark span { position: absolute; left: 50%; top: -42px; transform: translateX(-50%); color: var(--leaf); font-size: .8em; white-space: nowrap; }
-  /* 快捷列、血條與魔力條、等級 */
-  .hot { position: absolute; left: 50%; bottom: 8px; display: flex; padding: 2px; transform: translateX(-50%); background: #000000a8; box-shadow: 0 0 0 2px #1c1c1c; }
-  .hot u { width: 38px; height: 38px; box-shadow: inset 0 0 0 2px #6d6d6d; }
-  .hot u.on { position: relative; z-index: 1; box-shadow: 0 0 0 3px #f0f0f0, inset 0 0 0 2px #6d6d6d; }
-  .bars { position: absolute; left: 50%; bottom: 58px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0 10px; width: 346px; transform: translateX(-50%); line-height: 1; }
-  .bars i { position: relative; height: 10px; background: #000000b0; box-shadow: 0 0 0 2px #000000; }
-  .bars i::after { content: ""; position: absolute; inset: 0; }
-  .bars .hp::after { right: 16%; background: linear-gradient(#ff7676, #c9282f); }
-  .bars .mp::after { left: 28%; background: linear-gradient(#74c9ff, #2362c4); }
-  .bars .lv { color: #80ff20; font-size: .9em; }
-  .held { position: absolute; left: 0; right: 0; bottom: 78px; text-align: center; white-space: nowrap; }
+  .scr .dimmer { color: #a8a8a8; } .scr .good { color: #55ff55; }
+  /* 物品說明的框：遊戲的那一張貼圖用九宮格拉開（邊上下 12 格、左右 10 格）。
+     rare 是稀有物品的紫框，ours 是我們另開的面板——遊戲平常的那種深色框 */
+  .tip { position: relative; isolation: isolate; padding: .5em .6em .45em; white-space: nowrap; }
+  .tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 1.2em 1em; border-image: var(--t-tip-plain) 12 10 fill / 1.2em 1em; }
+  .tip.rare::before { border-image-source: var(--t-tip-rare); }
+  .duo .tip { width: 15.6em; }
+  .tip-head { display: flex; align-items: center; gap: .5em; margin-bottom: .2em; }
+  .tip .emblem { width: 3.2em; height: 3.2em; flex: none; }
+  .tip .tname { color: #ff55ff; white-space: normal; }
+  .tip .pills { display: flex; gap: .2em; margin-top: .2em; }
+  .tip .pill { padding: 0 .35em; font-size: .6em; line-height: 1.5; letter-spacing: .06em; color: #1b1420; background: #dcdcdc; text-shadow: none; }
+  .tip .pill.rare { background: #ff55ff; }
+  .tip .ico { width: 1.6em; height: 1.6em; margin: -.4em .1em -.4em -.25em; vertical-align: middle; }
+  .tip .dps { font-size: 1.2em; }
+  .tip .dmg .ico:not(:first-child) { margin-left: .5em; }
+  .tip .divider { display: block; width: 11.2em; height: 1.6em; margin: -.08em auto; background: var(--t-divider) center / 100% 100% no-repeat; }
+  .tip .reqs { display: flex; justify-content: space-between; margin: 0 .2em .2em; }
+  .tip .req { display: grid; grid-template-columns: auto auto; justify-content: center; align-items: center; gap: 0 .2em; color: #a8a8a8; }
+  .tip .req.on { color: #fff; }
+  .tip .req i { grid-column: 1 / -1; width: 2.4em; height: 2.4em; background: var(--t-req) 0 0 / 12em 4.8em no-repeat; }
+  .tip u { display: inline-block; width: 1em; height: 1em; margin-right: .3em; vertical-align: -.12em; text-decoration: none; background: var(--t-mark) 0 0 / 3em 1em no-repeat; }
+  .tip u.ok { background-position: -1em 0; }
+  .tip .req u { margin: 0; }
+  /* 標籤在左、值靠右；放不下的時候值掉到下一行（還是靠右），標籤不拆字 */
+  .tip .kv { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 .8em; }
+  .tip .kv span:last-child { margin-left: auto; text-align: right; }
+  .tip .sockets { display: flex; justify-content: flex-end; margin-bottom: .1em; }
+  .tip .sockets img { width: 1em; height: 1em; }
+  /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來 */
+  .inv { position: absolute; left: 16px; top: 44px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
+  .scr .it { position: absolute; width: 32px; height: 32px; }
+  .scr .it.smooth { image-rendering: auto; }
+  .inv .hover { position: absolute; width: 32px; height: 32px; background: #ffffff59; }
+  .scr .cursor { position: absolute; width: 16px; height: 22px; filter: drop-shadow(1px 1px 0 #000a); }
+  .duo { position: absolute; right: 8px; top: 32px; display: flex; align-items: flex-start; }
+  .gapmark { position: relative; align-self: stretch; flex: none; min-width: 4px; transition: width 160ms var(--out); }
+  /* 兩個框之間留多寬：框的上面量一段，數字寫在它上面 */
+  .gapmark::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 8px; border: solid var(--leaf); border-width: 0 2px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 2px no-repeat; }
+  .gapmark span { position: absolute; left: 50%; top: -30px; transform: translateX(-50%); color: var(--leaf); font-size: 14px; line-height: 1; white-space: nowrap; }
+  /* 底下那一排：快捷列、生命與魔力、等級是同一張圖（build-textures.py 照實機的位置疊好的），數字與物品另外放 */
+  .hudbar { position: absolute; left: 50%; bottom: -6px; width: 464px; height: 110px; transform: translateX(-50%); background: var(--t-hud) 0 0 / 100% 100% no-repeat; }
+  .hudbar .num { position: absolute; top: 14px; width: 144px; font-size: 16px; line-height: 1; text-align: center; white-space: nowrap; }
+  .hudbar .hp { left: 30px; } .hudbar .mp { left: 288px; }
+  .hudbar .lv { left: 208px; top: 25px; width: 48px; color: #4a3320; text-shadow: none; }
+  .held { position: absolute; left: 0; right: 0; bottom: 112px; text-align: center; white-space: nowrap; color: #ff55ff; }
   /* Boss 血條、右上的任務追蹤、記分板 */
   .boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #ff7b7b; }
   .boss i { display: block; width: 364px; height: 10px; margin: 4px auto 0; background: linear-gradient(90deg, #e0358f 62%, #4a1232 62%); box-shadow: 0 0 0 2px #000000b0; }
   .trk { position: absolute; top: 58px; right: 10px; display: grid; justify-items: end; gap: 8px; max-width: 46%; text-align: right; white-space: nowrap; }
-  .trk .mctip { text-align: left; }
+  .trk .tip { text-align: left; }
   .board { position: absolute; right: 0; top: 172px; min-width: 210px; padding-bottom: 2px; background: #0000004d; color: #aaaaaa; white-space: nowrap; }
   .board div { padding: 0 12px 0 8px; }
   .board div:first-child { background: #00000066; color: #ffaa00; text-align: center; }
-  /* 站在草地上的人、頭上的名牌、注視時的小框 */
-  .npc { position: absolute; left: 372px; bottom: 100px; display: grid; justify-items: center; gap: 6px; }
-  .npc canvas { width: 48px; height: 96px; }
-  .npc .plate { padding: 0 6px; background: #00000059; white-space: nowrap; }
-  .npc .look { position: absolute; left: 100%; top: 34px; margin-left: 14px; }
-  .npc.talk { left: 60px; bottom: 112px; }
-  .title { position: absolute; left: 0; right: 0; top: 142px; text-align: center; color: #ffaa00; font-size: 2em; line-height: 1.2; text-shadow: .1em .1em 0 #3f2a00; pointer-events: none; }
-  .chat { position: absolute; left: 6px; bottom: 104px; width: 300px; }
-  .scr:not(.narrow) .chat { width: auto; max-width: 350px; }
+  /* 站在街上的人、頭上的名牌（名字與一顆 NPC）、注視時的小框 */
+  .npc { position: absolute; left: 110px; bottom: 186px; display: grid; justify-items: center; gap: 4px; }
+  .npc canvas { width: 48px; height: 96px; filter: brightness(.82) drop-shadow(0 6px 4px #00000080); }
+  .npc .plate { display: grid; justify-items: center; gap: 2px; white-space: nowrap; }
+  .npc .plate span { color: #55ff55; }
+  .npc .plate b { padding: 0 .4em; font-size: .7em; line-height: 1.4; background: #5a5a5ad9; color: #e6e6e6; text-shadow: none; }
+  .npc .look { position: absolute; left: 100%; top: 26px; margin-left: 14px; }
+  .title { position: absolute; left: 0; right: 0; top: 132px; text-align: center; color: #ffaa00; font-size: 2em; text-shadow: .1em .1em 0 #3f2a00; pointer-events: none; }
+  .chat { position: absolute; left: 6px; bottom: 120px; max-width: 420px; }
   .chat div { padding: 0 6px; background: #00000080; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chat .ours { color: #9be7a5; }
-  /* 對話：底下是遊戲自己的對話框，上面可以另開小框 */
-  .dlg { position: absolute; left: 50%; bottom: 100px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; width: 620px; transform: translateX(-50%); }
-  .dlg .right { align-self: flex-end; }
-  .dlg .mctip { white-space: normal; }
-  .dlgbox { position: relative; align-self: stretch; padding: 8px 14px 10px; border: 2px solid #b08a45; background: #120d08eb; box-shadow: 0 0 0 2px #1a1208, inset 0 0 0 2px #3a2a12; color: #f4e6c8; }
-  .dlgbox b { display: block; color: #ffcf6b; }
-  .dlgbox p { margin: 0 0 4px; min-height: 2.8em; }
-  .dlgbox .choice { color: #cdb98d; }
-  .dlgbox .next { position: absolute; right: 12px; bottom: 6px; color: #ffcf6b; animation: bob 900ms steps(2, jump-none) infinite; }
-  @keyframes bob { to { transform: translateY(3px); } }
-  /* 窄的那一面（480×420）：手機，與首頁最上面那一塊 */
-  .scr.narrow .inv { left: 14px; top: 24px; grid-template-columns: repeat(9, 30px); padding: 10px; }
-  .scr.narrow .inv u { width: 30px; height: 30px; }
-  .scr.narrow .inv canvas, .scr.narrow .hot canvas { width: 24px; height: 24px; }
-  .scr.narrow .cursor { left: 62px; top: 46px; }
-  .scr.narrow .duo { left: 8px; right: 8px; top: 96px; justify-content: center; }
-  .scr.narrow .hot u { width: 30px; height: 30px; }
-  .scr.narrow .bars { bottom: 48px; width: 274px; }
-  .scr.narrow .held { bottom: 64px; }
+  /* 對話：遊戲自己的對話框是一張疊好的圖（頭像、名牌、底下那一條），字放在量好的位置上。
+     另開小框的時候，譯文在它上面；選項是右上方那兩條 */
+  .dlg { position: absolute; left: 50%; bottom: 30px; display: flex; flex-direction: column; gap: 6px; width: 574px; transform: translateX(-50%); }
+  .dlg-extra { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding-left: 128px; }
+  .dlg-extra .tip { white-space: normal; }
+  .dlg-extra .right { margin-left: auto; }
+  .options { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; margin-bottom: -2px; }
+  .option { position: relative; width: 288px; height: 32px; padding: 0 16px; line-height: 30px; white-space: nowrap; background: var(--t-choice) 0 0 / 288px 64px no-repeat; }
+  .option.on { background-position: 0 -32px; }
+  .option .pick { position: absolute; left: -30px; top: 0; width: 32px; height: 32px; }
+  .dlgbox { position: relative; height: 212px; background: var(--t-dialogue) 0 0 / 100% 100% no-repeat; }
+  .dlgbox b { position: absolute; left: 128px; top: 6px; width: 224px; line-height: 28px; text-align: center; white-space: nowrap; }
+  .dlgbox p { position: absolute; left: 136px; top: 42px; width: 416px; margin: 0; line-height: 24px; }
+  .dlgbox .hint2 { position: absolute; left: 94px; top: 174px; display: flex; justify-content: center; align-items: center; gap: 8px; width: 448px; height: 36px; font-size: 16px; }
+  .dlgbox kbd { padding: 0 6px; border-radius: 3px; background: #ece6dd; color: #3a2a22; line-height: 18px; box-shadow: 0 2px 0 #9a8f84; text-shadow: none; }
+  /* 窄的那一面（480×470）：手機，與首頁最上面那一塊 */
+  .scr.narrow { height: 470px; }
+  .scr.narrow .tip { font-size: 14px; }
+  .scr.narrow .inv { left: 8px; top: 8px; transform: scale(.72); transform-origin: 0 0; }
+  .scr.narrow .duo { right: 6px; top: 150px; }
   .scr.narrow .boss i { width: 250px; }
   .scr.narrow .trk { top: 50px; right: 6px; }
-  .scr.narrow .board { top: 152px; min-width: 0; }
-  .scr.narrow .npc { left: 140px; bottom: 148px; }
-  .scr.narrow .npc canvas { width: 40px; height: 80px; }
-  .scr.narrow .npc.talk { left: 50%; bottom: 196px; transform: translateX(-50%); }
-  .scr.narrow .title { top: 80px; }
-  .scr.narrow .chat { bottom: 96px; width: 270px; }
-  .scr.narrow .dlg { bottom: 84px; width: 456px; }
+  .scr.narrow .board { top: 138px; min-width: 0; }
+  .scr.narrow .npc { left: 40px; bottom: 176px; }
+  .scr.narrow .title { top: 84px; font-size: 1.7em; }
+  .scr.narrow .chat { bottom: 112px; max-width: 300px; }
+  .scr.narrow .held { display: none; }
+  .scr.narrow .dlg { bottom: 24px; transform: translateX(-50%) scale(.8); transform-origin: 50% 100%; }
   .demo-foot { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin: 0; padding: 12px 14px 13px; border-top: 1px solid var(--line); font-size: 14px; min-height: 3.2em; }
   .demo-foot .hint { flex-basis: 100%; }
   .wearbox { display: grid; gap: 8px; }
@@ -378,10 +397,65 @@ const STYLE = String.raw`
   .spec section + section { margin-top: 48px; }
   .spec h2 { margin: 0 0 12px; }
   .spec .note { margin: 14px 0 0; max-width: 68ch; }
-  .rows { margin: 0; border-bottom: 1px solid var(--line); }
-  .rows > div { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 2px 24px; padding: 13px 0; border-top: 1px solid var(--line); }
-  .rows dt { font-weight: 650; }
-  .rows dd { margin: 0; color: var(--ink-2); max-width: 64ch; }
+  /* 功能頁下半：每一項一張卡——前面一顆遊戲裡的圖示（glyphs.png，一格 16，放大兩倍、染成葉子的綠），
+     後面標題與說明；有的再附一句預覽裡的例子（原文在上、譯文在下，跟著預覽選的語言換） */
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fcard {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; padding: 14px 16px 15px;
+    border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    transition: border-color var(--base) ease, background-color var(--base) ease;
+  }
+  .fcard h3 { margin: 1px 0 3px; font-size: 15px; font-weight: 650; }
+  .fcard p { margin: 0; color: var(--ink-2); font-size: 14px; text-wrap: pretty; }
+  .fcard code { font-size: 13px; }
+  .glyph { position: relative; display: block; width: 40px; height: 40px; border-radius: 9px; background: #0c120f; box-shadow: inset 0 0 0 1px var(--line); color: var(--leaf); }
+  .glyph::after {
+    content: ""; position: absolute; inset: 4px; background: currentColor; image-rendering: pixelated;
+    -webkit-mask: var(--t-glyphs) calc(var(--c) * -32px) calc(var(--r) * -32px) / 512px 192px no-repeat;
+    mask: var(--t-glyphs) calc(var(--c) * -32px) calc(var(--r) * -32px) / 512px 192px no-repeat;
+  }
+  .glyph.own { display: grid; place-items: center; }
+  .glyph.own::after { content: none; }
+  .glyph.own svg { width: 22px; height: 22px; }
+  /* 例句：遊戲的點陣字，上面原文、下面譯文 */
+  .eg { display: grid; margin-top: 10px !important; padding: 6px 10px 5px; border-radius: 7px; background: #0a0f0c; box-shadow: inset 0 0 0 1px #ffffff0a; font-family: PxTC, ui-monospace, monospace; font-size: 20px !important; line-height: 1.15; color: #8d9a91 !important; }
+  .eg span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .eg .tr { color: var(--leaf); }
+  .eg :lang(zh-Hans) { font-family: PxSC, PxTC, monospace; }
+  .eg :lang(ja) { font-family: PxJA, PxTC, monospace; }
+  .eg :lang(ko) { font-family: PxKO, PxTC, monospace; }
+  /* 葉子的四種顏色、一件會動的披風：放在「葉子與披風」那兩張卡的最上面 */
+  .fcard.tall { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .fcard .show { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 8px 12px; border-radius: 9px; background: #0c120f; box-shadow: inset 0 0 0 1px var(--line); }
+  .fcard .show svg { width: 26px; height: 26px; }
+  .capemini { width: 30px; aspect-ratio: 10 / 16; overflow: hidden; border-radius: 2px; box-shadow: 0 0 0 1px #0008; }
+  .capemini img { display: block; width: 220%; max-width: none; margin: -10% 0 0 -10%; image-rendering: pixelated; }
+  .fcard.mod h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+  .fcard.mod .state { margin-left: 0; }
+  /* 披風範本：一塊明顯的下載區。左邊說明圖，右邊三句話與每一種尺寸的下載鈕 */
+  .tpl { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 22px; align-items: center; padding: 18px; border: 1px solid var(--leaf-deep); border-radius: 14px; background: linear-gradient(180deg, #17241c, var(--panel) 70%); }
+  .tpl .guide { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
+  .tpl h2 { margin: 0 0 6px; }
+  .tpl p { margin: 0 0 12px; color: var(--ink-2); font-size: 14px; }
+  .tpl .label { margin: 0 0 8px; color: var(--ink); font-size: 13px; font-weight: 600; }
+  .tpl-sizes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .tpl-sizes .btn { padding: 7px 12px; font-variant-numeric: tabular-nums; }
+  .tpl-sizes small { font-size: 11px; opacity: .78; }
+  .tpl .more-links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+  /* 披風一覽最上面那一條：平常收著，按了展開範本那一塊 */
+  .make { margin: 20px 0 4px; }
+  .make > summary { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border: 1px solid var(--leaf-deep); border-radius: 12px; background: #17241c; cursor: pointer; list-style: none; transition: background-color var(--fast) ease, transform var(--fast) var(--out); }
+  .make > summary::-webkit-details-marker { display: none; }
+  .make > summary:active { transform: scale(.995); }
+  .make > summary img { width: 44px; height: 34px; flex: none; image-rendering: pixelated; border-radius: 3px; box-shadow: 0 0 0 1px #0008; }
+  .make > summary b { display: block; font-size: 15px; font-weight: 650; }
+  .make > summary .sub { display: block; color: var(--ink-2); font-size: 13px; }
+  .make > summary .btn { margin-left: auto; flex: none; pointer-events: none; }
+  .make > summary .btn svg { transition: transform var(--base) var(--out); }
+  .make[open] > summary { border-radius: 12px 12px 0 0; border-bottom-color: transparent; }
+  .make[open] > summary .btn svg { transform: rotate(180deg); }
+  .make[open] > .tpl { border-top: 0; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #17241c, var(--panel) 60%); }
   .state { display: inline-block; margin-left: 6px; padding: 0 8px; border: 1px solid var(--line); border-radius: 999px; font-size: 11px; font-weight: 600; line-height: 1.7; color: var(--ink-2); vertical-align: 1px; white-space: nowrap; }
   .state.need { color: var(--gold); border-color: #5c4d27; }
   .plain { margin: 10px 0 0; padding-left: 1.2em; color: var(--ink-2); }
@@ -493,6 +567,7 @@ const STYLE = String.raw`
   @media (max-width: 940px) {
     .foot { grid-template-columns: 1fr; }
     .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards.three { grid-template-columns: 1fr; }
     /* 窄一點的畫面：頁首拆成幾列（標誌與工具、選單），所以不黏在上面，免得佔掉半個畫面 */
     .top { position: static; }
     .top .in { gap: 8px 10px; flex-wrap: wrap; }
@@ -518,7 +593,9 @@ const STYLE = String.raw`
     .range input { width: 120px; }
     .spec { grid-template-columns: 1fr; margin-top: 36px; }
     .spec-nav { position: static; display: flex; flex-wrap: wrap; gap: 4px; margin: 0 -10px 10px; }
-    .rows > div { grid-template-columns: 1fr; }
+    .cards, .cards.three { grid-template-columns: 1fr; }
+    .tpl { grid-template-columns: 1fr; }
+    .make > summary .sub { display: none; }
   }
   /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
   @media (prefers-reduced-motion: reduce) {
@@ -528,7 +605,7 @@ const STYLE = String.raw`
     .chip:active, .hero-screen .screen:hover { transform: none; }
     .more a:hover .ico, .seg button:active, a.who-row:active, .guild:active, a.who-row:hover .ico, .guild:hover .ico { transform: none; }
     .menu, .menu.open { transform: none; }
-    .scr .hud > *, .dlgbox .next { animation: none; }
+    .scr .hud > * { animation: none; }
     .gapmark, .switch::after { transition: none; }
     .card.skel { animation: none; }
     dialog, dialog[open] { transform: none; }
@@ -578,6 +655,7 @@ export const TEXT = {
     'foot.kofi': '在 Ko-fi 贊助', 'foot.sitedev': '網站開發者：LyuChaCha', 'foot.discord': 'Discord：LyuChaCha',
     'foot.copy': '複製 Discord 名稱',
     'foot.unofficial': '玩家自製的模組，與 Wynncraft、Mojang、Microsoft 沒有關係。',
+    'foot.assets': '預覽裡的遊戲材質與圖示屬於 Wynncraft。',
 
     'home.title': 'WynnChaYuan - Wynncraft 的多語言翻譯模組',
     'home.h1': '把 Wynncraft 翻成你的語言',
@@ -621,6 +699,13 @@ export const TEXT = {
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
     'capes.keep': '沒有人穿的披風會保留 7 天；期滿還是沒有人穿就會移除，加了星號的也一樣。',
     'skip': '跳到主要內容',
+    'capes.make': '做自己的披風', 'capes.makeb': '下載範本、畫上你的圖案、上傳，三步就好。',
+    'tpl.h': '披風範本',
+    'tpl.p': '披風要照範本畫。下載一張範本，把藍色（正面）、紅色（背面）與青色（邊框）的地方換成你的圖案，存成 PNG 或 GIF 再上傳。',
+    'tpl.pick': '下載範本（選一個尺寸）', 'tpl.rec': '建議',
+    'tpl.note': '尺寸越大畫得越細，檔案也越大。不確定就用 88×68。',
+    'tpl.example': '下載會動的示範（GIF）', 'tpl.upload': '畫好了？到帳號頁上傳',
+    'tpl.alt': '披風範本的說明圖：哪一塊是正面、背面與邊框',
     'lost.title': '找不到這一頁 - WynnChaYuan', 'lost.h1': '找不到這一頁',
     'lost.p': '網址可能打錯了，或是這一頁已經搬走。', 'lost.home': '回首頁',
     'home.live': '遊戲裡實際的樣子：原文留著，譯文在旁邊。', 'home.try': '自己調調看',
@@ -838,6 +923,7 @@ export const TEXT = {
     'foot.kofi': 'Sponsor on Ko-fi', 'foot.sitedev': 'Website developer: LyuChaCha', 'foot.discord': 'Discord: LyuChaCha',
     'foot.copy': 'Copy the Discord name',
     'foot.unofficial': 'A fan-made mod. Not affiliated with Wynncraft, Mojang or Microsoft.',
+    'foot.assets': 'Game textures and icons shown in the previews belong to Wynncraft.',
 
     'home.title': 'WynnChaYuan - Wynncraft in your language',
     'home.h1': 'Wynncraft, in your language',
@@ -881,6 +967,13 @@ export const TEXT = {
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'capes.keep': 'A cape nobody is wearing is kept for 7 days. If no one has put it on by then it is removed, starred or not.',
     'skip': 'Skip to content',
+    'capes.make': 'Make your own cape', 'capes.makeb': 'Download the template, draw your design, upload. Three steps.',
+    'tpl.h': 'Cape template',
+    'tpl.p': 'Capes are drawn on a template. Download one, replace the blue (front), red (back) and cyan (border) areas with your design, save it as a PNG or GIF, then upload it.',
+    'tpl.pick': 'Download a template (pick a size)', 'tpl.rec': 'recommended',
+    'tpl.note': 'Bigger sizes allow finer detail but make bigger files. If unsure, use 88×68.',
+    'tpl.example': 'Download an animated example (GIF)', 'tpl.upload': 'Finished? Upload it on the Account page',
+    'tpl.alt': 'Diagram of the cape template: which areas are the front, the back and the border',
     'lost.title': 'Page not found - WynnChaYuan', 'lost.h1': 'This page does not exist',
     'lost.p': 'The address may be mistyped, or the page has moved.', 'lost.home': 'Back to home',
     'home.live': 'How it looks in game: the original stays, the translation sits beside it.', 'home.try': 'Try the options',
@@ -1249,6 +1342,18 @@ const COMMON = String.raw`
 const FONT_CSS = Object.keys(FONTS).map((code) => '\n  @font-face { font-family: Px' + code.toUpperCase()
   + '; src: url(/font/px-' + code + '.ttf?v=' + FONTS[code].v + ') format("truetype"); font-display: swap; }').join('');
 
+/**
+ * 預覽畫面用的材質（demo-textures.js：遊戲的介面貼圖、物品圖示、實機截圖當背景）。
+ * 網址帶著內容的雜湊，所以可以長期快取。樣式用 --t-<檔名> 取，程式用 D.tex['<檔名>']。
+ */
+const TEX_URL = Object.fromEntries(Object.keys(TEXTURES).map((name) =>
+  [name, '/tex/' + name + '?v=' + TEXTURES[name].v]));
+const TEX_CSS = '\n  :root {' + Object.keys(TEX_URL).map((name) =>
+  ' --t-' + name.replace(/\.\w+$/, '') + ': url(' + TEX_URL[name] + ');').join('') + ' }';
+
+/** 披風範本、說明圖與示範的網址（cape-templates.js），一樣帶著內容的雜湊。 */
+const TPL = (name) => '/template/' + name + '?v=' + CAPE_TEMPLATES[name].v;
+
 function layout(lang, title, active, body, script) {
   const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
     .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
@@ -1272,7 +1377,7 @@ function layout(lang, title, active, body, script) {
     + '<meta property="og:description" content="%%meta.desc%%">\n'
     + '<meta property="og:image" content="https://wynnchayuan.com/icon-192.png">\n'
     + '<meta name="twitter:card" content="summary">\n'
-    + '<title>' + title + '</title>\n<style>' + STYLE + FONT_CSS + '</style>\n</head>\n<body>\n'
+    + '<title>' + title + '</title>\n<style>' + STYLE + FONT_CSS + TEX_CSS + '</style>\n</head>\n<body>\n'
     + '<a class="skip" href="#main">%%skip%%</a>'
     + '<div class="top"><div class="in">'
     + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
@@ -1305,7 +1410,7 @@ function layout(lang, title, active, body, script) {
       '<button class="copy" id="dc-copy" type="button" title="%%foot.copy%%">%%foot.discord%%</button>'])
     + '</div></div>'
     + '<div class="legal"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
-    + '<span>%%foot.unofficial%%</span>'
+    + '<span>%%foot.unofficial%% %%foot.assets%%</span>'
     + '<span>Designed by LyuChaCha</span></div>'
     + '</div></footer>\n'
     + '<script>var L = %%js%%;' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
@@ -1315,133 +1420,27 @@ function layout(lang, title, active, body, script) {
 
 const leaf = (colour) => '<span style="color:' + colour + ';display:flex">' + LEAF + '</span>';
 
-/** 預覽畫面裡用到的幾個小圖：滑鼠、勾、傷害的圖示。有預覽的頁面各放一份。 */
+/** 預覽畫面裡的滑鼠游標（別的圖都是遊戲的材質）。有預覽的頁面各放一份。 */
 const STAGE_PARTS = '<template id="stage-parts">'
   + '<svg data-part="cursor" viewBox="0 0 14 18" aria-hidden="true"><path d="M1 1v13l3.5-3 2.4 5.2 2-.9L6.5 10H11z" fill="#fff" stroke="#000" stroke-width="1"/></svg>'
-  + '<svg data-part="check" class="px-ico check" viewBox="0 0 7 6" shape-rendering="crispEdges" aria-hidden="true"><path d="M6 0h1v1H6zM5 1h1v1H5zM0 2h1v1H0zM4 2h1v1H4zM1 3h1v1H1zM3 3h1v1H3zM2 4h1v1H2z"/></svg>'
-  + '<svg data-part="damage" class="px-ico" viewBox="0 0 5 5" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 0h1v1H1zM3 0h1v1H3zM0 1h5v1H0zM1 2h3v1H1zM0 3h5v1H0zM1 4h1v1H1zM3 4h1v1H3z"/></svg>'
   + '</template>';
 
 /** 預覽畫面本身（makeStage）。見裡面開頭那一段說明。 */
 const STAGE_JS = String.raw`
   /* ================= 遊戲畫面的預覽（功能頁的即時預覽、首頁最上面那一塊都用這一份） =================
      照遊戲裡設定畫面右邊那一塊做（client/ui/Preview.java），但畫成一整面「遊戲畫面」：
-     後面是一張程式畫的像素風景，前面是 Minecraft 的介面——物品說明、對話框、Boss 血條、記分板、
-     聊天、快捷列。字用遊戲裡同一套點陣字（demo-fonts.js）。
+     後面是實機截圖，前面是遊戲裡真的那幾張介面材質（demo-textures.js）——物品說明的框、背包、
+     對話框與頭像、生命與魔力、快捷列；位置照實機截圖擺。字用遊戲裡同一套點陣字（demo-fonts.js）。
 
-     畫面有固定的邏輯大小（寬的 960×440、窄的 480×420），整塊照容器的寬度縮放——
-     裡面每一塊的位置都是照邏輯大小寫的，不必各自算。 */
+     畫面有固定的邏輯大小（寬的 960×480、窄的 480×470），整塊照容器的寬度縮放——
+     裡面每一塊的位置都是照邏輯大小寫的，不必各自算。材質一格畫成兩格（遊戲的介面倍率 2）。 */
   var STAGE_TAGS = { zh_tw: 'zh-Hant', zh_cn: 'zh-Hans', ja_jp: 'ja', ko_kr: 'ko', ru_ru: 'ru', es_es: 'es', tr_tr: 'tr' };
   var STAGE_DEFAULTS = { tooltip: 0, names: 1, gap: 12, dialogue: 1, choices: 1, nametag: 1, chat: 1, tracker: 0,
     titles: true, bossbar: true, scoreboard: true, held: true };
 
-  /* ---- 後面那張風景：一格一格畫，放大四倍 ---- */
-  var MOODS = {
-    day: { sky: ['#4f9fe0', '#6fb4ea', '#93c9f0', '#b9def5', '#dcefd9'], sun: '#fff7c9', cloud: '#ffffff',
-      far: '#7fa6bd', mid: '#4f8a68', tree: '#2c6a47', trunk: '#4b3524', grass: ['#5cab4b', '#4f9a41', '#6fbf58'],
-      path: '#c2a06a', path2: '#a98755', wall: '#d9c9a3', roof: '#9b4a3a', lit: '#ffe9a6', flower: ['#ffffff', '#ffd84a', '#f2687a'] },
-    dusk: { sky: ['#2b2f66', '#55407f', '#9a5486', '#de7b6c', '#f6b676'], sun: '#ffe2a8', cloud: '#f4a7a0',
-      far: '#5b4a78', mid: '#3a4a57', tree: '#22363a', trunk: '#2b2019', grass: ['#3f6f4a', '#35613f', '#4b8055'],
-      path: '#9a7d5c', path2: '#806549', wall: '#a8957c', roof: '#6d3530', lit: '#ffd36b', flower: ['#f1e6ff', '#ffc94a', '#e0607a'] }
-  };
-  var BAYER = [[0.03, 0.53, 0.16, 0.66], [0.78, 0.28, 0.91, 0.41], [0.22, 0.72, 0.09, 0.59], [0.97, 0.47, 0.84, 0.34]];
-  function paintScene(canvas, cols, rows, mood) {
-    var P = MOODS[mood] || MOODS.day;
-    canvas.width = cols;
-    canvas.height = rows;
-    var g = canvas.getContext('2d');
-    var seed = 20261013;
-    function rnd() { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; }
-    function dot(x, y, colour) { g.fillStyle = colour; g.fillRect(Math.round(x), Math.round(y), 1, 1); }
-    var horizon = Math.round(rows * 0.6);
-    var x, y;
-    /* 天空：幾段顏色，段與段之間用有規律的點混過去（像素畫的漸層） */
-    for (y = 0; y < horizon; y++) {
-      var t = y / horizon * (P.sky.length - 1);
-      var band = Math.floor(t);
-      for (x = 0; x < cols; x++) {
-        var pick = (t - band) > BAYER[y % 4][x % 4] ? Math.min(band + 1, P.sky.length - 1) : band;
-        dot(x, y, P.sky[pick]);
-      }
-    }
-    /* 太陽與幾朵雲 */
-    var sunX = cols * 0.64, sunY = rows * 0.2, sunR = rows * 0.075;
-    for (y = -sunR; y <= sunR; y++) for (x = -sunR; x <= sunR; x++) if (x * x + y * y <= sunR * sunR) dot(sunX + x, sunY + y, P.sun);
-    g.globalAlpha = 0.85;
-    [[0.12, 0.16, 26], [0.42, 0.1, 34], [0.63, 0.27, 22], [0.9, 0.4, 18]].forEach(function (c) {
-      var w = Math.round(c[2] * cols / 240);
-      g.fillStyle = P.cloud;
-      g.fillRect(Math.round(cols * c[0]), Math.round(rows * c[1]), w, 2);
-      g.fillRect(Math.round(cols * c[0]) + 3, Math.round(rows * c[1]) - 2, Math.round(w * 0.55), 2);
-      g.fillRect(Math.round(cols * c[0]) + Math.round(w * 0.3), Math.round(rows * c[1]) + 2, Math.round(w * 0.5), 1);
-    });
-    g.globalAlpha = 1;
-    /* 遠山、近一點的丘陵 */
-    var unit = rows / 110;
-    for (x = 0; x < cols; x++) {
-      var u = x * 240 / cols;
-      var far = horizon - (13 + 8 * Math.sin(u * 0.045 + 1) + 5 * Math.sin(u * 0.12) + 2 * Math.sin(u * 0.33 + 2)) * unit;
-      g.fillStyle = P.far;
-      g.fillRect(x, Math.round(far), 1, horizon - Math.round(far));
-      var mid = horizon - (4 + 3 * Math.sin(u * 0.07 + 4) + 2 * Math.sin(u * 0.21 + 1)) * unit;
-      g.fillStyle = P.mid;
-      g.fillRect(x, Math.round(mid), 1, horizon - Math.round(mid));
-    }
-    /* 草地：三種綠，越近越亮 */
-    for (y = horizon; y < rows; y++) {
-      for (x = 0; x < cols; x++) {
-        var r = rnd();
-        dot(x, y, r < 0.12 ? P.grass[1] : r > 0.93 ? P.grass[2] : P.grass[0]);
-      }
-    }
-    /* 丘陵上的樹：一層一層的三角形 */
-    function tree(tx, ty, size) {
-      g.fillStyle = P.trunk;
-      g.fillRect(tx, ty - 2, 1, 2);
-      g.fillStyle = P.tree;
-      for (var level = 0; level < size; level++) g.fillRect(tx - Math.ceil((size - level) / 2), ty - 2 - (size - level), (Math.ceil((size - level) / 2)) * 2 + 1, 1);
-    }
-    for (var n = 0; n < Math.round(cols / 9); n++) {
-      var tx = Math.round(rnd() * cols);
-      if (Math.abs(tx - cols / 2) < cols * 0.07) continue;            /* 路中間不長樹 */
-      tree(tx, horizon + Math.round(rnd() * 5 * unit), 5 + Math.round(rnd() * 5));
-    }
-    /* 一間小屋（有亮著的窗） */
-    function house(hx, hy, w, h) {
-      g.fillStyle = P.wall;
-      g.fillRect(hx, hy - h, w, h);
-      g.fillStyle = P.roof;
-      for (var step = 0; step <= Math.ceil(w / 2); step++) g.fillRect(hx - 1 + step, hy - h - 1 - step, w + 2 - step * 2, 1);
-      g.fillStyle = P.lit;
-      g.fillRect(hx + 2, hy - h + 2, 2, 2);
-      g.fillStyle = P.trunk;
-      g.fillRect(hx + w - 4, hy - 4, 2, 4);
-    }
-    house(Math.round(cols * 0.14), horizon + Math.round(3 * unit), 11, 7);
-    if (mood === 'dusk') house(Math.round(cols * 0.76), horizon + Math.round(4 * unit), 13, 8);
-    /* 一條往地平線去的小路 */
-    for (y = horizon; y < rows; y++) {
-      var depth = (y - horizon) / (rows - horizon);
-      var half = 1 + depth * cols * 0.07;
-      var centre = cols * 0.5 + Math.sin(depth * 3.2) * cols * 0.045;
-      for (x = Math.round(centre - half); x <= Math.round(centre + half); x++) dot(x, y, rnd() < 0.2 ? P.path2 : P.path);
-    }
-    /* 近處的草叢與花 */
-    for (n = 0; n < cols; n++) {
-      var fx = rnd() * cols;
-      var fy = horizon + 4 + rnd() * (rows - horizon - 5);
-      if (rnd() < 0.7) { dot(fx, fy, P.grass[1]); dot(fx, fy - 1, P.grass[1]); }
-      else dot(fx, fy, P.flower[Math.floor(rnd() * 3)]);
-    }
-  }
-
-  /* ---- 一個方塊人（16×32 格）。look 決定頭髮、衣服、褲子的顏色 ---- */
-  var LOOKS = {
-    merchant: { skin: '#c8996b', hair: '#4a3320', top: '#3f7d54', sleeve: '#356b47', legs: '#5b4630', shoe: '#2a1f16' },
-    guard: { skin: '#d0a57c', hair: '#c9a24a', top: '#9aa6b2', sleeve: '#7f8b97', legs: '#4f5966', shoe: '#23272d' }
-  };
-  function paintFigure(canvas, look) {
-    var c = LOOKS[look] || LOOKS.merchant;
+  /* ---- 站在街上的人（16×32 格）。遊戲裡的人本來就是方塊，這個是程式畫的 ---- */
+  function paintFigure(canvas) {
+    var c = { skin: '#c8996b', hair: '#4a3320', top: '#3f7d54', sleeve: '#356b47', legs: '#5b4630', shoe: '#2a1f16' };
     canvas.width = 16;
     canvas.height = 32;
     var g = canvas.getContext('2d');
@@ -1457,56 +1456,24 @@ const STAGE_JS = String.raw`
     box('#00000026', 11, 0, 1, 32); box('#00000026', 15, 8, 1, 12);          /* 右邊暗一點，才有厚度 */
   }
 
-  /* ---- 物品格裡的小圖（16×16 格） ---- */
-  function paintIcon(canvas, kind) {
-    canvas.width = 16;
-    canvas.height = 16;
-    var g = canvas.getContext('2d');
-    function dot(x, y, colour) { g.fillStyle = colour; g.fillRect(Math.round(x), Math.round(y), 1, 1); }
-    var i, x, y;
-    if (kind === 'bow') {
-      for (i = 0; i <= 40; i++) {
-        var t = i / 40;
-        dot(14 - 13 * t, 1 + 13 * t, '#d9d9d9');                                                    /* 弦 */
-        var bx = (1 - t) * (1 - t) * 14 + 2 * (1 - t) * t * 2 + t * t * 1;
-        var by = (1 - t) * (1 - t) * 1 + 2 * (1 - t) * t * 2 + t * t * 14;
-        dot(bx, by, '#8a5a2b'); dot(bx - 1, by, '#6e4520'); dot(bx, by - 1, '#a9743a');             /* 弓身 */
-      }
-    } else if (kind === 'potion') {
-      for (y = 0; y < 16; y++) for (x = 0; x < 16; x++) {
-        var d = (x - 7.5) * (x - 7.5) + (y - 10) * (y - 10);
-        if (d <= 20) dot(x, y, d > 14 ? '#7a1f2b' : y < 8 ? '#e9eef2' : '#e0364a');
-      }
-      for (y = 2; y < 6; y++) { dot(6, y, '#b9c4cc'); dot(7, y, '#e9eef2'); dot(8, y, '#e9eef2'); dot(9, y, '#b9c4cc'); }
-      dot(7, 1, '#8a5a2b'); dot(8, 1, '#8a5a2b'); dot(6, 9, '#ffffff');
-    } else {
-      for (y = 0; y < 16; y++) for (x = 0; x < 16; x++) {
-        var m = Math.abs(x - 7.5) / 5.5 + Math.abs(y - 7.5) / 7.5;
-        if (m <= 1) dot(x, y, m > 0.8 ? '#0c7a3a' : (x + y < 14 ? '#58f29a' : '#1fcf68'));
-      }
-    }
-  }
-
   /**
    * 在 host 裡蓋一面畫面。回傳 { draw(tab, state, lang, typed), quiet(on) }。
-   * D 是 build-demo.py 產生的那一份（場景裡的譯文）。
+   * D 是 build-demo.py 產生的那一份（場景裡的譯文）加上材質的網址（D.tex）。
    */
   function makeStage(host, D) {
     var scr = el('div', 'scr');
-    var bg = el('canvas', 'bg');
+    var bg = el('div', 'bg');
     var hud = el('div', 'hud');
     scr.append(bg, hud);
     host.replaceChildren(scr);
     var wide = true;
-    var painted = '';
     var last = null;
     var turn = 0;
     var first = true;                    /* 第一次畫：直接出現，不要一進頁面就淡入一次 */
     var hush = false;
     var lang = 'zh_tw';
-    var parts = document.getElementById('stage-parts').content;
-    function part(name) { return parts.querySelector('[data-part="' + name + '"]').cloneNode(true); }
-    function T(src) { return D.text[lang][src] || src; }
+    /* 譯文裡的顏色記號（{c1}）是給遊戲看的，這裡拿掉 */
+    function T(src) { return (D.text[lang][src] || src).replace(/\{c\d+\}/g, ''); }
     /* 一塊字。translated 的那些標上語言：同一個漢字各語言的寫法不一樣，字型要跟著換 */
     function bit(tag, className, text, translated) {
       var node = el(tag, className, text);
@@ -1521,10 +1488,21 @@ const STAGE_JS = String.raw`
         return at < values.length ? values[at] : '0';
       });
     }
-    function canvasOf(className, painter, kind) {
-      var canvas = el('canvas', className);
-      painter(canvas, kind);
-      return canvas;
+    /* 一張材質的圖（物品、圖示）。className 決定大小與位置 */
+    function pic(name, className) {
+      var img = el('img', className);
+      img.alt = '';
+      img.draggable = false;
+      img.src = D.tex[name];
+      return img;
+    }
+    /* 放在某一格裡的物品：x、y 是那一格左上角（邏輯像素） */
+    function item(name, x, y) {
+      /* 官方的物品圖示是 64 格的大圖，縮小時要平滑；遊戲的貼圖是 16 格，放大時要保持銳利 */
+      var img = pic('item-' + name + '.png', /^(bow|spear|wand|dagger|relik)$/.test(name) ? 'it smooth' : 'it');
+      img.style.left = x + 'px';
+      img.style.top = y + 'px';
+      return img;
     }
     /* 逐字打出來，跟遊戲裡的對話框一樣。中途又動了別的就停掉這一輪 */
     function type(node, text) {
@@ -1541,113 +1519,158 @@ const STAGE_JS = String.raw`
       })();
     }
 
-    /* 物品說明的每一列：[原文, 顏色, 數字]。開頭的勾與 {#}（遊戲裡是圖示）換成畫的 */
-    var TIP = [
-      ['{#} Neutral Damage: {~}-{~}', 'c-go', ['70', '130']],
-      null,
-      ['✔ Class Req: Archer/Hunter', 'c-gr'],
-      ['✔ Combat Lv. Min: {~}', 'c-gr', ['21']],
-      null,
-      ['Health', 'c-gr', null, '+45 '],
-      ['Walk Speed', 'c-gr', null, '+12% '],
-      null,
-      ['Unique Item', 'c-y']
-    ];
-    function tipRow(row, translated) {
-      if (!row) return el('div', 'gapline');
-      var text = translated ? T(row[0]) : row[0];
-      if (row[2]) text = fill(text, row[2]);
-      var line = bit('div', row[1], '', translated);
-      if (text.indexOf('✔') === 0) { line.append(part('check')); text = text.slice(1).replace(/^\s+/, ''); }
-      if (text.indexOf('{#}') === 0) { line.append(part('damage')); text = text.slice(3).replace(/^\s+/, ''); }
-      if (row[3]) line.append(el('span', 'c-g', row[3]));
-      line.append(text);
-      return line;
-    }
+    /* ---- 物品說明：照遊戲現在的版面（徽記、名字、兩顆標籤、傷害、需求、詞條）。
+            內容是 Bony Bow 真的數值（官方 API 查的）。translated 的那一份用語料裡同一句的譯文 ---- */
     function tipBox(className, name, nameTranslated, translated) {
-      var box = el('div', className);
-      box.append(bit('div', 'c-y', name, nameTranslated));
-      TIP.forEach(function (row) { box.append(tipRow(row, translated)); });
+      var box = el('div', 'tip ' + className);
+      function word(src) { return translated ? T(src) : src; }
+      function line(className, text) { return bit('div', className, text, translated); }
+
+      var head = el('div', 'tip-head');
+      head.append(pic('emblem-bow.png', 'emblem'));
+      var title = el('div', '');
+      title.append(bit('div', 'tname', name, nameTranslated));
+      var pills = el('div', 'pills');
+      pills.append(el('b', 'pill rare', 'RARE'), el('b', 'pill', 'BOW'));        /* 這兩顆在遊戲裡是圖，不會被翻 */
+      title.append(pills);
+      head.append(title);
+      box.append(head);
+
+      box.append(line('dps', fill(word('{~} DPS'), ['89'])));
+      var speed = line('row', '');
+      var said = fill(word('{#} Fast ({~} hits/s)'), ['2.5']).replace('{#}', '').replace(/^\s+/, '');
+      var cut = said.search(/[(（]/);
+      speed.append(pic('ico-speed.png', 'ico'), cut > 0 ? said.slice(0, cut) : said);
+      if (cut > 0) speed.append(el('span', 'dimmer', said.slice(cut)));
+      box.append(speed);
+      var damage = el('div', 'row dmg');
+      damage.append(pic('ico-neutral.png', 'ico'), '15-36', pic('ico-air.png', 'ico'), '8-12');
+      box.append(damage, el('i', 'divider'));
+
+      /* 五種屬性的需求：Bony Bow 只要敏捷 8，其餘是暗的 */
+      var reqs = el('div', 'reqs');
+      [0, 0, 0, 0, 8].forEach(function (need, i) {
+        var one = el('span', 'req' + (need ? ' on' : ''));
+        var sprite = el('i', '');
+        sprite.style.backgroundPosition = (-i * 2.4) + 'em ' + (need ? '0' : '-2.4em');
+        var mark = el('u', need ? 'ok' : '');
+        one.append(sprite, mark, String(need));
+        reqs.append(one);
+      });
+      box.append(reqs);
+      /* 「{#} 標籤{#}值」：兩個圖示之間是標籤，後面是靠右的值 */
+      function pair(src, values) {
+        var parts = word(src).split('{#}');
+        var row = el('div', 'kv');
+        var label = bit('span', '', '', translated);
+        label.append(el('u', 'ok'), (parts[1] || '').trim());
+        row.append(label, bit('span', 'dimmer', fill((parts[2] || '').trim(), values || []), translated));
+        return row;
+      }
+      box.append(pair('{#} Class Type{#}Archer/Hunter'), pair('{#} Combat Level{#}{~}', ['22']), el('i', 'divider'));
+
+      var sockets = el('div', 'sockets');
+      sockets.append(pic('socket.png', ''));
+      box.append(sockets);
+      function stat(src, value, icon) {
+        var row = el('div', 'kv');
+        var label = bit('span', '', '', translated);
+        if (icon) label.append(pic(icon, 'ico'));
+        label.append(word(src));
+        row.append(label, el('span', 'good', value));
+        return row;
+      }
+      box.append(stat('Agility', '+6', 'ico-air.png'), stat('Main Attack Damage', '+8%'));
       return box;
     }
 
-    /* 物品：打開背包，滑鼠指著一把弓。旁邊是遊戲原本的說明，再旁邊是我們另開的面板 */
+    /* 物品：打開背包，滑鼠指著那把弓。旁邊是遊戲原本的說明，再旁邊是我們另開的面板 */
     function drawItems(state) {
       hud.append(el('div', 'dim'));
       var inv = el('div', 'inv');
-      for (var i = 0; i < 37; i++) {
-        if (i === 27) { inv.append(el('u', 'gap')); continue; }
-        var slot = el('u', i === (wide ? 3 : 1) ? 'on' : '');
-        var what = { 5: 'potion', 12: 'gem', 20: 'potion', 28: 'bow', 29: 'potion', 35: 'gem' }[i];
-        if (i === (wide ? 3 : 1)) what = 'bow';
-        if (what) slot.append(canvasOf('', paintIcon, what));
-        inv.append(slot);
-      }
+      /* 格子的位置：背包那三列從 (15, 92) 起、快捷列在 150，一格 18（貼圖的格數；實機截圖量的） */
+      function slot(column, row) { return [(15 + 18 * column) * 2, (row === 3 ? 150 : 92 + 18 * row) * 2]; }
+      [['bow', 7, 0], ['wand', 1, 0], ['heal', 2, 1], ['emerald', 5, 1], ['relik', 0, 2], ['mana', 4, 2],
+        ['dagger', 0, 3], ['heal', 1, 3], ['book', 8, 3]].forEach(function (one) {
+        var at = slot(one[1], one[2]);
+        inv.append(item(one[0], at[0], at[1]));
+      });
+      var pointer = slot(7, 0);
+      var glow = el('i', 'hover');
+      glow.style.left = pointer[0] + 'px';
+      glow.style.top = pointer[1] + 'px';
+      inv.append(glow);
+      var cursor = document.getElementById('stage-parts').content.querySelector('[data-part="cursor"]').cloneNode(true);
+      cursor.classList.add('cursor');
+      cursor.style.left = (pointer[0] + 16) + 'px';
+      cursor.style.top = (pointer[1] + 14) + 'px';
+      inv.append(cursor);
       hud.append(inv);
+
       var translatedName = T('Bony Bow');
       var name = state.names === 0 ? translatedName : state.names === 1 ? translatedName + ' (Bony Bow)' : 'Bony Bow';
       var panel = state.tooltip === 0;
       var replace = state.tooltip === 1;
       var duo = el('div', 'duo');
-      duo.append(tipBox('mctip', replace ? name : 'Bony Bow', replace && state.names !== 2, replace));
+      duo.append(tipBox('rare', replace ? name : 'Bony Bow', replace && state.names !== 2, replace));
       if (panel) {
         var gap = el('div', 'gapmark');
-        gap.style.width = Math.round(state.gap * (wide ? 0.5 : 0.12)) + 'px';      /* 間距照比例縮：200 像素要塞得進這張圖 */
+        gap.style.width = Math.max(4, Math.round(state.gap * (wide ? 0.25 : 0.06))) + 'px';   /* 間距照比例縮：200 像素要塞得進這張圖 */
         gap.append(el('span', '', state.gap + ' px'));
-        duo.append(gap, tipBox('mctip ours', name, state.names !== 2, true));
+        duo.append(gap, tipBox('ours', name, state.names !== 2, true));
       }
-      var cursor = part('cursor');
-      cursor.classList.add('cursor');
-      hud.append(duo, cursor);
+      hud.append(duo);
     }
 
-    /* 快捷列、血條與魔力條、等級：世界與對話兩張圖都有 */
-    function drawBar(state, heldTranslated) {
+    /* 底下那一排：快捷列、生命與魔力、等級。世界與對話兩張圖都有 */
+    function drawBar(heldTranslated) {
       if (heldTranslated !== null) {
-        hud.append(bit('div', 'held c-y', heldTranslated ? T('Bony Bow') : 'Bony Bow', heldTranslated));
+        hud.append(bit('div', 'held', heldTranslated ? T('Bony Bow') : 'Bony Bow', heldTranslated));
       }
-      var bars = el('div', 'bars');
-      bars.append(el('i', 'hp'), el('span', 'lv', '21'), el('i', 'mp'));
-      var hot = el('div', 'hot');
-      for (var i = 0; i < 9; i++) {
-        var slot = el('u', i === 0 ? 'on' : '');
-        var what = { 0: 'bow', 1: 'potion', 2: 'potion', 8: 'gem' }[i];
-        if (what) slot.append(canvasOf('', paintIcon, what));
-        hot.append(slot);
-      }
-      hud.append(bars, hot);
+      var bar = el('div', 'hudbar');
+      bar.append(el('span', 'num hp', '420 / 436'), el('span', 'num lv', '22'), el('span', 'num mp', '62 / 62'));
+      /* 快捷列的格子：第一格在 (56, 66)，一格 40（邏輯像素） */
+      [['bow', 0], ['heal', 1], ['mana', 2], ['book', 8]].forEach(function (one) {
+        bar.append(item(one[0], 56 + 40 * one[1], 66));
+      });
+      hud.append(bar);
     }
 
-    /* 對話：底下是遊戲自己的對話框，另開小框的時候譯文在它上面 */
+    /* 對話：遊戲自己的對話框（頭像、名牌、底下那一條都是它的），另開小框的時候譯文在它上面 */
     function drawDialogue(state, typed) {
       var LINE = 'Well, what are we waiting for?';
       var CHOICES = ['Yes', 'Goodbye.'];
-      var npc = el('div', 'npc talk');
-      npc.append(el('div', 'plate', 'Aledar'), canvasOf('', paintFigure, 'guard'));
-      hud.append(npc);
-      drawBar(state, null);
+      drawBar(null);
       var stack = el('div', 'dlg');
+      var extra = el('div', 'dlg-extra');
+      if (state.dialogue === 0) extra.append(bit('div', 'tip ours say', T(LINE), true));
       if (state.choices === 0) {
-        var choiceBox = el('div', 'mctip ours right');
-        CHOICES.forEach(function (choice, i) { choiceBox.append(bit('div', '', '[' + (i + 1) + '] ' + T(choice), true)); });
-        stack.append(choiceBox);
+        var choiceBox = el('div', 'tip ours right');
+        CHOICES.forEach(function (choice) { choiceBox.append(bit('div', '', T(choice), true)); });
+        extra.append(choiceBox);
       }
-      if (state.dialogue === 0) stack.append(bit('div', 'mctip ours', T(LINE), true));
+      /* 選項：對話框右上方的兩條，第一條是選到的 */
+      var options = el('div', 'options');
+      CHOICES.forEach(function (choice, i) {
+        var bar = bit('div', 'option' + (i === 0 ? ' on' : ''), state.choices === 1 ? T(choice) : choice, state.choices === 1);
+        if (i === 0) bar.prepend(pic('cursor.png', 'pick'));
+        options.append(bar);
+      });
       var box = el('div', 'dlgbox');
       box.append(el('b', '', 'Aledar'));
       var line = bit('p', '', '', state.dialogue === 1);
       box.append(line);
-      CHOICES.forEach(function (choice, i) {
-        box.append(bit('div', 'choice', '[' + (i + 1) + '] ' + (state.choices === 1 ? T(choice) : choice), state.choices === 1));
-      });
-      box.append(el('span', 'next', '▼'));
-      stack.append(box);
+      var hint = el('div', 'hint2');
+      var on = state.dialogue === 1;
+      hint.append(el('kbd', '', 'SHIFT'), bit('span', '', on ? T('to continue') : 'to continue', on));
+      box.append(hint);
+      stack.append(extra, options, box);
       hud.append(stack);
       if (state.dialogue === 1 && typed) type(line, T(LINE));
       else { turn++; line.textContent = state.dialogue === 1 ? T(LINE) : LINE; }
     }
 
-    /* 世界與聊天：Boss 血條在頂端、任務追蹤在右上、記分板在右邊、NPC 站在草地上、聊天在左下 */
+    /* 世界與聊天：Boss 血條在頂端、任務追蹤在右上、記分板在右邊、NPC 站在街上、聊天在左下 */
     function drawWorld(state) {
       var boss = bit('div', 'boss', (state.bossbar ? T('Zombie') : 'Zombie') + ' [Lv. 3]', state.bossbar);
       boss.append(el('i'));
@@ -1660,7 +1683,7 @@ const STAGE_JS = String.raw`
         bit('div', 'c-g', inPlace ? T('Click To Track') : 'Click To Track', inPlace));
       track.append(box);
       if (state.tracker === 1) {
-        var side = el('div', 'mctip ours');
+        var side = el('div', 'tip ours');
         side.append(bit('div', 'c-go', T('World Event'), true), bit('div', 'c-g', T('Click To Track'), true));
         track.append(side);
       }
@@ -1675,9 +1698,12 @@ const STAGE_JS = String.raw`
       hud.append(board);
 
       var npc = el('div', 'npc');
-      npc.append(bit('div', 'plate', state.nametag === 1 ? T('Weapon Merchant') : 'Weapon Merchant', state.nametag === 1));
-      npc.append(canvasOf('', paintFigure, 'merchant'));
-      if (state.nametag === 0) npc.append(bit('div', 'mctip ours look', T('Weapon Merchant'), true));
+      var plate = el('div', 'plate');
+      plate.append(bit('span', '', state.nametag === 1 ? T('Weapon Merchant') : 'Weapon Merchant', state.nametag === 1), el('b', '', 'NPC'));
+      var figure = el('canvas', '');
+      paintFigure(figure);
+      npc.append(plate, figure);
+      if (state.nametag === 0) npc.append(bit('div', 'tip ours look', T('Weapon Merchant'), true));
       hud.append(npc);
 
       hud.append(bit('div', 'title', state.titles ? T('Level Up!') : 'Level Up!', state.titles));
@@ -1688,18 +1714,12 @@ const STAGE_JS = String.raw`
       if (state.chat !== 2) chat.append(bit('div', state.chat === 1 ? 'ours' : '', T(said), true));
       hud.append(chat);
 
-      drawBar(state, state.held);
+      drawBar(state.held);
     }
 
     function draw(tab, state, language, typed) {
       last = [tab, state, language];
       lang = language;
-      var mood = tab === 'dialogue' ? 'dusk' : 'day';
-      var key = mood + (wide ? 'w' : 'n');
-      if (painted !== key) {
-        painted = key;
-        paintScene(bg, wide ? 240 : 120, wide ? 110 : 105, mood);
-      }
       scr.dataset.tab = tab;
       scr.classList.toggle('still', first || hush);
       first = false;
@@ -1714,7 +1734,7 @@ const STAGE_JS = String.raw`
       if (!width) return;
       var nowWide = width >= 640;
       var W = nowWide ? 960 : 480;
-      var H = nowWide ? 440 : 420;
+      var H = nowWide ? 480 : 470;
       scr.classList.toggle('narrow', !nowWide);
       scr.style.width = W + 'px';
       scr.style.height = H + 'px';
@@ -1957,10 +1977,32 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
 
 // ------------------------------------------------------------------ 功能
 
-const rows = (prefix, n) => Array.from({ length: n }, (unused, i) => '<div><dt>%%feat.' + prefix + (i + 1)
-  + '%%</dt><dd>%%feat.' + prefix + (i + 1) + 'b%%</dd></div>').join('\n          ');
-const mod = (name, slug, state, key) => '<div><dt><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
-  + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></dt><dd>%%feat.' + key + 'b%%</dd></div>';
+/**
+ * 功能頁的一張卡。at 是 glyphs.png 上的 [列, 欄]（遊戲通用的那一張白色圖示）；
+ * eg 是預覽裡的一句原文——頁面上會配上譯文，跟著預覽選的語言換。
+ */
+const card = (key, at, eg) => '<article class="fcard"><i class="glyph" style="--r:' + at[0] + ';--c:' + at[1]
+  + '" aria-hidden="true"></i><div><h3>%%feat.' + key + '%%</h3><p>%%feat.' + key + 'b%%</p>'
+  + (eg ? '<p class="eg" data-eg="' + eg + '" aria-hidden="true"></p>' : '') + '</div></article>';
+const mod = (name, slug, state, key) => '<article class="fcard mod"><i class="glyph" style="--r:2;--c:11" aria-hidden="true"></i>'
+  + '<div><h3><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
+  + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></h3><p>%%feat.' + key + 'b%%</p></div></article>';
+
+/**
+ * 披風範本那一塊：說明圖、三句話、每一種尺寸的下載鈕。披風一覽與帳號頁都放。
+ * 使用者 2026-10-14：「披風範本希望可以更明顯一點，有使用者回饋找不太到」。
+ */
+const TEMPLATE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
+const TEMPLATE_BLOCK = '<div class="tpl"><img class="guide" src="%%tpl.guide%%" alt="%%tpl.alt%%" width="776" height="502" loading="lazy">'
+  + '<div><h2>%%tpl.h%%</h2><p>%%tpl.p%%</p><p class="label">%%tpl.pick%%</p><div class="tpl-sizes">'
+  + TEMPLATE_SIZES.map(([w, h]) => {
+    const name = 'template-' + w + 'x' + h + '.png';
+    const best = w === 88;
+    return '<a class="btn' + (best ? ' primary' : '') + '" href="' + TPL(name) + '" download="wynnchayuan-cape-' + name + '">'
+      + ICON.get + w + '×' + h + (best ? ' <small>%%tpl.rec%%</small>' : '') + '</a>';
+  }).join('')
+  + '</div><p>%%tpl.note%%</p><div class="more-links"><a href="' + TPL('example-88x68.gif')
+  + '" download="wynnchayuan-cape-example-88x68.gif">%%tpl.example%%</a><a href="/account">%%tpl.upload%%</a></div></div></div>';
 
 const FEATURES = String.raw`
   <h1>%%features.h1%%</h1>
@@ -2000,30 +2042,40 @@ const FEATURES = String.raw`
     <div>
       <section id="translate">
         <h2>%%features.t%%</h2>
-        <dl class="rows">
-          ` + rows('t', 10) + String.raw`
-        </dl>
+        <div class="cards">
+          ` + [card('t1', [0, 8], 'Main Attack Damage'), card('t2', [0, 3], 'Ability Points'),
+    card('t3', [2, 15], 'Well, what are we waiting for?'), card('t4', [1, 13], 'World Event'),
+    card('t5', [2, 9], 'Weapon Merchant'), card('t6', [3, 0], 'The trade has been completed!'),
+    card('t7', [3, 9], 'Trade Market'), card('t8', [1, 8], 'Daily Objective:'),
+    card('t9', [3, 12], 'Secret Discovery'), card('t10', [3, 3], 'Level Up!')].join('\n          ') + String.raw`
+        </div>
         <p class="note">%%features.tnote%%</p>
       </section>
       <section id="tools">
         <h2>%%features.u%%</h2>
-        <dl class="rows">
-          ` + rows('u', 8) + String.raw`
-        </dl>
+        <div class="cards">
+          ` + [card('u1', [2, 7]), card('u2', [3, 6]), card('u3', [3, 4]), card('u4', [0, 12]),
+    card('u5', [4, 12]), card('u6', [2, 11]), card('u7', [5, 4]), card('u8', [2, 8])].join('\n          ') + String.raw`
+        </div>
       </section>
       <section id="social">
         <h2>%%features.s%%</h2>
-        <dl class="rows">
-          ` + rows('s', 3) + String.raw`
-        </dl>
+        <div class="cards three">
+          <article class="fcard tall"><div class="show" aria-hidden="true">` + leaf('#FFD24A') + leaf('#5BD8E8') + leaf('#5BD86F') + leaf('#A8A8A8') + String.raw`</div>
+            <div><h3>%%feat.s1%%</h3><p>%%feat.s1b%%</p></div></article>
+          <article class="fcard tall"><div class="show" aria-hidden="true"><span class="capemini"><img src="` + TPL('example-88x68.gif') + String.raw`" alt="" loading="lazy"></span><span class="capemini"><img src="` + TPL('template-88x68.png') + String.raw`" alt="" loading="lazy"></span></div>
+            <div><h3>%%feat.s2%%</h3><p>%%feat.s2b%%</p></div></article>
+          <article class="fcard tall"><div class="show" aria-hidden="true"><i class="glyph" style="--r:2;--c:14;box-shadow:none;background:none"></i></div>
+            <div><h3>%%feat.s3%%</h3><p>%%feat.s3b%%</p></div></article>
+        </div>
       </section>
       <section id="compat">
         <h2>%%features.c%%</h2>
-        <dl class="rows">
+        <div class="cards">
           ` + [mod('Wynntils 4.2+', 'wynntils', 'required', 'c1'), mod('Fabric API', 'fabric-api', 'required', 'c2'),
     mod('Mod Menu', 'modmenu', 'optional', 'c3'), mod('WynnMarketSearch', 'wynnmarketsearch', 'optional', 'c4'),
     mod('Wynnventory', 'wynnventory', 'optional', 'c5'), mod('WynnMod', 'wynnmod', 'compatible', 'c6')].join('\n          ') + String.raw`
-        </dl>
+        </div>
         <p class="note">%%features.cnote%%</p>
         <div class="cta">
           <a class="btn primary" href="` + MODRINTH + String.raw`">%%home.modrinth%%</a>
@@ -2158,10 +2210,20 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
         draw(true);
       };
     });
-    picker.onchange = function () { lang = picker.value; draw(true); };
+    /* 下面那些卡片上的例句：原文在上，譯文在下，用預覽現在選的那一種語言 */
+    function examples() {
+      Array.prototype.forEach.call(document.querySelectorAll('[data-eg]'), function (node) {
+        var src = node.dataset.eg;
+        var out = el('span', 'tr', (D.text[lang][src] || src).replace(/\{c\d+\}/g, ''));
+        out.lang = TAGS[lang];
+        node.replaceChildren(el('span', '', src), out);
+      });
+    }
+    picker.onchange = function () { lang = picker.value; draw(true); examples(); };
     build();
     explain(null);
     draw(false);
+    examples();
 
     /* 左邊的目錄：捲到哪一段，哪一項就亮起來 */
     var links = Array.prototype.slice.call(document.querySelectorAll('.spec-nav a'));
@@ -2283,6 +2345,12 @@ const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5
 const CAPES = String.raw`
   <h1>%%capes.h1%%</h1>
   <p class="lede">%%capes.lede%%</p>
+  <details class="make" id="template">
+    <summary><img src="` + TPL('template-88x68.png') + String.raw`" alt="" width="44" height="34">
+      <span><b>%%capes.make%%</b><span class="sub">%%capes.makeb%%</span></span>
+      <span class="btn primary small">%%tpl.h%%` + ICON.down + String.raw`</span></summary>
+    ` + TEMPLATE_BLOCK + String.raw`
+  </details>
   <div class="bar">
     <span class="count" id="count"></span>
     <label class="sortby" for="sort">%%capes.sort%%
@@ -2661,6 +2729,9 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     });
   };
 
+  /* 從別處連過來找範本的（/capes#template）：那一塊直接打開 */
+  if (location.hash === '#template') document.getElementById('template').open = true;
+
   /* ---- 排序與篩選 ---- */
   /* 換排序、換篩選：留下來的卡滑到新的位置，新來的淡進來。瀏覽器不支援、或不想看動來動去的人就直接換 */
   function reorder() {
@@ -2792,8 +2863,9 @@ const ACCOUNT = String.raw`
         </div>
       </div>
     </div>
-    <h2>%%account.upload%%</h2>
-    <div class="panel" style="max-width:720px">
+    <h2 id="template">%%account.upload%%</h2>
+    ` + TEMPLATE_BLOCK.replace('<a href="/account">%%tpl.upload%%</a>', '') + String.raw`
+    <div class="panel" style="max-width:720px;margin-top:14px">
       <p class="note" style="margin:0 0 12px">%%account.spec%%</p>
       <p class="note" style="margin:0 0 12px">%%rules%%</p>
       <div class="drop" id="drop">
@@ -3533,12 +3605,13 @@ export function render(path, lang, bare) {
     // Discord、LINE 這類抓預覽的機器人——給它中文與英文各一句，兩邊的人貼出去都看得懂。
     text['meta.desc'] = attribute(bare ? plain(TEXT.zh['home.lede']) + ' ' + plain(TEXT.en['home.lede'])
       : plain(text['home.lede']));
+    text['tpl.guide'] = TPL(code.startsWith('zh') ? 'guide.png' : 'guide.en.png');
     const [title, body, script] = PAGES[path];
     const html = layout(code, '%%' + title + '%%', path, body, script)
       .replace(/%%([\w.]+)%%/g, (all, name) => {
         if (name === 'js') return JSON.stringify(text.js).replace(/</g, '\\u003c');
         // 功能頁的即時預覽：選項的名稱照這一頁的語言，場景裡的譯文七種都帶著（頁面上可以換）
-        if (name === 'demo') return JSON.stringify({ ui: DEMO.ui[code], text: DEMO.text }).replace(/</g, '\\u003c');
+        if (name === 'demo') return JSON.stringify({ ui: DEMO.ui[code], text: DEMO.text, tex: TEX_URL }).replace(/</g, '\\u003c');
         return Object.hasOwn(text, name) ? text[name] : all;
       });
     built.set(key, html);

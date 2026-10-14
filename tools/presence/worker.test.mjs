@@ -998,7 +998,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
     && en.ui['mode.replace'] === 'Replace in place');
   check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
-    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 19 && Object.values(lang).every((v) => v.length > 0))
+    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 23 && Object.values(lang).every((v) => v.length > 0))
     && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
   // 預覽是一整面「遊戲畫面」：功能頁與首頁最上面用同一份程式，字是遊戲裡那一套點陣字
   {
@@ -1035,6 +1035,56 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     check('沒有這一份的字型：404', (await worker.fetch(new Request('https://x.test/font/px-xx.ttf'), env)).status === 404
       && (await worker.fetch(new Request('https://x.test/font/../worker.js'), env)).status === 404);
   }
+  // 預覽用的是遊戲的材質（demo-textures.js），披風範本從自己的網址下載（cape-templates.js）
+  {
+    const { TEXTURES } = await import('./demo-textures.js');
+    const { CAPE_TEMPLATES } = await import('./cape-templates.js');
+    const need = ['tip-rare.png', 'tip-plain.png', 'emblem-bow.png', 'req.png', 'mark.png', 'divider.png', 'socket.png',
+      'dialogue.png', 'choice.png', 'cursor.png', 'hud.png', 'inventory.png', 'glyphs.png', 'item-bow.png',
+      'bg-world.webp', 'bg-town.webp'];
+    check('★ 預覽要的材質都在', need.every((name) => Object.hasOwn(TEXTURES, name)));
+    check('★ 每一張材質頁面上都取得到（樣式的 --t-*、程式的 D.tex），網址帶著雜湊', Object.keys(TEXTURES).every((name) =>
+      pages['/features'].includes('--t-' + name.replace(/\.\w+$/, '') + ': url(/tex/' + name + '?v=' + TEXTURES[name].v + ')'))
+      && Object.keys(embedded(pages['/features']).tex).length === Object.keys(TEXTURES).length
+      && embedded(pages['/']).tex['hud.png'] === '/tex/hud.png?v=' + TEXTURES['hud.png'].v);
+    r = await worker.fetch(new Request('https://x.test/tex/hud.png?v=' + TEXTURES['hud.png'].v), env);
+    let bytes = new Uint8Array(await r.arrayBuffer());
+    check('★ 材質拿得到：是 PNG、可以長期快取', r.status === 200 && r.headers.get('content-type') === 'image/png'
+      && r.headers.get('cache-control').includes('immutable') && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47);
+    r = await worker.fetch(new Request('https://x.test/tex/bg-world.webp'), env);
+    check('背景是 WebP', r.status === 200 && r.headers.get('content-type') === 'image/webp');
+    check('沒有的材質：404', (await worker.fetch(new Request('https://x.test/tex/nope.png'), env)).status === 404
+      && (await worker.fetch(new Request('https://x.test/tex/__proto__'), env)).status === 404);
+    check('★ 預覽不再自己畫風景與物品（程式裡沒有那幾支了）', !pages['/features'].includes('paintScene')
+      && !pages['/features'].includes('paintIcon') && pages['/features'].includes("pic('emblem-bow.png'"));
+    check('★ 頁尾寫了材質是 Wynncraft 的', pages['/'].includes(TEXT.zh['foot.assets']) && english['/'].includes(TEXT.en['foot.assets']));
+
+    // 披風範本：披風一覽與帳號頁都有一塊，每一種尺寸一顆下載鈕
+    const sizes = ['22x17', '44x34', '88x68', '176x136', '352x272', '704x544', '1056x816'];
+    check('★ 範本每一種尺寸、兩份說明圖與一張示範都打包了', sizes.every((s) => Object.hasOwn(CAPE_TEMPLATES, 'template-' + s + '.png'))
+      && ['guide.png', 'guide.en.png', 'example-88x68.gif'].every((n) => Object.hasOwn(CAPE_TEMPLATES, n)));
+    check('★ 披風一覽與帳號頁都有範本那一塊：七顆下載鈕，檔名看得出是什麼', ['/capes', '/account'].every((p) =>
+      sizes.every((s) => pages[p].includes('href="/template/template-' + s + '.png?v=' + CAPE_TEMPLATES['template-' + s + '.png'].v
+        + '" download="wynnchayuan-cape-template-' + s + '.png"'))
+      && pages[p].includes('class="tpl"') && pages[p].includes(TEXT.zh['tpl.h'])));
+    check('披風一覽那一塊平常收著（details），帶著 #template 進來會打開', pages['/capes'].includes('<details class="make" id="template">')
+      && pages['/capes'].includes("location.hash === '#template'"));
+    check('★ 說明圖：中文的頁面用中文那一張，其他語言用英文那一張', pages['/capes'].includes('/template/guide.png?v=')
+      && english['/capes'].includes('/template/guide.en.png?v=')
+      && (await (await inLang('/capes?lang=zh-cn', {})).text()).includes('/template/guide.png?v=')
+      && (await (await inLang('/capes?lang=ja', {})).text()).includes('/template/guide.en.png?v='));
+    r = await worker.fetch(new Request('https://x.test/template/template-88x68.png'), env);
+    bytes = new Uint8Array(await r.arrayBuffer());
+    check('★ 範本下載得到：就是 capes/templates/ 裡那一張', r.status === 200 && r.headers.get('content-type') === 'image/png'
+      && Buffer.from(bytes).equals((await import('node:fs')).readFileSync(new URL('../../capes/templates/template-88x68.png', import.meta.url))));
+    check('示範是 GIF；沒有的檔 404', (await worker.fetch(new Request('https://x.test/template/example-88x68.gif'), env))
+      .headers.get('content-type') === 'image/gif'
+      && (await worker.fetch(new Request('https://x.test/template/README.md'), env)).status === 404);
+    // 功能頁下半：每一項一張卡，翻譯範圍那十張各有一句例子
+    check('★ 功能頁的卡片：翻譯範圍十張都有例句，例句在預覽的資料裡找得到', (pages['/features'].match(/data-eg="/g) || []).length === 10
+      && [...pages['/features'].matchAll(/data-eg="([^"]+)"/g)].every((m) => Object.hasOwn(DEMO.text.zh_tw, m[1])
+        && Object.values(DEMO.text).every((lang) => lang[m[1]])));
+  }
   // 找不到這一頁：一頁像樣的網頁，照訪客的語言
   {
     r = await worker.fetch(new Request('https://x.test/no-such-page', { headers: { 'accept-language': 'zh-TW' } }), env);
@@ -1061,7 +1111,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     .replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
     .replace(/<[^>]+>/g, ' ')));
 }
-check('功能頁的列都填了字（27 列）', (pages['/features'].match(/<dt>/g) || []).length === 27
+check('功能頁的列都填了字（27 列）', (pages['/features'].match(/class="fcard/g) || []).length === 27
   && !/<dd>\s*<\/dd>/.test(pages['/features']));
 check('teamOf：只留三個身分，欄位只有名字、遊戲 ID、顏色', JSON.stringify(teamOf([
   { key: 'credits.role.developers', color: '#FFD24A', members: [{ name: ' A ', mc: 'Alice_Dev', rainbow: true, cape: 'x.gif' }] },
