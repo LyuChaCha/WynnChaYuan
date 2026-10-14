@@ -95,6 +95,76 @@ public final class SelfUpdate {
         return ownJar() != null;
     }
 
+    /**
+     * 記一步。寫進設定資料夾的 {@code update-log.txt}，同時印到主控台。
+     *
+     * <h2>為什麼要另外寫檔（使用者 2026-10-14：「遊戲內更新似乎沒有生效」）</h2>
+     * 回報時手上只有 latest.log，而它看不出按鈕按了沒、下載到哪一步、關遊戲時套用成功沒有——
+     * 關遊戲那一步跑在關機掛鉤裡，那時 log4j 已經收掉，印出來的字根本不會進 latest.log。
+     * 所以每一步都追加到自己的檔案，只留最後 200 行。
+     */
+    static void trace(String message) {
+        String line = java.time.LocalDateTime.now().withNano(0) + " " + message;
+        System.out.println("[WynnChaYuan] 更新：" + message);
+        Path dir = WynnChaYuan.configDir();
+        if (dir == null) {
+            return;
+        }
+        try {
+            Path file = dir.resolve(LOG);
+            java.util.List<String> lines = Files.isRegularFile(file)
+                    ? new java.util.ArrayList<>(Files.readAllLines(file, StandardCharsets.UTF_8))
+                    : new java.util.ArrayList<>();
+            lines.add(line);
+            if (lines.size() > LOG_LINES) {
+                lines = lines.subList(lines.size() - LOG_LINES, lines.size());
+            }
+            Files.write(file, lines, StandardCharsets.UTF_8);
+        } catch (Throwable ignored) {
+            // 記不下來就算了：更新本身不能因為記錄失敗而停
+        }
+    }
+
+    /**
+     * 打開「更新說明」而且有新版的時候記一次：「直接更新」那顆按鈕會不會出現。
+     * 按鈕沒出現是最難從回報看出來的情況——玩家只會說「沒有生效」。
+     */
+    public static void noteScreenOpened() {
+        String newer = Releases.newer();
+        if (newer == null || newer.equals(screenNoted)) {
+            return;
+        }
+        screenNoted = newer;
+        trace("打開更新說明：有新版 " + newer + "，「直接更新」"
+                + (available() ? "會出現（jar 在 " + ownJar() + "）" : "不會出現：找不到自己的 jar（模組來源 " + originOf() + "）"));
+    }
+
+    private static volatile String screenNoted;
+
+    private static final String LOG = "update-log.txt";
+    private static final int LOG_LINES = 200;
+
+    /** 找不到自己那個 jar 的時候，Fabric 說模組是從哪裡載入的。 */
+    private static String originOf() {
+        try {
+            return net.fabricmc.loader.api.FabricLoader.getInstance()
+                    .getModContainer(WynnChaYuan.MOD_ID)
+                    .map(mod -> {
+                        var origin = mod.getOrigin();
+                        String paths;
+                        try {
+                            paths = String.valueOf(origin.getPaths());
+                        } catch (Throwable t) {
+                            paths = "（沒有路徑：" + t.getClass().getSimpleName() + "）";
+                        }
+                        return origin.getKind() + " " + paths;
+                    })
+                    .orElse("（找不到模組）");
+        } catch (Throwable t) {
+            return t.toString();
+        }
+    }
+
     /** mods 資料夾裡現在跑的這個 jar；找不到（或不是一個檔）就回 {@code null}。 */
     static Path ownJar() {
         try {
@@ -122,12 +192,18 @@ public final class SelfUpdate {
      * @param version 要更新到的版本（{@link Releases#newer} 給的）
      */
     public static synchronized void start(String version) {
-        if (state == State.DOWNLOADING || state == State.READY || !plausibleVersion(version)) {
+        trace("按下更新：要更新到 " + version + "，目前是 " + WynnChaYuan.version() + "，狀態 " + state);
+        if (state == State.DOWNLOADING || state == State.READY) {
+            return;
+        }
+        if (!plausibleVersion(version)) {
+            trace("版本號不合理，不下載：" + version);
             return;
         }
         Path old = ownJar();
         Path configDir = WynnChaYuan.configDir();
         if (old == null || configDir == null) {
+            trace("沒辦法更新：自己的 jar＝" + old + "（模組來源 " + originOf() + "），設定資料夾＝" + configDir);
             state = State.FAILED;
             return;
         }
@@ -144,6 +220,7 @@ public final class SelfUpdate {
         Path part = fresh.resolveSibling(fresh.getFileName() + ".part");
         try {
             Files.createDirectories(fresh.getParent());
+            trace("開始下載 " + assetUrl(version));
             download(assetUrl(version), part);
             if (!isRelease(part, version)) {
                 throw new java.io.IOException("下載回來的不是 " + version + " 的 jar");
@@ -152,7 +229,9 @@ public final class SelfUpdate {
             pending = new Pending(fresh, old);
             percent = 100;
             state = State.READY;
+            trace("下載完成（" + Files.size(fresh) + " bytes），關遊戲時寫進 " + old);
         } catch (Throwable t) {
+            trace("下載失敗：" + t);
             try {
                 Files.deleteIfExists(part);
             } catch (Exception ignored) {
@@ -239,7 +318,8 @@ public final class SelfUpdate {
         Pending p = pending;
         if (p != null) {
             pending = null;
-            apply(p.fresh(), p.old());
+            trace("關遊戲，把 " + p.fresh() + " 寫進 " + p.old());
+            trace(apply(p.fresh(), p.old()) ? "套用成功，下次開遊戲就是新版" : "套用失敗，新檔留在 update 資料夾");
         }
     }
 
@@ -264,6 +344,7 @@ public final class SelfUpdate {
             Files.deleteIfExists(fresh);
             return true;
         } catch (Throwable t) {
+            trace("寫不進去：" + t);
             return false;
         }
     }
