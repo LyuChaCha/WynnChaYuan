@@ -97,7 +97,16 @@ public final class TooltipPanel {
         if (tooltip == null || tooltip.isEmpty() || store == null) {
             return List.of();
         }
+        // 滑鼠停在同一格時，每一幀送來的都是同一份內容。先跟上一幀比一次就好——
+        // 走 LRU 那條路要先把整份 tooltip 深層算一次雜湊、再比一次內容，
+        // 還要重跑一次卡片標題；一份二三十行、每行一串片段的裝備說明，
+        // 那是每幀實打實的成本。
+        LastLines last = lastLines;
+        if (last != null && last.fresh(store) && last.key().equals(tooltip)) {
+            return new ArrayList<>(last.out());
+        }
         List<Component> key = List.copyOf(tooltip);
+        List<Component> cached = null;
         synchronized (LINES_CACHE) {
             CachedLines hit = LINES_CACHE.get(key);
             if (hit != null && hit.generation() == store.generation()
@@ -105,17 +114,44 @@ public final class TooltipPanel {
                     && hit.translateNames() == store.translatesNames()
                     // 按住 Shift 的那幾幀是另一份答案，放開要馬上換回來
                     && hit.peekPlain() == store.peeksPlainNames()) {
-                return pageTitle(key, new ArrayList<>(hit.lines()), store);
+                cached = hit.lines();
             }
         }
-        List<Component> out = List.copyOf(translateLines(tooltip, store));
-        synchronized (LINES_CACHE) {
-            LINES_CACHE.put(key, new CachedLines(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), out));
+        if (cached == null) {
+            cached = List.copyOf(translateLines(tooltip, store));
+            synchronized (LINES_CACHE) {
+                LINES_CACHE.put(key, new CachedLines(store.generation(),
+                        store.namesWithOriginal(), store.translatesNames(),
+                        store.peeksPlainNames(), cached));
+            }
         }
-        return pageTitle(key, new ArrayList<>(out), store);
+        List<Component> out = pageTitle(key, new ArrayList<>(cached), store);
+        lastLines = new LastLines(key, store.generation(), store.namesWithOriginal(),
+                store.translatesNames(), store.peeksPlainNames(), store.pageNameMode(),
+                java.util.Collections.unmodifiableList(new ArrayList<>(out)));
+        return out;
     }
+
+    /**
+     * 上一次 {@link #translateLinesCached} 的輸入與答案（已套過卡片標題）。
+     *
+     * <p>跟 LRU 那一份記的條件一樣，外加卡片標題的設定——這一份是套完標題之後的樣子。
+     * 交出去的照樣是複本，理由見 {@link #translateLinesCached}。
+     */
+    private record LastLines(List<Component> key, int generation, boolean namesWithOriginal,
+                             boolean translateNames, boolean peekPlain,
+                             CollectorConfig.ItemNames pageNames, List<Component> out) {
+
+        boolean fresh(TranslationStore store) {
+            return generation == store.generation()
+                    && namesWithOriginal == store.namesWithOriginal()
+                    && translateNames == store.translatesNames()
+                    && peekPlain == store.peeksPlainNames()
+                    && pageNames == store.pageNameMode();
+        }
+    }
+
+    private static volatile LastLines lastLines;
 
     /**
      * 內容書卡片的標題（「Visceral Remains [Cave]」）照 F6「任務與洞窟名稱」的設定顯示。
@@ -139,31 +175,25 @@ public final class TooltipPanel {
      */
     public static void render(GuiGraphics graphics, List<Component> tooltip,
                               int mouseX, int mouseY, TranslationStore store) {
-        if (tooltip == null || tooltip.isEmpty()) {
+        if (tooltip == null || tooltip.isEmpty() || store == null) {
             return;
         }
-        // 別的模組加進清單、但 Wynntils 沒有畫出來的區塊要先拿掉，
-        // 否則面板會比原文多出好幾行，看起來像我們憑空生了內容。
-        tooltip = ThirdPartySections.strip(tooltip);
-        List<Component> lines = translateLinesCached(tooltip, store);
-        // 只在物品換了才記一次，否則每幀都記會灌爆計數
-        if (!tooltip.equals(lastDiagnosed)) {
-            lastDiagnosed = List.copyOf(tooltip);
-            WynnChaYuan.store().noteEvent(lines.isEmpty() ? "panel.noMatch" : "panel.shown");
-            if (lines.isEmpty()) {
-                TooltipDebug.dump(tooltip);   // 把實際模板寫出來，才比對得出差在哪
-            }
+        Minecraft mc = Minecraft.getInstance();
+        Frame frame = lastFrame;
+        if (frame == null || frame.source() == null || !frame.source().fresh(store)
+                || !frame.input().equals(tooltip)) {
+            frame = layout(mc, tooltip, store);
+            lastFrame = frame;
         }
+        List<Component> lines = frame.lines();
         if (lines.isEmpty()) {
             return;
         }
-
-        Minecraft mc = Minecraft.getInstance();
         int screenW = graphics.guiWidth();
         int screenH = graphics.guiHeight();
         int gap = WynnChaYuan.config().panelGap();
 
-        int[] panelBox = box(mc, lines);
+        int[] panelBox = frame.panelBox();
         int panelW = panelBox[0] + 8;           // 8 = tooltip 左右內距
         int panelH = panelBox[1] + 8;
 
@@ -174,7 +204,7 @@ public final class TooltipPanel {
             y = WynnChaYuan.config().fixedY();
         } else {
             // 原 tooltip 的位置：Minecraft 預設畫在滑鼠右下方 12/-12 處
-            int originalW = box(mc, tooltip)[0] + 8;
+            int originalW = frame.originalW();
             int originalLeft = mouseX + 12;
             int rightSide = originalLeft + originalW + gap;
             int leftSide = originalLeft - gap - panelW;
@@ -194,16 +224,13 @@ public final class TooltipPanel {
         // Wynnventory 的價格框也放在物品說明旁邊；跟著游標的面板要讓開它。
         // 使用者自己釘住位置的（FIXED）不動——那是他挑的地方。
         if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
-            int originalW = box(mc, tooltip)[0] + 8;
+            int originalW = frame.originalW();
             int originalLeft = mouseX + 12;
             x = WynnventoryBox.place(x, y, panelW, panelH, originalLeft - gap - panelW,
                     originalLeft + originalW + gap, screenW, gap);
         }
 
-        List<ClientTooltipComponent> components = lines.stream()
-                .map(Component::getVisualOrderText)
-                .map(ClientTooltipComponent::create)
-                .toList();
+        List<ClientTooltipComponent> components = frame.components();
 
         // 位置我們自己算好了，所以用一個原樣回傳座標的 positioner，
         // 不讓 Minecraft 的預設定位器把面板挪回滑鼠旁邊。
@@ -216,6 +243,59 @@ public final class TooltipPanel {
         // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                 panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
+    }
+
+    /**
+     * 面板這一份 tooltip 排好的樣子：譯文、要畫的元件、兩個框的大小。
+     *
+     * <h2>為什麼要記</h2>
+     * 滑鼠停在一格上，每一幀送來的都是同一份 tooltip，排出來的結果也一樣。
+     * 先前每一幀都重做一次：拿掉別的模組的區塊、查快取、把譯文與原文
+     * <b>各量一次</b>寬高（原文還量了兩次），再把譯文轉成元件——每一步都是
+     * 逐行逐字的工作。實機回報「滑到物品上掉 10 幀」就是這裡。
+     *
+     * <p>現在只跟上一幀比一次內容；一樣就整份沿用。語料或名稱模式一變，
+     * {@code source} 就不新鮮了，照樣重排。滑鼠移開時由
+     * {@link #forgetFrame} 放掉，不會拿很久以前的排版來畫。
+     *
+     * @param input  呼叫端給的原始 tooltip（還沒拿掉別的模組的區塊）
+     * @param source 排版當時的譯文快取，用來判斷語料與模式有沒有變
+     */
+    private record Frame(List<Component> input, LastLines source, List<Component> lines,
+                         List<ClientTooltipComponent> components, int[] panelBox,
+                         int originalW) {}
+
+    private static volatile Frame lastFrame;
+
+    /** 滑鼠不在任何物品上了：上一份排版不再沿用。 */
+    public static void forgetFrame() {
+        lastFrame = null;
+    }
+
+    /** 排一份新的；見 {@link Frame}。 */
+    private static Frame layout(Minecraft mc, List<Component> input, TranslationStore store) {
+        // 別的模組加進清單、但 Wynntils 沒有畫出來的區塊要先拿掉，
+        // 否則面板會比原文多出好幾行，看起來像我們憑空生了內容。
+        List<Component> tooltip = ThirdPartySections.strip(input);
+        List<Component> lines = translateLinesCached(tooltip, store);
+        // 只在物品換了才記一次，否則每幀都記會灌爆計數
+        if (!tooltip.equals(lastDiagnosed)) {
+            lastDiagnosed = List.copyOf(tooltip);
+            WynnChaYuan.store().noteEvent(lines.isEmpty() ? "panel.noMatch" : "panel.shown");
+            if (lines.isEmpty()) {
+                TooltipDebug.dump(tooltip);   // 把實際模板寫出來，才比對得出差在哪
+            }
+        }
+        List<Component> kept = List.copyOf(input);
+        if (lines.isEmpty()) {
+            return new Frame(kept, lastLines, List.of(), List.of(), new int[] {0, 0}, 0);
+        }
+        List<ClientTooltipComponent> components = lines.stream()
+                .map(Component::getVisualOrderText)
+                .map(ClientTooltipComponent::create)
+                .toList();
+        return new Frame(kept, lastLines, List.copyOf(lines), components,
+                boxOf(mc, components), box(mc, tooltip)[0] + 8);
     }
 
     /**
@@ -1162,10 +1242,14 @@ public final class TooltipPanel {
      * 空白列各有各的高度。拍出來的框因此跟內容對不上。
      */
     static int[] box(Minecraft mc, List<Component> lines) {
-        List<ClientTooltipComponent> parts = lines.stream()
+        return boxOf(mc, lines.stream()
                 .map(Component::getVisualOrderText)
                 .map(ClientTooltipComponent::create)
-                .toList();
+                .toList());
+    }
+
+    /** 同上，元件已經轉好了。 */
+    private static int[] boxOf(Minecraft mc, List<ClientTooltipComponent> parts) {
         int w = 0;
         for (ClientTooltipComponent part : parts) {
             w = Math.max(w, part.getWidth(mc.font));

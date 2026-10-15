@@ -209,6 +209,7 @@ public final class RenderListener {
         }
         List<Component> tooltip = PendingTooltip.take();
         if (tooltip.isEmpty()) {
+            TooltipPanel.forgetFrame();        // 滑鼠移開了，上一份排版不再沿用
             return;
         }
         try {
