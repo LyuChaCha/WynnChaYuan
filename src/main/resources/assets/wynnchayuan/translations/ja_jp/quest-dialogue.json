@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23136,
-  "translated": 22888,
+  "count": 23137,
+  "translated": 22889,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75976,6 +75976,16 @@
    "stage": "Stage 10",
    "speaker": "Gawrick",
    "source": "wiki"
+  },
+  "Fallen Delivery#068": {
+   "src": "Talk to Bricot at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] の Bricot と話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fallen Delivery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
   },
   "Fallen Factory#001": {
    "src": "WHY IS IT THAT YOU HUMANS CAN'T SEEM TO LEAVE THIS FACTORY OR ANYTHING ELSE IN PEACE FOR ONE DAY IN YOUR LIVES? SHEESH.",
