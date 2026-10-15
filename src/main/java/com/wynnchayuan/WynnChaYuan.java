@@ -123,13 +123,17 @@ public final class WynnChaYuan implements ClientModInitializer {
         //
         // ErrorDebug 不在此列：它只在真的丟例外時寫，是當機紀錄不是洗版，
         // 而那正是最需要留下來的東西。
+        //
+        // 全部寫進 debug/ 子資料夾：十幾種、每種好幾份，放在外面會把 captured.json
+        // 與設定檔淹掉。見 ConfigFolder#DEBUG。
         if (config.debugDumps()) {
-            com.wynnchayuan.render.TooltipDebug.init(dir.resolve("tooltip-debug.json"));
-            com.wynnchayuan.render.Boxes.init(dir.resolve("overlay-debug.txt"));
-            com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
-            com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
-            com.wynnchayuan.translate.FlowedDebug.init(dir);
-            com.wynnchayuan.capture.DialogueProbe.init(dir);
+            Path debug = ConfigFolder.debugDir(dir);
+            com.wynnchayuan.render.TooltipDebug.init(debug.resolve("tooltip-debug.json"));
+            com.wynnchayuan.render.Boxes.init(debug.resolve("overlay-debug.txt"));
+            com.wynnchayuan.translate.LineDebug.init(debug.resolve("line-debug.txt"));
+            com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
+            com.wynnchayuan.translate.FlowedDebug.init(debug);
+            com.wynnchayuan.capture.DialogueProbe.init(debug);
         }
         com.wynnchayuan.translate.ErrorDebug.into(dir);
         // 版本說明：先讀 jar 內建那份，背景再換成線上的。見 Releases。
@@ -164,6 +168,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         store.knowsTranslations(WynnChaYuan::alreadyTranslated);
         // 語料收過、只是還沒翻的不當缺口，但照樣記次數——見 CaptureStore#knowsSources。
         store.knowsSources(WynnChaYuan::alreadyCollected);
+        store.knowsWhere(com.wynnchayuan.capture.Whereabouts::now);
         // 打到一半的半句、或提示框只收到第一行——見 CaptureStore#knowsLonger。
         store.knowsLonger(t -> translations.hasLonger(t));
         // 切換語言之後，先前畫出去的譯文會被當成原文收進來——見 OwnOutputs。

@@ -99,7 +99,7 @@ non-vanilla colour codes come along, so the line follows the game if its palette
 ever changes.
 
 **To see which number is which colour**, read the "available colours" section of
-`config/wynnchayuan/majorid-debug.txt` (written while diagnostics are on in the settings):
+`config/wynnchayuan/debug/majorid-debug.txt` (written while diagnostics are on in the settings):
 
 ```
 === available colours 1 ===

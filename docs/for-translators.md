@@ -242,7 +242,7 @@ NPC 是用「玩家正前方最近的名牌」猜的，旁邊站著別人時可�
 - 編號超出範圍**當作沒寫**，那一段回去走猜的那條路。顏色不對可以忍，
   整行不顯示不行。
 
-哪個編號是哪個顏色，看診斷檔 `config/wynnchayuan/majorid-debug.txt` 的
+哪個編號是哪個顏色，看診斷檔 `config/wynnchayuan/debug/majorid-debug.txt` 的
 「可用的顏色」那一段（設定裡打開診斷才會寫）。完整說明見
 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 
@@ -263,7 +263,7 @@ python tools/validate.py
 
 ## 遇到版面問題怎麼回報
 
-`config/wynnchayuan/` 底下有兩個檔案，附上去比截圖有用得多：
+`config/wynnchayuan/debug/` 底下有兩個檔案（F6 打開「寫出診斷檔」、重進遊戲才會有），附上去比截圖有用得多：
 
 | 檔案 | 什麼時候看 |
 |---|---|
