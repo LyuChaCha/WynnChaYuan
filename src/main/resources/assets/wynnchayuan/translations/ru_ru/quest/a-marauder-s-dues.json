@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Marauder's Dues",
-  "count": 68,
-  "translated": 68,
+  "count": 70,
+  "translated": 69,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -117,6 +117,16 @@
    "source": "captured"
   },
   "A Marauder's Dues#011": {
+   "src": "Each core gains and loses explosive power based on its position in the grid, and what cores it's touching. Each core touches the cores that are above, below and next to it.",
+   "dst": "Взрывная сила каждого ядра растёт или падает в зависимости от его места в сетке и того, каких ядер оно касается. Каждое ядро касается ядер сверху, снизу и по бокам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#012": {
    "src": "Right Click a core to select it, then Right Click one of the {~} green spots in the grid to place it there.",
    "dst": "ПКМ по ядру - выбрать его, затем ПКМ по одной из {~} зелёных точек сетки - поставить туда.",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#012": {
+  "A Marauder's Dues#013": {
    "src": "Remember, you need to get {~} Explosive Power! If you need a hint, click on Hints and Rules and select \"I want a hint.\"",
    "dst": "Помните: нужно {~} силы взрыва! Подсказка: «Подсказки и правила», затем «Хочу подсказку.»",
    "role": "desc",
@@ -136,7 +146,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#013": {
+  "A Marauder's Dues#014": {
+   "src": "The Green Core begins with a lot of power, but loses power when touching some of the other cores, especially Orange. So you'll want it in a corner, where it's touching only {~} cores, and it shouldn't be touching Orange.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#015": {
    "src": "That terrible wizard must have captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
    "dst": "Видно, тогда-то этот ужасный колдун и опутал тебя чарами. Это было ужасно, просто… Такой суровый у тебя был взгляд…",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Peli",
    "source": "captured"
   },
-  "A Marauder's Dues#014": {
+  "A Marauder's Dues#016": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
    "dst": "…Я почти ничего не помню. Только… злость и… отвращение, наверное, но… Ты бы не стал мне лгать, дедушка Peli.",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Norsten",
    "source": "captured"
   },
-  "A Marauder's Dues#015": {
+  "A Marauder's Dues#017": {
    "src": "Talk to Norsten.",
    "dst": "Поговори с Norsten.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#016": {
+  "A Marauder's Dues#018": {
    "src": "...ugh. Disgusting. Utterly disgusting. I've had just about enough of your kind here. Humans...",
    "dst": "…фу. Мерзость. Сущая мерзость. С меня хватит вашего брата. Люди…",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#017": {
+  "A Marauder's Dues#019": {
    "src": "Dreadfully drab, always getting in the way, wriggling through our province like worms! You're no heroes, you're pretenders!!",
    "dst": "Убого серые, вечно путаетесь под ногами, ползаете по нашей провинции как черви! Никакие вы не герои, вы самозванцы!!",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#018": {
+  "A Marauder's Dues#020": {
    "src": "Oh, you want through here? Well, I'm the gatekeeper. Let's call my toll...the abandonment of your ridiculous little heroics...and all your money besides. Sound fair?",
    "dst": "О, тебе сюда пройти? Что ж, я привратник. Назначим плату… отказ от твоего нелепого геройства… и заодно все твои деньги. Честно?",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#019": {
+  "A Marauder's Dues#021": {
    "src": "Aha, Norsten my boy! We've been worried sick, it's been a week. What is it you're doing so far out into the canyon?",
    "dst": "Ага, Norsten, мальчик мой! Мы извелись от тревоги, целая неделя прошла. Что ты делаешь так далеко в каньоне?",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#020": {
+  "A Marauder's Dues#022": {
    "src": "Wha- Who are you, and who gave you permission to use my toll road?! And can't you see I'm busy?",
    "dst": "Что… Кто ты вообще и кто позволил тебе ходить по моей платной дороге?! Не видишь, я занят?",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#021": {
+  "A Marauder's Dues#023": {
    "src": "Norsten?? Don't you recognize your own grandfather? What's that strange look in your eyes, what's this about a toll road?",
    "dst": "Norsten?? Ты не узнаёшь родного деда? Что за странный у тебя взгляд, и что ещё за платная дорога?",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#022": {
+  "A Marauder's Dues#024": {
    "src": "You're nothing to me at your age. I only care about what the young can do for me...and about the fee you're neglecting, you shriveled old fruit!",
    "dst": "В твои годы ты для меня пустое место. Меня волнует лишь, что молодые могут для меня сделать… и плата, которую ты не внёс, сморщенный старый фрукт!",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#023": {
+  "A Marauder's Dues#025": {
    "src": "What's gotten into you? Such a polite man, acting this way to your elders... Human, have you any idea what's-",
    "dst": "Что на тебя нашло? Такой вежливый юноша, и так со старшими… Человек, ты хоть знаешь, что-",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#024": {
+  "A Marauder's Dues#026": {
    "src": "...oh no. Oh, say it isn't so, is that what's happening? Is it HIS fault?",
    "dst": "…о нет. О, скажи, что это не так! Неужели? Это ЕГО рук дело?",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#025": {
+  "A Marauder's Dues#027": {
    "src": "Up there, on the cliff- that tower! The scourge of the canyon...has he truly returned? Has he...taken my grandson?!",
    "dst": "Там, на утёсе - та башня! Бич каньона… неужто он и впрямь вернулся? Неужто он… забрал моего внука?!",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#026": {
+  "A Marauder's Dues#028": {
    "src": "...heh. Haaaaahahahaha!!",
    "dst": "…хех. Ха-а-а-ха-ха-ха!!",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#027": {
+  "A Marauder's Dues#029": {
    "src": "My reputation, even after all this time, still precedes me!! Indeed, old man, I have taken your grandson as my puppet!",
    "dst": "Даже спустя столько лет моя слава бежит впереди меня!! Да, старик, я сделал твоего внука своей марионеткой!",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#028": {
+  "A Marauder's Dues#030": {
    "src": "What should I care about the facade? For a hundred and fifty years I've stolen the vitality of others to maintain my beauty, and your grandson will be no different.",
    "dst": "Что мне до этой личины? Сто пятьдесят лет я краду чужую жизненную силу, чтобы сохранить красоту, и твой внук ничем не лучше.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#029": {
+  "A Marauder's Dues#031": {
    "src": "Miserable dastard!! Cold-water eel!! Human, you must help, you MUST! I beg you, please, seek the sorcerer and save my poor Norsten!!",
    "dst": "Жалкий подлец!! Угорь из холодной воды!! Человек, без тебя НИКАК! Умоляю, найди колдуна и спаси моего бедного Norsten!!",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#030": {
+  "A Marauder's Dues#032": {
    "src": "The southwest mountains have a shortcut past the bandits, time is of the essence!",
    "dst": "В юго-западных горах есть обход мимо бандитов, время не ждёт!",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#031": {
+  "A Marauder's Dues#033": {
    "src": "A veritable army fell before my magic! The bandits pay their tribute to my grace and obey my orders! You're as mad as I am called if you think one human can get through.",
    "dst": "Целая армия пала перед моей магией! Бандиты платят дань моей милости и исполняют мои приказы! Считать, что один человек прорвётся, - безумие похлеще того, в чём винят меня.",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#032": {
+  "A Marauder's Dues#034": {
    "src": "I'll leave you a corpse, a husk! A withered pile of dust- or perhaps I'll take YOU as a slave too, human! So what will it be? Run...or face me?",
    "dst": "Оставлю от тебя труп, пустую шелуху! Горстку праха - или, может, и ТЕБЯ сделаю рабом, человек! Так что же? Бежать… или сразиться со мной?",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#033": {
+  "A Marauder's Dues#035": {
    "src": "Go up the path to the wizard's tower, at [{~}, {~}, -{~}].",
    "dst": "Поднимись по тропе к башне колдуна в [{~}, {~}, -{~}].",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#034": {
+  "A Marauder's Dues#036": {
    "src": "Hoho... The worm comes wriggling in, it seems. What a horrid thing you are. Mismatched armor, courage of a fool all over your face... Inelegant and UGLY!!",
    "dst": "Хо-хо… Похоже, червяк вполз внутрь. Какое же ты убожество. Разномастная броня, на лице - храбрость дурака… Неизящно и УРОДЛИВО!!",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#035": {
+  "A Marauder's Dues#037": {
    "src": "At least the last ones to face me had some coordination, and the sense to hide themselves. Come further and you'll share their fate!!",
    "dst": "Прошлые мои противники хоть действовали слаженно и догадались спрятаться. Сделай ещё шаг - и разделишь их участь!!",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#037": {
+  "A Marauder's Dues#038": {
    "src": "You can never understand. The beauty of one like myself cannot be transient, it must be everlasting! I will never succumb to my mortality!",
    "dst": "Тебе не понять. Красота такого, как я, не может быть мимолётной, она должна быть вечной! Я никогда не покорюсь смертности!",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#038": {
+  "A Marauder's Dues#039": {
    "src": "As a matter of fact...you humans ARE good for one thing. Drab as you are, you're lively. So consider this an honor!",
    "dst": "Впрочем… на одно вы, люди, всё же ГОДИТЕСЬ. Серые, зато живые. Так что считай это честью!",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#039": {
+  "A Marauder's Dues#040": {
    "src": "HAAAAAhahahaha!! Instead of destruction, I'll leave you trapped in this illusion, and chip away at your ugly mind until nothing remains. You'll join the rest who've prolonged my life!",
    "dst": "ХА-А-А-ха-ха!! Не уничтожу - запру тебя в этой иллюзии и буду по кусочку крошить твой уродливый разум, пока ничего не останется. Пополнишь ряды тех, кто продлил мне жизнь!",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#040": {
+  "A Marauder's Dues#041": {
    "src": "Escape the illusion.",
    "dst": "Вырвись из иллюзии.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#041": {
+  "A Marauder's Dues#042": {
    "src": "I'll take pleasure in peeling away your most formative memories first- W-wait, what's this giant blank spot? It's interfering with my spell...!!",
    "dst": "С удовольствием сдеру с тебя самые важные воспоминания - П-постой, что это за огромное пустое пятно? Оно мешает моему заклинанию…!!",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#042": {
+  "A Marauder's Dues#043": {
    "src": "Ugh, barely any memories to remove, hardly any personality... How much of a dull gray slate are you...and how is that making this more difficult?!",
    "dst": "Фу, воспоминаний почти нет, личности почти нет… Насколько же ты пустая серая доска… и почему от этого только сложнее?!",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#043": {
+  "A Marauder's Dues#044": {
    "src": "Run away and confront the wizard.",
    "dst": "Сбеги и сразись с колдуном.",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#044": {
+  "A Marauder's Dues#045": {
    "src": "You escaped?! ...hmph. I suppose that trick works better for binding a platoon than a person. When you only need to focus on what YOU see...rrgh.",
    "dst": "Ты на свободе?! …хмф. Видно, этот трюк лучше слепит взвод, чем одного человека. Когда смотреть нужно лишь на то, что видишь ТЫ… ргх.",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#045": {
+  "A Marauder's Dues#046": {
    "src": "Fine...you've forced my hand. I must sweep you aside, you so-called hero! Never darken my door again! Cease to exist!!",
    "dst": "Что ж… выбора ты мне не оставляешь. Я сметаю тебя прочь, так называемый герой! Чтоб ноги твоей здесь не было! Исчезни!!",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#046": {
+  "A Marauder's Dues#047": {
    "src": "GAH!",
    "dst": "ГАХ!",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#047": {
+  "A Marauder's Dues#048": {
    "src": "Ugh, what was it that raisin of a man said- Miserable runt?! Cold-water eel?! More fitting names for you than me!!",
    "dst": "Ургх, что там ляпнул этот старый изюм? Жалкий подлец?! Угорь из холодной воды?! Это скорее про тебя!!",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#055": {
+  "A Marauder's Dues#054": {
    "src": "Those souls are mine to control, you hear me? Mine to bind!! Mine to drain dry of vitality!! Mine to OWN!! HehehaHAAAAA!!",
    "dst": "Эти души подвластны мне, слышишь? Мне их связывать!! Мне их иссушать!! Они МОИ!! Хе-хе-ха-ХА-А-А!!",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#056": {
+  "A Marauder's Dues#055": {
    "src": "And if you jump in after it? You'll be truly trapped- a dimension of my own making, filled with volatile magical waste! You'll never be seen again!",
    "dst": "А прыгнешь следом? Попадёшь в настоящую ловушку - в моё измерение, полное нестабильных магических отходов! Тебя больше никто не увидит!",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#057": {
+  "A Marauder's Dues#056": {
    "src": "In other words... You. Lose.",
    "dst": "Иными словами… Тебе. Конец.",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#058": {
+  "A Marauder's Dues#057": {
    "src": "Find a way out of the strange dimension.",
    "dst": "Найди выход из странного измерения.",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#060": {
+  "A Marauder's Dues#058": {
    "src": "Escape the strange dimension.",
    "dst": "Сбеги из странного измерения.",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#061": {
+  "A Marauder's Dues#059": {
    "src": "H-how did you survive? How did you get OUT?! That pocket dimension has a one-way entrance!! I- You- I'LL DRAIN AWAY NORSTEN BEFORE YOUR VERY EYES!!",
    "dst": "К-как?! Как тебе удалось ВЫБРАТЬСЯ?! У этого кармана вход в один конец!! Я… Ты… Я ВЫПЬЮ NORSTEN У ТЕБЯ НА ГЛАЗАХ!!",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#062": {
+  "A Marauder's Dues#060": {
    "src": "The scourge is angry!! Human, quickly, for him to be this upset you must have found something! Save my grandson, please!!",
    "dst": "Бич разгневан!! Человек, скорее: раз он так взбешён, значит, у тебя что-то есть! Спаси моего внука, прошу!!",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#063": {
+  "A Marauder's Dues#061": {
    "src": "I'LL FLING YOU TO THE ENDS OF THE CANYON!! FILTHY HUMAN, LOWLY WORM NOT FIT TO BE DUST-",
    "dst": "ЗАШВЫРНУ ТЕБЯ НА КРАЙ КАНЬОНА!! ГРЯЗНЫЙ ЧЕЛОВЕК, ЧЕРВЬ, НЕДОСТОЙНЫЙ ДАЖЕ ПРАХА-",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#064": {
+  "A Marauder's Dues#062": {
    "src": "Aguh...w-where am I? My...my throat hurts...was I screaming?",
    "dst": "Агх… г-где я? Горло… горло болит… я кричал?",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#065": {
+  "A Marauder's Dues#063": {
    "src": "Oh, my poor grandson...my little Norsten is back to us! Oh, joyous day!!",
    "dst": "Ох, мой бедный внук… мой маленький Norsten вернулся! О, радостный день!!",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#066": {
+  "A Marauder's Dues#064": {
    "src": "Back to...did something happen? I remember coming this way after a thief...and then...",
    "dst": "Вернулся… что-то случилось? Помню, я гнался сюда за вором… а потом…",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#068": {
+  "A Marauder's Dues#065": {
    "src": "But this human, this hero... They have bested the scourge of the canyon! They managed to save you from such evil!",
    "dst": "Но этот человек, этот герой… одолел бич каньона! Сумел спасти тебя от такого зла!",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#070": {
+  "A Marauder's Dues#066": {
    "src": "Thank you, human- Hm, what's all this money doing in my pockets? I didn't bring my pouch out with me to chase the thief, but...! So much money!",
    "dst": "Спасибо, человек… Хм? Откуда у меня в карманах столько денег? Я не брал кошель, когда погнался за вором, но…! Столько денег!",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#071": {
+  "A Marauder's Dues#067": {
    "src": "Ill-gotten gains from the scourge's sham of a toll-road scheme, no doubt. I think the human could put that money to fine use, what say you, my boy?",
    "dst": "Нечестная нажива с липовой платной дороги этого бича, не иначе. Думаю, человек найдёт этим деньгам достойное применение, что скажешь, мальчик мой?",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#072": {
+  "A Marauder's Dues#068": {
    "src": "Of course! Here. And don't worry about the gate. It's supposed to be open for anyone, so use it as you like.",
    "dst": "Конечно! Держи. И насчёт ворот не волнуйся. Они для всех, так что проходи, когда захочешь.",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#073": {
+  "A Marauder's Dues#069": {
    "src": "[Right Click] with the shard to change what is real and what is fake.",
    "dst": "[Правый клик] с осколком меняет то, что настоящее, и то, что поддельное.",
    "role": "desc",

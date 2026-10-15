@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Supply and Delivery",
-  "count": 67,
-  "translated": 67,
+  "count": 71,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -503,6 +503,16 @@
    "source": "wiki"
   },
   "Supply and Delivery#049": {
+   "src": "Fine, I'll take the crate to",
+   "dst": "Ладно, я отнесу ящик",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#050": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
    "dst": "Отлично! Дорогу ты уже точно знаешь! Не буду, э-э, путаться под ногами!",
    "role": "desc",
@@ -512,7 +522,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#050": {
+  "Supply and Delivery#051": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
    "dst": "Просто отнеси припасы в {p}, и. Ну. Всё как-нибудь уладится.",
    "role": "desc",
@@ -522,7 +532,17 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#051": {
+  "Supply and Delivery#052": {
+   "src": "Why can't you just take the",
+   "dst": "Почему ты сам не можешь от",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#053": {
    "src": "...probably.",
    "dst": "…наверное.",
    "role": "desc",
@@ -532,7 +552,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#052": {
+  "Supply and Delivery#054": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "Видишь ли. Мне правда не хочется это делать. И я не буду!",
    "role": "desc",
@@ -542,7 +562,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#053": {
+  "Supply and Delivery#055": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
    "dst": "…нет? Нет. Ладно. Попытка не пытка. Дорогу ты знаешь! Не буду, э-э, путаться под ногами! Хе…",
    "role": "desc",
@@ -552,7 +572,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#054": {
+  "Supply and Delivery#056": {
    "src": "He bought you the item? Good. Good, good good. Okay! That was... harder than expected.",
    "dst": "Он купил тебе ящик? Хорошо. Хорошо, хорошо. Так! Это было… сложнее, чем я думал.",
    "role": "desc",
@@ -562,7 +582,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#055": {
+  "Supply and Delivery#057": {
    "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
    "dst": "Отнеси ящик припасов мэру Alvin в {p} на [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -572,7 +592,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#056": {
+  "Supply and Delivery#058": {
    "src": "Ah, hello! What can I do for you today?",
    "dst": "А, здравствуйте! Чем могу помочь?",
    "role": "desc",
@@ -582,7 +602,17 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#057": {
+  "Supply and Delivery#059": {
+   "src": "I have a supply crate from D",
+   "dst": "У меня ящик припасов от D",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#060": {
    "src": "Ah... So you do. I thought I had sent Ope to pick that up...",
    "dst": "А… Вот оно что. Я ведь посылал за ним Ope…",
    "role": "desc",
@@ -592,7 +622,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#058": {
+  "Supply and Delivery#061": {
    "src": "More of his shenanigans, I suppose. I am sorry you have had to deal with him twice.",
    "dst": "Опять его проделки, полагаю. Простите, что вам пришлось иметь с ним дело дважды.",
    "role": "desc",
@@ -602,7 +632,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#059": {
+  "Supply and Delivery#062": {
    "src": "When he returns to the village, I'm going to need to have a word with him... Ah, but of course, I should pay you for your troubles.",
    "dst": "Когда он вернётся в деревню, мне придётся с ним поговорить… Ах да, конечно, я должен заплатить вам за хлопоты.",
    "role": "desc",
@@ -612,7 +642,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#060": {
+  "Supply and Delivery#063": {
    "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
    "dst": "Пользуйтесь ею когда угодно! В благодарность за всё, что вы для нас сделали.",
    "role": "desc",
@@ -622,7 +652,17 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#061": {
+  "Supply and Delivery#064": {
+   "src": "What's the deal with Ope?",
+   "dst": "Что не так с Ope?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#065": {
    "src": "He's a good man, truly. I believe that with my whole heart. It's alright if you don't feel the same way, though. I will not force you to interact with him if you do not wish to.",
    "dst": "Он хороший человек, правда. Я верю в это всем сердцем. Но если вы так не считаете - ничего страшного. Я не заставлю вас с ним общаться, если не хотите.",
    "role": "desc",
@@ -632,7 +672,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#062": {
+  "Supply and Delivery#066": {
    "src": "Oh, dear... I suppose it must have been fifteen years ago that I took the position, when the old mayor stepped down.",
    "dst": "Ох… Кажется, лет пятнадцать назад я занял этот пост, когда прежний мэр ушёл в отставку.",
    "role": "desc",
@@ -642,7 +682,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#063": {
+  "Supply and Delivery#067": {
    "src": "He was a kind man, always looking out for the townsfolk. Though, by the time he retired, it was clear he was growing restless in our little town.",
    "dst": "Он был добрым человеком, всегда заботился о горожанах. Но к отставке стало ясно, что в нашем городке ему не сидится.",
    "role": "desc",
@@ -652,7 +692,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#064": {
+  "Supply and Delivery#068": {
    "src": "Well, as soon as he passed down the position to me, he immediately traveled to {p} and enlisted in their army! I hear he's in the business of training soldiers these days.",
    "dst": "Так вот, едва передав мне пост, он тут же отправился в {p} и вступил в армию! Слышал, теперь он обучает солдат.",
    "role": "desc",
@@ -662,7 +702,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#065": {
+  "Supply and Delivery#069": {
    "src": "Ah, but I've tried to live up to his legacy. I like to think I've done well in my time as mayor!",
    "dst": "Ах, но я старался быть достойным его наследия. Хочется думать, мэр из меня вышел неплохой!",
    "role": "desc",
@@ -672,7 +712,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#066": {
+  "Supply and Delivery#070": {
    "src": "A fine day for passing through! I hope you enjoy your stay.",
    "dst": "Чудный день для путников! Приятного вам пребывания.",
    "role": "desc",

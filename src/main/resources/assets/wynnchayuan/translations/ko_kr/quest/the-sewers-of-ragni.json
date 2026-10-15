@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Sewers of Ragni",
-  "count": 36,
-  "translated": 36,
+  "count": 39,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -317,6 +317,16 @@
    "source": "wiki"
   },
   "The Sewers of Ragni#031": {
+   "src": "I lost you for a bit back there. 's lucky we found each other, t' be honest.",
+   "dst": "아까 잠깐 너를 놓쳤지. 솔직히 말하면 다시 만난 게 운이 좋았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#032": {
    "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
    "dst": "때로는... 때로는 그걸로도 모자랐다. 아직도 학살에서 남은... 것들이 거기서 떠돈다는 말이 있다.",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#032": {
+  "The Sewers of Ragni#033": {
    "src": "Good, let's use it on this wall, it looks like we can break right through...",
    "dst": "좋아, 이 벽에 쓰자. 그대로 뚫고 나갈 수 있겠어...",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#033": {
+  "The Sewers of Ragni#034": {
    "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 Jenprest와 대화하세요",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#034": {
+  "The Sewers of Ragni#035": {
    "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
    "dst": "그리고 안에서 험한 것과 안 마주친 걸 다행으로 알아. 들리는 이야기들이...",
    "role": "desc",
@@ -356,7 +366,27 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#035": {
+  "The Sewers of Ragni#036": {
+   "src": "Did you feel like there was",
+   "dst": "거기 뭔가 있는 것 같지 않았어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#037": {
+   "src": "An' count yourself lucky that we didn't run into anything too nasty in there. Some o' the stories...",
+   "dst": "그리고 저 안에서 너무 험한 놈을 안 만난 걸 다행으로 알아. 들리는 얘기로는...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#038": {
    "src": "... I don't exactly know what's in there, soldier.",
    "dst": "... 거기 뭐가 있는지 나도 잘 모른다, 병사.",
    "role": "desc",

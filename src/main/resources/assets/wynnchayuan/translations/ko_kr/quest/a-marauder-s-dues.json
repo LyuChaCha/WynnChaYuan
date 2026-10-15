@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Marauder's Dues",
-  "count": 68,
-  "translated": 68,
+  "count": 70,
+  "translated": 69,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -117,6 +117,16 @@
    "source": "captured"
   },
   "A Marauder's Dues#011": {
+   "src": "Each core gains and loses explosive power based on its position in the grid, and what cores it's touching. Each core touches the cores that are above, below and next to it.",
+   "dst": "각 코어는 격자 속 위치와 맞닿은 코어에 따라 폭발력이 늘거나 줄어든다. 각 코어는 위, 아래, 옆에 있는 코어와 맞닿는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#012": {
    "src": "Right Click a core to select it, then Right Click one of the {~} green spots in the grid to place it there.",
    "dst": "핵을 우클릭해 선택한 뒤, 격자의 녹색 지점 {~}곳 중 하나를 우클릭해 배치합니다.",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#012": {
+  "A Marauder's Dues#013": {
    "src": "Remember, you need to get {~} Explosive Power! If you need a hint, click on Hints and Rules and select \"I want a hint.\"",
    "dst": "폭발력 {~}이(가) 필요합니다! 힌트가 필요하면 힌트와 규칙을 클릭하고 \"I want a hint.\"를 고르세요.",
    "role": "desc",
@@ -136,7 +146,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#013": {
+  "A Marauder's Dues#014": {
+   "src": "The Green Core begins with a lot of power, but loses power when touching some of the other cores, especially Orange. So you'll want it in a corner, where it's touching only {~} cores, and it shouldn't be touching Orange.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#015": {
    "src": "That terrible wizard must have captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
    "dst": "그때 그 끔찍한 마법사가 주문으로 널 붙잡은 게 분명해. 끔찍했어, 정말- 눈빛이 그렇게 사나웠다니...",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Peli",
    "source": "captured"
   },
-  "A Marauder's Dues#014": {
+  "A Marauder's Dues#016": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
    "dst": "...거의 아무것도 기억 안 나요. 그냥... 분노랑... 혐오감 같은 게, 그런데... 할아버지가 거짓말할 리 없죠.",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Norsten",
    "source": "captured"
   },
-  "A Marauder's Dues#015": {
+  "A Marauder's Dues#017": {
    "src": "Talk to Norsten.",
    "dst": "Norsten과 대화하세요.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#016": {
+  "A Marauder's Dues#018": {
    "src": "...ugh. Disgusting. Utterly disgusting. I've had just about enough of your kind here. Humans...",
    "dst": "...으. 역겹군. 정말 역겨워. 네놈들 같은 족속은 이제 지긋지긋하다. 인간들...",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#017": {
+  "A Marauder's Dues#019": {
    "src": "Dreadfully drab, always getting in the way, wriggling through our province like worms! You're no heroes, you're pretenders!!",
    "dst": "지독하게 칙칙하고, 늘 방해만 하고, 벌레처럼 우리 지방을 기어 다니지! 너희는 영웅이 아니라 사기꾼이야!!",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#018": {
+  "A Marauder's Dues#020": {
    "src": "Oh, you want through here? Well, I'm the gatekeeper. Let's call my toll...the abandonment of your ridiculous little heroics...and all your money besides. Sound fair?",
    "dst": "오, 여길 지나가고 싶다고? 내가 문지기다. 통행료는... 그 우스운 영웅 놀이를 그만두는 것... 그리고 가진 돈 전부. 공평하지?",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#019": {
+  "A Marauder's Dues#021": {
    "src": "Aha, Norsten my boy! We've been worried sick, it's been a week. What is it you're doing so far out into the canyon?",
    "dst": "아하, 우리 Norsten! 일주일이나 돼서 걱정했단다. 협곡 이렇게 깊은 데서 뭘 하는 게냐?",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#020": {
+  "A Marauder's Dues#022": {
    "src": "Wha- Who are you, and who gave you permission to use my toll road?! And can't you see I'm busy?",
    "dst": "뭐- 당신 누구야, 누가 내 유료 도로를 쓰라고 했지?! 그리고 나 바쁜 거 안 보여?",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#021": {
+  "A Marauder's Dues#023": {
    "src": "Norsten?? Don't you recognize your own grandfather? What's that strange look in your eyes, what's this about a toll road?",
    "dst": "Norsten?? 제 할아비도 못 알아보는 게냐? 눈빛이 왜 그리 이상하고, 유료 도로는 또 무슨 소리냐?",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#022": {
+  "A Marauder's Dues#024": {
    "src": "You're nothing to me at your age. I only care about what the young can do for me...and about the fee you're neglecting, you shriveled old fruit!",
    "dst": "그 나이면 나한텐 아무것도 아니야. 난 젊은이들이 해 줄 수 있는 것만 관심 있어... 그리고 네가 안 낸 통행료도, 이 쭈글쭈글한 늙은 과일아!",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#023": {
+  "A Marauder's Dues#025": {
    "src": "What's gotten into you? Such a polite man, acting this way to your elders... Human, have you any idea what's-",
    "dst": "대체 왜 이러느냐? 그렇게 예의 바른 녀석이 어른한테 이러다니... 인간이여, 혹시 무슨 일인지-",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#024": {
+  "A Marauder's Dues#026": {
    "src": "...oh no. Oh, say it isn't so, is that what's happening? Is it HIS fault?",
    "dst": "...오 이런. 아, 아니라고 해 다오, 그런 일이 벌어진 게냐? 그놈 짓인 게냐?",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#025": {
+  "A Marauder's Dues#027": {
    "src": "Up there, on the cliff- that tower! The scourge of the canyon...has he truly returned? Has he...taken my grandson?!",
    "dst": "저 위, 절벽 위- 저 탑! 협곡의 재앙이... 정말 돌아온 게냐? 그놈이... 내 손자를 데려간 게냐?!",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#026": {
+  "A Marauder's Dues#028": {
    "src": "...heh. Haaaaahahahaha!!",
    "dst": "...흥. 하아아아하하하하!!",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#027": {
+  "A Marauder's Dues#029": {
    "src": "My reputation, even after all this time, still precedes me!! Indeed, old man, I have taken your grandson as my puppet!",
    "dst": "이렇게 오랜 세월이 지나도 내 명성은 여전하군!! 그래, 늙은이, 네 손자를 내 꼭두각시로 삼았다!",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#028": {
+  "A Marauder's Dues#030": {
    "src": "What should I care about the facade? For a hundred and fifty years I've stolen the vitality of others to maintain my beauty, and your grandson will be no different.",
    "dst": "겉모습 따위 신경 쓸 게 뭐냐? 백오십 년 동안 남의 생명력을 훔쳐 내 아름다움을 유지해 왔지. 네 손자도 다를 바 없다.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#029": {
+  "A Marauder's Dues#031": {
    "src": "Miserable dastard!! Cold-water eel!! Human, you must help, you MUST! I beg you, please, seek the sorcerer and save my poor Norsten!!",
    "dst": "비열한 악당 놈!! 냉수 뱀장어 같은 놈!! 인간이여, 도와줘야 하네, 꼭! 부탁이네, 그 마법사를 찾아 불쌍한 Norsten을 구해 주게!!",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#030": {
+  "A Marauder's Dues#032": {
    "src": "The southwest mountains have a shortcut past the bandits, time is of the essence!",
    "dst": "남서쪽 산에 도적들을 피해 가는 지름길이 있네, 시간이 없어!",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#031": {
+  "A Marauder's Dues#033": {
    "src": "A veritable army fell before my magic! The bandits pay their tribute to my grace and obey my orders! You're as mad as I am called if you think one human can get through.",
    "dst": "군대 하나가 통째로 내 마법 앞에 쓰러졌다! 도적들은 내게 공물을 바치고 명령을 따르지! 인간 하나가 뚫을 수 있다고 믿는다면 너도 나만큼 미친 거다.",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#032": {
+  "A Marauder's Dues#034": {
    "src": "I'll leave you a corpse, a husk! A withered pile of dust- or perhaps I'll take YOU as a slave too, human! So what will it be? Run...or face me?",
    "dst": "시체로, 껍데기로 만들어 주마! 시든 먼지 더미로- 아니면 너도 노예로 삼을까, 인간! 자, 어쩔 테냐? 도망칠 테냐... 맞설 테냐?",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#033": {
+  "A Marauder's Dues#035": {
    "src": "Go up the path to the wizard's tower, at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 마법사의 탑으로 길을 따라 올라가세요.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#034": {
+  "A Marauder's Dues#036": {
    "src": "Hoho... The worm comes wriggling in, it seems. What a horrid thing you are. Mismatched armor, courage of a fool all over your face... Inelegant and UGLY!!",
    "dst": "호호... 벌레가 꿈틀대며 기어들어 왔군. 참 끔찍한 몰골이야. 짝도 안 맞는 갑옷에, 얼굴엔 멍청한 용기가 가득... 촌스럽고 추해!!",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#035": {
+  "A Marauder's Dues#037": {
    "src": "At least the last ones to face me had some coordination, and the sense to hide themselves. Come further and you'll share their fate!!",
    "dst": "적어도 전에 온 놈들은 손발도 좀 맞고, 숨을 줄도 알았지. 더 다가오면 그놈들과 같은 꼴이 될 거다!!",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#037": {
+  "A Marauder's Dues#038": {
    "src": "You can never understand. The beauty of one like myself cannot be transient, it must be everlasting! I will never succumb to my mortality!",
    "dst": "너흰 절대 이해 못 한다. 나 같은 존재의 아름다움은 덧없어선 안 돼, 영원해야 한다! 난 결코 필멸에 굴복하지 않아!",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#038": {
+  "A Marauder's Dues#039": {
    "src": "As a matter of fact...you humans ARE good for one thing. Drab as you are, you're lively. So consider this an honor!",
    "dst": "사실... 너희 인간도 한 가지 쓸모는 있지. 칙칙하긴 해도 생기가 넘치거든. 그러니 영광으로 알아라!",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#039": {
+  "A Marauder's Dues#040": {
    "src": "HAAAAAhahahaha!! Instead of destruction, I'll leave you trapped in this illusion, and chip away at your ugly mind until nothing remains. You'll join the rest who've prolonged my life!",
    "dst": "하아아아하하하!! 파괴하는 대신 이 환영에 가둬서, 그 추한 정신을 아무것도 안 남을 때까지 깎아 주마. 내 생명을 늘려 준 다른 놈들과 함께하게 될 거다!",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#040": {
+  "A Marauder's Dues#041": {
    "src": "Escape the illusion.",
    "dst": "환영에서 탈출하세요.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#041": {
+  "A Marauder's Dues#042": {
    "src": "I'll take pleasure in peeling away your most formative memories first- W-wait, what's this giant blank spot? It's interfering with my spell...!!",
    "dst": "가장 중요한 기억부터 벗겨 내는 걸 즐겨 주마- 자-잠깐, 이 거대한 공백은 뭐지? 내 주문을 방해하고 있어...!!",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#042": {
+  "A Marauder's Dues#043": {
    "src": "Ugh, barely any memories to remove, hardly any personality... How much of a dull gray slate are you...and how is that making this more difficult?!",
    "dst": "으, 지울 기억도 거의 없고, 개성도 거의 없고... 대체 얼마나 텅 빈 회색 석판이길래... 그게 왜 더 어렵게 만드는 거냐?!",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#043": {
+  "A Marauder's Dues#044": {
    "src": "Run away and confront the wizard.",
    "dst": "도망쳐서 마법사와 맞서세요.",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#044": {
+  "A Marauder's Dues#045": {
    "src": "You escaped?! ...hmph. I suppose that trick works better for binding a platoon than a person. When you only need to focus on what YOU see...rrgh.",
    "dst": "탈출했다고?! ...흥. 그 수법은 한 사람보다 한 소대를 눈멀게 하는 데 더 잘 먹히나 보군. 자기 눈에 보이는 것만 집중하면 되니까... 크윽.",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#045": {
+  "A Marauder's Dues#046": {
    "src": "Fine...you've forced my hand. I must sweep you aside, you so-called hero! Never darken my door again! Cease to exist!!",
    "dst": "좋다... 네가 날 몰아붙였군. 널 쓸어 버려야겠다, 이 자칭 영웅아! 다시는 내 문 앞에 얼씬도 마라! 사라져라!!",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#046": {
+  "A Marauder's Dues#047": {
    "src": "GAH!",
    "dst": "크악!",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#047": {
+  "A Marauder's Dues#048": {
    "src": "Ugh, what was it that raisin of a man said- Miserable runt?! Cold-water eel?! More fitting names for you than me!!",
    "dst": "으, 그 건포도 같은 늙은이가 뭐라고 했더라- 비열한 꼬맹이?! 냉수 뱀장어?! 나보다 너한테 더 어울리는 이름이다!!",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#055": {
+  "A Marauder's Dues#054": {
    "src": "Those souls are mine to control, you hear me? Mine to bind!! Mine to drain dry of vitality!! Mine to OWN!! HehehaHAAAAA!!",
    "dst": "그 영혼들은 내가 지배한다, 알아들어? 내가 속박하고!! 내가 생명력을 짜내고!! 내가 소유한다!! 헤헤하하아아아!!",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#056": {
+  "A Marauder's Dues#055": {
    "src": "And if you jump in after it? You'll be truly trapped- a dimension of my own making, filled with volatile magical waste! You'll never be seen again!",
    "dst": "따라서 뛰어들겠다고? 그럼 정말 갇히는 거다- 내가 만든 차원, 불안정한 마법 폐기물로 가득한 곳에! 다시는 아무도 널 못 볼 거다!",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#057": {
+  "A Marauder's Dues#056": {
    "src": "In other words... You. Lose.",
    "dst": "다시 말해... 네가. 졌다.",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#058": {
+  "A Marauder's Dues#057": {
    "src": "Find a way out of the strange dimension.",
    "dst": "기묘한 차원에서 나갈 방법을 찾으세요.",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#060": {
+  "A Marauder's Dues#058": {
    "src": "Escape the strange dimension.",
    "dst": "기묘한 차원에서 탈출하세요.",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#061": {
+  "A Marauder's Dues#059": {
    "src": "H-how did you survive? How did you get OUT?! That pocket dimension has a one-way entrance!! I- You- I'LL DRAIN AWAY NORSTEN BEFORE YOUR VERY EYES!!",
    "dst": "어-어떻게 살아남았지? 어떻게 나온 거야?! 그 주머니 차원은 입구가 일방통행이다!! 나- 너- 네 눈앞에서 Norsten을 말려 버리겠다!!",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#062": {
+  "A Marauder's Dues#060": {
    "src": "The scourge is angry!! Human, quickly, for him to be this upset you must have found something! Save my grandson, please!!",
    "dst": "그 재앙이 화가 났어!! 인간이여, 어서, 저리 화내는 걸 보니 뭔가 찾은 게 분명하네! 제발 내 손자를 구해 주게!!",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#063": {
+  "A Marauder's Dues#061": {
    "src": "I'LL FLING YOU TO THE ENDS OF THE CANYON!! FILTHY HUMAN, LOWLY WORM NOT FIT TO BE DUST-",
    "dst": "협곡 끝까지 날려 버리겠다!! 더러운 인간, 먼지만도 못한 하찮은 벌레-",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#064": {
+  "A Marauder's Dues#062": {
    "src": "Aguh...w-where am I? My...my throat hurts...was I screaming?",
    "dst": "으윽... 여-여기가 어디예요? 목이... 목이 아파요... 제가 소리를 질렀어요?",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#065": {
+  "A Marauder's Dues#063": {
    "src": "Oh, my poor grandson...my little Norsten is back to us! Oh, joyous day!!",
    "dst": "오, 불쌍한 내 손자... 우리 Norsten이 돌아왔구나! 오, 기쁜 날이로다!!",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#066": {
+  "A Marauder's Dues#064": {
    "src": "Back to...did something happen? I remember coming this way after a thief...and then...",
    "dst": "돌아오다니... 무슨 일 있었어요? 도둑을 쫓아 이쪽으로 왔던 건 기억나는데... 그러고는...",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#068": {
+  "A Marauder's Dues#065": {
    "src": "But this human, this hero... They have bested the scourge of the canyon! They managed to save you from such evil!",
    "dst": "하지만 이 인간이, 이 영웅이... 협곡의 재앙을 물리쳤단다! 그런 악으로부터 널 구해 냈어!",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#070": {
+  "A Marauder's Dues#066": {
    "src": "Thank you, human- Hm, what's all this money doing in my pockets? I didn't bring my pouch out with me to chase the thief, but...! So much money!",
    "dst": "고마워요, 인간- 음? 주머니에 웬 돈이 이렇게 많죠? 도둑 쫓을 때 지갑은 안 가져왔는데...! 돈이 엄청 많아요!",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#071": {
+  "A Marauder's Dues#067": {
    "src": "Ill-gotten gains from the scourge's sham of a toll-road scheme, no doubt. I think the human could put that money to fine use, what say you, my boy?",
    "dst": "분명 그 재앙의 가짜 유료 도로 사기로 번 부정한 돈이겠지. 이 인간이 그 돈을 잘 쓸 것 같은데, 어떠냐, 얘야?",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#072": {
+  "A Marauder's Dues#068": {
    "src": "Of course! Here. And don't worry about the gate. It's supposed to be open for anyone, so use it as you like.",
    "dst": "물론이죠! 여기요. 그리고 문은 걱정 마세요. 원래 누구에게나 열려 있어야 하니, 마음대로 쓰세요.",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#073": {
+  "A Marauder's Dues#069": {
    "src": "[Right Click] with the shard to change what is real and what is fake.",
    "dst": "조각을 들고 [우클릭]해서 무엇이 진짜이고 무엇이 가짜인지 바꾸자.",
    "role": "desc",

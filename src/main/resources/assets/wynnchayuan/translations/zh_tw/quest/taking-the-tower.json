@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 51,
-  "translated": 51,
+  "count": 53,
+  "translated": 53,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -217,6 +217,16 @@
    "source": "wiki"
   },
   "Taking the Tower#021": {
+   "src": "Sure, I'll come with you.",
+   "dst": "好，我跟你去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#022": {
    "src": "Perfect. Well, no time better than the present! Let's get going.",
    "dst": "太好了。那還等什麼，就是現在！我們走。",
    "role": "desc",
@@ -226,7 +236,17 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#022": {
+  "Taking the Tower#023": {
+   "src": "I've got something to do her",
+   "dst": "我在這裡還有事要辦",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#024": {
    "src": "Oh. Alright.",
    "dst": "哦。好吧。",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#023": {
+  "Taking the Tower#025": {
    "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
    "dst": "我還會在這裡待一陣子。你改變主意的話跟我說一聲！",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#024": {
+  "Taking the Tower#026": {
    "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
    "dst": "嘿，你回來了！改變主意了嗎？想不想一起去攻打腐敗之塔？",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#025": {
+  "Taking the Tower#027": {
    "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
    "dst": "跟著 Aledar 前往 [{~1}, {~2}, -{~3}] 的粉末大師。",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#026": {
+  "Taking the Tower#028": {
    "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
    "dst": "好，是這樣的。關於我們要攻打的那座塔，我聽到了一件我們可以事先準備的事！",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#027": {
+  "Taking the Tower#029": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "聽說塔頂那個大傢伙怕 傷害！所以呢，我們就來粉末大師這裡了。",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#028": {
+  "Taking the Tower#030": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
    "dst": "我，呃……沒辦法把整套元素的說明背出來。你想多了解的話，得去兵營找 Ragon 隊長。他有一整套課程！",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#029": {
+  "Taking the Tower#031": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
    "dst": "……總之——來，拿著這罐元素粉末，去找粉末大師塗上。弄好跟我說一聲！",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#030": {
+  "Taking the Tower#032": {
    "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
    "dst": "把水元素粉末塗到武器上，然後到 [{~1}, {~2}, -{~3}] 告訴 Aledar。",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#031": {
+  "Taking the Tower#033": {
    "src": "Got the powder on your weapon? Good, that means we're ready.",
    "dst": "粉末塗上去了嗎？很好，那我們可以出發了。",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#032": {
+  "Taking the Tower#034": {
    "src": "Lead the way! I'll be right behind you.",
    "dst": "你帶路！我就跟在你後面。",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#033": {
+  "Taking the Tower#035": {
    "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
    "dst": "到 [{~1}, {~2}, -{~3}] 的狂怒之塔附近與 Van 中尉的小隊會合。",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#034": {
+  "Taking the Tower#036": {
    "src": "Ah, Aledar! Good to see you here. Who's this with you?",
    "dst": "啊，Aledar！在這裡看到你真好。跟你一起的這位是？",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#035": {
+  "Taking the Tower#037": {
    "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
    "dst": "這位是 {u}，長官。如果您允許，他們想加入我們的攻堅。",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#036": {
+  "Taking the Tower#038": {
    "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
    "dst": "嗯……我看不出有什麼不可以。人多好辦事，我一向這麼說。",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#037": {
+  "Taking the Tower#039": {
    "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
    "dst": "人都到齊的話就可以開始了。計畫是這樣！我們得在塔底清掉一部分敵人，好讓有人能爬到塔頂。",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#038": {
+  "Taking the Tower#040": {
    "src": "Yes, sir!",
    "dst": "是，長官！",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#039": {
+  "Taking the Tower#041": {
    "src": "Good. Alright soldiers, let's take back that tower!",
    "dst": "很好。好了士兵們，把那座塔奪回來！",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#040": {
+  "Taking the Tower#042": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
    "dst": "去吧，往塔那邊前進！運氣好的話，我們能把佔據那裡的腐敗物清乾淨。",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#041": {
+  "Taking the Tower#043": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
    "dst": "攻打 [{~1}, {~2}, -{~3}] 的狂怒之塔，擊敗塔頂的怪物。",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
+  "Taking the Tower#044": {
    "src": "Alright. It's time to take on the tower! We've got this, {u}.",
    "dst": "好。該來會會這座塔了！我們辦得到的，{u}。",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#043": {
+  "Taking the Tower#045": {
    "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
    "dst": "到 [{~1}, {~2}, -{~3}] 向 Van 中尉回報戰果。",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#044": {
+  "Taking the Tower#046": {
    "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
    "dst": "我們成功了，把那隻腐敗物幹掉了！走，回去把消息告訴 Van 中尉！",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#045": {
+  "Taking the Tower#047": {
    "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
    "dst": "看來大家都回來了。如何？腐敗部隊肅清了嗎？",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#046": {
+  "Taking the Tower#048": {
    "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
    "dst": "幹得好，士兵們！{p} 軍又一場漂亮的勝仗。首領一死，要把剩下的清乾淨應該不會太難。",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#047": {
+  "Taking the Tower#049": {
    "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
    "dst": "我會把你們今天的戰果向上將回報，士兵們。還有——來，這是你們的酬勞。",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#048": {
+  "Taking the Tower#050": {
    "src": "The two of you have a promising future. I look forward to serving with you in the future!",
    "dst": "你們兩位前途無量。期待日後能與你們並肩作戰！",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#049": {
+  "Taking the Tower#051": {
    "src": "Talking Lieutenant Van",
    "dst": "與 Van 中尉談話",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#050": {
+  "Taking the Tower#052": {
    "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
    "dst": "剩下的殘兵我們會處理，不必擔心。今天辛苦了，士兵。",
    "role": "desc",

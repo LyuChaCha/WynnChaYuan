@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 75,
-  "translated": 75,
+  "count": 78,
+  "translated": 78,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -227,6 +227,16 @@
    "source": "wiki"
   },
   "The Hidden City#022": {
+   "src": "loud mechanical noise can be heard coming from the door",
+   "dst": "ドアの方から大きな機械音が聞こえてくる",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#023": {
    "src": "Go up to the door and inspect the noise.",
    "dst": "扉に近づき、物音を調べる。",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#023": {
+  "The Hidden City#024": {
    "src": "Talk to {p} Guard.",
    "dst": "{p} の衛兵と話す。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#024": {
+  "The Hidden City#025": {
    "src": "Thank you for getting rid of that curious villager! We thought he'd never leave.",
    "dst": "あの物好きな村人を追い払ってくれて助かった！ずっと居座るかと思ったぞ。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#025": {
+  "The Hidden City#026": {
    "src": "I've never seen you before. Who gave you access to the town?",
    "dst": "見ない顔だな。誰に町へ入る許可をもらった？",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#026": {
+  "The Hidden City#027": {
    "src": "You're here in place of the detective the mayor hired?",
    "dst": "町長が雇った探偵の代わりに来たって？",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#027": {
+  "The Hidden City#028": {
    "src": "Normally, I wouldn't believe that, but come in. We're desperate.",
    "dst": "普段なら信じないが、入れ。こっちは切羽詰まってるんだ。",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#028": {
+  "The Hidden City#029": {
    "src": "If you ever need to leave and get back, I can simply open the way.",
    "dst": "出入りしたくなったら、いつでも道を開けてやる。",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#029": {
+  "The Hidden City#030": {
    "src": "You probably should be going now. Our mayor can get impatient.",
    "dst": "そろそろ行ったほうがいい。町長は気が短いからな。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Eltom Guard",
    "source": "wiki"
   },
-  "The Hidden City#030": {
+  "The Hidden City#031": {
    "src": "Talk to Mayor Eoric in the town hall.",
    "dst": "町役場で Eoric 町長と話す。",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#031": {
+  "The Hidden City#032": {
    "src": "What are you doing here? I'm writing an important letter, this better be worth my time.",
    "dst": "何の用だ？大事な手紙を書いているんだ。時間の無駄でないことを願うぞ。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#032": {
+  "The Hidden City#033": {
    "src": "What? Narder sent you? Why'd he send a {p} soldier?",
    "dst": "何？Narder が寄越した？なぜ {p} の兵士を？",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#033": {
+  "The Hidden City#034": {
    "src": "I didn't think the army were authorized to know about {p}, especially Fruma recruits.",
    "dst": "軍が {p} のことを知る権限があるとは思えん。特に Fruma の新兵ではな。",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#034": {
+  "The Hidden City#035": {
    "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
    "dst": "ともかく、{p} の秘密は重大な危機にある。裏切り者の証拠を見つけたのだ。",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#035": {
+  "The Hidden City#036": {
    "src": "We have locked down all of the exits. No one leaves or enters without my permission.",
    "dst": "出入口はすべて封鎖した。私の許可なく誰も出入りできん。",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#036": {
+  "The Hidden City#037": {
    "src": "We need a detective to sniff out the traitor and expose him.",
    "dst": "裏切り者を嗅ぎ出して暴く探偵が必要なのだ。",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#037": {
+  "The Hidden City#038": {
    "src": "Start by asking the citizens around here about anything suspicious they've seen.",
    "dst": "まずはこの辺りの住民に、怪しいものを見なかったか聞いて回れ。",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#038": {
+  "The Hidden City#039": {
    "src": "When you find the culprit, remember to leave him alive! The guards will take care of him.",
    "dst": "犯人を見つけたら、生かしておくのを忘れるな！身柄は衛兵が預かる。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Eoric",
    "source": "wiki"
   },
-  "The Hidden City#039": {
+  "The Hidden City#040": {
    "src": "Ask {p} Citizens about the note.",
    "dst": "{p} の住民にメモについて聞く。",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#040": {
+  "The Hidden City#041": {
    "src": "Sorry, detective, but I haven't seen anything suspicious. In fact, I haven't even left my house for the last week.",
    "dst": "すみません探偵さん、怪しいものは見てません。実はこの一週間、家から一歩も出てないんです。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Reder",
    "source": "wiki"
   },
-  "The Hidden City#041": {
+  "The Hidden City#042": {
    "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
    "dst": "怪しいといえば、フードの男がうろついてることくらいね。{p} は人が少ないから変なのよ。",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Nichye",
    "source": "wiki"
   },
-  "The Hidden City#042": {
+  "The Hidden City#043": {
    "src": "If you want to find out anything, the best person to ask is Lumilda. She's in her bakery, next to the Scroll Shop.",
    "dst": "何か知りたいなら Lumilda に聞くのが一番よ。巻物屋の隣のパン屋にいるわ。",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Sybeth",
    "source": "wiki"
   },
-  "The Hidden City#043": {
+  "The Hidden City#044": {
    "src": "Ah, detective! What brings you to the sweet Lumilda's Bakery?",
    "dst": "あら、探偵さん！素敵な Lumilda のパン屋に何のご用だい？",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#044": {
+  "The Hidden City#045": {
    "src": "Hm, yes, there is a weird person coming through.",
    "dst": "ええ、そうそう、変な人が出入りしてるよ。",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#045": {
+  "The Hidden City#046": {
    "src": "It's a hooded man. Never seen the face. A trouble maker, if you ask me!",
    "dst": "フードの男さ。顔は見たことない。あたしに言わせりゃ厄介者だね！",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#046": {
+  "The Hidden City#047": {
    "src": "He's been here a few times, usually writing things on a piece of paper. That man's a real mystery. No one even knows where he lives.",
    "dst": "何度か来てて、たいてい紙に何か書いてたよ。本当に謎の男でね。どこに住んでるかも誰も知らないのさ。",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#047": {
+  "The Hidden City#048": {
    "src": "One time my grandson couldn't resist and followed the man. Last thing he saw was the man leaving through the Eastern Exit.",
    "dst": "一度、孫が我慢できずに後をつけてね。最後に見たのは、その男が東の出口から出ていく姿だったって。",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#048": {
+  "The Hidden City#049": {
    "src": "Ain't that a place to start, sweetheart?",
    "dst": "手始めにはなるだろ、あんた？",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Lumilda",
    "source": "wiki"
   },
-  "The Hidden City#049": {
+  "The Hidden City#050": {
    "src": "Inspect anything beyond the Eastern Exit.",
    "dst": "東の出口の先を調べる。",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#050": {
+  "The Hidden City#051": {
    "src": "Inspect the house.",
    "dst": "家を調べる。",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#051": {
+  "The Hidden City#052": {
    "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
    "dst": "ああ。君が探偵か。あの間抜けな Eltom の連中には見抜けまいからね。",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Hidden City#052": {
+  "The Hidden City#053": {
    "src": "I guess the Grook is out of the pen then.",
    "dst": "どうやら Grook が囲いから逃げ出したようだ。",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Hidden City#053": {
+  "The Hidden City#054": {
    "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
    "dst": "この町はあってはならない。人間は Gavel に定住できないんだ。",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Hidden City#054": {
+  "The Hidden City#055": {
    "src": "These Humans couldn’t be bothered to fight their own war, so they hid an entire city here.",
    "dst": "人間どもは自分の戦争から逃げ、ここに町ごと隠れたのさ。",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Hidden City#055": {
+  "The Hidden City#056": {
    "src": "Traitor? I’m no traitor. I'm just looking to carry out the law where it needs to be carried out. Nothing personal, yes?",
    "dst": "裏切り者？とんでもない。法を執行すべき所で執行するだけさ。悪く思わないでくれ、ね？",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Hidden City#056": {
+  "The Hidden City#057": {
    "src": "Maybe they'll actually use \"Ardulf\" instead of saying \"freak\" once they've seen the good I can do for them!",
    "dst": "私の働きを見れば、みんな「変人」じゃなく「Ardulf」と呼んでくれるかもしれない！",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Ardulf",
    "source": "wiki"
   },
-  "The Hidden City#057": {
+  "The Hidden City#058": {
    "src": "Read the note on the table.",
    "dst": "テーブルの上のメモを読む。",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#058": {
+  "The Hidden City#059": {
    "src": "*- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- 飛行船 {p} {~}:{~}発 → {p}",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Notes",
    "source": "wiki"
   },
-  "The Hidden City#059": {
+  "The Hidden City#060": {
    "src": "Head to {p}'s Airbase.",
    "dst": "{p} の飛行船基地へ向かう。",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#060": {
+  "The Hidden City#061": {
    "src": "Talk to Hilan.",
    "dst": "Hilan と話す。",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#061": {
+  "The Hidden City#062": {
    "src": "H-h-help!",
    "dst": "た、た、助けて！",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Hilan",
    "source": "wiki"
   },
-  "The Hidden City#062": {
+  "The Hidden City#063": {
    "src": "Hooded man... Climbed tower...",
    "dst": "フードの男が…塔に登って…",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Hilan",
    "source": "wiki"
   },
-  "The Hidden City#063": {
+  "The Hidden City#064": {
    "src": "Requested to use a ship... I refused...",
    "dst": "船を使わせろと…断ったら…",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Hilan",
    "source": "wiki"
   },
-  "The Hidden City#064": {
+  "The Hidden City#065": {
    "src": "He beat me up... And left...",
    "dst": "殴られて…行ってしまった…",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Hilan",
    "source": "wiki"
   },
-  "The Hidden City#065": {
+  "The Hidden City#066": {
    "src": "Hurry!",
    "dst": "急いで！",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Hilan",
    "source": "wiki"
   },
-  "The Hidden City#066": {
+  "The Hidden City#067": {
    "src": "Head up to the Airbase's Tower to confront the hooded man.",
    "dst": "飛行船基地の塔を登り、フードの男と対峙する。",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#067": {
+  "The Hidden City#068": {
    "src": "Board the {p} Cargo Ship.",
    "dst": "{p} 貨物船に乗り込む。",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#068": {
+  "The Hidden City#069": {
    "src": "What are you doing here? Why are you protecting this illegal town?",
    "dst": "何しに来た？なぜこの違法な町を守る？",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Ardulf",
    "source": "wiki"
   },
-  "The Hidden City#069": {
+  "The Hidden City#070": {
    "src": "The Villagers will not be happy about {p}. This could seriously harm the Gavel-Wynn relationship.",
    "dst": "村人たちは {p} を快く思わないだろう。Gavel と Wynn の関係に深刻な傷がつくぞ。",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Ardulf",
    "source": "wiki"
   },
-  "The Hidden City#070": {
+  "The Hidden City#071": {
    "src": "You can't stop me. You wouldn't murder one of your own, would you?",
    "dst": "私は止められないよ。まさか同胞を殺しはしないだろう？",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "Ardulf",
    "source": "wiki"
   },
-  "The Hidden City#071": {
+  "The Hidden City#072": {
    "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
    "dst": "{p} の町長にこの場所のことを洗いざらい話して、報酬をいただく。私は金持ちになる。止めたければ自分の手でやるんだな！",
    "role": "desc",
@@ -726,7 +736,17 @@
    "speaker": "Ardulf",
    "source": "wiki"
   },
-  "The Hidden City#072": {
+  "The Hidden City#073": {
+   "src": "...you got snuck up on and knocked out. Where are you now?",
+   "dst": "…背後から不意を突かれて気絶してしまった。今、どこにいるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#074": {
    "src": "Escape your cell and find a way to sabotage the ship.",
    "dst": "独房から脱出し、船を破壊する方法を探す。",
    "role": "desc",
@@ -736,7 +756,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Hidden City#073": {
+  "The Hidden City#075": {
    "src": "*To Hilan.",
    "dst": "*Hilan へ。",
    "role": "desc",
@@ -746,7 +766,7 @@
    "speaker": "Note",
    "source": "wiki"
   },
-  "The Hidden City#074": {
+  "The Hidden City#076": {
    "src": "Talk to {p}'s Mayor at the top of {p}.",
    "dst": "{p} の町長と、{p} の頂上で話す。",
    "role": "desc",
@@ -755,6 +775,16 @@
    "stage": "Stage 16",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Hidden City#077": {
+   "src": "What brings a human to my office?",
+   "dst": "人間が私の事務所に何の用だ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

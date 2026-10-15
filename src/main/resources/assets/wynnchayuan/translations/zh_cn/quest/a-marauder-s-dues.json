@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Marauder's Dues",
-  "count": 68,
-  "translated": 68,
+  "count": 70,
+  "translated": 70,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -117,6 +117,16 @@
    "source": "captured"
   },
   "A Marauder's Dues#011": {
+   "src": "Each core gains and loses explosive power based on its position in the grid, and what cores it's touching. Each core touches the cores that are above, below and next to it.",
+   "dst": "每个核心的爆炸威力会根据它在网格中的位置、以及它接触到哪些核心而增减。每个核心都会接触到它上方、下方和左右相邻的核心。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#012": {
    "src": "Right Click a core to select it, then Right Click one of the {~} green spots in the grid to place it there.",
    "dst": "右键选择一个核心，再右键点击网格中 {~} 个绿点之一，把核心放到那里。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#012": {
+  "A Marauder's Dues#013": {
    "src": "Remember, you need to get {~} Explosive Power! If you need a hint, click on Hints and Rules and select \"I want a hint.\"",
    "dst": "记住，你需要获得 {~} 点爆炸威力！需要提示的话，点击“提示与规则”并选择“我想要提示”。",
    "role": "desc",
@@ -136,7 +146,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#013": {
+  "A Marauder's Dues#014": {
+   "src": "The Green Core begins with a lot of power, but loses power when touching some of the other cores, especially Orange. So you'll want it in a corner, where it's touching only {~} cores, and it shouldn't be touching Orange.",
+   "dst": "绿色核心一开始威力很高，但接触某些核心会损失威力，尤其是橙色核心。所以要把它放在角落，只接触 {~} 个核心，而且不要让它接触橙色核心。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#015": {
    "src": "That terrible wizard must have captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
    "dst": "你那时一定是被那个可怕的巫师用法术困住了。太可怕了，真的——你的眼神那么凶……",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Peli",
    "source": "captured"
   },
-  "A Marauder's Dues#014": {
+  "A Marauder's Dues#016": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
    "dst": "……我几乎什么都不记得了。只有……愤怒的感觉，还有……大概是厌恶吧，可是……Grand-Peli，你不会骗我的。",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Norsten",
    "source": "captured"
   },
-  "A Marauder's Dues#015": {
+  "A Marauder's Dues#017": {
    "src": "Talk to Norsten.",
    "dst": "与 Norsten 对话。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#016": {
+  "A Marauder's Dues#018": {
    "src": "...ugh. Disgusting. Utterly disgusting. I've had just about enough of your kind here. Humans...",
    "dst": "……呃。恶心。简直恶心透顶。我受够你们这种人在这里晃了。人类……",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#017": {
+  "A Marauder's Dues#019": {
    "src": "Dreadfully drab, always getting in the way, wriggling through our province like worms! You're no heroes, you're pretenders!!",
    "dst": "单调乏味，总是碍手碍脚，像虫子一样在我们行省里钻来钻去！你们才不是什么英雄，你们是冒牌货！！",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#018": {
+  "A Marauder's Dues#020": {
    "src": "Oh, you want through here? Well, I'm the gatekeeper. Let's call my toll...the abandonment of your ridiculous little heroics...and all your money besides. Sound fair?",
    "dst": "噢，你想从这里过去？好啊，我是守门人。我来开个过路费……放弃你那可笑的英雄梦……外加你所有的钱。很公平吧？",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#019": {
+  "A Marauder's Dues#021": {
    "src": "Aha, Norsten my boy! We've been worried sick, it's been a week. What is it you're doing so far out into the canyon?",
    "dst": "啊哈，Norsten 我的孩子！我们都担心死了，已经一个星期了。你跑到峡谷这么远的地方来干什么？",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#020": {
+  "A Marauder's Dues#022": {
    "src": "Wha- Who are you, and who gave you permission to use my toll road?! And can't you see I'm busy?",
    "dst": "什——你是谁，谁准你走我的收费路了？！你没看到我正忙着吗？",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#021": {
+  "A Marauder's Dues#023": {
    "src": "Norsten?? Don't you recognize your own grandfather? What's that strange look in your eyes, what's this about a toll road?",
    "dst": "Norsten？？你连自己的爷爷都认不出来了？你眼神怎么这么怪，还有什么收费路？",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#022": {
+  "A Marauder's Dues#024": {
    "src": "You're nothing to me at your age. I only care about what the young can do for me...and about the fee you're neglecting, you shriveled old fruit!",
    "dst": "你这把年纪对我来说什么都不是。我只在乎年轻人能为我做什么……还有你想赖掉的过路费，你这颗干瘪的老果子！",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#023": {
+  "A Marauder's Dues#025": {
    "src": "What's gotten into you? Such a polite man, acting this way to your elders... Human, have you any idea what's-",
    "dst": "你这是怎么了？你一向那么有礼貌，竟然这样对长辈……人类，你知不知道这是——",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#024": {
+  "A Marauder's Dues#026": {
    "src": "...oh no. Oh, say it isn't so, is that what's happening? Is it HIS fault?",
    "dst": "……噢不。噢，千万别是真的，难道是那么回事？是他干的？",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#025": {
+  "A Marauder's Dues#027": {
    "src": "Up there, on the cliff- that tower! The scourge of the canyon...has he truly returned? Has he...taken my grandson?!",
    "dst": "在那上面，悬崖上——那座塔！峡谷的祸害……他真的回来了？他……夺走了我的孙子？！",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#026": {
+  "A Marauder's Dues#028": {
    "src": "...heh. Haaaaahahahaha!!",
    "dst": "……呵。哈哈哈哈哈哈哈！！",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#027": {
+  "A Marauder's Dues#029": {
    "src": "My reputation, even after all this time, still precedes me!! Indeed, old man, I have taken your grandson as my puppet!",
    "dst": "这么多年过去了，我的名声还是走在我前面！！没错，老头，我把你孙子当成了我的傀儡！",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#028": {
+  "A Marauder's Dues#030": {
    "src": "What should I care about the facade? For a hundred and fifty years I've stolen the vitality of others to maintain my beauty, and your grandson will be no different.",
    "dst": "我何必在乎伪装？一百五十年来，我一直偷取别人的活力来维持我的美貌，你孙子也不例外。",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#029": {
+  "A Marauder's Dues#031": {
    "src": "Miserable dastard!! Cold-water eel!! Human, you must help, you MUST! I beg you, please, seek the sorcerer and save my poor Norsten!!",
    "dst": "可恶的恶棍！！冷水里的滑溜长虫！！人类，你一定要帮忙，一定要！我求求你，去找那个巫师，救救我可怜的 Norsten！！",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#030": {
+  "A Marauder's Dues#032": {
    "src": "The southwest mountains have a shortcut past the bandits, time is of the essence!",
    "dst": "西南边的山里有条绕过强盗的捷径，时间紧迫！",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#031": {
+  "A Marauder's Dues#033": {
    "src": "A veritable army fell before my magic! The bandits pay their tribute to my grace and obey my orders! You're as mad as I am called if you think one human can get through.",
    "dst": "一整支大军都倒在我的魔法之下！强盗们向我的风采进贡，听从我的命令！你要是以为一个人类就能闯过去，那你跟他们口中的我一样疯。",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#032": {
+  "A Marauder's Dues#034": {
    "src": "I'll leave you a corpse, a husk! A withered pile of dust- or perhaps I'll take YOU as a slave too, human! So what will it be? Run...or face me?",
    "dst": "我会让你变成一具尸体，一副空壳！一堆枯萎的尘土——或者我也把你收作奴隶，人类！那么你选哪个？逃跑……还是面对我？",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#033": {
+  "A Marauder's Dues#035": {
    "src": "Go up the path to the wizard's tower, at [{~}, {~}, -{~}].",
    "dst": "沿着小路上去，前往 [{~}, {~}, -{~}] 的巫师之塔。",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#034": {
+  "A Marauder's Dues#036": {
    "src": "Hoho... The worm comes wriggling in, it seems. What a horrid thing you are. Mismatched armor, courage of a fool all over your face... Inelegant and UGLY!!",
    "dst": "呵呵……看来虫子钻进来了。你真是个丑陋的东西。盔甲东拼西凑，满脸都是蠢货的勇气……不优雅又丑陋！！",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#035": {
+  "A Marauder's Dues#037": {
    "src": "At least the last ones to face me had some coordination, and the sense to hide themselves. Come further and you'll share their fate!!",
    "dst": "至少上一批来对付我的人还懂得配合，也知道要躲起来。再往前走，你就会跟他们一样下场！！",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#037": {
+  "A Marauder's Dues#038": {
    "src": "You can never understand. The beauty of one like myself cannot be transient, it must be everlasting! I will never succumb to my mortality!",
    "dst": "你永远不会懂。像我这样的美，不能是短暂的，必须是永恒的！我绝不会屈服于死亡！",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#038": {
+  "A Marauder's Dues#039": {
    "src": "As a matter of fact...you humans ARE good for one thing. Drab as you are, you're lively. So consider this an honor!",
    "dst": "说真的……你们人类确实有一个用处。虽然单调，但你们很有活力。所以就当这是你的荣幸吧！",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#039": {
+  "A Marauder's Dues#040": {
    "src": "HAAAAAhahahaha!! Instead of destruction, I'll leave you trapped in this illusion, and chip away at your ugly mind until nothing remains. You'll join the rest who've prolonged my life!",
    "dst": "哈哈哈哈哈哈哈！！我不毁掉你，而是把你困在这个幻象里，一点一点削掉你那丑陋的心智，直到什么都不剩。你会加入那些替我延长寿命的人！",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#040": {
+  "A Marauder's Dues#041": {
    "src": "Escape the illusion.",
    "dst": "逃出幻象。",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#041": {
+  "A Marauder's Dues#042": {
    "src": "I'll take pleasure in peeling away your most formative memories first- W-wait, what's this giant blank spot? It's interfering with my spell...!!",
    "dst": "我要先慢慢剥掉你最重要的那些记忆——等、等等，这一大片空白是怎么回事？它在干扰我的法术……！！",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#042": {
+  "A Marauder's Dues#043": {
    "src": "Ugh, barely any memories to remove, hardly any personality... How much of a dull gray slate are you...and how is that making this more difficult?!",
    "dst": "呃，几乎没有记忆可以删，也几乎没有个性……你到底是块多么无聊的灰白石板……而且为什么这样反而更难搞？！",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#043": {
+  "A Marauder's Dues#044": {
    "src": "Run away and confront the wizard.",
    "dst": "逃离，然后去找巫师对质。",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#044": {
+  "A Marauder's Dues#045": {
    "src": "You escaped?! ...hmph. I suppose that trick works better for binding a platoon than a person. When you only need to focus on what YOU see...rrgh.",
    "dst": "你逃出来了？！……哼。我想那一招拿来困住一整队人比对付一个人有用。只需要专注于自己看到的东西时……呃啊。",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#045": {
+  "A Marauder's Dues#046": {
    "src": "Fine...you've forced my hand. I must sweep you aside, you so-called hero! Never darken my door again! Cease to exist!!",
    "dst": "好吧……是你逼我的。我必须把你扫到一边，你这所谓的英雄！永远别再踏进我的门！消失吧！！",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#046": {
+  "A Marauder's Dues#047": {
    "src": "GAH!",
    "dst": "啊！",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#047": {
+  "A Marauder's Dues#048": {
    "src": "Ugh, what was it that raisin of a man said- Miserable runt?! Cold-water eel?! More fitting names for you than me!!",
    "dst": "呃，那个葡萄干一样的老头是怎么说的——可恶的小矮子？！冷水里的滑溜长虫？！这些名字更适合你，而不是我！！",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#055": {
+  "A Marauder's Dues#054": {
    "src": "Those souls are mine to control, you hear me? Mine to bind!! Mine to drain dry of vitality!! Mine to OWN!! HehehaHAAAAA!!",
    "dst": "那些灵魂是我的，由我控制，听到了吗？由我束缚！！由我吸干活力！！归我所有！！嘿嘿哈哈哈哈哈！！",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#056": {
+  "A Marauder's Dues#055": {
    "src": "And if you jump in after it? You'll be truly trapped- a dimension of my own making, filled with volatile magical waste! You'll never be seen again!",
    "dst": "如果你跟着跳进去？你就真的被困住了——那是我亲手打造的维度，里面满是不稳定的魔法废料！你再也不会被人看到了！",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#057": {
+  "A Marauder's Dues#056": {
    "src": "In other words... You. Lose.",
    "dst": "换句话说……你。输。了。",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#058": {
+  "A Marauder's Dues#057": {
    "src": "Find a way out of the strange dimension.",
    "dst": "找路离开这个奇怪的维度。",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#060": {
+  "A Marauder's Dues#058": {
    "src": "Escape the strange dimension.",
    "dst": "逃出这个奇怪的维度。",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#061": {
+  "A Marauder's Dues#059": {
    "src": "H-how did you survive? How did you get OUT?! That pocket dimension has a one-way entrance!! I- You- I'LL DRAIN AWAY NORSTEN BEFORE YOUR VERY EYES!!",
    "dst": "你、你怎么活下来的？你怎么出来的？！那个口袋维度只能进不能出！！我——你——我要当着你的面把 Norsten 吸干！！",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#062": {
+  "A Marauder's Dues#060": {
    "src": "The scourge is angry!! Human, quickly, for him to be this upset you must have found something! Save my grandson, please!!",
    "dst": "祸害发火了！！人类，快，他气成这样，你一定找到了什么！拜托救救我的孙子！！",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#063": {
+  "A Marauder's Dues#061": {
    "src": "I'LL FLING YOU TO THE ENDS OF THE CANYON!! FILTHY HUMAN, LOWLY WORM NOT FIT TO BE DUST-",
    "dst": "我要把你甩到峡谷的尽头！！肮脏的人类，连尘土都不配当的低贱虫子——",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#064": {
+  "A Marauder's Dues#062": {
    "src": "Aguh...w-where am I? My...my throat hurts...was I screaming?",
    "dst": "呃……我、我在哪？我的……我的喉咙好痛……我刚才在尖叫吗？",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#065": {
+  "A Marauder's Dues#063": {
    "src": "Oh, my poor grandson...my little Norsten is back to us! Oh, joyous day!!",
    "dst": "哦，我可怜的孙子……我的小 Norsten 回来了！哦，真是大喜的日子！！",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#066": {
+  "A Marauder's Dues#064": {
    "src": "Back to...did something happen? I remember coming this way after a thief...and then...",
    "dst": "回来……发生什么事了吗？我记得我追一个小偷追到这边……然后……",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#068": {
+  "A Marauder's Dues#065": {
    "src": "But this human, this hero... They have bested the scourge of the canyon! They managed to save you from such evil!",
    "dst": "可是这个人类，这位英雄……他们打败了峡谷的祸害！他们把你从那样的邪恶手里救了出来！",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#070": {
+  "A Marauder's Dues#066": {
    "src": "Thank you, human- Hm, what's all this money doing in my pockets? I didn't bring my pouch out with me to chase the thief, but...! So much money!",
    "dst": "谢谢你，人类——嗯？我口袋里怎么有这么多钱？我追小偷的时候没带钱袋出来啊，可是……！这么多钱！",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#071": {
+  "A Marauder's Dues#067": {
    "src": "Ill-gotten gains from the scourge's sham of a toll-road scheme, no doubt. I think the human could put that money to fine use, what say you, my boy?",
    "dst": "肯定是那个祸害靠假收费路骗来的不义之财。我想这位人类能好好利用这些钱，你说呢，我的孩子？",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#072": {
+  "A Marauder's Dues#068": {
    "src": "Of course! Here. And don't worry about the gate. It's supposed to be open for anyone, so use it as you like.",
    "dst": "当然！给你。还有别担心那道门。它本来就应该对所有人开放，你想怎么用都行。",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#073": {
+  "A Marauder's Dues#069": {
    "src": "[Right Click] with the shard to change what is real and what is fake.",
    "dst": "拿着碎片 [右键点击]，改变什么是真、什么是假。",
    "role": "desc",
