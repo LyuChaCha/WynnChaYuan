@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Cook Assistant",
-  "count": 37,
-  "translated": 37,
+  "count": 39,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -20,7 +20,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#002": {
+  "Cook Assistant#001": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
    "dst": "Kral bütün o yeni acemiler için pasta pişirmemi emretti!",
    "role": "desc",
@@ -30,7 +30,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#003": {
+  "Cook Assistant#002": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
    "dst": "Ne yazık ki bir Grook son pastamı kaptı ve malzemelerim de bitti!",
    "role": "desc",
@@ -40,7 +40,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#004": {
+  "Cook Assistant#003": {
    "src": "Now can you help...",
    "dst": "Peki sen yardım edebilir...",
    "role": "desc",
@@ -50,7 +50,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#005": {
+  "Cook Assistant#004": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
    "dst": "İşte o Grook! Peşine düş ve pastamı geri getir!",
    "role": "desc",
@@ -60,7 +60,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#006": {
+  "Cook Assistant#005": {
    "src": "Follow the pesky Grook.",
    "dst": "Baş belası Grook'u takip et.",
    "role": "desc",
@@ -70,7 +70,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#007": {
+  "Cook Assistant#006": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
    "dst": "Grook kaçtı! Ne yapacağını öğrenmek için [-{~}, {~}, -{~}] konumundaki Aşçı'ya dön.",
    "role": "desc",
@@ -80,7 +80,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#008": {
+  "Cook Assistant#007": {
    "src": "What are you doing? Go after the Grook...",
    "dst": "Ne yapıyorsun? Grook'un peşine düş...",
    "role": "desc",
@@ -90,7 +90,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#009": {
+  "Cook Assistant#008": {
    "src": "It got away!",
    "dst": "Kaçtı!",
    "role": "desc",
@@ -100,7 +100,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#010": {
+  "Cook Assistant#009": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
    "dst": "Eh, galiba malzemeleri bulmama ve yeni bir pasta pişirmeme yardım etmen gerekecek...",
    "role": "desc",
@@ -110,7 +110,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#011": {
+  "Cook Assistant#010": {
    "src": "There he is again! After him!",
    "dst": "İşte yine orada! Yakala onu!",
    "role": "desc",
@@ -120,7 +120,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#012": {
+  "Cook Assistant#011": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
    "dst": "Grook'un [-{~}, {~}, -{~}] konumunda nereye uçtuğunu bul.",
    "role": "desc",
@@ -129,6 +129,16 @@
    "stage": "Stage 3",
    "speaker": "",
    "source": "wiki"
+  },
+  "Cook Assistant#012": {
+   "src": "Find where the Grook flew up to at [-{~}, {~}, -{~}]",
+   "dst": "Grook'un [-{~}, {~}, -{~}] konumunda nereye uçtuğunu bul",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
@@ -141,6 +151,16 @@
    "source": "wiki"
   },
   "Cook Assistant#014": {
+   "src": "Return to the cook at [-{~}, {~}, -{~}] Use a Scroll to get there faster",
+   "dst": "[-{~}, {~}, -{~}] konumundaki aşçıya dön. Daha hızlı varmak için Parşömen kullan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cook Assistant#015": {
    "src": "Great! You got the cake!",
    "dst": "Harika! Pastayı almışsın!",
    "role": "desc",
@@ -150,7 +170,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#015": {
+  "Cook Assistant#016": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
    "dst": "Sana ne kadar teşekkür etsem az! Al, bu zümrütler ve zırh zahmetinin karşılığı.",
    "role": "desc",
@@ -160,7 +180,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#016": {
+  "Cook Assistant#017": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
    "dst": "Güçlenmek için etrafı keşfetmelisin. Duyduğuma göre {p} bölgesinde yapılacak işler olabilirmiş.",
    "role": "desc",
@@ -170,7 +190,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#017": {
+  "Cook Assistant#018": {
    "src": "I can't believe what is happening to me...",
    "dst": "Başıma gelenlere inanamıyorum...",
    "role": "desc",
@@ -178,7 +198,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#018": {
+  "Cook Assistant#019": {
    "src": "Now, how can you help...",
    "dst": "Peki sen nasıl yardım edebilir...",
    "role": "desc",
@@ -186,7 +206,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#019": {
+  "Cook Assistant#020": {
    "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
    "dst": "Dur! İşte o Grook! Peşine düş ve pastamı geri getir!",
    "role": "desc",
@@ -194,7 +214,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#020": {
+  "Cook Assistant#021": {
    "src": "Hey there! You must be new around here too, right? I'm Afelis, and you are...?",
    "dst": "Selam! Sen de buralarda yenisin, değil mi? Ben Afelis, ya sen...?",
    "role": "desc",
@@ -204,7 +224,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#021": {
+  "Cook Assistant#022": {
    "src": "{u}! Nice to meet you! I haven't been here in {p} for long myself... still trying to figure things out.",
    "dst": "{u}! Tanıştığıma memnun oldum! Ben de {p} bölgesine geleli çok olmadı... hâlâ alışmaya çalışıyorum.",
    "role": "desc",
@@ -214,7 +234,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#022": {
+  "Cook Assistant#023": {
    "src": "It's a bit overwhelming, isn't it? A whole new world to explore, and so many people who need help.",
    "dst": "Biraz bunaltıcı, değil mi? Keşfedilecek koca bir dünya ve yardıma ihtiyacı olan bir sürü insan.",
    "role": "desc",
@@ -224,7 +244,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#023": {
+  "Cook Assistant#024": {
    "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
    "dst": "Ben sadece... gerçekten önemli bir şey yapmak istiyorum, anlıyor musun? Sonuçta bunca yolu boşuna gelmedim.",
    "role": "desc",
@@ -234,7 +254,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#024": {
+  "Cook Assistant#025": {
    "src": "I want to protect people, make their lives better, if I can. Maybe we can figure this out together?",
    "dst": "İnsanları korumak, elimden gelirse hayatlarını güzelleştirmek istiyorum. Belki bunu birlikte çözebiliriz?",
    "role": "desc",
@@ -244,7 +264,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#025": {
+  "Cook Assistant#026": {
    "src": "Maybe we can figure this out together?",
    "dst": "Belki bunu birlikte çözebiliriz?",
    "role": "desc",
@@ -254,7 +274,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#026": {
+  "Cook Assistant#027": {
    "src": "Oh, well, nice to meet you!",
    "dst": "Ah, peki, tanıştığıma memnun oldum!",
    "role": "desc",
@@ -264,7 +284,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#027": {
+  "Cook Assistant#028": {
    "src": "Hey {u}! What's up?",
    "dst": "Selam {u}! Ne var ne yok?",
    "role": "desc",
@@ -274,7 +294,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#028": {
+  "Cook Assistant#029": {
    "src": "Hmm... honestly, no. It's strange, isn't it? I don't remember much of anything.",
    "dst": "Hmm... açıkçası, hayır. Garip, değil mi? Neredeyse hiçbir şey hatırlamıyorum.",
    "role": "desc",
@@ -284,7 +304,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#029": {
+  "Cook Assistant#030": {
    "src": "Just a vague feeling of... something, maybe, but nothing I could describe.",
    "dst": "Sadece belli belirsiz bir his... bir şey, belki, ama tarif edebileceğim bir şey değil.",
    "role": "desc",
@@ -294,7 +314,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#030": {
+  "Cook Assistant#031": {
    "src": "So, here I am, I guess! Wynn's where I'll start making memories that count!",
    "dst": "İşte buradayım, galiba! Önemli anılarımı Wynn'de biriktirmeye başlayacağım!",
    "role": "desc",
@@ -304,7 +324,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#031": {
+  "Cook Assistant#032": {
    "src": "Oh, there's so much I want to do! I thought I'd begin by helping out around {p}, maybe even in {p} once I've gotten stronger.",
    "dst": "Ah, yapmak istediğim o kadar çok şey var ki! Önce {p} çevresinde yardım ederek başlarım diye düşündüm, güçlenince belki {p} bölgesinde de.",
    "role": "desc",
@@ -314,7 +334,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#032": {
+  "Cook Assistant#033": {
    "src": "I've heard {p} needs all the help it can get, and I want to make sure I'm ready.",
    "dst": "Duyduğuma göre {p} bölgesinin her türlü yardıma ihtiyacı varmış, ben de hazır olduğumdan emin olmak istiyorum.",
    "role": "desc",
@@ -324,7 +344,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#033": {
+  "Cook Assistant#034": {
    "src": "And then... who knows! Anywhere people need someone to lend a hand, I'll be there!",
    "dst": "Sonra da... kim bilir! İnsanların yardıma ihtiyaç duyduğu her yerde olacağım!",
    "role": "desc",
@@ -334,7 +354,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#034": {
+  "Cook Assistant#035": {
    "src": "Oh, well... I think it's because there's so much good we can do, even in a place like this.",
    "dst": "Ah, şey... sanırım böyle bir yerde bile yapabileceğimiz çok iyilik olduğu için.",
    "role": "desc",
@@ -344,7 +364,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#035": {
+  "Cook Assistant#036": {
    "src": "It's not just about fighting, it's about being there for people, making sure they feel safe.",
    "dst": "Mesele sadece savaşmak değil, insanların yanında olmak, kendilerini güvende hissetmelerini sağlamak.",
    "role": "desc",
@@ -354,7 +374,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#036": {
+  "Cook Assistant#037": {
    "src": "I know the world has its dark parts, but I'd like to think that maybe, if I keep looking for the good, I can help others see it too.",
    "dst": "Dünyanın karanlık yanları olduğunu biliyorum, ama iyiyi aramaya devam edersem belki başkalarının da onu görmesine yardım edebilirim diye düşünmek istiyorum.",
    "role": "desc",
@@ -364,7 +384,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#037": {
+  "Cook Assistant#038": {
    "src": "Doesn't that sound worth fighting for?",
    "dst": "Sence de uğrunda savaşmaya değmez mi?",
    "role": "desc",

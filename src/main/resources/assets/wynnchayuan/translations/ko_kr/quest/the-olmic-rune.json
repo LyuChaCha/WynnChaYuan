@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Olmic Rune",
-  "count": 13,
-  "translated": 13,
+  "count": 15,
+  "translated": 15,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -46,11 +46,21 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Olmic Rune#005": {
+  "The Olmic Rune#004": {
    "src": "[-{~} Fuel Sprites]",
    "dst": "[-{~} Fuel Sprites]",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#005": {
+   "src": "Head back to the machine at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]의 기계로 돌아가기",
+   "role": "desc",
+   "kind": "objective",
    "quest": "The Olmic Rune",
    "stage": "",
    "speaker": "",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Olmic Rune#010": {
+  "The Olmic Rune#009": {
    "src": "Find some sort of fuel in the Ruined City.",
    "dst": "Ruined City에서 연료가 될 만한 것을 찾으세요.",
    "role": "desc",
@@ -95,6 +105,16 @@
    "stage": "Stage 2",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Olmic Rune#010": {
+   "src": "Find some sort of fuel in the ruined city",
+   "dst": "폐허가 된 도시에서 연료가 될 만한 것 찾기",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
   },
   "The Olmic Rune#011": {
    "src": "Explore the cave for the fuel",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Olmic Rune#014": {
+  "The Olmic Rune#013": {
    "src": "Defend the machine from the incoming attackers.",
    "dst": "몰려오는 적들로부터 기계를 지키세요.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Olmic Rune#015": {
+  "The Olmic Rune#014": {
    "src": "Enter the opened crypt.",
    "dst": "열린 묘실에 들어가세요.",
    "role": "desc",

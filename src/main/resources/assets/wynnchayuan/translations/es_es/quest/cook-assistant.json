@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Cook Assistant",
-  "count": 37,
-  "translated": 37,
+  "count": 39,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -16,7 +16,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#002": {
+  "Cook Assistant#001": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
    "dst": "¡El rey me ha ordenado hornear pasteles para todos esos reclutas nuevos!",
    "role": "desc",
@@ -26,7 +26,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#003": {
+  "Cook Assistant#002": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
    "dst": "¡Y un Grook se llevó mi último pastel, y no me quedan ingredientes!",
    "role": "desc",
@@ -36,7 +36,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#004": {
+  "Cook Assistant#003": {
    "src": "Now can you help...",
    "dst": "¿Podrías ayudarme...?",
    "role": "desc",
@@ -46,7 +46,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#005": {
+  "Cook Assistant#004": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
    "dst": "¡Ese es el Grook! ¡Persíguelo y recupera mi pastel!",
    "role": "desc",
@@ -56,7 +56,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#006": {
+  "Cook Assistant#005": {
    "src": "Follow the pesky Grook.",
    "dst": "Sigue al pesado del Grook.",
    "role": "desc",
@@ -66,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#007": {
+  "Cook Assistant#006": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
    "dst": "¡El Grook se ha escapado! Vuelve con el Cocinero en [-{~}, {~}, -{~}] para ver qué hacer.",
    "role": "desc",
@@ -76,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cook Assistant#008": {
+  "Cook Assistant#007": {
    "src": "What are you doing? Go after the Grook...",
    "dst": "¿Qué haces? Ve a por el Grook...",
    "role": "desc",
@@ -86,7 +86,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#009": {
+  "Cook Assistant#008": {
    "src": "It got away!",
    "dst": "¡Se ha escapado!",
    "role": "desc",
@@ -96,7 +96,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#010": {
+  "Cook Assistant#009": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
    "dst": "Bueno, supongo que tendrás que ayudarme a buscar los ingredientes y hornear otro...",
    "role": "desc",
@@ -106,7 +106,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#011": {
+  "Cook Assistant#010": {
    "src": "There he is again! After him!",
    "dst": "¡Ahí está otra vez! ¡A por él!",
    "role": "desc",
@@ -116,7 +116,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#012": {
+  "Cook Assistant#011": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
    "dst": "Averigua adónde ha volado el Grook en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -125,6 +125,16 @@
    "stage": "Stage 3",
    "speaker": "",
    "source": "wiki"
+  },
+  "Cook Assistant#012": {
+   "src": "Find where the Grook flew up to at [-{~}, {~}, -{~}]",
+   "dst": "Averigua adónde ha volado el Grook en [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
@@ -137,6 +147,16 @@
    "source": "wiki"
   },
   "Cook Assistant#014": {
+   "src": "Return to the cook at [-{~}, {~}, -{~}] Use a Scroll to get there faster",
+   "dst": "Vuelve con el cocinero en [-{~}, {~}, -{~}]. Usa un pergamino para llegar antes",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cook Assistant#015": {
    "src": "Great! You got the cake!",
    "dst": "¡Genial! ¡Tienes el pastel!",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#015": {
+  "Cook Assistant#016": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
    "dst": "¡No sé cómo agradecértelo! Toma, quédate estas esmeraldas y esta armadura por las molestias.",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#016": {
+  "Cook Assistant#017": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
    "dst": "Deberías explorar por ahí para hacerte más fuerte. He oído que quizá haya trabajo en {p}.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
-  "Cook Assistant#017": {
+  "Cook Assistant#018": {
    "src": "I can't believe what is happening to me...",
    "dst": "No me puedo creer lo que me está pasando...",
    "role": "desc",
@@ -174,7 +194,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#018": {
+  "Cook Assistant#019": {
    "src": "Now, how can you help...",
    "dst": "Y bien, ¿en qué puedes ayudar...?",
    "role": "desc",
@@ -182,7 +202,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#019": {
+  "Cook Assistant#020": {
    "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
    "dst": "¡Espera! ¡Ese es el Grook! ¡Persíguelo y recupera mi pastel!",
    "role": "desc",
@@ -190,7 +210,7 @@
    "quest": "Cook Assistant",
    "source": "capture"
   },
-  "Cook Assistant#020": {
+  "Cook Assistant#021": {
    "src": "Hey there! You must be new around here too, right? I'm Afelis, and you are...?",
    "dst": "¡Hola! Tú también eres nuevo por aquí, ¿no? Soy Afelis, ¿y tú eres...?",
    "role": "desc",
@@ -200,7 +220,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#021": {
+  "Cook Assistant#022": {
    "src": "{u}! Nice to meet you! I haven't been here in {p} for long myself... still trying to figure things out.",
    "dst": "¡{u}! ¡Encantado! Yo tampoco llevo mucho aquí en {p}... aún intento aclararme.",
    "role": "desc",
@@ -210,7 +230,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#022": {
+  "Cook Assistant#023": {
    "src": "It's a bit overwhelming, isn't it? A whole new world to explore, and so many people who need help.",
    "dst": "Abruma un poco, ¿verdad? Todo un mundo nuevo por explorar, y tanta gente que necesita ayuda.",
    "role": "desc",
@@ -220,7 +240,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#023": {
+  "Cook Assistant#024": {
    "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
    "dst": "Es que... quiero hacer algo que importe de verdad, ¿sabes? Digo, por algo he venido hasta aquí.",
    "role": "desc",
@@ -230,7 +250,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#024": {
+  "Cook Assistant#025": {
    "src": "I want to protect people, make their lives better, if I can. Maybe we can figure this out together?",
    "dst": "Quiero proteger a la gente, mejorarles la vida, si puedo. ¿Y si lo averiguamos juntos?",
    "role": "desc",
@@ -240,7 +260,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#025": {
+  "Cook Assistant#026": {
    "src": "Maybe we can figure this out together?",
    "dst": "¿Y si lo averiguamos juntos?",
    "role": "desc",
@@ -250,7 +270,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#026": {
+  "Cook Assistant#027": {
    "src": "Oh, well, nice to meet you!",
    "dst": "Ah, bueno, ¡encantado de conocerte!",
    "role": "desc",
@@ -260,7 +280,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#027": {
+  "Cook Assistant#028": {
    "src": "Hey {u}! What's up?",
    "dst": "¡Hola, {u}! ¿Qué tal?",
    "role": "desc",
@@ -270,7 +290,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#028": {
+  "Cook Assistant#029": {
    "src": "Hmm... honestly, no. It's strange, isn't it? I don't remember much of anything.",
    "dst": "Mmm... la verdad es que no. Es raro, ¿verdad? No recuerdo casi nada.",
    "role": "desc",
@@ -280,7 +300,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#029": {
+  "Cook Assistant#030": {
    "src": "Just a vague feeling of... something, maybe, but nothing I could describe.",
    "dst": "Solo una vaga sensación de... algo, quizá, pero nada que sepa describir.",
    "role": "desc",
@@ -290,7 +310,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#030": {
+  "Cook Assistant#031": {
    "src": "So, here I am, I guess! Wynn's where I'll start making memories that count!",
    "dst": "¡Así que aquí estoy! ¡En Wynn empezaré a crear recuerdos que valgan!",
    "role": "desc",
@@ -300,7 +320,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#031": {
+  "Cook Assistant#032": {
    "src": "Oh, there's so much I want to do! I thought I'd begin by helping out around {p}, maybe even in {p} once I've gotten stronger.",
    "dst": "¡Ay, hay tanto que quiero hacer! Pensé en empezar echando una mano por {p}, y quizá hasta en {p} cuando sea más fuerte.",
    "role": "desc",
@@ -310,7 +330,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#032": {
+  "Cook Assistant#033": {
    "src": "I've heard {p} needs all the help it can get, and I want to make sure I'm ready.",
    "dst": "He oído que {p} necesita toda la ayuda posible, y quiero asegurarme de estar preparado.",
    "role": "desc",
@@ -320,7 +340,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#033": {
+  "Cook Assistant#034": {
    "src": "And then... who knows! Anywhere people need someone to lend a hand, I'll be there!",
    "dst": "Y luego... ¡quién sabe! ¡Allá donde alguien necesite una mano, allí estaré!",
    "role": "desc",
@@ -330,7 +350,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#034": {
+  "Cook Assistant#035": {
    "src": "Oh, well... I think it's because there's so much good we can do, even in a place like this.",
    "dst": "Ah, bueno... Creo que es porque podemos hacer mucho bien, incluso en un sitio así.",
    "role": "desc",
@@ -340,7 +360,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#035": {
+  "Cook Assistant#036": {
    "src": "It's not just about fighting, it's about being there for people, making sure they feel safe.",
    "dst": "No va solo de pelear, va de estar ahí para la gente, de que se sientan a salvo.",
    "role": "desc",
@@ -350,7 +370,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#036": {
+  "Cook Assistant#037": {
    "src": "I know the world has its dark parts, but I'd like to think that maybe, if I keep looking for the good, I can help others see it too.",
    "dst": "Sé que el mundo tiene sus partes oscuras, pero me gusta pensar que, si sigo buscando lo bueno, quizá ayude a otros a verlo también.",
    "role": "desc",
@@ -360,7 +380,7 @@
    "speaker": "Afelis",
    "source": "captured"
   },
-  "Cook Assistant#037": {
+  "Cook Assistant#038": {
    "src": "Doesn't that sound worth fighting for?",
    "dst": "¿No merece la pena luchar por eso?",
    "role": "desc",

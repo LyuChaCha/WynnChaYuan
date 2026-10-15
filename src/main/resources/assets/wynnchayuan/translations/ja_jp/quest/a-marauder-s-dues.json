@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Marauder's Dues",
-  "count": 68,
-  "translated": 68,
+  "count": 70,
+  "translated": 69,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -117,6 +117,16 @@
    "source": "captured"
   },
   "A Marauder's Dues#011": {
+   "src": "Each core gains and loses explosive power based on its position in the grid, and what cores it's touching. Each core touches the cores that are above, below and next to it.",
+   "dst": "各コアの爆発力は、グリッド上の位置と接しているコアによって増減する。各コアは上下と左右に隣接するコアに接している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#012": {
    "src": "Right Click a core to select it, then Right Click one of the {~} green spots in the grid to place it there.",
    "dst": "コアを右クリックで選び、格子の {~} か所の緑の点のどれかを右クリックして置く。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#012": {
+  "A Marauder's Dues#013": {
    "src": "Remember, you need to get {~} Explosive Power! If you need a hint, click on Hints and Rules and select \"I want a hint.\"",
    "dst": "爆発力 {~} が必要なことを忘れずに！ ヒントが欲しければ「ヒントとルール」から「ヒントがほしい」を選ぶ。",
    "role": "desc",
@@ -136,7 +146,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Marauder's Dues#013": {
+  "A Marauder's Dues#014": {
+   "src": "The Green Core begins with a lot of power, but loses power when touching some of the other cores, especially Orange. So you'll want it in a corner, where it's touching only {~} cores, and it shouldn't be touching Orange.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Marauder's Dues#015": {
    "src": "That terrible wizard must have captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
    "dst": "あの時、あの恐ろしい魔法使いが呪文でお前を捕らえたに違いない。恐ろしかった、本当に―お前のあの険しい目つき…",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Peli",
    "source": "captured"
   },
-  "A Marauder's Dues#014": {
+  "A Marauder's Dues#016": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
    "dst": "…ほとんど何も覚えてない。ただ…怒りと…嫌悪感かな、でも…Peli じいちゃんは僕に嘘なんてつかないよね。",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Norsten",
    "source": "captured"
   },
-  "A Marauder's Dues#015": {
+  "A Marauder's Dues#017": {
    "src": "Talk to Norsten.",
    "dst": "Norsten と話す。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#016": {
+  "A Marauder's Dues#018": {
    "src": "...ugh. Disgusting. Utterly disgusting. I've had just about enough of your kind here. Humans...",
    "dst": "…はあ。醜い。実に醜い。お前たちのような輩にはもううんざりだ。人間め…",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#017": {
+  "A Marauder's Dues#019": {
    "src": "Dreadfully drab, always getting in the way, wriggling through our province like worms! You're no heroes, you're pretenders!!",
    "dst": "ひどく地味で、いつも邪魔ばかり、ミミズのようにこの地方を這い回る！ お前たちは英雄ではない、偽物だ！！",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#018": {
+  "A Marauder's Dues#020": {
    "src": "Oh, you want through here? Well, I'm the gatekeeper. Let's call my toll...the abandonment of your ridiculous little heroics...and all your money besides. Sound fair?",
    "dst": "ほう、ここを通りたいと？ 私が門番だ。通行料は…くだらない英雄ごっこをやめること…ついでに有り金全部だ。公平だろう？",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#019": {
+  "A Marauder's Dues#021": {
    "src": "Aha, Norsten my boy! We've been worried sick, it's been a week. What is it you're doing so far out into the canyon?",
    "dst": "おお、Norsten や！ 皆心配しとったぞ、もう一週間じゃ。こんな峡谷の奥で何をしとるんじゃ？",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#020": {
+  "A Marauder's Dues#022": {
    "src": "Wha- Who are you, and who gave you permission to use my toll road?! And can't you see I'm busy?",
    "dst": "な―誰だ、誰の許しで私の有料道路を使っている？！ 忙しいのが見えんのか？",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#021": {
+  "A Marauder's Dues#023": {
    "src": "Norsten?? Don't you recognize your own grandfather? What's that strange look in your eyes, what's this about a toll road?",
    "dst": "Norsten？？ 自分のじいさんがわからんのか？ その妙な目つきは何じゃ、有料道路とはどういうことじゃ？",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#022": {
+  "A Marauder's Dues#024": {
    "src": "You're nothing to me at your age. I only care about what the young can do for me...and about the fee you're neglecting, you shriveled old fruit!",
    "dst": "その歳のお前など私には無価値だ。気にかけるのは若者が私に何をしてくれるか…そして払っていない料金だけだ、しなびた老いぼれ果実め！",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#023": {
+  "A Marauder's Dues#025": {
    "src": "What's gotten into you? Such a polite man, acting this way to your elders... Human, have you any idea what's-",
    "dst": "どうしたんじゃ？ あんなに礼儀正しい子が、年寄りにこんな態度を…人間よ、何が起きとるか―",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#024": {
+  "A Marauder's Dues#026": {
    "src": "...oh no. Oh, say it isn't so, is that what's happening? Is it HIS fault?",
    "dst": "…まさか。ああ、嘘だと言ってくれ、そういうことなのか？ 「奴」の仕業か？",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#025": {
+  "A Marauder's Dues#027": {
    "src": "Up there, on the cliff- that tower! The scourge of the canyon...has he truly returned? Has he...taken my grandson?!",
    "dst": "あの上、崖の上の―あの塔じゃ！ 峡谷の災い…本当に戻ってきたのか？ わしの孫を…奪ったのか？！",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#026": {
+  "A Marauder's Dues#028": {
    "src": "...heh. Haaaaahahahaha!!",
    "dst": "…ふっ。ハーハハハハハ！！",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#027": {
+  "A Marauder's Dues#029": {
    "src": "My reputation, even after all this time, still precedes me!! Indeed, old man, I have taken your grandson as my puppet!",
    "dst": "これだけ時が経っても、私の名はまだ轟いているのか！！ そうとも老人、お前の孫は私の操り人形だ！",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#028": {
+  "A Marauder's Dues#030": {
    "src": "What should I care about the facade? For a hundred and fifty years I've stolen the vitality of others to maintain my beauty, and your grandson will be no different.",
    "dst": "見かけなどどうでもよい。百五十年もの間、私は他人の生命力を奪って美貌を保ってきた。お前の孫も例外ではない。",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#029": {
+  "A Marauder's Dues#031": {
    "src": "Miserable dastard!! Cold-water eel!! Human, you must help, you MUST! I beg you, please, seek the sorcerer and save my poor Norsten!!",
    "dst": "卑劣な悪党め！！ 冷や水のウナギめ！！ 人間よ、助けてくれ、頼む！ お願いじゃ、魔術師を探して、かわいそうな Norsten を救ってくれ！！",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#030": {
+  "A Marauder's Dues#032": {
    "src": "The southwest mountains have a shortcut past the bandits, time is of the essence!",
    "dst": "南西の山に盗賊を避ける近道がある、急いでくれ！",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#031": {
+  "A Marauder's Dues#033": {
    "src": "A veritable army fell before my magic! The bandits pay their tribute to my grace and obey my orders! You're as mad as I am called if you think one human can get through.",
    "dst": "我が魔法の前に軍勢すら倒れた！ 盗賊どもは我が威光に貢ぎ、命令に従う！ 人間一人で突破できると思うなら、お前は私と同じくらい狂っている。",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#032": {
+  "A Marauder's Dues#034": {
    "src": "I'll leave you a corpse, a husk! A withered pile of dust- or perhaps I'll take YOU as a slave too, human! So what will it be? Run...or face me?",
    "dst": "お前を死体に、抜け殻にしてやる！ 干からびた塵の山に―いや、お前も奴隷にしてやろうか、人間！ さあ、どうする？ 逃げるか…挑むか？",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#033": {
+  "A Marauder's Dues#035": {
    "src": "Go up the path to the wizard's tower, at [{~}, {~}, -{~}].",
    "dst": "道を登って [{~}, {~}, -{~}] の魔法使いの塔へ行く。",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#034": {
+  "A Marauder's Dues#036": {
    "src": "Hoho... The worm comes wriggling in, it seems. What a horrid thing you are. Mismatched armor, courage of a fool all over your face... Inelegant and UGLY!!",
    "dst": "ほほう…虫けらがのたくって入ってきたか。なんと醜い。ちぐはぐな鎧、顔中に愚か者の勇気…品がなく、醜い！！",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#035": {
+  "A Marauder's Dues#037": {
    "src": "At least the last ones to face me had some coordination, and the sense to hide themselves. Come further and you'll share their fate!!",
    "dst": "前に挑んできた連中は少なくとも連携が取れていて、身を隠す分別もあった。先へ進めば同じ運命だ！！",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#037": {
+  "A Marauder's Dues#038": {
    "src": "You can never understand. The beauty of one like myself cannot be transient, it must be everlasting! I will never succumb to my mortality!",
    "dst": "お前たちには決してわからん。私のような美しさは儚くてはならぬ、永遠でなければ！ 私は決して死すべき運命に屈しない！",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#038": {
+  "A Marauder's Dues#039": {
    "src": "As a matter of fact...you humans ARE good for one thing. Drab as you are, you're lively. So consider this an honor!",
    "dst": "実のところ…人間にも一つだけ使い道がある。地味だが、活きがいい。だから光栄に思え！",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#039": {
+  "A Marauder's Dues#040": {
    "src": "HAAAAAhahahaha!! Instead of destruction, I'll leave you trapped in this illusion, and chip away at your ugly mind until nothing remains. You'll join the rest who've prolonged my life!",
    "dst": "ハーハハハハ！！ 破壊はやめだ、この幻の中に閉じ込めて、醜い心を何も残らなくなるまで削り取ってやる。私の命を延ばしてきた者たちの仲間入りだ！",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#040": {
+  "A Marauder's Dues#041": {
    "src": "Escape the illusion.",
    "dst": "幻から脱出する。",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#041": {
+  "A Marauder's Dues#042": {
    "src": "I'll take pleasure in peeling away your most formative memories first- W-wait, what's this giant blank spot? It's interfering with my spell...!!",
    "dst": "まずは一番大切な記憶から剥がしてやろう―ま、待て、この巨大な空白は何だ？ 私の呪文を邪魔している…！！",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#042": {
+  "A Marauder's Dues#043": {
    "src": "Ugh, barely any memories to remove, hardly any personality... How much of a dull gray slate are you...and how is that making this more difficult?!",
    "dst": "ぐっ、消せる記憶もほとんどなく、個性もろくにない…どれだけ真っ白な石板なのだ…しかも、なぜそれで余計に難しくなる？！",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#043": {
+  "A Marauder's Dues#044": {
    "src": "Run away and confront the wizard.",
    "dst": "逃げ出して魔法使いと対決する。",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#044": {
+  "A Marauder's Dues#045": {
    "src": "You escaped?! ...hmph. I suppose that trick works better for binding a platoon than a person. When you only need to focus on what YOU see...rrgh.",
    "dst": "逃げただと？！ …ふん。あの術は一人より小隊の目をくらますほうが効くようだ。自分の見るものだけに集中すればよいのだからな…ぐぬ。",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#045": {
+  "A Marauder's Dues#046": {
    "src": "Fine...you've forced my hand. I must sweep you aside, you so-called hero! Never darken my door again! Cease to exist!!",
    "dst": "いいだろう…手を出させたのはお前だ。英雄気取りめ、払いのけてやる！ 二度と我が門をくぐるな！ 消え失せろ！！",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Marauder's Dues#046": {
+  "A Marauder's Dues#047": {
    "src": "GAH!",
    "dst": "ぐはっ！",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#047": {
+  "A Marauder's Dues#048": {
    "src": "Ugh, what was it that raisin of a man said- Miserable runt?! Cold-water eel?! More fitting names for you than me!!",
    "dst": "くっ、あの干しブドウ爺は何と言った―卑劣なチビ？！ 冷や水のウナギ？！ 私よりお前にふさわしい名だ！！",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#055": {
+  "A Marauder's Dues#054": {
    "src": "Those souls are mine to control, you hear me? Mine to bind!! Mine to drain dry of vitality!! Mine to OWN!! HehehaHAAAAA!!",
    "dst": "あの魂どもは私が操るもの、わかったか？ 私が縛るもの！！ 生命力を吸い尽くすもの！！ 私のものだ！！ ヘヘハハーッ！！",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#056": {
+  "A Marauder's Dues#055": {
    "src": "And if you jump in after it? You'll be truly trapped- a dimension of my own making, filled with volatile magical waste! You'll never be seen again!",
    "dst": "追って飛び込むか？ そうすれば本当に閉じ込められる―不安定な魔法の廃棄物で満ちた、私の作った次元にな！ 二度と姿を見せられんぞ！",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#057": {
+  "A Marauder's Dues#056": {
    "src": "In other words... You. Lose.",
    "dst": "つまり…お前の。負け。だ。",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#058": {
+  "A Marauder's Dues#057": {
    "src": "Find a way out of the strange dimension.",
    "dst": "奇妙な次元から出る方法を探す。",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#060": {
+  "A Marauder's Dues#058": {
    "src": "Escape the strange dimension.",
    "dst": "奇妙な次元から脱出する。",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Marauder's Dues#061": {
+  "A Marauder's Dues#059": {
    "src": "H-how did you survive? How did you get OUT?! That pocket dimension has a one-way entrance!! I- You- I'LL DRAIN AWAY NORSTEN BEFORE YOUR VERY EYES!!",
    "dst": "ど、どうやって生き延びた？どうやって出た？！あのポケット次元は一方通行だぞ！！私は―お前は―目の前でNorstenを吸い尽くしてやる！！",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#062": {
+  "A Marauder's Dues#060": {
    "src": "The scourge is angry!! Human, quickly, for him to be this upset you must have found something! Save my grandson, please!!",
    "dst": "災いが怒っておる！！ 人間よ、急げ、奴があれほど取り乱すとは何か見つけたに違いない！ 孫を救ってくれ、頼む！！",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#063": {
+  "A Marauder's Dues#061": {
    "src": "I'LL FLING YOU TO THE ENDS OF THE CANYON!! FILTHY HUMAN, LOWLY WORM NOT FIT TO BE DUST-",
    "dst": "峡谷の果てまで吹き飛ばしてやる！！ 汚らわしい人間め、塵にも値せぬ下等な虫け―",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#064": {
+  "A Marauder's Dues#062": {
    "src": "Aguh...w-where am I? My...my throat hurts...was I screaming?",
    "dst": "うぐ…こ、ここは？ のどが…痛い…僕、叫んでた？",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#065": {
+  "A Marauder's Dues#063": {
    "src": "Oh, my poor grandson...my little Norsten is back to us! Oh, joyous day!!",
    "dst": "おお、かわいそうな孫よ…わしの Norsten が戻ってきた！ ああ、めでたい日じゃ！！",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#066": {
+  "A Marauder's Dues#064": {
    "src": "Back to...did something happen? I remember coming this way after a thief...and then...",
    "dst": "戻って…何かあったの？ 泥棒を追ってこっちに来たのは覚えてる…それから…",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#068": {
+  "A Marauder's Dues#065": {
    "src": "But this human, this hero... They have bested the scourge of the canyon! They managed to save you from such evil!",
    "dst": "だがこの人間が、この英雄が…峡谷の災いを打ち倒してくれた！ あんな悪からお前を救ってくれたんじゃ！",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#070": {
+  "A Marauder's Dues#066": {
    "src": "Thank you, human- Hm, what's all this money doing in my pockets? I didn't bring my pouch out with me to chase the thief, but...! So much money!",
    "dst": "ありがとう、人間さん―ん？ なんでポケットにこんなにお金が？ 泥棒を追う時に財布は持ってこなかったのに…！ こんなにたくさん！",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#071": {
+  "A Marauder's Dues#067": {
    "src": "Ill-gotten gains from the scourge's sham of a toll-road scheme, no doubt. I think the human could put that money to fine use, what say you, my boy?",
    "dst": "災いの偽の有料道路で巻き上げた悪銭に違いない。この人間ならそのお金を有効に使ってくれると思うが、どうじゃ、孫よ？",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Peli",
    "source": "wiki"
   },
-  "A Marauder's Dues#072": {
+  "A Marauder's Dues#068": {
    "src": "Of course! Here. And don't worry about the gate. It's supposed to be open for anyone, so use it as you like.",
    "dst": "もちろん！ どうぞ。門のことは心配しないで。誰でも通れるはずのものだから、好きに使ってね。",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Norsten",
    "source": "wiki"
   },
-  "A Marauder's Dues#073": {
+  "A Marauder's Dues#069": {
    "src": "[Right Click] with the shard to change what is real and what is fake.",
    "dst": "shardを[右クリック]して、本物と偽物を変えよう。",
    "role": "desc",
