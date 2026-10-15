@@ -196,9 +196,9 @@
  "admin.pby": "添加人",
  "admin.staff": "管理员",
  "admin.staffnote": "管理员可以做开发者在本站能做的事：删除披风、封禁与解封、管理特别名单、为名单创建 PR。区别在于：管理员不会出现在团队名单上，名字前面没有叶子，也不能添加或移除管理员。",
- "admin.staffhow": "输入对方的 Discord 名称、Minecraft ID、UUID 或 Discord 用户 ID 的几个字，从下面列出的已注册成员（登录过网站或上传过披风的人）里选一个；绑定了游戏账号的会记成 UUID，用游戏或 Discord 登录都有权限。还没注册的人也可以直接输入完整的 Minecraft ID 或 Discord 用户 ID 再点加入，用 Minecraft ID 加的等对方登录一次就会改记成 UUID。加了立即生效。",
- "admin.who": "搜索成员",
- "admin.findph": "Discord 名称、Minecraft ID、UUID…",
+ "admin.staffhow": "点开下拉菜单，从已注册成员（登录过网站或上传过披风的人）里选一位；可以输入 Discord 名称、Minecraft ID、UUID 或 Discord 用户 ID 筛选。绑定了游戏账号的会记成 UUID，用游戏或 Discord 登录都有权限。还没注册的人也可以直接输入完整的 Minecraft ID 或 Discord 用户 ID 再点加入，用 Minecraft ID 加的等对方登录一次就会改记成 UUID。加了立即生效。",
+ "admin.who": "选择成员",
+ "admin.findph": "点一下展开，或输入筛选…",
  "admin.kind": "类型",
  "admin.id": "ID",
  "admin.nostaff": "还没有管理员。",
@@ -408,6 +408,7 @@
   },
   "findNone": "没有找到已注册的人。直接点“加入”会按你输入的内容添加。",
   "isStaff": "已经是管理员",
-  "chosen": "已选：{who}"
+  "chosen": "已选：{who}",
+  "findCount": "{n} 位（已注册 {all} 位）"
  }
 }

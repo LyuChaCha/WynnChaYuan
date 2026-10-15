@@ -200,9 +200,9 @@ export const MORE_TEXT = {
   "admin.pby": "Añadido por",
   "admin.staff": "Moderadores",
   "admin.staffnote": "Los moderadores pueden hacer en este sitio lo mismo que los desarrolladores: eliminar capas, vetar y quitar vetos, gestionar la lista especial y abrir pull requests para los créditos. La diferencia: no aparecen en la lista del equipo, no llevan una hoja delante del nombre y no pueden añadir ni quitar moderadores.",
-  "admin.staffhow": "Escribe parte de su nombre de Discord, ID de Minecraft, UUID o ID de usuario de Discord y elígelo entre los miembros registrados que aparecen abajo (quienes han iniciado sesión en la web o han subido una capa). Si tiene una cuenta del juego vinculada, se guarda por UUID y tendrá permisos tanto si entra con el juego como con Discord. Para alguien que aún no se ha registrado, escribe su ID de Minecraft o su ID de usuario de Discord completo y pulsa Añadir; lo añadido por ID de Minecraft pasa a guardarse por UUID la primera vez que inicie sesión. Se aplica al momento.",
-  "admin.who": "Buscar miembro",
-  "admin.findph": "Nombre de Discord, ID de Minecraft, UUID…",
+  "admin.staffhow": "Abre el desplegable y elige a uno de los miembros registrados (quienes han iniciado sesión en la web o han subido una capa); puedes filtrar escribiendo un nombre de Discord, ID de Minecraft, UUID o ID de usuario de Discord. Si tiene una cuenta del juego vinculada, se guarda por UUID y tendrá permisos tanto si entra con el juego como con Discord. Para alguien que aún no se ha registrado, escribe su ID de Minecraft o su ID de usuario de Discord completo y pulsa Añadir; lo añadido por ID de Minecraft pasa a guardarse por UUID la primera vez que inicie sesión. Se aplica al momento.",
+  "admin.who": "Elegir miembro",
+  "admin.findph": "Haz clic para abrir o escribe para filtrar…",
   "admin.kind": "Tipo",
   "admin.id": "ID",
   "admin.nostaff": "Todavía no hay moderadores.",
@@ -412,7 +412,8 @@ export const MORE_TEXT = {
    },
    "findNone": "No hay ningún miembro registrado que coincida. Si pulsas «Añadir», se usará exactamente lo que escribiste.",
    "isStaff": "Ya es moderador",
-   "chosen": "Seleccionado: {who}"
+   "chosen": "Seleccionado: {who}",
+   "findCount": "{n} mostrados ({all} registrados)"
   }
  },
  "ja": {
@@ -613,9 +614,9 @@ export const MORE_TEXT = {
   "admin.pby": "追加した人",
   "admin.staff": "モデレーター",
   "admin.staffnote": "モデレーターは、このサイトで開発者と同じ操作ができます：マントの削除、BAN と BAN の解除、特別リストの管理、メンバー一覧へのプルリクエストの作成。違いは、チーム一覧に表示されないこと、名前の前に葉っぱが付かないこと、モデレーターを追加・削除できないことです。",
-  "admin.staffhow": "相手の Discord 名、Minecraft ID、UUID、Discord のユーザー ID の一部を入力し、下に表示される登録済みのメンバー（サイトにログインしたことがある人、マントをアップロードしたことがある人）から選んでください。ゲームアカウントを連携している人は UUID で登録され、ゲームと Discord のどちらでログインしても権限があります。まだ登録していない人は、Minecraft ID か Discord のユーザー ID を全部入力して「追加」を押してください。Minecraft ID で追加した場合は、相手が初めてログインしたときに UUID に切り替わります。追加するとすぐに反映されます。",
-  "admin.who": "メンバーを検索",
-  "admin.findph": "Discord 名、Minecraft ID、UUID…",
+  "admin.staffhow": "ドロップダウンを開き、登録済みのメンバー（サイトにログインしたことがある人、マントをアップロードしたことがある人）から選んでください。Discord 名、Minecraft ID、UUID、Discord のユーザー ID を入力すると絞り込めます。ゲームアカウントを連携している人は UUID で登録され、ゲームと Discord のどちらでログインしても権限があります。まだ登録していない人は、Minecraft ID か Discord のユーザー ID を全部入力して「追加」を押してください。Minecraft ID で追加した場合は、相手が初めてログインしたときに UUID に切り替わります。追加するとすぐに反映されます。",
+  "admin.who": "メンバーを選ぶ",
+  "admin.findph": "クリックで開く、または入力して絞り込み…",
   "admin.kind": "種類",
   "admin.id": "ID",
   "admin.nostaff": "モデレーターはまだいません。",
@@ -825,7 +826,8 @@ export const MORE_TEXT = {
    },
    "findNone": "登録済みのメンバーが見つかりません。そのまま「追加」を押すと、入力した内容で追加します。",
    "isStaff": "すでにモデレーターです",
-   "chosen": "選択中：{who}"
+   "chosen": "選択中：{who}",
+   "findCount": "{n} 人を表示（登録済み {all} 人）"
   }
  },
  "ko": {
@@ -1026,9 +1028,9 @@ export const MORE_TEXT = {
   "admin.pby": "추가한 사람",
   "admin.staff": "모더레이터",
   "admin.staffnote": "모더레이터는 이 사이트에서 개발자가 하는 일을 할 수 있습니다: 망토 삭제, 차단과 차단 해제, 특별 명단 관리, 명단용 풀 리퀘스트 열기. 다만 팀 명단에 표시되지 않고, 이름 앞에 나뭇잎이 붙지 않으며, 모더레이터를 추가하거나 삭제할 수 없습니다.",
-  "admin.staffhow": "상대의 Discord 이름, Minecraft ID, UUID 또는 Discord 사용자 ID 일부를 입력하고, 아래에 나오는 등록된 멤버(웹사이트에 로그인했거나 망토를 올린 적이 있는 사람) 중에서 고르세요. 게임 계정을 연결한 사람은 UUID로 저장되어 게임과 Discord 어느 쪽으로 로그인해도 권한이 있습니다. 아직 등록하지 않은 사람은 Minecraft ID나 Discord 사용자 ID를 전부 입력하고 추가를 누르세요. Minecraft ID로 추가하면 그 사람이 처음 로그인할 때 UUID로 바뀝니다. 추가하면 바로 적용됩니다.",
-  "admin.who": "멤버 검색",
-  "admin.findph": "Discord 이름, Minecraft ID, UUID…",
+  "admin.staffhow": "드롭다운을 펼쳐 등록된 멤버(웹사이트에 로그인했거나 망토를 올린 적이 있는 사람) 중에서 고르세요. Discord 이름, Minecraft ID, UUID, Discord 사용자 ID를 입력하면 걸러낼 수 있습니다. 게임 계정을 연결한 사람은 UUID로 저장되어 게임과 Discord 어느 쪽으로 로그인해도 권한이 있습니다. 아직 등록하지 않은 사람은 Minecraft ID나 Discord 사용자 ID를 전부 입력하고 추가를 누르세요. Minecraft ID로 추가하면 그 사람이 처음 로그인할 때 UUID로 바뀝니다. 추가하면 바로 적용됩니다.",
+  "admin.who": "멤버 선택",
+  "admin.findph": "클릭해서 펼치거나 입력해서 걸러내기…",
   "admin.kind": "종류",
   "admin.id": "ID",
   "admin.nostaff": "아직 모더레이터가 없습니다.",
@@ -1238,7 +1240,8 @@ export const MORE_TEXT = {
    },
    "findNone": "등록된 멤버를 찾지 못했습니다. 그대로 「추가」를 누르면 입력한 내용으로 추가합니다.",
    "isStaff": "이미 관리자입니다",
-   "chosen": "선택됨: {who}"
+   "chosen": "선택됨: {who}",
+   "findCount": "{n}명 표시 (등록 {all}명)"
   }
  },
  "ru": {
@@ -1439,9 +1442,9 @@ export const MORE_TEXT = {
   "admin.pby": "Кто добавил",
   "admin.staff": "Модераторы",
   "admin.staffnote": "Модераторы могут на этом сайте то же, что и разработчики: удалять плащи, блокировать и разблокировать, вести особый список и открывать pull request с правками списка авторов. Отличия: их нет в списке команды, перед именем нет листа, и они не могут добавлять и убирать модераторов.",
-  "admin.staffhow": "Введите часть имени в Discord, Minecraft ID, UUID или ID пользователя Discord и выберите человека из списка зарегистрированных участников ниже (тех, кто входил на сайт или загружал плащ). Если у человека привязан игровой аккаунт, он сохраняется по UUID, и права действуют при входе и через игру, и через Discord. Для того, кто ещё не зарегистрирован, введите полный Minecraft ID или ID пользователя Discord и нажмите «Добавить»; запись по Minecraft ID заменится на UUID при первом входе. Действует сразу.",
-  "admin.who": "Найти участника",
-  "admin.findph": "Имя в Discord, Minecraft ID, UUID…",
+  "admin.staffhow": "Откройте выпадающий список и выберите зарегистрированного участника (того, кто входил на сайт или загружал плащ); список можно сузить, введя имя в Discord, Minecraft ID, UUID или ID пользователя Discord. Если у человека привязан игровой аккаунт, он сохраняется по UUID, и права действуют при входе и через игру, и через Discord. Для того, кто ещё не зарегистрирован, введите полный Minecraft ID или ID пользователя Discord и нажмите «Добавить»; запись по Minecraft ID заменится на UUID при первом входе. Действует сразу.",
+  "admin.who": "Выбрать участника",
+  "admin.findph": "Нажмите, чтобы открыть, или начните вводить…",
   "admin.kind": "Тип",
   "admin.id": "ID",
   "admin.nostaff": "Модераторов пока нет.",
@@ -1651,7 +1654,8 @@ export const MORE_TEXT = {
    },
    "findNone": "Зарегистрированных участников не найдено. Кнопка «Добавить» добавит ровно то, что вы ввели.",
    "isStaff": "Уже модератор",
-   "chosen": "Выбрано: {who}"
+   "chosen": "Выбрано: {who}",
+   "findCount": "Показано {n} (зарегистрировано {all})"
   }
  },
  "tr": {
@@ -1852,9 +1856,9 @@ export const MORE_TEXT = {
   "admin.pby": "Ekleyen",
   "admin.staff": "Moderatörler",
   "admin.staffnote": "Moderatörler, geliştiricilerin bu sitede yaptıklarını yapabilir: pelerin silmek, yasaklamak ve yasağı kaldırmak, özel listeyi yönetmek ve emeği geçenler listesi için pull request açmak. Farkı şu: ekip listesinde görünmezler, adlarının önünde yaprak olmaz ve moderatör ekleyip çıkaramazlar.",
-  "admin.staffhow": "Kişinin Discord adının, Minecraft ID’sinin, UUID’sinin veya Discord kullanıcı ID’sinin birkaç karakterini yazın ve aşağıda listelenen kayıtlı üyeler arasından seçin (siteye giriş yapmış ya da pelerin yüklemiş kişiler). Oyun hesabı bağlı olan kişi UUID ile kaydedilir; oyunla da Discord ile de giriş yapsa yetkisi olur. Henüz kayıt olmamış biri için tam Minecraft ID’sini veya Discord kullanıcı ID’sini yazıp Ekle’ye basın; Minecraft ID ile eklenen kayıt, kişi ilk giriş yaptığında UUID’ye çevrilir. Hemen geçerli olur.",
-  "admin.who": "Üye ara",
-  "admin.findph": "Discord adı, Minecraft ID, UUID…",
+  "admin.staffhow": "Açılır listeyi açın ve kayıtlı üyelerden birini seçin (siteye giriş yapmış ya da pelerin yüklemiş kişiler); Discord adı, Minecraft ID, UUID veya Discord kullanıcı ID’si yazarak filtreleyebilirsiniz. Oyun hesabı bağlı olan kişi UUID ile kaydedilir; oyunla da Discord ile de giriş yapsa yetkisi olur. Henüz kayıt olmamış biri için tam Minecraft ID’sini veya Discord kullanıcı ID’sini yazıp Ekle’ye basın; Minecraft ID ile eklenen kayıt, kişi ilk giriş yaptığında UUID’ye çevrilir. Hemen geçerli olur.",
+  "admin.who": "Üye seç",
+  "admin.findph": "Açmak için tıklayın veya filtrelemek için yazın…",
   "admin.kind": "Tür",
   "admin.id": "ID",
   "admin.nostaff": "Henüz moderatör yok.",
@@ -2064,7 +2068,8 @@ export const MORE_TEXT = {
    },
    "findNone": "Eşleşen kayıtlı üye yok. Ekle’ye basarsanız tam olarak yazdığınız kullanılır.",
    "isStaff": "Zaten moderatör",
-   "chosen": "Seçildi: {who}"
+   "chosen": "Seçildi: {who}",
+   "findCount": "{n} gösteriliyor ({all} kayıtlı)"
   }
  },
  "zh-cn": {
@@ -2265,9 +2270,9 @@ export const MORE_TEXT = {
   "admin.pby": "添加人",
   "admin.staff": "管理员",
   "admin.staffnote": "管理员可以做开发者在本站能做的事：删除披风、封禁与解封、管理特别名单、为名单创建 PR。区别在于：管理员不会出现在团队名单上，名字前面没有叶子，也不能添加或移除管理员。",
-  "admin.staffhow": "输入对方的 Discord 名称、Minecraft ID、UUID 或 Discord 用户 ID 的几个字，从下面列出的已注册成员（登录过网站或上传过披风的人）里选一个；绑定了游戏账号的会记成 UUID，用游戏或 Discord 登录都有权限。还没注册的人也可以直接输入完整的 Minecraft ID 或 Discord 用户 ID 再点加入，用 Minecraft ID 加的等对方登录一次就会改记成 UUID。加了立即生效。",
-  "admin.who": "搜索成员",
-  "admin.findph": "Discord 名称、Minecraft ID、UUID…",
+  "admin.staffhow": "点开下拉菜单，从已注册成员（登录过网站或上传过披风的人）里选一位；可以输入 Discord 名称、Minecraft ID、UUID 或 Discord 用户 ID 筛选。绑定了游戏账号的会记成 UUID，用游戏或 Discord 登录都有权限。还没注册的人也可以直接输入完整的 Minecraft ID 或 Discord 用户 ID 再点加入，用 Minecraft ID 加的等对方登录一次就会改记成 UUID。加了立即生效。",
+  "admin.who": "选择成员",
+  "admin.findph": "点一下展开，或输入筛选…",
   "admin.kind": "类型",
   "admin.id": "ID",
   "admin.nostaff": "还没有管理员。",
@@ -2477,7 +2482,8 @@ export const MORE_TEXT = {
    },
    "findNone": "没有找到已注册的人。直接点“加入”会按你输入的内容添加。",
    "isStaff": "已经是管理员",
-   "chosen": "已选：{who}"
+   "chosen": "已选：{who}",
+   "findCount": "{n} 位（已注册 {all} 位）"
   }
  }
 };
