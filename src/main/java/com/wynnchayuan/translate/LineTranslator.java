@@ -4226,6 +4226,9 @@ public final class LineTranslator {
         }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
+            translated = withoutSpacerRows(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
             return null;
         }
         Component rebuilt = rebuildLabel(label, translated, parts, store);
@@ -4257,6 +4260,9 @@ public final class LineTranslator {
         String translated = store.labelLookup(parts.template());
         if (translated == null || translated.isBlank()) {
             translated = lookup(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
+            translated = withoutSpacerRows(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
@@ -6737,6 +6743,37 @@ public final class LineTranslator {
      * <p>只剝<b>首尾</b>：句子中間的符號是內容的一部分（例如
      * {@code an {#}Item Identifier can unlock}），剝掉會改變語意。
      */
+    /**
+     * 漂浮字最後一列只有 {@code À}（伺服器墊的空白列）：拿掉那幾列再查一次，查到就把它們原樣接回去。
+     *
+     * <h2>回報（issue #1237）</h2>
+     * Caged Creatures 那塊「Get [5 Explosive Mass] / to open the door」，條目照看到的兩行寫，
+     * 實機卻沒翻；條目結尾補上 {@code 
+À} 才翻到。遊戲送來的是三列，第三列只有一個 {@code À}——
+     * 看不見，寫條目的人不會知道要抄。語料裡已有十幾條是連這一列一起收的，兩種寫法都要認。
+     *
+     * @return 譯文（含接回去的空白列）；不是這種形狀或查不到時回 {@code null}
+     */
+    static String withoutSpacerRows(String template, TranslationStore store) {
+        if (template == null) {
+            return null;
+        }
+        java.util.regex.Matcher m = SPACER_ROWS.matcher(template);
+        if (!m.matches()) {
+            return null;
+        }
+        String body = m.group(1);
+        String hit = store.labelLookup(body);
+        if (hit == null || hit.isBlank()) {
+            hit = lookup(body, store);
+        }
+        return hit == null || hit.isBlank() ? null : hit + m.group(2);
+    }
+
+    /** 本文（至少有一個字）加上結尾一列或多列「只有 À 與空白」的列。 */
+    private static final java.util.regex.Pattern SPACER_ROWS = java.util.regex.Pattern.compile(
+            "(?s)(.*\\S)((?:\n[ \t]*À[ \tÀ]*)+)");
+
     private static String lookup(String template, TranslationStore store) {
         // 這個沒帶 percent 的版本<b>不走屬性列那條路</b>。屬性列要看數值有沒有
         // 百分號才知道該挑哪一個標籤（生命回復 vs 生命回復百分比），而百分號

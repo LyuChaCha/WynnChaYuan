@@ -164,7 +164,7 @@ public final class MarketSearchTest {
         report("NPC 名不當候選（實際：" + market.candidates("鐵匠") + "）",
                !market.candidates("鐵匠").contains("Blacksmith")
                        && !market.candidates("鐵匠").contains("The Blacksmith"));
-        report("面向不當候選", market.candidates("城垛加固之相").isEmpty());
+        report("面向不當候選", market.candidates("城垛加固意象").isEmpty());
         report("技能名不當候選", market.candidates("箭矢炸彈").isEmpty());
 
         MarketSearch m = new MarketSearch();
