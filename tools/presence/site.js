@@ -623,6 +623,18 @@ const STYLE = String.raw`
   .linkcode { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0; }
   .linkcode code { font-size: 18px; color: var(--ink); background: #0f1512; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; user-select: all; }
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
+  /* 新增管理員的搜尋：打幾個字，下面列出已註冊的人 */
+  .finder { position: relative; }
+  .finder-hits { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 4; margin: 0; padding: 4px; list-style: none; max-height: 320px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); box-shadow: 0 18px 44px #000a; }
+  .finder-hits li { display: flex; align-items: center; gap: 10px; padding: 7px 8px; border-radius: 7px; cursor: pointer; transition: background-color var(--fast) ease; }
+  .finder-hits li:hover, .finder-hits li[aria-selected="true"] { background: var(--panel-2); }
+  .finder-hits li.taken, .finder-hits li.none { cursor: default; background: none; }
+  .finder-hits li.taken { opacity: .55; }
+  .finder-hits li.none { color: var(--ink-2); font-size: 13px; }
+  .finder-hits img { width: 28px; height: 28px; border-radius: 5px; image-rendering: pixelated; flex: none; }
+  .finder-hits div { min-width: 0; }
+  .finder-hits b { display: block; font-weight: 600; color: var(--ink); }
+  .finder-hits small { display: block; color: var(--ink-2); font-size: 12px; overflow-wrap: anywhere; }
   /* 上傳：可以把圖檔拖進來。拖到上面的時候框會亮起來 */
   .drop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; transition: border-color var(--fast) ease, background-color var(--fast) ease; }
   .drop.over { border-color: var(--leaf); background: #7fd08a12; }
@@ -840,8 +852,8 @@ export const TEXT = {
     'admin.noperks': '名單是空的。', 'admin.pwhen': '加入的時間', 'admin.pby': '誰加的',
     'admin.staff': '管理員',
     'admin.staffnote': '管理員可以做開發者在這個網站上做的事：刪除披風、封禁與解除封禁、管理特別名單、替名單開 PR。差別是不會出現在團隊名單上、名字前面沒有葉子，也不能新增或移除管理員。',
-    'admin.staffhow': '填他的 Minecraft ID、Minecraft UUID，或 Discord 使用者 ID（17 到 20 位數字：在 Discord 開「開發者模式」，對他按右鍵選「複製使用者 ID」）。用 Minecraft ID 加的，等他登入一次就會改記成 UUID。加了馬上生效。',
-    'admin.who': 'Minecraft ID、UUID 或 Discord 使用者 ID',
+    'admin.staffhow': '打他的 Discord 名稱、Minecraft ID、UUID 或 Discord 使用者 ID 的幾個字，從下面列出來的已註冊成員（登入過網站或傳過披風的人）裡選一個；有綁遊戲帳號的會記成 UUID，用遊戲或 Discord 登入都有權限。還沒註冊的人也可以直接打完整的 Minecraft ID 或 Discord 使用者 ID 再按加入，用 Minecraft ID 加的等他登入一次就會改記成 UUID。加了馬上生效。',
+    'admin.who': '搜尋成員', 'admin.findph': 'Discord 名稱、Minecraft ID、UUID…',
     'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
     'admin.guilds': '貢獻公會',
     'admin.guildsnote': '會出現在首頁「團隊」那一段，點下去連到那個公會在 Wynncraft 的頁面。先加名字（要跟 Wynncraft 上的一模一樣），再各上傳一張圖示與旗幟。圖會先縮小再傳，PNG、JPEG、WebP 都可以。',
@@ -958,6 +970,7 @@ export const TEXT = {
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
       confirmUnstaff: '把 {who} 從管理員移除？', notYet: '還沒登入過',
+      findNone: '沒有找到已註冊的人。直接按「加入」會照你打的字加。', isStaff: '已經是管理員', chosen: '已選：{who}',
       staff: {
         'bad who': '看不懂這一格：要填 Minecraft ID、UUID，或 Discord 使用者 ID（17 到 20 位數字）',
         'bad note': '備註最多 60 個字',
@@ -1111,8 +1124,8 @@ export const TEXT = {
     'admin.noperks': 'The list is empty.', 'admin.pwhen': 'Added at', 'admin.pby': 'Added by',
     'admin.staff': 'Moderators',
     'admin.staffnote': 'Moderators can do what developers do on this website: remove capes, ban and unban, manage the special list, and open pull requests for the credits. The difference: they are not shown on the team list, get no leaf before their name, and cannot add or remove moderators.',
-    'admin.staffhow': 'Enter their Minecraft ID, Minecraft UUID, or Discord user ID (17 to 20 digits: turn on Developer Mode in Discord, right-click them and choose “Copy User ID”). An entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
-    'admin.who': 'Minecraft ID, UUID or Discord user ID',
+    'admin.staffhow': 'Type a few characters of their Discord name, Minecraft ID, UUID or Discord user ID and pick them from the registered members listed below (people who have signed in to the website or uploaded a cape). Someone with a linked game account is saved by UUID, so signing in with either the game or Discord works. For someone who has not registered yet, type their full Minecraft ID or Discord user ID and press Add; an entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
+    'admin.who': 'Find a member', 'admin.findph': 'Discord name, Minecraft ID, UUID…',
     'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
     'admin.guilds': 'Contributing guilds',
     'admin.guildsnote': 'These appear in the team section of the home page and link to the guild’s page on Wynncraft. Add the name first (exactly as it is on Wynncraft), then upload an icon and a banner. Images are shrunk before upload; PNG, JPEG and WebP all work.',
@@ -1228,6 +1241,7 @@ export const TEXT = {
       previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
       confirmUnstaff: 'Remove {who} from the moderators?', notYet: 'Has not signed in yet',
+      findNone: 'No registered member matches. Pressing “Add” uses exactly what you typed.', isStaff: 'Already a moderator', chosen: 'Selected: {who}',
       staff: {
         'bad who': 'That is not a Minecraft ID, a UUID, or a Discord user ID (17 to 20 digits)',
         'bad note': 'The note can be 60 characters at most',
@@ -3521,10 +3535,11 @@ const ADMIN = String.raw`
         <p class="note" style="margin:0 0 8px">%%admin.staffnote%%</p>
         <p class="note" style="margin:0 0 14px">%%admin.staffhow%%</p>
         <div class="form">
-          <div><label for="s-who">%%admin.who%%</label><input type="text" id="s-who" maxlength="36" autocomplete="off" spellcheck="false"></div>
+          <div class="finder"><label for="s-who">%%admin.who%%</label><input type="text" id="s-who" maxlength="40" autocomplete="off" spellcheck="false" placeholder="%%admin.findph%%" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="s-hits"><ul class="finder-hits" id="s-hits" role="listbox" hidden></ul></div>
           <div><label for="s-note">%%admin.note%%</label><input type="text" id="s-note" maxlength="60" autocomplete="off"></div>
           <div><button class="btn primary" id="s-send">%%admin.grant%%</button></div>
         </div>
+        <p class="hint" id="s-pick" style="margin-top:8px"></p>
         <p class="msg" id="s-msg" role="status"></p>
       </div>
       <div class="panel scroll">
@@ -3772,11 +3787,14 @@ const ADMIN_JS = '<script>' + String.raw`
 
   /* 管理員名單：只有開發者看得到、動得了 */
   var KIND = { u: 'Minecraft UUID', n: 'Minecraft ID', d: 'Discord' };
+  var staffKeys = {};
   function loadStaff() {
     return api('/admin/staff').then(function (r) { return r.json(); }).then(function (data) {
       var body = document.getElementById('staff');
       body.replaceChildren();
       document.getElementById('nostaff').hidden = data.staff.length > 0;
+      staffKeys = {};
+      data.staff.forEach(function (one) { staffKeys[one.key] = true; });
       data.staff.forEach(function (one) {
         var row = el('tr');
         var id = el('td');
@@ -3788,9 +3806,10 @@ const ADMIN_JS = '<script>' + String.raw`
           img.alt = '';
           img.src = head(known, 44);
           who.append(img, known);
-        } else {
+        } else if (!one.discord) {
           who.append(one.kind === 'u' ? L.notYet : '—');
         }
+        if (one.discord) who.append(el('small', 'hint', (known ? ' · ' : '') + 'Discord ' + one.discord));
         var drop = el('button', 'btn', L.revoke);
         drop.onclick = function () {
           if (!confirm(fmt(L.confirmUnstaff, { who: one.name || one.note || one.id }))) return;
@@ -3805,9 +3824,92 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
+  /* 新增管理員：打幾個字搜尋已註冊的人（登入過網站或傳過披風的），從清單裡選。
+     有綁遊戲帳號的記 UUID（用遊戲或 Discord 登入都認得），只有 Discord 的記 Discord ID。
+     沒選就照打的字加，跟以前一樣（還沒註冊的人）。 */
+  var finder = document.getElementById('s-who');
+  var hits = document.getElementById('s-hits');
+  var pickNote = document.getElementById('s-pick');
+  var picked = null, found = [], active = -1, findTimer = 0, findSeq = 0;
+  function dashedId(u) { return [u.slice(0, 8), u.slice(8, 12), u.slice(12, 16), u.slice(16, 20), u.slice(20)].join('-'); }
+  function personName(p) { return p.mc || p.dname || p.discord; }
+  function personTaken(p) { return Boolean((p.uuid && staffKeys['u:' + p.uuid]) || (p.discord && staffKeys['d:' + p.discord])); }
+  function personLines(p) {
+    var lines = [];
+    if (p.discord) lines.push('Discord ' + (p.dname ? p.dname + ' (' + p.discord + ')' : p.discord));
+    if (p.uuid) lines.push((p.mc ? 'Minecraft ' + p.mc + ' · ' : '') + dashedId(p.uuid));
+    return lines;
+  }
+  function closeHits() {
+    hits.hidden = true;
+    finder.setAttribute('aria-expanded', 'false');
+    finder.removeAttribute('aria-activedescendant');
+    active = -1;
+  }
+  function mark(i) {
+    active = i;
+    Array.prototype.forEach.call(hits.children, function (li, n) { li.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
+    var li = hits.children[i];
+    if (li) { finder.setAttribute('aria-activedescendant', li.id); li.scrollIntoView({ block: 'nearest' }); }
+  }
+  function choose(p) {
+    if (!p || personTaken(p)) return;
+    picked = p;
+    finder.value = personName(p);
+    pickNote.textContent = fmt(L.chosen, { who: personLines(p).join(' · ') });
+    closeHits();
+  }
+  function showHits(list) {
+    found = list;
+    hits.replaceChildren();
+    if (!list.length) hits.append(el('li', 'none', L.findNone));
+    list.forEach(function (p, i) {
+      var li = el('li', personTaken(p) ? 'taken' : '');
+      li.id = 's-hit-' + i;
+      li.setAttribute('role', 'option');
+      li.setAttribute('aria-selected', 'false');
+      if (personTaken(p)) li.setAttribute('aria-disabled', 'true');
+      var img = el('img');
+      img.alt = '';
+      img.src = head(p.mc || p.uuid || 'MHF_Steve', 56);
+      var text = el('div');
+      text.append(el('b', '', personName(p)));
+      personLines(p).forEach(function (line) { text.append(el('small', '', line)); });
+      if (personTaken(p)) text.append(el('small', '', L.isStaff));
+      li.append(img, text);
+      /* mousedown：搶在輸入框失去焦點、清單收起來之前 */
+      li.addEventListener('mousedown', function (e) { e.preventDefault(); choose(p); });
+      hits.append(li);
+    });
+    hits.hidden = false;
+    finder.setAttribute('aria-expanded', 'true');
+    active = -1;
+  }
+  finder.addEventListener('input', function () {
+    picked = null;
+    pickNote.textContent = '';
+    clearTimeout(findTimer);
+    var q = finder.value.trim();
+    var seq = ++findSeq;
+    if (q.length < 2) { closeHits(); return; }
+    findTimer = setTimeout(function () {
+      api('/admin/people?q=' + encodeURIComponent(q))
+        .then(function (r) { return r.ok ? r.json() : { people: [] }; })
+        .then(function (data) { if (seq === findSeq && document.activeElement === finder) showHits(data.people || []); })
+        .catch(function () {});
+    }, 220);
+  });
+  finder.addEventListener('keydown', function (e) {
+    if (hits.hidden || !found.length) { if (e.key === 'Escape') closeHits(); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); mark(active < 0 ? 0 : (active + 1) % found.length); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); mark(active <= 0 ? found.length - 1 : active - 1); }
+    else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); choose(found[active]); }
+    else if (e.key === 'Escape') closeHits();
+  });
+  finder.addEventListener('blur', closeHits);
   document.getElementById('s-send').onclick = function () {
     var msg = document.getElementById('s-msg');
-    var entry = { who: document.getElementById('s-who').value.trim(), note: document.getElementById('s-note').value.trim() };
+    var entry = { who: picked ? (picked.uuid || picked.discord) : finder.value.trim(), note: document.getElementById('s-note').value.trim() };
     msg.className = 'msg ok';
     msg.textContent = L.sending;
     api('/admin/staff', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
@@ -3816,7 +3918,9 @@ const ADMIN_JS = '<script>' + String.raw`
           if (r.ok) {
             msg.className = 'msg ok';
             msg.textContent = L.perkDone;
-            document.getElementById('s-who').value = '';
+            finder.value = '';
+            picked = null;
+            pickNote.textContent = '';
             document.getElementById('s-note').value = '';
             loadStaff();
           } else {

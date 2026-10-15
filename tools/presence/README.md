@@ -142,6 +142,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/staff` | | 管理員名單（**只有開發者**） |
 | `POST /api/admin/staff` | `{who, note?}` | 加一個管理員：`who` 是 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID（**只有開發者**） |
 | `POST /api/admin/unstaff` | `{key}` | 移除一個管理員（**只有開發者**） |
+| `GET /api/admin/people?q=` | | 搜尋已註冊的人（網站帳號 `d:*` 與傳過披風的人），比對 Discord 名稱、Minecraft ID、UUID、Discord 使用者 ID，最多 12 筆；管理頁「新增管理員」用（**只有開發者**） |
 
 上面寫「開發者」的那幾條，管理員也做得到；寫「只有開發者」的不行。
 
@@ -216,6 +217,7 @@ npx wrangler secret put MOJANG_KEYS
 - 照 Minecraft ID（名字）加的，那個人登入一次就改記成 UUID；名字之後改掉、被別人拿走也不會把權限帶走。
 - 照 Discord 使用者 ID 加的，那個人只用 Discord 登入、還沒綁遊戲 ID 也進得了管理頁。
 - 存在 KV 的 `staff:u:<UUID>`、`staff:n:<名字>`、`staff:d:<Discord ID>`；移除之後馬上沒有權限。
+- 從搜尋選人時，有綁遊戲帳號的記 `staff:u:<UUID>`；用綁著那個遊戲帳號的 Discord 登入網站也算管理員。網站帳號 `d:<Discord ID>` 的 metadata 放著名字與綁的帳號（`n`、`m`、`u`），搜尋只要列鍵；改版前存的沒有 metadata，下次登入就補上，搜尋時先讀本體。
 
 - **刪除、封禁**：在 `/capes` 點開一件披風，開發者看得到是誰傳的，還有「刪除這件披風」與「刪除並封禁上傳的人」。刪除是照圖刪：所有用同一張圖的人一起拿掉。
 - **封禁名單**：`/admin`。誰、什麼時候、誰封的，可以解除。

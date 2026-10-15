@@ -285,6 +285,15 @@ async function readDiscordToken(env, token, now) {
   return diff === 0 ? id : null;
 }
 
+/** 網站帳號存回去。名字與綁的遊戲帳號也放進 metadata，管理頁搜尋時只要列出來、不必一筆一筆讀。 */
+async function saveAccount(env, id, record) {
+  const metadata = {};
+  if (record.n) metadata.n = record.n;
+  if (record.m) metadata.m = record.m;
+  if (record.u) metadata.u = record.u;
+  await env.CORPUS.put('d:' + id, JSON.stringify(record), { metadata });
+}
+
 async function account(env, id) {
   try {
     const raw = await env.CORPUS.get('d:' + id);
@@ -328,14 +337,14 @@ async function bind(env, id, uuid, name, now) {
       delete other.u;
       delete other.m;
       delete other.t;
-      await env.CORPUS.put('d:' + before, JSON.stringify(other));
+      await saveAccount(env, before, other);
     }
   }
   if (record.u && record.u !== uuid) await env.CORPUS.delete('l:' + record.u);
   record.u = uuid;
   record.m = name;
   record.t = now;
-  await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  await saveAccount(env, id, record);
   await env.CORPUS.put('l:' + uuid, id);
   return record;
 }
@@ -421,7 +430,7 @@ async function handleDiscordCallback(request, env, now) {
   const shown = String(profile.global_name || profile.username || '').slice(0, 64);
   const record = await account(env, id) || {};
   record.n = shown;
-  await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  await saveAccount(env, id, record);
   // state 後半帶著綁定單：這個人是從「已經以遊戲帳號登入」的網頁來的，登入完直接綁
   const intent = parts[1].slice(32);
   if (INTENT.test(intent)) {
@@ -477,7 +486,7 @@ async function handleUnlink(request, env, now) {
     delete record.u;
     delete record.m;
     delete record.t;
-    await env.CORPUS.put('d:' + session.id, JSON.stringify(record));
+    await saveAccount(env, session.id, record);
   }
   return json({ ok: true });
 }
@@ -489,7 +498,7 @@ async function refreshLinkedName(env, uuid, name) {
   const record = await account(env, id);
   if (record && record.u === uuid && record.m !== name) {
     record.m = name;
-    await env.CORPUS.put('d:' + id, JSON.stringify(record));
+    await saveAccount(env, id, record);
   }
 }
 
@@ -1197,7 +1206,9 @@ async function authority(request, env, now) {
     return await isStaff(env, user) ? { by: user.name, developer: false } : null;
   }
   const session = await discordSession(request, env, now);
-  if (session && await env.CORPUS.get('staff:d:' + session.id)) {
+  // 照遊戲帳號加的管理員，用綁著那個遊戲帳號的 Discord 登入網站也算（管理頁的搜尋兩邊都有的人記 UUID）
+  if (session && (await env.CORPUS.get('staff:d:' + session.id)
+      || (session.account.u && await env.CORPUS.get('staff:u:' + session.account.u)))) {
     return { by: 'Discord: ' + (session.account.n || session.id), developer: false };
   }
   return null;
@@ -1214,7 +1225,7 @@ async function handleStaff(request, env, now) {
     for (const k of page.keys) {
       const record = parseRecord(await env.CORPUS.get(k.name));
       const key = k.name.slice(6);
-      staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null,
+      staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null, discord: record.dn || null,
         note: record.n || '', t: record.t || null, by: record.by || null });
     }
     cursor = page.list_complete ? undefined : page.cursor;
@@ -1235,8 +1246,78 @@ async function handleStaffAdd(request, env, now) {
   if (await env.CORPUS.get('staff:' + key)) return no('already', 409);
   const record = { n: note.trim(), t: now, by: mine.by };
   if (key.startsWith('n:')) record.m = String(body.who).trim();      // 名字照他打的大小寫記著，名單上好認
+  // 照 UUID 或 Discord 加的：網站帳號認得這個人的話，把名字一起記著，名單上不必只看一串代號
+  const linked = key.startsWith('d:') ? key.slice(2)
+    : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
+  const known = linked ? await account(env, linked) : null;
+  if (known) {
+    if (known.n) record.dn = known.n;
+    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) record.m = known.m;
+  }
+  if (key.startsWith('u:') && !record.m) {
+    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
+    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) record.m = cape.metadata.n;
+  }
   await env.CORPUS.put('staff:' + key, JSON.stringify(record));
   return json({ ok: true, key });
+}
+
+/** 搜尋字串跟這個人對得上的程度：0 對不上、1 包含、2 開頭相同、3 完全相同。 */
+export function personScore(person, q) {
+  let best = 0;
+  const bare = q.replace(/-/g, '');
+  for (const [field, text] of [['dname', q], ['mc', q], ['discord', q], ['uuid', bare]]) {
+    const value = String(person[field] || '').toLowerCase();
+    if (!value || !text) continue;
+    const score = value === text ? 3 : value.startsWith(text) ? 2 : value.includes(text) ? 1 : 0;
+    if (score > best) best = score;
+  }
+  return best;
+}
+
+export const PEOPLE_MAX = 12;
+
+/**
+ * 管理頁「新增管理員」的搜尋：在網站帳號（用 Discord 登入過的，綁了遊戲帳號就連名字與 UUID）
+ * 與傳過披風的人裡找。只有開發者。回 {people: [{discord, dname, mc, uuid}]}，對得越準越前面。
+ */
+async function handlePeople(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const q = (new URL(request.url).searchParams.get('q') || '').trim().toLowerCase();
+  if (q.length < 2 || q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
+  const byUuid = new Map();
+  const people = [];
+  let cursor;
+  let reads = 0;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'd:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const id = k.name.slice(2);
+      if (!DISCORD_ID.test(id)) continue;
+      let m = k.metadata;
+      // 這次改版之前存的帳號沒有 metadata：讀一次本體（下次登入就會補上）
+      if (!m && reads < 400) {
+        reads++;
+        m = await account(env, id);
+      }
+      if (!m) continue;
+      const person = { discord: id, dname: m.n || null, mc: m.m || null, uuid: UUID.test(m.u || '') ? m.u : null };
+      people.push(person);
+      if (person.uuid) byUuid.set(person.uuid, person);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  for (const cape of await allCapes(env)) {
+    if (!UUID.test(cape.u || '') || byUuid.has(cape.u)) continue;
+    const person = { discord: null, dname: null, mc: NAME.test(cape.n || '') ? cape.n : null, uuid: cape.u };
+    byUuid.set(cape.u, person);
+    people.push(person);
+  }
+  const hits = people.map((p) => [personScore(p, q), p]).filter(([score]) => score > 0)
+    .sort((a, b) => b[0] - a[0] || String(a[1].mc || a[1].dname).localeCompare(String(b[1].mc || b[1].dname)))
+    .slice(0, PEOPLE_MAX).map(([, p]) => p);
+  return json({ people: hits }, 200, { 'cache-control': 'no-store' });
 }
 
 async function handleStaffRemove(request, env, now) {
@@ -2423,6 +2504,7 @@ export default {
     if (route === 'GET /admin/staff') return handleStaff(request, env, now);
     if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
     if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
+    if (route === 'GET /admin/people') return handlePeople(request, env, now);
     if (route === 'GET /team') return handleTeam(env, now);
     if (route === 'POST /cape/wear') return handleWear(request, env, now);
     if (route === 'POST /cape/restore') return handleRestore(request, env, now);
