@@ -262,6 +262,9 @@ The same list is in game under **Settings → About / Credits**. To add someone,
 | Roy | `aaroye` |
 | Chq | `Chqrish` |
 | 邊緣安德 | `Enderchen2580` |
+| AdoreFuSei | `AdoreFuSei` |
+| anilken | `Pandik` |
+| yool | `yool141` |
 
 ### Data sources
 
