@@ -409,6 +409,14 @@ public final class UpgradeSafetyTest {
                         && Files.exists(dir.resolve("debug/wynnmod-tooltip-2.json"))
                         && Files.exists(dir.resolve("debug/tooltip-partial-1.json"))
                         && !Files.exists(dir.resolve("line-debug.txt")));
+        Path debug = dir.resolve("debug");
+        Files.writeString(debug.resolve("dialogue-miss-1.txt"), "x");
+        Files.setLastModifiedTime(debug.resolve("dialogue-miss-1.txt"),
+                java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() - 20L * 86400000));
+        int stale = ConfigFolder.pruneDebug(dir, System.currentTimeMillis());
+        check("★ debug/ 裡超過兩週沒更新的刪掉，新的留著（刪 " + stale + " 個）",
+                stale == 1 && !Files.exists(debug.resolve("dialogue-miss-1.txt"))
+                        && Files.exists(debug.resolve("line-debug.txt")));
         check("★ 不是診斷檔的不搬：對話顏色、更新紀錄、當機紀錄",
                 Files.exists(dir.resolve("dialogue-colours.json"))
                         && Files.exists(dir.resolve("update-log.txt"))
