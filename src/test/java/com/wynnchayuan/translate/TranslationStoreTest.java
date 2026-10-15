@@ -469,21 +469,22 @@ public final class TranslationStoreTest {
      * 把旗標改回 false 也會過。
      */
     private static void buildPartNamesFollowTheGearSwitch(TranslationStore real) {
-        String[][] parts = {
-            {"Abyssal Tome of Combat Mastery II", "潮湧戰鬥精通書卷 II"},
-            {"Charm of the Corruption", "腐敗護符"},
-            {"Aspect of Battlement Fortification", "城垛加固之相"},
+        // 只看「翻了沒」，不釘譯名：術語統一會改措辭（Aspect 就從「之相」改成「意象」過）。
+        String[] parts = {
+            "Abyssal Tome of Combat Mastery II",
+            "Charm of the Corruption",
+            "Aspect of Battlement Fortification",
         };
         real.setTranslateNames(false);
-        for (String[] row : parts) {
-            check("實際語料：關著開關時「" + row[0] + "」留原文",
-                    real.lookup(row[0]) == null);
+        for (String name : parts) {
+            check("實際語料：關著開關時「" + name + "」留原文",
+                    real.lookup(name) == null);
         }
         real.setTranslateNames(true);
-        for (String[] row : parts) {
-            String got = real.lookup(row[0]);
-            check("實際語料：打開開關時「" + row[0] + "」照翻（拿到 " + got + "）",
-                    row[1].equals(got));
+        for (String name : parts) {
+            String got = real.lookup(name);
+            check("實際語料：打開開關時「" + name + "」照翻（拿到 " + got + "）",
+                    got != null && !got.isBlank() && !got.equals(name));
         }
         // 對照組：素材<b>不</b>受這個開關管，這次改動不能把它們一起拖進來。
         real.setTranslateNames(false);
