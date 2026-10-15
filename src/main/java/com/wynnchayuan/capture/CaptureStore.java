@@ -94,6 +94,19 @@ public final class CaptureStore {
          */
         public int seq;
 
+        /**
+         * 這一行是哪一份 tooltip 裡的：那份 tooltip 的標題（物品名、選單名）。
+         * 介面字才有。物品說明一行常常只是半句，看不到是哪一件東西就翻不準。
+         * 玩家頭顱與隊伍卡的標題是玩家的名字，那種不帶。
+         */
+        public String in;
+
+        /**
+         * 收到的時候人在哪裡，見 {@link Whereabouts}。漂浮字最需要它：
+         * 同一個討伐戰同一關的幾句話會排在一起。
+         */
+        public String place;
+
         Captured(String src, String role, String domain, String ctx, int seq) {
             this.src = src;
             this.role = role;
@@ -206,7 +219,35 @@ public final class CaptureStore {
      */
     public boolean record(String template, String role, String domain, String ctx,
                           String full) {
-        return record(template, role, domain, ctx, full, false);
+        return record(template, role, domain, ctx, full, false, null);
+    }
+
+    /**
+     * 介面字：多帶一個「是哪一份 tooltip 的」。見 {@link Captured#in}。
+     */
+    public boolean recordIn(String template, String role, String domain, String ctx, String in) {
+        return record(template, role, domain, ctx, null, false, in);
+    }
+
+    /** 這一句語料已經有譯文了嗎（收集的判斷用同一個，見 {@link #knowsSources}）。 */
+    public boolean isTranslated(String template) {
+        return template != null && translated.test(template);
+    }
+
+    /** 收到的當下人在哪裡。由 {@code WynnChaYuan} 接上 {@link Whereabouts#now}；測試不接就是沒有。 */
+    private volatile java.util.function.Supplier<String> where = () -> null;
+
+    public void knowsWhere(java.util.function.Supplier<String> where) {
+        this.where = where == null ? () -> null : where;
+    }
+
+    private String whereNow() {
+        try {
+            String w = where.get();
+            return w == null || w.isBlank() ? null : w;
+        } catch (Throwable t) {
+            return null;
+        }
     }
 
     /**
@@ -228,7 +269,7 @@ public final class CaptureStore {
         for (ChatRows.Row row : rows) {
             // 放行出來的都是<b>完整的一列</b>，不是打到一半的半句，
             // 所以不過「語料裡有更長的」那一關。見 ChatRows。
-            record(row.template(), "desc", "chat", row.ctx(), null, true);
+            record(row.template(), "desc", "chat", row.ctx(), null, true, null);
         }
     }
 
@@ -245,7 +286,7 @@ public final class CaptureStore {
      *                  「是不是某一條打到一半」
      */
     private boolean record(String template, String role, String domain, String ctx,
-                           String full, boolean wholeLine) {
+                           String full, boolean wholeLine, String in) {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return false;   // 沒有字母 = 純符號或純數字，不值得記錄
         }
@@ -305,6 +346,8 @@ public final class CaptureStore {
         Captured row = new Captured(template.strip(), role, classify(domain, ctx),
                 ctx, nextSeq.getAndIncrement());
         row.full = full;
+        row.in = in;
+        row.place = whereNow();
         entries.put(key, row);
         dirty.set(true);
         return true;
@@ -501,7 +544,12 @@ public final class CaptureStore {
                 + " unapplied 是<語料有譯文、卻套不上去>的句子，畫面上會留原文："
                 + "why 寫的是哪一種佔位符差了幾個（src 原文幾個、dst 譯文幾個）。"
                 + "{#} 與 {p} 要跟原文一樣多，{~} 也是（或改用 {~1} {~2} 指名），"
-                + "{u} 可以少不能多。這一段每次開遊戲重新記。");
+                + "{u} 可以少不能多。這一段每次開遊戲重新記。"
+                + " 物品說明與選單：ctx 是 gui/block 的是畫面上折成好幾行的一整段，"
+                + "行跟行之間照畫面換行；收進語料時接成一句（用空白接）。"
+                + "gui/line 是單獨一行，或條列裡的一項。in 是那份說明的標題（哪一件物品、哪一個選單）。"
+                + " place 是收到的時候人在哪裡：討伐戰寫「Raid · 名稱 · 關卡」，"
+                + "Lootrun 寫「Lootrun · 地區」，其他寫地區名。同一關的漂浮字照 seq 排就是出現的順序。");
         meta.addProperty("colours", ColourAudit.size());
         meta.addProperty("overflow", OverflowAudit.size());
         meta.addProperty("unapplied", UnappliedAudit.size());

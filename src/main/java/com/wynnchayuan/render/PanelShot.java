@@ -80,8 +80,9 @@ public final class PanelShot {
      */
     private static void log(String stage) {
         try {
-            java.nio.file.Path dir = net.fabricmc.loader.api.FabricLoader.getInstance()
-                    .getConfigDir().resolve(WynnChaYuan.MOD_ID);
+            java.nio.file.Path dir = com.wynnchayuan.ConfigFolder.debugDir(
+                    net.fabricmc.loader.api.FabricLoader.getInstance()
+                            .getConfigDir().resolve(WynnChaYuan.MOD_ID));
             java.nio.file.Files.writeString(dir.resolve("shot-debug.txt"),
                     java.time.LocalTime.now().withNano(0) + "  " + stage
                             + System.lineSeparator(),

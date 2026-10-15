@@ -88,40 +88,120 @@ public final class GuiTextCapture {
         // 整段翻好了的，它的每一行都不是缺口。見 #covered。
         boolean[] covered = covered(templates, GuiTextCapture::whole);
 
-        boolean first = true;
+        // 標題是第一行有字的。底下每一段都帶著它（in），譯者才知道是哪一件東西的說明。
+        int titleAt = -1;
         for (int i = 0; i < templates.size(); i++) {
-            String template = templates.get(i);
-            if (template == null) {
-                continue;                      // 純圖示的分隔行
+            String t = templates.get(i);
+            if (t != null && !t.isBlank() && GlyphSplitter.hasLetter(t)) {
+                titleAt = i;
+                break;
             }
-            if (covered[i]) {
-                WynnChaYuan.store().noteEvent("gui.skipped.inBlock");
-                first = false;                 // 標題用掉了，下一行是內文
-                continue;
-            }
-            if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
-                continue;
-            }
-            // 公會選單常帶成員名稱；隊伍與好友介面則是<b>整格就是一個帳號名</b>
-            // （玩家頭顱的標題），那種片語比對抓不到——實機收到的 captured.json
-            // 裡就混進了六個玩家與公會名。見 PlayerDataFilter#looksAccountNamed。
-            if (first && skipTitle) {
-                WynnChaYuan.store().noteEvent("gui.blocked.playerData");
-                first = false;                 // 標題用掉了，下一行是內文不是標題
-                continue;
-            }
-            if (PlayerDataFilter.carriesPlayerData(template)
-                    || PlayerDataFilter.looksAccountNamed(template)) {
-                WynnChaYuan.store().noteEvent("gui.blocked.playerData");
-                continue;
-            }
-            WynnChaYuan.store().record(
-                    template,
-                    first ? "name" : "desc",
-                    "gui",
-                    first ? "gui/title" : "gui/line");
-            first = false;
         }
+        if (titleAt < 0) {
+            return;
+        }
+        String title = null;
+        String head = templates.get(titleAt);
+        // 公會選單常帶成員名稱；隊伍與好友介面則是<b>整格就是一個帳號名</b>
+        // （玩家頭顱的標題），那種片語比對抓不到——實機收到的 captured.json
+        // 裡就混進了六個玩家與公會名。見 PlayerDataFilter#looksAccountNamed。
+        if (skipTitle || PlayerDataFilter.carriesPlayerData(head)
+                || PlayerDataFilter.looksAccountNamed(head)) {
+            WynnChaYuan.store().noteEvent("gui.blocked.playerData");
+        } else {
+            title = head.strip();
+            if (covered[titleAt]) {
+                WynnChaYuan.store().noteEvent("gui.skipped.inBlock");
+            } else {
+                WynnChaYuan.store().recordIn(head, "name", "gui", "gui/title", null);
+            }
+        }
+        for (String[] row : rows(templates, covered, titleAt + 1,
+                WynnChaYuan.store()::isTranslated,
+                t -> PlayerDataFilter.carriesPlayerData(t) || PlayerDataFilter.looksAccountNamed(t))) {
+            if (row[1] == null) {
+                WynnChaYuan.store().noteEvent(row[0]);
+                continue;
+            }
+            WynnChaYuan.store().recordIn(row[0], "desc", "gui", row[1], title);
+        }
+    }
+
+    /**
+     * 標題底下要收的東西：一段一條。
+     *
+     * <h2>為什麼一段一條</h2>
+     * tooltip 的一句話被寬度切成好幾行。先前一行收一條，captured.json 裡就是
+     * 「restores {~} Mana to all」「nearby players every {~}s.」這種半句，散在
+     * 檔案各處，譯者要自己猜前後文；照著補又會補出逐行條目，蓋掉整段那條路。
+     * 現在照畫面的樣子把整段接起來（{@code gui/block}，行與行之間是換行），
+     * 收語料時再接成一句。
+     *
+     * <h2>什麼時候還是一行一條</h2>
+     * 段落裡有哪一行<b>自己</b>就有譯文——那是條列（「- {~}x Mydium」那種），
+     * 語料本來就是一行一條，硬接起來反而對不上。這時照舊逐行收（{@code gui/line}）。
+     *
+     * <h2>玩家資料</h2>
+     * 一段裡只要有一行帶著玩家資料，整段都不收：接回去的句子會把名字夾在中間。
+     *
+     * @param from       從哪一行開始（標題的下一行）
+     * @param translated 這一行自己有沒有譯文
+     * @param personal   這一行是不是帶著玩家資料
+     * @return 每一筆是 {模板, ctx}；ctx 是 {@code null} 的那筆是事件名（只記次數）
+     */
+    static List<String[]> rows(List<String> templates, boolean[] covered, int from,
+                               java.util.function.Predicate<String> translated,
+                               java.util.function.Predicate<String> personal) {
+        List<String[]> out = new java.util.ArrayList<>();
+        int i = from;
+        while (i < templates.size()) {
+            String line = templates.get(i);
+            if (line == null || line.isBlank()) {
+                i++;
+                continue;
+            }
+            int to = i;
+            while (to < templates.size() && templates.get(to) != null
+                    && !templates.get(to).isBlank()) {
+                to++;
+            }
+            paragraph(templates.subList(i, to), covered[i], translated, personal, out);
+            i = to;
+        }
+        return out;
+    }
+
+    private static void paragraph(List<String> lines, boolean covered,
+                                  java.util.function.Predicate<String> translated,
+                                  java.util.function.Predicate<String> personal,
+                                  List<String[]> out) {
+        if (covered) {
+            out.add(new String[] {"gui.skipped.inBlock", null});
+            return;
+        }
+        List<String> words = new java.util.ArrayList<>();
+        boolean listy = false;
+        for (String line : lines) {
+            if (!GlyphSplitter.hasLetter(line)) {
+                continue;
+            }
+            if (personal.test(line)) {
+                out.add(new String[] {"gui.blocked.playerData", null});
+                return;
+            }
+            listy |= translated.test(line);
+            words.add(line);
+        }
+        if (words.isEmpty()) {
+            return;
+        }
+        if (words.size() == 1 || listy) {
+            for (String line : words) {
+                out.add(new String[] {line, "gui/line"});
+            }
+            return;
+        }
+        out.add(new String[] {String.join("\n", words), "gui/block"});
     }
 
     /**

@@ -181,7 +181,7 @@ python tools/progress.py --next 30
 依第一次出現的順序編號。搬的是整個樣式，所以粗體、底線、Wynncraft 那些
 非原版的色碼都會一起帶過去；遊戲哪天改了調色盤，譯文自動跟著改。
 
-**哪一個編號是哪一個顏色**，看診斷檔 `config/wynnchayuan/majorid-debug.txt`
+**哪一個編號是哪一個顏色**，看診斷檔 `config/wynnchayuan/debug/majorid-debug.txt`
 裡的「可用的顏色」那一段（設定裡的診斷開著才會寫）：
 
 ```

@@ -382,6 +382,12 @@ public final class UpgradeSafetyTest {
         Files.writeString(dir.resolve("captured.json"), "{}");
         Files.writeString(dir.resolve("third-party-literals.json"), "{}");
         Files.writeString(dir.resolve("error-debug.txt"), "trace");
+        Files.writeString(dir.resolve("line-debug.txt"), "x");
+        Files.writeString(dir.resolve("dialogue-probe-3.txt"), "x");
+        Files.writeString(dir.resolve("wynnmod-tooltip-2.json"), "{}");
+        Files.writeString(dir.resolve("tooltip-partial-1.json"), "{}");
+        Files.writeString(dir.resolve("dialogue-colours.json"), "{}");
+        Files.writeString(dir.resolve("update-log.txt"), "x");
         Path zh = Files.createDirectories(dir.resolve("translations/zh_tw/ability"));
         Files.writeString(zh.getParent().resolve("npc.json.tmp"), "{\"ent");
         Files.writeString(zh.resolve("mage.json.tmp"), "{\"ent");
@@ -397,6 +403,24 @@ public final class UpgradeSafetyTest {
                         && Files.exists(dir.resolve("third-party-literals.json"))
                         && Files.exists(dir.resolve("error-debug.txt"))
                         && Files.exists(zh.getParent().resolve("npc.json")));
+        check("★ 舊版寫在外面的診斷檔搬進 debug/（不刪）",
+                Files.exists(dir.resolve("debug/line-debug.txt"))
+                        && Files.exists(dir.resolve("debug/dialogue-probe-3.txt"))
+                        && Files.exists(dir.resolve("debug/wynnmod-tooltip-2.json"))
+                        && Files.exists(dir.resolve("debug/tooltip-partial-1.json"))
+                        && !Files.exists(dir.resolve("line-debug.txt")));
+        Path debug = dir.resolve("debug");
+        Files.writeString(debug.resolve("dialogue-miss-1.txt"), "x");
+        Files.setLastModifiedTime(debug.resolve("dialogue-miss-1.txt"),
+                java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() - 20L * 86400000));
+        int stale = ConfigFolder.pruneDebug(dir, System.currentTimeMillis());
+        check("★ debug/ 裡超過兩週沒更新的刪掉，新的留著（刪 " + stale + " 個）",
+                stale == 1 && !Files.exists(debug.resolve("dialogue-miss-1.txt"))
+                        && Files.exists(debug.resolve("line-debug.txt")));
+        check("★ 不是診斷檔的不搬：對話顏色、更新紀錄、當機紀錄",
+                Files.exists(dir.resolve("dialogue-colours.json"))
+                        && Files.exists(dir.resolve("update-log.txt"))
+                        && Files.exists(dir.resolve("error-debug.txt")));
         check("資料夾不存在（第一次安裝）時什麼都不做",
                 ConfigFolder.tidy(dir.resolve("nope")) == 0);
     }
@@ -713,11 +737,11 @@ public final class UpgradeSafetyTest {
                     + s.translations().size() + " 條）");
             check("舊版資料夾：設定照讀、收集照讀", s.config().debugDumps()
                     && s.config().source() == CollectorConfig.Source.GITHUB && s.store().size() == 1);
-            check("舊版資料夾：shared.json 與暫存檔清掉，診斷檔留著",
+            check("舊版資料夾：shared.json 與暫存檔清掉，診斷檔留著（搬進 debug/）",
                     !Files.exists(dir.resolve("shared.json"))
                             && !Files.exists(dir.resolve("captured.json.tmp"))
                             && !Files.exists(tr.resolve("quest-dialogue.json.tmp"))
-                            && Files.exists(dir.resolve("layout-debug.txt")));
+                            && Files.exists(dir.resolve("debug/layout-debug.txt")));
             check("舊版資料夾：半截的 quest.json 補回來，譯文照常載入（壞檔 " + s.broken() + " 個）",
                     s.broken() == 1 && SafeFiles.parsesAsObject(tr.resolve("quest.json"))
                             && s.translations().size() > 10000);

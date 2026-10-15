@@ -20,7 +20,8 @@ import java.util.stream.Stream;
  * </ul>
  *
  * <p>只刪<b>這兩種</b>。玩家自己放的檔（{@code third-party-literals.json}、
- * 自己加的譯文）、診斷檔、匯出檔一律不碰。
+ * 自己加的譯文）、診斷檔、匯出檔一律不碰。舊版寫在外面的診斷檔只是搬進
+ * {@code debug/}，不刪。
  */
 public final class ConfigFolder {
 
@@ -30,6 +31,40 @@ public final class ConfigFolder {
      * <p>{@code shared.json} 是 0.1.9_5 以前的自動分享記錄（只有雜湊，沒有原文）。
      */
     static final List<String> OBSOLETE = List.of("shared.json");
+
+    /** 診斷檔的子資料夾。 */
+    public static final String DEBUG = "debug";
+
+    /**
+     * 舊版直接寫在外面的診斷檔。啟動時搬進 {@link #DEBUG}，不刪——回報問題的人
+     * 可能正要附上它們。
+     */
+    static final java.util.regex.Pattern OLD_DEBUG = java.util.regex.Pattern.compile(
+            "(?:actionbar-(?:columns|probe)-\\d+\\.txt"
+                    + "|dialogue-(?:probe|miss|choice-probe|tofu)-\\d+\\.txt"
+                    + "|font-dump\\.txt"
+                    + "|(?:layout|line|majorid|shot)-debug\\.txt"
+                    + "|overlay-debug(?:-\\d+)?\\.txt"
+                    + "|tooltip-debug(?:-\\d+)?\\.json"
+                    + "|tooltip-partial-\\d+\\.json"
+                    + "|[a-z]+-tooltip-\\d+\\.json)");
+
+    /**
+     * debug/ 裡多久沒更新就刪。診斷檔是拿來回報最近的問題的，兩週前的已經沒有人會看；
+     * 不清的話每查一次 bug 就多一批，資料夾越長越大（2026-10-15 使用者的資料夾裡有五十個）。
+     */
+    static final long DEBUG_KEEP_MS = 14L * 24 * 3600 * 1000;
+
+    /** 診斷檔的資料夾，沒有就建。建不起來回傳外層，至少檔案還寫得出去。 */
+    public static Path debugDir(Path dir) {
+        Path debug = dir.resolve(DEBUG);
+        try {
+            Files.createDirectories(debug);
+            return debug;
+        } catch (Exception e) {
+            return dir;
+        }
+    }
 
     /** 譯文快取往下找暫存檔最多幾層：{@code translations/<語言>/ability/x.json.tmp}。 */
     private static final int TMP_DEPTH = 4;
@@ -68,7 +103,63 @@ public final class ConfigFolder {
         if (removed > 0) {
             System.out.println("[WynnChaYuan] 清掉舊版留下的 " + removed + " 個檔（暫存檔與不再使用的記錄）");
         }
+        int moved = moveOldDebug(dir);
+        if (moved > 0) {
+            System.out.println("[WynnChaYuan] 把 " + moved + " 個診斷檔搬進 " + DEBUG + "/");
+        }
+        int stale = pruneDebug(dir, System.currentTimeMillis());
+        if (stale > 0) {
+            System.out.println("[WynnChaYuan] 刪掉 " + stale + " 個超過兩週沒更新的診斷檔");
+        }
         return removed;
+    }
+
+    /** debug/ 裡超過 {@link #DEBUG_KEEP_MS} 沒更新的檔刪掉。只看這一層，不往下找。 */
+    static int pruneDebug(Path dir, long now) {
+        Path debug = dir.resolve(DEBUG);
+        if (!Files.isDirectory(debug)) {
+            return 0;
+        }
+        int removed = 0;
+        try (Stream<Path> all = Files.list(debug)) {
+            for (Path p : all.filter(Files::isRegularFile).toList()) {
+                try {
+                    if (now - Files.getLastModifiedTime(p).toMillis() > DEBUG_KEEP_MS) {
+                        removed += delete(p);
+                    }
+                } catch (Exception e) {
+                    // 讀不到時間就留著
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[WynnChaYuan] 清診斷檔失敗：" + e);
+        }
+        return removed;
+    }
+
+    /** 舊版寫在外面的診斷檔搬進 debug/；同名的新檔已經在裡面就留著舊的不動。 */
+    static int moveOldDebug(Path dir) {
+        int moved = 0;
+        try (Stream<Path> top = Files.list(dir)) {
+            List<Path> old = top.filter(Files::isRegularFile)
+                    .filter(p -> OLD_DEBUG.matcher(p.getFileName().toString()).matches())
+                    .toList();
+            if (old.isEmpty()) {
+                return 0;
+            }
+            Path debug = Files.createDirectories(dir.resolve(DEBUG));
+            for (Path p : old) {
+                Path to = debug.resolve(p.getFileName().toString());
+                if (Files.exists(to)) {
+                    continue;
+                }
+                Files.move(p, to);
+                moved++;
+            }
+        } catch (Exception e) {
+            System.err.println("[WynnChaYuan] 搬診斷檔失敗：" + e);
+        }
+        return moved;
     }
 
     private static boolean isTmp(Path p) {
