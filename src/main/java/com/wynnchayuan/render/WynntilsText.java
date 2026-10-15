@@ -733,6 +733,17 @@ public final class WynntilsText {
                 || config == null || !config.wynntilsUi()) {
             return text;
         }
+        // 先看這一段：容器裡每一格角落的簡稱每一幀都走這裡，不必先為記分板組一次字串
+        //（Wynntils 的 getStringWithoutFormatting 每次都重組）。記分板不會畫在這兩段裡。
+        if (rawText) {
+            // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
+            // 只是遲早的事（實機那格叫 Fox，被換成了「狐狸」；傳送卷軸的簡稱
+            // 被換成了法師技能的「傳送」）。兩者都不是遊戲的文案，不該翻。
+            //
+            // 這一段<b>刻意擋在快取前面</b>：同一個字串在這一段裡不翻、
+            // 出了這一段要翻，進了快取就分不出來了。
+            return text;
+        }
         Board now = board;
         if (!now.shown().isEmpty()) {
             // 記分板那幾列先看：開關關掉就原樣，有整句切回來的譯文就用那一份。
@@ -748,15 +759,6 @@ public final class WynntilsText {
                     return whole;
                 }
             }
-        }
-        if (rawText) {
-            // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
-            // 只是遲早的事（實機那格叫 Fox，被換成了「狐狸」；傳送卷軸的簡稱
-            // 被換成了法師技能的「傳送」）。兩者都不是遊戲的文案，不該翻。
-            //
-            // 這一段<b>刻意擋在快取前面</b>：同一個字串在這一段裡不翻、
-            // 出了這一段要翻，進了快取就分不出來了。
-            return text;
         }
         // 現在是不是 Wynntils 的內容書或地圖：那裡的裸名是內容的名字。進快取的鍵——
         // 同一個字串在別的畫面上可能是技能或裝備。

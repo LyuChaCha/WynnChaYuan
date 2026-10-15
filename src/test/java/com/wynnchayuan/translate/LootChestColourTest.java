@@ -154,6 +154,15 @@ public final class LootChestColourTest {
             expect(e.path(), out, "擊敗", GREY, false);
         }
 
+        // issue #1237：遊戲送來的漂浮字最後多一列只有 À，條目只寫了看得見的兩行也要翻到
+        // \uff08\u9078\u4e00\u689d\u55ae\u5217\u5404\u81ea\u67e5\u4e0d\u5230\u7684\uff0c\u9010\u5217\u90a3\u689d\u8def\u88dc\u4e0d\u56de\u4f86\uff0c\u624d\u5b88\u5f97\u4f4f\u6574\u584a\u67e5\u8868\uff09
+        StyledText spaced = StyledText.fromString("\u00a7fStand here to\n\u00a7fdefend the elder\n\u00c0");
+        for (Entry e : entries(spaced, tw)) {
+            String got = e.out() == null ? "" : e.out().getString();
+            check("★ " + e.path() + "：結尾多一列 À 也查得到兩行的條目（實際 " + got.replace("\n", "⏎") + "）",
+                    got.contains("保護長老") && got.endsWith("\n\u00c0"));
+        }
+
         System.out.println(failures == 0 ? "\n寶箱漂浮字的顏色：全部通過"
                 : "\n寶箱漂浮字的顏色：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
