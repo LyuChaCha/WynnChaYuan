@@ -196,8 +196,9 @@
  "admin.pby": "Añadido por",
  "admin.staff": "Moderadores",
  "admin.staffnote": "Los moderadores pueden hacer en este sitio lo mismo que los desarrolladores: eliminar capas, vetar y quitar vetos, gestionar la lista especial y abrir pull requests para los créditos. La diferencia: no aparecen en la lista del equipo, no llevan una hoja delante del nombre y no pueden añadir ni quitar moderadores.",
- "admin.staffhow": "Escribe su ID de Minecraft, su UUID de Minecraft o su ID de usuario de Discord (de 17 a 20 dígitos: activa el Modo desarrollador en Discord, haz clic derecho sobre esa persona y elige «Copiar ID del usuario»). Una entrada añadida con el ID de Minecraft pasa a guardarse con el UUID la primera vez que esa persona inicia sesión. Se aplica al instante.",
- "admin.who": "ID de Minecraft, UUID o ID de usuario de Discord",
+ "admin.staffhow": "Escribe parte de su nombre de Discord, ID de Minecraft, UUID o ID de usuario de Discord y elígelo entre los miembros registrados que aparecen abajo (quienes han iniciado sesión en la web o han subido una capa). Si tiene una cuenta del juego vinculada, se guarda por UUID y tendrá permisos tanto si entra con el juego como con Discord. Para alguien que aún no se ha registrado, escribe su ID de Minecraft o su ID de usuario de Discord completo y pulsa Añadir; lo añadido por ID de Minecraft pasa a guardarse por UUID la primera vez que inicie sesión. Se aplica al momento.",
+ "admin.who": "Buscar miembro",
+ "admin.findph": "Nombre de Discord, ID de Minecraft, UUID…",
  "admin.kind": "Tipo",
  "admin.id": "ID",
  "admin.nostaff": "Todavía no hay moderadores.",
@@ -404,6 +405,9 @@
    "already listed": "Ese ID de Minecraft ya está en esta sección",
    "github not configured": "GITHUB_TOKEN no está configurado, así que no se puede abrir un pull request (consulta tools/presence/README.md)",
    "forbidden": "Tu sesión expiró o no estás en la lista de desarrolladores"
-  }
+  },
+  "findNone": "No hay ningún miembro registrado que coincida. Si pulsas «Añadir», se usará exactamente lo que escribiste.",
+  "isStaff": "Ya es moderador",
+  "chosen": "Seleccionado: {who}"
  }
 }

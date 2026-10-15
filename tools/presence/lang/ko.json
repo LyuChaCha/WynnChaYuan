@@ -196,8 +196,9 @@
  "admin.pby": "추가한 사람",
  "admin.staff": "모더레이터",
  "admin.staffnote": "모더레이터는 이 사이트에서 개발자가 하는 일을 할 수 있습니다: 망토 삭제, 차단과 차단 해제, 특별 명단 관리, 명단용 풀 리퀘스트 열기. 다만 팀 명단에 표시되지 않고, 이름 앞에 나뭇잎이 붙지 않으며, 모더레이터를 추가하거나 삭제할 수 없습니다.",
- "admin.staffhow": "상대의 Minecraft ID, Minecraft UUID 또는 Discord 사용자 ID를 입력하세요(17~20자리 숫자: Discord에서 개발자 모드를 켜고 상대를 우클릭한 뒤 “사용자 ID 복사하기”를 선택). Minecraft ID로 추가한 항목은 상대가 처음 로그인할 때 UUID로 바뀝니다. 추가하면 바로 적용됩니다.",
- "admin.who": "Minecraft ID, UUID 또는 Discord 사용자 ID",
+ "admin.staffhow": "상대의 Discord 이름, Minecraft ID, UUID 또는 Discord 사용자 ID 일부를 입력하고, 아래에 나오는 등록된 멤버(웹사이트에 로그인했거나 망토를 올린 적이 있는 사람) 중에서 고르세요. 게임 계정을 연결한 사람은 UUID로 저장되어 게임과 Discord 어느 쪽으로 로그인해도 권한이 있습니다. 아직 등록하지 않은 사람은 Minecraft ID나 Discord 사용자 ID를 전부 입력하고 추가를 누르세요. Minecraft ID로 추가하면 그 사람이 처음 로그인할 때 UUID로 바뀝니다. 추가하면 바로 적용됩니다.",
+ "admin.who": "멤버 검색",
+ "admin.findph": "Discord 이름, Minecraft ID, UUID…",
  "admin.kind": "종류",
  "admin.id": "ID",
  "admin.nostaff": "아직 모더레이터가 없습니다.",
@@ -404,6 +405,9 @@
    "already listed": "이 구역에 이미 있는 Minecraft ID입니다",
    "github not configured": "GITHUB_TOKEN 값이 설정되지 않아 풀 리퀘스트를 열 수 없습니다(tools/presence/README.md 참고)",
    "forbidden": "로그인이 만료되었거나 개발자 명단에 없습니다"
-  }
+  },
+  "findNone": "등록된 멤버를 찾지 못했습니다. 그대로 「추가」를 누르면 입력한 내용으로 추가합니다.",
+  "isStaff": "이미 관리자입니다",
+  "chosen": "선택됨: {who}"
  }
 }

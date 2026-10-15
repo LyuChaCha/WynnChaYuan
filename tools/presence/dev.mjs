@@ -87,6 +87,13 @@ data.set('staff:u:' + 'c'.repeat(32), {
   value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
 data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
 
+// 已註冊的人（管理頁「新增管理員」搜尋得到）：一位綁了遊戲帳號，一位只有 Discord（改版前存的，沒有 metadata）
+data.set('d:222222222222222222', {
+  value: JSON.stringify({ n: 'steve_dc', m: 'Steve', u: 'd'.repeat(32), t: Date.now() - 86400000 }),
+  metadata: { n: 'steve_dc', m: 'Steve', u: 'd'.repeat(32) } });
+data.set('l:' + 'd'.repeat(32), { value: '222222222222222222', metadata: null });
+data.set('d:333333333333333333', { value: JSON.stringify({ n: 'Sayla' }), metadata: null });
+
 // 一個貢獻公會。圖示與旗幟不在倉庫裡（是公會自己的圖）：指令列有給檔案就用，沒給就只有名字
 const guild = { slug: 'yuchayuan', name: 'YuChaYuan', tag: 'YCY', t: Date.now() - 7200000, by: developer, i: 0, b: 0 };
 [['icon', 'i', process.argv[3]], ['banner', 'b', process.argv[4]]].forEach(([kind, field, file]) => {
