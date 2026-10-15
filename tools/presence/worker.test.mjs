@@ -3,7 +3,7 @@ import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
-  MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS,
+  MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 
@@ -1252,6 +1252,44 @@ check('★ 開發者移除之後，兩個人都馬上沒有權限', r.status ===
   && (await worker.fetch(get('/admin/bans', bobNow), env)).status === 403
   && (await dc('/admin/bans', daveDc)).status === 403
   && (await (await worker.fetch(get('/me', bobNow), env)).json()).staff === false);
+// ---- ★ 新增管理員改成搜尋已註冊的人（使用者 2026-10-15：一格塞不下三種代號） ----
+{
+  const ERIC = '412892319889489924';
+  const ERIC_UUID = 'facc3ddab70a40dba028fe723bb53c88';
+  const OLD = '555555555555555555';
+  env.CORPUS.data.set('d:' + ERIC, { value: JSON.stringify({ n: 'n02sayla', m: 'eric18960', u: ERIC_UUID, t: NOW }),
+    metadata: { n: 'n02sayla', m: 'eric18960', u: ERIC_UUID } });
+  env.CORPUS.data.set('l:' + ERIC_UUID, { value: ERIC, metadata: null });
+  env.CORPUS.data.set('d:' + OLD, { value: JSON.stringify({ n: 'OldTimer' }), metadata: null });   // 改版前存的，沒有 metadata
+  const capeKey = 'cape:' + await publicId('c'.repeat(32));
+  const hadCape = env.CORPUS.data.get(capeKey);
+  env.CORPUS.data.set(capeKey, { value: '', metadata: { h: 'f'.repeat(64), u: 'c'.repeat(32), n: 'CapeOnly', v: NOW } });
+  const people = async (q, token = aliceWeb) => {
+    const res = await worker.fetch(get('/admin/people?q=' + encodeURIComponent(q), token), env);
+    return { status: res.status, list: res.status === 200 ? (await res.json()).people : null };
+  };
+  const eric = (out) => out.list && out.list[0] && out.list[0].discord === ERIC && out.list[0].mc === 'eric18960'
+    && out.list[0].uuid === ERIC_UUID && out.list[0].dname === 'n02sayla';
+  check('★ 搜尋：Discord 名、Minecraft ID、UUID（帶連字號）、Discord ID 都找得到同一個人',
+    eric(await people('n02')) && eric(await people('ERIC189')) && eric(await people('facc3dda-b70a'))
+    && eric(await people('41289231988')));
+  check('搜尋：改版前沒有 metadata 的帳號也找得到', (await people('oldtim')).list.some((p) => p.discord === OLD && p.dname === 'OldTimer'));
+  check('搜尋：只傳過披風、沒有網站帳號的人也找得到', (await people('capeonly')).list.some((p) => p.uuid === 'c'.repeat(32) && p.discord === null));
+  check('搜尋：完全相同的排在包含的前面', personScore({ mc: 'eric' }, 'eric') > personScore({ mc: 'eric18960' }, 'eric')
+    && personScore({ mc: 'eric18960' }, 'eric') > personScore({ dname: 'xeric' }, 'eric') && personScore({ mc: 'bob' }, 'eric') === 0);
+  check('搜尋：一個字不搜、一般玩家與管理員都不能搜', (await people('e')).list.length === 0
+    && (await people('eric', bobNow)).status === 403);
+  r = await staffPost('/admin/staff', { who: ERIC_UUID }, aliceWeb);
+  const saved = JSON.parse(env.CORPUS.data.get('staff:u:' + ERIC_UUID).value);
+  check('★ 選了之後照 UUID 加，名單上記著遊戲名字與 Discord 名字', r.status === 200 && saved.m === 'eric18960' && saved.dn === 'n02sayla'
+    && (await (await worker.fetch(get('/admin/staff', aliceWeb), env)).json()).staff.some((s) => s.discord === 'n02sayla'));
+  const ericDc = await issueDiscordToken(env, ERIC, NOW);
+  check('★ 照 UUID 加的管理員，用綁著的 Discord 登入網站也有權限', (await dc('/admin/bans', ericDc)).status === 200);
+  await staffPost('/admin/unstaff', { key: 'u:' + ERIC_UUID }, aliceWeb);
+  check('移除之後 Discord 那邊也馬上沒有權限', (await dc('/admin/bans', ericDc)).status === 403);
+  for (const k of ['d:' + ERIC, 'l:' + ERIC_UUID, 'd:' + OLD]) env.CORPUS.data.delete(k);
+  if (hadCape) env.CORPUS.data.set(capeKey, hadCape); else env.CORPUS.data.delete(capeKey);
+}
 check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['/admin'].includes('<div id="staff-block" hidden>')
   && pages['/admin'].includes('if (me.developer) {') && pages['/admin'].includes('if (!me || !me.staff) return;'));
 

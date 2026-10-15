@@ -196,8 +196,9 @@
  "admin.pby": "追加した人",
  "admin.staff": "モデレーター",
  "admin.staffnote": "モデレーターは、このサイトで開発者と同じ操作ができます：マントの削除、BAN と BAN の解除、特別リストの管理、メンバー一覧へのプルリクエストの作成。違いは、チーム一覧に表示されないこと、名前の前に葉っぱが付かないこと、モデレーターを追加・削除できないことです。",
- "admin.staffhow": "相手の Minecraft ID、Minecraft UUID、または Discord のユーザー ID を入力してください（17〜20 桁の数字。Discord で「開発者モード」をオンにし、相手を右クリックして「ユーザーIDをコピー」を選びます）。Minecraft ID で追加した場合は、相手が初めてログインしたときに UUID に切り替わります。追加するとすぐに反映されます。",
- "admin.who": "Minecraft ID、UUID、または Discord のユーザー ID",
+ "admin.staffhow": "相手の Discord 名、Minecraft ID、UUID、Discord のユーザー ID の一部を入力し、下に表示される登録済みのメンバー（サイトにログインしたことがある人、マントをアップロードしたことがある人）から選んでください。ゲームアカウントを連携している人は UUID で登録され、ゲームと Discord のどちらでログインしても権限があります。まだ登録していない人は、Minecraft ID か Discord のユーザー ID を全部入力して「追加」を押してください。Minecraft ID で追加した場合は、相手が初めてログインしたときに UUID に切り替わります。追加するとすぐに反映されます。",
+ "admin.who": "メンバーを検索",
+ "admin.findph": "Discord 名、Minecraft ID、UUID…",
  "admin.kind": "種類",
  "admin.id": "ID",
  "admin.nostaff": "モデレーターはまだいません。",
@@ -404,6 +405,9 @@
    "already listed": "その Minecraft ID は、すでにこの区分に登録されています",
    "github not configured": "GITHUB_TOKEN が設定されていないため、プルリクエストを作成できません（tools/presence/README.md を参照）",
    "forbidden": "ログインの有効期限が切れたか、開発者一覧に登録されていません"
-  }
+  },
+  "findNone": "登録済みのメンバーが見つかりません。そのまま「追加」を押すと、入力した内容で追加します。",
+  "isStaff": "すでにモデレーターです",
+  "chosen": "選択中：{who}"
  }
 }
