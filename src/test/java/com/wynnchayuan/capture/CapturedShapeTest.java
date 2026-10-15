@@ -34,6 +34,10 @@ public final class CapturedShapeTest {
                 "dialogue/King's Recruit#Aledar");
         store.record("Fine weather today.", "desc", "quest", "dialogue");
         store.record("Available Points", "desc", "gui", "gui/line");
+        store.knowsWhere(() -> "Raid · Nest of the Grootslangs · Slime Gathering");
+        store.recordIn("Stand here to\ndefend the elder", "desc", "gui", "gui/block", "Elder's Request");
+        store.knowsWhere(() -> { throw new IllegalStateException("還沒進世界"); });
+        store.record("Teleporter", "desc", "label", "label/floating");
         store.flush();
 
         JsonObject root = JsonParser.parseString(
@@ -52,6 +56,18 @@ public final class CapturedShapeTest {
                         first.get("speaker").getAsString()));
         check("★ 有 line 欄（第幾句）",
                 first.has("line") && first.get("line").getAsInt() == 1);
+        JsonObject block = rows.entrySet().stream()
+                .filter(e -> e.getValue().getAsJsonObject().get("src").getAsString().startsWith("Stand here"))
+                .map(e -> e.getValue().getAsJsonObject()).findFirst().orElse(null);
+        check("★ 介面字帶著是哪一份 tooltip 的（in）",
+                block != null && "Elder's Request".equals(block.get("in").getAsString()));
+        check("★ 帶著收到的時候在哪裡（place）",
+                block != null && block.get("place").getAsString().startsWith("Raid · Nest"));
+        JsonObject tele = rows.entrySet().stream()
+                .filter(e -> "Teleporter".equals(e.getValue().getAsJsonObject().get("src").getAsString()))
+                .map(e -> e.getValue().getAsJsonObject()).findFirst().orElse(null);
+        check("問地點出錯：照收，只是沒有 place", tele != null && !tele.has("place"));
+        check("沒有的欄位不寫出來（對話沒有 in）", !first.has("in"));
         check("第二句的 line 是 2",
                 rows.getAsJsonObject("King's Recruit #002")
                         .get("line").getAsInt() == 2);

@@ -79,12 +79,55 @@ public final class GuiBlockGapTest {
                 !GuiTextCapture.covered(single, GuiBlockGapTest::known)[0]);
 
         mountFood();
+        oneEntryPerParagraph();
 
         System.out.println(failures == 0
                 ? "整段缺口：全部通過" : "整段缺口：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 一段收一條：先前 captured.json 裡是「restores {~} Mana to all」「nearby players
+     * every {~}s.」這種半句各自一條，譯者得自己拼回去。
+     */
+    private static void oneEntryPerParagraph() {
+        List<String> totem = java.util.Arrays.asList(
+                "Mana Totem",
+                null,
+                "Summons a totem that",
+                "restores {~} Mana to all",
+                "nearby players every {~}s.",
+                "",
+                "- {~}x Mydium",
+                "- {~}x Copper Ingot",
+                "",
+                "Owner: Steve_123");
+        boolean[] none = new boolean[totem.size()];
+        java.util.function.Predicate<String> listItems = t -> t.startsWith("- {~}x Copper");
+        java.util.function.Predicate<String> personal = t -> t.startsWith("Owner:");
+        List<String[]> rows = GuiTextCapture.rows(totem, none, 1, listItems, personal);
+
+        report("折成三行的一句收成一條 gui/block，照畫面換行",
+                rows.stream().anyMatch(r -> "gui/block".equals(r[1]) && r[0].equals(
+                        "Summons a totem that\nrestores {~} Mana to all\nnearby players every {~}s.")));
+        report("半句不再各自一條", rows.stream().noneMatch(r -> "restores {~} Mana to all".equals(r[0])));
+        report("條列裡有一項自己就有譯文：整段照舊逐行收",
+                rows.stream().anyMatch(r -> "- {~}x Mydium".equals(r[0]) && "gui/line".equals(r[1]))
+                        && rows.stream().noneMatch(r -> r[0].contains("Mydium\n")));
+        report("帶玩家資料的那一段整段不收，只記次數",
+                rows.stream().noneMatch(r -> r[0].contains("Steve_123"))
+                        && rows.stream().anyMatch(r -> "gui.blocked.playerData".equals(r[0]) && r[1] == null));
+        report("標題不在這裡收（從標題下一行開始）",
+                rows.stream().noneMatch(r -> "Mana Totem".equals(r[0])));
+
+        boolean[] done = new boolean[totem.size()];
+        done[2] = done[3] = done[4] = true;
+        List<String[]> covered = GuiTextCapture.rows(totem, done, 1, listItems, personal);
+        report("整段翻好了：不收，只記次數",
+                covered.stream().noneMatch(r -> r[0].contains("Summons"))
+                        && covered.stream().anyMatch(r -> "gui.skipped.inBlock".equals(r[0])));
     }
 
     /**
