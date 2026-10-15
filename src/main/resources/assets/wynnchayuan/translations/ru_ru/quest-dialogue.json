@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23026,
-  "translated": 22777,
+  "count": 23033,
+  "translated": 22784,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -7532,7 +7532,7 @@
    "source": "wiki"
   },
   "A Journey Further#037": {
-   "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
+   "src": "Hah...that's the ticket. Which potion was this anyways... ...hair loss treatment? Why did THAT work?",
    "dst": "Ха… вот это то, что надо. Что это вообще за зелье… …от облысения? Почему ЭТО помогло?",
    "role": "desc",
    "kind": "dialogue",
@@ -8070,6 +8070,76 @@
    "stage": "Stage 12",
    "speaker": "???",
    "source": "wiki"
+  },
+  "A Journey Further#091": {
+   "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}]",
+   "dst": "Поговори с Aledar в {p}, в [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "A Journey Further#092": {
+   "src": "Talk to me when you are ready to go. But remember, we're on a mission. We won't be returning until it's finished.",
+   "dst": "Скажи, когда будешь готов идти. Но помни: у нас задание. Пока не закончим, не вернёмся.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Further#093": {
+   "src": "Aledar probably wouldn't like it if you left.",
+   "dst": "Aledar вряд ли понравится, если ты уйдёшь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Further#094": {
+   "src": "Kill {~} Upside Downer  to Destroy the Spikes",
+   "dst": "Убей {~} Upside Downer, чтобы разрушить шипы",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Further#095": {
+   "src": "It appears that green substance on the walls has bouncing properties.",
+   "dst": "Похоже, зелёное вещество на стенах пружинит.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Further#096": {
+   "src": "Looks like you're past the spikes. You can see the tower that was visible past them from here. Hopefully there is a way to break the spikes from this side nearby...",
+   "dst": "Похоже, шипы позади. Отсюда видна башня, что виднелась за ними. Надеюсь, где-то рядом есть способ сломать шипы с этой стороны...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Further#097": {
+   "src": "No matter how hard to try and pull the blade out, it does not budge...",
+   "dst": "Как ни тяни, клинок не поддаётся...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Home#000": {
    "src": "...you were scared of those, once upon a time. What a difference time makes.",
