@@ -249,6 +249,9 @@ gradle build
 | Roy | `aaroye` |
 | Chq | `Chqrish` |
 | 邊緣安德 | `Enderchen2580` |
+| AdoreFuSei | `AdoreFuSei` |
+| anilken | `Pandik` |
+| yool | `yool141` |
 
 ### 資料來源
 
