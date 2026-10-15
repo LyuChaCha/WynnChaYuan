@@ -1275,17 +1275,18 @@ export function personScore(person, q) {
   return best;
 }
 
-export const PEOPLE_MAX = 12;
+export const PEOPLE_MAX = 1000;
 
 /**
- * 管理頁「新增管理員」的搜尋：在網站帳號（用 Discord 登入過的，綁了遊戲帳號就連名字與 UUID）
- * 與傳過披風的人裡找。只有開發者。回 {people: [{discord, dname, mc, uuid}]}，對得越準越前面。
+ * 管理頁「新增管理員」的下拉選單：網站帳號（用 Discord 登入過的，綁了遊戲帳號就連名字與 UUID）
+ * 與傳過披風的人。只有開發者。回 {people: [{discord, dname, mc, uuid}]}：沒帶 q 是全部、照名字排；
+ * 帶了 q 只回對得上的，對得越準越前面。網頁展開選單時抓一次全部，篩選在瀏覽器裡做。
  */
 async function handlePeople(request, env, now) {
   const mine = await authority(request, env, now);
   if (!mine || !mine.developer) return no('forbidden', 403);
   const q = (new URL(request.url).searchParams.get('q') || '').trim().toLowerCase();
-  if (q.length < 2 || q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
+  if (q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
   const byUuid = new Map();
   const people = [];
   let cursor;
@@ -1314,8 +1315,9 @@ async function handlePeople(request, env, now) {
     byUuid.set(cape.u, person);
     people.push(person);
   }
-  const hits = people.map((p) => [personScore(p, q), p]).filter(([score]) => score > 0)
-    .sort((a, b) => b[0] - a[0] || String(a[1].mc || a[1].dname).localeCompare(String(b[1].mc || b[1].dname)))
+  const label = (p) => String(p.mc || p.dname || p.discord).toLowerCase();
+  const hits = people.map((p) => [q ? personScore(p, q) : 1, p]).filter(([score]) => score > 0)
+    .sort((a, b) => b[0] - a[0] || label(a[1]).localeCompare(label(b[1])))
     .slice(0, PEOPLE_MAX).map(([, p]) => p);
   return json({ people: hits }, 200, { 'cache-control': 'no-store' });
 }

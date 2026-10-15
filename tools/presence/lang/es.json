@@ -196,9 +196,9 @@
  "admin.pby": "Añadido por",
  "admin.staff": "Moderadores",
  "admin.staffnote": "Los moderadores pueden hacer en este sitio lo mismo que los desarrolladores: eliminar capas, vetar y quitar vetos, gestionar la lista especial y abrir pull requests para los créditos. La diferencia: no aparecen en la lista del equipo, no llevan una hoja delante del nombre y no pueden añadir ni quitar moderadores.",
- "admin.staffhow": "Escribe parte de su nombre de Discord, ID de Minecraft, UUID o ID de usuario de Discord y elígelo entre los miembros registrados que aparecen abajo (quienes han iniciado sesión en la web o han subido una capa). Si tiene una cuenta del juego vinculada, se guarda por UUID y tendrá permisos tanto si entra con el juego como con Discord. Para alguien que aún no se ha registrado, escribe su ID de Minecraft o su ID de usuario de Discord completo y pulsa Añadir; lo añadido por ID de Minecraft pasa a guardarse por UUID la primera vez que inicie sesión. Se aplica al momento.",
- "admin.who": "Buscar miembro",
- "admin.findph": "Nombre de Discord, ID de Minecraft, UUID…",
+ "admin.staffhow": "Abre el desplegable y elige a uno de los miembros registrados (quienes han iniciado sesión en la web o han subido una capa); puedes filtrar escribiendo un nombre de Discord, ID de Minecraft, UUID o ID de usuario de Discord. Si tiene una cuenta del juego vinculada, se guarda por UUID y tendrá permisos tanto si entra con el juego como con Discord. Para alguien que aún no se ha registrado, escribe su ID de Minecraft o su ID de usuario de Discord completo y pulsa Añadir; lo añadido por ID de Minecraft pasa a guardarse por UUID la primera vez que inicie sesión. Se aplica al momento.",
+ "admin.who": "Elegir miembro",
+ "admin.findph": "Haz clic para abrir o escribe para filtrar…",
  "admin.kind": "Tipo",
  "admin.id": "ID",
  "admin.nostaff": "Todavía no hay moderadores.",
@@ -408,6 +408,7 @@
   },
   "findNone": "No hay ningún miembro registrado que coincida. Si pulsas «Añadir», se usará exactamente lo que escribiste.",
   "isStaff": "Ya es moderador",
-  "chosen": "Seleccionado: {who}"
+  "chosen": "Seleccionado: {who}",
+  "findCount": "{n} mostrados ({all} registrados)"
  }
 }
