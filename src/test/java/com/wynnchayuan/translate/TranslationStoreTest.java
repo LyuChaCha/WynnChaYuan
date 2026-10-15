@@ -64,7 +64,7 @@ public final class TranslationStoreTest {
 
             // 子目錄要寫進 _index.json 才讀得到——Files.list 不遞迴。
             write(dir, "_index.json", """
-                {"files": ["quest/king-s-recruit.json", "quest/queen-s-recruit.json"]}""");
+                {"files": ["quest/king-s-recruit.json", "quest/queen-s-recruit.json", "quest/tower-of-ascension-quest.json"]}""");
 
             // 任務檔：每一條都標了它屬於哪個任務。
             // 兩個任務都有一句 "Hey, {u}!" 開頭，全庫看就是撞句；
@@ -95,6 +95,20 @@ public final class TranslationStoreTest {
                    "src": "Sound off, {u}! Are you ready? The ship leaves at dawn.",
                    "dst": "喂，{u}！準備好了嗎？船天一亮就開。",
                    "quest": "Queen's Recruit"
+                  }
+                 }
+                }""");
+
+            // wiki 用「(Quest)」跟同名的發現區分，任務檔照抄；追蹤欄送的沒有後綴。
+            write(dir, "quest/tower-of-ascension-quest.json", """
+                {
+                 "_meta": {"quest": "Tower of Ascension (Quest)"},
+                 "entries": {
+                  "Tower of Ascension (Quest)#003": {
+                   "src": "Have you got what it takes to conquer the tower?",
+                   "dst": "你有本事征服這座塔嗎？",
+                   "quest": "Tower of Ascension (Quest)",
+                   "speaker": "Old Man"
                   }
                  }
                 }""");
@@ -289,6 +303,15 @@ public final class TranslationStoreTest {
                     store.matchPrefix(half, 40, null) == null);
             check("任務名字對不上就當作不知道",
                     store.matchPrefix(half, 40, "No Such Quest") == null);
+            // 任務檔寫「Tower of Ascension (Quest)」，追蹤欄送「Tower of Ascension」。
+            // 先前這 12 個任務的任務限定比對一直落空。
+            check("★ 任務檔帶 (Quest) 後綴：用追蹤欄的名字也查得到",
+                    "Have you got what it takes to conquer the tower?"
+                            .equals(store.matchPrefix("Have you got what", 5, "Tower of Ascension")));
+            check("★ 這句屬於哪個任務，回的是追蹤欄的名字",
+                    "Tower of Ascension".equals(store.questOf("Have you got what it takes to conquer the tower?")));
+            check("★ 說話者名單也認得",
+                    Boolean.TRUE.equals(store.inCast("Tower of Ascension", "Old Man")));
 
             // wiki 抄來的台詞會跟遊戲裡實際跑的字不一樣（官方改過詞、wiki 還沒跟上）。
             // 兩個版本都在庫裡時，逐字打字會先貼 wiki 版、多打幾個字再換成校訂版——
