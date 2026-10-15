@@ -751,7 +751,7 @@ public final class TranslationStore {
                 noteLoose(srcKey, dst.strip());
                 // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
                 // 單一個任務裡通常只有一句。見 #matchPrefix(String, int, String)。
-                String quest = optString(e, "quest");
+                String quest = questName(optString(e, "quest"));
                 if (quest != null && !quest.isBlank()) {
                     byQuest.computeIfAbsent(quest.strip(),
                             q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
@@ -1513,6 +1513,22 @@ public final class TranslationStore {
             return null;
         }
         return cast.contains(speaker.strip());
+    }
+
+    /**
+     * 語料的任務名換成遊戲追蹤欄送的那個名字。
+     *
+     * <p>wiki 用「X (Quest)」跟同名的地點、發現區分（Tower of Ascension 既是任務也是
+     * 發現），任務檔的 quest 欄位照抄了 wiki 的頁名；追蹤欄送的是「Tower of Ascension」。
+     * 不剝掉的話，那 12 個任務的任務限定比對、說話者名單一直都對不上，
+     * 而且沒有任何錯誤訊息。資料照 wiki 留著（工具用它找 {@code -quest.json} 檔）。
+     */
+    static String questName(String quest) {
+        if (quest == null) {
+            return null;
+        }
+        String q = quest.strip();
+        return q.endsWith(" (Quest)") ? q.substring(0, q.length() - " (Quest)".length()).strip() : q;
     }
 
     /** @return 語料裡這一句屬於哪個任務；沒有標就回傳 {@code null}。給收集端核對用 */
