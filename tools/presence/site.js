@@ -625,12 +625,17 @@ const STYLE = String.raw`
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
   /* 新增管理員的搜尋：打幾個字，下面列出已註冊的人 */
   .finder { position: relative; }
-  .finder-hits { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 4; margin: 0; padding: 4px; list-style: none; max-height: 320px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); box-shadow: 0 18px 44px #000a; }
+  .finder input { padding-right: 32px; cursor: pointer; }
+  .finder input:focus { cursor: text; }
+  .finder::after { content: ''; position: absolute; right: 13px; bottom: 17px; width: 7px; height: 7px; border-right: 2px solid var(--ink-2); border-bottom: 2px solid var(--ink-2); transform: rotate(45deg); pointer-events: none; transition: transform var(--fast) var(--out); }
+  .finder.open::after { transform: translateY(4px) rotate(-135deg); }
+  .finder-hits { position: absolute; left: 0; right: 0; min-width: min(360px, calc(100vw - 32px)); top: calc(100% + 4px); z-index: 4; margin: 0; padding: 4px; list-style: none; max-height: 320px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); box-shadow: 0 18px 44px #000a; }
   .finder-hits li { display: flex; align-items: center; gap: 10px; padding: 7px 8px; border-radius: 7px; cursor: pointer; transition: background-color var(--fast) ease; }
   .finder-hits li:hover, .finder-hits li[aria-selected="true"] { background: var(--panel-2); }
   .finder-hits li.taken, .finder-hits li.none { cursor: default; background: none; }
   .finder-hits li.taken { opacity: .55; }
   .finder-hits li.none { color: var(--ink-2); font-size: 13px; }
+  .finder-hits li.count { cursor: default; background: none; padding: 4px 8px 6px; color: var(--ink-2); font-size: 12px; }
   .finder-hits img { width: 28px; height: 28px; border-radius: 5px; image-rendering: pixelated; flex: none; }
   .finder-hits div { min-width: 0; }
   .finder-hits b { display: block; font-weight: 600; color: var(--ink); }
@@ -852,8 +857,8 @@ export const TEXT = {
     'admin.noperks': '名單是空的。', 'admin.pwhen': '加入的時間', 'admin.pby': '誰加的',
     'admin.staff': '管理員',
     'admin.staffnote': '管理員可以做開發者在這個網站上做的事：刪除披風、封禁與解除封禁、管理特別名單、替名單開 PR。差別是不會出現在團隊名單上、名字前面沒有葉子，也不能新增或移除管理員。',
-    'admin.staffhow': '打他的 Discord 名稱、Minecraft ID、UUID 或 Discord 使用者 ID 的幾個字，從下面列出來的已註冊成員（登入過網站或傳過披風的人）裡選一個；有綁遊戲帳號的會記成 UUID，用遊戲或 Discord 登入都有權限。還沒註冊的人也可以直接打完整的 Minecraft ID 或 Discord 使用者 ID 再按加入，用 Minecraft ID 加的等他登入一次就會改記成 UUID。加了馬上生效。',
-    'admin.who': '搜尋成員', 'admin.findph': 'Discord 名稱、Minecraft ID、UUID…',
+    'admin.staffhow': '點開下拉選單，從已註冊成員（登入過網站或傳過披風的人）裡選一位；可以打 Discord 名稱、Minecraft ID、UUID 或 Discord 使用者 ID 篩選。有綁遊戲帳號的會記成 UUID，用遊戲或 Discord 登入都有權限。還沒註冊的人也可以直接打完整的 Minecraft ID 或 Discord 使用者 ID 再按加入，用 Minecraft ID 加的等他登入一次就會改記成 UUID。加了馬上生效。',
+    'admin.who': '選擇成員', 'admin.findph': '點一下展開，或打字篩選…',
     'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
     'admin.guilds': '貢獻公會',
     'admin.guildsnote': '會出現在首頁「團隊」那一段，點下去連到那個公會在 Wynncraft 的頁面。先加名字（要跟 Wynncraft 上的一模一樣），再各上傳一張圖示與旗幟。圖會先縮小再傳，PNG、JPEG、WebP 都可以。',
@@ -971,6 +976,7 @@ export const TEXT = {
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
       confirmUnstaff: '把 {who} 從管理員移除？', notYet: '還沒登入過',
       findNone: '沒有找到已註冊的人。直接按「加入」會照你打的字加。', isStaff: '已經是管理員', chosen: '已選：{who}',
+      findCount: '{n} 位（已註冊 {all} 位）',
       staff: {
         'bad who': '看不懂這一格：要填 Minecraft ID、UUID，或 Discord 使用者 ID（17 到 20 位數字）',
         'bad note': '備註最多 60 個字',
@@ -1124,8 +1130,8 @@ export const TEXT = {
     'admin.noperks': 'The list is empty.', 'admin.pwhen': 'Added at', 'admin.pby': 'Added by',
     'admin.staff': 'Moderators',
     'admin.staffnote': 'Moderators can do what developers do on this website: remove capes, ban and unban, manage the special list, and open pull requests for the credits. The difference: they are not shown on the team list, get no leaf before their name, and cannot add or remove moderators.',
-    'admin.staffhow': 'Type a few characters of their Discord name, Minecraft ID, UUID or Discord user ID and pick them from the registered members listed below (people who have signed in to the website or uploaded a cape). Someone with a linked game account is saved by UUID, so signing in with either the game or Discord works. For someone who has not registered yet, type their full Minecraft ID or Discord user ID and press Add; an entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
-    'admin.who': 'Find a member', 'admin.findph': 'Discord name, Minecraft ID, UUID…',
+    'admin.staffhow': 'Open the drop-down and pick one of the registered members (people who have signed in to the website or uploaded a cape); type a Discord name, Minecraft ID, UUID or Discord user ID to filter. Someone with a linked game account is saved by UUID, so signing in with either the game or Discord works. For someone who has not registered yet, type their full Minecraft ID or Discord user ID and press Add; an entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
+    'admin.who': 'Choose a member', 'admin.findph': 'Click to open, or type to filter…',
     'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
     'admin.guilds': 'Contributing guilds',
     'admin.guildsnote': 'These appear in the team section of the home page and link to the guild’s page on Wynncraft. Add the name first (exactly as it is on Wynncraft), then upload an icon and a banner. Images are shrunk before upload; PNG, JPEG and WebP all work.',
@@ -1242,6 +1248,7 @@ export const TEXT = {
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
       confirmUnstaff: 'Remove {who} from the moderators?', notYet: 'Has not signed in yet',
       findNone: 'No registered member matches. Pressing “Add” uses exactly what you typed.', isStaff: 'Already a moderator', chosen: 'Selected: {who}',
+      findCount: '{n} shown ({all} registered)',
       staff: {
         'bad who': 'That is not a Minecraft ID, a UUID, or a Discord user ID (17 to 20 digits)',
         'bad note': 'The note can be 60 characters at most',
@@ -3824,13 +3831,14 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
-  /* 新增管理員：打幾個字搜尋已註冊的人（登入過網站或傳過披風的），從清單裡選。
+  /* 新增管理員：下拉選單列出已註冊的人（登入過網站或傳過披風的），打字是篩選。
+     名單在第一次展開時抓一次，之後都在這裡篩。
      有綁遊戲帳號的記 UUID（用遊戲或 Discord 登入都認得），只有 Discord 的記 Discord ID。
      沒選就照打的字加，跟以前一樣（還沒註冊的人）。 */
   var finder = document.getElementById('s-who');
   var hits = document.getElementById('s-hits');
   var pickNote = document.getElementById('s-pick');
-  var picked = null, found = [], active = -1, findTimer = 0, findSeq = 0;
+  var picked = null, found = [], active = -1, everyone = null;
   function dashedId(u) { return [u.slice(0, 8), u.slice(8, 12), u.slice(12, 16), u.slice(16, 20), u.slice(20)].join('-'); }
   function personName(p) { return p.mc || p.dname || p.discord; }
   function personTaken(p) { return Boolean((p.uuid && staffKeys['u:' + p.uuid]) || (p.discord && staffKeys['d:' + p.discord])); }
@@ -3840,16 +3848,51 @@ const ADMIN_JS = '<script>' + String.raw`
     if (p.uuid) lines.push((p.mc ? 'Minecraft ' + p.mc + ' · ' : '') + dashedId(p.uuid));
     return lines;
   }
+  /* 跟 Worker 的 personScore 同一套：完全相同 3、開頭相同 2、包含 1 */
+  function personScore(p, q) {
+    var best = 0, bare = q.replace(/-/g, '');
+    [[p.dname, q], [p.mc, q], [p.discord, q], [p.uuid, bare]].forEach(function (pair) {
+      var value = String(pair[0] || '').toLowerCase(), text = pair[1];
+      if (!value || !text) return;
+      var score = value === text ? 3 : value.indexOf(text) === 0 ? 2 : value.indexOf(text) >= 0 ? 1 : 0;
+      if (score > best) best = score;
+    });
+    return best;
+  }
+  function loadPeople() {
+    if (!everyone) {
+      everyone = api('/admin/people').then(function (r) { return r.ok ? r.json() : { people: [] }; })
+        .then(function (data) { return data.people || []; })
+        .catch(function () { everyone = null; return []; });
+    }
+    return everyone;
+  }
+  function openHits() {
+    if (!hits.children.length) { hits.replaceChildren(el('li', 'none', L.loading)); hits.hidden = false; }
+    loadPeople().then(function (all) {
+      if (document.activeElement !== finder) return;
+      var q = picked ? '' : finder.value.trim().toLowerCase();
+      var list = !q ? all : all.map(function (p) { return [personScore(p, q), p]; })
+        .filter(function (pair) { return pair[0] > 0; })
+        .sort(function (a, b) { return b[0] - a[0]; })
+        .map(function (pair) { return pair[1]; });
+      showHits(list, all.length);
+    });
+  }
   function closeHits() {
     hits.hidden = true;
+    finder.parentNode.classList.remove('open');
     finder.setAttribute('aria-expanded', 'false');
     finder.removeAttribute('aria-activedescendant');
     active = -1;
   }
   function mark(i) {
     active = i;
-    Array.prototype.forEach.call(hits.children, function (li, n) { li.setAttribute('aria-selected', n === i ? 'true' : 'false'); });
-    var li = hits.children[i];
+    found.forEach(function (p, n) {
+      var li = document.getElementById('s-hit-' + n);
+      if (li) li.setAttribute('aria-selected', n === i ? 'true' : 'false');
+    });
+    var li = document.getElementById('s-hit-' + i);
     if (li) { finder.setAttribute('aria-activedescendant', li.id); li.scrollIntoView({ block: 'nearest' }); }
   }
   function choose(p) {
@@ -3859,10 +3902,11 @@ const ADMIN_JS = '<script>' + String.raw`
     pickNote.textContent = fmt(L.chosen, { who: personLines(p).join(' · ') });
     closeHits();
   }
-  function showHits(list) {
+  function showHits(list, total) {
     found = list;
     hits.replaceChildren();
     if (!list.length) hits.append(el('li', 'none', L.findNone));
+    else hits.append(el('li', 'count', fmt(L.findCount, { n: list.length, all: total })));
     list.forEach(function (p, i) {
       var li = el('li', personTaken(p) ? 'taken' : '');
       li.id = 's-hit-' + i;
@@ -3882,24 +3926,19 @@ const ADMIN_JS = '<script>' + String.raw`
       hits.append(li);
     });
     hits.hidden = false;
+    finder.parentNode.classList.add('open');
     finder.setAttribute('aria-expanded', 'true');
     active = -1;
   }
+  finder.addEventListener('focus', openHits);
+  finder.addEventListener('click', function () { if (hits.hidden) openHits(); });
   finder.addEventListener('input', function () {
     picked = null;
     pickNote.textContent = '';
-    clearTimeout(findTimer);
-    var q = finder.value.trim();
-    var seq = ++findSeq;
-    if (q.length < 2) { closeHits(); return; }
-    findTimer = setTimeout(function () {
-      api('/admin/people?q=' + encodeURIComponent(q))
-        .then(function (r) { return r.ok ? r.json() : { people: [] }; })
-        .then(function (data) { if (seq === findSeq && document.activeElement === finder) showHits(data.people || []); })
-        .catch(function () {});
-    }, 220);
+    openHits();
   });
   finder.addEventListener('keydown', function (e) {
+    if (hits.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) { e.preventDefault(); openHits(); return; }
     if (hits.hidden || !found.length) { if (e.key === 'Escape') closeHits(); return; }
     if (e.key === 'ArrowDown') { e.preventDefault(); mark(active < 0 ? 0 : (active + 1) % found.length); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); mark(active <= 0 ? found.length - 1 : active - 1); }

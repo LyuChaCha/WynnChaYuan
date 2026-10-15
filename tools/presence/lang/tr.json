@@ -196,9 +196,9 @@
  "admin.pby": "Ekleyen",
  "admin.staff": "Moderatörler",
  "admin.staffnote": "Moderatörler, geliştiricilerin bu sitede yaptıklarını yapabilir: pelerin silmek, yasaklamak ve yasağı kaldırmak, özel listeyi yönetmek ve emeği geçenler listesi için pull request açmak. Farkı şu: ekip listesinde görünmezler, adlarının önünde yaprak olmaz ve moderatör ekleyip çıkaramazlar.",
- "admin.staffhow": "Kişinin Discord adının, Minecraft ID’sinin, UUID’sinin veya Discord kullanıcı ID’sinin birkaç karakterini yazın ve aşağıda listelenen kayıtlı üyeler arasından seçin (siteye giriş yapmış ya da pelerin yüklemiş kişiler). Oyun hesabı bağlı olan kişi UUID ile kaydedilir; oyunla da Discord ile de giriş yapsa yetkisi olur. Henüz kayıt olmamış biri için tam Minecraft ID’sini veya Discord kullanıcı ID’sini yazıp Ekle’ye basın; Minecraft ID ile eklenen kayıt, kişi ilk giriş yaptığında UUID’ye çevrilir. Hemen geçerli olur.",
- "admin.who": "Üye ara",
- "admin.findph": "Discord adı, Minecraft ID, UUID…",
+ "admin.staffhow": "Açılır listeyi açın ve kayıtlı üyelerden birini seçin (siteye giriş yapmış ya da pelerin yüklemiş kişiler); Discord adı, Minecraft ID, UUID veya Discord kullanıcı ID’si yazarak filtreleyebilirsiniz. Oyun hesabı bağlı olan kişi UUID ile kaydedilir; oyunla da Discord ile de giriş yapsa yetkisi olur. Henüz kayıt olmamış biri için tam Minecraft ID’sini veya Discord kullanıcı ID’sini yazıp Ekle’ye basın; Minecraft ID ile eklenen kayıt, kişi ilk giriş yaptığında UUID’ye çevrilir. Hemen geçerli olur.",
+ "admin.who": "Üye seç",
+ "admin.findph": "Açmak için tıklayın veya filtrelemek için yazın…",
  "admin.kind": "Tür",
  "admin.id": "ID",
  "admin.nostaff": "Henüz moderatör yok.",
@@ -408,6 +408,7 @@
   },
   "findNone": "Eşleşen kayıtlı üye yok. Ekle’ye basarsanız tam olarak yazdığınız kullanılır.",
   "isStaff": "Zaten moderatör",
-  "chosen": "Seçildi: {who}"
+  "chosen": "Seçildi: {who}",
+  "findCount": "{n} gösteriliyor ({all} kayıtlı)"
  }
 }

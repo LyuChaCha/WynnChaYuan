@@ -1277,7 +1277,11 @@ check('★ 開發者移除之後，兩個人都馬上沒有權限', r.status ===
   check('搜尋：只傳過披風、沒有網站帳號的人也找得到', (await people('capeonly')).list.some((p) => p.uuid === 'c'.repeat(32) && p.discord === null));
   check('搜尋：完全相同的排在包含的前面', personScore({ mc: 'eric' }, 'eric') > personScore({ mc: 'eric18960' }, 'eric')
     && personScore({ mc: 'eric18960' }, 'eric') > personScore({ dname: 'xeric' }, 'eric') && personScore({ mc: 'bob' }, 'eric') === 0);
-  check('搜尋：一個字不搜、一般玩家與管理員都不能搜', (await people('e')).list.length === 0
+  const all = await people('');
+  check('★ 沒帶字：回全部已註冊的人（下拉選單用），照名字排',
+    ['n02sayla', 'OldTimer', 'CapeOnly'].every((n) => all.list.some((p) => p.dname === n || p.mc === n))
+    && all.list.map((p) => (p.mc || p.dname || p.discord).toLowerCase()).every((n, i, a) => i === 0 || a[i - 1].localeCompare(n) <= 0));
+  check('搜尋：一個字也篩得出來；一般玩家與管理員都不能搜', eric(await people('n0'))
     && (await people('eric', bobNow)).status === 403);
   r = await staffPost('/admin/staff', { who: ERIC_UUID }, aliceWeb);
   const saved = JSON.parse(env.CORPUS.data.get('staff:u:' + ERIC_UUID).value);
