@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="logo/2026/wynnchayuan-banner-transparent-for-dark-2640.png">
-    <img src="logo/2026/wynnchayuan-banner-transparent-for-light-2640.png" width="760" alt="WynnChaYuan">
-  </picture>
+  <img src="logo/2026/wynnchayuan-banner-animated-680x240.gif" width="680" alt="WynnChaYuan">
 </p>
 
 # WynnChaYuan
