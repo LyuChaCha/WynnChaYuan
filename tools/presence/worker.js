@@ -3006,6 +3006,285 @@ function texture(path) {
   });
 }
 
+// ---------------------------------------------------------------- Discord 機器人（斜線指令）
+//
+// 使用者 2026-10-16：「worker 可以順便架 Discord bot 嗎」「看當前使用者披風、網站狀態，或查看譯文」。
+// 用 Discord 的 Interactions：指令用 HTTP 送到 /api/discord/interactions，這裡回訊息，不需要常駐的機器人主機。
+// 只回應斜線指令，讀不到聊天內容。
+//
+// 要設定的：wrangler.toml 的 DISCORD_PUBLIC_KEY（驗簽名用，公開的值）、secret DISCORD_BOT_TOKEN
+// （註冊指令用，使用者自己 wrangler secret put）、Developer Portal 的 Interactions Endpoint URL。
+// 指令在管理頁按「註冊 Discord 指令」送出去（POST /api/admin/discord/register，只有開發者）。
+
+const DISCORD_V10 = 'https://discord.com/api/v10';
+const SITE = 'https://wynnchayuan.com';
+
+const BOT_TEXT = {
+  zh: {
+    status: '網站狀態', users: '裝了模組的玩家', capes: '穿著披風', pending: '待審核的披風',
+    props: '協作翻譯：投票中的提案', polls: '協作翻譯：投票中的術語', none: '沒有',
+    capeOf: '{name} 的披風', noCape: '找不到 {name} 的披風（沒上傳過，或現在沒穿）',
+    privateCape: '{name} 的披風設成不公開。', pendingCape: '{name} 的披風還在審核中。', badName: '這不像 Minecraft 的名字。',
+    kind: '格式', since: '換上的時間', gallery: '披風一覽',
+    found: '「{q}」找到 {n} 條，列出前 {shown} 條', notFound: '「{q}」在 {lang} 的語料裡找不到。', tooShort: '關鍵字至少兩個字。',
+    untranslated: '（還沒翻）', indexFail: '語料讀不到，晚點再試。', more: '在網站上看更多', unknown: '不認得這個指令。',
+  },
+  cn: {
+    status: '网站状态', users: '装了模组的玩家', capes: '穿着披风', pending: '待审核的披风',
+    props: '协作翻译：投票中的提案', polls: '协作翻译：投票中的术语', none: '没有',
+    capeOf: '{name} 的披风', noCape: '找不到 {name} 的披风（没上传过，或现在没穿）',
+    privateCape: '{name} 的披风设为不公开。', pendingCape: '{name} 的披风还在审核中。', badName: '这不像 Minecraft 的名字。',
+    kind: '格式', since: '换上的时间', gallery: '披风一览',
+    found: '「{q}」找到 {n} 条，列出前 {shown} 条', notFound: '「{q}」在 {lang} 的语料里找不到。', tooShort: '关键字至少两个字。',
+    untranslated: '（还没翻）', indexFail: '语料读不到，稍后再试。', more: '在网站上看更多', unknown: '不认识这个指令。',
+  },
+  en: {
+    status: 'Website status', users: 'Players with the mod', capes: 'Wearing a cape', pending: 'Capes awaiting review',
+    props: 'Translate: suggestions open for voting', polls: 'Translate: terms open for voting', none: 'none',
+    capeOf: "{name}'s cape", noCape: 'No cape found for {name} (never uploaded, or not wearing one now).',
+    privateCape: "{name}'s cape is not public.", pendingCape: "{name}'s cape is still awaiting review.",
+    badName: 'That does not look like a Minecraft name.',
+    kind: 'Format', since: 'Worn since', gallery: 'Cape gallery',
+    found: '{n} lines match "{q}", showing the first {shown}', notFound: 'Nothing matches "{q}" in {lang}.',
+    tooShort: 'Use at least two characters.', untranslated: '(not translated yet)', indexFail: 'Could not load the translations. Try again later.',
+    more: 'See more on the website', unknown: 'Unknown command.',
+  },
+};
+const LANG_LABEL = { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' };
+
+/** Discord 的介面語言 → 回覆用哪一套字、預設查哪個語言的語料。 */
+function botLocale(locale) {
+  const l = String(locale || '');
+  if (l === 'zh-CN') return { text: BOT_TEXT.cn, corpus: 'zh_cn' };
+  if (l.startsWith('zh')) return { text: BOT_TEXT.zh, corpus: 'zh_tw' };
+  const corpus = { ja: 'ja_jp', ko: 'ko_kr', ru: 'ru_ru', 'es-ES': 'es_es', 'es-419': 'es_es', tr: 'tr_tr' }[l] || 'zh_tw';
+  return { text: BOT_TEXT.en, corpus };
+}
+
+const botFmt = (s, values) => String(s).replace(/\{(\w+)\}/g, (all, k) => (k in values ? String(values[k]) : all));
+const clip = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + '…' : String(s));
+
+/** 指令的定義（註冊時原樣送出）。名稱用英文，繁簡中文另外給在地化的名字。 */
+export const DISCORD_COMMANDS = [
+  {
+    name: 'status', type: 1,
+    description: 'WynnChaYuan website status',
+    name_localizations: { 'zh-TW': '狀態', 'zh-CN': '状态' },
+    description_localizations: { 'zh-TW': '網站狀態：玩家、披風、待審核、協作翻譯', 'zh-CN': '网站状态：玩家、披风、待审核、协作翻译' },
+  },
+  {
+    name: 'cape', type: 1,
+    description: "Show a player's WynnChaYuan cape",
+    name_localizations: { 'zh-TW': '披風', 'zh-CN': '披风' },
+    description_localizations: { 'zh-TW': '看某位玩家現在的 WynnChaYuan 披風', 'zh-CN': '看某位玩家现在的 WynnChaYuan 披风' },
+    options: [{
+      type: 3, name: 'player', required: true, max_length: 16,
+      description: 'Minecraft name',
+      name_localizations: { 'zh-TW': '玩家', 'zh-CN': '玩家' },
+      description_localizations: { 'zh-TW': 'Minecraft 名字', 'zh-CN': 'Minecraft 名字' },
+    }],
+  },
+  {
+    name: 'translate', type: 1,
+    description: 'Search the WynnChaYuan translations',
+    name_localizations: { 'zh-TW': '翻譯', 'zh-CN': '翻译' },
+    description_localizations: { 'zh-TW': '搜尋 WynnChaYuan 的語料（原文或譯文）', 'zh-CN': '搜索 WynnChaYuan 的语料（原文或译文）' },
+    options: [
+      {
+        type: 3, name: 'text', required: true, min_length: 2, max_length: 100,
+        description: 'Words in the English source or the translation',
+        name_localizations: { 'zh-TW': '關鍵字', 'zh-CN': '关键字' },
+        description_localizations: { 'zh-TW': '英文原文或譯文裡的字', 'zh-CN': '英文原文或译文里的字' },
+      },
+      {
+        type: 3, name: 'language', required: false,
+        description: 'Which translation (default: follows your Discord language)',
+        name_localizations: { 'zh-TW': '語言', 'zh-CN': '语言' },
+        description_localizations: { 'zh-TW': '哪一種語言的譯文（預設跟著 Discord 的語言）', 'zh-CN': '哪一种语言的译文（默认跟着 Discord 的语言）' },
+        choices: Object.entries(LANG_LABEL).map(([value, name]) => ({ name, value })),
+      },
+    ],
+  },
+];
+
+function hexBytes(hex) {
+  const out = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
+  return out;
+}
+
+/** 這個請求是不是 Discord 送來的：Ed25519 簽名，簽的是時間戳加上原始內容。 */
+export async function verifyDiscord(publicKey, signature, timestamp, body) {
+  if (!/^[0-9a-f]{64}$/i.test(publicKey || '') || !/^[0-9a-f]{128}$/i.test(signature || '') || !timestamp) return false;
+  try {
+    const key = await crypto.subtle.importKey('raw', hexBytes(publicKey), { name: 'Ed25519' }, false, ['verify']);
+    return await crypto.subtle.verify('Ed25519', key, hexBytes(signature), new TextEncoder().encode(timestamp + body));
+  } catch (e) {
+    return false;
+  }
+}
+
+/** 語料索引解析過的版本，同一個執行個體裡留十分鐘（一份八九 MB，不要每次都重新解析）。 */
+const parsedIndex = new Map();
+async function corpusIndex(env, lang, ctx) {
+  const hit = parsedIndex.get(lang);
+  if (hit && Date.now() - hit.t < 600000) return hit.data;
+  const res = await handleTrIndex(null, env, lang, ctx);
+  if (res.status !== 200) return null;
+  const data = await res.json();
+  parsedIndex.set(lang, { t: Date.now(), data });
+  return data;
+}
+
+async function botStatus(env, text) {
+  const list = (await storedList(env)) || { users: [], capes: {} };
+  const capes = await allCapes(env);
+  const pending = capes.filter((c) => c.r).length;
+  const openBy = async (prefix) => {
+    const parts = [];
+    for (const lang of TR_LANGS) {
+      const n = (await trList(env, prefix + lang + ':')).filter((p) => p.st === 'open').length;
+      if (n) parts.push(LANG_LABEL[lang] + ' ' + n);
+    }
+    return parts.length ? parts.join('、') : text.none;
+  };
+  return {
+    embeds: [{
+      title: text.status, url: SITE, color: 0x7fd08a,
+      fields: [
+        { name: text.users, value: String(list.users.length), inline: true },
+        { name: text.capes, value: String(Object.keys(list.capes).length), inline: true },
+        { name: text.pending, value: String(pending), inline: true },
+        { name: text.props, value: await openBy('tp:') },
+        { name: text.polls, value: await openBy('tq:') },
+      ],
+    }],
+  };
+}
+
+async function botCape(env, text, name) {
+  if (!NAME.test(name || '')) return { content: text.badName, flags: 64 };
+  const capes = await allCapes(env);
+  const mine = capes.find((c) => String(c.n || '').toLowerCase() === name.toLowerCase());
+  if (!mine) return { content: botFmt(text.noCape, { name }) };
+  if (mine.r) return { content: botFmt(text.pendingCape, { name: mine.n }) };
+  if (mine.q) return { content: botFmt(text.privateCape, { name: mine.n }) };
+  return {
+    embeds: [{
+      title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
+      image: { url: SITE + '/api/cape/' + mine.id + '?k=' + mine.h },
+      thumbnail: { url: 'https://minotar.net/helm/' + encodeURIComponent(mine.n) + '/64.png' },
+      fields: [
+        { name: text.kind, value: mine.t === 'gif' ? 'GIF' : 'PNG', inline: true },
+        { name: text.since, value: '<t:' + Math.floor((mine.v || mine.c || 0) / 1000) + ':R>', inline: true },
+      ],
+      footer: { text: text.gallery + ' · wynnchayuan.com/capes' },
+    }],
+  };
+}
+
+async function botTranslate(env, text, lang, query, ctx) {
+  const q = String(query || '').trim().toLowerCase();
+  if (q.length < 2) return { content: text.tooShort, flags: 64 };
+  const data = await corpusIndex(env, lang, ctx);
+  if (!data || !Array.isArray(data.rows)) return { content: text.indexFail };
+  const hits = [];
+  let total = 0;
+  for (const row of data.rows) {
+    if (!String(row[2]).toLowerCase().includes(q) && !String(row[3]).toLowerCase().includes(q)) continue;
+    total++;
+    if (hits.length < 5) hits.push(row);
+  }
+  if (!total) return { content: botFmt(text.notFound, { q: query, lang: LANG_LABEL[lang] }) };
+  return {
+    embeds: [{
+      title: botFmt(text.found, { q: clip(query, 40), n: total, shown: hits.length }),
+      url: SITE + '/translate', color: 0x7fd08a,
+      fields: hits.map((row) => ({
+        name: clip(String(row[2]).replace(/\n/g, ' / '), 250),
+        value: clip((row[3] ? String(row[3]).replace(/\n/g, ' / ') : text.untranslated), 900)
+          + '\n`' + clip(data.files[row[0]], 60) + '`',
+      })),
+      footer: { text: LANG_LABEL[lang] + ' · ' + text.more },
+    }],
+  };
+}
+
+async function botAnswer(env, interaction, ctx) {
+  const { text, corpus } = botLocale(interaction.locale);
+  const command = interaction.data || {};
+  const option = (name) => ((command.options || []).find((o) => o.name === name) || {}).value;
+  if (command.name === 'status') return botStatus(env, text);
+  if (command.name === 'cape') return botCape(env, text, option('player'));
+  if (command.name === 'translate') {
+    const lang = TR_LANGS.includes(option('language')) ? option('language') : corpus;
+    return botTranslate(env, text, lang, option('text'), ctx);
+  }
+  return { content: text.unknown, flags: 64 };
+}
+
+async function handleDiscordInteraction(request, env, ctx) {
+  const body = await request.text();
+  const ok = await verifyDiscord(env.DISCORD_PUBLIC_KEY, request.headers.get('x-signature-ed25519'),
+    request.headers.get('x-signature-timestamp'), body);
+  if (!ok) return new Response('bad signature', { status: 401 });
+  let interaction;
+  try {
+    interaction = JSON.parse(body);
+  } catch (e) {
+    return no('bad request');
+  }
+  if (interaction.type === 1) return json({ type: 1 });
+  if (interaction.type !== 2) return json({ type: 4, data: { content: '…', flags: 64 } });
+  // 查語料要讀一份大索引，可能超過 Discord 的三秒：先回「處理中」，查完再補上
+  if (interaction.data && interaction.data.name === 'translate' && ctx && ctx.waitUntil) {
+    ctx.waitUntil((async () => {
+      let data;
+      try {
+        data = await botAnswer(env, interaction, ctx);
+      } catch (e) {
+        data = { content: botLocale(interaction.locale).text.indexFail };
+      }
+      await fetch(DISCORD_V10 + '/webhooks/' + interaction.application_id + '/' + interaction.token + '/messages/@original', {
+        method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data),
+      });
+    })());
+    return json({ type: 5 });
+  }
+  return json({ type: 4, data: await botAnswer(env, interaction, ctx) });
+}
+
+/** 機器人的設定齊了沒有、邀請連結（管理頁用；只有開發者）。 */
+async function handleDiscordInfo(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  const id = env.DISCORD_CLIENT_ID || '';
+  return json({
+    publicKey: Boolean(env.DISCORD_PUBLIC_KEY), token: Boolean(env.DISCORD_BOT_TOKEN), clientId: Boolean(id),
+    invite: id ? 'https://discord.com/oauth2/authorize?client_id=' + encodeURIComponent(id) + '&scope=applications.commands+bot&permissions=0' : '',
+    endpoint: SITE + '/api/discord/interactions',
+  }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 把指令註冊到 Discord（全域指令；改了指令再按一次就會覆寫）。只有開發者。 */
+async function handleDiscordRegister(request, env, now) {
+  const mine = await authority(request, env, now);
+  if (!mine || !mine.developer) return no('forbidden', 403);
+  if (!env.DISCORD_BOT_TOKEN || !env.DISCORD_CLIENT_ID) return no('discord bot not configured', 503);
+  try {
+    const res = await fetch(DISCORD_V10 + '/applications/' + env.DISCORD_CLIENT_ID + '/commands', {
+      method: 'PUT',
+      headers: { authorization: 'Bot ' + env.DISCORD_BOT_TOKEN, 'content-type': 'application/json' },
+      body: JSON.stringify(DISCORD_COMMANDS),
+    });
+    if (res.status !== 200) return no('discord ' + res.status, 502);
+    const list = await res.json();
+    return json({ ok: true, commands: Array.isArray(list) ? list.map((c) => c.name) : [] });
+  } catch (e) {
+    return no('discord unreachable', 502);
+  }
+}
+
 export default {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
@@ -3085,6 +3364,9 @@ export default {
     if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
     if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
     if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+    if (route === 'POST /discord/interactions') return handleDiscordInteraction(request, env, ctx);
+    if (route === 'GET /admin/discord') return handleDiscordInfo(request, env, now);
+    if (route === 'POST /admin/discord/register') return handleDiscordRegister(request, env, now);
     if (route === 'GET /team') return handleTeam(env, now);
     if (route === 'POST /cape/wear') return handleWear(request, env, now);
     if (route === 'POST /cape/restore') return handleRestore(request, env, now);

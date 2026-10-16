@@ -28,6 +28,10 @@ id = "70fa88851cfa4cee87b3e818dc40cb75"
 #   off     不收
 UPLOADS = "tiered"
 
-# 兩個秘密不寫在這裡，用 wrangler secret put 設定（見 README.md）：
+# Discord 機器人（斜線指令）驗簽名用的 Public Key：Developer Portal → General Information。這是公開的值。
+DISCORD_PUBLIC_KEY = "3933b339ef629ef41f987d8cf63c8fd0cb95adc47074028f9c00ba6c8c031832"
+
+# 秘密不寫在這裡，用 wrangler secret put 設定（見 README.md）：
 #   GITHUB_TOKEN  管理頁「新增成員」開 PR 用。沒設的話那個表單會說還沒設定。
 #   ADMIN_TOKEN   不在遊戲裡的時候用 curl 管理。沒設就沒有這條路。
+#   DISCORD_BOT_TOKEN  管理頁「註冊 Discord 指令」用（Developer Portal → Bot → Reset Token）。

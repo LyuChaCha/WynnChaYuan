@@ -478,7 +478,16 @@
     "line not found": "语料里找不到这一句（可能刚被修改），请刷新后重试",
     "github not configured": "网站尚未配置 GitHub",
     "github unreachable": "无法连接 GitHub，请稍后再试"
-   }
+   },
+   "preview": "实机预览",
+   "pvSrc": "原文",
+   "pvDst": "译文",
+   "reroll": "换一组数字",
+   "insert": "插入",
+   "pvNote": "数字是随机示例，旁边的小数字表示它对应原文的第几个数字。{p} 会换成地名，{u} 会换成名字，灰色方块是图标。",
+   "autonum": "帮我编号",
+   "autonumHint": "按顺序把译文中的每个 {~} 改成 {~1}、{~2}…，方便你调整位置",
+   "pvOver": "原文只有 {n} 个数字"
   },
   "staff": {
    "bad who": "这不是 Minecraft ID、UUID 或 Discord 用户 ID（17 到 20 位数字）",
@@ -508,6 +517,20 @@
   "findNone": "没有找到已注册的人。直接点“加入”会按你输入的内容添加。",
   "isStaff": "已经是管理员",
   "chosen": "已选：{who}",
-  "findCount": "{n} 位（已注册 {all} 位）"
- }
+  "findCount": "{n} 位（已注册 {all} 位）",
+  "botOk": "注册好了：{s}"
+ },
+ "foot.privacy": "隐私政策",
+ "foot.terms": "服务条款",
+ "privacy.title": "隐私政策 - WynnChaYuan",
+ "privacy.h1": "隐私政策",
+ "terms.title": "服务条款 - WynnChaYuan",
+ "terms.h1": "服务条款",
+ "legal.updated": "生效日期：2026 年 10 月 16 日",
+ "privacy.body": "<p>本页说明 WynnChaYuan 的三个部分会处理哪些数据：WynnChaYuan Minecraft 模组、本网站（wynnchayuan.com）以及 Discord 机器人。WynnChaYuan 是由 WynnChaYuan 团队维护的非官方玩家项目（联系人：LyuChaCha）。</p><h2>模组发送的数据</h2><p>披风和名字前的叶子需要连接 wynnchayuan.com。模组会在你进入 Wynncraft 时报到一次，发送以下内容：</p><ul><li>你的 Minecraft UUID，以及经 Mojang 签名的公开资料（名字和皮肤）</li><li>用于证明账号归你所有的公钥和签名（Mojang 为每个正版账号签发的密钥对）</li><li>是否穿披风，以及你的徽章设置（叶子是否显示彩色、展示哪些身份）</li><li>上传披风时你选择的图片</li></ul><p><b>你的私钥和登录凭据永远不会离开游戏。</b>模组不会发送你所在的世界、聊天内容或任何其他游戏内容。报到没有开关：只要装了模组并进入 Wynncraft 就会进行。如果不想让别人看到你的披风，可以在 F6 → “徽章与披风”中关闭“穿上我的披风”。</p><p>模组不会自行上传游戏内的文字。“导出未翻译字符串”生成的文件保存在你的电脑上，是否发给我们由你决定。“直接更新”只有在你点击时才会从 GitHub Releases 下载新版本。</p><h2>网站账号</h2><p>网站账号通过 Discord 登录，只申请 <code>identify</code> 权限：我们保存你的 Discord 用户 ID 和显示名称。我们不读取你的邮箱或服务器列表，Discord 提供的访问令牌用完即丢弃。用 <code>/wcy link</code> 绑定游戏账号后，账号还会保存你的游戏 UUID、名字和绑定时间。</p><h2>披风</h2><ul><li>上传的图片、图片格式和大小、上传时间以及上传者（管理员需要知道）</li><li>公开的披风一览只显示图片和由 UUID 哈希得到的代码，不显示 UUID 或名字；只有开发者能看到谁上传了哪件披风</li><li>你穿过的披风记录和收藏只有你自己能看到</li><li>设为不公开的披风不会出现在一览中；待审核的披风在通过之前只有你和管理员能看到</li><li>为了防止短时间内大量上传，你最近几次上传的时间最多保留十三小时</li><li>如果你被封禁或被列入审核名单，我们会保存你的 UUID、名字、时间和经手的管理员</li></ul><h2>协作翻译</h2><p>当你在 /translate 上提交译法、投票或发起术语投票时，我们会保存你的显示名称和 ID、时间以及你写的内容。提案和投票对其他人可见。被采用的译文会写入公开的 GitHub 仓库（以 CC BY-NC-SA 4.0 授权），合并后会一直保留在仓库历史中。</p><h2>Discord 机器人</h2><p>机器人只会收到你使用的斜杠命令：命令及其选项、你的 Discord 用户 ID、服务器和频道 ID，以及你的客户端语言（Discord 始终会发送的字段）。它无法读取任何聊天消息，也不保存你发送的内容。</p><h2>Cookie 与浏览器存储</h2><ul><li><code>lang</code>：记住你选择的网站语言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：保护 Discord 登录过程，只在登录的几分钟内有用</li><li>浏览器的 <code>localStorage</code>：你的登录通行证（有效期一天）和少量显示偏好</li></ul><p>没有广告，也没有分析或跟踪类 Cookie。</p><h2>我们不记录的内容</h2><p>我们的代码不记录 IP 地址、你所在的世界、聊天或任何其他游戏内容。</p><h2>第三方服务</h2><ul><li><b>Cloudflare</b>：网站及其数据运行在 Cloudflare Workers 和 KV 上。Cloudflare 会出于安全和网络运营的需要处理连接数据（包括 IP 地址），适用其自己的隐私政策</li><li><b>Discord</b>：登录和机器人</li><li><b>GitHub</b>：源代码、译文、版本下载，以及来自协作翻译的拉取请求</li><li><b>minotar.net</b>：网站上的玩家头像由你的浏览器直接从这里加载</li><li><b>jsDelivr</b>：3D 披风预览由你的浏览器直接从这里加载</li></ul><p>我们不出售或出租任何数据，也不将其用于广告。</p><h2>保留期限</h2><ul><li>报到名单：连续十四天没有报到就会被移出</li><li>没人穿的披风：保留七天后删除</li><li>通行证在七天（游戏）或一天（网站）后过期</li><li>网站账号、封禁和审核记录：保留到你要求删除或管理员解除为止</li></ul><h2>你的选择</h2><p>你可以在账号页面自行移除披风。如果不想再报到，卸载模组即可。如需查看或删除账号及相关数据，请在 Discord 上联系 <b>LyuChaCha</b>，或在 GitHub 提交 issue（请不要在公开的 issue 中发布个人隐私信息）。我们会在合理时间内处理请求。</p><h2>年龄</h2><p>使用这些服务需要满足 Minecraft 和 Discord 的年龄要求。</p><h2>变更</h2><p>如果本政策有变更，我们会更新本页和上方的日期。重大变更会在 Discord 或更新日志中公布。</p>",
+ "terms.body": "<p>使用 WynnChaYuan 模组、wynnchayuan.com 网站或 Discord 机器人，即表示你同意本条款。如果不同意，请不要使用。</p><h2>非官方项目</h2><p>WynnChaYuan 是非官方的玩家项目，与 Wynncraft、Mojang、Microsoft 或 Discord 没有关联，也未获得它们的认可。本网站上的游戏材质和画面归 Wynncraft 及各自的权利人所有。</p><h2>许可协议</h2><p>模组代码采用 AGPL-3.0 许可；译文和语料数据采用 CC BY-NC-SA 4.0 许可。详见 GitHub 仓库中的 LICENSE 和 LICENSE-DATA。</p><h2>账号</h2><ul><li>一个网站账号只能绑定一个游戏账号，且必须在游戏内完成绑定</li><li>不得使用他人的账号、绕过身份验证，或让他人使用你的通行证</li><li>违反本条款的账号可能会被停用</li></ul><h2>披风规则</h2><p>披风会被其他玩家和网站访客看到。上传的图片不得包含：</p><ul><li>政治宣传</li><li>色情、淫秽或血腥内容</li><li>违法内容，或侵犯著作权、商标权的图片</li><li>种族歧视、仇恨或骚扰内容</li><li>广告（宣传公会除外）</li></ul><p>管理员可以在不另行通知的情况下审核或移除违反规则的披风，或封禁上传者。图片的权利仍归你所有；上传即表示你允许我们保存该图片，并向其他玩家和网站访客展示。</p><h2>协作翻译</h2><ul><li>只提交你有权提供的译文，并同意以 CC BY-NC-SA 4.0 授权</li><li>遵守术语表和你所在语言团队的决定；开发者和管理员拥有最终决定权</li><li>禁止刷屏、刷票或发布无关内容</li></ul><h2>禁止行为</h2><ul><li>批量或自动调用网站的 API，或干扰服务运行</li><li>试图获取不属于你的数据或权限</li><li>滥用 Discord 机器人</li></ul><h2>赞助</h2><p>通过 Ko-fi 赞助属于自愿支持。赞助者福利（例如 GIF 披风）可能随项目发展而调整。</p><h2>游戏与第三方</h2><p>模组只改变你自己屏幕上显示的文字和外观，不改变游戏玩法。使用任何模组时，你都有责任遵守 Wynncraft 和 Minecraft 的规则。</p><h2>免责声明</h2><p>这些服务按现状提供，可能出现错误、中断或停止运营。在法律允许的范围内，我们不对因使用这些服务造成的任何损失承担责任。</p><h2>变更与终止</h2><p>我们可能修改本条款，或停止部分乃至全部服务。变更会发布在本页并更新日期；继续使用这些服务即表示你接受新的条款。</p><h2>联系方式</h2><p>如有疑问，请在 Discord 上联系 <b>LyuChaCha</b>，或在 GitHub 提交 issue。</p>",
+ "admin.bot": "Discord 机器人",
+ "admin.botreg": "注册指令",
+ "admin.botinvite": "邀请到服务器",
+ "admin.botnote": "斜杠指令 /status、/cape、/translate 由这个网站回应。部署之后，到 Discord Developer Portal 把下面的 Interactions Endpoint URL 填进去，再点“注册指令”；指令改了要再点一次。Bot Token 用 <code>wrangler secret put DISCORD_BOT_TOKEN</code> 设置，不要贴到任何网页上。"
 }

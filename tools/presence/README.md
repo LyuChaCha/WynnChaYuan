@@ -32,7 +32,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `/capes` | 披風一覽。最上面一條「做自己的披風」，按了展開**披風範本**那一塊（說明圖、每一種尺寸的下載鈕、會動的示範；帳號頁上傳的地方也有同一塊）。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。可以排序（最新、最早、最多人使用、人氣、最近有人穿上）與篩選（PNG／GIF／我的最愛／我用過的）；登入的人可以**穿上**、**復原**、按星星加進**我的最愛**。管理的人看得到全部，多「不公開」「待審核」兩個篩選 |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
 | `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員、譯者名單；管理員名單只有開發者看得到 |
-| `/translate` | 協作翻譯：選一個語言，搜尋或瀏覽語料（原文、譯文、檔名），對任一句提新譯法；整句提案與術語投票兩個分頁。那個語言的譯者（管理頁指派）可以提案與投票，開發者與管理員定案。整句定案＝替倉庫開 PR（同一個語言同一天的放同一個 PR，任務檔的句子連合併檔一起改）；術語定案只記下結果，套到整份語料由維護的人做。送出前照 `placeholderProblem` 檢查佔位符（`{#}{p}{u}` 順序、`{~}` 數量與編號、顏色標記、行數），網頁與 Worker 同一套 |
+| `/translate` | 協作翻譯：選一個語言，搜尋或瀏覽語料（原文、譯文、檔名），對任一句提新譯法；整句提案與術語投票兩個分頁。那個語言的譯者（管理頁指派）可以提案與投票，開發者與管理員定案。整句定案＝替倉庫開 PR（同一個語言同一天的放同一個 PR，任務檔的句子連合併檔一起改）；術語定案只記下結果，套到整份語料由維護的人做。送出前照 `placeholderProblem` 檢查佔位符（`{#}{p}{u}` 順序、`{~}` 數量與編號、顏色標記、行數），網頁與 Worker 同一套。編輯時有「實機預覽」：{~} 帶入模擬數值、標出接的是原文第幾個數字，{p}／{u}／{#}／顏色標記照遊戲的樣子畫；有插入佔位符與「幫我編號」（{~} 依序改成 {~1}、{~2}…）的按鈕 |
+| `/privacy`、`/terms` | 隱私政策、服務條款（Discord 應用程式驗證要的兩個連結）。內容照下面的〈它記什麼〉與倉庫 README 的「會送出的資料」，那兩處改了這裡要跟 |
 | 其他網址 | 404，但是一頁有頁首頁尾、給幾條回去的路的網頁（照訪客的語言）；`/api/` 底下與不是 GET 的照舊回 JSON |
 
 每一頁的頁首有「下載」（Modrinth、CurseForge、GitHub Releases）與贊助（Ko-fi）；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
@@ -92,7 +93,30 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
    npx wrangler secret put DISCORD_CLIENT_SECRET
    ```
 
-不需要 Bot、不需要其他 scope。設好不必重新部署，`/api/status` 的 `discord` 會變成 `true`。
+登入不需要 Bot、不需要其他 scope。設好不必重新部署，`/api/status` 的 `discord` 會變成 `true`。
+
+#### Discord 機器人（斜線指令）
+
+使用者 2026-10-16：「用 DC 看一些東西，例如當前使用者披風、網站狀態，或查看譯文」。跟登入用同一個 Discord 應用程式。
+指令用 HTTP 送到 `/api/discord/interactions`（Interactions Endpoint），Worker 直接回，不需要常駐的機器人主機；它只收得到斜線指令，讀不到聊天。
+
+| 指令 | 繁中名稱 | 回什麼 |
+|---|---|---|
+| `/status` | `/狀態` | 裝了模組的人數、穿披風的人數、待審核的披風、各語言投票中的提案與術語 |
+| `/cape player:<名字>` | `/披風` | 那個人現在的披風（不公開、等審核的不給圖） |
+| `/translate text:<關鍵字> [language]` | `/翻譯` | 原文或譯文含有那個字的前五條；語言預設跟著 Discord 的介面語言 |
+
+回覆的語言跟著使用者的 Discord 介面（繁中、簡中、其他給英文）。`/translate` 要讀一份八九 MB 的索引，先回「處理中」再補上結果。
+
+1. Developer Portal → **General Information**：**Public Key** 寫在 `wrangler.toml` 的 `DISCORD_PUBLIC_KEY`（公開的值）。同一頁的 **Terms of Service URL**、**Privacy Policy URL** 填 `https://wynnchayuan.com/terms`、`https://wynnchayuan.com/privacy`。
+2. **Bot** → **Reset Token**，在這個資料夾設成 secret（**不要貼在任何地方**）：
+
+   ```bash
+   npx wrangler secret put DISCORD_BOT_TOKEN
+   ```
+
+3. 部署之後，**General Information** 的 **Interactions Endpoint URL** 填 `https://wynnchayuan.com/api/discord/interactions`，按存檔（Discord 會先打一次 PING 驗簽名，過了才存得進去）。
+4. 管理頁的「Discord 機器人」按「註冊指令」（只有開發者看得到）；指令改了要再按一次。同一處有邀請連結（`applications.commands` + `bot`，不要任何權限）。
 
 ## API
 
@@ -147,6 +171,9 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/translators` | | 譯者名單（開發者與管理員） |
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
+| `POST /api/discord/interactions` | Discord 送來的 | 斜線指令；驗 Ed25519 簽名（`DISCORD_PUBLIC_KEY`），驗不過回 401 |
+| `GET /api/admin/discord` | | 機器人的設定齊了沒有、Interactions Endpoint、邀請連結（**只有開發者**） |
+| `POST /api/admin/discord/register` | | 把指令註冊到 Discord（全域、整批覆寫；要 `DISCORD_BOT_TOKEN`；**只有開發者**） |
 | `GET /api/tr/me` | | 我是誰、是哪幾個語言的譯者、能不能定案（沒登入也回） |
 | `GET /api/tr/index/<語言>` | | 那個語言的語料索引：從 `translate-index` 分支代讀，快取十分鐘 |
 | `GET /api/tr/props?lang=`／`GET /api/tr/prop?lang=&id=` | | 整句提案的列表（metadata）／一筆的內容 |
