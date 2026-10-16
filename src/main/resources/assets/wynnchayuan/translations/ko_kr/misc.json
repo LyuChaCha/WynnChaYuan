@@ -2,8 +2,8 @@
  "_meta": {
   "domain": "misc",
   "note": "尚未分類的介面字串——製作與職業介面、道具 tooltip 的碎片、商店與市場 UI 等。這是暫存區不是目的地：邊界清楚的一整塊請拆成自己的檔案（見 lootrun.json），並記得加進 _index.json。",
-  "count": 13984,
-  "translated": 13245
+  "count": 13989,
+  "translated": 13250
  },
  "Effect on Weapons:": "무기 적용 효과:",
  "There wasn't enough room in your inventory, so items were dropped.": "소지품에 빈 공간이 부족해 아이템이 바닥에 떨어졌습니다.",
@@ -6838,7 +6838,7 @@
  "Only {~} more level until you can gather from Dernic": "{~}레벨만 더 오르면 Dernic을(를) 채집할 수 있습니다",
  "Only {~} more level until you can gather from Diamond": "{~}레벨만 더 오르면 다이아몬드를 채집할 수 있습니다",
  "Only {~} more level until you can gather from Flerisi Tree": "{~}레벨만 더 오르면 Flerisi 나무를 채집할 수 있습니다",
- "Only {~} more level until you can gather from Gudgeon": "{~}레벨만 더 오르면 모래무지를 채집할 수 있습니다",
+ "Only {~} more level until you can gather from Gudgeon": "{~}레벨만 더 오르면 모샘치를 채집할 수 있습니다",
  "Only {~} more level until you can gather from Heather": "{~}레벨만 더 오르면 헤더를 채집할 수 있습니다",
  "Only {~} more level until you can gather from Hemp": "{~}레벨만 더 오르면 대마를 채집할 수 있습니다",
  "Only {~} more level until you can gather from Hops": "{~}레벨만 더 오르면 홉을 채집할 수 있습니다",
@@ -7102,7 +7102,7 @@
  "Only {~} more levels until you can gather from Blossom": "{~}레벨만 더 오르면 꽃나무를 채집할 수 있습니다",
  "Only {~} more levels until you can gather from Dernic": "{~}레벨만 더 오르면 Dernic을(를) 채집할 수 있습니다",
  "Only {~} more levels until you can gather from Diamond": "{~}레벨만 더 오르면 다이아몬드를 채집할 수 있습니다",
- "Only {~} more levels until you can gather from Gudgeon": "{~}레벨만 더 오르면 모래무지를 채집할 수 있습니다",
+ "Only {~} more levels until you can gather from Gudgeon": "{~}레벨만 더 오르면 모샘치를 채집할 수 있습니다",
  "Only {~} more levels until you can gather from Heather": "{~}레벨만 더 오르면 헤더를 채집할 수 있습니다",
  "Only {~} more levels until you can gather from Hemp": "{~}레벨만 더 오르면 대마를 채집할 수 있습니다",
  "Only {~} more levels until you can gather from Hops": "{~}레벨만 더 오르면 홉을 채집할 수 있습니다",
@@ -7380,7 +7380,7 @@
  "+ Higher Refining Success [Gudgeon Meat]": "+ 정제 성공률 증가 [모샘치 고기]",
  "+ New Tool [Stone Rod T{~}]": "+ 새 도구 [돌 낚싯대 T{~}]",
  "{#} [{~}/{~}] Omango: It would be madness to explore this\n{#} hole without a breathing helmet!": "{#} [{~}/{~}] Omango: 호흡 헬멧도 없이 이 구멍을\n{#} 탐험하는 건 미친 짓이야!",
- "+ Faster Gathering [Gudgeon]": "+ 채집 속도 증가 [모래무지]",
+ "+ Faster Gathering [Gudgeon]": "+ 채집 속도 증가 [모샘치]",
  "- +{~} Fishing Experience Points": "- +{~} 낚시 경험치",
  "- +{~} Gathering Rod T{~}": "- +{~} Gathering Rod T{~}",
  "The Sewers of {p}": "{p}의 하수도",
@@ -7440,8 +7440,8 @@
  "Water of the Past [Secret Discovery]": "과거의 물 [시크릿 발견]",
  "Watchmen [Secret Discovery]": "파수꾼 [시크릿 발견]",
  "Far From the Roots [Secret Discovery]": "뿌리에서 멀리 [시크릿 발견]",
- "Gather Gudgeon [Mini-Quest]": "모래무지 채집 [미니 퀘스트]",
- "Gather Gudgeon": "모래무지 채집",
+ "Gather Gudgeon [Mini-Quest]": "모샘치 채집 [미니 퀘스트]",
+ "Gather Gudgeon": "모샘치 채집",
  "Bring [{~} Gudgeon Oil] or [{~}": "[{~} 모샘치 기름] 또는 [{~}",
  "Gudgeon Meat] to the Gathering": "모샘치 고기]을(를) 채집 게시판에",
  "Post at [-{~}, {~}, -{~}]": "가져오세요 [-{~}, {~}, -{~}]",
@@ -14036,5 +14036,10 @@
  "Oho o": "오호 오",
  "I am everywhere. M-mushroom soup, stew, soup m-makes me fast!": "전 어디에나 있어요. 버, 버섯 수프, 스튜, 수프는 절 빠, 빠르게 해요!",
  "...Oh. It's- you. Hello.": "...오. 다- 당신이군요. 안녕하세요.",
- "Never speak of this again...stranger.": "다시는 이 얘기 하지 마... 낯선 이여."
+ "Never speak of this again...stranger.": "다시는 이 얘기 하지 마... 낯선 이여.",
+ "{#}- +{~} {#}{#}Studhorn": "{#}- +{~} {#}{#}징 박은 뿔 투구",
+ "- {~}x Mydium": "- {~}x 중용의 팔찌",
+ "{#} Quest{#}Suspended Flowers": "{#} 퀘스트{#}멈춘 시간의 꽃",
+ "{#} Finished buying Az Rune.": "{#} Az 룬 구매 완료.",
+ "{#} Finished buying Ek Rune.": "{#} Ek 룬 구매 완료."
 }
