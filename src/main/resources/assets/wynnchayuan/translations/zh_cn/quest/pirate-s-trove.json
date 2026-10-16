@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Pirate's Trove",
-  "count": 24,
-  "translated": 24,
+  "count": 20,
+  "translated": 20,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -57,46 +57,6 @@
    "source": "captured"
   },
   "Pirate's Trove#005": {
-   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
-   "dst": "哦，抱歉，我挡着书架了吗？我在研究 Siegfried 的事。他在 Gavel 的近代史上扮演了相当惊人的角色。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Pirate's Trove#006": {
-   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
-   "dst": "我以前不相信他那些英勇冒险的故事，但我无法否认，他和他的生平都有详实的记载。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Pirate's Trove#007": {
-   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
-   "dst": "毕竟他还活着，还在写新书记录自己的冒险，比如这本，写的就是他远征讨伐一整群威胁 {p} 镇的狼人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Pirate's Trove#008": {
-   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
-   "dst": "哦，你看看，这其实是一个星期前才发生的事。他看起来既无私又勇敢，难怪我们会给孩子讲他的故事。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Pirate's Trove#009": {
    "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "黑曜石上刻着一段话: 在绿宝石喷泉里，被村民的财富环绕",
    "role": "desc",
@@ -106,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#006": {
    "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "黑曜石上刻着一段话: 在东方巨人的兜帽下，守望着我们头顶",
    "role": "desc",
@@ -116,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#007": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Damiral 对话",
    "role": "desc",
@@ -126,7 +86,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#008": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "嘿，冒险者！欢迎来到伟大的 Gavel 行省，村民一族与在下的家乡。你很快就要进入宏伟的 {p} 城堡了！",
    "role": "desc",
@@ -136,7 +96,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#009": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "我现在是个退休的水手，不过那份宝藏里要是能多分我几块绿宝石也不错。或许，如果你有兴趣……我们可以谈个条件？",
    "role": "desc",
@@ -146,7 +106,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#016": {
+  "Pirate's Trove#010": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "我有一道谜题，是指向 Hastor 藏宝地点的一连串线索里的第一条，可我怎么都解不开。",
    "role": "desc",
@@ -156,7 +116,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#017": {
+  "Pirate's Trove#011": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "也许你能解开。要是解开了，我保证宝藏跟你平分！",
    "role": "desc",
@@ -166,7 +126,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#019": {
+  "Pirate's Trove#012": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "祝你好运，冒险者！记住，解开线索需要的一切，都应该能在 {p} 里找到。",
    "role": "desc",
@@ -176,7 +136,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#020": {
+  "Pirate's Trove#013": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "线索一: 朝着日落，在石英荫蔽下的北方花丛之间",
    "role": "desc",
@@ -186,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#021": {
+  "Pirate's Trove#014": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "线索二: 在确认身份之处，树叶之上、玻璃之间",
    "role": "desc",
@@ -196,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#022": {
+  "Pirate's Trove#015": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "线索三: 在绿宝石喷泉里，被村民的财富环绕",
    "role": "desc",
@@ -206,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#023": {
+  "Pirate's Trove#016": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "线索四: 在东方巨人的兜帽下，守望着我们头顶",
    "role": "desc",
@@ -216,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#024": {
+  "Pirate's Trove#017": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "啊哈！我正想来问问进展如何，就看到你跳到这里来了！",
    "role": "desc",
@@ -226,7 +186,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#025": {
+  "Pirate's Trove#018": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "干得太漂亮了，我的伙伴。不过，还记得我们的约定吧？",
    "role": "desc",
@@ -236,7 +196,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#026": {
+  "Pirate's Trove#019": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "你找到宝藏，我分你一份。我拿走我那份就上路啦！",
    "role": "desc",

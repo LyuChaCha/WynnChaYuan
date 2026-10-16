@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Canyon Condor",
-  "count": 48,
-  "translated": 48,
+  "count": 44,
+  "translated": 44,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -17,7 +17,7 @@
    "kind": "dialogue",
    "quest": "Canyon Condor",
    "stage": "",
-   "speaker": "Hermit`s Grookling",
+   "speaker": "Hermit",
    "source": "captured"
   },
   "Canyon Condor#001": {
@@ -31,26 +31,6 @@
    "source": "captured"
   },
   "Canyon Condor#002": {
-   "src": "Hey there friend! Looking teh barter fer some weapons or trinkets?",
-   "dst": "Selam dostum! Silah ya da süs eşyası takası mı yapmak istiyon?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Canyon Condor",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Canyon Condor#003": {
-   "src": "Scum! That guy jus' stole a necklace! Catch 'im and jus' take this as payment!!",
-   "dst": "Pislik! O herif az önce bi' kolye çaldı! Yakala onu, bunu da ödeme diye al gitsin!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Canyon Condor",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Canyon Condor#004": {
    "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
    "dst": "Git, kuyunun dibinden bana [{~} Gold Chunks] getir, ben de sana sonra nereye gitmen gerektiğini söyleyeyim.",
    "role": "desc",
@@ -60,27 +40,7 @@
    "speaker": "Jankan",
    "source": "captured"
   },
-  "Canyon Condor#005": {
-   "src": "Hey pal, want to use these elevators? Talk to Svin in {p}, he is a friend of mine. He could give you access.",
-   "dst": "Hey dostum, bu asansörleri kullanmak mı istiyorsun? {p} kasabasında Svin ile konuş, benim arkadaşımdır. Sana erişim verebilir.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Canyon Condor",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Canyon Condor#006": {
-   "src": "Although recently a strange hermit has been trying to control them and prevent access... I'm sure you can reason with him, though.",
-   "dst": "Gerçi son zamanlarda tuhaf bir münzevi onları kontrol etmeye ve erişimi engellemeye çalışıyor... Ama eminim onunla anlaşabilirsin.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Canyon Condor",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Canyon Condor#007": {
+  "Canyon Condor#003": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
    "dst": "{p} kasabasında [{~}, {~}, -{~}] konumundaki Svin ile konuş.",
    "role": "desc",
@@ -90,7 +50,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#008": {
+  "Canyon Condor#004": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
    "dst": "Ben büyük {p} bünyesindeki Muhafızlardan biriyim. Orada dünya hakkındaki sırları biriktiririz.",
    "role": "desc",
@@ -100,7 +60,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#009": {
+  "Canyon Condor#005": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
    "dst": "Kanyonla ilgili eski bir efsaneyi araştırmak için buradayım. İlgini çekti mi? Eminim çekmiştir!",
    "role": "desc",
@@ -110,7 +70,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#010": {
+  "Canyon Condor#006": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
    "dst": "Efsaneye göre bu uçurumlarda vahşi bir canavar yaşıyor. Uzun yıllardır hayatta kalan tehlikeli bir kuş.",
    "role": "desc",
@@ -120,7 +80,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#011": {
+  "Canyon Condor#007": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
    "dst": "Canavarı bulmayı çok isterdim ama görünüşe göre buranın yerlileri bana bundan bahsedemeyecek kadar birbirlerini soymakla meşgul.",
    "role": "desc",
@@ -130,7 +90,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#012": {
+  "Canyon Condor#008": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
    "dst": "Yakınlarda bu yaylanın her yerini gezmiş yaşlı bir maden arayıcısı olduğunu duydum. Belki bir şeyler biliyordur.",
    "role": "desc",
@@ -140,7 +100,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#013": {
+  "Canyon Condor#009": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
    "dst": "Adı Jankan ve {p} kasabasının doğusunda yaşıyor. Onu bulup bu iğrenç canavarı sorabilir misin?",
    "role": "desc",
@@ -150,7 +110,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#014": {
+  "Canyon Condor#010": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
    "dst": "Bana yardım edersen kanyona dağılmış asansörleri kullanmana izin veririm. Şey...",
    "role": "desc",
@@ -160,7 +120,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#015": {
+  "Canyon Condor#011": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
    "dst": "Tuhaf bir münzevi onları kontrol altına almaya karar verdi ama eminim onunla anlaşabiliriz.",
    "role": "desc",
@@ -170,7 +130,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#016": {
+  "Canyon Condor#012": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
    "dst": "Umarım canavarı bulabilirsin. Bulursan kanıt olarak bana [{~} Beast Egg] getirebilir misin?",
    "role": "desc",
@@ -180,7 +140,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#017": {
+  "Canyon Condor#013": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
    "dst": "{p} kasabasının doğusunda [{~}, {~}, -{~}] konumundaki Jankan ile konuş.",
    "role": "desc",
@@ -190,7 +150,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#018": {
+  "Canyon Condor#014": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
    "dst": "Merhaba evlat! Sen millerin bahsettiği yabancı olmalısın.",
    "role": "desc",
@@ -200,7 +160,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#019": {
+  "Canyon Condor#015": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
    "dst": "Altın arıyosan, bu madende sana bi' tane bile yok, orası kesin!",
    "role": "desc",
@@ -210,7 +170,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#020": {
+  "Canyon Condor#016": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
    "dst": "Ha.. Kanatlı vahşi bi' canavar mı arıyon? Aklını mı kaçırdın sen?",
    "role": "desc",
@@ -220,7 +180,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#021": {
+  "Canyon Condor#017": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
    "dst": "O şeytan kuş tam bir kaos! Tek bir çığlığıyla dağları yerinden oynatır! Senin iki katın adamlar onu görünce ağladı!",
    "role": "desc",
@@ -230,7 +190,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#022": {
+  "Canyon Condor#018": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
    "dst": "Meğer şu mağaradan kazancımı taşımaya çalışırken belimi incitmişim, hepsini tam en dipte bıraktım ya.",
    "role": "desc",
@@ -240,7 +200,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#023": {
+  "Canyon Condor#019": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
    "dst": "[{~2}, {~3}, -{~4}] konumundaki madende Jankan için [{~1} Gold Chunks] topla.",
    "role": "desc",
@@ -250,7 +210,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#024": {
+  "Canyon Condor#020": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
    "dst": "Nihayet! Amma uzun sürdü, ver bakalım şunu! Ha doğru ya.. bi' şey istiyodun.",
    "role": "desc",
@@ -260,7 +220,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#025": {
+  "Canyon Condor#021": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
    "dst": "Ölümüne yardım etmeye hiç niyetim yok ama seni yardım edebilecek genç bi' herife yollayabilirim.",
    "role": "desc",
@@ -270,7 +230,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#026": {
+  "Canyon Condor#022": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
    "dst": "Konuşman gereken şu Münzevi herif var, tam bir kaçık o. Kuşu falan besler.",
    "role": "desc",
@@ -280,7 +240,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#027": {
+  "Canyon Condor#023": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
    "dst": "Sanırım onu dağın tepesinde, kanyon uçurumunun öbür yanında bulursun. Dost canlısı bi' adam değil, o kadarını söyleyebilirim.",
    "role": "desc",
@@ -290,7 +250,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#028": {
+  "Canyon Condor#024": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
    "dst": "Kanyon asansörüyle [{~}, {~}, -{~}] konumundaki Münzevi'ye çık.",
    "role": "desc",
@@ -300,7 +260,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#029": {
+  "Canyon Condor#025": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
    "dst": "Ne yaptığını sanıyorsun burada, velet? Mütevazı yuvama dalıp köprümden geçebileceğini mi sanıyorsun?",
    "role": "desc",
@@ -310,7 +270,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#030": {
+  "Canyon Condor#026": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
    "dst": "Ha, dağın kuşunu mu öğrenmek istiyorsun? Hah, senin gibi bir cılız ona karşı hiç şansı olmaz.",
    "role": "desc",
@@ -320,7 +280,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#031": {
+  "Canyon Condor#027": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
    "dst": "Yabancılardan hoşlanmaz, bilesin. Bir keresinde bir grup kaçak avcıyı küle çevirdiğini gördüm!",
    "role": "desc",
@@ -330,7 +290,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#032": {
+  "Canyon Condor#028": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
    "dst": "Buradan geçmek istiyorsan ödeme yapman gerek. Yok, paranı istemiyorum, neden paraya ihtiyacım olsun, her şeyim var!",
    "role": "desc",
@@ -340,7 +300,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#033": {
+  "Canyon Condor#029": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
    "dst": "Bu platolara erişmek istiyorsan, şu küçük mağaram için bana nadir bir çiçek bulman gerekecek.",
    "role": "desc",
@@ -350,7 +310,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#034": {
+  "Canyon Condor#030": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
    "dst": "Yayladaki kaya sütunlarından birinin tepesinde bulunur, bulması çok zor olmamalı.",
    "role": "desc",
@@ -360,7 +320,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#035": {
+  "Canyon Condor#031": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
    "dst": "Bana [{~} Rare Rose] getir, ben de yayladaki yaratığa gitmene izin vereyim.",
    "role": "desc",
@@ -370,7 +330,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#036": {
+  "Canyon Condor#032": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
    "dst": "Münzevi için [{~2}, {~3}, -{~4}] konumunda [{~1} Rare Rose] bul ve topla",
    "role": "desc",
@@ -380,7 +340,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#037": {
+  "Canyon Condor#033": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
    "dst": "Aha! Bu tam olur. Civcivim buna bayılacak! Sanırım artık köprüden geçebilirsin.",
    "role": "desc",
@@ -390,7 +350,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#038": {
+  "Canyon Condor#034": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
    "dst": "Canavar bu platolardan birinin tepesinde yaşıyor. Biraz ararsan bulabilirsin.",
    "role": "desc",
@@ -400,7 +360,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#039": {
+  "Canyon Condor#035": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
    "dst": "Asansörlerimi de kullanmana izin vereceğim. Ne de olsa uzun süre dayanacağın yok...",
    "role": "desc",
@@ -410,7 +370,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#040": {
+  "Canyon Condor#036": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
    "dst": "Canavara karşı durabilen tek bir yolcu duydum. Sanırım evcil hayvan olsun diye ondan bir yumurta almıştı, hah!",
    "role": "desc",
@@ -420,7 +380,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#041": {
+  "Canyon Condor#037": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
    "dst": "O çoktan gitti, birazdan senin de gideceğin gibi. Seni tanımamak bir zevkti, velet.",
    "role": "desc",
@@ -430,7 +390,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#042": {
+  "Canyon Condor#038": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
    "dst": "[{~}, {~}, -{~}] konumundaki Cockatrice'i yen ve Svin için bir yumurta topla",
    "role": "desc",
@@ -440,7 +400,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#043": {
+  "Canyon Condor#039": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
    "dst": "Yolcu! Döndün! Anlat bakalım, neler öğrendin?",
    "role": "desc",
@@ -450,7 +410,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#044": {
+  "Canyon Condor#040": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
    "dst": "Buldun mu?! Bu harika bir haber! Yuvasından bir yumurta da mı aldın? Gerçekten çok cesursun!",
    "role": "desc",
@@ -460,7 +420,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#045": {
+  "Canyon Condor#041": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
    "dst": "Demek Cockatrice efsanesi gerçekmiş! Onu gördün ve kendi cesaretinle onunla savaştın!",
    "role": "desc",
@@ -470,7 +430,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#046": {
+  "Canyon Condor#042": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
    "dst": "Keşke {p} içine girebilseydin, cesur ruh! Ama görünüşe göre yollarımız artık ayrılıyor.",
    "role": "desc",
@@ -480,7 +440,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#047": {
+  "Canyon Condor#043": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
    "dst": "Merak etme, yumurtayı güvende tutacağım. Bir gün senin efsanen de aynı ihtişamla anlatılacak!",
    "role": "desc",
