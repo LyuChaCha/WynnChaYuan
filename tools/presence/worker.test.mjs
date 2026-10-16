@@ -1932,6 +1932,11 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁有譯者名單', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="translators"') && pages['/admin'].includes("'/admin/translator'")
   && pages['/'].includes('href="/translate"'));
+for (const path of ['/privacy', '/terms', '/', '/favicon.png']) {
+  r = await worker.fetch(new Request('https://x.test' + path, { method: 'HEAD' }), env);
+  check('★ HEAD ' + path + ' 跟 GET 一樣是 200、不帶內容（Discord 檢查網址用 HEAD）', r.status === 200 && (await r.text()) === '');
+}
+check('HEAD 不認得的頁面一樣 404', (await worker.fetch(new Request('https://x.test/nope', { method: 'HEAD' }), env)).status === 404);
 r = await worker.fetch(get('/status'), env);
 check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 
