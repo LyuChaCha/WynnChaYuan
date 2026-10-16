@@ -1,0 +1,48 @@
+# 網站「協作翻譯」頁的搜尋索引。
+#
+# 為什麼要有
+# ----------
+# 一個語言的語料二十幾 MB、兩百多個檔，網站不能每次都整包讀。這裡把它壓成一個語言一個
+# 精簡的 JSON（只有檔名、鍵、原文、譯文），推到 translate-index 分支；網站從那裡代讀、快取。
+#
+# 放在另一個分支、不進 main：它是產生出來的東西，進 main 會讓每個語料 PR 都多一份要合的大檔。
+# 分支每次整個蓋掉（--force），不留歷史。
+name: 協作翻譯的搜尋索引
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/resources/assets/wynnchayuan/translations/**'
+      - 'tools/build-translate-index.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translate-index
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 產生索引
+        run: python tools/build-translate-index.py "$RUNNER_TEMP/index"
+
+      - name: 推到 translate-index 分支
+        run: |
+          cd "$RUNNER_TEMP/index"
+          git init -q -b translate-index
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "協作翻譯的搜尋索引（${GITHUB_SHA::8}）"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" translate-index
