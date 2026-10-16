@@ -213,7 +213,8 @@ public final class SettingsScreen extends Screen {
         rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
         String self = com.wynnchayuan.render.Badges.selfName();
         java.util.UUID me = this.minecraft == null ? null : this.minecraft.getUser().getProfileId();
-        if (com.wynnchayuan.cape.Capes.hasCape(self, me)) {
+        // 關掉穿戴後，公開名單不再帶披風版本；仍要保留重新開啟的入口。
+        if (!cfg().ownCape() || com.wynnchayuan.cape.Capes.hasCape(self, me)) {
             rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
         } else {
             rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
