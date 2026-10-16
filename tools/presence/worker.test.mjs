@@ -3,7 +3,7 @@ import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
-  MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore,
+  MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 
@@ -98,7 +98,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 
 /** 網頁的路徑照原樣，其餘的都是 API。 */
-const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin'].includes(path) ? path : '/api' + path);
+const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate'].includes(path) ? path : '/api' + path);
 const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
@@ -555,7 +555,7 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
-for (const path of ['/', '/features', '/capes', '/account', '/admin']) {
+for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate']) {
   english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
   r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
@@ -622,7 +622,7 @@ check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every(
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
 check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
-  && PATHS.join() === '/,/features,/capes,/account,/admin');
+  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
@@ -1281,7 +1281,7 @@ check('★ 開發者移除之後，兩個人都馬上沒有權限', r.status ===
   check('★ 沒帶字：回全部已註冊的人（下拉選單用），照名字排',
     ['n02sayla', 'OldTimer', 'CapeOnly'].every((n) => all.list.some((p) => p.dname === n || p.mc === n))
     && all.list.map((p) => (p.mc || p.dname || p.discord).toLowerCase()).every((n, i, a) => i === 0 || a[i - 1].localeCompare(n) <= 0));
-  check('搜尋：一個字也篩得出來；一般玩家與管理員都不能搜', eric(await people('n0'))
+  check('搜尋：一個字也篩得出來；一般玩家不能搜', eric(await people('n0'))
     && (await people('eric', bobNow)).status === 403);
   r = await staffPost('/admin/staff', { who: ERIC_UUID }, aliceWeb);
   const saved = JSON.parse(env.CORPUS.data.get('staff:u:' + ERIC_UUID).value);
@@ -1724,6 +1724,126 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && pages['/account'].includes('id="pending"') && pages['/admin'].includes('id="reviews"') && pages['/admin'].includes("'/admin/review'"));
 }
 
+// ---- ★ 協作翻譯（使用者 2026-10-16：像 Crowdin 一樣提交、投票，管理員定案） ----
+{
+  const trPost = (path, bodyValue, token) => worker.fetch(post(path, bodyValue, token), env);
+  const trGet = (path, token) => worker.fetch(get(path, token), env);
+  const hadToken = env.GITHUB_TOKEN;
+  env.GITHUB_TOKEN = 'ghtok';
+
+  check('佔位符：照原文的 {#}{p}{u} 順序、{~} 數量、行數；顏色標記照現在的譯文',
+    placeholderProblem('Talk to {u} at {p}', '到 {p} 找 {u}', '') === 'placeholders'
+    && placeholderProblem('{#}Kill {~} mobs', '{#}擊殺 {~} 隻怪物', '') === null
+    && placeholderProblem('{#}Kill {~} mobs in {~}s', '{#}在 {~2} 秒內擊殺 {~1} 隻怪物', '') === null
+    && placeholderProblem('{#}Kill {~} mobs in {~}s', '{#}在 {~2} 秒內擊殺 {~} 隻怪物', '') === 'numbering'
+    && placeholderProblem('Kill {~} mobs', '擊殺怪物', '') === 'numbers'
+    && placeholderProblem('A\nB', '甲乙', '') === 'lines'
+    && placeholderProblem('Kill it', '{c1}殺{/}掉', '{c1}擊殺{/}') === null
+    && placeholderProblem('Kill it', '殺掉', '{c1}擊殺{/}') === 'colours'
+    && placeholderProblem('Hi {u}', '嗨', '') === null && placeholderProblem('{u} gave {u} a {#}', '{u} 給了 {#}', '') === null
+    && placeholderProblem('x', '   ', '') === 'empty');
+
+  const flatFile = '{\r\n "_note": "x",\r\n "Kill {~} mobs": "擊殺 {~} 隻怪物",\r\n "Hello": "哈囉"\r\n}\r\n';
+  const replaced = replaceTranslation(flatFile, null, 'Hello', '你好');
+  check('改扁平檔：只換那一行的值，換行照原檔', replaced === flatFile.replace('"哈囉"', '"你好"')
+    && replaceTranslation(flatFile, null, 'Nope', 'x') === null);
+  const workFile = '{\n "entries": {\n  "Q#001": {\n   "src": "Hi",\n   "dst": "嗨",\n   "quest": "Q"\n  },\n'
+    + '  "Q#002": {\n   "src": "Bye",\n   "dst": "",\n   "quest": "Q"\n  }\n }\n}\n';
+  check('改任務檔：照條目編號換 dst，別的條目不動', replaceTranslation(workFile, 'Q#002', 'Bye', '再見')
+    === workFile.replace('"dst": ""', '"dst": "再見"') && replaceTranslation(workFile, 'Q#009', 'x', 'y') === null);
+
+  let r = await trGet('/tr/me', bobNow);
+  let me = await r.json();
+  check('★ 一般玩家：看得到、不是譯者、不能定案', me.signedIn === true && me.langs.length === 0 && me.decide === false);
+  check('沒登入也回（網頁照這個決定按鈕）', (await (await trGet('/tr/me')).json()).signedIn === false);
+  const sample = { lang: 'ja_jp', file: 'npc.json', key: null, src: 'Hello {u}!', base: 'こんにちは、{u}！', text: 'やあ、{u}！' };
+  check('★ 不是譯者不能提案', (await trPost('/tr/propose', sample, bobNow)).status === 403);
+
+  check('一般玩家不能指派譯者', (await trPost('/admin/translator', { who: BOB.id, langs: ['ja_jp'] }, bobNow)).status === 403);
+  r = await trPost('/admin/translator', { who: dashed(BOB.id), langs: ['ja_jp', 'xx_yy'], note: '日文組' }, aliceWeb);
+  check('★ 管理的人指派譯者（只收認得的語言）', r.status === 200
+    && JSON.parse(env.CORPUS.data.get('tl:u:' + BOB.id).value).langs.join() === 'ja_jp');
+  check('沒有語言不收', (await trPost('/admin/translator', { who: 'Carol', langs: [] }, aliceWeb)).status === 400);
+  me = await (await trGet('/tr/me', bobNow)).json();
+  check('指派之後 /tr/me 看得到語言', me.langs.join() === 'ja_jp' && me.decide === false);
+
+  check('★ 佔位符不對，送出當下就擋', (await (await trPost('/tr/propose', { ...sample, text: 'やあ、{u}{u}！' }, bobNow)).json()).why === 'placeholders');
+  check('★ 只能提自己負責的語言', (await trPost('/tr/propose', { ...sample, lang: 'zh_tw' }, bobNow)).status === 403);
+  r = await trPost('/tr/propose', sample, bobNow);
+  const made = await r.json();
+  check('★ 譯者提案：建立、自己先投一票', r.status === 200 && made.prop.items.length === 1
+    && made.prop.items[0].votes.length === 1 && made.prop.items[0].name === BOB.name);
+  r = await trPost('/tr/propose', { ...sample, text: 'どうも、{u}！' }, aliceWeb);
+  let prop = (await r.json()).prop;
+  check('開發者也能提，同一句變兩個譯法', r.status === 200 && prop.items.length === 2);
+  r = await trPost('/tr/propose', { ...sample, text: 'やあ、{u}！' }, aliceWeb);
+  prop = (await r.json()).prop;
+  check('★ 提了一樣的字就當成投那一票，而且一個人只留一票', prop.items.length === 2
+    && prop.items[0].votes.length === 2 && prop.items[1].votes.length === 0);
+  r = await trPost('/tr/vote', { lang: 'ja_jp', id: made.id, item: prop.items[0].id }, aliceWeb);
+  prop = (await r.json()).prop;
+  check('再按一次收回', prop.items[0].votes.length === 1);
+  const listed = (await (await trGet('/tr/props?lang=ja_jp')).json()).props;
+  check('列表不用一筆一筆讀（metadata 有檔名、原文、票數）', listed.length === 1 && listed[0].f === 'npc.json'
+    && listed[0].s === 'Hello {u}!' && listed[0].st === 'open');
+
+  check('★ 譯者不能定案', (await trPost('/tr/accept', { lang: 'ja_jp', id: made.id, item: prop.items[0].id }, bobNow)).status === 403);
+  githubCalls.length = 0;
+  githubFile = '{\n "Hello {u}!": "こんにちは、{u}！"\n}\n';
+  r = await trPost('/tr/accept', { lang: 'ja_jp', id: made.id, item: prop.items[0].id }, aliceWeb);
+  const accepted = await r.json();
+  const putCall = githubCalls.find((c) => c.method === 'PUT');
+  check('★ 管理的人定案：開分支、改那一行、開 PR', r.status === 200 && accepted.url.endsWith('/pull/9999')
+    && accepted.prop.status === 'accepted'
+    && githubCalls.some((c) => c.path === '/git/refs' && c.body.ref.startsWith('refs/heads/translate/ja-jp-'))
+    && putCall && putCall.path.endsWith('/translations/ja_jp/npc.json')
+    && Buffer.from(putCall.body.content, 'base64').toString('utf8').includes('"Hello {u}!": "やあ、{u}！"'));
+
+  githubCalls.length = 0;
+  githubFile = workFile;
+  await trPost('/admin/translator', { who: dashed(BOB.id), langs: ['ja_jp', 'zh_tw'] }, aliceWeb);
+  r = await trPost('/tr/propose', { lang: 'zh_tw', file: 'quest/q.json', key: 'Q#002', src: 'Bye', base: '', text: '再見' }, bobNow);
+  const quest = await r.json();
+  r = await trPost('/tr/accept', { lang: 'zh_tw', id: quest.id, item: quest.prop.items[0].id }, aliceWeb);
+  const puts = githubCalls.filter((c) => c.method === 'PUT').map((c) => c.path);
+  check('★ 任務檔的句子連合併檔一起改（PR 的檢查才不會紅）', r.status === 200 && puts.length === 2
+    && puts.some((p) => p.endsWith('/zh_tw/quest/q.json')) && puts.some((p) => p.endsWith('/zh_tw/quest-dialogue.json')));
+  check('改過指派：重送一次就覆寫語言', JSON.parse(env.CORPUS.data.get('tl:u:' + BOB.id).value).langs.join() === 'ja_jp,zh_tw');
+
+  r = await trPost('/tr/poll', { lang: 'ja_jp', term: 'Weaken Enemy', note: 'Lootrun の加持', options: ['敵弱体化', '敵を弱体化'] }, bobNow);
+  const poll = await r.json();
+  check('★ 譯者開術語投票', r.status === 200 && poll.poll.options.length === 2 && poll.poll.status === 'open');
+  check('不是那個語言的譯者不能開', (await trPost('/tr/poll', { lang: 'ru_ru', term: 'X' }, bobNow)).status === 403);
+  let p = (await (await trPost('/tr/poll/vote', { lang: 'ja_jp', id: poll.id, option: poll.poll.options[0].id }, bobNow)).json()).poll;
+  p = (await (await trPost('/tr/poll/vote', { lang: 'ja_jp', id: poll.id, option: poll.poll.options[1].id }, bobNow)).json()).poll;
+  check('★ 一人一票：投別的就移過去', p.options[0].votes.length === 0 && p.options[1].votes.length === 1);
+  p = (await (await trPost('/tr/poll/option', { lang: 'ja_jp', id: poll.id, text: '弱体化' }, aliceWeb)).json()).poll;
+  check('加候選＝投它', p.options.length === 3 && p.options[2].votes.length === 1);
+  check('★ 譯者不能定案術語', (await trPost('/tr/poll/decide', { lang: 'ja_jp', id: poll.id, option: p.options[1].id }, bobNow)).status === 403);
+  p = (await (await trPost('/tr/poll/decide', { lang: 'ja_jp', id: poll.id, option: p.options[1].id }, aliceWeb)).json()).poll;
+  check('★ 管理的人定案術語，記下採用哪一個', p.status === 'decided' && p.decided.text === '敵を弱体化');
+  check('定案之後不能再投', (await trPost('/tr/poll/vote', { lang: 'ja_jp', id: poll.id, option: p.options[0].id }, bobNow)).status === 409);
+  const polls = (await (await trGet('/tr/polls?lang=ja_jp')).json()).polls;
+  check('投票列表照 metadata', polls.length === 1 && polls[0].s === 'Weaken Enemy' && polls[0].st === 'decided');
+
+  r = await trGet('/tr/index/zh_tw');
+  check('語料索引從 translate-index 分支代讀', r.status === 200 && (r.headers.get('content-type') || '').includes('json'));
+  check('不認得的語言不讀', (await trGet('/tr/index/xx_yy')).status === 404);
+
+  const people = (await (await trGet('/admin/translators', aliceWeb)).json()).translators;
+  check('管理頁看得到譯者名單', people.some((t) => t.key === 'u:' + BOB.id && t.langs.includes('zh_tw') && t.by === ALICE.name));
+  check('一般玩家看不到', (await trGet('/admin/translators', bobNow)).status === 403);
+  await trPost('/admin/untranslator', { key: 'u:' + BOB.id }, aliceWeb);
+  check('移除之後馬上不能提案', (await trPost('/tr/propose', sample, bobNow)).status === 403);
+  for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('tp:') || k.startsWith('tq:')) env.CORPUS.data.delete(k);
+  githubCalls.length = 0;
+  githubFile = CREDITS;
+  env.GITHUB_TOKEN = hadToken;
+}
+
+check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁有譯者名單', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
+  .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="translators"') && pages['/admin'].includes("'/admin/translator'")
+  && pages['/'].includes('href="/translate"'));
 r = await worker.fetch(get('/status'), env);
 check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 

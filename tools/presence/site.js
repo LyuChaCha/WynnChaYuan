@@ -111,6 +111,51 @@ const STYLE = String.raw`
   h2 { margin: 56px 0 14px; font-size: 19px; font-weight: 650; }
   .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
   .panel { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  /* 協作翻譯 */
+  .tr-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 20px 0 6px; }
+  .tr-bar label { margin: 0; }
+  .tr-role a { color: var(--leaf); }
+  .tr-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 16px 0; border-bottom: 1px solid var(--line); }
+  .tr-tabs button { font: inherit; font-size: 15px; color: var(--ink-2); background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; transition: color var(--fast) ease; }
+  .tr-tabs button[aria-selected="true"] { color: var(--leaf); border-bottom-color: var(--leaf); }
+  .tr-tabs button:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; }
+  .tr-count { color: var(--gold); font-variant-numeric: tabular-nums; }
+  .tr-search { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 8px; }
+  .tr-search input[type="search"] { flex: 1 1 280px; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink); border: 1px solid var(--line); background: #0f1512; }
+  .tr-search input[type="search"]:focus { border-color: var(--leaf-deep); outline: none; }
+  .tr-check { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--ink-2); font-size: 14px; }
+  .tr-list { display: grid; gap: 10px; }
+  .tr-row { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); min-width: 0; }
+  .tr-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-bottom: 6px; }
+  .tr-head a { color: var(--leaf); font-size: 13px; }
+  .tr-chip { font-size: 12px; padding: 1px 8px; border-radius: 5px; background: var(--panel-2); color: var(--ink-2); overflow-wrap: anywhere; }
+  .tr-chip.leaf { color: var(--leaf); background: #7fd08a1f; }
+  .tr-chip.gold { color: var(--gold); background: #d8b7651f; }
+  .tr-chip.bad { color: var(--danger); background: #e08a8a1f; }
+  .tr-src { color: var(--ink-2); font-size: 14px; overflow-wrap: anywhere; }
+  .tr-dst { color: var(--ink); margin-top: 4px; overflow-wrap: anywhere; }
+  .tr-dst.empty { color: var(--ink-2); font-style: italic; }
+  .tr-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+  .tr-actions input[type="text"] { flex: 1 1 200px; min-width: 0; width: auto; }
+  .tr-more { margin-top: 10px; display: grid; gap: 10px; }
+  .tr-more:empty { display: none; }
+  .tr-editor { display: grid; gap: 4px; }
+  .tr-text { width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink); border: 1px solid var(--line); background: #0f1512; resize: vertical; }
+  .tr-text:focus { border-color: var(--leaf-deep); outline: none; }
+  .tr-prop { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .tr-item { padding: 8px 10px; border-radius: 8px; background: var(--panel-2); }
+  .tr-item.won, .tr-opt.won { box-shadow: inset 0 0 0 1px var(--leaf-deep); }
+  .tr-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+  .tr-votes { color: var(--gold); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .tr-term { margin: 2px 0 6px; font-size: 18px; font-weight: 650; overflow-wrap: anywhere; }
+  .tr-opt { position: relative; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; border-radius: 8px; background: var(--panel-2); margin-top: 6px; overflow: hidden; }
+  .tr-opt > * { position: relative; }
+  .tr-opt > .tr-bar-fill { position: absolute; inset: 0 auto 0 0; background: #7fd08a14; pointer-events: none; }
+  .tr-opt-text { flex: 1 1 auto; font-weight: 600; overflow-wrap: anywhere; }
+  .tr-newpoll { margin-bottom: 14px; display: grid; gap: 4px; }
+  .tr-langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 12px 0 0; padding: 0; border: 0; }
+  .tr-langs legend { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; padding: 0; }
+  .tr-langs label { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--ink); font-size: 14px; }
   .note { color: var(--ink-2); font-size: 14px; }
   .note b { color: var(--gold); font-weight: 600; }
   .btn {
@@ -836,6 +881,17 @@ export const TEXT = {
     'account.pick': '選一張披風的圖', 'account.send': '上傳',
 
     'admin.title': '管理 - WynnChaYuan',
+    'nav.translate': '協作翻譯', 'tr.title': '協作翻譯 - WynnChaYuan', 'tr.h1': '協作翻譯',
+    'tr.lede': '搜尋你在遊戲裡看到的句子，提出更好的譯法，或對有爭議的術語投票。各語言的譯者可以提案與投票，管理員定案後會送進語料。',
+    'tr.lang': '語言', 'tr.tab.browse': '瀏覽與提案', 'tr.tab.props': '整句提案', 'tr.tab.terms': '術語投票',
+    'tr.q': '搜尋原文或譯文（至少兩個字）', 'tr.allfiles': '所有檔案', 'tr.blank': '只看還沒翻的',
+    'tr.props.note': '每一句的提案與票數。管理員採用的句子，同一個語言同一天的會放進同一個 PR。',
+    'tr.terms.note': '同一個詞有不同譯法時在這裡投票。定案之後，由維護的人把它套到整份語料。',
+    'tr.st.open': '投票中', 'tr.st.accepted': '已採用', 'tr.st.rejected': '已駁回',
+    'tr.np.term': '英文術語', 'tr.np.opts': '候選譯法（用逗號分開）', 'tr.np.note': '說明（可以不填）：出現在哪裡、為什麼有不同意見', 'tr.np.send': '開始投票',
+    'admin.translators': '譯者',
+    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。',
+    'admin.trlangs': '負責的語言', 'admin.notranslators': '還沒有譯者。',
     'admin.h1': '管理',
     'admin.gate': '這一頁只有開發者與管理員能用，請先登入。',
     'admin.lede': '披風的刪除與封禁在<a href="/capes">披風一覽</a>：點開一件，就看得到是誰傳的。',
@@ -975,6 +1031,34 @@ export const TEXT = {
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
       confirmUnstaff: '把 {who} 從管理員移除？', notYet: '還沒登入過',
+      translator: {
+        confirm: '把 {who} 從譯者名單移除？',
+        'bad who': '看不懂這一格：從清單選一位，或填 Minecraft ID、UUID、Discord 使用者 ID',
+        'bad langs': '至少勾一個語言',
+        'bad note': '備註最多 60 個字',
+      },
+      tr: {
+        langs: { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' },
+        st: { open: '投票中', accepted: '已採用', rejected: '已駁回' },
+        signin: '登入後才能提案與投票', roleDecide: '管理員：可以定案', roleTranslator: '譯者：可以提案與投票',
+        roleViewer: '目前只能瀏覽；要提案請找管理員把你加進這個語言的譯者', loading: '讀取中…', indexFail: '語料讀不到，晚點再試一次',
+        hint: '共 {n} 條。輸入關鍵字、選一個檔，或勾「只看還沒翻的」開始。', found: '找到 {n} 條，顯示前 {shown} 條',
+        untranslated: '（還沒翻）', propose: '提出譯法', view: '看提案', openProps: '{n} 個提案',
+        notTranslator: '你還不是這個語言的譯者，只能看。', signinToPropose: '登入後才能提案。',
+        yours: '你的譯法', send: '送出', looksOk: '佔位符都對得上', by: '{who} 提出', votes: '{n} 票', vote: '投這個',
+        voted: '已投（再按一次收回）', accept: '採用', reject: '駁回', prLink: '看 PR', none: '目前沒有。', seeItems: '看 {n} 個譯法',
+        noPolls: '還沒有人開投票。', decided: '已定案', decide: '定案', addOption: '加一個候選', add: '加入', reopen: '重新開放',
+        opened: '開好了', failed: '沒有成功（{s}）',
+        why: {
+          empty: '譯文是空的', 'too long': '太長了（最多 2000 字）',
+          placeholders: '{#}、{p}、{u} 的數量或順序跟原文不一樣（{u} 可以少，不能多）', numbers: '{~} 的數量跟原文不一樣',
+          numbering: '{~1}、{~2} 的編號不完整，或跟沒編號的 {~} 混在一起', colours: '顏色標記 {c1}…{/} 跟現在的譯文不一樣',
+          lines: '行數跟原文不一樣', 'not a translator': '你不是這個語言的譯者', 'login first': '請先登入', closed: '這一項已經結束了',
+          forbidden: '只有管理員可以定案', 'bad term': '要填英文術語', 'bad option': '候選太長或太多', 'too many': '候選太多了',
+          'line not found': '語料裡找不到這一句（可能剛被改過），重新整理再試', 'github not configured': '網站還沒設定 GitHub',
+          'github unreachable': '連不到 GitHub，晚點再試',
+        },
+      },
       findNone: '沒有找到已註冊的人。直接按「加入」會照你打的字加。', isStaff: '已經是管理員', chosen: '已選：{who}',
       findCount: '{n} 位（已註冊 {all} 位）',
       staff: {
@@ -1109,6 +1193,17 @@ export const TEXT = {
     'account.pick': 'Choose a cape image', 'account.send': 'Upload',
 
     'admin.title': 'Admin - WynnChaYuan',
+    'nav.translate': 'Translate', 'tr.title': 'Translate - WynnChaYuan', 'tr.h1': 'Translate together',
+    'tr.lede': 'Search for a line you saw in game, suggest a better translation, or vote on a disputed term. Translators of each language can suggest and vote; once a moderator decides, it goes into the translations.',
+    'tr.lang': 'Language', 'tr.tab.browse': 'Browse and suggest', 'tr.tab.props': 'Suggestions', 'tr.tab.terms': 'Term votes',
+    'tr.q': 'Search the source or the translation (two characters or more)', 'tr.allfiles': 'All files', 'tr.blank': 'Untranslated only',
+    'tr.props.note': 'Suggestions and votes for each line. Lines a moderator accepts on the same day for the same language go into one pull request.',
+    'tr.terms.note': 'Vote here when a term has more than one translation. After a decision, maintainers apply it across the translations.',
+    'tr.st.open': 'Voting', 'tr.st.accepted': 'Accepted', 'tr.st.rejected': 'Rejected',
+    'tr.np.term': 'English term', 'tr.np.opts': 'Candidate translations (comma-separated)', 'tr.np.note': 'Note (optional): where it appears and what the disagreement is', 'tr.np.send': 'Start the vote',
+    'admin.translators': 'Translators',
+    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages.',
+    'admin.trlangs': 'Languages', 'admin.notranslators': 'No translators yet.',
     'admin.h1': 'Admin',
     'admin.gate': 'This page is for developers and moderators only. Please sign in first.',
     'admin.lede': 'Deleting capes and banning uploaders happens in the <a href="/capes">cape gallery</a>: open a cape to see who uploaded it.',
@@ -1247,6 +1342,37 @@ export const TEXT = {
       previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
       confirmUnstaff: 'Remove {who} from the moderators?', notYet: 'Has not signed in yet',
+      translator: {
+        confirm: 'Remove {who} from the translators?',
+        'bad who': 'Choose someone from the list, or enter a Minecraft ID, UUID or Discord user ID',
+        'bad langs': 'Tick at least one language',
+        'bad note': 'The note can be 60 characters at most',
+      },
+      tr: {
+        langs: { zh_tw: 'Traditional Chinese', zh_cn: 'Simplified Chinese', ja_jp: 'Japanese', ko_kr: 'Korean', ru_ru: 'Russian', es_es: 'Spanish', tr_tr: 'Turkish' },
+        st: { open: 'Voting', accepted: 'Accepted', rejected: 'Rejected' },
+        signin: 'Sign in to suggest and vote', roleDecide: 'Moderator: can decide', roleTranslator: 'Translator: can suggest and vote',
+        roleViewer: 'View only. Ask a moderator to add you as a translator for this language', loading: 'Loading…',
+        indexFail: 'Could not load the translations. Try again later.',
+        hint: '{n} lines. Type a keyword, pick a file, or tick “Untranslated only” to start.', found: '{n} found, showing the first {shown}',
+        untranslated: '(not translated yet)', propose: 'Suggest', view: 'See suggestions', openProps: '{n} suggestions',
+        notTranslator: 'You are not a translator for this language yet, so you can only look.', signinToPropose: 'Sign in to suggest.',
+        yours: 'Your translation', send: 'Send', looksOk: 'Placeholders match', by: 'by {who}', votes: '{n} votes', vote: 'Vote',
+        voted: 'Voted (press again to take it back)', accept: 'Accept', reject: 'Reject', prLink: 'Pull request', none: 'Nothing here yet.',
+        seeItems: 'See {n} translations', noPolls: 'No votes have been started yet.', decided: 'Decided', decide: 'Decide',
+        addOption: 'Add a candidate', add: 'Add', reopen: 'Reopen', opened: 'Started', failed: 'That did not work ({s})',
+        why: {
+          empty: 'The translation is empty', 'too long': 'Too long (2000 characters at most)',
+          placeholders: '{#}, {p} or {u} differ from the source in number or order ({u} may be dropped, not added)',
+          numbers: 'The number of {~} differs from the source', numbering: '{~1}, {~2} numbering is incomplete or mixed with plain {~}',
+          colours: 'Colour markers {c1}…{/} differ from the current translation', lines: 'The number of lines differs from the source',
+          'not a translator': 'You are not a translator for this language', 'login first': 'Please sign in first',
+          closed: 'This one is already closed', forbidden: 'Only moderators can decide', 'bad term': 'Enter the English term',
+          'bad option': 'A candidate is too long or there are too many', 'too many': 'Too many candidates',
+          'line not found': 'This line was not found (it may have just changed). Reload and try again',
+          'github not configured': 'GitHub is not set up for the website', 'github unreachable': 'Could not reach GitHub. Try again later',
+        },
+      },
       findNone: 'No registered member matches. Pressing “Add” uses exactly what you typed.', isStaff: 'Already a moderator', chosen: 'Selected: {who}',
       findCount: '{n} shown ({all} registered)',
       staff: {
@@ -1484,7 +1610,7 @@ const TEX_CSS = '\n  :root {' + Object.keys(TEX_URL).map((name) =>
 const TPL = (name) => '/template/' + name + '?v=' + CAPE_TEMPLATES[name].v;
 
 function layout(lang, title, active, body, script) {
-  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
+  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/translate', 'nav.translate'], ['/account', 'nav.account']]
     .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
       + '>%%' + key + '%%</a>').join('');
   const switcher = LANGS.map((code) => '<option value="' + code + '"' + (code === lang ? ' selected' : '')
@@ -3536,6 +3662,26 @@ const ADMIN = String.raw`
       <p class="note" id="noguilds" hidden style="margin:10px">%%admin.noguilds%%</p>
     </div>
 
+    <h2>%%admin.translators%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.translatorsnote%%</p>
+      <div class="form">
+        <div class="finder"><label for="t-who">%%admin.who%%</label><input type="text" id="t-who" maxlength="40" autocomplete="off" spellcheck="false" placeholder="%%admin.findph%%" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="t-hits"><ul class="finder-hits" id="t-hits" role="listbox" hidden></ul></div>
+        <div><label for="t-note">%%admin.note%%</label><input type="text" id="t-note" maxlength="60" autocomplete="off"></div>
+        <div><button class="btn primary" id="t-send">%%admin.grant%%</button></div>
+      </div>
+      <fieldset class="tr-langs" id="t-langs"><legend>%%admin.trlangs%%</legend></fieldset>
+      <p class="hint" id="t-pick" style="margin-top:8px"></p>
+      <p class="msg" id="t-msg" role="status"></p>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>%%admin.player%%</th><th>%%admin.trlangs%%</th><th>%%admin.note%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
+        <tbody id="translators"></tbody>
+      </table>
+      <p class="note" id="notranslators" hidden style="margin:10px">%%admin.notranslators%%</p>
+    </div>
+
     <div id="staff-block" hidden>
       <h2>%%admin.staff%%</h2>
       <div class="panel">
@@ -3835,13 +3981,9 @@ const ADMIN_JS = '<script>' + String.raw`
      名單在第一次展開時抓一次，之後都在這裡篩。
      有綁遊戲帳號的記 UUID（用遊戲或 Discord 登入都認得），只有 Discord 的記 Discord ID。
      沒選就照打的字加，跟以前一樣（還沒註冊的人）。 */
-  var finder = document.getElementById('s-who');
-  var hits = document.getElementById('s-hits');
-  var pickNote = document.getElementById('s-pick');
-  var picked = null, found = [], active = -1, everyone = null;
+  var everyone = null;
   function dashedId(u) { return [u.slice(0, 8), u.slice(8, 12), u.slice(12, 16), u.slice(16, 20), u.slice(20)].join('-'); }
   function personName(p) { return p.mc || p.dname || p.discord; }
-  function personTaken(p) { return Boolean((p.uuid && staffKeys['u:' + p.uuid]) || (p.discord && staffKeys['d:' + p.discord])); }
   function personLines(p) {
     var lines = [];
     if (p.discord) lines.push('Discord ' + (p.dname ? p.dname + ' (' + p.discord + ')' : p.discord));
@@ -3867,6 +4009,14 @@ const ADMIN_JS = '<script>' + String.raw`
     }
     return everyone;
   }
+  /* 選成員的下拉選單：管理員名單與譯者名單共用。prefix 是那一組元素 id 的開頭（s-who、s-hits、s-pick），
+     taken(p) 說這個人是不是已經在名單上（標出來、不能選），takenLabel 是標在他底下的字。 */
+  function memberPicker(prefix, taken, takenLabel) {
+  var finder = document.getElementById(prefix + '-who');
+  var hits = document.getElementById(prefix + '-hits');
+  var pickNote = document.getElementById(prefix + '-pick');
+  var picked = null, found = [], active = -1;
+  function personTaken(p) { return taken(p); }
   function openHits() {
     if (!hits.children.length) { hits.replaceChildren(el('li', 'none', L.loading)); hits.hidden = false; }
     loadPeople().then(function (all) {
@@ -3889,10 +4039,10 @@ const ADMIN_JS = '<script>' + String.raw`
   function mark(i) {
     active = i;
     found.forEach(function (p, n) {
-      var li = document.getElementById('s-hit-' + n);
+      var li = document.getElementById(prefix + '-hit-' + n);
       if (li) li.setAttribute('aria-selected', n === i ? 'true' : 'false');
     });
-    var li = document.getElementById('s-hit-' + i);
+    var li = document.getElementById(prefix + '-hit-' + i);
     if (li) { finder.setAttribute('aria-activedescendant', li.id); li.scrollIntoView({ block: 'nearest' }); }
   }
   function choose(p) {
@@ -3909,7 +4059,7 @@ const ADMIN_JS = '<script>' + String.raw`
     else hits.append(el('li', 'count', fmt(L.findCount, { n: list.length, all: total })));
     list.forEach(function (p, i) {
       var li = el('li', personTaken(p) ? 'taken' : '');
-      li.id = 's-hit-' + i;
+      li.id = prefix + '-hit-' + i;
       li.setAttribute('role', 'option');
       li.setAttribute('aria-selected', 'false');
       if (personTaken(p)) li.setAttribute('aria-disabled', 'true');
@@ -3919,7 +4069,7 @@ const ADMIN_JS = '<script>' + String.raw`
       var text = el('div');
       text.append(el('b', '', personName(p)));
       personLines(p).forEach(function (line) { text.append(el('small', '', line)); });
-      if (personTaken(p)) text.append(el('small', '', L.isStaff));
+      if (personTaken(p)) text.append(el('small', '', takenLabel));
       li.append(img, text);
       /* mousedown：搶在輸入框失去焦點、清單收起來之前 */
       li.addEventListener('mousedown', function (e) { e.preventDefault(); choose(p); });
@@ -3946,9 +4096,18 @@ const ADMIN_JS = '<script>' + String.raw`
     else if (e.key === 'Escape') closeHits();
   });
   finder.addEventListener('blur', closeHits);
+  return {
+    /* 選了的人記 UUID（有綁遊戲帳號的）或 Discord ID；沒選就照打的字 */
+    who: function () { return picked ? (picked.uuid || picked.discord) : finder.value.trim(); },
+    clear: function () { finder.value = ''; picked = null; pickNote.textContent = ''; }
+  };
+  }
+  var staffPick = memberPicker('s', function (p) {
+    return Boolean((p.uuid && staffKeys['u:' + p.uuid]) || (p.discord && staffKeys['d:' + p.discord]));
+  }, L.isStaff);
   document.getElementById('s-send').onclick = function () {
     var msg = document.getElementById('s-msg');
-    var entry = { who: picked ? (picked.uuid || picked.discord) : finder.value.trim(), note: document.getElementById('s-note').value.trim() };
+    var entry = { who: staffPick.who(), note: document.getElementById('s-note').value.trim() };
     msg.className = 'msg ok';
     msg.textContent = L.sending;
     api('/admin/staff', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
@@ -3957,9 +4116,7 @@ const ADMIN_JS = '<script>' + String.raw`
           if (r.ok) {
             msg.className = 'msg ok';
             msg.textContent = L.perkDone;
-            finder.value = '';
-            picked = null;
-            pickNote.textContent = '';
+            staffPick.clear();
             document.getElementById('s-note').value = '';
             loadStaff();
           } else {
@@ -3969,10 +4126,79 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
+  /* 譯者名單：管理員與開發者都能管。同一個人再送一次就是改他負責的語言，所以名單上的人照樣可以選。 */
+  var TR_CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
+  var trBox = document.getElementById('t-langs');
+  TR_CODES.forEach(function (code) {
+    var label = el('label');
+    var box = el('input');
+    box.type = 'checkbox';
+    box.value = code;
+    box.id = 't-lang-' + code;
+    label.append(box, ' ' + (L.tr.langs[code] || code));
+    trBox.append(label);
+  });
+  var trPick = memberPicker('t', function () { return false; }, '');
+  function loadTranslators() {
+    return api('/admin/translators').then(function (r) { return r.json(); }).then(function (data) {
+      var body = document.getElementById('translators');
+      body.replaceChildren();
+      document.getElementById('notranslators').hidden = data.translators.length > 0;
+      data.translators.forEach(function (one) {
+        var row = el('tr');
+        var who = el('td');
+        var known = one.name || (one.kind === 'n' ? one.id : '');
+        if (known) {
+          var img = el('img');
+          img.alt = '';
+          img.src = head(known, 44);
+          who.append(img, known);
+        }
+        if (one.discord) who.append(el('small', 'hint', (known ? ' · ' : '') + 'Discord ' + one.discord));
+        if (!known && !one.discord) who.append(el('code', '', one.id));
+        var drop = el('button', 'btn', L.revoke);
+        drop.onclick = function () {
+          if (!confirm(fmt(L.translator.confirm, { who: one.name || one.discord || one.id }))) return;
+          api('/admin/untranslator', { method: 'POST', body: JSON.stringify({ key: one.key }), headers: { 'content-type': 'application/json' } })
+            .then(function (r) { if (r.ok) loadTranslators(); else alert(fmt(L.liftFail, { s: r.status })); });
+        };
+        var action = el('td');
+        action.append(drop);
+        row.append(who, el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、')),
+          el('td', '', one.note || '—'), el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'),
+          el('td', '', one.by || '—'), action);
+        body.append(row);
+      });
+    });
+  }
+  document.getElementById('t-send').onclick = function () {
+    var msg = document.getElementById('t-msg');
+    var langs = TR_CODES.filter(function (code) { return document.getElementById('t-lang-' + code).checked; });
+    var entry = { who: trPick.who(), langs: langs, note: document.getElementById('t-note').value.trim() };
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/translator', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          if (r.ok) {
+            msg.className = 'msg ok';
+            msg.textContent = L.perkDone;
+            trPick.clear();
+            document.getElementById('t-note').value = '';
+            TR_CODES.forEach(function (code) { document.getElementById('t-lang-' + code).checked = false; });
+            loadTranslators();
+          } else {
+            msg.className = 'msg bad';
+            msg.textContent = L.translator[body.why] || fmt(L.prFail, { s: body.why || r.status });
+          }
+        });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
+  };
   whoami.then(function (me) {
     if (!me || !me.staff) return;
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
+    loadTranslators();
     loadBans();
     loadReviews();
     loadPerks();
@@ -4028,12 +4254,500 @@ const LOST = String.raw`
   </section>
 `;
 
+
+/* ---------------------------------------------------------------- 協作翻譯（/translate）
+   使用者 2026-10-16：像 Crowdin 一樣在網頁上提交、校稿；不同團隊意見不同就投票，管理員定案。
+   語料從 translate-index 分支的精簡索引讀（Worker 代讀），提案、投票、定案走 /api/tr/*。 */
+const TRANSLATE = String.raw`
+  <h1>%%tr.h1%%</h1>
+  <p class="lede">%%tr.lede%%</p>
+  <div class="tr-bar">
+    <label for="tr-lang">%%tr.lang%%</label>
+    <select class="pick" id="tr-lang"></select>
+    <span class="tr-role" id="tr-role"></span>
+  </div>
+  <div class="tr-tabs" role="tablist" aria-label="%%tr.h1%%">
+    <button type="button" role="tab" id="tt-browse" aria-selected="true" aria-controls="tp-browse">%%tr.tab.browse%%</button>
+    <button type="button" role="tab" id="tt-props" aria-selected="false" aria-controls="tp-props">%%tr.tab.props%%<span class="tr-count" id="tc-props"></span></button>
+    <button type="button" role="tab" id="tt-terms" aria-selected="false" aria-controls="tp-terms">%%tr.tab.terms%%<span class="tr-count" id="tc-terms"></span></button>
+  </div>
+
+  <section id="tp-browse" role="tabpanel" aria-labelledby="tt-browse">
+    <div class="tr-search">
+      <input type="search" id="tr-q" placeholder="%%tr.q%%" autocomplete="off" spellcheck="false">
+      <select class="pick" id="tr-file"><option value="">%%tr.allfiles%%</option></select>
+      <label class="tr-check"><input type="checkbox" id="tr-blank"> %%tr.blank%%</label>
+    </div>
+    <p class="note" id="tr-status" role="status"></p>
+    <div id="tr-rows" class="tr-list"></div>
+  </section>
+
+  <section id="tp-props" role="tabpanel" aria-labelledby="tt-props" hidden>
+    <p class="note">%%tr.props.note%%</p>
+    <div class="tr-search">
+      <select class="pick" id="tr-pst">
+        <option value="open">%%tr.st.open%%</option>
+        <option value="accepted">%%tr.st.accepted%%</option>
+        <option value="rejected">%%tr.st.rejected%%</option>
+      </select>
+    </div>
+    <div id="tr-props" class="tr-list"></div>
+  </section>
+
+  <section id="tp-terms" role="tabpanel" aria-labelledby="tt-terms" hidden>
+    <p class="note">%%tr.terms.note%%</p>
+    <div class="panel tr-newpoll" id="tr-newpoll" hidden>
+      <div class="form">
+        <div><label for="np-term">%%tr.np.term%%</label><input type="text" id="np-term" maxlength="80" autocomplete="off" placeholder="Weaken Enemy"></div>
+        <div><label for="np-opts">%%tr.np.opts%%</label><input type="text" id="np-opts" maxlength="400" autocomplete="off"></div>
+      </div>
+      <label for="np-note" style="margin-top:12px">%%tr.np.note%%</label>
+      <textarea id="np-note" maxlength="500" rows="2" class="tr-text"></textarea>
+      <div class="tr-actions"><button class="btn primary" id="np-send" type="button">%%tr.np.send%%</button><span class="msg" id="np-msg" role="status"></span></div>
+    </div>
+    <div id="tr-polls" class="tr-list"></div>
+  </section>
+`;
+
+const TRANSLATE_JS = '<script>' + String.raw`
+  var T = L.tr;
+  var LANG_KEY = 'wcy.trlang';
+  var CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
+  var SITE_TO = { zh: 'zh_tw', 'zh-cn': 'zh_cn', ja: 'ja_jp', ko: 'ko_kr', ru: 'ru_ru', es: 'es_es', tr: 'tr_tr' };
+  var langSel = document.getElementById('tr-lang');
+  var state = { lang: '', me: { signedIn: false, langs: [], decide: false, id: '' }, index: null, props: [], polls: [], byId: {} };
+  CODES.forEach(function (c) {
+    var o = el('option', '', T.langs[c] || c);
+    o.value = c;
+    langSel.append(o);
+  });
+  function saved() { try { return localStorage.getItem(LANG_KEY) || ''; } catch (e) { return ''; } }
+  state.lang = CODES.indexOf(saved()) >= 0 ? saved() : (SITE_TO[document.documentElement.lang.toLowerCase()] || SITE_TO[document.documentElement.lang.toLowerCase().split('-')[0]] || 'zh_tw');
+  langSel.value = state.lang;
+  function post(path, body) {
+    return api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (b) { b.status = r.status; b.okay = r.ok; return b; }); });
+  }
+  function canWrite() { return state.me.decide || state.me.langs.indexOf(state.lang) >= 0; }
+  function why(code) { return T.why[code] || fmt(T.failed, { s: code }); }
+
+  /* 跟 Worker 的 placeholderProblem 同一套 */
+  function problem(src, text, base) {
+    if (!text || !text.trim()) return 'empty';
+    if (text.length > 2000) return 'too long';
+    var seq = function (s) { return String(s).match(/\{[#pu]\}/g) || []; };
+    var want = seq(src), got = seq(text);
+    var noName = function (list) { return list.filter(function (t) { return t !== '{u}'; }).join(''); };
+    if (noName(want) !== noName(got)) return 'placeholders';
+    var at = 0;
+    for (var i = 0; i < got.length; i++) {
+      while (at < want.length && want[at] !== got[i]) at++;
+      if (at === want.length) return 'placeholders';
+      at++;
+    }
+    var nums = function (s) { return String(s).match(/\{~\d*\}/g) || []; };
+    if (nums(src).length !== nums(text).length) return 'numbers';
+    var named = nums(text).filter(function (n) { return n !== '{~}'; });
+    if (named.length && named.length !== nums(text).length) return 'numbering';
+    if (named.length) {
+      var order = named.map(function (n) { return Number(n.slice(2, -1)); }).sort(function (a, b) { return a - b; });
+      if (order.some(function (n, i) { return n !== i + 1; })) return 'numbering';
+    }
+    var colours = function (s) { return (String(s).match(/\{c\d+\}|\{\/\}/g) || []).sort().join(','); };
+    if (base && base.trim() && colours(base) !== colours(text)) return 'colours';
+    if (String(src).split('\n').length !== text.split('\n').length) return 'lines';
+    return null;
+  }
+  function propId(file, key, src) {
+    var data = new TextEncoder().encode(file + '\n' + (key == null ? src : key));
+    return crypto.subtle.digest('SHA-256', data).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('').slice(0, 16);
+    });
+  }
+  function textBlock(text, cls) {
+    var b = el('div', cls);
+    String(text).split('\n').forEach(function (line, i) { if (i) b.append(el('br')); b.append(line); });
+    return b;
+  }
+  function chip(text, cls) { return el('span', 'tr-chip' + (cls ? ' ' + cls : ''), text); }
+
+  /* ---- 分頁 ---- */
+  var tabs = ['browse', 'props', 'terms'];
+  function show(name) {
+    tabs.forEach(function (t) {
+      document.getElementById('tt-' + t).setAttribute('aria-selected', t === name ? 'true' : 'false');
+      document.getElementById('tp-' + t).hidden = t !== name;
+    });
+    if (name === 'props') drawProps();
+    if (name === 'terms') drawPolls();
+  }
+  tabs.forEach(function (t) { document.getElementById('tt-' + t).onclick = function () { show(t); }; });
+
+  /* ---- 我是誰 ---- */
+  function drawRole() {
+    var role = document.getElementById('tr-role');
+    role.replaceChildren();
+    if (!state.me.signedIn) {
+      var a = el('a', '', T.signin);
+      a.href = '/account';
+      role.append(a);
+    } else if (state.me.decide) role.append(chip(T.roleDecide, 'gold'));
+    else if (canWrite()) role.append(chip(T.roleTranslator, 'leaf'));
+    else role.append(el('span', 'note', T.roleViewer));
+    document.getElementById('tr-newpoll').hidden = !canWrite();
+  }
+
+  /* ---- 語料 ---- */
+  function loadIndex() {
+    var status = document.getElementById('tr-status');
+    status.textContent = T.loading;
+    state.index = null;
+    document.getElementById('tr-rows').replaceChildren();
+    var lang = state.lang;
+    return api('/tr/index/' + lang).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        if (lang !== state.lang) return;
+        data.low = data.rows.map(function (row) { return (row[2] + '\n' + row[3]).toLowerCase(); });
+        state.index = data;
+        var files = document.getElementById('tr-file');
+        files.replaceChildren(files.options[0]);
+        data.files.forEach(function (f, i) { var o = el('option', '', f); o.value = String(i); files.append(o); });
+        search();
+      }).catch(function () { status.textContent = T.indexFail; });
+  }
+  var timer = 0;
+  function search() {
+    var data = state.index;
+    if (!data) return;
+    var q = document.getElementById('tr-q').value.trim().toLowerCase();
+    var file = document.getElementById('tr-file').value;
+    var blank = document.getElementById('tr-blank').checked;
+    var status = document.getElementById('tr-status');
+    var box = document.getElementById('tr-rows');
+    if (q.length < 2 && file === '' && !blank) {
+      status.textContent = fmt(T.hint, { n: data.rows.length.toLocaleString() });
+      box.replaceChildren();
+      return;
+    }
+    var hits = [];
+    for (var i = 0; i < data.rows.length; i++) {
+      var row = data.rows[i];
+      if (file !== '' && String(row[0]) !== file) continue;
+      if (blank && row[3]) continue;
+      if (q.length >= 2 && data.low[i].indexOf(q) < 0) continue;
+      hits.push(row);
+    }
+    status.textContent = fmt(T.found, { n: hits.length.toLocaleString(), shown: Math.min(hits.length, 100) });
+    box.replaceChildren();
+    hits.slice(0, 100).forEach(function (row) { box.append(rowCard(row)); });
+  }
+  ['tr-q', 'tr-file', 'tr-blank'].forEach(function (id) {
+    document.getElementById(id).addEventListener(id === 'tr-q' ? 'input' : 'change', function () {
+      clearTimeout(timer);
+      timer = setTimeout(search, 180);
+    });
+  });
+
+  function rowCard(row) {
+    var file = state.index.files[row[0]], key = row[1], src = row[2], dst = row[3], who = row[4];
+    var card = el('article', 'tr-row');
+    var head = el('div', 'tr-head');
+    head.append(chip(file));
+    if (who) head.append(chip(who, 'soft'));
+    var badge = chip('', 'leaf');
+    badge.hidden = true;
+    head.append(badge);
+    card.append(head, textBlock(src, 'tr-src'));
+    card.append(dst ? textBlock(dst, 'tr-dst') : el('div', 'tr-dst empty', T.untranslated));
+    var actions = el('div', 'tr-actions');
+    var open = el('button', 'btn small', canWrite() ? T.propose : T.view);
+    open.type = 'button';
+    actions.append(open);
+    card.append(actions);
+    var more = el('div', 'tr-more');
+    more.hidden = true;
+    card.append(more);
+    propId(file, key, src).then(function (id) {
+      var meta = state.byId[id];
+      if (meta && meta.st === 'open') { badge.hidden = false; badge.textContent = fmt(T.openProps, { n: meta.n }); }
+      open.onclick = function () {
+        if (!more.hidden) { more.hidden = true; return; }
+        more.hidden = false;
+        more.replaceChildren(el('p', 'note', T.loading));
+        api('/tr/prop?lang=' + state.lang + '&id=' + id).then(function (r) { return r.ok ? r.json() : null; }).then(function (prop) {
+          more.replaceChildren();
+          if (prop) more.append(propBody(prop, id));
+          if (canWrite() && (!prop || prop.status === 'open')) more.append(editor({ file: file, key: key, src: src, base: dst }, more, id));
+          if (!prop && !canWrite()) more.append(el('p', 'note', state.me.signedIn ? T.notTranslator : T.signinToPropose));
+        });
+      };
+    });
+    return card;
+  }
+
+  function editor(entry, holder, id) {
+    var box = el('div', 'tr-editor');
+    var label = el('label', '', T.yours);
+    var area = el('textarea', 'tr-text');
+    area.setAttribute('aria-label', T.yours);
+    area.rows = Math.min(8, entry.src.split('\n').length + 1);
+    area.value = entry.base || '';
+    var check = el('p', 'msg');
+    var send = el('button', 'btn primary small', T.send);
+    send.type = 'button';
+    function live() {
+      var p = problem(entry.src, area.value, entry.base);
+      check.className = 'msg ' + (p ? 'bad' : 'ok');
+      check.textContent = p ? why(p) : T.looksOk;
+      send.disabled = Boolean(p) || area.value === entry.base;
+    }
+    area.addEventListener('input', live);
+    live();
+    send.onclick = function () {
+      send.disabled = true;
+      post('/tr/propose', { lang: state.lang, file: entry.file, key: entry.key, src: entry.src, base: entry.base, text: area.value })
+        .then(function (b) {
+          if (!b.okay) { check.className = 'msg bad'; check.textContent = why(b.why); send.disabled = false; return; }
+          state.byId[b.id] = { st: 'open', n: b.prop.items.length };
+          holder.replaceChildren(propBody(b.prop, b.id));
+          loadProps();
+        });
+    };
+    box.append(label, area, check, el('div', 'tr-actions'));
+    box.lastChild.append(send);
+    return box;
+  }
+
+  function propBody(prop, id) {
+    var box = el('div', 'tr-prop');
+    var stat = { open: T.st.open, accepted: T.st.accepted, rejected: T.st.rejected }[prop.status] || prop.status;
+    var head = el('div', 'tr-head');
+    head.append(chip(stat, prop.status === 'accepted' ? 'leaf' : prop.status === 'rejected' ? 'bad' : 'gold'));
+    if (prop.done && prop.done.pr) {
+      var link = el('a', '', T.prLink);
+      link.href = prop.done.pr;
+      link.rel = 'noopener';
+      head.append(link);
+    }
+    box.append(head);
+    var items = prop.items.slice().sort(function (a, b) { return b.votes.length - a.votes.length; });
+    items.forEach(function (it) {
+      var row = el('div', 'tr-item' + (prop.done && prop.done.item === it.id ? ' won' : ''));
+      row.append(textBlock(it.text, 'tr-dst'));
+      var foot = el('div', 'tr-foot');
+      foot.append(el('span', 'note', fmt(T.by, { who: it.name })));
+      var votes = el('span', 'tr-votes', fmt(T.votes, { n: it.votes.length }));
+      foot.append(votes);
+      if (prop.status === 'open' && canWrite()) {
+        var mine = it.votes.indexOf(state.me.id) >= 0;
+        var v = el('button', 'btn small' + (mine ? ' primary' : ''), mine ? T.voted : T.vote);
+        v.type = 'button';
+        v.onclick = function () {
+          post('/tr/vote', { lang: state.lang, id: id, item: it.id }).then(function (b) {
+            if (b.okay) box.replaceWith(propBody(b.prop, id)); else alert(why(b.why));
+          });
+        };
+        foot.append(v);
+      }
+      if (prop.status === 'open' && state.me.decide) {
+        var ok = el('button', 'btn small', T.accept);
+        ok.type = 'button';
+        ok.onclick = function () {
+          ok.disabled = true;
+          post('/tr/accept', { lang: state.lang, id: id, item: it.id }).then(function (b) {
+            if (b.okay) { box.replaceWith(propBody(b.prop, id)); refreshCounts(); } else { ok.disabled = false; alert(why(b.why)); }
+          });
+        };
+        foot.append(ok);
+      }
+      row.append(foot);
+      box.append(row);
+    });
+    if (prop.status === 'open' && state.me.decide) {
+      var no = el('button', 'btn small', T.reject);
+      no.type = 'button';
+      no.onclick = function () {
+        post('/tr/reject', { lang: state.lang, id: id }).then(function (b) {
+          if (b.okay) { box.replaceWith(propBody(b.prop, id)); refreshCounts(); } else alert(why(b.why));
+        });
+      };
+      var bar = el('div', 'tr-actions');
+      bar.append(no);
+      box.append(bar);
+    }
+    return box;
+  }
+
+  /* ---- 整句提案的列表 ---- */
+  function loadProps() {
+    return api('/tr/props?lang=' + state.lang).then(function (r) { return r.ok ? r.json() : { props: [] }; }).then(function (data) {
+      state.props = data.props || [];
+      state.byId = {};
+      state.props.forEach(function (p) { state.byId[p.id] = p; });
+      refreshCounts();
+    });
+  }
+  function refreshCounts() {
+    var open = state.props.filter(function (p) { return p.st === 'open'; }).length;
+    document.getElementById('tc-props').textContent = open ? ' ' + open : '';
+    var polls = state.polls.filter(function (p) { return p.st === 'open'; }).length;
+    document.getElementById('tc-terms').textContent = polls ? ' ' + polls : '';
+  }
+  document.getElementById('tr-pst').onchange = function () { drawProps(); };
+  function drawProps() {
+    var want = document.getElementById('tr-pst').value;
+    var box = document.getElementById('tr-props');
+    box.replaceChildren();
+    var list = state.props.filter(function (p) { return p.st === want; });
+    if (!list.length) { box.append(el('p', 'note', T.none)); return; }
+    list.forEach(function (meta) {
+      var card = el('article', 'tr-row');
+      var head = el('div', 'tr-head');
+      head.append(chip(meta.f), chip(fmt(T.votes, { n: meta.v }), 'soft'));
+      card.append(head, textBlock(meta.s, 'tr-src'));
+      var more = el('div', 'tr-more');
+      var open = el('button', 'btn small', fmt(T.seeItems, { n: meta.n }));
+      open.type = 'button';
+      open.onclick = function () {
+        if (more.childNodes.length) { more.replaceChildren(); return; }
+        api('/tr/prop?lang=' + state.lang + '&id=' + meta.id).then(function (r) { return r.json(); }).then(function (prop) {
+          more.replaceChildren(textBlock(prop.base || T.untranslated, 'tr-dst' + (prop.base ? '' : ' empty')), propBody(prop, meta.id));
+        });
+      };
+      var bar = el('div', 'tr-actions');
+      bar.append(open);
+      card.append(bar, more);
+      box.append(card);
+    });
+  }
+
+  /* ---- 術語投票 ---- */
+  function loadPolls() {
+    return api('/tr/polls?lang=' + state.lang).then(function (r) { return r.ok ? r.json() : { polls: [] }; }).then(function (data) {
+      state.polls = data.polls || [];
+      refreshCounts();
+    });
+  }
+  function drawPolls() {
+    var box = document.getElementById('tr-polls');
+    box.replaceChildren();
+    if (!state.polls.length) { box.append(el('p', 'note', T.noPolls)); return; }
+    state.polls.forEach(function (meta) {
+      var card = el('article', 'tr-row');
+      card.append(el('p', 'note', T.loading));
+      box.append(card);
+      api('/tr/poll?lang=' + state.lang + '&id=' + meta.id).then(function (r) { return r.json(); }).then(function (poll) {
+        card.replaceWith(pollCard(poll, meta.id));
+      });
+    });
+  }
+  function pollCard(poll, id) {
+    var card = el('article', 'tr-row tr-poll');
+    var head = el('div', 'tr-head');
+    head.append(chip(poll.status === 'decided' ? T.decided : T.st.open, poll.status === 'decided' ? 'leaf' : 'gold'));
+    head.append(el('span', 'note', fmt(T.by, { who: poll.name })));
+    card.append(head, el('h3', 'tr-term', poll.term));
+    if (poll.note) card.append(textBlock(poll.note, 'note'));
+    var total = poll.options.reduce(function (s, o) { return s + o.votes.length; }, 0);
+    poll.options.slice().sort(function (a, b) { return b.votes.length - a.votes.length; }).forEach(function (o) {
+      var won = poll.decided && poll.decided.option === o.id;
+      var row = el('div', 'tr-opt' + (won ? ' won' : ''));
+      var bar = el('span', 'tr-bar-fill');
+      bar.style.width = (total ? Math.round(o.votes.length * 100 / total) : 0) + '%';
+      var label = el('span', 'tr-opt-text', o.text);
+      var count = el('span', 'tr-votes', fmt(T.votes, { n: o.votes.length }));
+      row.append(bar, label, count);
+      if (poll.status === 'open' && canWrite()) {
+        var mine = o.votes.indexOf(state.me.id) >= 0;
+        var v = el('button', 'btn small' + (mine ? ' primary' : ''), mine ? T.voted : T.vote);
+        v.type = 'button';
+        v.onclick = function () {
+          post('/tr/poll/vote', { lang: state.lang, id: id, option: o.id }).then(function (b) {
+            if (b.okay) card.replaceWith(pollCard(b.poll, id)); else alert(why(b.why));
+          });
+        };
+        row.append(v);
+      }
+      if (poll.status === 'open' && state.me.decide) {
+        var d = el('button', 'btn small', T.decide);
+        d.type = 'button';
+        d.onclick = function () {
+          post('/tr/poll/decide', { lang: state.lang, id: id, option: o.id }).then(function (b) {
+            if (b.okay) { card.replaceWith(pollCard(b.poll, id)); loadPolls(); } else alert(why(b.why));
+          });
+        };
+        row.append(d);
+      }
+      card.append(row);
+    });
+    if (poll.status === 'open' && canWrite()) {
+      var add = el('div', 'tr-actions');
+      var input = el('input');
+      input.type = 'text';
+      input.maxLength = 80;
+      input.placeholder = T.addOption;
+      var go = el('button', 'btn small', T.add);
+      go.type = 'button';
+      go.onclick = function () {
+        if (!input.value.trim()) return;
+        post('/tr/poll/option', { lang: state.lang, id: id, text: input.value }).then(function (b) {
+          if (b.okay) card.replaceWith(pollCard(b.poll, id)); else alert(why(b.why));
+        });
+      };
+      add.append(input, go);
+      card.append(add);
+    }
+    if (poll.status === 'decided' && state.me.decide) {
+      var again = el('button', 'btn small', T.reopen);
+      again.type = 'button';
+      again.onclick = function () {
+        post('/tr/poll/reopen', { lang: state.lang, id: id }).then(function (b) {
+          if (b.okay) { card.replaceWith(pollCard(b.poll, id)); loadPolls(); }
+        });
+      };
+      var bar2 = el('div', 'tr-actions');
+      bar2.append(again);
+      card.append(bar2);
+    }
+    return card;
+  }
+  document.getElementById('np-send').onclick = function () {
+    var msg = document.getElementById('np-msg');
+    var opts = document.getElementById('np-opts').value.split(/[,，、]/).map(function (s) { return s.trim(); }).filter(Boolean);
+    post('/tr/poll', { lang: state.lang, term: document.getElementById('np-term').value, note: document.getElementById('np-note').value, options: opts })
+      .then(function (b) {
+        if (!b.okay) { msg.className = 'msg bad'; msg.textContent = why(b.why); return; }
+        msg.className = 'msg ok';
+        msg.textContent = T.opened;
+        ['np-term', 'np-opts', 'np-note'].forEach(function (x) { document.getElementById(x).value = ''; });
+        loadPolls().then(drawPolls);
+      });
+  };
+
+  function switchLang() {
+    state.lang = langSel.value;
+    try { localStorage.setItem(LANG_KEY, state.lang); } catch (e) {}
+    drawRole();
+    Promise.all([loadProps(), loadPolls()]).then(function () {
+      if (!document.getElementById('tp-props').hidden) drawProps();
+      if (!document.getElementById('tp-terms').hidden) drawPolls();
+    });
+    loadIndex();
+  }
+  langSel.onchange = switchLang;
+  api('/tr/me').then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (me) {
+    state.me = { signedIn: Boolean(me.signedIn), langs: me.langs || [], decide: Boolean(me.decide), id: me.id || '' };
+    switchLang();
+  });
+` + '</script>';
+
 const PAGES = {
   '/': ['home.title', HOME, HOME_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')</script>'],
   '/features': ['features.title', FEATURES, FEATURES_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')</script>'],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],
+  '/translate': ['tr.title', TRANSLATE, TRANSLATE_JS],
 };
 
 /** 網站有哪幾頁。 */
@@ -4108,6 +4822,11 @@ function filled(code) {
   js.credit = { ...base.js.credit, ...((own.js && own.js.credit) || {}) };
   js.staff = { ...base.js.staff, ...((own.js && own.js.staff) || {}) };
   js.guild = { ...base.js.guild, ...((own.js && own.js.guild) || {}) };
+  js.tr = { ...base.js.tr, ...((own.js && own.js.tr) || {}) };
+  js.tr.why = { ...base.js.tr.why, ...((own.js && own.js.tr && own.js.tr.why) || {}) };
+  js.tr.st = { ...base.js.tr.st, ...((own.js && own.js.tr && own.js.tr.st) || {}) };
+  js.tr.langs = { ...base.js.tr.langs, ...((own.js && own.js.tr && own.js.tr.langs) || {}) };
+  js.translator = { ...base.js.translator, ...((own.js && own.js.translator) || {}) };
   return { ...base, ...own, js };
 }
 
