@@ -110,6 +110,12 @@ const STYLE = String.raw`
   /* 大段之間留寬一點、標題貼著自己的內容：寬與緊的差距才看得出哪幾塊是一組 */
   h2 { margin: 56px 0 14px; font-size: 19px; font-weight: 650; }
   .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
+  .policy { max-width: 72ch; line-height: 1.75; }
+  .policy-date { margin: 8px 0 28px; color: var(--ink-2); font-size: 13px; }
+  .policy h2 { margin: 36px 0 10px; font-size: 17px; }
+  .policy p, .policy li { text-wrap: pretty; }
+  .policy ul { margin: 8px 0; padding-left: 1.3em; display: grid; gap: 4px; }
+  .policy b { color: var(--ink); font-weight: 600; }
   .panel { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
   /* 協作翻譯 */
   .tr-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 20px 0 6px; }
@@ -140,6 +146,26 @@ const STYLE = String.raw`
   .tr-more { margin-top: 10px; display: grid; gap: 10px; }
   .tr-more:empty { display: none; }
   .tr-editor { display: grid; gap: 4px; }
+  .bot-state { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 4px; font-size: 14px; overflow-wrap: anywhere; }
+  .bot-state .ok { color: var(--leaf); }
+  .bot-state .bad { color: var(--danger); }
+  .gv { display: grid; gap: 8px; margin-top: 6px; padding: 10px 12px; border-radius: 10px; background: #0b100d; box-shadow: inset 0 0 0 1px var(--line); }
+  .gv-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+  .gv-title { font-size: 13px; color: var(--ink-2); letter-spacing: .04em; }
+  .gv-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .gv-col { margin: 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
+  .gv-col figcaption { font-size: 12px; color: var(--ink-2); }
+  .gv-tip { position: relative; isolation: isolate; padding: 14px 14px 12px; color: #e8e8e8; font-size: 15px; line-height: 1.5; text-shadow: 1px 1px 0 #3a3a3a; overflow-x: auto; }
+  .gv-tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 12px 10px; border-image: var(--t-tip-plain) 12 10 fill / 12px 10px; image-rendering: pixelated; }
+  .gv-line { white-space: pre-wrap; min-height: 1.5em; overflow-wrap: anywhere; }
+  .gv-num { border-bottom: 1px dashed currentColor; font-variant-numeric: tabular-nums; }
+  .gv-num sup { margin-left: 2px; font-size: 10px; line-height: 0; color: var(--leaf); text-shadow: none; }
+  .gv-num.bad sup { color: var(--danger); }
+  .gv-ph { text-decoration: underline dotted #ffffff70; text-underline-offset: 3px; }
+  .gv-icon { display: inline-block; width: .8em; height: .8em; margin: 0 2px; vertical-align: -.05em; background: #777; box-shadow: inset -2px -2px 0 #4c4c4c; }
+  .gv-note { margin: 0; font-size: 13px; }
+  .gv-tools { margin-top: 2px; }
+  .gv-tools .btn { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13px; padding: 4px 9px; }
   .tr-text { width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink); border: 1px solid var(--line); background: #0f1512; resize: vertical; }
   .tr-text:focus { border-color: var(--leaf-deep); outline: none; }
   .tr-prop { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
@@ -780,6 +806,12 @@ export const TEXT = {
     'top.getnote': '需要 Wynntils 與 Fabric API，jar 放進 mods 資料夾就好。<a href="/#install">安裝說明</a>',
     'foot.label': '頁尾',
     'foot.tagline': 'Wynncraft 的多語言翻譯模組。原文留著，譯文就在旁邊。',
+    'foot.privacy': '隱私政策', 'foot.terms': '服務條款',
+    'privacy.title': '隱私政策 - WynnChaYuan', 'privacy.h1': '隱私政策',
+    'terms.title': '服務條款 - WynnChaYuan', 'terms.h1': '服務條款',
+    'legal.updated': '生效日期：2026 年 10 月 16 日',
+    'privacy.body': "<p>這份說明講的是 WynnChaYuan 的三樣東西會碰到哪些資料：Minecraft 模組 WynnChaYuan、這個網站 wynnchayuan.com，以及 Discord 機器人。WynnChaYuan 是玩家做的非官方專案，由 WynnChaYuan 團隊（聯絡人 LyuChaCha）維護。</p><h2>模組送出的資料</h2><p>披風與名字前的葉子需要連到 wynnchayuan.com。模組在你進 Wynncraft 時報到一次，送出：</p><ul><li>你的 Minecraft UUID，以及 Mojang 簽過的公開個人檔案（名字與外觀）</li><li>用來證明帳號是本人的公鑰與簽章（Mojang 發給每個正版帳號的那一對金鑰）</li><li>要不要穿披風、徽章的設定（葉子要不要彩色、展示哪幾個身分）</li><li>上傳披風時，你選的那張圖</li></ul><p><b>私鑰與登入憑證不會離開遊戲。</b>不送所在的世界、聊天或任何遊戲內容。報到沒有開關，裝了模組、進了 Wynncraft 就會送；不想讓別人看到披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。</p><p>模組不會自動上傳遊戲裡的文字。「匯出未翻譯字串」產生的檔案留在你的電腦上，要不要交給我們由你決定。「直接更新」只有你按了才會從 GitHub Releases 下載新版。</p><h2>網站帳號</h2><p>網站帳號用 Discord 登入，只要 <code>identify</code> 權限：我們記下 Discord 的使用者代號與顯示名稱，不拿 email、不拿你加入的伺服器。Discord 給的存取憑證用完就丟。在遊戲裡打 <code>/wcy link</code> 綁定之後，帳號會多記遊戲的 UUID、名字與綁定時間。</p><h2>披風</h2><ul><li>上傳的圖檔、格式與大小、上傳時間，以及上傳的人是誰（管理的人要知道）</li><li>公開的披風一覽只顯示圖與從 UUID 雜湊出來的代碼，不顯示 UUID 與名字；誰傳了哪一件只有開發者看得到</li><li>你穿過的紀錄與加星號的最愛只有你自己看得到</li><li>設成不公開的披風不會出現在一覽上；等審核的披風在通過之前只有你和管理的人看得到</li><li>為了擋短時間大量上傳，會暫時記下最近幾次上傳的時間，最多十三個小時後自動消失</li><li>被封禁或列入審核名單時，記下 UUID、名字、時間與經手的管理員</li></ul><h2>協作翻譯</h2><p>在 /translate 提案、投票或開術語投票時，記下你的顯示名稱與代號、時間、你寫的內容。提案與投票其他人看得到。定案的譯文會寫進公開的 GitHub 倉庫（授權 CC BY-NC-SA 4.0），合併之後會留在倉庫的歷史裡。</p><h2>Discord 機器人</h2><p>機器人只收到你打的斜線指令：指令與選項、你的 Discord 使用者代號、所在伺服器與頻道的代號、介面語言（Discord 送來的固定欄位）。它讀不到任何聊天訊息，也不保存指令內容。</p><h2>Cookie 與瀏覽器裡存的東西</h2><ul><li><code>lang</code>：記住你選的網站語言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：Discord 登入時的驗證，只在登入的那幾分鐘有用</li><li>瀏覽器的 <code>localStorage</code>：登入的通行證（一天有效）與畫面上的小設定</li></ul><p>沒有廣告，也沒有分析或追蹤用的 Cookie。</p><h2>不記的東西</h2><p>我們的程式不記 IP、所在的世界、聊天或任何遊戲內容。</p><h2>第三方服務</h2><ul><li><b>Cloudflare</b>：網站與資料放在 Cloudflare Workers 與 KV。Cloudflare 為了安全與網路運作會處理連線資訊（包含 IP），依它自己的隱私政策</li><li><b>Discord</b>：登入與機器人</li><li><b>GitHub</b>：原始碼、譯文、更新檔與協作翻譯的 PR</li><li><b>minotar.net</b>：網頁上的玩家頭像由你的瀏覽器直接向它讀取</li><li><b>jsDelivr</b>：披風的 3D 預覽程式由你的瀏覽器直接向它讀取</li></ul><p>我們不賣、不出租任何資料，也不拿來投放廣告。</p><h2>保留多久</h2><ul><li>報到名單：十四天沒再報到就從名單上消失</li><li>沒有人穿的披風：留七天，期滿刪除</li><li>遊戲的通行證七天、網頁的一天，過期就失效</li><li>網站帳號、封禁與審核紀錄：留到你要求刪除，或管理的人解除為止</li></ul><h2>你可以做的事</h2><p>披風可以在帳號頁自己移除；不想再報到，移除模組即可。要查看或刪除帳號與相關資料，請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue（請不要在公開的 Issue 貼私人資料）。我們會在合理時間內處理。</p><h2>年齡</h2><p>使用這些服務需要符合 Minecraft 與 Discord 對年齡的要求。</p><h2>修改</h2><p>這份說明改了會更新這一頁與上面的日期；重大的改動會在 Discord 或更新日誌公告。</p>",
+    'terms.body': "<p>使用 WynnChaYuan 模組、wynnchayuan.com 網站或 Discord 機器人，就表示你同意以下條款。不同意的話請不要使用。</p><h2>非官方專案</h2><p>WynnChaYuan 是玩家做的非官方專案，跟 Wynncraft、Mojang、Microsoft、Discord 都沒有關係，也沒有得到它們的認可。網站上的遊戲材質與畫面屬於 Wynncraft 及各自的權利人。</p><h2>授權</h2><p>模組的程式碼以 AGPL-3.0 授權；譯文與語料以 CC BY-NC-SA 4.0 授權。詳見 GitHub 倉庫的 LICENSE 與 LICENSE-DATA。</p><h2>帳號</h2><ul><li>一個網站帳號綁一個遊戲帳號，綁定一定要從遊戲裡做</li><li>不可以冒用別人的帳號、繞過身分驗證，或把通行證交給別人使用</li><li>違反條款的帳號可能被停用</li></ul><h2>披風的規範</h2><p>披風會被其他玩家與網站訪客看到。上傳的圖不可以包含：</p><ul><li>政治宣傳</li><li>色情、猥褻或血腥的內容</li><li>違法的內容，或侵害他人著作權、商標的圖</li><li>種族歧視、仇恨或騷擾他人的內容</li><li>廣告（宣傳公會除外）</li></ul><p>管理的人可以審核、移除違規的披風，或封禁上傳的人，不另行通知。圖的權利仍是你的；上傳即表示你同意我們保存它，並展示給其他玩家與網站訪客。</p><h2>協作翻譯</h2><ul><li>提交的譯文必須是你有權提供的內容，並同意以 CC BY-NC-SA 4.0 授權</li><li>請照術語表與各語言團隊的決定翻譯；開發者與管理員有最後的決定權</li><li>不要灌水、刷票或提交無關的內容</li></ul><h2>禁止的行為</h2><ul><li>大量或自動化地呼叫網站的 API，或干擾服務運作</li><li>嘗試取得不屬於你的資料或權限</li><li>濫用 Discord 機器人</li></ul><h2>贊助</h2><p>透過 Ko-fi 的贊助是自願的支持。贊助者的回饋（例如 GIF 披風）可能隨專案調整。</p><h2>遊戲與第三方</h2><p>模組只改變你畫面上顯示的文字與外觀，不改變遊戲玩法。使用任何模組都請自行遵守 Wynncraft 與 Minecraft 的規則。</p><h2>不提供保證</h2><p>這些服務照現況提供，可能有錯誤、中斷或停止服務。在法律允許的範圍內，我們不對使用這些服務造成的損失負責。</p><h2>修改與終止</h2><p>我們可能修改這份條款，或停止部分甚至全部服務。修改後會更新這一頁與上面的日期；之後繼續使用，即表示同意新的條款。</p><h2>聯絡</h2><p>有問題請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue。</p>",
     'foot.get': '下載', 'foot.project': '專案', 'foot.support': '支持', 'foot.contact': '聯絡',
     'foot.changelog': '更新日誌', 'foot.license': '程式授權：AGPL-3.0', 'foot.datalicense': '譯文授權：CC BY-NC-SA 4.0',
     'foot.issues': '回報問題', 'foot.contribute': '怎麼參與', 'foot.team': '團隊', 'foot.sponsoring': '關於贊助',
@@ -916,6 +948,8 @@ export const TEXT = {
     'admin.staffhow': '點開下拉選單，從已註冊成員（登入過網站或傳過披風的人）裡選一位；可以打 Discord 名稱、Minecraft ID、UUID 或 Discord 使用者 ID 篩選。有綁遊戲帳號的會記成 UUID，用遊戲或 Discord 登入都有權限。還沒註冊的人也可以直接打完整的 Minecraft ID 或 Discord 使用者 ID 再按加入，用 Minecraft ID 加的等他登入一次就會改記成 UUID。加了馬上生效。',
     'admin.who': '選擇成員', 'admin.findph': '點一下展開，或打字篩選…',
     'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
+    'admin.bot': 'Discord 機器人', 'admin.botreg': '註冊指令', 'admin.botinvite': '邀請到伺服器',
+    'admin.botnote': '斜線指令 /status、/cape、/translate 由這個網站回應。部署之後，到 Discord Developer Portal 把下面的 Interactions Endpoint URL 填進去，再按「註冊指令」；指令改了要再按一次。Bot Token 用 <code>wrangler secret put DISCORD_BOT_TOKEN</code> 設定，不要貼在任何網頁上。',
     'admin.guilds': '貢獻公會',
     'admin.guildsnote': '會出現在首頁「團隊」那一段，點下去連到那個公會在 Wynncraft 的頁面。先加名字（要跟 Wynncraft 上的一模一樣），再各上傳一張圖示與旗幟。圖會先縮小再傳，PNG、JPEG、WebP 都可以。',
     'admin.gname': '公會名稱', 'admin.gtag': '標籤（可以不填）', 'admin.gpics': '圖示與旗幟', 'admin.guild': '公會',
@@ -1049,6 +1083,10 @@ export const TEXT = {
         voted: '已投（再按一次收回）', accept: '採用', reject: '駁回', prLink: '看 PR', none: '目前沒有。', seeItems: '看 {n} 個譯法',
         noPolls: '還沒有人開投票。', decided: '已定案', decide: '定案', addOption: '加一個候選', add: '加入', reopen: '重新開放',
         opened: '開好了', failed: '沒有成功（{s}）',
+        preview: '實機預覽', pvSrc: '原文', pvDst: '譯文', reroll: '換一組數字', insert: '插入',
+        pvNote: '數字是模擬的，旁邊的小字是它接的是原文第幾個數字；{p} 換成地名、{u} 換成名字，灰色方塊是圖示。',
+        autonum: '幫我編號', autonumHint: '把譯文裡的 {~} 依序改成 {~1}、{~2}…，再照語序搬動',
+        pvOver: '原文只有 {n} 個數字',
         why: {
           empty: '譯文是空的', 'too long': '太長了（最多 2000 字）',
           placeholders: '{#}、{p}、{u} 的數量或順序跟原文不一樣（{u} 可以少，不能多）', numbers: '{~} 的數量跟原文不一樣',
@@ -1071,7 +1109,7 @@ export const TEXT = {
         'bad note': '備註最多 60 個字',
         already: '這個 UUID 已經在名單上了',
       },
-      sending: '送出中…', prDone: 'PR 開好了', prFail: '沒有成功（{s}）',
+      sending: '送出中…', prDone: 'PR 開好了', prFail: '沒有成功（{s}）', botOk: '註冊好了：{s}',
       credit: {
         'bad name': '顯示的名字不能空白，也不能超過 40 個字',
         'bad mc': 'Minecraft ID 只能是英數與底線，最多 16 個字',
@@ -1092,6 +1130,12 @@ export const TEXT = {
     'top.getnote': 'Needs Wynntils and Fabric API; the jar goes in your mods folder. <a href="/#install">How to install</a>',
     'foot.label': 'Footer',
     'foot.tagline': 'A multilingual translation mod for Wynncraft. The original text stays; the translation sits beside it.',
+    'foot.privacy': 'Privacy policy', 'foot.terms': 'Terms of service',
+    'privacy.title': 'Privacy policy - WynnChaYuan', 'privacy.h1': 'Privacy policy',
+    'terms.title': 'Terms of service - WynnChaYuan', 'terms.h1': 'Terms of service',
+    'legal.updated': 'Effective 16 October 2026',
+    'privacy.body': "<p>This page explains what data WynnChaYuan handles across three things: the WynnChaYuan Minecraft mod, this website (wynnchayuan.com) and the Discord bot. WynnChaYuan is an unofficial fan project maintained by the WynnChaYuan team (contact: LyuChaCha).</p><h2>What the mod sends</h2><p>Capes and the leaf before your name need a connection to wynnchayuan.com. The mod checks in once when you join Wynncraft and sends:</p><ul><li>Your Minecraft UUID and your public profile as signed by Mojang (name and skin)</li><li>A public key and signature proving the account is yours (the key pair Mojang issues to every premium account)</li><li>Whether to wear your cape, and your badge settings (coloured leaf, which roles to show)</li><li>When you upload a cape, the image you chose</li></ul><p><b>Your private key and login credentials never leave the game.</b> The mod does not send the world you are in, chat, or any other game content. Checking in has no switch: it happens whenever the mod is installed and you join Wynncraft. To hide your cape from others, turn off \"Wear my cape\" under F6 → \"Badge & cape\".</p><p>The mod never uploads in-game text on its own. Files made by \"Export untranslated strings\" stay on your computer; sending them to us is up to you. \"Update now\" only downloads a new version from GitHub Releases when you press it.</p><h2>Website account</h2><p>Website accounts sign in with Discord using only the <code>identify</code> scope: we keep your Discord user ID and display name. We do not read your email or your server list, and the access token Discord gives us is thrown away after use. Once you link your game account with <code>/wcy link</code>, the account also stores your game UUID, name and the time you linked.</p><h2>Capes</h2><ul><li>The uploaded image, its format and size, when it was uploaded, and who uploaded it (moderators need to know)</li><li>The public gallery shows only the image and a code hashed from the UUID, never the UUID or name; only developers can see who uploaded which cape</li><li>Your history of worn capes and your starred favourites are visible only to you</li><li>Capes set to private stay out of the gallery; capes awaiting review are visible only to you and moderators until approved</li><li>To stop bursts of uploads, the times of your recent uploads are kept for at most thirteen hours</li><li>If you are banned or put on the review list, we store your UUID, name, the time and the moderator involved</li></ul><h2>Translate</h2><p>When you suggest a translation, vote, or open a term poll on /translate, we store your display name and ID, the time, and what you wrote. Suggestions and votes are visible to others. Accepted translations are written to the public GitHub repository (licensed CC BY-NC-SA 4.0) and stay in its history once merged.</p><h2>Discord bot</h2><p>The bot only receives the slash commands you use: the command and its options, your Discord user ID, the server and channel IDs and your client language (fields Discord always sends). It cannot read any chat messages and does not keep what you sent.</p><h2>Cookies and browser storage</h2><ul><li><code>lang</code>: remembers the website language you chose</li><li><code>wcy_oauth</code>, <code>wcy_intent</code>: protect the Discord sign-in and only matter for the few minutes it takes</li><li>Browser <code>localStorage</code>: your sign-in pass (valid for one day) and small display preferences</li></ul><p>There are no ads and no analytics or tracking cookies.</p><h2>What we do not record</h2><p>Our code does not record IP addresses, the world you are in, chat or any other game content.</p><h2>Third-party services</h2><ul><li><b>Cloudflare</b>: the website and its data run on Cloudflare Workers and KV. Cloudflare processes connection data (including IP addresses) for security and network operation under its own privacy policy</li><li><b>Discord</b>: sign-in and the bot</li><li><b>GitHub</b>: source code, translations, release downloads and pull requests from Translate</li><li><b>minotar.net</b>: player heads on the website are loaded by your browser directly from it</li><li><b>jsDelivr</b>: the 3D cape viewer is loaded by your browser directly from it</li></ul><p>We do not sell or rent any data, and we do not use it for advertising.</p><h2>How long we keep it</h2><ul><li>Check-in list: you drop off after fourteen days without checking in</li><li>Capes nobody wears: kept for seven days, then deleted</li><li>Passes expire after seven days (game) or one day (website)</li><li>Website accounts, ban and review records: until you ask for deletion or a moderator lifts them</li></ul><h2>Your choices</h2><p>You can remove your cape yourself on the account page. To stop checking in, remove the mod. To see or delete your account and related data, contact <b>LyuChaCha</b> on Discord or open a GitHub issue (please do not post private details in a public issue). We will handle requests within a reasonable time.</p><h2>Age</h2><p>You need to meet the age requirements of Minecraft and Discord to use these services.</p><h2>Changes</h2><p>If this policy changes, we update this page and the date above. Significant changes are announced on Discord or in the changelog.</p>",
+    'terms.body': "<p>By using the WynnChaYuan mod, the wynnchayuan.com website or the Discord bot, you agree to these terms. If you do not agree, please do not use them.</p><h2>Unofficial project</h2><p>WynnChaYuan is an unofficial fan project. It is not affiliated with or endorsed by Wynncraft, Mojang, Microsoft or Discord. Game textures and screens on this website belong to Wynncraft and their respective owners.</p><h2>Licences</h2><p>The mod's code is licensed under AGPL-3.0; translations and corpus data under CC BY-NC-SA 4.0. See LICENSE and LICENSE-DATA in the GitHub repository.</p><h2>Accounts</h2><ul><li>One website account links to one game account, and linking must be done from inside the game</li><li>Do not use someone else's account, get around identity checks, or let others use your pass</li><li>Accounts that break these terms may be suspended</li></ul><h2>Cape rules</h2><p>Capes are seen by other players and website visitors. Uploaded images must not contain:</p><ul><li>Political propaganda</li><li>Sexual, obscene or gory content</li><li>Illegal content, or images that infringe copyrights or trademarks</li><li>Racist, hateful or harassing content</li><li>Advertising (promoting a guild is fine)</li></ul><p>Moderators may review or remove capes that break these rules, or ban the uploader, without notice. You keep the rights to your image; by uploading it you let us store it and show it to other players and website visitors.</p><h2>Translate</h2><ul><li>Only submit translations you have the right to provide, and agree to license them under CC BY-NC-SA 4.0</li><li>Follow the glossary and your language team's decisions; developers and admins have the final say</li><li>No spam, vote stuffing or unrelated content</li></ul><h2>Not allowed</h2><ul><li>Calling the website's API in bulk or automatically, or disrupting the service</li><li>Trying to access data or permissions that are not yours</li><li>Abusing the Discord bot</li></ul><h2>Sponsoring</h2><p>Sponsoring through Ko-fi is voluntary support. Sponsor perks (such as GIF capes) may change as the project evolves.</p><h2>The game and third parties</h2><p>The mod only changes the text and appearance shown on your own screen; it does not change gameplay. You are responsible for following the rules of Wynncraft and Minecraft when using any mod.</p><h2>No warranty</h2><p>These services are provided as is and may have errors, interruptions or be discontinued. To the extent permitted by law, we are not liable for any loss arising from using them.</p><h2>Changes and termination</h2><p>We may change these terms or stop some or all of the services. Changes are posted on this page with an updated date; continuing to use the services means you accept the new terms.</p><h2>Contact</h2><p>For questions, contact <b>LyuChaCha</b> on Discord or open a GitHub issue.</p>",
     'foot.get': 'Download', 'foot.project': 'Project', 'foot.support': 'Support', 'foot.contact': 'Contact',
     'foot.changelog': 'Changelog', 'foot.license': 'Code licence: AGPL-3.0', 'foot.datalicense': 'Translation licence: CC BY-NC-SA 4.0',
     'foot.issues': 'Report a problem', 'foot.contribute': 'How to contribute', 'foot.team': 'The team', 'foot.sponsoring': 'About sponsoring',
@@ -1228,6 +1272,8 @@ export const TEXT = {
     'admin.staffhow': 'Open the drop-down and pick one of the registered members (people who have signed in to the website or uploaded a cape); type a Discord name, Minecraft ID, UUID or Discord user ID to filter. Someone with a linked game account is saved by UUID, so signing in with either the game or Discord works. For someone who has not registered yet, type their full Minecraft ID or Discord user ID and press Add; an entry added by Minecraft ID is switched to the UUID the first time they sign in. It takes effect at once.',
     'admin.who': 'Choose a member', 'admin.findph': 'Click to open, or type to filter…',
     'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
+    'admin.bot': 'Discord bot', 'admin.botreg': 'Register commands', 'admin.botinvite': 'Invite to a server',
+    'admin.botnote': 'This website answers the slash commands /status, /cape and /translate. After deploying, paste the Interactions Endpoint URL below into the Discord Developer Portal, then press “Register commands”; press it again whenever the commands change. Set the bot token with <code>wrangler secret put DISCORD_BOT_TOKEN</code> and never paste it into any web page.',
     'admin.guilds': 'Contributing guilds',
     'admin.guildsnote': 'These appear in the team section of the home page and link to the guild’s page on Wynncraft. Add the name first (exactly as it is on Wynncraft), then upload an icon and a banner. Images are shrunk before upload; PNG, JPEG and WebP all work.',
     'admin.gname': 'Guild name', 'admin.gtag': 'Tag (optional)', 'admin.gpics': 'Icon and banner', 'admin.guild': 'Guild',
@@ -1361,6 +1407,10 @@ export const TEXT = {
         voted: 'Voted (press again to take it back)', accept: 'Accept', reject: 'Reject', prLink: 'Pull request', none: 'Nothing here yet.',
         seeItems: 'See {n} translations', noPolls: 'No votes have been started yet.', decided: 'Decided', decide: 'Decide',
         addOption: 'Add a candidate', add: 'Add', reopen: 'Reopen', opened: 'Started', failed: 'That did not work ({s})',
+        preview: 'In-game preview', pvSrc: 'Source', pvDst: 'Translation', reroll: 'Other numbers', insert: 'Insert',
+        pvNote: 'The numbers are made up; the small digit beside each one shows which number of the source it takes. {p} becomes a place, {u} a name, and grey squares are icons.',
+        autonum: 'Number them', autonumHint: 'Turns each {~} in your translation into {~1}, {~2}… in order, so you can move them around',
+        pvOver: 'The source only has {n} numbers',
         why: {
           empty: 'The translation is empty', 'too long': 'Too long (2000 characters at most)',
           placeholders: '{#}, {p} or {u} differ from the source in number or order ({u} may be dropped, not added)',
@@ -1386,7 +1436,7 @@ export const TEXT = {
         'bad note': 'The note can be 60 characters at most',
         already: 'This UUID is already on the list',
       },
-      sending: 'Sending…', prDone: 'Pull request opened', prFail: 'That did not work ({s})',
+      sending: 'Sending…', prDone: 'Pull request opened', prFail: 'That did not work ({s})', botOk: 'Registered: {s}',
       credit: {
         'bad name': 'The display name cannot be empty or longer than 40 characters',
         'bad mc': 'A Minecraft ID is letters, digits and underscores, 16 at most',
@@ -1660,7 +1710,8 @@ function layout(lang, title, active, body, script) {
     + column('foot.get', [to(MODRINTH, 'Modrinth'), to(CURSEFORGE, 'CurseForge'), to(RELEASES, 'GitHub Releases'),
       to(REPO + '/blob/main/CHANGELOG.md', '%%foot.changelog%%')])
     + column('foot.project', [to(REPO, 'GitHub'), to(REPO + '/blob/main/LICENSE', '%%foot.license%%'),
-      to(REPO + '/blob/main/LICENSE-DATA', '%%foot.datalicense%%'), to(ISSUES, '%%foot.issues%%')])
+      to(REPO + '/blob/main/LICENSE-DATA', '%%foot.datalicense%%'), to(ISSUES, '%%foot.issues%%'),
+      to('/privacy', '%%foot.privacy%%'), to('/terms', '%%foot.terms%%')])
     + column('foot.support', [to(KOFI, '%%foot.kofi%%'), to('/#sponsoring', '%%foot.sponsoring%%'),
       to('/#team', '%%foot.team%%'), to(REPO + '/blob/main/CONTRIBUTING.md', '%%foot.contribute%%')])
     + column('foot.contact', ['%%foot.sitedev%%',
@@ -3703,6 +3754,16 @@ const ADMIN = String.raw`
         <p class="note" id="nostaff" hidden style="margin:10px">%%admin.nostaff%%</p>
       </div>
     </div>
+
+    <div id="bot-block" hidden>
+      <h2>%%admin.bot%%</h2>
+      <div class="panel">
+        <p class="note" style="margin:0 0 12px">%%admin.botnote%%</p>
+        <ul class="bot-state" id="bot-state"></ul>
+        <div class="tr-actions"><button class="btn primary" id="bot-reg" type="button" disabled>%%admin.botreg%%</button><a class="btn" id="bot-invite" hidden rel="noopener">%%admin.botinvite%%</a></div>
+        <p class="msg" id="bot-msg" role="status"></p>
+      </div>
+    </div>
   </div>
 `;
 
@@ -4206,8 +4267,39 @@ const ADMIN_JS = '<script>' + String.raw`
     if (me.developer) {
       document.getElementById('staff-block').hidden = false;
       loadStaff();
+      document.getElementById('bot-block').hidden = false;
+      loadBot();
     }
   });
+  /* Discord 機器人：設定齊了沒有、註冊指令、邀請連結（只有開發者） */
+  function loadBot() {
+    api('/admin/discord').then(function (r) { return r.ok ? r.json() : null; }).then(function (info) {
+      if (!info) return;
+      var list = document.getElementById('bot-state');
+      list.replaceChildren();
+      [['Public Key', info.publicKey], ['Bot Token', info.token], ['Client ID', info.clientId]].forEach(function (pair) {
+        list.append(el('li', pair[1] ? 'ok' : 'bad', (pair[1] ? '\u2713 ' : '\u2717 ') + pair[0]));
+      });
+      var end = el('li', '', 'Interactions Endpoint URL: ');
+      end.append(el('code', '', info.endpoint));
+      list.append(end);
+      var invite = document.getElementById('bot-invite');
+      invite.hidden = !info.invite;
+      if (info.invite) invite.href = info.invite;
+      document.getElementById('bot-reg').disabled = !(info.token && info.clientId);
+    });
+  }
+  document.getElementById('bot-reg').onclick = function () {
+    var msg = document.getElementById('bot-msg');
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/discord/register', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (b) {
+        msg.className = 'msg ' + (r.ok ? 'ok' : 'bad');
+        msg.textContent = r.ok ? fmt(L.botOk, { s: (b.commands || []).join(', ') }) : fmt(L.prFail, { s: b.why || r.status });
+      });
+    });
+  };
   document.getElementById('c-send').onclick = function () {
     var msg = document.getElementById('c-msg');
     var entry = {
@@ -4241,6 +4333,12 @@ const ADMIN_JS = '<script>' + String.raw`
 ` + '</script>';
 
 /** 每一頁：標題的鍵、內容、程式。 */
+/* ---------------------------------------------------------------- 隱私政策與服務條款
+   使用者 2026-10-16：Discord 的應用程式驗證要這兩個連結，「用現有內容寫」。內容照 README 的
+   「披風、灰色葉子與會送出的資料」與 tools/presence/README.md 的「它記什麼」；那兩處改了這裡要跟。 */
+const legalPage = (name) => '<article class="policy"><h1>%%' + name + '.h1%%</h1>'
+  + '<p class="policy-date">%%legal.updated%%</p>%%' + name + '.body%%</article>';
+
 const LOST = String.raw`
   <section class="lost">
     <span class="code" aria-hidden="true">404</span>
@@ -4371,6 +4469,77 @@ const TRANSLATE_JS = '<script>' + String.raw`
   }
   function chip(text, cls) { return el('span', 'tr-chip' + (cls ? ' ' + cls : ''), text); }
 
+  /* ---- 實機預覽 ----
+     使用者 2026-10-16：「希望可以瀏覽實機內容（例如 {~1} 模擬數值，防止翻譯團隊寫不對，或是幫忙編號）」。
+     原文的 {~} 依序是第 1、2、3… 個數字；譯文寫 {~N} 就是接原文第 N 個（沒編號的照出現順序）。
+     兩邊用同一組模擬值，數字旁邊標著它是第幾個，順序寫反一眼就看得出來。 */
+  var SAMPLES = [[12, 3, 250, 45, 8, 1500, 7, 30, 2, 64], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1234, 56, 7, 890, 2, 33, 4, 5, 6, 9]];
+  var sampleSet = 0;
+  var SLOT_COLOURS = ['#ffaa00', '#55ffff', '#55ff55', '#ff55ff', '#ffff55', '#ff5555'];
+  function numberCount(text) { return (String(text).match(/\{~\d*\}/g) || []).length; }
+  function gameText(text, limit) {
+    var values = SAMPLES[sampleSet];
+    var out = el('div', 'gv-text');
+    var order = 0, colour = '';
+    String(text).split('\n').forEach(function (line) {
+      var row = el('div', 'gv-line');
+      line.split(/(\{(?:~\d*|[#pu\/]|c\d+|w\d+)\})/).forEach(function (part, i) {
+        if (!part) return;
+        var span = null;
+        if (i % 2 === 0) span = el('span', '', part);
+        else if (part.charAt(1) === '~') {
+          var n = part === '{~}' ? ++order : Number(part.slice(2, -1));
+          span = el('span', 'gv-num' + (n > limit ? ' bad' : ''), String(values[(n - 1) % values.length]));
+          var sup = el('sup', '', String(n));
+          if (n > limit) sup.title = fmt(T.pvOver, { n: limit });
+          span.append(sup);
+        } else if (part === '{p}') span = el('span', 'gv-ph', 'Detlas');
+        else if (part === '{u}') span = el('span', 'gv-ph', 'Aledar');
+        else if (part === '{#}') { span = el('i', 'gv-icon'); span.title = '{#}'; }
+        else if (part === '{/}') colour = '';
+        else if (part.charAt(1) === 'c') colour = SLOT_COLOURS[(Number(part.slice(2, -1)) - 1) % SLOT_COLOURS.length];
+        if (span) {
+          if (colour) span.style.color = colour;
+          row.append(span);
+        }
+      });
+      if (!row.childNodes.length) row.append('\u00a0');
+      out.append(row);
+    });
+    return out;
+  }
+  function preview(src, current) {
+    var box = el('div', 'gv');
+    var head = el('div', 'gv-head');
+    head.append(el('span', 'gv-title', T.preview));
+    var limit = numberCount(src);
+    if (limit) {
+      var again = el('button', 'btn small', T.reroll);
+      again.type = 'button';
+      again.onclick = function () { sampleSet = (sampleSet + 1) % SAMPLES.length; draw(); };
+      head.append(again);
+    }
+    var cols = el('div', 'gv-cols');
+    var left = el('figure', 'gv-col'), right = el('figure', 'gv-col');
+    cols.append(left, right);
+    function tip(text) { var t = el('div', 'gv-tip'); t.append(gameText(text, limit)); return t; }
+    function draw() {
+      left.replaceChildren(el('figcaption', '', T.pvSrc), tip(src));
+      var text = current();
+      right.replaceChildren(el('figcaption', '', T.pvDst), text && text.trim() ? tip(text) : el('p', 'note', T.untranslated));
+    }
+    box.append(head, cols);
+    if (/\{(?:~\d*|[#pu])\}/.test(src)) box.append(el('p', 'note gv-note', T.pvNote));
+    draw();
+    box.redraw = draw;
+    return box;
+  }
+  function insertAt(area, text) {
+    var from = area.selectionStart, to = area.selectionEnd;
+    area.value = area.value.slice(0, from) + text + area.value.slice(to);
+    area.selectionStart = area.selectionEnd = from + text.length;
+  }
+
   /* ---- 分頁 ---- */
   var tabs = ['browse', 'props', 'terms'];
   function show(name) {
@@ -4478,6 +4647,7 @@ const TRANSLATE_JS = '<script>' + String.raw`
           more.replaceChildren();
           if (prop) more.append(propBody(prop, id));
           if (canWrite() && (!prop || prop.status === 'open')) more.append(editor({ file: file, key: key, src: src, base: dst }, more, id));
+          else more.append(preview(src, function () { return dst; }));
           if (!prop && !canWrite()) more.append(el('p', 'note', state.me.signedIn ? T.notTranslator : T.signinToPropose));
         });
       };
@@ -4495,11 +4665,38 @@ const TRANSLATE_JS = '<script>' + String.raw`
     var check = el('p', 'msg');
     var send = el('button', 'btn primary small', T.send);
     send.type = 'button';
+    var pv = preview(entry.src, function () { return area.value; });
+    // 插入佔位符：原文有幾個數字就給幾顆 {~N}，加上它用到的 {p}、{u}、{#}
+    var tools = el('div', 'tr-actions gv-tools');
+    var count = numberCount(entry.src);
+    var tokens = [];
+    for (var i = 1; i <= count; i++) tokens.push('{~' + i + '}');
+    ['{p}', '{u}', '{#}'].forEach(function (t) { if (entry.src.indexOf(t) >= 0) tokens.push(t); });
+    if (tokens.length) tools.append(el('span', 'note', T.insert));
+    tokens.forEach(function (t) {
+      var b = el('button', 'btn small', t);
+      b.type = 'button';
+      b.onclick = function () { insertAt(area, t); live(); area.focus(); };
+      tools.append(b);
+    });
+    var number = el('button', 'btn small', T.autonum);
+    number.type = 'button';
+    number.title = T.autonumHint;
+    number.onclick = function () {
+      var n = 0;
+      area.value = area.value.replace(/\{~\}/g, function () { return '{~' + (++n) + '}'; });
+      live();
+      area.focus();
+    };
+    tools.append(number);
     function live() {
       var p = problem(entry.src, area.value, entry.base);
       check.className = 'msg ' + (p ? 'bad' : 'ok');
       check.textContent = p ? why(p) : T.looksOk;
       send.disabled = Boolean(p) || area.value === entry.base;
+      number.hidden = count < 2 || !/\{~\}/.test(area.value);
+      tools.hidden = !tokens.length && number.hidden;
+      pv.redraw();
     }
     area.addEventListener('input', live);
     live();
@@ -4513,7 +4710,7 @@ const TRANSLATE_JS = '<script>' + String.raw`
           loadProps();
         });
     };
-    box.append(label, area, check, el('div', 'tr-actions'));
+    box.append(label, area, tools, check, pv, el('div', 'tr-actions'));
     box.lastChild.append(send);
     return box;
   }
@@ -4748,6 +4945,8 @@ const PAGES = {
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],
   '/translate': ['tr.title', TRANSLATE, TRANSLATE_JS],
+  '/privacy': ['privacy.title', legalPage('privacy'), ''],
+  '/terms': ['terms.title', legalPage('terms'), ''],
 };
 
 /** 網站有哪幾頁。 */

@@ -72,7 +72,12 @@ globalThis.fetch = async (url, init = {}) => {
   }
   // 沒有 Mojang 這一支：Worker 連不到它（403），登入不可以再去問。問了就在下面丟例外。
   if (u.hostname === 'discord.com') {
-    discordCalls.push({ path: u.pathname, body: String(init.body || ''), auth: (init.headers || {}).authorization });
+    discordCalls.push({ path: u.pathname, method: init.method || 'GET', body: String(init.body || ''),
+      auth: (init.headers || {}).authorization });
+    if (u.pathname.startsWith('/api/v10/webhooks/')) return new Response('{}', { status: 200 });
+    if (u.pathname.startsWith('/api/v10/applications/') && init.method === 'PUT') {
+      return new Response(JSON.stringify(JSON.parse(init.body).map((c) => ({ id: '1', name: c.name }))), { status: 200 });
+    }
     if (u.pathname === '/api/oauth2/token') {
       const form = new URLSearchParams(String(init.body));
       return form.get('code') === 'goodcode' && form.get('client_secret') === 'shh'
@@ -87,6 +92,10 @@ globalThis.fetch = async (url, init = {}) => {
     }
     return new Response('{}', { status: 404 });
   }
+  if (u.hostname === 'raw.githubusercontent.com' && u.pathname.includes('/translate-index/')) {
+    return new Response(JSON.stringify({ files: ['npc.json', 'quest/q.json'], rows: [
+      [0, null, 'Hello {u}!', '你好，{u}！'], [1, 'Q#001', 'Hello there, traveller.', ''], [1, 'Q#002', 'Bye', '再見']] }), { status: 200 });
+  }
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
@@ -98,7 +107,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 
 /** 網頁的路徑照原樣，其餘的都是 API。 */
-const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate'].includes(path) ? path : '/api' + path);
+const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms'].includes(path) ? path : '/api' + path);
 const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
@@ -555,7 +564,7 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
-for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate']) {
+for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms']) {
   english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
   r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
@@ -622,7 +631,7 @@ check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every(
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
 check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
-  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate');
+  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate,/privacy,/terms');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
@@ -1835,6 +1844,85 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('一般玩家看不到', (await trGet('/admin/translators', bobNow)).status === 403);
   await trPost('/admin/untranslator', { key: 'u:' + BOB.id }, aliceWeb);
   check('移除之後馬上不能提案', (await trPost('/tr/propose', sample, bobNow)).status === 403);
+  // ---- Discord 機器人：簽名、三個指令、註冊 ----
+  {
+    const pair = await crypto.subtle.generateKey({ name: 'Ed25519' }, true, ['sign', 'verify']);
+    const raw = new Uint8Array(await crypto.subtle.exportKey('raw', pair.publicKey));
+    env.DISCORD_PUBLIC_KEY = Buffer.from(raw).toString('hex');
+    const signed = async (body, tamper) => {
+      const text = JSON.stringify(body);
+      const ts = String(Math.floor(Date.now() / 1000));
+      const sig = Buffer.from(await crypto.subtle.sign('Ed25519', pair.privateKey, new TextEncoder().encode(ts + text))).toString('hex');
+      return new Request('https://x.test/api/discord/interactions', {
+        method: 'POST', body: tamper ? text.replace('1', '2') : text,
+        headers: { 'x-signature-ed25519': sig, 'x-signature-timestamp': ts },
+      });
+    };
+    const command = (name, options = [], locale = 'zh-TW') => ({
+      type: 2, application_id: 'app1', token: 'tok1', locale, data: { name, options },
+    });
+    check('★ 簽名不對就 401（Discord 會拿壞簽名來測）', (await worker.fetch(await signed({ type: 1 }, true), env)).status === 401);
+    check('沒有簽名也 401', (await worker.fetch(new Request('https://x.test/api/discord/interactions', { method: 'POST', body: '{"type":1}' }), env)).status === 401);
+    r = await worker.fetch(await signed({ type: 1 }), env);
+    check('★ PING 回 PONG', r.status === 200 && (await r.json()).type === 1);
+
+    r = await worker.fetch(await signed(command('status')), env);
+    let reply = await r.json();
+    check('★ /status 回網站狀態（繁中）', reply.type === 4 && reply.data.embeds[0].title === '網站狀態'
+      && reply.data.embeds[0].fields.length === 5);
+    r = await worker.fetch(await signed(command('status', [], 'en-US')), env);
+    check('英文介面回英文', (await r.json()).data.embeds[0].title === 'Website status');
+
+    const capeId = 'c'.repeat(24);
+    await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1760000000000 } });
+    r = await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'dottie_9' }])), env);
+    reply = await r.json();
+    check('★ /cape 不分大小寫找到人，附披風圖', reply.data.embeds && reply.data.embeds[0].title.includes('Dottie_9')
+      && reply.data.embeds[0].image.url.endsWith('/api/cape/' + capeId + '?k=' + 'd'.repeat(64)));
+    await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1, q: 1 } });
+    reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
+    check('★ 不公開的披風不給圖', !reply.data.embeds && reply.data.content.includes('不公開'));
+    await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1, r: 1 } });
+    reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
+    check('★ 等審核的披風不給圖', !reply.data.embeds && reply.data.content.includes('審核'));
+    env.CORPUS.data.delete('cape:' + capeId);
+    reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'no such!' }])), env)).json();
+    check('不像名字的只回給本人看', reply.data.flags === 64);
+
+    const waits = [];
+    const ctx = { waitUntil: (job) => waits.push(job) };
+    discordCalls.length = 0;
+    r = await worker.fetch(await signed(command('translate', [{ name: 'text', value: 'hello' }])), env, ctx);
+    check('★ /translate 先回「處理中」', (await r.json()).type === 5);
+    await Promise.all(waits);
+    const patch = discordCalls.find((c) => c.method === 'PATCH');
+    const sent = patch ? JSON.parse(patch.body) : null;
+    check('★ 查完補上結果：原文、譯文都比對，沒翻的標出來', patch && patch.path === '/api/v10/webhooks/app1/tok1/messages/@original'
+      && sent.embeds[0].fields.length === 2 && sent.embeds[0].fields.some((f) => f.value.startsWith('你好，{u}！'))
+      && sent.embeds[0].fields.some((f) => f.value.startsWith('（還沒翻）')));
+    waits.length = 0;
+    discordCalls.length = 0;
+    await worker.fetch(await signed(command('translate', [{ name: 'text', value: '再見' }, { name: 'language', value: 'zh_tw' }])), env, ctx);
+    await Promise.all(waits);
+    check('用譯文也查得到', JSON.parse(discordCalls.find((c) => c.method === 'PATCH').body).embeds[0].fields[0].name === 'Bye');
+
+    check('★ 註冊指令只有開發者', (await trPost('/admin/discord/register', {}, bobNow)).status === 403);
+    check('沒設 Bot Token 就說還沒設定', (await trPost('/admin/discord/register', {}, aliceWeb)).status === 503);
+    env.DISCORD_BOT_TOKEN = 'bot-secret';
+    const hadClient = env.DISCORD_CLIENT_ID;
+    env.DISCORD_CLIENT_ID = env.DISCORD_CLIENT_ID || 'client1';
+    discordCalls.length = 0;
+    r = await trPost('/admin/discord/register', {}, aliceWeb);
+    const put = discordCalls.find((c) => c.method === 'PUT');
+    check('★ 註冊：PUT 全部指令、帶 Bot Token', r.status === 200 && put && put.auth === 'Bot bot-secret'
+      && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate');
+    const info = await (await trGet('/admin/discord', aliceWeb)).json();
+    check('管理頁拿得到邀請連結與設定狀態', info.token && info.publicKey && info.invite.includes('scope=applications.commands+bot'));
+    delete env.DISCORD_BOT_TOKEN;
+    if (hadClient === undefined) delete env.DISCORD_CLIENT_ID;
+    else env.DISCORD_CLIENT_ID = hadClient;
+  }
+
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('tp:') || k.startsWith('tq:')) env.CORPUS.data.delete(k);
   githubCalls.length = 0;
   githubFile = CREDITS;
