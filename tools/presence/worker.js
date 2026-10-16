@@ -3259,10 +3259,38 @@ async function handleDiscordInfo(request, env, now) {
   const mine = await authority(request, env, now);
   if (!mine || !mine.developer) return no('forbidden', 403);
   const id = env.DISCORD_CLIENT_ID || '';
+  // 拿 Bot Token 直接問 Discord：Token 是哪個應用程式的、跟 Client ID 與 Public Key 對不對得上、
+  // 註冊了哪些指令、機器人在哪些伺服器。「邀了卻找不到指令」時一眼看出是哪一環（使用者 2026-10-16）。
+  let check = null;
+  if (env.DISCORD_BOT_TOKEN) {
+    const ask = async (path) => {
+      try {
+        const res = await fetch(DISCORD_V10 + path, { headers: { authorization: 'Bot ' + env.DISCORD_BOT_TOKEN } });
+        return res.status === 200 ? await res.json() : { error: res.status };
+      } catch (e) {
+        return { error: 'unreachable' };
+      }
+    };
+    const app = await ask('/applications/@me');
+    check = { error: app.error || null };
+    if (!app.error) {
+      check.app = app.name;
+      check.appId = app.id;
+      check.bot = app.bot ? app.bot.username : null;
+      check.sameClient = app.id === id;
+      check.sameKey = String(app.verify_key || '').toLowerCase() === String(env.DISCORD_PUBLIC_KEY || '').toLowerCase();
+      check.endpointSet = app.interactions_endpoint_url || null;
+      const commands = await ask('/applications/' + app.id + '/commands');
+      check.commands = Array.isArray(commands) ? commands.map((c) => c.name) : null;
+      const guilds = await ask('/users/@me/guilds');
+      check.guilds = Array.isArray(guilds) ? guilds.map((g) => g.name) : null;
+    }
+  }
   return json({
     publicKey: Boolean(env.DISCORD_PUBLIC_KEY), token: Boolean(env.DISCORD_BOT_TOKEN), clientId: Boolean(id),
     invite: id ? 'https://discord.com/oauth2/authorize?client_id=' + encodeURIComponent(id) + '&scope=applications.commands+bot&permissions=0' : '',
     endpoint: SITE + '/api/discord/interactions',
+    check,
   }, 200, { 'cache-control': 'no-store' });
 }
 
