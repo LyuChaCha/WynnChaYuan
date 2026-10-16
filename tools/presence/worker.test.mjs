@@ -51,6 +51,7 @@ const ALICE = { id: 'a'.repeat(32), name: 'Alice_Dev' };          // 名單上�
 const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名單上
 let githubFile = '';
 const discordCalls = [];
+let discordAppKey = '';
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
 globalThis.fetch = async (url, init = {}) => {
@@ -75,6 +76,14 @@ globalThis.fetch = async (url, init = {}) => {
     discordCalls.push({ path: u.pathname, method: init.method || 'GET', body: String(init.body || ''),
       auth: (init.headers || {}).authorization });
     if (u.pathname.startsWith('/api/v10/webhooks/')) return new Response('{}', { status: 200 });
+    if (u.pathname === '/api/v10/applications/@me') {
+      return new Response(JSON.stringify({ id: 'client1', name: 'WynnChaYuan', bot: { username: 'WynnChaYuan' },
+        verify_key: discordAppKey, interactions_endpoint_url: 'https://wynnchayuan.com/api/discord/interactions' }), { status: 200 });
+    }
+    if (u.pathname === '/api/v10/applications/client1/commands' && (init.method || 'GET') === 'GET') {
+      return new Response(JSON.stringify([{ name: 'status' }, { name: 'cape' }]), { status: 200 });
+    }
+    if (u.pathname === '/api/v10/users/@me/guilds') return new Response(JSON.stringify([{ name: 'YuChaYuan' }]), { status: 200 });
     if (u.pathname.startsWith('/api/v10/applications/') && init.method === 'PUT') {
       return new Response(JSON.stringify(JSON.parse(init.body).map((c) => ({ id: '1', name: c.name }))), { status: 200 });
     }
@@ -1916,8 +1925,14 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const put = discordCalls.find((c) => c.method === 'PUT');
     check('★ 註冊：PUT 全部指令、帶 Bot Token', r.status === 200 && put && put.auth === 'Bot bot-secret'
       && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate');
+    discordAppKey = env.DISCORD_PUBLIC_KEY;
     const info = await (await trGet('/admin/discord', aliceWeb)).json();
     check('管理頁拿得到邀請連結與設定狀態', info.token && info.publicKey && info.invite.includes('scope=applications.commands+bot'));
+    check('★ 管理頁直接問 Discord：應用程式、金鑰、指令、伺服器', info.check && info.check.app === 'WynnChaYuan'
+      && info.check.sameKey && info.check.commands.join() === 'status,cape' && info.check.guilds.join() === 'YuChaYuan'
+      && info.check.sameClient === (env.DISCORD_CLIENT_ID === 'client1'));
+    discordAppKey = 'f'.repeat(64);
+    check('金鑰對不上就標出來', (await (await trGet('/admin/discord', aliceWeb)).json()).check.sameKey === false);
     delete env.DISCORD_BOT_TOKEN;
     if (hadClient === undefined) delete env.DISCORD_CLIENT_ID;
     else env.DISCORD_CLIENT_ID = hadClient;
