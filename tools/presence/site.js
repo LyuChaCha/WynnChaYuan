@@ -4283,6 +4283,18 @@ const ADMIN_JS = '<script>' + String.raw`
       var end = el('li', '', 'Interactions Endpoint URL: ');
       end.append(el('code', '', info.endpoint));
       list.append(end);
+      // 直接問 Discord 的結果（只有設了 Bot Token 才有）
+      var c = info.check;
+      if (c && c.error) list.append(el('li', 'bad', '\u2717 Discord: ' + c.error));
+      if (c && !c.error) {
+        var line = function (ok, text) { list.append(el('li', ok === null ? '' : ok ? 'ok' : 'bad', (ok === null ? '' : ok ? '\u2713 ' : '\u2717 ') + text)); };
+        line(null, 'Application: ' + c.app + ' (' + c.appId + ')' + (c.bot ? ' / Bot: ' + c.bot : ''));
+        line(c.sameClient, 'Client ID = Application ID');
+        line(c.sameKey, 'Public Key = Application');
+        line(c.endpointSet === info.endpoint, 'Portal endpoint: ' + (c.endpointSet || '-'));
+        line(Boolean(c.commands && c.commands.length), 'Commands: ' + (c.commands && c.commands.length ? c.commands.join(', ') : '-'));
+        line(Boolean(c.guilds && c.guilds.length), 'Servers: ' + (c.guilds && c.guilds.length ? c.guilds.join(', ') : '-'));
+      }
       var invite = document.getElementById('bot-invite');
       invite.hidden = !info.invite;
       if (info.invite) invite.href = info.invite;
