@@ -3285,12 +3285,18 @@ async function handleDiscordRegister(request, env, now) {
   }
 }
 
-export default {
+const site = {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
     await tidy(env, Date.now());
   },
   async fetch(request, env, ctx) {
+    // HEAD：網頁、圖示、字型、材質跟 GET 一樣回，只是不帶內容。Discord 檢查應用程式的
+    // 服務條款與隱私政策網址時送的是 HEAD，原本一律 404，被它當成不接受的網址（2026-10-16）。
+    if (request.method === 'HEAD' && !new URL(request.url).pathname.startsWith('/api/')) {
+      const full = await site.fetch(new Request(request.url, { method: 'GET', headers: request.headers }), env, ctx);
+      return new Response(null, { status: full.status, headers: full.headers });
+    }
     const url = new URL(request.url);
     const now = Date.now();
     const path = url.pathname;
@@ -3407,3 +3413,5 @@ export default {
     return no('not found', 404);
   },
 };
+
+export default site;
