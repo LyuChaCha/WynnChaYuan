@@ -1279,12 +1279,12 @@ export const PEOPLE_MAX = 1000;
 
 /**
  * 管理頁「新增管理員」的下拉選單：網站帳號（用 Discord 登入過的，綁了遊戲帳號就連名字與 UUID）
- * 與傳過披風的人。只有開發者。回 {people: [{discord, dname, mc, uuid}]}：沒帶 q 是全部、照名字排；
+ * 與傳過披風的人。開發者與管理員都能用（管理員名單、譯者名單選人）。回 {people: [{discord, dname, mc, uuid}]}：沒帶 q 是全部、照名字排；
  * 帶了 q 只回對得上的，對得越準越前面。網頁展開選單時抓一次全部，篩選在瀏覽器裡做。
  */
 async function handlePeople(request, env, now) {
-  const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
+  // 管理員也能用：譯者名單也要選人（2026-10-16）
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
   const q = (new URL(request.url).searchParams.get('q') || '').trim().toLowerCase();
   if (q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
   const byUuid = new Map();
@@ -2365,6 +2365,566 @@ async function handleAddCredit(request, env, now) {
   }
 }
 
+// ---------------------------------------------------------------- 協作翻譯
+//
+// 使用者 2026-10-16：「像 Crowdin 一樣可以提交翻譯（校稿）」「不同團隊對不同語言有不同意見，所以採取投票」。
+// 選了：做在自己的網站、術語投票與整句提案兩個一起、各語言團隊投票、管理員定案。
+//
+// 誰能做什麼
+//   看：任何人（瀏覽語料、看提案與票數）
+//   提案、投票：那個語言的譯者（管理頁指派，KV tl:<鍵>），以及開發者、管理員
+//   定案：開發者、管理員。整句提案定案＝替倉庫開 PR（同一個語言同一天的放在同一個 PR）；
+//         術語投票定案只記下結果，套到整個語料由維護的人來做（一個詞散在幾百條裡，不能自動換）
+//
+// KV
+//   tl:<u:UUID｜d:Discord 代號｜n:名字> → {langs, n 備註, t, by, m 遊戲名字, dn Discord 名字}
+//   tp:<語言>:<編號> → 整句提案 {lang, file, key, src, base, items:[{id, text, by, name, t, votes}], status, done}
+//   tq:<語言>:<編號> → 術語投票 {lang, term, note, by, name, t, options:[…], status, decided}
+//   兩種都把「列表要看的東西」放 metadata，列表只要 list 不必一筆一筆讀。
+//
+// 語料本身不放 KV：GitHub Action 每次語料有變動就重建一份精簡索引（tools/build-translate-index.py），
+// 推到 translate-index 分支；這裡代讀、快取，網頁照它搜尋。
+
+export const TR_LANGS = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
+const TR_INDEX = 'https://raw.githubusercontent.com/' + 'LyuChaCha/WynnChaYuan' + '/translate-index/';
+const TR_TEXT_MAX = 2000;
+const TR_BODY = 16384;
+const TR_FILE = /^(?:[a-z0-9-]+\/)?[a-z0-9_-]+\.json$/;
+const TR_KEY = /^tl:(?:u:[0-9a-f]{32}|d:\d{17,20}|n:[a-z0-9_]{1,16})$/;
+const TR_ID = /^[0-9a-f]{12,24}$/;
+
+/**
+ * 提案的譯文跟原文的佔位符對不對得上。跟 tools/validate.py 同一套規矩的精簡版，
+ * 擋在送出的當下，不必等 PR 的檢查才紅。回傳問題代碼，沒問題回 null。
+ *
+ * @param base 現在的譯文（顏色標記只有譯文有，原文沒有，所以拿它比）
+ */
+export function placeholderProblem(src, text, base) {
+  if (typeof text !== 'string' || !text.trim()) return 'empty';
+  if (text.length > TR_TEXT_MAX) return 'too long';
+  // {#}、{p}、{u} 沒有編號，照順序填：順序要跟原文一樣。{u}（玩家名字）可以少、不能多。
+  const seq = (s) => String(s).match(/\{[#pu]\}/g) || [];
+  const want = seq(src);
+  const got = seq(text);
+  const noName = (list) => list.filter((t) => t !== '{u}').join('');
+  if (noName(want) !== noName(got)) return 'placeholders';
+  let at = 0;
+  for (const t of got) {
+    while (at < want.length && want[at] !== t) at++;
+    if (at === want.length) return 'placeholders';
+    at++;
+  }
+  const nums = (s) => String(s).match(/\{~\d*\}/g) || [];
+  if (nums(src).length !== nums(text).length) return 'numbers';
+  const named = nums(text).filter((n) => n !== '{~}');
+  if (named.length && named.length !== nums(text).length) return 'numbering';
+  if (named.length) {
+    const want = named.map((n) => Number(n.slice(2, -1))).sort((a, b) => a - b);
+    if (want.some((n, i) => n !== i + 1)) return 'numbering';
+  }
+  const colours = (s) => (String(s).match(/\{c\d+\}|\{\/\}/g) || []).sort().join(',');
+  if (base && base.trim() && colours(base) !== colours(text)) return 'colours';
+  if (String(src).split('\n').length !== text.split('\n').length) return 'lines';
+  return null;
+}
+
+/**
+ * 改語料裡的一句：扁平檔照原文找那一行換值；任務檔照條目編號找那一條的 dst。
+ * 逐行改，不重 dump（整檔重寫會讓 git 把整個檔當成改過）。找不到回 null。
+ */
+export function replaceTranslation(text, key, src, value) {
+  const nl = text.includes('\r\n') ? '\r\n' : '\n';
+  const lines = text.split(nl);
+  const encoded = JSON.stringify(value);
+  if (key == null) {
+    const head = JSON.stringify(src);
+    for (let i = 0; i < lines.length; i++) {
+      const m = /^(\s*)("(?:[^"\\]|\\.)*")(\s*:\s*)("(?:[^"\\]|\\.)*")(,?\s*)$/.exec(lines[i]);
+      if (m && m[2] === head) {
+        lines[i] = m[1] + m[2] + m[3] + encoded + m[5];
+        return lines.join(nl);
+      }
+    }
+    return null;
+  }
+  const opener = JSON.stringify(key) + ': {';
+  let inside = false;
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!inside) {
+      if (line === opener) inside = true;
+      continue;
+    }
+    if (line.startsWith('}')) return null;
+    const m = /^(\s*"dst":\s*)("(?:[^"\\]|\\.)*")(,?\s*)$/.exec(lines[i]);
+    if (m) {
+      lines[i] = m[1] + encoded + m[3];
+      return lines.join(nl);
+    }
+  }
+  return null;
+}
+
+/** 投票與提案用的身分。綁了 Discord 的遊戲帳號只算一個人，不管從哪一邊登入。 */
+async function trIdentity(request, env, now) {
+  const user = await who(request, env, now);
+  if (user) {
+    const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
+    return { id: 'u:' + user.uuid, name: user.name, uuid: user.uuid, discord };
+  }
+  const session = await discordSession(request, env, now);
+  if (!session) return null;
+  const linked = UUID.test(session.account.u || '') ? session.account.u : null;
+  return { id: linked ? 'u:' + linked : 'd:' + session.id, name: session.account.m || session.account.n || session.id,
+    uuid: linked, discord: session.id };
+}
+
+/** 這個人是哪幾個語言的譯者、能不能定案。照名字加的第一次對上就改記成 UUID（跟管理員名單一樣）。 */
+async function trRoles(request, env, now, me) {
+  const langs = new Set();
+  const read = async (key) => {
+    const record = parseRecord(await env.CORPUS.get(key));
+    (Array.isArray(record.langs) ? record.langs : []).forEach((l) => TR_LANGS.includes(l) && langs.add(l));
+    return record;
+  };
+  if (me.uuid) await read('tl:u:' + me.uuid);
+  if (me.discord) await read('tl:d:' + me.discord);
+  if (me.uuid && NAME.test(me.name || '')) {
+    const byName = await env.CORPUS.get('tl:n:' + me.name.toLowerCase());
+    if (byName) {
+      const record = parseRecord(byName);
+      (record.langs || []).forEach((l) => TR_LANGS.includes(l) && langs.add(l));
+      const kept = parseRecord(await env.CORPUS.get('tl:u:' + me.uuid));
+      const merged = { ...record, ...kept, langs: [...new Set([...(kept.langs || []), ...(record.langs || [])])], m: me.name };
+      await env.CORPUS.put('tl:u:' + me.uuid, JSON.stringify(merged));
+      await env.CORPUS.delete('tl:n:' + me.name.toLowerCase());
+    }
+  }
+  const mine = await authority(request, env, now);
+  return { langs, decide: Boolean(mine), by: mine ? mine.by : me.name };
+}
+
+async function trWho(request, env, now) {
+  const me = await trIdentity(request, env, now);
+  if (!me) return null;
+  return { ...me, ...(await trRoles(request, env, now, me)) };
+}
+
+const canWrite = (me, lang) => Boolean(me) && (me.decide || me.langs.has(lang));
+
+async function trId(text) {
+  return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))).slice(0, 16);
+}
+
+function trMeta(record) {
+  const votes = Math.max(0, ...record.items.map((it) => it.votes.length));
+  return { f: record.file, s: String(record.src).slice(0, 120), n: record.items.length, v: votes,
+    st: record.status, t: record.updated || record.t };
+}
+
+function pollMeta(record) {
+  const votes = record.options.reduce((sum, o) => sum + o.votes.length, 0);
+  return { s: String(record.term).slice(0, 80), n: record.options.length, v: votes, st: record.status, t: record.updated || record.t };
+}
+
+async function trList(env, prefix) {
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
+    for (const k of page.keys) out.push({ id: k.name.slice(prefix.length), ...(k.metadata || {}) });
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  return out.sort((a, b) => (b.t || 0) - (a.t || 0));
+}
+
+const trLang = (value) => (TR_LANGS.includes(value) ? value : null);
+
+/** 我是誰、是哪幾個語言的譯者、能不能定案。沒登入也回（網頁照這個決定按鈕要不要出現）。 */
+async function handleTrMe(request, env, now) {
+  const me = await trWho(request, env, now);
+  return json(me ? { signedIn: true, id: me.id, name: me.name, langs: [...me.langs], decide: me.decide }
+    : { signedIn: false, langs: [], decide: false }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 某個語言的語料索引：從 translate-index 分支代讀，快取十分鐘。 */
+async function handleTrIndex(request, env, lang, ctx) {
+  if (!trLang(lang)) return no('bad lang', 404);
+  const cache = typeof caches !== 'undefined' ? caches.default : null;
+  const cacheKey = new Request('https://wynnchayuan.com/tr-index/' + lang);
+  if (cache) {
+    const hit = await cache.match(cacheKey);
+    if (hit) return hit;
+  }
+  let upstream;
+  try {
+    upstream = await fetch(TR_INDEX + lang + '.json', { cf: { cacheTtl: 600 } });
+  } catch (e) {
+    return no('index unreachable', 502);
+  }
+  if (upstream.status !== 200) return no('index ' + upstream.status, 502);
+  const response = new Response(upstream.body, {
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=600' },
+  });
+  if (cache) {
+    const copy = response.clone();
+    if (ctx && ctx.waitUntil) ctx.waitUntil(cache.put(cacheKey, copy));
+    else await cache.put(cacheKey, copy);
+  }
+  return response;
+}
+
+async function handleTrProps(request, env) {
+  const url = new URL(request.url);
+  const lang = trLang(url.searchParams.get('lang'));
+  if (!lang) return no('bad lang');
+  return json({ props: await trList(env, 'tp:' + lang + ':') }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleTrProp(request, env) {
+  const url = new URL(request.url);
+  const lang = trLang(url.searchParams.get('lang'));
+  const id = url.searchParams.get('id') || '';
+  if (!lang || !TR_ID.test(id)) return no('bad request');
+  const raw = await env.CORPUS.get('tp:' + lang + ':' + id);
+  return raw ? json(JSON.parse(raw), 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+}
+
+/** 提一個譯法。同一句已經有人提過同樣的字，就當成投那一票。 */
+async function handleTrPropose(request, env, now) {
+  const me = await trWho(request, env, now);
+  if (!me) return no('login first', 401);
+  const body = await readJson(request, TR_BODY);
+  if (!body) return no('bad request');
+  const lang = trLang(body.lang);
+  if (!lang) return no('bad lang');
+  if (!canWrite(me, lang)) return no('not a translator', 403);
+  const file = String(body.file || '');
+  const key = body.key == null ? null : String(body.key);
+  const src = String(body.src || '');
+  const base = typeof body.base === 'string' ? body.base : '';
+  const text = typeof body.text === 'string' ? body.text.replace(/\r\n/g, '\n') : '';
+  if (!TR_FILE.test(file) || !src || src.length > 4000 || (key != null && key.length > 200)) return no('bad request');
+  const problem = placeholderProblem(src, text, base);
+  if (problem) return no(problem);
+  const id = await trId(file + '\n' + (key == null ? src : key));
+  const storeKey = 'tp:' + lang + ':' + id;
+  const record = parseRecord(await env.CORPUS.get(storeKey));
+  if (!record.items) Object.assign(record, { lang, file, key, src, base, items: [], status: 'open', t: now });
+  if (record.status !== 'open') {
+    record.status = 'open';
+    delete record.done;
+  }
+  for (const it of record.items) it.votes = it.votes.filter((v) => v !== me.id);
+  const same = record.items.find((it) => it.text === text);
+  if (same) {
+    same.votes.push(me.id);
+  } else {
+    if (record.items.length >= 20) return no('too many');
+    record.items.push({ id: (await trId(text + now)).slice(0, 12), text, by: me.id, name: me.name, t: now, votes: [me.id] });
+  }
+  record.updated = now;
+  await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+  return json({ ok: true, id, prop: record });
+}
+
+/** 投一票；再按一次收回。一句話一個人只能投一個譯法。 */
+async function handleTrVote(request, env, now) {
+  const me = await trWho(request, env, now);
+  if (!me) return no('login first', 401);
+  const body = await readJson(request, TR_BODY);
+  const lang = trLang(body && body.lang);
+  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
+  if (!canWrite(me, lang)) return no('not a translator', 403);
+  const storeKey = 'tp:' + lang + ':' + body.id;
+  const raw = await env.CORPUS.get(storeKey);
+  if (!raw) return no('not found', 404);
+  const record = JSON.parse(raw);
+  if (record.status !== 'open') return no('closed', 409);
+  const target = record.items.find((it) => it.id === body.item);
+  if (!target) return no('not found', 404);
+  const had = target.votes.includes(me.id);
+  for (const it of record.items) it.votes = it.votes.filter((v) => v !== me.id);
+  if (!had) target.votes.push(me.id);
+  record.updated = now;
+  await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+  return json({ ok: true, prop: record });
+}
+
+/**
+ * 定案：把這個譯法寫進語料。同一個語言同一天的放進同一個分支與 PR（translate/<語言>-<日期>），
+ * 不然一天幾十個 PR 會塞爆合併的佇列。任務檔的句子連同合併檔一起改，PR 的檢查才不會紅。
+ */
+async function handleTrAccept(request, env, now) {
+  const me = await trWho(request, env, now);
+  if (!me || !me.decide) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  const body = await readJson(request, TR_BODY);
+  const lang = trLang(body && body.lang);
+  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
+  const storeKey = 'tp:' + lang + ':' + body.id;
+  const raw = await env.CORPUS.get(storeKey);
+  if (!raw) return no('not found', 404);
+  const record = JSON.parse(raw);
+  const item = record.items.find((it) => it.id === body.item);
+  if (!item) return no('not found', 404);
+  const github = githubClient(env);
+  try {
+    const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
+    const branch = 'translate/' + lang.replace('_', '-') + '-' + day;
+    let created = false;
+    const ref = await github('/git/ref/heads/' + branch);
+    if (ref.status === 404) {
+      const head = await github('/git/ref/heads/main');
+      if (head.status !== 200) return no('github ' + head.status, 502);
+      const made = await github('/git/refs', {
+        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
+      });
+      if (made.status !== 201) return no('github ' + made.status, 502);
+      created = true;
+    } else if (ref.status !== 200) {
+      return no('github ' + ref.status, 502);
+    }
+    const root = 'src/main/resources/assets/wynnchayuan/translations/' + lang + '/';
+    const targets = [record.file];
+    if (record.key != null && record.file.startsWith('quest/')) targets.push('quest-dialogue.json');
+    if (record.key != null && record.file.startsWith('secret/')) targets.push('secret-dialogue.json');
+    const short = record.src.replace(/\s+/g, ' ').slice(0, 50);
+    for (const name of targets) {
+      const file = await github('/contents/' + root + name + '?ref=' + encodeURIComponent(branch));
+      if (file.status !== 200) return no('github ' + file.status, 502);
+      const current = await file.json();
+      const changed = replaceTranslation(base64ToUtf8(current.content), record.key, record.src, item.text);
+      if (changed == null) return no('line not found', 409);
+      const put = await github('/contents/' + root + name, {
+        method: 'PUT',
+        body: JSON.stringify({ message: '譯文（' + lang + '）：' + short, content: utf8ToBase64(changed),
+          sha: current.sha, branch }),
+      });
+      if (put.status !== 200 && put.status !== 201) return no('github ' + put.status, 502);
+    }
+    let url = '';
+    if (created) {
+      const pull = await github('/pulls', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: '協作翻譯：' + lang + '（' + day + '）',
+          head: branch, base: 'main',
+          body: '網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\n\n'
+            + '第一條由 ' + me.by + ' 定案。每一條的原文、提案人與票數記在網站上。',
+        }),
+      });
+      if (pull.status !== 201) return no('github ' + pull.status, 502);
+      url = (await pull.json()).html_url;
+    } else {
+      const open = await github('/pulls?head=' + encodeURIComponent('LyuChaCha:' + branch) + '&state=open');
+      const list = open.status === 200 ? await open.json() : [];
+      url = Array.isArray(list) && list[0] ? list[0].html_url : '';
+    }
+    record.status = 'accepted';
+    record.done = { item: item.id, by: me.by, t: now, pr: url };
+    record.updated = now;
+    await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+    return json({ ok: true, url, prop: record });
+  } catch (e) {
+    return no('github unreachable', 502);
+  }
+}
+
+async function handleTrReject(request, env, now) {
+  const me = await trWho(request, env, now);
+  if (!me || !me.decide) return no('forbidden', 403);
+  const body = await readJson(request, TR_BODY);
+  const lang = trLang(body && body.lang);
+  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
+  const storeKey = 'tp:' + lang + ':' + body.id;
+  const raw = await env.CORPUS.get(storeKey);
+  if (!raw) return no('not found', 404);
+  const record = JSON.parse(raw);
+  record.status = 'rejected';
+  record.done = { by: me.by, t: now };
+  record.updated = now;
+  await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+  return json({ ok: true, prop: record });
+}
+
+async function handleTrPolls(request, env) {
+  const lang = trLang(new URL(request.url).searchParams.get('lang'));
+  if (!lang) return no('bad lang');
+  return json({ polls: await trList(env, 'tq:' + lang + ':') }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleTrPoll(request, env) {
+  const url = new URL(request.url);
+  const lang = trLang(url.searchParams.get('lang'));
+  const id = url.searchParams.get('id') || '';
+  if (!lang || !TR_ID.test(id)) return no('bad request');
+  const raw = await env.CORPUS.get('tq:' + lang + ':' + id);
+  return raw ? json(JSON.parse(raw), 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+}
+
+const cleanOption = (text) => (typeof text === 'string' ? text.trim().replace(/\s+/g, ' ') : '');
+
+/** 開一個術語投票：英文、說明、幾個候選（可以之後再加）。 */
+async function handleTrPollOpen(request, env, now) {
+  const me = await trWho(request, env, now);
+  if (!me) return no('login first', 401);
+  const body = await readJson(request, TR_BODY);
+  const lang = trLang(body && body.lang);
+  if (!lang) return no('bad lang');
+  if (!canWrite(me, lang)) return no('not a translator', 403);
+  const term = cleanOption(body.term);
+  const note = typeof body.note === 'string' ? body.note.trim().slice(0, 500) : '';
+  if (!term || term.length > 80) return no('bad term');
+  const options = [...new Set((Array.isArray(body.options) ? body.options : []).map(cleanOption).filter(Boolean))];
+  if (options.some((o) => o.length > 80) || options.length > 10) return no('bad option');
+  const id = (await trId(lang + term + now)).slice(0, 12);
+  const record = { lang, term, note, by: me.id, name: me.name, t: now, status: 'open', options: [] };
+  for (const text of options) {
+    record.options.push({ id: (await trId(text + now)).slice(0, 12), text, by: me.id, name: me.name, t: now, votes: [] });
+  }
+  await env.CORPUS.put('tq:' + lang + ':' + id, JSON.stringify(record), { metadata: pollMeta(record) });
+  return json({ ok: true, id, poll: record });
+}
+
+async function pollFor(request, env, now, needDecide) {
+  const me = await trWho(request, env, now);
+  if (!me) return { error: no('login first', 401) };
+  const body = await readJson(request, TR_BODY);
+  const lang = trLang(body && body.lang);
+  if (!lang || !TR_ID.test(String(body.id || ''))) return { error: no('bad request') };
+  if (needDecide ? !me.decide : !canWrite(me, lang)) return { error: no(needDecide ? 'forbidden' : 'not a translator', 403) };
+  const storeKey = 'tq:' + lang + ':' + body.id;
+  const raw = await env.CORPUS.get(storeKey);
+  if (!raw) return { error: no('not found', 404) };
+  return { me, body, storeKey, record: JSON.parse(raw) };
+}
+
+async function savePoll(env, got, now) {
+  got.record.updated = now;
+  await env.CORPUS.put(got.storeKey, JSON.stringify(got.record), { metadata: pollMeta(got.record) });
+  return json({ ok: true, poll: got.record });
+}
+
+/** 加一個候選。已經有一樣的字就當成投它。 */
+async function handleTrPollOption(request, env, now) {
+  const got = await pollFor(request, env, now, false);
+  if (got.error) return got.error;
+  if (got.record.status !== 'open') return no('closed', 409);
+  const text = cleanOption(got.body.text);
+  if (!text || text.length > 80) return no('bad option');
+  for (const o of got.record.options) o.votes = o.votes.filter((v) => v !== got.me.id);
+  const same = got.record.options.find((o) => o.text === text);
+  if (same) same.votes.push(got.me.id);
+  else {
+    if (got.record.options.length >= 12) return no('too many');
+    got.record.options.push({ id: (await trId(text + now)).slice(0, 12), text, by: got.me.id, name: got.me.name, t: now,
+      votes: [got.me.id] });
+  }
+  return savePoll(env, got, now);
+}
+
+/** 投票；一個人一票，投別的就移過去，再按一次收回。 */
+async function handleTrPollVote(request, env, now) {
+  const got = await pollFor(request, env, now, false);
+  if (got.error) return got.error;
+  if (got.record.status !== 'open') return no('closed', 409);
+  const target = got.record.options.find((o) => o.id === got.body.option);
+  if (!target) return no('not found', 404);
+  const had = target.votes.includes(got.me.id);
+  for (const o of got.record.options) o.votes = o.votes.filter((v) => v !== got.me.id);
+  if (!had) target.votes.push(got.me.id);
+  return savePoll(env, got, now);
+}
+
+/** 定案：記下採用哪一個。套到整個語料由維護的人做。 */
+async function handleTrPollDecide(request, env, now) {
+  const got = await pollFor(request, env, now, true);
+  if (got.error) return got.error;
+  const target = got.record.options.find((o) => o.id === got.body.option);
+  if (!target) return no('not found', 404);
+  got.record.status = 'decided';
+  got.record.decided = { option: target.id, text: target.text, by: got.me.by, t: now };
+  return savePoll(env, got, now);
+}
+
+async function handleTrPollReopen(request, env, now) {
+  const got = await pollFor(request, env, now, true);
+  if (got.error) return got.error;
+  got.record.status = 'open';
+  delete got.record.decided;
+  return savePoll(env, got, now);
+}
+
+// ---- 譯者名單（管理頁）
+
+async function handleTranslators(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'tl:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      const record = parseRecord(await env.CORPUS.get(k.name));
+      const key = k.name.slice(3);
+      out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
+        discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  out.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ translators: out }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）。 */
+async function handleTranslatorAdd(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request, TR_BODY);
+  if (!body) return no('bad request');
+  const key = staffKey(body.who);
+  if (!key) return no('bad who');
+  const langs = [...new Set((Array.isArray(body.langs) ? body.langs : []).filter((l) => TR_LANGS.includes(l)))];
+  if (!langs.length) return no('bad langs');
+  const note = typeof body.note === 'string' ? body.note.trim() : '';
+  if (note.length > 60) return no('bad note');
+  const record = { langs, n: note, t: now, by };
+  if (key.startsWith('n:')) record.m = String(body.who).trim();
+  const linked = key.startsWith('d:') ? key.slice(2) : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
+  const known = linked ? await account(env, linked) : null;
+  if (known) {
+    if (known.n) record.dn = known.n;
+    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) record.m = known.m;
+  }
+  if (key.startsWith('u:') && !record.m) {
+    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
+    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) record.m = cape.metadata.n;
+  }
+  await env.CORPUS.put('tl:' + key, JSON.stringify(record));
+  return json({ ok: true, key });
+}
+
+async function handleTranslatorRemove(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  const key = body && typeof body.key === 'string' ? 'tl:' + body.key : '';
+  if (!TR_KEY.test(key)) return no('bad request');
+  await env.CORPUS.delete(key);
+  return json({ ok: true });
+}
+
+function githubClient(env) {
+  return (path, init = {}) => fetch('https://api.github.com/repos/' + REPO + path, {
+    ...init,
+    headers: {
+      authorization: 'Bearer ' + env.GITHUB_TOKEN,
+      accept: 'application/vnd.github+json',
+      'user-agent': 'wynnchayuan-site',
+      'content-type': 'application/json',
+    },
+  });
+}
+
 /** 網站的圖示。/favicon.ico 是瀏覽器沒人叫也會自己來要的那一個，給它同一張 PNG。 */
 const ICONS = {
   '/favicon.ico': FAVICON,
@@ -2451,7 +3011,7 @@ export default {
   async scheduled(event, env) {
     await tidy(env, Date.now());
   },
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const now = Date.now();
     const path = url.pathname;
@@ -2507,6 +3067,24 @@ export default {
     if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
     if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
     if (route === 'GET /admin/people') return handlePeople(request, env, now);
+    if (route === 'GET /admin/translators') return handleTranslators(request, env, now);
+    if (route === 'POST /admin/translator') return handleTranslatorAdd(request, env, now);
+    if (route === 'POST /admin/untranslator') return handleTranslatorRemove(request, env, now);
+    if (route === 'GET /tr/me') return handleTrMe(request, env, now);
+    if (route.startsWith('GET /tr/index/')) return handleTrIndex(request, env, route.slice('GET /tr/index/'.length), ctx);
+    if (route === 'GET /tr/props') return handleTrProps(request, env);
+    if (route === 'GET /tr/prop') return handleTrProp(request, env);
+    if (route === 'POST /tr/propose') return handleTrPropose(request, env, now);
+    if (route === 'POST /tr/vote') return handleTrVote(request, env, now);
+    if (route === 'POST /tr/accept') return handleTrAccept(request, env, now);
+    if (route === 'POST /tr/reject') return handleTrReject(request, env, now);
+    if (route === 'GET /tr/polls') return handleTrPolls(request, env);
+    if (route === 'GET /tr/poll') return handleTrPoll(request, env);
+    if (route === 'POST /tr/poll') return handleTrPollOpen(request, env, now);
+    if (route === 'POST /tr/poll/option') return handleTrPollOption(request, env, now);
+    if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
+    if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
+    if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
     if (route === 'GET /team') return handleTeam(env, now);
     if (route === 'POST /cape/wear') return handleWear(request, env, now);
     if (route === 'POST /cape/restore') return handleRestore(request, env, now);

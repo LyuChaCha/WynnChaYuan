@@ -7,11 +7,16 @@
 //   /dev-login?as=staff  當成管理員登入（不在名單上，但管理頁開得起來）
 //   /dev-login?as=discord  當成剛用 Discord 註冊、還沒綁遊戲 ID 的人登入
 //   /dev-link?code=XXXXXXXX  假裝遊戲裡打了 /wcy link（當成一般玩家 Steve 送的）
+//
+// 協作翻譯頁的語料索引：正式站從 translate-index 分支讀，這裡第一次用到時在本機跑
+// tools/build-translate-index.py 產生（要有 python）。Alex 是日文與繁中的譯者，已經有一個提案與一個術語投票。
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
+import os from 'node:os';
 import worker, { issueDiscordToken, issueToken, issueWebToken } from './worker.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -32,6 +37,21 @@ const kv = {
   },
 };
 const env = { CORPUS: kv, DISCORD_CLIENT_ID: 'dev', DISCORD_CLIENT_SECRET: 'dev' };
+
+// 協作翻譯的語料索引：攔下 Worker 去 translate-index 分支讀的那一次，改從本機產生
+const realFetch = globalThis.fetch;
+let indexDir = null;
+globalThis.fetch = async (url, init) => {
+  const u = String(typeof url === 'string' ? url : url.url);
+  const m = /\/translate-index\/([a-z_]+\.json)$/.exec(u);
+  if (!m) return realFetch(url, init);
+  if (!indexDir) {
+    indexDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wcy-tindex-'));
+    execFileSync(process.env.PYTHON || 'python', [path.join(here, '..', 'build-translate-index.py'), indexDir], { stdio: 'ignore' });
+  }
+  const file = path.join(indexDir, m[1]);
+  return fs.existsSync(file) ? new Response(fs.readFileSync(file), { status: 200 }) : new Response('{}', { status: 404 });
+};
 
 const credits = JSON.parse(fs.readFileSync(
   path.join(root, 'src/main/resources/assets/wynnchayuan/credits.json'), 'utf8'));
@@ -86,6 +106,22 @@ data.set('ban:' + '9'.repeat(32), {
 data.set('staff:u:' + 'c'.repeat(32), {
   value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
 data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
+
+// 一位譯者（Alex：日文與繁中）、一個提案、一個術語投票
+data.set('tl:u:' + 'c'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp', 'zh_tw'], n: '日文組', t: Date.now() - 7200000, by: developer, m: 'Alex' }), metadata: null });
+{
+  const prop = { lang: 'zh_tw', file: 'raid.json', key: null, src: 'Choose a buff or go to the exit', base: '選一個增益，或前往出口',
+    items: [
+      { id: 'a1b2c3d4e5f6', text: '選一個增益，或走向出口', by: 'u:' + 'c'.repeat(32), name: 'Alex', t: Date.now() - 3600000, votes: ['u:' + 'c'.repeat(32)] },
+      { id: 'b1b2c3d4e5f6', text: '挑一個增益，或前往出口', by: 'u:' + 'a'.repeat(32), name: developer, t: Date.now() - 1800000, votes: [] }],
+    status: 'open', t: Date.now() - 3600000, updated: Date.now() - 1800000 };
+  data.set('tp:zh_tw:0123456789abcdef', { value: JSON.stringify(prop), metadata: { f: prop.file, s: prop.src, n: 2, v: 1, st: 'open', t: prop.updated } });
+  const poll = { lang: 'zh_tw', term: 'Weaken Enemy', note: 'Lootrun 加持與討伐戰增益裡的屬性', by: 'u:' + 'c'.repeat(32), name: 'Alex',
+    t: Date.now() - 5400000, status: 'open', options: [
+      { id: 'c1c2c3c4c5c6', text: '削弱敵傷', by: 'u:' + 'a'.repeat(32), name: developer, t: Date.now() - 5400000, votes: ['u:' + 'a'.repeat(32)] },
+      { id: 'd1d2d3d4d5d6', text: '削弱敵人', by: 'u:' + 'c'.repeat(32), name: 'Alex', t: Date.now() - 5000000, votes: ['u:' + 'c'.repeat(32)] }] };
+  data.set('tq:zh_tw:fedcba987654', { value: JSON.stringify(poll), metadata: { s: poll.term, n: 2, v: 2, st: 'open', t: poll.t } });
+}
 
 // 已註冊的人（管理頁「新增管理員」搜尋得到）：一位綁了遊戲帳號，一位只有 Discord（改版前存的，沒有 metadata）
 data.set('d:222222222222222222', {

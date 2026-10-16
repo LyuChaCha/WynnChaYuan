@@ -1,12 +1,57 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.2_1",
+ "latest": "1.0.2_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.2_2": {
+   "headline": "1.0.2_2: fixes for floating text, nameplates and quest dialogue",
+   "items": [
+    "Fixed: floating text that ends with a blank row (for example \"Stand here to defend the elder\") stayed in English.",
+    "Fixed: training dummy nameplates turned back to English while being hit. Shiny gear names with icons and marks are now recognised.",
+    "Fixed: a Distorted status on a nameplate turned the whole nameplate English. Single-column Lootrun boon announcements are translated as whole sentences.",
+    "Fixed: Lootrun mission names were replaced by gear with the same name. They now follow the content name setting.",
+    "Fixed: dialogue in 12 quests such as Tower of Ascension is now recognised while it is still being typed.",
+    "Fixed: after turning off \"Wear my cape\", the switch disappeared and the cape could not be turned back on (thanks to Hyperionml).",
+    "Capes: capes are now uploaded only at wynnchayuan.com. \"Upload cape\" in F6 opens your account page there and signs you in. The preview file in the capes folder is no longer read.",
+    "Update notices have a \"click here to update\" line (same as /wcy update), and each step of an in-game update is written to update-log.txt.",
+    "Diagnostic files are kept in config/wynnchayuan/debug and removed after two weeks. captured.json keeps a whole tooltip paragraph as one entry and notes where each line was seen.",
+    "Translations: Lootrun and Raid terms reviewed in all seven languages, floating text polished, and new lines recorded in game."
+   ],
+   "zh_tw": {
+    "headline": "1.0.2_2：修正漂浮字、名牌與任務對話",
+    "items": [
+     "修正：結尾多一列空白的漂浮字（例如「Stand here to defend the elder」）留成英文。",
+     "修正：打假人時名牌會變回英文。帶圖示與記號的 Shiny 裝備名現在認得出來。",
+     "修正：名牌狀態列出現 Distorted 時整塊變回英文。Lootrun 單欄的加持公告改成整句翻。",
+     "修正：Lootrun 使命名被同名的裝備搶走，現在照「內容名稱」的設定顯示。",
+     "修正：Tower of Ascension 等 12 個任務的對話，打字打到一半就認得出來。",
+     "修正：關掉「穿上我的披風」之後開關消失，沒辦法再打開（感謝 Hyperionml）。",
+     "披風：改成只在 wynnchayuan.com 上傳。F6 的「上傳披風」會打開網站的帳號頁並順便登入。不再讀資料夾裡的預覽圖。",
+     "更新通知多一行「點這裡直接更新」（等同 /wcy update），遊戲內更新的每一步都記進 update-log.txt。",
+     "診斷檔改放在 config/wynnchayuan/debug，兩週沒更新就自動刪掉。captured.json 的物品說明改成一整段一條，並記下是在哪裡收到的。",
+     "譯文：七個語言的 Lootrun 與討伐戰用詞重新審過、漂浮字的語句改得更順，以及實機收到的新句子。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.2_2：修正漂浮文字、名牌与任务对话",
+    "items": [
+     "修正：结尾多一行空白的漂浮文字（例如「Stand here to defend the elder」）留成英文。",
+     "修正：打假人时名牌会变回英文。带图标与记号的 Shiny 装备名现在认得出来。",
+     "修正：名牌状态栏出现 Distorted 时整块变回英文。Lootrun 单栏的加持公告改成整句翻译。",
+     "修正：Lootrun 使命名被同名的装备抢走，现在按「内容名称」的设置显示。",
+     "修正：Tower of Ascension 等 12 个任务的对话，打字打到一半就认得出来。",
+     "修正：关闭「穿上我的披风」之后开关消失，无法再打开（感谢 Hyperionml）。",
+     "披风：改成只在 wynnchayuan.com 上传。F6 的「上传披风」会打开网站的账号页并顺便登录。不再读取文件夹里的预览图。",
+     "更新通知多一行「点这里直接更新」（等同 /wcy update），游戏内更新的每一步都记进 update-log.txt。",
+     "诊断文件改放在 config/wynnchayuan/debug，两周没更新就自动删除。captured.json 的物品说明改成一整段一条，并记下是在哪里收到的。",
+     "译文：七种语言的 Lootrun 与副本用词重新审过、漂浮文字的语句改得更通顺，以及实机收到的新句子。"
+    ]
+   }
+  },
   "1.0.2_1": {
    "headline": "1.0.2_1: fixes for the Wynntils content book, bomb names and Turkish",
    "items": [
