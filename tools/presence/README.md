@@ -19,6 +19,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `demo-fonts.js` | 預覽畫面用的點陣字：從模組附的 Fusion Pixel 10px（SIL OFL 1.1，授權全文在 `assets/wynnchayuan/font/ofl-fusion.txt`）裁出場景裡出現的那幾百個字，四份共 75 KB 左右。同一支 `build-demo.py` 產生（要裝 fontTools；`--check` 不必裝，只看涵蓋的字夠不夠）。Worker 當成 `/font/px-<代號>.ttf` 送出去 |
 | `textures/`、`demo-textures.js` | 預覽畫面用的材質：遊戲裡真的那幾張（物品說明的框、背包、對話框與頭像、生命與魔力、快捷列、通用的小圖示）、沒穿裝備的格子裡那幾個影子、各稀有度的說明框與徽記、官方的物品圖示、兩張實機截圖當背景（都在 Detlas 一帶，跟預覽裡 22 等的人物同一個等級；街上那一張是真的 NPC，頭上的名牌從截圖上拿掉、改由網頁畫，才能跟著語言換）、背包裡那個人的皮膚（`skin.png`，使用者自己的；網頁用 CSS 的 3D 把它貼成方塊人，會看著滑鼠）。**這些圖是 Wynncraft 的（© Wynncraft），不在這個倉庫的授權範圍裡**，只用在網站的預覽上、不進模組的 jar；頁尾有一句說明。`python tools/presence/build-textures.py` 把 `textures/` 打包成 `demo-textures.js`（`--check` 比對）；要重做材質本身：`--pack` 從資源包重組（玩過 Wynncraft 的客戶端 `downloads/` 底下有快取；那個 zip 被動過手腳，腳本自己解）、`--icons` 重抓官方 CDN 的物品圖示、`--shots <資料夾>` 重做背景（資料夾裡要有 `world.png` 與 `street.png`）、`--skin <玩家名字>` 重抓皮膚。Worker 當成 `/tex/<檔名>` 送出去 |
 | `cape-templates.js` | 披風範本每一種尺寸、兩份說明圖（中文、英文）與一張會動的示範，從 `capes/templates/` 打包的。`node tools/presence/build-cape-templates.mjs`（`--check` 比對）；範本改了要重跑。Worker 當成 `/template/<檔名>` 送出去，披風一覽與帳號頁的下載鈕用它 |
+| `cape-preview.js` | 披風的預覽圖（`/api/cape-preview/<雜湊>`，Discord 機器人的 `/cape` 用）：跟披風一覽的卡片一樣只露出背面、像素放大、墊上卡片的深綠底。Worker 沒有 canvas，PNG 與 GIF 的解碼、編碼都在這支裡（不靠套件；GIF 逐格切、每格自己的調色盤） |
 | `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
@@ -103,7 +104,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | 指令 | 繁中名稱 | 回什麼 |
 |---|---|---|
 | `/status` | `/狀態` | 裝了模組的人數、穿披風的人數、待審核的披風、各語言投票中的提案與術語 |
-| `/cape player:<名字>` | `/披風` | 那個人現在的披風（不公開、等審核的不給圖） |
+| `/cape player:<名字>` | `/披風` | 那個人現在的披風，圖是跟披風一覽卡片一樣的預覽（只露出背面；GIF 會動）。先回「處理中」，預覽圖算好存進 KV 才補上，Discord 來抓圖時不必現算。不公開、等審核的不給圖 |
 | `/translate text:<關鍵字> [language]` | `/翻譯` | 原文或譯文含有那個字的前五條；語言預設跟著 Discord 的介面語言 |
 
 回覆的語言跟著使用者的 Discord 介面（繁中、簡中、其他給英文）。`/translate` 要讀一份八九 MB 的索引，先回「處理中」再補上結果。
@@ -171,6 +172,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/translators` | | 譯者名單（開發者與管理員） |
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
+| `GET /api/cape-preview/<雜湊>` | | 披風的預覽圖（PNG 或 GIF）。第一次現算、存在 KV 的 `prev:<雜湊>`，圖被刪掉時一起刪；雜湊就是鑰匙 |
 | `POST /api/discord/interactions` | Discord 送來的 | 斜線指令；驗 Ed25519 簽名（`DISCORD_PUBLIC_KEY`），驗不過回 401 |
 | `GET /api/admin/discord` | | 機器人的設定齊了沒有、Interactions Endpoint、邀請連結（**只有開發者**） |
 | `POST /api/admin/discord/register` | | 把指令註冊到 Discord（全域、整批覆寫；要 `DISCORD_BOT_TOKEN`；**只有開發者**） |
@@ -306,7 +308,7 @@ npx.cmd wrangler deploy
 
 第一次部署到自己的網域時，wrangler 會自己建好 DNS 紀錄與憑證，一兩分鐘後生效。
 
-要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`demo-textures.js`、`cape-templates.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
+要一起上去的檔案：`worker.js`、`site.js`、`site-text.js`、`demo-data.js`、`demo-fonts.js`、`demo-textures.js`、`cape-templates.js`、`cape-preview.js`、`mojang-keys.js`、`icons.js`、`wrangler.toml`。`wrangler.toml` 裡有每天一次的排程（`[triggers]`），部署時會一起設好。
 
 ## 在本機看網站
 

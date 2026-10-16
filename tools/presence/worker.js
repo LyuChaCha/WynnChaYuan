@@ -74,6 +74,7 @@ import { TEXTURES } from './demo-textures.js';
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
+import { capePreview } from './cape-preview.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
@@ -1860,6 +1861,7 @@ async function revive(env, hash) {
 async function discard(env, hash) {
   if (!hash || inUse(await allCapes(env), hash)) return;
   await env.CORPUS.delete('blob:' + hash);
+  await env.CORPUS.delete('prev:' + hash);
   await revive(env, hash);
 }
 
@@ -1875,6 +1877,7 @@ async function purge(env, now) {
     delete idle[hash];
     if (inUse(capes, hash)) continue;                       // 清單上漏拿掉的：有人在穿就不刪
     await env.CORPUS.delete('blob:' + hash);
+    await env.CORPUS.delete('prev:' + hash);
     if (hash in stars) {
       delete stars[hash];
       starred = true;
@@ -3162,6 +3165,31 @@ async function botStatus(env, text) {
   };
 }
 
+/**
+ * 披風的預覽圖（跟披風一覽的卡片一樣只露出背面，見 cape-preview.js）。照圖的雜湊存在 KV 的 prev:<雜湊>，
+ * 同一張圖只算一次；圖被刪掉時一起刪。知道雜湊才拿得到（雜湊跟 /api/cape 的 ?k= 一樣是鑰匙）。
+ */
+async function handleCapePreview(env, hash) {
+  if (!HASH.test(hash || '')) return no('not found', 404);
+  const headers = (type) => ({
+    'content-type': type === 'gif' ? 'image/gif' : 'image/png',
+    'cache-control': 'public, max-age=604800, immutable', 'x-content-type-options': 'nosniff',
+  });
+  const kept = await env.CORPUS.getWithMetadata('prev:' + hash, { type: 'arrayBuffer' });
+  if (kept && kept.value) return new Response(kept.value, { headers: headers(kept.metadata && kept.metadata.t) });
+  const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
+  if (!blob || !blob.value) return no('not found', 404);
+  let made = null;
+  try {
+    made = await capePreview(new Uint8Array(blob.value), blob.metadata && blob.metadata.t === 'gif' ? 'gif' : 'png');
+  } catch (e) {
+    made = null;
+  }
+  if (!made) return no('cannot preview', 422);
+  await env.CORPUS.put('prev:' + hash, made.bytes, { metadata: { t: made.type } });
+  return new Response(made.bytes, { headers: headers(made.type) });
+}
+
 async function botCape(env, text, name) {
   if (!NAME.test(name || '')) return { content: text.badName, flags: 64 };
   const capes = await allCapes(env);
@@ -3172,7 +3200,7 @@ async function botCape(env, text, name) {
   return {
     embeds: [{
       title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
-      image: { url: SITE + '/api/cape/' + mine.id + '?k=' + mine.h },
+      image: { url: SITE + '/api/cape-preview/' + mine.h },
       thumbnail: { url: 'https://minotar.net/helm/' + encodeURIComponent(mine.n) + '/64.png' },
       fields: [
         { name: text.kind, value: mine.t === 'gif' ? 'GIF' : 'PNG', inline: true },
@@ -3215,7 +3243,13 @@ async function botAnswer(env, interaction, ctx) {
   const command = interaction.data || {};
   const option = (name) => ((command.options || []).find((o) => o.name === name) || {}).value;
   if (command.name === 'status') return botStatus(env, text);
-  if (command.name === 'cape') return botCape(env, text, option('player'));
+  if (command.name === 'cape') {
+    const answer = await botCape(env, text, option('player'));
+    // 先把預覽圖算好存起來：Discord 拿到訊息後才來抓圖，現算的話大張的 GIF 可能來不及
+    const image = answer.embeds && answer.embeds[0].image;
+    if (image) await handleCapePreview(env, image.url.split('/').pop());
+    return answer;
+  }
   if (command.name === 'translate') {
     const lang = TR_LANGS.includes(option('language')) ? option('language') : corpus;
     return botTranslate(env, text, lang, option('text'), ctx);
@@ -3236,8 +3270,8 @@ async function handleDiscordInteraction(request, env, ctx) {
   }
   if (interaction.type === 1) return json({ type: 1 });
   if (interaction.type !== 2) return json({ type: 4, data: { content: '…', flags: 64 } });
-  // 查語料要讀一份大索引，可能超過 Discord 的三秒：先回「處理中」，查完再補上
-  if (interaction.data && interaction.data.name === 'translate' && ctx && ctx.waitUntil) {
+  // 查語料要讀大索引、披風要先算預覽圖：先回「處理中」再補上
+  if (interaction.data && ['translate', 'cape'].includes(interaction.data.name) && ctx && ctx.waitUntil) {
     ctx.waitUntil((async () => {
       let data;
       try {
@@ -3422,6 +3456,7 @@ const site = {
         if (picture[1] === 'GET' && !picture[2]) return handleGuildPicture(env, picture[3], picture[4]);
       }
     }
+    if (route.startsWith('GET /cape-preview/')) return handleCapePreview(env, route.slice('GET /cape-preview/'.length));
     if (request.method === 'GET' && route.startsWith('GET /idle/')) {
       return handleIdle(env, route.slice('GET /idle/'.length));
     }
