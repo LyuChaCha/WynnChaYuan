@@ -6,6 +6,7 @@ import worker, {
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
+import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
 
 let failures = 0;
 function check(what, ok) {
@@ -1886,14 +1887,66 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1760000000000 } });
     r = await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'dottie_9' }])), env);
     reply = await r.json();
-    check('★ /cape 不分大小寫找到人，附披風圖', reply.data.embeds && reply.data.embeds[0].title.includes('Dottie_9')
-      && reply.data.embeds[0].image.url.endsWith('/api/cape/' + capeId + '?k=' + 'd'.repeat(64)));
+    check('★ /cape 不分大小寫找到人，附披風的預覽圖（跟一覽的卡片一樣）', reply.data.embeds && reply.data.embeds[0].title.includes('Dottie_9')
+      && reply.data.embeds[0].image.url.endsWith('/api/cape-preview/' + 'd'.repeat(64)));
     await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1, q: 1 } });
     reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
     check('★ 不公開的披風不給圖', !reply.data.embeds && reply.data.content.includes('不公開'));
     await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: 'd'.repeat(64), t: 'png', n: 'Dottie_9', v: 1, r: 1 } });
     reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
     check('★ 等審核的披風不給圖', !reply.data.embeds && reply.data.content.includes('審核'));
+
+    // ---- 披風預覽圖：切背面、放大、墊底；PNG 與 GIF 都要能解、能編 ----
+    {
+      // 22×17 的範本：背面那塊（1,1)–(11,17) 塗紅，其他塗藍
+      const W = 22, H = 17, rgb = new Uint8Array(W * H * 3);
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+        const o = (y * W + x) * 3;
+        const face = x >= 1 && x < 11 && y >= 1;
+        rgb[o] = face ? 220 : 20; rgb[o + 1] = 30; rgb[o + 2] = face ? 30 : 220;
+      }
+      const png = await encodePng(W, H, rgb);
+      const back = await decodePng(png);
+      check('PNG 編了再解回來一模一樣', back.width === W && back.height === H && back.rgba[(5 * W + 5) * 4] === 220 && back.rgba[3] === 255);
+      const frames = [0, 1, 2].map((k) => ({ rgb: rgb.map((v, i) => (i % 3 === 1 ? 30 + k * 40 : v)), delay: 7 }));
+      const gif = encodeGif(W, H, frames);
+      const g = decodeGif(gif);
+      check('GIF 編了再解回來：格數、延遲、顏色都對', g.frames.length === 3 && g.frames[2].delay === 7
+        && g.frames[2].rgba[(5 * W + 5) * 4 + 1] === 110 && g.frames[0].rgba[(5 * W + 5) * 4] === 220);
+
+      const hash = 'e'.repeat(64);
+      await env.CORPUS.put('blob:' + hash, png, { metadata: { t: 'png', s: png.length } });
+      r = await worker.fetch(api('/cape-preview/' + hash), env);
+      const shot = await decodePng(new Uint8Array(await r.arrayBuffer()));
+      const box = layout(W, H, 512);
+      const at = (x, y) => [...shot.rgba.subarray((y * shot.width + x) * 4, (y * shot.width + x) * 4 + 3)];
+      check('★ 預覽圖：只露出背面（中間是紅的），兩邊是卡片的深綠底', r.status === 200
+        && r.headers.get('content-type') === 'image/png' && shot.width === box.width && shot.height === box.height
+        && at(shot.width >> 1, shot.height >> 1)[0] === 220 && at(2, shot.height >> 1)[1] < 50 && at(2, shot.height >> 1)[2] < 50);
+      check('小張的像素圖用整數倍放大', Number.isInteger(box.h / 16) && box.h >= 320);
+      check('★ 算過一次就存起來（prev:<雜湊>）', env.CORPUS.data.has('prev:' + hash)
+        && (await worker.fetch(api('/cape-preview/' + hash), env)).status === 200);
+      check('沒有這張圖 404、雜湊不對 404', (await worker.fetch(api('/cape-preview/' + 'f'.repeat(64)), env)).status === 404
+        && (await worker.fetch(api('/cape-preview/xyz'), env)).status === 404);
+
+      const ghash = 'a1'.repeat(32);
+      await env.CORPUS.put('blob:' + ghash, gif, { metadata: { t: 'gif', s: gif.length } });
+      r = await worker.fetch(api('/cape-preview/' + ghash), env);
+      const moving = decodeGif(new Uint8Array(await r.arrayBuffer()));
+      check('★ GIF 披風的預覽也會動（每一格都切）', r.headers.get('content-type') === 'image/gif' && moving.frames.length === 3);
+
+      await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: hash, t: 'png', n: 'Dottie_9', v: 1 } });
+      env.CORPUS.data.delete('prev:' + hash);
+      const waits = [];
+      discordCalls.length = 0;
+      r = await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env, { waitUntil: (job) => waits.push(job) });
+      check('★ /cape 先回「處理中」', (await r.json()).type === 5);
+      await Promise.all(waits);
+      const sent = JSON.parse(discordCalls.find((c) => c.method === 'PATCH').body);
+      check('★ 補上結果之前，預覽圖已經算好存起來（Discord 來抓時不必現算）', env.CORPUS.data.has('prev:' + hash)
+        && sent.embeds[0].image.url.endsWith('/api/cape-preview/' + hash));
+      for (const k of ['blob:' + hash, 'prev:' + hash, 'blob:' + ghash, 'prev:' + ghash]) env.CORPUS.data.delete(k);
+    }
     env.CORPUS.data.delete('cape:' + capeId);
     reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'no such!' }])), env)).json();
     check('不像名字的只回給本人看', reply.data.flags === 64);
