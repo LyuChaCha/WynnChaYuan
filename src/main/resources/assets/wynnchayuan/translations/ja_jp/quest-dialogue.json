@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23285,
-  "translated": 22992,
+  "count": 23288,
+  "translated": 22995,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -28858,7 +28858,7 @@
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
    "stage": "Stage 3",
-   "speaker": "Guard Golem",
+   "speaker": "???",
    "source": "captured"
   },
   "An Iron Heart Part I#004": {
@@ -28877,8 +28877,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
-   "stage": "Stage 4",
-   "speaker": "Guard Golem",
+   "stage": "Stage 3",
+   "speaker": "???",
    "source": "captured"
   },
   "An Iron Heart Part I#006": {
@@ -29060,6 +29060,16 @@
    "stage": "Stage 4",
    "speaker": "Duvale",
    "source": "wiki"
+  },
+  "An Iron Heart Part I#030": {
+   "src": "...I am... What's my...name...? I had one...",
+   "dst": "……私は…… 私の……名前は……何だ？以前は持っていたのに……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "captured"
   },
   "An Iron Heart Part II#000": {
    "src": "Have you found any leads since I sent you to my contact, Daxe?",
@@ -29720,6 +29730,26 @@
    "stage": "Stage 8",
    "speaker": "Detective Hart",
    "source": "wiki"
+  },
+  "An Iron Heart Part II#067": {
+   "src": "That golem is a danger to everything around it. Please, follow the trail of scrap and keep it from causing anyone more damage!",
+   "dst": "そのゴーレムは、周囲のあらゆるものに危険をもたらします。どうか、スクラップの跡をたどって、これ以上誰にも被害が及ばないようにしてください！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#068": {
+   "src": "Get [{~} Acidic Sludge]\nto open the door",
+   "dst": "{c2}酸性の汚泥{/}を {~} {c2}個{/}集めて\n扉を開ける",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
   },
   "Apotheosis (Quest)#000": {
    "src": "Head to {p} and find your friends at [-{~}, {~}, -{~}].",
