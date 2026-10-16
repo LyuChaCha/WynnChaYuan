@@ -48,6 +48,9 @@ jobs:
         if: github.event_name == 'pull_request_target'
         run: |
           git fetch origin "pull/${{ github.event.pull_request.number }}/head:pr"
+          # 先清空再取：git checkout <分支> -- <資料夾> 只會蓋過檔案，PR 刪掉的檔還會留著，
+          # 合併檔的檢查就會把它們算進去而失敗（2026-10-16 #1255 搬走三個任務檔時踩到）。
+          rm -rf src/main/resources/assets/wynnchayuan/translations/
           git checkout pr -- src/main/resources/assets/wynnchayuan/translations/
 
       - name: PR 的報表
