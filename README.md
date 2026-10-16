@@ -252,6 +252,7 @@ gradle build
 | AdoreFuSei | `AdoreFuSei` |
 | anilken | `Pandik` |
 | yool | `yool141` |
+| 早安白月 | `ZLGX` |
 
 ### 資料來源
 

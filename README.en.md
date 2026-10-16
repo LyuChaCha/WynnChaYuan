@@ -265,6 +265,7 @@ The same list is in game under **Settings → About / Credits**. To add someone,
 | AdoreFuSei | `AdoreFuSei` |
 | anilken | `Pandik` |
 | yool | `yool141` |
+| 早安白月 | `ZLGX` |
 
 ### Data sources
 
