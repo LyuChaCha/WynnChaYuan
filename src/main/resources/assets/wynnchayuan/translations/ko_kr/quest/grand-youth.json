@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Grand Youth",
-  "count": 39,
+  "count": 40,
   "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -17,6 +17,16 @@
    "source": "captured"
   },
   "Grand Youth#001": {
+   "src": "Sorry man, if you haven't got any business with me then I can't talk.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Grand Youth",
+   "stage": "",
+   "speaker": "Salesman",
+   "source": "captured"
+  },
+  "Grand Youth#002": {
    "src": "Aha, perfect! If this will not work, then...no, I must have faith.",
    "dst": "아하, 완벽해요! 이게 안 통하면... 아니, 믿어야 해요.",
    "role": "desc",
@@ -26,17 +36,17 @@
    "speaker": "Monte",
    "source": "captured"
   },
-  "Grand Youth#002": {
+  "Grand Youth#003": {
    "src": "Thank you so much, for aiding our village. I know we are smaller than our brothers from Iboju, but you are always welcome here.",
    "dst": "우리 마을을 도와줘서 정말 고맙습니다. 우리가 Iboju의 형제들보다 작은 건 알지만, 여기는 언제나 당신을 환영합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
    "stage": "",
-   "speaker": "Loot Chest [✫✫✫✫]",
+   "speaker": "Monte",
    "source": "captured"
   },
-  "Grand Youth#003": {
+  "Grand Youth#004": {
    "src": "Talk to Monte at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에서 Monte와 대화하세요.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Grand Youth#004": {
+  "Grand Youth#005": {
    "src": "Oh, what am I to do...? How am I to be our next elder if I cannot even help him... Oh? Ehm, hello, stranger.",
    "dst": "아, 어쩌면 좋을까...? 그분도 못 돕는데 어떻게 다음 장로가 되겠어... 응? 음, 안녕하세요, 낯선 분.",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#005": {
+  "Grand Youth#006": {
    "src": "You most likely heard me. Our elder has fallen ill of some vile disease... I am to be our next elder, but I am not yet ready.",
    "dst": "아마 들으셨겠죠. 저희 장로님이 몹쓸 병에 걸리셨어요... 제가 다음 장로가 될 사람이지만, 아직 준비가 안 됐어요.",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#006": {
+  "Grand Youth#007": {
    "src": "We have tried everything we can think of, but our healers and shamans have failed to cure him. We had some hope, however...",
    "dst": "생각나는 건 다 해 봤지만, 치유사도 주술사도 그분을 고치지 못했어요. 그래도 희망이 좀 있었는데...",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#007": {
+  "Grand Youth#008": {
    "src": "A man in your city, {p}, insists that he sells healing water that could cure him, but he is selling it for an exorbitant price that we cannot afford!",
    "dst": "당신네 도시 {p}에 사는 어떤 남자가 그분을 낫게 할 치유의 물을 판다고 하는데, 너무 비싸서 저희는 살 수가 없어요!",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#008": {
+  "Grand Youth#009": {
    "src": "I do not know where else to turn. I must ask you for help. If you can purchase it, I am sure that we could find a way to repay you.",
    "dst": "달리 기댈 곳이 없어요. 도움을 부탁드려야겠어요. 사 주실 수 있다면 꼭 보답할 방법을 찾을게요.",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#009": {
+  "Grand Youth#010": {
    "src": "I have written directions for you in your content book...please help our village.",
    "dst": "콘텐츠 북에 길을 적어 드렸어요... 부디 저희 마을을 도와주세요.",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#010": {
+  "Grand Youth#011": {
    "src": "Visit the Salesman in {p} near the fountain.",
    "dst": "{p}의 샘 근처에 있는 판매원을 찾아가세요.",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Grand Youth#011": {
+  "Grand Youth#012": {
    "src": "Oh, why hello there! Come for my patented healing water, have you? Any problem instantly cured! Sniffles beware!",
    "dst": "오, 어서 오세요! 제 특허받은 치유의 물을 사러 오셨죠? 어떤 병이든 즉시 완치! 콧물감기야 물렀거라!",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Salesman",
    "source": "wiki"
   },
-  "Grand Youth#012": {
+  "Grand Youth#013": {
    "src": "You're quite lucky, I only have a couple of bottles left, so it won't go cheap, but this is the good stuff! Only [{~} Liquified Emeralds]!",
    "dst": "운이 좋으시네요, 몇 병 안 남아서 싸게는 못 드려도 진짜 좋은 물건이에요! 단돈 [{~} Liquified Emeralds]!",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Salesman",
    "source": "wiki"
   },
-  "Grand Youth#013": {
+  "Grand Youth#014": {
    "src": "What? Don't give me that look! This is the real stuff, very valuable and rare! What do ya take me for, some guy who'd sell lake water for a fortune?!",
    "dst": "뭐요? 그런 눈으로 보지 마요! 이건 진짜배기예요, 아주 귀하고 희귀하다고요! 날 뭐로 보는 거예요, 호숫물을 비싸게 파는 사람으로?!",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Salesman",
    "source": "wiki"
   },
-  "Grand Youth#014": {
+  "Grand Youth#015": {
    "src": "Agh, agh! Put away the weapon! Put it away! Jeez, buddy! Alright, I admit it, I'm a fraudster! But, I do know where you get the real stuff, I ain't lying about that much.",
    "dst": "으악, 으악! 무기 치워요! 치우라고요! 맙소사, 친구! 좋아요, 인정해요, 사기꾼이에요! 그래도 진짜를 어디서 구하는지는 알아요, 그건 거짓말 아니에요.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Isfurus",
    "source": "wiki"
   },
-  "Grand Youth#037": {
+  "Grand Youth#036": {
    "src": "Bring back the bottle of healing water to Monte.",
    "dst": "치유의 물이 든 병을 Monte에게 가져가세요.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Grand Youth#038": {
+  "Grand Youth#037": {
    "src": "You have returned, I see. Have you the healing water?",
    "dst": "돌아오셨군요. 치유의 물은 구하셨어요?",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#040": {
+  "Grand Youth#038": {
    "src": "From the bottom of my heart, thank you. I know we surely will not be able to compensate you for the price of the water...",
    "dst": "진심으로 감사드려요. 물값을 저희가 도저히 갚을 수 없다는 건 알지만...",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Monte",
    "source": "wiki"
   },
-  "Grand Youth#041": {
+  "Grand Youth#039": {
    "src": "...but here. This is the summation of our village's riches. For aiding us, consider it yours.",
    "dst": "...여기요. 저희 마을 재산을 전부 모은 거예요. 도와주신 보답으로 받아 주세요.",
    "role": "desc",

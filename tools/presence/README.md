@@ -31,7 +31,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `/features` | 功能：最上面是即時預覽（照遊戲裡設定畫面右邊那一塊做）：上面一整面「遊戲畫面」——後面是實機截圖，前面是遊戲裡真的那幾張材質（物品說明照現在的版面：徽記、標籤、傷害、需求、詞條；背包；對話框與頭像；生命、魔力與快捷列），位置照實機截圖擺，字是遊戲裡那一套點陣字；物品那一面背包裡有三樣東西（骨弓、無瑕橡木弓、腐爛血肉——數值是官方 API 的，版面照實機截圖）可以用滑鼠指、點或用鍵盤移過去，說明跟著換；下面幾列是真的選項，一動畫面就跟著變。物品／對話／世界與聊天三頁、七種譯文語言。首頁最上面那一塊用的是同一份（`site.js` 的 `makeStage`），自己輪著換語言與場景，下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組——每一項一張卡，前面一顆遊戲通用的圖示；翻譯範圍那十張各附一句預覽裡的例子（原文在上、譯文在下，跟著預覽選的語言換） |
 | `/capes` | 披風一覽。最上面一條「做自己的披風」，按了展開**披風範本**那一塊（說明圖、每一種尺寸的下載鈕、會動的示範；帳號頁上傳的地方也有同一塊）。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。可以排序（最新、最早、最多人使用、人氣、最近有人穿上）與篩選（PNG／GIF／我的最愛／我用過的）；登入的人可以**穿上**、**復原**、按星星加進**我的最愛**。管理的人看得到全部，多「不公開」「待審核」兩個篩選 |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
-| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員；管理員名單只有開發者看得到 |
+| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員、譯者名單；管理員名單只有開發者看得到 |
+| `/translate` | 協作翻譯：選一個語言，搜尋或瀏覽語料（原文、譯文、檔名），對任一句提新譯法；整句提案與術語投票兩個分頁。那個語言的譯者（管理頁指派）可以提案與投票，開發者與管理員定案。整句定案＝替倉庫開 PR（同一個語言同一天的放同一個 PR，任務檔的句子連合併檔一起改）；術語定案只記下結果，套到整份語料由維護的人做。送出前照 `placeholderProblem` 檢查佔位符（`{#}{p}{u}` 順序、`{~}` 數量與編號、顏色標記、行數），網頁與 Worker 同一套 |
 | 其他網址 | 404，但是一頁有頁首頁尾、給幾條回去的路的網頁（照訪客的語言）；`/api/` 底下與不是 GET 的照舊回 JSON |
 
 每一頁的頁首有「下載」（Modrinth、CurseForge、GitHub Releases）與贊助（Ko-fi）；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
@@ -142,7 +143,20 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/staff` | | 管理員名單（**只有開發者**） |
 | `POST /api/admin/staff` | `{who, note?}` | 加一個管理員：`who` 是 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID（**只有開發者**） |
 | `POST /api/admin/unstaff` | `{key}` | 移除一個管理員（**只有開發者**） |
-| `GET /api/admin/people?q=` | | 搜尋已註冊的人（網站帳號 `d:*` 與傳過披風的人），比對 Discord 名稱、Minecraft ID、UUID、Discord 使用者 ID，最多 12 筆；管理頁「新增管理員」用（**只有開發者**） |
+| `GET /api/admin/people?q=` | | 已註冊的人（網站帳號 `d:*` 與傳過披風的人）；沒帶 `q` 回全部，帶了照 Discord 名稱、Minecraft ID、UUID、Discord 使用者 ID 篩；管理頁選人的下拉選單用（開發者與管理員） |
+| `GET /api/admin/translators` | | 譯者名單（開發者與管理員） |
+| `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
+| `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
+| `GET /api/tr/me` | | 我是誰、是哪幾個語言的譯者、能不能定案（沒登入也回） |
+| `GET /api/tr/index/<語言>` | | 那個語言的語料索引：從 `translate-index` 分支代讀，快取十分鐘 |
+| `GET /api/tr/props?lang=`／`GET /api/tr/prop?lang=&id=` | | 整句提案的列表（metadata）／一筆的內容 |
+| `POST /api/tr/propose` | `{lang, file, key, src, base, text}` | 提一個譯法（譯者）；同一句已經有人提過一樣的字就當成投它 |
+| `POST /api/tr/vote` | `{lang, id, item}` | 投一票，再按一次收回；一句一個人一票（譯者） |
+| `POST /api/tr/accept`／`POST /api/tr/reject` | `{lang, id, item}`／`{lang, id}` | 定案：寫進 `translate/<語言>-<日期>` 分支並開 PR／駁回（開發者與管理員；要 `GITHUB_TOKEN`） |
+| `GET /api/tr/polls?lang=`／`GET /api/tr/poll?lang=&id=` | | 術語投票的列表／一筆的內容 |
+| `POST /api/tr/poll` | `{lang, term, note?, options?}` | 開一個術語投票（譯者） |
+| `POST /api/tr/poll/option`／`/vote` | `{lang, id, text}`／`{lang, id, option}` | 加候選（等於投它）／投票，一個人一票（譯者） |
+| `POST /api/tr/poll/decide`／`/reopen` | `{lang, id, option}`／`{lang, id}` | 術語定案／重新開放（開發者與管理員） |
 
 上面寫「開發者」的那幾條，管理員也做得到；寫「只有開發者」的不行。
 
@@ -217,6 +231,9 @@ npx wrangler secret put MOJANG_KEYS
 - 照 Minecraft ID（名字）加的，那個人登入一次就改記成 UUID；名字之後改掉、被別人拿走也不會把權限帶走。
 - 照 Discord 使用者 ID 加的，那個人只用 Discord 登入、還沒綁遊戲 ID 也進得了管理頁。
 - 存在 KV 的 `staff:u:<UUID>`、`staff:n:<名字>`、`staff:d:<Discord ID>`；移除之後馬上沒有權限。
+- 協作翻譯：譯者 `tl:<u:|d:|n:>…` → `{langs, n, t, by, m, dn}`；整句提案 `tp:<語言>:<編號>`、術語投票 `tq:<語言>:<編號>`，列表要看的放 metadata。
+  語料索引不放 KV：`.github/workflows/translate-index.yml` 在語料有變動時跑 `tools/build-translate-index.py`，整個蓋掉 `translate-index` 分支。
+  本機的 `dev.mjs` 第一次用到時自己跑那支產生器（要有 python）。
 - 從搜尋選人時，有綁遊戲帳號的記 `staff:u:<UUID>`；用綁著那個遊戲帳號的 Discord 登入網站也算管理員。網站帳號 `d:<Discord ID>` 的 metadata 放著名字與綁的帳號（`n`、`m`、`u`），搜尋只要列鍵；改版前存的沒有 metadata，下次登入就補上，搜尋時先讀本體。
 
 - **刪除、封禁**：在 `/capes` 點開一件披風，開發者看得到是誰傳的，還有「刪除這件披風」與「刪除並封禁上傳的人」。刪除是照圖刪：所有用同一張圖的人一起拿掉。
