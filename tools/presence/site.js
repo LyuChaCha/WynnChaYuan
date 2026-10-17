@@ -28,6 +28,8 @@ const STYLE = String.raw`
     /* 動作的節奏：進場用 --arrive（先快後慢），按壓與懸停用 --out；回饋 140ms、狀態 200ms */
     --out: cubic-bezier(0.23, 1, 0.32, 1); --arrive: cubic-bezier(0.16, 1, 0.3, 1); --move: cubic-bezier(0.77, 0, 0.175, 1);
     --fast: 140ms; --base: 200ms;
+    /* 收起來用的：起步慢、收尾快（打開用 --out）。頁首的選單打開 180–200ms、關掉 120ms */
+    --exit: cubic-bezier(0.32, 0, 0.67, 0);
   }
   * { box-sizing: border-box; }
   /* 用鍵盤的人：第一下 Tab 就能跳過頁首 */
@@ -63,35 +65,119 @@ const STYLE = String.raw`
     outline: 2px solid var(--leaf); outline-offset: 2px;
   }
   .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); view-transition-name: top; }
-  /* 放不下的時候（字比較長的語言、登入後多了名字與「管理」）右邊那一組整組換到下一列，選單本身不折行 */
-  .top .in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
-  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; }
+  /* 頁首永遠只有一列：標誌、選單（放不下的收進「更多」）、右邊一組工具。窄到手機就整排收進漢堡選單的面板 */
+  .top .in { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: nowrap; align-items: center; gap: 18px; }
+  /* 頁首飄過的像素葉子（程式畫在這張小畫布上，一格像素放大成 2px）：在字的後面、不擋滑鼠 */
+  .hn-leaves { position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 61px; pointer-events: none; image-rendering: pixelated; opacity: .72; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; flex: none; }
   .brand:hover { text-decoration: none; }
-  .brand span { color: var(--leaf); display: flex; }
-  .brand svg { width: 26px; height: 26px; }
+  .brand span { color: var(--leaf); display: flex; transition: color 300ms ease; }
+  .brand svg { width: 26px; height: 26px; transform-origin: 25% 85%; transition: transform 520ms var(--out); }
   nav { display: flex; gap: 4px; flex-wrap: wrap; }
-  .top nav { flex-wrap: nowrap; white-space: nowrap; }
   nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
-  .tools { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  /* 頁首的選單（hn-*）：寬度是標誌與工具剩下的那一段（flex-basis 0，不跟著內容變），程式量過才把放不下的收起來。
+     量好之前先藏住溢出的部分（沒有程式的時候也不會蓋到右邊的按鈕） */
+  .hn { flex: 1 1 0; min-width: 0; overflow: hidden; display: block; }
+  .hn.hn-live { overflow: visible; }
+  .hn-list { display: flex; flex-wrap: nowrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
+  .hn-item { flex: none; position: relative; }
+  .hn-item.hn-out { display: none; }
+  .hn-link { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 0; border-radius: 8px; background: none; color: var(--ink-2); font: inherit; font-size: 14px; line-height: 1.7; white-space: nowrap; cursor: pointer; transition: color 150ms ease, background-color 150ms ease, transform var(--fast) var(--out); }
+  .hn-link:active, .hn-icon:active, .hn-avatar:active, .hn-plink:active { transform: scale(.97); }
+  .hn-link:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
+  .hn-link[aria-current="page"], .hn-link.hn-cur, .hn-trig[aria-expanded="true"] { color: var(--ink); background: var(--panel-2); }
+  .hn-link.hn-cur { box-shadow: inset 0 -2px 0 var(--leaf-deep); }
+  .hn-trig .ico, .hn-avatar > .ico, #get > .ico:last-child, #hn-globe > .ico:last-child { width: 14px; height: 14px; transition: transform var(--base) var(--out); }
+  .hn-trig[aria-expanded="true"] .ico, .hn-avatar[aria-expanded="true"] > .ico, #get[aria-expanded="true"] > .ico:last-child, #hn-globe[aria-expanded="true"] > .ico:last-child { transform: rotate(180deg); }
+  .hn .menu { left: 0; right: auto; width: auto; min-width: 190px; transform-origin: top left; }
+  .tools { margin-left: auto; display: flex; align-items: center; gap: 8px; flex: none; }
   .ico { width: 16px; height: 16px; flex: none; }
   .btn.small { padding: 5px 11px; font-size: 13px; border-radius: 8px; gap: 6px; }
-  /* 頁首右邊：贊助（Ko-fi）與下載。下載按了往下開一張小選單，三個地方挑一個 */
-  .kofi { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
-  .kofi:hover { text-decoration: none; }
+  /* 頁首右邊：贊助（只有圖示，滑過或用鍵盤停上去會浮出「贊助」）、下載、帳號（沒登入是「登入」加語言） */
+  .hn-icon { display: inline-flex; align-items: center; justify-content: center; gap: 2px; min-width: 34px; height: 34px; padding: 0 8px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: var(--ink-2); font: inherit; cursor: pointer; transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, transform var(--fast) var(--out); }
+  .hn-icon:hover { text-decoration: none; }
+  .hn-icon > .ico { width: 18px; height: 18px; }
+  #hn-globe > .ico:last-child { width: 13px; height: 13px; }
+  .hn-icon[aria-expanded="true"] { color: var(--ink); background: var(--panel-2); }
+  .hn-tip { position: relative; }
+  .hn-tip::after {
+    content: attr(data-tip); position: absolute; top: calc(100% + 8px); left: 50%; z-index: 7; padding: 3px 9px;
+    border: 1px solid var(--line); border-radius: 7px; background: var(--panel-2); color: var(--ink); font-size: 12px; line-height: 1.6; white-space: nowrap;
+    opacity: 0; pointer-events: none; transform: translate(-50%, -3px); transition: opacity var(--fast) ease, transform var(--fast) var(--out);
+  }
+  .hn-tip:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: 0ms; }
+  .hn-tip[aria-expanded="true"]::after { opacity: 0 !important; transition-delay: 0ms !important; }
+  /* 下載鈕的光：滑上去時一道斜斜的亮光掃過一次（離開時瞬間歸位，下次滑上去再掃一次）。不循環 */
+  .hn-sheen { position: relative; overflow: hidden; isolation: isolate; }
+  .hn-sheen::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: 0; width: 38%; pointer-events: none;
+    background: linear-gradient(100deg, #fff0 0%, #ffffff8c 50%, #fff0 100%); transform: translateX(-190%) skewX(-18deg); }
+  .hn-guest { display: flex; align-items: center; gap: 6px; }
+  .hn-avatar { display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 3px 7px 3px 3px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); color: var(--ink-2); font: inherit; cursor: pointer; transition: border-color 150ms ease, color 150ms ease, transform var(--fast) var(--out); }
+  .hn-avatar[aria-expanded="true"], .hn-avatar.hn-cur { border-color: var(--leaf-deep); color: var(--ink); }
+  .hn-ava { width: 26px; height: 26px; border-radius: 6px; image-rendering: pixelated; flex: none; }
+  .hn-ava-fb { display: inline-flex; align-items: center; justify-content: center; background: var(--panel-2); color: var(--leaf); }
+  .hn-ava-fb .ico { width: 16px; height: 16px; }
+  .hn-menu.hn-narrow { width: 200px; }
+  .hn-acct { width: 240px; }
+  .hn-acct-head { display: flex; align-items: center; gap: 10px; padding: 6px 10px 10px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+  .hn-acct-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); font-weight: 600; font-size: 14px; }
+  .hn-langs { display: grid; }
+  .hn-sublangs { margin: 2px 0 2px 26px; padding-left: 6px; border-left: 1px solid var(--line); }
+  .hn-mi { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; border: 0; border-radius: 8px; background: none; color: var(--ink); font: inherit; font-size: 14px; text-align: left; cursor: pointer; transition: background-color var(--fast) ease; }
+  .menu > a.hn-mi { justify-content: flex-start; }
+  .hn-mi .ico { color: var(--ink-2); }
+  .hn-mi-val { margin-left: auto; color: var(--ink-2); font-size: 13px; }
+  .hn-mi[aria-expanded] > .ico:last-child { width: 14px; height: 14px; transition: transform var(--fast) var(--out); }
+  .hn-mi[aria-expanded="true"] > .ico:last-child { transform: rotate(180deg); }
+  .hn-sep { height: 1px; margin: 6px 4px; border: 0; background: var(--line); }
+  .hn-mhead { margin: 6px 0 2px; padding: 4px 10px 0; color: var(--ink-2); font-size: 12px; }
+  .menu > .hn-mhead:first-child { margin-top: 0; padding-top: 2px; }
+  .menu > a.hn-msub { padding-left: 18px; }
+  .menu a[aria-current="page"] { background: var(--panel-2); box-shadow: inset 2px 0 0 var(--leaf); }
+  .menu a:focus-visible, .hn-mi:focus-visible { outline-offset: -2px; background: var(--panel-2); }
+  .hn-langs > a[aria-checked="true"], .hn-langs > a[aria-current="true"] { color: var(--leaf); }
+  .hn-langs > a .ico { color: var(--leaf); }
+  .hn-burger { display: none; }
+  /* 手機的面板：選單、下載、帳號、語言，從上往下 */
+  .hn-panel { display: none; }
+  .hn-pnav, .hn-psec { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: grid; gap: 2px; }
+  .hn-psec { border-top: 1px solid var(--line); }
+  .hn-pnav { padding-top: 12px; }
+  .hn-phead { margin: 4px 0 4px; padding: 0 10px; color: var(--ink-2); font-size: 12px; letter-spacing: .04em; }
+  .hn-plink { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 8px 10px; border: 0; border-radius: 9px; background: none; color: var(--ink); font: inherit; font-size: 15px; text-align: left; cursor: pointer; transition: background-color 150ms ease, transform var(--fast) var(--out); }
+  .hn-plink:hover { text-decoration: none; }
+  .hn-plink .ico { color: var(--ink-2); }
+  .hn-plink[aria-current="page"] { background: var(--panel-2); box-shadow: inset 3px 0 0 var(--leaf); }
+  .hn-plink.hn-sub { padding-left: 22px; }
+  .hn-pnote { margin: 4px 10px 2px; color: var(--ink-2); font-size: 12px; line-height: 1.55; }
+  .hn-pme { display: flex; align-items: center; gap: 10px; margin: 2px 0 4px; padding: 0 10px; color: var(--ink); font-weight: 600; min-width: 0; }
+  .hn-pme span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .hn-plangs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
+  .hn-plangs > a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 8px 10px; border-radius: 9px; color: var(--ink); }
+  .hn-plangs > a:hover { text-decoration: none; }
+  .hn-pgrid { display: grid; gap: 2px; }
+  .hn-psignin { justify-self: start; margin: 2px 10px 4px; }
   .pop { position: relative; }
   .menu {
     position: absolute; right: 0; top: calc(100% + 8px); z-index: 6; width: 252px; padding: 6px;
     border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: 0 18px 44px #000a;
-    opacity: 0; visibility: hidden; transform: translateY(-4px) scale(.97); transform-origin: top right;
-    transition: opacity var(--fast) ease, transform var(--fast) var(--out), visibility 0s linear var(--fast);
+    opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.96); transform-origin: top right;
+    transition: opacity 120ms var(--exit), transform 120ms var(--exit), visibility 0s linear 120ms;
   }
-  .menu.open { opacity: 1; visibility: visible; transform: none; transition: opacity var(--base) ease, transform var(--base) var(--arrive), visibility 0s; }
-  .menu > a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 8px; color: var(--ink); font-size: 14px; transition: background-color var(--fast) ease; }
-  .menu > a:hover { text-decoration: none; }
+  /* 打開：從按鈕那一角長出來（右邊的選單是右上角）。全部用 transition——開到一半又關，會從當下的位置接著收回去 */
+  .menu.open { opacity: 1; visibility: visible; transform: none; transition: opacity 180ms var(--out), transform 200ms var(--out), visibility 0s; }
+  /* 裡面一項接一項淡進來（相隔 18ms，--i 是程式填的序號）；只在打開時。關掉時不動，等選單淡完才悄悄歸位 */
+  .menu > *, .hn-panel > * { opacity: 0; transform: translateY(-3px); transition: opacity 0s linear 120ms, transform 0s linear 120ms, background-color 150ms ease; }
+  .menu.open > *, .hn-panel.open > * { opacity: 1; transform: none;
+    transition: opacity 180ms var(--out) calc(var(--i, 0) * 18ms), transform 220ms var(--out) calc(var(--i, 0) * 18ms), background-color 150ms ease; }
+  .menu > a, .menu .hn-langs > a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 10px; border-radius: 8px; color: var(--ink); font-size: 14px; }
+  .menu .hn-langs > a { transition: background-color 150ms ease; }
+  .menu > a:hover, .menu .hn-langs > a:hover { text-decoration: none; }
   .menu > a .ico { color: var(--ink-2); }
-  .menu p { margin: 6px 0 0; padding: 9px 10px 5px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; line-height: 1.55; }
+  .menu > p:not(.hn-mhead) { margin: 6px 0 0; padding: 9px 10px 5px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; line-height: 1.55; }
+  /* 功能頁預覽的語言下拉（以前頁首的語言選單也是它） */
   select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease; }
   select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
   select.pick { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; transition: border-color var(--fast) ease; }
@@ -100,11 +186,6 @@ const STYLE = String.raw`
   :lang(zh-Hans) body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
   :lang(ja) body { font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Meiryo", system-ui, sans-serif; }
   :lang(ko) body { font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
-  .me { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); }
-  .me img { width: 22px; height: 22px; border-radius: 4px; image-rendering: pixelated; }
-  /* 名字旁邊的登出（使用者 2026-10-14：「網頁右上方希望可以放個登出」）。比名字安靜一點：只有框線 */
-  .btn.small.me-out { background: transparent; color: var(--ink-2); }
-  .btn.small.me-out:hover { color: var(--ink); border-color: var(--leaf-deep); }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
   h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
   /* 大段之間留寬一點、標題貼著自己的內容：寬與緊的差距才看得出哪幾塊是一組 */
@@ -218,13 +299,19 @@ const STYLE = String.raw`
     .btn.primary:hover { background: #93dba0; border-color: #93dba0; }
     .btn.danger:hover { background: #3d2020; border-color: #5a2b2b; }
     tbody tr:hover td { background: #ffffff06; }
-    .kofi:hover { color: #f2a7b6; background: var(--panel-2); }
+    .hn-icon:hover, .hn-avatar:hover { color: var(--ink); border-color: var(--leaf-deep); }
+    .hn-heart:hover { color: #f2a7b6; background: var(--panel-2); border-color: transparent; }
+    .hn-tip:hover::after { opacity: 1; transform: translate(-50%, 0); transition-delay: 300ms; }
+    .hn-sheen:hover::after { transform: translateX(340%) skewX(-18deg); transition: transform 680ms var(--out); }
+    .brand:hover span { color: #a9e8b2; }
+    .brand:hover svg { transform: rotate(-12deg) scale(1.06); }
+    .hn-mi:hover, .hn-plink:hover, .hn-plangs > a:hover { background: var(--panel-2); }
     .fcard:hover { border-color: var(--leaf-deep); background: #18221c; }
     .make > summary:hover { background: #1b2c21; }
     .chip:hover { border-color: var(--leaf-deep); color: var(--ink); }
     .chip[aria-pressed="true"]:hover { color: #0c1a10; }
     .hero-screen .screen:hover { border-color: var(--leaf-deep); transform: translateY(-2px); }
-    .menu > a:hover { background: var(--panel-2); }
+    .menu > a:hover, .menu .hn-langs > a:hover { background: var(--panel-2); }
     .foot-cols a:hover, .copy:hover { color: var(--ink); text-decoration: none; }
     .more a:hover .ico { transform: translateX(3px); }
     .seg button:hover { color: var(--ink); }
@@ -732,19 +819,12 @@ const STYLE = String.raw`
   .drop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; transition: border-color var(--fast) ease, background-color var(--fast) ease; }
   .drop.over { border-color: var(--leaf); background: #7fd08a12; }
   .drop .hint { flex-basis: 100%; }
-  @media (max-width: 1240px) {
-    .kofi span { display: none; }
-  }
   @media (max-width: 940px) {
     .foot { grid-template-columns: 1fr; }
     .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cards.three { grid-template-columns: 1fr; }
-    /* 窄一點的畫面：頁首拆成幾列（標誌與工具、選單），所以不黏在上面，免得佔掉半個畫面 */
-    .top { position: static; }
-    .top .in { gap: 8px 10px; flex-wrap: wrap; }
-    .top nav { order: 3; flex-basis: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -8px; }
-    .top nav a { white-space: nowrap; }
-    .tools { gap: 8px; }
+    .top .in { gap: 12px; }
+    .tools { gap: 6px; }
   }
   @media (max-width: 720px) {
     .hero, .account { grid-template-columns: 1fr; }
@@ -752,11 +832,19 @@ const STYLE = String.raw`
     .view { grid-template-columns: 1fr; }
     canvas.model { height: 320px; }
     .side { border-left: 0; border-top: 1px solid var(--line); }
-    .me a { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .me-out span { display: none; }     /* 窄的時候只留圖示（按鈕本身有 aria-label） */
-    /* 登入之後工具那一排多了頭像與名字：放不下就折到下一列，不要把整頁撐寬 */
-    .tools { flex-wrap: wrap; justify-content: flex-end; row-gap: 6px; }
-    .menu { left: 0; right: auto; transform-origin: top left; }
+    /* 手機：頁首只留標誌、贊助與漢堡選單；選單、下載、帳號、語言都在面板裡 */
+    .top .in { padding: 10px 16px; }
+    .hn, .hn-desk { display: none !important; }
+    .hn-burger { display: inline-flex; }
+    .hn-leaves { height: 55px; }
+    .hn-panel {
+      display: block; position: absolute; top: 100%; left: 0; right: 0; z-index: 4;
+      max-height: calc(100vh - 56px); max-height: calc(100dvh - 56px); overflow-y: auto; overscroll-behavior: contain;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ground); box-shadow: 0 28px 48px #000b;
+      opacity: 0; visibility: hidden; transform: translateY(-10px); transform-origin: top center;
+      transition: opacity 120ms var(--exit), transform 120ms var(--exit), visibility 0s linear 120ms;
+    }
+    .hn-panel.open { opacity: 1; visibility: visible; transform: none; transition: opacity 200ms var(--out), transform 260ms var(--out), visibility 0s; }
     .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .band { grid-template-columns: 1fr; }
     .lineup, .lineup.guilds { grid-template-columns: 1fr; }
@@ -777,6 +865,12 @@ const STYLE = String.raw`
     .chip:active, .hero-screen .screen:hover { transform: none; }
     .more a:hover .ico, .seg button:active, a.who-row:active, .guild:active, a.who-row:hover .ico, .guild:hover .ico { transform: none; }
     .menu, .menu.open { transform: none; }
+    .hn-tip::after, .hn-tip:hover::after, .hn-tip:focus-visible::after { transform: translate(-50%, 0); }
+    .hn-trig .ico, .hn-avatar > .ico, #get > .ico:last-child, #hn-globe > .ico:last-child, .hn-mi[aria-expanded] > .ico:last-child { transition: none; }
+    .hn-panel, .hn-panel.open, .menu > *, .menu.open > *, .hn-panel > *, .hn-panel.open > * { transform: none; }
+    .menu.open > *, .hn-panel.open > * { transition-delay: 0ms; }
+    .hn-link:active, .hn-icon:active, .hn-avatar:active, .hn-plink:active, .brand:hover svg { transform: none; }
+    .hn-sheen::after, .hn-leaves { display: none; }
     .scr .hud > * { animation: none; }
     .inv .slot::after { animation: none !important; }
     .gapmark, .switch::after { transition: none; }
@@ -810,6 +904,12 @@ const ICON = {
   go: stroke('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>'),
   flag: stroke('<path d="M6 21V4"/><path d="M6 5h12l-2.5 4 2.5 4H6"/>'),
   exit: stroke('<path d="M9 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3"/><path d="m15 16 4-4-4-4"/><path d="M19 12H9"/>'),
+  globe: stroke('<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.3 2.5 3.4 5.3 3.4 8.5s-1.1 6-3.4 8.5c-2.3-2.5-3.4-5.3-3.4-8.5s1.1-6 3.4-8.5z"/>'),
+  menu: stroke('<path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>'),
+  user: stroke('<circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/>'),
+  check: stroke('<path d="m5 12.5 4.5 4.5L19 7.5"/>'),
+  account: stroke('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="10" r="2.8"/><path d="M7 17.6c1.1-1.9 2.9-2.9 5-2.9s3.9 1 5 2.9"/>'),
+  admin: stroke('<path d="M12 3.5 19 6v5.5c0 4.2-3 7.6-7 9-4-1.4-7-4.8-7-9V6z"/><path d="m9 12 2 2 4-4"/>'),
 };
 
 // ------------------------------------------------------------------ 字
@@ -820,6 +920,7 @@ export const TEXT = {
     'nav.home': '首頁', 'nav.features': '功能', 'nav.capes': '披風', 'nav.account': '帳號', 'nav.admin': '管理', 'nav.label': '主選單',
     'lang.label': '語言',
     'top.get': '下載', 'top.sponsor': '贊助', 'top.signout': '登出',
+    'top.signin': '登入', 'top.more': '更多', 'top.myaccount': '我的帳號', 'top.account': '帳號選單', 'top.menu': '選單',
     'top.getnote': '需要 Wynntils 與 Fabric API，jar 放進 mods 資料夾就好。<a href="/#install">安裝說明</a>',
     'foot.label': '頁尾',
     'foot.tagline': 'Wynncraft 的多語言翻譯模組。原文留著，譯文就在旁邊。',
@@ -1029,7 +1130,7 @@ export const TEXT = {
     'feat.c6b': '它用來判斷討伐戰結果的那幾句話保留英文，連勝才不會算錯。',
 
     js: {
-      login: '登入', loading: '讀取中…',
+      loading: '讀取中…',
       count: '共 {n} 件（相同的圖算一件）', empty: '還沒有人上傳披風。', users: '{n} 人', wearing: '{n} 人',
       card: '{t} 披風，{n} 人使用',
       drag: '拖曳可以旋轉。', no3d: '立體檢視載不起來，只能看平面的圖。',
@@ -1178,6 +1279,7 @@ export const TEXT = {
     'nav.home': 'Home', 'nav.features': 'Features', 'nav.capes': 'Capes', 'nav.account': 'Account', 'nav.admin': 'Admin', 'nav.label': 'Main menu',
     'lang.label': 'Language',
     'top.get': 'Download', 'top.sponsor': 'Sponsor', 'top.signout': 'Sign out',
+    'top.signin': 'Sign in', 'top.more': 'More', 'top.myaccount': 'My account', 'top.account': 'Account menu', 'top.menu': 'Menu',
     'top.getnote': 'Needs Wynntils and Fabric API; the jar goes in your mods folder. <a href="/#install">How to install</a>',
     'foot.label': 'Footer',
     'foot.tagline': 'A multilingual translation mod for Wynncraft. The original text stays; the translation sits beside it.',
@@ -1387,7 +1489,7 @@ export const TEXT = {
     'feat.c6b': 'The few lines it reads to tell how a raid ended stay in English, so your streak is counted right.',
 
     js: {
-      login: 'Sign in', loading: 'Loading…',
+      loading: 'Loading…',
       count: '{n} capes (identical images count once)', empty: 'Nobody has uploaded a cape yet.', users: '{n}', wearing: '{n} wearing',
       card: '{t} cape, worn by {n}',
       drag: 'Drag to rotate.', no3d: 'The 3D view could not load; only the flat image is shown.',
@@ -1662,23 +1764,174 @@ const COMMON = String.raw`
       button.style.minWidth = '';
     }, 1400);
   }
-  /* 頁首的下載選單：按一下開、再按一下關；點別的地方、按 Esc 也關 */
-  (function () {
-    var button = document.getElementById('get');
-    var menu = document.getElementById('get-menu');
-    function set(open) {
-      menu.classList.toggle('open', open);
-      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  /* ================= 頁首 =================
+     下拉選單（下載、語言、頭像、「更多」、群組）與手機的面板都用這一套：按鈕帶 aria-expanded，
+     一次只開一張；點外面、焦點離開、按 Esc 都會關（Esc 把焦點還給按鈕）。role="menu" 的那幾張可以用方向鍵：
+     按鈕上 ↓／↑ 打開並停在第一／最後一項，選單裡 ↑↓ 移動、Home／End 到頭尾。用鍵盤按開（Enter、空白鍵）也停在第一項 */
+  var menus = (function () {
+    var open = null;
+    function entries(menu) {
+      return Array.prototype.filter.call(menu.querySelectorAll('[role^="menuitem"]'), function (node) {
+        return node.getClientRects().length > 0;
+      });
     }
-    button.onclick = function () { set(!menu.classList.contains('open')); };
+    function close(back) {
+      if (!open) return;
+      var was = open;
+      open = null;
+      was.menu.classList.remove('open');
+      was.trigger.setAttribute('aria-expanded', 'false');
+      if (back) was.trigger.focus();
+    }
+    function show(trigger, menu, focus) {
+      if (!open || open.trigger !== trigger) {
+        close(false);
+        menu.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        open = { trigger: trigger, menu: menu };
+      }
+      if (!focus) return;
+      var list = entries(menu);
+      var pick = focus === 'last' ? list[list.length - 1] : list[0];
+      if (pick) pick.focus();
+    }
+    function bind(trigger) {
+      var menu = document.getElementById(trigger.getAttribute('aria-controls'));
+      if (!menu) return;
+      var listy = menu.getAttribute('role') === 'menu';
+      if (listy) {
+        Array.prototype.forEach.call(menu.querySelectorAll('a:not([role]), button:not([role])'), function (node) {
+          node.setAttribute('role', 'menuitem');          /* 說明裡的那個「安裝說明」連結也要按得到 */
+        });
+      }
+      number(menu);
+      trigger.addEventListener('click', function (e) {
+        if (open && open.trigger === trigger) close(false);
+        else show(trigger, menu, listy && e.detail === 0 ? 'first' : null);
+      });
+      if (!listy) return;
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+        e.preventDefault();
+        show(trigger, menu, e.key === 'ArrowUp' ? 'last' : 'first');
+      });
+      menu.addEventListener('keydown', function (e) {
+        var list = entries(menu);
+        var at = list.indexOf(document.activeElement);
+        var to = e.key === 'ArrowDown' ? at + 1 : e.key === 'ArrowUp' ? (at < 0 ? list.length - 1 : at - 1)
+          : e.key === 'Home' ? 0 : e.key === 'End' ? list.length - 1 : null;
+        if (to === null || !list.length) return;
+        e.preventDefault();
+        list[(to + list.length) % list.length].focus();
+      });
+    }
+    /* 每一項的序號（--i）：打開時照這個順序一項接一項淡進來 */
+    function number(menu) {
+      Array.prototype.forEach.call(menu.children, function (child, i) { child.style.setProperty('--i', Math.min(i, 10)); });
+    }
+    function outside(target) { return open && !open.trigger.contains(target) && !open.menu.contains(target); }
     document.addEventListener('click', function (e) {
-      if (!button.contains(e.target) && !menu.contains(e.target)) set(false);
+      if (outside(e.target)) close(false);
+      else if (open && open.menu.contains(e.target) && e.target.closest('a')) close(false);   /* 點了選單裡的連結（同一頁的 #） */
     });
+    document.addEventListener('focusin', function (e) { if (outside(e.target)) close(false); });
     document.addEventListener('keydown', function (e) {
-      if (e.key !== 'Escape' || !menu.classList.contains('open')) return;
-      set(false);
-      button.focus();
+      if (e.key !== 'Escape' || !open) return;
+      e.preventDefault();
+      close(true);
     });
+    Array.prototype.forEach.call(document.querySelectorAll('.top [aria-haspopup="true"], #hn-burger'), bind);
+    return {
+      close: close,
+      number: number,
+      closeIn: function (box) { if (open && box.contains(open.trigger)) close(false); },
+    };
+  })();
+  /* 手機的面板：視窗拉寬回桌面的版面就收起來 */
+  if (window.matchMedia) {
+    var phone = window.matchMedia('(max-width: 720px)');
+    var folded = function () { menus.close(false); };
+    if (phone.addEventListener) phone.addEventListener('change', folded);
+    else if (phone.addListener) phone.addListener(folded);
+  }
+  /* 頭像選單裡的「語言」：就地展開八種語言 */
+  document.getElementById('hn-lang-toggle').addEventListener('click', function () {
+    var on = this.getAttribute('aria-expanded') !== 'true';
+    this.setAttribute('aria-expanded', on ? 'true' : 'false');
+    document.getElementById(this.getAttribute('aria-controls')).hidden = !on;
+  });
+  /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。網址上的 ?lang= 比 cookie 優先，要拿掉 */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[data-lang]');
+    if (!link || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button) return;
+    e.preventDefault();
+    document.cookie = 'lang=' + link.dataset.lang + '; path=/; max-age=31536000; samesite=lax';
+    location.replace(location.pathname);
+  });
+  /* 選單放不下就收進「更多」（priority+）：每次都先全部攤開量，從 data-pri 小的開始收，直到放得下。
+     「更多」只有真的收了東西才出現；這一頁收在裡面的話，「更多」本身亮起來。
+     選單的寬度是標誌與工具剩下的那一段，所以視窗變寬變窄、登入後頭像換上來、字型載好都要重新量 */
+  var fitNav = (function () {
+    var nav = document.getElementById('hn');
+    var list = nav.querySelector('.hn-list');
+    var more = document.getElementById('hn-more');
+    var moreBtn = document.getElementById('hn-more-btn');
+    var moreMenu = document.getElementById('hn-more-menu');
+    var last = null;
+    function fit(force) {
+      var cells = Array.prototype.filter.call(list.children, function (li) { return li !== more; });
+      cells.forEach(function (li) { li.classList.remove('hn-out'); });
+      more.hidden = false;
+      var room = nav.clientWidth;
+      var gap = parseFloat(getComputedStyle(list).columnGap) || 0;
+      var size = function (li) { return li.getBoundingClientRect().width + gap; };
+      var spare = size(more);
+      var live = cells.filter(function (li) { return !li.hidden; });
+      var need = live.reduce(function (sum, li) { return sum + size(li); }, -gap);
+      var out = [];
+      if (room > 0 && need > room + 0.5) {
+        room -= spare;
+        live.map(function (li, i) { return { li: li, i: i }; })
+          .sort(function (a, b) { return (a.li.dataset.pri - b.li.dataset.pri) || (b.i - a.i); })
+          .some(function (one) {
+            if (need <= room + 0.5) return true;
+            need -= size(one.li);
+            out.push(one.li);
+            return false;
+          });
+      }
+      more.hidden = out.length === 0;
+      out.forEach(function (li) { li.classList.add('hn-out'); });
+      nav.classList.add('hn-live');
+      var sig = out.map(function (li) { return li.dataset.key; }).join();
+      if (sig === last && !force) return;
+      last = sig;
+      menus.closeIn(nav);
+      moreMenu.replaceChildren();
+      moreBtn.classList.remove('hn-cur');
+      live.forEach(function (li) {
+        if (out.indexOf(li) < 0) return;
+        var trig = li.querySelector('.hn-trig');
+        if (trig) {
+          var headline = el('p', 'hn-mhead', trig.textContent);
+          headline.setAttribute('role', 'none');
+          moreMenu.append(headline);
+        }
+        Array.prototype.forEach.call(trig ? li.querySelectorAll('.hn-menu a') : [li.querySelector('a')], function (a) {
+          var copy = a.cloneNode(true);
+          copy.className = trig ? 'hn-msub' : '';
+          copy.setAttribute('role', 'menuitem');
+          moreMenu.append(copy);
+          if (a.getAttribute('aria-current') === 'page' && !a.hidden) moreBtn.classList.add('hn-cur');
+        });
+      });
+      menus.number(moreMenu);
+    }
+    fit();
+    if (window.ResizeObserver) new ResizeObserver(function () { fit(); }).observe(nav);
+    else window.addEventListener('resize', function () { fit(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fit(); });
+    return fit;
   })();
   /* 頁尾的 Discord 名稱：按一下複製（Discord 沒有「用名字開個人頁」的網址） */
   document.getElementById('dc-copy').onclick = function () {
@@ -1686,43 +1939,244 @@ const COMMON = String.raw`
     if (!navigator.clipboard) return;
     navigator.clipboard.writeText('LyuChaCha').then(function () { blip(button, L.copied); });
   };
-  /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。 */
-  document.getElementById('lang').onchange = function () {
-    document.cookie = 'lang=' + this.value + '; path=/; max-age=31536000; samesite=lax';
-    location.replace(location.pathname);     /* 網址上的 ?lang= 比 cookie 優先，要拿掉 */
-  };
   /* 我是誰。沒登入、或通行證過期了，就是 null。 */
   var whoami = !token() ? Promise.resolve(null) : api('/me').then(function (r) {
     if (r.status === 401) { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} return null; }
     return r.ok ? r.json() : null;
   }).catch(function () { return null; });
-  whoami.then(function (me) {
-    var slot = document.getElementById('me');
-    slot.replaceChildren();
-    if (!me) {
-      var link = el('a', '', L.login);
-      link.href = '/account';
-      slot.append(link);
-      return;
+  /* 頁首的帳號那一塊：沒登入是「登入」＋語言；登入了是頭像（按了是帳號選單）。
+     有通行證就先換成頭像（還不知道是誰，先放一個人形），免得「登入」閃一下又不見。
+     data-need 的東西（管理…）照 /api/me 回的身分打開；沒登入一律藏著 */
+  function headerAccount(me) {
+    var on = Boolean(me);
+    ['hn-guest', 'hn-p-guest'].forEach(function (id) { document.getElementById(id).hidden = on; });
+    ['hn-user', 'hn-p-user'].forEach(function (id) { document.getElementById(id).hidden = !on; });
+    Array.prototype.forEach.call(document.querySelectorAll('.top [data-need]'), function (node) {
+      node.hidden = !(me && me !== true && me[node.dataset.need]);
+    });
+    if (me && me !== true) {
+      var name = me.linked === false ? ((me.discord && me.discord.name) || 'Discord') : me.name;
+      Array.prototype.forEach.call(document.querySelectorAll('.top [data-me-name]'), function (node) { node.textContent = name; });
+      var avatar = document.getElementById('hn-avatar');
+      avatar.setAttribute('aria-label', avatar.dataset.label + ': ' + name);
+      avatar.title = name;
+      if (me.linked !== false) {
+        Array.prototype.forEach.call(document.querySelectorAll('.top img.hn-ava'), function (img) {
+          img.onload = function () { img.hidden = false; img.nextElementSibling.hidden = true; };
+          img.src = head(me.name, 52);
+        });
+      }
     }
-    var out = document.getElementById('me-out');
-    out.hidden = false;
-    out.onclick = signOut;
-    if (me.linked === false) {              /* 用 Discord 登入了，還沒綁遊戲 ID */
-      var pending = el('a', '', (me.discord && me.discord.name) || 'Discord');
-      pending.href = '/account';
-      slot.append(pending);
-      if (me.staff) document.getElementById('nav-admin').hidden = false;
-      return;
+    fitNav(true);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-signout]'), function (button) { button.onclick = signOut; });
+  if (token()) headerAccount(true);
+  whoami.then(headerAccount);
+  /* ================= 頁首飄過的葉子 =================
+     跟 README 那張橫幅（discord-banner/leafart.py、animate4.py）同一套：手畫的小像素葉子（直立 5×7、斜放 6×6，
+     正面、半寬、側面三種寬度），轉向只用 90 度的倍數加鏡射，像素永遠方正。每隔幾秒來一陣風：風鋒從左邊掃過去，
+     帶進一兩片葉子；風鋒到了葉子才被吹快、翻得快，過了慢慢緩下來。
+     畫在 .top 底下一張小畫布上（一格像素放大成 2px），在字的後面、不擋滑鼠。畫面上沒有葉子也沒有風就不跑
+     requestAnimationFrame；分頁藏起來就停；系統設定「減少動態」就完全不出現 */
+  (function () {
+    var canvas = document.getElementById('hn-leaves');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var calmQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    function off() { return Boolean(calmQuery && calmQuery.matches); }
+    var PX = 2;
+    var UP = {
+      full: ['..o..', '.oLo.', 'oLLGo', 'oLVGo', 'oGVGo', '.oVo.', '..s..'],
+      half: ['..o..', '.oLo.', '.oVo.', '.oVo.', '.oVo.', '..o..', '..s..'],
+      edge: ['.....', '..o..', '..o..', '..o..', '..o..', '..o..', '..s..'],
+    };
+    var DIAG = {
+      full: ['....oo', '...oLo', '..oLVo', '.oLVGo', '.oVGo.', 'so....'],
+      half: ['.....o', '....oo', '...oVo', '..oVo.', '.oVo..', 'so....'],
+      edge: ['......', '....o.', '...o..', '..o...', '.o....', 's.....'],
+    };
+    /* 顏色：橫幅那三組綠（其中一組換成網站自己的 --leaf），整體提亮——橫幅的底是天空，這裡是深綠的頁首，原本的外框會看不見 */
+    var SETS = [
+      { o: [62, 104, 40], G: [110, 166, 66], L: [160, 206, 96], V: [80, 130, 50], s: [112, 86, 54] },
+      { o: [44, 110, 64], G: [79, 160, 96], L: [127, 208, 138], V: [52, 124, 72], s: [112, 86, 54] },
+      { o: [40, 98, 70], G: [70, 150, 100], L: [118, 196, 140], V: [50, 118, 80], s: [112, 86, 54] },
+    ];
+    var FLIP = [['full', false], ['half', false], ['edge', false], ['half', true], ['full', true]];
+    var sprites = {};
+    function rgb(c) { return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')'; }
+    function dim(c) { return [Math.round(c[0] * 0.7), Math.round(c[1] * 0.7), Math.round(c[2] * 0.7)]; }
+    /* 一張葉子：idx 是 0–7（45 度一格）。偶數用直立那張、奇數用斜放那張，再順時針轉 90 度的倍數；
+       背面沒有亮面，沿著葉脈鏡射 */
+    function sprite(set, shape, back, idx) {
+      var key = set + shape + back + idx;
+      if (sprites[key]) return sprites[key];
+      var rows = (idx % 2 ? DIAG : UP)[shape];
+      var h = rows.length, w = rows[0].length;
+      var pts = [];
+      rows.forEach(function (row, y) {
+        for (var x = 0; x < w; x++) if (row.charAt(x) !== '.') pts.push([x, y, row.charAt(x)]);
+      });
+      var c = SETS[set];
+      var paint = back ? { o: c.o, G: dim(c.G), L: dim(c.G), V: dim(c.V), s: c.s } : c;
+      if (back) {
+        pts = pts.map(function (p) { return idx % 2 ? [w - 1 - p[1], h - 1 - p[0], p[2]] : [w - 1 - p[0], p[1], p[2]]; });
+      }
+      for (var turn = 0; turn < (idx >> 1); turn++) {
+        var hh = h;
+        pts = pts.map(function (p) { return [hh - 1 - p[1], p[0], p[2]]; });
+        h = w;
+        w = hh;
+      }
+      var img = document.createElement('canvas');
+      img.width = w;
+      img.height = h;
+      var g = img.getContext('2d');
+      pts.forEach(function (p) {
+        g.fillStyle = rgb(paint[p[2]]);
+        g.fillRect(p[0], p[1], 1, 1);
+      });
+      sprites[key] = img;
+      return img;
     }
-    var img = el('img');
-    img.alt = '';
-    img.src = head(me.name, 44);
-    var name = el('a', '', me.name);
-    name.href = '/account';
-    slot.append(img, name);
-    if (me.staff) document.getElementById('nav-admin').hidden = false;
-  });
+    var W = 0, H = 0, leaves = [], gusts = [], raf = 0, timer = 0, last = 0;
+    function size() {
+      var bar = canvas.parentNode.querySelector('.in');
+      /* 剛好整數倍（一格像素＝2px），不然放大會一列寬一列窄；寬度往下取整，免得多出 1px 撐出橫向捲動 */
+      W = Math.floor(canvas.parentNode.clientWidth / PX);
+      H = Math.floor((bar ? bar.offsetHeight : 60) / PX);
+      canvas.style.width = W * PX + 'px';
+      canvas.style.height = H * PX + 'px';
+      canvas.width = W;
+      canvas.height = H;
+    }
+    /* 某個位置現在吹到多少風（0–1）：風鋒剛到最強，過了慢慢退 */
+    function wind(x) {
+      var total = 0;
+      gusts.forEach(function (g) {
+        var d = g.x - x;
+        if (d < -12) return;
+        var rise = Math.min(1, (d + 12) / 20);
+        var fall = Math.exp(-Math.max(0, d - 8) / 70);
+        total = Math.max(total, rise * fall * g.k);
+      });
+      return total;
+    }
+    function rand(a, b) { return a + Math.random() * (b - a); }
+    function addLeaf(fromTop) {
+      if (leaves.length >= 6) return;
+      leaves.push({
+        x: fromTop ? rand(W * 0.05, W * 0.55) : rand(-26, -8), y0: fromTop ? -8 : rand(3, Math.max(4, H - 10)),
+        base: rand(9, 16), fall: fromTop ? rand(3, 5) : rand(-0.4, 0.9), amp: rand(1.2, 2.6), f: rand(0.35, 0.6),
+        ph: rand(0, 6.3), t: 0, set: Math.floor(Math.random() * SETS.length), dir: Math.random() < 0.5 ? 1 : -1,
+        o0: Math.floor(Math.random() * 8), off: Math.random(), flip: 0, g: 0,
+      });
+    }
+    /* 一陣風：風鋒從左邊外面掃到右邊外面，帶一兩片葉子進來（偶爾一片從上面落下） */
+    function blow() {
+      if (document.hidden || off() || !W) return;
+      var k = rand(0.65, 1);
+      gusts.push({ x: -30, v: rand(150, 190), k: k, wisps: [0, 1].map(function () {
+        return { dy: rand(4, Math.max(5, H - 4)), lag: rand(0, 26), len: rand(28, 52), amp: rand(0.8, 1.8), ph: rand(0, 6.3) };
+      }) });
+      addLeaf(Math.random() < 0.3);
+      if (Math.random() < 0.45) addLeaf(false);
+      wake();
+    }
+    function step(dt) {
+      gusts.forEach(function (g) { g.x += g.v * dt; });
+      gusts = gusts.filter(function (g) { return g.x - 90 < W + 40; });
+      leaves.forEach(function (l) {
+        l.g = wind(l.x);
+        l.t += dt;
+        l.x += (l.base + 52 * l.g) * dt;
+        l.flip += (0.5 + 3.6 * l.g) * dt;
+      });
+      leaves = leaves.filter(function (l) { return l.x < W + 12 && l.y0 + l.fall * l.t < H + 12; });
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      /* 風痕：跟著風鋒走的一兩條淡淡的像素波浪，頭亮尾淡 */
+      ctx.fillStyle = '#e8f8de';
+      gusts.forEach(function (g) {
+        var k = (g.x + 30) / (W + 160);
+        var fade = Math.max(0, Math.min(1, k / 0.12, (1 - k) / 0.18));
+        g.wisps.forEach(function (w) {
+          var head = g.x - w.lag;
+          for (var i = 0; i < w.len; i += 1) {
+            var a = 0.2 * fade * Math.pow(1 - i / w.len, 1.5);
+            if (a < 0.02) continue;
+            ctx.globalAlpha = a;
+            ctx.fillRect(Math.floor(head - i), Math.floor(w.dy + w.amp * Math.sin((head - i) / 13 + w.ph)), 1, 1);
+          }
+        });
+      });
+      ctx.globalAlpha = 1;
+      leaves.forEach(function (l) {
+        var spin = l.flip + l.off;
+        var turn = Math.floor(spin), frac = spin - turn;
+        var stage = frac < 0.66 ? 0 : Math.min(4, Math.floor((frac - 0.66) / 0.34 * 5));
+        var back = (turn % 2 === 1) !== FLIP[stage][1];
+        var idx = (((l.o0 + l.dir * turn) % 8) + 8) % 8;
+        var img = sprite(l.set, FLIP[stage][0], back, idx);
+        var swing = Math.sin(2 * Math.PI * 2 * l.f * l.t + l.ph);
+        var x = l.x + 2 * swing;
+        var y = l.y0 + l.fall * l.t + l.amp * Math.sin(2 * Math.PI * l.f * l.t + l.ph) + Math.abs(swing) - 3 * l.g;
+        ctx.drawImage(img, Math.round(x - img.width / 2), Math.round(y - img.height / 2));
+      });
+      ctx.globalAlpha = 1;
+    }
+    function frame(now) {
+      var dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
+      last = now;
+      step(dt);
+      draw();
+      raf = leaves.length || gusts.length ? requestAnimationFrame(frame) : 0;
+      if (!raf) ctx.clearRect(0, 0, W, H);
+    }
+    function wake() {
+      if (raf || document.hidden) return;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+    function schedule(ms) {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        blow();
+        schedule(rand(5500, 10500));
+      }, ms);
+    }
+    function stop() {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+      raf = 0;
+    }
+    function start(first) {
+      if (off()) return;
+      schedule(first ? rand(1500, 3000) : rand(2500, 5000));
+      if (leaves.length || gusts.length) wake();
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop();
+      else start(false);
+    });
+    if (calmQuery) {
+      var changed = function () {
+        stop();
+        leaves = [];
+        gusts = [];
+        ctx.clearRect(0, 0, W, H);
+        start(false);
+      };
+      if (calmQuery.addEventListener) calmQuery.addEventListener('change', changed);
+      else if (calmQuery.addListener) calmQuery.addListener(changed);
+    }
+    var resized = function () { size(); if (!raf) ctx.clearRect(0, 0, W, H); };
+    if (window.ResizeObserver) new ResizeObserver(resized).observe(canvas.parentNode.querySelector('.in') || canvas.parentNode);
+    else window.addEventListener('resize', resized);
+    size();
+    canvas.hnBlow = blow;           /* 只給測試與錄影用：馬上吹一陣 */
+    start(true);
+  })();
 `;
 
 /**
@@ -1744,12 +2198,168 @@ const TEX_CSS = '\n  :root {' + Object.keys(TEX_URL).map((name) =>
 /** 披風範本、說明圖與示範的網址（cape-templates.js），一樣帶著內容的雜湊。 */
 const TPL = (name) => '/template/' + name + '?v=' + CAPE_TEMPLATES[name].v;
 
+// ------------------------------------------------------------------ 頁首
+
+/**
+ * 頁首的選單。加一頁＝在這裡加一行（README 的〈頁首〉有完整說明）。
+ *
+ *   key       代號（英文小寫，同一份清單裡不重複）
+ *   href      網址
+ *   label     字的鍵（TEXT 與 lang/*.json 裡的那一條；八種語言都要有）
+ *   priority  寬度不夠時誰先收進「更多」：數字小的先收
+ *   group     （可以不填）同一個 group 的幾頁收成一個下拉選單，名字與順位寫在 NAV_GROUPS
+ *   role      （可以不填）要什麼身分才看得到：/api/me 回的欄位（staff、developer、member）。沒登入一律看不到
+ */
+export const NAV_ITEMS = [
+  { key: 'home', href: '/', label: 'nav.home', priority: 100 },
+  { key: 'features', href: '/features', label: 'nav.features', priority: 80 },
+  { key: 'capes', href: '/capes', label: 'nav.capes', priority: 90 },
+  { key: 'translate', href: '/translate', label: 'nav.translate', priority: 70 },
+  { key: 'feedback', href: '/feedback', label: 'nav.feedback', priority: 60 },
+];
+
+/**
+ * 選單裡的群組：{ <group>: { label, priority, role } }。label 是字的鍵；priority 不填就用組裡最大的那一個；
+ * role 跟上面一樣（整組要什麼身分）。群組放在組裡第一頁原本的位置。現在還沒有要分組的，所以是空的；例如
+ *   community: { label: 'nav.community', priority: 65 },
+ * 再把協作翻譯與回饋那兩行加上 group: 'community'，頁首就多一個「社群 ▾」。
+ */
+export const NAV_GROUPS = {};
+
+/** 頭像選單裡的連結（登入之後才有）。欄位跟 NAV_ITEMS 一樣；icon 是 ICON 的名字。 */
+export const ACCOUNT_ITEMS = [
+  { key: 'account', href: '/account', label: 'top.myaccount', icon: 'account' },
+  { key: 'admin', href: '/admin', label: 'nav.admin', icon: 'admin', role: 'staff' },
+];
+
+/** 下載選單的幾個地方。 */
+const DOWNLOADS = [['Modrinth', MODRINTH], ['CurseForge', CURSEFORGE], ['GitHub Releases', RELEASES]];
+
+const gate = (item) => (item && item.role ? ' data-need="' + item.role + '" hidden' : '');
+const here = (href, active) => (href === active ? ' aria-current="page"' : '');
+
+/** 一份選單照 group 排好：沒有 group 的一頁一格，有 group 的整組放在第一頁的位置。 */
+function navRows(items, groups) {
+  const rows = [];
+  const seen = new Set();
+  for (const item of items) {
+    if (!item.group) {
+      rows.push({ item });
+      continue;
+    }
+    if (seen.has(item.group)) continue;
+    seen.add(item.group);
+    const members = items.filter((other) => other.group === item.group);
+    const group = groups[item.group] || {};
+    rows.push({
+      group: { key: item.group, label: group.label || item.group, role: group.role,
+        priority: group.priority ?? Math.max(...members.map((m) => m.priority)) },
+      members,
+    });
+  }
+  return rows;
+}
+
+/**
+ * 頁首（寬的畫面）的那一排：每一格帶著 data-pri，最後一格是「更多」（藏著，放不下的時候程式才打開它、
+ * 把收起來的那幾格搬進去）。
+ */
+export function navMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
+  const cells = navRows(items, groups).map((row) => {
+    if (row.item) {
+      return '<li class="hn-item" data-key="' + row.item.key + '" data-pri="' + row.item.priority + '"' + gate(row.item) + '>'
+        + '<a class="hn-link" href="' + row.item.href + '"' + here(row.item.href, active) + '>%%' + row.item.label + '%%</a></li>';
+    }
+    const id = 'hn-g-' + row.group.key;
+    const inside = row.members.some((m) => m.href === active);
+    return '<li class="hn-item hn-group" data-key="' + row.group.key + '" data-pri="' + row.group.priority + '"' + gate(row.group) + '>'
+      + '<button class="hn-link hn-trig' + (inside ? ' hn-cur' : '') + '" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="' + id + '">'
+      + '<span>%%' + row.group.label + '%%</span>' + ICON.down + '</button>'
+      + '<div class="menu hn-menu" id="' + id + '" role="menu">'
+      + row.members.map((m) => '<a href="' + m.href + '" role="menuitem"' + here(m.href, active) + gate(m) + '>%%' + m.label + '%%</a>').join('')
+      + '</div></li>';
+  });
+  cells.push('<li class="hn-item hn-more" id="hn-more" hidden>'
+    + '<button class="hn-link hn-trig" id="hn-more-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="hn-more-menu">'
+    + '<span>%%top.more%%</span>' + ICON.down + '</button>'
+    + '<div class="menu hn-menu" id="hn-more-menu" role="menu"></div></li>');
+  return '<ul class="hn-list">' + cells.join('') + '</ul>';
+}
+
+/** 手機面板裡的選單：同一份清單，群組變成一個小標題加底下的幾頁。 */
+export function panelNavMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
+  const link = (item, sub) => '<a class="hn-plink' + (sub ? ' hn-sub' : '') + '" href="' + item.href + '"'
+    + here(item.href, active) + gate(item) + '>%%' + item.label + '%%</a>';
+  return '<nav class="hn-pnav" aria-label="%%nav.label%%">' + navRows(items, groups).map((row) => (row.item ? link(row.item)
+    : '<div class="hn-pgroup"' + gate(row.group) + '><p class="hn-phead">%%' + row.group.label + '%%</p>'
+      + row.members.map((m) => link(m, true)).join('') + '</div>')).join('') + '</nav>';
+}
+
+/** 八種語言的連結。在選單裡是 menuitemradio，在手機面板裡是一般的連結。沒有程式也點得動（?lang=）。 */
+export function langLinks(lang, menu) {
+  return LANGS.map((code) => '<a href="?lang=' + code + '" hreflang="' + tagOf(code) + '" lang="' + tagOf(code) + '" data-lang="' + code + '"'
+    + (menu ? ' role="menuitemradio" aria-checked="' + (code === lang) + '"' : (code === lang ? ' aria-current="true"' : ''))
+    + '>' + LANG_NAMES[code] + (code === lang ? ICON.check : '') + '</a>').join('');
+}
+
+/** 頭像選單（或手機面板）裡的帳號連結。 */
+function accountLinks(active, menu) {
+  return ACCOUNT_ITEMS.map((item) => '<a' + (menu ? ' role="menuitem" class="hn-mi"' : ' class="hn-plink"') + ' href="' + item.href + '"'
+    + here(item.href, active) + gate(item) + '>' + (menu && item.icon ? ICON[item.icon] : '') + '<span>%%' + item.label + '%%</span></a>').join('');
+}
+
+/** 整個頁首。登入與否要等程式問過 /api/me：先畫沒登入的樣子，有通行證的話程式一開始就換成頭像。 */
+function header(lang, active) {
+  const mine = ACCOUNT_ITEMS.some((item) => item.href === active);
+  const avatar = '<img class="hn-ava" alt="" hidden><span class="hn-ava hn-ava-fb">' + ICON.user + '</span>';
+  const downloads = DOWNLOADS.map(([name, href]) => '<a href="' + href + '" role="menuitem">' + name + ICON.out + '</a>').join('');
+  return '<div class="top"><canvas class="hn-leaves" id="hn-leaves" aria-hidden="true"></canvas><div class="in">'
+    + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
+    + '<nav class="hn" id="hn" aria-label="%%nav.label%%">' + navMarkup(active) + '</nav>'
+    + '<div class="tools">'
+    + '<a class="hn-icon hn-heart hn-tip" href="' + KOFI + '" aria-label="%%foot.kofi%%" data-tip="%%top.sponsor%%">' + ICON.heart + '</a>'
+    + '<div class="pop hn-desk"><button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">'
+    + ICON.get + '%%top.get%%' + ICON.down + '</button>'
+    + '<div class="menu" id="get-menu" role="menu">' + downloads + '<p role="none">%%top.getnote%%</p></div></div>'
+    // 沒登入：登入＋語言（地球）
+    + '<div class="hn-guest hn-desk" id="hn-guest">'
+    + '<a class="btn small hn-signin" href="/account"' + here('/account', active) + '>%%top.signin%%</a>'
+    + '<div class="pop"><button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="%%lang.label%%" data-tip="%%lang.label%%" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">'
+    + ICON.globe + ICON.down + '</button>'
+    + '<div class="menu hn-menu hn-narrow" id="hn-globe-menu" role="menu"><div class="hn-langs" role="group" aria-label="%%lang.label%%">'
+    + langLinks(lang, true) + '</div></div></div></div>'
+    // 登入了：頭像，按了是帳號選單
+    + '<div class="pop hn-user hn-desk" id="hn-user" hidden>'
+    + '<button class="hn-avatar' + (mine ? ' hn-cur' : '') + '" id="hn-avatar" type="button" aria-label="%%top.account%%" data-label="%%top.account%%" aria-haspopup="true" aria-expanded="false" aria-controls="hn-acct-menu">'
+    + avatar + ICON.down + '</button>'
+    + '<div class="menu hn-menu hn-acct" id="hn-acct-menu" role="menu">'
+    + '<div class="hn-acct-head" role="none">' + avatar + '<span class="hn-acct-name" data-me-name></span></div>'
+    + accountLinks(active, true)
+    + '<button class="hn-mi" id="hn-lang-toggle" type="button" role="menuitem" aria-expanded="false" aria-controls="hn-acct-langs">'
+    + ICON.globe + '<span>%%lang.label%%</span><span class="hn-mi-val">' + LANG_NAMES[lang] + '</span>' + ICON.down + '</button>'
+    + '<div class="hn-langs hn-sublangs" id="hn-acct-langs" role="group" aria-label="%%lang.label%%" hidden>' + langLinks(lang, true) + '</div>'
+    + '<hr class="hn-sep" role="separator">'
+    + '<button class="hn-mi" type="button" role="menuitem" data-signout>' + ICON.exit + '<span>%%top.signout%%</span></button>'
+    + '</div></div>'
+    + '<button class="hn-icon hn-burger" id="hn-burger" type="button" aria-label="%%top.menu%%" aria-expanded="false" aria-controls="hn-panel">'
+    + ICON.menu + '</button>'
+    + '</div></div>'
+    // 手機的面板：選單、下載、帳號、語言
+    + '<div class="hn-panel" id="hn-panel">'
+    + panelNavMarkup(active)
+    + '<div class="hn-psec"><p class="hn-phead">%%top.get%%</p>'
+    + DOWNLOADS.map(([name, href]) => '<a class="hn-plink" href="' + href + '">' + name + ICON.out + '</a>').join('')
+    + '<p class="hn-pnote">%%top.getnote%%</p></div>'
+    + '<div class="hn-psec"><p class="hn-phead">%%nav.account%%</p>'
+    + '<div id="hn-p-guest"><a class="btn small hn-psignin" href="/account"' + here('/account', active) + '>%%top.signin%%</a></div>'
+    + '<div class="hn-pgrid" id="hn-p-user" hidden><p class="hn-pme">' + avatar + '<span data-me-name></span></p>'
+    + accountLinks(active, false)
+    + '<button class="hn-plink" type="button" data-signout><span>%%top.signout%%</span>' + ICON.exit + '</button></div></div>'
+    + '<div class="hn-psec"><p class="hn-phead">%%lang.label%%</p><div class="hn-langs hn-plangs">' + langLinks(lang, false) + '</div></div>'
+    + '</div></div>';
+}
+
 function layout(lang, title, active, body, script) {
-  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/translate', 'nav.translate'], ['/feedback', 'nav.feedback'], ['/account', 'nav.account']]
-    .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
-      + '>%%' + key + '%%</a>').join('');
-  const switcher = LANGS.map((code) => '<option value="' + code + '"' + (code === lang ? ' selected' : '')
-    + ' lang="' + tagOf(code) + '">' + LANG_NAMES[code] + '</option>').join('');
   const column = (heading, links) => '<div><h2>%%' + heading + '%%</h2><ul>'
     + links.map((link) => '<li>' + link + '</li>').join('') + '</ul></div>';
   const to = (href, label) => '<a href="' + href + '">' + label + '</a>';
@@ -1769,25 +2379,8 @@ function layout(lang, title, active, body, script) {
     + '<meta name="twitter:card" content="summary">\n'
     + '<title>' + title + '</title>\n<style>' + STYLE + FONT_CSS + TEX_CSS + '</style>\n</head>\n<body>\n'
     + '<a class="skip" href="#main">%%skip%%</a>'
-    + '<div class="top"><div class="in">'
-    + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
-    + '<nav aria-label="%%nav.label%%">' + nav
-    + '<a href="/admin" id="nav-admin" hidden' + (active === '/admin' ? ' aria-current="page"' : '')
-    + '>%%nav.admin%%</a></nav>'
-    + '<div class="tools">'
-    + '<a class="kofi" href="' + KOFI + '" aria-label="%%foot.kofi%%">' + ICON.heart + '<span>%%top.sponsor%%</span></a>'
-    + '<div class="pop"><button class="btn primary small" id="get" type="button" aria-expanded="false" aria-controls="get-menu">'
-    + ICON.get + '%%top.get%%' + ICON.down + '</button>'
-    + '<div class="menu" id="get-menu">'
-    + '<a href="' + MODRINTH + '">Modrinth' + ICON.out + '</a>'
-    + '<a href="' + CURSEFORGE + '">CurseForge' + ICON.out + '</a>'
-    + '<a href="' + RELEASES + '">GitHub Releases' + ICON.out + '</a>'
-    + '<p>%%top.getnote%%</p></div></div>'
-    + '<select class="lang" id="lang" aria-label="%%lang.label%%">' + switcher + '</select>'
-    + '<div class="me" id="me"></div>'
-    + '<button class="btn small me-out" id="me-out" type="button" hidden title="%%top.signout%%" aria-label="%%top.signout%%">'
-    + ICON.exit + '<span>%%top.signout%%</span></button></div>'
-    + '</div></div>\n<main id="main">' + body + '</main>\n'
+    + header(lang, active)
+    + '\n<main id="main">' + body + '</main>\n'
     + '<footer><div class="in"><div class="foot">'
     + '<div class="foot-brand"><a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
     + '<p>%%foot.tagline%%</p></div>'
