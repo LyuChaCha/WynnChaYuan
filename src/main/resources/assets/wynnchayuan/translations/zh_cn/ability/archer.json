@@ -3,8 +3,8 @@
   "domain": "ability/archer",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 233,
-  "translated": 233,
+  "count": 234,
+  "translated": 234,
   "note": "弓箭手的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -3189,6 +3189,21 @@
    "_raw": "Hitting an enemy will give you a brief buff\nof +1% Walk Speed, up to +15% per second. (Max +60%)\n-5% of the bonus decays every second.",
    "ability": "Frenzy",
    "code": "ARCHER"
+  },
+  "ability-archer#0233": {
+   "src": "Increases Heart Shatter's damage.",
+   "dst": "提高 Heart Shatter 的伤害。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Implosion"
+   ],
+   "lines": 1,
+   "flat": "Increases Heart Shatter's damage.",
+   "_raw": "Increases Heart Shatter's damage.",
+   "tree": "02/archer/04/003/005",
+   "ability": "Implosion",
+   "code": "ARCHER-P4-R03-C05"
   }
  }
 }

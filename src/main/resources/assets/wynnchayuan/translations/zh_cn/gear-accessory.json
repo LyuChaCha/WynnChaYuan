@@ -3,8 +3,8 @@
   "domain": "gear-accessory",
   "lang": "zh_cn",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 1145,
-  "translated": 1122,
+  "count": 1148,
+  "translated": 1125,
   "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。"
  },
  "entries": {
@@ -10788,6 +10788,39 @@
    "ctx": [
     "accessory/accessory"
    ]
+  },
+  "gear-accessory#1145": {
+   "src": "An auxiliary mech unit capable of generating a personal layered energy shield on-demand. Though, without correct outside implements, it only appears to serve as weighted metal plating.",
+   "dst": "一个辅助机甲单元，能按需生成个人专用的多层能量护盾。不过，缺少合适的外部配件时，它看起来只是一块沉甸甸的金属装甲板。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "accessory/Harden Core/lore"
+   ],
+   "lines": 1,
+   "flat": "An auxiliary mech unit capable of generating a personal layered energy shield on-demand. Though, without correct outside implements, it only appears to serve as weighted metal plating."
+  },
+  "gear-accessory#1146": {
+   "src": "An auxiliary mech unit for jumpstarting life support systems under high pressure. It doesn't appear exceptionally reactive without correct external support, however.",
+   "dst": "一个辅助机甲单元，用于在高压下紧急启动生命维持系统。不过，没有合适的外部支持，它的反应似乎并不怎么灵敏。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "accessory/Dodge Core/lore"
+   ],
+   "lines": 1,
+   "flat": "An auxiliary mech unit for jumpstarting life support systems under high pressure. It doesn't appear exceptionally reactive without correct external support, however."
+  },
+  "gear-accessory#1147": {
+   "src": "An auxiliary mech unit that funnels excess energy back into active systems as a force multiplier. Missing regulatory external equipment, however, looks to severely increase the odds of its sensitive internals failing and misfiring.",
+   "dst": "一个辅助机甲单元，能把多余的能量导回运作中的系统，成倍放大其效能。然而，缺少负责调节的外部设备，它那精密的内部元件发生故障与误触发的几率似乎会大幅上升。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "accessory/Hustle Core/lore"
+   ],
+   "lines": 1,
+   "flat": "An auxiliary mech unit that funnels excess energy back into active systems as a force multiplier. Missing regulatory external equipment, however, looks to severely increase the odds of its sensitive internals failing and misfiring."
   }
  }
 }

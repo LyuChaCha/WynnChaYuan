@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 294,
-  "translated": 294,
+  "count": 295,
+  "translated": 295,
   "note": "萨满的技能树。按游戏里的排版顺序(页 → 行 → 列)，也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -4043,6 +4043,19 @@
    "_raw": " Heretic: Gaining +10 Mana will increase Ritual Circle's",
    "ability": "Synchrony",
    "code": "SHAMAN"
+  },
+  "ability-shaman#0386": {
+   "src": "✧ Effect: +{~} Walk Speed to self",
+   "dst": "✧ 效果: 自身移动速度 +{~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "_raw": "✧ Effect: +120% Walk Speed to self",
+   "tree": "04/shaman/06/003/004",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN-P6-R03-C04"
   }
  }
 }
