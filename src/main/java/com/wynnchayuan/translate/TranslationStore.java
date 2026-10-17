@@ -2486,6 +2486,16 @@ public final class TranslationStore {
         if (template == null || !translateNames) {
             return null;
         }
+        // 名稱只佔一列。跨列的鍵是整段查表（LineTranslator#translateBlock）在問
+        // 「名稱列＋底下那一列」，例如名稱列接著 MYTHIC／RELIK 徽章那一列：
+        // 「{#}{#}{#}{#}{#}Shiny X\n{#}{#}」。下面剝圖示時換行算空白被 strip 吃掉，
+        // 兩列就被當成一個名字認了，譯文只剩一列——整段那條路於是把「譯名 (原文)」
+        // 重折回兩列：斷在「(」後面，後半截落到徽章那一列的行首，蓋在物品圖示上
+        // （使用者 2026-10-17 回報的 Shiny Transfiguration）。名稱要走逐列那條路，
+        // 由 NameWrap 照名字的起點拆。
+        if (template.indexOf('\n') >= 0 || template.indexOf('\r') >= 0) {
+            return null;
+        }
         // 名稱列實際送來的樣子帶著外框圖示，結尾還黏著一個 Shiny 記號：
         // 「{#}Shiny Fatal֎{#}」。原本只認裸的「Shiny 名字」，於是 Shiny 裝備的名稱
         // 一律查不到（使用者 2026-10-14：「Shiny Masterwork 武器名稱不會被翻譯到」）。

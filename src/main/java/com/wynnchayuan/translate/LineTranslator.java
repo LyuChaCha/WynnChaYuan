@@ -1195,7 +1195,7 @@ public final class LineTranslator {
      *   <li>斷在標點後面（，、。；：或半形的 , ; :）：0——那是句子本來的接縫</li>
      *   <li>一般的斷點（詞中間、空白上）：1</li>
      *   <li>下一行從左括號開始：2——括號註解多半在補充上一行最後那個數值</li>
-     *   <li>下一行從收尾的標點開始：4——避頭本來就擋，這裡是保險</li>
+     *   <li>下一行從收尾的標點開始、或這一行停在左括號上：4——避頭尾本來就擋，這裡是保險</li>
      * </ul>
      *
      * <p>拉丁字母的譯文每個斷點都在空白上、全部是 1，所以對它們而言跟先前一樣取最窄的；
@@ -1218,7 +1218,7 @@ public final class LineTranslator {
             }
             char before = wrapped.charAt(prev - 1);
             char after = wrapped.charAt(next);
-            if (cannotStartLine(after)) {
+            if (cannotStartLine(after) || cannotEndLine(before)) {
                 cost += 4;
             } else if (after == '(' || after == '（') {
                 cost += 2;
@@ -1353,6 +1353,9 @@ public final class LineTranslator {
                 if (run != cut) {
                     cut = keepGlyphWithWord(text, run, lineStart);
                 }
+                // 放在最後：上面每一步都可能把斷點挪到左括號後面（整串英文挪走時
+                // 括號留在原地），見 keepOpenerWithNext。
+                cut = keepOpenerWithNext(text, cut, lineStart);
                 out.append(text, lineStart, cut).append(NEWLINE);
                 boolean atSpace = cut < text.length() && text.charAt(cut) == ' ';
                 lineStart = atSpace ? cut + 1 : cut;
@@ -1533,6 +1536,43 @@ public final class LineTranslator {
             at = outside > lineStart ? outside : cut;
         }
         return at > lineStart ? at : cut;
+    }
+
+    /**
+     * 左括號不能留在<b>行尾</b>——{@link #cannotStartLine} 的另一半（避尾）。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 使用者 2026-10-17 回報的 Shiny 神話法器名稱：
+     *
+     * <pre>
+     *   溯光的化形 (
+     *   Shiny Transfiguration)        ← 括號跟它括住的字分家
+     * </pre>
+     *
+     * <p>{@link #keepLatinRunWhole} 把整串英文挪到下一行，挪到的位置正好是那串英文的
+     * 開頭——括號後面。括號本身不是英文字，留在原地。
+     *
+     * <p>做法跟避頭一樣是把斷點往前挪：括號跟著後面的字走；括號前面那個空白
+     * 是斷點，被行尾吃掉。挪到行首就放棄（整行只剩括號的話，寧可照原樣斷）。
+     */
+    private static int keepOpenerWithNext(String text, int cut, int lineStart) {
+        int at = cut;
+        while (at > lineStart && cannotEndLine(text.charAt(at - 1))) {
+            at--;
+        }
+        if (at == cut) {
+            return cut;
+        }
+        // 括號前面的空白當斷點：斷在它上面，它會被行尾吃掉（見 wrapToWidth 的 atSpace）
+        if (at > lineStart + 1 && text.charAt(at - 1) == ' ') {
+            at--;
+        }
+        return at > lineStart ? at : cut;
+    }
+
+    /** 不能出現在行尾的字：各種左括號。見 {@link #keepOpenerWithNext}。 */
+    private static boolean cannotEndLine(char c) {
+        return "(（[［「『【〈《〔".indexOf(c) >= 0;
     }
 
     /**
@@ -1848,6 +1888,11 @@ public final class LineTranslator {
             } else {
                 break;
             }
+        }
+        // 緊貼在名稱前面的左括號是它的一部分：「微光醒 (Shiny Glimmerwake)」整串到下一行，
+        // 不能把「(」留在行尾。見 keepOpenerWithNext。
+        while (start > lineStart && cannotEndLine(text.charAt(start - 1))) {
+            start--;
         }
         if (start <= lineStart) {
             return cut;                         // 從行首開始就放不下
