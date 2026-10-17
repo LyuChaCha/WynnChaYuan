@@ -1499,3 +1499,12 @@ tasks.register('runPresenceChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.PresenceTest'
 }
 tasks.named('check') { dependsOn 'runPresenceChecks' }
+
+// 未鑑定物品的「可能性」清單（Wynntils ItemGuess）：每個名字附原文、每一列保住縮排。
+tasks.register('runItemGuessChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemGuessListTest'
+}
+tasks.named('check') { dependsOn 'runItemGuessChecks' }

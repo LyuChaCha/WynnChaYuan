@@ -2080,6 +2080,21 @@ public final class TranslationStore {
     }
 
     /**
+     * 這個原文是某件物品的名字——裝備、書卷、素材或材料，翻了沒都算，
+     * 別的檔案有沒有同名條目也不管。
+     *
+     * <p>給「一列只有名字」的清單認形狀用（{@link GuessListRow}）：要問的是
+     * 「這一格是不是物品」，不是「這個名字要不要附原文」。
+     */
+    public boolean isItemName(String key) {
+        if (key == null) {
+            return false;
+        }
+        String k = key.strip();
+        return nameKeys.contains(k) || gearNameKeys.contains(k) || plainNameKeys.contains(k);
+    }
+
+    /**
      * 只認<b>一字不差</b>的那一條，不放寬標點、不看縮排。
      *
      * <p>{@link #lookup} 查不到精確的鍵時會放掉行尾的冒號再查一次——
@@ -2432,6 +2447,16 @@ public final class TranslationStore {
      */
     public static void holdAppendedOriginal(boolean on) {
         HOLD_APPENDED.set(on);
+    }
+
+    /** 見 {@link #holdAppendedOriginal}。暫時改掉的人要還原成這個值。 */
+    static boolean appendedOriginalHeld() {
+        return HOLD_APPENDED.get();
+    }
+
+    /** 見 {@link #nameLine}。暫時改掉的人要還原成這個值。 */
+    static boolean onNameLine() {
+        return NAME_LINE.get();
     }
 
     /** 見 {@link #holdAppendedOriginal}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */

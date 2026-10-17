@@ -10842,7 +10842,7 @@ public final class LineTranslator {
     private static final java.util.regex.Pattern COLOUR_ANY =
             java.util.regex.Pattern.compile("\\{c[^}]*}");
 
-    private static Component literal(String text, Style style) {
+    static Component literal(String text, Style style) {
         text = stripColourTokens(text);
         text = deIcon(text);
         // 配對字型只給<b>真的需要它</b>的字。

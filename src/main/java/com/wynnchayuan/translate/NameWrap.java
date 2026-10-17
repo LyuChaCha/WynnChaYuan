@@ -98,8 +98,6 @@ public final class NameWrap {
                 || (centered.length != translated.size() && centered.length != original.size())) {
             return same;
         }
-        // 行數對不上時，只有最前面那幾行（名稱）兩邊的行號是同一行
-        boolean aligned = original.size() == translated.size();
         // 整份 tooltip 有多寬。名字只要收得進這個寬度就不必拆——拆了反而多一行。
         int frame = 0;
         for (Component row : original) {
@@ -107,8 +105,12 @@ public final class NameWrap {
         }
         int n = Math.min(original.size(), translated.size());
         for (int i = 0; i < n; i++) {
-            if (!aligned && i >= NAME_ROWS) {
-                break;                         // 後面的行號已經錯開，不拿來比
+            // 只拆名稱那兩行。行數對不上時後面的行號已經錯開；對得上時後面也不是名稱——
+            // 說明裡會附原文的只有 Wynntils「物品猜測」的候選清單（見 GuessListRow），
+            // 那幾列是一格一格的名字，從中間拆出一個原文會把清單拆散（一列兩個名字時，
+            // 第一個的原文被搬到下一列、第二個留著）。太寬就交給撐寬那一步。
+            if (i >= NAME_ROWS) {
+                break;
             }
             Component line = translated.get(i);
             // 放得下整份 tooltip 就不算太長，見 #split 的「怎麼判斷太長」。
