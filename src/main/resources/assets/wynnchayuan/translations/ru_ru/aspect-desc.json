@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "ru_ru",
-  "count": 209,
-  "translated": 209,
+  "count": 220,
+  "translated": 220,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
   "gearNames": false
  },
@@ -1428,6 +1428,61 @@
   "blk020": {
    "src": "Beyond Salvation spawns +{~} spikes. Zenith Stance lasts +{~}s longer. Judgement lasts +{~} longer.",
    "dst": "Beyond Salvation создаёт +{~} шипов. Zenith Stance длится на +{~} с дольше. Judgement длится на +{~} дольше.",
+   "role": "desc"
+  },
+  "blk021": {
+   "src": "Arcane Speed gains +{~} speed per cast and +{~} maximum speed.",
+   "dst": "Arcane Speed получает +{~} к скорости за применение и +{~} к максимальной скорости.",
+   "role": "desc"
+  },
+  "blk022": {
+   "src": "Dimensional Tear grants +{~} ❁ Resistance while standing in it.",
+   "dst": "Dimensional Tear даёт +{~} к ❁ сопротивлению, пока вы стоите в нём.",
+   "role": "desc"
+  },
+  "blk023": {
+   "src": "Corroded has it's maximum duration increased by {~}s and Weathering duration is increased by {~}s.",
+   "dst": "Максимальная длительность Коррозии увеличивается на {~} с, а длительность Выветривания - на {~} с.",
+   "role": "desc"
+  },
+  "blk024": {
+   "src": "Increase Malediction's damage.",
+   "dst": "Увеличивает урон Malediction.",
+   "role": "desc"
+  },
+  "blk025": {
+   "src": "⚔ Total Damage: +{~} (of your DPS, as Main Attack damage) (✣ Damage: +{~})",
+   "dst": "⚔ Общий урон: +{~} (от вашего DPS, как урон Основной атаки) (✣ Урон: +{~})",
+   "role": "desc"
+  },
+  "blk026": {
+   "src": "Frog Dance gains +{~} velocity.",
+   "dst": "Frog Dance получает +{~} к скорости полёта.",
+   "role": "desc"
+  },
+  "blk027": {
+   "src": "Tribal Chants applies stacks {~}s faster.",
+   "dst": "Tribal Chants накладывают заряды на {~} с быстрее.",
+   "role": "desc"
+  },
+  "blk028": {
+   "src": "Increase the maximum Ritual Circle hits and radius by +{~}.",
+   "dst": "Увеличивает макс. число ударов и радиус Ritual Circle на +{~}.",
+   "role": "desc"
+  },
+  "blk029": {
+   "src": "Increase the damage of your Ritual Circle.",
+   "dst": "Увеличивает урон вашего Ritual Circle.",
+   "role": "desc"
+  },
+  "blk030": {
+   "src": "Patchwork Abomination lasts {~} longer. Awakened lasts {~} longer. Monument to Gloom lasts {~} longer.",
+   "dst": "Patchwork Abomination длится на {~} дольше. Awakened длится на {~} дольше. Monument to Gloom длится на {~} дольше.",
+   "role": "desc"
+  },
+  "blk031": {
+   "src": "Brink of Madness stores +{~} of your maximum health.",
+   "dst": "Brink of Madness запасает +{~} вашего макс. здоровья.",
    "role": "desc"
   }
  }

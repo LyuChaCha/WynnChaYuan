@@ -3,8 +3,8 @@
   "domain": "ability/assassin",
   "itemNames": false,
   "lang": "es_es",
-  "count": 234,
-  "translated": 234,
+  "count": 235,
+  "translated": 235,
   "note": "刺客的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -3217,6 +3217,20 @@
    "tree": "03/assassin/09/003/004",
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
+  },
+  "ability-assassin#0234": {
+   "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Mark {#} consumed,\nsummon a Knife. (Max {~} Knives)",
+   "dst": "Si lo lanzas en Vanish,\nSpin Attack consumirá todas las\nMarcas {#} de los enemigos cercanos.\nPor cada {~} Marca {#} consumida,\ninvoca un Cuchillo. (Máx. {~} Cuchillos)",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Nightcloak Knives"
+   ],
+   "lines": 5,
+   "flat": "If cast while in Vanish, Spin Attack will consume all Marks {#} from nearby enemies. For every {~} Mark {#} consumed, summon a Knife. (Max {~} Knives)",
+   "_raw": "If cast while in Vanish,\nSpin Attack will consume all\nMarks  from nearby enemies.\nFor every 1 Mark  consumed,\nsummon a Knife. (Max 5 Knives)",
+   "ability": "Nightcloak Knives",
+   "code": "ASSASSIN"
   }
  }
 }

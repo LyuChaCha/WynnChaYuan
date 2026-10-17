@@ -21,12 +21,16 @@ public final class MajorIdTest {
 
     private static int failures = 0;
 
-    /** 遊戲畫面上的樣子：名稱與說明擠在第一行，其餘依 tooltip 寬度斷行。 */
+    /**
+     * 遊戲畫面上的樣子：名稱與說明擠在第一行，其餘依 tooltip 寬度斷行。
+     * （2026-10-16 官方改了 Altruism 的措辭，照新的寫。）
+     */
     private static final String AS_RENDERED =
-            "✦ Altruism: Allies within {~}\n"
-            + "blocks gain {~} of the\n"
-            + "health you gain from Health\n"
-            + "Regen and Life Steal.";
+            "✦ Altruism: Whenever you gain\n"
+            + "health from your Life Steal\n"
+            + "and Health Regen IDs, allies\n"
+            + "within {~} blocks will receive\n"
+            + "the same amount.";
 
     public static void main(String[] args) {
         TranslationStore store = new TranslationStore();

@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_cn` 简体中文 — 99.5%（57,511 / 57,773）
+## `zh_cn` 简体中文 — 99.5%（57,568 / 57,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -19,9 +19,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,367 / 1,368 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 23,179 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -37,16 +37,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 100% | 996 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 100% | 999 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_tw` 繁體中文 — 99.5%（57,479 / 57,777）
+## `zh_tw` 繁體中文 — 99.5%（57,536 / 57,834）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -58,9 +58,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 1,367 / 1,368 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 100% | 23,179 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -76,16 +76,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 100% | 996 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 100% | 999 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `tr_tr` Türkçe — 97.3%（54,755 / 56,303）
+## `tr_tr` Türkçe — 97.3%（54,812 / 56,360）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -97,9 +97,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 99% | 237 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ██████████ 100% | 986 / 987 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,275 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,314 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 330 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 99% | 22,894 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -115,16 +115,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | █████████░ 95% | 37 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 100% | 993 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 100% | 996 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 97.1%（55,270 / 56,923）
+## `ja_jp` 日本語 — 97.1%（55,327 / 56,980）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -136,9 +136,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ████████░░ 84% | 825 / 988 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 99% | 22,994 / 23,287 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -154,16 +154,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 553 / 553 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 99% | 990 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 99% | 993 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 97.0%（54,330 / 55,987）
+## `ru_ru` Русский — 97.0%（54,387 / 56,044）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -175,9 +175,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ████████░░ 83% | 756 / 915 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 99% | 22,885 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -193,16 +193,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 99% | 990 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 99% | 993 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 97.0%（54,355 / 56,013）
+## `es_es` Español — 97.0%（54,412 / 56,070）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -214,9 +214,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ████████░░ 83% | 756 / 915 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 99% | 22,885 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -232,16 +232,16 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 99% | 990 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 99% | 993 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 97.0%（54,359 / 56,018）
+## `ko_kr` 한국어 — 97.0%（54,416 / 56,075）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -253,9 +253,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 100% | 240 / 240 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ████████░░ 83% | 756 / 915 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 155 / 155 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,278 / 1,278 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ██████████ 100% | 1,317 / 1,317 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
-| `ability-terms.json` | ██████████ 100% | 100 / 100 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
+| `ability-terms.json` | ██████████ 100% | 101 / 101 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 331 / 331 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ██████████ 99% | 22,885 / 23,182 | 任務對話<br>NPC dialogue (by far the largest file) |
@@ -271,11 +271,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
-| `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect.json` | ██████████ 100% | 131 / 131 | Raid 的 Aspect<br>Raid aspects |
+| `aspect-desc.json` | ██████████ 100% | 220 / 220 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 21 / 21 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ██████████ 99% | 990 / 996 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 99% | 993 / 999 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |

@@ -878,10 +878,10 @@
    "_raw": "All Ophanim orbs deal 250% damage, gain +5 Crystallize per hit, and instead orbit around you. Using Main Attack causes all orbs to travel faster."
   },
   "major-id#0167": {
-   "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
-   "dst": "{~} blok içindeki müttefikler, Can Yenilenmesi ve Can Çalma ile kazandığın canın {~} kadarını kazanır.",
+   "src": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within {~} blocks will receive the same amount.",
+   "dst": "Can Çalma ve Can Yenilenmesi ID'lerinden can kazandığında, {~} blok içindeki müttefikler de aynı miktarı alır.",
    "role": "desc",
-   "_raw": "Allies within 16 blocks gain 100% of the health you gain from Health Regen and Life Steal."
+   "_raw": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within 16 blocks will receive the same amount."
   },
   "major-id#0168": {
    "src": "Armour Breaker now gives an extra +{~} damage and has its cooldown reduced by {~}s, but lasts half as long.",
@@ -896,10 +896,10 @@
    "_raw": "Arrow Bomb's velocity is doubled but loses -66% radius and -20% damage."
   },
   "major-id#0170": {
-   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each. Feedback loop arrow cap is reduced by {~}",
+   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each. Feedback loop arrow cap is reduced by {~}.",
    "dst": "Arrow Hurricane {~} oktan oluşan yoğun bir akışa dönüşür, her ok {#}{~}, {#}{~} ve {#}{~} hasar verir. Feedback Loop ok sınırı {~} azalır.",
    "role": "desc",
-   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each. Feedback loop arrow cap is reduced by 90%"
+   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each. Feedback loop arrow cap is reduced by 50%."
   },
   "major-id#0171": {
    "src": "Arrow Hurricane becomes a consistent, straight stream of arrows with a slower fire rate, dealing greater knockback and triple damage per arrow. Additionally, Arsenal Synergy requires {~} less arrows for each flint arrow.",
@@ -953,16 +953,16 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but also decay them {~} faster.",
-   "dst": "Mantra, Maskeleri {~} daha hızlı aşırı yükler ama onları {~} daha hızlı da söndürür.",
+   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "dst": "Mantra, Maskeleri {~} daha hızlı aşırı yükler ama onları {~} daha hızlı söndürür ve tolerans sürelerini yarıya indirir.",
    "role": "desc",
-   "_raw": "Mantra will overload Masks 150% faster, but also decay them 100% faster."
+   "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
   },
   "major-id#0181": {
-   "src": "Bakal's Grasp and Enraged Blow have their caps doubled, but Corruption charges {~} as fast.",
-   "dst": "Bakal'ın Pençesi ve Enraged Blow sınırları iki katına çıkar ama Yozlaşma {~} hızla dolar.",
+   "src": "Bakal's Grasp and Enraged Blow grant {~} less damage, but have their caps increased by {~}. Corrupted lasts twice as long and can go up to {~}.",
+   "dst": "Bakal'ın Pençesi ve Enraged Blow {~} daha az hasar bonusu verir ama sınırları {~} artar. Yozlaşmış iki kat uzun sürer ve {~} değerine kadar çıkabilir.",
    "role": "desc",
-   "_raw": "Bakal's Grasp and Enraged Blow have their caps doubled, but Corruption charges 20% as fast."
+   "_raw": "Bakal's Grasp and Enraged Blow grant 40% less damage, but have their caps increased by 50%. Corrupted lasts twice as long and can go up to 200%."
   },
   "major-id#0182": {
    "src": "Bash gains +{~} Area of Effect and is {~}s faster.",
@@ -971,10 +971,10 @@
    "_raw": "Bash gains +1 Area of Effect and is 0.05s faster."
   },
   "major-id#0183": {
-   "src": "Bash is replaced by a single hit, gaining +{~} radius and dealing {#}+{~}, {#}+{~}, and {#}+{~}. Boiling Blood's cooldown is set to {~}s, gains {#}+{~}, {#}+{~}, and burns twice as fast for {~}s, but can't slow.",
-   "dst": "Bash tek bir vuruşa dönüşür; +{~} yarıçap kazanır ve {#}+{~}, {#}+{~} ve {#}+{~} hasar verir. Boiling Blood bekleme süresi {~} sn olur, {#}+{~}, {#}+{~} kazanır ve {~} sn boyunca iki kat hızlı yakar, ama yavaşlatamaz.",
+   "src": "Bash is replaced by a single hit, gaining +{~} radius and dealing {#}+{~}, {#}+{~}, and {#}+{~}, but further delays Final Crush. Boiling Blood's cooldown is set to {~}s, deals {#}+{~}, {#}+{~}, and burns twice as fast for {~}s.",
+   "dst": "Bash tek bir vuruşa dönüşür; +{~} yarıçap kazanır ve {#}+{~}, {#}+{~} ve {#}+{~} hasar verir, ama Final Crush daha da gecikir. Boiling Blood bekleme süresi {~} sn olur, {#}+{~}, {#}+{~} hasar verir ve {~} sn boyunca iki kat hızlı yakar.",
    "role": "desc",
-   "_raw": "Bash is replaced by a single hit, gaining +3 radius and dealing +85%, +10%, and +60%. Boiling Blood's cooldown is set to 2s, gains +40%, +50%, and burns twice as fast for 1s, but can't slow."
+   "_raw": "Bash is replaced by a single hit, gaining +3 radius and dealing +85%, +10%, and +60%, but further delays Final Crush. Boiling Blood's cooldown is set to 2s, deals +40%, +50%, and burns twice as fast for 1s."
   },
   "major-id#0184": {
    "src": "Bash will hit +{~} times.",
@@ -1034,16 +1034,16 @@
    "role": "desc"
   },
   "major-id#0194": {
-   "src": "Buckshot will heal allies for {~} of your total Health Regen.",
-   "dst": "Buckshot müttefiklerine, toplam Can Yenilenmenin {~} kadar can verir.",
+   "src": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency).",
+   "dst": "Buckshot müttefiklerine, Can Yenilenmesi ID'lerinin toplamı kadar can verir (İyileştirme Verimi etkiler).",
    "role": "desc",
-   "_raw": "Buckshot will heal allies for 100% of your total Health Regen."
+   "_raw": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency)."
   },
   "major-id#0195": {
-   "src": "Buried Light burns faster and is controlled by the direction you face. Enemies in the light instead take {#}{~}.",
-   "dst": "Buried Light daha hızlı yanar ve baktığın yöne göre yönlenir. Işıktaki düşmanlar bunun yerine {#}{~} hasar alır.",
+   "src": "Buried Light has faster travel speed and damage, and is controlled by the direction you face. Enemies in the light instead take {#}{~} and recieve {~} more damage.",
+   "dst": "Buried Light daha hızlı ilerler, daha fazla hasar verir ve baktığın yöne göre yönlenir. Işıktaki düşmanlar bunun yerine {#}{~} hasar alır ve {~} daha fazla hasar alır.",
    "role": "desc",
-   "_raw": "Buried Light burns faster and is controlled by the direction you face. Enemies in the light instead take 120%."
+   "_raw": "Buried Light has faster travel speed and damage, and is controlled by the direction you face. Enemies in the light instead take 120% and recieve 10% more damage."
   },
   "major-id#0196": {
    "src": "Burning Sigil gains +{~} radius and deals {~}x the damage, but lasts half as long.",
@@ -1257,8 +1257,8 @@
    "_raw": "Grappling Hook has 25% increased range and increased velocity."
   },
   "Lasso::desc": {
-   "src": "Grappling Hook, War Scream, and Uproot now pull enemies with much more force.",
-   "dst": "Grappling Hook, War Scream ve Uproot artık düşmanları çok daha güçlü çeker.",
+   "src": "All abilities with pull effects pull with greater force.",
+   "dst": "Çekme etkisi olan tüm yetenekler daha güçlü çeker.",
    "role": "desc"
   },
   "major-id#0234": {
@@ -1347,10 +1347,10 @@
    "role": "desc"
   },
   "major-id#0249": {
-   "src": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
-   "dst": "Ayna Klonları ve Gölge Klonları, Last Laugh ile Meteor yapar. Malicious Mockery, Meteor'un {~} Hile yığını uygulamasını sağlar.",
+   "src": "Clones instead cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
+   "dst": "Klonlar bunun yerine Last Laugh ile Meteor yapar. Malicious Mockery, Meteor'un {~} Hile yığını uygulamasını sağlar.",
    "role": "desc",
-   "_raw": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
+   "_raw": "Clones instead cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
   },
   "Culicidae Creed::desc": {
    "src": "Leap becomes fully vertical, and Spectral Hover lasts twice as long.",
@@ -1461,8 +1461,8 @@
    "role": "desc"
   },
   "Plague::desc": {
-   "src": "Poisoned mobs spread their poison to nearby mobs.",
-   "dst": "Zehirlenmiş yaratıklar zehirlerini yakındaki yaratıklara yayar.",
+   "src": "{~} of Poison's damage is dealt in a {~} block radius around each Poisoned enemy.",
+   "dst": "Zehir hasarının {~} kadarı, Zehirlenmiş her düşmanın etrafındaki {~} blok yarıçapa da verilir.",
    "role": "desc"
   },
   "Aubri's Tears::desc": {
@@ -1483,10 +1483,10 @@
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
   },
   "major-id#0273": {
-   "src": "Provoke's Cooldown is reduced to {~}s but its duration is reduced to {~}s.",
-   "dst": "Provoke bekleme süresi {~} sn olur ama etki süresi {~} sn olur.",
+   "src": "Provoke's cooldown and duration are doubled",
+   "dst": "Provoke bekleme süresi ve etki süresi iki katına çıkar",
    "role": "desc",
-   "_raw": "Provoke's Cooldown is reduced to 8s but its duration is reduced to 3s."
+   "_raw": "Provoke's cooldown and duration are doubled"
   },
   "Magnet::desc": {
    "src": "Pulls items dropped by mobs towards you.",
@@ -1712,8 +1712,8 @@
    "_raw": "While vanished, lose 5% of your max mana per second. Surprise Strike further increases your damage by 3% per mana lost from this effect, up to 70%."
   },
   "Old Spark::desc": {
-   "src": "Whirlwind transforms into a travelling projectile, dealing {#}+{~} and knocking enemies into the air. Crouch to rise with them.",
-   "dst": "Kasırga ilerleyen bir mermiye dönüşür, {#}+{~} hasar verir ve düşmanları havaya fırlatır. Onlarla yükselmek için eğil.",
+   "src": "Whirlwind transforms into a travelling projectile, dealing {#}+{~} and doubled {#} damage against airborne enemies. Crouch to rise with them.",
+   "dst": "Kasırga ilerleyen bir mermiye dönüşür, {#}+{~} hasar verir ve havadaki düşmanlara iki kat {#} hasar verir. Onlarla yükselmek için eğil.",
    "role": "desc"
   },
   "major-id#0314": {
@@ -1769,10 +1769,10 @@
    "_raw": "Final Crush further delays Bash's last hit, but increases its radius by an additional +50%."
   },
   "Chain Reaction::desc": {
-   "src": "Basaltic Traps arm faster and detonate immediately after arming, gaining +{~} range.",
-   "dst": "Bazalt Tuzakları daha hızlı kurulur, kurulunca hemen patlar ve +{~} menzil kazanır.",
+   "src": "Basaltic Traps arm twice as fast and detonate immediately after arming.",
+   "dst": "Bazalt Tuzakları iki kat hızlı kurulur ve kurulunca hemen patlar.",
    "role": "desc",
-   "_raw": "Basaltic Traps arm faster and detonate immediately after arming, gaining +2 range."
+   "_raw": "Basaltic Traps arm twice as fast and detonate immediately after arming."
   },
   "Phase Vector::desc": {
    "src": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread.",

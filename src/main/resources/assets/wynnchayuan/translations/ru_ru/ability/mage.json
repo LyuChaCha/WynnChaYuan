@@ -3,8 +3,8 @@
   "domain": "ability/mage",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 234,
-  "translated": 234,
+  "count": 245,
+  "translated": 245,
   "note": "法師的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
@@ -3231,6 +3231,160 @@
    "tree": "01/mage/09/003/004",
    "ability": "Gravitational Collapse",
    "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0241": {
+   "src": "Runic Searing",
+   "dst": "Руническое выжигание",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Runic Searing",
+   "code": "MAGE"
+  },
+  "ability-mage#0242": {
+   "src": "Burning Sigil will deal damage {~}\nfaster and deal more damage.",
+   "dst": "Burning Sigil наносит урон на {~}\nчаще и сильнее.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Runic Searing"
+   ],
+   "lines": 2,
+   "flat": "Burning Sigil will deal damage {~} faster and deal more damage.",
+   "_raw": "Burning Sigil will deal damage 25%\nfaster and deal more damage.",
+   "ability": "Runic Searing",
+   "code": "MAGE"
+  },
+  "ability-mage#0243": {
+   "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
+   "dst": "Разлом наносит урон врагам каждые {~}с и\nувеличивает прирост Distortion {#}\nна +{~}, пока вы стоите в нём.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dimensional Tear"
+   ],
+   "lines": 3,
+   "flat": "The rift damages enemies every {~}s and increases your Distortion {#} gain by +{~} while standing in it.",
+   "_raw": "The rift damages enemies every 0.4s and\nincreases your Distortion  gain\nby +25% while standing in it.",
+   "ability": "Dimensional Tear",
+   "code": "MAGE"
+  },
+  "ability-mage#0244": {
+   "src": "You gain a stacking walk speed buff\neach time you cast a spell. (Max {~})",
+   "dst": "Каждое применение заклинания даёт\nсуммирующийся бонус к скорости ходьбы. (Макс. {~})",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "lines": 2,
+   "flat": "You gain a stacking walk speed buff each time you cast a spell. (Max {~})",
+   "_raw": "You gain a stacking walk speed buff\neach time you cast a spell. (Max 40%)",
+   "ability": "Arcane Speed",
+   "code": "MAGE"
+  },
+  "ability-mage#0245": {
+   "src": "{#} Effects: +{~} Walk Speed per Cast",
+   "dst": "{#} Эффекты: +{~} Скорость ходьбы за применение",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: +8% Walk Speed per Cast",
+   "ability": "Arcane Speed",
+   "code": "MAGE"
+  },
+  "ability-mage#0246": {
+   "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.\nFrost Dragon's Breath will add +{~} Mana.",
+   "dst": "Meteor, Ice Snake и Etheric Slash добавляют +{~} маны\nв ваш Банк маны ✺ за каждого атакующего врага, по которому попали.\nFrozen Tornado и Meteor Shower добавляют +{~} маны.\nFrost Dragon's Breath добавляет +{~} маны.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Power"
+   ],
+   "lines": 4,
+   "flat": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to your Mana Bank ✺ for each aggressive enemy you hit. Frozen Tornado and Meteor Shower will add +{~} Mana. Frost Dragon's Breath will add +{~} Mana.",
+   "_raw": "Meteor, Ice Snake, and Etheric Slash will add +8 Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +4 Mana.\nFrost Dragon's Breath will add +1 Mana.",
+   "ability": "Arcane Power",
+   "code": "MAGE"
+  },
+  "ability-mage#0247": {
+   "src": "Frost Dragon's Breath",
+   "dst": "Дыхание ледяного дракона",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Frost Dragon's Breath",
+   "code": "MAGE"
+  },
+  "ability-mage#0248": {
+   "src": "Ice Snake being casted by Chaos Explosion\nwill instead spew forth a cone of icy breath,\ndealing damage and granting +{~} Mana Bank ✺\nper hit every {~}s.",
+   "dst": "Ice Snake, применённый через Chaos Explosion,\nвместо этого извергает конус ледяного дыхания,\nнанося урон и добавляя +{~} маны в Банк маны ✺\nза попадание каждые {~}с.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frost Dragon's Breath"
+   ],
+   "lines": 4,
+   "flat": "Ice Snake being casted by Chaos Explosion will instead spew forth a cone of icy breath, dealing damage and granting +{~} Mana Bank ✺ per hit every {~}s.",
+   "_raw": "Ice Snake being casted by Chaos Explosion\nwill instead spew forth a cone of icy breath,\ndealing damage and granting +4 Mana Bank ✺\nper hit every 0.25s.",
+   "ability": "Frost Dragon's Breath",
+   "code": "MAGE"
+  },
+  "ability-mage#0249": {
+   "src": "The duration increases by +{~}s with each\nsubsequent cast.",
+   "dst": "Длительность увеличивается на +{~}с с каждым\nпоследующим применением.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frost Dragon's Breath"
+   ],
+   "lines": 2,
+   "flat": "The duration increases by +{~}s with each subsequent cast.",
+   "_raw": "The duration increases by +1.5s with each\nsubsequent cast.",
+   "ability": "Frost Dragon's Breath",
+   "code": "MAGE"
+  },
+  "ability-mage#0250": {
+   "src": "{#} Duration: {~}s (Max {~}s)",
+   "dst": "{#} Длительность: {~}с (Макс. {~}с)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frost Dragon's Breath"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Duration: 1.5s (Max 10s)",
+   "ability": "Frost Dragon's Breath",
+   "code": "MAGE"
+  },
+  "ability-mage#0251": {
+   "src": "Frost Dragon's Breath attacks -{~}s faster\nbut gains -{~}s duration per cast and -{~}\nMana Bank ✺ per hit.",
+   "dst": "Frost Dragon's Breath атакует на -{~}с быстрее,\nно получает -{~}с длительности за применение и -{~}\nк Банку маны ✺ за попадание.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Blitz"
+   ],
+   "lines": 3,
+   "flat": "Frost Dragon's Breath attacks -{~}s faster but gains -{~}s duration per cast and -{~} Mana Bank ✺ per hit.",
+   "_raw": "Frost Dragon's Breath attacks -0.15s faster\nbut gains -0.5s duration per cast and -2\nMana Bank ✺ per hit.",
+   "ability": "Blitz",
+   "code": "MAGE"
   }
  }
 }

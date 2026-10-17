@@ -3,8 +3,8 @@
   "domain": "ability/archer",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 231,
-  "translated": 231,
+  "count": 233,
+  "translated": 233,
   "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -3161,6 +3161,34 @@
    "tree": "02/archer/09/003/004",
    "ability": "Extinction Event",
    "code": "ARCHER-P9-R03-C04"
+  },
+  "ability-archer#0231": {
+   "src": "Arrow Bomb pulls enemies together.\nIf a Trap is nearby, enemies are\npulled towards it instead.",
+   "dst": "Arrow Bomb が敵を一か所に引き寄せる。\n近くに罠があれば、\n代わりに罠のほうへ引き寄せる。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Implosion"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb pulls enemies together. If a Trap is nearby, enemies are pulled towards it instead.",
+   "_raw": "Arrow Bomb pulls enemies together.\nIf a Trap is nearby, enemies are\npulled towards it instead.",
+   "ability": "Implosion",
+   "code": "ARCHER"
+  },
+  "ability-archer#0232": {
+   "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to +{~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
+   "dst": "敵に当てると、短いあいだ移動速度 +{~} のバフを得る。\n毎秒最大 +{~}。(上限 +{~})\nボーナスは毎秒 -{~} ずつ減る。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Frenzy"
+   ],
+   "lines": 3,
+   "flat": "Hitting an enemy will give you a brief buff of +{~} Walk Speed, up to +{~} per second. (Max +{~}) -{~} of the bonus decays every second.",
+   "_raw": "Hitting an enemy will give you a brief buff\nof +1% Walk Speed, up to +15% per second. (Max +60%)\n-5% of the bonus decays every second.",
+   "ability": "Frenzy",
+   "code": "ARCHER"
   }
  }
 }

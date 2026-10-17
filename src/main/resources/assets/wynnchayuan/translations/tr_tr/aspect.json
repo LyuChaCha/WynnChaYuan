@@ -3,8 +3,8 @@
   "domain": "aspect",
   "lang": "tr_tr",
   "generated": "2026-08-19T12:14:19+00:00",
-  "count": 128,
-  "translated": 128,
+  "count": 131,
+  "translated": 131,
   "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱受「翻譯物品名稱」開關管（`gearNames: true`）——配裝網站 WynnBuilder 只認英文名，玩家需要按 Shift 看得到原文。見 issue #936。",
   "itemNames": true,
   "gearNames": true,
@@ -1160,6 +1160,33 @@
   "aspect#0127": {
    "src": "Warrior's Embodiment of Everlasting Perseverance",
    "dst": "Savaşçının Ebedi Azim Timsali",
+   "role": "name",
+   "kind": "sentence",
+   "ctx": [
+    "aspect/warrior"
+   ]
+  },
+  "aspect#0128": {
+   "src": "Aspect of Damnation",
+   "dst": "Lanetlenme Aspect'i",
+   "role": "name",
+   "kind": "sentence",
+   "ctx": [
+    "aspect/shaman"
+   ]
+  },
+  "aspect#0129": {
+   "src": "Aspect of the Eternal Dance",
+   "dst": "Ebedi Dans Aspect'i",
+   "role": "name",
+   "kind": "sentence",
+   "ctx": [
+    "aspect/shaman"
+   ]
+  },
+  "aspect#0130": {
+   "src": "Aspect of the Unyielding",
+   "dst": "Boyun Eğmez Aspect'i",
    "role": "name",
    "kind": "sentence",
    "ctx": [

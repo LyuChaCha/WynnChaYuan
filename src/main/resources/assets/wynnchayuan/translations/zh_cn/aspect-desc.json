@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": true,
   "lang": "zh_cn",
-  "count": 209,
-  "translated": 209,
+  "count": 220,
+  "translated": 220,
   "note": "Aspect 各阶的能力说明，取自 Wynntils CDN。句式重复度很高，所以是按规则转的——同一个句式永远得到同样的中文。技能名保持原样，交给技能名词表去换。dst 空着表示还没有对应的句式规则，画面上会显示灰色原文。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟这里的道具无关。",
   "gearNames": false
  },
@@ -1428,6 +1428,61 @@
   "blk020": {
    "src": "Beyond Salvation spawns +{~} spikes. Zenith Stance lasts +{~}s longer. Judgement lasts +{~} longer.",
    "dst": "Beyond Salvation 多生成 +{~1} 根尖刺。Zenith Stance 的持续时间延长 +{~2} 秒。Judgement 的持续时间延长 +{~3}。",
+   "role": "desc"
+  },
+  "blk021": {
+   "src": "Arcane Speed gains +{~} speed per cast and +{~} maximum speed.",
+   "dst": "Arcane Speed 每次施放的速度加成增加 +{~1}，速度上限提高 +{~2}。",
+   "role": "desc"
+  },
+  "blk022": {
+   "src": "Dimensional Tear grants +{~} ❁ Resistance while standing in it.",
+   "dst": "站在 Dimensional Tear 之中时，你的 ❁ 抗性增加 +{~}。",
+   "role": "desc"
+  },
+  "blk023": {
+   "src": "Corroded has it's maximum duration increased by {~}s and Weathering duration is increased by {~}s.",
+   "dst": "Corroded 的最长持续时间延长 {~} 秒，Weathering 的持续时间延长 {~} 秒。",
+   "role": "desc"
+  },
+  "blk024": {
+   "src": "Increase Malediction's damage.",
+   "dst": "提升 Malediction 的伤害。",
+   "role": "desc"
+  },
+  "blk025": {
+   "src": "⚔ Total Damage: +{~} (of your DPS, as Main Attack damage) (✣ Damage: +{~})",
+   "dst": "⚔ 总伤害: +{~1} (你的每秒伤害，按普攻伤害计算) (✣ 伤害: +{~2})",
+   "role": "desc"
+  },
+  "blk026": {
+   "src": "Frog Dance gains +{~} velocity.",
+   "dst": "Frog Dance 的弹跳速度提高 +{~}。",
+   "role": "desc"
+  },
+  "blk027": {
+   "src": "Tribal Chants applies stacks {~}s faster.",
+   "dst": "Tribal Chants 叠加层数的间隔缩短 {~} 秒。",
+   "role": "desc"
+  },
+  "blk028": {
+   "src": "Increase the maximum Ritual Circle hits and radius by +{~}.",
+   "dst": "Ritual Circle 的最大命中次数与半径提高 +{~}。",
+   "role": "desc"
+  },
+  "blk029": {
+   "src": "Increase the damage of your Ritual Circle.",
+   "dst": "提升 Ritual Circle 的伤害。",
+   "role": "desc"
+  },
+  "blk030": {
+   "src": "Patchwork Abomination lasts {~} longer. Awakened lasts {~} longer. Monument to Gloom lasts {~} longer.",
+   "dst": "Patchwork Abomination 的持续时间延长 {~}。Awakened 的持续时间延长 {~}。Monument to Gloom 的持续时间延长 {~}。",
+   "role": "desc"
+  },
+  "blk031": {
+   "src": "Brink of Madness stores +{~} of your maximum health.",
+   "dst": "Brink of Madness 多保存你最大生命的 +{~}。",
    "role": "desc"
   }
  }
