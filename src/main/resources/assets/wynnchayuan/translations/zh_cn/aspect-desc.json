@@ -375,7 +375,7 @@
   },
   "aspect-desc#0052": {
    "src": "{~} {#} Total Damage: {~} (of your DPS, per shuriken) ({#} Damage: {~}) ({#} Fire: {~})",
-   "dst": "{~1} {#} 总伤害: {~2} (你的每秒伤害，每枚手里剑) ({#} 伤害: {~3}) ({#} 火属性: {~4})",
+   "dst": "{~1} {#} 总伤害: {~2} (你的每秒伤害，每枚手里剑) ({#} 伤害: {~3}) ({#} 火属性伤害: {~4})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
@@ -389,7 +389,7 @@
   },
   "aspect-desc#0054": {
    "src": "{#} Total Damage: -{~} (of your DPS, per shuriken) ({#} Damage: -{~}) ({#} Fire: -{~})",
-   "dst": "{#} 总伤害: -{~1} (你的每秒伤害，每枚手里剑) ({#} 伤害: -{~2}) ({#} 火属性: -{~3})",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害，每枚手里剑) ({#} 伤害: -{~2}) ({#} 火属性伤害: -{~3})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
@@ -942,21 +942,21 @@
   },
   "aspect-desc#0133": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 地属性: -{~2})",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 地属性伤害: -{~2})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0134": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 气属性: -{~2}) ({#} 地属性: -{~3})",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 气属性伤害: -{~2}) ({#} 地属性伤害: -{~3})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0135": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 伤害: -{~2}) ({#} 气属性: -{~3}) ({#} 地属性: -{~4})",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 伤害: -{~2}) ({#} 气属性伤害: -{~3}) ({#} 地属性伤害: -{~4})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
@@ -1271,7 +1271,7 @@
   },
   "aspect-desc#0180": {
    "src": "{#} Total Damage: {~} ({#} Thunder: {~}) Uppercut deals {~} neutral and {~} Damage in all Elements.",
-   "dst": "{#} 总伤害: {~1} ({#} 雷属性: {~2}) Uppercut 造成 {~3} 中性伤害，以及各元素 {~4} 伤害。",
+   "dst": "{#} 总伤害: {~1} ({#} 雷属性伤害: {~2}) Uppercut 造成 {~3} 中性伤害，以及各元素 {~4} 伤害。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
@@ -1372,17 +1372,17 @@
   },
   "blk009": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 地属性: -{~3})",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 地属性伤害: -{~3})",
    "role": "desc"
   },
   "blk010": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 气属性: -{~3}) ({#} 地属性: -{~4})",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 气属性伤害: -{~3}) ({#} 地属性伤害: -{~4})",
    "role": "desc"
   },
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 伤害: -{~3}) ({#} 气属性: -{~4}) ({#} 地属性: -{~5})",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 伤害: -{~3}) ({#} 气属性伤害: -{~4}) ({#} 地属性伤害: -{~5})",
    "role": "desc"
   },
   "blk012": {
@@ -1417,7 +1417,7 @@
   },
   "blk018": {
    "src": "Bash gains +{~}x as many hits and more damage. {#} Total Damage: +{~} ({#} Thunder: +{~})",
-   "dst": "Bash 的打击次数变为 +{~1} 倍，且伤害提高。{#} 总伤害: +{~2} ({#} 雷属性: +{~3})",
+   "dst": "Bash 的打击次数变为 +{~1} 倍，且伤害提高。{#} 总伤害: +{~2} ({#} 雷属性伤害: +{~3})",
    "role": "desc"
   },
   "blk019": {

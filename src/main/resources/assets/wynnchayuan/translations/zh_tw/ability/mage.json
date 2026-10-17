@@ -53,7 +53,7 @@
   },
   "ability-mage#0002": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "{#} 作用範圍: {~} 格 (圓形)",
+   "dst": "{#} 技能範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -173,7 +173,7 @@
   },
   "ability-mage#0010": {
    "src": "{#} Mana Cost: -{~}",
-   "dst": "{#} 魔力消耗減少: {~}",
+   "dst": "{#} 魔力消耗: -{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -519,7 +519,7 @@
   },
   "ability-mage#0037": {
    "src": "{#} Total Damage: +{~} (of your DPS)",
-   "dst": "{#} 總傷害增加: {~} (你的每秒傷害)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -745,7 +745,7 @@
   },
   "ability-mage#0053": {
    "src": "{#} Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "{#} Meteor 作用範圍: {~} 格 (圓形)",
+   "dst": "{#} Meteor 技能範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -758,7 +758,7 @@
   },
   "ability-mage#0054": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Meteor)",
-   "dst": "{#} 隕石總傷害增加: {~} (你的每秒傷害)",
+   "dst": "{#} 隕石總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -771,7 +771,7 @@
   },
   "ability-mage#0055": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "{#} 奧法尼姆總傷害增加: {~} (你的每秒傷害)",
+   "dst": "{#} 奧法尼姆總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -866,7 +866,7 @@
   },
   "ability-mage#0062": {
    "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
-   "dst": "每有 {~1} 層 Distortion {#}，龍捲風的\n{#} 作用範圍 增加 {~2}，{#} 傷害 增加 {~3}。",
+   "dst": "每有 {~1} 層 Distortion {#}，龍捲風的\n{#} 技能範圍 增加 {~2}，{#} 傷害 增加 {~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -949,7 +949,7 @@
   },
   "ability-mage#0068": {
    "src": "({#} Water: {~})",
-   "dst": "({#} 水屬性傷害增加: {~})",
+   "dst": "({#} 水屬性傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -993,7 +993,7 @@
   },
   "ability-mage#0071": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ice Snake)",
-   "dst": "{#} 冰蛇總傷害增加: {~} (你的每秒傷害)",
+   "dst": "{#} {c1}冰蛇總傷害: {c2}+{~} {c3}(你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1432,7 +1432,7 @@
   },
   "ability-mage#0103": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
-   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#} 傷害 減少 {~1}，\n{#} 作用範圍 減少 {~2}。",
+   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#} 傷害 減少 {~1}，\n{#} 技能範圍 減少 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1569,7 +1569,7 @@
   },
   "ability-mage#0113": {
    "src": "{#} Area of Effect: {~} Block (Circle-Shaped)",
-   "dst": "{#} 作用範圍: {~} 格 (圓形)",
+   "dst": "{#} 技能範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1624,7 +1624,7 @@
   },
   "ability-mage#0117": {
    "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
-   "dst": "離開裂隙範圍後，它的增益與傷害\n仍會殘留 {~} 秒。",
+   "dst": "{c1}離開裂隙範圍後，它的增益與傷害\n仍會殘留 {c2}{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-mage#0120": {
    "src": "{#} Effects: +{~} Walk Speed",
-   "dst": "{#} 效果: {~} 移動速度增加",
+   "dst": "{#} 效果: +{~} 移動速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1918,7 +1918,7 @@
   },
   "ability-mage#0139": {
    "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "{#} 效果: 友軍移動速度 +{~1} (每 {~2} 秒，最多 +{~3})",
+   "dst": "{#} {c1}效果: 友軍移動速度 {c2}+{~1} {c3}(每 {~2} 秒，最多 +{~3})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "冰蛇會凍結目標 {~} 秒。",
+   "dst": "{c1}冰蛇{c2}會凍結目標 {c3}{~} 秒{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2027,7 +2027,7 @@
   },
   "ability-mage#0147": {
    "src": "{#} Main Attack Damage: +{~} (per {~} Walk Speed)",
-   "dst": "{#} 普攻傷害百分比增加: {~1} (每 {~2} 移動速度)",
+   "dst": "{#} 普攻傷害百分比: +{~1} (每 {~2} 移動速度)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "祕法再生的效果加快 {~} 秒。",
+   "dst": "{c1}祕法再生{c2}的效果加快 {c3}{~} 秒{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2151,7 +2151,7 @@
   },
   "ability-mage#0156": {
    "src": "{#} Effect: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "{#} 效果: {~} 敵人傷害降低 ({#})",
+   "dst": "{#} 效果: -{~} 敵人傷害加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2326,7 +2326,7 @@
   },
   "ability-mage#0169": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "在 {~2} 秒內治療量達到你最大生命值的 {~1} 後，\n你的下一次 Heal 會發動 Sunflare。",
+   "dst": "在 {c2}{~2} 秒{/}內治療量達到你最大生命值的 {c2}{~1}{/} 後，\n你的下一次 Heal 會發動 Sunflare。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2356,7 +2356,7 @@
   },
   "ability-mage#0171": {
    "src": "{#} Health Regen: {~} per second (of your max health)",
-   "dst": "{#} 生命回復: 每秒 {~} (你的最大生命)",
+   "dst": "{#} {c1}生命回復: {c2}每秒 {~} {c3}(你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2369,7 +2369,7 @@
   },
   "ability-mage#0172": {
    "src": "{#} Mana Regen: {~} per second (of your max mana)",
-   "dst": "{#} 魔力回復: 每秒 {~} (你的最大魔力)",
+   "dst": "{#} {c1}魔力回復: {c2}每秒 {~} {c3}(你的最大魔力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2406,7 +2406,7 @@
   },
   "ability-mage#0175": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "當你的魔力超過 {~1} 時，\n施放法術會在 {~3} 秒內\n為你回復 {~2} 點魔力。",
+   "dst": "{c1}當你的魔力超過 {c2}{~1}{c1} 時，\n施放法術會在 {c2}{~3} 秒{c1}內\n為你回復 {c2}{~2}{c1} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "當你的 Mana Bank ✺ 達到 {~1} 時，\n蹲下施放 Arcane Transfer 會召喚一顆電球，\n對附近的敵人造成傷害，\n並每 {~3} 秒消耗 {~2} 點魔力，\n直到魔力耗盡。",
+   "dst": "當你的 Mana Bank ✺ 達到 {c3}{~1}{/} 時，\n蹲下施放 Arcane Transfer 會召喚一顆電球，\n對附近的敵人造成傷害，\n並每 {c3}{~3} 秒{/}消耗 {c3}{~2}{/} 點魔力，\n直到魔力耗盡。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "增加冰蛇的傷害並使其速度翻倍。",
+   "dst": "{c1}增加{c2}冰蛇{c1}的傷害並使其速度{c3}翻倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2737,7 +2737,7 @@
   },
   "ability-mage#0199": {
    "src": "Crystallized {#} starts decaying at\na rate of -{~} every second if\nnone is applied for {~}s.",
-   "dst": "若 {~2} 秒內沒有再施加，\nCrystallized {#} 會開始以每秒 {~1}\n的速度衰減。",
+   "dst": "若 {c3}{~2} 秒{/}內沒有再施加，\nCrystallized {#} 會開始以每秒 {c3}{~1}{/}\n的速度衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2806,7 +2806,7 @@
   },
   "ability-mage#0204": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "Riftspawn 每 {~1} 秒會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 {~2}。",
+   "dst": "Riftspawn 每 {c3}{~1} 秒{/}會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 {c3}{~2}{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2833,7 +2833,7 @@
   },
   "ability-mage#0206": {
    "src": "For every +{~} Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "每有 {~1} 層 Distortion {#}，\n魔力返還的速度就加快 {~2} 秒。",
+   "dst": "每有 {c2}{~1}{/} 層 Distortion {#}，\n魔力返還的速度就加快 {c2}{~2} 秒{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2848,7 +2848,7 @@
   },
   "ability-mage#0207": {
    "src": "You send {~} of the damage you take\nto the future, dealing it over {~}s and\nborrow mana from the past, refunding\n{~} of your spent mana over {~}s.",
-   "dst": "你會把所受傷害的 {~1} 送往未來，\n在 {~2} 秒內分次承受；並向過去借取魔力，\n在 {~4} 秒內返還你已消耗魔力的 {~3}。",
+   "dst": "{c1}你會把所受傷害的 {c2}{~1}{c1} 送往未來，\n在 {c2}{~2} 秒{c1}內分次承受；並向過去借取魔力，\n在 {c2}{~4} 秒{c1}內返還你已消耗魔力的 {c2}{~3}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "Fire Serpent 每 {~} 秒會朝帶有 Unstable {#}\n的目標開火，並獲得該傷害加成。",
+   "dst": "Fire Serpent 每 {c3}{~} 秒{/}會朝帶有 Unstable {#}\n的目標開火，並獲得該傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "Thunder Serpent 每 {~2} 秒會以弧狀閃電\n擊中最多 {~1} 個敵人，\n使他們進入 Unstable {#}。",
+   "dst": "Thunder Serpent 每 {c3}{~2} 秒{/}會以弧狀閃電\n擊中最多 {c3}{~1}{/} 個敵人，\n使他們進入 Unstable {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3195,7 +3195,7 @@
   },
   "ability-mage#0233": {
    "src": "{#} Area of Effect: +{~}",
-   "dst": "{#} 作用範圍增加: {~}",
+   "dst": "{#} 技能範圍: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3290,7 +3290,7 @@
   },
   "ability-mage#0245": {
    "src": "{#} Effects: +{~} Walk Speed per Cast",
-   "dst": "{#} 效果: {~} 移動速度增加 (每次施放)",
+   "dst": "{#} 效果: +{~} 移動速度 (每次施放)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
