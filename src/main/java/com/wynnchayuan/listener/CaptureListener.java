@@ -272,7 +272,8 @@ public final class CaptureListener {
         if (!SERVER_MESSAGES.contains(event.getRecipientType())) {
             return;                  // 玩家發言，不記錄
         }
-        String template = chatTemplate(event.getMessage(), WynnChaYuan.store()::noteEvent);
+        String template = chatTemplate(event.getMessage(), WynnChaYuan.store()::noteEvent,
+                                       WynnChaYuan.translations());
         if (template == null) {
             return;
         }
@@ -303,12 +304,29 @@ public final class CaptureListener {
      * @param skipped 略過的原因（事件名）往這裡記
      */
     static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped) {
+        return chatTemplate(message, skipped, null);
+    }
+
+    /**
+     * 同上，多問一關<b>夾著別人名字的句型</b>（炸彈廣播、語料裡帶 {@code {u}} 的那些）：
+     * 認得的話記的是名字收成 {@code {u}} 的模板，名字本身不會進檔案。
+     * 見 {@link LineTranslator#nameFramed}。
+     *
+     * @param store 用來認句型的語料；{@code null} 就只走原本那一關
+     */
+    static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped,
+                               com.wynnchayuan.translate.TranslationStore store) {
         if (message == null || GlyphSplitter.isGlyphOnly(message)) {
             return null;
         }
         if (ChatBlock.isOurs(message)) {
             skipped.accept("chat.skipped.ownOutput");
             return null;
+        }
+        com.wynnchayuan.capture.LineParts framed = LineTranslator.nameFramed(message, store);
+        if (framed != null) {
+            skipped.accept("chat.framed.playerName");
+            return framed.template();
         }
         String template = GlyphSplitter.toTemplate(message);
         if (PlayerDataFilter.carriesPlayerData(template)) {
@@ -352,7 +370,14 @@ public final class CaptureListener {
 
         // 同時記下「完整名牌」的模板，但<b>砍掉尾巴的狀態列</b>——見 trimStatusLines。
         StyledText full = event.getText();
-        if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
+        // 「某人的力量之井」這類：主人的名字夾在語料的 {u} 句型裡，記 {u} 那一份。
+        // 那就是語料裡的鍵，名字不會進檔案。見 NameFrames。
+        com.wynnchayuan.capture.LineParts owned = full == null || GlyphSplitter.isGlyphOnly(full)
+                ? null : LineTranslator.nameFramed(full, WynnChaYuan.translations());
+        if (owned != null) {
+            WynnChaYuan.store().record(trimStatusLines(owned.template()), "name", "label",
+                                       "label/floating");
+        } else if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
             String template = trimStatusLines(GlyphSplitter.toTemplate(full));
             // 名牌也要過濾玩家資料。玩家攤位的名牌整塊都是玩家內容——
             // 名稱是 ID，下面是他自己打的招牌字。先前只有聊天走這道濾網，

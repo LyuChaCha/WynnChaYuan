@@ -148,6 +148,9 @@ public final class PlayerDataFilter {
             // 句型是遊戲的模板，但主詞永遠是隊友的 ID。
             " gave you [+",
             " has given you ",
+            // 「woody123_is_god gave you +2 minutes speed boost.」，主詞是送加速的人。
+            // 收件匣裡收進過好幾次（cap28 left_out 的 0226、0804…）。
+            " gave you +",
             // 「Party Finder: Hey MorphCascade, over here!」——後面接的是收訊者本人。
             "Party Finder: Hey ",
             // 市集篩選「- Name Contains: 某某」——冒號後面是玩家自己打的搜尋字。
