@@ -169,6 +169,7 @@ public final class WrapTest {
         balanceKeepsClause();
         valueWithLabel();
         latinRunsWhole();
+        rangesWhole();
 
         System.out.println(failures == 0 ? "Wrap: 全部通過" : "Wrap: " + failures + " 項失敗");
         if (failures > 0) {
@@ -718,6 +719,59 @@ public final class WrapTest {
     private static final char NL = '\n';
 
     /** 把換行換成看得見的符號，失敗訊息才讀得出來折在哪。 */
+    /**
+     * 數值範圍（{@code +{~}-{~}}、{@code +1-2}、{@code 60-60}）不能拆到兩行。
+     *
+     * <h2>實機回報（2026-10-17）</h2>
+     * Lootrun 使命卡折成「…、+1」換行「-2 怪物強化…」——下一行開頭的「-2」讀起來是負二。
+     * 每一級 {@code Keep} 都要守，連「只看寬度」那一級也是：那一級是行數超過原文時的最後手段，
+     * 實機那張卡就是落到那裡。寬度從窄到寬掃一遍，每一種斷法都看。
+     */
+    private static void rangesWhole() {
+        String[] texts = {
+            "甲乙丙丁每提供 {~} 件，就隨機獲得 +{~}-{~} 子丑、+{~}-{~} 寅卯、+{~}-{~} 辰巳或 +{~}-{~} 秒。",
+            "甲乙丙丁每提供 3 件，就隨機獲得 +3-3 子丑、+1-1 寅卯、+1-2 辰巳或 +60-60 秒。",
+        };
+        java.util.regex.Pattern splitRange = java.util.regex.Pattern.compile(
+                "(?:\\d|\\{~\\d*})%?" + NL + "[-+]?(?:\\d|\\{~)"
+                + "|[-+]" + NL + "(?:\\d|\\{~)"
+                + "|(?:\\d|})%?[-+]" + NL);
+        int bad = 0;
+        int wrapped = 0;
+        String example = null;
+        for (String text : texts) {
+            // 從放得下一整組範圍（「+{~}-{~}」量起來 40）的寬度開始；更窄的話範圍本身就
+            // 塞不進一行，那是另一回事（見下面「塞不下的範圍」）
+            for (int px = 45; px <= 160; px++) {
+                for (LineTranslator.Keep keep : LineTranslator.Keep.values()) {
+                    String out = LineTranslator.wrapToWidth(text, px, WrapTest::additive, keep);
+                    if (out.indexOf(NL) >= 0) {
+                        wrapped++;
+                    }
+                    if (splitRange.matcher(out).find()) {
+                        bad++;
+                        if (example == null) {
+                            example = keep + " " + px + "px：" + show(out);
+                        }
+                    }
+                }
+                String balanced = LineTranslator.wrapBalanced(text, px, 4, WrapTest::additive);
+                if (splitRange.matcher(balanced).find()) {
+                    bad++;
+                    if (example == null) {
+                        example = "balanced " + px + "px：" + show(balanced);
+                    }
+                }
+            }
+        }
+        report("這兩句真的有被折行（" + wrapped + " 種）", wrapped > 100);
+        report("★ 數值範圍一次都沒有被拆開（" + bad + " 次" + (example == null ? "" : "，例如 " + example) + "）",
+               bad == 0);
+        // 範圍從行首開始就放不下時不硬挪（挪了只會生出空行）——照舊斷，不能丟例外
+        check("塞不下的範圍不會丟例外",
+                () -> LineTranslator.wrapToWidth("+{~}-{~}", 2, WrapTest::additive));
+    }
+
     private static String show(String wrapped) {
         return wrapped.replace(String.valueOf(NL), " ⏎ ");
     }
