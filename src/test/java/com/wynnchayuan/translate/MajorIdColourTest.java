@@ -30,7 +30,7 @@ public final class MajorIdColourTest {
     private static final int BODY_COLOUR = 0xAAAAAA;
     private static final int MARK_COLOUR = 0xFFFF55;
 
-    /** 遊戲送來的樣子：名稱與說明各有顏色，並依 tooltip 寬度斷成四行。 */
+    /** 遊戲送來的樣子：名稱與說明各有顏色，並依 tooltip 寬度斷成五行。 */
     private static List<StyledText> block() {
         return block(false);
     }
@@ -43,10 +43,11 @@ public final class MajorIdColourTest {
      */
     private static List<StyledText> block(boolean markSeparate) {
         String[][] rows = {
-            {"✦ Altruism: ", "Allies within 16"},
-            {null, "blocks gain 100% of the"},
-            {null, "health you gain from Health"},
-            {null, "Regen and Life Steal."},
+            {"✦ Altruism: ", "Whenever you gain"},
+            {null, "health from your Life Steal"},
+            {null, "and Health Regen IDs, allies"},
+            {null, "within 16 blocks will receive"},
+            {null, "the same amount."},
         };
         List<StyledText> out = new ArrayList<>();
         for (String[] row : rows) {
@@ -117,12 +118,13 @@ public final class MajorIdColourTest {
         MutableComponent head = Component.empty();
         head.append(Component.literal("✦ Altruism: ").withStyle(
                 Style.EMPTY.withColor(TextColor.fromRgb(NAME_COLOUR))));
-        head.append(Component.literal("Allies").withStyle(
+        head.append(Component.literal("Whenever").withStyle(
                 Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
         longName.add(StyledText.fromComponent(head));
-        for (String row : new String[] {"within 16 blocks gain 100% of the",
-                                        "health you gain from Health",
-                                        "Regen and Life Steal."}) {
+        for (String row : new String[] {"you gain health from your Life Steal",
+                                        "and Health Regen IDs, allies",
+                                        "within 16 blocks will receive",
+                                        "the same amount."}) {
             longName.add(StyledText.fromComponent(Component.literal(row).withStyle(
                     Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))));
         }
