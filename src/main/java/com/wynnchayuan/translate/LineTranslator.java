@@ -1345,6 +1345,8 @@ public final class LineTranslator {
                 }
                 cut = avoidOrphan(text, cut, lineStart);
                 cut = keepUnitWhole(text, units, cut, lineStart);
+                // 「+1-2」「60-60」這種範圍不管哪一級 Keep 都不能拆，見 keepRangeWhole。
+                cut = keepRangeWhole(text, cut, lineStart);
                 // 中文句子裡留著的英文名稱整串跟著走，見 keepLatinRunWhole。
                 // 挪完之後名稱前面若是圖示，圖示也要一起到下一行。
                 int run = keepLatinRunWhole(text, cut, lineStart);
@@ -1757,6 +1759,43 @@ public final class LineTranslator {
         }
         return cut;
     }
+
+    /**
+     * 數值範圍（{@code +{~}-{~}}、{@code 60-60}、{@code +1-2}）是一個量，斷點落在中間就挪到它前面。
+     *
+     * <h2>實機回報（2026-10-17）</h2>
+     * Lootrun 使命卡「…隨機獲得 +3-3 結算抽數、+1-1 加持、+1」換行「-2 怪物強化或 +60-60 秒。」。
+     * 折行把「-{~}」當成一塊（正負號黏著佔位符），而它前面那個「+{~}」是另一塊，兩塊之間
+     * 就成了合法的斷點。{@link #keepUnitWhole} 只在 {@link Keep#NOTE}／{@link Keep#VALUE}
+     * 兩級有效，行數超過原文時退到 {@link Keep#NONE} 就不管了——但範圍拆開跟「數值與屬性名
+     * 分家」不是同一級的事：下一行開頭的「-2」讀起來就是負二。所以這一條每一級都做。
+     *
+     * @return 挪過的斷點；不在範圍裡時原樣回傳。範圍從行首開始（往前挪只會生出空行）時
+     *         改成斷在範圍<b>後面</b>
+     */
+    static int keepRangeWhole(String text, int cut, int lineStart) {
+        if (cut <= lineStart || cut >= text.length()) {
+            return cut;
+        }
+        java.util.regex.Matcher m = NUMBER_RANGE.matcher(text);
+        while (m.find()) {
+            if (m.start() >= cut) {
+                break;
+            }
+            if (cut < m.end()) {
+                // 範圍前面還有字就整組挪到下一行；範圍就從行首開始的話往後收，
+                // 讓這一行撐到範圍結尾——寧可稍微超寬，也不要「+1」換行「-2」
+                return m.start() > lineStart ? keepGlyphWithWord(text, m.start(), lineStart)
+                                             : m.end();
+            }
+        }
+        return cut;
+    }
+
+    /** 一段數值範圍：可帶正負號的數字或 {@code {~N}}，中間用 {@code -}／{@code +}／{@code –} 直接接起來。 */
+    private static final java.util.regex.Pattern NUMBER_RANGE = java.util.regex.Pattern.compile(
+            "[+\\-−]?(?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?"
+            + "(?:[\\-+–−](?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?)+");
 
     /**
      * 中文句子裡留著的<b>英文名稱</b>（幾個單字連在一起）不能從中間斷開。
@@ -8558,10 +8597,47 @@ public final class LineTranslator {
                 if (mark != null) {
                     out.add(new LineParts.Piece(
                             source.substring(ours.get(i)[0], ours.get(i)[1]), mark));
+                } else {
+                    // 標點段裡夾著別色的符號：技能樹「Resistance Bonus (❁) to Self」的
+                    // 「(❁)」整串都不是字母，算成同一段標點，而 ❁ 是綠的、括號是灰的。
+                    // 混色就整段不登記的話，這一段只剩灰色，整行數不到兩種顏色，
+                    // 「佔位符切段」那條路就放棄，退回冒號那一刀——冒號後面整段
+                    // 染成數值的白色，❁ 的綠色也被蓋掉。譯文照抄這一段時逐字照原文貼。
+                    out.addAll(mixedMark(source, at, ours.get(i), target, theirs.get(i)));
                 }
                 from = ours.get(i)[1];
                 dstFrom = theirs.get(i)[1];
             }
+        }
+        return out;
+    }
+
+    /**
+     * 混色的標點段，譯文照抄時一個顏色一塊交回去；譯文改寫過就不猜，回傳空清單。
+     *
+     * @param span    原文那一段的起訖
+     * @param dstSpan 譯文對應那一段的起訖
+     */
+    private static List<LineParts.Piece> mixedMark(String source, Style[] at, int[] span,
+                                                   String target, int[] dstSpan) {
+        String mark = source.substring(span[0], span[1]);
+        if (!halfWidthBrackets(mark).equals(
+                halfWidthBrackets(target.substring(dstSpan[0], dstSpan[1])))) {
+            return List.of();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        int from = span[0];
+        while (from < span[1]) {
+            Style style = at[from];
+            int to = from + 1;
+            while (to < span[1] && java.util.Objects.equals(at[to], style)) {
+                to++;
+            }
+            if (style == null) {
+                return List.of();
+            }
+            out.add(new LineParts.Piece(source.substring(from, to), style));
+            from = to;
         }
         return out;
     }
@@ -8977,6 +9053,8 @@ public final class LineTranslator {
         String[] flowed = keepAccentsWhole(translated, accents);
         // 搬不動的那些，兩半各自登記一份。見 halvesAcrossBreaks。
         accents.addAll(halvesAcrossBreaks(flowed, accents));
+        // 譯者指定顏色的那幾段原樣貼上，不經過 appendText——技能名要先在這裡換好。見 forcedTerms。
+        flowed = forcedTerms(flowed, store);
 
         List<List<Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
@@ -9771,8 +9849,8 @@ public final class LineTranslator {
                                    TranslationStore store) {
         // 「譯名 + 原文」附在後面的原文不換詞——這是逐段的那一條路，
         // termsWithin 是折行前整句的那一條。兩條都會走到同一行名稱，
-        // 只補一邊等於只修一半。見 TranslationStore#appendedOriginalAt。
-        int keepFrom = store == null ? -1 : store.appendedOriginalAt(text);
+        // 只補一邊等於只修一半。見 TranslationStore#keptOriginals。
+        List<int[]> kept = store == null ? List.of() : store.keptOriginals(text);
         int from = 0;
         while (from < text.length()) {
             int at = -1;
@@ -9796,10 +9874,8 @@ public final class LineTranslator {
                 }
             }
             // 技能名稱：語料裡只翻一次，所有提到它的敘述自動跟著換
-            TranslationStore.Term term = store == null ? null : store.findTerm(text, from);
-            if (term != null && keepFrom >= 0 && term.start() >= keepFrom) {
-                term = null;               // 落在附的原文裡，原樣留著
-            }
+            // 落在附的原文裡的詞跳過，原樣留著
+            TranslationStore.Term term = store == null ? null : termOutside(store, text, from, kept);
             // 同一個位置時取<b>比較長</b>的那一個——這跟重點段彼此之間本來就用的
             // 規則一致，先前只有重點段互比時套用，跟詞典比的時候卻是重點段無條件勝。
             //
@@ -9858,9 +9934,11 @@ public final class LineTranslator {
                 out.append(literal(text.substring(from, at), base));
             }
             LineParts.Piece accent = accents.get(which);
-            // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
-            String shown = store == null ? null : store.lookupTerm(accent.text());
-            if (shown == null && store != null) {
+            // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要——
+            // 但它落在刻意留的原文裡的話不換（Lootrun 使命名常常自己就是一個重點段）
+            boolean keep = overlapping(kept, at, at + accent.text().length()) != null;
+            String shown = store == null || keep ? null : store.lookupTerm(accent.text());
+            if (shown == null && store != null && !keep) {
                 // 重點段不一定<b>就是</b>那個詞，可能只是包著它。見 #termsWithin。
                 shown = termsWithin(accent.text(), store);
             }
@@ -9927,30 +10005,141 @@ public final class LineTranslator {
         // 「譯名 + 原文」附在後面的原文是刻意留的英文，不能再換一次——
         // 換了就成了「勇氣面具 (假面 of 勇氣)」。只掃前面那一段，附的原文原樣接回。
         // 見 TranslationStore#appendedOriginalAt。
-        int cut = store == null ? -1 : store.appendedOriginalAt(text);
-        String body = cut < 0 ? text : text.substring(0, cut);
-        String kept = cut < 0 ? "" : text.substring(cut);
+        // Lootrun 使命名附的原文也是同一回事，見 TranslationStore#keptOriginals。
+        List<int[]> kept = store == null ? List.of() : store.keptOriginals(text);
 
         StringBuilder out = new StringBuilder();
         int from = 0;
         boolean any = false;
         TranslationStore.Term term;
-        while (from < body.length() && (term = store.findTerm(body, from)) != null) {
-            String before = body.substring(from, term.start());
+        while (from < text.length() && (term = termOutside(store, text, from, kept)) != null) {
+            String before = text.substring(from, term.start());
             // 跟 appendText 同一套空格規則：「層 結晶化」的半形空格是給英文用的
             if (dropsSpaceBefore(before, term.translation())) {
                 before = before.substring(0, before.length() - 1);
             }
             out.append(before).append(term.translation());
             from = term.end();
-            if (dropsSpaceAfter(term.translation(), body, from)) {
+            if (dropsSpaceAfter(term.translation(), text, from)) {
                 from++;
             }
             any = true;
         }
-        return any ? out.append(body.substring(Math.min(from, body.length())))
-                        .append(kept).toString()
+        return any ? out.append(text.substring(Math.min(from, text.length()))).toString()
                    : null;
+    }
+
+    /**
+     * 譯者用 {@code {cN}…{/}} 指定顏色的那幾段，裡面的技能名照詞表換掉。
+     *
+     * <h2>為什麼需要</h2>
+     * 指定了顏色的那一段在重建時是<b>原樣貼上</b>的（{@code literal(token.text(), forced)}），
+     * 不經過 {@link #appendText}——而詞表換字只在那裡做。於是語料刻意留英文、等詞表換的
+     * 技能名，只要被譯者包進色段就一直是英文：刺客的「{@code {c2}Drained {#}}」
+     * 「{@code {c2}Overhealth}」、意象的「{@code {c2}Sniffer Dog{c1}}」。
+     *
+     * <h2>做法</h2>
+     * 先拿掉顏色標記、記住每個字在不在色段裡，在那份純文字上找詞（跟 {@link #termsWithin}
+     * 同一套：附的原文不換、空格規則一樣——空格常常在色段<b>外面</b>，
+     * 「{@code Sniffer Dog{c1} 的冷卻}」換成中文之後那個空格要拿掉），再把改動寫回原字串。
+     * 色段外面的詞不碰，留給 {@link #appendText}（它還要對重點段的樣式）。
+     *
+     * <p>色段可以跨行（見 rebuildAll 裡 {@code forced} 的說明），所以整段一起做。
+     */
+    static String[] forcedTerms(String[] lines, TranslationStore store) {
+        if (store == null || lines.length == 0) {
+            return lines;
+        }
+        String joined = String.join(String.valueOf(NEWLINE), lines);
+        if (joined.indexOf("{c") < 0 && joined.indexOf("{w") < 0) {
+            return lines;
+        }
+        StringBuilder plain = new StringBuilder(joined.length());
+        int[] origin = new int[joined.length()];
+        boolean[] inSpan = new boolean[joined.length()];
+        boolean forced = false;
+        for (int i = 0; i < joined.length(); ) {
+            Token colour = colourToken(joined, i);
+            if (colour != null) {
+                forced = colour.index() != 0;
+                i += colour.text().length();
+                continue;
+            }
+            origin[plain.length()] = i;
+            inSpan[plain.length()] = forced;
+            plain.append(joined.charAt(i++));
+        }
+        String text = plain.toString();
+        List<int[]> kept = store.keptOriginals(text);
+        // {原字串起, 原字串迄} → 換成什麼；最後由後往前套
+        List<int[]> cuts = new ArrayList<>();
+        List<String> with = new ArrayList<>();
+        int from = 0;
+        TranslationStore.Term term;
+        while (from < text.length() && (term = termOutside(store, text, from, kept)) != null) {
+            from = term.end();
+            int start = term.start();
+            int end = term.end();
+            boolean whole = true;
+            for (int k = start; k < end && whole; k++) {
+                whole = inSpan[k];
+            }
+            // 名稱中間夾著顏色標記的不動：換掉會連標記一起吃掉
+            if (!whole || origin[end - 1] - origin[start] != end - 1 - start) {
+                continue;
+            }
+            if (dropsSpaceBefore(text.substring(0, start), term.translation())) {
+                cuts.add(new int[] {origin[start - 1], origin[start - 1] + 1});
+                with.add("");
+            }
+            cuts.add(new int[] {origin[start], origin[end - 1] + 1});
+            with.add(term.translation());
+            if (dropsSpaceAfter(term.translation(), text, end)) {
+                cuts.add(new int[] {origin[end], origin[end] + 1});
+                with.add("");
+                from = end + 1;
+            }
+        }
+        if (cuts.isEmpty()) {
+            return lines;
+        }
+        StringBuilder out = new StringBuilder(joined);
+        for (int k = cuts.size() - 1; k >= 0; k--) {
+            out.replace(cuts.get(k)[0], cuts.get(k)[1], with.get(k));
+        }
+        return out.toString().split(String.valueOf(NEWLINE), -1);
+    }
+
+    /**
+     * 從 {@code from} 起第一個<b>不落在</b> {@code kept} 任何一段裡的詞。
+     *
+     * <p>落在裡面的那個跳過、從那一段的結尾接著找——附的原文裡可能連著好幾個詞。
+     */
+    private static TranslationStore.Term termOutside(TranslationStore store, String text,
+                                                     int from, List<int[]> kept) {
+        int at = from;
+        while (at < text.length()) {
+            TranslationStore.Term term = store.findTerm(text, at);
+            if (term == null) {
+                return null;
+            }
+            int[] in = overlapping(kept, term.start(), term.end());
+            if (in == null) {
+                return term;
+            }
+            at = Math.max(term.start() + 1, in[1]);
+        }
+        return null;
+    }
+
+    /** {@code [start, end)} 碰到 {@code spans} 裡的哪一段；都沒碰到回傳 {@code null}。 */
+    private static int[] overlapping(List<int[]> spans, int start, int end) {
+        for (int[] span : spans) {
+            if (start < span[1] && end > span[0]) {
+                return span;
+            }
+        }
+        return null;
     }
 
     /**

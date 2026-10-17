@@ -90,6 +90,40 @@ public final class LootrunNames {
         return changed ? out.toString() : hit;
     }
 
+    /**
+     * 這段文字裡的使命／試煉名（英文原名）落在哪裡。
+     *
+     * <h2>為什麼需要（實機回報 2026-10-17）</h2>
+     * 「譯名加原文」附上去的那一段是刻意留的英文，但畫之前還會對整句掃一次詞表：
+     * 記分板成了「小丑的把戲 (Jester's 詭計)」、卡片標題成了「逐險者 (獵殺悸動 Seeker)」——
+     * {@code Trick}、{@code Thrill} 剛好是 {@code ability-terms.json} 裡的詞。
+     * 物品名稱那條路早就擋了（{@link TranslationStore#appendedOriginalAt}），這條路沒有。
+     *
+     * <p>不只認括號裡的：設成只顯示原文（OFF）時整格就是英文名，一樣不能被換掉。
+     * 名字前後必須不是字母或數字，免得長名字裡的一截被當成另一個名字。
+     *
+     * @return 每一段 {@code {起, 迄}}；沒有就是空清單
+     */
+    static List<int[]> spans(String text) {
+        List<int[]> out = new ArrayList<>();
+        if (text == null || text.isEmpty()) {
+            return out;
+        }
+        for (String name : NAMES) {
+            int at = text.indexOf(name);
+            while (at >= 0) {
+                int end = at + name.length();
+                boolean left = at == 0 || !Character.isLetterOrDigit(text.charAt(at - 1));
+                boolean right = end >= text.length() || !Character.isLetterOrDigit(text.charAt(end));
+                if (left && right) {
+                    out.add(new int[] {at, end});
+                }
+                at = text.indexOf(name, at + 1);
+            }
+        }
+        return out;
+    }
+
     /** 粗篩：原文裡有沒有任何一個名字。大部分查表都在這裡就回去了。 */
     private static boolean mentionsName(String template) {
         for (String name : NAMES) {
