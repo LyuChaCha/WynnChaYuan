@@ -191,6 +191,16 @@ public final class LineTranslator {
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
+        // 重排過（行數不同、或我們自己重折）的置中段落：照原文的中線重新置中。見 #centreLine。
+        double centre = rewrapped || dst.length != run.size()
+                ? centreLine(run, centered) : Double.NaN;
+        if (!Double.isNaN(centre)) {
+            List<Component> recentred = new ArrayList<>(built.size());
+            for (Component one : built) {
+                recentred.add(unslant(centreOn(one, centre)));
+            }
+            return recentred;
+        }
         if (dst.length != run.size()) {
             // 中文比英文緊湊，兩行的句子常常一行就講完。譯文面板是我們自己畫的，
             // 行數不一樣沒關係——只是少了「原本那一行」可以拿來對齊，直接照原樣出。
@@ -209,6 +219,92 @@ public final class LineTranslator {
                     ? row : realign(run.get(i), row, centered[i])));
         }
         return out;
+    }
+
+    /**
+     * 整段都置中時，原文那幾行共同的中線（像素）；不是整段置中就回傳 {@code NaN}。
+     *
+     * <h2>實機回報（2026-10-17）：未鑑定物品的說明靠左了</h2>
+     * 未鑑定的 Legendary 項鍊，英文三行說明照外框置中，每一行開頭一個偏移：
+     *
+     * <pre>
+     *   [15]This item's power has been sealed,
+     *   [20]an ◉ Item Identifier can unlock
+     *   [64]its potential.
+     * </pre>
+     *
+     * 語料收的是攤平的一句。{@link #rejoin} 剝掉行首偏移才查得到，查到之後由我們
+     * 照原文寬度重折——折成兩行中文，行數對不上，先前就「照原樣出」；
+     * 三行的語言也一樣，{@link #realign} 要拿原文那一列的偏移去補，而譯文那一列
+     * 已經沒有行首偏移，空白數對不上就原樣返回。兩種都從 0 畫起
+     * （layout-debug 的左緣對照：原文 17、21，譯文 0）。
+     *
+     * <p>重折過的列跟原文的列不是一對一，不能逐列抄縮排；但置中的段落每一行都
+     * 對著<b>同一條中線</b>，照那條線把每一列重新擺就對了——跟 {@link #realign}
+     * 「置中只補一半差額」是同一件事，只是改成對整段的中線。
+     *
+     * <p>只在 {@link BlockLayout} 判定<b>每一行</b>都置中時才做：靠左的段落、
+     * 只有幾行碰巧對上算式的段落都不碰——判錯的話，靠左的列會被推到中間。
+     * 原文有往回退的偏移（名稱列那種）、或量不到寬度（headless）也不碰。
+     */
+    private static double centreLine(List<StyledText> run, boolean[] centered) {
+        if (centered == null || centered.length < run.size()) {
+            return Double.NaN;
+        }
+        double sum = 0;
+        boolean indented = false;
+        for (int i = 0; i < run.size(); i++) {
+            if (!centered[i]) {
+                return Double.NaN;
+            }
+            Component line = run.get(i).getComponent();
+            int lead = leadingPx(line);
+            int w = widthOf(line);
+            if (lead < 0 || w - lead <= 0) {
+                return Double.NaN;
+            }
+            indented |= lead > 0;
+            sum += lead + (w - lead) / 2.0;
+        }
+        return indented ? sum / run.size() : Double.NaN;
+    }
+
+    /** 換掉行首的縮排，讓這一列的中心落在 {@code centre}。 */
+    private static Component centreOn(Component row, double centre) {
+        List<Run> parts = runs(row);
+        int lead = 0;
+        int first = 0;
+        while (first < parts.size() && parts.get(first).space()) {
+            lead += parts.get(first).px();
+            first++;
+        }
+        int content = widthOf(row) - lead;
+        if (content <= 0 || first == parts.size()) {
+            return row;                        // 沒有字的列（不該出現）照原樣
+        }
+        int px = Math.max(0, (int) Math.round(centre - content / 2.0));
+        MutableComponent out = Component.empty();
+        String encoded = SpaceOffset.encode(px);
+        if (!encoded.isEmpty()) {
+            Style base = first > 0 ? parts.get(0).style() : parts.get(first).style();
+            out.append(literal(encoded, SpaceOffset.styleFor(base)));
+        }
+        for (int i = first; i < parts.size(); i++) {
+            out.append(literal(parts.get(i).text(), parts.get(i).style()));
+        }
+        return out;
+    }
+
+    /** 行首那一串可調整偏移的總寬，碰到第一段內容就停。 */
+    private static int leadingPx(Component line) {
+        int px = 0;
+        for (Run r : runs(line)) {
+            if (!r.space()) {
+                break;
+            }
+            px += r.px();
+        }
+        return px;
     }
 
     /**

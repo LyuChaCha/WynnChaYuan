@@ -1508,3 +1508,12 @@ tasks.register('runItemGuessChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ItemGuessListTest'
 }
 tasks.named('check') { dependsOn 'runItemGuessChecks' }
+
+// 未鑑定物品「力量已被封印」的說明：攤平查到、重折之後照原文的中心置中。
+tasks.register('runSealedCentreChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.SealedCentreTest'
+}
+tasks.named('check') { dependsOn 'runSealedCentreChecks' }
