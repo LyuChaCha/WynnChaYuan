@@ -160,7 +160,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "從道具中獲得的每 {~} 或 {~} 點普攻傷害，\n額外獲得 +{~} 移動速度。(最高 {~})",
+   "dst": "{c1}從道具中獲得的每 {c2}{~}{c1} 或 {c2}{~} 點{c1}普攻傷害，\n額外獲得 {c2}+{~}{c1} 移動速度。{c3}(最高 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -227,7 +227,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "從道具中獲得的每 {~1} 或 {~2} 點生命回復，\n額外獲得 +{~3} 生命。(最高 {~4})",
+   "dst": "{c1}從道具中獲得的每 {c2}{~1}{c1} 或 {c2}{~2} 點{c1}生命回復，\n額外獲得 {c2}+{~3}{c1} 生命。(最高 {~4})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "每當你受到傷害後，\n將在接下來的 {~2} 秒內\n回復該傷害的 {~1} 生命。",
+   "dst": "{c1}每當你受到傷害後，\n將在接下來的 {c2}{~2} 秒{c1}內\n回復該傷害的 {c2}{~1}{c1} 生命。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1154,7 +1154,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "每當累計回復最大生命的 {~1} 時，\n對附近所有敵方造成傷害。\n(單次最多觸發 {~2} 次)",
+   "dst": "{c1}每當累計回復最大生命的 {c2}{~1}{c1} 時，\n對附近所有敵方造成傷害。\n{c3}(單次最多觸發 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1625,7 +1625,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "從道具中獲得的每 {~1} 遠程反傷，\n額外獲得 +{~2}/{~3}s 魔力回復。(最高 {~4}/{~5}s)",
+   "dst": "{c1}從道具中獲得的每 {c2}{~1}{c1} 遠程反傷，\n額外獲得 {c2}+{~2}/{~3}s{c1} 魔力回復。{c3}(最高 {~4}/{~5}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "提升 Counter 的傷害，\n並使冷卻時間 -{~} 秒。",
+   "dst": "提升 Counter 的傷害，\n並使冷卻時間 {c3}-{~} 秒{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1750,7 +1750,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "當擁有 {~1} Holy Power ✧ 時，\n你的普攻將獲得強化，\n且每次命中獲得 {~2} Holy Power。",
+   "dst": "{c1}當擁有 {/}{~1} Holy Power {c4}✧{c1} 時，\n你的{c5}普攻{c1}將獲得強化，\n且每次命中獲得 {/}{~2} Holy Power{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1966,7 +1966,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "受到 War Scream 傷害的敵人\n將受到 Provoked {#}，\n使其在 {~} 秒內僅以你為目標。",
+   "dst": "受到 War Scream 傷害的敵人\n將受到 Provoked {#}，\n使其在 {c4}{~} 秒{/}內僅以你為目標。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2060,7 +2060,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "Bash 的打擊次數變為 {~1} 倍，且施放速度變快 {~2} 秒。",
+   "dst": "Bash 的打擊次數變為 {c3}{~1} 倍{/}，且施放速度變快 {c3}{~2} 秒{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2430,7 +2430,7 @@
   },
   "ability-warrior#0178": {
    "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "每消耗一點 Holy Power ✧，\n自身與附近友軍 +{~1} Overhealth ❤。\n此 Overhealth ❤ 會在 {~2} 秒內慢慢降低。",
+   "dst": "每消耗一點 Holy Power {c5}✧{/}，\n自身與附近友軍 {c2}+{~1} {/}Overhealth {c4}❤{/}。\n此 Overhealth {c4}❤{/} 會在 {c2}{~2} 秒{/}內慢慢降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Generalist 觸發時，\n+{~} Harmony，持續 {~} 秒(最高 {~})。",
+   "dst": "Generalist 觸發時，\n{c3}+{~} {/}Harmony，持續 {c3}{~} 秒{/}(最高 {~})。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "蹲下施放 Bash 時，\n將消耗 {~} Holy Power ✧\n召喚一道緩慢前行的光束，\n每 {~} 秒對敵人造成傷害。",
+   "dst": "蹲下施放 Bash 時，\n將消耗 {c3}{~} {/}Holy Power {c5}✧{/}\n召喚一道緩慢前行的光束，\n每 {c3}{~} 秒{/}對敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike 將造成更多傷害，\n且每使用 {~2} 個破碎的護罩，\n就為周圍友軍提供 {~1} 層 Mantle of the Bovemists。(最高 {~3})",
+   "dst": "Shield Strike 將造成更多傷害，\n且每使用 {c3}{~2}{/} 個破碎的護罩，\n就為周圍友軍提供 {c3}{~1}{/} 層 Mantle of the Bovemists。{c4}(最高 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "對尖刺施放普攻或 Uppercut 時會將其引爆，\n造成傷害並獲得 +{~} Overhealth ❤(在 Corrupted 狀態下也能生效)。\n此效果會在 {~} 秒內慢慢降低。",
+   "dst": "對尖刺施放{c2}普攻{/}或 Uppercut 時會將其引爆，\n造成傷害並獲得 {c3}+{~} {/}Overhealth {c5}❤{/}(在 Corrupted 狀態下也能生效)。\n此效果會在 {c3}{~} 秒{/}內慢慢降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3182,7 +3182,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "每當累計回復最大生命的 {~1} 時，\n對附近所有敵方造成傷害。\n({~3} 秒內最多觸發 {~2} 次)",
+   "dst": "{c1}每當累計回復最大生命的 {c2}{~1}{c1} 時，\n對附近所有敵方造成傷害。\n{c3}({~3} 秒內最多觸發 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [

@@ -67,7 +67,7 @@
   },
   "aspect-desc#0008": {
    "src": "Coursing Restraints gains +{~}s {#} Duration.",
-   "dst": "Coursing Restraints 的 {#} 持續時間增加 +{~} 秒。",
+   "dst": "Coursing Restraints 的 {#} 持續時間增加 {c3}+{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of Extreme Current",
    "class": "archer"
@@ -158,7 +158,7 @@
   },
   "aspect-desc#0021": {
    "src": "Increase your Crow's distraction duration by +{~}s.",
-   "dst": "你的 Crow 的擾敵持續時間增加 +{~} 秒。",
+   "dst": "你的 Crow 的擾敵持續時間增加 {c3}+{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
@@ -235,7 +235,7 @@
   },
   "aspect-desc#0032": {
    "src": "Divine Intervention will cause Guardian Angels to fire {~}x faster instead.",
-   "dst": "Divine Intervention 改為讓 Guardian Angels 的射速變為 {~} 倍。",
+   "dst": "Divine Intervention 改為讓 Guardian Angels 的射速變為 {c3}{~} 倍{/}。",
    "role": "desc",
    "aspect": "Boltslinger's Embodiment of Rended Skies",
    "class": "archer"
@@ -256,7 +256,7 @@
   },
   "aspect-desc#0035": {
    "src": "Focus' cooldown is reduced by -{~}s.",
-   "dst": "Focus 的冷卻時間減少 {~} 秒。",
+   "dst": "Focus 的冷卻時間減少 {c3}{~} 秒{/}。",
    "role": "desc",
    "aspect": "Sharpshooter's Embodiment of Laser Precision",
    "class": "archer"
@@ -375,7 +375,7 @@
   },
   "aspect-desc#0052": {
    "src": "{~} {#} Total Damage: {~} (of your DPS, per shuriken) ({#} Damage: {~}) ({#} Fire: {~})",
-   "dst": "{~1} {#} 總傷害: {~2} (你的每秒傷害，每枚手裏劍) ({#} 傷害: {~3}) ({#} 火屬性: {~4})",
+   "dst": "{~1} {#} 總傷害: {~2} (你的每秒傷害，每枚手裏劍) ({#} 傷害: {~3}) ({#} 火屬性傷害: {~4})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
@@ -389,7 +389,7 @@
   },
   "aspect-desc#0054": {
    "src": "{#} Total Damage: -{~} (of your DPS, per shuriken) ({#} Damage: -{~}) ({#} Fire: -{~})",
-   "dst": "{#} 總傷害: -{~1} (你的每秒傷害，每枚手裏劍) ({#} 傷害: -{~2}) ({#} 火屬性: -{~3})",
+   "dst": "{#} 總傷害: -{~1} (你的每秒傷害，每枚手裏劍) ({#} 傷害: -{~2}) ({#} 火屬性傷害: -{~3})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
@@ -515,7 +515,7 @@
   },
   "aspect-desc#0072": {
    "src": "Vanish's cooldown is reduced by -{~}s.",
-   "dst": "Vanish 的冷卻時間減少 {~} 秒。",
+   "dst": "Vanish 的冷卻時間減少 {c3}{~} 秒{/}。",
    "role": "desc",
    "aspect": "Shadestepper's Embodiment of Unseen Execution",
    "class": "assassin"
@@ -802,7 +802,7 @@
   },
   "aspect-desc#0113": {
    "src": "Blood Sorrow gains +{~}s {#} Duration.",
-   "dst": "Blood Sorrow 的 {#} 持續時間增加 +{~} 秒。",
+   "dst": "Blood Sorrow 的 {#} 持續時間增加 {c3}+{~} 秒{/}。",
    "role": "desc",
    "aspect": "Acolyte's Embodiment of Unwavering Adherence",
    "class": "shaman"
@@ -942,21 +942,21 @@
   },
   "aspect-desc#0133": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 地屬性: -{~2})",
+   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 地屬性傷害: -{~2})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0134": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 風屬性: -{~2}) ({#} 地屬性: -{~3})",
+   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 風屬性傷害: -{~2}) ({#} 地屬性傷害: -{~3})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0135": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 傷害: -{~2}) ({#} 風屬性: -{~3}) ({#} 地屬性: -{~4})",
+   "dst": "{#} 總傷害: -{~1} (你的每秒傷害) ({#} 傷害: -{~2}) ({#} 風屬性傷害: -{~3}) ({#} 地屬性傷害: -{~4})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
@@ -984,7 +984,7 @@
   },
   "aspect-desc#0139": {
    "src": "Totem gains +{~}s {#} Duration.",
-   "dst": "Totem 的 {#} 持續時間增加 +{~} 秒。",
+   "dst": "Totem 的 {#} 持續時間增加 {c3}+{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of the Monolith",
    "class": "shaman"
@@ -1068,7 +1068,7 @@
   },
   "aspect-desc#0151": {
    "src": "Tempest hits delay is reduced by {~}s.",
-   "dst": "Tempest 每次打擊之間的間隔減少 {~} 秒。",
+   "dst": "Tempest 每次打擊之間的間隔減少 {c3}{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of Deafening Echoes",
    "class": "warrior"
@@ -1082,14 +1082,14 @@
   },
   "aspect-desc#0153": {
    "src": "Radiance gains +{~}s {#} Duration.",
-   "dst": "Radiance 的 {#} 持續時間增加 +{~} 秒。",
+   "dst": "Radiance 的 {#} 持續時間增加 {c3}+{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of Empowering Fantasy",
    "class": "warrior"
   },
   "aspect-desc#0154": {
    "src": "Counter's cooldown is reduced by -{~}s.",
-   "dst": "Counter 的冷卻時間減少 {~} 秒。",
+   "dst": "Counter 的冷卻時間減少 {c3}{~} 秒{/}。",
    "role": "desc",
    "aspect": "Aspect of Hyper-Perception",
    "class": "warrior"
@@ -1236,7 +1236,7 @@
   },
   "aspect-desc#0175": {
    "src": "Bash gains +{~}x as many hits.",
-   "dst": "Bash 的打擊次數變為 +{~} 倍。",
+   "dst": "Bash 的打擊次數變為 {c3}+{~} 倍{/}。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
@@ -1271,7 +1271,7 @@
   },
   "aspect-desc#0180": {
    "src": "{#} Total Damage: {~} ({#} Thunder: {~}) Uppercut deals {~} neutral and {~} Damage in all Elements.",
-   "dst": "{#} 總傷害: {~1} ({#} 雷屬性: {~2}) Uppercut 造成 {~3} 無屬性傷害，以及各元素 {~4} 傷害。",
+   "dst": "{#} 總傷害: {~1} ({#} 雷屬性傷害: {~2}) Uppercut 造成 {~3} 無屬性傷害，以及各元素 {~4} 傷害。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
@@ -1372,17 +1372,17 @@
   },
   "blk009": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 地屬性: -{~3})",
+   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 地屬性傷害: -{~3})",
    "role": "desc"
   },
   "blk010": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 風屬性: -{~3})({#} 地屬性: -{~4})",
+   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 風屬性傷害: -{~3})({#} 地屬性傷害: -{~4})",
    "role": "desc"
   },
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 傷害: -{~3})({#} 風屬性: -{~4})({#} 地屬性: -{~5})",
+   "dst": "Puppet Master 增加 +{~1} 具人偶。{#} 總傷害: -{~2}(你的每秒傷害)({#} 傷害: -{~3})({#} 風屬性傷害: -{~4})({#} 地屬性傷害: -{~5})",
    "role": "desc"
   },
   "blk012": {
@@ -1417,7 +1417,7 @@
   },
   "blk018": {
    "src": "Bash gains +{~}x as many hits and more damage. {#} Total Damage: +{~} ({#} Thunder: +{~})",
-   "dst": "Bash 的打擊次數變為 +{~1} 倍，傷害也提高。{#} 總傷害: +{~2}({#} 雷屬性: +{~3})",
+   "dst": "Bash 的打擊次數變為 +{~1} 倍，傷害也提高。{#} 總傷害: +{~2}({#} 雷屬性傷害: +{~3})",
    "role": "desc"
   },
   "blk019": {
