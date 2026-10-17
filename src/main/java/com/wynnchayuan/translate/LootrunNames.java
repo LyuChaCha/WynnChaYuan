@@ -41,6 +41,8 @@ public final class LootrunNames {
             "High Spirits", "Beleza Pura", "Backup Beat", "Requiem", "Stasis", "Chronokinesis",
             "Thrill Seeker", "Knife Edge", "King's Court", "High Roller", "Redemption",
             "Sacrificial Ritual", "Complete Chaos",
+            // Wynntils 4.2.8 的名單沒有、實機出現的使命（2026-10-17 的記分板與「使命開始」面板）
+            "Cleansing Ritual",
             // 試煉
             "Adrenaline Junkie", "Dying Light", "Monochromokopia", "Chronotrigger", "All In",
             "Gambling Beast", "Hubris", "Lights Out", "Side Hustle", "Treasury Bill",
