@@ -1183,6 +1183,14 @@ tasks.register('runTradeFeederColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTradeFeederColourChecks' }
 
+tasks.register('runWelcomeBannerChecks', JavaExec) {
+    group = 'verification'
+    description = '登入歡迎訊息的新組合：整則的鍵查不到時一段一段組，七個語言都翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WelcomeBannerTest'
+}
+tasks.named('check') { dependsOn 'runWelcomeBannerChecks' }
+
 tasks.register('runOverlayTextChecks', JavaExec) {
     group = 'verification'
     description = '就地取代 Wynntils 疊層裡的字：關掉時一個字都不動'

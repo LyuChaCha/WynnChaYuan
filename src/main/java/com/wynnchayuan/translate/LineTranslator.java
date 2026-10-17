@@ -4142,7 +4142,7 @@ public final class LineTranslator {
         // 數量對不上——整句放棄，後面的句型（#eventFrame）根本沒機會試。
         Component rebuilt = null;
         String tried = null;
-        for (int step = 0; step < 6 && rebuilt == null; step++) {
+        for (int step = 0; step < 7 && rebuilt == null; step++) {
             LineParts using = parts;
             List<LineParts.Piece> glyphs = null;
             String hit = null;
@@ -4169,13 +4169,15 @@ public final class LineTranslator {
                         }
                     }
                 }
-                default -> {
+                case 5 -> {
                     // 世界事件的倒數公告，伺服器折過行的那幾種。單行的在 lookup 裡就接住了。
                     if (parts.template().indexOf('\n') >= 0) {
                         hit = eventFrame(TranslationStore.unwrap(parts.template()), store);
                         glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
                     }
                 }
+                // 登入的歡迎訊息：整則的鍵查不到時一段一段組。見 #welcomeBanner。
+                default -> hit = welcomeBanner(parts.template(), store);
             }
             if (hit == null || hit.isBlank()) {
                 continue;
@@ -4342,6 +4344,90 @@ public final class LineTranslator {
             values += countNumbers(part);
         }
         return hits > 0 ? out.toString() : null;
+    }
+
+    /** 登入歡迎訊息的第一行。見 {@link #welcomeBanner}。 */
+    private static final String WELCOME_LINE =
+            GlyphSplitter.GLYPH_PLACEHOLDER + "Welcome to Wynncraft!" + NEWLINE;
+
+    /**
+     * 登入的歡迎訊息，整則的鍵查不到時<b>一段一段組</b>。
+     *
+     * <h2>為什麼</h2>
+     * 歡迎訊息是<b>一則</b>聊天訊息，底下幾行看當下的狀況拼起來：交易市場賣出／買進幾件、
+     * 坐騎吃完飼料或飼料槽空了、單數或複數。語料是一種組合一條整則的鍵，
+     * 新的組合（「賣出 1 件」接「另外有 2 匹坐騎吃完了食物」）就整則留英文。
+     *
+     * <h2>怎麼組</h2>
+     * 從第一行起，每次找<b>最長的</b>、語料裡有鍵的連續幾行（整則的舊鍵可以當前綴用，
+     * 例如「標頭＋賣出 1 件」），找不到才縮短，最短是一行。空行與只有圖示的行原樣留著。
+     * 每一段的 {@code {~N}} 與 {@code {cN}} 照前面幾段用掉的數量往後推（同 {@link #byColumn}）。
+     *
+     * <h2>安全性</h2>
+     * 只認開頭是歡迎訊息的那一則；每一個有字的行都要被某一段蓋到，有一行查不到就整則放棄
+     * ——不會翻出半中半英。語料的逐行鍵寫成能單獨讀、也能接在上一行後面讀
+     * （「and …」那行是「另外有…」）。
+     *
+     * @return 組好的譯文；不是歡迎訊息、或有一行查不到時回傳 {@code null}
+     */
+    static String welcomeBanner(String template, TranslationStore store) {
+        if (template == null || store == null) {
+            return null;
+        }
+        int start = 0;
+        while (start < template.length() && template.charAt(start) == NEWLINE) {
+            start++;
+        }
+        if (!template.startsWith(WELCOME_LINE, start)) {
+            return null;
+        }
+        String[] lines = template.split(String.valueOf(NEWLINE), -1);
+        StringBuilder out = new StringBuilder();
+        int colours = 0;
+        int values = 0;
+        int i = 0;
+        while (i < lines.length) {
+            if (i > 0) {
+                out.append(NEWLINE);
+            }
+            if (!GlyphSplitter.hasLetter(lines[i])) {
+                out.append(lines[i]);              // 空行、只有圖示的行
+                values += countNumbers(lines[i]);
+                i++;
+                continue;
+            }
+            String hit = null;
+            int end = -1;
+            for (int j = lines.length; j > i && hit == null; j--) {
+                if (!GlyphSplitter.hasLetter(lines[j - 1])
+                        || (i == 0 && j == lines.length)) {
+                    continue;                      // 段落結尾要是有字的行；整則已經查過了
+                }
+                String run = String.join(String.valueOf(NEWLINE),
+                                         java.util.Arrays.copyOfRange(lines, i, j));
+                String found = lookup(run, store);
+                // 譯文的行數要跟這一段一樣，不然後面的行會錯位
+                if (found != null && !found.isBlank()
+                        && found.split(String.valueOf(NEWLINE), -1).length == j - i) {
+                    hit = found;
+                    end = j;
+                }
+            }
+            if (hit == null) {
+                return null;                       // 有一行查不到：整則讓開
+            }
+            String shifted = renumber(shiftColours(hit, colours), values);
+            if (shifted == null) {
+                return null;
+            }
+            colours += distinctColours(hit);
+            for (int k = i; k < end; k++) {
+                values += countNumbers(lines[k]);
+            }
+            out.append(shifted);
+            i = end;
+        }
+        return out.toString();
     }
 
     /** 這一段裡有幾個 {@code {~}}。 */
