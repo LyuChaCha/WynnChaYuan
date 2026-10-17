@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 294,
-  "translated": 294,
+  "count": 295,
+  "translated": 295,
   "note": "薩滿的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -570,18 +570,19 @@
    "code": "SHAMAN"
   },
   "ability-shaman#0258": {
-   "src": "When wearing the {#}{#}Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "當穿戴 {#}{#} 蒼逆假面 時，\nFrog Dance 落地時會生成一個小池子。\n(最多 {~} 個)",
+   "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
+   "dst": "當穿戴 {#} 蒼逆假面 時，\nFrog Dance 落地時會生成一個小池子。\n(最多 {~} 個)",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Pool of Rejuvenation"
    ],
    "lines": 3,
-   "flat": "When wearing the {#}{#}Mask of the Heretic, Frog Dance will create a small pool when hitting the ground. (Max {~})",
+   "flat": "When wearing the {#} Mask of the Heretic, Frog Dance will create a small pool when hitting the ground. (Max {~})",
    "_raw": "When wearing the  Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max 3)",
    "ability": "Pool of Rejuvenation",
-   "code": "SHAMAN"
+   "code": "SHAMAN-P8-R04-C04",
+   "tree": "04/shaman/08/004/004"
   },
   "ability-shaman#0253": {
    "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
@@ -3123,15 +3124,15 @@
    "code": "SHAMAN-P7-R04-C01"
   },
   "ability-shaman#0181": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} {#} 自身跳躍高度",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} 自身跳躍高度",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Soaring Wingbeats"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
    "tree": "04/shaman/07/004/001",
    "ability": "Soaring Wingbeats",
@@ -4043,6 +4044,19 @@
    "_raw": " Heretic: Gaining +10 Mana will increase Ritual Circle's",
    "ability": "Synchrony",
    "code": "SHAMAN"
+  },
+  "ability-shaman#0386": {
+   "src": "✧ Effect: +{~} Walk Speed to self",
+   "dst": "✧ 效果: {~} 自身移速增加",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "_raw": "✧ Effect: +120% Walk Speed to self",
+   "tree": "04/shaman/06/003/004",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN-P6-R03-C04"
   }
  }
 }
