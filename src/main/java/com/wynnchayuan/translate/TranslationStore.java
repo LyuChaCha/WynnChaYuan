@@ -2257,6 +2257,33 @@ public final class TranslationStore {
     }
 
     /**
+     * 畫的時候<b>不能被詞表換掉</b>的幾段：我們自己附上去、或照設定留著的英文原名。
+     *
+     * <ul>
+     *   <li>物品名稱的「譯名 (原文)」，見 {@link #appendedOriginalAt}。</li>
+     *   <li>Lootrun 使命／試煉名：「任務與洞窟名稱」不是只顯示譯名時，附在後面的原文、
+     *       或整格換回的原文，見 {@link LootrunNames#spans}。實機的
+     *       「小丑的把戲 (Jester's 詭計)」就是少了這一條。</li>
+     * </ul>
+     *
+     * @return 每一段 {@code {起, 迄}}；沒有就是空清單
+     */
+    public List<int[]> keptOriginals(String text) {
+        List<int[]> out = new java.util.ArrayList<>();
+        if (text == null) {
+            return out;
+        }
+        int at = appendedOriginalAt(text);
+        if (at >= 0) {
+            out.add(new int[] {at, text.length()});
+        }
+        if (pageNameMode != com.wynnchayuan.CollectorConfig.ItemNames.ON) {
+            out.addAll(LootrunNames.spans(text));
+        }
+        return out;
+    }
+
+    /**
      * 「譯名 {@code  (原文)}」那一段在<b>整行</b>裡的位置。
      *
      * <h2>為什麼不能只看結尾</h2>
