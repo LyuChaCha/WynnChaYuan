@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Olmic Rune",
-  "count": 15,
-  "translated": 15,
+  "count": 16,
+  "translated": 16,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -102,7 +102,7 @@
   },
   "The Olmic Rune#009": {
    "src": "Find some sort of fuel in the Ruined City.",
-   "dst": "Ruined City'de bir tür yakıt bul.",
+   "dst": "Yıkık Şehir'de bir tür yakıt bul.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -132,7 +132,7 @@
   },
   "The Olmic Rune#012": {
    "src": "Collect [{~} Fuel Sprites] and bring it back to the machine.",
-   "dst": "[{~} Fuel Sprites] topla ve makineye geri getir.",
+   "dst": "[{~} Yakıt Perisi] topla ve makineye geri getir.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -159,6 +159,16 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Olmic Rune#015": {
+   "src": "Now that you have enough fuel, you should return to the machine.",
+   "dst": "Artık yeterince yakıtın olduğuna göre makineye geri dönmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

@@ -271,7 +271,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "Eşyalarından gelen her {~1} ya da {~2} Ham Büyü Hasarı için\n+{~3}/{~4} sn Mana Yenilenmesi kazan (En fazla {~5}/{~6} sn)",
+   "dst": "Eşyalarından gelen her {~1} ya da {~2} Sabit Büyü Hasarı için\n+{~3}/{~4} sn Mana Yenilenmesi kazan (En fazla {~5}/{~6} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -551,7 +551,7 @@
   },
   "ability-mage#0039": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "Meteor yaptığında bunun yerine {~2} Canlı\n{~1} ışık küresi çağırırsın; küreler\nAna Saldırı yaptığında saldırır.",
+   "dst": "Meteor kullandığında bunun yerine {~2} Canlı\n{~1} ışık küresi çağırırsın; küreler\nAna Saldırı kullandığında saldırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -593,7 +593,7 @@
   },
   "ability-mage#0042": {
    "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
-   "dst": "Her Bozulma {#} +{~} Ham Hasar verir ve\nsaniyede -{~} hızla azalır; Bozulma {#}\nkazandıkça bu hız artar.",
+   "dst": "Her Bozulma {#} +{~} Sabit Hasar verir ve\nsaniyede -{~} hızla azalır; Bozulma {#}\nkazandıkça bu hız artar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -635,7 +635,7 @@
   },
   "ability-mage#0045": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "Eğilirken Teleport yaparsan bulunduğun yere\nkendinin eterik bir görüntüsünü bırakırsın.",
+   "dst": "Eğilirken Teleport kullanırsan bulunduğun yere\nkendinin eterik bir görüntüsünü bırakırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -855,7 +855,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Ice Snake yerine, her {~} sn'de hasar\nveren donmuş bir kasırga çağırırsın.",
+   "dst": "Ice Snake yerine, her {~} sn'de hasar\nveren donmuş bir hortum çağırırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -870,7 +870,7 @@
   },
   "ability-mage#0062": {
    "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
-   "dst": "Her +{~} Bozulma {#} için kasırga\n+{~} {#} Etki Alanı ve +{~} {#} Hasar kazanır.",
+   "dst": "Her +{~} Bozulma {#} için hortum\n+{~} {#} Etki Alanı ve +{~} {#} Hasar kazanır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -898,7 +898,7 @@
   },
   "ability-mage#0064": {
    "src": "{#} Tornado Duration: {~}s",
-   "dst": "{#} Kasırga Süresi: {~} sn",
+   "dst": "{#} Hortum Süresi: {~} sn",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1299,7 +1299,7 @@
   },
   "ability-mage#0093": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "Frozen Tornado {~} kasırga çağırır.\n(Düşmanlar aynı anda birden fazla kasırga\nya da yılandan hasar alamaz.)",
+   "dst": "Frozen Tornado {~} hortum çağırır.\n(Düşmanlar aynı anda birden fazla hortum\nya da yılandan hasar alamaz.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1383,7 +1383,7 @@
   },
   "ability-mage#0099": {
    "src": "{#} Delay: {~}s (per pulse)",
-   "dst": "{#} Gecikme: {~} sn (darbe başına)",
+   "dst": "{#} Gecikme: {~} sn (atım başına)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1396,7 +1396,7 @@
   },
   "ability-mage#0100": {
    "src": "{#} Pulse Self Heal: {~} (of your max health)",
-   "dst": "{#} Darbe Başına Kendini İyileştirme: {~} (maks. canının)",
+   "dst": "{#} Atım Başına Kendini İyileştirme: {~} (maks. canının)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1421,7 +1421,7 @@
   },
   "ability-mage#0102": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~} Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "Meteor yaptığında sahip olduğun her\n{~} Bozulma {#} için hedef noktanın\nyakınına fazladan bir meteor düşer.\n(En fazla {~} Meteor; aynı anda yalnızca bir\nMeteor Shower etkin olabilir.)",
+   "dst": "Meteor kullandığında elindeki her\n{~} Bozulma {#} için hedef noktanın\nyakınına fazladan bir meteor düşer.\n(En fazla {~} Meteor; aynı anda yalnızca bir\nMeteor Shower etkin olabilir.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1655,7 +1655,7 @@
   },
   "ability-mage#0119": {
    "src": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
-   "dst": "Heal ya da Arcane Transfer yaptıktan\nsonra yürüme hızı bonusu kazanırsın.",
+   "dst": "Heal ya da Arcane Transfer kullandıktan\nsonra yürüme hızı bonusu kazanırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1813,7 +1813,7 @@
   },
   "ability-mage#0131": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer will rapidly unleash\nthe last {~} spells you've cast in order.",
-   "dst": "Mana Bankası ✺ {~1} değerine ulaştığında\nArcane Transfer, son yaptığın {~2} büyüyü\nsırayla hızlıca serbest bırakır.",
+   "dst": "Mana Bankası ✺ {~1} değerine ulaştığında\nArcane Transfer, son kullandığın {~2} büyüyü\nsırayla hızlıca serbest bırakır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2001,7 +2001,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "Ana Saldırın ile bir düşmana vurmak, Time Dilation'ın\n{~} sn boyunca azalmasını durdurur.",
+   "dst": "Ana Saldırınla bir düşmana vurmak, Time Dilation'ın\n{~} sn boyunca azalmasını durdurur.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2288,7 +2288,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "Eğilirken Heal yaparsan Dimensional Tear'e\nbağlanır ve Riftbound olursun.",
+   "dst": "Eğilirken Heal kullanırsan Dimensional Tear'e\nbağlanır ve Riftbound olursun.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2330,7 +2330,7 @@
   },
   "ability-mage#0169": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "{~2} sn içinde maks. canının {~1} kadarını iyileştirirsen\nsonraki Heal büyün Sunflare'i etkinleştirir.",
+   "dst": "{~2} sn içinde maks. canının {~1} kadarını iyileştirirsen\nsonraki Heal kullanımın Sunflare'i etkinleştirir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2410,7 +2410,7 @@
   },
   "ability-mage#0175": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "{~1} Manadan fazlan varsa\nbüyü yapmak sana {~3} sn içinde\n+{~2} Mana verir.",
+   "dst": "Manan {~1} değerinden fazlaysa\nbüyü kullanmak sana {~3} sn içinde\n+{~2} Mana verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2452,7 +2452,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "Mana Bankası ✺ {~1} değerine ulaştığında\neğilirken Arcane Transfer yaparsan\nyakındaki düşmanlara hasar veren bir\nyıldırım topu çağırırsın. Top, Manan\nbitene kadar her {~3} sn'de {~2} Mana\nçeker.",
+   "dst": "Mana Bankası ✺ {~1} değerine ulaştığında\neğilirken Arcane Transfer kullanırsan\nyakındaki düşmanlara hasar veren bir\nyıldırım topu çağırırsın. Top, Manan\nbitene kadar her {~3} sn'de {~2} Mana\nçeker.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2506,7 +2506,7 @@
   },
   "ability-mage#0182": {
    "src": "Chaos Explosion will cast +{~} spells.",
-   "dst": "Chaos Explosion +{~} büyü daha yapar.",
+   "dst": "Chaos Explosion +{~} büyü daha kullanır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2575,7 +2575,7 @@
   },
   "ability-mage#0187": {
    "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
-   "dst": "Dimensional Tear içinde Frozen Tornado yaparsan\nkasırga öte dünya enerjileriyle dolar ve\nbir Time Vortex'e dönüşür.",
+   "dst": "Dimensional Tear içinde Frozen Tornado kullanırsan\nhortum öte dünya enerjileriyle dolar ve\nbir Time Vortex'e dönüşür.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2605,7 +2605,7 @@
   },
   "ability-mage#0189": {
    "src": "{#} Tornado Duration: +{~}s",
-   "dst": "{#} Kasırga Süresi: +{~} sn",
+   "dst": "{#} Hortum Süresi: +{~} sn",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2684,7 +2684,7 @@
   },
   "ability-mage#0195": {
    "src": "Increase the damage of Frozen Tornado\nby an additional +{~} every time\nthe tornado damages an enemy.",
-   "dst": "Kasırga bir düşmana her hasar verdiğinde\nFrozen Tornado'nun hasarını\nfazladan +{~} artır.",
+   "dst": "Hortum bir düşmana her hasar verdiğinde\nFrozen Tornado'nun hasarını\nfazladan +{~} artır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2726,7 +2726,7 @@
   },
   "ability-mage#0198": {
    "src": "Casting Ice Snake shatters\nenemies with {~} Crystallized {#},\ndamaging and slowing them.",
-   "dst": "Ice Snake yapmak, {~} Kristalleşmiş {#}\netkisindeki düşmanları parçalar;\nonlara hasar verir ve yavaşlatır.",
+   "dst": "Ice Snake kullanmak, {~} Kristalleşmiş {#}\netkisindeki düşmanları parçalar;\nonlara hasar verir ve yavaşlatır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2810,7 +2810,7 @@
   },
   "ability-mage#0204": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "Yarık Yaratığı her {~1} sn'de yakındaki düşmanlara\nhedef takip eden bozucu patlamalar fırlatır;\nhasar verir ve Bozulma {#} değerini\n+{~2} artırır.",
+   "dst": "Yarık Yaratığı her {~1} sn'de yakındaki düşmanlara\ngüdümlü bozucu patlamalar fırlatır;\nhasar verir ve Bozulma {#} değerini\n+{~2} artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2948,7 +2948,7 @@
   },
   "ability-mage#0215": {
    "src": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +{~} Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
-   "dst": "Meteor yaptıktan sonra çarpma noktasının\nyakınına bir yıldırım düşer; vurduğu her\nsaldırgan düşman için Mana Bankası ✺\nhesabına +{~} Mana ekler.",
+   "dst": "Meteor kullandıktan sonra çarpma noktasının\nyakınına bir yıldırım düşer; vurduğu her\nsaldırgan düşman için Mana Bankası ✺\nhesabına +{~} Mana ekler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3020,7 +3020,7 @@
   },
   "ability-mage#0220": {
    "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "{#} Toplam Hasar: {~} (DPS'inin, ruh ışığı başına)",
+   "dst": "{#} Toplam Hasar: {~} (DPS'inin, ruh başına)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3280,7 +3280,7 @@
   },
   "ability-mage#0244": {
    "src": "You gain a stacking walk speed buff\neach time you cast a spell. (Max {~})",
-   "dst": "Her büyü yaptığında birikerek artan bir\nyürüme hızı bonusu kazanırsın. (En fazla {~})",
+   "dst": "Her büyü kullandığında birikerek artan bir\nyürüme hızı bonusu kazanırsın. (En fazla {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3336,7 +3336,7 @@
   },
   "ability-mage#0248": {
    "src": "Ice Snake being casted by Chaos Explosion\nwill instead spew forth a cone of icy breath,\ndealing damage and granting +{~} Mana Bank ✺\nper hit every {~}s.",
-   "dst": "Chaos Explosion'ın yaptığı Ice Snake bunun\nyerine koni şeklinde buz gibi bir nefes püskürtür;\nher {~2} sn'de hasar verir ve vuruş başına\n+{~1} Mana Bankası ✺ kazandırır.",
+   "dst": "Chaos Explosion'ın kullandığı Ice Snake bunun\nyerine koni şeklinde buz gibi bir nefes püskürtür;\nher {~2} sn'de hasar verir ve vuruş başına\n+{~1} Mana Bankası ✺ kazandırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
