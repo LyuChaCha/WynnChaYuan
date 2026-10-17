@@ -1,5 +1,5 @@
 /**
- * wynnchayuan.com 的網頁：首頁、功能、披風一覽、帳號、管理。中文與英文各一份。
+ * wynnchayuan.com 的網頁：首頁、功能、披風一覽、帳號、管理、協作翻譯、回饋。中文與英文各一份。
  *
  * 五頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
  *
@@ -170,6 +170,23 @@ const STYLE = String.raw`
   .tr-text:focus { border-color: var(--leaf-deep); outline: none; }
   .tr-prop { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
   .tr-item { padding: 8px 10px; border-radius: 8px; background: var(--panel-2); }
+  /* 回饋（/feedback 與管理頁的回饋列表） */
+  .fb-form { max-width: 720px; margin-top: 20px; }
+  .fb-form > label { margin-top: 16px; }
+  .fb-form > label:first-child { margin-top: 0; }
+  .fb-form .form { align-items: start; }
+  .fb-form .hint { margin-top: 4px; }
+  .fb-count { text-align: right; font-variant-numeric: tabular-nums; }
+  .fb-count.bad { color: var(--danger); }
+  .fb-gate { max-width: 720px; margin-top: 20px; }
+  .fb-gate a, .fb-out a { color: var(--leaf); }
+  .fb-as { margin: 0 0 14px; }
+  .fb-notes { max-width: 720px; margin-top: 18px; display: grid; gap: 6px; }
+  .fb-notes p { margin: 0; }
+  .fb-body { margin: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
+  .fb-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 4px 0 0; color: var(--ink-2); font-size: 13px; }
+  .fb-meta a { color: var(--leaf); }
+  .fb-meta .bad { color: var(--danger); }
   .tr-item.won, .tr-opt.won { box-shadow: inset 0 0 0 1px var(--leaf-deep); }
   .tr-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
   .tr-votes { color: var(--gold); font-size: 13px; font-variant-numeric: tabular-nums; }
@@ -809,8 +826,8 @@ export const TEXT = {
     'foot.privacy': '隱私政策', 'foot.terms': '服務條款',
     'privacy.title': '隱私政策 - WynnChaYuan', 'privacy.h1': '隱私政策',
     'terms.title': '服務條款 - WynnChaYuan', 'terms.h1': '服務條款',
-    'legal.updated': '生效日期：2026 年 10 月 16 日',
-    'privacy.body': "<p>這份說明講的是 WynnChaYuan 的三樣東西會碰到哪些資料：Minecraft 模組 WynnChaYuan、這個網站 wynnchayuan.com，以及 Discord 機器人。WynnChaYuan 是玩家做的非官方專案，由 WynnChaYuan 團隊（聯絡人 LyuChaCha）維護。</p><h2>模組送出的資料</h2><p>披風與名字前的葉子需要連到 wynnchayuan.com。模組在你進 Wynncraft 時報到一次，送出：</p><ul><li>你的 Minecraft UUID，以及 Mojang 簽過的公開個人檔案（名字與外觀）</li><li>用來證明帳號是本人的公鑰與簽章（Mojang 發給每個正版帳號的那一對金鑰）</li><li>要不要穿披風、徽章的設定（葉子要不要彩色、展示哪幾個身分）</li><li>上傳披風時，你選的那張圖</li></ul><p><b>私鑰與登入憑證不會離開遊戲。</b>不送所在的世界、聊天或任何遊戲內容。報到沒有開關，裝了模組、進了 Wynncraft 就會送；不想讓別人看到披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。</p><p>模組不會自動上傳遊戲裡的文字。「匯出未翻譯字串」產生的檔案留在你的電腦上，要不要交給我們由你決定。「直接更新」只有你按了才會從 GitHub Releases 下載新版。</p><h2>網站帳號</h2><p>網站帳號用 Discord 登入，只要 <code>identify</code> 權限：我們記下 Discord 的使用者代號與顯示名稱，不拿 email、不拿你加入的伺服器。Discord 給的存取憑證用完就丟。在遊戲裡打 <code>/wcy link</code> 綁定之後，帳號會多記遊戲的 UUID、名字與綁定時間。</p><h2>披風</h2><ul><li>上傳的圖檔、格式與大小、上傳時間，以及上傳的人是誰（管理的人要知道）</li><li>公開的披風一覽只顯示圖與從 UUID 雜湊出來的代碼，不顯示 UUID 與名字；誰傳了哪一件只有開發者看得到</li><li>你穿過的紀錄與加星號的最愛只有你自己看得到</li><li>設成不公開的披風不會出現在一覽上；等審核的披風在通過之前只有你和管理的人看得到</li><li>為了擋短時間大量上傳，會暫時記下最近幾次上傳的時間，最多十三個小時後自動消失</li><li>被封禁或列入審核名單時，記下 UUID、名字、時間與經手的管理員</li></ul><h2>協作翻譯</h2><p>在 /translate 提案、投票或開術語投票時，記下你的顯示名稱與代號、時間、你寫的內容。提案與投票其他人看得到。定案的譯文會寫進公開的 GitHub 倉庫（授權 CC BY-NC-SA 4.0），合併之後會留在倉庫的歷史裡。</p><h2>Discord 機器人</h2><p>機器人只收到你打的斜線指令：指令與選項、你的 Discord 使用者代號、所在伺服器與頻道的代號、介面語言（Discord 送來的固定欄位）。它讀不到任何聊天訊息，也不保存指令內容。</p><h2>Cookie 與瀏覽器裡存的東西</h2><ul><li><code>lang</code>：記住你選的網站語言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：Discord 登入時的驗證，只在登入的那幾分鐘有用</li><li>瀏覽器的 <code>localStorage</code>：登入的通行證（一天有效）與畫面上的小設定</li></ul><p>沒有廣告，也沒有分析或追蹤用的 Cookie。</p><h2>不記的東西</h2><p>我們的程式不記 IP、所在的世界、聊天或任何遊戲內容。</p><h2>第三方服務</h2><ul><li><b>Cloudflare</b>：網站與資料放在 Cloudflare Workers 與 KV。Cloudflare 為了安全與網路運作會處理連線資訊（包含 IP），依它自己的隱私政策</li><li><b>Discord</b>：登入與機器人</li><li><b>GitHub</b>：原始碼、譯文、更新檔與協作翻譯的 PR</li><li><b>minotar.net</b>：網頁上的玩家頭像由你的瀏覽器直接向它讀取；Discord 機器人的披風預覽則由網站向它讀取那位玩家的 skin</li><li><b>jsDelivr</b>：披風的 3D 預覽程式由你的瀏覽器直接向它讀取</li></ul><p>我們不賣、不出租任何資料，也不拿來投放廣告。</p><h2>保留多久</h2><ul><li>報到名單：十四天沒再報到就從名單上消失</li><li>沒有人穿的披風：留七天，期滿刪除</li><li>遊戲的通行證七天、網頁的一天，過期就失效</li><li>網站帳號、封禁與審核紀錄：留到你要求刪除，或管理的人解除為止</li></ul><h2>你可以做的事</h2><p>披風可以在帳號頁自己移除；不想再報到，移除模組即可。要查看或刪除帳號與相關資料，請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue（請不要在公開的 Issue 貼私人資料）。我們會在合理時間內處理。</p><h2>年齡</h2><p>使用這些服務需要符合 Minecraft 與 Discord 對年齡的要求。</p><h2>修改</h2><p>這份說明改了會更新這一頁與上面的日期；重大的改動會在 Discord 或更新日誌公告。</p>",
+    'legal.updated': '生效日期：2026 年 10 月 17 日',
+    'privacy.body': "<p>這份說明講的是 WynnChaYuan 的三樣東西會碰到哪些資料：Minecraft 模組 WynnChaYuan、這個網站 wynnchayuan.com，以及 Discord 機器人。WynnChaYuan 是玩家做的非官方專案，由 WynnChaYuan 團隊（聯絡人 LyuChaCha）維護。</p><h2>模組送出的資料</h2><p>披風與名字前的葉子需要連到 wynnchayuan.com。模組在你進 Wynncraft 時報到一次，送出：</p><ul><li>你的 Minecraft UUID，以及 Mojang 簽過的公開個人檔案（名字與外觀）</li><li>用來證明帳號是本人的公鑰與簽章（Mojang 發給每個正版帳號的那一對金鑰）</li><li>要不要穿披風、徽章的設定（葉子要不要彩色、展示哪幾個身分）</li><li>上傳披風時，你選的那張圖</li></ul><p><b>私鑰與登入憑證不會離開遊戲。</b>不送所在的世界、聊天或任何遊戲內容。報到沒有開關，裝了模組、進了 Wynncraft 就會送；不想讓別人看到披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。</p><p>模組不會自動上傳遊戲裡的文字。「匯出未翻譯字串」產生的檔案留在你的電腦上，要不要交給我們由你決定。「直接更新」只有你按了才會從 GitHub Releases 下載新版。</p><h2>網站帳號</h2><p>網站帳號用 Discord 登入，只要 <code>identify</code> 權限：我們記下 Discord 的使用者代號與顯示名稱，不拿 email、不拿你加入的伺服器。Discord 給的存取憑證用完就丟。在遊戲裡打 <code>/wcy link</code> 綁定之後，帳號會多記遊戲的 UUID、名字與綁定時間。</p><h2>披風</h2><ul><li>上傳的圖檔、格式與大小、上傳時間，以及上傳的人是誰（管理的人要知道）</li><li>公開的披風一覽只顯示圖與從 UUID 雜湊出來的代碼，不顯示 UUID 與名字；誰傳了哪一件只有開發者看得到</li><li>你穿過的紀錄與加星號的最愛只有你自己看得到</li><li>設成不公開的披風不會出現在一覽上；等審核的披風在通過之前只有你和管理的人看得到</li><li>為了擋短時間大量上傳，會暫時記下最近幾次上傳的時間，最多十三個小時後自動消失</li><li>被封禁或列入審核名單時，記下 UUID、名字、時間與經手的管理員</li></ul><h2>協作翻譯</h2><p>在 /translate 提案、投票或開術語投票時，記下你的顯示名稱與代號、時間、你寫的內容。提案與投票其他人看得到。定案的譯文會寫進公開的 GitHub 倉庫（授權 CC BY-NC-SA 4.0），合併之後會留在倉庫的歷史裡。</p><h2>回饋</h2><p>在 /feedback 或用機器人的 /回饋 送出回饋時，記下你的 Discord 使用者代號與顯示名稱、分類、你寫的內容（含「在哪裡」與語言）、時間與送出的管道（網站或機器人）；為了擋濫發，也會暫時記下你最近一小時送出的時間。回饋只有開發者與管理員看得到。<b>分類是「譯文建議」的，會自動在公開的 GitHub 倉庫開一個 Issue</b>，內容包含你寫的字與你的 Discord 顯示名稱（不包含使用者代號），任何人都看得到，會留在 GitHub 上直到維護的人刪除。</p><h2>Discord 機器人</h2><p>機器人只收到你打的斜線指令：指令與選項、你的 Discord 使用者代號、所在伺服器與頻道的代號、介面語言（Discord 送來的固定欄位）。它讀不到任何聊天訊息；除了 /回饋 送出的回饋（見上面〈回饋〉）之外，也不保存指令內容。</p><h2>Cookie 與瀏覽器裡存的東西</h2><ul><li><code>lang</code>：記住你選的網站語言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：Discord 登入時的驗證，只在登入的那幾分鐘有用</li><li>瀏覽器的 <code>localStorage</code>：登入的通行證（一天有效）與畫面上的小設定</li></ul><p>沒有廣告，也沒有分析或追蹤用的 Cookie。</p><h2>不記的東西</h2><p>我們的程式不記 IP、所在的世界、聊天或任何遊戲內容。</p><h2>第三方服務</h2><ul><li><b>Cloudflare</b>：網站與資料放在 Cloudflare Workers 與 KV。Cloudflare 為了安全與網路運作會處理連線資訊（包含 IP），依它自己的隱私政策</li><li><b>Discord</b>：登入與機器人</li><li><b>GitHub</b>：原始碼、譯文、更新檔、協作翻譯的 PR，以及譯文建議的 Issue</li><li><b>minotar.net</b>：網頁上的玩家頭像由你的瀏覽器直接向它讀取；Discord 機器人的披風預覽則由網站向它讀取那位玩家的 skin</li><li><b>jsDelivr</b>：披風的 3D 預覽程式由你的瀏覽器直接向它讀取</li></ul><p>我們不賣、不出租任何資料，也不拿來投放廣告。</p><h2>保留多久</h2><ul><li>報到名單：十四天沒再報到就從名單上消失</li><li>沒有人穿的披風：留七天，期滿刪除</li><li>遊戲的通行證七天、網頁的一天，過期就失效</li><li>回饋：標成已處理之後留 180 天再自動刪除；還沒處理的留到處理或刪除為止；擋濫發用的送出時間一小時後消失</li><li>網站帳號、封禁與審核紀錄：留到你要求刪除，或管理的人解除為止</li></ul><h2>你可以做的事</h2><p>披風可以在帳號頁自己移除；不想再報到，移除模組即可。要查看或刪除帳號與相關資料，請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue（請不要在公開的 Issue 貼私人資料）。我們會在合理時間內處理。</p><h2>年齡</h2><p>使用這些服務需要符合 Minecraft 與 Discord 對年齡的要求。</p><h2>修改</h2><p>這份說明改了會更新這一頁與上面的日期；重大的改動會在 Discord 或更新日誌公告。</p>",
     'terms.body': "<p>使用 WynnChaYuan 模組、wynnchayuan.com 網站或 Discord 機器人，就表示你同意以下條款。不同意的話請不要使用。</p><h2>非官方專案</h2><p>WynnChaYuan 是玩家做的非官方專案，跟 Wynncraft、Mojang、Microsoft、Discord 都沒有關係，也沒有得到它們的認可。網站上的遊戲材質與畫面屬於 Wynncraft 及各自的權利人。</p><h2>授權</h2><p>模組的程式碼以 AGPL-3.0 授權；譯文與語料以 CC BY-NC-SA 4.0 授權。詳見 GitHub 倉庫的 LICENSE 與 LICENSE-DATA。</p><h2>帳號</h2><ul><li>一個網站帳號綁一個遊戲帳號，綁定一定要從遊戲裡做</li><li>不可以冒用別人的帳號、繞過身分驗證，或把通行證交給別人使用</li><li>違反條款的帳號可能被停用</li></ul><h2>披風的規範</h2><p>披風會被其他玩家與網站訪客看到。上傳的圖不可以包含：</p><ul><li>政治宣傳</li><li>色情、猥褻或血腥的內容</li><li>違法的內容，或侵害他人著作權、商標的圖</li><li>種族歧視、仇恨或騷擾他人的內容</li><li>廣告（宣傳公會除外）</li></ul><p>管理的人可以審核、移除違規的披風，或封禁上傳的人，不另行通知。圖的權利仍是你的；上傳即表示你同意我們保存它，並展示給其他玩家與網站訪客。</p><h2>協作翻譯</h2><ul><li>提交的譯文必須是你有權提供的內容，並同意以 CC BY-NC-SA 4.0 授權</li><li>請照術語表與各語言團隊的決定翻譯；開發者與管理員有最後的決定權</li><li>不要灌水、刷票或提交無關的內容</li></ul><h2>禁止的行為</h2><ul><li>大量或自動化地呼叫網站的 API，或干擾服務運作</li><li>嘗試取得不屬於你的資料或權限</li><li>濫用 Discord 機器人</li></ul><h2>贊助</h2><p>透過 Ko-fi 的贊助是自願的支持。贊助者的回饋（例如 GIF 披風）可能隨專案調整。</p><h2>遊戲與第三方</h2><p>模組只改變你畫面上顯示的文字與外觀，不改變遊戲玩法。使用任何模組都請自行遵守 Wynncraft 與 Minecraft 的規則。</p><h2>不提供保證</h2><p>這些服務照現況提供，可能有錯誤、中斷或停止服務。在法律允許的範圍內，我們不對使用這些服務造成的損失負責。</p><h2>修改與終止</h2><p>我們可能修改這份條款，或停止部分甚至全部服務。修改後會更新這一頁與上面的日期；之後繼續使用，即表示同意新的條款。</p><h2>聯絡</h2><p>有問題請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue。</p>",
     'foot.get': '下載', 'foot.project': '專案', 'foot.support': '支持', 'foot.contact': '聯絡',
     'foot.changelog': '更新日誌', 'foot.license': '程式授權：AGPL-3.0', 'foot.datalicense': '譯文授權：CC BY-NC-SA 4.0',
@@ -949,11 +966,27 @@ export const TEXT = {
     'admin.who': '選擇成員', 'admin.findph': '點一下展開，或打字篩選…',
     'admin.kind': '類型', 'admin.id': '代號', 'admin.nostaff': '還沒有管理員。',
     'admin.bot': 'Discord 機器人', 'admin.botreg': '註冊指令', 'admin.botinvite': '邀請到伺服器',
-    'admin.botnote': '斜線指令 /status、/cape、/translate 由這個網站回應。部署之後，到 Discord Developer Portal 把下面的 Interactions Endpoint URL 填進去，再按「註冊指令」；指令改了要再按一次。Bot Token 用 <code>wrangler secret put DISCORD_BOT_TOKEN</code> 設定，不要貼在任何網頁上。',
+    'admin.botnote': '斜線指令 /status、/cape、/translate、/feedback（繁中介面是 /回饋）由這個網站回應。部署之後，到 Discord Developer Portal 把下面的 Interactions Endpoint URL 填進去，再按「註冊指令」；指令改了要再按一次。Bot Token 用 <code>wrangler secret put DISCORD_BOT_TOKEN</code> 設定，不要貼在任何網頁上。',
     'admin.guilds': '貢獻公會',
     'admin.guildsnote': '會出現在首頁「團隊」那一段，點下去連到那個公會在 Wynncraft 的頁面。先加名字（要跟 Wynncraft 上的一模一樣），再各上傳一張圖示與旗幟。圖會先縮小再傳，PNG、JPEG、WebP 都可以。',
     'admin.gname': '公會名稱', 'admin.gtag': '標籤（可以不填）', 'admin.gpics': '圖示與旗幟', 'admin.guild': '公會',
     'admin.noguilds': '還沒有登記公會。',
+    'admin.feedback': '回饋',
+    'admin.feedbacknote': '網站的回饋頁與 Discord 的 /回饋 送來的都在這裡，新的在最上面。處理完按「標成已處理」，已處理的 180 天後自動刪除；垃圾訊息直接刪除。譯文建議會自動在 GitHub 開 Issue，沒開成的會標出原因，可以按「再開一次 Issue」。',
+    'admin.fbst': '狀態', 'admin.fball': '全部', 'admin.fbopen': '待處理', 'admin.fbdone': '已處理', 'admin.nofeedback': '沒有符合的回饋。',
+
+    'nav.feedback': '回饋', 'foot.feedback': '回饋與建議',
+    'fb.title': '回饋與建議 - WynnChaYuan', 'fb.h1': '回饋與建議',
+    'fb.lede': '譯文哪裡怪怪的、想多翻哪些內容、網站哪裡不好用、想要什麼功能，都可以告訴我們。也可以在 Discord 用機器人的 <code>/回饋</code>。',
+    'fb.gate': '送出回饋要先用 Discord 登入，我們才知道是誰寫的。<a href="/account">前往帳號頁登入</a>',
+    'fb.gatelink': '你是從遊戲裡開這個網站的，還沒綁 Discord。到帳號頁按「綁定 Discord」，或改用 Discord 登入，就能送出回饋。<a href="/account">前往帳號頁</a>',
+    'fb.cat': '分類', 'fb.cat.translation': '譯文建議', 'fb.cat.content': '內容建議', 'fb.cat.website': '網站建議',
+    'fb.cat.feature': '功能建議', 'fb.cat.other': '其他',
+    'fb.lang': '哪一種語言的譯文', 'fb.msg': '想說的話', 'fb.where': '在哪裡（可以不填）',
+    'fb.wherehint': '例如任務或 NPC 的名字、哪個畫面、哪一頁，或直接貼上那一句英文原文。',
+    'fb.send': '送出',
+    'fb.note': '一個人一小時最多送 5 則。<b>譯文建議會自動在 GitHub 開一個公開的 Issue</b>，上面會顯示你的 Discord 顯示名稱（不會顯示使用者代號）；其他分類只有開發者與管理員看得到。詳見<a href="/privacy">隱私政策</a>。',
+    'fb.bugs': '遇到當機、畫面壞掉這類程式錯誤，請到 <a href="' + ISSUES + '">GitHub Issues</a> 回報，附上 log 與截圖會比較快找到原因。',
 
     'features.title': '功能 - WynnChaYuan',
     'features.h1': '功能',
@@ -1097,6 +1130,24 @@ export const TEXT = {
           'github unreachable': '連不到 GitHub，晚點再試',
         },
       },
+      fb: {
+        langNone: '（沒有指定）', whereTr: '在哪裡：哪一句、哪個畫面或任務（建議填）', whereAny: '在哪裡（可以不填）',
+        wherePhTr: '例如：Detlas 的鐵匠說的第一句話', wherePh: '例如：披風一覽、F6 設定的「對話」那一頁',
+        count: '{n} / {max} 字', as: '以 Discord「{n}」的身分送出', done: '收到了，謝謝你的回饋！',
+        issueLink: '看 GitHub 上的 Issue', issueFail: '這次沒能在 GitHub 開 Issue；回饋已經存好，管理員會再補開。',
+        why: {
+          'bad category': '請選一個分類', 'too short': '多寫幾個字吧（至少 3 個字）', 'too long': '太長了（最多 2000 字）',
+          'where too long': '「在哪裡」太長了（最多 200 字）', 'slow down': '一小時內最多送 5 則，{t} 之後可以再送',
+          'bad request': '送出的內容看不懂，請重新整理再試',
+        },
+        cats: { translation: '譯文建議', content: '內容建議', website: '網站建議', feature: '功能建議', other: '其他' },
+        st: { open: '待處理', done: '已處理' },
+        via: { web: '網站', bot: 'Discord /回饋' },
+        counts: '待處理 {open} 則・已處理 {done} 則', where: '在哪裡：{s}', lang: '語言：{s}', uid: 'Discord 使用者代號：{s}',
+        adminIssue: 'GitHub Issue #{n}', issueErr: 'Issue 沒開成（{s}）', handled: '{who} 在 {t} 標成已處理',
+        markDone: '標成已處理', reopen: '重新開啟', retry: '再開一次 Issue', del: '刪除',
+        confirmDel: '刪除這則回饋？刪了就找不回來（已經開的 GitHub Issue 不會跟著關）。',
+      },
       findNone: '沒有找到已註冊的人。直接按「加入」會照你打的字加。', isStaff: '已經是管理員', chosen: '已選：{who}',
       findCount: '{n} 位（已註冊 {all} 位）',
       staff: {
@@ -1133,8 +1184,8 @@ export const TEXT = {
     'foot.privacy': 'Privacy policy', 'foot.terms': 'Terms of service',
     'privacy.title': 'Privacy policy - WynnChaYuan', 'privacy.h1': 'Privacy policy',
     'terms.title': 'Terms of service - WynnChaYuan', 'terms.h1': 'Terms of service',
-    'legal.updated': 'Effective 16 October 2026',
-    'privacy.body': "<p>This page explains what data WynnChaYuan handles across three things: the WynnChaYuan Minecraft mod, this website (wynnchayuan.com) and the Discord bot. WynnChaYuan is an unofficial fan project maintained by the WynnChaYuan team (contact: LyuChaCha).</p><h2>What the mod sends</h2><p>Capes and the leaf before your name need a connection to wynnchayuan.com. The mod checks in once when you join Wynncraft and sends:</p><ul><li>Your Minecraft UUID and your public profile as signed by Mojang (name and skin)</li><li>A public key and signature proving the account is yours (the key pair Mojang issues to every premium account)</li><li>Whether to wear your cape, and your badge settings (coloured leaf, which roles to show)</li><li>When you upload a cape, the image you chose</li></ul><p><b>Your private key and login credentials never leave the game.</b> The mod does not send the world you are in, chat, or any other game content. Checking in has no switch: it happens whenever the mod is installed and you join Wynncraft. To hide your cape from others, turn off \"Wear my cape\" under F6 → \"Badge & cape\".</p><p>The mod never uploads in-game text on its own. Files made by \"Export untranslated strings\" stay on your computer; sending them to us is up to you. \"Update now\" only downloads a new version from GitHub Releases when you press it.</p><h2>Website account</h2><p>Website accounts sign in with Discord using only the <code>identify</code> scope: we keep your Discord user ID and display name. We do not read your email or your server list, and the access token Discord gives us is thrown away after use. Once you link your game account with <code>/wcy link</code>, the account also stores your game UUID, name and the time you linked.</p><h2>Capes</h2><ul><li>The uploaded image, its format and size, when it was uploaded, and who uploaded it (moderators need to know)</li><li>The public gallery shows only the image and a code hashed from the UUID, never the UUID or name; only developers can see who uploaded which cape</li><li>Your history of worn capes and your starred favourites are visible only to you</li><li>Capes set to private stay out of the gallery; capes awaiting review are visible only to you and moderators until approved</li><li>To stop bursts of uploads, the times of your recent uploads are kept for at most thirteen hours</li><li>If you are banned or put on the review list, we store your UUID, name, the time and the moderator involved</li></ul><h2>Translate</h2><p>When you suggest a translation, vote, or open a term poll on /translate, we store your display name and ID, the time, and what you wrote. Suggestions and votes are visible to others. Accepted translations are written to the public GitHub repository (licensed CC BY-NC-SA 4.0) and stay in its history once merged.</p><h2>Discord bot</h2><p>The bot only receives the slash commands you use: the command and its options, your Discord user ID, the server and channel IDs and your client language (fields Discord always sends). It cannot read any chat messages and does not keep what you sent.</p><h2>Cookies and browser storage</h2><ul><li><code>lang</code>: remembers the website language you chose</li><li><code>wcy_oauth</code>, <code>wcy_intent</code>: protect the Discord sign-in and only matter for the few minutes it takes</li><li>Browser <code>localStorage</code>: your sign-in pass (valid for one day) and small display preferences</li></ul><p>There are no ads and no analytics or tracking cookies.</p><h2>What we do not record</h2><p>Our code does not record IP addresses, the world you are in, chat or any other game content.</p><h2>Third-party services</h2><ul><li><b>Cloudflare</b>: the website and its data run on Cloudflare Workers and KV. Cloudflare processes connection data (including IP addresses) for security and network operation under its own privacy policy</li><li><b>Discord</b>: sign-in and the bot</li><li><b>GitHub</b>: source code, translations, release downloads and pull requests from Translate</li><li><b>minotar.net</b>: player heads on the website are loaded by your browser directly from it; for the Discord bot's cape preview, the website fetches that player's skin from it</li><li><b>jsDelivr</b>: the 3D cape viewer is loaded by your browser directly from it</li></ul><p>We do not sell or rent any data, and we do not use it for advertising.</p><h2>How long we keep it</h2><ul><li>Check-in list: you drop off after fourteen days without checking in</li><li>Capes nobody wears: kept for seven days, then deleted</li><li>Passes expire after seven days (game) or one day (website)</li><li>Website accounts, ban and review records: until you ask for deletion or a moderator lifts them</li></ul><h2>Your choices</h2><p>You can remove your cape yourself on the account page. To stop checking in, remove the mod. To see or delete your account and related data, contact <b>LyuChaCha</b> on Discord or open a GitHub issue (please do not post private details in a public issue). We will handle requests within a reasonable time.</p><h2>Age</h2><p>You need to meet the age requirements of Minecraft and Discord to use these services.</p><h2>Changes</h2><p>If this policy changes, we update this page and the date above. Significant changes are announced on Discord or in the changelog.</p>",
+    'legal.updated': 'Effective 17 October 2026',
+    'privacy.body': "<p>This page explains what data WynnChaYuan handles across three things: the WynnChaYuan Minecraft mod, this website (wynnchayuan.com) and the Discord bot. WynnChaYuan is an unofficial fan project maintained by the WynnChaYuan team (contact: LyuChaCha).</p><h2>What the mod sends</h2><p>Capes and the leaf before your name need a connection to wynnchayuan.com. The mod checks in once when you join Wynncraft and sends:</p><ul><li>Your Minecraft UUID and your public profile as signed by Mojang (name and skin)</li><li>A public key and signature proving the account is yours (the key pair Mojang issues to every premium account)</li><li>Whether to wear your cape, and your badge settings (coloured leaf, which roles to show)</li><li>When you upload a cape, the image you chose</li></ul><p><b>Your private key and login credentials never leave the game.</b> The mod does not send the world you are in, chat, or any other game content. Checking in has no switch: it happens whenever the mod is installed and you join Wynncraft. To hide your cape from others, turn off \"Wear my cape\" under F6 → \"Badge & cape\".</p><p>The mod never uploads in-game text on its own. Files made by \"Export untranslated strings\" stay on your computer; sending them to us is up to you. \"Update now\" only downloads a new version from GitHub Releases when you press it.</p><h2>Website account</h2><p>Website accounts sign in with Discord using only the <code>identify</code> scope: we keep your Discord user ID and display name. We do not read your email or your server list, and the access token Discord gives us is thrown away after use. Once you link your game account with <code>/wcy link</code>, the account also stores your game UUID, name and the time you linked.</p><h2>Capes</h2><ul><li>The uploaded image, its format and size, when it was uploaded, and who uploaded it (moderators need to know)</li><li>The public gallery shows only the image and a code hashed from the UUID, never the UUID or name; only developers can see who uploaded which cape</li><li>Your history of worn capes and your starred favourites are visible only to you</li><li>Capes set to private stay out of the gallery; capes awaiting review are visible only to you and moderators until approved</li><li>To stop bursts of uploads, the times of your recent uploads are kept for at most thirteen hours</li><li>If you are banned or put on the review list, we store your UUID, name, the time and the moderator involved</li></ul><h2>Translate</h2><p>When you suggest a translation, vote, or open a term poll on /translate, we store your display name and ID, the time, and what you wrote. Suggestions and votes are visible to others. Accepted translations are written to the public GitHub repository (licensed CC BY-NC-SA 4.0) and stay in its history once merged.</p><h2>Feedback</h2><p>When you send feedback on /feedback or with the bot’s /feedback command, we store your Discord user ID and display name, the category, what you wrote (including “where” and the language), the time and whether it came from the website or the bot; to stop flooding we also briefly keep the times of what you sent in the last hour. Feedback is only visible to developers and moderators. <b>Feedback in the “Translation suggestion” category automatically opens an issue in the public GitHub repository</b> containing what you wrote and your Discord display name (not your user ID); anyone can see it, and it stays on GitHub until a maintainer removes it.</p><h2>Discord bot</h2><p>The bot only receives the slash commands you use: the command and its options, your Discord user ID, the server and channel IDs and your client language (fields Discord always sends). It cannot read any chat messages and, apart from feedback sent with /feedback (see “Feedback” above), does not keep what you sent.</p><h2>Cookies and browser storage</h2><ul><li><code>lang</code>: remembers the website language you chose</li><li><code>wcy_oauth</code>, <code>wcy_intent</code>: protect the Discord sign-in and only matter for the few minutes it takes</li><li>Browser <code>localStorage</code>: your sign-in pass (valid for one day) and small display preferences</li></ul><p>There are no ads and no analytics or tracking cookies.</p><h2>What we do not record</h2><p>Our code does not record IP addresses, the world you are in, chat or any other game content.</p><h2>Third-party services</h2><ul><li><b>Cloudflare</b>: the website and its data run on Cloudflare Workers and KV. Cloudflare processes connection data (including IP addresses) for security and network operation under its own privacy policy</li><li><b>Discord</b>: sign-in and the bot</li><li><b>GitHub</b>: source code, translations, release downloads, pull requests from Translate and issues from translation suggestions</li><li><b>minotar.net</b>: player heads on the website are loaded by your browser directly from it; for the Discord bot's cape preview, the website fetches that player's skin from it</li><li><b>jsDelivr</b>: the 3D cape viewer is loaded by your browser directly from it</li></ul><p>We do not sell or rent any data, and we do not use it for advertising.</p><h2>How long we keep it</h2><ul><li>Check-in list: you drop off after fourteen days without checking in</li><li>Capes nobody wears: kept for seven days, then deleted</li><li>Passes expire after seven days (game) or one day (website)</li><li>Feedback: deleted automatically 180 days after it is marked handled; open feedback stays until it is handled or deleted; the send times kept for rate limiting disappear after an hour</li><li>Website accounts, ban and review records: until you ask for deletion or a moderator lifts them</li></ul><h2>Your choices</h2><p>You can remove your cape yourself on the account page. To stop checking in, remove the mod. To see or delete your account and related data, contact <b>LyuChaCha</b> on Discord or open a GitHub issue (please do not post private details in a public issue). We will handle requests within a reasonable time.</p><h2>Age</h2><p>You need to meet the age requirements of Minecraft and Discord to use these services.</p><h2>Changes</h2><p>If this policy changes, we update this page and the date above. Significant changes are announced on Discord or in the changelog.</p>",
     'terms.body': "<p>By using the WynnChaYuan mod, the wynnchayuan.com website or the Discord bot, you agree to these terms. If you do not agree, please do not use them.</p><h2>Unofficial project</h2><p>WynnChaYuan is an unofficial fan project. It is not affiliated with or endorsed by Wynncraft, Mojang, Microsoft or Discord. Game textures and screens on this website belong to Wynncraft and their respective owners.</p><h2>Licences</h2><p>The mod's code is licensed under AGPL-3.0; translations and corpus data under CC BY-NC-SA 4.0. See LICENSE and LICENSE-DATA in the GitHub repository.</p><h2>Accounts</h2><ul><li>One website account links to one game account, and linking must be done from inside the game</li><li>Do not use someone else's account, get around identity checks, or let others use your pass</li><li>Accounts that break these terms may be suspended</li></ul><h2>Cape rules</h2><p>Capes are seen by other players and website visitors. Uploaded images must not contain:</p><ul><li>Political propaganda</li><li>Sexual, obscene or gory content</li><li>Illegal content, or images that infringe copyrights or trademarks</li><li>Racist, hateful or harassing content</li><li>Advertising (promoting a guild is fine)</li></ul><p>Moderators may review or remove capes that break these rules, or ban the uploader, without notice. You keep the rights to your image; by uploading it you let us store it and show it to other players and website visitors.</p><h2>Translate</h2><ul><li>Only submit translations you have the right to provide, and agree to license them under CC BY-NC-SA 4.0</li><li>Follow the glossary and your language team's decisions; developers and admins have the final say</li><li>No spam, vote stuffing or unrelated content</li></ul><h2>Not allowed</h2><ul><li>Calling the website's API in bulk or automatically, or disrupting the service</li><li>Trying to access data or permissions that are not yours</li><li>Abusing the Discord bot</li></ul><h2>Sponsoring</h2><p>Sponsoring through Ko-fi is voluntary support. Sponsor perks (such as GIF capes) may change as the project evolves.</p><h2>The game and third parties</h2><p>The mod only changes the text and appearance shown on your own screen; it does not change gameplay. You are responsible for following the rules of Wynncraft and Minecraft when using any mod.</p><h2>No warranty</h2><p>These services are provided as is and may have errors, interruptions or be discontinued. To the extent permitted by law, we are not liable for any loss arising from using them.</p><h2>Changes and termination</h2><p>We may change these terms or stop some or all of the services. Changes are posted on this page with an updated date; continuing to use the services means you accept the new terms.</p><h2>Contact</h2><p>For questions, contact <b>LyuChaCha</b> on Discord or open a GitHub issue.</p>",
     'foot.get': 'Download', 'foot.project': 'Project', 'foot.support': 'Support', 'foot.contact': 'Contact',
     'foot.changelog': 'Changelog', 'foot.license': 'Code licence: AGPL-3.0', 'foot.datalicense': 'Translation licence: CC BY-NC-SA 4.0',
@@ -1273,11 +1324,27 @@ export const TEXT = {
     'admin.who': 'Choose a member', 'admin.findph': 'Click to open, or type to filter…',
     'admin.kind': 'Type', 'admin.id': 'ID', 'admin.nostaff': 'No moderators yet.',
     'admin.bot': 'Discord bot', 'admin.botreg': 'Register commands', 'admin.botinvite': 'Invite to a server',
-    'admin.botnote': 'This website answers the slash commands /status, /cape and /translate. After deploying, paste the Interactions Endpoint URL below into the Discord Developer Portal, then press “Register commands”; press it again whenever the commands change. Set the bot token with <code>wrangler secret put DISCORD_BOT_TOKEN</code> and never paste it into any web page.',
+    'admin.botnote': 'This website answers the slash commands /status, /cape, /translate and /feedback. After deploying, paste the Interactions Endpoint URL below into the Discord Developer Portal, then press “Register commands”; press it again whenever the commands change. Set the bot token with <code>wrangler secret put DISCORD_BOT_TOKEN</code> and never paste it into any web page.',
     'admin.guilds': 'Contributing guilds',
     'admin.guildsnote': 'These appear in the team section of the home page and link to the guild’s page on Wynncraft. Add the name first (exactly as it is on Wynncraft), then upload an icon and a banner. Images are shrunk before upload; PNG, JPEG and WebP all work.',
     'admin.gname': 'Guild name', 'admin.gtag': 'Tag (optional)', 'admin.gpics': 'Icon and banner', 'admin.guild': 'Guild',
     'admin.noguilds': 'No guilds yet.',
+    'admin.feedback': 'Feedback',
+    'admin.feedbacknote': 'Everything sent from the feedback page and the Discord /feedback command lands here, newest first. Press “Mark handled” when you are done; handled feedback is deleted automatically after 180 days. Delete spam outright. Translation suggestions open a GitHub issue automatically; if that failed, the reason is shown and you can press “Open issue again”.',
+    'admin.fbst': 'Status', 'admin.fball': 'All', 'admin.fbopen': 'Open', 'admin.fbdone': 'Handled', 'admin.nofeedback': 'No feedback matches.',
+
+    'nav.feedback': 'Feedback', 'foot.feedback': 'Feedback and ideas',
+    'fb.title': 'Feedback - WynnChaYuan', 'fb.h1': 'Feedback and suggestions',
+    'fb.lede': 'Tell us about a translation that reads wrong, content you would like translated, something awkward on the website, or a feature you want. You can also use the bot’s <code>/feedback</code> command on Discord.',
+    'fb.gate': 'Sign in with Discord to send feedback, so we know who wrote it. <a href="/account">Sign in on the account page</a>',
+    'fb.gatelink': 'You opened this site from the game and have not linked Discord yet. Press “Link Discord” on the account page, or sign in with Discord, to send feedback. <a href="/account">Go to the account page</a>',
+    'fb.cat': 'Category', 'fb.cat.translation': 'Translation suggestion', 'fb.cat.content': 'Content suggestion',
+    'fb.cat.website': 'Website suggestion', 'fb.cat.feature': 'Feature suggestion', 'fb.cat.other': 'Other',
+    'fb.lang': 'Which translation', 'fb.msg': 'Your feedback', 'fb.where': 'Where (optional)',
+    'fb.wherehint': 'For example a quest or NPC name, a screen or a page, or paste the English line itself.',
+    'fb.send': 'Send',
+    'fb.note': 'You can send up to 5 per hour. <b>Translation suggestions automatically become a public GitHub issue</b> that shows your Discord display name (never your user ID); other categories are only seen by developers and moderators. See the <a href="/privacy">privacy policy</a>.',
+    'fb.bugs': 'For crashes, broken screens and other bugs, please report on <a href="' + ISSUES + '">GitHub Issues</a> with your log and a screenshot; that finds the cause faster.',
 
     'features.title': 'Features - WynnChaYuan',
     'features.h1': 'Features',
@@ -1422,6 +1489,24 @@ export const TEXT = {
           'line not found': 'This line was not found (it may have just changed). Reload and try again',
           'github not configured': 'GitHub is not set up for the website', 'github unreachable': 'Could not reach GitHub. Try again later',
         },
+      },
+      fb: {
+        langNone: '(not specified)', whereTr: 'Where: which line, screen or quest (recommended)', whereAny: 'Where (optional)',
+        wherePhTr: 'e.g. the first line the Detlas blacksmith says', wherePh: 'e.g. the cape gallery, or the Dialogue page in the F6 settings',
+        count: '{n} / {max}', as: 'Sending as Discord “{n}”', done: 'Got it, thank you for the feedback!',
+        issueLink: 'See the issue on GitHub', issueFail: 'The GitHub issue could not be opened this time; your feedback is saved and a moderator will open it later.',
+        why: {
+          'bad category': 'Pick a category', 'too short': 'Please write a little more (at least 3 characters)',
+          'too long': 'That is too long (2000 characters at most)', 'where too long': '“Where” is too long (200 characters at most)',
+          'slow down': 'You can send 5 per hour; you can send again after {t}', 'bad request': 'That could not be read; reload the page and try again',
+        },
+        cats: { translation: 'Translation suggestion', content: 'Content suggestion', website: 'Website suggestion', feature: 'Feature suggestion', other: 'Other' },
+        st: { open: 'Open', done: 'Handled' },
+        via: { web: 'Website', bot: 'Discord /feedback' },
+        counts: '{open} open · {done} handled', where: 'Where: {s}', lang: 'Language: {s}', uid: 'Discord user ID: {s}',
+        adminIssue: 'GitHub issue #{n}', issueErr: 'Issue not opened ({s})', handled: 'Marked handled by {who} on {t}',
+        markDone: 'Mark handled', reopen: 'Reopen', retry: 'Open issue again', del: 'Delete',
+        confirmDel: 'Delete this feedback? It cannot be recovered (an issue already opened on GitHub stays open).',
       },
       findNone: 'No registered member matches. Pressing “Add” uses exactly what you typed.', isStaff: 'Already a moderator', chosen: 'Selected: {who}',
       findCount: '{n} shown ({all} registered)',
@@ -1660,7 +1745,7 @@ const TEX_CSS = '\n  :root {' + Object.keys(TEX_URL).map((name) =>
 const TPL = (name) => '/template/' + name + '?v=' + CAPE_TEMPLATES[name].v;
 
 function layout(lang, title, active, body, script) {
-  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/translate', 'nav.translate'], ['/account', 'nav.account']]
+  const nav = [['/', 'nav.home'], ['/features', 'nav.features'], ['/capes', 'nav.capes'], ['/translate', 'nav.translate'], ['/feedback', 'nav.feedback'], ['/account', 'nav.account']]
     .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
       + '>%%' + key + '%%</a>').join('');
   const switcher = LANGS.map((code) => '<option value="' + code + '"' + (code === lang ? ' selected' : '')
@@ -1714,7 +1799,7 @@ function layout(lang, title, active, body, script) {
       to('/privacy', '%%foot.privacy%%'), to('/terms', '%%foot.terms%%')])
     + column('foot.support', [to(KOFI, '%%foot.kofi%%'), to('/#sponsoring', '%%foot.sponsoring%%'),
       to('/#team', '%%foot.team%%'), to(REPO + '/blob/main/CONTRIBUTING.md', '%%foot.contribute%%')])
-    + column('foot.contact', ['%%foot.sitedev%%',
+    + column('foot.contact', [to('/feedback', '%%foot.feedback%%'), '%%foot.sitedev%%',
       '<button class="copy" id="dc-copy" type="button" title="%%foot.copy%%">%%foot.discord%%</button>'])
     + '</div></div>'
     + '<div class="legal"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
@@ -3629,11 +3714,153 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
 
 // ------------------------------------------------------------------ 管理
 
+/* ---------------------------------------------------------------- 回饋（/feedback）
+   使用者 2026-10-17：分類（譯文、內容、網站、功能、其他）、想說的話、可以不填的「在哪裡」；要用 Discord 登入，
+   一個人一小時幾則。譯文建議會自動在 GitHub 開 Issue（只放顯示名稱）。走 POST /api/feedback；機器人的 /回饋 進同一個地方。 */
+const FEEDBACK_CAT_OPTIONS = ['translation', 'content', 'website', 'feature', 'other']
+  .map((c) => '<option value="' + c + '">%%fb.cat.' + c + '%%</option>').join('');
+
+const FEEDBACK = String.raw`
+  <h1>%%fb.h1%%</h1>
+  <p class="lede">%%fb.lede%%</p>
+  <p class="panel fb-gate" id="fb-gate">%%fb.gate%%</p>
+  <p class="panel fb-gate" id="fb-gatelink" hidden>%%fb.gatelink%%</p>
+  <form class="panel fb-form" id="fb-form" hidden novalidate>
+    <p class="note fb-as" id="fb-as" hidden></p>
+    <div class="form">
+      <div><label for="fb-cat">%%fb.cat%%</label><select id="fb-cat">` + FEEDBACK_CAT_OPTIONS + String.raw`</select></div>
+      <div id="fb-langbox" hidden><label for="fb-lang">%%fb.lang%%</label><select id="fb-lang"></select></div>
+    </div>
+    <label for="fb-text">%%fb.msg%%</label>
+    <textarea id="fb-text" class="tr-text" rows="7" maxlength="2000" required aria-describedby="fb-count"></textarea>
+    <p class="hint fb-count" id="fb-count" aria-live="polite"></p>
+    <label for="fb-where" id="fb-wherelabel">%%fb.where%%</label>
+    <input type="text" id="fb-where" maxlength="200" autocomplete="off" aria-describedby="fb-wherehint">
+    <p class="hint" id="fb-wherehint">%%fb.wherehint%%</p>
+    <div class="tr-actions" style="margin-top:16px"><button class="btn primary" id="fb-send" type="submit">%%fb.send%%</button></div>
+    <p class="msg fb-out" id="fb-out" role="status"></p>
+  </form>
+  <div class="fb-notes">
+    <p class="note">%%fb.note%%</p>
+    <p class="note">%%fb.bugs%%</p>
+  </div>
+`;
+
+const FEEDBACK_JS = '<script>' + String.raw`
+  var F = L.fb;
+  var MAX = 2000;
+  var form = document.getElementById('fb-form');
+  var gate = document.getElementById('fb-gate');
+  var cat = document.getElementById('fb-cat');
+  var langBox = document.getElementById('fb-langbox');
+  var langSel = document.getElementById('fb-lang');
+  var text = document.getElementById('fb-text');
+  var count = document.getElementById('fb-count');
+  var where = document.getElementById('fb-where');
+  var out = document.getElementById('fb-out');
+  var send = document.getElementById('fb-send');
+  var SITE_TO = { zh: 'zh_tw', 'zh-cn': 'zh_cn', ja: 'ja_jp', ko: 'ko_kr', ru: 'ru_ru', es: 'es_es', tr: 'tr_tr' };
+  var none = el('option', '', F.langNone);
+  none.value = '';
+  langSel.append(none);
+  ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'].forEach(function (code) {
+    var o = el('option', '', L.tr.langs[code] || code);
+    o.value = code;
+    langSel.append(o);
+  });
+  var pageLang = document.documentElement.lang.toLowerCase();
+  langSel.value = SITE_TO[pageLang] || SITE_TO[pageLang.split('-')[0]] || (pageLang === 'zh-hans' ? 'zh_cn' : '');
+  /* 從別處連過來可以先選好分類：/feedback?cat=translation */
+  var asked = new URLSearchParams(location.search).get('cat');
+  if (asked && cat.querySelector('option[value="' + asked.replace(/[^a-z]/g, '') + '"]')) cat.value = asked;
+  /* 譯文建議：多問一個語言，「在哪裡」也特別請他填 */
+  function shape() {
+    var tr = cat.value === 'translation';
+    langBox.hidden = !tr;
+    document.getElementById('fb-wherelabel').textContent = tr ? F.whereTr : F.whereAny;
+    where.placeholder = tr ? F.wherePhTr : F.wherePh;
+  }
+  cat.onchange = shape;
+  shape();
+  function counter() {
+    count.textContent = fmt(F.count, { n: text.value.length, max: MAX });
+    count.classList.toggle('bad', text.value.length > MAX);
+  }
+  text.addEventListener('input', counter);
+  counter();
+  function say(ok, message) {
+    out.className = 'msg fb-out ' + (ok ? 'ok' : 'bad');
+    out.textContent = message;
+    flash(out);
+  }
+  whoami.then(function (me) {
+    if (!me) return;
+    gate.hidden = true;
+    form.hidden = false;
+    var name = me.discord && me.discord.name;
+    if (name) {
+      var as = document.getElementById('fb-as');
+      as.textContent = fmt(F.as, { n: name });
+      as.hidden = false;
+    }
+  });
+  form.onsubmit = function (e) {
+    e.preventDefault();
+    if (text.value.trim().length < 3) { say(false, F.why['too short']); text.focus(); return; }
+    var tr = cat.value === 'translation';
+    send.disabled = true;
+    say(true, L.sending);
+    api('/feedback', {
+      method: 'POST',
+      body: JSON.stringify({ cat: cat.value, msg: text.value, where: where.value, lang: tr ? langSel.value : '' }),
+      headers: { 'content-type': 'application/json' }
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (b) {
+        send.disabled = false;
+        if (!r.ok) {
+          if (b.why === 'discord first' || b.why === 'login first') {
+            form.hidden = true;
+            document.getElementById(b.why === 'discord first' ? 'fb-gatelink' : 'fb-gate').hidden = false;
+            return;
+          }
+          if (b.why === 'slow down') { say(false, fmt(F.why['slow down'], { t: new Date(b.until).toLocaleTimeString() })); return; }
+          say(false, F.why[b.why] || fmt(L.failed, { s: b.why || r.status }));
+          return;
+        }
+        say(true, F.done);
+        if (b.issue && String(b.issue).indexOf('https://github.com/') === 0) {
+          var link = el('a', '', F.issueLink);
+          link.href = b.issue;
+          link.rel = 'noopener';
+          out.append(' ', link);
+        } else if (b.issueFailed) {
+          out.append(' ' + F.issueFail);
+        }
+        text.value = '';
+        where.value = '';
+        counter();
+      });
+    }).catch(function () { send.disabled = false; say(false, L.offline); });
+  };
+` + '</script>';
+
 const ADMIN = String.raw`
   <h1>%%admin.h1%%</h1>
   <p class="lede" id="gate">%%admin.gate%%</p>
   <div id="panel" hidden>
     <p class="lede">%%admin.lede%%</p>
+
+    <h2>%%admin.feedback%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.feedbacknote%%</p>
+      <div class="tr-search">
+        <select class="pick" id="fbf-cat" aria-label="%%fb.cat%%"><option value="">%%admin.fball%%</option>` + FEEDBACK_CAT_OPTIONS + String.raw`</select>
+        <select class="pick" id="fbf-st" aria-label="%%admin.fbst%%"><option value="open">%%admin.fbopen%%</option><option value="done">%%admin.fbdone%%</option><option value="">%%admin.fball%%</option></select>
+        <span class="note" id="fbf-counts"></span>
+      </div>
+    </div>
+    <div id="fbf-list" class="tr-list" style="margin-top:10px"></div>
+    <p class="note" id="nofeedback" hidden style="margin:10px">%%admin.nofeedback%%</p>
 
     <h2>%%admin.bans%%</h2>
     <div class="panel scroll">
@@ -4255,10 +4482,87 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
+  /* 回饋：網站的回饋頁與 Discord 的 /回饋 送來的，新的在前。標已處理、重新開啟、刪除；譯文建議的 Issue 沒開成可以再開一次 */
+  var FB = L.fb;
+  function fbPost(path, body) {
+    return api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (b) { b.okay = r.ok; b.status = r.status; return b; }); });
+  }
+  function fbChip(text, cls) { return el('span', 'tr-chip' + (cls ? ' ' + cls : ''), text); }
+  function loadFeedback() {
+    var q = '?cat=' + encodeURIComponent(document.getElementById('fbf-cat').value)
+      + '&st=' + encodeURIComponent(document.getElementById('fbf-st').value);
+    return api('/admin/feedback' + q).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      var list = document.getElementById('fbf-list');
+      list.replaceChildren();
+      if (!data) return;
+      document.getElementById('fbf-counts').textContent = fmt(FB.counts, { open: data.counts.open, done: data.counts.done });
+      document.getElementById('nofeedback').hidden = data.items.length > 0;
+      data.items.forEach(function (item) { list.append(feedbackCard(item)); });
+    });
+  }
+  function feedbackCard(item) {
+    var card = el('article', 'tr-row');
+    var head = el('div', 'tr-head');
+    head.append(fbChip(FB.cats[item.cat] || item.cat, item.cat === 'translation' ? 'leaf' : ''),
+      fbChip(FB.st[item.st] || item.st, item.st === 'done' ? '' : 'gold'),
+      el('span', 'note', item.name + ' · ' + new Date(item.t).toLocaleString() + ' · ' + (FB.via[item.via] || item.via)));
+    card.append(head, el('p', 'fb-body', item.msg));
+    var meta = el('p', 'fb-meta');
+    if (item.where) meta.append(el('span', '', fmt(FB.where, { s: item.where })));
+    if (item.lang) meta.append(el('span', '', fmt(FB.lang, { s: L.tr.langs[item.lang] || item.lang })));
+    meta.append(el('span', '', fmt(FB.uid, { s: item.uid })));
+    if (item.issue && String(item.issue.url).indexOf('https://github.com/') === 0) {
+      var link = el('a', '', fmt(FB.adminIssue, { n: item.issue.n || '' }));
+      link.href = item.issue.url;
+      link.rel = 'noopener';
+      meta.append(link);
+    } else if (item.issueError) {
+      meta.append(el('span', 'bad', fmt(FB.issueErr, { s: item.issueError })));
+    }
+    if (item.done) meta.append(el('span', '', fmt(FB.handled, { who: item.done.by, t: new Date(item.done.t).toLocaleString() })));
+    card.append(meta);
+    var bar = el('div', 'tr-actions');
+    var flip = el('button', 'btn small' + (item.st === 'done' ? '' : ' primary'), item.st === 'done' ? FB.reopen : FB.markDone);
+    flip.type = 'button';
+    flip.onclick = function () {
+      flip.disabled = true;
+      fbPost('/admin/feedback/status', { id: item.id, st: item.st === 'done' ? 'open' : 'done' }).then(function (b) {
+        if (b.okay) loadFeedback(); else { flip.disabled = false; alert(fmt(L.liftFail, { s: b.why || b.status })); }
+      });
+    };
+    bar.append(flip);
+    if (item.cat === 'translation' && !item.issue) {
+      var again = el('button', 'btn small', FB.retry);
+      again.type = 'button';
+      again.onclick = function () {
+        again.disabled = true;
+        fbPost('/admin/feedback/issue', { id: item.id }).then(function (b) {
+          if (b.item) card.replaceWith(feedbackCard(b.item));
+          if (!b.okay) alert(fmt(FB.issueErr, { s: b.why || b.status }));
+        });
+      };
+      bar.append(again);
+    }
+    var drop = el('button', 'btn small', FB.del);
+    drop.type = 'button';
+    drop.onclick = function () {
+      if (!confirm(FB.confirmDel)) return;
+      fbPost('/admin/feedback/delete', { id: item.id }).then(function (b) {
+        if (b.okay) loadFeedback(); else alert(fmt(L.liftFail, { s: b.why || b.status }));
+      });
+    };
+    bar.append(drop);
+    card.append(bar);
+    return card;
+  }
+  document.getElementById('fbf-cat').onchange = loadFeedback;
+  document.getElementById('fbf-st').onchange = loadFeedback;
   whoami.then(function (me) {
     if (!me || !me.staff) return;
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
+    loadFeedback();
     loadTranslators();
     loadBans();
     loadReviews();
@@ -4957,6 +5261,7 @@ const PAGES = {
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],
   '/translate': ['tr.title', TRANSLATE, TRANSLATE_JS],
+  '/feedback': ['fb.title', FEEDBACK, FEEDBACK_JS],
   '/privacy': ['privacy.title', legalPage('privacy'), ''],
   '/terms': ['terms.title', legalPage('terms'), ''],
 };
@@ -5038,6 +5343,10 @@ function filled(code) {
   js.tr.st = { ...base.js.tr.st, ...((own.js && own.js.tr && own.js.tr.st) || {}) };
   js.tr.langs = { ...base.js.tr.langs, ...((own.js && own.js.tr && own.js.tr.langs) || {}) };
   js.translator = { ...base.js.translator, ...((own.js && own.js.translator) || {}) };
+  js.fb = { ...base.js.fb, ...((own.js && own.js.fb) || {}) };
+  for (const part of ['why', 'cats', 'st', 'via']) {
+    js.fb[part] = { ...base.js.fb[part], ...((own.js && own.js.fb && own.js.fb[part]) || {}) };
+  }
   return { ...base, ...own, js };
 }
 
