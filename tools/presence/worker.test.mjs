@@ -53,6 +53,7 @@ const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名�
 let githubFile = '';
 const discordCalls = [];
 let discordAppKey = '';
+let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
 globalThis.fetch = async (url, init = {}) => {
@@ -101,6 +102,9 @@ globalThis.fetch = async (url, init = {}) => {
         : new Response('{}', { status: 401 });
     }
     return new Response('{}', { status: 404 });
+  }
+  if (u.hostname === 'minotar.net' && u.pathname.startsWith('/skin/')) {
+    return fakeSkin ? new Response(fakeSkin, { status: 200 }) : new Response('', { status: 404 });
   }
   if (u.hostname === 'raw.githubusercontent.com' && u.pathname.includes('/translate-index/')) {
     return new Response(JSON.stringify({ files: ['npc.json', 'quest/q.json'], rows: [
@@ -1945,7 +1949,43 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       const sent = JSON.parse(discordCalls.find((c) => c.method === 'PATCH').body);
       check('★ 補上結果之前，預覽圖已經算好存起來（Discord 來抓時不必現算）', env.CORPUS.data.has('prev:' + hash)
         && sent.embeds[0].image.url.endsWith('/api/cape-preview/' + hash));
-      for (const k of ['blob:' + hash, 'prev:' + hash, 'blob:' + ghash, 'prev:' + ghash]) env.CORPUS.data.delete(k);
+      // ---- 人物預覽：skin 穿著披風，正面＋背面 ----
+      // skin：頭正面塗紅、頭背面塗藍、身體正面塗綠（其餘透明）
+      const sk = new Uint8Array(64 * 64 * 3);
+      const paintSkin = (x0, y0, w, h, c) => {
+        for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) sk.set(c, (y * 64 + x) * 3);
+      };
+      paintSkin(8, 8, 8, 8, [200, 0, 0]);
+      paintSkin(24, 8, 8, 8, [0, 0, 200]);
+      paintSkin(20, 20, 8, 12, [0, 200, 0]);
+      // 測試用的 skin 沒有透明度，外層（帽子、外套）也要塗成同色，不然整片黑會蓋住
+      paintSkin(40, 8, 8, 8, [200, 0, 0]);
+      paintSkin(56, 8, 8, 8, [0, 0, 200]);
+      paintSkin(20, 36, 8, 12, [0, 200, 0]);
+      fakeSkin = await encodePng(64, 64, sk);
+      const who = 'c'.repeat(32);
+      r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + who), env);
+      const fig = await decodePng(new Uint8Array(await r.arrayBuffer()));
+      const at2 = (x, y) => [...fig.rgba.subarray((y * fig.width + x) * 4, (y * fig.width + x) * 4 + 3)];
+      // 版面：P=12、間隔 48、上邊 36；左邊是正面，右邊是背面
+      const P = 12, gap = 4 * P, top = 3 * P;
+      check('★ 人物預覽：正面的頭是 skin 的頭正面、身體是 skin 的身體', r.status === 200
+        && at2(gap + 8 * P, top + 4 * P)[0] === 200 && at2(gap + 8 * P, top + 12 * P)[1] === 200);
+      check('★ 人物預覽：背面的頭是 skin 的頭背面，身上蓋著披風的外側（紅色那塊）',
+        at2(gap * 2 + 16 * P + 8 * P, top + 4 * P)[2] === 200 && at2(gap * 2 + 16 * P + 8 * P, top + 14 * P)[0] === 220);
+      check('人物那份另外存（prev:<雜湊>:<UUID>，三天）', env.CORPUS.data.has('prev:' + hash + ':' + who)
+        && env.CORPUS.data.get('prev:' + hash + ':' + who).ttl === 3 * 86400);
+      fakeSkin = null;
+      r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + 'd'.repeat(32)), env);
+      check('抓不到 skin 就畫灰色人偶，不會失敗', r.status === 200 && r.headers.get('content-type') === 'image/png');
+      r = await worker.fetch(api('/cape-preview/' + ghash + '?u=' + who), env);
+      check('★ GIF 披風的人物預覽也會動', r.headers.get('content-type') === 'image/gif'
+        && decodeGif(new Uint8Array(await r.arrayBuffer())).frames.length === 3);
+      await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: hash, t: 'png', n: 'Dottie_9', v: 1, u: who } });
+      reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
+      check('★ /cape 的圖是那個人的人物預覽（帶 UUID）', reply.data.embeds[0].image.url.endsWith('/api/cape-preview/' + hash + '?u=' + who));
+      for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('prev:')) env.CORPUS.data.delete(k);
+      for (const k of ['blob:' + hash, 'blob:' + ghash]) env.CORPUS.data.delete(k);
     }
     env.CORPUS.data.delete('cape:' + capeId);
     reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'no such!' }])), env)).json();

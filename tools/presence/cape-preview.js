@@ -500,3 +500,174 @@ export async function capePreview(bytes, type) {
   const box = layout(png.width, png.height, 512);
   return { bytes: await encodePng(box.width, box.height, paint(png.rgba, png.width, png.height, box, true)), type: 'png' };
 }
+
+// ---------------------------------------------------------------- 人物：skin 穿著披風，正面＋背面
+
+/*
+ * 使用者 2026-10-17：「像網站預覽展示 skin＋披風和正反面（如果 GIF 能動的話）」。
+ * 照 Minecraft 的貼圖位置把 skin 平貼成正面與背面（16×32 格，每格 P 像素），
+ * 背面蓋上披風的外側（範本 (1,1) 那塊 10×16 格，跟披風一覽的卡片同一塊），
+ * 正面在腿的兩旁露出披風內側（(12,1) 那塊，從前面看是左右相反的）。
+ * 細手臂（Alex）照 skin 本身判斷；舊式 64×32 的 skin 左手左腳是右邊鏡射過來的。
+ */
+
+/** 沒有 skin 時的灰色人偶（跟網頁立體檢視的木偶同一組顏色）。 */
+function mannequin() {
+  const rgba = new Uint8Array(64 * 64 * 4);
+  const fill = (x0, y0, w, h, c) => {
+    for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) {
+      const o = (y * 64 + x) * 4;
+      rgba[o] = c[0]; rgba[o + 1] = c[1]; rgba[o + 2] = c[2]; rgba[o + 3] = 255;
+    }
+  };
+  fill(0, 0, 32, 16, [0xa4, 0xae, 0xa7]);
+  fill(0, 16, 64, 16, [0x8f, 0x9a, 0x93]);
+  fill(16, 48, 32, 16, [0x7d, 0x88, 0x81]);
+  fill(0, 16, 16, 16, [0x7d, 0x88, 0x81]);
+  return { width: 64, height: 64, rgba };
+}
+
+/** 一個面要畫在哪：[skin x, skin y, 寬, 高, 人物 x, 人物 y, 左右翻]（單位都是 skin 像素）。 */
+function parts(skin) {
+  const legacy = skin.height < 64;
+  const px = (x, y) => skin.rgba[((y * skin.width) + x) * 4 + 3];
+  const aw = !legacy && px(54, 20) === 0 ? 3 : 4;        // 細手臂：右臂背面的第四欄是空的
+  const L = 4 - aw;                                       // 細手臂往身體靠一格
+  const front = [
+    [8, 8, 8, 8, 4, 0], [20, 20, 8, 12, 4, 8],
+    [44, 20, aw, 12, L, 8], [4, 20, 4, 12, 4, 20],
+  ];
+  const back = [
+    [24, 8, 8, 8, 4, 0], [32, 20, 8, 12, 4, 8],
+    [52 - (4 - aw), 20, aw, 12, 12, 8], [12, 20, 4, 12, 8, 20],
+  ];
+  if (legacy) {
+    front.push([44, 20, aw, 12, 12, 8, true], [4, 20, 4, 12, 8, 20, true]);
+    back.push([52, 20, aw, 12, L, 8, true], [12, 20, 4, 12, 4, 20, true]);
+    front.push([40, 8, 8, 8, 4, 0]);                      // 帽子層
+    back.push([56, 8, 8, 8, 4, 0]);
+  } else {
+    front.push([36, 52, aw, 12, 12, 8], [20, 52, 4, 12, 8, 20]);
+    back.push([44 - (4 - aw), 52, aw, 12, L, 8], [28, 52, 4, 12, 4, 20]);
+    // 外層（帽子、外套、袖子、褲管）
+    front.push([40, 8, 8, 8, 4, 0], [20, 36, 8, 12, 4, 8], [44, 36, aw, 12, L, 8], [52, 52, aw, 12, 12, 8],
+      [4, 36, 4, 12, 4, 20], [4, 52, 4, 12, 8, 20]);
+    back.push([56, 8, 8, 8, 4, 0], [32, 36, 8, 12, 4, 8], [52 - (4 - aw), 36, aw, 12, 12, 8],
+      [60 - (4 - aw), 52, aw, 12, L, 8], [12, 36, 4, 12, 8, 20], [12, 52, 4, 12, 4, 20]);
+  }
+  return { front, back };
+}
+
+/** 把 skin 的幾個面拼成 16×32 的人物（RGBA）。 */
+function figure(skin, list) {
+  const out = new Uint8Array(16 * 32 * 4);
+  for (const [sx, sy, w, h, dx, dy, flip] of list) {
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const tx = sx + (flip ? w - 1 - x : x), ty = sy + y;
+      if (tx >= skin.width || ty >= skin.height) continue;
+      const s = (ty * skin.width + tx) * 4;
+      const a = skin.rgba[s + 3] / 255;
+      if (!a) continue;
+      const o = ((dy + y) * 16 + dx + x) * 4;
+      for (let c = 0; c < 3; c++) out[o + c] = Math.round(skin.rgba[s + c] * a + out[o + c] * (1 - a));
+      out[o + 3] = Math.max(out[o + 3], skin.rgba[s + 3]);
+    }
+  }
+  return out;
+}
+
+/**
+ * 畫一張：左正面、右背面，底下各一圈影子。
+ *
+ * @param skin {width, height, rgba}
+ * @param cape {width, height, rgba} 披風範本（22×17 格）
+ * @param P 每個 skin 像素畫成幾格
+ * @param gradient 底色用漸層（PNG）還是單色（GIF 的調色盤有限）
+ */
+function paintFigure(skin, faces, cape, P, gradient) {
+  const front = figure(skin, faces.front), back = figure(skin, faces.back);
+  const gap = 4 * P, top = 3 * P;
+  const W = 16 * P * 2 + gap * 3, H = 32 * P + top * 2;
+  const rgb = new Uint8Array(W * H * 3);
+  const cell = cape.width / 22;
+  const put = (x, y, r, g, b, a) => {
+    const o = (y * W + x) * 3;
+    rgb[o] = Math.round(r * a + rgb[o] * (1 - a));
+    rgb[o + 1] = Math.round(g * a + rgb[o + 1] * (1 - a));
+    rgb[o + 2] = Math.round(b * a + rgb[o + 2] * (1 - a));
+  };
+  for (let y = 0; y < H; y++) {
+    const t = H > 1 ? y / (H - 1) : 0;
+    const bg = gradient ? TOP.map((v, i) => Math.round(v + (BOTTOM[i] - v) * t)) : FLAT;
+    for (let x = 0; x < W; x++) rgb.set(bg, (y * W + x) * 3);
+  }
+  // 影子：腳下一圈壓暗的橢圓
+  for (const ox of [gap, gap * 2 + 16 * P]) {
+    const cx = ox + 8 * P, cy = top + 32 * P, rx = 7 * P, ry = 1.4 * P;
+    for (let y = Math.floor(cy - ry); y <= Math.ceil(cy + ry); y++) for (let x = Math.floor(cx - rx); x <= Math.ceil(cx + rx); x++) {
+      if (x < 0 || y < 0 || x >= W || y >= H) continue;
+      const d = ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2;
+      if (d <= 1) put(x, y, 0, 0, 0, 0.35 * (1 - d));
+    }
+  }
+  // 披風：外側 (1,1)、內側 (12,1)，10×16 格，掛在肩膀（人物座標 x 3..13、y 8..24）
+  const capeAt = (ox, inner, fx, fy) => {
+    const u = fx / (10 * P), v = fy / (16 * P);
+    const cx = inner ? 12 + (1 - u) * 10 : 1 + u * 10;
+    const sx = Math.min(cape.width - 1, Math.floor(cx * cell)), sy = Math.min(cape.height - 1, Math.floor((1 + v * 16) * cell));
+    const s = (sy * cape.width + sx) * 4;
+    return [cape.rgba[s], cape.rgba[s + 1], cape.rgba[s + 2], cape.rgba[s + 3] / 255];
+  };
+  const drawCape = (ox, inner) => {
+    for (let fy = 0; fy < 16 * P; fy++) for (let fx = 0; fx < 10 * P; fx++) {
+      const [r, g, b, a] = capeAt(ox, inner, fx, fy);
+      if (a) put(ox + 3 * P + fx, top + 8 * P + fy, r, g, b, a);
+    }
+  };
+  const drawFigure = (ox, fig) => {
+    for (let y = 0; y < 32 * P; y++) for (let x = 0; x < 16 * P; x++) {
+      const o = ((y / P | 0) * 16 + (x / P | 0)) * 4;
+      if (fig[o + 3]) put(ox + x, top + y, fig[o], fig[o + 1], fig[o + 2], 1);
+    }
+  };
+  drawCape(gap, true);                       // 正面：披風在身後，只從腿的兩旁露出來
+  drawFigure(gap, front);
+  drawFigure(gap * 2 + 16 * P, back);        // 背面：披風蓋在身上
+  drawCape(gap * 2 + 16 * P, false);
+  return { width: W, height: H, rgb };
+}
+
+/**
+ * 披風＋skin → 人物預覽（正面、背面）。GIF 的披風逐格畫，照樣會動。
+ *
+ * @param capeBytes 披風原圖
+ * @param type 'png' 或 'gif'
+ * @param skinBytes skin 的 PNG；沒有（抓不到）就用灰色人偶
+ */
+export async function figurePreview(capeBytes, type, skinBytes) {
+  let skin = null;
+  if (skinBytes) {
+    try {
+      skin = await decodePng(skinBytes);
+    } catch (e) {
+      skin = null;
+    }
+  }
+  if (!skin || skin.width !== 64 || (skin.height !== 64 && skin.height !== 32)) skin = mannequin();
+  const faces = parts(skin);
+  if (type === 'gif') {
+    const gif = decodeGif(capeBytes);
+    if (!gif) return null;
+    let size = null;
+    const frames = gif.frames.map((f) => {
+      const pic = paintFigure(skin, faces, { width: gif.width, height: gif.height, rgba: f.rgba }, 8, false);
+      size = pic;
+      return { rgb: pic.rgb, delay: f.delay };
+    });
+    return { bytes: encodeGif(size.width, size.height, frames), type: 'gif' };
+  }
+  const png = await decodePng(capeBytes);
+  if (!png) return null;
+  const pic = paintFigure(skin, faces, png, 12, true);
+  return { bytes: await encodePng(pic.width, pic.height, pic.rgb), type: 'png' };
+}
