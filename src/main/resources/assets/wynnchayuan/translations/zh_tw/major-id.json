@@ -874,10 +874,10 @@
    "_raw": "All Ophanim orbs deal 250% damage, gain +5 Crystallize per hit, and instead orbit around you. Using Main Attack causes all orbs to travel faster."
   },
   "major-id#0167": {
-   "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
-   "dst": "{~1} 格內的友軍會獲得等同於你從生命恢復與生命竊取中獲得的 {~2} 生命值。",
+   "src": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within {~} blocks will receive the same amount.",
+   "dst": "每當你從生命竊取與生命恢復屬性獲得生命時，{~} 格內的友軍也會獲得等量的生命值。",
    "role": "desc",
-   "_raw": "Allies within 16 blocks gain 100% of the health you gain from Health Regen and Life Steal."
+   "_raw": "Whenever you gain health from your Life Steal and Health Regen IDs, allies within 16 blocks will receive the same amount."
   },
   "major-id#0168": {
    "src": "Armour Breaker now gives an extra +{~} damage and has its cooldown reduced by {~}s, but lasts half as long.",
@@ -892,10 +892,10 @@
    "_raw": "Arrow Bomb's velocity is doubled but loses -66% radius and -20% damage."
   },
   "major-id#0170": {
-   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each. Feedback loop arrow cap is reduced by {~}",
+   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each. Feedback loop arrow cap is reduced by {~}.",
    "dst": "Arrow Hurricane 變成 {~1} 發密集箭矢的箭流，每一發造成 {#}{~2}、{#}{~3} 與 {#}{~4}。正向回饋的箭矢上限減少 {~5}。",
    "role": "desc",
-   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each. Feedback loop arrow cap is reduced by 90%"
+   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each. Feedback loop arrow cap is reduced by 50%."
   },
   "major-id#0171": {
    "src": "Arrow Hurricane becomes a consistent, straight stream of arrows with a slower fire rate, dealing greater knockback and triple damage per arrow. Additionally, Arsenal Synergy requires {~} less arrows for each flint arrow.",
@@ -949,16 +949,16 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Mantra will overload Masks {~} faster, but also decay them {~} faster.",
-   "dst": "Mantra 使 Masks 超載的速度加快 {~1}，但衰退的速度也加快 {~2}。",
+   "src": "Mantra will overload Masks {~} faster, but decays them {~} faster and halves their grace period.",
+   "dst": "Mantra 使 Masks 超載的速度加快 {~1}，但衰退的速度也加快 {~2}，且緩衝期減半。",
    "role": "desc",
-   "_raw": "Mantra will overload Masks 150% faster, but also decay them 100% faster."
+   "_raw": "Mantra will overload Masks 150% faster, but decays them 100% faster and halves their grace period."
   },
   "major-id#0181": {
-   "src": "Bakal's Grasp and Enraged Blow have their caps doubled, but Corruption charges {~} as fast.",
-   "dst": "Bakal's Grasp 與 Enraged Blow 的上限加倍，但腐敗的累積速度變為 {~}。",
+   "src": "Bakal's Grasp and Enraged Blow grant {~} less damage, but have their caps increased by {~}. Corrupted lasts twice as long and can go up to {~}.",
+   "dst": "Bakal's Grasp 與 Enraged Blow 提供的傷害減少 {~1}，但上限提高 {~2}。腐敗的持續時間加倍，最高可達 {~3}。",
    "role": "desc",
-   "_raw": "Bakal's Grasp and Enraged Blow have their caps doubled, but Corruption charges 20% as fast."
+   "_raw": "Bakal's Grasp and Enraged Blow grant 40% less damage, but have their caps increased by 50%. Corrupted lasts twice as long and can go up to 200%."
   },
   "major-id#0182": {
    "src": "Bash gains +{~} Area of Effect and is {~}s faster.",
@@ -967,10 +967,10 @@
    "_raw": "Bash gains +1 Area of Effect and is 0.05s faster."
   },
   "major-id#0183": {
-   "src": "Bash is replaced by a single hit, gaining +{~} radius and dealing {#}+{~}, {#}+{~}, and {#}+{~}. Boiling Blood's cooldown is set to {~}s, gains {#}+{~}, {#}+{~}, and burns twice as fast for {~}s, but can't slow.",
-   "dst": "Bash 變為單次打擊，半徑增加 +{~1}，並額外造成 {#}+{~2}、{#}+{~3} 與 {#}+{~4}。Boiling Blood 的冷卻時間固定為 {~5} 秒，獲得 {#}+{~6}、{#}+{~7}，燃燒速度加倍並持續 {~8} 秒，但不再造成緩速。",
+   "src": "Bash is replaced by a single hit, gaining +{~} radius and dealing {#}+{~}, {#}+{~}, and {#}+{~}, but further delays Final Crush. Boiling Blood's cooldown is set to {~}s, deals {#}+{~}, {#}+{~}, and burns twice as fast for {~}s.",
+   "dst": "Bash 變為單次打擊，半徑增加 +{~1}，並額外造成 {#}+{~2}、{#}+{~3} 與 {#}+{~4}，但 Final Crush 會更晚發動。Boiling Blood 的冷卻時間固定為 {~5} 秒，造成 {#}+{~6}、{#}+{~7}，燃燒速度加倍並持續 {~8} 秒。",
    "role": "desc",
-   "_raw": "Bash is replaced by a single hit, gaining +3 radius and dealing +85%, +10%, and +60%. Boiling Blood's cooldown is set to 2s, gains +40%, +50%, and burns twice as fast for 1s, but can't slow."
+   "_raw": "Bash is replaced by a single hit, gaining +3 radius and dealing +85%, +10%, and +60%, but further delays Final Crush. Boiling Blood's cooldown is set to 2s, deals +40%, +50%, and burns twice as fast for 1s."
   },
   "major-id#0184": {
    "src": "Bash will hit +{~} times.",
@@ -1030,16 +1030,16 @@
    "role": "desc"
   },
   "major-id#0194": {
-   "src": "Buckshot will heal allies for {~} of your total Health Regen.",
-   "dst": "Buckshot 會為友軍恢復相當於自身生命恢復 {~} 的生命值。",
+   "src": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency).",
+   "dst": "Buckshot 會為友軍恢復相當於你所有生命恢復屬性總和的生命值(受治療效率影響)。",
    "role": "desc",
-   "_raw": "Buckshot will heal allies for 100% of your total Health Regen."
+   "_raw": "Buckshot will heal allies for the sum of your total Health Regen IDs (Affected by Healing Efficiency)."
   },
   "major-id#0195": {
-   "src": "Buried Light burns faster and is controlled by the direction you face. Enemies in the light instead take {#}{~}.",
-   "dst": "Buried Light 的燃燒速度加快，並受你面朝的方向控制。處於光芒中的敵人改為受到 {#}{~} 傷害。",
+   "src": "Buried Light has faster travel speed and damage, and is controlled by the direction you face. Enemies in the light instead take {#}{~} and recieve {~} more damage.",
+   "dst": "Buried Light 的移動速度與傷害提升，並受你面朝的方向控制。處於光芒中的敵人改為受到 {#}{~1} 傷害，且受到的傷害增加 {~2}。",
    "role": "desc",
-   "_raw": "Buried Light burns faster and is controlled by the direction you face. Enemies in the light instead take 120%."
+   "_raw": "Buried Light has faster travel speed and damage, and is controlled by the direction you face. Enemies in the light instead take 120% and recieve 10% more damage."
   },
   "major-id#0196": {
    "src": "Burning Sigil gains +{~} radius and deals {~}x the damage, but lasts half as long.",
@@ -1253,8 +1253,8 @@
    "_raw": "Grappling Hook has 25% increased range and increased velocity."
   },
   "Lasso::desc": {
-   "src": "Grappling Hook, War Scream, and Uproot now pull enemies with much more force.",
-   "dst": "Grappling Hook、War Scream 與 Uproot 拉扯敵人的力道大幅增強。",
+   "src": "All abilities with pull effects pull with greater force.",
+   "dst": "所有帶有拉扯效果的技能，拉扯敵人的力道都會增強。",
    "role": "desc"
   },
   "major-id#0234": {
@@ -1343,10 +1343,10 @@
    "role": "desc"
   },
   "major-id#0249": {
-   "src": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
-   "dst": "Mirror Clone 與 Shadow Clone 會在 Last Laugh 的期間施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
+   "src": "Clones instead cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
+   "dst": "Clone 改為在 Last Laugh 的期間施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
    "role": "desc",
-   "_raw": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
+   "_raw": "Clones instead cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
   },
   "Culicidae Creed::desc": {
    "src": "Leap becomes fully vertical, and Spectral Hover lasts twice as long.",
@@ -1457,8 +1457,8 @@
    "role": "desc"
   },
   "Plague::desc": {
-   "src": "Poisoned mobs spread their poison to nearby mobs.",
-   "dst": "中毒的敵人會把毒擴散給附近的敵人。",
+   "src": "{~} of Poison's damage is dealt in a {~} block radius around each Poisoned enemy.",
+   "dst": "毒素傷害的 {~1} 會擴散至每個中毒敵人周圍 {~2} 格半徑內。",
    "role": "desc"
   },
   "Aubri's Tears::desc": {
@@ -1479,10 +1479,10 @@
    "_raw": "Pressure grants additional effects: Bash gains +4 radius, Uppercut gains +75%, and War Scream's buff gains +12s duration"
   },
   "major-id#0273": {
-   "src": "Provoke's Cooldown is reduced to {~}s but its duration is reduced to {~}s.",
-   "dst": "Provoke 的冷卻時間縮短為 {~1} 秒，但持續時間也縮短為 {~2} 秒。",
+   "src": "Provoke's cooldown and duration are doubled",
+   "dst": "Provoke 的冷卻時間與持續時間加倍。",
    "role": "desc",
-   "_raw": "Provoke's Cooldown is reduced to 8s but its duration is reduced to 3s."
+   "_raw": "Provoke's cooldown and duration are doubled"
   },
   "Magnet::desc": {
    "src": "Pulls items dropped by mobs towards you.",
@@ -1708,8 +1708,8 @@
    "_raw": "While vanished, lose 5% of your max mana per second. Surprise Strike further increases your damage by 3% per mana lost from this effect, up to 70%."
   },
   "Old Spark::desc": {
-   "src": "Whirlwind transforms into a travelling projectile, dealing {#}+{~} and knocking enemies into the air. Crouch to rise with them.",
-   "dst": "Whirlwind 變成向前飛行的投射物，造成 {#}+{~} 並把敵人擊飛。蹲下可隨之升空。",
+   "src": "Whirlwind transforms into a travelling projectile, dealing {#}+{~} and doubled {#} damage against airborne enemies. Crouch to rise with them.",
+   "dst": "Whirlwind 變成向前飛行的投射物，造成 {#}+{~}，並對空中的敵人造成雙倍 {#} 傷害。蹲下可隨之升空。",
    "role": "desc"
   },
   "major-id#0314": {
@@ -1765,10 +1765,10 @@
    "_raw": "Final Crush further delays Bash's last hit, but increases its radius by an additional +50%."
   },
   "Chain Reaction::desc": {
-   "src": "Basaltic Traps arm faster and detonate immediately after arming, gaining +{~} range.",
-   "dst": "Basaltic Traps 布設得更快，布設完成後立即引爆，射程增加 +{~}。",
+   "src": "Basaltic Traps arm twice as fast and detonate immediately after arming.",
+   "dst": "Basaltic Traps 布設速度加倍，布設完成後立即引爆。",
    "role": "desc",
-   "_raw": "Basaltic Traps arm faster and detonate immediately after arming, gaining +2 range."
+   "_raw": "Basaltic Traps arm twice as fast and detonate immediately after arming."
   },
   "Phase Vector::desc": {
    "src": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread.",

@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 272,
-  "translated": 272,
+  "count": 294,
+  "translated": 294,
   "note": "萨满的技能树。按游戏里的排版顺序(页 → 行 → 列)，也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -3735,6 +3735,314 @@
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
    "code": "SHAMAN-P9-R02-C07"
+  },
+  "ability-shaman#0364": {
+   "src": "Zealot's Bolts",
+   "dst": "狂信者之矢",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Zealot's Bolts",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0365": {
+   "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill fire {~} homing bolts that ricochet between\nnearby enemies up to {~} times.",
+   "dst": "戴着 {#} 赤狂假面时，施放 Aura\n会射出 {~} 支追踪飞矢，在附近的敌人之间\n弹跳最多 {~} 次。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Zealot's Bolts"
+   ],
+   "lines": 3,
+   "flat": "While wearing the {#} Mask of the Lunatic, casting Aura will fire {~} homing bolts that ricochet between nearby enemies up to {~} times.",
+   "_raw": "While wearing the  Mask of the Lunatic, casting Aura\nwill fire 3 homing bolts that ricochet between\nnearby enemies up to 3 times.",
+   "ability": "Zealot's Bolts",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0366": {
+   "src": "⚔ Total Damage: {~} (per Bolt)",
+   "dst": "⚔ 总伤害: {~} (每支飞矢)",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Zealot's Bolts"
+   ],
+   "lines": 1,
+   "flat": "⚔ Total Damage: {~} (per Bolt)",
+   "_raw": "⚔ Total Damage: 40% (per Bolt)",
+   "ability": "Zealot's Bolts",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0367": {
+   "src": "➼ Ricochet Range: {~} Blocks",
+   "dst": "➼ 弹跳范围: {~} 格",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Zealot's Bolts"
+   ],
+   "lines": 1,
+   "flat": "➼ Ricochet Range: {~} Blocks",
+   "_raw": "➼ Ricochet Range: 6 Blocks",
+   "ability": "Zealot's Bolts",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0368": {
+   "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s worth\nof its effects.",
+   "dst": "戴着金虔假面 {#} 时，你的 Totem\n撞上地面就会碎裂，在瞬间触发\n相当于 {~} 秒的效果。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 4,
+   "flat": "While wearing the Mask of the Fanatic {#}, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
+   "_raw": "While wearing the Mask of the Fanatic ,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering 8s worth\nof its effects.",
+   "ability": "Totemic Shatter",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0369": {
+   "src": "Regeneration will only heal {~} of its\nusual amount.",
+   "dst": "Regeneration 的治疗量只有\n平常的 {~}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 2,
+   "flat": "Regeneration will only heal {~} of its usual amount.",
+   "_raw": "Regeneration will only heal 50% of its\nusual amount.",
+   "ability": "Totemic Shatter",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0370": {
+   "src": "While not worn, each Mystic Masks positive effect\ngradually charges by +{~} every {~}s.",
+   "dst": "没有戴着时，每张 Mystic Masks 的正面效果\n每 {~2} 秒逐渐充能 +{~1}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mantra"
+   ],
+   "lines": 2,
+   "flat": "While not worn, each Mystic Masks positive effect gradually charges by +{~} every {~}s.",
+   "_raw": "While not worn, each Mystic Masks positive effect\ngradually charges by +20% every 1s.",
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0371": {
+   "src": "While worn, extra charge decays by {~}\nevery {~}s, after a {~}s grace period.",
+   "dst": "戴着时，在 {~3} 秒的宽限期过后，\n额外充能每 {~2} 秒衰减 {~1}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mantra"
+   ],
+   "lines": 2,
+   "flat": "While worn, extra charge decays by {~} every {~}s, after a {~}s grace period.",
+   "_raw": "While worn, extra charge decays by 20%\nevery 1s, after a 5s grace period.",
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0372": {
+   "src": "The grace period persists when swapping masks.",
+   "dst": "切换假面时，宽限期会保留。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mantra"
+   ],
+   "lines": 1,
+   "flat": "The grace period persists when swapping masks.",
+   "_raw": "The grace period persists when swapping masks.",
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0373": {
+   "src": "Tentacles will attack Bleeding {#} enemies from an\nadditional +{~} blocks away. Bleeding {#} enemies\nadditionally deal less damage when in range\nof the tentacles.",
+   "dst": "触手攻击流血 {#} 敌人的距离\n再增加 +{~} 格。位于触手范围内的\n流血 {#} 敌人造成的伤害\n还会降低。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 4,
+   "flat": "Tentacles will attack Bleeding {#} enemies from an additional +{~} blocks away. Bleeding {#} enemies additionally deal less damage when in range of the tentacles.",
+   "_raw": "Tentacles will attack Bleeding  enemies from an\nadditional +6 blocks away. Bleeding  enemies\nadditionally deal less damage when in range\nof the tentacles.",
+   "ability": "Eldritch Call",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0374": {
+   "src": "Enemies hit by Aura will be pulled towards your Totem.",
+   "dst": "被 Aura 命中的敌人会被拉向你的 Totem。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Storm Dance"
+   ],
+   "lines": 1,
+   "flat": "Enemies hit by Aura will be pulled towards your Totem.",
+   "_raw": "Enemies hit by Aura will be pulled towards your Totem.",
+   "ability": "Storm Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0375": {
+   "src": "Totemic Hammer",
+   "dst": "图腾重锤",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Totemic Hammer",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0376": {
+   "src": "When wearing the {#} Mask of the Fanatic,\ncasting Totem will make it instantly\nsmash on the ground.",
+   "dst": "戴着 {#} 金虔假面时，施放 Totem\n会让它立刻砸向地面。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Hammer"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#} Mask of the Fanatic, casting Totem will make it instantly smash on the ground.",
+   "_raw": "When wearing the  Mask of the Fanatic,\ncasting Totem will make it instantly\nsmash on the ground.",
+   "ability": "Totemic Hammer",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0377": {
+   "src": "When entering the {#} Mask of the Heretic, regenerate\n{~} of your Mana, and gain a large Walk Speed\nboost that decays over {~}s.",
+   "dst": "戴上 {#} 苍逆假面时，恢复你 {~1} 的法力，\n并获得大幅移动速度提升，\n在 {~2} 秒内逐渐衰减。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "lines": 3,
+   "flat": "When entering the {#} Mask of the Heretic, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
+   "_raw": "When entering the  Mask of the Heretic, regenerate\n30% of your Mana, and gain a large Walk Speed\nboost that decays over 6s.",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0378": {
+   "src": "When wearing the {#} Mask of the Lunatic, Aura and\nZealot's Bolt will detonate up to {~} Static, damaging\nthem per Static consumed.",
+   "dst": "戴着 {#} 赤狂假面时，Aura 与\nZealot's Bolt 最多引爆 {~} 层静电，\n每消耗一层静电造成一次伤害。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#} Mask of the Lunatic, Aura and Zealot's Bolt will detonate up to {~} Static, damaging them per Static consumed.",
+   "_raw": "When wearing the  Mask of the Lunatic, Aura and\nZealot's Bolt will detonate up to 20 Static, damaging\nthem per Static consumed.",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0379": {
+   "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for {~}s.",
+   "dst": "发动 Totemic Shatter 会让 Rain Dance 降下的雨\n全部变成酸雨，持续 {~} 秒。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 3,
+   "flat": "Activating Totemic Shatter will cause all rain from Rain Dance to turn into Acid Rain which lasts for {~}s.",
+   "_raw": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for 2s.",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0380": {
+   "src": "Acid Rain and Totemic Shatter, will inflict {~}s\nof Corroded every time it hits an enemy.",
+   "dst": "酸雨与 Totemic Shatter 每次命中敌人\n都会附加 {~} 秒的腐蚀。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 2,
+   "flat": "Acid Rain and Totemic Shatter, will inflict {~}s of Corroded every time it hits an enemy.",
+   "_raw": "Acid Rain and Totemic Shatter, will inflict 1.5s\nof Corroded every time it hits an enemy.",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0381": {
+   "src": "{#} Heretic: Grants {~} Static per beam",
+   "dst": "{#} 苍逆: 每道光束附加 {~} 层静电",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Transmute"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: Grants 2 Static per beam",
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0382": {
+   "src": "Reduce Eldritch Call's Blood Pool {#} cost by -{~}.",
+   "dst": "Eldritch Call 的血池 {#} 消耗减少 {~}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Greater Sacrifice"
+   ],
+   "lines": 1,
+   "flat": "Reduce Eldritch Call's Blood Pool {#} cost by -{~}.",
+   "_raw": "Reduce Eldritch Call's Blood Pool  cost by -5.",
+   "ability": "Greater Sacrifice",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0383": {
+   "src": "Increase Eye of the Storm's damage and\nMaximum Surge by +{~}.",
+   "dst": "Eye of the Storm 的伤害与\n涌电上限提高 +{~}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Doom"
+   ],
+   "lines": 2,
+   "flat": "Increase Eye of the Storm's damage and Maximum Surge by +{~}.",
+   "_raw": "Increase Eye of the Storm's damage and\nMaximum Surge by +1.",
+   "ability": "Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0384": {
+   "src": "(Changes with Attack Speed)",
+   "dst": "(随攻击速度变化)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "(Changes with Attack Speed)",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0385": {
+   "src": "{#} Heretic: Gaining +{~} Mana will increase Ritual Circle's",
+   "dst": "{#} 苍逆: 获得 +{~} 点法力会让 Ritual Circle 的",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: Gaining +10 Mana will increase Ritual Circle's",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
   }
  }
 }
