@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 21,
-  "translated": 21
+  "count": 27,
+  "translated": 27
  },
  "entries": {
   "choice#c000": {
@@ -212,6 +212,70 @@
    "role": "desc",
    "kind": "dialogue",
    "full": "What do you think of the Seer?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c009": {
+   "src": "I'd like to view the hint ag",
+   "dst": "Me gustaría volver a ver la pista.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c010": {
+   "src": "Why do you want these spirit",
+   "dst": "¿Por qué quieres que devuelvan a estos espíritus?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Why do you want these spirits returned?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c011": {
+   "src": "I'd like to submit my ticket",
+   "dst": "Me gustaría entregar mis boletos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I'd like to submit my tickets.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c012": {
+   "src": "Yes, I helped you with the h",
+   "dst": "Sí, te ayudé con el problema de la máscara encantada, ¿recuerdas?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Yes, I helped you with the haunted mask problem, remember?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c013": {
+   "src": "Let me think about this for",
+   "dst": "Déjame pensarlo un momento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Let me think about this for a moment.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c014": {
+   "src": "How have you been doing sinc",
+   "dst": "¿Qué tal te ha ido desde entonces?",
+   "role": "desc",
+   "kind": "dialogue",
    "quest": "choice",
    "stage": "",
    "speaker": "",
