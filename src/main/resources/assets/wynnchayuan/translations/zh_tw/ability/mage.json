@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "裂隙每 {~} 秒對敵人造成一次傷害，\n站在其中時，你的 Distortion {#}\n累積速度加快 +{~}。",
+   "dst": "裂隙每 {~} 秒對敵人造成一次傷害，\n站在其中時，你的 Distortion {#}\n累積速度加快 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3276,7 +3276,7 @@
   },
   "ability-mage#0244": {
    "src": "You gain a stacking walk speed buff\neach time you cast a spell. (Max {~})",
-   "dst": "每次施放技能都會獲得一層可疊加的移動速度加成。(最多 {~} 層)",
+   "dst": "每次施放法術都會獲得一層可疊加的移動速度加成。(最多 {~} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3290,7 +3290,7 @@
   },
   "ability-mage#0245": {
    "src": "{#} Effects: +{~} Walk Speed per Cast",
-   "dst": "{#} 效果: 每次施放 +{~} 移動速度",
+   "dst": "{#} 效果: {~} 移動速度增加 (每次施放)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3304,7 +3304,7 @@
   },
   "ability-mage#0246": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.\nFrost Dragon's Breath will add +{~} Mana.",
-   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 +{~1} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 +{~2} 點魔力。\nFrost Dragon's Breath 則增加 +{~3} 點魔力。",
+   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 {~1} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 {~2} 點魔力。\nFrost Dragon's Breath 則增加 {~3} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3332,7 +3332,7 @@
   },
   "ability-mage#0248": {
    "src": "Ice Snake being casted by Chaos Explosion\nwill instead spew forth a cone of icy breath,\ndealing damage and granting +{~} Mana Bank ✺\nper hit every {~}s.",
-   "dst": "由 Chaos Explosion 施放的 Ice Snake\n改為噴出一道錐形的冰霜吐息，\n每 {~2} 秒造成一次傷害，每次命中\n為 Mana Bank ✺ 增加 +{~1}。",
+   "dst": "由 Chaos Explosion 施放的 Ice Snake\n改為噴出一道錐形的冰霜吐息，\n每 {~2} 秒造成一次傷害，每次命中\n為 Mana Bank ✺ 增加 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3346,7 +3346,7 @@
   },
   "ability-mage#0249": {
    "src": "The duration increases by +{~}s with each\nsubsequent cast.",
-   "dst": "之後每次施放，\n持續時間延長 +{~} 秒。",
+   "dst": "之後每次施放，\n持續時間延長 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3374,7 +3374,7 @@
   },
   "ability-mage#0251": {
    "src": "Frost Dragon's Breath attacks -{~}s faster\nbut gains -{~}s duration per cast and -{~}\nMana Bank ✺ per hit.",
-   "dst": "Frost Dragon's Breath 的攻擊間隔縮短 -{~} 秒，\n但每次施放增加的持續時間 -{~} 秒，\n每次命中獲得的 Mana Bank ✺ -{~}。",
+   "dst": "Frost Dragon's Breath 的攻擊間隔縮短 {~} 秒，\n但每次施放增加的持續時間減少 {~} 秒，\n每次命中獲得的 Mana Bank ✺ 減少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
