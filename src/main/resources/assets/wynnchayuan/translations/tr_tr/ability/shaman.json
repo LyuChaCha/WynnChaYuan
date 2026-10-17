@@ -281,7 +281,7 @@
   },
   "ability-shaman#0272": {
    "src": "Based on your Mask, performing certain actions\nwill increase Ritual Circle's radius and hits.",
-   "dst": "Maskene göre belirli eylemleri yapmak\nRitual Circle yarıçapını ve vuruş sayısını artırır.",
+   "dst": "Maskene göre belirli eylemleri yapmak\nRitual Circle'ın yarıçapını ve vuruş sayısını artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -309,7 +309,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "Var olan bir Totem'e bakarken\nTotem yaparsan yarı mana maliyetiyle\nonu ileri itersin; Totem çarptığı\nher düşmana hasar\nverir.\n(Yönü tersine çevirmek için eğil)",
+   "dst": "Var olan bir Toteme bakarken\nTotem kullanırsan yarı mana maliyetiyle\nonu ileri itersin; Totem çarptığı\nher düşmana hasar\nverir.\n(Yönü tersine çevirmek için eğil)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -323,7 +323,7 @@
   },
   "ability-shaman#0243": {
    "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
-   "dst": "Artist's Immersion ile maliyeti düşen bir büyü\nyapmak bir ritüel çemberi çağırır. Sonraki büyüler\nçemberin yarıçapını ve vuruşlarını {~} artırır.\n(En fazla {~} blok)",
+   "dst": "Artist's Immersion ile maliyeti düşen bir büyü\nkullanmak bir ritüel çemberi çağırır. Sonraki büyüler\nçemberin yarıçapını ve vuruşlarını {~} artırır.\n(En fazla {~} blok)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-shaman#0273": {
    "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
-   "dst": "Eye of the Storm, sahip olduğun her Dalga için vurduğu\ndüşmanlara +{~} Statik uygular. (En fazla {~} Statik)",
+   "dst": "Eye of the Storm, elindeki her Dalga için vurduğu\ndüşmanlara +{~} Statik uygular. (En fazla {~} Statik)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -519,7 +519,7 @@
   },
   "ability-shaman#0266": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
-   "dst": "Uproot yaptığında bunun yerine\nMystic Masks'tan birini tak.\n(Önceki maskeyi takmak için Shift + Uproot)",
+   "dst": "Uproot kullandığında bunun yerine\nMystic Masks'tan birini tak.\n(Önceki maskeyi takmak için Shift + Uproot)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -547,7 +547,7 @@
   },
   "ability-shaman#0251": {
    "src": "When wearing the {#} Mask of the Lunatic, casting Totem{#}\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
-   "dst": "{#} Delinin Maskesi takılıyken eğilerek Totem{#}\nyaparsan Totem yere çakılır ve\ntüm Statik yükleri patlatır.",
+   "dst": "{#} Delinin Maskesi takılıyken eğilerek Totem{#}\nkullanırsan Totem yere çakılır ve\ntüm Statik yükleri patlatır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -561,7 +561,7 @@
   },
   "ability-shaman#0254": {
    "src": "When wearing the {#} Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "{#} Delinin Maskesi takılıyken Aura ile bir düşmanı\nöldürmek onun yerinde yeni bir Aura yapar;\nbu Aura -{~} daha az hasar verir.",
+   "dst": "{#} Delinin Maskesi takılıyken Aura ile bir düşmanı\nöldürmek onun yerinde yeni bir Aura oluşturur;\nbu Aura -{~} daha az hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -631,7 +631,7 @@
   },
   "ability-shaman#0257": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
-   "dst": "{#} Delinin Maskesi takılıyken Aura yapmak seni\nyükler ve bir yığın Dalga verir.\n(En fazla {~} Dalga)",
+   "dst": "{#} Delinin Maskesi takılıyken Aura kullanmak seni\nyükler ve bir yığın Dalga verir.\n(En fazla {~} Dalga)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -715,7 +715,7 @@
   },
   "ability-shaman#0298": {
    "src": "increase Ritual Circle's radius by +{~} blocks.",
-   "dst": "Ritual Circle yarıçapını +{~} blok artırır.",
+   "dst": "Ritual Circle'ın yarıçapını +{~} blok artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -940,7 +940,7 @@
   },
   "ability-shaman#0313": {
    "src": "{#} Heretic: Gaining +{~} mana will increase Ritual Circle's",
-   "dst": "{#} Sapkın: +{~} mana kazanmak Ritual Circle",
+   "dst": "{#} Sapkın: +{~} mana kazanmak Ritual Circle'ın",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1042,7 +1042,7 @@
   },
   "ability-shaman#0336": {
    "src": "{#}Ritual Circle's radius by +{~} blocks.",
-   "dst": "{#}Ritual Circle yarıçapını +{~} blok artırır.",
+   "dst": "{#}Ritual Circle'ın yarıçapını +{~} blok artırır.",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1217,7 +1217,7 @@
   },
   "ability-shaman#0012": {
    "src": "Leap towards your Totem.",
-   "dst": "Totem'ine doğru sıçra.",
+   "dst": "Totemine doğru sıçra.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1326,7 +1326,7 @@
   },
   "ability-shaman#0020": {
    "src": "Radiates an aura from your Totem\nthat damages enemies.",
-   "dst": "Totem'inden düşmanlara hasar\nveren bir aura yayar.",
+   "dst": "Toteminden düşmanlara hasar\nveren bir aura yayar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1405,7 +1405,7 @@
   },
   "ability-shaman#0027": {
    "src": "Increases Uproot and\nHaunting Memory's range.\nHitting Totem with either\nwill reset its duration.",
-   "dst": "Uproot ve Haunting Memory\nmenzilini artırır. İkisinden\nbiriyle Totem'e vurmak\nsüresini sıfırlar.",
+   "dst": "Uproot ve Haunting Memory'nin\nmenzilini artırır. İkisinden\nbiriyle Toteme vurmak\nsüresini sıfırlar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2179,7 +2179,7 @@
   },
   "ability-shaman#0094": {
    "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#} Toplam Hasar: {~} (DPS'inin, Kanama'dan)",
+   "dst": "{#} Toplam Hasar: {~} (DPS'inin, Kanama etkisinden)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2457,7 +2457,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "Totem, düşmanlara saldıran ve onları\nher {~} sn'de en yakın Totem'e doğru\niten bir Heykelcik çağırır.\nHeykelcik, Totemi yaşadığı\nsürece yaşar.",
+   "dst": "Totem, düşmanlara saldıran ve onları\nher {~} sn'de en yakın Toteme doğru\niten bir Heykelcik çağırır.\nHeykelcik, Totemi yaşadığı\nsürece yaşar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2539,7 +2539,7 @@
   },
   "ability-shaman#0127": {
    "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#} (per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
-   "dst": "Shift'e basılıyken Totem yaparsan {~} puan\nKan Havuzu {#} harcayarak (Totem başına)\nyakındaki düşmanlara saldıran {~} kâbus\ndokunacı çağırırsın.",
+   "dst": "Shift'e basılıyken Totem kullanırsan {~} puan\nKan Havuzu {#} harcayarak (Totem başına)\nyakındaki düşmanlara saldıran {~} kâbus\ndokunacı çağırırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2731,7 +2731,7 @@
   },
   "ability-shaman#0143": {
    "src": "Casting Aura while holding shift will\nrally all active Puppets to your\nside, granting them increased\nattack speed and accuracy.",
-   "dst": "Shift'e basılıyken Aura yaparsan\ntüm etkin Kuklaları yanına\ntoplarsın; saldırı hızları ve\nisabetleri artar.",
+   "dst": "Shift'e basılıyken Aura kullanırsan\ntüm etkin Kuklaları yanına\ntoplarsın; saldırı hızları ve\nisabetleri artar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2895,7 +2895,7 @@
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "Shift'e basılıyken Haul yaparsan\nSinekkuşlarını geçici olarak yakındaki\ndüşmanlara saldırmaya gönderirsin; her {~} sn'de\nonları delip geçerler.\nTekrar yaparsan onları erken geri çağırırsın.",
+   "dst": "Shift'e basılıyken Haul kullanırsan\nSinekkuşlarını geçici olarak yakındaki\ndüşmanlara saldırmaya gönderirsin; her {~} sn'de\nonları delip geçerler.\nTekrar kullanırsan onları erken geri çağırırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3192,7 +3192,7 @@
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "Shift'e basılıyken Uproot ya da Haunting Memory\nyaparsan {~} puan Kan Havuzu {#}\nharcayarak düşmanlar ve müttefikler arasında\nzincirlenen yıkıcı bir ışın atarsın; ışın\nher {~} sn'de düşmanlara hasar verir.",
+   "dst": "Shift'e basılıyken Uproot ya da Haunting Memory\nkullanırsan {~} puan Kan Havuzu {#}\nharcayarak düşmanlar ve müttefikler arasında\nzincirlenen yıkıcı bir ışın atarsın; ışın\nher {~} sn'de düşmanlara hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3451,7 +3451,7 @@
   },
   "ability-shaman#0208": {
    "src": "Haul slings you upwards\nbefore leaping towards Totem.",
-   "dst": "Haul, Totem'e atılmadan önce\nseni yukarı fırlatır.",
+   "dst": "Haul, Toteme atılmadan önce\nseni yukarı fırlatır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3727,7 +3727,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "Totemin kadim bir iblis tarafından\nele geçirilir ve yakındaki acolyte'lara her {~2} sn'de\n+{~1} Kan Havuzu {#} verir.",
+   "dst": "Totemini kadim bir iblis\nele geçirir ve yakındaki acolyte'lara her {~2} sn'de\n+{~1} Kan Havuzu {#} verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3756,7 +3756,7 @@
   },
   "ability-shaman#0365": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill fire {~} homing bolts that ricochet between\nnearby enemies up to {~} times.",
-   "dst": "{#} Delinin Maskesi takılıyken Aura yaparsan\nyakındaki düşmanlar arasında en fazla {~2} kez\nseken {~1} güdümlü şimşek fırlatırsın.",
+   "dst": "{#} Delinin Maskesi takılıyken Aura kullanırsan\nyakındaki düşmanlar arasında en fazla {~2} kez\nseken {~1} güdümlü şimşek fırlatırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3910,7 +3910,7 @@
   },
   "ability-shaman#0376": {
    "src": "When wearing the {#} Mask of the Fanatic,\ncasting Totem will make it instantly\nsmash on the ground.",
-   "dst": "{#} Fanatiğin Maskesi takılıyken Totem\nyaparsan Totem anında yere\nçakılır.",
+   "dst": "{#} Fanatiğin Maskesi takılıyken Totem\nkullanırsan Totem anında yere\nçakılır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3994,7 +3994,7 @@
   },
   "ability-shaman#0382": {
    "src": "Reduce Eldritch Call's Blood Pool {#} cost by -{~}.",
-   "dst": "Eldritch Call'ın Kan Havuzu {#} maliyetini -{~} azalt.",
+   "dst": "Eldritch Call'un Kan Havuzu {#} maliyetini -{~} azalt.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4036,7 +4036,7 @@
   },
   "ability-shaman#0385": {
    "src": "{#} Heretic: Gaining +{~} Mana will increase Ritual Circle's",
-   "dst": "{#} Sapkın: +{~} Mana kazanmak Ritual Circle",
+   "dst": "{#} Sapkın: +{~} Mana kazanmak Ritual Circle'ın",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

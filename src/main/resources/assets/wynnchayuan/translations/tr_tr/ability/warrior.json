@@ -204,7 +204,7 @@
   },
   "ability-warrior#0014": {
    "src": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
-   "dst": "Yüksek hızla ileri atıl.\n(İptal etmek için atılırken shift'e bas)",
+   "dst": "Yüksek hızla ileri atılırsın.\n(İptal etmek için atılırken shift'e basılı tut)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -453,7 +453,7 @@
   },
   "ability-warrior#0032": {
    "src": "Final Crush",
-   "dst": "Son Ezgi",
+   "dst": "Son Ezme",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -465,7 +465,7 @@
   },
   "ability-warrior#0033": {
    "src": "Bash's last hit is delayed, but deals\n+{~} damage and has +{~} radius.",
-   "dst": "Bash'in son vuruşu gecikir ama\n+{~} hasar verir ve +{~} yarıçapı olur.",
+   "dst": "Bash'in son vuruşu gecikir ama\n+{~} hasar verir ve yarıçapı +{~} artar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -519,7 +519,7 @@
   },
   "ability-warrior#0037": {
    "src": "Bash will cast {~} times consecutively\nat double the speed.",
-   "dst": "Bash iki kat hızla art arda\n{~} kez yapılır.",
+   "dst": "Bash iki kat hızla art arda\n{~} kez kullanılır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-warrior#0045": {
    "src": "After casting {~} different spells\nin a row, your next spell will cost {~} Mana.",
-   "dst": "Art arda {~} farklı büyü yaptıktan sonra\nsonraki büyün {~} Mana tutar.",
+   "dst": "Art arda {~} farklı büyü kullandıktan sonra\nsonraki büyün {~} Mana tutar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -694,7 +694,7 @@
   },
   "ability-warrior#0050": {
    "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
-   "dst": "War Scream yaptığında etrafında kutsal\nbir kalkan oluşur; {~2} vuruş boyunca\ngelen tüm hasarı -{~1} azaltır.",
+   "dst": "War Scream kullandığında etrafında kutsal\nbir kalkan oluşur; {~2} vuruş boyunca\ngelen tüm hasarı -{~1} azaltır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -721,7 +721,7 @@
   },
   "ability-warrior#0052": {
    "src": "Casting War Scream will make you Corrupted {#},\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
-   "dst": "War Scream yapmak seni Yozlaşmış {#} yapar,\nama artık direnç vermez.\n(İptal etmek için Shift + War Scream)",
+   "dst": "War Scream kullanmak seni Yozlaşmış {#} yapar,\nama artık direnç vermez.\n(İptal etmek için Shift + War Scream)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1009,7 +1009,7 @@
   },
   "ability-warrior#0073": {
    "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
-   "dst": "Büyü yapmaya yetecek kadar manan\nyoksa onun yerine can harcarsın.\n(Mana başına {~} can)",
+   "dst": "Büyü kullanmaya yetecek kadar manan\nyoksa onun yerine can harcarsın.\n(Mana başına {~} can)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1305,7 +1305,7 @@
   },
   "ability-warrior#0095": {
    "src": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every {~} seconds.",
-   "dst": "Bash son patlamasından sonra bir kaynayan\nkan birikintisi bırakır; içindeki düşmanları\nyavaşlatır ve her {~} saniyede hasar verir.",
+   "dst": "Bash son patlamasından sonra kaynayan bir\nkan birikintisi bırakır; içindeki düşmanları\nyavaşlatır ve her {~} saniyede bir hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1374,7 +1374,7 @@
   },
   "ability-warrior#0100": {
    "src": "Uppercut will spend {~} Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
-   "dst": "Uppercut {~} Kutsal Güç ✧ harcayarak\nvurduğu düşmanları kutsal enerjiyle\ncarpar ve ek hasar verir.",
+   "dst": "Uppercut {~} Kutsal Güç ✧ harcayarak\nvurduğu düşmanları kutsal enerjiyle\nçarpar ve ek hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1468,7 +1468,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "Bak'al's Grasp bekleme süresini -{~} sn azaltır ve\nkaybedilen her {~} can için kazanılan\nsabit hasarı +{~} artırır.",
+   "dst": "Bak'al's Grasp yeteneğinin bekleme süresini -{~} sn azaltır ve\nkaybedilen her {~} can için kazanılan\nsabit hasarı +{~} artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1754,7 +1754,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "{~} Kutsal Güç ✧ sahibiyken\nAna Saldırıların güçlenir ve\nsana {~} Kutsal Güç kazandırır.",
+   "dst": "{~} Kutsal Güç ✧ varken\nAna Saldırıların güçlenir ve\nsana {~} Kutsal Güç kazandırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2037,7 +2037,7 @@
   },
   "ability-warrior#0149": {
    "src": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every {~}s.",
-   "dst": "War Scream'den sonra kendini, yakındaki düşmanlara\nher {~} sn'de hasar veren bir girdapla sar.",
+   "dst": "War Scream kullandıktan sonra seni yakındaki düşmanlara\nher {~} sn'de hasar veren bir girdap sarar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2162,7 +2162,7 @@
   },
   "ability-warrior#0158": {
    "src": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
-   "dst": "Bash oyuncunun bulunduğu yerde iki kat\nhızla ve daha geniş etki alanıyla yapılır.",
+   "dst": "Bash oyuncunun bulunduğu yerde iki kat\nhızla ve daha geniş etki alanıyla kullanılır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2245,7 +2245,7 @@
   },
   "ability-warrior#0164": {
    "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
-   "dst": "Yozlaşmış {#} durumu bitince etrafındaki tüm\ndüşmanları yok et. Sahip olduğun her {~}\nYozlaşmış {#} için hasar {~} artar.",
+   "dst": "Yozlaşmış {#} durumu bitince etrafındaki tüm\ndüşmanları yok edersin. Biriktirdiğin her {~}\nYozlaşmış {#} için hasar {~} artar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2449,7 +2449,7 @@
   },
   "ability-warrior#0179": {
    "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "En az {~} Kutsal Güç ✧ varken shift'e basılı\ntutarak War Scream yaparsan hepsini harcar\nve koruyucu bir boru çalarsın.",
+   "dst": "En az {~} Kutsal Güç ✧ varken shift'e basılı\ntutarak War Scream kullanırsan hepsini harcar\nve koruyucu bir boru çalarsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2556,7 +2556,7 @@
   },
   "ability-warrior#0187": {
    "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
-   "dst": "Bash, sahip olduğu her {~2} {#} Etki Alanı\niçin {~1} daha fazla hasar verir.",
+   "dst": "Bash, her {~2} {#} Etki Alanı\niçin {~1} daha fazla hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2638,7 +2638,7 @@
   },
   "ability-warrior#0193": {
    "src": "Increase Flying Kick's damage\nby +{~} per block travelled.\n(Max +{~})",
-   "dst": "Flying Kick'in hasarını katedilen\nher blok için +{~} artırır.\n(Maks. +{~})",
+   "dst": "Flying Kick'in hasarını kat edilen\nher blok için +{~} artırır.\n(Maks. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2828,7 +2828,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "Eğilirken Bash yapmak {~} Kutsal Güç ✧\nharcayarak yavaşça ilerleyen ve her\n{~} sn'de düşmanlara hasar veren\nbir ışık hüzmesi çağırır.",
+   "dst": "Eğilirken Bash kullanmak {~} Kutsal Güç ✧\nharcayarak yavaşça ilerleyen ve her\n{~} sn'de düşmanlara hasar veren\nbir ışık hüzmesi çağırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2992,7 +2992,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "Bir dikene Ana Saldırı ya da Uppercut yapmak\nonu patlatır, hasar verir ve Yozlaşmış\nolsan bile {~} Fazla Can ❤ kazandırır.\nBonus can {~} sn içinde azalır.",
+   "dst": "Bir dikene Ana Saldırı ya da Uppercut kullanmak\nonu patlatır, hasar verir ve Yozlaşmış\nolsan bile {~} Fazla Can ❤ kazandırır.\nBonus can {~} sn içinde azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3143,7 +3143,7 @@
   },
   "ability-warrior#0230": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "Büyü biçiminde büyü yapmak saldırı\nyaptırır. Ana Saldırı biçiminde ise\nsaldırıyı Ana Saldırılar yaptırır.",
+   "dst": "Büyü biçiminde büyü kullanmak saldırı\nyaptırır. Ana Saldırı biçiminde ise\nsaldırıyı Ana Saldırılar yaptırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
