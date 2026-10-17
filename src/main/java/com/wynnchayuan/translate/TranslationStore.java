@@ -208,6 +208,22 @@ public final class TranslationStore {
      * 頭盔同名，兩邊都是物品，附上去沒有問題。
      */
     private final java.util.Set<String> nonItemOwners = new java.util.HashSet<>();
+
+    /**
+     * 物品檔（裝備、書卷、素材、材料…，{@code role: name}）<b>自己</b>寫的譯名。
+     *
+     * <h2>為什麼要另外記</h2>
+     * {@link #getsOriginal} 只替「物品以外沒人用」的原文附原文——同一個字在技能樹、
+     * 名牌、介面上出現時，附一個括號就錯了。但那是<b>查表層</b>的判斷，不知道自己被問的
+     * 是哪個位置，於是物品說明的名稱那兩行也一起被擋：素材 {@code Black Hole}
+     * 同時是刺客技能，在「譯名 + 原文」下名稱列只有「引力黑洞」，其他素材都附了原文
+     * （使用者 2026-10-17：「有些材料沒有顯示原文」）。
+     *
+     * <p>名稱那兩行是呼叫端認出來的（{@link #nameLine}），在那裡改問「這個譯名是不是
+     * 物品檔自己寫的」——是的話就照裝備的規矩附原文。疊層時每一層各收一份，
+     * 哪一層的答案勝出都認得。見 {@link #ownItemName}。
+     */
+    private final Map<String, java.util.Set<String>> itemNameDsts = new ConcurrentHashMap<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -297,6 +313,7 @@ public final class TranslationStore {
         bareNames.clear();
         otherOwners.clear();
         nonItemOwners.clear();
+        itemNameDsts.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -753,6 +770,9 @@ public final class TranslationStore {
                 }
                 if (!(itemNames && "name".equals(optString(e, "role")))) {
                     nonItemOwners.add(srcKey);      // 見 #plainOnly
+                } else {
+                    itemNameDsts.computeIfAbsent(srcKey,
+                            k -> ConcurrentHashMap.newKeySet()).add(dst.strip());
                 }
                 layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
@@ -2070,6 +2090,18 @@ public final class TranslationStore {
     }
 
     /**
+     * 這個譯名是物品檔<b>自己</b>替這個原文寫的嗎。見 {@link #itemNameDsts}。
+     *
+     * <p>只在名稱那兩行問（{@link #nameLine}）：別的檔也有同名條目時，
+     * {@link #getsOriginal} 說不附——那是為了技能樹、名牌與敘述——但在物品自己的
+     * 名稱列上，它就是那件物品。
+     */
+    private boolean ownItemName(String key, String hit) {
+        java.util.Set<String> own = itemNameDsts.get(key);
+        return own != null && hit != null && own.contains(hit);
+    }
+
+    /**
      * 這個原文<b>只是</b>一件物品的名字——裝備、素材或材料，別的檔案沒有同名條目。
      *
      * <p>給「名字: 數值」那條路用（{@code LineTranslator#itemAsLabel}）：物品的名字
@@ -2170,7 +2202,8 @@ public final class TranslationStore {
         if (hit == null) {
             return shiny(template);
         }
-        if (namesWithOriginal && !holdAppended && getsOriginal(template.strip())) {
+        if (namesWithOriginal && !holdAppended && (getsOriginal(template.strip())
+                || NAME_LINE.get() && ownItemName(template.strip(), hit))) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return withOriginal(hit, template.strip());
         }
@@ -2390,8 +2423,26 @@ public final class TranslationStore {
         if (isAppendedOriginal(inner)) {
             return true;
         }
+        if (before == null) {
+            return false;
+        }
         String own = gearOwnName(inner);
-        return own != null && before != null && before.endsWith(own);
+        if (own != null) {
+            // 名稱列上用的是它自己的名字；物品檔那一份跟著技能叫（Frenzy＝得寸進尺），
+            // 「得寸進尺 (Frenzy)」不會是我們寫的
+            return before.endsWith(own);
+        }
+        // 別的檔也有這個原文、只在名稱列上附原文的物品（素材 Black Hole 同時是技能）。
+        // 一樣只認括號前面緊貼著物品檔自己的譯名：「引力黑洞 (Black Hole)」只有我們會寫。
+        java.util.Set<String> item = itemNameDsts.get(inner);
+        if (item != null) {
+            for (String dst : item) {
+                if (before.endsWith(dst)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */

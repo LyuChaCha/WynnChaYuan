@@ -8092,6 +8092,20 @@ public final class LineTranslator {
         if (!isName(name)) {
             return null;
         }
+        // 整個名字本身就是語料的一條（物品名「Adventurer's Diary」「Cat's Ears」）：
+        // 那不是「某人的東西」，交給逐片段那條路照那一條翻。
+        //
+        // 實機回報（2026-10-17）：物品說明看得見的那一行是「圖示 × 5 + 名字」，整行查不到
+        // 就落到這裡，前半「{#}{#}{#}{#}{#}Adventurer」剝掉圖示也像個 ID，於是畫成
+        // 「Adventurer 的日記」（日記是 npc.json 的一條），素材自己的譯名與附在後面的
+        // 原文都不見了。沒有附原文的「X's Y」裝備（Hero's Mask、Writer's Block）同一個樣子。
+        String whole = core;
+        while (whole.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+            whole = whole.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).strip();
+        }
+        if (store.lookupExact(whole) != null || store.isItemName(whole)) {
+            return null;
+        }
         String thing = core.substring(at + 3).strip();
         // 「某人的東西」後半是石碑、寵物這類，不會是一件裝備：「Grook's Nest」的 Nest
         // 剛好是一把法杖的名字。見 TranslationStore#barItemNames。

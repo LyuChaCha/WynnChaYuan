@@ -1517,3 +1517,12 @@ tasks.register('runSealedCentreChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.SealedCentreTest'
 }
 tasks.named('check') { dependsOn 'runSealedCentreChecks' }
+
+// 「譯名 + 原文」：譯名出自物品檔的名字在名稱列上一律附原文（跟技能同名的素材、所有格的名字）。
+tasks.register('runItemFileOriginalChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemFileOriginalTest'
+}
+tasks.named('check') { dependsOn 'runItemFileOriginalChecks' }
