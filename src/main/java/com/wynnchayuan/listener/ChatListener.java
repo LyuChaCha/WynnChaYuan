@@ -76,7 +76,12 @@ public final class ChatListener {
                                message.getStringWithoutFormatting())
                         || (com.wynnchayuan.capture.Broadcasts.find(message) == null
                             && PlayerDataFilter.carriesPlayerData(
-                                    GlyphSplitter.toTemplate(message)));
+                                    GlyphSplitter.toTemplate(message))
+                            // 認得句型而且整句翻得出來的才放行：放行的列翻不出來時
+                            // 會退到逐片段那條路，名字那一段就會被拿去查表
+                            && (LineTranslator.nameFramed(message, WynnChaYuan.translations()) == null
+                                || LineTranslator.translateChat(
+                                        message, WynnChaYuan.translations()) == null));
             } catch (Throwable t) {
                 keep = true;
             }
@@ -125,13 +130,19 @@ public final class ChatListener {
         // 不會退到逐片段去碰名字那一段。見 Broadcasts。
         boolean reserved = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
                 message.getStringWithoutFormatting());
+        boolean carries = serverSide
+                && PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message));
         Component hit;
         if (serverSide && !reserved
-                && com.wynnchayuan.capture.Broadcasts.find(message) != null) {
+                && (com.wynnchayuan.capture.Broadcasts.find(message) != null
+                    // 語料裡帶 {u} 的句型（隊友給的增益、死亡快訊…），名字照位置收成 {u}。
+                    // 同樣只走聊天專用那一支。見 NameFrames。
+                    || (carries && LineTranslator.nameFramed(
+                            message, WynnChaYuan.translations()) != null))) {
             hit = LineTranslator.translateChat(message, WynnChaYuan.translations());
         } else {
             hit = serverSide
-                    && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
+                    && !carries
                     // 別的模組從聊天解遊戲狀態，那幾條留英文。見 ThirdPartyLiterals。
                     && !reserved
                     ? (mode == CollectorConfig.ChatMode.BOTH

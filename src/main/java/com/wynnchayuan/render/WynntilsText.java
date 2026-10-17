@@ -599,6 +599,16 @@ public final class WynntilsText {
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
             return;
         }
+        var captured = WynnChaYuan.store();
+        // 主人的名字夾在語料的 {u} 句型裡（「某人的鳥」）：記 {u} 那一份。見 NameFrames。
+        com.wynnchayuan.capture.LineParts owned =
+                LineTranslator.nameFramed(text, WynnChaYuan.translations());
+        if (owned != null) {
+            if (captured != null) {
+                captured.record(owned.template(), "name", "label", ctx);
+            }
+            return;
+        }
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
         if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
                 || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
@@ -608,7 +618,6 @@ public final class WynntilsText {
                 || com.wynnchayuan.capture.PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             return;
         }
-        var captured = WynnChaYuan.store();
         if (captured != null) {
             captured.record(template, "name", "label", ctx);
         }

@@ -3409,7 +3409,14 @@ public final class LineTranslator {
         }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
-            return null;
+            // 別人的名字夾在語料的 {u} 句型裡（標題的死亡快訊、別人的召喚物）。
+            // 見 NameFrames。名字是 {u} 佔位符，照原樣填回、不查表。
+            LineParts framed = framedOnMiss(line, parts, store);
+            translated = framed == null ? null : lookup(framed.template(), store);
+            if (translated == null || translated.isBlank()) {
+                return null;
+            }
+            parts = framed;
         }
         Component rebuilt = rebuild(translated, parts, store);
         if (rebuilt == null) {
@@ -3890,6 +3897,84 @@ public final class LineTranslator {
         return translateChat(message, store, null);
     }
 
+    /**
+     * 整句查不到之後，看它是不是語料裡某個 {@code {u}} 句型、夾著<b>別人</b>的名字。
+     * 見 {@link com.wynnchayuan.capture.NameFrames}。
+     *
+     * @param plain 照平常算出來的那一份（呼叫端已經拿它查過、查不到）
+     * @return 名字收成 {@code {u}} 的那一份；不是任何句型時回 {@code null}
+     */
+    private static LineParts framedOnMiss(StyledText line, LineParts plain,
+                                          TranslationStore store) {
+        if (line == null || plain == null || store == null || !plain.users().isEmpty()) {
+            return null;                       // 自己的名字已經收成 {u} 了，不再另找
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans spans =
+                store.nameFrames().find(line, plain.template());
+        return spans == null ? null : LineParts.of(line, spans);
+    }
+
+    /**
+     * 這一行夾著<b>別人的名字</b>、而且認得出是哪一個句型的話，名字收成 {@code {u}}
+     * 的那一份。給「看到別人的名字就整句放過」的那幾關用：標題、聊天的守門、收集端。
+     *
+     * <p>先問寫死的炸彈廣播（{@link com.wynnchayuan.capture.Broadcasts}），再問語料的
+     * {@code {u}} 句型。整句本來就查得到的不算——那種句子裡沒有名字可收。
+     *
+     * <p>收集端拿它來記：回傳的模板裡沒有名字，而且就是語料裡那條鍵（只差行首圖示）。
+     *
+     * @return 名字收成 {@code {u}} 的那一份；不是這種句子時回 {@code null}
+     */
+    public static LineParts nameFramed(StyledText line, TranslationStore store) {
+        if (line == null || store == null) {
+            return null;
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans bomb = com.wynnchayuan.capture.Broadcasts.find(line);
+        if (bomb != null) {
+            return LineParts.of(line, bomb);
+        }
+        LineParts plain = LineParts.of(line);
+        String template = plain.template();
+        if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
+            return null;
+        }
+        String hit = lookup(template, store);
+        if (hit == null || hit.isBlank()) {
+            hit = store.lookupUnwrapped(template);
+        }
+        if (hit != null && !hit.isBlank()) {
+            return null;
+        }
+        return framedOnMiss(line, plain, store);
+    }
+
+    /**
+     * 照 {@link #nameFramed} 認出來的那一份翻整行；只認整行的鍵，查不到就回 {@code null}
+     * ——名字那一段絕不能退到逐片段去查。
+     */
+    public static Component translateFramed(StyledText line, LineParts framed,
+                                            TranslationStore store) {
+        if (line == null || framed == null || store == null) {
+            return null;
+        }
+        String translated = lookup(framed.template(), store);
+        List<LineParts.Piece> glyphs = null;
+        if (translated == null || translated.isBlank()) {
+            translated = store.lookupUnwrapped(framed.template());
+            if (translated == null || translated.isBlank()) {
+                return null;
+            }
+            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+        }
+        Component rebuilt = glyphs == null
+                ? rebuild(translated, framed, store)
+                : rebuild(translated, framed, glyphs, store);
+        if (rebuilt == null) {
+            return null;
+        }
+        return unslant(realign(line, rebuilt, true, false));
+    }
+
     public static Component translateChat(StyledText message, TranslationStore store,
                                           Boolean centred) {
         return translateChat(message, store, centred, false);
@@ -3919,6 +4004,31 @@ public final class LineTranslator {
             // 還是查不到：把斷好的行併成一句再查一次。見 #unwrapped。
             translated = store.lookupUnwrapped(parts.template());
             if (translated != null && !translated.isBlank()) {
+                glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+            }
+        }
+        if ((translated == null || translated.isBlank())
+                && com.wynnchayuan.capture.Broadcasts.find(message) == null) {
+            // 別人的名字夾在語料的某個 {u} 句型裡：名字收成 {u} 再查一次。見 NameFrames。
+            LineParts framed = framedOnMiss(message, parts, store);
+            if (framed != null) {
+                translated = lookup(framed.template(), store);
+                if (translated == null || translated.isBlank()) {
+                    translated = store.lookupUnwrapped(framed.template());
+                    if (translated != null && !translated.isBlank()) {
+                        glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+                    }
+                }
+                if (translated != null && !translated.isBlank()) {
+                    parts = framed;
+                }
+            }
+        }
+        if ((translated == null || translated.isBlank())
+                && parts.template().indexOf('\n') >= 0) {
+            // 世界事件的倒數公告，伺服器折過行的那幾種。單行的在 lookup 裡就接住了。
+            translated = eventFrame(TranslationStore.unwrap(parts.template()), store);
+            if (translated != null) {
                 glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
             }
         }
@@ -4305,6 +4415,19 @@ public final class LineTranslator {
         }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
+            // 「某人的力量之井」「某人的鳥」：主人的名字收成 {u}。見 NameFrames。
+            LineParts framed = framedOnMiss(label, parts, store);
+            if (framed != null) {
+                translated = store.labelLookup(framed.template());
+                if (translated == null || translated.isBlank()) {
+                    translated = lookup(framed.template(), store);
+                }
+                if (translated != null && !translated.isBlank()) {
+                    parts = framed;
+                }
+            }
         }
         if (translated == null || translated.isBlank()) {
             return null;
@@ -7635,8 +7758,119 @@ public final class LineTranslator {
             return hit;
         }
         hit = withMaker(key, store);
-        return hit != null ? hit : withOwner(key, store);
+        if (hit != null) {
+            return hit;
+        }
+        hit = withOwner(key, store);
+        return hit != null ? hit : eventFrame(key, store);
     }
+
+    /**
+     * 世界事件的倒數公告，當成「句型 + 事件名」翻。
+     *
+     * <h2>為什麼</h2>
+     * 伺服器送的是
+     * <pre>
+     *   {#} The Encroaching Destruction World Event starts in 39s! (236 blocks away) Click to track
+     * </pre>
+     * 先前語料一個事件一條鍵，而且「分秒／只有秒」各一條、伺服器折行的位置又各一條
+     * （折點隨事件名長短變）。於是任何一個沒收過的組合都是整句英文——使用者剛撞到的
+     * 就是「只剩秒數」的那一種。
+     *
+     * <p>事件名本來就有一條：{@code Encroaching Destruction [World Event]}（記分板與
+     * 追蹤欄用的）。所以這裡把事件名抽出來、查那一條、拿掉括號，填進語料裡的句型鍵：
+     * <pre>
+     *   {#} The {p} World Event starts in {~}m {~}s! ({~} blocks away) Click to track
+     *   {#} The {p} World Event starts in {~}s! ({~} blocks away) Click to track
+     * </pre>
+     * 用 {@code {p}} 是因為事件名跟地名一樣是「一個專有名詞的位置」，譯者看得懂；
+     * 但這裡在交給 {@code rebuild} 之前就把它換成事件名的譯文，不經過地名那條路
+     * （地名是原樣填回、不翻的）。事件名沒有譯文就照英文填進譯好的句型。
+     *
+     * <p>一個事件一條的舊鍵照樣先查（整行查表排在這條前面），這裡只接住查不到的。
+     *
+     * <p>只認單行；折過行的由呼叫端先併句（{@link TranslationStore#unwrap}），
+     * 符號池也要跟著少（見 {@link #unwrappedGlyphs}）。
+     *
+     * @return 填好事件名的譯文（顏色佔位符照句型鍵）；不是這一句、或句型沒翻時回 {@code null}
+     */
+    static String eventFrame(String template, TranslationStore store) {
+        if (template == null || store == null || template.indexOf('\n') >= 0
+                || !template.contains(EVENT_MARK)) {
+            return null;
+        }
+        java.util.regex.Matcher m = EVENT_LINE.matcher(template.strip());
+        if (!m.matches()) {
+            return null;
+        }
+        String name = m.group("name").strip();
+        // 名字裡有數值或圖示的話，填回去時會跟倒數的數值搶順序——不碰
+        if (name.isEmpty() || name.contains(GlyphSplitter.NUMBER_PLACEHOLDER)
+                || name.contains(GlyphSplitter.GLYPH_PLACEHOLDER)
+                || name.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
+            return null;
+        }
+        int lead = count(m.group("lead"), GlyphSplitter.GLYPH_PLACEHOLDER);
+        if (lead > 1) {
+            return null;
+        }
+        String key = GlyphSplitter.GLYPH_PLACEHOLDER + " The " + GlyphSplitter.PLACE_PLACEHOLDER
+                + " World Event starts in "
+                + (m.group("timer").contains("m") ? "{~}m {~}s" : "{~}s")
+                + "! (" + GlyphSplitter.NUMBER_PLACEHOLDER + " blocks away) Click to track";
+        String frame = store.lookup(key);
+        if (frame == null || frame.isBlank()
+                || count(frame, GlyphSplitter.PLACE_PLACEHOLDER) != 1) {
+            return null;
+        }
+        if (lead == 0) {
+            // 原文行首沒有頻道圖示（例如別的模組轉述的）：句型鍵帶著的那一個要拿掉
+            if (!frame.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                return null;
+            }
+            frame = frame.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).stripLeading();
+        }
+        return frame.replace(GlyphSplitter.PLACE_PLACEHOLDER, eventName(name, store));
+    }
+
+    /**
+     * 事件名的譯文：查 {@code <名字> [World Event]} 那一條、拿掉結尾的括號。
+     * 查不到、或譯文帶著佔位符，就用英文原名。
+     */
+    private static String eventName(String name, TranslationStore store) {
+        String hit = store.lookup(name + EVENT_SUFFIX);
+        if (hit == null || hit.isBlank()) {
+            return name;
+        }
+        String bare = TRAILING_BRACKET.matcher(hit.strip()).replaceFirst("").strip();
+        return bare.isEmpty() || bare.contains("{") ? name : bare;
+    }
+
+    private static int count(String text, String token) {
+        int n = 0;
+        for (int at = text.indexOf(token); at >= 0; at = text.indexOf(token, at + token.length())) {
+            n++;
+        }
+        return n;
+    }
+
+    /** 見 {@link #eventFrame}：先用這個字串過濾，絕大多數的行不必跑正規式。 */
+    private static final String EVENT_MARK = " World Event starts in ";
+
+    /** 見 {@link #eventName}：記分板與追蹤欄那一條的後綴。 */
+    private static final String EVENT_SUFFIX = " [World Event]";
+
+    /** 見 {@link #eventName}：譯文結尾的「[世界事件]」「[ワールドイベント]」。 */
+    private static final java.util.regex.Pattern TRAILING_BRACKET =
+            java.util.regex.Pattern.compile("\\s*[\\[［][^\\[\\]［］]*[\\]］]$");
+
+    /**
+     * 見 {@link #eventFrame}：併句之後的單行。倒數有「分秒」與「只有秒」兩種，
+     * 驚嘆號與括號之間的空白伺服器有時不給。
+     */
+    private static final java.util.regex.Pattern EVENT_LINE = java.util.regex.Pattern.compile(
+            "(?<lead>(?:\\{#}\\s*)*)The (?<name>.+?) World Event starts in "
+                    + "(?<timer>\\{~}m\\s*\\{~}s|\\{~}s)!\\s*\\(\\{~} blocks away\\)\\s*Click to track");
 
     /**
      * 「Crafted by {@code <玩家名>}」這種「固定開頭 + 一個名字」的行。

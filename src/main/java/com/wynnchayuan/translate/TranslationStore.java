@@ -310,6 +310,7 @@ public final class TranslationStore {
         looseDst.clear();
         looseClash.clear();
         thisLayer.clear();
+        unwrappedFromWrapped.clear();
         layerOf.clear();
         indexLayer.clear();
         loadedFiles = 0;
@@ -326,8 +327,24 @@ public final class TranslationStore {
         // gearNameKeys；簡中那層明明有譯名，名稱那一行的守門卻照樣把它擋回英文。
         // 實機回報「簡中還是看不到 Mythic 的譯名」就是這個。
         gearNameKeys.removeAll(nameKeys);
+        // 帶 {u} 的鍵就是「別人的名字夾在這裡」的框，翻了沒有都收：收集端要靠它把
+        // 名字換成 {u} 再記（還沒翻的那幾條正是要記的缺口）。見 NameFrames。
+        nameFrames = com.wynnchayuan.capture.NameFrames.of(seenSources);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
+
+    /**
+     * 語料裡帶一個 {@code {u}} 的句型，用來認出<b>別人的名字</b>。見
+     * {@link com.wynnchayuan.capture.NameFrames}。
+     *
+     * <p>每次載入整份換掉、不可變，算繪與收集端的背景執行緒都可以直接讀。
+     */
+    public com.wynnchayuan.capture.NameFrames nameFrames() {
+        return nameFrames;
+    }
+
+    private volatile com.wynnchayuan.capture.NameFrames nameFrames =
+            com.wynnchayuan.capture.NameFrames.EMPTY;
 
     /** 正在讀第幾層（0 是最底下那層）。見 {@link #layerOf}。 */
     private int layer = 0;
@@ -390,6 +407,7 @@ public final class TranslationStore {
     /** 讀一層。清空是 {@link #loadAll(List)} 的事，這裡只負責往上疊。 */
     private void readOne(Path dir) {
         thisLayer.clear();
+        unwrappedFromWrapped.clear();
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
@@ -1129,10 +1147,32 @@ public final class TranslationStore {
 
     /** 見 {@link #unwrapped}。索引<b>所有</b>夠長的條目，語料那邊不必也帶著換行。 */
     private void noteUnwrapped(String key, String value) {
-        if (key.length() >= MIN_FLAT_LENGTH) {
-            layered(unwrapped, "unwrapped", unwrap(key), value);
+        if (key.length() < MIN_FLAT_LENGTH) {
+            return;
         }
+        String joined = unwrap(key);
+        boolean single = key.indexOf('\n') < 0;
+        // 同一句話同時有「伺服器折好行」的鍵與沒折的鍵時，併句索引要的是<b>沒折的</b>
+        // 那一條：查到之後是照併起來的一句重建（見 LineTranslator#unwrappedGlyphs），
+        // 折過行的譯文多帶著一個續行圖示，填回去數量對不上，整句放棄。
+        // 先前同一層裡誰先載入誰贏，折過行的那條排在前面時，別的斷法就永遠翻不出來
+        // （死亡快訊「… by Voracious\n Octiped」就是這樣）。
+        if (single && unwrappedFromWrapped.remove(joined)) {
+            unwrapped.put(joined, value);
+            indexLayer.put("unwrapped" + '\0' + joined, layer);
+            return;
+        }
+        if (!thisLayer.contains("unwrapped" + '\u0000' + joined) && !single) {
+            unwrappedFromWrapped.add(joined);
+        }
+        layered(unwrapped, "unwrapped", joined, value);
     }
+
+    /**
+     * 這一層裡，併句索引目前是由<b>折過行</b>的鍵佔著的那幾句。見 {@link #noteUnwrapped}。
+     * 跟 {@link #thisLayer} 一起每層清一次。
+     */
+    private final java.util.Set<String> unwrappedFromWrapped = new java.util.HashSet<>();
 
     /**
      * 把斷好行的整則訊息當成一句話查。
@@ -2982,6 +3022,11 @@ public final class TranslationStore {
         // 只問一種會把另一種記成缺口。
         if (LineTranslator.lookup(key, this, false) != null
                 || LineTranslator.lookup(key, this, true) != null) {
+            return true;
+        }
+        // 世界事件的倒數公告走句型（見 LineTranslator#eventFrame）；伺服器折過行的
+        // 那幾種要併起來才認得，不問的話每種斷法都會被記成一條缺口。
+        if (key.indexOf('\n') >= 0 && LineTranslator.eventFrame(unwrap(key), this) != null) {
             return true;
         }
         String other = respell(key);
