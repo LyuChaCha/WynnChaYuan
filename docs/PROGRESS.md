@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_cn` 简体中文 — 99.6%（58,726 / 58,987）
+## `zh_cn` 简体中文 — 99.6%（58,730 / 58,991）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -33,7 +33,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 622 / 630 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -46,7 +46,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,002 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_tw` 繁體中文 — 99.5%（58,694 / 58,991）
+## `zh_tw` 繁體中文 — 99.5%（58,698 / 58,995）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -72,7 +72,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 622 / 630 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -85,7 +85,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,002 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `tr_tr` Türkçe — 97.3%（55,971 / 57,518）
+## `tr_tr` Türkçe — 97.3%（55,975 / 57,522）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -111,7 +111,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 98% | 620 / 630 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 99% | 964 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 99% | 968 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -124,7 +124,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | █████████░ 95% | 37 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 999 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 97.2%（56,486 / 58,136）
+## `ja_jp` 日本語 — 97.2%（56,490 / 58,140）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -150,7 +150,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 622 / 630 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -163,7 +163,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 97.1%（55,552 / 57,206）
+## `ru_ru` Русский — 97.1%（55,556 / 57,210）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -189,7 +189,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 624 / 632 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -202,7 +202,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 97.1%（55,577 / 57,232）
+## `es_es` Español — 97.1%（55,581 / 57,236）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -228,7 +228,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 624 / 632 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
@@ -241,7 +241,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 97.1%（55,581 / 57,237）
+## `ko_kr` 한국어 — 97.1%（55,585 / 57,241）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -267,7 +267,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `mini-quest.json` | ██████████ 100% | 67 / 67 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 99% | 624 / 632 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 189 / 189 | 打地城時<br>Seen during a dungeon |
-| `ingredient.json` | ██████████ 100% | 971 / 971 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 975 / 975 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
