@@ -62,7 +62,7 @@ public final class TooltipCacheTest {
         // 這裡一定要拿<b>裝備名</b>來問。先前用的是「Combat Level」，那是介面
         // 標籤，不吃「翻譯物品名稱」那個開關——於是開關切過去結果一樣，
         // 而測試把「一樣」當成了快取沒失效。Halcyon 是繁中少數翻了名字的
-        // mythic（靜星耀杖），關掉開關就會退回英文。
+        // mythic（孤星），關掉開關就會退回英文。
         List<Component> gear = List.of(
                 Component.literal("Halcyon"),
                 Component.literal("Halcyon"));
