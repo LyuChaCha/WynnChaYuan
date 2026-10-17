@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "An Iron Heart Part II",
-  "count": 66,
-  "translated": 66,
+  "count": 72,
+  "translated": 72,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -669,6 +669,66 @@
    "stage": "Stage 8",
    "speaker": "Detective Hart",
    "source": "wiki"
+  },
+  "An Iron Heart Part II#067": {
+   "src": "That golem is a danger to everything around it. Please, follow the trail of scrap and keep it from causing anyone more damage!",
+   "dst": "O golem etrafındaki her şey için bir tehlike. Lütfen hurda izini takip et ve başka kimseye zarar vermesini engelle!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#068": {
+   "src": "Get [{~} Acidic Sludge]\nto open the door",
+   "dst": "[{~} Acidic Sludge] topla,\nkapıyı aç",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#069": {
+   "src": "Maybe something can deactivate the golem guarding the entrance",
+   "dst": "Belki girişi koruyan golemi devre dışı bırakabilecek bir şey vardır",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#070": {
+   "src": "Maybe an item that golems react to could force it away.",
+   "dst": "Belki golemlerin tepki verdiği bir eşya onu uzaklaştırabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#071": {
+   "src": "Get [Explosive Chip]\nto open the door",
+   "dst": "[Explosive Chip] topla,\nkapıyı aç",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#072": {
+   "src": "...I hope you always do the right thing.",
+   "dst": "...Umarım her zaman doğru olanı yaparsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "Detective Hart",
+   "source": "captured.json"
   }
  }
 }
