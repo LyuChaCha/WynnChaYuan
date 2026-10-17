@@ -4,6 +4,7 @@ import worker, {
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
+  feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -56,6 +57,7 @@ let discordAppKey = '';
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
+let githubIssueStatus = 201;         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -69,6 +71,11 @@ globalThis.fetch = async (url, init = {}) => {
     }
     if (path === '/git/ref/heads/main') return answer({ object: { sha: 'mainsha' } });
     if (path === '/git/refs') return answer({}, 201);
+    if (path === '/issues' && call.method === 'POST') {
+      return githubIssueStatus === 201
+        ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/issues/77', number: 77 }, 201)
+        : answer({ message: 'nope' }, githubIssueStatus);
+    }
     if (call.method === 'PUT') return answer({}, 200);
     if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
     return answer({}, 404);
@@ -121,7 +128,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 
 /** 網頁的路徑照原樣，其餘的都是 API。 */
-const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms'].includes(path) ? path : '/api' + path);
+const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms'].includes(path) ? path : '/api' + path);
 const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
@@ -578,7 +585,7 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
-for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms']) {
+for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms']) {
   english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
   r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
@@ -645,7 +652,7 @@ check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every(
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
 check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
-  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate,/privacy,/terms');
+  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate,/feedback,/privacy,/terms');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
@@ -2013,6 +2020,61 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     await Promise.all(waits);
     check('用譯文也查得到', JSON.parse(discordCalls.find((c) => c.method === 'PATCH').body).embeds[0].fields[0].name === 'Bye');
 
+    // ---- /回饋（使用者 2026-10-17）：跟網站的回饋頁進同一個地方 ----
+    {
+      const GUS = '333333333333333333';
+      const gus = { id: GUS, username: 'gus', global_name: 'Gus 阿古' };
+      const fbCommand = (options, locale = 'zh-TW', who = { member: { user: gus } }) => ({
+        type: 2, application_id: 'app1', token: 'tok1', locale, guild_id: '1', ...who, data: { name: 'feedback', options },
+      });
+      const opt = (cat, msg, extra = []) => [{ name: 'category', value: cat }, { name: 'message', value: msg }, ...extra];
+      const mine = () => [...env.CORPUS.data.entries()].filter(([k]) => k.startsWith('fb:'))
+        .map(([, v]) => JSON.parse(v.value)).filter((x) => x.uid === GUS);
+      const def = DISCORD_COMMANDS.find((c) => c.name === 'feedback');
+      check('★ /回饋 的定義：繁中叫「回饋」、簡中「反馈」；分類五選一、內容必填、位置與語言可以不填', def
+        && def.name_localizations['zh-TW'] === '回饋' && def.name_localizations['zh-CN'] === '反馈'
+        && def.options.map((o) => o.name + (o.required ? '!' : '?')).join() === 'category!,message!,where?,language?'
+        && def.options[0].choices.map((c) => c.value).join() === 'translation,content,website,feature,other'
+        && def.options[0].choices[0].name_localizations['zh-TW'] === '譯文建議');
+
+      r = await worker.fetch(await signed(fbCommand(opt('feature', '想要 /cape 也能看別人的徽章'))), env);
+      const fbReply = await r.json();
+      check('★ /回饋（不是譯文建議）：直接回，只給本人看', r.status === 200 && fbReply.type === 4
+        && fbReply.data.flags === 64 && fbReply.data.content.includes('收到了'));
+      check('★ /回饋 存進同一個地方：Discord 代號、顯示名稱、來自機器人', mine().length === 1 && mine()[0].name === 'Gus 阿古'
+        && mine()[0].via === 'bot' && mine()[0].cat === 'feature' && mine()[0].st === 'open');
+      check('★ /回饋 的簽名不對：401，什麼都不存',
+        (await worker.fetch(await signed(fbCommand(opt('other', 'forged message')), true), env)).status === 401 && mine().length === 1);
+
+      const fbWaits = [];
+      discordCalls.length = 0;
+      githubCalls.length = 0;
+      r = await worker.fetch(await signed(fbCommand(opt('translation', 'Gambit 的譯名前後不一致', [{ name: 'where', value: 'Lootrun 結算畫面' }]), 'ja')),
+        env, { waitUntil: (job) => fbWaits.push(job) });
+      const deferred = await r.json();
+      check('★ /回饋 的譯文建議要開 Issue：先回「處理中」，而且只給本人看', deferred.type === 5 && deferred.data.flags === 64);
+      await Promise.all(fbWaits);
+      const patched = JSON.parse((discordCalls.find((c) => c.method === 'PATCH') || { body: '{}' }).body);
+      const issueCall = githubCalls.find((c) => c.path === '/issues');
+      check('★ 補上的回覆附 Issue 網址；Issue 只放顯示名稱、不放代號；語言跟著 Discord 介面（日文）',
+        String(patched.content).includes('/issues/77') && issueCall && issueCall.body.body.includes('Gus 阿古')
+        && !issueCall.body.body.includes(GUS) && !issueCall.body.title.includes(GUS) && issueCall.body.body.includes('日本語')
+        && issueCall.body.body.includes('Lootrun 結算畫面') && issueCall.body.body.includes('Discord 機器人'));
+      check('Issue 網址記在那一筆', mine().some((x) => x.cat === 'translation' && x.issue && x.issue.url.endsWith('/issues/77')));
+
+      r = await worker.fetch(await signed(fbCommand(opt('other', 'ok'))), env);
+      check('/回饋 太短：只回給本人看', (await r.json()).data.content.includes('太短'));
+      for (let i = mine().length; i < FEEDBACK_PER_HOUR; i++) {
+        await worker.fetch(await signed(fbCommand(opt('other', '再一則 ' + i), 'zh-TW', { user: gus })), env);
+      }
+      check('私訊裡（user 不在 member 底下）也認得是誰', mine().length === FEEDBACK_PER_HOUR);
+      r = await worker.fetch(await signed(fbCommand(opt('other', '第六則了'))), env);
+      const limited = await r.json();
+      check('★ /回饋 的限流：滿了只回給本人看，說幾點可以再送', limited.data.flags === 64 && limited.data.content.includes('<t:')
+        && limited.data.content.includes(String(FEEDBACK_PER_HOUR)) && mine().length === FEEDBACK_PER_HOUR);
+      for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
+    }
+
     check('★ 註冊指令只有開發者', (await trPost('/admin/discord/register', {}, bobNow)).status === 403);
     check('沒設 Bot Token 就說還沒設定', (await trPost('/admin/discord/register', {}, aliceWeb)).status === 503);
     env.DISCORD_BOT_TOKEN = 'bot-secret';
@@ -2022,7 +2084,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     r = await trPost('/admin/discord/register', {}, aliceWeb);
     const put = discordCalls.find((c) => c.method === 'PUT');
     check('★ 註冊：PUT 全部指令、帶 Bot Token', r.status === 200 && put && put.auth === 'Bot bot-secret'
-      && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate');
+      && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate,feedback');
     discordAppKey = env.DISCORD_PUBLIC_KEY;
     const info = await (await trGet('/admin/discord', aliceWeb)).json();
     check('管理頁拿得到邀請連結與設定狀態', info.token && info.publicKey && info.invite.includes('scope=applications.commands+bot'));
@@ -2039,6 +2101,168 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('tp:') || k.startsWith('tq:')) env.CORPUS.data.delete(k);
   githubCalls.length = 0;
   githubFile = CREDITS;
+  env.GITHUB_TOKEN = hadToken;
+}
+
+// ---- ★ 回饋（使用者 2026-10-17：/feedback，要用 Discord 登入；譯文建議自動開 GitHub Issue） ----
+{
+  // /feedback 同時是網頁與 API 的名字：這裡一律打 /api 底下的
+  const fbPost = (path, bodyValue, token) => worker.fetch(new Request('https://x.test/api' + path, {
+    method: 'POST', body: typeof bodyValue === 'string' ? bodyValue : JSON.stringify(bodyValue),
+    headers: token ? { authorization: 'Bearer ' + token } : {},
+  }), env);
+  const fbGet = (path, token) => worker.fetch(new Request('https://x.test/api' + path, {
+    headers: token ? { authorization: 'Bearer ' + token } : {},
+  }), env);
+  const hadToken = env.GITHUB_TOKEN;
+  env.GITHUB_TOKEN = 'ghtok';
+  const FAY = '222222222222222222';
+  await env.CORPUS.put('d:' + FAY, JSON.stringify({ n: 'Fay 小花' }));
+  const fay = await issueDiscordToken(env, FAY, NOW);
+  const frank = await issueWebToken(env, 'f'.repeat(32), 'Frank', NOW);      // 從遊戲開的網頁，沒綁 Discord
+  const good = { cat: 'website', msg: '披風一覽在手機上排得太擠了', where: '/capes' };
+  const kv = (id) => env.CORPUS.data.get('fb:' + id);
+  const value = (id) => JSON.parse(kv(id).value);
+
+  r = await fbPost('/feedback', good);
+  check('★ 回饋要登入：沒登入 401', r.status === 401 && (await r.json()).why === 'login first');
+  r = await fbPost('/feedback', good, frank);
+  check('★ 從遊戲開的網頁、沒綁 Discord：401，叫他先綁', r.status === 401 && (await r.json()).why === 'discord first');
+
+  const tidy = feedbackCheck({ cat: 'other', msg: ' hi\r\nthere\u0007 ', where: ' a \n  b ', lang: 'xx_yy' });
+  check('★ feedbackCheck：分類、長短、位置的長度', feedbackCheck({ cat: 'nope', msg: 'hello' }).why === 'bad category'
+    && feedbackCheck({ cat: 'other', msg: '  a  ' }).why === 'too short'
+    && feedbackCheck({ cat: 'other', msg: 'x'.repeat(2001) }).why === 'too long'
+    && feedbackCheck({ cat: 'other', msg: 'x'.repeat(2000) }).entry.msg.length === 2000
+    && feedbackCheck({ cat: 'other', msg: 'hello', where: 'w'.repeat(201) }).why === 'where too long'
+    && feedbackCheck({ cat: 'other', msg: 42 }).why === 'too short' && feedbackCheck(null).why === 'bad request');
+  check('feedbackCheck：換行統一、控制字元拿掉、位置收成一行、不認得的語言當成沒填', tidy.entry.msg === 'hi\nthere'
+    && tidy.entry.where === 'a b' && tidy.entry.lang === null
+    && feedbackCheck({ cat: 'translation', msg: 'abc', lang: 'ja_jp' }).entry.lang === 'ja_jp');
+  r = await fbPost('/feedback', { ...good, cat: 'bogus' }, fay);
+  check('★ 網頁送來的也驗：分類不對 400', r.status === 400 && (await r.json()).why === 'bad category');
+  check('太短、太長、不是 JSON 都 400', (await fbPost('/feedback', { ...good, msg: 'a' }, fay)).status === 400
+    && (await fbPost('/feedback', { ...good, msg: 'x'.repeat(2001) }, fay)).status === 400
+    && (await fbPost('/feedback', 'not json', fay)).status === 400);
+
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', good, fay);
+  let made = await r.json();
+  const websiteId = made.id;
+  const stored = value(websiteId);
+  check('★ 存下來：Discord 代號、顯示名稱、分類、內容、位置、來自網站、待處理', r.status === 200 && made.ok
+    && stored.uid === FAY && stored.name === 'Fay 小花' && stored.cat === 'website' && stored.msg === good.msg
+    && stored.where === '/capes' && stored.via === 'web' && stored.st === 'open' && kv(websiteId).ttl === undefined);
+  check('列表要看的放在 metadata', kv(websiteId).metadata.c === 'website' && kv(websiteId).metadata.st === 'open'
+    && kv(websiteId).metadata.n === 'Fay 小花' && kv(websiteId).metadata.s === good.msg);
+  check('★ 不是譯文建議：不碰 GitHub', made.issue === null && !githubCalls.some((c) => c.path === '/issues'));
+
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', { cat: 'translation', msg: '「Weaken Enemy」應該翻成削弱敵傷', where: 'Lootrun 加持', lang: 'zh_tw' }, fay);
+  made = await r.json();
+  const trId = made.id;
+  const issueCall = githubCalls.find((c) => c.path === '/issues');
+  check('★ 譯文建議：開 GitHub Issue（用同一把 token、加 translation 標籤），網址記在那一筆', r.status === 200
+    && issueCall && issueCall.method === 'POST' && issueCall.auth === 'Bearer ghtok' && issueCall.body.labels.join() === 'translation'
+    && issueCall.body.title.startsWith('譯文建議：') && issueCall.body.title.includes('Weaken Enemy')
+    && made.issue === 'https://github.com/LyuChaCha/WynnChaYuan/issues/77'
+    && value(trId).issue.url === made.issue && value(trId).issue.n === 77 && kv(trId).metadata.i === made.issue);
+  check('★ Issue 內文：內容、位置、語言、顯示名稱都在；Discord 代號不在', issueCall.body.body.includes('削弱敵傷')
+    && issueCall.body.body.includes('Lootrun 加持') && issueCall.body.body.includes('繁體中文')
+    && issueCall.body.body.includes('Fay 小花') && !issueCall.body.body.includes(FAY) && !issueCall.body.title.includes(FAY));
+  const tricky = feedbackIssue({ id: 'x', cat: 'translation', msg: 'a ``` b @someone', where: '', name: 'n`a\nme', via: 'web', lang: null });
+  check('feedbackIssue：內容裡的反引號關不掉程式碼區塊，名字裡的反引號拿掉', tricky.body.includes('````\na ``` b @someone\n````')
+    && tricky.body.includes('`name`') && tricky.body.includes('沒有指定') && !tricky.body.includes('**位置**'));
+
+  for (let i = 2; i < FEEDBACK_PER_HOUR; i++) await fbPost('/feedback', { cat: 'other', msg: '第 ' + i + ' 則回饋' }, fay);
+  r = await fbPost('/feedback', good, fay);
+  const slow = await r.json();
+  check('★ 限流：一小時 ' + FEEDBACK_PER_HOUR + ' 則，再送就 429，告訴他哪時候可以再送', r.status === 429 && slow.why === 'slow down'
+    && slow.until > Date.now() && slow.until <= Date.now() + 3600000);
+  check('驗證沒過的不算一則；限流紀錄一小時後自己消失', JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).length === FEEDBACK_PER_HOUR
+    && env.CORPUS.data.get('fbr:' + FAY).ttl === 3600);
+  env.CORPUS.data.get('fbr:' + FAY).value = JSON.stringify(JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).map((t) => t - 3600001));
+  check('★ 一小時前送的不算：又可以送了', (await fbPost('/feedback', { cat: 'content', msg: '希望翻譯 Raid 的結算畫面' }, fay)).status === 200);
+
+  githubIssueStatus = 500;
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', { cat: 'translation', msg: 'GitHub 掛了也要留著', lang: 'ja_jp' }, fay);
+  made = await r.json();
+  const failedId = made.id;
+  check('★ GitHub 失敗：回饋照樣存著，記下原因給管理頁看', r.status === 200 && made.issueFailed === true
+    && githubCalls.some((c) => c.path === '/issues') && value(failedId).issueError === 'github 500' && !value(failedId).issue
+    && kv(failedId).metadata.e === 'github 500' && value(failedId).msg === 'GitHub 掛了也要留著');
+  delete env.GITHUB_TOKEN;
+  env.CORPUS.data.delete('fbr:' + FAY);
+  r = await fbPost('/feedback', { cat: 'translation', msg: '沒設 token 也要留著' }, fay);
+  made = await r.json();
+  check('沒設 GITHUB_TOKEN：一樣存著，原因是還沒設定', r.status === 200 && value(made.id).issueError === 'github not configured');
+  env.CORPUS.data.delete('fb:' + made.id);
+  env.GITHUB_TOKEN = 'ghtok';
+  githubIssueStatus = 201;
+  // 讓「新的在前」看得出來：失敗那一則挪到最新
+  kv(failedId).metadata.t = Date.now() + 5000;
+
+  check('★ 管理：一般人、沒登入都看不到回饋列表', (await fbGet('/admin/feedback', fay)).status === 403
+    && (await fbGet('/admin/feedback')).status === 403 && (await fbGet('/admin/feedback', bobNow)).status === 403);
+  check('★ 管理：一般人不能標已處理、不能刪、不能重開 Issue',
+    (await fbPost('/admin/feedback/status', { id: failedId, st: 'done' }, fay)).status === 403
+    && (await fbPost('/admin/feedback/delete', { id: websiteId }, bobNow)).status === 403
+    && (await fbPost('/admin/feedback/issue', { id: failedId }, fay)).status === 403 && kv(websiteId) && value(failedId).st === 'open');
+  r = await fbGet('/admin/feedback', aliceWeb);
+  let list = await r.json();
+  check('★ 開發者看得到全部，新的在前', r.status === 200 && list.total === FEEDBACK_PER_HOUR + 2
+    && list.items[0].id === failedId && list.items.every((it, i, all) => i === 0 || all[i - 1].t >= it.t || i === 1)
+    && list.counts.open === FEEDBACK_PER_HOUR + 2 && list.counts.done === 0);
+  check('列表裡有 Issue 網址與失敗原因', list.items.some((it) => it.id === trId && it.issue.url.endsWith('/issues/77'))
+    && list.items.some((it) => it.id === failedId && it.issueError === 'github 500'));
+  list = await (await fbGet('/admin/feedback?cat=translation', aliceWeb)).json();
+  check('★ 照分類篩', list.items.length === 2 && list.items.every((it) => it.cat === 'translation'));
+
+  r = await fbPost('/admin/feedback/status', { id: websiteId, st: 'done' }, aliceWeb);
+  const doneItem = (await r.json()).item;
+  check('★ 標成已處理：記下誰、什麼時候；KV ' + FEEDBACK_KEEP_DAYS + ' 天後自己刪', r.status === 200 && doneItem.st === 'done'
+    && doneItem.done.by === ALICE.name && kv(websiteId).ttl === FEEDBACK_KEEP_DAYS * 86400 && kv(websiteId).metadata.st === 'done');
+  list = await (await fbGet('/admin/feedback?st=done', aliceWeb)).json();
+  check('★ 照狀態篩', list.items.length === 1 && list.items[0].id === websiteId && list.counts.done === 1
+    && (await (await fbGet('/admin/feedback?st=open', aliceWeb)).json()).items.every((it) => it.st === 'open'));
+  r = await fbPost('/admin/feedback/status', { id: websiteId, st: 'open' }, aliceWeb);
+  check('★ 重新開啟：拿掉處理紀錄，不再過期', r.status === 200 && !value(websiteId).done && value(websiteId).st === 'open'
+    && kv(websiteId).ttl === undefined);
+  check('狀態不對、編號不對 400，找不到 404', (await fbPost('/admin/feedback/status', { id: websiteId, st: 'maybe' }, aliceWeb)).status === 400
+    && (await fbPost('/admin/feedback/status', { id: 'zz', st: 'done' }, aliceWeb)).status === 400
+    && (await fbPost('/admin/feedback/status', { id: '0'.repeat(16), st: 'done' }, aliceWeb)).status === 404);
+
+  githubCalls.length = 0;
+  r = await fbPost('/admin/feedback/issue', { id: failedId }, aliceWeb);
+  const retried = await r.json();
+  check('★ Issue 沒開成的：管理頁再開一次，成功就清掉失敗原因', r.status === 200 && retried.item.issue.url.endsWith('/issues/77')
+    && !value(failedId).issueError && githubCalls.filter((c) => c.path === '/issues').length === 1);
+  check('不是譯文建議的不開 Issue', (await fbPost('/admin/feedback/issue', { id: websiteId }, aliceWeb)).status === 409);
+
+  await env.CORPUS.put('staff:d:' + FAY, JSON.stringify({ n: '測試', t: NOW, by: 'test' }));
+  check('★ 管理員（照 Discord 加的）也看得到、也能處理', (await fbGet('/admin/feedback', fay)).status === 200
+    && (await fbPost('/admin/feedback/status', { id: trId, st: 'done' }, fay)).status === 200
+    && value(trId).done.by === 'Discord: Fay 小花');
+  env.CORPUS.data.delete('staff:d:' + FAY);
+
+  r = await fbPost('/admin/feedback/delete', { id: websiteId }, aliceWeb);
+  check('★ 刪掉垃圾訊息', r.status === 200 && !kv(websiteId));
+  check('刪過的再刪 404', (await fbPost('/admin/feedback/delete', { id: websiteId }, aliceWeb)).status === 404);
+
+  check('★ 回饋頁：分類、內容、位置、語言與送出；頁首與頁尾都連得到；管理頁有回饋列表',
+    ['id="fb-form"', 'id="fb-cat"', 'value="translation"', 'value="other"', 'id="fb-text"', 'id="fb-where"', 'id="fb-lang"', "'/feedback'"]
+      .every((w) => pages['/feedback'].includes(w))
+    && pages['/'].includes('<a href="/feedback">') && english['/terms'].includes('<a href="/feedback">')
+    && ['id="fbf-list"', 'id="fbf-cat"', 'id="fbf-st"', "'/admin/feedback/status'", "'/admin/feedback/delete'", "'/admin/feedback/issue'"]
+      .every((w) => pages['/admin'].includes(w)));
+  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、顯示名稱、保留多久）', LANGS.every((lang) => {
+    const body = TEXT[lang]['privacy.body'];
+    return body.split('<h2>').length === 14 && body.includes('GitHub') && body.includes('180') && body.includes('/feedback');
+  }));
+
+  for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
+  env.CORPUS.data.delete('d:' + FAY);
   env.GITHUB_TOKEN = hadToken;
 }
 
