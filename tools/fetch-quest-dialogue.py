@@ -116,6 +116,10 @@ def clean(text: str) -> str:
         r"\by\s*=\s*(-?\d+)\s*\|[^}]*?"
         r"\bz\s*=\s*(-?\d+)\s*\}\}",
         r"[\1, \2, \3]", text)
+    # {{--}} 是 wiki 的破折號模板，遊戲裡送的是 `-`（前後空白照原樣：`moment- you`、
+    # `effects - certainly`）。以前被下面那條「其餘模板」一起丟掉，於是語料寫成
+    # `moment you`，23 個任務、379 處永遠對不上（issue #1252 的 capture 抓出來的）。
+    text = text.replace("{{--}}", "-")
     text = re.sub(r"\{\{[^}]*\}\}", "", text)                    # 其餘模板
     text = re.sub(r"'''?([^']*)'''?", r"\1", text)               # 粗體斜體
     text = re.sub(r"<[^>]+>", "", text)                          # html

@@ -3,8 +3,8 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 233,
-  "translated": 233,
+  "count": 236,
+  "translated": 236,
   "note": "戰士的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -3179,6 +3179,48 @@
    "tree": "00/warrior/09/003/004",
    "ability": "Zenith Stance",
    "code": "WARRIOR-P9-R03-C04"
+  },
+  "ability-warrior#0233": {
+   "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
+   "dst": "每當累計回復最大生命的 {~1} 時，\n對附近所有敵方造成傷害。\n({~3} 秒內最多觸發 {~2} 次)",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Sparkling Hope"
+   ],
+   "lines": 3,
+   "flat": "Deals damage to all nearby enemies every time you heal {~} of your max health. (Max {~} activations within {~}s.)",
+   "_raw": "Deals damage to all nearby enemies every\ntime you heal 5% of your max health.\n(Max 20 activations within 4s.)",
+   "ability": "Sparkling Hope",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0234": {
+   "src": "Taking lethal damage while Corrupted {#}\ngrants resistance, disables Corrupted {#}\nand allows you to take additional damage\nup to {~} of your maximum health.",
+   "dst": "在 Corrupted {#} 狀態下受到致命傷害時，\n獲得抗性並解除 Corrupted {#}，\n且你還能再承受最多\n等同最大生命 {~} 的傷害。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Brink of Madness"
+   ],
+   "lines": 4,
+   "flat": "Taking lethal damage while Corrupted {#} grants resistance, disables Corrupted {#} and allows you to take additional damage up to {~} of your maximum health.",
+   "_raw": "Taking lethal damage while Corrupted \ngrants resistance, disables Corrupted \nand allows you to take additional damage\nup to 30% of your maximum health.",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0235": {
+   "src": "Surviving after the effect ends\nactivates effects that happen\nwhen leaving Corrupted {#}.",
+   "dst": "此效果結束後若仍存活，\n會觸發離開 Corrupted {#}\n狀態時的所有效果。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Brink of Madness"
+   ],
+   "lines": 3,
+   "flat": "Surviving after the effect ends activates effects that happen when leaving Corrupted {#}.",
+   "_raw": "Surviving after the effect ends\nactivates effects that happen\nwhen leaving Corrupted .",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR"
   }
  }
 }

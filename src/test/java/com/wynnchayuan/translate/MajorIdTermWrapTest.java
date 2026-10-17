@@ -111,8 +111,9 @@ public final class MajorIdTermWrapTest {
     private static void reported(TranslationStore store, JsonObject entries) {
         Case[] cases = {
             new Case("The Incomprehensible", "Wormhole", MajorIdWrapTest.INDENT,
-                    "Mirror and Shadow clones will cast Meteor with Last Laugh",
-                    new String[] {"蟲洞", "鏡中幻象", "幽影幻象", "餘戲", "隕石", "譏世弄人", "詭計"},
+                    // 2026-10-16 官方改了措辭：Mirror and Shadow clones → Clones
+                    "Clones instead cast Meteor with Last Laugh",
+                    new String[] {"蟲洞", "幻象", "餘戲", "隕石", "譏世弄人", "詭計"},
                     new String[] {"Last", "Laugh", "Malicious", "Mockery", "Meteor", "Trick",
                                   "Shadow", "Clone"}),
             new Case("Eschaton", "Death Sentence", "",
