@@ -110,11 +110,66 @@ public final class NameOriginalTermTest {
         check("不是附原文的括號不斷",
               body2.equals(LineTranslator.breakBeforeOriginal(body2, 1, store, measure)));
 
+        lootrunNames();
+
         if (failures > 0) {
             System.err.println(failures + " 項失敗");
             System.exit(1);
         }
         System.out.println("NameOriginalTermTest 全部通過");
+    }
+
+    /**
+     * Lootrun 使命名附的原文也一樣不能被換（實機 2026-10-17）。
+     *
+     * <p>「任務與洞窟名稱」設成中英對照時，{@code LootrunNames.apply} 在查表最後附上
+     * 「(Jester's Trick)」，之後換詞那一步照樣掃過去：記分板成了「… (Jester's 詭計)」、
+     * 卡片標題成了「逐險者 (獵殺悸動 Seeker)」。兩條換詞的路（折行前的 termsWithin、
+     * 逐段的 appendText）都要測；只顯示原文（OFF）時整格是英文名，也不能被換。
+     */
+    private static void lootrunNames() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-lootrun-original");
+        Files.writeString(dir.resolve("misc.json"), """
+                {"Jester's Trick:": "甲乙之計:", "Thrill Seeker": "丙丁者",
+                 "Thrill grants speed.": "Thrill 給予速度。"}
+                """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("ability-terms.json"),
+                "{\"Trick\": \"戊己\", \"Thrill\": \"庚辛\"}", StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        store.setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+
+        String board = store.lookup("Jester's Trick:");
+        check("記分板那一格附上原文（實際 " + board + "）",
+              "甲乙之計 (Jester's Trick):".equals(board));
+        String swapped = LineTranslator.termsWithin(board, store);
+        String afterSwap = swapped == null ? board : swapped;
+        check("★ 折行前的整句換詞不動附的原文（實際 " + afterSwap + "）",
+              afterSwap.contains("(Jester's Trick)"));
+        String drawn = drawn("Jester's Trick:", store);
+        check("★ 畫出來的記分板也不動（實際 " + drawn + "）",
+              drawn != null && drawn.contains("(Jester's Trick)") && !drawn.contains("戊己"));
+
+        String card = drawn("Thrill Seeker", store);
+        check("★ 卡片標題「譯名 (原文)」的原文原封不動（實際 " + card + "）",
+              card != null && card.contains("(Thrill Seeker)") && !card.contains("庚辛"));
+
+        // 反方向：一般內文裡同一個詞照換，否則「把詞表關掉」也會過
+        String body = drawn("Thrill grants speed.", store);
+        check("一般內文照樣換詞（實際 " + body + "）", body != null && body.contains("庚辛"));
+
+        store.setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        String off = drawn("Thrill Seeker", store);
+        check("★ 只顯示原文時整格是英文名，不被換掉（實際 " + off + "）",
+              off == null || (off.contains("Thrill Seeker") && !off.contains("庚辛")));
+    }
+
+    /** 走一般 tooltip 那條路畫出一行：整行查表、逐段換詞。 */
+    private static String drawn(String text, TranslationStore store) {
+        net.minecraft.network.chat.Component out = LineTranslator.translate(
+                com.wynntils.core.text.StyledText.fromComponent(
+                        net.minecraft.network.chat.Component.literal(text)), store);
+        return out == null ? null : out.getString();
     }
 
     private static void check(String what, boolean ok) {

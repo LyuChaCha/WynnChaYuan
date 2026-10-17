@@ -101,6 +101,33 @@ public final class TooltipDebug {
               + "shown 是實際畫出去的那一行；兩邊的 spacePx 對照就看得出欄距補了多少。");
     }
 
+    /** 技能樹節點說明最多記幾份。 */
+    private static final int MAX_ABILITY = 6;
+    private static int ability = 0;
+
+    /**
+     * 記下一份<b>技能樹節點</b>的說明：原文每一行，連同我們畫出去的那一行。
+     *
+     * <p>技能樹整份都翻得到，{@link #dumpPartial} 從來輪不到它；而 line-debug／layout-debug
+     * 只記開遊戲後的前幾十筆，進到技能樹時早就滿了。實機回報「總傷害: 30%(」數值壓到
+     * 括號、底下還有一份灰色的數字時，手上沒有任何一份實際的片段可以對——
+     * 字型、粗體、偏移，離線重建出來的都是對的。這份就是給那種時候用的。
+     *
+     * @param shown 畫出去的那一份；行數可能跟原文不同（整段收短過），照行號並排而已
+     */
+    public static synchronized void dumpAbility(List<Component> tooltip, List<Component> shown) {
+        if (file == null || ability >= MAX_ABILITY || tooltip.isEmpty()) {
+            return;
+        }
+        if (!seen.add("ability|" + key(tooltip))) {
+            return;                            // 同一個節點只記一次
+        }
+        ability++;
+        write(tooltip, shown, null, "ability-tooltip-" + ability + ".json",
+              "技能樹節點的說明。segments 是原文的片段，shown 是實際畫出去的那一行"
+              + "（行數不同時只是照行號並排）；bold 只在粗體的片段上出現。");
+    }
+
     /** 別的模組重畫的 tooltip 最多記幾份。 */
     private static final int MAX_FOREIGN = 8;
     private static int foreign = 0;
@@ -214,6 +241,11 @@ public final class TooltipDebug {
             // 只記字型，顏色的回報永遠只能靠截圖猜。
             if (ps != null && ps.getColor() != null) {
                 seg.addProperty("colour", ps.getColor().toHexString());
+            }
+            // 粗體會讓每個字多 1px。數值壓到後面的字、看起來畫了兩次的時候，
+            // 先看這一欄兩邊對不對得上。
+            if (ps != null && ps.isBold()) {
+                seg.addProperty("bold", true);
             }
             // 排版用的空白偏移。這是欄距真正的載體，沒有它就只能猜。
             int px = com.wynnchayuan.translate.SpaceOffset.decode(raw);
