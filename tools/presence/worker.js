@@ -3169,12 +3169,16 @@ async function botStatus(env, text) {
  * 披風的預覽圖（跟披風一覽的卡片一樣只露出背面，見 cape-preview.js）。照圖的雜湊存在 KV 的 prev:<雜湊>，
  * 同一張圖只算一次；圖被刪掉時一起刪。知道雜湊才拿得到（雜湊跟 /api/cape 的 ?k= 一樣是鑰匙）。
  */
+/** 人物預覽的畫法版本。改了 figurePreview 的樣子就換一個：KV 的鍵與給 Discord 的網址都會跟著變（Discord 照網址快取圖片）。 */
+const FIGURE_STYLE = 'angled';
+
 async function handleCapePreview(env, hash, uuid) {
   if (!HASH.test(hash || '')) return no('not found', 404);
-  // 帶了 ?u=<UUID>：畫成人物（那個人的 skin 穿著披風，正面＋背面，見 cape-preview.js 的 figurePreview）。
+  // 帶了 ?u=<UUID>：畫成人物（那個人的 skin 穿著披風，從背後斜看，見 cape-preview.js 的 figurePreview）。
   // skin 會換，所以人物那份只留三天；只有披風背面的那份跟著圖本身，一直留著。
+  // 人物那份的鍵帶畫法的版本（FIGURE_STYLE）：換了畫法，舊的那張不會再被拿出來。
   const who = UUID.test(uuid || '') ? uuid.replace(/-/g, '').toLowerCase() : null;
-  const key = 'prev:' + hash + (who ? ':' + who : '');
+  const key = 'prev:' + hash + (who ? ':' + who + ':' + FIGURE_STYLE : '');
   const headers = (type) => ({
     'content-type': type === 'gif' ? 'image/gif' : 'image/png',
     'cache-control': who ? 'public, max-age=86400' : 'public, max-age=604800, immutable',
@@ -3229,7 +3233,7 @@ async function botCape(env, text, name) {
   return {
     embeds: [{
       title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
-      image: { url: SITE + '/api/cape-preview/' + mine.h + (UUID.test(mine.u || '') ? '?u=' + mine.u.replace(/-/g, '') : '') },
+      image: { url: SITE + '/api/cape-preview/' + mine.h + (UUID.test(mine.u || '') ? '?u=' + mine.u.replace(/-/g, '') + '&v=' + FIGURE_STYLE : '') },
       thumbnail: { url: 'https://minotar.net/helm/' + encodeURIComponent(mine.n) + '/64.png' },
       fields: [
         { name: text.kind, value: mine.t === 'gif' ? 'GIF' : 'PNG', inline: true },

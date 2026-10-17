@@ -501,14 +501,15 @@ export async function capePreview(bytes, type) {
   return { bytes: await encodePng(box.width, box.height, paint(png.rgba, png.width, png.height, box, true)), type: 'png' };
 }
 
-// ---------------------------------------------------------------- 人物：skin 穿著披風，正面＋背面
+// ---------------------------------------------------------------- 人物：skin 穿著披風，從背後斜看
 
 /*
- * 使用者 2026-10-17：「像網站預覽展示 skin＋披風和正反面（如果 GIF 能動的話）」。
- * 照 Minecraft 的貼圖位置把 skin 平貼成正面與背面（16×32 格，每格 P 像素），
- * 背面蓋上披風的外側（範本 (1,1) 那塊 10×16 格，跟披風一覽的卡片同一塊），
- * 正面在腿的兩旁露出披風內側（(12,1) 那塊，從前面看是左右相反的）。
- * 細手臂（Alex）照 skin 本身判斷；舊式 64×32 的 skin 左手左腳是右邊鏡射過來的。
+ * 使用者 2026-10-17：「像網頁一樣是斜角的，不是直接正反面」。
+ * 照網頁披風頁的 3D 檢視（skinview3d：背對著、側轉 0.5 弧度、走路的姿勢、披風往後飄）畫一個方塊人。
+ * Worker 沒有 WebGL，所以自己算：每一塊是一個方塊，六個面照 Minecraft 的貼圖位置取 skin，
+ * 透視投影後拆成三角形、逐點取貼圖（透視校正），用深度緩衝決定前後；外層（帽子、外套）是大一圈的同一個方塊，
+ * 透明的地方鏤空。披風是 10×16×1 的方塊掛在肩膀，外側 (1,1)、內側 (12,1)，跟披風一覽的卡片同一塊。
+ * 細手臂（Alex）照 skin 本身判斷；舊式 64×32 的 skin 先照遊戲的做法補成 64×64（左手左腳是右邊鏡射）。
  */
 
 /** 沒有 skin 時的灰色人偶（跟網頁立體檢視的木偶同一組顏色）。 */
@@ -527,118 +528,262 @@ function mannequin() {
   return { width: 64, height: 64, rgba };
 }
 
-/** 一個面要畫在哪：[skin x, skin y, 寬, 高, 人物 x, 人物 y, 左右翻]（單位都是 skin 像素）。 */
-function parts(skin) {
+/**
+ * skin 整理成遊戲實際畫的樣子：64×32 補成 64×64（左手左腳鏡射右邊的），
+ * 裡層一律不透明，舊式 skin 的帽子層如果整片都不透明就當成沒有（遊戲的 Notch 透明規則）。
+ */
+function normaliseSkin(skin) {
+  const rgba = new Uint8Array(64 * 64 * 4);
   const legacy = skin.height < 64;
-  const px = (x, y) => skin.rgba[((y * skin.width) + x) * 4 + 3];
-  const aw = !legacy && px(54, 20) === 0 ? 3 : 4;        // 細手臂：右臂背面的第四欄是空的
-  const L = 4 - aw;                                       // 細手臂往身體靠一格
-  const front = [
-    [8, 8, 8, 8, 4, 0], [20, 20, 8, 12, 4, 8],
-    [44, 20, aw, 12, L, 8], [4, 20, 4, 12, 4, 20],
-  ];
-  const back = [
-    [24, 8, 8, 8, 4, 0], [32, 20, 8, 12, 4, 8],
-    [52 - (4 - aw), 20, aw, 12, 12, 8], [12, 20, 4, 12, 8, 20],
-  ];
+  rgba.set(skin.rgba.subarray(0, 64 * skin.height * 4));
+  // 細手臂：右臂背面的第四欄是空的（要在補成不透明之前看）
+  const slim = !legacy && rgba[(20 * 64 + 54) * 4 + 3] === 0;
+  const copy = (sx, sy, w, h, dx, dy) => {
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const s = ((sy + y) * 64 + sx + w - 1 - x) * 4, o = ((dy + y) * 64 + dx + x) * 4;
+      for (let c = 0; c < 4; c++) rgba[o + c] = rgba[s + c];
+    }
+  };
   if (legacy) {
-    front.push([44, 20, aw, 12, 12, 8, true], [4, 20, 4, 12, 8, 20, true]);
-    back.push([52, 20, aw, 12, L, 8, true], [12, 20, 4, 12, 4, 20, true]);
-    front.push([40, 8, 8, 8, 4, 0]);                      // 帽子層
-    back.push([56, 8, 8, 8, 4, 0]);
-  } else {
-    front.push([36, 52, aw, 12, 12, 8], [20, 52, 4, 12, 8, 20]);
-    back.push([44 - (4 - aw), 52, aw, 12, L, 8], [28, 52, 4, 12, 4, 20]);
-    // 外層（帽子、外套、袖子、褲管）
-    front.push([40, 8, 8, 8, 4, 0], [20, 36, 8, 12, 4, 8], [44, 36, aw, 12, L, 8], [52, 52, aw, 12, 12, 8],
-      [4, 36, 4, 12, 4, 20], [4, 52, 4, 12, 8, 20]);
-    back.push([56, 8, 8, 8, 4, 0], [32, 36, 8, 12, 4, 8], [52 - (4 - aw), 36, aw, 12, 12, 8],
-      [60 - (4 - aw), 52, aw, 12, L, 8], [12, 36, 4, 12, 8, 20], [12, 52, 4, 12, 4, 20]);
+    // 右腳 (0,16)／右手 (40,16) → 左腳 (16,48)／左手 (32,48)：每個面左右翻，左右兩側對調
+    for (const [u, v, du, dv] of [[0, 16, 16, 48], [40, 16, 32, 48]]) {
+      copy(u + 4, v, 4, 4, du + 4, dv);          // 頂
+      copy(u + 8, v, 4, 4, du + 8, dv);          // 底
+      copy(u, v + 4, 4, 12, du + 8, dv + 4);     // 外側 → 另一邊
+      copy(u + 4, v + 4, 4, 12, du + 4, dv + 4); // 前
+      copy(u + 8, v + 4, 4, 12, du, dv + 4);     // 內側 → 另一邊
+      copy(u + 12, v + 4, 4, 12, du + 12, dv + 4); // 後
+    }
+    let solid = true;
+    for (let y = 0; y < 16 && solid; y++) for (let x = 32; x < 64; x++) if (rgba[(y * 64 + x) * 4 + 3] < 128) { solid = false; break; }
+    if (solid) for (let y = 0; y < 16; y++) for (let x = 32; x < 64; x++) rgba[(y * 64 + x) * 4 + 3] = 0;
   }
-  return { front, back };
+  for (const [x0, y0, w, h] of [[0, 0, 32, 16], [0, 16, 56, 16], [16, 48, 32, 16]]) {
+    for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) rgba[(y * 64 + x) * 4 + 3] = 255;
+  }
+  return { width: 64, height: 64, rgba, slim };
 }
 
-/** 把 skin 的幾個面拼成 16×32 的人物（RGBA）。 */
-function figure(skin, list) {
-  const out = new Uint8Array(16 * 32 * 4);
-  for (const [sx, sy, w, h, dx, dy, flip] of list) {
-    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-      const tx = sx + (flip ? w - 1 - x : x), ty = sy + y;
-      if (tx >= skin.width || ty >= skin.height) continue;
-      const s = (ty * skin.width + tx) * 4;
-      const a = skin.rgba[s + 3] / 255;
-      if (!a) continue;
-      const o = ((dy + y) * 16 + dx + x) * 4;
-      for (let c = 0; c < 3; c++) out[o + c] = Math.round(skin.rgba[s + c] * a + out[o + c] * (1 - a));
-      out[o + 3] = Math.max(out[o + 3], skin.rgba[s + 3]);
-    }
-  }
+/** 一個方塊的六個面：[原點, u 方向（貼圖往右）, v 方向（貼圖往下）, 貼圖的矩形]。外向的法線是 v × u。 */
+function boxFaces(x0, y0, z0, x1, y1, z1, u, v, w, h, d, tex) {
+  const X = x1 - x0, Y = y1 - y0, Z = z1 - z0;
+  return [
+    { o: [x0, y1, z1], u: [X, 0, 0], v: [0, -Y, 0], r: [u + d, v + d, w, h], tex },               // 前
+    { o: [x1, y1, z0], u: [-X, 0, 0], v: [0, -Y, 0], r: [u + 2 * d + w, v + d, w, h], tex },      // 後
+    { o: [x0, y1, z0], u: [0, 0, Z], v: [0, -Y, 0], r: [u, v + d, d, h], tex },                   // 右（-x）
+    { o: [x1, y1, z1], u: [0, 0, -Z], v: [0, -Y, 0], r: [u + d + w, v + d, d, h], tex },          // 左（+x）
+    { o: [x0, y1, z0], u: [X, 0, 0], v: [0, 0, Z], r: [u + d, v, w, d], tex },                    // 頂
+    { o: [x0, y0, z1], u: [X, 0, 0], v: [0, 0, -Z], r: [u + d + w, v, w, d], tex },               // 底
+  ];
+}
+
+/** 繞著 (y, z) 這一點、以 x 軸轉 a 弧度（正的是下端往後擺）。 */
+function swing(faces, py, pz, a) {
+  const c = Math.cos(a), s = Math.sin(a);
+  const turn = ([x, y, z]) => [x, py + (y - py) * c - (z - pz) * s, pz + (y - py) * s + (z - pz) * c];
+  const dir = ([x, y, z]) => [x, y * c - z * s, y * s + z * c];
+  return faces.map((f) => ({ ...f, o: turn(f.o), u: dir(f.u), v: dir(f.v) }));
+}
+
+/* 姿勢：走路走到一半（右腳往前、左腳往後，手反過來），披風往後飄，跟網頁那個走路的人偶差不多 */
+const STRIDE = 0.3, ARM = 0.24, CAPE_TILT = 0.26;
+
+/** 人的每一塊（單位：skin 的一格；腳底 y=0，面向 +z）。 */
+function bodyFaces(skin) {
+  const aw = skin.slim ? 3 : 4;
+  const out = [];
+  const part = (x0, y0, z0, x1, y1, z1, base, over, grow, py, a) => {
+    let faces = boxFaces(x0, y0, z0, x1, y1, z1, base[0], base[1], x1 - x0, y1 - y0, z1 - z0, 'skin');
+    faces = faces.concat(boxFaces(x0 - grow, y0 - grow, z0 - grow, x1 + grow, y1 + grow, z1 + grow,
+      over[0], over[1], x1 - x0, y1 - y0, z1 - z0, 'skin'));
+    out.push(...(a ? swing(faces, py, 0, a) : faces));
+  };
+  part(-4, 24, -4, 4, 32, 4, [0, 0], [32, 0], 0.5);                           // 頭
+  part(-4, 12, -2, 4, 24, 2, [16, 16], [16, 32], 0.25);                       // 身體
+  part(-4 - aw, 12, -2, -4, 24, 2, [40, 16], [40, 32], 0.25, 22, ARM);        // 右手（往後）
+  part(4, 12, -2, 4 + aw, 24, 2, [32, 48], [48, 48], 0.25, 22, -ARM);         // 左手（往前）
+  part(-4, 0, -2, 0, 12, 2, [0, 16], [0, 32], 0.25, 12, -STRIDE);             // 右腳（往前）
+  part(0, 0, -2, 4, 12, 2, [16, 48], [0, 48], 0.25, 12, STRIDE);              // 左腳（往後）
   return out;
 }
 
-/**
- * 畫一張：左正面、右背面，底下各一圈影子。
- *
- * @param skin {width, height, rgba}
- * @param cape {width, height, rgba} 披風範本（22×17 格）
- * @param P 每個 skin 像素畫成幾格
- * @param gradient 底色用漸層（PNG）還是單色（GIF 的調色盤有限）
- */
-function paintFigure(skin, faces, cape, P, gradient) {
-  const front = figure(skin, faces.front), back = figure(skin, faces.back);
-  const gap = 4 * P, top = 3 * P;
-  const W = 16 * P * 2 + gap * 3, H = 32 * P + top * 2;
-  const rgb = new Uint8Array(W * H * 3);
-  const cell = cape.width / 22;
-  const put = (x, y, r, g, b, a) => {
-    const o = (y * W + x) * 3;
-    rgb[o] = Math.round(r * a + rgb[o] * (1 - a));
-    rgb[o + 1] = Math.round(g * a + rgb[o + 1] * (1 - a));
-    rgb[o + 2] = Math.round(b * a + rgb[o + 2] * (1 - a));
-  };
-  for (let y = 0; y < H; y++) {
-    const t = H > 1 ? y / (H - 1) : 0;
-    const bg = gradient ? TOP.map((v, i) => Math.round(v + (BOTTOM[i] - v) * t)) : FLAT;
-    for (let x = 0; x < W; x++) rgb.set(bg, (y * W + x) * 3);
-  }
-  // 影子：腳下一圈壓暗的橢圓
-  for (const ox of [gap, gap * 2 + 16 * P]) {
-    const cx = ox + 8 * P, cy = top + 32 * P, rx = 7 * P, ry = 1.4 * P;
-    for (let y = Math.floor(cy - ry); y <= Math.ceil(cy + ry); y++) for (let x = Math.floor(cx - rx); x <= Math.ceil(cx + rx); x++) {
-      if (x < 0 || y < 0 || x >= W || y >= H) continue;
-      const d = ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2;
-      if (d <= 1) put(x, y, 0, 0, 0, 0.35 * (1 - d));
-    }
-  }
-  // 披風：外側 (1,1)、內側 (12,1)，10×16 格，掛在肩膀（人物座標 x 3..13、y 8..24）
-  const capeAt = (ox, inner, fx, fy) => {
-    const u = fx / (10 * P), v = fy / (16 * P);
-    const cx = inner ? 12 + (1 - u) * 10 : 1 + u * 10;
-    const sx = Math.min(cape.width - 1, Math.floor(cx * cell)), sy = Math.min(cape.height - 1, Math.floor((1 + v * 16) * cell));
-    const s = (sy * cape.width + sx) * 4;
-    return [cape.rgba[s], cape.rgba[s + 1], cape.rgba[s + 2], cape.rgba[s + 3] / 255];
-  };
-  const drawCape = (ox, inner) => {
-    for (let fy = 0; fy < 16 * P; fy++) for (let fx = 0; fx < 10 * P; fx++) {
-      const [r, g, b, a] = capeAt(ox, inner, fx, fy);
-      if (a) put(ox + 3 * P + fx, top + 8 * P + fy, r, g, b, a);
-    }
-  };
-  const drawFigure = (ox, fig) => {
-    for (let y = 0; y < 32 * P; y++) for (let x = 0; x < 16 * P; x++) {
-      const o = ((y / P | 0) * 16 + (x / P | 0)) * 4;
-      if (fig[o + 3]) put(ox + x, top + y, fig[o], fig[o + 1], fig[o + 2], 1);
-    }
-  };
-  drawCape(gap, true);                       // 正面：披風在身後，只從腿的兩旁露出來
-  drawFigure(gap, front);
-  drawFigure(gap * 2 + 16 * P, back);        // 背面：披風蓋在身上
-  drawCape(gap * 2 + 16 * P, false);
-  return { width: W, height: H, rgb };
+/** 披風：10×16×1 掛在背後（肩膀 y=24、貼著背 z=-2），外側朝後。貼圖用範本的格子當單位。 */
+function capeFaces() {
+  const faces = [
+    { o: [5, 24, -3], u: [-10, 0, 0], v: [0, -16, 0], r: [1, 1, 10, 16], tex: 'cape' },             // 外側（朝後）
+    { o: [-5, 24, -2], u: [10, 0, 0], v: [0, -16, 0], r: [12, 1, 10, 16], tex: 'cape', flip: true }, // 內側（朝身體）
+    { o: [5, 24, -2], u: [0, 0, -1], v: [0, -16, 0], r: [0, 1, 1, 16], tex: 'cape' },
+    { o: [-5, 24, -3], u: [0, 0, 1], v: [0, -16, 0], r: [11, 1, 1, 16], tex: 'cape' },
+    { o: [-5, 24, -3], u: [10, 0, 0], v: [0, 0, 1], r: [1, 0, 10, 1], tex: 'cape', flip: true },
+    { o: [-5, 8, -2], u: [10, 0, 0], v: [0, 0, -1], r: [11, 0, 10, 1], tex: 'cape', flip: true },
+  ];
+  return swing(faces, 24, -2, CAPE_TILT);
+}
+
+/* 鏡頭：跟網頁一樣背對著、側轉 0.5 弧度，稍微從上面看一點；透視的視角約 36°。 */
+const YAW = Math.PI + 0.5, PITCH = 0.12, DIST = 72;
+// 光從鏡頭的右上方來：朝著鏡頭的背最亮、側面暗一點（網頁的方塊人也是這樣分：正面 1、側面 .8）
+const LIGHT = (() => {
+  const l = [0.5, 0.6, 0.8];
+  const n = Math.hypot(...l);
+  return l.map((v) => v / n);
+})();
+
+function view([x, y, z]) {
+  // 以身體中間（y=16）為中心：先繞 y 轉身，再往下俯一點
+  const cy = Math.cos(YAW), sy = Math.sin(YAW), cp = Math.cos(PITCH), sp = Math.sin(PITCH);
+  y -= 16;
+  const x1 = x * cy + z * sy, z1 = -x * sy + z * cy;
+  return [x1, y * cp - z1 * sp, y * sp + z1 * cp];
+}
+function viewDir([x, y, z]) {
+  const cy = Math.cos(YAW), sy = Math.sin(YAW), cp = Math.cos(PITCH), sp = Math.sin(PITCH);
+  const x1 = x * cy + z * sy, z1 = -x * sy + z * cy;
+  return [x1, y * cp - z1 * sp, y * sp + z1 * cp];
+}
+
+/** 一張畫布：顏色、有沒有畫到、深度（1/距離，越大越近）。 */
+function canvas(w, h) {
+  return { w, h, rgb: new Uint8Array(w * h * 3), hit: new Uint8Array(w * h), depth: new Float32Array(w * h) };
+}
+function cloneCanvas(c) {
+  return { w: c.w, h: c.h, rgb: c.rgb.slice(), hit: c.hit.slice(), depth: c.depth.slice() };
 }
 
 /**
- * 披風＋skin → 人物預覽（正面、背面）。GIF 的披風逐格畫，照樣會動。
+ * 把面畫上去。cam = { f, cx, cy }：投影的焦距與中心（畫布像素）。
+ * 貼圖：sample(tex, x, y) 回傳 [r, g, b, a]，x、y 是貼圖單位（skin 一格／範本一格）裡的位置。
+ */
+function draw(cv, faces, cam, sample) {
+  for (const face of faces) {
+    const corners = [face.o, add(face.o, face.u), add(add(face.o, face.u), face.v), add(face.o, face.v)].map(view);
+    const n = viewDir(cross(face.v, face.u));
+    const len = Math.hypot(...n) || 1;
+    const nn = n.map((v) => v / len);
+    const mid = corners.reduce((a, p) => [a[0] + p[0] / 4, a[1] + p[1] / 4, a[2] + p[2] / 4], [0, 0, 0]);
+    // 背面不畫：法線朝著離開鏡頭的方向
+    if (nn[0] * -mid[0] + nn[1] * -mid[1] + nn[2] * (DIST - mid[2]) <= 0) continue;
+    const shade = 0.62 + 0.38 * Math.max(0, nn[0] * LIGHT[0] + nn[1] * LIGHT[1] + nn[2] * LIGHT[2]);
+    const st = [[0, 0], [1, 0], [1, 1], [0, 1]];
+    const pts = corners.map((p, i) => {
+      const w = 1 / (DIST - p[2]);
+      return { x: cam.cx + cam.f * p[0] * w, y: cam.cy - cam.f * p[1] * w, w, s: st[i][0] * w, t: st[i][1] * w };
+    });
+    tri(cv, pts[0], pts[1], pts[2], face, shade, sample);
+    tri(cv, pts[0], pts[2], pts[3], face, shade, sample);
+  }
+}
+function add(a, b) {
+  return [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+}
+function cross(a, b) {
+  return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+}
+
+function tri(cv, a, b, c, face, shade, sample) {
+  const area = (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y);
+  if (Math.abs(area) < 1e-9) return;
+  const minX = Math.max(0, Math.floor(Math.min(a.x, b.x, c.x))), maxX = Math.min(cv.w - 1, Math.ceil(Math.max(a.x, b.x, c.x)));
+  const minY = Math.max(0, Math.floor(Math.min(a.y, b.y, c.y))), maxY = Math.min(cv.h - 1, Math.ceil(Math.max(a.y, b.y, c.y)));
+  const [ru, rv, rw, rh] = face.r;
+  for (let y = minY; y <= maxY; y++) {
+    const py = y + 0.5;
+    for (let x = minX; x <= maxX; x++) {
+      const px = x + 0.5;
+      const l0 = ((b.x - px) * (c.y - py) - (c.x - px) * (b.y - py)) / area;
+      const l1 = ((c.x - px) * (a.y - py) - (a.x - px) * (c.y - py)) / area;
+      const l2 = 1 - l0 - l1;
+      if (l0 < -1e-6 || l1 < -1e-6 || l2 < -1e-6) continue;
+      const w = l0 * a.w + l1 * b.w + l2 * c.w;
+      const p = y * cv.w + x;
+      if (cv.hit[p] && cv.depth[p] >= w) continue;
+      let s = (l0 * a.s + l1 * b.s + l2 * c.s) / w, t = (l0 * a.t + l1 * b.t + l2 * c.t) / w;
+      s = Math.min(Math.max(s, 0), 0.999999);
+      t = Math.min(Math.max(t, 0), 0.999999);
+      if (face.flip) s = 0.999999 - s;
+      const col = sample(face.tex, ru + s * rw, rv + t * rh, ru, rv, rw, rh);
+      if (col[3] < 128) continue;                   // 外層與披風的透明處鏤空
+      cv.hit[p] = 1;
+      cv.depth[p] = w;
+      cv.rgb[p * 3] = Math.min(255, Math.round(col[0] * shade));
+      cv.rgb[p * 3 + 1] = Math.min(255, Math.round(col[1] * shade));
+      cv.rgb[p * 3 + 2] = Math.min(255, Math.round(col[2] * shade));
+    }
+  }
+}
+
+/** 取貼圖的函式：skin 以一格為單位，披風以範本的一格（圖寬 / 22）為單位；不會超出那個面的矩形。 */
+function sampler(skin, cape) {
+  const cell = cape.width / 22;
+  return (tex, x, y, ru, rv, rw, rh) => {
+    if (tex === 'skin') {
+      const tx = Math.min(ru + rw - 1, Math.floor(x)), ty = Math.min(rv + rh - 1, Math.floor(y));
+      const o = (ty * 64 + tx) * 4;
+      return [skin.rgba[o], skin.rgba[o + 1], skin.rgba[o + 2], skin.rgba[o + 3]];
+    }
+    const tx = Math.min(Math.floor((ru + rw) * cell) - 1, cape.width - 1, Math.floor(x * cell));
+    const ty = Math.min(Math.floor((rv + rh) * cell) - 1, cape.height - 1, Math.floor(y * cell));
+    const o = (ty * cape.width + tx) * 4;
+    return [cape.rgba[o], cape.rgba[o + 1], cape.rgba[o + 2], cape.rgba[o + 3]];
+  };
+}
+
+/**
+ * 版面：先用焦距 1 量出整個人＋披風投影後的範圍，再放大到指定的高度，左右上下留白。
+ * 回傳畫布大小與鏡頭（ss 是超取樣的倍數，畫布是成品的 ss 倍）。
+ */
+function frame(faces, height, ss) {
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const f of faces) {
+    for (const q of [f.o, add(f.o, f.u), add(add(f.o, f.u), f.v), add(f.o, f.v)]) {
+      const p = view(q);
+      const w = 1 / (DIST - p[2]);
+      minX = Math.min(minX, p[0] * w); maxX = Math.max(maxX, p[0] * w);
+      minY = Math.min(minY, -p[1] * w); maxY = Math.max(maxY, -p[1] * w);
+    }
+  }
+  const pad = Math.round(height * 0.09);
+  const f = (height - pad * 2) / (maxY - minY);
+  const width = Math.max(Math.round(height * 0.72), Math.round((maxX - minX) * f) + pad * 2);
+  const cam = { f: f * ss, cx: (width / 2 - ((minX + maxX) / 2) * f) * ss, cy: (pad - minY * f) * ss };
+  return { width, height, cam };
+}
+
+/** 縮回成品大小、墊底色與腳下的影子。 */
+function finish(cv, width, height, ss, gradient, cam) {
+  const rgb = new Uint8Array(width * height * 3);
+  // 影子：腳底那一點投影下來，壓暗一圈橢圓
+  const feet = view([0, 0, 0]);
+  const fw = 1 / (DIST - feet[2]);
+  const sx = (cam.cx + cam.f * feet[0] * fw) / ss, sy = (cam.cy - cam.f * feet[1] * fw) / ss;
+  const rx = cam.f * fw * 9 / ss, ry = Math.max(2, rx * 0.22);
+  const n = ss * ss;
+  for (let y = 0; y < height; y++) {
+    const t = height > 1 ? y / (height - 1) : 0;
+    const bg = gradient ? TOP.map((v, i) => v + (BOTTOM[i] - v) * t) : FLAT;
+    for (let x = 0; x < width; x++) {
+      const d = ((x + 0.5 - sx) / rx) ** 2 + ((y + 0.5 - sy) / ry) ** 2;
+      const dark = d < 1 ? 1 - 0.4 * (1 - d) : 1;
+      let r = 0, g = 0, b = 0;
+      for (let j = 0; j < ss; j++) for (let i = 0; i < ss; i++) {
+        const p = (y * ss + j) * cv.w + x * ss + i;
+        if (cv.hit[p]) {
+          r += cv.rgb[p * 3]; g += cv.rgb[p * 3 + 1]; b += cv.rgb[p * 3 + 2];
+        } else {
+          r += bg[0] * dark; g += bg[1] * dark; b += bg[2] * dark;
+        }
+      }
+      const o = (y * width + x) * 3;
+      rgb[o] = Math.round(r / n);
+      rgb[o + 1] = Math.round(g / n);
+      rgb[o + 2] = Math.round(b / n);
+    }
+  }
+  return rgb;
+}
+
+/**
+ * 披風＋skin → 人物預覽（從背後斜看，跟網頁的 3D 檢視同一個角度）。GIF 的披風逐格畫，照樣會動。
  *
  * @param capeBytes 披風原圖
  * @param type 'png' 或 'gif'
@@ -654,20 +799,27 @@ export async function figurePreview(capeBytes, type, skinBytes) {
     }
   }
   if (!skin || skin.width !== 64 || (skin.height !== 64 && skin.height !== 32)) skin = mannequin();
-  const faces = parts(skin);
+  skin = normaliseSkin(skin);
+  const body = bodyFaces(skin), cape = capeFaces();
   if (type === 'gif') {
     const gif = decodeGif(capeBytes);
     if (!gif) return null;
-    let size = null;
+    // GIF：不超取樣（調色盤只有 256 色，邊緣的混色會吃掉顏色），人只畫一次，每一格只重畫披風
+    const box = frame(body.concat(cape), 360, 1);
+    const base = canvas(box.width, box.height);
+    draw(base, body, box.cam, sampler(skin, { width: gif.width, height: gif.height, rgba: gif.frames[0].rgba }));
     const frames = gif.frames.map((f) => {
-      const pic = paintFigure(skin, faces, { width: gif.width, height: gif.height, rgba: f.rgba }, 8, false);
-      size = pic;
-      return { rgb: pic.rgb, delay: f.delay };
+      const cv = cloneCanvas(base);
+      draw(cv, cape, box.cam, sampler(skin, { width: gif.width, height: gif.height, rgba: f.rgba }));
+      return { rgb: finish(cv, box.width, box.height, 1, false, box.cam), delay: f.delay };
     });
-    return { bytes: encodeGif(size.width, size.height, frames), type: 'gif' };
+    return { bytes: encodeGif(box.width, box.height, frames), type: 'gif' };
   }
   const png = await decodePng(capeBytes);
   if (!png) return null;
-  const pic = paintFigure(skin, faces, png, 12, true);
-  return { bytes: await encodePng(pic.width, pic.height, pic.rgb), type: 'png' };
+  const ss = 2;
+  const box = frame(body.concat(cape), 480, ss);
+  const cv = canvas(box.width * ss, box.height * ss);
+  draw(cv, body.concat(cape), box.cam, sampler(skin, png));
+  return { bytes: await encodePng(box.width, box.height, finish(cv, box.width, box.height, ss, true, box.cam)), type: 'png' };
 }

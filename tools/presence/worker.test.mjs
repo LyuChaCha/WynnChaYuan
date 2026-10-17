@@ -1966,15 +1966,20 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       const who = 'c'.repeat(32);
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + who), env);
       const fig = await decodePng(new Uint8Array(await r.arrayBuffer()));
-      const at2 = (x, y) => [...fig.rgba.subarray((y * fig.width + x) * 4, (y * fig.width + x) * 4 + 3)];
-      // 版面：P=12、間隔 48、上邊 36；左邊是正面，右邊是背面
-      const P = 12, gap = 4 * P, top = 3 * P;
-      check('★ 人物預覽：正面的頭是 skin 的頭正面、身體是 skin 的身體', r.status === 200
-        && at2(gap + 8 * P, top + 4 * P)[0] === 200 && at2(gap + 8 * P, top + 12 * P)[1] === 200);
-      check('★ 人物預覽：背面的頭是 skin 的頭背面，身上蓋著披風的外側（紅色那塊）',
-        at2(gap * 2 + 16 * P + 8 * P, top + 4 * P)[2] === 200 && at2(gap * 2 + 16 * P + 8 * P, top + 14 * P)[0] === 220);
-      check('人物那份另外存（prev:<雜湊>:<UUID>，三天）', env.CORPUS.data.has('prev:' + hash + ':' + who)
-        && env.CORPUS.data.get('prev:' + hash + ':' + who).ttl === 3 * 86400);
+      // 從背後斜看（跟網頁的 3D 檢視同一個角度）：看得到頭的背面（藍）與披風外側（紅），
+      // 頭的正面與身體正面（綠）在另一邊，看不到。顏色有打光，只比色相。
+      let blue = 0, red = 0, green = 0;
+      for (let p = 0; p < fig.width * fig.height; p++) {
+        const [cr, cg, cb] = fig.rgba.subarray(p * 4, p * 4 + 3);
+        if (cb > 120 && cr < 30 && cg < 30) blue++;
+        if (cr > 120 && cg < 30 && cb < 30) red++;
+        if (cg > 120 && cr < 30 && cb < 30) green++;
+      }
+      check('★ 人物預覽：從背後斜看，看得到頭的背面與披風的外側', r.status === 200 && fig.height === 480
+        && blue > 2000 && red > 5000);
+      check('★ 人物預覽：身體正面在另一邊，看不到', green === 0);
+      check('人物那份另外存（prev:<雜湊>:<UUID>:<畫法>，三天）', env.CORPUS.data.has('prev:' + hash + ':' + who + ':angled')
+        && env.CORPUS.data.get('prev:' + hash + ':' + who + ':angled').ttl === 3 * 86400);
       fakeSkin = null;
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + 'd'.repeat(32)), env);
       check('抓不到 skin 就畫灰色人偶，不會失敗', r.status === 200 && r.headers.get('content-type') === 'image/png');
@@ -1983,7 +1988,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
         && decodeGif(new Uint8Array(await r.arrayBuffer())).frames.length === 3);
       await env.CORPUS.put('cape:' + capeId, '', { metadata: { h: hash, t: 'png', n: 'Dottie_9', v: 1, u: who } });
       reply = await (await worker.fetch(await signed(command('cape', [{ name: 'player', value: 'Dottie_9' }])), env)).json();
-      check('★ /cape 的圖是那個人的人物預覽（帶 UUID）', reply.data.embeds[0].image.url.endsWith('/api/cape-preview/' + hash + '?u=' + who));
+      check('★ /cape 的圖是那個人的人物預覽（帶 UUID）', reply.data.embeds[0].image.url.endsWith('/api/cape-preview/' + hash + '?u=' + who + '&v=angled'));
       for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('prev:')) env.CORPUS.data.delete(k);
       for (const k of ['blob:' + hash, 'blob:' + ghash]) env.CORPUS.data.delete(k);
     }

@@ -104,7 +104,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | 指令 | 繁中名稱 | 回什麼 |
 |---|---|---|
 | `/status` | `/狀態` | 裝了模組的人數、穿披風的人數、待審核的披風、各語言投票中的提案與術語 |
-| `/cape player:<名字>` | `/披風` | 那個人現在的披風，圖是那個人的 skin 穿著披風的正面與背面（skin 從 minotar 拿，拿不到畫灰色人偶；GIF 披風會動）。先回「處理中」，預覽圖算好存進 KV 才補上，Discord 來抓圖時不必現算。不公開、等審核的不給圖 |
+| `/cape player:<名字>` | `/披風` | 那個人現在的披風，圖是那個人的 skin 穿著披風、從背後斜看的立體人物（角度跟網頁的 3D 檢視一樣）（skin 從 minotar 拿，拿不到畫灰色人偶；GIF 披風會動）。先回「處理中」，預覽圖算好存進 KV 才補上，Discord 來抓圖時不必現算。不公開、等審核的不給圖 |
 | `/translate text:<關鍵字> [language]` | `/翻譯` | 原文或譯文含有那個字的前五條；語言預設跟著 Discord 的介面語言 |
 
 回覆的語言跟著使用者的 Discord 介面（繁中、簡中、其他給英文）。`/translate` 要讀一份八九 MB 的索引，先回「處理中」再補上結果。
@@ -172,7 +172,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/translators` | | 譯者名單（開發者與管理員） |
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
-| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風的正面＋背面，存 `prev:<雜湊>:<UUID>` 三天（skin 會換）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
+| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
 | `POST /api/discord/interactions` | Discord 送來的 | 斜線指令；驗 Ed25519 簽名（`DISCORD_PUBLIC_KEY`），驗不過回 401 |
 | `GET /api/admin/discord` | | 機器人的設定齊了沒有、Interactions Endpoint、邀請連結（**只有開發者**） |
 | `POST /api/admin/discord/register` | | 把指令註冊到 Discord（全域、整批覆寫；要 `DISCORD_BOT_TOKEN`；**只有開發者**） |
