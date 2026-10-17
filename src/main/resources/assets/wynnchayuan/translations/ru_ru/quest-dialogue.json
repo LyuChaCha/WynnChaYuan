@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23182,
-  "translated": 22885,
+  "count": 23298,
+  "translated": 23001,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -8228,8 +8228,8 @@
    "source": "captured"
   },
   "A Journey Home#011": {
-   "src": "They've shut you out. There's no way in from here... But what if you went back the way",
-   "dst": "Тебя не пустили. Отсюда внутрь не попасть… Но если вернуться тем же путём",
+   "src": "They've shut you out. There's no way in from here... But what if you went back the way you first arrived?",
+   "dst": "Тебя не пустили. Отсюда внутрь не попасть… Но что, если вернуться тем же путём, каким ты пришёл впервые?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -9546,6 +9546,46 @@
    "stage": "Stage 19",
    "speaker": "Mora",
    "source": "wiki"
+  },
+  "A Journey Home#143": {
+   "src": "Just looking around.",
+   "dst": "Просто осматриваюсь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#144": {
+   "src": "How are you doing?",
+   "dst": "Как вы тут поживаете?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#145": {
+   "src": "I'll leave.",
+   "dst": "Я пойду.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#146": {
+   "src": "[+{~} TNT Placer]",
+   "dst": "[+{~} TNT Placer]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "Stage 5",
+   "speaker": "Paxon",
+   "source": "captured"
   },
   "A Marauder's Dues#000": {
    "src": "The very sight of you offends me! Let this gust of wind relieve me of your presence. Take it as a warning- you are not welcome here!",
@@ -13698,8 +13738,8 @@
    "source": "wiki"
   },
   "A New Beginning#345": {
-   "src": "Ah... caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
-   "dst": "А… слыхал разок-другой, как Rex про это бормотала. Бедная девочка… ей бы отложить это на время.",
+   "src": "Ah... Wynn. Caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
+   "dst": "А… Wynn. Слыхал разок-другой, как Rex про это бормотала. Бедная девочка… ей бы отложить это на время.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -13728,7 +13768,7 @@
    "source": "wiki"
   },
   "A New Beginning#348": {
-   "src": "Damn. Damn. That's rough. That real rough, ain't it. And you're tellin' me that's where he ended up?",
+   "src": "Damn. Damn. That's rough. That's real rough, ain't it. And you're tellin' me that's where he ended up?",
    "dst": "Чёрт. Чёрт. Тяжело. Очень тяжело, а. И ты говоришь, вот где он в итоге оказался?",
    "role": "desc",
    "kind": "dialogue",
@@ -13748,7 +13788,7 @@
    "source": "wiki"
   },
   "A New Beginning#350": {
-   "src": "He'd manage to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
+   "src": "He'd managed to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
    "dst": "Он превратил умение сливаться с толпой в искусство. Где бы ни был, с кем бы ни говорил, как бы себя ни вёл - всегда казался своим.",
    "role": "desc",
    "kind": "dialogue",
@@ -13856,6 +13896,107 @@
    "stage": "Stage 13",
    "speaker": "Kaio",
    "source": "wiki"
+  },
+  "A New Beginning#361": {
+   "src": "Good to be here.",
+   "dst": "Рад быть здесь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#362": {
+   "src": "I'll let you get back to it.",
+   "dst": "Не буду тебе мешать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#363": {
+   "src": "Is this your room?",
+   "dst": "Это твоя комната?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#364": {
+   "src": "What're you up to?",
+   "dst": "Чем занимаешься?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#365": {
+   "src": "Does that bother you?",
+   "dst": "Тебя это беспокоит?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#366": {
+   "src": "It's a headstone. Carved into the stone, you see a name and a year.",
+   "dst": "Это надгробие. На камне высечены имя и год.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#367": {
+   "src": "\"Aledar, {~} IA\"",
+   "dst": "«Aledar, {~} IA»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#368": {
+   "src": "Aledar... I knew him.",
+   "dst": "Aledar… Я его знал.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#369": {
+   "src": "He got sent to Wynn. We... m",
+   "dst": "Его отправили в Wynn. Мы… там и познакомились.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "full": "He got sent to Wynn. We... met there."
+  },
+  "A New Beginning#370": {
+   "src": "He's... gone, now.",
+   "dst": "Его… больше нет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Sandy Scandal#000": {
    "src": "You look like a hardy one! {p} army, is it? Would you be willing to help {p} a bit?",
@@ -127154,6 +127295,48 @@
    "speaker": "Sovereign Tasim",
    "source": "wiki"
   },
+  "Overture to Despair#612": {
+   "src": "Are there any hotels nearby?",
+   "dst": "Здесь поблизости есть гостиницы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#613": {
+   "src": "What should we check out?",
+   "dst": "Что нам стоит посмотреть?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#614": {
+   "src": "It's my first time here, any",
+   "dst": "Я здесь впервые, есть советы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured",
+   "full": "It's my first time here, any tips?"
+  },
+  "Overture to Despair#615": {
+   "src": "We're looking for some hip n",
+   "dst": "Мы ищем что-нибудь модное и новенькое.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured",
+   "full": "We're looking for some hip new fashion."
+  },
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "Но довольно любезностей. Скажи… знаешь историю великого пирата, капитана Hastor? Бороздил моря давным-давно.",
@@ -129481,7 +129664,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#008": {
-   "src": "But before that... I've just got to find...",
+   "src": "But before that... I've got to just find...",
    "dst": "Но сначала… мне нужно найти…",
    "role": "desc",
    "kind": "dialogue",
@@ -130891,7 +131074,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#149": {
-   "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
+   "src": "Kind of makes me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
    "dst": "Жаль, Aledar нет с нами. Мы втроём снова в приключении! Возвращаемся… домой…",
    "role": "desc",
    "kind": "dialogue",
@@ -131001,7 +131184,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#160": {
-   "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
+   "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop aboard 'fore I change my mind and leave without ya!",
    "dst": "…да и платит всё равно казна {p}. Ну, живо на борт, пока я не передумал и не уплыл без вас!",
    "role": "desc",
    "kind": "dialogue",
@@ -131227,7 +131410,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#182": {
-   "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and salin' folks around the sea!",
+   "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and sailin' folks around the sea!",
    "dst": "Ах, я ж для того и тут, а? Мудрые советы давать да людей по морю возить!",
    "role": "desc",
    "kind": "dialogue",
@@ -132287,8 +132470,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#288": {
-   "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room- that's W1, at the start of the corridor.",
-   "dst": "О, э, да ничего. Просто тайное собрание. В комнате Jenprest, это W1, в начале коридора.",
+   "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room- that's W{~}, at the start of the corridor.",
+   "dst": "О, э, да ничего. Просто тайное собрание. В комнате Jenprest - это W{~}, в начале коридора.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -132397,7 +132580,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#299": {
-   "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of nobility I had the pleasure of working with in {p}.",
+   "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of the nobility I had the pleasure of working with in {p}.",
    "dst": "Что ж, денег у короны явно в избытке! Увиденное соперничает даже с богатейшей знатью, с которой я имел удовольствие работать в {p}.",
    "role": "desc",
    "kind": "dialogue",
@@ -132517,7 +132700,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#311": {
-   "src": "Yes, indeed... we were sent to Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
+   "src": "Yes, indeed... we were sent into Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
    "dst": "Да, верно… нас отправили в Wynn изгнанниками, а не почётными солдатами. Зачем притворяться? Они сами позвали нас назад.",
    "role": "desc",
    "kind": "dialogue",
@@ -132557,7 +132740,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#315": {
-   "src": "You'd think that nine strangers entering the royal palace would be placed under more watchful eyes.",
+   "src": "You'd think that nine strangers entering the royal palace would be under more watchful eyes.",
    "dst": "Казалось бы, за девятью чужаками во дворце должны следить куда пристальнее.",
    "role": "desc",
    "kind": "dialogue",
@@ -132647,8 +132830,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#324": {
-   "src": "I'm not as good with reading mana, but... there's something wrong with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
-   "dst": "Я плохо читаю ману, но… с Суверенами что-то не так. Вокруг них невероятно мощная аура. Она кажется… неестественной.",
+   "src": "I'm not as good with reading mana, but... there's something with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
+   "dst": "Я плохо читаю ману, но… в Суверенах что-то есть. Вокруг них невероятно мощная аура. Она кажется… неестественной.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -133117,8 +133300,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#371": {
-   "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't want to watch the matches if there's nothing else to do?!",
-   "dst": "Казалось бы, мне положена хоть какая-то свобода, но нет! Какая разница, что я не хочу смотреть бои, если делать больше нечего?!",
+   "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't need to watch the matches if there's nothing else to do?!",
+   "dst": "Казалось бы, мне положена хоть какая-то свобода, но нет! Какая разница, что мне не нужно смотреть бои, если делать больше нечего?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -133587,7 +133770,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#418": {
-   "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take the opportunity while I can!",
+   "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take this opportunity while I can!",
    "dst": "Но. Но-но-но. Путь открыт, и хоть раунд ещё идёт, я хочу воспользоваться случаем, пока могу!",
    "role": "desc",
    "kind": "dialogue",
@@ -133907,7 +134090,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#450": {
-   "src": "Well, they appear to be onto us. No matter. We'll need to be more careful.",
+   "src": "Well, they appear to be on to us. No matter. We'll need to be more careful.",
    "dst": "Что ж, они нас раскусили. Неважно. Будем осторожнее.",
    "role": "desc",
    "kind": "dialogue",
@@ -134217,8 +134400,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#481": {
-   "src": "Hm. Have we been able to find the information we needed?",
-   "dst": "Хм. Нашли мы нужные сведения?",
+   "src": "Hm. Have we been able to find what information we needed?",
+   "dst": "Хм. Удалось нам найти нужные сведения?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -134307,7 +134490,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#490": {
-   "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever- where are Mel and Linton? We need to discuss what's next, before-",
+   "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever- where are Mel and Linton? We need to discuss what to do next, before-",
    "dst": "Боже правый… да, турнир прошёл, поздравляю финалистов, неважно - где Mel и Linton? Надо обсудить, что дальше, пока",
    "role": "desc",
    "kind": "dialogue",
@@ -134697,8 +134880,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#529": {
-   "src": "Certainly not for a vanity tournament. A meaningless celebration.",
-   "dst": "Уж точно не ради тщеславного турнира. Бессмысленного празднества.",
+   "src": "Certainly not just for a vanity tournament. A meaningless celebration.",
+   "dst": "Уж точно не ради одного лишь тщеславного турнира. Бессмысленного празднества.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -134727,8 +134910,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#532": {
-   "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
-   "dst": "Вы воспользовались случаем, чтобы разузнать о нашей провинции. То немногое, что вы узнали, мы сочли приемлемой ценой.",
+   "src": "You chose to take this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
+   "dst": "Вы решили воспользоваться случаем, чтобы разузнать о нашей провинции. То немногое, что вы узнали, мы сочли приемлемой ценой.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -134827,7 +135010,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#542": {
-   "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
+   "src": "And it truly is a beautiful world, isn't it? To think, it could all be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
    "dst": "А мир ведь прекрасен, не так ли? Подумать только, его могут уничтожить, отнять ради бесконечной войны без смысла и цели…",
    "role": "desc",
    "kind": "dialogue",
@@ -135457,7 +135640,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#605": {
-   "src": "Ha. You're- you're good. Oof. I'll be feeling that one for... for a while.",
+   "src": "Ha. You're- you're good. Oof. I'll be feeling that for... for a while.",
    "dst": "Ха. Ты… ты мастер. Ох. Это я ещё… долго буду чувствовать.",
    "role": "desc",
    "kind": "dialogue",
@@ -135507,7 +135690,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#610": {
-   "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have- or maybe it would've just gone the same way.",
+   "src": "I wish I could've been there. I wish I could have done it better. Maybe I could have- or maybe it would've just gone the same way.",
    "dst": "Жаль, что меня там не было. Жаль, что я не смог лучше. Может, я бы справился… а может, всё вышло бы так же.",
    "role": "desc",
    "kind": "dialogue",
@@ -135735,6 +135918,730 @@
    "stage": "Stage 26",
    "speaker": "Gendarme Commander",
    "source": "wiki"
+  },
+  "Queen's Recruit#633": {
+   "src": "What're you looking for?",
+   "dst": "Что ты ищешь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#634": {
+   "src": "Ah. Please head to the meeting room. I will join shortly.",
+   "dst": "А. Прошу, пройдите в зал совещаний. Я скоро присоединюсь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "Queen's Recruit#635": {
+   "src": "Tell him about Aledar",
+   "dst": "Расскажи ему об Aledar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#636": {
+   "src": "Aledar... He's-",
+   "dst": "Aledar… Он-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#637": {
+   "src": "Before you leave. You need to tell him what happened.",
+   "dst": "Прежде чем уедешь. Ты должен рассказать ему, что случилось.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#638": {
+   "src": "It's very suspicious.",
+   "dst": "Это очень подозрительно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#639": {
+   "src": "Maybe it's true...?",
+   "dst": "Может, это правда…?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#640": {
+   "src": "The rest must be waiting up ahead...",
+   "dst": "Остальные, наверное, ждут впереди…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#641": {
+   "src": "Hm... that's a good question. Maybe not?",
+   "dst": "Хм… хороший вопрос. Наверное, нет?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#642": {
+   "src": "But you'll do fine. You're good at fighting! I've seen you out there.",
+   "dst": "Но ты справишься. Ты хорошо дерёшься! Я видел тебя в деле.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#643": {
+   "src": "Either way, it'll be nice to finally spar against you.",
+   "dst": "Так или иначе, будет здорово наконец сразиться с тобой в поединке.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#644": {
+   "src": "That's a secret!",
+   "dst": "Это секрет!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#645": {
+   "src": "Not sure what to expect.",
+   "dst": "Не знаю, чего ждать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#646": {
+   "src": "It has to be a trick, right?",
+   "dst": "Это ведь наверняка ловушка, да?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#647": {
+   "src": "I'm ready to fight!",
+   "dst": "Я готов сражаться!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#648": {
+   "src": "Tasim, I really need to te-",
+   "dst": "Tasim, мне правда нужно тебе ска-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#649": {
+   "src": "It's... cruel not to tell him, at this point. You have to do it.",
+   "dst": "Уже… жестоко ему не сказать. Ты должен это сделать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#650": {
+   "src": "I didn't get enough sleep. Might as well nap for a bit longer.",
+   "dst": "Не выспался. Можно и ещё немного подремать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#651": {
+   "src": "It was fine.",
+   "dst": "Нормально.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#652": {
+   "src": "Could've been better.",
+   "dst": "Бывало и лучше.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#653": {
+   "src": "I heard the door earlier.",
+   "dst": "Я недавно слышал дверь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#654": {
+   "src": "Yes, actua-",
+   "dst": "Да, вообщ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Queen's Recruit#655": {
+   "src": "And that's me.",
+   "dst": "А это я.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#656": {
+   "src": "It was tough...",
+   "dst": "Было тяжело…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#657": {
+   "src": "Me.",
+   "dst": "Я.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#658": {
+   "src": "So why us? Why recruits?",
+   "dst": "Так почему мы? Почему новобранцы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#659": {
+   "src": "I've seen how you make recru",
+   "dst": "Я видел, как вы создаёте новобранцев.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured",
+   "full": "I've seen how you make recruits."
+  },
+  "Queen's Recruit#660": {
+   "src": "I'm... not sure.",
+   "dst": "Я… не уверен.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#661": {
+   "src": "She told me why we're here.",
+   "dst": "Она сказала мне, зачем мы здесь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#662": {
+   "src": "Tasim needs to do this alone.",
+   "dst": "Tasim должен сделать это сам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#663": {
+   "src": "Tasim, we need to talk.",
+   "dst": "Tasim, нам надо поговорить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#664": {
+   "src": "Tell him about Aledar.",
+   "dst": "Расскажи ему об Aledar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#665": {
+   "src": "Okay...? About what?",
+   "dst": "Ладно…? О чём?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#666": {
+   "src": "You... can't.",
+   "dst": "Ты… не можешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#667": {
+   "src": "You can't.",
+   "dst": "Ты не можешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#668": {
+   "src": "You can't, you can't, you can't.",
+   "dst": "Не можешь, не можешь, не можешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#669": {
+   "src": "There has to be a better time.",
+   "dst": "Должен быть момент получше.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#670": {
+   "src": "There has to be.",
+   "dst": "Должен быть.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#671": {
+   "src": "It'll hurt him. You can't do that to him.",
+   "dst": "Ему будет больно. Ты не можешь так с ним поступить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#672": {
+   "src": "What will he think?",
+   "dst": "Что он подумает?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#673": {
+   "src": "What will he think of you?",
+   "dst": "Что он подумает о тебе?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#674": {
+   "src": "He'll hate you.",
+   "dst": "Он тебя возненавидит.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#675": {
+   "src": "He will. He'll hate you forever.",
+   "dst": "Да. Он будет ненавидеть тебя вечно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#676": {
+   "src": "He'll never forgive you.",
+   "dst": "Он никогда тебя не простит.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#677": {
+   "src": "You'll lose him too.",
+   "dst": "Ты потеряешь и его.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#678": {
+   "src": "You can't do it.",
+   "dst": "Ты не сможешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#679": {
+   "src": "You can't, you can't, you can't, you can't, you can't.",
+   "dst": "Не можешь, не можешь, не можешь, не можешь, не можешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#680": {
+   "src": "You won't.",
+   "dst": "Ты не станешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#681": {
+   "src": "You... won't.",
+   "dst": "Ты… не станешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#682": {
+   "src": "Fine. Fine, you'll do it.",
+   "dst": "Ладно. Ладно, ты это сделаешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#683": {
+   "src": "You'll say it.",
+   "dst": "Ты скажешь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#684": {
+   "src": "You'll say what you've been trying to say.",
+   "dst": "Ты скажешь то, что пытался сказать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#685": {
+   "src": "You'll say what you've been avoiding.",
+   "dst": "Ты скажешь то, от чего уходил.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#686": {
+   "src": "You'll tell him the truth.",
+   "dst": "Ты скажешь ему правду.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#687": {
+   "src": "You'll tell him...",
+   "dst": "Ты скажешь ему…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#688": {
+   "src": "You'll... tell him...",
+   "dst": "Ты… скажешь ему…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#689": {
+   "src": "Aledar's dead, Tasim.",
+   "dst": "Aledar мёртв, Tasim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#690": {
+   "src": "You'll tell him that... that...",
+   "dst": "Ты скажешь ему, что… что…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#691": {
+   "src": "Aledar. He's dead",
+   "dst": "Aledar. Он мёртв",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#692": {
+   "src": "He's dead, Tasim!",
+   "dst": "Он мёртв, Tasim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#693": {
+   "src": "I've... been trying to tell",
+   "dst": "Я… пытался тебе сказать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "I've... been trying to tell you."
+  },
+  "Queen's Recruit#694": {
+   "src": "We went on a dangerous missi",
+   "dst": "Мы были на опасном задании.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "We went on a dangerous mission."
+  },
+  "Queen's Recruit#695": {
+   "src": "He didn't make it.",
+   "dst": "Он не выжил.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#696": {
+   "src": "At the end, a sacrifice was",
+   "dst": "В конце понадобилась жертва…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "At the end, a sacrifice was needed..."
+  },
+  "Queen's Recruit#697": {
+   "src": "He was too injured.",
+   "dst": "Он был слишком тяжело ранен.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#698": {
+   "src": "He said it had to be him.",
+   "dst": "Он сказал, что это должен быть он.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#699": {
+   "src": "You should probably follow him.",
+   "dst": "Наверное, стоит пойти за ним.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#700": {
+   "src": "Tasim, I-",
+   "dst": "Tasim, я-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#701": {
+   "src": "I hope you'll forgive me.",
+   "dst": "Надеюсь, ты меня простишь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#702": {
+   "src": "I'm taking her deal.",
+   "dst": "Я принимаю её сделку.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#703": {
+   "src": "Don't come looking for me.",
+   "dst": "Не ищи меня.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#704": {
+   "src": "What? Where's Tasim?",
+   "dst": "Что? Где Tasim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 26",
+   "speaker": "",
+   "source": "captured"
   },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
@@ -142112,7 +143019,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#014": {
-   "src": "An I'm definitely not sitting this one out, are you kidding? I'll follow you wherever you go, Syndra.",
+   "src": "And I'm definitely not sitting this one out, are you kidding? I'll follow you wherever you go, Syndra.",
    "dst": "А я уж точно не останусь в стороне, ты шутишь? Я пойду за тобой куда угодно, Syndra.",
    "role": "desc",
    "kind": "dialogue",
@@ -142582,7 +143489,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#061": {
-   "src": "N-no! No, no, it's... fine. I'll go find Chen on my own. You two, um, hand something you were going to do, right?",
+   "src": "N-no! No, no, it's... fine. I'll... go find Chen on my own. You two, um, had something you were going to do, right?",
    "dst": "Н-нет! Нет-нет, всё… в порядке. Я сама найду Chen. У вас двоих, эм, были свои дела, да?",
    "role": "desc",
    "kind": "dialogue",
@@ -144392,7 +145299,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#242": {
-   "src": "Naturally, you completely miscalculated, thinking you could sneak by like this. An unwanted variable isn't an unexpected one.",
+   "src": "Naturally. You completely miscalculated, thinking you could sneak by like this. An unwanted variable isn't an unexpected one.",
    "dst": "Разумеется, ты полностью просчиталась, думая проскользнуть вот так. Нежеланная переменная - не значит неожиданная.",
    "role": "desc",
    "kind": "dialogue",
@@ -144482,7 +145389,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#251": {
-   "src": "...so it was all imaginary? Nothing real? I cared about you, as a friend. A confidant. Did you? Or...was I just a convenient tool for you?",
+   "src": "...so was it all imaginary? Nothing real? I cared about you, as a friend. A confidant. Did you? Or...was I just a convenient tool for you?",
    "dst": "…так всё было мнимым? Ничего настоящего? Ты была мне дорога, как друг. Как наперсник. А я тебе? Или… я был лишь удобным инструментом?",
    "role": "desc",
    "kind": "dialogue",
@@ -144890,6 +145797,148 @@
    "stage": "Stage 13",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "Revelations in Fall#292": {
+   "src": "I don't think I have much of",
+   "dst": "Не думаю, что у меня есть выбор.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured",
+   "full": "I don't think I have much of a choice."
+  },
+  "Revelations in Fall#293": {
+   "src": "The Red Fox?",
+   "dst": "«Рыжий лис»?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#294": {
+   "src": "No, I'm still trying.",
+   "dst": "Нет, я ещё пытаюсь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#295": {
+   "src": "Yes, please.",
+   "dst": "Да, пожалуйста.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#296": {
+   "src": "Th- there- there's no way we c- ca- we can get across the rest of these r- ro- rooftops... one c- cl- one close call is enough f- for me.",
+   "dst": "Н- нет- никак нам не п- пе- не перебраться через остальные к- кр- крыши… одного ч- чу- одного раза на волоске мне х- хватит.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "Revelations in Fall#297": {
+   "src": "In Wynn, we have stories...",
+   "dst": "В Wynn есть истории…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#298": {
+   "src": "He's alive.",
+   "dst": "Он жив.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#299": {
+   "src": "I'm in Fruma to find him.",
+   "dst": "Я в Fruma, чтобы найти его.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#300": {
+   "src": "You did... alright.",
+   "dst": "Ты справился… неплохо.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#301": {
+   "src": "Zeph was still struggling.",
+   "dst": "А у Zeph всё ещё не получалось.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#302": {
+   "src": "A mood?",
+   "dst": "Не в духе?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#303": {
+   "src": "Mora asked me to make sure y",
+   "dst": "Mora попросил меня проследить, чтобы ты добралась домой.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured",
+   "full": "Mora asked me to make sure you got home safe."
+  },
+  "Revelations in Fall#304": {
+   "src": "[+{~} Passport - Roughworks-Auburn]",
+   "dst": "[+{~} Пропуск - Roughworks-Auburn]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 11",
+   "speaker": "Mora",
+   "source": "captured"
+  },
+  "Revelations in Fall#305": {
+   "src": "[-{~} Passport]",
+   "dst": "[-{~} Пропуск]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 12",
+   "speaker": "Sui",
+   "source": "captured"
   },
   "Rise of the Quartron#000": {
    "src": "...Go on...I still need you to figure everything out...",
@@ -172044,7 +173093,7 @@
    "source": "wiki"
   },
   "The Cursed One#282": {
-   "src": "Ten!? Oh, f- fine... you said it's h- high- high quality? It's pr- probably worth the price. Here.",
+   "src": "Ten!? Oh, f- fine... you said h- high- high quality? It's pr- probably worth the price. Here.",
    "dst": "Десять!? Ох, л- ладно… говорите, к- ка- качество высокое? Н- наверное, стоит того. Вот.",
    "role": "desc",
    "kind": "dialogue",
@@ -172264,7 +173313,7 @@
    "source": "wiki"
   },
   "The Cursed One#304": {
-   "src": "That can wait until after the festival, though. You should go on ahead an enjoy yourself.",
+   "src": "That can wait until after the festival, though. You should go on ahead and enjoy yourself.",
    "dst": "Но это подождёт до конца фестиваля. Иди вперёд и повеселись.",
    "role": "desc",
    "kind": "dialogue",
@@ -173084,7 +174133,7 @@
    "source": "wiki"
   },
   "The Cursed One#386": {
-   "src": "Perhaps you would like to hear what we have to offer?",
+   "src": "Perhaps would you like to hear what we have to offer?",
    "dst": "Может, послушаете, что мы предлагаем?",
    "role": "desc",
    "kind": "dialogue",
@@ -173134,7 +174183,7 @@
    "source": "wiki"
   },
   "The Cursed One#391": {
-   "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from a bitter to a rich spicy flavour!",
+   "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from bitter to a rich spicy flavour!",
    "dst": "Например, гриб рейши! Чай из одного лишь гриба часто выходит… горьким. С травами и специями горечь сменяется насыщенным пряным вкусом!",
    "role": "desc",
    "kind": "dialogue",
@@ -173144,7 +174193,7 @@
    "source": "wiki"
   },
   "The Cursed One#392": {
-   "src": "The mushroom itself is said to keep you healthy. It is also said to boost your resistances!",
+   "src": "The mushroom itself is said to help keep you healthy. It is also said to boost your resistances!",
    "dst": "Говорят, сам гриб бережёт здоровье. А ещё будто бы повышает сопротивляемость!",
    "role": "desc",
    "kind": "dialogue",
@@ -173164,7 +174213,7 @@
    "source": "wiki"
   },
   "The Cursed One#394": {
-   "src": "The mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
+   "src": "This mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
    "dst": "Говорят, этот гриб ещё и восстанавливает здоровье и снимает усталость! Чудесно.",
    "role": "desc",
    "kind": "dialogue",
@@ -173924,7 +174973,7 @@
    "source": "wiki"
   },
   "The Cursed One#470": {
-   "src": "I'd be here all day listing the improvements over the last year, but I'll summarize- Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
+   "src": "I'd be here all day listing all the improvements over the last year, but I'll summarize- Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
    "dst": "Перечислять улучшения за год я мог бы весь день, так что подведу итог: ремонт многих главных дорог, уйма новых рабочих мест, умноженные патрули стражи ради вашей безопасности…",
    "role": "desc",
    "kind": "dialogue",
@@ -174184,7 +175233,7 @@
    "source": "wiki"
   },
   "The Cursed One#496": {
-   "src": "Merely a reminder to... \"get your act together,\" as it were.",
+   "src": "Merely a reminder to... ''get your act together,'' as it were.",
    "dst": "Лишь напоминание… «взять себя в руки», так сказать.",
    "role": "desc",
    "kind": "dialogue",
@@ -174302,6 +175351,128 @@
    "stage": "Stage 18",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "The Cursed One#508": {
+   "src": "An Inquisitor?",
+   "dst": "Инквизитор?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#509": {
+   "src": "Alas, the swing is occupied.",
+   "dst": "Увы, качели заняты.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#510": {
+   "src": "What'd you pay with?",
+   "dst": "А чем ты заплатил?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#511": {
+   "src": "Let's get back to the others",
+   "dst": "Вернёмся к остальным.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured",
+   "full": "Let's get back to the others."
+  },
+  "The Cursed One#512": {
+   "src": "I'll walk.",
+   "dst": "Я пешком.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#513": {
+   "src": "It's nice.",
+   "dst": "Мне нравится.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#514": {
+   "src": "It's kind of boring.",
+   "dst": "Скучновато.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#515": {
+   "src": "Maybe it's time to find Syndra near the stage. But there is still time to check out the festival more too...",
+   "dst": "Пожалуй, пора найти Syndra у сцены. Но ещё есть время получше осмотреть фестиваль…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Tea Stand Merchant",
+   "source": "captured"
+  },
+  "The Cursed One#516": {
+   "src": "I have!",
+   "dst": "Да, ещё как!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#517": {
+   "src": "It's not the orchestra?",
+   "dst": "Разве не оркестр?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#518": {
+   "src": "How she talks about Auburn.",
+   "dst": "То, как она говорит об Auburn. Это… по-другому.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured",
+   "full": "How she talks about Auburn. It's... different."
+  },
+  "The Cursed One#519": {
+   "src": "Zhiraok's speech.",
+   "dst": "Речь Zhiraok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
   },
   "The Dark Descent#000": {
    "src": "Hello there, chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23182,
-  "translated": 23179,
+  "count": 23298,
+  "translated": 23295,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -8228,8 +8228,8 @@
    "source": "captured"
   },
   "A Journey Home#011": {
-   "src": "They've shut you out. There's no way in from here... But what if you went back the way",
-   "dst": "他们把你挡在外面了。从这里进不去……但要是你沿着来时的路回去",
+   "src": "They've shut you out. There's no way in from here... But what if you went back the way you first arrived?",
+   "dst": "他们把你挡在外面了。从这里进不去……但要是你沿着最初来时的路回去呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -9546,6 +9546,46 @@
    "stage": "Stage 19",
    "speaker": "Mora",
    "source": "wiki"
+  },
+  "A Journey Home#143": {
+   "src": "Just looking around.",
+   "dst": "随便看看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#144": {
+   "src": "How are you doing?",
+   "dst": "你过得怎么样？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#145": {
+   "src": "I'll leave.",
+   "dst": "我这就走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#146": {
+   "src": "[+{~} TNT Placer]",
+   "dst": "[+{~} TNT 放置器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "Stage 5",
+   "speaker": "Paxon",
+   "source": "captured"
   },
   "A Marauder's Dues#000": {
    "src": "The very sight of you offends me! Let this gust of wind relieve me of your presence. Take it as a warning- you are not welcome here!",
@@ -13698,8 +13738,8 @@
    "source": "wiki"
   },
   "A New Beginning#345": {
-   "src": "Ah... caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
-   "dst": "啊……以前听过 Rex 嘀咕过一两次这件事。可怜的丫头……暂时把这件事放下对她比较好。",
+   "src": "Ah... Wynn. Caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
+   "dst": "啊……Wynn。以前听 Rex 嘀咕过一两次那地方。可怜的丫头……暂时把这件事放下对她比较好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -13728,7 +13768,7 @@
    "source": "wiki"
   },
   "A New Beginning#348": {
-   "src": "Damn. Damn. That's rough. That real rough, ain't it. And you're tellin' me that's where he ended up?",
+   "src": "Damn. Damn. That's rough. That's real rough, ain't it. And you're tellin' me that's where he ended up?",
    "dst": "该死。该死。这也太惨了。真的太惨了，是吧。你是说他最后到了那里？",
    "role": "desc",
    "kind": "dialogue",
@@ -13748,7 +13788,7 @@
    "source": "wiki"
   },
   "A New Beginning#350": {
-   "src": "He'd manage to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
+   "src": "He'd managed to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
    "dst": "他硬是把混进人群变成了一门艺术。不管在哪里、跟谁说话、表现得怎样，他看起来总是完全融入其中。",
    "role": "desc",
    "kind": "dialogue",
@@ -13856,6 +13896,107 @@
    "stage": "Stage 13",
    "speaker": "Kaio",
    "source": "wiki"
+  },
+  "A New Beginning#361": {
+   "src": "Good to be here.",
+   "dst": "很高兴来到这里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#362": {
+   "src": "I'll let you get back to it.",
+   "dst": "那我不打扰你了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#363": {
+   "src": "Is this your room?",
+   "dst": "这是你的房间吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#364": {
+   "src": "What're you up to?",
+   "dst": "你在忙什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#365": {
+   "src": "Does that bother you?",
+   "dst": "这让你不舒服吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#366": {
+   "src": "It's a headstone. Carved into the stone, you see a name and a year.",
+   "dst": "这是一块墓碑。石头上刻着一个名字和一个年份。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#367": {
+   "src": "\"Aledar, {~} IA\"",
+   "dst": "“Aledar，{~} IA”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#368": {
+   "src": "Aledar... I knew him.",
+   "dst": "Aledar……我认识他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#369": {
+   "src": "He got sent to Wynn. We... m",
+   "dst": "他被送去了 Wynn。我们……是在那里认识的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "full": "He got sent to Wynn. We... met there."
+  },
+  "A New Beginning#370": {
+   "src": "He's... gone, now.",
+   "dst": "他……已经不在了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Sandy Scandal#000": {
    "src": "You look like a hardy one! {p} army, is it? Would you be willing to help {p} a bit?",
@@ -127154,6 +127295,48 @@
    "speaker": "Sovereign Tasim",
    "source": "wiki"
   },
+  "Overture to Despair#612": {
+   "src": "Are there any hotels nearby?",
+   "dst": "附近有酒店吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#613": {
+   "src": "What should we check out?",
+   "dst": "我们该去哪里逛逛？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#614": {
+   "src": "It's my first time here, any",
+   "dst": "我是第一次来这里，有什么建议吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured",
+   "full": "It's my first time here, any tips?"
+  },
+  "Overture to Despair#615": {
+   "src": "We're looking for some hip n",
+   "dst": "我们在找点时髦的新潮服饰。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured",
+   "full": "We're looking for some hip new fashion."
+  },
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "客套话就说到这里。告诉我……你听说过大海盗 Hastor 船长的故事吗？很久以前在海上航行的人物。",
@@ -129481,7 +129664,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#008": {
-   "src": "But before that... I've just got to find...",
+   "src": "But before that... I've got to just find...",
    "dst": "不过在那之前……我得先找到……",
    "role": "desc",
    "kind": "dialogue",
@@ -130891,7 +131074,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#149": {
-   "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
+   "src": "Kind of makes me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
    "dst": "有点希望 Aledar 也在这里。我们三个又一起冒险！回到……家乡……",
    "role": "desc",
    "kind": "dialogue",
@@ -131001,7 +131184,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#160": {
-   "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
+   "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop aboard 'fore I change my mind and leave without ya!",
    "dst": "……而且，当然啦，反正都是 {p} 的王室金库出钱。好了，快上船，趁我还没改变主意丢下你们自己走！",
    "role": "desc",
    "kind": "dialogue",
@@ -131227,7 +131410,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#182": {
-   "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and salin' folks around the sea!",
+   "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and sailin' folks around the sea!",
    "dst": "啊，这不就是我的本分嘛？给人一些金玉良言，载着大家在海上航行！",
    "role": "desc",
    "kind": "dialogue",
@@ -132287,8 +132470,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#288": {
-   "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room- that's W1, at the start of the corridor.",
-   "dst": "哦，呃，没什么大事。就是个秘密会议。在 Jenprest 的房间——就是 W1，在走廊开头。",
+   "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room- that's W{~}, at the start of the corridor.",
+   "dst": "哦，呃，没什么大事。就是个秘密会议。在 Jenprest 的房间——就是 W{~}，在走廊开头。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -132397,7 +132580,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#299": {
-   "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of nobility I had the pleasure of working with in {p}.",
+   "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of the nobility I had the pleasure of working with in {p}.",
    "dst": "嗯，王室肯定是钱多得花不完！我们目前看到的，简直能跟我在 {p} 有幸共事过的最富有的贵族相媲美。",
    "role": "desc",
    "kind": "dialogue",
@@ -132517,7 +132700,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#311": {
-   "src": "Yes, indeed... we were sent to Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
+   "src": "Yes, indeed... we were sent into Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
    "dst": "是啊，的确……我们是作为流放者被送到 Wynn 的，而不是作为光荣的士兵。那他们为什么要装作不是这样？是他们把我们叫回来的。",
    "role": "desc",
    "kind": "dialogue",
@@ -132557,7 +132740,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#315": {
-   "src": "You'd think that nine strangers entering the royal palace would be placed under more watchful eyes.",
+   "src": "You'd think that nine strangers entering the royal palace would be under more watchful eyes.",
    "dst": "照理说，九个陌生人进入皇宫，应该会被盯得更紧才对。",
    "role": "desc",
    "kind": "dialogue",
@@ -132647,8 +132830,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#324": {
-   "src": "I'm not as good with reading mana, but... there's something wrong with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
-   "dst": "我不太擅长感知法力，但……那些统领不太对劲。他们身上围绕着一股极其强大的气场。感觉……很不自然。",
+   "src": "I'm not as good with reading mana, but... there's something with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
+   "dst": "我不太擅长感知法力，但……那些统领身上有些什么。他们周围环绕着一股极其强大的气场。感觉……很不自然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -133117,8 +133300,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#371": {
-   "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't want to watch the matches if there's nothing else to do?!",
-   "dst": "你还以为我能有点自由，结果没有！如果没别的事可做，我不想看比赛又有什么关系？！",
+   "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't need to watch the matches if there's nothing else to do?!",
+   "dst": "你还以为我能有点自由，结果没有！就算我不用看比赛，可也没别的事能做，那又有什么用？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -133587,7 +133770,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#418": {
-   "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take the opportunity while I can!",
+   "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take this opportunity while I can!",
    "dst": "不过。不过不过不过。路已经通了，虽然这一轮锦标赛还在进行，我还是想趁机会去看看！",
    "role": "desc",
    "kind": "dialogue",
@@ -133907,7 +134090,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#450": {
-   "src": "Well, they appear to be onto us. No matter. We'll need to be more careful.",
+   "src": "Well, they appear to be on to us. No matter. We'll need to be more careful.",
    "dst": "好吧，他们似乎已经盯上我们了。无所谓。我们得更加小心。",
    "role": "desc",
    "kind": "dialogue",
@@ -134217,7 +134400,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#481": {
-   "src": "Hm. Have we been able to find the information we needed?",
+   "src": "Hm. Have we been able to find what information we needed?",
    "dst": "嗯。我们找到需要的情报了吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -134307,7 +134490,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#490": {
-   "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever- where are Mel and Linton? We need to discuss what's next, before-",
+   "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever- where are Mel and Linton? We need to discuss what to do next, before-",
    "dst": "真是的……对，锦标赛是打了，恭喜决赛选手，随便啦——Mel 和 Linton 在哪？我们得先讨论下一步，在……之前——",
    "role": "desc",
    "kind": "dialogue",
@@ -134697,8 +134880,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#529": {
-   "src": "Certainly not for a vanity tournament. A meaningless celebration.",
-   "dst": "当然不是为了一场虚荣的锦标赛。一场毫无意义的庆典。",
+   "src": "Certainly not just for a vanity tournament. A meaningless celebration.",
+   "dst": "当然不只是为了一场虚荣的锦标赛。一场毫无意义的庆典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -134727,8 +134910,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#532": {
-   "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
-   "dst": "你们借这个机会打探我们行省的情报。你们打听到的那点东西，我们认为是可以接受的代价。",
+   "src": "You chose to take this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
+   "dst": "你们选择借这个机会打探我们行省的情报。你们打听到的那点东西，我们认为是可以接受的代价。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -134827,7 +135010,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#542": {
-   "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
+   "src": "And it truly is a beautiful world, isn't it? To think, it could all be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
    "dst": "而这真的是个美丽的世界，不是吗？想想看，它可能会被摧毁，被卷入他们那场毫无意义、毫无目的的无尽战争……",
    "role": "desc",
    "kind": "dialogue",
@@ -135457,7 +135640,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#605": {
-   "src": "Ha. You're- you're good. Oof. I'll be feeling that one for... for a while.",
+   "src": "Ha. You're- you're good. Oof. I'll be feeling that for... for a while.",
    "dst": "哈。你——你真行。唔。这一下我得……得痛上好一阵子了。",
    "role": "desc",
    "kind": "dialogue",
@@ -135507,7 +135690,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#610": {
-   "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have- or maybe it would've just gone the same way.",
+   "src": "I wish I could've been there. I wish I could have done it better. Maybe I could have- or maybe it would've just gone the same way.",
    "dst": "我真希望我当时在场。真希望我能做得更好。也许我能——又或者结果还是一样。",
    "role": "desc",
    "kind": "dialogue",
@@ -135735,6 +135918,730 @@
    "stage": "Stage 26",
    "speaker": "Gendarme Commander",
    "source": "wiki"
+  },
+  "Queen's Recruit#633": {
+   "src": "What're you looking for?",
+   "dst": "你在找什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#634": {
+   "src": "Ah. Please head to the meeting room. I will join shortly.",
+   "dst": "啊。请先去会议室。我稍后就到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "Queen's Recruit#635": {
+   "src": "Tell him about Aledar",
+   "dst": "告诉他 Aledar 的事",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#636": {
+   "src": "Aledar... He's-",
+   "dst": "Aledar……他——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#637": {
+   "src": "Before you leave. You need to tell him what happened.",
+   "dst": "趁他还没走。你得告诉他发生了什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#638": {
+   "src": "It's very suspicious.",
+   "dst": "这非常可疑。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#639": {
+   "src": "Maybe it's true...?",
+   "dst": "也许是真的……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#640": {
+   "src": "The rest must be waiting up ahead...",
+   "dst": "其他人一定在前面等着了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#641": {
+   "src": "Hm... that's a good question. Maybe not?",
+   "dst": "嗯……这问题问得好。大概没有吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#642": {
+   "src": "But you'll do fine. You're good at fighting! I've seen you out there.",
+   "dst": "不过你会没事的。你很能打！我见过你在外面战斗的样子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#643": {
+   "src": "Either way, it'll be nice to finally spar against you.",
+   "dst": "不管怎样，终于能跟你切磋一场，挺好的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#644": {
+   "src": "That's a secret!",
+   "dst": "这是秘密！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#645": {
+   "src": "Not sure what to expect.",
+   "dst": "不知道会是什么样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#646": {
+   "src": "It has to be a trick, right?",
+   "dst": "这肯定是个圈套，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#647": {
+   "src": "I'm ready to fight!",
+   "dst": "我准备好战斗了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#648": {
+   "src": "Tasim, I really need to te-",
+   "dst": "Tasim，我真的得告诉——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#649": {
+   "src": "It's... cruel not to tell him, at this point. You have to do it.",
+   "dst": "到了这一步……还不告诉他就太残忍了。你必须说出来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#650": {
+   "src": "I didn't get enough sleep. Might as well nap for a bit longer.",
+   "dst": "没睡够。干脆再眯一会儿吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#651": {
+   "src": "It was fine.",
+   "dst": "还行。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#652": {
+   "src": "Could've been better.",
+   "dst": "不太好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#653": {
+   "src": "I heard the door earlier.",
+   "dst": "我之前听到门响了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#654": {
+   "src": "Yes, actua-",
+   "dst": "有，其实——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Queen's Recruit#655": {
+   "src": "And that's me.",
+   "dst": "那就是我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#656": {
+   "src": "It was tough...",
+   "dst": "打得很艰难……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#657": {
+   "src": "Me.",
+   "dst": "我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#658": {
+   "src": "So why us? Why recruits?",
+   "dst": "那为什么是我们？为什么是新兵？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#659": {
+   "src": "I've seen how you make recru",
+   "dst": "我见识过你们是怎么造出新兵的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured",
+   "full": "I've seen how you make recruits."
+  },
+  "Queen's Recruit#660": {
+   "src": "I'm... not sure.",
+   "dst": "我……也说不准。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#661": {
+   "src": "She told me why we're here.",
+   "dst": "她告诉了我我们为什么会在这里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#662": {
+   "src": "Tasim needs to do this alone.",
+   "dst": "Tasim 得一个人去面对这件事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#663": {
+   "src": "Tasim, we need to talk.",
+   "dst": "Tasim，我们得谈谈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#664": {
+   "src": "Tell him about Aledar.",
+   "dst": "告诉他 Aledar 的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#665": {
+   "src": "Okay...? About what?",
+   "dst": "好……？谈什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#666": {
+   "src": "You... can't.",
+   "dst": "你……不能。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#667": {
+   "src": "You can't.",
+   "dst": "你不能。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#668": {
+   "src": "You can't, you can't, you can't.",
+   "dst": "你不能，你不能，你不能。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#669": {
+   "src": "There has to be a better time.",
+   "dst": "一定还有更好的时机。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#670": {
+   "src": "There has to be.",
+   "dst": "一定有的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#671": {
+   "src": "It'll hurt him. You can't do that to him.",
+   "dst": "这会伤到他。你不能这样对他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#672": {
+   "src": "What will he think?",
+   "dst": "他会怎么想？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#673": {
+   "src": "What will he think of you?",
+   "dst": "他会怎么看你？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#674": {
+   "src": "He'll hate you.",
+   "dst": "他会恨你的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#675": {
+   "src": "He will. He'll hate you forever.",
+   "dst": "他会的。他会恨你一辈子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#676": {
+   "src": "He'll never forgive you.",
+   "dst": "他永远不会原谅你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#677": {
+   "src": "You'll lose him too.",
+   "dst": "你连他也会失去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#678": {
+   "src": "You can't do it.",
+   "dst": "你做不到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#679": {
+   "src": "You can't, you can't, you can't, you can't, you can't.",
+   "dst": "你不能，你不能，你不能，你不能，你不能。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#680": {
+   "src": "You won't.",
+   "dst": "你不会说的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#681": {
+   "src": "You... won't.",
+   "dst": "你……不会说的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#682": {
+   "src": "Fine. Fine, you'll do it.",
+   "dst": "好吧。好吧，你会说的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#683": {
+   "src": "You'll say it.",
+   "dst": "你会说出来的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#684": {
+   "src": "You'll say what you've been trying to say.",
+   "dst": "你会把一直想说的话说出来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#685": {
+   "src": "You'll say what you've been avoiding.",
+   "dst": "你会把一直在逃避的话说出来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#686": {
+   "src": "You'll tell him the truth.",
+   "dst": "你会告诉他真相。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#687": {
+   "src": "You'll tell him...",
+   "dst": "你会告诉他……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#688": {
+   "src": "You'll... tell him...",
+   "dst": "你会……告诉他……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#689": {
+   "src": "Aledar's dead, Tasim.",
+   "dst": "Aledar 死了，Tasim。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#690": {
+   "src": "You'll tell him that... that...",
+   "dst": "你会告诉他……告诉他……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#691": {
+   "src": "Aledar. He's dead",
+   "dst": "Aledar。他死了",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#692": {
+   "src": "He's dead, Tasim!",
+   "dst": "他死了，Tasim！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#693": {
+   "src": "I've... been trying to tell",
+   "dst": "我……一直想告诉你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "I've... been trying to tell you."
+  },
+  "Queen's Recruit#694": {
+   "src": "We went on a dangerous missi",
+   "dst": "我们去执行了一项危险的任务。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "We went on a dangerous mission."
+  },
+  "Queen's Recruit#695": {
+   "src": "He didn't make it.",
+   "dst": "他没能活下来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#696": {
+   "src": "At the end, a sacrifice was",
+   "dst": "到了最后，必须有人牺牲……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured",
+   "full": "At the end, a sacrifice was needed..."
+  },
+  "Queen's Recruit#697": {
+   "src": "He was too injured.",
+   "dst": "他伤得太重了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#698": {
+   "src": "He said it had to be him.",
+   "dst": "他说必须是他去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#699": {
+   "src": "You should probably follow him.",
+   "dst": "你大概该跟上他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "captured"
+  },
+  "Queen's Recruit#700": {
+   "src": "Tasim, I-",
+   "dst": "Tasim，我——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#701": {
+   "src": "I hope you'll forgive me.",
+   "dst": "希望你能原谅我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#702": {
+   "src": "I'm taking her deal.",
+   "dst": "我接受了她的交易。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#703": {
+   "src": "Don't come looking for me.",
+   "dst": "别来找我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#704": {
+   "src": "What? Where's Tasim?",
+   "dst": "什么？Tasim 在哪？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 26",
+   "speaker": "",
+   "source": "captured"
   },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
@@ -142112,7 +143019,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#014": {
-   "src": "An I'm definitely not sitting this one out, are you kidding? I'll follow you wherever you go, Syndra.",
+   "src": "And I'm definitely not sitting this one out, are you kidding? I'll follow you wherever you go, Syndra.",
    "dst": "我绝对不会置身事外，开什么玩笑？你去哪我就跟到哪，Syndra。",
    "role": "desc",
    "kind": "dialogue",
@@ -142582,7 +143489,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#061": {
-   "src": "N-no! No, no, it's... fine. I'll go find Chen on my own. You two, um, hand something you were going to do, right?",
+   "src": "N-no! No, no, it's... fine. I'll... go find Chen on my own. You two, um, had something you were going to do, right?",
    "dst": "不、不！不，不，没……没关系。我自己去找 Chen 就好。你们两个，呃，不是还有事要做吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -144392,7 +145299,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#242": {
-   "src": "Naturally, you completely miscalculated, thinking you could sneak by like this. An unwanted variable isn't an unexpected one.",
+   "src": "Naturally. You completely miscalculated, thinking you could sneak by like this. An unwanted variable isn't an unexpected one.",
    "dst": "当然，你完全算错了，以为能这样偷偷溜过去。不受欢迎的变量，可不等于意料之外的变量。",
    "role": "desc",
    "kind": "dialogue",
@@ -144482,7 +145389,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#251": {
-   "src": "...so it was all imaginary? Nothing real? I cared about you, as a friend. A confidant. Did you? Or...was I just a convenient tool for you?",
+   "src": "...so was it all imaginary? Nothing real? I cared about you, as a friend. A confidant. Did you? Or...was I just a convenient tool for you?",
    "dst": "……所以全都是虚数？没有一样是实数？我把你当朋友。当知己。你呢？还是说……我只是你顺手的工具？",
    "role": "desc",
    "kind": "dialogue",
@@ -144890,6 +145797,148 @@
    "stage": "Stage 13",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "Revelations in Fall#292": {
+   "src": "I don't think I have much of",
+   "dst": "我觉得我也没什么选择。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured",
+   "full": "I don't think I have much of a choice."
+  },
+  "Revelations in Fall#293": {
+   "src": "The Red Fox?",
+   "dst": "红狐？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#294": {
+   "src": "No, I'm still trying.",
+   "dst": "不用，我还想再试试。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#295": {
+   "src": "Yes, please.",
+   "dst": "好，麻烦了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#296": {
+   "src": "Th- there- there's no way we c- ca- we can get across the rest of these r- ro- rooftops... one c- cl- one close call is enough f- for me.",
+   "dst": "剩、剩——剩下这些屋、屋顶我们根本不、不可能——不可能过得去……一、一次死里逃生对我来说就够、够了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "Revelations in Fall#297": {
+   "src": "In Wynn, we have stories...",
+   "dst": "在 Wynn，我们有些故事……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#298": {
+   "src": "He's alive.",
+   "dst": "他还活着。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#299": {
+   "src": "I'm in Fruma to find him.",
+   "dst": "我来 Fruma 就是为了找他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#300": {
+   "src": "You did... alright.",
+   "dst": "你表现得……还行。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#301": {
+   "src": "Zeph was still struggling.",
+   "dst": "Zeph 还是很吃力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#302": {
+   "src": "A mood?",
+   "dst": "心情不好？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Revelations in Fall#303": {
+   "src": "Mora asked me to make sure y",
+   "dst": "Mora 让我确保你平安到家。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured",
+   "full": "Mora asked me to make sure you got home safe."
+  },
+  "Revelations in Fall#304": {
+   "src": "[+{~} Passport - Roughworks-Auburn]",
+   "dst": "[+{~} 护照 - Roughworks-Auburn]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 11",
+   "speaker": "Mora",
+   "source": "captured"
+  },
+  "Revelations in Fall#305": {
+   "src": "[-{~} Passport]",
+   "dst": "[-{~} 护照]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 12",
+   "speaker": "Sui",
+   "source": "captured"
   },
   "Rise of the Quartron#000": {
    "src": "...Go on...I still need you to figure everything out...",
@@ -172044,7 +173093,7 @@
    "source": "wiki"
   },
   "The Cursed One#282": {
-   "src": "Ten!? Oh, f- fine... you said it's h- high- high quality? It's pr- probably worth the price. Here.",
+   "src": "Ten!? Oh, f- fine... you said h- high- high quality? It's pr- probably worth the price. Here.",
    "dst": "十片！？哦，好——好吧……你说是高——高品质的？大概值这个价。给你。",
    "role": "desc",
    "kind": "dialogue",
@@ -172264,7 +173313,7 @@
    "source": "wiki"
   },
   "The Cursed One#304": {
-   "src": "That can wait until after the festival, though. You should go on ahead an enjoy yourself.",
+   "src": "That can wait until after the festival, though. You should go on ahead and enjoy yourself.",
    "dst": "不过那可以等庆典结束再说。你先去好好玩吧。",
    "role": "desc",
    "kind": "dialogue",
@@ -173084,7 +174133,7 @@
    "source": "wiki"
   },
   "The Cursed One#386": {
-   "src": "Perhaps you would like to hear what we have to offer?",
+   "src": "Perhaps would you like to hear what we have to offer?",
    "dst": "也许您想听听我们有什么？",
    "role": "desc",
    "kind": "dialogue",
@@ -173134,7 +174183,7 @@
    "source": "wiki"
   },
   "The Cursed One#391": {
-   "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from a bitter to a rich spicy flavour!",
+   "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from bitter to a rich spicy flavour!",
    "dst": "比如灵芝菇！单用这种菇泡茶常常会……很苦。加上香草和香料之后，就会从苦味变成浓郁的辛香风味！",
    "role": "desc",
    "kind": "dialogue",
@@ -173144,7 +174193,7 @@
    "source": "wiki"
   },
   "The Cursed One#392": {
-   "src": "The mushroom itself is said to keep you healthy. It is also said to boost your resistances!",
+   "src": "The mushroom itself is said to help keep you healthy. It is also said to boost your resistances!",
    "dst": "据说这种菇能让人保持健康。据说还能增强抗性！",
    "role": "desc",
    "kind": "dialogue",
@@ -173164,7 +174213,7 @@
    "source": "wiki"
   },
   "The Cursed One#394": {
-   "src": "The mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
+   "src": "This mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
    "dst": "据说这种菇还能让人恢复健康、缓解疲劳！真是太神奇了。",
    "role": "desc",
    "kind": "dialogue",
@@ -173924,7 +174973,7 @@
    "source": "wiki"
   },
   "The Cursed One#470": {
-   "src": "I'd be here all day listing the improvements over the last year, but I'll summarize- Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
+   "src": "I'd be here all day listing all the improvements over the last year, but I'll summarize- Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
    "dst": "要是把去年的所有改进一一列出来，我能讲上一整天，所以我简单总结一下多项重大道路改善、无数新的工作机会、成倍增加的守卫巡逻来保护大家的安全……",
    "role": "desc",
    "kind": "dialogue",
@@ -174184,7 +175233,7 @@
    "source": "wiki"
   },
   "The Cursed One#496": {
-   "src": "Merely a reminder to... \"get your act together,\" as it were.",
+   "src": "Merely a reminder to... ''get your act together,'' as it were.",
    "dst": "只是提醒你……“振作起来”，姑且这么说。",
    "role": "desc",
    "kind": "dialogue",
@@ -174302,6 +175351,128 @@
    "stage": "Stage 18",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "The Cursed One#508": {
+   "src": "An Inquisitor?",
+   "dst": "审判官？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#509": {
+   "src": "Alas, the swing is occupied.",
+   "dst": "可惜，秋千上已经有人了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#510": {
+   "src": "What'd you pay with?",
+   "dst": "你拿什么付的钱？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#511": {
+   "src": "Let's get back to the others",
+   "dst": "我们回去找其他人吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured",
+   "full": "Let's get back to the others."
+  },
+  "The Cursed One#512": {
+   "src": "I'll walk.",
+   "dst": "我走路回去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#513": {
+   "src": "It's nice.",
+   "dst": "挺不错的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#514": {
+   "src": "It's kind of boring.",
+   "dst": "有点无聊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#515": {
+   "src": "Maybe it's time to find Syndra near the stage. But there is still time to check out the festival more too...",
+   "dst": "也许是时候去舞台附近找 Syndra 了。不过还有时间再多逛逛庆典……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "Tea Stand Merchant",
+   "source": "captured"
+  },
+  "The Cursed One#516": {
+   "src": "I have!",
+   "dst": "玩得很开心！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#517": {
+   "src": "It's not the orchestra?",
+   "dst": "不是管弦乐演奏吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#518": {
+   "src": "How she talks about Auburn.",
+   "dst": "她谈起 Auburn 的方式。那……不太一样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured",
+   "full": "How she talks about Auburn. It's... different."
+  },
+  "The Cursed One#519": {
+   "src": "Zhiraok's speech.",
+   "dst": "Zhiraok 的演讲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
   },
   "The Dark Descent#000": {
    "src": "Hello there, chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
