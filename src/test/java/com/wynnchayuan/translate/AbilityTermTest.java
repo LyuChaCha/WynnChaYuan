@@ -69,6 +69,7 @@ public final class AbilityTermTest {
         swaps(store, "Charge", " deals damage and knocks back enemies.", "衝鋒");
         insideAccent(store);
         underlineStopsAtName(store);
+        forcedSpans();
 
         System.out.println(failures == 0
                 ? "技能名稱替換：全部通過" : "技能名稱替換：" + failures + " 項失敗");
@@ -237,6 +238,79 @@ public final class AbilityTermTest {
     }
 
     /** 含有 {@code needle} 的第一個葉片段的顏色；找不到回傳 null。 */
+    /**
+     * 譯者用 {@code {cN}…{/}} 指定顏色的那一段，裡面的技能名也要換。
+     *
+     * <h2>實機（2026-10-17）</h2>
+     * 指定顏色的那一段在重建時是原樣貼上的，不經過換詞那一步：刺客的「{@code {c2}Drained {#}}」、
+     * 意象的「{@code {c2}Sniffer Dog{c1} 的冷卻…}」一直是英文。空格規則要跟一般內文一樣——
+     * 空格常常在色段<b>外面</b>，換成中文之後「尋獵犬 的冷卻」那個空格要拿掉。
+     *
+     * <p>用自己寫的假語料，不綁真語料的措辭。
+     */
+    private static void forcedSpans() throws java.io.IOException {
+        System.out.println("=== 指定顏色的色段裡也換詞 ===");
+        Path dir = java.nio.file.Files.createTempDirectory("wcy-forced-terms");
+        java.nio.file.Files.writeString(dir.resolve("misc.json"), """
+                {
+                  "Reduces Fetch Hound's cooldown by -{~}s.": "{c2}Fetch Hound{c1} 的冷卻減少 {c3}{~} 秒{c1}。",
+                  "Hit a Sapped foe to gain {~} Overguard.": "{c1}攻擊 {c2}Sapped{c1} 的敵人獲得 {c3}{~} {c2}Overguard{c1}。",
+                  "Fetch Hound grants Overguard to you.": "Fetch Hound 會給你 Overguard。"
+                }
+                """, java.nio.charset.StandardCharsets.UTF_8);
+        java.nio.file.Files.writeString(dir.resolve("ability-terms.json"),
+                "{\"Fetch Hound\": \"尋獵犬\", \"Sapped\": \"枯竭\", \"Overguard\": \"溢盾\"}",
+                java.nio.charset.StandardCharsets.UTF_8);
+        TranslationStore fixture = new TranslationStore();
+        fixture.loadAll(dir);
+
+        int grey = 0xAAAAAA;
+        int name = 0x55FF55;
+        int value = 0xFFFFFF;
+        Component hound = LineTranslator.translate(StyledText.fromComponent(row(
+                "Reduces ", grey, "Fetch Hound's", name, " cooldown by ", grey,
+                "-2s", value, ".", grey)), fixture);
+        String a = hound == null ? "" : hound.getString();
+        report("翻得出來（實際：" + a + "）", hound != null && a.contains("冷卻"));
+        report("★ 色段裡的名稱換成譯名（實際：" + a + "）",
+               a.contains("尋獵犬") && !a.contains("Fetch Hound"));
+        report("★ 色段外面那個空格照一般內文的規則拿掉（實際：" + a + "）",
+               a.contains("尋獵犬的冷卻"));
+        Integer houndColour = colourAt(hound, "尋獵犬");
+        report("譯名保住譯者指定的顏色（實際 " + hex(houndColour) + "）",
+               houndColour != null && houndColour == name);
+
+        Component sapped = LineTranslator.translate(StyledText.fromComponent(row(
+                "Hit a ", grey, "Sapped", name, " foe to gain ", grey, "3", value, " ", grey,
+                "Overguard", name, ".", grey)), fixture);
+        String b = sapped == null ? "" : sapped.getString();
+        report("★ 一行兩個色段都換（實際：" + b + "）",
+               b.contains("枯竭") && b.contains("溢盾")
+                       && !b.contains("Sapped") && !b.contains("Overguard"));
+        report("★ 色段前面那個空格也照規則拿掉（實際：" + b + "）", b.contains("攻擊枯竭的敵人"));
+        report("數值後面的空格留著（實際：" + b + "）", b.contains("3 溢盾"));
+
+        // 對照組：沒有色段的一般內文本來就換得掉，兩條路的結果要一樣
+        Component plain = LineTranslator.translate(StyledText.fromComponent(row(
+                "Fetch Hound grants Overguard to you.", grey)), fixture);
+        String c = plain == null ? "" : plain.getString();
+        report("對照組：一般內文照舊換（實際：" + c + "）",
+               c.contains("尋獵犬") && c.contains("溢盾"));
+    }
+
+    private static MutableComponent row(Object... parts) {
+        MutableComponent line = Component.empty();
+        for (int i = 0; i < parts.length; i += 2) {
+            line.append(Component.literal((String) parts[i]).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb((Integer) parts[i + 1]))));
+        }
+        return line;
+    }
+
+    private static String hex(Integer rgb) {
+        return rgb == null ? "null" : String.format("#%06X", rgb);
+    }
+
     private static Integer colourAt(Component row, String needle) {
         if (row == null) {
             return null;

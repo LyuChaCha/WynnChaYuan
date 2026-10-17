@@ -1,12 +1,48 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.2_2",
+ "latest": "1.0.2_3",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.2_3": {
+   "headline": "1.0.2_3: ability tree tooltip fixes and Lootrun names",
+   "items": [
+    "Fixed: in ability tree tooltips, the second and third items of an Effects list and the damage breakdown rows now line up under the first row.",
+    "Fixed: an icon inside brackets, such as the Resistance Bonus icon, kept its colour instead of turning white.",
+    "Fixed: a number range such as +1-2 is no longer split across two lines.",
+    "Fixed: ability names inside coloured parts of a description are now translated as well.",
+    "Fixed: with names shown together with the original, the English name after a Lootrun mission or trial was partly translated. Cleansing Ritual is recognised as a mission too.",
+    "Fixed: the settings screen font now has every character of the credits list.",
+    "Translations: the official 10/16 update (Shaman ability tree, new aspects, Ascended weapons, Major IDs), Fruma quest dialogue, Lootrun mission names and descriptions, ability tree signs and colours, and more lines recorded in game."
+   ],
+   "zh_tw": {
+    "headline": "1.0.2_3：技能樹說明的顯示修正與 Lootrun 使命名",
+    "items": [
+     "修正：技能樹說明裡「效果」的第二、三項與傷害小項，現在會對齊第一行。",
+     "修正：括號裡的圖示（例如抗性加成的圖示）保留原本的顏色，不再變成白色。",
+     "修正：「+1-2」這種數值範圍不會再被拆到兩行。",
+     "修正：說明裡有指定顏色的片段，技能名也會翻成中文。",
+     "修正：名稱設成中英對照時，Lootrun 使命與試煉後面的英文原名被翻了一半；Cleansing Ritual 也認得出是使命了。",
+     "修正：設定畫面的字型補齊名單上的每一個字。",
+     "譯文：官方 10/16 更新（薩滿技能樹、新 aspect、Ascended 武器、Major ID）、Fruma 任務對話、Lootrun 使命名與說明、技能樹的正負號與顏色，以及實機收到的新句子。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.2_3：技能树说明的显示修正与 Lootrun 使命名",
+    "items": [
+     "修正：技能树说明里「效果」的第二、三项与伤害小项，现在会对齐第一行。",
+     "修正：括号里的图标（例如抗性加成的图标）保留原本的颜色，不再变成白色。",
+     "修正：「+1-2」这种数值范围不会再被拆到两行。",
+     "修正：说明里有指定颜色的片段，技能名也会翻成中文。",
+     "修正：名称设成中英对照时，Lootrun 使命与试炼后面的英文原名被翻了一半；Cleansing Ritual 也认得出是使命了。",
+     "修正：设置界面的字体补齐名单上的每一个字。",
+     "译文：官方 10/16 更新（萨满技能树、新 aspect、Ascended 武器、Major ID）、Fruma 任务对话、Lootrun 使命名与说明、技能树的正负号与颜色，以及实机收到的新句子。"
+    ]
+   }
+  },
   "1.0.2_2": {
    "headline": "1.0.2_2: fixes for floating text, nameplates and quest dialogue",
    "items": [

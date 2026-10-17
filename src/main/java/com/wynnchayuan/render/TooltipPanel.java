@@ -449,6 +449,25 @@ public final class TooltipPanel {
             TranslationStore.holdAppendedOriginal(false);
             TranslationStore.nameLine(false);
         }
+        // 行首縮排的續行（技能樹「效果」的第二、三項、傷害的小項）：模板剝掉的行首空白
+        // 重建時沒有補回來，起點要照原文、或照譯文第一行的數值欄重新補。見 IndentAlign。
+        // 放在 evenOut 之前：那時 out 的行號還跟 spans 對得上。
+        //
+        // 只管<b>一行一條</b>翻的列。整段查到、由我們重折的那幾列（Major ID 的說明）
+        // 每一列裝的不是原文那一列的字，原文的縮排對它沒有意義。
+        try {
+            int[] rowOf = new int[n];
+            java.util.Arrays.fill(rowOf, -1);
+            for (int[] span : spans) {
+                if (span[1] - span[0] == 1 && span[3] - span[2] == 1) {
+                    rowOf[span[0]] = span[2];
+                }
+            }
+            com.wynnchayuan.translate.IndentAlign.apply(
+                    styled, out, rowOf, hit, centered, abilityPanel, TooltipPanel::measure);
+        } catch (RuntimeException e) {
+            // 對齊只是錦上添花，出事就照原本的畫
+        }
         // 同一段不能一半中文一半英文，見 evenOut。
         //
         // 要拿<b>剝掉色碼</b>的字。StyledText#getString 會把每一段的顏色寫成
@@ -506,6 +525,10 @@ public final class TooltipPanel {
         com.wynnchayuan.translate.LayoutDebug.drawn(
                 "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipPanel::measure);
         noteWidened(split.original(), fitted);
+        // 技能樹的說明另外記幾份「原文 vs 畫出去」的片段（含粗體），見 TooltipDebug#dumpAbility。
+        if (abilityPanel) {
+            TooltipDebug.dumpAbility(tooltip, fitted);
+        }
         return fitted;
     }
 
