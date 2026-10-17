@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23404,
-  "translated": 23111,
+  "count": 23408,
+  "translated": 23115,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -29891,6 +29891,46 @@
    "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
+  },
+  "An Iron Heart Part II#069": {
+   "src": "Maybe something can deactivate the golem guarding the entrance",
+   "dst": "入り口を守っているゴーレムを無力化できる何かがあるかもしれない",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#070": {
+   "src": "Maybe an item that golems react to could force it away.",
+   "dst": "ゴーレムが反応するアイテムを使えば、追い払えるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#071": {
+   "src": "Get [Explosive Chip]\nto open the door",
+   "dst": "{c2}[爆発チップ]{/}を集めて\nドアを開けよう",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#072": {
+   "src": "...I hope you always do the right thing.",
+   "dst": "…あなたがいつも正しい事をする人であってほしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "Detective Hart",
+   "source": "captured.json"
   },
   "Apotheosis (Quest)#000": {
    "src": "Head to {p} and find your friends at [-{~}, {~}, -{~}].",

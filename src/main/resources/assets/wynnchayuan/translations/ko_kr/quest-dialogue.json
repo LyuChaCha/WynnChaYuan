@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23299,
-  "translated": 23002,
+  "count": 23305,
+  "translated": 23008,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -29501,6 +29501,66 @@
    "stage": "Stage 8",
    "speaker": "Detective Hart",
    "source": "wiki"
+  },
+  "An Iron Heart Part II#067": {
+   "src": "That golem is a danger to everything around it. Please, follow the trail of scrap and keep it from causing anyone more damage!",
+   "dst": "그 골렘은 주변 모든 것에 위험해요. 부디 고철 흔적을 따라가서 더는 누구도 다치지 않게 막아 주세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 1",
+   "speaker": "Detective Hart",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#068": {
+   "src": "Get [{~} Acidic Sludge]\nto open the door",
+   "dst": "[{~} Acidic Sludge] 획득 시\n문이 열립니다",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#069": {
+   "src": "Maybe something can deactivate the golem guarding the entrance",
+   "dst": "입구를 지키는 골렘을 멈출 수 있는 무언가가 있을지도 몰라",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#070": {
+   "src": "Maybe an item that golems react to could force it away.",
+   "dst": "골렘이 반응하는 아이템이라면 쫓아낼 수 있을지도 몰라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#071": {
+   "src": "Get [Explosive Chip]\nto open the door",
+   "dst": "[Explosive Chip] 획득 시\n문이 열립니다",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "An Iron Heart Part II",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "An Iron Heart Part II#072": {
+   "src": "...I hope you always do the right thing.",
+   "dst": "...언제나 옳은 일을 하시길 바라요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "Detective Hart",
+   "source": "captured.json"
   },
   "Apotheosis (Quest)#000": {
    "src": "Head to {p} and find your friends at [-{~}, {~}, -{~}].",
