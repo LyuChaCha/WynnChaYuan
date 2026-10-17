@@ -92,6 +92,9 @@ public final class EventFrameTest {
         // 一個事件一條的舊鍵
         misc.addProperty("{#} The Old Mill World Event starts in {~}m {~}s! ({~} blocks away) Click to track",
                 "{#} {c1}舊鍵：舊磨坊 {~1} 分 {~2} 秒！{/}{c2}({~3} 格) {/}{c3}追蹤{/}");
+        // 一個事件一條的舊鍵，只收了「! ⏎ (」那一種折法（譯文也折成兩行）
+        misc.addProperty("{#} The Old Mill World Event starts in {~}s! \n{#} ({~} blocks away) Click to track",
+                "{#} {c1}舊折行鍵：舊磨坊 {~1} 秒！{/}\n{#} {c2}({~2} 格) {/}{c3}追蹤{/}");
         Files.writeString(dir.resolve("misc.json"), misc.toString(), StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
@@ -177,6 +180,14 @@ public final class EventFrameTest {
                 check("★ 折法 " + wrap + "、倒數 " + timer + "（實際 " + got + "）",
                       got != null && got.contains("悶燒廢墟 " + want) && got.contains("相距 426 格"));
             }
+        }
+        // ★ 舊鍵只收了一種折法，伺服器折在別處：舊鍵套不上就要退到句型，不能整句放棄
+        for (int wrap = 0; wrap <= 3; wrap++) {
+            Component hit = LineTranslator.translateChat(event("Old Mill", "39s", "236", wrap), store);
+            String got = hit == null ? null : hit.getString().replace("\n", "⏎");
+            String want = wrap == 2 ? "舊折行鍵：舊磨坊 39 秒！" : "舊磨坊 活動於 39 秒後揭幕！";
+            check("★ 舊鍵只有另一種折法、這一行是折法 " + wrap + "（實際 " + got + "）",
+                  got != null && got.contains(want) && got.contains("236"));
         }
         // 收集端問「翻了沒」：折過行的模板也算翻了，不必每種斷法收一條
         String wrapped = "{#} The Smoldering Ruin World Event starts in {~}s! ({~}\n"

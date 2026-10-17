@@ -4039,55 +4039,67 @@ public final class LineTranslator {
         }
         // 「沒翻到」跟「翻了但沒對齊」是兩種病。先前查不到就安靜回傳 null，
         // 於是診斷檔裡那一塊完全不存在，看起來像沒被呼叫到——分不出是哪一種。
-        String translated = lookup(parts.template(), store);
-        if (translated == null || translated.isBlank()) {
-            // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
-            translated = byColumn(parts.template(), store);
-        }
-        List<LineParts.Piece> glyphs = null;
-        if (translated == null || translated.isBlank()) {
-            // 還是查不到：把斷好的行併成一句再查一次。見 #unwrapped。
-            translated = store.lookupUnwrapped(parts.template());
-            if (translated != null && !translated.isBlank()) {
-                glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
-            }
-        }
-        if ((translated == null || translated.isBlank())
-                && com.wynnchayuan.capture.Broadcasts.find(message) == null) {
-            // 別人的名字夾在語料的某個 {u} 句型裡：名字收成 {u} 再查一次。見 NameFrames。
-            LineParts framed = framedOnMiss(message, parts, store);
-            if (framed != null) {
-                translated = lookup(framed.template(), store);
-                if (translated == null || translated.isBlank()) {
-                    translated = store.lookupUnwrapped(framed.template());
-                    if (translated != null && !translated.isBlank()) {
-                        glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+        //
+        // 每一條路查到的譯文都要<b>真的重建得出來</b>才算數，重建不出來就換下一條路。
+        // 先前是「查到就定案」：一個事件一條的舊鍵只收了某一種折法（「! ⏎ (」），
+        // 伺服器折在別處時併句索引照樣找到它，可是那條譯文帶著自己的續行圖示，
+        // 數量對不上——整句放棄，後面的句型（#eventFrame）根本沒機會試。
+        Component rebuilt = null;
+        String tried = null;
+        for (int step = 0; step < 6 && rebuilt == null; step++) {
+            LineParts using = parts;
+            List<LineParts.Piece> glyphs = null;
+            String hit = null;
+            switch (step) {
+                case 0 -> hit = lookup(parts.template(), store);
+                // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
+                case 1 -> hit = byColumn(parts.template(), store);
+                case 2 -> {
+                    // 把斷好的行併成一句再查一次。見 #unwrapped。
+                    hit = store.lookupUnwrapped(parts.template());
+                    glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+                }
+                case 3, 4 -> {
+                    // 別人的名字夾在語料的某個 {u} 句型裡：名字收成 {u} 再查一次。見 NameFrames。
+                    LineParts framed = com.wynnchayuan.capture.Broadcasts.find(message) == null
+                            ? framedOnMiss(message, parts, store) : null;
+                    if (framed != null) {
+                        using = framed;
+                        if (step == 3) {
+                            hit = lookup(framed.template(), store);
+                        } else {
+                            hit = store.lookupUnwrapped(framed.template());
+                            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+                        }
                     }
                 }
-                if (translated != null && !translated.isBlank()) {
-                    parts = framed;
+                default -> {
+                    // 世界事件的倒數公告，伺服器折過行的那幾種。單行的在 lookup 裡就接住了。
+                    if (parts.template().indexOf('\n') >= 0) {
+                        hit = eventFrame(TranslationStore.unwrap(parts.template()), store);
+                        glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+                    }
                 }
             }
-        }
-        if ((translated == null || translated.isBlank())
-                && parts.template().indexOf('\n') >= 0) {
-            // 世界事件的倒數公告，伺服器折過行的那幾種。單行的在 lookup 裡就接住了。
-            translated = eventFrame(TranslationStore.unwrap(parts.template()), store);
-            if (translated != null) {
-                glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+            if (hit == null || hit.isBlank()) {
+                continue;
+            }
+            tried = hit;
+            rebuilt = glyphs == null
+                    ? rebuild(hit, using, store)
+                    : rebuild(hit, using, glyphs, store);
+            if (rebuilt != null) {
+                parts = using;
             }
         }
-        if (translated == null || translated.isBlank()) {
-            FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
-                                 "語料裡查不到這一塊");
-            return null;
-        }
-        Component rebuilt = glyphs == null
-                ? rebuild(translated, parts, store)
-                : rebuild(translated, parts, glyphs, store);
         if (rebuilt == null) {
-            FlowedDebug.chatRows(message.getString(), "  譯文：" + translated,
-                                 "佔位符數量對不上，整塊放棄");
+            if (tried == null) {
+                FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
+                                     "語料裡查不到這一塊");
+            } else {
+                FlowedDebug.chatRows(message.getString(), "  譯文：" + tried,
+                                     "佔位符數量對不上，整塊放棄");
+            }
             return null;
         }
         rebuilt = rowColours(message, rebuilt, dominantStyle(List.of(parts)));
