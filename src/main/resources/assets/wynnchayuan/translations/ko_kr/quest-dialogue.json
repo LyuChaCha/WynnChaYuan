@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23363,
-  "translated": 23066,
+  "count": 23368,
+  "translated": 23071,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -137282,6 +137282,56 @@
    "stage": "Stage 26",
    "speaker": "",
    "source": "captured"
+  },
+  "Queen's Recruit#705": {
+   "src": "Meet up with Tasim in {p} at [{~}, {~}, -{~}] or travel to the Gate of Fruma by yourself.",
+   "dst": "{p}의 [{~}, {~}, -{~}]에서 Tasim과 만나거나, 혼자 Fruma의 관문으로 가세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#706": {
+   "src": "Begin your next duel in the waiting room at [-{~}, {~}, {~}].",
+   "dst": "[-{~}, {~}, {~}]의 대기실에서 다음 결투를 시작하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#707": {
+   "src": "Attention!! Attention, Wynn representatives!!",
+   "dst": "주목!! 주목해 주십시오, Wynn 대표 여러분!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#708": {
+   "src": "Besides, it'll be nice to finally have a rematch. I haven't forgotten when you beat me in that sparring match, all the way back then!",
+   "dst": "게다가 드디어 재대결을 하게 돼서 좋다. 예전에 대련에서 너한테 졌던 거 아직 안 잊었거든!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#709": {
+   "src": "Well, that's one of us, at least! I... keep having dreams. It's worse here, than... sigh. I thought I'd gotten over it...",
+   "dst": "뭐, 적어도 우리 중 한 명은 그렇네! 난... 계속 꿈을 꿔. 여기선 더 심해, ...하아. 다 극복한 줄 알았는데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "captured.json"
   },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",

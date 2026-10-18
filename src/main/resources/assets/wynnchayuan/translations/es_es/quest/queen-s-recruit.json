@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Queen's Recruit",
-  "count": 705,
-  "translated": 705,
+  "count": 710,
+  "translated": 710,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -7065,6 +7065,56 @@
    "stage": "Stage 26",
    "speaker": "",
    "source": "captured"
+  },
+  "Queen's Recruit#705": {
+   "src": "Meet up with Tasim in {p} at [{~}, {~}, -{~}] or travel to the Gate of Fruma by yourself.",
+   "dst": "Reúnete con Tasim en {p} en [{~}, {~}, -{~}] o viaja tú solo a la Puerta de Fruma.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#706": {
+   "src": "Begin your next duel in the waiting room at [-{~}, {~}, {~}].",
+   "dst": "Comienza tu siguiente duelo en la sala de espera en [-{~}, {~}, {~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#707": {
+   "src": "Attention!! Attention, Wynn representatives!!",
+   "dst": "¡¡Atención!! ¡¡Atención, representantes de Wynn!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#708": {
+   "src": "Besides, it'll be nice to finally have a rematch. I haven't forgotten when you beat me in that sparring match, all the way back then!",
+   "dst": "Además, estará bien tener por fin la revancha. ¡No he olvidado cuando me ganaste en aquel combate de entrenamiento, hace ya tanto!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#709": {
+   "src": "Well, that's one of us, at least! I... keep having dreams. It's worse here, than... sigh. I thought I'd gotten over it...",
+   "dst": "¡Bueno, al menos uno de los dos! Yo... sigo teniendo sueños. Aquí es peor que... uf. Creía que ya lo había superado...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "captured.json"
   }
  }
 }
