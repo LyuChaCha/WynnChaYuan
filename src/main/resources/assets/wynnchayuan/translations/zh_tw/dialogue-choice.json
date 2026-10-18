@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 27,
-  "translated": 27
+  "count": 31,
+  "translated": 31
  },
  "entries": {
   "choice#c000": {
@@ -274,6 +274,50 @@
   "choice#c014": {
    "src": "How have you been doing sinc",
    "dst": "從那之後你過得怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#000": {
+   "src": "What do elements on my gear",
+   "dst": "我裝備上的元素有什麼作用？",
+   "full": "What do elements on my gear do?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#001": {
+   "src": "What do elements on enemies",
+   "dst": "敵人身上的元素代表什麼？",
+   "full": "What do elements on enemies mean?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#002": {
+   "src": "How can I tell a spell is co",
+   "dst": "我要怎麼看出法術快來了？",
+   "full": "How can I tell a spell is coming?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#003": {
+   "src": "How's society now that you'r",
+   "dst": "回來之後，覺得社會怎麼樣？",
+   "full": "How's society now that you're back?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
