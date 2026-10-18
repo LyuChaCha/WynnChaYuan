@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Queen's Recruit",
-  "count": 705,
-  "translated": 705,
+  "count": 710,
+  "translated": 710,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -7065,6 +7065,56 @@
    "stage": "Stage 26",
    "speaker": "",
    "source": "captured"
+  },
+  "Queen's Recruit#705": {
+   "src": "Meet up with Tasim in {p} at [{~}, {~}, -{~}] or travel to the Gate of Fruma by yourself.",
+   "dst": "到 {p} 的 [{~}, {~}, -{~}] 與 Tasim 會合，或自行前往 Fruma 之門。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#706": {
+   "src": "Begin your next duel in the waiting room at [-{~}, {~}, {~}].",
+   "dst": "到 [-{~}, {~}, {~}] 的休息室開始下一場決鬥。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#707": {
+   "src": "Attention!! Attention, Wynn representatives!!",
+   "dst": "注意！！請注意，Wynn 的代表們！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#708": {
+   "src": "Besides, it'll be nice to finally have a rematch. I haven't forgotten when you beat me in that sparring match, all the way back then!",
+   "dst": "再說，終於能跟你再比一場，挺好的。我可沒忘記很久以前那場切磋被你打敗的事！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#709": {
+   "src": "Well, that's one of us, at least! I... keep having dreams. It's worse here, than... sigh. I thought I'd gotten over it...",
+   "dst": "嗯，至少我們之中有一個人是這樣！我……一直在做夢。在這裡更糟，比……唉。我還以為我已經走出來了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "captured.json"
   }
  }
 }
