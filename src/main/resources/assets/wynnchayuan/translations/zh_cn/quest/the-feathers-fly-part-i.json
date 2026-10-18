@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Feathers Fly Part I",
-  "count": 226,
-  "translated": 226,
+  "count": 237,
+  "translated": 237,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -867,8 +867,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "那就祝你好运！等你找到控制面板我就回来！",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "那就祝你好运！等你找到控制面板、进到里面，我就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1137,8 +1137,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "希望 没事……毕竟我马上就找到微芯片了。",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "希望那个人类没事……毕竟我马上就找到微芯片了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1147,8 +1147,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "……好吧。该走了。我想我就等等 {u} 吧。",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "……好吧。该走了。我想我就等等那个人吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2077,7 +2077,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "你们到底知不知道你们有多老古板？！最后警告？？",
    "role": "desc",
    "kind": "dialogue",
@@ -2097,8 +2097,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "……看来她在地上留下了一些装置。你不如就拿走吧。还有，收下这些。关于工厂的事，我们一直没机会谢谢你。",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "……看来她在地上留下了一些装置。你不如就拿走吧，我可不想要。还有，收下这些。关于工厂的事，我们一直没机会谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2265,6 +2265,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "开始新任务线: 羽毛纷飞",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "啊，先讲历史！很好，很好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "她亮出爪子了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] 安全传送程序已启动！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "Ava 没跟你一起被传送过来！你只能靠自己了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "噢天哪，不——让我重新启动一下机器……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "好吧……跟我说说。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "我们就，呃，当作什么都没发生过。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "……本来应该发生什么吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "那也未免好得太不真实了，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "希望你知道自己在做什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   }
  }
 }

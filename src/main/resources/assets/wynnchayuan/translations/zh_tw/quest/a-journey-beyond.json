@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 242,
-  "translated": 242,
+  "count": 249,
+  "translated": 249,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "是，長官！走吧！",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "是，長官！走吧，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -973,7 +973,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "我不覺得我們能靠法術過去，{u}！我們需要像是……翅膀那種東西！",
    "role": "desc",
    "kind": "dialogue",
@@ -1123,8 +1123,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "這樣應該就夠了。來看看有沒有用。過來這裡！",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "這樣應該就夠了。來看看有沒有用。{u}，過來這裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1353,7 +1353,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "是啊。我不知道為什麼會保存得這麼完好。就好像什麼都沒碰過一樣。",
    "role": "desc",
    "kind": "dialogue",
@@ -2383,8 +2383,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "這個方尖碑是什麼？它……讓人安心。我在 Gavel 的時候感受過這種感覺。",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "這個方尖碑是什麼？它……莫名地讓人安心。我在 Gavel 的時候感受過這種感覺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2431,6 +2431,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "哎呀，你好啊，旅人。我想我以前沒在這裡見過你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} {p} 威士忌]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "你搗毀了 Corkus 那座惡名昭彰的工廠？那可真是了不起的成就。那些機甲有多厲害，我聽過不少傳聞。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "哎呀，你好啊，旅人！很高興又在這裡見到你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "我們需要一個「計畫」。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} 腐化珍珠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "你得想辦法跟著他們到頂端去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

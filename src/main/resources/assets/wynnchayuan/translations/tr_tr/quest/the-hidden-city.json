@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 78,
-  "translated": 78,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -21,7 +21,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "Bir İnsan! Ah! Bana tıbbi yardım bulmak için endişelenme, durum kontrolüm altında...",
    "role": "desc",
    "kind": "dialogue",
@@ -101,8 +101,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "Köylülerin, topraklarında yaşayan insanlarla ilgili çok katı kuralları var ve bu ÇOK yasa dışı.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "Köylülerin, insanların kendi topraklarında şehir kurmasıyla ilgili çok katı kuralları var ve bu ÇOK yasa dışı.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -361,8 +361,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "Neyse, {p} kasabasının gizliliği büyük tehlikede. Hainin izlerini bulduk.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "Neyse, {p} kasabasının gizliliği büyük tehlikede. Bir hainin izlerini bulduk.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -431,7 +431,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "Gördüğüm tek şüpheli şey ortalıkta dolaşan kapüşonlu bir adam. {p} kasabasında pek insan yok, o yüzden tuhaf.",
    "role": "desc",
    "kind": "dialogue",
@@ -531,7 +531,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "Ah. Demek dedektif sensin. O kalın kafalı Eltomlulardan hiçbiri bunu çözemezdi.",
    "role": "desc",
    "kind": "dialogue",
@@ -551,8 +551,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "Bu kasaba burada olmamalı bile. İnsanların Gavel'e yerleşmesi yasak.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "Bu kasaba burada olmamalı bile. İnsanların Gavel'de böyle toprak sahibi olması yasak.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -601,7 +601,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- Zeplin: {p} kalkış {~}:{~}, varış {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -651,8 +651,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "Bir gemi kullanmak istedi... Reddettim...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "Bir gemi kullanmayı talep etti... Reddettim...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -731,8 +731,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "{p} belediye başkanına bu yeri baştan sona anlatacağım ve ödülümü alacağım. Zengin olacağım, beni durdurmak istiyorsan bunu kendin yapman gerekecek!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "{p} belediye başkanına bu yeri baştan sona anlatacağım ve ödülümü alacağım. Zengin olacağım, beni durdurmak istiyorsan bunu kendin yapman gerekecek.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -788,6 +788,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "Şehrin yerini içerik kitabına yazdım. Sana yardım etmek için yapabileceğim başka bir şey yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "Notlar:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- Belediye başkanının ofisi {p} kasabasının en üst katında",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- Cüce bankasında hesap açmayı unutma",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Hilan'a",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "Kullandığın gemi tam bir rezalet. Buradaki soğutucu sızıntısını üçüncü kez onarmak zorunda kaldım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Corkus makineleri harika ama sonsuza kadar dayanmazlar. Bu gidişle her kış yeni bir gemiye ihtiyacın olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "Motora hiçbir sıvının girmemesi gerektiğini anlamak bu kadar mı zor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-Mühendis Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "Bir mektup mu? Ah, o mu. {p} hakkındaki mi? Bu kadar endişeli bakma. Sır bende güvende.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "Evet, {p} kasabasını biliyorum. Ne de olsa belediye başkanı eski kocam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "Bir köylüyle bir insan arasındaki aşk tuhaf görünebilir. Biliyorum, ama ırkımız birbirimizi sevmemize engel olmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "{p} hakkındaki mektubu bırakan kişi oğlumuz Ardulf. Eoric çocuğumuzu öğrenir öğrenmez paniğe kapılıp beni terk etti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf melez olduğu için asla kabul görmeyecek... Yine de umarım iyidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "Hah, ah evet, bir şey daha. Masanın altındaki düğme... hadi, bas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   }
  }

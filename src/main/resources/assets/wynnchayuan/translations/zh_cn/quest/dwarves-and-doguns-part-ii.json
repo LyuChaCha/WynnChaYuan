@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part II",
-  "count": 88,
-  "translated": 88,
+  "count": 91,
+  "translated": 91,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -891,6 +891,36 @@
    "stage": "Stage 12",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#088": {
+   "src": "[{~}/{~}] Commanders",
+   "dst": "[{~}/{~}] 指挥官",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Leave now and I won't send the Dwarven army on you. You don't want to get hunted like the Doguns, do you?",
+   "dst": "现在就走，我就不派矮人军队追杀你。你也不想像 Dogun 那样被追捕吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "And Axelus, leave the city. You are no longer my son.",
+   "dst": "还有 Axelus，离开这座城。你不再是我的儿子了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
   }
  }
 }

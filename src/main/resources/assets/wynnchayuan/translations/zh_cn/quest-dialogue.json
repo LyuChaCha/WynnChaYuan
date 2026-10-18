@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23368,
-  "translated": 23365,
+  "count": 23574,
+  "translated": 23571,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -3726,7 +3726,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#146": {
-   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM, MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
+   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM. MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
    "dst": "你的工作是在他们之间制造不信任，确保你不被看到。Avos 本来就对 Corkus 人抱持怀疑。",
    "role": "desc",
    "kind": "dialogue",
@@ -3846,8 +3846,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#158": {
-   "src": "Round up our defenses and sharpen the spears. There is no excuse for this.",
-   "dst": "集结我们的防御，磨利长矛。这件事没有任何借口。",
+   "src": "Round up the defenses and sharpen the spears. There is no excuse for this.",
+   "dst": "集结防御，磨利长矛。这件事没有任何借口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -4136,7 +4136,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#187": {
-   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER, I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
+   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER. I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
    "dst": "这座塔里有一批 Corkus 人造的、统计上较为低劣的机甲，我在这个装置里编好了一套系统。",
    "role": "desc",
    "kind": "dialogue",
@@ -4163,16 +4163,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 26",
    "speaker": "Teleportation Mech",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#190": {
-   "src": "Objective. Eliminate Avos presence.",
-   "dst": "目标。消灭 Avos 存在。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 26",
-   "speaker": "Corkus Guard",
    "source": "wiki"
   },
   "A Hunter's Calling#191": {
@@ -4536,7 +4526,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#227": {
-   "src": "How's this then, hm? Think your PEON can handle me at my strongest?",
+   "src": "How's this, then, hm? Think your PEON can handle me at my strongest?",
    "dst": "这样如何，嗯？你以为你的小喽啰应付得了全力以赴的我吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -5304,6 +5294,16 @@
    "stage": "Stage 28",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Hunter's Calling#314": {
+   "src": "Airforce! Drop the bomb!",
+   "dst": "空军！投弹！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
   },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
@@ -6212,8 +6212,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "是，长官！我们走吧！",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "是，长官！我们走吧，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6272,7 +6272,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "我觉得我们没办法靠法术过去，{u}！我们需要像是……翅膀之类的东西！",
    "role": "desc",
    "kind": "dialogue",
@@ -6422,8 +6422,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "这样应该就行了。来看看有没有用。过来！",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "这样应该就行了。来看看有没有用。过来，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6652,7 +6652,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "是啊。我不知道为什么会保存得这么好。就好像什么都没碰过它一样。",
    "role": "desc",
    "kind": "dialogue",
@@ -7682,8 +7682,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "这座方尖碑是什么？它……让人安心。这种感觉我在 Gavel 的时候就体会过。",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "这座方尖碑是什么？它……莫名地让人安心。这种感觉我在 Gavel 的时候就体会过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -7730,6 +7730,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "哎呀，你好啊，旅人。我好像没在店里见过你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} {p} 威士忌]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "你摧毁了 Corkus 那座臭名昭著的工厂？真了不起。那些机甲有多厉害，我可听过不少传闻。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "哎呀，你好啊，旅人！很高兴又在这里见到你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "我们需要一个“计划”。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} 腐化珍珠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "你得想办法跟着他们到顶端去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Further#000": {
    "src": "Please don't leave me!",
@@ -7852,8 +7922,8 @@
    "source": "wiki"
   },
   "A Journey Further#012": {
-   "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "噢，不不不！我有治这个的药水，在哪、在哪，啊哈！来，喝下去！",
+   "src": "Oh, no no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
+   "dst": "噢，不不不不！我有治这个的药水，在哪、在哪，啊哈！来，喝下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -8042,7 +8112,7 @@
    "source": "wiki"
   },
   "A Journey Further#031": {
-   "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
+   "src": "My stomach is empty, I can't even vomit... Why do I still feel so dizzy? Maybe a potion will help...",
    "dst": "我的胃都空了，想吐都吐不出来……为什么我还是这么晕？也许喝瓶药水会有用……",
    "role": "desc",
    "kind": "dialogue",
@@ -8472,7 +8542,7 @@
    "source": "wiki"
   },
   "A Journey Further#074": {
-   "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
+   "src": "I mean...look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
    "dst": "我是说……看看我现在这副样子，{u}！我已经一只脚踏进鬼门关了，而你早就证明了你比全盛时期的我还要强得多。",
    "role": "desc",
    "kind": "dialogue",
@@ -8502,7 +8572,7 @@
    "source": "wiki"
   },
   "A Journey Further#077": {
-   "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
+   "src": "You'll have to kill it to break the barrier. But...find other soldiers who can help you. It will be impossible to defeat alone.",
    "dst": "你得杀了它才能打破屏障。不过……去找其他能帮你的士兵。单靠你一个人不可能打败它。",
    "role": "desc",
    "kind": "dialogue",
@@ -8690,6 +8760,16 @@
    "stage": "",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Journey Further#096": {
+   "src": "It appears the boulder that was once blocking the way is gone...",
+   "dst": "原本挡住去路的巨石似乎不见了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Home#000": {
    "src": "...you were scared of those, once upon a time. What a difference time makes.",
@@ -10165,6 +10245,76 @@
    "quest": "A Journey Home",
    "stage": "Stage 5",
    "speaker": "Paxon",
+   "source": "captured"
+  },
+  "A Journey Home#147": {
+   "src": "You don't hear anything moving on the other side of the door.",
+   "dst": "你听不到门的另一边有任何动静。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#148": {
+   "src": "Greetings, {u}. It is always an honour to have you in our halls.",
+   "dst": "你好，{u}。能在我们的殿堂里接待你，始终是我们的荣幸。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#149": {
+   "src": "So, Tasim has stayed behind then. I'm to suppose you're worried for his safety, in amongst any other worries you might have.",
+   "dst": "这么说，Tasim 留下来了。我想，除了你可能有的其他忧虑之外，你也在担心他的安危吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#150": {
+   "src": "Although you are not the first to wish to return to Fruma, I have not had any recruits who went to investigate come back satisfied. Or, in a scant few cases, at all.",
+   "dst": "你并不是第一个想回 Fruma 的人，但去调查的新兵之中，没有一个是满意而归的。还有极少数的人，根本没有回来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#151": {
+   "src": "I may only grant you access to the pass you took to first come here. Simply take the door and do what you must. I know not what you will find...",
+   "dst": "我只能准许你使用你当初来这里时走的那条通道。直接走那扇门，做你该做的事吧。我不知道你会发现什么……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#152": {
+   "src": "I'd advise you be cautious. The Queen's correspondence has been...not unkind, but forceful- And considering the circumstances...",
+   "dst": "我劝你小心行事。女王的来信一直……并不失礼，但态度强硬——再考虑到眼下的情况……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#153": {
+   "src": "The door to the pass between here and Fruma is down the hall, across from the fireplace. Come back alive- that is an order as King.",
+   "dst": "通往这里与 Fruma 之间那条通道的门，就在走廊尽头、壁炉对面。活着回来——这是国王的命令。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -24921,7 +25071,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#080": {
-   "src": "Gwuh, yes! Stop shouting, I- Whuh...",
+   "src": "Gwuh, yes! Stop shouting! I- Whuh...",
    "dst": "呃，好！别喊了，我——呜……",
    "role": "desc",
    "kind": "dialogue",
@@ -25071,8 +25221,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
-   "dst": "Ureietun！人类帮忙救了 Ressinter 的命！为什么不信任？",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "dst": "Ureietun！人类救了 Ressinter 的命！为什么不信任？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -25121,7 +25271,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "……可以信任人类不会杀。人类可以在 Centerworld 走动。但人类不能见 Arrai-Veretel！",
    "role": "desc",
    "kind": "dialogue",
@@ -26041,7 +26191,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#192": {
-   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they've left behind any language books.",
+   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they left behind any language books.",
    "dst": "我以前有个很聪明的霍比特朋友住在附近。他们已经走了，但我想请你去他们的霍比特洞看看，有没有留下什么语言书。",
    "role": "desc",
    "kind": "dialogue",
@@ -29165,6 +29315,16 @@
   "All Roads to Peace#503": {
    "src": "You know, that one guy was going off about that orc catapult or whatever the entire time you were gone. He's shut up now, but criminy!",
    "dst": "跟你说，你不在的那段时间，那个人一直在讲什么兽人投石机的。他现在闭嘴了，但天啊！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "All Roads to Peace",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "All Roads to Peace#504": {
+   "src": "The cuts are closing underneath the balm, and his breathing is becoming more steady. Did you do it...?",
+   "dst": "伤口在药膏底下渐渐愈合，他的呼吸也越来越平稳了。你成功了吗……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -37223,7 +37383,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#092": {
-   "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
+   "src": "We did! And now, we celebrate! Here, let's all have some {p} Whiskey for the occasion.",
    "dst": "没错！现在，我们庆祝吧！来，大家都来点 {p} 威士忌应应景。",
    "role": "desc",
    "kind": "dialogue",
@@ -37233,8 +37393,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#093": {
-   "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "那么，你们两个接下来打算做什么？我想我会去找上将，看看能不能在哪里接个任务。",
+   "src": "...So, what're you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
+   "dst": "……那么，你们两个接下来打算做什么？我想我会去找上将，看看能不能在哪里接个任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37243,8 +37403,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#094": {
-   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "嗯。我一直在想……去研究更高深的粉末技术。它们的魔法有种特别吸引我的地方。",
+   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. If I can figure out how they work, maybe I can... do more.",
+   "dst": "嗯。我一直在想……去研究更高深的粉末技术。要是我能弄懂它们的原理，也许我就能……做得更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37283,7 +37443,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#098": {
-   "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
+   "src": "Not a bad idea! I might join you with that later, once I've decide on things more.",
    "dst": "主意不错！等我把事情想得更清楚一些，说不定之后会跟你一起。",
    "role": "desc",
    "kind": "dialogue",
@@ -37363,7 +37523,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#106": {
-   "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
+   "src": "...Well, I'm glad we were all able to be here together. Here's to a long and fulfilling friendship!",
    "dst": "……嗯，我很高兴我们都能聚在这里。敬我们长久又充实的友谊！",
    "role": "desc",
    "kind": "dialogue",
@@ -37393,7 +37553,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#109": {
-   "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
+   "src": "Me? Well, I've been making a little progress... but, nothing too big yet. I'm keeping at it, though!",
    "dst": "我？嗯，我有一点小进展……不过还没什么大突破。我会继续努力的！",
    "role": "desc",
    "kind": "dialogue",
@@ -37421,6 +37581,16 @@
    "stage": "Stage 5",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Arachnids' Ascent#112": {
+   "src": "[+Drunkness for {~} seconds]",
+   "dst": "[+醉酒，持续 {~} 秒]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Beneath the Depths#000": {
    "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
@@ -37873,7 +38043,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#001": {
-   "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
+   "src": "Welcome to Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
    "dst": "欢迎来到 Bantisu 寺，旅人。我们为迷失的灵魂指引方向，无论是在荒野徘徊、找不到城镇的人，还是离不开峡谷的亡魂。",
    "role": "desc",
    "kind": "dialogue",
@@ -37883,7 +38053,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#002": {
-   "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
+   "src": "However, recently our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
    "dst": "然而最近，我们的工作变得困难多了。峡谷在震动、在变化。岩壁移动时，常常会放出埋藏已久的生物。",
    "role": "desc",
    "kind": "dialogue",
@@ -37953,8 +38123,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#009": {
-   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "很抱歉这么突然，但你得明白事态紧急。我们根本无从得知 Krolton 什么时候会出来。",
+   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton may emerge.",
+   "dst": "很抱歉这么突然，但你得明白事态紧急。我们根本无从得知 Krolton 什么时候可能会出来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38103,7 +38273,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#024": {
-   "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
+   "src": "IF I HAD BOUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
    "dst": "要是我今天早上带了面粉，就能请你吃块饼干，送你上路。听说我做的巧克力豆饼干是最好吃的。",
    "role": "desc",
    "kind": "dialogue",
@@ -38213,7 +38383,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#035": {
-   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
+   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE, HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
    "dst": "但我绝不会吝于让客人喘口气。不管多短暂。生死这一课可能很残酷。",
    "role": "desc",
    "kind": "dialogue",
@@ -38343,7 +38513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#048": {
-   "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
+   "src": "I KEEP IT AS A REMINDER. TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
    "dst": "我留着它当作提醒，提醒自己珍惜还剩下的一切。在它们也消逝之前。",
    "role": "desc",
    "kind": "dialogue",
@@ -38903,8 +39073,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#110": {
-   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
-   "dst": "在我办公室的这场会面其实并不必要。那些文书只是做做样子。但我偶尔也喜欢放纵一下。",
+   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
+   "dst": "在我办公室的这场会面其实并不必要。那些文书是做做样子。但我偶尔也喜欢放纵一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38913,7 +39083,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#112": {
-   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
+   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME YOU COULD THINK OF MORE.",
    "dst": "那应该就是全部了。也许我多给你一点时间，你还能想出更多。",
    "role": "desc",
    "kind": "dialogue",
@@ -38943,8 +39113,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#115": {
-   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "死因: 被名为 Krolton 的恐怖之物所杀。又一笔记录。",
+   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER TO ADD TO THE TALLY.",
+   "dst": "死因: 被名为 Krolton 的恐怖之物所杀。又添一笔记录。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38953,7 +39123,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#116": {
-   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
+   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FOE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
    "dst": "迅速，而且无法避免。败给那样的敌人并不丢脸。你不是第一个，大概也不会是最后一个。",
    "role": "desc",
    "kind": "dialogue",
@@ -38963,7 +39133,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#117": {
-   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
+   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEANS, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
    "dst": "不过，也许我发现自己暗暗希望有人能成功终结它。它活得远远超出了它的限度，而且每次重新现身都是个麻烦……",
    "role": "desc",
    "kind": "dialogue",
@@ -38983,7 +39153,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#119": {
-   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
+   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUESTS. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
    "dst": "不过，我私心希望你能在这里多待一阵子。我已经有段时间没有客人了。你的陪伴不会不受欢迎。",
    "role": "desc",
    "kind": "dialogue",
@@ -39123,7 +39293,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#136": {
-   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
+   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AN END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
    "dst": "在那里，用你拥有的力量，终结那个恐怖之物。而借着它的终结，我们将推迟你自己的终结。",
    "role": "desc",
    "kind": "dialogue",
@@ -39323,8 +39493,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#156": {
-   "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "了不起。不过，那只是第 {~} 轮，共 {~} 轮。每一轮都会比上一轮更难。准备好了吗？",
+   "src": "VERY IMPRESSIVE. HOWEVER, THAT WAS MERELY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
+   "dst": "非常了不起。不过，那仅仅是第 {~} 轮，共 {~} 轮。每一轮都会比上一轮更难。准备好了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39333,8 +39503,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#157": {
-   "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "……啊，你脸上那表情。千金难买。毕竟我的头骨是硬的，只能靠客人帮我过足做鬼脸的瘾。",
+   "src": "AH HA HA. THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
+   "dst": "啊哈哈。你脸上那表情。千金难买。毕竟我的头骨是硬的，只能靠客人帮我过足做鬼脸的瘾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39343,7 +39513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#158": {
-   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
+   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW. WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
    "dst": "既然你很快就得离开，我决定把问答节目缩短。暂时先这样，等你不可避免地回来时，我们再从中断的地方继续。",
    "role": "desc",
    "kind": "dialogue",
@@ -39383,8 +39553,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#162": {
-   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "那就这样了。要是你能多待一会儿就好了——我很喜欢跟清醒的客人一起活动。烹饪社、小游行……不过只能等以后了。",
+   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. BOOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
+   "dst": "那就这样了。要是你能多待一会儿就好了——我很喜欢跟清醒的客人一起活动。读书会、小游行……不过只能等以后了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39393,7 +39563,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#163": {
-   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
+   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR A MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
    "dst": "好了。这座庄园没有后门，所以我得给你开一个出口。请稍微忍耐一下噪音，随时都可以从新出口离开。",
    "role": "desc",
    "kind": "dialogue",
@@ -39403,7 +39573,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#165": {
-   "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
+   "src": "SO. THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
    "dst": "那么，你就这样走回生命那场漫长的梦里了。",
    "role": "desc",
    "kind": "dialogue",
@@ -39473,7 +39643,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#172": {
-   "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
+   "src": "SO LONG AS THE HORROR DIES, NO MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
    "dst": "只要那个恐怖之物死了，不管是怎么死的，都足以满足我们的需要。记住这一点。",
    "role": "desc",
    "kind": "dialogue",
@@ -39563,7 +39733,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#181": {
-   "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
+   "src": "Bantisu Temple owes you a great deal. Here, then- a suitable reward.",
    "dst": "Bantisu 寺欠你一个大人情。来吧——这是一份相称的奖赏。",
    "role": "desc",
    "kind": "dialogue",
@@ -39573,7 +39743,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#182": {
-   "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
+   "src": "A powerful Bantisu artifact, as reward for defeating a beast that menaced in antiquated times.",
    "dst": "一件强大的 Bantisu 宝物，奖赏你打败了那头在远古时代肆虐的野兽。",
    "role": "desc",
    "kind": "dialogue",
@@ -39671,6 +39841,46 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Beyond the Grave#192": {
+   "src": "...something's gone wrong.",
+   "dst": "……出事了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#193": {
+   "src": "[+{~} Krolton's Remains]",
+   "dst": "[+{~} Krolton 的残骸]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#194": {
+   "src": "...did all of that actually just happen?",
+   "dst": "……刚才那些真的发生过吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#195": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "……不过，你大概还是别提自己死过一回比较好。那样太奇怪了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
@@ -49693,8 +49903,8 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#032": {
-   "src": "sacrifice its soul, in the blood and grime.",
-   "dst": "献上它的灵魂，在血与污秽之间。",
+   "src": "Sacrifice its soul, in the blood and the grime.",
+   "dst": "献上它的灵魂，在鲜血与污秽之间。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -50063,7 +50273,7 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#069": {
-   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
+   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends to watch your back.",
    "dst": "如果可以，你应该进去……把他解决掉。不过先把装备准备好，再找几个朋友帮你掩护。",
    "role": "desc",
    "kind": "dialogue",
@@ -52789,8 +52999,8 @@
    "source": "wiki"
   },
   "Crop Failure#039": {
-   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "你好啊！想从老 Doubiss 的货里买点什么？",
+   "src": "Ah, good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "啊，日安啊！你想从老 Doubiss 的货里找点什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -52921,6 +53131,26 @@
   "Crop Failure#052": {
    "src": "Well, glad I can start sellin' again without him shoutin' \"Fraud! Con! Cheat!\" in the distance! Thanks fer that, mate.",
    "dst": "嘿，这下我总算能重新开张，不用再听他在远处大喊“诈骗！骗局！骗子！”了！多谢啦，伙计。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#053": {
+   "src": "The little cave on the hill, by the crypts? That's the one leadin' to the water table under here.",
+   "dst": "山丘上墓穴旁边那个小洞窟？就是那个通到这底下地下水层的洞。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#054": {
+   "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
+   "dst": "要是你有兴致调查一番，就进去看看吧，小子。等你找到点什么，那个农夫八成得亲眼看到才肯信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -57876,6 +58106,36 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Dwarves and Doguns Part II#088": {
+   "src": "[{~}/{~}] Commanders",
+   "dst": "[{~}/{~}] 指挥官",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Leave now and I won't send the Dwarven army on you. You don't want to get hunted like the Doguns, do you?",
+   "dst": "现在就走，我就不派矮人军队追杀你。你也不想像 Dogun 那样被追捕吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "And Axelus, leave the city. You are no longer my son.",
+   "dst": "还有 Axelus，离开这座城。你不再是我的儿子了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
   "Dwarves and Doguns Part III#000": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}……我收回我的话。他们已经开始了……没有讲道理的余地了。",
@@ -58137,7 +58397,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "你需要 [{~} 火焰蛛丝]。镇子底下的热疤蜘蛛会吐这种丝，入口拱门旁边就有个洞窟。",
    "role": "desc",
    "kind": "dialogue",
@@ -58467,8 +58727,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#061": {
-   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "……这里……这里以前是……一个 Dogun 小镇。矮人把它变成了荒地。",
+   "src": "{u}... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
+   "dst": "{u}……这里……这里以前是……一个 Dogun 小镇。矮人把它变成了荒地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -58735,6 +58995,16 @@
    "stage": "Stage 9",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#088": {
+   "src": "If you're having trouble finding the crater, look for the reddest rocks in amongst the others in the lake. They should lead you to it.",
+   "dst": "如果你找不到那个火山口，就在湖里的石头之中找最红的那些。它们应该会带你过去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "",
+   "speaker": "Edula",
+   "source": "captured"
   },
   "Dwarves and Doguns Part IV#000": {
    "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
@@ -75057,8 +75327,8 @@
    "source": "wiki"
   },
   "Enter the Dojo#004": {
-   "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
-   "dst": "这座道场——我致力于在此磨练各门技艺——从心智的敏锐与洞察，到手艺与艺术。",
+   "src": "This dojo, I have dedicated to honing skills in all of the arts- from martial prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "这座道场，我致力于在此磨练各门技艺——从武艺的高超与心智的敏锐，到手艺与艺术。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -75197,8 +75467,8 @@
    "source": "wiki"
   },
   "Enter the Dojo#018": {
-   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
-   "dst": "你必须找出路径，把红色方块推到金色方块那里。理论上很简单……实际上很复杂，因为要考虑的事情很多。",
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as are many things.",
+   "dst": "你必须找出路径，把红色方块推到金色方块那里。理论上很简单……实际上很复杂，许多事都是如此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -75307,7 +75577,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#029": {
-   "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "src": "...Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
    "dst": "啊，当然不愿意。即使你已经精通，这也只是你旅程中的一步而已。不必担心，我完全理解。",
    "role": "desc",
    "kind": "dialogue",
@@ -75327,7 +75597,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#031": {
-   "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
    "dst": "不管怎样，你完成了我这个简陋师父的挑战，因此，我会给你我承诺过的东西。",
    "role": "desc",
    "kind": "dialogue",
@@ -76185,6 +76455,96 @@
    "stage": "",
    "speaker": "Sensei Miyagi",
    "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "Defeat the dummies, and bring their tokens to the door! Simple, yes?",
+   "dst": "打倒那些假人，把它们的代币带到门口！很简单，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#118": {
+   "src": "Show no fear, challenger! There is no shame in failing.",
+   "dst": "别害怕，挑战者！失败并不可耻。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#119": {
+   "src": "And worry not, the fiata Room is reinforced against all manner of attacks. Run wild, hoho!",
+   "dst": "而且别担心，Fiata 室经过加固，什么样的攻击都扛得住。尽情撒野吧，呵呵！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#120": {
+   "src": "It is fascinating to see how you battle. Very different from my stylings!",
+   "dst": "看你战斗真是太有意思了。跟我的风格大不相同！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#121": {
+   "src": "Of course, you wield a weapon to battle, so of course it is different from unarmed combat, hoho...",
+   "dst": "当然啦，你是拿着武器战斗的，跟徒手格斗自然不一样，呵呵……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#122": {
+   "src": "Perhaps you may be interested in learning to fight unarmed after!",
+   "dst": "说不定之后你会有兴趣学学徒手格斗！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#123": {
+   "src": "Oh, this is getting quite good. I should get a snack to eat while I watch...",
+   "dst": "噢，越来越精彩了。我该拿点零嘴边看边吃……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#124": {
+   "src": "Hmhm, I'll be right back! Continue fighting- And do not worry if you finish before I return! I will be quick!",
+   "dst": "嗯嗯，我马上回来！继续战斗——要是我回来之前你就打完了，也别担心！我很快的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#125": {
+   "src": "The pig raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "猪抬起头看向你。一见到那杯绿茶，它的眼睛亮了起来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Enzan's Brother#000": {
    "src": "Good day for baking, aye recruit? I might need some assistance later, come back when you are level {~}!",
@@ -77177,8 +77537,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#004": {
-   "src": "It's a map to a magical place! I sure hope it doesn't vanish without a tra-",
-   "dst": "这是通往魔法之地的地图！真希望它不会凭空消失无踪无——",
+   "src": "It's the map to a magical place! I sure hope it doesn't vanish without a tra-",
+   "dst": "这就是通往魔法之地的地图！真希望它不会凭空消失无踪无——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -77437,7 +77797,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#032": {
-   "src": "For you see... I am gifted with foresight, the future's memories come to me like no other!",
+   "src": "For you see... I am gifted with foresight, the futures memories come to me like no other!",
    "dst": "因为你看……我天生拥有预知之力，未来的记忆会以无人能及的方式来到我面前！",
    "role": "desc",
    "kind": "dialogue",
@@ -77447,8 +77807,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#033": {
-   "src": "For the low, low price of [{~} LE], your future will be foretold!",
-   "dst": "只要超低超低的 [{~} LE]，就能为你预言未来！",
+   "src": "For the low, low price of [{~} ¼²] , your future will be foretold!",
+   "dst": "只要超低超低的 [{~} ¼²]，就能为你预言未来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -78087,8 +78447,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#099": {
-   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not many places serve better rum than good ol’ Jofash!",
-   "dst": "我们以前是种地的，你知道吧。就在 {p} 那附近。呼！还好我搬来这里了！没几个地方的朗姆酒比得上咱们 Jofash！",
+   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not so many places serve better rum than good ol' Jofash!",
+   "dst": "我们以前是种地的，你知道吧。就在 {p} 那附近。呼！还好我搬来这里了！没多少地方的朗姆酒比得上咱们 Jofash！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79417,7 +79777,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#232": {
-   "src": "We should probably get of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
+   "src": "We should probably get out of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
    "dst": "我们大概该离开这地方，感觉挺窄小。也许你可以试着打穿墙上那个薄弱的地方瞧瞧？",
    "role": "desc",
    "kind": "dialogue",
@@ -79517,8 +79877,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#242": {
-   "src": "Check your quest book if you ever need a recap. And to make sure you don't get lost, take this map.",
-   "dst": "要是需要回顾，随时看看你的任务书。为了确保你不迷路，这张地图拿去别推辞。",
+   "src": "Check your content book if you ever need a recap. And to make sure you don't get lost, take the map.",
+   "dst": "要是需要回顾，随时看看你的内容手册。为了确保你不迷路，这张地图拿去别推辞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79537,7 +79897,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#244": {
-   "src": "Well, this stew has a rather odd flavor. But any food we can get here I shall savor.",
+   "src": "Well, this stew has a rather odd flavour. But any food we can get here I shall savour.",
    "dst": "嗯，这锅炖菜味道真是有点怪。不过在这里能吃到的东西，我都会细细品尝不浪费才乖。",
    "role": "desc",
    "kind": "dialogue",
@@ -79557,7 +79917,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#246": {
-   "src": "To the east, I can just barely make out a tent. Go and look for my friend there. I'm simply hellbent!",
+   "src": "To the east, I can just barely make out a tent. Go and look for my friend there, I'm simply hellbent!",
    "dst": "往东边，我勉强能看到一顶帐篷。去那里找找我的朋友吧。我是铁了心要去碰碰！",
    "role": "desc",
    "kind": "dialogue",
@@ -79657,8 +80017,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#256": {
-   "src": "You'll need those items you craft the bomb, I just told you where to look. If you forget what you need to find, check your quest book.",
-   "dst": "做炸弹就需要这些东西，我刚才已经告诉你去哪找。要是忘了要找什么，就看看你的任务书吧。",
+   "src": "You'll need those items to craft the bomb, I just told you where to look. If you forget what you need to find, check your content book.",
+   "dst": "做炸弹就需要这些东西，我刚才已经告诉你去哪找。要是忘了要找什么，就看看你的内容手册吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79757,8 +80117,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#266": {
-   "src": "We became best friends on our quest. But then he vanished, oh how he was the best.",
-   "dst": "我们在旅途中成了最好的朋友。可后来他消失了，噢，他是最好的，谁都比不上他。",
+   "src": "We became the best of friends on our quest. But then he vanished, oh how he was the best.",
+   "dst": "我们在旅途中成了最要好的朋友。可后来他消失了，噢，他是最好的，谁都比不上他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -82606,6 +82966,46 @@
    "stage": "Stage 16",
    "speaker": "???",
    "source": "wiki"
+  },
+  "Finding the Light#157": {
+   "src": "secrets uncovered in the oldest of libraries in cinfras",
+   "dst": "秘密埋藏于 cinfras 最古老的图书馆中",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#158": {
+   "src": "awakening the guardian of the forest requires more than just magic",
+   "dst": "唤醒森林守护者所需的不只是魔法",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#159": {
+   "src": "the home of the elves will house the answers and revelations",
+   "dst": "精灵的家园将收藏答案与启示",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#160": {
+   "src": "dire actions in the presence of the guardian will waken many things",
+   "dst": "在守护者面前的恶行将唤醒许多东西",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
@@ -120484,8 +120884,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#032": {
-   "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "总之，我们来探索这座岛，找到虚空水晶，然后回 {p} 吧！",
+   "src": "Anyway, let's explore the island, look for the crystal, and return to {p}!",
+   "dst": "总之，我们来探索这座岛，找到水晶，然后回 {p} 吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -120534,7 +120934,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#037": {
-   "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
+   "src": "They are attacking the windshield in the front room, it looks like it's about to break any moment!",
    "dst": "它们在攻击前舱的挡风玻璃，看起来随时都会碎掉！",
    "role": "desc",
    "kind": "dialogue",
@@ -120544,7 +120944,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#038": {
-   "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
+   "src": "Quick, you! Come to the cockpit and press on the window to scare them off!",
    "dst": "快，你！到驾驶舱来按住窗户，把它们吓跑！",
    "role": "desc",
    "kind": "dialogue",
@@ -120684,8 +121084,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#052": {
-   "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "我和机械师要开始修理了。这会花点时间，所以进潜艇里休息吧。",
+   "src": "The mechanic and I will start repairing. It'll take a while, so enter the submarine and rest up.",
+   "dst": "机械师和我要开始修理了。这会花点时间，所以进潜艇里休息吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -120704,7 +121104,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#055": {
-   "src": "This is the mechanic, requesting urgent assistence in the basement!",
+   "src": "This is the mechanic, requesting urgent assistance in the basement!",
    "dst": "我是机械师，底舱需要紧急支援！",
    "role": "desc",
    "kind": "dialogue",
@@ -121184,7 +121584,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#105": {
-   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
+   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this, as well as your money.",
    "dst": "这里发生的一切最好保密。我可不想失去我仅剩的那点资金。这配方真是天才！来，这个也拿去，还有你的酬劳。",
    "role": "desc",
    "kind": "dialogue",
@@ -121192,6 +121592,236 @@
    "stage": "Stage 19",
    "speaker": "Scientist Ynnos",
    "source": "wiki"
+  },
+  "One Thousand Meters Under#106": {
+   "src": "How's the mission going?",
+   "dst": "任务进行得怎么样了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "The Secretary",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#107": {
+   "src": "It looks like everyone already went inside the submarine.",
+   "dst": "看来大家都已经进潜艇里了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#108": {
+   "src": "The intercom crackles into life...",
+   "dst": "对讲机噼啪作响，传出了声音……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#109": {
+   "src": "Looks like you managed to fix the pipe! You should tell the mechanic.",
+   "dst": "看来你修好管道了！你该去告诉机械师。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#110": {
+   "src": "Who would've thought that the crystal fell that far...",
+   "dst": "谁想得到那块水晶会掉得那么深……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#111": {
+   "src": "But after all, there's still a lot ahead of us!",
+   "dst": "不过话说回来，我们前面的路还长着呢！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#112": {
+   "src": "Have you looked around for the island for the crystal yet?",
+   "dst": "你在岛上找过水晶了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#113": {
+   "src": "If you haven't found anything, jump back in the submarine and I'll take us down to the next one.",
+   "dst": "如果什么都没找到，就跳回潜艇里，我带大家下潜到下一座岛。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#114": {
+   "src": "I've been hearing a lot of strange sounds...",
+   "dst": "我一直听到很多奇怪的声音……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Arlene",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#115": {
+   "src": "Pfft. I would've done a better job saving the windshield.",
+   "dst": "哼。换我来的话，挡风玻璃肯定保得更好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#116": {
+   "src": "Too bad I was in another room.",
+   "dst": "可惜我当时在别的舱室。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#117": {
+   "src": "Oh no, this isn't good. The windshield is destroyed...",
+   "dst": "噢不，这下不妙了。挡风玻璃被毁了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#118": {
+   "src": "I thought this trip was going to be easy.",
+   "dst": "我还以为这趟会很轻松。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#119": {
+   "src": "Huh, sand?",
+   "dst": "咦，沙子？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#120": {
+   "src": "This sand must've fallen from the sky islands, but why is it red?",
+   "dst": "这些沙子一定是从天空群岛上掉下来的，可为什么是红色的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#121": {
+   "src": "What's that smell?",
+   "dst": "什么味道？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#122": {
+   "src": "It smells really...sterile? Does this mean I have to work...?",
+   "dst": "闻起来好……无菌？这是不是代表我得干活了……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#123": {
+   "src": "We need this crystal. Go see Rontaid on the eastern part of the island, he can figure something out.",
+   "dst": "我们需要这块水晶。去岛的东边找 Rontaid，他能想出办法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Celuuse",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#124": {
+   "src": "I hope you make use of our science.",
+   "dst": "希望你能好好利用我们的科学。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#125": {
+   "src": "We don't want another village to fall down here... I'm not sure we could provide for even more people.",
+   "dst": "我们不希望再有另一个村子掉到这里来……我不确定我们能不能养活更多的人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#126": {
+   "src": "Looks like the backup team have lowered a crane down to the island, this is your way out!",
+   "dst": "看来后援小队已经把一台起重机放到岛上了，这就是你的出路！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#127": {
+   "src": "I'm working on a replacement for the crystal now...",
+   "dst": "我现在正在做水晶的替代品……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#128": {
+   "src": "These void villagers are rather smart, but their handwriting is utterly atrocious.",
+   "dst": "这些虚空村民挺聪明的，可他们的字迹实在是糟糕透顶。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
   },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
@@ -130454,8 +131084,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#023": {
-   "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "恐怕我不清楚细节！他召集了好几位像你们这样身经百战的外来者到城堡，要开个什么会。",
+   "src": "I'm not privy to the details, I'm afraid! He's summoning a number of you seasoned adventurers to the castle, for some sort of meeting.",
+   "dst": "恐怕我不清楚细节！他召集了好几位像你们这样身经百战的冒险者到城堡，要开个什么会。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -130484,7 +131114,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#026": {
-   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
+   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks till later... probably for the best. Maybe I'll be able to catch him before...",
    "dst": "嗯。确实很奇怪，对吧？看来喝酒只能改天了……也许这样最好。说不定我还能在……之前找到他。",
    "role": "desc",
    "kind": "dialogue",
@@ -130584,7 +131214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#036": {
-   "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
+   "src": "Well, if it ain't {u}! It's good to see someone else familiar 'round here.",
    "dst": "这不是 {u} 吗！在这儿看到别的熟面孔真好。",
    "role": "desc",
    "kind": "dialogue",
@@ -130944,8 +131574,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#072": {
-   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "这……也正是我现在在这里的原因。几个星期前，我被相当突然地召回。看来我们和……邻近的行省之间出了棘手的状况。",
+   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've encountered a tricky situation with our... neighboring province.",
+   "dst": "这……也正是我现在在这里的原因。几个星期前，我被相当突然地召回。看来我们和……邻近的行省之间遇上了棘手的状况。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131294,8 +131924,8 @@
    "source": "captured"
   },
   "Queen's Recruit#107": {
-   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "我们非常依赖他们持续送来的新兵，但我们没有任何办法联系他们的行省。只有他们能主动联系我们，而且得等他们决定这么做。",
+   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once before have they chosen to do so.",
+   "dst": "我们非常依赖他们持续送来的新兵，但我们没有任何办法联系他们的行省。只有他们能主动联系我们，而他们以前也只这么做过一次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131554,8 +132184,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#133": {
-   "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "Fruma 很清楚自己想要什么，也知道自己够强，完全不必让步。",
+   "src": "Fruma knows what they want, and know they are strong enough that they can afford not to let up their position.",
+   "dst": "Fruma 很清楚自己想要什么，也知道自己够强，完全可以不让步。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131584,7 +132214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#136": {
-   "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
+   "src": "This mission's a big deal, huh? Lots o' strong folks recalled for it, at least.",
    "dst": "这次任务很重要，是吧？至少召回了好多厉害的人。",
    "role": "desc",
    "kind": "dialogue",
@@ -133370,7 +134000,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#314": {
-   "src": "So am I the only one confused by the amount of guards around?",
+   "src": "So, am I the only one confused by the amount of guards around?",
    "dst": "所以只有我对这附近守卫的数量感到困惑吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -133450,7 +134080,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#322": {
-   "src": "Speakin' of the Sovereigns... and the guards by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
+   "src": "Speakin' of the Sovereigns... and the guards, by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
    "dst": "说到统领……连带那些守卫——还有谁擅长感知法力的？感觉这里几乎没有人在用法力！",
    "role": "desc",
    "kind": "dialogue",
@@ -134700,7 +135330,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#447": {
-   "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
+   "src": "A joy as always. Well, you heard her Nasin! Chop chop, off to the stands we go!",
    "dst": "一如既往地令人愉快。好了，你听到她说的了，Nasin！快快快，我们去看台！",
    "role": "desc",
    "kind": "dialogue",
@@ -134830,8 +135460,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#460": {
-   "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "请前往等候室，为战斗做好准备。",
+   "src": "Please go to your waiting room and prepare for the battle.",
+   "dst": "请前往你的等候室，为战斗做好准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -137333,6 +137963,26 @@
    "speaker": "Tasim",
    "source": "captured.json"
   },
+  "Queen's Recruit#712": {
+   "src": "You should sleep so you're ready for the tournament.",
+   "dst": "你该去睡了，好为锦标赛做好准备。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#714": {
+   "src": "Choices, choices, choices, choices...",
+   "dst": "选择、选择、选择、选择……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "在 {p} [{~}, {~}, -{~}] 与 Hamsey 厨师会合。",
@@ -137354,7 +138004,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#002": {
-   "src": "Oh do my eyes deceive me? Serais-ce possible?!",
+   "src": "Oh, do my eyes decieve me? Serait-ce possible?!",
    "dst": "噢，我没看错吧？这怎么可能？！",
    "role": "desc",
    "kind": "dialogue",
@@ -137374,7 +138024,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#004": {
-   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
+   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honoré! Someone like you sitting in my restaurant!",
    "dst": "我听说过你在各地的事迹，mon ami！我真是荣幸！像你这样的人居然坐在我的餐厅里！",
    "role": "desc",
    "kind": "dialogue",
@@ -137394,7 +138044,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#006": {
-   "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
+   "src": "I boast, I boast. Je peux t'offrir un plat... but perhaps I have a different proposition for us both.",
    "dst": "我吹牛了，我吹牛了。我可以请你吃一道菜……不过也许我有个对我们俩都更有意思的提议。",
    "role": "desc",
    "kind": "dialogue",
@@ -137474,8 +138124,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#014": {
-   "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
-   "dst": "当然，我会按照二十九项料理原则来评判你的菜——口感、摆盘、创意……",
+   "src": "I, of course, will judge your dish on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
+   "dst": "当然，我会以二十九项料理原则来评判你的菜——口感、摆盘、创意……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -137494,7 +138144,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#016": {
-   "src": "S'il te plaît! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
+   "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
    "dst": "拜托了！去跟我的每位厨师自我介绍一下，决定好要跟谁合作再回来！",
    "role": "desc",
    "kind": "dialogue",
@@ -137564,7 +138214,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#023": {
-   "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
+   "src": "I don't need any ameteurs like yourself getting in my way when I'm cooking up a storm!",
    "dst": "我大显身手的时候，可不需要你这种外行来碍事！",
    "role": "desc",
    "kind": "dialogue",
@@ -137624,7 +138274,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#029": {
-   "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
+   "src": "Ah, you have introduced yourself to tous mes cuisiniers? Who do you want to work with?!",
    "dst": "啊，你跟我所有的厨师都打过招呼了？你想跟谁合作？！",
    "role": "desc",
    "kind": "dialogue",
@@ -137714,8 +138364,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#038": {
-   "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "我已经琢磨虚空根炖菜的配方好几个月了，终于有机会让大家看看我的本事！",
+   "src": "I've been working on my recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
+   "dst": "我研究我的虚空根炖菜配方已经好几个月了，终于有机会让大家看看我的本事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -137724,8 +138374,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#039": {
-   "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "第一样是 [蜗牛黏液]，在蜗牛岛上就有！这道菜只需要一份。",
+   "src": "The first ingredient is some [Snail Slime], available on Snail Island! We'll only need one for this dish.",
+   "dst": "第一样材料是 [蜗牛黏液]，在蜗牛岛上就有！这道菜只需要一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -138995,6 +139645,136 @@
    "stage": "",
    "speaker": "Chef Hamsey",
    "source": "captured.json"
+  },
+  "Recipe For Disaster#176": {
+   "src": "Hey, again! I'd love to chat, but you should talk to the other chefs before making your decision!",
+   "dst": "嘿，又见面了！我很想跟你聊聊，不过你应该先去跟其他厨师谈谈，再做决定！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#177": {
+   "src": "Please go and talk to the other chefs first before you decide to weigh me down with your \"assistance\".",
+   "dst": "在你决定用你的“帮忙”来拖累我之前，请先去跟其他厨师谈谈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#178": {
+   "src": "Can't wait to work with you man, tell the big man we're working together and we can get started.",
+   "dst": "等不及跟你合作了，老兄，去跟大老板说我们要一起干，然后就能开工了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#179": {
+   "src": "I still can't believe you chose to \"work\" with me. Make yourself useful and go and tell the Chef. I certainly won't.",
+   "dst": "我还是不敢相信你居然选了跟我“合作”。做点有用的事，去告诉主厨吧。我是绝对不会去的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#180": {
+   "src": "You should go tell Hamsey who you've chosen to work with!",
+   "dst": "你该去告诉 Hamsey 你选了谁合作！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#181": {
+   "src": "It is time to cook, mon ami! Head over to your chef and ask them what to do.",
+   "dst": "该下厨了，mon ami！去找你的厨师，问问他们该做什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#182": {
+   "src": "No sweat, man, I probably wouldn't choose me either. Good luck!",
+   "dst": "没事的，老兄，换我大概也不会选我。祝你好运！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#183": {
+   "src": "[+{~} Recipe Book]",
+   "dst": "[+{~} 菜谱]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#184": {
+   "src": "Hey! How's the ingredient gathering going? Remember to check your recipe book if you're stuck!",
+   "dst": "嘿！材料收集得怎么样了？卡住的话记得看看你的菜谱！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#185": {
+   "src": "Need another recipe book? No problem! I keep plenty of spares, you never know what might happen!",
+   "dst": "还需要一本菜谱吗？没问题！我留了很多备用的，谁知道会发生什么事呢！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#186": {
+   "src": "The announcer seems to lose his train of thought.",
+   "dst": "播报员似乎说着说着就忘了自己要讲什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#187": {
+   "src": "Would you like to race Usnail Bolt?",
+   "dst": "要跟 Usnail Bolt 赛跑吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#188": {
+   "src": "You shouldn't leave the race before it's finished!",
+   "dst": "比赛还没结束，你可不该离开！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
   },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
@@ -144039,7 +144819,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#047": {
-   "src": "So! L- let's head into town, and s- s- see if we can-",
+   "src": "So! L- let's head into town and s- s- see if we can-",
    "dst": "所以！我——我们进城去，看、看、看看能不能",
    "role": "desc",
    "kind": "dialogue",
@@ -158338,6 +159118,66 @@
    "quest": "Star Thief",
    "stage": "Stage 6",
    "speaker": "Thief",
+   "source": "captured"
+  },
+  "Star Thief#024": {
+   "src": "What's that noise...?",
+   "dst": "那是什么声音……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#025": {
+   "src": "It's coming from the west.",
+   "dst": "是从西边传来的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#026": {
+   "src": "What was that? It seems to have landed nearby, maybe you should go investigate.",
+   "dst": "那是什么？好像落在附近了，也许你该去调查一下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#027": {
+   "src": "It seems like the meteor crashed into a cave.",
+   "dst": "看来陨石坠进了一个洞窟里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#028": {
+   "src": "The meteor shard is radiating an odd and unfamiliar magical energy",
+   "dst": "陨石碎片散发着一股奇异而陌生的魔法能量",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#029": {
+   "src": "Thank you again for your help!",
+   "dst": "再次感谢你的帮忙！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "Agent",
    "source": "captured"
   },
   "Supply and Delivery#000": {
@@ -175783,7 +176623,7 @@
    "source": "wiki"
   },
   "The Cursed One#482": {
-   "src": "And if there's one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
+   "src": "And if there is one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
    "dst": "而如果说有哪件事我确定她是真心的，那就是这件。这只会让它显得更加奇怪。",
    "role": "desc",
    "kind": "dialogue",
@@ -176161,6 +177001,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#520": {
+   "src": "The Fox seems to be fast asleep...",
+   "dst": "狐狸似乎睡得很熟……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -179705,8 +180555,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "那就祝你好运！等你找到控制面板我就回来！",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "那就祝你好运！等你找到控制面板、进到里面，我就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179975,8 +180825,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "希望 没事……毕竟我马上就找到微芯片了。",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "希望那个人类没事……毕竟我马上就找到微芯片了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179985,8 +180835,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "……好吧。该走了。我想我就等等 {u} 吧。",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "……好吧。该走了。我想我就等等那个人吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -180915,7 +181765,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "你们到底知不知道你们有多老古板？！最后警告？？",
    "role": "desc",
    "kind": "dialogue",
@@ -180935,8 +181785,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "……看来她在地上留下了一些装置。你不如就拿走吧。还有，收下这些。关于工厂的事，我们一直没机会谢谢你。",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "……看来她在地上留下了一些装置。你不如就拿走吧，我可不想要。还有，收下这些。关于工厂的事，我们一直没机会谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -181103,6 +181953,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "开始新任务线: 羽毛纷飞",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "啊，先讲历史！很好，很好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "她亮出爪子了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] 安全传送程序已启动！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "Ava 没跟你一起被传送过来！你只能靠自己了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "噢天哪，不——让我重新启动一下机器……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "好吧……跟我说说。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "我们就，呃，当作什么都没发生过。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "……本来应该发生什么吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "那也未免好得太不真实了，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "希望你知道自己在做什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
@@ -182465,8 +183425,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#149": {
-   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item!",
-   "dst": "这间旅馆已经整修好一阵子了……是藏赃物的好地方！",
+   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item, wouldn't you think?",
+   "dst": "这间旅馆已经整修好一阵子了……是藏赃物的好地方，你不觉得吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -182625,8 +183585,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#173": {
-   "src": "Meet me near the northern entrance if ya want a lift. Alternatively, you can just go by the Workshop if you're into walking!",
-   "dst": "想搭便车就到北边入口附近找我。或者，如果你喜欢走路，也可以直接去工坊！",
+   "src": "Let's meet up near the northern entrance if ya want a lift. Alternatively, you can just meet me by the Workshop if you're into walking!",
+   "dst": "想搭便车的话，我们就在北边入口附近碰头。或者，如果你喜欢走路，也可以直接到工坊来找我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -183125,7 +184085,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#405": {
-   "src": "Sounds good? Well. go tell your partner about this you are two lucky Corkians!",
+   "src": "Sounds good? Well, go tell your partner about this, you are two lucky Corkians!",
    "dst": "可以吗？好。去跟你的伙伴说这件事吧，你们是两个幸运的 Corkus 人！",
    "role": "desc",
    "kind": "dialogue",
@@ -183525,8 +184485,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#519": {
-   "src": "... Any idea what's goi- Wait...",
-   "dst": "……你知道这是怎么——等等……",
+   "src": "{u}... Any idea what's goi- Wait...",
+   "dst": "{u}……你知道这是怎么——等等……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184005,8 +184965,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#652": {
-   "src": "I see you're familiar with your new toy!",
-   "dst": "看来你很熟悉你的新玩具嘛！",
+   "src": "I see you're familiar with your toy!",
+   "dst": "看来你很熟悉你的玩具嘛！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184645,8 +185605,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#799": {
-   "src": "I swear didn't know! Believe me!",
-   "dst": "我发誓我不知道！相信我！",
+   "src": "I swear {u} didn't know! Believe me!",
+   "dst": "我发誓 {u} 不知道！相信我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184665,7 +185625,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#801": {
-   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three. Ava, congratulations.",
+   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three! Ava, congratulations.",
    "dst": "我不确定该佩服、苦恼还是愤怒。所以我想我就三样都要吧。Ava，恭喜你。",
    "role": "desc",
    "kind": "dialogue",
@@ -184985,8 +185945,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#987": {
-   "src": "Look, there's no time right now. I think and I should go and help.",
-   "dst": "听着，现在没时间了。我想我们俩应该去帮忙。",
+   "src": "Look, there's no time right now. I think {u} and I should go and help.",
+   "dst": "听着，现在没时间了。我想 {u} 和我应该去帮忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185395,8 +186355,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1108": {
-   "src": "Hmpf. Did take that thing down?",
-   "dst": "哼。把那东西弄倒了吗？",
+   "src": "Hmpf. Did {u} take that thing down?",
+   "dst": "哼。{u} 把那东西弄倒了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185415,8 +186375,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1110": {
-   "src": "Where's ? And Ava?!",
-   "dst": "在哪？还有 Ava 呢？！",
+   "src": "Where's {u}? And Ava?!",
+   "dst": "{u} 在哪？还有 Ava 呢？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185775,7 +186735,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1147": {
-   "src": "I guess you and I really learnt what acting in the heat of the moment means, huh.",
+   "src": "I guess you and I really learnt what \"acting in the heat of the moment\" means, huh.",
    "dst": "我想你和我都真正学到了一时冲动行事是什么意思，是吧。",
    "role": "desc",
    "kind": "dialogue",
@@ -185935,8 +186895,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1163": {
-   "src": "...? If you stop by the Workshop later, maybe I'll have some things for you as well.",
-   "dst": "……？如果你之后来工坊，也许我也会有些东西给你。",
+   "src": "...{u}? If you stop by the Workshop later, I'll set up something for you as well.",
+   "dst": "……{u}？如果你之后来工坊，我也会给你准备点东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -186093,6 +187053,786 @@
    "stage": "Stage 14",
    "speaker": "Ava",
    "source": "wiki"
+  },
+  "The Feathers Fly Part II#1351": {
+   "src": "You lead, I follow!",
+   "dst": "你带路，我跟着！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1352": {
+   "src": "OUT!",
+   "dst": "出去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1353": {
+   "src": "[+{~} Growth Accelerator Remote]",
+   "dst": "[+{~} 生长加速器遥控器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1354": {
+   "src": "[-{~} Growth Accelerator Remote]",
+   "dst": "[-{~} 生长加速器遥控器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1355": {
+   "src": "Alright, let's go!",
+   "dst": "好，我们走吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1356": {
+   "src": "Well, have you found anything?",
+   "dst": "怎么样，找到什么了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1357": {
+   "src": "We don't have that much time you know!",
+   "dst": "我们可没那么多时间，你知道吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1358": {
+   "src": "Looks like there's an outfit ready right here!",
+   "dst": "看来这里正好有一套准备好的服装！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1359": {
+   "src": "[+{~} Azure Outfit]",
+   "dst": "[+{~} 天蓝服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1360": {
+   "src": "You can give it to Ava, or you can look around the other rooms for more options.",
+   "dst": "你可以把它交给 Ava，或者去其他房间看看有没有别的选择。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1361": {
+   "src": "There's some clothes here. They're dirty though.",
+   "dst": "这里有一些衣服。不过都是脏的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1362": {
+   "src": "[+{~} Dirty Clothes]",
+   "dst": "[+{~} 脏衣服]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1363": {
+   "src": "There must be a way to wash those somewhere nearby.",
+   "dst": "附近一定有地方能把这些洗干净。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1364": {
+   "src": "You start washing the clothes...",
+   "dst": "你开始洗衣服……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1365": {
+   "src": "[+{~} Emerald-Encrusted Outfit]",
+   "dst": "[+{~} 镶绿宝石服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1366": {
+   "src": "Shoot, I think someone's coming!! Come back!",
+   "dst": "糟了，好像有人来了！！快回来！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1367": {
+   "src": "...Nevermind! Keep looking... Sorry...",
+   "dst": "……没事了！继续找吧……抱歉……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1368": {
+   "src": "You take a look inside the drawer...",
+   "dst": "你往抽屉里看了看……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1369": {
+   "src": "Lucky! There's a Mechanic Outfit in there.",
+   "dst": "运气真好！里面有一套机械师服装。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1370": {
+   "src": "[+{~} Mechanic Outfit]",
+   "dst": "[+{~} 机械师服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1371": {
+   "src": "You pick up a particularly tasty-looking bone.",
+   "dst": "你捡起一根看起来格外美味的骨头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1372": {
+   "src": "[+{~} Bone]",
+   "dst": "[+{~} 骨头]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1373": {
+   "src": "There's some sort of armour in that chest. It looks flashy!",
+   "dst": "那个箱子里有一套盔甲。看起来很炫！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1374": {
+   "src": "[-{~} Mechanic Corkian Outfit]",
+   "dst": "[-{~} Corkus 机械师服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1375": {
+   "src": "[-{~} Azure Outfit]",
+   "dst": "[-{~} 天蓝服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1376": {
+   "src": "[-{~} Emerald-Encrusted Outfit]",
+   "dst": "[-{~} 镶绿宝石服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1377": {
+   "src": "[-{~} Golden Power Outfit]",
+   "dst": "[-{~} 黄金动力服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1378": {
+   "src": "It's... Quite hard to move around with that outfit, actually.",
+   "dst": "其实……穿着那套衣服挺难活动的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1379": {
+   "src": "...Is that someone crying over there? Eh, I'm not sure my social skills can handle that.",
+   "dst": "……那边是不是有人在哭？呃，我不确定我的社交能力应付得来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1380": {
+   "src": "I'll try my best, {u}!",
+   "dst": "我会尽力的，{u}！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1381": {
+   "src": "[+{~} Audience Invitation Letter]",
+   "dst": "[+{~} 拜见邀请函]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1382": {
+   "src": "Hey. Ya got anythin'?",
+   "dst": "嘿。有收获吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1383": {
+   "src": "Woah there, what's that letter? You actually got an invitation?!",
+   "dst": "哇哦，那封信是什么？你还真拿到邀请了？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1384": {
+   "src": "I... Wow. Well I'm impressed! I really am!",
+   "dst": "我……哇。好吧，我服了！真的服了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1385": {
+   "src": "Did we even need a letter? That armour probably would've done the trick!",
+   "dst": "我们到底需不需要信啊？那套盔甲大概就能搞定了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1386": {
+   "src": "Well... If you want me to follow you, tell me. I've heard 'bout a receptionist in the far end of the castle, so maybe we should go there?",
+   "dst": "那么……要我跟着你的话就说一声。我听说城堡最里面有个接待员，也许我们该去那里？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1387": {
+   "src": "Well... You lead, I follow!",
+   "dst": "那么……你带路，我跟着！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1388": {
+   "src": "I heard there was a dealer around here but... We have the letter, so let's just keep goin'.",
+   "dst": "我听说这附近有个商贩，不过……我们已经有信了，就继续走吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1389": {
+   "src": "Well, no matter! I'll just... See when the council's available and book a meeting...",
+   "dst": "好吧，没关系！我就……看看议会什么时候有空，帮你们约个会面……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1390": {
+   "src": "How peculiar. I wonder how they got that...",
+   "dst": "真是奇怪。不知道他们是怎么拿到那个的……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1391": {
+   "src": "Hey! I saw you run towards the castle. What did you do?",
+   "dst": "嘿！我看到你朝城堡跑过去了。你做了什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1392": {
+   "src": "...Wait, what? You went to the receptionist alone, just like that?!",
+   "dst": "……等等，什么？你就这样自己一个人去找接待员了？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1393": {
+   "src": "An audience is booked, and you didn't even give me the chance to show my cool armour!",
+   "dst": "拜见已经约好了，你连让我展示一下我那套酷炫盔甲的机会都没给！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1394": {
+   "src": "I... I'm really grateful. What a relief. I did some tweaking regarding the machine, so you should come and test with me!",
+   "dst": "我……我真的很感激。真是松了一口气。我把机器稍微调整了一下，你该来跟我一起测试看看！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1395": {
+   "src": "As I've said, this is only practice, don't worry.",
+   "dst": "就像我说的，这只是练习，别担心。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1396": {
+   "src": "Just tell me when you're up for another round!",
+   "dst": "想再来一轮的时候跟我说一声就好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1397": {
+   "src": "You ARE coming back... Right??",
+   "dst": "你“会”回来的……对吧？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1398": {
+   "src": "You probably should wait for Ava first.",
+   "dst": "你大概应该先等等 Ava。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1399": {
+   "src": "My guts are telling me this one's gonna be impressive. I hope he's there.",
+   "dst": "我的直觉告诉我，这次会很精彩。希望他会到场。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1400": {
+   "src": "You know them?! How?!",
+   "dst": "你认识他们？！怎么会？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1401": {
+   "src": "You helped deal with WHA-",
+   "dst": "你帮忙解决了什——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1402": {
+   "src": "Looks like she's waiting for your signal.",
+   "dst": "看来她在等你的信号。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1403": {
+   "src": "Watch this.",
+   "dst": "看好了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1404": {
+   "src": "Even I'm getting into this!",
+   "dst": "连我都看得入迷了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1405": {
+   "src": "I still can't believe this isn't about your armour.",
+   "dst": "我还是不敢相信这跟你的盔甲无关。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1406": {
+   "src": "No worries... Well, I'm worrying, but that doesn't mean you have to.",
+   "dst": "别担心……好吧，我是很担心，但那不代表你也得担心。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1407": {
+   "src": "Alright guys, don't worry... We got this.",
+   "dst": "好了各位，别担心……我们搞得定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1408": {
+   "src": "And we sure hope so!",
+   "dst": "我们也真心希望如此！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1409": {
+   "src": "I'll just... wait for your signal, {u}.",
+   "dst": "我就……等你的信号吧，{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1410": {
+   "src": "Hmpf. I certainly am curious now.",
+   "dst": "哼。现在我倒是真的好奇了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Grant",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1411": {
+   "src": "She's glancing at you. Maybe she's waiting for your signal.",
+   "dst": "她在瞄你。也许她在等你的信号。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1412": {
+   "src": "I'm an Avo.",
+   "dst": "我是 Avos 人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1413": {
+   "src": "EVERYONE! STOP! {u}, I want you to come here and answer something, immediately.",
+   "dst": "所有人！停下！{u}，我要你马上过来回答一个问题。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1414": {
+   "src": "You take a deep breath, and-",
+   "dst": "你深吸一口气，然后——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1415": {
+   "src": "Looks like Maxie wants to speak to you.",
+   "dst": "看来 Maxie 想跟你说话。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1416": {
+   "src": "You're- *cough* so good at handling... priorities, Maxie.",
+   "dst": "你可真是——*咳*——很会处理……轻重缓急啊，Maxie。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1417": {
+   "src": "Save your energy for later, Sybil.",
+   "dst": "留点力气待会儿用吧，Sybil。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Nodise",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1418": {
+   "src": "Even after... Even after this, I'm sure *cough* he'll keep defending them...",
+   "dst": "就算……就算发生了这种事，我敢说 *咳* 他还是会继续替他们辩护……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1419": {
+   "src": "There's some rumble outside.",
+   "dst": "外面传来一阵隆隆声。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1420": {
+   "src": "You've been... *cough* tricked by... Quite the individual, {u}. You better redeem yourself.",
+   "dst": "你被……*咳* 一个……相当了不得的家伙骗了，{u}。你最好将功赎罪。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1421": {
+   "src": "Efena doesn't seem very pleased to see you.",
+   "dst": "Efena 看到你似乎不太高兴。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1422": {
+   "src": "She's a little stressed out.",
+   "dst": "她压力有点大。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1423": {
+   "src": "No time to talk, {u}! Just go! There must be a core to hit at the top!",
+   "dst": "没时间说话了，{u}！快去！顶端一定有个核心可以打！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1424": {
+   "src": "Well, besides the citizens being afraid... I'd say the town's fine. However! I got tasked to find Ava.",
+   "dst": "嗯，除了市民都很害怕之外……我觉得镇上没什么事。不过！我被派去找 Ava。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1425": {
+   "src": "Somehow... Efena ended up liking her.",
+   "dst": "不知怎么的……Efena 最后居然喜欢上她了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1426": {
+   "src": "I'm reading, but I'll be done soon!",
+   "dst": "我在看书，不过马上就好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1427": {
+   "src": "Y-you!! I- oh no... I'm... It's over..!",
+   "dst": "你、你！！我——噢不……我……完蛋了……！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1428": {
+   "src": "Hey, hey, calm down! I'm here to actually help you... in a way.",
+   "dst": "嘿，嘿，冷静点！我其实是来帮你的……某种意义上。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
   },
   "The Hero of Gavel#000": {
    "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
@@ -188525,7 +190265,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "是人类！啊！不用担心帮我找医生，我自己能处理……",
    "role": "desc",
    "kind": "dialogue",
@@ -188605,8 +190345,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "听着，村民对人类住在他们的土地上有非常严格的规定，这是严重违法的。",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "听着，村民对人类在他们的土地上建立城市有非常严格的规定，这是严重违法的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188865,8 +190605,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "总之，{p} 的秘密正面临极大的危险。我们找到了叛徒的证据。",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "总之，{p} 的秘密正面临极大的危险。我们找到了有叛徒的证据。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188935,7 +190675,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "我唯一看到的可疑的事，是有个戴兜帽的男人在附近走来走去。{p} 人不多，所以挺奇怪的。",
    "role": "desc",
    "kind": "dialogue",
@@ -189035,7 +190775,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "啊。那你一定就是那个侦探了。那些脑子不灵光的 Eltom 人是想不出来的。",
    "role": "desc",
    "kind": "dialogue",
@@ -189055,8 +190795,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "这个小镇根本就不该存在。人类不准在 Gavel 定居。",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "这个小镇根本就不该存在。人类不准像这样在 Gavel 拥有土地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189105,7 +190845,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- 飞艇 {~}:{~} 从 {p} 出发前往 {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -189155,8 +190895,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "要求使用一艘船……我拒绝了……",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "强行要求使用一艘船……我拒绝了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189235,8 +190975,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "我会把这地方的事全都告诉 {p} 的镇长，然后领取我的奖赏。我会发大财，你要是想阻止我，就得亲自动手！",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "我会把这地方的事全都告诉 {p} 的镇长，然后领取我的奖赏。我会发大财，你要是想阻止我，就得亲自动手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189292,6 +191032,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "我已经把那座城市的位置写进你的内容手册里了。除此之外，我也帮不上什么忙了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "笔记:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- 镇长办公室在 {p} 的最上层",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- 记得去开矮人银行的账户",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "致 Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "你开的这艘船简直一团糟。这已经是我第三次来这里修冷却液泄漏了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Corkian 的机器是很棒，但也不是永远不坏。照这样下去，你每年冬天都得换一艘新船。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "“任何液体都不能进引擎”，这有那么难懂吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "——工程师 Bertin",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "一封信？噢，那个啊。关于 {p} 的那封？别那么担心。这个秘密我会守住的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "对，我知道 {p} 的事。毕竟，那里的镇长是我的前夫。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "村民和人类相爱，听起来也许很奇怪。我知道，但种族并没有阻止我们相爱。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "留下那封关于 {p} 的信的人，是我们的儿子 Ardulf。Eoric 一发现我们有了孩子，就慌了，丢下了我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf 是混血儿，永远不会被接纳……尽管如此，我还是希望他平安无事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "嗯？噢对了，还有一件事。桌子底下的开关……去吧，按下去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   },
   "The House of Twain (Quest)#000": {
@@ -206445,8 +208335,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#020": {
-   "src": "Heehee, maybe I didn't need to hold back after all? You did really well, really well!",
-   "dst": "嘿嘿，看来我根本不需要手下留情嘛？你表现得真好，真的好！",
+   "src": "Heehee, maybe I didn't need to hold back after all? You did really, really well!",
+   "dst": "嘿嘿，看来我根本不需要手下留情嘛？你表现得真的、真的很好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206615,7 +208505,7 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#037": {
-   "src": "...Here's the Water Voucher you're expecting.",
+   "src": "... Here's the Water Voucher you're expecting.",
    "dst": "……这是你在等的水之兑换券。",
    "role": "desc",
    "kind": "dialogue",
@@ -206715,8 +208605,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#047": {
-   "src": "This is unorthodox, as no one has made it this far. But I suppose this means that you have earned an audience with-",
-   "dst": "这太不寻常了，从来没人走到这一步。但我想这代表你赢得了面见——",
+   "src": "This is unorthodox, as few have made it this far. But I suppose this means that you have earned an audience with-",
+   "dst": "这太不寻常了，很少有人能走到这一步。但我想这代表你赢得了面见——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206952,6 +208842,166 @@
    "quest": "The Qira Hive (Quest)",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#071": {
+   "src": "Hush, Yansur. Not a word about her.",
+   "dst": "安静，Yansur。关于她，一个字都不许提。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#072": {
+   "src": "Seems you can move on... All you hear is a bloodcurdling roar. What lies ahead...?",
+   "dst": "看来你可以继续前进了……你只听到一声令人毛骨悚然的咆哮。前方等着你的会是什么……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#073": {
+   "src": "Well, now that you've destroyed that terrible thing, it seems prudent to tell Yansur and get your Earth Voucher.",
+   "dst": "好了，既然你已经消灭了那个可怕的东西，现在该去告诉 Yansur，领取你的地之兑换券了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#074": {
+   "src": "Managed to defeat Genesis, hm? It is normally the end of most... Interesting.",
+   "dst": "居然打败了创生，嗯？大多数人都止步于此……有意思。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#075": {
+   "src": "I must admit I am impressed; the Judge is ruthless... perhaps he needs further tweaking?",
+   "dst": "我得承认我很佩服；审判者向来冷酷无情……也许还需要再调整一下？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#076": {
+   "src": "Even downed the Vanguard...? My word...",
+   "dst": "连先锋都被打倒了……？天哪……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#077": {
+   "src": "Allow me to stop you there, Yansur. I wish to make an exception for this challenger.",
+   "dst": "先说到这里吧，Yansur。我想为这位挑战者破个例。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#078": {
+   "src": "You have intrigued me, adventurer...and I want to put you to the truest test.",
+   "dst": "你引起了我的兴趣，冒险者……我想让你接受最真正的考验。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#079": {
+   "src": "I await you in my chambers...",
+   "dst": "我在我的寝殿等你……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#080": {
+   "src": "...you. You...ahaha...I like you. You're capable enough... Perhaps we could be allies in the future...",
+   "dst": "……你。你……啊哈哈……我喜欢你。你够有能耐……也许将来我们能成为盟友……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#081": {
+   "src": "You defeated Qira! All that's left to do is tell Yansur!",
+   "dst": "你打败了 Qira！剩下的就只是去告诉 Yansur 了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#082": {
+   "src": "They defeated me, Yansur.",
+   "dst": "他们打败了我，Yansur。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#083": {
+   "src": "You question your mistress? I have nothing to gain from lying to you about this. And there is no shame in admitting defeat.",
+   "dst": "你在质疑你的女主人？我在这件事上骗你又没有任何好处。承认失败也没什么可耻的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#084": {
+   "src": "It is simply a testament to their strength. I will prepare a special reward for them to mark the occasion.",
+   "dst": "这只证明了他们的实力。我会为他们准备一份特别的奖赏，纪念这一刻。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#085": {
+   "src": "It is as I have always told you. The darkness is coming...but if you Wynn folk are all as strong as you have proven yourself to be, we may just be able to beat it back.",
+   "dst": "就像我一直告诉你的那样。黑暗正在逼近……但如果你们 Wynn 的人都像你证明的那样强大，我们或许真能把它击退。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#086": {
+   "src": "Honour to you, warrior of Wynn.",
+   "dst": "向你致敬，Wynn 的战士。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
    "source": "captured"
   },
   "The Realm of Light (Quest)#000": {
@@ -208097,6 +210147,16 @@
   "The Realm of Light (Quest)#114": {
    "src": "By the light what is that thing?! S-Stay away f-",
    "dst": "以光之名，那是什么东西？！离-离远一点——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Realm of Light (Quest)#115": {
+   "src": "by the light, i summon thee, aether's judgement! aid me!",
+   "dst": "以光之名，我召唤你，以太的审判！助我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Realm of Light (Quest)",
@@ -209961,7 +212021,7 @@
    "source": "captured"
   },
   "The Shadow of the Beast#010": {
-   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
    "dst": "我想它进了这里东边的洞穴。去吧！在它造成更多破坏之前阻止它！",
    "role": "desc",
    "kind": "dialogue",
