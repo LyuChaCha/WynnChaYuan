@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Queen's Recruit",
-  "count": 705,
-  "translated": 704,
+  "count": 710,
+  "translated": 709,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -7069,6 +7069,56 @@
    "stage": "Stage 26",
    "speaker": "",
    "source": "captured"
+  },
+  "Queen's Recruit#705": {
+   "src": "Meet up with Tasim in {p} at [{~}, {~}, -{~}] or travel to the Gate of Fruma by yourself.",
+   "dst": "{p} bölgesinde [{~}, {~}, -{~}] konumunda Tasim ile buluş ya da Fruma Kapısı'na tek başına git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#706": {
+   "src": "Begin your next duel in the waiting room at [-{~}, {~}, {~}].",
+   "dst": "[-{~}, {~}, {~}] konumundaki bekleme odasında bir sonraki düellona başla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#707": {
+   "src": "Attention!! Attention, Wynn representatives!!",
+   "dst": "Dikkat!! Dikkat, Wynn temsilcileri!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#708": {
+   "src": "Besides, it'll be nice to finally have a rematch. I haven't forgotten when you beat me in that sparring match, all the way back then!",
+   "dst": "Hem sonunda rövanş yapmak güzel olacak. O zamanlar idman dövüşünde beni yendiğini unutmadım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#709": {
+   "src": "Well, that's one of us, at least! I... keep having dreams. It's worse here, than... sigh. I thought I'd gotten over it...",
+   "dst": "Eh, en azından birimiz öyle! Ben... rüya görmeye devam ediyorum. Burada daha kötü, ...of. Bunu atlattığımı sanıyordum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "captured.json"
   }
  }
 }

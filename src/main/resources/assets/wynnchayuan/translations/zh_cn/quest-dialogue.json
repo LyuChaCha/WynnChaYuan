@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23363,
-  "translated": 23360,
+  "count": 23368,
+  "translated": 23365,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -137282,6 +137282,56 @@
    "stage": "Stage 26",
    "speaker": "",
    "source": "captured"
+  },
+  "Queen's Recruit#705": {
+   "src": "Meet up with Tasim in {p} at [{~}, {~}, -{~}] or travel to the Gate of Fruma by yourself.",
+   "dst": "到 {p} 的 [{~}, {~}, -{~}] 与 Tasim 会合，或自行前往 Fruma 之门。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#706": {
+   "src": "Begin your next duel in the waiting room at [-{~}, {~}, {~}].",
+   "dst": "到 [-{~}, {~}, {~}] 的候场室开始下一场决斗。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Queen's Recruit#707": {
+   "src": "Attention!! Attention, Wynn representatives!!",
+   "dst": "注意！！请注意，Wynn 的代表们！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#708": {
+   "src": "Besides, it'll be nice to finally have a rematch. I haven't forgotten when you beat me in that sparring match, all the way back then!",
+   "dst": "再说，终于能跟你再比一场，挺好的。我可没忘记很久以前那场切磋被你打败的事！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "captured.json"
+  },
+  "Queen's Recruit#709": {
+   "src": "Well, that's one of us, at least! I... keep having dreams. It's worse here, than... sigh. I thought I'd gotten over it...",
+   "dst": "嗯，至少我们之中有一个人是这样！我……一直在做梦。在这里更糟，比……唉。我还以为我已经走出来了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "captured.json"
   },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
