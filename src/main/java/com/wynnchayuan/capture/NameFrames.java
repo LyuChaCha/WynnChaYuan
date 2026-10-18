@@ -134,9 +134,14 @@ public final class NameFrames {
      * @return 名字的位置；不是任何一個框就回 {@code null}
      */
     public Broadcasts.Spans find(StyledText line, String template) {
-        if (line == null || template == null || size == 0
-                || template.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
-            return null;                       // 自己的名字已經是 {u}，走平常那條路
+        // 模板裡已經有 {u}（自己的帳號名或暱稱被 SelfNames 收掉了）也要找：
+        // Wynntils 把名字改寫成「帳號/暱稱」，畫面上是「Green_teaTW/RichaCha has given
+        // you …」，帳號那一半是自己、整個名字卻是一段——模板成了「{u}/RichaCha …」，
+        // 整句查不到，先前在這裡直接放棄（實機 2026-10-17 回報）。名字那一段整個重收
+        // 成一個 {u}；名字之外如果還有自己的名字，收完的模板會多一個 {u}，對不上框，
+        // 下面那一關會擋掉。
+        if (line == null || template == null || size == 0) {
+            return null;
         }
         List<Frame> candidates = candidates(core(template));
         if (candidates.isEmpty()) {
@@ -319,12 +324,13 @@ public final class NameFrames {
      */
     private static boolean templateNameLike(String slice) {
         if (slice.isBlank() || slice.length() > MAX_NAME * 2
-                || slice.contains(GlyphSplitter.GLYPH_PLACEHOLDER)
-                || slice.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
+                || slice.contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
             return false;
         }
+        // {u} 是被收掉的自己的名字（「{u}/RichaCha」），當成名字的一部分
         String bare = slice.replace(GlyphSplitter.NUMBER_PLACEHOLDER, "0")
-                           .replace(GlyphSplitter.PLACE_PLACEHOLDER, "Place");
+                           .replace(GlyphSplitter.PLACE_PLACEHOLDER, "Place")
+                           .replace(GlyphSplitter.PLAYER_PLACEHOLDER, "Name");
         return NAME_CHARS.matcher(bare.strip()).matches();
     }
 

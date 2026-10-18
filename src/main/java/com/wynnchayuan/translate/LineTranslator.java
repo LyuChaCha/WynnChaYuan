@@ -4047,8 +4047,10 @@ public final class LineTranslator {
      */
     private static LineParts framedOnMiss(StyledText line, LineParts plain,
                                           TranslationStore store) {
-        if (line == null || plain == null || store == null || !plain.users().isEmpty()) {
-            return null;                       // 自己的名字已經收成 {u} 了，不再另找
+        // 模板裡已經有自己的名字（{u}）也照找：「帳號/暱稱」那種名字只收到一半。
+        // 見 NameFrames#find。
+        if (line == null || plain == null || store == null) {
+            return null;
         }
         com.wynnchayuan.capture.Broadcasts.Spans spans =
                 store.nameFrames().find(line, plain.template());

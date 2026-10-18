@@ -70,7 +70,60 @@ public final class NameFrameTest {
         notNames(store);
         privacy(store, dir);
         realCorpus();
+        // 這一段會記下「自己的名字」（靜態的），放在最後，不影響上面幾段
+        ownNameInsideName(store);
         report();
+    }
+
+    /**
+     * 實機回報（2026-10-17，test jar 8）：「Green_teaTW/RichaCha has given you 29% resistance
+     * and 8% strength.」整句英文。
+     *
+     * <p>log 裡伺服器送的是 {@code &b&o&<1>RichaCha&7 has given you &b29% resistance&7 and
+     * &b8% strength&7.}——暱稱是青色斜體、掛著滑鼠提示（{@code &<1>} 是 Wynntils 記 hover
+     * 的寫法），Wynntils 再把它改寫成「帳號/暱稱」。帳號那一半是<b>玩家自己</b>，
+     * SelfNames 先把它收成 {@code {u}}，模板成了「{u}/RichaCha has given you …」：整句查不到，
+     * 而句型那一關看到模板裡已經有 {u} 就放棄了。
+     */
+    private static void ownNameInsideName(TranslationStore store) {
+        System.out.println("=== 名字裡有自己的帳號名 ===");
+        com.wynnchayuan.capture.SelfNames.remember("Green_teaTW");
+        Style hover = Style.EMPTY.withColor(TextColor.fromRgb(AQUA)).withItalic(true)
+                .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
+                        Component.literal("Green_teaTW")));
+        // Wynntils 改寫後：帳號/ 與暱稱兩段，都帶著同一個 hover
+        MutableComponent rewritten = Component.empty();
+        rewritten.append(Component.literal("Green_teaTW/").withStyle(hover));
+        rewritten.append(Component.literal("RichaCha").withStyle(hover));
+        StyledText line = buff(rewritten);
+        check("重現：模板裡帳號已經是 {u}（實際 "
+                      + LineParts.of(line).template() + "）",
+              LineParts.of(line).template().startsWith("{u}/RichaCha"));
+        Component hit = LineTranslator.translateChat(line, store);
+        String got = hit == null ? null : hit.getString();
+        check("★ 「帳號/暱稱」而帳號是自己：照樣翻（實際 " + got + "）",
+              "Green_teaTW/RichaCha 賦予你 29% 甲盾與 8% 乙力。".equals(got));
+        check("★ 聊天的守門也認得", LineTranslator.nameFramed(line, store) != null);
+        String captured = com.wynnchayuan.listener.CaptureProbe.chatTemplate(line, store);
+        check("★ 收集端記的是 {u} 那一份（實際 " + captured + "）", BUFF.equals(captured));
+
+        // 伺服器原本那一段：只有暱稱，數值那一段是「&b 8% strength」（空白在數值段裡）
+        com.wynnchayuan.capture.SelfNames.remember("RichaCha");
+        MutableComponent raw = Component.empty();
+        raw.append(Component.literal("RichaCha").withStyle(hover));
+        raw.append(lit(" has given you ", GREY));
+        raw.append(lit("25% resistance", AQUA));
+        raw.append(lit(" and", GREY));
+        raw.append(lit(" 8% strength", AQUA));
+        raw.append(lit(".", GREY));
+        Component own = LineTranslator.translateChat(StyledText.fromComponent(raw), store);
+        String ownText = own == null ? null : own.getString();
+        check("自己的暱稱單獨一段也翻（實際 " + ownText + "）",
+              "RichaCha 賦予你 25% 甲盾與 8% 乙力。".equals(ownText));
+        check("名字之外又出現自己的名字：不能把兩個名字併成一個",
+              LineTranslator.translateChat(death("", "Bob", " was killed by RichaCha"), store) == null
+                      || !LineTranslator.translateChat(death("", "Bob", " was killed by RichaCha"), store)
+                              .getString().contains("被收拾了"));
     }
 
     /**
