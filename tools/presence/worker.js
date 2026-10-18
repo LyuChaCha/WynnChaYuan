@@ -5,6 +5,7 @@
  *   /          首頁
  *   /capes     披風一覽
  *   /account   帳號：登入狀態、自己的披風、上傳
+ *   /feedback  回饋與建議（要用 Discord 登入；譯文建議自動開 GitHub Issue）
  *   /admin     管理（開發者）：封禁名單、新增成員
  *
  * API（模組與網頁都用）：
@@ -46,7 +47,12 @@
  *   GET    /api/admin/staff           管理員名單（只有開發者）
  *   POST   /api/admin/staff    {who, note}   加一個管理員：Minecraft ID、UUID 或 Discord 代號（只有開發者）
  *   POST   /api/admin/unstaff  {key}         移除一個管理員（只有開發者）
- *   GET    /font/px-<代號>.ttf        預覽畫面用的點陣字（demo-fonts.js）
+ *   POST   /api/feedback       {cat, msg, where?, lang?}   送一則回饋（要用 Discord 登入）；譯文建議另外開 GitHub Issue
+ *   GET    /api/admin/feedback?cat=&st=      回饋列表，新的在前（開發者與管理員）
+ *   POST   /api/admin/feedback/status {id, st}   標成已處理（done）或重新開啟（open）
+ *   POST   /api/admin/feedback/delete {id}       刪掉一則（垃圾訊息）
+ *   POST   /api/admin/feedback/issue  {id}       譯文建議的 Issue 上次沒開成：再開一次
+ *   GET    /font/px-<代號>.ttf       預覽畫面用的點陣字（demo-fonts.js）
  *   GET    /tex/<檔名>                預覽畫面用的材質（demo-textures.js）
  *   GET    /template/<檔名>           披風範本、說明圖與示範（cape-templates.js）
  *   （排程）每天一次                  沒有人穿滿七天的披風刪掉（tidy）
@@ -2928,6 +2934,220 @@ function githubClient(env) {
   });
 }
 
+// ---------------------------------------------------------------- 回饋（/feedback 與機器人的 /回饋）
+//
+// 使用者 2026-10-17：網站加一頁回饋，分成譯文建議、內容建議、網站建議、功能建議、其他；
+// 要用 Discord 登入（記代號與顯示名稱），一個人一小時只能送幾則；管理頁看得到、標已處理、
+// 重新開啟、刪掉垃圾訊息。譯文建議自動在 GitHub 開 Issue（內文只放顯示名稱，不放代號），
+// GitHub 失敗也不能把回饋弄丟。機器人的 /回饋 進同一個地方。
+//
+// KV
+//   fb:<編號> → {id, cat, msg, where, lang, uid Discord 代號, name 顯示名稱, via web|bot, t, st open|done,
+//               done {by, t}, issue {url, n}, issueError}；列表要看的放 metadata（c, st, t, n, s 摘要, i, e）
+//   fbr:<Discord 代號> → 最近一小時送出的時間（限流用，一小時後自己消失）
+//   標成已處理的留 FEEDBACK_KEEP_DAYS 天就讓 KV 自己刪掉；還沒處理的留到處理或刪除為止。
+
+export const FEEDBACK_CATS = ['translation', 'content', 'website', 'feature', 'other'];
+export const FEEDBACK_MAX = 2000;
+const FEEDBACK_MIN = 3;
+const FEEDBACK_WHERE_MAX = 200;
+export const FEEDBACK_PER_HOUR = 5;
+export const FEEDBACK_KEEP_DAYS = 180;
+const FEEDBACK_ID = /^[0-9a-f]{16}$/;
+const FEEDBACK_CAT_ZH = { translation: '譯文建議', content: '內容建議', website: '網站建議', feature: '功能建議', other: '其他' };
+/** 開 Issue 時貼的標籤：跟倉庫的「提交翻譯」範本（.github/ISSUE_TEMPLATE/translation.md）同一個。 */
+const FEEDBACK_LABEL = 'translation';
+
+/** 送來的回饋對不對：回 {entry}，不對回 {why}。純函式，網頁與機器人共用。 */
+export function feedbackCheck(input) {
+  if (!input || typeof input !== 'object') return { why: 'bad request' };
+  const cat = String(input.cat || '');
+  if (!FEEDBACK_CATS.includes(cat)) return { why: 'bad category' };
+  // 控制字元拿掉（換行與 tab 留著），換行統一成 \n
+  const tidy = (s) => String(s).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '');
+  const msg = typeof input.msg === 'string' ? tidy(input.msg).trim() : '';
+  if (msg.length < FEEDBACK_MIN) return { why: 'too short' };
+  if (msg.length > FEEDBACK_MAX) return { why: 'too long' };
+  const where = typeof input.where === 'string' ? tidy(input.where).replace(/\s+/g, ' ').trim() : '';
+  if (where.length > FEEDBACK_WHERE_MAX) return { why: 'where too long' };
+  const lang = TR_LANGS.includes(input.lang) ? input.lang : null;
+  return { entry: { cat, msg, where, lang } };
+}
+
+/**
+ * 送回饋的人：{id Discord 代號, name 顯示名稱}。網站帳號（Discord）登入的直接認；從遊戲裡開的網頁
+ * 要綁了 Discord 才算（回 {error: 'discord first'}）；都沒有回 null。
+ */
+async function feedbackPerson(request, env, now) {
+  const session = await discordSession(request, env, now);
+  if (session) return { id: session.id, name: session.account.n || session.id };
+  const user = await who(request, env, now);
+  if (!user) return null;
+  const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
+  const found = discord ? await account(env, discord) : null;
+  return found ? { id: discord, name: found.n || discord } : { error: 'discord first' };
+}
+
+/** 一個人一小時最多 FEEDBACK_PER_HOUR 則。滿了回 {until 哪時候可以再送}，沒滿回 {log 這一小時送過的時間}。 */
+async function feedbackGate(env, id, now) {
+  let log = [];
+  try {
+    const raw = JSON.parse(await env.CORPUS.get('fbr:' + id) || '[]');
+    if (Array.isArray(raw)) log = raw.filter((t) => typeof t === 'number' && now - t < 3600000).sort((a, b) => a - b);
+  } catch (e) {
+    log = [];
+  }
+  return log.length >= FEEDBACK_PER_HOUR ? { until: log[0] + 3600000 } : { log };
+}
+
+function feedbackMeta(record) {
+  const meta = { c: record.cat, st: record.st, t: record.t, n: clip(record.name, 40),
+    s: clip(record.msg.replace(/\s+/g, ' '), 100) };
+  if (record.issue) meta.i = record.issue.url;
+  if (record.issueError) meta.e = record.issueError;
+  return meta;
+}
+
+async function saveFeedback(env, record) {
+  const options = { metadata: feedbackMeta(record) };
+  if (record.st === 'done') options.expirationTtl = FEEDBACK_KEEP_DAYS * 86400;
+  await env.CORPUS.put('fb:' + record.id, JSON.stringify(record), options);
+}
+
+/** Markdown 的程式碼區塊：圍欄比內容裡最長的一串反引號多一個，使用者寫什麼都關不掉它（也不會 @ 到人）。 */
+function fenced(text) {
+  const runs = String(text).match(/`+/g) || [];
+  const bar = '`'.repeat(Math.max(3, ...runs.map((run) => run.length + 1)));
+  return bar + '\n' + text + '\n' + bar;
+}
+
+/** 譯文建議要開的 Issue：標題是分類加一小段內容；內文只放顯示名稱，不放 Discord 代號。純函式，測試直接餵。 */
+export function feedbackIssue(record) {
+  const kind = FEEDBACK_CAT_ZH[record.cat] || record.cat;
+  const name = String(record.name || '').replace(/[`\r\n]/g, '').trim().slice(0, 64) || '—';
+  const lines = [
+    '從 ' + (record.via === 'bot' ? 'Discord 機器人的 /回饋' : 'wynnchayuan.com/feedback') + ' 送來的' + kind + '。', '',
+    '**內容**', '', fenced(record.msg), '',
+  ];
+  if (record.where) lines.push('**位置**', '', fenced(record.where), '');
+  lines.push('**語言**：' + (record.lang ? LANG_LABEL[record.lang] + '（`' + record.lang + '`）' : '沒有指定'));
+  lines.push('**送出的人**：`' + name + '`（Discord 顯示名稱）');
+  lines.push('', '網站上的編號 `' + record.id + '`；處理完請到網站的管理頁標成已處理。');
+  return { title: kind + '：' + clip(record.msg.replace(/\s+/g, ' ').trim(), 60), body: lines.join('\n'), labels: [FEEDBACK_LABEL] };
+}
+
+/** 開 Issue。成功回 {url, n}，失敗回 {error}（回饋本身已經存好了，失敗只是記下來給管理頁看）。 */
+async function openFeedbackIssue(env, record) {
+  if (!env.GITHUB_TOKEN) return { error: 'github not configured' };
+  try {
+    const res = await githubClient(env)('/issues', { method: 'POST', body: JSON.stringify(feedbackIssue(record)) });
+    if (res.status !== 201) return { error: 'github ' + res.status };
+    const made = await res.json();
+    return { url: String(made.html_url || ''), n: Number(made.number) || 0 };
+  } catch (e) {
+    return { error: 'github unreachable' };
+  }
+}
+
+async function fileFeedbackIssue(env, record) {
+  const made = await openFeedbackIssue(env, record);
+  if (made.error) {
+    record.issueError = made.error;
+  } else {
+    record.issue = { url: made.url, n: made.n };
+    delete record.issueError;
+  }
+  await saveFeedback(env, record);
+}
+
+/** 網頁與機器人共用：檢查、限流、存下來；譯文建議再開 Issue。回 {record} 或 {why, status, until}。 */
+async function submitFeedback(env, person, input, via, now) {
+  const checked = feedbackCheck(input);
+  if (checked.why) return { why: checked.why, status: 400 };
+  const gate = await feedbackGate(env, person.id, now);
+  if (gate.until) return { why: 'slow down', status: 429, until: gate.until };
+  const id = hex(crypto.getRandomValues(new Uint8Array(8)));
+  const record = { id, ...checked.entry, uid: person.id, name: String(person.name).slice(0, 64), via, t: now, st: 'open' };
+  // 先存，再碰 GitHub：GitHub 怎麼失敗都不會把回饋弄丟
+  await saveFeedback(env, record);
+  await env.CORPUS.put('fbr:' + person.id, JSON.stringify([...gate.log, now]), { expirationTtl: 3600 });
+  if (record.cat === 'translation') await fileFeedbackIssue(env, record);
+  return { record };
+}
+
+async function handleFeedback(request, env, now) {
+  const person = await feedbackPerson(request, env, now);
+  if (!person) return no('login first', 401);
+  if (person.error) return no(person.error, 401);
+  const body = await readJson(request, TR_BODY);
+  if (!body) return no('bad request');
+  const got = await submitFeedback(env, person, body, 'web', now);
+  if (got.why) return json({ ok: false, why: got.why, until: got.until }, got.status);
+  const { record } = got;
+  return json({ ok: true, id: record.id, issue: record.issue ? record.issue.url : null,
+    issueFailed: Boolean(record.issueError) });
+}
+
+/** 管理頁的回饋列表：新的在前，可以照分類與狀態篩；一次最多 200 則。 */
+async function handleFeedbackList(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const url = new URL(request.url);
+  const cat = url.searchParams.get('cat') || '';
+  const st = url.searchParams.get('st') || '';
+  const all = await trList(env, 'fb:');
+  const counts = { open: 0, done: 0 };
+  for (const meta of all) counts[meta.st === 'done' ? 'done' : 'open']++;
+  const picked = all.filter((meta) => (!cat || meta.c === cat) && (!st || meta.st === st));
+  const items = [];
+  for (const meta of picked.slice(0, 200)) {
+    const record = parseRecord(await env.CORPUS.get('fb:' + meta.id));
+    if (record.id) items.push(record);
+  }
+  return json({ items, total: picked.length, counts }, 200, { 'cache-control': 'no-store' });
+}
+
+async function feedbackFor(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return { error: no('forbidden', 403) };
+  const body = await readJson(request);
+  const id = body ? String(body.id || '') : '';
+  if (!FEEDBACK_ID.test(id)) return { error: no('bad request') };
+  const raw = await env.CORPUS.get('fb:' + id);
+  if (!raw) return { error: no('not found', 404) };
+  return { by, body, record: parseRecord(raw) };
+}
+
+/** 標成已處理（done）或重新開啟（open）。 */
+async function handleFeedbackStatus(request, env, now) {
+  const got = await feedbackFor(request, env, now);
+  if (got.error) return got.error;
+  if (!['open', 'done'].includes(got.body.st)) return no('bad request');
+  got.record.st = got.body.st;
+  if (got.body.st === 'done') got.record.done = { by: got.by, t: now };
+  else delete got.record.done;
+  await saveFeedback(env, got.record);
+  return json({ ok: true, item: got.record });
+}
+
+/** 刪掉一則（垃圾訊息）。已經開了的 Issue 留在 GitHub 上，要關掉到那邊關。 */
+async function handleFeedbackDelete(request, env, now) {
+  const got = await feedbackFor(request, env, now);
+  if (got.error) return got.error;
+  await env.CORPUS.delete('fb:' + got.record.id);
+  return json({ ok: true });
+}
+
+/** 譯文建議的 Issue 上次沒開成：再開一次。 */
+async function handleFeedbackIssue(request, env, now) {
+  const got = await feedbackFor(request, env, now);
+  if (got.error) return got.error;
+  if (got.record.cat !== 'translation') return no('not a translation', 409);
+  if (got.record.issue) return json({ ok: true, item: got.record });
+  await fileFeedbackIssue(env, got.record);
+  return got.record.issue ? json({ ok: true, item: got.record })
+    : json({ ok: false, why: got.record.issueError, item: got.record }, 502);
+}
+
 /** 網站的圖示。/favicon.ico 是瀏覽器沒人叫也會自己來要的那一個，給它同一張 PNG。 */
 const ICONS = {
   '/favicon.ico': FAVICON,
@@ -3031,6 +3251,10 @@ const BOT_TEXT = {
     kind: '格式', since: '換上的時間', gallery: '披風一覽',
     found: '「{q}」找到 {n} 條，列出前 {shown} 條', notFound: '「{q}」在 {lang} 的語料裡找不到。', tooShort: '關鍵字至少兩個字。',
     untranslated: '（還沒翻）', indexFail: '語料讀不到，晚點再試。', more: '在網站上看更多', unknown: '不認得這個指令。',
+    fbThanks: '收到了，謝謝你的回饋！團隊會在網站的管理頁看到它。', fbIssue: '譯文建議已經在 GitHub 開了 Issue：{url}',
+    fbIssueFail: '（這次沒能在 GitHub 開 Issue，回饋已經存好，管理員會再補開。）',
+    fbWhy: { 'bad category': '分類不對。', 'too short': '內容太短了，多寫幾個字吧。', 'too long': '內容太長了（最多 2000 字）。',
+      'where too long': '「位置」太長了（最多 200 字）。', 'slow down': '一小時內最多送 {n} 則，請 {t}再試。', 'no user': '認不出你是誰，請再試一次。' },
   },
   cn: {
     status: '网站状态', users: '装了模组的玩家', capes: '穿着披风', pending: '待审核的披风',
@@ -3040,6 +3264,10 @@ const BOT_TEXT = {
     kind: '格式', since: '换上的时间', gallery: '披风一览',
     found: '「{q}」找到 {n} 条，列出前 {shown} 条', notFound: '「{q}」在 {lang} 的语料里找不到。', tooShort: '关键字至少两个字。',
     untranslated: '（还没翻）', indexFail: '语料读不到，稍后再试。', more: '在网站上看更多', unknown: '不认识这个指令。',
+    fbThanks: '收到了，谢谢你的反馈！团队会在网站的管理页看到它。', fbIssue: '译文建议已经在 GitHub 开了 Issue：{url}',
+    fbIssueFail: '（这次没能在 GitHub 开 Issue，反馈已经保存，管理员会再补开。）',
+    fbWhy: { 'bad category': '分类不对。', 'too short': '内容太短了，多写几个字吧。', 'too long': '内容太长了（最多 2000 字）。',
+      'where too long': '“位置”太长了（最多 200 字）。', 'slow down': '一小时内最多发送 {n} 条，请 {t}再试。', 'no user': '认不出你是谁，请再试一次。' },
   },
   en: {
     status: 'Website status', users: 'Players with the mod', capes: 'Wearing a cape', pending: 'Capes awaiting review',
@@ -3051,6 +3279,11 @@ const BOT_TEXT = {
     found: '{n} lines match "{q}", showing the first {shown}', notFound: 'Nothing matches "{q}" in {lang}.',
     tooShort: 'Use at least two characters.', untranslated: '(not translated yet)', indexFail: 'Could not load the translations. Try again later.',
     more: 'See more on the website', unknown: 'Unknown command.',
+    fbThanks: 'Got it, thanks for the feedback! The team will see it on the website.', fbIssue: 'Your translation suggestion is now a GitHub issue: {url}',
+    fbIssueFail: '(Could not open the GitHub issue this time. Your feedback is saved and an admin will open it later.)',
+    fbWhy: { 'bad category': 'Unknown category.', 'too short': 'That is too short. Please add a few more words.',
+      'too long': 'That is too long (2000 characters at most).', 'where too long': '"Where" is too long (200 characters at most).',
+      'slow down': 'You can send {n} per hour. Try again {t}.', 'no user': 'Could not tell who you are. Please try again.' },
   },
 };
 const LANG_LABEL = { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' };
@@ -3066,6 +3299,15 @@ function botLocale(locale) {
 
 const botFmt = (s, values) => String(s).replace(/\{(\w+)\}/g, (all, k) => (k in values ? String(values[k]) : all));
 const clip = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + '…' : String(s));
+
+/** /回饋 的分類選項：值、英文、繁中、簡中。值跟網站的 FEEDBACK_CATS 一樣。 */
+const FEEDBACK_CHOICES = [
+  ['translation', 'Translation suggestion', '譯文建議', '译文建议'],
+  ['content', 'Content suggestion', '內容建議', '内容建议'],
+  ['website', 'Website suggestion', '網站建議', '网站建议'],
+  ['feature', 'Feature suggestion', '功能建議', '功能建议'],
+  ['other', 'Other', '其他', '其他'],
+];
 
 /** 指令的定義（註冊時原樣送出）。名稱用英文，繁簡中文另外給在地化的名字。 */
 export const DISCORD_COMMANDS = [
@@ -3104,6 +3346,41 @@ export const DISCORD_COMMANDS = [
         description: 'Which translation (default: follows your Discord language)',
         name_localizations: { 'zh-TW': '語言', 'zh-CN': '语言' },
         description_localizations: { 'zh-TW': '哪一種語言的譯文（預設跟著 Discord 的語言）', 'zh-CN': '哪一种语言的译文（默认跟着 Discord 的语言）' },
+        choices: Object.entries(LANG_LABEL).map(([value, name]) => ({ name, value })),
+      },
+    ],
+  },
+  {
+    // 使用者 2026-10-17：「/回饋」，跟網站的回饋頁進同一個地方；回覆只給本人看
+    name: 'feedback', type: 1,
+    description: 'Send feedback or a suggestion to the WynnChaYuan team',
+    name_localizations: { 'zh-TW': '回饋', 'zh-CN': '反馈' },
+    description_localizations: { 'zh-TW': '給 WynnChaYuan 團隊的回饋或建議', 'zh-CN': '给 WynnChaYuan 团队的反馈或建议' },
+    options: [
+      {
+        type: 3, name: 'category', required: true,
+        description: 'What kind of feedback',
+        name_localizations: { 'zh-TW': '分類', 'zh-CN': '分类' },
+        description_localizations: { 'zh-TW': '哪一種回饋', 'zh-CN': '哪一种反馈' },
+        choices: FEEDBACK_CHOICES.map(([value, name, tw, cn]) => ({ name, value, name_localizations: { 'zh-TW': tw, 'zh-CN': cn } })),
+      },
+      {
+        type: 3, name: 'message', required: true, min_length: FEEDBACK_MIN, max_length: FEEDBACK_MAX,
+        description: 'Your feedback',
+        name_localizations: { 'zh-TW': '內容', 'zh-CN': '内容' },
+        description_localizations: { 'zh-TW': '想說的話', 'zh-CN': '想说的话' },
+      },
+      {
+        type: 3, name: 'where', required: false, max_length: FEEDBACK_WHERE_MAX,
+        description: 'Where: which text, screen or quest (helps a lot for translation suggestions)',
+        name_localizations: { 'zh-TW': '位置', 'zh-CN': '位置' },
+        description_localizations: { 'zh-TW': '在哪裡：哪一句、哪個畫面或任務（譯文建議特別需要）', 'zh-CN': '在哪里：哪一句、哪个画面或任务（译文建议特别需要）' },
+      },
+      {
+        type: 3, name: 'language', required: false,
+        description: 'Which translation it is about',
+        name_localizations: { 'zh-TW': '語言', 'zh-CN': '语言' },
+        description_localizations: { 'zh-TW': '跟哪一種語言的譯文有關', 'zh-CN': '跟哪一种语言的译文有关' },
         choices: Object.entries(LANG_LABEL).map(([value, name]) => ({ name, value })),
       },
     ],
@@ -3290,7 +3567,32 @@ async function botAnswer(env, interaction, ctx) {
     const lang = TR_LANGS.includes(option('language')) ? option('language') : corpus;
     return botTranslate(env, text, lang, option('text'), ctx);
   }
+  if (command.name === 'feedback') return botFeedback(env, text, interaction, option, Date.now());
   return { content: text.unknown, flags: 64 };
+}
+
+/** Discord 的介面語言對到語料的哪一種；對不上回 null（英文介面不代表在講哪一種譯文）。 */
+const LOCALE_CORPUS = { 'zh-TW': 'zh_tw', 'zh-CN': 'zh_cn', ja: 'ja_jp', ko: 'ko_kr', ru: 'ru_ru', 'es-ES': 'es_es', 'es-419': 'es_es', tr: 'tr_tr' };
+
+/** /回饋：跟網站的回饋頁進同一個地方。Discord 已經告訴我們是誰，不必另外登入。回覆只給本人看。 */
+async function botFeedback(env, text, interaction, option, now) {
+  // 在伺服器裡是 member.user，私訊裡是 user
+  const user = (interaction.member && interaction.member.user) || interaction.user || {};
+  if (!DISCORD_ID.test(String(user.id || ''))) return { content: text.fbWhy['no user'], flags: 64 };
+  const asked = option('language');
+  const got = await submitFeedback(env, { id: user.id, name: String(user.global_name || user.username || user.id) }, {
+    cat: option('category'), msg: option('message'), where: option('where') || '',
+    lang: TR_LANGS.includes(asked) ? asked : LOCALE_CORPUS[interaction.locale] || null,
+  }, 'bot', now);
+  if (got.why) {
+    const why = text.fbWhy[got.why] || text.unknown;
+    return { content: botFmt(why, { n: FEEDBACK_PER_HOUR, t: got.until ? '<t:' + Math.ceil(got.until / 1000) + ':R>' : '' }), flags: 64 };
+  }
+  const { record } = got;
+  const lines = [text.fbThanks];
+  if (record.issue && record.issue.url) lines.push(botFmt(text.fbIssue, { url: record.issue.url }));
+  else if (record.issueError) lines.push(text.fbIssueFail);
+  return { content: lines.join('\n'), flags: 64 };
 }
 
 async function handleDiscordInteraction(request, env, ctx) {
@@ -3306,8 +3608,12 @@ async function handleDiscordInteraction(request, env, ctx) {
   }
   if (interaction.type === 1) return json({ type: 1 });
   if (interaction.type !== 2) return json({ type: 4, data: { content: '…', flags: 64 } });
-  // 查語料要讀大索引、披風要先算預覽圖：先回「處理中」再補上
-  if (interaction.data && ['translate', 'cape'].includes(interaction.data.name) && ctx && ctx.waitUntil) {
+  // 查語料要讀大索引、披風要先算預覽圖、譯文建議要開 GitHub Issue：先回「處理中」再補上
+  // （Discord 只等三秒）。/回饋 的「處理中」只給本人看，補上的回覆也就只有本人看得到。
+  const asked = interaction.data || {};
+  const slowFeedback = asked.name === 'feedback'
+    && (asked.options || []).some((o) => o.name === 'category' && o.value === 'translation');
+  if ((['translate', 'cape'].includes(asked.name) || slowFeedback) && ctx && ctx.waitUntil) {
     ctx.waitUntil((async () => {
       let data;
       try {
@@ -3319,7 +3625,7 @@ async function handleDiscordInteraction(request, env, ctx) {
         method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data),
       });
     })());
-    return json({ type: 5 });
+    return json(asked.name === 'feedback' ? { type: 5, data: { flags: 64 } } : { type: 5 });
   }
   return json({ type: 4, data: await botAnswer(env, interaction, ctx) });
 }
@@ -3468,6 +3774,11 @@ const site = {
     if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
     if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
     if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+    if (route === 'POST /feedback') return handleFeedback(request, env, now);
+    if (route === 'GET /admin/feedback') return handleFeedbackList(request, env, now);
+    if (route === 'POST /admin/feedback/status') return handleFeedbackStatus(request, env, now);
+    if (route === 'POST /admin/feedback/delete') return handleFeedbackDelete(request, env, now);
+    if (route === 'POST /admin/feedback/issue') return handleFeedbackIssue(request, env, now);
     if (route === 'POST /discord/interactions') return handleDiscordInteraction(request, env, ctx);
     if (route === 'GET /admin/discord') return handleDiscordInfo(request, env, now);
     if (route === 'POST /admin/discord/register') return handleDiscordRegister(request, env, now);

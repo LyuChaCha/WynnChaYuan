@@ -645,6 +645,14 @@ tasks.register('runNameWrapChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runNameWrapChecks' }
 
+tasks.register('runNameRowWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證名稱列拆成兩列時第二列整段是原文、從名字的起點開始，徽章列不被併進去'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameRowWrapTest'
+}
+tasks.named('check') { dependsOn 'runNameRowWrapChecks' }
+
 tasks.register('runGearNameChecks', JavaExec) {
     group = 'verification'
     description = '驗證裝備名不會被別的領域的同名條目頂替'
