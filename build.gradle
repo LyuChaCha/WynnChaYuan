@@ -1281,6 +1281,14 @@ tasks.register('runDialogueKinsokuChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueKinsokuChecks' }
 
+tasks.register('runDialogueNewlineChecks', JavaExec) {
+    group = 'verification'
+    description = '對話換行：譯文裡的 \\n 在就地取代模式下攤平成字距'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueNewlineTest'
+}
+tasks.named('check') { dependsOn 'runDialogueNewlineChecks' }
+
 // mixin 套件底下只能放 mixin 本身與設定外掛。
 //
 // 放過一個純 helper 進去（TypedText），編譯與 build 都沒話說，實機一開背包就炸：

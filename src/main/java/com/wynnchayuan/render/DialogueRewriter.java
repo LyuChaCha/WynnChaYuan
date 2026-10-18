@@ -1287,6 +1287,10 @@ public final class DialogueRewriter {
             spoken = typed;
         }
         hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
+        // 譯文裡手寫的換行（給小框用的，見 DialogueOverlay）在這裡沒有意義：
+        // 遊戲的對話框是動作列上的一行字，各列靠字型高度排開，\n 畫出來是亂碼。
+        // 列數由 wrap 照寬度重新分，所以把它攤平成一般的字距就好。issue #1298。
+        hit = oneLine(hit);
         // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
         //
         // 要在 fill <b>之後</b>檢查。先前檢的是<b>模板</b>，而真名、地名是
@@ -1888,6 +1892,30 @@ public final class DialogueRewriter {
      * <p>所以缺一個字就整段不換。區間表由 {@code tools/font-coverage.py}
      * 從字型檔本身抽出來，跟著字型一起放進 jar，換字型時一起重產。
      */
+    /**
+     * 把譯文裡的換行攤平。兩邊都是中日韓字就直接接上（中文字之間沒有空格），
+     * 否則換成一個空白；換行旁邊本來就有空白的，不再多加一個。
+     */
+    static String oneLine(String text) {
+        if (text.indexOf('\n') < 0) {
+            return text;
+        }
+        String[] parts = text.replace("\r", "").split("\n", -1);
+        StringBuilder out = new StringBuilder(parts[0]);
+        for (int i = 1; i < parts.length; i++) {
+            String next = parts[i];
+            boolean spaced = out.length() == 0 || next.isEmpty()
+                    || out.charAt(out.length() - 1) == ' ' || next.charAt(0) == ' ';
+            boolean wide = out.length() > 0 && !next.isEmpty()
+                    && out.charAt(out.length() - 1) >= 0x2E80 && next.charAt(0) >= 0x2E80;
+            if (!spaced && !wide) {
+                out.append(' ');
+            }
+            out.append(next);
+        }
+        return out.toString();
+    }
+
     /** 這一串在對話框裡畫不畫得出來——Wynncraft 自己那份或我們補的那套，有一個能畫就算。 */
     public static boolean renderable(String text) {
         return drawable(text) || covered(text, WynnChaYuan.language());
