@@ -79,8 +79,135 @@ final class Marquee {
         return false;
     }
 
+    // ------------------------------------------------------------------
+    // 內文的跑馬燈：就地取代時，塞不進對話框的那一列自己捲
+    // ------------------------------------------------------------------
+    //
+    // 上面那一半是<b>遊戲</b>在捲（選項太長，伺服器一格一格送視窗過來），我們只是
+    // 沿用譯文。內文沒有人替我們捲：譯文比原文多出一截時，對話框的列數是伺服器
+    // 定的，多不出一列。先前那一句只好整句留英文（後來改成讓小框接手）。
+    //
+    // 現在照選項跑馬燈的樣子自己捲：每一幀從那一列裡取一段剛好放得下的字，
+    // 開頭固定在原來的左緣，一次往左移一個字——跟遊戲自己的選項跑馬燈一樣是
+    // 整字移動，不會有半個字被切在框邊。
+    //
+    // 節奏（一輪）：停在開頭 HOLD_START → 以 SPEED 像素／秒往左捲 → 停在結尾
+    // HOLD_END → 跳回開頭重來。速度照像素算，不照字數，所以中日韓（一字 10px）
+    // 與拉丁字母（約 6px）捲起來一樣快。
+
+    /** 停在開頭多久才開始捲。要夠讀完前面幾列再看這一列。 */
+    static final long HOLD_START = 2000;
+
+    /** 捲到結尾停多久才跳回開頭。 */
+    static final long HOLD_END = 1500;
+
+    /** 每秒往左捲幾像素：中文約一秒四個字。 */
+    static final int SPEED = 40;
+
+    /**
+     * 每一條在捲的列：{@code {第一次出現, 最後一次出現}}。
+     *
+     * <p>要分開記：內文最後一列與選項那幾列可能同時在捲，共用一個時鐘的話，
+     * 每一幀都會被另一列當成「換了一列」重新歸零，誰都捲不動。
+     */
+    private static final Map<String, long[]> scrolls = new java.util.HashMap<>();
+
+    /**
+     * 一列多久沒出現就當成已經下去了。action bar 每 tick 都重送，一秒沒看到
+     * 就是對話換了；同一句再出現時從「停在開頭」重新開始。
+     */
+    private static final long FORGET_AFTER = 1000;
+
+    /**
+     * 這一列從第一次出現到現在過了多久（毫秒）。換了一列（鍵不同）就從 0 算——
+     * 每一句都從「停在開頭」開始。
+     */
+    static synchronized long since(String key, long now) {
+        scrolls.values().removeIf(seen -> now - seen[1] > FORGET_AFTER || now < seen[0]);
+        long[] seen = scrolls.computeIfAbsent(key, k -> new long[] {now, now});
+        seen[1] = now;
+        return Math.max(0, now - seen[0]);
+    }
+
+    /**
+     * 實機一格選項跑馬燈的原文（2026-09-18 回報的那一句，28 個字元）。遊戲要到比這更長
+     * 才開始捲，所以選項框的字區至少有這麼寬。
+     */
+    static final String CHOICE_SAMPLE = "Do you remember anything fro";
+
+    /**
+     * 選項那一列放得下多寬。
+     *
+     * <p>原文正在捲的時候，那一格就是框寬（{@code was}）；原文很短的選項（「...What?」）
+     * 框照樣是那麼寬，不能拿原文的寬度當上限——不然譯文只比原文長一點點就捲起來。
+     * 所以取「這一格的寬度」與「一整格的寬度」比較大的那個。
+     */
+    static int choiceRoom(int was, java.util.function.ToIntFunction<String> measure) {
+        return Math.max(was, measure.applyAsInt(CHOICE_SAMPLE));
+    }
+
+    /**
+     * 照 {@code key} 那一列的時鐘取這一幀的視窗；放得下就是整段。
+     */
+    static int[] scroll(String key, String text, int room,
+                        java.util.function.ToIntFunction<String> measure, long now) {
+        if (measure.applyAsInt(text) <= room) {
+            return new int[] {0, text.length()};
+        }
+        return window(text, room, measure, since(key, now));
+    }
+
+    /**
+     * 這一幀那一列要畫哪一段。
+     *
+     * @param row     那一列的完整內容（比框寬）
+     * @param room    框裡放得下多寬
+     * @param measure 量一段字有多寬
+     * @param elapsed 這一列出現多久了，見 {@link #since}
+     * @return {@code {起, 迄}}：畫 {@code row.substring(起, 迄)}；放得下時就是整列
+     */
+    static int[] window(String row, int room, java.util.function.ToIntFunction<String> measure,
+                        long elapsed) {
+        int length = row.length();
+        int total = measure.applyAsInt(row);
+        if (total <= room || length == 0) {
+            return new int[] {0, length};
+        }
+        int over = total - room;
+        long scroll = over * 1000L / SPEED;
+        long cycle = HOLD_START + scroll + HOLD_END;
+        long t = Math.max(0, elapsed) % cycle;
+        int px;
+        if (t < HOLD_START) {
+            px = 0;
+        } else if (t < HOLD_START + scroll) {
+            px = (int) Math.min(over, (t - HOLD_START) * SPEED / 1000);
+        } else {
+            px = over;
+        }
+        // 第一個「左緣已經捲過 px」的字。整字移動：框邊不會有半個字。
+        int from = 0;
+        while (from < length && measure.applyAsInt(row.substring(0, from)) < px) {
+            from += Character.charCount(row.codePointAt(from));
+        }
+        // 開頭剛好是空白就跳過，不然那一格整列會往右縮一下
+        if (from < length && row.charAt(from) == ' ') {
+            from++;
+        }
+        int to = from;
+        while (to < length) {
+            int next = to + Character.charCount(row.codePointAt(to));
+            if (measure.applyAsInt(row.substring(from, next)) > room) {
+                break;
+            }
+            to = next;
+        }
+        return new int[] {from, to};
+    }
+
     /** 給測試用。 */
-    static void clear() {
+    static synchronized void clear() {
         last.clear();
+        scrolls.clear();
     }
 }

@@ -1436,6 +1436,22 @@ tasks.register('runDialogueTooLongChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueTooLongChecks' }
 
+tasks.register('runDialogueMarqueeChecks', JavaExec) {
+    group = 'verification'
+    description = '就地取代塞不下的那一句：最後一列跑馬燈，不讓原文冒出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueMarqueeTest'
+}
+tasks.named('check') { dependsOn 'runDialogueMarqueeChecks' }
+
+tasks.register('runDialogueWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '選項與提示列的 \\n 攤平；小框自動折行避頭尾、不切英文單字、保留顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueWrapTest'
+}
+tasks.named('check') { dependsOn 'runDialogueWrapChecks' }
+
 tasks.register('runWmsBridgeChecks', JavaExec) {
     group = 'verification'
     description = 'WynnMarketSearch 的搜尋框打譯名找得到，而且不會把它的搜尋弄壞'
