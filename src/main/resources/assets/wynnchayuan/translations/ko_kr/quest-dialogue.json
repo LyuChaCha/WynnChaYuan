@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23305,
-  "translated": 23008,
+  "count": 23363,
+  "translated": 23066,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -2566,7 +2566,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#030": {
-   "src": "You are here for the job, aren't you? I have to apologize. It's gonna be trickier than I'd wanted for you.",
+   "src": "You are here for the job, aren't you? I have to apologize. It's going to be trickier than I'd wanted for you.",
    "dst": "일 때문에 오셨죠? 먼저 사과드려야겠네요. 생각보다 까다로운 일이 될 거예요.",
    "role": "desc",
    "kind": "dialogue",
@@ -2616,7 +2616,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#035": {
-   "src": "Climb the tree and look through the window.",
+   "src": "Climb up the tree and look through the window.",
    "dst": "나무에 올라가 창문으로 들여다보세요.",
    "role": "desc",
    "kind": "objective",
@@ -2706,8 +2706,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#044": {
-   "src": "Yes sir, everything went smoothly. did a great thing for the company.",
-   "dst": "네, 모든 게 순조로웠습니다. 회사를 위해 큰일을 해냈죠.",
+   "src": "Yes sir, everything went smoothly, {u} did a great thing for the company.",
+   "dst": "네, 모든 게 순조로웠습니다. {u} 님이 회사를 위해 큰일을 해냈죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2816,8 +2816,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#055": {
-   "src": "He will be here shortly to discuss the topic in more detai-",
-   "dst": "곧 여기 와서 더 자세히 논의하실 거야-",
+   "src": "He will be here shortly to discuss this problem in more detai-",
+   "dst": "곧 여기 와서 이 문제를 더 자세히 논의하실 거야-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -3196,7 +3196,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#093": {
-   "src": "Agh, dang it dang it dang it! You over there, help me out, would ya??",
+   "src": "Agh, dang it dang it dang it!! You over there, help me out, would ya??",
    "dst": "으악, 젠장 젠장 젠장! 거기, 좀 도와줄래??",
    "role": "desc",
    "kind": "dialogue",
@@ -3246,6 +3246,16 @@
    "source": "wiki"
   },
   "A Hunter's Calling#098": {
+   "src": "Well done! We'll get you taken care of nicely.",
+   "dst": "잘했어요! 이분은 저희가 잘 모실게요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Scientist Urelix",
+   "source": "wiki"
+  },
+  "A Hunter's Calling#099": {
    "src": "Oh, ah...heehee, heya cutie.. Whatcha doin' all the way out here?",
    "dst": "어, 아...히히, 안녕 귀염둥이.. 이런 데까지 뭐 하러 왔어?",
    "role": "desc",
@@ -3255,7 +3265,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#099": {
+  "A Hunter's Calling#100": {
    "src": "Just exploring, huh? I bet someone like you could use someone to...y'know, spend some time with...",
    "dst": "그냥 탐험 중이야? 너 같은 사람은 분명...그러니까, 같이 시간 보낼 사람이 필요할 텐데...",
    "role": "desc",
@@ -3265,7 +3275,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#100": {
+  "A Hunter's Calling#101": {
    "src": "...guess you're not interested? Oh...sorry if I came off as creepy. I'm just...really lonely, is all.",
    "dst": "...관심 없구나? 아...소름 끼쳤다면 미안. 난 그냥...정말 외로워서 그래.",
    "role": "desc",
@@ -3275,7 +3285,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#101": {
+  "A Hunter's Calling#102": {
    "src": "W-wait, those are...for me? Oh, you shouldn't have, I'm so happy!",
    "dst": "자, 잠깐, 그거...나 주는 거야? 어머, 뭘 이런 걸, 너무 기뻐!",
    "role": "desc",
@@ -3285,7 +3295,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#102": {
+  "A Hunter's Calling#103": {
    "src": "You want to take me out on a date? R-Really? You'll give me a chance? Yes, of course!",
    "dst": "나랑 데이트하자고? 저, 정말? 기회를 주는 거야? 응, 당연하지!",
    "role": "desc",
@@ -3295,7 +3305,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#103": {
+  "A Hunter's Calling#104": {
    "src": "Lead the way, please! I can't wait to see where we're headed!",
    "dst": "앞장서 줘! 어디로 가는지 너무 궁금해!",
    "role": "desc",
@@ -3303,16 +3313,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 17",
    "speaker": "Kohma",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#104": {
-   "src": "Well done! We'll get you taken care of nicely.",
-   "dst": "잘했어요! 이분은 저희가 잘 모실게요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 17",
-   "speaker": "Scientist Urelix",
    "source": "wiki"
   },
   "A Hunter's Calling#105": {
@@ -3376,7 +3376,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#111": {
-   "src": "Go on, step closer! You've done a wonderful service here.Examine the fruits of your labour.",
+   "src": "Go on, step closer! You've done a wonderful service here. Examine the fruits of your labor!",
    "dst": "자, 가까이 와 봐요! 정말 큰일을 해 주셨어요. 당신 노고의 결실을 살펴봐요.",
    "role": "desc",
    "kind": "dialogue",
@@ -3486,8 +3486,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#122": {
-   "src": "Head back to the slums and speak to the slum citizens.",
-   "dst": "빈민가로 돌아가 빈민가 주민들과 대화하세요.",
+   "src": "Tell the hooligans in the slums about the eviction notice.",
+   "dst": "빈민가의 불량배들에게 퇴거 통지를 알리세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Hunter's Calling",
@@ -3716,7 +3716,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#145": {
-   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I HATE THE IDEA.",
+   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I MIGHT HATE THE IDEA.",
    "dst": "둘 다 미쳤다는 것만 알아 둬라. 프로그램된 명령을 완수하려면, 아무리 싫어도 둘 다 파괴해야 한다.",
    "role": "desc",
    "kind": "dialogue",
@@ -4036,7 +4036,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#177": {
-   "src": "Why're they attacking us? This is on a way bigger scale than finding grapevines in my laundry machine!",
+   "src": "Why're they attacking us? This is on a way bigger scale than finding grape vines in my laundry machine!",
    "dst": "왜 우릴 공격하는 거야? 세탁기에서 포도 덩굴 나온 것보다 훨씬 큰일이잖아!",
    "role": "desc",
    "kind": "dialogue",
@@ -4056,7 +4056,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#179": {
-   "src": "Chief! I thought I asked you to put away your war drums!",
+   "src": "Chief! I thought I asked you to put away the war drums!",
    "dst": "족장님! 전쟁 북은 치워 달라고 부탁드렸잖아요!",
    "role": "desc",
    "kind": "dialogue",
@@ -4096,7 +4096,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#183": {
-   "src": "I knew this was some kind of mistake! I'll get to the bottom of this!",
+   "src": "I knew this was some kind of mistake. I'll get to the bottom of this!",
    "dst": "뭔가 착오일 줄 알았어요! 끝까지 파헤쳐 볼게요!",
    "role": "desc",
    "kind": "dialogue",
@@ -4106,7 +4106,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#184": {
-   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR WORK PERFECTLY, MECH PL-{~}Y.",
+   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR JOB PERFECTLY, MECH PL-{~}Y.",
    "dst": "전송 시작: 성가신 방해물이 생겼다. 넌 지금까지 임무를 완벽히 해냈다, 기계병 PL-{~}Y.",
    "role": "desc",
    "kind": "dialogue",
@@ -4186,7 +4186,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#192": {
-   "src": "WE WILL BE ABLE TO LET THEM TEAR EACH OTHER TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
+   "src": "WE WILL BE ABLE TO LET THEM TEAR THEMSELVES TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
    "dst": "우리가 끼어들어 의심을 사는 대신 그들끼리 서로를 갈가리 찢게 둘 수 있다.",
    "role": "desc",
    "kind": "dialogue",
@@ -4306,7 +4306,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#204": {
-   "src": "I usually don't do this... but I guess I have no other option. I need to get this information to the others.",
+   "src": "I usually don't do this, but I guess I have no other option. I need to get this information to the others.",
    "dst": "보통은 이러지 않는데... 다른 방법이 없나 봐. 이 정보를 다른 사람들에게 전해야 해.",
    "role": "desc",
    "kind": "dialogue",
@@ -4416,8 +4416,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#215": {
-   "src": "Admiral? It's Bak'al!",
-   "dst": "제독님? Bak'al입니다!",
+   "src": "Admiral?! It's Bak'al!",
+   "dst": "제독님?! Bak'al입니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -4566,8 +4566,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#230": {
-   "src": "You wonder. It is an end... But to what... purpose. What will you gain?",
-   "dst": "너는 의아해한다. 이것은 끝이다... 하지만 무슨... 목적으로. 너는 무엇을 얻는가?",
+   "src": "???: You wonder. It is an end... But to what...purpose. What will you gain?",
+   "dst": "???: 너는 의아해한다. 이것은 끝이다... 하지만 무슨... 목적으로. 너는 무엇을 얻는가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -4706,8 +4706,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#244": {
-   "src": "We two, here... end.",
-   "dst": "우리 둘은, 여기서... 끝난다.",
+   "src": "???: We two, here...end.",
+   "dst": "???: 우리 둘은, 여기서... 끝난다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -4724,6 +4724,586 @@
    "stage": "Stage 29",
    "speaker": "???",
    "source": "wiki"
+  },
+  "A Hunter's Calling#246": {
+   "src": "We destroy {p} today. The great fortress will fall.",
+   "dst": "오늘 우리는 {p}을(를) 무너뜨린다. 위대한 요새는 함락될 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#247": {
+   "src": "I will find their protector, Bob. You each will engage the guards and city dwellers. {~} citizens.",
+   "dst": "나는 그들의 수호자, Bob을 찾겠다. 너희는 각자 경비병과 도시 주민들을 상대해라. 시민 {~}명이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#248": {
+   "src": "If each of you kills {~} citizens, then the city will run empty. So, you shall make it run empty.",
+   "dst": "너희가 각자 시민 {~}명씩 죽이면, 도시는 텅 비게 된다. 그러니, 도시를 텅 비게 만들어라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#249": {
+   "src": "Kill ten {p} Citizens",
+   "dst": "{p} 시민 열 명을 처치하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#250": {
+   "src": "When the armies of {p} reached the once noble fort, it was corrupted ashes.",
+   "dst": "{p}의 군대가 한때 고귀했던 요새에 도착했을 때, 그곳은 타락한 잿더미가 되어 있었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#251": {
+   "src": "The unrighteous sought it. The noble hid it. The one seeking answers found more questions. Another beginning...to a new end.",
+   "dst": "불의한 자가 그것을 구했다. 고귀한 자가 그것을 숨겼다. 답을 구한 자는 더 많은 물음을 찾았다. 또 다른 시작... 새로운 끝을 향한.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#252": {
+   "src": "Head to town and get further information from the employee.",
+   "dst": "마을로 가서 직원에게 자세한 정보를 얻으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#253": {
+   "src": "Head to the northern part of the bank and find a way up to the ceiling.",
+   "dst": "은행 북쪽으로 가서 천장으로 올라갈 방법을 찾으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#254": {
+   "src": "Make sure to break the anvil trap before breaking the fences and escaping the area",
+   "dst": "울타리를 부수고 이곳을 빠져나가기 전에 모루 함정부터 부수세요",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#255": {
+   "src": "The humans didn't notice any difference after the new laws, but the company was in full force...",
+   "dst": "새 법이 시행된 뒤에도 인간들은 아무런 차이를 느끼지 못했지만, 회사는 전력으로 움직이고 있었다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#256": {
+   "src": "I send you in my place. He will expect me. He will not expect one that looks as human as you.",
+   "dst": "내 대신 너를 보낸다. 그는 나를 예상하겠지. 너만큼 인간처럼 보이는 자는 예상하지 못할 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#257": {
+   "src": "If you fail, it will set us back greatly. It will give them a chance. Do not let them get that chance.",
+   "dst": "네가 실패하면 우리는 크게 후퇴한다. 그들에게 기회를 주게 된다. 그들이 그 기회를 얻게 두지 마라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#258": {
+   "src": "{p} is behind me. Move.",
+   "dst": "{p}은(는) 내 뒤에 있다. 움직여라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#259": {
+   "src": "Click to fight\nTheorick again",
+   "dst": "클릭하여 Theorick과\n다시 싸우기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#260": {
+   "src": "Do you wish to go back to battle Theorick from A Hunter's Calling again?",
+   "dst": "A Hunter's Calling의 Theorick과 다시 싸우러 돌아가시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#261": {
+   "src": "Because of Theorick's passing, {p} never was saved.",
+   "dst": "Theorick의 죽음으로 인해, {p}은(는) 끝내 구원받지 못했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#262": {
+   "src": "The corruption fully took over the town and its citizens.",
+   "dst": "타락이 마을과 주민들을 완전히 집어삼켰다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#263": {
+   "src": "The Twains fall away. The peon has done its job well.",
+   "dst": "Twain 가문은 스러진다. 졸개는 제 일을 훌륭히 해냈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#264": {
+   "src": "An end, ousted by further action. An end, brought to six. An end, to the surety of the haughty. An end, of the world...in some fashion.",
+   "dst": "더 큰 행동에 밀려난 끝. 여섯에게 닥친 끝. 오만한 자의 확신에 대한 끝. 세상의 끝... 어떤 식으로든.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#265": {
+   "src": "Peon. You have been created for one purpose. You will ensure the fall of {p}.",
+   "dst": "졸개여. 너는 단 하나의 목적을 위해 만들어졌다. {p}의 몰락을 확실히 해라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#266": {
+   "src": "The Corrupter of Worlds was trapped within this cave. The fool decimated my army when I laid siege last.",
+   "dst": "세계의 타락자는 이 동굴에 갇혀 있었다. 지난번 내가 포위했을 때, 그 멍청이가 내 군대를 쑥대밭으로 만들었지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#267": {
+   "src": "Since then, it has been sealed in. The magic of the Twains is strong here. It cannot escape.",
+   "dst": "그 뒤로 그것은 봉인되어 있다. 이곳에서는 Twain 가문의 마법이 강하다. 그것은 빠져나갈 수 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#268": {
+   "src": "You will release it from this cave. Whether you die afterwards is irrelevant. It will destroy {p} of its own accord.",
+   "dst": "너는 그것을 이 동굴에서 풀어 줄 것이다. 그 뒤에 네가 죽든 말든 상관없다. 그것은 스스로 {p}을(를) 파괴할 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#269": {
+   "src": "Venture through the cave. Break the Twains' seal. And ensure it has a way to escape.",
+   "dst": "동굴을 지나가라. Twain 가문의 봉인을 깨라. 그리고 그것이 빠져나갈 길을 확보해라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#270": {
+   "src": "Defend yourself. It is too far gone to control. You will be attacked.",
+   "dst": "스스로를 지켜라. 그것은 이미 통제할 수 없는 지경이다. 너는 공격받을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#271": {
+   "src": "[Right Click to Dig]",
+   "dst": "[우클릭하여 파기]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#272": {
+   "src": "The roaring of the Corrupter of Worlds is audible from here. Has it noticed you?",
+   "dst": "여기서도 세계의 타락자의 포효가 들린다. 그것이 너를 눈치챈 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#273": {
+   "src": "I do not have the time to create another peon for this job. Do not fail.",
+   "dst": "이 일을 위해 졸개를 또 만들 시간은 없다. 실패하지 마라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#274": {
+   "src": "The Corrupteds are malleable. Create some kind of bridge with them. Answer how for yourself.",
+   "dst": "타락한 자들은 모양을 바꿀 수 있다. 그들로 다리 같은 것을 만들어라. 방법은 스스로 찾아라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#275": {
+   "src": "[Collect Mobs To Here]",
+   "dst": "[몹을 여기로 모으기]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#276": {
+   "src": "The Corrupter is awake. And it is close. Move, peon! You still must break the seal.",
+   "dst": "타락자가 깨어났다. 그리고 가까이 있다. 움직여라, 졸개여! 아직 봉인을 깨야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#277": {
+   "src": "I am unfamiliar with Twain magic. Use the intellect I have given you. Break the seal.",
+   "dst": "나는 Twain 마법을 잘 모른다. 내가 준 지성을 써라. 봉인을 깨라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#278": {
+   "src": "Your job is done... And you survived. I will save you for another mission, should I need you. Now...watch.",
+   "dst": "네 일은 끝났다... 그리고 살아남았군. 필요해지면 다른 임무에 쓰도록 남겨 두지. 이제...지켜봐라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#279": {
+   "src": "Maybe you can create a trail of emeralds and lure the villager back to the factory?",
+   "dst": "에메랄드로 길을 만들어 주민을 공장까지 꾀어낼 수 있지 않을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#280": {
+   "src": "You should finish escorting your current companion before talking to someone else!",
+   "dst": "다른 사람과 이야기하기 전에 지금 동행 중인 사람부터 호위를 마치세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#281": {
+   "src": "Just get me to {p} or a doctor or even a sink!",
+   "dst": "{p}(으)로 데려가 줘, 아니면 의사나 세면대라도!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Anast",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#282": {
+   "src": "Maybe you can lure the villager by flirting?",
+   "dst": "작업을 걸어서 주민을 꾀어낼 수 있지 않을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#283": {
+   "src": "Heya, again. Thinking of it, a lovely one like you is probably spoken for already, huh?",
+   "dst": "안녕, 또 봤네. 생각해 보니, 너처럼 멋진 사람은 이미 임자가 있겠지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#284": {
+   "src": "Guess I'll just go pick some flowers for myself.",
+   "dst": "그냥 나 혼자 꽃이나 따러 가야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#285": {
+   "src": "But this time, it was between Dwarves and Dwarves... And yet again blood was spilled.",
+   "dst": "하지만 이번에는 드워프와 드워프 사이의 싸움이었다... 그리고 또다시 피가 흘렀다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#286": {
+   "src": "[Right Click to Break the Boulder]",
+   "dst": "[우클릭하여 바위 부수기]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#287": {
+   "src": "[Right Click to Take the Totem]",
+   "dst": "[우클릭하여 토템 가져가기]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#288": {
+   "src": "[Place Totem]",
+   "dst": "[토템 놓기]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#289": {
+   "src": "Objective: Eliminate Avos presence.",
+   "dst": "목표: Avos 제거.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "Corkus Guard",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#290": {
+   "src": "Maxie never made it back to the war scene. The civil war advanced faster than anyone could have anticipated.",
+   "dst": "Maxie는 끝내 전장으로 돌아가지 못했다. 내전은 누구의 예상보다도 빠르게 번져 갔다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#291": {
+   "src": "The once peaceful Avos were forced to flee their home island, ravaged by machines and toxic scrap...",
+   "dst": "한때 평화로웠던 Avos는 기계와 유독한 고철로 황폐해진 고향 섬을 떠나야만 했다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#292": {
+   "src": "In time, Corkus became known as the island torn apart by war. Its name would live on in infamy.",
+   "dst": "세월이 흘러, Corkus는 전쟁으로 찢긴 섬으로 알려지게 되었다. 그 이름은 오명과 함께 남게 되었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#293": {
+   "src": "{p}. What a foolish place for a central trading town, so close to the Roots.",
+   "dst": "{p}. 교역의 중심 도시를 이런 곳에, 그것도 Roots와 이렇게 가까이 세우다니 어리석군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#294": {
+   "src": "You will destroy the guards. I will destroy the town.",
+   "dst": "너는 경비병들을 처치해라. 나는 마을을 파괴하겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#295": {
+   "src": "Now, peon. Move.",
+   "dst": "자, 졸개여. 움직여라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#296": {
+   "src": "The strongest of {p}' army is dead. The rest are hiding in fear. {p} will fall.",
+   "dst": "{p} 군대의 최강자는 죽었다. 나머지는 겁에 질려 숨어 있다. {p}은(는) 함락될 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#297": {
+   "src": "Self-confident idiots. I won't even bother dealing with you two.",
+   "dst": "자신만만한 멍청이들. 너희 둘은 상대할 가치도 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#298": {
+   "src": "We?",
+   "dst": "우리?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#299": {
+   "src": "Peon. Deal with this nonsense.",
+   "dst": "졸개여. 이 헛소리를 처리해라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#300": {
+   "src": "You take too much stock in your ability. My victory is inevitable.",
+   "dst": "네 능력을 너무 과신하는군. 나의 승리는 필연이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 29",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#301": {
+   "src": "It stood as a monument to wealth, prosperity, and power in the Wynn province. It now stands as a corrupted wasteland.",
+   "dst": "그곳은 한때 Wynn 지방의 부와 번영, 그리고 권력을 상징하는 기념비였다. 이제는 타락한 황무지로 남아 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#302": {
+   "src": "The ruins of the city are a grim reminder of the power of corruption. And so...the people began to lose hope.",
+   "dst": "도시의 폐허는 타락의 힘을 일깨우는 음울한 증표다. 그리하여...사람들은 희망을 잃기 시작했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#303": {
+   "src": "You have gained the power to end. You have unlocked The Hunted Mode.",
+   "dst": "끝을 낼 힘을 얻었다. The Hunted Mode가 해금되었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",

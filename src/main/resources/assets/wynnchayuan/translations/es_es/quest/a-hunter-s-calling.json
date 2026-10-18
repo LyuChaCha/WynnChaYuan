@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Hunter's Calling",
-  "count": 246,
-  "translated": 246,
+  "count": 304,
+  "translated": 304,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -311,7 +311,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#030": {
-   "src": "You are here for the job, aren't you? I have to apologize. It's gonna be trickier than I'd wanted for you.",
+   "src": "You are here for the job, aren't you? I have to apologize. It's going to be trickier than I'd wanted for you.",
    "dst": "Vienes por el trabajo, ¿no? Lo siento, pero va a ser más difícil de lo que quería.",
    "role": "desc",
    "kind": "dialogue",
@@ -361,7 +361,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#035": {
-   "src": "Climb the tree and look through the window.",
+   "src": "Climb up the tree and look through the window.",
    "dst": "Sube al árbol y mira por la ventana.",
    "role": "desc",
    "kind": "objective",
@@ -451,8 +451,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#044": {
-   "src": "Yes sir, everything went smoothly. did a great thing for the company.",
-   "dst": "Sí, señor, todo salió bien. hizo un gran favor a la empresa.",
+   "src": "Yes sir, everything went smoothly, {u} did a great thing for the company.",
+   "dst": "Sí, señor, todo salió bien; {u} hizo un gran favor a la empresa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -561,8 +561,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#055": {
-   "src": "He will be here shortly to discuss the topic in more detai-",
-   "dst": "Llegará en breve para tratar el tema con más detal-",
+   "src": "He will be here shortly to discuss this problem in more detai-",
+   "dst": "Llegará en breve para tratar este problema con más detal-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -941,7 +941,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#093": {
-   "src": "Agh, dang it dang it dang it! You over there, help me out, would ya??",
+   "src": "Agh, dang it dang it dang it!! You over there, help me out, would ya??",
    "dst": "¡Ay, maldita sea, maldita sea! ¡Oye, tú, ayúdame, ¿quieres?!",
    "role": "desc",
    "kind": "dialogue",
@@ -991,6 +991,16 @@
    "source": "wiki"
   },
   "A Hunter's Calling#098": {
+   "src": "Well done! We'll get you taken care of nicely.",
+   "dst": "¡Bien hecho! Te cuidaremos muy bien.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Scientist Urelix",
+   "source": "wiki"
+  },
+  "A Hunter's Calling#099": {
    "src": "Oh, ah...heehee, heya cutie.. Whatcha doin' all the way out here?",
    "dst": "Oh, ah... jiji, hola, cielo... ¿Qué haces por aquí tan lejos?",
    "role": "desc",
@@ -1000,7 +1010,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#099": {
+  "A Hunter's Calling#100": {
    "src": "Just exploring, huh? I bet someone like you could use someone to...y'know, spend some time with...",
    "dst": "Explorando, ¿eh? Seguro que a alguien como tú le vendría bien alguien con quien... ya sabes, pasar el rato...",
    "role": "desc",
@@ -1010,7 +1020,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#100": {
+  "A Hunter's Calling#101": {
    "src": "...guess you're not interested? Oh...sorry if I came off as creepy. I'm just...really lonely, is all.",
    "dst": "...¿no te interesa? Oh... perdona si te he dado mal rollo. Es que... la soledad me pesa mucho, nada más.",
    "role": "desc",
@@ -1020,7 +1030,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#101": {
+  "A Hunter's Calling#102": {
    "src": "W-wait, those are...for me? Oh, you shouldn't have, I'm so happy!",
    "dst": "¿E-espera, eso es... para mí? ¡Oh, no tenías por qué, qué feliz soy!",
    "role": "desc",
@@ -1030,7 +1040,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#102": {
+  "A Hunter's Calling#103": {
    "src": "You want to take me out on a date? R-Really? You'll give me a chance? Yes, of course!",
    "dst": "¿Quieres invitarme a una cita? ¿D-de verdad? ¿Me darás una oportunidad? ¡Sí, claro!",
    "role": "desc",
@@ -1040,7 +1050,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#103": {
+  "A Hunter's Calling#104": {
    "src": "Lead the way, please! I can't wait to see where we're headed!",
    "dst": "¡Guía tú, por favor! ¡Qué ganas de ver adónde vamos!",
    "role": "desc",
@@ -1048,16 +1058,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 17",
    "speaker": "Kohma",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#104": {
-   "src": "Well done! We'll get you taken care of nicely.",
-   "dst": "¡Bien hecho! Te cuidaremos muy bien.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 17",
-   "speaker": "Scientist Urelix",
    "source": "wiki"
   },
   "A Hunter's Calling#105": {
@@ -1121,7 +1121,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#111": {
-   "src": "Go on, step closer! You've done a wonderful service here.Examine the fruits of your labour.",
+   "src": "Go on, step closer! You've done a wonderful service here. Examine the fruits of your labor!",
    "dst": "¡Vamos, acércate! Has hecho un servicio magnífico. Contempla los frutos de tu trabajo.",
    "role": "desc",
    "kind": "dialogue",
@@ -1231,8 +1231,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#122": {
-   "src": "Head back to the slums and speak to the slum citizens.",
-   "dst": "Vuelve a los barrios bajos y habla con sus habitantes.",
+   "src": "Tell the hooligans in the slums about the eviction notice.",
+   "dst": "Informa a los gamberros de los barrios bajos de la orden de desalojo.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Hunter's Calling",
@@ -1461,7 +1461,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#145": {
-   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I HATE THE IDEA.",
+   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I MIGHT HATE THE IDEA.",
    "dst": "BASTA CON QUE SEPAS QUE AMBOS ESTÁN LOCOS. SI HE DE CUMPLIR MIS ÓRDENES PROGRAMADAS, HAY QUE DESTRUIR A AMBOS, POR MUCHO QUE ME DISGUSTE.",
    "role": "desc",
    "kind": "dialogue",
@@ -1781,7 +1781,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#177": {
-   "src": "Why're they attacking us? This is on a way bigger scale than finding grapevines in my laundry machine!",
+   "src": "Why're they attacking us? This is on a way bigger scale than finding grape vines in my laundry machine!",
    "dst": "¿Por qué nos atacan? ¡Esto es mucho peor que encontrar parras en mi lavadora!",
    "role": "desc",
    "kind": "dialogue",
@@ -1801,7 +1801,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#179": {
-   "src": "Chief! I thought I asked you to put away your war drums!",
+   "src": "Chief! I thought I asked you to put away the war drums!",
    "dst": "¡Jefe! ¡Creía haberte pedido que guardaras los tambores de guerra!",
    "role": "desc",
    "kind": "dialogue",
@@ -1841,7 +1841,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#183": {
-   "src": "I knew this was some kind of mistake! I'll get to the bottom of this!",
+   "src": "I knew this was some kind of mistake. I'll get to the bottom of this!",
    "dst": "¡Sabía que era algún error! ¡Llegaré al fondo de esto!",
    "role": "desc",
    "kind": "dialogue",
@@ -1851,7 +1851,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#184": {
-   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR WORK PERFECTLY, MECH PL-{~}Y.",
+   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR JOB PERFECTLY, MECH PL-{~}Y.",
    "dst": "INICIO DE TRANSMISIÓN: HAY UN ESTORBO MOLESTO EN EL PLAN. HAS HECHO TU TRABAJO A LA PERFECCIÓN, MECH PL-{~}Y.",
    "role": "desc",
    "kind": "dialogue",
@@ -1931,7 +1931,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#192": {
-   "src": "WE WILL BE ABLE TO LET THEM TEAR EACH OTHER TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
+   "src": "WE WILL BE ABLE TO LET THEM TEAR THEMSELVES TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
    "dst": "PODREMOS DEJAR QUE SE DESPEDACEN ENTRE ELLOS EN LUGAR DE INTERVENIR Y LEVANTAR SOSPECHAS.",
    "role": "desc",
    "kind": "dialogue",
@@ -2051,7 +2051,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#204": {
-   "src": "I usually don't do this... but I guess I have no other option. I need to get this information to the others.",
+   "src": "I usually don't do this, but I guess I have no other option. I need to get this information to the others.",
    "dst": "No suelo hacer esto... pero supongo que no tengo alternativa. Tengo que llevar esta información a los demás.",
    "role": "desc",
    "kind": "dialogue",
@@ -2161,8 +2161,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#215": {
-   "src": "Admiral? It's Bak'al!",
-   "dst": "¿Almirante? ¡Es Bak'al!",
+   "src": "Admiral?! It's Bak'al!",
+   "dst": "¿¡Almirante!? ¡Es Bak'al!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2311,8 +2311,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#230": {
-   "src": "You wonder. It is an end... But to what... purpose. What will you gain?",
-   "dst": "Te preguntas. Es un fin... ¿Pero con qué... propósito? ¿Qué ganarás?",
+   "src": "???: You wonder. It is an end... But to what...purpose. What will you gain?",
+   "dst": "???: Te preguntas. Es un fin... ¿Pero con qué... propósito? ¿Qué ganarás?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2451,8 +2451,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#244": {
-   "src": "We two, here... end.",
-   "dst": "Nosotros dos, aquí... terminamos.",
+   "src": "???: We two, here...end.",
+   "dst": "???: Nosotros dos, aquí... terminamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2469,6 +2469,586 @@
    "stage": "Stage 29",
    "speaker": "???",
    "source": "wiki"
+  },
+  "A Hunter's Calling#246": {
+   "src": "We destroy {p} today. The great fortress will fall.",
+   "dst": "Hoy destruimos {p}. La gran fortaleza caerá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#247": {
+   "src": "I will find their protector, Bob. You each will engage the guards and city dwellers. {~} citizens.",
+   "dst": "Yo buscaré a su protector, Bob. Cada uno de vosotros se encargará de los guardias y los habitantes de la ciudad. {~} ciudadanos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#248": {
+   "src": "If each of you kills {~} citizens, then the city will run empty. So, you shall make it run empty.",
+   "dst": "Si cada uno de vosotros mata a {~} ciudadanos, la ciudad quedará vacía. Así que la dejaréis vacía.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#249": {
+   "src": "Kill ten {p} Citizens",
+   "dst": "Mata a diez ciudadanos de {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#250": {
+   "src": "When the armies of {p} reached the once noble fort, it was corrupted ashes.",
+   "dst": "Cuando los ejércitos de {p} llegaron al otrora noble fuerte, solo quedaban cenizas corruptas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#251": {
+   "src": "The unrighteous sought it. The noble hid it. The one seeking answers found more questions. Another beginning...to a new end.",
+   "dst": "El injusto lo buscó. El noble lo escondió. Quien buscaba respuestas halló más preguntas. Otro comienzo... para un nuevo fin.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#252": {
+   "src": "Head to town and get further information from the employee.",
+   "dst": "Ve al pueblo y pide más información al empleado.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#253": {
+   "src": "Head to the northern part of the bank and find a way up to the ceiling.",
+   "dst": "Dirígete a la parte norte del banco y busca la forma de subir al techo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#254": {
+   "src": "Make sure to break the anvil trap before breaking the fences and escaping the area",
+   "dst": "Asegúrate de romper la trampa del yunque antes de romper las vallas y escapar de la zona",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#255": {
+   "src": "The humans didn't notice any difference after the new laws, but the company was in full force...",
+   "dst": "Los humanos no notaron ninguna diferencia tras las nuevas leyes, pero la compañía actuaba a pleno rendimiento...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#256": {
+   "src": "I send you in my place. He will expect me. He will not expect one that looks as human as you.",
+   "dst": "Te envío en mi lugar. Él me esperará a mí. No esperará a alguien que parezca tan humano como tú.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#257": {
+   "src": "If you fail, it will set us back greatly. It will give them a chance. Do not let them get that chance.",
+   "dst": "Si fallas, nos hará retroceder mucho. Les dará una oportunidad. No dejes que la tengan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#258": {
+   "src": "{p} is behind me. Move.",
+   "dst": "{p} está detrás de mí. Muévete.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#259": {
+   "src": "Click to fight\nTheorick again",
+   "dst": "Haz clic para luchar\nde nuevo contra Theorick",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#260": {
+   "src": "Do you wish to go back to battle Theorick from A Hunter's Calling again?",
+   "dst": "¿Quieres volver a luchar contra Theorick de A Hunter's Calling?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#261": {
+   "src": "Because of Theorick's passing, {p} never was saved.",
+   "dst": "Por la muerte de Theorick, {p} nunca llegó a salvarse.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#262": {
+   "src": "The corruption fully took over the town and its citizens.",
+   "dst": "La corrupción se apoderó por completo del pueblo y de sus habitantes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#263": {
+   "src": "The Twains fall away. The peon has done its job well.",
+   "dst": "Los Twain se desvanecen. El peón ha hecho bien su trabajo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#264": {
+   "src": "An end, ousted by further action. An end, brought to six. An end, to the surety of the haughty. An end, of the world...in some fashion.",
+   "dst": "Un fin, desplazado por más actos. Un fin, llevado a seis. Un fin, a la certeza del altivo. Un fin, del mundo... en cierto modo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#265": {
+   "src": "Peon. You have been created for one purpose. You will ensure the fall of {p}.",
+   "dst": "Peón. Te crearon con un único fin. Te asegurarás de que {p} caiga.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#266": {
+   "src": "The Corrupter of Worlds was trapped within this cave. The fool decimated my army when I laid siege last.",
+   "dst": "El Corruptor de mundos quedó atrapado en esta cueva. Ese necio diezmó mi ejército la última vez que puse asedio.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#267": {
+   "src": "Since then, it has been sealed in. The magic of the Twains is strong here. It cannot escape.",
+   "dst": "Desde entonces ha permanecido sellado. La magia de los Twain es fuerte aquí. No puede escapar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#268": {
+   "src": "You will release it from this cave. Whether you die afterwards is irrelevant. It will destroy {p} of its own accord.",
+   "dst": "Lo liberarás de esta cueva. Que mueras después es irrelevante. Destruirá {p} por sí solo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#269": {
+   "src": "Venture through the cave. Break the Twains' seal. And ensure it has a way to escape.",
+   "dst": "Recorre la cueva. Rompe el sello de los Twain. Y asegúrate de que tenga por dónde escapar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#270": {
+   "src": "Defend yourself. It is too far gone to control. You will be attacked.",
+   "dst": "Defiéndete. Está demasiado fuera de sí para controlarlo. Te atacará.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#271": {
+   "src": "[Right Click to Dig]",
+   "dst": "[Clic derecho para cavar]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#272": {
+   "src": "The roaring of the Corrupter of Worlds is audible from here. Has it noticed you?",
+   "dst": "Desde aquí se oye el rugido del Corruptor de mundos. ¿Te habrá notado?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#273": {
+   "src": "I do not have the time to create another peon for this job. Do not fail.",
+   "dst": "No tengo tiempo de crear otro peón para este trabajo. No falles.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#274": {
+   "src": "The Corrupteds are malleable. Create some kind of bridge with them. Answer how for yourself.",
+   "dst": "Los corruptos son maleables. Construye con ellos una especie de puente. Cómo hacerlo, descúbrelo tú.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#275": {
+   "src": "[Collect Mobs To Here]",
+   "dst": "[Reúne a los monstruos aquí]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#276": {
+   "src": "The Corrupter is awake. And it is close. Move, peon! You still must break the seal.",
+   "dst": "El Corruptor ha despertado. Y está cerca. ¡Muévete, peón! Aún debes romper el sello.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#277": {
+   "src": "I am unfamiliar with Twain magic. Use the intellect I have given you. Break the seal.",
+   "dst": "No conozco la magia de los Twain. Usa el intelecto que te he dado. Rompe el sello.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#278": {
+   "src": "Your job is done... And you survived. I will save you for another mission, should I need you. Now...watch.",
+   "dst": "Tu trabajo ha terminado... Y has sobrevivido. Te guardaré para otra misión, si te necesito. Ahora... observa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#279": {
+   "src": "Maybe you can create a trail of emeralds and lure the villager back to the factory?",
+   "dst": "¿Y si haces un rastro de esmeraldas para atraer al aldeano de vuelta a la fábrica?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#280": {
+   "src": "You should finish escorting your current companion before talking to someone else!",
+   "dst": "¡Deberías terminar de escoltar a tu acompañante actual antes de hablar con otra persona!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#281": {
+   "src": "Just get me to {p} or a doctor or even a sink!",
+   "dst": "¡Llévame a {p} o a un médico, o aunque sea a un lavabo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Anast",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#282": {
+   "src": "Maybe you can lure the villager by flirting?",
+   "dst": "¿Y si atraes al aldeano coqueteando?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#283": {
+   "src": "Heya, again. Thinking of it, a lovely one like you is probably spoken for already, huh?",
+   "dst": "Hola otra vez. Pensándolo bien, alguien tan encantador como tú ya tendrá pareja, ¿no?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#284": {
+   "src": "Guess I'll just go pick some flowers for myself.",
+   "dst": "Supongo que iré a recoger flores para mí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#285": {
+   "src": "But this time, it was between Dwarves and Dwarves... And yet again blood was spilled.",
+   "dst": "Pero esta vez fue entre enanos y enanos... Y una vez más se derramó sangre.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#286": {
+   "src": "[Right Click to Break the Boulder]",
+   "dst": "[Clic derecho para romper la roca]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#287": {
+   "src": "[Right Click to Take the Totem]",
+   "dst": "[Clic derecho para coger el tótem]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#288": {
+   "src": "[Place Totem]",
+   "dst": "[Colocar tótem]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#289": {
+   "src": "Objective: Eliminate Avos presence.",
+   "dst": "Objetivo: eliminar presencia Avos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "Corkus Guard",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#290": {
+   "src": "Maxie never made it back to the war scene. The civil war advanced faster than anyone could have anticipated.",
+   "dst": "Maxie nunca regresó al frente. La guerra civil avanzó más rápido de lo que nadie habría podido prever.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#291": {
+   "src": "The once peaceful Avos were forced to flee their home island, ravaged by machines and toxic scrap...",
+   "dst": "Los Avos, antes pacíficos, se vieron obligados a huir de su isla natal, asolada por máquinas y chatarra tóxica...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#292": {
+   "src": "In time, Corkus became known as the island torn apart by war. Its name would live on in infamy.",
+   "dst": "Con el tiempo, Corkus pasó a ser conocida como la isla desgarrada por la guerra. Su nombre perduraría en la infamia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#293": {
+   "src": "{p}. What a foolish place for a central trading town, so close to the Roots.",
+   "dst": "{p}. Qué lugar más necio para una ciudad comercial central, tan cerca de las Roots.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#294": {
+   "src": "You will destroy the guards. I will destroy the town.",
+   "dst": "Tú destruirás a los guardias. Yo destruiré la ciudad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#295": {
+   "src": "Now, peon. Move.",
+   "dst": "Ahora, peón. Muévete.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#296": {
+   "src": "The strongest of {p}' army is dead. The rest are hiding in fear. {p} will fall.",
+   "dst": "El más fuerte del ejército de {p} ha muerto. El resto se esconde aterrado. {p} caerá.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#297": {
+   "src": "Self-confident idiots. I won't even bother dealing with you two.",
+   "dst": "Idiotas engreídos. Ni me molestaré en ocuparme de vosotros dos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#298": {
+   "src": "We?",
+   "dst": "¿Nosotros?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#299": {
+   "src": "Peon. Deal with this nonsense.",
+   "dst": "Peón. Encárgate de esta tontería.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#300": {
+   "src": "You take too much stock in your ability. My victory is inevitable.",
+   "dst": "Confías demasiado en tu habilidad. Mi victoria es inevitable.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 29",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#301": {
+   "src": "It stood as a monument to wealth, prosperity, and power in the Wynn province. It now stands as a corrupted wasteland.",
+   "dst": "Se alzaba como monumento a la riqueza, la prosperidad y el poder de la provincia de Wynn. Ahora es un páramo corrupto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#302": {
+   "src": "The ruins of the city are a grim reminder of the power of corruption. And so...the people began to lose hope.",
+   "dst": "Las ruinas de la ciudad son un sombrío recordatorio del poder de la corrupción. Y así... la gente empezó a perder la esperanza.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#303": {
+   "src": "You have gained the power to end. You have unlocked The Hunted Mode.",
+   "dst": "Has obtenido el poder de poner fin. Has desbloqueado The Hunted Mode.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
