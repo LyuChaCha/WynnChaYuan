@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 31,
-  "translated": 31
+  "count": 47,
+  "translated": 47
  },
  "entries": {
   "choice#c000": {
@@ -321,6 +321,172 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#001": {
+   "src": "Favorite type of bread?",
+   "dst": "¿Tu tipo de pan favorito?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#002": {
+   "src": "What's with Relend?",
+   "dst": "¿Qué pasa con Relend?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#003": {
+   "src": "Have you seen a parrot aroun",
+   "dst": "¿Has visto un loro por aquí?",
+   "full": "Have you seen a parrot around here?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#011": {
+   "src": "What service do you provide?",
+   "dst": "¿Qué servicio ofreces?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#012": {
+   "src": "Can you tell my fortune? [{~}",
+   "dst": "¿Puedes leerme la fortuna? [{~} LE]",
+   "full": "Can you tell my fortune? [{~} LE]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#017": {
+   "src": "Just here to say hi",
+   "dst": "Solo vengo a saludar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#019": {
+   "src": "I'm alright, thanks",
+   "dst": "Estoy bien, gracias",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#001": {
+   "src": "Stay here",
+   "dst": "Quedarse aquí",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#002": {
+   "src": "Go back and fight Therorick!",
+   "dst": "¡Volver y luchar contra Therorick!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#001": {
+   "src": "I'll keep adventuring, and s",
+   "dst": "Seguiré de aventuras y veré a quién puedo ayudar.",
+   "full": "I'll keep adventuring, and see who I can help.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#019": {
+   "src": "I might explore a little, se",
+   "dst": "Quizá explore un poco, a ver qué más hay por ahí.",
+   "full": "I might explore a little, see what else there is out there.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#051": {
+   "src": "I'll stick around here a lit",
+   "dst": "Me quedaré por aquí un poco más.",
+   "full": "I'll stick around here a little longer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#063": {
+   "src": "I'm not sure what I'll do ne",
+   "dst": "No sé muy bien qué haré ahora.",
+   "full": "I'm not sure what I'll do next.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#064": {
+   "src": "I'm sorry.",
+   "dst": "Lo siento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#066": {
+   "src": "...alright.",
+   "dst": "...de acuerdo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#067": {
+   "src": "I don't know.",
+   "dst": "No lo sé.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
    "stage": "",
    "speaker": "",
    "source": "captured"

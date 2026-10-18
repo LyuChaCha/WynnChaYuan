@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 31,
-  "translated": 31,
+  "count": 47,
+  "translated": 47,
   "review": {
    "translator": "claude",
    "proofread": false
@@ -325,6 +325,172 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#001": {
+   "src": "Favorite type of bread?",
+   "dst": "En sevdiğin ekmek türü ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#002": {
+   "src": "What's with Relend?",
+   "dst": "Relend'in derdi ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#003": {
+   "src": "Have you seen a parrot aroun",
+   "dst": "Buralarda bir papağan gördün mü?",
+   "full": "Have you seen a parrot around here?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#011": {
+   "src": "What service do you provide?",
+   "dst": "Ne hizmeti veriyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#012": {
+   "src": "Can you tell my fortune? [{~}",
+   "dst": "Falıma bakabilir misin? [{~} LE]",
+   "full": "Can you tell my fortune? [{~} LE]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#017": {
+   "src": "Just here to say hi",
+   "dst": "Sadece selam vermeye geldim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#019": {
+   "src": "I'm alright, thanks",
+   "dst": "İyiyim, teşekkürler",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#001": {
+   "src": "Stay here",
+   "dst": "Burada kal",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#002": {
+   "src": "Go back and fight Therorick!",
+   "dst": "Geri dön ve Therorick ile savaş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#001": {
+   "src": "I'll keep adventuring, and s",
+   "dst": "Maceraya devam edip kime yardım edebileceğime bakacağım.",
+   "full": "I'll keep adventuring, and see who I can help.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#019": {
+   "src": "I might explore a little, se",
+   "dst": "Belki biraz keşif yapar, dışarıda başka neler var bakarım.",
+   "full": "I might explore a little, see what else there is out there.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#051": {
+   "src": "I'll stick around here a lit",
+   "dst": "Biraz daha buralarda kalacağım.",
+   "full": "I'll stick around here a little longer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#063": {
+   "src": "I'm not sure what I'll do ne",
+   "dst": "Sırada ne yapacağımdan emin değilim.",
+   "full": "I'm not sure what I'll do next.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#064": {
+   "src": "I'm sorry.",
+   "dst": "Üzgünüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#066": {
+   "src": "...alright.",
+   "dst": "...peki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#067": {
+   "src": "I don't know.",
+   "dst": "Bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
    "stage": "",
    "speaker": "",
    "source": "captured"
