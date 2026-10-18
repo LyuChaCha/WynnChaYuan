@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "One Thousand Meters Under",
-  "count": 102,
-  "translated": 102,
+  "count": 125,
+  "translated": 125,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -317,8 +317,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#032": {
-   "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "總之，我們去探索這座島，找出虛空水晶，然後回 {p}！",
+   "src": "Anyway, let's explore the island, look for the crystal, and return to {p}!",
+   "dst": "總之，我們去探索這座島，找出那顆水晶，然後回 {p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -367,7 +367,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#037": {
-   "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
+   "src": "They are attacking the windshield in the front room, it looks like it's about to break any moment!",
    "dst": "牠們在攻擊前艙的擋風玻璃，看起來隨時都會破！",
    "role": "desc",
    "kind": "dialogue",
@@ -377,8 +377,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#038": {
-   "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
-   "dst": "快，你！進駕駛艙，按住窗戶把牠們嚇走！",
+   "src": "Quick, you! Come to the cockpit and press on the window to scare them off!",
+   "dst": "快，你！到駕駛艙來，按住窗戶把牠們嚇走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -517,8 +517,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#052": {
-   "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "我和機械師會開始修理。要花一段時間，你先進潛艇休息吧。",
+   "src": "The mechanic and I will start repairing. It'll take a while, so enter the submarine and rest up.",
+   "dst": "我和機械師這就開始修理。要花一段時間，你先進潛艇休息吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -537,7 +537,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#055": {
-   "src": "This is the mechanic, requesting urgent assistence in the basement!",
+   "src": "This is the mechanic, requesting urgent assistance in the basement!",
    "dst": "這裡是機械師，請求地下層緊急支援！",
    "role": "desc",
    "kind": "dialogue",
@@ -1017,7 +1017,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#105": {
-   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
+   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this, as well as your money.",
    "dst": "這裡發生的一切最好都保密。我不想連現有的那點經費都丟掉。這個配方是天才之作！來，這個連同你的酬勞一起拿去。",
    "role": "desc",
    "kind": "dialogue",
@@ -1025,6 +1025,236 @@
    "stage": "Stage 19",
    "speaker": "Scientist Ynnos",
    "source": "wiki"
+  },
+  "One Thousand Meters Under#106": {
+   "src": "How's the mission going?",
+   "dst": "任務進行得怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "The Secretary",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#107": {
+   "src": "It looks like everyone already went inside the submarine.",
+   "dst": "看來大家都已經進潛艇了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#108": {
+   "src": "The intercom crackles into life...",
+   "dst": "對講機劈啪作響，傳出了聲音……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#109": {
+   "src": "Looks like you managed to fix the pipe! You should tell the mechanic.",
+   "dst": "看來你成功修好水管了！你該去告訴技師。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#110": {
+   "src": "Who would've thought that the crystal fell that far...",
+   "dst": "誰想得到那顆水晶竟然掉得那麼遠……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#111": {
+   "src": "But after all, there's still a lot ahead of us!",
+   "dst": "不過說到底，我們前面的路還長著呢！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#112": {
+   "src": "Have you looked around for the island for the crystal yet?",
+   "dst": "你在島上找過那顆水晶了嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#113": {
+   "src": "If you haven't found anything, jump back in the submarine and I'll take us down to the next one.",
+   "dst": "如果什麼都沒找到，就跳回潛艇裡，我帶我們下潛到下一座。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#114": {
+   "src": "I've been hearing a lot of strange sounds...",
+   "dst": "我一直聽到很多奇怪的聲音……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Arlene",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#115": {
+   "src": "Pfft. I would've done a better job saving the windshield.",
+   "dst": "哼。換作是我，擋風玻璃一定保得更好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#116": {
+   "src": "Too bad I was in another room.",
+   "dst": "可惜我剛好在別的房間。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#117": {
+   "src": "Oh no, this isn't good. The windshield is destroyed...",
+   "dst": "噢不，這下不妙。擋風玻璃毀了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#118": {
+   "src": "I thought this trip was going to be easy.",
+   "dst": "我還以為這趟會很輕鬆。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#119": {
+   "src": "Huh, sand?",
+   "dst": "咦，沙子？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#120": {
+   "src": "This sand must've fallen from the sky islands, but why is it red?",
+   "dst": "這些沙子一定是從空島掉下來的，可是為什麼是紅色的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#121": {
+   "src": "What's that smell?",
+   "dst": "那是什麼味道？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#122": {
+   "src": "It smells really...sterile? Does this mean I have to work...?",
+   "dst": "聞起來真是……很無菌？這是不是代表我得幹活了……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#123": {
+   "src": "We need this crystal. Go see Rontaid on the eastern part of the island, he can figure something out.",
+   "dst": "我們需要這顆水晶。去島的東邊找 Rontaid，他會想出辦法的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Celuuse",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#124": {
+   "src": "I hope you make use of our science.",
+   "dst": "希望你能善用我們的科學。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#125": {
+   "src": "We don't want another village to fall down here... I'm not sure we could provide for even more people.",
+   "dst": "我們可不希望又有一座村子掉到這下面來……再多一些人，我們恐怕養不起。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#126": {
+   "src": "Looks like the backup team have lowered a crane down to the island, this is your way out!",
+   "dst": "看來支援小組已經把起重機放到島上了，這就是你的出路！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#127": {
+   "src": "I'm working on a replacement for the crystal now...",
+   "dst": "我現在正在研究那顆水晶的替代品……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#128": {
+   "src": "These void villagers are rather smart, but their handwriting is utterly atrocious.",
+   "dst": "這些虛空村民相當聰明，但他們的字跡實在醜得要命。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
   }
  }
 }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 78,
-  "translated": 78,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "인간이군! 윽! 치료는 걱정 마, 이 정도는 내가 감당할 수 있으니까...",
    "role": "desc",
    "kind": "dialogue",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "주민들은 인간이 자기 땅에 사는 걸 아주 엄격히 규제해. 이건 '엄청난' 불법이야.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "주민들은 인간이 자기 땅에 도시를 세우는 걸 아주 엄격히 규제해. 이건 '엄청난' 불법이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -357,8 +357,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "아무튼, {p}의 비밀이 큰 위험에 처했네. 배신자의 증거를 찾았지.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "아무튼, {p}의 비밀이 큰 위험에 처했네. 배신자가 있다는 증거를 찾았지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -427,7 +427,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "수상한 거라곤 두건 쓴 남자가 돌아다니는 것뿐이에요. {p}엔 사람이 적어서 이상하죠.",
    "role": "desc",
    "kind": "dialogue",
@@ -527,7 +527,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "아. 네가 그 탐정이로군. 머리 나쁜 Eltom 놈들은 절대 알아낼 리 없지.",
    "role": "desc",
    "kind": "dialogue",
@@ -547,8 +547,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "이 마을은 애초에 있어선 안 돼. 인간은 Gavel에 정착할 수 없어.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "이 마을은 애초에 있어선 안 돼. 인간은 Gavel에서 이런 식으로 땅을 소유할 수 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -597,7 +597,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- 비행선 {p} {~}:{~} 출발, {p}행",
    "role": "desc",
    "kind": "dialogue",
@@ -647,8 +647,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "배를 쓰겠다고 해서... 거절했더니...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "배를 내놓으라고 해서... 거절했더니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -727,8 +727,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "{p} 시장에게 이곳에 대해 전부 말하고 보상을 받을 거다. 난 부자가 될 거야. 막고 싶으면 직접 막아 봐!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "{p} 시장에게 이곳에 대해 전부 말하고 보상을 받을 거다. 난 부자가 될 거야. 막고 싶으면 직접 막아 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -784,6 +784,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "도시 위치는 콘텐츠 북에 적어 뒀어. 내가 더 도와줄 수 있는 건 없어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "메모:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- 시장 집무실은 {p} 최상층",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- 드워프 은행 계좌 만드는 것 잊지 말 것",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Hilan에게",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "네가 운영하는 배는 엉망이야. 여기 냉각수 누수를 고친 게 벌써 세 번째라고.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Corkus의 기계가 훌륭하긴 해도 영원하진 않아. 이대로 가다간 겨울마다 새 배가 필요할 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "엔진에 액체가 들어가면 안 된다는 게 그렇게 이해하기 어려워?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-기술자 Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "편지요? 아, 그거. {p}에 관한 거 말이죠? 그렇게 걱정하지 마세요. 비밀은 지켜 드릴게요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "네, {p}에 대해 알아요. 어쨌든 그곳 시장이 제 전남편이니까요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "주민과 인간의 사랑이라니, 이상해 보일 수도 있겠죠. 알아요. 하지만 종족이 다르다고 사랑을 멈출 순 없었어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "{p}에 관한 편지를 남긴 사람은 우리 아들, Ardulf예요. Eoric은 우리 아이 일을 알게 되자마자 겁에 질려 저를 떠났죠.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf는 혼혈이라서 결코 받아들여지지 못할 거예요... 그래도 무사하길 바라요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "아, 맞다, 하나 더요. 탁자 밑에 있는 스위치... 어서, 눌러 보세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   }
  }

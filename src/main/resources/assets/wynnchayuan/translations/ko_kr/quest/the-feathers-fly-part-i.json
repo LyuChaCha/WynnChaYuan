@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Feathers Fly Part I",
-  "count": 226,
-  "translated": 226,
+  "count": 237,
+  "translated": 237,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -867,8 +867,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "그럼 행운을 빌어! 제어판을 찾으면 돌아올게!",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "그럼 행운을 빌어! 제어판을 찾아서 안으로 들어가면 돌아올게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1137,8 +1137,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "괜찮았으면 좋겠네... 어쨌든 마이크로칩은 바로 찾았으니까.",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "그 인간이 괜찮았으면 좋겠네... 어쨌든 마이크로칩은 바로 찾았으니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1147,8 +1147,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "...좋아. 갈 시간이야. {u}을(를) 기다려야겠지, 아마.",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "...좋아. 갈 시간이야. 그 사람을 기다려야겠지, 아마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2077,7 +2077,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "당신들이 얼마나 고리타분한지 알기나 해요?! 마지막 경고??",
    "role": "desc",
    "kind": "dialogue",
@@ -2097,8 +2097,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "...그 애가 바닥에 무슨 장치를 두고 간 모양이군. 자네가 가져가게. 그리고 이것도 받게. 공장 일로 아직 고맙다는 말을 못 했으니.",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "...그 애가 바닥에 무슨 장치를 두고 간 모양이군. 자네가 가져가게, 난 정말 필요 없으니. 그리고 이것도 받게. 공장 일로 아직 고맙다는 말을 못 했으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2265,6 +2265,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "새 퀘스트 라인 시작: 깃털이 흩날릴 때",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "아, 역사부터로군! 좋네, 좋아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "그녀가 발톱을 세웠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] 안전 순간이동 절차 가동!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "Ava는 너와 함께 순간이동되지 않았다! 이제 혼자다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "맙소사, 안 돼- 기계를 다시 켜 볼게...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "좋아... 말해 봐.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "우리, 어, 아무 일도 없었던 척하자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "...무슨 일이 일어나기로 되어 있었나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "그렇게 잘될 리가 없었지, 그치?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "자네가 뭘 하는지 알고 있길 바라네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   }
  }
 }

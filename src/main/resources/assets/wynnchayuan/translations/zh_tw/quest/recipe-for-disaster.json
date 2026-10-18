@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Recipe For Disaster",
-  "count": 168,
-  "translated": 168,
+  "count": 181,
+  "translated": 181,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -31,7 +31,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#002": {
-   "src": "Oh do my eyes deceive me? Serais-ce possible?!",
+   "src": "Oh, do my eyes decieve me? Serait-ce possible?!",
    "dst": "噢，是我眼花了嗎？Serais-ce possible？！",
    "role": "desc",
    "kind": "dialogue",
@@ -51,7 +51,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#004": {
-   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
+   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honoré! Someone like you sitting in my restaurant!",
    "dst": "你的事蹟我在各地都聽說過了，mon ami！Je suis honore！像你這樣的人物，竟然坐在我的餐廳裡！",
    "role": "desc",
    "kind": "dialogue",
@@ -71,7 +71,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#006": {
-   "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
+   "src": "I boast, I boast. Je peux t'offrir un plat... but perhaps I have a different proposition for us both.",
    "dst": "我自誇了，我自誇了。Je peu t'offrir un plat……不過，我心裡另有一個提議，關於我們兩個的。",
    "role": "desc",
    "kind": "dialogue",
@@ -151,8 +151,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#014": {
-   "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
-   "dst": "我當然會依照二十九條 Principes de Cuisine 來評判——口感、擺盤、原創性……",
+   "src": "I, of course, will judge your dish on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
+   "dst": "我當然會以二十九條 Principes de Cuisine 來評判——口感、擺盤、原創性……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -171,7 +171,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#016": {
-   "src": "S'il te plaît! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
+   "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
    "dst": "S'il te plaît！去跟我每一位廚師打個招呼，決定好要跟誰合作再回來！",
    "role": "desc",
    "kind": "dialogue",
@@ -241,7 +241,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#023": {
-   "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
+   "src": "I don't need any ameteurs like yourself getting in my way when I'm cooking up a storm!",
    "dst": "我大展身手的時候，不需要你這種外行人來擋路！",
    "role": "desc",
    "kind": "dialogue",
@@ -301,7 +301,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#029": {
-   "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
+   "src": "Ah, you have introduced yourself to tous mes cuisiniers? Who do you want to work with?!",
    "dst": "Ah，你已經跟 tous mes cuisiners 都打過招呼了？你想跟誰合作呢？！",
    "role": "desc",
    "kind": "dialogue",
@@ -391,8 +391,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#038": {
-   "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "Voidroot Stew 的食譜我已經琢磨好幾個月了，終於有機會讓大家看看我的實力！",
+   "src": "I've been working on my recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
+   "dst": "Voidroot Stew 的食譜我已經研究好幾個月了，終於有機會讓大家看看我的實力！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -401,8 +401,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#039": {
-   "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "第一樣是 [Snail Slime]，Snail Island 上就有！這道菜只需要一份。",
+   "src": "The first ingredient is some [Snail Slime], available on Snail Island! We'll only need one for this dish.",
+   "dst": "第一樣食材是 [Snail Slime]，Snail Island 上就有！這道菜只需要一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1672,6 +1672,136 @@
    "stage": "",
    "speaker": "Chef Hamsey",
    "source": "captured.json"
+  },
+  "Recipe For Disaster#176": {
+   "src": "Hey, again! I'd love to chat, but you should talk to the other chefs before making your decision!",
+   "dst": "嘿，又見面了！我很想跟你聊聊，不過你做決定之前，應該先去找其他廚師談談！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#177": {
+   "src": "Please go and talk to the other chefs first before you decide to weigh me down with your \"assistance\".",
+   "dst": "在你決定用你的「幫忙」來拖累我之前，請先去跟其他廚師談談。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#178": {
+   "src": "Can't wait to work with you man, tell the big man we're working together and we can get started.",
+   "dst": "等不及跟你合作了，老兄。去跟老大說我們要一起做，我們就能開工了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#179": {
+   "src": "I still can't believe you chose to \"work\" with me. Make yourself useful and go and tell the Chef. I certainly won't.",
+   "dst": "我還是不敢相信你竟然選了跟我「合作」。做點有用的事，去告訴主廚吧。我才不去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#180": {
+   "src": "You should go tell Hamsey who you've chosen to work with!",
+   "dst": "你該去告訴 Hamsey 你選了誰合作！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#181": {
+   "src": "It is time to cook, mon ami! Head over to your chef and ask them what to do.",
+   "dst": "該下廚了，mon ami！去找你的廚師，問問他們該做什麼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#182": {
+   "src": "No sweat, man, I probably wouldn't choose me either. Good luck!",
+   "dst": "沒關係啦，老兄，換作是我大概也不會選我。祝你好運！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#183": {
+   "src": "[+{~} Recipe Book]",
+   "dst": "[+{~} 食譜書]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#184": {
+   "src": "Hey! How's the ingredient gathering going? Remember to check your recipe book if you're stuck!",
+   "dst": "嘿！食材收集得怎麼樣了？卡住的話記得翻翻你的食譜書！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#185": {
+   "src": "Need another recipe book? No problem! I keep plenty of spares, you never know what might happen!",
+   "dst": "還要一本食譜書？沒問題！我備了很多本，誰知道會發生什麼事呢！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#186": {
+   "src": "The announcer seems to lose his train of thought.",
+   "dst": "播報員似乎一時忘了自己要說什麼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#187": {
+   "src": "Would you like to race Usnail Bolt?",
+   "dst": "你想跟 Usnail Bolt 比賽嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#188": {
+   "src": "You shouldn't leave the race before it's finished!",
+   "dst": "比賽結束前可不能離開！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
   }
  }
 }

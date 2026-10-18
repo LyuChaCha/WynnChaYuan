@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 242,
-  "translated": 242,
+  "count": 285,
+  "translated": 285,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "了解です！ 行こう！",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "了解です！ 行こう、{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -973,7 +973,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "呪文じゃ渡れそうにないよ、{u}！ 必要なのは…翼みたいなものだ！",
    "role": "desc",
    "kind": "dialogue",
@@ -1123,8 +1123,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "これで足りるはずだ。うまくいくか試そう。こっちへ来い！",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "これで足りるはずだ。うまくいくか試そう。こっちへ来い、{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1353,7 +1353,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "そうだよ。なぜこんなに保存状態がいいのかわからない。誰も触れていないみたいだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -2383,8 +2383,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "このオベリスクは何だ？ なんだか…安らぐ。Gavel にいた頃に感じたのと同じ感覚だ。",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "このオベリスクは何だ？ なんだか…妙に安らぐ。Gavel にいた頃に感じたのと同じ感覚だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2801,6 +2801,66 @@
    "stage": "Stage 17",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "やあ、いらっしゃい、旅の人。ここで見かけるのは初めてだな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} {p} ウイスキー]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "Corkus の悪名高い工場を潰したって？そいつは大したもんだ。あのメカどもの話はいくらでも聞いてるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "やあ、いらっしゃい、旅の人！また会えて嬉しいよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "ちゃんとした作戦が要るんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} 腐敗した真珠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Feathers Fly Part I",
-  "count": 226,
-  "translated": 226,
+  "count": 237,
+  "translated": 237,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -871,8 +871,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "Bol şans o zaman! Kontrol panelini bulunca dönerim!",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "Bol şans o zaman! Kontrol panelini bulup içeri girince dönerim!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1141,8 +1141,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "Umarım sorun yoktur... Sonuçta mikroçipi hemen bulmayı başardım.",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "Umarım o insan iyidir... Sonuçta mikroçipi hemen bulmayı başardım.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1151,8 +1151,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "...Pekâlâ. Gitme vakti. Galiba {u} gelene kadar bekleyeceğim.",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "...Pekâlâ. Gitme vakti. Galiba onu bekleyeceğim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2081,7 +2081,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "Ne kadar çağ dışı olduğunuzun HİÇ farkında mısınız?! Son uyarı mı??",
    "role": "desc",
    "kind": "dialogue",
@@ -2101,8 +2101,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "...Görünüşe göre yere bir alet bırakmış. Onu sen alsan iyi olur. Al, bunları da al. Fabrika konusunda sana teşekkür etme fırsatımız olmamıştı.",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "...Görünüşe göre yere bir alet bırakmış. Onu sen alsan iyi olur, ben kesinlikle istemiyorum. Al, bunları da al. Fabrika konusunda sana teşekkür etme fırsatımız olmamıştı.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2269,6 +2269,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "Yeni Görev Serisi Başladı: Tüyler Uçuşuyor",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "Ah, önce tarih! Harika, harika!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "Pençelerini çıkardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] Güvenlik ışınlanma dizisi etkinleştirildi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "Ava seninle birlikte ışınlanmadı! Artık tek başınasın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "Aman tanrım, hayır- Dur, makineyi yeniden başlatayım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "Pekâlâ... Konuş benimle.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "Biz, ıı, hiçbir şey olmamış gibi davranacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "...Bir şey mi olması gerekiyordu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "Bu kadarı fazla güzel olurdu zaten, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "Umarım ne yaptığını biliyorsundur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   }
  }
 }

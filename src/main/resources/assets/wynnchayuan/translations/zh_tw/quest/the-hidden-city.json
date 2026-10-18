@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 78,
-  "translated": 78,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "人類！啊！不用替我找醫生，這點小傷我還撐得住……",
    "role": "desc",
    "kind": "dialogue",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "而村民對人類住在他們的土地上有非常嚴格的規定，那是「非常」違法的。",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "而村民對人類在他們的土地上建立城市有非常嚴格的規定，那是「非常」違法的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -357,8 +357,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "總之，{p} 的機密正處在極大的危險之中。我們找到了叛徒的證據。",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "總之，{p} 的機密正處在極大的危險之中。我們找到了有叛徒存在的證據。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -427,7 +427,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "我唯一覺得可疑的，是有個戴兜帽的男人在附近走動。{p} 沒幾個人，所以那很奇怪。",
    "role": "desc",
    "kind": "dialogue",
@@ -527,7 +527,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "啊。那你想必就是那位偵探了。那群蠢頭蠢腦的 Eltom 人是不可能查得出來的。",
    "role": "desc",
    "kind": "dialogue",
@@ -547,8 +547,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "這座城鎮根本就不該存在。人類不准在 Gavel 定居。",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "這座城鎮根本就不該存在。人類不准像這樣在 Gavel 擁有土地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -597,7 +597,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- 飛船 {~}:{~} 由 {p} 開往 {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -647,8 +647,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "他要求使用一艘船……我拒絕了……",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "他強要使用一艘船……我拒絕了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -727,8 +727,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "我要把這個地方的一切告訴 {p} 的鎮長，然後領走我的賞金。我會發大財——你想阻止我，就得親自動手！",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "我要把這個地方的一切告訴 {p} 的鎮長，然後領走我的賞金。我會發大財——你想阻止我，就得親自動手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -784,6 +784,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "我把那座城市的位置寫進你的綜合手冊了。除此之外，我也幫不上你什麼忙了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "筆記：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- 鎮長辦公室在 {p} 的最上層",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- 記得去開矮人銀行帳戶",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "致 Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "你開的這艘船簡直一團糟。這已經是我第三次來這裡修冷卻液外洩了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Corkian 的機械是很棒，但可不是永遠不壞。照這樣下去，你每年冬天都得換一艘新船。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "「引擎裡不能進任何液體」，這有那麼難懂嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "——工程師 Bertin",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "一封信？噢，那個啊。關於 {p} 的那封？別一臉擔心的樣子。這個祕密在我這裡很安全。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "沒錯，我知道 {p} 的事。畢竟，那裡的鎮長是我的前夫。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "村民和人類相戀，也許看起來很奇怪。我知道，但種族並沒有阻止我們相愛。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "留下那封關於 {p} 的信的人，是我們的兒子 Ardulf。Eoric 一發現我們有了孩子，就慌了，離開了我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf 身為混血兒，永遠不會被接納……即使如此，我還是希望他平安無事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "啊，對了，還有一件事。桌子底下的開關……去吧，按下去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   }
  }

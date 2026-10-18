@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23368,
-  "translated": 23071,
+  "count": 23574,
+  "translated": 23277,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -3726,7 +3726,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#146": {
-   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM, MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
+   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM. MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
    "dst": "너의 임무는 그들 사이에 불신을 심는 것이다. 들키지 마라. AVOS는 이미 CORKUS 사람들을 의심하고 있다.",
    "role": "desc",
    "kind": "dialogue",
@@ -3846,7 +3846,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#158": {
-   "src": "Round up our defenses and sharpen the spears. There is no excuse for this.",
+   "src": "Round up the defenses and sharpen the spears. There is no excuse for this.",
    "dst": "방어를 소집하고 창을 벼리시오. 이건 변명의 여지가 없소.",
    "role": "desc",
    "kind": "dialogue",
@@ -4136,7 +4136,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#187": {
-   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER, I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
+   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER. I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
    "dst": "이 탑에는 CORKUS 사람들이 만든 통계적으로 열등한 기계병들이 있다. 이 장치에 시스템을 프로그래밍해 두었다.",
    "role": "desc",
    "kind": "dialogue",
@@ -4163,16 +4163,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 26",
    "speaker": "Teleportation Mech",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#190": {
-   "src": "Objective. Eliminate Avos presence.",
-   "dst": "목표. Avos 제거.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 26",
-   "speaker": "Corkus Guard",
    "source": "wiki"
   },
   "A Hunter's Calling#191": {
@@ -4536,7 +4526,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#227": {
-   "src": "How's this then, hm? Think your PEON can handle me at my strongest?",
+   "src": "How's this, then, hm? Think your PEON can handle me at my strongest?",
    "dst": "그럼 이건 어때? 네 졸개가 전력을 다한 나를 감당할 수 있을까?",
    "role": "desc",
    "kind": "dialogue",
@@ -5304,6 +5294,16 @@
    "stage": "Stage 28",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Hunter's Calling#314": {
+   "src": "Airforce! Drop the bomb!",
+   "dst": "공군! 폭탄 투하!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
   },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
@@ -6212,8 +6212,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "네, 대장님! 가자!",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "네, 대장님! 가자, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6272,7 +6272,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "주문으로는 못 건너갈 것 같아, {u}! 뭔가... 날개 같은 게 필요해!",
    "role": "desc",
    "kind": "dialogue",
@@ -6422,8 +6422,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "이거면 되겠네요. 효과가 있는지 봅시다. 이리 와요!",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "이거면 되겠네요. 효과가 있는지 봅시다. 이리 와요, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6652,7 +6652,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "맞아. 왜 이렇게 잘 보존됐는지 모르겠어. 마치 아무것도 손대지 않은 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -7682,8 +7682,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "이 오벨리스크는 뭐지? 뭔가.. 마음이 편해져. Gavel에 있을 때 느꼈던 기분이야.",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "이 오벨리스크는 뭐지? 뭔가.. 묘하게 마음이 편해져. Gavel에 있을 때 느꼈던 기분이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -7730,6 +7730,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "어이, 반갑네, 여행자. 여기선 처음 보는 얼굴 같은데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} {p} 위스키]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "Corkus의 그 악명 높은 공장을 무너뜨렸다고? 대단한 업적인데. 그 메카들이 무슨 짓을 할 수 있는지 이야기는 수없이 들었지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "어이, 반가워, 여행자! 여기서 또 보니 좋네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "제대로 된 계획이 필요해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} 타락한 진주]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "그들을 따라 꼭대기까지 올라갈 방법을 찾아야 한다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Further#000": {
    "src": "Please don't leave me!",
@@ -7852,8 +7922,8 @@
    "source": "wiki"
   },
   "A Journey Further#012": {
-   "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "아, 안 돼 안 돼! 이럴 때 쓰는 물약이 있어, 어디 있지, 어디 있지, 아하! 자, 마셔!",
+   "src": "Oh, no no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
+   "dst": "아, 안 돼 안 돼 안 돼! 이럴 때 쓰는 물약이 있어, 어디 있지, 어디 있지, 아하! 자, 마셔!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -8042,7 +8112,7 @@
    "source": "wiki"
   },
   "A Journey Further#031": {
-   "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
+   "src": "My stomach is empty, I can't even vomit... Why do I still feel so dizzy? Maybe a potion will help...",
    "dst": "속이 텅 비어서 토할 것도 없어... 왜 아직도 이렇게 어지럽지? 물약이 도움 될지도...",
    "role": "desc",
    "kind": "dialogue",
@@ -8472,7 +8542,7 @@
    "source": "wiki"
   },
   "A Journey Further#074": {
-   "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
+   "src": "I mean...look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
    "dst": "그러니까... 내 꼴을 좀 봐, {u}! 난 이미 죽기 직전이고, 넌 전성기의 나보다도 훨씬 강하다는 걸 증명했어.",
    "role": "desc",
    "kind": "dialogue",
@@ -8502,7 +8572,7 @@
    "source": "wiki"
   },
   "A Journey Further#077": {
-   "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
+   "src": "You'll have to kill it to break the barrier. But...find other soldiers who can help you. It will be impossible to defeat alone.",
    "dst": "장벽을 부수려면 그걸 죽여야 해. 하지만... 도와줄 다른 병사들을 찾아. 혼자서는 절대 못 이겨.",
    "role": "desc",
    "kind": "dialogue",
@@ -8690,6 +8760,16 @@
    "stage": "",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Journey Further#096": {
+   "src": "It appears the boulder that was once blocking the way is gone...",
+   "dst": "길을 막고 있던 바위가 사라진 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Home#000": {
    "src": "...you were scared of those, once upon a time. What a difference time makes.",
@@ -10165,6 +10245,76 @@
    "quest": "A Journey Home",
    "stage": "Stage 5",
    "speaker": "Paxon",
+   "source": "captured"
+  },
+  "A Journey Home#147": {
+   "src": "You don't hear anything moving on the other side of the door.",
+   "dst": "문 너머에서는 아무것도 움직이는 소리가 들리지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#148": {
+   "src": "Greetings, {u}. It is always an honour to have you in our halls.",
+   "dst": "반갑습니다, {u}. 당신을 이 궁정에 맞이하는 건 언제나 영광이지요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#149": {
+   "src": "So, Tasim has stayed behind then. I'm to suppose you're worried for his safety, in amongst any other worries you might have.",
+   "dst": "그래, Tasim은 남았군요. 다른 걱정들도 많겠지만, 그의 안위도 걱정되시겠지요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#150": {
+   "src": "Although you are not the first to wish to return to Fruma, I have not had any recruits who went to investigate come back satisfied. Or, in a scant few cases, at all.",
+   "dst": "Fruma로 돌아가길 원한 이가 당신이 처음은 아니지만, 조사하러 간 신병 중 만족해서 돌아온 이는 없었습니다. 아니, 극소수는 아예 돌아오지 못했지요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#151": {
+   "src": "I may only grant you access to the pass you took to first come here. Simply take the door and do what you must. I know not what you will find...",
+   "dst": "제가 허락할 수 있는 건 당신이 처음 이곳에 올 때 지난 통로뿐입니다. 그 문으로 가서 해야 할 일을 하십시오. 무엇을 마주하게 될지는 저도 모릅니다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#152": {
+   "src": "I'd advise you be cautious. The Queen's correspondence has been...not unkind, but forceful- And considering the circumstances...",
+   "dst": "조심하시길 권합니다. 여왕의 서신은... 무례하진 않았지만 강압적이었습니다- 그리고 사정을 생각하면...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#153": {
+   "src": "The door to the pass between here and Fruma is down the hall, across from the fireplace. Come back alive- that is an order as King.",
+   "dst": "이곳과 Fruma 사이의 통로로 이어지는 문은 복도 끝, 벽난로 맞은편에 있습니다. 살아서 돌아오십시오- 왕으로서 내리는 명령입니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -24921,7 +25071,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#080": {
-   "src": "Gwuh, yes! Stop shouting, I- Whuh...",
+   "src": "Gwuh, yes! Stop shouting! I- Whuh...",
    "dst": "크윽, 알았어! 소리 그만, 나- 어...",
    "role": "desc",
    "kind": "dialogue",
@@ -25071,7 +25221,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
    "dst": "Ureietun! 인간이 Ressinter 목숨 구함! 왜 안 믿음?",
    "role": "desc",
    "kind": "dialogue",
@@ -25121,7 +25271,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "...인간 안 죽이는 건 믿음. Centerworld 돌아다녀도 됨. 근데 Arrai-Veretel은 못 만남!",
    "role": "desc",
    "kind": "dialogue",
@@ -26041,8 +26191,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#192": {
-   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they've left behind any language books.",
-   "dst": "근처에 아주 똑똑한 호빗 친구가 살았어. 지금은 떠났지만, 그 친구 호빗 굴에 언어책이 남아 있는지 좀 봐 줘.",
+   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they left behind any language books.",
+   "dst": "근처에 아주 똑똑한 호빗 친구가 살았어. 지금은 떠났지만, 그 친구 호빗 굴에 언어책을 남기고 갔는지 좀 봐 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -29165,6 +29315,16 @@
   "All Roads to Peace#503": {
    "src": "You know, that one guy was going off about that orc catapult or whatever the entire time you were gone. He's shut up now, but criminy!",
    "dst": "그게 말이지, 자네가 없는 동안 저 사람이 오크 투석기인지 뭔지에 대해 계속 떠들어댔다네. 지금은 입을 다물었지만, 아이고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "All Roads to Peace",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "All Roads to Peace#504": {
+   "src": "The cuts are closing underneath the balm, and his breathing is becoming more steady. Did you do it...?",
+   "dst": "연고 아래로 상처가 아물고, 숨소리도 점점 안정되고 있다. 해낸 걸까...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -37223,7 +37383,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#092": {
-   "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
+   "src": "We did! And now, we celebrate! Here, let's all have some {p} Whiskey for the occasion.",
    "dst": "그렇지! 이제 축하하자! 자, 이런 날엔 다 같이 {p} 위스키 한잔 하자고.",
    "role": "desc",
    "kind": "dialogue",
@@ -37233,8 +37393,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#093": {
-   "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "그래서 너희 둘은 앞으로 뭐 할 거야? 난 제독님께 어디 배치해 달라고 말씀드려 볼까 해.",
+   "src": "...So, what're you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
+   "dst": "...그래서, 너희 둘은 앞으로 뭐 할 거야? 난 제독님께 어디 배치해 달라고 말씀드려 볼까 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37243,8 +37403,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#094": {
-   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "음. 요즘 좀 생각해 봤는데... 고급 파우더 기술을 더 파 보려고. 그 마법이 뭔가 눈에 들어오더라.",
+   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. If I can figure out how they work, maybe I can... do more.",
+   "dst": "음. 요즘 좀 생각해 봤는데... 고급 파우더 기술을 더 파 보려고. 그게 어떻게 작동하는지 알아내면, 어쩌면 나도... 더 많은 걸 할 수 있을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37283,7 +37443,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#098": {
-   "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
+   "src": "Not a bad idea! I might join you with that later, once I've decide on things more.",
    "dst": "나쁘지 않은데! 나도 생각이 좀 정리되면 나중에 같이할지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
@@ -37363,8 +37523,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#106": {
-   "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
-   "dst": "...뭐, 우리 다 같이 여기 있을 수 있어서 기뻐. 길고 알찬 우정을 위하여!",
+   "src": "...Well, I'm glad we were all able to be here together. Here's to a long and fulfilling friendship!",
+   "dst": "...뭐, 우리 다 같이 여기 있을 수 있었어서 기뻐. 길고 알찬 우정을 위하여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37393,7 +37553,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#109": {
-   "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
+   "src": "Me? Well, I've been making a little progress... but, nothing too big yet. I'm keeping at it, though!",
    "dst": "나? 음, 조금씩 진전은 있는데... 아직 큰 건 없어. 그래도 계속하고 있어!",
    "role": "desc",
    "kind": "dialogue",
@@ -37421,6 +37581,16 @@
    "stage": "Stage 5",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Arachnids' Ascent#112": {
+   "src": "[+Drunkness for {~} seconds]",
+   "dst": "[+취함 {~}초]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Beneath the Depths#000": {
    "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
@@ -37873,7 +38043,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#001": {
-   "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
+   "src": "Welcome to Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
    "dst": "Bantisu 사원에 오신 것을 환영합니다, 여행자여. 저희는 길 잃은 영혼을 인도합니다. 길 잃은 사람이든, 협곡을 못 벗어나는 영혼이든요.",
    "role": "desc",
    "kind": "dialogue",
@@ -37883,7 +38053,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#002": {
-   "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
+   "src": "However, recently our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
    "dst": "그런데 최근 저희 일이 훨씬 어려워졌습니다. 협곡이 흔들리며 모습을 바꿉니다. 벽이 움직일 때마다 오래 묻혀 있던 존재가 풀려나곤 하지요.",
    "role": "desc",
    "kind": "dialogue",
@@ -37953,8 +38123,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#009": {
-   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "갑작스러워 죄송합니다만, 이 급박함을 이해해 주십시오. Krolton이 언제 나올지 알 방법이 없습니다.",
+   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton may emerge.",
+   "dst": "갑작스러워 죄송합니다만, 이 급박함을 이해해 주십시오. Krolton이 언제 나타날지 알 방법이 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38103,7 +38273,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#024": {
-   "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
+   "src": "IF I HAD BOUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
    "dst": "오늘 아침 밀가루를 가져왔다면 죽음 축하 비스킷을 대접했을 텐데. 내 초코칩 비스킷이 최고라더군.",
    "role": "desc",
    "kind": "dialogue",
@@ -38213,7 +38383,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#035": {
-   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
+   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE, HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
    "dst": "그래도 손님이 잠시 쉬어 가는 건 결코 아까워하지 않소. 아무리 짧아도. 필멸은 가혹한 교훈일 수 있으니.",
    "role": "desc",
    "kind": "dialogue",
@@ -38343,7 +38513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#048": {
-   "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
+   "src": "I KEEP IT AS A REMINDER. TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
    "dst": "남은 것을 소중히 여기라는 뜻으로 두고 있소. 그것마저 잃기 전에.",
    "role": "desc",
    "kind": "dialogue",
@@ -38903,8 +39073,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#110": {
-   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
-   "dst": "집무실에서의 이 만남은 사실 꼭 필요한 건 아니오. 서류는 보여 주기일 뿐이지. 하지만 가끔은 즐기고 싶어서.",
+   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
+   "dst": "집무실에서의 이 만남은 사실 꼭 필요한 건 아니오. 서류는 보여 주기용이지. 하지만 가끔은 즐기고 싶어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38913,7 +39083,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#112": {
-   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
+   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME YOU COULD THINK OF MORE.",
    "dst": "그럼 이게 전부인 듯하오. 시간을 더 주면 더 생각해 낼지도 모르겠지만.",
    "role": "desc",
    "kind": "dialogue",
@@ -38943,8 +39113,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#115": {
-   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "사인: Krolton이라 불리는 괴물에게 살해됨. 명단에 한 명 추가.",
+   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER TO ADD TO THE TALLY.",
+   "dst": "사인: Krolton이라 불리는 괴물에게 살해됨. 명단에 또 한 명 추가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38953,7 +39123,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#116": {
-   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
+   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FOE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
    "dst": "신속하고 피할 수 없었지. 그런 적에게 진 건 부끄러운 일이 아니오. 그대가 처음도 아니고, 아마 마지막도 아닐 거요.",
    "role": "desc",
    "kind": "dialogue",
@@ -38963,7 +39133,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#117": {
-   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
+   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEANS, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
    "dst": "하지만 누군가 그걸 끝장내 주길 바라는 마음도 있소. 제 분수를 한참 넘게 살았고, 다시 나타날 때마다 골칫거리지...",
    "role": "desc",
    "kind": "dialogue",
@@ -38983,7 +39153,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#119": {
-   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
+   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUESTS. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
    "dst": "하지만 이기적으로 말하자면, 한동안 머물기를 권하오. 손님을 맞은 지 꽤 되었소. 그대가 함께해 준다면 반갑겠소.",
    "role": "desc",
    "kind": "dialogue",
@@ -39123,7 +39293,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#136": {
-   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
+   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AN END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
    "dst": "거기서 남은 힘으로 그 괴물을 끝장내시오. 그리고 그 끝을 통해 그대의 끝을 막아 낼 거요.",
    "role": "desc",
    "kind": "dialogue",
@@ -39323,8 +39493,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#156": {
-   "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "인상적이군. 하지만 {~}라운드일 뿐이오, 총 {~}라운드 중. 라운드마다 점점 어려워지지. 준비됐소?",
+   "src": "VERY IMPRESSIVE. HOWEVER, THAT WAS MERELY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
+   "dst": "아주 인상적이군. 하지만 {~}라운드에 불과하오, 총 {~}라운드 중. 라운드마다 점점 어려워지지. 준비됐소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39333,8 +39503,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#157": {
-   "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "...아, 그 표정. 값을 매길 수 없군. 내 두개골은 단단해서, 표정은 손님들이 대신 지어 줘야 하오.",
+   "src": "AH HA HA. THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
+   "dst": "아하하. 그 표정. 값을 매길 수 없군. 내 두개골은 단단해서, 표정은 손님들이 대신 지어 줘야 하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39343,7 +39513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#158": {
-   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
+   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW. WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
    "dst": "곧 떠나야 하니 퀴즈 쇼는 짧게 끝내기로 했소. 그대가 필연적으로 돌아오면 멈춘 곳부터 이어 갑시다.",
    "role": "desc",
    "kind": "dialogue",
@@ -39383,8 +39553,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#162": {
-   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "그럼 이걸로 끝이오. 더 머물 수 있다면 좋을 텐데- 맑은 정신의 손님과 하는 활동이 즐겁거든. 요리 모임, 작은 행진... 하지만 다음으로 미뤄야겠군.",
+   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. BOOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
+   "dst": "그럼 이걸로 끝이오. 더 머물 수 있다면 좋을 텐데- 맑은 정신의 손님과 하는 활동이 즐겁거든. 독서 모임, 작은 행진... 하지만 다음으로 미뤄야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39393,7 +39563,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#163": {
-   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
+   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR A MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
    "dst": "자. 이 저택엔 뒷문이 없으니 나갈 문을 만들어 줘야겠소. 잠시 시끄러운 건 양해하시고, 새 출구로 언제든 나가시오.",
    "role": "desc",
    "kind": "dialogue",
@@ -39403,7 +39573,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#165": {
-   "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
+   "src": "SO. THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
    "dst": "자, 그렇게 삶이라는 긴 꿈속으로 걸어 돌아가는군.",
    "role": "desc",
    "kind": "dialogue",
@@ -39473,7 +39643,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#172": {
-   "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
+   "src": "SO LONG AS THE HORROR DIES, NO MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
    "dst": "원인이 무엇이든 그 괴물만 죽으면 우리 목적엔 충분하오. 그걸 기억하시오.",
    "role": "desc",
    "kind": "dialogue",
@@ -39563,7 +39733,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#181": {
-   "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
+   "src": "Bantisu Temple owes you a great deal. Here, then- a suitable reward.",
    "dst": "Bantisu 사원은 당신께 큰 빚을 졌습니다. 자, 여기- 합당한 보상입니다.",
    "role": "desc",
    "kind": "dialogue",
@@ -39573,7 +39743,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#182": {
-   "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
+   "src": "A powerful Bantisu artifact, as reward for defeating a beast that menaced in antiquated times.",
    "dst": "강력한 Bantisu 유물입니다. 아득한 옛날 사람들을 위협한 짐승을 물리친 보상이지요.",
    "role": "desc",
    "kind": "dialogue",
@@ -39671,6 +39841,46 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Beyond the Grave#192": {
+   "src": "...something's gone wrong.",
+   "dst": "...뭔가 잘못됐어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#193": {
+   "src": "[+{~} Krolton's Remains]",
+   "dst": "[+{~} Krolton의 유해]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#194": {
+   "src": "...did all of that actually just happen?",
+   "dst": "...방금 그 일이 전부 진짜로 일어난 건가?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#195": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "...그래도 죽었던 얘기는 안 하는 게 좋겠어. 이상하게 들릴 테니까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
@@ -49693,7 +49903,7 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#032": {
-   "src": "sacrifice its soul, in the blood and grime.",
+   "src": "Sacrifice its soul, in the blood and the grime.",
    "dst": "피와 오물 속에 그 영혼을 바쳐라.",
    "role": "desc",
    "kind": "dialogue",
@@ -50063,8 +50273,8 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#069": {
-   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
-   "dst": "할 수 있으면 들어가서... 끝장내 줘. 그래도 먼저 장비를 갖추고, 등 맡길 친구도 구해.",
+   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends to watch your back.",
+   "dst": "할 수 있으면 들어가서... 끝장내 줘. 그래도 먼저 장비를 갖추고, 등을 맡길 친구도 구해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -52789,8 +52999,8 @@
    "source": "wiki"
   },
   "Crop Failure#039": {
-   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "좋은 날이구먼! 이 Doubiss 영감 물건 중에 뭐가 필요한가?",
+   "src": "Ah, good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "아, 좋은 하루요! 이 늙은 Doubiss의 물건 중에 뭐가 필요하시우?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -52921,6 +53131,26 @@
   "Crop Failure#052": {
    "src": "Well, glad I can start sellin' again without him shoutin' \"Fraud! Con! Cheat!\" in the distance! Thanks fer that, mate.",
    "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#053": {
+   "src": "The little cave on the hill, by the crypts? That's the one leadin' to the water table under here.",
+   "dst": "언덕 위, 묘실 옆 그 작은 동굴 말이여? 그게 이 밑 지하수층으로 이어지는 데구먼.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#054": {
+   "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
+   "dst": "조사해 볼 맘이 있거든 거기 들어가 보게, 젊은이. 그 농부는 뭘 찾아내든 제 눈으로 봐야 믿을 거구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -57876,6 +58106,36 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Dwarves and Doguns Part II#088": {
+   "src": "[{~}/{~}] Commanders",
+   "dst": "[{~}/{~}] 지휘관",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Leave now and I won't send the Dwarven army on you. You don't want to get hunted like the Doguns, do you?",
+   "dst": "당장 떠나라. 그러면 드워프 군대를 보내진 않겠다. Dogun들처럼 사냥당하고 싶진 않겠지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "And Axelus, leave the city. You are no longer my son.",
+   "dst": "그리고 Axelus, 이 도시를 떠나라. 너는 더 이상 내 아들이 아니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
   "Dwarves and Doguns Part III#000": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}... 내 말을 취소하마. 그들은 이미 시작했다... 설득할 여지는 없다.",
@@ -58137,7 +58397,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "[{~} Fire Webs]가 필요해. 마을 아래 Heatscar Spider가 만들어. 입구 아치 바로 옆에 동굴이 있어.",
    "role": "desc",
    "kind": "dialogue",
@@ -58467,8 +58727,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#061": {
-   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "... 여긴... 여긴 원래...Dogun 마을이었다. 드워프가 불모지로 만들었다.",
+   "src": "{u}... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
+   "dst": "{u}... 여긴... 여긴 원래...Dogun 마을이었다. 드워프가 불모지로 만들었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -58735,6 +58995,16 @@
    "stage": "Stage 9",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#088": {
+   "src": "If you're having trouble finding the crater, look for the reddest rocks in amongst the others in the lake. They should lead you to it.",
+   "dst": "분화구를 찾기 어려우면, 호수의 바위들 사이에서 가장 붉은 바위를 찾아봐. 그게 분화구로 이끌어 줄 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "",
+   "speaker": "Edula",
+   "source": "captured"
   },
   "Dwarves and Doguns Part IV#000": {
    "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
@@ -75057,8 +75327,8 @@
    "source": "wiki"
   },
   "Enter the Dojo#004": {
-   "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
-   "dst": "이 도장은 모든 기예를 연마하는 곳이라네. 정신의 기량과 예리함부터 손기술과 예술까지.",
+   "src": "This dojo, I have dedicated to honing skills in all of the arts- from martial prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "이 도장은 모든 기예를 연마하는 곳이라네. 무예의 기량과 정신의 예리함부터 손기술과 예술까지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -75197,7 +75467,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#018": {
-   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as are many things.",
    "dst": "빨간 블록을 금 블록까지 옮길 길을 찾아내야 하네. 이론은 간단하지만... 실제론 복잡하지, 세상일이 다 그렇듯.",
    "role": "desc",
    "kind": "dialogue",
@@ -75307,7 +75577,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#029": {
-   "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "src": "...Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
    "dst": "아, 물론 아니겠지. 통달했어도 이건 자네 여정의 한 걸음일 뿐이니. 걱정 말게, 충분히 이해하네.",
    "role": "desc",
    "kind": "dialogue",
@@ -75327,7 +75597,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#031": {
-   "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
    "dst": "어쨌든 이 보잘것없는 스승의 시험을 모두 마쳤으니, 약속한 것을 주겠네.",
    "role": "desc",
    "kind": "dialogue",
@@ -76185,6 +76455,96 @@
    "stage": "",
    "speaker": "Sensei Miyagi",
    "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "Defeat the dummies, and bring their tokens to the door! Simple, yes?",
+   "dst": "허수아비들을 쓰러뜨리고 그 증표를 문으로 가져오게! 간단하지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#118": {
+   "src": "Show no fear, challenger! There is no shame in failing.",
+   "dst": "두려워 말게, 도전자여! 실패는 부끄러운 일이 아니라네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#119": {
+   "src": "And worry not, the fiata Room is reinforced against all manner of attacks. Run wild, hoho!",
+   "dst": "그리고 걱정 말게, Fiata의 방은 온갖 공격을 견디도록 보강되어 있으니. 마음껏 날뛰게, 호호!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#120": {
+   "src": "It is fascinating to see how you battle. Very different from my stylings!",
+   "dst": "자네가 싸우는 모습을 보니 참 흥미롭군. 내 방식과는 아주 다르구먼!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#121": {
+   "src": "Of course, you wield a weapon to battle, so of course it is different from unarmed combat, hoho...",
+   "dst": "물론 자네는 무기를 들고 싸우니, 당연히 맨손 격투와는 다르겠지, 호호...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#122": {
+   "src": "Perhaps you may be interested in learning to fight unarmed after!",
+   "dst": "나중에 맨손으로 싸우는 법을 배워 보는 건 어떤가!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#123": {
+   "src": "Oh, this is getting quite good. I should get a snack to eat while I watch...",
+   "dst": "오, 점점 볼만해지는군. 구경하면서 먹을 간식이라도 가져와야겠어...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#124": {
+   "src": "Hmhm, I'll be right back! Continue fighting- And do not worry if you finish before I return! I will be quick!",
+   "dst": "흠흠, 금방 돌아오겠네! 계속 싸우게- 내가 돌아오기 전에 끝나도 걱정 말고! 금방 올 테니!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#125": {
+   "src": "The pig raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "돼지가 고개를 들어 너를 본다. 녹차를 보자 눈이 번쩍 빛난다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Enzan's Brother#000": {
    "src": "Good day for baking, aye recruit? I might need some assistance later, come back when you are level {~}!",
@@ -77177,8 +77537,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#004": {
-   "src": "It's a map to a magical place! I sure hope it doesn't vanish without a tra-",
-   "dst": "마법의 장소로 가는 지도라네! 흔적도 없이 사라지지 않기를 바라...",
+   "src": "It's the map to a magical place! I sure hope it doesn't vanish without a tra-",
+   "dst": "마법의 장소로 가는 바로 그 지도라네! 흔적도 없이 사라지지 않기를 바라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -77437,7 +77797,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#032": {
-   "src": "For you see... I am gifted with foresight, the future's memories come to me like no other!",
+   "src": "For you see... I am gifted with foresight, the futures memories come to me like no other!",
    "dst": "왜냐하면... 나는 예지력을 타고났거든. 미래의 기억이 누구보다 선명히 찾아온다네!",
    "role": "desc",
    "kind": "dialogue",
@@ -77447,8 +77807,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#033": {
-   "src": "For the low, low price of [{~} LE], your future will be foretold!",
-   "dst": "단돈 [{~} LE]라는 헐값에 그대의 미래를 점쳐 주지!",
+   "src": "For the low, low price of [{~} ¼²] , your future will be foretold!",
+   "dst": "단돈 [{~} ¼²]라는 헐값에 그대의 미래를 점쳐 주지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -78087,8 +78447,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#099": {
-   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not many places serve better rum than good ol’ Jofash!",
-   "dst": "우리 원래 농부였어. {p} 근처에서. 휴! 그래도 여기 이사 와서 좋아! 좋은 옛 Jofash보다 럼 잘 내는 데는 별로 없지!",
+   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not so many places serve better rum than good ol' Jofash!",
+   "dst": "우리 원래 농부였어. {p} 근처에서. 휴! 그래도 여기 이사 와서 좋아! 좋은 옛 Jofash만큼 럼 잘 내는 데는 그리 많지 않지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79417,7 +79777,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#232": {
-   "src": "We should probably get of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
+   "src": "We should probably get out of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
    "dst": "여긴 좀 좁으니 빠져나가는 게 좋겠네. 저 벽의 약한 곳을 뚫어 볼 수 있겠나, 자네?",
    "role": "desc",
    "kind": "dialogue",
@@ -79517,8 +79877,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#242": {
-   "src": "Check your quest book if you ever need a recap. And to make sure you don't get lost, take this map.",
-   "dst": "다시 확인하려면 퀘스트 북을 보게. 길 잃지 않게 이 지도도 가져가게.",
+   "src": "Check your content book if you ever need a recap. And to make sure you don't get lost, take the map.",
+   "dst": "다시 확인하려면 콘텐츠 북을 보게. 길 잃지 않게 그 지도도 가져가게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79537,7 +79897,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#244": {
-   "src": "Well, this stew has a rather odd flavor. But any food we can get here I shall savor.",
+   "src": "Well, this stew has a rather odd flavour. But any food we can get here I shall savour.",
    "dst": "음, 이 스튜 맛이 좀 이상하군. 그래도 여기선 뭐든 음미해야겠군.",
    "role": "desc",
    "kind": "dialogue",
@@ -79557,7 +79917,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#246": {
-   "src": "To the east, I can just barely make out a tent. Go and look for my friend there. I'm simply hellbent!",
+   "src": "To the east, I can just barely make out a tent. Go and look for my friend there, I'm simply hellbent!",
    "dst": "동쪽에 천막이 어렴풋이 보이네. 거기서 내 친구를 찾아보게. 난 꼭 찾아야겠네!",
    "role": "desc",
    "kind": "dialogue",
@@ -79657,8 +80017,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#256": {
-   "src": "You'll need those items you craft the bomb, I just told you where to look. If you forget what you need to find, check your quest book.",
-   "dst": "폭탄을 만들려면 그 재료들이 필요하네, 어디 있는지는 방금 말했네. 뭘 찾아야 할지 잊으면 퀘스트 북을 보게.",
+   "src": "You'll need those items to craft the bomb, I just told you where to look. If you forget what you need to find, check your content book.",
+   "dst": "폭탄을 만들려면 그 재료들이 필요하네, 어디 있는지는 방금 말했네. 뭘 찾아야 할지 잊으면 콘텐츠 북을 보게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79757,8 +80117,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#266": {
-   "src": "We became best friends on our quest. But then he vanished, oh how he was the best.",
-   "dst": "그 여정에서 우린 절친이 되었네. 그런데 그가 사라졌지, 아, 최고의 친구였는데.",
+   "src": "We became the best of friends on our quest. But then he vanished, oh how he was the best.",
+   "dst": "그 여정에서 우린 둘도 없는 친구가 되었네. 그런데 그가 사라졌지, 아, 최고의 친구였는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -82606,6 +82966,46 @@
    "stage": "Stage 16",
    "speaker": "???",
    "source": "wiki"
+  },
+  "Finding the Light#157": {
+   "src": "secrets uncovered in the oldest of libraries in cinfras",
+   "dst": "Cinfras에서 가장 오래된 도서관에 숨겨진 비밀",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#158": {
+   "src": "awakening the guardian of the forest requires more than just magic",
+   "dst": "숲의 수호자를 깨우려면 마법 이상의 것이 필요하다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#159": {
+   "src": "the home of the elves will house the answers and revelations",
+   "dst": "엘프의 고향이 답과 계시를 품고 있으리라",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#160": {
+   "src": "dire actions in the presence of the guardian will waken many things",
+   "dst": "수호자 앞에서 벌인 극단적인 행동은 많은 것을 깨우리라",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
@@ -120484,8 +120884,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#032": {
-   "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "아무튼 섬을 탐색해서 공허 수정을 찾고, {p}(으)로 돌아가자!",
+   "src": "Anyway, let's explore the island, look for the crystal, and return to {p}!",
+   "dst": "아무튼 섬을 탐색해서 수정을 찾고, {p}(으)로 돌아가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -120534,7 +120934,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#037": {
-   "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
+   "src": "They are attacking the windshield in the front room, it looks like it's about to break any moment!",
    "dst": "앞쪽 방 앞유리를 공격하고 있어, 당장이라도 깨질 것 같다!",
    "role": "desc",
    "kind": "dialogue",
@@ -120544,7 +120944,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#038": {
-   "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
+   "src": "Quick, you! Come to the cockpit and press on the window to scare them off!",
    "dst": "거기 자네, 빨리! 조종실로 와서 창문을 눌러 쫓아내!",
    "role": "desc",
    "kind": "dialogue",
@@ -120684,8 +121084,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#052": {
-   "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "나랑 기관사가 수리를 시작하지. 시간이 걸리니 잠수함에 들어가 쉬어 둬.",
+   "src": "The mechanic and I will start repairing. It'll take a while, so enter the submarine and rest up.",
+   "dst": "기관사랑 내가 수리를 시작하지. 시간이 걸리니 잠수함에 들어가 쉬어 둬.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -120704,7 +121104,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#055": {
-   "src": "This is the mechanic, requesting urgent assistence in the basement!",
+   "src": "This is the mechanic, requesting urgent assistance in the basement!",
    "dst": "기관사다, 지하층에 긴급 지원 바란다!",
    "role": "desc",
    "kind": "dialogue",
@@ -121184,7 +121584,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#105": {
-   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
+   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this, as well as your money.",
    "dst": "여기서 있었던 일은 전부 비밀로 하는 게 좋겠어요. 얼마 안 되는 자금마저 잃고 싶진 않거든요. 이 제조법은 천재적이군요! 자, 이것도 보수와 함께 받으세요.",
    "role": "desc",
    "kind": "dialogue",
@@ -121192,6 +121592,236 @@
    "stage": "Stage 19",
    "speaker": "Scientist Ynnos",
    "source": "wiki"
+  },
+  "One Thousand Meters Under#106": {
+   "src": "How's the mission going?",
+   "dst": "임무는 잘 돼 가요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "The Secretary",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#107": {
+   "src": "It looks like everyone already went inside the submarine.",
+   "dst": "다들 이미 잠수함 안으로 들어간 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#108": {
+   "src": "The intercom crackles into life...",
+   "dst": "인터컴이 지직거리며 켜진다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#109": {
+   "src": "Looks like you managed to fix the pipe! You should tell the mechanic.",
+   "dst": "파이프를 고친 것 같다! 기관사에게 알려야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#110": {
+   "src": "Who would've thought that the crystal fell that far...",
+   "dst": "수정이 그렇게 멀리까지 떨어졌을 줄 누가 알았겠어...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#111": {
+   "src": "But after all, there's still a lot ahead of us!",
+   "dst": "그래도 아직 갈 길이 멀어!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#112": {
+   "src": "Have you looked around for the island for the crystal yet?",
+   "dst": "섬을 둘러보면서 수정은 찾아봤어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#113": {
+   "src": "If you haven't found anything, jump back in the submarine and I'll take us down to the next one.",
+   "dst": "아무것도 못 찾았으면 잠수함에 다시 타. 다음 섬으로 내려갈게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#114": {
+   "src": "I've been hearing a lot of strange sounds...",
+   "dst": "이상한 소리가 계속 들려...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Arlene",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#115": {
+   "src": "Pfft. I would've done a better job saving the windshield.",
+   "dst": "흥. 나였으면 앞유리를 더 잘 지켰을 텐데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#116": {
+   "src": "Too bad I was in another room.",
+   "dst": "아쉽게도 난 다른 방에 있었지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#117": {
+   "src": "Oh no, this isn't good. The windshield is destroyed...",
+   "dst": "이런, 큰일이군. 앞유리가 박살 났어...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#118": {
+   "src": "I thought this trip was going to be easy.",
+   "dst": "이번 여정은 쉬울 줄 알았는데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#119": {
+   "src": "Huh, sand?",
+   "dst": "어, 모래?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#120": {
+   "src": "This sand must've fallen from the sky islands, but why is it red?",
+   "dst": "이 모래는 하늘 섬에서 떨어진 게 분명한데, 왜 빨간 거지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#121": {
+   "src": "What's that smell?",
+   "dst": "이게 무슨 냄새지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#122": {
+   "src": "It smells really...sterile? Does this mean I have to work...?",
+   "dst": "냄새가 정말... 소독약 같은데? 이거 내가 일해야 한다는 뜻인가...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#123": {
+   "src": "We need this crystal. Go see Rontaid on the eastern part of the island, he can figure something out.",
+   "dst": "우리에겐 이 수정이 필요하다. 섬 동쪽에 있는 Rontaid를 찾아가라, 그가 방법을 찾아낼 거다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Celuuse",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#124": {
+   "src": "I hope you make use of our science.",
+   "dst": "우리 과학을 잘 활용하길 바라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#125": {
+   "src": "We don't want another village to fall down here... I'm not sure we could provide for even more people.",
+   "dst": "또 다른 마을이 여기로 떨어지는 건 원치 않아... 더 많은 사람을 먹여 살릴 수 있을지 모르겠거든.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#126": {
+   "src": "Looks like the backup team have lowered a crane down to the island, this is your way out!",
+   "dst": "지원 팀이 섬으로 크레인을 내려보낸 것 같다. 이걸로 빠져나갈 수 있다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#127": {
+   "src": "I'm working on a replacement for the crystal now...",
+   "dst": "지금 수정을 대체할 걸 만들고 있어요...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#128": {
+   "src": "These void villagers are rather smart, but their handwriting is utterly atrocious.",
+   "dst": "이 공허 주민들은 꽤 똑똑하지만, 글씨는 정말 형편없군요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
   },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
@@ -130454,8 +131084,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#023": {
-   "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "자세한 건 저도 몰라요! 두 분 같은 노련한 방문자 여럿을 회의 같은 걸로 성으로 부르고 계세요.",
+   "src": "I'm not privy to the details, I'm afraid! He's summoning a number of you seasoned adventurers to the castle, for some sort of meeting.",
+   "dst": "자세한 건 저도 몰라요! 두 분 같은 노련한 모험가 여럿을 회의 같은 걸로 성으로 부르고 계세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -130484,7 +131114,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#026": {
-   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
+   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks till later... probably for the best. Maybe I'll be able to catch him before...",
    "dst": "흠. 이상하지 않아? 술은 나중으로 미뤄야겠네... 차라리 잘됐지. 어쩌면 그 전에 그를 만날 수도...",
    "role": "desc",
    "kind": "dialogue",
@@ -130584,7 +131214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#036": {
-   "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
+   "src": "Well, if it ain't {u}! It's good to see someone else familiar 'round here.",
    "dst": "아이고, {u} 아니야! 이런 데서 아는 얼굴 보니 좋네.",
    "role": "desc",
    "kind": "dialogue",
@@ -130944,8 +131574,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#072": {
-   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "그래서... 지금 여기 온 거고. 몇 주 전에 꽤 급하게 소환됐지. 우리가 그... 이웃 지방과 곤란한 상황에 놓인 모양이야.",
+   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've encountered a tricky situation with our... neighboring province.",
+   "dst": "그래서... 지금 여기 온 거고. 몇 주 전에 꽤 급하게 소환됐지. 우리가 그... 이웃 지방과 곤란한 상황에 맞닥뜨린 모양이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131294,8 +131924,8 @@
    "source": "captured"
   },
   "Queen's Recruit#107": {
-   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "우리는 그들이 보내 주는 신병에 크게 의존하지만, 그 지방에 연락할 방법이 없습니다. 연락은 오직 그들만이, 그들이 원할 때만 할 수 있죠.",
+   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once before have they chosen to do so.",
+   "dst": "우리는 그들이 보내 주는 신병에 크게 의존하지만, 그 지방에 연락할 방법이 없습니다. 연락은 오직 그들만이 할 수 있고, 지금껏 그들이 연락해 온 건 단 한 번뿐이었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131554,8 +132184,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#133": {
-   "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "Fruma는 뭘 원하는지 알고, 한발 물러서도 될 만큼 강하다는 것도 알지.",
+   "src": "Fruma knows what they want, and know they are strong enough that they can afford not to let up their position.",
+   "dst": "Fruma는 뭘 원하는지 알고, 입장을 굽히지 않아도 될 만큼 강하다는 것도 알지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131584,7 +132214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#136": {
-   "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
+   "src": "This mission's a big deal, huh? Lots o' strong folks recalled for it, at least.",
    "dst": "이번 임무 큰일이지? 불러들인 강자만 해도 한가득이잖아.",
    "role": "desc",
    "kind": "dialogue",
@@ -133370,7 +134000,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#314": {
-   "src": "So am I the only one confused by the amount of guards around?",
+   "src": "So, am I the only one confused by the amount of guards around?",
    "dst": "그런데 경비병 수가 이상하다고 느끼는 게 나뿐이야?",
    "role": "desc",
    "kind": "dialogue",
@@ -133450,7 +134080,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#322": {
-   "src": "Speakin' of the Sovereigns... and the guards by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
+   "src": "Speakin' of the Sovereigns... and the guards, by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
    "dst": "군주 얘기가 나와서 말인데... 경비병도 그렇고- 마나 읽는 데 능한 사람 있어? 마나를 쓰는 기색이 거의 없어!",
    "role": "desc",
    "kind": "dialogue",
@@ -134700,7 +135330,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#447": {
-   "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
+   "src": "A joy as always. Well, you heard her Nasin! Chop chop, off to the stands we go!",
    "dst": "언제나 즐겁네요. 자, 들었죠, Nasin! 어서어서, 관중석으로 가요!",
    "role": "desc",
    "kind": "dialogue",
@@ -134830,8 +135460,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#460": {
-   "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "대기실로 가서 전투를 준비하십시오.",
+   "src": "Please go to your waiting room and prepare for the battle.",
+   "dst": "각자의 대기실로 가서 전투를 준비하십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -137333,6 +137963,26 @@
    "speaker": "Tasim",
    "source": "captured.json"
   },
+  "Queen's Recruit#712": {
+   "src": "You should sleep so you're ready for the tournament.",
+   "dst": "토너먼트에 대비해 잠을 자 두는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#714": {
+   "src": "Choices, choices, choices, choices...",
+   "dst": "선택, 선택, 선택, 선택...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "{p}의 [{~}, {~}, -{~}]에서 요리사 Hamsey와 만나세요.",
@@ -137354,7 +138004,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#002": {
-   "src": "Oh do my eyes deceive me? Serais-ce possible?!",
+   "src": "Oh, do my eyes decieve me? Serait-ce possible?!",
    "dst": "어라, 제 눈이 잘못됐나요? Serais-ce possible?!",
    "role": "desc",
    "kind": "dialogue",
@@ -137374,7 +138024,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#004": {
-   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
+   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honoré! Someone like you sitting in my restaurant!",
    "dst": "각지에서 당신의 활약을 들었어요, mon ami! Je suis honore! 당신 같은 분이 제 레스토랑에 앉아 있다니!",
    "role": "desc",
    "kind": "dialogue",
@@ -137394,7 +138044,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#006": {
-   "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
+   "src": "I boast, I boast. Je peux t'offrir un plat... but perhaps I have a different proposition for us both.",
    "dst": "자랑이 심했네요. Je peu t'offrir un plat... 하지만 우리 둘을 위한 다른 제안이 있어요.",
    "role": "desc",
    "kind": "dialogue",
@@ -137474,8 +138124,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#014": {
-   "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
-   "dst": "물론 저는 스물아홉 가지 Principes de Cuisine으로 심사하죠 - 식감, 플레이팅, 독창성...",
+   "src": "I, of course, will judge your dish on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
+   "dst": "물론 저는 스물아홉 가지 Principes de Cuisine으로 요리를 심사하죠 - 식감, 플레이팅, 독창성...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -137494,7 +138144,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#016": {
-   "src": "S'il te plaît! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
+   "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
    "dst": "S'il te plaît! 요리사들에게 인사하고, 누구와 함께할지 정하면 돌아오세요!",
    "role": "desc",
    "kind": "dialogue",
@@ -137564,7 +138214,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#023": {
-   "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
+   "src": "I don't need any ameteurs like yourself getting in my way when I'm cooking up a storm!",
    "dst": "한창 요리 솜씨 부릴 때 너 같은 아마추어가 방해하는 건 필요 없어!",
    "role": "desc",
    "kind": "dialogue",
@@ -137624,7 +138274,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#029": {
-   "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
+   "src": "Ah, you have introduced yourself to tous mes cuisiniers? Who do you want to work with?!",
    "dst": "Ah, tous mes cuisiners와 인사를 나눴나요? 누구와 함께하고 싶어요?!",
    "role": "desc",
    "kind": "dialogue",
@@ -137714,8 +138364,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#038": {
-   "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "Voidroot Stew 레시피를 몇 달째 다듬어 왔는데, 드디어 제 실력을 모두에게 보여 줄 기회예요!",
+   "src": "I've been working on my recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
+   "dst": "Voidroot Stew 레시피를 몇 달째 연구해 왔는데, 드디어 제 실력을 모두에게 보여 줄 기회예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -137724,8 +138374,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#039": {
-   "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "첫 번째는 Snail Island에서 구할 수 있는 [Snail Slime]이에요! 이 요리엔 하나면 돼요.",
+   "src": "The first ingredient is some [Snail Slime], available on Snail Island! We'll only need one for this dish.",
+   "dst": "첫 번째 재료는 Snail Island에서 구할 수 있는 [Snail Slime]이에요! 이 요리엔 하나만 있으면 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -138995,6 +139645,136 @@
    "stage": "",
    "speaker": "Chef Hamsey",
    "source": "captured.json"
+  },
+  "Recipe For Disaster#176": {
+   "src": "Hey, again! I'd love to chat, but you should talk to the other chefs before making your decision!",
+   "dst": "또 왔네요! 얘기하고 싶지만, 결정하기 전에 다른 요리사들과도 이야기해 봐요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#177": {
+   "src": "Please go and talk to the other chefs first before you decide to weigh me down with your \"assistance\".",
+   "dst": "나한테 그 \"도움\"이란 짐을 지우기 전에 다른 요리사들부터 만나고 와.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#178": {
+   "src": "Can't wait to work with you man, tell the big man we're working together and we can get started.",
+   "dst": "같이 일할 생각에 신난다, 친구. 대장한테 우리가 같이 한다고 말하면 바로 시작하자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#179": {
+   "src": "I still can't believe you chose to \"work\" with me. Make yourself useful and go and tell the Chef. I certainly won't.",
+   "dst": "네가 나랑 \"일하기로\" 했다니 아직도 안 믿긴다. 쓸모 있게 굴고 셰프한테 가서 말해. 난 절대 안 할 거니까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#180": {
+   "src": "You should go tell Hamsey who you've chosen to work with!",
+   "dst": "Hamsey에게 누구와 함께하기로 했는지 말하러 가 봐요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#181": {
+   "src": "It is time to cook, mon ami! Head over to your chef and ask them what to do.",
+   "dst": "요리할 시간이에요, mon ami! 당신의 요리사에게 가서 뭘 하면 되는지 물어보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#182": {
+   "src": "No sweat, man, I probably wouldn't choose me either. Good luck!",
+   "dst": "괜찮아, 친구. 나라도 날 안 골랐을 거야. 행운을 빌어!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#183": {
+   "src": "[+{~} Recipe Book]",
+   "dst": "[+{~} 레시피 북]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#184": {
+   "src": "Hey! How's the ingredient gathering going? Remember to check your recipe book if you're stuck!",
+   "dst": "안녕하세요! 재료 모으는 건 잘 돼 가요? 막히면 레시피 북을 꼭 확인해요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#185": {
+   "src": "Need another recipe book? No problem! I keep plenty of spares, you never know what might happen!",
+   "dst": "레시피 북이 또 필요해요? 문제없어요! 여분을 잔뜩 갖고 있거든요, 무슨 일이 생길지 모르니까요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#186": {
+   "src": "The announcer seems to lose his train of thought.",
+   "dst": "사회자가 하던 말을 잊어버린 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#187": {
+   "src": "Would you like to race Usnail Bolt?",
+   "dst": "Usnail Bolt와 경주하시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#188": {
+   "src": "You shouldn't leave the race before it's finished!",
+   "dst": "경주가 끝나기 전에 떠나면 안 돼요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
   },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
@@ -144039,7 +144819,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#047": {
-   "src": "So! L- let's head into town, and s- s- see if we can-",
+   "src": "So! L- let's head into town and s- s- see if we can-",
    "dst": "그러니까! 마- 마을로 가서, 우리가 할 수 있는지 보- 보자",
    "role": "desc",
    "kind": "dialogue",
@@ -158338,6 +159118,66 @@
    "quest": "Star Thief",
    "stage": "Stage 6",
    "speaker": "Thief",
+   "source": "captured"
+  },
+  "Star Thief#024": {
+   "src": "What's that noise...?",
+   "dst": "무슨 소리지...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#025": {
+   "src": "It's coming from the west.",
+   "dst": "서쪽에서 들려온다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#026": {
+   "src": "What was that? It seems to have landed nearby, maybe you should go investigate.",
+   "dst": "방금 뭐였지? 근처에 떨어진 것 같다, 가서 조사해 보는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#027": {
+   "src": "It seems like the meteor crashed into a cave.",
+   "dst": "운석이 동굴에 떨어진 것 같아요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#028": {
+   "src": "The meteor shard is radiating an odd and unfamiliar magical energy",
+   "dst": "운석 파편에서 기묘하고 낯선 마법 기운이 뿜어져 나오고 있어요",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#029": {
+   "src": "Thank you again for your help!",
+   "dst": "도와줘서 다시 한번 고마워요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "Agent",
    "source": "captured"
   },
   "Supply and Delivery#000": {
@@ -175783,7 +176623,7 @@
    "source": "wiki"
   },
   "The Cursed One#482": {
-   "src": "And if there's one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
+   "src": "And if there is one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
    "dst": "그리고 여왕이 진실을 말한다고 확신하는 게 하나 있다면, 바로 이거예요. 그래서 더 이상하죠.",
    "role": "desc",
    "kind": "dialogue",
@@ -176161,6 +177001,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#520": {
+   "src": "The Fox seems to be fast asleep...",
+   "dst": "여우가 깊이 잠든 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -179705,8 +180555,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "그럼 행운을 빌어! 제어판을 찾으면 돌아올게!",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "그럼 행운을 빌어! 제어판을 찾아서 안으로 들어가면 돌아올게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179975,8 +180825,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "괜찮았으면 좋겠네... 어쨌든 마이크로칩은 바로 찾았으니까.",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "그 인간이 괜찮았으면 좋겠네... 어쨌든 마이크로칩은 바로 찾았으니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179985,8 +180835,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "...좋아. 갈 시간이야. {u}을(를) 기다려야겠지, 아마.",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "...좋아. 갈 시간이야. 그 사람을 기다려야겠지, 아마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -180915,7 +181765,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "당신들이 얼마나 고리타분한지 알기나 해요?! 마지막 경고??",
    "role": "desc",
    "kind": "dialogue",
@@ -180935,8 +181785,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "...그 애가 바닥에 무슨 장치를 두고 간 모양이군. 자네가 가져가게. 그리고 이것도 받게. 공장 일로 아직 고맙다는 말을 못 했으니.",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "...그 애가 바닥에 무슨 장치를 두고 간 모양이군. 자네가 가져가게, 난 정말 필요 없으니. 그리고 이것도 받게. 공장 일로 아직 고맙다는 말을 못 했으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -181103,6 +181953,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "새 퀘스트 라인 시작: 깃털이 흩날릴 때",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "아, 역사부터로군! 좋네, 좋아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "그녀가 발톱을 세웠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] 안전 순간이동 절차 가동!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "Ava는 너와 함께 순간이동되지 않았다! 이제 혼자다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "맙소사, 안 돼- 기계를 다시 켜 볼게...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "좋아... 말해 봐.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "우리, 어, 아무 일도 없었던 척하자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "...무슨 일이 일어나기로 되어 있었나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "그렇게 잘될 리가 없었지, 그치?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "자네가 뭘 하는지 알고 있길 바라네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
@@ -182465,8 +183425,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#149": {
-   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item!",
-   "dst": "이 여관은 한동안 공사 중이야... 훔친 물건 숨기기 딱 좋은 곳이지!",
+   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item, wouldn't you think?",
+   "dst": "이 여관은 한동안 공사 중이야... 훔친 물건 숨기기 딱 좋은 곳 같지 않아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -182625,8 +183585,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#173": {
-   "src": "Meet me near the northern entrance if ya want a lift. Alternatively, you can just go by the Workshop if you're into walking!",
-   "dst": "태워다 주길 원하면 북쪽 입구로 와. 걷는 걸 좋아하면 공방으로 바로 가도 돼!",
+   "src": "Let's meet up near the northern entrance if ya want a lift. Alternatively, you can just meet me by the Workshop if you're into walking!",
+   "dst": "태워다 주길 원하면 북쪽 입구에서 만나자. 걷는 걸 좋아하면 공방에서 만나도 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -183125,7 +184085,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#405": {
-   "src": "Sounds good? Well. go tell your partner about this you are two lucky Corkians!",
+   "src": "Sounds good? Well, go tell your partner about this, you are two lucky Corkians!",
    "dst": "괜찮지? 그럼 동료한테 가서 전해. 운 좋은 Corkus 사람 둘이네!",
    "role": "desc",
    "kind": "dialogue",
@@ -183525,8 +184485,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#519": {
-   "src": "... Any idea what's goi- Wait...",
-   "dst": "...무슨 일인지 알- 잠깐...",
+   "src": "{u}... Any idea what's goi- Wait...",
+   "dst": "{u}... 무슨 일인지 알- 잠깐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184005,8 +184965,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#652": {
-   "src": "I see you're familiar with your new toy!",
-   "dst": "새 장난감에 익숙한가 보네!",
+   "src": "I see you're familiar with your toy!",
+   "dst": "장난감에 익숙한가 보네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184645,8 +185605,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#799": {
-   "src": "I swear didn't know! Believe me!",
-   "dst": "맹세코 몰랐어요! 믿어 주세요!",
+   "src": "I swear {u} didn't know! Believe me!",
+   "dst": "맹세코 {u}은(는) 몰랐어요! 믿어 주세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184665,7 +185625,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#801": {
-   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three. Ava, congratulations.",
+   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three! Ava, congratulations.",
    "dst": "감탄해야 할지, 괴로워해야 할지, 분노해야 할지 모르겠네. 그냥 셋 다 할게. Ava, 축하해.",
    "role": "desc",
    "kind": "dialogue",
@@ -184985,8 +185945,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#987": {
-   "src": "Look, there's no time right now. I think and I should go and help.",
-   "dst": "자, 지금은 시간이 없어. 나랑 가서 도와야겠어.",
+   "src": "Look, there's no time right now. I think {u} and I should go and help.",
+   "dst": "자, 지금은 시간이 없어. 나랑 {u}이(가) 가서 도와야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185395,8 +186355,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1108": {
-   "src": "Hmpf. Did take that thing down?",
-   "dst": "흥. 그거 쓰러뜨렸나?",
+   "src": "Hmpf. Did {u} take that thing down?",
+   "dst": "흥. {u}이(가) 그걸 쓰러뜨렸나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185415,8 +186375,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1110": {
-   "src": "Where's ? And Ava?!",
-   "dst": "어디 있지? 그리고 Ava는?!",
+   "src": "Where's {u}? And Ava?!",
+   "dst": "{u}은(는) 어디 있지? 그리고 Ava는?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185775,7 +186735,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1147": {
-   "src": "I guess you and I really learnt what acting in the heat of the moment means, huh.",
+   "src": "I guess you and I really learnt what \"acting in the heat of the moment\" means, huh.",
    "dst": "너나 나나 욱해서 행동한다는 게 뭔지 제대로 배웠네, 그치.",
    "role": "desc",
    "kind": "dialogue",
@@ -185935,8 +186895,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1163": {
-   "src": "...? If you stop by the Workshop later, maybe I'll have some things for you as well.",
-   "dst": "...? 나중에 공방에 들르면 나도 뭔가 줄 게 있을지도 몰라.",
+   "src": "...{u}? If you stop by the Workshop later, I'll set up something for you as well.",
+   "dst": "...{u}? 나중에 공방에 들르면 너한테도 뭔가 준비해 둘게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -186093,6 +187053,786 @@
    "stage": "Stage 14",
    "speaker": "Ava",
    "source": "wiki"
+  },
+  "The Feathers Fly Part II#1351": {
+   "src": "You lead, I follow!",
+   "dst": "네가 앞장서, 내가 따라갈게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1352": {
+   "src": "OUT!",
+   "dst": "나가!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1353": {
+   "src": "[+{~} Growth Accelerator Remote]",
+   "dst": "[+{~} 성장 촉진기 리모컨]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1354": {
+   "src": "[-{~} Growth Accelerator Remote]",
+   "dst": "[-{~} 성장 촉진기 리모컨]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1355": {
+   "src": "Alright, let's go!",
+   "dst": "좋아, 가자!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1356": {
+   "src": "Well, have you found anything?",
+   "dst": "그래서, 뭐 좀 찾았어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1357": {
+   "src": "We don't have that much time you know!",
+   "dst": "우리 시간 별로 없다고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1358": {
+   "src": "Looks like there's an outfit ready right here!",
+   "dst": "여기 바로 입을 수 있는 옷이 있는 것 같다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1359": {
+   "src": "[+{~} Azure Outfit]",
+   "dst": "[+{~} 하늘색 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1360": {
+   "src": "You can give it to Ava, or you can look around the other rooms for more options.",
+   "dst": "Ava에게 줘도 되고, 다른 방을 둘러보며 다른 선택지를 찾아도 된다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1361": {
+   "src": "There's some clothes here. They're dirty though.",
+   "dst": "여기 옷이 좀 있다. 그런데 더럽다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1362": {
+   "src": "[+{~} Dirty Clothes]",
+   "dst": "[+{~} 더러운 옷]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1363": {
+   "src": "There must be a way to wash those somewhere nearby.",
+   "dst": "근처 어딘가에 빨래할 곳이 있을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1364": {
+   "src": "You start washing the clothes...",
+   "dst": "옷을 빨기 시작한다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1365": {
+   "src": "[+{~} Emerald-Encrusted Outfit]",
+   "dst": "[+{~} 에메랄드 장식 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1366": {
+   "src": "Shoot, I think someone's coming!! Come back!",
+   "dst": "이런, 누가 오는 것 같아!! 돌아와!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1367": {
+   "src": "...Nevermind! Keep looking... Sorry...",
+   "dst": "...아니다! 계속 찾아... 미안...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1368": {
+   "src": "You take a look inside the drawer...",
+   "dst": "서랍 안을 들여다본다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1369": {
+   "src": "Lucky! There's a Mechanic Outfit in there.",
+   "dst": "운이 좋다! 안에 정비공 의상이 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1370": {
+   "src": "[+{~} Mechanic Outfit]",
+   "dst": "[+{~} 정비공 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1371": {
+   "src": "You pick up a particularly tasty-looking bone.",
+   "dst": "유난히 맛있어 보이는 뼈를 줍는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1372": {
+   "src": "[+{~} Bone]",
+   "dst": "[+{~} 뼈]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1373": {
+   "src": "There's some sort of armour in that chest. It looks flashy!",
+   "dst": "저 상자 안에 갑옷 같은 게 있다. 번쩍번쩍해 보인다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1374": {
+   "src": "[-{~} Mechanic Corkian Outfit]",
+   "dst": "[-{~} Corkus 정비공 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1375": {
+   "src": "[-{~} Azure Outfit]",
+   "dst": "[-{~} 하늘색 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1376": {
+   "src": "[-{~} Emerald-Encrusted Outfit]",
+   "dst": "[-{~} 에메랄드 장식 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1377": {
+   "src": "[-{~} Golden Power Outfit]",
+   "dst": "[-{~} 황금 동력 의상]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1378": {
+   "src": "It's... Quite hard to move around with that outfit, actually.",
+   "dst": "그게... 사실 그 옷 입고는 움직이기가 꽤 힘들어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1379": {
+   "src": "...Is that someone crying over there? Eh, I'm not sure my social skills can handle that.",
+   "dst": "...저기 누가 울고 있는 거야? 어, 내 사교 능력으로 감당이 될지 모르겠네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1380": {
+   "src": "I'll try my best, {u}!",
+   "dst": "최선을 다해 볼게, {u}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1381": {
+   "src": "[+{~} Audience Invitation Letter]",
+   "dst": "[+{~} 알현 초대장]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1382": {
+   "src": "Hey. Ya got anythin'?",
+   "dst": "어이. 뭐 좀 건졌어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1383": {
+   "src": "Woah there, what's that letter? You actually got an invitation?!",
+   "dst": "워워, 그 편지 뭐야? 진짜로 초대장을 받은 거야?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1384": {
+   "src": "I... Wow. Well I'm impressed! I really am!",
+   "dst": "나... 와. 진짜 감탄했어! 진짜로!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1385": {
+   "src": "Did we even need a letter? That armour probably would've done the trick!",
+   "dst": "편지가 필요하긴 했나? 그 갑옷만으로도 통했을 텐데!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1386": {
+   "src": "Well... If you want me to follow you, tell me. I've heard 'bout a receptionist in the far end of the castle, so maybe we should go there?",
+   "dst": "음... 내가 따라가길 원하면 말해. 성 저쪽 끝에 접수원이 있다던데, 거기로 가 볼까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1387": {
+   "src": "Well... You lead, I follow!",
+   "dst": "음... 네가 앞장서, 내가 따라갈게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1388": {
+   "src": "I heard there was a dealer around here but... We have the letter, so let's just keep goin'.",
+   "dst": "이 근처에 거래상이 있다던데... 우린 편지가 있으니까 그냥 계속 가자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1389": {
+   "src": "Well, no matter! I'll just... See when the council's available and book a meeting...",
+   "dst": "뭐, 상관없어! 그냥... 의회 일정을 확인하고 회의를 잡아 둘게...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1390": {
+   "src": "How peculiar. I wonder how they got that...",
+   "dst": "참 희한하네. 저걸 어떻게 구했을까...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1391": {
+   "src": "Hey! I saw you run towards the castle. What did you do?",
+   "dst": "어이! 성 쪽으로 뛰어가는 거 봤어. 뭐 한 거야?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1392": {
+   "src": "...Wait, what? You went to the receptionist alone, just like that?!",
+   "dst": "...잠깐, 뭐? 혼자 접수원한테 갔다고, 그냥 그렇게?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1393": {
+   "src": "An audience is booked, and you didn't even give me the chance to show my cool armour!",
+   "dst": "알현이 잡혔는데, 내 멋진 갑옷을 보여 줄 기회도 안 줬잖아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1394": {
+   "src": "I... I'm really grateful. What a relief. I did some tweaking regarding the machine, so you should come and test with me!",
+   "dst": "나... 정말 고마워. 다행이다. 기계를 좀 손봤으니까, 와서 같이 시험해 보자!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1395": {
+   "src": "As I've said, this is only practice, don't worry.",
+   "dst": "말했잖아, 이건 연습일 뿐이야, 걱정 마.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1396": {
+   "src": "Just tell me when you're up for another round!",
+   "dst": "한 판 더 할 생각 있으면 말만 해!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1397": {
+   "src": "You ARE coming back... Right??",
+   "dst": "너 돌아오는 거 맞지... 그렇지??",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1398": {
+   "src": "You probably should wait for Ava first.",
+   "dst": "Ava를 먼저 기다려야 할 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1399": {
+   "src": "My guts are telling me this one's gonna be impressive. I hope he's there.",
+   "dst": "내 직감이 이번 건 대단할 거라고 말해. 그 사람이 거기 있으면 좋겠는데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1400": {
+   "src": "You know them?! How?!",
+   "dst": "저 사람들을 알아?! 어떻게?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1401": {
+   "src": "You helped deal with WHA-",
+   "dst": "그걸 처리하는 걸 도왔다고? 뭐어-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1402": {
+   "src": "Looks like she's waiting for your signal.",
+   "dst": "그녀가 네 신호를 기다리는 것 같아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1403": {
+   "src": "Watch this.",
+   "dst": "잘 봐.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1404": {
+   "src": "Even I'm getting into this!",
+   "dst": "나까지 빠져드네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1405": {
+   "src": "I still can't believe this isn't about your armour.",
+   "dst": "이게 네 갑옷 얘기가 아니라는 게 아직도 안 믿겨.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1406": {
+   "src": "No worries... Well, I'm worrying, but that doesn't mean you have to.",
+   "dst": "걱정 마... 뭐, 나는 걱정되지만, 너까지 그럴 필요는 없어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1407": {
+   "src": "Alright guys, don't worry... We got this.",
+   "dst": "좋아 다들, 걱정 마... 우리가 해낼 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1408": {
+   "src": "And we sure hope so!",
+   "dst": "그러길 정말 바라!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1409": {
+   "src": "I'll just... wait for your signal, {u}.",
+   "dst": "그냥... 네 신호를 기다릴게, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1410": {
+   "src": "Hmpf. I certainly am curious now.",
+   "dst": "흥. 이제 확실히 궁금해지는군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Grant",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1411": {
+   "src": "She's glancing at you. Maybe she's waiting for your signal.",
+   "dst": "그녀가 너를 힐끗 본다. 네 신호를 기다리는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1412": {
+   "src": "I'm an Avo.",
+   "dst": "저는 Avo예요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1413": {
+   "src": "EVERYONE! STOP! {u}, I want you to come here and answer something, immediately.",
+   "dst": "모두! 멈춰! {u}, 당장 이리 와서 대답해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1414": {
+   "src": "You take a deep breath, and-",
+   "dst": "너는 숨을 깊이 들이쉬고-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1415": {
+   "src": "Looks like Maxie wants to speak to you.",
+   "dst": "Maxie가 너와 이야기하고 싶어 하는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1416": {
+   "src": "You're- *cough* so good at handling... priorities, Maxie.",
+   "dst": "너는- *콜록* 우선순위를... 참 잘도 챙기는구나, Maxie.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1417": {
+   "src": "Save your energy for later, Sybil.",
+   "dst": "힘은 나중을 위해 아껴 둬, Sybil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Nodise",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1418": {
+   "src": "Even after... Even after this, I'm sure *cough* he'll keep defending them...",
+   "dst": "이런... 이런 일이 있고 나서도, 분명 *콜록* 저 녀석은 계속 그들을 감싸겠지...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1419": {
+   "src": "There's some rumble outside.",
+   "dst": "밖에서 뭔가 우르릉거리는 소리가 난다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1420": {
+   "src": "You've been... *cough* tricked by... Quite the individual, {u}. You better redeem yourself.",
+   "dst": "넌... *콜록* 아주 대단한 녀석한테... 속은 거야, {u}. 명예를 되찾는 게 좋을 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1421": {
+   "src": "Efena doesn't seem very pleased to see you.",
+   "dst": "Efena는 너를 보고 별로 반가워하지 않는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1422": {
+   "src": "She's a little stressed out.",
+   "dst": "지금 좀 스트레스를 받은 상태야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1423": {
+   "src": "No time to talk, {u}! Just go! There must be a core to hit at the top!",
+   "dst": "얘기할 시간 없어, {u}! 어서 가! 꼭대기에 칠 수 있는 코어가 있을 거야!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1424": {
+   "src": "Well, besides the citizens being afraid... I'd say the town's fine. However! I got tasked to find Ava.",
+   "dst": "뭐, 시민들이 겁먹은 걸 빼면... 마을은 괜찮은 것 같아. 그런데! 난 Ava를 찾으라는 임무를 받았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1425": {
+   "src": "Somehow... Efena ended up liking her.",
+   "dst": "어쩌다 보니... Efena가 그 애를 좋아하게 됐어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1426": {
+   "src": "I'm reading, but I'll be done soon!",
+   "dst": "책 읽는 중인데, 금방 끝나!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1427": {
+   "src": "Y-you!! I- oh no... I'm... It's over..!",
+   "dst": "너-너!! 나- 안 돼... 난... 끝났어..!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1428": {
+   "src": "Hey, hey, calm down! I'm here to actually help you... in a way.",
+   "dst": "이봐, 이봐, 진정해! 난 진짜로 널 도우러 온 거야... 어떤 의미에선.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
   },
   "The Hero of Gavel#000": {
    "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
@@ -188525,7 +190265,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "인간이군! 윽! 치료는 걱정 마, 이 정도는 내가 감당할 수 있으니까...",
    "role": "desc",
    "kind": "dialogue",
@@ -188605,8 +190345,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "주민들은 인간이 자기 땅에 사는 걸 아주 엄격히 규제해. 이건 '엄청난' 불법이야.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "주민들은 인간이 자기 땅에 도시를 세우는 걸 아주 엄격히 규제해. 이건 '엄청난' 불법이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188865,8 +190605,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "아무튼, {p}의 비밀이 큰 위험에 처했네. 배신자의 증거를 찾았지.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "아무튼, {p}의 비밀이 큰 위험에 처했네. 배신자가 있다는 증거를 찾았지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188935,7 +190675,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "수상한 거라곤 두건 쓴 남자가 돌아다니는 것뿐이에요. {p}엔 사람이 적어서 이상하죠.",
    "role": "desc",
    "kind": "dialogue",
@@ -189035,7 +190775,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "아. 네가 그 탐정이로군. 머리 나쁜 Eltom 놈들은 절대 알아낼 리 없지.",
    "role": "desc",
    "kind": "dialogue",
@@ -189055,8 +190795,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "이 마을은 애초에 있어선 안 돼. 인간은 Gavel에 정착할 수 없어.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "이 마을은 애초에 있어선 안 돼. 인간은 Gavel에서 이런 식으로 땅을 소유할 수 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189105,7 +190845,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- 비행선 {p} {~}:{~} 출발, {p}행",
    "role": "desc",
    "kind": "dialogue",
@@ -189155,8 +190895,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "배를 쓰겠다고 해서... 거절했더니...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "배를 내놓으라고 해서... 거절했더니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189235,8 +190975,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "{p} 시장에게 이곳에 대해 전부 말하고 보상을 받을 거다. 난 부자가 될 거야. 막고 싶으면 직접 막아 봐!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "{p} 시장에게 이곳에 대해 전부 말하고 보상을 받을 거다. 난 부자가 될 거야. 막고 싶으면 직접 막아 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189292,6 +191032,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "도시 위치는 콘텐츠 북에 적어 뒀어. 내가 더 도와줄 수 있는 건 없어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "메모:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- 시장 집무실은 {p} 최상층",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- 드워프 은행 계좌 만드는 것 잊지 말 것",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Hilan에게",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "네가 운영하는 배는 엉망이야. 여기 냉각수 누수를 고친 게 벌써 세 번째라고.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Corkus의 기계가 훌륭하긴 해도 영원하진 않아. 이대로 가다간 겨울마다 새 배가 필요할 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "엔진에 액체가 들어가면 안 된다는 게 그렇게 이해하기 어려워?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-기술자 Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "편지요? 아, 그거. {p}에 관한 거 말이죠? 그렇게 걱정하지 마세요. 비밀은 지켜 드릴게요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "네, {p}에 대해 알아요. 어쨌든 그곳 시장이 제 전남편이니까요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "주민과 인간의 사랑이라니, 이상해 보일 수도 있겠죠. 알아요. 하지만 종족이 다르다고 사랑을 멈출 순 없었어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "{p}에 관한 편지를 남긴 사람은 우리 아들, Ardulf예요. Eoric은 우리 아이 일을 알게 되자마자 겁에 질려 저를 떠났죠.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf는 혼혈이라서 결코 받아들여지지 못할 거예요... 그래도 무사하길 바라요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "아, 맞다, 하나 더요. 탁자 밑에 있는 스위치... 어서, 눌러 보세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   },
   "The House of Twain (Quest)#000": {
@@ -206445,8 +208335,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#020": {
-   "src": "Heehee, maybe I didn't need to hold back after all? You did really well, really well!",
-   "dst": "히히, 역시 봐줄 필요가 없었나? 정말 잘했어, 정말 잘했어!",
+   "src": "Heehee, maybe I didn't need to hold back after all? You did really, really well!",
+   "dst": "히히, 역시 봐줄 필요가 없었나? 정말, 정말 잘했어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206615,7 +208505,7 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#037": {
-   "src": "...Here's the Water Voucher you're expecting.",
+   "src": "... Here's the Water Voucher you're expecting.",
    "dst": "...기다리던 물 교환권이다.",
    "role": "desc",
    "kind": "dialogue",
@@ -206715,8 +208605,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#047": {
-   "src": "This is unorthodox, as no one has made it this far. But I suppose this means that you have earned an audience with-",
-   "dst": "여기까지 온 자가 없으니 이례적인 일이다. 하지만 이건 네가 알현할 자격을 얻었다는 뜻이겠지-",
+   "src": "This is unorthodox, as few have made it this far. But I suppose this means that you have earned an audience with-",
+   "dst": "여기까지 온 자가 드무니 이례적인 일이다. 하지만 이건 네가 알현할 자격을 얻었다는 뜻이겠지-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206952,6 +208842,166 @@
    "quest": "The Qira Hive (Quest)",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#071": {
+   "src": "Hush, Yansur. Not a word about her.",
+   "dst": "쉿, Yansur. 그녀에 대해선 한마디도 하지 마라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#072": {
+   "src": "Seems you can move on... All you hear is a bloodcurdling roar. What lies ahead...?",
+   "dst": "이제 나아갈 수 있을 것 같다... 들리는 건 소름 끼치는 포효뿐. 앞에 무엇이 기다리고 있을까...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#073": {
+   "src": "Well, now that you've destroyed that terrible thing, it seems prudent to tell Yansur and get your Earth Voucher.",
+   "dst": "그 끔찍한 것을 처치했으니, Yansur에게 알리고 대지 교환권을 받는 게 현명해 보인다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#074": {
+   "src": "Managed to defeat Genesis, hm? It is normally the end of most... Interesting.",
+   "dst": "Genesis를 쓰러뜨렸다고? 대부분은 거기서 끝나건만... 흥미롭군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#075": {
+   "src": "I must admit I am impressed; the Judge is ruthless... perhaps he needs further tweaking?",
+   "dst": "인정하지, 감탄했다. 심판자는 무자비한데... 좀 더 손봐야 하려나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#076": {
+   "src": "Even downed the Vanguard...? My word...",
+   "dst": "선봉장까지 쓰러뜨렸다고...? 세상에...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#077": {
+   "src": "Allow me to stop you there, Yansur. I wish to make an exception for this challenger.",
+   "dst": "거기까지, Yansur. 이 도전자에게는 예외를 두고 싶구나.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#078": {
+   "src": "You have intrigued me, adventurer...and I want to put you to the truest test.",
+   "dst": "네가 내 흥미를 끌었다, 모험가... 그러니 가장 진정한 시험에 들게 하고 싶구나.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#079": {
+   "src": "I await you in my chambers...",
+   "dst": "내 처소에서 기다리겠다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#080": {
+   "src": "...you. You...ahaha...I like you. You're capable enough... Perhaps we could be allies in the future...",
+   "dst": "...너. 너...아하하... 마음에 드는구나. 제법 쓸 만해... 언젠가 우리가 동맹이 될 수도 있겠지...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#081": {
+   "src": "You defeated Qira! All that's left to do is tell Yansur!",
+   "dst": "Qira를 쓰러뜨렸다! 이제 Yansur에게 알리기만 하면 된다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#082": {
+   "src": "They defeated me, Yansur.",
+   "dst": "그들이 나를 이겼다, Yansur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#083": {
+   "src": "You question your mistress? I have nothing to gain from lying to you about this. And there is no shame in admitting defeat.",
+   "dst": "네 주인을 의심하느냐? 이 일로 네게 거짓말해 봐야 얻을 것이 없다. 그리고 패배를 인정하는 건 수치가 아니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#084": {
+   "src": "It is simply a testament to their strength. I will prepare a special reward for them to mark the occasion.",
+   "dst": "그저 그들의 힘을 증명할 뿐이다. 이 일을 기념해 특별한 보상을 준비하겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#085": {
+   "src": "It is as I have always told you. The darkness is coming...but if you Wynn folk are all as strong as you have proven yourself to be, we may just be able to beat it back.",
+   "dst": "내가 늘 말했듯이. 어둠이 다가오고 있다... 하지만 Wynn 사람들이 모두 네가 보여 준 만큼 강하다면, 어쩌면 그것을 물리칠 수 있을지도 모르지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#086": {
+   "src": "Honour to you, warrior of Wynn.",
+   "dst": "그대에게 영예를, Wynn의 전사여.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
    "source": "captured"
   },
   "The Realm of Light (Quest)#000": {
@@ -208097,6 +210147,16 @@
   "The Realm of Light (Quest)#114": {
    "src": "By the light what is that thing?! S-Stay away f-",
    "dst": "빛의 이름으로, 저건 뭐야?! 떨, 떨어져 -",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Realm of Light (Quest)#115": {
+   "src": "by the light, i summon thee, aether's judgement! aid me!",
+   "dst": "빛으로써 그대를 소환하노라, 에테르의 심판이여! 나를 도우라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Realm of Light (Quest)",
@@ -209961,7 +212021,7 @@
    "source": "captured"
   },
   "The Shadow of the Beast#010": {
-   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
    "dst": "여기서 동쪽 동굴로 들어간 것 같아. 가 봐! 더 큰 피해를 입히기 전에 그놈을 막아 줘!",
    "role": "desc",
    "kind": "dialogue",

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 23368,
-  "translated": 23071,
+  "count": 23574,
+  "translated": 23277,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -3726,7 +3726,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#146": {
-   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM, MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
+   "src": "IT IS YOUR JOB TO CREATE DISTRUST BETWEEN THEM. MAKE SURE YOU AREN'T SEEN. THE AVOS ARE ALREADY SKEPTICAL OF THE CORKIANS.",
    "dst": "TU TRABAJO ES SEMBRAR LA DESCONFIANZA ENTRE ELLOS. QUE NO TE VEAN. LOS AVOS YA RECELAN DE LOS CORKIANOS.",
    "role": "desc",
    "kind": "dialogue",
@@ -3846,8 +3846,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#158": {
-   "src": "Round up our defenses and sharpen the spears. There is no excuse for this.",
-   "dst": "Reúne nuestras defensas y afila las lanzas. Esto no tiene excusa.",
+   "src": "Round up the defenses and sharpen the spears. There is no excuse for this.",
+   "dst": "Reúne las defensas y afila las lanzas. Esto no tiene excusa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -4136,7 +4136,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#187": {
-   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER, I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
+   "src": "THERE IS A SET OF STATISTICALLY INFERIOR MECHS BUILT BY THE CORKIANS IN THIS TOWER. I HAVE A SET OF SYSTEMS PROGRAMMED IN THIS DEVICE.",
    "dst": "EN ESTA TORRE HAY UNOS MECHS ESTADÍSTICAMENTE INFERIORES CONSTRUIDOS POR LOS CORKIANOS. TENGO UNOS SISTEMAS PROGRAMADOS EN ESTE DISPOSITIVO.",
    "role": "desc",
    "kind": "dialogue",
@@ -4163,16 +4163,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 26",
    "speaker": "Teleportation Mech",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#190": {
-   "src": "Objective. Eliminate Avos presence.",
-   "dst": "Objetivo. Eliminar presencia Avos.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 26",
-   "speaker": "Corkus Guard",
    "source": "wiki"
   },
   "A Hunter's Calling#191": {
@@ -4536,7 +4526,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#227": {
-   "src": "How's this then, hm? Think your PEON can handle me at my strongest?",
+   "src": "How's this, then, hm? Think your PEON can handle me at my strongest?",
    "dst": "¿Qué tal esto, eh? ¿Crees que tu PEÓN puede conmigo a plena fuerza?",
    "role": "desc",
    "kind": "dialogue",
@@ -5304,6 +5294,16 @@
    "stage": "Stage 28",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Hunter's Calling#314": {
+   "src": "Airforce! Drop the bomb!",
+   "dst": "¡Fuerza aérea! ¡Soltad la bomba!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "Tasim",
+   "source": "captured"
   },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
@@ -6212,8 +6212,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "¡Sí, señora! ¡Vamos!",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "¡Sí, señora! ¡Vamos, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6272,7 +6272,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "¡No creo que podamos cruzar con hechizos, {u}! Necesitamos algo como... ¡Alas!",
    "role": "desc",
    "kind": "dialogue",
@@ -6422,8 +6422,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "Con eso bastará. A ver si funciona. ¡Ven aquí!",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "Con eso bastará. A ver si funciona. ¡Ven aquí, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -6652,7 +6652,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "Así es. No sé por qué está tan bien conservado. Es como si nada lo hubiera tocado.",
    "role": "desc",
    "kind": "dialogue",
@@ -7682,8 +7682,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "¿Qué es este obelisco? Es... reconfortante. Reconozco esta sensación de mi época en Gavel.",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "¿Qué es este obelisco? Es... extrañamente reconfortante. Reconozco esta sensación de mi época en Gavel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -7730,6 +7730,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "Vaya, hola, viajero. Creo que no te había visto por aquí antes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} Whisky de {p}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "¿Acabaste con la infame fábrica de Corkus? Menuda hazaña. He oído muchas historias de lo que eran capaces esos mecas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "¡Vaya, hola, viajero! Me alegra verte otra vez por aquí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "Necesitamos un PLAN.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} Corrupt Pearl]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "¡Tienes que encontrar la forma de seguirlos hasta la cima!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Further#000": {
    "src": "Please don't leave me!",
@@ -7852,8 +7922,8 @@
    "source": "wiki"
   },
   "A Journey Further#012": {
-   "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "¡Oh, no, no! Tengo una poción para esto, ¿dónde está, dónde está? ¡Ajá! ¡Toma, bebe!",
+   "src": "Oh, no no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
+   "dst": "¡Oh, no, no, no! Tengo una poción para esto, ¿dónde está, dónde está? ¡Ajá! ¡Toma, bebe!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -8042,7 +8112,7 @@
    "source": "wiki"
   },
   "A Journey Further#031": {
-   "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
+   "src": "My stomach is empty, I can't even vomit... Why do I still feel so dizzy? Maybe a potion will help...",
    "dst": "Tengo el estómago vacío, ni puedo vomitar... ¿Por qué sigo tan mareado? Quizá una poción ayude...",
    "role": "desc",
    "kind": "dialogue",
@@ -8472,7 +8542,7 @@
    "source": "wiki"
   },
   "A Journey Further#074": {
-   "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
+   "src": "I mean...look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
    "dst": "Quiero decir... ¡mira cómo estoy, {u}! Ya estoy a las puertas de la muerte, y has demostrado ser mucho más fuerte que yo en mi mejor momento.",
    "role": "desc",
    "kind": "dialogue",
@@ -8502,7 +8572,7 @@
    "source": "wiki"
   },
   "A Journey Further#077": {
-   "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
+   "src": "You'll have to kill it to break the barrier. But...find other soldiers who can help you. It will be impossible to defeat alone.",
    "dst": "Tendrás que matarlo para romper la barrera. Pero... busca otros soldados que te ayuden. Es imposible derrotarlo solo.",
    "role": "desc",
    "kind": "dialogue",
@@ -8690,6 +8760,16 @@
    "stage": "",
    "speaker": "",
    "source": "captured.json"
+  },
+  "A Journey Further#096": {
+   "src": "It appears the boulder that was once blocking the way is gone...",
+   "dst": "Parece que la roca que antes bloqueaba el camino ha desaparecido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "A Journey Home#000": {
    "src": "...you were scared of those, once upon a time. What a difference time makes.",
@@ -10165,6 +10245,76 @@
    "quest": "A Journey Home",
    "stage": "Stage 5",
    "speaker": "Paxon",
+   "source": "captured"
+  },
+  "A Journey Home#147": {
+   "src": "You don't hear anything moving on the other side of the door.",
+   "dst": "No oyes nada moverse al otro lado de la puerta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#148": {
+   "src": "Greetings, {u}. It is always an honour to have you in our halls.",
+   "dst": "Saludos, {u}. Siempre es un honor tenerte en nuestros salones.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#149": {
+   "src": "So, Tasim has stayed behind then. I'm to suppose you're worried for his safety, in amongst any other worries you might have.",
+   "dst": "Así que Tasim se ha quedado atrás. Supongo que te preocupa su seguridad, entre cualquier otra preocupación que tengas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#150": {
+   "src": "Although you are not the first to wish to return to Fruma, I have not had any recruits who went to investigate come back satisfied. Or, in a scant few cases, at all.",
+   "dst": "Aunque no eres el primero que desea volver a Fruma, ninguno de los reclutas que fueron a investigar ha vuelto satisfecho. O, en unos pocos casos, no ha vuelto en absoluto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#151": {
+   "src": "I may only grant you access to the pass you took to first come here. Simply take the door and do what you must. I know not what you will find...",
+   "dst": "Solo puedo darte acceso al paso por el que viniste la primera vez. Cruza la puerta y haz lo que debas. No sé qué encontrarás...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#152": {
+   "src": "I'd advise you be cautious. The Queen's correspondence has been...not unkind, but forceful- And considering the circumstances...",
+   "dst": "Te aconsejo que tengas cuidado. La correspondencia de la Reina ha sido... no descortés, pero sí contundente. Y dadas las circunstancias...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#153": {
+   "src": "The door to the pass between here and Fruma is down the hall, across from the fireplace. Come back alive- that is an order as King.",
+   "dst": "La puerta al paso entre aquí y Fruma está al fondo del pasillo, frente a la chimenea. Vuelve con vida: es una orden de tu Rey.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Ragni's King",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -24921,7 +25071,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#080": {
-   "src": "Gwuh, yes! Stop shouting, I- Whuh...",
+   "src": "Gwuh, yes! Stop shouting! I- Whuh...",
    "dst": "¡Gwuh, sí! Dejar de gritar, yo- Uah...",
    "role": "desc",
    "kind": "dialogue",
@@ -25071,8 +25221,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
-   "dst": "¡Ureietun! ¡Humano ayudar a salvar a Ressinter! ¿Por qué no confiar?",
+   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "dst": "¡Ureietun! ¡Humano salvar vida de Ressinter! ¿Por qué no confiar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -25121,7 +25271,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "...poder confiar en que humano no matar. Humano andar por Centerworld. ¡Pero no ver a Arrai-Veretel!",
    "role": "desc",
    "kind": "dialogue",
@@ -26041,8 +26191,8 @@
    "source": "wiki"
   },
   "All Roads to Peace#192": {
-   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they've left behind any language books.",
-   "dst": "Tenía un amigo hobbit muy listo que vivía cerca. Se marchó, pero quiero que mires en su madriguera por si dejó libros de idiomas.",
+   "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they left behind any language books.",
+   "dst": "Tenía un amigo hobbit muy listo que vivía cerca. Se marchó, pero quiero que mires en su madriguera por si se dejó libros de idiomas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -29165,6 +29315,16 @@
   "All Roads to Peace#503": {
    "src": "You know, that one guy was going off about that orc catapult or whatever the entire time you were gone. He's shut up now, but criminy!",
    "dst": "Oye, ese tipo no ha parado de despotricar sobre esa catapulta órquica o lo que sea todo el tiempo que has estado fuera. Ahora se ha callado, pero ¡caray!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "All Roads to Peace",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "All Roads to Peace#504": {
+   "src": "The cuts are closing underneath the balm, and his breathing is becoming more steady. Did you do it...?",
+   "dst": "Los cortes se están cerrando bajo el bálsamo, y su respiración se vuelve más regular. ¿Lo has conseguido...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -37223,7 +37383,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#092": {
-   "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
+   "src": "We did! And now, we celebrate! Here, let's all have some {p} Whiskey for the occasion.",
    "dst": "¡Así es! ¡Y ahora, a celebrarlo! Tomad, bebamos todos un poco de whisky de {p} para la ocasión.",
    "role": "desc",
    "kind": "dialogue",
@@ -37233,8 +37393,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#093": {
-   "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "¿Y qué pensáis hacer ahora vosotros dos? Creo que hablaré con el almirante para que me asigne un destino.",
+   "src": "...So, what're you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
+   "dst": "...¿Y qué pensáis hacer ahora vosotros dos? Creo que hablaré con el almirante para que me asigne un destino.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37243,8 +37403,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#094": {
-   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "Mmm. He estado pensando un poco en... estudiar técnicas de polvo más avanzadas. Hay algo en su magia que me llama la atención.",
+   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. If I can figure out how they work, maybe I can... do more.",
+   "dst": "Mmm. He estado pensando un poco en... estudiar técnicas de polvo más avanzadas. Si consigo entender cómo funcionan, quizá pueda... hacer más.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37283,7 +37443,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#098": {
-   "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
+   "src": "Not a bad idea! I might join you with that later, once I've decide on things more.",
    "dst": "¡No es mala idea! Puede que me una a ti más adelante, cuando tenga las cosas más claras.",
    "role": "desc",
    "kind": "dialogue",
@@ -37363,8 +37523,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#106": {
-   "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
-   "dst": "...Bueno, me alegro de que podamos estar aquí juntos. ¡Por una amistad larga y plena!",
+   "src": "...Well, I'm glad we were all able to be here together. Here's to a long and fulfilling friendship!",
+   "dst": "...Bueno, me alegro de que hayamos podido estar aquí juntos. ¡Por una amistad larga y plena!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -37393,7 +37553,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#109": {
-   "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
+   "src": "Me? Well, I've been making a little progress... but, nothing too big yet. I'm keeping at it, though!",
    "dst": "¿Yo? Bueno, he avanzado un poquito... pero nada muy grande aún. ¡Aunque sigo en ello!",
    "role": "desc",
    "kind": "dialogue",
@@ -37421,6 +37581,16 @@
    "stage": "Stage 5",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Arachnids' Ascent#112": {
+   "src": "[+Drunkness for {~} seconds]",
+   "dst": "[+Embriaguez durante {~} segundos]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Beneath the Depths#000": {
    "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
@@ -37873,7 +38043,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#001": {
-   "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
+   "src": "Welcome to Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
    "dst": "Bienvenido al Templo Bantisu, viajero. Guiamos a las almas perdidas: hombres extraviados camino del pueblo o espíritus que no logran salir del cañón.",
    "role": "desc",
    "kind": "dialogue",
@@ -37883,7 +38053,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#002": {
-   "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
+   "src": "However, recently our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
    "dst": "Sin embargo, nuestra labor se ha vuelto mucho más difícil. El cañón tiembla y cambia. Al moverse las paredes, se liberan criaturas enterradas hace mucho.",
    "role": "desc",
    "kind": "dialogue",
@@ -37953,8 +38123,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#009": {
-   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "Disculpa lo repentino de todo esto, pero debes entender la urgencia. No hay modo de saber cuándo aparecerá Krolton.",
+   "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton may emerge.",
+   "dst": "Disculpa lo repentino de todo esto, pero debes entender la urgencia. No hay modo de saber cuándo podría aparecer Krolton.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38103,7 +38273,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#024": {
-   "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
+   "src": "IF I HAD BOUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
    "dst": "SI HOY HUBIERA TRAÍDO HARINA, TE HARÍA UNA GALLETA POR TU ÓBITO. DICEN QUE LAS MÍAS DE PEPITAS DE CHOCOLATE SON LAS MEJORES.",
    "role": "desc",
    "kind": "dialogue",
@@ -38213,7 +38383,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#035": {
-   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
+   "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE, HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
    "dst": "PERO NUNCA LE NEGARÉ UN RESPIRO A UN INVITADO. POR BREVE QUE SEA. LA MORTALIDAD ES UNA LECCIÓN DURA.",
    "role": "desc",
    "kind": "dialogue",
@@ -38343,7 +38513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#048": {
-   "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
+   "src": "I KEEP IT AS A REMINDER. TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
    "dst": "LO CONSERVO COMO RECORDATORIO, PARA VALORAR LO QUE AÚN QUEDA. ANTES DE QUE ESO TAMBIÉN SE PIERDA.",
    "role": "desc",
    "kind": "dialogue",
@@ -38903,7 +39073,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#110": {
-   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
+   "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
    "dst": "ESTA REUNIÓN EN MI DESPACHO NO ES REALMENTE NECESARIA. EL PAPELEO ES PURA FACHADA. PERO DE VEZ EN CUANDO ME GUSTA DARME EL GUSTO.",
    "role": "desc",
    "kind": "dialogue",
@@ -38913,7 +39083,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#112": {
-   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
+   "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME YOU COULD THINK OF MORE.",
    "dst": "ESO SERÍA TODO, ENTONCES. QUIZÁ, CON MÁS TIEMPO, SE TE OCURRIRÍAN MÁS.",
    "role": "desc",
    "kind": "dialogue",
@@ -38943,8 +39113,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#115": {
-   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "CAUSA DE LA MUERTE: ABATIDO POR EL HORROR LLAMADO KROLTON. OTRO MÁS EN LA CUENTA.",
+   "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER TO ADD TO THE TALLY.",
+   "dst": "CAUSA DE LA MUERTE: ABATIDO POR EL HORROR LLAMADO KROLTON. OTRO MÁS PARA LA CUENTA.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38953,7 +39123,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#116": {
-   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
+   "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FOE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
    "dst": "RÁPIDO E INEVITABLE. NO HAY VERGÜENZA EN PERDER ANTE TAL ENEMIGO. NO ERES EL PRIMERO, Y SEGURAMENTE NO SERÁS EL ÚLTIMO.",
    "role": "desc",
    "kind": "dialogue",
@@ -38963,7 +39133,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#117": {
-   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
+   "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEANS, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
    "dst": "AUNQUE QUIZÁ ME DESCUBRO ESPERANDO QUE ALGUIEN LOGRE ACABAR CON ÉL. HA VIVIDO MUCHO MÁS DE LO QUE LE CORRESPONDÍA Y RESULTA UN FASTIDIO CADA VEZ QUE REAPARECE...",
    "role": "desc",
    "kind": "dialogue",
@@ -38983,7 +39153,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#119": {
-   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
+   "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUESTS. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
    "dst": "AUNQUE, EGOÍSTAMENTE, TE ANIMARÍA A QUEDARTE UN RATO. HACE TIEMPO QUE NO TENGO INVITADOS. TU COMPAÑÍA NO SERÍA POCO APRECIADA.",
    "role": "desc",
    "kind": "dialogue",
@@ -39123,7 +39293,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#136": {
-   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
+   "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AN END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
    "dst": "ALLÍ, CON LAS FUERZAS QUE TE QUEDEN, ACABARÁS CON ESE HORROR. Y CON SU FINAL, EVITAREMOS EL TUYO.",
    "role": "desc",
    "kind": "dialogue",
@@ -39323,8 +39493,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#156": {
-   "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "IMPRESIONANTE. PERO ESA ERA SOLO LA RONDA {~} DE {~}. CADA UNA SERÁ MÁS DIFÍCIL QUE LA ANTERIOR. ¿LISTO?",
+   "src": "VERY IMPRESSIVE. HOWEVER, THAT WAS MERELY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
+   "dst": "MUY IMPRESIONANTE. PERO ESA ERA SOLO LA RONDA {~} DE {~}. CADA UNA SERÁ MÁS DIFÍCIL QUE LA ANTERIOR. ¿LISTO?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39333,8 +39503,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#157": {
-   "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "...AH, ESA CARA QUE HAS PUESTO. NO TIENE PRECIO. COMO MI CRÁNEO ES MACIZO, MIS INVITADOS TIENEN QUE PONER LAS CARAS POR MÍ.",
+   "src": "AH HA HA. THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
+   "dst": "JA, JA, JA. ESA CARA QUE HAS PUESTO. NO TIENE PRECIO. COMO MI CRÁNEO ES MACIZO, MIS INVITADOS TIENEN QUE PONER LAS CARAS POR MÍ.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39343,7 +39513,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#158": {
-   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
+   "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW. WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
    "dst": "COMO TIENES QUE MARCHARTE PRONTO, HE DECIDIDO ACORTAR EL CONCURSO. YA LO RETOMAREMOS DONDE LO DEJAMOS CUANDO INEVITABLEMENTE REGRESES.",
    "role": "desc",
    "kind": "dialogue",
@@ -39383,8 +39553,8 @@
    "source": "wiki"
   },
   "Beyond the Grave#162": {
-   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "PUES ESO ES TODO. OJALÁ PUDIERAS QUEDARTE MÁS: DISFRUTO DE LAS ACTIVIDADES CON INVITADOS LÚCIDOS. CLUBES DE COCINA, PEQUEÑOS DESFILES... PERO TENDRÁ QUE ESPERAR.",
+   "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. BOOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
+   "dst": "PUES ESO ES TODO. OJALÁ PUDIERAS QUEDARTE MÁS: DISFRUTO DE LAS ACTIVIDADES CON INVITADOS LÚCIDOS. CLUBES DE LECTURA, PEQUEÑOS DESFILES... PERO TENDRÁ QUE ESPERAR.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -39393,7 +39563,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#163": {
-   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
+   "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR A MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
    "dst": "AHORA. ESTA MANSIÓN NO TIENE PUERTA TRASERA, ASÍ QUE TENDRÉ QUE ABRIRTE UNA. DISCULPA EL RUIDO UN MOMENTO, Y USA LA NUEVA SALIDA CUANDO QUIERAS.",
    "role": "desc",
    "kind": "dialogue",
@@ -39403,7 +39573,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#165": {
-   "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
+   "src": "SO. THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
    "dst": "ASÍ QUE AHÍ VAS, DE VUELTA AL LARGO SUEÑO DE LA VIDA.",
    "role": "desc",
    "kind": "dialogue",
@@ -39473,7 +39643,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#172": {
-   "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
+   "src": "SO LONG AS THE HORROR DIES, NO MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
    "dst": "MIENTRAS EL HORROR MUERA, SEA CUAL SEA LA CAUSA, NOS BASTARÁ. RECUÉRDALO.",
    "role": "desc",
    "kind": "dialogue",
@@ -39563,7 +39733,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#181": {
-   "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
+   "src": "Bantisu Temple owes you a great deal. Here, then- a suitable reward.",
    "dst": "El Templo Bantisu te debe muchísimo. Toma, pues: una recompensa a la altura.",
    "role": "desc",
    "kind": "dialogue",
@@ -39573,7 +39743,7 @@
    "source": "wiki"
   },
   "Beyond the Grave#182": {
-   "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
+   "src": "A powerful Bantisu artifact, as reward for defeating a beast that menaced in antiquated times.",
    "dst": "Un poderoso artefacto Bantisu, como premio por derrotar a una bestia que asoló tiempos remotos.",
    "role": "desc",
    "kind": "dialogue",
@@ -39671,6 +39841,46 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Beyond the Grave#192": {
+   "src": "...something's gone wrong.",
+   "dst": "...algo ha salido mal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#193": {
+   "src": "[+{~} Krolton's Remains]",
+   "dst": "[+{~} Restos de Krolton]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#194": {
+   "src": "...did all of that actually just happen?",
+   "dst": "...¿de verdad acaba de pasar todo eso?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beyond the Grave#195": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "...aunque quizá prefieras no mencionar tu muerte. Sería raro.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
@@ -49693,8 +49903,8 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#032": {
-   "src": "sacrifice its soul, in the blood and grime.",
-   "dst": "sacrifica su alma, entre la sangre y la grima.",
+   "src": "Sacrifice its soul, in the blood and the grime.",
+   "dst": "Sacrifica su alma, entre la sangre y la grima.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -50063,8 +50273,8 @@
    "source": "wiki"
   },
   "Corrupted Betrayal#069": {
-   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
-   "dst": "Si puedes, deberías entrar ahí y... acabar con él. Pero equípate antes, y busca amigos que te cubran.",
+   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends to watch your back.",
+   "dst": "Si puedes, deberías entrar ahí y... acabar con él. Pero equípate antes, y busca amigos que te cubran las espaldas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -52789,8 +52999,8 @@
    "source": "wiki"
   },
   "Crop Failure#039": {
-   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "¡Muy buenas te dé Dios! ¿Qué andas necesitando del género del viejo Doubiss?",
+   "src": "Ah, good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "¡Ah, buen día! ¿Qué te hace falta de las existencias del viejo Doubiss?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -52921,6 +53131,26 @@
   "Crop Failure#052": {
    "src": "Well, glad I can start sellin' again without him shoutin' \"Fraud! Con! Cheat!\" in the distance! Thanks fer that, mate.",
    "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#053": {
+   "src": "The little cave on the hill, by the crypts? That's the one leadin' to the water table under here.",
+   "dst": "¿La cuevecita de la colina, junto a las criptas? Esa es la que lleva al nivel freático de aquí abajo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#054": {
+   "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
+   "dst": "Échale un vistazo si te ves con ganas de investigar, compadre. Ese granjero querrá verlo con sus propios ojos para creérselo cuando encuentres algo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -57876,6 +58106,36 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Dwarves and Doguns Part II#088": {
+   "src": "[{~}/{~}] Commanders",
+   "dst": "[{~}/{~}] Comandantes",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Leave now and I won't send the Dwarven army on you. You don't want to get hunted like the Doguns, do you?",
+   "dst": "Vete ahora y no mandaré al ejército enano tras de ti. No querrás que te den caza como a los Doguns, ¿verdad?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "And Axelus, leave the city. You are no longer my son.",
+   "dst": "Y tú, Axelus, abandona la ciudad. Ya no eres mi hijo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "King of Rodoroc",
+   "source": "captured"
+  },
   "Dwarves and Doguns Part III#000": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}... Retiro lo dicho. Ya han empezado... No hay forma de razonar con ellos.",
@@ -58137,7 +58397,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "Necesitarás [{~} Fire Webs]. Las Heatscar Spiders de debajo del pueblo las tejen; hay una cueva junto al arco de entrada.",
    "role": "desc",
    "kind": "dialogue",
@@ -58467,8 +58727,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#061": {
-   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "... Esto... Esto era... un pueblo Dogun. Los Dwarves lo dejaron yermo.",
+   "src": "{u}... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
+   "dst": "{u}... Esto... Esto era... un pueblo Dogun. Los Dwarves lo dejaron yermo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -58735,6 +58995,16 @@
    "stage": "Stage 9",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#088": {
+   "src": "If you're having trouble finding the crater, look for the reddest rocks in amongst the others in the lake. They should lead you to it.",
+   "dst": "Si te cuesta encontrar el cráter, busca las rocas más rojas entre las demás del lago. Te llevarán hasta él.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "",
+   "speaker": "Edula",
+   "source": "captured"
   },
   "Dwarves and Doguns Part IV#000": {
    "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
@@ -75057,8 +75327,8 @@
    "source": "wiki"
   },
   "Enter the Dojo#004": {
-   "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
-   "dst": "Este dojo lo he dedicado a pulir las destrezas de todas las artes: desde la agudeza de la mente hasta la artesanía y el arte.",
+   "src": "This dojo, I have dedicated to honing skills in all of the arts- from martial prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "Este dojo lo he dedicado a pulir las destrezas de todas las artes: desde la maestría marcial y la agudeza de la mente hasta la artesanía y el arte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -75197,7 +75467,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#018": {
-   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as are many things.",
    "dst": "Debes discernir el camino para llevar el bloque rojo hasta el bloque dorado. Simple en teoría... complejo en la práctica, como tantas cosas.",
    "role": "desc",
    "kind": "dialogue",
@@ -75307,7 +75577,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#029": {
-   "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "src": "...Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
    "dst": "Ah, claro que no. Pese a tu dominio, esto es solo un paso más de tu viaje. No te preocupes, lo entiendo perfectamente.",
    "role": "desc",
    "kind": "dialogue",
@@ -75327,8 +75597,8 @@
    "source": "wiki"
   },
   "Enter the Dojo#031": {
-   "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
-   "dst": "En todo caso, has superado las pruebas de este humilde Sensei, así que te daré lo prometido.",
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
+   "dst": "En todo caso, has superado las pruebas de este humilde Sensei y, por ello, te daré lo prometido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -76185,6 +76455,96 @@
    "stage": "",
    "speaker": "Sensei Miyagi",
    "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "Defeat the dummies, and bring their tokens to the door! Simple, yes?",
+   "dst": "¡Derrota a los muñecos y lleva sus fichas a la puerta! Sencillo, ¿sí?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#118": {
+   "src": "Show no fear, challenger! There is no shame in failing.",
+   "dst": "¡No muestres miedo, aspirante! No hay vergüenza en fracasar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#119": {
+   "src": "And worry not, the fiata Room is reinforced against all manner of attacks. Run wild, hoho!",
+   "dst": "Y no te preocupes, la sala Fiata está reforzada contra toda clase de ataques. ¡Desmádrate, jojo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#120": {
+   "src": "It is fascinating to see how you battle. Very different from my stylings!",
+   "dst": "Es fascinante ver cómo combates. ¡Muy distinto de mi estilo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#121": {
+   "src": "Of course, you wield a weapon to battle, so of course it is different from unarmed combat, hoho...",
+   "dst": "Claro que tú empuñas un arma para luchar, así que es natural que sea distinto del combate sin armas, jojo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#122": {
+   "src": "Perhaps you may be interested in learning to fight unarmed after!",
+   "dst": "¡Quizá después te interese aprender a luchar sin armas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#123": {
+   "src": "Oh, this is getting quite good. I should get a snack to eat while I watch...",
+   "dst": "Oh, esto se está poniendo muy bueno. Debería ir a por algo de picar mientras miro...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#124": {
+   "src": "Hmhm, I'll be right back! Continue fighting- And do not worry if you finish before I return! I will be quick!",
+   "dst": "¡Jmjm, ahora mismo vuelvo! Sigue luchando, ¡y no te preocupes si terminas antes de que regrese! ¡Seré rápido!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": "captured"
+  },
+  "Enter the Dojo#125": {
+   "src": "The pig raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "El cerdo levanta la cabeza para mirarte. Sus ojos se encienden al ver el té verde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Enzan's Brother#000": {
    "src": "Good day for baking, aye recruit? I might need some assistance later, come back when you are level {~}!",
@@ -77177,8 +77537,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#004": {
-   "src": "It's a map to a magical place! I sure hope it doesn't vanish without a tra-",
-   "dst": "¡Un mapa a un lugar mágico y sin par! ¡Ojalá no se esfume sin dejar ni un lu-",
+   "src": "It's the map to a magical place! I sure hope it doesn't vanish without a tra-",
+   "dst": "¡El mapa a un lugar mágico y sin par! ¡Ojalá no se esfume sin dejar ni un lu-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -77437,7 +77797,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#032": {
-   "src": "For you see... I am gifted with foresight, the future's memories come to me like no other!",
+   "src": "For you see... I am gifted with foresight, the futures memories come to me like no other!",
    "dst": "Verás... estoy dotado de clarividencia. ¡Los recuerdos del futuro acuden a mí como a nadie más!",
    "role": "desc",
    "kind": "dialogue",
@@ -77447,8 +77807,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#033": {
-   "src": "For the low, low price of [{~} LE], your future will be foretold!",
-   "dst": "¡Por el módico precio de [{~} LE], tu futuro será revelado!",
+   "src": "For the low, low price of [{~} ¼²] , your future will be foretold!",
+   "dst": "¡Por el módico precio de [{~} ¼²], tu futuro será revelado!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -78087,8 +78447,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#099": {
-   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not many places serve better rum than good ol’ Jofash!",
-   "dst": "Antes éramos granjeros, ¿sabes? Por la zona de {p}. ¡UF! ¡Menos mal que me mudé aquí! ¡En pocos sitios sirven mejor ron que en el bueno de Jofash!",
+   "src": "We used to be farmers, you know. Out near {p}. WHEW! Glad I moved here though! Not so many places serve better rum than good ol' Jofash!",
+   "dst": "Antes éramos granjeros, ¿sabes? Por la zona de {p}. ¡UF! ¡Menos mal que me mudé aquí! ¡No hay muchos sitios que sirvan mejor ron que el bueno de Jofash!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79417,7 +79777,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#232": {
-   "src": "We should probably get of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
+   "src": "We should probably get out of this place, it feels rather small. Perhaps you can try to break through that weak spot in the wall?",
    "dst": "Deberíamos salir de aquí, esto es un rincón muy pequeño. ¿Y si intentas romper ese punto débil del muro, con empeño?",
    "role": "desc",
    "kind": "dialogue",
@@ -79517,8 +79877,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#242": {
-   "src": "Check your quest book if you ever need a recap. And to make sure you don't get lost, take this map.",
-   "dst": "Consulta tu libro de misiones si necesitas un repaso. Y para que no te pierdas, toma este mapa, por si acaso.",
+   "src": "Check your content book if you ever need a recap. And to make sure you don't get lost, take the map.",
+   "dst": "Consulta tu libro de contenido si necesitas un repaso. Y para que no te pierdas, toma el mapa, por si acaso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79537,7 +79897,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#244": {
-   "src": "Well, this stew has a rather odd flavor. But any food we can get here I shall savor.",
+   "src": "Well, this stew has a rather odd flavour. But any food we can get here I shall savour.",
    "dst": "Vaya, este guiso tiene un sabor bastante extraño. Pero aquí saborearé cualquier comida, sin engaño.",
    "role": "desc",
    "kind": "dialogue",
@@ -79557,7 +79917,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#246": {
-   "src": "To the east, I can just barely make out a tent. Go and look for my friend there. I'm simply hellbent!",
+   "src": "To the east, I can just barely make out a tent. Go and look for my friend there, I'm simply hellbent!",
    "dst": "Hacia el este apenas alcanzo a ver una tienda plantada. ¡Ve a buscar allí a mi amigo; mi voluntad no se apaga!",
    "role": "desc",
    "kind": "dialogue",
@@ -79657,8 +80017,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#256": {
-   "src": "You'll need those items you craft the bomb, I just told you where to look. If you forget what you need to find, check your quest book.",
-   "dst": "Necesitarás esos objetos para fabricar la bomba; ya te dije dónde buscar. Si olvidas qué te hace falta, tu libro de misiones has de consultar.",
+   "src": "You'll need those items to craft the bomb, I just told you where to look. If you forget what you need to find, check your content book.",
+   "dst": "Necesitarás esos objetos para fabricar la bomba; ya te dije dónde buscar. Si olvidas qué te hace falta, tu libro de contenido has de consultar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -79757,7 +80117,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#266": {
-   "src": "We became best friends on our quest. But then he vanished, oh how he was the best.",
+   "src": "We became the best of friends on our quest. But then he vanished, oh how he was the best.",
    "dst": "En aquel viaje nos hicimos los mejores amigos del lugar. Pero luego se esfumó; ay, cómo me hizo llorar.",
    "role": "desc",
    "kind": "dialogue",
@@ -82606,6 +82966,46 @@
    "stage": "Stage 16",
    "speaker": "???",
    "source": "wiki"
+  },
+  "Finding the Light#157": {
+   "src": "secrets uncovered in the oldest of libraries in cinfras",
+   "dst": "secretos descubiertos en la más antigua de las bibliotecas de cinfras",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#158": {
+   "src": "awakening the guardian of the forest requires more than just magic",
+   "dst": "despertar al guardián del bosque requiere algo más que magia",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#159": {
+   "src": "the home of the elves will house the answers and revelations",
+   "dst": "el hogar de los elfos albergará las respuestas y las revelaciones",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "Lari",
+   "source": "captured"
+  },
+  "Finding the Light#160": {
+   "src": "dire actions in the presence of the guardian will waken many things",
+   "dst": "los actos funestos en presencia del guardián despertarán muchas cosas",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
@@ -120484,8 +120884,8 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#032": {
-   "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "En fin, ¡exploremos la isla, busquemos el cristal del Vacío y volvamos a {p}!",
+   "src": "Anyway, let's explore the island, look for the crystal, and return to {p}!",
+   "dst": "En fin, ¡exploremos la isla, busquemos el cristal y volvamos a {p}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -120534,7 +120934,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#037": {
-   "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
+   "src": "They are attacking the windshield in the front room, it looks like it's about to break any moment!",
    "dst": "¡Están atacando el parabrisas de la sala delantera, parece que va a romperse en cualquier momento!",
    "role": "desc",
    "kind": "dialogue",
@@ -120544,7 +120944,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#038": {
-   "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
+   "src": "Quick, you! Come to the cockpit and press on the window to scare them off!",
    "dst": "¡Rápido, tú! ¡Ven a la cabina y empuja la ventana para espantarlas!",
    "role": "desc",
    "kind": "dialogue",
@@ -120684,7 +121084,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#052": {
-   "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
+   "src": "The mechanic and I will start repairing. It'll take a while, so enter the submarine and rest up.",
    "dst": "El mecánico y yo empezaremos a reparar. Tardaremos, así que entra en el submarino y descansa.",
    "role": "desc",
    "kind": "dialogue",
@@ -120704,7 +121104,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#055": {
-   "src": "This is the mechanic, requesting urgent assistence in the basement!",
+   "src": "This is the mechanic, requesting urgent assistance in the basement!",
    "dst": "¡Aquí el mecánico, pido ayuda urgente en el nivel inferior!",
    "role": "desc",
    "kind": "dialogue",
@@ -121184,7 +121584,7 @@
    "source": "wiki"
   },
   "One Thousand Meters Under#105": {
-   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
+   "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this, as well as your money.",
    "dst": "Mejor que todo esto quede en secreto. No quiero perder la poca financiación que me queda. ¡Esta receta es genial! Toma, esto y tu paga.",
    "role": "desc",
    "kind": "dialogue",
@@ -121192,6 +121592,236 @@
    "stage": "Stage 19",
    "speaker": "Scientist Ynnos",
    "source": "wiki"
+  },
+  "One Thousand Meters Under#106": {
+   "src": "How's the mission going?",
+   "dst": "¿Qué tal va la misión?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "The Secretary",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#107": {
+   "src": "It looks like everyone already went inside the submarine.",
+   "dst": "Parece que todos han entrado ya en el submarino.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#108": {
+   "src": "The intercom crackles into life...",
+   "dst": "El intercomunicador cobra vida con un chasquido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#109": {
+   "src": "Looks like you managed to fix the pipe! You should tell the mechanic.",
+   "dst": "¡Parece que has conseguido arreglar la tubería! Deberías decírselo al mecánico.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#110": {
+   "src": "Who would've thought that the crystal fell that far...",
+   "dst": "¿Quién iba a pensar que el cristal había caído tan lejos...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#111": {
+   "src": "But after all, there's still a lot ahead of us!",
+   "dst": "¡Pero, al fin y al cabo, todavía nos queda mucho por delante!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#112": {
+   "src": "Have you looked around for the island for the crystal yet?",
+   "dst": "¿Has buscado ya el cristal por la isla?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#113": {
+   "src": "If you haven't found anything, jump back in the submarine and I'll take us down to the next one.",
+   "dst": "Si no has encontrado nada, vuelve a subir al submarino y nos bajaré hasta la siguiente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Captain Olof",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#114": {
+   "src": "I've been hearing a lot of strange sounds...",
+   "dst": "He estado oyendo muchos ruidos extraños...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Arlene",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#115": {
+   "src": "Pfft. I would've done a better job saving the windshield.",
+   "dst": "Bah. Yo habría salvado el parabrisas mucho mejor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#116": {
+   "src": "Too bad I was in another room.",
+   "dst": "Lástima que estuviera en otra sala.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Jesp",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#117": {
+   "src": "Oh no, this isn't good. The windshield is destroyed...",
+   "dst": "Oh, no, esto no pinta bien. El parabrisas está destrozado...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#118": {
+   "src": "I thought this trip was going to be easy.",
+   "dst": "Creía que este viaje iba a ser fácil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#119": {
+   "src": "Huh, sand?",
+   "dst": "¿Eh? ¿Arena?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#120": {
+   "src": "This sand must've fallen from the sky islands, but why is it red?",
+   "dst": "Esta arena debe de haber caído de las islas del cielo, pero ¿por qué es roja?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Manny",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#121": {
+   "src": "What's that smell?",
+   "dst": "¿Qué es ese olor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#122": {
+   "src": "It smells really...sterile? Does this mean I have to work...?",
+   "dst": "Huele muy... ¿estéril? ¿Significa eso que tengo que trabajar...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Kantor",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#123": {
+   "src": "We need this crystal. Go see Rontaid on the eastern part of the island, he can figure something out.",
+   "dst": "Necesitamos este cristal. Ve a ver a Rontaid en la parte este de la isla; él sabrá qué hacer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Celuuse",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#124": {
+   "src": "I hope you make use of our science.",
+   "dst": "Espero que le saques partido a nuestra ciencia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#125": {
+   "src": "We don't want another village to fall down here... I'm not sure we could provide for even more people.",
+   "dst": "No queremos que otra aldea caiga aquí abajo... No sé si podríamos mantener a todavía más gente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Rontaid",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#126": {
+   "src": "Looks like the backup team have lowered a crane down to the island, this is your way out!",
+   "dst": "Parece que el equipo de apoyo ha bajado una grúa hasta la isla. ¡Es tu forma de salir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#127": {
+   "src": "I'm working on a replacement for the crystal now...",
+   "dst": "Ahora mismo estoy trabajando en un sustituto del cristal...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#128": {
+   "src": "These void villagers are rather smart, but their handwriting is utterly atrocious.",
+   "dst": "Estos aldeanos del Vacío son bastante listos, pero su caligrafía es absolutamente atroz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "Scientist Ynnos",
+   "source": "captured"
   },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
@@ -130454,8 +131084,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#023": {
-   "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "¡Me temo que no conozco los detalles! Convoca al castillo a varios visitantes veteranos como vosotros, para una especie de reunión.",
+   "src": "I'm not privy to the details, I'm afraid! He's summoning a number of you seasoned adventurers to the castle, for some sort of meeting.",
+   "dst": "¡Me temo que no conozco los detalles! Convoca al castillo a varios aventureros veteranos como vosotros, para una especie de reunión.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -130484,8 +131114,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#026": {
-   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
-   "dst": "Hm. Es raro, ¿verdad? Habrá que dejar las copas para otro día... quizá sea lo mejor. Igual consigo encontrarlo antes de...",
+   "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks till later... probably for the best. Maybe I'll be able to catch him before...",
+   "dst": "Hm. Es raro, ¿verdad? Habrá que dejar las copas para más tarde... quizá sea lo mejor. Igual consigo encontrarlo antes de...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -130584,7 +131214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#036": {
-   "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
+   "src": "Well, if it ain't {u}! It's good to see someone else familiar 'round here.",
    "dst": "¡Anda, pero si es {u}! Qué bien ver otra cara conocida por aquí.",
    "role": "desc",
    "kind": "dialogue",
@@ -130944,8 +131574,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#072": {
-   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "Y... por eso mismo estoy aquí ahora. Me hicieron volver de forma muy brusca hace unas semanas. Parece que estamos en una situación delicada con nuestra... provincia vecina.",
+   "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've encountered a tricky situation with our... neighboring province.",
+   "dst": "Y... por eso mismo estoy aquí ahora. Me hicieron volver de forma muy brusca hace unas semanas. Parece que nos hemos topado con una situación delicada con nuestra... provincia vecina.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131294,8 +131924,8 @@
    "source": "captured"
   },
   "Queen's Recruit#107": {
-   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "Dependemos mucho del flujo de reclutas que nos envían, pero no tenemos forma de contactar con su provincia. Solo ellos pueden acudir a nosotros, y solo cuando así lo deciden.",
+   "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once before have they chosen to do so.",
+   "dst": "Dependemos mucho del flujo de reclutas que nos envían, pero no tenemos forma de contactar con su provincia. Solo ellos pueden acudir a nosotros, y solo lo han decidido una vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131554,8 +132184,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#133": {
-   "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "Fruma sabe lo que quiere, y sabe que es lo bastante fuerte como para poder retirarse cuando le convenga.",
+   "src": "Fruma knows what they want, and know they are strong enough that they can afford not to let up their position.",
+   "dst": "Fruma sabe lo que quiere, y sabe que es lo bastante fuerte como para permitirse no ceder en su postura.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -131584,7 +132214,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#136": {
-   "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
+   "src": "This mission's a big deal, huh? Lots o' strong folks recalled for it, at least.",
    "dst": "Es una misión importante, ¿eh? Han llamado a mucha gente fuerte.",
    "role": "desc",
    "kind": "dialogue",
@@ -133370,7 +134000,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#314": {
-   "src": "So am I the only one confused by the amount of guards around?",
+   "src": "So, am I the only one confused by the amount of guards around?",
    "dst": "¿Soy el único al que le extraña la cantidad de guardias?",
    "role": "desc",
    "kind": "dialogue",
@@ -133450,7 +134080,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#322": {
-   "src": "Speakin' of the Sovereigns... and the guards by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
+   "src": "Speakin' of the Sovereigns... and the guards, by extension - anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
    "dst": "Hablando de los Soberanos... y de los guardias, ya puestos... ¿alguien más sabe leer el maná? ¡Es como si aquí no se usara nada!",
    "role": "desc",
    "kind": "dialogue",
@@ -134700,7 +135330,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#447": {
-   "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
+   "src": "A joy as always. Well, you heard her Nasin! Chop chop, off to the stands we go!",
    "dst": "Un placer, como siempre. ¡Bueno, ya la has oído, Nasin! ¡Vamos, vamos, a las gradas!",
    "role": "desc",
    "kind": "dialogue",
@@ -134830,8 +135460,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#460": {
-   "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "Pase a la sala de espera y prepárese para el combate.",
+   "src": "Please go to your waiting room and prepare for the battle.",
+   "dst": "Pase a su sala de espera y prepárese para el combate.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -137333,6 +137963,26 @@
    "speaker": "Tasim",
    "source": "captured.json"
   },
+  "Queen's Recruit#712": {
+   "src": "You should sleep so you're ready for the tournament.",
+   "dst": "Deberías dormir para estar listo para el torneo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#714": {
+   "src": "Choices, choices, choices, choices...",
+   "dst": "Opciones, opciones, opciones, opciones...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "Reúnete con el chef Hamsey en {p}, en [{~}, {~}, -{~}].",
@@ -137354,7 +138004,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#002": {
-   "src": "Oh do my eyes deceive me? Serais-ce possible?!",
+   "src": "Oh, do my eyes decieve me? Serait-ce possible?!",
    "dst": "¿Acaso me engañan mis ojos? Serais-ce possible?!",
    "role": "desc",
    "kind": "dialogue",
@@ -137374,7 +138024,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#004": {
-   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
+   "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honoré! Someone like you sitting in my restaurant!",
    "dst": "¡He oído historias de tus hazañas por todas las tierras, mon ami! Je suis honore! ¡Alguien como tú sentado en mi restaurante!",
    "role": "desc",
    "kind": "dialogue",
@@ -137394,7 +138044,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#006": {
-   "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
+   "src": "I boast, I boast. Je peux t'offrir un plat... but perhaps I have a different proposition for us both.",
    "dst": "Presumo, lo sé. Je peu t'offrir un plat... pero quizá tenga otra propuesta para los dos.",
    "role": "desc",
    "kind": "dialogue",
@@ -137474,7 +138124,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#014": {
-   "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
+   "src": "I, of course, will judge your dish on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
    "dst": "Yo, claro está, juzgaré tu plato según los veintinueve Principes de Cuisine - textura, presentación, originalidad...",
    "role": "desc",
    "kind": "dialogue",
@@ -137494,7 +138144,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#016": {
-   "src": "S'il te plaît! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
+   "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
    "dst": "S'il te plaît! ¡Preséntate a cada uno de mis cocineros y vuelve cuando decidas con quién trabajar!",
    "role": "desc",
    "kind": "dialogue",
@@ -137564,7 +138214,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#023": {
-   "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
+   "src": "I don't need any ameteurs like yourself getting in my way when I'm cooking up a storm!",
    "dst": "¡No necesito aficionados como tú estorbándome mientras cocino a lo grande!",
    "role": "desc",
    "kind": "dialogue",
@@ -137624,7 +138274,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#029": {
-   "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
+   "src": "Ah, you have introduced yourself to tous mes cuisiniers? Who do you want to work with?!",
    "dst": "Ah, ¿ya te has presentado a tous mes cuisiners? ¡¿Con quién quieres trabajar?!",
    "role": "desc",
    "kind": "dialogue",
@@ -137714,8 +138364,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#038": {
-   "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "¡Llevo meses perfeccionando la receta del Voidroot Stew y por fin puedo enseñarles a todos lo que valgo!",
+   "src": "I've been working on my recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
+   "dst": "¡Llevo meses trabajando en mi receta del Voidroot Stew y por fin puedo enseñarles a todos lo que valgo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -137724,8 +138374,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#039": {
-   "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "¡Lo primero es un poco de [Snail Slime], que hay en Snail Island! Para este plato solo hace falta uno.",
+   "src": "The first ingredient is some [Snail Slime], available on Snail Island! We'll only need one for this dish.",
+   "dst": "¡El primer ingrediente es un poco de [Snail Slime], que hay en Snail Island! Para este plato solo nos hará falta uno.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -138995,6 +139645,136 @@
    "stage": "",
    "speaker": "Chef Hamsey",
    "source": "captured.json"
+  },
+  "Recipe For Disaster#176": {
+   "src": "Hey, again! I'd love to chat, but you should talk to the other chefs before making your decision!",
+   "dst": "¡Hola otra vez! Me encantaría charlar, ¡pero deberías hablar con los otros cocineros antes de decidirte!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#177": {
+   "src": "Please go and talk to the other chefs first before you decide to weigh me down with your \"assistance\".",
+   "dst": "Haz el favor de hablar primero con los otros cocineros antes de decidir lastrarme con tu «ayuda».",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#178": {
+   "src": "Can't wait to work with you man, tell the big man we're working together and we can get started.",
+   "dst": "Qué ganas de trabajar contigo, tío. Dile al jefazo que vamos a trabajar juntos y podremos empezar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#179": {
+   "src": "I still can't believe you chose to \"work\" with me. Make yourself useful and go and tell the Chef. I certainly won't.",
+   "dst": "Todavía no me creo que hayas elegido «trabajar» conmigo. Haz algo útil y ve a decírselo al Chef. Yo desde luego no pienso hacerlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#180": {
+   "src": "You should go tell Hamsey who you've chosen to work with!",
+   "dst": "¡Deberías ir a decirle a Hamsey con quién has decidido trabajar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#181": {
+   "src": "It is time to cook, mon ami! Head over to your chef and ask them what to do.",
+   "dst": "¡Es hora de cocinar, mon ami! Ve con tu cocinero y pregúntale qué hacer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#182": {
+   "src": "No sweat, man, I probably wouldn't choose me either. Good luck!",
+   "dst": "Tranqui, tío, yo probablemente tampoco me elegiría. ¡Suerte!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#183": {
+   "src": "[+{~} Recipe Book]",
+   "dst": "[+{~} Libro de Recetas]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#184": {
+   "src": "Hey! How's the ingredient gathering going? Remember to check your recipe book if you're stuck!",
+   "dst": "¡Hola! ¿Qué tal va la recogida de ingredientes? ¡Si te atascas, recuerda consultar tu libro de recetas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#185": {
+   "src": "Need another recipe book? No problem! I keep plenty of spares, you never know what might happen!",
+   "dst": "¿Necesitas otro libro de recetas? ¡No hay problema! Guardo un montón de repuesto, ¡nunca se sabe lo que puede pasar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#186": {
+   "src": "The announcer seems to lose his train of thought.",
+   "dst": "El presentador parece perder el hilo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#187": {
+   "src": "Would you like to race Usnail Bolt?",
+   "dst": "¿Quieres echar una carrera contra Usnail Bolt?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#188": {
+   "src": "You shouldn't leave the race before it's finished!",
+   "dst": "¡No deberías abandonar la carrera antes de que termine!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
   },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
@@ -144039,7 +144819,7 @@
    "source": "wiki"
   },
   "Revelations in Fall#047": {
-   "src": "So! L- let's head into town, and s- s- see if we can-",
+   "src": "So! L- let's head into town and s- s- see if we can-",
    "dst": "¡Así que! V- vamos a la ciudad y v- v- vemos si podemos",
    "role": "desc",
    "kind": "dialogue",
@@ -158338,6 +159118,66 @@
    "quest": "Star Thief",
    "stage": "Stage 6",
    "speaker": "Thief",
+   "source": "captured"
+  },
+  "Star Thief#024": {
+   "src": "What's that noise...?",
+   "dst": "¿Qué es ese ruido...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#025": {
+   "src": "It's coming from the west.",
+   "dst": "Viene del oeste.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#026": {
+   "src": "What was that? It seems to have landed nearby, maybe you should go investigate.",
+   "dst": "¿Qué ha sido eso? Parece que ha caído cerca; quizá deberías ir a investigar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#027": {
+   "src": "It seems like the meteor crashed into a cave.",
+   "dst": "Parece que el meteorito se ha estrellado en una cueva.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#028": {
+   "src": "The meteor shard is radiating an odd and unfamiliar magical energy",
+   "dst": "El fragmento de meteorito irradia una energía mágica extraña y desconocida",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#029": {
+   "src": "Thank you again for your help!",
+   "dst": "¡Gracias otra vez por tu ayuda!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "Agent",
    "source": "captured"
   },
   "Supply and Delivery#000": {
@@ -175783,7 +176623,7 @@
    "source": "wiki"
   },
   "The Cursed One#482": {
-   "src": "And if there's one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
+   "src": "And if there is one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
    "dst": "Y si hay algo en lo que estoy segura de que dice la verdad, es esto. Lo cual lo hace aún más extraño.",
    "role": "desc",
    "kind": "dialogue",
@@ -176161,6 +177001,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#520": {
+   "src": "The Fox seems to be fast asleep...",
+   "dst": "El zorro parece estar profundamente dormido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -179705,8 +180555,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#086": {
-   "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "¡Pues suerte! ¡Vuelvo en cuanto encuentres el panel!",
+   "src": "Good luck, then! I'll be back once you find the control panel and get inside!",
+   "dst": "¡Pues suerte! ¡Vuelvo en cuanto encuentres el panel y entres!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179975,8 +180825,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#113": {
-   "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "Espero que esté bien... Al final encontré el microchip enseguida.",
+   "src": "I hope that human's alright... I managed to find the microchip right away, after all.",
+   "dst": "Espero que ese humano esté bien... Al final encontré el microchip enseguida.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -179985,8 +180835,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
-   "dst": "...Vale. Hora de irse. Supongo que esperaré a {u}.",
+   "src": "...Alright. Time to go. I'll wait for them, I guess.",
+   "dst": "...Vale. Hora de irse. Supongo que esperaré a que vuelva.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -180915,7 +181765,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#207": {
-   "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
+   "src": "Do you guys have ANY idea how archaic you all are?! A \"final warning\"??",
    "dst": "¿¡Tenéis IDEA de lo anticuados que sois!? ¿¿Una última advertencia??",
    "role": "desc",
    "kind": "dialogue",
@@ -180935,8 +181785,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#209": {
-   "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "...Parece que ha dejado algún artilugio en el suelo. Bien puedes quedártelo. Y toma, llévate esto. No hemos tenido ocasión de darte las gracias por lo de la Fábrica.",
+   "src": "...It appears she left some device on the floor. You might as well take them, I sure don't want it. And here, take these. We haven't had the chance to thank you regarding the Factory.",
+   "dst": "...Parece que ha dejado algún artilugio en el suelo. Bien puedes quedártelo; yo desde luego no lo quiero. Y toma, llévate esto. No hemos tenido ocasión de darte las gracias por lo de la Fábrica.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -181103,6 +181953,116 @@
    "stage": "Stage 9",
    "speaker": "Ava",
    "source": "captured.json"
+  },
+  "The Feathers Fly Part I#226": {
+   "src": "New Questline Started: The Feathers Fly",
+   "dst": "Nueva línea de misiones iniciada: Vuelan las plumas",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#227": {
+   "src": "Ah, history first! Great, great!",
+   "dst": "¡Ah, primero la historia! ¡Estupendo, estupendo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#228": {
+   "src": "Her claws are out.",
+   "dst": "Ha sacado las garras.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#229": {
+   "src": "[!] Safety teleportation sequence activated!",
+   "dst": "[!] ¡Secuencia de teletransporte de emergencia activada!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#230": {
+   "src": "Ava didn't get teleported with you! You're on your own!",
+   "dst": "¡Ava no se ha teletransportado contigo! ¡Estás solo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#231": {
+   "src": "Oh god, no- Let me boot up the machine again...",
+   "dst": "Ay, no, no... Déjame volver a arrancar la máquina...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#232": {
+   "src": "Alright... Talk to me.",
+   "dst": "Vale... Cuéntame.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#233": {
+   "src": "We'll, uh, act as if nothing happened.",
+   "dst": "Haremos, eh, como si no hubiera pasado nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#234": {
+   "src": "...Was anything supposed to happen?",
+   "dst": "...¿Se suponía que tenía que pasar algo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#235": {
+   "src": "'t would've been too good to be true, right?",
+   "dst": "Habría sido demasiado bonito para ser verdad, ¿no?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part I#236": {
+   "src": "I hope you know what you're doing.",
+   "dst": "Espero que sepas lo que haces.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chieftain",
+   "source": "captured"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
@@ -182465,8 +183425,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#149": {
-   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item!",
-   "dst": "Esta posada lleva un tiempo en obras... ¡Menudo sitio para esconder algo robado!",
+   "src": "This inn has been under renovation for a while now... It's quite the spot to hide a stolen item, wouldn't you think?",
+   "dst": "Esta posada lleva un tiempo en obras... Menudo sitio para esconder algo robado, ¿no crees?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -182625,8 +183585,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#173": {
-   "src": "Meet me near the northern entrance if ya want a lift. Alternatively, you can just go by the Workshop if you're into walking!",
-   "dst": "Nos vemos cerca de la entrada norte si quieres que te lleve. O si prefieres andar, ¡vete directo al Taller!",
+   "src": "Let's meet up near the northern entrance if ya want a lift. Alternatively, you can just meet me by the Workshop if you're into walking!",
+   "dst": "Quedemos cerca de la entrada norte si quieres que te lleve. O si prefieres andar, ¡nos vemos directamente en el Taller!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -183125,7 +184085,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#405": {
-   "src": "Sounds good? Well. go tell your partner about this you are two lucky Corkians!",
+   "src": "Sounds good? Well, go tell your partner about this, you are two lucky Corkians!",
    "dst": "¿Bien? Pues ve a contárselo a tu socio, ¡sois dos corkianos con suerte!",
    "role": "desc",
    "kind": "dialogue",
@@ -183525,8 +184485,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#519": {
-   "src": "... Any idea what's goi- Wait...",
-   "dst": "... ¿Sabes qué pas- Espera...",
+   "src": "{u}... Any idea what's goi- Wait...",
+   "dst": "{u}... ¿Sabes qué pas- Espera...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184005,8 +184965,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#652": {
-   "src": "I see you're familiar with your new toy!",
-   "dst": "¡Veo que dominas tu juguete nuevo!",
+   "src": "I see you're familiar with your toy!",
+   "dst": "¡Veo que dominas tu juguete!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184645,8 +185605,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#799": {
-   "src": "I swear didn't know! Believe me!",
-   "dst": "¡Juro que no lo sabía! ¡Créame!",
+   "src": "I swear {u} didn't know! Believe me!",
+   "dst": "¡Juro que {u} no lo sabía! ¡Créame!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -184665,7 +185625,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#801": {
-   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three. Ava, congratulations.",
+   "src": "I'm unsure if I should be impressed, distressed or enraged. So I think I'll just be all three! Ava, congratulations.",
    "dst": "No sé si debería estar impresionada, angustiada o furiosa. Así que seré las tres cosas. Ava, enhorabuena.",
    "role": "desc",
    "kind": "dialogue",
@@ -184985,8 +185945,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#987": {
-   "src": "Look, there's no time right now. I think and I should go and help.",
-   "dst": "Mira, ahora no hay tiempo. Creo que y yo deberíamos ir a ayudar.",
+   "src": "Look, there's no time right now. I think {u} and I should go and help.",
+   "dst": "Mira, ahora no hay tiempo. Creo que {u} y yo deberíamos ir a ayudar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185395,8 +186355,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1108": {
-   "src": "Hmpf. Did take that thing down?",
-   "dst": "Hmpf. ¿Ha derribado esa cosa?",
+   "src": "Hmpf. Did {u} take that thing down?",
+   "dst": "Hmpf. ¿{u} ha derribado esa cosa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185415,8 +186375,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1110": {
-   "src": "Where's ? And Ava?!",
-   "dst": "¿Dónde está? ¡¿Y Ava?!",
+   "src": "Where's {u}? And Ava?!",
+   "dst": "¿Dónde está {u}? ¡¿Y Ava?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -185775,7 +186735,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1147": {
-   "src": "I guess you and I really learnt what acting in the heat of the moment means, huh.",
+   "src": "I guess you and I really learnt what \"acting in the heat of the moment\" means, huh.",
    "dst": "Supongo que tú y yo hemos aprendido de verdad lo que es actuar en caliente, ¿eh?",
    "role": "desc",
    "kind": "dialogue",
@@ -185935,8 +186895,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1163": {
-   "src": "...? If you stop by the Workshop later, maybe I'll have some things for you as well.",
-   "dst": "...? Si te pasas luego por el Taller, quizá tenga algunas cosas para ti también.",
+   "src": "...{u}? If you stop by the Workshop later, I'll set up something for you as well.",
+   "dst": "...¿{u}? Si te pasas luego por el Taller, también te prepararé algo a ti.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -186093,6 +187053,786 @@
    "stage": "Stage 14",
    "speaker": "Ava",
    "source": "wiki"
+  },
+  "The Feathers Fly Part II#1351": {
+   "src": "You lead, I follow!",
+   "dst": "¡Tú guías, yo te sigo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1352": {
+   "src": "OUT!",
+   "dst": "¡FUERA!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "???",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1353": {
+   "src": "[+{~} Growth Accelerator Remote]",
+   "dst": "[+{~} Mando del Acelerador de Crecimiento]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1354": {
+   "src": "[-{~} Growth Accelerator Remote]",
+   "dst": "[-{~} Mando del Acelerador de Crecimiento]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1355": {
+   "src": "Alright, let's go!",
+   "dst": "¡Muy bien, vamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1356": {
+   "src": "Well, have you found anything?",
+   "dst": "Bueno, ¿has encontrado algo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1357": {
+   "src": "We don't have that much time you know!",
+   "dst": "¡Que no tenemos tanto tiempo, eh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1358": {
+   "src": "Looks like there's an outfit ready right here!",
+   "dst": "¡Parece que aquí mismo hay un atuendo listo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1359": {
+   "src": "[+{~} Azure Outfit]",
+   "dst": "[+{~} Atuendo azur]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1360": {
+   "src": "You can give it to Ava, or you can look around the other rooms for more options.",
+   "dst": "Puedes dárselo a Ava o buscar en las otras salas más opciones.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1361": {
+   "src": "There's some clothes here. They're dirty though.",
+   "dst": "Aquí hay algo de ropa. Aunque está sucia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1362": {
+   "src": "[+{~} Dirty Clothes]",
+   "dst": "[+{~} Ropa sucia]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1363": {
+   "src": "There must be a way to wash those somewhere nearby.",
+   "dst": "Tiene que haber algún sitio cerca donde lavarla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1364": {
+   "src": "You start washing the clothes...",
+   "dst": "Empiezas a lavar la ropa...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1365": {
+   "src": "[+{~} Emerald-Encrusted Outfit]",
+   "dst": "[+{~} Atuendo con incrustaciones de esmeralda]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1366": {
+   "src": "Shoot, I think someone's coming!! Come back!",
+   "dst": "¡¡Mierda, creo que viene alguien!! ¡Vuelve!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1367": {
+   "src": "...Nevermind! Keep looking... Sorry...",
+   "dst": "...¡Nada, nada! Sigue buscando... Perdona...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1368": {
+   "src": "You take a look inside the drawer...",
+   "dst": "Echas un vistazo dentro del cajón...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1369": {
+   "src": "Lucky! There's a Mechanic Outfit in there.",
+   "dst": "¡Qué suerte! Ahí dentro hay un atuendo de mecánico.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1370": {
+   "src": "[+{~} Mechanic Outfit]",
+   "dst": "[+{~} Atuendo de mecánico]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1371": {
+   "src": "You pick up a particularly tasty-looking bone.",
+   "dst": "Recoges un hueso con una pinta especialmente sabrosa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1372": {
+   "src": "[+{~} Bone]",
+   "dst": "[+{~} Hueso]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1373": {
+   "src": "There's some sort of armour in that chest. It looks flashy!",
+   "dst": "En ese cofre hay una especie de armadura. ¡Qué llamativa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1374": {
+   "src": "[-{~} Mechanic Corkian Outfit]",
+   "dst": "[-{~} Atuendo de mecánico corkiano]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1375": {
+   "src": "[-{~} Azure Outfit]",
+   "dst": "[-{~} Atuendo azur]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1376": {
+   "src": "[-{~} Emerald-Encrusted Outfit]",
+   "dst": "[-{~} Atuendo con incrustaciones de esmeralda]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1377": {
+   "src": "[-{~} Golden Power Outfit]",
+   "dst": "[-{~} Atuendo dorado motorizado]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1378": {
+   "src": "It's... Quite hard to move around with that outfit, actually.",
+   "dst": "Es... bastante difícil moverse con ese atuendo, la verdad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1379": {
+   "src": "...Is that someone crying over there? Eh, I'm not sure my social skills can handle that.",
+   "dst": "...¿Eso de allí es alguien llorando? Eh, no sé si mis habilidades sociales pueden con eso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1380": {
+   "src": "I'll try my best, {u}!",
+   "dst": "¡Haré lo que pueda, {u}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1381": {
+   "src": "[+{~} Audience Invitation Letter]",
+   "dst": "[+{~} Carta de invitación a audiencia]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1382": {
+   "src": "Hey. Ya got anythin'?",
+   "dst": "Eh. ¿Tienes algo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1383": {
+   "src": "Woah there, what's that letter? You actually got an invitation?!",
+   "dst": "Anda, ¿y esa carta? ¡¿De verdad has conseguido una invitación?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1384": {
+   "src": "I... Wow. Well I'm impressed! I really am!",
+   "dst": "Yo... Vaya. ¡Pues estoy impresionada! ¡De verdad!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1385": {
+   "src": "Did we even need a letter? That armour probably would've done the trick!",
+   "dst": "¿Hacía falta siquiera una carta? ¡Esa armadura seguramente habría bastado!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1386": {
+   "src": "Well... If you want me to follow you, tell me. I've heard 'bout a receptionist in the far end of the castle, so maybe we should go there?",
+   "dst": "Bueno... Si quieres que te siga, dímelo. He oído que hay una recepcionista al fondo del castillo, así que ¿quizá deberíamos ir allí?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1387": {
+   "src": "Well... You lead, I follow!",
+   "dst": "Bueno... ¡Tú guías, yo te sigo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1388": {
+   "src": "I heard there was a dealer around here but... We have the letter, so let's just keep goin'.",
+   "dst": "Oí que había un traficante por aquí, pero... Ya tenemos la carta, así que sigamos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1389": {
+   "src": "Well, no matter! I'll just... See when the council's available and book a meeting...",
+   "dst": "Bueno, ¡no importa! Yo solo... miraré cuándo está disponible el consejo y reservaré una reunión...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1390": {
+   "src": "How peculiar. I wonder how they got that...",
+   "dst": "Qué curioso. Me pregunto cómo lo habrán conseguido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1391": {
+   "src": "Hey! I saw you run towards the castle. What did you do?",
+   "dst": "¡Eh! Te he visto correr hacia el castillo. ¿Qué has hecho?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1392": {
+   "src": "...Wait, what? You went to the receptionist alone, just like that?!",
+   "dst": "...Espera, ¿qué? ¡¿Has ido a la recepcionista tú solo, así sin más?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1393": {
+   "src": "An audience is booked, and you didn't even give me the chance to show my cool armour!",
+   "dst": "¡Ya hay una audiencia reservada, y ni siquiera me has dado la oportunidad de lucir mi armadura chula!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1394": {
+   "src": "I... I'm really grateful. What a relief. I did some tweaking regarding the machine, so you should come and test with me!",
+   "dst": "Yo... te lo agradezco de verdad. Qué alivio. He hecho algunos ajustes a la máquina, ¡así que deberías venir a probarla conmigo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1395": {
+   "src": "As I've said, this is only practice, don't worry.",
+   "dst": "Como ya te he dicho, esto es solo práctica, tranquilo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1396": {
+   "src": "Just tell me when you're up for another round!",
+   "dst": "¡Avísame cuando te apetezca otra ronda!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1397": {
+   "src": "You ARE coming back... Right??",
+   "dst": "Vas a volver... ¿¡verdad!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1398": {
+   "src": "You probably should wait for Ava first.",
+   "dst": "Probablemente deberías esperar primero a Ava.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1399": {
+   "src": "My guts are telling me this one's gonna be impressive. I hope he's there.",
+   "dst": "Las tripas me dicen que esto va a ser impresionante. Espero que esté ahí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1400": {
+   "src": "You know them?! How?!",
+   "dst": "¡¿Los conoces?! ¡¿Cómo?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1401": {
+   "src": "You helped deal with WHA-",
+   "dst": "¡¿Que ayudaste con QUÉ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1402": {
+   "src": "Looks like she's waiting for your signal.",
+   "dst": "Parece que está esperando tu señal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1403": {
+   "src": "Watch this.",
+   "dst": "Mira esto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1404": {
+   "src": "Even I'm getting into this!",
+   "dst": "¡Hasta yo me estoy metiendo en esto!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1405": {
+   "src": "I still can't believe this isn't about your armour.",
+   "dst": "Todavía no me creo que esto no vaya de tu armadura.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1406": {
+   "src": "No worries... Well, I'm worrying, but that doesn't mean you have to.",
+   "dst": "Tranquilo... Bueno, yo estoy preocupada, pero eso no significa que tú tengas que estarlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1407": {
+   "src": "Alright guys, don't worry... We got this.",
+   "dst": "Muy bien, chicos, tranquilos... Lo tenemos controlado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1408": {
+   "src": "And we sure hope so!",
+   "dst": "¡Y eso esperamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1409": {
+   "src": "I'll just... wait for your signal, {u}.",
+   "dst": "Yo... esperaré tu señal, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1410": {
+   "src": "Hmpf. I certainly am curious now.",
+   "dst": "Hmpf. Ahora sí que siento curiosidad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Grant",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1411": {
+   "src": "She's glancing at you. Maybe she's waiting for your signal.",
+   "dst": "Te está mirando de reojo. Quizá esté esperando tu señal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1412": {
+   "src": "I'm an Avo.",
+   "dst": "Soy una Avo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1413": {
+   "src": "EVERYONE! STOP! {u}, I want you to come here and answer something, immediately.",
+   "dst": "¡TODOS! ¡ALTO! {u}, quiero que vengas aquí y me respondas a algo, ahora mismo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1414": {
+   "src": "You take a deep breath, and-",
+   "dst": "Respiras hondo, y-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1415": {
+   "src": "Looks like Maxie wants to speak to you.",
+   "dst": "Parece que Maxie quiere hablar contigo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1416": {
+   "src": "You're- *cough* so good at handling... priorities, Maxie.",
+   "dst": "Se te da- *cof* tan bien gestionar... las prioridades, Maxie.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1417": {
+   "src": "Save your energy for later, Sybil.",
+   "dst": "Guarda energías para luego, Sybil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Nodise",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1418": {
+   "src": "Even after... Even after this, I'm sure *cough* he'll keep defending them...",
+   "dst": "Incluso después... Incluso después de esto, seguro que *cof* seguirá defendiéndolos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1419": {
+   "src": "There's some rumble outside.",
+   "dst": "Fuera se oye un estruendo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1420": {
+   "src": "You've been... *cough* tricked by... Quite the individual, {u}. You better redeem yourself.",
+   "dst": "Te ha... *cof* engañado... todo un personaje, {u}. Más te vale redimirte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1421": {
+   "src": "Efena doesn't seem very pleased to see you.",
+   "dst": "Efena no parece muy contenta de verte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1422": {
+   "src": "She's a little stressed out.",
+   "dst": "Está un poco estresada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1423": {
+   "src": "No time to talk, {u}! Just go! There must be a core to hit at the top!",
+   "dst": "¡No hay tiempo para hablar, {u}! ¡Ve! ¡Tiene que haber un núcleo al que golpear en lo alto!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1424": {
+   "src": "Well, besides the citizens being afraid... I'd say the town's fine. However! I got tasked to find Ava.",
+   "dst": "Bueno, aparte de que los ciudadanos tienen miedo... yo diría que la ciudad está bien. ¡Pero! Me han encargado encontrar a Ava.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1425": {
+   "src": "Somehow... Efena ended up liking her.",
+   "dst": "No sé cómo... pero al final a Efena le cayó bien.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1426": {
+   "src": "I'm reading, but I'll be done soon!",
+   "dst": "Estoy leyendo, ¡pero acabo enseguida!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1427": {
+   "src": "Y-you!! I- oh no... I'm... It's over..!",
+   "dst": "¡¡T-tú!! Y- oh, no... Estoy... ¡Se acabó...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1428": {
+   "src": "Hey, hey, calm down! I'm here to actually help you... in a way.",
+   "dst": "¡Eh, eh, tranquila! He venido a ayudarte de verdad... en cierto modo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
   },
   "The Hero of Gavel#000": {
    "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
@@ -188525,7 +190265,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "¡Un humano! ¡Agh! No te molestes en buscarme un médico, lo tengo controlado...",
    "role": "desc",
    "kind": "dialogue",
@@ -188605,8 +190345,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "Los aldeanos tienen reglas muy estrictas sobre los humanos que viven en sus tierras, y eso es MUY ilegal.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "Los aldeanos tienen reglas muy estrictas sobre que los humanos funden ciudades en sus tierras, y eso es MUY ilegal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188865,8 +190605,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "En fin, el secreto de {p} corre grave peligro. Hemos hallado pruebas del traidor.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "En fin, el secreto de {p} corre grave peligro. Hemos hallado pruebas de un traidor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188935,7 +190675,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "Lo único sospechoso que he visto es a un hombre encapuchado rondando. En {p} hay poca gente, así que es raro.",
    "role": "desc",
    "kind": "dialogue",
@@ -189035,7 +190775,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "Ah. Así que tú eres el detective. Ninguno de esos eltomitas cortos de entendederas lo habría averiguado.",
    "role": "desc",
    "kind": "dialogue",
@@ -189055,8 +190795,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "Este pueblo ni siquiera debería existir. Los humanos no pueden asentarse en Gavel.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "Este pueblo ni siquiera debería existir. Los humanos no pueden poseer tierras en Gavel de esta manera.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189105,7 +190845,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- Aeronave {p} {~}:{~} a {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -189155,8 +190895,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "Pidió usar una nave... Me negué...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "Exigió usar una nave... Me negué...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189235,8 +190975,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "Le contaré al alcalde de {p} todo sobre este lugar y cobraré mi recompensa. Seré rico, ¡y si quieres impedírmelo tendrás que hacerlo tú mismo!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "Le contaré al alcalde de {p} todo sobre este lugar y cobraré mi recompensa. Seré rico, y si quieres impedírmelo tendrás que hacerlo tú mismo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -189292,6 +191032,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "He anotado la ubicación de la ciudad en tu libro de contenido. No puedo hacer nada más para ayudarte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "Notas:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- Despacho del alcalde en el nivel superior de {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- Acordarse de abrir la cuenta en el banco enano",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Para Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "La nave que llevas es un desastre. Es la tercera vez que tengo que reparar aquí una fuga de refrigerante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Las máquinas corkianas son estupendas, pero no son eternas. A este paso, necesitarás una nave nueva cada invierno.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "¿Tan difícil es entender que no debe entrar ningún líquido en el motor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-Ingeniero Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "¿Una carta? Ah, eso. ¿La de {p}? No pongas esa cara de preocupación. El secreto está a salvo conmigo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "Sí, sé lo de {p}. Al fin y al cabo, su alcalde es mi exmarido.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "Puede parecer extraño, un amor entre una aldeana y un humano. Lo sé, pero nuestra raza no nos impidió enamorarnos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "Quien dejó la carta sobre {p} es nuestro hijo, Ardulf. En cuanto Eoric se enteró de lo de nuestro hijo, le entró el pánico y me dejó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf nunca será aceptado siendo mestizo... Aun así, espero que esté bien.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "Ah, sí, una cosa más. El interruptor de debajo de la mesa... ¡venga, púlsalo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   },
   "The House of Twain (Quest)#000": {
@@ -206445,8 +208335,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#020": {
-   "src": "Heehee, maybe I didn't need to hold back after all? You did really well, really well!",
-   "dst": "Jiji, ¿al final no hacía falta contenerse? ¡Lo has hecho muy bien, muy bien!",
+   "src": "Heehee, maybe I didn't need to hold back after all? You did really, really well!",
+   "dst": "Jiji, ¿al final no hacía falta contenerse? ¡Lo has hecho muy, muy bien!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206615,7 +208505,7 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#037": {
-   "src": "...Here's the Water Voucher you're expecting.",
+   "src": "... Here's the Water Voucher you're expecting.",
    "dst": "...Aquí tienes el Water Voucher que esperas.",
    "role": "desc",
    "kind": "dialogue",
@@ -206715,8 +208605,8 @@
    "source": "wiki"
   },
   "The Qira Hive (Quest)#047": {
-   "src": "This is unorthodox, as no one has made it this far. But I suppose this means that you have earned an audience with-",
-   "dst": "Esto es insólito, nadie había llegado tan lejos. Supongo que significa que te has ganado una audiencia con-",
+   "src": "This is unorthodox, as few have made it this far. But I suppose this means that you have earned an audience with-",
+   "dst": "Esto es insólito, pocos han llegado tan lejos. Supongo que significa que te has ganado una audiencia con-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -206952,6 +208842,166 @@
    "quest": "The Qira Hive (Quest)",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#071": {
+   "src": "Hush, Yansur. Not a word about her.",
+   "dst": "Silencio, Yansur. Ni una palabra sobre ella.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#072": {
+   "src": "Seems you can move on... All you hear is a bloodcurdling roar. What lies ahead...?",
+   "dst": "Parece que puedes avanzar... Solo oyes un rugido espeluznante. ¿Qué te espera...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#073": {
+   "src": "Well, now that you've destroyed that terrible thing, it seems prudent to tell Yansur and get your Earth Voucher.",
+   "dst": "Bueno, ahora que has destruido esa cosa terrible, parece prudente avisar a Yansur y conseguir tu Earth Voucher.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#074": {
+   "src": "Managed to defeat Genesis, hm? It is normally the end of most... Interesting.",
+   "dst": "Has logrado derrotar a Génesis, ¿eh? Suele ser el final de la mayoría... Interesante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#075": {
+   "src": "I must admit I am impressed; the Judge is ruthless... perhaps he needs further tweaking?",
+   "dst": "Debo admitir que estoy impresionada; el Juez es despiadado... ¿quizá necesite más ajustes?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#076": {
+   "src": "Even downed the Vanguard...? My word...",
+   "dst": "¿Incluso has abatido a la Vanguardia...? Válgame...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#077": {
+   "src": "Allow me to stop you there, Yansur. I wish to make an exception for this challenger.",
+   "dst": "Permíteme detenerte ahí, Yansur. Deseo hacer una excepción con este aspirante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#078": {
+   "src": "You have intrigued me, adventurer...and I want to put you to the truest test.",
+   "dst": "Me has intrigado, aventurero... y quiero someterte a la prueba más auténtica.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#079": {
+   "src": "I await you in my chambers...",
+   "dst": "Te espero en mis aposentos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#080": {
+   "src": "...you. You...ahaha...I like you. You're capable enough... Perhaps we could be allies in the future...",
+   "dst": "...tú. Tú... jajaja... me caes bien. Eres lo bastante capaz... Quizá podamos ser aliados en el futuro...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#081": {
+   "src": "You defeated Qira! All that's left to do is tell Yansur!",
+   "dst": "¡Has derrotado a Qira! ¡Solo queda decírselo a Yansur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#082": {
+   "src": "They defeated me, Yansur.",
+   "dst": "Me han derrotado, Yansur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#083": {
+   "src": "You question your mistress? I have nothing to gain from lying to you about this. And there is no shame in admitting defeat.",
+   "dst": "¿Cuestionas a tu señora? No gano nada mintiéndote sobre esto. Y no hay vergüenza en admitir la derrota.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#084": {
+   "src": "It is simply a testament to their strength. I will prepare a special reward for them to mark the occasion.",
+   "dst": "Es simplemente una muestra de su fuerza. Les prepararé una recompensa especial para conmemorar la ocasión.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#085": {
+   "src": "It is as I have always told you. The darkness is coming...but if you Wynn folk are all as strong as you have proven yourself to be, we may just be able to beat it back.",
+   "dst": "Es lo que siempre te he dicho. La oscuridad se acerca... pero si todos los de Wynn sois tan fuertes como has demostrado ser tú, quizá logremos hacerla retroceder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
+   "source": "captured"
+  },
+  "The Qira Hive (Quest)#086": {
+   "src": "Honour to you, warrior of Wynn.",
+   "dst": "Honor a ti, guerrero de Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Qira Hive (Quest)",
+   "stage": "",
+   "speaker": "Qira",
    "source": "captured"
   },
   "The Realm of Light (Quest)#000": {
@@ -208097,6 +210147,16 @@
   "The Realm of Light (Quest)#114": {
    "src": "By the light what is that thing?! S-Stay away f-",
    "dst": "¡¿Por la luz, qué es esa cosa?! A-apártate de-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Realm of Light (Quest)#115": {
+   "src": "by the light, i summon thee, aether's judgement! aid me!",
+   "dst": "por la luz, yo te invoco, ¡juicio del éter! ¡ayúdame!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Realm of Light (Quest)",
@@ -209961,7 +212021,7 @@
    "source": "captured"
   },
   "The Shadow of the Beast#010": {
-   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
    "dst": "Creo que se metió en la cueva al este de aquí. ¡Ve! ¡Detén a esa cosa antes de que cause más daño!",
    "role": "desc",
    "kind": "dialogue",

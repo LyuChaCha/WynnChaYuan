@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 78,
-  "translated": 78,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "Человек! Агх! Врача звать не надо, я справлюсь...",
    "role": "desc",
    "kind": "dialogue",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "У селян строгие законы насчёт людей на их землях, и это ОЧЕНЬ незаконно.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "У селян строгие законы насчёт людей, основывающих города на их землях, и это ОЧЕНЬ незаконно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -357,7 +357,7 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
    "dst": "Так или иначе, тайна {p} под угрозой. Мы нашли следы предателя.",
    "role": "desc",
    "kind": "dialogue",
@@ -427,7 +427,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "Подозрительно только одно: тут бродит человек в капюшоне. В {p} мало людей, так что это странно.",
    "role": "desc",
    "kind": "dialogue",
@@ -527,7 +527,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "А. Значит, ты и есть сыщик. Никто из этих недалёких жителей Eltom бы не догадался.",
    "role": "desc",
    "kind": "dialogue",
@@ -547,8 +547,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "Этого города вообще не должно быть. Людям нельзя селиться в Gavel.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "Этого города вообще не должно быть. Людям нельзя вот так владеть землёй в Gavel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -597,7 +597,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- Дирижабль из {p} {~}:{~} в {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -647,8 +647,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "Требовал корабль... Я отказал...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "Потребовал корабль... Я отказал...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -727,8 +727,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "Я расскажу мэру {p} всё об этом месте и получу награду. Я разбогатею, а хочешь мне помешать - попробуй!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "Я расскажу мэру {p} всё об этом месте и получу награду. Я разбогатею, а хочешь мне помешать - попробуй сам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -784,6 +784,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "Я записал местоположение города в твою книгу заданий. Больше ничем помочь не могу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "Заметки:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- Кабинет мэра на верхнем ярусе {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- Не забыть открыть счёт в гномьем банке",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Для Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "Твой корабль в ужасном состоянии. Уже третий раз мне приходится чинить здесь утечку охладителя.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Машины Corkus хороши, но не вечны. Так ты каждую зиму будешь покупать новый корабль.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "Неужели так трудно понять, что в двигатель не должна попадать никакая жидкость?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "- Инженер Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "Письмо? А, это. То, что про {p}? Не волнуйся так. Тайна останется при мне.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "Да, я знаю о {p}. В конце концов, его мэр - мой бывший муж.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "Может показаться странным: любовь между селянкой и человеком. Я знаю, но наше происхождение не помешало нам любить друг друга.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "Письмо про {p} оставил наш сын, Ardulf. Как только Eoric узнал о ребёнке, он запаниковал и бросил меня.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf, полукровку, никогда не примут... И всё же я надеюсь, что с ним всё в порядке.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "А, да, ещё кое-что. Рычаг под столом... давай, нажми!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   }
  }

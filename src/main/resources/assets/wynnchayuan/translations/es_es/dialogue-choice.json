@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 47,
-  "translated": 47
+  "count": 87,
+  "translated": 87
  },
  "entries": {
   "choice#c000": {
@@ -487,6 +487,416 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c017": {
+   "src": "Have you heard of any rumors",
+   "dst": "¿Has oído algún rumor últimamente?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Have you heard of any rumors lately?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c018": {
+   "src": "What do you think about this",
+   "dst": "¿Qué opinas de este pueblo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you think about this village?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c019": {
+   "src": "I'm a human",
+   "dst": "Soy humano",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c020": {
+   "src": "I want to see the rules for",
+   "dst": "Quiero volver a ver las reglas del acertijo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": null,
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c021": {
+   "src": "The Blue Core",
+   "dst": "El núcleo azul",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c022": {
+   "src": "The Orange Core",
+   "dst": "El núcleo naranja",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c023": {
+   "src": "The Purple Core",
+   "dst": "El núcleo morado",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c024": {
+   "src": "The Gray Core",
+   "dst": "El núcleo gris",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c025": {
+   "src": "The Rainbow Core",
+   "dst": "El núcleo arcoíris",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c026": {
+   "src": "The Green Core",
+   "dst": "El núcleo verde",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c027": {
+   "src": "I'm dead?",
+   "dst": "¿Estoy muerto?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c028": {
+   "src": "Have I been here before?",
+   "dst": "¿Ya he estado aquí antes?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c029": {
+   "src": "Why a mansion?",
+   "dst": "¿Por qué una mansión?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c030": {
+   "src": "Do you talk to everyone?",
+   "dst": "¿Hablas con todo el mundo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c031": {
+   "src": "We can move on.",
+   "dst": "Podemos seguir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c032": {
+   "src": "Why are you doing this for m",
+   "dst": "¿Por qué haces esto por mí?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Why are you doing this for me?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c033": {
+   "src": "I am lost, yes.",
+   "dst": "Sí, estoy perdido.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c034": {
+   "src": "I'm not lost.",
+   "dst": "No estoy perdido.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c035": {
+   "src": "It was!",
+   "dst": "¡Lo fue!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c036": {
+   "src": "Needs some work.",
+   "dst": "Hay que pulirlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c040": {
+   "src": "Bread.",
+   "dst": "Pan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c044": {
+   "src": "Can I grab a {p} Whiskey",
+   "dst": "¿Me pones un whisky de {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab a {p} Whiskey?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c045": {
+   "src": "Can I grab a Jofash Rum? [{~}E",
+   "dst": "¿Me pones un ron de Jofash? [{~}E]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c046": {
+   "src": "Can I grab a {p} Pinot?",
+   "dst": "¿Me pones un pinot de {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c047": {
+   "src": "Can I grab an {p} Absint",
+   "dst": "¿Me pones una absenta de {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab an {p} Absinthe?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c049": {
+   "src": "Not today, thanks",
+   "dst": "Hoy no, gracias",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c050": {
+   "src": "I'm still not interested.",
+   "dst": "Sigo sin estar interesado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c051": {
+   "src": "Let's trade!",
+   "dst": "¡Comerciemos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c052": {
+   "src": "What do you even do with all",
+   "dst": "¿Y qué haces con toda esta chatarra?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you even do with all this junk?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c053": {
+   "src": "What's up with the broken th",
+   "dst": "¿Qué pasa con esa cosa rota de fuera?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's up with the broken thing outside?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c054": {
+   "src": "Ever find anything interesti",
+   "dst": "¿Has encontrado alguna vez algo interesante por la zona?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Ever find anything interesting in the {p}?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c055": {
+   "src": "Just passing by!",
+   "dst": "¡Solo estoy de paso!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c056": {
+   "src": "Do you want to repair the transporter?",
+   "dst": "¿Quieres reparar el transportador?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c064": {
+   "src": "Yeah sure!",
+   "dst": "¡Sí, claro!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c065": {
+   "src": "Maybe later.",
+   "dst": "Quizá luego.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c066": {
+   "src": "Saying hi!",
+   "dst": "¡Vengo a saludar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c067": {
+   "src": "Join the race",
+   "dst": "Unirse a la carrera",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c068": {
+   "src": "Refuse",
+   "dst": "Rechazar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c015": {
+   "src": "Do you know anyone by the na",
+   "dst": "¿Conoces a alguien llamado Garvan?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you know anyone by the name of Garvan?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c016": {
+   "src": "Xoeinbor.",
+   "dst": "Xoeinbor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
    "stage": "",
    "speaker": "",
    "source": "captured"

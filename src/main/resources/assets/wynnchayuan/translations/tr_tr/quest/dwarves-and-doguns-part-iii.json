@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part III",
-  "count": 86,
-  "translated": 85,
+  "count": 87,
+  "translated": 86,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -271,7 +271,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "Sana [{~} Fire Webs] lazım. Kasabanın altındaki Heatscar Örümcekleri yapıyor onları, giriş kemerinin hemen yanında bir mağara var.",
    "role": "desc",
    "kind": "dialogue",
@@ -601,8 +601,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#061": {
-   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "... Burası... Burası eskiden... bir Dogun kasabasıydı. Cüceler onu çoraklaştırdı.",
+   "src": "{u}... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
+   "dst": "{u}... Burası... Burası eskiden... bir Dogun kasabasıydı. Cüceler onu çoraklaştırdı.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -869,6 +869,16 @@
    "stage": "Stage 9",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#088": {
+   "src": "If you're having trouble finding the crater, look for the reddest rocks in amongst the others in the lake. They should lead you to it.",
+   "dst": "Krateri bulmakta zorlanıyorsan, göldeki taşların arasında en kırmızı olanlarını ara. Seni oraya götürürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "",
+   "speaker": "Edula",
+   "source": "captured"
   }
  }
 }
