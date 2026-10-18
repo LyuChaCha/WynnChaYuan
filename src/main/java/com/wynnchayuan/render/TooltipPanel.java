@@ -167,37 +167,29 @@ public final class TooltipPanel {
         int panelW = panelBox[0] + 8;           // 8 = tooltip 左右內距
         int panelH = panelBox[1] + 8;
 
-        int x;
-        int y;
+        Place spot;
         if (WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED) {
-            x = WynnChaYuan.config().fixedX();
-            y = WynnChaYuan.config().fixedY();
+            spot = new Place(WynnChaYuan.config().fixedX(), WynnChaYuan.config().fixedY(),
+                    0, 0, false);
         } else {
-            // 原 tooltip 的位置：Minecraft 預設畫在滑鼠右下方 12/-12 處
-            int originalW = box(mc, tooltip)[0] + 8;
-            int originalLeft = mouseX + 12;
-            int rightSide = originalLeft + originalW + gap;
-            int leftSide = originalLeft - gap - panelW;
-
-            x = switch (WynnChaYuan.config().panelSide()) {
-                case RIGHT -> rightSide;
-                case LEFT -> leftSide;
-                case AUTO -> rightSide + panelW <= screenW
-                        ? rightSide
-                        : (leftSide >= 0 ? leftSide : Math.max(0, screenW - panelW));
-            };
-            y = mouseY - 12;
+            spot = place(mc, lines, tooltip, mouseX, mouseY, screenW, screenH, gap);
         }
-        // 夾在畫面內，避免超出邊界時 Minecraft 自動換行導致文字重疊
-        x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
-        y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
+        // 譯名面板一律夾進畫面：譯文一定看得到。
+        int x = Math.max(0, Math.min(spot.panelX(), Math.max(0, screenW - panelW)));
+        int y = Math.max(0, Math.min(spot.panelY(), Math.max(0, screenH - panelH)));
         // Wynnventory 的價格框也放在物品說明旁邊；跟著游標的面板要讓開它。
         // 使用者自己釘住位置的（FIXED）不動——那是他挑的地方。
         if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
-            int originalW = box(mc, tooltip)[0] + 8;
-            int originalLeft = mouseX + 12;
-            x = WynnventoryBox.place(x, y, panelW, panelH, originalLeft - gap - panelW,
-                    originalLeft + originalW + gap, screenW, gap);
+            int[] ob = box(mc, tooltip);
+            int originalW = ob[0] + 6;                     // 底色左右各外 3
+            int originalLeft = originalLeftFor(mouseX, screenW, ob[0]);
+            x = WynnventoryBox.place(x, y, panelW, panelH,
+                    originalLeft - gap - panelW, originalLeft + originalW + gap, screenW, gap);
+        }
+
+        // 原版那一份被我們沒收了（見 RenderListener#onTooltip）：改在這裡自己畫。
+        if (PendingTooltip.pushed()) {
+            drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
         }
 
         List<ClientTooltipComponent> components = lines.stream()
@@ -1204,5 +1196,129 @@ public final class TooltipPanel {
             h += c.getHeight(Minecraft.getInstance().font);
         }
         return h;
+    }
+
+    /**
+     * 一幀的擺放結果。
+     *
+     * @param overlaps 夾進畫面之後，譯名面板有沒有壓到原文；有的話原文由我們自己
+     *                 畫到面板外側（見 {@link #place}）
+     */
+    record Place(int panelX, int panelY, int originalX, int originalY, boolean overlaps) {}
+
+    /**
+     * 原 tooltip 的左上角。
+     *
+     * <p>Minecraft 的 {@code DefaultTooltipPositioner} 從游標右下 12/-12 起算，貼邊時
+     * 會自己挪：右邊放不下就翻到游標左側（往左退 24 再加整個寬度，最少留 4）。
+     *
+     * <p><b>寬度要用純文字寬</b>（{@code box()[0]}），不是畫出來的底色寬。原版傳給
+     * positioner 的就是純文字寬，底色是之後才往外各畫 3px 加上去的。
+     *
+     * <p>這一格差 8px 就會翻錯（實機：游標 373、螢幕寬 640、文字寬 254。
+     * 原版 {@code 385 + 254 = 639 <= 640} 不翻；用含內距的 262 就變成
+     * {@code 385 + 262 = 647 > 640} 誤判翻了，面板於是擺到原文真正的位子上）。
+     */
+    static int originalLeftFor(int mouseX, int screenW, int textWidth) {
+        int left = mouseX + 12;
+        if (left + textWidth > screenW) {
+            left = Math.max(left - 24 - textWidth, 4);
+        }
+        return left;
+    }
+
+    /**
+     * 算出譯名面板與原文各自的位置。
+     *
+     * <h2>規則</h2>
+     * 譯名擺原文的<b>另一側</b>；面板一律夾進畫面，所以譯文一定完整看得到。
+     * 夾完之後若壓到原文，就把原文推到面板外側——那一側放不下就讓它<b>超出畫面</b>。
+     * 寧可原文被裁掉，也不要兩段字疊在一起。
+     */
+    static Place place(Minecraft mc, List<Component> lines, List<Component> tooltip,
+                       int mouseX, int mouseY, int screenW, int screenH, int gap) {
+        int[] panelBox = box(mc, lines);
+        int panelW = panelBox[0] + 8;
+        int panelH = panelBox[1] + 8;
+
+        int[] originalBox = box(mc, tooltip);
+        int originalTextW = originalBox[0];
+        int originalTextH = originalBox[1];
+        int originalW = originalTextW + 6;     // 畫出來的底色：左右各外 3
+        int originalH = originalTextH + 6;
+        int originalLeft = originalLeftFor(mouseX, screenW, originalTextW);
+
+        int originalTop = mouseY - 12;
+        if (originalTop + originalTextH + 3 > screenH) {
+            originalTop = screenH - originalTextH - 3;
+        }
+
+        boolean originalOnRight = originalLeft >= mouseX;
+        int rightSide = originalLeft + originalW + gap;
+        int leftSide = originalLeft - gap - panelW;
+
+        int x = switch (WynnChaYuan.config().panelSide()) {
+            case RIGHT -> rightSide;
+            case LEFT -> leftSide;
+            default -> originalOnRight ? leftSide : rightSide;
+        };
+        int y = originalTop;
+
+        x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
+        y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
+
+        boolean overlaps = x < originalLeft + originalW && x + panelW > originalLeft
+                && y < originalTop + originalH && y + panelH > originalTop;
+
+        int originalX = originalLeft;
+        int originalY = originalTop;
+        if (overlaps) {
+            // 推到面板外側；原文比畫面還寬時這一推會直接超出邊界，那是有意的。
+            originalX = originalOnRight ? x + panelW + gap : x - gap - originalW;
+            originalY = y;
+        }
+        return new Place(x, y, originalX, originalY, overlaps);
+    }
+
+    /**
+     * 這一幀要不要把原版 tooltip 沒收、改由我們自己畫。
+     *
+     * <p>{@code ItemTooltipRenderEvent.Pre} 是唯一能取消它的地方，而位置要等譯名面板
+     * 的尺寸算出來才知道，所以在 Pre 先問一次；答案跟 {@link #render} 用的
+     * {@link #place} 是同一個，兩邊不會各算一套。
+     */
+    public static boolean wouldPush(List<Component> tooltip, int mouseX, int mouseY,
+                                    TranslationStore store) {
+        try {
+            if (WynnChaYuan.config() == null
+                    || WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED
+                    || tooltip == null || tooltip.isEmpty()) {
+                return false;
+            }
+            List<Component> stripped = ThirdPartySections.strip(tooltip);
+            List<Component> lines = translateLinesCached(stripped, store);
+            if (lines.isEmpty()) {
+                return false;
+            }
+            Minecraft mc = Minecraft.getInstance();
+            if (mc == null || mc.getWindow() == null) {
+                return false;
+            }
+            return place(mc, lines, stripped, mouseX, mouseY,
+                    mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
+                    WynnChaYuan.config().panelGap()).overlaps();
+        } catch (Throwable t) {
+            return false;                      // 判斷不出來就照原樣，不要影響原版 tooltip
+        }
+    }
+
+    /** 在指定座標畫一份 tooltip（原版那一份被我們沒收時用）。 */
+    private static void drawAt(GuiGraphics graphics, Minecraft mc,
+                               List<Component> lines, int x, int y) {
+        List<ClientTooltipComponent> parts = lines.stream()
+                .map(Component::getVisualOrderText)
+                .map(ClientTooltipComponent::create)
+                .toList();
+        graphics.renderTooltip(mc.font, parts, x, y, EXACT, null);
     }
 }

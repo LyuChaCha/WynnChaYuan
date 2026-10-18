@@ -60,7 +60,21 @@ public final class RenderListener {
         }
         // 只記錄，不在這裡畫 —— Pre 早於原始 tooltip，畫了會被蓋掉。
         // 實際繪製在 renderAfterScreen()，見 PendingTooltip 的說明。
-        PendingTooltip.set(event.getTooltips(), event.getMouseX(), event.getMouseY());
+        //
+        // 例外：若譯名面板夾進畫面之後一定壓到原文，就先把原版這一份取消，
+        // 之後由 TooltipPanel 自己把原文畫到面板外側（讓它超出畫面）。
+        // 寧可原文被裁掉，也要譯文完整、不要兩段字疊在一起。
+        boolean push = false;
+        try {
+            push = TooltipPanel.wouldPush(event.getTooltips(),
+                    event.getMouseX(), event.getMouseY(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            push = false;                      // 判斷失敗就照原樣，不影響原版 tooltip
+        }
+        if (push) {
+            event.setCanceled(true);
+        }
+        PendingTooltip.set(event.getTooltips(), event.getMouseX(), event.getMouseY(), push);
     }
 
 
