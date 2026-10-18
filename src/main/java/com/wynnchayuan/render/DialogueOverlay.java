@@ -550,9 +550,17 @@ public final class DialogueOverlay {
         int lineHeight = mc.font.lineHeight + 1;
         boolean sized = WynnChaYuan.config()
                 .hasOverlaySize(CollectorConfig.Overlay.DIALOGUE);
-        int boxW = sized ? dialogueWidth(0) : widthOf(mc, lines);
+        // 沒拉過大小時框寬跟著最長那一行走，但不能無限長：一句長的譯文會
+        // 撐成橫跨整個螢幕的一條。超過上限就照上限折行，跟拉過大小的框
+        // 走同一條路。先前只能在譯文裡手寫 \n，而那個 \n 在就地取代模式
+        // 下會畫成亂碼。issue #1298。
+        int cap = Math.min(MAX_BOX_W, graphics.guiWidth() - CHOICE_EDGE * 2);
+        int natural = sized ? 0 : widthOf(mc, lines);
+        boolean folded = !sized && natural > cap;
+        int boxW = sized ? dialogueWidth(0) : folded ? cap : natural;
+        int rowCount = folded ? wrapAll(mc, lines, boxW - PADDING * 2).size() : lines.size();
         int boxH = lines.isEmpty() ? 0
-                : atLeastTall(lines.size() * lineHeight + PADDING * 2);
+                : atLeastTall(rowCount * lineHeight + PADDING * 2);
 
         // 玩家自己擺過就照他的，否則用預設錨點（下方置中）
         int x = (graphics.guiWidth() - boxW) / 2;
@@ -568,7 +576,7 @@ public final class DialogueOverlay {
         y = at[1];
 
         if (!lines.isEmpty()) {
-            if (sized) {
+            if (sized || folded) {
                 drawSized(graphics, mc, lines, x, y, boxW, alpha);
             } else {
                 draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
