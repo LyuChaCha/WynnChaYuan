@@ -49,6 +49,7 @@ public final class WelcomeBannerTest {
 
         fixture();
         realCorpus();
+        colours();
 
         System.out.println(failures == 0 ? "\n歡迎訊息逐段組：全部通過"
                 : "\n歡迎訊息逐段組：" + failures + " 項失敗");
@@ -147,6 +148,131 @@ public final class WelcomeBannerTest {
                 }
             }
         }
+    }
+
+    /**
+     * ★ 每一行的顏色要跟原文那一行一樣（實機回報，test5）。
+     *
+     * <p>「2 items were sold」那一段用的是整則的舊鍵當前綴，它帶著 {@code {cN}}；
+     * 接在後面的「and 2 Mounts…」沒有，結果整行沿用上一行的紫色，只有數字是對的。
+     * 單數那種（前綴沒有 {@code {cN}}）測不出來，所以這裡用複數。
+     * 原文的顏色照 log 的 {@code [CHAT/INFO]}。
+     */
+    private static void colours() {
+        Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
+        // 實機截圖那一則
+        StyledText shot = soldAndFed(2, 2, "and 2 Mounts finished eating while you were offline",
+                                     "items were sold");
+        // 另一種：買進、也賣出、坐騎吃完了
+        MutableComponent bought = header();
+        bought.append(space(0xD0038));
+        bought.append(lit("4", PINK, true));
+        bought.append(lit(" ", null, false));
+        bought.append(lit("items were bought on the Trade Market", PURPLE, false));
+        bought.append(lit("\n", null, false));
+        bought.append(space(0xD0050));
+        bought.append(lit("and ", PURPLE, false));
+        bought.append(lit("1", PINK, true));
+        bought.append(lit(" item was sold as well", PURPLE, false));
+        bought.append(lit("\n", null, false));
+        bought.append(space(0xD0019));
+        bought.append(lit("and ", BROWN, false));
+        bought.append(lit("2", TAN, true));
+        bought.append(lit(" Mounts finished eating while you were offline", BROWN, false));
+        StyledText boughtMsg = StyledText.fromComponent(bought);
+
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr")) {
+            TranslationStore store = new TranslationStore();
+            store.loadAll(base.resolve(lang));
+            rowColours(lang + " 截圖那一則", LineTranslator.translateChat(shot, store),
+                       new int[][] {{PURPLE, PINK}, {BROWN, TAN}});
+            rowColours(lang + " 買進＋賣出＋坐騎", LineTranslator.translateChat(boughtMsg, store),
+                       new int[][] {{PURPLE, PINK}, {PURPLE, PINK}, {BROWN, TAN}});
+        }
+    }
+
+    /**
+     * 標頭與內文每一行的顏色。
+     *
+     * @param body 內文每一行 {字的顏色, 數字的顏色}；數字一律要粗體
+     */
+    private static void rowColours(String name, Component out, int[][] body) {
+        check(name + "：翻得出來", out != null);
+        if (out == null) {
+            return;
+        }
+        List<List<Object[]>> rows = new java.util.ArrayList<>();
+        rows.add(new java.util.ArrayList<>());
+        out.visit((style, piece) -> {
+            for (int k = 0; k < piece.length(); ) {
+                int cp = piece.codePointAt(k);
+                if (cp == '\n') {
+                    rows.add(new java.util.ArrayList<>());
+                } else {
+                    rows.get(rows.size() - 1).add(new Object[] {cp, style});
+                }
+                k += Character.charCount(cp);
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        while (!rows.isEmpty() && rows.get(0).isEmpty()) {
+            rows.remove(0);
+        }
+        check(name + "：行數（實際 " + rows.size() + "）", rows.size() == 3 + body.length);
+        if (rows.size() != 3 + body.length) {
+            return;
+        }
+        // 標頭：每一個字都是金色粗體（中日韓的字也是）
+        String header = describeRow(rows.get(0), GOLD, -1, true);
+        check(name + "：標頭整行金色粗體" + header, header.isEmpty());
+        // 網址那一行：白、「-/-」灰
+        boolean url = true;
+        for (Object[] c : rows.get(1)) {
+            int cp = (Integer) c[0];
+            int colour = colourValue((Style) c[1]);
+            if (cp == '/' || (cp == '-')) {
+                url &= colour == GREY;
+            } else if (Character.isLetter(cp)) {
+                url &= colour == WHITE;
+            }
+        }
+        check(name + "：網址那一行白、-/- 灰", url);
+        for (int r = 0; r < body.length; r++) {
+            String bad = describeRow(rows.get(3 + r), body[r][0], body[r][1], false);
+            check(name + "：內文第 " + (r + 1) + " 行的字 " + hex(body[r][0]) + "、數字 "
+                  + hex(body[r][1]) + " 粗體" + bad, bad.isEmpty());
+        }
+    }
+
+    /**
+     * 一行裡顏色不對的字。
+     *
+     * @param number 數字的顏色；{@code -1} 表示這一行沒有數字要分開看
+     * @param allBold 每一個字都要粗體
+     * @return 不對的字列出來；全對時是空字串
+     */
+    private static String describeRow(List<Object[]> row, int text, int number, boolean allBold) {
+        StringBuilder bad = new StringBuilder();
+        for (Object[] c : row) {
+            int cp = (Integer) c[0];
+            Style style = (Style) c[1];
+            if (GlyphSplitter.isGlyphCodePoint(cp) || Character.isWhitespace(cp)) {
+                continue;
+            }
+            boolean digit = Character.isDigit(cp) && number >= 0;
+            int want = digit ? number : text;
+            boolean bold = Boolean.TRUE.equals(style.isBold());
+            boolean ok = colourValue(style) == want && (!digit || bold) && (!allBold || bold);
+            if (!ok && bad.length() < 200) {
+                bad.append(" 「").append(Character.toString(cp)).append("」")
+                   .append(hex(colourValue(style))).append(bold ? "粗" : "");
+            }
+        }
+        return bad.length() == 0 ? "" : "（不對：" + bad + "）";
+    }
+
+    private static int colourValue(Style style) {
+        return style.getColor() == null ? -2 : style.getColor().getValue();
     }
 
     private static StyledText soldAndFed(int sold, int mounts) {

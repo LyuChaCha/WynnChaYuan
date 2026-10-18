@@ -4225,9 +4225,6 @@ public final class LineTranslator {
      */
     static Component rowColours(StyledText original, Component rebuilt, Style blockStyle) {
         TextColor block = blockStyle == null ? null : blockStyle.getColor();
-        if (block == null) {
-            return rebuilt;
-        }
         List<List<Run>> origRows = splitRows(runs(original.getComponent()));
         List<List<Run>> madeRows = splitRows(runs(rebuilt));
         int[] keepOrig = solidRows(origRows);
@@ -4237,8 +4234,17 @@ public final class LineTranslator {
             return rebuilt;
         }
         TextColor[] rowColour = new TextColor[count];
+        boolean[] rowBold = new boolean[count];
         boolean any = false;
         for (int k = 0; k < count; k++) {
+            // 原文整行粗體（歡迎訊息的「Welcome to Wynncraft!」）：譯文那一行每個字都粗體。
+            // 句首句尾的標點不在重點段的配對範圍裡，「¡Bienvenido a Wynncraft!」的 ¡ 與 ! 先前是細的。
+            rowBold[k] = allBold(origRows.get(keepOrig[0] + k))
+                    && !allBold(madeRows.get(keepMade[0] + k));
+            any |= rowBold[k];
+            if (block == null) {
+                continue;
+            }
             java.util.Map<TextColor, Integer> weight = new java.util.LinkedHashMap<>();
             boolean usesBlock = false;
             for (Run run : origRows.get(keepOrig[0] + k)) {
@@ -4269,16 +4275,35 @@ public final class LineTranslator {
             }
             int k = r - keepMade[0];
             TextColor colour = k >= 0 && k < count ? rowColour[k] : null;
+            boolean bold = k >= 0 && k < count && rowBold[k];
             for (Run run : madeRows.get(r)) {
                 Style style = run.style();
                 if (colour != null && !run.space() && style != null
                         && block.equals(style.getColor())) {
                     style = style.withColor(colour);
                 }
+                if (bold && !run.space() && style != null && hasContent(run.text())) {
+                    style = style.withBold(true);
+                }
                 out.append(Component.literal(run.text()).withStyle(style));
             }
         }
         return out;
+    }
+
+    /** 這一行有實字，而且每一段實字都是粗體。 */
+    private static boolean allBold(List<Run> row) {
+        boolean any = false;
+        for (Run run : row) {
+            if (run.space() || !hasContent(run.text())) {
+                continue;
+            }
+            if (run.style() == null || !Boolean.TRUE.equals(run.style().isBold())) {
+                return false;
+            }
+            any = true;
+        }
+        return any;
     }
 
     /**
@@ -4361,7 +4386,15 @@ public final class LineTranslator {
      * <h2>怎麼組</h2>
      * 從第一行起，每次找<b>最長的</b>、語料裡有鍵的連續幾行（整則的舊鍵可以當前綴用，
      * 例如「標頭＋賣出 1 件」），找不到才縮短，最短是一行。空行與只有圖示的行原樣留著。
-     * 每一段的 {@code {~N}} 與 {@code {cN}} 照前面幾段用掉的數量往後推（同 {@link #byColumn}）。
+     * 每一段的 {@code {~N}} 照前面幾段用掉的數量往後推（同 {@link #byColumn}）。
+     *
+     * <h2>顏色標記一律拿掉（實機回報，test5）</h2>
+     * 「2 items were sold」那一段命中的是整則的舊鍵，它帶著 {@code {c1}…{c5}}；接在後面的
+     * 「and 2 Mounts…」是逐行鍵，沒有標記。重建時有標記的譯文是「標記說了算」，沒標記的字
+     * 沿用上一個標記——整行變成上一行的紫色，只有數字是對的。而且 {@code {cN}} 是
+     * 「整則第 N 個<b>不同</b>的顏色」，顏色跨行重複時（兩行都是紫色）照段數往後推也推不對。
+     * 所以組了兩段以上、而且有任何一段帶標記時，全部拿掉，交給沒有標記時的配色
+     * （每一行照原文那一行的顏色，見 {@link #rowColours}）。
      *
      * <h2>安全性</h2>
      * 只認開頭是歡迎訊息的那一則；每一個有字的行都要被某一段蓋到，有一行查不到就整則放棄
@@ -4383,8 +4416,9 @@ public final class LineTranslator {
         }
         String[] lines = template.split(String.valueOf(NEWLINE), -1);
         StringBuilder out = new StringBuilder();
-        int colours = 0;
         int values = 0;
+        int segments = 0;
+        boolean marked = false;
         int i = 0;
         while (i < lines.length) {
             if (i > 0) {
@@ -4416,18 +4450,20 @@ public final class LineTranslator {
             if (hit == null) {
                 return null;                       // 有一行查不到：整則讓開
             }
-            String shifted = renumber(shiftColours(hit, colours), values);
+            String shifted = renumber(hit, values);
             if (shifted == null) {
                 return null;
             }
-            colours += distinctColours(hit);
+            marked |= distinctColours(hit) > 0 || hit.contains(COLOR_END);
+            segments++;
             for (int k = i; k < end; k++) {
                 values += countNumbers(lines[k]);
             }
             out.append(shifted);
             i = end;
         }
-        return out.toString();
+        // 組了兩段以上又有標記：全部拿掉，見上面「顏色標記一律拿掉」
+        return segments > 1 && marked ? stripColourTokens(out.toString()) : out.toString();
     }
 
     /** 這一段裡有幾個 {@code {~}}。 */
