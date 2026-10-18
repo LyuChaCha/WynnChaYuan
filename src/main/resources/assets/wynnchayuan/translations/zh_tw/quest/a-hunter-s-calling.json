@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Hunter's Calling",
-  "count": 246,
-  "translated": 246,
+  "count": 304,
+  "translated": 304,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -311,7 +311,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#030": {
-   "src": "You are here for the job, aren't you? I have to apologize. It's gonna be trickier than I'd wanted for you.",
+   "src": "You are here for the job, aren't you? I have to apologize. It's going to be trickier than I'd wanted for you.",
    "dst": "你是為了那件差事來的吧？我得先道個歉。這對你來說會比我原本希望的更棘手。",
    "role": "desc",
    "kind": "dialogue",
@@ -361,7 +361,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#035": {
-   "src": "Climb the tree and look through the window.",
+   "src": "Climb up the tree and look through the window.",
    "dst": "爬上樹，從窗戶往裡看。",
    "role": "desc",
    "kind": "objective",
@@ -451,8 +451,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#044": {
-   "src": "Yes sir, everything went smoothly. did a great thing for the company.",
-   "dst": "是的長官，一切順利。為公司做了一件大好事。",
+   "src": "Yes sir, everything went smoothly, {u} did a great thing for the company.",
+   "dst": "是的長官，一切順利，{u} 為公司做了一件大好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -561,8 +561,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#055": {
-   "src": "He will be here shortly to discuss the topic in more detai-",
-   "dst": "他很快就會過來，跟大家更詳細地討論這個議——",
+   "src": "He will be here shortly to discuss this problem in more detai-",
+   "dst": "他很快就會過來，跟大家更詳細地討論這個問——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -941,7 +941,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#093": {
-   "src": "Agh, dang it dang it dang it! You over there, help me out, would ya??",
+   "src": "Agh, dang it dang it dang it!! You over there, help me out, would ya??",
    "dst": "啊，可惡可惡可惡！那邊那位，能幫我一下嗎？？",
    "role": "desc",
    "kind": "dialogue",
@@ -991,6 +991,16 @@
    "source": "wiki"
   },
   "A Hunter's Calling#098": {
+   "src": "Well done! We'll get you taken care of nicely.",
+   "dst": "做得好！我們會好好照顧你的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Scientist Urelix",
+   "source": "wiki"
+  },
+  "A Hunter's Calling#099": {
    "src": "Oh, ah...heehee, heya cutie.. Whatcha doin' all the way out here?",
    "dst": "噢，啊……嘻嘻，嗨啊小可愛……你跑到這麼遠的地方做什麼呀？",
    "role": "desc",
@@ -1000,7 +1010,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#099": {
+  "A Hunter's Calling#100": {
    "src": "Just exploring, huh? I bet someone like you could use someone to...y'know, spend some time with...",
    "dst": "只是在探險？我敢說像你這樣的人，需要有個人……你知道的，陪你打發時間……",
    "role": "desc",
@@ -1010,7 +1020,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#100": {
+  "A Hunter's Calling#101": {
    "src": "...guess you're not interested? Oh...sorry if I came off as creepy. I'm just...really lonely, is all.",
    "dst": "……看來你沒興趣？噢……如果我讓你覺得毛毛的，抱歉。我只是……真的很寂寞而已。",
    "role": "desc",
@@ -1020,7 +1030,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#101": {
+  "A Hunter's Calling#102": {
    "src": "W-wait, those are...for me? Oh, you shouldn't have, I'm so happy!",
    "dst": "等、等等，那些是……給我的？噢，你太客氣了，我好開心！",
    "role": "desc",
@@ -1030,7 +1040,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#102": {
+  "A Hunter's Calling#103": {
    "src": "You want to take me out on a date? R-Really? You'll give me a chance? Yes, of course!",
    "dst": "你想約我出去？真、真的嗎？你願意給我一個機會？好，我當然願意！",
    "role": "desc",
@@ -1040,7 +1050,7 @@
    "speaker": "Kohma",
    "source": "wiki"
   },
-  "A Hunter's Calling#103": {
+  "A Hunter's Calling#104": {
    "src": "Lead the way, please! I can't wait to see where we're headed!",
    "dst": "請帶路！我等不及想看看我們要去哪裡了！",
    "role": "desc",
@@ -1048,16 +1058,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 17",
    "speaker": "Kohma",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#104": {
-   "src": "Well done! We'll get you taken care of nicely.",
-   "dst": "做得好！我們會好好照顧你的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 17",
-   "speaker": "Scientist Urelix",
    "source": "wiki"
   },
   "A Hunter's Calling#105": {
@@ -1121,7 +1121,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#111": {
-   "src": "Go on, step closer! You've done a wonderful service here.Examine the fruits of your labour.",
+   "src": "Go on, step closer! You've done a wonderful service here. Examine the fruits of your labor!",
    "dst": "來，靠近一點！你在這裡立下了了不起的功勞。來看看你努力的成果。",
    "role": "desc",
    "kind": "dialogue",
@@ -1231,8 +1231,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#122": {
-   "src": "Head back to the slums and speak to the slum citizens.",
-   "dst": "回到貧民窟，與那裡的居民談話。",
+   "src": "Tell the hooligans in the slums about the eviction notice.",
+   "dst": "把驅逐通知告訴貧民窟裡的那群流氓。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Hunter's Calling",
@@ -1461,7 +1461,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#145": {
-   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I HATE THE IDEA.",
+   "src": "JUST KNOW THAT THEY'RE BOTH CRAZY. IF I AM TO FINISH MY PROGRAMMED ORDERS, BOTH OF THEM MUST BE DESTROYED, HOWEVER MUCH I MIGHT HATE THE IDEA.",
    "dst": "你只要知道他們兩邊都瘋了。若要完成我被寫入的命令，兩者都必須被摧毀，無論我多麼厭惡這個想法。",
    "role": "desc",
    "kind": "dialogue",
@@ -1781,7 +1781,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#177": {
-   "src": "Why're they attacking us? This is on a way bigger scale than finding grapevines in my laundry machine!",
+   "src": "Why're they attacking us? This is on a way bigger scale than finding grape vines in my laundry machine!",
    "dst": "他們為什麼要攻擊我們？這比在洗衣機裡發現葡萄藤嚴重太多了！",
    "role": "desc",
    "kind": "dialogue",
@@ -1801,7 +1801,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#179": {
-   "src": "Chief! I thought I asked you to put away your war drums!",
+   "src": "Chief! I thought I asked you to put away the war drums!",
    "dst": "族長！我不是請你把戰鼓收起來了嗎？",
    "role": "desc",
    "kind": "dialogue",
@@ -1841,7 +1841,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#183": {
-   "src": "I knew this was some kind of mistake! I'll get to the bottom of this!",
+   "src": "I knew this was some kind of mistake. I'll get to the bottom of this!",
    "dst": "我就知道這是某種誤會！我會把這件事查個水落石出！",
    "role": "desc",
    "kind": "dialogue",
@@ -1851,7 +1851,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#184": {
-   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR WORK PERFECTLY, MECH PL-{~}Y.",
+   "src": "BEGIN TRANSMISSION: THERE'S AN ANNOYING WRENCH IN THE WORKS. YOU'VE BEEN DOING YOUR JOB PERFECTLY, MECH PL-{~}Y.",
    "dst": "開始傳輸: 出現了一個礙事的變數。你的工作一直做得很完美，機兵 PL-{~}Y。",
    "role": "desc",
    "kind": "dialogue",
@@ -1931,7 +1931,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#192": {
-   "src": "WE WILL BE ABLE TO LET THEM TEAR EACH OTHER TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
+   "src": "WE WILL BE ABLE TO LET THEM TEAR THEMSELVES TO SHREDS INSTEAD OF GETTING INVOLVED AND SPARKING SUSPICION.",
    "dst": "我們能讓他們互相撕碎彼此，而不必自己介入、引來懷疑。",
    "role": "desc",
    "kind": "dialogue",
@@ -2051,7 +2051,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#204": {
-   "src": "I usually don't do this... but I guess I have no other option. I need to get this information to the others.",
+   "src": "I usually don't do this, but I guess I have no other option. I need to get this information to the others.",
    "dst": "我通常不會這麼做……但我想我沒有別的選擇了。我必須把這個情報送到其他人手上。",
    "role": "desc",
    "kind": "dialogue",
@@ -2161,8 +2161,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#215": {
-   "src": "Admiral? It's Bak'al!",
-   "dst": "上將？那是 Bak'al！",
+   "src": "Admiral?! It's Bak'al!",
+   "dst": "上將？！那是 Bak'al！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2311,8 +2311,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#230": {
-   "src": "You wonder. It is an end... But to what... purpose. What will you gain?",
-   "dst": "你困惑。這是一個終結……但為了什麼……目的。你將獲得什麼？",
+   "src": "???: You wonder. It is an end... But to what...purpose. What will you gain?",
+   "dst": "???: 你困惑。這是一個終結……但為了什麼……目的。你將獲得什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2451,8 +2451,8 @@
    "source": "wiki"
   },
   "A Hunter's Calling#244": {
-   "src": "We two, here... end.",
-   "dst": "我們兩者，於此……終結。",
+   "src": "???: We two, here...end.",
+   "dst": "???: 我們兩者，於此……終結。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -2469,6 +2469,586 @@
    "stage": "Stage 29",
    "speaker": "???",
    "source": "wiki"
+  },
+  "A Hunter's Calling#246": {
+   "src": "We destroy {p} today. The great fortress will fall.",
+   "dst": "今天，我們要摧毀 {p}。那座偉大的要塞將會陷落。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#247": {
+   "src": "I will find their protector, Bob. You each will engage the guards and city dwellers. {~} citizens.",
+   "dst": "我會去找他們的守護者，Bob。你們各自去對付守衛與城裡的居民。{~} 名市民。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#248": {
+   "src": "If each of you kills {~} citizens, then the city will run empty. So, you shall make it run empty.",
+   "dst": "只要你們每個人殺掉 {~} 名市民，這座城就會變成空城。所以，你們就讓它變成空城。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#249": {
+   "src": "Kill ten {p} Citizens",
+   "dst": "殺死十名 {p} 市民",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#250": {
+   "src": "When the armies of {p} reached the once noble fort, it was corrupted ashes.",
+   "dst": "當 {p} 的軍隊抵達那座曾經高貴的堡壘時，那裡只剩下腐化的灰燼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#251": {
+   "src": "The unrighteous sought it. The noble hid it. The one seeking answers found more questions. Another beginning...to a new end.",
+   "dst": "不義者尋求它。高潔者藏起它。尋求答案的人找到了更多問題。另一個開始……通向一個新的終結。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#252": {
+   "src": "Head to town and get further information from the employee.",
+   "dst": "前往鎮上，向員工取得進一步的情報。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#253": {
+   "src": "Head to the northern part of the bank and find a way up to the ceiling.",
+   "dst": "前往銀行的北側，找到通往天花板的路。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#254": {
+   "src": "Make sure to break the anvil trap before breaking the fences and escaping the area",
+   "dst": "打破柵欄、逃離這一帶之前，記得先破壞鐵砧陷阱",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#255": {
+   "src": "The humans didn't notice any difference after the new laws, but the company was in full force...",
+   "dst": "新法上路後，人們並沒有察覺任何不同，但公司早已全力運作……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#256": {
+   "src": "I send you in my place. He will expect me. He will not expect one that looks as human as you.",
+   "dst": "我派你代替我去。他會預料到我。但他不會預料到一個看起來像你這麼像人類的傢伙。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#257": {
+   "src": "If you fail, it will set us back greatly. It will give them a chance. Do not let them get that chance.",
+   "dst": "要是你失敗了，我們會大幅倒退。那會給他們一個機會。別讓他們得到那個機會。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#258": {
+   "src": "{p} is behind me. Move.",
+   "dst": "{p} 就在我身後。走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#259": {
+   "src": "Click to fight\nTheorick again",
+   "dst": "點擊再次挑戰\nTheorick",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#260": {
+   "src": "Do you wish to go back to battle Theorick from A Hunter's Calling again?",
+   "dst": "要回去再次挑戰 A Hunter's Calling 的 Theorick 嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#261": {
+   "src": "Because of Theorick's passing, {p} never was saved.",
+   "dst": "由於 Theorick 的死，{p} 終究沒能得救。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#262": {
+   "src": "The corruption fully took over the town and its citizens.",
+   "dst": "腐化徹底吞沒了這座城鎮與它的居民。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#263": {
+   "src": "The Twains fall away. The peon has done its job well.",
+   "dst": "Twain 一家就此消逝。那個走卒把工作做得很好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 8",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#264": {
+   "src": "An end, ousted by further action. An end, brought to six. An end, to the surety of the haughty. An end, of the world...in some fashion.",
+   "dst": "一個終結，被更多的行動所驅逐。一個終結，降臨於六者。一個終結，屬於傲慢者的篤定。一個終結，屬於這個世界……以某種形式。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#265": {
+   "src": "Peon. You have been created for one purpose. You will ensure the fall of {p}.",
+   "dst": "小嘍囉。你被造出來只為了一件事。你要確保 {p} 陷落。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#266": {
+   "src": "The Corrupter of Worlds was trapped within this cave. The fool decimated my army when I laid siege last.",
+   "dst": "世界腐化者被困在這座洞窟裡。上次我發動圍攻時，那個蠢貨把我的軍隊殺得七零八落。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#267": {
+   "src": "Since then, it has been sealed in. The magic of the Twains is strong here. It cannot escape.",
+   "dst": "從那之後，它就被封印在裡面。Twain 一家的魔法在這裡很強。它逃不出去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#268": {
+   "src": "You will release it from this cave. Whether you die afterwards is irrelevant. It will destroy {p} of its own accord.",
+   "dst": "你要把它從這座洞窟裡放出來。之後你是死是活無關緊要。它會自己去摧毀 {p}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#269": {
+   "src": "Venture through the cave. Break the Twains' seal. And ensure it has a way to escape.",
+   "dst": "穿過洞窟。打破 Twain 一家的封印。然後確保它有路可以逃出來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#270": {
+   "src": "Defend yourself. It is too far gone to control. You will be attacked.",
+   "dst": "保護好你自己。它已經失控到無法駕馭了。你會遭到攻擊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#271": {
+   "src": "[Right Click to Dig]",
+   "dst": "[右鍵挖掘]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#272": {
+   "src": "The roaring of the Corrupter of Worlds is audible from here. Has it noticed you?",
+   "dst": "從這裡就聽得到世界腐化者的咆哮。它察覺到你了嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#273": {
+   "src": "I do not have the time to create another peon for this job. Do not fail.",
+   "dst": "我沒時間再為這件差事造一個走卒。別失敗。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#274": {
+   "src": "The Corrupteds are malleable. Create some kind of bridge with them. Answer how for yourself.",
+   "dst": "那些腐敗物可以任意塑形。用牠們搭出某種橋。怎麼做，你自己想。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#275": {
+   "src": "[Collect Mobs To Here]",
+   "dst": "[把怪物聚集到這裡]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#276": {
+   "src": "The Corrupter is awake. And it is close. Move, peon! You still must break the seal.",
+   "dst": "腐化者醒了。而且就在附近。快走，小嘍囉！你還得打破封印。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#277": {
+   "src": "I am unfamiliar with Twain magic. Use the intellect I have given you. Break the seal.",
+   "dst": "我不熟悉 Twain 一家的魔法。運用我賦予你的智慧。打破封印。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#278": {
+   "src": "Your job is done... And you survived. I will save you for another mission, should I need you. Now...watch.",
+   "dst": "你的工作完成了……而且你活下來了。要是我還需要你，就留你去做下一個任務。現在……看著吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 11",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#279": {
+   "src": "Maybe you can create a trail of emeralds and lure the villager back to the factory?",
+   "dst": "也許可以用綠寶石鋪一條路，把村民引回工廠？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#280": {
+   "src": "You should finish escorting your current companion before talking to someone else!",
+   "dst": "先把目前的同伴護送完，再去找別人說話吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#281": {
+   "src": "Just get me to {p} or a doctor or even a sink!",
+   "dst": "帶我去 {p}，或者找個醫生，甚至只要有個水槽也好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Anast",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#282": {
+   "src": "Maybe you can lure the villager by flirting?",
+   "dst": "也許可以靠搭訕把村民引過去？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#283": {
+   "src": "Heya, again. Thinking of it, a lovely one like you is probably spoken for already, huh?",
+   "dst": "嗨，又見面了。想想也是，像你這麼可愛的人，大概早就名花有主了吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#284": {
+   "src": "Guess I'll just go pick some flowers for myself.",
+   "dst": "看來我只好自己去摘點花了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 17",
+   "speaker": "Kohma",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#285": {
+   "src": "But this time, it was between Dwarves and Dwarves... And yet again blood was spilled.",
+   "dst": "但這一次，是矮人與矮人之間的戰爭……鮮血再一次流淌。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#286": {
+   "src": "[Right Click to Break the Boulder]",
+   "dst": "[右鍵擊碎巨石]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#287": {
+   "src": "[Right Click to Take the Totem]",
+   "dst": "[右鍵拿取圖騰]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#288": {
+   "src": "[Place Totem]",
+   "dst": "[放置圖騰]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#289": {
+   "src": "Objective: Eliminate Avos presence.",
+   "dst": "目標：清除 Avos 的存在。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "Corkus Guard",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#290": {
+   "src": "Maxie never made it back to the war scene. The civil war advanced faster than anyone could have anticipated.",
+   "dst": "Maxie 終究沒能回到戰場。內戰推進的速度，遠超過任何人的預料。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#291": {
+   "src": "The once peaceful Avos were forced to flee their home island, ravaged by machines and toxic scrap...",
+   "dst": "曾經愛好和平的 Avos，被迫逃離遭機械與有毒廢料蹂躪的家鄉島嶼……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#292": {
+   "src": "In time, Corkus became known as the island torn apart by war. Its name would live on in infamy.",
+   "dst": "久而久之，Corkus 成了人們口中被戰爭撕裂的島嶼。它的名字將永遠背負惡名。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#293": {
+   "src": "{p}. What a foolish place for a central trading town, so close to the Roots.",
+   "dst": "{p}。把貿易重鎮建在這種地方，離 Roots 這麼近，真是愚蠢。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#294": {
+   "src": "You will destroy the guards. I will destroy the town.",
+   "dst": "你去摧毀守衛。我來摧毀城鎮。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#295": {
+   "src": "Now, peon. Move.",
+   "dst": "好了，小嘍囉。走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#296": {
+   "src": "The strongest of {p}' army is dead. The rest are hiding in fear. {p} will fall.",
+   "dst": "{p} 軍中最強的人已經死了。其餘的都躲起來發抖。{p} 將會陷落。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#297": {
+   "src": "Self-confident idiots. I won't even bother dealing with you two.",
+   "dst": "自以為是的蠢貨。我連跟你們兩個周旋都懶得。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#298": {
+   "src": "We?",
+   "dst": "我們？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#299": {
+   "src": "Peon. Deal with this nonsense.",
+   "dst": "小嘍囉。去收拾這場鬧劇。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#300": {
+   "src": "You take too much stock in your ability. My victory is inevitable.",
+   "dst": "你太高估自己的能耐了。我的勝利是必然的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 29",
+   "speaker": "Bak'al",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#301": {
+   "src": "It stood as a monument to wealth, prosperity, and power in the Wynn province. It now stands as a corrupted wasteland.",
+   "dst": "它曾是 Wynn 行省財富、繁榮與權力的象徵。如今它只是一片腐化的荒地。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#302": {
+   "src": "The ruins of the city are a grim reminder of the power of corruption. And so...the people began to lose hope.",
+   "dst": "這座城市的廢墟，殘酷地提醒著人們腐化的力量。於是……人們開始失去希望。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Hunter's Calling#303": {
+   "src": "You have gained the power to end. You have unlocked The Hunted Mode.",
+   "dst": "你獲得了終結的力量。你已解鎖 The Hunted Mode。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
