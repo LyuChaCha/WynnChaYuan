@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_cn` 简体中文 — 99.6%（58,901 / 59,162）
+## `zh_cn` 简体中文 — 99.6%（58,917 / 59,178）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -42,11 +42,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,002 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_tw` 繁體中文 — 99.5%（58,869 / 59,166）
+## `zh_tw` 繁體中文 — 99.5%（58,885 / 59,182）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -81,11 +81,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 1,002 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `tr_tr` Türkçe — 97.3%（56,166 / 57,713）
+## `tr_tr` Türkçe — 97.3%（56,182 / 57,729）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -120,11 +120,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | █████████░ 95% | 37 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 999 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 97.2%（56,682 / 58,332）
+## `ja_jp` 日本語 — 97.2%（56,698 / 58,348）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -159,11 +159,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 559 / 559 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 575 / 575 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 97.1%（55,763 / 57,417）
+## `ru_ru` Русский — 97.1%（55,779 / 57,433）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -198,11 +198,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 97.1%（55,788 / 57,443）
+## `es_es` Español — 97.1%（55,804 / 57,459）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -237,11 +237,11 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 97.1%（55,792 / 57,448）
+## `ko_kr` 한국어 — 97.1%（55,808 / 57,464）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -276,6 +276,6 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 154 / 154 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ██████████ 100% | 27 / 27 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 43 / 43 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 39 / 39 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 99% | 996 / 1,002 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
