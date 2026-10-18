@@ -4,6 +4,7 @@ import worker, {
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
+  feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -56,6 +57,7 @@ let discordAppKey = '';
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
+let githubIssueStatus = 201;         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -69,6 +71,11 @@ globalThis.fetch = async (url, init = {}) => {
     }
     if (path === '/git/ref/heads/main') return answer({ object: { sha: 'mainsha' } });
     if (path === '/git/refs') return answer({}, 201);
+    if (path === '/issues' && call.method === 'POST') {
+      return githubIssueStatus === 201
+        ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/issues/77', number: 77 }, 201)
+        : answer({ message: 'nope' }, githubIssueStatus);
+    }
     if (call.method === 'PUT') return answer({}, 200);
     if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
     return answer({}, 404);
@@ -121,7 +128,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 
 /** 網頁的路徑照原樣，其餘的都是 API。 */
-const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms'].includes(path) ? path : '/api' + path);
+const at = (path) => 'https://x.test' + (['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms'].includes(path) ? path : '/api' + path);
 const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
@@ -578,7 +585,7 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
-for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/privacy', '/terms']) {
+for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms']) {
   english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
   r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
@@ -645,7 +652,7 @@ check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every(
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
 check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
-  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate,/privacy,/terms');
+  && PATHS.join() === '/,/features,/capes,/account,/admin,/translate,/feedback,/privacy,/terms');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
@@ -668,7 +675,7 @@ for (const lang of LANGS) {
   const home = await (await inLang('/?lang=' + lang, {})).text();
   check(lang + '：首頁填滿了、html 的 lang 是 ' + TEXT[lang].html, !/%%[\w.]+%%/.test(home)
     && home.includes('<html lang="' + TEXT[lang].html + '">')
-    && home.includes('<option value="' + lang + '" selected'));
+    && home.includes('data-lang="' + lang + '" role="menuitemradio" aria-checked="true"'));
   for (const path of PATHS) {
     const html = await (await inLang(path + '?lang=' + lang, {})).text();
     check(lang + ' 的 ' + path + ' 沒有會被樣板字串吃掉的寫法、也沒有漏掉的鍵',
@@ -678,7 +685,7 @@ for (const lang of LANGS) {
 check('html 上的語言標籤各不相同', new Set(LANGS.map((l) => TEXT[l].html)).size === LANGS.length);
 // 看得到的字：拿掉程式與樣式、標籤；語言選單與首頁的語言清單本來就是各寫各的
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
-  .replace(/<button type="button" class="chip"[^>]*>[^<]*<\/button>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ')
+  .replace(/<button type="button" class="chip"[^>]*>[^<]*<\/button>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<div class="hn-langs[^"]*"[\s\S]*?<\/div>/g, ' ')
   .replace(/<div class="seg" id="demo-langs"[\s\S]*?<\/div>/g, ' ')        // 功能頁示範的語言鈕：各寫各的名字
   .replace(/<[^>]+>/g, ' ');
 const cjk = /[㐀-鿿＀-￯　-〿]/;
@@ -698,10 +705,10 @@ for (const [lang, own] of Object.entries(SCRIPT)) {
 }
 check('簡體不是繁體照搬：帳號頁沒有繁體才有的字', !/[帳號檔說這個們]/.test(
   visible(await (await inLang('/account?lang=zh-cn', {})).text())));
-check('語言選單是下拉、八種都在、選著的是現在這一種',
-  english['/'].includes('<select class="lang" id="lang"') && english['/'].includes('<option value="en" selected')
-  && pages['/'].includes('<option value="zh" selected') && WANTED.every((l) => english['/'].includes('<option value="' + l + '"'))
-  && ['繁體中文', '简体中文', 'English', '日本語', '한국어', 'Русский', 'Español', 'Türkçe'].every((n) => english['/'].includes('>' + n + '</option>')));
+check('語言選單八種都在、選著的是現在這一種（頁首的地球與頭像選單；詳細的在〈頁首〉那一段）',
+  english['/'].includes('<div class="menu hn-menu hn-narrow" id="hn-globe-menu" role="menu">') && english['/'].includes('data-lang="en" role="menuitemradio" aria-checked="true"')
+  && pages['/'].includes('data-lang="zh" role="menuitemradio" aria-checked="true"') && WANTED.every((l) => english['/'].includes('<a href="?lang=' + l + '"'))
+  && ['繁體中文', '简体中文', 'English', '日本語', '한국어', 'Русский', 'Español', 'Türkçe'].every((n) => english['/'].includes('>' + n)));
 check('pickLang：選過的優先', pickLang('a=1; lang=zh', 'en-US,en;q=0.9') === 'zh'
   && pickLang('lang=en', 'zh-TW') === 'en' && pickLang('lang=zh-cn', 'en') === 'zh-cn' && pickLang('lang=ja', 'en') === 'ja');
 check('pickLang：沒選過看瀏覽器，照它排的順序', pickLang('', 'zh-TW,zh;q=0.9,en;q=0.8') === 'zh'
@@ -997,8 +1004,198 @@ for (const path of PATHS) {
   check('★ ' + path + ' 頁尾寫著跟 Wynncraft 官方沒有關係', /Wynncraft、Mojang、Microsoft 沒有關係/.test(foot)
     && /Not affiliated with Wynncraft/.test(english[path].split('<footer>')[1]));
 }
-check('★ 選單多了「功能」', pages['/'].includes('<a href="/features">功能</a>')
-  && english['/features'].includes('<a href="/features" aria-current="page">Features</a>'));
+check('★ 選單多了「功能」', pages['/'].includes('<a class="hn-link" href="/features">功能</a>')
+  && english['/features'].includes('<a class="hn-link" href="/features" aria-current="page">Features</a>'));
+
+// ---- ★ 頁首（使用者 2026-10-17 選的 A 案）：上面只有公開的頁面，右邊是贊助、下載、頭像（沒登入是登入＋語言） ----
+{
+  const { NAV_ITEMS, NAV_GROUPS, ACCOUNT_ITEMS, navMarkup, panelNavMarkup, langLinks, tagOf } = await import('./site.js');
+  const top = (html) => html.split('<body>')[1].split('<main id="main">')[0];
+  const cells = (html) => [...html.matchAll(/<li class="hn-item[^"]*"([^>]*)>/g)].map((m) => m[1]);
+  check('★ 選單清單只有五個公開的頁面，照這個順序', NAV_ITEMS.map((i) => i.key).join() === 'home,features,capes,translate,feedback'
+    && NAV_ITEMS.every((i) => !i.role && !i.group && Number.isFinite(i.priority) && TEXT.zh[i.label] && TEXT.en[i.label])
+    && Object.keys(NAV_GROUPS).length === 0);
+  const flat = navMarkup('/capes');
+  check('★ navMarkup：一頁一格、帶著順位，最後一格是藏著的「更多」', cells(flat).length === NAV_ITEMS.length + 1
+    && NAV_ITEMS.every((i) => flat.includes('data-key="' + i.key + '" data-pri="' + i.priority + '"'))
+    && /<li class="hn-item hn-more" id="hn-more" hidden><button class="hn-link hn-trig" id="hn-more-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="hn-more-menu">/.test(flat)
+    && flat.includes('<div class="menu hn-menu" id="hn-more-menu" role="menu"></div>'));
+  check('navMarkup：這一頁的那一格標著 aria-current，其他的沒有', flat.includes('<a class="hn-link" href="/capes" aria-current="page">')
+    && (flat.match(/aria-current/g) || []).length === 1 && !navMarkup('/account').includes('aria-current'));
+  check('★ 每一頁的頁首與手機面板都照這份清單畫', PATHS.every((path) => NAV_ITEMS.every((i) =>
+    (top(pages[path]).match(new RegExp('class="hn-(?:p)?link" href="' + i.href + '"', 'g')) || []).length === 2)));
+  // 群組：今天沒有，但機制要在。拿一份假的清單試
+  const items = [...NAV_ITEMS.slice(0, 3), { key: 'translate', href: '/translate', label: 'nav.translate', priority: 70, group: 'community' },
+    { key: 'feedback', href: '/feedback', label: 'nav.feedback', priority: 60, group: 'community' },
+    { key: 'secret', href: '/secret', label: 'nav.secret', priority: 10, role: 'developer' }];
+  const grouped = navMarkup('/feedback', items, { community: { label: 'nav.community', priority: 65 } });
+  check('★ 群組：同一組的幾頁收成一個下拉選單，放在第一頁的位置，順位照群組的', cells(grouped).length === 6
+    && /<li class="hn-item hn-group" data-key="community" data-pri="65"><button class="hn-link hn-trig hn-cur" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="hn-g-community"><span>%%nav.community%%<\/span>/.test(grouped)
+    && grouped.indexOf('data-key="capes"') < grouped.indexOf('data-key="community"')
+    && grouped.indexOf('data-key="community"') < grouped.indexOf('data-key="secret"')
+    && /id="hn-g-community" role="menu"><a href="\/translate" role="menuitem">%%nav.translate%%<\/a><a href="\/feedback" role="menuitem" aria-current="page">%%nav.feedback%%<\/a><\/div>/.test(grouped));
+  check('群組沒寫順位：用組裡最大的那一個', navMarkup('/', items, { community: { label: 'nav.community' } }).includes('data-key="community" data-pri="70"'));
+  const panelGrouped = panelNavMarkup('/feedback', items, { community: { label: 'nav.community' } });
+  check('群組在手機面板裡是一個小標題加底下的幾頁', panelGrouped.includes('<div class="hn-pgroup"><p class="hn-phead">%%nav.community%%</p><a class="hn-plink hn-sub" href="/translate">')
+    && panelGrouped.includes('<a class="hn-plink hn-sub" href="/feedback" aria-current="page">'));
+  check('★ 身分限定：清單上寫了 role，畫出來就是藏著的、帶著 data-need', grouped.includes('data-key="secret" data-pri="10" data-need="developer" hidden>')
+    && panelGrouped.includes('href="/secret" data-need="developer" hidden>'));
+  check('★ 頭像選單：我的帳號、管理（只有 staff），清單一樣是資料', ACCOUNT_ITEMS.map((i) => i.key + ':' + (i.role || '')).join() === 'account:,admin:staff');
+  for (const path of PATHS) {
+    const head = top(pages[path]);
+    const admin = [...head.matchAll(/<a[^>]*href="\/admin"[^>]*>/g)].map((m) => m[0]);
+    check('★ ' + path + '：管理不在上面那一排，在頭像選單與手機面板裡，一律先藏著等 /api/me', admin.length === 2
+      && admin.every((tag) => tag.includes('data-need="staff" hidden')) && !/<li class="hn-item[^>]*><a class="hn-link" href="\/admin"/.test(head));
+    check(path + '：右邊的順序是贊助、下載、帳號（沒登入／登入）、漢堡選單', head.indexOf('hn-heart') > head.indexOf('id="hn"')
+      && head.indexOf('hn-heart') < head.indexOf('id="get"') && head.indexOf('id="get"') < head.indexOf('id="hn-guest"')
+      && head.indexOf('id="hn-guest"') < head.indexOf('id="hn-user"') && head.indexOf('id="hn-user"') < head.indexOf('id="hn-burger"'));
+    check(path + '：舊的語言下拉、名字、登出鈕都不在了', !head.includes('<select') && !head.includes('id="me"') && !head.includes('id="nav-admin"'));
+  }
+  const zhTop = top(pages['/']);
+  check('★ 贊助是一顆只有愛心的按鈕：有說明給螢幕閱讀器、滑過浮出「贊助」', zhTop.includes('<a class="hn-icon hn-heart hn-tip" href="https://ko-fi.com/lyuchacha" aria-label="在 Ko-fi 贊助" data-tip="贊助">')
+    && top(english['/']).includes('aria-label="Sponsor on Ko-fi" data-tip="Sponsor"'));
+  check('★ 下載還是那顆綠色的鈕，三個地方都在', /<button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">/.test(zhTop)
+    && ['Modrinth', 'CurseForge', 'GitHub Releases'].every((n) => zhTop.includes('role="menuitem">' + n)));
+  check('★ 沒登入的樣子：登入＋地球（語言），頭像那一塊藏著', /<div class="hn-guest hn-desk" id="hn-guest"><a class="btn small hn-signin" href="\/account">登入<\/a>/.test(zhTop)
+    && zhTop.includes('<button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="語言" data-tip="語言" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">')
+    && zhTop.includes('<div class="pop hn-user hn-desk" id="hn-user" hidden>') && zhTop.includes('<div class="hn-pgrid" id="hn-p-user" hidden>')
+    && !/id="hn-guest"[^>]*hidden/.test(zhTop) && !/id="hn-p-guest"[^>]*hidden/.test(zhTop));
+  check('★ 頭像選單：名字、我的帳號、管理、語言、分隔線、登出，照這個順序', (() => {
+    const menu = zhTop.slice(zhTop.indexOf('id="hn-acct-menu"'), zhTop.indexOf('id="hn-burger"'));
+    const at = ['data-me-name', '我的帳號', '>管理<', 'id="hn-lang-toggle"', 'class="hn-sep" role="separator"', '登出'].map((w) => menu.indexOf(w));
+    return at.every((n, i) => n > 0 && (i === 0 || n > at[i - 1])) && menu.includes('aria-controls="hn-acct-langs"');
+  })());
+  check('★ 這一頁在頭像選單裡（帳號、管理）：頭像亮著', top(pages['/account']).includes('<button class="hn-avatar hn-cur"')
+    && top(pages['/admin']).includes('<button class="hn-avatar hn-cur"') && !zhTop.includes('hn-avatar hn-cur')
+    && /<a role="menuitem" class="hn-mi" href="\/admin" aria-current="page" data-need="staff" hidden>/.test(top(pages['/admin'])));
+  check('手機：漢堡選單打開面板（選單、下載、帳號、語言）', zhTop.includes('<button class="hn-icon hn-burger" id="hn-burger" type="button" aria-label="選單" aria-expanded="false" aria-controls="hn-panel">')
+    && (() => {
+      const panel = zhTop.slice(zhTop.indexOf('<div class="hn-panel" id="hn-panel">'));
+      const at = ['class="hn-pnav"', '>下載<', 'id="hn-p-guest"', '>語言<'].map((w) => panel.indexOf(w));
+      return at.every((n, i) => n > 0 && (i === 0 || n > at[i - 1]));
+    })());
+  // 語言：八種都在三個地方（地球、頭像選單、手機面板），連結是 ?lang=，程式攔下來寫 cookie
+  for (const [lang, html] of [['zh', pages['/']], ['en', english['/']], ['ja', await (await inLang('/capes?lang=ja', {})).text()]]) {
+    const head = top(html);
+    check('★ ' + lang + '：語言連結八種各三份，現在這一種在選單裡打勾、在面板裡標成目前的',
+      WANTED.every((code) => (head.match(new RegExp('<a href="\\?lang=' + code + '" hreflang="' + tagOf(code) + '" lang="' + tagOf(code) + '" data-lang="' + code + '"', 'g')) || []).length === 3)
+      && (head.match(new RegExp('data-lang="' + lang + '" role="menuitemradio" aria-checked="true"', 'g')) || []).length === 2
+      && (head.match(/aria-checked="true"/g) || []).length === 2 && (head.match(/aria-checked="false"/g) || []).length === 14
+      && head.includes('data-lang="' + lang + '" aria-current="true">')
+      && ['繁體中文', '简体中文', 'English', '日本語', '한국어', 'Русский', 'Español', 'Türkçe'].every((n) => (head.match(new RegExp('>' + n + '(?:<svg|</a>)', 'g')) || []).length === 3));
+  }
+  check('langLinks：在選單裡是 menuitemradio，在面板裡是一般連結', langLinks('ko', true).includes('data-lang="ko" role="menuitemradio" aria-checked="true">한국어<svg')
+    && !langLinks('ko', false).includes('role=') && langLinks('ko', false).includes('data-lang="ko" aria-current="true">'));
+  check('★ 換語言還是寫 lang 這個 cookie、拿掉網址上的 ?lang=', pages['/'].includes("document.cookie = 'lang=' + link.dataset.lang + '; path=/; max-age=31536000; samesite=lax';")
+    && pages['/'].includes('location.replace(location.pathname);'));
+  check('★ 新的字八種語言都有', ['top.signin', 'top.more', 'top.myaccount', 'top.account', 'top.menu'].every((k) => LANGS.every((l) => TEXT[l][k]))
+    && new Set(LANGS.map((l) => TEXT[l]['top.more'])).size >= 6);
+
+  // 頭像那一塊的程式：拿頁面上那一段 headerAccount 出來，在假的 document 上跑（沒登入、還在問、一般玩家、管理員、只有 Discord）
+  const sandbox = (html) => {
+    const head = top(html);
+    const from = html.indexOf('function headerAccount(me) {');
+    const end = html.indexOf('    fitNav(true);\n  }', from) + '    fitNav(true);\n  }'.length;
+    const byId = {};
+    for (const m of head.matchAll(/<(\w+)([^>]*\sid="([^"]+)"[^>]*)>/g)) {
+      byId[m[3]] = { hidden: /\shidden(?=\s|$)/.test(m[2]), attrs: {}, title: '',
+        dataset: { label: (m[2].match(/data-label="([^"]*)"/) || [])[1] }, setAttribute(k, v) { this.attrs[k] = v; } };
+    }
+    const needs = [...head.matchAll(/<(\w+)([^>]*\sdata-need="(\w+)"[^>]*)>/g)].map((m) => ({ hidden: true, dataset: { need: m[3] } }));
+    const names = [...head.matchAll(/data-me-name/g)].map(() => ({ textContent: '' }));
+    const imgs = [...head.matchAll(/<img class="hn-ava"/g)].map(() => ({ hidden: true, src: '', nextElementSibling: { hidden: false } }));
+    const document = {
+      getElementById: (id) => byId[id],
+      querySelectorAll: (sel) => (sel.includes('data-need') ? needs : sel.includes('data-me-name') ? names : sel.includes('img.hn-ava') ? imgs : []),
+    };
+    const state = { fits: 0 };
+    state.run = new Function('document', 'fitNav', 'head', html.slice(from, end) + '\nreturn headerAccount;')(
+      document, () => state.fits++, (name, size) => 'https://minotar.net/helm/' + name + '/' + size + '.png');
+    return Object.assign(state, { byId, needs, names, imgs });
+  };
+  const shown = (s) => ['hn-guest', 'hn-p-guest', 'hn-user', 'hn-p-user'].filter((id) => !s.byId[id].hidden).join();
+  let s = sandbox(pages['/']);
+  check('★ 頁上有 headerAccount、找得到四塊與管理', typeof s.run === 'function'
+    && ['hn-guest', 'hn-p-guest', 'hn-user', 'hn-p-user', 'hn-avatar'].every((id) => s.byId[id])
+    && s.needs.length === 2 && s.names.length === 2 && s.imgs.length === 3);
+  s.run(null);
+  check('★ 沒登入：登入與地球在、頭像不在、管理藏著', shown(s) === 'hn-guest,hn-p-guest' && s.needs.every((n) => n.hidden) && s.fits === 1);
+  s = sandbox(pages['/']);
+  s.run(true);
+  check('有通行證、還在問 /api/me：先換成頭像，管理還是藏著', shown(s) === 'hn-user,hn-p-user' && s.needs.every((n) => n.hidden)
+    && s.names.every((n) => n.textContent === ''));
+  s.run({ linked: true, name: 'Bob', staff: false });
+  check('★ 一般玩家：頭像與名字換上來，管理藏著', shown(s) === 'hn-user,hn-p-user' && s.needs.every((n) => n.hidden)
+    && s.names.every((n) => n.textContent === 'Bob') && s.imgs.every((img) => img.src === 'https://minotar.net/helm/Bob/52.png')
+    && s.byId['hn-avatar'].attrs['aria-label'] === '帳號選單: Bob' && s.byId['hn-avatar'].title === 'Bob');
+  s.run({ linked: true, name: 'Alice_Dev', staff: true, developer: true });
+  check('★ 開發者與管理員（staff）：管理打開', s.needs.every((n) => !n.hidden));
+  s = sandbox(english['/admin']);
+  s.run({ linked: false, discord: { name: 'Sayla' }, staff: true });
+  check('★ 只有 Discord、還沒綁的管理員：名字用 Discord 的、沒有頭像圖、管理一樣打開', shown(s) === 'hn-user,hn-p-user'
+    && s.names.every((n) => n.textContent === 'Sayla') && s.imgs.every((img) => img.src === '') && s.needs.every((n) => !n.hidden)
+    && s.byId['hn-avatar'].attrs['aria-label'] === 'Account menu: Sayla');
+  s.run(null);
+  check('通行證過期（/api/me 回 null）：換回登入', shown(s) === 'hn-guest,hn-p-guest' && s.needs.every((n) => n.hidden));
+
+  // 動作與葉子（使用者 2026-10-17：「更順、更流暢，加一點巧思，像小光澤或飄過的葉子」）
+  const css = (pages['/'].match(/<style>([\s\S]*?)<\/style>/) || [])[1] || '';
+  const calm = (css.match(/@media \(prefers-reduced-motion: reduce\) \{([\s\S]*?)\n  \}/) || [])[1] || '';
+  check('★ 選單打開 180–200ms、關掉 120ms，從按鈕那一角長出來，只動 transform 與 opacity',
+    /\.menu \{[^}]*transform: translateY\(-6px\) scale\(\.96\); transform-origin: top right;[^}]*transition: opacity 120ms var\(--exit\), transform 120ms var\(--exit\)/.test(css)
+    && /\.menu\.open \{ opacity: 1; visibility: visible; transform: none; transition: opacity 180ms var\(--out\), transform 200ms var\(--out\)/.test(css)
+    && css.includes('.hn .menu { left: 0; right: auto; width: auto; min-width: 190px; transform-origin: top left; }'));
+  check('★ 選單裡一項接一項淡進來（只在打開時、相隔 18ms），序號是程式填的',
+    css.includes('calc(var(--i, 0) * 18ms)') && pages['/'].includes("child.style.setProperty('--i', Math.min(i, 10))")
+    && pages['/'].includes('menus.number(moreMenu);'));
+  check('手機面板是滑下來的（transition，不是一下子冒出來）', /\.hn-panel\.open \{ opacity: 1; visibility: visible; transform: none; transition: opacity 200ms var\(--out\), transform 260ms var\(--out\)/.test(css)
+    && !css.includes('hn-drop'));
+  check('★ 下載鈕的光只在滑上去時掃一次、不循環', /\.hn-sheen:hover::after \{ transform: translateX\(340%\) skewX\(-18deg\); transition: transform 680ms var\(--out\); \}/.test(css)
+    && !/\.hn-sheen[^{]*\{[^}]*animation/.test(css) && !/\.hn-sheen::after \{[^}]*transition/.test(css));
+  check('★ 頁首的葉子：畫布在字的後面、不擋滑鼠、像素放大不糊', zhTop.includes('<div class="top"><canvas class="hn-leaves" id="hn-leaves" aria-hidden="true"></canvas><div class="in">')
+    && /\.hn-leaves \{[^}]*z-index: 0;[^}]*pointer-events: none; image-rendering: pixelated;/.test(css) && css.includes('.top .in { position: relative; z-index: 1;'));
+  check('★ 減少動態：葉子與光都不出現，程式也不跑', /\.hn-sheen::after, \.hn-leaves \{ display: none; \}/.test(calm)
+    && pages['/'].includes("window.matchMedia('(prefers-reduced-motion: reduce)')") && pages['/'].includes('if (off()) return;'));
+  check('★ 葉子：分頁藏起來就停、沒東西在畫面上就不跑 rAF、轉向只用 90 度的倍數（沒有任意角度的旋轉）',
+    pages['/'].includes("document.addEventListener('visibilitychange', function () {\n      if (document.hidden) stop();")
+    && pages['/'].includes('raf = leaves.length || gusts.length ? requestAnimationFrame(frame) : 0;')
+    && !/ctx\.rotate|\.rotate\(/.test(pages['/'].slice(pages['/'].indexOf('頁首飄過的葉子'))));
+  check('地球也用自己的浮出提示，選單開著不出來', css.includes('.hn-tip[aria-expanded="true"]::after { opacity: 0 !important;'));
+  // 葉子的程式本身：拿頁面上那一段在假的瀏覽器裡跑（減少動態、分頁藏起來、正常三種）
+  const leafRun = (calmOn, hidden) => {
+    const html = pages['/'];
+    const from = html.indexOf('  (function () {\n    var canvas = document.getElementById(\'hn-leaves\');');
+    const end = html.indexOf('\n  })();\n', from) + '\n  })();\n'.length;
+    const calls = { timers: 0, frames: 0, listeners: [] };
+    const ctx2d = { clearRect() {}, fillRect() {}, drawImage() {}, globalAlpha: 1, fillStyle: '' };
+    const bar = { offsetHeight: 61 };
+    const canvas = { getContext: () => ctx2d, style: {}, width: 0, height: 0,
+      parentNode: { clientWidth: 1266, querySelector: () => bar } };
+    const doc = {
+      hidden,
+      getElementById: (id) => (id === 'hn-leaves' ? canvas : null),
+      createElement: () => ({ width: 0, height: 0, getContext: () => ctx2d }),
+      addEventListener: (type) => calls.listeners.push(type),
+    };
+    const win = { matchMedia: () => ({ matches: calmOn, addEventListener() {} }), addEventListener() {} };
+    new Function('document', 'window', 'setTimeout', 'clearTimeout', 'requestAnimationFrame', 'cancelAnimationFrame', 'performance', html.slice(from, end))(
+      doc, win, () => ++calls.timers, () => {}, () => ++calls.frames, () => {}, { now: () => 0 });
+    return { calls, canvas };
+  };
+  let run = leafRun(true, false);
+  run.canvas.hnBlow();
+  check('★ 減少動態：葉子的程式不排任何計時、吹了也不動', run.calls.timers === 0 && run.calls.frames === 0);
+  run = leafRun(false, true);
+  run.canvas.hnBlow();
+  check('★ 分頁藏著：吹了也不動（不跑 requestAnimationFrame）', run.calls.frames === 0 && run.calls.listeners.includes('visibilitychange'));
+  run = leafRun(false, false);
+  check('正常：排一陣風，畫布照頁首量好大小（一格像素＝2px）', run.calls.timers === 1 && run.calls.frames === 0
+    && run.canvas.width === 633 && run.canvas.height === 30 && run.canvas.style.width === '1266px' && run.canvas.style.height === '60px');
+  run.canvas.hnBlow();
+  check('正常：吹一陣才開始跑 requestAnimationFrame', run.calls.frames === 1);
+  check('按下去縮一點、箭頭打開時轉過來', css.includes('.hn-link:active, .hn-icon:active, .hn-avatar:active, .hn-plink:active { transform: scale(.97); }')
+    && css.includes('#hn-globe[aria-expanded="true"] > .ico:last-child { transform: rotate(180deg); }'));
+}
 check('★ 首頁有團隊那一段：三個身分各一區，名單跟 /api/team 要', ['band-developers', 'band-sponsors', 'band-contributors']
   .every((id) => pages['/'].includes('id="' + id + '"')) && pages['/'].includes("fetch('/api/team')")
   && pages['/'].includes('id="team"') && pages['/'].includes('id="install"') && pages['/'].includes('id="sponsoring"'));
@@ -1184,7 +1381,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     (lang['- Loot Chests T{~}+: {~}/{~}'].match(/\{~\d?\}/g) || []).length === 3
     && (lang['- Mobs slain: {~}/{~}'].match(/\{~\d?\}/g) || []).length === 2));
   check('英文版的功能頁：預覽以外看得到的字裡沒有中文', !/[㐀-鿿]/.test(english['/features']
-    .replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
+    .replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ').replace(/<div class="hn-langs[^"]*"[\s\S]*?<\/div>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
     .replace(/<[^>]+>/g, ' ')));
 }
 check('功能頁的列都填了字（27 列）', (pages['/features'].match(/class="fcard/g) || []).length === 27
@@ -2013,6 +2210,61 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     await Promise.all(waits);
     check('用譯文也查得到', JSON.parse(discordCalls.find((c) => c.method === 'PATCH').body).embeds[0].fields[0].name === 'Bye');
 
+    // ---- /回饋（使用者 2026-10-17）：跟網站的回饋頁進同一個地方 ----
+    {
+      const GUS = '333333333333333333';
+      const gus = { id: GUS, username: 'gus', global_name: 'Gus 阿古' };
+      const fbCommand = (options, locale = 'zh-TW', who = { member: { user: gus } }) => ({
+        type: 2, application_id: 'app1', token: 'tok1', locale, guild_id: '1', ...who, data: { name: 'feedback', options },
+      });
+      const opt = (cat, msg, extra = []) => [{ name: 'category', value: cat }, { name: 'message', value: msg }, ...extra];
+      const mine = () => [...env.CORPUS.data.entries()].filter(([k]) => k.startsWith('fb:'))
+        .map(([, v]) => JSON.parse(v.value)).filter((x) => x.uid === GUS);
+      const def = DISCORD_COMMANDS.find((c) => c.name === 'feedback');
+      check('★ /回饋 的定義：繁中叫「回饋」、簡中「反馈」；分類五選一、內容必填、位置與語言可以不填', def
+        && def.name_localizations['zh-TW'] === '回饋' && def.name_localizations['zh-CN'] === '反馈'
+        && def.options.map((o) => o.name + (o.required ? '!' : '?')).join() === 'category!,message!,where?,language?'
+        && def.options[0].choices.map((c) => c.value).join() === 'translation,content,website,feature,other'
+        && def.options[0].choices[0].name_localizations['zh-TW'] === '譯文建議');
+
+      r = await worker.fetch(await signed(fbCommand(opt('feature', '想要 /cape 也能看別人的徽章'))), env);
+      const fbReply = await r.json();
+      check('★ /回饋（不是譯文建議）：直接回，只給本人看', r.status === 200 && fbReply.type === 4
+        && fbReply.data.flags === 64 && fbReply.data.content.includes('收到了'));
+      check('★ /回饋 存進同一個地方：Discord 代號、顯示名稱、來自機器人', mine().length === 1 && mine()[0].name === 'Gus 阿古'
+        && mine()[0].via === 'bot' && mine()[0].cat === 'feature' && mine()[0].st === 'open');
+      check('★ /回饋 的簽名不對：401，什麼都不存',
+        (await worker.fetch(await signed(fbCommand(opt('other', 'forged message')), true), env)).status === 401 && mine().length === 1);
+
+      const fbWaits = [];
+      discordCalls.length = 0;
+      githubCalls.length = 0;
+      r = await worker.fetch(await signed(fbCommand(opt('translation', 'Gambit 的譯名前後不一致', [{ name: 'where', value: 'Lootrun 結算畫面' }]), 'ja')),
+        env, { waitUntil: (job) => fbWaits.push(job) });
+      const deferred = await r.json();
+      check('★ /回饋 的譯文建議要開 Issue：先回「處理中」，而且只給本人看', deferred.type === 5 && deferred.data.flags === 64);
+      await Promise.all(fbWaits);
+      const patched = JSON.parse((discordCalls.find((c) => c.method === 'PATCH') || { body: '{}' }).body);
+      const issueCall = githubCalls.find((c) => c.path === '/issues');
+      check('★ 補上的回覆附 Issue 網址；Issue 只放顯示名稱、不放代號；語言跟著 Discord 介面（日文）',
+        String(patched.content).includes('/issues/77') && issueCall && issueCall.body.body.includes('Gus 阿古')
+        && !issueCall.body.body.includes(GUS) && !issueCall.body.title.includes(GUS) && issueCall.body.body.includes('日本語')
+        && issueCall.body.body.includes('Lootrun 結算畫面') && issueCall.body.body.includes('Discord 機器人'));
+      check('Issue 網址記在那一筆', mine().some((x) => x.cat === 'translation' && x.issue && x.issue.url.endsWith('/issues/77')));
+
+      r = await worker.fetch(await signed(fbCommand(opt('other', 'ok'))), env);
+      check('/回饋 太短：只回給本人看', (await r.json()).data.content.includes('太短'));
+      for (let i = mine().length; i < FEEDBACK_PER_HOUR; i++) {
+        await worker.fetch(await signed(fbCommand(opt('other', '再一則 ' + i), 'zh-TW', { user: gus })), env);
+      }
+      check('私訊裡（user 不在 member 底下）也認得是誰', mine().length === FEEDBACK_PER_HOUR);
+      r = await worker.fetch(await signed(fbCommand(opt('other', '第六則了'))), env);
+      const limited = await r.json();
+      check('★ /回饋 的限流：滿了只回給本人看，說幾點可以再送', limited.data.flags === 64 && limited.data.content.includes('<t:')
+        && limited.data.content.includes(String(FEEDBACK_PER_HOUR)) && mine().length === FEEDBACK_PER_HOUR);
+      for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
+    }
+
     check('★ 註冊指令只有開發者', (await trPost('/admin/discord/register', {}, bobNow)).status === 403);
     check('沒設 Bot Token 就說還沒設定', (await trPost('/admin/discord/register', {}, aliceWeb)).status === 503);
     env.DISCORD_BOT_TOKEN = 'bot-secret';
@@ -2022,7 +2274,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     r = await trPost('/admin/discord/register', {}, aliceWeb);
     const put = discordCalls.find((c) => c.method === 'PUT');
     check('★ 註冊：PUT 全部指令、帶 Bot Token', r.status === 200 && put && put.auth === 'Bot bot-secret'
-      && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate');
+      && JSON.parse(put.body).map((c) => c.name).join() === 'status,cape,translate,feedback');
     discordAppKey = env.DISCORD_PUBLIC_KEY;
     const info = await (await trGet('/admin/discord', aliceWeb)).json();
     check('管理頁拿得到邀請連結與設定狀態', info.token && info.publicKey && info.invite.includes('scope=applications.commands+bot'));
@@ -2039,6 +2291,168 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('tp:') || k.startsWith('tq:')) env.CORPUS.data.delete(k);
   githubCalls.length = 0;
   githubFile = CREDITS;
+  env.GITHUB_TOKEN = hadToken;
+}
+
+// ---- ★ 回饋（使用者 2026-10-17：/feedback，要用 Discord 登入；譯文建議自動開 GitHub Issue） ----
+{
+  // /feedback 同時是網頁與 API 的名字：這裡一律打 /api 底下的
+  const fbPost = (path, bodyValue, token) => worker.fetch(new Request('https://x.test/api' + path, {
+    method: 'POST', body: typeof bodyValue === 'string' ? bodyValue : JSON.stringify(bodyValue),
+    headers: token ? { authorization: 'Bearer ' + token } : {},
+  }), env);
+  const fbGet = (path, token) => worker.fetch(new Request('https://x.test/api' + path, {
+    headers: token ? { authorization: 'Bearer ' + token } : {},
+  }), env);
+  const hadToken = env.GITHUB_TOKEN;
+  env.GITHUB_TOKEN = 'ghtok';
+  const FAY = '222222222222222222';
+  await env.CORPUS.put('d:' + FAY, JSON.stringify({ n: 'Fay 小花' }));
+  const fay = await issueDiscordToken(env, FAY, NOW);
+  const frank = await issueWebToken(env, 'f'.repeat(32), 'Frank', NOW);      // 從遊戲開的網頁，沒綁 Discord
+  const good = { cat: 'website', msg: '披風一覽在手機上排得太擠了', where: '/capes' };
+  const kv = (id) => env.CORPUS.data.get('fb:' + id);
+  const value = (id) => JSON.parse(kv(id).value);
+
+  r = await fbPost('/feedback', good);
+  check('★ 回饋要登入：沒登入 401', r.status === 401 && (await r.json()).why === 'login first');
+  r = await fbPost('/feedback', good, frank);
+  check('★ 從遊戲開的網頁、沒綁 Discord：401，叫他先綁', r.status === 401 && (await r.json()).why === 'discord first');
+
+  const tidy = feedbackCheck({ cat: 'other', msg: ' hi\r\nthere\u0007 ', where: ' a \n  b ', lang: 'xx_yy' });
+  check('★ feedbackCheck：分類、長短、位置的長度', feedbackCheck({ cat: 'nope', msg: 'hello' }).why === 'bad category'
+    && feedbackCheck({ cat: 'other', msg: '  a  ' }).why === 'too short'
+    && feedbackCheck({ cat: 'other', msg: 'x'.repeat(2001) }).why === 'too long'
+    && feedbackCheck({ cat: 'other', msg: 'x'.repeat(2000) }).entry.msg.length === 2000
+    && feedbackCheck({ cat: 'other', msg: 'hello', where: 'w'.repeat(201) }).why === 'where too long'
+    && feedbackCheck({ cat: 'other', msg: 42 }).why === 'too short' && feedbackCheck(null).why === 'bad request');
+  check('feedbackCheck：換行統一、控制字元拿掉、位置收成一行、不認得的語言當成沒填', tidy.entry.msg === 'hi\nthere'
+    && tidy.entry.where === 'a b' && tidy.entry.lang === null
+    && feedbackCheck({ cat: 'translation', msg: 'abc', lang: 'ja_jp' }).entry.lang === 'ja_jp');
+  r = await fbPost('/feedback', { ...good, cat: 'bogus' }, fay);
+  check('★ 網頁送來的也驗：分類不對 400', r.status === 400 && (await r.json()).why === 'bad category');
+  check('太短、太長、不是 JSON 都 400', (await fbPost('/feedback', { ...good, msg: 'a' }, fay)).status === 400
+    && (await fbPost('/feedback', { ...good, msg: 'x'.repeat(2001) }, fay)).status === 400
+    && (await fbPost('/feedback', 'not json', fay)).status === 400);
+
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', good, fay);
+  let made = await r.json();
+  const websiteId = made.id;
+  const stored = value(websiteId);
+  check('★ 存下來：Discord 代號、顯示名稱、分類、內容、位置、來自網站、待處理', r.status === 200 && made.ok
+    && stored.uid === FAY && stored.name === 'Fay 小花' && stored.cat === 'website' && stored.msg === good.msg
+    && stored.where === '/capes' && stored.via === 'web' && stored.st === 'open' && kv(websiteId).ttl === undefined);
+  check('列表要看的放在 metadata', kv(websiteId).metadata.c === 'website' && kv(websiteId).metadata.st === 'open'
+    && kv(websiteId).metadata.n === 'Fay 小花' && kv(websiteId).metadata.s === good.msg);
+  check('★ 不是譯文建議：不碰 GitHub', made.issue === null && !githubCalls.some((c) => c.path === '/issues'));
+
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', { cat: 'translation', msg: '「Weaken Enemy」應該翻成削弱敵傷', where: 'Lootrun 加持', lang: 'zh_tw' }, fay);
+  made = await r.json();
+  const trId = made.id;
+  const issueCall = githubCalls.find((c) => c.path === '/issues');
+  check('★ 譯文建議：開 GitHub Issue（用同一把 token、加 translation 標籤），網址記在那一筆', r.status === 200
+    && issueCall && issueCall.method === 'POST' && issueCall.auth === 'Bearer ghtok' && issueCall.body.labels.join() === 'translation'
+    && issueCall.body.title.startsWith('譯文建議：') && issueCall.body.title.includes('Weaken Enemy')
+    && made.issue === 'https://github.com/LyuChaCha/WynnChaYuan/issues/77'
+    && value(trId).issue.url === made.issue && value(trId).issue.n === 77 && kv(trId).metadata.i === made.issue);
+  check('★ Issue 內文：內容、位置、語言、顯示名稱都在；Discord 代號不在', issueCall.body.body.includes('削弱敵傷')
+    && issueCall.body.body.includes('Lootrun 加持') && issueCall.body.body.includes('繁體中文')
+    && issueCall.body.body.includes('Fay 小花') && !issueCall.body.body.includes(FAY) && !issueCall.body.title.includes(FAY));
+  const tricky = feedbackIssue({ id: 'x', cat: 'translation', msg: 'a ``` b @someone', where: '', name: 'n`a\nme', via: 'web', lang: null });
+  check('feedbackIssue：內容裡的反引號關不掉程式碼區塊，名字裡的反引號拿掉', tricky.body.includes('````\na ``` b @someone\n````')
+    && tricky.body.includes('`name`') && tricky.body.includes('沒有指定') && !tricky.body.includes('**位置**'));
+
+  for (let i = 2; i < FEEDBACK_PER_HOUR; i++) await fbPost('/feedback', { cat: 'other', msg: '第 ' + i + ' 則回饋' }, fay);
+  r = await fbPost('/feedback', good, fay);
+  const slow = await r.json();
+  check('★ 限流：一小時 ' + FEEDBACK_PER_HOUR + ' 則，再送就 429，告訴他哪時候可以再送', r.status === 429 && slow.why === 'slow down'
+    && slow.until > Date.now() && slow.until <= Date.now() + 3600000);
+  check('驗證沒過的不算一則；限流紀錄一小時後自己消失', JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).length === FEEDBACK_PER_HOUR
+    && env.CORPUS.data.get('fbr:' + FAY).ttl === 3600);
+  env.CORPUS.data.get('fbr:' + FAY).value = JSON.stringify(JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).map((t) => t - 3600001));
+  check('★ 一小時前送的不算：又可以送了', (await fbPost('/feedback', { cat: 'content', msg: '希望翻譯 Raid 的結算畫面' }, fay)).status === 200);
+
+  githubIssueStatus = 500;
+  githubCalls.length = 0;
+  r = await fbPost('/feedback', { cat: 'translation', msg: 'GitHub 掛了也要留著', lang: 'ja_jp' }, fay);
+  made = await r.json();
+  const failedId = made.id;
+  check('★ GitHub 失敗：回饋照樣存著，記下原因給管理頁看', r.status === 200 && made.issueFailed === true
+    && githubCalls.some((c) => c.path === '/issues') && value(failedId).issueError === 'github 500' && !value(failedId).issue
+    && kv(failedId).metadata.e === 'github 500' && value(failedId).msg === 'GitHub 掛了也要留著');
+  delete env.GITHUB_TOKEN;
+  env.CORPUS.data.delete('fbr:' + FAY);
+  r = await fbPost('/feedback', { cat: 'translation', msg: '沒設 token 也要留著' }, fay);
+  made = await r.json();
+  check('沒設 GITHUB_TOKEN：一樣存著，原因是還沒設定', r.status === 200 && value(made.id).issueError === 'github not configured');
+  env.CORPUS.data.delete('fb:' + made.id);
+  env.GITHUB_TOKEN = 'ghtok';
+  githubIssueStatus = 201;
+  // 讓「新的在前」看得出來：失敗那一則挪到最新
+  kv(failedId).metadata.t = Date.now() + 5000;
+
+  check('★ 管理：一般人、沒登入都看不到回饋列表', (await fbGet('/admin/feedback', fay)).status === 403
+    && (await fbGet('/admin/feedback')).status === 403 && (await fbGet('/admin/feedback', bobNow)).status === 403);
+  check('★ 管理：一般人不能標已處理、不能刪、不能重開 Issue',
+    (await fbPost('/admin/feedback/status', { id: failedId, st: 'done' }, fay)).status === 403
+    && (await fbPost('/admin/feedback/delete', { id: websiteId }, bobNow)).status === 403
+    && (await fbPost('/admin/feedback/issue', { id: failedId }, fay)).status === 403 && kv(websiteId) && value(failedId).st === 'open');
+  r = await fbGet('/admin/feedback', aliceWeb);
+  let list = await r.json();
+  check('★ 開發者看得到全部，新的在前', r.status === 200 && list.total === FEEDBACK_PER_HOUR + 2
+    && list.items[0].id === failedId && list.items.every((it, i, all) => i === 0 || all[i - 1].t >= it.t || i === 1)
+    && list.counts.open === FEEDBACK_PER_HOUR + 2 && list.counts.done === 0);
+  check('列表裡有 Issue 網址與失敗原因', list.items.some((it) => it.id === trId && it.issue.url.endsWith('/issues/77'))
+    && list.items.some((it) => it.id === failedId && it.issueError === 'github 500'));
+  list = await (await fbGet('/admin/feedback?cat=translation', aliceWeb)).json();
+  check('★ 照分類篩', list.items.length === 2 && list.items.every((it) => it.cat === 'translation'));
+
+  r = await fbPost('/admin/feedback/status', { id: websiteId, st: 'done' }, aliceWeb);
+  const doneItem = (await r.json()).item;
+  check('★ 標成已處理：記下誰、什麼時候；KV ' + FEEDBACK_KEEP_DAYS + ' 天後自己刪', r.status === 200 && doneItem.st === 'done'
+    && doneItem.done.by === ALICE.name && kv(websiteId).ttl === FEEDBACK_KEEP_DAYS * 86400 && kv(websiteId).metadata.st === 'done');
+  list = await (await fbGet('/admin/feedback?st=done', aliceWeb)).json();
+  check('★ 照狀態篩', list.items.length === 1 && list.items[0].id === websiteId && list.counts.done === 1
+    && (await (await fbGet('/admin/feedback?st=open', aliceWeb)).json()).items.every((it) => it.st === 'open'));
+  r = await fbPost('/admin/feedback/status', { id: websiteId, st: 'open' }, aliceWeb);
+  check('★ 重新開啟：拿掉處理紀錄，不再過期', r.status === 200 && !value(websiteId).done && value(websiteId).st === 'open'
+    && kv(websiteId).ttl === undefined);
+  check('狀態不對、編號不對 400，找不到 404', (await fbPost('/admin/feedback/status', { id: websiteId, st: 'maybe' }, aliceWeb)).status === 400
+    && (await fbPost('/admin/feedback/status', { id: 'zz', st: 'done' }, aliceWeb)).status === 400
+    && (await fbPost('/admin/feedback/status', { id: '0'.repeat(16), st: 'done' }, aliceWeb)).status === 404);
+
+  githubCalls.length = 0;
+  r = await fbPost('/admin/feedback/issue', { id: failedId }, aliceWeb);
+  const retried = await r.json();
+  check('★ Issue 沒開成的：管理頁再開一次，成功就清掉失敗原因', r.status === 200 && retried.item.issue.url.endsWith('/issues/77')
+    && !value(failedId).issueError && githubCalls.filter((c) => c.path === '/issues').length === 1);
+  check('不是譯文建議的不開 Issue', (await fbPost('/admin/feedback/issue', { id: websiteId }, aliceWeb)).status === 409);
+
+  await env.CORPUS.put('staff:d:' + FAY, JSON.stringify({ n: '測試', t: NOW, by: 'test' }));
+  check('★ 管理員（照 Discord 加的）也看得到、也能處理', (await fbGet('/admin/feedback', fay)).status === 200
+    && (await fbPost('/admin/feedback/status', { id: trId, st: 'done' }, fay)).status === 200
+    && value(trId).done.by === 'Discord: Fay 小花');
+  env.CORPUS.data.delete('staff:d:' + FAY);
+
+  r = await fbPost('/admin/feedback/delete', { id: websiteId }, aliceWeb);
+  check('★ 刪掉垃圾訊息', r.status === 200 && !kv(websiteId));
+  check('刪過的再刪 404', (await fbPost('/admin/feedback/delete', { id: websiteId }, aliceWeb)).status === 404);
+
+  check('★ 回饋頁：分類、內容、位置、語言與送出；頁首與頁尾都連得到；管理頁有回饋列表',
+    ['id="fb-form"', 'id="fb-cat"', 'value="translation"', 'value="other"', 'id="fb-text"', 'id="fb-where"', 'id="fb-lang"', "'/feedback'"]
+      .every((w) => pages['/feedback'].includes(w))
+    && pages['/'].includes('<a href="/feedback">') && english['/terms'].includes('<a href="/feedback">')
+    && ['id="fbf-list"', 'id="fbf-cat"', 'id="fbf-st"', "'/admin/feedback/status'", "'/admin/feedback/delete'", "'/admin/feedback/issue'"]
+      .every((w) => pages['/admin'].includes(w)));
+  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、顯示名稱、保留多久）', LANGS.every((lang) => {
+    const body = TEXT[lang]['privacy.body'];
+    return body.split('<h2>').length === 14 && body.includes('GitHub') && body.includes('180') && body.includes('/feedback');
+  }));
+
+  for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
+  env.CORPUS.data.delete('d:' + FAY);
   env.GITHUB_TOKEN = hadToken;
 }
 

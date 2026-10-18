@@ -32,12 +32,79 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `/features` | 功能：最上面是即時預覽（照遊戲裡設定畫面右邊那一塊做）：上面一整面「遊戲畫面」——後面是實機截圖，前面是遊戲裡真的那幾張材質（物品說明照現在的版面：徽記、標籤、傷害、需求、詞條；背包；對話框與頭像；生命、魔力與快捷列），位置照實機截圖擺，字是遊戲裡那一套點陣字；物品那一面背包裡有三樣東西（骨弓、無瑕橡木弓、腐爛血肉——數值是官方 API 的，版面照實機截圖）可以用滑鼠指、點或用鍵盤移過去，說明跟著換；下面幾列是真的選項，一動畫面就跟著變。物品／對話／世界與聊天三頁、七種譯文語言。首頁最上面那一塊用的是同一份（`site.js` 的 `makeStage`），自己輪著換語言與場景，下面照分類列出翻譯範圍、工具、葉子與披風、相容的模組——每一項一張卡，前面一顆遊戲通用的圖示；翻譯範圍那十張各附一句預覽裡的例子（原文在上、譯文在下，跟著預覽選的語言換） |
 | `/capes` | 披風一覽。最上面一條「做自己的披風」，按了展開**披風範本**那一塊（說明圖、每一種尺寸的下載鈕、會動的示範；帳號頁上傳的地方也有同一塊）。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。可以排序（最新、最早、最多人使用、人氣、最近有人穿上）與篩選（PNG／GIF／我的最愛／我用過的）；登入的人可以**穿上**、**復原**、按星星加進**我的最愛**。管理的人看得到全部，多「不公開」「待審核」兩個篩選 |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
-| `/admin` | 管理（開發者與管理員）：封禁名單、特別名單、貢獻公會、新增成員、譯者名單；管理員名單只有開發者看得到 |
+| `/admin` | 管理（開發者與管理員）：回饋（最上面）、封禁名單、特別名單、貢獻公會、新增成員、譯者名單；管理員名單只有開發者看得到 |
 | `/translate` | 協作翻譯：選一個語言，搜尋或瀏覽語料（原文、譯文、檔名），對任一句提新譯法；整句提案與術語投票兩個分頁。那個語言的譯者（管理頁指派）可以提案與投票，開發者與管理員定案。整句定案＝替倉庫開 PR（同一個語言同一天的放同一個 PR，任務檔的句子連合併檔一起改）；術語定案只記下結果，套到整份語料由維護的人做。送出前照 `placeholderProblem` 檢查佔位符（`{#}{p}{u}` 順序、`{~}` 數量與編號、顏色標記、行數），網頁與 Worker 同一套。編輯時有「實機預覽」：{~} 帶入模擬數值、標出接的是原文第幾個數字，{p}／{u}／{#}／顏色標記照遊戲的樣子畫；有插入佔位符與「幫我編號」（{~} 依序改成 {~1}、{~2}…）的按鈕 |
+| `/feedback` | 回饋與建議（使用者 2026-10-17）：分類（譯文建議、內容建議、網站建議、功能建議、其他）、想說的話（必填，最多 2000 字）、可以不填的「在哪裡」（最多 200 字；譯文建議時特別請他填，另外多問一個語言）。要用 Discord 登入（從遊戲開的網頁要綁了 Discord 才行），一個人一小時最多 5 則（跟機器人的 `/回饋` 共用）。**譯文建議會自動在 GitHub 開 Issue**（見下面〈回饋〉）；其他分類只留在網站上，管理頁看得到。頁首與頁尾（聯絡那一欄）都有連結；`?cat=translation` 可以先選好分類 |
 | `/privacy`、`/terms` | 隱私政策、服務條款（Discord 應用程式驗證要的兩個連結）。內容照下面的〈它記什麼〉與倉庫 README 的「會送出的資料」，那兩處改了這裡要跟 |
 | 其他網址 | 404，但是一頁有頁首頁尾、給幾條回去的路的網頁（照訪客的語言）；`/api/` 底下與不是 GET 的照舊回 JSON |
 
-每一頁的頁首有「下載」（Modrinth、CurseForge、GitHub Releases）與贊助（Ko-fi）；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
+每一頁的頁首見下面〈頁首〉；頁尾有下載點、GitHub 與兩份授權、聯絡方式，以及「與 Wynncraft、Mojang、Microsoft 沒有關係」那一行。玩家的頭像與全身圖用 [minotar](https://minotar.net)（照名字畫，不必先查 UUID）。
+
+### 頁首
+
+使用者 2026-10-17 選的 A 案：永遠只有一列。
+
+- **左邊**：標誌，然後是公開的頁面（首頁、功能、披風、協作翻譯、回饋）。
+- **右邊**依序是：
+  - 贊助：只有愛心圖示，滑過或用鍵盤停上去會浮出「贊助」。
+  - 綠色的「下載 ▾」：Modrinth、CurseForge、GitHub Releases。
+  - 帳號那一塊：
+    - 登入之後是頭像，按了是帳號選單：名字、我的帳號、管理（只有 staff）、語言（就地展開八種）、登出。
+    - 沒登入是「登入」加一顆地球（語言選單）。
+- **放不下的時候**（priority+）：程式量選單那一段剩多寬，從順位小的開始收進最後的「更多 ▾」。
+  - 「更多」只有真的收了東西才出現。
+  - 這一頁收在裡面的話，「更多」本身亮起來。
+  - 視窗變寬變窄、登入後頭像換上來、字型載好都會重新量。
+- **手機（720px 以下）**：只留標誌、愛心與漢堡選單。面板裡從上到下是選單、下載、帳號、語言。
+- **鍵盤**：
+  - 選單按鈕帶 `aria-expanded`／`aria-haspopup`。Enter、空白鍵、↓ 打開並停在第一項。
+  - 選單裡 ↑↓ 移動、Home／End 到頭尾。Esc 關掉，焦點回到按鈕。
+  - 點外面或焦點離開也會關。一次只開一張。
+- **動作**（使用者 2026-10-17 要「更順、加一點巧思」）：
+  - 選單打開 180–200ms：從按鈕那一角長出來，淡入、從 0.96 放大、往下幾 px。關掉 120ms，收得比開得快。
+  - 裡面一項接一項淡進來，相隔 18ms，只在打開時。
+  - 手機面板蓋在頁面上，從上面滑下來。
+  - 都是 transition、只動 transform 與 opacity，開到一半再關會從當下的位置接著走。曲線是 `--out`（打開）與 `--exit`（關掉）。
+  - 箭頭打開時轉過來；按下去縮到 0.97。
+  - 下載鈕滑上去時一道斜光掃過一次，不循環。
+  - 地球與愛心是同一種浮出提示。
+- **飄過的葉子**：跟 README 橫幅同一套像素葉子（桌面 `discord-banner/leafart.py`、`animate4.py`）。
+  - 每隔 5–10 秒來一陣風，帶一兩片葉子從左邊飄過頁首。風鋒到了葉子才被吹快、翻得快。
+  - 轉向只用 90 度的倍數加鏡射，像素永遠方正（使用者不要任意角度的旋轉）。
+  - 畫在 `.top` 裡一張小畫布上（`#hn-leaves`，一格像素＝2px），在字的後面、`pointer-events: none`。
+  - 畫面上沒東西就不跑 `requestAnimationFrame`；分頁藏起來就停。
+  - 系統設定「減少動態」時完全不出現，光也拿掉。
+  - 畫布元素上有 `hnBlow()` 可以馬上吹一陣，測試與錄影用。
+
+選單是資料，都在 `site.js` 開頭「頁首」那一段：
+
+| | |
+|---|---|
+| `NAV_ITEMS` | 上面那一排：`{ key, href, label, priority, group?, role? }` |
+| `NAV_GROUPS` | 群組：`{ <group>: { label, priority?, role? } }` |
+| `ACCOUNT_ITEMS` | 頭像選單的連結：同樣的欄位，多一個 `icon`（`ICON` 的名字） |
+
+- **加一頁**：
+  1. 在 `NAV_ITEMS` 加一行，例如 `{ key: 'guide', href: '/guide', label: 'nav.guide', priority: 50 }`。
+  2. `label` 是字的鍵：繁中與英文寫在 `site.js` 的 `TEXT`，其他六種寫在 `lang/*.json`，再跑 `build-site-text.mjs`。少一種測試會擋。
+  3. 頁面本身照舊加在 `PAGES`。
+  4. `priority` 決定窄的時候誰先收進「更多」，數字小的先收。現在是首頁 100、披風 90、功能 80、協作翻譯 70、回饋 60。
+- **只給某些人看**：加 `role: 'staff'`。值是 `/api/me` 回的欄位，例如 `staff`、`developer`、`member`。
+  - 畫出來先是 `hidden`、帶著 `data-need`，程式問過 `/api/me` 才打開。沒登入一律看不到。
+  - 這只是畫面；真正的權限照舊由 API 自己檢查。
+- **收成一個下拉選單**：幾頁寫上同一個 `group`，在 `NAV_GROUPS` 寫它的名字。例如
+  1. 寫上 `community: { label: 'nav.community', priority: 65 }`。
+  2. 協作翻譯與回饋那兩行加上 `group: 'community'`。
+  3. 頁首就多一個「社群 ▾」，放在組裡第一頁原本的位置。
+  - 群組沒寫 `priority` 就用組裡最大的那一個。
+  - 收進「更多」時，群組變成一個小標題加底下的幾頁；手機面板也一樣。
+  - 現在沒有要分組的，`NAV_GROUPS` 是空的。
+
+樣式與 id 一律用 `hn-` 開頭（加之前 grep 過沒有撞名）。測試在 `worker.test.mjs` 的〈頁首〉那一段：
+
+- 清單怎麼畫、群組與身分限定。
+- 沒登入與登入的樣子：拿頁面上的 `headerAccount` 在假的 document 上跑。
+- 三份語言連結。
 
 ### 語言
 
@@ -106,6 +173,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `/status` | `/狀態` | 裝了模組的人數、穿披風的人數、待審核的披風、各語言投票中的提案與術語 |
 | `/cape player:<名字>` | `/披風` | 那個人現在的披風，圖是那個人的 skin 穿著披風、從背後斜看的立體人物（角度跟網頁的 3D 檢視一樣）（skin 從 minotar 拿，拿不到畫灰色人偶；GIF 披風會動）。先回「處理中」，預覽圖算好存進 KV 才補上，Discord 來抓圖時不必現算。不公開、等審核的不給圖 |
 | `/translate text:<關鍵字> [language]` | `/翻譯` | 原文或譯文含有那個字的前五條；語言預設跟著 Discord 的介面語言 |
+| `/feedback category:<分類> message:<內容> [where] [language]` | `/回饋`（簡中 `/反馈`） | 送一則回饋，跟網站的回饋頁進同一個地方、共用限流；Discord 已經告訴我們是誰，不必另外登入。回覆只給本人看（ephemeral）。譯文建議要開 GitHub Issue，先回「處理中」再補上 Issue 網址；沒帶 `language` 就照 Discord 的介面語言（英文介面當成沒指定） |
 
 回覆的語言跟著使用者的 Discord 介面（繁中、簡中、其他給英文）。`/translate` 要讀一份八九 MB 的索引，先回「處理中」再補上結果。
 
@@ -117,7 +185,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
    ```
 
 3. 部署之後，**General Information** 的 **Interactions Endpoint URL** 填 `https://wynnchayuan.com/api/discord/interactions`，按存檔（Discord 會先打一次 PING 驗簽名，過了才存得進去）。
-4. 管理頁的「Discord 機器人」按「註冊指令」（只有開發者看得到）；指令改了要再按一次。同一處有邀請連結（`applications.commands` + `bot`，不要任何權限）。
+4. 管理頁的「Discord 機器人」按「註冊指令」（只有開發者看得到）；指令改了要再按一次（2026-10-17 加了 `/回饋`，部署之後要再按一次才會出現）。同一處有邀請連結（`applications.commands` + `bot`，不要任何權限）。
 
 ## API
 
@@ -173,6 +241,11 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
 | `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
+| `POST /api/feedback` | `{cat, msg, where?, lang?}` | 送一則回饋（要用 Discord 登入，或從遊戲開、綁了 Discord 的網頁；沒登入 401 `login first`、沒綁 401 `discord first`）。`cat` 是 `translation`／`content`／`website`／`feature`／`other`；`lang` 是語料的語言代號，可以不帶。一小時滿 5 則回 429 `slow down` 與 `until`。回 `{id, issue, issueFailed}` |
+| `GET /api/admin/feedback?cat=&st=` | | 回饋列表，新的在前，照分類與狀態（`open`／`done`）篩；一次最多 200 則，另回 `total` 與兩種狀態的數量（開發者與管理員） |
+| `POST /api/admin/feedback/status` | `{id, st}` | 標成已處理（`done`，記下誰、什麼時候）或重新開啟（`open`）（開發者與管理員） |
+| `POST /api/admin/feedback/delete` | `{id}` | 刪掉一則（垃圾訊息）；已經開的 Issue 留在 GitHub（開發者與管理員） |
+| `POST /api/admin/feedback/issue` | `{id}` | 譯文建議的 Issue 上次沒開成：再開一次（開發者與管理員） |
 | `POST /api/discord/interactions` | Discord 送來的 | 斜線指令；驗 Ed25519 簽名（`DISCORD_PUBLIC_KEY`），驗不過回 401 |
 | `GET /api/admin/discord` | | 機器人的設定齊了沒有、Interactions Endpoint、邀請連結（**只有開發者**） |
 | `POST /api/admin/discord/register` | | 把指令註冊到 Discord（全域、整批覆寫；要 `DISCORD_BOT_TOKEN`；**只有開發者**） |
@@ -193,8 +266,18 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 
 - **記的**：玩家的 UUID（當成鍵）、要不要顯示披風、徽章的選擇（葉子要不要彩色、要展示哪幾個身分）、哪一天報到的；上傳的披風圖檔，連同上傳的人的帳號名（管理的人要知道是誰傳的）；被封禁的人（UUID、帳號名、時間、誰封的）。十四天沒再報到就從名單上消失；圖檔留著，回來報到就又出現。
 - **網站帳號**：Discord 的代號與顯示名稱；綁了遊戲 ID 的話再加 UUID、遊戲名字與綁定時間。不拿 email、不拿伺服器清單，Discord 給的存取憑證用完就丟。
+- **回饋**：Discord 的代號與顯示名稱、分類、內容（含「在哪裡」與語言）、時間、從網站還是機器人送的；限流用的送出時間（一小時後消失）。只有開發者與管理員看得到；譯文建議另外變成公開的 GitHub Issue，上面只有顯示名稱。標成已處理的 180 天後自動刪除，還沒處理的留到處理或刪除。
 - **不記的**：IP、所在的世界、任何遊戲內容。
 - **公開的名單與一覽不放 UUID 與帳號名**：放的是 UUID 雜湊出來的代碼。誰傳了哪一件只有開發者看得到。
+
+## 回饋
+
+使用者 2026-10-17 決定：網站一頁 `/feedback`、機器人一個 `/回饋`，送進同一個地方（KV `fb:*`）；要用 Discord 登入；一個人一小時最多 5 則（`FEEDBACK_PER_HOUR`）。
+
+- **譯文建議**自動在倉庫開 Issue（`POST /repos/…/issues`，用同一把 `GITHUB_TOKEN`）：標題是「譯文建議：」加內容的前 60 個字；內文是內容、在哪裡、語言與 **Discord 顯示名稱**（放在行內程式碼裡，不會 @ 到人），**不放 Discord 代號**；內容放在程式碼區塊裡，圍欄比內容裡最長的一串反引號多一個。加 `translation` 標籤（跟 `.github/ISSUE_TEMPLATE/translation.md` 同一個；倉庫裡還沒有這個標籤的話，GitHub 會在第一次用到時自己建）。
+- **先存再開 Issue**：GitHub 失敗（沒設 token、權限不夠、連不上）回饋照樣存著，原因記在 `issueError`，管理頁標紅、可以按「再開一次 Issue」。
+- 其他分類只留在網站上。
+- 管理頁最上面一塊：新的在前，照分類與狀態篩；標成已處理（180 天後 KV 自己刪掉）、重新開啟、刪除。開發者與管理員都看得到，看得到 Discord 代號。
 
 ## 身分怎麼驗
 
@@ -260,6 +343,7 @@ npx wrangler secret put MOJANG_KEYS
 - 照 Minecraft ID（名字）加的，那個人登入一次就改記成 UUID；名字之後改掉、被別人拿走也不會把權限帶走。
 - 照 Discord 使用者 ID 加的，那個人只用 Discord 登入、還沒綁遊戲 ID 也進得了管理頁。
 - 存在 KV 的 `staff:u:<UUID>`、`staff:n:<名字>`、`staff:d:<Discord ID>`；移除之後馬上沒有權限。
+- 回饋：`fb:<編號>`（16 個十六進位字元）→ `{id, cat, msg, where, lang, uid, name, via, t, st, done, issue, issueError}`，列表要看的放 metadata（`c` 分類、`st`、`t`、`n` 名字、`s` 摘要、`i` Issue 網址、`e` 失敗原因）；標成已處理時加上 180 天的 `expirationTtl`，重新開啟就拿掉。限流 `fbr:<Discord 代號>` → 最近一小時送出的時間（`expirationTtl` 一小時）。
 - 協作翻譯：譯者 `tl:<u:|d:|n:>…` → `{langs, n, t, by, m, dn}`；整句提案 `tp:<語言>:<編號>`、術語投票 `tq:<語言>:<編號>`，列表要看的放 metadata。
   語料索引不放 KV：`.github/workflows/translate-index.yml` 在語料有變動時跑 `tools/build-translate-index.py`，整個蓋掉 `translate-index` 分支。
   本機的 `dev.mjs` 第一次用到時自己跑那支產生器（要有 python）。
@@ -278,7 +362,7 @@ npx wrangler secret put MOJANG_KEYS
   npx wrangler secret put GITHUB_TOKEN
   ```
 
-  用 fine-grained token，只給這個倉庫，權限 **Contents: Read and write** 與 **Pull requests: Read and write**。沒設的話表單會說還沒設定，其他功能不受影響。
+  用 fine-grained token，只給這個倉庫，權限 **Contents: Read and write**、**Pull requests: Read and write** 與 **Issues: Read and write**（回饋的譯文建議開 Issue 用；少了這一項 Issue 會開不成，回饋照樣存著，管理頁標出 `github 403`）。沒設的話表單會說還沒設定，其他功能不受影響。
 
 不在遊戲裡的時候可以另外設一個密語，用 `curl` 管理（沒設就沒有這條路）：
 
