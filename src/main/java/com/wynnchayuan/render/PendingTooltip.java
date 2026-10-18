@@ -23,14 +23,33 @@ public final class PendingTooltip {
     private static volatile List<Component> lines = List.of();
     private static volatile int mouseX;
     private static volatile int mouseY;
+    /** 原版那一份被我們取消了；要由 {@link TooltipPanel#render} 自己補畫。 */
+    private static volatile boolean pushed;
 
     private PendingTooltip() {}
 
     /** 在 {@code ItemTooltipRenderEvent.Pre} 呼叫，只記錄不繪製。 */
     public static void set(List<Component> tooltip, int x, int y) {
+        set(tooltip, x, y, false);
+    }
+
+    public static void set(List<Component> tooltip, int x, int y, boolean pushedOriginal) {
         lines = tooltip == null ? List.of() : List.copyOf(tooltip);
         mouseX = x;
         mouseY = y;
+        pushed = pushedOriginal;
+    }
+
+    /**
+     * 原版 tooltip 這一幀有沒有被我們取消。
+     *
+     * <p>取消的原因是「譯名面板夾進畫面後一定壓到原文」——那時原文改由我們自己畫到
+     * 面板外側，讓它去超出畫面，譯文才會完整。
+     *
+     * <p>刻意不在 {@link #take()} 裡清掉：{@code take()} 之後才輪到 {@code render} 讀它。
+     */
+    public static boolean pushed() {
+        return pushed;
     }
 
     /**
