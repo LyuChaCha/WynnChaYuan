@@ -4201,7 +4201,107 @@ public final class LineTranslator {
             return null;
         }
         rebuilt = rowColours(message, rebuilt, dominantStyle(List.of(parts)));
+        if (parts.template().startsWith(CHAT_COUNTER)) {
+            rebuilt = npcChatColours(message, rebuilt);
+        }
         return unslant(realignChat(message, rebuilt, centred, inPanel));
+    }
+
+    /** 見 {@link #npcChatColours}：原文與譯文的「計數 + 說話者 + 冒號」。 */
+    private static final java.util.regex.Pattern CHAT_HEAD =
+            java.util.regex.Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
+
+    /**
+     * 聊天形式的 NPC 台詞：計數與說話者各自照原文那一段的顏色。
+     *
+     * <h2>為什麼</h2>
+     * 原文是 {@code §7[1/3] §2Obsessor: §aYou need…}——灰、深綠、綠三段。上色是拿原文的字面
+     * 或它的單獨譯名到譯文裡找；說話者翻成「執念者」之後兩樣都找不到，名字就掉成台詞的綠色。
+     * 這種句子的形狀是固定的：譯文開頭一定是計數、接著名字到第一個冒號為止。
+     * 所以照位置貼，不必查表。
+     *
+     * <p>原文那一段不是單一顏色、或譯文開頭不是這個形狀，就原樣回傳。
+     */
+    static Component npcChatColours(StyledText message, Component rebuilt) {
+        try {
+            List<Run> src = runs(message.getComponent());
+            String srcText = joinedText(src);
+            java.util.regex.Matcher s = CHAT_HEAD.matcher(srcText);
+            if (!s.find()) {
+                return rebuilt;
+            }
+            TextColor counter = uniformColour(src, s.start(1), s.end(1));
+            TextColor speaker = uniformColour(src, s.start(3), s.end(3));
+            List<Run> made = runs(rebuilt);
+            java.util.regex.Matcher d = CHAT_HEAD.matcher(joinedText(made));
+            if (!d.find() || (counter == null && speaker == null)) {
+                return rebuilt;
+            }
+            int[] cuts = {d.start(1), d.end(1), d.start(3), d.end(3)};
+            MutableComponent out = Component.empty();
+            int at = 0;
+            for (Run run : made) {
+                String text = run.text();
+                int from = 0;
+                while (from < text.length()) {
+                    int next = text.length();
+                    for (int cut : cuts) {
+                        if (cut > at + from && cut < at + next) {
+                            next = cut - at;
+                        }
+                    }
+                    String piece = text.substring(from, next);
+                    int pos = at + from;
+                    Style style = run.style() == null ? Style.EMPTY : run.style();
+                    if (!run.space()) {
+                        if (counter != null && pos >= cuts[0] && pos < cuts[1]) {
+                            style = style.withColor(counter);
+                        } else if (speaker != null && pos >= cuts[2] && pos < cuts[3]) {
+                            style = style.withColor(speaker);
+                        }
+                    }
+                    out.append(Component.literal(piece).withStyle(style));
+                    from = next;
+                }
+                at += text.length();
+            }
+            return out;
+        } catch (Throwable t) {
+            return rebuilt;                    // 上色出事不能讓整句不見
+        }
+    }
+
+    private static String joinedText(List<Run> runs) {
+        StringBuilder out = new StringBuilder();
+        for (Run run : runs) {
+            out.append(run.text());
+        }
+        return out.toString();
+    }
+
+    /** {@code [from, to)} 這一段有字的地方都是同一個顏色時回傳它，否則 {@code null}。 */
+    private static TextColor uniformColour(List<Run> runs, int from, int to) {
+        TextColor found = null;
+        int at = 0;
+        for (Run run : runs) {
+            int start = at;
+            int end = at + run.text().length();
+            at = end;
+            if (end <= from || start >= to || run.space()) {
+                continue;
+            }
+            String inside = run.text().substring(Math.max(0, from - start),
+                                                 Math.min(run.text().length(), to - start));
+            if (inside.isBlank()) {
+                continue;
+            }
+            TextColor colour = run.style() == null ? null : run.style().getColor();
+            if (colour == null || found != null && !found.equals(colour)) {
+                return null;
+            }
+            found = colour;
+        }
+        return found;
     }
 
     /**
@@ -4653,6 +4753,10 @@ public final class LineTranslator {
             translated = withoutSpacerRows(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
+            // 商店的倒數看板：整塊的鍵查不到時一列一列組。見 #countdownBoard。
+            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
+        }
+        if (translated == null || translated.isBlank()) {
             return null;
         }
         Component rebuilt = rebuildLabel(label, translated, parts, store);
@@ -4687,6 +4791,10 @@ public final class LineTranslator {
         }
         if (translated == null || translated.isBlank()) {
             translated = withoutSpacerRows(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
+            // 商店的倒數看板。排在逐行之前：逐行那條路把倒數列原樣留成英文。
+            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
         }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
@@ -4789,6 +4897,49 @@ public final class LineTranslator {
             out.append(coloured);
         }
         return any ? out.toString() : translated;
+    }
+
+    /**
+     * 組出來的倒數看板，每一列照原文那一列的顏色。
+     *
+     * <h2>為什麼不交給一般的上色</h2>
+     * 一般的上色拿原文的字面或譯名到譯文裡找。看板的列幾乎都夾著數值
+     * （「寶箱 {@code {~}} 折扣」「{@code {~}} 時 {@code {~}} 分」），扣掉數值之後的字
+     * 在譯文裡不連在一起，找不到；於是倒數、折扣、贈品幾列全掉成同一個主色。
+     * 看板是一行對一行組出來的，<b>位置就是答案</b>：原文那一列只有一個顏色，
+     * 譯文那一列就整列標上它。數值帶著自己的樣式填回去，不受影響。
+     *
+     * <p>原文那一列有好幾種顏色的，照 {@link #labelColours} 一段一段對。
+     *
+     * @return 標好顏色的譯文；{@code composed} 是 {@code null} 時回 {@code null}
+     */
+    static String boardColours(StyledText label, LineParts parts, String composed,
+                               TranslationStore store) {
+        if (composed == null || label == null) {
+            return composed;
+        }
+        String coloured = labelColours(label, parts, composed, store);
+        List<List<LabelRun>> rows = labelRows(label);
+        String[] dst = coloured.split(NL, -1);
+        if (rows.size() != dst.length) {
+            return coloured;
+        }
+        List<Style> palette = palette(parts.runs());
+        StringBuilder out = new StringBuilder(coloured.length() + 32);
+        for (int i = 0; i < dst.length; i++) {
+            if (i > 0) {
+                out.append(NL);
+            }
+            String row = dst[i];
+            List<LabelRun> source = rows.get(i);
+            if (!row.isBlank() && source.size() > 0 && distinctStyles(source) == 1
+                    && !LABEL_COLOUR_TOKEN.matcher(row).find()) {
+                row = paint(row, List.of(new int[] {0, row.length()}),
+                            List.of(source.get(0).style()), palette);
+            }
+            out.append(row);
+        }
+        return out.toString();
     }
 
     /** 譯者已經寫了的色碼：{@code {c1}}、{@code {c:#hex}}、{@code {w1}}、{@code {/}}。 */
@@ -8037,8 +8188,232 @@ public final class LineTranslator {
             return hit;
         }
         hit = withOwner(key, store);
-        return hit != null ? hit : eventFrame(key, store);
+        if (hit == null) {
+            hit = eventFrame(key, store);
+        }
+        if (hit == null) {
+            hit = iconlessReward(key, store);
+        }
+        return hit != null ? hit : npcChatLine(key, store);
     }
+
+    /** 見 {@link #iconlessReward}：獎勵列的開頭。 */
+    private static final String REWARD_ROW = "- +";
+
+    /**
+     * 任務獎勵列少了行首的圖示：聊天現在送 {@code - +2 Treasure Boots}，語料收的是
+     * {@code {#}- +{~} Treasure Boots}。
+     *
+     * <h2>為什麼不放寬一般的查表</h2>
+     * 「少一個圖示也算對上」套在所有鍵上，名牌、tooltip 那幾條靠圖示分欄的路都會亂認。
+     * 這裡只認<b>獎勵列的形狀</b>（開頭就是 {@code - +}）：在前面補一個 {@code {#}} 查，
+     * 查到的譯文也要以那個 {@code {#}} 開頭才拿掉它——圖示數量跟原文一致，顏色標記照舊。
+     *
+     * @return 去掉行首圖示的譯文；不是獎勵列、或補了圖示也查不到時回 {@code null}
+     */
+    static String iconlessReward(String key, TranslationStore store) {
+        if (key == null || store == null) {
+            return null;
+        }
+        String core = key.strip();
+        if (!core.startsWith(REWARD_ROW) || core.indexOf('\n') >= 0) {
+            return null;
+        }
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        String hit = store.lookup(glyph + core);
+        if (hit == null || hit.isBlank() || !hit.startsWith(glyph)) {
+            return null;
+        }
+        String rest = hit.substring(glyph.length());
+        return rest.isBlank() ? null : rest;
+    }
+
+    /**
+     * 聊天形式的 NPC 台詞：{@code [1/3] Doan: Hey, ah... {u}, where are we going?}
+     *
+     * <h2>為什麼</h2>
+     * 同一句台詞在對話框裡出現時，任務檔裡早就有譯文（鍵是台詞本身）。聊天形式多了
+     * 計數與說話者，於是語料要一句一句再收一條整句鍵——幾百條裡大半是重抄任務檔。
+     *
+     * <h2>怎麼組</h2>
+     * 拆成計數、說話者、台詞三段：台詞照一般的查法（任務檔、對話、扁平檔都算）；
+     * 說話者照語料裡既有聊天鍵的叫法（{@link TranslationStore#chatSpeaker}），沒有就查
+     * 一字不差的同名鍵，都沒有就留原文；計數原樣。數值照段落往後推編號。
+     *
+     * <p>整句的鍵照樣先查（整行查表排在這條前面），這裡只接住查不到的。
+     * 台詞查不到就整句不動——不會翻出只有說話者是中文的半句。
+     *
+     * @return 組好的譯文；不是這種句子、或台詞查不到時回 {@code null}
+     */
+    static String npcChatLine(String template, TranslationStore store) {
+        if (template == null || store == null || !template.startsWith(CHAT_COUNTER)) {
+            return null;
+        }
+        java.util.regex.Matcher m = TranslationStore.CHAT_LINE.matcher(template.strip());
+        if (!m.matches()) {
+            return null;
+        }
+        String speaker = m.group("speaker").strip();
+        String line = m.group("line").strip();
+        if (speaker.isEmpty() || !hasWord(line)
+                || speaker.contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+            return null;
+        }
+        String said = lookup(line, store);
+        if (said == null || said.isBlank()) {
+            return null;
+        }
+        said = oneLine(said.strip());
+        String name = speakerName(speaker, store);
+        String numberedName = renumber(name, 2);
+        String numberedLine = renumber(said, 2 + countNumbers(speaker));
+        if (numberedName == null || numberedLine == null) {
+            return null;
+        }
+        return "[{~1}/{~2}] " + numberedName + ": " + numberedLine;
+    }
+
+    /** 見 {@link #npcChatLine}：聊天台詞的開頭。 */
+    private static final String CHAT_COUNTER = "[{~}/{~}] ";
+
+    /**
+     * 說話者的叫法：既有聊天鍵的多數叫法 → 一字不差的同名鍵（物品名不算）→ 原文。
+     * 譯名的佔位符跟原文對不上就用原文。
+     */
+    private static String speakerName(String speaker, TranslationStore store) {
+        String learned = store.chatSpeaker(speaker);
+        if (learned == null && !store.isItemName(speaker)) {
+            learned = store.lookupExact(speaker);
+        }
+        if (learned == null || learned.isBlank() || learned.indexOf('\n') >= 0
+                || !samePlaceholders(speaker, learned)) {
+            return speaker;
+        }
+        return learned.strip();
+    }
+
+    /** 兩段文字的數值、地名、玩家名佔位符一樣多（顏色標記不算）。 */
+    private static boolean samePlaceholders(String a, String b) {
+        return countNumbers(a) == countNumbers(stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
+                && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
+                && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
+                && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
+    }
+
+    /**
+     * 對話框的譯文可能帶著換行（小框照它折）。聊天是一則一行，換行併掉：
+     * 兩邊有一邊是全形字就直接接，否則補一個空白。
+     */
+    private static String oneLine(String text) {
+        if (text.indexOf('\n') < 0) {
+            return text;
+        }
+        StringBuilder out = new StringBuilder(text.length());
+        String[] parts = text.split("\n");
+        for (String part : parts) {
+            String piece = part.strip();
+            if (piece.isEmpty()) {
+                continue;
+            }
+            if (out.length() > 0) {
+                char before = out.charAt(out.length() - 1);
+                char after = piece.charAt(0);
+                if (!isWide(before) && !isWide(after)) {
+                    out.append(' ');
+                }
+            }
+            out.append(piece);
+        }
+        return out.toString();
+    }
+
+    private static boolean isWide(char c) {
+        return Character.UnicodeScript.of(c) == Character.UnicodeScript.HAN
+                || Character.UnicodeScript.of(c) == Character.UnicodeScript.HIRAGANA
+                || Character.UnicodeScript.of(c) == Character.UnicodeScript.KATAKANA
+                || (c >= '　' && c <= '〿') || (c >= '＀' && c <= '￯');
+    }
+
+    /**
+     * 商店的倒數看板（寶箱、股份、階級、炸彈的優惠牌子），一列一列組。
+     *
+     * <h2>為什麼</h2>
+     * 看板是一塊漂浮字，例如
+     * <pre>
+     *   Crate Offer
+     *   {~}h {~}m {~}s
+     *
+     *   {~} OFF Crates
+     *   ({~}x Regular and higher)
+     *
+     *   Extra Bonus:
+     *   Get VIP Rank FREE
+     * </pre>
+     * 倒數的格式隨剩餘時間變（天時分秒的任意組合），附加的幾列也隨活動變。語料先前是
+     * 一種組合一條整塊的鍵，收了幾十條，新的組合還是一直冒出來。
+     *
+     * <h2>怎麼組</h2>
+     * 至少要有一列是倒數（只有 {@code {~}} 加上 d／h／m／s）。倒數列查漂浮字專用的
+     * 譯法（{@code scoped/label.json}——這種短鍵放進一般語料會把別處的計時也換掉），
+     * 查不到就原樣；空行原樣；其餘每一列都要在語料裡查得到，有一列查不到就整塊讓開
+     * （不會翻出半中半英的牌子）。數值照前面幾列用掉的數量往後推編號；顏色交給
+     * 漂浮字一行對一行的上色（{@link #labelColours}），各列帶的標記一律拿掉。
+     *
+     * <p>整塊的鍵照樣先查（呼叫端都排在整塊查表後面），這裡只接住查不到的組合。
+     *
+     * @return 組好的譯文；不是倒數看板、或有一列查不到時回 {@code null}
+     */
+    static String countdownBoard(String template, TranslationStore store) {
+        if (template == null || store == null || template.indexOf('\n') < 0) {
+            return null;
+        }
+        String[] rows = template.split("\n", -1);
+        boolean timer = false;
+        boolean words = false;
+        for (String row : rows) {
+            timer |= TIMER_ROW.matcher(row.strip()).matches();
+            words |= hasWord(row);
+        }
+        if (!timer || !words) {
+            return null;
+        }
+        StringBuilder out = new StringBuilder();
+        int values = 0;
+        for (int i = 0; i < rows.length; i++) {
+            if (i > 0) {
+                out.append(NEWLINE);
+            }
+            String row = rows[i];
+            String hit;
+            if (TIMER_ROW.matcher(row.strip()).matches()) {
+                hit = store.labelLookup(row);
+                if (hit == null || hit.isBlank()) {
+                    hit = row;                 // 倒數沒有譯法：原樣（只有數字與單位）
+                }
+            } else if (!hasWord(row)) {
+                hit = row;                     // 空行、只有數值或圖示的行
+            } else {
+                hit = store.labelLookup(row);
+                if (hit == null || hit.isBlank()) {
+                    hit = lookup(row, store);
+                }
+                if (hit == null || hit.isBlank() || hit.indexOf('\n') >= 0) {
+                    return null;               // 有字的一列查不到：整塊讓開
+                }
+            }
+            String shifted = renumber(stripColourTokens(hit), values);
+            if (shifted == null) {
+                return null;
+            }
+            values += countNumbers(row);
+            out.append(shifted);
+        }
+        return out.toString();
+    }
+
+    /** 見 {@link #countdownBoard}：倒數那一列，天時分秒的任意組合。 */
+    private static final java.util.regex.Pattern TIMER_ROW =
+            java.util.regex.Pattern.compile("\\{~}[dhms](?: \\{~}[dhms])*");
 
     /**
      * 世界事件的倒數公告，當成「句型 + 事件名」翻。

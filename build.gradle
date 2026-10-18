@@ -703,6 +703,30 @@ tasks.register('runEventFrameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runEventFrameChecks' }
 
+tasks.register('runCountdownBoardChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證商店的倒數看板一列一列組：沒收過的時間格式與附加列都翻得出來，顏色照每一列'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.CountdownBoardTest'
+}
+tasks.named('check') { dependsOn 'runCountdownBoardChecks' }
+
+tasks.register('runNpcChatLineChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證聊天形式的 NPC 台詞拆成計數、說話者、台詞三段組，台詞照任務檔'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NpcChatLineTest'
+}
+tasks.named('check') { dependsOn 'runNpcChatLineChecks' }
+
+tasks.register('runRewardRowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證少了行首圖示的任務獎勵列照帶圖示那一條翻，一般查表沒有變鬆'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.RewardRowTest'
+}
+tasks.named('check') { dependsOn 'runRewardRowChecks' }
+
 tasks.register('runChatHoldChecks', JavaExec) {
     group = 'verification'
     description = '驗證就地取代模式會把多欄面板整塊攔下來一起翻，而且一列都不會少'

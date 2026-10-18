@@ -347,7 +347,69 @@ public final class TranslationStore {
         // 帶 {u} 的鍵就是「別人的名字夾在這裡」的框，翻了沒有都收：收集端要靠它把
         // 名字換成 {u} 再記（還沒翻的那幾條正是要記的缺口）。見 NameFrames。
         nameFrames = com.wynnchayuan.capture.NameFrames.of(seenSources);
+        chatSpeakers = learnChatSpeakers(entries);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
+    }
+
+    /**
+     * 聊天形式的 NPC 台詞（{@code [1/3] Doan: …}）裡，說話者的名字在這個語言叫什麼。
+     *
+     * <h2>從哪裡學</h2>
+     * 語料裡已經有幾百條整句的聊天鍵（{@code [{~}/{~}] Seaskipper Captain: …}），
+     * 譯文裡冒號前那一段就是譯者給這個名字的叫法。同一個名字在不同條目裡叫法不同時
+     * 取多數，平手就不收（呼叫端照原文留著）。見 {@code LineTranslator#npcChatLine}。
+     *
+     * @return 名字的譯法；語料沒有這個名字的聊天鍵時回 {@code null}
+     */
+    public String chatSpeaker(String speaker) {
+        return speaker == null ? null : chatSpeakers.get(speaker.strip());
+    }
+
+    /** 見 {@link #chatSpeaker}。每次載入整份換掉、不可變。 */
+    private volatile Map<String, String> chatSpeakers = Map.of();
+
+    /** 聊天形式的台詞鍵：計數、說話者、台詞。 */
+    static final java.util.regex.Pattern CHAT_LINE = java.util.regex.Pattern.compile(
+            "\\[\\{~}/\\{~}] (?<speaker>[^:\\n\\[\\]]+?): (?<line>[^\\n]+)");
+
+    /** 聊天鍵的譯文：計數（編號可有可無）、說話者、半形或全形冒號、台詞。 */
+    private static final java.util.regex.Pattern CHAT_LINE_DST = java.util.regex.Pattern.compile(
+            "\\[\\{~[12]?}/\\{~[12]?}] (?<speaker>[^:：\\n]+?)(?:: |：)(?<line>[^\\n]+)");
+
+    private static Map<String, String> learnChatSpeakers(Map<String, String> entries) {
+        Map<String, Map<String, Integer>> votes = new java.util.HashMap<>();
+        for (Map.Entry<String, String> e : entries.entrySet()) {
+            String key = e.getKey();
+            if (!key.startsWith("[{~}/{~}] ")) {
+                continue;
+            }
+            java.util.regex.Matcher src = CHAT_LINE.matcher(key);
+            java.util.regex.Matcher dst = CHAT_LINE_DST.matcher(e.getValue());
+            if (!src.matches() || !dst.matches()) {
+                continue;
+            }
+            votes.computeIfAbsent(src.group("speaker").strip(), k -> new java.util.HashMap<>())
+                 .merge(dst.group("speaker").strip(), 1, Integer::sum);
+        }
+        Map<String, String> out = new java.util.HashMap<>();
+        for (Map.Entry<String, Map<String, Integer>> e : votes.entrySet()) {
+            String best = null;
+            int top = 0;
+            boolean tie = false;
+            for (Map.Entry<String, Integer> v : e.getValue().entrySet()) {
+                if (v.getValue() > top) {
+                    best = v.getKey();
+                    top = v.getValue();
+                    tie = false;
+                } else if (v.getValue() == top) {
+                    tie = true;
+                }
+            }
+            if (best != null && !tie) {
+                out.put(e.getKey(), best);
+            }
+        }
+        return Map.copyOf(out);
     }
 
     /**
@@ -3113,6 +3175,11 @@ public final class TranslationStore {
         // 世界事件的倒數公告走句型（見 LineTranslator#eventFrame）；伺服器折過行的
         // 那幾種要併起來才認得，不問的話每種斷法都會被記成一條缺口。
         if (key.indexOf('\n') >= 0 && LineTranslator.eventFrame(unwrap(key), this) != null) {
+            return true;
+        }
+        // 商店的倒數看板一列一列組（見 LineTranslator#countdownBoard）；時間格式與附加列
+        // 的每一種組合都要記成一條缺口的話，永遠補不完。
+        if (key.indexOf('\n') >= 0 && LineTranslator.countdownBoard(key, this) != null) {
             return true;
         }
         String other = respell(key);
