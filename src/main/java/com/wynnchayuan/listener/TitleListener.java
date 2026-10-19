@@ -79,6 +79,16 @@ public final class TitleListener {
             return null;
         }
         String template = GlyphSplitter.toTemplate(line);
+        // 死亡快訊的大字標題（「某某人 has been slain」）：名字夾在語料的 {u} 句型裡就照
+        // 位置收成 {u}，名字原樣填回、不查表；收集端記的也是 {u} 那一份。見 NameFrames。
+        com.wynnchayuan.capture.LineParts framed =
+                LineTranslator.nameFramed(line, WynnChaYuan.translations());
+        if (framed != null) {
+            if (WynnChaYuan.config().collect()) {
+                WynnChaYuan.store().record(framed.template(), "desc", "title", "title");
+            }
+            return LineTranslator.translateFramed(line, framed, WynnChaYuan.translations());
+        }
         if (PlayerDataFilter.carriesPlayerData(template)) {
             return null;             // 夾帶玩家名的（擊殺提示），原樣放過
         }

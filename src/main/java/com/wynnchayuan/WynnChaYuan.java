@@ -134,6 +134,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
             com.wynnchayuan.translate.FlowedDebug.init(debug);
             com.wynnchayuan.capture.DialogueProbe.init(debug);
+            com.wynnchayuan.render.FpsLog.init(debug);
         }
         com.wynnchayuan.translate.ErrorDebug.into(dir);
         // 版本說明：先讀 jar 內建那份，背景再換成線上的。見 Releases。
@@ -874,6 +875,9 @@ public final class WynnChaYuan implements ClientModInitializer {
                         store.generation());
             });
         }
+
+        // 診斷：每秒的 FPS 與當時的畫面，見 FpsLog（沒開診斷檔時 init 沒跑，這裡什麼都不做）
+        ClientTickEvents.END_CLIENT_TICK.register(com.wynnchayuan.render.FpsLog::tick);
 
         // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
         ClientTickEvents.END_CLIENT_TICK.register(

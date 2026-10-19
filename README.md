@@ -95,10 +95,10 @@ WynnChaYuan 是一個專門做 Wynncraft 多語言翻譯的開源公益專案（
 
 ## 披風、灰色葉子與會送出的資料
 
-- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。到 <https://wynnchayuan.com> 上傳高清披風（F6「徽章與披風」→「披風一覽」會順便替你登入），或在[披風一覽](https://wynnchayuan.com/capes)看到喜歡的直接穿上，隨時能換回自己原本那一件。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫，最大 1056×816。超過 7 天沒有人穿的披風會被移除。
+- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。到 <https://wynnchayuan.com> 上傳高清披風（F6「功能」→「披風一覽」會順便替你登入），或在[披風一覽](https://wynnchayuan.com/capes)看到喜歡的直接穿上，隨時能換回自己原本那一件。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫，最大 1056×816。超過 7 天沒有人穿的披風會被移除。
 - **葉子**：裝了本模組的玩家，名字前面都有一片葉子（沒有身分的是灰色），彼此看得到。開發者的彩色模式、要展示哪幾個身分的葉子，別人看到的跟你設的一樣。
 - **這兩項需要連到我們的伺服器（wynnchayuan.com）**。模組在你進 Wynncraft 時報到一次，送出的是：你的 Minecraft UUID、Mojang 簽過的公開個人檔案（名字與外觀）、用來證明帳號是本人的公鑰與簽章、要不要顯示披風，以及徽章的設定（葉子要不要彩色、要展示哪幾個身分）。上傳披風時另外送出你選的那張圖。**私鑰與登入憑證不會離開遊戲；不送所在的世界、聊天或任何遊戲內容，伺服器也不記 IP。** 公開的名單上只有雜湊過的代碼，沒有 UUID 與名字。
-- **這一項沒有開關**：只要裝了模組、進了 Wynncraft 就會報到，所以每個使用者都有葉子。不想讓別人看到自己的披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。
+- **這一項沒有開關**：只要裝了模組、進了 Wynncraft 就會報到，所以每個使用者都有葉子。不想讓別人看到自己的披風，可以在 F6「功能」關掉「穿上我的披風」。
 - **網站帳號**（選用）：在 wynnchayuan.com 用 Discord 註冊後，在遊戲裡輸入 `/wcy link 綁定碼` 把遊戲 ID 綁上去。我們只讀 Discord 的帳號代號與顯示名稱。
 - **直接更新**：只有你按了「直接更新」（或輸入 `/wcy update`）才會從 GitHub Releases 下載新版，關遊戲時換上。
 

@@ -599,6 +599,16 @@ public final class WynntilsText {
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
             return;
         }
+        var captured = WynnChaYuan.store();
+        // 主人的名字夾在語料的 {u} 句型裡（「某人的鳥」）：記 {u} 那一份。見 NameFrames。
+        com.wynnchayuan.capture.LineParts owned =
+                LineTranslator.nameFramed(text, WynnChaYuan.translations());
+        if (owned != null) {
+            if (captured != null) {
+                captured.record(owned.template(), "name", "label", ctx);
+            }
+            return;
+        }
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
         if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
                 || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
@@ -608,7 +618,6 @@ public final class WynntilsText {
                 || com.wynnchayuan.capture.PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             return;
         }
-        var captured = WynnChaYuan.store();
         if (captured != null) {
             captured.record(template, "name", "label", ctx);
         }
@@ -694,11 +703,12 @@ public final class WynntilsText {
     /**
      * 現在畫的是不是「<b>不該翻</b>的那種字」。
      *
-     * <p>目前有兩處：公會戰地圖那一格一格的領地標籤（{@code TerritoryPoiMixin}），
-     * 以及物品格角落 Wynntils 自己算出來的簡稱（{@code ItemTextOverlayMixin}）。
-     * 兩者都不是遊戲的文案——一個是玩家取的公會名，一個是 Wynntils 拼的縮寫——
+     * <p>目前有三處：公會戰地圖那一格一格的領地標籤（{@code TerritoryPoiMixin}）、
+     * 物品格角落 Wynntils 自己算出來的簡稱（{@code ItemTextOverlayMixin}），
+     * 以及 Tab 玩家清單的名字（{@code PlayerListNamesMixin}）。
+     * 都不是遊戲的文案——玩家取的公會名與玩家名、Wynntils 拼的縮寫——
      * 卻都會跟語料裡正當的條目撞名（{@code Fox} 對上 NPC 狐狸，
-     * {@code Teleport} 對上法師技能）。
+     * {@code Teleport} 對上法師技能，{@code Mark64118} 對上技能詞表的 Mark）。
      *
      * <p>只在算繪執行緒上動，所以不必同步。宣告成 {@code volatile} 是為了
      * 萬一哪天 Wynntils 改到別的執行緒去畫，讀到的至少不是過期的值。

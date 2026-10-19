@@ -44,6 +44,12 @@ import java.util.regex.Pattern;
  * 認不出來的照舊原樣放過；這個類別不負責擋東西，收集端那一關
  * （{@link PlayerDataFilter}）完全沒動——這幾句一樣不會進 {@code captured.json}。
  *
+ * <h2>其他夾著別人名字的句子</h2>
+ * 這裡只放<b>語料寫不出來</b>的句型：炸彈種類與世界名要另外收成 {@code {~}}、到期那一句
+ * 要靠種類清單才知道名字到哪裡結束。其餘「名字 + 固定句子」的廣播（隊友給的增益、
+ * 死亡快訊、別人的召喚物）不在這裡寫死——語料裡任何一條帶 {@code {u}} 的鍵就是句型，
+ * 見 {@link NameFrames}。
+ *
  * <h2>Wynntils 自己也讀炸彈鈴</h2>
  * 它的 {@code BombModel} 掛的是 {@code ChatMessageEvent.Match}，在改寫
  * （{@code Edit}）之前就讀完了，所以翻掉畫面上那一句不影響它的炸彈清單。

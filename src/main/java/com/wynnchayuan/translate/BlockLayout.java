@@ -1,7 +1,6 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.capture.GlyphSplitter;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
@@ -437,9 +436,15 @@ public final class BlockLayout {
         return px[0];
     }
 
+    /**
+     * 跟翻譯那邊走同一個入口（{@link LineTranslator#width}），測試的假字型才量得到。
+     *
+     * <p>先前自己問 {@code Minecraft.getInstance()}，headless 一律是 0——
+     * 從 {@code TooltipPanel.translateLines} 一路跑下來的測試，置中判斷永遠是
+     * 「全部靠左」，重排過的置中段落怎麼歪都測不出來。
+     */
     private static int measure(Component line) {
-        Minecraft mc = Minecraft.getInstance();
-        return mc == null || mc.font == null ? 0 : mc.font.width(line);
+        return LineTranslator.width(line);
     }
 
 }

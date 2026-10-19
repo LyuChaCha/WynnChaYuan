@@ -232,6 +232,21 @@ public final class ChatBlock {
      */
     private static boolean sending = false;
 
+    /** 正在送出去的那一則，原樣。見 {@link #sendingNow}。 */
+    private static Component sendingWhole;
+
+    /**
+     * 正在送出去的那一則（只有在 {@code displayClientMessage} 同步觸發的事件裡拿得到）。
+     *
+     * <p>重送的譯文會再走一次 Wynntils 的聊天流程，那裡的功能會再改它一次：
+     * 「提及」把玩家自己的名字染成黃色（使用者 10-19 的截圖：隊友給的增益，名字變黃）。
+     * 原文那一則是伺服器訊息，Wynntils 預設不在這類訊息上標提及；我們送的是
+     * 用戶端訊息，就被標了。我們的譯文已經是最後要畫的樣子，收回來時放回原樣。
+     */
+    public static synchronized Component sendingNow() {
+        return sending ? sendingWhole : null;
+    }
+
     /** 內容那一道記多久。事件是當場回來的，幾秒只是給延後處理的模組留餘地。 */
     private static final long MINE_TTL_MS = 5_000;
 
@@ -290,10 +305,12 @@ public final class ChatBlock {
             // 記晚了就來不及擋。見 #mine 與 #sending。
             remember(whole);
             sending = true;
+            sendingWhole = whole;
             try {
                 mc.player.displayClientMessage(whole, false);
             } finally {
                 sending = false;
+                sendingWhole = null;
             }
         }
     }
@@ -416,17 +433,8 @@ public final class ChatBlock {
                 flowed = null;
             }
         }
-        net.minecraft.network.chat.MutableComponent out = Component.empty();
-        boolean any = false;
-        // 「有沒有東西可送」與「有沒有真的翻到」是兩件事。
-        //
-        // 查不到譯文的行改成原樣帶上之後，any 就永遠是 true——於是<b>每一塊</b>
-        // 聊天訊息都會被原封不動再送一次。原文那一份並沒有被取消，畫面上就是
-        // 每則訊息都出現兩遍（實機回報：聊天欄一直洗頻）。
-        //
-        // 所以要另外記「有沒有任何一行真的查到譯文」。一行都沒有的話這一塊
-        // 根本不必送，原文自己會顯示。
-        boolean translated = false;
+        Component[] lines = new Component[rows.size()];
+        boolean[] hit = new boolean[rows.size()];
         for (int i = 0; i < rows.size(); i++) {
             // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
             // 不必再翻一次——翻兩次連診斷檔都會記兩份。
@@ -469,16 +477,88 @@ public final class ChatBlock {
                 // 而且「沒翻到」看得出來，「被吃掉」看不出來。
                 line = rows.get(i).original().getComponent();
             } else {
-                translated = true;         // 這一塊裡真的有翻到東西
+                hit[i] = true;             // 這一行真的有翻到東西
             }
+            lines[i] = line;
+        }
+        // 原文加譯文模式：<b>自成一則的多行訊息</b>沒翻到就不重貼。見 #carried。
+        boolean[] carry = wasHeld ? null : carried(multiLine(rows), hit);
+        net.minecraft.network.chat.MutableComponent out = Component.empty();
+        boolean any = false;
+        // 「有沒有東西可送」與「有沒有真的翻到」是兩件事。
+        //
+        // 查不到譯文的行改成原樣帶上之後，any 就永遠是 true——於是<b>每一塊</b>
+        // 聊天訊息都會被原封不動再送一次。原文那一份並沒有被取消，畫面上就是
+        // 每則訊息都出現兩遍（實機回報：聊天欄一直洗頻）。
+        //
+        // 所以要另外記「有沒有任何一行真的查到譯文」。一行都沒有的話這一塊
+        // 根本不必送，原文自己會顯示。
+        boolean translated = false;
+        for (int i = 0; i < rows.size(); i++) {
+            if (carry != null && !carry[i]) {
+                continue;
+            }
+            translated |= hit[i];
             if (any) {
                 out.append(Component.literal("\n"));
             }
-            out.append(line);
+            out.append(lines[i]);
             any = true;
         }
         // 攔下來的那一種沒有「原文自己會顯示」這回事，有東西就得送
         return (wasHeld ? any : worthSending(any, translated)) ? out : null;
+    }
+
+    /** 每一則是不是自己就含換行（一則多行的訊息）。 */
+    private static boolean[] multiLine(List<Row> rows) {
+        boolean[] out = new boolean[rows.size()];
+        for (int i = 0; i < rows.size(); i++) {
+            String text = rows.get(i).original().getStringWithoutFormatting();
+            out[i] = text != null && text.strip().indexOf('\n') >= 0;
+        }
+        return out;
+    }
+
+    /**
+     * 原文加譯文模式下，哪幾則要跟著譯文一起再貼一次。
+     *
+     * <h2>實機回報（2026-10-17）</h2>
+     * 登入時歡迎訊息、Wynntils 的提示、WynnMod 的「INITIALIZED」那一塊在兩百毫秒內一起到，
+     * 攢成同一塊。只有提示翻到，可是查不到譯文的行原樣帶上，於是歡迎訊息與 WynnMod 那一塊
+     * 在譯文那一份裡<b>又出現一次</b>——玩家看到的是「訊息跳了兩次」。
+     *
+     * <h2>怎麼分</h2>
+     * 一則一行的訊息（任務完成的獎勵清單、信標面板）是同一塊的幾列，沒翻到的列照舊帶上，
+     * 整塊才接得回去。<b>自己就含換行的那一則</b>是完整的一則，不是別人的一列：
+     * 它自成一組，連續幾則一行的訊息是一組；一組裡一行都沒翻到就整組不貼——
+     * 原文已經在上面了。
+     *
+     * <p>攔下來的那一種（就地取代的面板）不走這裡：原文沒顯示，一列都不能少。
+     *
+     * @param multiLine 每一則是不是自己就含換行
+     * @param hit       每一則有沒有真的翻到
+     * @return 每一則要不要貼
+     */
+    static boolean[] carried(boolean[] multiLine, boolean[] hit) {
+        boolean[] out = new boolean[hit.length];
+        int i = 0;
+        while (i < hit.length) {
+            int end = i + 1;
+            if (!multiLine[i]) {
+                while (end < hit.length && !multiLine[end]) {
+                    end++;
+                }
+            }
+            boolean any = false;
+            for (int k = i; k < end; k++) {
+                any |= hit[k];
+            }
+            for (int k = i; k < end; k++) {
+                out[k] = any;
+            }
+            i = end;
+        }
+        return out;
     }
 
     /**

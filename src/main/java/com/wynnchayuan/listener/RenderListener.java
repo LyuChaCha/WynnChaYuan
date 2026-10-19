@@ -193,6 +193,44 @@ public final class RenderListener {
         }
     }
 
+    /**
+     * 就地取代模式下這份說明會換成什麼樣子（換不出來就是原本那一份）。
+     *
+     * <p>給排在我們前面處理同一個事件的模組用——它們拿到的還是原文，量出來的寬度不對。
+     * 走的是同一個快取（{@code TooltipPanel#translateLinesCached}），同一幀第二次問不必重算。
+     * 見 {@link com.wynnchayuan.render.WynnventoryLayout}。
+     */
+    public static List<Component> inPlaceLines(List<Component> original) {
+        try {
+            List<Component> out = withPeek(() -> com.wynnchayuan.render.TooltipPanel
+                    .translateInPlace(original, WynnChaYuan.translations()));
+            return out == null || out.isEmpty() ? original : out;
+        } catch (Throwable t) {
+            return original;
+        }
+    }
+
+    /**
+     * 物品說明要定位了：蓋到 Wynnventory 的價格框就往右讓開。
+     *
+     * <p>Wynntils 的「tooltip 縮放」開著時由 {@code WynntilsFittingMixin} 接在它後面做
+     * （它要先決定縮放，順序不能反），這裡只管它關掉的情況。見 WynnventoryLayout#shift。
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onTooltipPosition(com.wynntils.mc.event.TooltipRenderEvent.Position event) {
+        try {
+            if (com.wynnchayuan.render.TooltipScaleProbe.fittingEnabled()) {
+                return;
+            }
+            var moved = com.wynnchayuan.render.WynnventoryLayout.shift(event.getPositioner(), 1f);
+            if (moved != null) {
+                event.setPositioner(moved);
+            }
+        } catch (Throwable t) {
+            // 讓不開就算了，照原本的位置
+        }
+    }
+
     /** 出事時記一下當時在處理哪件物品，光有堆疊很難重現。 */
     private static String firstLine(ItemTooltipRenderEvent.Pre event) {
         List<Component> lines = event.getTooltips();

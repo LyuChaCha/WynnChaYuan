@@ -371,6 +371,11 @@ public final class CaptureStore {
         return domain;
     }
 
+    /** 見 {@link #prune}：語料裡現成的 {@code {u}} 句型（名字已經是佔位符）。 */
+    private boolean nameFrame(String src) {
+        return src.contains(GlyphSplitter.PLAYER_PLACEHOLDER) && known.test(src);
+    }
+
     /**
      * 這一條是<b>現在的濾網</b>會擋掉的個資嗎。
      *
@@ -497,8 +502,11 @@ public final class CaptureStore {
             }
         }
         int pending = untranslated.size();
+        // 名字收成 {u} 的句型（見 NameFrames）本身就是語料裡的一條鍵，裡面沒有任何人的
+        // 名字；濾網的片語（「 was butchered by 」）卻照樣會認出它來。那是「這裡會夾著
+        // 名字」的記號，名字已經換成 {u} 了，不算個資。
         untranslated.values().removeIf(c -> c.src == null
-                || translated.test(c.src) || nowFiltered(c));
+                || translated.test(c.src) || (nowFiltered(c) && !nameFrame(c.src)));
         return gone > 0 || moved || untranslated.size() != pending;
     }
 

@@ -208,6 +208,22 @@ public final class TranslationStore {
      * 頭盔同名，兩邊都是物品，附上去沒有問題。
      */
     private final java.util.Set<String> nonItemOwners = new java.util.HashSet<>();
+
+    /**
+     * 物品檔（裝備、書卷、素材、材料…，{@code role: name}）<b>自己</b>寫的譯名。
+     *
+     * <h2>為什麼要另外記</h2>
+     * {@link #getsOriginal} 只替「物品以外沒人用」的原文附原文——同一個字在技能樹、
+     * 名牌、介面上出現時，附一個括號就錯了。但那是<b>查表層</b>的判斷，不知道自己被問的
+     * 是哪個位置，於是物品說明的名稱那兩行也一起被擋：素材 {@code Black Hole}
+     * 同時是刺客技能，在「譯名 + 原文」下名稱列只有「引力黑洞」，其他素材都附了原文
+     * （使用者 2026-10-17：「有些材料沒有顯示原文」）。
+     *
+     * <p>名稱那兩行是呼叫端認出來的（{@link #nameLine}），在那裡改問「這個譯名是不是
+     * 物品檔自己寫的」——是的話就照裝備的規矩附原文。疊層時每一層各收一份，
+     * 哪一層的答案勝出都認得。見 {@link #ownItemName}。
+     */
+    private final Map<String, java.util.Set<String>> itemNameDsts = new ConcurrentHashMap<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -297,6 +313,7 @@ public final class TranslationStore {
         bareNames.clear();
         otherOwners.clear();
         nonItemOwners.clear();
+        itemNameDsts.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -310,6 +327,7 @@ public final class TranslationStore {
         looseDst.clear();
         looseClash.clear();
         thisLayer.clear();
+        unwrappedFromWrapped.clear();
         layerOf.clear();
         indexLayer.clear();
         loadedFiles = 0;
@@ -326,8 +344,86 @@ public final class TranslationStore {
         // gearNameKeys；簡中那層明明有譯名，名稱那一行的守門卻照樣把它擋回英文。
         // 實機回報「簡中還是看不到 Mythic 的譯名」就是這個。
         gearNameKeys.removeAll(nameKeys);
+        // 帶 {u} 的鍵就是「別人的名字夾在這裡」的框，翻了沒有都收：收集端要靠它把
+        // 名字換成 {u} 再記（還沒翻的那幾條正是要記的缺口）。見 NameFrames。
+        nameFrames = com.wynnchayuan.capture.NameFrames.of(seenSources);
+        chatSpeakers = learnChatSpeakers(entries);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
+
+    /**
+     * 聊天形式的 NPC 台詞（{@code [1/3] Doan: …}）裡，說話者的名字在這個語言叫什麼。
+     *
+     * <h2>從哪裡學</h2>
+     * 語料裡已經有幾百條整句的聊天鍵（{@code [{~}/{~}] Seaskipper Captain: …}），
+     * 譯文裡冒號前那一段就是譯者給這個名字的叫法。同一個名字在不同條目裡叫法不同時
+     * 取多數，平手就不收（呼叫端照原文留著）。見 {@code LineTranslator#npcChatLine}。
+     *
+     * @return 名字的譯法；語料沒有這個名字的聊天鍵時回 {@code null}
+     */
+    public String chatSpeaker(String speaker) {
+        return speaker == null ? null : chatSpeakers.get(speaker.strip());
+    }
+
+    /** 見 {@link #chatSpeaker}。每次載入整份換掉、不可變。 */
+    private volatile Map<String, String> chatSpeakers = Map.of();
+
+    /** 聊天形式的台詞鍵：計數、說話者、台詞。 */
+    static final java.util.regex.Pattern CHAT_LINE = java.util.regex.Pattern.compile(
+            "\\[\\{~}/\\{~}] (?<speaker>[^:\\n\\[\\]]+?): (?<line>[^\\n]+)");
+
+    /** 聊天鍵的譯文：計數（編號可有可無）、說話者、半形或全形冒號、台詞。 */
+    private static final java.util.regex.Pattern CHAT_LINE_DST = java.util.regex.Pattern.compile(
+            "\\[\\{~[12]?}/\\{~[12]?}] (?<speaker>[^:：\\n]+?)(?:: |：)(?<line>[^\\n]+)");
+
+    private static Map<String, String> learnChatSpeakers(Map<String, String> entries) {
+        Map<String, Map<String, Integer>> votes = new java.util.HashMap<>();
+        for (Map.Entry<String, String> e : entries.entrySet()) {
+            String key = e.getKey();
+            if (!key.startsWith("[{~}/{~}] ")) {
+                continue;
+            }
+            java.util.regex.Matcher src = CHAT_LINE.matcher(key);
+            java.util.regex.Matcher dst = CHAT_LINE_DST.matcher(e.getValue());
+            if (!src.matches() || !dst.matches()) {
+                continue;
+            }
+            votes.computeIfAbsent(src.group("speaker").strip(), k -> new java.util.HashMap<>())
+                 .merge(dst.group("speaker").strip(), 1, Integer::sum);
+        }
+        Map<String, String> out = new java.util.HashMap<>();
+        for (Map.Entry<String, Map<String, Integer>> e : votes.entrySet()) {
+            String best = null;
+            int top = 0;
+            boolean tie = false;
+            for (Map.Entry<String, Integer> v : e.getValue().entrySet()) {
+                if (v.getValue() > top) {
+                    best = v.getKey();
+                    top = v.getValue();
+                    tie = false;
+                } else if (v.getValue() == top) {
+                    tie = true;
+                }
+            }
+            if (best != null && !tie) {
+                out.put(e.getKey(), best);
+            }
+        }
+        return Map.copyOf(out);
+    }
+
+    /**
+     * 語料裡帶一個 {@code {u}} 的句型，用來認出<b>別人的名字</b>。見
+     * {@link com.wynnchayuan.capture.NameFrames}。
+     *
+     * <p>每次載入整份換掉、不可變，算繪與收集端的背景執行緒都可以直接讀。
+     */
+    public com.wynnchayuan.capture.NameFrames nameFrames() {
+        return nameFrames;
+    }
+
+    private volatile com.wynnchayuan.capture.NameFrames nameFrames =
+            com.wynnchayuan.capture.NameFrames.EMPTY;
 
     /** 正在讀第幾層（0 是最底下那層）。見 {@link #layerOf}。 */
     private int layer = 0;
@@ -390,6 +486,7 @@ public final class TranslationStore {
     /** 讀一層。清空是 {@link #loadAll(List)} 的事，這裡只負責往上疊。 */
     private void readOne(Path dir) {
         thisLayer.clear();
+        unwrappedFromWrapped.clear();
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
@@ -735,6 +832,9 @@ public final class TranslationStore {
                 }
                 if (!(itemNames && "name".equals(optString(e, "role")))) {
                     nonItemOwners.add(srcKey);      // 見 #plainOnly
+                } else {
+                    itemNameDsts.computeIfAbsent(srcKey,
+                            k -> ConcurrentHashMap.newKeySet()).add(dst.strip());
                 }
                 layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
@@ -1129,10 +1229,32 @@ public final class TranslationStore {
 
     /** 見 {@link #unwrapped}。索引<b>所有</b>夠長的條目，語料那邊不必也帶著換行。 */
     private void noteUnwrapped(String key, String value) {
-        if (key.length() >= MIN_FLAT_LENGTH) {
-            layered(unwrapped, "unwrapped", unwrap(key), value);
+        if (key.length() < MIN_FLAT_LENGTH) {
+            return;
         }
+        String joined = unwrap(key);
+        boolean single = key.indexOf('\n') < 0;
+        // 同一句話同時有「伺服器折好行」的鍵與沒折的鍵時，併句索引要的是<b>沒折的</b>
+        // 那一條：查到之後是照併起來的一句重建（見 LineTranslator#unwrappedGlyphs），
+        // 折過行的譯文多帶著一個續行圖示，填回去數量對不上，整句放棄。
+        // 先前同一層裡誰先載入誰贏，折過行的那條排在前面時，別的斷法就永遠翻不出來
+        // （死亡快訊「… by Voracious\n Octiped」就是這樣）。
+        if (single && unwrappedFromWrapped.remove(joined)) {
+            unwrapped.put(joined, value);
+            indexLayer.put("unwrapped" + '\0' + joined, layer);
+            return;
+        }
+        if (!thisLayer.contains("unwrapped" + '\u0000' + joined) && !single) {
+            unwrappedFromWrapped.add(joined);
+        }
+        layered(unwrapped, "unwrapped", joined, value);
     }
+
+    /**
+     * 這一層裡，併句索引目前是由<b>折過行</b>的鍵佔著的那幾句。見 {@link #noteUnwrapped}。
+     * 跟 {@link #thisLayer} 一起每層清一次。
+     */
+    private final java.util.Set<String> unwrappedFromWrapped = new java.util.HashSet<>();
 
     /**
      * 把斷好行的整則訊息當成一句話查。
@@ -2030,6 +2152,18 @@ public final class TranslationStore {
     }
 
     /**
+     * 這個譯名是物品檔<b>自己</b>替這個原文寫的嗎。見 {@link #itemNameDsts}。
+     *
+     * <p>只在名稱那兩行問（{@link #nameLine}）：別的檔也有同名條目時，
+     * {@link #getsOriginal} 說不附——那是為了技能樹、名牌與敘述——但在物品自己的
+     * 名稱列上，它就是那件物品。
+     */
+    private boolean ownItemName(String key, String hit) {
+        java.util.Set<String> own = itemNameDsts.get(key);
+        return own != null && hit != null && own.contains(hit);
+    }
+
+    /**
      * 這個原文<b>只是</b>一件物品的名字——裝備、素材或材料，別的檔案沒有同名條目。
      *
      * <p>給「名字: 數值」那條路用（{@code LineTranslator#itemAsLabel}）：物品的名字
@@ -2037,6 +2171,21 @@ public final class TranslationStore {
      */
     public boolean itemNameOnly(String key) {
         return key != null && getsOriginal(key.strip());
+    }
+
+    /**
+     * 這個原文是某件物品的名字——裝備、書卷、素材或材料，翻了沒都算，
+     * 別的檔案有沒有同名條目也不管。
+     *
+     * <p>給「一列只有名字」的清單認形狀用（{@link GuessListRow}）：要問的是
+     * 「這一格是不是物品」，不是「這個名字要不要附原文」。
+     */
+    public boolean isItemName(String key) {
+        if (key == null) {
+            return false;
+        }
+        String k = key.strip();
+        return nameKeys.contains(k) || gearNameKeys.contains(k) || plainNameKeys.contains(k);
     }
 
     /**
@@ -2115,7 +2264,8 @@ public final class TranslationStore {
         if (hit == null) {
             return shiny(template);
         }
-        if (namesWithOriginal && !holdAppended && getsOriginal(template.strip())) {
+        if (namesWithOriginal && !holdAppended && (getsOriginal(template.strip())
+                || NAME_LINE.get() && ownItemName(template.strip(), hit))) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return withOriginal(hit, template.strip());
         }
@@ -2335,8 +2485,26 @@ public final class TranslationStore {
         if (isAppendedOriginal(inner)) {
             return true;
         }
+        if (before == null) {
+            return false;
+        }
         String own = gearOwnName(inner);
-        return own != null && before != null && before.endsWith(own);
+        if (own != null) {
+            // 名稱列上用的是它自己的名字；物品檔那一份跟著技能叫（Frenzy＝得寸進尺），
+            // 「得寸進尺 (Frenzy)」不會是我們寫的
+            return before.endsWith(own);
+        }
+        // 別的檔也有這個原文、只在名稱列上附原文的物品（素材 Black Hole 同時是技能）。
+        // 一樣只認括號前面緊貼著物品檔自己的譯名：「引力黑洞 (Black Hole)」只有我們會寫。
+        java.util.Set<String> item = itemNameDsts.get(inner);
+        if (item != null) {
+            for (String dst : item) {
+                if (before.endsWith(dst)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
@@ -2392,6 +2560,16 @@ public final class TranslationStore {
      */
     public static void holdAppendedOriginal(boolean on) {
         HOLD_APPENDED.set(on);
+    }
+
+    /** 見 {@link #holdAppendedOriginal}。暫時改掉的人要還原成這個值。 */
+    static boolean appendedOriginalHeld() {
+        return HOLD_APPENDED.get();
+    }
+
+    /** 見 {@link #nameLine}。暫時改掉的人要還原成這個值。 */
+    static boolean onNameLine() {
+        return NAME_LINE.get();
     }
 
     /** 見 {@link #holdAppendedOriginal}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
@@ -2992,6 +3170,16 @@ public final class TranslationStore {
         // 只問一種會把另一種記成缺口。
         if (LineTranslator.lookup(key, this, false) != null
                 || LineTranslator.lookup(key, this, true) != null) {
+            return true;
+        }
+        // 世界事件的倒數公告走句型（見 LineTranslator#eventFrame）；伺服器折過行的
+        // 那幾種要併起來才認得，不問的話每種斷法都會被記成一條缺口。
+        if (key.indexOf('\n') >= 0 && LineTranslator.eventFrame(unwrap(key), this) != null) {
+            return true;
+        }
+        // 商店的倒數看板一列一列組（見 LineTranslator#countdownBoard）；時間格式與附加列
+        // 的每一種組合都要記成一條缺口的話，永遠補不完。
+        if (key.indexOf('\n') >= 0 && LineTranslator.countdownBoard(key, this) != null) {
             return true;
         }
         String other = respell(key);

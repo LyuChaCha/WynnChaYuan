@@ -43,6 +43,8 @@ public final class LootrunNames {
             "Sacrificial Ritual", "Complete Chaos",
             // Wynntils 4.2.8 的名單沒有、實機出現的使命（2026-10-17 的記分板與「使命開始」面板）
             "Cleansing Ritual",
+            // 2026-10-19 capture：Wynntils 4.2.8 沒有
+            "Balancing Act",
             // 試煉
             "Adrenaline Junkie", "Dying Light", "Monochromokopia", "Chronotrigger", "All In",
             "Gambling Beast", "Hubris", "Lights Out", "Side Hustle", "Treasury Bill",

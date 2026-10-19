@@ -251,6 +251,9 @@ public final class TooltipPanel {
 
         // 每一行有沒有換成中文。用來把「同一段翻一半」抓回來，見 evenOut。
         boolean[] hit = new boolean[n];
+        // Wynntils「物品猜測」的候選名稱列（見 GuessListRow）。清單不是散文，
+        // 不在「同一段翻一半」裡投票：還沒翻的那一件不該把整份清單拉回英文。
+        boolean[] nameList = new boolean[n];
 
         int i = 0;
         // 每一塊在原文與輸出各佔哪幾行：{原文起, 原文迄, 輸出起, 輸出迄}。
@@ -345,6 +348,23 @@ public final class TooltipPanel {
             while (i < n) {
                 TranslationStore.holdAppendedOriginal(i >= 2);
                 TranslationStore.nameLine(itemRows && i < 2);
+                // Wynntils「物品猜測」一列一列的候選物品名：每一格照名稱的規矩換、
+                // 縮排與逗號原樣留著。先於整段查表——這幾列不是散文。見 GuessListRow。
+                com.wynnchayuan.translate.GuessListRow.Row listRow = abilityPanel ? null
+                        : com.wynnchayuan.translate.GuessListRow.of(styled.get(i), store);
+                if (listRow != null) {
+                    nameList[i] = true;
+                    spans.add(new int[] {i, i + 1, out.size(), out.size() + 1});
+                    if (listRow.translated() != null) {
+                        anyTranslated = true;
+                        hit[i] = true;
+                        out.add(listRow.translated());
+                    } else {
+                        out.add(LineTranslator.untranslated(styled.get(i)));
+                    }
+                    i++;
+                    continue;
+                }
                 int longest = Math.min(store.maxBlockLines(), n - i);
                 List<Component> block = null;
                 int used = 0;
@@ -472,9 +492,13 @@ public final class TooltipPanel {
         // 行首的 À 縮排也要剝。Fabled 物品的 Major ID 續行是「ÀÀbar is under…」，
         // 開頭不是小寫，段落就斷成一行一段——整段沒翻到時，第一行照樣自己把名稱
         // 換成中文，畫面上變成「自由跑者: When your sprint」接三行英文。見 LineTranslator#rejoin。
-        for (StyledText line : styled) {
+        for (int k = 0; k < n; k++) {
+            if (nameList[k]) {
+                plain.add("");                 // 空行：前後都不跟它併成一段
+                continue;
+            }
             String text = com.wynnchayuan.capture.GlyphSplitter
-                    .stripGlyphChars(visibleText(line)).strip();
+                    .stripGlyphChars(visibleText(styled.get(k))).strip();
             plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
         if (evenOut(plain, hit)) {
