@@ -1,4 +1,4 @@
-![WynnChaYuan](https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-banner-dark-2640.png)
+![WynnChaYuan](https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-banner-animated-680x240.gif)
 
 # WynnChaYuan
 
@@ -16,12 +16,12 @@
 
 ### What it translates
 
-- **Item tooltips**: gear, ingredients, materials and gathering tools (lore, stats, Major IDs), in a panel beside the tooltip or written into the tooltip itself
+- **Item tooltips**: gear, ingredients, materials and gathering tools (lore, stats, Major IDs), in a panel beside the tooltip or written into the tooltip itself; the possible items list of an unidentified item shows the original names
 - **Ability trees**: nodes, descriptions and archetypes for all five classes
-- **Quest dialogue and choices**: inside Wynncraft's own dialogue box (frame, nameplate and portrait kept), typed out in step with the original; or a separate box
-- **Quest tracker** and **NPC nameplates and floating text**
-- **Chat messages**: server messages, with column layouts such as the Lootrun summary and beacons kept aligned; bomb broadcasts too, with the player's name left as it is (player chat is never translated)
-- **Scoreboard**: the sidebar on the right with raid objectives, lootruns, party and guild war
+- **Quest dialogue and choices**: inside Wynncraft's own dialogue box (frame, nameplate and portrait kept), typed out in step with the original, with lines too long for the box scrolling like a marquee; or a separate box
+- **Quest tracker** and **NPC nameplates and floating text** (shop countdown boards included)
+- **Chat messages**: server messages, with column layouts such as the Lootrun summary and beacons kept aligned; world event start notices, NPC lines in chat and the login welcome banner (colours kept); broadcasts that name another player, such as party buffs, death messages and bombs, with the name left as it is (player chat and the Tab player list are never translated)
+- **Scoreboard**: the sidebar on the right with raid objectives, lootruns, party and guild war; rows too wide for it wrap
 - **Menus and interfaces**: trade market, guild, store and other screens
 - **Lootruns, raids and dungeons**: missions, boons, beacons, aspects, gambits, loot panels, dungeon names
 - **Discoveries** and **title text**
@@ -30,13 +30,15 @@ Gear names stay in English by default; they can be turned on in the settings.
 
 ### More
 
-- **Translations update themselves**: new translations are downloaded from GitHub on your next launch, no mod update needed
+- **Translations update themselves**: new translations come from GitHub without a mod update; each launch checks, and chat shows a line where "Click here to update" applies them (turn on "Auto-update translations" under Settings → Data to skip the question)
 - **Market search in your language**: type the translated name in the trade market, the English one is sent
 - **Hold Shift to see the original**: names of ingredients, materials and gathering tools switch back to English while Shift is held
 - **Copy chat**: copy recent chat lines for a report
 - **Screenshot** of the translation panel (no key by default; bind one under Controls)
+- **Speed up Wynntils item rendering**: smoother inventory, bank and market (F6 > Features, on by default)
+- **Wynnventory**: its price box, reward screen and settings are translated; the price box is placed by the tooltip that is actually shown, and moves clear with "anchor tooltips" on
 - **Settings** (Mod Menu, `/wcy`, or a key you bind yourself): a mode for each kind of text; translation, fallback and interface language; draggable and resizable boxes
-- **Update notice**: a one-time chat notice linking to GitHub Releases
+- **In-game update**: when a new version is out, chat says so once; click "Click here to update now" (or `/wcy update`) and it is downloaded from GitHub Releases and swapped in when you close the game
 
 Client-side only. The server does not need it.
 
@@ -112,27 +114,29 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 ### 翻譯範圍
 
-- **物品 tooltip**：裝備、素材、材料與採集工具的敘述、屬性與 Major ID，旁邊另開面板，或寫進原本的 tooltip
+- **物品 tooltip**：裝備、素材、材料與採集工具的敘述、屬性與 Major ID，旁邊另開面板，或寫進原本的 tooltip；未鑑定物品的可能性清單附原文
 - **技能樹**：五個職業的節點、說明與流派
-- **任務對話與選項**：寫進 Wynncraft 自己的對話框（框、名牌、頭像不動），逐字打出的節奏跟原文同步；也可另開小框
-- **任務追蹤**與 **NPC 名牌、漂浮字**
-- **聊天訊息**：伺服器訊息，Lootrun 結算、信標這類分欄訊息保持對齊；炸彈廣播也翻，玩家的名字原樣保留（玩家發言不翻）
-- **記分板**：畫面右邊那一欄的討伐戰目標、Lootrun、隊伍與公會戰
+- **任務對話與選項**：寫進 Wynncraft 自己的對話框（框、名牌、頭像不動），逐字打出的節奏跟原文同步，太長塞不下的句子改用跑馬燈捲動；也可另開小框
+- **任務追蹤**與 **NPC 名牌、漂浮字**（含商店倒數看板）
+- **聊天訊息**：伺服器訊息，Lootrun 結算、信標這類分欄訊息保持對齊；世界事件開始公告、聊天欄的 NPC 台詞、登入歡迎訊息（保留顏色）；隊友給的增益、死亡訊息、丟炸彈這類帶別人名字的公告也翻，名字原樣保留（玩家發言與 Tab 玩家清單不翻）
+- **記分板**：畫面右邊那一欄的討伐戰目標、Lootrun、隊伍與公會戰；太寬的譯文會換行
 - **選單與介面**：交易市場、公會、商城等畫面
-- **Lootrun、討伐戰、地城**：使命、賜福、信標、Aspect、Gambit、戰利品面板、地城名稱
+- **Lootrun、討伐戰、地城**：使命、加持、信標、Aspect、Gambit、戰利品面板、地城名稱
 - **探索點**與**畫面中央大字**
 
 裝備名稱預設保留原文，在設定裡可以打開。
 
 ### 其他功能
 
-- **譯文自動更新**：新的翻譯下次進遊戲就從 GitHub 下載，不必更新模組
+- **譯文自動更新**：新的翻譯從 GitHub 下載，不必更新模組；每次開遊戲都會檢查，有新譯文就在聊天室提示一行，點「按這裡更新」馬上生效（到設定「資料」打開「自動更新翻譯」就不再詢問）
 - **市集搜尋**：在交易市集打譯名，送出前自動換回英文原名
 - **按住 Shift 看原文**：素材、材料與採集工具的名稱，按住 Shift 時變回英文
 - **複製聊天**：複製最近的聊天訊息，方便回報
 - **截圖**：譯文面板截圖（按鍵預設不綁，到「按鍵設定」自己綁）
+- **加速 Wynntils 物品繪製**：開背包、銀行、市集時更順（F6「功能」，預設開啟）
+- **Wynnventory**：價格框、獎勵畫面與設定也翻；價格框照實際顯示的物品說明擺放，開了「固定在左側」時物品說明會讓開
 - **設定**（Mod Menu、`/wcy` 或自己綁的按鍵）：每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小
-- **更新提示**：有新版時在聊天室提示一次，連到 GitHub Releases
+- **遊戲內更新**：有新版時在聊天室提示一次，點「點這裡直接更新」（或輸入 `/wcy update`）就從 GitHub Releases 下載，關遊戲時換上
 
 純客戶端，伺服器不需要裝。
 

@@ -37,7 +37,7 @@ original stays is up to you**: the translation can sit in a panel beside it, or 
 ### How translations are shown
 
 - **Pick how each one is shown**: item tooltips, quest dialogue, dialogue choices, nameplates and floating text, chat messages and more can each be set to **off**, **replace in place** (written where the original was) or **separate panel** (shown beside it, the original untouched).
-- **Written into Wynncraft's own dialogue box**: quest dialogue and choices can go straight into the original box, keeping its frame, the name and the portrait, typed out in step with the original; or into a separate box.
+- **Written into Wynncraft's own dialogue box**: quest dialogue and choices can go straight into the original box, keeping its frame, the name and the portrait, typed out in step with the original; lines too long for the box scroll like a marquee. Or into a separate box.
 - **Put the panels where you like**: every box can be dragged; dialogue, choices and the quest tracker can also be resized from the corner.
 - **Fallback language**: lines your language has not translated yet can show another language instead, or stay in the original.
 - **Translated names or not**: names of quests, caves, discoveries and other content can be shown translated, translated with the original, or in the original. Gear names stay in English by default (they are proper nouns, and the trade market and the wiki use the English ones); you can turn them on in the settings, and hold Shift to peek at the other name.
@@ -47,13 +47,13 @@ original stays is up to you**: the translation can sit in a panel beside it, or 
 
 | Content | What is translated, and how it is shown |
 |---|---|
-| Item tooltips | Gear lore, stats, Major IDs; a panel beside the tooltip, or written into the tooltip itself |
+| Item tooltips | Gear lore, stats, Major IDs; a panel beside the tooltip, or written into the tooltip itself. The possible items list of an unidentified item shows the original names |
 | Ability trees | Nodes, descriptions and archetypes for all five classes |
 | Quest dialogue, dialogue choices | Written into **Wynncraft's own dialogue box** (frame, nameplate and portrait kept), or a separate box |
 | Quest tracker | Its own box; the heading says what is tracked (quest, world event, cave, raid…) |
-| NPC nameplates, floating text | A box while you look at one, or replaced in place; crafting stations and interaction prompts included |
-| Chat messages | Server messages (quest completions, rewards, area transitions); column layouts such as the Lootrun summary and beacons stay aligned. Player chat is never translated |
-| Scoreboard | The column on the right: raid objectives, Lootruns, party and guild wars |
+| NPC nameplates, floating text | A box while you look at one, or replaced in place; crafting stations, interaction prompts and shop countdown boards included |
+| Chat messages | Server messages (quest completions, rewards, area transitions, world event start notices, NPC lines that arrive in chat); column layouts such as the Lootrun summary and beacons stay aligned. Broadcasts that name another player, such as party buffs, death messages and bombs, are translated too, with the name left as it is; the login welcome banner is translated line by line and keeps its colours. Player chat and the names in the Tab player list are never translated |
+| Scoreboard | The column on the right: raid objectives, Lootruns, party and guild wars; translated rows wider than the scoreboard wrap |
 | Menus and interfaces | Trade market, guild, store and other screens |
 | Lootruns, raids, dungeons | Missions, boons, beacons, aspects, gambits, end-of-run and loot panels, dungeon names and keys |
 | Discoveries, secret discoveries | Names, descriptions and stories |
@@ -67,7 +67,7 @@ and lists matches as you type (↑↓ to pick, Tab to fill).
 ### Support for other mods
 
 - **[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)**: its search box takes translated names, and results show the translation next to the English name.
-- **[Wynnventory](https://modrinth.com/mod/wynnventory)**: its price box, reward screen and settings are translated; hold Shift to see the original.
+- **[Wynnventory](https://modrinth.com/mod/wynnventory)**: its price box, reward screen and settings are translated; hold Shift to see the original. The price box is placed by the tooltip that is actually shown and shrinks when it is too long; with its "anchor tooltips" on, the item tooltip moves clear of it.
 
 The full list is under [Mod compatibility](#mod-compatibility) below.
 
@@ -75,7 +75,8 @@ The full list is under [Mod compatibility](#mod-compatibility) below.
 
 - **Copy chat**: lists recent chat messages; click one to copy it, so a report can include the English text (key unbound by default).
 - **Panel screenshot**: copies the translation panel to the clipboard or saves it as an image (key unbound by default).
-- **In-game update**: when a new version is out, chat says so once; click "click here to update" in that message (same as typing `/wcy update`), or press Update on the release notes screen, and the new version is downloaded from GitHub Releases and swapped in when you close the game. Nothing is downloaded unless you press it.
+- **In-game update**: when a new version is out, chat says so once; click "Click here to update now" in that message (same as typing `/wcy update`), or press Update on the release notes screen, and the new version is downloaded from GitHub Releases and swapped in when you close the game. Nothing is downloaded unless you press it.
+- **Speed up Wynntils item rendering**: the inventory, bank and market are smoother, and look the same (F6 > Features, on by default).
 - **Capes and leaves**: wear your own cape, with a leaf before your name; see [Capes, the grey leaf, and what the mod sends](#capes-the-grey-leaf-and-what-the-mod-sends).
 
 **Client-side only.** The server does not need it.
@@ -95,6 +96,7 @@ Three ways to open them:
 | Dialogue | Quest dialogue, dialogue choices (separate box / replace in place / off), hold time, dialogue/tracker boxes |
 | World & chat | Nameplates and floating text (with range and aim angle), chat messages, scoreboard, title text, copy chat |
 | Data | Translation language, fallback language, interface language, translation source, auto-update translations, update translations, translation version, collect untranslated strings, collect GUI text, export untranslated strings, how to submit, debug dumps |
+| Features | My badge (which roles your leaf shows, their colours, rainbow mode), capes (show capes, wear my cape, cape gallery), performance (speed up Wynntils item rendering) |
 
 Hover a setting for an explanation; search the settings from the top left, and the preview on the right follows the values you change.
 
@@ -171,7 +173,7 @@ When a new version comes out, the game tells you and the Update button swaps it 
 | [Fabric API](https://modrinth.com/mod/fabric-api) | **Required** | |
 | [Mod Menu](https://modrinth.com/mod/modmenu) | Optional, supported | Adds a configure button to the mod list |
 | [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | Optional, supported | Its search panel finds items by translated name and shows the translation next to the English name; what gets sent is still the English name |
-| [Wynnventory](https://modrinth.com/mod/wynnventory) | Optional, supported | Its price box, reward screen and settings screen are translated too (item names follow the "Translate item names" setting); hold Shift to see the original. The switch only appears in the settings when it is installed |
+| [Wynnventory](https://modrinth.com/mod/wynnventory) | Optional, supported | Its price box, reward screen and settings screen are translated too (item names follow the "Translate item names" setting); hold Shift to see the original. The price box is placed by the tooltip that is actually shown, and with "anchor tooltips" on the item tooltip moves clear of it. The switch only appears in the settings when it is installed |
 | [WynnMod](https://modrinth.com/mod/wynnmod) | Compatible | The gear tooltips it redraws are translated too (can be turned off under Settings → Items → Mod support). The lines it reads to decide a raid's outcome stay in English while it is installed, so streaks are counted correctly (without it you see the translation as usual) |
 | Mods that add sections to tooltips (Nori, Wynnpool…) | Compatible | Those sections are kept as they are. If they make the translation panel longer than the original, list their labels in `config/wynnchayuan/third-party-sections.json` to filter them |
 
@@ -278,7 +280,7 @@ The colour of the leaf before your name depends on your role on the credits list
 - **Correct fixes**: pointing out a mistranslation, a missing line or inconsistent wording that is confirmed and fixed.
 - **Real help with the code**: a merged fix or feature, or a report that reproduces a problem and helps find the cause.
 
-People on the list can change their leaf colour under Settings → Badge; with several roles you can pick
+People on the list can change their leaf colour under Settings → Features; with several roles you can pick
 which leaves to show, at least one.
 
 ## Translation team
