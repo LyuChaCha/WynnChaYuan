@@ -210,6 +210,27 @@ public final class RenderListener {
         }
     }
 
+    /**
+     * 物品說明要定位了：蓋到 Wynnventory 的價格框就往右讓開。
+     *
+     * <p>Wynntils 的「tooltip 縮放」開著時由 {@code WynntilsFittingMixin} 接在它後面做
+     * （它要先決定縮放，順序不能反），這裡只管它關掉的情況。見 WynnventoryLayout#shift。
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onTooltipPosition(com.wynntils.mc.event.TooltipRenderEvent.Position event) {
+        try {
+            if (com.wynnchayuan.render.TooltipScaleProbe.fittingEnabled()) {
+                return;
+            }
+            var moved = com.wynnchayuan.render.WynnventoryLayout.shift(event.getPositioner(), 1f);
+            if (moved != null) {
+                event.setPositioner(moved);
+            }
+        } catch (Throwable t) {
+            // 讓不開就算了，照原本的位置
+        }
+    }
+
     /** 出事時記一下當時在處理哪件物品，光有堆疊很難重現。 */
     private static String firstLine(ItemTooltipRenderEvent.Pre event) {
         List<Component> lines = event.getTooltips();
