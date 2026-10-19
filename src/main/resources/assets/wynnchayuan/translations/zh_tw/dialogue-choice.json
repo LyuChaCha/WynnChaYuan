@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 27,
-  "translated": 27
+  "count": 87,
+  "translated": 87
  },
  "entries": {
   "choice#c000": {
@@ -274,6 +274,626 @@
   "choice#c014": {
    "src": "How have you been doing sinc",
    "dst": "從那之後你過得怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#000": {
+   "src": "What do elements on my gear",
+   "dst": "我裝備上的元素有什麼作用？",
+   "full": "What do elements on my gear do?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#001": {
+   "src": "What do elements on enemies",
+   "dst": "敵人身上的元素代表什麼？",
+   "full": "What do elements on enemies mean?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#002": {
+   "src": "How can I tell a spell is co",
+   "dst": "我要怎麼看出法術快來了？",
+   "full": "How can I tell a spell is coming?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#003": {
+   "src": "How's society now that you'r",
+   "dst": "回來之後，覺得社會怎麼樣？",
+   "full": "How's society now that you're back?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#001": {
+   "src": "Favorite type of bread?",
+   "dst": "你最喜歡哪種麵包？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#002": {
+   "src": "What's with Relend?",
+   "dst": "Relend 是怎麼回事？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#003": {
+   "src": "Have you seen a parrot aroun",
+   "dst": "你在這附近看過一隻鸚鵡嗎？",
+   "full": "Have you seen a parrot around here?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#011": {
+   "src": "What service do you provide?",
+   "dst": "你提供什麼服務？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#012": {
+   "src": "Can you tell my fortune? [{~}",
+   "dst": "你能幫我算命嗎？[{~} LE]",
+   "full": "Can you tell my fortune? [{~} LE]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#017": {
+   "src": "Just here to say hi",
+   "dst": "只是來打個招呼",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#019": {
+   "src": "I'm alright, thanks",
+   "dst": "我還好，謝謝",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#001": {
+   "src": "Stay here",
+   "dst": "留在這裡",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#002": {
+   "src": "Go back and fight Therorick!",
+   "dst": "回去跟 Therorick 戰鬥！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#001": {
+   "src": "I'll keep adventuring, and s",
+   "dst": "我會繼續冒險，看看能幫上誰。",
+   "full": "I'll keep adventuring, and see who I can help.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#019": {
+   "src": "I might explore a little, se",
+   "dst": "我可能會四處探索一下，看看外面還有什麼。",
+   "full": "I might explore a little, see what else there is out there.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#051": {
+   "src": "I'll stick around here a lit",
+   "dst": "我會在這裡再待一陣子。",
+   "full": "I'll stick around here a little longer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#063": {
+   "src": "I'm not sure what I'll do ne",
+   "dst": "我還不確定接下來要做什麼。",
+   "full": "I'm not sure what I'll do next.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#064": {
+   "src": "I'm sorry.",
+   "dst": "對不起。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#066": {
+   "src": "...alright.",
+   "dst": "……好吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#067": {
+   "src": "I don't know.",
+   "dst": "我不知道。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c017": {
+   "src": "Have you heard of any rumors",
+   "dst": "最近有聽到什麼傳聞嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Have you heard of any rumors lately?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c018": {
+   "src": "What do you think about this",
+   "dst": "你覺得這個村子怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you think about this village?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c019": {
+   "src": "I'm a human",
+   "dst": "我是人類。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c020": {
+   "src": "I want to see the rules for",
+   "dst": "我想再看一次謎題的規則。",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": null,
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c021": {
+   "src": "The Blue Core",
+   "dst": "藍色核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c022": {
+   "src": "The Orange Core",
+   "dst": "橙色核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c023": {
+   "src": "The Purple Core",
+   "dst": "紫色核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c024": {
+   "src": "The Gray Core",
+   "dst": "灰色核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c025": {
+   "src": "The Rainbow Core",
+   "dst": "彩虹核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c026": {
+   "src": "The Green Core",
+   "dst": "綠色核心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c027": {
+   "src": "I'm dead?",
+   "dst": "我死了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c028": {
+   "src": "Have I been here before?",
+   "dst": "我以前來過這裡嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c029": {
+   "src": "Why a mansion?",
+   "dst": "為什麼是一座宅邸？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c030": {
+   "src": "Do you talk to everyone?",
+   "dst": "你跟每個人都會聊天嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c031": {
+   "src": "We can move on.",
+   "dst": "我們可以繼續了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c032": {
+   "src": "Why are you doing this for m",
+   "dst": "你為什麼要為我做這些？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Why are you doing this for me?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c033": {
+   "src": "I am lost, yes.",
+   "dst": "對，我迷路了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c034": {
+   "src": "I'm not lost.",
+   "dst": "我沒有迷路。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c035": {
+   "src": "It was!",
+   "dst": "確實是！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c036": {
+   "src": "Needs some work.",
+   "dst": "還需要再加強。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c040": {
+   "src": "Bread.",
+   "dst": "麵包。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c044": {
+   "src": "Can I grab a {p} Whiskey",
+   "dst": "可以給我來一杯 {p} 威士忌嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab a {p} Whiskey?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c045": {
+   "src": "Can I grab a Jofash Rum? [{~}E",
+   "dst": "可以給我來一杯 Jofash 蘭姆嗎？[{~}E",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c046": {
+   "src": "Can I grab a {p} Pinot?",
+   "dst": "可以給我來一杯 {p} 皮諾嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c047": {
+   "src": "Can I grab an {p} Absint",
+   "dst": "可以給我來一杯 {p} 苦艾酒嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab an {p} Absinthe?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c049": {
+   "src": "Not today, thanks",
+   "dst": "今天不用了，謝謝",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c050": {
+   "src": "I'm still not interested.",
+   "dst": "我還是沒興趣。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c051": {
+   "src": "Let's trade!",
+   "dst": "來交易吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c052": {
+   "src": "What do you even do with all",
+   "dst": "你收集這堆破爛到底要做什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you even do with all this junk?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c053": {
+   "src": "What's up with the broken th",
+   "dst": "外面那個壞掉的東西是怎麼回事？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's up with the broken thing outside?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c054": {
+   "src": "Ever find anything interesti",
+   "dst": "你在 Outer Void 有找到過什麼有趣的東西嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Ever find anything interesting in the {p}?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c055": {
+   "src": "Just passing by!",
+   "dst": "只是路過！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c056": {
+   "src": "Do you want to repair the transporter?",
+   "dst": "要修理傳送裝置嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c064": {
+   "src": "Yeah sure!",
+   "dst": "好啊，當然！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c065": {
+   "src": "Maybe later.",
+   "dst": "之後再說吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c066": {
+   "src": "Saying hi!",
+   "dst": "來打個招呼！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c067": {
+   "src": "Join the race",
+   "dst": "參加比賽",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c068": {
+   "src": "Refuse",
+   "dst": "拒絕",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c015": {
+   "src": "Do you know anyone by the na",
+   "dst": "你認識叫 Garvan 的人嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you know anyone by the name of Garvan?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c016": {
+   "src": "Xoeinbor.",
+   "dst": "Xoeinbor。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",

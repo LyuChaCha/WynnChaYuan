@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 242,
-  "translated": 242,
+  "count": 249,
+  "translated": 249,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "¡Sí, señora! ¡Vamos!",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "¡Sí, señora! ¡Vamos, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -973,7 +973,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "¡No creo que podamos cruzar con hechizos, {u}! Necesitamos algo como... ¡Alas!",
    "role": "desc",
    "kind": "dialogue",
@@ -1123,8 +1123,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "Con eso bastará. A ver si funciona. ¡Ven aquí!",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "Con eso bastará. A ver si funciona. ¡Ven aquí, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1353,7 +1353,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "Así es. No sé por qué está tan bien conservado. Es como si nada lo hubiera tocado.",
    "role": "desc",
    "kind": "dialogue",
@@ -2383,8 +2383,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "¿Qué es este obelisco? Es... reconfortante. Reconozco esta sensación de mi época en Gavel.",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "¿Qué es este obelisco? Es... extrañamente reconfortante. Reconozco esta sensación de mi época en Gavel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2431,6 +2431,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "Vaya, hola, viajero. Creo que no te había visto por aquí antes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} Whisky de {p}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "¿Acabaste con la infame fábrica de Corkus? Menuda hazaña. He oído muchas historias de lo que eran capaces esos mecas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "¡Vaya, hola, viajero! Me alegra verte otra vez por aquí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "Necesitamos un PLAN.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} Corrupt Pearl]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "¡Tienes que encontrar la forma de seguirlos hasta la cima!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

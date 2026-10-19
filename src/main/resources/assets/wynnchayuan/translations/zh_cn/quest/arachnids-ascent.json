@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Arachnids' Ascent",
-  "count": 112,
-  "translated": 112,
+  "count": 113,
+  "translated": 113,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -927,7 +927,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#092": {
-   "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
+   "src": "We did! And now, we celebrate! Here, let's all have some {p} Whiskey for the occasion.",
    "dst": "没错！现在，我们庆祝吧！来，大家都来点 {p} 威士忌应应景。",
    "role": "desc",
    "kind": "dialogue",
@@ -937,8 +937,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#093": {
-   "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "那么，你们两个接下来打算做什么？我想我会去找上将，看看能不能在哪里接个任务。",
+   "src": "...So, what're you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
+   "dst": "……那么，你们两个接下来打算做什么？我想我会去找上将，看看能不能在哪里接个任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -947,8 +947,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#094": {
-   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "嗯。我一直在想……去研究更高深的粉末技术。它们的魔法有种特别吸引我的地方。",
+   "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. If I can figure out how they work, maybe I can... do more.",
+   "dst": "嗯。我一直在想……去研究更高深的粉末技术。要是我能弄懂它们的原理，也许我就能……做得更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -987,7 +987,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#098": {
-   "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
+   "src": "Not a bad idea! I might join you with that later, once I've decide on things more.",
    "dst": "主意不错！等我把事情想得更清楚一些，说不定之后会跟你一起。",
    "role": "desc",
    "kind": "dialogue",
@@ -1067,7 +1067,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#106": {
-   "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
+   "src": "...Well, I'm glad we were all able to be here together. Here's to a long and fulfilling friendship!",
    "dst": "……嗯，我很高兴我们都能聚在这里。敬我们长久又充实的友谊！",
    "role": "desc",
    "kind": "dialogue",
@@ -1097,7 +1097,7 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#109": {
-   "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
+   "src": "Me? Well, I've been making a little progress... but, nothing too big yet. I'm keeping at it, though!",
    "dst": "我？嗯，我有一点小进展……不过还没什么大突破。我会继续努力的！",
    "role": "desc",
    "kind": "dialogue",
@@ -1125,6 +1125,16 @@
    "stage": "Stage 5",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "Arachnids' Ascent#112": {
+   "src": "[+Drunkness for {~} seconds]",
+   "dst": "[+醉酒，持续 {~} 秒]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hidden City",
-  "count": 78,
-  "translated": 78,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "The Hidden City#001": {
-   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "src": "A human? Agh! Don't worry about getting me medical attention, I've got this under control...",
    "dst": "¡Un humano! ¡Agh! No te molestes en buscarme un médico, lo tengo controlado...",
    "role": "desc",
    "kind": "dialogue",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "The Hidden City#009": {
-   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "Los aldeanos tienen reglas muy estrictas sobre los humanos que viven en sus tierras, y eso es MUY ilegal.",
+   "src": "Now, the villagers have very strict rules about humans founding cities in their lands, and it's VERY illegal.",
+   "dst": "Los aldeanos tienen reglas muy estrictas sobre que los humanos funden ciudades en sus tierras, y eso es MUY ilegal.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -357,8 +357,8 @@
    "source": "wiki"
   },
   "The Hidden City#035": {
-   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "En fin, el secreto de {p} corre grave peligro. Hemos hallado pruebas del traidor.",
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of a traitor.",
+   "dst": "En fin, el secreto de {p} corre grave peligro. Hemos hallado pruebas de un traidor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -427,7 +427,7 @@
    "source": "wiki"
   },
   "The Hidden City#042": {
-   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p}, so it's weird.",
    "dst": "Lo único sospechoso que he visto es a un hombre encapuchado rondando. En {p} hay poca gente, así que es raro.",
    "role": "desc",
    "kind": "dialogue",
@@ -527,7 +527,7 @@
    "source": "wiki"
   },
   "The Hidden City#052": {
-   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "src": "Ah, you must be the detective. None of those half-witted Eltomites could figure it out.",
    "dst": "Ah. Así que tú eres el detective. Ninguno de esos eltomitas cortos de entendederas lo habría averiguado.",
    "role": "desc",
    "kind": "dialogue",
@@ -547,8 +547,8 @@
    "source": "wiki"
   },
   "The Hidden City#054": {
-   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "Este pueblo ni siquiera debería existir. Los humanos no pueden asentarse en Gavel.",
+   "src": "This town shouldn't even be here. Humans aren't allowed to own land in Gavel like this.",
+   "dst": "Este pueblo ni siquiera debería existir. Los humanos no pueden poseer tierras en Gavel de esta manera.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -597,7 +597,7 @@
    "source": "wiki"
   },
   "The Hidden City#059": {
-   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "src": "- Airship leaves {p} {~}:{~} to {p}",
    "dst": "*- Aeronave {p} {~}:{~} a {p}",
    "role": "desc",
    "kind": "dialogue",
@@ -647,8 +647,8 @@
    "source": "wiki"
   },
   "The Hidden City#064": {
-   "src": "Requested to use a ship... I refused...",
-   "dst": "Pidió usar una nave... Me negué...",
+   "src": "Demanded to use a ship... I refused...",
+   "dst": "Exigió usar una nave... Me negué...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -727,8 +727,8 @@
    "source": "wiki"
   },
   "The Hidden City#072": {
-   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "Le contaré al alcalde de {p} todo sobre este lugar y cobraré mi recompensa. Seré rico, ¡y si quieres impedírmelo tendrás que hacerlo tú mismo!",
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you'll have to do it yourself.",
+   "dst": "Le contaré al alcalde de {p} todo sobre este lugar y cobraré mi recompensa. Seré rico, y si quieres impedírmelo tendrás que hacerlo tú mismo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -784,6 +784,156 @@
    "quest": "The Hidden City",
    "stage": "Stage 16",
    "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#078": {
+   "src": "I wrote the location of the city in your content book. There's nothing else I can do to help you.",
+   "dst": "He anotado la ubicación de la ciudad en tu libro de contenido. No puedo hacer nada más para ayudarte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "captured"
+  },
+  "The Hidden City#079": {
+   "src": "Notes:",
+   "dst": "Notas:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Note",
+   "source": "captured"
+  },
+  "The Hidden City#080": {
+   "src": "- Mayor's office on the top layer of {p}",
+   "dst": "- Despacho del alcalde en el nivel superior de {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#081": {
+   "src": "- Remember to set up Dwarven bank account",
+   "dst": "- Acordarse de abrir la cuenta en el banco enano",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#082": {
+   "src": "To Hilan",
+   "dst": "Para Hilan",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#083": {
+   "src": "The ship you're running is a mess. This is the third time I've had to repair a coolant leak here.",
+   "dst": "La nave que llevas es un desastre. Es la tercera vez que tengo que reparar aquí una fuga de refrigerante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#084": {
+   "src": "The Corkian machines are great, but they aren't eternal. At this rate, you'll need a new ship every winter.",
+   "dst": "Las máquinas corkianas son estupendas, pero no son eternas. A este paso, necesitarás una nave nueva cada invierno.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#085": {
+   "src": "Is it that hard to understand that no liquid should enter the engine?",
+   "dst": "¿Tan difícil es entender que no debe entrar ningún líquido en el motor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#086": {
+   "src": "-Engineer Bertin.",
+   "dst": "-Ingeniero Bertin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hidden City#087": {
+   "src": "A letter? Oh, that. The one about {p}? Don't look so worried. The secret is safe with me.",
+   "dst": "¿Una carta? Ah, eso. ¿La de {p}? No pongas esa cara de preocupación. El secreto está a salvo conmigo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#088": {
+   "src": "Yes, I know about {p}. After all, its mayor is my ex-husband.",
+   "dst": "Sí, sé lo de {p}. Al fin y al cabo, su alcalde es mi exmarido.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#089": {
+   "src": "It may seem odd, a love between a villager and a human. I know, but our race did not stop us from being in love.",
+   "dst": "Puede parecer extraño, un amor entre una aldeana y un humano. Lo sé, pero nuestra raza no nos impidió enamorarnos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#090": {
+   "src": "The person who left the letter about {p} is our son, Ardulf. As soon as Eoric found out about our child, he panicked and left me.",
+   "dst": "Quien dejó la carta sobre {p} es nuestro hijo, Ardulf. En cuanto Eoric se enteró de lo de nuestro hijo, le entró el pánico y me dejó.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#091": {
+   "src": "Ardulf will never be accepted as a half breed... Still, I hope he's OK.",
+   "dst": "Ardulf nunca será aceptado siendo mestizo... Aun así, espero que esté bien.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
+   "source": "captured"
+  },
+  "The Hidden City#092": {
+   "src": "Huh, oh yeah, one more thing. The switch under the table... go on, press it!",
+   "dst": "Ah, sí, una cosa más. El interruptor de debajo de la mesa... ¡venga, púlsalo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Thesead's Mayor",
    "source": "captured"
   }
  }

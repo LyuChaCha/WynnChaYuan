@@ -1,8 +1,8 @@
 {
  "_meta": {
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 27,
-  "translated": 27
+  "count": 87,
+  "translated": 87
  },
  "entries": {
   "choice#c000": {
@@ -273,6 +273,626 @@
   "choice#c014": {
    "src": "How have you been doing sinc",
    "dst": "그동안 어떻게 지내셨어요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#000": {
+   "src": "What do elements on my gear",
+   "dst": "내 장비의 원소는 무슨 역할을 해?",
+   "full": "What do elements on my gear do?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#001": {
+   "src": "What do elements on enemies",
+   "dst": "적의 원소는 무슨 뜻이야?",
+   "full": "What do elements on enemies mean?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#002": {
+   "src": "How can I tell a spell is co",
+   "dst": "주문이 오는 건 어떻게 알 수 있어?",
+   "full": "How can I tell a spell is coming?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#003": {
+   "src": "How's society now that you'r",
+   "dst": "돌아와 보니 사회는 어때?",
+   "full": "How's society now that you're back?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#001": {
+   "src": "Favorite type of bread?",
+   "dst": "제일 좋아하는 빵은?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#002": {
+   "src": "What's with Relend?",
+   "dst": "Relend는 왜 저래?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#003": {
+   "src": "Have you seen a parrot aroun",
+   "dst": "이 근처에서 앵무새 못 봤어?",
+   "full": "Have you seen a parrot around here?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#011": {
+   "src": "What service do you provide?",
+   "dst": "어떤 서비스를 해?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#012": {
+   "src": "Can you tell my fortune? [{~}",
+   "dst": "내 운세를 봐 줄 수 있어? [{~} LE]",
+   "full": "Can you tell my fortune? [{~} LE]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#017": {
+   "src": "Just here to say hi",
+   "dst": "그냥 인사하러 왔어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#019": {
+   "src": "I'm alright, thanks",
+   "dst": "난 괜찮아, 고마워",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#001": {
+   "src": "Stay here",
+   "dst": "여기 남는다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#002": {
+   "src": "Go back and fight Therorick!",
+   "dst": "돌아가서 Therorick과 싸운다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#001": {
+   "src": "I'll keep adventuring, and s",
+   "dst": "계속 모험하면서 누구를 도울 수 있을지 볼게.",
+   "full": "I'll keep adventuring, and see who I can help.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#019": {
+   "src": "I might explore a little, se",
+   "dst": "조금 둘러보면서 바깥에 또 뭐가 있는지 볼까 해.",
+   "full": "I might explore a little, see what else there is out there.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#051": {
+   "src": "I'll stick around here a lit",
+   "dst": "여기 좀 더 있을래.",
+   "full": "I'll stick around here a little longer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#063": {
+   "src": "I'm not sure what I'll do ne",
+   "dst": "다음에 뭘 할지 잘 모르겠어.",
+   "full": "I'm not sure what I'll do next.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#064": {
+   "src": "I'm sorry.",
+   "dst": "미안해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#066": {
+   "src": "...alright.",
+   "dst": "...알겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#067": {
+   "src": "I don't know.",
+   "dst": "모르겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c017": {
+   "src": "Have you heard of any rumors",
+   "dst": "최근에 무슨 소문이라도 들었나요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Have you heard of any rumors lately?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c018": {
+   "src": "What do you think about this",
+   "dst": "이 마을을 어떻게 생각하세요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you think about this village?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c019": {
+   "src": "I'm a human",
+   "dst": "전 인간이에요",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c020": {
+   "src": "I want to see the rules for",
+   "dst": "퍼즐 규칙을 다시 보고 싶어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": null,
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c021": {
+   "src": "The Blue Core",
+   "dst": "파란색 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c022": {
+   "src": "The Orange Core",
+   "dst": "주황색 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c023": {
+   "src": "The Purple Core",
+   "dst": "보라색 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c024": {
+   "src": "The Gray Core",
+   "dst": "회색 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c025": {
+   "src": "The Rainbow Core",
+   "dst": "무지개 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c026": {
+   "src": "The Green Core",
+   "dst": "초록색 코어",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c027": {
+   "src": "I'm dead?",
+   "dst": "제가 죽었다고요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c028": {
+   "src": "Have I been here before?",
+   "dst": "제가 전에 여기 온 적 있나요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c029": {
+   "src": "Why a mansion?",
+   "dst": "왜 하필 저택이에요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c030": {
+   "src": "Do you talk to everyone?",
+   "dst": "모든 사람과 이렇게 이야기하세요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c031": {
+   "src": "We can move on.",
+   "dst": "이제 넘어가도 돼요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c032": {
+   "src": "Why are you doing this for m",
+   "dst": "왜 저를 위해 이렇게까지 해 주세요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Why are you doing this for me?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c033": {
+   "src": "I am lost, yes.",
+   "dst": "네, 길을 잃었어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c034": {
+   "src": "I'm not lost.",
+   "dst": "길 잃은 거 아니에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c035": {
+   "src": "It was!",
+   "dst": "네, 그랬어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c036": {
+   "src": "Needs some work.",
+   "dst": "좀 더 다듬어야겠네요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c040": {
+   "src": "Bread.",
+   "dst": "빵이요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c044": {
+   "src": "Can I grab a {p} Whiskey",
+   "dst": "{p} 위스키 한 잔 주실래요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab a {p} Whiskey?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c045": {
+   "src": "Can I grab a Jofash Rum? [{~}E",
+   "dst": "Jofash 럼 한 잔 주실래요? [{~}EB]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c046": {
+   "src": "Can I grab a {p} Pinot?",
+   "dst": "{p} 피노 한 잔 주실래요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c047": {
+   "src": "Can I grab an {p} Absint",
+   "dst": "{p} 압생트 한 잔 주실래요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab an {p} Absinthe?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c049": {
+   "src": "Not today, thanks",
+   "dst": "오늘은 됐어요, 고마워요",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c050": {
+   "src": "I'm still not interested.",
+   "dst": "여전히 관심 없어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c051": {
+   "src": "Let's trade!",
+   "dst": "거래해요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c052": {
+   "src": "What do you even do with all",
+   "dst": "이 잡동사니들은 다 어디에 쓰세요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you even do with all this junk?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c053": {
+   "src": "What's up with the broken th",
+   "dst": "밖에 있는 고장 난 건 뭐예요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's up with the broken thing outside?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c054": {
+   "src": "Ever find anything interesti",
+   "dst": "Outer Void에서 흥미로운 걸 찾은 적 있어요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Ever find anything interesting in the {p}?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c055": {
+   "src": "Just passing by!",
+   "dst": "그냥 지나가는 길이에요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c056": {
+   "src": "Do you want to repair the transporter?",
+   "dst": "전송 장치를 수리하시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c064": {
+   "src": "Yeah sure!",
+   "dst": "좋아요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c065": {
+   "src": "Maybe later.",
+   "dst": "나중에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c066": {
+   "src": "Saying hi!",
+   "dst": "인사하러 왔어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c067": {
+   "src": "Join the race",
+   "dst": "경주에 참가하기",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c068": {
+   "src": "Refuse",
+   "dst": "거절하기",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c015": {
+   "src": "Do you know anyone by the na",
+   "dst": "Garvan이라는 사람을 아시나요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you know anyone by the name of Garvan?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c016": {
+   "src": "Xoeinbor.",
+   "dst": "Xoeinbor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",

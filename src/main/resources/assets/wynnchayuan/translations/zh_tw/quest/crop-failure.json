@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Crop Failure",
-  "count": 53,
-  "translated": 53,
+  "count": 55,
+  "translated": 55,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -58,7 +58,7 @@
   },
   "Crop Failure#005": {
    "src": "That Doubiss won't budge for my refund. I spent...so many emeralds...on this tripe! So that's where YOU come in.",
-   "dst": "Doubiss 死活都不肯退錢。我可是花了……那麼多綠寶石……買這堆垃圾！所以你就派上用場了。",
+   "dst": "Doubiss 死活都不肯退錢。我可是花了……那麼多綠寶石……買這堆垃圾！所以就要靠「你」了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -148,7 +148,7 @@
   },
   "Crop Failure#014": {
    "src": "The buggers stick to the mountain caves. They don't come down this far usually...s'pose there's an exception fer everything.",
-   "dst": "那些小東西平常都待在山裡的洞穴。牠們通常不會跑這麼下面來……我看凡事都有例外吧。",
+   "dst": "那些小東西平常都待在山裡的洞穴。他們通常不會跑這麼下面來……我看凡事都有例外吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -258,7 +258,7 @@
   },
   "Crop Failure#025": {
    "src": "I can sell it to you for [{~} Emerald Blocks]. Truly an excellent price for such a... great item.",
-   "dst": "我可以用 [{~} 綠寶石塊] 賣給你。以這麼……了不起的東西來說，真是個超值的價錢。",
+   "dst": "我可以用 [{~} 塊綠寶石磚] 賣給你。以這麼……了不起的東西來說，真是個超值的價錢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -397,8 +397,8 @@
    "source": "wiki"
   },
   "Crop Failure#039": {
-   "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "日安啊！想從老 Doubiss 的貨裡買點什麼呀？",
+   "src": "Ah, good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
+   "dst": "啊，日安啊！你想從老 Doubiss 的貨裡找點什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -438,7 +438,7 @@
   },
   "Crop Failure#043": {
    "src": "And boy am I glad I bring me water in bottles. This stuff's rancid, full a' swamp slimes. No idea why they're here, though.",
-   "dst": "哎呀，我真慶幸自己帶的是瓶裝水。這水可真夠噁心的，裡面全是沼澤史萊姆。我也不知道牠們怎麼會跑到這裡來。",
+   "dst": "哎呀，我真慶幸自己帶的是瓶裝水。這水可真夠噁心的，裡面全是沼澤史萊姆。我也不知道他們怎麼會跑到這裡來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -529,6 +529,26 @@
   "Crop Failure#052": {
    "src": "Well, glad I can start sellin' again without him shoutin' \"Fraud! Con! Cheat!\" in the distance! Thanks fer that, mate.",
    "dst": "嘿，這下我總算可以重新開張，不用再聽他在遠處大喊「詐欺！騙局！騙子！」了！多謝啦，老兄。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#053": {
+   "src": "The little cave on the hill, by the crypts? That's the one leadin' to the water table under here.",
+   "dst": "山丘上、地穴旁邊那個小洞穴？那就是通往這底下地下水層的那個。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Crop Failure",
+   "stage": "",
+   "speaker": "Doubiss",
+   "source": "captured"
+  },
+  "Crop Failure#054": {
+   "src": "Check in there if ya feel up to some investigation, bucko. That farmer'll prob'ly want ta see it ta believe it when ya find somethin'.",
+   "dst": "要是你有興趣調查一下，就進去瞧瞧吧，老弟。等你找到什麼東西，那個農夫八成得親眼看到才會信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",

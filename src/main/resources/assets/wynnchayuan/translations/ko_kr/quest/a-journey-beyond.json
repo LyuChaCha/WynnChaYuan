@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 242,
-  "translated": 242,
+  "count": 249,
+  "translated": 249,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -913,8 +913,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#095": {
-   "src": "Yes ma'am! Let's go !",
-   "dst": "네, 대장님! 가자!",
+   "src": "Yes ma'am! Let's go {u}!",
+   "dst": "네, 대장님! 가자, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -973,7 +973,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#101": {
-   "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
+   "src": "...I don't think we can spell our way across, {u}! We need something like... Wings!",
    "dst": "주문으로는 못 건너갈 것 같아, {u}! 뭔가... 날개 같은 게 필요해!",
    "role": "desc",
    "kind": "dialogue",
@@ -1123,8 +1123,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#116": {
-   "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "이거면 되겠네요. 효과가 있는지 봅시다. 이리 와요!",
+   "src": "That should do it. Let's see if this will work. Come here {u}!",
+   "dst": "이거면 되겠네요. 효과가 있는지 봅시다. 이리 와요, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1353,7 +1353,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#139": {
-   "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
+   "src": "They were. I don't know why it would be so well preserved. It's as if nothing has touched it.",
    "dst": "맞아. 왜 이렇게 잘 보존됐는지 모르겠어. 마치 아무것도 손대지 않은 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -2383,8 +2383,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#243": {
-   "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "이 오벨리스크는 뭐지? 뭔가.. 마음이 편해져. Gavel에 있을 때 느꼈던 기분이야.",
+   "src": "What is this obelisk? It's.. oddly comforting. I recognise this feeling from my time in Gavel.",
+   "dst": "이 오벨리스크는 뭐지? 뭔가.. 묘하게 마음이 편해져. Gavel에 있을 때 느꼈던 기분이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2431,6 +2431,76 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#286": {
+   "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
+   "dst": "어이, 반갑네, 여행자. 여기선 처음 보는 얼굴 같은데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#287": {
+   "src": "[+{~} {p} Whiskey]",
+   "dst": "[+{~} {p} 위스키]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#288": {
+   "src": "You took down Corkus' infamous factory? That's quite an accomplishment. I've heard many a tale of what those mechs could do.",
+   "dst": "Corkus의 그 악명 높은 공장을 무너뜨렸다고? 대단한 업적인데. 그 메카들이 무슨 짓을 할 수 있는지 이야기는 수없이 들었지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#289": {
+   "src": "Well, hello there, traveler! It's nice to see you around here again.",
+   "dst": "어이, 반가워, 여행자! 여기서 또 보니 좋네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Rusty Bartender",
+   "source": "captured"
+  },
+  "A Journey Beyond#290": {
+   "src": "We need a PLAN.",
+   "dst": "제대로 된 계획이 필요해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "A Journey Beyond#291": {
+   "src": "[-{~} Corrupt Pearl]",
+   "dst": "[-{~} 타락한 진주]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "그들을 따라 꼭대기까지 올라갈 방법을 찾아야 한다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

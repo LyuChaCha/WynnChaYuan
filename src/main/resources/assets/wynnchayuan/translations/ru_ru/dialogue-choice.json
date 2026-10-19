@@ -1,8 +1,8 @@
 {
  "_meta": {
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 27,
-  "translated": 27
+  "count": 87,
+  "translated": 87
  },
  "entries": {
   "choice#c000": {
@@ -273,6 +273,626 @@
   "choice#c014": {
    "src": "How have you been doing sinc",
    "dst": "Как ты поживаешь с тех пор?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#000": {
+   "src": "What do elements on my gear",
+   "dst": "Что дают стихии на моём снаряжении?",
+   "full": "What do elements on my gear do?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#001": {
+   "src": "What do elements on enemies",
+   "dst": "Что значат стихии у врагов?",
+   "full": "What do elements on enemies mean?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#002": {
+   "src": "How can I tell a spell is co",
+   "dst": "Как понять, что летит заклинание?",
+   "full": "How can I tell a spell is coming?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/npc#003": {
+   "src": "How's society now that you'r",
+   "dst": "Ну как тебе общество теперь, когда ты вернулся?",
+   "full": "How's society now that you're back?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#001": {
+   "src": "Favorite type of bread?",
+   "dst": "Какой хлеб у тебя любимый?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#002": {
+   "src": "What's with Relend?",
+   "dst": "Что с Relend?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#003": {
+   "src": "Have you seen a parrot aroun",
+   "dst": "Ты не видел тут попугая?",
+   "full": "Have you seen a parrot around here?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#011": {
+   "src": "What service do you provide?",
+   "dst": "Какие услуги ты предлагаешь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#012": {
+   "src": "Can you tell my fortune? [{~}",
+   "dst": "Можешь мне погадать? [{~} LE]",
+   "full": "Can you tell my fortune? [{~} LE]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#017": {
+   "src": "Just here to say hi",
+   "dst": "Просто зашёл поздороваться",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Fantastic Voyage#019": {
+   "src": "I'm alright, thanks",
+   "dst": "Я в порядке, спасибо",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#001": {
+   "src": "Stay here",
+   "dst": "Остаться здесь",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A Hunter's Calling#002": {
+   "src": "Go back and fight Therorick!",
+   "dst": "Вернуться и сразиться с Therorick!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#001": {
+   "src": "I'll keep adventuring, and s",
+   "dst": "Я продолжу странствовать и посмотрю, кому смогу помочь.",
+   "full": "I'll keep adventuring, and see who I can help.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#019": {
+   "src": "I might explore a little, se",
+   "dst": "Пожалуй, немного попутешествую и посмотрю, что там ещё есть.",
+   "full": "I might explore a little, see what else there is out there.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#051": {
+   "src": "I'll stick around here a lit",
+   "dst": "Я побуду здесь ещё немного.",
+   "full": "I'll stick around here a little longer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Arachnids' Ascent#063": {
+   "src": "I'm not sure what I'll do ne",
+   "dst": "Не знаю, чем займусь дальше.",
+   "full": "I'm not sure what I'll do next.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#064": {
+   "src": "I'm sorry.",
+   "dst": "Прости.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#066": {
+   "src": "...alright.",
+   "dst": "...ладно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/Queen's Recruit#067": {
+   "src": "I don't know.",
+   "dst": "Не знаю.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c017": {
+   "src": "Have you heard of any rumors",
+   "dst": "Слышали какие-нибудь слухи?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Have you heard of any rumors lately?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c018": {
+   "src": "What do you think about this",
+   "dst": "Что вы думаете об этой деревне?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you think about this village?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c019": {
+   "src": "I'm a human",
+   "dst": "Я человек",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c020": {
+   "src": "I want to see the rules for",
+   "dst": "Покажи ещё раз правила головоломки.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": null,
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c021": {
+   "src": "The Blue Core",
+   "dst": "Синее ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c022": {
+   "src": "The Orange Core",
+   "dst": "Оранжевое ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c023": {
+   "src": "The Purple Core",
+   "dst": "Фиолетовое ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c024": {
+   "src": "The Gray Core",
+   "dst": "Серое ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c025": {
+   "src": "The Rainbow Core",
+   "dst": "Радужное ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c026": {
+   "src": "The Green Core",
+   "dst": "Зелёное ядро",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c027": {
+   "src": "I'm dead?",
+   "dst": "Я умер?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c028": {
+   "src": "Have I been here before?",
+   "dst": "Я уже бывал здесь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c029": {
+   "src": "Why a mansion?",
+   "dst": "Почему именно особняк?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c030": {
+   "src": "Do you talk to everyone?",
+   "dst": "Ты со всеми разговариваешь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c031": {
+   "src": "We can move on.",
+   "dst": "Можем двигаться дальше.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c032": {
+   "src": "Why are you doing this for m",
+   "dst": "Почему ты делаешь это для меня?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Why are you doing this for me?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c033": {
+   "src": "I am lost, yes.",
+   "dst": "Да, я заблудился.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c034": {
+   "src": "I'm not lost.",
+   "dst": "Я не заблудился.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c035": {
+   "src": "It was!",
+   "dst": "Да, было!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c036": {
+   "src": "Needs some work.",
+   "dst": "Есть над чем поработать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c040": {
+   "src": "Bread.",
+   "dst": "Хлеб.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c044": {
+   "src": "Can I grab a {p} Whiskey",
+   "dst": "Можно мне виски {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab a {p} Whiskey?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c045": {
+   "src": "Can I grab a Jofash Rum? [{~}E",
+   "dst": "Можно мне ром Jofash? [{~}E",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c046": {
+   "src": "Can I grab a {p} Pinot?",
+   "dst": "Можно мне пино {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c047": {
+   "src": "Can I grab an {p} Absint",
+   "dst": "Можно мне абсент {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Can I grab an {p} Absinthe?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c049": {
+   "src": "Not today, thanks",
+   "dst": "Не сегодня, спасибо",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c050": {
+   "src": "I'm still not interested.",
+   "dst": "Мне всё ещё неинтересно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c051": {
+   "src": "Let's trade!",
+   "dst": "Давай меняться!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c052": {
+   "src": "What do you even do with all",
+   "dst": "И что ты вообще делаешь со всем этим хламом?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What do you even do with all this junk?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c053": {
+   "src": "What's up with the broken th",
+   "dst": "Что там за сломанная штука снаружи?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's up with the broken thing outside?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c054": {
+   "src": "Ever find anything interesti",
+   "dst": "Находил что-нибудь интересное в этих краях?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Ever find anything interesting in the {p}?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c055": {
+   "src": "Just passing by!",
+   "dst": "Просто мимо проходил!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c056": {
+   "src": "Do you want to repair the transporter?",
+   "dst": "Хочешь починить транспортёр?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c064": {
+   "src": "Yeah sure!",
+   "dst": "Да, конечно!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c065": {
+   "src": "Maybe later.",
+   "dst": "Может, позже.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c066": {
+   "src": "Saying hi!",
+   "dst": "Просто поздороваться!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c067": {
+   "src": "Join the race",
+   "dst": "Участвовать в гонке",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c068": {
+   "src": "Refuse",
+   "dst": "Отказаться",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c015": {
+   "src": "Do you know anyone by the na",
+   "dst": "Знаете человека по имени Garvan?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you know anyone by the name of Garvan?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c016": {
+   "src": "Xoeinbor.",
+   "dst": "Xoeinbor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "choice",
