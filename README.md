@@ -291,6 +291,8 @@ gradle build
 |---|---|
 | ㄉ綠 | `MlyuL` |
 | 蛇蛇 | `snakiesnake` |
+| hey you great | `Brokeboys_` |
+| Zero | `HEYAZero` |
 
 ### 貢獻者
 
