@@ -79,8 +79,11 @@
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
 | Lootrun | Lootrun | |
 | Dungeon | 地城 |  |
-| Raid | 討伐戰 | 此指後期需要 4 人加入的副本。**一般語意的 raid／assault 仍用「突襲」**——任務對話裡的「突襲一座腐化據點」、「獸人突襲」不是這個 |
+| Raid | 討伐戰 | 此指後期需要 4 人加入的副本。**一般語意的 raid／assault 仍用「突襲」**——任務對話裡的「突襲一座腐敗據點」、「獸人突襲」不是這個 |
 | Scale | 適性 | 此指裝備詞條經加權計算後得出評估該物品是否良好的值 |
+| Content Book | 綜合手冊 | 介面用詞。對話裡的 content book 也照這個，不寫「內容書」（使用者 2026-10-19 定案） |
+| Emerald Block | 綠寶石磚 | 物品名稱的正本。不寫「綠寶石塊」（使用者 2026-10-19 定案） |
+| Medallion | 徽牌 | 介面與對話都用這個；`Badge` 是「徽章」、`Medal` 是「勳章／獎章」，分開（使用者 2026-10-19 定案） |
 
 ## 詞條相關：
 Wynncraft 中運用詞條的部分很多，遂記錄之：
@@ -202,8 +205,17 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Wars Won | 公會戰勝場數 | 個人資料上的統計行 |
 | Territory | 領地 | 公會戰爭奪的單位。既有語料已用此譯法 |
 | Decay | 黯蝕 | 指 Gavel 那場災厄。一般語意的腐朽／枯萎（`Decaying Heart`、`fallen into decay`）與機制上的層數衰減（`Distortion decays`）不適用 |
-| Corruption | 腐敗 | **未確定** |
+| Corruption | 腐敗 | 劇情裡的那個勢力。`Corrupted`／`the corrupt`（怪物）＝腐敗生物、腐敗者；`Corrupter of Worlds`＝世界腐敗者。不寫「腐化」（使用者 2026-10-19 定案） |
+| Wanderer | 流浪者 | 不寫「漫遊者」「浪人」。注意 `Vagabond` 目前也譯「流浪者」（使用者 2026-10-19 定案） |
+| Airbase | 飛船基地 | 不寫「空軍基地」「機場」（使用者 2026-10-19 定案） |
+| Corkian | Corkian | 原文是 Corkian 就寫 Corkian，前後接中文空一格。原文是 `Corkus's`／`of Corkus` 才寫「Corkus 的」（地名所有格）（使用者 2026-10-19 定案） |
+| Dwarf / Dwarves / Dwarven | 矮人 | `Dwarven X` 照語感寫「矮人 X」或「矮人的 X」。任務名 `Dwarves and Doguns`＝矮人與 Doguns（使用者 2026-10-19 定案） |
+| Despermech | Despermech | 保留原文（介面與世界事件名都是原文） |
 |  |  |
+
+**代名詞**：指生物（怪物、野獸、動物、亡魂、Dogun、綠皮族等）一律用「他／他們」，不用「牠」「它」。指物品、機器（機兵、魔像、機器人）、抽象事物的「它」不動（使用者 2026-10-19 定案）。
+
+**任務對話裡的素材名**：方括號裡的素材、原料名（`[{~} Carp Meat]` 之類）保留原文，跟多數一致（使用者 2026-10-19 定案）。
 
 ## Fruma 篇（主線）
 
@@ -232,8 +244,9 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | identification papers | 身分文件 |  |
 | passport | 通行證 | Syndra 弄來的那份，跟 `papers` 分開 |
 | the Driver | （未定，暫留原文） | 檔案裡「由 the Driver 帶往本地」。像職稱又像代號，**待討論** |
-| the Canopy | 樹冠 | Fruma 的另一支反抗組織，住在巨樹上，內部以梟／鴿互稱。與 `Leaves in the Wind` 同一種命名法。 **(待討論)** |
+| the Canopy | 樹冠 | Fruma 的另一支反抗組織，住在巨樹上，內部以梟／鴿互稱。與 `Leaves in the Wind` 同一種命名法。章節名 `Amongst the Canopy`＝樹冠之間，不寫「林冠」 **(待討論)** |
 | Steel Feather | 鋼羽 | Quill 那一支。 **(待討論)** |
+| Steel Feather Ticket | Steel Feather 車票 | 物品名稱照車站名（The Steel Feather 是地名，留原文） |
 | changeling | 換形者 | 語料裡本來就這樣譯，補進表裡 |
 | talisman | 護符 | 語料裡本來就這樣譯，補進表裡 |
 | Gravity's Monolith | 重力方尖碑 | Deraj 監獄的別稱，敘述裡當普通名詞用，不是地名 **(待討論)** |
