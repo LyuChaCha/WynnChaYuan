@@ -133,11 +133,13 @@ public final class DialogueOverlay {
             // 框已經淡掉了（見 Fade 與 dialogueHoldMs）。
             lastUpdate = System.currentTimeMillis();
         }
+        List<String> before = lastWindows;
+        lastWindows = incoming;
         if (incoming.equals(rawChoices)) {
             return;                            // 沒變就不必重翻
         }
-        if (scrolling(incoming)) {
-            return;                            // 跑馬燈捲到一半，見 #scrolling
+        if (scrolling(incoming) || sameScroll(before, incoming)) {
+            return;                            // 跑馬燈捲到一半，見 #scrolling、#sameScroll
         }
         rawChoices = incoming;
         choices = incoming.isEmpty()
@@ -163,6 +165,33 @@ public final class DialogueOverlay {
             }
         }
         return false;
+    }
+
+    /** 上一個 tick 收到的選項原文（跑馬燈的話是那一格），見 {@link #sameScroll}。 */
+    private static volatile List<String> lastWindows = List.of();
+
+    /**
+     * 這一份選項只是上一格<b>往左捲了一點</b>。
+     *
+     * <p>{@link #scrolling} 只認小寫開頭的視窗；捲到剛好是大寫開頭的那一格
+     *（「Peloros work hard…」）會被當成一組新的選項重翻——那一格查不到，
+     * 面板上那一列就閃一下英文，下一格又變回中文。就地取代那條路早就靠
+     * {@link Marquee#continues} 接住這種格子了，這裡用同一條判準：每一列不是
+     * 跟上一格一模一樣，就是上一格往左捲了一到三個字。
+     */
+    static boolean sameScroll(List<String> before, List<String> now) {
+        if (before == null || now == null || before.isEmpty()
+                || before.size() != now.size() || before.equals(now)) {
+            return false;
+        }
+        for (int i = 0; i < now.size(); i++) {
+            String was = before.get(i);
+            String is = now.get(i);
+            if (!was.equals(is) && !Marquee.continues(was, is)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
@@ -493,6 +522,7 @@ public final class DialogueOverlay {
         current = List.of();
         choices = List.of();
         rawChoices = List.of();
+        lastWindows = List.of();
         picked = 0;
         speaker = null;
         needsShift = false;
@@ -782,12 +812,47 @@ public final class DialogueOverlay {
     /** 選項框距畫面右緣的間距。 */
     private static final int CHOICE_EDGE = 8;
 
-    /** 把每一行折到框寬以內；樣式由 {@code font.split} 保留。 */
+    /**
+     * 把每一行折到框寬以內，每一截的樣式（強調色）照原樣保留。
+     *
+     * <h2>為什麼不用 {@code font.split}</h2>
+     * Minecraft 的折行只認空白：中文整句沒有空白，它就量到哪斷到哪，「，」「。」
+     * 常常落在行首；中英混排時又會退回很遠的那個空白，前一行空一大截。
+     * 改用就地取代那幾列同一套斷法（{@link DialogueRewriter#flow}）：英文單字不切開、
+     * 避頭尾。譯者不必再為了小框手寫 \n（issue #1298）；寫了的照樣是硬換行，
+     * 那在 {@link Boxes#toLines} 就已經分好了。
+     */
     private static List<FormattedCharSequence> wrapAll(Minecraft mc,
                                                        List<Component> lines, int width) {
         List<FormattedCharSequence> out = new ArrayList<>();
         for (Component line : lines) {
-            out.addAll(mc.font.split(line, Math.max(16, width)));
+            for (Component row : fold(line, Math.max(16, width))) {
+                out.add(row.getVisualOrderText());
+            }
+        }
+        return out;
+    }
+
+    /** 見 {@link #wrapAll}：一行折成幾行，樣式跟著字走。 */
+    static List<Component> fold(Component line, int width) {
+        List<com.wynnchayuan.capture.LineParts.Piece> pieces = new ArrayList<>();
+        StringBuilder plain = new StringBuilder();
+        line.visit((style, text) -> {
+            pieces.add(new com.wynnchayuan.capture.LineParts.Piece(text, style));
+            plain.append(text);
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        List<int[]> rows = DialogueRewriter.flow(plain.toString(), null, width);
+        if (rows.size() <= 1) {
+            return List.of(line);
+        }
+        List<Component> out = new ArrayList<>(rows.size());
+        for (int[] row : rows) {
+            net.minecraft.network.chat.MutableComponent part = Component.empty();
+            for (var piece : DialogueRewriter.cut(pieces, row[0], row[1])) {
+                part.append(Component.literal(piece.text()).withStyle(piece.style()));
+            }
+            out.add(part);
         }
         return out;
     }

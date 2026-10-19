@@ -687,6 +687,70 @@ tasks.register('runBroadcastChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runBroadcastChecks' }
 
+tasks.register('runNameFrameChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證夾著別人名字的句子照語料的 {u} 句型翻，名字原樣、不進 captured.json'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameFrameTest'
+}
+tasks.named('check') { dependsOn 'runNameFrameChecks' }
+
+tasks.register('runEventFrameChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證世界事件的倒數公告照句型翻，兩種倒數與三種折行都認得'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.EventFrameTest'
+}
+tasks.named('check') { dependsOn 'runEventFrameChecks' }
+
+tasks.register('runScoreboardWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證記分板疊層裡比框寬的譯文折成兩列，條列項目的續行縮排'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ScoreboardWrapTest'
+}
+tasks.named('check') { dependsOn 'runScoreboardWrapChecks' }
+
+tasks.register('runHighlightCacheChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Wynntils 物品高亮的快取算出來跟它原本的規則一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.HighlightModelCacheTest'
+}
+tasks.named('check') { dependsOn 'runHighlightCacheChecks' }
+
+tasks.register('runWynnventoryLayoutChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Wynnventory 側邊框兩邊放不下時縮小、不壓在物品說明上'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WynnventoryLayoutTest'
+}
+tasks.named('check') { dependsOn 'runWynnventoryLayoutChecks' }
+
+tasks.register('runCountdownBoardChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證商店的倒數看板一列一列組：沒收過的時間格式與附加列都翻得出來，顏色照每一列'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.CountdownBoardTest'
+}
+tasks.named('check') { dependsOn 'runCountdownBoardChecks' }
+
+tasks.register('runNpcChatLineChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證聊天形式的 NPC 台詞拆成計數、說話者、台詞三段組，台詞照任務檔'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NpcChatLineTest'
+}
+tasks.named('check') { dependsOn 'runNpcChatLineChecks' }
+
+tasks.register('runRewardRowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證少了行首圖示的任務獎勵列照帶圖示那一條翻，一般查表沒有變鬆'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.RewardRowTest'
+}
+tasks.named('check') { dependsOn 'runRewardRowChecks' }
+
 tasks.register('runChatHoldChecks', JavaExec) {
     group = 'verification'
     description = '驗證就地取代模式會把多欄面板整塊攔下來一起翻，而且一列都不會少'
@@ -1167,6 +1231,14 @@ tasks.register('runTradeFeederColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTradeFeederColourChecks' }
 
+tasks.register('runWelcomeBannerChecks', JavaExec) {
+    group = 'verification'
+    description = '登入歡迎訊息的新組合：整則的鍵查不到時一段一段組，七個語言都翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WelcomeBannerTest'
+}
+tasks.named('check') { dependsOn 'runWelcomeBannerChecks' }
+
 tasks.register('runOverlayTextChecks', JavaExec) {
     group = 'verification'
     description = '就地取代 Wynntils 疊層裡的字：關掉時一個字都不動'
@@ -1412,6 +1484,22 @@ tasks.register('runDialogueTooLongChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueTooLongChecks' }
 
+tasks.register('runDialogueMarqueeChecks', JavaExec) {
+    group = 'verification'
+    description = '就地取代塞不下的那一句：最後一列跑馬燈，不讓原文冒出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueMarqueeTest'
+}
+tasks.named('check') { dependsOn 'runDialogueMarqueeChecks' }
+
+tasks.register('runDialogueWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '選項與提示列的 \\n 攤平；小框自動折行避頭尾、不切英文單字、保留顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueWrapTest'
+}
+tasks.named('check') { dependsOn 'runDialogueWrapChecks' }
+
 tasks.register('runWmsBridgeChecks', JavaExec) {
     group = 'verification'
     description = 'WynnMarketSearch 的搜尋框打譯名找得到，而且不會把它的搜尋弄壞'
@@ -1491,3 +1579,30 @@ tasks.register('runPresenceChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.PresenceTest'
 }
 tasks.named('check') { dependsOn 'runPresenceChecks' }
+
+// 未鑑定物品的「可能性」清單（Wynntils ItemGuess）：每個名字附原文、每一列保住縮排。
+tasks.register('runItemGuessChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemGuessListTest'
+}
+tasks.named('check') { dependsOn 'runItemGuessChecks' }
+
+// 未鑑定物品「力量已被封印」的說明：攤平查到、重折之後照原文的中心置中。
+tasks.register('runSealedCentreChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.SealedCentreTest'
+}
+tasks.named('check') { dependsOn 'runSealedCentreChecks' }
+
+// 「譯名 + 原文」：譯名出自物品檔的名字在名稱列上一律附原文（跟技能同名的素材、所有格的名字）。
+tasks.register('runItemFileOriginalChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemFileOriginalTest'
+}
+tasks.named('check') { dependsOn 'runItemFileOriginalChecks' }

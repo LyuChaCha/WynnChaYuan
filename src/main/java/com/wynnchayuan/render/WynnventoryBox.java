@@ -117,6 +117,12 @@ public final class WynnventoryBox {
         return x;
     }
 
+    /** 這一幀它的框在哪（{x, y, w, h}，畫面座標）；太久以前的不算，回 {@code null}。 */
+    public static int[] current() {
+        int[] b = box;
+        return b == null || System.nanoTime() - notedAt > FRESH_NANOS ? null : b;
+    }
+
     private static boolean hits(int[] b, int x, int y, int w, int h) {
         return x < b[0] + b[2] && b[0] < x + w && y < b[1] + b[3] && b[1] < y + h;
     }

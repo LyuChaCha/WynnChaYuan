@@ -132,6 +132,10 @@ public final class DialogueRewriter {
      *
      * <p>只在<b>整句已經講完</b>時才會成立。打字途中走的是「照進度截一段」
      * 那條路，本來就不會因為塞不下而放棄。
+     *
+     * <h2>2026-10-18：先捲，捲不了才接手</h2>
+     * 塞不下的譯文現在先讓最後一列跑馬燈（見 {@link #layout}），譯文留在遊戲自己的
+     * 框裡。這個旗標只剩「框窄到連一個字都放不進去」那一種會立起來。
      */
     private static boolean tooLong;
 
@@ -152,6 +156,8 @@ public final class DialogueRewriter {
         if (message == null || store == null) {
             return null;
         }
+        // 跑馬燈的時鐘：這一幀所有在捲的列共用同一個「現在」
+        long now = clock.getAsLong();
         List<Style> styles = new ArrayList<>();
         List<String> texts = new ArrayList<>();
         message.visit((style, text) -> {
@@ -220,8 +226,11 @@ public final class DialogueRewriter {
         String hit = body.isEmpty() || !doBody ? null
                 : line(whole.toString(), store, body.size(),
                         styles.get(body.get(0)), room);
-        List<String> rows = hit == null
-                ? null : wrap(hit, body.size(), styles.get(body.get(0)), room);
+        // 塞不下的那一句，最後一列改成跑馬燈（見 layout）。rows 是每一列的
+        // <b>完整</b>內容，貼色照它貼；實際畫出去的是 laid.shown(n)。
+        Layout laid = hit == null ? null
+                : layout(hit, body.size(), styles.get(body.get(0)), room, now);
+        List<String> rows = laid == null ? null : laid.rows();
         // 有一行配不到中文字型就整段不換。少一份字型的下場不是「位置歪掉」
         // 而是<b>那一整行變成方框</b>（見 fontMissing），跟缺字一樣糟。
         for (int n = 0; rows != null && n < body.size(); n++) {
@@ -266,6 +275,8 @@ public final class DialogueRewriter {
             if (tip == null || tip.isBlank() || !renderable(tip)) {
                 continue;
             }
+            tip = oneLine(tip);                 // 提示列也是一列，\n 畫出來是方框
+
             if (!drawable(tip, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
                 continue;                       // 沒有這一份中文字型，換了是一排方框
             }
@@ -330,10 +341,18 @@ public final class DialogueRewriter {
                 i = end;
                 continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
+            pick = oneLine(pick);               // 譯文裡的 \n 一樣攤平，見 oneLine
             int was = 0;
             for (int k = i; k <= end; k++) {
                 was += width(texts.get(k), styles.get(k));
             }
+            // 原文太長時遊戲自己會讓這一列跑馬燈（一格 28 個字元），而我們貼上的是
+            // <b>整句</b>譯文——中文比那一格寬，就會穿出選項框。比框寬就照內文那套
+            // 自己捲（見 Marquee#scroll），塞得下就整句擺著。
+            Style rowStyle = styles.get(i);
+            int[] cut = choiceWindow(rowFont, pick, was, s -> width(s, rowStyle), now);
+            String full = pick;
+            pick = full.substring(cut[0], cut[1]);
             // 跟內文一樣只補長度差：這一列縮短多少就還回去多少，
             // 後面幾列與外框的位置才不會被推走。
             String back = offset(trail + was - width(pick, styles.get(i)));
@@ -345,8 +364,9 @@ public final class DialogueRewriter {
             TextColor colour = tone(texts, styles, List.of(i), List.of(end));
             List<LineParts.Piece> tint =
                     accents(texts, styles, List.of(i), List.of(end), colour);
-            painted.put(i, paint(pick, styles.get(i).withColor(colour),
-                    tint, new boolean[tint.size()]));
+            // 照整句貼色再切出這一幀的視窗：名字捲到一半也還是強調色
+            painted.put(i, cut(paint(full, styles.get(i).withColor(colour),
+                    tint, new boolean[tint.size()]), cut[0], cut[1]));
             texts.set(i, pick);
             for (int k = i + 1; k <= end; k++) {
                 texts.set(k, "");               // 整列併到第一段，其餘清空
@@ -420,7 +440,9 @@ public final class DialogueRewriter {
                 for (int i = at; i <= end; i++) {
                     was += width(texts.get(i), styles.get(i));
                 }
-                int shrink = was - width(rows.get(n), styles.get(at));
+                // 跑馬燈那一列只畫這一幀的視窗，偏移也照視窗的寬度補
+                String shown = laid.shown(n);
+                int shrink = was - width(shown, styles.get(at));
                 String back = offset(after + shrink);
                 if (back == null) {
                     continue;                      // 補不回去就別動這一行，見 offset
@@ -428,13 +450,12 @@ public final class DialogueRewriter {
                 // 樣式要換回<b>這一行自己的</b>：每一行的字型不一樣（body_0、
                 // body_1……高度差 12px），拿整段那個共用的去畫會全部疊在一列。
                 List<LineParts.Piece> pieces = new ArrayList<>();
-                for (LineParts.Piece part : cut(inked, starts[n],
-                        starts[n] + rows.get(n).length())) {
+                for (LineParts.Piece part : cutRow(laid, inked, starts, n)) {
                     pieces.add(new LineParts.Piece(part.text(),
                             styles.get(at).withColor(part.style().getColor())));
                 }
                 painted.put(at, pieces);
-                texts.set(at, rows.get(n));
+                texts.set(at, shown);
                 for (int i = at + 1; i <= end; i++) {
                     texts.set(i, "");              // 整行併到第一段，其餘清空
                     swapped[i] = true;
@@ -583,50 +604,205 @@ public final class DialogueRewriter {
     static List<String> wrap(String text, int rows, Style style, int limit,
                              boolean kinsoku) {
         List<String> out = new ArrayList<>(rows);
+        int at = pour(text, rows, style, limit, kinsoku, out);
+        return at >= text.length() ? out : null;
+    }
+
+    /**
+     * 塞不進 {@code rows} 列的譯文：前面幾列照常折滿，剩下的全部放在<b>最後一列</b>，
+     * 由跑馬燈在那一列裡捲著看（見 {@link Marquee#window}）。
+     *
+     * @return 每一列的完整內容（最後一列比框寬）；連一個字都放不下、或其實塞得下時
+     *         回傳 {@code null}
+     */
+    static List<String> overflow(String text, int rows, Style style, int limit) {
+        if (text == null || rows <= 0) {
+            return null;
+        }
+        // 譯文裡的 \n 在 line() 已經攤平了（見 oneLine），這裡收到的是一整串。
+        List<String> out = new ArrayList<>(rows);
+        int at = pour(text, rows - 1, style, limit, true, out);
+        String rest = text.substring(Math.min(at, text.length())).strip();
+        if (rest.isEmpty()) {
+            return null;
+        }
+        String first = rest.substring(0, rest.offsetByCodePoints(0, 1));
+        if (measure(first, style) > limit) {
+            return null;                       // 一個字都放不下，捲也捲不出東西
+        }
+        out.add(rest);
+        return out;
+    }
+
+    /**
+     * 這一幀對話框的內文要怎麼排。
+     *
+     * @param rows 每一列的<b>完整</b>內容。跑馬燈那一列比框寬，畫的時候只取
+     *             {@code [from, to)} 那一段——強調色要照完整的那一份貼，見 {@link #rewrite}
+     * @param from 最後一列這一幀從第幾個字元畫起；不捲動時是 -1
+     */
+    record Layout(List<String> rows, int from, int to) {
+
+        boolean scrolling() {
+            return from >= 0;
+        }
+
+        /** 第 n 列這一幀畫出來的那一段，在完整那一列裡從第幾個字元開始。 */
+        int offset(int n) {
+            return scrolling() && n == rows.size() - 1 ? from : 0;
+        }
+
+        /** 第 n 列這一幀實際畫出來的字。 */
+        String shown(int n) {
+            String row = rows.get(n);
+            return scrolling() && n == rows.size() - 1 ? row.substring(from, to) : row;
+        }
+
+        List<String> visible() {
+            List<String> out = new ArrayList<>(rows.size());
+            for (int n = 0; n < rows.size(); n++) {
+                out.add(shown(n));
+            }
+            return out;
+        }
+    }
+
+    /**
+     * 排這一幀：塞得下就照常折；塞不下就讓最後一列跑馬燈。
+     *
+     * <h2>為什麼不再讓原文冒出來</h2>
+     * 先前塞不下的那一句整句留英文（後來改成讓小框接手）。使用者要的是譯文留在
+     * 對話框裡：前面幾列照常，最後一列放不下的那一截像對話選項那樣在列裡捲動——
+     * 先停在開頭讓人讀，再慢慢往左捲，捲到結尾停一下，跳回開頭重來。
+     *
+     * @param now 現在的時間（毫秒）；跑馬燈的進度從「這一列第一次出現」起算
+     * @return 排好的版面；連跑馬燈都放不下時回傳 {@code null}
+     */
+    static Layout layout(String text, int rows, Style style, int limit, long now) {
+        List<String> fit = wrap(text, rows, style, limit);
+        if (fit != null) {
+            return new Layout(fit, -1, -1);
+        }
+        List<String> over = overflow(text, rows, style, limit);
+        if (over == null) {
+            return null;
+        }
+        String last = over.get(over.size() - 1);
+        long elapsed = Marquee.since(last + '\u0000' + limit, now);
+        int[] window = Marquee.window(last, limit, piece -> measure(piece, style), elapsed);
+        return new Layout(List.copyOf(over), window[0], window[1]);
+    }
+
+    /**
+     * 從整段貼好色的結果裡取出第 n 列這一幀要畫的那幾截。
+     *
+     * <p>顏色是照<b>完整</b>的譯文貼的（{@link #flatten} 用的是 {@link Layout#rows}），
+     * 跑馬燈只是從裡面取一段——名字捲到一半、只剩後半截在框裡，那半截照樣有顏色。
+     * 先用視窗的字去貼的話，被切開的名字對不上，整截會變回底色。
+     */
+    static List<LineParts.Piece> cutRow(Layout laid, List<LineParts.Piece> inked,
+                                        int[] starts, int n) {
+        int from = starts[n] + laid.offset(n);
+        return cut(inked, from, from + laid.shown(n).length());
+    }
+
+    /**
+     * 選項那一列這一幀要畫譯文的哪一段：{@code {起, 迄}}，放得下就是整句。
+     *
+     * @param row 這一列的字型（choice_0～3），每一列有自己的跑馬燈時鐘
+     * @param was 原文這一格的寬度，見 {@link Marquee#choiceRoom}
+     */
+    static int[] choiceWindow(String row, String pick, int was,
+                              java.util.function.ToIntFunction<String> measure, long now) {
+        int room = Marquee.choiceRoom(was, measure);
+        return Marquee.scroll(row + '\u0000' + pick, pick, room, measure, now);
+    }
+
+    /** 跑馬燈的時鐘。測試換成假的，才模擬得出「過了幾秒捲到哪」。 */
+    static java.util.function.LongSupplier clock = System::currentTimeMillis;
+
+    /**
+     * 把 {@code text} 從頭倒進最多 {@code rows} 列；回傳倒到哪裡。
+     * 倒不完的剩下那一截由呼叫端決定要放棄（{@link #wrap}）還是捲動（{@link #overflow}）。
+     */
+    private static int pour(String text, int rows, Style style, int limit, boolean kinsoku,
+                            List<String> out) {
         int at = 0;
         for (int row = 0; row < rows; row++) {
             if (at >= text.length()) {
                 out.add("");                   // 中文比較短，後面幾行留空
                 continue;
             }
-            int end = at;
-            int last = at;
-            while (end < text.length()
-                    && measure(text.substring(at, end + 1), style) <= limit) {
-                end++;
-                if (end < text.length() && text.charAt(end) == ' ') {
-                    last = end;                // 記著最後一個可以斷的空白
-                }
-            }
-            if (end >= text.length()) {
-                out.add(text.substring(at));
-                at = text.length();
-                continue;
-            }
-            // 英文單字不從中間切；中文可以在任何字之間斷。
-            //
-            // 退到「上一個空白」是不夠的：玩家 ID 前面常常是頓號或驚嘆號，
-            // 整行一個空白都沒有，於是 Green_teaTW 被切成 Green_ 和 teaTW。
-            // 改成退到<b>這個字自己的開頭</b>，前面有沒有空白都一樣。
-            int cut = end;
-            if (isWord(text.charAt(end))) {
-                int back = end;
-                while (back > at && isWord(text.charAt(back - 1))) {
-                    back--;
-                }
-                if (back > at) {
-                    cut = back;
-                } else if (last > at) {
-                    cut = last;                // 整行就是一個長字，只好斷在空白
-                }
-            }
-            if (kinsoku) {
-                cut = kinsoku(text, at, cut);
-            }
-            out.add(text.substring(at, cut).stripTrailing());
+            int cut = step(text, at, style, limit, kinsoku);
+            // 最後一列原樣收（跟拆出 step 之前一樣），其餘列吃掉行尾空白
+            out.add(cut >= text.length() ? text.substring(at)
+                    : text.substring(at, cut).stripTrailing());
             at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
         }
-        return at >= text.length() ? out : null;
+        return at;
+    }
+
+    /**
+     * 不限列數地折完一整段，回傳每一列在 {@code text} 裡的範圍 {@code {起, 迄}}
+     *（行尾的空白不算在內）。斷點規則跟就地取代那幾列一模一樣：英文單字不切開、
+     * 避頭尾（見 {@link #kinsoku}）——小框的自動折行用的就是這一支。
+     *
+     * @param style 量寬度用的樣式；{@code null} 是預設字型
+     */
+    static List<int[]> flow(String text, Style style, int limit) {
+        List<int[]> out = new ArrayList<>();
+        int at = 0;
+        while (at < text.length()) {
+            int cut = step(text, at, style, limit, true);
+            if (cut <= at) {
+                // 一個字就比框寬：硬塞一個字，不然永遠走不完
+                cut = at + Character.charCount(text.codePointAt(at));
+            }
+            int end = cut;
+            while (end > at && text.charAt(end - 1) == ' ') {
+                end--;
+            }
+            out.add(new int[] {at, end});
+            at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
+        }
+        return out;
+    }
+
+    /** 從 {@code at} 開始的這一列該斷在哪裡（不含）。見 {@link #pour}。 */
+    private static int step(String text, int at, Style style, int limit, boolean kinsoku) {
+        int end = at;
+        int last = at;
+        while (end < text.length()
+                && measure(text.substring(at, end + 1), style) <= limit) {
+            end++;
+            if (end < text.length() && text.charAt(end) == ' ') {
+                last = end;                // 記著最後一個可以斷的空白
+            }
+        }
+        if (end >= text.length()) {
+            return text.length();
+        }
+        // 英文單字不從中間切；中文可以在任何字之間斷。
+        //
+        // 退到「上一個空白」是不夠的：玩家 ID 前面常常是頓號或驚嘆號，
+        // 整行一個空白都沒有，於是 Green_teaTW 被切成 Green_ 和 teaTW。
+        // 改成退到<b>這個字自己的開頭</b>，前面有沒有空白都一樣。
+        int cut = end;
+        if (isWord(text.charAt(end))) {
+            int back = end;
+            while (back > at && isWord(text.charAt(back - 1))) {
+                back--;
+            }
+            if (back > at) {
+                cut = back;
+            } else if (last > at) {
+                cut = last;                // 整行就是一個長字，只好斷在空白
+            }
+        }
+        if (kinsoku) {
+            cut = kinsoku(text, at, cut);
+        }
+        return cut;
     }
 
     /** 不能留在行尾的字元：開括號與開引號，後面接的東西要跟著它一起下去。 */
@@ -1312,23 +1488,27 @@ public final class DialogueRewriter {
                     && Math.abs(source.length() - typed.length())
                        <= Math.max(12, source.length() / 8));
         if (done) {
-            // 講完了。塞不進框裡就不換——真的塞不下時，
-            // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
-            // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，
-            // 正是這裡要避免的東西。
+            // 講完了。回的一定是<b>整句</b>譯文，不沿用上一幀打到一半的那一截——
+            // 那會讓畫面停在半句中文。塞不下的時候也是整句，由跑馬燈捲完。
             if (wrap(hit, rows, style, width) != null) {
                 com.wynnchayuan.capture.OverflowAudit.note(
                         com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
                         rows, rows, com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
                 return show(raw, hit, null);
             }
-            // 翻得出來、只是放不下。記一筆讓小框接手，見 {@link #tooLong}。
-            tooLong = true;
-            // 也記進 capture：譯者才知道是哪一句害玩家多看一個小框。見 OverflowAudit。
+            // 翻得出來、只是放不下。也記進 capture：譯者才知道是哪一句太長。
+            // 見 OverflowAudit。
             com.wynnchayuan.capture.OverflowAudit.note(
                     com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
                     rows, rowsNeeded(hit, rows, style, width),
                     com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
+            // 放不下的那一截讓最後一列跑馬燈捲著看（見 layout）——譯文留在對話框裡，
+            // 原文不會冒出來。這一關只回整句譯文，捲到哪是 rewrite 每一幀自己排的。
+            if (overflow(hit, rows, style, width) != null) {
+                return show(raw, hit, null);
+            }
+            // 連跑馬燈都放不下（框窄到一個字都進不去）才讓小框接手，見 {@link #tooLong}。
+            tooLong = true;
             return drop();
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。

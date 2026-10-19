@@ -175,6 +175,14 @@ public final class CollectorConfig {
     private boolean wynntilsUi = true;
 
     /**
+     * 加速 Wynntils 的物品高亮（見 {@code HighlightModelCache}）。
+     *
+     * <p>預設<b>開啟</b>：畫面一模一樣，只是少算很多次；萬一跟哪個版本的 Wynntils 不合，
+     * 可以在 F6「功能」關掉。
+     */
+    private boolean wynntilsFps = true;
+
+    /**
      * 市集搜尋打中文自動換成英文。
      *
      * <p>預設<b>開啟</b>：用就地取代的人看到的是中文，照著打卻搜不到東西——
@@ -603,6 +611,16 @@ public final class CollectorConfig {
         wynntilsUi = !wynntilsUi;
         save();
         return wynntilsUi;
+    }
+
+    public boolean wynntilsFps() {
+        return wynntilsFps;
+    }
+
+    public boolean toggleWynntilsFps() {
+        wynntilsFps = !wynntilsFps;
+        save();
+        return wynntilsFps;
     }
 
     public boolean marketSearch() {
@@ -1481,6 +1499,7 @@ public final class CollectorConfig {
         capes = bool(o, "capes", capes);
         ownCape = bool(o, "ownCape", ownCape);
         wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
+        wynntilsFps = bool(o, "wynntilsFps", wynntilsFps);
         translateTitles = bool(o, "translateTitles", translateTitles);
         // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
         // 三段模式。舊設定檔關掉的人維持關掉，其餘照新的預設（就地取代）。
@@ -1759,6 +1778,7 @@ public final class CollectorConfig {
             o.addProperty("capes", capes);
             o.addProperty("ownCape", ownCape);
             o.addProperty("wynntilsUi", wynntilsUi);
+            o.addProperty("wynntilsFps", wynntilsFps);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shiftPeekNames", shiftPeekNames);
             o.addProperty("shotMode", shotMode.name());

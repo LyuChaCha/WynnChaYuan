@@ -191,6 +191,16 @@ public final class LineTranslator {
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
+        // 重排過（行數不同、或我們自己重折）的置中段落：照原文的中線重新置中。見 #centreLine。
+        double centre = rewrapped || dst.length != run.size()
+                ? centreLine(run, centered) : Double.NaN;
+        if (!Double.isNaN(centre)) {
+            List<Component> recentred = new ArrayList<>(built.size());
+            for (Component one : built) {
+                recentred.add(unslant(centreOn(one, centre)));
+            }
+            return recentred;
+        }
         if (dst.length != run.size()) {
             // 中文比英文緊湊，兩行的句子常常一行就講完。譯文面板是我們自己畫的，
             // 行數不一樣沒關係——只是少了「原本那一行」可以拿來對齊，直接照原樣出。
@@ -209,6 +219,92 @@ public final class LineTranslator {
                     ? row : realign(run.get(i), row, centered[i])));
         }
         return out;
+    }
+
+    /**
+     * 整段都置中時，原文那幾行共同的中線（像素）；不是整段置中就回傳 {@code NaN}。
+     *
+     * <h2>實機回報（2026-10-17）：未鑑定物品的說明靠左了</h2>
+     * 未鑑定的 Legendary 項鍊，英文三行說明照外框置中，每一行開頭一個偏移：
+     *
+     * <pre>
+     *   [15]This item's power has been sealed,
+     *   [20]an ◉ Item Identifier can unlock
+     *   [64]its potential.
+     * </pre>
+     *
+     * 語料收的是攤平的一句。{@link #rejoin} 剝掉行首偏移才查得到，查到之後由我們
+     * 照原文寬度重折——折成兩行中文，行數對不上，先前就「照原樣出」；
+     * 三行的語言也一樣，{@link #realign} 要拿原文那一列的偏移去補，而譯文那一列
+     * 已經沒有行首偏移，空白數對不上就原樣返回。兩種都從 0 畫起
+     * （layout-debug 的左緣對照：原文 17、21，譯文 0）。
+     *
+     * <p>重折過的列跟原文的列不是一對一，不能逐列抄縮排；但置中的段落每一行都
+     * 對著<b>同一條中線</b>，照那條線把每一列重新擺就對了——跟 {@link #realign}
+     * 「置中只補一半差額」是同一件事，只是改成對整段的中線。
+     *
+     * <p>只在 {@link BlockLayout} 判定<b>每一行</b>都置中時才做：靠左的段落、
+     * 只有幾行碰巧對上算式的段落都不碰——判錯的話，靠左的列會被推到中間。
+     * 原文有往回退的偏移（名稱列那種）、或量不到寬度（headless）也不碰。
+     */
+    private static double centreLine(List<StyledText> run, boolean[] centered) {
+        if (centered == null || centered.length < run.size()) {
+            return Double.NaN;
+        }
+        double sum = 0;
+        boolean indented = false;
+        for (int i = 0; i < run.size(); i++) {
+            if (!centered[i]) {
+                return Double.NaN;
+            }
+            Component line = run.get(i).getComponent();
+            int lead = leadingPx(line);
+            int w = widthOf(line);
+            if (lead < 0 || w - lead <= 0) {
+                return Double.NaN;
+            }
+            indented |= lead > 0;
+            sum += lead + (w - lead) / 2.0;
+        }
+        return indented ? sum / run.size() : Double.NaN;
+    }
+
+    /** 換掉行首的縮排，讓這一列的中心落在 {@code centre}。 */
+    private static Component centreOn(Component row, double centre) {
+        List<Run> parts = runs(row);
+        int lead = 0;
+        int first = 0;
+        while (first < parts.size() && parts.get(first).space()) {
+            lead += parts.get(first).px();
+            first++;
+        }
+        int content = widthOf(row) - lead;
+        if (content <= 0 || first == parts.size()) {
+            return row;                        // 沒有字的列（不該出現）照原樣
+        }
+        int px = Math.max(0, (int) Math.round(centre - content / 2.0));
+        MutableComponent out = Component.empty();
+        String encoded = SpaceOffset.encode(px);
+        if (!encoded.isEmpty()) {
+            Style base = first > 0 ? parts.get(0).style() : parts.get(first).style();
+            out.append(literal(encoded, SpaceOffset.styleFor(base)));
+        }
+        for (int i = first; i < parts.size(); i++) {
+            out.append(literal(parts.get(i).text(), parts.get(i).style()));
+        }
+        return out;
+    }
+
+    /** 行首那一串可調整偏移的總寬，碰到第一段內容就停。 */
+    private static int leadingPx(Component line) {
+        int px = 0;
+        for (Run r : runs(line)) {
+            if (!r.space()) {
+                break;
+            }
+            px += r.px();
+        }
+        return px;
     }
 
     /**
@@ -3454,7 +3550,14 @@ public final class LineTranslator {
         }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
-            return null;
+            // 別人的名字夾在語料的 {u} 句型裡（標題的死亡快訊、別人的召喚物）。
+            // 見 NameFrames。名字是 {u} 佔位符，照原樣填回、不查表。
+            LineParts framed = framedOnMiss(line, parts, store);
+            translated = framed == null ? null : lookup(framed.template(), store);
+            if (translated == null || translated.isBlank()) {
+                return null;
+            }
+            parts = framed;
         }
         Component rebuilt = rebuild(translated, parts, store);
         if (rebuilt == null) {
@@ -3935,6 +4038,86 @@ public final class LineTranslator {
         return translateChat(message, store, null);
     }
 
+    /**
+     * 整句查不到之後，看它是不是語料裡某個 {@code {u}} 句型、夾著<b>別人</b>的名字。
+     * 見 {@link com.wynnchayuan.capture.NameFrames}。
+     *
+     * @param plain 照平常算出來的那一份（呼叫端已經拿它查過、查不到）
+     * @return 名字收成 {@code {u}} 的那一份；不是任何句型時回 {@code null}
+     */
+    private static LineParts framedOnMiss(StyledText line, LineParts plain,
+                                          TranslationStore store) {
+        // 模板裡已經有自己的名字（{u}）也照找：「帳號/暱稱」那種名字只收到一半。
+        // 見 NameFrames#find。
+        if (line == null || plain == null || store == null) {
+            return null;
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans spans =
+                store.nameFrames().find(line, plain.template());
+        return spans == null ? null : LineParts.of(line, spans);
+    }
+
+    /**
+     * 這一行夾著<b>別人的名字</b>、而且認得出是哪一個句型的話，名字收成 {@code {u}}
+     * 的那一份。給「看到別人的名字就整句放過」的那幾關用：標題、聊天的守門、收集端。
+     *
+     * <p>先問寫死的炸彈廣播（{@link com.wynnchayuan.capture.Broadcasts}），再問語料的
+     * {@code {u}} 句型。整句本來就查得到的不算——那種句子裡沒有名字可收。
+     *
+     * <p>收集端拿它來記：回傳的模板裡沒有名字，而且就是語料裡那條鍵（只差行首圖示）。
+     *
+     * @return 名字收成 {@code {u}} 的那一份；不是這種句子時回 {@code null}
+     */
+    public static LineParts nameFramed(StyledText line, TranslationStore store) {
+        if (line == null || store == null) {
+            return null;
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans bomb = com.wynnchayuan.capture.Broadcasts.find(line);
+        if (bomb != null) {
+            return LineParts.of(line, bomb);
+        }
+        LineParts plain = LineParts.of(line);
+        String template = plain.template();
+        if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
+            return null;
+        }
+        String hit = lookup(template, store);
+        if (hit == null || hit.isBlank()) {
+            hit = store.lookupUnwrapped(template);
+        }
+        if (hit != null && !hit.isBlank()) {
+            return null;
+        }
+        return framedOnMiss(line, plain, store);
+    }
+
+    /**
+     * 照 {@link #nameFramed} 認出來的那一份翻整行；只認整行的鍵，查不到就回 {@code null}
+     * ——名字那一段絕不能退到逐片段去查。
+     */
+    public static Component translateFramed(StyledText line, LineParts framed,
+                                            TranslationStore store) {
+        if (line == null || framed == null || store == null) {
+            return null;
+        }
+        String translated = lookup(framed.template(), store);
+        List<LineParts.Piece> glyphs = null;
+        if (translated == null || translated.isBlank()) {
+            translated = store.lookupUnwrapped(framed.template());
+            if (translated == null || translated.isBlank()) {
+                return null;
+            }
+            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+        }
+        Component rebuilt = glyphs == null
+                ? rebuild(translated, framed, store)
+                : rebuild(translated, framed, glyphs, store);
+        if (rebuilt == null) {
+            return null;
+        }
+        return unslant(realign(line, rebuilt, true, false));
+    }
+
     public static Component translateChat(StyledText message, TranslationStore store,
                                           Boolean centred) {
         return translateChat(message, store, centred, false);
@@ -3954,34 +4137,173 @@ public final class LineTranslator {
         }
         // 「沒翻到」跟「翻了但沒對齊」是兩種病。先前查不到就安靜回傳 null，
         // 於是診斷檔裡那一塊完全不存在，看起來像沒被呼叫到——分不出是哪一種。
-        String translated = lookup(parts.template(), store);
-        if (translated == null || translated.isBlank()) {
-            // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
-            translated = byColumn(parts.template(), store);
-        }
-        List<LineParts.Piece> glyphs = null;
-        if (translated == null || translated.isBlank()) {
-            // 還是查不到：把斷好的行併成一句再查一次。見 #unwrapped。
-            translated = store.lookupUnwrapped(parts.template());
-            if (translated != null && !translated.isBlank()) {
-                glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+        //
+        // 每一條路查到的譯文都要<b>真的重建得出來</b>才算數，重建不出來就換下一條路。
+        // 先前是「查到就定案」：一個事件一條的舊鍵只收了某一種折法（「! ⏎ (」），
+        // 伺服器折在別處時併句索引照樣找到它，可是那條譯文帶著自己的續行圖示，
+        // 數量對不上——整句放棄，後面的句型（#eventFrame）根本沒機會試。
+        Component rebuilt = null;
+        String tried = null;
+        for (int step = 0; step < 7 && rebuilt == null; step++) {
+            LineParts using = parts;
+            List<LineParts.Piece> glyphs = null;
+            String hit = null;
+            switch (step) {
+                case 0 -> hit = lookup(parts.template(), store);
+                // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
+                case 1 -> hit = byColumn(parts.template(), store);
+                case 2 -> {
+                    // 把斷好的行併成一句再查一次。見 #unwrapped。
+                    hit = store.lookupUnwrapped(parts.template());
+                    glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+                }
+                case 3, 4 -> {
+                    // 別人的名字夾在語料的某個 {u} 句型裡：名字收成 {u} 再查一次。見 NameFrames。
+                    LineParts framed = com.wynnchayuan.capture.Broadcasts.find(message) == null
+                            ? framedOnMiss(message, parts, store) : null;
+                    if (framed != null) {
+                        using = framed;
+                        if (step == 3) {
+                            hit = lookup(framed.template(), store);
+                        } else {
+                            hit = store.lookupUnwrapped(framed.template());
+                            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
+                        }
+                    }
+                }
+                case 5 -> {
+                    // 世界事件的倒數公告，伺服器折過行的那幾種。單行的在 lookup 裡就接住了。
+                    if (parts.template().indexOf('\n') >= 0) {
+                        hit = eventFrame(TranslationStore.unwrap(parts.template()), store);
+                        glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+                    }
+                }
+                // 登入的歡迎訊息：整則的鍵查不到時一段一段組。見 #welcomeBanner。
+                default -> hit = welcomeBanner(parts.template(), store);
+            }
+            if (hit == null || hit.isBlank()) {
+                continue;
+            }
+            tried = hit;
+            rebuilt = glyphs == null
+                    ? rebuild(hit, using, store)
+                    : rebuild(hit, using, glyphs, store);
+            if (rebuilt != null) {
+                parts = using;
             }
         }
-        if (translated == null || translated.isBlank()) {
-            FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
-                                 "語料裡查不到這一塊");
-            return null;
-        }
-        Component rebuilt = glyphs == null
-                ? rebuild(translated, parts, store)
-                : rebuild(translated, parts, glyphs, store);
         if (rebuilt == null) {
-            FlowedDebug.chatRows(message.getString(), "  譯文：" + translated,
-                                 "佔位符數量對不上，整塊放棄");
+            if (tried == null) {
+                FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
+                                     "語料裡查不到這一塊");
+            } else {
+                FlowedDebug.chatRows(message.getString(), "  譯文：" + tried,
+                                     "佔位符數量對不上，整塊放棄");
+            }
             return null;
         }
         rebuilt = rowColours(message, rebuilt, dominantStyle(List.of(parts)));
+        if (parts.template().startsWith(CHAT_COUNTER)) {
+            rebuilt = npcChatColours(message, rebuilt);
+        }
         return unslant(realignChat(message, rebuilt, centred, inPanel));
+    }
+
+    /** 見 {@link #npcChatColours}：原文與譯文的「計數 + 說話者 + 冒號」。 */
+    private static final java.util.regex.Pattern CHAT_HEAD =
+            java.util.regex.Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
+
+    /**
+     * 聊天形式的 NPC 台詞：計數與說話者各自照原文那一段的顏色。
+     *
+     * <h2>為什麼</h2>
+     * 原文是 {@code §7[1/3] §2Obsessor: §aYou need…}——灰、深綠、綠三段。上色是拿原文的字面
+     * 或它的單獨譯名到譯文裡找；說話者翻成「執念者」之後兩樣都找不到，名字就掉成台詞的綠色。
+     * 這種句子的形狀是固定的：譯文開頭一定是計數、接著名字到第一個冒號為止。
+     * 所以照位置貼，不必查表。
+     *
+     * <p>原文那一段不是單一顏色、或譯文開頭不是這個形狀，就原樣回傳。
+     */
+    static Component npcChatColours(StyledText message, Component rebuilt) {
+        try {
+            List<Run> src = runs(message.getComponent());
+            String srcText = joinedText(src);
+            java.util.regex.Matcher s = CHAT_HEAD.matcher(srcText);
+            if (!s.find()) {
+                return rebuilt;
+            }
+            TextColor counter = uniformColour(src, s.start(1), s.end(1));
+            TextColor speaker = uniformColour(src, s.start(3), s.end(3));
+            List<Run> made = runs(rebuilt);
+            java.util.regex.Matcher d = CHAT_HEAD.matcher(joinedText(made));
+            if (!d.find() || (counter == null && speaker == null)) {
+                return rebuilt;
+            }
+            int[] cuts = {d.start(1), d.end(1), d.start(3), d.end(3)};
+            MutableComponent out = Component.empty();
+            int at = 0;
+            for (Run run : made) {
+                String text = run.text();
+                int from = 0;
+                while (from < text.length()) {
+                    int next = text.length();
+                    for (int cut : cuts) {
+                        if (cut > at + from && cut < at + next) {
+                            next = cut - at;
+                        }
+                    }
+                    String piece = text.substring(from, next);
+                    int pos = at + from;
+                    Style style = run.style() == null ? Style.EMPTY : run.style();
+                    if (!run.space()) {
+                        if (counter != null && pos >= cuts[0] && pos < cuts[1]) {
+                            style = style.withColor(counter);
+                        } else if (speaker != null && pos >= cuts[2] && pos < cuts[3]) {
+                            style = style.withColor(speaker);
+                        }
+                    }
+                    out.append(Component.literal(piece).withStyle(style));
+                    from = next;
+                }
+                at += text.length();
+            }
+            return out;
+        } catch (Throwable t) {
+            return rebuilt;                    // 上色出事不能讓整句不見
+        }
+    }
+
+    private static String joinedText(List<Run> runs) {
+        StringBuilder out = new StringBuilder();
+        for (Run run : runs) {
+            out.append(run.text());
+        }
+        return out.toString();
+    }
+
+    /** {@code [from, to)} 這一段有字的地方都是同一個顏色時回傳它，否則 {@code null}。 */
+    private static TextColor uniformColour(List<Run> runs, int from, int to) {
+        TextColor found = null;
+        int at = 0;
+        for (Run run : runs) {
+            int start = at;
+            int end = at + run.text().length();
+            at = end;
+            if (end <= from || start >= to || run.space()) {
+                continue;
+            }
+            String inside = run.text().substring(Math.max(0, from - start),
+                                                 Math.min(run.text().length(), to - start));
+            if (inside.isBlank()) {
+                continue;
+            }
+            TextColor colour = run.style() == null ? null : run.style().getColor();
+            if (colour == null || found != null && !found.equals(colour)) {
+                return null;
+            }
+            found = colour;
+        }
+        return found;
     }
 
     /**
@@ -4005,9 +4327,6 @@ public final class LineTranslator {
      */
     static Component rowColours(StyledText original, Component rebuilt, Style blockStyle) {
         TextColor block = blockStyle == null ? null : blockStyle.getColor();
-        if (block == null) {
-            return rebuilt;
-        }
         List<List<Run>> origRows = splitRows(runs(original.getComponent()));
         List<List<Run>> madeRows = splitRows(runs(rebuilt));
         int[] keepOrig = solidRows(origRows);
@@ -4017,8 +4336,17 @@ public final class LineTranslator {
             return rebuilt;
         }
         TextColor[] rowColour = new TextColor[count];
+        boolean[] rowBold = new boolean[count];
         boolean any = false;
         for (int k = 0; k < count; k++) {
+            // 原文整行粗體（歡迎訊息的「Welcome to Wynncraft!」）：譯文那一行每個字都粗體。
+            // 句首句尾的標點不在重點段的配對範圍裡，「¡Bienvenido a Wynncraft!」的 ¡ 與 ! 先前是細的。
+            rowBold[k] = allBold(origRows.get(keepOrig[0] + k))
+                    && !allBold(madeRows.get(keepMade[0] + k));
+            any |= rowBold[k];
+            if (block == null) {
+                continue;
+            }
             java.util.Map<TextColor, Integer> weight = new java.util.LinkedHashMap<>();
             boolean usesBlock = false;
             for (Run run : origRows.get(keepOrig[0] + k)) {
@@ -4049,16 +4377,35 @@ public final class LineTranslator {
             }
             int k = r - keepMade[0];
             TextColor colour = k >= 0 && k < count ? rowColour[k] : null;
+            boolean bold = k >= 0 && k < count && rowBold[k];
             for (Run run : madeRows.get(r)) {
                 Style style = run.style();
                 if (colour != null && !run.space() && style != null
                         && block.equals(style.getColor())) {
                     style = style.withColor(colour);
                 }
+                if (bold && !run.space() && style != null && hasContent(run.text())) {
+                    style = style.withBold(true);
+                }
                 out.append(Component.literal(run.text()).withStyle(style));
             }
         }
         return out;
+    }
+
+    /** 這一行有實字，而且每一段實字都是粗體。 */
+    private static boolean allBold(List<Run> row) {
+        boolean any = false;
+        for (Run run : row) {
+            if (run.space() || !hasContent(run.text())) {
+                continue;
+            }
+            if (run.style() == null || !Boolean.TRUE.equals(run.style().isBold())) {
+                return false;
+            }
+            any = true;
+        }
+        return any;
     }
 
     /**
@@ -4124,6 +4471,101 @@ public final class LineTranslator {
             values += countNumbers(part);
         }
         return hits > 0 ? out.toString() : null;
+    }
+
+    /** 登入歡迎訊息的第一行。見 {@link #welcomeBanner}。 */
+    private static final String WELCOME_LINE =
+            GlyphSplitter.GLYPH_PLACEHOLDER + "Welcome to Wynncraft!" + NEWLINE;
+
+    /**
+     * 登入的歡迎訊息，整則的鍵查不到時<b>一段一段組</b>。
+     *
+     * <h2>為什麼</h2>
+     * 歡迎訊息是<b>一則</b>聊天訊息，底下幾行看當下的狀況拼起來：交易市場賣出／買進幾件、
+     * 坐騎吃完飼料或飼料槽空了、單數或複數。語料是一種組合一條整則的鍵，
+     * 新的組合（「賣出 1 件」接「另外有 2 匹坐騎吃完了食物」）就整則留英文。
+     *
+     * <h2>怎麼組</h2>
+     * 從第一行起，每次找<b>最長的</b>、語料裡有鍵的連續幾行（整則的舊鍵可以當前綴用，
+     * 例如「標頭＋賣出 1 件」），找不到才縮短，最短是一行。空行與只有圖示的行原樣留著。
+     * 每一段的 {@code {~N}} 照前面幾段用掉的數量往後推（同 {@link #byColumn}）。
+     *
+     * <h2>顏色標記一律拿掉（實機回報，test5）</h2>
+     * 「2 items were sold」那一段命中的是整則的舊鍵，它帶著 {@code {c1}…{c5}}；接在後面的
+     * 「and 2 Mounts…」是逐行鍵，沒有標記。重建時有標記的譯文是「標記說了算」，沒標記的字
+     * 沿用上一個標記——整行變成上一行的紫色，只有數字是對的。而且 {@code {cN}} 是
+     * 「整則第 N 個<b>不同</b>的顏色」，顏色跨行重複時（兩行都是紫色）照段數往後推也推不對。
+     * 所以組了兩段以上、而且有任何一段帶標記時，全部拿掉，交給沒有標記時的配色
+     * （每一行照原文那一行的顏色，見 {@link #rowColours}）。
+     *
+     * <h2>安全性</h2>
+     * 只認開頭是歡迎訊息的那一則；每一個有字的行都要被某一段蓋到，有一行查不到就整則放棄
+     * ——不會翻出半中半英。語料的逐行鍵寫成能單獨讀、也能接在上一行後面讀
+     * （「and …」那行是「另外有…」）。
+     *
+     * @return 組好的譯文；不是歡迎訊息、或有一行查不到時回傳 {@code null}
+     */
+    static String welcomeBanner(String template, TranslationStore store) {
+        if (template == null || store == null) {
+            return null;
+        }
+        int start = 0;
+        while (start < template.length() && template.charAt(start) == NEWLINE) {
+            start++;
+        }
+        if (!template.startsWith(WELCOME_LINE, start)) {
+            return null;
+        }
+        String[] lines = template.split(String.valueOf(NEWLINE), -1);
+        StringBuilder out = new StringBuilder();
+        int values = 0;
+        int segments = 0;
+        boolean marked = false;
+        int i = 0;
+        while (i < lines.length) {
+            if (i > 0) {
+                out.append(NEWLINE);
+            }
+            if (!GlyphSplitter.hasLetter(lines[i])) {
+                out.append(lines[i]);              // 空行、只有圖示的行
+                values += countNumbers(lines[i]);
+                i++;
+                continue;
+            }
+            String hit = null;
+            int end = -1;
+            for (int j = lines.length; j > i && hit == null; j--) {
+                if (!GlyphSplitter.hasLetter(lines[j - 1])
+                        || (i == 0 && j == lines.length)) {
+                    continue;                      // 段落結尾要是有字的行；整則已經查過了
+                }
+                String run = String.join(String.valueOf(NEWLINE),
+                                         java.util.Arrays.copyOfRange(lines, i, j));
+                String found = lookup(run, store);
+                // 譯文的行數要跟這一段一樣，不然後面的行會錯位
+                if (found != null && !found.isBlank()
+                        && found.split(String.valueOf(NEWLINE), -1).length == j - i) {
+                    hit = found;
+                    end = j;
+                }
+            }
+            if (hit == null) {
+                return null;                       // 有一行查不到：整則讓開
+            }
+            String shifted = renumber(hit, values);
+            if (shifted == null) {
+                return null;
+            }
+            marked |= distinctColours(hit) > 0 || hit.contains(COLOR_END);
+            segments++;
+            for (int k = i; k < end; k++) {
+                values += countNumbers(lines[k]);
+            }
+            out.append(shifted);
+            i = end;
+        }
+        // 組了兩段以上又有標記：全部拿掉，見上面「顏色標記一律拿掉」
+        return segments > 1 && marked ? stripColourTokens(out.toString()) : out.toString();
     }
 
     /** 這一段裡有幾個 {@code {~}}。 */
@@ -4313,6 +4755,10 @@ public final class LineTranslator {
             translated = withoutSpacerRows(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
+            // 商店的倒數看板：整塊的鍵查不到時一列一列組。見 #countdownBoard。
+            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
+        }
+        if (translated == null || translated.isBlank()) {
             return null;
         }
         Component rebuilt = rebuildLabel(label, translated, parts, store);
@@ -4349,7 +4795,24 @@ public final class LineTranslator {
             translated = withoutSpacerRows(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
+            // 商店的倒數看板。排在逐行之前：逐行那條路把倒數列原樣留成英文。
+            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
+        }
+        if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
+            // 「某人的力量之井」「某人的鳥」：主人的名字收成 {u}。見 NameFrames。
+            LineParts framed = framedOnMiss(label, parts, store);
+            if (framed != null) {
+                translated = store.labelLookup(framed.template());
+                if (translated == null || translated.isBlank()) {
+                    translated = lookup(framed.template(), store);
+                }
+                if (translated != null && !translated.isBlank()) {
+                    parts = framed;
+                }
+            }
         }
         if (translated == null || translated.isBlank()) {
             return null;
@@ -4436,6 +4899,49 @@ public final class LineTranslator {
             out.append(coloured);
         }
         return any ? out.toString() : translated;
+    }
+
+    /**
+     * 組出來的倒數看板，每一列照原文那一列的顏色。
+     *
+     * <h2>為什麼不交給一般的上色</h2>
+     * 一般的上色拿原文的字面或譯名到譯文裡找。看板的列幾乎都夾著數值
+     * （「寶箱 {@code {~}} 折扣」「{@code {~}} 時 {@code {~}} 分」），扣掉數值之後的字
+     * 在譯文裡不連在一起，找不到；於是倒數、折扣、贈品幾列全掉成同一個主色。
+     * 看板是一行對一行組出來的，<b>位置就是答案</b>：原文那一列只有一個顏色，
+     * 譯文那一列就整列標上它。數值帶著自己的樣式填回去，不受影響。
+     *
+     * <p>原文那一列有好幾種顏色的，照 {@link #labelColours} 一段一段對。
+     *
+     * @return 標好顏色的譯文；{@code composed} 是 {@code null} 時回 {@code null}
+     */
+    static String boardColours(StyledText label, LineParts parts, String composed,
+                               TranslationStore store) {
+        if (composed == null || label == null) {
+            return composed;
+        }
+        String coloured = labelColours(label, parts, composed, store);
+        List<List<LabelRun>> rows = labelRows(label);
+        String[] dst = coloured.split(NL, -1);
+        if (rows.size() != dst.length) {
+            return coloured;
+        }
+        List<Style> palette = palette(parts.runs());
+        StringBuilder out = new StringBuilder(coloured.length() + 32);
+        for (int i = 0; i < dst.length; i++) {
+            if (i > 0) {
+                out.append(NL);
+            }
+            String row = dst[i];
+            List<LabelRun> source = rows.get(i);
+            if (!row.isBlank() && source.size() > 0 && distinctStyles(source) == 1
+                    && !LABEL_COLOUR_TOKEN.matcher(row).find()) {
+                row = paint(row, List.of(new int[] {0, row.length()}),
+                            List.of(source.get(0).style()), palette);
+            }
+            out.append(row);
+        }
+        return out.toString();
     }
 
     /** 譯者已經寫了的色碼：{@code {c1}}、{@code {c:#hex}}、{@code {w1}}、{@code {/}}。 */
@@ -7680,8 +8186,343 @@ public final class LineTranslator {
             return hit;
         }
         hit = withMaker(key, store);
-        return hit != null ? hit : withOwner(key, store);
+        if (hit != null) {
+            return hit;
+        }
+        hit = withOwner(key, store);
+        if (hit == null) {
+            hit = eventFrame(key, store);
+        }
+        if (hit == null) {
+            hit = iconlessReward(key, store);
+        }
+        return hit != null ? hit : npcChatLine(key, store);
     }
+
+    /** 見 {@link #iconlessReward}：獎勵列的開頭。 */
+    private static final String REWARD_ROW = "- +";
+
+    /**
+     * 任務獎勵列少了行首的圖示：聊天現在送 {@code - +2 Treasure Boots}，語料收的是
+     * {@code {#}- +{~} Treasure Boots}。
+     *
+     * <h2>為什麼不放寬一般的查表</h2>
+     * 「少一個圖示也算對上」套在所有鍵上，名牌、tooltip 那幾條靠圖示分欄的路都會亂認。
+     * 這裡只認<b>獎勵列的形狀</b>（開頭就是 {@code - +}）：在前面補一個 {@code {#}} 查，
+     * 查到的譯文也要以那個 {@code {#}} 開頭才拿掉它——圖示數量跟原文一致，顏色標記照舊。
+     *
+     * @return 去掉行首圖示的譯文；不是獎勵列、或補了圖示也查不到時回 {@code null}
+     */
+    static String iconlessReward(String key, TranslationStore store) {
+        if (key == null || store == null) {
+            return null;
+        }
+        String core = key.strip();
+        if (!core.startsWith(REWARD_ROW) || core.indexOf('\n') >= 0) {
+            return null;
+        }
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        String hit = store.lookup(glyph + core);
+        if (hit == null || hit.isBlank() || !hit.startsWith(glyph)) {
+            return null;
+        }
+        String rest = hit.substring(glyph.length());
+        return rest.isBlank() ? null : rest;
+    }
+
+    /**
+     * 聊天形式的 NPC 台詞：{@code [1/3] Doan: Hey, ah... {u}, where are we going?}
+     *
+     * <h2>為什麼</h2>
+     * 同一句台詞在對話框裡出現時，任務檔裡早就有譯文（鍵是台詞本身）。聊天形式多了
+     * 計數與說話者，於是語料要一句一句再收一條整句鍵——幾百條裡大半是重抄任務檔。
+     *
+     * <h2>怎麼組</h2>
+     * 拆成計數、說話者、台詞三段：台詞照一般的查法（任務檔、對話、扁平檔都算）；
+     * 說話者照語料裡既有聊天鍵的叫法（{@link TranslationStore#chatSpeaker}），沒有就查
+     * 一字不差的同名鍵，都沒有就留原文；計數原樣。數值照段落往後推編號。
+     *
+     * <p>整句的鍵照樣先查（整行查表排在這條前面），這裡只接住查不到的。
+     * 台詞查不到就整句不動——不會翻出只有說話者是中文的半句。
+     *
+     * @return 組好的譯文；不是這種句子、或台詞查不到時回 {@code null}
+     */
+    static String npcChatLine(String template, TranslationStore store) {
+        if (template == null || store == null || !template.startsWith(CHAT_COUNTER)) {
+            return null;
+        }
+        java.util.regex.Matcher m = TranslationStore.CHAT_LINE.matcher(template.strip());
+        if (!m.matches()) {
+            return null;
+        }
+        String speaker = m.group("speaker").strip();
+        String line = m.group("line").strip();
+        if (speaker.isEmpty() || !hasWord(line)
+                || speaker.contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+            return null;
+        }
+        String said = lookup(line, store);
+        if (said == null || said.isBlank()) {
+            return null;
+        }
+        said = oneLine(said.strip());
+        String name = speakerName(speaker, store);
+        String numberedName = renumber(name, 2);
+        String numberedLine = renumber(said, 2 + countNumbers(speaker));
+        if (numberedName == null || numberedLine == null) {
+            return null;
+        }
+        return "[{~1}/{~2}] " + numberedName + ": " + numberedLine;
+    }
+
+    /** 見 {@link #npcChatLine}：聊天台詞的開頭。 */
+    private static final String CHAT_COUNTER = "[{~}/{~}] ";
+
+    /**
+     * 說話者的叫法：既有聊天鍵的多數叫法 → 一字不差的同名鍵（物品名不算）→ 原文。
+     * 譯名的佔位符跟原文對不上就用原文。
+     */
+    private static String speakerName(String speaker, TranslationStore store) {
+        String learned = store.chatSpeaker(speaker);
+        if (learned == null && !store.isItemName(speaker)) {
+            learned = store.lookupExact(speaker);
+        }
+        if (learned == null || learned.isBlank() || learned.indexOf('\n') >= 0
+                || !samePlaceholders(speaker, learned)) {
+            return speaker;
+        }
+        return learned.strip();
+    }
+
+    /** 兩段文字的數值、地名、玩家名佔位符一樣多（顏色標記不算）。 */
+    private static boolean samePlaceholders(String a, String b) {
+        return countNumbers(a) == countNumbers(stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
+                && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
+                && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
+                && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
+    }
+
+    /**
+     * 對話框的譯文可能帶著換行（小框照它折）。聊天是一則一行，換行併掉：
+     * 兩邊有一邊是全形字就直接接，否則補一個空白。
+     */
+    private static String oneLine(String text) {
+        if (text.indexOf('\n') < 0) {
+            return text;
+        }
+        StringBuilder out = new StringBuilder(text.length());
+        String[] parts = text.split("\n");
+        for (String part : parts) {
+            String piece = part.strip();
+            if (piece.isEmpty()) {
+                continue;
+            }
+            if (out.length() > 0) {
+                char before = out.charAt(out.length() - 1);
+                char after = piece.charAt(0);
+                if (!isWide(before) && !isWide(after)) {
+                    out.append(' ');
+                }
+            }
+            out.append(piece);
+        }
+        return out.toString();
+    }
+
+    private static boolean isWide(char c) {
+        return Character.UnicodeScript.of(c) == Character.UnicodeScript.HAN
+                || Character.UnicodeScript.of(c) == Character.UnicodeScript.HIRAGANA
+                || Character.UnicodeScript.of(c) == Character.UnicodeScript.KATAKANA
+                || (c >= '　' && c <= '〿') || (c >= '＀' && c <= '￯');
+    }
+
+    /**
+     * 商店的倒數看板（寶箱、股份、階級、炸彈的優惠牌子），一列一列組。
+     *
+     * <h2>為什麼</h2>
+     * 看板是一塊漂浮字，例如
+     * <pre>
+     *   Crate Offer
+     *   {~}h {~}m {~}s
+     *
+     *   {~} OFF Crates
+     *   ({~}x Regular and higher)
+     *
+     *   Extra Bonus:
+     *   Get VIP Rank FREE
+     * </pre>
+     * 倒數的格式隨剩餘時間變（天時分秒的任意組合），附加的幾列也隨活動變。語料先前是
+     * 一種組合一條整塊的鍵，收了幾十條，新的組合還是一直冒出來。
+     *
+     * <h2>怎麼組</h2>
+     * 至少要有一列是倒數（只有 {@code {~}} 加上 d／h／m／s）。倒數列查漂浮字專用的
+     * 譯法（{@code scoped/label.json}——這種短鍵放進一般語料會把別處的計時也換掉），
+     * 查不到就原樣；空行原樣；其餘每一列都要在語料裡查得到，有一列查不到就整塊讓開
+     * （不會翻出半中半英的牌子）。數值照前面幾列用掉的數量往後推編號；顏色交給
+     * 漂浮字一行對一行的上色（{@link #labelColours}），各列帶的標記一律拿掉。
+     *
+     * <p>整塊的鍵照樣先查（呼叫端都排在整塊查表後面），這裡只接住查不到的組合。
+     *
+     * @return 組好的譯文；不是倒數看板、或有一列查不到時回 {@code null}
+     */
+    static String countdownBoard(String template, TranslationStore store) {
+        if (template == null || store == null || template.indexOf('\n') < 0) {
+            return null;
+        }
+        String[] rows = template.split("\n", -1);
+        boolean timer = false;
+        boolean words = false;
+        for (String row : rows) {
+            timer |= TIMER_ROW.matcher(row.strip()).matches();
+            words |= hasWord(row);
+        }
+        if (!timer || !words) {
+            return null;
+        }
+        StringBuilder out = new StringBuilder();
+        int values = 0;
+        for (int i = 0; i < rows.length; i++) {
+            if (i > 0) {
+                out.append(NEWLINE);
+            }
+            String row = rows[i];
+            String hit;
+            if (TIMER_ROW.matcher(row.strip()).matches()) {
+                hit = store.labelLookup(row);
+                if (hit == null || hit.isBlank()) {
+                    hit = row;                 // 倒數沒有譯法：原樣（只有數字與單位）
+                }
+            } else if (!hasWord(row)) {
+                hit = row;                     // 空行、只有數值或圖示的行
+            } else {
+                hit = store.labelLookup(row);
+                if (hit == null || hit.isBlank()) {
+                    hit = lookup(row, store);
+                }
+                if (hit == null || hit.isBlank() || hit.indexOf('\n') >= 0) {
+                    return null;               // 有字的一列查不到：整塊讓開
+                }
+            }
+            String shifted = renumber(stripColourTokens(hit), values);
+            if (shifted == null) {
+                return null;
+            }
+            values += countNumbers(row);
+            out.append(shifted);
+        }
+        return out.toString();
+    }
+
+    /** 見 {@link #countdownBoard}：倒數那一列，天時分秒的任意組合。 */
+    private static final java.util.regex.Pattern TIMER_ROW =
+            java.util.regex.Pattern.compile("\\{~}[dhms](?: \\{~}[dhms])*");
+
+    /**
+     * 世界事件的倒數公告，當成「句型 + 事件名」翻。
+     *
+     * <h2>為什麼</h2>
+     * 伺服器送的是
+     * <pre>
+     *   {#} The Encroaching Destruction World Event starts in 39s! (236 blocks away) Click to track
+     * </pre>
+     * 先前語料一個事件一條鍵，而且「分秒／只有秒」各一條、伺服器折行的位置又各一條
+     * （折點隨事件名長短變）。於是任何一個沒收過的組合都是整句英文——使用者剛撞到的
+     * 就是「只剩秒數」的那一種。
+     *
+     * <p>事件名本來就有一條：{@code Encroaching Destruction [World Event]}（記分板與
+     * 追蹤欄用的）。所以這裡把事件名抽出來、查那一條、拿掉括號，填進語料裡的句型鍵：
+     * <pre>
+     *   {#} The {p} World Event starts in {~}m {~}s! ({~} blocks away) Click to track
+     *   {#} The {p} World Event starts in {~}s! ({~} blocks away) Click to track
+     * </pre>
+     * 用 {@code {p}} 是因為事件名跟地名一樣是「一個專有名詞的位置」，譯者看得懂；
+     * 但這裡在交給 {@code rebuild} 之前就把它換成事件名的譯文，不經過地名那條路
+     * （地名是原樣填回、不翻的）。事件名沒有譯文就照英文填進譯好的句型。
+     *
+     * <p>一個事件一條的舊鍵照樣先查（整行查表排在這條前面），這裡只接住查不到的。
+     *
+     * <p>只認單行；折過行的由呼叫端先併句（{@link TranslationStore#unwrap}），
+     * 符號池也要跟著少（見 {@link #unwrappedGlyphs}）。
+     *
+     * @return 填好事件名的譯文（顏色佔位符照句型鍵）；不是這一句、或句型沒翻時回 {@code null}
+     */
+    static String eventFrame(String template, TranslationStore store) {
+        if (template == null || store == null || template.indexOf('\n') >= 0
+                || !template.contains(EVENT_MARK)) {
+            return null;
+        }
+        java.util.regex.Matcher m = EVENT_LINE.matcher(template.strip());
+        if (!m.matches()) {
+            return null;
+        }
+        String name = m.group("name").strip();
+        // 名字裡有數值或圖示的話，填回去時會跟倒數的數值搶順序——不碰
+        if (name.isEmpty() || name.contains(GlyphSplitter.NUMBER_PLACEHOLDER)
+                || name.contains(GlyphSplitter.GLYPH_PLACEHOLDER)
+                || name.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
+            return null;
+        }
+        int lead = count(m.group("lead"), GlyphSplitter.GLYPH_PLACEHOLDER);
+        if (lead > 1) {
+            return null;
+        }
+        String key = GlyphSplitter.GLYPH_PLACEHOLDER + " The " + GlyphSplitter.PLACE_PLACEHOLDER
+                + " World Event starts in "
+                + (m.group("timer").contains("m") ? "{~}m {~}s" : "{~}s")
+                + "! (" + GlyphSplitter.NUMBER_PLACEHOLDER + " blocks away) Click to track";
+        String frame = store.lookup(key);
+        if (frame == null || frame.isBlank()
+                || count(frame, GlyphSplitter.PLACE_PLACEHOLDER) != 1) {
+            return null;
+        }
+        if (lead == 0) {
+            // 原文行首沒有頻道圖示（例如別的模組轉述的）：句型鍵帶著的那一個要拿掉
+            if (!frame.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                return null;
+            }
+            frame = frame.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).stripLeading();
+        }
+        return frame.replace(GlyphSplitter.PLACE_PLACEHOLDER, eventName(name, store));
+    }
+
+    /**
+     * 事件名的譯文：查 {@code <名字> [World Event]} 那一條、拿掉結尾的括號。
+     * 查不到、或譯文帶著佔位符，就用英文原名。
+     */
+    private static String eventName(String name, TranslationStore store) {
+        String hit = store.lookup(name + EVENT_SUFFIX);
+        if (hit == null || hit.isBlank()) {
+            return name;
+        }
+        String bare = TRAILING_BRACKET.matcher(hit.strip()).replaceFirst("").strip();
+        return bare.isEmpty() || bare.contains("{") ? name : bare;
+    }
+
+    private static int count(String text, String token) {
+        int n = 0;
+        for (int at = text.indexOf(token); at >= 0; at = text.indexOf(token, at + token.length())) {
+            n++;
+        }
+        return n;
+    }
+
+    /** 見 {@link #eventFrame}：先用這個字串過濾，絕大多數的行不必跑正規式。 */
+    private static final String EVENT_MARK = " World Event starts in ";
+
+    /** 見 {@link #eventName}：記分板與追蹤欄那一條的後綴。 */
+    private static final String EVENT_SUFFIX = " [World Event]";
+
+    /** 見 {@link #eventName}：譯文結尾的「[世界事件]」「[ワールドイベント]」。 */
+    private static final java.util.regex.Pattern TRAILING_BRACKET =
+            java.util.regex.Pattern.compile("\\s*[\\[［][^\\[\\]［］]*[\\]］]$");
+
+    /**
+     * 見 {@link #eventFrame}：併句之後的單行。倒數有「分秒」與「只有秒」兩種，
+     * 驚嘆號與括號之間的空白伺服器有時不給。
+     */
+    private static final java.util.regex.Pattern EVENT_LINE = java.util.regex.Pattern.compile(
+            "(?<lead>(?:\\{#}\\s*)*)The (?<name>.+?) World Event starts in "
+                    + "(?<timer>\\{~}m\\s*\\{~}s|\\{~}s)!\\s*\\(\\{~} blocks away\\)\\s*Click to track");
 
     /**
      * 「Crafted by {@code <玩家名>}」這種「固定開頭 + 一個名字」的行。
@@ -7748,6 +8589,20 @@ public final class LineTranslator {
         }
         String name = core.substring(0, at);
         if (!isName(name)) {
+            return null;
+        }
+        // 整個名字本身就是語料的一條（物品名「Adventurer's Diary」「Cat's Ears」）：
+        // 那不是「某人的東西」，交給逐片段那條路照那一條翻。
+        //
+        // 實機回報（2026-10-17）：物品說明看得見的那一行是「圖示 × 5 + 名字」，整行查不到
+        // 就落到這裡，前半「{#}{#}{#}{#}{#}Adventurer」剝掉圖示也像個 ID，於是畫成
+        // 「Adventurer 的日記」（日記是 npc.json 的一條），素材自己的譯名與附在後面的
+        // 原文都不見了。沒有附原文的「X's Y」裝備（Hero's Mask、Writer's Block）同一個樣子。
+        String whole = core;
+        while (whole.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+            whole = whole.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).strip();
+        }
+        if (store.lookupExact(whole) != null || store.isItemName(whole)) {
             return null;
         }
         String thing = core.substring(at + 3).strip();
@@ -10596,7 +11451,7 @@ public final class LineTranslator {
     private static final java.util.regex.Pattern COLOUR_ANY =
             java.util.regex.Pattern.compile("\\{c[^}]*}");
 
-    private static Component literal(String text, Style style) {
+    static Component literal(String text, Style style) {
         text = stripColourTokens(text);
         text = deIcon(text);
         // 配對字型只給<b>真的需要它</b>的字。

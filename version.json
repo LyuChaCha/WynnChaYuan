@@ -1,12 +1,78 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.2_3",
+ "latest": "1.0.3",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.3": {
+   "headline": "1.0.3: other players' names in broadcasts, a Wynntils speed-up, and the Wynnventory price box",
+   "items": [
+    "New: broadcasts that name another player are translated, with the name left as it is: party buffs, death messages and bombs.",
+    "New: world event start notices, shop countdown boards, NPC lines that arrive in chat and reward rows without an icon are translated.",
+    "New: the login welcome banner is translated line by line and keeps its colours.",
+    "New: dialogue lines too long for the box scroll like a marquee instead of showing the original.",
+    "New: F6 \"Badge & cape\" is now \"Features\", with a \"Speed up Wynntils item rendering\" switch (on by default) that makes the inventory, bank and market smoother.",
+    "New: with Wynnventory, the price box is placed by the tooltip that is actually shown, shrinks when it is too long, and with \"anchor tooltips\" on it stays at the left edge while the item tooltip moves clear of it. It also costs less while hovering an item.",
+    "Fixed: party buff broadcasts keep their colours (your name no longer turns yellow).",
+    "Fixed: player names in the Tab player list are no longer translated.",
+    "Fixed: translated scoreboard rows that are wider than the scoreboard wrap instead of running off it.",
+    "Fixed: the possible items list of an unidentified item shows the original names and keeps its indent, and the sealed description is centred again.",
+    "Fixed: item names from the item files show the original on the name rows, and possessive item names are no longer read as someone else's item.",
+    "Fixed: in the original + translation chat mode, messages that could not be translated are no longer posted again.",
+    "Fixed: Shiny item names are no longer reflowed with the badge row, and an opening bracket never ends a line.",
+    "Fixed: the side translation panel no longer covers the original tooltip.",
+    "Fixed: long dialogue wraps inside the panel, and replace mode no longer shows line break marks.",
+    "New: the Lootrun mission Balancing Act follows the content name setting.",
+    "Translations: Traditional Chinese quest dialogue polished across about 100 quests, unified terms, Lootrun panels and cards, Mythic names, and many more lines recorded in game."
+   ],
+   "zh_tw": {
+    "headline": "1.0.3：公告裡別人的名字、Wynntils 加速、Wynnventory 價格框",
+    "items": [
+     "新增：公告裡出現別的玩家名字時也會翻譯，名字原樣保留，例如隊友給的增益、死亡訊息、丟炸彈。",
+     "新增：世界事件的開始公告、商店倒數看板、在聊天欄出現的 NPC 台詞、少了圖示的獎勵列都會翻譯。",
+     "新增：登入的歡迎訊息逐行翻譯，保留原本的顏色。",
+     "新增：對話太長、對話框塞不下時改用跑馬燈捲動，不再露出原文。",
+     "新增：F6「徽章與披風」改名「功能」，加入「加速 Wynntils 物品繪製」開關（預設開啟），開背包、銀行、市集時更順。",
+     "新增：裝了 Wynnventory 時，價格框照實際顯示的物品說明擺放，太長會縮小；開啟「固定在左側」時固定在畫面左邊，物品說明會讓開。指著物品時也更省效能。",
+     "修正：隊友給的增益公告保留原本的顏色，自己的名字不再變成黃色。",
+     "修正：Tab 玩家清單裡的玩家名不再被翻譯。",
+     "修正：右側記分板的譯文比框寬時會換行，不再超出框外。",
+     "修正：未鑑定物品的「可能性」清單附上原文、保留縮排，封印說明重新置中。",
+     "修正：物品檔裡的名稱在名稱列也會附原文；所有格的物品名不再被當成「某人的東西」。",
+     "修正：「原文＋譯文」聊天模式不再把沒翻到的訊息重貼一次。",
+     "修正：Shiny 物品的名稱列不再跟徽章列一起重排，左括號不會留在行尾。",
+     "修正：側邊翻譯面板不再壓在原文上。",
+     "修正：太長的對話在小框裡換行，就地取代模式不再出現換行符號。",
+     "新增：Lootrun 新使命 Balancing Act 也照「內容名稱」的設定顯示。",
+     "譯文：繁中任務對話潤稿（約 100 個任務）、用詞統一、Lootrun 面板與卡片、Mythic 名稱，以及實機收到的新句子。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.3：公告里其他玩家的名字、Wynntils 加速、Wynnventory 价格框",
+    "items": [
+     "新增：公告里出现其他玩家名字时也会翻译，名字原样保留，例如队友给的增益、死亡消息、扔炸弹。",
+     "新增：世界事件的开始公告、商店倒计时看板、在聊天栏出现的 NPC 台词、缺了图标的奖励行都会翻译。",
+     "新增：登录的欢迎消息逐行翻译，保留原本的颜色。",
+     "新增：对话太长、对话框放不下时改用跑马灯滚动，不再露出原文。",
+     "新增：F6「徽章与披风」改名「功能」，加入「加速 Wynntils 物品绘制」开关（默认开启），打开背包、银行、市场时更流畅。",
+     "新增：装了 Wynnventory 时，价格框按实际显示的物品说明摆放，太长会缩小；开启「固定在左侧」时固定在屏幕左边，物品说明会让开。指着物品时也更省性能。",
+     "修正：队友给的增益公告保留原本的颜色，自己的名字不再变成黄色。",
+     "修正：Tab 玩家列表里的玩家名不再被翻译。",
+     "修正：右侧计分板的译文比框宽时会换行，不再超出框外。",
+     "修正：未鉴定物品的「可能性」列表附上原文、保留缩进，封印说明重新居中。",
+     "修正：物品文件里的名称在名称行也会附原文；所有格的物品名不再被当成「某人的东西」。",
+     "修正：「原文＋译文」聊天模式不再把没翻到的消息重发一次。",
+     "修正：Shiny 物品的名称行不再跟徽章行一起重排，左括号不会留在行尾。",
+     "修正：侧边翻译面板不再压在原文上。",
+     "修正：太长的对话在小框里换行，就地替换模式不再出现换行符号。",
+     "新增：Lootrun 新使命 Balancing Act 也按「内容名称」的设置显示。",
+     "译文：繁中任务对话润色（约 100 个任务）、用词统一、Lootrun 面板与卡片、Mythic 名称，以及实机收到的新句子。"
+    ]
+   }
+  },
   "1.0.2_3": {
    "headline": "1.0.2_3: ability tree tooltip fixes and Lootrun names",
    "items": [
