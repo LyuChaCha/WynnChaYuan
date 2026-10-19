@@ -206,7 +206,9 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Territory | 領地 | 公會戰爭奪的單位。既有語料已用此譯法 |
 | Decay | 黯蝕 | 指 Gavel 那場災厄。一般語意的腐朽／枯萎（`Decaying Heart`、`fallen into decay`）與機制上的層數衰減（`Distortion decays`）不適用 |
 | Corruption | 腐敗 | 劇情裡的那個勢力。`Corrupted`／`the corrupt`（怪物）＝腐敗生物、腐敗者；`Corrupter of Worlds`＝世界腐敗者。不寫「腐化」（使用者 2026-10-19 定案） |
-| Wanderer | 流浪者 | 不寫「漫遊者」「浪人」。注意 `Vagabond` 目前也譯「流浪者」（使用者 2026-10-19 定案） |
+| Wanderer | 流浪者 | 不寫「漫遊者」「浪人」（使用者 2026-10-19 定案） |
+| Vagabond | 浪者 | 跟 Wanderer 分開：浪者之甲、浪者之恥法器、迷途的浪者（使用者 2026-10-19 定案） |
+| Rotting（素材） | 腐爛的 | 腐爛的繃帶、腐爛的骨；不用「腐敗」，那是 Corruption（使用者 2026-10-19 定案） |
 | Airbase | 飛船基地 | 不寫「空軍基地」「機場」（使用者 2026-10-19 定案） |
 | Corkian | Corkian | 原文是 Corkian 就寫 Corkian，前後接中文空一格。原文是 `Corkus's`／`of Corkus` 才寫「Corkus 的」（地名所有格）（使用者 2026-10-19 定案） |
 | Dwarf / Dwarves / Dwarven | 矮人 | `Dwarven X` 照語感寫「矮人 X」或「矮人的 X」。任務名 `Dwarves and Doguns`＝矮人與 Doguns（使用者 2026-10-19 定案） |
