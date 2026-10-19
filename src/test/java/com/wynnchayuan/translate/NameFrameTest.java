@@ -103,6 +103,17 @@ public final class NameFrameTest {
         String got = hit == null ? null : hit.getString();
         check("★ 「帳號/暱稱」而帳號是自己：照樣翻（實際 " + got + "）",
               "Green_teaTW/RichaCha 賦予你 29% 甲盾與 8% 乙力。".equals(got));
+        // 實機回報（10-19，test jar 9）：翻出來了，可是名字變黃、其餘整句同一個顏色
+        check("★ 帳號那一半是名字的顏色（實際 " + hex(colourOf(hit, "Green_teaTW")) + "）",
+              hit != null && colourOf(hit, "Green_teaTW") == AQUA);
+        check("★ 暱稱是名字的顏色（實際 " + hex(colourOf(hit, "RichaCha")) + "）",
+              hit != null && colourOf(hit, "RichaCha") == AQUA);
+        check("★ 句子是灰的（實際 " + hex(colourOf(hit, "賦予你")) + "）",
+              hit != null && colourOf(hit, "賦予你") == GREY);
+        check("★ 數值是青的（實際 " + hex(colourOf(hit, "29%")) + "）",
+              hit != null && colourOf(hit, "29%") == AQUA);
+        check("★ 「與」是灰的（實際 " + hex(colourOf(hit, "與")) + "）",
+              hit != null && colourOf(hit, "與") == GREY);
         check("★ 聊天的守門也認得", LineTranslator.nameFramed(line, store) != null);
         String captured = com.wynnchayuan.listener.CaptureProbe.chatTemplate(line, store);
         check("★ 收集端記的是 {u} 那一份（實際 " + captured + "）", BUFF.equals(captured));
@@ -189,7 +200,7 @@ public final class NameFrameTest {
     private static TranslationStore corpus(Path dir) throws Exception {
         Files.createDirectories(dir);
         JsonObject misc = new JsonObject();
-        misc.addProperty(BUFF, "{u} 賦予你 {~1} 甲盾與 {~2} 乙力。");
+        misc.addProperty(BUFF, "{u}{c:gray} 賦予你 {c:aqua}{~1} 甲盾{c:gray}與 {c:aqua}{~2} 乙力{c:gray}。");
         misc.addProperty("{u} has given you {~} strength.", "{u} 賦予你 {~} 乙力。");
         // 名字排在數值後面：名字裡的數字要是混進 {~}，這一條就會填錯
         misc.addProperty(SPEED, "+{~} 分鐘疾行，來自 {u}。");
@@ -316,6 +327,8 @@ public final class NameFrameTest {
               "Green_teaTW/RichaCha 賦予你 29% 甲盾與 8% 乙力。".equals(text));
         check("名字留著它自己的顏色", hit != null && colourOf(hit, "RichaCha") == AQUA);
         check("數值保留原本的顏色", hit != null && colourOf(hit, "29%") == AQUA);
+        check("句子是灰的（實際 " + hex(colourOf(hit, "賦予你")) + "）", hit != null && colourOf(hit, "賦予你") == GREY);
+        check("「與」是灰的（實際 " + hex(colourOf(hit, "與")) + "）", hit != null && colourOf(hit, "與") == GREY);
         check("譯文沒有殘留的佔位符", text != null && !text.contains("{"));
 
         for (String name : List.of("No Dmg Guardian", "Bash", "Meteor", "Rabbit_flower", "1234567")) {
@@ -488,6 +501,10 @@ public final class NameFrameTest {
     }
 
     // ------------------------------------------------------------ 工具
+
+    private static String hex(int colour) {
+        return colour < 0 ? "無" : String.format("#%06X", colour);
+    }
 
     private static int colourOf(Component whole, String piece) {
         int[] found = {-1};

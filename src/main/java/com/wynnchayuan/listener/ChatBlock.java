@@ -232,6 +232,21 @@ public final class ChatBlock {
      */
     private static boolean sending = false;
 
+    /** 正在送出去的那一則，原樣。見 {@link #sendingNow}。 */
+    private static Component sendingWhole;
+
+    /**
+     * 正在送出去的那一則（只有在 {@code displayClientMessage} 同步觸發的事件裡拿得到）。
+     *
+     * <p>重送的譯文會再走一次 Wynntils 的聊天流程，那裡的功能會再改它一次：
+     * 「提及」把玩家自己的名字染成黃色（使用者 10-19 的截圖：隊友給的增益，名字變黃）。
+     * 原文那一則是伺服器訊息，Wynntils 預設不在這類訊息上標提及；我們送的是
+     * 用戶端訊息，就被標了。我們的譯文已經是最後要畫的樣子，收回來時放回原樣。
+     */
+    public static synchronized Component sendingNow() {
+        return sending ? sendingWhole : null;
+    }
+
     /** 內容那一道記多久。事件是當場回來的，幾秒只是給延後處理的模組留餘地。 */
     private static final long MINE_TTL_MS = 5_000;
 
@@ -290,10 +305,12 @@ public final class ChatBlock {
             // 記晚了就來不及擋。見 #mine 與 #sending。
             remember(whole);
             sending = true;
+            sendingWhole = whole;
             try {
                 mc.player.displayClientMessage(whole, false);
             } finally {
                 sending = false;
+                sendingWhole = null;
             }
         }
     }

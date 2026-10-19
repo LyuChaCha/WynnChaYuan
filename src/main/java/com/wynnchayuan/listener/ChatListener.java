@@ -109,6 +109,14 @@ public final class ChatListener {
         // 我們自己送出去的譯文會再觸發一次這個事件。再翻一次是白費力氣，
         // 而且它會跟後面真正的新訊息攢成同一塊。見 ChatBlock#isOurs。
         if (ChatBlock.isOurs(message)) {
+            // 其他功能（Wynntils 的提及高亮）在前面改過它的話放回原樣。見 ChatBlock#sendingNow。
+            Component ours = ChatBlock.sendingNow();
+            if (ours != null) {
+                StyledText original = StyledText.fromComponent(ours);
+                if (!original.equals(message)) {
+                    event.setMessage(original);
+                }
+            }
             return;
         }
         CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
