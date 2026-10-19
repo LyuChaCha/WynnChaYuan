@@ -703,6 +703,14 @@ tasks.register('runEventFrameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runEventFrameChecks' }
 
+tasks.register('runScoreboardWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證記分板疊層裡比框寬的譯文折成兩列，條列項目的續行縮排'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ScoreboardWrapTest'
+}
+tasks.named('check') { dependsOn 'runScoreboardWrapChecks' }
+
 tasks.register('runCountdownBoardChecks', JavaExec) {
     group = 'verification'
     description = '驗證商店的倒數看板一列一列組：沒收過的時間格式與附加列都翻得出來，顏色照每一列'
