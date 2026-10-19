@@ -29,7 +29,10 @@ import java.util.Optional;
  * Ritual)」那一列再查表會被換回中文）。畫完把 Wynntils 的欄位放回去，它自己的
  * 更新流程看到的永遠是原文。
  *
- * <p>折的寬度與框寬都用 Wynntils 原本算出來的（照英文）：譯文的框跟英文版一樣寬，只會變高。
+ * <p>框先撐寬到疊層自己的寬度（Wynntils 的 Overlay 大小，預設 150，可在它的設定裡拉），
+ * 塞得下就不折；只有比那個還寬的列才折。框是往對齊的那一邊長的（靠右的記分板往左長）。
+ * 先前是照英文的框寬硬折，「殲滅：第 1 波 - 還剩 1 隻怪物！」只比英文寬一點也被折成兩列
+ *（使用者 2026-10-19 的截圖）。
  *
  * <p>欄位用反射拿，不用 {@code @Shadow}：Wynntils 改名時這裡只是不折，不會開不起來。
  */
@@ -54,6 +57,7 @@ public final class ScoreboardWrap {
     /** 上一幀的結果：譯文那幾列（照物件身分比）與框寬沒變就直接用。 */
     private static List<StyledText> lastTranslated = List.of();
     private static float lastWidth = -1;
+    private static float lastRoom = -1;
     private static List<StyledText> lastWrapped = List.of();
     private static float lastLongest;
 
@@ -73,6 +77,7 @@ public final class ScoreboardWrap {
         try {
             List<StyledText> source = (List<StyledText>) lines.get(overlay);
             float width = longest.getFloat(overlay);
+            float room = Math.max(width, roomOf(overlay));
             if (source == null || source.isEmpty()) {
                 return;
             }
@@ -80,20 +85,21 @@ public final class ScoreboardWrap {
             for (StyledText row : source) {
                 translated.add(WynntilsText.screenText(row));
             }
-            if (!sameRows(translated, lastTranslated) || width != lastWidth) {
+            if (!sameRows(translated, lastTranslated) || width != lastWidth || room != lastRoom) {
                 StringSplitter splitter = Minecraft.getInstance().font.getSplitter();
                 List<StyledText> wrapped = new ArrayList<>();
                 float widest = 0;
                 for (StyledText row : translated) {
-                    for (StyledText piece : wrap(row, width, splitter)) {
+                    for (StyledText piece : wrap(row, room, splitter)) {
                         wrapped.add(piece);
                         widest = Math.max(widest, splitter.stringWidth(piece.getComponent()));
                     }
                 }
                 lastTranslated = translated;
                 lastWidth = width;
+                lastRoom = room;
                 lastWrapped = wrapped;
-                // 框寬維持 Wynntils 原本算的（含標題 play.wynncraft.com），只有折不開的長字才撐寬
+                // 框至少跟 Wynntils 原本算的一樣寬（含標題 play.wynncraft.com），譯文寬就跟著寬
                 lastLongest = Math.max(width, widest);
             }
             savedLines = source;
@@ -192,6 +198,35 @@ public final class ScoreboardWrap {
             return Optional.empty();
         }, Style.EMPTY);
         return out;
+    }
+
+    private static java.lang.reflect.Method sizeGetter;
+    private static Field scaleField;
+    private static java.lang.reflect.Method scaleGet;
+
+    /** 疊層自己的寬度換算成字的寬度（除掉字級倍率）。讀不到就回 0，照 Wynntils 的框寬折。 */
+    private static float roomOf(Object overlay) {
+        try {
+            if (sizeGetter == null) {
+                Class<?> type = overlay.getClass();
+                while (type != null && !OVERLAY.equals(type.getName())) {
+                    type = type.getSuperclass();
+                }
+                if (type == null) {
+                    return 0;
+                }
+                Field scale = type.getDeclaredField("fontScale");
+                scale.setAccessible(true);
+                scaleField = scale;
+                scaleGet = scale.getType().getMethod("get");
+                sizeGetter = type.getMethod("getWidth");
+            }
+            float overlayWidth = (Float) sizeGetter.invoke(overlay);
+            float scale = (Float) scaleGet.invoke(scaleField.get(overlay));
+            return scale > 0 ? overlayWidth / scale : overlayWidth;
+        } catch (Throwable t) {
+            return 0;
+        }
     }
 
     /** 物件身分相同才算同一份：screenText 查得到時回傳的是快取裡同一個物件。 */

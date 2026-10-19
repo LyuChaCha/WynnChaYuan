@@ -119,8 +119,17 @@ public final class HighlightModelCache {
         return config == null || config.wynntilsFps();
     }
 
+    /** 「隱藏專業星等」讀一次就記半秒：每次讀模型資料都走反射，反射本身成了熱點（JFR 1%）。 */
+    private static boolean hideCached;
+    private static long hideReadAt;
+
     private static boolean hideStar(Object feature) throws ReflectiveOperationException {
-        return Boolean.TRUE.equals(configGet.invoke(hideStarField.get(feature)));
+        long now = System.nanoTime();
+        if (hideReadAt == 0 || now - hideReadAt > 500_000_000L) {
+            hideCached = Boolean.TRUE.equals(configGet.invoke(hideStarField.get(feature)));
+            hideReadAt = now;
+        }
+        return hideCached;
     }
 
     @SuppressWarnings("unchecked")
