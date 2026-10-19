@@ -235,7 +235,7 @@
   },
   "ability-shaman#0245": {
    "src": "Additionally, while wearing the {#} Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor {~}s, reducing their damage by {~} and slowing\nthem by {~}.",
-   "dst": "さらに、{#} Mask of The Fanatic を着けている間、\nAura が当たった敵は {~}秒間 Weathering になり、\nダメージが {~} 下がり、\n{~} 減速する。",
+   "dst": "{c1}さらに、{#}{c2} Mask of The Fanatic{c1} を着けている間、\n{c3}Aura{c1} が当たった敵は {c5}{~}秒間{c1} {c4}Weathering{c1} になり、\nダメージが {c5}{~}{c1} 下がり、\n{c5}{~}{c1} 減速する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -319,7 +319,7 @@
   },
   "ability-shaman#0243": {
    "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
-   "dst": "Artist's Immersion でコストが下がった呪文を使うと\n儀式の円を呼び出す。さらに使うたびに\n円の半径とヒット数が {~} 増える。\n(最大 {~} ブロック)",
+   "dst": "{c2}Artist's Immersion{c1} でコストが下がった呪文を使うと\n儀式の円を呼び出す。さらに使うたびに\n円の半径とヒット数が {c3}{~}{c1} 増える。\n{c4}(最大 {~} ブロック)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -361,7 +361,7 @@
   },
   "ability-shaman#0273": {
    "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
-   "dst": "Eye of the Storm は Surge 1つごとに、当たった敵へ\nStatic を +{~} 与える。(Static は最大 {~})",
+   "dst": "{c1}Eye of the Storm{c2} は {c4}Surge{c2} 1つごとに、当たった敵へ\n{c4}Static{c2} を {c3}+{~}{c2} 与える。{c5}(Static は最大 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -389,7 +389,7 @@
   },
   "ability-shaman#0281": {
    "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
-   "dst": "あなたかトーテムが {~3} 個以上の\n泉の中にいると、{~2}秒ごとに\nマナを +{~1} 得る。",
+   "dst": "{c1}あなたか{c3}トーテム{c1}が {c2}{~3}{c1} 個以上の\n泉の中にいると、{c2}{~2}秒{c1}ごとに\nマナを {c2}+{~1}{c1} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -403,7 +403,7 @@
   },
   "ability-shaman#0264": {
    "src": "Grant nearby allies a stack of buffs per {~}s\nwhile near you, based on your current Mask.\n(Max {~} Stacks)",
-   "dst": "近くにいる味方に {~}秒ごと、\n着けている仮面に応じたバフを1スタック与える。\n(最大 {~} スタック)",
+   "dst": "{c1}近くにいる味方に {c2}{~}秒{c1}ごと、\n着けている{c3}仮面{c1}に応じたバフを1スタック与える。\n{c4}(最大 {~} スタック)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -515,7 +515,7 @@
   },
   "ability-shaman#0266": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
-   "dst": "Uproot の代わりに\n神秘の仮面をひとつ着ける。\n(シフト + Uproot でひとつ前の仮面を着ける)",
+   "dst": "{c2}Uproot{c1} の代わりに\n{c3}神秘の仮面{c1}をひとつ着ける。\n{c4}(シフト + Uproot でひとつ前の仮面を着ける)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-shaman#0258": {
    "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "{#} Mask of the Heretic を着けている間、\nFrog Dance が着地時に\n小さな泉を作る。(最大 {~})",
+   "dst": "{#} {c2}Mask of the Heretic{c1} を着けている間、\n{c3}Frog Dance{c1} が着地時に\n小さな泉を作る。{c4}(最大 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -585,7 +585,7 @@
   },
   "ability-shaman#0253": {
    "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "{#} Mask of the Heretic を着けている間、\nHaul は代わりに地面から跳ね上がり、\n近くの敵にダメージを与える。\n(シフト長押しでキャンセル)",
+   "dst": "{#} {c2}Mask of the Heretic{c1} を着けている間、\n{c3}Haul{c1} は代わりに地面から跳ね上がり、\n近くの敵にダメージを与える。\n{c4}(シフト長押しでキャンセル)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-shaman#0257": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
-   "dst": "{#} Mask of the Lunatic を着けている間、Aura を使うと\n力が溜まり、Surge を1スタック得る。\n(Surge は最大 {~})",
+   "dst": "{#}{c2} Mask of the Lunatic{c1} を着けている間、{c3}Aura{c1} を使うと\n力が溜まり、{c4}Surge{c1} を1スタック得る。\n{c5}(Surge は最大 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -669,7 +669,7 @@
   },
   "ability-shaman#0286": {
    "src": "While you have Surge, strike nearby enemies with\nlightning every {~}s.",
-   "dst": "Surge がある間、{~}秒ごとに\n近くの敵を雷で打つ。",
+   "dst": "{c2}Surge{c1} がある間、{c3}{~}秒{c1}ごとに\n近くの敵を雷で打つ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -767,7 +767,7 @@
   },
   "ability-shaman#0282": {
    "src": "⌛ Duration: {~}s (per stack)\n☀ Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "⌛ 持続時間: {~}秒 (スタックごと)\n☀ 効果範囲: {~} ブロック (円形)",
+   "dst": "{c1}⌛ {c2}持続時間: {c3}{~}秒 {c4}(スタックごと)\n{c5}☀ {c2}効果範囲: {c3}{~} ブロック {c2}(円形)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -922,7 +922,7 @@
   },
   "ability-shaman#0315": {
    "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
-   "dst": "{#} Fanatic: {~}秒分の弱体効果を与えると、Ritual Circle の",
+   "dst": "{#} {c1}Fanatic{c2}: {c3}{~}秒{c2}分の弱体効果を与えると、Ritual Circle の",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1091,7 +1091,7 @@
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "レリックを使っているとき、通常攻撃の\nビーム速度が2倍になり、ダメージが上がる。",
+   "dst": "{c2}レリックを使っているとき、{c3}通常攻撃{c2}の\nビーム速度が{c1}2倍{c2}になり、ダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1428,7 +1428,7 @@
   },
   "ability-shaman#0029": {
    "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
-   "dst": "空中にあるトーテムが\n雨の筋を残し、{~}秒ごとに\nその下の敵にダメージを与える。",
+   "dst": "{c1}空中にある{c2}トーテム{c1}が\n雨の筋を残し、{c3}{~}秒{c1}ごとに\nその下の敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1468,7 +1468,7 @@
   },
   "ability-shaman#0032": {
    "src": "Aura will travel {~}s faster and\ndeal additional damage.",
-   "dst": "Aura が {~}秒速く広がり、\n追加ダメージを与える。",
+   "dst": "{c1}Aura{c2} が {c3}{~}秒{c2}速く広がり、\n追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1535,7 +1535,7 @@
   },
   "ability-shaman#0039": {
    "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
-   "dst": "トーテムが {~2}秒ごとに人形を {~1} 体\n呼び出す。(上限 {~3}) 人形は {~4}秒ごとに\n近くの敵へナイフを投げる。",
+   "dst": "{c2}トーテム{c1}が {c3}{~2}秒{c1}ごとに{c4}人形{c1}を {c3}{~1} 体{c1}\n呼び出す。(上限 {~3}) 人形は {c3}{~4}秒{c1}ごとに\n近くの敵へナイフを投げる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1685,7 +1685,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "トーテムが {~2}秒ごとに体力の {~1} を吸い取り、\nBlood Pool {#} に移す。",
+   "dst": "{c2}トーテム{c1}が {c3}{~2}秒{c1}ごとに体力の {c3}{~1}{c1} を吸い取り、\n{c4}Blood Pool {#}{c1} に移す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1984,7 +1984,7 @@
   },
   "ability-shaman#0075": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "人形の残り時間が {~}秒になると、\n敵へ高速で突っ込んで\n爆発する。",
+   "dst": "{c2}人形{c1}の残り時間が {c3}{~}秒{c1}になると、\n敵へ高速で突っ込んで\n爆発する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2117,7 +2117,7 @@
   },
   "ability-shaman#0090": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Bleeding {#} の敵は {~}秒ごとにダメージを受ける。\nトーテムの範囲内で与えた Bleeding {#} のダメージは\nBlood Pool {#} も +{~} 増やす。",
+   "dst": "{c1}Bleeding {#}{c2} の敵は {c3}{~}秒{c2}ごとにダメージを受ける。\n{c4}トーテム{c2}の範囲内で与えた {c1}Bleeding {#}{c2} のダメージは\n{c1}Blood Pool {#}{c2} も {c3}+{~}{c2} 増やす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2371,7 +2371,7 @@
   },
   "ability-shaman#0111": {
    "src": "Every {~}s, your Totem will heal\nevery player within its range.",
-   "dst": "{~}秒ごとに、トーテムが範囲内の\nすべてのプレイヤーを回復する。",
+   "dst": "{c2}{~}秒{c1}ごとに、{c3}トーテム{c1}が範囲内の\nすべてのプレイヤーを回復する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2398,7 +2398,7 @@
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "体力を {~} 失うごとに、\n近くの Bleeding {#} の敵がダメージを受ける。\n(発動は毎秒最大 {~} 回)",
+   "dst": "{c1}体力を {c3}{~}{c1} 失うごとに、\n近くの {c2}Bleeding {#}{c1} の敵がダメージを受ける。\n{c4}(発動は毎秒最大 {~} 回)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2438,7 +2438,7 @@
   },
   "ability-shaman#0116": {
    "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
-   "dst": "トーテムがそれぞれ人形像を呼び出す。\n人形像が1体増えるごとに、\nすべての人形像のダメージが {~} 倍になる。",
+   "dst": "{c2}トーテム{c1}がそれぞれ{c3}人形像{c1}を呼び出す。\n{c3}人形像{c1}が1体増えるごとに、\nすべての{c3}人形像{c1}のダメージが {c4}{~} 倍{c1}になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2453,7 +2453,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "トーテムが人形像を呼び出し、\n{~}秒ごとに敵を攻撃して\n一番近いトーテムのほうへ押しやる。\n人形像はそのトーテムが\nある限り存在する。",
+   "dst": "{c1}トーテム{c2}が{c3}人形像{c2}を呼び出し、\n{c4}{~}秒{c2}ごとに敵を攻撃して\n一番近い{c1}トーテム{c2}のほうへ押しやる。\n{c3}人形像{c2}はその{c1}トーテム{c2}が\nある限り存在する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2671,7 +2671,7 @@
   },
   "ability-shaman#0139": {
    "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
-   "dst": "Sacrificial Shrine が Aura のダメージを +{~} 上げ、\nBleeding {#} を最大 {~}秒分消費する。消費した Bleeding {#} 1秒ごとに\nBlood Pool {#} を +{~} 得る。",
+   "dst": "{c1}Sacrificial Shrine{c2} が {c1}Aura{c2} のダメージを {c3}+{~}{c2} 上げ、\n{c4}Bleeding {#}{c2} を最大 {c3}{~}秒{c2}分消費する。消費した {c4}Bleeding {#}{c2} 1秒ごとに\n{c4}Blood Pool {#}{c2} を {c3}+{~}{c2} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2698,7 +2698,7 @@
   },
   "ability-shaman#0141": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "Blood Pool {#} の上限が +{~} 上がる。\nBleeding {#} の最大持続時間が +{~}秒延びる。",
+   "dst": "{c2}Blood Pool {#}{c1} の上限が {c3}+{~}{c1} 上がる。\n{c2}Bleeding {#}{c1} の最大持続時間が {c3}+{~}秒{c1}延びる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2742,7 +2742,7 @@
   },
   "ability-shaman#0144": {
    "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
-   "dst": "集めていない間は、召喚物の攻撃1回ごとに\nこのアビリティの持続時間が\n+{~}秒溜まる。(上限 {~}秒)",
+   "dst": "{c1}集めていない間は、{c2}召喚物{c1}の攻撃1回ごとに\nこのアビリティの持続時間が\n{c3}+{~}秒{c1}溜まる。{c4}(上限 {~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2797,7 +2797,7 @@
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "通常攻撃を人形に当てると、\nビーム1本ごとに人形の持続時間が {~}秒減り、\n人形のダメージが上がる。",
+   "dst": "{c3}通常攻撃{c1}を{c2}人形{c1}に当てると、\nビーム1本ごとに人形の持続時間が {c4}{~}秒{c1}減り、\n人形のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2891,7 +2891,7 @@
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "シフトを押しながら Haul を使うと、\nしばらくハチドリを\n近くの敵へ向かわせ、{~}秒ごとに\nすばやく貫かせる。\nもう一度使うと早めに呼び戻す。",
+   "dst": "{c1}シフトを押しながら {c2}Haul{c1} を使うと、\nしばらく{c3}ハチドリ{c1}を\n近くの敵へ向かわせ、{c4}{~}秒{c1}ごとに\nすばやく貫かせる。\nもう一度使うと早めに呼び戻す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3040,7 +3040,7 @@
   },
   "ability-shaman#0175": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Bleeding {#} の敵は {~}秒ごとにダメージを受ける。\nトーテムの範囲内で与えた Bleeding {#} のダメージは\nBlood Pool {#} も +{~} 増やす。",
+   "dst": "{c1}Bleeding {#}{c2} の敵は {c3}{~}秒{c2}ごとにダメージを受ける。\n{c4}トーテム{c2}の範囲内で与えた {c1}Bleeding {#}{c2} のダメージは\n{c1}Blood Pool {#}{c2} も {c3}+{~}{c2} 増やす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3070,7 +3070,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "通常攻撃が敵に\nBleeding {#} を +{~}秒付与するようになる。",
+   "dst": "{c2}通常攻撃{c1}が敵に\n{c3}Bleeding {#}{c1} を {c4}+{~}秒{c1}付与するようになる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3188,7 +3188,7 @@
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "シフトを押しながら Uproot か Haunting Memory を使うと、\nBlood Pool {#} を {~} 消費して\n破壊的なビームを放つ。ビームは\n敵と味方のあいだを連鎖し、\n{~}秒ごとに敵にダメージを与える。",
+   "dst": "{c1}シフトを押しながら {c2}Uproot{c1} か {c2}Haunting Memory{c1} を使うと、\n{c4}Blood Pool {#}{c1} を {c3}{~}{c1} 消費して\n破壊的なビームを放つ。ビームは\n敵と味方のあいだを連鎖し、\n{c3}{~}秒{c1}ごとに敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3203,7 +3203,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "ビームの中にいる自分と味方は\n1ヒットごとに Overhealth ❤ を +{~} 得る。\n追加の体力は {~}秒かけて減る。",
+   "dst": "{c1}ビームの中にいる自分と味方は\n1ヒットごとに {c3}Overhealth {c4}❤{c1} を {c2}+{~}{c1} 得る。\n追加の体力は {c2}{~}秒{c1}かけて減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3230,7 +3230,7 @@
   },
   "ability-shaman#0191": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "自分か召喚物が敵を倒すか、\nFriendly Fire で人形を倒すと、\n{~2}秒間 人形の上限 ⚘ が +{~1} 増える。(最大 +{~3})",
+   "dst": "{c1}自分か{c2}召喚物{c1}が敵を倒すか、\n{c3}Friendly Fire{c1} で{c2}人形{c1}を倒すと、\n{c5}{~2}秒間{c1} {c2}人形の上限 {c4}⚘{c1} が {c2}+{~1}{c1} 増える。(最大 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3299,7 +3299,7 @@
   },
   "ability-shaman#0196": {
    "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
-   "dst": "Eldritch Call の発動中にもう一度使うと、\n攻撃に血が宿り、Transfused {#} を\n+{~} 得る。(上限 {~})",
+   "dst": "{c2}Eldritch Call{c1} の発動中にもう一度使うと、\n攻撃に血が宿り、{c4}Transfused {#}{c1} を\n{c3}+{~}{c1} 得る。{c5}(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3339,7 +3339,7 @@
   },
   "ability-shaman#0199": {
    "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
-   "dst": "人形のナイフが強くなり、\n壁や敵を貫通できるようになる。\n(最大 {~} 体)",
+   "dst": "{c2}人形{c1}のナイフが強くなり、\n壁や敵を貫通できるようになる。\n{c3}(最大 {~} 体)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3501,7 +3501,7 @@
   },
   "ability-shaman#0218": {
    "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
-   "dst": "守られている間は受けるダメージが減り、\n人形像が {~}秒ごとに\n攻撃してきた相手へ反撃する。",
+   "dst": "{c1}守られている間は受けるダメージが減り、\n{c2}人形像{c1}が {c3}{~}秒{c1}ごとに\n攻撃してきた相手へ反撃する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3794,7 +3794,7 @@
   },
   "ability-shaman#0368": {
    "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s worth\nof its effects.",
-   "dst": "Mask of the Fanatic {#} を着けている間、\nトーテムは地面に当たると砕け、\n{~}秒分の効果を\n一気に発動する。",
+   "dst": "{c2}Mask of the Fanatic {#}{c1} を着けている間、\n{c3}トーテム{c1}は地面に当たると砕け、\n{c4}{~}秒{c1}分の効果を\n一気に発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3822,7 +3822,7 @@
   },
   "ability-shaman#0370": {
    "src": "While not worn, each Mystic Masks positive effect\ngradually charges by +{~} every {~}s.",
-   "dst": "着けていない仮面は、良い効果が\n{~2}秒ごとに +{~1} ずつチャージされていく。",
+   "dst": "{c1}着けていない{c2}仮面{c1}は、良い効果が\n{c3}{~2}秒{c1}ごとに {c3}+{~1}{c1} ずつチャージされていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3836,7 +3836,7 @@
   },
   "ability-shaman#0371": {
    "src": "While worn, extra charge decays by {~}\nevery {~}s, after a {~}s grace period.",
-   "dst": "着けている間は、{~3}秒の猶予の後、\n余分なチャージが {~2}秒ごとに {~1} ずつ減る。",
+   "dst": "{c1}着けている間は、{c2}{~3}秒{c1}の猶予の後、\n余分なチャージが {c2}{~2}秒{c1}ごとに {c2}{~1}{c1} ずつ減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3948,7 +3948,7 @@
   },
   "ability-shaman#0379": {
    "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for {~}s.",
-   "dst": "Totemic Shatter を発動すると、\nRain Dance の雨がすべて Acid Rain に変わり、\n{~}秒持続する。",
+   "dst": "{c2}Totemic Shatter{c1} を発動すると、\n{c2}Rain Dance{c1} の雨がすべて {c2}Acid Rain{c1} に変わり、\n{c3}{~}秒{c1}持続する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3962,7 +3962,7 @@
   },
   "ability-shaman#0380": {
    "src": "Acid Rain and Totemic Shatter, will inflict {~}s\nof Corroded every time it hits an enemy.",
-   "dst": "Acid Rain と Totemic Shatter が敵に当たるたびに、\n{~}秒の Corroded を与える。",
+   "dst": "{c1}Acid Rain{c2} と {c1}Totemic Shatter{c2} が敵に当たるたびに、\n{c3}{~}秒{c2}の {c4}Corroded{c2} を与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [

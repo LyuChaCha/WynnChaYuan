@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "アイテムの呪文ダメージ {~} または固定値 {~} ごとに\nマナ回復 +{~}/{~}秒 (上限 {~}/{~}秒)",
+   "dst": "{c1}アイテムの呪文ダメージ {c2}{~}{c1} または{c2}固定値 {~}{c1} ごとに\nマナ回復 {c2}+{~}/{~}秒{c1} (上限 {~}/{~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "自分と周囲の広い範囲にいる\n味方を回復する。\n(他人を回復するとき、最大体力の\n{~} を超えては回復できない)",
+   "dst": "{c1}自分と周囲の広い範囲にいる\n味方を回復する。\n{c2}({c3}他人{c2}を回復するとき、最大体力の\n{~} を超えては回復できない)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "Meteor と Ophanim が地面に炎の印を残し、\n{~}秒ごとに敵にダメージを与える。",
+   "dst": "{c1}Meteor{c2} と {c1}Ophanim{c2} が地面に炎の印を残し、\n{c3}{~}秒{c2}ごとに敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Etheric Slash で敵を攻撃すると、{~2}秒ごとに\n最大 +{~1} の Distortion {#} を得る。",
+   "dst": "{c2}Etheric Slash{c1} で敵を攻撃すると、{c3}{~2}秒{c1}ごとに\n最大 {c3}+{~1}{c1} の {c4}Distortion {#}{c1} を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Ice Snake の代わりに凍てつく竜巻を呼び出し、\n{~}秒ごとにダメージを与える。",
+   "dst": "{c2}Ice Snake{c1} の代わりに凍てつく竜巻を呼び出し、\n{c3}{~}秒{c1}ごとにダメージを与える{c4}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "通常攻撃で敵を攻撃すると、{~2}秒ごとに\n最大 +{~1} の Distortion {#} を得る。",
+   "dst": "{c2}通常攻撃{c1}で敵を攻撃すると、{c3}{~2}秒{c1}ごとに\n最大 {c3}+{~1}{c1} の {c4}Distortion {#}{c1} を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "{~2}秒以内に最大体力の {~1} を回復すると、\n回復したすべてのプレイヤーに\nダメージボーナスを与える。",
+   "dst": "{c2}{~2}秒{c1}以内に最大体力の {c2}{~1}{c1} を回復すると、\n回復したすべてのプレイヤーに\nダメージボーナスを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake が足元に氷の印を残し、\n{~}秒ごとに敵を減速させて\nダメージを与える。印の上に立つ味方は\nノックバックを受けない。",
+   "dst": "{c1}Ice Snake{c2} が足元に氷の印を残し、\n{c3}{~}秒{c2}ごとに敵を減速させて\nダメージを与える。印の上に立つ味方は\nノックバックを受けない。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "Pyrokinesis が敵対する敵に当たると、\n{~2}秒ごとに Mana Bank ✺ に\nマナを +{~1} 加える。",
+   "dst": "{c1}Pyrokinesis{c2} が敵対する敵に当たると、\n{c3}{~2}秒{c2}ごとに {c4}Mana Bank ✺{c2} に\nマナを {c3}+{~1}{c2} 加える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "{~2}秒以内に最大体力の {~1} を回復すると、\n周囲を回るオーブを呼び出し、\n触れた敵にダメージを与える。(オーブは最大 {~3} 個)",
+   "dst": "{c2}{~2}秒{c1}以内に最大体力の {c2}{~1}{c1} を回復すると、\n周囲を回るオーブを呼び出し、\n触れた敵にダメージを与える。{c3}(オーブは最大 {~3} 個)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake が敵を {~}秒間凍らせる。",
+   "dst": "{c1}Ice Snake{c2} が敵を {c3}{~}秒間{c2}凍らせる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "通常攻撃で敵を攻撃すると、\nTime Dilation の減衰が {~}秒止まる。",
+   "dst": "{c2}通常攻撃{c1}で敵を攻撃すると、\n{c2}Time Dilation{c1} の減衰が {c3}{~}秒{c1}止まる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration のマナ回復が {~}秒速くなる。",
+   "dst": "{c1}Arcane Restoration{c2} のマナ回復が {c3}{~}秒{c2}速くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "Mana Bank ✺ が {~1} に達しているとき、\nスニーク中に Arcane Transfer を使うと\n球電を呼び出し、近くの敵に\nダメージを与える。マナが尽きるまで\n{~3}秒ごとにマナを {~2} 消費する。",
+   "dst": "{c2}Mana Bank ✺{c1} が {c3}{~1}{c1} に達しているとき、\nスニーク中に {c4}Arcane Transfer{c1} を使うと\n球電を呼び出し、近くの敵に\nダメージを与える。マナが尽きるまで\n{c3}{~3}秒{c1}ごとにマナを {c3}{~2}{c1} 消費する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Ice Snake のダメージが上がり、\n速度が2倍になる。",
+   "dst": "{c2}Ice Snake{c1} のダメージが上がり、\n速度が{c3}2倍{c1}になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "Fire Serpent は {~}秒ごとに Unstable {#} の\n標的へ炎を放ち、ダメージボーナスを得る。",
+   "dst": "{c2}Fire Serpent{c1} は {c3}{~}秒{c1}ごとに {c2}Unstable {#}{c1} の\n標的へ炎を放ち、ダメージボーナスを得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "Thunder Serpent は {~2}秒ごとに\n最大 {~1} 体の敵を弧を描く雷で打ち、\nUnstable {#} にする。",
+   "dst": "{c2}Thunder Serpent{c1} は {c3}{~2}秒{c1}ごとに\n最大 {c3}{~1}{c1} 体の敵を弧を描く雷で打ち、\n{c2}Unstable {#}{c1} にする。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "裂け目は {~}秒ごとに敵にダメージを与え、\n中にいる間 Distortion {#} の\n獲得量が +{~} 増える。",
+   "dst": "{c1}裂け目は {c2}{~}秒{c1}ごとに敵にダメージを与え、\n中にいる間 {c3}Distortion {#}{c1} の\n獲得量が {c2}+{~}{c1} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [

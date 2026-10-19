@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "Por cada {~} o {~} de Daño de hechizo (valor fijo) de tus objetos,\nganas +{~}/{~}s de Regeneración de maná (máx. {~}/{~}s)",
+   "dst": "{c1}Por cada {c2}{~}{c1} o {c2}{~}{c1} de Daño de hechizo {c2}(valor fijo){c1} de tus objetos,\nganas {c2}+{~}/{~}s{c1} de Regeneración de maná (máx. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "Te cura a ti y a los aliados cercanos\nen un área amplia a tu alrededor.\n(Al curar a otros, no puedes curar\nmás del {~} de su vida máxima)",
+   "dst": "{c1}Te cura a ti y a los aliados cercanos\nen un área amplia a tu alrededor.\n{c2}(Al curar a otros, no puedes curar\nmás del {~} de {c3}su{c2} vida máxima)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "Meteor y Ophanim dejarán un sello de fuego\nen el suelo que daña a los enemigos cada {~}s.",
+   "dst": "{c1}Meteor{c2} y {c1}Ophanim{c2} dejarán un sello de fuego\nen el suelo que daña a los enemigos cada {c3}{~}s{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Golpear a un enemigo con Etheric Slash otorga hasta\n+{~} Distorsión {#} cada {~}s.",
+   "dst": "{c1}Golpear a un enemigo con {c2}Etheric Slash{c1} otorga hasta\n{c3}+{~} {c4}Distorsión {#}{c1} cada {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Lanzar Ice Snake invoca en su lugar un tornado\nhelado que inflige daño cada {~}s.",
+   "dst": "{c1}Lanzar {c2}Ice Snake{c1} invoca en su lugar un tornado\nhelado que inflige daño cada {c3}{~}s{c4}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Golpear a un enemigo con el Ataque principal otorga\nhasta +{~} Distorsión {#} cada {~}s.",
+   "dst": "{c1}Golpear a un enemigo con el {c2}Ataque principal{c1} otorga\nhasta {c3}+{~} {c4}Distorsión {#}{c1} cada {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "Curar un {~} de tu vida máxima\nen {~}s aplica una bonificación de daño\na cada jugador que hayas curado.",
+   "dst": "{c1}Curar un {c2}{~}{c1} de tu vida máxima\nen {c2}{~}s{c1} aplica una bonificación de daño\na cada jugador que hayas curado.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake dejará bajo tus pies un sello\nde hielo que ralentiza y daña a los\nenemigos cada {~}s. Los aliados sobre\nel sello serán inmunes al retroceso.",
+   "dst": "{c1}Ice Snake{c2} dejará bajo tus pies un sello\nde hielo que ralentiza y daña a los\nenemigos cada {c3}{~}s{c2}. Los aliados sobre\nel sello serán inmunes al retroceso.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "Pyrokinesis añadirá +{~} de maná cada\n{~}s a tu Banco de maná ✺ al\ngolpear a un enemigo agresivo.",
+   "dst": "{c1}Pyrokinesis{c2} añadirá {c3}+{~}{c2} de maná cada\n{c3}{~}s{c2} a tu {c4}Banco de maná ✺{c2} al\ngolpear a un enemigo agresivo.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "Curar un {~} de tu vida máxima en\n{~}s invoca un orbe giratorio que\ndaña a los enemigos al contacto. (Máx. {~} orbes)",
+   "dst": "{c1}Curar un {c2}{~}{c1} de tu vida máxima en\n{c2}{~}s{c1} invoca un orbe giratorio que\ndaña a los enemigos al contacto. {c3}(Máx. {~} orbes)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake congelará a los enemigos durante {~}s.",
+   "dst": "{c1}Ice Snake{c2} congelará a los enemigos durante {c3}{~}s{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "Golpear a un enemigo con tu Ataque principal impide\nque Time Dilation se reduzca durante {~}s.",
+   "dst": "{c1}Golpear a un enemigo con tu {c2}Ataque principal{c1} impide\nque {c2}Time Dilation{c1} se reduzca durante {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration restaurará maná {~}s más rápido.",
+   "dst": "{c1}Arcane Restoration{c2} restaurará maná {c3}{~}s{c2} más rápido.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "Cuando tu Banco de maná ✺ llegue a {~},\nlanzar Arcane Transfer agachado\ninvoca un rayo en bola que daña\na los enemigos cercanos y consume\n{~} de maná cada {~}s, hasta que te\nquedes sin maná.",
+   "dst": "{c1}Cuando tu {c2}Banco de maná ✺{c1} llegue a {c3}{~}{c1},\nlanzar {c4}Arcane Transfer{c1} agachado\ninvoca un rayo en bola que daña\na los enemigos cercanos y consume\n{c3}{~}{c1} de maná cada {c3}{~}s{c1}, hasta que te\nquedes sin maná.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Aumenta el daño de Ice Snake\ny duplica su velocidad.",
+   "dst": "{c1}Aumenta el daño de {c2}Ice Snake{c1}\ny {c3}duplica{c1} su velocidad.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "La Serpiente de fuego dispara a los objetivos\ncon Inestable {#} cada {~}s y obtiene la bonificación de daño.",
+   "dst": "{c1}La {c2}Serpiente de fuego{c1} dispara a los objetivos\ncon {c2}Inestable {#}{c1} cada {c3}{~}s{c1} y obtiene la bonificación de daño.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "La Serpiente de trueno golpea hasta a\n{~} enemigos con rayos en arco\ncada {~}s y les aplica Inestable {#}.",
+   "dst": "{c1}La {c2}Serpiente de trueno{c1} golpea hasta a\n{c3}{~}{c1} enemigos con rayos en arco\ncada {c3}{~}s{c1} y les aplica {c2}Inestable {#}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "La grieta daña a los enemigos cada {~}s y\naumenta tu ganancia de Distorsión {#}\nen +{~} mientras estás en ella.",
+   "dst": "{c1}La grieta daña a los enemigos cada {c2}{~}s{c1} y\naumenta tu ganancia de {c3}Distorsión {#}{c1}\nen {c2}+{~}{c1} mientras estás en ella.",
    "role": "desc",
    "kind": "block",
    "ctx": [

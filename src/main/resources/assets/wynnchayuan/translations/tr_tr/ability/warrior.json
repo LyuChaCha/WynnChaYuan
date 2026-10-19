@@ -164,7 +164,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "Eşyalarından gelen her {~} ya da {~} Sabit\nAna Saldırı Hasarı için +{~} Yürüme\nHızı kazan. (Maks. {~})",
+   "dst": "{c1}Eşyalarından gelen her {c2}{~}{c1} ya da {c2}{~} Sabit{c1}\nAna Saldırı Hasarı için {c2}+{~}{c1} Yürüme\nHızı kazan. {c3}(Maks. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -231,7 +231,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "Eşyalarından gelen her {~} ya da {~} Sabit Can\nYenilenmesi için +{~} Can kazan. (Maks. {~})",
+   "dst": "{c1}Eşyalarından gelen her {c2}{~}{c1} ya da {c2}{~} Sabit{c1} Can\nYenilenmesi için {c2}+{~}{c1} Can kazan. (Maks. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1104,7 +1104,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "Aldığın her hasarın {~} kadarını\nsonraki {~} sn boyunca\nyeniden kazanırsın.",
+   "dst": "{c1}Aldığın her hasarın {c2}{~}{c1} kadarını\nsonraki {c2}{~} sn{c1} boyunca\nyeniden kazanırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1158,7 +1158,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "Maks. canının {~} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n(Aynı anda en fazla {~} etkinleşme)",
+   "dst": "{c1}Maks. canının {c2}{~}{c1} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n{c3}(Aynı anda en fazla {~} etkinleşme)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1468,7 +1468,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "Bak'al's Grasp yeteneğinin bekleme süresini -{~} sn azaltır ve\nkaybedilen her {~} can için kazanılan\nsabit hasarı +{~} artırır.",
+   "dst": "{c2}Bak'al's Grasp{c1} yeteneğinin bekleme süresini {c3}-{~} sn{c1} azaltır ve\nkaybedilen her {c3}{~}{c1} can için kazanılan\nsabit hasarı {c3}+{~}{c1} artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1629,7 +1629,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "Eşyalarından gelen her {~} Yansıtma için\n+{~}/{~} sn Mana Yenilenmesi kazan. (Maks. {~}/{~} sn)",
+   "dst": "{c1}Eşyalarından gelen her {c2}{~}{c1} Yansıtma için\n{c2}+{~}/{~} sn{c1} Mana Yenilenmesi kazan. {c3}(Maks. {~}/{~} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1683,7 +1683,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "Counter'ın hasarını artırır ve bekleme\nsüresini -{~} sn azaltır.",
+   "dst": "{c2}Counter{c1}'ın hasarını artırır ve bekleme\nsüresini {c3}-{~} sn{c1} azaltır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1754,7 +1754,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "{~} Kutsal Güç ✧ varken\nAna Saldırıların güçlenir ve\nsana {~} Kutsal Güç kazandırır.",
+   "dst": "{c2}{~}{c3} Kutsal Güç {c4}✧{c1} varken\n{c5}Ana Saldırıların{c1} güçlenir ve\nsana {c2}{~}{c3} Kutsal Güç{c1} kazandırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "War Scream ile hasar alan düşmanlar\nKışkırtılmış {#} olur ve en az {~} sn\nboyunca yalnızca seni hedef alır.",
+   "dst": "{c2}War Scream{c1} ile hasar alan düşmanlar\n{c3}Kışkırtılmış{c1} {#} olur ve en az {c4}{~} sn{c1}\nboyunca yalnızca seni hedef alır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2064,7 +2064,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "Bash {~}x daha fazla vurur ve {~} sn daha hızlıdır.",
+   "dst": "{c1}Bash{c2} {c3}{~}x{c2} daha fazla vurur ve {c3}{~} sn{c2} daha hızlıdır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2786,7 +2786,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Generalist'i etkinleştirmek {~2} sn boyunca\n+{~1} Uyum verir. (Maks. {~3})",
+   "dst": "{c2}Generalist{c1}'i etkinleştirmek {c3}{~2} sn{c1} boyunca\n{c3}+{~1}{c4} Uyum{c1} verir. (Maks. {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2828,7 +2828,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "Eğilirken Bash kullanmak {~} Kutsal Güç ✧\nharcayarak yavaşça ilerleyen ve her\n{~} sn'de düşmanlara hasar veren\nbir ışık hüzmesi çağırır.",
+   "dst": "{c1}Eğilirken {c2}Bash{c1} kullanmak {c3}{~}{c4} Kutsal Güç {c5}✧{c1}\nharcayarak yavaşça ilerleyen ve her\n{c3}{~} sn{c1}'de düşmanlara hasar veren\nbir ışık hüzmesi çağırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2965,7 +2965,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike daha fazla hasar verir ve kullanılan\nher {~2} kırık pelerin için yakındaki müttefiklere\n{~1} Bovemist Pelerini şarjı verir. (Maks. {~3})",
+   "dst": "{c1}Shield Strike{c2} daha fazla hasar verir ve kullanılan\nher {c3}{~2}{c2} kırık pelerin için yakındaki müttefiklere\n{c3}{~1}{c2} {c1}Bovemist Pelerini{c2} şarjı verir. {c4}(Maks. {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2992,7 +2992,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "Bir dikene Ana Saldırı ya da Uppercut kullanmak\nonu patlatır, hasar verir ve Yozlaşmış\nolsan bile {~} Fazla Can ❤ kazandırır.\nBonus can {~} sn içinde azalır.",
+   "dst": "{c1}Bir dikene {c2}Ana Saldırı{c1} ya da {c2}Uppercut{c1} kullanmak\nonu patlatır, hasar verir ve Yozlaşmış\nolsan bile {c3}{~}{c4} Fazla Can {c5}❤{c1} kazandırır.\nBonus can {c3}{~} sn{c1} içinde azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3186,7 +3186,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "Maks. canının {~1} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n({~3} sn içinde en fazla {~2} etkinleşme)",
+   "dst": "{c1}Maks. canının {c2}{~1}{c1} kadarını her iyileştirdiğinde\nyakındaki tüm düşmanlara hasar verir.\n{c3}({~3} sn içinde en fazla {~2} etkinleşme)",
    "role": "desc",
    "kind": "block",
    "ctx": [

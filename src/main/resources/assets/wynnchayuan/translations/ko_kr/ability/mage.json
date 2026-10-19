@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "아이템의 고정값 주문 피해 {~} 또는 {~}마다\n마나 재생 +{~}/{~}초를 얻습니다 (최대 {~}/{~}초)",
+   "dst": "{c1}아이템의 {c2}고정값{c1} 주문 피해 {c2}{~}{c1} 또는 {c2}{~}{c1}마다\n마나 재생 {c2}+{~}/{~}초{c1}를 얻습니다 (최대 {~}/{~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "주위의 넓은 범위에 있는 자신과\n아군을 치유합니다.\n(다른 플레이어는 최대 체력의 {~}\n이상 치유할 수 없음)",
+   "dst": "{c1}주위의 넓은 범위에 있는 자신과\n아군을 치유합니다.\n{c2}(다른 플레이어는 {c3}최대 체력{c2}의 {~}\n이상 치유할 수 없음)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "메테오와 오파님이 땅에 불의 인장을 남겨\n{~}초마다 적에게 피해를 줍니다.",
+   "dst": "{c1}메테오{c2}와 {c1}오파님{c2}이 땅에 불의 인장을 남겨\n{c3}{~}초{c2}마다 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Etheric Slash로 적을 맞히면 {~2}초당 최대\n왜곡 {#}을 +{~1} 얻습니다.",
+   "dst": "{c2}Etheric Slash{c1}로 적을 맞히면 {c3}{~2}초{c1}당 최대\n{c4}왜곡 {#}{c1}을 {c3}+{~1}{c1} 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Ice Snake를 시전하면 대신 얼어붙은 회오리를\n소환해 {~}초마다 피해를 줍니다.",
+   "dst": "{c2}Ice Snake{c1}를 시전하면 대신 얼어붙은 회오리를\n소환해 {c3}{~}초{c1}마다 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "기본 공격으로 적을 맞히면 {~2}초당 최대\n왜곡 {#}을 +{~1} 얻습니다.",
+   "dst": "{c2}기본 공격{c1}으로 적을 맞히면 {c3}{~2}초{c1}당 최대\n{c4}왜곡 {#}{c1}을 {c3}+{~1}{c1} 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "{~2}초 안에 최대 체력의 {~1}만큼\n치유하면 치유한 모든 플레이어에게\n피해 보너스를 부여합니다.",
+   "dst": "{c2}{~2}초{c1} 안에 최대 체력의 {c2}{~1}{c1}만큼\n치유하면 치유한 모든 플레이어에게\n피해 보너스를 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "얼음 뱀이 발밑에 얼음 인장을 남겨\n{~}초마다 적을 둔화시키고 피해를\n줍니다. 인장 위에 선 아군은\n넉백에 면역이 됩니다.",
+   "dst": "{c1}얼음 뱀{c2}이 발밑에 얼음 인장을 남겨\n{c3}{~}초{c2}마다 적을 둔화시키고 피해를\n줍니다. 인장 위에 선 아군은\n넉백에 면역이 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "Pyrokinesis로 적대적인 적을 맞히면\n{~2}초마다 마나 저장고 ✺에\n마나를 +{~1} 더합니다.",
+   "dst": "{c1}Pyrokinesis{c2}로 적대적인 적을 맞히면\n{c3}{~2}초{c2}마다 {c4}마나 저장고 ✺{c2}에\n마나를 {c3}+{~1}{c2} 더합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "{~2}초 안에 최대 체력의 {~1}만큼 치유하면\n회전하는 구체를 소환해 닿는 적에게\n피해를 줍니다. (최대 구체 {~3}개)",
+   "dst": "{c2}{~2}초{c1} 안에 최대 체력의 {c2}{~1}{c1}만큼 치유하면\n회전하는 구체를 소환해 닿는 적에게\n피해를 줍니다. {c3}(최대 구체 {~3}개)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "얼음 뱀이 적을 {~}초 동안 얼립니다.",
+   "dst": "{c1}얼음 뱀{c2}이 적을 {c3}{~}초{c2} 동안 얼립니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "기본 공격으로 적을 맞히면 {~}초 동안\nTime Dilation이 감소하지 않습니다.",
+   "dst": "{c2}기본 공격{c1}으로 적을 맞히면 {c3}{~}초{c1} 동안\n{c2}Time Dilation{c1}이 감소하지 않습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration이 마나를 {~}초 더 빠르게 회복시킵니다.",
+   "dst": "{c1}Arcane Restoration{c2}이 마나를 {c3}{~}초{c2} 더 빠르게 회복시킵니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "마나 저장고 ✺가 {~1}에 도달하면\n웅크린 채 Arcane Transfer를 시전해\n구전을 소환합니다. 구전은 주변 적에게\n피해를 주고 {~3}초마다 마나를\n{~2}씩 소모하며, 마나가 바닥날\n때까지 유지됩니다.",
+   "dst": "{c2}마나 저장고 ✺{c1}가 {c3}{~1}{c1}에 도달하면\n웅크린 채 {c4}Arcane Transfer{c1}를 시전해\n구전을 소환합니다. 구전은 주변 적에게\n피해를 주고 {c3}{~3}초{c1}마다 마나를\n{c3}{~2}{c1}씩 소모하며, 마나가 바닥날\n때까지 유지됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Ice Snake의 피해가 증가하고\n속도가 두 배가 됩니다.",
+   "dst": "{c2}Ice Snake{c1}의 피해가 증가하고\n속도가 {c3}두 배{c1}가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "화염 뱀이 {~}초마다 불안정 {#} 상태의\n대상에게 사격하며 피해 보너스를 얻습니다.",
+   "dst": "{c2}화염 뱀{c1}이 {c3}{~}초{c1}마다 {c2}불안정 {#}{c1} 상태의\n대상에게 사격하며 피해 보너스를 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "번개 뱀이 {~2}초마다 최대\n{~1}명의 적에게 뻗어 나가는 번개를\n내리쳐 불안정 {#} 상태로 만듭니다.",
+   "dst": "{c2}번개 뱀{c1}이 {c3}{~2}초{c1}마다 최대\n{c3}{~1}명{c1}의 적에게 뻗어 나가는 번개를\n내리쳐 {c2}불안정 {#}{c1} 상태로 만듭니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "균열은 {~}초마다 적에게 피해를 주고,\n안에 서 있는 동안 왜곡 {#} 획득량이\n+{~} 늘어납니다.",
+   "dst": "{c1}균열은 {c2}{~}초{c1}마다 적에게 피해를 주고,\n안에 서 있는 동안 {c3}왜곡 {#}{c1} 획득량이\n{c2}+{~}{c1} 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [

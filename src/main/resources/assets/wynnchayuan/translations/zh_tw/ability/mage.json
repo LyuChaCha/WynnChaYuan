@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "從道具中獲得的每 {~} 或 {~} 點法術傷害，\n額外獲得 {~}/{~}s 魔力回復。(最高 {~}/{~}s)",
+   "dst": "{c1}從道具中獲得的每 {c2}{~}{c1} 或 {c2}{~}{c1} 點法術傷害，\n額外獲得 {c2}{~}/{~}s{c1} 魔力回復。(最高 {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "治療你自己與周圍大範圍內的友軍。\n(治療他人時，單次無法治療\n超過其最大生命的 {~})",
+   "dst": "{c1}治療你自己與周圍大範圍內的友軍。\n{c2}(治療他人時，單次無法治療\n超過{c3}其{c2}最大生命的 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "隕石和奧法尼姆會在地上創造烈焰印記，每 {~} 秒造成一次傷害。",
+   "dst": "{c1}隕石{c2}和{c1}奧法尼姆{c2}會在地上創造烈焰印記，每 {c3}{~} 秒{c2}造成一次傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用 Etheric Slash 命中敵人會給予自身 Distortion {#}，其層數取決於與上次命中時的間隔，最高在 {~2} 秒時一次獲得 {~1} 層。",
+   "dst": "{c1}用 {c2}Etheric Slash{c1} 命中敵人會給予自身 {c4}Distortion {#}{c1}，其層數取決於與上次命中時的間隔，最高在 {c3}{~2} 秒{c1}時一次獲得 {c3}{~1} 層{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "使用冰凍龍捲風取代你的冰蛇，每 {~} 秒造成一次傷害。",
+   "dst": "{c1}使用冰凍龍捲風取代你的{c2}冰蛇{c1}，每 {c3}{~} 秒{c1}造成一次傷害{c4}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用普攻命中敵人會給予自身 Distortion {#}，其層數取決於與上次命中時的間隔，最高在 {~2} 秒時一次獲得 {~1} 層。",
+   "dst": "{c1}用{c2}普攻{c1}命中敵人會給予自身 {c4}Distortion {#}{c1}，其層數取決於與上次命中時的間隔，最高在 {c3}{~2} 秒{c1}時一次獲得 {c3}{~1} 層{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "在 {~2} 秒內治療量達到你最大生命值的 {~1} 後，\n你治療過的每一位玩家都會獲得傷害加成。",
+   "dst": "{c1}在 {c2}{~2} 秒{c1}內治療量達到你最大生命值的 {c2}{~1}{c1} 後，\n你治療過的每一位玩家都會獲得傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "冰蛇會在地上創造冰霜印記，\n每 {~} 秒造成一次傷害並緩速目標。\n在冰霜印記上的友軍不會被擊退。",
+   "dst": "{c1}冰蛇{c2}會在地上創造冰霜印記，\n每 {c3}{~} 秒{c2}造成一次傷害並緩速目標。\n在冰霜印記上的友軍不會被擊退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "以 Pyrokinesis 命中具敵意的敵人時，\n每 {~2} 秒為你的 Mana Bank ✺\n增加 {~1} 點魔力。",
+   "dst": "{c2}以 {c1}Pyrokinesis{c2} 命中具敵意的敵人時，\n每 {c3}{~2} 秒{c2}為你的 {c4}Mana Bank ✺{c2}\n增加 {c3}{~1}{c2} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "在 {~2} 秒內治療量達到你最大生命值的 {~1} 後，\n召喚一顆繞著你旋轉的光球，\n接觸敵人時造成傷害。(最多 {~3} 顆)",
+   "dst": "{c1}在 {c2}{~2} 秒{c1}內治療量達到你最大生命值的 {c2}{~1}{c1} 後，\n召喚一顆繞著你旋轉的光球，\n接觸敵人時造成傷害。{c3}(最多 {~3} 顆)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "用普攻命中敵人後，Time Dilation 在 {~} 秒內不會衰減。",
+   "dst": "{c1}用{c2}普攻{c1}命中敵人後，{c2}Time Dilation{c1} 在 {c3}{~} 秒{c1}內不會衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "裂隙每 {~} 秒對敵人造成一次傷害，\n站在其中時，你的 Distortion {#}\n累積速度加快 {~}。",
+   "dst": "{c1}裂隙每 {c2}{~} 秒{c1}對敵人造成一次傷害，\n站在其中時，你的 {c3}Distortion {#}{c1}\n累積速度加快 {c2}{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

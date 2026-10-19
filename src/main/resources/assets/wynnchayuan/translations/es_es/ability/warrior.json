@@ -160,7 +160,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "Por cada {~} o {~} de daño de ataque principal\n(valor fijo) que tengas de tus objetos,\nobtienes +{~} de velocidad de movimiento. (Máx. {~})",
+   "dst": "{c1}Por cada {c2}{~}{c1} o {c2}{~}{c1} de daño de ataque principal\n{c2}(valor fijo){c1} que tengas de tus objetos,\nobtienes {c2}+{~}{c1} de velocidad de movimiento. {c3}(Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -227,7 +227,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "Por cada {~} o {~} de regeneración de vida (valor fijo)\nde tus objetos, obtienes +{~} de vida. (Máx. {~})",
+   "dst": "{c1}Por cada {c2}{~}{c1} o {c2}{~}{c1} de regeneración de vida {c2}(valor fijo){c1}\nde tus objetos, obtienes {c2}+{~}{c1} de vida. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "Por cada daño que recibas,\nregeneras el {~} de ese\ndaño durante los siguientes {~}s.",
+   "dst": "{c1}Por cada daño que recibas,\nregeneras el {c2}{~}{c1} de ese\ndaño durante los siguientes {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1154,7 +1154,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "Inflige daño a todos los enemigos cercanos cada\nvez que te curas el {~} de tu vida máxima.\n(Máx. {~} activaciones a la vez)",
+   "dst": "{c1}Inflige daño a todos los enemigos cercanos cada\nvez que te curas el {c2}{~}{c1} de tu vida máxima.\n{c3}(Máx. {~} activaciones a la vez)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "Reduce el enfriamiento de Bak'al's Grasp\nen -{~}s y aumenta el daño fijo obtenido\npor cada {~} de vida perdida en +{~}.",
+   "dst": "{c1}Reduce el enfriamiento de {c2}Bak'al's Grasp{c1}\nen {c3}-{~}s{c1} y aumenta el daño fijo obtenido\npor cada {c3}{~}{c1} de vida perdida en {c3}+{~}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1625,7 +1625,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "Por cada {~} de reflejo que tengas de tus\nobjetos, obtienes +{~}/{~}s de regeneración de maná. (Máx. {~}/{~}s)",
+   "dst": "{c1}Por cada {c2}{~}{c1} de reflejo que tengas de tus\nobjetos, obtienes {c2}+{~}/{~}s{c1} de regeneración de maná. {c3}(Máx. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "Aumenta el daño de Counter y reduce su\nenfriamiento en -{~}s.",
+   "dst": "{c1}Aumenta el daño de {c2}Counter{c1} y reduce su\nenfriamiento en {c3}-{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1750,7 +1750,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "Mientras tengas {~} de Holy Power ✧,\ntus ataques principales se potencian\ny te otorgan {~} de Holy Power.",
+   "dst": "{c1}Mientras tengas {c2}{~}{c3} de Holy Power {c4}✧{c1},\ntus {c5}ataques principales{c1} se potencian\ny te otorgan {c2}{~}{c3} de Holy Power.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1966,7 +1966,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "Los enemigos dañados por War Scream\nquedarán Provoked {#} y solo te\natacarán a ti durante al menos {~}s.",
+   "dst": "{c1}Los enemigos dañados por {c2}War Scream{c1}\nquedarán {c3}Provoked {#}{c1} y solo te\natacarán a ti durante al menos {c4}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2060,7 +2060,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "Bash golpea {~}x más veces y es {~}s más rápido.",
+   "dst": "{c1}Bash{c2} golpea {c3}{~}x{c2} más veces y es {c3}{~}s{c2} más rápido.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Activar Generalist otorga\n+{~} de Harmony durante {~}s. (Máx. {~})",
+   "dst": "{c1}Activar {c2}Generalist{c1} otorga\n{c3}+{~}{c1} de {c4}Harmony{c1} durante {c3}{~}s{c1}. (Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "Lanzar Bash agachado consumirá\n{~} de Holy Power ✧ para invocar un haz\nde luz que avanza despacio y\ndaña a los enemigos cada {~}s.",
+   "dst": "{c1}Lanzar {c2}Bash{c1} agachado consumirá\n{c3}{~}{c4} de Holy Power {c5}✧{c1} para invocar un haz\nde luz que avanza despacio y\ndaña a los enemigos cada {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike infligirá más daño y otorgará\n{~} carga de Mantle of the Bovemists a los aliados\ncercanos por cada {~} mantos rotos usados. (Máx. {~})",
+   "dst": "{c1}Shield Strike{c2} infligirá más daño y otorgará\n{c3}{~}{c2} carga de {c1}Mantle of the Bovemists{c2} a los aliados\ncercanos por cada {c3}{~}{c2} mantos rotos usados. {c4}(Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "Usar el ataque principal o Uppercut sobre un pincho\nlo detona, infligiendo daño y otorgando\n{~} de Overhealth ❤ incluso estando Corrupted.\nLa vida extra decae en {~}s.",
+   "dst": "{c1}Usar el {c2}ataque principal{c1} o {c2}Uppercut{c1} sobre un pincho\nlo detona, infligiendo daño y otorgando\n{c3}{~}{c4} de Overhealth {c5}❤{c1} incluso estando Corrupted.\nLa vida extra decae en {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3182,7 +3182,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "Inflige daño a todos los enemigos cercanos cada\nvez que te curas el {~} de tu vida máxima.\n(Máx. {~} activaciones en {~}s)",
+   "dst": "{c1}Inflige daño a todos los enemigos cercanos cada\nvez que te curas el {c2}{~}{c1} de tu vida máxima.\n{c3}(Máx. {~} activaciones en {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [

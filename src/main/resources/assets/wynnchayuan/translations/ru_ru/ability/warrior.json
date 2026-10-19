@@ -160,7 +160,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "За каждые {~} или {~} чистого урона основной\nатаки от предметов получайте\n+{~} к скорости ходьбы. (Макс. {~})",
+   "dst": "{c1}За каждые {c2}{~}{c1} или {c2}{~} чистого{c1} урона основной\nатаки от предметов получайте\n{c2}+{~}{c1} к скорости ходьбы. {c3}(Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -227,7 +227,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "За каждые {~} или {~} чистого восстановления здоровья\nот предметов получайте +{~} к здоровью. (Макс. {~})",
+   "dst": "{c1}За каждые {c2}{~}{c1} или {c2}{~} чистого{c1} восстановления здоровья\nот предметов получайте {c2}+{~}{c1} к здоровью. (Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "Из любого полученного урона\nвы восстанавливаете {~}\nв течение следующих {~} с.",
+   "dst": "{c1}Из любого полученного урона\nвы восстанавливаете {c2}{~}{c1}\nв течение следующих {c2}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1154,7 +1154,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "Наносит урон всем ближайшим врагам каждый\nраз, когда вы лечите {~} от макс. здоровья.\n(Макс. {~} срабатываний одновременно)",
+   "dst": "{c1}Наносит урон всем ближайшим врагам каждый\nраз, когда вы лечите {c2}{~}{c1} от макс. здоровья.\n{c3}(Макс. {~} срабатываний одновременно)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "Сокращает перезарядку Bak'al's Grasp\nна -{~} с и увеличивает чистый урон\nза каждые {~} потерянного здоровья на +{~}.",
+   "dst": "{c1}Сокращает перезарядку {c2}Bak'al's Grasp{c1}\nна {c3}-{~} с{c1} и увеличивает чистый урон\nза каждые {c3}{~}{c1} потерянного здоровья на {c3}+{~}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1625,7 +1625,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "За каждые {~} отражения от\nпредметов получайте +{~}/{~} с восстановления маны. (Макс. {~}/{~} с)",
+   "dst": "{c1}За каждые {c2}{~}{c1} отражения от\nпредметов получайте {c2}+{~}/{~} с{c1} восстановления маны. {c3}(Макс. {~}/{~} с)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "Увеличивает урон Counter и сокращает его\nперезарядку на -{~} с.",
+   "dst": "{c1}Увеличивает урон {c2}Counter{c1} и сокращает его\nперезарядку на {c3}-{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1750,7 +1750,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "Пока у вас {~} Святой силы ✧,\nваши основные атаки усилены\nи дают {~} Святой силы.",
+   "dst": "{c1}Пока у вас {c2}{~} {c3}Святой силы {c4}✧{c1},\nваши {c5}основные атаки{c1} усилены\nи дают {c2}{~} {c3}Святой силы.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1966,7 +1966,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "Враги, получившие урон от War Scream,\nстановятся спровоцированными {#} и атакуют\nтолько вас минимум {~} с.",
+   "dst": "{c1}Враги, получившие урон от {c2}War Scream{c1},\nстановятся {c3}спровоцированными {#}{c1} и атакуют\nтолько вас минимум {c4}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2060,7 +2060,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "Bash наносит в {~} раз больше ударов и срабатывает на {~} с быстрее.",
+   "dst": "{c1}Bash{c2} наносит в {c3}{~} раз{c2} больше ударов и срабатывает на {c3}{~} с{c2} быстрее.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Срабатывание Generalist даёт\n+{~} Harmony на {~} с. (Макс. {~})",
+   "dst": "{c1}Срабатывание {c2}Generalist{c1} даёт\n{c3}+{~} {c4}Harmony{c1} на {c3}{~} с{c1}. (Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "Bash, применённый крадучись, тратит\n{~} Святой силы ✧ и призывает луч\nсвета, медленно движущийся вперёд\nи ранящий врагов каждые {~} с.",
+   "dst": "{c2}Bash{c1}, применённый крадучись, тратит\n{c3}{~} {c4}Святой силы {c5}✧ {c1}и призывает луч\nсвета, медленно движущийся вперёд\nи ранящий врагов каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike наносит больше урона и даёт\n{~} заряд Mantle of the Bovemists ближайшим\nсоюзникам за каждые {~} использованных сломанных мантий. (Макс. {~})",
+   "dst": "{c1}Shield Strike{c2} наносит больше урона и даёт\n{c3}{~}{c2} заряд {c1}Mantle of the Bovemists{c2} ближайшим\nсоюзникам за каждые {c3}{~}{c2} использованных сломанных мантий. {c4}(Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "Основная атака или Uppercut по шипу\nвзрывает его, нанося урон и давая\n{~} Сверхздоровья ❤ даже под Осквернением.\nБонусное здоровье убывает за {~} с.",
+   "dst": "{c2}Основная атака{c1} или {c2}Uppercut{c1} по шипу\nвзрывает его, нанося урон и давая\n{c3}{~} {c4}Сверхздоровья {c5}❤ {c1}даже под Осквернением.\nБонусное здоровье убывает за {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3182,7 +3182,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "Наносит урон всем ближайшим врагам каждый\nраз, когда вы лечите {~} от макс. здоровья.\n(Макс. {~} срабатываний за {~} с.)",
+   "dst": "{c1}Наносит урон всем ближайшим врагам каждый\nраз, когда вы лечите {c2}{~}{c1} от макс. здоровья.\n{c3}(Макс. {~} срабатываний за {~} с.)",
    "role": "desc",
    "kind": "block",
    "ctx": [
