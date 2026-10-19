@@ -193,6 +193,23 @@ public final class RenderListener {
         }
     }
 
+    /**
+     * 就地取代模式下這份說明會換成什麼樣子（換不出來就是原本那一份）。
+     *
+     * <p>給排在我們前面處理同一個事件的模組用——它們拿到的還是原文，量出來的寬度不對。
+     * 走的是同一個快取（{@code TooltipPanel#translateLinesCached}），同一幀第二次問不必重算。
+     * 見 {@link com.wynnchayuan.render.WynnventoryLayout}。
+     */
+    public static List<Component> inPlaceLines(List<Component> original) {
+        try {
+            List<Component> out = withPeek(() -> com.wynnchayuan.render.TooltipPanel
+                    .translateInPlace(original, WynnChaYuan.translations()));
+            return out == null || out.isEmpty() ? original : out;
+        } catch (Throwable t) {
+            return original;
+        }
+    }
+
     /** 出事時記一下當時在處理哪件物品，光有堆疊很難重現。 */
     private static String firstLine(ItemTooltipRenderEvent.Pre event) {
         List<Component> lines = event.getTooltips();

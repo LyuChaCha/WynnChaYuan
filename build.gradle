@@ -719,6 +719,14 @@ tasks.register('runHighlightCacheChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runHighlightCacheChecks' }
 
+tasks.register('runWynnventoryLayoutChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Wynnventory 側邊框兩邊放不下時縮小、不壓在物品說明上'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WynnventoryLayoutTest'
+}
+tasks.named('check') { dependsOn 'runWynnventoryLayoutChecks' }
+
 tasks.register('runCountdownBoardChecks', JavaExec) {
     group = 'verification'
     description = '驗證商店的倒數看板一列一列組：沒收過的時間格式與附加列都翻得出來，顏色照每一列'
