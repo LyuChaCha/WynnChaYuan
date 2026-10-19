@@ -235,7 +235,7 @@
   },
   "ability-shaman#0245": {
    "src": "Additionally, while wearing the {#} Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor {~}s, reducing their damage by {~} and slowing\nthem by {~}.",
-   "dst": "此外，戴着 {#} 金虔假面时，被 Aura 命中的敌人会\n陷入风化 {~1} 秒，伤害降低 {~2}，并减速 {~3}。",
+   "dst": "{c1}此外，戴着{c2} {#} 金虔假面{c1}时，被 {c3}Aura{c1} 命中的敌人会\n陷入{c4}风化{c1} {c5}{~1} 秒{c1}，伤害降低 {c5}{~2}{c1}，并减速 {c5}{~3}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -319,7 +319,7 @@
   },
   "ability-shaman#0243": {
    "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
-   "dst": "施放受 Artist's Immersion 降低消耗的法术会召出一个仪式法阵。\n之后每次施放都会让法阵的半径与命中次数增加 {~1}。\n(最多 {~2} 格)",
+   "dst": "{c1}施放受 {c2}Artist's Immersion{c1} 降低消耗的法术会召出一个仪式法阵。\n之后每次施放都会让法阵的半径与命中次数增加 {c3}{~1}{c1}。\n{c4}(最多 {~2} 格)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -361,7 +361,7 @@
   },
   "ability-shaman#0273": {
    "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
-   "dst": "你每有一层涌电，Eye of the Storm 就对命中的敌人\n附加 {~1} 层静电。(上限 {~2} 层)",
+   "dst": "{c2}你每有一层{c4}涌电{c2}，{c1}Eye of the Storm{c2} 就对命中的敌人\n附加 {c3}{~1} 层{c4}静电{c2}。{c5}(上限 {~2} 层)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -389,7 +389,7 @@
   },
   "ability-shaman#0281": {
    "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
-   "dst": "你或 Totem 只要待在至少 {~3} 个\n水池里，每 {~2} 秒恢复 {~1} 点\n法力。",
+   "dst": "{c1}你或 {c3}Totem{c1} 只要待在至少 {c2}{~3}{c1} 个\n水池里，每 {c2}{~2} 秒{c1}恢复 {c2}{~1}{c1} 点\n法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -403,7 +403,7 @@
   },
   "ability-shaman#0264": {
    "src": "Grant nearby allies a stack of buffs per {~}s\nwhile near you, based on your current Mask.\n(Max {~} Stacks)",
-   "dst": "附近的队友待在你身边时，每 {~1} 秒获得一层增益，\n内容取决于你当下的假面。(上限 {~2} 层)",
+   "dst": "{c1}附近的队友待在你身边时，每 {c2}{~1} 秒{c1}获得一层增益，\n内容取决于你当下的{c3}假面{c1}。{c4}(上限 {~2} 层)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -515,7 +515,7 @@
   },
   "ability-shaman#0266": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
-   "dst": "施放 Uproot 时改为戴上其中\n一张 Mystic Masks。\n(Shift + Uproot 可戴回上一张假面)",
+   "dst": "{c1}施放 {c2}Uproot{c1} 时改为戴上其中\n一张 {c3}Mystic Masks{c1}。\n{c4}(Shift + Uproot 可戴回上一张假面)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-shaman#0258": {
    "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "戴着 {#} 苍逆假面时，Frog Dance\n落地会生成一个小水池。(上限 {~} 个)",
+   "dst": "{c1}戴着 {c2}{#} 苍逆假面{c1}时，{c3}Frog Dance{c1}\n落地会生成一个小水池。{c4}(上限 {~} 个)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -585,7 +585,7 @@
   },
   "ability-shaman#0253": {
    "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "戴着 {#} 苍逆假面时，Haul 改为\n把你从地面弹起，并伤害附近的敌人。\n(按住 shift 可取消)",
+   "dst": "{c1}戴着 {c2}{#} 苍逆假面{c1}时，{c3}Haul{c1} 改为\n把你从地面弹起，并伤害附近的敌人。\n{c4}(按住 shift 可取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-shaman#0257": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
-   "dst": "戴着 {#} 赤狂假面时，施放 Aura 会为你充能，\n获得一层涌电。(上限 {~} 层)",
+   "dst": "{c1}戴着{c2} {#} 赤狂假面{c1}时，施放 {c3}Aura{c1} 会为你充能，\n获得一层{c4}涌电{c1}。{c5}(上限 {~} 层)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -669,7 +669,7 @@
   },
   "ability-shaman#0286": {
    "src": "While you have Surge, strike nearby enemies with\nlightning every {~}s.",
-   "dst": "持有涌电时，每 {~} 秒以闪电\n打击附近的敌人。",
+   "dst": "{c1}持有{c2}涌电{c1}时，每 {c3}{~} 秒{c1}以闪电\n打击附近的敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -767,7 +767,7 @@
   },
   "ability-shaman#0282": {
    "src": "⌛ Duration: {~}s (per stack)\n☀ Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "⌛ 持续时间: {~1} 秒 (每层)\n☀ 作用范围: {~2} 格 (圆形)",
+   "dst": "{c1}⌛ {c2}持续时间: {c3}{~1} 秒 {c4}(每层)\n{c5}☀ {c2}作用范围: {c3}{~2} 格 {c2}(圆形)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -922,7 +922,7 @@
   },
   "ability-shaman#0315": {
    "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
-   "dst": "{#} 金虔: 附加相当于 {~} 秒的减益会让",
+   "dst": "{#} {c1}金虔{c2}: 附加相当于 {c3}{~} 秒{c2}的减益会让",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1091,7 +1091,7 @@
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "使用法器时，普攻光束的速度翻倍，\n并提高你的伤害。",
+   "dst": "{c2}使用法器时，{c3}普攻{c2}光束的速度{c1}翻倍{c2}，\n并提高你的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1428,7 +1428,7 @@
   },
   "ability-shaman#0029": {
    "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
-   "dst": "图腾在空中飞行时会\n拖出一道雨迹，每 {~} 秒\n对下方的敌人造成伤害。",
+   "dst": "{c2}图腾{c1}在空中飞行时会\n拖出一道雨迹，每 {c3}{~} 秒{c1}\n对下方的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1468,7 +1468,7 @@
   },
   "ability-shaman#0032": {
    "src": "Aura will travel {~}s faster and\ndeal additional damage.",
-   "dst": "Aura 的扩散速度快 {~} 秒，\n并造成额外伤害。",
+   "dst": "{c1}Aura{c2} 的扩散速度快 {c3}{~} 秒{c2}，\n并造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1535,7 +1535,7 @@
   },
   "ability-shaman#0039": {
    "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
-   "dst": "你的图腾每 {~2} 秒召唤 {~1} 个人偶。\n(上限 {~3}) 它们每 {~4} 秒向附近的\n敌人掷出飞刀。",
+   "dst": "{c1}你的{c2}图腾{c1}每 {c3}{~2} 秒{c1}召唤 {c3}{~1} {c4}个人偶{c1}。\n(上限 {~3}) 它们每 {c3}{~4} 秒{c1}向附近的\n敌人掷出飞刀。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1685,7 +1685,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "你的图腾每 {~2} 秒抽取你 {~1} 的生命，\n转化为血池 {#}。",
+   "dst": "{c1}你的{c2}图腾{c1}每 {c3}{~2} 秒{c1}抽取你 {c3}{~1}{c1} 的生命，\n转化为{c4}血池 {#}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1984,7 +1984,7 @@
   },
   "ability-shaman#0075": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "人偶剩下 {~} 秒时，\n会高速冲向敌人\n并爆炸。",
+   "dst": "{c2}人偶{c1}剩下 {c3}{~} 秒{c1}时，\n会高速冲向敌人\n并爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2117,7 +2117,7 @@
   },
   "ability-shaman#0090": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "流血 {#} 的敌人每 {~1} 秒受到伤害。\n在图腾范围内造成的流血 {#} 伤害\n还会为血池 {#} 增加 +{~2} 点。",
+   "dst": "{c1}流血 {#}{c2} 的敌人每 {c3}{~1} 秒{c2}受到伤害。\n在{c4}图腾{c2}范围内造成的{c1}流血 {#}{c2} 伤害\n还会为{c1}血池 {#}{c2} 增加 {c3}+{~2}{c2} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2371,7 +2371,7 @@
   },
   "ability-shaman#0111": {
    "src": "Every {~}s, your Totem will heal\nevery player within its range.",
-   "dst": "你的图腾每 {~} 秒\n治疗范围内的所有玩家。",
+   "dst": "{c1}你的{c3}图腾{c1}每 {c2}{~} 秒{c1}\n治疗范围内的所有玩家。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2398,7 +2398,7 @@
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "你每损失 {~1} 生命，附近流血 {#} 的\n敌人就受到一次伤害。\n(每秒最多触发 {~2} 次)",
+   "dst": "{c1}你每损失 {c3}{~1}{c1} 生命，附近{c2}流血 {#}{c1} 的\n敌人就受到一次伤害。\n{c4}(每秒最多触发 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2438,7 +2438,7 @@
   },
   "ability-shaman#0116": {
    "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
-   "dst": "每座图腾都会召唤自己的塑像。\n每多召唤一个塑像，所有塑像的\n伤害就降为 {~} 倍。",
+   "dst": "{c1}每座{c2}图腾{c1}都会召唤自己的{c3}塑像{c1}。\n每多召唤一个{c3}塑像{c1}，所有{c3}塑像{c1}的\n伤害就降为 {c4}{~} 倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2453,7 +2453,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "Totem 会召唤一个塑像，每 {~} 秒\n攻击敌人并把它们推向\n最近的图腾。\n塑像与它的图腾\n同生共死。",
+   "dst": "{c1}Totem{c2} 会召唤一个{c3}塑像{c2}，每 {c4}{~} 秒{c2}\n攻击敌人并把它们推向\n最近的{c1}图腾{c2}。\n{c3}塑像{c2}与它的{c1}图腾{c2}\n同生共死。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2671,7 +2671,7 @@
   },
   "ability-shaman#0139": {
    "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
-   "dst": "Sacrificial Shrine 让 Aura 的伤害提高 +{~1}，\n并消耗最多 {~2} 秒的流血 {#}；每消耗一秒\n流血 {#} 就获得 +{~3} 点血池 {#}。",
+   "dst": "{c1}Sacrificial Shrine{c2} 让 {c1}Aura{c2} 的伤害提高 {c3}+{~1}{c2}，\n并消耗最多 {c3}{~2} 秒{c2}的{c4}流血 {#}{c2}；每消耗一秒\n{c4}流血 {#}{c2} 就获得 {c3}+{~3} 点{c4}血池 {#}{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2698,7 +2698,7 @@
   },
   "ability-shaman#0141": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "血池 {#} 上限提高 +{~1} 点。\n流血 {#} 的最长持续时间提高 +{~2} 秒。",
+   "dst": "{c2}血池 {#}{c1} 上限提高 {c3}+{~1}{c1} 点。\n{c2}流血 {#}{c1} 的最长持续时间提高 {c3}+{~2} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2742,7 +2742,7 @@
   },
   "ability-shaman#0144": {
    "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
-   "dst": "未集结时，召唤物每攻击一次\n就为这个技能累积 +{~1} 秒。(上限 {~2} 秒)",
+   "dst": "{c1}未集结时，{c2}召唤物{c1}每攻击一次\n就为这个技能累积 {c3}+{~1} 秒{c1}。{c4}(上限 {~2} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2797,7 +2797,7 @@
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "用普攻打到自己的人偶时，\n每道光束会让它们少 {~} 秒持续时间，\n并给它们伤害提升。",
+   "dst": "{c1}用{c3}普攻{c1}打到自己的{c2}人偶{c1}时，\n每道光束会让它们少 {c4}{~} 秒{c1}持续时间，\n并给它们伤害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2891,7 +2891,7 @@
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "按住 Shift 施放 Haul，会暂时\n派出你的蜂鸟攻击附近的敌人，\n每 {~} 秒急速贯穿它们。\n再施放一次可以提前召回。",
+   "dst": "{c1}按住 Shift 施放 {c2}Haul{c1}，会暂时\n派出你的{c3}蜂鸟{c1}攻击附近的敌人，\n每 {c4}{~} 秒{c1}急速贯穿它们。\n再施放一次可以提前召回。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3040,7 +3040,7 @@
   },
   "ability-shaman#0175": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "流血 {#} 的敌人每 {~1} 秒受到伤害。\n在图腾范围内造成的流血 {#} 伤害\n还会为血池 {#} 增加 +{~2} 点。",
+   "dst": "{c1}流血 {#}{c2} 的敌人每 {c3}{~1} 秒{c2}受到伤害。\n在{c4}图腾{c2}范围内造成的{c1}流血 {#}{c2} 伤害\n还会为{c1}血池 {#}{c2} 增加 {c3}+{~2}{c2} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3070,7 +3070,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "你的普攻现在会让敌人\n流血 {#} +{~} 秒。",
+   "dst": "{c1}你的{c2}普攻{c1}现在会让敌人\n{c3}流血 {#}{c4} +{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3188,7 +3188,7 @@
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "按住 Shift 施放 Uproot 或 Haunting Memory，\n会消耗 {~1} 点血池 {#}，射出一道毁灭光束，\n在敌人与队友之间连锁，\n每 {~2} 秒对敌人造成伤害。",
+   "dst": "{c1}按住 Shift 施放 {c2}Uproot{c1} 或 {c2}Haunting Memory{c1}，\n会消耗 {c3}{~1}{c1} 点{c4}血池 {#}{c1}，射出一道毁灭光束，\n在敌人与队友之间连锁，\n每 {c3}{~2} 秒{c1}对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3203,7 +3203,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "光束内的你与队友每被命中一次，\n就获得 +{~1} 护盾值 ❤。\n这份额外生命会在 {~2} 秒内衰减。",
+   "dst": "{c1}光束内的你与队友每被命中一次，\n就获得 {c2}+{~1} {c3}护盾值 {c4}❤{c1}。\n这份额外生命会在 {c2}{~2} 秒{c1}内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3230,7 +3230,7 @@
   },
   "ability-shaman#0191": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "你或召唤物击杀敌人，或你用\nFriendly Fire 打掉一个人偶时，\n人偶上限 ⚘ +{~1}，持续 {~2} 秒。(上限 +{~3})",
+   "dst": "{c1}你或{c2}召唤物{c1}击杀敌人，或你用\n{c3}Friendly Fire{c1} 打掉一个{c2}人偶{c1}时，\n{c2}人偶上限 {c4}⚘ {c2}+{~1}{c1}，持续 {c5}{~2} 秒{c1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3299,7 +3299,7 @@
   },
   "ability-shaman#0196": {
    "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
-   "dst": "在 Eldritch Call 还生效时再次施放，\n会为它的攻击注入鲜血，获得 +{~1}\n层灌血 {#}。(上限 {~2})",
+   "dst": "{c1}在 {c2}Eldritch Call{c1} 还生效时再次施放，\n会为它的攻击注入鲜血，获得 {c3}+{~1}\n层{c4}灌血 {#}{c1}。{c5}(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3339,7 +3339,7 @@
   },
   "ability-shaman#0199": {
    "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
-   "dst": "人偶的飞刀变强，\n而且可以穿过墙壁与敌人。\n(最多 {~} 个敌人)",
+   "dst": "{c2}人偶{c1}的飞刀变强，\n而且可以穿过墙壁与敌人。\n{c3}(最多 {~} 个敌人)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3501,7 +3501,7 @@
   },
   "ability-shaman#0218": {
    "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
-   "dst": "被保护期间，你受到的伤害降低，\n塑像每 {~} 秒对攻击者\n反击一次。",
+   "dst": "{c1}被保护期间，你受到的伤害降低，\n{c2}塑像{c1}每 {c3}{~} 秒{c1}对攻击者\n反击一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3794,7 +3794,7 @@
   },
   "ability-shaman#0368": {
    "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s worth\nof its effects.",
-   "dst": "戴着金虔假面 {#} 时，你的 Totem\n撞上地面就会碎裂，在瞬间触发\n相当于 {~} 秒的效果。",
+   "dst": "{c1}戴着{c2}金虔假面 {#}{c1} 时，你的 {c3}Totem{c1}\n撞上地面就会碎裂，在瞬间触发\n相当于 {c4}{~} 秒{c1}的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3822,7 +3822,7 @@
   },
   "ability-shaman#0370": {
    "src": "While not worn, each Mystic Masks positive effect\ngradually charges by +{~} every {~}s.",
-   "dst": "没有戴着时，每张 Mystic Masks 的正面效果\n每 {~2} 秒逐渐充能 +{~1}。",
+   "dst": "{c1}没有戴着时，每张 {c2}Mystic Masks{c1} 的正面效果\n每 {c3}{~2} 秒{c1}逐渐充能 {c3}+{~1}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3836,7 +3836,7 @@
   },
   "ability-shaman#0371": {
    "src": "While worn, extra charge decays by {~}\nevery {~}s, after a {~}s grace period.",
-   "dst": "戴着时，在 {~3} 秒的宽限期过后，\n额外充能每 {~2} 秒衰减 {~1}。",
+   "dst": "{c1}戴着时，在 {c2}{~3} 秒{c1}的宽限期过后，\n额外充能每 {c2}{~2} 秒{c1}衰减 {c2}{~1}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3948,7 +3948,7 @@
   },
   "ability-shaman#0379": {
    "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for {~}s.",
-   "dst": "发动 Totemic Shatter 会让 Rain Dance 降下的雨\n全部变成酸雨，持续 {~} 秒。",
+   "dst": "{c1}发动 {c2}Totemic Shatter{c1} 会让 {c2}Rain Dance{c1} 降下的雨\n全部变成{c2}酸雨{c1}，持续 {c3}{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3962,7 +3962,7 @@
   },
   "ability-shaman#0380": {
    "src": "Acid Rain and Totemic Shatter, will inflict {~}s\nof Corroded every time it hits an enemy.",
-   "dst": "酸雨与 Totemic Shatter 每次命中敌人\n都会附加 {~} 秒的腐蚀。",
+   "dst": "{c1}酸雨{c2}与 {c1}Totemic Shatter{c2} 每次命中敌人\n都会附加 {c3}{~} 秒{c2}的{c4}腐蚀{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

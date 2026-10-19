@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "За каждые {~} или {~} чистого урона заклинаний\nс предметов: +{~}/{~}с Восстановления маны (макс. {~}/{~}с)",
+   "dst": "{c1}За каждые {c2}{~}{c1} или {c2}{~} чистого{c1} урона заклинаний\nс предметов: {c2}+{~}/{~}с{c1} Восстановления маны (макс. {~}/{~}с)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "Исцеляет вас и союзников\nна большой площади вокруг.\n(Исцеляя других, нельзя восстановить\nбольше {~} их макс. здоровья)",
+   "dst": "{c1}Исцеляет вас и союзников\nна большой площади вокруг.\n{c2}(Исцеляя других, нельзя восстановить\nбольше {~} {c3}их{c2} макс. здоровья)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "Meteor и Ophanim оставляют огненную печать\nна земле, которая ранит врагов каждые {~}с.",
+   "dst": "{c1}Meteor{c2} и {c1}Ophanim{c2} оставляют огненную печать\nна земле, которая ранит врагов каждые {c3}{~}с{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Попадание по врагу умением Etheric Slash даёт до\n+{~} Distortion {#} за {~}с.",
+   "dst": "{c1}Попадание по врагу умением {c2}Etheric Slash{c1} даёт до\n{c3}+{~} {c4}Distortion {#}{c1} за {c3}{~}с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Применение Ice Snake вместо этого призывает ледяной\nторнадо, наносящий урон каждые {~}с.",
+   "dst": "{c1}Применение {c2}Ice Snake{c1} вместо этого призывает ледяной\nторнадо, наносящий урон каждые {c3}{~}с{c4}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Попадание по врагу Основной атакой даёт до\n+{~} Distortion {#} за {~}с.",
+   "dst": "{c1}Попадание по врагу {c2}Основной атакой{c1} даёт до\n{c3}+{~} {c4}Distortion {#}{c1} за {c3}{~}с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "Исцеление {~} вашего макс. здоровья\nза {~}с даёт бонус урона\nкаждому исцелённому игроку.",
+   "dst": "{c1}Исцеление {c2}{~}{c1} вашего макс. здоровья\nза {c2}{~}с{c1} даёт бонус урона\nкаждому исцелённому игроку.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake оставляет под вами ледяную печать,\nкоторая замедляет и ранит врагов\nкаждые {~}с. Союзники на печати\nневосприимчивы к отбрасыванию.",
+   "dst": "{c1}Ice Snake{c2} оставляет под вами ледяную печать,\nкоторая замедляет и ранит врагов\nкаждые {c3}{~}с{c2}. Союзники на печати\nневосприимчивы к отбрасыванию.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "Pyrokinesis добавляет +{~} маны каждые\n{~}с в Банк маны ✺ при\nпопадании по атакующему врагу.",
+   "dst": "{c1}Pyrokinesis{c2} добавляет {c3}+{~}{c2} маны каждые\n{c3}{~}с{c2} в {c4}Банк маны ✺{c2} при\nпопадании по атакующему врагу.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "Исцеление {~} вашего макс. здоровья за\n{~}с призывает вращающуюся сферу, которая\nранит врагов при касании. (Макс. {~} сфер)",
+   "dst": "{c1}Исцеление {c2}{~}{c1} вашего макс. здоровья за\n{c2}{~}с{c1} призывает вращающуюся сферу, которая\nранит врагов при касании. {c3}(Макс. {~} сфер)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake замораживает врагов на {~}с.",
+   "dst": "{c1}Ice Snake{c2} замораживает врагов на {c3}{~}с{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "Попадание по врагу Основной атакой останавливает\nспад Time Dilation на {~}с.",
+   "dst": "{c1}Попадание по врагу {c2}Основной атакой{c1} останавливает\nспад {c2}Time Dilation{c1} на {c3}{~}с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration восстанавливает ману на {~}с быстрее.",
+   "dst": "{c1}Arcane Restoration{c2} восстанавливает ману на {c3}{~}с{c2} быстрее.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "Когда Банк маны ✺ достигает {~},\nприменение Arcane Transfer в приседе\nпризывает шаровую молнию, которая ранит\nближайших врагов и расходует\n{~} маны каждые {~}с, пока у вас не кончится\nмана.",
+   "dst": "{c1}Когда {c2}Банк маны ✺{c1} достигает {c3}{~}{c1},\nприменение {c4}Arcane Transfer{c1} в приседе\nпризывает шаровую молнию, которая ранит\nближайших врагов и расходует\n{c3}{~}{c1} маны каждые {c3}{~}с{c1}, пока у вас не кончится\nмана.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Увеличивает урон Ice Snake\nи удваивает его скорость.",
+   "dst": "{c1}Увеличивает урон {c2}Ice Snake{c1}\nи {c3}удваивает{c1} его скорость.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "Огненный змей стреляет по целям с Нестабильностью {#}\nкаждые {~}с, получая бонус урона.",
+   "dst": "{c2}Огненный змей{c1} стреляет по целям с {c2}Нестабильностью {#}{c1}\nкаждые {c3}{~}с{c1}, получая бонус урона.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "Громовой змей поражает до\n{~} врагов дуговой молнией\nкаждые {~}с, накладывая Нестабильность {#}.",
+   "dst": "{c2}Громовой змей{c1} поражает до\n{c3}{~}{c1} врагов дуговой молнией\nкаждые {c3}{~}с{c1}, накладывая {c2}Нестабильность {#}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "Разлом наносит урон врагам каждые {~}с и\nувеличивает прирост Distortion {#}\nна +{~}, пока вы стоите в нём.",
+   "dst": "{c1}Разлом наносит урон врагам каждые {c2}{~}с{c1} и\nувеличивает прирост {c3}Distortion {#}{c1}\nна {c2}+{~}{c1}, пока вы стоите в нём.",
    "role": "desc",
    "kind": "block",
    "ctx": [

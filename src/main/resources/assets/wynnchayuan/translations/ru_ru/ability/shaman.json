@@ -235,7 +235,7 @@
   },
   "ability-shaman#0245": {
    "src": "Additionally, while wearing the {#} Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor {~}s, reducing their damage by {~} and slowing\nthem by {~}.",
-   "dst": "Кроме того, пока на вас {#} Маска Фанатика,\nвраги, задетые Aura, получают Выветривание\nна {~} с: их урон снижается на {~}, а скорость -\nна {~}.",
+   "dst": "{c1}Кроме того, пока на вас {c2}{#} Маска Фанатика{c1},\nвраги, задетые {c3}Aura{c1}, получают {c4}Выветривание{c1}\nна {c5}{~} с{c1}: их урон снижается на {c5}{~}{c1}, а скорость -\nна {c5}{~}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -319,7 +319,7 @@
   },
   "ability-shaman#0243": {
    "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
-   "dst": "Заклинание, стоимость которого снижена Artist's\nImmersion, призывает ритуальный круг. Повторные применения\nувеличивают его радиус и число ударов на {~}.\n(Макс. {~} блоков)",
+   "dst": "{c1}Заклинание, стоимость которого снижена {c2}Artist's\nImmersion{c1}, призывает ритуальный круг. Повторные применения\nувеличивают его радиус и число ударов на {c3}{~}{c1}.\n{c4}(Макс. {~} блоков)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -361,7 +361,7 @@
   },
   "ability-shaman#0273": {
    "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
-   "dst": "Eye of the Storm накладывает +{~} Статики на задетых врагов\nза каждый ваш Импульс. (Макс. {~} Статики)",
+   "dst": "{c1}Eye of the Storm{c2} накладывает {c3}+{~} {c4}Статики{c2} на задетых врагов\nза каждый ваш {c4}Импульс{c2}. {c5}(Макс. {~} Статики)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -389,7 +389,7 @@
   },
   "ability-shaman#0281": {
    "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
-   "dst": "Получайте +{~} маны каждые {~} с, если вы\nили Totem находитесь хотя бы в {~}\nлуже.",
+   "dst": "{c1}Получайте {c2}+{~}{c1} маны каждые {c2}{~} с{c1}, если вы\nили {c3}Totem{c1} находитесь хотя бы в {c2}{~}{c1}\nлуже.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -403,7 +403,7 @@
   },
   "ability-shaman#0264": {
    "src": "Grant nearby allies a stack of buffs per {~}s\nwhile near you, based on your current Mask.\n(Max {~} Stacks)",
-   "dst": "Каждые {~} с даёт союзникам рядом с вами заряд\nусилений в зависимости от текущей Маски.\n(Макс. {~} зарядов)",
+   "dst": "{c1}Каждые {c2}{~} с{c1} даёт союзникам рядом с вами заряд\nусилений в зависимости от текущей {c3}Маски{c1}.\n{c4}(Макс. {~} зарядов)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -515,7 +515,7 @@
   },
   "ability-shaman#0266": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
-   "dst": "При применении Uproot вместо этого\nнадевается одна из Mystic Masks.\n(Shift + Uproot - надеть предыдущую маску)",
+   "dst": "{c1}При применении {c2}Uproot{c1} вместо этого\nнадевается одна из {c3}Mystic Masks{c1}.\n{c4}(Shift + Uproot - надеть предыдущую маску)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-shaman#0258": {
    "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "Пока на вас {#} Маска Еретика,\nFrog Dance при ударе о землю\nсоздаёт небольшую лужу. (Макс. {~})",
+   "dst": "{c1}Пока на вас {#} {c2}Маска Еретика{c1},\n{c3}Frog Dance{c1} при ударе о землю\nсоздаёт небольшую лужу. {c4}(Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -585,7 +585,7 @@
   },
   "ability-shaman#0253": {
    "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "Пока на вас {#} Маска Еретика,\nHaul вместо этого отбрасывает вас от\nземли и ранит ближайших врагов.\n(Удерживайте shift для отмены)",
+   "dst": "{c1}Пока на вас {#} {c2}Маска Еретика{c1},\n{c3}Haul{c1} вместо этого отбрасывает вас от\nземли и ранит ближайших врагов.\n{c4}(Удерживайте shift для отмены)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-shaman#0257": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
-   "dst": "Пока на вас {#} Маска Безумца, применение Aura\nзаряжает вас, давая заряд Импульса.\n(Макс. {~} Импульса)",
+   "dst": "{c1}Пока на вас {c2}{#} Маска Безумца{c1}, применение {c3}Aura{c1}\nзаряжает вас, давая заряд {c4}Импульса{c1}.\n{c5}(Макс. {~} Импульса)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -669,7 +669,7 @@
   },
   "ability-shaman#0286": {
    "src": "While you have Surge, strike nearby enemies with\nlightning every {~}s.",
-   "dst": "Пока у вас есть Импульс, каждые {~} с\nбьёт молнией ближайших врагов.",
+   "dst": "{c1}Пока у вас есть {c2}Импульс{c1}, каждые {c3}{~} с{c1}\nбьёт молнией ближайших врагов.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -767,7 +767,7 @@
   },
   "ability-shaman#0282": {
    "src": "⌛ Duration: {~}s (per stack)\n☀ Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "⌛ Длительность: {~} с (за заряд)\n☀ Область действия: {~} блоков (круг)",
+   "dst": "{c1}⌛ {c2}Длительность: {c3}{~} с {c4}(за заряд)\n{c5}☀ {c2}Область действия: {c3}{~} блоков{c2} (круг)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -922,7 +922,7 @@
   },
   "ability-shaman#0315": {
    "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
-   "dst": "{#} Фанатик: наложение ослаблений на {~} с увеличивает",
+   "dst": "{#} {c1}Фанатик{c2}: наложение ослаблений на {c3}{~} с{c2} увеличивает",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1091,7 +1091,7 @@
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "Удваивает скорость лучей Основной атаки и\nувеличивает урон при использовании релика.",
+   "dst": "{c1}Удваивает{c2} скорость лучей {c3}Основной атаки{c2} и\nувеличивает урон при использовании релика.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1428,7 +1428,7 @@
   },
   "ability-shaman#0029": {
    "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
-   "dst": "В полёте ваш Totem\nоставляет полосу дождя, наносящую урон\nврагам под ней каждые {~} с.",
+   "dst": "{c1}В полёте ваш {c2}Totem{c1}\nоставляет полосу дождя, наносящую урон\nврагам под ней каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1468,7 +1468,7 @@
   },
   "ability-shaman#0032": {
    "src": "Aura will travel {~}s faster and\ndeal additional damage.",
-   "dst": "Aura распространяется на {~} с быстрее и\nнаносит дополнительный урон.",
+   "dst": "{c1}Aura{c2} распространяется на {c3}{~} с{c2} быстрее и\nнаносит дополнительный урон.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1535,7 +1535,7 @@
   },
   "ability-shaman#0039": {
    "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
-   "dst": "Ваш Totem призывает {~} Марионетку\nкаждые {~} с. (Макс. {~}) Они метают ножи\nв ближайших врагов каждые {~} с.",
+   "dst": "{c1}Ваш {c2}Totem{c1} призывает {c3}{~} {c4}Марионетку{c1}\nкаждые {c3}{~} с{c1}. (Макс. {~}) Они метают ножи\nв ближайших врагов каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1685,7 +1685,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "Ваш Totem выкачивает {~} вашего здоровья\nкаждые {~} с и переносит в Запас крови {#}.",
+   "dst": "{c1}Ваш {c2}Totem{c1} выкачивает {c3}{~}{c1} вашего здоровья\nкаждые {c3}{~} с{c1} и переносит в {c4}Запас крови {#}{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1984,7 +1984,7 @@
   },
   "ability-shaman#0075": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "Когда у Марионеток остаётся {~} с,\nони на большой скорости бросаются\nна врагов и взрываются.",
+   "dst": "{c1}Когда у {c2}Марионеток{c1} остаётся {c3}{~} с{c1},\nони на большой скорости бросаются\nна врагов и взрываются.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2117,7 +2117,7 @@
   },
   "ability-shaman#0090": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Кровоточащие {#} враги получают урон каждые {~} с.\nУрон от Кровотечения {#} в радиусе Totem\nтакже добавляет +{~} ед. в ваш Запас крови {#}.",
+   "dst": "{c1}Кровоточащие {#}{c2} враги получают урон каждые {c3}{~} с{c2}.\nУрон от {c1}Кровотечения {#}{c2} в радиусе {c4}Totem{c2}\nтакже добавляет {c3}+{~}{c2} ед. в ваш {c1}Запас крови {#}{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2371,7 +2371,7 @@
   },
   "ability-shaman#0111": {
    "src": "Every {~}s, your Totem will heal\nevery player within its range.",
-   "dst": "Каждые {~} с ваш Totem исцеляет\nвсех игроков в своём радиусе.",
+   "dst": "{c1}Каждые {c2}{~} с{c1} ваш {c3}Totem{c1} исцеляет\nвсех игроков в своём радиусе.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2398,7 +2398,7 @@
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "Ближайшие Кровоточащие {#} враги получают\nурон за каждые {~} потерянного вами Здоровья.\n(Макс. {~} срабатываний в секунду)",
+   "dst": "{c1}Ближайшие {c2}Кровоточащие {#}{c1} враги получают\nурон за каждые {c3}{~}{c1} потерянного вами Здоровья.\n{c4}(Макс. {~} срабатываний в секунду)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2438,7 +2438,7 @@
   },
   "ability-shaman#0116": {
    "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
-   "dst": "Каждый Totem призывает своего Идола.\nКаждый дополнительный Идол\nснижает урон всех Идолов на {~}x.",
+   "dst": "{c1}Каждый {c2}Totem{c1} призывает своего {c3}Идола{c1}.\nКаждый дополнительный {c3}Идол{c1}\nснижает урон всех {c3}Идолов{c1} на {c4}{~}x{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2453,7 +2453,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "Totem призывает Идола, который каждые {~} с\nатакует врагов и толкает их к\nближайшему Totem.\nИдол живёт столько же, сколько его\nTotem.",
+   "dst": "{c1}Totem{c2} призывает {c3}Идола{c2}, который каждые {c4}{~} с{c2}\nатакует врагов и толкает их к\nближайшему {c1}Totem{c2}.\n{c3}Идол{c2} живёт столько же, сколько его\n{c1}Totem{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2671,7 +2671,7 @@
   },
   "ability-shaman#0139": {
    "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
-   "dst": "Sacrificial Shrine увеличивает урон Aura на +{~} и поглощает\nдо {~} с Кровотечения {#}, давая +{~} Запаса крови {#} за каждую\nпоглощённую секунду Кровотечения {#}.",
+   "dst": "{c1}Sacrificial Shrine{c2} увеличивает урон {c1}Aura{c2} на {c3}+{~}{c2} и поглощает\nдо {c3}{~} с {c4}Кровотечения {#}{c2}, давая {c3}+{~} {c4}Запаса крови {#} {c2}за каждую\nпоглощённую секунду {c4}Кровотечения {#}{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2698,7 +2698,7 @@
   },
   "ability-shaman#0141": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "Увеличивает макс. Запас крови {#} на +{~} ед.\nУвеличивает макс. длительность Кровотечения {#} на +{~} с.",
+   "dst": "{c1}Увеличивает макс. {c2}Запас крови {#}{c1} на {c3}+{~}{c1} ед.\nУвеличивает макс. длительность {c2}Кровотечения {#}{c1} на {c3}+{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2742,7 +2742,7 @@
   },
   "ability-shaman#0144": {
    "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
-   "dst": "Пока призванные не собраны, их атаки\nнакапливают длительность этого умения\nна +{~} с за атаку. (Макс. {~} с)",
+   "dst": "{c1}Пока {c2}призванные{c1} не собраны, их атаки\nнакапливают длительность этого умения\nна {c3}+{~} с{c1} за атаку. {c4}(Макс. {~} с)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2797,7 +2797,7 @@
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "Попадание Основной атакой по Марионеткам\nотнимает у них {~} с длительности\nза луч и усиливает их урон.",
+   "dst": "{c1}Попадание {c3}Основной атакой{c1} по {c2}Марионеткам{c1}\nотнимает у них {c4}{~} с{c1} длительности\nза луч и усиливает их урон.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2891,7 +2891,7 @@
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "Применение Haul с зажатым shift\nвременно отправляет ваших Колибри\nатаковать ближайших врагов, быстро\nпронзая их каждые {~} с.\nПовторное применение досрочно отзывает их.",
+   "dst": "{c1}Применение {c2}Haul{c1} с зажатым shift\nвременно отправляет ваших {c3}Колибри{c1}\nатаковать ближайших врагов, быстро\nпронзая их каждые {c4}{~} с{c1}.\nПовторное применение досрочно отзывает их.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3040,7 +3040,7 @@
   },
   "ability-shaman#0175": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Кровоточащие {#} враги получают урон каждые {~} с.\nУрон от Кровотечения {#} в радиусе Totem\nтакже добавляет +{~} ед. в ваш Запас крови {#}.",
+   "dst": "{c1}Кровоточащие {#}{c2} враги получают урон каждые {c3}{~} с{c2}.\nУрон от {c1}Кровотечения {#}{c2} в радиусе {c4}Totem{c2}\nтакже добавляет {c3}+{~}{c2} ед. в ваш {c1}Запас крови {#}{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3070,7 +3070,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "Основная атака теперь накладывает на врагов\nКровотечение {#} на +{~} с.",
+   "dst": "{c2}Основная атака{c1} теперь накладывает на врагов\n{c3}Кровотечение {#}{c1} на {c4}+{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3188,7 +3188,7 @@
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "Применение Uproot или Haunting Memory с\nзажатым shift тратит {~} ед.\nЗапаса крови {#} на разрушительный луч,\nкоторый перескакивает между врагами и союзниками\nи наносит урон врагам каждые {~} с.",
+   "dst": "{c1}Применение {c2}Uproot{c1} или {c2}Haunting Memory{c1} с\nзажатым shift тратит {c3}{~}{c1} ед.\n{c4}Запаса крови {#}{c1} на разрушительный луч,\nкоторый перескакивает между врагами и союзниками\nи наносит урон врагам каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3203,7 +3203,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "Вы и все союзники в луче\nполучаете +{~} Сверхздоровья ❤ за удар.\nБонусное здоровье угасает за {~} с.",
+   "dst": "{c1}Вы и все союзники в луче\nполучаете {c2}+{~} {c3}Сверхздоровья {c4}❤ {c1}за удар.\nБонусное здоровье угасает за {c2}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3230,7 +3230,7 @@
   },
   "ability-shaman#0191": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "Когда вы или ваши призванные убиваете врага\nили вы убиваете Марионетку с помощью Friendly Fire,\nвы получаете +{~} к Макс. Марионеткам ⚘ на {~} с. (Макс. +{~})",
+   "dst": "{c1}Когда вы или ваши {c2}призванные{c1} убиваете врага\nили вы убиваете {c2}Марионетку{c1} с помощью {c3}Friendly Fire{c1},\nвы получаете {c2}+{~} к Макс. Марионеткам {c4}⚘ {c1}на {c5}{~} с{c1}. (Макс. +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3299,7 +3299,7 @@
   },
   "ability-shaman#0196": {
    "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
-   "dst": "Обновление уже активного Eldritch Call\nнаполняет его атаки кровью, давая +{~}\nПереливания {#}. (Макс. {~})",
+   "dst": "{c1}Обновление уже активного {c2}Eldritch Call{c1}\nнаполняет его атаки кровью, давая {c3}+{~}\n{c4}Переливания {#}{c1}. {c5}(Макс. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3339,7 +3339,7 @@
   },
   "ability-shaman#0199": {
    "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
-   "dst": "Ножи Марионеток становятся сильнее\nи проходят сквозь стены и врагов.\n(Макс. {~} врагов)",
+   "dst": "{c1}Ножи {c2}Марионеток{c1} становятся сильнее\nи проходят сквозь стены и врагов.\n{c3}(Макс. {~} врагов)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3501,7 +3501,7 @@
   },
   "ability-shaman#0218": {
    "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
-   "dst": "Под защитой вы получаете меньше\nурона, а ваши Идолы каждые {~} с\nнаносят ответный удар атакующим.",
+   "dst": "{c1}Под защитой вы получаете меньше\nурона, а ваши {c2}Идолы{c1} каждые {c3}{~} с{c1}\nнаносят ответный удар атакующим.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3794,7 +3794,7 @@
   },
   "ability-shaman#0368": {
    "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s worth\nof its effects.",
-   "dst": "Пока на вас Маска Фанатика {#},\nваш Totem разбивается при ударе о\nземлю, мгновенно запуская его эффекты\nза {~} с.",
+   "dst": "{c1}Пока на вас {c2}Маска Фанатика {#}{c1},\nваш {c3}Totem{c1} разбивается при ударе о\nземлю, мгновенно запуская его эффекты\nза {c4}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3822,7 +3822,7 @@
   },
   "ability-shaman#0370": {
    "src": "While not worn, each Mystic Masks positive effect\ngradually charges by +{~} every {~}s.",
-   "dst": "Пока Маска не надета, положительные эффекты каждой из Mystic Masks\nпостепенно заряжаются на +{~} каждые {~} с.",
+   "dst": "{c1}Пока Маска не надета, положительные эффекты каждой из {c2}Mystic Masks{c1}\nпостепенно заряжаются на {c3}+{~}{c1} каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3836,7 +3836,7 @@
   },
   "ability-shaman#0371": {
    "src": "While worn, extra charge decays by {~}\nevery {~}s, after a {~}s grace period.",
-   "dst": "Пока Маска надета, дополнительный заряд убывает на {~}\nкаждые {~} с после отсрочки в {~} с.",
+   "dst": "{c1}Пока Маска надета, дополнительный заряд убывает на {c2}{~}{c1}\nкаждые {c2}{~} с{c1} после отсрочки в {c2}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3948,7 +3948,7 @@
   },
   "ability-shaman#0379": {
    "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for {~}s.",
-   "dst": "Активация Totemic Shatter превращает весь\nдождь от Rain Dance в Acid Rain,\nкоторый длится {~} с.",
+   "dst": "{c1}Активация {c2}Totemic Shatter{c1} превращает весь\nдождь от {c2}Rain Dance{c1} в {c2}Acid Rain{c1},\nкоторый длится {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3962,7 +3962,7 @@
   },
   "ability-shaman#0380": {
    "src": "Acid Rain and Totemic Shatter, will inflict {~}s\nof Corroded every time it hits an enemy.",
-   "dst": "Acid Rain и Totemic Shatter накладывают {~} с\nКоррозии при каждом попадании по врагу.",
+   "dst": "{c1}Acid Rain{c2} и {c1}Totemic Shatter{c2} накладывают {c3}{~} с\n{c4}Коррозии{c2} при каждом попадании по врагу.",
    "role": "desc",
    "kind": "block",
    "ctx": [

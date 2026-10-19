@@ -160,7 +160,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "아이템에서 얻은 기본 공격 고정\n피해 {~} 또는 {~}마다\n이동 속도 +{~}. (최대 {~})",
+   "dst": "{c1}아이템에서 얻은 기본 공격 {c2}고정{c1}\n피해 {c2}{~}{c1} 또는 {c2}{~}{c1}마다\n이동 속도 {c2}+{~}{c1}. {c3}(최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -227,7 +227,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "아이템의 체력 재생 고정값 {~} 또는 {~}마다\n체력 +{~}. (최대 {~})",
+   "dst": "{c1}아이템의 체력 재생 {c2}고정값 {~}{c1} 또는 {c2}{~}{c1}마다\n체력 {c2}+{~}{c1}. (최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "받은 모든 피해에 대해,\n{~2}초에 걸쳐 그 피해의\n{~1}를 회복합니다.",
+   "dst": "{c1}받은 모든 피해에 대해,\n{c2}{~2}초{c1}에 걸쳐 그 피해의\n{c2}{~1}{c1}를 회복합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1154,7 +1154,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "최대 체력의 {~}를 회복할 때마다\n주변의 모든 적에게 피해를 줍니다.\n(한 번에 최대 {~}회 발동)",
+   "dst": "{c1}최대 체력의 {c2}{~}{c1}를 회복할 때마다\n주변의 모든 적에게 피해를 줍니다.\n{c3}(한 번에 최대 {~}회 발동)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "Bak'al's Grasp의 재사용 대기시간이\n-{~}초 줄고, 체력을 {~} 잃을 때마다 얻는\n고정 피해가 +{~} 증가합니다.",
+   "dst": "{c2}Bak'al's Grasp{c1}의 재사용 대기시간이\n{c3}-{~}초{c1} 줄고, 체력을 {c3}{~}{c1} 잃을 때마다 얻는\n고정 피해가 {c3}+{~}{c1} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1625,7 +1625,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "아이템의 반사 {~}마다\n마나 재생 +{~}/{~}초. (최대 {~}/{~}초)",
+   "dst": "{c1}아이템의 반사 {c2}{~}{c1}마다\n마나 재생 {c2}+{~}/{~}초{c1}. {c3}(최대 {~}/{~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1679,7 +1679,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "Counter의 피해가 증가하고 재사용\n대기시간이 -{~}초 감소합니다.",
+   "dst": "{c2}Counter{c1}의 피해가 증가하고 재사용\n대기시간이 {c3}-{~}초{c1} 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1750,7 +1750,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "신성력 ✧이 {~} 있는 동안\n기본 공격이 강화되어\n신성력을 {~} 부여합니다.",
+   "dst": "{c3}신성력 {c4}✧{c1}이 {c2}{~}{c1} 있는 동안\n{c5}기본 공격{c1}이 강화되어\n{c3}신성력{c1}을 {c2}{~}{c1} 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1966,7 +1966,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "War Scream에 피해를 입은 적은\n도발 {#} 상태가 되어 최소 {~}초 동안\n당신만 노립니다.",
+   "dst": "{c2}War Scream{c1}에 피해를 입은 적은\n{c3}도발 {#}{c1} 상태가 되어 최소 {c4}{~}초{c1} 동안\n당신만 노립니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2060,7 +2060,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "Bash의 타격 횟수가 {~}배가 되고 {~}초 빨라집니다.",
+   "dst": "{c1}Bash{c2}의 타격 횟수가 {c3}{~}배{c2}가 되고 {c3}{~}초{c2} 빨라집니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Generalist가 발동하면\n{~2}초 동안 조화 +{~1}. (최대 {~3})",
+   "dst": "{c2}Generalist{c1}가 발동하면\n{c3}{~2}초{c1} 동안 {c4}조화 {c3}+{~1}{c1}. (최대 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "웅크린 채 Bash를 시전하면\n신성력 ✧을 {~} 소모하여 천천히 전진하는\n빛줄기를 소환하고,\n{~}초마다 적에게 피해를 줍니다.",
+   "dst": "{c1}웅크린 채 {c2}Bash{c1}를 시전하면\n{c4}신성력 {c5}✧{c1}을 {c3}{~}{c1} 소모하여 천천히 전진하는\n빛줄기를 소환하고,\n{c3}{~}초{c1}마다 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike의 피해가 증가하며, 사용한 부서진\n보호막 {~2}개마다 주변 아군에게 Mantle of the Bovemists\n충전을 {~1} 부여합니다. (최대 {~3})",
+   "dst": "{c1}Shield Strike{c2}의 피해가 증가하며, 사용한 부서진\n보호막 {c3}{~2}개{c2}마다 주변 아군에게 {c1}Mantle of the Bovemists{c2}\n충전을 {c3}{~1}{c2} 부여합니다. {c4}(최대 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2988,7 +2988,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "가시에 기본 공격이나 Uppercut을 시전하면\n가시가 폭발하여 피해를 주고, 타락 상태에서도\n추가 체력 ❤을 {~} 부여합니다.\n추가 체력은 {~}초에 걸쳐 감소합니다.",
+   "dst": "{c1}가시에 {c2}기본 공격{c1}이나 {c2}Uppercut{c1}을 시전하면\n가시가 폭발하여 피해를 주고, 타락 상태에서도\n{c4}추가 체력 {c5}❤{c1}을 {c3}{~}{c1} 부여합니다.\n추가 체력은 {c3}{~}초{c1}에 걸쳐 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3182,7 +3182,7 @@
   },
   "ability-warrior#0233": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations within {~}s.)",
-   "dst": "최대 체력의 {~1}를 회복할 때마다\n주변의 모든 적에게 피해를 줍니다.\n({~3}초 이내 최대 {~2}회 발동)",
+   "dst": "{c1}최대 체력의 {c2}{~1}{c1}를 회복할 때마다\n주변의 모든 적에게 피해를 줍니다.\n{c3}({~3}초 이내 최대 {~2}회 발동)",
    "role": "desc",
    "kind": "block",
    "ctx": [

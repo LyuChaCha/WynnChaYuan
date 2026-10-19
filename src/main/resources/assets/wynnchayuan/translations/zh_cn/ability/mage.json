@@ -267,7 +267,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "装备上每 {~} 或 {~} 点固定法术伤害，\n额外获得 +{~}/{~}s 法力恢复 (上限 {~}/{~}s)",
+   "dst": "{c1}装备上每 {c2}{~}{c1} 或 {c2}{~} 点固定{c1}法术伤害，\n额外获得 {c2}+{~}/{~}s{c1} 法力恢复 (上限 {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "治疗你自己与周围\n大范围内的友军。\n(治疗他人时，单次不会超过\n其最大生命的 {~})",
+   "dst": "{c1}治疗你自己与周围\n大范围内的友军。\n{c2}(治疗他人时，单次不会超过\n{c3}其{c2}最大生命的 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "Meteor 与 Ophanim 会在地上留下燃烧符印，\n每 {~} 秒对敌人造成一次伤害。",
+   "dst": "{c1}Meteor{c2} 与 {c1}Ophanim{c2} 会在地上留下燃烧符印，\n每 {c3}{~} 秒{c2}对敌人造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -604,7 +604,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用 Etheric Slash 命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
+   "dst": "{c1}用 {c2}Etheric Slash{c1} 命中敌人时，每 {c3}{~2} 秒{c1}\n最多获得 {c3}+{~1} 层 {c4}Distortion {#}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -851,7 +851,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "施放 Ice Snake 改为召唤一座冰冻龙卷，\n每 {~} 秒造成一次伤害。",
+   "dst": "{c1}施放 {c2}Ice Snake{c1} 改为召唤一座冰冻龙卷，\n每 {c3}{~} 秒{c1}造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1048,7 +1048,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用普攻命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
+   "dst": "{c1}用{c2}普攻{c1}命中敌人时，每 {c3}{~2} 秒{c1}\n最多获得 {c3}+{~1} 层 {c4}Distortion {#}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1116,7 +1116,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "在 {~2} 秒内治疗量达到你最大生命的 {~1} 后，\n你治疗过的每一位玩家\n都会获得伤害加成。",
+   "dst": "{c1}在 {c2}{~2} 秒{c1}内治疗量达到你最大生命的 {c2}{~1}{c1} 后，\n你治疗过的每一位玩家\n都会获得伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1211,7 +1211,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake 会在你脚下留下冰封符印，\n每 {~} 秒对敌人造成一次伤害并使其减速。\n站在印记上的友军\n不会被击退。",
+   "dst": "{c1}Ice Snake{c2} 会在你脚下留下冰封符印，\n每 {c3}{~} 秒{c2}对敌人造成一次伤害并使其减速。\n站在印记上的友军\n不会被击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "用 Pyrokinesis 命中有敌意的敌人时，\n每 {~2} 秒为你的 Mana Bank ✺\n增加 +{~1} 点法力。",
+   "dst": "{c2}用 {c1}Pyrokinesis{c2} 命中有敌意的敌人时，\n每 {c3}{~2} 秒{c2}为你的 {c4}Mana Bank ✺{c2}\n增加 {c3}+{~1}{c2} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1554,7 +1554,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "在 {~2} 秒内治疗量达到你最大生命的 {~1} 后，\n召唤一颗绕着你旋转的光球，\n接触敌人时造成伤害。(最多 {~3} 颗)",
+   "dst": "{c1}在 {c2}{~2} 秒{c1}内治疗量达到你最大生命的 {c2}{~1}{c1} 后，\n召唤一颗绕着你旋转的光球，\n接触敌人时造成伤害。{c3}(最多 {~3} 颗)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,7 +1943,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake 会冻结敌人 {~} 秒。",
+   "dst": "{c1}Ice Snake{c2} 会冻结敌人 {c3}{~} 秒{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "用普攻命中敌人后，Time Dilation\n在 {~} 秒内不会衰减。",
+   "dst": "{c1}用{c2}普攻{c1}命中敌人后，{c2}Time Dilation{c1}\n在 {c3}{~} 秒{c1}内不会衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2052,7 +2052,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration 恢复法力的速度加快 {~} 秒。",
+   "dst": "{c1}Arcane Restoration{c2} 恢复法力的速度加快 {c3}{~} 秒{c2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "当你的 Mana Bank ✺ 达到 {~1} 时，\n潜行施放 Arcane Transfer 会召唤一颗球状闪电，\n对附近的敌人造成伤害，\n并每 {~3} 秒消耗 {~2} 点法力，\n直到法力耗尽。",
+   "dst": "{c1}当你的 {c2}Mana Bank ✺{c1} 达到 {c3}{~1}{c1} 时，\n潜行施放 {c4}Arcane Transfer{c1} 会召唤一颗球状闪电，\n对附近的敌人造成伤害，\n并每 {c3}{~3} 秒{c1}消耗 {c3}{~2} 点{c1}法力，\n直到法力耗尽。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Ice Snake 的伤害提高，\n速度翻倍。",
+   "dst": "{c2}Ice Snake{c1} 的伤害提高，\n速度{c3}翻倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3069,7 +3069,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "Fire Serpent 每 {~} 秒会朝带有 Unstable {#}\n的目标开火，并获得该伤害加成。",
+   "dst": "{c2}Fire Serpent{c1} 每 {c3}{~} 秒{c1}会朝带有 {c2}Unstable {#}{c1}\n的目标开火，并获得该伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3084,7 +3084,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "Thunder Serpent 每 {~2} 秒会以弧状闪电\n击中最多 {~1} 个敌人，\n使它们进入 Unstable {#}。",
+   "dst": "{c2}Thunder Serpent{c1} 每 {c3}{~2} 秒{c1}会以弧状闪电\n击中最多 {c3}{~1}{c1} 个敌人，\n使它们进入 {c2}Unstable {#}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3262,7 +3262,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "裂隙每 {~} 秒对敌人造成一次伤害，\n站在其中时，你的 Distortion {#}\n累积加快 +{~}。",
+   "dst": "{c1}裂隙每 {c2}{~} 秒{c1}对敌人造成一次伤害，\n站在其中时，你的 {c3}Distortion {#}{c1}\n累积加快 {c2}+{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

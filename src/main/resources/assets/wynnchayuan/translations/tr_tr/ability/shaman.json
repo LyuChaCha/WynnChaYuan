@@ -239,7 +239,7 @@
   },
   "ability-shaman#0245": {
    "src": "Additionally, while wearing the {#} Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor {~}s, reducing their damage by {~} and slowing\nthem by {~}.",
-   "dst": "Ayrıca {#} Fanatiğin Maskesi takılıyken Aura'nın\nvurduğu düşmanlar {~} sn boyunca Aşınma etkisine\ngirer; hasarları {~} azalır ve\n{~} yavaşlarlar.",
+   "dst": "{c1}Ayrıca {#}{c2} Fanatiğin Maskesi{c1} takılıyken {c3}Aura{c1}'nın\nvurduğu düşmanlar {c5}{~} sn{c1} boyunca {c4}Aşınma{c1} etkisine\ngirer; hasarları {c5}{~}{c1} azalır ve\n{c5}{~}{c1} yavaşlarlar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -323,7 +323,7 @@
   },
   "ability-shaman#0243": {
    "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
-   "dst": "Artist's Immersion ile maliyeti düşen bir büyü\nkullanmak bir ritüel çemberi çağırır. Sonraki büyüler\nçemberin yarıçapını ve vuruşlarını {~} artırır.\n(En fazla {~} blok)",
+   "dst": "{c2}Artist's Immersion{c1} ile maliyeti düşen bir büyü\nkullanmak bir ritüel çemberi çağırır. Sonraki büyüler\nçemberin yarıçapını ve vuruşlarını {c3}{~}{c1} artırır.\n{c4}(En fazla {~} blok)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -365,7 +365,7 @@
   },
   "ability-shaman#0273": {
    "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
-   "dst": "Eye of the Storm, elindeki her Dalga için vurduğu\ndüşmanlara +{~} Statik uygular. (En fazla {~} Statik)",
+   "dst": "{c1}Eye of the Storm{c2}, elindeki her {c4}Dalga{c2} için vurduğu\ndüşmanlara {c3}+{~}{c4} Statik{c2} uygular. {c5}(En fazla {~} Statik)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -393,7 +393,7 @@
   },
   "ability-shaman#0281": {
    "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
-   "dst": "Sen ya da bir Totem en az {~3}\nhavuzun içindeyken her {~2} sn'de\n+{~1} Mana kazan.",
+   "dst": "{c1}Sen ya da bir {c3}Totem{c1} en az {c2}{~3}{c1}\nhavuzun içindeyken her {c2}{~2} sn{c1}'de\n{c2}+{~1}{c1} Mana kazan.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -407,7 +407,7 @@
   },
   "ability-shaman#0264": {
    "src": "Grant nearby allies a stack of buffs per {~}s\nwhile near you, based on your current Mask.\n(Max {~} Stacks)",
-   "dst": "Yakınındaki müttefiklere, mevcut Maskene göre\nher {~} sn'de bir yığın güçlendirme ver.\n(En fazla {~} Yığın)",
+   "dst": "{c1}Yakınındaki müttefiklere, mevcut {c3}Maskene{c1} göre\nher {c2}{~} sn{c1}'de bir yığın güçlendirme ver.\n{c4}(En fazla {~} Yığın)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -519,7 +519,7 @@
   },
   "ability-shaman#0266": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
-   "dst": "Uproot kullandığında bunun yerine\nMystic Masks'tan birini tak.\n(Önceki maskeyi takmak için Shift + Uproot)",
+   "dst": "{c2}Uproot{c1} kullandığında bunun yerine\n{c3}Mystic Masks{c1}'tan birini tak.\n{c4}(Önceki maskeyi takmak için Shift + Uproot)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -575,7 +575,7 @@
   },
   "ability-shaman#0258": {
    "src": "When wearing the {#} Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "{#} Sapkının Maskesi takılıyken\nFrog Dance yere çarptığında küçük\nbir havuz oluşturur. (En fazla {~})",
+   "dst": "{#} {c2}Sapkının Maskesi{c1} takılıyken\n{c3}Frog Dance{c1} yere çarptığında küçük\nbir havuz oluşturur. {c4}(En fazla {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -589,7 +589,7 @@
   },
   "ability-shaman#0253": {
    "src": "When wearing the {#} Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "{#} Sapkının Maskesi takılıyken\nHaul bunun yerine seni yerden\nsektirir ve yakındaki düşmanlara hasar verir.\n(İptal için Shift'e basılı tut)",
+   "dst": "{#} {c2}Sapkının Maskesi{c1} takılıyken\n{c3}Haul{c1} bunun yerine seni yerden\nsektirir ve yakındaki düşmanlara hasar verir.\n{c4}(İptal için Shift'e basılı tut)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -631,7 +631,7 @@
   },
   "ability-shaman#0257": {
    "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
-   "dst": "{#} Delinin Maskesi takılıyken Aura kullanmak seni\nyükler ve bir yığın Dalga verir.\n(En fazla {~} Dalga)",
+   "dst": "{#}{c2} Delinin Maskesi{c1} takılıyken {c3}Aura{c1} kullanmak seni\nyükler ve bir yığın {c4}Dalga{c1} verir.\n{c5}(En fazla {~} Dalga)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -673,7 +673,7 @@
   },
   "ability-shaman#0286": {
    "src": "While you have Surge, strike nearby enemies with\nlightning every {~}s.",
-   "dst": "Dalga varken her {~} sn'de yakındaki düşmanlara\nyıldırım çarptır.",
+   "dst": "{c2}Dalga{c1} varken her {c3}{~} sn{c1}'de yakındaki düşmanlara\nyıldırım çarptır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -771,7 +771,7 @@
   },
   "ability-shaman#0282": {
    "src": "⌛ Duration: {~}s (per stack)\n☀ Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "⌛ Süre: {~} sn (yığın başına)\n☀ Etki Alanı: {~} Blok (Daire Şeklinde)",
+   "dst": "{c1}⌛ {c2}Süre: {c3}{~} sn {c4}(yığın başına)\n{c5}☀ {c2}Etki Alanı: {c3}{~} Blok {c2}(Daire Şeklinde)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -926,7 +926,7 @@
   },
   "ability-shaman#0315": {
    "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
-   "dst": "{#} Fanatik: {~} sn'lik zayıflatma uygulamak",
+   "dst": "{#} {c1}Fanatik{c2}: {c3}{~} sn{c2}'lik zayıflatma uygulamak",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1095,7 +1095,7 @@
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "Relik kullanırken Ana Saldırı ışınının\nhızını ikiye katla ve hasarını artır.",
+   "dst": "{c2}Relik kullanırken {c3}Ana Saldırı{c2} ışınının\nhızını {c1}ikiye katla{c2} ve hasarını artır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1432,7 +1432,7 @@
   },
   "ability-shaman#0029": {
    "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
-   "dst": "Havadayken Totemin arkasında\naltındaki düşmanlara her {~} sn'de\nhasar veren bir yağmur izi bırakır.",
+   "dst": "{c1}Havadayken {c2}Totemin{c1} arkasında\naltındaki düşmanlara her {c3}{~} sn{c1}'de\nhasar veren bir yağmur izi bırakır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1472,7 +1472,7 @@
   },
   "ability-shaman#0032": {
    "src": "Aura will travel {~}s faster and\ndeal additional damage.",
-   "dst": "Aura {~} sn daha hızlı ilerler ve\nek hasar verir.",
+   "dst": "{c1}Aura{c2} {c3}{~} sn{c2} daha hızlı ilerler ve\nek hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1539,7 +1539,7 @@
   },
   "ability-shaman#0039": {
    "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
-   "dst": "Totemin her {~2} sn'de {~1} Kukla\nçağırır. (En fazla {~3}) Kuklalar her {~4} sn'de\nyakındaki düşmanlara bıçak fırlatır.",
+   "dst": "{c2}Totemin{c1} her {c3}{~2} sn{c1}'de {c3}{~1}{c4} Kukla{c1}\nçağırır. (En fazla {~3}) Kuklalar her {c3}{~4} sn{c1}'de\nyakındaki düşmanlara bıçak fırlatır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1689,7 +1689,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "Totemin her {~2} sn'de canının {~1} kadarını\nçeker ve bir Kan Havuzu {#} içine aktarır.",
+   "dst": "{c2}Totemin{c1} her {c3}{~2} sn{c1}'de canının {c3}{~1}{c1} kadarını\nçeker ve bir {c4}Kan Havuzu{c1} {#} içine aktarır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1988,7 +1988,7 @@
   },
   "ability-shaman#0075": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "Kuklaların {~} sn ömrü kaldığında\nyüksek hızla düşmanlara\natılıp patlarlar.",
+   "dst": "{c2}Kuklaların{c1} {c3}{~} sn{c1} ömrü kaldığında\nyüksek hızla düşmanlara\natılıp patlarlar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2121,7 +2121,7 @@
   },
   "ability-shaman#0090": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Kanama {#} etkisindeki düşmanlar her {~} sn'de hasar alır.\nTotemin menzilinde verilen Kanama {#} hasarı\nKan Havuzu {#} değerine +{~} puan da ekler.",
+   "dst": "{c1}Kanama{c2} {#} etkisindeki düşmanlar her {c3}{~} sn{c2}'de hasar alır.\n{c4}Totemin{c2} menzilinde verilen {c1}Kanama{c2} {#} hasarı\n{c1}Kan Havuzu{c2} {#} değerine {c3}+{~}{c2} puan da ekler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2375,7 +2375,7 @@
   },
   "ability-shaman#0111": {
    "src": "Every {~}s, your Totem will heal\nevery player within its range.",
-   "dst": "Her {~} sn'de Totemin menzilindeki\nher oyuncuyu iyileştirir.",
+   "dst": "{c1}Her {c2}{~} sn{c1}'de {c3}Totemin{c1} menzilindeki\nher oyuncuyu iyileştirir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2402,7 +2402,7 @@
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "Yakındaki Kanama {#} etkisindeki düşmanlar\nkaybettiğin her {~} Can için hasar alır.\n(Saniyede en fazla {~} tetiklenme)",
+   "dst": "{c1}Yakındaki {c2}Kanama{c1} {#} etkisindeki düşmanlar\nkaybettiğin her {c3}{~}{c1} Can için hasar alır.\n{c4}(Saniyede en fazla {~} tetiklenme)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2442,7 +2442,7 @@
   },
   "ability-shaman#0116": {
    "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
-   "dst": "Her Totem kendi Heykelciğini çağırır.\nÇağrılan her ek Heykelcik tüm\nHeykelcik hasarını {~}x azaltır.",
+   "dst": "{c1}Her {c2}Totem{c1} kendi {c3}Heykelciğini{c1} çağırır.\nÇağrılan her ek {c3}Heykelcik{c1} tüm\n{c3}Heykelcik{c1} hasarını {c4}{~}x{c1} azaltır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2457,7 +2457,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "Totem, düşmanlara saldıran ve onları\nher {~} sn'de en yakın Toteme doğru\niten bir Heykelcik çağırır.\nHeykelcik, Totemi yaşadığı\nsürece yaşar.",
+   "dst": "{c1}Totem{c2}, düşmanlara saldıran ve onları\nher {c4}{~} sn{c2}'de en yakın {c1}Toteme{c2} doğru\niten bir {c3}Heykelcik{c2} çağırır.\n{c3}Heykelcik{c2}, {c1}Totemi{c2} yaşadığı\nsürece yaşar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2675,7 +2675,7 @@
   },
   "ability-shaman#0139": {
    "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
-   "dst": "Sacrificial Shrine, Aura'nın hasarını +{~} artırır ve en fazla\n{~} sn Kanama {#} tüketir; tüketilen her saniyelik\nKanama {#} için +{~} Kan Havuzu {#} verir.",
+   "dst": "{c1}Sacrificial Shrine{c2}, {c1}Aura{c2}'nın hasarını {c3}+{~}{c2} artırır ve en fazla\n{c3}{~} sn{c2} {c4}Kanama{c2} {#} tüketir; tüketilen her saniyelik\n{c4}Kanama{c2} {#} için {c3}+{~}{c4} Kan Havuzu{c2} {#} verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2702,7 +2702,7 @@
   },
   "ability-shaman#0141": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "Maksimum Kan Havuzu {#} değerini +{~} puan artır.\nMaksimum Kanama {#} süresini +{~} sn artır.",
+   "dst": "{c1}Maksimum {c2}Kan Havuzu{c1} {#} değerini {c3}+{~}{c1} puan artır.\nMaksimum {c2}Kanama{c1} {#} süresini {c3}+{~} sn{c1} artır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2746,7 +2746,7 @@
   },
   "ability-shaman#0144": {
    "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
-   "dst": "Toplanmamışken Çağrılanların saldırıları\nbu yeteneğin süresini saldırı başına\n+{~} sn artırır. (En fazla {~} sn)",
+   "dst": "{c1}Toplanmamışken {c2}Çağrılanların{c1} saldırıları\nbu yeteneğin süresini saldırı başına\n{c3}+{~} sn{c1} artırır. {c4}(En fazla {~} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2801,7 +2801,7 @@
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "Kuklalarına Ana Saldırı ile vurursan\nışın başına {~} sn ömür kaybederler\nama hasar artışı kazanırlar.",
+   "dst": "{c2}Kuklalarına{c1} {c3}Ana Saldırı{c1} ile vurursan\nışın başına {c4}{~} sn{c1} ömür kaybederler\nama hasar artışı kazanırlar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2895,7 +2895,7 @@
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "Shift'e basılıyken Haul kullanırsan\nSinekkuşlarını geçici olarak yakındaki\ndüşmanlara saldırmaya gönderirsin; her {~} sn'de\nonları delip geçerler.\nTekrar kullanırsan onları erken geri çağırırsın.",
+   "dst": "{c1}Shift'e basılıyken {c2}Haul{c1} kullanırsan\n{c3}Sinekkuşlarını{c1} geçici olarak yakındaki\ndüşmanlara saldırmaya gönderirsin; her {c4}{~} sn{c1}'de\nonları delip geçerler.\nTekrar kullanırsan onları erken geri çağırırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3044,7 +3044,7 @@
   },
   "ability-shaman#0175": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "Kanama {#} etkisindeki düşmanlar her {~} sn'de hasar alır.\nTotemin menzilinde verilen Kanama {#} hasarı\nKan Havuzu {#} değerine +{~} puan da ekler.",
+   "dst": "{c1}Kanama{c2} {#} etkisindeki düşmanlar her {c3}{~} sn{c2}'de hasar alır.\n{c4}Totemin{c2} menzilinde verilen {c1}Kanama{c2} {#} hasarı\n{c1}Kan Havuzu{c2} {#} değerine {c3}+{~}{c2} puan da ekler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3074,7 +3074,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "Ana Saldırın artık düşmanlara\n+{~} sn Kanama {#} uygular.",
+   "dst": "{c2}Ana Saldırın{c1} artık düşmanlara\n{c4}+{~} sn{c1} {c3}Kanama{c1} {#} uygular.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3192,7 +3192,7 @@
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "Shift'e basılıyken Uproot ya da Haunting Memory\nkullanırsan {~} puan Kan Havuzu {#}\nharcayarak düşmanlar ve müttefikler arasında\nzincirlenen yıkıcı bir ışın atarsın; ışın\nher {~} sn'de düşmanlara hasar verir.",
+   "dst": "{c1}Shift'e basılıyken {c2}Uproot{c1} ya da {c2}Haunting Memory{c1}\nkullanırsan {c3}{~}{c1} puan {c4}Kan Havuzu{c1} {#}\nharcayarak düşmanlar ve müttefikler arasında\nzincirlenen yıkıcı bir ışın atarsın; ışın\nher {c3}{~} sn{c1}'de düşmanlara hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3207,7 +3207,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "Sen ve ışının içindeki müttefikler vuruş\nbaşına +{~} Fazla Can ❤ kazanırsınız.\nEk can {~} sn içinde azalır.",
+   "dst": "{c1}Sen ve ışının içindeki müttefikler vuruş\nbaşına {c2}+{~}{c3} Fazla Can {c4}❤{c1} kazanırsınız.\nEk can {c2}{~} sn{c1} içinde azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3234,7 +3234,7 @@
   },
   "ability-shaman#0191": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "Sen ya da Çağrılanların bir düşman öldürünce\nya da Friendly Fire ile bir Kukla öldürünce\n{~2} sn boyunca +{~1} Maks. Kukla ⚘ kazan. (En fazla +{~3})",
+   "dst": "{c1}Sen ya da {c2}Çağrılanların{c1} bir düşman öldürünce\nya da {c3}Friendly Fire{c1} ile bir {c2}Kukla{c1} öldürünce\n{c5}{~2} sn{c1} boyunca {c2}+{~1} Maks. Kukla {c4}⚘{c1} kazan. (En fazla +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3303,7 +3303,7 @@
   },
   "ability-shaman#0196": {
    "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
-   "dst": "Eldritch Call etkinken yenilersen saldırıları\nkanla dolar ve +{~} Kan Aktarılmış {#}\nkazanır. (En fazla {~})",
+   "dst": "{c2}Eldritch Call{c1} etkinken yenilersen saldırıları\nkanla dolar ve {c3}+{~}{c4} Kan Aktarılmış{c1} {#}\nkazanır. {c5}(En fazla {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3343,7 +3343,7 @@
   },
   "ability-shaman#0199": {
    "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
-   "dst": "Kuklanın bıçakları güçlenir,\nduvarların ve düşmanların içinden geçebilir.\n(En fazla {~} düşman)",
+   "dst": "{c2}Kuklanın{c1} bıçakları güçlenir,\nduvarların ve düşmanların içinden geçebilir.\n{c3}(En fazla {~} düşman)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3505,7 +3505,7 @@
   },
   "ability-shaman#0218": {
    "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
-   "dst": "Korunurken daha az hasar alırsın ve\nHeykelciklerin her {~} sn'de\nsaldıranlara karşılık verir.",
+   "dst": "{c1}Korunurken daha az hasar alırsın ve\n{c2}Heykelciklerin{c1} her {c3}{~} sn{c1}'de\nsaldıranlara karşılık verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3798,7 +3798,7 @@
   },
   "ability-shaman#0368": {
    "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s worth\nof its effects.",
-   "dst": "Fanatiğin Maskesi {#} takılıyken\nTotemin yere çarpınca parçalanır ve\n{~} sn'lik etkisini hızla\ntetikler.",
+   "dst": "{c2}Fanatiğin Maskesi{c1} {#} takılıyken\n{c3}Totemin{c1} yere çarpınca parçalanır ve\n{c4}{~} sn{c1}'lik etkisini hızla\ntetikler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3826,7 +3826,7 @@
   },
   "ability-shaman#0370": {
    "src": "While not worn, each Mystic Masks positive effect\ngradually charges by +{~} every {~}s.",
-   "dst": "Takılı değilken Mystic Masks'taki her maskenin olumlu etkisi\nher {~2} sn'de kademeli olarak +{~1} yüklenir.",
+   "dst": "{c1}Takılı değilken {c2}Mystic Masks{c1}'taki her maskenin olumlu etkisi\nher {c3}{~2} sn{c1}'de kademeli olarak {c3}+{~1}{c1} yüklenir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3840,7 +3840,7 @@
   },
   "ability-shaman#0371": {
    "src": "While worn, extra charge decays by {~}\nevery {~}s, after a {~}s grace period.",
-   "dst": "Takılıyken fazladan yük, {~3} sn'lik tolerans\nsüresinden sonra her {~2} sn'de {~1} azalır.",
+   "dst": "{c1}Takılıyken fazladan yük, {c2}{~3} sn{c1}'lik tolerans\nsüresinden sonra her {c2}{~2} sn{c1}'de {c2}{~1}{c1} azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3952,7 +3952,7 @@
   },
   "ability-shaman#0379": {
    "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain\nwhich lasts for {~}s.",
-   "dst": "Totemic Shatter etkinleştiğinde Rain Dance'in\ntüm yağmuru {~} sn süren\nAcid Rain'e dönüşür.",
+   "dst": "{c2}Totemic Shatter{c1} etkinleştiğinde {c2}Rain Dance{c1}'in\ntüm yağmuru {c3}{~} sn{c1} süren\n{c2}Acid Rain{c1}'e dönüşür.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3966,7 +3966,7 @@
   },
   "ability-shaman#0380": {
    "src": "Acid Rain and Totemic Shatter, will inflict {~}s\nof Corroded every time it hits an enemy.",
-   "dst": "Acid Rain ve Totemic Shatter bir düşmana her\nvurduğunda {~} sn Aşınmış etkisi uygular.",
+   "dst": "{c1}Acid Rain{c2} ve {c1}Totemic Shatter{c2} bir düşmana her\nvurduğunda {c3}{~} sn{c2} {c4}Aşınmış{c2} etkisi uygular.",
    "role": "desc",
    "kind": "block",
    "ctx": [

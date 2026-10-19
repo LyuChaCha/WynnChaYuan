@@ -271,7 +271,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "Eşyalarından gelen her {~1} ya da {~2} Sabit Büyü Hasarı için\n+{~3}/{~4} sn Mana Yenilenmesi kazan (En fazla {~5}/{~6} sn)",
+   "dst": "{c1}Eşyalarından gelen her {c2}{~1}{c1} ya da {c2}{~2} Sabit{c1} Büyü Hasarı için\n{c2}+{~3}/{~4} sn{c1} Mana Yenilenmesi kazan (En fazla {~5}/{~6} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -298,7 +298,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "Seni ve çevrendeki geniş bir alandaki\nmüttefiklerini iyileştirir.\n(Başkalarını iyileştirirken maks. canlarının\n{~} kadarından fazlasını iyileştiremezsin)",
+   "dst": "{c1}Seni ve çevrendeki geniş bir alandaki\nmüttefiklerini iyileştirir.\n{c2}(Başkalarını iyileştirirken maks. {c3}canlarının{c2}\n{~} kadarından fazlasını iyileştiremezsin)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -438,7 +438,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "Meteor ve Ophanim yerde bir ateş mührü bırakır;\nmühür her {~} sn'de düşmanlara hasar verir.",
+   "dst": "{c1}Meteor{c2} ve {c1}Ophanim{c2} yerde bir ateş mührü bırakır;\nmühür her {c3}{~} sn{c2}'de düşmanlara hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -608,7 +608,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Etheric Slash ile bir düşmana vurmak her {~2} sn'de\nen fazla +{~1} Bozulma {#} verir.",
+   "dst": "{c2}Etheric Slash{c1} ile bir düşmana vurmak her {c3}{~2} sn{c1}'de\nen fazla {c3}+{~1}{c4} Bozulma{c1} {#} verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -855,7 +855,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "Ice Snake yerine, her {~} sn'de hasar\nveren donmuş bir hortum çağırırsın.",
+   "dst": "{c2}Ice Snake{c1} yerine, her {c3}{~} sn{c1}'de hasar\nveren donmuş bir hortum çağırırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1052,7 +1052,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "Ana Saldırı ile bir düşmana vurmak her {~2} sn'de\nen fazla +{~1} Bozulma {#} verir.",
+   "dst": "{c2}Ana Saldırı{c1} ile bir düşmana vurmak her {c3}{~2} sn{c1}'de\nen fazla {c3}+{~1}{c4} Bozulma{c1} {#} verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1120,7 +1120,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "{~2} sn içinde maks. canının {~1} kadarını\niyileştirirsen iyileştirdiğin her oyuncuya\nhasar bonusu verirsin.",
+   "dst": "{c2}{~2} sn{c1} içinde maks. canının {c2}{~1}{c1} kadarını\niyileştirirsen iyileştirdiğin her oyuncuya\nhasar bonusu verirsin.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1215,7 +1215,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake altında bir buz mührü bırakır;\nmühür her {~} sn'de düşmanları yavaşlatıp\nhasar verir. Mührün üstünde duran\nmüttefikler geri savrulmaz.",
+   "dst": "{c1}Ice Snake{c2} altında bir buz mührü bırakır;\nmühür her {c3}{~} sn{c2}'de düşmanları yavaşlatıp\nhasar verir. Mührün üstünde duran\nmüttefikler geri savrulmaz.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "Pyrokinesis saldırgan bir düşmana vurduğunda\nher {~2} sn'de Mana Bankası ✺ hesabına\n+{~1} Mana ekler.",
+   "dst": "{c1}Pyrokinesis{c2} saldırgan bir düşmana vurduğunda\nher {c3}{~2} sn{c2}'de {c4}Mana Bankası ✺{c2} hesabına\n{c3}+{~1}{c2} Mana ekler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1558,7 +1558,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "{~2} sn içinde maks. canının {~1} kadarını\niyileştirirsen, dokunduğu düşmanlara hasar\nveren dönen bir küre çağırırsın. (En fazla {~3} küre)",
+   "dst": "{c2}{~2} sn{c1} içinde maks. canının {c2}{~1}{c1} kadarını\niyileştirirsen, dokunduğu düşmanlara hasar\nveren dönen bir küre çağırırsın. {c3}(En fazla {~3} küre)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1947,7 +1947,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake düşmanları {~} sn dondurur.",
+   "dst": "{c1}Ice Snake{c2} düşmanları {c3}{~} sn{c2} dondurur.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2001,7 +2001,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "Ana Saldırınla bir düşmana vurmak, Time Dilation'ın\n{~} sn boyunca azalmasını durdurur.",
+   "dst": "{c2}Ana Saldırınla{c1} bir düşmana vurmak, {c2}Time Dilation{c1}'ın\n{c3}{~} sn{c1} boyunca azalmasını durdurur.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2056,7 +2056,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration manayı {~} sn daha hızlı yeniler.",
+   "dst": "{c1}Arcane Restoration{c2} manayı {c3}{~} sn{c2} daha hızlı yeniler.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2452,7 +2452,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "Mana Bankası ✺ {~1} değerine ulaştığında\neğilirken Arcane Transfer kullanırsan\nyakındaki düşmanlara hasar veren bir\nyıldırım topu çağırırsın. Top, Manan\nbitene kadar her {~3} sn'de {~2} Mana\nçeker.",
+   "dst": "{c2}Mana Bankası ✺{c1} {c3}{~1}{c1} değerine ulaştığında\neğilirken {c4}Arcane Transfer{c1} kullanırsan\nyakındaki düşmanlara hasar veren bir\nyıldırım topu çağırırsın. Top, Manan\nbitene kadar her {c3}{~3} sn{c1}'de {c3}{~2}{c1} Mana\nçeker.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2699,7 +2699,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "Ice Snake'in hasarını artır\nve hızını ikiye katla.",
+   "dst": "{c2}Ice Snake{c1}'in hasarını artır\nve hızını {c3}ikiye katla{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3073,7 +3073,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "Ateş Yılanı her {~} sn'de Kararsız {#}\nhedeflere ateş eder ve hasar bonusunu alır.",
+   "dst": "{c2}Ateş Yılanı{c1} her {c3}{~} sn{c1}'de {c2}Kararsız{c1} {#}\nhedeflere ateş eder ve hasar bonusunu alır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3088,7 +3088,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "Yıldırım Yılanı her {~2} sn'de en fazla\n{~1} düşmana sekerek yıldırım çarptırır\nve onları Kararsız {#} yapar.",
+   "dst": "{c2}Yıldırım Yılanı{c1} her {c3}{~2} sn{c1}'de en fazla\n{c3}{~1}{c1} düşmana sekerek yıldırım çarptırır\nve onları {c2}Kararsız{c1} {#} yapar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3266,7 +3266,7 @@
   },
   "ability-mage#0243": {
    "src": "The rift damages enemies every {~}s and\nincreases your Distortion {#} gain\nby +{~} while standing in it.",
-   "dst": "Yarık her {~} sn'de düşmanlara hasar verir ve\niçinde dururken Bozulma {#} kazanımını\n+{~} artırır.",
+   "dst": "{c1}Yarık her {c2}{~} sn{c1}'de düşmanlara hasar verir ve\niçinde dururken {c3}Bozulma{c1} {#} kazanımını\n{c2}+{~}{c1} artırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
