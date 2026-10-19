@@ -304,6 +304,8 @@ Thanks to the Traditional and Simplified Chinese communities for all their help 
 |---|---|
 | ㄉ綠 | `MlyuL` |
 | 蛇蛇 | `snakiesnake` |
+| hey you great | `Brokeboys_` |
+| Zero | `HEYAZero` |
 
 ### Contributors
 
