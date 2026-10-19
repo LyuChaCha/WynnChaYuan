@@ -149,11 +149,14 @@ public final class SettingsScreen extends Screen {
         // 徽章自己一頁，排在左邊那一列的最後（使用者 2026-10-11）。
         // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
         // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
-        // 不影響翻譯。
+        // 不影響翻譯。2026-10-19 改名「功能」，效能的開關也放這裡。
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
                 Preview.Scene.CAPE, List.of(
                         new Row.Group(t("group.badge"), false, badge()),
-                        new Row.Group(t("group.cape"), false, fun()))));
+                        new Row.Group(t("group.cape"), false, fun()),
+                        new Row.Group(t("group.perf"), false, List.of(
+                                toggle("perf.highlight", true, cfg()::wynntilsFps,
+                                       cfg()::toggleWynntilsFps))))));
         return tabs;
     }
 

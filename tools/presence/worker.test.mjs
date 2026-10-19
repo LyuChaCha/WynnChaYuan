@@ -646,7 +646,7 @@ check('★ 披風一覽上寫著不可以上傳什麼', ['廣告', '公會宣傳
 check('★ 英文版的披風一覽也寫著不可以上傳什麼',
   ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
 check('英文版的帳號頁用的是遊戲裡英文介面的字',
-  ['F6', 'Badge &amp; cape', 'Cape gallery'].every((w) => english['/account'].includes(w)));
+  ['F6', 'Features', 'Cape gallery'].every((w) => english['/account'].includes(w)));
 check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every((lang) => !/Let others know|讓別人知道|让别人知道/.test(TEXT[lang]['account.s2'])));
 
 // ---- ★ 網站的語言 ----

@@ -711,6 +711,14 @@ tasks.register('runScoreboardWrapChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runScoreboardWrapChecks' }
 
+tasks.register('runHighlightCacheChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Wynntils 物品高亮的快取算出來跟它原本的規則一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.HighlightModelCacheTest'
+}
+tasks.named('check') { dependsOn 'runHighlightCacheChecks' }
+
 tasks.register('runCountdownBoardChecks', JavaExec) {
     group = 'verification'
     description = '驗證商店的倒數看板一列一列組：沒收過的時間格式與附加列都翻得出來，顏色照每一列'
