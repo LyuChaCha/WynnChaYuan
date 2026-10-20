@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23677,
-  "translated": 23384,
+  "count": 23680,
+  "translated": 23387,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -200511,6 +200511,36 @@
    "dst": "十分な燃料が集まった。機械のところへ戻ろう。",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#016": {
+   "src": "It looks like a mining machine that's hundreds of years old. What was it mining though?",
+   "dst": "何百年も前の採掘機械のように見える。でも、一体何を採掘していたのだろう？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#017": {
+   "src": "{#} You get the feeling you shouldn't be here...",
+   "dst": "{#} 「ここにいるべきじゃない」という気がしてならない……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#018": {
+   "src": "It's a strangely shaped keyhole. How cryptic.",
+   "dst": "奇妙な形の鍵穴だ。なんて謎めいていることだろう。",
+   "role": "desc",
+   "kind": "Chat",
    "quest": "The Olmic Rune",
    "stage": "",
    "speaker": "",
