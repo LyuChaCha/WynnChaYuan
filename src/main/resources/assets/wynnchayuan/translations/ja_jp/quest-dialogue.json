@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23676,
-  "translated": 23383,
+  "count": 23677,
+  "translated": 23384,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -15087,6 +15087,16 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "A New Beginning#371": {
+   "src": "A resistance group?",
+   "dst": "レジスタンスの組織？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "Stage 8",
+   "speaker": "Player",
+   "source": "captured.json"
   },
   "A Sandy Scandal#000": {
    "src": "You look like a hardy one! {p} army, is it? Would you be willing to help {p} a bit?",
