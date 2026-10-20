@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 89,
-  "translated": 89
+  "count": 108,
+  "translated": 108
  },
  "entries": {
   "choice#c000": {
@@ -917,6 +917,206 @@
    "dst": "徽牌？",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c071": {
+   "src": "What's this device for?",
+   "dst": "這個裝置是做什麼用的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c072": {
+   "src": "Is there anything I can do t",
+   "dst": "有什麼我能幫忙的嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Is there anything I can do to help?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c073": {
+   "src": "Alright, I can do that.",
+   "dst": "好，我辦得到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c074": {
+   "src": "Tell me more about True Ice.",
+   "dst": "多告訴我一些真冰的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c075": {
+   "src": "What did you have for breakf",
+   "dst": "你今天早餐吃了什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What did you have for breakfast today?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c076": {
+   "src": "Could we shatter it somehow,",
+   "dst": "我們能不能用武器或法術把它打碎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Could we shatter it somehow, with a weapon or a spell?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c077": {
+   "src": "Would lava from the Heights",
+   "dst": "用 Heights 的岩漿行得通嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Would lava from the Heights work?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c078": {
+   "src": "What's your favorite color?",
+   "dst": "你最喜歡什麼顏色？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c079": {
+   "src": "What happened to all the dra",
+   "dst": "那些龍都怎麼了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What happened to all the dragons?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c080": {
+   "src": "The Doguns would know about",
+   "dst": "Dogun 會知道龍的事？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The Doguns would know about dragons?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c081": {
+   "src": "Read any good books recently",
+   "dst": "最近有讀到什麼好書嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Read any good books recently?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c082": {
+   "src": "[{~} Dragonling Eggs]",
+   "dst": "[{~} Dragonling Eggs]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c083": {
+   "src": "[{~} Shiny Shell]",
+   "dst": "[{~} Shiny Shell]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c084": {
+   "src": "[Rock]",
+   "dst": "[石頭]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c085": {
+   "src": "What are you?",
+   "dst": "你是什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c086": {
+   "src": "What happened to us?",
+   "dst": "我們發生了什麼事？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c087": {
+   "src": "What can I do around here to",
+   "dst": "我在這附近能幫上什麼忙？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What can I do around here to help?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c088": {
+   "src": "What's it like being an Admi",
+   "dst": "當一名上將是什麼感覺？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's it like being an Admiral?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c089": {
+   "src": "What were you doing in {p}",
+   "dst": "你之前在 {p} 做什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What were you doing in {p}?",
    "quest": "choice",
    "stage": "",
    "speaker": "",

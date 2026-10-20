@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Royal Trials",
-  "count": 100,
-  "translated": 100,
+  "count": 101,
+  "translated": 101,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "Royal Trials#001": {
-   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
    "dst": "¡Atrás! Nadie entra hasta que se elija a la reina pirata. ¿Qué hace aquí una rata de tierra como tú?",
    "role": "desc",
    "kind": "dialogue",
@@ -437,7 +437,7 @@
    "source": "wiki"
   },
   "Royal Trials#043": {
-   "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
    "dst": "Abrid bien los ojos, chicas: un paso en falso y os espera la muerte.",
    "role": "desc",
    "kind": "dialogue",
@@ -517,7 +517,7 @@
    "source": "wiki"
   },
   "Royal Trials#052": {
-   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
    "dst": "Esperaremos con una aeronave de huida en el punto de salida; las demás se quedarán atrás.",
    "role": "desc",
    "kind": "dialogue",
@@ -1005,6 +1005,16 @@
    "stage": "Stage 13",
    "speaker": "Mansion Guard",
    "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "Eh, rata de tierra. ¡Espero que le estés sacando partido a esa ropa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
   }
  }
 }

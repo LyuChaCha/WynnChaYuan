@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "기존 Totem을 바라보며\nTotem을 시전하면 절반의 마나로\nTotem을 앞으로 밀어내,\n부딪치는 모든 적에게\n피해를 줍니다.\n(웅크리면 방향 반전)",
+   "dst": "{c1}기존 {c2}Totem{c1}을 바라보며\n{c2}Totem{c1}을 시전하면 {c3}절반{c1}의 마나로\n{c2}Totem{c1}을 앞으로 밀어내,\n부딪치는 모든 적에게\n피해를 줍니다.\n{c4}(웅크리면 방향 반전)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine이 {~2}초마다 체력을 +{~1}\n흡수하고 Aura의 피해를 +{~3} 높입니다.",
+   "dst": "{c1}Sacrificial Shrine{c3}이 {c2}{~2}초마다{c3} 체력을 {c2}+{~1}\n흡수{c3}하고 {c1}Aura{c3}의 {c2}피해를 +{~3}{c3} 높입니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "착용 중에는 과부하가 {~2}초마다\n-{~1}씩 감소합니다.",
+   "dst": "{c1}착용 중에는 과부하가 {c3}{~2}초{c1}마다\n{c2}-{~1}{c1}씩 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ 총 피해: {~} (DPS 대비, 기본 공격\n피해로 적용)",
+   "dst": "{c1}⚔ {c2}총 피해: {c3}{~} {c4}(DPS 대비, 기본 공격\n피해로 적용)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1064,7 +1064,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "{~}초마다 주변 적에게 피해를 주는\n토템을 소환합니다.",
+   "dst": "{c2}{~}초{c1}마다 주변 적에게 피해를 주는\n토템을 소환합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2132,7 +2132,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue의 타격 횟수가 +{~} 늘고 피해가 증가하며,\n이제 적에게 타격마다 출혈 {#}을\n+{~}초 부여합니다. (최대 {~}초)",
+   "dst": "{c1}Flaming Tongue{c2}의 타격 횟수가 {c3}+{~}{c2} 늘고 피해가 증가하며,\n이제 적에게 타격마다 {c4}출혈{c2} {#}을\n{c3}+{~}초{c2} 부여합니다. {c5}(최대 {~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2147,7 +2147,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "Haunting Memory가 대신\n출혈 {#}을 +{~}초 부여합니다.",
+   "dst": "{c1}Haunting Memory{c2}가 대신\n{c4}출혈{c2} {#}을 {c3}+{~}초{c2} 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "Totem 범위 안의 플레이어가 피해를 받으면,\n받은 피해 중 {~}가 당신의 최대 체력에\n비례하여\n피웅덩이 {#}에 더해집니다.\n(초당 최대 피웅덩이 {~})",
+   "dst": "{c2}Totem{c1} 범위 안의 플레이어가 피해를 받으면,\n받은 피해 중 {c3}{~}{c1}가 당신의 최대 체력에\n비례하여\n{c4}피웅덩이{c1} {#}에 더해집니다.\n{c5}(초당 최대 피웅덩이 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3627,7 +3627,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "흉물은 근거리 모드에서 {~}초마다,\n원거리 모드에서 {~}초마다\n적을 공격합니다.",
+   "dst": "{c2}흉물{c1}은 근거리 모드에서 {c3}{~}초{c1}마다,\n원거리 모드에서 {c3}{~}초{c1}마다\n적을 공격합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3708,7 +3708,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "다른 아군은 {~2}초마다 체력 {#}을 +{~1} 얻습니다.",
+   "dst": "{c1}다른 아군은 {c2}{~2}초{c1}마다 {c3}체력{c1} {#}을 {c2}+{~1}{c1} 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "Totem에 섬뜩한 악마가 깃들어\n{~2}초마다 주변 애콜라이트에게\n피웅덩이 {#}을 +{~1} 부여합니다.",
+   "dst": "{c2}Totem{c1}에 섬뜩한 악마가 깃들어\n{c3}{~2}초{c1}마다 주변 애콜라이트에게\n{c4}피웅덩이{c1} {#}을 {c3}+{~1}{c1} 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
