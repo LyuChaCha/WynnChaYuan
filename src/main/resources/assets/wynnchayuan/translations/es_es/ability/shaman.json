@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "Lanzar Totem mientras miras\nun Totem existente lo empujará\nhacia delante por la mitad de maná,\ninfligiendo daño a los enemigos\ncon los que choque.\n(Agáchate para invertir su dirección)",
+   "dst": "{c1}Lanzar {c2}Totem{c1} mientras miras\nun {c2}Totem{c1} existente lo empujará\nhacia delante por {c3}la mitad{c1} de maná,\ninfligiendo daño a los enemigos\ncon los que choque.\n{c4}(Agáchate para invertir su dirección)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine absorbe +{~} de tu vida\ncada {~}s y aumenta el daño de Aura en +{~}.",
+   "dst": "{c1}Sacrificial Shrine{c2} absorbe +{~}{c3} de tu vida\n{c2}cada {~}s {c3}y aumenta {c2}el daño{c3} de {c1}Aura{c2} en +{~}{c3}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "Mientras la llevas, la sobrecarga se\nreduce -{~} cada {~}s.",
+   "dst": "{c1}Mientras la llevas, la sobrecarga se\nreduce {c2}-{~}{c1} cada {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ Daño total: {~} (de tu DPS, como daño de\nataque principal)",
+   "dst": "{c1}⚔ {c2}Daño total: {c3}{~} {c4}(de tu DPS, como daño de\nataque principal)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1064,7 +1064,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "Invoca un tótem que daña a los\nenemigos a su alrededor cada {~}s.",
+   "dst": "{c1}Invoca un tótem que daña a los\nenemigos a su alrededor cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2132,7 +2132,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue gana +{~} impactos, inflige más daño\ny ahora aplica Sangrado {#} a los enemigos durante\n+{~}s por impacto. (Máx. {~}s)",
+   "dst": "{c1}Flaming Tongue{c2} gana {c3}+{~}{c2} impactos, inflige más daño\ny ahora aplica {c4}Sangrado {#}{c2} a los enemigos durante\n{c3}+{~}s{c2} por impacto. {c5}(Máx. {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2147,7 +2147,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "En su lugar, Haunting Memory\naplicará +{~}s de Sangrado {#}.",
+   "dst": "{c2}En su lugar, {c1}Haunting Memory{c2}\naplicará {c3}+{~}s{c2} de {c4}Sangrado {#}{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "Cuando un jugador recibe daño en el\nalcance de tu Totem, un {~} del daño\nrecibido, en proporción a tu vida\nmáxima, se añade a tu Reserva de sangre {#}.\n(Máx. {~} de Reserva de sangre por segundo)",
+   "dst": "{c1}Cuando un jugador recibe daño en el\nalcance de tu {c2}Totem{c1}, un {c3}{~}{c1} del daño\nrecibido, en proporción a tu vida\nmáxima, se añade a tu {c4}Reserva de sangre {#}{c1}.\n{c5}(Máx. {~} de Reserva de sangre por segundo)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3627,7 +3627,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "La Abominación atacará a los enemigos\ncada {~}s en modo cuerpo a cuerpo\ny cada {~}s en modo a distancia.",
+   "dst": "{c1}La {c2}Abominación{c1} atacará a los enemigos\ncada {c3}{~}s{c1} en modo cuerpo a cuerpo\ny cada {c3}{~}s{c1} en modo a distancia.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3708,7 +3708,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "Los demás reciben +{~} de Vida {#} cada {~}s.",
+   "dst": "{c1}Los demás reciben {c2}+{~}{c1} de {c3}Vida {#}{c1} cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "Tu Totem queda poseído por un demonio\nprimigenio y otorga +{~} Reserva de sangre {#} a los\nacólitos cercanos cada {~}s.",
+   "dst": "{c1}Tu {c2}Totem{c1} queda poseído por un demonio\nprimigenio y otorga {c3}+{~} {c4}Reserva de sangre {#}{c1} a los\nacólitos cercanos cada {c3}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [

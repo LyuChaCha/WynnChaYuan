@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "看着已有的 Totem 施放 Totem，\n会以一半的法力消耗把它向前推出，\n撞到的敌人都会受到伤害。\n(潜行可让它朝反方向推)",
+   "dst": "{c1}看着已有的 {c2}Totem{c1} 施放 {c2}Totem{c1}，\n会以{c3}一半{c1}的法力消耗把它向前推出，\n撞到的敌人都会受到伤害。\n{c4}(潜行可让它朝反方向推)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine 每 {~2} 秒多吸取你 {~1} 的生命，\n并让 Aura 的伤害提高 {~3}。",
+   "dst": "{c1}Sacrificial Shrine {c2}每 {~2} 秒多吸取你 {~1}{c3} 的生命，\n并让 {c1}Aura{c3} 的{c2}伤害提高 {~3}{c3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "戴着时，过载每 {~2} 秒衰减 {~1}。",
+   "dst": "{c1}戴着时，过载每 {c3}{~2} 秒{c1}衰减 {c2}{~1}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ 总伤害: {~} (你的每秒伤害，按普攻\n伤害计算)",
+   "dst": "{c1}⚔ {c2}总伤害: {c3}{~} {c4}(你的每秒伤害，按普攻\n伤害计算)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1064,7 +1064,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "召唤一座图腾，每 {~} 秒\n对周围的敌人造成伤害。",
+   "dst": "{c1}召唤一座图腾，每 {c2}{~} 秒{c1}\n对周围的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2132,7 +2132,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue 多命中 +{~1} 次、伤害提高，\n且每次命中都会让敌人流血 {#} +{~2} 秒。\n(上限 {~3} 秒)",
+   "dst": "{c1}Flaming Tongue {c2}多命中 {c3}+{~1} {c2}次、伤害提高，\n且每次命中都会让敌人{c4}流血{c2} {#} {c3}+{~2} 秒{c2}。\n{c5}(上限 {~3} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2147,7 +2147,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "Haunting Memory 改为\n施加 +{~} 秒的流血 {#}。",
+   "dst": "{c1}Haunting Memory{c2} 改为\n施加 {c3}+{~} 秒{c2}的{c4}流血{c2} {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "图腾范围内有任何玩家受到伤害时，\n按你最大生命的比例，把其中 {~1}\n加进你的血池 {#}。\n(每秒最多 {~2} 点血池)",
+   "dst": "{c2}图腾{c1}范围内有任何玩家受到伤害时，\n按你最大生命的比例，把其中 {c3}{~1}\n{c1}加进你的{c4}血池{c1} {#}。\n{c5}(每秒最多 {~2} 点血池)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3627,7 +3627,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "魔孽在近战模式下每 {~1} 秒攻击一次，\n远程模式下每 {~2} 秒攻击一次。",
+   "dst": "{c2}魔孽{c1}在近战模式下每 {c3}{~1} 秒{c1}攻击一次，\n远程模式下每 {c3}{~2} 秒{c1}攻击一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3708,7 +3708,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "其他人每 {~2} 秒获得 +{~1} 生命 {#}。",
+   "dst": "{c1}其他人每 {c2}{~2} 秒{c1}获得 {c2}+{~1} {c3}生命{c1} {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "你的图腾被邪祟恶魔附身，\n每 {~2} 秒给附近的信徒\n+{~1} 血池 {#}。",
+   "dst": "{c1}你的{c2}图腾{c1}被邪祟恶魔附身，\n每 {c3}{~2} 秒{c1}给附近的信徒\n{c3}+{~1} {c4}血池{c1} {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

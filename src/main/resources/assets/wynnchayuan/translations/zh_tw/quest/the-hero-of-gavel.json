@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 242,
-  "translated": 242,
+  "count": 258,
+  "translated": 258,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -661,8 +661,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "還要多——噢，你把地圖拿來了！",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "還要多——噢，你把地圖拿來了！謝了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1001,7 +1001,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "啊啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
@@ -1101,7 +1101,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "你找到東西了？好。那我……那我跟著你走。",
    "role": "desc",
    "kind": "dialogue",
@@ -1241,8 +1241,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "那、那太可怕了……你、你救了我一命。謝謝你……我沒有準備好面對這種真正的危險。",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "那、那太可怕了……你、你救了我一命。謝謝你，{u}……我沒有準備好面對這種真正的危險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1431,7 +1431,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "唉……難吃死了。",
    "role": "desc",
    "kind": "dialogue",
@@ -1461,7 +1461,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "我知道，聽起來超有 Corkian 味的。他們要我用 Siegfried，我想大概是因為聽起來沒那麼外地吧。",
    "role": "desc",
    "kind": "dialogue",
@@ -1491,8 +1491,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "謝謝你。我……我從現在起跟著你走。你顯然比我準備得充分多了。",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "謝謝你，{u}。我……我從現在起跟著你走。你顯然比我準備得充分多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1571,7 +1571,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "路好像是在那些黃色碎片的另一邊，也許我們過得去？",
    "role": "desc",
    "kind": "dialogue",
@@ -2429,6 +2429,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} 尋寶大賽門票]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Siegfried 的親筆簽名]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "給我一點時間……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "賣票囉！Siegfried 尋寶大賽的門票這裡買！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "你感覺自己正在往回走……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "要拆掉這個得用炸藥。不過這裡頭似乎一個也沒有。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "你感覺自己在倒著走……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "這附近有些小洞穴……說不定那裡會有能吃的東西？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "我……覺得不太舒服。我想……不過你準備好的話，我還是能繼續走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "這座烤爐似乎還能用。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "撐住它的是大蛛網上那幾條絲線。如果你把三條都割斷，它說不定就會斷掉。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "你感覺自己走錯路了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "還好我們過了那道深淵！繼續走吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": "……{u}……你確定那些生、生的蛋……安全嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "唔……我覺得……不太舒服……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "我感覺得到……有東西……在裡——啊啊啊啊啊啊啊！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   }
  }
 }

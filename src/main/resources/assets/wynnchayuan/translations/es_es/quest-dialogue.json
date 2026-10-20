@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 23574,
-  "translated": 23277,
+  "count": 23660,
+  "translated": 23363,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75378,7 +75378,7 @@
   },
   "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
-   "dst": "Cuando estés listo para empezar, purifícate en las aguas del manantial tras el dojo y te guiaré a tu primera prueba.",
+   "dst": "{c1}Cuando estés listo para empezar, purifícate en las aguas del {c2}manantial tras el dojo{c1} y te guiaré a tu primera prueba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -129214,7 +129214,7 @@
    "source": "wiki"
   },
   "Point of No Return#029": {
-   "src": "An beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
    "dst": "Un faro de seguridad en medio del terror de fuera... qué milagro haberlo hallado esperándonos en la hora más oscura.",
    "role": "desc",
    "kind": "dialogue",
@@ -129424,7 +129424,7 @@
    "source": "wiki"
   },
   "Point of No Return#050": {
-   "src": "The others... all have given into its pull. Our band of survivors... left behind, abandoned...",
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
    "dst": "Los demás... todos cedieron a su llamada. A los supervivientes... nos dejaron atrás, abandonados...",
    "role": "desc",
    "kind": "dialogue",
@@ -129482,6 +129482,86 @@
    "stage": "Stage 12",
    "speaker": "Lutho Citizen",
    "source": "wiki"
+  },
+  "Point of No Return#056": {
+   "src": "Your soul seems to be slipping away from reality...",
+   "dst": "Tu alma parece escaparse de la realidad...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#057": {
+   "src": "Where does all of this lead?",
+   "dst": "¿Adónde lleva todo esto?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#058": {
+   "src": "Your soul runs beneath your feet.",
+   "dst": "Tu alma corre bajo tus pies.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#059": {
+   "src": "It leads you onwards..",
+   "dst": "Te lleva hacia delante..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#060": {
+   "src": "Your soul drifts further from you. Will you ever get it back?",
+   "dst": "Tu alma se aleja cada vez más de ti. ¿Llegarás a recuperarla?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#061": {
+   "src": "Oh, how they tried to bury us...",
+   "dst": "Oh, cómo intentaron enterrarnos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#062": {
+   "src": "Something is holding you back.",
+   "dst": "Algo te retiene.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#063": {
+   "src": "A distant thread, tying you to... something.",
+   "dst": "Un hilo lejano que te ata a... algo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "Lutho Guard",
+   "source": "captured"
   },
   "Potion Making#000": {
    "src": "Dr. Essren needs to be stopped!",
@@ -138604,7 +138684,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#063": {
-   "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
+   "src": "Welcome to Astralaus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "¡Bienvenido a la Casa Astral de Astralus! ¿Llegas arriba invirtiendo la gravedad?",
    "role": "desc",
    "kind": "dialogue",
@@ -138654,7 +138734,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#068": {
-   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
+   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick else, strangeling!",
    "dst": "¿Qué traer a ti aquí, forastín? ¿Qué nombramientos tener tú? ¿Hu-mano? ¡Nosotros reclamar Humyno! ¡Mala elegir, coger otro, forastín!",
    "role": "desc",
    "kind": "dialogue",
@@ -138664,7 +138744,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#069": {
-   "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
+   "src": "Looking for helping? How many conveniences! Humyns requires assistancing! You observes, humyns failflies into large crater-rock!",
    "dst": "¿Investigar para ayudar? ¡Cuántas convenientes! ¡Humynos requerir ayudación! ¡Tú observador, humynos volfallar dentro de gran roca-cráter!",
    "role": "desc",
    "kind": "dialogue",
@@ -138694,7 +138774,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#072": {
-   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
+   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps, humyns will let strangeling in spacezoom. Humyns can create new spacezoom given time!",
    "dst": "Solo humyno singular caber en espaciozum actual. Si forastín ayudar, humynos dejar forastín entrar. ¡Humynos poder crear espaciozum nuevo en tiempo dado!",
    "role": "desc",
    "kind": "dialogue",
@@ -138704,7 +138784,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#073": {
-   "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
+   "src": "Humyns currently residing on crater-rock, meaning waiting is not result death!",
    "dst": "¡Humynos residir ahora en roca-cráter, esperar no ser resultado de muerte!",
    "role": "desc",
    "kind": "dialogue",
@@ -138834,7 +138914,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#086": {
-   "src": "Here, human. Take this slime as your prize.",
+   "src": "Here, human, take this slime as your prize.",
    "dst": "Toma, humano. Llévate esta baba como premio.",
    "role": "desc",
    "kind": "dialogue",
@@ -139094,7 +139174,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#112": {
-   "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
+   "src": "Okay you step back and let me work on the cooking, just pass over the ingredients!",
    "dst": "Vale, échate atrás y déjame a mí la cocina, ¡tú solo pásame los ingredientes!",
    "role": "desc",
    "kind": "dialogue",
@@ -139214,7 +139294,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#124": {
-   "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
+   "src": "Ah, you have finished your dish? Well, then, il est temps de gouter!",
    "dst": "Ah, ¿has terminado tu plato? Pues bien, il est temps de goûter!",
    "role": "desc",
    "kind": "dialogue",
@@ -139244,7 +139324,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#127": {
-   "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
+   "src": "Welcome back, mon ami! I see you've returned with a dish in hand!",
    "dst": "¡Bienvenido de vuelta, mon ami! ¡Veo que regresas con un plato en la mano!",
    "role": "desc",
    "kind": "dialogue",
@@ -139774,6 +139854,236 @@
    "quest": "Recipe For Disaster",
    "stage": "",
    "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#189": {
+   "src": "You've clearly won the race, but everyone seems to be waiting for Usnail Bolt to finish as well...",
+   "dst": "Está claro que has ganado la carrera, pero todos parecen esperar a que Usnail Bolt también termine...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#190": {
+   "src": "Looks like this is that \"Space Wizard\"'s tower... you should start looking around for some Moonsalt.",
+   "dst": "Parece que esta es la torre de ese «Mago Espacial»... deberías empezar a buscar algo de Moonsalt.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#191": {
+   "src": "A large warning on the display flashes a \"LOW FUEL \" warning at you.",
+   "dst": "En la pantalla parpadea un enorme aviso de «POCO COMBUSTIBLE».",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#192": {
+   "src": "You need [{~} Unrefined Moonsalt] to refine into \"burnmilk fuel\". Perhaps the Humyn nearby knows how to get some?",
+   "dst": "Necesitas [{~} Unrefined Moonsalt] para refinarla en «combustible de quemaleche». ¿Quizá el humyno de por aquí sepa cómo conseguirla?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#193": {
+   "src": "Looks like this is the Moonsalt Cave... you should head deeper to find some salt.",
+   "dst": "Parece que esta es la cueva de la Moonsalt... deberías adentrarte más para encontrar sal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#194": {
+   "src": "You grab a large handful of the unrefined salt.",
+   "dst": "Coges un buen puñado de la sal sin refinar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#195": {
+   "src": "You've secured some Unrefined Moonsalt, time to head back to the village and your way home.",
+   "dst": "Ya tienes algo de Unrefined Moonsalt; es hora de volver a la aldea y emprender el camino a casa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#196": {
+   "src": "You've managed to refine the moonsalt into some kind of fuel, you should head over to the spaceship now.",
+   "dst": "Has conseguido refinar la moonsalt en una especie de combustible; ahora deberías ir a la nave espacial.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#197": {
+   "src": "You fill the ship up with the burnmilk and press the button on the control panel that is helpefully labelled \"TRAVEL SPACEZOOM\".",
+   "dst": "Llenas la nave de quemaleche y pulsas el botón del panel de control, muy oportunamente rotulado «VIAJAR ESPACIOZUM».",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#198": {
+   "src": "Looks like you're safely back in the {p}, and with some Moonsalt to boot!",
+   "dst": "¡Parece que has vuelto sano y salvo a {p}, y encima con algo de Moonsalt!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#199": {
+   "src": "The recipe book says voidroot only grows in complete darkness... better start looking around.",
+   "dst": "Según el libro de recetas, el Voidroot solo crece en la oscuridad absoluta... mejor empieza a buscar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#200": {
+   "src": "It's some kind of cargo that's fallen from above... there's a distinct smell of fresh cookies coming from inside.",
+   "dst": "Es una especie de cargamento caído desde arriba... de dentro sale un claro olor a galletas recién hechas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#201": {
+   "src": "You reach out to touch the silky leaves of the plant and find your vision restored for {~} second...",
+   "dst": "Alargas la mano para tocar las sedosas hojas de la planta y recuperas la vista durante {~} segundo...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#202": {
+   "src": "A label on the side reads Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ. You probably shouldn't get too close to it.",
+   "dst": "Una etiqueta en el lateral dice Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ. Probablemente no deberías acercarte demasiado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#203": {
+   "src": "Dusty grey texture? Desaturated green leaves? Ever-growing sense of all-encompasing dread? Matches the recipe book description perfectly!",
+   "dst": "¿Textura gris y polvorienta? ¿Hojas de un verde apagado? ¿Una creciente sensación de pavor que lo envuelve todo? ¡Encaja a la perfección con la descripción del libro de recetas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#204": {
+   "src": "It's some kind of purple orb, pulsating with a otherworldy light. Maybe best not to touch.",
+   "dst": "Es una especie de orbe morado que palpita con una luz de otro mundo. Mejor no tocarlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#205": {
+   "src": "You've gathered all the ingredients, you should head back to Brie.",
+   "dst": "Ya tienes todos los ingredientes; deberías volver con Brie.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#206": {
+   "src": "[+{~} Seasoned Voidroot Stew]",
+   "dst": "[+{~} Seasoned Voidroot Stew]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#207": {
+   "src": "[+{~} Cooking XP]",
+   "dst": "[+{~} EXP de cocina]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#208": {
+   "src": "Have you shown Hamsey our dish yet? I'm sure he's gonna love it!",
+   "dst": "¿Ya le has enseñado nuestro plato a Hamsey? ¡Seguro que le encanta!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#209": {
+   "src": "Can't say your bake looks very good. No match for Kale's mighty omelette!",
+   "dst": "No diré que tu horneado tenga muy buena pinta. ¡No es rival para la poderosa tortilla de Kale!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#210": {
+   "src": "Good luck, dude.",
+   "dst": "Suerte, colega.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#211": {
+   "src": "Meet me in my dining room and we'll taste your dish!",
+   "dst": "¡Nos vemos en mi comedor y probaremos tu plato!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
    "source": "captured"
   },
   "Reclaiming the House#001": {
@@ -147000,7 +147310,7 @@
   },
   "Revelations in Fall#265": {
    "src": "Yes, Rex, because he won't stay down for long- that's why we need to move, now!",
-   "dst": "Sí, Rex, porque no seguirá caído mucho tiempo- ¡por eso hay que moverse, ya!",
+   "dst": "{c1}Sí, Rex, porque {c2}no{c1} seguirá caído mucho tiempo- ¡por eso hay que moverse, {c2}ya{c1}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -148601,7 +148911,7 @@
    "source": "wiki"
   },
   "Royal Trials#001": {
-   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
    "dst": "¡Atrás! Nadie entra hasta que se elija a la reina pirata. ¿Qué hace aquí una rata de tierra como tú?",
    "role": "desc",
    "kind": "dialogue",
@@ -149021,7 +149331,7 @@
    "source": "wiki"
   },
   "Royal Trials#043": {
-   "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
    "dst": "Abrid bien los ojos, chicas: un paso en falso y os espera la muerte.",
    "role": "desc",
    "kind": "dialogue",
@@ -149101,7 +149411,7 @@
    "source": "wiki"
   },
   "Royal Trials#052": {
-   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
    "dst": "Esperaremos con una aeronave de huida en el punto de salida; las demás se quedarán atrás.",
    "role": "desc",
    "kind": "dialogue",
@@ -149589,6 +149899,16 @@
    "stage": "Stage 13",
    "speaker": "Mansion Guard",
    "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "Eh, rata de tierra. ¡Espero que le estés sacando partido a esa ropa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
   },
   "Shattered Minds#000": {
    "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
@@ -163849,7 +164169,7 @@
    "source": "captured"
   },
   "The Breaking Point#002": {
-   "src": "I... see. {u}... Ozoth tells me... that an Everflame ... will free the Elders.",
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
    "dst": "Ya... veo. {u}... Ozoth me dice... que una Llama Eterna... liberará a los Ancianos.",
    "role": "desc",
    "kind": "dialogue",
@@ -164075,7 +164395,7 @@
    "source": "wiki"
   },
   "The Breaking Point#024": {
-   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
    "dst": "¡El estabilizador ha funcionado hasta ahora, Ineos! Es de lo mejor que ha dado nuestra provincia, ¡y funcionaba!",
    "role": "desc",
    "kind": "dialogue",
@@ -164125,7 +164445,7 @@
    "source": "wiki"
   },
   "The Breaking Point#029": {
-   "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
    "dst": "¡El problema es que los mandos parecen fritos! Y aquí no guardamos piezas de repuesto. Habrá que volver a Corkus, y...",
    "role": "desc",
    "kind": "dialogue",
@@ -164425,7 +164745,7 @@
    "source": "wiki"
   },
   "The Breaking Point#059": {
-   "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
    "dst": "Los nuestros de allí conseguirán las piezas para reparar el aparato. Esta... no es la primera vez que estalla. Esperaba que esta vez lo hubiéramos estabilizado, pero...",
    "role": "desc",
    "kind": "dialogue",
@@ -164655,7 +164975,7 @@
    "source": "wiki"
   },
   "The Breaking Point#082": {
-   "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
    "dst": "Aunque se abandonó, es muy probable que ahí abajo queden mechs mineros- y los modelos más potentes usaban circuitos muy parecidos a los condensadores de hoy.",
    "role": "desc",
    "kind": "dialogue",
@@ -165115,7 +165435,7 @@
    "source": "wiki"
   },
   "The Breaking Point#128": {
-   "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
    "dst": "Y... ¿ese es... Ineos? Creíamos... que los enanos... te habían hecho escombros...",
    "role": "desc",
    "kind": "dialogue",
@@ -165925,7 +166245,7 @@
    "source": "wiki"
   },
   "The Breaking Point#209": {
-   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
    "dst": "Ahora solo quedan dragoncillos - ecos de sus otrora grandes ancestros, con apenas llama para chamuscarte la armadura.",
    "role": "desc",
    "kind": "dialogue",
@@ -165985,7 +166305,7 @@
    "source": "wiki"
   },
   "The Breaking Point#215": {
-   "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
    "dst": "Así es. Los dragones de fuego que se aliaron con ellos en la guerra. ¿Habrás visto el esqueleto junto a las Freezing Heights?",
    "role": "desc",
    "kind": "dialogue",
@@ -166185,8 +166505,8 @@
    "source": "wiki"
   },
   "The Breaking Point#235": {
-   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "Toma... el túnel comercial... {u}. Pondré las coordenadas... en tu libro de misiones.",
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "Toma... el túnel comercial... {u}. Pondré las coordenadas... en tu libro de contenido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -166745,7 +167065,7 @@
    "source": "wiki"
   },
   "The Breaking Point#291": {
-   "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
    "dst": "Debes entrar... en estas tierras sagradas. Lucha hasta el final... Hazle entrar... en razón.",
    "role": "desc",
    "kind": "dialogue",
@@ -166795,7 +167115,7 @@
    "source": "wiki"
   },
   "The Breaking Point#296": {
-   "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
    "dst": "Hecho. Desint... Iscor... A vuestros puestos. Debemos... contenerlo.",
    "role": "desc",
    "kind": "dialogue",
@@ -167013,6 +167333,46 @@
    "stage": "Stage 12",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "¿Y bien? ¿A qué esperas? Vamos, ¡en marcha hacia Corkus!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "¿Y bien, a qué esperas? ¡Mete la pieza en la máquina, rápido!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "Suerte en las Heights, {u}. Yo... veré si puedo salvar algo de la máquina, pero no pinta bien. Los Ancianos de Ineos podrían ser nuestra única esperanza...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "Toma... el túnel comercial... {u}. He puesto las coordenadas... en tu libro de contenido.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
   },
   "The Canary Calls#000": {
    "src": "Day {~}, {~} AP",
@@ -188485,8 +188845,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "¿Cuánto fal- ¡Oh, traes el mapa!",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "¿Cuánto fal- ¡Oh, traes el mapa! Gracias.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -188825,7 +189185,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "¡AAAAAAGH!",
    "role": "desc",
    "kind": "dialogue",
@@ -188925,7 +189285,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "¿Has encontrado algo? Vale. Entonces… te sigo.",
    "role": "desc",
    "kind": "dialogue",
@@ -189065,8 +189425,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "F- fue aterrador… M- me salvaste la vida. Gracias … No estaba preparado para un peligro real así.",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "F-fue aterrador... M-me salvaste la vida. Gracias, {u}... No estaba preparado para un peligro real así.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189255,7 +189615,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "Puaj... Están malísimos.",
    "role": "desc",
    "kind": "dialogue",
@@ -189285,7 +189645,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "Suena muy corkiano, lo sé. Me hicieron usar Siegfried porque suena menos extranjero, supongo.",
    "role": "desc",
    "kind": "dialogue",
@@ -189315,8 +189675,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "Gracias. A partir de ahora.. te seguiré. Está claro que vas más preparado que yo.",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "Gracias, {u}. A partir de ahora.. te seguiré. Está claro que vas más preparado que yo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189395,7 +189755,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "El camino parece ir por esos fragmentos amarillos, ¿podremos llegar?",
    "role": "desc",
    "kind": "dialogue",
@@ -190253,6 +190613,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} Boleto de la búsqueda del tesoro]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Autógrafo de Siegfried]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "Dame un momento...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "¡Se venden boletos! ¡Llévate aquí tus boletos para la Búsqueda del Tesoro de Siegfried!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "Tienes la sensación de que vuelves por donde has venido...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "Haría falta un explosivo para desactivar esto. Pero aquí no parece haber ninguno.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "Tienes la sensación de que vas hacia atrás...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "Hay algunas cuevas pequeñas por aquí.. ¿Quizá haya algo comestible en ellas?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "No me... encuentro muy bien. Creo.. que puedo seguir, eso sí, en cuanto estés listo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "Este horno parece funcionar todavía.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "Esos hilos de seda de la telaraña grande la sostienen. Si cortas los tres, puede que se rompa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "Tienes la sensación de que vas por el camino equivocado...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "¡Menos mal que cruzamos esa sima! ¡Sigamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": ".. {u}... ¿seguro que esos huevos c-crudos eran.. seguros?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "Uf.. no me encuentro.. nada bien..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "Noto.. algo.. den--- ¡AAAAAAARHGH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
@@ -199486,6 +200006,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Olmic Rune#016": {
+   "src": "It looks like a mining machine that's hundreds of years old. What was it mining though?",
+   "dst": "Parece una máquina minera de hace cientos de años. Pero ¿qué extraía?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Order of the Grook#000": {
    "src": "Eager much? Keep yourself seated for now.",
    "dst": "",
@@ -200803,7 +201333,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#131": {
-   "src": "Anyways. The fire element class. Many misunderstand just what fire stands for... but after today, you will leave with courage in your hearts.",
+   "src": "Anyways. The Fire element class. Many misunderstand just what fire stands for...but after today, you will leave with courage in your hearts.",
    "dst": "En fin. La clase del elemento Fuego. Muchos malinterpretan lo que representa el fuego... pero hoy saldréis de aquí con valor en el pecho.",
    "role": "desc",
    "kind": "dialogue",
@@ -200833,7 +201363,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#134": {
-   "src": "In addition, water is tied to healing magic, fire is tied to self-healing. Regenerative capacity if you will. Many fire-based artifacts heal the user passively.",
+   "src": "In addition, although water is tied to healing magic, fire is tied to self-healing. Regenerative capacity, if you will. Many fire-based artifacts heal the user passively.",
    "dst": "Además, si el agua se liga a la magia curativa, el fuego se liga a la autocuración. Capacidad regenerativa, si queréis. Muchos artefactos de fuego curan de forma pasiva a quien los lleva.",
    "role": "desc",
    "kind": "dialogue",
@@ -200893,8 +201423,8 @@
    "source": "wiki"
   },
   "The Order of the Grook#140": {
-   "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
-   "dst": "¡Bien hecho, {u}, polluelo de Grook! Sigue afilando tus instintos. Algún día serás un gran héroe, no me cabe duda.",
+   "src": "Well done, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "dst": "¡Bien hecho, polluelo de Grook! Sigue afilando tus instintos. Algún día serás un gran héroe, no me cabe duda.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -201073,7 +201603,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#158": {
-   "src": "Alright everyone. Take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses",
+   "src": "Alright everyone, take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses.",
    "dst": "Muy bien. Sentaos, pero no os acomodéis. Pronto os levantaréis. Espero que hayáis traído las gafas de leer",
    "role": "desc",
    "kind": "dialogue",
@@ -201083,7 +201613,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#159": {
-   "src": "See, I'll just be giving you short primer, then sending you out for the practical exercise, Since I have all this written down already.",
+   "src": "See, I'll just be giving you a short primer, then sending you out for your practical exercise, since I have all this written down already.",
    "dst": "Veréis, os daré una introducción breve y luego os mandaré al ejercicio práctico, ya que todo esto lo tengo ya escrito.",
    "role": "desc",
    "kind": "dialogue",
@@ -201093,7 +201623,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#160": {
-   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be artificer, you need to know how each one works.",
+   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be an artificer, you need to know how each one works.",
    "dst": "La base de esta clase es que muchos materiales, lo sepáis o no, son mágicos de un modo u otro por naturaleza. Si queréis ser artífices, debéis saber cómo funciona cada uno.",
    "role": "desc",
    "kind": "dialogue",
@@ -201103,7 +201633,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#161": {
-   "src": "Thankfully, the field of artifice is very popular one, so there's a wealth of knowledge out there on magical materials and how to use them efficiently.",
+   "src": "Thankfully, the field of artifice is a very popular one, so there's a wealth of knowledge out there on magical materials and on how to use them effectively.",
    "dst": "Por suerte, la artificería está muy de moda, así que hay muchísimo escrito sobre materiales mágicos y cómo usarlos bien.",
    "role": "desc",
    "kind": "dialogue",
@@ -201113,7 +201643,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#162": {
-   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get to. Tough to master, though!",
+   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get into. Tough to master, though!",
    "dst": "Caramba, los soldados de Wynn se apañan anillos con cobre y seda vieja de araña, o sea que esto está al alcance de cualquiera. ¡Dominarlo ya es otra cosa!",
    "role": "desc",
    "kind": "dialogue",
@@ -201133,7 +201663,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#164": {
-   "src": "You all be crafting a magical amulet using different items. I've stockpiled in the back; everyone will be crafting a different kind of necklace.",
+   "src": "You all will be crafting a magical amulet using different items. I've got stockpiles in the back; everyone will be crafting a different kind of necklace.",
    "dst": "Vais a fabricar un amuleto mágico con distintos objetos. Los tengo apilados al fondo; cada uno hará un collar diferente.",
    "role": "desc",
    "kind": "dialogue",
@@ -201143,7 +201673,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#165": {
-   "src": "Here's a note on what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
+   "src": "Here's a note of what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
    "dst": "Aquí tienes una nota con lo que debes fabricar. Cuando reúnas los materiales que creas necesarios, ve a la mesa de fabricación. Está encantada y hará el objeto por ti si lo tienes todo.",
    "role": "desc",
    "kind": "dialogue",
@@ -201163,7 +201693,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#167": {
-   "src": "Your feathers are coming out just nicely, fledgeling. You can scoot off to your next class now",
+   "src": "Your feathers are coming in just nicely, fledgeling. You can scoot off to your next class now.",
    "dst": "Te están saliendo unas plumas estupendas, polluelo. Ya puedes largarte a tu siguiente clase",
    "role": "desc",
    "kind": "dialogue",
@@ -201619,7 +202149,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#212": {
-   "src": "And...well, you can't exactly get more injured than \"dead\". Hence, the growth of zombies and skeletons and all, over in Wynn.",
+   "src": "And...well, you can't exactly get more injured than \"dead.\" Hence, the growth of zombies and skeletons and all, over in Wynn.",
    "dst": "Y... bueno, no se puede estar más herido que \"muerto\". De ahí el auge de zombis, esqueletos y demás allá en Wynn.",
    "role": "desc",
    "kind": "dialogue",
@@ -201639,7 +202169,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#214": {
-   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affect everyone slightly differently.",
+   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affects everyone slightly differently.",
    "dst": "En cuanto a los efectos sobre la persona, lo más común es paranoia e ira. Y eso es casi lo único constante; a cada cual le afecta de forma algo distinta.",
    "role": "desc",
    "kind": "dialogue",
@@ -201649,7 +202179,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#215": {
-   "src": "The worst part is that practically everything single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
+   "src": "The worst part is that practically every single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
    "dst": "¡Lo peor es que casi todo lo que hemos visto aquí son conjeturas y teoría pura! La fuerza de la corrupción es aterradora.",
    "role": "desc",
    "kind": "dialogue",
@@ -201947,6 +202477,336 @@
    "stage": "Stage 15",
    "speaker": "Headmaster",
    "source": "wiki"
+  },
+  "The Order of the Grook#245": {
+   "src": "The element of bravery and resolve. Now, choose a Practical Magic lesson.",
+   "dst": "El elemento de la valentía y la determinación. Ahora, elige una clase de Magia Práctica.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#246": {
+   "src": "Artificing is a very useful tool for the burgeoning magic user! I'm fond of it, myself. Now, choose a Magical Creatures class.",
+   "dst": "¡El artificio es una herramienta muy útil para el mago en ciernes! A mí me encanta. Ahora, elige una clase de Criaturas Mágicas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#247": {
+   "src": "So you seek a broad spectrum of knowledge upon magicality! I wholeheartedly approve. Lastly, you must choose a Magical Type class.",
+   "dst": "¡Así que buscas un amplio abanico de conocimientos sobre la magicidad! Lo apruebo de todo corazón. Por último, debes elegir una clase de Tipos de magia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#248": {
+   "src": "You have learned enough here, I believe. Now, it is up to you whether you want to continue with other lessons or try to master this test.",
+   "dst": "Creo que ya has aprendido bastante aquí. Ahora depende de ti seguir con otras clases o intentar dominar esta prueba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#249": {
+   "src": "Quartz is a versatile magical material useful in nearly any magical item in some fashion.",
+   "dst": "El cuarzo es un material mágico versátil, útil de un modo u otro en casi cualquier objeto mágico.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#250": {
+   "src": "Due to its natural ability to passively absorb magical energy, it is a phenominally applicable material for magical batteries or storage.",
+   "dst": "Gracias a su capacidad natural para absorber energía mágica de forma pasiva, es un material fenomenal para baterías o almacenamiento mágicos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#251": {
+   "src": "Magical marvels such as the electromagic generator in {p} are powered primarily by quartz and related materials.",
+   "dst": "Maravillas mágicas como el generador electromágico de {p} funcionan sobre todo con cuarzo y materiales afines.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#252": {
+   "src": "However, it has its limits. While it is effective at storing energy, it can only store a finite amount.",
+   "dst": "Sin embargo, tiene sus límites. Aunque almacena energía con eficacia, solo puede almacenar una cantidad finita.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#253": {
+   "src": "Overloading quartz with magical energy can cause it to create magical discharge, which can overcharge nearby quartz as well, causing violent chain reactions.",
+   "dst": "Sobrecargar el cuarzo con energía mágica puede provocar descargas mágicas, que a su vez sobrecargan el cuarzo cercano y desatan violentas reacciones en cadena.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#254": {
+   "src": "Cosmic magic is being studied presently by magical experts. There are few conclusive truths of cosmic energies, one such being that it is only found in things fallen from the sky.",
+   "dst": "Los expertos en magia estudian actualmente la magia cósmica. Hay pocas verdades concluyentes sobre las energías cósmicas; una de ellas es que solo se encuentran en cosas caídas del cielo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#255": {
+   "src": "The meteors and comets that have fallen are difficult to study, as not only does each color or type of fallen meteor appear to have different magical effects on its environment...",
+   "dst": "Los meteoritos y cometas caídos son difíciles de estudiar, pues no solo cada color o tipo de meteorito parece tener efectos mágicos distintos sobre su entorno...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#256": {
+   "src": "...but many types of meteor have been found to induce a creeping insanity in those exposed to it for extended periods. Three initial cosmic researchers fell prey to this effect.",
+   "dst": "...sino que se ha descubierto que muchos tipos de meteorito inducen una locura progresiva en quienes se exponen a ellos mucho tiempo. Tres de los primeros investigadores cósmicos sucumbieron a este efecto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#257": {
+   "src": "Small samples and meteor shards appear generally safe, but are to be treated with the utmost care and caution. Gavellian law outlaws non-registered usage of cosmic materials.",
+   "dst": "Las muestras pequeñas y las esquirlas de meteorito parecen seguras en general, pero deben tratarse con el máximo cuidado y precaución. La ley de Gavel prohíbe el uso no registrado de materiales cósmicos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#258": {
+   "src": "Magical stabilizers do as they state, stabilize magical energy. Though materials such as quartz and runes are useful, misuse can result in disaster for the user.",
+   "dst": "Los estabilizadores mágicos hacen lo que su nombre indica: estabilizan la energía mágica. Aunque materiales como el cuarzo y las runas son útiles, un mal uso puede acabar en desastre para el usuario.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#259": {
+   "src": "Thus, stabilizers are a necessity for creating safe-to-use magical items. In the past, these manifested as massive chains of quartz batteries or wasteful use of metals such as gold or silver.",
+   "dst": "Por eso los estabilizadores son imprescindibles para crear objetos mágicos seguros. Antes, eso se traducía en enormes cadenas de baterías de cuarzo o en un uso derrochador de metales como el oro o la plata.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#260": {
+   "src": "Recently however, a material called Lodestone was discovered. It actively stabilizes influxes of magical energy far more efficiently than jewels or precious metals.",
+   "dst": "Sin embargo, hace poco se descubrió un material llamado magnetita. Estabiliza activamente las afluencias de energía mágica con mucha más eficacia que las joyas o los metales preciosos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#261": {
+   "src": "However, it has the side effect of leaching excess magic into the environment into a raw form. It is theorized that the presence of Lodestone in Gavel has...",
+   "dst": "No obstante, tiene el efecto secundario de filtrar el exceso de magia al entorno en estado puro. Se cree que la presencia de magnetita en Gavel ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#262": {
+   "src": "...contributed heavily to the diverse flora and fauna of the region; the magic energy influenced evolution in ways that areas like Wynn have not seen.",
+   "dst": "...contribuido enormemente a la diversa flora y fauna de la región; la energía mágica ha influido en la evolución de formas que regiones como Wynn no han visto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#263": {
+   "src": "Powders, while simple in actual structure, are often misunderstood except by enchanters and artificers.",
+   "dst": "Los polvos, aunque de estructura sencilla, suelen ser malinterpretados por todos salvo encantadores y artífices.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#264": {
+   "src": "Being made of specific blends of various items with magical ties to elements, certain powders are easier to create than others. Magical plants are easier to grind down than magical minerals, for instance.",
+   "dst": "Al estar hechos de mezclas concretas de objetos con vínculos mágicos con los elementos, unos polvos son más fáciles de crear que otros. Por ejemplo, las plantas mágicas se muelen más fácilmente que los minerales mágicos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#265": {
+   "src": "After each item is ground to dust, enchanters purify the blend to remove extraneous aspects, leaving only the pure elemental powder in its wake.",
+   "dst": "Una vez molido cada objeto hasta hacerlo polvo, los encantadores purifican la mezcla para eliminar los aspectos superfluos, y solo queda el polvo elemental puro.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#266": {
+   "src": "Items more heavily attuned to a specific element will create a stronger blend of powder, but even items with the slightest connection to an element can conceivably be used to create a powder.",
+   "dst": "Los objetos más afines a un elemento concreto crean una mezcla de polvo más potente, pero incluso los objetos con la más mínima conexión con un elemento pueden usarse, en teoría, para crear un polvo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#267": {
+   "src": "To apply powders to items in a refined way, one must either incorporate the mix into the base construction of an item, or utilize the energies within for an enchantment.",
+   "dst": "Para aplicar polvos a los objetos de forma refinada, hay que incorporar la mezcla a la construcción base del objeto o bien aprovechar sus energías para un encantamiento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#268": {
+   "src": "Merely sprinkling powders over other things will not generate any magical effects, although some artists are known to use powders to make brilliant colors of paint, strangely.",
+   "dst": "Espolvorear polvos sobre otras cosas sin más no genera ningún efecto mágico, aunque, curiosamente, se sabe que algunos artistas usan polvos para obtener pinturas de colores brillantes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#269": {
+   "src": "Most magic items require a \"focus\" in order to draw out and direct their magical energies. Many items are usable as foci, but certain items have been found to be far more effective than others.",
+   "dst": "La mayoría de los objetos mágicos necesitan un «foco» para extraer y dirigir sus energías mágicas. Muchos objetos sirven como focos, pero se ha comprobado que algunos son mucho más eficaces que otros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#270": {
+   "src": "Jewels and precious stones are easy to channel magic through, and thus are often used in conjunction as basic foci. Certain gems have inclination towards specific elements...",
+   "dst": "Las joyas y las piedras preciosas canalizan la magia con facilidad, por lo que a menudo se usan juntas como focos básicos. Algunas gemas tienen inclinación por elementos concretos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#271": {
+   "src": "...most often indicated by the color of the gem, but all are applicable for general purposes.",
+   "dst": "...lo que suele indicar el color de la gema, pero todas sirven para usos generales.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#272": {
+   "src": "A less common type of focus is found in the form of Runes. They are a magical unknown, for all intents and purposes, with each specific rune seeming to have a different magical inclination.",
+   "dst": "Un tipo de foco menos común son las runas. Son, a todos los efectos, una incógnita mágica, y cada runa concreta parece tener una inclinación mágica distinta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#273": {
+   "src": "Only five types of Runes have ever been found, and after a disastrous attempt at combining Runic power, horrifically powerful Rune Guardians have begun to appear in Gavel to guard them.",
+   "dst": "Solo se han encontrado cinco tipos de runas y, tras un intento desastroso de combinar el poder rúnico, han empezado a aparecer en Gavel unos Guardianes de runas terriblemente poderosos para protegerlas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#274": {
+   "src": "Due to this, the remaining stockpile of Runes continues to dwindle as they are used and sold between their holders, or hoarded by the wealthy.",
+   "dst": "Por ello, las reservas de runas que quedan siguen menguando a medida que sus poseedores las usan y las venden entre sí, o los ricos las acaparan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#275": {
+   "src": "The crafting table isn't responding. Looks like you haven't got the right items.",
+   "dst": "La mesa de fabricación no responde. Parece que no tienes los objetos adecuados.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#276": {
+   "src": "The crafting table responds, and the materials shape themselves into a rather fetching amulet.",
+   "dst": "La mesa de fabricación responde, y los materiales se moldean solos hasta formar un amuleto bastante vistoso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#277": {
+   "src": "[+{~} Amulet]",
+   "dst": "[+{~} Amuleto]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Passage (Quest)#000": {
    "src": "Not so fast, you!",

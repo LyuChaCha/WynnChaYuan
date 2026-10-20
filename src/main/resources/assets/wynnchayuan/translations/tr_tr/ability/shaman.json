@@ -309,7 +309,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "Var olan bir Toteme bakarken\nTotem kullanırsan yarı mana maliyetiyle\nonu ileri itersin; Totem çarptığı\nher düşmana hasar\nverir.\n(Yönü tersine çevirmek için eğil)",
+   "dst": "{c1}Var olan bir {c2}Toteme{c1} bakarken\n{c2}Totem{c1} kullanırsan {c3}yarı{c1} mana maliyetiyle\nonu ileri itersin; Totem çarptığı\nher düşmana hasar\nverir.\n{c4}(Yönü tersine çevirmek için eğil)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -463,7 +463,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine her {~2} sn'de canının +{~1}\nkadarını çeker ve Aura'nın hasarını +{~3} artırır.",
+   "dst": "{c1}Sacrificial Shrine {c2}her {~2} sn'de {c3}canının {c2}+{~1}\nkadarını çeker {c3}ve {c1}Aura'nın {c2}hasarını +{~3} artırır{c3}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -659,7 +659,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "Takılıyken aşırı yük her {~2} sn'de\n-{~1} azalır.",
+   "dst": "{c1}Takılıyken aşırı yük her {c3}{~2} sn{c1}'de\n{c2}-{~1}{c1} azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -813,7 +813,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ Toplam Hasar: {~} (DPS'inin, Ana Saldırı\nhasarı olarak)",
+   "dst": "{c1}⚔ {c2}Toplam Hasar: {c3}{~} {c4}(DPS'inin, Ana Saldırı\nhasarı olarak)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1068,7 +1068,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "Her {~} sn'de çevresindeki düşmanlara\nhasar veren bir Totem çağır.",
+   "dst": "{c1}Her {c2}{~} sn{c1}'de çevresindeki düşmanlara\nhasar veren bir Totem çağır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2136,7 +2136,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue +{~} vuruş kazanır, daha fazla hasar verir\nve artık düşmanlara vuruş başına +{~} sn\nKanama {#} uygular. (En fazla {~} sn)",
+   "dst": "{c1}Flaming Tongue {c3}+{~} {c2}vuruş kazanır, daha fazla hasar verir\nve artık düşmanlara vuruş başına {c3}+{~} sn\n{c4}Kanama{c2} {#} uygular. {c5}(En fazla {~} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2151,7 +2151,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "Haunting Memory bunun yerine\n+{~} sn Kanama {#} uygular.",
+   "dst": "{c1}Haunting Memory{c2} bunun yerine\n{c3}+{~} sn {c4}Kanama {#}{c2} uygular.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2965,7 +2965,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "Totemin menzilinde herhangi bir oyuncu hasar\naldığında, alınan hasarın maksimum canına\noranla {~} kadarı Kan Havuzu {#}\ndeğerine eklenir.\n(Saniyede en fazla {~} Kan Havuzu)",
+   "dst": "{c2}Totemin{c1} menzilinde herhangi bir oyuncu hasar\naldığında, alınan hasarın maksimum canına\noranla {c3}{~}{c1} kadarı {c4}Kan Havuzu {#}{c1}\ndeğerine eklenir.\n{c5}(Saniyede en fazla {~} Kan Havuzu)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3631,7 +3631,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "Ucube yakın menzil modunda her {~} sn'de,\nuzak menzil modunda her {~} sn'de\ndüşmanlara saldırır.",
+   "dst": "{c2}Ucube{c1} yakın menzil modunda her {c3}{~} sn{c1}'de,\nuzak menzil modunda her {c3}{~} sn{c1}'de\ndüşmanlara saldırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3712,7 +3712,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "Diğerleri her {~2} sn'de +{~1} Can {#} kazanır.",
+   "dst": "{c1}Diğerleri her {c2}{~2} sn{c1}'de {c2}+{~1} {c3}Can {#}{c1} kazanır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3727,7 +3727,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "Totemini kadim bir iblis\nele geçirir ve yakındaki acolyte'lara her {~2} sn'de\n+{~1} Kan Havuzu {#} verir.",
+   "dst": "{c2}Totemini{c1} kadim bir iblis\nele geçirir ve yakındaki acolyte'lara her {c3}{~2} sn{c1}'de\n{c3}+{~1} {c4}Kan Havuzu {#}{c1} verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [

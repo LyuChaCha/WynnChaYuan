@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 242,
-  "translated": 240,
+  "count": 258,
+  "translated": 256,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -661,8 +661,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "Daha ne kadar- Aa, haritayı getirmişsin!",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "Daha ne kadar- Aa, haritayı getirmişsin! Teşekkürler.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1001,7 +1001,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "AAAAAAGH!",
    "role": "desc",
    "kind": "dialogue",
@@ -1101,7 +1101,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "Bir şey mi buldun? Tamam. O zaman… seni takip ederim.",
    "role": "desc",
    "kind": "dialogue",
@@ -1241,8 +1241,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "Ç-Çok korkunçtu… H-hayatımı kurtardın. Teşekkür ederim … Böyle gerçek bir tehlikeye hazırlıklı değildim.",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "Ç-çok korkunçtu... H-hayatımı kurtardın. Teşekkür ederim, {u}... Böyle gerçek bir tehlikeye hazırlıklı değildim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1431,7 +1431,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "Iyy... Bunlar berbat.",
    "role": "desc",
    "kind": "dialogue",
@@ -1461,7 +1461,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "Çok Corkuslu duruyor, biliyorum. Daha az yabancı geldiği için Siegfried adını kullandırdılar herhalde.",
    "role": "desc",
    "kind": "dialogue",
@@ -1491,8 +1491,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "Teşekkürler . Ben.. Bundan sonra seni takip edeceğim. Belli ki benden daha hazırlıklısın.",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "Teşekkürler, {u}. Ben.. Bundan sonra seni takip edeceğim. Belli ki benden daha hazırlıklısın.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1571,7 +1571,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "Yol şu sarı kristallerin karşısında gibi, onlara ulaşabilir miyiz?",
    "role": "desc",
    "kind": "dialogue",
@@ -2429,6 +2429,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} Hazine Avı Bileti]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Siegfried'in İmzası]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "Bana biraz müsaade et...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "Biletler satışta! Siegfried Hazine Avı biletini buradan al!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "Geldiğin yoldan geri döndüğünü hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "Bunu etkisiz hâle getirmek için bir patlayıcı gerekir. Ama burada hiç yok gibi görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "Geriye doğru gittiğini hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "Buralarda birkaç küçük mağara var.. Belki oralarda yenecek bir şey vardır?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "Kendimi... pek iyi hissetmiyorum. Ama sanırım.. sen hazır olduğunda devam edebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "Bu fırın hâlâ çalışıyor gibi görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "Büyük ağdan uzanan şu ipek teller onu tutuyor. Üçünü de kesersen kopabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "Yanlış yöne gittiğini hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "İyi ki o uçurumu geçtik! Devam edelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": ".. {u}... o p-pişmemiş yumurtaların.. güvenli olduğuna emin misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "Ah.. Kendimi.. pek iyi.. hissetmiyorum..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "Bir şey.. hissediyorum.. içim--- AAAAAAARHGH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   }
  }
 }

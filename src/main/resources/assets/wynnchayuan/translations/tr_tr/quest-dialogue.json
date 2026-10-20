@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 23574,
-  "translated": 23286,
+  "count": 23660,
+  "translated": 23372,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75378,7 +75378,7 @@
   },
   "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
-   "dst": "Başlamaya hazır olduğunda dojonun arkasındaki pınarın sularında arın, ben de seni ilk sınavına götüreyim.",
+   "dst": "{c1}Başlamaya hazır olduğunda {c2}dojonun arkasındaki pınarın{c1} sularında arın, ben de seni ilk sınavına götüreyim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -129214,7 +129214,7 @@
    "source": "wiki"
   },
   "Point of No Return#029": {
-   "src": "An beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
    "dst": "Dışarıdaki dehşetin ortasında bir güvenlik feneri... ne mucize, ihtiyaç anımızda onu bizi beklerken bulmak.",
    "role": "desc",
    "kind": "dialogue",
@@ -129424,7 +129424,7 @@
    "source": "wiki"
   },
   "Point of No Return#050": {
-   "src": "The others... all have given into its pull. Our band of survivors... left behind, abandoned...",
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
    "dst": "Diğerleri... hepsi onun çekimine teslim oldu. Hayatta kalanlardan oluşan grubumuz... geride bırakıldı, terk edildi...",
    "role": "desc",
    "kind": "dialogue",
@@ -129482,6 +129482,86 @@
    "stage": "Stage 12",
    "speaker": "Lutho Citizen",
    "source": "wiki"
+  },
+  "Point of No Return#056": {
+   "src": "Your soul seems to be slipping away from reality...",
+   "dst": "Ruhun gerçeklikten kayıp gidiyor gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#057": {
+   "src": "Where does all of this lead?",
+   "dst": "Bütün bunlar nereye çıkıyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#058": {
+   "src": "Your soul runs beneath your feet.",
+   "dst": "Ruhun ayaklarının altından akıp gidiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#059": {
+   "src": "It leads you onwards..",
+   "dst": "Seni ileriye götürüyor..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#060": {
+   "src": "Your soul drifts further from you. Will you ever get it back?",
+   "dst": "Ruhun senden daha da uzaklaşıyor. Onu bir gün geri alabilecek misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#061": {
+   "src": "Oh, how they tried to bury us...",
+   "dst": "Ah, bizi gömmeye nasıl da çalıştılar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#062": {
+   "src": "Something is holding you back.",
+   "dst": "Bir şey seni geri tutuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#063": {
+   "src": "A distant thread, tying you to... something.",
+   "dst": "Seni... bir şeye bağlayan uzak bir iplik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "Lutho Guard",
+   "source": "captured"
   },
   "Potion Making#000": {
    "src": "Dr. Essren needs to be stopped!",
@@ -138604,7 +138684,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#063": {
-   "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
+   "src": "Welcome to Astralaus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Astralus'un Astral Evi'ne hoş geldin! Yer çekimini ters çevirerek tepeye çıkabilir misin?",
    "role": "desc",
    "kind": "dialogue",
@@ -138654,7 +138734,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#068": {
-   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
+   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick else, strangeling!",
    "dst": "Seni ne getirmek burada, yabancıcık? Ne adlamaların var? İn-san? Biz demek Humyn! Kötü seçmek, başka seç yabancıcık!",
    "role": "desc",
    "kind": "dialogue",
@@ -138664,7 +138744,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#069": {
-   "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
+   "src": "Looking for helping? How many conveniences! Humyns requires assistancing! You observes, humyns failflies into large crater-rock!",
    "dst": "Yardım için araştırmak? Ne çok kolaylıklar! Humynler yardımlamak ihtiyaç! Sen gözlemciler, humynler büyük krater-kayaya düşüçuştu!",
    "role": "desc",
    "kind": "dialogue",
@@ -138694,7 +138774,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#072": {
-   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
+   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps, humyns will let strangeling in spacezoom. Humyns can create new spacezoom given time!",
    "dst": "Şimdiki uzayvıza sadece tekil humyn sığmak. Yabancıcık yardım ederse humynler yabancıcığı uzayvıza almak. Humynler verilen zamanda yeni uzayvız yapabilmek!",
    "role": "desc",
    "kind": "dialogue",
@@ -138704,7 +138784,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#073": {
-   "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
+   "src": "Humyns currently residing on crater-rock, meaning waiting is not result death!",
    "dst": "Humynler şimdi krater-kayada ikamet etmek, yani beklemek ölüm sonucu değil!",
    "role": "desc",
    "kind": "dialogue",
@@ -138834,7 +138914,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#086": {
-   "src": "Here, human. Take this slime as your prize.",
+   "src": "Here, human, take this slime as your prize.",
    "dst": "Buyur, insan. Ödülün olarak bu balçığı al.",
    "role": "desc",
    "kind": "dialogue",
@@ -139094,7 +139174,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#112": {
-   "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
+   "src": "Okay you step back and let me work on the cooking, just pass over the ingredients!",
    "dst": "Tamam, sen geri çekil, yemeği ben hallederim, sadece malzemeleri ver!",
    "role": "desc",
    "kind": "dialogue",
@@ -139214,7 +139294,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#124": {
-   "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
+   "src": "Ah, you have finished your dish? Well, then, il est temps de gouter!",
    "dst": "Ah, yemeğini bitirdin mi? O halde, il est temps de goûter!",
    "role": "desc",
    "kind": "dialogue",
@@ -139244,7 +139324,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#127": {
-   "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
+   "src": "Welcome back, mon ami! I see you've returned with a dish in hand!",
    "dst": "Tekrar hoş geldin, mon ami! Görüyorum ki elinde bir yemekle dönmüşsün!",
    "role": "desc",
    "kind": "dialogue",
@@ -139774,6 +139854,236 @@
    "quest": "Recipe For Disaster",
    "stage": "",
    "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#189": {
+   "src": "You've clearly won the race, but everyone seems to be waiting for Usnail Bolt to finish as well...",
+   "dst": "Yarışı açık ara kazandın ama herkes Usnail Bolt'un da bitirmesini bekliyor gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#190": {
+   "src": "Looks like this is that \"Space Wizard\"'s tower... you should start looking around for some Moonsalt.",
+   "dst": "Görünüşe göre burası o \"Uzay Büyücüsü\"nün kulesi... etrafta biraz Moonsalt aramaya başlamalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#191": {
+   "src": "A large warning on the display flashes a \"LOW FUEL \" warning at you.",
+   "dst": "Ekranda büyük bir \"YAKIT AZ\" uyarısı yanıp sönüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#192": {
+   "src": "You need [{~} Unrefined Moonsalt] to refine into \"burnmilk fuel\". Perhaps the Humyn nearby knows how to get some?",
+   "dst": "\"Yakansüt yakıtı\" elde etmek için arıtacak [{~} Unrefined Moonsalt] lazım. Belki yakındaki Humyn nereden bulunacağını biliyordur?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#193": {
+   "src": "Looks like this is the Moonsalt Cave... you should head deeper to find some salt.",
+   "dst": "Görünüşe göre burası Moonsalt Mağarası... biraz tuz bulmak için derinlere inmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#194": {
+   "src": "You grab a large handful of the unrefined salt.",
+   "dst": "Arıtılmamış tuzdan kocaman bir avuç alıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#195": {
+   "src": "You've secured some Unrefined Moonsalt, time to head back to the village and your way home.",
+   "dst": "Biraz Unrefined Moonsalt elde ettin, şimdi köye, oradan da evine dönme vakti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#196": {
+   "src": "You've managed to refine the moonsalt into some kind of fuel, you should head over to the spaceship now.",
+   "dst": "Moonsalt'ı arıtıp bir çeşit yakıta dönüştürmeyi başardın, şimdi uzay gemisine gitmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#197": {
+   "src": "You fill the ship up with the burnmilk and press the button on the control panel that is helpefully labelled \"TRAVEL SPACEZOOM\".",
+   "dst": "Gemiyi yakansütle dolduruyor ve kontrol panelinde pek yardımsever bir şekilde \"UZAYVIZ YOLCULUK\" yazan düğmeye basıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#198": {
+   "src": "Looks like you're safely back in the {p}, and with some Moonsalt to boot!",
+   "dst": "Görünüşe göre {p} bölgesine sağ salim döndün, üstelik yanında biraz Moonsalt'la!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#199": {
+   "src": "The recipe book says voidroot only grows in complete darkness... better start looking around.",
+   "dst": "Tarif kitabına göre voidroot yalnızca zifiri karanlıkta yetişiyor... etrafa bakmaya başlasan iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#200": {
+   "src": "It's some kind of cargo that's fallen from above... there's a distinct smell of fresh cookies coming from inside.",
+   "dst": "Yukarıdan düşmüş bir çeşit kargo... içinden belirgin bir taze kurabiye kokusu geliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#201": {
+   "src": "You reach out to touch the silky leaves of the plant and find your vision restored for {~} second...",
+   "dst": "Bitkinin ipeksi yapraklarına dokunmak için uzanıyorsun ve görüşün {~} saniyeliğine geri geliyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#202": {
+   "src": "A label on the side reads Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ. You probably shouldn't get too close to it.",
+   "dst": "Yan tarafındaki etikette Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ yazıyor. Ona fazla yaklaşmasan iyi olur herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#203": {
+   "src": "Dusty grey texture? Desaturated green leaves? Ever-growing sense of all-encompasing dread? Matches the recipe book description perfectly!",
+   "dst": "Tozlu gri doku mu? Solgun yeşil yapraklar mı? Giderek büyüyen, her şeyi saran bir dehşet duygusu mu? Tarif kitabındaki tarife birebir uyuyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#204": {
+   "src": "It's some kind of purple orb, pulsating with a otherworldy light. Maybe best not to touch.",
+   "dst": "Öteki dünyadan bir ışıkla nabız gibi atan, bir çeşit mor küre. Dokunmamak en iyisi belki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#205": {
+   "src": "You've gathered all the ingredients, you should head back to Brie.",
+   "dst": "Bütün malzemeleri topladın, Brie'nin yanına dönmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#206": {
+   "src": "[+{~} Seasoned Voidroot Stew]",
+   "dst": "[+{~} Seasoned Voidroot Stew]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#207": {
+   "src": "[+{~} Cooking XP]",
+   "dst": "[+{~} Aşçılık XP]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#208": {
+   "src": "Have you shown Hamsey our dish yet? I'm sure he's gonna love it!",
+   "dst": "Yemeğimizi Hamsey'e gösterdin mi? Bayılacağına eminim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#209": {
+   "src": "Can't say your bake looks very good. No match for Kale's mighty omelette!",
+   "dst": "Fırınladığın şey pek iyi görünüyor diyemem. Kale'in muhteşem omletinin yanına bile yaklaşamaz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#210": {
+   "src": "Good luck, dude.",
+   "dst": "Bol şans, kanka.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#211": {
+   "src": "Meet me in my dining room and we'll taste your dish!",
+   "dst": "Benimle yemek salonumda buluş, yemeğini tadalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
    "source": "captured"
   },
   "Reclaiming the House#001": {
@@ -147000,7 +147310,7 @@
   },
   "Revelations in Fall#265": {
    "src": "Yes, Rex, because he won't stay down for long- that's why we need to move, now!",
-   "dst": "Evet, Rex, çünkü uzun süre yerde kalmayacak, o yüzden hemen gitmemiz lazım!",
+   "dst": "{c1}Evet, Rex, çünkü uzun süre yerde {c2}kalmayacak{c1}, o yüzden {c2}hemen{c1} gitmemiz lazım!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -148601,7 +148911,7 @@
    "source": "wiki"
   },
   "Royal Trials#001": {
-   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
    "dst": "Geri çekil! Korsan kraliçesi seçilene dek kimse giremez. Senin gibi bir karayürüyenin burada ne işi var?",
    "role": "desc",
    "kind": "dialogue",
@@ -149021,7 +149331,7 @@
    "source": "wiki"
   },
   "Royal Trials#043": {
-   "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
    "dst": "Gözünüzü dört açın, kızlar. Tek bir yanlış hareket ve ölüm sizi bekler.",
    "role": "desc",
    "kind": "dialogue",
@@ -149101,7 +149411,7 @@
    "source": "wiki"
   },
   "Royal Trials#052": {
-   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
    "dst": "Çıkış noktasında bir kaçış gemisiyle bekliyor olacağız, geri kalan herkes geride kalır.",
    "role": "desc",
    "kind": "dialogue",
@@ -149589,6 +149899,16 @@
    "stage": "Stage 13",
    "speaker": "Mansion Guard",
    "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "Eee, karayürüyen. Umarım o kıyafet bi' işine yarıyodur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
   },
   "Shattered Minds#000": {
    "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
@@ -163849,7 +164169,7 @@
    "source": "captured"
   },
   "The Breaking Point#002": {
-   "src": "I... see. {u}... Ozoth tells me... that an Everflame ... will free the Elders.",
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
    "dst": "Anlıyorum... {u}... Ozoth diyor ki... bir Everflame... İhtiyarları özgür bırakacak.",
    "role": "desc",
    "kind": "dialogue",
@@ -164075,7 +164395,7 @@
    "source": "wiki"
   },
   "The Breaking Point#024": {
-   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
    "dst": "Dengeleyici şimdiye kadar çalıştı, Ineos! Eyaletimizin sunabileceği en iyi teknolojilerden biri ve çalışıyordu da!",
    "role": "desc",
    "kind": "dialogue",
@@ -164125,7 +164445,7 @@
    "source": "wiki"
   },
   "The Breaking Point#029": {
-   "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
    "dst": "Sorun şu ki kontroller yanmış gibi görünüyor! Burada hiç yedek parçamız da yok. Corkus'a geri gitmemiz gerekecek ve...",
    "role": "desc",
    "kind": "dialogue",
@@ -164425,7 +164745,7 @@
    "source": "wiki"
   },
   "The Breaking Point#059": {
-   "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
    "dst": "Oradaki adamlarımız cihazı onarmak için gereken parçaları bize bulabilir. Bu... ilk patlayışı değil. Bu sefer dengede tutmayı başarırız diye ummuştum, ama...",
    "role": "desc",
    "kind": "dialogue",
@@ -164655,7 +164975,7 @@
    "source": "wiki"
   },
   "The Breaking Point#082": {
-   "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
    "dst": "Kullanımdan kaldırılmış olsa da aşağıda hâlâ madenci robotları olması çok muhtemel- daha güçlü modellerin bazıları bugün kullandığımız kondansatörlere çok benzeyen devreler kullanıyordu.",
    "role": "desc",
    "kind": "dialogue",
@@ -165115,7 +165435,7 @@
    "source": "wiki"
   },
   "The Breaking Point#128": {
-   "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
    "dst": "Ve... o Ineos mu? Biz... cücelerin seni... moloza çevirdiğini... sanmıştık...",
    "role": "desc",
    "kind": "dialogue",
@@ -165925,7 +166245,7 @@
    "source": "wiki"
   },
   "The Breaking Point#209": {
-   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
    "dst": "Şimdi geriye kalan tek şey yavru ejderhalar - bir zamanlar büyük olan atalarının yankıları, alevleri zırhını zar zor kavuracak kadar.",
    "role": "desc",
    "kind": "dialogue",
@@ -165985,7 +166305,7 @@
    "source": "wiki"
   },
   "The Breaking Point#215": {
-   "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
    "dst": "Aynen öyle. Savaşta onların safında yer alan ateş ejderhaları. Freezing Heights'ın hemen dışındaki iskelete rastlamışsındır eminim?",
    "role": "desc",
    "kind": "dialogue",
@@ -166185,8 +166505,8 @@
    "source": "wiki"
   },
   "The Breaking Point#235": {
-   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "Ticaret tünelini... kullanmalısın... {u}. Koordinatları... görev kitabına... yazacağım.",
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "Ticaret tünelini... kullanmalısın... {u}. Koordinatları... içerik kitabına... yazacağım.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -166745,7 +167065,7 @@
    "source": "wiki"
   },
   "The Breaking Point#291": {
-   "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
    "dst": "Bu kutsal topraklara... girmelisin. Sonuna kadar savaşarak ilerle... Aklını... başına getir.",
    "role": "desc",
    "kind": "dialogue",
@@ -166795,7 +167115,7 @@
    "source": "wiki"
   },
   "The Breaking Point#296": {
-   "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
    "dst": "Tamamlandı. Desint... Iscor... Yerlerinizi alın. Onu... geri tutmalıyız.",
    "role": "desc",
    "kind": "dialogue",
@@ -167013,6 +167333,46 @@
    "stage": "Stage 12",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "Eee? Ne bekliyorsun- hadi, Corkus'a gidelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "Eee, ne bekliyorsun?! Parçayı makineye tak, çabuk!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "Heights'ta bol şans, {u}. Ben de... makineden kurtarabileceğim bir şey var mı bakacağım ama durum hiç iyi görünmüyor. Ineos'un İhtiyarları tek umudumuz olabilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "Ticaret tünelini... kullanmalısın... {u}. Koordinatları... içerik kitabına... yazdım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
   },
   "The Canary Calls#000": {
    "src": "Day {~}, {~} AP",
@@ -188485,8 +188845,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "Daha ne kadar- Aa, haritayı getirmişsin!",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "Daha ne kadar- Aa, haritayı getirmişsin! Teşekkürler.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -188825,7 +189185,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "AAAAAAGH!",
    "role": "desc",
    "kind": "dialogue",
@@ -188925,7 +189285,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "Bir şey mi buldun? Tamam. O zaman… seni takip ederim.",
    "role": "desc",
    "kind": "dialogue",
@@ -189065,8 +189425,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "Ç-Çok korkunçtu… H-hayatımı kurtardın. Teşekkür ederim … Böyle gerçek bir tehlikeye hazırlıklı değildim.",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "Ç-çok korkunçtu... H-hayatımı kurtardın. Teşekkür ederim, {u}... Böyle gerçek bir tehlikeye hazırlıklı değildim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189255,7 +189615,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "Iyy... Bunlar berbat.",
    "role": "desc",
    "kind": "dialogue",
@@ -189285,7 +189645,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "Çok Corkuslu duruyor, biliyorum. Daha az yabancı geldiği için Siegfried adını kullandırdılar herhalde.",
    "role": "desc",
    "kind": "dialogue",
@@ -189315,8 +189675,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "Teşekkürler . Ben.. Bundan sonra seni takip edeceğim. Belli ki benden daha hazırlıklısın.",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "Teşekkürler, {u}. Ben.. Bundan sonra seni takip edeceğim. Belli ki benden daha hazırlıklısın.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189395,7 +189755,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "Yol şu sarı kristallerin karşısında gibi, onlara ulaşabilir miyiz?",
    "role": "desc",
    "kind": "dialogue",
@@ -190253,6 +190613,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} Hazine Avı Bileti]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Siegfried'in İmzası]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "Bana biraz müsaade et...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "Biletler satışta! Siegfried Hazine Avı biletini buradan al!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "Geldiğin yoldan geri döndüğünü hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "Bunu etkisiz hâle getirmek için bir patlayıcı gerekir. Ama burada hiç yok gibi görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "Geriye doğru gittiğini hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "Buralarda birkaç küçük mağara var.. Belki oralarda yenecek bir şey vardır?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "Kendimi... pek iyi hissetmiyorum. Ama sanırım.. sen hazır olduğunda devam edebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "Bu fırın hâlâ çalışıyor gibi görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "Büyük ağdan uzanan şu ipek teller onu tutuyor. Üçünü de kesersen kopabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "Yanlış yöne gittiğini hissediyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "İyi ki o uçurumu geçtik! Devam edelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": ".. {u}... o p-pişmemiş yumurtaların.. güvenli olduğuna emin misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "Ah.. Kendimi.. pek iyi.. hissetmiyorum..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "Bir şey.. hissediyorum.. içim--- AAAAAAARHGH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
@@ -199486,6 +200006,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Olmic Rune#016": {
+   "src": "It looks like a mining machine that's hundreds of years old. What was it mining though?",
+   "dst": "Yüzlerce yıllık bir maden makinesine benziyor. Ama neyi kazıyordu acaba?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Order of the Grook#000": {
    "src": "Eager much? Keep yourself seated for now.",
    "dst": "Pek mi hevesliyiz? Şimdilik yerinde otur.",
@@ -200803,7 +201333,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#131": {
-   "src": "Anyways. The fire element class. Many misunderstand just what fire stands for... but after today, you will leave with courage in your hearts.",
+   "src": "Anyways. The Fire element class. Many misunderstand just what fire stands for...but after today, you will leave with courage in your hearts.",
    "dst": "Neyse. Ateş elementi dersi. Çoğu kişi ateşin neyi temsil ettiğini yanlış anlar... ama bugünden sonra buradan yüreğinizde cesaretle ayrılacaksınız.",
    "role": "desc",
    "kind": "dialogue",
@@ -200833,7 +201363,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#134": {
-   "src": "In addition, water is tied to healing magic, fire is tied to self-healing. Regenerative capacity if you will. Many fire-based artifacts heal the user passively.",
+   "src": "In addition, although water is tied to healing magic, fire is tied to self-healing. Regenerative capacity, if you will. Many fire-based artifacts heal the user passively.",
    "dst": "Ayrıca su iyileştirme büyüsüne bağlıyken ateş kendini iyileştirmeye bağlıdır. Yenilenme yeteneği diyelim. Ateşe dayalı pek çok eser kullanıcısını pasif olarak iyileştirir.",
    "role": "desc",
    "kind": "dialogue",
@@ -200893,8 +201423,8 @@
    "source": "wiki"
   },
   "The Order of the Grook#140": {
-   "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
-   "dst": "Aferin, {u}, yavru Grook! İçgüdülerini bilemeye devam et. Bir gün iyi bir kahraman olacaksın, bundan eminim.",
+   "src": "Well done, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "dst": "Aferin, yavru Grook! İçgüdülerini bilemeye devam et. Bir gün iyi bir kahraman olacaksın, bundan eminim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -201073,7 +201603,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#158": {
-   "src": "Alright everyone. Take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses",
+   "src": "Alright everyone, take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses.",
    "dst": "Pekâlâ millet. Oturun ama fazla rahatlamayın. Birazdan kalkacaksınız. Umarım okuma gözlüklerinizi getirmişsinizdir.",
    "role": "desc",
    "kind": "dialogue",
@@ -201083,7 +201613,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#159": {
-   "src": "See, I'll just be giving you short primer, then sending you out for the practical exercise, Since I have all this written down already.",
+   "src": "See, I'll just be giving you a short primer, then sending you out for your practical exercise, since I have all this written down already.",
    "dst": "Bakın, size kısa bir giriş yapıp sonra pratik alıştırmaya göndereceğim, çünkü hepsini zaten yazdım.",
    "role": "desc",
    "kind": "dialogue",
@@ -201093,7 +201623,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#160": {
-   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be artificer, you need to know how each one works.",
+   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be an artificer, you need to know how each one works.",
    "dst": "Bu dersin temeli şu: Pek çok malzeme, farkında olsanız da olmasanız da, şu ya da bu şekilde doğası gereği büyülüdür. Zanaatkâr olmak istiyorsanız her birinin nasıl çalıştığını bilmelisiniz.",
    "role": "desc",
    "kind": "dialogue",
@@ -201103,7 +201633,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#161": {
-   "src": "Thankfully, the field of artifice is very popular one, so there's a wealth of knowledge out there on magical materials and how to use them efficiently.",
+   "src": "Thankfully, the field of artifice is a very popular one, so there's a wealth of knowledge out there on magical materials and on how to use them effectively.",
    "dst": "Neyse ki zanaatkârlık çok popüler bir alan, o yüzden büyülü malzemeler ve onları verimli kullanma hakkında bir sürü bilgi var.",
    "role": "desc",
    "kind": "dialogue",
@@ -201113,7 +201643,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#162": {
-   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get to. Tough to master, though!",
+   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get into. Tough to master, though!",
    "dst": "Yahu, Wynn askerleri bakırla eski örümcek ağından yüzük yapıp duruyor, demek ki bu işe girmek kolay. Ustalaşmak ise zor!",
    "role": "desc",
    "kind": "dialogue",
@@ -201133,7 +201663,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#164": {
-   "src": "You all be crafting a magical amulet using different items. I've stockpiled in the back; everyone will be crafting a different kind of necklace.",
+   "src": "You all will be crafting a magical amulet using different items. I've got stockpiles in the back; everyone will be crafting a different kind of necklace.",
    "dst": "Hepiniz farklı eşyalar kullanarak büyülü bir muska yapacaksınız. Arkaya stok yaptım; herkes farklı türde bir kolye yapacak.",
    "role": "desc",
    "kind": "dialogue",
@@ -201143,7 +201673,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#165": {
-   "src": "Here's a note on what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
+   "src": "Here's a note of what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
    "dst": "Ne yapman gerektiğini anlatan bir not burada. Gerekli olduğunu düşündüğün malzemeleri toplayınca zanaat masasına gel. Masa büyülü, gereken her şey sende varsa eşyayı senin için yapar.",
    "role": "desc",
    "kind": "dialogue",
@@ -201163,7 +201693,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#167": {
-   "src": "Your feathers are coming out just nicely, fledgeling. You can scoot off to your next class now",
+   "src": "Your feathers are coming in just nicely, fledgeling. You can scoot off to your next class now.",
    "dst": "Tüylerin gayet güzel çıkıyor, yavru. Artık bir sonraki dersine gidebilirsin.",
    "role": "desc",
    "kind": "dialogue",
@@ -201619,7 +202149,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#212": {
-   "src": "And...well, you can't exactly get more injured than \"dead\". Hence, the growth of zombies and skeletons and all, over in Wynn.",
+   "src": "And...well, you can't exactly get more injured than \"dead.\" Hence, the growth of zombies and skeletons and all, over in Wynn.",
    "dst": "Ve...eh, \"ölü\"den daha yaralı olunmaz herhalde. Wynn'deki zombi, iskelet ve benzerlerinin çoğalması bundan.",
    "role": "desc",
    "kind": "dialogue",
@@ -201639,7 +202169,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#214": {
-   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affect everyone slightly differently.",
+   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affects everyone slightly differently.",
    "dst": "Kişi üzerindeki etkilerine gelince, en sık paranoya ve öfke görülüyor. Tutarlı olan tek şey de bu; herkesi biraz farklı etkiliyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -201649,7 +202179,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#215": {
-   "src": "The worst part is that practically everything single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
+   "src": "The worst part is that practically every single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
    "dst": "İşin en kötüsü, burada değindiğimiz neredeyse her şey tahmin ve teoriden ibaret! Yozlaşma gücü dehşet verici.",
    "role": "desc",
    "kind": "dialogue",
@@ -201947,6 +202477,336 @@
    "stage": "Stage 15",
    "speaker": "Headmaster",
    "source": "wiki"
+  },
+  "The Order of the Grook#245": {
+   "src": "The element of bravery and resolve. Now, choose a Practical Magic lesson.",
+   "dst": "Cesaretin ve kararlılığın elementi. Şimdi bir Pratik Büyü dersi seç.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#246": {
+   "src": "Artificing is a very useful tool for the burgeoning magic user! I'm fond of it, myself. Now, choose a Magical Creatures class.",
+   "dst": "Zanaatkârlık, yeni yeşeren bir büyü kullanıcısı için çok faydalı bir araçtır! Ben de pek severim. Şimdi bir Büyülü Yaratıklar dersi seç.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#247": {
+   "src": "So you seek a broad spectrum of knowledge upon magicality! I wholeheartedly approve. Lastly, you must choose a Magical Type class.",
+   "dst": "Demek büyüsellik üzerine geniş bir bilgi yelpazesi arıyorsun! Yürekten onaylıyorum. Son olarak bir Büyü Türü dersi seçmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#248": {
+   "src": "You have learned enough here, I believe. Now, it is up to you whether you want to continue with other lessons or try to master this test.",
+   "dst": "Sanırım burada yeterince öğrendin. Artık başka derslerle devam etmek mi yoksa bu sınavda ustalaşmaya çalışmak mı istediğin sana kalmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#249": {
+   "src": "Quartz is a versatile magical material useful in nearly any magical item in some fashion.",
+   "dst": "Kuvars, neredeyse her büyülü eşyada şu ya da bu şekilde işe yarayan çok yönlü bir büyülü malzemedir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#250": {
+   "src": "Due to its natural ability to passively absorb magical energy, it is a phenominally applicable material for magical batteries or storage.",
+   "dst": "Büyü enerjisini edilgen olarak emme yeteneği sayesinde büyülü piller ya da depolama için olağanüstü elverişli bir malzemedir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#251": {
+   "src": "Magical marvels such as the electromagic generator in {p} are powered primarily by quartz and related materials.",
+   "dst": "{p} bölgesindeki elektrobüyü jeneratörü gibi büyülü harikalar başta kuvars ve benzeri malzemelerle çalışır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#252": {
+   "src": "However, it has its limits. While it is effective at storing energy, it can only store a finite amount.",
+   "dst": "Ancak sınırları vardır. Enerji depolamada etkili olsa da yalnızca sınırlı bir miktar depolayabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#253": {
+   "src": "Overloading quartz with magical energy can cause it to create magical discharge, which can overcharge nearby quartz as well, causing violent chain reactions.",
+   "dst": "Kuvarsı büyü enerjisiyle aşırı yüklemek büyülü boşalmalara yol açabilir; bu da yakındaki kuvarsları da aşırı yükleyip şiddetli zincirleme tepkimelere neden olabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#254": {
+   "src": "Cosmic magic is being studied presently by magical experts. There are few conclusive truths of cosmic energies, one such being that it is only found in things fallen from the sky.",
+   "dst": "Kozmik büyü şu anda büyü uzmanlarınca inceleniyor. Kozmik enerjiler hakkında kesinleşmiş pek az gerçek var; bunlardan biri, yalnızca gökten düşen şeylerde bulunduğudur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#255": {
+   "src": "The meteors and comets that have fallen are difficult to study, as not only does each color or type of fallen meteor appear to have different magical effects on its environment...",
+   "dst": "Düşen göktaşlarını ve kuyruklu yıldızları incelemek zordur, çünkü düşen her göktaşının rengi ya da türü çevresinde farklı büyülü etkiler yaratıyor gibi görünmekle kalmaz...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#256": {
+   "src": "...but many types of meteor have been found to induce a creeping insanity in those exposed to it for extended periods. Three initial cosmic researchers fell prey to this effect.",
+   "dst": "...pek çok göktaşı türünün uzun süre maruz kalanlarda sinsice ilerleyen bir delilik yarattığı da saptanmıştır. İlk kozmik araştırmacılardan üçü bu etkiye kurban gitti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#257": {
+   "src": "Small samples and meteor shards appear generally safe, but are to be treated with the utmost care and caution. Gavellian law outlaws non-registered usage of cosmic materials.",
+   "dst": "Küçük örnekler ve göktaşı parçaları genelde güvenli görünür ama son derece özenli ve dikkatli kullanılmalıdır. Gavel yasaları kozmik malzemelerin kayıt dışı kullanımını yasaklar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#258": {
+   "src": "Magical stabilizers do as they state, stabilize magical energy. Though materials such as quartz and runes are useful, misuse can result in disaster for the user.",
+   "dst": "Büyü dengeleyicileri adlarının söylediğini yapar: büyü enerjisini dengeler. Kuvars ve rünler gibi malzemeler faydalı olsa da yanlış kullanım kullanıcı için felaketle sonuçlanabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#259": {
+   "src": "Thus, stabilizers are a necessity for creating safe-to-use magical items. In the past, these manifested as massive chains of quartz batteries or wasteful use of metals such as gold or silver.",
+   "dst": "Bu yüzden güvenle kullanılabilecek büyülü eşyalar yapmak için dengeleyiciler şarttır. Geçmişte bunlar devasa kuvars pili zincirleri ya da altın, gümüş gibi metallerin savurganca kullanılması şeklinde karşımıza çıkardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#260": {
+   "src": "Recently however, a material called Lodestone was discovered. It actively stabilizes influxes of magical energy far more efficiently than jewels or precious metals.",
+   "dst": "Ancak yakın zamanda Mıknatıs Taşı adlı bir malzeme keşfedildi. Büyü enerjisi akınlarını mücevherlerden ya da değerli metallerden çok daha verimli şekilde, etkin olarak dengeler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#261": {
+   "src": "However, it has the side effect of leaching excess magic into the environment into a raw form. It is theorized that the presence of Lodestone in Gavel has...",
+   "dst": "Ne var ki fazla büyüyü ham hâlde çevreye sızdırmak gibi bir yan etkisi vardır. Gavel'deki Mıknatıs Taşı varlığının...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#262": {
+   "src": "...contributed heavily to the diverse flora and fauna of the region; the magic energy influenced evolution in ways that areas like Wynn have not seen.",
+   "dst": "...bölgenin çeşitli bitki ve hayvan örtüsüne büyük katkı sağladığı düşünülüyor; büyü enerjisi evrimi Wynn gibi bölgelerin hiç görmediği şekillerde etkiledi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#263": {
+   "src": "Powders, while simple in actual structure, are often misunderstood except by enchanters and artificers.",
+   "dst": "Tozlar, aslında basit bir yapıya sahip olsalar da efsuncular ve zanaatkârlar dışında çoğu zaman yanlış anlaşılır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#264": {
+   "src": "Being made of specific blends of various items with magical ties to elements, certain powders are easier to create than others. Magical plants are easier to grind down than magical minerals, for instance.",
+   "dst": "Elementlerle büyülü bağları olan çeşitli eşyaların belirli karışımlarından yapıldıkları için bazı tozları üretmek diğerlerinden kolaydır. Örneğin büyülü bitkileri öğütmek büyülü mineralleri öğütmekten daha kolaydır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#265": {
+   "src": "After each item is ground to dust, enchanters purify the blend to remove extraneous aspects, leaving only the pure elemental powder in its wake.",
+   "dst": "Her eşya toz hâline getirildikten sonra efsuncular gereksiz unsurları ayıklamak için karışımı arındırır ve geriye yalnızca saf elementel toz kalır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#266": {
+   "src": "Items more heavily attuned to a specific element will create a stronger blend of powder, but even items with the slightest connection to an element can conceivably be used to create a powder.",
+   "dst": "Belirli bir elemente daha güçlü bağlı eşyalar daha güçlü bir toz karışımı verir, ama bir elementle en ufak bağı olan eşyalar bile toz yapımında kullanılabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#267": {
+   "src": "To apply powders to items in a refined way, one must either incorporate the mix into the base construction of an item, or utilize the energies within for an enchantment.",
+   "dst": "Tozları eşyalara incelikli bir şekilde uygulamak için ya karışımı eşyanın temel yapısına katmak ya da içindeki enerjiyi bir efsun için kullanmak gerekir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#268": {
+   "src": "Merely sprinkling powders over other things will not generate any magical effects, although some artists are known to use powders to make brilliant colors of paint, strangely.",
+   "dst": "Tozları başka şeylerin üzerine serpmek tek başına hiçbir büyülü etki yaratmaz; gerçi tuhaftır, bazı sanatçıların tozları parlak renkli boyalar yapmak için kullandığı bilinir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#269": {
+   "src": "Most magic items require a \"focus\" in order to draw out and direct their magical energies. Many items are usable as foci, but certain items have been found to be far more effective than others.",
+   "dst": "Çoğu büyülü eşya, büyü enerjisini açığa çıkarıp yönlendirmek için bir \"odak\" gerektirir. Pek çok eşya odak olarak kullanılabilir ama bazı eşyaların diğerlerinden çok daha etkili olduğu saptanmıştır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#270": {
+   "src": "Jewels and precious stones are easy to channel magic through, and thus are often used in conjunction as basic foci. Certain gems have inclination towards specific elements...",
+   "dst": "Mücevherler ve değerli taşlar büyüyü kolayca iletir, bu yüzden sık sık temel odak olarak birlikte kullanılırlar. Bazı taşların belirli elementlere yatkınlığı vardır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#271": {
+   "src": "...most often indicated by the color of the gem, but all are applicable for general purposes.",
+   "dst": "...bu çoğunlukla taşın renginden anlaşılır, ama hepsi genel amaçlar için kullanılabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#272": {
+   "src": "A less common type of focus is found in the form of Runes. They are a magical unknown, for all intents and purposes, with each specific rune seeming to have a different magical inclination.",
+   "dst": "Daha az rastlanan bir odak türü de Rünlerdir. Her bakımdan büyülü bir bilinmezdirler; her rünün farklı bir büyülü yatkınlığı varmış gibi görünür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#273": {
+   "src": "Only five types of Runes have ever been found, and after a disastrous attempt at combining Runic power, horrifically powerful Rune Guardians have begun to appear in Gavel to guard them.",
+   "dst": "Bugüne dek yalnızca beş tür Rün bulundu ve Rün gücünü birleştirmeye yönelik felaketle sonuçlanan bir girişimden sonra Gavel'de onları korumak için korkunç derecede güçlü Rün Koruyucuları ortaya çıkmaya başladı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#274": {
+   "src": "Due to this, the remaining stockpile of Runes continues to dwindle as they are used and sold between their holders, or hoarded by the wealthy.",
+   "dst": "Bu yüzden elde kalan Rün stoku, sahipleri arasında kullanılıp satıldıkça ya da zenginlerce istiflendikçe azalmaya devam ediyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#275": {
+   "src": "The crafting table isn't responding. Looks like you haven't got the right items.",
+   "dst": "Zanaat masası tepki vermiyor. Görünüşe göre doğru eşyalar sende değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#276": {
+   "src": "The crafting table responds, and the materials shape themselves into a rather fetching amulet.",
+   "dst": "Zanaat masası tepki veriyor ve malzemeler kendiliğinden oldukça göz alıcı bir muskaya dönüşüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#277": {
+   "src": "[+{~} Amulet]",
+   "dst": "[+{~} Muska]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Passage (Quest)#000": {
    "src": "Not so fast, you!",

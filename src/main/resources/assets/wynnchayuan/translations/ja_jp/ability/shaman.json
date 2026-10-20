@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "既存のトーテムを見ながら\nトーテムを使うと、半分のマナコストで\nそれを前方へ押し出し、\nぶつかった敵に\nダメージを与える。\n(スニークで方向を反転)",
+   "dst": "{c1}既存の{c2}トーテム{c1}を見ながら\n{c2}トーテム{c1}を使うと、{c3}半分{c1}のマナコストで\nそれを前方へ押し出し、\nぶつかった敵に\nダメージを与える。\n{c4}(スニークで方向を反転)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine が {~2}秒ごとに体力を +{~1} 吸い取り、\nAura のダメージを +{~3} 上げる。",
+   "dst": "{c1}Sacrificial Shrine{c3} が {c2}{~2}秒ごと{c3}に体力を {c2}+{~1} 吸い取り{c3}、\n{c1}Aura{c3} の{c2}ダメージを +{~3} 上げる{c3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "着けている間は、過負荷が\n{~2}秒ごとに -{~1} ずつ減る。",
+   "dst": "{c1}着けている間は、過負荷が\n{c3}{~2}秒{c1}ごとに {c2}-{~1}{c1} ずつ減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ 総ダメージ: {~} (DPSに対して、通常攻撃\nダメージ扱い)",
+   "dst": "{c1}⚔ {c2}総ダメージ: {c3}{~} {c4}(DPSに対して、通常攻撃\nダメージ扱い)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1064,7 +1064,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "{~}秒ごとに周囲の敵に\nダメージを与えるトーテムを呼び出す。",
+   "dst": "{c2}{~}秒{c1}ごとに周囲の敵に\nダメージを与えるトーテムを呼び出す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2132,7 +2132,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue のヒット数が +{~} 増えてダメージが上がり、\n1ヒットごとに敵に Bleeding {#} を\n+{~}秒付与する。(上限 {~}秒)",
+   "dst": "{c1}Flaming Tongue{c2} のヒット数が {c3}+{~}{c2} 増えてダメージが上がり、\n1ヒットごとに敵に {c4}Bleeding{c2} {#} を\n{c3}+{~}秒{c2}付与する。{c5}(上限 {~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2147,7 +2147,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "Haunting Memory が代わりに\nBleeding {#} を +{~}秒付与する。",
+   "dst": "{c1}Haunting Memory{c2} が代わりに\n{c4}Bleeding{c2} {#} を {c3}+{~}秒{c2}付与する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "トーテムの範囲内でプレイヤーがダメージを受けると、\n受けたダメージの {~} を\n自分の最大体力に対する割合で\nBlood Pool {#} に加える。\n(Blood Pool は毎秒最大 {~})",
+   "dst": "{c2}トーテム{c1}の範囲内でプレイヤーがダメージを受けると、\n受けたダメージの {c3}{~}{c1} を\n自分の最大体力に対する割合で\n{c4}Blood Pool{c1} {#} に加える。\n{c5}(Blood Pool は毎秒最大 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3627,7 +3627,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "異形は近距離モードでは {~}秒ごと、\n遠距離モードでは {~}秒ごとに\n敵を攻撃する。",
+   "dst": "{c2}異形{c1}は近距離モードでは {c3}{~}秒{c1}ごと、\n遠距離モードでは {c3}{~}秒{c1}ごとに\n敵を攻撃する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3708,7 +3708,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "ほかの者は {~2}秒ごとに体力 {#} を +{~1} 得る。",
+   "dst": "{c1}ほかの者は {c2}{~2}秒{c1}ごとに{c3}体力 {#}{c1} を {c2}+{~1}{c1} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "トーテムに異形の悪魔が憑き、\n{~2}秒ごとに近くの信徒へ\nBlood Pool {#} を +{~1} 与える。",
+   "dst": "{c2}トーテム{c1}に異形の悪魔が憑き、\n{c3}{~2}秒{c1}ごとに近くの信徒へ\n{c4}Blood Pool{c1} {#} を {c3}+{~1}{c1} 与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [

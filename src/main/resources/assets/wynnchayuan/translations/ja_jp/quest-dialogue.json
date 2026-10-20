@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23680,
-  "translated": 23387,
+  "count": 23757,
+  "translated": 23464,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75748,7 +75748,7 @@
   },
   "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
-   "dst": "始める準備ができたら、道場裏の泉の水で身を清めるがよい。最初の試練へ導こう。",
+   "dst": "{c1}始める準備ができたら、{c2}道場裏の泉{c1}の水で身を清めるがよい。最初の試練へ導こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -129764,7 +129764,7 @@
    "source": "wiki"
   },
   "Point of No Return#057": {
-   "src": "The others... all have given into its pull. Our band of survivors... left behind, abandoned...",
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
    "dst": "他の者は…皆あの引力に屈した。私たち生き残りは…置き去りにされ、見捨てられた…",
    "role": "desc",
    "kind": "dialogue",
@@ -139304,7 +139304,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#063": {
-   "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
+   "src": "Welcome to Astralaus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Astralus の星の館へようこそ！重力を反転させて頂上まで来られるかね？",
    "role": "desc",
    "kind": "dialogue",
@@ -139354,7 +139354,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#068": {
-   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
+   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick else, strangeling!",
    "dst": "何がヨソモノをここへ？どんな名付けを持つ？ニン・ゲン？我々はニンゲソを名乗る！悪い選び、他で拾え、ヨソモノ！",
    "role": "desc",
    "kind": "dialogue",
@@ -139364,7 +139364,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#069": {
-   "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
+   "src": "Looking for helping? How many conveniences! Humyns requires assistancing! You observes, humyns failflies into large crater-rock!",
    "dst": "調べるに手伝うため？なんと多くの便利！ニンゲソは助け化を必要！観察者よ、ニンゲソ飛び失敗して大きい穴ぼこ岩に落ちた！",
    "role": "desc",
    "kind": "dialogue",
@@ -139394,7 +139394,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#072": {
-   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
+   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps, humyns will let strangeling in spacezoom. Humyns can create new spacezoom given time!",
    "dst": "今の宇宙ビューン、単数ニンゲソだけ入る。ヨソモノ手伝えばヨソモノ入れる。ニンゲソ時間あれば新しい宇宙ビューン作れる！",
    "role": "desc",
    "kind": "dialogue",
@@ -139404,7 +139404,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#073": {
-   "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
+   "src": "Humyns currently residing on crater-rock, meaning waiting is not result death!",
    "dst": "ニンゲソ今は穴ぼこ岩に住む、つまり待つは死の結果でない！",
    "role": "desc",
    "kind": "dialogue",
@@ -139534,7 +139534,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#086": {
-   "src": "Here, human. Take this slime as your prize.",
+   "src": "Here, human, take this slime as your prize.",
    "dst": "ほら、人間。賞品のスライムだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -139794,7 +139794,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#112": {
-   "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
+   "src": "Okay you step back and let me work on the cooking, just pass over the ingredients!",
    "dst": "じゃあ下がってて、料理は私に任せて。食材を渡してね！",
    "role": "desc",
    "kind": "dialogue",
@@ -139914,7 +139914,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#124": {
-   "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
+   "src": "Ah, you have finished your dish? Well, then, il est temps de gouter!",
    "dst": "Ah、料理ができたのかね？では、il est temps de goûter！",
    "role": "desc",
    "kind": "dialogue",
@@ -139944,7 +139944,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#127": {
-   "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
+   "src": "Welcome back, mon ami! I see you've returned with a dish in hand!",
    "dst": "おかえり、mon ami！料理を手に戻ってきたね！",
    "role": "desc",
    "kind": "dialogue",
@@ -140474,6 +140474,236 @@
    "quest": "Recipe For Disaster",
    "stage": "",
    "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#189": {
+   "src": "You've clearly won the race, but everyone seems to be waiting for Usnail Bolt to finish as well...",
+   "dst": "レースはどう見ても勝ったが、皆 Usnail Bolt のゴールも待っているようだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#190": {
+   "src": "Looks like this is that \"Space Wizard\"'s tower... you should start looking around for some Moonsalt.",
+   "dst": "ここがあの「宇宙の魔法使い」の塔らしい…Moonsalt を探して回ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#191": {
+   "src": "A large warning on the display flashes a \"LOW FUEL \" warning at you.",
+   "dst": "ディスプレイに大きく「燃料不足」の警告が点滅している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#192": {
+   "src": "You need [{~} Unrefined Moonsalt] to refine into \"burnmilk fuel\". Perhaps the Humyn nearby knows how to get some?",
+   "dst": "「燃えミルク燃料」に精錬するには [{~} Unrefined Moonsalt] が必要だ。近くのニンゲソなら手に入れ方を知っているかも？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#193": {
+   "src": "Looks like this is the Moonsalt Cave... you should head deeper to find some salt.",
+   "dst": "ここが Moonsalt の洞窟らしい…塩を見つけるには奥へ進もう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#194": {
+   "src": "You grab a large handful of the unrefined salt.",
+   "dst": "未精錬の塩をたっぷりひとつかみ取った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#195": {
+   "src": "You've secured some Unrefined Moonsalt, time to head back to the village and your way home.",
+   "dst": "Unrefined Moonsalt を手に入れた。村へ戻って、帰り道を探そう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#196": {
+   "src": "You've managed to refine the moonsalt into some kind of fuel, you should head over to the spaceship now.",
+   "dst": "moonsalt を燃料のようなものに精錬できた。さあ、宇宙船へ向かおう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#197": {
+   "src": "You fill the ship up with the burnmilk and press the button on the control panel that is helpefully labelled \"TRAVEL SPACEZOOM\".",
+   "dst": "船に燃えミルクを満たし、操作盤の親切にも「宇宙ビューン発進」と書かれたボタンを押す。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#198": {
+   "src": "Looks like you're safely back in the {p}, and with some Moonsalt to boot!",
+   "dst": "どうやら無事に {p} へ戻れたようだ。しかも Moonsalt まで手に入れて！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#199": {
+   "src": "The recipe book says voidroot only grows in complete darkness... better start looking around.",
+   "dst": "レシピ本によると、Voidroot は完全な暗闇でしか育たないらしい…探して回ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#200": {
+   "src": "It's some kind of cargo that's fallen from above... there's a distinct smell of fresh cookies coming from inside.",
+   "dst": "上から落ちてきた積み荷のようだ…中から焼きたてのクッキーの匂いがはっきり漂ってくる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#201": {
+   "src": "You reach out to touch the silky leaves of the plant and find your vision restored for {~} second...",
+   "dst": "植物の滑らかな葉に手を伸ばして触れると、{~} 秒だけ視界が戻った…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#202": {
+   "src": "A label on the side reads Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ. You probably shouldn't get too close to it.",
+   "dst": "側面のラベルには Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ と書かれている。あまり近づかないほうがよさそうだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#203": {
+   "src": "Dusty grey texture? Desaturated green leaves? Ever-growing sense of all-encompasing dread? Matches the recipe book description perfectly!",
+   "dst": "くすんだ灰色の質感？色あせた緑の葉？膨らみ続ける、すべてを包む恐怖感？レシピ本の説明とぴったり一致する！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#204": {
+   "src": "It's some kind of purple orb, pulsating with a otherworldy light. Maybe best not to touch.",
+   "dst": "異界の光で脈打つ紫色の球体のようだ。触らないほうがいいかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#205": {
+   "src": "You've gathered all the ingredients, you should head back to Brie.",
+   "dst": "材料はすべて集まった。Brie のところへ戻ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#206": {
+   "src": "[+{~} Seasoned Voidroot Stew]",
+   "dst": "[+{~} Seasoned Voidroot Stew]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#207": {
+   "src": "[+{~} Cooking XP]",
+   "dst": "[+{~} 料理経験値]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#208": {
+   "src": "Have you shown Hamsey our dish yet? I'm sure he's gonna love it!",
+   "dst": "もう Hamsey に私たちの料理を見せた？きっと気に入ってくれるよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#209": {
+   "src": "Can't say your bake looks very good. No match for Kale's mighty omelette!",
+   "dst": "あなたの焼き物、見た目はいまいちですね。Kale の偉大なオムレツには敵いません！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#210": {
+   "src": "Good luck, dude.",
+   "dst": "頑張れよ、相棒。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#211": {
+   "src": "Meet me in my dining room and we'll taste your dish!",
+   "dst": "私のダイニングルームで会おう、君の料理を味わおうじゃないか！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
    "source": "captured"
   },
   "Reclaiming the House#001": {
@@ -147700,7 +147930,7 @@
   },
   "Revelations in Fall#265": {
    "src": "Yes, Rex, because he won't stay down for long- that's why we need to move, now!",
-   "dst": "ええ、Rex、彼はすぐ起き上がるから― だから今すぐ動かないといけないの！",
+   "dst": "{c1}ええ、Rex、彼はすぐ起き上がるから― だから{c2}今すぐ{c1}動かないといけないの！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -149301,7 +149531,7 @@
    "source": "wiki"
   },
   "Royal Trials#001": {
-   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
    "dst": "下がりな！海賊女王が決まるまで誰も入れないよ。あんたみたいな陸の者がここで何してんだい？",
    "role": "desc",
    "kind": "dialogue",
@@ -149721,7 +149951,7 @@
    "source": "wiki"
   },
   "Royal Trials#043": {
-   "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
    "dst": "しっかり目を開けときな、お嬢さんたち。一つのミスが命取りだよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -149801,7 +150031,7 @@
    "source": "wiki"
   },
   "Royal Trials#052": {
-   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
    "dst": "脱出地点で逃走用の飛行船を待たせとく、他の奴らは置いてくよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -150289,6 +150519,16 @@
    "stage": "Stage 13",
    "speaker": "Mansion Guard",
    "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "よう、陸の者。その服、役に立ってるといいね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
   },
   "Shattered Minds#000": {
    "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
@@ -164549,7 +164789,7 @@
    "source": "captured"
   },
   "The Breaking Point#002": {
-   "src": "I... see. {u}... Ozoth tells me... that an Everflame ... will free the Elders.",
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
    "dst": "そうか…{u}…Ozoth が言うには…永遠の炎が…長老たちを解き放つと。",
    "role": "desc",
    "kind": "dialogue",
@@ -164775,7 +165015,7 @@
    "source": "wiki"
   },
   "The Breaking Point#024": {
-   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
    "dst": "今まで安定装置は機能してたでしょ、Ineos！うちの地方の最高峰の技術で、ちゃんと機能してきたんだから！",
    "role": "desc",
    "kind": "dialogue",
@@ -164825,7 +165065,7 @@
    "source": "wiki"
   },
   "The Breaking Point#029": {
-   "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
    "dst": "問題は制御装置が焼き切れてるみたいなこと！ここに交換部品の備蓄はないし、Corkus まで戻らないと…",
    "role": "desc",
    "kind": "dialogue",
@@ -165125,7 +165365,7 @@
    "source": "wiki"
   },
   "The Breaking Point#059": {
-   "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
    "dst": "向こうの仲間なら、装置の修理に要る部品を用意できる。これ…爆発したのは初めてじゃないんだ。今度こそ安定させられたと思ってたのに…",
    "role": "desc",
    "kind": "dialogue",
@@ -165355,7 +165595,7 @@
    "source": "wiki"
   },
   "The Breaking Point#082": {
-   "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
    "dst": "もう稼働していないが、下には採掘メカがまだ残っている可能性が高い—上位モデルの一部は、今のコンデンサーによく似た回路を使っていた。",
    "role": "desc",
    "kind": "dialogue",
@@ -165815,7 +166055,7 @@
    "source": "wiki"
   },
   "The Breaking Point#128": {
-   "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
    "dst": "しかも…あれは…Ineos か？ドワーフに…瓦礫にされたと…思っていた…",
    "role": "desc",
    "kind": "dialogue",
@@ -166625,7 +166865,7 @@
    "source": "wiki"
   },
   "The Breaking Point#209": {
-   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
    "dst": "今残っているのは幼竜だけだ—偉大な祖先のこだまで、鎧を焦がすのがやっとの炎しか吐けない。",
    "role": "desc",
    "kind": "dialogue",
@@ -166685,7 +166925,7 @@
    "source": "wiki"
   },
   "The Breaking Point#215": {
-   "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
    "dst": "その通り。戦争中に彼らに味方した火のドラゴンたちだ。Freezing Heights のすぐ外にある骸骨は見たことがあるだろう？",
    "role": "desc",
    "kind": "dialogue",
@@ -166885,8 +167125,8 @@
    "source": "wiki"
   },
   "The Breaking Point#235": {
-   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "交易トンネルを…使うといい…{u}。座標を…クエストブックに…記しておく。",
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "交易トンネルを…使うといい…{u}。座標を…コンテンツブックに…記しておく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -167445,7 +167685,7 @@
    "source": "wiki"
   },
   "The Breaking Point#291": {
-   "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
    "dst": "お前は…この聖域に…入らねばならぬ。最後まで…戦い抜き…目を覚まさせてやれ。",
    "role": "desc",
    "kind": "dialogue",
@@ -167495,7 +167735,7 @@
    "source": "wiki"
   },
   "The Breaking Point#296": {
-   "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
    "dst": "完了した。Desint…Iscor…持ち場につけ。我らで…食い止めねば。",
    "role": "desc",
    "kind": "dialogue",
@@ -167713,6 +167953,46 @@
    "stage": "Stage 12",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "ほら、何をぐずぐずしてるの―さあ、Corkus へ出発しよう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "何をぐずぐずしている？！部品を機械に入れろ、早く！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "Heights での健闘を祈るよ、{u}。私は…機械から何か回収できないか見てみる。でも望みは薄いね。Ineos の長老たちだけが頼みの綱かも…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "交易トンネルを…使うといい…{u}。座標は…コンテンツブックに…記しておいた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
   },
   "The Canary Calls#000": {
    "src": "Day {~}, {~} AP",
@@ -189505,8 +189785,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "まだかか―おお、地図を持ってきたか！",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "まだかか―おお、地図を持ってきたか！ありがとう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189845,7 +190125,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "うああああああ！",
    "role": "desc",
    "kind": "dialogue",
@@ -189945,7 +190225,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "何か見つけた？分かった。じゃあ…ついて行くよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -190085,8 +190365,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "こ、怖かった…き、君は命の恩人だ。ありがとう…こんな本物の危険には備えてなかった。",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "こ、怖かった…き、君は命の恩人だ。ありがとう、{u}…こんな本物の危険には備えてなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -190275,7 +190555,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "うえ…ひどい味だ。",
    "role": "desc",
    "kind": "dialogue",
@@ -190305,7 +190585,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "すごく Corkus 人っぽい名前だろ。外国っぽくないからって、Siegfried を名乗らされてるんだと思う。",
    "role": "desc",
    "kind": "dialogue",
@@ -190335,8 +190615,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "ありがとう。これからは…君について行くよ。君の方がずっと準備ができてるみたいだし。",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "ありがとう、{u}。これからは…君について行くよ。君の方がずっと準備ができてるみたいだし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -190415,7 +190695,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "道はあの黄色い欠片の向こうみたいだ、届くかな？",
    "role": "desc",
    "kind": "dialogue",
@@ -191283,6 +191563,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} 宝探しのチケット]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Siegfried のサイン]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "少々お待ちください…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "チケット販売中！Siegfried 宝探し大会のチケットはこちら！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "来た道を引き返している気がする…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "これを止めるには爆発物が必要だ。だが、ここには見当たらない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "後戻りしている気がする…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "この辺に小さな洞窟がいくつかある…そこなら何か食べられる物があるかも？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "あまり…気分が良くない。でも…君の準備ができ次第、先へ進めると思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "このオーブンはまだ使えるようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "大きな巣から伸びるあの糸が支えてるんだ。3本とも切れば、壊れるかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "間違った方向へ進んでいる気がする…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "あの裂け目を越えられてよかった！先へ進もう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": "…{u}…あ、あの生の卵、本当に…大丈夫だった？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "うう…あんまり…気分が…良くない…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "何か…感じる…中に―うあああああっ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
@@ -201863,7 +202303,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#131": {
-   "src": "Anyways. The fire element class. Many misunderstand just what fire stands for... but after today, you will leave with courage in your hearts.",
+   "src": "Anyways. The Fire element class. Many misunderstand just what fire stands for...but after today, you will leave with courage in your hearts.",
    "dst": "さて。火の元素の授業だ。火が何を象徴するか誤解する者は多い…だが今日を終えれば、心に勇気を宿して帰れるだろう。",
    "role": "desc",
    "kind": "dialogue",
@@ -201893,7 +202333,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#134": {
-   "src": "In addition, water is tied to healing magic, fire is tied to self-healing. Regenerative capacity if you will. Many fire-based artifacts heal the user passively.",
+   "src": "In addition, although water is tied to healing magic, fire is tied to self-healing. Regenerative capacity, if you will. Many fire-based artifacts heal the user passively.",
    "dst": "また、水が治癒魔法と結びつくのに対し、火は自己治癒と結びつく。再生力と言ってもいい。火の遺物の多くは持ち主を自動で癒す。",
    "role": "desc",
    "kind": "dialogue",
@@ -201953,8 +202393,8 @@
    "source": "wiki"
   },
   "The Order of the Grook#140": {
-   "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
-   "dst": "よくやった、{u}、ひよっこ Grook！直感を研ぎ続けろ。いつか立派な英雄になる、私が保証しよう。",
+   "src": "Well done, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "dst": "よくやった、ひよっこ Grook！直感を研ぎ続けろ。いつか立派な英雄になる、私が保証しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -202133,7 +202573,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#158": {
-   "src": "Alright everyone. Take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses",
+   "src": "Alright everyone, take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses.",
    "dst": "よし、みんな。座っていいけど、くつろぎすぎないように。すぐ立ってもらう。老眼鏡は持ってきたかな",
    "role": "desc",
    "kind": "dialogue",
@@ -202143,7 +202583,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#159": {
-   "src": "See, I'll just be giving you short primer, then sending you out for the practical exercise, Since I have all this written down already.",
+   "src": "See, I'll just be giving you a short primer, then sending you out for your practical exercise, since I have all this written down already.",
    "dst": "つまり、短い入門だけして、あとは実習に送り出す。もう全部書き留めてあるからね。",
    "role": "desc",
    "kind": "dialogue",
@@ -202153,7 +202593,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#160": {
-   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be artificer, you need to know how each one works.",
+   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be an artificer, you need to know how each one works.",
    "dst": "この授業の基本は、知っていようといまいと、多くの素材が本来なんらかの魔法性を持っているということ。魔具師になりたいなら、それぞれの働きを知る必要がある。",
    "role": "desc",
    "kind": "dialogue",
@@ -202163,7 +202603,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#161": {
-   "src": "Thankfully, the field of artifice is very popular one, so there's a wealth of knowledge out there on magical materials and how to use them efficiently.",
+   "src": "Thankfully, the field of artifice is a very popular one, so there's a wealth of knowledge out there on magical materials and on how to use them effectively.",
    "dst": "ありがたいことに魔具は人気の分野で、魔法素材とその効率的な使い方については豊富な知識が出回っている。",
    "role": "desc",
    "kind": "dialogue",
@@ -202173,7 +202613,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#162": {
-   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get to. Tough to master, though!",
+   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get into. Tough to master, though!",
    "dst": "なにせ Wynn の兵士が銅と古い蜘蛛の糸で指輪をこしらえてるくらいだ、手を出すのは簡単さ。極めるのは難しいけどね！",
    "role": "desc",
    "kind": "dialogue",
@@ -202193,7 +202633,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#164": {
-   "src": "You all be crafting a magical amulet using different items. I've stockpiled in the back; everyone will be crafting a different kind of necklace.",
+   "src": "You all will be crafting a magical amulet using different items. I've got stockpiles in the back; everyone will be crafting a different kind of necklace.",
    "dst": "みんなには色々な材料で魔法のアミュレットを作ってもらう。材料は奥に用意した。作るネックレスは一人ずつ違う。",
    "role": "desc",
    "kind": "dialogue",
@@ -202203,7 +202643,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#165": {
-   "src": "Here's a note on what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
+   "src": "Here's a note of what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
    "dst": "何を作るかはこのメモに書いてある。必要だと思う材料がそろったら作業台へ。魔法がかかっていて、材料がそろえば作ってくれる。",
    "role": "desc",
    "kind": "dialogue",
@@ -202223,7 +202663,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#167": {
-   "src": "Your feathers are coming out just nicely, fledgeling. You can scoot off to your next class now",
+   "src": "Your feathers are coming in just nicely, fledgeling. You can scoot off to your next class now.",
    "dst": "羽根がいい具合に生えてきたね、ひよっこ。次の授業へ行っていいよ",
    "role": "desc",
    "kind": "dialogue",
@@ -202679,7 +203119,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#212": {
-   "src": "And...well, you can't exactly get more injured than \"dead\". Hence, the growth of zombies and skeletons and all, over in Wynn.",
+   "src": "And...well, you can't exactly get more injured than \"dead.\" Hence, the growth of zombies and skeletons and all, over in Wynn.",
    "dst": "で…まあ、「死」より重い傷はないわけで。だから Wynn ではゾンビやスケルトンなんかが増えているんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -202699,7 +203139,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#214": {
-   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affect everyone slightly differently.",
+   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affects everyone slightly differently.",
    "dst": "人への影響としては、疑心暗鬼と怒りが最もよく見られる。一貫しているのはそれくらいで、影響は人によって少しずつ違う。",
    "role": "desc",
    "kind": "dialogue",
@@ -202709,7 +203149,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#215": {
-   "src": "The worst part is that practically everything single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
+   "src": "The worst part is that practically every single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
    "dst": "最悪なのは、ここで触れたほぼすべてが推測と机上の仮説だってことだ！腐敗の力は恐ろしい。",
    "role": "desc",
    "kind": "dialogue",
@@ -203007,6 +203447,336 @@
    "stage": "Stage 15",
    "speaker": "Headmaster",
    "source": "wiki"
+  },
+  "The Order of the Grook#245": {
+   "src": "The element of bravery and resolve. Now, choose a Practical Magic lesson.",
+   "dst": "勇気と決意の元素だ。では、実用魔法の授業を選びなさい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#246": {
+   "src": "Artificing is a very useful tool for the burgeoning magic user! I'm fond of it, myself. Now, choose a Magical Creatures class.",
+   "dst": "魔具作りは、芽吹きつつある魔法使いにとって実に役立つ道具だ！私自身も好きでね。では、魔法生物の授業を選びなさい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#247": {
+   "src": "So you seek a broad spectrum of knowledge upon magicality! I wholeheartedly approve. Lastly, you must choose a Magical Type class.",
+   "dst": "魔法性について幅広い知識を求めるのだな！心から賛成だ。最後に、魔法の種類の授業を選ばねばならん。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#248": {
+   "src": "You have learned enough here, I believe. Now, it is up to you whether you want to continue with other lessons or try to master this test.",
+   "dst": "ここで学ぶべきことは十分学んだと思う。あとは他の授業を続けるか、このテストを極めるか、君次第だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#249": {
+   "src": "Quartz is a versatile magical material useful in nearly any magical item in some fashion.",
+   "dst": "石英は用途の広い魔法素材で、ほぼあらゆる魔法のアイテムに何らかの形で役立つ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#250": {
+   "src": "Due to its natural ability to passively absorb magical energy, it is a phenominally applicable material for magical batteries or storage.",
+   "dst": "魔力を受動的に吸収する性質を持つため、魔法の電池や貯蔵器の素材として驚くほど適している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#251": {
+   "src": "Magical marvels such as the electromagic generator in {p} are powered primarily by quartz and related materials.",
+   "dst": "{p}の電磁魔法発電機のような魔法の驚異は、主に石英とその関連素材で動いている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#252": {
+   "src": "However, it has its limits. While it is effective at storing energy, it can only store a finite amount.",
+   "dst": "ただし限界もある。エネルギーの貯蔵には優れているが、蓄えられる量には限りがある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#253": {
+   "src": "Overloading quartz with magical energy can cause it to create magical discharge, which can overcharge nearby quartz as well, causing violent chain reactions.",
+   "dst": "石英に魔力を過剰に込めると魔力の放電が起き、近くの石英まで過充電させて、激しい連鎖反応を引き起こすことがある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#254": {
+   "src": "Cosmic magic is being studied presently by magical experts. There are few conclusive truths of cosmic energies, one such being that it is only found in things fallen from the sky.",
+   "dst": "宇宙魔法は現在、魔法の専門家たちが研究中である。宇宙のエネルギーについて確かなことはわずかだが、その一つは、空から落ちてきた物にしか見られないということだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#255": {
+   "src": "The meteors and comets that have fallen are difficult to study, as not only does each color or type of fallen meteor appear to have different magical effects on its environment...",
+   "dst": "落ちてきた隕石や彗星の研究は難しい。落ちた隕石の色や種類ごとに、周囲へ及ぼす魔法の影響が異なるように見えるだけでなく…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#256": {
+   "src": "...but many types of meteor have been found to induce a creeping insanity in those exposed to it for extended periods. Three initial cosmic researchers fell prey to this effect.",
+   "dst": "…多くの種類の隕石が、長期間さらされた者にじわじわと狂気をもたらすことが分かっている。初期の宇宙研究者のうち三人がこの影響の餌食となった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#257": {
+   "src": "Small samples and meteor shards appear generally safe, but are to be treated with the utmost care and caution. Gavellian law outlaws non-registered usage of cosmic materials.",
+   "dst": "小さなサンプルや隕石の欠片はおおむね安全とされるが、細心の注意を払って扱わねばならない。Gavel の法は、宇宙素材の未登録の使用を禁じている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#258": {
+   "src": "Magical stabilizers do as they state, stabilize magical energy. Though materials such as quartz and runes are useful, misuse can result in disaster for the user.",
+   "dst": "魔法の安定剤は、その名の通り魔力を安定させる。石英やルーンのような素材は役に立つが、使い方を誤れば使い手に災いをもたらしかねない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#259": {
+   "src": "Thus, stabilizers are a necessity for creating safe-to-use magical items. In the past, these manifested as massive chains of quartz batteries or wasteful use of metals such as gold or silver.",
+   "dst": "ゆえに、安全に使える魔法のアイテムを作るには安定剤が欠かせない。かつては、石英の電池を長大につなげたり、金や銀などの金属を惜しみなく使ったりしていた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#260": {
+   "src": "Recently however, a material called Lodestone was discovered. It actively stabilizes influxes of magical energy far more efficiently than jewels or precious metals.",
+   "dst": "だが近年、磁鉄鉱と呼ばれる素材が発見された。流れ込む魔力を能動的に安定させ、その効率は宝石や貴金属をはるかに上回る。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#261": {
+   "src": "However, it has the side effect of leaching excess magic into the environment into a raw form. It is theorized that the presence of Lodestone in Gavel has...",
+   "dst": "しかし、余った魔力を生の形で周囲へ漏れ出させるという副作用がある。Gavel に磁鉄鉱が存在することが…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#262": {
+   "src": "...contributed heavily to the diverse flora and fauna of the region; the magic energy influenced evolution in ways that areas like Wynn have not seen.",
+   "dst": "…この地域の多様な動植物に大きく寄与したと考えられている。魔力が、Wynn のような地域では見られない形で進化に影響を与えたのだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#263": {
+   "src": "Powders, while simple in actual structure, are often misunderstood except by enchanters and artificers.",
+   "dst": "パウダーは実際の構造こそ単純だが、付呪師や魔具師以外にはしばしば誤解されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#264": {
+   "src": "Being made of specific blends of various items with magical ties to elements, certain powders are easier to create than others. Magical plants are easier to grind down than magical minerals, for instance.",
+   "dst": "元素と魔法的な結びつきを持つ様々なアイテムを特定の配合で混ぜて作るため、パウダーには作りやすいものとそうでないものがある。たとえば、魔法の植物は魔法の鉱物より粉にしやすい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#265": {
+   "src": "After each item is ground to dust, enchanters purify the blend to remove extraneous aspects, leaving only the pure elemental powder in its wake.",
+   "dst": "各アイテムを粉にしたあと、付呪師が配合物を浄化して余計な性質を取り除き、純粋な元素のパウダーだけを残す。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#266": {
+   "src": "Items more heavily attuned to a specific element will create a stronger blend of powder, but even items with the slightest connection to an element can conceivably be used to create a powder.",
+   "dst": "特定の元素と強く結びついたアイテムほど強力なパウダーになるが、元素とのつながりがごくわずかなアイテムでも、理屈の上ではパウダー作りに使える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#267": {
+   "src": "To apply powders to items in a refined way, one must either incorporate the mix into the base construction of an item, or utilize the energies within for an enchantment.",
+   "dst": "パウダーをアイテムにきちんと付与するには、混合物をアイテムの基礎構造に組み込むか、内に宿るエネルギーを付呪に用いる必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#268": {
+   "src": "Merely sprinkling powders over other things will not generate any magical effects, although some artists are known to use powders to make brilliant colors of paint, strangely.",
+   "dst": "パウダーをただ振りかけるだけでは魔法の効果は生まれない。もっとも妙なことに、パウダーで鮮やかな色の絵の具を作る画家もいるという。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#269": {
+   "src": "Most magic items require a \"focus\" in order to draw out and direct their magical energies. Many items are usable as foci, but certain items have been found to be far more effective than others.",
+   "dst": "たいていの魔法のアイテムは、魔力を引き出して方向づけるために「焦点具」を必要とする。多くのアイテムが焦点具として使えるが、特定のアイテムは他よりはるかに効果的だと分かっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#270": {
+   "src": "Jewels and precious stones are easy to channel magic through, and thus are often used in conjunction as basic foci. Certain gems have inclination towards specific elements...",
+   "dst": "宝石や貴石は魔力を通しやすいため、基本的な焦点具としてよく併用される。特定の元素に傾いた宝石もあり…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#271": {
+   "src": "...most often indicated by the color of the gem, but all are applicable for general purposes.",
+   "dst": "…多くは宝石の色でそれが分かるが、どれも一般的な用途には使える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#272": {
+   "src": "A less common type of focus is found in the form of Runes. They are a magical unknown, for all intents and purposes, with each specific rune seeming to have a different magical inclination.",
+   "dst": "あまり一般的でない焦点具として、ルーンがある。実質的に魔法の未知数であり、ルーンごとに異なる魔法の傾向を持つようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#273": {
+   "src": "Only five types of Runes have ever been found, and after a disastrous attempt at combining Runic power, horrifically powerful Rune Guardians have begun to appear in Gavel to guard them.",
+   "dst": "これまでに見つかったルーンは五種類のみ。ルーンの力を組み合わせる試みが惨事に終わって以来、恐ろしく強力なルーンの守護者が Gavel に現れ、ルーンを守るようになった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#274": {
+   "src": "Due to this, the remaining stockpile of Runes continues to dwindle as they are used and sold between their holders, or hoarded by the wealthy.",
+   "dst": "そのため、残されたルーンの在庫は、持ち主の間で使われ、売買され、あるいは富裕層に溜め込まれて、減り続けている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#275": {
+   "src": "The crafting table isn't responding. Looks like you haven't got the right items.",
+   "dst": "作業台が反応しない。必要なアイテムがそろっていないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#276": {
+   "src": "The crafting table responds, and the materials shape themselves into a rather fetching amulet.",
+   "dst": "作業台が反応し、素材がひとりでに形を変えて、なかなか素敵なアミュレットになった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#277": {
+   "src": "[+{~} Amulet]",
+   "dst": "[+{~} アミュレット]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Passage (Quest)#000": {
    "src": "Not so fast, you!",

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23574,
-  "translated": 23277,
+  "count": 23660,
+  "translated": 23363,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75378,7 +75378,7 @@
   },
   "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
-   "dst": "시작할 준비가 되면 도장 뒤 샘물에 몸을 정화하게. 그러면 첫 시험으로 안내하겠네.",
+   "dst": "{c1}시작할 준비가 되면 {c2}도장 뒤 샘물{c1}에 몸을 정화하게. 그러면 첫 시험으로 안내하겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -129214,7 +129214,7 @@
    "source": "wiki"
   },
   "Point of No Return#029": {
-   "src": "An beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
    "dst": "바깥의 공포 속에 선 안전의 등불... 우리가 절박할 때 여기서 기다려 주다니, 정말 기적이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -129424,7 +129424,7 @@
    "source": "wiki"
   },
   "Point of No Return#050": {
-   "src": "The others... all have given into its pull. Our band of survivors... left behind, abandoned...",
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
    "dst": "다른 이들은... 모두 그 끌림에 굴복했어. 우리 생존자 무리는... 남겨지고, 버려졌지...",
    "role": "desc",
    "kind": "dialogue",
@@ -129482,6 +129482,86 @@
    "stage": "Stage 12",
    "speaker": "Lutho Citizen",
    "source": "wiki"
+  },
+  "Point of No Return#056": {
+   "src": "Your soul seems to be slipping away from reality...",
+   "dst": "영혼이 현실에서 미끄러져 빠져나가는 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#057": {
+   "src": "Where does all of this lead?",
+   "dst": "이 모든 건 어디로 이어지는 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#058": {
+   "src": "Your soul runs beneath your feet.",
+   "dst": "영혼이 발밑으로 달려간다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#059": {
+   "src": "It leads you onwards..",
+   "dst": "그것이 너를 앞으로 이끈다..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#060": {
+   "src": "Your soul drifts further from you. Will you ever get it back?",
+   "dst": "영혼이 너에게서 더 멀어져 간다. 과연 되찾을 수 있을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#061": {
+   "src": "Oh, how they tried to bury us...",
+   "dst": "아, 그들이 우리를 묻으려고 얼마나 애썼던가...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#062": {
+   "src": "Something is holding you back.",
+   "dst": "무언가가 너를 붙잡고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#063": {
+   "src": "A distant thread, tying you to... something.",
+   "dst": "너를... 무언가에 묶어 두는 아득한 실 한 가닥.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "Lutho Guard",
+   "source": "captured"
   },
   "Potion Making#000": {
    "src": "Dr. Essren needs to be stopped!",
@@ -138604,7 +138684,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#063": {
-   "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
+   "src": "Welcome to Astralaus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Astralus의 별빛 저택에 온 걸 환영한다! 중력을 뒤집어 꼭대기까지 갈 수 있겠나?",
    "role": "desc",
    "kind": "dialogue",
@@ -138654,7 +138734,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#068": {
-   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
+   "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick else, strangeling!",
    "dst": "여기 왜 오심, 낯선이? 무슨 이름함 가짐? 휴-먼? 우리는 휴민 주장함! 나쁜 고름, 딴 데서 골라, 낯선이!",
    "role": "desc",
    "kind": "dialogue",
@@ -138664,7 +138744,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#069": {
-   "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
+   "src": "Looking for helping? How many conveniences! Humyns requires assistancing! You observes, humyns failflies into large crater-rock!",
    "dst": "도움 위해 조사함? 얼마나 많은 편리함! 휴민 도움함 필요함! 너 관찰자, 휴민 큰 구덩이바위로 추락실패함!",
    "role": "desc",
    "kind": "dialogue",
@@ -138694,7 +138774,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#072": {
-   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
+   "src": "Only singular humyn can fit in current spacezoom. If strangeling helps, humyns will let strangeling in spacezoom. Humyns can create new spacezoom given time!",
    "dst": "지금 우주쓩엔 단수 휴민만 들어감. 낯선이 도우면 휴민이 낯선이 우주쓩에 태워 줌. 휴민 주어진 시간에 새 우주쓩 만들 수 있음!",
    "role": "desc",
    "kind": "dialogue",
@@ -138704,7 +138784,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#073": {
-   "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
+   "src": "Humyns currently residing on crater-rock, meaning waiting is not result death!",
    "dst": "휴민 현재 구덩이바위 거주함, 기다림은 죽음의 결과 아님 뜻함!",
    "role": "desc",
    "kind": "dialogue",
@@ -138834,7 +138914,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#086": {
-   "src": "Here, human. Take this slime as your prize.",
+   "src": "Here, human, take this slime as your prize.",
    "dst": "자, 인간. 상품으로 이 점액을 받아요.",
    "role": "desc",
    "kind": "dialogue",
@@ -139094,7 +139174,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#112": {
-   "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
+   "src": "Okay you step back and let me work on the cooking, just pass over the ingredients!",
    "dst": "좋아요, 뒤로 물러서서 요리는 저한테 맡기세요, 재료만 넘겨주면 돼요!",
    "role": "desc",
    "kind": "dialogue",
@@ -139214,7 +139294,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#124": {
-   "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
+   "src": "Ah, you have finished your dish? Well, then, il est temps de gouter!",
    "dst": "Ah, 요리를 완성했나요? 그럼, il est temps de goûter!",
    "role": "desc",
    "kind": "dialogue",
@@ -139244,7 +139324,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#127": {
-   "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
+   "src": "Welcome back, mon ami! I see you've returned with a dish in hand!",
    "dst": "어서 와요, mon ami! 요리를 들고 돌아왔군요!",
    "role": "desc",
    "kind": "dialogue",
@@ -139774,6 +139854,236 @@
    "quest": "Recipe For Disaster",
    "stage": "",
    "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#189": {
+   "src": "You've clearly won the race, but everyone seems to be waiting for Usnail Bolt to finish as well...",
+   "dst": "경주는 확실히 당신이 이겼지만, 다들 Usnail Bolt가 결승선에 들어올 때까지 기다리는 것 같네요...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Snail Race Supervisor",
+   "source": "captured"
+  },
+  "Recipe For Disaster#190": {
+   "src": "Looks like this is that \"Space Wizard\"'s tower... you should start looking around for some Moonsalt.",
+   "dst": "여기가 그 \"우주 마법사\"의 탑인 것 같네요... Moonsalt를 찾아 주위를 둘러보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#191": {
+   "src": "A large warning on the display flashes a \"LOW FUEL \" warning at you.",
+   "dst": "화면에 커다란 \"연료 부족\" 경고가 깜빡입니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#192": {
+   "src": "You need [{~} Unrefined Moonsalt] to refine into \"burnmilk fuel\". Perhaps the Humyn nearby knows how to get some?",
+   "dst": "\"불우유 연료\"로 정제하려면 [{~} Unrefined Moonsalt]가 필요합니다. 근처의 휴민이 구하는 법을 알고 있지 않을까요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#193": {
+   "src": "Looks like this is the Moonsalt Cave... you should head deeper to find some salt.",
+   "dst": "여기가 Moonsalt 동굴인 것 같네요... 소금을 찾으려면 더 깊이 들어가 보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#194": {
+   "src": "You grab a large handful of the unrefined salt.",
+   "dst": "정제되지 않은 소금을 한 움큼 크게 집었습니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#195": {
+   "src": "You've secured some Unrefined Moonsalt, time to head back to the village and your way home.",
+   "dst": "Unrefined Moonsalt를 손에 넣었으니, 이제 마을로 돌아가 집으로 향할 시간입니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#196": {
+   "src": "You've managed to refine the moonsalt into some kind of fuel, you should head over to the spaceship now.",
+   "dst": "moonsalt를 일종의 연료로 정제해 냈군요. 이제 우주선으로 가 보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#197": {
+   "src": "You fill the ship up with the burnmilk and press the button on the control panel that is helpefully labelled \"TRAVEL SPACEZOOM\".",
+   "dst": "우주선에 불우유를 가득 채우고, 친절하게도 \"여행 우주쓩\"이라고 적힌 조종판의 버튼을 누릅니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#198": {
+   "src": "Looks like you're safely back in the {p}, and with some Moonsalt to boot!",
+   "dst": "무사히 {p}에 돌아온 것 같네요. 게다가 Moonsalt까지 챙겨서요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#199": {
+   "src": "The recipe book says voidroot only grows in complete darkness... better start looking around.",
+   "dst": "레시피 북에 따르면 Voidroot는 완전한 어둠 속에서만 자란다고 합니다... 어서 주위를 둘러보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#200": {
+   "src": "It's some kind of cargo that's fallen from above... there's a distinct smell of fresh cookies coming from inside.",
+   "dst": "위에서 떨어진 화물 같네요... 안에서 갓 구운 쿠키 냄새가 확실히 풍겨 옵니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#201": {
+   "src": "You reach out to touch the silky leaves of the plant and find your vision restored for {~} second...",
+   "dst": "식물의 매끄러운 잎을 만지려고 손을 뻗자, {~}초 동안 시야가 돌아옵니다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#202": {
+   "src": "A label on the side reads Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ. You probably shouldn't get too close to it.",
+   "dst": "옆면의 라벨에 Ｃｏｒｋｉａｎ Ｍｕｒｄｅｒ Ｂｏｔ이라고 적혀 있네요. 너무 가까이 가지 않는 게 좋겠어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#203": {
+   "src": "Dusty grey texture? Desaturated green leaves? Ever-growing sense of all-encompasing dread? Matches the recipe book description perfectly!",
+   "dst": "먼지 낀 회색 질감? 빛바랜 초록 잎? 점점 커져 가는, 모든 걸 집어삼킬 듯한 공포감? 레시피 북의 설명과 완벽하게 일치합니다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#204": {
+   "src": "It's some kind of purple orb, pulsating with a otherworldy light. Maybe best not to touch.",
+   "dst": "이 세상 것이 아닌 빛으로 고동치는 보라색 구슬이네요. 만지지 않는 게 좋겠어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#205": {
+   "src": "You've gathered all the ingredients, you should head back to Brie.",
+   "dst": "재료를 모두 모았으니, Brie에게 돌아가 보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#206": {
+   "src": "[+{~} Seasoned Voidroot Stew]",
+   "dst": "[+{~} Seasoned Voidroot Stew]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#207": {
+   "src": "[+{~} Cooking XP]",
+   "dst": "[+{~} 요리 경험치]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#208": {
+   "src": "Have you shown Hamsey our dish yet? I'm sure he's gonna love it!",
+   "dst": "Hamsey한테 우리 요리 보여 줬어요? 분명 엄청 좋아할 거예요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Brie",
+   "source": "captured"
+  },
+  "Recipe For Disaster#209": {
+   "src": "Can't say your bake looks very good. No match for Kale's mighty omelette!",
+   "dst": "네가 구운 건 별로 맛있어 보이지 않네. Kale님의 위대한 오믈렛엔 상대도 안 돼!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Kale",
+   "source": "captured"
+  },
+  "Recipe For Disaster#210": {
+   "src": "Good luck, dude.",
+   "dst": "행운을 빌어, 친구.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#211": {
+   "src": "Meet me in my dining room and we'll taste your dish!",
+   "dst": "제 식당으로 오세요, 거기서 당신 요리를 맛보죠!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
    "source": "captured"
   },
   "Reclaiming the House#001": {
@@ -147000,7 +147310,7 @@
   },
   "Revelations in Fall#265": {
    "src": "Yes, Rex, because he won't stay down for long- that's why we need to move, now!",
-   "dst": "그래, Rex, 오래 쓰러져 있지 않을 테니까- 그래서 당장 움직여야 해!",
+   "dst": "{c1}그래, Rex, 오래 쓰러져 있지 {c2}않을{c1} 테니까- 그래서 {c2}당장{c1} 움직여야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -148601,7 +148911,7 @@
    "source": "wiki"
   },
   "Royal Trials#001": {
-   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
+   "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like ye doin' here?",
    "dst": "물러서! 해적 여왕이 뽑히기 전엔 아무도 못 들어가. 너 같은 뭍사람이 여긴 웬일이야?",
    "role": "desc",
    "kind": "dialogue",
@@ -149021,7 +149331,7 @@
    "source": "wiki"
   },
   "Royal Trials#043": {
-   "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
+   "src": "Make sure ye bring yer sharpest eyes, girls, one false move and death awaits.",
    "dst": "눈 똑바로 뜨고 가라, 아가씨들. 한 번 실수하면 죽음이다.",
    "role": "desc",
    "kind": "dialogue",
@@ -149101,7 +149411,7 @@
    "source": "wiki"
   },
   "Royal Trials#052": {
-   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
+   "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll be left behind.",
    "dst": "탈출 지점에서 도주용 비행선으로 기다리마. 늦는 놈은 두고 간다.",
    "role": "desc",
    "kind": "dialogue",
@@ -149589,6 +149899,16 @@
    "stage": "Stage 13",
    "speaker": "Mansion Guard",
    "source": "captured.json"
+  },
+  "Royal Trials#102": {
+   "src": "Aye, landwalker. Hope yer getting some use outta that outfit!",
+   "dst": "어이, 뭍사람. 그 옷 잘 써먹고 있길 바라!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "",
+   "speaker": "Egpla",
+   "source": "captured"
   },
   "Shattered Minds#000": {
    "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
@@ -163849,7 +164169,7 @@
    "source": "captured"
   },
   "The Breaking Point#002": {
-   "src": "I... see. {u}... Ozoth tells me... that an Everflame ... will free the Elders.",
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
    "dst": "그렇군... {u}... Ozoth가 말하길... 영원의 불꽃이... 장로들을 풀어 줄 거라네.",
    "role": "desc",
    "kind": "dialogue",
@@ -164075,7 +164395,7 @@
    "source": "wiki"
   },
   "The Breaking Point#024": {
-   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has to offer, and it has been working!.",
    "dst": "지금까지 안정 장치는 잘 작동했어, Ineos! 우리 지방이 내놓을 수 있는 최고의 기술이고, 실제로 효과가 있었다고!",
    "role": "desc",
    "kind": "dialogue",
@@ -164125,7 +164445,7 @@
    "source": "wiki"
   },
   "The Breaking Point#029": {
-   "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "src": "The issue is the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
    "dst": "문제는 제어 장치가 타 버린 것 같다는 거예요! 여긴 교체 부품도 없고요. Corkus까지 다녀와야 하는데...",
    "role": "desc",
    "kind": "dialogue",
@@ -164425,7 +164745,7 @@
    "source": "wiki"
   },
   "The Breaking Point#059": {
-   "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "src": "Our people working there will be able to get us the parts we need to repair the device. This... this isn't the first time it's exploded. I had hoped that this time we would have gotten it stable, but...",
    "dst": "거기 사람들이 장치 수리에 필요한 부품을 구해 줄 거야. 이게... 폭발한 게 처음은 아니야. 이번엔 안정시킬 수 있길 바랐는데...",
    "role": "desc",
    "kind": "dialogue",
@@ -164655,7 +164975,7 @@
    "source": "wiki"
   },
   "The Breaking Point#082": {
-   "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "src": "Though it was discontinued, it's very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
    "dst": "지금은 가동을 멈췄지만, 아래엔 아직 채굴 기계병이 남아 있을 가능성이 커. 고성능 모델 중엔 요즘 축전기와 아주 비슷한 회로를 쓴 것도 있었어.",
    "role": "desc",
    "kind": "dialogue",
@@ -165115,7 +165435,7 @@
    "source": "wiki"
   },
   "The Breaking Point#128": {
-   "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you to rubble...",
    "dst": "그리고... 저건... Ineos인가? 우리는... 드워프가... 자네를 돌무더기로 만든 줄 알았네...",
    "role": "desc",
    "kind": "dialogue",
@@ -165925,7 +166245,7 @@
    "source": "wiki"
   },
   "The Breaking Point#209": {
-   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flame to singe your armor.",
    "dst": "이제 남은 건 새끼 용뿐일세. 한때 위대했던 선조의 메아리로, 갑옷을 그을릴 불꽃조차 겨우 뿜지.",
    "role": "desc",
    "kind": "dialogue",
@@ -165985,7 +166305,7 @@
    "source": "wiki"
   },
   "The Breaking Point#215": {
-   "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "src": "Indeed. The fire dragons sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
    "dst": "그렇다네. 전쟁 중 그들 편에 섰던 화염 용들이지. Freezing Heights 바로 밖에 있는 해골은 봤을 테지?",
    "role": "desc",
    "kind": "dialogue",
@@ -166185,8 +166505,8 @@
    "source": "wiki"
   },
   "The Breaking Point#235": {
-   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "교역 터널을... 이용하게... {u}. 좌표는... 퀘스트 북에... 적어 두겠네.",
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Content Book.",
+   "dst": "교역 터널을... 이용하게... {u}. 좌표는... 콘텐츠 북에... 적어 두겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -166745,7 +167065,7 @@
    "source": "wiki"
   },
   "The Breaking Point#291": {
-   "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
+   "src": "You must enter... these sacred grounds. Battle through to the end... Knock some sense... into it.",
    "dst": "너는... 이 성지로... 들어가야 한다. 끝까지 싸워 나가... 정신을... 차리게 해라.",
    "role": "desc",
    "kind": "dialogue",
@@ -166795,7 +167115,7 @@
    "source": "wiki"
   },
   "The Breaking Point#296": {
-   "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
+   "src": "It is done. Desint... Iscor... Take your positions. We must... hold it back.",
    "dst": "끝났다. Desint... Iscor... 자리를 잡아라. 우리가... 붙잡아 두어야 한다.",
    "role": "desc",
    "kind": "dialogue",
@@ -167013,6 +167333,46 @@
    "stage": "Stage 12",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#318": {
+   "src": "Well? What are you waiting for- come on, let's get going to Corkus!",
+   "dst": "뭐 해? 뭘 기다리는 거야- 어서, Corkus로 출발하자!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#319": {
+   "src": "Well, what are you waiting for?! Put the part in the machine, quick!",
+   "dst": "그래서, 뭘 기다리나?! 어서 부품을 기계에 넣어라!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#320": {
+   "src": "Good luck in the heights, {u}. I'll... see if there's anything I can salvage from the machine, but it's not looking good. Ineos' Elders might be our only hope...",
+   "dst": "고원에서 행운을 빌어, {u}. 난... 기계에서 건질 게 있는지 볼게. 그래도 상황이 좋진 않아. Ineos의 장로들이 우리의 유일한 희망일지도...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#321": {
+   "src": "You should... take the Trading Tunnel... {u}. I have put the coordinates... in your Content Book.",
+   "dst": "교역 터널을... 이용하게... {u}. 좌표는... 콘텐츠 북에... 적어 두었네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "Ineos",
+   "source": "captured"
   },
   "The Canary Calls#000": {
    "src": "Day {~}, {~} AP",
@@ -188485,8 +188845,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#067": {
-   "src": "How much lon- Oh, you brought the map!",
-   "dst": "얼마나 더- 오, 지도를 가져왔군!",
+   "src": "How much lon- Oh, you brought the map! Thanks.",
+   "dst": "얼마나 더- 오, 지도를 가져왔군! 고맙네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -188825,7 +189185,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#101": {
-   "src": "AAAAAAGH!",
+   "src": "AAAAAAGH!!",
    "dst": "으아아아악!",
    "role": "desc",
    "kind": "dialogue",
@@ -188925,7 +189285,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#111": {
-   "src": "You found something? Ok. I’ll… follow you then.",
+   "src": "You found something? Ok, I'll.. follow you then.",
    "dst": "뭘 찾았어? 좋아. 그럼… 따라갈게.",
    "role": "desc",
    "kind": "dialogue",
@@ -189065,8 +189425,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#125": {
-   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "무- 무서웠어… 네- 네가 내 목숨을 구했어. 고마워 … 이런 진짜 위험엔 준비가 안 돼 있었어.",
+   "src": "T-that was terrifying... Y-you saved my life. Thank you, {u}... I wasn't prepared for real danger like this.",
+   "dst": "무- 무서웠어... 네- 네가 내 목숨을 구했어. 고마워, {u}... 이런 진짜 위험엔 준비가 안 돼 있었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189255,7 +189615,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#144": {
-   "src": "Ugh... These are awful.",
+   "src": "Ughh... These are awful.",
    "dst": "윽... 끔찍한 맛이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -189285,7 +189645,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#147": {
-   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "src": "Sounds extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
    "dst": "완전 Corkus식 이름이지, 알아. Siegfried가 덜 외국 이름 같아서 그걸 쓰라고 한 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -189315,8 +189675,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#150": {
-   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "고마워. 이제부턴.. 널 따라갈게. 확실히 네가 나보다 준비가 잘 돼 있어.",
+   "src": "Thank you, {u}. I'll.. I'll follow you from now on. Clearly you're more prepared than I am.",
+   "dst": "고마워, {u}. 이제부턴.. 널 따라갈게. 확실히 네가 나보다 준비가 잘 돼 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -189395,7 +189755,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#159": {
-   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "src": "The path seems to be across those yellow shards, maybe we can cross them?",
    "dst": "길은 저 노란 파편들 너머인 것 같아. 닿을 수 있을까?",
    "role": "desc",
    "kind": "dialogue",
@@ -190253,6 +190613,166 @@
    "stage": "Stage 18",
    "speaker": "",
    "source": "captured.json"
+  },
+  "The Hero of Gavel#246": {
+   "src": "[+{~} Scavenger Hunt Ticket]",
+   "dst": "[+{~} 보물찾기 티켓]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#247": {
+   "src": "[-{~} Siegfried's Autograph]",
+   "dst": "[-{~} Siegfried의 사인]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#248": {
+   "src": "Give me a moment here...",
+   "dst": "잠깐만 기다려 주세요...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#249": {
+   "src": "Tickets for sale! Get your Siegfried Scavenger Hunt tickets here!",
+   "dst": "티켓 팝니다! Siegfried 보물찾기 티켓은 여기서 사세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "captured"
+  },
+  "The Hero of Gavel#250": {
+   "src": "You sense you're going back the way you came...",
+   "dst": "왔던 길로 되돌아가고 있는 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#251": {
+   "src": "You'd need an explosive to disable this. There don't seem to be any in here, however.",
+   "dst": "이걸 무력화하려면 폭발물이 필요하다. 하지만 여기엔 없는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#252": {
+   "src": "You get a sense you're going backwards...",
+   "dst": "뒤로 돌아가고 있다는 느낌이 든다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#253": {
+   "src": "There's some small caves around here.. Maybe there'll be something edible there?",
+   "dst": "이 근처에 작은 동굴이 몇 개 있어.. 거기엔 먹을 만한 게 있지 않을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#254": {
+   "src": "I don't... feel too good. I think.. I can move on though, as soon as you're ready.",
+   "dst": "나... 몸이 좀 안 좋아. 그래도.. 네가 준비되면 바로 움직일 수는 있을 것 같아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Siegfried",
+   "source": "captured"
+  },
+  "The Hero of Gavel#255": {
+   "src": "This oven still seems to be in working order.",
+   "dst": "이 오븐은 아직 작동하는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#256": {
+   "src": "Those lines of silk from the big web are holding it up. If you cut all three, it might break.",
+   "dst": "저 큰 거미줄에서 뻗은 실 가닥들이 그걸 받치고 있어. 세 가닥을 다 자르면 끊어질지도 몰라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#257": {
+   "src": "You get a sense you're going the wrong way...",
+   "dst": "길을 잘못 들고 있다는 느낌이 든다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Hero of Gavel#258": {
+   "src": "Good thing we got past that chasm! Let's keep going!",
+   "dst": "그 협곡을 지나와서 다행이야! 계속 가자!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#259": {
+   "src": ".. {u}... are you sure those u-uncooked eggs were.. safe?",
+   "dst": ".. {u}... 그 아, 안 익힌 알들.. 정말 괜찮은 거 맞아?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#260": {
+   "src": "Ugh.. I don't feel.. very good..",
+   "dst": "윽.. 몸이.. 너무 안 좋아..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#261": {
+   "src": "I can feel.. something.. ins--- AAAAAAARHGH!",
+   "dst": "뭔가.. 느껴져.. 안에--- 으아아아아아악!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "Gurix",
+   "source": "captured"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
@@ -199486,6 +200006,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Olmic Rune#016": {
+   "src": "It looks like a mining machine that's hundreds of years old. What was it mining though?",
+   "dst": "수백 년은 된 채굴 기계 같다. 그런데 무엇을 캐던 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Order of the Grook#000": {
    "src": "Eager much? Keep yourself seated for now.",
    "dst": "",
@@ -200803,7 +201333,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#131": {
-   "src": "Anyways. The fire element class. Many misunderstand just what fire stands for... but after today, you will leave with courage in your hearts.",
+   "src": "Anyways. The Fire element class. Many misunderstand just what fire stands for...but after today, you will leave with courage in your hearts.",
    "dst": "아무튼. 화염 원소 수업입니다. 화염이 뭘 뜻하는지 오해하는 사람이 많죠... 하지만 오늘 이후엔 가슴에 용기를 품고 나갈 겁니다.",
    "role": "desc",
    "kind": "dialogue",
@@ -200833,7 +201363,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#134": {
-   "src": "In addition, water is tied to healing magic, fire is tied to self-healing. Regenerative capacity if you will. Many fire-based artifacts heal the user passively.",
+   "src": "In addition, although water is tied to healing magic, fire is tied to self-healing. Regenerative capacity, if you will. Many fire-based artifacts heal the user passively.",
    "dst": "또 물이 치유 마법과 이어져 있다면, 화염은 자가 치유와 이어져 있어요. 재생력이라 해도 좋겠죠. 화염 계열 물건 다수가 소지자를 저절로 치유해요.",
    "role": "desc",
    "kind": "dialogue",
@@ -200893,8 +201423,8 @@
    "source": "wiki"
   },
   "The Order of the Grook#140": {
-   "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
-   "dst": "잘했어요 {u}, 햇병아리 Grook! 계속 직감을 벼려요. 언젠가 훌륭한 영웅이 될 거예요, 확신해요.",
+   "src": "Well done, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "dst": "잘했어요, 햇병아리 Grook! 계속 직감을 벼려요. 언젠가 훌륭한 영웅이 될 거예요, 확신해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -201073,7 +201603,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#158": {
-   "src": "Alright everyone. Take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses",
+   "src": "Alright everyone, take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses.",
    "dst": "자, 여러분. 앉되 너무 편하게는 말아요. 곧 일어날 거예요. 돋보기 안경 챙겨 왔길 바라요",
    "role": "desc",
    "kind": "dialogue",
@@ -201083,7 +201613,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#159": {
-   "src": "See, I'll just be giving you short primer, then sending you out for the practical exercise, Since I have all this written down already.",
+   "src": "See, I'll just be giving you a short primer, then sending you out for your practical exercise, since I have all this written down already.",
    "dst": "그러니까, 짧게 기초만 알려 주고 실습하러 내보낼 거예요. 이미 다 적어 뒀거든요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201093,7 +201623,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#160": {
-   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be artificer, you need to know how each one works.",
+   "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be an artificer, you need to know how each one works.",
    "dst": "이 수업의 기본은, 알든 모르든 많은 소재가 본래 어떤 식으로든 마법성을 띤다는 거예요. 마법공예사가 되려면 각각의 원리를 알아야 해요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201103,7 +201633,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#161": {
-   "src": "Thankfully, the field of artifice is very popular one, so there's a wealth of knowledge out there on magical materials and how to use them efficiently.",
+   "src": "Thankfully, the field of artifice is a very popular one, so there's a wealth of knowledge out there on magical materials and on how to use them effectively.",
    "dst": "다행히 마법공예는 인기 분야라서, 마법 소재와 그 효율적인 사용법에 대한 지식이 세상에 잔뜩 있어요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201113,7 +201643,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#162": {
-   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get to. Tough to master, though!",
+   "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get into. Tough to master, though!",
    "dst": "세상에, Wynn 병사들은 구리랑 낡은 거미줄로 반지를 뚝딱 만든다니까요. 입문은 쉽다는 거죠. 통달은 어렵지만요!",
    "role": "desc",
    "kind": "dialogue",
@@ -201133,7 +201663,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#164": {
-   "src": "You all be crafting a magical amulet using different items. I've stockpiled in the back; everyone will be crafting a different kind of necklace.",
+   "src": "You all will be crafting a magical amulet using different items. I've got stockpiles in the back; everyone will be crafting a different kind of necklace.",
    "dst": "다들 여러 물건으로 마법 부적을 만들 거예요. 뒤에 재료를 쌓아 뒀어요. 모두 각기 다른 목걸이를 만들 거예요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201143,7 +201673,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#165": {
-   "src": "Here's a note on what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
+   "src": "Here's a note of what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
    "dst": "뭘 만들지 적은 쪽지예요. 필요한 소재를 모았다 싶으면 작업대로 와요. 마법이 걸려 있어서, 재료만 맞으면 대신 만들어 줘요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201163,7 +201693,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#167": {
-   "src": "Your feathers are coming out just nicely, fledgeling. You can scoot off to your next class now",
+   "src": "Your feathers are coming in just nicely, fledgeling. You can scoot off to your next class now.",
    "dst": "깃털이 아주 잘 자라고 있네요, 햇병아리. 이제 다음 수업으로 가도 돼요",
    "role": "desc",
    "kind": "dialogue",
@@ -201619,7 +202149,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#212": {
-   "src": "And...well, you can't exactly get more injured than \"dead\". Hence, the growth of zombies and skeletons and all, over in Wynn.",
+   "src": "And...well, you can't exactly get more injured than \"dead.\" Hence, the growth of zombies and skeletons and all, over in Wynn.",
    "dst": "그리고... 뭐, \"죽음\"보다 더 크게 다칠 순 없잖아요. 그래서 Wynn 쪽에 좀비며 해골이 늘어난 거죠.",
    "role": "desc",
    "kind": "dialogue",
@@ -201639,7 +202169,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#214": {
-   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affect everyone slightly differently.",
+   "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affects everyone slightly differently.",
    "dst": "사람에게 미치는 영향으론 편집증과 분노가 가장 흔해요. 그게 거의 유일하게 일관된 점이고, 사람마다 조금씩 다르게 작용해요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201649,7 +202179,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#215": {
-   "src": "The worst part is that practically everything single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
+   "src": "The worst part is that practically every single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
    "dst": "최악은, 여기서 다룬 거의 모든 게 추측과 이론 놀음이라는 거예요! 타락이란 힘은 정말 무서워요.",
    "role": "desc",
    "kind": "dialogue",
@@ -201947,6 +202477,336 @@
    "stage": "Stage 15",
    "speaker": "Headmaster",
    "source": "wiki"
+  },
+  "The Order of the Grook#245": {
+   "src": "The element of bravery and resolve. Now, choose a Practical Magic lesson.",
+   "dst": "용기와 결의의 원소로군. 이제 실용 마법 수업을 고르게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#246": {
+   "src": "Artificing is a very useful tool for the burgeoning magic user! I'm fond of it, myself. Now, choose a Magical Creatures class.",
+   "dst": "마법공예는 이제 막 성장하는 마법 사용자에게 아주 유용한 도구지! 나도 무척 좋아한다네. 이제 마법 생물 수업을 고르게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#247": {
+   "src": "So you seek a broad spectrum of knowledge upon magicality! I wholeheartedly approve. Lastly, you must choose a Magical Type class.",
+   "dst": "마법성에 대한 폭넓은 지식을 구하는구먼! 전적으로 찬성일세. 마지막으로, 마법의 종류 수업을 골라야 하네.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Headmaster",
+   "source": "captured"
+  },
+  "The Order of the Grook#248": {
+   "src": "You have learned enough here, I believe. Now, it is up to you whether you want to continue with other lessons or try to master this test.",
+   "dst": "여기서 배울 만큼 배운 것 같네요. 이제 다른 수업을 계속할지, 이 시험을 완벽히 해낼지는 여러분에게 달렸어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "Teacher",
+   "source": "captured"
+  },
+  "The Order of the Grook#249": {
+   "src": "Quartz is a versatile magical material useful in nearly any magical item in some fashion.",
+   "dst": "석영은 다재다능한 마법 소재로, 거의 모든 마법 물품에 어떤 식으로든 쓸모가 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#250": {
+   "src": "Due to its natural ability to passively absorb magical energy, it is a phenominally applicable material for magical batteries or storage.",
+   "dst": "마력을 저절로 흡수하는 천연 능력 덕분에, 마법 전지나 저장 장치에 놀라울 만큼 잘 맞는 소재다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#251": {
+   "src": "Magical marvels such as the electromagic generator in {p} are powered primarily by quartz and related materials.",
+   "dst": "{p}의 전자기 마력 발전기 같은 마법의 경이는 주로 석영과 관련 소재로 동력을 얻는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#252": {
+   "src": "However, it has its limits. While it is effective at storing energy, it can only store a finite amount.",
+   "dst": "하지만 한계도 있다. 에너지를 저장하는 데는 효과적이지만, 저장할 수 있는 양은 유한하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#253": {
+   "src": "Overloading quartz with magical energy can cause it to create magical discharge, which can overcharge nearby quartz as well, causing violent chain reactions.",
+   "dst": "석영에 마력을 과도하게 주입하면 마력 방전이 일어날 수 있고, 이는 주변 석영까지 과충전시켜 격렬한 연쇄 반응을 일으킨다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#254": {
+   "src": "Cosmic magic is being studied presently by magical experts. There are few conclusive truths of cosmic energies, one such being that it is only found in things fallen from the sky.",
+   "dst": "우주 마법은 현재 마법 전문가들이 연구하고 있다. 우주 에너지에 관해 확실한 사실은 거의 없는데, 그중 하나는 하늘에서 떨어진 것에서만 발견된다는 점이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#255": {
+   "src": "The meteors and comets that have fallen are difficult to study, as not only does each color or type of fallen meteor appear to have different magical effects on its environment...",
+   "dst": "떨어진 유성과 혜성은 연구하기 어렵다. 떨어진 유성의 색이나 종류마다 주변 환경에 다른 마법 효과를 미치는 것처럼 보일 뿐 아니라...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#256": {
+   "src": "...but many types of meteor have been found to induce a creeping insanity in those exposed to it for extended periods. Three initial cosmic researchers fell prey to this effect.",
+   "dst": "...많은 종류의 유성이 오랫동안 노출된 이에게 서서히 스며드는 광기를 일으킨다는 사실이 밝혀졌기 때문이다. 초기 우주 연구자 세 명이 이 효과의 희생양이 되었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#257": {
+   "src": "Small samples and meteor shards appear generally safe, but are to be treated with the utmost care and caution. Gavellian law outlaws non-registered usage of cosmic materials.",
+   "dst": "작은 표본과 유성 파편은 대체로 안전해 보이지만, 최대한 주의하고 조심해서 다뤄야 한다. Gavel의 법은 등록되지 않은 우주 물질의 사용을 금지한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#258": {
+   "src": "Magical stabilizers do as they state, stabilize magical energy. Though materials such as quartz and runes are useful, misuse can result in disaster for the user.",
+   "dst": "마법 안정제는 이름 그대로 마력을 안정시킨다. 석영이나 룬 같은 소재는 유용하지만, 잘못 쓰면 사용자에게 재앙이 될 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#259": {
+   "src": "Thus, stabilizers are a necessity for creating safe-to-use magical items. In the past, these manifested as massive chains of quartz batteries or wasteful use of metals such as gold or silver.",
+   "dst": "그러므로 안전하게 쓸 수 있는 마법 물품을 만들려면 안정제가 반드시 필요하다. 과거에는 거대하게 이어진 석영 전지나, 금이나 은 같은 금속을 낭비하는 방식으로 구현되었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#260": {
+   "src": "Recently however, a material called Lodestone was discovered. It actively stabilizes influxes of magical energy far more efficiently than jewels or precious metals.",
+   "dst": "그러나 최근 천연 자석이라는 소재가 발견되었다. 이 소재는 밀려드는 마력을 보석이나 귀금속보다 훨씬 효율적으로, 능동적으로 안정시킨다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#261": {
+   "src": "However, it has the side effect of leaching excess magic into the environment into a raw form. It is theorized that the presence of Lodestone in Gavel has...",
+   "dst": "하지만 남는 마력을 날것의 형태로 주변 환경에 흘려보내는 부작용이 있다. Gavel에 천연 자석이 존재한다는 사실이...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#262": {
+   "src": "...contributed heavily to the diverse flora and fauna of the region; the magic energy influenced evolution in ways that areas like Wynn have not seen.",
+   "dst": "...이 지역의 다양한 동식물에 크게 기여했다는 이론이 있다. 그 마력이 Wynn 같은 지역에서는 볼 수 없던 방식으로 진화에 영향을 미쳤다는 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#263": {
+   "src": "Powders, while simple in actual structure, are often misunderstood except by enchanters and artificers.",
+   "dst": "파우더는 실제 구조는 단순하지만, 마법 부여사와 마법공예사가 아니면 흔히 오해받는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#264": {
+   "src": "Being made of specific blends of various items with magical ties to elements, certain powders are easier to create than others. Magical plants are easier to grind down than magical minerals, for instance.",
+   "dst": "파우더는 원소와 마법적으로 이어진 여러 물건을 특정 비율로 섞어 만들기 때문에, 어떤 파우더는 다른 것보다 만들기 쉽다. 예를 들어 마법 식물은 마법 광물보다 갈아 내기 쉽다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#265": {
+   "src": "After each item is ground to dust, enchanters purify the blend to remove extraneous aspects, leaving only the pure elemental powder in its wake.",
+   "dst": "각 물건을 가루로 간 뒤, 마법 부여사는 혼합물을 정화해 불필요한 성질을 없애고 순수한 원소 파우더만 남긴다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#266": {
+   "src": "Items more heavily attuned to a specific element will create a stronger blend of powder, but even items with the slightest connection to an element can conceivably be used to create a powder.",
+   "dst": "특정 원소와 더 강하게 공명하는 물건일수록 더 강한 파우더가 되지만, 원소와 아주 조금이라도 연결된 물건이라면 이론상 파우더를 만드는 데 쓸 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#267": {
+   "src": "To apply powders to items in a refined way, one must either incorporate the mix into the base construction of an item, or utilize the energies within for an enchantment.",
+   "dst": "파우더를 물건에 정교하게 적용하려면, 혼합물을 물건의 기본 구조에 섞어 넣거나 그 안의 에너지를 마법 부여에 활용해야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#268": {
+   "src": "Merely sprinkling powders over other things will not generate any magical effects, although some artists are known to use powders to make brilliant colors of paint, strangely.",
+   "dst": "파우더를 다른 것 위에 뿌리기만 해서는 아무런 마법 효과도 나지 않는다. 다만 이상하게도 일부 화가들은 파우더로 선명한 색의 물감을 만든다고 알려져 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#269": {
+   "src": "Most magic items require a \"focus\" in order to draw out and direct their magical energies. Many items are usable as foci, but certain items have been found to be far more effective than others.",
+   "dst": "대부분의 마법 물품은 마력을 끌어내고 이끌기 위해 \"초점구\"가 필요하다. 많은 물건을 초점구로 쓸 수 있지만, 어떤 물건은 다른 것보다 훨씬 효과적이라는 사실이 밝혀졌다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#270": {
+   "src": "Jewels and precious stones are easy to channel magic through, and thus are often used in conjunction as basic foci. Certain gems have inclination towards specific elements...",
+   "dst": "보석과 귀석은 마법을 흘려보내기 쉬워서 기본 초점구로 함께 쓰이는 경우가 많다. 어떤 보석은 특정 원소에 기울어 있는데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#271": {
+   "src": "...most often indicated by the color of the gem, but all are applicable for general purposes.",
+   "dst": "...대개 보석의 색으로 알 수 있지만, 일반적인 용도라면 모두 쓸 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#272": {
+   "src": "A less common type of focus is found in the form of Runes. They are a magical unknown, for all intents and purposes, with each specific rune seeming to have a different magical inclination.",
+   "dst": "덜 흔한 초점구로는 룬이 있다. 룬은 사실상 마법적 미지의 존재로, 룬마다 서로 다른 마법적 성향을 지닌 것으로 보인다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#273": {
+   "src": "Only five types of Runes have ever been found, and after a disastrous attempt at combining Runic power, horrifically powerful Rune Guardians have begun to appear in Gavel to guard them.",
+   "dst": "지금까지 발견된 룬은 다섯 종류뿐이며, 룬의 힘을 합치려던 시도가 참사로 끝난 뒤로 끔찍하게 강력한 룬 수호자들이 Gavel에 나타나 룬을 지키기 시작했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#274": {
+   "src": "Due to this, the remaining stockpile of Runes continues to dwindle as they are used and sold between their holders, or hoarded by the wealthy.",
+   "dst": "이 때문에 남은 룬 비축량은 소유자들 사이에서 쓰이고 팔리거나 부자들에게 사재기되면서 계속 줄어들고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#275": {
+   "src": "The crafting table isn't responding. Looks like you haven't got the right items.",
+   "dst": "작업대가 반응하지 않는다. 맞는 물건을 가져오지 않은 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#276": {
+   "src": "The crafting table responds, and the materials shape themselves into a rather fetching amulet.",
+   "dst": "작업대가 반응하더니, 소재들이 저절로 꽤 멋진 부적으로 빚어진다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#277": {
+   "src": "[+{~} Amulet]",
+   "dst": "[+{~} 부적]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Passage (Quest)#000": {
    "src": "Not so fast, you!",

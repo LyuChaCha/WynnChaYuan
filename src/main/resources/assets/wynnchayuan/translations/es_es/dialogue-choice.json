@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 89,
-  "translated": 89
+  "count": 108,
+  "translated": 108
  },
  "entries": {
   "choice#c000": {
@@ -917,6 +917,206 @@
    "dst": "¿Medallón?",
    "role": "desc",
    "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c071": {
+   "src": "What's this device for?",
+   "dst": "¿Para qué sirve este aparato?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c072": {
+   "src": "Is there anything I can do t",
+   "dst": "¿Puedo hacer algo para ayudar?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Is there anything I can do to help?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c073": {
+   "src": "Alright, I can do that.",
+   "dst": "Vale, puedo hacerlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c074": {
+   "src": "Tell me more about True Ice.",
+   "dst": "Háblame más del Hielo verdadero.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c075": {
+   "src": "What did you have for breakf",
+   "dst": "¿Qué has desayunado hoy?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What did you have for breakfast today?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c076": {
+   "src": "Could we shatter it somehow,",
+   "dst": "¿Podríamos hacerlo añicos de algún modo, con un arma o un hechizo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Could we shatter it somehow, with a weapon or a spell?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c077": {
+   "src": "Would lava from the Heights",
+   "dst": "¿Serviría la lava de las Heights?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Would lava from the Heights work?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c078": {
+   "src": "What's your favorite color?",
+   "dst": "¿Cuál es tu color favorito?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c079": {
+   "src": "What happened to all the dra",
+   "dst": "¿Qué les pasó a todos los dragones?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What happened to all the dragons?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c080": {
+   "src": "The Doguns would know about",
+   "dst": "¿Los Doguns sabrían algo de dragones?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The Doguns would know about dragons?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c081": {
+   "src": "Read any good books recently",
+   "dst": "¿Has leído algún buen libro últimamente?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Read any good books recently?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c082": {
+   "src": "[{~} Dragonling Eggs]",
+   "dst": "[{~} Dragonling Eggs]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c083": {
+   "src": "[{~} Shiny Shell]",
+   "dst": "[{~} Shiny Shell]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c084": {
+   "src": "[Rock]",
+   "dst": "[Roca]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c085": {
+   "src": "What are you?",
+   "dst": "¿Qué eres?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c086": {
+   "src": "What happened to us?",
+   "dst": "¿Qué nos pasó?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c087": {
+   "src": "What can I do around here to",
+   "dst": "¿Qué puedo hacer por aquí para ayudar?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What can I do around here to help?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c088": {
+   "src": "What's it like being an Admi",
+   "dst": "¿Qué se siente al ser almirante?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What's it like being an Admiral?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c089": {
+   "src": "What were you doing in {p}",
+   "dst": "¿Qué hacías en {p}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "What were you doing in {p}?",
    "quest": "choice",
    "stage": "",
    "speaker": "",

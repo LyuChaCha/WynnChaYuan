@@ -305,7 +305,7 @@
   },
   "ability-shaman#0244": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
-   "dst": "Применение Totem, когда вы смотрите\nна уже стоящий Totem, толкает его\nвперёд за половину затрат маны,\nнанося урон всем врагам,\nв которых он врежется.\n(Крадитесь, чтобы толкнуть в обратную сторону)",
+   "dst": "{c1}Применение {c2}Totem{c1}, когда вы смотрите\nна уже стоящий {c2}Totem{c1}, толкает его\nвперёд за {c3}половину{c1} затрат маны,\nнанося урон всем врагам,\nв которых он врежется.\n{c4}(Крадитесь, чтобы толкнуть в обратную сторону)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -459,7 +459,7 @@
   },
   "ability-shaman#0274": {
    "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
-   "dst": "Sacrificial Shrine вытягивает +{~} вашего здоровья\nкаждые {~} с и увеличивает урон Aura на +{~}.",
+   "dst": "{c1}Sacrificial Shrine{c2} вытягивает +{~}{c3} вашего здоровья\n{c2}каждые {~} с {c3}и увеличивает {c2}урон {c1}Aura{c2} на +{~}{c3}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-shaman#0294": {
    "src": "While worn, the overload will decay\nby -{~} every {~}s.",
-   "dst": "Пока Маска надета, усиление убывает\nна -{~} каждые {~} с.",
+   "dst": "{c1}Пока Маска надета, усиление убывает\nна {c2}-{~}{c1} каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,7 +809,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ Общий урон: {~} (от вашего DPS, как урон\nОсновной атаки)",
+   "dst": "{c1}⚔ {c2}Общий урон: {c3}{~} {c4}(от вашего DPS, как урон\nОсновной атаки)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1064,7 +1064,7 @@
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "Призывает Totem, который каждые {~} с\nнаносит урон врагам вокруг.",
+   "dst": "{c1}Призывает Totem, который каждые {c2}{~} с{c1}\nнаносит урон врагам вокруг.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2132,7 +2132,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "Flaming Tongue получает +{~} ударов, наносит больше урона\nи накладывает на врагов Кровотечение {#} на\n+{~} с за удар. (Макс. {~} с)",
+   "dst": "{c1}Flaming Tongue{c2} получает {c3}+{~}{c2} ударов, наносит больше урона\nи накладывает на врагов {c4}Кровотечение{c2} {#} на\n{c3}+{~} с{c2} за удар. {c5}(Макс. {~} с)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2147,7 +2147,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "Haunting Memory вместо этого\nнакладывает +{~} с Кровотечения {#}.",
+   "dst": "{c1}Haunting Memory{c2} вместо этого\nнакладывает {c3}+{~} с {c4}Кровотечения {#}{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2961,7 +2961,7 @@
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "Когда любой игрок получает урон в радиусе\nвашего Totem, {~} полученного урона\nпропорционально вашему макс.\nздоровью добавляется в Запас крови {#}.\n(Макс. {~} Запаса крови в секунду)",
+   "dst": "{c1}Когда любой игрок получает урон в радиусе\nвашего {c2}Totem{c1}, {c3}{~}{c1} полученного урона\nпропорционально вашему макс.\nздоровью добавляется в {c4}Запас крови {#}{c1}.\n{c5}(Макс. {~} Запаса крови в секунду)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3627,7 +3627,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "Чудовище атакует врагов\nкаждые {~} с в ближнем режиме\nи каждые {~} с в дальнем.",
+   "dst": "{c2}Чудовище{c1} атакует врагов\nкаждые {c3}{~} с{c1} в ближнем режиме\nи каждые {c3}{~} с{c1} в дальнем.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3708,7 +3708,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "Другие получают +{~} Здоровья {#} каждые {~} с.",
+   "dst": "{c1}Другие получают {c2}+{~} {c3}Здоровья {#}{c1} каждые {c2}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "В ваш Totem вселяется потусторонний\nдемон, давая +{~} Запаса крови {#} ближайшим\nпоследователям каждые {~} с.",
+   "dst": "{c1}В ваш {c2}Totem{c1} вселяется потусторонний\nдемон, давая {c3}+{~} {c4}Запаса крови {#}{c1} ближайшим\nпоследователям каждые {c3}{~} с{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
