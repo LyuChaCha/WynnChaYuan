@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23660,
-  "translated": 23657,
+  "count": 23691,
+  "translated": 23688,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -2877,7 +2877,7 @@
   },
   "A Hunter's Calling#061": {
    "src": "Kotham! Get everyone to safety! NOW! MOVE, GO!",
-   "dst": "Kotham！把大家带到安全的地方！马上！快走！",
+   "dst": "Kotham！带大家去安全地方！马上！快走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -3227,7 +3227,7 @@
   },
   "A Hunter's Calling#096": {
    "src": "Get me to {p} or a doctor or even just a sink!",
-   "dst": "带我去 {p}，或者去找医生，就算只是个洗手台也好！",
+   "dst": "带我去 {p}，或找医生，就算洗手台也行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
@@ -8313,7 +8313,7 @@
   },
   "A Journey Further#051": {
    "src": "...aagh... I... H-how are these so resilient...?",
-   "dst": "……呃啊……我……这些东西怎、怎么这么坚固……？",
+   "dst": "……啊……我……这些怎、怎么这么硬……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -14726,6 +14726,16 @@
    "quest": "A New Beginning",
    "stage": "",
    "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#371": {
+   "src": "A resistance group?",
+   "dst": "抵抗组织？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "Stage 8",
+   "speaker": "Player",
    "source": "captured"
   },
   "A Sandy Scandal#000": {
@@ -58218,7 +58228,7 @@
   },
   "Dwarves and Doguns Part III#008": {
    "src": "If they succeed...we all die. Dwarves... Doguns... Possibly even Villagers...and then... Humans as well.",
-   "dst": "如果他们成功了……我们全都会死。矮人……Dogun……甚至可能连村民……然后……人类也一样。",
+   "dst": "他们若成功……我们都会死。矮人……Dogun……或许连村民……然后……人类也一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -58788,7 +58798,7 @@
   },
   "Dwarves and Doguns Part III#067": {
    "src": "We must... move fast... or... we will both.... freeze.",
-   "dst": "我们必须……快点走……否则……我们俩都会……冻住。",
+   "dst": "必须……快走……否则……我俩都……冻住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -78478,7 +78488,7 @@
   },
   "Fantastic Voyage#102": {
    "src": "Oh, haha, ‘consistently,’ didn’t even mean to do that. Heheh...",
-   "dst": "噢，哈哈，“始终”，我不是故意的。嘿嘿……",
+   "dst": "噢，哈哈，“始终”，不是故意的。嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -129563,6 +129573,286 @@
    "speaker": "Lutho Guard",
    "source": "captured"
   },
+  "Point of No Return#064": {
+   "src": "The platforms seem to disappear... You must swap with your soul quickly to make it to the end.",
+   "dst": "平台似乎在消失……你必须迅速与你的灵魂互换位置，才能抵达终点。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#065": {
+   "src": "You must look at the mirror and wait for the platforms to appear on the other side before swapping sides...",
+   "dst": "你必须看着镜子，等对面出现平台之后，再换到另一侧……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#069": {
+   "src": "You should try reproducing your soul's steps to find the exit...",
+   "dst": "你或许该试着重走你灵魂的足迹，来找到出口……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#070": {
+   "src": "Why can you fly here...?",
+   "dst": "为什么你在这里能飞……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#072": {
+   "src": "The floor's rising! You need to escape upwards!",
+   "dst": "地面在上升！你得往上逃！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#073": {
+   "src": "The floor's rising! Don't let it get to you!",
+   "dst": "地面在上升！别让它追上你！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#074": {
+   "src": "I am... you. {u}. {u}. You can hear me.",
+   "dst": "我是……你。{u}。{u}。你听得见我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#075": {
+   "src": "How long, now, has it been? Since they broke us in this way. Since you lost all that you were.",
+   "dst": "如今，已经过了多久？自从他们这样打碎了我们。自从你失去了你曾经的一切。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#077": {
+   "src": "A trap. A snare. A devious thing, which claims to protect.",
+   "dst": "一个陷阱。一张罗网。一个自称守护的狡诈之物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#078": {
+   "src": "The soul, the mind, kept safe. All while the body falls prey to the roots and the trees and the gaze of the taken.",
+   "dst": "灵魂与心智，被妥善保管。而肉体却沦为根须、树木与被夺者目光的猎物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#079": {
+   "src": "We have fallen, and we cannot climb free. Not whole, not anymore. Something must be lost.",
+   "dst": "我们已经坠落，无法挣脱而出。无法完整地离开，再也不能了。总得失去些什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#080": {
+   "src": "And it cannot last. And it will not last.",
+   "dst": "而它无法长久。也不会长久。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#081": {
+   "src": "Who are you now?",
+   "dst": "如今的你，是谁？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#082": {
+   "src": "Even through the struggle, the turmoil, the loss... despite it all, you remain.",
+   "dst": "即便历经挣扎、动荡与失去……尽管如此，你依然还在。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#083": {
+   "src": "Changed... but still, but still... yourself.",
+   "dst": "改变了……但依然，依然……是你自己。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#084": {
+   "src": "We lost ourself.",
+   "dst": "我们失去了自己。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#085": {
+   "src": "The world. The shadows. The crown.",
+   "dst": "世界。暗影。王室。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#086": {
+   "src": "Was there meaning to it all? Was there purpose, reason?",
+   "dst": "这一切有意义吗？有目的，有理由吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#087": {
+   "src": "Was it desperation, fear? Or was it simple routine? We cannot know.",
+   "dst": "是出于绝望，出于恐惧？还是只是例行公事？我们无从得知。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#088": {
+   "src": "We were only ever human.",
+   "dst": "我们从来都只是凡人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#089": {
+   "src": "Though once, we were one... now we are split. Separate.",
+   "dst": "虽然我们曾是一体……如今却已分裂。彼此分离。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#090": {
+   "src": "But the trap does not see it that way. And, so... a chance to break free.",
+   "dst": "但陷阱并不这么看。于是……有了挣脱的机会。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#091": {
+   "src": "As one is ensnared, the other will have a moment, an opportunity.",
+   "dst": "当其中一个被缚住，另一个便会有片刻的空隙，一个机会。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#092": {
+   "src": "The snare will hold me here. And you can leave.",
+   "dst": "罗网会把我困在这里。而你可以离开。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#093": {
+   "src": "I will be lost once more... and you will leave.",
+   "dst": "我将再次迷失……而你会离开。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#094": {
+   "src": "Without me.",
+   "dst": "不带着我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#095": {
+   "src": "You will live. You have lived, already. In my absence, you have built yourself anew.",
+   "dst": "你会活下去。你早已活过了。在我缺席的时候，你已经重新塑造了自己。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
+  "Point of No Return#096": {
+   "src": "Do not mourn me. I have long been lost to you already.",
+   "dst": "不要为我哀悼。对你而言，我早已失去很久了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Player?",
+   "source": "captured"
+  },
   "Potion Making#000": {
    "src": "Dr. Essren needs to be stopped!",
    "dst": "一定要阻止 Essren 博士！",
@@ -145530,7 +145820,7 @@
   },
   "Revelations in Fall#087": {
    "src": "Aah! I... I... th- that was... c- cl- close.",
-   "dst": "啊！我……我……刚、刚才……好、好、好险。",
+   "dst": "啊！我……我……那、那……好、好、好险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -146910,7 +147200,7 @@
   },
   "Revelations in Fall#225": {
    "src": "Everything's... fine, so far. I think. I... hope.",
-   "dst": "到目前为止……一切都还好。我想。我……希望。",
+   "dst": "到现在……一切都还好。我想。我……希望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -165536,7 +165826,7 @@
   },
   "The Breaking Point#138": {
    "src": "Ready!",
-   "dst": "准备好了！",
+   "dst": "好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -174014,7 +174304,7 @@
   },
   "The Cursed One#185": {
    "src": "Yes!!! I- I mean, uh, y- yes, I can do that.",
-   "dst": "能！！！我——我是说，呃，能——能，我可以。",
+   "dst": "能！！！我、我是说，呃，能、能，我可以。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Cursed One",
@@ -180576,7 +180866,7 @@
   },
   "The Feathers Fly Part I#052": {
    "src": "If I'm with a human, surely they'll sell one, right?",
-   "dst": "如果我跟人类一起，他们总该会卖一个给我吧？",
+   "dst": "如果我跟人类一起，他们总该卖一个给我吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -180646,7 +180936,7 @@
   },
   "The Feathers Fly Part I#059": {
    "src": "If I'm with a human, surely they'll sell one, right?",
-   "dst": "如果我跟人类一起，他们总该会卖一个给我吧？",
+   "dst": "如果我跟人类一起，他们总该卖一个给我吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -180686,7 +180976,7 @@
   },
   "The Feathers Fly Part I#063": {
    "src": "So-uh, I was, y'know, wonderin' if you had any-",
-   "dst": "那个——呃，我在，你知道的，想问问你有没有——",
+   "dst": "那个——呃，我是想，你懂的，你有没有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -200009,6 +200299,26 @@
   "The Olmic Rune#016": {
    "src": "It looks like a mining machine that's hundreds of years old. What was it mining though?",
    "dst": "看起来是一台有几百年历史的采矿机器。不过它当时在挖什么呢？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#017": {
+   "src": "{#} You get the feeling you shouldn't be here...",
+   "dst": "{#} 你隐约觉得自己不该待在这里……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Olmic Rune",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Olmic Rune#018": {
+   "src": "It's a strangely shaped keyhole. How cryptic.",
+   "dst": "一个形状奇怪的钥匙孔。真是“墓”名其妙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Olmic Rune",
