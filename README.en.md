@@ -137,7 +137,7 @@ Traditional Chinese leads for now; the other languages are filled in after it.
 - **Not done yet**: Secret-related content, dialogue of NPCs outside quests, text nobody has found yet, lines whose original records are themselves wrong, and the content of the latest game update. These are being filled in, and **a report when you run into one speeds it up a lot** (see [How to help](#how-to-help)).
 
 <!-- 進度:開始 -->
-更新於 2026-10-19 / Updated 2026-10-19
+更新於 2026-10-20 / Updated 2026-10-20
 
 **翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
