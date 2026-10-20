@@ -172782,16 +172782,6 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Cursed One#000": {
-   "src": "[+{~} Crystal Focus]",
-   "dst": "[+{~} 水晶の媒介]",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Cursed One",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Cursed One#001": {
    "src": "[-{~} Crystal Focus]",
    "dst": "[-{~} 水晶の媒介]",
@@ -175273,8 +175263,8 @@
    "source": "wiki"
   },
   "The Cursed One#249": {
-   "src": "Find Zeph at near {p}.",
-   "dst": "{p} の近くで Zeph を見つける。",
+   "src": "Find Zeph at [-{~}, {~}, -{~}] near {p}.",
+   "dst": "{p} の近く([-{~}, {~}, -{~}])で Zeph を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -175384,7 +175374,7 @@
   },
   "The Cursed One#260": {
    "src": "Just someone out on a random walk? Back to the point- is everything for the festival shaping up according to schedule?",
-   "dst": "ランダムウォーク中の誰かか？本題に戻ろう― 祭りの準備は予定通り進んでいるか？",
+   "dst": "散歩中の誰かか？本題に戻ろう― 祭りの準備は予定通り進んでいるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Cursed One",
@@ -175973,8 +175963,8 @@
    "source": "wiki"
   },
   "The Cursed One#319": {
-   "src": "Complete {~} festival activities.",
-   "dst": "祭りのアクティビティを {~} 個達成する。",
+   "src": "[{~}/{~}] festival activities completed.",
+   "dst": "[{~}/{~}] 祭りのアクティビティ完了させる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -177144,7 +177134,7 @@
   },
   "The Cursed One#436": {
    "src": "There are three sizes of Mudkins, each size gives a set of points. However! There are two ginger roots that give negative points.",
-   "dst": "Mudkin は大きさが三種類で、それぞれ点数が決まっとる。ただし！マイナス点になるショウガの根が二つあるぞ。",
+   "dst": "Mudkin は大きさが三種類で、それぞれ点数が決まっとる。ただし！減点になるショウガの根が二つあるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Cursed One",
@@ -177183,8 +177173,8 @@
    "source": "wiki"
   },
   "The Cursed One#440": {
-   "src": "Return to Syndra at or keep exploring the festival.",
-   "dst": "Syndra のもとへ戻るか、祭りの見物を続ける。",
+   "src": "Return to Syndra at [-{~}, {~}, -{~}] or keep exploring the festival.",
+   "dst": "[-{~}, {~}, -{~}]にいる Syndra のもとへ戻るか、祭りの見物を続ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Cursed One",
@@ -177991,6 +177981,16 @@
    "kind": "dialogue",
    "quest": "The Cursed One",
    "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#521": {
+   "src": "[!] Keep following the Sovereign, but don't go too close or too far from them!",
+   "dst": "{c1}[{c2}!{c1}] {c3}君主を追い続けろ。ただし{c1}近づき{c3}すぎても{c1}離れ{c3}すぎてもいけない！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Cursed One",
+   "stage": "Stage 13",
    "speaker": "",
    "source": "captured"
   },
