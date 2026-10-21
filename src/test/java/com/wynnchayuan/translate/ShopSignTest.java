@@ -34,7 +34,9 @@ public final class ShopSignTest {
 
         Path dir = Files.createTempDirectory("wynnchayuan-shop-sign");
         Files.writeString(dir.resolve("misc.json"), """
-                {"{owner}'s {thing}": "{thing} ({owner})", "Shop": "Dükkân", "Wild Rabbit": "Yaban Tavşanı"}
+                {"{owner}'s {thing}": "{thing} ({owner})", "Shop": "Dükkân", "Wild Rabbit": "Yaban Tavşanı",
+                 "Controlled by {u} [Lv. {~}]": "Kontrol eden: {u} [Sv. {~}]",
+                 "Click for Options": "Seçenekler için tıkla"}
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
@@ -49,6 +51,16 @@ public final class ShopSignTest {
 
         String letter = plain(LineTranslator.translateLabel(sign("MilesC1", "e"), store));
         check("招牌只有一個字母的照舊（實際 " + letter + "）", letter.equals("Dükkân (MilesC1)\ne"));
+
+        // 領地的旗幟（實機 2026-10-21）：公會名稱夾在句子裡、底下是公會自己的稱號
+        MutableComponent flag = Component.empty()
+                .append(Component.literal("Detlas\nControlled by "))
+                .append(Component.literal("Polish Hussars").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(AQUA))))
+                .append(Component.literal(" [Lv. 84]\n< Master of the Sands >\nClick for Options"));
+        String banner = plain(LineTranslator.translateLabel(StyledText.fromComponent(flag), store));
+        check("★領地旗幟翻出來，公會名稱原樣（實際 " + banner + "）",
+                "Detlas\nKontrol eden: Polish Hussars [Sv. 84]\n< Master of the Sands >\nSeçenekler için tıkla"
+                        .equals(banner));
 
         // 對照組：不是「某人的東西」的漂浮字，查不到的那一行照舊讓整塊放棄
         Component mob = LineTranslator.translateLabel(StyledText.fromComponent(
