@@ -152,6 +152,28 @@ public final class LootChestColourTest {
             expectStars(e.path(), out, new int[] {PINK, PINK, PINK, DARK});
             expect(e.path(), out, "擊殺！", RED, true);
             expect(e.path(), out, "擊敗", GREY, false);
+            expect(e.path(), out, "[", PURPLE, false);
+            expect(e.path(), out, "]", PURPLE, false);
+        }
+
+        // 使用者 2026-10-21：「[」是白的。原文的「[」跟寶箱名同一段（§5Loot Chest [），
+        // 短鍵 Loot Chest 的譯名只涵蓋名字，括號落在錨點之間的空檔、沒有任何一段認領，
+        // 交回一般的上色——簡中剛好猜成紫色，繁中猜成白色。這裡只看括號與星星，不看措辭。
+        StyledText guardian = styled(
+                lit("Locked ", PINK), lit("Loot Chest [", PURPLE), lit("✫✫✫✫", PINK),
+                lit("]", PURPLE), lit("\n", PURPLE),
+                bold("SLAY!", RED), lit(" Defeat a ", GREY), lit("Sanctuary Guardian", WHITE));
+        for (TranslationStore store : List.of(tw, cn)) {
+            for (Entry e : entries(guardian, store)) {
+                Component out = e.out();
+                check("★ " + e.path() + "：聖域守護者的寶箱翻得出來", out != null);
+                if (out == null) {
+                    continue;
+                }
+                expect("★ " + e.path(), out, "[", PURPLE, false);
+                expect("★ " + e.path(), out, "]", PURPLE, false);
+                expectStars("★ " + e.path(), out, new int[] {PINK, PINK, PINK, PINK});
+            }
         }
 
         // issue #1237：遊戲送來的漂浮字最後多一列只有 À，條目只寫了看得見的兩行也要翻到
