@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.3",
+ "latest": "1.0.3_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.3_1": {
+   "headline": "1.0.3_1: Trade Market stalls and territory banners, chest and Lootrun colour fixes",
+   "items": [
+    "New: Trade Market stalls translate \"<player>'s Shop\" and leave the slogan the owner wrote as it is; territory banners translate \"Controlled by <guild>\" with the guild name unchanged (thanks to anilken).",
+    "Fixed: the opening bracket of locked loot chest nameplates has the chest name's colour again.",
+    "Fixed: in chat, the conditions in Lootrun boon descriptions stay grey, with numbers and stat names in white.",
+    "Fixed: \"Export untranslated strings\" no longer reports nameplate countdowns as missing colours.",
+    "Translations: Traditional Chinese polish of the remaining 74 quests, Lootrun beacon titles and colours, gear names left in English in trade market notices, and new lines recorded in game."
+   ],
+   "zh_tw": {
+    "headline": "1.0.3_1：交易市場攤位與領地旗幟、寶箱與 Lootrun 的顏色修正",
+    "items": [
+     "新增：交易市場攤位的「某某的商店」會翻譯，攤主自己寫的招牌原樣保留；領地旗幟的「控制公會」也會翻譯，公會名原樣保留（感謝 anilken）。",
+     "修正：上鎖的戰利品寶箱名牌，左方括號恢復跟名稱同樣的顏色。",
+     "修正：聊天裡 Lootrun 加持說明的條件句維持灰色，數值與屬性名是白色。",
+     "修正：「匯出未翻譯字串」不再把名牌的倒數秒數記成掉色。",
+     "譯文：繁中其餘 74 個任務潤稿、Lootrun 信標標題與顏色、交易市場通知的裝備名改回英文，以及實機收到的新句子。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.3_1：交易市场摊位与领地旗帜、宝箱与 Lootrun 的颜色修正",
+    "items": [
+     "新增：交易市场摊位的「某某的商店」会翻译，摊主自己写的招牌原样保留；领地旗帜的「控制公会」也会翻译，公会名原样保留（感谢 anilken）。",
+     "修正：上锁的战利品宝箱名牌，左方括号恢复跟名称同样的颜色。",
+     "修正：聊天里 Lootrun 加持说明的条件句保持灰色，数值与属性名是白色。",
+     "修正：「导出未翻译字符串」不再把名牌的倒计时秒数记成掉色。",
+     "译文：繁中其余 74 个任务润色、Lootrun 信标标题与颜色、交易市场通知的装备名改回英文，以及实机收到的新句子。"
+    ]
+   }
+  },
   "1.0.3": {
    "headline": "1.0.3: other players' names in broadcasts, a Wynntils speed-up, and the Wynnventory price box",
    "items": [
