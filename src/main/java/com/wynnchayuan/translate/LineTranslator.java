@@ -5358,6 +5358,12 @@ public final class LineTranslator {
         String[] rows = template.split("\n", -1);
         StringBuilder out = new StringBuilder();
         boolean any = false;
+        // 第一個有字的行是「某玩家的東西」（交易市場的攤位：「X's Shop」底下是攤主
+        // 自己打的招牌）時，後面查不到的行原樣留著。招牌是玩家寫的字，永遠不會進語料；
+        // 照「有一行查不到就整塊放棄」的規則，整面招牌連「X's Shop」都翻不出來——
+        // 只有招牌剛好是一個字母（「e」不算字）的那一攤翻得出來。
+        boolean owned = false;
+        boolean worded = false;
         for (int i = 0; i < rows.length; i++) {
             if (i > 0) {
                 out.append(NEWLINE);
@@ -5367,13 +5373,22 @@ public final class LineTranslator {
                 out.append(row);               // 沒有字的行：一個位元都不動
                 continue;
             }
+            boolean first = !worded;
+            worded = true;
             String hit = lookup(row, store);
             if (hit == null || hit.isBlank()) {
                 if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
                     out.append(statusRow(row, store));   // 狀態列：只換狀態詞，其餘原樣
                     continue;
                 }
+                if (owned) {
+                    out.append(row);           // 攤主自己打的招牌：原樣留著
+                    continue;
+                }
                 return null;                   // 有字卻查不到，整塊放棄
+            }
+            if (first && withOwner(row, store) != null) {
+                owned = true;
             }
             out.append(hit);
             any = true;

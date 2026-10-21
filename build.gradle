@@ -541,6 +541,14 @@ tasks.register('runQuestGuessChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runQuestGuessChecks' }
 
+tasks.register('runShopSignChecks', JavaExec) {
+    group = 'verification'
+    description = "交易市場攤位：「X's Shop」翻出來，攤主自己打的招牌原樣留著"
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ShopSignTest'
+}
+tasks.named('check') { dependsOn 'runShopSignChecks' }
+
 tasks.register('runLabelReplaceChecks', JavaExec) {
     group = 'verification'
     description = '驗證漂浮名牌就地替換不會動到遊戲自己的版面'
