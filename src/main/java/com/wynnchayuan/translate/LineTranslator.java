@@ -4799,7 +4799,7 @@ public final class LineTranslator {
             translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
         }
         if (translated == null || translated.isBlank()) {
-            translated = labelByLine(parts.template(), store);
+            translated = labelByLine(parts.template(), store, label);
         }
         if (translated == null || translated.isBlank()) {
             // 「某人的力量之井」「某人的鳥」：主人的名字收成 {u}。見 NameFrames。
@@ -5352,33 +5352,93 @@ public final class LineTranslator {
     }
 
     private static String labelByLine(String template, TranslationStore store) {
+        return labelByLine(template, store, null);
+    }
+
+    /**
+     * @param label 原本的漂浮字；有的話，查不到的行會再試一次「夾著別人名字」的句型
+     *              （見 {@link com.wynnchayuan.capture.NameFrames}），一行一行地試
+     */
+    private static String labelByLine(String template, TranslationStore store, StyledText label) {
         if (template.indexOf(NEWLINE) < 0) {
             return null;                       // 單行的話整塊就是那一行，沒有退路可言
         }
         String[] rows = template.split("\n", -1);
-        StringBuilder out = new StringBuilder();
+        StyledText[] styled = label == null ? null : label.split("\n");
+        if (styled != null && styled.length != rows.length) {
+            styled = null;
+        }
+        String[] out = new String[rows.length];
         boolean any = false;
+        // 有一行是「某玩家的東西」時，查不到的行原樣留著——那些是玩家自己寫的字，
+        // 永遠不會進語料：
+        //   - 交易市場的攤位：「X's Shop」底下是攤主打的招牌；
+        //   - 領地的旗幟：「Controlled by <公會> [Lv. N]」底下是公會的稱號。
+        // 照「有一行查不到就整塊放棄」的規則，整塊連認得出來的那幾行都翻不出來——
+        // 實機上只有招牌剛好是一個字母（「e」不算字）的那一攤翻得出來。
+        // 別的漂浮字沒有這種行，照舊整塊放棄。
+        boolean owned = false;
+        boolean missed = false;
         for (int i = 0; i < rows.length; i++) {
-            if (i > 0) {
-                out.append(NEWLINE);
-            }
             String row = rows[i];
             if (!hasWord(row)) {
-                out.append(row);               // 沒有字的行：一個位元都不動
+                out[i] = row;                  // 沒有字的行：一個位元都不動
                 continue;
             }
             String hit = lookup(row, store);
-            if (hit == null || hit.isBlank()) {
-                if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
-                    out.append(statusRow(row, store));   // 狀態列：只換狀態詞，其餘原樣
-                    continue;
+            if (hit != null && !hit.isBlank()) {
+                if (withOwner(row, store) != null) {
+                    owned = true;
                 }
-                return null;                   // 有字卻查不到，整塊放棄
+                out[i] = hit;
+                any = true;
+                continue;
             }
-            out.append(hit);
-            any = true;
+            if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
+                out[i] = statusRow(row, store);   // 狀態列：只換狀態詞，其餘原樣
+                continue;
+            }
+            String framed = styled == null ? null : framedRow(styled[i], row, store);
+            if (framed != null) {
+                owned = true;
+                out[i] = framed;
+                any = true;
+                continue;
+            }
+            out[i] = row;                      // 先原樣放著，最後看要不要整塊放棄
+            missed = true;
         }
-        return any ? out.toString() : null;
+        if (!any || (missed && !owned)) {
+            return null;                       // 有字卻查不到，整塊放棄
+        }
+        return String.join(String.valueOf(NEWLINE), out);
+    }
+
+    /**
+     * 一行「夾著別人名字」的漂浮字：名字收成 {@code {u}} 查語料，譯文裡再把名字填回去。
+     *
+     * <p>名字帶數字的不收：模板裡那些數字已經是 {@code {~}}，名字整段填回去的話，
+     * 數值的個數就對不上了。
+     */
+    private static String framedRow(StyledText row, String template, TranslationStore store) {
+        if (row == null || !LineParts.of(row).template().equals(template)) {
+            return null;
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans spans = store.nameFrames().find(row, template);
+        if (spans == null) {
+            return null;
+        }
+        String name = LineParts.flat(row).substring(spans.userStart(), spans.userEnd());
+        if (name.chars().anyMatch(Character::isDigit)) {
+            return null;
+        }
+        String hit = lookup(LineParts.of(row, spans).template(), store);
+        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
+        if (hit == null || hit.isBlank() || hit.indexOf(user) != hit.lastIndexOf(user)
+                || !hit.contains(user)) {
+            return null;
+        }
+        return hit.replace(user, name);
     }
 
     /**
