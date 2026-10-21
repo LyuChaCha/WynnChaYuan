@@ -400,16 +400,21 @@ async function handleDiscordStart(request, env, now) {
 
 async function handleDiscordCallback(request, env, now) {
   const url = new URL(request.url);
-  const failed = redirect(url.origin + '/account#e=discord', oauthCookie('', 0));
-  if (!discordOn(env)) return failed;
+  // 每一種失敗帶一個原因碼：帳號頁照樣只說「沒有成功」，但看網址或 wrangler tail 就知道卡在哪一步
+  const failed = (reason) => {
+    console.log('discord sign-in failed: ' + reason);
+    return redirect(url.origin + '/account#e=discord&r=' + reason, oauthCookie('', 0));
+  };
+  if (!discordOn(env)) return failed('off');
   const code = url.searchParams.get('code') || '';
   const parts = (url.searchParams.get('state') || '').split('.');
   const cookie = new RegExp('(?:^|;\\s*)' + OAUTH_COOKIE + '=([0-9a-f]{32}(?:[0-9a-f]{32})?)(?:;|$)')
     .exec(request.headers.get('cookie') || '');
-  if (!code || code.length > 512 || parts.length !== 3 || !cookie || cookie[1] !== parts[1]) return failed;
-  if (!/^\d{1,16}$/.test(parts[0]) || now - Number(parts[0]) > 600000 || Number(parts[0]) > now + 60000) return failed;
+  if (!code || code.length > 512) return failed(url.searchParams.get('error') === 'access_denied' ? 'denied' : 'code');
+  if (parts.length !== 3 || !cookie || cookie[1] !== parts[1]) return failed('cookie');
+  if (!/^\d{1,16}$/.test(parts[0]) || now - Number(parts[0]) > 600000 || Number(parts[0]) > now + 60000) return failed('expired');
   const expected = await sign(env, 'oauth.' + parts[0] + '.' + parts[1]);
-  if (expected !== parts[2]) return failed;
+  if (expected !== parts[2]) return failed('state');
   let profile = null;
   try {
     const token = await fetch(DISCORD_API + '/oauth2/token', {
@@ -423,17 +428,21 @@ async function handleDiscordCallback(request, env, now) {
         redirect_uri: url.origin + '/auth/discord/callback',
       }).toString(),
     });
-    if (token.status !== 200) return failed;
+    if (token.status !== 200) {
+      // Discord 的錯誤名（invalid_client、invalid_grant…）不含任何金鑰，可以照原樣帶回來
+      const why = await token.json().then((body) => String(body.error || ''), () => '');
+      return failed('token-' + token.status + (/^[a-z_]{1,40}$/.test(why) ? '-' + why : ''));
+    }
     const access = (await token.json()).access_token;
-    if (typeof access !== 'string' || !access) return failed;
+    if (typeof access !== 'string' || !access) return failed('token-empty');
     const me = await fetch(DISCORD_API + '/users/@me', { headers: { authorization: 'Bearer ' + access } });
-    if (me.status !== 200) return failed;
+    if (me.status !== 200) return failed('me-' + me.status);
     profile = await me.json();
   } catch (e) {
-    return failed;
+    return failed('network');
   }
   const id = profile && typeof profile.id === 'string' ? profile.id : '';
-  if (!DISCORD_ID.test(id)) return failed;
+  if (!DISCORD_ID.test(id)) return failed('profile');
   const shown = String(profile.global_name || profile.username || '').slice(0, 64);
   const record = await account(env, id) || {};
   record.n = shown;

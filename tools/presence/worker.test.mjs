@@ -320,13 +320,13 @@ check('state 用 cookie 綁在這個瀏覽器上（HttpOnly、Secure）', /^wcy_
 const state = authorize.searchParams.get('state');
 const oauthBack = (query, cookie) => page('/auth/discord/callback?' + query, cookie ? { cookie } : {});
 r = await oauthBack('code=goodcode&state=' + state, null);
-check('★ 回來時沒有那個 cookie（別人把他的登入連結塞給你）：不認', r.headers.get('location') === 'https://x.test/account#e=discord');
+check('★ 回來時沒有那個 cookie（別人把他的登入連結塞給你）：不認', r.headers.get('location') === 'https://x.test/account#e=discord&r=cookie');
 r = await oauthBack('code=goodcode&state=' + state, 'wcy_oauth=' + 'f'.repeat(32));
-check('★ cookie 對不上 state：不認', r.headers.get('location').endsWith('#e=discord'));
+check('★ cookie 對不上 state：不認', r.headers.get('location').endsWith('#e=discord&r=cookie'));
 r = await oauthBack('code=goodcode&state=' + state.replace(/\.[0-9a-f]{64}$/, '.' + '0'.repeat(64)), oauthCookie);
-check('★ state 的簽章是假的：不認', r.headers.get('location').endsWith('#e=discord'));
+check('★ state 的簽章是假的：不認', r.headers.get('location').endsWith('#e=discord&r=state'));
 r = await oauthBack('code=wrong&state=' + state, oauthCookie);
-check('Discord 不認這個 code：不認', r.headers.get('location').endsWith('#e=discord'));
+check('Discord 不認這個 code：不認，原因碼帶著 Discord 的狀態', /#e=discord&r=token-\d{3}/.test(r.headers.get('location')));
 r = await oauthBack('code=goodcode&state=' + state, oauthCookie);
 const dcToken = (r.headers.get('location').match(/#t=(dc\.[^&]+)$/) || [])[1];
 check('★ 都對：帶著網站帳號的憑證回帳號頁，cookie 清掉', r.status === 302 && r.headers.get('location').startsWith('https://x.test/account#t=dc.')
