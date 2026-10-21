@@ -132,7 +132,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "Por cada {~} o {~} de daño de ataque principal (valor fijo) de tus objetos,\nobtienes +{~}/{~}s de daño de veneno. (Máx. {~}/{~}s)",
+   "dst": "{c1}Por cada {c2}{~}{c1} o {c2}{~}{c1} de daño de ataque principal {c2}(valor fijo){c1} de tus objetos,\nobtienes {c2}+{~}/{~}s{c1} de daño de veneno. (Máx. {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "Lanza una bomba que desprende humo poco a poco\ny daña a todos los enemigos dentro cada {~}s.",
+   "dst": "{c1}Lanza una bomba que desprende humo poco a poco\ny daña a todos los enemigos dentro cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "Convierte Multihit en un único golpe devastador.\nSi atacas a un enemigo por la espalda,\ninflige el doble de daño.",
+   "dst": "{c1}Convierte {c2}Multihit{c1} en un único golpe devastador.\nSi atacas a un enemigo por la espalda,\ninflige el {c3}doble{c1} de daño.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "Al recibir un golpe, pierdes un Clon espejo {#}, que reduce\n-{~} del daño recibido y te otorga\nuna bonificación de daño durante {~}s. (Enfriamiento de {~}s)",
+   "dst": "{c1}Al recibir un golpe, pierdes un {c2}Clon espejo {#}{c1}, que reduce\n{c3}-{~}{c1} del daño recibido y te otorga\nuna bonificación de daño durante {c3}{~}s{c1}. {c4}(Enfriamiento de {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "Reduce el enfriamiento de Vanish en -{~}s tras\natacar a un enemigo por la espalda con Backstab.",
+   "dst": "{c1}Reduce el enfriamiento de {c2}Vanish{c1} en {c3}-{~}s{c1} tras\natacar a un enemigo por la espalda con {c2}Backstab{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1157,7 +1157,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "Asestar {~} golpes a un enemigo en\nel aire te otorga +{~} de Inercia {#}. (Máx. {~})",
+   "dst": "{c1}Asestar {c2}{~} {c1}golpes a un enemigo en\nel aire te otorga {c2}+{~} de {c3}Inercia {#}{c1}. {c4}(Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "Infligir más de {~}x tu vida máxima como\ndaño en un solo golpe infligirá {~} de\nese daño a otros enemigos cercanos.",
+   "dst": "{c1}Infligir más de {c2}{~}x{c1} tu vida máxima como\ndaño en un solo golpe infligirá {c2}{~}{c1} de\nese daño a otros enemigos cercanos.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1336,7 +1336,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "Las Marcas {#} se reducen una vez cada {~}s.",
+   "dst": "{c1}Las Marcas {#}{c2} se reducen una vez cada {c3}{~}s{c2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1351,7 +1351,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "Smoke Bomb añadirá +{~} Marca {#} a\nlos enemigos que golpee. (Máx. {~}, enfriamiento de {~}s)",
+   "dst": "{c1}Smoke Bomb{c2} añadirá {c3}+{~} {c4}Marca {#}{c2} a\nlos enemigos que golpee. {c5}(Máx. {~}, enfriamiento de {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "Last Laugh acumula varios Trucos {#} en\nlos enemigos según el tipo de Clon {#}{#}{#}.\n(Máx. {~})",
+   "dst": "{c1}Last Laugh{c2} acumula varios {c3}Trucos {#}{c2} en\nlos enemigos según el tipo de {c3}Clon {#}{#}{#}{c2}.\n{c4}(Máx. {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1543,7 +1543,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "Al matar a un enemigo, recupera {~} de\nsus Trucos {#}. (Máx. {~} por monstruo, {~} en total)",
+   "dst": "{c1}Al matar a un enemigo, recupera {c2}{~}{c1} de\nsus {c3}Trucos {#}{c1}. {c4}(Máx. {~} por monstruo, {~} en total)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "Al usar Swan Dive con {~}+ de Inercia {#},\nvolverás a saltar al aire {~}s después de aterrizar.",
+   "dst": "{c1}Al usar {c2}Swan Dive{c1} con {c3}{~}+ de {c4}Inercia {#}{c1},\nvolverás a saltar al aire {c3}{~}s{c1} después de aterrizar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "Los efectos negativos aplicados con Trucos {#} durarán\n+{~}s más por cada Truco {#} extra\ndetonado por encima del requisito.",
+   "dst": "{c1}Los efectos negativos aplicados con {c2}Trucos {#}{c1} durarán\n{c3}+{~}s{c1} más por cada {c2}Truco {#}{c1} extra\ndetonado por encima del requisito.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2149,7 +2149,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "Aumenta el daño de Violent Vortex\nen +{~} y aumenta el requisito de daño\na {~}x tu vida máxima.",
+   "dst": "{c1}Aumenta el daño de {c2}Violent Vortex{c1}\nen {c3}+{~}{c1} y aumenta el requisito de daño\na {c3}{~}x{c1} tu vida máxima.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2503,7 +2503,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "Tras gastar {~} de maná o ganar {~} de Inercia {#},\nun área bajo tus pies florece y daña a los\nenemigos que estén encima cada {~}s.",
+   "dst": "{c1}Tras gastar {c2}{~}{c1} de maná o ganar {c2}{~} de {c3}Inercia {#}{c1},\nun área bajo tus pies florece y daña a los\nenemigos que estén encima cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "Smoke Bomb suelta una nube de polvo\ncada {~}s que aplica Hipoxia {#} durante +{~}s.\n(Máx. {~}s)",
+   "dst": "{c1}Smoke Bomb{c2} suelta una nube de polvo\ncada {c3}{~}s{c2} que aplica {c4}Hipoxia {#}{c2} durante {c3}+{~}s{c2}.\n{c5}(Máx. {~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3091,7 +3091,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "Mientras estés envuelto, los enemigos cercanos\nrecibirán +{~} Marca {#} cada {~}s.",
+   "dst": "{c1}Mientras estés envuelto, los enemigos cercanos\nrecibirán {c2}+{~} {c3}Marca {#}{c1} cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3118,7 +3118,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "Salta al aire antes de desplomarte\nde vuelta al suelo, haciendo brotar un jardín\nde flores a tus pies que inflige\ndaño a los enemigos cada {~}s.",
+   "dst": "{c1}Salta al aire antes de desplomarte\nde vuelta al suelo, haciendo brotar un jardín\nde flores a tus pies que inflige\ndaño a los enemigos cada {c2}{~}s{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "Sobre tu jardín, tu Inercia {#}\nse carga el doble de rápido y gana\n+{~} acumulaciones máximas.",
+   "dst": "{c1}Sobre tu jardín, tu {c2}Inercia {#}{c1}\nse carga el {c3}doble{c1} de rápido y gana\n{c3}+{~}{c1} acumulaciones máximas.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3160,7 +3160,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "Volver a lanzar F intercambia vuestras posiciones,\ndetona los Trucos {#} de los enemigos cercanos y hace que\ntu clon lance todos los hechizos de daño disponibles.",
+   "dst": "{c1}Volver a lanzar {c2}F{c1} intercambia vuestras posiciones,\ndetona los {c3}Trucos {#}{c1} de los enemigos cercanos y hace que\ntu clon lance todos los {c4}hechizos de daño{c1} disponibles.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "Si ningún enemigo tuvo más de {~} Trucos {#} detonados\nen el intercambio, el clon pierde -{~} de vida. Sin embargo,\npor cada Truco {#} detonado por encima del umbral,\nesos hechizos de daño infligen {~} más de daño.",
+   "dst": "{c1}Si ningún enemigo tuvo más de {c2}{~} {c3}Trucos {#}{c1} detonados\nen el intercambio, el clon pierde {c4}-{~}{c1} de vida. Sin embargo,\npor cada {c3}Truco {#}{c1} detonado por encima del umbral,\nesos {c5}hechizos de daño{c1} infligen {c2}{~}{c1} más de daño.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "La vida del clon es proporcional a tu\npropia vida efectiva y, mientras vive,\nla eficacia de tus efectos negativos se duplica.",
+   "dst": "{c1}La vida del clon es proporcional a tu\npropia vida efectiva y, mientras vive,\nla eficacia de tus efectos negativos {c2}se duplica{c1}.",
    "role": "desc",
    "kind": "block",
    "ctx": [

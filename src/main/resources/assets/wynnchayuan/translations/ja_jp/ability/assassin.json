@@ -132,7 +132,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "アイテムの通常攻撃ダメージ {~} または固定値 {~} ごとに\n毒ダメージ +{~}/{~}秒 (上限 {~}/{~}秒)",
+   "dst": "{c1}アイテムの通常攻撃ダメージ {c2}{~}{c1} または{c2}固定値 {~}{c1} ごとに\n毒ダメージ {c2}+{~}/{~}秒{c1} (上限 {~}/{~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "ゆっくり煙を出す爆弾を投げ、\n{~}秒ごとに煙の中のすべての敵にダメージを与える。",
+   "dst": "{c1}ゆっくり煙を出す爆弾を投げ、\n{c2}{~}秒{c1}ごとに煙の中のすべての敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "Multihit を強烈な一撃に変える。\n敵の背後から当てると\nダメージが2倍になる。",
+   "dst": "{c2}Multihit{c1} を強烈な一撃に変える。\n敵の背後から当てると\nダメージが{c3}2倍{c1}になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "攻撃を受けると Mirror Clone {#} を1体失い、\n受けるダメージを -{~} 減らして\n{~}秒間ダメージボーナスを得る。(クールダウン {~}秒)",
+   "dst": "{c1}攻撃を受けると {c2}Mirror Clone {#}{c1} を1体失い、\n受けるダメージを {c3}-{~}{c1} 減らして\n{c3}{~}秒{c1}間ダメージボーナスを得る。{c4}(クールダウン {~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "Backstab で敵の背後から当てると、\nVanish のクールダウンが -{~}秒短くなる。",
+   "dst": "{c2}Backstab{c1} で敵の背後から当てると、\n{c2}Vanish{c1} のクールダウンが {c3}-{~}秒{c1}短くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1157,7 +1157,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "空中で敵に {~} 回当てると、\nMomentum {#} を +{~} 得る。(上限 {~})",
+   "dst": "{c1}空中で敵に {c2}{~} 回{c1}当てると、\n{c3}Momentum {#}{c1} を {c2}+{~}{c1} 得る。{c4}(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "一撃で最大体力の {~} 倍を超える\nダメージを与えると、そのダメージの {~} を\n近くのほかの敵にも与える。",
+   "dst": "{c1}一撃で最大体力の {c2}{~} 倍{c1}を超える\nダメージを与えると、そのダメージの {c2}{~}{c1} を\n近くのほかの敵にも与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1336,7 +1336,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "Marked {#} は {~}秒ごとに1つ減る。",
+   "dst": "{c1}Marked {#}{c2} は {c3}{~}秒{c2}ごとに1つ減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1351,7 +1351,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "Smoke Bomb が当たった敵に\nMark {#} を +{~} 付与する。(上限 {~}、クールダウン {~}秒)",
+   "dst": "{c1}Smoke Bomb{c2} が当たった敵に\n{c4}Mark {#}{c2} を {c3}+{~}{c2} 付与する。{c5}(上限 {~}、クールダウン {~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "Last Laugh は Clone {#}{#}{#} の種類に応じて、\n敵に Tricks {#} を蓄積する。\n(上限 {~})",
+   "dst": "{c1}Last Laugh{c2} は {c3}Clone {#}{#}{#}{c2} の種類に応じて、\n敵に {c3}Tricks {#}{c2} を蓄積する。\n{c4}(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1543,7 +1543,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "敵を倒すと、その敵の Tricks {#} の\n{~} を回収する。(モブ1体につき最大 {~}、合計 {~})",
+   "dst": "{c1}敵を倒すと、その敵の {c3}Tricks {#}{c1} の\n{c2}{~}{c1} を回収する。{c4}(モブ1体につき最大 {~}、合計 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "Momentum {#} が {~} 以上ある状態で Swan Dive を使うと、\n着地の {~}秒後にふたたび宙へ跳ぶ。",
+   "dst": "{c4}Momentum {#}{c1} が {c3}{~} 以上{c1}ある状態で {c2}Swan Dive{c1} を使うと、\n着地の {c3}{~}秒{c1}後にふたたび宙へ跳ぶ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "Tricks {#} で付与した弱体効果は、\n条件を超えて起爆した Trick {#} 1つごとに\n+{~}秒長く続く。",
+   "dst": "{c2}Tricks {#}{c1} で付与した弱体効果は、\n条件を超えて起爆した {c2}Trick {#}{c1} 1つごとに\n{c3}+{~}秒{c1}長く続く。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2149,7 +2149,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "Violent Vortex のダメージが +{~} 上がり、\n必要なダメージが\n最大体力の {~} 倍になる。",
+   "dst": "{c2}Violent Vortex{c1} のダメージが {c3}+{~}{c1} 上がり、\n必要なダメージが\n最大体力の {c3}{~} 倍{c1}になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2503,7 +2503,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "マナを {~} 消費するか Momentum {#} を {~} 得ると、\n足元の範囲が花開き、\n{~}秒ごとにその上の敵にダメージを与える。",
+   "dst": "{c1}マナを {c2}{~}{c1} 消費するか {c3}Momentum {#}{c1} を {c2}{~}{c1} 得ると、\n足元の範囲が花開き、\n{c2}{~}秒{c1}ごとにその上の敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "Smoke Bomb が {~}秒ごとに砂塵を放ち、\nHypoxia {#} を +{~}秒付与する。\n(上限 {~}秒)",
+   "dst": "{c1}Smoke Bomb{c2} が {c3}{~}秒{c2}ごとに砂塵を放ち、\n{c4}Hypoxia {#}{c2} を {c3}+{~}秒{c2}付与する。\n{c5}(上限 {~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3091,7 +3091,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "影をまとっている間、{~2}秒ごとに\n近くの敵に Mark {#} が +{~1} 付く。",
+   "dst": "{c1}影をまとっている間、{c2}{~2}秒{c1}ごとに\n近くの敵に {c3}Mark {#}{c1} が {c2}+{~1}{c1} 付く。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3118,7 +3118,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "宙へ跳び上がってから地面へ急降下し、\n足元に花の庭を芽吹かせて\n{~}秒ごとに敵に\nダメージを与える。",
+   "dst": "{c1}宙へ跳び上がってから地面へ急降下し、\n足元に花の庭を芽吹かせて\n{c2}{~}秒{c1}ごとに敵に\nダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "庭の上にいる間、Momentum {#} の\nチャージが2倍速くなり、\n最大スタックが +{~} 増える。",
+   "dst": "{c1}庭の上にいる間、{c2}Momentum {#}{c1} の\nチャージが{c3}2倍{c1}速くなり、\n最大スタックが {c3}+{~}{c1} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3160,7 +3160,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "もう一度 F を使うと互いの位置を入れ替え、\n近くの敵の Tricks {#} を起爆し、\n分身に使えるダメージ呪文をすべて使わせる。",
+   "dst": "{c1}もう一度 {c2}F{c1} を使うと互いの位置を入れ替え、\n近くの敵の {c3}Tricks {#}{c1} を起爆し、\n分身に使える{c4}ダメージ呪文{c1}をすべて使わせる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "入れ替わりで Tricks {#} を {~} 個より多く起爆された敵がいなければ、\n分身は体力を -{~} 失う。ただし、\nしきい値を超えて起爆した Trick {#} 1つごとに、\nそれらのダメージ呪文のダメージが {~} 上がる。",
+   "dst": "{c1}入れ替わりで {c3}Tricks {#}{c1} を {c2}{~} 個{c1}より多く起爆された敵がいなければ、\n分身は体力を {c4}-{~}{c1} 失う。ただし、\nしきい値を超えて起爆した {c3}Trick {#}{c1} 1つごとに、\nそれらの{c5}ダメージ呪文{c1}のダメージが {c2}{~}{c1} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "分身の体力は自分の実質体力に比例し、\n分身が生きている間は、\n弱体効果の効き目が2倍になる。",
+   "dst": "{c1}分身の体力は自分の実質体力に比例し、\n分身が生きている間は、\n弱体効果の効き目が{c2}2倍{c1}になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [

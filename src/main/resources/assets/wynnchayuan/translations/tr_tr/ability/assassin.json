@@ -136,7 +136,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "Eşyalardan gelen her {~} ya da {~} Sabit Ana Saldırı Hasarı\niçin +{~}/{~} sn Zehir Hasarı kazan. (En fazla {~}/{~} sn)",
+   "dst": "{c1}Eşyalardan gelen her {c2}{~}{c1} ya da {c2}{~} Sabit{c1} Ana Saldırı Hasarı\niçin {c2}+{~}/{~} sn{c1} Zehir Hasarı kazan. (En fazla {~}/{~} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -232,7 +232,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "Yavaşça duman salan bir bomba atar;\nduman içindeki düşmanlara her {~} sn'de hasar verir.",
+   "dst": "{c1}Yavaşça duman salan bir bomba atar;\nduman içindeki düşmanlara her {c2}{~} sn{c1}'de hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -396,7 +396,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "Multihit'i tek, yıkıcı bir vuruşa çevirir.\nBir düşmana arkadan vurursan\niki kat hasar verir.",
+   "dst": "{c2}Multihit{c1}'i tek, yıkıcı bir vuruşa çevirir.\nBir düşmana arkadan vurursan\n{c3}iki kat{c1} hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -559,7 +559,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "Darbe aldığında bir Ayna Klonu {#} kaybedersin;\ngelen hasar -{~} azalır ve {~} sn boyunca\nhasar bonusu kazanırsın. ({~} sn bekleme süresi)",
+   "dst": "{c1}Darbe aldığında bir {c2}Ayna Klonu {#}{c1} kaybedersin;\ngelen hasar {c3}-{~}{c1} azalır ve {c3}{~} sn{c1} boyunca\nhasar bonusu kazanırsın. {c4}({~} sn bekleme süresi)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -914,7 +914,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "Backstab ile bir düşmana arkadan vurunca\nVanish'in bekleme süresi -{~} sn azalır.",
+   "dst": "{c2}Backstab{c1} ile bir düşmana arkadan vurunca\n{c2}Vanish{c1}'in bekleme süresi {c3}-{~} sn{c1} azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1161,7 +1161,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "Havadayken bir düşmana {~} vuruş isabet ettirmek\nsana +{~} İvme {#} verir. (En fazla {~})",
+   "dst": "{c1}Havadayken bir düşmana {c2}{~} {c1}vuruş isabet ettirmek\nsana {c2}+{~} {c3}İvme {#}{c1} verir. {c4}(En fazla {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1231,7 +1231,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "Tek vuruşta maksimum canının {~} katından\nfazla hasar vermek, bu hasarın {~} kadarını\nyakındaki diğer düşmanlara da verir.",
+   "dst": "{c1}Tek vuruşta maksimum canının {c2}{~} kat{c1}ından\nfazla hasar vermek, bu hasarın {c2}{~}{c1} kadarını\nyakındaki diğer düşmanlara da verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1340,7 +1340,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "İşaretli {#} durumu her {~} sn'de bir azalır.",
+   "dst": "{c1}İşaretli {#}{c2} durumu her {c3}{~} sn{c2}'de bir azalır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1355,7 +1355,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "Smoke Bomb vurduğu düşmanlara +{~} İşaret {#}\nekler. (En fazla {~}, {~} sn Bekleme Süresi)",
+   "dst": "{c1}Smoke Bomb{c2} vurduğu düşmanlara {c3}+{~} {c4}İşaret {#}{c2}\nekler. {c5}(En fazla {~}, {~} sn Bekleme Süresi)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "Last Laugh, Klon {#}{#}{#} türüne göre\ndüşmanlarda belirli sayıda Hile {#} biriktirir.\n(En fazla {~})",
+   "dst": "{c1}Last Laugh{c2}, {c3}Klon {#}{#}{#}{c2} türüne göre\ndüşmanlarda belirli sayıda {c3}Hile {#}{c2} biriktirir.\n{c4}(En fazla {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1547,7 +1547,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "Bir düşmanı öldürünce Hile {#} yığınlarının\n{~} kadarını kurtar. (Yaratık başına en fazla {~}, toplam {~})",
+   "dst": "{c1}Bir düşmanı öldürünce {c3}Hile {#}{c1} yığınlarının\n{c2}{~}{c1} kadarını kurtar. {c4}(Yaratık başına en fazla {~}, toplam {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1589,7 +1589,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "{~}+ İvme {#} ile Swan Dive kullanınca\nyere indikten {~} sn sonra tekrar havaya sıçrarsın.",
+   "dst": "{c3}{~}+ {c4}İvme {#}{c1} ile {c2}Swan Dive{c1} kullanınca\nyere indikten {c3}{~} sn{c1} sonra tekrar havaya sıçrarsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1670,7 +1670,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "Hile {#} ile uygulanan zayıflatmalar, gerekenin\nüstünde patlatılan her ek Hile {#} için\n+{~} sn daha uzun sürer.",
+   "dst": "{c2}Hile {#}{c1} ile uygulanan zayıflatmalar, gerekenin\nüstünde patlatılan her ek {c2}Hile {#}{c1} için\n{c3}+{~} sn{c1} daha uzun sürer.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2153,7 +2153,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "Violent Vortex'in hasarını +{~}\nartırır ve hasar eşiğini maksimum\ncanının {~} katına çıkarır.",
+   "dst": "{c2}Violent Vortex{c1}'in hasarını {c3}+{~}{c1}\nartırır ve hasar eşiğini maksimum\ncanının {c3}{~} kat{c1}ına çıkarır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2507,7 +2507,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "{~} Mana harcadıktan ya da {~} İvme {#} kazandıktan sonra\naltındaki alan çiçeklenir ve üstündeki\ndüşmanlara her {~} sn'de hasar verir.",
+   "dst": "{c2}{~} {c1}Mana harcadıktan ya da {c2}{~} {c3}İvme {#}{c1} kazandıktan sonra\naltındaki alan çiçeklenir ve üstündeki\ndüşmanlara her {c2}{~} sn{c1}'de hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3053,7 +3053,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "Smoke Bomb her {~} sn'de bir toz bulutu\nsalar ve +{~} sn Hipoksi {#} uygular.\n(En fazla {~} sn)",
+   "dst": "{c1}Smoke Bomb{c2} her {c3}{~} sn{c2}'de bir toz bulutu\nsalar ve {c3}+{~} sn {c4}Hipoksi {#}{c2} uygular.\n{c5}(En fazla {~} sn)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3095,7 +3095,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "Gölgeye bürünmüşken yakındaki düşmanlar\nher {~2} sn'de +{~1} İşaret {#} kazanır.",
+   "dst": "{c1}Gölgeye bürünmüşken yakındaki düşmanlar\nher {c2}{~2} sn{c1}'de {c2}+{~1} {c3}İşaret {#}{c1} kazanır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3122,7 +3122,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "Havaya sıçrayıp yere çakıl;\nayaklarının dibinde bir çiçek bahçesi\nfilizlenir ve her {~} sn'de\ndüşmanlara hasar verir.",
+   "dst": "{c1}Havaya sıçrayıp yere çakıl;\nayaklarının dibinde bir çiçek bahçesi\nfilizlenir ve her {c2}{~} sn{c1}'de\ndüşmanlara hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3137,7 +3137,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "Bahçenin üstündeyken İvme {#}\niki kat hızlı dolar ve\n+{~} maksimum yığın kazanır.",
+   "dst": "{c1}Bahçenin üstündeyken {c2}İvme {#}{c1}\n{c3}iki kat{c1} hızlı dolar ve\n{c3}+{~}{c1} maksimum yığın kazanır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3164,7 +3164,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "F'yi tekrar kullanmak yerlerinizi değiştirir,\nyakındaki düşmanlarda Hile {#} patlatır ve\nklonuna tüm uygun Hasar Büyülerini kullandırır.",
+   "dst": "{c2}F{c1}'yi tekrar kullanmak yerlerinizi değiştirir,\nyakındaki düşmanlarda {c3}Hile {#}{c1} patlatır ve\nklonuna tüm uygun {c4}Hasar Büyüleri{c1}ni kullandırır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3194,7 +3194,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "Yer değiştirmede hiçbir düşmanda {~} Hile {#} üstü\npatlamadıysa klon -{~} can kaybeder. Ancak\neşiğin üstünde patlatılan her Hile {#} için\no Hasar Büyüleri {~} daha fazla hasar verir.",
+   "dst": "{c1}Yer değiştirmede hiçbir düşmanda {c2}{~} {c3}Hile {#}{c1} üstü\npatlamadıysa klon {c4}-{~}{c1} can kaybeder. Ancak\neşiğin üstünde patlatılan her {c3}Hile {#}{c1} için\no {c5}Hasar Büyüleri{c1} {c2}{~}{c1} daha fazla hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3209,7 +3209,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "Klonun canı senin etkili canınla\norantılıdır ve klon yaşadığı sürece\nzayıflatmalarının etkisi iki katına çıkar.",
+   "dst": "{c1}Klonun canı senin etkili canınla\norantılıdır ve klon yaşadığı sürece\nzayıflatmalarının etkisi {c2}iki kat{c1}ına çıkar.",
    "role": "desc",
    "kind": "block",
    "ctx": [
