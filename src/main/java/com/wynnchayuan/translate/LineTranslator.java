@@ -5028,7 +5028,7 @@ public final class LineTranslator {
             String hit = labelLookup(joined(runs, k, hi), store);
             if (hit != null && hit.length() < window.length() && window.endsWith(hit)
                     && coversEnds(runs, k, hi, hit)) {
-                int cut = y - hit.length();
+                int cut = claimHead(runs.get(k).text(), hit, dst, x, y - hit.length());
                 alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
                 alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
                 return;
@@ -5038,7 +5038,7 @@ public final class LineTranslator {
             String hit = labelLookup(joined(runs, lo, k), store);
             if (hit != null && hit.length() < window.length() && window.startsWith(hit)
                     && coversEnds(runs, lo, k, hit)) {
-                int cut = x + hit.length();
+                int cut = claimTail(runs.get(k - 1).text(), hit, dst, x + hit.length(), y);
                 alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
                 alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
                 return;
@@ -5150,10 +5150,67 @@ public final class LineTranslator {
         if (hit != null) {
             int found = dst.indexOf(hit, from);
             if (found >= 0 && found + hit.length() <= to) {
-                return new int[] {found, found + hit.length()};
+                return new int[] {claimHead(core, hit, dst, from, found),
+                                  claimTail(core, hit, dst, found + hit.length(), to)};
             }
         }
         return null;
+    }
+
+    /**
+     * 一段原文查到的譯名沒帶著它尾巴的符號時，把譯文裡緊接在後面的同一個符號也認領下來。
+     *
+     * <p>寶箱名牌的原文是「§5Loot Chest [」一段，括號跟名字同色；查表時符號被剝掉
+     * （{@link #lookupWordCore}），查到的譯名只有「戰利品寶箱」。括號於是落在兩個錨點
+     * 之間、一段原文都沒夾到的空檔，誰也不認領，交回一般的上色——簡中剛好猜成紫色，
+     * 繁中猜成白色（使用者 2026-10-21 回報「[」沒上色）。
+     *
+     * @param run 這一段原文
+     * @param hit 它的譯名
+     * @param end 譯名在譯文裡的結尾
+     * @param limit 不能越過的位置
+     * @return 認領之後的結尾；沒有可認領的就是 {@code end}
+     */
+    private static int claimTail(String run, String hit, String dst, int end, int limit) {
+        String core = run.strip();
+        int i = core.length();
+        while (i > 0 && isLabelSymbol(core.charAt(i - 1))) {
+            i--;
+        }
+        String symbols = core.substring(i);
+        if (symbols.isEmpty() || i == 0 || hit.endsWith(symbols)) {
+            return end;
+        }
+        int at = end;
+        while (at < limit && Character.isWhitespace(dst.charAt(at))) {
+            at++;
+        }
+        return at + symbols.length() <= limit && dst.startsWith(symbols, at)
+                ? at + symbols.length() : end;
+    }
+
+    /** {@link #claimTail} 的另一頭：原文開頭的符號（「[Lv. 5] …」那種）。 */
+    private static int claimHead(String run, String hit, String dst, int limit, int start) {
+        String core = run.strip();
+        int i = 0;
+        while (i < core.length() && isLabelSymbol(core.charAt(i))) {
+            i++;
+        }
+        String symbols = core.substring(0, i);
+        if (symbols.isEmpty() || i == core.length() || hit.startsWith(symbols)) {
+            return start;
+        }
+        int at = start;
+        while (at > limit && Character.isWhitespace(dst.charAt(at - 1))) {
+            at--;
+        }
+        return at - symbols.length() >= limit && dst.startsWith(symbols, at - symbols.length())
+                ? at - symbols.length() : start;
+    }
+
+    /** 名牌上的符號：括號、星星這類不是字母數字也不是空白的字元。 */
+    private static boolean isLabelSymbol(char c) {
+        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c);
     }
 
     /**
