@@ -557,6 +557,14 @@ tasks.register('runLabelReplaceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLabelReplaceChecks' }
 
+tasks.register('runNameplateTimerColourChecks', JavaExec) {
+    group = 'verification'
+    description = '名牌狀態列的倒數秒數：逐行組出來的名牌也要照原文那一列的顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameplateTimerColourTest'
+}
+tasks.named('check') { dependsOn 'runNameplateTimerColourChecks' }
+
 tasks.register('runCaptureStoreChecks', JavaExec) {
     group = 'verification'
     description = '驗證 captured.json 只列還沒有譯文的字串'

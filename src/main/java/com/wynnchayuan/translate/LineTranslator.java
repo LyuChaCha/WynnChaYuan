@@ -5826,14 +5826,20 @@ public final class LineTranslator {
                                                  TranslationStore store) {
         List<StyledText> cells = new ArrayList<>(len);
         StringBuilder key = new StringBuilder();
+        List<List<Run>> picked = new ArrayList<>(len);
         for (int k = 0; k < len; k++) {
             int[] at = thread.get(s + k);
             if (made[at[0]][at[1]] != null
                     || (k > 0 && at[0] != thread.get(s + k - 1)[0] + 1)) {
                 return null;
             }
+            picked.add(parsed.get(at[0]).cells().get(at[1]));
+        }
+        // 沒有自己顏色的那幾段先染成句子的散文色，見 #proseColour。
+        Style prose = proseColour(picked);
+        for (int k = 0; k < len; k++) {
             StyledText cell = StyledText.fromComponent(
-                    PanelRow.text(parsed.get(at[0]).cells().get(at[1])));
+                    PanelRow.text(withProse(picked.get(k), prose)));
             cells.add(cell);
             if (k > 0) {
                 key.append('\n');
@@ -5856,6 +5862,78 @@ public final class LineTranslator {
             lines = TextSplit.split(TextSplit.join(lines), len);
         }
         return lines;
+    }
+
+    /**
+     * 併成一句的幾格裡，<b>有自己顏色的散文</b>是什麼顏色；沒有「不帶顏色的段」時回 {@code null}。
+     *
+     * <h2>實機回報（使用者 2026-10-21 的 log）</h2>
+     * 聊天裡的賜福公告，伺服器送來的分段是：
+     *
+     * <pre>
+     *   This time only, immediately          ← 不帶顏色（沿用整則訊息的）
+     *   gain &amp;f+360 Health&amp;7 (Max x8) for     ← 數值與屬性名白、其餘灰
+     *   &amp;7every Curse you currently have       ← 條件句灰
+     * </pre>
+     *
+     * 整句翻出來是「僅此一次：你目前每有一層怪物強化，立即 +360 生命 (最多 x8)」——中文把條件句
+     * 搬到了前面。沒有佔位符夾著的那截字靠整段的主樣式上色（{@link #dominantStyle}），
+     * 而括號註解不投票，「(Max x8) for」整段被當成註解扣掉，灰的只剩條件句那 26 個字，
+     * 輸給開頭不帶顏色的 28 個字——主樣式成了「沒有顏色」，條件句在聊天裡畫成白的。
+     * 選單上的同一段（tooltip）每一段都帶著灰色，沒有這個問題；所以語料加 {@code {cN}}
+     * 也不行，兩邊的顏色編號對不上（tooltip 的屬性名會跟著變色）。
+     *
+     * <p>「不帶顏色」不是一種顏色，是「沿用外面那一層」。拆成幾格重組之後外面那一層
+     * 已經不在了，讓它跟有顏色的散文比字數，等於拿預設色去蓋伺服器明講的顏色。
+     * 所以先把那幾段染成有顏色的散文裡字母最多的那個顏色，再交給 {@link #translateBlock}：
+     * 數值、屬性名照舊靠錨點拿回自己的白色，其餘的字一律是散文的灰。
+     *
+     * <p>只看字母（數字、括號、空白不算），數值本來就由佔位符帶著自己的樣式填回去。
+     */
+    private static Style proseColour(List<List<Run>> cells) {
+        boolean bare = false;
+        java.util.Map<TextColor, Integer> letters = new java.util.LinkedHashMap<>();
+        for (List<Run> cell : cells) {
+            for (Run run : cell) {
+                if (run.space() || !hasContent(run.text())) {
+                    continue;
+                }
+                TextColor colour = run.style().getColor();
+                if (colour == null) {
+                    bare = true;
+                    continue;
+                }
+                int count = (int) run.text().codePoints().filter(Character::isLetter).count();
+                if (count > 0) {
+                    letters.merge(colour, count, Integer::sum);
+                }
+            }
+        }
+        if (!bare) {
+            return null;
+        }
+        TextColor best = null;
+        int most = 0;
+        for (java.util.Map.Entry<TextColor, Integer> e : letters.entrySet()) {
+            if (e.getValue() > most) {
+                most = e.getValue();
+                best = e.getKey();
+            }
+        }
+        return best == null ? null : Style.EMPTY.withColor(best);
+    }
+
+    /** 見 {@link #proseColour}：不帶顏色的實字段染成 {@code prose}；{@code prose} 是 {@code null} 就原樣。 */
+    private static List<Run> withProse(List<Run> cell, Style prose) {
+        if (prose == null) {
+            return cell;
+        }
+        List<Run> out = new ArrayList<>(cell.size());
+        for (Run run : cell) {
+            out.add(run.space() || run.style().getColor() != null ? run
+                    : new Run(false, run.px(), run.style().withColor(prose.getColor()), run.text()));
+        }
+        return out;
     }
 
     /**
@@ -11379,6 +11457,20 @@ public final class LineTranslator {
         int at = 0;
         while (at < core.length() && Character.isDigit(core.charAt(at))) {
             at++;
+        }
+        // 小數與百分比也是數量：賜福的「+2% Loot Quality」「+2.5% Walk Speed」。
+        // 不剝的話屬性名查不到，整句重排過的譯文裡屬性名拿不回原文的顏色（聊天的賜福公告）。
+        if (at > 0) {
+            while (at + 1 < core.length() && (core.charAt(at) == '.' || core.charAt(at) == ',')
+                    && Character.isDigit(core.charAt(at + 1))) {
+                at++;
+                while (at < core.length() && Character.isDigit(core.charAt(at))) {
+                    at++;
+                }
+            }
+            if (at < core.length() && core.charAt(at) == '%') {
+                at++;
+            }
         }
         if (at == 0 || at >= core.length() || core.charAt(at) != ' ') {
             return null;                       // 開頭沒有數量，或整塊都是數字
