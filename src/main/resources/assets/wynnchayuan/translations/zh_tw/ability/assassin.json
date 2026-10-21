@@ -132,7 +132,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "每擁有來自道具的 {~} 或 {~} 點原始普攻傷害，就獲得 +{~}/{~} 秒的毒素傷害。(上限 {~}/{~} 秒)",
+   "dst": "{c1}每擁有來自道具的 {c2}{~}{c1} 或 {c2}{~} 點原始{c1}普攻傷害，就獲得 {c2}+{~}/{~} 秒{c1}的毒素傷害。(上限 {~}/{~} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "投擲一枚會逐漸散發煙霧的炸彈，每 {~} 秒對其中的所有敵人造成傷害。",
+   "dst": "{c1}投擲一枚會逐漸散發煙霧的炸彈，每 {c2}{~} 秒{c1}對其中的所有敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "使 Multihit 變成一次毀滅性的攻擊。從敵人背後攻擊時，傷害加倍。",
+   "dst": "{c1}使 {c2}Multihit{c1} 變成一次毀滅性的攻擊。從敵人背後攻擊時，傷害{c3}加倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "受到攻擊時失去一個 Mirror Clone {#}，使受到的傷害降低 {~}，並在 {~} 秒內獲得傷害加成。({~} 秒冷卻)",
+   "dst": "{c1}受到攻擊時失去一個 {c2}Mirror Clone {#}{c1}，使受到的傷害降低 {c3}{~}{c1}，並在 {c3}{~} 秒{c1}內獲得傷害加成。{c4}({~} 秒冷卻)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "使用 Backstab 從敵人背後命中後，Vanish 的冷卻時間降低 {~} 秒。",
+   "dst": "{c1}使用 {c2}Backstab{c1} 從敵人背後命中後，{c2}Vanish{c1} 的冷卻時間降低 {c3}{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1157,7 +1157,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "在空中對敵人命中 {~} 次後，獲得 +{~} 層 Momentum {#}。(上限 {~} 層)",
+   "dst": "{c1}在空中對敵人命中 {c2}{~} 次{c1}後，獲得 {c2}+{~} 層 {c3}Momentum {#}{c1}。{c4}(上限 {~} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "單次命中造成超過最大生命 {~} 倍的傷害時，會將該傷害的 {~} 傳給附近其他敵人。",
+   "dst": "{c1}單次命中造成超過最大生命 {c2}{~} 倍{c1}的傷害時，會將該傷害的 {c2}{~}{c1} 傳給附近其他敵人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1336,7 +1336,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "Marked {#} 每 {~} 秒衰減一層。",
+   "dst": "{c1}Marked {#}{c2} 每 {c3}{~} 秒{c2}衰減一層。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1351,7 +1351,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "Smoke Bomb 會對命中的敵人額外施加 +{~} 層 Mark {#}。(最多 {~} 層，{~} 秒冷卻)",
+   "dst": "{c1}Smoke Bomb{c2} 會對命中的敵人額外施加 {c3}+{~} 層 {c4}Mark {#}{c2}。{c5}(最多 {~} 層，{~} 秒冷卻)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "Last Laugh 會根據 Clone {#}{#}{#} 的類型，在敵人身上儲存一定數量的 Trick {#}。(上限 {~})",
+   "dst": "{c1}Last Laugh{c2} 會根據 {c3}Clone {#}{#}{#}{c2} 的類型，在敵人身上儲存一定數量的 {c3}Trick {#}{c2}。{c4}(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1543,7 +1543,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "擊殺敵人後，回收其 Trick {#} 的 {~}。(每隻生物最多 {~} 層，總計 {~} 層)",
+   "dst": "{c1}擊殺敵人後，回收其 {c3}Trick {#}{c1} 的 {c2}{~}{c1}。{c4}(每隻生物最多 {~} 層，總計 {~} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "在擁有 {~}+ 層 Momentum {#} 時使用 Swan Dive，你會在落地 {~} 秒後再次躍入空中。",
+   "dst": "{c1}在擁有 {c3}{~}+ 層 {c4}Momentum {#}{c1} 時使用 {c2}Swan Dive{c1}，你會在落地 {c3}{~} 秒{c1}後再次躍入空中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "由 Trick {#} 施加的減益效果，每超過需求引爆一層額外 Trick {#}，持續時間就延長 +{~} 秒。",
+   "dst": "{c1}由 {c2}Trick {#}{c1} 施加的減益效果，每超過需求引爆一層額外 {c2}Trick {#}{c1}，持續時間就延長 {c3}+{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2149,7 +2149,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "提升 Violent Vortex 的傷害 +{~}，並將傷害需求提高至最大生命的 {~} 倍。",
+   "dst": "{c1}提升 {c2}Violent Vortex{c1} 的傷害 {c3}+{~}{c1}，並將傷害需求提高至最大生命的 {c3}{~} 倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2503,7 +2503,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "消耗 {~} 魔力或獲得 {~} 層 Momentum {#} 後，你腳下會綻放一片區域，每 {~} 秒對下方敵人造成傷害。",
+   "dst": "{c1}消耗 {c2}{~} {c1}魔力或獲得 {c2}{~} 層 {c3}Momentum {#}{c1} 後，你腳下會綻放一片區域，每 {c2}{~} 秒{c1}對下方敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "Smoke Bomb 每 {~} 秒釋放一團塵霧，施加持續 +{~} 秒的 Hypoxia {#}。(最多 {~} 秒)",
+   "dst": "{c1}Smoke Bomb{c2} 每 {c3}{~} 秒{c2}釋放一團塵霧，施加持續 {c3}+{~} 秒{c2}的 {c4}Hypoxia {#}{c2}。{c5}(最多 {~} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3091,7 +3091,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "包覆暗影期間，附近敵人每 {~2} 秒會獲得 +{~1} 層 Mark {#}。",
+   "dst": "{c1}包覆暗影期間，附近敵人每 {c2}{~2} 秒{c1}會獲得 {c2}+{~1} 層 {c3}Mark {#}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3118,7 +3118,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "躍入空中後墜回地面，在腳下催生一座花園，每 {~} 秒對敵人造成傷害。",
+   "dst": "{c1}躍入空中後墜回地面，在腳下催生一座花園，每 {c2}{~} 秒{c1}對敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "位於花園上方時，你的 Momentum {#} 累積速度加倍，最大層數提高 +{~}。",
+   "dst": "{c1}位於花園上方時，你的 {c2}Momentum {#}{c1} 累積速度{c3}加倍{c1}，最大層數提高 {c3}+{~}{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3160,7 +3160,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "再次施放 F 會交換你們的位置，引爆附近敵人身上的 Trick {#}，並使你的 Clone 施放所有可用的傷害法術。",
+   "dst": "{c1}再次施放 {c2}F{c1} 會交換你們的位置，引爆附近敵人身上的 {c3}Trick {#}{c1}，並使你的 Clone 施放所有可用的{c4}傷害法術{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "若換位時沒有任何敵人被引爆超過 {~1} 個 Tricks {#}，\n幻象會失去 -{~2} 生命。不過，\n每多引爆一個超過門檻的 Trick {#}，\n那些傷害法術就多造成 {~3} 傷害。",
+   "dst": "{c1}若換位時沒有任何敵人被引爆超過 {c2}{~1} 個 {c3}Tricks {#}{c1}，\n幻象會失去 {c4}-{~2}{c1} 生命。不過，\n每多引爆一個超過門檻的 {c3}Trick {#}{c1}，\n那些{c5}傷害法術{c1}就多造成 {c2}{~3}{c1} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "Clone 的生命值與你的有效生命值成正比；在它存活期間，你的減益效果強度加倍。",
+   "dst": "{c1}Clone 的生命值與你的有效生命值成正比；在它存活期間，你的減益效果強度{c2}加倍{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [

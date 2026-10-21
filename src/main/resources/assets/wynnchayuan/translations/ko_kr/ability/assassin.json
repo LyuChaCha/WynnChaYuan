@@ -132,7 +132,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "아이템의 고정값 기본 공격 피해 {~} 또는 {~}마다\n독 피해 +{~}/{~}초를 얻습니다. (최대 {~}/{~}초)",
+   "dst": "{c1}아이템의 {c2}고정값{c1} 기본 공격 피해 {c2}{~}{c1} 또는 {c2}{~}{c1}마다\n독 피해 {c2}+{~}/{~}초{c1}를 얻습니다. (최대 {~}/{~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
-   "dst": "천천히 연기를 내뿜는 폭탄을 던져\n{~}초마다 안에 있는 모든 적에게 피해를 줍니다.",
+   "dst": "{c1}천천히 연기를 내뿜는 폭탄을 던져\n{c2}{~}초{c1}마다 안에 있는 모든 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -392,7 +392,7 @@
   },
   "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
-   "dst": "Multihit이 강력한 단일 공격으로 바뀝니다.\n적의 뒤에서 공격하면\n피해가 두 배가 됩니다.",
+   "dst": "{c2}Multihit{c1}이 강력한 단일 공격으로 바뀝니다.\n적의 뒤에서 공격하면\n피해가 {c3}두 배{c1}가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
-   "dst": "공격받으면 거울 분신 {#} 하나를 잃고, 받는 피해를\n-{~} 줄이며 {~}초 동안\n피해 보너스를 얻습니다. (재사용 대기시간 {~}초)",
+   "dst": "{c1}공격받으면 {c2}거울 분신 {#}{c1} 하나를 잃고, 받는 피해를\n{c3}-{~}{c1} 줄이며 {c3}{~}초{c1} 동안\n피해 보너스를 얻습니다. {c4}(재사용 대기시간 {~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -910,7 +910,7 @@
   },
   "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
-   "dst": "Backstab으로 적의 뒤를 공격하면\nVanish의 재사용 대기시간이 -{~}초 감소합니다.",
+   "dst": "{c2}Backstab{c1}으로 적의 뒤를 공격하면\n{c2}Vanish{c1}의 재사용 대기시간이 {c3}-{~}초{c1} 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1157,7 +1157,7 @@
   },
   "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
-   "dst": "공중에서 적에게 {~}회 적중하면\n기세 {#}를 +{~} 얻습니다. (최대 {~})",
+   "dst": "{c1}공중에서 적에게 {c2}{~}회{c1} 적중하면\n{c3}기세 {#}{c1}를 {c2}+{~}{c1} 얻습니다. {c4}(최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
-   "dst": "한 번의 타격으로 최대 체력의 {~}배를 넘는\n피해를 주면 그 피해의 {~}를\n주변의 다른 적에게도 줍니다.",
+   "dst": "{c1}한 번의 타격으로 최대 체력의 {c2}{~}배{c1}를 넘는\n피해를 주면 그 피해의 {c2}{~}{c1}를\n주변의 다른 적에게도 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1336,7 +1336,7 @@
   },
   "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
-   "dst": "표식 {#}은 {~}초마다 하나씩 사라집니다.",
+   "dst": "{c1}표식 {#}{c2}은 {c3}{~}초{c2}마다 하나씩 사라집니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1351,7 +1351,7 @@
   },
   "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "Smoke Bomb이 맞힌 적에게 표식 {#}을\n+{~} 더합니다. (최대 {~}, 재사용 대기시간 {~}초)",
+   "dst": "{c1}Smoke Bomb{c2}이 맞힌 적에게 {c4}표식 {#}{c2}을\n{c3}+{~}{c2} 더합니다. {c5}(최대 {~}, 재사용 대기시간 {~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "Last Laugh가 분신 {#}{#}{#}의 종류에 따라\n적에게 속임수 {#}를 일정 수 저장합니다.\n(최대 {~})",
+   "dst": "{c1}Last Laugh{c2}가 {c3}분신 {#}{#}{#}{c2}의 종류에 따라\n적에게 {c3}속임수 {#}{c2}를 일정 수 저장합니다.\n{c4}(최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1543,7 +1543,7 @@
   },
   "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
-   "dst": "적을 처치하면 그 적의 속임수 {#}를\n{~} 회수합니다. (몹당 최대 {~}, 총 {~})",
+   "dst": "{c1}적을 처치하면 그 적의 {c3}속임수 {#}{c1}를\n{c2}{~}{c1} 회수합니다. {c4}(몹당 최대 {~}, 총 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
-   "dst": "기세 {#}가 {~} 이상일 때 Swan Dive를 쓰면\n착지 {~}초 후 다시 공중으로 도약합니다.",
+   "dst": "{c4}기세 {#}{c1}가 {c3}{~} 이상{c1}일 때 {c2}Swan Dive{c1}를 쓰면\n착지 {c3}{~}초{c1} 후 다시 공중으로 도약합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1666,7 +1666,7 @@
   },
   "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
-   "dst": "속임수 {#}로 부여한 약화 효과는 조건보다\n추가로 폭발시킨 속임수 {#} 하나마다\n+{~}초 더 지속됩니다.",
+   "dst": "{c2}속임수 {#}{c1}로 부여한 약화 효과는 조건보다\n추가로 폭발시킨 {c2}속임수 {#}{c1} 하나마다\n{c3}+{~}초{c1} 더 지속됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2149,7 +2149,7 @@
   },
   "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
-   "dst": "Violent Vortex의 피해가\n+{~} 증가하고, 피해 조건이\n최대 체력의 {~}배로 늘어납니다.",
+   "dst": "{c2}Violent Vortex{c1}의 피해가\n{c3}+{~}{c1} 증가하고, 피해 조건이\n최대 체력의 {c3}{~}배{c1}로 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2503,7 +2503,7 @@
   },
   "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
-   "dst": "마나를 {~} 소모하거나 기세 {#}를 {~} 얻으면\n발밑의 영역이 피어나 {~}초마다\n그 위의 적에게 피해를 줍니다.",
+   "dst": "{c1}마나를 {c2}{~}{c1} 소모하거나 {c3}기세 {#}{c1}를 {c2}{~}{c1} 얻으면\n발밑의 영역이 피어나 {c2}{~}초{c1}마다\n그 위의 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
-   "dst": "Smoke Bomb이 {~}초마다 먼지 구름을\n내뿜어 저산소 {#}를 +{~}초 부여합니다.\n(최대 {~}초)",
+   "dst": "{c1}Smoke Bomb{c2}이 {c3}{~}초{c2}마다 먼지 구름을\n내뿜어 {c4}저산소 {#}{c2}를 {c3}+{~}초{c2} 부여합니다.\n{c5}(최대 {~}초)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3091,7 +3091,7 @@
   },
   "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
-   "dst": "몸을 감싼 동안 주변 적이 {~2}초마다\n표식 {#}을 +{~1} 얻습니다.",
+   "dst": "{c1}몸을 감싼 동안 주변 적이 {c2}{~2}초{c1}마다\n{c3}표식 {#}{c1}을 {c2}+{~1}{c1} 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3118,7 +3118,7 @@
   },
   "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
-   "dst": "공중으로 뛰어올랐다가 땅으로\n내리꽂혀 발밑에 꽃밭을\n피워내고, {~}초마다\n적에게 피해를 줍니다.",
+   "dst": "{c1}공중으로 뛰어올랐다가 땅으로\n내리꽂혀 발밑에 꽃밭을\n피워내고, {c2}{~}초{c1}마다\n적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
-   "dst": "정원 위에 있는 동안 기세 {#}가\n두 배 빨리 충전되고\n최대 중첩이 +{~} 증가합니다.",
+   "dst": "{c1}정원 위에 있는 동안 {c2}기세 {#}{c1}가\n{c3}두 배{c1} 빨리 충전되고\n최대 중첩이 {c3}+{~}{c1} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3160,7 +3160,7 @@
   },
   "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
-   "dst": "F를 다시 시전하면 위치를 맞바꾸고,\n주변 적의 속임수 {#}를 폭발시키며,\n분신이 사용 가능한 모든 피해 주문을 시전합니다.",
+   "dst": "{c2}F{c1}를 다시 시전하면 위치를 맞바꾸고,\n주변 적의 {c3}속임수 {#}{c1}를 폭발시키며,\n분신이 사용 가능한 모든 {c4}피해 주문{c1}을 시전합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "맞바꿀 때 속임수 {#}가 {~}개를 넘게 폭발한 적이 없으면\n분신이 체력을 -{~} 잃습니다. 하지만\n기준을 넘어 폭발한 속임수 {#} 하나마다\n그 피해 주문들이 {~} 더 많은 피해를 줍니다.",
+   "dst": "{c1}맞바꿀 때 {c3}속임수 {#}{c1}가 {c2}{~}개{c1}를 넘게 폭발한 적이 없으면\n분신이 체력을 {c4}-{~}{c1} 잃습니다. 하지만\n기준을 넘어 폭발한 {c3}속임수 {#}{c1} 하나마다\n그 {c5}피해 주문{c1}들이 {c2}{~}{c1} 더 많은 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
-   "dst": "분신의 체력은 자신의 유효 체력에\n비례하며, 분신이 살아 있는 동안\n자신이 거는 약화 효과의 효율이 두 배가 됩니다.",
+   "dst": "{c1}분신의 체력은 자신의 유효 체력에\n비례하며, 분신이 살아 있는 동안\n자신이 거는 약화 효과의 효율이 {c2}두 배{c1}가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
