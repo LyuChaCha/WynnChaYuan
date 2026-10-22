@@ -4799,7 +4799,7 @@ public final class LineTranslator {
             translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
         }
         if (translated == null || translated.isBlank()) {
-            translated = labelByLine(parts.template(), store);
+            translated = labelByLine(parts.template(), store, label);
         }
         if (translated == null || translated.isBlank()) {
             // 「某人的力量之井」「某人的鳥」：主人的名字收成 {u}。見 NameFrames。
@@ -5352,33 +5352,93 @@ public final class LineTranslator {
     }
 
     private static String labelByLine(String template, TranslationStore store) {
+        return labelByLine(template, store, null);
+    }
+
+    /**
+     * @param label 原本的漂浮字；有的話，查不到的行會再試一次「夾著別人名字」的句型
+     *              （見 {@link com.wynnchayuan.capture.NameFrames}），一行一行地試
+     */
+    private static String labelByLine(String template, TranslationStore store, StyledText label) {
         if (template.indexOf(NEWLINE) < 0) {
             return null;                       // 單行的話整塊就是那一行，沒有退路可言
         }
         String[] rows = template.split("\n", -1);
-        StringBuilder out = new StringBuilder();
+        StyledText[] styled = label == null ? null : label.split("\n");
+        if (styled != null && styled.length != rows.length) {
+            styled = null;
+        }
+        String[] out = new String[rows.length];
         boolean any = false;
+        // 有一行是「某玩家的東西」時，查不到的行原樣留著——那些是玩家自己寫的字，
+        // 永遠不會進語料：
+        //   - 交易市場的攤位：「X's Shop」底下是攤主打的招牌；
+        //   - 領地的旗幟：「Controlled by <公會> [Lv. N]」底下是公會的稱號。
+        // 照「有一行查不到就整塊放棄」的規則，整塊連認得出來的那幾行都翻不出來——
+        // 實機上只有招牌剛好是一個字母（「e」不算字）的那一攤翻得出來。
+        // 別的漂浮字沒有這種行，照舊整塊放棄。
+        boolean owned = false;
+        boolean missed = false;
         for (int i = 0; i < rows.length; i++) {
-            if (i > 0) {
-                out.append(NEWLINE);
-            }
             String row = rows[i];
             if (!hasWord(row)) {
-                out.append(row);               // 沒有字的行：一個位元都不動
+                out[i] = row;                  // 沒有字的行：一個位元都不動
                 continue;
             }
             String hit = lookup(row, store);
-            if (hit == null || hit.isBlank()) {
-                if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
-                    out.append(statusRow(row, store));   // 狀態列：只換狀態詞，其餘原樣
-                    continue;
+            if (hit != null && !hit.isBlank()) {
+                if (withOwner(row, store) != null) {
+                    owned = true;
                 }
-                return null;                   // 有字卻查不到，整塊放棄
+                out[i] = hit;
+                any = true;
+                continue;
             }
-            out.append(hit);
-            any = true;
+            if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
+                out[i] = statusRow(row, store);   // 狀態列：只換狀態詞，其餘原樣
+                continue;
+            }
+            String framed = styled == null ? null : framedRow(styled[i], row, store);
+            if (framed != null) {
+                owned = true;
+                out[i] = framed;
+                any = true;
+                continue;
+            }
+            out[i] = row;                      // 先原樣放著，最後看要不要整塊放棄
+            missed = true;
         }
-        return any ? out.toString() : null;
+        if (!any || (missed && !owned)) {
+            return null;                       // 有字卻查不到，整塊放棄
+        }
+        return String.join(String.valueOf(NEWLINE), out);
+    }
+
+    /**
+     * 一行「夾著別人名字」的漂浮字：名字收成 {@code {u}} 查語料，譯文裡再把名字填回去。
+     *
+     * <p>名字帶數字的不收：模板裡那些數字已經是 {@code {~}}，名字整段填回去的話，
+     * 數值的個數就對不上了。
+     */
+    private static String framedRow(StyledText row, String template, TranslationStore store) {
+        if (row == null || !LineParts.of(row).template().equals(template)) {
+            return null;
+        }
+        com.wynnchayuan.capture.Broadcasts.Spans spans = store.nameFrames().find(row, template);
+        if (spans == null) {
+            return null;
+        }
+        String name = LineParts.flat(row).substring(spans.userStart(), spans.userEnd());
+        if (name.chars().anyMatch(Character::isDigit)) {
+            return null;
+        }
+        String hit = lookup(LineParts.of(row, spans).template(), store);
+        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
+        if (hit == null || hit.isBlank() || hit.indexOf(user) != hit.lastIndexOf(user)
+                || !hit.contains(user)) {
+            return null;
+        }
+        return hit.replace(user, name);
     }
 
     /**
@@ -5766,14 +5826,20 @@ public final class LineTranslator {
                                                  TranslationStore store) {
         List<StyledText> cells = new ArrayList<>(len);
         StringBuilder key = new StringBuilder();
+        List<List<Run>> picked = new ArrayList<>(len);
         for (int k = 0; k < len; k++) {
             int[] at = thread.get(s + k);
             if (made[at[0]][at[1]] != null
                     || (k > 0 && at[0] != thread.get(s + k - 1)[0] + 1)) {
                 return null;
             }
+            picked.add(parsed.get(at[0]).cells().get(at[1]));
+        }
+        // 沒有自己顏色的那幾段先染成句子的散文色，見 #proseColour。
+        Style prose = proseColour(picked);
+        for (int k = 0; k < len; k++) {
             StyledText cell = StyledText.fromComponent(
-                    PanelRow.text(parsed.get(at[0]).cells().get(at[1])));
+                    PanelRow.text(withProse(picked.get(k), prose)));
             cells.add(cell);
             if (k > 0) {
                 key.append('\n');
@@ -5796,6 +5862,78 @@ public final class LineTranslator {
             lines = TextSplit.split(TextSplit.join(lines), len);
         }
         return lines;
+    }
+
+    /**
+     * 併成一句的幾格裡，<b>有自己顏色的散文</b>是什麼顏色；沒有「不帶顏色的段」時回 {@code null}。
+     *
+     * <h2>實機回報（使用者 2026-10-21 的 log）</h2>
+     * 聊天裡的賜福公告，伺服器送來的分段是：
+     *
+     * <pre>
+     *   This time only, immediately          ← 不帶顏色（沿用整則訊息的）
+     *   gain &amp;f+360 Health&amp;7 (Max x8) for     ← 數值與屬性名白、其餘灰
+     *   &amp;7every Curse you currently have       ← 條件句灰
+     * </pre>
+     *
+     * 整句翻出來是「僅此一次：你目前每有一層怪物強化，立即 +360 生命 (最多 x8)」——中文把條件句
+     * 搬到了前面。沒有佔位符夾著的那截字靠整段的主樣式上色（{@link #dominantStyle}），
+     * 而括號註解不投票，「(Max x8) for」整段被當成註解扣掉，灰的只剩條件句那 26 個字，
+     * 輸給開頭不帶顏色的 28 個字——主樣式成了「沒有顏色」，條件句在聊天裡畫成白的。
+     * 選單上的同一段（tooltip）每一段都帶著灰色，沒有這個問題；所以語料加 {@code {cN}}
+     * 也不行，兩邊的顏色編號對不上（tooltip 的屬性名會跟著變色）。
+     *
+     * <p>「不帶顏色」不是一種顏色，是「沿用外面那一層」。拆成幾格重組之後外面那一層
+     * 已經不在了，讓它跟有顏色的散文比字數，等於拿預設色去蓋伺服器明講的顏色。
+     * 所以先把那幾段染成有顏色的散文裡字母最多的那個顏色，再交給 {@link #translateBlock}：
+     * 數值、屬性名照舊靠錨點拿回自己的白色，其餘的字一律是散文的灰。
+     *
+     * <p>只看字母（數字、括號、空白不算），數值本來就由佔位符帶著自己的樣式填回去。
+     */
+    private static Style proseColour(List<List<Run>> cells) {
+        boolean bare = false;
+        java.util.Map<TextColor, Integer> letters = new java.util.LinkedHashMap<>();
+        for (List<Run> cell : cells) {
+            for (Run run : cell) {
+                if (run.space() || !hasContent(run.text())) {
+                    continue;
+                }
+                TextColor colour = run.style().getColor();
+                if (colour == null) {
+                    bare = true;
+                    continue;
+                }
+                int count = (int) run.text().codePoints().filter(Character::isLetter).count();
+                if (count > 0) {
+                    letters.merge(colour, count, Integer::sum);
+                }
+            }
+        }
+        if (!bare) {
+            return null;
+        }
+        TextColor best = null;
+        int most = 0;
+        for (java.util.Map.Entry<TextColor, Integer> e : letters.entrySet()) {
+            if (e.getValue() > most) {
+                most = e.getValue();
+                best = e.getKey();
+            }
+        }
+        return best == null ? null : Style.EMPTY.withColor(best);
+    }
+
+    /** 見 {@link #proseColour}：不帶顏色的實字段染成 {@code prose}；{@code prose} 是 {@code null} 就原樣。 */
+    private static List<Run> withProse(List<Run> cell, Style prose) {
+        if (prose == null) {
+            return cell;
+        }
+        List<Run> out = new ArrayList<>(cell.size());
+        for (Run run : cell) {
+            out.add(run.space() || run.style().getColor() != null ? run
+                    : new Run(false, run.px(), run.style().withColor(prose.getColor()), run.text()));
+        }
+        return out;
     }
 
     /**
@@ -11319,6 +11457,20 @@ public final class LineTranslator {
         int at = 0;
         while (at < core.length() && Character.isDigit(core.charAt(at))) {
             at++;
+        }
+        // 小數與百分比也是數量：賜福的「+2% Loot Quality」「+2.5% Walk Speed」。
+        // 不剝的話屬性名查不到，整句重排過的譯文裡屬性名拿不回原文的顏色（聊天的賜福公告）。
+        if (at > 0) {
+            while (at + 1 < core.length() && (core.charAt(at) == '.' || core.charAt(at) == ',')
+                    && Character.isDigit(core.charAt(at + 1))) {
+                at++;
+                while (at < core.length() && Character.isDigit(core.charAt(at))) {
+                    at++;
+                }
+            }
+            if (at < core.length() && core.charAt(at) == '%') {
+                at++;
+            }
         }
         if (at == 0 || at >= core.length() || core.charAt(at) != ' ') {
             return null;                       // 開頭沒有數量，或整塊都是數字

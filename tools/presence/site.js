@@ -4170,7 +4170,10 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   whoami.then(function (me) {
     if (!me) {
       document.getElementById('out').hidden = false;
-      document.getElementById('oauth-error').hidden = !/e=discord$/.test(location.hash);
+      var oauthFail = /e=discord(?:&r=([a-z0-9_-]{1,60}))?$/.exec(location.hash);
+      var oauthError = document.getElementById('oauth-error');
+      oauthError.hidden = !oauthFail;
+      if (oauthFail && oauthFail[1]) oauthError.textContent += ' (' + oauthFail[1] + ')';
       discordOn.then(function (on) {
         document.getElementById('discord').hidden = !on;
         document.getElementById('discord-off').hidden = on;
