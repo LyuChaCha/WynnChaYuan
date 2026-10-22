@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23693,
-  "translated": 23690,
+  "count": 23697,
+  "translated": 23694,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -232441,7 +232441,7 @@
    "source": "wiki"
   },
   "Undersupply#004": {
-   "src": "The dam opens up every month or so to let out some water for us, but is passes through a noble manor, past the hill, rationed out to the rest of the forest.",
+   "src": "The dam opens up every month or so to let out some water for us, but it passes through a noble manor, past the hill, rationed out to the rest of the forest.",
    "dst": "水坝大约每个月开一次，放些水给我们，可是水会先流过山丘另一边的一座贵族庄园，再配给到森林的其他地方。",
    "role": "desc",
    "kind": "dialogue",
@@ -232871,7 +232871,7 @@
    "source": "wiki"
   },
   "Undersupply#057": {
-   "src": "Ohh... I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
+   "src": "Ohh...I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
    "dst": "噢……我明白了！是当地人派你来的。那么，就让我来为你解释一下。你看，王室委托我们管理水坝供应的水。",
    "role": "desc",
    "kind": "dialogue",
@@ -232981,7 +232981,7 @@
    "source": "wiki"
   },
   "Undersupply#068": {
-   "src": "Hahaha!! There is wisdom I have known from you for so long! What a magnificient idea! It would not be without risk for you, traveler, but we all stand to gain!",
+   "src": "Hahaha!! There is that wisdom I have known from you for so long! What a magnificent idea! It would not be without risk for you, traveler, but we all stand to gain!",
    "dst": "哈哈哈！！这正是我认识你这么多年来一直见识到的智慧！多么绝妙的主意！旅人，这对你来说不是没有风险，但我们大家都会得益！",
    "role": "desc",
    "kind": "dialogue",
@@ -233499,6 +233499,46 @@
    "stage": "Stage 5",
    "speaker": "Butler Hayn",
    "source": "wiki"
+  },
+  "Undersupply#125": {
+   "src": "It seems like an issue is plaguing the villagers. Try asking around to see what you can do.",
+   "dst": "村民们似乎正被某个问题困扰着。四处问问看，看你能帮上什么忙。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#126": {
+   "src": "Come with me...",
+   "dst": "请随我来……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Undersupply",
+   "stage": "Stage 3",
+   "speaker": "Butler Hayn",
+   "source": "captured.json"
+  },
+  "Undersupply#127": {
+   "src": "The water should be active now. You should return back into the dam.",
+   "dst": "水现在应该已经流动了。你该回到水坝里面去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#128": {
+   "src": "The water is flowing again. You should follow it to see where it goes.",
+   "dst": "水又开始流动了。你该顺着水流，看看它流到哪里去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Underwater#000": {
    "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
