@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Undersupply",
-  "count": 110,
-  "translated": 110,
+  "count": 114,
+  "translated": 114,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -51,7 +51,7 @@
    "source": "wiki"
   },
   "Undersupply#004": {
-   "src": "The dam opens up every month or so to let out some water for us, but is passes through a noble manor, past the hill, rationed out to the rest of the forest.",
+   "src": "The dam opens up every month or so to let out some water for us, but it passes through a noble manor, past the hill, rationed out to the rest of the forest.",
    "dst": "La presa se abre cada mes más o menos para soltarnos algo de agua, pero pasa por una mansión noble tras la colina y la reparten al resto del bosque.",
    "role": "desc",
    "kind": "dialogue",
@@ -481,7 +481,7 @@
    "source": "wiki"
   },
   "Undersupply#057": {
-   "src": "Ohh... I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
+   "src": "Ohh...I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
    "dst": "Ooh... ¡Ya veo! Le envían los lugareños. Entonces, permítame que le ilustre. Verá, la Corona nos ha confiado gestionar el agua que sale de la presa.",
    "role": "desc",
    "kind": "dialogue",
@@ -591,7 +591,7 @@
    "source": "wiki"
   },
   "Undersupply#068": {
-   "src": "Hahaha!! There is wisdom I have known from you for so long! What a magnificient idea! It would not be without risk for you, traveler, but we all stand to gain!",
+   "src": "Hahaha!! There is that wisdom I have known from you for so long! What a magnificent idea! It would not be without risk for you, traveler, but we all stand to gain!",
    "dst": "¡¡Jajaja!! ¡Esa es la sabiduría que le conozco desde hace tanto! ¡Qué idea tan magnífica! No será sin riesgo para usted, viajero, ¡pero todos saldremos ganando!",
    "role": "desc",
    "kind": "dialogue",
@@ -1109,6 +1109,46 @@
    "stage": "Stage 5",
    "speaker": "Butler Hayn",
    "source": "wiki"
+  },
+  "Undersupply#125": {
+   "src": "It seems like an issue is plaguing the villagers. Try asking around to see what you can do.",
+   "dst": "Parece que algún problema aflige a los aldeanos. Pregunta por ahí a ver qué puedes hacer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#126": {
+   "src": "Come with me...",
+   "dst": "Venga conmigo...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Undersupply",
+   "stage": "Stage 3",
+   "speaker": "Butler Hayn",
+   "source": "captured.json"
+  },
+  "Undersupply#127": {
+   "src": "The water should be active now. You should return back into the dam.",
+   "dst": "El agua ya debería estar en marcha. Deberías volver a entrar en la presa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#128": {
+   "src": "The water is flowing again. You should follow it to see where it goes.",
+   "dst": "El agua vuelve a fluir. Deberías seguirla para ver adónde va.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

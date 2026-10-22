@@ -392,6 +392,14 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static void loadLayers() {
         translations.setNameMode(config.itemNames());
         translations.setPageNameMode(config.pageNames());
+        // 總開關關著：譯文一條都不載，所有查表都落空，畫面上就是原文。
+        // loadAll 會把世代往前推，各處的快取（tooltip、Wynntils、Wynnventory）下一幀
+        // 自己重查——跟切換語言走的是同一套，不必另外通知誰。
+        if (!config.translationsEnabled()) {
+            translations.loadAll(java.util.List.of());
+            com.wynnchayuan.capture.UnappliedAudit.clear();
+            return;
+        }
         java.util.List<Path> layers = new java.util.ArrayList<>();
         String under = fallbackLanguage();
         if (under != null) {
