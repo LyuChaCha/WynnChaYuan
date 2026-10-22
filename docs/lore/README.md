@@ -73,7 +73,10 @@
 | Wars of the Cousins | 表親之戰 | 語料無；第三、七章 | 堂親之戰（第二章） |
 | Marika the Admired | 「受愛戴的」Marika | 語料無；第三章 | 受景仰的 Marika（第二章） |
 | Skyraider(s) | 天空劫掠者 | 語料 npc.json、discovery.json | 正文留 Skyraider（第三章） |
-| Changeling | 換形者 | GLOSSARY、Fruma 任務語料 | 變形者（第三章） |
+| Changeling | 換形者 | GLOSSARY、Fruma 任務語料；簡中「易形者」**已定案（使用者 10-22）** | 變形者（第三章） |
+| The Order of the Grook | Grook 魔法學院（句中可作「學院」） | 任務名；**已定案（使用者 10-22）**，台詞不寫「Grook 修會」 | Grook 修會（第四章） |
+| Ranger of the Mistwoods | 巡林官（`the Ranger {p}`＝{p} 巡林官） | **已定案（使用者 10-22）**，取代「遊俠」 | 霧林遊俠、遊俠（第六章） |
+| Ozoth 的代名詞 | 她 | 原文是 she；**已定案（使用者 10-22）**：有明確性別的角色照原文，是 GLOSSARY「生物用他」的例外 | 他（《Thanos 儲藏庫》語料） |
 | Ice Drake | 冰亞龍 | 語料《臨界點》#199 | 冰龍（第三章） |
 | Annihilation | 湮滅 | 語料 misc.json、npc.json（世界事件名另作「毀滅前奏」） | 正文留原文（第一章） |
 | Silent Expanse | （留原文） | 語料 | 寂靜之境（第四章） |
@@ -130,13 +133,13 @@
 | 18 | [Gavellian Spell] | 《無頭歷史》#137 | 留英文，其他任務都是「[Gavel 語咒文]」 | 補譯<br>**已處理（#1373）：#137 補譯** |
 | 19 | Lexdale Witch Trials | quest-name.json vs 《Lexdale 巫女審判》#000 | 「巫女審判」vs「女巫審判」 | 擇一（獵巫語境「女巫」較貼切）<br>**已處理（#1373）：統一為「女巫審判」（quest-name 與 misc 兩條）** |
 | 20 | Gerten War | 《Gerts 大饑荒 第一部》#004 | 「Gert 戰爭」，探索點作「Gerten 戰爭」 | 統一<br>**已處理（#1373）：統一為「Gerten 戰爭」；簡中、ja、ru、es、tr 同步** |
-| 21 | Ozoth 的代名詞 | 《Thanos 儲藏庫》#046 vs 《臨界點》 | 原文 her；前者照 GLOSSARY 生物用「他」，後者用「她」 | 決定有性別的角色是否例外<br>**不改：要使用者決定有性別的角色是否為 GLOSSARY「生物用他」的例外** |
+| 21 | Ozoth 的代名詞 | 《Thanos 儲藏庫》#046 vs 《臨界點》 | 原文 her；前者照 GLOSSARY 生物用「他」，後者用「她」 | 決定有性別的角色是否例外<br>**不改：要使用者決定有性別的角色是否為 GLOSSARY「生物用他」的例外**<br>**已定案（使用者 10-22）：有明確性別的角色照原文，Ozoth 用「她」；《Thanos 儲藏庫》繁中 7 句、簡中 3 句（原文寫 it 的也一起）改「她」，GLOSSARY 加了例外** |
 | 22 | Skyraider | 《王位試煉》#000、#003、#008、#009 等；ingredient.json #0768 | 台詞留英文；素材名「空襲者錢幣」；npc／discovery 作「天空劫掠者」 | 統一為「天空劫掠者」<br>**已處理（#1373）：任務對話、素材、探索點統一為「天空劫掠者」（簡中原作「空袭者」一併改）；tr 的素材與望遠鏡照名牌；tr 任務對話仍留英文** |
 | 23 | WynnExcavation Site | 《WynnExcavation C 號遺址》#003、#035 等 | 任務名「C 號遺址」，任務內作「C 據點」「Wynn Excavation」 | 統一<br>**已處理（#1373）：任務內提到的地點統一照任務名「X 號遺址」（簡中「X 号发掘点」）；「發現地區」那行的地區名照慣例留英文** |
 | 24 | Keepers | 《峽谷兀鷲》#004 | 「守護者之一」，與峽谷巨像的 Guardian（守護者）撞詞 | 改「守秘人」之類<br>**已處理（#1373）：改「守秘人」（繁簡）** |
-| 25 | Gravel | 《將軍下令》#082–083 | 冒牌將軍把 Gavel 說成 Gravel，語料留英文，中文讀者看不出破綻 | 決定是否在地化（見第三章）<br>**不改：地名照慣例留英文，Gravel／Gavel 的拼字差異在畫面上看得出來** |
+| 25 | Gravel | 《將軍下令》#082–083 | 冒牌將軍把 Gavel 說成 Gravel，語料留英文，中文讀者看不出破綻 | 決定是否在地化（見第三章）<br>**不改：地名照慣例留英文，Gravel／Gavel 的拼字差異在畫面上看得出來**<br>**已定案（使用者 10-22）：繁簡改成冒牌貨把家鄉叫成「碎石」（「我們叫它碎石！」「碎石？……那叫 Gavel！」），接下一句書上說的「易碎」；其他語言留 Gravel（拉丁字母看得出拼錯）** |
 | 26 | electromagic | 《使者 第二部》#097；discovery.json（Corkus City 說明）；電池素材 | 留英文／「電磁魔法」／「魔電」，任務多作「電魔法」 | 統一為「電魔法」<br>**已處理（#1373）：統一為「電魔法」（簡中「电魔法」，含原作「魔電」的電池）** |
-| 27 | The Order of the Grook | quest-name.json vs 《Grook 魔法學院》#091 | 任務名「Grook 魔法學院」、台詞「Grook 修會」 | 任務名是意譯，確認兩者並存可不可以<br>**不改：任務名是意譯，台詞裡的「Grook 修會」是組織名，兩者並存** |
+| 27 | The Order of the Grook | quest-name.json vs 《Grook 魔法學院》#091 | 任務名「Grook 魔法學院」、台詞「Grook 修會」 | 任務名是意譯，確認兩者並存可不可以<br>**不改：任務名是意譯，台詞裡的「Grook 修會」是組織名，兩者並存**<br>**已定案（使用者 10-22）：一律「學院」，#091 改「Grook 魔法學院」；簡中原本就是「学院」，其他語言任務名與台詞本來一致** |
 | 28 | Ice Drake | 《矮人與 Doguns 第三部》#052；《谷底買賣》#039–048；《臨界點》#199、#202；discovery.json | 留英文／「冰亞龍」／「冰龍」並存 | 統一為「冰亞龍」<br>**已處理（#1373）：生物改「冰亞龍」；任務道具 [Ice Drake Scales] 照任務道具慣例留英文；簡中「冰飞龙」統一為「冰龙」** |
 | 29 | genocide | 《矮人與 Doguns 第一部》#148、第二部 #076；discovery.json | 「屠殺」／「滅族」／「種族滅絕」 | 統一<br>**已處理（#1373）：統一為「種族滅絕」（簡中「种族灭绝」）** |
 | 30 | Mo'in | 《使者 第一部》#004 等 vs 《使者 第二部》#050、#072、#093、#096 | 前者譯「早啊」，後者留原文 | 統一<br>**已處理（#1373）：統一為「早啊」（含 npc.json 的 Legendary Island 三句；簡中同）** |
@@ -147,8 +150,8 @@
 | 35 | Hunted Mode | quest-ui.json、gui.json、misc.json | 「Hunted 模式」／「被獵殺模式」／未譯 | 統一<br>**已處理（#1373）：統一為「Hunted 模式」（繁簡）** |
 | 36 | Void Hole | ingredient.json #0208 | 「緻密虛空孔洞塊」，任務與討伐戰作「虛空洞」 | 統一<br>**已處理（#1373）：素材改「緻密虛空洞塊」；《逐深之旅》的 Void Hole 補譯「虛空洞」；簡中探索點同** |
 | 37 | Greater One | npc.json vs label.json | 「至大者」vs「衰弱的偉大存在」 | 統一<br>**已處理（#1373）：label 改「衰弱的至大者」（繁簡）** |
-| 38 | changeling | discovery.json〈光與影〉〈初代 Wicker 的火花〉；gear-armour.json #0699 | 「變形者」／「換生靈胸甲」，GLOSSARY 是「換形者」；〈光與影〉還留了 Sovereign Gikyo 原文 | 統一為「換形者」<br>**已處理（#1373）：繁中探索點三條改「換形者」、Sovereign Gikyo 改「統領 Gikyo」；簡中的 Changeling 譯法另待使用者決定** |
-| 39 | Ranger of the Mistwoods | 《真面目》等 | 「{p} 遊俠」；第六章提議的「巡林官」需全域一起改 | 待決定<br>**不改：待決定（需全域一起改）** |
+| 38 | changeling | discovery.json〈光與影〉〈初代 Wicker 的火花〉；gear-armour.json #0699 | 「變形者」／「換生靈胸甲」，GLOSSARY 是「換形者」；〈光與影〉還留了 Sovereign Gikyo 原文 | 統一為「換形者」<br>**已處理（#1373）：繁中探索點三條改「換形者」、Sovereign Gikyo 改「統領 Gikyo」；簡中的 Changeling 譯法另待使用者決定**<br>**已定案（使用者 10-22）：簡中統一「易形者」（「变形者」「换形者」7 句改掉，含探索點、《羈絆成灰》《真面目》）** |
+| 39 | Ranger of the Mistwoods | 《真面目》等 | 「{p} 遊俠」；第六章提議的「巡林官」需全域一起改 | 待決定<br>**不改：待決定（需全域一起改）**<br>**已定案（使用者 10-22）：一律「巡林官」（簡中同）；《真面目》#363 與《希望的合奏》#538 繁簡各 2 句。怪物名牌的 `{p} Ranger` 看不出是不是這個頭銜，沒動** |
 
 ### 五、語意值得再斟酌
 

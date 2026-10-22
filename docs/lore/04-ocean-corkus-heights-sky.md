@@ -63,7 +63,7 @@ Wynn 與 Gavel 之間隔著一片比 Wynn 本土還大的海。一千年來這�
 - **腐敗**：腐敗課老師坦承對它幾乎一無所知，只知道它靠「根」擴散、受重傷的生物（包括死者）最容易被腐敗，以及強大的冰系魔法能阻止它（指 Nesaak 一帶）。
 - **宇宙物質與虛空**：隕石會讓長期接觸的研究者發瘋；材料課老師說「虛空的樣本」最讓他感興趣。
 
-> 譯名注意：任務名語料譯「Grook 魔法學院」，但校長台詞裡的 *the Order of the Grook* 譯成「Grook 修會」。兩者指同一個組織，之後若要統一需先討論。校長的 *old hats*（老手）同時影射分類帽（Sorting Hat），中文的「老手」保不住這層。
+> 譯名注意：任務名語料譯「Grook 魔法學院」，但校長台詞裡的 *the Order of the Grook* 原本譯成「Grook 修會」。兩者指同一個組織，**已定案（使用者 10-22）**：一律用「學院」，台詞也改成「Grook 魔法學院」。校長的 *old hats*（老手）同時影射分類帽（Sorting Hat），中文的「老手」保不住這層。
 
 出處：任務《Grook 魔法學院》；wiki〈[The Order of the Grook](https://wynncraft.wiki.gg/wiki/The_Order_of_the_Grook)〉、〈[Subterranean Creation](https://wynncraft.wiki.gg/wiki/Subterranean_Creation)〉
 
@@ -485,7 +485,7 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 
 ### 海洋的彩蛋
 
-wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀有馬鈴薯的 Potato Island、中央島上有神祕石板的 Isles of Fiction，以及有傳送門的 Gateway Island（〈美妙旅程〉的舞台）。另外，〈Grook 魔法學院〉的大廳右側有一顆像書的頭像，右鍵後書櫃會排成跑酷路線；跑到盡頭點亮蠟燭，樓梯間那扇緊閉的大門就會打開，裡面是一間牢房。第二輪補讀 wiki〈The Order of the Grook〉，牢裡的研究筆記大意是（本章改寫，語料未收）：「不不不不不。Eldritch 實驗就此中止。經過兩個月的測試，我們得出結論：這些生物比我們以前碰過的任何東西都強得多。Silent Expanse 確實與 Dern——黑暗之地——相連。有一個實驗體愈來愈具攻擊性，我們決定處決它，卻失敗了：修會傷不了它分毫，全校沒有任何魔法對它有用。這些生物不是拿來研究的。黑暗之地『絕對』不可以探索；要是 Dern 的生物入侵，我們毫無希望。」那隻「被遺忘的 Dern 實驗體」至今還在當年做實驗的房間裡徘徊（wiki 說造型取自《Olm 符文》裡的 Crawling Death）。換句話說，Grook 修會（學院本身，不一定等於法師議會）早就知道 Silent Expanse 的真相，而且怕到把它鎖起來。這跟第五章 Aledar 說的「任務簡報裡就寫了」很像，都是「上層早就知道」（對照屬推測）。
+wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀有馬鈴薯的 Potato Island、中央島上有神祕石板的 Isles of Fiction，以及有傳送門的 Gateway Island（〈美妙旅程〉的舞台）。另外，〈Grook 魔法學院〉的大廳右側有一顆像書的頭像，右鍵後書櫃會排成跑酷路線；跑到盡頭點亮蠟燭，樓梯間那扇緊閉的大門就會打開，裡面是一間牢房。第二輪補讀 wiki〈The Order of the Grook〉，牢裡的研究筆記大意是（本章改寫，語料未收）：「不不不不不。Eldritch 實驗就此中止。經過兩個月的測試，我們得出結論：這些生物比我們以前碰過的任何東西都強得多。Silent Expanse 確實與 Dern——黑暗之地——相連。有一個實驗體愈來愈具攻擊性，我們決定處決它，卻失敗了：學院傷不了它分毫，全校沒有任何魔法對它有用。這些生物不是拿來研究的。黑暗之地『絕對』不可以探索；要是 Dern 的生物入侵，我們毫無希望。」那隻「被遺忘的 Dern 實驗體」至今還在當年做實驗的房間裡徘徊（wiki 說造型取自《Olm 符文》裡的 Crawling Death）。換句話說，Grook 魔法學院（學院本身，不一定等於法師議會）早就知道 Silent Expanse 的真相，而且怕到把它鎖起來。這跟第五章 Aledar 說的「任務簡報裡就寫了」很像，都是「上層早就知道」（對照屬推測）。
 
 出處：祕密故事《Maex 黑市》《天空的統治者》；wiki 各探索點頁（見出處清單）
 
@@ -526,7 +526,7 @@ wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀�
 | 原文 | 語料裡的寫法 |
 |---|---|
 | Skyraider | 天空劫掠者／Skyraider（〈王位試煉〉台詞）／空襲者（Skyraider Coin） |
-| The Order of the Grook | Grook 魔法學院（任務名）／Grook 修會（台詞） |
+| The Order of the Grook | Grook 魔法學院（任務名與台詞一律「學院」，已定案（使用者 10-22）） |
 | electromagic | 電魔法（任務台詞）／電磁魔法（探索點）／魔電（Electromagical Battery） |
 | Ice Drake | 冰龍／冰亞龍／Ice Drake（留原文） |
 | genocide（Dogun genocide） | 種族滅絕／大屠殺 |

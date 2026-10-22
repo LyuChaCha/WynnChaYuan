@@ -234,7 +234,7 @@ Majin 說「我確實沒有留著他們的必要」，任由 Sui 趁玩家在城
 | Zhiraok Nasin | Auburn 統領，「永動之風」 | 講話全是數學詞；真心照顧 Auburn；Syndra 的友人與上司；最後抗命 | Auburn 與 Roughworks 各任務、《神化》 |
 | Majin Thalas | Highlands 統領、軍隊元帥，「晨星」 | 傲慢但實力真實；自學魔法；被玩家擊殺 | 《女王的新兵》《絕望的序曲》《神化》 |
 | Soosu | 工業區統領，帶來工業紀元的天才 | 祝福是塑造物質；為女王修共鳴織機；被懲罰「不准卸任」；放走主角群、補水壩 | 《巧思的代價》《變革迴響》《神化》 |
-| Gikyo | Mistwoods 統領兼「遊俠」，換形者 | 訓練換形者間諜；虐殺 Mora；被 Sui 殺死 | 《真面目》 |
+| Gikyo | Mistwoods 統領兼「巡林官」，換形者 | 訓練換形者間諜；虐殺 Mora；被 Sui 殺死 | 《真面目》 |
 | Syndra | 風中之葉首領；前羽翼、憲兵，代號「母獅」 | 被「忠誠測試」毀掉人生；刺殺女王失敗被處決 | 第二、三章，《遺失的那一塊》 |
 | Mora | Syndra 的副手，Sui 的哥哥 | 曾從軍；被 Gikyo 虐殺至死 | 第二～四章 |
 | Sui | 醫護兼廚師，天生的水系受詛者 | 從害怕自己到「天生的織法者」；以冰擋下洪水 | 全線 |
@@ -304,7 +304,7 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 - **分裂的家族**（Nasin 家宅）：按年代排好家族史、找齊鑰匙，讀到 Gale Nasin 被燒過的日記：十四歲被送進大學準備當統領，被 House Thalas 的 Majin 一路欺負，越來越懷疑王室對外界的說法，「我知道外面有一整個世界！」日記最後一句是「明天就畢業了，撐過去，然後再也不要想這些」；wiki〈Timeline〉記載她最後沒有畢業就離開了（823 AP），Nasin 家因此失去大半聲望。這是《女王的新兵》Majin 那句「就像又在跟她說話……一個傻乎乎的 Nasin」的來由。
 - **沉沒的紀念碑**（Lake Gitephe）：集齊三顆盤石開門，湖底洞穴裡是一尊有翼巨蛇像，碑文是舊文字 Tahkashtel。說明寫道：女王聲稱她到來前 Fruma 一片混亂，「然而這片土地上曾經有過另一種繁盛的文化」。Lake Gitephe 是水壩淹出來的湖——對照女王那句「埋掉他們的紀念碑、抹去他們的神」，這尊像很可能就是被淹掉的舊神之一（推測）。
 - **埋藏的記錄**（Nasin 家宅後方）：冰封河道下的舊文明工坊。「Nii、Az、Tol、Uth、Ek。這些力量之詞曾在 Fruma 舉足輕重，如今含義已然失傳。」途中的石碑面向 Wynn，上面同時刻著現代 Wynn 文和 Tahkashtel。
-- **皇家大學的圖書館**（Aelumia）：解數織圖拿到借閱證。大廳掛著歷任統領肖像——**唯獨沒有 Two**；Oru 的肖像蓋著布，掀開是一張貓照片（wiki 冷知識）。藏書包括王室軍制、Mistwoods 史（知識紀元 97 年封閉該區、設「霧林遊俠」一職）、Pestal 教授的動物圖鑑。
+- **皇家大學的圖書館**（Aelumia）：解數織圖拿到借閱證。大廳掛著歷任統領肖像——**唯獨沒有 Two**；Oru 的肖像蓋著布，掀開是一張貓照片（wiki 冷知識）。藏書包括王室軍制、Mistwoods 史（知識紀元 97 年封閉該區、設「霧林巡林官」一職）、Pestal 教授的動物圖鑑。
 
 出處：wiki〈[Secret Discoveries](https://wynncraft.wiki.gg/wiki/Secret_Discoveries)〉及各探索點頁面（見出處清單）；語料 `discovery.json`、`secret/solace-in-pain.json`、`secret/a-croaking-cryptid.json`
 
@@ -321,7 +321,7 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 | Industrees | 工業樹 | 探索點〈巨型汲液塔〉 |
 | Four Virtuous Trees | 四棵德行之樹 | Aldwell 圖書館 |
 | Tahkashtel | 留原文 | 舊 Fruma 文字 |
-| Ranger of the Mistwoods | 霧林遊俠 | 語料把 Gikyo 的 `the Ranger {p}` 譯成「{p} 遊俠」；若改成官職感更重的「巡林官」需全域一起改，**待決定** |
+| Ranger of the Mistwoods | 霧林巡林官 | Gikyo 的頭銜；`the Ranger {p}`＝「{p} 巡林官」（簡中同）。原本譯「遊俠」，**已定案（使用者 10-22）**改「巡林官」，語料已全域改過 |
 | Ritual mask | 儀式面具 | |
 | Project Hallowground | Hallowground 計畫 | 照語料（《真面目》#064 櫃子標籤） |
 | Polymorph | （留原文） | Hallowground 文件對換形者的稱呼 |
