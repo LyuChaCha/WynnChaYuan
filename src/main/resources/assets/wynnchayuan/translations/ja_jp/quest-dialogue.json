@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23795,
-  "translated": 23502,
+  "count": 23840,
+  "translated": 23837,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -207,7 +207,7 @@
   },
   "A Headless History#000": {
    "src": "These crates contain equipment made for exploring, but nothing suspicious.",
-   "dst": "",
+   "dst": "この木箱には探検用の装備が入っているが、怪しい物はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -217,7 +217,7 @@
   },
   "A Headless History#001": {
    "src": "Oi, what are you still doing here?",
-   "dst": "",
+   "dst": "おい、まだここで何してる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -8181,6 +8181,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "A Journey Beyond#292": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "彼らを追いかけ、頂上までたどり着く方法を見つけなければならない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Further#000": {
    "src": "Please don't leave me!",
    "dst": "置いていかないで！",
@@ -10839,7 +10849,7 @@
   },
   "A Marauder's Dues#014": {
    "src": "The Green Core begins with a lot of power, but loses power when touching some of the other cores, especially Orange. So you'll want it in a corner, where it's touching only {~} cores, and it shouldn't be touching Orange.",
-   "dst": "",
+   "dst": "緑のコアは最初は威力が高いが、他のコア、特にオレンジに触れると威力が落ちる。だから角に置いて、触れるのは {~} 個のコアだけにし、オレンジには触れさせないこと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -16140,7 +16150,7 @@
   },
   "Acquiring Credentials#010": {
    "src": "Let's explore the airbase, then! We need to look for clues, lead the way.",
-   "dst": "",
+   "dst": "じゃあ空軍基地を調べましょう！手がかりを探すので、先導をお願いします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16200,7 +16210,7 @@
   },
   "Acquiring Credentials#016": {
    "src": "I can't believe this place! They only have some rancid wheat stored here, what am I supposed to do with that? I'll take a carrot any day over... wheat.",
-   "dst": "",
+   "dst": "信じられん場所だ！腐った小麦しか置いてない、こんなものどうしろと？小麦なんぞより…ニンジンの方がよっぽどいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16210,7 +16220,7 @@
   },
   "Acquiring Credentials#017": {
    "src": "All those other airship men carry around those vile face fruits, but I have to say, I've always had a soft spot for potatoes.",
-   "dst": "",
+   "dst": "他の飛空艇乗りはみんなあの忌まわしい顔の実を持ち歩いてるが、正直、私は昔からジャガイモに目がなくてね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16220,7 +16230,7 @@
   },
   "Acquiring Credentials#018": {
    "src": "I wish my airship was black, I can't say I'm a fan of that white palette...",
-   "dst": "",
+   "dst": "飛空艇が黒ならよかったのに。あの白い配色はどうも好きになれん…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16230,7 +16240,7 @@
   },
   "Acquiring Credentials#019": {
    "src": "[-{~} Quartz]",
-   "dst": "",
+   "dst": "[-{~} 石英]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16240,7 +16250,7 @@
   },
   "Acquiring Credentials#020": {
    "src": "You know, maybe white isn't so bad after all.",
-   "dst": "",
+   "dst": "まあ、白もそう悪くないかもしれんな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16250,7 +16260,7 @@
   },
   "Acquiring Credentials#021": {
    "src": "It turns out, white's actually quite a nice colour.",
-   "dst": "",
+   "dst": "白というのも、実はなかなかいい色じゃないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16260,7 +16270,7 @@
   },
   "Acquiring Credentials#022": {
    "src": "... Oh, fine, wheat's not bad. I'll take some, I guess.",
-   "dst": "",
+   "dst": "…ああ、わかった、小麦も悪くない。少しもらうとしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16270,7 +16280,7 @@
   },
   "Acquiring Credentials#023": {
    "src": "[-{~} Pumpkin]",
-   "dst": "",
+   "dst": "[-{~} カボチャ]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16280,7 +16290,7 @@
   },
   "Acquiring Credentials#024": {
    "src": "Though, really, the face doesn't mean it has to be evil, does it? It could be a nice face, after all.",
-   "dst": "",
+   "dst": "とはいえ、顔があるからって邪悪とは限らんだろう？いい顔かもしれんしな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16520,7 +16530,7 @@
   },
   "Acquiring Credentials#048": {
    "src": "Protect me while I harvest the egg, soldier!",
-   "dst": "",
+   "dst": "卵を採る間、俺を守ってくれ、兵士！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16886,7 +16896,7 @@
   },
   "Acquiring Credentials#084": {
    "src": "...Well, hey there... Would you like to buy some... potions?",
-   "dst": "",
+   "dst": "…やあ、どうも…ポーションでも…買ってく？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16896,7 +16906,7 @@
   },
   "Acquiring Credentials#085": {
    "src": "Well, hello there! You like you could use some of my fine wares, yes!",
-   "dst": "",
+   "dst": "おやまあ、いらっしゃい！うちの上等な品がお入り用とお見受けしますよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16906,7 +16916,7 @@
   },
   "Acquiring Credentials#086": {
    "src": "A dragonling egg? I'd pay {~} emeralds for it.",
-   "dst": "",
+   "dst": "仔竜の卵？{~} エメラルドで買おう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16916,7 +16926,7 @@
   },
   "Acquiring Credentials#087": {
    "src": "So that's our initial bid. Now we need to ask for a higher bid, remember? We can't always talk to the same merchant or they'll lose interest...",
-   "dst": "",
+   "dst": "これが最初の値付けです。次はもっと高い値を付けてもらわないと、ですよね？同じ商人とばかり話すと、興味をなくされちゃいます…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16926,7 +16936,7 @@
   },
   "Acquiring Credentials#088": {
    "src": "And we can't talk to more than {~} people for a raise or they might get angry.",
-   "dst": "",
+   "dst": "それに、値上げを頼めるのは {~} 人までです。それ以上だと怒らせるかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16936,7 +16946,7 @@
   },
   "Acquiring Credentials#089": {
    "src": "Well! We really don't see many dragonling eggs around here, not at all!! I'll give you {~} emeralds for it, how does that sound?!",
-   "dst": "",
+   "dst": "おお！このあたりじゃ仔竜の卵なんて滅多に見ない、本当に！！{~} エメラルド出そう、どうだい？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16946,7 +16956,7 @@
   },
   "Acquiring Credentials#090": {
    "src": "Fine! I'll raise my price to {~} emeralds. But if this egg isn't mine now? Don't bother coming back.",
-   "dst": "",
+   "dst": "いいだろう！{~} エメラルドに上げる。だが今この卵が手に入らないなら？もう戻ってくるな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16956,7 +16966,7 @@
   },
   "Acquiring Credentials#091": {
    "src": "Remember what the passport seller said? We shouldn't always talk to the same merchant... I think this one won't like another price raise. We should talk to the others.",
-   "dst": "",
+   "dst": "パスポート売りの言葉、覚えてます？同じ商人とばかり話しちゃだめって…この人はもう値上げを嫌がりそう。他の人と話しましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16966,7 +16976,7 @@
   },
   "Acquiring Credentials#092": {
    "src": "An egg, eh... I'd pay you... {~} emeralds, for it.",
-   "dst": "",
+   "dst": "卵か、ふむ…払えるのは…{~} エメラルドだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16976,7 +16986,7 @@
   },
   "Acquiring Credentials#093": {
    "src": "Another price hike?! I'm not interested anymore. Scram.",
-   "dst": "",
+   "dst": "また値上げだと？！もう興味はない。失せろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16986,7 +16996,7 @@
   },
   "Acquiring Credentials#094": {
    "src": "Is that a dragonling egg I spot? For a rare item such as that, I would of course be willing to pay {~} emeralds for it!",
-   "dst": "",
+   "dst": "あれは仔竜の卵では？あれほど珍しい品なら、もちろん {~} エメラルドお支払いしますとも！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16996,7 +17006,7 @@
   },
   "Acquiring Credentials#095": {
    "src": "...Dragonling egg? {~} emeralds.",
-   "dst": "",
+   "dst": "…仔竜の卵？{~} エメラルド。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17006,7 +17016,7 @@
   },
   "Acquiring Credentials#096": {
    "src": "He appears to be rummaging through his documents.",
-   "dst": "",
+   "dst": "書類を引っかき回しているようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17016,7 +17026,7 @@
   },
   "Acquiring Credentials#097": {
    "src": "We have to get to {~} emeralds in {~} bid increases. Let's try again!",
-   "dst": "",
+   "dst": "{~} エメラルドまで、{~} 回の値上げで届かせないと。もう一度やりましょう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17026,7 +17036,7 @@
   },
   "Acquiring Credentials#098": {
    "src": "You should try to increase the price with another merchant before going back to your previous one.",
-   "dst": "",
+   "dst": "前の商人に戻る前に、別の商人に値を上げてもらうといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17036,7 +17046,7 @@
   },
   "Acquiring Credentials#099": {
    "src": "Oh, you're bold, I'll give you that! Asking for another price increase?! Fine!! I'll raise my price to {~} emeralds!",
-   "dst": "",
+   "dst": "おお、度胸があるね、それは認めよう！また値上げしろって？！いいとも！！{~} エメラルドに上げてやる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17046,7 +17056,7 @@
   },
   "Acquiring Credentials#100": {
    "src": "I'll raise that price to... {~} emeralds.",
-   "dst": "",
+   "dst": "値を…{~} エメラルドに上げよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17056,7 +17066,7 @@
   },
   "Acquiring Credentials#101": {
    "src": "Here, take your emeralds.",
-   "dst": "",
+   "dst": "ほら、エメラルドだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17066,7 +17076,7 @@
   },
   "Acquiring Credentials#102": {
    "src": "...might not be my business to ask, but what's a human got business at a villager airship customs office for?",
-   "dst": "",
+   "dst": "…余計なお世話かもしれんが、人間が村人の飛空艇税関に何の用だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -17276,7 +17286,7 @@
   },
   "Aldorei's Secret Part I#000": {
    "src": "Hey {u}! Come back to me when you are level {~}, we have a lot to do!",
-   "dst": "",
+   "dst": "やあ {u}！レベル {~} になったらまた来て。やることがたくさんあるんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17286,7 +17296,7 @@
   },
   "Aldorei's Secret Part I#001": {
    "src": "Hey there! Seems like you are now Combat Lv. {~}! You can't start a raid before you've joined our Raiding Division at the {p}!",
-   "dst": "",
+   "dst": "やあ！戦闘Lv. {~} になったみたいだね！レイドを始めるには、まず {p} でうちのレイド部門に入らないと！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17296,7 +17306,7 @@
   },
   "Aldorei's Secret Part I#002": {
    "src": "You can sign up for the different divisions and benefit from advantages negotiated by the company on your behalf.",
-   "dst": "",
+   "dst": "各部門に登録すれば、会社が代わりに交渉した特典を受けられるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17306,7 +17316,7 @@
   },
   "Aldorei's Secret Part I#003": {
    "src": "If you'd like to sign up to join our Lootrun Division, speak to the Lootrun Chief!",
-   "dst": "",
+   "dst": "ルートラン部門に入りたいなら、ルートラン長と話してね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17316,7 +17326,7 @@
   },
   "Aldorei's Secret Part I#004": {
    "src": "Unfortunately Silverbull's Lootrun Division is only open to people who are level {~} or over.",
-   "dst": "",
+   "dst": "残念ながら、Silverbull のルートラン部門はレベル {~} 以上の人しか入れないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17326,7 +17336,7 @@
   },
   "Aldorei's Secret Part I#005": {
    "src": "Just head into the room behind me on the right and talk to our Raid Chief. She will get you set up in no time!",
-   "dst": "",
+   "dst": "後ろの右の部屋に入って、レイド長と話してくれ。すぐに手配してくれるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17352,7 +17362,7 @@
   },
   "Aldorei's Secret Part I#007": {
    "src": "Would you like to return to your previous location?",
-   "dst": "",
+   "dst": "元の場所に戻りますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -17362,7 +17372,7 @@
   },
   "Aldorei's Secret Part I#008": {
    "src": "Very well. I wish you luck in your future raiding endeavours!",
-   "dst": "",
+   "dst": "かしこまりました。今後のレイドでのご武運を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -18224,7 +18234,7 @@
   },
   "Aldorei's Secret Part II#000": {
    "src": "{u}... I really thought you'd have my back out there.",
-   "dst": "",
+   "dst": "{u}…お前なら味方してくれると本気で思ってたのに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18444,7 +18454,7 @@
   },
   "Aldorei's Secret Part II#019": {
    "src": "I was actually looking for t",
-   "dst": "",
+   "dst": "実は一番賢いエルフを探して",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18720,7 +18730,7 @@
   },
   "Aldorei's Secret Part II#046": {
    "src": "Why are you sleeping right h",
-   "dst": "",
+   "dst": "どうしてここで寝てるの?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18750,7 +18760,7 @@
   },
   "Aldorei's Secret Part II#049": {
    "src": "What can you tell me about t",
-   "dst": "",
+   "dst": "この町について教えてくれる?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -19482,7 +19492,7 @@
   },
   "Aldorei's Secret Part II#115": {
    "src": "Have you heard of elves dyin",
-   "dst": "",
+   "dst": "エルフが死ぬって聞いた事あ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -19582,7 +19592,7 @@
   },
   "Aldorei's Secret Part II#125": {
    "src": "I'm glad I could be of help",
-   "dst": "",
+   "dst": "Aldoreiの役に立てて良かった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -20362,7 +20372,7 @@
   },
   "Aldorei's Secret Part II#203": {
    "src": "Please don't Amber! We are f",
-   "dst": "",
+   "dst": "やめてよAmber!俺達友達だろ?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -20882,7 +20892,7 @@
   },
   "Aldorei's Secret Part II#255": {
    "src": "I wonder why some graves are",
-   "dst": "",
+   "dst": "なぜ一部の墓は保存状態がいいんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21072,7 +21082,7 @@
   },
   "Aldorei's Secret Part II#274": {
    "src": "Erm- I must've taken a wrong",
-   "dst": "",
+   "dst": "えっと……どうやら道を間違え",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21322,7 +21332,7 @@
   },
   "Aldorei's Secret Part II#299": {
    "src": "How come one of the pedestal",
-   "dst": "",
+   "dst": "どうして台座が一つ空いてるの",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21352,7 +21362,7 @@
   },
   "Aldorei's Secret Part II#302": {
    "src": "Just let us go, your secret",
-   "dst": "",
+   "dst": "放っといたら誰にも言わないよ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21442,7 +21452,7 @@
   },
   "Aldorei's Secret Part II#311": {
    "src": "One of the elves mentioned {~}",
-   "dst": "",
+   "dst": "一人のエルフが{~}人の長老に言及した",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21552,7 +21562,7 @@
   },
   "Aldorei's Secret Part II#322": {
    "src": "That seemed to put Birch in a bad mood. You need to try again!",
-   "dst": "",
+   "dst": "Birch の機嫌を損ねたようだ。もう一度やり直そう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21562,7 +21572,7 @@
   },
   "Aldorei's Secret Part II#323": {
    "src": "He told us where to find you",
-   "dst": "",
+   "dst": "彼は、あなたの居場所を教えて",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21572,7 +21582,7 @@
   },
   "Aldorei's Secret Part II#324": {
    "src": "You seem to be getting close! You need to try again!",
-   "dst": "",
+   "dst": "あと少しのようだ！もう一度やり直そう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -22372,7 +22382,7 @@
   },
   "Aldorei's Secret Part II#404": {
    "src": "He couldn't say much with th",
-   "dst": "",
+   "dst": "他の人がいたせいで、彼は多く",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -22422,7 +22432,7 @@
   },
   "Aldorei's Secret Part II#409": {
    "src": "He said he misses you and wa",
-   "dst": "",
+   "dst": "彼は君が恋しいし、また戻っ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -22672,7 +22682,7 @@
   },
   "Aldorei's Secret Part II#434": {
    "src": "We have come very close to u",
-   "dst": "",
+   "dst": "私達はそちらの秘密を暴く寸前",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -22702,7 +22712,7 @@
   },
   "Aldorei's Secret Part II#437": {
    "src": "We want to expose {p}.",
-   "dst": "",
+   "dst": "{p} の正体を暴きたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -23412,7 +23422,7 @@
   },
   "Aldorei's Secret Part II#508": {
    "src": "Oh, hi {u}.",
-   "dst": "",
+   "dst": "ああ、やあ {u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -24522,7 +24532,7 @@
   },
   "Aldorei's Secret Part II#619": {
    "src": "Alder was the only one who s",
-   "dst": "",
+   "dst": "Alderだけが口を開いた",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -27382,7 +27392,7 @@
   },
   "All Roads to Peace#272": {
    "src": "It soothes pain and treats c",
-   "dst": "",
+   "dst": "痛みを和らげ、風邪にも効く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -27502,7 +27512,7 @@
   },
   "All Roads to Peace#284": {
    "src": "It aids in sleep and soothes",
-   "dst": "",
+   "dst": "眠りを助け、炎症を和らげる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -40264,7 +40274,7 @@
   },
   "Blazing Retribution#000": {
    "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
-   "dst": "",
+   "dst": "あのオークは湖の方へ逃げた！！追え、別の場所へ逃げる前に捕まえろ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -40274,7 +40284,7 @@
   },
   "Blazing Retribution#001": {
    "src": "Nothing for ye to see here youngster. Move along!",
-   "dst": "",
+   "dst": "ここには見るもんはないぞ、若いの。さっさと行け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -40714,7 +40724,7 @@
   },
   "Bob's Lost Soul#000": {
    "src": "Brr... It's a little bit cold out there, don't you think?",
-   "dst": "",
+   "dst": "ブルッ…外はちょっと寒いな、そう思わないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -40724,7 +40734,7 @@
   },
   "Bob's Lost Soul#001": {
    "src": "Welcome back to our humble little town!",
-   "dst": "",
+   "dst": "ささやかな我が町へおかえり！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -41544,7 +41554,7 @@
   },
   "Brothers Return#000": {
    "src": "The door is locked, but there should be a key around here somewhere...",
-   "dst": "",
+   "dst": "扉には鍵がかかっているが、この辺りのどこかに鍵があるはずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -49450,7 +49460,7 @@
   },
   "Clearing the Camps#000": {
    "src": "The orc chiefs seem to hide in the camps with green flags - search the plains, and return once they're subdued!",
-   "dst": "",
+   "dst": "オークの族長たちは緑の旗の野営地に隠れているようだ。平原を探し、制圧したら戻ってこい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -49630,7 +49640,7 @@
   },
   "Cluck Cluck#003": {
    "src": "You need to be Fishing Lv. {~} to start this Mini-Quest.",
-   "dst": "",
+   "dst": "このミニクエストを始めるには釣りLv. {~} が必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -50684,7 +50694,7 @@
   },
   "Cowfusion#000": {
    "src": "[!] Main Laboratory Door unlocked!",
-   "dst": "",
+   "dst": "[!] 主研究室の扉が開いた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -50694,7 +50704,7 @@
   },
   "Cowfusion#001": {
    "src": "Looks like Ranol's cows are being held in this pen... maybe there's a way to unlock the door around?",
-   "dst": "",
+   "dst": "Ranol の牛はこの囲いに閉じ込められているようだ…扉を開ける方法が近くにないだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -50784,7 +50794,7 @@
   },
   "Cowfusion#010": {
    "src": "Maybe there's a way to open the door somewhere around..?",
-   "dst": "",
+   "dst": "近くのどこかに扉を開ける方法があるかも…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -50844,7 +50854,7 @@
   },
   "Cowfusion#016": {
    "src": "[!] You can no longer jump or cast spells.",
-   "dst": "",
+   "dst": "[!] ジャンプも呪文の詠唱もできなくなった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -50854,7 +50864,7 @@
   },
   "Cowfusion#017": {
    "src": "Something feels wrong... you should head back to Ranol...",
-   "dst": "",
+   "dst": "何かがおかしい…Ranol のところへ戻ったほうがいい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -50944,7 +50954,7 @@
   },
   "Cowfusion#026": {
    "src": "Moo? (What password?)",
-   "dst": "",
+   "dst": "モー？(合言葉って？)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51034,7 +51044,7 @@
   },
   "Cowfusion#035": {
    "src": "Moo moo moooo moo Moo moo.(T",
-   "dst": "",
+   "dst": "モモモー。(Grook が卵を手に巣を越えた)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51064,7 +51074,7 @@
   },
   "Cowfusion#038": {
    "src": "You can left-click to pull the hay bale and right-click to push it.",
-   "dst": "",
+   "dst": "左クリックで干し草を引き、右クリックで押せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51204,7 +51214,7 @@
   },
   "Cowfusion#052": {
    "src": "Moo moo moo mooooo! (I was t",
-   "dst": "",
+   "dst": "モーモーモー！(助けたのは俺だ！)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51234,7 +51244,7 @@
   },
   "Cowfusion#055": {
    "src": "... So apparently you can climb ropes but not jump. Being a cow is weird.",
-   "dst": "",
+   "dst": "…どうやらロープは登れるのにジャンプはできないらしい。牛ってのは変だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51434,7 +51444,7 @@
   },
   "Cowfusion#075": {
    "src": "Huh? What ship? Oh, right. You're not a Woc. So, you see, our race isn't actually from- you know, maybe that's a story for another time.",
-   "dst": "",
+   "dst": "ん？何の船？ああ、そうか、お前は Woc じゃないんだったな。実は俺たちの種族はもともと…いや、それはまた今度話そう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51700,7 +51710,7 @@
   },
   "Cowfusion#101": {
    "src": "Moo mooooo moo moo! (The wor",
-   "dst": "",
+   "dst": "モー！(穴の作業員は昇進したい！)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51760,7 +51770,7 @@
   },
   "Cowfusion#107": {
    "src": "Moo... Moo moo moooo? (So...",
-   "dst": "",
+   "dst": "モー…モー？(で…どう元に戻る？)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -51810,7 +51820,7 @@
   },
   "Cowfusion#112": {
    "src": "Moo moo moooo... (How do I g",
-   "dst": "",
+   "dst": "モモー…(どうやって元に戻る？)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -52110,7 +52120,7 @@
   },
   "Cowfusion#142": {
    "src": "Moooo moo moo moo? (What's t",
-   "dst": "",
+   "dst": "モー？(隣の大きな門は何のため？)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -52990,7 +53000,7 @@
   },
   "Crop Failure#000": {
    "src": "Hey. Don't just run head first!",
-   "dst": "",
+   "dst": "おい。闇雲に突っ込むな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -53510,7 +53520,7 @@
   },
   "Crop Failure#052": {
    "src": "Well, glad I can start sellin' again without him shoutin' \"Fraud! Con! Cheat!\" in the distance! Thanks fer that, mate.",
-   "dst": "",
+   "dst": "やれやれ、遠くで「詐欺だ！ペテンだ！インチキだ！」って叫ばれずに、また商売できるぜ！ありがとよ、兄弟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -54422,7 +54432,7 @@
   },
   "Death Whistle (Quest)#033": {
    "src": "I know humans aren't renowned for their memory, but do hurry, yes? What you need is written down in your content book!",
-   "dst": "",
+   "dst": "人間の記憶力が名高くないのは承知ですが、急いでくださいね？必要なものはコンテンツブックに書いてあります！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -67598,7 +67608,7 @@
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "",
+   "dst": "うーん…じゃあこいつを攻撃すれば、  風ダメージが増えて  土ダメージが減るのか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -67608,7 +67618,7 @@
   },
   "Elemental Exercise#001": {
    "src": "Oh, {u}. Don't mind me, I'm just trying to wrap my head around this all.",
-   "dst": "",
+   "dst": "あ、{u}。気にしないで、全部を理解しようとしてるだけだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -76928,7 +76938,7 @@
   },
   "Enzan's Brother#000": {
    "src": "Good day for baking, aye recruit? I might need some assistance later, come back when you are level {~}!",
-   "dst": "",
+   "dst": "パン焼き日和だな、新兵？後で手を借りるかもしれん。レベル {~} になったら来てくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -77178,7 +77188,7 @@
   },
   "Fallen Delivery#000": {
    "src": "They're dead. Looks like one of them got hit by the cannonball.",
-   "dst": "",
+   "dst": "死んでいる。一人は砲弾に当たったようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fallen Delivery",
@@ -77188,7 +77198,7 @@
   },
   "Fallen Delivery#001": {
    "src": "With most of the mercenaries gone, you should be able to enter their hideout now.",
-   "dst": "",
+   "dst": "傭兵の大半がいなくなった今なら、隠れ家に入れるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fallen Delivery",
@@ -77328,7 +77338,7 @@
   },
   "Fallen Delivery#015": {
    "src": "You've broken through sturdier barricades before. A spell will knock it down easily.",
-   "dst": "",
+   "dst": "もっと頑丈なバリケードも突破してきたはずだ。呪文一発で簡単に壊せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fallen Delivery",
@@ -77768,7 +77778,7 @@
   },
   "Fallen Delivery#059": {
    "src": "[+{~} Spell Scroll]",
-   "dst": "",
+   "dst": "[+{~} 呪文の巻物]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fallen Delivery",
@@ -83489,7 +83499,7 @@
   },
   "Flight in Distress#010": {
    "src": "The bear seems hungry...",
-   "dst": "",
+   "dst": "熊は腹を空かせているようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -83609,7 +83619,7 @@
   },
   "Flight in Distress#022": {
    "src": "Hey! Look at that ship over in the distance. It's been following us since we lifted off.",
-   "dst": "",
+   "dst": "ねえ！あっちの遠くの船を見て。離陸してからずっとついて来てるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -83955,7 +83965,7 @@
   },
   "Flight in Distress#056": {
    "src": "That fixed the engine, better get back to the Engineer now.",
-   "dst": "",
+   "dst": "これでエンジンは直った。技師のところへ戻ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -84075,7 +84085,7 @@
   },
   "Flight in Distress#068": {
    "src": "That should be enough of them gone. The way to the lower deck is open",
-   "dst": "",
+   "dst": "これだけ倒せば十分だろう。下甲板への道が開いた",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -84195,7 +84205,7 @@
   },
   "Flight in Distress#080": {
    "src": "It looks like the way out is open.",
-   "dst": "",
+   "dst": "出口への道が開いたようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -84375,7 +84385,7 @@
   },
   "Flight in Distress#098": {
    "src": "Wait! I know! You can have free travel between {p} and {p}!",
-   "dst": "",
+   "dst": "待ちたまえ！そうだ！{p} と {p} の間を無料で往復できるようにしよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -86607,7 +86617,7 @@
   },
   "From the Bottom#007": {
    "src": "...this is more useless to you than that troll hair. But, Nakoba did say the merchants barter. Maybe you can get something more useful for these.",
-   "dst": "",
+   "dst": "…これはあの Troll Hair よりも役に立たない。だが Nakoba は商人たちが物々交換すると言っていた。これでもっと役立つ物と交換できるかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Bottom",
@@ -86867,7 +86877,7 @@
   },
   "From the Bottom#033": {
    "src": "...okay, I can't make heads or tails 'a this thing. What'd you say it was again? Don't tell me this is some Corkus gadget from that not-so-Legendary island!",
-   "dst": "",
+   "dst": "…いや、こいつはさっぱり分からねえ。何だって言ったっけ？まさか、あの大して伝説でもねえ島の Corkus 製ガジェットじゃねえだろうな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Bottom",
@@ -86963,7 +86973,7 @@
   },
   "From the Bottom#042": {
    "src": "...wartime artifacts for sale.",
-   "dst": "",
+   "dst": "…戦時の遺物、売ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Bottom",
@@ -89573,7 +89583,7 @@
   },
   "General's Orders#070": {
    "src": "[+{~} Cell Key]",
-   "dst": "",
+   "dst": "[+{~} 牢の鍵]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -90279,7 +90289,7 @@
   },
   "Grand Youth#001": {
    "src": "Sorry man, if you haven't got any business with me then I can't talk.",
-   "dst": "",
+   "dst": "悪いな兄さん、用がないなら話してる暇はないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -90669,7 +90679,7 @@
   },
   "Green Gloop#000": {
    "src": "You gotten me [{~} Soft Sand] yet? You can dig it up from all those sand piles 'round the desert.",
-   "dst": "",
+   "dst": "[{~} Soft Sand] はもう手に入れたか？砂漠中の砂山を掘れば出てくるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -91599,7 +91609,7 @@
   },
   "Heart of Llevigar#000": {
    "src": "Were you bein' literal when you said there was a bug in the system? I swear I hear something crawling around down here all of the sudden.",
-   "dst": "",
+   "dst": "システムに虫がいるって、文字どおりの意味だったのか？誓って言うが、急にこの下で何かが這い回る音が聞こえるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -91609,7 +91619,7 @@
   },
   "Heart of Llevigar#001": {
    "src": "Oh, that experience gave me gray hairs... I sincerely hope there won't ever be bugs in the system like that for the rest of my life.",
-   "dst": "",
+   "dst": "ああ、あの一件で白髪が増えたよ…この先一生、システムにあんな虫が出ないことを心から願う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -94025,7 +94035,7 @@
   },
   "Hollow Serenity#201": {
    "src": "Why do you live in this town",
-   "dst": "",
+   "dst": "なぜこの町に住んでるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94255,7 +94265,7 @@
   },
   "Hollow Serenity#224": {
    "src": "Do you mind if I go inside o",
-   "dst": "",
+   "dst": "家の中に入ってもいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94505,7 +94515,7 @@
   },
   "Hollow Serenity#249": {
    "src": "How long have you lived in t",
-   "dst": "",
+   "dst": "この村にどれくらい住んでるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94515,7 +94525,7 @@
   },
   "Hollow Serenity#250": {
    "src": "How long have you lived here",
-   "dst": "",
+   "dst": "ここにどれくらい住んでるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94795,7 +94805,7 @@
   },
   "Hollow Serenity#278": {
    "src": "Yes, the prison is a slaught",
-   "dst": "",
+   "dst": "ええ、あの監獄は魂を刈る屠殺場だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94835,7 +94845,7 @@
   },
   "Hollow Serenity#282": {
    "src": "No, the prison has done noth",
-   "dst": "",
+   "dst": "いや、監獄は何も悪くない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -94995,7 +95005,7 @@
   },
   "Hollow Serenity#298": {
    "src": "Have you ever been to the ma",
-   "dst": "",
+   "dst": "西の荘園に行ったことある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -95175,7 +95185,7 @@
   },
   "Hollow Serenity#316": {
    "src": "Do you have any rumors to sh",
-   "dst": "",
+   "dst": "何か噂話はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -96655,7 +96665,7 @@
   },
   "Hunger of the Gerts Part I#019": {
    "src": "Well, that explains how the Gerts were able to get to the pigs. You should head back to Jitak.",
-   "dst": "",
+   "dst": "なるほど、これで Gert が豚に近づけたわけが分かった。Jitak のところへ戻ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -96755,7 +96765,7 @@
   },
   "Hunger of the Gerts Part I#029": {
    "src": "Looks like the Gerten chiefs are having a meeting, you shouldn't get too close... maybe there's somewhere nearby you can eavesdrop from?",
-   "dst": "",
+   "dst": "Gert の族長たちが会議をしているようだ。近づきすぎないほうがいい…近くに盗み聞きできる場所はないだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -96895,7 +96905,7 @@
   },
   "Hunger of the Gerts Part I#043": {
    "src": "There's a pumpkin farm near here at [-{~},-{~}]... maybe you could get one from there?",
-   "dst": "",
+   "dst": "この近くの [-{~},-{~}] にカボチャ畑がある…そこで手に入らないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -96935,7 +96945,7 @@
   },
   "Hunger of the Gerts Part I#047": {
    "src": "The gert is looking at you hungrily... it might be best to leave the conversation?",
-   "dst": "",
+   "dst": "Gert が腹を空かせた目でこちらを見ている…会話を切り上げたほうがいいかも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -96975,7 +96985,7 @@
   },
   "Hunger of the Gerts Part I#051": {
    "src": "Are you hungry?",
-   "dst": "",
+   "dst": "お腹すいてる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97015,7 +97025,7 @@
   },
   "Hunger of the Gerts Part I#055": {
    "src": "The gert has a strange look in his eyes and is inching towards you suspiciously...",
-   "dst": "",
+   "dst": "Gert は妙な目つきで、怪しげにじりじりとこちらへ近づいてくる…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97045,7 +97055,7 @@
   },
   "Hunger of the Gerts Part I#058": {
    "src": "Why do gerts wear pumpkins?",
-   "dst": "",
+   "dst": "Gert はなぜカボチャをかぶるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97055,7 +97065,7 @@
   },
   "Hunger of the Gerts Part I#059": {
    "src": "Can I take a pumpkin?",
-   "dst": "",
+   "dst": "カボチャをもらってもいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97095,7 +97105,7 @@
   },
   "Hunger of the Gerts Part I#063": {
    "src": "I'll pay you to let me take",
-   "dst": "",
+   "dst": "お金を払うからカボチャをちょうだい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97145,7 +97155,7 @@
   },
   "Hunger of the Gerts Part I#068": {
    "src": "What? No way.",
-   "dst": "",
+   "dst": "は？お断りだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97205,7 +97215,7 @@
   },
   "Hunger of the Gerts Part I#074": {
    "src": "The gert is very close to you now and you can see saliva dripping from its teeth...",
-   "dst": "",
+   "dst": "Gert はもう目の前だ。歯からよだれが垂れているのが見える…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97245,7 +97255,7 @@
   },
   "Hunger of the Gerts Part I#078": {
    "src": "Looks like the guard is pretty distracted waiting for apples to fall out of the sky... you should be able to sneak into the farm now.",
-   "dst": "",
+   "dst": "見張りは空からリンゴが落ちてくるのを待つのに夢中のようだ…今なら畑に忍び込めるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97255,7 +97265,7 @@
   },
   "Hunger of the Gerts Part I#079": {
    "src": "This pumpkin looks perfect to carve a face into...",
-   "dst": "",
+   "dst": "このカボチャは顔を彫るのにぴったりだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97265,7 +97275,7 @@
   },
   "Hunger of the Gerts Part I#080": {
    "src": "[+{~} Carving Knife]",
-   "dst": "",
+   "dst": "[+{~} 彫刻ナイフ]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97275,7 +97285,7 @@
   },
   "Hunger of the Gerts Part I#081": {
    "src": "Carve a facial expression into the pumpkin! Be careful, as the wrong one might expose you as a human!",
-   "dst": "",
+   "dst": "カボチャに表情を彫ろう！気をつけて、間違えると人間だとばれるかもしれない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97285,7 +97295,7 @@
   },
   "Hunger of the Gerts Part I#082": {
    "src": "You should report back to Jitak with your new mask and information about the tunnel.",
-   "dst": "",
+   "dst": "新しい仮面とトンネルの情報を持って Jitak に報告しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97455,7 +97465,7 @@
   },
   "Hunger of the Gerts Part I#099": {
    "src": "You know, the one in the camp north of Gylia watch house?",
-   "dst": "",
+   "dst": "ほら、Gylia の見張り小屋の北の野営地のやつ、知ってる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97515,7 +97525,7 @@
   },
   "Hunger of the Gerts Part I#105": {
    "src": "Okay, head over to the main camp at [-{~},-{~}] and see if you can find the tunnel!",
-   "dst": "",
+   "dst": "よし、[-{~},-{~}] の本陣へ行って、トンネルを見つけられるか探ってくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97535,7 +97545,7 @@
   },
   "Hunger of the Gerts Part I#107": {
    "src": "Kill Animals every {~} seconds or the gerts will become suspicious!",
-   "dst": "",
+   "dst": "{~} 秒ごとに動物を倒さないと、Gert に怪しまれる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -97765,7 +97775,7 @@
   },
   "Hunger of the Gerts Part II#000": {
    "src": "This is bad...",
-   "dst": "",
+   "dst": "まずいな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -97775,7 +97785,7 @@
   },
   "Hunger of the Gerts Part II#001": {
    "src": "You should warn the Gylia Guards.",
-   "dst": "",
+   "dst": "Gylia の衛兵に知らせたほうがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98075,7 +98085,7 @@
   },
   "Hunger of the Gerts Part II#031": {
    "src": "Maybe you can find a way to lure the two guards away using food?",
-   "dst": "",
+   "dst": "食べ物で二人の見張りをおびき出せないだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98105,7 +98115,7 @@
   },
   "Hunger of the Gerts Part II#034": {
    "src": "You successfully lead the two guards out of the tower. Maybe you should go to the second floor next?",
-   "dst": "",
+   "dst": "二人の見張りをうまく塔の外へ誘い出した。次は二階へ行ってみるべきか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98185,7 +98195,7 @@
   },
   "Hunger of the Gerts Part II#042": {
    "src": "You need to leave right away",
-   "dst": "",
+   "dst": "今すぐここを離れて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98235,7 +98245,7 @@
   },
   "Hunger of the Gerts Part II#047": {
    "src": "Your life is in danger.",
-   "dst": "",
+   "dst": "命が危ないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98245,7 +98255,7 @@
   },
   "Hunger of the Gerts Part II#048": {
    "src": "That strategy did not work. Maybe you can retry?",
-   "dst": "",
+   "dst": "この作戦はうまくいかなかった。やり直してみるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98385,7 +98395,7 @@
   },
   "Hunger of the Gerts Part II#062": {
    "src": "Do you want to go have a sna",
-   "dst": "",
+   "dst": "おやつでも食べに行か…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98405,7 +98415,7 @@
   },
   "Hunger of the Gerts Part II#064": {
    "src": "You successfully got Bory out of the watch!",
-   "dst": "",
+   "dst": "Bory を見張り所の外へ連れ出せた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98415,7 +98425,7 @@
   },
   "Hunger of the Gerts Part II#065": {
    "src": "Maybe it's time to save the people in the basement.",
-   "dst": "",
+   "dst": "そろそろ地下室の人々を助けに行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98425,7 +98435,7 @@
   },
   "Hunger of the Gerts Part II#066": {
    "src": "It seems that they locked up the basement...",
-   "dst": "",
+   "dst": "地下室には鍵がかけられているようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98435,7 +98445,7 @@
   },
   "Hunger of the Gerts Part II#067": {
    "src": "Something happened outside!",
-   "dst": "",
+   "dst": "外で何か起きた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98445,7 +98455,7 @@
   },
   "Hunger of the Gerts Part II#068": {
    "src": "This must be a freshly dug tunnel...",
-   "dst": "",
+   "dst": "掘られたばかりのトンネルに違いない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98455,7 +98465,7 @@
   },
   "Hunger of the Gerts Part II#069": {
    "src": "It seems the Gerts have gone on the offence.",
-   "dst": "",
+   "dst": "Gert が攻勢に出たようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98465,7 +98475,7 @@
   },
   "Hunger of the Gerts Part II#070": {
    "src": "That should stop the Gerts.",
-   "dst": "",
+   "dst": "これで Gert を食い止められるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98475,7 +98485,7 @@
   },
   "Hunger of the Gerts Part II#071": {
    "src": "At least for now. Maybe it's time to check on the Gylia watch again.",
-   "dst": "",
+   "dst": "少なくとも今のところは。もう一度 Gylia Watch の様子を見に行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98585,7 +98595,7 @@
   },
   "Hunger of the Gerts Part II#082": {
    "src": "Maybe you can collapse the tunnel entrance?",
-   "dst": "",
+   "dst": "トンネルの入口を崩せるかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part II",
@@ -98695,7 +98705,7 @@
   },
   "Ice Nations#002": {
    "src": "It's useless to come back to me if you do not have the treasure.",
-   "dst": "",
+   "dst": "財宝を持たずに戻ってきても無駄だぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -98985,7 +98995,7 @@
   },
   "Infested Plants#001": {
    "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
-   "dst": "",
+   "dst": "…んー、ちょっとギリギリだけど…あっ！君、えっと、まだいたの…！そう。そうだよ、あの洞窟に入らなきゃ、覚えてる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -101565,7 +101575,7 @@
   },
   "Kingdom of Sand#000": {
    "src": "Ah! Good to see you. Of all the sites we've explored so far... this tomb is the most exciting.",
-   "dst": "",
+   "dst": "ああ！よく来てくれた。これまで調べた遺跡の中でも…この墓が一番胸が躍る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -103225,7 +103235,7 @@
   },
   "Lazarus Pit (Quest)#048": {
    "src": "Use the Lazarus Water on Mrs",
-   "dst": "",
+   "dst": "Mrs. Fluffles に Lazarus の水を使う",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -106353,7 +106363,7 @@
   },
   "Meaningful Holiday#000": {
    "src": "So, how is it going? Did you find Nick in the slum?",
-   "dst": "",
+   "dst": "で、どう？スラムで Nick は見つかった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106363,7 +106373,7 @@
   },
   "Meaningful Holiday#001": {
    "src": "You should follow Nick and hop in the portal right there!",
-   "dst": "",
+   "dst": "Nick について行って、すぐそこのポータルに飛び込んで！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106373,7 +106383,7 @@
   },
   "Meaningful Holiday#002": {
    "src": "I can't wait for the feast to be served. It's always magnificent.",
-   "dst": "",
+   "dst": "宴が待ちきれん。毎年それは見事なものなんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106383,7 +106393,7 @@
   },
   "Meaningful Holiday#003": {
    "src": "You want me to donate food? I'm just a guest here.",
-   "dst": "",
+   "dst": "食べ物を寄付しろだと？私はただの客だよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106393,7 +106403,7 @@
   },
   "Meaningful Holiday#004": {
    "src": "You want food for the poor? They should get jobs and help themselves!",
-   "dst": "",
+   "dst": "貧乏人に食べ物を？働いて自分で何とかすべきだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106403,7 +106413,7 @@
   },
   "Meaningful Holiday#005": {
    "src": "Why should I help them if they don't help themselves?",
-   "dst": "",
+   "dst": "自分で努力もしない連中を、なぜ助けねばならん？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106413,7 +106423,7 @@
   },
   "Meaningful Holiday#006": {
    "src": "I can't give away free food! This is the biggest feast of the year!",
-   "dst": "",
+   "dst": "タダで食べ物はやれん！一年で一番の宴なんだぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -106423,7 +106433,7 @@
   },
   "Meaningful Holiday#007": {
    "src": "You should go and ask charities for that.",
-   "dst": "",
+   "dst": "そういうのは慈善団体に頼むんだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -107553,7 +107563,7 @@
   },
   "Memory Paranoia#000": {
    "src": "You can't quite make out the messy scribbles in the journal, but it looks very intense.",
-   "dst": "",
+   "dst": "日記の乱雑な走り書きはよく読めないが、ひどく思い詰めた様子だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -107563,7 +107573,7 @@
   },
   "Memory Paranoia#001": {
    "src": "The check is made out to a charity for a rather large amount of emeralds.",
-   "dst": "",
+   "dst": "慈善団体宛ての小切手で、かなりの額のエメラルドが書かれている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -107579,7 +107589,7 @@
   },
   "Memory Paranoia#002": {
    "src": "Nothing happened.",
-   "dst": "",
+   "dst": "何も起きなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -108847,7 +108857,7 @@
   },
   "Misadventure on the Sea#000": {
    "src": "As you touch the obelisk, it ignites with an otherworldly blue light...",
-   "dst": "",
+   "dst": "オベリスクに触れると、この世のものとは思えない青い光が灯った…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -108857,7 +108867,7 @@
   },
   "Misadventure on the Sea#001": {
    "src": "So... I've seen ya around town. You've got the soul of an adventurer, don't ya?",
-   "dst": "",
+   "dst": "で…町であんたを見かけたぜ。冒険者の魂を持ってるだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -108867,7 +108877,7 @@
   },
   "Misadventure on the Sea#002": {
    "src": "How's work?",
-   "dst": "",
+   "dst": "仕事はどうだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -108877,7 +108887,7 @@
   },
   "Misadventure on the Sea#003": {
    "src": "Don't think we'll be done with ya once you clean all of this!",
-   "dst": "",
+   "dst": "これを全部片付けたら終わりだなんて思うなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -108887,7 +108897,7 @@
   },
   "Misadventure on the Sea#004": {
    "src": "That's it, just cast spells!",
-   "dst": "",
+   "dst": "そうだ、とにかく呪文を唱えろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110527,7 +110537,7 @@
   },
   "Misadventure on the Sea#168": {
    "src": "'ey soldier. Enjoying the ride?",
-   "dst": "",
+   "dst": "よう兵隊。船旅を楽しんでるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110537,7 +110547,7 @@
   },
   "Misadventure on the Sea#169": {
    "src": "Huh? It looks like there's a hidden lock in this bookshelf!",
-   "dst": "",
+   "dst": "あれ？この本棚に隠し錠があるみたいだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110547,7 +110557,7 @@
   },
   "Misadventure on the Sea#170": {
    "src": "Where could the key be? Does the crew know about this?",
-   "dst": "",
+   "dst": "鍵はどこだろう？船員たちは知ってるのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110557,7 +110567,7 @@
   },
   "Misadventure on the Sea#171": {
    "src": "It's barely visible, it's probably not going to help on escaping.",
-   "dst": "",
+   "dst": "ほとんど見えない。脱出の役には立たなさそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110567,7 +110577,7 @@
   },
   "Misadventure on the Sea#172": {
    "src": "That's definitely not a place to store gunpowder, nor a fuse.",
-   "dst": "",
+   "dst": "火薬をしまう場所じゃないのは確かだ。導火線もな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110577,7 +110587,7 @@
   },
   "Misadventure on the Sea#173": {
    "src": "You don't have the key.",
-   "dst": "",
+   "dst": "鍵を持っていない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110593,7 +110603,7 @@
   },
   "Misadventure on the Sea#174": {
    "src": "Huh? What did you do?? Oh well, whatever...",
-   "dst": "",
+   "dst": "え？何をした？？まあいいか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110603,7 +110613,7 @@
   },
   "Misadventure on the Sea#175": {
    "src": "You search the chest...",
-   "dst": "",
+   "dst": "宝箱を漁る…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110613,7 +110623,7 @@
   },
   "Misadventure on the Sea#176": {
    "src": "It's filled with various items.",
-   "dst": "",
+   "dst": "いろいろな物が詰まっている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110623,7 +110633,7 @@
   },
   "Misadventure on the Sea#177": {
    "src": "[+{~} Fake Tooth]",
-   "dst": "",
+   "dst": "[+{~} 偽の歯]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110639,7 +110649,7 @@
   },
   "Misadventure on the Sea#178": {
    "src": "That's all there was.",
-   "dst": "",
+   "dst": "それだけだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110649,7 +110659,7 @@
   },
   "Misadventure on the Sea#179": {
    "src": "Mo'in, traveller, have you heard of Corkus? The new province filled with machines!",
-   "dst": "",
+   "dst": "Mo'in、旅の人。Corkus を知ってるかい？機械だらけの新しい地方さ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110659,7 +110669,7 @@
   },
   "Misadventure on the Sea#180": {
    "src": "If you were level {~} I'd let you enter Corkus for free. Come back to me then!",
-   "dst": "",
+   "dst": "レベル {~} ならタダで Corkus に入れてやるよ。そうなったらまた来な！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -129413,6 +129423,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "Point of No Return#011": {
+   "src": "...you have to let it go.",
+   "dst": "…手放さなければならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Point of No Return#012": {
    "src": "You're... free. But, something is...",
    "dst": "お前は…自由だ。だが、何かが…",
@@ -129530,6 +129550,86 @@
    "kind": "dialogue",
    "quest": "Point of No Return",
    "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#024": {
+   "src": "Only I persist. And, now... you, too, have been ensnared.",
+   "dst": "残っているのは私だけ。そして今…お前も囚われた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#025": {
+   "src": "Fight against your fate, if you so choose... it makes no difference in the end. Ha... ha... ha...",
+   "dst": "望むなら運命に抗うがいい…結局は何も変わらない。は…は…は…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#026": {
+   "src": "Explore this happier version of {p}.",
+   "dst": "この幸せな {p} を探索する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#027": {
+   "src": "Ahh... a newcomer? Welcome, welcome.",
+   "dst": "ああ…新顔か？ようこそ、ようこそ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#028": {
+   "src": "Do not worry, you are safe here. The Obelisk protects us all.",
+   "dst": "心配いらない、ここは安全だ。オベリスクが皆を守ってくれる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#029": {
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "dst": "外の恐怖の中に灯る安全の光…困った時に待っていてくれたとは、なんという奇跡だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#030": {
+   "src": "Rest well, friend. You have made it home. Feel free to familiarize yourself with it.",
+   "dst": "ゆっくり休むといい、友よ。ここが家だ。自由に見て回ってくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#031": {
+   "src": "How long has it been since a new face has joined us? I can't quite seem to recall...",
+   "dst": "新しい顔が加わるのはいつ以来だろう？どうにも思い出せない…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
@@ -129711,6 +129811,16 @@
    "quest": "Point of No Return",
    "stage": "Stage 10",
    "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#050": {
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
+   "dst": "他の者は…皆あの引力に屈した。私たち生き残りは…置き去りにされ、見捨てられた…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
    "source": "wiki"
   },
   "Point of No Return#051": {
@@ -130635,7 +130745,7 @@
   },
   "Purple and Blue#010": {
    "src": "There's a note here. You start reading it...",
-   "dst": "",
+   "dst": "ここにメモがある。読み始めた…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130645,7 +130755,7 @@
   },
   "Purple and Blue#011": {
    "src": "IMPORTANT NOTES: The map to the talisman is in the basement!! That fool Korun will never see all this coming.",
-   "dst": "",
+   "dst": "重要メモ: お守りへの地図は地下室にある！！あの間抜けな Korun には到底予想できまい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130655,7 +130765,7 @@
   },
   "Purple and Blue#012": {
    "src": "If everything goes right, it should grant access to the heart of the mountain... I can't wait!",
-   "dst": "",
+   "dst": "すべてうまくいけば、山の心臓部に入れるはずだ…待ちきれん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130665,7 +130775,7 @@
   },
   "Purple and Blue#013": {
    "src": "It looks like there are extra notes on the back. What should you do?",
-   "dst": "",
+   "dst": "裏にも追記があるようだ。どうする？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130675,7 +130785,7 @@
   },
   "Purple and Blue#014": {
    "src": "I needn't forget to input the total number of lit candles inside the house in order to get in the basement... That's why I made that tube! I'm so good at handling security!! No need for blasted overpriced Corkian equipment!",
-   "dst": "",
+   "dst": "地下室に入るには、家の中で灯っているロウソクの総数を入力するのを忘れぬこと…だからあの管を作ったのだ！俺は防犯の天才だな！！高いだけの Corkus 製の機械なんぞ要らん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130685,7 +130795,7 @@
   },
   "Purple and Blue#015": {
    "src": "You read what's behind the note...",
-   "dst": "",
+   "dst": "メモの裏を読んだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130695,7 +130805,7 @@
   },
   "Purple and Blue#016": {
    "src": "I actually don't know if I'm making it out of this, but I absolutely have to find out what's inside the lake.",
-   "dst": "",
+   "dst": "生きて戻れるかは正直わからんが、湖の中に何があるのか、何としても突き止めねばならん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130705,7 +130815,7 @@
   },
   "Purple and Blue#017": {
    "src": "One part of me wants to bring Korun along. As much as we hate each other, it'd surely increase our chance of survival.",
-   "dst": "",
+   "dst": "Korun を連れていきたい気持ちもある。互いに嫌い合ってはいるが、生き延びる見込みは確実に上がるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130715,7 +130825,7 @@
   },
   "Purple and Blue#018": {
    "src": "And, who knows, maybe the heart of the mountain is actually perfectly safe?",
-   "dst": "",
+   "dst": "それに、もしかしたら山の心臓部は案外まったく安全かもしれんしな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130725,7 +130835,7 @@
   },
   "Purple and Blue#019": {
    "src": "Though, I mustn't forget that three of the greatest minds of our time got lost to cosmic powers...",
-   "dst": "",
+   "dst": "とはいえ、当代屈指の頭脳が三人も宇宙の力に呑まれたことは忘れてはならん…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130735,7 +130845,7 @@
   },
   "Purple and Blue#020": {
    "src": "No matter what, if you really want to join me, I left you enough clues.",
-   "dst": "",
+   "dst": "何にせよ、本気でついて来たいなら、手がかりは十分残しておいた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130745,7 +130855,7 @@
   },
   "Purple and Blue#021": {
    "src": "See you later, Korun.",
-   "dst": "",
+   "dst": "またな、Korun。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130755,7 +130865,7 @@
   },
   "Purple and Blue#022": {
    "src": "[+{~} Gylia Treasure Map]",
-   "dst": "",
+   "dst": "[+{~} Gylia の宝の地図]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130765,7 +130875,7 @@
   },
   "Purple and Blue#023": {
    "src": "This map seems to lead towards a particular location nearby...",
-   "dst": "",
+   "dst": "この地図は近くのある場所を指しているようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130775,7 +130885,7 @@
   },
   "Purple and Blue#024": {
    "src": "Some mechanisms can be heard... There's probably another lever to press.",
-   "dst": "",
+   "dst": "何かの仕掛けが動く音がする…もう一つレバーがあるのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130785,7 +130895,7 @@
   },
   "Purple and Blue#025": {
    "src": "Upon touching the crystal, you notice a peculiar device...",
-   "dst": "",
+   "dst": "水晶に触れると、奇妙な装置に気づいた…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130795,7 +130905,7 @@
   },
   "Purple and Blue#026": {
    "src": "It begins to change shape!",
-   "dst": "",
+   "dst": "形が変わり始めた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130805,7 +130915,7 @@
   },
   "Purple and Blue#027": {
    "src": "The crystal finished forming something, you should retrieve it.",
-   "dst": "",
+   "dst": "水晶が何かを形作り終えた。取っておこう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130815,7 +130925,7 @@
   },
   "Purple and Blue#028": {
    "src": "[+{~} Cosmic Stone]",
-   "dst": "",
+   "dst": "[+{~} 宇宙の石]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130825,7 +130935,7 @@
   },
   "Purple and Blue#029": {
    "src": "Looks like you can leave this place now.",
-   "dst": "",
+   "dst": "もうここを離れてよさそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130835,7 +130945,7 @@
   },
   "Purple and Blue#030": {
    "src": "[+{~} Impervious Talisman]",
-   "dst": "",
+   "dst": "[+{~} 不侵のお守り]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -130995,7 +131105,7 @@
   },
   "Purple and Blue#046": {
    "src": "As Korun said, it's probably better to hold that talisman to traverse the tunnel...",
-   "dst": "",
+   "dst": "Korun の言う通り、トンネルを抜けるにはあのお守りを手に持っておく方がよさそうだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -144468,7 +144578,7 @@
   },
   "Redbeard's Booty#000": {
    "src": "It be disappointin' that I wasn't able to accompany ye. Mighta been able to thump the dogs together, eh?",
-   "dst": "",
+   "dst": "一緒に行けなかったのは残念だぜ。二人ならあの犬どもをぶちのめせたかもしれねえのにな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Redbeard's Booty",
@@ -145028,7 +145138,7 @@
   },
   "Reincarnation#011": {
    "src": "Bring me [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] if you can find them.",
-   "dst": "",
+   "dst": "見つけたら [{~} Cluckles のお気に入りの羽根]、[{~} Baab の羊毛]、[{~} Mooington の皮] を持ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -145044,7 +145154,7 @@
   },
   "Reincarnation#012": {
    "src": "How is your quest going along?",
-   "dst": "",
+   "dst": "クエストの調子はどうだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -145054,7 +145164,7 @@
   },
   "Reincarnation#013": {
    "src": "I am not worthy enough to enter it. I did not complete the task of the animals, I merely read it. You shall go alone. Be careful.",
-   "dst": "",
+   "dst": "私に入る資格はない。動物たちの試練を果たしたのではなく、読んだだけだからな。一人で行くのだ。気をつけろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -148372,7 +148482,7 @@
   },
   "Rise of the Quartron#001": {
    "src": "... This miner looks like he's been dead for years. The clock in his hands is cracked, and doesn't appear to be functional.",
-   "dst": "",
+   "dst": "…この鉱夫は死んで何年も経っているようだ。手の中の時計はひび割れ、動いていないように見える。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148382,7 +148492,7 @@
   },
   "Rise of the Quartron#002": {
    "src": "And yet... You can hear the clock's continuous ticking throughout the cavern. It's almost mesmerizing...",
-   "dst": "",
+   "dst": "それなのに…洞窟中に時計の刻む音が響き続けている。思わず聞き入ってしまいそうだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148392,7 +148502,7 @@
   },
   "Rise of the Quartron#003": {
    "src": "You should take it, you might find a use for it somewhere.",
-   "dst": "",
+   "dst": "持っていこう。どこかで役に立つかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148402,7 +148512,7 @@
   },
   "Rise of the Quartron#004": {
    "src": "[+{~} Karoc's Cracked Clock]",
-   "dst": "",
+   "dst": "[+{~} Karoc のひび割れた時計]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148412,7 +148522,7 @@
   },
   "Rise of the Quartron#005": {
    "src": "... So. Ye helped Nasea, eh?",
-   "dst": "",
+   "dst": "…で。Nasea を助けたんだってな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148422,7 +148532,7 @@
   },
   "Rise of the Quartron#006": {
    "src": "Well, glad ye did! A friend o' the boss is welcome 'round here.",
-   "dst": "",
+   "dst": "そりゃよかった！親方の友達なら、ここじゃ大歓迎だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148432,7 +148542,7 @@
   },
   "Rise of the Quartron#007": {
    "src": "... While ye're here, feel like solvin' another issue for us?",
-   "dst": "",
+   "dst": "…せっかく来たんだ、もう一つ厄介事を片付けてみねえか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148442,7 +148552,7 @@
   },
   "Rise of the Quartron#008": {
    "src": "Ye see the cave up that hill? S'cursed. Used te be a mine shaft, s'far as I can tell.",
-   "dst": "",
+   "dst": "あの丘の上の洞窟が見えるか？呪われてんだ。俺の知る限り、昔は坑道だった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148452,7 +148562,7 @@
   },
   "Rise of the Quartron#009": {
    "src": "There's always strange noises comin' from there. We stay away from it. Ye ever feel like explorin', go take a look.",
-   "dst": "",
+   "dst": "いつも妙な音がしやがる。俺らは近寄らねえ。探検したくなったら覗いてみな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148462,7 +148572,7 @@
   },
   "Rise of the Quartron#010": {
    "src": "[{~}/{~}] Nasea:I wonder if that huge detonation is going to interfere with any more of our projects...it's annoying, but nothing for it.",
-   "dst": "",
+   "dst": "[{~}/{~}] Nasea: あの大爆発、またうちの工事に響かないといいけど…迷惑だけど、どうしようもないね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -159482,7 +159592,7 @@
   },
   "Stable Story#001": {
    "src": "Moo. Are you trying to run away, human? Moo. Only one of us can leave this place alive. Moo.",
-   "dst": "",
+   "dst": "モー。逃げる気か、人間？モー。ここを生きて出られるのは一人だけだ。モー。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -159842,7 +159952,7 @@
   },
   "Star Thief#000": {
    "src": "This pile of gravel appears to have blocked the entrance... Maybe there's a shovel nearby?",
-   "dst": "",
+   "dst": "この砂利の山が入口を塞いでいるようだ…近くにシャベルはないだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -163894,7 +164004,7 @@
   },
   "Temple of the Legends (Quest)#141": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-   "dst": "",
+   "dst": "とはいえ、伝説たる私はとても忙しい。サインだのなんだの、そのうえ警備の務めもあるのだ！お前が私の時間に値するか見てやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -164520,7 +164630,7 @@
   },
   "The Bigger Picture#000": {
    "src": "Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
-   "dst": "",
+   "dst": "君は大きいから眠っちゃわないよね！キノコを取ってきてくれる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Bigger Picture",
@@ -164530,7 +164640,7 @@
   },
   "The Bigger Picture#001": {
    "src": "You've taken care of the Razorice problem, now you just need to find that blue mushroom Psilo was talking about...",
-   "dst": "",
+   "dst": "Razorice の問題は片付いた。あとは Psilo の言っていた青いキノコを探すだけだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Bigger Picture",
@@ -168256,7 +168366,7 @@
   },
   "The Canary Calls#024": {
    "src": "You're right. I'll do it.",
-   "dst": "",
+   "dst": "その通りだ。やるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168296,7 +168406,7 @@
   },
   "The Canary Calls#028": {
    "src": "No. I don't care.",
-   "dst": "",
+   "dst": "いや。どうでもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168366,7 +168476,7 @@
   },
   "The Canary Calls#035": {
    "src": "[+{~} Chewed-up Toothpick]",
-   "dst": "",
+   "dst": "[+{~} 噛み潰した爪楊枝]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168436,7 +168546,7 @@
   },
   "The Canary Calls#042": {
    "src": "Easy, Ryan. We won't lose it. We're in this together. {u} will take care of it.",
-   "dst": "",
+   "dst": "落ち着け、Ryan。失くしやしないさ。俺たちは一蓮托生だ。{u} が何とかしてくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168582,7 +168692,7 @@
   },
   "The Canary Calls#056": {
    "src": "[+{~} Gear Stick]",
-   "dst": "",
+   "dst": "[+{~} シフトレバー]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168592,7 +168702,7 @@
   },
   "The Canary Calls#057": {
    "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The {u}'.",
-   "dst": "",
+   "dst": "ダンスパーティーは楽しめました？あまりにひどい動きだったので、「{u}」と名付けてもいいくらい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168758,7 +168868,7 @@
   },
   "The Canary Calls#073": {
    "src": "No. I won't go that easily.",
-   "dst": "",
+   "dst": "いや。そう簡単にはいかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168788,7 +168898,7 @@
   },
   "The Canary Calls#076": {
    "src": "Yes, but make it quick...",
-   "dst": "",
+   "dst": "うん、でも手短にね……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -169478,7 +169588,7 @@
   },
   "The Canary Calls#145": {
    "src": "No, I will not.",
-   "dst": "",
+   "dst": "いや、断る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -172801,6 +172911,16 @@
    "stage": "Stage 10",
    "speaker": "Orikal",
    "source": "wiki"
+  },
+  "The Cursed One#000": {
+   "src": "[+{~} Crystal Focus]",
+   "dst": "[+{~} 水晶の媒介]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Cursed One#001": {
    "src": "[-{~} Crystal Focus]",
@@ -184584,6 +184704,16 @@
    "speaker": "Ava",
    "source": "wiki"
   },
+  "The Feathers Fly Part II#173": {
+   "src": "Let's meet up near the northern entrance if ya want a lift. Alternatively, you can just meet me by the Workshop if you're into walking!",
+   "dst": "乗せてもらいたいなら、北側の入り口の近くで待ち合わせましょ。あるいは、歩くのが好きなら、ワークショップのそばで待ち合わせてもいいよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
   "The Feathers Fly Part II#174": {
    "src": "Oh, uh, hi everyone! Sorry!",
    "dst": "あ、みなさんこんにちは！ごめん！",
@@ -188764,6 +188894,16 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1358": {
+   "src": "Looks like there's an outfit ready right here!",
+   "dst": "どうやら、ここにすぐ着られる服があるみたいだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1359": {
    "src": "[+{~} Azure Outfit]",
    "dst": "[+{~} Azure Outfit]",
@@ -188774,9 +188914,49 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1360": {
+   "src": "You can give it to Ava, or you can look around the other rooms for more options.",
+   "dst": "これをAvaに渡してもいいし、他の部屋を見て回って、他にも選択肢がないか探してみてもいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1361": {
+   "src": "There's some clothes here. They're dirty though.",
+   "dst": "ここに服がいくつかある。でも、汚れている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1362": {
    "src": "[+{~} Dirty Clothes]",
    "dst": "[+{~} 汚れた服]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1363": {
+   "src": "There must be a way to wash those somewhere nearby.",
+   "dst": "あの服を洗える場所が、きっとこの近くにあるはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1364": {
+   "src": "You start washing the clothes...",
+   "dst": "服を洗い始める…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -188814,6 +188994,26 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1368": {
+   "src": "You take a look inside the drawer...",
+   "dst": "引き出しの中を覗いてみると……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1369": {
+   "src": "Lucky! There's a Mechanic Outfit in there.",
+   "dst": "ラッキー！　中にMechanic Outfitが入ってる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1370": {
    "src": "[+{~} Mechanic Outfit]",
    "dst": "[+{~} Mechanic Outfit]",
@@ -188824,9 +189024,29 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1371": {
+   "src": "You pick up a particularly tasty-looking bone.",
+   "dst": "とりわけ美味しそうな骨を拾い上げた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1372": {
    "src": "[+{~} Bone]",
    "dst": "[+{~} 骨]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1373": {
+   "src": "There's some sort of armour in that chest. It looks flashy!",
+   "dst": "その宝箱の中には、何か鎧のようなものが入っている。すごく派手そうだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -188884,6 +189104,16 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1379": {
+   "src": "...Is that someone crying over there? Eh, I'm not sure my social skills can handle that.",
+   "dst": "…あそこで誰かが泣いているのかな？　うーん、私の対人スキルじゃ、それには対応しきれないかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1380": {
    "src": "I'll try my best, {u}!",
    "dst": "精一杯やってみるよ、{u}！",
@@ -188904,9 +189134,49 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1382": {
+   "src": "Hey. Ya got anythin'?",
+   "dst": "ねえ。何かある？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1383": {
+   "src": "Woah there, what's that letter? You actually got an invitation?!",
+   "dst": "ちょっと待って、その手紙は何？　まさか招待状が届いたの？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1384": {
+   "src": "I... Wow. Well I'm impressed! I really am!",
+   "dst": "えっと……うわぁ。まあ、本当に感心したよ！ 本当にね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1385": {
    "src": "Did we even need a letter? That armour probably would've done the trick!",
    "dst": "手紙なんて要った？あの鎧があれば、たぶんそれで十分だったよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1386": {
+   "src": "Well... If you want me to follow you, tell me. I've heard 'bout a receptionist in the far end of the castle, so maybe we should go there?",
+   "dst": "えーと……もし私についてきてほしいなら、そう言ってよ。城の奥の方にいる受付嬢の話は聞いたことがあるから、そこに行ってみたらどうかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -188934,6 +189204,16 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1389": {
+   "src": "Well, no matter! I'll just... See when the council's available and book a meeting...",
+   "dst": "まあ、いいですわ！　とりあえず……評議会がいつ空いているか確認して、会議を予約しますわね……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Receptionist",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1390": {
    "src": "How peculiar. I wonder how they got that...",
    "dst": "なんて妙なのかしら。どうやってあれを手に入れたのでしょう…",
@@ -188944,9 +189224,39 @@
    "speaker": "Receptionist",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1391": {
+   "src": "Hey! I saw you run towards the castle. What did you do?",
+   "dst": "ねえ！　君が城の方へ走っていくのを見かけたよ。どうしたの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1392": {
+   "src": "...Wait, what? You went to the receptionist alone, just like that?!",
+   "dst": "…えっ、何？　そんなふうに、一人で受付に行ったの？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1393": {
    "src": "An audience is booked, and you didn't even give me the chance to show my cool armour!",
    "dst": "謁見の予約が取れたのに、あたしのかっこいい鎧を見せる機会もくれなかったなんて！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1394": {
+   "src": "I... I'm really grateful. What a relief. I did some tweaking regarding the machine, so you should come and test with me!",
+   "dst": "えっと……本当に感謝してる。ほっとした。機械の設定を少し調整したから、ぜひ一緒にテストしに来て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -188974,6 +189284,26 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1397": {
+   "src": "You ARE coming back... Right??",
+   "dst": "絶対に戻ってくるよね……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1398": {
+   "src": "You probably should wait for Ava first.",
+   "dst": "まずはAvaを待ったほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1399": {
    "src": "My guts are telling me this one's gonna be impressive. I hope he's there.",
    "dst": "今回はすごいことになるって、勘が言ってるのよ。彼が来てるといいけど。",
@@ -188992,6 +189322,26 @@
    "quest": "The Feathers Fly Part II",
    "stage": "",
    "speaker": "Sybil",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1401": {
+   "src": "You helped deal with WHA-",
+   "dst": "君があの件を―",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1402": {
+   "src": "Looks like she's waiting for your signal.",
+   "dst": "どうやら彼女はあなたの合図を待っているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Feathers Fly Part II#1403": {
@@ -189064,6 +189414,26 @@
    "speaker": "Ava",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1410": {
+   "src": "Hmpf. I certainly am curious now.",
+   "dst": "ふん。これで確かに興味が湧いてきたな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Grant",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1411": {
+   "src": "She's glancing at you. Maybe she's waiting for your signal.",
+   "dst": "彼女はあなたをちらっと見ている。もしかすると、あなたの合図を待っているのかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1412": {
    "src": "I'm an Avo.",
    "dst": "あたしは Avo だよ。",
@@ -189072,6 +189442,36 @@
    "quest": "The Feathers Fly Part II",
    "stage": "",
    "speaker": "Ava",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1413": {
+   "src": "EVERYONE! STOP! {u}, I want you to come here and answer something, immediately.",
+   "dst": "みんな！ ちょっと待て！ {u}、今すぐこっちに来て、一つ質問に答えてほしいんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1414": {
+   "src": "You take a deep breath, and-",
+   "dst": "あなたは深呼吸をして、そして――",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1415": {
+   "src": "Looks like Maxie wants to speak to you.",
+   "dst": "Maxieがあなたに話があるようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Feathers Fly Part II#1416": {
@@ -189124,9 +189524,59 @@
    "speaker": "Sybil",
    "source": "captured"
   },
+  "The Feathers Fly Part II#1421": {
+   "src": "Efena doesn't seem very pleased to see you.",
+   "dst": "Efenaは、あなたを見てあまり嬉しそうではないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1422": {
+   "src": "She's a little stressed out.",
+   "dst": "彼女はちょっとイラついている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Efena",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1423": {
+   "src": "No time to talk, {u}! Just go! There must be a core to hit at the top!",
+   "dst": "{u}、話してる暇はない！さっさと行って！頂上には攻撃すべきコアがあるはずだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1424": {
+   "src": "Well, besides the citizens being afraid... I'd say the town's fine. However! I got tasked to find Ava.",
+   "dst": "まあ、市民たちが怖がっていることはさておき……町自体は問題ないと思うよ。それでね！　僕はAvaを探すよう頼まれたんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#1425": {
    "src": "Somehow... Efena ended up liking her.",
    "dst": "なぜか…Efena は彼女を気に入っちゃったんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part II",
+   "stage": "",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Feathers Fly Part II#1426": {
+   "src": "I'm reading, but I'll be done soon!",
+   "dst": "今読んでるんだけど、もうすぐ読み終わるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -193406,7 +193856,7 @@
   },
   "The Maiden Tower#000": {
    "src": "Get me that urn, Win person. If I go up there covered in guts, I have reason to believe she won't take it well?",
-   "dst": "",
+   "dst": "あの壺を取ってきてくれ、Win の人。はらわたまみれで上がったら、あの女もいい顔はしねえと思うんだが？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193416,7 +193866,7 @@
   },
   "The Maiden Tower#001": {
    "src": "Dear diary...",
-   "dst": "",
+   "dst": "親愛なる日記へ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193426,7 +193876,7 @@
   },
   "The Maiden Tower#002": {
    "src": "I found this strange creature along the road outside the tower- it dug up from the ground.",
-   "dst": "",
+   "dst": "塔の外の道端で、不思議な生き物を見つけましたの。地面から這い出してきたのですわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193436,7 +193886,7 @@
   },
   "The Maiden Tower#003": {
    "src": "It looked so spindly and thin- I decided to take it in as a pet. I've called her Fiona.",
-   "dst": "",
+   "dst": "ひょろりと痩せていたので、ペットとして飼うことにしましたの。名前は Fiona ですわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193446,7 +193896,7 @@
   },
   "The Maiden Tower#004": {
    "src": "My father is confused as to what it is, and I am too, but it needs some loving care for certain...",
-   "dst": "",
+   "dst": "お父様もわたくしも、これが何なのか分かりません。でも愛情を込めて世話してあげなくては…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193456,7 +193906,7 @@
   },
   "The Maiden Tower#005": {
    "src": "Fiona quite likes my father, it seems! I keep finding her scratching at his door.",
-   "dst": "",
+   "dst": "Fiona はお父様が大好きみたい！しょっちゅうお父様の扉を引っかいていますの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193466,7 +193916,7 @@
   },
   "The Maiden Tower#006": {
    "src": "She seems to like to bite, too...it is a habit I'll need to train out of her, given it leaves my skin pale.",
-   "dst": "",
+   "dst": "噛み癖もあるようで…しつけて直さないと。噛まれるたびに肌が青白くなるのですもの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193476,7 +193926,7 @@
   },
   "The Maiden Tower#007": {
    "src": "My father has died today... I found Fiona atop him. She must have been trying to comfort him...",
-   "dst": "",
+   "dst": "今日、お父様が亡くなりました…Fiona がお父様の上に乗っていましたの。慰めようとしていたのですわ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193486,7 +193936,7 @@
   },
   "The Maiden Tower#008": {
    "src": "His funeral rites are being sorted. I cannot write more...at least I will have my dear pet.",
-   "dst": "",
+   "dst": "葬儀の手配が進んでいます。もう書けません…せめて愛しいペットがいてくれますわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193496,7 +193946,7 @@
   },
   "The Maiden Tower#009": {
    "src": "...Fiona was the problem to begin with. I feel sickly and pale, and it all started when she arrived!!",
-   "dst": "",
+   "dst": "…そもそも Fiona が原因だったのですわ。体調が悪く青白いのも、あの子が来てからですもの！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193506,7 +193956,7 @@
   },
   "The Maiden Tower#010": {
    "src": "I didn't want to admit it- She is the reason my father died, and the reason that I look like death when I look in the mirror!!",
-   "dst": "",
+   "dst": "認めたくなかった…お父様が死んだのも、鏡に映るわたくしが死人のような顔なのも、あの子のせいですわ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193516,7 +193966,7 @@
   },
   "The Maiden Tower#011": {
    "src": "The only consolation is that she seems to have disappeared on her own. Good riddance to her!",
-   "dst": "",
+   "dst": "唯一の救いは、あの子が勝手にいなくなったこと。せいせいしましたわ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193526,7 +193976,7 @@
   },
   "The Maiden Tower#012": {
    "src": "I dearly need a man to comfort me during these times... Not even a man, anyone will do!!",
-   "dst": "",
+   "dst": "こんな時こそ慰めてくださる殿方が欲しい…いえ、殿方でなくても、誰でもいいですわ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -193906,7 +194356,7 @@
   },
   "The Mercenary#000": {
    "src": "When the corruption first broke out, undead swarmed the city. It was the first town to be destroyed by the undead.",
-   "dst": "",
+   "dst": "腐敗が最初に広まったとき、アンデッドが街に押し寄せた。アンデッドに滅ぼされた最初の町だった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -201008,7 +201458,7 @@
   },
   "The Order of the Grook#000": {
    "src": "Eager much? Keep yourself seated for now.",
-   "dst": "",
+   "dst": "ずいぶん張り切ってるね？今は座ってなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -202924,7 +203374,7 @@
   },
   "The Order of the Grook#191": {
    "src": "Moving on. We'll touch on the societies of Trolls, Goblins, Orcs, Ogres, and Hobgoblins. Some include Gerts into this grouping, though by technicality they are separate.",
-   "dst": "",
+   "dst": "次へ。トロール、ゴブリン、オーク、オーガ、ホブゴブリンの社会について触れます。Gert を含める人もいますが、厳密には別物です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -202934,7 +203384,7 @@
   },
   "The Order of the Grook#192": {
    "src": "Though many of these types of societies have mystical practices, the only known way for Orcs and such to utilize magic is through artifacts. They've little magical potential.",
-   "dst": "",
+   "dst": "こうした社会の多くには神秘的な風習がありますが、オークなどが魔法を使える唯一の既知の手段は遺物です。魔法の素質はほとんどありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -204060,7 +204510,7 @@
   },
   "The Passage (Quest)#026": {
    "src": "Well... I'm glad it worked out for you.",
-   "dst": "",
+   "dst": "まあ…うまくいったならよかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -209996,7 +210446,7 @@
   },
   "The Qira Hive (Quest)#001": {
    "src": "I see another challenger has found their way to The {p}!",
-   "dst": "",
+   "dst": "また挑戦者が {p} に辿り着いたか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210596,7 +211046,7 @@
   },
   "The Qira Hive (Quest)#061": {
    "src": "Excuse me, but aren't you forgetting some things, Yansur?",
-   "dst": "",
+   "dst": "失礼だが、何か忘れてはおらぬか、Yansur？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210606,7 +211056,7 @@
   },
   "The Qira Hive (Quest)#062": {
    "src": "You will be disciplined later...fine. Consider yourself honoured to have even a moment of my time, adventurer. Allow me to explain in further detail, my glorious Hive.",
-   "dst": "",
+   "dst": "お前の処分は後だ…よかろう。冒険者よ、我が時間を僅かでも割かれることを光栄に思え。我が栄光の巣について、詳しく説明してやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210616,7 +211066,7 @@
   },
   "The Qira Hive (Quest)#063": {
    "src": "As Yansur explained, if you wish audience with me, you must prove yourself worthy of my presence by defeating each division of my personal army.",
-   "dst": "",
+   "dst": "Yansur の言う通り、私に謁見したくば、我が私兵の各部隊を倒し、我が前に立つにふさわしいと証明せよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210626,7 +211076,7 @@
   },
   "The Qira Hive (Quest)#064": {
    "src": "It consists of five main divisions, each one based around a particular element. Thunder, Air, Earth, and so on. Clearing one will unlock the next for you to face.",
-   "dst": "",
+   "dst": "主力は五つの部隊で、それぞれ一つの属性を軸とする。雷、風、地、といった具合だ。一つ突破すれば、次の部隊に挑めるようになる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210636,7 +211086,7 @@
   },
   "The Qira Hive (Quest)#065": {
    "src": "To pass a floor of the division, defeat my forces and put the catalysts they drop into the collector. You will need five catalysts to pass a floor.",
-   "dst": "",
+   "dst": "部隊の一層を突破するには、我が兵を倒し、落とした触媒をコレクターに入れよ。一層につき触媒が五つ必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210646,7 +211096,7 @@
   },
   "The Qira Hive (Quest)#066": {
    "src": "After nine floors of normal troops, you will face a Division Leader.",
-   "dst": "",
+   "dst": "通常の兵の九層を越えれば、部隊長と相まみえることになる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210656,7 +211106,7 @@
   },
   "The Qira Hive (Quest)#067": {
    "src": "These exceptionally powerful members of my army will be fought alone, and you will only need one catalyst from them to pass.",
-   "dst": "",
+   "dst": "我が軍でも特に強力な者たちで、一対一で戦うことになる。突破に必要な触媒は一つだけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210666,7 +211116,7 @@
   },
   "The Qira Hive (Quest)#068": {
    "src": "The Thunder Division will be your first challenge. I do hope you will be entertaining to watch...",
-   "dst": "",
+   "dst": "最初の挑戦は雷の部隊だ。せいぜい見ていて楽しませてくれることを願うぞ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210676,7 +211126,7 @@
   },
   "The Qira Hive (Quest)#069": {
    "src": "The mysterious box accepts your tokens. You're free to move on to the next room.",
-   "dst": "",
+   "dst": "謎の箱がトークンを受け取った。次の部屋へ進める。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -210686,7 +211136,7 @@
   },
   "The Qira Hive (Quest)#070": {
    "src": "How was your first taste of the Hive? Your battle against the Psychomancer was quite the spectacle to behold, ahaha...",
-   "dst": "",
+   "dst": "巣の初陣はどうだった？Psychomancer との戦いはなかなかの見ものだったぞ、あはは…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -217032,7 +217482,7 @@
   },
   "The Strong Survive#204": {
    "src": "I'd like to learn about Beac",
-   "dst": "",
+   "dst": "ビーコンについて知りたい",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -221662,7 +222112,7 @@
   },
   "The Thanos Depository#024": {
    "src": "{u}..? I see, I haven't seen you around before.",
-   "dst": "",
+   "dst": "{u}…？そうか、この辺りでは見ない顔だな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -221952,7 +222402,7 @@
   },
   "The Thanos Depository#053": {
    "src": "Tell me what I should know.",
-   "dst": "",
+   "dst": "知っておくべきことを教えて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -222042,7 +222492,7 @@
   },
   "The Ultimate Weapon#000": {
    "src": "These must be the Wood Sprites Dodegar was talking about...",
-   "dst": "",
+   "dst": "これがきっと Dodegar の言ってた木の精だな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222052,7 +222502,7 @@
   },
   "The Ultimate Weapon#001": {
    "src": "Dodegar carefully grabs the piece of wood and begins carving.",
-   "dst": "",
+   "dst": "Dodegar は木片を慎重に手に取り、彫り始めた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222062,7 +222512,7 @@
   },
   "The Ultimate Weapon#002": {
    "src": "Hmmm...?",
-   "dst": "",
+   "dst": "ふーむ…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222452,7 +222902,7 @@
   },
   "The Ultimate Weapon#041": {
    "src": "Dodegar takes the piece of metal and starts welding it.",
-   "dst": "",
+   "dst": "Dodegar は金属片を受け取り、溶接し始めた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222762,7 +223212,7 @@
   },
   "The Ultimate Weapon#072": {
    "src": "Since when do Beetles talk...",
-   "dst": "",
+   "dst": "甲虫がいつからしゃべるように…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222772,7 +223222,7 @@
   },
   "The Ultimate Weapon#073": {
    "src": "You should return to Dodegar with the blood, he should be nearby.",
-   "dst": "",
+   "dst": "血を持って Dodegar のもとへ戻ろう。近くにいるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -222782,7 +223232,7 @@
   },
   "The Ultimate Weapon#074": {
    "src": "Dodegar smears the weapon with the glowing blood.",
-   "dst": "",
+   "dst": "Dodegar は光る血を武器に塗りつけた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -226176,7 +226626,7 @@
   },
   "Tribal Aggression#000": {
    "src": "Not only did the {p} steal our totem but also stole one of our Idol's eyes!",
-   "dst": "",
+   "dst": "{p} は我らのトーテムを盗んだだけでなく、神像の目まで一つ奪っていった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
@@ -226186,7 +226636,7 @@
   },
   "Tribal Aggression#001": {
    "src": "The totems hold great protective magical power. Without all the parts, it can not function.",
-   "dst": "",
+   "dst": "トーテムには強大な守護の魔力が宿っている。部品が一つでも欠ければ、働かぬのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
@@ -226196,7 +226646,7 @@
   },
   "Tribal Aggression#002": {
    "src": "It is probably hiding away somewhere at the {p}. Maybe if there's peace we can return it.",
-   "dst": "",
+   "dst": "おそらく {p} のどこかに隠されている。和平が成れば、元の場所に戻せるやもしれぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
@@ -226206,7 +226656,7 @@
   },
   "Tribal Aggression#003": {
    "src": "You may go now traveler, farewell.",
-   "dst": "",
+   "dst": "もう行ってよいぞ、旅人よ。さらばだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
@@ -232752,7 +233202,7 @@
   },
   "Underice#000": {
    "src": "Where is the [Breathing Helmet I] I asked you for?",
-   "dst": "",
+   "dst": "頼んでおいた [Breathing Helmet I] はどこだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -232762,7 +233212,7 @@
   },
   "Underice#001": {
    "src": "Your best bet is to go to the woodcutting camp northwest of {p}, there should be some bait there. Just catch it in the river by the dock when you get it.",
-   "dst": "",
+   "dst": "{p} の北西の伐採キャンプへ行くのが一番じゃ。そこに餌があるはずじゃよ。手に入れたら、桟橋のそばの川で釣り上げるんじゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -232772,7 +233222,7 @@
   },
   "Underice#002": {
    "src": "I know you might need the pufferfish for something else, but please think about giving it to me. It would warm my heart.",
-   "dst": "",
+   "dst": "フグは他に使い道があるかもしれんが、どうかわしに譲ることを考えてくれんか。心が温まるんじゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -232782,7 +233232,7 @@
   },
   "Underice#003": {
    "src": "I wonder how Strato made that bait...",
-   "dst": "",
+   "dst": "Strato はあの餌をどう作ったんじゃろ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -234522,7 +234972,7 @@
   },
   "Underwater#000": {
    "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
-   "dst": "",
+   "dst": "ヘルメットが欲しいなら、洞窟から [{~} Gudgeon Meat] を持ってきてくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -235138,7 +235588,7 @@
   },
   "WynnExcavation Site A#000": {
    "src": "Well, I figured it out soon after you got back. We possess the crystal, don't go looking for Wynn Excavation again, all is not what it seems. Take that as a friendly warning.",
-   "dst": "",
+   "dst": "まあ、君が戻ってすぐに分かったよ。水晶は我々の手にある。もう Wynn Excavation を探すな、見かけ通りではないんだ。友としての忠告だと思ってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
@@ -235748,7 +236198,7 @@
   },
   "WynnExcavation Site C#000": {
    "src": "Something's falling from the ceiling!",
-   "dst": "",
+   "dst": "天井から何か落ちてくる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -236364,7 +236814,7 @@
   },
   "WynnExcavation Site D#000": {
    "src": "Amadel couldn't be defeated....",
-   "dst": "",
+   "dst": "Amadel は倒せぬはずだった…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -238316,7 +238766,7 @@
   },
   "Zhight Island (Quest)#051": {
    "src": "Welcome traveller, to our island.",
-   "dst": "",
+   "dst": "ようこそ旅人よ、我らの島へ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -238332,7 +238782,7 @@
   },
   "Zhight Island (Quest)#052": {
    "src": "Oh? Well, greetings. What brings you all the way up here?",
-   "dst": "",
+   "dst": "おや？まあ、ごきげんよう。こんな所まで何の用だい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
