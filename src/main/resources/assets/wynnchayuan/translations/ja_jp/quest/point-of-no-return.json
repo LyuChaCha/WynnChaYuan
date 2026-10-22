@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Point of No Return",
-  "count": 89,
-  "translated": 89,
+  "count": 99,
+  "translated": 99,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -115,6 +115,16 @@
   "Point of No Return#010": {
    "src": "... Maybe you should talk to that citizen again.",
    "dst": "…あの住人ともう一度話したほうがいいかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#011": {
+   "src": "...you have to let it go.",
+   "dst": "…手放さなければならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -239,6 +249,86 @@
    "kind": "dialogue",
    "quest": "Point of No Return",
    "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#024": {
+   "src": "Only I persist. And, now... you, too, have been ensnared.",
+   "dst": "残っているのは私だけ。そして今…お前も囚われた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#025": {
+   "src": "Fight against your fate, if you so choose... it makes no difference in the end. Ha... ha... ha...",
+   "dst": "望むなら運命に抗うがいい…結局は何も変わらない。は…は…は…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 1",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#026": {
+   "src": "Explore this happier version of {p}.",
+   "dst": "この幸せな {p} を探索する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Point of No Return#027": {
+   "src": "Ahh... a newcomer? Welcome, welcome.",
+   "dst": "ああ…新顔か？ようこそ、ようこそ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#028": {
+   "src": "Do not worry, you are safe here. The Obelisk protects us all.",
+   "dst": "心配いらない、ここは安全だ。オベリスクが皆を守ってくれる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#029": {
+   "src": "A beacon of safety amidst the terror outside... what a miracle, to have found it awaiting us in our time of need.",
+   "dst": "外の恐怖の中に灯る安全の光…困った時に待っていてくれたとは、なんという奇跡だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#030": {
+   "src": "Rest well, friend. You have made it home. Feel free to familiarize yourself with it.",
+   "dst": "ゆっくり休むといい、友よ。ここが家だ。自由に見て回ってくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
+   "speaker": "Lutho Citizen",
+   "source": "wiki"
+  },
+  "Point of No Return#031": {
+   "src": "How long has it been since a new face has joined us? I can't quite seem to recall...",
+   "dst": "新しい顔が加わるのはいつ以来だろう？どうにも思い出せない…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 10",
    "speaker": "Lutho Citizen",
    "source": "wiki"
   },
@@ -420,6 +510,16 @@
    "quest": "Point of No Return",
    "stage": "Stage 10",
    "speaker": "Lutho Guard",
+   "source": "wiki"
+  },
+  "Point of No Return#050": {
+   "src": "The others... all have given in to its pull. Our band of survivors... left behind, abandoned...",
+   "dst": "他の者は…皆あの引力に屈した。私たち生き残りは…置き去りにされ、見捨てられた…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "Stage 12",
+   "speaker": "Lutho Citizen",
    "source": "wiki"
   },
   "Point of No Return#051": {
