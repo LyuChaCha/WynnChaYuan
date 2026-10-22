@@ -333,6 +333,36 @@ public final class TooltipPanel {
                 }
             }
         }
+        // 名字剛好是一件裝備，但這份說明<b>不是</b>物品——介面上的按鈕。
+        //
+        // 實機回報（使用者 2026-10-22）：任務《Off the Rails》的書本介面，返回箭頭的
+        // 說明是「Return / Click this to return to / the rest of your notes」，名稱那一列
+        // 被翻成戒指 Return 的譯名，「譯名加原文」下還附了「(Return)」。語料裡只有
+        // 那枚戒指用這個原文，查表當然只答得出戒指；分得出來的是<b>這份說明長什麼樣</b>，
+        // 見 #itemShaped。名稱列以外（敘述、聊天、名牌）不歸這裡管。
+        //
+        // 整條鍵另外有條目的不擋：Lootrun 使命卡的「{#}Redemption」在語料裡有自己的
+        // 一條，查到的是使命名，不是那件護腿。
+        if (i == 0 && n > 0 && !abilityPanel) {
+            String row0 = com.wynnchayuan.capture.LineParts.of(styled.get(0)).template();
+            String name = bareName(row0);
+            if (!name.isEmpty() && store.gearNameOnly(name)
+                    && (row0.strip().equals(name) || store.lookupExact(row0) == null)
+                    && !itemShaped(styled)) {
+                out.add(LineTranslator.untranslated(styled.get(0)));
+                spans.add(new int[] {0, 1, 0, 1});
+                // 留原文的名稱不在「同一段翻一半」裡投票，見 nameList 的說明
+                nameList[0] = true;
+                i = 1;
+                if (n > 1 && name.equals(bareName(
+                        com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                    out.add(LineTranslator.untranslated(styled.get(1)));
+                    spans.add(new int[] {1, 2, 1, 2});
+                    nameList[1] = true;
+                    i = 2;
+                }
+            }
+        }
         // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
         // 第三行起是敘述，裡面提到的同名裝備不附原文。見
         // TranslationStore#holdAppendedOriginal。
@@ -1089,6 +1119,70 @@ public final class TooltipPanel {
         }
         return false;
     }
+
+    /**
+     * 這份說明長得像不像<b>物品</b>的說明。見 {@link #translateLines} 裡「名字剛好是
+     * 一件裝備」那一段。
+     *
+     * <h2>認哪些</h2>
+     * 看說明本身，不問 Wynntils 的物品模型：快取以說明的內容為鑰匙，翻譯時手上沒有
+     * ItemStack；而且別的模組重畫的說明（WynnMod）、Wynntils 自己組的說明都要認得。
+     * 實機的裝備說明（shiny-tooltip、wynnmod-tooltip 診斷檔）三樣至少有一樣：
+     * <ul>
+     *   <li>名稱列的外框：原版的名稱是兩列，第 0 列「{@code {#}名字{#}}」寬度是 0
+     *       （{@link TranslationStore#nameRowInner}）；</li>
+     *   <li>稀有度與類別的橫幅：名稱下面幾列裡，有一列<b>整列都是圖示</b>（三個以上）。
+     *       WynnMod 重畫的、素材、書卷都有；分隔線只有兩個圖示，不算；</li>
+     *   <li>需求與傷害列：「Combat Level」「Class Type」「Combat Lv. Min」「… DPS」，
+     *       以及製作物的「Crafted by」。</li>
+     * </ul>
+     * 介面按鈕三樣都沒有：一列名字，底下幾列說明（「Price Check」「Increase Amount」
+     * 「Character Info」都是這樣）。
+     *
+     * <p>認錯的代價不對稱：把物品當成按鈕，那件裝備的名稱就變回英文；所以三樣
+     * 任一樣有就算物品。
+     */
+    static boolean itemShaped(List<StyledText> styled) {
+        int n = styled.size();
+        if (n == 0) {
+            return false;
+        }
+        if (TranslationStore.nameRowInner(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null) {
+            return true;
+        }
+        for (int k = 1; k < Math.min(n, BANNER_ROWS + 1); k++) {
+            String t = com.wynnchayuan.capture.LineParts.of(styled.get(k)).template();
+            if (bannerRow(t)) {
+                return true;
+            }
+        }
+        for (StyledText line : styled) {
+            if (line != null && ITEM_ROW.matcher(line.getStringWithoutFormatting()).find()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 橫幅最晚出現在名稱下面第幾列（原版第 2、3 列，WynnMod 第 1、2 列）。 */
+    private static final int BANNER_ROWS = 4;
+
+    /** 整列只有圖示（三個以上）與空白：稀有度與類別的橫幅。分隔線是兩個圖示。 */
+    static boolean bannerRow(String template) {
+        String icon = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
+        String rest = template.replace(icon, "");
+        if (!rest.isBlank()) {
+            return false;
+        }
+        int icons = (template.length() - rest.length()) / icon.length();
+        return icons >= 3;
+    }
+
+    /** 只有物品說明才有的列：需求、職業、每秒傷害、製作者。 */
+    private static final java.util.regex.Pattern ITEM_ROW = java.util.regex.Pattern.compile(
+            "Combat Level|Combat Lv\\. Min|Class Type|Class Req|\\d DPS\\b"
+                    + "|(?:^|[^A-Za-z])Crafted by \\S");
 
     public static String bareName(String template) {
         String s = template

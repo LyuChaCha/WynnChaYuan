@@ -38,8 +38,9 @@ public final class LayeredGearNameTest {
         List<net.minecraft.network.chat.Component> out =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
                         net.minecraft.network.chat.Component.literal("Abhorrence"),
-                        net.minecraft.network.chat.Component.literal("Abhorrence")), store);
-        String shown = out.isEmpty() ? "(沒翻)" : out.get(out.size() - 1).getString();
+                        net.minecraft.network.chat.Component.literal("Abhorrence"),
+                        banner()), store);
+        String shown = out.isEmpty() ? "(沒翻)" : out.get(1).getString();
         check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）",
               want != null && want.equals(shown));
 
@@ -48,8 +49,9 @@ public final class LayeredGearNameTest {
         List<net.minecraft.network.chat.Component> myth =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
                         net.minecraft.network.chat.Component.literal("Sunstar"),
-                        net.minecraft.network.chat.Component.literal("Sunstar")), store);
-        String mythShown = myth.isEmpty() ? "(沒翻)" : myth.get(myth.size() - 1).getString();
+                        net.minecraft.network.chat.Component.literal("Sunstar"),
+                        banner()), store);
+        String mythShown = myth.isEmpty() ? "(沒翻)" : myth.get(1).getString();
         // 不寫死措辭：這一條要守的是「繁中那層是空的，不可以把簡中的譯名擋回英文」，
         // 不是「Sunstar 一定要叫某四個字」。寫死的話，每次統一術語或改譯名都會
         // 弄紅一支跟那件事無關的測試——2026-09-29 把 Mythic 名稱改成照背景敘述
@@ -72,6 +74,25 @@ public final class LayeredGearNameTest {
         System.out.println(failures == 0 ? "簡中疊層的裝備名：全部通過"
                                          : "簡中疊層的裝備名：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * 稀有度橫幅：整列都是圖示（三段，各自一個顏色才不會被併成一段）。
+     *
+     * <p>名字只套在<b>長得像物品</b>的說明上（見 TooltipPanel#itemShaped）；
+     * 只有兩列名字、沒有橫幅的說明會被當成介面按鈕，名稱留原文。
+     */
+    private static net.minecraft.network.chat.Component banner() {
+        net.minecraft.network.chat.MutableComponent row =
+                net.minecraft.network.chat.Component.empty();
+        int[] colours = {0xAA00AA, 0x000000, 0xE0B3E6};
+        int[] glyphs = {0xE060, 0xE03C, 0xE048};
+        for (int k = 0; k < glyphs.length; k++) {
+            int c = colours[k];
+            row.append(net.minecraft.network.chat.Component.literal(
+                    new String(Character.toChars(glyphs[k]))).withStyle(st -> st.withColor(c)));
+        }
+        return row;
     }
 
     private static void check(String what, boolean ok) {
