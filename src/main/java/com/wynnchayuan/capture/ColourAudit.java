@@ -141,7 +141,7 @@ public final class ColourAudit {
             }
             String colour = describe(run.style());
             shown.add(new Run(colour, text));
-            if (hasLetter(text)) {
+            if (hasLetter(withoutNumbers(text))) {
                 present.add(colour);
             }
         }
@@ -191,6 +191,27 @@ public final class ColourAudit {
         }
         return GlyphSplitter.parametrizeNumbers(GlyphSplitter.stripGlyphChars(text));
     }
+
+    /**
+     * 數值連同緊貼在後面的單位（{@code 12s}、{@code 3m}、{@code 5stx}）拿掉。
+     *
+     * <h2>為什麼</h2>
+     * 數值是佔位符，連同自己的樣式填回譯文；緊貼在後面的單位字母也跟著數值走顏色
+     * （{@code LineTranslator#appendHugging} 的單位那一段）。所以只靠數值與單位撐著的
+     * 顏色不會掉——但它也不會出現在「主色或貼上的重點段」裡，先前照樣被記成掉了。
+     *
+     * <p>名牌狀態列的倒數（{@code {#} {#} {#} {~}s}，灰）就是這樣：使用者 2026-10-21 的
+     * captured.json 裡 327 句有 78 句是它，畫面上那個 {@code 12s} 其實是灰的
+     * （{@code NameplateTimerColourTest}），反而把真的掉了色的句子擠出四百句的名額。
+     * 純數字本來就不算（見 {@link #audit} 的「只算有字的片段」），這裡只是把單位也算進去。
+     * 單位的判準跟顯示那邊一樣：緊貼數值、三個以內的 ASCII 小寫、後面不再接字母。
+     */
+    static String withoutNumbers(String text) {
+        return NUMBER_UNIT.matcher(text).replaceAll("");
+    }
+
+    private static final Pattern NUMBER_UNIT =
+            Pattern.compile("\\{~\\}(?:[a-z]{1,3}(?![A-Za-z]))?");
 
     private static boolean hasLetter(String text) {
         return text.codePoints().anyMatch(Character::isLetter);

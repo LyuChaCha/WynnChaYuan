@@ -4,6 +4,7 @@ import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -69,6 +70,7 @@ public final class PanelFlowTest {
         untouched(store);
         leftCells(store);
         singleColumn(store);
+        boonColours(store);
 
         finish();
     }
@@ -166,6 +168,131 @@ public final class PanelFlowTest {
                 indented(59, "play.wynncraft.com"));
         Component[] none = LineTranslator.flowColumn(chat, store, null);
         check("湊不成句的單欄訊息不碰", none[0] == null && none[1] == null);
+    }
+
+    /**
+     * 聊天裡的賜福公告：條件句是灰的，併句之後不能掉成預設色（使用者 2026-10-21 的 log）。
+     *
+     * <p>分段照 log 的 [CHAT/INFO] 原樣：開頭那句<b>不帶顏色</b>，數值與屬性名 {@code &f}，
+     * 其餘 {@code &7}。整句翻出來的中文把條件句搬到前面，先前它跟著開頭那句不帶顏色，
+     * 聊天裡畫成白的。措辭不寫死：只看「哪些字是什麼顏色」。
+     */
+    private static void boonColours(TranslationStore store) {
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+        Style bare = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("default")));
+
+        // [20:32:21] Madman：This time only, immediately / gain +360 Health (Max x8) for / every Curse you currently have
+        String[] f1 = {"This time only, immediately", "gain +360 Health (Max x8) for",
+                       "every Curse you currently have"};
+        check("前提：語料裡有 Madman 這一整句", hasCjk(nullToEmpty(whole(f1, store))));
+        List<StyledText> rows = new ArrayList<>();
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(52))
+                .append(Component.literal("[").setStyle(grey))
+                .append(Component.literal("Madman]").setStyle(Style.EMPTY
+                        .withColor(TextColor.fromRgb(0xFF55FF)).withBold(true)))
+                .append(offset(129))));
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(14))
+                .append(Component.literal("This time only, immediately").setStyle(bare))
+                .append(offset(91))));
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(2))
+                .append(Component.literal("gain ").setStyle(bare))
+                .append(Component.literal("+360 Health").setStyle(white))
+                .append(Component.literal(" (Max x8) for").setStyle(grey))
+                .append(offset(79))));
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(-6))
+                .append(Component.literal("every Curse you currently have").setStyle(grey))
+                .append(offset(71))));
+        boonRows("Madman", rows, "360", "Health", store);
+
+        // [20:41:50] Midas Touch：For the rest of this Lootrun, / gain +2% Loot Quality (Max / x8) everytime you get a Boon
+        String[] f2 = {"For the rest of this Lootrun,", "gain +2% Loot Quality (Max",
+                       "x8) everytime you get a Boon"};
+        check("前提：語料裡有 Midas Touch 這一整句", hasCjk(nullToEmpty(whole(f2, store))));
+        rows = new ArrayList<>();
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(3))
+                .append(Component.literal("For the rest of this Lootrun,").setStyle(bare))
+                .append(offset(80))));
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(12))
+                .append(Component.literal("gain ").setStyle(bare))
+                .append(Component.literal("+2% Loot Quality").setStyle(white))
+                .append(Component.literal(" (Max").setStyle(grey))
+                .append(offset(89))));
+        rows.add(StyledText.fromComponent(Component.empty().append(offset(3))
+                .append(Component.literal("x8) everytime you get a Boon").setStyle(grey))
+                .append(offset(80))));
+        boonRows("Midas Touch", rows, "2%", "Loot Quality", store);
+    }
+
+    private static void boonRows(String name, List<StyledText> rows, String value,
+                                 String stat, TranslationStore store) {
+        Component[] out = LineTranslator.flowColumn(rows, store, null);
+        int first = out[0] == null ? 1 : 0;
+        boolean all = true;
+        for (int i = first; i < out.length; i++) {
+            all &= out[i] != null;
+        }
+        check(name + "：整句併起來翻了", all && first < out.length);
+        if (!all) {
+            return;
+        }
+        List<int[]> chars = new ArrayList<>();       // {碼位, 顏色（-1 是沒有顏色）, 在不在括號裡}
+        int[] depth = {0};
+        for (int i = first; i < out.length; i++) {
+            out[i].visit((style, text) -> {
+                if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
+                    return java.util.Optional.empty();
+                }
+                TextColor colour = style.getColor();
+                text.codePoints().forEach(cp -> {
+                    if (cp == '(' || cp == '（') {
+                        depth[0]++;
+                    }
+                    if (!Character.isWhitespace(cp)) {
+                        chars.add(new int[] {cp, colour == null ? -1 : colour.getValue(), depth[0]});
+                    }
+                    if ((cp == ')' || cp == '）') && depth[0] > 0) {
+                        depth[0]--;
+                    }
+                });
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        StringBuilder shown = new StringBuilder();
+        for (int[] c : chars) {
+            shown.appendCodePoint(c[0]).append(c[1] == 0xAAAAAA ? "灰" : c[1] == 0xFFFFFF ? "白"
+                    : c[1] == -1 ? "無" : "?").append(' ');
+        }
+        System.out.println("      " + name + "：" + shown);
+        check(name + "：★ 沒有任何一個字掉成預設色（沒有顏色）",
+              chars.stream().noneMatch(c -> c[1] == -1));
+        check(name + "：★ 括號外面也有灰色的中文字（條件句是灰的，不是只有「(最多 x8)」）",
+              chars.stream().anyMatch(c -> c[2] == 0 && c[1] == 0xAAAAAA && isCjk(c[0])));
+        String digits = value.replaceAll("[^0-9]", "");
+        check(name + "：數值照原文是白的",
+              chars.stream().filter(c -> digits.indexOf(c[0]) >= 0 && c[2] == 0)
+                   .allMatch(c -> c[1] == 0xFFFFFF));
+        // 屬性名的譯名從語料取，不寫死
+        String term = store.lookup(stat);
+        StringBuilder plain = new StringBuilder();
+        for (int[] c : chars) {
+            plain.appendCodePoint(c[0]);
+        }
+        int at = term == null ? -1 : plain.indexOf(term.replace(" ", ""));
+        boolean statWhite = at >= 0;
+        for (int i = 0; statWhite && i < term.replace(" ", "").length(); i++) {
+            statWhite = chars.get(at + i)[1] == 0xFFFFFF;
+        }
+        check(name + "：屬性名（" + term + "）照原文是白的", statWhite);
+    }
+
+    private static boolean isCjk(int cp) {
+        return cp >= 0x4E00 && cp <= 0x9FFF;
+    }
+
+    private static String nullToEmpty(String s) {
+        return s == null ? "" : s;
     }
 
     /** 湊不成句的面板：一列都不該被動到。 */

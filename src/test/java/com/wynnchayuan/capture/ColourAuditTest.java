@@ -85,6 +85,18 @@ public final class ColourAuditTest {
                 ColourAudit.audit(src, dst, List.of(piece("Hold for ", GREY), piece("51", GOLD),
                         piece(" seconds", GREY)), List.of(piece("51", GOLD)),
                         new boolean[] {false}, GREY) == null);
+        // 數值緊貼的單位（名牌倒數的 12s）也是跟著數值回來的，見 ColourAudit#withoutNumbers
+        List<String> plate = List.of("Palace Soldier {#}{#}", "{#}", "{#} {#} {#} {~}s");
+        String[] plateDst = {"宮廷士兵 {#}{#}", "{#}", "{#} {#} {#} {~}s"};
+        check("★ 只有「數值＋單位」不同色的不記（名牌倒數）",
+                ColourAudit.audit(plate, plateDst, List.of(piece("Palace Soldier", WHITE),
+                        piece("12s", GREY)), List.of(piece("12s", GREY)),
+                        new boolean[] {false}, WHITE) == null);
+        check("數值後面隔著空白的字母不是單位，照舊要記（「12 x 名稱」的 x）",
+                ColourAudit.audit(List.of("{~} x Zombie Eye {#}{#}{#}"),
+                        new String[] {"{~} x 殭屍之眼 {#}{#}{#}"},
+                        List.of(piece("12 x ", GREY), piece("Zombie Eye", WHITE)),
+                        List.of(piece("12 x ", GREY)), new boolean[] {false}, WHITE) != null);
 
         // 記下來、寫出去、讀回來
         ColourAudit.clear();
