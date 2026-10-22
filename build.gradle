@@ -1564,6 +1564,14 @@ tasks.register('runGearNameOnGearChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGearNameOnGearChecks' }
 
+tasks.register('runLootrunCardTitleChecks', JavaExec) {
+    group = 'verification'
+    description = 'Lootrun 試煉卡與使命卡的標題照使命名顯示，不留英文、不變成同名裝備'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.LootrunCardTitleTest'
+}
+tasks.named('check') { dependsOn 'runLootrunCardTitleChecks' }
+
 tasks.register('runWynnventoryChecks', JavaExec) {
     group = 'verification'
     description = 'Wynnventory 的價格框與語言鍵翻得出來；按住 Shift、沒裝的人、六個語言的語料'

@@ -372,12 +372,19 @@ public final class TooltipPanel {
         // 認得很窄：第 0 行必須是名稱列的外框（圖示夾著名字，見 #nameRowInner），
         // 而且不是技能樹的節點。Lootrun 使命卡的標題是「{#}Redemption」——只有開頭
         // 一個圖示，不是名稱列，所以使命「救贖」不會變成那件護腿的名字。
+        // （新版卡片的標題是裸名，見下面的 lootrunTitle。）
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null;
+        // Lootrun 試煉卡／使命卡的標題：新版卡片是裸名（Hubris），只查得到同名的那件
+        // 裝備。標題那一列改問使命名自己的譯名，見 TranslationStore#lootrunTitle。
+        boolean lootrunTitle = n > 0 && isLootrunCard(styled)
+                && com.wynnchayuan.translate.LootrunNames.isName(bareName(
+                        com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()));
         try {
             while (i < n) {
                 TranslationStore.holdAppendedOriginal(i >= 2);
                 TranslationStore.nameLine(itemRows && i < 2);
+                TranslationStore.lootrunTitle(lootrunTitle && i == 0);
                 // Wynntils「物品猜測」一列一列的候選物品名：每一格照名稱的規矩換、
                 // 縮排與逗號原樣留著。先於整段查表——這幾列不是散文。見 GuessListRow。
                 com.wynnchayuan.translate.GuessListRow.Row listRow = abilityPanel ? null
@@ -490,6 +497,7 @@ public final class TooltipPanel {
         } finally {
             TranslationStore.holdAppendedOriginal(false);
             TranslationStore.nameLine(false);
+            TranslationStore.lootrunTitle(false);
         }
         // 行首縮排的續行（技能樹「效果」的第二、三項、傷害的小項）：模板剝掉的行首空白
         // 重建時沒有補回來，起點要照原文、或照譯文第一行的數值欄重新補。見 IndentAlign。
@@ -977,12 +985,28 @@ public final class TooltipPanel {
      * <p>認不出來時退回原本的行為（標題留原文），不會比現在更糟。
      */
     private static boolean isAbilityNode(List<StyledText> styled) {
+        return anyMarkers(styled, PANEL_MARKERS);
+    }
+
+    /** Lootrun 的試煉卡或使命卡。見 {@link TranslationStore#lootrunTitle}。 */
+    private static boolean isLootrunCard(List<StyledText> styled) {
+        return anyMarkers(styled, LOOTRUN_CARD_MARKERS);
+    }
+
+    /** {@link #PANEL_MARKERS} 裡 Lootrun 卡片的那兩組。 */
+    private static final String[][] LOOTRUN_CARD_MARKERS = {
+        {"Objective:", "Reward:"},
+        {"Trial:", "Reward:"},
+    };
+
+    /** 有沒有哪一組行<b>全部</b>出現在這份說明裡。 */
+    private static boolean anyMarkers(List<StyledText> styled, String[][] groups) {
         StringBuilder all = new StringBuilder();
         for (StyledText line : styled) {
             all.append(line.getStringWithoutFormatting()).append('\n');
         }
         String text = all.toString();
-        for (String[] markers : PANEL_MARKERS) {
+        for (String[] markers : groups) {
             boolean every = true;
             for (String marker : markers) {
                 every &= text.contains(marker);
@@ -1016,6 +1040,9 @@ public final class TooltipPanel {
         {"Blocked by another ability"},
         {"Click to unlock this ability"},
         {"Objective:", "Reward:"},      // Lootrun 的使命
+        // Lootrun 的試煉（新版卡片，實機 2026-10-22）：「Trial:」「Reward:」兩段。
+        // 沒認出來時，標題 Hubris 被當成「說明不像物品的裝備名」留了英文。
+        {"Trial:", "Reward:"},
         // Lootrun 的賜福選單。Heavensent 同時是使命名、賜福名與裝備名，
         // 使命那組認得出來，賜福選單卻沒被認出，標題就被守門擋成英文。
         {"Dynamic Boon", "Click to choose!"},
