@@ -273,7 +273,7 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 **Dern 與腐敗：同一場戰爭的兩個產物。** 腐敗來自 Realm of War，而 Realm of War 是光暗之戰打碎的鏡子。所以腐敗不站在任何一邊，但雙方都利用它。關鍵人物是 **Bak'al**：他先是 Anathema 的後裔、腐敗大軍的統帥，後來背叛 Anathema、成為 Saphanis 的後裔。886 AP 他敗給 Bob，Saphanis 卻原諒了他，交給他安置眼的差事；在《光之領域 第五部》他再度現身，Lari 追著他穿過一座通往 Dern 的傳送門。（他改投 Saphanis 的時間，wiki 各頁說法不一：Saphanis 條目寫「大約在晝夜平分前後」，War of the Realms 條目引《Detlas 遺跡》寫「約 0 AP」，時間線寫「162 AP 之後」。）
 
-**Dern 與黯蝕：黯蝕是 Dern 派去 Gavel 的。** 寄生體是 Dern 的生物，在晝夜平分那年被派到 Gavel 吸取光。800 AP 它再度出現，Dullahan 替 Lari 擋下一咬；它在 Kander Forest 造出黯蝕之心，孵出 Dern 蟎（Dernmite）在北 Gavel 散播黯蝕，自己則開了一道門直接鑽進光之領域，寄生在 Orphion 身上。探索點「Ne du Valeos du Ellach」（古 Gavel 語，wiki 說意為 The War of the Realms，即「界域之戰」，直譯是「諸界的那場戰爭」）重現了這一幕：一個「???」嘲笑 Orphion 白費力氣，說眼的凝視已經「穿透了帷幕」；Orphion 不以為意，說黑暗總會讓位給光——下一秒寄生體就纏上了他。
+**Dern 與黯蝕：黯蝕是 Dern 派去 Gavel 的。** 寄生體是 Dern 的生物，在晝夜平分那年被派到 Gavel 吸取光。800 AP 它再度出現，Dullahan 替 Lari 擋下一咬；它在 Kander Forest 造出黯蝕之心，孵出 Dern 蟎（Dernmite）在北 Gavel 散播黯蝕，自己則開了一道門直接鑽進光之領域，寄生在 Orphion 身上。探索點「Ne du Valeos du Ellach」（古 Gavel 語，wiki 說意為 The War of the Realms，即「界域之戰」，直譯是「諸界的那場戰爭」）重現了這一幕：一個「???」嘲笑 Orphion 白費力氣，說眼的凝視已經「穿透了帷幕」；Orphion 不以為意，說黑暗總會讓位給光——下一秒寄生體就纏上了祂。
 
 把這些放在一起看，Silent Expanse 與 Gavel 是一組對照：
 
@@ -296,7 +296,7 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 不過兩者之間有幾條線索互相呼應，值得在這裡記一筆：
 
 - Ragni 的國王說「Tasim 留在那裡了」——《彼界之旅》的隊伍裡沒有 Tasim，Aledar 隨隊犧牲，從 Fruma 來的三人組只剩 Tasim 與玩家。
-- 車隊駕駛說「你們三個人裡，拿到留下許可的並不是你。沒錯，比賽的結果我聽說了」，又抱怨「又是那顆該死的石頭……又是那句該死的台詞」——玩家當初來到 Wynn 的那趟旅程是**排演好的**。旁白也問：「你剛來的時候，不也是像這樣睡著的嗎？」
+- 車隊駕駛說「你們三個人裡，拿到留下許可的並不是你。沒錯，比賽的結果我聽說了」，又抱怨「又是同一顆該死的大石頭……又是同一句該死的台詞」——玩家當初來到 Wynn 的那趟旅程是**排演好的**。旁白也問：「你剛來的時候，不也是像這樣睡著的嗎？」
 - 《不歸之地》重寫後那句「這個世界。那些陰影。那頂王冠。」與「我們始終不過是人類」，正好接上 Fruma 篇裡玩家被叫作「受詛者」（the Cursed One）的身分謎。（推測）
 
 出處：wiki〈[A Journey Home](https://wynncraft.wiki.gg/wiki/A_Journey_Home)〉；任務《歸鄉之旅》《嶄新的開始》（語料 quest/a-journey-home.json、quest/a-new-beginning.json）
