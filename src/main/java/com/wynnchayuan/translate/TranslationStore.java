@@ -2256,11 +2256,65 @@ public final class TranslationStore {
     private static final ThreadLocal<Boolean> NAME_LINE =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
 
+    /**
+     * 現在畫的是 Lootrun 試煉卡／使命卡的<b>標題</b>。
+     *
+     * <h2>實機回報（使用者 2026-10-22，1.0.3_2）</h2>
+     * 新版卡片的標題是裸名（{@code Hubris}，沒有開頭圖示；使命卡在 cards.json 裡也是
+     * {@code "card": "High Roller"}）。語料替使命名收的是 {@code {#}Hubris} 與
+     * {@code Hubris:}——裸名不能收，因為六個名字跟裝備撞名（validate：同一個原文只能
+     * 一種譯法）。於是裸名只查得到那件裝備：試煉卡被名稱列的守門留成英文，
+     * 使命卡則畫成「平衡之盔 (Equilibrium)」。
+     *
+     * <p>掛著這個旗標時，整格就是使命名的查表改答使命自己的譯名（見 {@link #lootrunName}），
+     * 再照「內容名稱」的設定附原文。只有 {@code TooltipPanel} 在認出 Lootrun 卡片之後、
+     * 畫第 0 列時才掛，畫完就放下；預設關著，掛漏只是回到舊行為。
+     */
+    public static void lootrunTitle(boolean on) {
+        LOOTRUN_TITLE.set(on);
+    }
+
+    /** 見 {@link #lootrunTitle}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
+    private static final ThreadLocal<Boolean> LOOTRUN_TITLE =
+            ThreadLocal.withInitial(() -> Boolean.FALSE);
+
+    /**
+     * 使命／試煉名自己的譯名：聊天面板那一格（{@code {#}名字}）或記分板那一行
+     * （{@code 名字:}）。都沒有就回 {@code null}。
+     */
+    String lootrunName(String name) {
+        String icon = lookupExact(ICON + name);
+        if (icon != null && icon.startsWith(ICON) && icon.lastIndexOf(ICON) == 0) {
+            String cell = icon.substring(ICON.length()).strip();
+            if (!cell.isEmpty()) {
+                return cell;
+            }
+        }
+        String colon = lookupExact(name + ":");
+        if (colon != null && (colon.endsWith(":") || colon.endsWith("："))) {
+            String cell = colon.substring(0, colon.length() - 1).strip();
+            if (!cell.isEmpty()) {
+                return cell;
+            }
+        }
+        return null;
+    }
+
     public String lookup(String template) {
         if (BAR_ITEMS.get() && template != null && getsOriginal(template.strip())) {
             return null;                       // 這個位置不會是物品，見 barItemNames
         }
         boolean holdAppended = HOLD_APPENDED.get();
+        if (LOOTRUN_TITLE.get() && LootrunNames.isName(template)) {
+            String name = template.strip();
+            String own = lootrunName(name);
+            if (own != null) {
+                return holdAppended ? own : LootrunNames.apply(name, own, pageNameMode);
+            }
+            if (gearOnly(name)) {
+                return null;                   // 只有裝備用這個原文：留原文，不畫成那件裝備
+            }
+        }
         if (NAME_LINE.get() && template != null) {
             String own = gearOwnName(template);
             if (own != null) {
