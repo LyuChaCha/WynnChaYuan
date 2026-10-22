@@ -187,7 +187,7 @@ Wynnston 其實是 Cerid 的機甲之一，外型仿成一隻真狗；名字來�
 
 最後一句用古 Wynn 語寫成：「她必須被熄滅。她的影響在餵養這場無謂的戰爭。」第二章當時把這個「她」列為未解；Fruma 篇之後，「戰爭」就是 Anathema，答案幾乎可以確定（推測，見下文烽火王宮）。前一句「不能全怪罪於黑暗」也指向同一處。
 
-**彩蛋**：戰後可以「摸」Orphion 三次。他的反應從「……？」「住手。這有失體面。」到「夠了。我的感激不會超過我的耐心」，偶爾還會把玩家傳送到腐敗傳送門去（本章自譯）。
+**彩蛋**：戰後可以「摸」Orphion 三次。祂的反應從「……？」「住手。這有失體面。」到「夠了。我的感激不會超過我的耐心」，偶爾還會把玩家傳送到腐敗傳送門去（本章自譯）。
 
 出處：討伐戰 Orphion 的光之樞紐；任務《光之領域》；wiki〈[Orphion's Nexus of Light](https://wynncraft.wiki.gg/wiki/Orphion%27s_Nexus_of_Light)〉、〈[Orphion](https://wynncraft.wiki.gg/wiki/Orphion)〉、〈[The Parasite](https://wynncraft.wiki.gg/wiki/The_Parasite)〉
 
