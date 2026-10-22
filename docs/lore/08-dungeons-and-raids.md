@@ -66,7 +66,7 @@
 
 ### 3. 冥界墓穴：Charon
 
-副標「生死之間……」（本章自譯）。入口在古 Nemract 巨樹下的大頭骨裡（《深入幽暗》打開）。0 AP 古 Nemract 陷落時的守軍沒有安息，成了 Charon 的**遺棄軍團**（Forsaken Legion），Charon 在幻象裡把整座城的人收成「傀儡」。
+副標「生死之間……」（本章自譯）。入口在古 Nemract 巨樹下的大頭骨裡（《深入幽暗》打開）。0 AP 古 Nemract 陷落時的守軍沒有安息，成了 Charon 的**遭棄軍團**（Forsaken Legion），Charon 在幻象裡把整座城的人收成「傀儡」。
 
 Nemract 民兵的 **Graken 將軍**帶著 Wynn 的部隊先一步進場，說話滿口英式俚語（chap、old bean，語料作「仁兄」「老兄」）：「好了，我不想嚇你，老兄，但我相信我們現在就站在如假包換的地獄之門前。」到最後一房他把軍隊的指揮權交給玩家：「不過可別當成升官了，老兄。」（語料）。地城商人那裡，Commander Takan 吐槽：「還有誰聽得懂那個 Graken 將軍在講什麼嗎？因為我聽不懂。」——同一個 Takan 後來在《傭兵》叛變（第一章 §8）。
 
@@ -242,7 +242,7 @@ Wynnston 其實是 Cerid 的機甲之一，外型仿成一隻真狗；名字來�
 | 遠古 | Olm 撤離 Time Valley，Garoth 留守、造出不流動的時間口袋 | 時失聖殿 |
 | 遠古（年代不明） | 有人把 Nii、Az、Ek 符文熔在一起，撕裂時空、據說毀掉一個文明，The Forgery 由此而生 | 腐敗地城 |
 | 688 BP | Hashr 弒父，被臣民封進古墓 | 風沙古墓 |
-| 0 AP | 碎裂：Ahms 巨像劈開大地；寄生體入侵 Gavel；古 Nemract 陷落，守軍成為遺棄軍團 | 峽谷巨像飾品、Grootslang 之巢、冥界墓穴 |
+| 0 AP | 碎裂：Ahms 巨像劈開大地；寄生體入侵 Gavel；古 Nemract 陷落，守軍成為遭棄軍團 | 峽谷巨像飾品、Grootslang 之巢、冥界墓穴 |
 | 200 AP | Anathema 靠 Bak'al 造的共鳴織機化為人形，成為 Fruma 女王 | 烽火王宮 |
 | 589 AP | Theorick 凍結 Nesaak、自囚 | 冰封墳塚 |
 | 623 AP | （舊設定）Garoth 被推進傳送門 | 腐敗失落聖所 |
@@ -265,7 +265,7 @@ Wynnston 其實是 Cerid 的機甲之一，外型仿成一隻真狗；名字來�
 | Arakadicus | 蜘蛛女王 | Nivla 蛛群的源頭 | 蟲蝕深坑、《蛛群登巔》 |
 | Charon | 不死軍閥，「靈魂看守者」 | 古 Nemract 陷落後收編守軍 | 冥界墓穴、《深入幽暗》 |
 | Graken 將軍 | Nemract 民兵將領 | 帶兵進墓穴、把指揮權交給玩家 | 冥界墓穴 |
-| Haros | 被逐出遺棄軍團的擺渡人 | 只見於物品與祭壇 | Rotten Passage |
+| Haros | 被逐出遭棄軍團的擺渡人 | 只見於物品與祭壇 | Rotten Passage |
 | Garoth | 最後的 Olm 法師（新版）／Elkurn 科學家（舊版） | 守著崩解中的聖殿 | 時失聖殿、腐敗失落聖所 |
 | Hashr | 沙漠皇帝的第 26 子 | 自稱解放者的篡位者 | 風沙古墓、《黃沙王朝》 |
 | Theorick | Twain 家的冰法師 | 自囚的守護者，或被敵魂佔據的軀殼 | 冰封墳塚、《墮落者的宿命》 |
