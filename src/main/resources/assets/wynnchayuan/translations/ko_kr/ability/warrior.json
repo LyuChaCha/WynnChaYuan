@@ -3,8 +3,8 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 236,
-  "translated": 236,
+  "count": 237,
+  "translated": 237,
   "note": "戰士的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -2579,7 +2579,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "Cyclone이 {~}초 더 빠르게 피해를 줍니다.",
+   "dst": "{c1}Cyclone이 {c2}{~}초{c1} 더 빠르게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3219,6 +3219,20 @@
    "lines": 3,
    "flat": "Surviving after the effect ends activates effects that happen when leaving Corrupted {#}.",
    "_raw": "Surviving after the effect ends\nactivates effects that happen\nwhen leaving Corrupted .",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0236": {
+   "src": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted {#},\notherwise you die.",
+   "dst": "저장된 피해 없이 효과가 끝나면\n타락 {#}이 끝날 때 일어나는\n효과가 발동하며,\n그렇지 않으면 사망합니다.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Brink of Madness"
+   ],
+   "lines": 4,
+   "flat": "Ending the effect with no stored damage activates effects that happen when leaving Corrupted {#}, otherwise you die.",
+   "_raw": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted ,\notherwise you die.",
    "ability": "Brink of Madness",
    "code": "WARRIOR"
   }

@@ -3,8 +3,8 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 236,
-  "translated": 236,
+  "count": 237,
+  "translated": 237,
   "note": "战士的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -2579,7 +2579,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "Cyclone 造成伤害的间隔缩短 {~} 秒。",
+   "dst": "{c1}Cyclone 造成伤害的间隔缩短 {c2}{~} 秒{c1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3219,6 +3219,20 @@
    "lines": 3,
    "flat": "Surviving after the effect ends activates effects that happen when leaving Corrupted {#}.",
    "_raw": "Surviving after the effect ends\nactivates effects that happen\nwhen leaving Corrupted .",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0236": {
+   "src": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted {#},\notherwise you die.",
+   "dst": "效果结束时若未保存任何伤害，\n会触发脱离腐化 {#}\n时的效果，\n否则你会死亡。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Brink of Madness"
+   ],
+   "lines": 4,
+   "flat": "Ending the effect with no stored damage activates effects that happen when leaving Corrupted {#}, otherwise you die.",
+   "_raw": "Ending the effect with no stored damage\nactivates effects that happen\nwhen leaving Corrupted ,\notherwise you die.",
    "ability": "Brink of Madness",
    "code": "WARRIOR"
   }
