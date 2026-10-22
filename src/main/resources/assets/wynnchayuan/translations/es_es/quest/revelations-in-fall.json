@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Revelations in Fall",
-  "count": 306,
-  "translated": 306,
+  "count": 307,
+  "translated": 307,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -2211,8 +2211,8 @@
    "source": "wiki"
   },
   "Revelations in Fall#220": {
-   "src": "Walk through the gate to the Roughworks at in {p}.",
-   "dst": "Atraviesa la puerta hacia Roughworks en  en {p}.",
+   "src": "Walk through the gate to the Roughworks at [-{~}, {~}, -{~}] in {p}.",
+   "dst": "Atraviesa la puerta hacia Roughworks en [-{~}, {~}, -{~}], en {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "Revelations in Fall",
@@ -3070,6 +3070,16 @@
    "quest": "Revelations in Fall",
    "stage": "Stage 12",
    "speaker": "Sui",
+   "source": "captured"
+  },
+  "Revelations in Fall#306": {
+   "src": "You don't have to come along if you don't want to, you know?",
+   "dst": "No hace falta que vengas si no quieres, ¿sabes?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "Player",
    "source": "captured"
   }
  }

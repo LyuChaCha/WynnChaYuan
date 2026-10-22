@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23697,
-  "translated": 23694,
+  "count": 23698,
+  "translated": 23695,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -147169,8 +147169,8 @@
    "source": "wiki"
   },
   "Revelations in Fall#220": {
-   "src": "Walk through the gate to the Roughworks at in {p}.",
-   "dst": "穿过 {p} 通往 Roughworks 的大门。",
+   "src": "Walk through the gate to the Roughworks at [-{~}, {~}, -{~}] in {p}.",
+   "dst": "穿过 {p} 中位于 [-{~}, {~}, -{~}]、通往 Roughworks 的大门。",
    "role": "desc",
    "kind": "objective",
    "quest": "Revelations in Fall",
@@ -148028,6 +148028,16 @@
    "quest": "Revelations in Fall",
    "stage": "Stage 12",
    "speaker": "Sui",
+   "source": "captured"
+  },
+  "Revelations in Fall#306": {
+   "src": "You don't have to come along if you don't want to, you know?",
+   "dst": "如果你不想，其实不用跟来的，知道吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Revelations in Fall",
+   "stage": "Stage 7",
+   "speaker": "Player",
    "source": "captured"
   },
   "Rise of the Quartron#000": {

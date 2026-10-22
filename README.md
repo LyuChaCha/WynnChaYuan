@@ -18,8 +18,8 @@ WynnChaYuan 是一個專門做 Wynncraft 多語言翻譯的開源公益專案（
 [回饋與建議](https://wynnchayuan.com/feedback) ·
 [更新日誌](CHANGELOG.md) ·
 [回報問題](https://github.com/LyuChaCha/WynnChaYuan/issues) ·
+[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan) ·
-[Modrinth](https://modrinth.com/mod/wynnchayuan) ·
 [Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
@@ -154,7 +154,6 @@ WynnChaYuan 是一個專門做 Wynncraft 多語言翻譯的開源公益專案（
 | 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、[Fabric API](https://modrinth.com/mod/fabric-api) |
 
 1. 下載 jar：[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
-   [Modrinth](https://modrinth.com/mod/wynnchayuan) ·
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
 2. 放進 `mods/`。進遊戲後在聊天輸入 `/wcy`，或從 Mod Menu 開設定。
 
@@ -341,7 +340,6 @@ gradle build
 - 回饋與建議：<https://wynnchayuan.com/feedback>
 - GitHub：<https://github.com/LyuChaCha/WynnChaYuan>
 - CurseForge：<https://www.curseforge.com/minecraft/mc-mods/wynnchayuan>
-- Modrinth：<https://modrinth.com/mod/wynnchayuan>
 - Ko-fi（自由贊助，翻譯永遠免費）：<https://ko-fi.com/lyuchacha>
 - Discord：**LyuChaCha**
 

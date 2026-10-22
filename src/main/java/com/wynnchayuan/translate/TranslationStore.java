@@ -2174,6 +2174,18 @@ public final class TranslationStore {
     }
 
     /**
+     * 這個原文<b>只是</b>裝備（或書卷、護符、精華——{@code gearNames} 的那幾類）的名字，
+     * 別的檔案沒有同名條目。查表會把它答成那件裝備的譯名，「譯名加原文」下還附原文。
+     *
+     * <p>給物品說明的名稱列認「這份說明是不是那件裝備」用（{@code TooltipPanel}）：
+     * 任務書本的返回按鈕叫 {@code Return}，語料裡只有同名的戒指，按鈕就被翻成戒指。
+     * 素材與材料不算——那兩類不歸這一道管。
+     */
+    public boolean gearNameOnly(String key) {
+        return key != null && gearOnly(key.strip());
+    }
+
+    /**
      * 這個原文是某件物品的名字——裝備、書卷、素材或材料，翻了沒都算，
      * 別的檔案有沒有同名條目也不管。
      *
