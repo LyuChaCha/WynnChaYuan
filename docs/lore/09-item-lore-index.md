@@ -91,7 +91,7 @@
 
 | 物品（原文／現譯） | 稀有度 | lore 重點與指涉 | 備註 |
 |---|---|---|---|
-| Haros' Oar／Haros 之槳 | 傳奇 | Haros 是「Charon 遺棄軍團裡被逐出的擺渡人」。墓穴的冥河上沒有擺渡人，這支槳補上了那個空位（第八章 §3）（推測）。 | 祭壇 Rotten Passage 掉落。 |
+| Haros' Oar／Haros 之槳 | 傳奇 | Haros 是「Charon 遭棄軍團裡被逐出的擺渡人」。墓穴的冥河上沒有擺渡人，這支槳補上了那個空位（第八章 §3）（推測）。 | 祭壇 Rotten Passage 掉落。 |
 | Death's Reach／死亡之觸弓 | 稀有 | Haros：「我們保證，在我們的看顧之下，你們的家人都會團聚！」——一句擺渡人的冷笑話。 | Banished Legion 與 Forsaken Legion 是不同的原文，譯文分開是對的。 |
 | Abolition／廢除之刃 | 傳奇 | Graken 將軍：那些殭屍晚上不睡，宵禁有什麼用。 | 原文滿是英式俚語（bally-well、kip down），譯文改成口語但失去了 Graken 的「腔調」；他在地城裡的台詞語料用「老兄」「仁兄」，可以呼應。 |
 | Sanies／膿血之矛 | 傳奇 | Takan 指揮官：「還有誰聽得懂那個 Graken 將軍在講什麼嗎？」 | 同一個 Takan 後來叛變（《傭兵》）。 |
