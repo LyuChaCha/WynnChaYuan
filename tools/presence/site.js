@@ -888,7 +888,6 @@ const TEMPLATES = 'https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/temp
 const ISSUES = 'https://github.com/LyuChaCha/WynnChaYuan/issues';
 const SIZES = '22×17, 44×34, 88×68, 176×136, 352×272, 704×544, 1056×816';
 const REPO = 'https://github.com/LyuChaCha/WynnChaYuan';
-const MODRINTH = 'https://modrinth.com/mod/wynnchayuan';
 const CURSEFORGE = 'https://www.curseforge.com/minecraft/mc-mods/wynnchayuan';
 const RELEASES = REPO + '/releases/latest';
 const KOFI = 'https://ko-fi.com/lyuchacha';
@@ -941,7 +940,7 @@ export const TEXT = {
     'home.title': 'WynnChaYuan - Wynncraft 的多語言翻譯模組',
     'home.h1': '把 Wynncraft 翻成你的語言',
     'home.lede': 'WynnChaYuan 是 Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。原文保留，譯文顯示在旁邊，或直接寫進原本的位置——任務、對話、物品與介面都看得懂。',
-    'home.modrinth': '從 Modrinth 下載',
+    'home.github': '從 GitHub 下載',
     'home.langs': '支援的語言',
     'home.what': '翻了什麼',
     'home.f1': '物品與裝備', 'home.f1b': '裝備敘述、屬性、Major ID。旁邊另開面板，或寫進原本的說明框。',
@@ -1300,7 +1299,7 @@ export const TEXT = {
     'home.title': 'WynnChaYuan - Wynncraft in your language',
     'home.h1': 'Wynncraft, in your language',
     'home.lede': 'WynnChaYuan is a translation mod for Wynncraft (Fabric 1.21.11). The original text stays; the translation appears next to it or is written into the same spot - quests, dialogue, items and menus.',
-    'home.modrinth': 'Download on Modrinth',
+    'home.github': 'Download on GitHub',
     'home.langs': 'Supported languages',
     'home.what': 'What gets translated',
     'home.f1': 'Items and gear', 'home.f1b': 'Lore, stats and Major IDs, in a side panel or inside the original tooltip.',
@@ -2233,7 +2232,7 @@ export const ACCOUNT_ITEMS = [
 ];
 
 /** 下載選單的幾個地方。 */
-const DOWNLOADS = [['Modrinth', MODRINTH], ['CurseForge', CURSEFORGE], ['GitHub Releases', RELEASES]];
+const DOWNLOADS = [['GitHub Releases', RELEASES], ['CurseForge', CURSEFORGE]];
 
 const gate = (item) => (item && item.role ? ' data-need="' + item.role + '" hidden' : '');
 const here = (href, active) => (href === active ? ' aria-current="page"' : '');
@@ -2385,7 +2384,7 @@ function layout(lang, title, active, body, script) {
     + '<div class="foot-brand"><a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
     + '<p>%%foot.tagline%%</p></div>'
     + '<div class="foot-cols" role="navigation" aria-label="%%foot.label%%">'
-    + column('foot.get', [to(MODRINTH, 'Modrinth'), to(CURSEFORGE, 'CurseForge'), to(RELEASES, 'GitHub Releases'),
+    + column('foot.get', [to(RELEASES, 'GitHub Releases'), to(CURSEFORGE, 'CurseForge'),
       to(REPO + '/blob/main/CHANGELOG.md', '%%foot.changelog%%')])
     + column('foot.project', [to(REPO, 'GitHub'), to(REPO + '/blob/main/LICENSE', '%%foot.license%%'),
       to(REPO + '/blob/main/LICENSE-DATA', '%%foot.datalicense%%'), to(ISSUES, '%%foot.issues%%'),
@@ -2918,9 +2917,8 @@ const HOME = String.raw`
       <h1>%%home.h1%%</h1>
       <p class="lede">%%home.lede%%</p>
       <div class="cta">
-        <a class="btn primary" href="https://modrinth.com/mod/wynnchayuan">%%home.modrinth%%</a>
+        <a class="btn primary" href="https://github.com/LyuChaCha/WynnChaYuan/releases/latest">%%home.github%%</a>
         <a class="btn" href="https://www.curseforge.com/minecraft/mc-mods/wynnchayuan">CurseForge</a>
-        <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/releases/latest">GitHub</a>
       </div>
       <div class="chips" role="group" aria-label="%%home.langs%%">
         <button type="button" class="chip" data-lang="zh_tw" lang="zh-Hant">繁體中文</button><button type="button" class="chip" data-lang="zh_cn" lang="zh-Hans">简体中文</button><button type="button" class="chip" data-lang="ja_jp" lang="ja">日本語</button>
@@ -3232,9 +3230,8 @@ const FEATURES = String.raw`
         </div>
         <p class="note">%%features.cnote%%</p>
         <div class="cta">
-          <a class="btn primary" href="` + MODRINTH + String.raw`">%%home.modrinth%%</a>
+          <a class="btn primary" href="` + RELEASES + String.raw`">%%home.github%%</a>
           <a class="btn" href="` + CURSEFORGE + String.raw`">CurseForge</a>
-          <a class="btn" href="` + RELEASES + String.raw`">GitHub</a>
           <a class="btn" href="/#install">%%features.install%%</a>
         </div>
       </section>

@@ -739,8 +739,12 @@ check('網址上的 ?lang= 最優先（貼連結給人用）', (await r.text()).
 r = await inLang('/account?lang=klingon', { cookie: 'lang=en' });
 check('?lang= 亂填的不理', (await r.text()).includes('<html lang="en">'));
 
-check('首頁有下載的連結', pages['/'].includes('https://modrinth.com/mod/wynnchayuan')
+check('首頁有下載的連結：主要按鈕是 GitHub Releases、其次 CurseForge',
+  /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest">從 GitHub 下載<\/a>/.test(pages['/'])
+  && /<a class="btn primary" href="https:\/\/github\.com\/LyuChaCha\/WynnChaYuan\/releases\/latest">Download on GitHub<\/a>/.test(english['/'])
   && pages['/'].includes('https://www.curseforge.com/minecraft/mc-mods/wynnchayuan'));
+check('★ 沒有任何一頁連到我們在 Modrinth 的專案頁（2026-10 起不在 Modrinth 上架）',
+  PATHS.every((path) => !pages[path].includes('modrinth.com/mod/wynnchayuan') && !english[path].includes('modrinth.com/mod/wynnchayuan')));
 check('帳號頁講了怎麼從遊戲裡登入', pages['/account'].includes('F6') && pages['/account'].includes('披風一覽'));
 check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視',
   (r.headers.get('content-security-policy') || '').includes("script-src 'unsafe-inline' https://cdn.jsdelivr.net"));
@@ -992,15 +996,17 @@ await dc('/unlink', bobDc, {});
 // ---- ★ 頁首、頁尾、首頁的團隊、功能頁 ----
 for (const path of PATHS) {
   const html = pages[path];
-  check(path + ' 頁首有下載選單（三個地方）與贊助', html.includes('id="get-menu"')
-    && ['https://modrinth.com/mod/wynnchayuan', 'https://www.curseforge.com/minecraft/mc-mods/wynnchayuan',
+  check(path + ' 頁首有下載選單（GitHub Releases、CurseForge）與贊助', html.includes('id="get-menu"')
+    && ['https://www.curseforge.com/minecraft/mc-mods/wynnchayuan',
       'https://github.com/LyuChaCha/WynnChaYuan/releases/latest', 'https://ko-fi.com/lyuchacha']
       .every((link) => html.split('<main>')[0].includes(link)));
   const foot = html.split('<footer>')[1] || '';
-  check('★ ' + path + ' 頁尾有 GitHub、兩份授權、三個下載點、Ko-fi、聯絡方式',
+  check('★ ' + path + ' 頁尾有 GitHub、兩份授權、兩個下載點（GitHub Releases 在前）、Ko-fi、聯絡方式',
     ['href="https://github.com/LyuChaCha/WynnChaYuan"', '/blob/main/LICENSE"', '/blob/main/LICENSE-DATA"',
-      'modrinth.com/mod/wynnchayuan', 'curseforge.com/minecraft/mc-mods/wynnchayuan', 'ko-fi.com/lyuchacha',
-      '網站開發者：LyuChaCha', 'Discord：LyuChaCha', 'AGPL-3.0', 'CC BY-NC-SA 4.0'].every((w) => foot.includes(w)));
+      'github.com/LyuChaCha/WynnChaYuan/releases/latest', 'curseforge.com/minecraft/mc-mods/wynnchayuan', 'ko-fi.com/lyuchacha',
+      '網站開發者：LyuChaCha', 'Discord：LyuChaCha', 'AGPL-3.0', 'CC BY-NC-SA 4.0'].every((w) => foot.includes(w))
+    && foot.indexOf('/releases/latest') < foot.indexOf('curseforge.com/minecraft/mc-mods/wynnchayuan')
+    && !foot.includes('modrinth.com/mod/wynnchayuan'));
   check('★ ' + path + ' 頁尾寫著跟 Wynncraft 官方沒有關係', /Wynncraft、Mojang、Microsoft 沒有關係/.test(foot)
     && /Not affiliated with Wynncraft/.test(english[path].split('<footer>')[1]));
 }
@@ -1054,8 +1060,10 @@ check('★ 選單多了「功能」', pages['/'].includes('<a class="hn-link" hr
   const zhTop = top(pages['/']);
   check('★ 贊助是一顆只有愛心的按鈕：有說明給螢幕閱讀器、滑過浮出「贊助」', zhTop.includes('<a class="hn-icon hn-heart hn-tip" href="https://ko-fi.com/lyuchacha" aria-label="在 Ko-fi 贊助" data-tip="贊助">')
     && top(english['/']).includes('aria-label="Sponsor on Ko-fi" data-tip="Sponsor"'));
-  check('★ 下載還是那顆綠色的鈕，三個地方都在', /<button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">/.test(zhTop)
-    && ['Modrinth', 'CurseForge', 'GitHub Releases'].every((n) => zhTop.includes('role="menuitem">' + n)));
+  check('★ 下載還是那顆綠色的鈕，GitHub Releases 排第一、CurseForge 其次、沒有 Modrinth', /<button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">/.test(zhTop)
+    && ['GitHub Releases', 'CurseForge'].every((n) => zhTop.includes('role="menuitem">' + n))
+    && zhTop.indexOf('role="menuitem">GitHub Releases') < zhTop.indexOf('role="menuitem">CurseForge')
+    && !zhTop.includes('role="menuitem">Modrinth'));
   check('★ 沒登入的樣子：登入＋地球（語言），頭像那一塊藏著', /<div class="hn-guest hn-desk" id="hn-guest"><a class="btn small hn-signin" href="\/account">登入<\/a>/.test(zhTop)
     && zhTop.includes('<button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="語言" data-tip="語言" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">')
     && zhTop.includes('<div class="pop hn-user hn-desk" id="hn-user" hidden>') && zhTop.includes('<div class="hn-pgrid" id="hn-p-user" hidden>')
