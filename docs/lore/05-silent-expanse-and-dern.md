@@ -22,11 +22,13 @@ Silent Expanse 位在 Wynn 行省的東南角，wiki 又稱它為「通往 Dern 
 
 ## 時間順序的劇情
 
-### 一、遠古：諸界之戰與 Olm 的覆滅
+### 一、遠古：界域之戰與 Olm 的覆滅
 
-**光與暗是一對雙生子。** 依 wiki 整理的設定，Orphion（光）與 Saphanis（暗）原本是孿生的存在，後來彼此憎恨。祂們發現了「實體界」（Plane of Physicality，也就是我們平常的世界）並為它開戰，這場永無休止的戰爭就是**諸界之戰**（War of the Realms）。光與暗本身存在於「影響界」（Plane / Realms of Influence），影響界的變化會投射到實體界上；兩界之間隔著**虛空**（The Void）。
+**光與暗是一對雙生子。** 依 wiki 整理的設定，Orphion（光）與 Saphanis（暗）原本是孿生的存在，後來彼此憎恨。祂們發現了「物質界」（Physical Plane，也就是我們平常的世界）並為它開戰，這場永無休止的戰爭就是**界域之戰**（War of the Realms）。光與暗本身存在於「影響層」（Plane of Influence），影響層上的各個「影響領域」（Realms of Influence）的變化會投射到物質界上；兩界之間隔著**虛空**（The Void）。目前已知的影響領域有三個：光之領域、黑暗領域（Dern）、戰爭領域——wiki 把它們歸在同一個分類，各自在物質界開了一道門：Gavel 的巨樹下通往光、Silent Expanse 盡頭通往黑暗、Wynn 的腐敗傳送門通往戰爭。
 
-兩股力量互相擠壓，把映照著祂們的那面「鏡子」壓碎了，碎片成了「戰爭」（War）——也就是後來的 Realm of War 與它的化身 Anathema。換句話說，**腐敗不是黑暗，而是光暗之戰的副產品**；Saphanis 對腐敗、Realm of War、甚至各界之間屏障的逐漸崩壞都有份，但多半是「打仗打出來」的意外後果。（wiki 時間線把「影響界與實體界失聯、War 開始凝聚成 Anathema」放在 5000 年前，也就是 4000 BP。）
+兩股力量互相擠壓，把映照著祂們的那面「鏡子」壓碎了，碎片成了「戰爭」（War）——也就是後來的 Realm of War 與它的化身 Anathema。換句話說，**腐敗不是黑暗，而是光暗之戰的副產品**；Saphanis 對腐敗、Realm of War、甚至各界之間屏障的逐漸崩壞都有份，但多半是「打仗打出來」的意外後果。（wiki 時間線把「影響領域與物質界失聯、War 趁著這段平靜開始凝聚成 Anathema」列在**年代不明**的遠古；第一輪誤讀成 4000 BP，那一列其實是 Dogun 族長 Paku 被造出的年份，第二輪更正。）
+
+wiki〈The Realm of War〉補充了戰爭領域的定位：它是光與暗互相憎恨、爭奪物質界的那場戰爭本身的顯化，代表兩股影響力碰撞時的「平衡態」；落到物質界時，就是腐敗——紅色的枯萎、瘋狂、無法控制的憤怒、死者的復起。Sovereign Two 的說法是，光暗之戰打到「把曾經映照著它們的鏡子砸碎」，戰爭就從那「數不清的戰場碎片」裡誕生；Anathema 後來仿效它的兩位「親代」，硬是替自己開出了一道連到物質界的門——腐敗傳送門（第六章）。
 
 **Olm 是最早的受害者。** Olm 是來歷不明、高度發達的種族，精通時間魔法與符文魔法，語言就是今天所說的古 Wynn 語（Ancient Wynnic）。他們的首都位在今天 Silent Expanse 的山區——現在叫 Ruined Olmic City，但 wiki 特別註明這「肯定不是它真正的名字」；城裡有觀測隕石的天文台和一座大教堂。
 
@@ -44,12 +46,12 @@ Olm 的先知 **Anya** 早就預見了故土的滅亡，打造了一只「純光
 
 Wynn 的紀年以「開門」為原點：0 AP（After Portal）就是傳送門開啟那一年，距今一千年。依 wiki 時間線，這一年發生了 Orphion 所說的 **晝夜平分**（The Equinox）：
 
-- 影響界重新與實體界接上。
+- 影響領域重新與物質界接上。
 - Orphion 送出警告，Aldorei 的 Elder Prometheus 卻誤讀成「去聯絡 Orphion」的鼓勵，於是光之傳送門被掘開；Wynn 中部的腐敗傳送門也啟動了，**腐敗之戰**（Corruption War）開始。
-- Bak'al 進入 Realm of War，成了 Anathema 的第一個眷屬（scion）。
+- Bak'al 進入 Realm of War，成了 Anathema 的第一個後裔（Scion）。
 - 寄生體從 Dern 侵入 Gavel，與 Lari 交手後鑽進地底冬眠——黯蝕從此開始。
 
-「Equinox」原意是晝夜等長的那一天，也就是光與暗勢均力敵的時刻；把各界重新接上的事件叫這個名字，正好點出這是光暗兩邊同時把手伸進實體界的瞬間。
+「Equinox」原意是晝夜等長的那一天，也就是光與暗勢均力敵的時刻；把各界重新接上的事件叫這個名字，正好點出這是光暗兩邊同時把手伸進物質界的瞬間。
 
 而 Silent Expanse 的定位，就寫在本區終極探索點的說明裡：
 
@@ -75,7 +77,7 @@ wiki 時間線記載：700 年前（300 AP），人類**意外**在 Silent Expan
 
 「sealed their fate」是雙關：字面是「封住」，慣用語是「命運就此注定」。語料譯成「把自己封死在裡面——連同自己的命運」，兩層都保住了。
 
-**關於年代與礦工來歷的出入**：wiki 各頁說法不一。時間線寫 300 AP；Olm 條目寫「Fruma 礦工在 800 BP 找到水晶」；Abandoned Mines 條目寫「傳送門開啟前約 800 年」；Lutho 條目說礦工是「來自 Fruma 行省的人類」，探索點的名字卻叫「A Wynnic Excavation」。本章採用時間線的 300 AP（即「700 年前」），其餘列為 wiki 內部矛盾，未來若要寫進譯文請先確認。
+**關於年代與礦工來歷的出入**：wiki 各頁說法不一。時間線寫 300 AP；Olm 條目寫「Fruma 礦工在 800 BP 找到水晶」；Abandoned Mines 條目寫「傳送門開啟前約 800 年」；Lutho 條目說礦工是「來自 Fruma 行省的人類」，探索點的名字卻叫「A Wynnic Excavation」。本章採用時間線的 300 AP（即「700 年前」）。第二輪查證：wiki〈A Wynnic Excavation〉記錄的過場開頭字卡本身就是「300 AP」，而〈Olm〉與〈Abandoned Mines〉兩頁寫 800 BP 時引用的正是同一個探索點，可判定 800 BP 是改版前的舊資料、這兩頁沒有跟著更新。全書以 300 AP 為準（第三章 Amadel 說的「數百年前出土」與此相符）。礦工的來歷（Fruma 人還是 Wynn 人）仍是 wiki 內部矛盾：300 AP 時 Wynn 早已在 3 AP 脫離 Fruma 獨立，「Wynn 的挖掘場」這個名字也比較支持後者（推測）。
 
 出處：wiki〈[A Wynnic Excavation](https://wynncraft.wiki.gg/wiki/A_Wynnic_Excavation)〉、〈[Mining Cessation](https://wynncraft.wiki.gg/wiki/Mining_Cessation)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉、〈[Abandoned Mines](https://wynncraft.wiki.gg/wiki/Abandoned_Mines)〉、〈[Lutho](https://wynncraft.wiki.gg/wiki/Lutho)〉；語料 discovery.json
 
@@ -166,7 +168,7 @@ Aledar 把綠寶石和地城鑰匙交給玩家，交代塔頂有「某個東西�
 
 > 去、去毀了他……那隻一直在看著我們的怪物……（《逐深之旅》，Aledar）
 
-任務結束時畫面浮出一行古 Wynn 文，譯出來是「而英雄將蒙蔽古老的先知。祝好運。」**古老的先知（the ancient seer）就是眼**——「看見一切的古老存在」；「蒙蔽」它，就是去打詭異瞭望台的首領。Aledar 一路說的「感覺有東西在看著我們」，到這裡全部收束。
+任務結束時畫面浮出一行古 Wynn 語，譯出來是「而英雄將蒙蔽古老的先知。祝好運。」**古老的先知（the ancient seer）就是眼**——「看見一切的古老存在」；「蒙蔽」它，就是去打詭異瞭望台的首領。Aledar 一路說的「感覺有東西在看著我們」，到這裡全部收束。
 
 出處：任務《逐深之旅》（語料 quest/a-journey-further.json）；wiki〈[A Journey Further](https://wynncraft.wiki.gg/wiki/A_Journey_Further)〉、〈[Aledar](https://wynncraft.wiki.gg/wiki/Aledar)〉
 
@@ -249,7 +251,7 @@ Lutho 裡有一位居民跟其他人不一樣——她還保有自己的靈魂�
 
 接著是落入滿是眼睛的黑暗隧道，它說「你必須自己找到你最終的終結」，以「我們兩者，於此……終結。」作結。獎勵是 **Hunted 模式**（PvP 開啟），副標「Bring and be brought an end」——可以帶給別人終結，也可能被別人終結。
 
-**它是誰？** 遊戲沒有說。wiki 指出它的外型像已被移除的光之領域 NPC「Heliolux」，也像無名異常體的首領無名者（社群因此戲稱它「Black Sans」、無名者「Black Papyrus」）。它站在 Dern 的門口，卻宣稱自己不屬於光也不屬於暗。（推測：它與無名者同類，或是諸界之戰之外的第三方；目前沒有證據。）
+**它是誰？** 遊戲沒有說。wiki 指出它的外型像已被移除的光之領域 NPC「Heliolux」，也像無名異常體的首領無名者（社群因此戲稱它「Black Sans」、無名者「Black Papyrus」）。它站在 Dern 的門口，卻宣稱自己不屬於光也不屬於暗。（推測：它與無名者同類，或是界域之戰之外的第三方；目前沒有證據。）
 
 出處：任務《獵手的呼喚》（語料 quest/a-hunter-s-calling.json）；wiki〈[A Hunter's Calling](https://wynncraft.wiki.gg/wiki/A_Hunter%27s_Calling)〉、〈[The Nameless](https://wynncraft.wiki.gg/wiki/The_Nameless)〉；語料 discovery.json
 
@@ -261,7 +263,7 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 討伐戰入口介紹寫著：「The Silent Expanse 的正中央有一個特別巨大的虛空洞，或許答案就在那裡……」；房間說明說 Realm of Influence 被「強大得令人憎惡的力量自私地據為己有」，而整片區域「注定走向異變、荒蕪、黑暗與絕望……全都來自那無以名之者」。
 
-無名者的競技場刻著古 Wynn 文「I WANT OUT.」「IT'S HERE.」「OUT LIE IN.」。wiki 推測它可能根本不知道自己造成了多大的破壞——它只是想出去，每掙扎一次，就從世界上撕下一塊現實（它的招式環上刻著「RIP」，同時是「撕裂」與「安息」）。wiki 的 Saphanis 條目也特別註明：無名者**並非心甘情願**為 Saphanis 效力。
+無名者的競技場刻著古 Wynn 語「I WANT OUT.」「IT'S HERE.」「OUT LIE IN.」。wiki 推測它可能根本不知道自己造成了多大的破壞——它只是想出去，每掙扎一次，就從世界上撕下一塊現實（它的招式環上刻著「RIP」，同時是「撕裂」與「安息」）。wiki 的 Saphanis 條目也特別註明：無名者**並非心甘情願**為 Saphanis 效力。
 
 所以 Silent Expanse 裡至少有三種「想出去的東西」：被困的 Lutho 礦工、執念者，以及無名者本身；而眼注視著「每一次逃脫的嘗試」。
 
@@ -269,9 +271,9 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 ### 十四、Dern 怎麼接上腐敗與黯蝕
 
-**Dern 與腐敗：同一場戰爭的兩個產物。** 腐敗來自 Realm of War，而 Realm of War 是光暗之戰打碎的鏡子。所以腐敗不站在任何一邊，但雙方都利用它。關鍵人物是 **Bak'al**：他先是 Anathema 的眷屬、腐敗大軍的統帥，後來背叛 Anathema、成為 Saphanis 的眷屬。886 AP 他敗給 Bob，Saphanis 卻原諒了他，交給他安置眼的差事；在《光之領域 第五部》他再度現身，Lari 追著他穿過一座通往 Dern 的傳送門。（他改投 Saphanis 的時間，wiki 各頁說法不一：Saphanis 條目寫「大約在晝夜平分前後」，War of the Realms 條目引《Detlas 遺跡》寫「約 0 AP」，時間線寫「162 AP 之後」。）
+**Dern 與腐敗：同一場戰爭的兩個產物。** 腐敗來自 Realm of War，而 Realm of War 是光暗之戰打碎的鏡子。所以腐敗不站在任何一邊，但雙方都利用它。關鍵人物是 **Bak'al**：他先是 Anathema 的後裔、腐敗大軍的統帥，後來背叛 Anathema、成為 Saphanis 的後裔。886 AP 他敗給 Bob，Saphanis 卻原諒了他，交給他安置眼的差事；在《光之領域 第五部》他再度現身，Lari 追著他穿過一座通往 Dern 的傳送門。（他改投 Saphanis 的時間，wiki 各頁說法不一：Saphanis 條目寫「大約在晝夜平分前後」，War of the Realms 條目引《Detlas 遺跡》寫「約 0 AP」，時間線寫「162 AP 之後」。）
 
-**Dern 與黯蝕：黯蝕是 Dern 派去 Gavel 的。** 寄生體是 Dern 的生物，在晝夜平分那年被派到 Gavel 吸取光。800 AP 它再度出現，Dullahan 替 Lari 擋下一咬；它在 Kander Forest 造出黯蝕之心，孵出 Dern 蟎（Dernmite）在北 Gavel 散播黯蝕，自己則開了一道門直接鑽進光之領域，寄生在 Orphion 身上。探索點「Ne du Valeos du Ellach」（Aldorei 精靈語，意為「諸界之戰」）重現了這一幕：一個「???」嘲笑 Orphion 白費力氣，說眼的凝視已經「穿透了帷幕」；Orphion 不以為意，說黑暗總會讓位給光——下一秒寄生體就纏上了他。
+**Dern 與黯蝕：黯蝕是 Dern 派去 Gavel 的。** 寄生體是 Dern 的生物，在晝夜平分那年被派到 Gavel 吸取光。800 AP 它再度出現，Dullahan 替 Lari 擋下一咬；它在 Kander Forest 造出黯蝕之心，孵出 Dern 蟎（Dernmite）在北 Gavel 散播黯蝕，自己則開了一道門直接鑽進光之領域，寄生在 Orphion 身上。探索點「Ne du Valeos du Ellach」（古 Gavel 語，wiki 說意為 The War of the Realms，即「界域之戰」，直譯是「諸界的那場戰爭」）重現了這一幕：一個「???」嘲笑 Orphion 白費力氣，說眼的凝視已經「穿透了帷幕」；Orphion 不以為意，說黑暗總會讓位給光——下一秒寄生體就纏上了他。
 
 把這些放在一起看，Silent Expanse 與 Gavel 是一組對照：
 
@@ -305,10 +307,10 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 | 年代 | 事件 | 出處 |
 |---|---|---|
-| 太古 | 光與暗在虛空成形、互相憎恨；發現實體界並開戰（諸界之戰）；碎鏡化為 War | wiki〈Timeline〉〈Saphanis〉 |
-| 4000 BP | 影響界與實體界失聯；War 開始凝聚成 Anathema | wiki〈Timeline〉 |
+| 太古 | 光與暗在虛空成形、互相憎恨；發現物質界並開戰（界域之戰）；碎鏡化為 War | wiki〈Timeline〉〈Saphanis〉 |
+| 年代不明 | 影響領域與物質界失聯；War 在這段平靜中開始凝聚成 Anathema（第一輪誤標 4000 BP） | wiki〈Timeline〉 |
 | 晝夜平分之前 | Olm 居住於 Wynn 與未來的 Silent Expanse；隕石開始轟擊山區；傳送門闖入、Dern 的野獸圍城，Olm 被逼入 Dern，靠水晶逃往 Dernel Jungle | 探索點「最後的時刻」；wiki〈Olm〉 |
-| 0 AP | 晝夜平分：影響界重新接上；光之傳送門與腐敗傳送門開啟，腐敗之戰開始；寄生體入侵 Gavel；Silent Expanse 自此成為 Dern 的門戶 | wiki〈Timeline〉；探索點「Silent Expanse 的祕密」 |
+| 0 AP | 晝夜平分：影響領域重新接上；光之傳送門與腐敗傳送門開啟，腐敗之戰開始；寄生體入侵 Gavel；Silent Expanse 自此成為 Dern 的門戶 | wiki〈Timeline〉；探索點「Silent Expanse 的祕密」 |
 | 300 AP | 人類意外發現四色水晶並埋起來；光滲入 Silent Expanse；之後礦工封死礦坑，倖存者建立 Lutho | 探索點「Wynn 的挖掘場」「停工的礦坑」；wiki〈Timeline〉 |
 | 800 AP | 寄生體再現；Dullahan 犧牲；黯蝕之心形成 | wiki〈The Parasite〉 |
 | 854 AP | Bak'al 圍攻 Ragni | 語料 discovery.json |
@@ -352,14 +354,14 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 - 方尖碑上的符文寫著「free」→ 反諷：它給的是囚禁。
 - Eyeball Forest 樹上的眼睛 → 失去靈魂的 Lutho 礦工（探索點「森林有眼」；《不歸之地》「被奪走之人的凝視」）。
 - Aledar 說虛空洞是「任務簡報」裡提過的 → 軍方事先就知道 Silent Expanse 的內情。
-- Aledar 的遺言「那隻一直在看著我們的怪物」＋ 結尾古 Wynn 文「而英雄將蒙蔽古老的先知」→ 指向詭異瞭望台的首領眼。
+- Aledar 的遺言「那隻一直在看著我們的怪物」＋ 結尾古 Wynn 語「而英雄將蒙蔽古老的先知」→ 指向詭異瞭望台的首領眼。
 - 「最後的時刻」裡天文學家說「又是隕石打到山上？」→ 早在 Dern 入侵之前，Silent Expanse 的山區就一直被隕石轟擊（時間線列為晝夜平分之前）；這些隕石與「不屬於這個世界」的水晶可能有關（推測）。
 - 「那個小伙子」打聽過水晶（「Wynn 的挖掘場」）→ 有人早就在找水晶，與後來的 WynnExcavation 一脈相承（推測）。
 - 《獵手的呼喚》第二段謎語「不義者尋求它。高潔者藏起它」→ 四顆水晶：WynnExcavation 在找，古人把它藏起來。
 - 《不歸之地》「噢，他們是多麼努力想埋葬我們……」→ 被埋的礦工、被埋的水晶（推測）。
 - 《不歸之地》「這個世界。那些陰影。那頂王冠。」「我們始終不過是人類」→ 2.2.1 重寫後指向 Fruma 篇的女王與玩家的身世（推測）。
-- ??? 的外型像 Heliolux 也像無名者，又說自己「不是黑暗。不是光明」→ 諸界之戰之外可能還有第三方（推測）。
-- 「Silent Expanse 的祕密」中 Saphanis 說自己必須「在場」→ 眼是它伸進實體界的分身；Wynncraft 標誌上的眼、「IT IS COMING」都是它。
+- ??? 的外型像 Heliolux 也像無名者，又說自己「不是黑暗。不是光明」→ 界域之戰之外可能還有第三方（推測）。
+- 「Silent Expanse 的祕密」中 Saphanis 說自己必須「在場」→ 眼是它伸進物質界的分身；Wynncraft 標誌上的眼、「IT IS COMING」都是它。
 - Portal to Dern「目前無法解開的謎」→ Dern 領域尚未開放，是未來的內容（wiki 把 Dern 列為「未確認的未來內容」）。
 
 ---
@@ -387,7 +389,7 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 - **《獵手的呼喚》**本身就是隱藏任務：在任務清單上顯示為「???」，獎勵 Hunted 模式與一枚腐敗靈魂代幣。
 - **Bottomless Pit**：Portal to Dern 下方小島上的首領祭壇，需要 6 個 Soul Essence。
-- **Ne du Valeos du Ellach**（Light Forest 的終極探索點）：Dern 一方與 Orphion 的對話、寄生體寄生 Orphion、眼「穿透帷幕」。是理解諸界之戰的關鍵過場。
+- **Ne du Valeos du Ellach**（Light Forest 的終極探索點）：Dern 一方與 Orphion 的對話、寄生體寄生 Orphion、眼「穿透帷幕」。是理解界域之戰的關鍵過場。
 - **孤寂的深淵**（The Lonely Abyss，虛空中，需完成《一千米之下》）：同樣以虛空為舞台。
 - **Dark Obelisk**（《逐深之旅》途中的世界探索點）：形狀與 Lutho 的方尖碑相似，兩者的關係不明。
 - **眼的愛爾蘭語台詞**：「Beidh tú imithe ó mo radharc」（滾出我的視線）、「Beidh mé ag súil leat」（我會等著你）。
@@ -395,6 +397,25 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 - **彩蛋**：Aledar 的生髮水；機兵 PL-4Y 諧音 player；Lutho 是祖魯語的「什麼都沒有」；無名者被玩家暱稱為「Greg」。
 
 出處：wiki〈[Secret Discoveries](https://wynncraft.wiki.gg/wiki/Secret_Discoveries)〉及各探索點頁（見出處清單）；語料 discovery.json、discovery-name.json
+
+### 散落各地的 Dern 痕跡（第二輪補讀 wiki〈The Realm of Dern〉）
+
+Dern 領域本身還沒開放（wiki 標為「即將推出」），但這一頁把設定的幾個基點講清楚了：它是黑暗的影響領域、光之領域的對面，也有一頭作為顯化的巨獸（即 Saphanis）；主要劇情開發者 Grian 稱它為「遙遠的黑暗之地」（far off dark land），設定上不算一個行省，但應當成行省看待；大量取材洛夫克拉夫特；dern 這個字是中古英語，有「黑暗、隱晦」的意思。至於 Olm 逃去的 Dernel Jungle 名字裡的「Dern」是不是同一個意思，wiki 說不知道。
+
+**旁註**：Grian 那句「遙遠的黑暗之地」，和 Bob 封緘信裡加了引號的「一片『遙遠』的土地，有一頭夜之黑暗的生物」幾乎是同一個說法（第一章）。信裡的引號是在暗示那片土地其實不遠——就在 Wynn 南邊（推測，社群的主流讀法）。
+
+wiki 也整理了 Dern 在遊戲各處留下的痕跡，正好把前幾章串起來：
+
+- Llevigar 祕密圖書館的第六章在 2.0 以前叫「Dern 的歷史」，內容被撕掉了——就是第二章館員說「政府不喜歡談黑魔法」的那一章。
+- Dead Island 上有 Dern 野獸（第四章〈Haven 的往昔〉的那座死島）。
+- 《腐敗之叛》裡有一瓶名字被打成亂碼的「Dern 精華」——Slykaar 找到的「黑暗的神明」是哪一方，這是最直接的物證（第一、二章）。
+- 《空洞的寧靜》裡 Garvan 植入 Eileen 的，是 Dern 的寄生蟲（第二章）。
+- Grook 學院的地牢關著 Dern 生物，研究筆記寫著「黑暗之地絕對不可探索」（第四章）。
+- 《美妙旅程》門後的 Gateway Passage 受 Dern 侵染，另一頭接到 Abandoned Mines（第四章）。
+- Abandoned Mines 的探索點〈採礦作業〉長年被猜跟 Dern 有關，1.19 開放 Silent Expanse 時才證實那座礦坑通往這裡（第一、三章）。
+- 已移除的 Enderman Island 上住過「Dern 移民」（舊版內容）。
+
+出處：wiki〈[The Realm of Dern](https://wynncraft.wiki.gg/wiki/The_Realm_of_Dern)〉、〈[The Realm of War](https://wynncraft.wiki.gg/wiki/The_Realm_of_War)〉、〈[Ne du Valeos du Ellach](https://wynncraft.wiki.gg/wiki/Ne_du_Valeos_du_Ellach)〉
 
 ---
 
@@ -409,6 +430,8 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 - **「Thank grook for that」**（《彼界之旅》語料中的一句）：把「thank god」換成 Wynn 的鳥類 grook，語料譯成「謝天謝地」，雙關沒有保留，但意思正確。
 - **「It is by the Bovine's grace」**（《不歸之地》）：語料譯「牛神的恩典」。這是 Lutho 居民的信仰用語，「Bovine」是牛；保留「牛神」即可。
 
+上列「不一致」各條已併入 [README](README.md) 的「語料待查清單」。
+
 ---
 
 ## 本章新出現的譯名
@@ -417,13 +440,13 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 
 | 原文 | 本章用的譯名 | 說明 |
 |---|---|---|
-| War of the Realms | 諸界之戰 | 沿用 docs/world-and-story.md 的暫定譯名 |
-| Realms of Influence / Plane of Influence | 影響界 | raid.json 目前保留英文 Realm of Influence；探索點譯文用「影響力這兩種界域」 |
-| Plane of Physicality / Physical Plane | 實體界 | 語料 misc.json 有「物質界」（湮滅那句）；兩者擇一 |
+| War of the Realms | 界域之戰 | 第一輪沿用 docs/world-and-story.md 的暫定譯名「諸界之戰」；第二輪改照語料（《絕望的序曲》#444）全書統一 |
+| Plane of Influence ／ Realm(s) of Influence | 影響層／影響領域 | 第二輪改照語料（misc.json「影響層」、《尋光》「諸影響領域」）；第一輪作「影響界」。raid.json 仍保留英文 Realm of Influence |
+| Plane of Physicality / Physical Plane | 物質界 | 第二輪照語料 misc.json「物質界」統一（第一輪作「實體界」；《尋光》台詞另有「物質層」） |
 | The Equinox | 晝夜平分 | 取「光暗等長」之意；飾品 Equinox 譯「晝夜平分之戒」 |
-| Realm of Dern | Dern 領域（亦稱黑暗領域） | 對照「光之領域」；world-and-story.md 寫「暗之領域」 |
+| Realm of Dern | Dern 領域 | 對照「光之領域」「戰爭領域」；同一個地方的另一個英文名 Realm of Darkness 照語料作「黑暗領域」，兩者通用。world-and-story.md 寫「暗之領域」 |
 | Realm Beast | 界域巨獸 | Saphanis、Orphion、Anathema 的統稱 |
-| scion | 眷屬 | Bak'al 對 Anathema／Saphanis 的身分 |
+| Scion | 後裔 | 第二輪照語料與 GLOSSARY 統一（第一輪作「眷屬」）；GLOSSARY 標「待討論」，見第六章疑點 |
 | Path to Darkness / The Gate | 黑暗之路／那道門 | Portal to Dern 的別名 |
 | Happier Lutho | 比較快樂的 Lutho | 照語料任務目標「比較快樂的 {p}」 |
 | Soul Retainer | 靈魂容器 | 照語料 |
@@ -480,4 +503,4 @@ Silent Expanse 到處是**虛空洞**：現實被挖掉的洞，裡面什麼都�
 - [Space Between Realities](https://wynncraft.wiki.gg/wiki/Space_Between_Realities)
 - [Ne du Valeos du Ellach](https://wynncraft.wiki.gg/wiki/Ne_du_Valeos_du_Ellach)
 
-**讀不到的 wiki 頁**：Realm_of_Dern、Realms_of_Influence、Realm_of_Influence（皆回 502）。Equinox 頁只有同名飾品，沒有劇情內容；晝夜平分的設定改從〈Timeline〉與〈The Parasite〉取得。
+**第二輪補讀（2026-10-22）**：Realm_of_Dern 會重新導向到〈[The Realm of Dern](https://wynncraft.wiki.gg/wiki/The_Realm_of_Dern)〉，已讀，內容見「散落各地的 Dern 痕跡」。Realms_of_Influence／Realm_of_Influence 在 wiki.gg 上**沒有這個頁面**：它是一個分類，底下只有光之領域、黑暗領域、戰爭領域三頁；本輪改讀〈[The Realm of War](https://wynncraft.wiki.gg/wiki/The_Realm_of_War)〉與〈Ne du Valeos du Ellach〉補上影響領域的設定，並讀完 Timeline 全文（據此更正了第一輪把「影響領域失聯」誤標為 4000 BP 的錯）。Equinox 頁只有同名飾品，沒有劇情內容；晝夜平分的設定仍取自〈Timeline〉與〈The Parasite〉。

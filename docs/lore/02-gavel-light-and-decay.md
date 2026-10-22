@@ -8,7 +8,7 @@
 
 Gavel 北半部的故事，說穿了只有一件事：**光正在熄滅**。
 
-Gavel 西北的森林原本是一片完整、明亮的林地。一千年前，Aldorei 的精靈長老為了「親眼見到神」，砍倒了與光之領域相連的森林守護者。這一斧打開了通往光之領域的門，也連鎖打開了所有沉睡的傳送門：Wynn 那邊湧進了腐敗，Gavel 這邊則鑽進了一隻來自黑暗領域（Realm of Dern）的寄生體。寄生體吸食光，留下的痕跡就是**黯蝕**（Decay）。
+Gavel 西北的森林原本是一片完整、明亮的林地。一千年前，Aldorei 的精靈長老為了「親眼見到神」，砍倒了與光之領域相連的森林守護者。這一斧打開了通往光之領域的門，也連鎖打開了所有沉睡的傳送門：Wynn 那邊湧進了腐敗，Gavel 這邊則鑽進了一隻來自黑暗領域（Realm of Darkness，又稱 Dern 領域）的寄生體。寄生體吸食光，留下的痕跡就是**黯蝕**（Decay）。
 
 此後一千年，Gavel 北方的地名幾乎都是黯蝕的受害清單：
 
@@ -31,8 +31,8 @@ AP＝After Portal（傳送門開啟後），BP＝Before Portal（傳送門開啟
 | 年份 | 事件 | 出處 |
 |---|---|---|
 | 900 BP－0 AP | 精靈仍會老死（Aldorei 地下墓地的墓碑） | 《Aldorei 的祕密 第二部》 |
-| 463－431 BP | Gavel 王室的堂親之戰，最後 Raemin 即位 | Llevigar's Secret Library |
-| 0 AP（The Equinox） | Aldorei 長老砍倒森林守護者，光之傳送門開啟，連鎖打開戰爭領域與黑暗領域的傳送門；Lari 成為 Orphion 的受選者 | 《Aldorei 的祕密 第二部》、《斬草除根》 |
+| 463－431 BP | Gavel 王室的表親之戰，最後 Raemin 即位 | Llevigar's Secret Library |
+| 0 AP（The Equinox，晝夜平分） | Aldorei 長老砍倒森林守護者，光之傳送門開啟，連鎖打開戰爭領域與黑暗領域的傳送門；Lari 成為 Orphion 的受選者 | 《Aldorei 的祕密 第二部》、《斬草除根》 |
 | 0 AP | 寄生體入侵 Gavel，Lari 想「和平收服」失敗，寄生體鑽入地底冬眠 | 《斬草除根》、Parasite Cocoon |
 | 約 200 AP | Lari 與 Dullahan 為了殺不殺寄生體爭執 | 《無頭歷史》 |
 | 750 AP | Gavel 君主制結束，改行民主 | The Grand Archive（他章） |
@@ -67,7 +67,7 @@ Aldorei 的長老 Prometheus 接連看見預視：先是森林守護者，接著
 
 **這段的暗示**：
 
-- Wynn 的千年腐敗戰爭、Gavel 的黯蝕，**源頭是同一件事**，而且是精靈幹的。Birch 長老那句「這個人類正在打我們挑起的那場戰爭」就是在說這個。
+- Wynn 的千年腐敗之戰、Gavel 的黯蝕，**源頭是同一件事**，而且是精靈幹的。Birch 長老那句「這個人類正在打我們挑起的那場戰爭」就是在說這個。
 - AP／BP 這組全世界通用的紀年，本身就是這樁罪行的紀念碑。翻譯 BP 時語料用「傳送門開啟前」，正好保住了這層意思。
 - Prometheus「誤讀預視」和後面 Dullahan「預視全對卻沒人聽」形成對照：Gavel 的悲劇反覆出在「看見了，卻選擇相信自己想相信的」。
 
@@ -97,7 +97,7 @@ Aldorei 的長老 Prometheus 接連看見預視：先是森林守護者，接著
 6. **復活**：Lari 帶著遺體去 Lazarus 之坑，求「不管外頭有什麼神明」把他還回來。他回來了，但光已經在死亡時散盡，留下的只有黑暗與 Lari 灌進去的那一點力量：「她把我帶了回來……但黑暗的感染早已侵蝕我的心智、我的靈魂、我的魔法。」
 7. **決裂**：Lari 撞見他在城堡裡向 Gelibord 村民索取靈魂。他冷冷地說：「我記得那個唯一能避免這一切的選項，是你明確拒絕的。」Lari 把他封在臥室裡，留下告別：「再見，直到我能把你修補回來……」
 
-城堡最深處的那扇黑門前，還能聽到 Lari 的兩句咒文：`cosain`（保護）與 `lion an corp seo leis an saol aris`。這是愛爾蘭語，大意是「讓這具身體再次充滿生命」（推測，依愛爾蘭語字面；wiki 證實 Lari 的 Gavel 語咒文取自蓋爾語）。語料保留原文是對的，但讀者得知道：這是她為 Dullahan 唸的復活咒。
+城堡最深處的那扇黑門前，還能聽到 Lari 的兩句咒文：`cosain`（保護）與 `lion an corp seo leis an saol aris`。這是愛爾蘭語，wiki〈A Headless History〉的譯解是「保護！」與「讓這具身體再次充滿生命！」——前一句是她對寄生體喊的，後一句是她在 Lazarus 之坑唸的。語料保留原文是對的，但讀者得知道：後一句是她為 Dullahan 唸的復活咒。
 
 《光之領域 V》開頭，Lari 對玩家說：「在你之前，還有過一個人是這樣的……我保證你不會落得跟他一樣的下場。」指的就是他。
 
@@ -106,7 +106,7 @@ Aldorei 的長老 Prometheus 接連看見預視：先是森林守護者，接著
 - Dullahan（無頭騎士）是愛爾蘭民間傳說的名字，他「被斬首」本身就是這個典故（wiki）。Lari 叫他 `Dulla`，語料照留，是暱稱。
 - 「她認不清什麼叫必要」（《無頭歷史》）與《斬草除根》裡 Dr. Urelix 那句「啊，你懂得何謂必要」用的是同一個英文詞 necessity。這是刻意呼應：Dullahan 生前的主張，正是 Orphion 後來對玩家的要求。兩處譯文都落在「必要」上，請保持。
 
-出處：任務《光之領域 III - 無頭歷史》／wiki〈Dullahan〉https://wynncraft.wiki.gg/wiki/Dullahan ／〈Realm of Light V〉https://wynncraft.wiki.gg/wiki/Realm_of_Light_V_-_The_Realm_of_Light
+出處：任務《光之領域 III - 無頭歷史》／wiki〈Dullahan〉https://wynncraft.wiki.gg/wiki/Dullahan ／〈A Headless History〉https://wynncraft.wiki.gg/wiki/A_Headless_History ／〈Realm of Light V〉https://wynncraft.wiki.gg/wiki/Realm_of_Light_V_-_The_Realm_of_Light
 
 ### 之四　Dullahan 之後：城堡、監獄與 Lazarus 之坑（820 AP 起）
 
@@ -217,14 +217,18 @@ Olux 的祕密幾乎全部指向同一個黑幕：
 另外三個 Olux 任務：
 
 - **《蟲洞》（光之領域 I）**：沼澤到處冒出大洞，工頭 Malo 的工人掉了下去。玩家與 Lari 追著母 Wyrm（Grootslang 之母）深入地底。Lari 堅持不殺：「這些生物本就屬於這裡，是我們侵入了他們的地盤。」但母 Wyrm 一直在吃黑暗的寄生蟲，痛得發狂，把兩人吞了下去。Lari 在它肚子裡驚慌失措地狂放咒文，脫困時母 Wyrm 死了——她最不想做的事，還是發生了。更糟的是，母 Wyrm 已經產下一窩被感染的卵，「每一顆孵出來都會是狂暴的」。Lari 下不了手，只能拜託玩家「帶一隊人來」——這就是討伐戰 **Grootslang 之巢**的由來。相關祕密 **Harmless Worms**：被認為早已滅絕的溫和 Grootslang，「最近有某種東西把他們逼上了地表」。
-- **《死亡之哨》**：異國植物商人 Voer（「我賣各式各樣的，呃，完全合法的貨」）派玩家上山採死亡之哨。Lari 衝出來罵他是小偷——他那本草藥學書是從她營地裡「撿到」的——而且他把會讓人狂暴的 Pink Pelulite 誤當成 Pink Pelute 賣出去了。玩家循著花瓣救下被花控制的女巫。wiki〈Timeline〉另記載，此任務透露 Fruma 的 Gale Nasin 曾於 823 AP 來到 Gavel，無意間把 Blue Cyclone 花帶進了 Olux（我們的語料沒收到這段，待補；Nasin 家是 Fruma 篇的重要家族，見他章）。
+- **《死亡之哨》**：異國植物商人 Voer（「我賣各式各樣的，呃，完全合法的貨」）派玩家上山採死亡之哨。Lari 衝出來罵他是小偷——他那本草藥學書是從她營地裡「撿到」的——而且他把會讓人狂暴的 Pink Pelulite 誤當成 Pink Pelute 賣出去了。玩家循著花瓣救下被花控制的女巫。
+
+  **Gale Nasin 與藍色氣旋**（第二輪補讀）：wiki〈Timeline〉說這個任務透露 Fruma 的 Gale Nasin 在 823 AP 來到 Gavel，無意間把 Highlands 的 Blue Cyclone（語料怪物名「藍色氣旋」）帶進了 Olux。查證之後，任務本身並沒有點名 Gale——出處是 Voer 推車裡那本《精靈草藥學之書》（Book of Elven Herbology）。書裡逐一記載這一帶的花：Death Whistle 這個名字其實是古詞根的誤譯，正名應叫「黑葉」，只是俗名太響亮改不回來，而且它的魔力能讓尋常物件動起來；Pink Pelulite 長期接觸會讓人不可逆地狂暴、失去對身體的自主，煎服後則有類似腎上腺素的效果；Pink Pelute 有鎮靜作用；藍色氣旋則「並非 Gavel 原生，約在 817 AP 從某個不明地區移植過來，也不知道是誰帶來的」。書頁邊還有人用大字潦草地寫著「尖的、杯狀花瓣！先檢查！！」「圓花瓣！別跟 Pelulite 搞混！！」——對照劇情，這正是 Voer 賣錯花的那兩種（本段改寫自 wiki〈Death Whistle (Quest)〉收錄的書文，語料沒有收這本書的內文）。
+
+  把它接到 Gale 身上的是 wiki〈Blue Cyclone〉：她的弓的外觀道具、以及 Fruma 隱藏探索點〈分裂的家族〉（Gale 出逃的日記）。所以「Gale 把花帶到 Gavel」是 wiki 拼接三處線索的結論，遊戲沒有一句話直說（屬推論）。年份也對不齊：書上寫約 817 AP，〈Timeline〉採 823 AP（Gale 輟學出逃那年，見第六章）。本章兩者並列，不擅自取捨。另外，Gale 後來加入了 Qira 的 Hive，成了風之部隊的首領（第三章）——Gavel 與 Fruma 的劇情在她身上接了起來。
 - **《巨獸之影》**：沼澤裡有一隻跟樹一樣高的巨獸在吃東西。這一路上每個村民都把人類當成殺戮機器：玩家「處理」走失的牛，結果把牛殺了（Tolem：「我還得特別交代要『活的』帶回來嗎？」，從此叫玩家「笨蛋」）；Rileen 更直說「你跟那邊那隻巨獸的共通點，還比跟我們多」。這個任務在笑鬧中重複著一個主題：在 Gavel 人眼裡，從 Wynn 來的人類就是一群只會殺的打手。這和 Orphion 選中人類的理由是同一件事，只是換了個角度。
 
 本區的終極探索點 **The Bane of Gavel**（Gavel 之禍）揭曉了答案：「在森林之下、遠離村民目光之處，藏著黯蝕可怕的真相……」——地底有無人察覺的小生物在吸取這片土地的生命力，「若放任不管，它們可能會把整個行省的光吸乾」。
 
 另有 **Decaying Mountains**：黯蝕蔓延到山上的洞穴，住在那裡的生物只好往下搬（wiki 說這和任務 Crop Failure 的史萊姆有關）。
 
-出處：任務《光之領域 I - 蟲洞》《光之領域 II - 斬草除根》《死亡之哨》《巨獸之影》／wiki〈Lost Farmers〉https://wynncraft.wiki.gg/wiki/Lost_Farmers ／〈Shrouded Lives〉https://wynncraft.wiki.gg/wiki/Shrouded_Lives ／〈Shadowy Dealings〉https://wynncraft.wiki.gg/wiki/Shadowy_Dealings ／〈Empty Vaults〉https://wynncraft.wiki.gg/wiki/Empty_Vaults ／〈Harmless Worms〉https://wynncraft.wiki.gg/wiki/Harmless_Worms ／〈Decaying Mountains〉https://wynncraft.wiki.gg/wiki/Decaying_Mountains ／〈The Bane of Gavel〉https://wynncraft.wiki.gg/wiki/The_Bane_of_Gavel ／〈Nest of the Grootslangs〉https://wynncraft.wiki.gg/wiki/Nest_of_the_Grootslangs
+出處：任務《光之領域 I - 蟲洞》《光之領域 II - 斬草除根》《死亡之哨》《巨獸之影》／wiki〈Death Whistle (Quest)〉https://wynncraft.wiki.gg/wiki/Death_Whistle_(Quest) ／〈Blue Cyclone〉https://wynncraft.wiki.gg/wiki/Blue_Cyclone ／〈Timeline〉／〈Lost Farmers〉https://wynncraft.wiki.gg/wiki/Lost_Farmers ／〈Shrouded Lives〉https://wynncraft.wiki.gg/wiki/Shrouded_Lives ／〈Shadowy Dealings〉https://wynncraft.wiki.gg/wiki/Shadowy_Dealings ／〈Empty Vaults〉https://wynncraft.wiki.gg/wiki/Empty_Vaults ／〈Harmless Worms〉https://wynncraft.wiki.gg/wiki/Harmless_Worms ／〈Decaying Mountains〉https://wynncraft.wiki.gg/wiki/Decaying_Mountains ／〈The Bane of Gavel〉https://wynncraft.wiki.gg/wiki/The_Bane_of_Gavel ／〈Nest of the Grootslangs〉https://wynncraft.wiki.gg/wiki/Nest_of_the_Grootslangs
 
 ### 之十　Gelibord 周邊的小事
 
@@ -251,7 +255,9 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 最後一張銘文寫的是：「在守護者面前的決絕之舉，將喚醒許多事物。」玩家帶著她要找的罐裝 Abis 回到樹下，Lari 發現自己被跟蹤、被偷聽，徹底失控，對玩家出手。守護者在此時醒來：「夠了，Lari。我已甦醒。」它反問她：「斧頭砍樹，斧頭就是惡的嗎？……這些東西，哪一樣是光，哪一樣是暗？」Lari 回答：「如果我做的正是非做不可的事，為什麼我覺得自己像地上的爛泥？」
 
-守護者接著向玩家解說世界的結構：我們所在的物質層，映照在由許多領域構成的「影響層」上；每個領域都是一頭巨獸的倒影，「既然 Gavel 已經衰敗，那就代表光之領域正陷入危機，而 Orphion 也是」。寄生體已經侵入光之領域，正在吸 Orphion 的光。
+守護者接著向玩家解說世界的結構：我們所在的物質界（語料台詞作「物質層」），映照在由許多領域構成的「影響層」上；每個領域都是一頭巨獸的倒影，「既然 Gavel 已經衰敗，那就代表光之領域正陷入危機，而 Orphion 也是」。寄生體已經侵入光之領域，正在吸 Orphion 的光。
+
+（第二輪補讀 wiki〈Finding the Light〉：守護者說話的同時，Orphion 也在旁邊用極短的句子講同一件事——「你必須看見。」「物質界。」「還有更多。」「影響層。」「看不見的連結。」「看不見的戰爭。」「如同一方之於另一方。」「聽我說，我的脈搏。」「它找到我了。」「它焚燒我、折磨我。」「我碰不到它。」「你被需要。」「救我。」以上依 wiki 收錄的原文改寫，語料未收。示意圖上物質界的第三塊地區被打成亂碼，wiki 解出來是「Silent Expanse」——第五章那片黑暗的土地，在這張世界結構圖上已經佔了一格，只是被刻意遮住（「光這一方早就知道」屬推測）。）
 
 **暗示**：所謂「決絕之舉」，不是要 Lari 去殺寄生體，而是要她**真的動手**——對象是誰都可以。整場衝突是被安排好的，長老知情，守護者知情，玩家也被要求配合。這讓 Orphion「沒有道德觀」這句話有了重量。
 
@@ -261,9 +267,9 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 尾聲是一段斷續的心靈傳訊（耳邊的嗡鳴）：Lari 說她覺得這是「擊敗這場瘟疫唯一的機會——直搗它的核心」，相信玩家會找到同樣強的人去救 Orphion；然後她看見了什麼，「以光之名，那是什麼東西？！」——「嗡鳴停了。」這段傳訊接上討伐戰 **Orphion 的光之樞紐**：玩家帶隊打下附在 Orphion 身上的寄生體。
 
-**關於 Bak'al 的陣營**：在 Wynn，Bak'al 是腐敗陣營的大將（「Wynn 之災」，見他章）；這裡他卻從黑暗的傳送門走出來，說「那頭巨獸正因我們的影響而顫抖。這片土地是我們的」。wiki〈Orphion〉稱他為 Dern 的僕從。兩邊的說法不一致，翻譯時**不要替他加上陣營性的修飾語**，照原文的「我們」譯即可。
+**關於 Bak'al 的陣營**：在 Wynn，Bak'al 是腐敗大軍的統帥（見第一章）；這裡他卻從黑暗的傳送門走出來，說「那頭巨獸正因我們的影響而顫抖。這片土地是我們的」。這不是設定矛盾：wiki〈Timeline〉與〈Saphanis〉的現行設定是，他原本是 Anathema 的第一個後裔，在 162 AP 之後某時背棄 Anathema、投向黑暗的 Saphanis，886 AP 敗給 Bob 之後還替 Saphanis 把眼睛安上詭異瞭望台（第五章）。Fruma 篇的 Sovereign Two 也稱他為「戰爭失落的後裔」（第六章）。翻譯時照原文的「我們」譯即可，不必替他另加陣營性的修飾語。
 
-**Ne du Valeos du Ellach**（Light Forest 的終極探索點）：光與暗的粒子相撞，鏡頭帶到光之樞紐，Orphion 察覺天空變暗；看不見的聲音說黑暗幾乎必勝、黯蝕的爪牙正在抹除他在大地上的影響；一隻眼睛說它會看著；寄生體說出「你不可能永遠逃避命運」，然後附上 Orphion。畫面先用高階 Gavel 文、再用一般文字打出：「光正在消逝。」「祂的化身正在受苦。」「救救祂。」獎勵是「高階 Gavel 語轉寫表」，可以轉寫散落在 Gavel 各地的古語。這個標題的意思是「諸界之戰」（wiki；直譯為「諸界的戰爭」）。discovery-name 的說明刻意不收這個名稱，讓它照原樣顯示，這是對的：玩家要先看到看不懂的古語，才會去用那張轉寫表。
+**Ne du Valeos du Ellach**（Light Forest 的終極探索點）：光與暗的粒子相撞，鏡頭帶到光之樞紐，Orphion 察覺天空變暗；看不見的聲音說黑暗幾乎必勝、黯蝕的爪牙正在抹除他在大地上的影響；一隻眼睛說它會看著；寄生體說出「你不可能永遠逃避命運」，然後附上 Orphion。畫面先用高階 Gavel 語、再用一般文字打出：「光正在消逝。」「祂的化身正在受苦。」「救救祂。」獎勵是「高階 Gavel 語轉寫表」，可以轉寫散落在 Gavel 各地的古語。這個標題的意思是 War of the Realms（wiki），全書照語料統一譯作「界域之戰」。discovery-name 的說明刻意不收這個名稱，讓它照原樣顯示，這是對的：玩家要先看到看不懂的古語，才會去用那張轉寫表。
 
 出處：任務《光之領域 I－V》／wiki〈Lari〉https://wynncraft.wiki.gg/wiki/Lari ／〈Orphion〉https://wynncraft.wiki.gg/wiki/Orphion ／〈Ne du Valeos du Ellach〉https://wynncraft.wiki.gg/wiki/Ne_du_Valeos_du_Ellach ／〈Realm of Light V〉https://wynncraft.wiki.gg/wiki/Realm_of_Light_V_-_The_Realm_of_Light
 
@@ -285,7 +291,7 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 | 名字 | 身分 | 在劇情中的作用 | 相關任務／祕密 |
 |---|---|---|---|
-| Lari | Aldorei 出身的精靈，Orphion 的受選者（wiki 稱 Scion），活了一千年 | 0 AP 唯一反對砍樹的人；兩度放過寄生體；一個人維持河上的屏障；最後追著 Bak'al 進入黑暗的傳送門，生死未卜 | 光之領域 I－V、死亡之哨、記憶的猜忌、A Dividing Force、Sealed Away、At the Edge of Decay |
+| Lari | Aldorei 出身的精靈，Orphion 的受選者（語料另稱「光之後裔」，Scion），活了一千年 | 0 AP 唯一反對砍樹的人；兩度放過寄生體；一個人維持河上的屏障；最後追著 Bak'al 進入黑暗的傳送門，生死未卜 | 光之領域 I－V、死亡之哨、記憶的猜忌、A Dividing Force、Sealed Away、At the Edge of Decay |
 | Orphion | 光的化身、光之巨獸，精靈信仰的神 | 選中 Lari，後來改喚玩家為「我的脈搏」；沒有道德觀，只要結果；被寄生體附身 | 斬草除根、尋光、光之領域、Ne du Valeos du Ellach、討伐戰 |
 | 寄生體（The Parasite） | 來自黑暗領域的生物 | 0 AP 入侵；800 AP 咬傷 Dullahan；築黯蝕之心產下 Dern 蟎；附上 Orphion | 斬草除根、無頭歷史、Parasite Cocoon、The Heart of the Decay |
 | Dullahan | 精靈，有預視能力，Lari 的同伴 | 替 Lari 挨了寄生體一口；被 Gelibord 斬首；被 Lari 復活後墮落，向北方森林收割靈魂；被封在城堡臥室 | 無頭歷史、Headless, Not Homeless、禁忌牢獄 |
@@ -294,8 +300,8 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 | Oak／Alder／Willow／Birch 長老 | 守密的六長老之四 | Oak 主張封鎖到底；Alder 想改革；Birch 與其他長老決裂後被留在峽谷裡（推測是主張公開） | Aldorei 的祕密 第二部 |
 | Olon | Efilim 的精靈，熱愛陰謀論 | 追查父母之死，揭開精靈永生的真相 | Aldorei 的祕密 第二部 |
 | Korben | Aldorei 的精靈 | 為救中毒的父親偷闖禁地 | Aldorei 的祕密 第一部 |
-| Bak'al | 腐敗陣營的大將（Wynn 篇） | 從黑暗傳送門現身，阻止玩家抵達樞紐，與 Lari 一同消失 | 光之領域 V |
-| Dr. Urelix | Olux 的魔像研究者 | 以活人換魔像，供應 Wynn 的腐敗戰爭 | 斬草除根、Lost Farmers |
+| Bak'al | 腐敗大軍的統帥（第一章），後投向 Saphanis（第五章） | 從黑暗傳送門現身，阻止玩家抵達樞紐，與 Lari 一同消失 | 光之領域 V |
+| Dr. Urelix | Olux 的魔像研究者 | 以活人換魔像，供應 Wynn 的腐敗之戰 | 斬草除根、Lost Farmers |
 | Olux 鎮長 | Olux 的鎮長 | 被財政逼到與 Urelix 交易，想揭發時被玩家奉 Orphion 之命殺死 | 斬草除根、Shadowy Dealings |
 | Garvan（流浪者） | 科學家 | 第一個查出黯蝕成因的人；被保皇派操弄，把寄生體植入 Eileen；之後在 Kander 遊蕩一百五十年 | 空洞的寧靜 |
 | Katarin Faltach | Faltach 家女主人 | 與 Garvan 私通、靈魂綁在寶石上；死後化為怨靈 | 空洞的寧靜 |
@@ -372,7 +378,7 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 ### 彩蛋與藏在字面下的東西
 
-- **Lari 的咒文是愛爾蘭語**（wiki 證實是蓋爾語）。語料可見的：`siochain do d'anamacha`（大意「願你們的靈魂得享安寧」，推測）、`cosain`（保護）、`lion an corp seo leis an saol aris`（讓這具身體再次充滿生命，推測）、`achara`（我的朋友）。語料大多改用「[Gavel 語咒文]」佔位，保留原文的幾處都是對的。**另外《無頭歷史》#137 的 `[Gavellian Spell]` 沒有譯**，其他任務都譯成「[Gavel 語咒文]」，應統一。
+- **Lari 的咒文是愛爾蘭語**（wiki 證實是蓋爾語）。語料可見的：`siochain do d'anamacha`、`cosain`（保護）、`lion an corp seo leis an saol aris`（讓這具身體再次充滿生命）、`achara`（我的朋友）。第二輪補讀各任務頁的 Trivia，wiki 給的譯解是：《蟲洞》的「Siochain do d'anamacha i mait...」＝「你們的靈魂，於良善之中……」（話沒說完）、「Cosain! / Co-cosa-」＝「保護！／保、保護——」、「Beathach mor solais! Dean ion an anam tuirseach seo!」＝「光啊！治癒這疲憊的靈魂！」；《光之領域》第 5、6 階段的「Athcheangail!」＝「重新連結！」、「Biodh an solas seo anois.」＝「此刻，化為此光。」（蘇格蘭蓋爾語），第 13 階段則是「以光之名，我召喚你，以太的裁決！助我！」。語料大多改用「[Gavel 語咒文]」佔位，保留原文的幾處都是對的。**另外《無頭歷史》#137 的 `[Gavellian Spell]` 沒有譯**，其他任務都譯成「[Gavel 語咒文]」，應統一。
 - **Efilim** 是 Wynncraft 前建築師帳號 im4life1 的變位字（wiki）。
 - **Canned Abis**＝cannabis。**Eih 教授**的幻境滿口押頭韻的雙關（Green means go...），原文本來就是無意義的狂言，譯文不必追求通順。
 - **Faltach 莊園的書架**：《Morton 怕見了呼呼》是 Horton Hears a Who（蘇斯博士《荷頓奇遇記》）的諧仿；《垂死之光》（A Dying Light）被描述成「史上最偉大的棋盤遊戲」，是在玩遊戲 Dying Light 的名字。
@@ -391,7 +397,9 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 - **《空洞的寧靜》的說話者標錯**：#119－126、#147－151 的 speaker 欄位與內容對不上（例如標為 Katarin 的句子其實是 Yorman 或 Garvan 說的，標為 Eileen 的「Yorman 不會再來煩我們了」其實是 Katarin 對女兒說的）。譯文看起來是照內容譯的，問題在欄位本身，改之前要先確認是不是 capture 時的錯位。
 - **《禁忌牢獄》的「Levtus Black Market」**：原文拼成 Levtus，譯文寫 Letvus。Letvus 才是正確地名，但 src 與遊戲實際送出的字串要先核對。
 - **歸屬可疑的條目**：《巨獸之影》#002「無法離開作業區域。返回崗位。」是魔像的台詞，應屬 Shadowy Dealings；《破碎的心智》#013－014（腐敗傳送門、Grook 與池塘）看起來也不屬於這個任務。
-- **Death Whistle 的 Gale Nasin**：wiki〈Timeline〉說此任務透露 Gale Nasin 於 823 AP 來到 Gavel，但我們的語料沒有這段文字，可能有沒收到的書或物品說明。
+- **Death Whistle 的 Gale Nasin**：第二輪查明出處是 Voer 推車裡的《精靈草藥學之書》，語料只收了書名（npc.json「精靈草藥學之書」），內文六條花卉說明與兩行手寫眉批都沒收（見第三節之九）。
+
+以上各條已併入 [README](README.md) 的「語料待查清單」。
 
 ---
 
@@ -401,15 +409,16 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 | 原文 | 本章譯名 | 說明 |
 |---|---|---|
-| Wars of the Cousins | 堂親之戰 | Gavel 王室內戰 |
-| Marika the Admired | 受景仰的 Marika | 僅在時間線出現 |
+| Wars of the Cousins | 表親之戰 | Gavel 王室內戰；第二輪與第三、七章統一（第一輪本章作「堂親之戰」） |
+| Marika the Admired | 「受愛戴的」Marika | 僅在時間線出現；第二輪與第三章統一 |
 | royalists / monarchists | 保皇派 | 《空洞的寧靜》的村民 |
 | Mysterious Leader | 保皇派首領 | 語料 speaker 名未譯，此為敘述用 |
 | Caritat Senior | Caritat 老先生（Atisun 的曾祖父） | 敘述用 |
-| Scion（Lari 的稱號） | 受選者 | GLOSSARY 的「後裔」是 Fruma 的 Sovereign Two 對 Tasim 的稱呼，意思不同，Lari 這裡沿用語料的「受選者」 |
+| Orphion's chosen（Lari 的稱號） | 受選者 | 照語料（《光之領域》系列）。注意另一個詞 Scion：語料一律作「後裔」，《絕望的序曲》稱 Lari 為「光之後裔」，Bak'al 是「戰爭失落的後裔」；兩個英文詞不同，第二輪起分開使用 |
 | Lexdale Penitentiary / Lexdale Federal Prison | Lexdale 監獄 | 任務名仍是「禁忌牢獄」 |
 | Saphanis | 不譯 | 黑暗的化身，語料未出現 |
-| War of the Realms | 諸界之戰 | 照 docs/world-and-story.md 的暫定譯名 |
+| War of the Realms | 界域之戰 | 第一輪照 docs/world-and-story.md 暫定作「諸界之戰」；第二輪改照語料（《絕望的序曲》#444）全書統一 |
+| Black Leaf | 黑葉 | 《精靈草藥學之書》說的 Death Whistle 正名 |
 | Dark Forest Village | 不譯 | 地名 |
 | The Equinox | 不譯，必要時括註「晝夜平分」 | 語料保留原文 |
 
@@ -427,4 +436,4 @@ the-worm-holes、taproot、a-headless-history、finding-the-light、the-realm-of
 - 任務頁：Realm of Light V https://wynncraft.wiki.gg/wiki/Realm_of_Light_V_-_The_Realm_of_Light ／ Lexdale Witch Trials https://wynncraft.wiki.gg/wiki/Lexdale_Witch_Trials ／ Corrupted Betrayal https://wynncraft.wiki.gg/wiki/Corrupted_Betrayal ／ Nest of the Grootslangs https://wynncraft.wiki.gg/wiki/Nest_of_the_Grootslangs
 - 隱藏探索點：Llevigar's Last Hope、Llevigar's Secret Library、At the Edge of Decay、Spider Ruins、Unstable Experiments、Abandoned Excavations、Teachings of Old、Lost Farmers、Shrouded Lives、Harmless Worms、Decaying Mountains、Shadowy Dealings、Empty Vaults、The Bane of Gavel、Parasite Cocoon、The Talor Crypt、A Dividing Force、Hallowed Ground、Headless, Not Homeless、Summoner's Fate、Ways of the Wicked、The Heart of the Decay、Temple of Light、Messengers from Beyond、Light Mushrooms、Sealed Away、Birth of Efilim、Fracture in Reality、Ne du Valeos du Ellach（皆為 https://wynncraft.wiki.gg/wiki/ 加頁名）
 
-**讀不到的 wiki 頁**：Realm_of_Light_(Quest_Line)（502）。
+**第二輪補讀（2026-10-22）**：Realm_of_Light_(Quest_Line) 在 wiki.gg 上**沒有這個頁面**；系列的總覽是消歧義頁〈[The Realm of Light](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light)〉，本輪改讀它列出的五個任務頁（[The Worm Holes](https://wynncraft.wiki.gg/wiki/The_Worm_Holes)、[Taproot](https://wynncraft.wiki.gg/wiki/Taproot)、[A Headless History](https://wynncraft.wiki.gg/wiki/A_Headless_History)、[Finding the Light](https://wynncraft.wiki.gg/wiki/Finding_the_Light)、[The Realm of Light (Quest)](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light_(Quest))）與地點頁〈[The Realm of Light (Location)](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light_(Location))〉。另補讀 [Death Whistle (Quest)](https://wynncraft.wiki.gg/wiki/Death_Whistle_(Quest))、[Blue Cyclone](https://wynncraft.wiki.gg/wiki/Blue_Cyclone)、[Gale](https://wynncraft.wiki.gg/wiki/Gale)、Timeline 全文。

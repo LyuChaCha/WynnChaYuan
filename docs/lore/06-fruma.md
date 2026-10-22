@@ -20,27 +20,28 @@ Fruma 分成幾個區：西北的 **Auburn Forest**（窮、永遠是秋天）�
 
 ### 一、Fruma 的歷史與紀年
 
-Fruma 有自己的紀年。通用的「AP」從腐敗之門開啟起算（約一千年前），而 Fruma 曆從女王建立現代行省的 200 AP 起算，分四個紀元，現在是**工業紀元 120 年**（約 1000 AP）。更古老的 Fruma 文明用的是**符文曆**：每個「循環」104 年，分 Nii、Az、Tol、Uth、Ek 五段——這五個字就是 Wynn 現在用來開 Raid 的那五種符文的名字。
+Fruma 有自己的紀年。通用的「AP」從腐敗傳送門開啟起算（約一千年前），而 Fruma 曆從女王建立現代行省的 200 AP 起算，分四個紀元，現在是**工業紀元 120 年**（約 1000 AP）。更古老的 Fruma 文明用的是**符文曆**：每個「週期」104 年，分 Nii、Az、Tol、Uth、Ek 五段——這五個字就是 Wynn 現在用來開 Raid 的那五種符文的名字。
 
 | 時間 | 事件 |
 |---|---|
 | 0 AP | Anathema 祝福瀕死的士兵 Bak'al，收他為第一個後裔（Scion） |
-| 3 AP（第 8 循環 Uth 1 年） | 舊 Fruma 的議會投票放棄遠方殖民地——Wynn 行省就此獨立 |
-| 200 AP（王權紀元 0 年） | Bak'al 用符文知識造出「共鳴織機」；Anathema 用它造出人類的殼，逃出戰爭領域，加冕為女王。天生具有魔力的人被宣告為「受詛者」 |
-| 389–400 AP（王權紀元 189–200 年） | Auburn 一群受詛者組成反抗軍、準備起義，被女王消滅（探索點〈受詛者的遺骸〉） |
+| 3 AP（1 Uth，第 8 週期） | 舊 Fruma 的議會投票放棄遠方殖民地——Wynn 行省就此獨立 |
+| 200 AP（皇家紀元 0 年） | Bak'al 用符文知識造出「共鳴織機」；Anathema 用它造出人類的殼，逃出戰爭領域，加冕為女王。天生具有魔力的人被宣告為「受詛者」 |
 | 251 AP 以前 | 皇家水壩（Royal Dam）建成：淹沒部分 Highlands，Auburn Forest 從此乾旱 |
+| 389–400 AP（皇家紀元 189–200 年） | Auburn 一群受詛者組成反抗軍、準備起義，被女王消滅（探索點〈受詛者的遺骸〉） |
 | 500 AP（知識紀元 0 年） | Aelumia 皇家大學創立；十年內設立統領制度：Oru、Gitephe Nasin、Caetal、Amastli、Xima Thalas |
 | 750 AP（新紀元 0 年） | Auburn 統領 Xima 遇刺，女王報復性開閘，Auburn 大洪水，反抗者被沖光——Espren 的鐘聲從此沉默 |
 | 751 AP | Selium 接任 Auburn 統領 |
-| 818–825 AP | 學生 Majin Thalas 霸凌 Gale Nasin、發現 Majin 之彗星；Gale 畢業後出逃 Fruma；Majin 成為 Highlands 統領 |
+| 818–825 AP | 學生 Majin Thalas 霸凌 Gale Nasin、發現 Majin 之彗星；Gale 在畢業前夕出逃 Fruma（823 AP）；Majin 成為 Highlands 統領 |
 | 850 AP | Markus Corkus T. 一行人乘熱氣球逃出 Fruma，建立 Corkus |
 | 880 AP（工業紀元 0 年） | Amastli 失蹤，農家少女 Soosu 被提拔為統領；農業區改名工業區 |
 | 900 AP（工業紀元 20 年） | Selium 前往 Ragni，訂下把 Fruma 流放者送往 Wynn 的約定——「國王的新兵」的起點 |
+| 967–972 AP | Sohso（第三章那四兄弟的老四）開始在 Fruma 研究宇宙瘋狂；Selium 主持的 Hallowground 計畫成立（968）、挖出地底儲池（970）、往南挖出洞窟並封死（972） |
 | 977–978 AP | Selium 重燃換形者的泉源；Hallowground 計畫崩潰，Selium 下落不明；女王以「測試」毀掉 Syndra |
 | 979 AP（工業紀元 99 年） | Zhiraok Nasin 接任 Auburn 統領 |
 | 現代 | 本章劇情 |
 
-> 譯註：wiki 把三個新的紀元寫作 Royal Age、Knowledge Age、Industrial Age，語料只出現過 New Age（新紀元），本章比照譯為「王權紀元」「知識紀元」「工業紀元」，見文末譯名表。
+> 譯註：wiki 把另外三個紀元寫作 Royal Age、Knowledge Age、Industrial Age。語料出現過 New Age（新紀元）與 Industrial Age（一處作「工業時代」），本章比照新紀元譯為「皇家紀元」「知識紀元」「工業紀元」（第一輪本章作「王權紀元」，第二輪與第一章統一為「皇家紀元」），見文末譯名表。
 
 出處：wiki〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉；探索點〈埋藏的記錄〉
 
@@ -159,6 +160,25 @@ Sui 和玩家找到 Gikyo 的辦公室時，Mora 已經被凌遲至死——他�
 
 出處：任務《隱於迷霧》《真面目》
 
+**Hallowground 計畫：那個上鎖的櫃子**（第二輪補讀）。《真面目》裡，換形者訓練營的牢房區有個洞，洞裡藏著櫃子的鑰匙；打開檔案櫃，裡面是 Hallowground 計畫的六份文件。語料只收了櫃子的標籤（`true-colours.json` #064），文件本身沒有收，以下依 wiki〈True Colours〉收錄的原文改寫（引號內為本章自譯）：
+
+1. **計畫書（工業紀元 88 年＝968 AP）**，主持人 Selium 統領：換形者（文件裡稱 Polymorph）的供應在萎縮——每從荒地抽出一個新樣本，下一次「湧現」就隔得更久；照這個趨勢，一百年內王室就會失去換形者間諜。Oru 統領主張往更深處鑽、找新來源；Selium 不同意：「問題出在那口井。它正在乾涸。」既然天然的靠不住，「我們就得自己注入那點生命的火花」。
+2. **建設報告（90 IA）**：舊研究站翻新擴建；施工打穿地面，挖到一座未被擾動的大型儲池。Oru 建議到此為止，Selium 不同意，要拿它當研究基地。
+3. **事故報告（92 IA）**：往南的地下擴建挖出一個深埋地底的巨大洞窟系統。施工暫停時，三名工人違令深入，只有一個人回來——接下來幾句被塗黑了。報告寫明已聯絡諜報總管、派審訊官處理：洞窟立即封死，所有接觸過的工人一律抹除記憶。
+4. **觀察日誌（95 IA）**：「無形，無心……它們從大地而來，帶著大地原初的生命。可是它們『怎麼』形成的？是『什麼』點燃了那點火花？」他的祝福只給了他有限的理解；他去問 Gikyo，被笑著請出門；最後一句是「也許我該直接去問大地本身」。
+5. **觀察日誌（97 IA）**：「我們已經那麼接近了……我聽見了它的回音，從底下的深處浮上來。一個破碎、碎裂的東西……」他重新點燃了那點火花——讓那些「暗色的精華池」化成受控制的生命；但新做出來的容器並不是無心的，從「非生」被拉進存在，讓它們陷入一種他解不開的瘋狂。諜報總管推薦一位外來的科學家，「研究過類似的瘋狂」；Selium 寫：「十年。他在這裡研究了十年，一步進展都沒有。這就是我們最好的選擇……？這就是我們最好的選擇。就這麼辦。很快就會結束了。」
+6. **典獄長日誌（98 IA，Oru 筆跡）**：「Hallowground 設施的內部運作在晚上 9:38 崩潰。行程被打斷。但事態緊急，必須回應。」又是幾句塗黑。諜報總管建議停止西部的採礦，核准；配額會短缺，囚犯工時延長到情況解決為止。「Selium 統領不見蹤影。推定死亡。」
+
+**怎麼讀這些文件**：
+
+- 那位「研究過類似瘋狂」、在 Fruma 待了十年的外來科學家，wiki〈Timeline〉指名是 **Sohso**——第三章《???》裡被 Gylia 隕石逼瘋的三兄弟的第四個兄弟，967 AP 起在 Fruma 研究「宇宙瘋狂」。Gavel 的隕石線就這樣接進了 Fruma 的換形者線。
+- 換形者原來不是生出來的：wiki〈Wastelands〉說它們從荒地（Penitence District）以「暗色的精華池」的形態湧現，被「抽取」後送去 Fort Hegea 社會化、受訓；湧現的頻率已經連續下降三十多年。這解釋了〈呱鳴怪談〉的 Croaquin 為什麼說自己「從焦油坑裡爬出來」（第七章；他跟換形者的關係仍是推測）。
+- 「火花」在別的章節也出現過：《不得安息》的死神說玩家的「火花」穿過帷幕後仍然留存（第三章）。Selium 想用人工點燃的，就是這種東西（兩者是否同一設定，推測）。
+- 92 IA 封死的洞窟裡有什麼、97 IA 那個「從深處浮上來的破碎之物」是什麼，遊戲都沒說；Wastelands 本身也還沒開放（wiki 標為「已確認的未來內容」）。不要寫成定論。
+- 這份文件也順帶寫出 Oru 的個性：照表操課到同僚拿他的行程表當口頭禪，唯一一次打亂行程就是這場崩潰（wiki〈Sovereign Oru〉）；他是史上第一位統領（知識紀元 4 年），也是目前唯一還沒在遊戲裡露面的現任統領。
+
+出處：任務《真面目》；wiki〈[True Colours](https://wynncraft.wiki.gg/wiki/True_Colours)〉、〈[Sovereign Selium](https://wynncraft.wiki.gg/wiki/Sovereign_Selium)〉、〈[Sovereign Oru](https://wynncraft.wiki.gg/wiki/Sovereign_Oru)〉、〈[Wastelands](https://wynncraft.wiki.gg/wiki/Wastelands)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉
+
 **Mistwoods 的兩個支線**。兩個支線都在講同一件事：**猜疑會吃掉一個社群**。《羈絆成灰》裡，失去徽牌的老人 Abramod 向玩家哭訴弟弟被換形者冒名，請玩家幫他重做徽牌——做好的那一刻他翻臉，原來他自己就是換形者。《慶典成煙》裡，霧林在 Aldwell 舉行**柳條人祭**（Festival of the Wicker），紀念祖先燒死換形者；有人放火，三名沒有徽牌的嫌疑人被扣押：被冤枉偷茶而遭驅逐的 Arris、孤獨的拾荒者 Burick、冷靜到可怕的逃兵 Cerisa。真正的火是主辦方的「安全小組」澆了燃料，主辦人卻說「在最微小的失誤都是災難的情況下，魯莽就成了必要」。玩家必須在證據不足下指認一個人，被指認的人就此消失。Burick 的結語是全區的註腳：
 
 > 寂寞會痛，但信任會要命。（《慶典成煙》，Burick）
@@ -246,7 +266,7 @@ Majin 說「我確實沒有留著他們的必要」，任由 Sui 趁玩家在城
 - **Two 說「幽影被你親手刺瞎了……一個破碎的靈魂」**（《絕望的序曲》）→ 指《逐深之旅》玩家摧毀 Silent Expanse 的眼，代價是 Aledar 的靈魂（推測，與第五章對照）。
 - **「戰爭失落的後裔」**（《絕望的序曲》）→ 指 Bak'al：Anathema 的第一個後裔，後來投向 Saphanis。Majin 那句「我還在想他什麼時候會再露臉」證實統領們都認識他。
 - **女王說「你殺掉的那隻小寄生體只是開始」**（《希望的合奏》）→ 第二章光之領域裡寄生體的事；黑暗正在取得「超出它本分的力量」。
-- **Two 稱 Tasim「同為後裔」**（《神化》）→ Two 自己也是女王的後裔（推測）；她在王權紀元 200 年就以鏡子替女王傳令（探索點〈受詛者的遺骸〉），至少活了八百年。她在鏡中說「全都被抹去……而我依然留著」，可能與被抹去的舊 Fruma 文明有關（推測）。
+- **Two 稱 Tasim「同為後裔」**（《神化》）→ Two 自己也是女王的後裔（推測）；她在皇家紀元 200 年就以鏡子替女王傳令（探索點〈受詛者的遺骸〉），至少活了八百年。她在鏡中說「全都被抹去……而我依然留著」，可能與被抹去的舊 Fruma 文明有關（推測）。
 - **Majin 說 Tasim 的祝福「意念」配上他的「短暫」**（《絕望的序曲》）→ 女王交給 Tasim 的任務（深入黑暗的領地）很可能是單程（推測）。
 - **共鳴織機的五個符文與 Sui 看見的五色絲線**（《希望的合奏》）→ 織機是 Bak'al 造的，女王靠它造出人類外殼；Soosu 修不好它，外殼就修不好（《神化》女王的遺言）。
 - **Majin「沒有留著他們的必要」、守衛形同虛設的地牢**（《絕望的序曲》）→ 《希望的合奏》揭曉 Two 在獲救的 Rex 和 Zeph 身上下了追蹤咒，王室因此知道反抗軍的藏身處。
@@ -261,7 +281,7 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 - **隨波而逝**（Espren）：Espren 的鐘聲曾是居民的暗號，「直到兩百五十年前，一切都被沖走了」。照順序敲響四個風鈴，牆上浮出狐狸臉，地下藏著新紀元大洪水前的反抗者據點：倖存者的日誌、刺殺當年 Auburn 統領 Xima 的計畫（她坐鎮 Fort Torann，那座堡壘建在「舊神殿」的廢墟上）。點亮骷髏手上的蠟燭，一個靈魂問「那份犧牲值得嗎」。這是 Xima 遇刺、女王開閘的另一面，也是 Syndra 用風鈴當入口的由來。
 - **痛中之慰**（Espren，Zhiraok 的宅邸）：向衛兵假報「有受詛者」引開他們，爬進 Zhiraok 的房間讀他的日記（中途要躲他）。日記寫他飛升時女王「拆解了他的靈魂再重組」，祝福留下永久的「針刺感」，他覺得值得；Soosu 恨自己的祝福，Gikyo 被它逼瘋，Majin 和他一樣覺得值得。他也寫到自己的數學口癖連小孩都聽不懂，寫到對 Gale（讓 Nasin 家蒙羞的那位）的怨，寫到想讓 Nasin 這個姓氏重新有意義。這就是他最後那句「如果榮譽該是這種感覺，那我不要了」的分量。
 - **呱鳴怪談**（Frog Bog）：《嶄新的開始》的醉漢、《壩下缺水》的村民都說沼澤裡有吃人的大青蛙。玩家替釀酒的 Fia 找回傳家寶、換一瓶 Auburn 苦艾酒，敲開那扇青蛙門把的門：裡面是戴圓頂禮帽、抽雪茄的人形巨蛙 Croaquin。他受雇嚇走靠近沼澤的人，雇主是「戴著奇怪面具的人」，每隔幾週來付酒、問他嚇走了誰（wiki 推測是審訊官或 Two），最近一個月沒來了。他記不得童年，只記得被一個「怪人」養大（wiki 推測是 Gikyo）。
-- **受詛者的遺骸**（Auburn 東北）：撿起一把「微弱脈動著魔力」的武器，被引進一個洞穴據點。佈告欄從王權紀元 189 年寫到 200 年：起初「才兩個人改變不了什麼」，最後「明天，革命開始」。他們把成員分成弓手、戰士、刺客等「職業」——探索點說明調侃這是「碰巧在 Fruma 城牆外那場戰爭中被重新發現的概念」，也就是玩家的職業系統。過場裡女王透過 Two 的鏡子命部隊撤退，然後火球落下、粉紅色的尖刺貫穿首領 Xanthos。
+- **受詛者的遺骸**（Auburn 東北）：撿起一把「微弱脈動著魔力」的武器，被引進一個洞穴據點。佈告欄從皇家紀元 189 年寫到 200 年：起初「才兩個人改變不了什麼」，最後「明天，革命開始」。他們把成員分成弓手、戰士、刺客等「職業」——探索點說明調侃這是「碰巧在 Fruma 城牆外那場戰爭中被重新發現的概念」，也就是玩家的職業系統。過場裡女王透過 Two 的鏡子命部隊撤退，然後火球落下、粉紅色的尖刺貫穿首領 Xanthos。
 
 ### The Roughworks
 
@@ -276,12 +296,12 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 - **初代 Wicker 的火花**（Fort Hegea）：在堡壘裡重搭柳條人，看見三段記憶：第一個被燒死的換形者 Ophir，只因「被人看見變形」，就被當時的統領 Caetal 帶領各族燒死；Azael 和 Gikyo 趕到時已經太遲，Gikyo 第一次說出要背叛「陛下」……堡壘建在各族的古老聚會地上，「懲罰眾人狂熱的各族，也懲罰因一人之過而受累的換形者」。《慶典成煙》的柳條人祭，紀念的就是這件事。
 - **Aldwell 圖書館**：集齊四棵德行之樹（共同體、利他、更新、抵抗）的花瓣進入。藏書說明樹冠是 Caetal 下台後由梟、狐、鹿三族組成，面具象徵對換形者的抵抗；Kalkalrah 氏族是只認錢的傭兵（正是《慶典成煙》裡那個「安全小組」）。
 
-> 譯註：`discovery.json` 裡〈光與影〉〈初代 Wicker 的火花〉兩條把 changeling 譯成「變形者」，GLOSSARY 定的是「換形者」，也留了 `Sovereign Gikyo` 原文，建議統一。
+> 譯註：`discovery.json` 裡〈光與影〉〈初代 Wicker 的火花〉兩條把 changeling 譯成「變形者」，GLOSSARY 定的是「換形者」，也留了 `Sovereign Gikyo` 原文，建議統一（已列入 [README](README.md) 的「語料待查清單」）。
 
 ### The Highlands
 
 - **屬於人民的統領**（Hyloch）：地下室的意見箱紀錄：前任統領 Rieke 會認真回覆市民建議；Majin 上任後通過的第一條是「關閉意見室」。
-- **分裂的家族**（Nasin 家宅）：按年代排好家族史、找齊鑰匙，讀到 Gale Nasin 被燒過的日記：十四歲被送進大學準備當統領，被 House Thalas 的 Majin 一路欺負，越來越懷疑王室對外界的說法，「我知道外面有一整個世界！」，畢業後出逃。這是《女王的新兵》Majin 那句「就像又在跟她說話……一個傻乎乎的 Nasin」的來由。
+- **分裂的家族**（Nasin 家宅）：按年代排好家族史、找齊鑰匙，讀到 Gale Nasin 被燒過的日記：十四歲被送進大學準備當統領，被 House Thalas 的 Majin 一路欺負，越來越懷疑王室對外界的說法，「我知道外面有一整個世界！」日記最後一句是「明天就畢業了，撐過去，然後再也不要想這些」；wiki〈Timeline〉記載她最後沒有畢業就離開了（823 AP），Nasin 家因此失去大半聲望。這是《女王的新兵》Majin 那句「就像又在跟她說話……一個傻乎乎的 Nasin」的來由。
 - **沉沒的紀念碑**（Lake Gitephe）：集齊三顆盤石開門，湖底洞穴裡是一尊有翼巨蛇像，碑文是舊文字 Tahkashtel。說明寫道：女王聲稱她到來前 Fruma 一片混亂，「然而這片土地上曾經有過另一種繁盛的文化」。Lake Gitephe 是水壩淹出來的湖——對照女王那句「埋掉他們的紀念碑、抹去他們的神」，這尊像很可能就是被淹掉的舊神之一（推測）。
 - **埋藏的記錄**（Nasin 家宅後方）：冰封河道下的舊文明工坊。「Nii、Az、Tol、Uth、Ek。這些力量之詞曾在 Fruma 舉足輕重，如今含義已然失傳。」途中的石碑面向 Wynn，上面同時刻著現代 Wynn 文和 Tahkashtel。
 - **皇家大學的圖書館**（Aelumia）：解數織圖拿到借閱證。大廳掛著歷任統領肖像——**唯獨沒有 Two**；Oru 的肖像蓋著布，掀開是一張貓照片（wiki 冷知識）。藏書包括王室軍制、Mistwoods 史（知識紀元 97 年封閉該區、設「霧林遊俠」一職）、Pestal 教授的動物圖鑑。
@@ -292,21 +312,26 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 
 | 原文 | 本章用的譯名 | 備註 |
 |---|---|---|
-| Royal Age (RA) | 王權紀元 | 語料只有 New Age＝新紀元，比照 |
+| Royal Age (RA) | 皇家紀元 | 語料只有 New Age＝新紀元，比照；第一輪作「王權紀元」 |
 | Knowledge Age (KA) | 知識紀元 | 同上 |
 | Industrial Age (IA) | 工業紀元 | 同上 |
-| After Portal (AP) | AP（腐敗之門開啟後） | 數字照留 AP |
-| Runic Calendar / Cycle | 符文曆／循環 | Nii、Az、Tol、Uth、Ek 留原文 |
+| After Portal (AP) | AP（傳送門開啟後） | 數字照留 AP；第二輪與各章統一（第一輪作「腐敗之門開啟後」） |
+| Runic Calendar / Cycle | 符文曆／週期 | Nii、Az、Tol、Uth、Ek 留原文；第二輪與第一章統一（第一輪作「循環」） |
 | Royal Dam | 皇家水壩 | 任務名《壩下缺水》已用「壩」 |
 | Industrees | 工業樹 | 探索點〈巨型汲液塔〉 |
 | Four Virtuous Trees | 四棵德行之樹 | Aldwell 圖書館 |
 | Tahkashtel | 留原文 | 舊 Fruma 文字 |
 | Ranger of the Mistwoods | 霧林遊俠 | 語料把 Gikyo 的 `the Ranger {p}` 譯成「{p} 遊俠」；若改成官職感更重的「巡林官」需全域一起改，**待決定** |
 | Ritual mask | 儀式面具 | |
+| Project Hallowground | Hallowground 計畫 | 照語料（《真面目》#064 櫃子標籤） |
+| Polymorph | （留原文） | Hallowground 文件對換形者的稱呼 |
+| dark pools of essence | 暗色的精華池 | 換形者湧現時的形態（wiki〈Wastelands〉） |
+| reservoir（Hallowground） | 儲池 | |
+| Warden's Log | 典獄長日誌 | Oru 的紀錄 |
 
 ## 給使用者決定的疑點
 
-- **Scion＝後裔**（GLOSSARY 待討論）：本章看得出 Scion 是「某個界域巨獸的代行者」：Lari 是光的、Bak'al 是戰爭（失落）的、Tasim 和 Two 是女王的。「後裔」有血緣的意思，Two 叫 Tasim「同為後裔的你」讀起來像親戚。可考慮「眷者」或「選民」。
+- **Scion＝後裔**（GLOSSARY 待討論）：本章看得出 Scion 是「某個界域巨獸的代行者」：Lari 是光的、Bak'al 是戰爭（失落）的、Tasim 和 Two 是女王的。「後裔」有血緣的意思，Two 叫 Tasim「同為後裔的你」讀起來像親戚。可考慮「眷者」或「選民」。（第二輪：第五章原本自用「眷屬」，已暫時照語料與 GLOSSARY 全書統一為「後裔」，等這一條決定後再一起改；另外 Lari 的「Orphion's chosen」語料作「受選者」，是另一個英文詞。）
 - **女王自稱「It」**：《絕望的序曲》女王用大寫的 It 稱呼過去的自己、用大寫的 Their 稱呼雙生子。現譯把 Their 譯成「祂們」，It 卻譯成「他」（「他一無所有」「我把自己從他被造來成為的東西裡解放出來」）。建議 It 改用「它」，和「祂們」與現在的「我」三方區隔——這個人稱轉換就是她「不再是戰爭」的證據。同一段的「from the moment of conception」現譯「從受孕的那一刻起」，指的是戰爭從碎片裡成形，「從誕生之初」較貼切。
 - **〈世界觀與主線〉與 GLOSSARY 的出入**：Steel Feather 前者寫「鋼鐵之羽」、GLOSSARY 與語料是「鋼羽」；Amongst the Canopy 前者「樹冠之中」、語料「樹冠之間」；Homecoming 前者「歸鄉之途」、語料「歸鄉」；Decay 前者「衰朽」、GLOSSARY「黯蝕」。本章一律照 GLOSSARY 與語料。〈世界觀與主線〉說 Zhiraok「可使用時間魔法」，任務裡明說的是 Nasin 家符咒讓他復活，Syndra 則說那是他的祝福；「時間魔法」沒有找到語料出處。
 
@@ -328,4 +353,4 @@ Fruma 有十六個隱藏探索點，另有兩段我們語料裡收進 `secret/` 
 - 〈[Quests](https://wynncraft.wiki.gg/wiki/Quests)〉
 - 〈[Secret Discoveries](https://wynncraft.wiki.gg/wiki/Secret_Discoveries)〉
 - 探索點：〈[Washed Away](https://wynncraft.wiki.gg/wiki/Washed_Away)〉〈[Solace in Pain](https://wynncraft.wiki.gg/wiki/Solace_in_Pain)〉〈[A Croaking Cryptid](https://wynncraft.wiki.gg/wiki/A_Croaking_Cryptid)〉〈[Remains of the Cursed](https://wynncraft.wiki.gg/wiki/Remains_of_the_Cursed)〉〈[An Unexpected Departure](https://wynncraft.wiki.gg/wiki/An_Unexpected_Departure)〉〈[Life Before Technology](https://wynncraft.wiki.gg/wiki/Life_Before_Technology)〉〈[Hidden In Plain Sight](https://wynncraft.wiki.gg/wiki/Hidden_In_Plain_Sight)〉〈[The Great Sap Siphon](https://wynncraft.wiki.gg/wiki/The_Great_Sap_Siphon)〉〈[Light and Shadow](https://wynncraft.wiki.gg/wiki/Light_and_Shadow)〉〈[First Wicker's Spark](https://wynncraft.wiki.gg/wiki/First_Wicker%27s_Spark)〉〈[Aldwell Library](https://wynncraft.wiki.gg/wiki/Aldwell_Library)〉〈[A People's Sovereign](https://wynncraft.wiki.gg/wiki/A_People%27s_Sovereign)〉〈[A House Divided](https://wynncraft.wiki.gg/wiki/A_House_Divided)〉〈[Sunken Monument](https://wynncraft.wiki.gg/wiki/Sunken_Monument)〉〈[Buried Records](https://wynncraft.wiki.gg/wiki/Buried_Records)〉〈[The Royal University's Library](https://wynncraft.wiki.gg/wiki/The_Royal_University%27s_Library)〉
-- 讀不到（502）：〈Fruma Storyline〉、〈Project Hallowground〉。Hallowground 計畫在本章只引用了 Timeline 頁的年份與任務裡的櫃子標籤，細節待補。
+- 第二輪補讀（2026-10-22）：〈Fruma Storyline〉與〈Project Hallowground〉在 wiki.gg 上**都沒有這個頁面**（不是讀不到）。主線的分章與定位改從〈[Fruma Province](https://wynncraft.wiki.gg/wiki/Fruma_Province)〉的 Story 一節核對（五章：Homecoming 2 個任務、Leaves in the Wind 3 個、The Steel Feather 3 個、Amongst the Canopy 2 個、Blossom of Blades 3 個，與本章一致）；Hallowground 計畫改從〈[True Colours](https://wynncraft.wiki.gg/wiki/True_Colours)〉（櫃子裡的六份文件）、〈[Sovereign Selium](https://wynncraft.wiki.gg/wiki/Sovereign_Selium)〉、〈[Sovereign Oru](https://wynncraft.wiki.gg/wiki/Sovereign_Oru)〉、〈[Wastelands](https://wynncraft.wiki.gg/wiki/Wastelands)〉補上，見「六、第四章『樹冠之間』」裡的〈Hallowground 計畫〉一段。

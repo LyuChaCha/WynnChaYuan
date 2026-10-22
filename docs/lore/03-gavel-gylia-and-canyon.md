@@ -10,7 +10,7 @@ Gavel 是村民（Villager）的故鄉行省。它的西半部被黯蝕（Decay�
 
 - **Cinfras County／Gylia 平原**（約 Lv. 70–80）：Gavel 的心臟地帶。首都級的大城 Cinfras、王室時代的 Guild Hall、通往全世界的 Letvus 飛船基地，以及世界上最大的湖 Lake Gylia。
 - **失落者峽谷（Canyon of the Lost）**（約 Lv. 80–90）：Gavel 東部最大的區域，懸崖高到穿進雲層、地形會自己移動的巨大迷宮。裡面有矮人城市 Thanos、煤礦城 Thesead、非法的人類城鎮 Eltom、Qira 的 Hive，以及這一切災難的根源——峽谷巨像（the Canyon Colossus）。
-- 另外幾條線雖然場景不全在 Gavel，但劇情上屬於 Gavel：Sky Islands 的城市 Ahmsord 與 Skyraider 的兩個任務、「由 Gavel 擁有」的公司 WynnExcavation、傳說神殿的守秘人，以及後來與 Gavel 的巨像危機綁在一起的 Corkus 兩部曲《使者》《羽毛紛飛》。
+- 另外幾條線雖然場景不全在 Gavel，但劇情上屬於 Gavel：Sky Islands 的城市 Ahmsord 與天空劫掠者的兩個任務、「由 Gavel 擁有」的公司 WynnExcavation、傳說神殿的守秘人，以及後來與 Gavel 的巨像危機綁在一起的 Corkus 兩部曲《使者》《羽毛紛飛》。
 
 讀完本章，可以把這一大片地區收成**三條主線**：
 
@@ -43,7 +43,7 @@ Gavel 是村民（Villager）的故鄉行省。它的西半部被黯蝕（Decay�
 | 約 900 AP | Gavel 政府邀請 Sodeta Guild 進駐 Guild Hall，Cinfras 成為公會中心 | wiki〈Cinfras (City)〉 |
 | 994 AP | 一班學生參觀 Siegfried 紀念碑，聽演員扮的 Siegfried 演講 | wiki〈Timeline〉 |
 | 998 AP | Corkus 工廠的中央人工智慧失控，工廠關閉 | wiki〈Timeline〉 |
-| 年代不明 | Gavel 軍隊圍攻 Qira 的 Hive 失敗，轉而求和；Yahya、Nohno、Mehme 三兄弟被宇宙魔法所害，四弟 Sohso 前往 Fruma | wiki〈Timeline〉 |
+| 年代不明 | Gavel 軍隊圍攻 Qira 的 Hive 失敗，轉而求和；Yahya、Nohno、Mehme 三兄弟被宇宙魔法所害，四弟 Sohso 前往 Fruma（967 AP 起在 Fruma 研究宇宙瘋狂，977 AP 被找進 Hallowground 計畫，見第六章） | wiki〈Timeline〉 |
 
 注意：wiki〈Gert〉頁寫「約 400 BP 兩顆隕石掉進學者後院」，跟〈Timeline〉的「隕石 1400 BP、學者發瘋 400 BP」對不上。本章採 Timeline 的說法（隕石早就在那裡，學者是後來才挖到、研究它們）；但隕石之印的日誌寫的是「兩塊發光的石頭掉進我家後院」，原始設定可能就是同一天，這點 wiki 自己也還沒統一。
 
@@ -75,7 +75,7 @@ Gavel 是村民（Villager）的故鄉行省。它的西半部被黯蝕（Decay�
 
 #### 天墜與遠古的巨人
 
-一切從**Gylia 的大災變**（Gylia's Cataclysm，Gylia 平原的終極隱藏探索點）開始。過場動畫裡，平原上的孩子被老村民責罵，接著紫、藍兩顆隕石劃過天空墜地。當時的人有的崇拜、有的恐懼；在一段漫長的沉默之後，那些文明崩潰成廢墟。雨水填滿隕石坑成了湖，隕石沉入地底，它們的異界魔力在湖心抬起了一座山。探索點的敘述說，湖裡「流動著最奇異的魔法」。
+一切從**Gylia 的大災變**（Gylia's Cataclysm，Gylia 平原的終極探索點）開始。過場動畫裡，平原上的孩子被老村民責罵，接著紫、藍兩顆隕石劃過天空墜地。當時的人有的崇拜、有的恐懼；在一段漫長的沉默之後，那些文明崩潰成廢墟。雨水填滿隕石坑成了湖，隕石沉入地底，它們的異界魔力在湖心抬起了一座山。探索點的敘述說，湖裡「流動著最奇異的魔法」。
 
 平原上另有一批謎樣的石像——**遠古存在**（The Ancient Ones）。宏大典藏的《Gylia 巨人研究》承認沒人知道它們從哪來：有人說是「最初之人」的機器，有人說是天啟的先兆、諸神的士兵，最流行的說法是神話裡的「Afenian 戰爭」，但作者把它當神話看。探索點的敘述只拋出一個問題：「他們究竟是野獸，還是石頭？」（社群把那具無頭石像叫「The Lad」，而峽谷巨像的構造跟它極像，暱稱「Archlad」——這是社群說法，但它暗示了平原上的石像與峽谷巨像可能是同一類東西。）
 
@@ -154,7 +154,11 @@ Cinfras 軍隊趕到後，把整批守衛以違反條約的罪名開除，由 Wi
 
 Mehme 傳送點附近還有一條隱藏走廊（門謎、隱形跑酷、夾板謎題、綠寶石換鑽石機關），裡面有額外的設定，但不屬於任務。
 
-這個任務的設定重點是：**隕石的宇宙魔法會侵蝕心智**。Yahya、Nohno、Mehme 三兄弟都因此變得執迷於自己的嗜好、離群索居；一塊隱藏的告示還透露有第四個兄弟 Sohso，他動身前往 Fruma。這三兄弟在其他任務裡都以「怪人」的樣子客串：
+這個任務的設定重點是：**隕石的宇宙魔法會侵蝕心智**。Yahya、Nohno、Mehme 三兄弟都因此變得執迷於自己的嗜好、離群索居；一塊隱藏的告示還透露有第四個兄弟 Sohso，他動身前往 Fruma。
+
+**Sohso 後來去了哪裡**（第二輪補讀 wiki〈Timeline〉〈Sovereign Selium〉與 Fruma 任務《真面目》裡的檔案櫃）：967 AP 他在 Fruma 開始研究「宇宙瘋狂」；977 AP，Sovereign Two 建議把他找進 Selium 統領主持的 Hallowground 計畫，去處理新抽取出來的換形者身上那種解不開的瘋狂——Selium 的日誌嫌他「在這裡研究了十年，一步進展都沒有」；一年後（978 AP）整座設施崩潰，Selium 下落不明。Sohso 本人的下場沒有交代（第六章）。換句話說，Gylia 隕石逼瘋三兄弟的那種「宇宙瘋狂」，被 Fruma 王室當成了研究換形者的參考。
+
+這三兄弟在其他任務裡都以「怪人」的樣子客串：
 
 - **Yahya**：《蘑菇人》裡口吃、神經兮兮、一心只想要蘑菇的怪人，後來在《蛛群登巔》也出現。
 - **Nohno**：《咕咕咯咯》裡住在 Rooster Island、跟雞過日子、把 Bob 留下的瘋雞 Cluckles 關在地下室的人。
@@ -190,11 +194,11 @@ Cinfras 郊區的屋主 Eminar 被殺，頭「不知道怎麼從身體上被卸�
 
 #### 《獲取護照》與《危難航程》
 
-Letvus 飛船基地是 Gavel 對外的門戶。《獲取護照》裡，玩家和一位也急著要護照的村民 Doan 搭檔，靠著一連串暗號（「飛船指揮官愛的正是他們恨的」「一旦撕裂，便永遠無法修補」）找到藏在 Blackbird Inn 底下的黑市；為了湊錢，兩人跟一名技師搭飛船去 Skyraider 的地盤偷 Dragonling 蛋，再到黑市一個個商人那裡抬價。最後 Doan 才發現自己的護照「一直都在我口袋裡」。
+Letvus 飛船基地是 Gavel 對外的門戶。《獲取護照》裡，玩家和一位也急著要護照的村民 Doan 搭檔，靠著一連串暗號（「飛船指揮官愛的正是他們恨的」「一旦撕裂，便永遠無法修補」）找到藏在 Blackbird Inn 底下的黑市；為了湊錢，兩人跟一名技師搭飛船去天空劫掠者的地盤偷 Dragonling 蛋，再到黑市一個個商人那裡抬價。最後 Doan 才發現自己的護照「一直都在我口袋裡」。
 
-《危難航程》是拿到護照後的第一趟航班：船上有失蹤的孩子、爆掉的引擎，最後是一整艘 **Skyraider**（天空劫掠者）的海盜船攻上來。玩家闖進敵船、救出被囚多年、被迫替海盜打造鑰匙的老鎖匠，再用他的工具打開艙門，**擊殺 Skyraider 女王**，帶走她的戒指。船長 Ackbar 把玩家介紹給私人飛船主 Calo，換來 Cinfras 與 Detlas 之間的免費航線。
+《危難航程》是拿到護照後的第一趟航班：船上有失蹤的孩子、爆掉的引擎，最後是一整艘**天空劫掠者**（Skyraider）的海盜船攻上來。玩家闖進敵船、救出被囚多年、被迫替海盜打造鑰匙的老鎖匠，再用他的工具打開艙門，**擊殺 Skyraider 女王**，帶走她的戒指。船長 Ackbar 把玩家介紹給私人飛船主 Calo，換來 Cinfras 與 Detlas 之間的免費航線。
 
-> **伏筆**：這位被玩家殺掉的 Skyraider 女王，正是《王位試煉》開場那句「上一任女王在她自己的飛船上被一個 Wynn 士兵殺了」的由來（見 3.3）。
+> **伏筆**：這位被玩家殺掉的天空劫掠者女王，正是《王位試煉》開場那句「上一任女王在她自己的飛船上被一個 Wynn 士兵殺了」的由來（見 3.3）。
 
 出處：任務《獲取護照》《危難航程》
 
@@ -204,7 +208,7 @@ Cinfras County 的蘑菇洞裡住著地精 Psilo。他請「這麼大隻、不�
 
 出處：任務《大處著眼》
 
-### 3.3 Gavel 的天空：Ahmsord 與 Skyraider
+### 3.3 Gavel 的天空：Ahmsord 與天空劫掠者
 
 （Sky Islands 本身另有章節；這裡只收與 Gavel 社會直接相關的兩個任務。）
 
@@ -231,11 +235,11 @@ Ahmsord 正在舉辦每月一次的「Siegfried 慶典尋寶大賽」：買齊�
 
 #### 《王位試煉》
 
-Skyraider 要選新女王，因為「上一任女王遭遇了很難看的下場，在她自己的飛船上被一個 Wynn 士兵殺了」——兇手就是玩家（《危難航程》）。玩家從一個名叫 Hrona 的 Skyraider 那裡得到建議，跟 Egpla 換來一套海盜裝，混進參賽者裡，通過戰鬥、飛行、偷竊三場試煉：最後一關是潛入「天上最有錢的那家人」的宅邸，偷走一件傳說寶物。
+天空劫掠者要選新女王，因為「上一任女王遭遇了很難看的下場，在她自己的飛船上被一個 Wynn 士兵殺了」——兇手就是玩家（《危難航程》）。玩家從一個名叫 Hrona 的 Skyraider 那裡得到建議，跟 Egpla 換來一套海盜裝，混進參賽者裡，通過戰鬥、飛行、偷竊三場試煉：最後一關是潛入「天上最有錢的那家人」的宅邸，偷走一件傳說寶物。
 
 主持人打開寶盒後臉色大變：那是一件「要是真被用上，會死很多人」的武器。她決定把這個「盒裝天災」鎖起來：「咱們是海盜沒錯，可咱們不是沒心肝的！」玩家就此成為 Skyraider 的女王，主持人的加冕詞是：「願她這回能撐過兩個禮拜。」
 
-> **閱讀提示**：Skyraider 是全女性的海盜族（試煉主持人一律叫參賽者「姑娘們」），玩家不論性別都被當成「她」。那件被「天上最有錢的那家人」嚴密看守的武器究竟是什麼、為什麼要藏，任務沒說，是一條開放的線頭。
+> **閱讀提示**：天空劫掠者是全女性的海盜族（試煉主持人一律叫參賽者「姑娘們」），玩家不論性別都被當成「她」。那件被「天上最有錢的那家人」嚴密看守的武器究竟是什麼、為什麼要藏，任務沒說，是一條開放的線頭。
 
 出處：任務《王位試煉》《危難航程》
 
@@ -264,12 +268,12 @@ Skyraider 要選新女王，因為「上一任女王遭遇了很難看的下場�
 
 Kitrios Barracks 的 Lecade 將軍最近下了一堆荒唐命令：要士兵跳舞迎賓、把酒吧改成花圃、把水道挖成一個大迴圈、用手持捕鼠器抓不存在的老鼠、把山塗成「國王的顏色」紫色、叫中尉造時光機。他說話也怪：「新的工作！新的工作！把這個人弄出行政官的！」「沒有幸運的話一切都會混亂……將軍地說，命令是必須被下達的！」
 
-時光機爆炸，炸出通往地牢的樓梯——**真正的 Lecade 被關在裡面**。兩個 Lecade 當面對質，玩家要靠問答分辨真假：假的那個說「我們的家——我們叫它 Gravel！」，真的那個怒吼「那叫 Gavel！」；假的說守門的二等兵叫「Tiger」，真的說「他叫 Tylas！」。冒牌貨最後現出原形——一個**變形者**——化成黏液逃走，留下一攤怪黏液（獎勵是「變形者胸甲」）。
+時光機爆炸，炸出通往地牢的樓梯——**真正的 Lecade 被關在裡面**。兩個 Lecade 當面對質，玩家要靠問答分辨真假：假的那個說「我們的家——我們叫它 Gravel！」，真的那個怒吼「那叫 Gavel！」；假的說守門的二等兵叫「Tiger」，真的說「他叫 Tylas！」。冒牌貨最後現出原形——一個**換形者**（changeling）——化成黏液逃走，留下一攤怪黏液（獎勵 Changeling's Chestplate，語料裝備名作「換生靈胸甲」）。
 
 > **翻譯重點**：
 > - 冒牌將軍的文法錯誤是**刻意**的，而且有雙關：Generally orders must be given 同時是「一般來說」和「將軍地」——語料譯成「將軍地說」保住了這個梗，很好。「Springy」是它發明的詞（指彈簧床），語料譯「彈彈」也對。
 > - 「Gravel」是它的破綻：它說「書上告訴我這個家是多丘的、易碎的」——它從書上讀到 Gavel 的描述，卻把地名記成了英文的 gravel（碎石）。語料保留英文「Gravel」，中文讀者會看不出為什麼這是破綻；若要改，可以考慮在譯文裡讓它說成「碎石」（Gavel 與碎石的音形差異），或維持原文、靠上下文「多丘的、易碎的」提示。這是需要決定的地方。
-> - 有士兵猜「那個會變形的生物一定是混在西南邊運來的裝備裡的」；Fruma 的隱藏探索點也提到「變形者」（changelings）。兩者是否同源，遊戲沒說（推測）。
+> - 有士兵猜「那個會變形的生物一定是混在西南邊運來的裝備裡的」；Fruma 的隱藏探索點與任務也大量提到換形者（changelings）——Fruma 王室的精英間諜，從 Wastelands 的「暗色精華池」裡抽取出來（第六章）。這隻是不是從 Fruma 偷渡過來的，遊戲沒說（推測）。
 
 出處：任務《將軍下令》；wiki〈[General's Orders](https://wynncraft.wiki.gg/wiki/General%27s_Orders)〉
 
@@ -288,10 +292,11 @@ Yansur 在結尾補了一段往事：Qira 曾被請去協助阻止森林的**黯
 《踏入道場》從另一個角度描繪 Qira。Sensei Miyagi 的櫻花道場有一份卷宗，記錄道場與 Hive 之間的以物易物：Hive 送絲綢、回收金屬和「活化體石」，道場回贈櫻桃、米與茶。卷宗裡夾著 Qira 的親筆信：「近來從 {p} 來的商隊愈發稀少，是您的餽贈讓僕從們不致飢餓」；她說派造物去取補給「在後勤與政治上都是一場惡夢」；信末還期待「我們那盤圍棋，說不定終於能下完了」。
 
 > **伏筆與暗示**：
-> - Qira 的「黑暗」與「某一場戰爭」沒有在本區揭曉。她拒絕治黯蝕、卻在準備對抗某種更大的東西，這跟 WynnExcavation 那句「願黑暗的注視永遠伴隨我們」、某條挖掘場探索點敘述提到的「Wynn 南境之外潛伏著一股遠古的黑暗力量」（語料 discovery.json，對應的探索點名稱未查證），以及《不得安息》死神的「世界沙漏」，可以讀成同一個方向（推測）。
+> - Qira 的「黑暗」與「某一場戰爭」沒有在本區揭曉。她拒絕治黯蝕、卻在準備對抗某種更大的東西，這跟 WynnExcavation 那句「願黑暗的注視永遠伴隨我們」、Wynn Plains 隱藏探索點〈採礦作業〉（Mining Operation，位於 Abandoned Mines）提到的「Wynn 南境之外潛伏著一股遠古的黑暗力量」，以及《不得安息》死神的「世界沙漏」，可以讀成同一個方向（推測）。
 > - Qira 喝止 Yansur：「安靜，Yansur。關於她的事一個字都別提。」——「她」指的是 Psychomancer 那一層的某位女性，身分未明。
 > - 《谷底買賣》的發明家 Lodog 拿到 Hive 的「Golemlus 動力核心」後說，這東西「大概一半機械、一半魔法……實在不像她的作風」，感覺像別人做的。Qira 的造物背後可能另有技術來源（推測）。
 > - Gale 說她的全名不是「Qira Gavel」，有些 Gavel 人這樣叫她讓她很不高興（wiki）。
+> - 風之部隊的 Gale 就是 Fruma 的 **Gale Nasin**：約 823 AP 從 Fruma 出逃，據 wiki 把 Highlands 的藍色氣旋帶進了 Olux（第二章），之後加入 Hive；她是 Qira 部下裡唯一不是 Qira 造出來的成員，如今以亡靈的形態存在（wiki〈Gale〉）。Fruma 篇的 Zhiraok 日記裡那個「讓 Nasin 家蒙羞的人」也是她（第六章）。
 
 出處：任務《Qira 蜂巢》《踏入道場》《谷底買賣》；wiki〈[Qira](https://wynncraft.wiki.gg/wiki/Qira)〉
 
@@ -299,7 +304,7 @@ Yansur 在結尾補了一段往事：Qira 曾被請去協助阻止森林的**黯
 
 Gavel 最後幾條活著的龍之一 **Ozoth** 突然闖進 Thanos 的金庫、在裡面孵蛋。矮人 Coulmis 和他的好友 Atila 想把蛋偷出來送回城市上方的 Ozoth 之巢，好把母龍引走，但回收隊接連失敗。Coulmis 認出玩家（「你就是打倒那個叫 Qira 的女人的傢伙」或「Dogun 那整件事就是你幫忙解決的」，依完成順序而定），請你穿過矮人「無懈可擊」的防禦系統，趁龍睡著時偷蛋、搭礦車逃出、把蛋放回巢中。Atila 看著母龍說：「他很美，不是嗎？不過終究是頭怪物。」
 
-隱藏探索點 **Thanos 軍械庫**則說，Thanos 深處有一座打造「屠龍兵器」的傳說鍛爐，但那些兵器已經不在了。結合《臨界點》裡 Draani 王的話——矮人在 Dogun 戰爭中奴役冰龍對抗 Dogun 的火龍、龍族因此幾乎滅絕、蛋被砸在巨石上餵鳥——這座軍械庫就是那段歷史的證物（推測）。
+隱藏探索點 **Thanos 軍械庫**則說，Thanos 深處有一座打造「屠龍兵器」的傳說鍛爐，但那些兵器已經不在了。結合《臨界點》裡 Draani 王的話——矮人在 Dogun 戰爭中奴役冰亞龍對抗 Dogun 的火龍、龍族因此幾乎滅絕、蛋被砸在巨石上餵鳥——這座軍械庫就是那段歷史的證物（推測）。
 
 《谷底買賣》是 Thanos 大市集的以物易物連鎖任務：歷史學家 Nakoba 用瓶蓋收藏換你的 Troll Hair、瓶蓋迷 Dobile 為了「第一屆 Dogun 節」的瓶蓋發狂、鐵匠 Dorroc 拿出 Hive 的 Golemlus 動力核心、熱血推銷員 Mastro……最後的交易物是一塊古矮人符文石板，Nakoba 說這是他湊齊整套四塊所缺的第三塊。
 
@@ -369,15 +374,30 @@ Rhay 對玩家說明：峽谷巨像是個古老的東西，「它被造出來的
 
 修理需要一顆 Magmaflux 電容器，玩家跟 Rhay 搭熱氣球去 Corkus，在工廠底下的舊礦坑打倒採礦機兵「母鑽」取得零件——而在 Corkus 迎接 Rhay 的「丈夫」正是 Maxie（《使者》的那位），他還抱怨寄給玩家的婚禮邀請函沒送到。修好的穩定器仍然撐不住，Rhay 絕望地說「我們失敗了」。
 
-Ineos 提出最後的希望：Dogun 的**長老們**。當矮人殺死 Garaheth 時，長老們被 Algard 將軍封進了冰龍吐息造成的「真冰」，任何火焰都融不了。玩家與 Ineos 前往 Molten Heights（這一段的細節屬於 Molten Heights 章），在矮人 Draani 王與 Dogun 族長 Paku 的協助下，請求 Ozoth——Dogun 口中的「無盡點火者」——讓出她的永焰（玩家得走進她的胃裡取出來）。長老 Astal、Desint、Iscor 解凍後，立刻要矮人償還祖先的罪，但決定「晚點再跟你算這筆帳」，先去安撫守護者。長老在巨像前施行儀式：
+Ineos 提出最後的希望：Dogun 的**長老們**。當矮人殺死 Garaheth 時，長老們被 Algard 將軍封進了冰亞龍吐息造成的「真冰」，任何火焰都融不了。玩家與 Ineos 前往 Molten Heights（這一段的細節屬於 Molten Heights 章），在矮人 Draani 王與 Dogun 族長 Paku 的協助下，請求 Ozoth——Dogun 口中的「無盡點火者」——讓出她的永焰（玩家得走進她的胃裡取出來）。長老 Astal、Desint、Iscor 解凍後，立刻要矮人償還祖先的罪，但決定「晚點再跟你算這筆帳」，先去安撫守護者。長老在巨像前施行儀式：
 
 > 「偉大的守護者，磐石之主，聽見我們熾烈的呼喚。你的怒火蒙蔽了你的視線，你的憤怒正焚燒並扭曲我們的家園。」
 
 長老們撐住巨像，玩家則要「進入這片聖地，一路殺到盡頭，把它打醒」——這就是**峽谷巨像討伐戰**的開端。討伐戰說明寫道：「峽谷巨像為了守護 Gavel，反而讓整個行省陷入險境。數百年來無人維護，它隨時可能把大地撕裂。」
 
-（wiki〈The Canyon Colossus〉討伐戰頁面兩次讀取都是 502，討伐戰內部的劇情與結局本章未能收錄。）
+#### 峽谷巨像討伐戰（第二輪補讀）
 
-出處：任務《臨界點》；討伐戰說明（raid.json）；隱藏探索點 破損的守護者、龜裂的峽谷；wiki〈[Ozoth](https://wynncraft.wiki.gg/wiki/Ozoth)〉、〈[The Broken Protector](https://wynncraft.wiki.gg/wiki/The_Broken_Protector)〉；wiki〈The Canyon Colossus〉讀不到
+討伐戰本身幾乎沒有對白，劇情靠場景推進（以下依 wiki 的關卡說明改寫）：
+
+1. **開場**：巨像的雙眼轉紅、掙破長老們的封印，標題字卡從「Gavel 的守護者」改寫成「Gavel 的**毀滅者**」——《臨界點》結尾那道勉強撐住的封印，一開場就破了。
+2. **第一間房**：隊伍被巨像「放逐」進峽谷裡的一座洞穴，得自己找路殺出來。巨像對付入侵者的方式，跟它對付峽谷一樣：把東西挪走。
+3. **第二間房**：穿過會移動的迷宮、護送魔像，一路走回巨像腳下。
+4. **第三間房**：Desint、Iscor，以及最關鍵的 **Astal** 在巨像前施行儀式。玩家要用雷射擊落巨像拋來的隕石保護 Astal（他倒下就算失敗），同時打倒 Primeval Machine、Agate Axon 等守衛，啟動四座束縛符印。
+5. **間奏**：Astal 與隊伍乘著一塊巨像碎片升到雲層之上，與巨像正面相對。Astal 留下來觀戰。
+6. **首領戰**：任務目標寫的是「讓峽谷偉大的守護者平靜下來」（Calm the canyon's Great Protector），不是殺死它。
+
+wiki 沒有記錄戰後的對白；能確定的是之後的影響——Sky Islands 的古龍 Farcor 會說「Heights 的戰爭結束了，偉大的守護者也平靜下來」（第四章）。所以這場討伐戰的結局是**安撫**，不是摧毀。
+
+**旁註**：這一點跟峽谷線前面的伏筆形成對照。《礦坑金絲雀》的幻覺以高階 Gavel 語說玩家是「能夠摧毀 Colossus 的人」，Clight 也一口咬定「那個東西必須被摧毀」；最後玩家做的卻是 Dogun 長老想做的事——讓它安靜下來。幻覺裡的「摧毀」是人類（與村民）的想法，長老代表的是另一種答案（推測，遊戲沒有點破）。
+
+**巨像的身世**（wiki〈The Canyon Colossus (Boss)〉）：巨像在腐敗傳送門出土之前就出現在峽谷裡，原本是平靜的守護者、「不可或缺的善」。門開啟之後，它與另一尊——Ahms 巨像——因不明原因同時失常。Doguns 搆得到峽谷這一尊，用魔法馴服了它；Ahms 那一尊沒人搆得到，結果撕碎了整個 Ahms 地區（第四章）。Doguns 也把它當成造物主之一來敬拜：wiki〈Doguns〉說他們的身體是用巨像的石頭做的、由 Garaheth 的火賦予生命。矮人打贏 Dogun 戰爭、把 Doguns 澆成石像之後，就再也沒人安撫它，峽谷因此開始移動、龜裂；但同一股地動也把西邊的寄生體擋在外面（〈巨大屏障〉）。1.20 以前它叫 Lost Colossus，周圍沒有碎裂，只有一個探索點暗示它「也許是活的」；社群暱稱「Archlad」就是從平原上那具叫「The Lad」的石像來的（wiki 推測那具石像是一尊還在慢慢長大的小巨像）。
+
+出處：任務《臨界點》《礦坑金絲雀》；討伐戰說明（raid.json）；隱藏探索點 破損的守護者、龜裂的峽谷、巨大屏障；wiki〈[Ozoth](https://wynncraft.wiki.gg/wiki/Ozoth)〉、〈[The Broken Protector](https://wynncraft.wiki.gg/wiki/The_Broken_Protector)〉、〈[The Canyon Colossus (Raid)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Raid))〉、〈[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))〉、〈[Doguns](https://wynncraft.wiki.gg/wiki/Doguns)〉
 
 ### 3.5 從 Gavel 伸出去的兩條線
 
@@ -394,7 +414,7 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 
 > **伏筆**：
 > - Gavel 挖掘場的公告證實 Gavel 的隕石公司「把基地搬到海外，與 WynnExcavation 合作」——Gylia 的隕石與 Wynn 的四顆宇宙水晶被同一群人視為同類（「來自異界的水晶」）。
-> - 「黑暗的注視」顯示這個結社崇拜黑暗；Amadel 說水晶在「Wynn 南境深處」出土，另一條挖掘場探索點敘述說挖掘之所以中止，是因為「Wynn 南境之外潛伏著一股遠古的黑暗力量」（語料 discovery.json，對應的探索點名稱未查證）。兩者都指向南方，也就是日後的 Silent Expanse（推測）。
+> - 「黑暗的注視」顯示這個結社崇拜黑暗；Amadel 說水晶在「Wynn 南境深處」出土，Wynn Plains 的隱藏探索點〈採礦作業〉說挖掘之所以中止，是因為「Wynn 南境之外潛伏著一股遠古的黑暗力量」。第二輪查證：這個探索點在 Abandoned Mines，wiki〈Mining Operation〉說挖到那些黑色尖刺的正是 WynnExcavation 一行人，尖刺與粉紅玻璃的樣子像 Silent Expanse 的，進場時播的也是 Silent Expanse 的探索點音效而不是一般的——也就是說，WynnExcavation 早就挖到了黑暗那一邊，又把它放棄了。兩條線索都指向南方的 Silent Expanse（遊戲以音效暗示，wiki 據此判定；第一章、第五章）。
 > - Placardus 說「軍隊、資源，甚至王室都站在我們這邊」——在已經沒有國王的 Gavel，這裡的「王室」指的是 Troms 這類 Wynn 的城邦（D 號遺址證實了）。
 > - D 號遺址最後退休鐘錶匠的閒聊：「手藝比我更好的鐘錶匠只有一個人……他把自己關在 {p} 的某個地方，嘴裡不停念著某個神。」這是一個沒有收尾的鉤子（推測與時間主題的區域有關，不要寫成定論）。
 
@@ -448,9 +468,9 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 | Gawrick | 瘋狂魔法發明家 | 傳送卷軸發明人，裝備「乖離」的設計者 | 《墜落的貨運》 |
 | Ernold | 飛船公司代表 | 為保住飯碗擊落自家飛船 | 《墜落的貨運》 |
 | Siegfried／Gurix | 「Gavel 的英雄」／扮演他的演員 | 被製造出來的英雄，演員可隨時被替換 | 《Gavel 的英雄》 |
-| Skyraider 女王 | 天空海盜之首 | 被玩家所殺，引出下一任的試煉 | 《危難航程》《王位試煉》 |
+| 天空劫掠者女王 | 天空海盜之首 | 被玩家所殺，引出下一任的試煉 | 《危難航程》《王位試煉》 |
 | Gana／Irlok | Bantisu 僧侶 | 峽谷的引路人 | 《峽谷嚮導》《不得安息》 |
-| Lecade／變形者 | Kitrios Barracks 將軍／冒牌貨 | 冒牌將軍的荒唐命令 | 《將軍下令》 |
+| Lecade／換形者 | Kitrios Barracks 將軍／冒牌貨 | 冒牌將軍的荒唐命令 | 《將軍下令》 |
 | Qira | Hive 的女主人 | 與 Gavel 互不侵犯；拒治黯蝕，為「黑暗」備戰 | 《Qira 蜂巢》《踏入道場》 |
 | Yansur | Qira 的僕人 | 揭露 Qira 與 Gavel 的盟約與她的過去 | 《Qira 蜂巢》 |
 | Sensei Miyagi | 櫻花道場的老師 | 與 Qira 以物易物、下圍棋 | 《踏入道場》 |
@@ -477,7 +497,7 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 - **「Gert 是什麼」→ 村民自己不知道**：宏大典藏的學者否定「Gert 搭隕石來」，Gylia Watch 圖書館把 Gert 寫成野蠻人；只有藏起來的隕石之印說出真相。村民打了一場對付同胞的戰爭。
 - **紫與藍＝混沌與秩序**：Helmund 的研究結論。「兩股力量相撞，就會有戰爭」（D 號遺址）是同一個世界法則（光與暗相撞生出腐敗）的另一種說法（推測）。
 - **Gavel 的隕石公司 → WynnExcavation**：舊公告證實合流；WynnExcavation 稱水晶「來自異界」、會議祝詞是「願黑暗的注視」。
-- **「Wynn 南境之外的遠古黑暗力量」**：一份挖掘場的探索點敘述說挖掘因此被放棄；Qira「黑暗就要來了」、死神的世界沙漏，可能指向同一個未來（推測）。
+- **「Wynn 南境之外的遠古黑暗力量」**：〈採礦作業〉（Abandoned Mines，WynnExcavation 挖到的黑色尖刺）說挖掘因此被放棄；Qira「黑暗就要來了」、死神的世界沙漏，可能指向同一個未來（推測）。
 - **巨像正在重演 Ahms**：《臨界點》明說「一千年前發生在那個區域的事，正在此時此地重演」，巨像已在虛空上撕出洞；隱藏探索點 巨大屏障顯示，寄生體想鑽進峽谷時被「讓山脈永不止息地運動的力量」擋了回去——**巨像的失控同時也是一道屏障**。安撫它的同時，峽谷是否還擋得住寄生體，是值得留意的伏筆（推測）。
 - **「你就是那個能夠摧毀 Colossus 的人」**：《礦坑金絲雀》幻覺裡以高階 Gavel 語說出，預告討伐戰。
 - **玩家「不該存在」的不滅火花**：《不得安息》的死神；《Gavel 的英雄》Gurix 的「沒有死掉之後再回來這回事」是同一主題的玩笑版。
@@ -558,22 +578,24 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 | Siegfried Agent | Siegfried 經紀人 | 語料目前未收此 NPC 名 |
 | Siegfried's Grave | Siegfried 之墓 | 地名 Monument to Siegfried 照語料留英文 |
 | Keepers（傳說神殿） | 守秘人 | 語料《峽谷兀鷲》譯「守護者」，見下方疑點 |
-| Changeling | 變形者 | 語料已用（Fort Hegea 敘述、《將軍下令》），獎勵「Changeling's Chestplate」本章譯「變形者胸甲」 |
+| Changeling | 換形者 | 第一輪寫「變形者」；第二輪照 GLOSSARY 與 Fruma 任務語料統一為「換形者」。語料裡另有「變形者」（discovery.json 兩條）與「換生靈胸甲」（裝備名），列入語料待查清單 |
 | Bovemism | 保留原文 | Woc 的崇牛信仰（wiki 用語） |
-| Ultimate Discovery | 終極隱藏探索點 | 語料只有「隱藏探索點」 |
+| Ultimate Discovery | 終極探索點 | 語料只有「隱藏探索點」；第二輪與第一、七章統一 |
 | BP／AP／YA | 保留原文 | 年代記法 |
 
 **語料中發現、需要使用者決定的不一致**（不是本章自己的譯名，列出供追蹤）：
 
 1. **Gerten War**：探索點敘述作「Gerten 戰爭」，《Gerts 大饑荒 第一部》Cikal 的台詞作「Gert 戰爭」。
-2. **Everflame**：《臨界點》同時有「永焰」與「永恆之焰」兩種譯法（連同一句台詞的兩個版本都不同）。
+2. **Everflame**：《臨界點》同時有「永焰」與「永恆之焰」兩種譯法。第二輪查證：#253 的原文本來就寫 Eternal Flame（#254 才是 Everflame），兩條是遊戲送出的兩個版本，譯文各照原文並沒有錯；要不要把 #253 也統一成「永焰」，是風格問題。
 3. **Ozoth 的代名詞**：《Thanos 儲藏庫》照 GLOSSARY 生物一律用「他」，《臨界點》寫「她」。原文是 she。
-4. **Skyraider**：npc.json 譯「天空劫掠者」，任務台詞多半保留「Skyraider」。
+4. **Skyraider**：npc.json 譯「天空劫掠者」，任務台詞多半保留「Skyraider」（本章正文第二輪起統一用「天空劫掠者」）。
 5. **WynnExcavation 的 Site**：任務名作「A 號遺址」，任務內文有「C 號工地」「C 據點」「Site C」混用。
 6. **Keepers**：《峽谷兀鷲》Svin 自稱「守護者之一」，但「守護者」在本區已經是 Dogun 對峽谷巨像的稱呼（Guardian），建議改成「守秘人」之類，避免讀者混淆。
 7. **Gravel**：《將軍下令》冒牌將軍把 Gavel 說成「Gravel」，語料保留英文，中文讀者看不出破綻（見 3.4）。
-8. **《臨界點》的說話者**：一句帶 Dogun 斷續語氣的台詞（「我逃離 Heights……已經……很多年了。我很……感激……Corkian……收留了我。」）在語料裡標成 Rhay，內容與語氣都像 Ineos，可能是擷取時誤標。
-9. 《使者 第二部》有一句把 electromagic 留了英文（其他地方都是「電魔法」）。
+8. **《臨界點》的說話者**（第二輪查證是 #313–315）：一句帶 Dogun 斷續語氣的台詞（「我逃離 Heights……已經……很多年了。我很……感激……Corkian……收留了我。」）在語料裡標成 Rhay，內容與語氣都像 Ineos，可能是擷取時誤標。
+9. 《使者 第二部》#097 把 electromagic 留了英文（其他地方都是「電魔法」）。
+
+以上各條已併入 [README](README.md) 的「語料待查清單」。
 
 ---
 
@@ -590,4 +612,4 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 - [Gert](https://wynncraft.wiki.gg/wiki/Gert)、[Qira](https://wynncraft.wiki.gg/wiki/Qira)、[Ozoth](https://wynncraft.wiki.gg/wiki/Ozoth)
 - [Secret Discoveries](https://wynncraft.wiki.gg/wiki/Secret_Discoveries)、[Gylia's Cataclysm](https://wynncraft.wiki.gg/wiki/Gylia%27s_Cataclysm)、[Mark of the Meteors](https://wynncraft.wiki.gg/wiki/Mark_of_the_Meteors)、[Gylia Watch Library](https://wynncraft.wiki.gg/wiki/Gylia_Watch_Library)、[Gavel Excavation](https://wynncraft.wiki.gg/wiki/Gavel_Excavation)、[The Ancient Ones](https://wynncraft.wiki.gg/wiki/The_Ancient_Ones)、[The Grand Archive](https://wynncraft.wiki.gg/wiki/The_Grand_Archive)、[The Great Barrier](https://wynncraft.wiki.gg/wiki/The_Great_Barrier)、[The Broken Protector](https://wynncraft.wiki.gg/wiki/The_Broken_Protector)、[Cosmic Crystals](https://wynncraft.wiki.gg/wiki/Cosmic_Crystals)、[Cracked Canyon](https://wynncraft.wiki.gg/wiki/Cracked_Canyon)、[Canyon Housing](https://wynncraft.wiki.gg/wiki/Canyon_Housing)、[Loot of the Lost](https://wynncraft.wiki.gg/wiki/Loot_of_the_Lost)、[Thanos Armory](https://wynncraft.wiki.gg/wiki/Thanos_Armory)
 - [???](https://wynncraft.wiki.gg/wiki/%3F%3F%3F)、[Murder Mystery](https://wynncraft.wiki.gg/wiki/Murder_Mystery)、[The Hero of Gavel](https://wynncraft.wiki.gg/wiki/The_Hero_of_Gavel)、[General's Orders](https://wynncraft.wiki.gg/wiki/General%27s_Orders)、[Cowfusion](https://wynncraft.wiki.gg/wiki/Cowfusion)、[Beyond the Grave](https://wynncraft.wiki.gg/wiki/Beyond_the_Grave)、[Temple of the Legends (Quest)](https://wynncraft.wiki.gg/wiki/Temple_of_the_Legends_(Quest))、[Canyon Condor](https://wynncraft.wiki.gg/wiki/Canyon_Condor)、[The Envoy Part I](https://wynncraft.wiki.gg/wiki/The_Envoy_Part_I)
-- 讀不到：[The Canyon Colossus](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus)（兩次 502）
+- 第二輪補讀（2026-10-22）：[The Canyon Colossus (Raid)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Raid))、[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))、[Doguns](https://wynncraft.wiki.gg/wiki/Doguns)、[Mining Operation](https://wynncraft.wiki.gg/wiki/Mining_Operation)、[Gale](https://wynncraft.wiki.gg/wiki/Gale)、[Sovereign Selium](https://wynncraft.wiki.gg/wiki/Sovereign_Selium)、Timeline 全文。第一輪回 502 的 The_Canyon_Colossus 其實是重新導向到討伐戰頁。

@@ -8,7 +8,7 @@
 
 Wynn 行省是玩家落地的第一塊土地，也是整個世界故事的「底盤」。它的劇情可以濃縮成一句話：**一千年前，礦工在 Wynn Plains 的正中央挖出了一道門，門後是戰爭本身。**
 
-這道門就是腐敗傳送門（Corruption Portal），門後是戰爭領域（Realm of War）。光與暗在「影響力的位面」上互相憎恨、互相拉扯，兩者一碰撞就生出第三種力量——腐敗（Corruption）。它沒有意志、沒有主人，只會蔓延與毀滅；而 Wynn 正好是它流進物質界的出口。此後一千年的「腐敗之戰」（Corruption War），就是 Wynn 所有城鎮、英雄與廢墟的由來：
+這道門就是腐敗傳送門（Corruption Portal），門後是戰爭領域（Realm of War）。光與暗在「影響層」（Plane of Influence）上互相憎恨、互相拉扯，兩者一碰撞就生出第三種力量——腐敗（Corruption）。它沒有意志、沒有主人，只會蔓延與毀滅；而 Wynn 正好是它流進物質界的出口。此後一千年的「腐敗之戰」（Corruption War），就是 Wynn 所有城鎮、英雄與廢墟的由來：
 
 - **Ragni、Troms** 這兩座堡壘撐過了一切，成為行省的支柱；**Detlas、Akias、古 Nemract** 則一座座倒下。
 - **Bak'al**——第二個走進門又活著出來的人——帶領不死大軍燒了八百多年。
@@ -34,7 +34,7 @@ Wynn、Gavel 與 Corkus 通用的紀年以「腐敗傳送門開啟」為元年�
 
 ### Fruma 曆
 
-Fruma 自成一套紀年，從女王陛下建立現代 Fruma 的那一年（200 AP）起算，分四個時代：皇家紀（RA，200–500 AP）、知識紀（KA，500–750 AP）、新紀（NA，750–880 AP）、工業紀（IA，880 AP 至今）。現在是 **120 IA**。和 Wynn 直接相關的只有一條：**新兵計畫始於 20 IA（＝900 AP）**，也就是村民抵達 Wynn 的同一年。
+Fruma 自成一套紀年，從女王陛下建立現代 Fruma 的那一年（200 AP）起算，分四個紀元：皇家紀元（RA，200–500 AP）、知識紀元（KA，500–750 AP）、新紀元（NA，750–880 AP）、工業紀元（IA，880 AP 至今）。現在是 **120 IA**。和 Wynn 直接相關的只有一條：**新兵計畫始於 20 IA（＝900 AP）**，也就是村民抵達 Wynn 的同一年。
 
 ### 符文曆（Runic Calendar）
 
@@ -57,7 +57,7 @@ Fruma 自成一套紀年，從女王陛下建立現代 Fruma 的那一年（200 
 | 年代 | 事件 | 主要出處 |
 |---|---|---|
 | 遠古（門開前） | Olm 在 Silent Expanse、Time Valley、Dernel Jungle 建立文明；Time Valley 發生時間災難，Olm 撤離，Garoth 獨留並造出時失聖殿 | 〈亙古遺跡〉、《既視感》、wiki〈The Olm〉 |
-| 688 BP | 沙漠皇帝被第 26 子 Hashr 所殺，權杖的詛咒以沙暴埋葬帝國（舊版寫 1400 BP） | 〈沙漠王室宅邸〉 |
+| 688 BP | 沙漠皇帝被第 26 子 Hashr 所殺，權杖的詛咒以沙暴埋葬帝國（1.20 以前寫 100 BP、1.20 起寫 1400 BP，2.2.0 才改成 688 BP；wiki〈The Desert Empire〉至今仍寫 1400 BP） | 〈沙漠王室宅邸〉、wiki〈The Emperor〉 |
 | 8 BP 以前 | Ragni 石碑立起，Fruma 的「遠方殖民地」正式成立 | wiki〈Ragni Stela〉 |
 | 188 BP | 一群 Fruma 人東行，把語言帶給 Nemract 的居民 | wiki Timeline（Apprentice Alfe） |
 | 0 AP | 晝夜平分（Equinox）；三道界域之門同時開啟；Wynn 的礦工挖出腐敗傳送門；採礦隊長化為世界腐敗者；Bak'al 進入戰爭領域；古 Nemract 陷落 | 《傳說神殿》《亡者之坑》 |
@@ -76,10 +76,10 @@ Fruma 自成一套紀年，從女王陛下建立現代 Fruma 的那一年（200 
 | 866 AP | 小規模獸潮再襲 Ragni，Momo 被感染，12 歲的 Bob 親手送她上路，出城拜師 | 第四～五章 |
 | 871–881 AP | Bob 依序拜 Chak、Mael、Ethe、Fier 為師；Troms 改擁 Bob，放逐 Slykaar | 第六～十章 |
 | 882–886 AP | Bak'al 大軍渡河、焚燒 Nivla Woods；886 AP Bob 在 Ragni 城外擊退 Bak'al | 〈守望者〉〈Wynn Plains 紀念碑〉 |
-| 約 900 AP | Bob 獨力把 Annihilation 逼回傳送門 | wiki〈Annihilation〉 |
+| 約 900 AP | Bob 獨力把湮滅（Annihilation）逼回傳送門 | wiki〈Annihilation〉 |
 | 900 AP | 海浪平息；村民抵達並建立 Maltic；Fruma 開始送新兵（實為放逐者）來 Wynn | 〈Maltic 的往昔〉、wiki Timeline |
 | 984 AP | Bob 把力量分給三隻動物，託 Nilrem 偽造死訊，隨 Relend 前往 Gateway Island 後失蹤 | 〈Nilrem 的封緘信〉、《轉世重生》 |
-| 985 AP | Bob 之墓出現在 Nesaak 雪地；Annihilation 再度出現，被 Aegis、Takan、Eveni 率聯軍擊退 | 〈狼之神殿〉、wiki〈Annihilation〉 |
+| 985 AP | Bob 之墓出現在 Nesaak 雪地；湮滅再度出現，被 Aegis、Takan、Eveni 率聯軍擊退 | 〈狼之神殿〉、wiki〈Annihilation〉 |
 | 999 AP | Caid 與 Reynauld 被流放到 Wynn；Aledar 與 Tasim 在 Fruma 被捕 | 《尋回過往》 |
 | 1000 AP | Aledar、Tasim 與玩家以新兵身分抵達 Wynn | 《國王的新兵》 |
 
@@ -91,13 +91,15 @@ Fruma 自成一套紀年，從女王陛下建立現代 Fruma 的那一年（200 
 
 ### 1. 門開之前：Olm、沙漠帝國、Fruma 的殖民地
 
-**Olm** 是一個早已幾乎滅絕的非人種族，懂光、懂符文、能操縱時間。他們先在後來的 Silent Expanse 建城，被黑暗（Dern）入侵後逃離，在 Wynn 留下了 **Time Valley**——整座山谷連同建築用的工具都浸著時間魔法。後來一場「宇宙事件」逼近山谷，加上時間魔法失控，「時間被撕裂了」，大部分 Olm 死去或撤離。Time Valley 的隱藏探索點〈亙古遺跡〉裡，一具被時間短暫喚回的 Olm 留下遺言：「Olm 無法在這裡存活。時間已被撕裂……我們唯一的希望是……那片廣——」話沒說完就斷氣了。（「廣」字是原文「The expans-」，指 Silent Expanse——諷刺的是，那裡正是他們最初被黑暗奪走的家。這段遷徙順序 wiki 自己也有兩種寫法，下一章〈Silent Expanse 與 Dern〉會詳談。）
+**Olm** 是一個早已幾乎滅絕的非人種族，懂光、懂符文、能操縱時間。他們先在後來的 Silent Expanse 建城，被黑暗（Dern）入侵後逃離，在 Wynn 留下了 **Time Valley**——整座山谷連同建築用的工具都浸著時間魔法。後來一場「宇宙事件」逼近山谷，加上時間魔法失控，「時間被撕裂了」，大部分 Olm 死去或撤離。Time Valley 的隱藏探索點〈亙古遺跡〉裡，一具被時間短暫喚回的 Olm 留下遺言：「Olm 無法在這裡存活。時間已被撕裂……我們唯一的希望是……那片廣——」話沒說完就斷氣了。（「廣」字是原文「The expans-」，指 Silent Expanse——諷刺的是，那裡正是他們最初被黑暗奪走的家。這段遷徙順序 wiki 自己也有兩種寫法，第五章〈Silent Expanse 與 Dern 領域〉會詳談。）
 
-**沙漠帝國**是另一支古文明。皇帝靠一支權杖活了幾百年、生了幾百個孩子（族譜上甚至有「孩子出生時，曾孫已經死了」的記載），臣民把他當神。第 26 子 **Hashr** 越過沙漠的城牆遊歷 Wynn，發現外面的世界人人都會魔法，父親的「神性」只是一件器物。688 BP 他回宮弒父、奪走權杖，卻觸發了皇帝下在權杖上的詛咒：沙暴連年不止，整個帝國被埋進沙裡。Hashr 把權杖藏進劍之神殿，最後被臣民封進風沙古墓。
+**沙漠帝國**是另一支古文明。皇帝靠一支權杖活了幾百年、生了幾百個孩子（族譜上甚至有「孩子出生時，曾孫已經死了」的記載），臣民把他當神。第 26 子 **Hashr** 越過沙漠的城牆遊歷 Wynn，發現外面的世界人人都會魔法，父親的「神性」只是一件器物。688 BP 他回宮弒父、奪走權杖，卻觸發了皇帝下在權杖上的詛咒：沙暴連年不止，整個帝國被埋進沙裡。Hashr 把權杖藏進劍之神殿，最後被臣民以叛逆弒父之罪封進風沙古墓，墓門以魔法封住，只有這支權杖打得開。
+
+wiki〈The Emperor〉另外補了幾筆：皇帝至少是 1688 年前的人，遠早於 Fruma 人來到這片沙漠；分隔沙漠與 Wynn Plains 的那道大城牆很可能是他築的，Almuj（〈圖騰柱〉裡的「城塞」）也可能是他那個時代的建築。〈Hashr〉頁則提出另一個角度：Hashr 除了貪婪與嫉妒，也自認是在把沙漠的人民從一個假神手裡救出來——他喊的那句「你的世界是個謊言」，原本是一句控訴（wiki 以風沙古墓地城為據；本章沒有在語料裡找到對應的台詞，〈沙漠王室宅邸〉的過場本身只看得到憤怒）。
 
 **Fruma 的遠方殖民地**：Wynn 原本是 Fruma 的殖民地。Fruma 那一側才看得到的〈Ragni 石碑〉寫著：「Sikshahrath 鎮自此改名 Ragshniv」，並列出各殖民聚落的議會席次——Nevraksh、Etlas、Akshas、Etlkoth、Trofmas（「待大堡壘完工，Trofmas 派兩席」）。這些古名對照今天的 Ragni、Nemract、Detlas、Akias（或 Elkurn）、Troms 幾乎一目了然（對照屬推測）。Troms 那座「人類造過最偉大的堡壘」，在開門之前就已經在蓋了。
 
-出處：探索點〈亙古遺跡〉〈流沙〉〈巨石坑〉〈沙漠王室宅邸〉；wiki〈[The Olm](https://wynncraft.wiki.gg/wiki/The_Olm)〉、〈[Emperor](https://wynncraft.wiki.gg/wiki/Emperor)〉、〈[Hashr](https://wynncraft.wiki.gg/wiki/Hashr)〉、〈[Ragni Stela](https://wynncraft.wiki.gg/wiki/Ragni_Stela)〉
+出處：探索點〈亙古遺跡〉〈流沙〉〈巨石坑〉〈沙漠王室宅邸〉；wiki〈[The Olm](https://wynncraft.wiki.gg/wiki/The_Olm)〉、〈[The Emperor](https://wynncraft.wiki.gg/wiki/The_Emperor)〉、〈[The Desert Empire](https://wynncraft.wiki.gg/wiki/The_Desert_Empire)〉、〈[Hashr](https://wynncraft.wiki.gg/wiki/Hashr)〉、〈[Ragni Stela](https://wynncraft.wiki.gg/wiki/Ragni_Stela)〉
 
 ### 2. 0 AP：門開了
 
@@ -126,7 +128,7 @@ Wynn Plains 的隱藏探索點，幾乎都是 Bak'al 的「犯罪紀錄」。依
 
 **旁註（譯者注意）**：162 AP 那句「All in the name of War's conquest」的 **War 是大寫**——指的是戰爭領域／Anathema 這個存在，不是一般的「戰爭」。語料譯作「為了戰爭的征服大業」，讀者看不出這是在稱頌一位主人。對照 886 AP 他在 Ragni 城外說的是「見證我主人的意志如何淨化這個行省」「這片土地將被淨化」——「淨化」不是混沌的腐敗會用的詞。wiki 推定他在 162 AP 之後某時背叛 Anathema、改投黑暗的 Saphanis；這兩句台詞正好卡在轉向的兩端（「淨化」一詞的解讀屬推測）。
 
-出處：探索點〈Detlas 遺跡〉〈Bak'al 的毀滅 1～3〉；wiki〈[Ruins of Detlas](https://wynncraft.wiki.gg/wiki/Ruins_of_Detlas)〉、〈[Bak'al's Destruction 2](https://wynncraft.wiki.gg/wiki/Bak%27al%27s_Destruction_2)〉、〈[Bak'al's Destruction 3](https://wynncraft.wiki.gg/wiki/Bak%27al%27s_Destruction_3)〉、Fandom 舊版〈[Bak'al's Destruction 1](https://wynncraft.fandom.com/wiki/Bak%27al%27s_Destruction_1)〉（wiki.gg 該頁讀不到）
+出處：探索點〈Detlas 遺跡〉〈Bak'al 的毀滅 1～3〉；wiki〈[Ruins of Detlas](https://wynncraft.wiki.gg/wiki/Ruins_of_Detlas)〉、〈[Bak'al's Destruction 2](https://wynncraft.wiki.gg/wiki/Bak%27al%27s_Destruction_2)〉、〈[Bak'al's Destruction 3](https://wynncraft.wiki.gg/wiki/Bak%27al%27s_Destruction_3)〉、〈[Bak'al's Destruction 1](https://wynncraft.wiki.gg/wiki/Bak%27al%27s_Destruction_1)〉（第二輪補讀 wiki.gg 版，過場台詞與第一輪引用的 Fandom 舊版一致：守衛擊退一波、正要修工事時 Bak'al 現身；三處廢墟的上層都有一名幽靈士兵）
 
 ### 4. Twain 家與 Theorick
 
@@ -196,7 +198,7 @@ Bob 的一生，主要記在 Ragni 城堡祕密圖書館的十二章《Bob 的�
 
 找齊 Wynn Plains 全部探索點後開啟的〈Wynn Plains 紀念碑〉重演了結局：Bak'al 屠盡殘兵，宣告「現在，Ragni 已無人防守」，這時 Bob 出現：「我絕不會再讓這座城淪陷。」Bak'al 冷笑：「Twain 家也對我說過同樣的話。他們跟你一樣，最後都無助地倒在我腳下。」Bob 回答：「我從 Twain 家的錯誤中學到了教訓！」他用 Wynn 人眼從未見過的魔法擊潰大軍，Bak'al 敗退、傳送離開，從此再也踏不進任何一座受 Bob 保護的城。
 
-**半神的晚年**：此後一百年，Bob 是「Wynn 的專屬半神」。他沒把本事傳下去，「怕那些力量不會被用在正途上」，只想替三隻動物——雞 Cluckles、牛 Mooington、羊 Baab——熬藥延壽。wiki 另記：約 900 AP 他獨力把戰爭領域的魔物 Annihilation 逼回傳送門；他曾遠赴 Gavel，在雲端與古龍 Farcor 談話，確認了「兩股力量在打仗，我們的世界只是戰場」這個真相。
+**半神的晚年**：此後一百年，Bob 是「Wynn 的專屬半神」。他沒把本事傳下去，「怕那些力量不會被用在正途上」，只想替三隻動物——雞 Cluckles、牛 Mooington、羊 Baab——熬藥延壽。wiki 另記：約 900 AP 他獨力把戰爭領域的魔物湮滅（Annihilation） 逼回傳送門；他曾遠赴 Gavel，在雲端與古龍 Farcor 談話，確認了「兩股力量在打仗，我們的世界只是戰場」這個真相。
 
 **消失（984 AP）**：〈Nilrem 的封緘信〉十張殘片拼起來是 Bob 給好友、巫師 Nilrem 的訣別信：「我對那頭生物的戰爭是徒勞的……我們的世界遠比想像中渺小……兩股巨大的力量正在交戰，而我們這個存在的位面就是戰場。在一片『遙遠』的土地上，有一頭夜之黑暗生物……我要去挑戰那頭野獸，試著用我自己的生命力封印它，因為我知道殺死它不是選項。」他請 Nilrem 藏好三隻動物、**偽造他的死亡、做一具屍體**，並繼續訓練善的力量。隨後他搭 Relend 的 Little Wing 前往 Gateway Island，從此下落不明（《美妙旅程》屬海洋章）。
 
@@ -226,13 +228,17 @@ Bob 的光環之外，Wynn 的探索點反覆在講「誰被犧牲了」：
 
 權杖後來落到盜匪 **Creden Tibus** 手裡。〈拆除鐵球〉留著他們的紙條：「要是你在找那根權力權杖，最好死了這條心！我們絕不會讓它再被使用。」〈Rymek 竊賊〉的盜匪頭子則說：「我們爺爺的爺爺逃離你們那場愚蠢的腐敗之戰，躲進沙漠」——沙漠的盜匪是被 Wynn 各城趕出來的人的後代。
 
+wiki〈Creden Tibus〉把這個盜匪團的來歷整理得更完整：一百多年前，許多人在腐敗之戰中被逐出家鄉或自己逃進沙漠，只能靠偷搶過活，後來重新集結成 Creden Tibus，在 Mesa 北側台地上設了總部（外表是普通小屋，底下是戒備森嚴的金庫），還建了自己的首府 Rymek，至今已在沙漠住了三代（〈Rymek 竊賊〉語料作「爺爺的爺爺」，代數比 wiki 多一代，照語料引用即可）。他們不只是罪犯，也自認有守護沙漠的義務（《黃沙王朝》）。某一次他們躲進一座古神殿避難——就是 Hashr 藏杖的劍之神殿——在裡面找到失蹤了上千年的皇帝之杖；他們明白這東西的分量，把金銀財寶全留在原地，只帶走權杖，藏到 Mesa 自家地盤。經過數代之後他們疑神疑鬼起來，又把它搬到 Almuj 大河附近（〈拆除鐵球〉）。wiki 列出的成員有《黃沙王朝》裡的 Tarek 與 Geo、看守金庫的金庫守衛、現任盜匪首領，以及住在 Mesa 頂上、獵郊狼為生的「孤狼盜匪」Rymek Luke；最早提到他們的紀錄是〈巨石坑〉。
+
+**旁註**：所以「誰配拿權杖」在沙漠的探索點裡是反著寫的——帝國的繼承人弒父奪杖，招來滅國；被城市拋棄的盜匪拿到它，卻選擇藏起來、連看都不想看。《黃沙王朝》最後把權杖交給考古學家，等於打破了盜匪守了幾代的約定（推測，遊戲沒有評論這件事）。
+
 《黃沙王朝》裡，玩家混進 Creden Tibus（入會「密語」是一件偷來的東西），偷聽到權杖藏在河邊破推車裡，把它交給 Junes。盜匪首領那句「我們是強盜沒錯，但我們不笨。那支權杖最好別去碰」，和紙條一致——盜匪反而是最清醒的一方。拿到權杖，就能打開封著 Hashr 的風沙古墓。〈沙漠王室宅邸〉重現了弒父那一幕：Hashr 吼出「你的世界是個謊言」，自稱「全能的 Hashr」，下一秒沙暴響起：「我父親到底對自己做了什麼？！」（wiki 指出 Hashr 這個名字在阿拉伯文是「放逐」之意。）
 
 Almuj 的其他任務多是城市生活：《沙城疑雲》的銀行搶案、《木乃伊之怒》被詛咒的 Ormrod、《佳節有情》裡 Nick（自稱「沙漠的 Sanda Claus」，是 Santa 的兄弟）在富人的 Craftmas 盛宴上宣布「今晚沒有晚餐」，讓他們體會窮人的每一天。《峽谷兀鷲》的 Svin 自稱「某處的守密人」，Rymek 的隱士則說「我只聽說過一位旅人擋得住那頭野獸……還從那頭野獸那兒偷了顆蛋當寵物養」（是否指 Bob 與他的雞 Cluckles，屬推測）。《部族之爭》的鷹族與梟族互偷圖騰；wiki 提到鷹族孩子的塗鴉畫著沙暴中的權杖，加上〈圖騰柱〉的沙暴幻象，鷹族顯然親歷了帝國的崩潰（兩族恩怨是否始於那時，語料沒說）。
 
-沙漠還有一條與現代政治有關的線：Almuj 的 **Amerigo 上將**。《傭兵》裡，Nemract 的 Takan 指揮官（985 AP 擊退 Annihilation 的三名將領之一）叛變，率盜匪「Shadow Spears」佔領兵營，吼著「那些該死的上將把財富和名聲全部拿走，而在戰壕裡拚命的是我們」。他死後 Amerigo 只關心領勳章，Aledar 喃喃說「我開始明白 Takan 為什麼那麼恨他了」。（Takan 這個名字原本叫 Commander Ba'al，因為 Bak'al 登場才改名。）
+沙漠還有一條與現代政治有關的線：Almuj 的 **Amerigo 上將**。《傭兵》裡，Nemract 的 Takan 指揮官（985 AP 擊退湮滅的三名將領之一）叛變，率盜匪「Shadow Spears」佔領兵營，吼著「那些該死的上將把財富和名聲全部拿走，而在戰壕裡拚命的是我們」。他死後 Amerigo 只關心領勳章，Aledar 喃喃說「我開始明白 Takan 為什麼那麼恨他了」。（Takan 這個名字原本叫 Commander Ba'al，因為 Bak'al 登場才改名。）
 
-出處：探索點〈流沙〉〈神殿遺跡〉〈巨石坑〉〈劍之神殿〉〈圖騰柱〉〈拆除鐵球〉〈Rymek 竊賊〉〈沙漠王室宅邸〉；任務《黃沙王朝》《木乃伊之怒》《沙城疑雲》《佳節有情》《峽谷兀鷲》《部族之爭》《傭兵》；wiki〈[The Desert Empire](https://wynncraft.wiki.gg/wiki/The_Desert_Empire)〉、〈[Desert Royal Residence](https://wynncraft.wiki.gg/wiki/Desert_Royal_Residence)〉、〈[Hashr](https://wynncraft.wiki.gg/wiki/Hashr)〉、〈[Bak'al](https://wynncraft.wiki.gg/wiki/Bak%27al)〉（Trivia）
+出處：探索點〈流沙〉〈神殿遺跡〉〈巨石坑〉〈劍之神殿〉〈圖騰柱〉〈拆除鐵球〉〈Rymek 竊賊〉〈沙漠王室宅邸〉；任務《黃沙王朝》《木乃伊之怒》《沙城疑雲》《佳節有情》《峽谷兀鷲》《部族之爭》《傭兵》；wiki〈[The Desert Empire](https://wynncraft.wiki.gg/wiki/The_Desert_Empire)〉、〈[The Emperor](https://wynncraft.wiki.gg/wiki/The_Emperor)〉、〈[Creden Tibus](https://wynncraft.wiki.gg/wiki/Creden_Tibus)〉、〈[Desert Royal Residence](https://wynncraft.wiki.gg/wiki/Desert_Royal_Residence)〉、〈[Hashr](https://wynncraft.wiki.gg/wiki/Hashr)〉、〈[Bak'al](https://wynncraft.wiki.gg/wiki/Bak%27al)〉（Trivia）
 
 ### 9. Time Valley：Olm、Garoth 與 Martyn
 
@@ -244,7 +250,7 @@ Time Valley 的地區介紹寫道：「這裡的遺跡比傳送門存在得更�
 
 **旁註**：Martyn 知道 Olm、懂時間魔法、認識 Bob、被形容成皮膚發黃的「守護者」、對「你是不是人類」避而不答——社群普遍猜他本身就不是普通人類，甚至與 Olm 有關（推測，遊戲未證實）。另外「得照看一個人」多半指 Asher，但也可能指時失聖殿裡的 Garoth（推測）。Tempo Town 的「神祕商人」據 wiki 是一名 Olm，專收時間碎片。
 
-**時失聖殿（Timelost Sanctum）**：Olm 撤離時，自稱「時間術大師、史上最偉大的法師」的 **Garoth** 出於固執留了下來，把整座聖殿凍結在完美的一瞬間，靠五個「時間錨」維持。玩家每破一個錨，聖殿就往現在「老」一截。他起初說的是古 Wynn 文（wiki 以銀河標準字母表示），發現玩家聽不懂後才嫌棄地改口：「你連一個字都沒聽懂吧？多麼粗鄙的語言。」最後他嘶吼：「你就這樣把聖殿拉垮、毀掉數千年的知識……」wiki 說他其實極度孤獨，後悔沒跟同胞一起離開。
+**時失聖殿（Timelost Sanctum）**：Olm 撤離時，自稱「時間術大師、史上最偉大的法師」的 **Garoth** 出於固執留了下來，把整座聖殿凍結在完美的一瞬間，靠五個「時間錨」維持。玩家每破一個錨，聖殿就往現在「老」一截。他起初說的是古 Wynn 語（wiki 以銀河標準字母表示），發現玩家聽不懂後才嫌棄地改口：「你連一個字都沒聽懂吧？多麼粗鄙的語言。」最後他嘶吼：「你就這樣把聖殿拉垮、毀掉數千年的知識……」wiki 說他其實極度孤獨，後悔沒跟同胞一起離開。
 
 **Temple of Time**：Gate of Time 後方的神殿，「需要那個時代的一件物品」才能回到過去，「你可以目睹，但不能改變」。《墮落者的宿命》用的就是它。
 
@@ -299,7 +305,7 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 |---|---|---|---|
 | Bak'al | 被腐敗的人類，Anathema 的第一個後裔，後投靠 Saphanis | 率不死大軍蹂躪 Wynn 八百年，886 AP 敗給 Bob 後消失 | 〈Bak'al 的毀滅 1～3〉〈Detlas 遺跡〉〈守望者〉〈Wynn Plains 紀念碑〉 |
 | 世界腐敗者（Corrupter of Worlds） | 第一個走進傳送門的採礦隊長（另說是門後的野獸） | 第一個腐敗者，後被 Twain 家封印 | 《傳說神殿》 |
-| Bob（Robert） | Wynn 的英雄，人類與 Olm 的混血（wiki） | 精通四藝，擊退 Bak'al；984 AP 為封印黑暗生物而失蹤 | 《Bob 的傳說》、《Bob 的失落之魂》《轉世重生》 |
+| Bob（Robert） | Wynn 的英雄，人類與 Olm 的混血（wiki〈The Olm〉；〈Bob〉列為理論） | 精通四藝，擊退 Bak'al；984 AP 為封印黑暗生物而失蹤 | 《Bob 的傳說》、《Bob 的失落之魂》《轉世重生》 |
 | Momo | Ragni 最窮的單親媽媽 | 收養並命名 Robert；被感染後由他親手了結 | 《Bob 的傳說》第三～五章 |
 | Chak／Mael／Ethe／Fier | 刺客／弓手／法師／戰士四位大師 | 依序訓練 Bob，各把兵器變成下一種 | 《Bob 的傳說》 |
 | Nilrem | 巫師，Bob 最好的朋友 | 偽造 Bob 的死訊與屍體（名字倒過來是 Merlin） | 〈Nilrem 的封緘信〉 |
@@ -320,7 +326,7 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 | Aledar／Tasim | 與玩家同梯的新兵 | 受詛的 Tasim 與逃犯 Aledar；Tasim 得知真相後遠走 Gavel | 《國王的新兵》《蛛群登巔》《尋回過往》 |
 | Dr. Picard | 研究記憶的怪博士 | 造出記憶復原化球，揭開 Fruma 的放逐制度 | 《尋回過往》 |
 | Caid／Reynauld | 被流放到 Wynn 的竊賊與失勢軍官 | 記憶受試者；Caid 最後賠上自己的船救了城 | 《尋回過往》 |
-| Admiral Aegis | Detlas 的上將 | 新兵的上司；985 AP 擊退 Annihilation | 《蛛群登巔》等 |
+| Admiral Aegis | Detlas 的上將 | 新兵的上司；985 AP 擊退湮滅 | 《蛛群登巔》等 |
 | Admiral Amerigo／Takan | Almuj 上將／叛變的 Nemract 指揮官 | 軍中階級怨恨的兩端 | 《傭兵》 |
 | Amadel | WynnExcavation 的首領 | 利用玩家集齊 Olm 水晶 | 《WynnExcavation D 號遺址》 |
 | 女王陛下（Anathema） | 戰爭領域的界域巨獸 | Bak'al 的主人與造物；Fruma 的統治者 | wiki〈Anathema〉（Fruma 篇） |
@@ -329,7 +335,7 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 
 ## 五、伏筆與暗示
 
-- **Bob 的灰皮膚、長壽、「肯定不是 Ragni 人」的母親** → wiki 判定他是 Olm 混血，生母 Witherhead 就是破敗下水道的首領。Jenprest 那句「她在下面躺了好多年。腐爛著。等著」是同一件事的民間版本。
+- **Bob 的灰皮膚、長壽、「肯定不是 Ragni 人」的母親** → wiki〈The Olm〉寫他是 Olm 混血、生母 Witherhead 就是破敗下水道的首領；〈Bob〉頁仍把混血列為理論，〈Timeline〉也只寫「一名不是 Ragni 本地人的無名女子」。兩頁說法不一，引用時請註明出處（第七章採「社群理論」的寫法）。Jenprest 那句「她在下面躺了好多年。腐爛著。等著」是同一件事的民間版本。
 - **「Bob，你哭什麼？那裡根本沒有人啊」** → 四位大師可能早已是亡靈（推測）；至少 Mael 在 Bob 離開後就死了。
 - **「一片『遙遠』的土地」（封緘信，far 加了引號）** → 社群多半解讀為：那片土地其實就在 Wynn 旁邊——Silent Expanse／Dern（社群說法）。Bob 說「挖得太深」也呼應 Wynn 礦工一再挖穿到黑暗那邊（〈採礦作業〉）。
 - **Bak'al 從「為了戰爭的征服」到「我主人的意志將淨化這個行省」** → 他從 Anathema 轉投 Saphanis 的軌跡；War 大寫指的是戰爭領域本身。
@@ -406,7 +412,7 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 - **苦力怕**：Wynncraft 的世界觀裡原本沒有苦力怕，《苦力怕入侵》和 Garull 的「瘋話」是對 Minecraft 的自嘲。
 - **Nilrem＝Merlin 倒寫**；**Hashr＝阿拉伯文「放逐」**（wiki）。
 - **《冰層之下》的 Squidward、Calamaro、Kroken** 都是烏賊梗；「Mythic Everlasting Pufferfish」是假「神話」道具。
-- **Garoth 的古 Wynn 文**：wiki 用銀河標準字母（Standard Galactic Alphabet）轉寫。
+- **Garoth 的古 Wynn 語**：wiki 用銀河標準字母（Standard Galactic Alphabet）轉寫。
 - **《佳節有情》的 Sanda Claus**：Nick 自稱沙漠版聖誕老人（Sand＋Santa），是 Santa 的兄弟，Santa 還有一個「議會」分管各區。
 - **《熔岩湧泉》的密語**：上校以為是「Bob」，其實是「企鵝蛋」——守門人 Gregor 自己腦補玩家是害羞不敢說。
 
@@ -423,12 +429,14 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 | Portal Epoch | 開門紀年 | AP 沿用語料「開門後 N 年（AP）」 |
 | Before Portal (BP) | 開門前 N 年（BP） | 語料無例句 |
 | Fruman calendar | Fruma 曆 | |
-| Royal Age / Knowledge Age / New Age / Industrial Age | 皇家紀／知識紀／新紀／工業紀 | |
+| Royal Age / Knowledge Age / New Age / Industrial Age | 皇家紀元／知識紀元／新紀元／工業紀元 | 第二輪與第六章統一；新紀元照語料 |
 | Runic Calendar | 符文曆 | |
 | Cycle（符文曆） | 週期 | |
 | Fruman Far Colonies | Fruma 遠方殖民地 | |
 | Ragni Stela | Ragni 石碑 | |
-| Ancient Wynnic | 古 Wynn 文 | |
+| Ancient Wynnic | 古 Wynn 語 | 照語料「古 Wynn 語轉寫表」（第一輪寫作「古 Wynn 文」，第二輪統一） |
+| Lone Bandit | 孤狼盜匪 | Rymek Luke 的外號（wiki〈Creden Tibus〉） |
+| Vault Guardian | 金庫守衛 | Creden Tibus 金庫的看守 |
 | Battle of Ragni | Ragni 之役 | |
 | Desert Emperor | 沙漠皇帝 | 語料有「皇帝」「沙漠帝國」 |
 | Keeper of the Sanctum | 聖殿守護者 | Garoth 的稱號 |
@@ -448,7 +456,10 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 3. Annihilation：世界事件說明譯「湮滅」，事件名譯「毀滅前奏」，武器說明保留原文「Annihilation」。
 4. Charon：gear-weapon.json 有一條「卡戎的左臂」，其餘皆保留原文 Charon。
 5. 《Bob 的失落之魂》#024 的「infallible protection」譯成「護甲」，疑為誤解（見第三節第 6 小節旁註）。
-6. 第五章用「諸界之戰」，語料用「界域之戰」（本章從語料）。
+6. ~~第五章用「諸界之戰」，語料用「界域之戰」~~：第二輪已全書統一為語料的「界域之戰」。
+7. 《黃沙王朝》#019 Junes 那句「the Emperor's Sceptre」譯文直接留了英文，與同任務 #012 的「皇帝的權杖」、探索點的「皇帝之杖」都對不上。
+
+以上各條已併入 [README](README.md) 的「語料待查清單」。
 
 ---
 
@@ -461,9 +472,8 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 - 專案文件：docs/world-and-story.md、GLOSSARY.md
 
 **wiki.gg（https://wynncraft.wiki.gg/wiki/…）**
-Timeline、Wynn_Province、Corruption、Corruption_War、Corruption_Portal、Bak'al、Anathema、Bob、The_Olm、Time_Valley、Old_Man_Martyn、Garoth、Timelost_Sanctum、Temple_of_Time、Tower_of_Amnesia、Dr._Picard、Theorick、Mael_Twain、Twain_family、Corrupter_of_Worlds、Annihilation、The_Desert_Empire、Emperor、Hashr、Ragni_Stela、General_Skien、Slykaar、Secret_Discoveries、Sealed_Letters、WynnExcavation_Site_D，以及 Ragni's_Secret_Library、Far_from_the_Roots、A_Hero's_Origin、Watchmen、Boulder_Breaker、Historical_Maltic、Ruins_of_Detlas、Water_of_the_Past、Bak'al's_Destruction_2、Bak'al's_Destruction_3、Timeless_Ruin、Beneath_the_Roots、Somewhere_In_Between、Crate_Crane、Mining_Operation、Wynn_Plains_Monument、Quicksand、Temple_Ruin、Boulder_Pit、Temple_of_Swords、Totem_Pole、Wrecking_Ball、Rymek_Thief、Desert_Royal_Residence、Explorer's_Corruption_Study、Wolf_Temple、Frozen_Cave_Hideout、Nilrem's_Sealed_Letter、A_Deathly_Warning、The_Lone_Telescope、Pottery_Wheel、Torn_in_Twain、Lusuco's_Secret_Library、The_Twains'_Downfall
+Timeline、Wynn_Province、Corruption、Corruption_War、Corruption_Portal、Bak'al、Anathema、Bob、The_Olm、Time_Valley、Old_Man_Martyn、Garoth、Timelost_Sanctum、Temple_of_Time、Tower_of_Amnesia、Dr._Picard、Theorick、Mael_Twain、Twain_family、Corrupter_of_Worlds、Annihilation、The_Desert_Empire、The_Emperor、Creden_Tibus、Hashr、Ragni_Stela、General_Skien、Slykaar、Secret_Discoveries、Sealed_Letters、WynnExcavation_Site_D，以及 Ragni's_Secret_Library、Far_from_the_Roots、A_Hero's_Origin、Watchmen、Boulder_Breaker、Historical_Maltic、Ruins_of_Detlas、Water_of_the_Past、Bak'al's_Destruction_1、Bak'al's_Destruction_2、Bak'al's_Destruction_3、Timeless_Ruin、Beneath_the_Roots、Somewhere_In_Between、Crate_Crane、Mining_Operation、Wynn_Plains_Monument、Quicksand、Temple_Ruin、Boulder_Pit、Temple_of_Swords、Totem_Pole、Wrecking_Ball、Rymek_Thief、Desert_Royal_Residence、Explorer's_Corruption_Study、Wolf_Temple、Frozen_Cave_Hideout、Nilrem's_Sealed_Letter、A_Deathly_Warning、The_Lone_Telescope、Pottery_Wheel、Torn_in_Twain、Lusuco's_Secret_Library、The_Twains'_Downfall
 
-**Fandom 舊版（https://wynncraft.fandom.com/wiki/…，wiki.gg 讀不到時的備援，內容停在 2.0.4）**
-Bak'al's_Destruction_1、Timeline（舊版，僅比對用）、各任務頁的起點與所屬行省
+**第二輪補讀（2026-10-22，wiki.gg 已恢復）**：Creden_Tibus、Bak'al's_Destruction_1、The_Emperor、The_Desert_Empire、Hashr、Timeline（全文）。Emperor's_Sceptre 在 wiki.gg 上**沒有這個頁面**（不是讀不到），權杖的資料分散在〈The Emperor〉〈The Desert Empire〉〈Creden Tibus〉三頁。
 
-**讀不到的 wiki.gg 頁面**：Creden_Tibus、Emperor's_Sceptre、Bak'al's_Destruction_1（皆回 502）。另外 wiki.gg 的原始碼介面（action=raw／API）整段期間都在維護，本章引用的是渲染後的頁面內容。
+**Fandom 舊版（https://wynncraft.fandom.com/wiki/…，內容停在 2.0.4）**：第一輪用來查各任務頁的起點與所屬行省、比對舊版 Timeline；第二輪已改以 wiki.gg 為準。
