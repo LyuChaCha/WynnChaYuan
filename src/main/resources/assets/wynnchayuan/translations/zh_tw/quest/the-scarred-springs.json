@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Scarred Springs",
-  "count": 136,
-  "translated": 136,
+  "count": 169,
+  "translated": 169,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -21,7 +21,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#001": {
-   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress, anyways. I suppose you've heard about the hot springs!",
+   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress. I suppose you've heard about the hot springs!",
    "dst": "喔！你好啊，觀光客！總之我猜你是觀光客啦。那身打扮怎麼看都不是本地的。我想你是聽說了溫泉的事吧！",
    "role": "desc",
    "kind": "dialogue",
@@ -101,7 +101,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#009": {
-   "src": "Hopefully you'll be able to visit before you have to go home then!",
+   "src": "Hopefully you'll be able to visit before you have to go home, then!",
    "dst": "希望你回家之前還來得及來泡一次！",
    "role": "desc",
    "kind": "dialogue",
@@ -221,8 +221,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#021": {
-   "src": "You go gather up the frogs! There's a pond to the you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "你去把青蛙抓起來！那邊有個池塘可以把他們放進去。然後……落葉！把它們從池子裡撈出來。然後……然後回來，我們再看看進度！",
+   "src": "You go gather up the frogs! There's a pond to the southwest you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
+   "dst": "你去把青蛙抓起來！西南邊有個池塘可以把他們放進去。然後……落葉！把它們從池子裡撈出來。然後……然後回來，我們再看看進度！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -251,8 +251,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#024": {
-   "src": "Okay, there were five, and you're holding... Alright, so there's left to get!",
-   "dst": "好，總共有五隻，而你手上有……好，那還剩下幾隻要抓！",
+   "src": "Okay, there were five, and you're holding... Alright, so there's {~} left to get!",
+   "dst": "好，總共有五隻，而你手上有……好，那還剩下 {~} 隻要抓！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -271,7 +271,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#026": {
-   "src": "Woah! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, Ohhkay, okay, right!",
+   "src": "Whoa! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, ohhkay, okay, right!",
    "dst": "哇！那……那還真是一種搬青蛙的方式，哈哈！你——噗哈哈哈哈哈！！你看起來——哇哈哈，太經典了！！喔，好、好，好啦！",
    "role": "desc",
    "kind": "dialogue",
@@ -281,8 +281,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#027": {
-   "src": "There's a pond to the of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "Pishlas 這邊有個池塘可以把他們放進去！好啦，快、快去吧，呃嘿嘿！我得專心，而且你身上還有青蛙——嘻嘿哈哈哈哈！！",
+   "src": "There's a pond to the southwest of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
+   "dst": "Pishlas 西南邊有個池塘可以把他們放進去！好啦，快、快去吧，呃嘿嘿！我得專心，而且你身上還有青蛙——嘻嘿哈哈哈哈！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -531,8 +531,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#052": {
-   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. and should be enough to fill the order.",
-   "dst": "香菇就在門口，茶葉在山坡下面。這些應該就夠配齊那張訂單了。",
+   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. {~} mushrooms and {~} leaf batches should be enough to fill the order.",
+   "dst": "香菇就在門口，茶葉在山坡下面。{~} 朵香菇和 {~} 批茶葉應該就夠配齊那張訂單了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1081,7 +1081,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#107": {
-   "src": "Phew, I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
+   "src": "Phew. I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
    "dst": "呼，我肯定還會再來。獵一整天 Liff，再泡一整晚……喔，那聽起來真是令人滿足的作息……",
    "role": "desc",
    "kind": "dialogue",
@@ -1369,6 +1369,336 @@
    "stage": "Stage 12",
    "speaker": "Maripe",
    "source": "wiki"
+  },
+  "The Scarred Springs#136": {
+   "src": "You should release the Frogs at the pond in the back.",
+   "dst": "你該把青蛙放到後面的池塘裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#137": {
+   "src": "to release frogs",
+   "dst": "以放走青蛙",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#138": {
+   "src": "You should head back to clean up the pools now.",
+   "dst": "你現在該回去把池子清理乾淨了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#139": {
+   "src": "{#} or {#} to pick up",
+   "dst": "{#} 或 {#} 以拾取",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#140": {
+   "src": "You should head back to Maripe.",
+   "dst": "你該回去找 Maripe 了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#141": {
+   "src": "Hello to you, too.",
+   "dst": "你也好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#142": {
+   "src": "Yes indeed. I'm far from the first to run the teahouse, though.",
+   "dst": "正是如此。不過，我遠遠不是第一個經營這間茶屋的人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#143": {
+   "src": "My family has always been in the business of running this place- I do believe this building has stood since the very beginning of our written history.",
+   "dst": "我們家一直都在經營這個地方——我相信這棟建築從我們有文字記載的歷史一開始就矗立在這裡了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#144": {
+   "src": "Of course, it is only right that someone take in our parents' footsteps and continue the work. Not all my siblings were enthused with the job, but I've taken to it quite smoothly, I think.",
+   "dst": "當然，總該有人追隨父母的腳步，把這份工作延續下去。不是每個兄弟姊妹都對這份工作有熱忱，但我想我做得還算得心應手。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#145": {
+   "src": "It would have been unthinkable to leave the teahouse empty. After all, there have been no great tragedies preventing me from putting my attention to the work.",
+   "dst": "讓茶屋空著是不可想像的。畢竟，從來沒有什麼重大的不幸阻止我專心於這份工作。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#146": {
+   "src": "I do hope they all have found their different pursuits to be as fulfilling as I find following in my family's footsteps to be.",
+   "dst": "我真心希望他們都在各自的道路上，找到跟我追隨家族腳步一樣的滿足感。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#147": {
+   "src": "A good question. Mine is far from the only teahouse in the forest, after all. All of them have their own specialties... Sampling from different houses is fantastic for gaining new ideas.",
+   "dst": "好問題。畢竟這片森林裡的茶屋遠不只我這一間。每一間都有自己的拿手茶……到不同的茶屋品嚐，最能激發新點子了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#148": {
+   "src": "I bother by the most traditional methods- there's a particular type of tea leaf I grow here, of course, but my other chief brewing ingredient consists of local mushrooms.",
+   "dst": "我堅守最傳統的做法——當然，我在這裡種了一種特別的茶葉，不過我另一樣主要的沖泡原料是本地的香菇。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#149": {
+   "src": "Many tourists have expressed disbelief at this idea- apparently, mushrooms don't sound palateable or usable for tea, but that isn't true!",
+   "dst": "很多觀光客聽到這個點子都不敢相信——顯然在他們聽來，香菇既不可口也不能拿來泡茶，但事實並非如此！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#150": {
+   "src": "I think it's simply the idea that some mushrooms are poisonous that warns people away, but I assure you, if what I cultivated was poison I wouldn't be alive to provide it.",
+   "dst": "我想只是「有些香菇有毒」這個印象把人嚇跑了，但我向你保證，要是我種的東西有毒，我早就沒命拿出來招待客人了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#151": {
+   "src": "Other teahouses prefer different specialties. I have, for example, had some fantastic ginger tea from this small village by a manor...but I stand by the most traditional methods.",
+   "dst": "其他茶屋偏好不同的拿手茶。比方說，我在一座莊園旁的小村子裡喝過非常棒的薑茶……但我還是堅守最傳統的做法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#152": {
+   "src": "There is a tea for every occasion, so I don't believe there is a best one to choose always. However, there is a worst tea. There is...certainly...a worst tea.",
+   "dst": "每種場合都有適合的茶，所以我不認為有哪一種永遠是最好的選擇。不過，最糟的茶倒是存在的。確實……存在……最糟的茶。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#153": {
+   "src": "I still have the nightmares...",
+   "dst": "我到現在還會做惡夢……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#154": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "我很好奇。你對這一帶的茶有什麼看法？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#155": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "我很好奇。你對這一帶的茶有什麼看法？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#156": {
+   "src": "Maripe sent me. He's reopening the hot springs and needs to stock the teahouse with a bulk order.",
+   "dst": "是 Maripe 派我來的。他要重新開放溫泉，得為那邊的茶屋大量進貨。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#157": {
+   "src": "You should bring the ingredients back to Marseled.",
+   "dst": "你該把原料帶回去給 Marseled。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#158": {
+   "src": "Job's done- The cockroaches are dead, and I have the ingredients for you.",
+   "dst": "搞定了——蟑螂都死光了，你要的原料也在我這裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 9",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#159": {
+   "src": "Plenty of papers have been posted over, and there's a weathered old advertisement in the middle. Surely it's lost relevance by now, so...",
+   "dst": "上面貼滿了層層疊疊的紙張，正中間有一張飽經風霜的舊廣告。它現在肯定早就沒用了，所以……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#160": {
+   "src": "There. That should be a good spot for it. How much effort did Maripe put into the poster? It really stands out from the rest of the notices.",
+   "dst": "好了。這應該是個好位置。Maripe 到底在這張海報上花了多少心思？它在一堆告示裡真的很顯眼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#161": {
+   "src": "There isn't a world that exists where someone doesn't see this advertisement.",
+   "dst": "不管在哪個世界，這張廣告都不可能沒人看見。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#162": {
+   "src": "You're now tracking the Lone Person at [-{~}, {~}, -{~}]!",
+   "dst": "你現在正在追蹤位於 [-{~}, {~}, -{~}] 的{c2}落單的人{/}！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#163": {
+   "src": "You're now tracking the Group at [-{~}, {~}, -{~}]!",
+   "dst": "你現在正在追蹤位於 [-{~}, {~}, -{~}] 的{c2}一群人{/}！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#164": {
+   "src": "That's everyone! You may as well head back and join in on the fun.",
+   "dst": "這樣所有人都邀到了！你也乾脆回去一起同樂吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#165": {
+   "src": "There's so many people here! It'd be a shame to not talk to a few of them.",
+   "dst": "這裡人好多！不跟其中幾個人聊聊就太可惜了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#166": {
+   "src": "Maripe's waving in your general direction. He must've calmed down enough to talk coherently now.",
+   "dst": "Maripe 正朝你這個方向揮手。他現在大概已經冷靜到能好好說話了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#167": {
+   "src": "Surely they would be. You've done a great job.",
+   "dst": "他們一定會的。你做得很好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 12",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#168": {
+   "src": "It's really all here again. It really is. I...I did this. All my work's finally born fruit!",
+   "dst": "一切真的又回來了。真的回來了。我……是我做到的。我所有的努力終於開花結果了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "Maripe",
+   "source": "captured.json"
   }
  }
 }
