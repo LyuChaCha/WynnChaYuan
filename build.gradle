@@ -1556,6 +1556,14 @@ tasks.register('runGearOwnNameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGearOwnNameChecks' }
 
+tasks.register('runGearNameOnGearChecks', JavaExec) {
+    group = 'verification'
+    description = '裝備名只套在真的裝備上；介面按鈕（任務書本的 Return）名稱留原文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.GearNameOnGearTest'
+}
+tasks.named('check') { dependsOn 'runGearNameOnGearChecks' }
+
 tasks.register('runWynnventoryChecks', JavaExec) {
     group = 'verification'
     description = 'Wynnventory 的價格框與語言鍵翻得出來；按住 Shift、沒裝的人、六個語言的語料'

@@ -63,9 +63,11 @@ public final class TooltipCacheTest {
         // 標籤，不吃「翻譯物品名稱」那個開關——於是開關切過去結果一樣，
         // 而測試把「一樣」當成了快取沒失效。Halcyon 是繁中少數翻了名字的
         // mythic（孤星），關掉開關就會退回英文。
+        // 第三列是稀有度橫幅：名字只套在長得像物品的說明上（見 TooltipPanel#itemShaped）。
         List<Component> gear = List.of(
                 Component.literal("Halcyon"),
-                Component.literal("Halcyon"));
+                Component.literal("Halcyon"),
+                banner());
         String on = text(TooltipPanel.translateLinesCached(gear, store));
         store.setNameMode(CollectorConfig.ItemNames.OFF);
         String off = text(TooltipPanel.translateLinesCached(gear, store));
@@ -91,6 +93,19 @@ public final class TooltipCacheTest {
         System.out.println(failures == 0 ? "tooltip 快取：全部通過"
                 : "tooltip 快取：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /** 稀有度橫幅：整列都是圖示（三段，各自一個顏色才不會被併成一段）。 */
+    private static Component banner() {
+        net.minecraft.network.chat.MutableComponent row = Component.empty();
+        int[] colours = {0xAA00AA, 0x000000, 0xE0B3E6};
+        int[] glyphs = {0xE060, 0xE03C, 0xE048};
+        for (int k = 0; k < glyphs.length; k++) {
+            int c = colours[k];
+            row.append(Component.literal(new String(Character.toChars(glyphs[k])))
+                    .withStyle(st -> st.withColor(c)));
+        }
+        return row;
     }
 
     private static String text(List<Component> lines) {
