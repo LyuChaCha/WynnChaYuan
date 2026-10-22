@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Undersupply",
-  "count": 110,
-  "translated": 110,
+  "count": 114,
+  "translated": 114,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -47,7 +47,7 @@
    "source": "wiki"
   },
   "Undersupply#004": {
-   "src": "The dam opens up every month or so to let out some water for us, but is passes through a noble manor, past the hill, rationed out to the rest of the forest.",
+   "src": "The dam opens up every month or so to let out some water for us, but it passes through a noble manor, past the hill, rationed out to the rest of the forest.",
    "dst": "댐은 한 달에 한 번쯤 열려서 물을 조금 내려보내지. 그런데 그 물이 언덕 너머 귀족 저택을 거쳐 숲 나머지에 배급된다네.",
    "role": "desc",
    "kind": "dialogue",
@@ -477,7 +477,7 @@
    "source": "wiki"
   },
   "Undersupply#057": {
-   "src": "Ohh... I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
+   "src": "Ohh...I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
    "dst": "오오... 그렇군! 마을 사람들이 보냈구려. 그렇다면 이 일을 설명해 드리지. 왕실이 댐에서 내려오는 물의 관리를 우리에게 맡겼다네.",
    "role": "desc",
    "kind": "dialogue",
@@ -587,7 +587,7 @@
    "source": "wiki"
   },
   "Undersupply#068": {
-   "src": "Hahaha!! There is wisdom I have known from you for so long! What a magnificient idea! It would not be without risk for you, traveler, but we all stand to gain!",
+   "src": "Hahaha!! There is that wisdom I have known from you for so long! What a magnificent idea! It would not be without risk for you, traveler, but we all stand to gain!",
    "dst": "하하하!! 내가 오래도록 알아 온 그 지혜로구먼! 참으로 훌륭한 생각이야! 여행자여, 자네에게 위험이 없진 않겠지만 우리 모두가 득을 볼 걸세!",
    "role": "desc",
    "kind": "dialogue",
@@ -1105,6 +1105,46 @@
    "stage": "Stage 5",
    "speaker": "Butler Hayn",
    "source": "wiki"
+  },
+  "Undersupply#125": {
+   "src": "It seems like an issue is plaguing the villagers. Try asking around to see what you can do.",
+   "dst": "마을 사람들이 무언가 문제로 골치를 앓고 있는 것 같다. 주변에 물어보며 무엇을 할 수 있을지 알아보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#126": {
+   "src": "Come with me...",
+   "dst": "따라오십시오...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Undersupply",
+   "stage": "Stage 3",
+   "speaker": "Butler Hayn",
+   "source": "captured.json"
+  },
+  "Undersupply#127": {
+   "src": "The water should be active now. You should return back into the dam.",
+   "dst": "이제 물이 흐르기 시작했을 것이다. 댐 안으로 돌아가야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#128": {
+   "src": "The water is flowing again. You should follow it to see where it goes.",
+   "dst": "물이 다시 흐르기 시작했다. 물길을 따라가서 어디로 흘러가는지 확인해야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

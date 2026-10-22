@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23693,
-  "translated": 23396,
+  "count": 23697,
+  "translated": 23400,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -232441,7 +232441,7 @@
    "source": "wiki"
   },
   "Undersupply#004": {
-   "src": "The dam opens up every month or so to let out some water for us, but is passes through a noble manor, past the hill, rationed out to the rest of the forest.",
+   "src": "The dam opens up every month or so to let out some water for us, but it passes through a noble manor, past the hill, rationed out to the rest of the forest.",
    "dst": "Плотину открывают раз в месяц, пускают нам воды, но она идёт через дворянскую усадьбу за холмом, а оттуда делят по лесу.",
    "role": "desc",
    "kind": "dialogue",
@@ -232871,7 +232871,7 @@
    "source": "wiki"
   },
   "Undersupply#057": {
-   "src": "Ohh... I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
+   "src": "Ohh...I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
    "dst": "Ооо... Понимаю! Вас прислали местные. Позвольте объяснить. Видите ли, Корона доверила нам воду с плотины.",
    "role": "desc",
    "kind": "dialogue",
@@ -232981,7 +232981,7 @@
    "source": "wiki"
   },
   "Undersupply#068": {
-   "src": "Hahaha!! There is wisdom I have known from you for so long! What a magnificient idea! It would not be without risk for you, traveler, but we all stand to gain!",
+   "src": "Hahaha!! There is that wisdom I have known from you for so long! What a magnificent idea! It would not be without risk for you, traveler, but we all stand to gain!",
    "dst": "Ха-ха-ха!! Вот она, мудрость, что я знаю за вами столько лет! Великолепная идея! Для вас, путник, риск есть, но выиграем мы все!",
    "role": "desc",
    "kind": "dialogue",
@@ -233499,6 +233499,46 @@
    "stage": "Stage 5",
    "speaker": "Butler Hayn",
    "source": "wiki"
+  },
+  "Undersupply#125": {
+   "src": "It seems like an issue is plaguing the villagers. Try asking around to see what you can do.",
+   "dst": "Похоже, жителей деревни что-то тревожит. Поспрашивай вокруг, чем можно помочь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#126": {
+   "src": "Come with me...",
+   "dst": "Следуйте за мной...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Undersupply",
+   "stage": "Stage 3",
+   "speaker": "Butler Hayn",
+   "source": "captured.json"
+  },
+  "Undersupply#127": {
+   "src": "The water should be active now. You should return back into the dam.",
+   "dst": "Вода, должно быть, уже пошла. Стоит вернуться внутрь плотины.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Undersupply#128": {
+   "src": "The water is flowing again. You should follow it to see where it goes.",
+   "dst": "Вода снова течёт. Стоит пойти за ней и посмотреть, куда она ведёт.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Undersupply",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Underwater#000": {
    "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
