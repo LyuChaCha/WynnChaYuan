@@ -20,8 +20,8 @@ original stays is up to you**: the translation can sit in a panel beside it, or 
 [Feedback](https://wynnchayuan.com/feedback) ·
 [Changelog](CHANGELOG.md) ·
 [Report a problem](https://github.com/LyuChaCha/WynnChaYuan/issues) ·
+[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan) ·
-[Modrinth](https://modrinth.com/mod/wynnchayuan) ·
 [Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
@@ -159,7 +159,6 @@ Traditional Chinese leads for now; the other languages are filled in after it.
 | Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+, [Fabric API](https://modrinth.com/mod/fabric-api) |
 
 1. Download the jar: [GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
-   [Modrinth](https://modrinth.com/mod/wynnchayuan) ·
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
 2. Put it in `mods/`. In game, type `/wcy` in chat or open the settings from Mod Menu.
 
@@ -354,7 +353,6 @@ Translate one line and you are on this list. See [CONTRIBUTING.en.md](CONTRIBUTI
 - Feedback: <https://wynnchayuan.com/feedback>
 - GitHub: <https://github.com/LyuChaCha/WynnChaYuan>
 - CurseForge: <https://www.curseforge.com/minecraft/mc-mods/wynnchayuan>
-- Modrinth: <https://modrinth.com/mod/wynnchayuan>
 - Ko-fi (optional sponsoring; the translations are always free): <https://ko-fi.com/lyuchacha>
 - Discord: **LyuChaCha**
 
