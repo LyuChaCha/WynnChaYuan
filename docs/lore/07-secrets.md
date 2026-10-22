@@ -30,8 +30,8 @@ Wynncraft 的「祕密」大致有五種：
 |---|---|---|
 | 開門前數千年 | 操縱時間的非人種族（Olm）離開平原，留下遺跡 | 亙古遺跡 |
 | 兩千多年前 | 兩顆隕石墜入 Gylia Plains，坑積水成湖，Gylia 人稱之「天墜」 | Gylia 的大災變、隕石之印 |
-| 開門前約 1500 年 | 沙漠帝國鼎盛；皇帝之杖被供奉於神殿 | 流沙、神殿遺跡 |
-| （年代不明） | 皇帝的第二十六子 Hashr 弒父奪杖，沙暴之咒埋掉整個帝國 | 巨石坑、劍之神殿、沙漠王室宅邸 |
+| 688 BP 以前的數百年 | 沙漠帝國鼎盛；皇帝之杖被供奉於神殿（〈流沙〉說這個文明「一千五百多年前」統治這片土地） | 流沙、神殿遺跡 |
+| 688 BP | 皇帝的第二十六子 Hashr 弒父奪杖，沙暴之咒埋掉整個帝國（wiki〈Timeline〉；舊版寫 100 BP、1400 BP，見第一章） | 巨石坑、劍之神殿、沙漠王室宅邸 |
 | 0 AP | 礦工挖出傳送門；同年 Ahms 的巨像失控，土地碎裂成 Sky Islands | 墜落的守護者 |
 | 162 AP | Bak'al 毀掉一座農舍：「這一切，全是為了戰爭的征服大業」 | Bak'al 的毀滅 3 |
 | 347 AP | Akias 屠城，只剩一人活著 | Bak'al 的毀滅 2 |
@@ -375,7 +375,7 @@ Fruma 的 16 個探索點有三條互相咬合的線：Gale Nasin 的出逃（�
 | The Forest has Eyes | 森林有眼 | — | Lutho 每有一名礦工失去自我，樹上就長出一雙眼 |
 | A Monument of Hope | 希望的紀念碑 | — | 光豎起巨石碑，護住 Lutho 礦工的肉身 |
 | Toxic Bounce | 劇毒彈跳 | Explosive Heart | Dern 讓怪物與地景融為一體 |
-| Space Between Realities | 現實之間 | — | 實體界與影響界之間的虛無 |
+| Space Between Realities | 現實之間 | — | 物質界與影響層之間的虛無 |
 | **Silent Expanse's Secret** | Silent Expanse 的祕密 | 其他 9 個＋主線＋詭異瞭望台 | 那隻眼睛注視著所有闖入與逃脫 |
 
 #### Fruma（Lv. 104–118，第六章；四區都沒有終極探索點）
@@ -557,7 +557,7 @@ Fruma 的 16 個探索點有三條互相咬合的線：Gale Nasin 的出逃（�
 
 ### 6.7 書、信與彩蛋
 
-- **封緘信的十張殘片**：原本藏在遺物神殿的頭盔、矛、靴子、法杖、胸甲、護腿、匕首、弓等遺物裡；神殿在 1.17 移除，1.19 起信又能取得。第七張的內容已知但拿不到，第十張至今無法取得。拼起來就是 Bob 的訣別信。《美妙旅程》在 Gateway Island 的帳篷裡留了一張「親愛的 Nilrem……」的未完成信，證明 Bob 到過那裡。
+- **封緘信的十張殘片**：原本藏在遺物神殿的頭盔、矛、靴子、法杖、胸甲、護腿、匕首、弓等遺物裡；神殿在 1.17 移除，1.19 起信又能取得。第七張的內容已知但拿不到，第十張至今無法取得。拼起來就是 Bob 的訣別信。《美妙旅程》在 Gateway Island 的帳篷裡留了一張「親愛的 Nilrem……」的未完成信，wiki 據此判定 Bob 到過那裡（第四章；wiki〈Timeline〉也記載 984 AP Bob 請 Relend 載他去這座島）。
 - **《財富或知識》**：在雲端之上從 Farcor 手中拿到，帶去 Llevigar 的祕密圖書館還，檔案管理員會現身：「欠了十六年……既然你肯定不是借書的那位，我就不罰你了。」可以問他 Gavel 的「表親之戰」（影射英國玫瑰戰爭）、Fruma 的統領制度（他只知道 900 AP 有位「Selium 統領」出使 Ragni），以及他最愛的書《Sweeney S. Greenville 漫長而痛苦的死亡》。這段是為了紀念已移除的任務《算命師》而做的。
 - **wiki〈Easter Eggs〉列的小彩蛋**：Ragni 銀行三樓的祕密綠寶石房；Little Wood 小屋與「Gone to travel -Martyn <3」的牌子（致敬 Yogscast 的 Martyn）；Almuj 瀑布後的黑市商人；Ternaves 的 Bovemist 教堂裡有一顆被命名為「The」的凋零骷髏，原本五座教堂各有一顆，拼成「The Lord Got Lost In Memories」，其他教堂改版後只剩這一顆；Freezing Heights 的雪人；Llevigar 銀行旁寫著「I need a hug.」的告示牌。
 - **其他章已介紹的彩蛋**：〈死亡的警告〉全大寫的死神來信、Nilrem＝Merlin 倒寫（第一章）；《???》的 Squiggles 客串、Cinfras／Thanos 等地名的變位字（第三章）；海洋的 Potato Island 與 Isles of Fiction（第四章）。

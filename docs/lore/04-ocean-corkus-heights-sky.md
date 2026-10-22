@@ -89,11 +89,19 @@ Jofash 碼頭的老船長 Relend 永遠用押韻說話（語料也盡量讓中�
 
 船撞爛在 Gateway Island（不在任何地圖上的島），玩家炸開岩石，在洞窟裡找到一道傳送門。門後是一個「從遠方監視著我們」的陌生之地，Relend 在那裡發出慘叫、消失。
 
-wiki（摘要部分，未逐字核對）的說法：Gateway Island 帳篷裡留著一封以「Dear Nilrem……」開頭的未寫完信件，社群認為屬於 Bob；那個陌生之地被認為受 Dern 之域的詛咒，連到 Wynn 廢棄礦坑裡的隱藏區域，可能是寂靜之境（Silent Expanse）的伏筆；監視 Relend 的存在被連到「The Eye」。占卜師那句「你……正被監視著！」可能也是同一條伏筆（推測）。
+**第二輪補讀 wiki〈Fantastic Voyage〉〈Gateway Island〉〈Gateway Passage〉之後，可以把這段寫實**：
 
-> 這個任務的結局在遊戲裡沒有解釋，以上「門通往哪裡」都是 wiki 與社群的推論，不是遊戲明說。Gateway Island 的 wiki 頁讀不到。
+- **Gateway Island**：不在地圖上、只有這個任務進得去（wiki 說若畫在地圖上會比一般島大得多）。南岸躺著 Little Wing 的殘骸，北邊有火山與一棵大樹，東邊一頂破帳篷裡留著一封**未寫完的信**——內容是封緘信第一張的開頭「親愛的 Nilrem……」。封緘信是 Bob 寫給 Nilrem 的訣別信（第一章），所以 wiki 判定帳篷的主人是 Bob。
+- **Relend 的老朋友**：在洞窟深處，Relend 一口氣說出他找的是誰——很久以前有個「像你一樣強悍的冒險者」來找他出海，兩人在旅途中成了最好的朋友，然後對方消失了。wiki〈Timeline〉記載 984 AP Bob 請 Relend 載他到 Gateway Island，自己從那裡消失，留下 Relend 一個人。Relend 從此被鎮上當成瘋子，「我一直跟大家說，我才不是什麼怪胎！」說的就是這件事。
+- **門後是什麼**：那道門通往社群稱為「Gateway Passage」的隱密山谷。wiki 的描述是：一片被**黑暗領域**（Dern）侵染的谷地，把 Gateway Island 連到 Wynn 行省 **Abandoned Mines** 的一處隱藏區域，地貌像 Silent Expanse，真正的地理位置不明；路邊散落著誤闖者的屍骸，出口附近長著 Dern 的種子節點，住著一種像植物又像心肌組織的生物（Myocardial）。也就是說，Bob 消失的那扇門，另一頭就是第五章那片黑暗的土地（wiki 說這可能是 Silent Expanse 的伏筆）。
+- **監視者**：Relend 在谷裡說「不管這是哪裡，我總覺得我們正從遠處被監視著」（原文 being overseen from afar），然後一個神祕存在現身——wiki 認定就是「Wynn 的監視者」**眼**（The Eye，第五章；wiki〈The Eye〉說這一幕是後來才補進任務的客串，任務本身在 2.0 改版過）。它用愛爾蘭語說了兩句話，wiki 的譯解是「又一次企圖躲開我的視線」與「從我的視野裡消失吧，闖入者」，接著把 Relend 帶走、把玩家逐出谷外。「又一次」三個字很值得玩味：在 Relend 之前，曾有人從它眼下逃走過——放在 Bob 的脈絡裡讀，很難不聯想到他（推測，遊戲沒有說）。
+- Jofash 占卜師對玩家說的「你……正被監視著！」，wiki 也認為是在預告同一個監視者。
 
-出處：任務《美妙旅程》；wiki〈[Fantastic Voyage](https://wynncraft.wiki.gg/wiki/Fantastic_Voyage)〉
+> **給譯者**：語料《美妙旅程》#276 把 overseen from afar 譯成「有人在遠處朝我們張望」，字面通，但「張望」太輕；眼的頭銜正是 Overseer（監視者），這句是全任務唯一點到它的台詞，建議改成「有什麼東西在遠處監視著我們」之類。眼的兩句愛爾蘭語台詞語料沒有收（列入語料待查清單）。
+>
+> Relend 最後的下落、Bob 在門後遭遇了什麼，遊戲都沒有交代；上面「門通往黑暗領域」是 wiki 依地貌與生物的判斷，不是台詞明說。
+
+出處：任務《美妙旅程》；wiki〈[Fantastic Voyage](https://wynncraft.wiki.gg/wiki/Fantastic_Voyage)〉、〈[Gateway Island](https://wynncraft.wiki.gg/wiki/Gateway_Island)〉、〈[Gateway Passage](https://wynncraft.wiki.gg/wiki/Gateway_Passage)〉、〈[The Eye](https://wynncraft.wiki.gg/wiki/The_Eye)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉
 
 ---
 
@@ -101,7 +109,7 @@ wiki（摘要部分，未逐字核對）的說法：Gateway Island 帳篷裡留�
 
 ### 1. 建國：逃出 Fruma、連自己從哪來都忘了的人
 
-**事實骨架**（wiki 時間線）：850 AP，Markus Corkus T. 帶著 Fruma 農業區（後改名工業區）的叛逃者，坐熱氣球翻過北方的山離開 Fruma，降落在一座大島上，建立了 Corkus。
+**事實骨架**（wiki 時間線）：850 AP，Markus Corkus T. 帶著 Fruma 農業區（後改名工業區）的叛逃者，坐熱氣球翻過北方的山離開 Fruma，降落在一座大島上，建立了 Corkus。wiki 沒有 Markus 的個人頁（第一輪列的 Markus_Corkus 不存在）；〈Corkus Island〉補充他們降落在 Relos 的西南海岸，再慢慢往全島遷移，而且離開 Fruma 時「完全不懂魔法」，電魔法是到了島上才自己摸索出來的。Fruma 那一側的隱藏探索點〈意外的出走〉重現了他們在衛兵破門前升空的那一刻（第六章）。
 
 **Relos 的祕密圖書館**裡的系列書《工業之島》把這段寫得更有味道。重點有三：
 
@@ -111,7 +119,7 @@ wiki（摘要部分，未逐字核對）的說法：Gateway Island 帳篷裡留�
 
 這三點直接解釋了 Corkus 任務裡一再出現的態度：〈使者 第一部〉的 Corkus 代表 Beltrude 介紹「Corkian 跟你們一樣，原本來自 Fruma……」然後立刻改口「……不過這件事還是別提了」；他們熱切地招待 Wynn 來的「使者」，又說「我們原本期待的是正式的使者，不過你也行」。
 
-> 伏筆：Corkian 不願談 Fruma，一方面是他們真的記不清，一方面是那是他們逃離的地方。後來 Fruma 主線揭露「抹除記憶」是 Fruma 王室的常規手段（見 Fruma 篇），回頭看，Corkus 建國者的失憶很可能不是意外（推測）。
+> 伏筆：Corkian 不願談 Fruma，一方面是他們真的記不清，一方面是那是他們逃離的地方。後來 Fruma 主線揭露「抹除記憶」是 Fruma 王室的常規手段（第六章），回頭看，Corkus 建國者的失憶可能不是意外（推測）。不過 wiki〈Corkus Island〉持相反看法：說他們一落地就失憶，比較可能只是對 Fruma 的知識在之後幾十年裡慢慢失傳，因為另一種解釋得要 Fruma 的審訊官追過海來、抹掉他們的記憶卻不殺他們，不太合理。兩種讀法遊戲都沒有否定。
 
 出處：wiki〈[Relos' Secret Library](https://wynncraft.wiki.gg/wiki/Relos%27_Secret_Library)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉、〈[Corkus Province](https://wynncraft.wiki.gg/wiki/Corkus_Province)〉；任務《使者 第一部》
 
@@ -160,7 +168,7 @@ Phinas 的評語是整個任務的主題：工廠倒下（「兩年多前」）�
 
 她還問玩家「你知道你們最終敵人的名字嗎？」，說「Corkus 是唯一能免於它的地方」。Rensa 逃脫，至今沒有再出現。
 
-> 伏筆：Rensa 知道得太多了——她知道玩家是失憶的 Fruma 人，也暗示 Wynn 的腐敗戰爭只是「前奏」，背後還有一個玩家不知道名字的「最終敵人」。後來寂靜之境與 Fruma 篇揭露了更大的宇宙格局（Dern、Orphion、諸界之爭），Rensa 的台詞像是事先寫好的預告（推測；遊戲沒有交代她的情報來源）。wiki 另指出 Rensa 是 Arsenic（砒霜）的部分字母重組，呼應她下藥的手段。
+> 伏筆：Rensa 知道得太多了——她知道玩家是失憶的 Fruma 人，也暗示 Wynn 的腐敗之戰只是「前奏」，背後還有一個玩家不知道名字的「最終敵人」。後來Silent Expanse與 Fruma 篇揭露了更大的宇宙格局（Dern、Orphion、界域之戰），Rensa 的台詞像是事先寫好的預告（推測；遊戲沒有交代她的情報來源）。wiki 另指出 Rensa 是 Arsenic（砒霜）的部分字母重組，呼應她下藥的手段。
 
 出處：任務《鐵皮末路》《五味雜陳》；wiki〈[Desperate Metal](https://wynncraft.wiki.gg/wiki/Desperate_Metal)〉、〈[Mixed Feelings](https://wynncraft.wiki.gg/wiki/Mixed_Feelings)〉
 
@@ -199,6 +207,8 @@ Ava 的回答是整條線的核心：
 
 **Doguns** 是 Gavel 最古老的種族之一，岩石般的身體、操控土與火的魔法，說話一字一頓（語料用「……」斷句保留這個節奏）。壽命極長——Korzim 說自己親眼見過幾百年前的事。Molten Heights 地底那些宏偉的洞窟，據說是他們用古老魔法鑿出來的。
 
+第二輪補讀 wiki〈Doguns〉，它把幾件第一輪只當傳說的事寫成了設定：Doguns 的身體是用**峽谷巨像的石頭**做的，生命來自 **Garaheth 的永恆之火**，所以他們同時敬拜兩者為土與火的造物主，自稱「火與土的生靈」；最年長的個體活了五千年以上（wiki〈Timeline〉把族長 Paku 被造出的時間記在 4000 BP）。他們的天生魔力只輸給精靈，平時也會用魔法安撫失常的巨像，當作回報造物之恩——這就是《臨界點》裡「過去由 dogun 負責讓它保持平靜」的由來。社會上他們視彼此為「一體」、人人平等、蓋房子不講究外觀，「因為不想讓任何人印象深刻」（〈文化遺物〉的〈Dogun 守則〉也是這樣寫的）。
+
 依 wiki 時間線：
 
 - **0 AP**：峽谷（Canyon of the Lost）開始不穩定，把矮人往東推。
@@ -211,7 +221,7 @@ Ava 的回答是整條線的核心：
 
 > 注意：wiki 兩頁對 Garaheth 的結局說法不同。〈Dwarves〉與時間線說 Garaheth 被召喚出來、被 Osseus 殺死；〈Rodoroc〉說矮人阻止了召喚。遊戲內〈臨界點〉的 Draani 說的是「Garaheth 第一次被殺」，支持前者。
 
-出處：wiki〈[Dwarves](https://wynncraft.wiki.gg/wiki/Dwarves)〉、〈[Rodoroc](https://wynncraft.wiki.gg/wiki/Rodoroc)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉、〈[The Doguns' Defeat](https://wynncraft.wiki.gg/wiki/The_Doguns%27_Defeat)〉、〈[Garaheth](https://wynncraft.wiki.gg/wiki/Garaheth)〉；任務《矮人與 Doguns 第一部》《臨界點》
+出處：wiki〈[Dwarves](https://wynncraft.wiki.gg/wiki/Dwarves)〉、〈[Doguns](https://wynncraft.wiki.gg/wiki/Doguns)〉、〈[Rodoroc](https://wynncraft.wiki.gg/wiki/Rodoroc)〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉、〈[The Doguns' Defeat](https://wynncraft.wiki.gg/wiki/The_Doguns%27_Defeat)〉、〈[Garaheth](https://wynncraft.wiki.gg/wiki/Garaheth)〉；任務《矮人與 Doguns 第一部》《臨界點》
 
 ### 2. 〈矮人與 Doguns〉第一部至第四部（約 1000 AP）
 
@@ -267,7 +277,7 @@ Axelus 臨死前對父親說的最後一句話是：「說。出。真相！！�
 
 ### 1. 碎裂（0 AP）與 Ahms 巨像
 
-Sky Islands 原本是一片完整的土地，叫 Ahms 一帶。那裡的村民崇拜一尊遠古的巨像（Colossus），稱它為守護者。0 AP——正好是腐敗之門開啟、腐敗戰爭爆發、Gavel 的黯蝕開始的同一年——巨像失控，把整片土地震成碎塊：一部分成了浮在空中的 Sky Islands，一部分墜進下方的虛空。巨像無法把自己的身體與扎根的土地分開，跟著一起墜入虛空，崇拜它的文明也隨之瓦解。這件事被稱為「**碎裂**」（the Fracturing）。
+Sky Islands 原本是一片完整的土地，叫 Ahms 一帶。那裡的村民崇拜一尊遠古的巨像（Colossus），稱它為守護者。0 AP——正好是腐敗傳送門開啟、腐敗之戰爆發、Gavel 的黯蝕開始的同一年——巨像失控，把整片土地震成碎塊：一部分成了浮在空中的 Sky Islands，一部分墜進下方的虛空。巨像無法把自己的身體與扎根的土地分開，跟著一起墜入虛空，崇拜它的文明也隨之瓦解。這件事被稱為「**碎裂**」（the Fracturing）。
 
 這段歷史散落在 Sky Islands 的隱藏探索點裡，拼起來是這樣：
 
@@ -278,9 +288,16 @@ Sky Islands 原本是一片完整的土地，叫 Ahms 一帶。那裡的村民�
 
 峽谷那一尊巨像沒有碎掉，是因為 Doguns 能接近它、安撫它；Doguns 碰不到 Ahms 那一尊。換句話說：**Doguns 是峽谷巨像的守護者的守護者**——矮人滅了 Doguns，也就拆掉了保護整個峽谷的機制。這是〈臨界點〉的前提。
 
-> 伏筆：碎裂與腐敗之門開啟同年，wiki 只說兩尊巨像在門開啟後「因不明原因」開始失常。兩者是否有因果，遊戲沒有明說（推測）。
+> 伏筆：碎裂與腐敗傳送門開啟同年，wiki 只說兩尊巨像在門開啟後「因不明原因」開始失常。兩者是否有因果，遊戲沒有明說（推測）。
 
-出處：wiki〈[The Fallen Protector](https://wynncraft.wiki.gg/wiki/The_Fallen_Protector)〉、〈[Desolate Temples](https://wynncraft.wiki.gg/wiki/Desolate_Temples)〉、〈[Far Above the Clouds](https://wynncraft.wiki.gg/wiki/Far_Above_the_Clouds)〉、〈[Colossal Ruins](https://wynncraft.wiki.gg/wiki/Colossal_Ruins)〉、〈[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉
+**Ahms 巨像補遺**（第二輪；wiki 沒有 Ahms_Colossus 這個頁面，資料散在下列幾頁）：
+
+- **信仰的轉移**：wiki〈Timeline〉把「Ahms 一帶住著一個村民文明，起初主要崇拜 Farcor，後來把信仰轉給了 Ahms 巨像」列在年代不明的遠古事件。這正好接上 Farcor 在「雲端之上」的抱怨：人們把信仰交給一個「不是他們親手造的守護者」。
+- **荒蕪的神殿的日記**：「我擔心最壞的事已經發生了……我們美麗、偉大的巨像沉進了虛空……就在幾天前，土地在我們腳下碎裂之後……為什麼？這是我們沒有守住對巨像神聖的忠誠所受的懲罰嗎？」（依 wiki 收錄的原文改寫，語料未收）——信徒到最後都在怪自己，而不是怪巨像。
+- **墜落的守護者的旁白**（本章自譯，語料未收）：碎裂停止後，數百條人命被虛空吞沒；巨像無法把身體與周圍的土地分開，連自己也毀了、墜入虛空，成為被時間遺忘的記憶，崇拜它的文明不久也崩潰。結語：「峽谷遲早也會步上 Sky Islands 的後塵，成為一片被某個未知的巨大存在撕裂的土地……」
+- **殘骸的位置**：wiki〈The Void〉記下巨像的碎塊至今還留在 0 AP 墜落的地方——斷下的頭、握著半截劍的左手、另半截劍、另一隻手，各在虛空的不同角落。〈一千米之下〉下潛時看到的巨大殘骸就是這些。
+
+出處：wiki〈[The Fallen Protector](https://wynncraft.wiki.gg/wiki/The_Fallen_Protector)〉、〈[Desolate Temples](https://wynncraft.wiki.gg/wiki/Desolate_Temples)〉、〈[The Void](https://wynncraft.wiki.gg/wiki/The_Void)〉、〈[Villagers](https://wynncraft.wiki.gg/wiki/Villagers)〉、〈[Far Above the Clouds](https://wynncraft.wiki.gg/wiki/Far_Above_the_Clouds)〉、〈[Colossal Ruins](https://wynncraft.wiki.gg/wiki/Colossal_Ruins)〉、〈[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))〉、〈[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)〉
 
 ### 2. 天空劫掠者：從 Ahmsord 到王位試煉
 
@@ -294,10 +311,17 @@ Sky Islands 原本是一片完整的土地，叫 Ahms 一帶。那裡的村民�
 
 （wiki：收信人是第 356 代女王，年份 573 AP。）另一個探索點「Ahmsord 的起源」的過場裡，劫掠者的亡魂看著村民的軍隊登陸，決定「讓他們拿走 Ahmsord」、撤往東南的前哨。今天的 Ahmsord 是村民的城市。
 
-劫掠者並沒有消失，她們退到東南基地，繼續打劫 Gavel 的飛船：
+第二輪補讀 wiki〈Raiders' Port〉〈Ahmsord〉〈Villagers〉（wiki 沒有 Skyraiders 這個總頁），整段衰落可以排成兩步：
+
+1. **約 573 AP**：矮人打通 Molten Heights 與 Sky Islands 之間的隧道，空運變少，劫掠者養不起分散的小據點，大多撤回主基地 **Ahmsord**——Arriah 信裡說的「撤到主基地」就是這件事，劫掠者自己的港口 **Raiders' Port** 因此幾乎被放棄。
+2. **之後**：來自 Gavel 中部的村民開進 Sky Islands，人數很快壓過劫掠者，攻下包括 Ahmsord 在內的大部分據點。劫掠者只好退回位在群島角落、村民打不到的 Raiders' Port，也就是今天〈王位試煉〉的舞台。
+
+（wiki 各頁對 Ahmsord 當年的地位說法不一：〈Ahmsord〉與〈Raiders' Port〉說它是劫掠者的主基地，〈Villagers〉說當時只是一座小據點，「Ahmsord 的起源」的敘述則說它是「最堅固的防線」。另外 〈Villagers〉提到 Ahmsord 也是傳說中 Siegfried 與巨龍大戰、因此失去一隻眼睛的地方——「傳說」二字是 wiki 自己加的，第三章《Gavel 的英雄》已經揭露 Siegfried 是演員扮的。）
+
+劫掠者並沒有消失，她們退回 Raiders' Port（Sky Islands 東南角），繼續打劫 Gavel 的飛船：
 
 - **〈危難航程〉**（Gavel，Letvus 飛船基地）：玩家搭飛船從 Cinfras 到 Detlas，途中被劫掠者登船。玩家打進女王的艙房，殺了她，拿走她的紅寶石戒指。
-- **〈王位試煉〉**（Sky Islands 東南基地）：劫掠者正在選新女王。玩家換上女裝混進去，通過戰鬥、飛行、闖空門偷寶三關。主持人在開場說：「咱們上一任女王遭遇了……很難看的下場，在她自己的飛船上被一個 Wynn 士兵殺了。」——**那個 Wynn 士兵就是玩家**。殺了前任女王的人，戴上了女王的頭飾。主持人的祝詞是：「願她這回能撐過兩個禮拜。」（wiki：玩家是第 734 代女王。從 573 AP 的第 356 代算起，等於平均一年多就換一位；推算，僅供參考。）
+- **〈王位試煉〉**（Sky Islands 東南角的 Raiders' Port）：劫掠者正在選新女王。玩家換上女裝混進去，通過戰鬥、飛行、闖空門偷寶三關。主持人在開場說：「咱們上一任女王遭遇了……很難看的下場，在她自己的飛船上被一個 Wynn 士兵殺了。」——**那個 Wynn 士兵就是玩家**。殺了前任女王的人，戴上了女王的頭飾。主持人的祝詞是：「願她這回能撐過兩個禮拜。」（wiki：玩家是第 734 代女王。從 573 AP 的第 356 代算起，等於平均一年多就換一位；推算，僅供參考。）
 
 偷來的寶物主持人只說是一件「盒裝天災」級的武器，決定鎖起來不用：「咱們是海盜沒錯，可咱們不是沒心肝的！」遊戲沒有說明那是什麼。
 
@@ -354,14 +378,15 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 
 | 年份 | 事件 | 出處 |
 |---|---|---|
-| 遠古 | Doguns 鑿出 Molten Heights 地底洞窟；據傳說，Garaheth 把火焰吹進取自峽谷巨像的石頭，造出 Doguns（傳說，未證實） | 探索點「地底的造物」；wiki〈Garaheth〉 |
-| 0 AP | 碎裂：Ahms 巨像失控，Ahms 一帶碎成 Sky Islands 與虛空；Farcor 離開 Gavel；峽谷開始不穩定；同年腐敗之門開啟 | wiki〈Timeline〉〈The Fallen Protector〉 |
+| 遠古 | Doguns 鑿出 Molten Heights 地底洞窟；Garaheth 的火賦予取自峽谷巨像的石頭生命，造出 Doguns（第一輪當作傳說；wiki〈Doguns〉寫成設定） | 探索點「地底的造物」；wiki〈Garaheth〉〈Doguns〉 |
+| 4000 BP | Dogun 族長 Paku 被造出 | wiki〈Timeline〉 |
+| 0 AP | 碎裂：Ahms 巨像失控，Ahms 一帶碎成 Sky Islands 與虛空；Farcor 離開 Gavel；峽谷開始不穩定；同年腐敗傳送門開啟 | wiki〈Timeline〉〈The Fallen Protector〉 |
 | 100 AP | 矮人進入 Molten Heights，Dogun 戰爭爆發 | wiki〈Timeline〉〈Rodoroc〉 |
 | 100–300 AP | 冰亞龍造成 Freezing Heights 與真冰；龍族幾乎滅絕，只剩 Ozoth | 探索點「封於寒冰」「鎖鏈巨獸」 |
 | 300 AP | Osseus 殺死 Garaheth；Doguns 投降後被 Algard 下令封成石像；長老被囚於真冰；Rodoroc 建城 | 探索點「Dogun 的敗亡」；任務《臨界點》 |
 | 307 / 313 AP | Algard、Osseus 去世，葬於開創者之墓 | 探索點「開創者之墓」 |
 | 約 350 年前 | 鳳凰王子帶部分 Avos 遁入地底（wiki 的「350 年前」與 850 AP 對不上，可能是舊資料） | wiki〈Lost Avos City〉 |
-| 573 AP | 矮人打通 Heights，空中貿易枯竭，天空劫掠者衰落，Ahmsord 落入村民手中 | 祕密故事《天空的統治者》 |
+| 約 573 AP | 矮人打通 Heights，空中貿易枯竭，天空劫掠者撤回主基地 Ahmsord；之後村民開進群島攻下 Ahmsord，劫掠者退回 Raiders' Port | 祕密故事《天空的統治者》；wiki〈Raiders' Port〉〈Villagers〉 |
 | 850 AP | Markus Corkus T. 帶 Fruma 叛逃者乘熱氣球出走，建立 Corkus | wiki〈Timeline〉 |
 | 900 AP | 法師平息海浪，海洋可以航行 | wiki〈Timeline〉 |
 | 970 AP | Selchar 建立 | wiki〈Timeline〉 |
@@ -407,7 +432,7 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 ## 伏筆與暗示
 
 - **「……不過這件事還是別提了」**（使者 第一部）→ Corkian 對 Fruma 出身的迴避；Relos 圖書館說他們抵達時就失憶了。對照 Fruma 篇的「抹除記憶」，Corkus 建國者的失憶可能不是巧合（推測）。
-- **Rensa 的「最終敵人」與「真正戰爭的前奏」**（五味雜陳）→ 指向腐敗戰爭背後更大的宇宙衝突，後續寂靜之境、Fruma 篇才展開（推測；遊戲沒說 Rensa 從哪知道）。
+- **Rensa 的「最終敵人」與「真正戰爭的前奏」**（五味雜陳）→ 指向腐敗之戰背後更大的宇宙衝突，後續Silent Expanse、Fruma 篇才展開（推測；遊戲沒說 Rensa 從哪知道）。
 - **Antikythera 判定人類是最大威脅**（淪陷工廠）→ 工廠的「叛變」其實是對 Corkian 待 Avos 方式的審判；〈羽毛紛飛〉Efena 對 Avos 的輕蔑讓這個判斷更站得住。
 - **「剪掉羽毛、丟下深坑」**（羽毛紛飛 第一部）→ 與鳳凰王子一族「遁入地底、掉光羽毛而死」是同一個意象（推測）。
 - **魔法課說矮人「出於對 Dogun 惡魔能量的反感」拒絕自己的魔法**（Grook 魔法學院）→ 連學術界都接受了矮人的宣傳說法；〈矮人與 Doguns〉揭露那是刻意製造的。
@@ -417,10 +442,10 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 - **Draani 說「Garaheth 第一次被殺」**（臨界點）→ 第四部是第二次；也確認 300 AP 那次 Garaheth 真的被召喚出來過。
 - **Farcor：「打碎這片土地的同一股力量……若不直接行動，還會再次讓這片領域碎裂」**（雲端之上）→ 峽谷巨像與〈臨界點〉；完成討伐戰後 Farcor 的台詞會改變。
 - **「墜落的守護者」結尾：Canyon of the Lost 可能步上同樣的命運** → 同上。
-- **碎裂與腐敗之門開啟同在 0 AP** → 兩尊巨像為何同時失常，遊戲沒有解釋（推測可能相關）。
+- **碎裂與腐敗傳送門開啟同在 0 AP** → 兩尊巨像為何同時失常，遊戲沒有解釋（推測可能相關）。
 - **〈王位試煉〉的「上一任女王被一個 Wynn 士兵殺了」** → 就是玩家在〈危難航程〉做的事。
-- **Bob 散落在海上**：Cluckles 的主人、Dead Island 的屠獸者（推測）、Relend 的老友（推測）、Farcor 的訪客 → Bob 的完整故事在另一章。
-- **Relend 消失的門後「被監視」**（美妙旅程）→ wiki 連到 Dern 之域與 The Eye（社群說法）。
+- **Bob 散落在海上**：Cluckles 的主人、Dead Island 的屠獸者（推測）、Relend 的老友（wiki〈Timeline〉記 984 AP Bob 請 Relend 載他去 Gateway Island）、Farcor 的訪客 → Bob 的完整故事見第一章。
+- **Relend 消失的門後「被監視」**（美妙旅程）→ wiki 判定門後的 Gateway Passage 受黑暗領域（Dern）侵染、連到 Wynn 的 Abandoned Mines，監視者就是眼（The Eye）；Bob 消失在同一扇門後（wiki 的判斷，遊戲沒有明說）。
 - **Ineos 被 Corkus 收留**（臨界點）→ 對照〈五味雜陳〉的分離主義者與〈羽毛紛飛〉議會對 Ava 的排斥，Corkus 對外人並非一面倒的敵意；這也是 Corkus 在〈臨界點〉能站上檯面的伏筆（觀察）。
 
 ---
@@ -460,7 +485,7 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 
 ### 海洋的彩蛋
 
-wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀有馬鈴薯的 Potato Island、中央島上有神祕石板的 Isles of Fiction，以及有傳送門的 Gateway Island（〈美妙旅程〉的舞台）。另外，完成〈Grook 魔法學院〉後，學校大廳的書櫃會變成跑酷關卡，盡頭的牢房關著一隻 Dern 生物（失敗的實驗），wiki 認為與寂靜之境的 Dern 線有關（摘要內容，未逐字核對）。
+wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀有馬鈴薯的 Potato Island、中央島上有神祕石板的 Isles of Fiction，以及有傳送門的 Gateway Island（〈美妙旅程〉的舞台）。另外，〈Grook 魔法學院〉的大廳右側有一顆像書的頭像，右鍵後書櫃會排成跑酷路線；跑到盡頭點亮蠟燭，樓梯間那扇緊閉的大門就會打開，裡面是一間牢房。第二輪補讀 wiki〈The Order of the Grook〉，牢裡的研究筆記大意是（本章改寫，語料未收）：「不不不不不。Eldritch 實驗就此中止。經過兩個月的測試，我們得出結論：這些生物比我們以前碰過的任何東西都強得多。Silent Expanse 確實與 Dern——黑暗之地——相連。有一個實驗體愈來愈具攻擊性，我們決定處決它，卻失敗了：修會傷不了它分毫，全校沒有任何魔法對它有用。這些生物不是拿來研究的。黑暗之地『絕對』不可以探索；要是 Dern 的生物入侵，我們毫無希望。」那隻「被遺忘的 Dern 實驗體」至今還在當年做實驗的房間裡徘徊（wiki 說造型取自《Olm 符文》裡的 Crawling Death）。換句話說，Grook 修會（學院本身，不一定等於法師議會）早就知道 Silent Expanse 的真相，而且怕到把它鎖起來。這跟第五章 Aledar 說的「任務簡報裡就寫了」很像，都是「上層早就知道」（對照屬推測）。
 
 出處：祕密故事《Maex 黑市》《天空的統治者》；wiki 各探索點頁（見出處清單）
 
@@ -489,6 +514,12 @@ wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀�
 | Void Villagers | 虛空村民 | 語料已有，補記 |
 | Humyn | 人兒 | 〈禍從口入〉月球居民的自稱，故意拼錯的 Human；語料若另有譯法以語料為準 |
 | Pirate Queen | 海盜女王 | 物品名「海盜女王紅寶石戒」已用 |
+| Gateway Passage | （留原文） | 社群對〈美妙旅程〉門後山谷的稱呼 |
+| Myocardial | （留原文） | Gateway Passage 的植物狀心肌生物 |
+| Unfinished Letter | 未寫完的信 | Gateway Island 帳篷裡那張封緘信開頭 |
+| Experiment Eldritch | Eldritch 實驗 | Grook 學院牢房的研究筆記；Eldritch 照語料「詭異瞭望台」的用法可另譯「詭異實驗」，待定 |
+| Forgotten Dernic Test Subject | 被遺忘的 Dern 實驗體 | 同上 |
+| Raiders' Port | （留原文） | 天空劫掠者的港口據點，wiki 又稱 Skyraider's Base |
 
 語料內**同一個詞有多種譯法**、建議討論統一的：
 
@@ -503,7 +534,9 @@ wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀�
 | Dogun | Dogun／dogun（〈臨界點〉多處小寫） |
 | True Ice | 真冰／True Ice（第三部台詞的方括號內留原文） |
 
-另：語料〈臨界點〉#349–351 三句（「我逃離 Heights……已經……很多年了。我很……感激……Corkian……收留了我」等）的 speaker 標成 Rhay，但內容與一字一頓的語氣都是 **Ineos**，建議修正 speaker 欄位。
+以上各條與下面這條已併入 [README](README.md) 的「語料待查清單」。
+
+另：語料〈臨界點〉#313–315 三句（第一輪誤記為 #349–351）（「我逃離 Heights……已經……很多年了。我很……感激……Corkian……收留了我」等）的 speaker 標成 Rhay，但內容與一字一頓的語氣都是 **Ineos**，建議修正 speaker 欄位。
 
 ---
 
@@ -515,8 +548,11 @@ wiki 的〈Ocean〉頁另外列出幾個非正式的隱藏點：可以挖到稀�
 **Wynncraft wiki**
 - 地區：[Ocean](https://wynncraft.wiki.gg/wiki/Ocean)、[Corkus Province](https://wynncraft.wiki.gg/wiki/Corkus_Province)、[Corkus City](https://wynncraft.wiki.gg/wiki/Corkus_City)、[Molten Heights](https://wynncraft.wiki.gg/wiki/Molten_Heights)、[Sky Islands](https://wynncraft.wiki.gg/wiki/Sky_Islands)、[Mage Island](https://wynncraft.wiki.gg/wiki/Mage_Island)、[Pirate Cove](https://wynncraft.wiki.gg/wiki/Pirate_Cove)、[Rodoroc](https://wynncraft.wiki.gg/wiki/Rodoroc)、[Maex](https://wynncraft.wiki.gg/wiki/Maex)、[Ahmsord](https://wynncraft.wiki.gg/wiki/Ahmsord)、[The Void](https://wynncraft.wiki.gg/wiki/The_Void)、[Fallen Factory](https://wynncraft.wiki.gg/wiki/Fallen_Factory)
 - 種族與角色：[Avos](https://wynncraft.wiki.gg/wiki/Avos)、[Dwarves](https://wynncraft.wiki.gg/wiki/Dwarves)、[Ozoth](https://wynncraft.wiki.gg/wiki/Ozoth)、[Garaheth](https://wynncraft.wiki.gg/wiki/Garaheth)、[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))
-- 時間線：[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)（只讀到約 979 AP 之前的逐字內容）
+- 時間線：[Timeline](https://wynncraft.wiki.gg/wiki/Timeline)（第一輪只讀到約 979 AP，第二輪讀完全文）
 - 探索點：[Relos' Secret Library](https://wynncraft.wiki.gg/wiki/Relos%27_Secret_Library)、[Lost Avos City](https://wynncraft.wiki.gg/wiki/Lost_Avos_City)、[Necklace Chamber](https://wynncraft.wiki.gg/wiki/Necklace_Chamber)、[Subterranean Creation](https://wynncraft.wiki.gg/wiki/Subterranean_Creation)、[Maex Black Market](https://wynncraft.wiki.gg/wiki/Maex_Black_Market)、[Cultural Artefact](https://wynncraft.wiki.gg/wiki/Cultural_Artefact)、[Sealed in Ice](https://wynncraft.wiki.gg/wiki/Sealed_in_Ice)、[Tomb of the Founders](https://wynncraft.wiki.gg/wiki/Tomb_of_the_Founders)、[Chained Goliaths](https://wynncraft.wiki.gg/wiki/Chained_Goliaths)、[The Doguns' Defeat](https://wynncraft.wiki.gg/wiki/The_Doguns%27_Defeat)、[Otherworldly Origins](https://wynncraft.wiki.gg/wiki/Otherworldly_Origins)、[Desolate Temples](https://wynncraft.wiki.gg/wiki/Desolate_Temples)、[Ahmsord's Origins](https://wynncraft.wiki.gg/wiki/Ahmsord%27s_Origins)、[Colossal Ruins](https://wynncraft.wiki.gg/wiki/Colossal_Ruins)、[Ruler of the Skies](https://wynncraft.wiki.gg/wiki/Ruler_of_the_Skies)、[Far Above the Clouds](https://wynncraft.wiki.gg/wiki/Far_Above_the_Clouds)、[The Lonely Abyss](https://wynncraft.wiki.gg/wiki/The_Lonely_Abyss)、[The Fallen Protector](https://wynncraft.wiki.gg/wiki/The_Fallen_Protector)
 - 任務：[Beneath the Depths](https://wynncraft.wiki.gg/wiki/Beneath_the_Depths)、[Redbeard's Booty](https://wynncraft.wiki.gg/wiki/Redbeard%27s_Booty)、[Pirate's Trove](https://wynncraft.wiki.gg/wiki/Pirate%27s_Trove)、[The Order of the Grook](https://wynncraft.wiki.gg/wiki/The_Order_of_the_Grook)、[Haven Antiquity](https://wynncraft.wiki.gg/wiki/Haven_Antiquity)、[Misadventure on the Sea](https://wynncraft.wiki.gg/wiki/Misadventure_on_the_Sea)、[Zhight Island (Quest)](https://wynncraft.wiki.gg/wiki/Zhight_Island_(Quest))、[Fantastic Voyage](https://wynncraft.wiki.gg/wiki/Fantastic_Voyage)、[The Envoy Part II](https://wynncraft.wiki.gg/wiki/The_Envoy_Part_II)、[Mixed Feelings](https://wynncraft.wiki.gg/wiki/Mixed_Feelings)、[Desperate Metal](https://wynncraft.wiki.gg/wiki/Desperate_Metal)、[The Feathers Fly Part II](https://wynncraft.wiki.gg/wiki/The_Feathers_Fly_Part_II)、[Dwarves and Doguns Part IV](https://wynncraft.wiki.gg/wiki/Dwarves_and_Doguns_Part_IV)、[From the Bottom](https://wynncraft.wiki.gg/wiki/From_the_Bottom)、[One Thousand Meters Under](https://wynncraft.wiki.gg/wiki/One_Thousand_Meters_Under)、[Recipe For Disaster](https://wynncraft.wiki.gg/wiki/Recipe_For_Disaster)、[The Breaking Point](https://wynncraft.wiki.gg/wiki/The_Breaking_Point)、[Royal Trials](https://wynncraft.wiki.gg/wiki/Royal_Trials)、[Flight in Distress](https://wynncraft.wiki.gg/wiki/Flight_in_Distress)
 
-**讀不到的 wiki 頁**（2026-10-21 多次回 502）：Markus_Corkus、Doguns、Skyraiders、Ahms_Colossus、Gateway_Island、The_Canyon_Colossus（討伐戰頁）。本章這幾項的內容都改從其他頁面與任務台詞拼出，沒有直接引用這些頁。
+**第二輪補讀（2026-10-22，wiki.gg 已恢復）**：
+- 讀到：[Doguns](https://wynncraft.wiki.gg/wiki/Doguns)、[Gateway Island](https://wynncraft.wiki.gg/wiki/Gateway_Island)、[The Canyon Colossus (Raid)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Raid))（第一輪的 The_Canyon_Colossus 會重新導向到這裡），另補讀 [Gateway Passage](https://wynncraft.wiki.gg/wiki/Gateway_Passage)、[The Eye](https://wynncraft.wiki.gg/wiki/The_Eye)、[Corkus Island](https://wynncraft.wiki.gg/wiki/Corkus_Island)、[Raiders' Port](https://wynncraft.wiki.gg/wiki/Raiders%27_Port)、[Villagers](https://wynncraft.wiki.gg/wiki/Villagers)、[The Void](https://wynncraft.wiki.gg/wiki/The_Void)、Timeline 全文。
+- **wiki.gg 上沒有這些頁面**（不是讀不到）：Markus_Corkus、Skyraiders、Ahms_Colossus。三者的資料分別改從〈Corkus Island〉、〈Raiders' Port〉〈Ahmsord〉〈Villagers〉、〈The Canyon Colossus (Boss)〉〈The Fallen Protector〉〈The Void〉取得。
+- 〈美妙旅程〉後半段已對照 wiki〈Fantastic Voyage〉第 18–19 階段逐句核對；〈Grook 魔法學院〉的牢房筆記也已逐字核對。
