@@ -328,6 +328,13 @@ public final class SettingsScreen extends Screen {
 
     private List<Row> items() {
         List<Row> rows = new ArrayList<>();
+        // 總開關放在第一頁最上面：想暫時看原文的人，打開設定第一眼就找得到。
+        rows.add(toggle("translations.enabled", true, cfg()::translationsEnabled, () -> {
+            cfg().toggleTranslations();
+            WynnChaYuan.reloadTranslations();
+            say(T.s(cfg().translationsEnabled()
+                    ? "translations.enabled.on" : "translations.enabled.off"), Ui.GREEN);
+        }));
         rows.add(Row.segment("items.tooltip", t("items.tooltip"), t("items.tooltip.hint"))
                 .option(T.s("mode.panel"), Row.Tone.ACCENT)
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
