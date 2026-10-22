@@ -17,6 +17,8 @@
 | [第五章　Silent Expanse 與 Dern 領域](05-silent-expanse-and-dern.md) | 界域之戰、Olm 與四顆水晶、旅程系列任務、《???》、Dern 與腐敗、黯蝕的關係 |
 | [第六章　Fruma](06-fruma.md) | Fruma 曆、女王與後裔、統領、風中之葉、Hallowground 計畫、Fruma 主線五章與各區支線 |
 | [第七章　祕密與隱藏內容](07-secrets.md) | 跨區暗線、計時賽（Time Trials）、121 個隱藏探索點索引、五個祕密故事、隱藏與移除的任務 |
+| [第八章　地城與討伐戰](08-dungeons-and-raids.md) | 十個地城（含已移除的失落聖所舊版）、腐敗地城與 The Forgery、五個討伐戰；各首領的最後一面、Anathema 臨終的對話 |
+| [第九章　物品典故索引](09-item-lore-index.md) | 神話、傳頌、傳奇與有劇情意義的稀有物品，依典故分 20 組；每件標出指涉與「建議重看」，供重譯物品名稱與 lore 用 |
 
 ## 寫法與標記
 
@@ -33,6 +35,12 @@
 - 補進的內容：Creden Tibus 與皇帝之杖（第一章）、《死亡之哨》的草藥學之書與 Gale Nasin、《光之領域》咒文的譯解（第二章）、峽谷巨像討伐戰與巨像身世、Sohso 的下落（第三章）、Gateway Island 與門後的山谷、Grook 學院的牢房筆記、Doguns、Ahms 巨像、天空劫掠者的衰落（第四章）、Dern 在各地的痕跡、影響領域（第五章）、Hallowground 計畫的六份文件（第六章）。
 - 更正的年代：「影響領域與物質界失聯」不是 4000 BP（第五章）；四顆水晶出土以 300 AP 為準（第五章）；沙漠皇帝之死是 688 BP（第七章）；Gale 是在畢業前夕出逃（第六章）。
 - 有幾個第一輪列為「讀不到」的頁面，其實在 wiki.gg 上**不存在**：Emperor's_Sceptre、Realm_of_Light_(Quest_Line)、Markus_Corkus、Skyraiders、Ahms_Colossus、Realms_of_Influence、Fruma_Storyline、Project_Hallowground。各章已改從相關頁面取材，並在出處清單註明。
+
+## 第三輪（2026-10-22）
+
+- 新增第八章〈地城與討伐戰〉、第九章〈物品典故索引〉。
+- 第二章：「Orphion 在討伐戰尾聲叫玩家『阻止她』」一條補註——原句是古 Wynn 語「她必須被熄滅。她的影響在餵養這場無謂的戰爭」，Fruma 篇之後「她」幾乎可以確定是 Anathema（推測）。
+- 語料待查清單新增 #47–#53（地城與物品名稱）。
 
 ## 怎麼更新
 
@@ -153,3 +161,16 @@
 | 44 | 〈痛中之慰〉 | #013 | Who the helix 現譯「到底是哪個螺旋的傢伙」，咒罵感弱 | 「到底是哪個螺旋的鬼」（建議） |
 | 45 | 《Redbeard 的寶藏》 | #040 | Davy Jones' Locket（故意講錯的 Locker）譯成「到底發生了什麼鬼事」，口誤的笑點沒保住 | 可考慮保留口誤（建議） |
 | 46 | 《臨界點》 | #253 | 原文 Eternal Flame 譯「永恆之焰」，與 #254 Everflame「永焰」並存；原文本來就不同 | 風格上可統一（低優先） |
+
+### 六、第三輪新增（地城與物品）
+
+| # | 任務／檔案 | 條目 | 問題 | 建議 |
+|---|---|---|---|---|
+| 47 | npc.json | Forsaken Legion 系列名牌 | 同一個軍團有「被棄軍團」「遭棄軍團」兩種寫法；物品 lore 與本書作「遺棄軍團」 | 統一 |
+| 48 | 《All Roads to Peace》all-roads-to-peace.json | #443 | 「是哪個蠢貨踏進了這座受詛的牢籠？」沒有 speaker，夾在獸人的對話之間；wiki 記這是 Hashr 在風沙古墓的開場白（措辭略異） | 核對 capture，可能歸錯檔 |
+| 49 | gear-accessory.json／gear-weapon.json | Witherhead's Talisman、Witherhead's Elbow、Corrupted Witherhead's Elbow | 名牌與肋骨作「凋零首」，物品名留 Witherhead | 照名牌（第九章 B 組） |
+| 50 | gear-weapon.json | Redbeard's Cutlass、Redbeard's Hand Cannon | 名牌與任務作「Redbeard 船長」「Redbeard 的寶藏」，物品作「紅鬍子」 | 照名牌（第九章 O 組） |
+| 51 | gear-accessory.json | Iron Medallion | lore「鋼鐵指揮官」，《強者生存》#144 作「鐵血指揮官」 | 統一 |
+| 52 | quest.json | 「Antikythera Firewall Pass B accepted…」 | 譯文留 Antikythera Firewall Pass B、Main Core Chamber 英文 | 補譯 |
+| 53 | gear-*.json | 約 36 條 lore 結尾的「It's pulling towards something.」 | 現譯被動「它正被什麼東西牽引著」；原文是物品主動「往某處拉」，若是尋寶提示，主動語氣較好 | 討論後一次改（第九章「一個全面性的發現」） |
+
