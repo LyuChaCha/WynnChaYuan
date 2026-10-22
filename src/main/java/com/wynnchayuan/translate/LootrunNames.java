@@ -50,6 +50,16 @@ public final class LootrunNames {
             "Gambling Beast", "Hubris", "Lights Out", "Side Hustle", "Treasury Bill",
             "Ultimate Sacrifice", "Warmth Devourer", "Imperitia");
 
+    /** 全部的使命與試煉名（英文原名）。 */
+    public static Set<String> names() {
+        return NAMES;
+    }
+
+    /** 這個字串（去掉前後空白）整個就是一個使命或試煉名嗎。 */
+    public static boolean isName(String text) {
+        return text != null && NAMES.contains(text.strip());
+    }
+
     private static final String ICON = "{#}";
     private static final char NEWLINE = (char) 10;
     private static final String COLOUR_END = "{/}";
