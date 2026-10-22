@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 108,
-  "translated": 108,
+  "count": 125,
+  "translated": 125,
   "review": {
    "translator": "claude",
    "proofread": false
@@ -1122,6 +1122,177 @@
    "kind": "dialogue",
    "full": "What were you doing in {p}?",
    "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/A New Beginning#009": {
+   "src": "Can we try and get along?",
+   "dst": "İyi geçinmeyi deneyebilir miyiz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/A New Beginning#010": {
+   "src": "...yes. He did.",
+   "dst": "...evet. Yaşadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/Espren(NPC)#001": {
+   "src": "How's the Weather",
+   "dst": "Hava nasıl?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/Espren(NPC)#002": {
+   "src": "I have an odd question...",
+   "dst": "Tuhaf bir sorum var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/The Cursed One#143": {
+   "src": "What's the report?",
+   "dst": "Rapor ne diyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/Undersupply#001": {
+   "src": "The villagers need more wate",
+   "dst": "Köylülerin daha fazla suya ihtiyacı var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The villagers need more water.",
+   "quest": "",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/Revelations in Fall#001": {
+   "src": "I had a friend...",
+   "dst": "Bir arkadaşım vardı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "choice/The Scarred Springs#001": {
+   "src": "I'll come back later.",
+   "dst": "Sonra tekrar gelirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#002": {
+   "src": "Want some help?",
+   "dst": "Yardım ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#003": {
+   "src": "You run this place?",
+   "dst": "Burayı sen mi işletiyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#004": {
+   "src": "Opinion on tea?",
+   "dst": "Çay hakkında ne düşünüyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#005": {
+   "src": "Maripe sent me.",
+   "dst": "Beni Maripe gönderdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#006": {
+   "src": "Job's done.",
+   "dst": "İş tamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#007": {
+   "src": "Hang the poster",
+   "dst": "Afişi as",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#008": {
+   "src": "Pishlas is reopening soon.",
+   "dst": "Pishlas yakında yeniden açılıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#009": {
+   "src": "I can't say.",
+   "dst": "Bir şey diyemem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice/The Scarred Springs#010": {
+   "src": "Surely...",
+   "dst": "Kesinlikle...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
    "stage": "",
    "speaker": "",
    "source": "captured"
