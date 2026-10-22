@@ -213,9 +213,11 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Corkian | Corkian | 原文是 Corkian 就寫 Corkian，前後接中文空一格。原文是 `Corkus's`／`of Corkus` 才寫「Corkus 的」（地名所有格）（使用者 2026-10-19 定案） |
 | Dwarf / Dwarves / Dwarven | 矮人 | `Dwarven X` 照語感寫「矮人 X」或「矮人的 X」。任務名 `Dwarves and Doguns`＝矮人與 Doguns（使用者 2026-10-19 定案） |
 | Despermech | Despermech | 保留原文（介面與世界事件名都是原文） |
+| The Order of the Grook | Grook 魔法學院 | 任務名與台詞裡的組織名都用「學院」（「Grook 魔法學院」，句中可簡稱「學院」），不寫「Grook 修會」（使用者 2026-10-22 定案） |
 |  |  |
 
 **代名詞**：指生物（怪物、野獸、動物、亡魂、Dogun、綠皮族等）一律用「他／他們」，不用「牠」「它」。指物品、機器（機兵、魔像、機器人）、抽象事物的「它」不動（使用者 2026-10-19 定案）。
+例外：有明確性別的角色照原文（例：Ozoth＝她，原文是 she；原文只寫 it 的句子也跟著用「她」）（使用者 2026-10-22 定案）。
 
 **任務對話裡的素材名**：方括號裡的素材、原料名（`[{~} Carp Meat]` 之類）保留原文，跟多數一致（使用者 2026-10-19 定案）。
 
@@ -249,7 +251,8 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | the Canopy | 樹冠 | Fruma 的另一支反抗組織，住在巨樹上，內部以梟／鴿互稱。與 `Leaves in the Wind` 同一種命名法。章節名 `Amongst the Canopy`＝樹冠之間，不寫「林冠」 **(待討論)** |
 | Steel Feather | 鋼羽 | Quill 那一支。 **(待討論)** |
 | Steel Feather Ticket | Steel Feather 車票 | 物品名稱照車站名（The Steel Feather 是地名，留原文） |
-| changeling | 換形者 | 語料裡本來就這樣譯，補進表裡 |
+| changeling | 換形者 | 語料裡本來就這樣譯，補進表裡。簡中是「易形者」（見 GLOSSARY.zh-cn.md） |
+| Ranger（Mistwoods 的頭銜） | 巡林官 | Gikyo 的頭銜（Ranger of the Mistwoods）；`the Ranger {p}`＝「{p} 巡林官」。取代「遊俠」。怪物名牌裡的 Ranger（盜匪遊俠、冰霜遊俠等）不是這個頭銜，不適用（使用者 2026-10-22 定案） |
 | talisman | 護符 | 語料裡本來就這樣譯，補進表裡 |
 | Gravity's Monolith | 重力方尖碑 | Deraj 監獄的別稱，敘述裡當普通名詞用，不是地名 **(待討論)** |
 | Warden | 典獄長 | Deraj 監獄的 Oru。與 boss 稱號 `Warden of Wisdom`（智慧的看守者）分開 **(待討論)** |
