@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Scarred Springs",
-  "count": 136,
-  "translated": 136,
+  "count": 169,
+  "translated": 169,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -17,7 +17,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#001": {
-   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress, anyways. I suppose you've heard about the hot springs!",
+   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress. I suppose you've heard about the hot springs!",
    "dst": "おっ！やあ、観光客さん！まあ観光客だと思うんだ。地元の服装には見えないし。温泉のことを聞いて来たんでしょ！",
    "role": "desc",
    "kind": "dialogue",
@@ -97,7 +97,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#009": {
-   "src": "Hopefully you'll be able to visit before you have to go home then!",
+   "src": "Hopefully you'll be able to visit before you have to go home, then!",
    "dst": "帰る前に一度入りに来られるといいね！",
    "role": "desc",
    "kind": "dialogue",
@@ -217,8 +217,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#021": {
-   "src": "You go gather up the frogs! There's a pond to the you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "君はカエルを集めてきて！の方に放せる池があるから。それから…葉っぱ！湯船から拾い出して。それから…戻ってきたら、進み具合を確認しよう！",
+   "src": "You go gather up the frogs! There's a pond to the southwest you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
+   "dst": "君はカエルを集めてきて！南西の方に放せる池があるから。それから…葉っぱ！湯船から拾い出して。それから…戻ってきたら、進み具合を確認しよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -247,8 +247,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#024": {
-   "src": "Okay, there were five, and you're holding... Alright, so there's left to get!",
-   "dst": "よし、五匹いて、君が持ってるのは…よし、あと匹だね！",
+   "src": "Okay, there were five, and you're holding... Alright, so there's {~} left to get!",
+   "dst": "よし、五匹いて、君が持ってるのは…よし、あと {~} 匹だね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -267,7 +267,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#026": {
-   "src": "Woah! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, Ohhkay, okay, right!",
+   "src": "Whoa! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, ohhkay, okay, right!",
    "dst": "うわ！それは…確かにカエルの運び方ではあるね、はは！き―ぷっはははははっ！！その格好―わはは、最高！！お、おっけー、よし！",
    "role": "desc",
    "kind": "dialogue",
@@ -277,8 +277,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#027": {
-   "src": "There's a pond to the of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "Pishlas のの方に放せる池があるよ！さ、さあ行って、えへへ！集中しなきゃだし、君にカエルが―ひひははははっ！！",
+   "src": "There's a pond to the southwest of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
+   "dst": "Pishlas の南西に放せる池があるよ！さ、さあ行って、えへへ！集中しなきゃだし、君にカエルが―ひひははははっ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -527,8 +527,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#052": {
-   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. and should be enough to fill the order.",
-   "dst": "キノコは店のすぐ前、茶葉は丘の斜面の下です。とがあれば注文に足りるはずです。",
+   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. {~} mushrooms and {~} leaf batches should be enough to fill the order.",
+   "dst": "キノコは店のすぐ前、茶葉は丘の斜面の下です。キノコが{~}個、茶葉が{~}個あれば注文に足りるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1077,7 +1077,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#107": {
-   "src": "Phew, I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
+   "src": "Phew. I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
    "dst": "ふう、絶対また来るぞ。一日 Liff を狩って、夜は長湯…ああ、最高の日課だな…",
    "role": "desc",
    "kind": "dialogue",
@@ -1088,7 +1088,7 @@
   },
   "The Scarred Springs#108": {
    "src": "Maripe, hm. That boy has done good. Certainly couldn't have done better myself, at my age. He's got an eye for carpentry, for decoration, for the respect of his ancestors...",
-   "dst": "Maripe か、ふむ。あの子はよくやったよ。あたしがあの歳でも、これ以上はできなかったね。大工の目も、飾り付けの目も、先祖への敬意もある…",
+   "dst": "Maripe か、ふむ。あの子はよくやったよ。わしがあの歳でも、これ以上はできなかったね。大工の目も、飾り付けの目も、先祖への敬意もある…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1365,6 +1365,336 @@
    "stage": "Stage 12",
    "speaker": "Maripe",
    "source": "wiki"
+  },
+  "The Scarred Springs#136": {
+   "src": "You should release the Frogs at the pond in the back.",
+   "dst": "裏の池にカエルを放してあげよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#137": {
+   "src": "to release frogs",
+   "dst": "でカエルを放す",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#138": {
+   "src": "You should head back to clean up the pools now.",
+   "dst": "プールを掃除しにいこう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#139": {
+   "src": "{#} or {#} to pick up",
+   "dst": "{#} または {#} で拾う",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#140": {
+   "src": "You should head back to Maripe.",
+   "dst": "Maripe の所に戻ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#141": {
+   "src": "Hello to you, too.",
+   "dst": "こんにちは。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#142": {
+   "src": "Yes indeed. I'm far from the first to run the teahouse, though.",
+   "dst": "その通りです。とはいえ、この茶屋を経営しているのは私が初めてというわけではありません。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#143": {
+   "src": "My family has always been in the business of running this place- I do believe this building has stood since the very beginning of our written history.",
+   "dst": "私の家族は昔からこの場所を経営してきました。この建物は、記録に残る歴史が始まった当初から建っていたのだと私は信じています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#144": {
+   "src": "Of course, it is only right that someone take in our parents' footsteps and continue the work. Not all my siblings were enthused with the job, but I've taken to it quite smoothly, I think.",
+   "dst": "もちろん、誰かが両親の足跡を継ぎ、その仕事を続けていくのは当然のことです。兄弟姉妹全員がその仕事に熱意を持っていたわけではありませんが、私はかなりスムーズにその仕事に馴染めたと思います。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#145": {
+   "src": "It would have been unthinkable to leave the teahouse empty. After all, there have been no great tragedies preventing me from putting my attention to the work.",
+   "dst": "茶屋を空っぽのままにしておくなど考えられないことだった。何しろ、私がこの仕事に専念することを妨げるような大きな悲劇は、何一つ起きていなかったのだから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#146": {
+   "src": "I do hope they all have found their different pursuits to be as fulfilling as I find following in my family's footsteps to be.",
+   "dst": "彼ら全員がそれぞれの道において、私が家族の足跡をたどることと同じくらい充実感を見出せていることを心から願っています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#147": {
+   "src": "A good question. Mine is far from the only teahouse in the forest, after all. All of them have their own specialties... Sampling from different houses is fantastic for gaining new ideas.",
+   "dst": "いい質問ですね。何しろ、森には私の店以外にもたくさんの茶屋がありますから。どの店にもそれぞれの名物がありますし……いろんな店で味見をするのは、新しいアイデアを得るのに最高ですよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#148": {
+   "src": "I bother by the most traditional methods- there's a particular type of tea leaf I grow here, of course, but my other chief brewing ingredient consists of local mushrooms.",
+   "dst": "私は最も伝統的な方法で茶を作っています。もちろん、ここで栽培している特定の種類の茶葉もありますが、もう一つの主な材料は地元産のキノコです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#149": {
+   "src": "Many tourists have expressed disbelief at this idea- apparently, mushrooms don't sound palateable or usable for tea, but that isn't true!",
+   "dst": "多くの観光客がこのアイデアに懐疑的な反応を示しています。どうやら、キノコは美味しそうにも思えないし、お茶の材料としても使えそうにないようですが、それは間違いです！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#150": {
+   "src": "I think it's simply the idea that some mushrooms are poisonous that warns people away, but I assure you, if what I cultivated was poison I wouldn't be alive to provide it.",
+   "dst": "単に「キノコの中には毒のあるものもある」という認識が、人々を遠ざけているのだと思いますが、断言します。もし私が育てたものが毒だったなら、今こうしてそれを提供できるほど生きてはいなかったでしょう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#151": {
+   "src": "Other teahouses prefer different specialties. I have, for example, had some fantastic ginger tea from this small village by a manor...but I stand by the most traditional methods.",
+   "dst": "他の茶屋では、それぞれ異なる特産品を扱っています。例えば、ある荘園のそばにある小さな村で、素晴らしいジンジャーティーを飲んだことがあります……しかし、私はやはり最も伝統的な製法にこだわっています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#152": {
+   "src": "There is a tea for every occasion, so I don't believe there is a best one to choose always. However, there is a worst tea. There is...certainly...a worst tea.",
+   "dst": "どんな場面にもふさわしいお茶があるので、常に「これ」という最高のお茶があるとは思いません。しかし、最悪のお茶は存在します。確かに……最悪のお茶は存在します。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#153": {
+   "src": "I still have the nightmares...",
+   "dst": "今でも悪夢を見るんだ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#154": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "ちょっと気になっているんですが、この辺のお茶についてどう思う？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#155": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "ちょっと気になっているんですが、この辺のお茶についてどう思う？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#156": {
+   "src": "Maripe sent me. He's reopening the hot springs and needs to stock the teahouse with a bulk order.",
+   "dst": "Maripe が私を遣わしました。彼は温泉を再開する予定で、茶屋に大量注文の商品を仕入れる必要があるそうです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#157": {
+   "src": "You should bring the ingredients back to Marseled.",
+   "dst": "Marseled の所に材料を持ち帰ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#158": {
+   "src": "Job's done- The cockroaches are dead, and I have the ingredients for you.",
+   "dst": "作業は終わったよ。ゴキブリは全滅したし、あなたに持ってくるべき材料も用意したよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 9",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#159": {
+   "src": "Plenty of papers have been posted over, and there's a weathered old advertisement in the middle. Surely it's lost relevance by now, so...",
+   "dst": "その上にはたくさんの紙が貼り付けられていて、真ん中には色あせた古い広告が貼ってある。今となっては、もう意味をなさなくなっているに違いないから……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#160": {
+   "src": "There. That should be a good spot for it. How much effort did Maripe put into the poster? It really stands out from the rest of the notices.",
+   "dst": "ほら。そこならちょうどいい場所だろう。 Maripe はあのポスターにどれほど力を入れたんだろう？他の告知とは一線を画している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#161": {
+   "src": "There isn't a world that exists where someone doesn't see this advertisement.",
+   "dst": "この広告を誰一人として目にしないような世界など存在しない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#162": {
+   "src": "You're now tracking the Lone Person at [-{~}, {~}, -{~}]!",
+   "dst": "{c2}一人っきりの人{/}([-{~}, {~}, -{~}])を追跡中！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#163": {
+   "src": "You're now tracking the Group at [-{~}, {~}, -{~}]!",
+   "dst": "この{c2}グループ{/}([-{~}, {~}, -{~}])を追跡中！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#164": {
+   "src": "That's everyone! You may as well head back and join in on the fun.",
+   "dst": "これで全員だ！さあ、戻って一緒に楽しもう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#165": {
+   "src": "There's so many people here! It'd be a shame to not talk to a few of them.",
+   "dst": "ここには本当にたくさんの人がいる！何人かと話さないと、もったいない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#166": {
+   "src": "Maripe's waving in your general direction. He must've calmed down enough to talk coherently now.",
+   "dst": "Maripe が君の方に向かって手を振っている。もう落ち着いて、まともに話せるようになったんだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#167": {
+   "src": "Surely they would be. You've done a great job.",
+   "dst": "きっとそうだろう。君はよくやった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 12",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#168": {
+   "src": "It's really all here again. It really is. I...I did this. All my work's finally born fruit!",
+   "dst": "本当に、またすべてがここにある。本当にそうだ。私…私が成し遂げたんだ。私のこれまでの努力が、ついに実を結んだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "Maripe",
+   "source": "captured.json"
   }
  }
 }

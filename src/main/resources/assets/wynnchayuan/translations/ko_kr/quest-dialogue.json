@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23698,
-  "translated": 23401,
+  "count": 23731,
+  "translated": 23434,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -211375,7 +211375,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#001": {
-   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress, anyways. I suppose you've heard about the hot springs!",
+   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress. I suppose you've heard about the hot springs!",
    "dst": "오! 안녕하세요, 관광객님! 아무튼 관광객이시겠죠. 옷차림이 이 동네 사람 같지가 않으니까요. 온천 얘기 듣고 오셨나 봐요!",
    "role": "desc",
    "kind": "dialogue",
@@ -211455,7 +211455,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#009": {
-   "src": "Hopefully you'll be able to visit before you have to go home then!",
+   "src": "Hopefully you'll be able to visit before you have to go home, then!",
    "dst": "돌아가시기 전에 한번 들르실 수 있으면 좋겠네요!",
    "role": "desc",
    "kind": "dialogue",
@@ -211575,8 +211575,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#021": {
-   "src": "You go gather up the frogs! There's a pond to the you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "개구리들을 모아 주세요! 저쪽에 놓아줄 연못이 있어요. 그다음엔... 낙엽! 탕에서 건져 내 주세요. 그다음... 그다음 돌아오시면 진행 상황을 봐요!",
+   "src": "You go gather up the frogs! There's a pond to the southwest you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
+   "dst": "개구리들을 모아 주세요! 남서쪽에 놓아줄 연못이 있어요. 그다음엔... 낙엽! 탕에서 건져 내 주세요. 그다음... 그다음 돌아오시면 진행 상황을 봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211605,8 +211605,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#024": {
-   "src": "Okay, there were five, and you're holding... Alright, so there's left to get!",
-   "dst": "좋아요, 다섯 마리였고 지금 들고 계신 게... 그럼 남은 걸 잡아 주세요!",
+   "src": "Okay, there were five, and you're holding... Alright, so there's {~} left to get!",
+   "dst": "좋아요, 다섯 마리였고 지금 들고 계신 게... 그럼 남은 {~}마리를 잡아 주세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211625,7 +211625,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#026": {
-   "src": "Woah! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, Ohhkay, okay, right!",
+   "src": "Whoa! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, ohhkay, okay, right!",
    "dst": "우와! 그거... 그것도 개구리 나르는 방법이긴 하네요, 하하! 푸- 푸흐하하하하!! 그 모습- 와하하, 최고예요!! 아, 좋아요, 좋아, 알겠어요!",
    "role": "desc",
    "kind": "dialogue",
@@ -211635,8 +211635,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#027": {
-   "src": "There's a pond to the of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "Pishlas 쪽에 놓아줄 연못이 있어요! 자, 어, 얼른 가세요, 에헤헤! 집중해야 하는데 몸에 개구리가- 히히히하하하하!!",
+   "src": "There's a pond to the southwest of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
+   "dst": "Pishlas 남서쪽에 놓아줄 연못이 있어요! 자, 어, 얼른 가세요, 에헤헤! 집중해야 하는데 몸에 개구리가- 히히히하하하하!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211885,8 +211885,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#052": {
-   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. and should be enough to fill the order.",
-   "dst": "버섯은 바로 앞에, 찻잎은 언덕 비탈 아래에 있어요. 그거면 주문을 채우기 충분할 거예요.",
+   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. {~} mushrooms and {~} leaf batches should be enough to fill the order.",
+   "dst": "버섯은 바로 앞에, 찻잎은 언덕 비탈 아래에 있어요. 버섯 {~}개와 찻잎 {~}묶음이면 주문을 채우기 충분할 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -212435,7 +212435,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#107": {
-   "src": "Phew, I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
+   "src": "Phew. I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
    "dst": "휴, 여긴 꼭 다시 올 거야. 온종일 Liff 사냥하고 밤새 몸 담그고... 오, 그거 참 만족스러운 일과겠는데...",
    "role": "desc",
    "kind": "dialogue",
@@ -212723,6 +212723,336 @@
    "stage": "Stage 12",
    "speaker": "Maripe",
    "source": "wiki"
+  },
+  "The Scarred Springs#136": {
+   "src": "You should release the Frogs at the pond in the back.",
+   "dst": "뒤쪽 연못에 개구리를 풀어 줘야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#137": {
+   "src": "to release frogs",
+   "dst": "개구리 풀어 주기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#138": {
+   "src": "You should head back to clean up the pools now.",
+   "dst": "이제 돌아가서 탕을 청소해야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#139": {
+   "src": "{#} or {#} to pick up",
+   "dst": "{#} 또는 {#}로 줍기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#140": {
+   "src": "You should head back to Maripe.",
+   "dst": "Maripe에게 돌아가야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#141": {
+   "src": "Hello to you, too.",
+   "dst": "네, 안녕하세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#142": {
+   "src": "Yes indeed. I'm far from the first to run the teahouse, though.",
+   "dst": "네, 맞아요. 하지만 이 찻집을 운영한 게 제가 처음은 전혀 아니에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#143": {
+   "src": "My family has always been in the business of running this place- I do believe this building has stood since the very beginning of our written history.",
+   "dst": "저희 가족은 대대로 이곳을 운영해 왔어요- 이 건물은 기록된 역사가 시작될 때부터 서 있었던 걸로 알아요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#144": {
+   "src": "Of course, it is only right that someone take in our parents' footsteps and continue the work. Not all my siblings were enthused with the job, but I've taken to it quite smoothly, I think.",
+   "dst": "물론 누군가는 부모님의 발자취를 따라 일을 이어 가는 게 도리죠. 형제자매가 모두 이 일에 열의가 있었던 건 아니지만, 저는 꽤 순조롭게 적응한 것 같아요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#145": {
+   "src": "It would have been unthinkable to leave the teahouse empty. After all, there have been no great tragedies preventing me from putting my attention to the work.",
+   "dst": "찻집을 비워 둔다는 건 상상도 할 수 없는 일이었죠. 어쨌든 제가 일에 전념하지 못할 만큼 큰 비극이 있었던 것도 아니니까요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#146": {
+   "src": "I do hope they all have found their different pursuits to be as fulfilling as I find following in my family's footsteps to be.",
+   "dst": "다들 각자의 길에서, 제가 가족의 발자취를 따르며 느끼는 만큼의 보람을 찾았기를 진심으로 바라요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#147": {
+   "src": "A good question. Mine is far from the only teahouse in the forest, after all. All of them have their own specialties... Sampling from different houses is fantastic for gaining new ideas.",
+   "dst": "좋은 질문이에요. 숲에 찻집이 제 가게만 있는 것도 아니니까요. 가게마다 저마다의 특색이 있죠... 여러 가게의 차를 맛보는 건 새로운 아이디어를 얻는 데 아주 좋아요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#148": {
+   "src": "I bother by the most traditional methods- there's a particular type of tea leaf I grow here, of course, but my other chief brewing ingredient consists of local mushrooms.",
+   "dst": "저는 가장 전통적인 방식을 고수해요- 물론 여기서 기르는 특별한 찻잎도 있지만, 또 하나의 주재료는 이 지역 버섯이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#149": {
+   "src": "Many tourists have expressed disbelief at this idea- apparently, mushrooms don't sound palateable or usable for tea, but that isn't true!",
+   "dst": "많은 관광객이 이 얘기를 듣고 믿기 어렵다고 했어요- 버섯은 맛있을 것 같지도, 차에 쓸 수 있을 것 같지도 않은가 봐요. 하지만 그렇지 않아요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#150": {
+   "src": "I think it's simply the idea that some mushrooms are poisonous that warns people away, but I assure you, if what I cultivated was poison I wouldn't be alive to provide it.",
+   "dst": "그냥 독버섯도 있다는 생각 때문에 사람들이 꺼리는 것 같은데, 장담하건대 제가 기르는 게 독이었다면 저는 이걸 내놓을 만큼 살아 있지 못했을 거예요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#151": {
+   "src": "Other teahouses prefer different specialties. I have, for example, had some fantastic ginger tea from this small village by a manor...but I stand by the most traditional methods.",
+   "dst": "다른 찻집들은 다른 특색을 선호해요. 예를 들어 어느 저택 근처 작은 마을에서 아주 훌륭한 생강차를 마셔 본 적이 있죠... 하지만 저는 가장 전통적인 방식을 고수해요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#152": {
+   "src": "There is a tea for every occasion, so I don't believe there is a best one to choose always. However, there is a worst tea. There is...certainly...a worst tea.",
+   "dst": "상황마다 어울리는 차가 있으니, 언제나 최고인 차가 있다고는 생각하지 않아요. 하지만 최악의 차는 있어요. 분명히... 최악의 차는... 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#153": {
+   "src": "I still have the nightmares...",
+   "dst": "아직도 악몽을 꿔요...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#154": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "궁금해서 그러는데. 이 근처 차들은 어떻게 생각해?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#155": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "궁금해서 그러는데. 이 근처 차들은 어떻게 생각해?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#156": {
+   "src": "Maripe sent me. He's reopening the hot springs and needs to stock the teahouse with a bulk order.",
+   "dst": "Maripe가 보내서 왔어. 온천을 다시 연다고 해서, 찻집에 들일 물건을 대량으로 주문해야 한대.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#157": {
+   "src": "You should bring the ingredients back to Marseled.",
+   "dst": "재료를 Marseled에게 가져가야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#158": {
+   "src": "Job's done- The cockroaches are dead, and I have the ingredients for you.",
+   "dst": "다 끝났어- 바퀴벌레는 다 죽었고, 재료도 가져왔어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 9",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#159": {
+   "src": "Plenty of papers have been posted over, and there's a weathered old advertisement in the middle. Surely it's lost relevance by now, so...",
+   "dst": "종이가 겹겹이 붙어 있고, 한가운데에는 낡아 빠진 오래된 광고가 있다. 이제는 분명 쓸모가 없어졌을 테니...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#160": {
+   "src": "There. That should be a good spot for it. How much effort did Maripe put into the poster? It really stands out from the rest of the notices.",
+   "dst": "됐다. 여기면 좋은 자리겠지. Maripe는 이 포스터에 얼마나 공을 들인 걸까? 다른 공고들 사이에서 정말 눈에 띈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#161": {
+   "src": "There isn't a world that exists where someone doesn't see this advertisement.",
+   "dst": "이 광고를 아무도 못 보는 세상은 존재하지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#162": {
+   "src": "You're now tracking the Lone Person at [-{~}, {~}, -{~}]!",
+   "dst": "이제 [-{~}, {~}, -{~}]의 {c2}혼자 있는 사람{/}을 추적합니다!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#163": {
+   "src": "You're now tracking the Group at [-{~}, {~}, -{~}]!",
+   "dst": "이제 [-{~}, {~}, -{~}]의 {c2}무리{/}를 추적합니다!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#164": {
+   "src": "That's everyone! You may as well head back and join in on the fun.",
+   "dst": "이걸로 전부다! 이제 돌아가서 같이 즐기는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#165": {
+   "src": "There's so many people here! It'd be a shame to not talk to a few of them.",
+   "dst": "여기 사람이 정말 많다! 몇 명이랑은 얘기해 보지 않으면 아깝겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#166": {
+   "src": "Maripe's waving in your general direction. He must've calmed down enough to talk coherently now.",
+   "dst": "Maripe가 대충 이쪽을 향해 손을 흔들고 있다. 이제 제대로 말할 수 있을 만큼 진정했나 보다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#167": {
+   "src": "Surely they would be. You've done a great job.",
+   "dst": "분명 자랑스러워하실 거야. 정말 잘 해냈어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 12",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#168": {
+   "src": "It's really all here again. It really is. I...I did this. All my work's finally born fruit!",
+   "dst": "정말 전부 다시 여기 있어요. 정말로요. 제가... 제가 해냈어요. 제 노력이 드디어 결실을 맺었어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "Maripe",
+   "source": "captured.json"
   },
   "The Sewers of Ragni#000": {
    "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",

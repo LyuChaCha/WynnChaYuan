@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23698,
-  "translated": 23401,
+  "count": 23731,
+  "translated": 23434,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -211375,7 +211375,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#001": {
-   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress, anyways. I suppose you've heard about the hot springs!",
+   "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress. I suppose you've heard about the hot springs!",
    "dst": "О! Ну, привет, турист! Думаю, ты турист - одежда-то не здешняя. Наверное, до тебя дошли слухи о горячих источниках!",
    "role": "desc",
    "kind": "dialogue",
@@ -211455,7 +211455,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#009": {
-   "src": "Hopefully you'll be able to visit before you have to go home then!",
+   "src": "Hopefully you'll be able to visit before you have to go home, then!",
    "dst": "Надеюсь, ты успеешь попариться до отъезда домой!",
    "role": "desc",
    "kind": "dialogue",
@@ -211575,8 +211575,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#021": {
-   "src": "You go gather up the frogs! There's a pond to the you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "Иди собирай лягушек! Есть пруд к отсюда, туда их и отпустишь. Потом… листья! Вылови их из купален. Потом… потом возвращайся, и посмотрим, что дальше!",
+   "src": "You go gather up the frogs! There's a pond to the southwest you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
+   "dst": "Иди собирай лягушек! Есть пруд к юго-западу отсюда, туда их и отпустишь. Потом… листья! Вылови их из купален. Потом… потом возвращайся, и посмотрим, что дальше!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211605,8 +211605,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#024": {
-   "src": "Okay, there were five, and you're holding... Alright, so there's left to get!",
-   "dst": "Так, их было пять, а у тебя в руках… Ладно, осталось поймать!",
+   "src": "Okay, there were five, and you're holding... Alright, so there's {~} left to get!",
+   "dst": "Так, их было пять, а у тебя в руках… Ладно, осталось поймать {~}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211625,7 +211625,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#026": {
-   "src": "Woah! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, Ohhkay, okay, right!",
+   "src": "Whoa! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, ohhkay, okay, right!",
    "dst": "Ого! Ну… ну и способ носить лягушек, ха-ха! Т- Пфффха-ха-ха!! Видок у тебя- Ва-ха-ха, шедевр!! Ох, ла-адно, всё!",
    "role": "desc",
    "kind": "dialogue",
@@ -211635,8 +211635,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#027": {
-   "src": "There's a pond to the of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "Есть пруд к от Pishlas, туда их и отпусти! А теперь и-иди отсюда, хе-хе! Мне надо сосредоточиться, а на тебе лягушки- хи-хи-ха-ха-ха!!",
+   "src": "There's a pond to the southwest of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
+   "dst": "Есть пруд к юго-западу от Pishlas, туда их и отпусти! А теперь и-иди отсюда, хе-хе! Мне надо сосредоточиться, а на тебе лягушки- хи-хи-ха-ха-ха!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -211885,8 +211885,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#052": {
-   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. and should be enough to fill the order.",
-   "dst": "Грибы прямо у входа, а листья - вниз по склону. и должно хватить на заказ.",
+   "src": "The mushrooms are just out front, and the leaves are down the side of the hill. {~} mushrooms and {~} leaf batches should be enough to fill the order.",
+   "dst": "Грибы прямо у входа, а листья - вниз по склону. {~} грибов и {~} связок листьев должно хватить на заказ.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -212435,7 +212435,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#107": {
-   "src": "Phew, I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
+   "src": "Phew. I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
    "dst": "Фух, сюда я точно ещё вернусь. Долгий день охоты на Liff, а потом долгая ночь в воде… О, какой приятный распорядок…",
    "role": "desc",
    "kind": "dialogue",
@@ -212723,6 +212723,336 @@
    "stage": "Stage 12",
    "speaker": "Maripe",
    "source": "wiki"
+  },
+  "The Scarred Springs#136": {
+   "src": "You should release the Frogs at the pond in the back.",
+   "dst": "Стоит выпустить лягушек в пруд позади.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#137": {
+   "src": "to release frogs",
+   "dst": "чтобы выпустить лягушек",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#138": {
+   "src": "You should head back to clean up the pools now.",
+   "dst": "Теперь стоит вернуться и почистить купальни.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#139": {
+   "src": "{#} or {#} to pick up",
+   "dst": "{#} или {#}, чтобы подобрать",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#140": {
+   "src": "You should head back to Maripe.",
+   "dst": "Стоит вернуться к Maripe.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#141": {
+   "src": "Hello to you, too.",
+   "dst": "И вам здравствуйте.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#142": {
+   "src": "Yes indeed. I'm far from the first to run the teahouse, though.",
+   "dst": "Именно так. Хотя я далеко не первая, кто держит этот чайный домик.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#143": {
+   "src": "My family has always been in the business of running this place- I do believe this building has stood since the very beginning of our written history.",
+   "dst": "Моя семья всегда держала это место - думаю, это здание стоит здесь с самого начала нашей письменной истории.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#144": {
+   "src": "Of course, it is only right that someone take in our parents' footsteps and continue the work. Not all my siblings were enthused with the job, but I've taken to it quite smoothly, I think.",
+   "dst": "Разумеется, кто-то должен пойти по стопам родителей и продолжить дело. Не все мои братья и сёстры горели этой работой, но я, думаю, освоилась вполне легко.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#145": {
+   "src": "It would have been unthinkable to leave the teahouse empty. After all, there have been no great tragedies preventing me from putting my attention to the work.",
+   "dst": "Оставить чайный домик пустым было бы немыслимо. В конце концов, никакие великие трагедии не мешали мне посвятить себя делу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#146": {
+   "src": "I do hope they all have found their different pursuits to be as fulfilling as I find following in my family's footsteps to be.",
+   "dst": "Очень надеюсь, что каждый из них нашёл в своём деле столько же радости, сколько я нахожу, следуя по стопам семьи.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#147": {
+   "src": "A good question. Mine is far from the only teahouse in the forest, after all. All of them have their own specialties... Sampling from different houses is fantastic for gaining new ideas.",
+   "dst": "Хороший вопрос. Мой чайный домик в лесу далеко не единственный. У каждого свои особенности… Пробовать чай в разных домах - прекрасный способ набраться новых идей.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#148": {
+   "src": "I bother by the most traditional methods- there's a particular type of tea leaf I grow here, of course, but my other chief brewing ingredient consists of local mushrooms.",
+   "dst": "Я придерживаюсь самых традиционных методов - конечно, я выращиваю здесь особый сорт чайного листа, но второй мой главный ингредиент для заварки - местные грибы.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#149": {
+   "src": "Many tourists have expressed disbelief at this idea- apparently, mushrooms don't sound palateable or usable for tea, but that isn't true!",
+   "dst": "Многие туристы не верят в эту идею - видимо, грибы кажутся им невкусными и непригодными для чая, но это не так!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#150": {
+   "src": "I think it's simply the idea that some mushrooms are poisonous that warns people away, but I assure you, if what I cultivated was poison I wouldn't be alive to provide it.",
+   "dst": "Думаю, людей отпугивает сама мысль, что некоторые грибы ядовиты, но уверяю вас: будь то, что я выращиваю, ядом, я бы не дожила до того, чтобы его подавать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#151": {
+   "src": "Other teahouses prefer different specialties. I have, for example, had some fantastic ginger tea from this small village by a manor...but I stand by the most traditional methods.",
+   "dst": "Другие чайные домики предпочитают иное. Например, я пробовала чудесный имбирный чай в одной маленькой деревне у поместья… но я верна самым традиционным методам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#152": {
+   "src": "There is a tea for every occasion, so I don't believe there is a best one to choose always. However, there is a worst tea. There is...certainly...a worst tea.",
+   "dst": "Для каждого случая свой чай, так что не думаю, что есть один, который всегда лучший. Зато есть худший чай. Есть… определённо… худший чай.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#153": {
+   "src": "I still have the nightmares...",
+   "dst": "Мне до сих пор снятся кошмары…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Marseled",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#154": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "Мне любопытно. Что вы думаете о здешних чаях?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#155": {
+   "src": "I'm curious. What's your opinion on the teas around here?",
+   "dst": "Мне любопытно. Что вы думаете о здешних чаях?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#156": {
+   "src": "Maripe sent me. He's reopening the hot springs and needs to stock the teahouse with a bulk order.",
+   "dst": "Меня прислал Maripe. Он снова открывает горячие источники, и ему нужно закупить для чайной большую партию.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#157": {
+   "src": "You should bring the ingredients back to Marseled.",
+   "dst": "Стоит отнести ингредиенты Marseled.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#158": {
+   "src": "Job's done- The cockroaches are dead, and I have the ingredients for you.",
+   "dst": "Готово - тараканы мертвы, а ингредиенты у меня.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 9",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#159": {
+   "src": "Plenty of papers have been posted over, and there's a weathered old advertisement in the middle. Surely it's lost relevance by now, so...",
+   "dst": "Здесь наклеено множество бумаг, а посередине - старое выцветшее объявление. Наверняка оно уже давно неактуально, так что…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#160": {
+   "src": "There. That should be a good spot for it. How much effort did Maripe put into the poster? It really stands out from the rest of the notices.",
+   "dst": "Вот так. Хорошее место для него. Сколько же сил Maripe вложил в этот плакат? Он и правда выделяется среди остальных объявлений.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#161": {
+   "src": "There isn't a world that exists where someone doesn't see this advertisement.",
+   "dst": "Нет такого мира, в котором это объявление никто бы не заметил.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#162": {
+   "src": "You're now tracking the Lone Person at [-{~}, {~}, -{~}]!",
+   "dst": "Теперь ты отслеживаешь {c2}одинокого человека{/} в [-{~}, {~}, -{~}]!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#163": {
+   "src": "You're now tracking the Group at [-{~}, {~}, -{~}]!",
+   "dst": "Теперь ты отслеживаешь {c2}группу{/} в [-{~}, {~}, -{~}]!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#164": {
+   "src": "That's everyone! You may as well head back and join in on the fun.",
+   "dst": "Это все! Можно и вернуться, чтобы присоединиться к веселью.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#165": {
+   "src": "There's so many people here! It'd be a shame to not talk to a few of them.",
+   "dst": "Сколько тут народу! Было бы жаль не поговорить хотя бы с некоторыми.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#166": {
+   "src": "Maripe's waving in your general direction. He must've calmed down enough to talk coherently now.",
+   "dst": "Maripe машет примерно в твою сторону. Похоже, он уже достаточно успокоился, чтобы говорить связно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#167": {
+   "src": "Surely they would be. You've done a great job.",
+   "dst": "Конечно, гордились бы. Ты отлично потрудился.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "Stage 12",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Scarred Springs#168": {
+   "src": "It's really all here again. It really is. I...I did this. All my work's finally born fruit!",
+   "dst": "Всё и правда снова здесь. Правда. Я… я это сделал. Весь мой труд наконец принёс плоды!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "Maripe",
+   "source": "captured.json"
   },
   "The Sewers of Ragni#000": {
    "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
