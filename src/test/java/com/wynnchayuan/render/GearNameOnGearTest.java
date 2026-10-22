@@ -133,6 +133,13 @@ public final class GearNameOnGearTest {
             }
             rs.loadAll(real);
             rs.setNameMode(CollectorConfig.ItemNames.BOTH);
+            // 按鈕的說明：語料收了（攤平成一句的鍵）就要翻出來，名稱留原文不能把它拖回英文
+            String desc = rs.lookupExact(DESC_1 + " " + DESC_2);
+            List<String> notes = shown(button("Return"), rs);
+            String rest = String.join(" ", notes.subList(1, notes.size()));
+            check("出貨語料 " + lang + "：按鈕的說明收在語料裡", desc != null);
+            check("★ 出貨語料 " + lang + "：按鈕的說明翻出來了（實際 " + rest + "）",
+                    desc != null && !rest.contains(DESC_1) && !rest.contains(DESC_2));
             List<String> leaked = new ArrayList<>();
             List<String> lost = new ArrayList<>();
             int names = 0;
