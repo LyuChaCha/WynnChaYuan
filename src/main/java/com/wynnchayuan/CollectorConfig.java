@@ -93,6 +93,12 @@ public final class CollectorConfig {
     private boolean translateTitles = true;
 
     /**
+     * 總開關。關掉時譯文整份不載（見 {@code WynnChaYuan#loadLayers}），遊戲裡的字全部
+     * 回到原文；模組自己的介面照介面語言，不受影響。不必重開遊戲，切換當下就生效。
+     */
+    private boolean translationsEnabled = true;
+
+    /**
      * 右上那一欄（任務追蹤、每日目標、世界事件、Lootrun、團隊）怎麼翻。
      *
      * <ul>
@@ -552,6 +558,16 @@ public final class CollectorConfig {
         translateTitles = !translateTitles;
         save();
         return translateTitles;
+    }
+
+    public boolean translationsEnabled() {
+        return translationsEnabled;
+    }
+
+    public boolean toggleTranslations() {
+        translationsEnabled = !translationsEnabled;
+        save();
+        return translationsEnabled;
     }
 
     /** 見 {@link #trackerMode}。 */
@@ -1501,6 +1517,7 @@ public final class CollectorConfig {
         wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
         wynntilsFps = bool(o, "wynntilsFps", wynntilsFps);
         translateTitles = bool(o, "translateTitles", translateTitles);
+        translationsEnabled = bool(o, "translationsEnabled", translationsEnabled);
         // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
         // 三段模式。舊設定檔關掉的人維持關掉，其餘照新的預設（就地取代）。
         DialogueMode tracker = enumOf(o, "trackerMode", DialogueMode.class);
@@ -1767,6 +1784,7 @@ public final class CollectorConfig {
             o.addProperty("choiceMode", choiceMode.name());
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
+            o.addProperty("translationsEnabled", translationsEnabled);
             o.addProperty("trackerMode", trackerMode.name());
             o.addProperty("translateObjectives", translateObjectives);
             o.addProperty("translateScoreboard", translateScoreboard);
