@@ -1,11 +1,32 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.3_3",
+ "latest": "1.0.3_4",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.3_4": {
+   "headline": "1.0.3_4: the translation panel lines up with the original",
+   "items": [
+    "Fixed: the separate translation panel no longer overlaps the original tooltip, and its first row lines up with the original's, including tall item tooltips that Wynntils scales or Wynnventory moves aside.",
+    "Translations: Simplified Chinese quest dialogue reread against the story guide, item lore corrected in every language, Japanese, Korean, Spanish and Russian quest lines filled in, colours fixed on the bomb timer bars, and the new raid gambit and resource bar lines."
+   ],
+   "zh_tw": {
+    "headline": "1.0.3_4：譯文面板跟原文對齊",
+    "items": [
+     "修正：另開的譯文面板不再壓到原文，第一行也跟原文對齊；太高、被 Wynntils 縮放或被 Wynnventory 推開的物品說明也一樣。",
+     "譯文：簡中任務對話照故事導讀重新校對，各語言的物品 lore 修正錯譯，日韓西俄補上任務台詞，炸彈計時列的顏色修正，補上討伐戰賭注與收集資源的句子。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.3_4：译文面板与原文对齐",
+    "items": [
+     "修正：单独的译文面板不再压到原文，第一行也与原文对齐；太高、被 Wynntils 缩放或被 Wynnventory 推开的物品说明也一样。",
+     "译文：简中任务对话按故事导读重新校对，各语言的物品 lore 修正错译，日韩西俄补上任务台词，炸弹计时条的颜色修正，补上讨伐战赌注与收集资源的句子。"
+    ]
+   }
+  },
   "1.0.3_3": {
    "headline": "1.0.3_3: Lootrun trial and mission card titles",
    "items": [
