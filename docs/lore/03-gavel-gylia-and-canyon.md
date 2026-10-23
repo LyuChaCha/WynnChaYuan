@@ -1,6 +1,6 @@
 # 第三章　Gavel 中部與東部：Gylia 平原、Cinfras 與失落者峽谷
 
-> **劇透提醒**：本章完整劇透以下任務與內容的結局——《Gerts 大饑荒》第一、二部、《紫與藍》、《???》、《謀殺疑雲》、《墜落的貨運》、《獲取護照》、《危難航程》、《大處著眼》、《Gavel 的英雄》、《王位試煉》、《峽谷嚮導》、《迷途之人》、《將軍下令》、《Qira 蜂巢》、《踏入道場》、《Thanos 儲藏庫》、《谷底買賣》、《隱匿之城》、《礦坑金絲雀》、《不得安息》、《莫名其牛》、《臨界點》（含峽谷巨像討伐戰的前情）、WynnExcavation A～D 號遺址、《傳說神殿》、《峽谷兀鷲》、《使者》第一、二部、《羽毛紛飛》第一、二部，以及 Gylia 平原與失落者峽谷的全部隱藏探索點。
+> **劇透提醒**：本章完整劇透以下任務與內容的結局——《Gerts 大饑荒》第一、二部、《紫與藍》、《???》、《謀殺疑雲》、《墜落的貨運》、《獲取護照》、《危難航程》、《大處著眼》、《Gavel 的英雄》、《王位試煉》、《峽谷嚮導》、《迷途之人》、《將軍下令》、《Qira 蜂巢》、《踏入道場》、《Thanos 儲藏庫》、《谷底買賣》、《隱匿之城》、第四輪補入的《掠奪者的買路錢》、《礦坑金絲雀》、《不得安息》、《莫名其牛》、《臨界點》（含峽谷巨像討伐戰的前情）、WynnExcavation A～D 號遺址、《傳說神殿》、《峽谷兀鷲》、《使者》第一、二部、《羽毛紛飛》第一、二部，以及 Gylia 平原與失落者峽谷的全部隱藏探索點。
 
 ---
 
@@ -310,6 +310,37 @@ Gavel 最後幾條活著的龍之一 **Ozoth** 突然闖進 Thanos 的金庫、�
 
 出處：任務《Thanos 儲藏庫》《谷底買賣》《臨界點》；隱藏探索點 Thanos 軍械庫；wiki〈[Thanos](https://wynncraft.wiki.gg/wiki/Thanos)〉、〈[Ozoth](https://wynncraft.wiki.gg/wiki/Ozoth)〉
 
+#### 《掠奪者的買路錢》（第四輪補）
+
+Lv. 83。峽谷西側往 Thesead 的路上有一道門，守門人 **Norsten** 平常客客氣氣，這天卻對玩家破口大罵：
+
+> 「醜得要命，永遠擋在路上，像蟲一樣在我們的行省裡鑽來鑽去！你們不是英雄，你們是冒牌貨！！」
+> 「我的過路費就定為……放棄你那可笑的英雄扮演……外加你身上所有的錢。很公道吧？」（掠奪者的買路錢）
+
+他爺爺 **Peli** 找了他一個禮拜，被他罵成「乾癟的老水果」。Peli 抬頭看見懸崖上的塔，臉色大變：「峽谷的禍害……他真的回來了嗎？」Norsten 隨即大笑承認——說話的根本不是他：
+
+> 「過了這麼久，我的名聲居然還走在我前面！！沒錯，老頭，我把你孫子變成我的傀儡了！」
+> 「一百五十年來我一直靠竊取別人的生命力維持我的美貌，你孫子也不會例外。」（掠奪者的買路錢）
+
+塔上的巫師 **Dramele** 透過水晶球操縱 Norsten（wiki），還自誇「一整支軍隊都倒在我的魔法之下！那些強盜向我的威儀進貢、聽我的號令！」——峽谷裡的強盜營地，是他的私兵。
+
+玩家爬上塔，Dramele 嫌玩家「護甲配得亂七八糟，滿臉都是蠢貨才有的勇氣……粗俗，而且醜！！」，然後施法把玩家困進幻覺，要「一點一點削掉你那醜陋的心智，直到什麼都不剩」。法術卻卡住了：
+
+> 「我要先從你最重要的那些記憶開始剝——等、等等，這一大片空白是什麼？它在干擾我的法術……！！」
+> 「唔，幾乎沒有記憶可以拿走，個性也少得可憐……你到底是有多空白的一塊灰板子……又為什麼這樣反而更難搞？！」（掠奪者的買路錢）
+
+玩家打碎三顆水晶逃出幻覺，Dramele 只好自我安慰：「我想這一招用來困住一整個排比對付一個人有效多了。」被擊敗後他假裝投降，答應交出控制 Norsten 的束縛寶石，轉手卻把寶石丟進自己造的口袋空間：「一個我親手造出來的空間，裡面塞滿了不穩定的魔法廢料！再也沒有人會見到你！」「換句話說……你。輸。了。」玩家跳下去，用不穩定的核心拼出一個爆炸裝置，炸開出口，落在 Thesead 門前。Dramele 借 Norsten 的嘴尖叫「那個口袋空間的入口是單向的！！」，接著寶石讓 Norsten 恢復了神智：「我記得我追一個小偷追到這邊來……然後……」他口袋裡塞滿了假收費道路撈來的錢，Peli 建議全給玩家；那道門「本來就該對所有人開放」。任務的獎勵就是通往 Thesead 的門。
+
+> **暗示與旁註**：
+> - **「一大片空白」**：這是遊戲裡第一次由敵人親口說出玩家的記憶有缺口。對上第一章《國王的新兵》的集體失憶與《尋回過往》Picard 的「本來不存在的記憶」，以及第二章《竊星者》玩家對隕石輻射免疫。Dramele 的說法比 Picard 更進一步：不是記憶被洗掉了而已，而是「幾乎沒有記憶可以拿走」，而且那片空白本身在對抗他的法術（推測：玩家的來歷與一般 Fruma 新兵不同，第六章）。
+> - **「上一批來找我的至少還懂得配合，也懂得把自己藏好」「一整支軍隊」「困住一整個排」**：他過去擊潰過一支成編制的部隊，又說「我已經幾十年沒把人類碾成灰了」。峽谷裡有 Kitrios Barracks 與逃兵營地（本節開頭），那支部隊是誰，遊戲沒說（推測：Gavel 軍或更早來到 Gavel 的人類）。他交出寶石時也承認「過了這麼久，也不知道那些強盜還有多少能恢復正常」——峽谷強盜原本是被他束縛的普通人。
+> - **「冒牌英雄」**：Dramele 借 Norsten 的嘴罵人類是「冒牌貨」「所謂的英雄」，和第二章《巨獸之影》裡 Gavel 人看人類的眼光同調。
+> - **名字與改版**：Dramele 取自《惡魔城》系列的 Adramelech（wiki）。2.0 重製任務，2.1 改寫對話，在那之前巫師叫 Volmor。第九章的飾品 Dramele's Flair（Dramele 的風采）就是他。
+> - **任務名**：marauder 是劫掠者，dues 是規費、應繳的款項；「買路錢」把強盜與假收費道路一起譯了出來。
+> - **Peli 的罵人話**：Peli 罵「卑鄙的惡棍！！冷水裡的鰻魚！！」（Miserable dastard / Cold-water eel），Dramele 事後氣頭上複述成「卑鄙的小東西？！冷水裡的鰻魚？！」（Miserable runt）——原文就是他記錯了，語料兩處譯法不同是對的。
+
+出處：任務《掠奪者的買路錢》／wiki〈[A Marauder's Dues](https://wynncraft.wiki.gg/wiki/A_Marauder%27s_Dues)〉、〈[Dramele](https://wynncraft.wiki.gg/wiki/Dramele)〉、〈[Norsten](https://wynncraft.wiki.gg/wiki/Norsten)〉
+
 #### 《隱匿之城》
 
 斷了腿的人類 Narder 把一份「必須保密」的工作轉交給玩家：峽谷山中有一座由人類建立、由人類管理的城鎮——**Eltom**，而「村民對人類在他們的土地上建立城市有非常嚴格的規定，那可是『非常』違法的」。鎮長 Eoric 懷疑鎮上出了叛徒。
@@ -477,6 +508,8 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 | Ozoth | 巨龍，「無盡點火者」 | 在 Thanos 孵蛋；後來讓出永焰拯救行省 | 《Thanos 儲藏庫》《臨界點》 |
 | Coulmis／Atila | Thanos 的矮人 | 委託偷龍蛋 | 《Thanos 儲藏庫》 |
 | Eoric／Ardulf／Thesead 鎮長 | Eltom 鎮長／混血之子／村民前妻 | 非法人類城鎮與跨種族家庭 | 《隱匿之城》 |
+| Norsten／Peli | Thesead 門的守門人／他的爺爺（第四輪補） | 被巫師操縱、開假收費道路；被救回 | 《掠奪者的買路錢》 |
+| Dramele | 懸崖塔上的巫師，「峽谷的禍害」 | 靠竊取生命力活了一百五十年、控制峽谷強盜；說出玩家記憶「一大片空白」 | 《掠奪者的買路錢》 |
 | Clight | Thesead 煤礦工頭 | 日記作者的恩人與對手，主張毀掉巨像 | 《礦坑金絲雀》 |
 | 死神 | 死亡的化身 | 揭露世界沙漏、玩家「不滅的火花」 | 《不得安息》 |
 | Drale | Woc 科學家 | 想找回飛船讓流亡者回家 | 《莫名其牛》 |
@@ -500,6 +533,7 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 - **「Wynn 南境之外的遠古黑暗力量」**：〈採礦作業〉（Abandoned Mines，WynnExcavation 挖到的黑色尖刺）說挖掘因此被放棄；Qira「黑暗就要來了」、死神的世界沙漏，可能指向同一個未來（推測）。
 - **巨像正在重演 Ahms**：《臨界點》明說「一千年前發生在那個區域的事，正在此時此地重演」，巨像已在虛空上撕出洞；隱藏探索點 巨大屏障顯示，寄生體想鑽進峽谷時被「讓山脈永不止息地運動的力量」擋了回去——**巨像的失控同時也是一道屏障**。安撫它的同時，峽谷是否還擋得住寄生體，是值得留意的伏筆（推測）。
 - **「你就是那個能夠摧毀 Colossus 的人」**：《礦坑金絲雀》幻覺裡以高階 Gavel 語說出，預告討伐戰。
+- **（第四輪補）Dramele「這一大片空白是什麼？」**：玩家的記憶缺口在敵人法術下現形，與第一章 Picard「本來不存在的記憶」、第二章《竊星者》的輻射免疫同一條線（推測）。
 - **玩家「不該存在」的不滅火花**：《不得安息》的死神；《Gavel 的英雄》Gurix 的「沒有死掉之後再回來這回事」是同一主題的玩笑版。
 - **Qira 的盟約與她的商隊**：Gavel 用互不侵犯換和平，但道場卷宗說「從 {p} 來的商隊愈發稀少」，Qira 的僕從要靠道場接濟。Gavel 與 Hive 的關係可能正在惡化（推測）。
 - **Eltom 的人類是逃兵**：Ardulf「懶得自己去打自己的仗」；加上 Kitrios Barracks 附近的逃兵營地，Gavel 收容了不少不想打仗的人。
@@ -613,3 +647,15 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 - [Secret Discoveries](https://wynncraft.wiki.gg/wiki/Secret_Discoveries)、[Gylia's Cataclysm](https://wynncraft.wiki.gg/wiki/Gylia%27s_Cataclysm)、[Mark of the Meteors](https://wynncraft.wiki.gg/wiki/Mark_of_the_Meteors)、[Gylia Watch Library](https://wynncraft.wiki.gg/wiki/Gylia_Watch_Library)、[Gavel Excavation](https://wynncraft.wiki.gg/wiki/Gavel_Excavation)、[The Ancient Ones](https://wynncraft.wiki.gg/wiki/The_Ancient_Ones)、[The Grand Archive](https://wynncraft.wiki.gg/wiki/The_Grand_Archive)、[The Great Barrier](https://wynncraft.wiki.gg/wiki/The_Great_Barrier)、[The Broken Protector](https://wynncraft.wiki.gg/wiki/The_Broken_Protector)、[Cosmic Crystals](https://wynncraft.wiki.gg/wiki/Cosmic_Crystals)、[Cracked Canyon](https://wynncraft.wiki.gg/wiki/Cracked_Canyon)、[Canyon Housing](https://wynncraft.wiki.gg/wiki/Canyon_Housing)、[Loot of the Lost](https://wynncraft.wiki.gg/wiki/Loot_of_the_Lost)、[Thanos Armory](https://wynncraft.wiki.gg/wiki/Thanos_Armory)
 - [???](https://wynncraft.wiki.gg/wiki/%3F%3F%3F)、[Murder Mystery](https://wynncraft.wiki.gg/wiki/Murder_Mystery)、[The Hero of Gavel](https://wynncraft.wiki.gg/wiki/The_Hero_of_Gavel)、[General's Orders](https://wynncraft.wiki.gg/wiki/General%27s_Orders)、[Cowfusion](https://wynncraft.wiki.gg/wiki/Cowfusion)、[Beyond the Grave](https://wynncraft.wiki.gg/wiki/Beyond_the_Grave)、[Temple of the Legends (Quest)](https://wynncraft.wiki.gg/wiki/Temple_of_the_Legends_(Quest))、[Canyon Condor](https://wynncraft.wiki.gg/wiki/Canyon_Condor)、[The Envoy Part I](https://wynncraft.wiki.gg/wiki/The_Envoy_Part_I)
 - 第二輪補讀（2026-10-22）：[The Canyon Colossus (Raid)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Raid))、[The Canyon Colossus (Boss)](https://wynncraft.wiki.gg/wiki/The_Canyon_Colossus_(Boss))、[Doguns](https://wynncraft.wiki.gg/wiki/Doguns)、[Mining Operation](https://wynncraft.wiki.gg/wiki/Mining_Operation)、[Gale](https://wynncraft.wiki.gg/wiki/Gale)、[Sovereign Selium](https://wynncraft.wiki.gg/wiki/Sovereign_Selium)、Timeline 全文。第一輪回 502 的 The_Canyon_Colossus 其實是重新導向到討伐戰頁。
+
+**第四輪補讀（2026-10-23）**：任務語料 a-marauder-s-dues；wiki：[A Marauder's Dues](https://wynncraft.wiki.gg/wiki/A_Marauder%27s_Dues)、[Dramele](https://wynncraft.wiki.gg/wiki/Dramele)、[Norsten](https://wynncraft.wiki.gg/wiki/Norsten)。
+
+---
+
+## 本章發現的語料問題（第四輪）
+
+| # | 任務／檔案 | 條目 | 問題 | 建議 |
+|---|---|---|---|---|
+| A19 | 《掠奪者的買路錢》a-marauder-s-dues.json | Norsten「You wouldn't lie to me, Grand-Peli」 | 「Grand-Peli」留英文；這是孫子對爺爺的稱呼 | 改「Peli 爺爺」 |
+| A20 | 《掠奪者的買路錢》 | 開頭幾條 speaker 空白的巫師台詞（「光是看到你就讓我不快！」等） | 從內容看是 Dramele（或他借 Norsten 之口）在說話，speaker 欄位空白；另有一批 Dramele 借 Norsten 之口說的話標成 Norsten（這是遊戲顯示的方式，不算錯） | 空白的可補 Dramele；標 Norsten 的不動 |
+

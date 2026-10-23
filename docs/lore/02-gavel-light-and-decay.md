@@ -1,6 +1,6 @@
 # 第二章　Gavel：光與黯蝕
 
-> **劇透提醒**：本章完整劇透《光之領域 I－V》（蟲洞、斬草除根、無頭歷史、尋光、光之領域）、《Aldorei 的祕密 第一部／第二部》、《空洞的寧靜》、《記憶的猜忌》、《禁忌牢獄》、《Lazarus 之坑》、《Lexdale 巫女審判》、《死亡之哨》、《巨獸之影》、《破碎的心智》、《Llevigar 之心》、《腐敗之叛》，以及 Llevigar Plains、Olux Swamp、Dark Forest、Light Forest 四區全部的隱藏探索點（含 Ne du Valeos du Ellach 的過場），還有討伐戰 Grootslang 之巢、Orphion 的光之樞紐的開場設定。
+> **劇透提醒**：本章完整劇透《光之領域 I－V》（蟲洞、斬草除根、無頭歷史、尋光、光之領域）、《Aldorei 的祕密 第一部／第二部》、《空洞的寧靜》、《記憶的猜忌》、《禁忌牢獄》、《Lazarus 之坑》、《Lexdale 巫女審判》、《死亡之哨》、《巨獸之影》、《破碎的心智》、《Llevigar 之心》、《腐敗之叛》，第四輪補入的《清掃營地》《烈焰復仇》《竊星者》《鋼鐵之心 第一部／第二部》《大師的傑作》《少女之塔》《究極的武器》《山中來客》（並輕度提到《條條大路達自由》的結局），以及 Llevigar Plains、Olux Swamp、Dark Forest、Light Forest 四區全部的隱藏探索點（含 Ne du Valeos du Ellach 的過場），還有討伐戰 Grootslang 之巢、Orphion 的光之樞紐的開場設定。
 
 ---
 
@@ -180,6 +180,8 @@ Light Forest 的其他祕密：
 
 **旁註**：任務後段需要到 Cinfras 與 Canyon of the Lost 找被放逐的 Birch 長老，那兩地的劇情屬他章。
 
+（Light Forest 的哈比人村 The Shiar 與《究極的武器》、Pre-Light Forest 的《山中來客》，見之十五。）
+
 出處：任務《死亡之哨》《尋光》《破碎的心智》《Aldorei 的祕密 第一部》《Aldorei 的祕密 第二部》／wiki〈A Dividing Force〉https://wynncraft.wiki.gg/wiki/A_Dividing_Force ／〈Sealed Away〉https://wynncraft.wiki.gg/wiki/Sealed_Away ／〈Birth of Efilim〉https://wynncraft.wiki.gg/wiki/Birth_of_Efilim ／〈Efilim〉https://wynncraft.wiki.gg/wiki/Efilim ／〈Olon〉https://wynncraft.wiki.gg/wiki/Olon
 
 ### 之八　Llevigar：出海的理由（892－900 AP）
@@ -196,6 +198,8 @@ Llevigar Plains 的祕密，合起來回答了一個問題：**Gavel 的村民�
 其他：**Spider Ruins**（Gavel 散落著許多古代神殿，村民擴張時拆了不少，「留存至今的寥寥無幾」）、**Unstable Experiments**（石英的實驗，接到任務 Rise of the Quartron）、**Teachings of Old**（河流被垃圾與黯蝕汙染，「連河童都不來這裡捕魚了」）。
 
 **《Llevigar 之心》**：Llevigar 的電魔法發電廠失控，玩家替總工程師按下重置鈕。工程師一直把協調人 Zenam 的名字叫錯（Zeman、Zebra），是任務的笑點。但值得留意兩處細節：故障是從一次大停電開始的，「有些燈還變成紫色的」；修好之後的對話裡，有人問「你說系統裡有蟲，是照字面講的嗎？我發誓我聽到有東西在這底下爬來爬去」。紫色正是黯蝕與寄生體的顏色，而 wiki 說幼雛的足跡遍及 Llevigar Plains 到 Gylia Plains（推測：這隻「系統裡的蟲」就是一隻爬進城市地底的 Dern 蟎）。
+
+（Llevigar Plains 的其他現代任務——獸人營地、隕石、瑕疵的守衛魔像——見之十三。那場停電還有一個後果：獸人趁機偷走了 Llevigar 的符文火斧，見《烈焰復仇》。）
 
 出處：任務《Llevigar 之心》／wiki〈Llevigar's Last Hope〉https://wynncraft.wiki.gg/wiki/Llevigar%27s_Last_Hope ／〈Llevigar's Secret Library〉https://wynncraft.wiki.gg/wiki/Llevigar%27s_Secret_Library ／〈Abandoned Excavations〉https://wynncraft.wiki.gg/wiki/Abandoned_Excavations ／〈At the Edge of Decay〉https://wynncraft.wiki.gg/wiki/At_the_Edge_of_Decay ／〈Spider Ruins〉https://wynncraft.wiki.gg/wiki/Spider_Ruins ／〈Unstable Experiments〉https://wynncraft.wiki.gg/wiki/Unstable_Experiments ／〈Teachings of Old〉https://wynncraft.wiki.gg/wiki/Teachings_of_Old
 
@@ -227,6 +231,8 @@ Olux 的祕密幾乎全部指向同一個黑幕：
 本區的終極探索點 **The Bane of Gavel**（Gavel 之禍）揭曉了答案：「在森林之下、遠離村民目光之處，藏著黯蝕可怕的真相……」——地底有無人察覺的小生物在吸取這片土地的生命力，「若放任不管，它們可能會把整個行省的光吸乾」。
 
 另有 **Decaying Mountains**：黯蝕蔓延到山上的洞穴，住在那裡的生物只好往下搬（wiki 說這和任務 Crop Failure 的史萊姆有關）。
+
+（Olux 的另外三個任務——揭開魔像工廠的《鋼鐵之心 第二部》、盲眼畫家的《大師的傑作》、食人魔求愛的《少女之塔》——見之十四。）
 
 出處：任務《光之領域 I - 蟲洞》《光之領域 II - 斬草除根》《死亡之哨》《巨獸之影》／wiki〈Death Whistle (Quest)〉https://wynncraft.wiki.gg/wiki/Death_Whistle_(Quest) ／〈Blue Cyclone〉https://wynncraft.wiki.gg/wiki/Blue_Cyclone ／〈Timeline〉／〈Lost Farmers〉https://wynncraft.wiki.gg/wiki/Lost_Farmers ／〈Shrouded Lives〉https://wynncraft.wiki.gg/wiki/Shrouded_Lives ／〈Shadowy Dealings〉https://wynncraft.wiki.gg/wiki/Shadowy_Dealings ／〈Empty Vaults〉https://wynncraft.wiki.gg/wiki/Empty_Vaults ／〈Harmless Worms〉https://wynncraft.wiki.gg/wiki/Harmless_Worms ／〈Decaying Mountains〉https://wynncraft.wiki.gg/wiki/Decaying_Mountains ／〈The Bane of Gavel〉https://wynncraft.wiki.gg/wiki/The_Bane_of_Gavel ／〈Nest of the Grootslangs〉https://wynncraft.wiki.gg/wiki/Nest_of_the_Grootslangs
 
@@ -285,6 +291,223 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 
 出處：任務《腐敗之叛》／wiki〈Corrupted Betrayal〉https://wynncraft.wiki.gg/wiki/Corrupted_Betrayal
 
+### 之十三　Llevigar Plains 的現代：人類兵、獸人與天外來物（第四輪補）
+
+前面幾節講的是 Gavel 北方怎麼一路衰敗；這一節的四個任務則是玩家剛下船、還在 Llevigar 周邊打轉時遇到的事。它們表面上都是新手區的小差事，拼起來卻是兩條很硬的線：**人類兵在 Gavel 被當成什麼來用**，以及 **Gavel 在替 Wynn 的戰爭找什麼樣的武器**。
+
+#### 《清掃營地》（Lv. 39）
+
+這是 Gavel 第一個出現獸人的任務。Llevigar 城門前的軍營裡，Ragni 出身的人類軍官 **Kymer 隊長**向新來的玩家說明：村民送來請求，說「獸人」和「哥布林」正在威脅他們的城鎮。他引用的是 Llevigar 軍方的評語——「原始又粗暴的東西，大概比我們慣見的殭屍好不了多少」——然後下了一個很軍人的結論：
+
+> 「所以我們判斷，既然他們信奉拳頭大就是道理，那把首領打趴應該就能嚇得他們安分。」（清掃營地）
+
+目標是三位酋長 Elisu、Ceifko、Veltu，Kymer 還隨口提了一句「奇怪的是，Veltu 身邊永遠圍著一群哥布林」。玩家照著綠旗找到三座營地，帶回來的是三顆首級。Kymer 的反應先是「唔。那些是他們的頭嗎？」，接著是：
+
+> 「這……比我原本想的血腥了點，不過有用就好……反正村民也不在乎死活，解決了就行。」
+> 「這種精準打擊應該能避免跟獸人全面開戰。」（清掃營地）
+
+任務說明寫的是把酋長「制伏」（subdued），Kymer 委託時說的是「解決」（dealt with），但遊戲沒有給不殺的選項。這個落差不是小事，它在二十多級之後才收帳（見下方〈獸人那一邊〉）。
+
+wiki 的 Trivia 還記了一個細節：走進 Ceifko 的營地時，會冒出一隻終界蟎，把牠腳下的方塊變黑後消失，一般認為這是在表示黯蝕已經伸到這裡（wiki 的解讀；也呼應之五在地底吸光的 Dern 蟎，屬推測）。
+
+**Kymer 的後續**：Fruma 篇《女王的新兵》裡 Kymer 再度登場，對玩家與 Tasim 說：「我當初被派去那邊，比較像是 {p} 的外交使節！國王要是有什麼外交場面要擺平，第一個想到的就是我。」又說「外交當然是我的專長」。一個自稱外交專家的人，在 Gavel 交辦的是斬首行動——這層反諷遊戲沒有點破，但兩段台詞放在一起很難不注意到。《真面目》裡 Tasim 談到難纏的人時也說「你也見過 Kymer」。
+
+出處：任務《清掃營地》《女王的新兵》《真面目》／wiki〈[Clearing the Camps](https://wynncraft.wiki.gg/wiki/Clearing_the_Camps)〉、〈[Captain Kymer](https://wynncraft.wiki.gg/wiki/Captain_Kymer)〉
+
+#### 《烈焰復仇》（Lv. 44）
+
+Llevigar Plains 的農夫 Piere 家被燒了，放火的是一個不知從哪弄來「附了火的魔法斧頭」的獸人。負責的 **Jackson 偵探**待在推車旁「規劃下一步」，原因是他綁手綁腳：
+
+> 「不過，我們跟獸人簽的停火協議裡有個漏洞。偷竊不算侵略行為……」
+> 「也就是說我綁手綁腳。但條文裡沒提到人類，所以得由你去把它取回來。」（烈焰復仇）
+
+村民與獸人之間有停火協議，村民不能動手，但人類不在條文裡——所以又是人類去。被偷的是 **Llevigar 之斧**（語料作「{p} 之斧」），一把藍色漆面、摸起來燙手的符文火斧。Jackson 對獸人的評價很輕蔑：「獸人在魔法上笨拙得可笑」。玩家先搜了 Sablestone 與 Loamsprout 兩座最近在「慶祝」的營地，結果前者最強的武器是一根棍子（wiki：主帳篷的台座上供著一根叫 Big Smack 的大棍子），後者把晚餐扔向玩家（wiki：帳篷裡的台座供著一顆標著「好吃」的馬鈴薯）。Jackson 開始慌張地數營地名，這時一個獸人從推車旁跑過去：
+
+> 「火！停下！！我拿魔法砍刀！聽 Poxper 的話！！」（烈焰復仇）
+
+玩家追進湖底的隱藏營地（wiki〈Greenskins〉稱為 Secretcove），打倒首領 **Poxper**。他一邊打一邊照斧頭「說」的話亂唸——「Uthniiazek！」「Azektoluth！」——還抱怨「笨村民的魔法東西！火為什麼不聽話？」。wiki 的 Trivia 指出，這兩個詞是用符文名拼起來的：Uth、Nii、Az、Tol，加上一個目前沒有對應的 Ek。也就是說，Poxper 其實是在亂組符文咒語，只是組不對。
+
+Jackson 收回斧頭後說：「但願那個 Veretel 不會聽到風聲。」聽到首領的名字又改口：「Poxper？……他是個相當有名的獸人首領。你把他殺了，對吧？」獎勵是 **Poxper 皮甲**（Hide of Poxper）——原文的 hide 是「獸皮」，獎品字面上就是他的皮（wiki：2.0 以前 Poxper 叫 Gregg'r，裝備也叫 Hide of Greggr；Veretel 的位置原本是 Gorgu）。
+
+出處：任務《烈焰復仇》／wiki〈[Blazing Retribution](https://wynncraft.wiki.gg/wiki/Blazing_Retribution)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉、〈[Hide of Poxper](https://wynncraft.wiki.gg/wiki/Hide_of_Poxper)〉
+
+#### 獸人那一邊：《條條大路達自由》怎麼回頭結算這兩個任務
+
+這兩個任務在獸人的大任務（All Roads to Peace，語料任務名「條條大路達自由」，Lv. 64）裡被翻了過來。玩家想促成和談，見到了 Centerworld 堡壘的 **Arrai-Veretel**——西 Gavel 獸人與哥布林的共主（wiki：女性；Rai 是營地首領的頭銜，Arrai 是全體之首）。她一眼認出玩家：
+
+> 「你！你就是殺了 Rai-Poxper 的人類！你就是攻擊另一座堡壘的人類！」
+> 「人類攻擊！Rai-Poxper 為毀約收取應得的代價，但還不是戰爭。趁魔力變壞的時候從村民城裡拿走魔法斧頭。」
+> 「村民讓人類替他們打！停火協議說村民不攻擊獸人。然後人類渡海過來。想講和——就被攻擊！」
+> 「然後三個 Rai 獸人死在 Earthpit、Cliffhearth 和 Trunkstump 的哥布林營地。」（條條大路達自由）
+
+對照 wiki〈Greenskins〉：Earthpit 由 Ceifko 統領、Cliffhearth 由 Elisu 統領、Trunkstump 是哥布林營地卻由獸人 Veltu 統領——**正是《清掃營地》的三位酋長**。所以從獸人的角度看，事情的順序是：
+
+1. 村民與獸人停火。
+2. 村民對人類說獸人在威脅城鎮，人類兵在停火期間殺了三位 Rai（《清掃營地》）。Kymer 那句「反正村民也不在乎死活」，說的其實就是村民借刀殺人。
+3. Rai-Poxper 把這視為毀約，「收取應得的代價」——趁 Llevigar 的「魔力變壞」，偷走了城裡的火斧。
+4. 村民又用停火協議的漏洞，請人類去殺了 Poxper（《烈焰復仇》）。
+
+**任務名「烈焰復仇」（Blazing Retribution）的「復仇」，從獸人的角度看是 Poxper 的報復，不是玩家的。**語料譯名不必改，但讀這個任務時要知道標題是雙向的。Veretel 還有一句話直接回應了 Jackson 的「漏洞」：「村民會反悔——看字面，找繞過字面的方法。」
+
+「趁魔力變壞的時候」很可能就是之八《Llevigar 之心》那場電魔法發電廠的大停電（推測：台詞沒有點名發電廠，但 Llevigar 的「魔力」出問題，劇情裡只有那一次）。另外 Veretel 說北方「腐爛的大地」是村民傷害大地的結果，「只比村民渡海離開早幾十年開始」——獸人把黯蝕怪到村民頭上，這和本章前半知道的真相（寄生體）並不相符，但時間點（800 AP 黯蝕擴散、900 AP 出海）是對的。
+
+出處：任務《條條大路達自由》／wiki〈[Arrai-Veretel](https://wynncraft.wiki.gg/wiki/Arrai-Veretel)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉
+
+#### 《竊星者》（Lv. 42）
+
+Imal Inn 附近天候異常，一顆隕石墜進了平原上的洞窟。一名**密探**（語料 speaker 作 Agent，任務目標作「密探」）攔住玩家：
+
+> 「依村民律法，一切來自天外或虛空的物體皆屬禁品，歸國家所有。」
+> 「可是那股魔法輻射對你好像完全沒有影響。你沒有任何感覺嗎？也許你可以幫我找到它。」（竊星者）
+
+洞窟深處有人先一步拿走了碎片（「它是……我的。」），洞窟隨即崩塌。玩家循著白色的痕跡追到另一座洞，碎片的主人已經發狂：「……我控制不了自己……fjfjfj 這塊石頭……」最後只求一死：「我沒辦法……控制……我的意識……殺了我。」把碎片交回去時，密探說：
+
+> 「隕石在 Gavel 各地都會墜落，顏色與威力五花八門。」「每一個研究過它們的科學家，最後都瘋了。」
+> 「隕石藏著許多祕密與力量，也許正是我們結束你們那場戰爭所需要的。」（竊星者）
+
+這個任務是第三章隕石線（天墜、第一個 Gert、四兄弟、GavelExcavation）在 Gavel 西部的入口。wiki〈Meteors〉把本任務當成隕石效應的出處之一：接觸幾秒會頭暈，幾分鐘到幾天會發瘋與失憶，幾週則會讓身體整個變形（第一個 Gert）；它也記載 Gavel 政府近年把全省隕石收歸國有、禁止平民持有碎片——正是密探口中的「歸國家所有」。wiki 還指出這是已知最近的一次墜落，就發生在玩家抵達 Llevigar 之後不久。密探屬於哪個組織，遊戲沒說（wiki〈Agent〉也只寫「不明組織」）。本任務在 1.18 重製，是 Gavel 第一個完全重做的任務。
+
+> **暗示**：
+> - 「也許正是我們結束你們那場戰爭所需要的」——Gavel 一直在替 Wynn 的腐敗之戰找武器：Urelix 的魔像（之九、之十四）、WynnExcavation 的水晶（第一、三章），現在是隕石。三條線的代價都是人命或理智。密探與 WynnExcavation 或 GavelExcavation 有沒有關係，遊戲沒有交代（不宜寫成定論）。
+> - 玩家**對隕石輻射免疫**。這和《尋回過往》Picard 的「本來不存在的記憶」（第一章）、《掠奪者的買路錢》巫師抱怨玩家的記憶「一大片空白」（第三章）擺在一起，是「玩家不是普通新兵」的另一條線索（推測）。
+
+出處：任務《竊星者》／wiki〈[Star Thief](https://wynncraft.wiki.gg/wiki/Star_Thief)〉、〈[Meteors](https://wynncraft.wiki.gg/wiki/Meteors)〉、〈[Agent](https://wynncraft.wiki.gg/wiki/Agent)〉
+
+#### 《鋼鐵之心 第一部》（Lv. 49）
+
+Llevigar Plains 邊緣的農夫 **Duvale** 買了一台守衛魔像擋偷菜的哥布林，結果一啟動它就攻擊主人，還「一直拿自己去撞岩石和牆壁」。玩家順著掉了一路的碎片追進山裡，聽到的是一段斷斷續續的獨白：
+
+> 「……我是……我的……名字……是什麼？我以前有名字的……」
+> 「我的名字！！我的人生！我不會傷害他們！痛能讓我想起……誰在那裡？！走開！拜託！」
+> 「別再有寒冷了！別再有不屬於我的聲音了！我的名字是 [ERROR]！！」（鋼鐵之心 第一部）
+
+魔像撞牆，是為了用痛把自己的記憶撞回來。中間那句「不要命令！不要指想起來！！……」的錯亂是原文刻意做出來的（「REMEMBER」插進「directives」中間），語料照樣保留了錯位，是對的。被制伏前，它終於拼出名字：「Ma[ERROine……Madeleine！！我是 Madeleine……」
+
+Duvale 聽完很不安：「我從來沒對它提過什麼 Madeleine。」「仔細想想，那家工廠是有一些不太好聽的傳聞」，決定寫信到 Olux 報警。獎勵是 **機械反應爐**——第二部的關鍵道具。wiki 的 Trivia 認為守衛魔像可能在致敬《超時空奇俠》的 Cybermen（把人改造成機械、拔掉情緒的種族）。
+
+**翻譯旁註**：魔像的「冷」是貫穿兩部的關鍵字。第一部的「別再有寒冷了」、第二部 Theodore 的「好冷！好冷！」、Urelix 的「除了冷之外感覺不到什麼」，原文都是 cold，指的是被壓抑之後僅剩的感覺。三處譯文目前都落在「冷／寒冷」，請保持，讀者才接得起來。
+
+出處：任務《鋼鐵之心 第一部》／wiki〈[An Iron Heart Part I](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_I)〉、〈[Mechanical Reactor](https://wynncraft.wiki.gg/wiki/Mechanical_Reactor)〉
+
+### 之十四　Olux：工廠、畫家與塔上的淑女（第四輪補）
+
+之九把 Olux 的祕密拼成了「魔像是用人做的」這個結論，但那是靠探索點與《斬草除根》的旁聽推出來的。真正走進工廠、聽 Urelix 親口承認的，是下面這個任務。另外兩個 Olux 任務是喜劇，其中一個底下也埋著黯蝕。
+
+#### 《鋼鐵之心 第二部》（Lv. 58）
+
+Olux 南口的 **Hart 偵探**一開口就是一串名字：「Hotor、Athomo、Arperi、Etyir、Taiyroth、On'omi、Danin、Nesys、Onton。全都失蹤了……Etan 是最新的一個。」市民失蹤得太快，偏偏：
+
+> 「照理說不該這樣的，我們最近才收到那麼多守衛魔像的捐贈！{p} 應該比以往都安全才對。」（鋼鐵之心 第二部）
+
+這句話在任務結束後讀起來完全是另一個意思：鎮上愈來愈多的「捐贈魔像」，和愈來愈多的失蹤者，很可能是同一批人（推測；遊戲沒有逐字說「捐來的魔像就是失蹤者」，但工廠就在 Olux 旁邊，原料從哪來不難猜）。
+
+Hart 請玩家去找有前科的「偉大的」**Daxe**，他的小屋「就在那個精靈女孩的營地旁邊」——Olux 一帶有營地的精靈女孩，就是《死亡之哨》裡被 Voer 偷了書的 Lari（推測，台詞沒點名）。Daxe 起初不肯談，玩家拿出第一部的機械反應爐，他家的守衛魔像當場故障：
+
+> 「Madeleine！她在哪……等等！怎麼回事，我在哪裡？這是誰的聲音？！」
+> 「他們……我女兒……閉嘴！安靜！誰在對我下令——不准下令！好冷！好冷！」
+> 「別再對我下令了！！我是……我是 THEODORE！我不是僕人！我……我的人生跑到哪去了……？」（鋼鐵之心 第二部）
+
+第一部那台魔像是女兒 Madeleine，這一台是她的父親 **Theodore**。Daxe 崩潰了（「你……你不是……死鐵？你還記得自己的名字……？！」），全盤托出：他當年為了偷點東西闖進魔像工廠，「發現了他們」；工廠後來送他這具魔像 Theodore 封口，「他們向我保證那些人已經走了，說他們的每一分每一寸都被抹除乾淨了」。
+
+工廠藏在 **Dr. Urelix** 的小木屋裡。Urelix 先是演了一齣受辱戲（「你認為我們公司不乾淨？你這樣說可真傷人！」），讓玩家自己搜。玩家從書房的機關爬上屋頂、進入工廠，一路經過的設備播著廣播：「啟動晶片植入機——機內所有人員請注意，避開尖刺。」（這裡的「人員」指的是被送上生產線的人，推測）觸發警報後是「已啟動緊急熔毀程序」。逃到辦公室，Urelix 已經在等：
+
+> 「我還以為你這時候已經是我們的一員了。」
+> 「沒錯，金屬與血肉鍛在一起……無可匹敵的組合。當然，情緒與記憶必須壓制下去，才能維持順從……」
+> 「你有沒有看過魔像的眼睛？有時候它們會回望你。他們曾經是誰，那個部分還在裡面。」（鋼鐵之心 第二部）
+
+他開出條件：一大筆綠寶石加一件上等鐵護甲，換你閉嘴。理由跟《斬草除根》裡對鎮長說的是同一套：「沒有魔像，Gavel 和 Wynn 都會被戰爭的重擔壓垮。那麼，這門生意真有那麼不道德嗎？要活下去，總得有所犧牲。」
+
+- **收賄**：「重要的不是你的道德，而是你的選擇。」獎勵是 12 塊綠寶石磚與**可恥脛甲**（Shameful Greaves）。
+- **舉報**：Hart 聽完「什麼……血肉改造？！魔像是靠活生生的村民驅動的？！」，決定立刻集結增援強攻工廠。獎勵是**榮譽脛甲**（Greaves of Honor）。
+
+> **暗示與前後對照**：
+> - **Hart 的位置**：《斬草除根》裡 Olux 鎮長說要「讓 Hart 偵探聽到全部」，Urelix 隨即以「救十個、判一千個死刑」說服玩家殺掉鎮長。本任務的 Hart 說「那座魔像工廠我們知道」，卻對血肉改造一無所知——鎮長的話從來沒有傳到他耳裡。
+> - **兩個結局都沒有關掉工廠**：舉報結局裡 Hart 要強攻，但 Urelix 之後仍出現在《斬草除根》與《獵手的呼喚》（後者的第五個場景要先完成本任務才開放，玩家反過來替他把三個沼澤居民騙進工廠）。遊戲沒有交代強攻的結果（wiki〈Dr. Urelix〉）。這和《斬草除根》「只有一個選擇」是同一種設計：玩家的良心不改變 Olux 的命運（推測）。第三章 Gylia 的 Jitak 說他的魔像是「因為 {p} 工廠出了點事」才便宜買到的，那件「事」可能就是這次強攻（推測）。
+> - **獸人早就知道**：《條條大路達自由》裡 Arrai-Veretel 罵人類「還想用鐵屍機器威脅我們！」——原文 iron corpse machine。村民不知道魔像是怎麼造的，獸人卻直接叫它「鐵屍機器」。
+> - wiki〈Iron Golem Factory〉的地區說明：保護 Wynn 與 Gavel 的鐵魔像，製法「一直不為大眾所知」。Wynn 那邊每座城門口的魔像，都可能是這座工廠的產品。
+
+出處：任務《鋼鐵之心 第二部》《斬草除根》《獵手的呼喚》《條條大路達自由》／wiki〈[An Iron Heart Part II](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_II)〉、〈[Dr. Urelix](https://wynncraft.wiki.gg/wiki/Dr._Urelix)〉、〈[Iron Golem Factory](https://wynncraft.wiki.gg/wiki/Iron_Golem_Factory)〉、〈[Detective Hart](https://wynncraft.wiki.gg/wiki/Detective_Hart)〉、〈[Daxe](https://wynncraft.wiki.gg/wiki/Daxe)〉
+
+#### 《大師的傑作》（Lv. 53）
+
+沼澤帳篷裡的 **Caissop** 自稱「傳奇的藝術家」，看到玩家第一句話是「你是來要簽名的嗎？」。他要一個助手去找三隻「藏在沼澤各處洞窟裡的傳說生物」，因為他眼睛看不見，得靠別人描述才能「在腦中想像出他們」。他指路的方式是花的氣味的「顏色」——「對我來說它們聞起來是粉紅色的，這點我很確定」。
+
+三個洞裡分別是一頭普通的牛、一頭普通的羊、一頭普通的豬。旁白開始慫恿玩家：「反正他看不見，也許你可以在細節上動點手腳」：
+
+- 棕色、大鼻子的牛 →「在你聽來，那根本是在形容村民」→ Caissop：「你說那是一頭**村民牛**？！」
+- 白羊，「就說只有一隻角」→「你是說，**獨角羊**？！」
+- 粉紅豬，「不如說他有翅膀？」「他會相信會飛的豬嗎？」→「那是……一頭**天馬豬**！多棒的名字！」
+
+Caissop 畫到紅色用完，就「用我的血」。成品他畫了兩幅，一幅送你：「大城市裡那些上流村民為了 Caissop 的作品可是願意砸大錢的！」（wiki：這幅畫可在 Letvus 飛船基地的藝術商人賣 3 液態綠寶石；Trivia 還吐槽，他明明用了血，畫上的紅色卻很少。）
+
+**旁註**：Caissop 是 Picasso 的變位字（wiki）。他興奮時會冒出西班牙語（MUY MACHO、mucho）與法語（BIEN）——畢卡索生於西班牙、成名於法國，這很可能是刻意的（推測）；語料照留原文是對的。「村民牛」拿村民的長相開玩笑、「天馬豬」（Pigasus＝pig＋Pegasus）保住了合成詞，「會飛的豬」則是英文「when pigs fly」（不可能的事）的梗，三處譯文都接得住。
+
+出處：任務《大師的傑作》／wiki〈[Master Piece](https://wynncraft.wiki.gg/wiki/Master_Piece)〉、〈[Caissop](https://wynncraft.wiki.gg/wiki/Caissop)〉、〈[Caissop's Master Piece](https://wynncraft.wiki.gg/wiki/Caissop%27s_Master_Piece)〉
+
+#### 《少女之塔》（Lv. 51）
+
+沼澤裡獨居的食人魔 **Sherk**（Shrek 的變位字）一見玩家就吼：「你跑來我的沼澤幹嘛？！你不知道食人魔獨居是有原因的嗎？」他把 Wynn 聽成了 Win：「你從海的另一頭來，一個叫 Win 的地方？我看你可一點都不像個贏家啊，小不點。」——從此一路叫玩家「Win 人」，語料保留了這個誤聽，是對的。
+
+他在路上聽見高塔裡傳來一位淑女的聲音，就認定「她就是那個人」。淑女要求追求者先拿出誠意：去 Olux 銀行後面的地窖，取回她父親帶進墳墓的骨灰罈。Sherk 進不了 Olux（「我一進 {p}，就會被攻擊。被攻擊，我就會還手」），只好請玩家代勞，還要玩家先上塔替他「打個預防針」。淑女以為玩家才是追求者（「你就是我書上讀過的那種人類吧？」），看到爬上來的是食人魔反而更高興：「一隻高大、強壯、體格結實的食人魔！！」倒是 Sherk 看清楚她之後愣住了：
+
+> 「你們這種人不是應該比較……呃……沒那麼裂？沒那麼粗？沒那麼白？」
+> 「啊，你懂吧，食人魔跟你們這種人一樣，都是一層一層的，對吧？而你的第一層是……呃……爛掉的。」（少女之塔）
+
+Sherk 逃了，淑女轉向玩家：「不過你會讓我好過一點的，對吧，你這個強、強壯的人類？對吧？！對吧？！！」wiki 記錄 Sherk 事後的台詞：他已經替玩家「凡人的靈魂祈求救贖了」，現在只想跟新寵物待著，等一個好食人魔。
+
+**塔底的日記**（語料有收）才是這個任務的真正內容。淑女在塔外路邊撿到一隻「從地底下鑽出來」、又細又瘦的生物，取名 Fiona 當寵物。牠老是去抓父親的房門，又愛咬人，「被咬過之後我的皮膚都變得蒼白了」。後來父親死了，她發現 Fiona 趴在他身上，還以為牠是在安慰父親；最後她才承認：
+
+> 「父親就是被她害死的，我照鏡子時那副死人一樣的臉色也是她害的！！」（少女之塔）
+
+wiki 的解讀是：這隻寵物其實是一隻黯蝕的寄生蟲，因為缺光而去吸淑女與她父親的光。從地底鑽出、吸走生命、讓人變得蒼白，跟之五的 Dern 蟎與 The Bane of Gavel 描述的吸光小生物完全一致（wiki 的推測，本章同意）。也就是說，**Olux 最荒謬的一個喜劇任務，主角是黯蝕的受害者**；Sherk 說她「第一層是爛掉的」，字面上沒說錯。
+
+**旁註**：Fiona 是《史瑞克》裡公主的名字，這裡卻給了那隻寄生蟲，是反向的玩笑。Sherk 家裡任務後會多一隻木驢（致敬驢子），「一層一層的」是電影「洋蔥是一層一層的」的梗（wiki）。wiki〈Sherk〉頁的開頭仍是 1.19 舊版設定（受 Llevigar 人之託，救一位被術士詛咒的淑女），翻譯以現行版本為準。另外《Aldorei 的祕密 第一部》也有一位叫 Fiona 的植物學家，與這隻寵物無關，別弄混。
+
+出處：任務《少女之塔》／wiki〈[The Maiden Tower](https://wynncraft.wiki.gg/wiki/The_Maiden_Tower)〉、〈[Sherk](https://wynncraft.wiki.gg/wiki/Sherk)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉
+
+### 之十五　Light Forest 的邊緣：哈比人與矮人王子（第四輪補）
+
+#### 《究極的武器》（Lv. 75）
+
+Light Forest 的河邊住著哈比鑄劍師 **Dodegar Bandysnoot**，「舉世聞名」，可惜玩家沒聽過。他要打造「世上前所未見的最強武器」，需要四樣材料：木精靈身上的活木（握柄會「貼合使用者的手形」）、神聖哈比金屬、一種森林原生花 Diplacus Aurantiacus 的花蜜（當黏合劑），以及光澤之血。
+
+找金屬那一段是整個任務的笑點。玩家到哈比人的村子 **The Shiar**，被一路轉介：弟弟 Gogedar（只會「嗯——……」）→ 表親 Togedar（「Dodegar？恐怕我一點印象也沒有」）→「我姪子的哥哥」Alegdar（「我遇過的每個人都說我煩人又沒用。所以我就決定不再努力了」）→ Balegar（「我表親的姪子的老爸今年過得很不順」——繞一圈說的就是剛才那幾個人）→ 嫌你問名字怎麼唸「真沒禮貌」、卻還是自己唸給你聽的 Reyoretrsed（「我正忙著站在這裡不動」）→ 最後是唯一一個不叫 -dar／-gar 的 **Richard**：「我一直想跟你說，你要的東西在我這裡。」「反正這金屬就是個騙局，一點特別的地方都沒有。」
+
+找花時 Dodegar 覺得「這也太——太——太簡單了吧」，當場挖了一條跑酷路線要你重走；最後一樣材料來自一隻名字長得離譜的甲蟲（名牌作「冥界輝光塵葉甲蟲」，連 Dodegar 都說「我也不曉得這名字是打哪來的」）。成品出爐：
+
+> 「我的 Orphion 啊！你看它在發光、在閃爍、還在……還在放出光輝！」
+> 「你看不到？呃……人類仔，也許你需要配副眼鏡。」（究極的武器）
+
+獎品 **Dodegar 的終極兵器**是一把傳奇匕首，傷害 1–3，wiki 形容它「比遊戲裡幾乎所有武器都差」。
+
+**旁註**：wiki 說這個任務改過兩次：1.14 原版是在諷刺跑腿任務，要的材料一次比一次多（10、20、50、100 個）；1.18 減量；現行版本則把諷刺擴大到「一直轉介 NPC 的任務」「被吹上天的道具」「長得離譜的怪物名」。The Shiar 的名字近似《魔戒》哈比人的家鄉 the Shire（推測，wiki 沒有明說）。Dodegar 喊的是「我的 Orphion 啊」——Light Forest 的居民拿光之神發誓，對照 Gavel 村民的「聖牛」「Grook」（之十）。提示謎語「安歇在光的森林之中」指的就是 Light Forest。
+
+出處：任務《究極的武器》／wiki〈[The Ultimate Weapon](https://wynncraft.wiki.gg/wiki/The_Ultimate_Weapon)〉、〈[Dodegar](https://wynncraft.wiki.gg/wiki/Dodegar)〉、〈[The Shiar](https://wynncraft.wiki.gg/wiki/The_Shiar)〉、〈[Dodegar's Ultimate Weapon](https://wynncraft.wiki.gg/wiki/Dodegar%27s_Ultimate_Weapon)〉
+
+#### 《山中來客》（Lv. 67）
+
+Pre-Light Forest 東南、Bucie 城門外的山谷裡，Arnod 的房子一直燒、撲滅了又自己燒起來。他的假牙掉了，講話含糊不清（語料用「唔唔！人壘！偶的房幾燒起來惹！」這種大舌頭寫法處理，很好）。玩家到 Bucie 找幫手，遇到一個矮人：
+
+> 「我平常住在 {p}，東邊峽谷過去的地方。光看名字你就猜得出那裡是什麼樣了。」
+> 「細節就不多說了，那裡的治理方式……有點問題，我本來是想去 {p} 拉點支持。」
+> 「嗯，在老家被笑著趕出門我已經習慣了，只是沒想到在那邊會遇到一模一樣的事，只是牆紙換成石英的而已。」（山中來客）
+
+（wiki 的對白：老家是 Molten Heights，去拉支持的地方是 Llevigar。）
+
+火源是一隻小 **Fleris**——Molten Heights 的家庭寵物，像史萊姆，「挺黏人的，只要你受得了熱就是好夥伴」，可是一旦離開溫暖的巢丘就會受驚，把周圍全點著。兩人在山脊上找到一台加固過的貨車：是走私販。矮人解釋，Molten Heights 有黑市問題，「別的地方找不到的東西，因為值錢而在 Heights 被採收」，「想想看——居然有人把他們當武器用」。玩家用網子抓回逃走的 Flerisi，他修好貨車，再挖一條地道下到山谷，追那隻已經長得很大的 Fleris（「他被打會縮小！」）。牠把一座洞裡的「大門」當成了營火——矮人說「不知道那座大門是幹嘛的」，遊戲也沒交代。
+
+最後他才想起自己還沒自我介紹：「我叫 **Axelus**。」臨走前說：「要是他們跑了，好吧……我至少有一輛免費的車可以回家。那邊還有件事等著我處理。」
+
+> **伏筆**：這是第四章《矮人與 Doguns》的前傳。Axelus 是 Rodoroc 國王 Draani 八世的兒子，回家之後當眾揭穿「Doguns 是惡魔」的國家宣傳、以叛國罪下獄、創立聯盟，最後死在 Paku 手下（第四章）。
+> - 「治理方式……有點問題」「在老家被笑著趕出門我已經習慣了」——他要對抗的是自己父親的王朝。
+> - 「那邊還有件事等著我處理」——就是《矮人與 Doguns 第一部》。
+> - 「好，來場小小的皇家大亂鬥吧！」（royal rumble）——Royal Rumble 是摔角賽事的名字，而說這句話的人正是一位王子（推測：刻意的雙關）。
+> - 他在 Gavel 從頭到尾沒提自己的身分，也特地把被走私的 Flerisi 送回 Heights；第四章他替被當成惡魔的 Doguns 出頭，是同一種性格（推測）。
+
+**譯名旁註**：Fleris 是單數、Flerisi 是複數，語料兩種都有。wiki 說野生的 Flerisi 是母系社會（名牌「Fleris 女族長」），峽谷的 Ozoth's Spire 與 Molten Heights Gate 一帶（地名語料未收，照留原文）也有野生個體，可能就是走私販帶出來的。本任務在 1.20 重製。
+
+出處：任務《山中來客》《矮人與 Doguns 第一部》／wiki〈[From the Mountains](https://wynncraft.wiki.gg/wiki/From_the_Mountains)〉、〈[Axelus](https://wynncraft.wiki.gg/wiki/Axelus)〉、〈[Fleris](https://wynncraft.wiki.gg/wiki/Fleris)〉、〈[Bucie](https://wynncraft.wiki.gg/wiki/Bucie)〉
+
 ---
 
 ## 四、主要人物
@@ -301,7 +524,7 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 | Olon | Efilim 的精靈，熱愛陰謀論 | 追查父母之死，揭開精靈永生的真相 | Aldorei 的祕密 第二部 |
 | Korben | Aldorei 的精靈 | 為救中毒的父親偷闖禁地 | Aldorei 的祕密 第一部 |
 | Bak'al | 腐敗大軍的統帥（第一章），後投向 Saphanis（第五章） | 從黑暗傳送門現身，阻止玩家抵達樞紐，與 Lari 一同消失 | 光之領域 V |
-| Dr. Urelix | Olux 的魔像研究者 | 以活人換魔像，供應 Wynn 的腐敗之戰 | 斬草除根、Lost Farmers |
+| Dr. Urelix | Olux 的魔像研究者，工廠藏在自家小木屋 | 以活人換魔像，供應 Wynn 的腐敗之戰；對玩家開出封口費 | 斬草除根、Lost Farmers、鋼鐵之心 第二部、獵手的呼喚 |
 | Olux 鎮長 | Olux 的鎮長 | 被財政逼到與 Urelix 交易，想揭發時被玩家奉 Orphion 之命殺死 | 斬草除根、Shadowy Dealings |
 | Garvan（流浪者） | 科學家 | 第一個查出黯蝕成因的人；被保皇派操弄，把寄生體植入 Eileen；之後在 Kander 遊蕩一百五十年 | 空洞的寧靜 |
 | Katarin Faltach | Faltach 家女主人 | 與 Garvan 私通、靈魂綁在寶石上；死後化為怨靈 | 空洞的寧靜 |
@@ -315,6 +538,19 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 | Likeru／Berusia 長老 | Efilim 居民 | 藍帽菇實驗 | 破碎的心智 |
 | Voer | 異國植物商人 | 偷了 Lari 的書，賣錯花 | 死亡之哨 |
 | Slykaar | 被放逐的 Troms 薩滿 | 「犧牲少數，拯救多數」的另一個代言人 | 腐敗之叛 |
+| Kymer 隊長 | Ragni 出身的人類軍官，駐 Llevigar 城外（第四輪補） | 委託玩家斬殺三位獸人酋長；Fruma 篇自稱外交使節 | 清掃營地、女王的新兵 |
+| Arrai-Veretel | 西 Gavel 獸人與哥布林的共主（女性），坐鎮 Centerworld | 指控村民借人類之手在停火期間殺害三位 Rai | 條條大路達自由（《烈焰復仇》提及） |
+| Poxper（Rai-Poxper） | 獸人營地首領 | 為報復而偷走 Llevigar 的符文火斧，被玩家所殺 | 烈焰復仇 |
+| Jackson 偵探／Piere | Llevigar 的偵探／被燒了房子的農夫 | 用停火協議的漏洞請人類出手 | 烈焰復仇 |
+| 密探（Agent） | 不明組織的隕石研究者 | 依村民律法收繳隕石，說隕石也許能結束 Wynn 的戰爭 | 竊星者 |
+| Duvale | Llevigar Plains 的農夫 | 買到「瑕疵」魔像，聽見它說出 Madeleine | 鋼鐵之心 第一部 |
+| Madeleine／Theodore | 被做成守衛魔像的女兒與父親 | 記憶沒被抹乾淨，揭開工廠的祕密 | 鋼鐵之心 第一部、第二部 |
+| Hart 偵探 | Olux 的偵探 | 調查市民失蹤；舉報結局裡決定強攻工廠 | 鋼鐵之心 第二部、斬草除根（提及） |
+| Daxe | 有前科的 Olux 居民 | 闖進工廠後被送了一具魔像封口 | 鋼鐵之心 第二部 |
+| Caissop | 盲眼畫家（Picasso 的變位字） | 靠玩家的「描述」畫出三隻假傳說生物 | 大師的傑作 |
+| Sherk／塔上的淑女 | 獨居的食人魔／塔中的女子 | 喜劇求愛；淑女的父親死於她養的「寵物」（黯蝕寄生蟲，wiki 推測） | 少女之塔 |
+| Dodegar Bandysnoot | Light Forest 的哈比鑄劍師 | 打造傷害 1–3 的「終極兵器」 | 究極的武器 |
+| Axelus | Molten Heights 的矮人（第四章揭曉是王子） | 追查 Fleris 走私；回家後揭穿矮人的歷史謊言 | 山中來客、矮人與 Doguns |
 
 ---
 
@@ -334,6 +570,17 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 - **Orphion 在討伐戰尾聲叫玩家「阻止她」** → wiki 說沒有交代「她」是誰，未解。（第三輪補註：原句是古 Wynn 語「她必須被熄滅。她的影響在餵養這場無謂的戰爭」，Fruma 篇揭露 Anathema 就是「戰爭」的化身，這個「她」幾乎可以確定是 Anathema（推測）；見第八章〈Orphion 的光之樞紐〉。）
 - **《尋光》裡被撕掉的書頁** → 檔案庫明明是鎖著的，卻有人比玩家先到。未解。
 - **Rileen「你跟那隻巨獸的共通點還比跟我們多」、Elder「人類什麼事都做得成，毫無限制——不論是完成不可能的任務，還是打破道德的戒律」** → Orphion 選擇人類的理由，就是 Gavel 人怕人類的理由。
+- **（第四輪補）Kymer「反正村民也不在乎死活」**（清掃營地）→ 《條條大路達自由》Arrai-Veretel 說村民在停火期間騙人類殺了 Earthpit、Cliffhearth、Trunkstump 的三位 Rai。人類兵被村民當成刀。
+- **任務名「烈焰復仇」的「復仇」是誰的** → 從獸人的角度，是 Poxper 對三位 Rai 之死的報復；玩家只是被請去收拾。
+- **「趁魔力變壞的時候」偷走火斧**（Arrai-Veretel）→ 很可能是《Llevigar 之心》的大停電（推測）。
+- **Hart「最近才收到那麼多守衛魔像的捐贈」** → 捐來的魔像與失蹤的市民很可能是同一批人（推測）。
+- **獸人把魔像叫作「鐵屍機器」** → 村民不知道的事，獸人看得一清二楚。
+- **魔像的「冷」**（鋼鐵之心 一、二部）→ 被壓抑後僅剩的感覺；三處譯文要一致。
+- **舉報 Urelix 的結局沒有關掉工廠** → 他之後還出現在《斬草除根》《獵手的呼喚》；Olux 的命運不因玩家的良心改變（推測）。
+- **《少女之塔》的蒼白與「從地底鑽出來的寵物」** → 黯蝕寄生蟲吸光（wiki 推測）。喜劇任務底下的黯蝕。
+- **《竊星者》玩家對隕石輻射免疫** → 與 Picard「本來不存在的記憶」、Dramele「一大片空白」並列，是玩家身分的線索（推測）。
+- **密探「也許正是我們結束你們那場戰爭所需要的」、Urelix「沒有魔像，Gavel 和 Wynn 都會被戰爭的重擔壓垮」** → Gavel 一直在替 Wynn 的戰爭找武器，代價是人命與理智。
+- **Axelus「那邊還有件事等著我處理」「皇家大亂鬥」** → 第四章《矮人與 Doguns》，他是王子。
 - **Death Whistle 出現在 Fiona 的植物學書目錄裡**（《Aldorei 的祕密 第一部》）、**Revan 同時出現在《禁忌牢獄》與 Hallowed Ground**、**Referick 同時出現在《無頭歷史》與《Lazarus 之坑》**、**Vera 在《空洞的寧靜》裡問監獄的傳聞**、**Bip 講 Lexdale 女巫的八卦** → 北方各任務彼此參照，翻譯時人名、事件名要前後一致。
 
 ---
@@ -387,6 +634,8 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 - **《Llevigar 之心》**的工程師把 Zenam 叫成 Zeman、Zebra，原文笑點，照譯。
 - **《巨獸之影》**的 Tolem 氣到口誤：「I can't bellevue... bellevue? Believe!」語料譯成「接手……接手？接受！」，用近音字保住了笑點，很好。
 - **1.20 以前的舊設定**：Lari 的角色原本由偽裝成村民的 Tiek（Heliolux）擔任；寄生體與幼雛源自 1.14 的 Succoru 族，已被改寫（wiki）。翻譯時以現行版本為準。
+- **（第四輪補）名字與彩蛋**：Sherk＝Shrek、Caissop＝Picasso（皆為變位字，wiki）；Kymer 是前建築師 Mekyr 的變位字（Ragni 的 Rymek 也取自同一人，wiki）；守衛魔像疑似致敬《超時空奇俠》的 Cybermen（wiki）；Dodegar 的終極兵器傷害只有 1–3；《究極的武器》三個版本分別諷刺跑腿數量、NPC 轉介與誇大的道具（wiki）。
+- **（第四輪補）2.0 的改名**：《烈焰復仇》的 Poxper 原名 Gregg'r（裝備原名 Hide of Greggr），Arrai-Veretel 的位置原本是 Gorgu（1.20 以前的獸人首領）。舊譯名若還留在某處，以現名為準。
 
 ### 語料與翻譯上的疑點（給譯者）
 
@@ -421,6 +670,11 @@ Lari 終於覺得「這一次換我來」，跑去 Efilim 找長老。玩家偷�
 | Black Leaf | 黑葉 | 《精靈草藥學之書》說的 Death Whistle 正名 |
 | Dark Forest Village | 不譯 | 地名 |
 | The Equinox | 不譯，必要時括註「晝夜平分」 | 語料保留原文 |
+| Greenskins | 綠皮（族） | 獸人、哥布林、食人魔、巨魔的總稱（wiki〈Greenskins〉）；第九章已用「綠皮」（第四輪補） |
+| Rai／Arrai | 不譯 | 獸人頭銜：Rai＝營地首領、Arrai＝全體之首；語料照留（Rai-Poxper、Arrai-Veretel） |
+| Centerworld (Fortress) | 不譯 | 獸人的首府堡壘；語料照留 |
+| Sablestone／Loamsprout／Secretcove／Earthpit／Trunkstump 等營地名 | 不譯 | 語料多半留英文；npc.json 有一條「崖爐 Rai-Elisu」意譯了 Cliffhearth，見文末語料問題 |
+| Big Smack | 不譯 | Sablestone 營地供的大棍子（wiki），語料未收 |
 
 ---
 
@@ -436,4 +690,31 @@ the-worm-holes、taproot、a-headless-history、finding-the-light、the-realm-of
 - 任務頁：Realm of Light V https://wynncraft.wiki.gg/wiki/Realm_of_Light_V_-_The_Realm_of_Light ／ Lexdale Witch Trials https://wynncraft.wiki.gg/wiki/Lexdale_Witch_Trials ／ Corrupted Betrayal https://wynncraft.wiki.gg/wiki/Corrupted_Betrayal ／ Nest of the Grootslangs https://wynncraft.wiki.gg/wiki/Nest_of_the_Grootslangs
 - 隱藏探索點：Llevigar's Last Hope、Llevigar's Secret Library、At the Edge of Decay、Spider Ruins、Unstable Experiments、Abandoned Excavations、Teachings of Old、Lost Farmers、Shrouded Lives、Harmless Worms、Decaying Mountains、Shadowy Dealings、Empty Vaults、The Bane of Gavel、Parasite Cocoon、The Talor Crypt、A Dividing Force、Hallowed Ground、Headless, Not Homeless、Summoner's Fate、Ways of the Wicked、The Heart of the Decay、Temple of Light、Messengers from Beyond、Light Mushrooms、Sealed Away、Birth of Efilim、Fracture in Reality、Ne du Valeos du Ellach（皆為 https://wynncraft.wiki.gg/wiki/ 加頁名）
 
+**第四輪補讀（2026-10-23）**：任務語料 clearing-the-camps、blazing-retribution、star-thief、an-iron-heart-part-i、an-iron-heart-part-ii、master-piece、the-maiden-tower、the-ultimate-weapon、from-the-mountains，並引用 all-roads-to-peace、queen-s-recruit、true-colours、taproot 的相關台詞；npc.json、misc.json、gear-armour.json、gear-weapon.json。wiki：[Clearing the Camps](https://wynncraft.wiki.gg/wiki/Clearing_the_Camps)、[Blazing Retribution](https://wynncraft.wiki.gg/wiki/Blazing_Retribution)、[Star Thief](https://wynncraft.wiki.gg/wiki/Star_Thief)、[An Iron Heart Part I](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_I)、[An Iron Heart Part II](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_II)、[Master Piece](https://wynncraft.wiki.gg/wiki/Master_Piece)、[The Maiden Tower](https://wynncraft.wiki.gg/wiki/The_Maiden_Tower)、[The Ultimate Weapon](https://wynncraft.wiki.gg/wiki/The_Ultimate_Weapon)、[From the Mountains](https://wynncraft.wiki.gg/wiki/From_the_Mountains)、[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)、[Arrai-Veretel](https://wynncraft.wiki.gg/wiki/Arrai-Veretel)、[Captain Kymer](https://wynncraft.wiki.gg/wiki/Captain_Kymer)、[Meteors](https://wynncraft.wiki.gg/wiki/Meteors)、[Agent](https://wynncraft.wiki.gg/wiki/Agent)、[Dr. Urelix](https://wynncraft.wiki.gg/wiki/Dr._Urelix)、[Iron Golem Factory](https://wynncraft.wiki.gg/wiki/Iron_Golem_Factory)、[Detective Hart](https://wynncraft.wiki.gg/wiki/Detective_Hart)、[Daxe](https://wynncraft.wiki.gg/wiki/Daxe)、[Mechanical Reactor](https://wynncraft.wiki.gg/wiki/Mechanical_Reactor)、[Hide of Poxper](https://wynncraft.wiki.gg/wiki/Hide_of_Poxper)、[Caissop](https://wynncraft.wiki.gg/wiki/Caissop)、[Caissop's Master Piece](https://wynncraft.wiki.gg/wiki/Caissop%27s_Master_Piece)、[Sherk](https://wynncraft.wiki.gg/wiki/Sherk)、[Dodegar](https://wynncraft.wiki.gg/wiki/Dodegar)、[The Shiar](https://wynncraft.wiki.gg/wiki/The_Shiar)、[Dodegar's Ultimate Weapon](https://wynncraft.wiki.gg/wiki/Dodegar%27s_Ultimate_Weapon)、[Axelus](https://wynncraft.wiki.gg/wiki/Axelus)、[Fleris](https://wynncraft.wiki.gg/wiki/Fleris)、[Bucie](https://wynncraft.wiki.gg/wiki/Bucie)、[Taproot](https://wynncraft.wiki.gg/wiki/Taproot)、[A Hunter's Calling](https://wynncraft.wiki.gg/wiki/A_Hunter%27s_Calling)。wiki.gg 上沒有 Poxper 的個別頁面。
+
 **第二輪補讀（2026-10-22）**：Realm_of_Light_(Quest_Line) 在 wiki.gg 上**沒有這個頁面**；系列的總覽是消歧義頁〈[The Realm of Light](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light)〉，本輪改讀它列出的五個任務頁（[The Worm Holes](https://wynncraft.wiki.gg/wiki/The_Worm_Holes)、[Taproot](https://wynncraft.wiki.gg/wiki/Taproot)、[A Headless History](https://wynncraft.wiki.gg/wiki/A_Headless_History)、[Finding the Light](https://wynncraft.wiki.gg/wiki/Finding_the_Light)、[The Realm of Light (Quest)](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light_(Quest))）與地點頁〈[The Realm of Light (Location)](https://wynncraft.wiki.gg/wiki/The_Realm_of_Light_(Location))〉。另補讀 [Death Whistle (Quest)](https://wynncraft.wiki.gg/wiki/Death_Whistle_(Quest))、[Blue Cyclone](https://wynncraft.wiki.gg/wiki/Blue_Cyclone)、[Gale](https://wynncraft.wiki.gg/wiki/Gale)、Timeline 全文。
+
+---
+
+## 本章發現的語料問題（第四輪）
+
+這一輪補寫時看到的問題，只記錄、沒有改語料：
+
+| # | 任務／檔案 | 條目 | 問題 | 建議 |
+|---|---|---|---|---|
+| A1 | 《鋼鐵之心 第二部》an-iron-heart-part-ii.json | Stage 1 標 Detective Hart 的「那具魔像會危害周遭的一切。拜託，順著廢料的痕跡追過去……」 | 內容是第一部 Duvale 的台詞（第一部有幾乎相同的兩句），第二部的 Hart 沒有理由說這句；疑似歸錯檔或 speaker 標錯 | 核對 capture；歸錯就移回第一部或刪除 |
+| A2 | 《鋼鐵之心 第一部》an-iron-heart-part-i.json | 開頭「What^s my...name」與檔末「What's my...name」 | 同一句收了兩次，前者的 ^ 是撇號的錯字（capture 字元錯誤） | 刪掉帶 ^ 的那條 |
+| A3 | 《鋼鐵之心》一、二部 | 魔像的 [ERROR] | 第一部留「[ERROR]」，第二部譯成「［錯誤］」（全形括號） | 兩部統一（建議都留 [ERROR]，畫面上是故障字樣） |
+| A4 | 《烈焰復仇》blazing-retribution.json | Piere「Oh sweet baby bovine」 | 譯「噢我的老天爺」，Gavel 村民的聖牛誓語不見了（本章之十：慣用「我的小聖牛啊」） | 改「噢我的小聖牛啊」之類 |
+| A5 | npc.json | 「Cliffhearth Rai-Elisu」→「崖爐 Rai-Elisu」 | 同檔的 Earthpit、Trunkstump，以及《烈焰復仇》的十幾個營地名都留英文，只有這一個意譯 | 統一（建議都留英文） |
+| A6 | 《究極的武器》the-ultimate-weapon.json／npc.json | Glow Dust Leaf Beetle of the Underworld；Wood Sprite | 甲蟲名對話留英文、名牌譯「冥界輝光塵葉甲蟲」；Wood Sprite 名牌「木之精靈」、任務「木精靈」 | 對話照名牌 |
+| A7 | misc.json | 「Speak to Dodegar Bandysnoot at」 | dst 空白 | 補譯 |
+| A8 | 《究極的武器》 | Reyoretrsed「I'm {~}.」 | 譯「我 {~}。」讀不通；{~} 原本是什麼數字要看 capture | 查 capture 後補完整句 |
+| A9 | misc.json vs 《山中來客》from-the-mountains.json | 帶進度前綴的 Axelus 台詞 | 同一句兩種譯法：royal rumble「王室混戰」vs「皇家大亂鬥」；It inflamed the creatures「把……激怒了」vs「都點著了」、Fleris 的代名詞「它」vs「他」 | 照任務檔統一 |
+| A10 | misc.json | 寵物 Warm Fleris | 「召喚 Warm Fleris」留英文，同檔另一條作「溫暖 Fleris」 | 統一為「溫暖 Fleris」 |
+| A11 | 《少女之塔》the-maiden-tower.json | 日記第一頁 | 同一條裡 Fiona 先作「他」後作「她」；原文本來就是 it→her，但中文讀起來像錯字 | 要不要統一用「牠」或「她」，請決定 |
+| A12 | gear-weapon.json vs quest-name.json | Dodegar's Ultimate Weapon｜The Ultimate Weapon | 物品「終極兵器」、任務名「究極的武器」，同一個 Ultimate 兩種譯法 | 確認是否刻意；否則擇一 |
+| A13 | gear-armour.json vs misc.json | Shameful Greaves／Greaves of Shame | 物品名「可恥脛甲」，獎勵列「恥辱脛甲」（原文本身就是兩種寫法） | 低優先，可統一為物品名 |
+| A14 | quest-name.json | All Roads to Peace＝「條條大路達自由」 | peace 譯成「自由」；任務內容是獸人與村民的停火和談 | 確認是否刻意改寫；否則考慮「條條大路通和平」之類 |
+| A15 | npc.json vs 任務檔 | Dr. Urelix | 名牌作「Urelix 博士」，任務目標與本書作「Dr. Urelix」 | 擇一 |
+

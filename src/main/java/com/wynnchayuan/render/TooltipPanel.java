@@ -170,7 +170,7 @@ public final class TooltipPanel {
         Place spot;
         if (WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED) {
             spot = new Place(WynnChaYuan.config().fixedX(), WynnChaYuan.config().fixedY(),
-                    0, 0, false);
+                    0, 0, false, 0, 0);
         } else {
             spot = place(mc, lines, tooltip, mouseX, mouseY, screenW, screenH, gap);
         }
@@ -180,11 +180,8 @@ public final class TooltipPanel {
         // Wynnventory 的價格框也放在物品說明旁邊；跟著游標的面板要讓開它。
         // 使用者自己釘住位置的（FIXED）不動——那是他挑的地方。
         if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
-            int[] ob = box(mc, tooltip);
-            int originalW = ob[0] + 6;                     // 底色左右各外 3
-            int originalLeft = originalLeftFor(mouseX, screenW, ob[0]);
             x = WynnventoryBox.place(x, y, panelW, panelH,
-                    originalLeft - gap - panelW, originalLeft + originalW + gap, screenW, gap);
+                    spot.leftSide(), spot.rightSide(), screenW, gap);
         }
 
         // 原版那一份被我們沒收了（見 RenderListener#onTooltip）：改在這裡自己畫。
@@ -199,7 +196,12 @@ public final class TooltipPanel {
 
         // 位置我們自己算好了，所以用一個原樣回傳座標的 positioner，
         // 不讓 Minecraft 的預設定位器把面板挪回滑鼠旁邊。
-        graphics.renderTooltip(mc.font, components, x, y, EXACT, null);
+        OriginalTooltipBox.beginOwn();
+        try {
+            graphics.renderTooltip(mc.font, components, x, y, EXACT, null);
+        } finally {
+            OriginalTooltipBox.endOwn();
+        }
         // 記下這一塊在哪，截圖才知道要裁哪裡。名字取自譯文第一行——
         // 那通常就是物品名稱，當檔名剛好。
         String title = lines.isEmpty() ? null : lines.get(0).getString();
@@ -1348,8 +1350,11 @@ public final class TooltipPanel {
      *
      * @param overlaps 夾進畫面之後，譯名面板有沒有壓到原文；有的話原文由我們自己
      *                 畫到面板外側（見 {@link #place}）
+     * @param leftSide  面板放原文左邊時的 x（給 {@link WynnventoryBox} 換邊用）
+     * @param rightSide 面板放原文右邊時的 x
      */
-    record Place(int panelX, int panelY, int originalX, int originalY, boolean overlaps) {}
+    record Place(int panelX, int panelY, int originalX, int originalY, boolean overlaps,
+                 int leftSide, int rightSide) {}
 
     /**
      * 原 tooltip 的左上角。
@@ -1383,26 +1388,59 @@ public final class TooltipPanel {
     static Place place(Minecraft mc, List<Component> lines, List<Component> tooltip,
                        int mouseX, int mouseY, int screenW, int screenH, int gap) {
         int[] panelBox = box(mc, lines);
-        int panelW = panelBox[0] + 8;
-        int panelH = panelBox[1] + 8;
-
         int[] originalBox = box(mc, tooltip);
-        int originalTextW = originalBox[0];
-        int originalTextH = originalBox[1];
-        int originalW = originalTextW + 6;     // 畫出來的底色：左右各外 3
-        int originalH = originalTextH + 6;
-        int originalLeft = originalLeftFor(mouseX, screenW, originalTextW);
+        // 原文真正畫在哪：別的模組（Wynntils 的縮放、Wynnventory 讓位）可能挪過、縮過。
+        // 量不到才照原版公式推算。見 OriginalTooltipBox。
+        OriginalTooltipBox.Box drawn = OriginalTooltipBox.find(originalBox[0], originalBox[1]);
+        return layout(panelBox[0], panelBox[1], originalBox[0], originalBox[1], drawn,
+                mouseX, mouseY, screenW, screenH, gap, WynnChaYuan.config().panelSide());
+    }
 
-        int originalTop = mouseY - 12;
-        if (originalTop + originalTextH + 3 > screenH) {
-            originalTop = screenH - originalTextH - 3;
+    /**
+     * {@link #place} 的幾何部分（不碰遊戲，測試直接呼叫）。
+     *
+     * <h2>間距</h2>
+     * 使用者設的間距（預設 12）是兩個框<b>畫出來的最外圈</b>之間的距離。Wynncraft 的資源包把
+     * tooltip 的框線畫到文字區外 12px（{@link OriginalTooltipBox#FRAME}），原版只看得到 4px；
+     * 先前照 4px 算，兩邊的框線於是疊了一截（使用者 2026-10-24 回報）。
+     *
+     * <h2>上下</h2>
+     * 面板的第一列對齊原文的第一列。原文被 Wynntils 縮放或挪過的時候，照它實際畫的位置。
+     *
+     * @param drawn 原文這一幀實際畫的位置；{@code null} 時照原版的定位公式推算
+     */
+    static Place layout(int panelTextW, int panelTextH, int originalTextW, int originalTextH,
+                        OriginalTooltipBox.Box drawn, int mouseX, int mouseY,
+                        int screenW, int screenH, int gap, CollectorConfig.PanelSide side) {
+        int panelW = panelTextW + 8;
+        int panelH = panelTextH + 8;
+
+        int originalLeft;
+        int originalTop;
+        float scale;
+        if (drawn != null) {
+            originalLeft = Math.round(drawn.x());
+            originalTop = Math.round(drawn.y());
+            scale = drawn.scale();
+        } else {
+            originalLeft = originalLeftFor(mouseX, screenW, originalTextW);
+            originalTop = mouseY - 12;
+            if (originalTop + originalTextH + 3 > screenH) {
+                originalTop = screenH - originalTextH - 3;
+            }
+            scale = 1f;
         }
+        int frame = OriginalTooltipBox.FRAME;
+        int originalFrame = Math.round(frame * scale);
+        int shownW = Math.round(originalTextW * scale);
+        int shownH = Math.round(originalTextH * scale);
 
         boolean originalOnRight = originalLeft >= mouseX;
-        int rightSide = originalLeft + originalW + gap;
-        int leftSide = originalLeft - gap - panelW;
+        // 面板的 x 是它的文字區左緣；兩個框的最外圈之間隔 gap
+        int rightSide = originalLeft + shownW + originalFrame + gap + frame;
+        int leftSide = originalLeft - originalFrame - gap - frame - panelTextW;
 
-        int x = switch (WynnChaYuan.config().panelSide()) {
+        int x = switch (side) {
             case RIGHT -> rightSide;
             case LEFT -> leftSide;
             default -> originalOnRight ? leftSide : rightSide;
@@ -1412,17 +1450,23 @@ public final class TooltipPanel {
         x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
         y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
 
-        boolean overlaps = x < originalLeft + originalW && x + panelW > originalLeft
-                && y < originalTop + originalH && y + panelH > originalTop;
+        // 「壓到」照文字區加原版看得見的 4px 判斷：只是資源包那一圈框線碰到不算——
+        // 那種情況把原文推開、改由我們畫，反而會丟掉它的稀有度框。
+        int textLeft = originalLeft - 4;
+        int textTop = originalTop - 4;
+        boolean overlaps = x < textLeft + shownW + 8 && x + panelW > textLeft
+                && y < textTop + shownH + 8 && y + panelH > textTop;
 
         int originalX = originalLeft;
         int originalY = originalTop;
         if (overlaps) {
             // 推到面板外側；原文比畫面還寬時這一推會直接超出邊界，那是有意的。
-            originalX = originalOnRight ? x + panelW + gap : x - gap - originalW;
+            // 推開之後是我們照原大小畫，所以用沒縮放的寬度。
+            originalX = originalOnRight ? x + panelTextW + frame + gap + frame
+                    : x - frame - gap - frame - originalTextW;
             originalY = y;
         }
-        return new Place(x, y, originalX, originalY, overlaps);
+        return new Place(x, y, originalX, originalY, overlaps, leftSide, rightSide);
     }
 
     /**
@@ -1464,6 +1508,11 @@ public final class TooltipPanel {
                 .map(Component::getVisualOrderText)
                 .map(ClientTooltipComponent::create)
                 .toList();
-        graphics.renderTooltip(mc.font, parts, x, y, EXACT, null);
+        OriginalTooltipBox.beginOwn();
+        try {
+            graphics.renderTooltip(mc.font, parts, x, y, EXACT, null);
+        } finally {
+            OriginalTooltipBox.endOwn();
+        }
     }
 }
