@@ -170,7 +170,7 @@ Fruma 的 16 個探索點有三條互相咬合的線：Gale Nasin 的出逃（�
 | 賽道（原文） | 暫譯 | 建議等級 | 坐騎與前置 | 地點 | 長度／難度 | 時限 B／A／S／S+ | 特殊獎勵 | 每日獎勵 |
 |---|---|---|---|---|---|---|---|---|
 | Black Road Runaround | Black Road 兜圈跑 | 17 | 馬；《馬失前蹄》 | Ternaves | 短／易 | 2:00／1:20／1:00／0:40 | B：馬鞍（每帳號一次） | 速度上限 +1 |
-| Fast-Paced Pilgrimage | 快步朝聖 | 23 | 馬；《歸來的兄長》 | Saint's Row | 中／中 | 2:00／1:30／1:10／0:45 | A：Bovine Charm | 能量上限 +1 |
+| Fast-Paced Pilgrimage | 快步朝聖 | 23 | 馬；《兄弟歸來》 | Saint's Row | 中／中 | 2:00／1:30／1:10／0:45 | A：Bovine Charm | 能量上限 +1 |
 | Rush Around the Ruins | 廢墟疾走 | 27 | 馬 | Tempo Town | 中／易 | 2:00／1:20／1:10／0:45 | A：Aberrant Clock | 操控上限 +1 |
 | Dash Across the Dunes | 沙丘衝刺 | 31 | 馬 | Invaded Barracks | 中／易 | 2:30／1:25／1:15／0:50 | A：Mercenary's Mail | 動量上限 +1 |
 | Llevigar Leg Day | Llevigar 練腿日 | 40 | 馬 | Llevigar Plains | 短／中 | 2:00／1:15／1:05／0:45 | A：馬蹄靴 | 操控上限 +2 |

@@ -1,6 +1,6 @@
 # 第二章　Gavel：光與黯蝕
 
-> **劇透提醒**：本章完整劇透《光之領域 I－V》（蟲洞、斬草除根、無頭歷史、尋光、光之領域）、《Aldorei 的祕密 第一部／第二部》、《空洞的寧靜》、《記憶的猜忌》、《禁忌牢獄》、《Lazarus 之坑》、《Lexdale 巫女審判》、《死亡之哨》、《巨獸之影》、《破碎的心智》、《Llevigar 之心》、《腐敗之叛》，第四輪補入的《清掃營地》《烈焰復仇》《竊星者》《鋼鐵之心 第一部／第二部》《大師的傑作》《少女之塔》《究極的武器》《山中來客》（並輕度提到《條條大路達自由》的結局），以及 Llevigar Plains、Olux Swamp、Dark Forest、Light Forest 四區全部的隱藏探索點（含 Ne du Valeos du Ellach 的過場），還有討伐戰 Grootslang 之巢、Orphion 的光之樞紐的開場設定。
+> **劇透提醒**：本章完整劇透《光之領域 I－V》（蟲洞、斬草除根、無頭歷史、尋光、光之領域）、《Aldorei 的祕密 第一部／第二部》、《空洞的寧靜》、《記憶的猜忌》、《禁忌牢獄》、《Lazarus 之坑》、《Lexdale 巫女審判》、《死亡之哨》、《巨獸之影》、《破碎的心智》、《Llevigar 之心》、《腐敗之叛》，第四輪補入的《清掃營地》《烈焰復仇》《竊星者》《鋼鐵之心 第一部／第二部》《大師的傑作》《少女之塔》《究極的武器》《山中來客》（並輕度提到《條條大路達和平》的結局），以及 Llevigar Plains、Olux Swamp、Dark Forest、Light Forest 四區全部的隱藏探索點（含 Ne du Valeos du Ellach 的過場），還有討伐戰 Grootslang 之巢、Orphion 的光之樞紐的開場設定。
 
 ---
 
@@ -331,14 +331,14 @@ Jackson 收回斧頭後說：「但願那個 Veretel 不會聽到風聲。」聽
 
 出處：任務《烈焰復仇》／wiki〈[Blazing Retribution](https://wynncraft.wiki.gg/wiki/Blazing_Retribution)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉、〈[Hide of Poxper](https://wynncraft.wiki.gg/wiki/Hide_of_Poxper)〉
 
-#### 獸人那一邊：《條條大路達自由》怎麼回頭結算這兩個任務
+#### 獸人那一邊：《條條大路達和平》怎麼回頭結算這兩個任務
 
-這兩個任務在獸人的大任務（All Roads to Peace，語料任務名「條條大路達自由」，Lv. 64）裡被翻了過來。玩家想促成和談，見到了 Centerworld 堡壘的 **Arrai-Veretel**——西 Gavel 獸人與哥布林的共主（wiki：女性；Rai 是營地首領的頭銜，Arrai 是全體之首）。她一眼認出玩家：
+這兩個任務在獸人的大任務（All Roads to Peace，語料任務名「條條大路達和平」，Lv. 64）裡被翻了過來。玩家想促成和談，見到了 Centerworld 堡壘的 **Arrai-Veretel**——西 Gavel 獸人與哥布林的共主（wiki：女性；Rai 是營地首領的頭銜，Arrai 是全體之首）。她一眼認出玩家：
 
 > 「你！你就是殺了 Rai-Poxper 的人類！你就是攻擊另一座堡壘的人類！」
 > 「人類攻擊！Rai-Poxper 為毀約收取應得的代價，但還不是戰爭。趁魔力變壞的時候從村民城裡拿走魔法斧頭。」
 > 「村民讓人類替他們打！停火協議說村民不攻擊獸人。然後人類渡海過來。想講和——就被攻擊！」
-> 「然後三個 Rai 獸人死在 Earthpit、Cliffhearth 和 Trunkstump 的哥布林營地。」（條條大路達自由）
+> 「然後三個 Rai 獸人死在 Earthpit、Cliffhearth 和 Trunkstump 的哥布林營地。」（條條大路達和平）
 
 對照 wiki〈Greenskins〉：Earthpit 由 Ceifko 統領、Cliffhearth 由 Elisu 統領、Trunkstump 是哥布林營地卻由獸人 Veltu 統領——**正是《清掃營地》的三位酋長**。所以從獸人的角度看，事情的順序是：
 
@@ -351,7 +351,7 @@ Jackson 收回斧頭後說：「但願那個 Veretel 不會聽到風聲。」聽
 
 「趁魔力變壞的時候」很可能就是之八《Llevigar 之心》那場電魔法發電廠的大停電（推測：台詞沒有點名發電廠，但 Llevigar 的「魔力」出問題，劇情裡只有那一次）。另外 Veretel 說北方「腐爛的大地」是村民傷害大地的結果，「只比村民渡海離開早幾十年開始」——獸人把黯蝕怪到村民頭上，這和本章前半知道的真相（寄生體）並不相符，但時間點（800 AP 黯蝕擴散、900 AP 出海）是對的。
 
-出處：任務《條條大路達自由》／wiki〈[Arrai-Veretel](https://wynncraft.wiki.gg/wiki/Arrai-Veretel)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉
+出處：任務《條條大路達和平》／wiki〈[Arrai-Veretel](https://wynncraft.wiki.gg/wiki/Arrai-Veretel)〉、〈[Greenskins](https://wynncraft.wiki.gg/wiki/Greenskins)〉
 
 #### 《竊星者》（Lv. 42）
 
@@ -423,10 +423,10 @@ Hart 請玩家去找有前科的「偉大的」**Daxe**，他的小屋「就在�
 > **暗示與前後對照**：
 > - **Hart 的位置**：《斬草除根》裡 Olux 鎮長說要「讓 Hart 偵探聽到全部」，Urelix 隨即以「救十個、判一千個死刑」說服玩家殺掉鎮長。本任務的 Hart 說「那座魔像工廠我們知道」，卻對血肉改造一無所知——鎮長的話從來沒有傳到他耳裡。
 > - **兩個結局都沒有關掉工廠**：舉報結局裡 Hart 要強攻，但 Urelix 之後仍出現在《斬草除根》與《獵手的呼喚》（後者的第五個場景要先完成本任務才開放，玩家反過來替他把三個沼澤居民騙進工廠）。遊戲沒有交代強攻的結果（wiki〈Dr. Urelix〉）。這和《斬草除根》「只有一個選擇」是同一種設計：玩家的良心不改變 Olux 的命運（推測）。第三章 Gylia 的 Jitak 說他的魔像是「因為 {p} 工廠出了點事」才便宜買到的，那件「事」可能就是這次強攻（推測）。
-> - **獸人早就知道**：《條條大路達自由》裡 Arrai-Veretel 罵人類「還想用鐵屍機器威脅我們！」——原文 iron corpse machine。村民不知道魔像是怎麼造的，獸人卻直接叫它「鐵屍機器」。
+> - **獸人早就知道**：《條條大路達和平》裡 Arrai-Veretel 罵人類「還想用鐵屍機器威脅我們！」——原文 iron corpse machine。村民不知道魔像是怎麼造的，獸人卻直接叫它「鐵屍機器」。
 > - wiki〈Iron Golem Factory〉的地區說明：保護 Wynn 與 Gavel 的鐵魔像，製法「一直不為大眾所知」。Wynn 那邊每座城門口的魔像，都可能是這座工廠的產品。
 
-出處：任務《鋼鐵之心 第二部》《斬草除根》《獵手的呼喚》《條條大路達自由》／wiki〈[An Iron Heart Part II](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_II)〉、〈[Dr. Urelix](https://wynncraft.wiki.gg/wiki/Dr._Urelix)〉、〈[Iron Golem Factory](https://wynncraft.wiki.gg/wiki/Iron_Golem_Factory)〉、〈[Detective Hart](https://wynncraft.wiki.gg/wiki/Detective_Hart)〉、〈[Daxe](https://wynncraft.wiki.gg/wiki/Daxe)〉
+出處：任務《鋼鐵之心 第二部》《斬草除根》《獵手的呼喚》《條條大路達和平》／wiki〈[An Iron Heart Part II](https://wynncraft.wiki.gg/wiki/An_Iron_Heart_Part_II)〉、〈[Dr. Urelix](https://wynncraft.wiki.gg/wiki/Dr._Urelix)〉、〈[Iron Golem Factory](https://wynncraft.wiki.gg/wiki/Iron_Golem_Factory)〉、〈[Detective Hart](https://wynncraft.wiki.gg/wiki/Detective_Hart)〉、〈[Daxe](https://wynncraft.wiki.gg/wiki/Daxe)〉
 
 #### 《大師的傑作》（Lv. 53）
 
@@ -539,7 +539,7 @@ Pre-Light Forest 東南、Bucie 城門外的山谷裡，Arnod 的房子一直燒
 | Voer | 異國植物商人 | 偷了 Lari 的書，賣錯花 | 死亡之哨 |
 | Slykaar | 被放逐的 Troms 薩滿 | 「犧牲少數，拯救多數」的另一個代言人 | 腐敗之叛 |
 | Kymer 隊長 | Ragni 出身的人類軍官，駐 Llevigar 城外（第四輪補） | 委託玩家斬殺三位獸人酋長；Fruma 篇自稱外交使節 | 清掃營地、女王的新兵 |
-| Arrai-Veretel | 西 Gavel 獸人與哥布林的共主（女性），坐鎮 Centerworld | 指控村民借人類之手在停火期間殺害三位 Rai | 條條大路達自由（《烈焰復仇》提及） |
+| Arrai-Veretel | 西 Gavel 獸人與哥布林的共主（女性），坐鎮 Centerworld | 指控村民借人類之手在停火期間殺害三位 Rai | 條條大路達和平（《烈焰復仇》提及） |
 | Poxper（Rai-Poxper） | 獸人營地首領 | 為報復而偷走 Llevigar 的符文火斧，被玩家所殺 | 烈焰復仇 |
 | Jackson 偵探／Piere | Llevigar 的偵探／被燒了房子的農夫 | 用停火協議的漏洞請人類出手 | 烈焰復仇 |
 | 密探（Agent） | 不明組織的隕石研究者 | 依村民律法收繳隕石，說隕石也許能結束 Wynn 的戰爭 | 竊星者 |
@@ -570,7 +570,7 @@ Pre-Light Forest 東南、Bucie 城門外的山谷裡，Arnod 的房子一直燒
 - **Orphion 在討伐戰尾聲叫玩家「阻止她」** → wiki 說沒有交代「她」是誰，未解。（第三輪補註：原句是古 Wynn 語「她必須被熄滅。她的影響在餵養這場無謂的戰爭」，Fruma 篇揭露 Anathema 就是「戰爭」的化身，這個「她」幾乎可以確定是 Anathema（推測）；見第八章〈Orphion 的光之樞紐〉。）
 - **《尋光》裡被撕掉的書頁** → 檔案庫明明是鎖著的，卻有人比玩家先到。未解。
 - **Rileen「你跟那隻巨獸的共通點還比跟我們多」、Elder「人類什麼事都做得成，毫無限制——不論是完成不可能的任務，還是打破道德的戒律」** → Orphion 選擇人類的理由，就是 Gavel 人怕人類的理由。
-- **（第四輪補）Kymer「反正村民也不在乎死活」**（清掃營地）→ 《條條大路達自由》Arrai-Veretel 說村民在停火期間騙人類殺了 Earthpit、Cliffhearth、Trunkstump 的三位 Rai。人類兵被村民當成刀。
+- **（第四輪補）Kymer「反正村民也不在乎死活」**（清掃營地）→ 《條條大路達和平》Arrai-Veretel 說村民在停火期間騙人類殺了 Earthpit、Cliffhearth、Trunkstump 的三位 Rai。人類兵被村民當成刀。
 - **任務名「烈焰復仇」的「復仇」是誰的** → 從獸人的角度，是 Poxper 對三位 Rai 之死的報復；玩家只是被請去收拾。
 - **「趁魔力變壞的時候」偷走火斧**（Arrai-Veretel）→ 很可能是《Llevigar 之心》的大停電（推測）。
 - **Hart「最近才收到那麼多守衛魔像的捐贈」** → 捐來的魔像與失蹤的市民很可能是同一批人（推測）。
@@ -673,7 +673,7 @@ Pre-Light Forest 東南、Bucie 城門外的山谷裡，Arnod 的房子一直燒
 | Greenskins | 綠皮（族） | 獸人、哥布林、食人魔、巨魔的總稱（wiki〈Greenskins〉）；第九章已用「綠皮」（第四輪補） |
 | Rai／Arrai | 不譯 | 獸人頭銜：Rai＝營地首領、Arrai＝全體之首；語料照留（Rai-Poxper、Arrai-Veretel） |
 | Centerworld (Fortress) | 不譯 | 獸人的首府堡壘；語料照留 |
-| Sablestone／Loamsprout／Secretcove／Earthpit／Trunkstump 等營地名 | 不譯 | 語料多半留英文；npc.json 有一條「崖爐 Rai-Elisu」意譯了 Cliffhearth，見文末語料問題 |
+| Sablestone／Loamsprout／Secretcove／Earthpit／Trunkstump 等營地名 | 不譯 | 語料留英文（Cliffhearth 原本有一條意譯作「崖爐」，**已定案（使用者 10-24）**改回英文） |
 | Big Smack | 不譯 | Sablestone 營地供的大棍子（wiki），語料未收 |
 
 ---
@@ -706,7 +706,7 @@ the-worm-holes、taproot、a-headless-history、finding-the-light、the-realm-of
 | A2 | 《鋼鐵之心 第一部》an-iron-heart-part-i.json | 開頭「What^s my...name」與檔末「What's my...name」 | 同一句收了兩次，前者的 ^ 是撇號的錯字（capture 字元錯誤） | 刪掉帶 ^ 的那條 |
 | A3 | 《鋼鐵之心》一、二部 | 魔像的 [ERROR] | 第一部留「[ERROR]」，第二部譯成「［錯誤］」（全形括號） | 兩部統一（建議都留 [ERROR]，畫面上是故障字樣） **已處理（#1411）** |
 | A4 | 《烈焰復仇》blazing-retribution.json | Piere「Oh sweet baby bovine」 | 譯「噢我的老天爺」，Gavel 村民的聖牛誓語不見了（本章之十：慣用「我的小聖牛啊」） | 改「噢我的小聖牛啊」之類 **已處理（#1411）** |
-| A5 | npc.json | 「Cliffhearth Rai-Elisu」→「崖爐 Rai-Elisu」 | 同檔的 Earthpit、Trunkstump，以及《烈焰復仇》的十幾個營地名都留英文，只有這一個意譯 | 統一（建議都留英文） |
+| A5 | npc.json | 「Cliffhearth Rai-Elisu」→「崖爐 Rai-Elisu」 | 同檔的 Earthpit、Trunkstump，以及《烈焰復仇》的十幾個營地名都留英文，只有這一個意譯 | 統一（建議都留英文） **已定案（使用者 10-24）**：照其他營地留英文，繁簡名牌 7 條改回 Cliffhearth |
 | A6 | 《究極的武器》the-ultimate-weapon.json／npc.json | Glow Dust Leaf Beetle of the Underworld；Wood Sprite | 甲蟲名對話留英文、名牌譯「冥界輝光塵葉甲蟲」；Wood Sprite 名牌「木之精靈」、任務「木精靈」 | 對話照名牌 **已處理（#1411）** |
 | A7 | misc.json | 「Speak to Dodegar Bandysnoot at」 | dst 空白 | 補譯 **已處理（#1411）** |
 | A8 | 《究極的武器》 | Reyoretrsed「I'm {~}.」 | 譯「我 {~}。」讀不通；{~} 原本是什麼數字要看 capture | 查 capture 後補完整句 **已處理（#1411）** |
@@ -715,6 +715,6 @@ the-worm-holes、taproot、a-headless-history、finding-the-light、the-realm-of
 | A11 | 《少女之塔》the-maiden-tower.json | 日記第一頁 | 同一條裡 Fiona 先作「他」後作「她」；原文本來就是 it→her，但中文讀起來像錯字 | 要不要統一用「牠」或「她」，請決定 |
 | A12 | gear-weapon.json vs quest-name.json | Dodegar's Ultimate Weapon｜The Ultimate Weapon | 物品「終極兵器」、任務名「究極的武器」，同一個 Ultimate 兩種譯法 | 確認是否刻意；否則擇一 |
 | A13 | gear-armour.json vs misc.json | Shameful Greaves／Greaves of Shame | 物品名「可恥脛甲」，獎勵列「恥辱脛甲」（原文本身就是兩種寫法） | 低優先，可統一為物品名 |
-| A14 | quest-name.json | All Roads to Peace＝「條條大路達自由」 | peace 譯成「自由」；任務內容是獸人與村民的停火和談 | 確認是否刻意改寫；否則考慮「條條大路通和平」之類 |
+| A14 | quest-name.json | All Roads to Peace＝「條條大路達自由」 | peace 譯成「自由」；任務內容是獸人與村民的停火和談 | 確認是否刻意改寫；否則考慮「條條大路通和平」之類 **已定案（使用者 10-24）**：改「條條大路達和平」（簡中原本就是「条条大路通和平」），任務名的各個鍵與本書一起改 |
 | A15 | npc.json vs 任務檔 | Dr. Urelix | 名牌作「Urelix 博士」，任務目標與本書作「Dr. Urelix」 | 擇一 **已處理（#1411）** |
 

@@ -345,7 +345,7 @@
 
 | 物品（原文／現譯） | 稀有度 | lore 重點與指涉 | 備註 |
 |---|---|---|---|
-| Lament／沉嚎 | 神話 | 失落之城 Sarnfic 沉入深淵時，浮上水面的只有尖叫的氣泡和這根魔杖。法師議會為封印深淵雨靴而沉了 Sarnfic（第四章）。 | 與 Abysso Galoshes（H 組）、Sarnfic's Lost Treasure 同一事件。 |
+| Lament／輓歌 | 神話 | 失落之城 Sarnfic 沉入深淵時，浮上水面的只有尖叫的氣泡和這根魔杖。法師議會為封印深淵雨靴而沉了 Sarnfic（第四章）。 | 與 Abysso Galoshes（H 組）、Sarnfic's Lost Treasure 同一事件。 |
 | Sarnfic's Lost Treasure／Sarnfic 的失落寶藏 | 稀有 | 無 lore。 | |
 | Idol／溟像 | 神話 | 從 Seavale Reef 撈起的三叉戟，會讓人渴望海洋、自沉於海。 | |
 | Cascade／傾瀉魔杖 | 傳奇 | 法師島一場由一連串看似不相干事件引發的魔法災變。 | |
