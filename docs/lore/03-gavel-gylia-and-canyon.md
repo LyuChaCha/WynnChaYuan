@@ -38,7 +38,7 @@ Gavel 是村民（Villager）的故鄉行省。它的西半部被黯蝕（Decay�
 | 100 AP | 矮人抵達 Molten Heights，Dogun 戰爭開始 | wiki〈Timeline〉 |
 | 300 AP | Dogun 戰敗，矮人建立 Rodoroc（屠殺的細節見 Molten Heights 那一章） | wiki〈Timeline〉 |
 | 750 AP | 末代國王 Theden II 死於 Cinfras 起義，王政終結，Gavel 改行民主 | wiki〈Timeline〉、隱藏探索點 宏大典藏 |
-| 800 AP | Gerten 戰爭以村民勝利告終，Gert 被圈禁在北方營地，Gylia Watch 成立 | wiki〈Timeline〉、隱藏探索點 Gylia Watch 圖書館 |
+| 800 AP | Gerten 戰爭以村民勝利告終，Gert 被圈禁在北方營地，Gylia 守望隊成立 | wiki〈Timeline〉、隱藏探索點 Gylia Watch 圖書館 |
 | 850 AP | Markus Corkus T. 帶著 Fruma 農業區的叛逃者乘熱氣球出走，建立 Corkus | wiki〈Timeline〉 |
 | 約 900 AP | Gavel 政府邀請 Sodeta Guild 進駐 Guild Hall，Cinfras 成為公會中心 | wiki〈Cinfras (City)〉 |
 | 994 AP | 一班學生參觀 Siegfried 紀念碑，聽演員扮的 Siegfried 演講 | wiki〈Timeline〉 |
@@ -105,7 +105,7 @@ Gert 的特徵全都是這段日誌的延伸：永遠餓、只吃肉、語言退
 
 #### 《Gerts 大饑荒 第一部》
 
-兩百年後的 Gylia Watch 已經爛掉了。指揮官 Cikal 一見到玩家就想拉你喝酒打撲克，還得意地解釋：和平條約讓 Gert 待在邊界裡，Cinfras 每個月送物資來、由哨站轉交給 Gert——「當然啦，我們得留一部分給自己」。
+兩百年後的 Gylia 守望隊已經爛掉了。指揮官 Cikal 一見到玩家就想拉你喝酒打撲克，還得意地解釋：和平條約讓 Gert 待在邊界裡，Cinfras 每個月送物資來、由哨站轉交給 Gert——「當然啦，我們得留一部分給自己」。
 
 農夫 Jitak 抱怨 Gert 偷走他的豬，玩家潛入 Gert 的前哨營地，偷聽到族長 Snaga 的會議：鎮上的人把要給 Gert 的東西偷去辦派對，所以 Gert 一路把「洞穴路」挖到哨站底下。玩家拿 Jitak 的建議，在 Gert 的南瓜農場自己刻了一張 Gert 臉混進主營地（刻錯表情會被識破——「Gert 沒有不餓的時候！」），在隧道裡親耳聽到哨站隊長說：「那些蠢 Gert 根本不知道我們拿走了他們的東西！」
 
@@ -488,8 +488,8 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 | Theden II | Gavel 末代國王 | 750 AP 起義時已死，王政終結 | 宏大典藏 |
 | Remikas | Gavel 第一位國王 | 自立為王，王室統治千餘年的開端；古代戰士的典範 | 宏大典藏、《踏入道場》 |
 | 隕石之印的學者 | Gylia 的村民學者 | 被隕石逼瘋，成為第一個 Gert | 隕石之印 |
-| Norler | Gylia 民兵領袖 | 以腐肉散播疾病贏得 Gerten 戰爭，創立 Gylia Watch | Gylia Watch 圖書館 |
-| Cikal | Gylia Watch 指揮官 | 偷 Gert 物資辦派對，引發第二次 Gert 戰事 | 《Gerts 大饑荒》 |
+| Norler | Gylia 民兵領袖 | 以腐肉散播疾病贏得 Gerten 戰爭，創立 Gylia 守望隊 | Gylia Watch 圖書館 |
+| Cikal | Gylia 守望隊指揮官 | 偷 Gert 物資辦派對，引發第二次 Gert 戰事 | 《Gerts 大饑荒》 |
 | Winie | 新進的 Gylia 哨兵 | 唯一清醒的守衛，向 Cinfras 通報，接手哨站 | 《Gerts 大饑荒 第二部》 |
 | Snaga | Gert 族長 | 挖隧道偷食物 | 《Gerts 大饑荒 第一部》 |
 | Korun／Nikoler | Lake Gylia 的兩位科學家 | 嘴上互相仇視的研究對手 | 《紫與藍》 |
@@ -526,7 +526,7 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 
 ## 五、伏筆與暗示
 
-- **「腦袋不正常」→ 湖底隕石**：Gylia Watch 的守衛「腦袋全都攪成一團」、Cinfras 軍官說「每個人腦袋都不正常」，對上第一個 Gert 的日誌、Nikoler「最頂尖的三個頭腦葬送在宇宙力量之下」、《???》三兄弟的執迷。Gylia 一帶的怪人與墮落，可能都與隕石有關。
+- **「腦袋不正常」→ 湖底隕石**：Gylia 守望隊的守衛「腦袋全都攪成一團」、Cinfras 軍官說「每個人腦袋都不正常」，對上第一個 Gert 的日誌、Nikoler「最頂尖的三個頭腦葬送在宇宙力量之下」、《???》三兄弟的執迷。Gylia 一帶的怪人與墮落，可能都與隕石有關。
 - **「Gert 是什麼」→ 村民自己不知道**：宏大典藏的學者否定「Gert 搭隕石來」，Gylia Watch 圖書館把 Gert 寫成野蠻人；只有藏起來的隕石之印說出真相。村民打了一場對付同胞的戰爭。
 - **紫與藍＝混沌與秩序**：Helmund 的研究結論。「兩股力量相撞，就會有戰爭」（D 號遺址）是同一個世界法則（光與暗相撞生出腐敗）的另一種說法（推測）。
 - **Gavel 的隕石公司 → WynnExcavation**：舊公告證實合流；WynnExcavation 稱水晶「來自異界」、會議祝詞是「願黑暗的注視」。
