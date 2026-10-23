@@ -249,7 +249,7 @@ Gikyo 照原文：別人稱 they 的寫「他們」，Gikyo 自稱 it 的寫「�
 | young leaf | 小葉子 | Mora 對新成員的稱呼。 **(待討論)** |
 | identification papers | 身分文件 |  |
 | passport | 通行證 | Syndra 弄來的那份，跟 `papers` 分開 |
-| the Driver | （未定，暫留原文） | 檔案裡「由 the Driver 帶往本地」。像職稱又像代號，**待討論** |
+| the Driver | 車夫 | 新兵篷車的車夫（台詞）；名牌 Caravan Driver 仍作「車隊駕駛」。**已定案（使用者 10-24）** |
 | the Canopy | 樹冠 | Fruma 的另一支反抗組織，住在巨樹上，內部以梟／鴿互稱。與 `Leaves in the Wind` 同一種命名法。章節名 `Amongst the Canopy`＝樹冠之間，不寫「林冠」 **(待討論)** |
 | Steel Feather | 鋼羽 | Quill 那一支。 **(待討論)** |
 | Steel Feather Ticket | Steel Feather 票券 | 物品名稱照車站名（The Steel Feather 是地名，留原文）；是地下站的配給票券，不是車票（使用者 10-23） |

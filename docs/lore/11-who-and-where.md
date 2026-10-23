@@ -92,8 +92,8 @@
 | Nick | Nick | 自稱「沙漠的 Sanda Claus」，Santa 的兄弟 | 《佳節有情》(52) | [01](01-wynn.md) | 他 | Sanda Claus＝Sand＋Santa 的雙關 |
 | Thomas | Thomas／叛徒 Thomas | Pigman Ravine 的村民，起初不信苦力怕存在 | 《苦力怕入侵》(38)、《WynnExcavation D 號遺址》(9) | [01](01-wynn.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md) | 他 | 《苦力怕入侵》的 Thomas 與「叛徒 Thomas」是否同一人要看任務 |
 | Ope | Ope | Detlas 的騙子，耍了 Tasim | 《補給與運送》(27)、《蟲害叢生》(6) | [01](01-wynn.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | — |
-| Bishop Kaideus | 主教 Kaideus | Nemract 牛神教會的主教，扣下死者遺囑 | 《歸來的兄長》(18) | [01](01-wynn.md) | — | 「主教」放名字前面；Bovemist＝牛神信徒（已定案 10-24）、Holy Bovine＝聖牛在上 |
-| Alfe | Alfe | 新來的 Fruma 新兵、教會見習生，整理千年古籍 | 《歸來的兄長》(8) | [01](01-wynn.md) | — | — |
+| Bishop Kaideus | 主教 Kaideus | Nemract 牛神教會的主教，扣下死者遺囑 | 《兄弟歸來》(18) | [01](01-wynn.md) | — | 「主教」放名字前面；Bovemist＝牛神信徒（已定案 10-24）、Holy Bovine＝聖牛在上 |
+| Alfe | Alfe | 新來的 Fruma 新兵、教會見習生，整理千年古籍 | 《兄弟歸來》(8) | [01](01-wynn.md) | — | — |
 | King of Ragni | Ragni 國王 | Ragni 的國王；「兩股力量相撞，就會有戰爭」 | 《女王的新兵》(14)、《國王的新兵》(8)、《歸鄉之旅》(6) | [01](01-wynn.md) | 他 | speaker 有 King of Ragni 與 Ragni's King 兩種 |
 | Slykaar | Slykaar | Iboju 出身的薩滿，以活人獻祭守護 Troms，被放逐後投向黑暗；叢林遺跡首領 | 《腐敗之叛》(16) | [01](01-wynn.md)、[02](02-gavel-light-and-decay.md)、[05](05-silent-expanse-and-dern.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md) | 他 | 「Bob 已經失蹤好幾年了」把時間點定在 984 AP 之後 |
 | General Skien | Skien 將軍 | Troms 將軍，被部下背叛、戰敗流放，死後被腐敗喚回 | 《幽徑》（市民閒談）、Skien 島 | [01](01-wynn.md)、[09](09-item-lore-index.md) | 他 | 物品 Skien's Madness／Paranoia 是同一人 |
@@ -159,7 +159,7 @@
 | Voer | Voer | 異國植物商人，偷了 Lari 的書、賣錯花 | 《死亡之哨》(17) | [02](02-gavel-light-and-decay.md) | — | 推車裡的《精靈草藥學之書》內文語料沒收 |
 | Kalrow | Kalrow | 業餘術士 | 探索點〈召喚師的下場〉 | [02](02-gavel-light-and-decay.md) | 他 | — |
 | van Garrett | van Garrett | Gavel 財政官，駁回 Olux 救濟款 | 探索點 | [02](02-gavel-light-and-decay.md) | — | — |
-| Arrai-Veretel | Arrai-Veretel | 西 Gavel 獸人與哥布林的共主，Centerworld 堡壘 | 《條條大路達自由》(45) | [02](02-gavel-light-and-decay.md) | 她（wiki） | Rai 是營地首領的頭銜、Arrai 是全體之首，連字號要保留；1.20 以前的首領叫 Gorgu |
+| Arrai-Veretel | Arrai-Veretel | 西 Gavel 獸人與哥布林的共主，Centerworld 堡壘 | 《條條大路達和平》(45) | [02](02-gavel-light-and-decay.md) | 她（wiki） | Rai 是營地首領的頭銜、Arrai 是全體之首，連字號要保留；1.20 以前的首領叫 Gorgu |
 | Rai-Poxper | Poxper | 獸人營地首領，被玩家所殺 | 《烈焰復仇》(4) | [02](02-gavel-light-and-decay.md) | 他 | 2.0 以前叫 Gregg'r（裝備 Hide of Greggr） |
 | Elisu／Ceifko／Veltu | Elisu／Ceifko／Veltu | 三座獸人營地的酋長（Cliffhearth、Earthpit、Trunkstump） | 《清掃營地》 | [02](02-gavel-light-and-decay.md) | — | Veltu 是獸人卻統領哥布林營地 |
 | Captain Kymer | Kymer 隊長 | Gavel 軍官，派玩家去清掃獸人營地 | 《女王的新兵》(25)、《清掃營地》(11) | [02](02-gavel-light-and-decay.md)、[06](06-fruma.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | 名字是前建築師 Mekyr 的變位字 |
@@ -179,8 +179,8 @@
 
 | 英文名 | 繁中寫法 | 身分與陣營 | 出現的任務 | 章節 | 代名詞與性別 | 易錯處 |
 |---|---|---|---|---|---|---|
-| Norler | Norler | Gylia 民兵領袖，以腐肉散播疾病贏得 Gerten 戰爭，創立 Gylia Watch | 探索點〈Gylia Watch 圖書館〉 | [03](03-gavel-gylia-and-canyon.md) | 他 | — |
-| Cikal | Cikal | Gylia Watch 指揮官，偷 Gert 物資辦派對 | 《Gerts 大饑荒 第一部》(18)、《Gerts 大饑荒 第二部》(6) | [03](03-gavel-gylia-and-canyon.md) | 他 | — |
+| Norler | Norler | Gylia 民兵領袖，以腐肉散播疾病贏得 Gerten 戰爭，創立 Gylia 守望隊 | 探索點〈Gylia Watch 圖書館〉 | [03](03-gavel-gylia-and-canyon.md) | 他 | — |
+| Cikal | Cikal | Gylia 守望隊指揮官，偷 Gert 物資辦派對 | 《Gerts 大饑荒 第一部》(18)、《Gerts 大饑荒 第二部》(6) | [03](03-gavel-gylia-and-canyon.md) | 他 | — |
 | Winie | Winie | 新進的 Gylia 哨兵，唯一清醒的守衛 | 《Gerts 大饑荒 第二部》(15) | [03](03-gavel-gylia-and-canyon.md) | — | — |
 | Snaga | Gert 族長 Snaga | Gert 族長 | 《Gerts 大饑荒 第一部》(4) | [03](03-gavel-gylia-and-canyon.md) | — | 族長的倒裝文法是刻意的；「族長」放名字前面 |
 | Korun／Nikoler | Korun／Nikoler | Lake Gylia 的兩位隕石科學家，嘴上互相仇視 | 《紫與藍》(72) | [03](03-gavel-gylia-and-canyon.md) | 他 | Nikoler 的「三個頭腦」是隕石魔力的暗示 |
@@ -256,7 +256,7 @@
 | Axelus | Axelus | 矮人王子，揭穿矮人的歷史謊言、創立聯盟；被 Paku 殺死 | 《山中來客》(47)、《矮人與 Doguns 第二部》(44)、《矮人與 Doguns 第一部》(40)、《矮人與 Doguns 第四部》(23) | [02](02-gavel-light-and-decay.md)、[04](04-ocean-corkus-heights-sky.md) | 他 | 《山中來客》（Gavel）裡那個不說身分的矮人就是他，是《矮人與 Doguns》的前傳；Royal Rumble 是王子說的雙關 |
 | Draani 八世（King Draani） | Draani 國王 | Rodoroc 國王；明知真相仍維持謊言，兒子死後終結戰爭 | 《臨界點》(81)、《矮人與 Doguns 第四部》(14)、《矮人與 Doguns 第二部》(10) | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | 他 | speaker 另有 King of Rodoroc；「他叫我 Draani」回應「你不再是我的兒子」；戰時國王 Draani Thunderwill 是另一位 |
 | Korzim | Korzim | Paku 之子，被放逐；聯盟成員 | 《矮人與 Doguns 第三部》(31)、《矮人與 Doguns 第一部》(9)、《臨界點》(9)、《矮人與 Doguns 第四部》(7) | [04](04-ocean-corkus-heights-sky.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | — |
-| Paku | 酋長 Paku／Dogun 酋長 | Dogun 族長，召喚 Garaheth、殺死 Axelus；後與矮人立約 | 《臨界點》(16)、《矮人與 Doguns 第二部》(12)、《矮人與 Doguns 第四部》(8)、《矮人與 Doguns 第三部》(1) | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md)、[05](05-silent-expanse-and-dern.md) | 他 | 語料作「酋長」，本書第三、四章寫「族長」，兩者並存（見文末）；4000 BP 被造出 |
+| Paku | 酋長 Paku／Dogun 酋長 | Dogun 酋長，召喚 Garaheth、殺死 Axelus；後與矮人立約 | 《臨界點》(16)、《矮人與 Doguns 第二部》(12)、《矮人與 Doguns 第四部》(8)、《矮人與 Doguns 第三部》(1) | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md)、[05](05-silent-expanse-and-dern.md) | 他 | 語料作「酋長」，本書第三、四章寫「族長」，兩者並存（見文末）；4000 BP 被造出 |
 | Edula／Sanba | Edula／Sanba | Maex 的鐵匠與附魔師夫妻 | 《矮人與 Doguns 第三部》(37) | [04](04-ocean-corkus-heights-sky.md) | — | — |
 | Ineos | Ineos | 逃離 Heights、被 Corkus 收留的 Dogun 學者 | 《臨界點》(41) | [03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | 他 | Dogun 說話一字一頓用「……」 |
 | Astal／Desint／Iscor | Astal 長老／Desint 長老／Iscor 長老 | Dogun 長老，被封入真冰七百年 | 《臨界點》(23) | [03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | — | 名牌在 label.json |
@@ -305,7 +305,7 @@
 | Rieke | Rieke | Highlands 前任統領，會認真回覆市民建議 | 探索點〈屬於人民的統領〉 | [06](06-fruma.md) | — | — |
 | Hyhet | Hyhet | 王室憲兵指揮官；女王倒下後信仰崩潰、出走 | 祭壇 Deserter's Refuge | [08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md) | — | — |
 | 審訊官（Inquisitor） | 審訊官 | 王室的審訊官，稱 Syndra「母獅」 | 《遺失的那一塊》(23)、《尋回過往》(11) | [06](06-fruma.md) | — | — |
-| 車夫（the Driver） | 車隊駕駛（speaker）／車夫（本書） | 新兵篷車的車夫，把一代代受詛者載去 Wynn | 《歸鄉之旅》(17)、《國王的新兵》(2) | [06](06-fruma.md) | 他 | npc.json 作「車隊駕駛」，本書第六章作「車夫」；「每次撞同一顆石頭」是重複流放路線的伏筆 |
+| 車夫（the Driver） | 車隊駕駛（speaker）／車夫（台詞與本書） | 新兵篷車的車夫，把一代代受詛者載去 Wynn | 《歸鄉之旅》(17)、《國王的新兵》(2) | [06](06-fruma.md) | 他 | 名牌 Caravan Driver 作「車隊駕駛」，台詞裡的 the Driver 作「車夫」（使用者 10-24）；「每次撞同一顆石頭」是重複流放路線的伏筆 |
 | Tefris Ethprilash | Tefris Ethprilash | Fruma 的前獨裁者，石板〈論階序〉（8 BP）的作者 | 探索點 Architect 神龕 | [09](09-item-lore-index.md) | 他 | — |
 | Prathash | Prathash | 開門前一年站在日後 Aelumia 台地上說話的女子 | 物品 Halcyon 神龕 | [09](09-item-lore-index.md) | 她 | — |
 
@@ -367,7 +367,7 @@
 | Ohms | Ohms | Gale Nasin 的愛人；他的魔像被黑暗力量反噬 | 物品 Ohms' Wish／Rage、Gale's Sight | [09](09-item-lore-index.md) | — | — |
 | Lacrona | Lacrona | Detlas 裁縫，被 Nivla 蜘蛛吃掉 | 物品 Web Plate | [09](09-item-lore-index.md) | — | — |
 | Pyeka | Pyeka | Alekin 草藥師，懷疑 Yahya 的病因 | 物品 Pyrexia | [09](09-item-lore-index.md) | — | — |
-| Sayleros 與他的兄弟 | Sayleros | 墓碑上沒有正式名字的兄弟 | 《歸來的兄長》(13) | [09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | 物品名「Sayleros 兄弟」有歧義（是 Sayleros 的兄弟） |
+| Sayleros 與他的兄弟 | Sayleros | 墓碑上沒有正式名字的兄弟 | 《兄弟歸來》(13) | [09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | 物品名「Sayleros 兄弟」有歧義（是 Sayleros 的兄弟） |
 
 ### 2.17 Lootrun、世界事件、角色任務與節慶
 
@@ -420,7 +420,7 @@
 | Wynn Plains | Wynn Plains | Ragni 與 Detlas 一帶的平原 | [01](01-wynn.md)、[03](03-gavel-gylia-and-canyon.md)、[07](07-secrets.md) | — |
 | Nivla Woods | Nivla Woods | Wynn 的森林，882 AP 被 Bak'al 大軍焚燒；蛛群出沒 | [01](01-wynn.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
 | Almuj | Almuj | 沙漠的城市 | [01](01-wynn.md)、[05](05-silent-expanse-and-dern.md)、[07](07-secrets.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
-| Mesa／Upper Mesa | Mesa／Upper Mesa（解鎖訊息四條作「方山高地」、一條留 Upper Mesa；怪物「方山亡命徒」） | 沙漠北方的台地 | [01](01-wynn.md) | 同一組訊息兩種寫法（見文末） |
+| Mesa／Upper Mesa | Mesa／Upper Mesa（地區名留英文；怪物「方山亡命徒」） | 沙漠北方的台地 | [01](01-wynn.md) | 解鎖訊息原本四條作「方山高地」，已統一留英文（使用者 10-24） |
 | Rymek | Rymek | 沙漠的城鎮，Creden Tibus 的首府 | [01](01-wynn.md)、[02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[07](07-secrets.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 名字取自前建築師 Mekyr |
 | Nemract | Nemract | Wynn 西岸的港城；古 Nemract 在 0 AP 陷落 | [01](01-wynn.md)、[04](04-ocean-corkus-heights-sky.md)、[07](07-secrets.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
 | Troms | Troms | 叢林中的王國 | [01](01-wynn.md)、[02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[05](05-silent-expanse-and-dern.md)、[07](07-secrets.md)、[08](08-dungeons-and-raids.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
@@ -471,7 +471,7 @@
 
 | 英文 | 繁中寫法 | 在哪、是什麼 | 章節 | 易錯處 |
 |---|---|---|---|---|
-| Pirate Cove | Pirate Cove（探索點與「發現地區」）／海盜灣（任務目標與台詞） | 海盜的島 | [04](04-ocean-corkus-heights-sky.md) | 同一地點兩種寫法（見文末） |
+| Pirate Cove | Pirate Cove | 海盜的島 | [04](04-ocean-corkus-heights-sky.md) | 地名留英文；任務台詞原本作「海盜灣」，已改回（使用者 10-24） |
 | Mage Island | Mage Island | 法師議會與 Grook 魔法學院所在 | [04](04-ocean-corkus-heights-sky.md) | — |
 | Dead Island | Dead Island | Siwel 詛咒的島 | [04](04-ocean-corkus-heights-sky.md)、[05](05-silent-expanse-and-dern.md) | — |
 | Jofash | Jofash | Relend 的港 | [04](04-ocean-corkus-heights-sky.md) | — |
@@ -506,7 +506,7 @@
 | Highlands（the Highlands） | Highlands | 高地區 | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[06](06-fruma.md)、[07](07-secrets.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
 | Hyloch | Hyloch | Highlands 的首府 | [06](06-fruma.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
 | Fort Tericen | Fort Tericen | Fruma 最大的訓練營 | [06](06-fruma.md)、[09](09-item-lore-index.md) | — |
-| Citadel（Aelumia Citadel／the Citadel） | Citadel／城塞／堡壘（三種並存） | Aelumia 的高地城區 | [06](06-fruma.md)、[10](10-lootruns-events-and-mini-quests.md) | discovery.json 留 Citadel、皇家鍊金師說明作「城塞」、事件名「堡壘營房」；ja 已定「城塞」 |
+| Citadel（Aelumia Citadel／the Citadel） | 城塞（地區名 Aelumia Citadel 留英文） | Aelumia 的高地城區 | [06](06-fruma.md)、[10](10-lootruns-events-and-mini-quests.md) | 原本 Citadel／城塞／堡壘／城堡並存，已統一作「城塞」，事件「城塞營房」（使用者 10-24） |
 | Deraj | Deraj | Wastelands（Penitence District）的監獄，人稱「重力方尖碑」 | [06](06-fruma.md) | — |
 | Royal Dam | 皇家水壩（本書；語料未見） | 750 AP 女王開閘淹 Auburn 的水壩 | [06](06-fruma.md) | — |
 | 烽火王宮（Wartorn Palace） | 烽火王宮 | Anathema 的討伐戰 | [06](06-fruma.md)、[08](08-dungeons-and-raids.md) | — |
@@ -516,7 +516,7 @@
 | 英文 | 繁中寫法 | 在哪、是什麼 | 章節 | 易錯處 |
 |---|---|---|---|---|
 | Gavel 王室 | Gavel 王室 | 統治 Gavel 千年、750 AP 被推翻的王朝 | [03](03-gavel-gylia-and-canyon.md) | 保皇派（royalists）見《空洞的寧靜》 |
-| Gylia Watch | Gylia Watch（台詞）／Gylia 守望隊（名牌） | Gylia 的民兵組織 | [03](03-gavel-gylia-and-canyon.md)、[07](07-secrets.md) | 同一組織兩種寫法（見文末） |
+| Gylia Watch | Gylia 守望隊（探索點 Gylia Watch Tower、Gylia Watch 圖書館的名字留英文） | Gylia 的民兵組織 | [03](03-gavel-gylia-and-canyon.md)、[07](07-secrets.md) | 台詞原本留英文，已照名牌改（使用者 10-24） |
 | WynnExcavation | WynnExcavation | 挖掘公司，實為崇拜 Saphanis 的組織 | [01](01-wynn.md)、[02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md)、[05](05-silent-expanse-and-dern.md)、[07](07-secrets.md)、[09](09-item-lore-index.md) | Site A～D＝A～D 號遺址（已統一） |
 | Creden Tibus | Creden Tibus | 沙漠的盜匪團，守著皇帝之杖 | [01](01-wynn.md)、[07](07-secrets.md)、[09](09-item-lore-index.md) | — |
 | 天空劫掠者（Skyraiders） | 天空劫掠者 | Sky Islands 的空中海盜，全員女性 | [04](04-ocean-corkus-heights-sky.md) | 已統一，不寫「空襲者」；任務道具 Skyraider Coin 也是 |
@@ -588,7 +588,7 @@
 | Siwel | Old Siwel（老 Siwel）、Siwel | 同一人的不同時期 |
 | Draani 八世 | King Draani（Draani 國王）、King of Rodoroc | 戰時國王 Draani Thunderwill 是另一位 |
 | Ragni 國王 | King of Ragni、Ragni's King | 同一人 |
-| Paku | Chieftain Paku（酋長 Paku）、Dogun Chieftain（Dogun 酋長） | 語料用「酋長」，本書第三、四章用「族長」，見第五節 |
+| Paku | Chieftain Paku（酋長 Paku）、Dogun Chieftain（Dogun 酋長） | 語料與本書都用「酋長」（使用者 10-24）；Avos 仍作「族長」 |
 | Avos 族長 | Avos Chief、Avos Chieftain、Chief Avos | 三種都譯「Avos 族長」 |
 | Caritat 家 | Mr. Caritat、Mister Caritat、Mrs. Caritat（Caritat 夫人）、Caritat Senior（老 Caritat） | 至少兩代人，前兩個 speaker 沒有名牌，譯文照上下文 |
 | Aryn | Aryn、Aryn? | 帶問號的是被附身的狀態 |
@@ -600,7 +600,7 @@
 | Sui | 化名 "Water Grass"（水草）；同場的玩家化名 Shadow Bush（影叢） | speaker 欄位寫成帶引號的 "Water Grass" |
 | Syndra | 代號「母獅」；《遺失的那一塊》Elise 的回憶裡，她的名字被換成 {u}，speaker 是一串亂碼（45 句） | 亂碼是刻意的，譯文不要補回名字 |
 | Gale | Gale、Gale Nasin | Qira 的風之部隊首領就是 Fruma 出逃的 Gale Nasin |
-| 車夫 | speaker「Caravan Driver」（npc.json 作「車隊駕駛」），本書第六章作「車夫」 | 見第五節 |
+| 車夫 | speaker「Caravan Driver」（npc.json 作「車隊駕駛」）；台詞的 the Driver 與本書作「車夫」 | 見第五節 |
 | 死神 | 《不得安息》的死神；Tower of Ascension 頂端「自稱死神」的冒牌貨 | 兩個不同的存在 |
 
 ### 4.2 同形異義：同一個英文字，不是同一個東西
@@ -626,7 +626,7 @@
 
 ### 4.3 speaker 欄位的特殊寫法
 
-- `???`：341 句、橫跨五十幾個任務，指「畫面上還沒顯示名字的人」。只有《獵手的呼喚》的那一位是固定角色。另有 `????` 到 `?????????`（《Qira 蜂巢》《條條大路達自由》）。
+- `???`：341 句、橫跨五十幾個任務，指「畫面上還沒顯示名字的人」。只有《獵手的呼喚》的那一位是固定角色。另有 `????` 到 `?????????`（《Qira 蜂巢》《條條大路達和平》）。
 - 亂碼 speaker（《遺失的那一塊》45 句）：是 Syndra 在 Elise 記憶裡被抹掉的名字。
 - `Player`（《傷痕之泉》等）與 `Player?`（《不歸之地》，玩家的另一半）是兩回事。
 - 年代當 speaker：《巧思的代價》的日記（125 NA～45 IA）。
@@ -758,49 +758,49 @@
 | 英文（speaker） | 繁中寫法 | 出現的任務（句數） | 代名詞 |
 |---|---|---|---|
 | Alegdar | Alegdar | 《究極的武器》(6) | — |
-| Alraune | Alraune | 《條條大路達自由》(6) | — |
+| Alraune | Alraune | 《條條大路達和平》(6) | — |
 | Ann | Ann | 《空洞的寧靜》(13) | — |
 | Ann & Qunit | Ann & Qunit | 《空洞的寧靜》(1) | — |
 | Aunoa | Aunoa | 《空洞的寧靜》(14) | — |
 | Balegar | Balegar | 《究極的武器》(4) | — |
-| Bitteliso | Bitteliso | 《條條大路達自由》(5) | — |
-| Blueberry | Blueberry | 《條條大路達自由》(9) | — |
-| Captain Goruca | Goruca 隊長 | 《條條大路達自由》(20) | — |
+| Bitteliso | Bitteliso | 《條條大路達和平》(5) | — |
+| Blueberry | Blueberry | 《條條大路達和平》(9) | — |
+| Captain Goruca | Goruca 隊長 | 《條條大路達和平》(20) | — |
 | Caritat Senior | 老 Caritat | 《記憶的猜忌》(8) | — |
-| Creinu | Creinu | 《條條大路達自由》(8) | — |
+| Creinu | Creinu | 《條條大路達和平》(8) | — |
 | Damys | Damys | 《Aldorei 的祕密 第一部》(13) | — |
 | Dew Riverbreeze | Dew Riverbreeze | 《Aldorei 的祕密 第二部》(1) | — |
-| Durbeo | Durbeo | 《條條大路達自由》(23) | — |
+| Durbeo | Durbeo | 《條條大路達和平》(23) | — |
 | Erd | Erd | 《破碎的心智》(1) | — |
-| Etemitoro | Etemitoro | 《條條大路達自由》(9) | — |
-| Fruludir | Fruludir | 《條條大路達自由》(3) | — |
+| Etemitoro | Etemitoro | 《條條大路達和平》(9) | — |
+| Fruludir | Fruludir | 《條條大路達和平》(3) | — |
 | Gogedar | Gogedar | 《究極的武器》(7) | — |
-| Grapes | Grapes | 《條條大路達自由》(10) | — |
-| Guard Bitteliso | Guard Bitteliso | 《條條大路達自由》(5) | — |
-| Guard Serepe | Guard Serepe | 《條條大路達自由》(7) | — |
+| Grapes | Grapes | 《條條大路達和平》(10) | — |
+| Guard Bitteliso | Guard Bitteliso | 《條條大路達和平》(5) | — |
+| Guard Serepe | Guard Serepe | 《條條大路達和平》(7) | — |
 | Harvy | Harvy | 《Aldorei 的祕密 第二部》(5) | — |
-| Jixy | Jixy | 《條條大路達自由》(11) | — |
+| Jixy | Jixy | 《條條大路達和平》(11) | — |
 | Kaetan | Kaetan | 《禁忌牢獄》(2) | — |
-| Kreimu | Kreimu | 《條條大路達自由》(29) | — |
-| Lomoster | Lomoster | 《條條大路達自由》(9) | — |
+| Kreimu | Kreimu | 《條條大路達和平》(29) | — |
+| Lomoster | Lomoster | 《條條大路達和平》(9) | — |
 | Lord Plaatic the Kind | 仁慈的 Plaatic 大人 | 《Lazarus 之坑》(6) | — |
-| Mango | Mango | 《條條大路達自由》(8) | — |
+| Mango | Mango | 《條條大路達和平》(8) | — |
 | Merloni | Merloni | 《亡者之坑》(9) | — |
-| Miliyus | Miliyus | 《條條大路達自由》(9) | — |
+| Miliyus | Miliyus | 《條條大路達和平》(9) | — |
 | Mister Caritat | Mister Caritat | 《記憶的猜忌》(9) | — |
 | Moln Cloudcatcher | Moln Cloudcatcher | 《Aldorei 的祕密 第二部》(1) | — |
 | Mr. Caritat | Mr. Caritat | 《記憶的猜忌》(11) | — |
 | Mrs. Caritat | Caritat 夫人 | 《記憶的猜忌》(3) | — |
 | Natt Moonchaser | Natt Moonchaser | 《Aldorei 的祕密 第二部》(1) | — |
-| Nunexetor | Nunexetor | 《條條大路達自由》(16) | — |
-| Onluk | Onluk | 《條條大路達自由》(20) | — |
-| Peaches | Peaches | 《條條大路達自由》(7) | — |
-| Peleros | Peleros | 《條條大路達自由》(2) | — |
-| Peloros | Peloros | 《條條大路達自由》(6) | — |
+| Nunexetor | Nunexetor | 《條條大路達和平》(16) | — |
+| Onluk | Onluk | 《條條大路達和平》(20) | — |
+| Peaches | Peaches | 《條條大路達和平》(7) | — |
+| Peleros | Peleros | 《條條大路達和平》(2) | — |
+| Peloros | Peloros | 《條條大路達和平》(6) | — |
 | Poclo Wabblebuff of Gelibord | Poclo Wabblebuff of Gelibord | 《Lazarus 之坑》(9) | — |
 | Professor Eih | Eih 教授 | 《破碎的心智》(24) | — |
 | Qunit | Qunit | 《空洞的寧靜》(9) | — |
-| Ressinter | Ressinter | 《條條大路達自由》(4) | — |
+| Ressinter | Ressinter | 《條條大路達和平》(4) | — |
 | Reyoretrsed | Reyoretrsed | 《究極的武器》(5) | — |
 | Richard | Richard | 《究極的武器》(3) | — |
 | Rileen | Rileen | 《巨獸之影》(15) | — |
@@ -810,18 +810,18 @@
 | Sol | Sol | 《Aldorei 的祕密 第二部》(21) | — |
 | Steve | Steve | 《破碎的心智》(1) | — |
 | Sylvar | Sylvar | 《Aldorei 的祕密 第一部》(2) | — |
-| Teiren | Teiren | 《條條大路達自由》(10) | — |
+| Teiren | Teiren | 《條條大路達和平》(10) | — |
 | Timmy | Timmy | 《記憶的猜忌》(7) | — |
 | Timothy | Timothy | 《記憶的猜忌》(4) | — |
 | Togedar | Togedar | 《究極的武器》(5) | — |
 | Uggword Pollywaggon the Murderous | Uggword Pollywaggon the Murderous | 《Lazarus 之坑》(1) | — |
-| Ureietun | Ureietun | 《條條大路達自由》(8) | — |
+| Ureietun | Ureietun | 《條條大路達和平》(8) | — |
 | Vaenr | Vaenr | 《Aldorei 的祕密 第一部》(1) | — |
 | Vera | Vera | 《空洞的寧靜》(22) | — |
-| Xoeinbor | Xoeinbor | 《條條大路達自由》(11) | — |
+| Xoeinbor | Xoeinbor | 《條條大路達和平》(11) | — |
 | Yorman | Yorman | 《空洞的寧靜》(5) | — |
-| Yunelsu | Yunelsu | 《條條大路達自由》(14) | — |
-| Zuett | Zuett | 《條條大路達自由》(44) | — |
+| Yunelsu | Yunelsu | 《條條大路達和平》(14) | — |
+| Zuett | Zuett | 《條條大路達和平》(44) | — |
 
 ### 第三章範圍（Gavel 中東部）
 
@@ -1043,8 +1043,8 @@
 | 英文（speaker） | 繁中寫法 | 出現的任務（句數） | 代名詞 |
 |---|---|---|---|
 | Adigard | Adigard | 《冰封諸國》(13) | 他（語料） |
-| Apprentice Arkech | 學徒 Arkech | 《歸來的兄長》(1) | — |
-| Drucksh | Drucksh | 《歸來的兄長》(27) | — |
+| Apprentice Arkech | 學徒 Arkech | 《兄弟歸來》(1) | — |
+| Drucksh | Drucksh | 《兄弟歸來》(27) | — |
 | Hallfred | Hallfred | 《冰封諸國》(10) | — |
 
 ### 還沒有章節介紹的任務
@@ -1060,8 +1060,8 @@
 
 | 原文 | 語料的寫法 | 本書的寫法 | 建議 |
 |---|---|---|---|
-| Chieftain（Dogun 的 Paku） | 酋長 Paku、Dogun 酋長（npc.json） | 族長（第三、四章） | 本書改照語料寫「酋長」；Avos 的 Chief／Chieftain 語料作「族長」，兩族不同是語料現況 |
-| Caravan Driver／the Driver | 車隊駕駛（名牌）；台詞兩句留 Driver | 車夫（第六章） | 待定；第六章把「車夫」當角色名用，與名牌不一致 |
+| Chieftain（Dogun 的 Paku） | 酋長 Paku、Dogun 酋長（npc.json） | 族長（第三、四章） | 本書改照語料寫「酋長」；Avos 的 Chief／Chieftain 語料作「族長」，兩族不同是語料現況 **已定案（使用者 10-24）**：語料不動，第四章已改「酋長」 |
+| Caravan Driver／the Driver | 車隊駕駛（名牌）；台詞兩句留 Driver | 車夫（第六章） | 待定；第六章把「車夫」當角色名用，與名牌不一致 **已定案（使用者 10-24）**：台詞的 the Driver 用「車夫」，名牌 Caravan Driver 維持「車隊駕駛」 |
 | Kandon Beda | Kandon Beda（原文本身沒有連字號） | Kandon-Beda（第三、四章） | 本書照原文 |
 | Dark Forest／Light Forest | 地區名留英文 | 正文多留英文，README 目錄作「黑暗森林」「光之森林」 | 地區名照慣例留英文 |
 | Canyon of the Lost | 地名多為佔位符，看不到譯文 | 失落者峽谷（第三章標題） | 待定；若照地區名慣例應留英文 |
@@ -1074,12 +1074,12 @@
 | # | 檔案 | 條目 | 問題 | 建議 |
 |---|---|---|---|---|
 | C1 | quest-name.json | Apotheosis、Pit of the Dead、The Realm of Light | 三個任務檔的 `_meta.quest` 帶 `(Quest)` 後綴，quest-name.json 沒有對應的鍵（misc.json 倒有「神化 [任務]」「亡者之坑 [任務]」「光之領域 [任務]」）。追蹤器與對話開頭若用 quest-name.json 查，這三個名字會留英文 | 實機確認追蹤器顯示；缺的話補三個鍵 |
-| C2 | quest/redbeard-s-booty.json、quest/beneath-the-depths.json | Redbeard's Booty#001、#003、#010、#012、#019、#039；Beneath the Depths#005、#039 | Pirate Cove 在任務目標與台詞作「海盜灣」，探索點與「發現地區」留 Pirate Cove | 照地區名慣例擇一（地區名留英文的話，任務裡改回 Pirate Cove） |
-| C3 | misc.json | `Unlocks Upper Mesa - Cannot be started` | 同一組五條解鎖訊息，四條作「方山高地」，這一條留「Upper Mesa」 | 統一 |
-| C4 | quest/hunger-of-the-gerts-*.json；npc.json | Gylia Watch | 台詞留英文 Gylia Watch，名牌（Gylia 守望隊見習生、守衛、騎士）作「Gylia 守望隊」 | 擇一；組織名可以翻，也可以照地區名慣例留英文 |
+| C2 | quest/redbeard-s-booty.json、quest/beneath-the-depths.json | Redbeard's Booty#001、#003、#010、#012、#019、#039；Beneath the Depths#005、#039 | Pirate Cove 在任務目標與台詞作「海盜灣」，探索點與「發現地區」留 Pirate Cove | 照地區名慣例擇一（地區名留英文的話，任務裡改回 Pirate Cove） **已定案（使用者 10-24）**：留英文，繁簡任務台詞與目標改回 Pirate Cove（簡中另有渡船船長兩句） |
+| C3 | misc.json | `Unlocks Upper Mesa - Cannot be started` | 同一組五條解鎖訊息，四條作「方山高地」，這一條留「Upper Mesa」 | 統一 **已定案（使用者 10-24）**：留英文，繁中四條與升降梯技師一句改回；其他語言本來就留英文 |
+| C4 | quest/hunger-of-the-gerts-*.json；npc.json | Gylia Watch | 台詞留英文 Gylia Watch，名牌（Gylia 守望隊見習生、守衛、騎士）作「Gylia 守望隊」 | 擇一；組織名可以翻，也可以照地區名慣例留英文 **已定案（使用者 10-24）**：照名牌作「Gylia 守望隊」（簡中「Gylia 守望队」，原作「Gylia 哨站」的也改）；探索點名不動 |
 | C5 | discovery.json；discovery-name.json；quest-name.json | Tower of Ascension | 探索點名稱與任務名作「登天之塔」，兩條探索點說明文留 Tower of Ascension | 說明文改「登天之塔」 |
 | C6 | 多個檔（Enter the Dojo、From the Bottom、The Qira Hive、quest.json、misc.json） | 24 句 | 10-24 裁示 the Hive＝蜂巢，本工作樹的語料還有 24 句留 Hive（含「Hive 商店」「Qira Hive」） | 若裁示的 PR 還沒合，合併後再掃一次 **已處理（#1404；#1411 複查繁中已無 Hive）** |
-| C7 | quest/a-new-beginning.json；quest/a-journey-home.json | A New Beginning#053、A Journey Home#124 | the Driver 留英文（#053 連冠詞寫成「由 the Driver 帶進」），名牌 Caravan Driver 作「車隊駕駛」 | 決定 the Driver 的譯名後兩句一起改（見第五節） |
+| C7 | quest/a-new-beginning.json；quest/a-journey-home.json | A New Beginning#053、A Journey Home#124 | the Driver 留英文（#053 連冠詞寫成「由 the Driver 帶進」），名牌 Caravan Driver 作「車隊駕駛」 | 決定 the Driver 的譯名後兩句一起改（見第五節） **已定案（使用者 10-24）**：兩句改「車夫」（簡中原本就是「车夫」） |
 | C8 | quest/the-missing-piece.json；npc.json | The Missing Piece#101–104；`Bush` | 會說話的灌木自稱 Bush，台詞留英文（「我是 Bush」「Bush 我可太清楚她了」），npc.json 的名牌 `Bush` 卻是「灌木」 | 確認名牌 `Bush` 是不是這一位；是的話兩邊擇一 |
 | C9 | npc.json | Elder Oak | 其他 Aldorei 長老（Willow、Rowan、Alder、Hawthorn、Birch、Elm、Hickory）都有「X 長老」名牌，唯獨沒有 Elder Oak；只有怪物 `Elder Oak {#}{#}`＝古橡 | 實機看 Oak 長老的名牌；有的話補「Oak 長老」 |
 | C10 | npc.json | 綻放之刃的代號 | Bleeding Rose、Dusk Garden、Crimson Dagger、Thorn Blade、Violent Heather、Wilted Camellia 台詞裡都翻成中文，npc.json 沒有這幾條名牌 | 若實機頭上有名牌，會顯示英文；看過再補 |

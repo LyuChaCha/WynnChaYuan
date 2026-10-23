@@ -180,7 +180,7 @@ Fruma 的兩個營地是唯一會開出 **Ek 符文**的地方；Ek 是第八章
 |---|---|---|---|
 | 襲擊將至 | 殭屍蠻兵（對應該任務的腐敗巨人） | 《國王的新兵》 | 「對 Wynn 的士兵來說，不死大軍的圍攻算不上罕見。」 |
 | 亡靈法陣 | 飄移死神 | 《Ragni 的下水道》的骷髏死神 | 「腐敗在 Wynn 的出現，把曾經莊嚴的墓園變成了腐爛的大軍。」（本章自譯，語料未收） |
-| 亡者歸來 | Sayleros 那位兄弟的歸來 | 《Grave Digger》（2.2.2 移除，改版為《歸來的兄長》） | 「在 Wynn，真正的死亡很罕見——腐敗不允許任何人真的了結。」第九章已指出「Sayleros 兄弟」的歧義，名牌改作「Sayleros 那位兄弟」 |
+| 亡者歸來 | Sayleros 那位兄弟的歸來 | 《Grave Digger》（2.2.2 移除，改版為《兄弟歸來》） | 「在 Wynn，真正的死亡很罕見——腐敗不允許任何人真的了結。」第九章已指出「Sayleros 兄弟」的歧義，名牌改作「Sayleros 那位兄弟」 |
 | 血痂石墓／失禮的葬儀 | 血痂木乃伊／受詛木乃伊 | 《木乃伊之怒》 | 「沒能讓死者安息，往往換來他們陰森的歸來。」 |
 | 失敗的狩獵 | 暴怒的雞蛇獸 | 《峽谷兀鷲》 | 「財富與虛榮的誘惑，引來了莽撞之徒……」 |
 | 海盜混戰 | 腐爛船長 | 《冰封諸國》 | 「這些海盜的全盛時期早已過去，但他們蹣跚的殘骸仍聽命於那位腐爛船長的吼叫。」 |
@@ -226,7 +226,7 @@ Fruma 的兩個營地是唯一會開出 **Ek 符文**的地方；Ek 是第八章
 - **生化綻放**：「Roughworks 的污染讓水道裡的藻類、黏液與腐敗殘渣聚成了會移動的群落。清理它既噁心又非做不可……」
 - **皇家鍊金師**（Aelumia 城塞）：「Fruman 政權急於向城塞的民眾展示自己的技術成就，好讓人民不會被魔法所誘惑。」——Fruma 禁魔的統治術，一句話講完（第六章）。
 - **巡邏士兵**：巡邏隊「既保護民眾，也看管他們」（語料把 keep the population safe and in check 譯得很好）。
-- **宮廷衛隊**：「在那種場合裡當個叛亂者，必死無疑。」**堡壘營房**：「最危險的敵人，就是願意為信念赴死的人。」
+- **宮廷衛隊**：「在那種場合裡當個叛亂者，必死無疑。」**城塞營房**：「最危險的敵人，就是願意為信念赴死的人。」
 - **沼澤爭端**（Frog Bog）：首領就叫「青蛙」，搭配三名受詛的棄民——第七章〈呱鳴怪談〉的那片沼澤。
 
 出處：wiki〈[World Events](https://wynncraft.wiki.gg/wiki/World_Events)〉及各事件頁（〈[Ruff & Tumble](https://wynncraft.wiki.gg/wiki/Ruff_%26_Tumble)〉〈[Tainted Shoreline](https://wynncraft.wiki.gg/wiki/Tainted_Shoreline)〉〈[Otherworldly Exhibition](https://wynncraft.wiki.gg/wiki/Otherworldly_Exhibition)〉等）；語料 `quest.json`、`misc.json`
@@ -430,7 +430,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 | The Envoy（靈魂節 NPC） | 使者 | **撞任務《使者》（The Envoy Part I／II）**；若要區分可作「冥使」，待討論 |
 | The Traveler | 旅人 | Aster 稱他 the Wanderer＝流浪者（照 GLOSSARY） |
 | the Keeper／the Voice／the Wanderer（Aster 的稱呼） | 看守人／聲音／流浪者 | 與懸賞靈魂 The Keeper／The Wanderer 是不同的對象 |
-| Talespun Citadel | Talespun 城塞（意為「由故事紡成的城塞」） | Citadel 語料有「城塞」「堡壘」「Citadel」三種寫法 |
+| Talespun Citadel | Talespun 城塞（意為「由故事紡成的城塞」） | 語料的 Citadel 已統一作「城塞」（使用者 10-24）；地區名照慣例留英文 |
 | Spirit Tide | 靈潮 | |
 | Lost Souls／Bounty Spirits | 迷途之魂／懸賞靈魂 | |
 | Festive Detlas Mystery | Festive Detlas 之謎 | |
@@ -460,15 +460,15 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 | 1 | `quest/aldorei-s-secret-part-i.json` #000–#008 | 九句全是 Silverbull 總部的台詞（「加入我們的討伐戰部門」「找我們的 Lootrun 主管談談」「祝你往後的討伐戰一切順利」等），#004 還標著 speaker「Silverbull 階級專家」，跟《Aldorei 的祕密 第一部》無關；任務內容從 #009 才開始 | 搬到 quest.json（不屬任何任務的台詞），七個語言一起，比照 #1373 的作法 **已處理（#1411）** |
 | 2 | `quest/cook-assistant.json` #021 | speaker Afelis 的「我真的很想做點有意義的事」是 Afelis 在 Ragni 的角色任務台詞，不是《廚師助理》 | 搬到 npc.json 或 quest.json **已處理（#1411）** |
 | 3 | `npc.json`「Burning Iris」 | 譯「燃燒鳶尾」（花）；這是湮滅「戰爭之眼」召喚的眼球怪，與「惡魔凝視」成對，iris 指**虹膜** | 改「燃燒虹膜」或「燃燒之瞳」 **已處理（#1411）** |
-| 4 | `npc.json`「Padrone」 | 譯「教父」；首領出現在「過勞工會」，padrone 是義大利文「工頭、老闆」，「教父」會讀成黑手黨 | 改「工頭」 **已處理（#1411）**：「工頭」已是 Foreman 的譯名，改「老闆」 |
+| 4 | `npc.json`「Padrone」 | 譯「教父」；首領出現在「過勞工會」，padrone 是義大利文「工頭、老闆」，「教父」會讀成黑手黨 | 改「工頭」 **已處理（#1411）**：「工頭」已是 Foreman 的譯名，改「老闆」；**已定案（使用者 10-24）**：維持「老闆／老板」 |
 | 5 | `quest.json`「From the decay of the earth…」（不安的遭遇說明） | decay 譯「腐朽」；wiki 原文連到 [[Decay]]，同組的光之使者、脫韁幼龍都譯「黯蝕」 | 改「從大地的黯蝕裡……」 **已處理（#1411）** |
 | 6 | `misc.json`「Player was annihilated.」 | 字面的 Player 被當成原文收進來，應為 {u}；was annihilated 是首領名雙關，譯「殲滅」斷了連結 | 改 {u} 模板，譯「{u} 被湮滅了」 **已處理（#1411）** |
 | 7 | `misc.json` 腐敗寶匣 lore「Annihilation has been averted…」 | 大寫的 Annihilation 譯「毀滅」，與首領名「湮滅」不一致（README 待查 #14 已把武器 lore 改成「湮滅」） | 改「湮滅暫時被擋下了」 **已處理（#1411）** |
 | 8 | `misc.json`「Absolution Sheep fell to inevitable extinction.」 | 帶具體名字的死亡訊息，dst 空白；應是 capture 時把某個名字整句收進來 | 刪除（已有 {u} 版本） **已處理（#1411）** |
-| 9 | `npc.json`／`quest.json`「Ursa Major」 | 譯「大熊座」，讀起來是星座；這是 Auburn Forest 的巨熊（另有 Ursa Minor 小熊） | 「大熊」，或保留雙關另議 |
+| 9 | `npc.json`／`quest.json`「Ursa Major」 | 譯「大熊座」，讀起來是星座；這是 Auburn Forest 的巨熊（另有 Ursa Minor 小熊） | 「大熊」，或保留雙關另議 **已定案（使用者 10-24）**：維持「大熊座」，原文本來就是星座名的雙關 |
 | 10 | Woolly Rhino | 迷你任務名「長毛犀」、名牌與 label「長毛犀牛」、任務目標留英文「Woolly Rhino」 | 統一 **已處理（#1411）** |
-| 11 | Syndicate | `misc.json`「集團書卷欄位」與「聯合會！請前往 Silverbull」兩種譯法 | 統一（建議「集團」） |
-| 12 | Apiary Hive（世界事件） | 譯「蜂巢」，撞 10-24 定案的 Qira 的 the Hive＝蜂巢 | 事件名改「蜂房」或「養蜂巢」 |
-| 13 | Citadel（Aelumia） | `discovery.json` 留「Citadel」、皇家鍊金師說明作「城塞」、事件名「堡壘營房」 | 統一（ja 已定「城塞」） |
-| 14 | `misc.json` 任務名 Brothers Return「歸來的兄長」 | 譯名假定 Sayleros 的兄弟是**哥哥**；原文與 wiki 都沒交代長幼，名牌也刻意寫成「Sayleros 那位兄弟」（第九章已討論歧義） | 確認劇情；不確定就改「兄弟歸來」 |
+| 11 | Syndicate | `misc.json`「集團書卷欄位」與「聯合會！請前往 Silverbull」兩種譯法 | 統一（建議「集團」） **已定案（使用者 10-24）**：統一為「聯合會」（簡中「联合会」），書卷名 12 條與書卷欄位改掉 |
+| 12 | Apiary Hive（世界事件） | 譯「蜂巢」，撞 10-24 定案的 Qira 的 the Hive＝蜂巢 | 事件名改「蜂房」或「養蜂巢」 **已定案（使用者 10-24）**：改「養蜂場」（簡中「养蜂场」），事件名的 7 個鍵一起改 |
+| 13 | Citadel（Aelumia） | `discovery.json` 留「Citadel」、皇家鍊金師說明作「城塞」、事件名「堡壘營房」 | 統一（ja 已定「城塞」） **已定案（使用者 10-24）**：句子裡的 the Citadel、事件「城塞營房」、洞窟「城塞地下墓穴」與名牌都作「城塞」；探索點名與「發現地區」那行的地區名照慣例留英文 |
+| 14 | `misc.json` 任務名 Brothers Return「歸來的兄長」 | 譯名假定 Sayleros 的兄弟是**哥哥**；原文與 wiki 都沒交代長幼，名牌也刻意寫成「Sayleros 那位兄弟」（第九章已討論歧義） | 確認劇情；不確定就改「兄弟歸來」 **已定案（使用者 10-24）**：改「兄弟歸來」（簡中「兄弟归来」），任務名的各個鍵與本書一起改 |
 | 15 | Visit from Beyond／The Beyond | 事件名「彼方來訪」、靈魂節的 The Beyond「彼界」；兩者指的不是同一處（前者是黑暗），目前不同譯法反而正確，**記錄以免被統一錯** | 不改 |

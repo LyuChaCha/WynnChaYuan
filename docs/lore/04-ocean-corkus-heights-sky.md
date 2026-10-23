@@ -233,11 +233,11 @@ Ava 的回答是整條線的核心：
 
 Axelus 引導玩家去 Library of Flames，那裡有一份 Dogun 戰爭初期的絕密報告：Doguns 佔了大部分可居住的土地、是「火元素的魔法強權」、有「接近矮人的智慧」；要建立殖民地就得「清除」他們；建議「稱他們為惡魔，人心固有的恐懼便會生根」；從教育機構開始全面宣傳。Axelus 的結論很節制：「我的族人是暴君，是征服者……但他們同時也是善良的。這些人是被洗腦了。」
 
-玩家加入 Axelus 的**聯盟**（Coalition）——矮人與 Doguns 共組的地下組織，成員有被放逐的 Dogun 族長之子 **Korzim**、矮人 Barden。他們想用 Doguns 視為神聖的龍骨當禮物，向 Dogun 族長求和（取龍骨用的鑽頭是從 Corkus 高價買來的，結果是壞的：「該死的 Corkus 騙子！」）。據點被王室軍隊炸開，眾人逃往上層，卻讓矮人斥候發現了 Doguns 隱藏的聚落。
+玩家加入 Axelus 的**聯盟**（Coalition）——矮人與 Doguns 共組的地下組織，成員有被放逐的 Dogun 酋長之子 **Korzim**、矮人 Barden。他們想用 Doguns 視為神聖的龍骨當禮物，向 Dogun 酋長求和（取龍骨用的鑽頭是從 Corkus 高價買來的，結果是壞的：「該死的 Corkus 騙子！」）。據點被王室軍隊炸開，眾人逃往上層，卻讓矮人斥候發現了 Doguns 隱藏的聚落。
 
 **第二部：父與子**
 
-Dogun 族長 **Paku** 不信任任何矮人，但接受了 Axelus 的計畫：Korzim 帶族人撤離，Axelus 與玩家潛入 Rodoroc 破壞軍械庫與地熱動力核心（「那群偽君子是用 Dogun 的魔法造出這東西的」），再穿過貧民窟（「最窮的那些人都被藏了起來」）、從下水道爬進王宮。
+Dogun 酋長 **Paku** 不信任任何矮人，但接受了 Axelus 的計畫：Korzim 帶族人撤離，Axelus 與玩家潛入 Rodoroc 破壞軍械庫與地熱動力核心（「那群偽君子是用 Dogun 的魔法造出這東西的」），再穿過貧民窟（「最窮的那些人都被藏了起來」）、從下水道爬進王宮。
 
 國王 Draani 八世——Axelus 的父親——一開口就承認他知道真相：
 
@@ -247,7 +247,7 @@ Dogun 族長 **Paku** 不信任任何矮人，但接受了 Axelus 的計畫：Ko
 
 **第三部：兩邊都在準備毀滅**
 
-Korzim 收到 Axelus 的信——寫在一塊磚頭上（「他找不到石頭嗎？那可不是好兆頭。」Doguns 習慣把字刻在石板上，用磚頭代表事態緊急）。更糟的是，被逼到絕境的 Dogun 族長決定召喚 Garaheth，「如果他們成功……我們全都會死。矮人……Doguns……說不定連村民……然後是人類。」
+Korzim 收到 Axelus 的信——寫在一塊磚頭上（「他找不到石頭嗎？那可不是好兆頭。」Doguns 習慣把字刻在石板上，用磚頭代表事態緊急）。更糟的是，被逼到絕境的 Dogun 酋長決定召喚 Garaheth，「如果他們成功……我們全都會死。矮人……Doguns……說不定連村民……然後是人類。」
 
 聯盟在 Maex 的鐵匠 Edula 與附魔師 Sanba（一對夫妻）早有準備：抗惡魔火焰的護身符，以及用真冰做成的法杖。Edula 那句「為了燒死老鼠，把自己的房子一起燒了」是在罵 Doguns 的玉石俱焚。玩家與 Korzim 深入 Freezing Heights 取真冰，Korzim 在冰凍的故鄉說：「就是它了……那個……殺死我族人的東西。」
 
@@ -381,7 +381,7 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 | 年份 | 事件 | 出處 |
 |---|---|---|
 | 遠古 | Doguns 鑿出 Molten Heights 地底洞窟；Garaheth 的火賦予取自峽谷巨像的石頭生命，造出 Doguns（第一輪當作傳說；wiki〈Doguns〉寫成設定） | 探索點「地底的造物」；wiki〈Garaheth〉〈Doguns〉 |
-| 4000 BP | Dogun 族長 Paku 被造出 | wiki〈Timeline〉 |
+| 4000 BP | Dogun 酋長 Paku 被造出 | wiki〈Timeline〉 |
 | 0 AP | 碎裂：Ahms 巨像失控，Ahms 一帶碎成 Sky Islands 與虛空；Farcor 離開 Gavel；峽谷開始不穩定；同年腐敗傳送門開啟 | wiki〈Timeline〉〈The Fallen Protector〉 |
 | 100 AP | 矮人進入 Molten Heights，Dogun 戰爭爆發 | wiki〈Timeline〉〈Rodoroc〉 |
 | 100–300 AP | 冰亞龍造成 Freezing Heights 與真冰；龍族幾乎滅絕，只剩 Ozoth | 探索點「封於寒冰」「鎖鏈巨獸」 |
@@ -417,8 +417,8 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 | Efena | Corkus 總統 | 驅逐 Ava 又私下替她安排出路 | 羽毛紛飛 第二部 |
 | Axelus | 矮人王子 | 揭穿矮人的歷史謊言，創立聯盟；被 Paku 殺死 | 山中來客（第二章）、矮人與 Doguns 一至四部 |
 | Draani 八世 | Rodoroc 國王 | 明知真相仍維持謊言；兒子死後終結戰爭 | 矮人與 Doguns、臨界點 |
-| Korzim | Dogun 族長之子，被放逐 | 聯盟成員；故鄉被冰亞龍冰封 | 矮人與 Doguns、臨界點 |
-| Paku | Dogun 族長 | 召喚 Garaheth、殺死 Axelus；後與矮人立約 | 矮人與 Doguns、臨界點 |
+| Korzim | Dogun 酋長之子，被放逐 | 聯盟成員；故鄉被冰亞龍冰封 | 矮人與 Doguns、臨界點 |
+| Paku | Dogun 酋長 | 召喚 Garaheth、殺死 Axelus；後與矮人立約 | 矮人與 Doguns、臨界點 |
 | Edula、Sanba | Maex 的鐵匠與附魔師夫妻 | 聯盟的後援，打造護身符與真冰之杖 | 矮人與 Doguns 第三部 |
 | Rhay | Corkian 工程師 | 負責壓制峽谷巨像的穩定裝置 | 臨界點 |
 | Ineos | 逃離 Heights、被 Corkus 收留的 Dogun | 想起長老，請求 Ozoth 相助 | 臨界點 |
