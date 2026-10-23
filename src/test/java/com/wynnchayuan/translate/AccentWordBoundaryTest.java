@@ -49,11 +49,8 @@ public final class AccentWordBoundaryTest {
 
     public static void main(String[] args) throws Exception {
         FlowedDebug.init(Files.createTempDirectory("wynnchayuan"));
-        TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
-                              Languages.DEFAULT));
 
-        lootrunNotSplit(store);
+        lootrunNotSplit();
         cjkAccentStillPastes();
         wholeEnglishWordStillPastes();
 
@@ -69,16 +66,13 @@ public final class AccentWordBoundaryTest {
      *
      * <p>走的是<b>整行命中</b>那條路，所以先釘住模板等於語料的鍵——模板一旦對不上
      * 就落到逐片段，那條路壓根不會走到這個分支，測了等於沒測。
+     *
+     * <p>語料後來把 Lootrun 譯成「掠奪長征」（#1417），所以這裡自帶一條留英文的譯文：
+     * 要守的是「英文詞中間不被切開」，跟語料當下怎麼譯無關。
      */
-    private static void lootrunNotSplit(TranslationStore store) {
+    private static void lootrunNotSplit() throws Exception {
         String key = "Lootrun, gain +{~} Loot";
-        String zh = store.lookup(key);
-        report("語料收著這一句（實際：" + zh + "）", zh != null);
-        if (zh == null) {
-            return;                            // 語料被改掉了就別再往下假裝
-        }
-        report("★ 譯文裡 Lootrun 留著英文，這條測試才有意義（實際：" + zh + "）",
-               zh.contains("Lootrun"));
+        TranslationStore store = corpus(key, "這趟 Lootrun 獲得 +{~} 寶物加成");
 
         StyledText styled = line("Lootrun, gain ", BODY, "+20%", VALUE,
                                  " ", BODY, "Loot", STAT);
