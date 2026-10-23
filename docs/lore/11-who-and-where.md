@@ -257,7 +257,7 @@
 | Draani 八世（King Draani） | Draani 國王 | Rodoroc 國王；明知真相仍維持謊言，兒子死後終結戰爭 | 《臨界點》(81)、《矮人與 Doguns 第四部》(14)、《矮人與 Doguns 第二部》(10) | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | 他 | speaker 另有 King of Rodoroc；「他叫我 Draani」回應「你不再是我的兒子」；戰時國王 Draani Thunderwill 是另一位 |
 | Korzim | Korzim | Paku 之子，被放逐；聯盟成員 | 《矮人與 Doguns 第三部》(31)、《矮人與 Doguns 第一部》(9)、《臨界點》(9)、《矮人與 Doguns 第四部》(7) | [04](04-ocean-corkus-heights-sky.md)、[09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | — |
 | Paku | 酋長 Paku／Dogun 酋長 | Dogun 酋長，召喚 Garaheth、殺死 Axelus；後與矮人立約 | 《臨界點》(16)、《矮人與 Doguns 第二部》(12)、《矮人與 Doguns 第四部》(8)、《矮人與 Doguns 第三部》(1) | [02](02-gavel-light-and-decay.md)、[03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md)、[05](05-silent-expanse-and-dern.md) | 他 | 語料作「酋長」，本書第三、四章寫「族長」，兩者並存（見文末）；4000 BP 被造出 |
-| Edula／Sanba | Edula／Sanba | Maex 的鐵匠與附魔師夫妻 | 《矮人與 Doguns 第三部》(37) | [04](04-ocean-corkus-heights-sky.md) | — | — |
+| Edula／Sanba | Edula／Sanba | Maex 的鐵匠與附魔師（兩人各自提到「我丈夫」） | 《矮人與 Doguns 第三部》(37) | [04](04-ocean-corkus-heights-sky.md) | — | — |
 | Ineos | Ineos | 逃離 Heights、被 Corkus 收留的 Dogun 學者 | 《臨界點》(41) | [03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | 他 | Dogun 說話一字一頓用「……」 |
 | Astal／Desint／Iscor | Astal 長老／Desint 長老／Iscor 長老 | Dogun 長老，被封入真冰七百年 | 《臨界點》(23) | [03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md) | — | 名牌在 label.json |
 | Garaheth | Garaheth | Dogun 的神（火）；300 AP 被 Osseus 所殺 | 《矮人與 Doguns》 | [03](03-gavel-gylia-and-canyon.md)、[04](04-ocean-corkus-heights-sky.md)、[09](09-item-lore-index.md) | — | 第三部 #057 原文拼成 Garahath，譯文照正確拼法 |
@@ -333,7 +333,7 @@
 | Commander Ferreo | Ferreo 指揮官 | Fort Tericen 訓練營的指揮官，默許霸凌、流放 Effal | 《強者生存》(71) | [06](06-fruma.md)、[09](09-item-lore-index.md) | 他 | — |
 | Recruiter Effal | Effal 招募官 | Fruma 的招募官；放走玩家後被以叛國罪流放 Wynn、抹去記憶 | 《強者生存》(53) | [06](06-fruma.md) | 他 | 職稱「招募官」放名字後面；在 Wynn 遇到時他已經不記得 |
 | Recruiter Olissy | Olissy 招募官 | Fort Tericen 的招募官 | 《強者生存》(4) | — | 她 | 遊戲在 speaker 與一句台詞拼成 Ollisy，譯文照正確拼法 Olissy（已裁示 10-04）；speaker 欄位不要動 |
-| Levi | Levi | Constables 部隊的將軍，在列車上被毒死 | 《脫軌》 | [06](06-fruma.md) | 他 | — |
+| Levi | Levi | Constables 部隊的將軍，在列車上被毒死 | 《脫軌》 | [06](06-fruma.md) | 她 | — |
 | 脫軌的乘客（Demma、Maddison、Maury、Malic、Harvin、Telati、Flinn、Cemor） | （留英文） | 《脫軌》列車謀殺案的嫌疑人與相關人 | 《脫軌》(692) | [06](06-fruma.md) | — | 這八個人第六章沒有逐一介紹 |
 | Burick／Cerisa／Arris | Burick／Cerisa／Arris | 《慶典成煙》裡被扣押的三名嫌疑人：孤獨的拾荒者／冷靜的逃兵／被冤枉偷茶的人 | 《慶典成煙》(249) | [06](06-fruma.md) | — | — |
 | Abramod | Abramod | 《羈絆成灰》失去徽牌的老人，其實自己就是換形者 | 《羈絆成灰》(77) | [06](06-fruma.md) | 他 | 前半段的「弟弟被冒名」是他的謊話 |
