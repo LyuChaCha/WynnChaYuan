@@ -249,7 +249,7 @@ Dogun 酋長 **Paku** 不信任任何矮人，但接受了 Axelus 的計畫：Ko
 
 Korzim 收到 Axelus 的信——寫在一塊磚頭上（「他找不到石頭嗎？那可不是好兆頭。」Doguns 習慣把字刻在石板上，用磚頭代表事態緊急）。更糟的是，被逼到絕境的 Dogun 酋長決定召喚 Garaheth，「如果他們成功……我們全都會死。矮人……Doguns……說不定連村民……然後是人類。」
 
-聯盟在 Maex 的鐵匠 Edula 與附魔師 Sanba（一對夫妻）早有準備：抗惡魔火焰的護身符，以及用真冰做成的法杖。Edula 那句「為了燒死老鼠，把自己的房子一起燒了」是在罵 Doguns 的玉石俱焚。玩家與 Korzim 深入 Freezing Heights 取真冰，Korzim 在冰凍的故鄉說：「就是它了……那個……殺死我族人的東西。」
+聯盟在 Maex 的鐵匠 Edula 與附魔師 Sanba 早有準備：抗惡魔火焰的護身符，以及用真冰做成的法杖。Edula 那句「為了燒死老鼠，把自己的房子一起燒了」是在罵 Doguns 的玉石俱焚。玩家與 Korzim 深入 Freezing Heights 取真冰，Korzim 在冰凍的故鄉說：「就是它了……那個……殺死我族人的東西。」
 
 **第四部：Axelus 之死**
 
@@ -419,7 +419,7 @@ Ineos 向巨龍 **Ozoth**——Doguns 稱她為「**無盡點火者**」——�
 | Draani 八世 | Rodoroc 國王 | 明知真相仍維持謊言；兒子死後終結戰爭 | 矮人與 Doguns、臨界點 |
 | Korzim | Dogun 酋長之子，被放逐 | 聯盟成員；故鄉被冰亞龍冰封 | 矮人與 Doguns、臨界點 |
 | Paku | Dogun 酋長 | 召喚 Garaheth、殺死 Axelus；後與矮人立約 | 矮人與 Doguns、臨界點 |
-| Edula、Sanba | Maex 的鐵匠與附魔師夫妻 | 聯盟的後援，打造護身符與真冰之杖 | 矮人與 Doguns 第三部 |
+| Edula、Sanba | Maex 的鐵匠與附魔師 | 聯盟的後援，打造護身符與真冰之杖 | 矮人與 Doguns 第三部 |
 | Rhay | Corkian 工程師 | 負責壓制峽谷巨像的穩定裝置 | 臨界點 |
 | Ineos | 逃離 Heights、被 Corkus 收留的 Dogun | 想起長老，請求 Ozoth 相助 | 臨界點 |
 | Astal、Desint、Iscor | Dogun 長老 | 被囚七百年，解凍後安撫守護者 | 臨界點 |
