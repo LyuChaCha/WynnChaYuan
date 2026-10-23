@@ -1,6 +1,6 @@
-# 第十章　Lootrun、世界事件與小型故事
+# 第十章　掠奪長征、世界事件與小型故事
 
-> **劇透提醒**：本章劇透 Lootrun 七個營地的挑戰內容、全部世界事件（含毀滅前奏與湮滅）、角色任務 Afelis 與 Angie 的結局、四個節慶的劇情（含英雄節祕密房間裡四兄弟的真相），以及《不得安息》《國王的新兵》《蛛群登巔》《傭兵》《木乃伊之怒》《峽谷兀鷲》《冰封諸國》《Maltic 的水井》等舊任務首領的身分。
+> **劇透提醒**：本章劇透掠奪長征七個營地的挑戰內容、全部世界事件（含毀滅前奏與湮滅）、角色任務 Afelis 與 Angie 的結局、四個節慶的劇情（含英雄節祕密房間裡四兄弟的真相），以及《不得安息》《國王的新兵》《蛛群登巔》《傭兵》《木乃伊之怒》《峽谷兀鷲》《冰封諸國》《Maltic 的水井》等舊任務首領的身分。
 
 ---
 
@@ -8,7 +8,7 @@
 
 前九章談的是「有任務名的故事」。這一章收的是另外三類**沒有任務日誌、卻帶著劇情**的內容：
 
-1. **Lootrun**（2.0.3 加入）：Silverbull 貿易公司的 Lootrun 部門在七個高等地區設營地，玩家在計時內連續挑戰洞窟與戰鬥點。玩法是刷寶，但每個挑戰點都蓋在一段既有的故事上——Olm 的墓場、Avos 的亡魂、Ahms 碎裂後的虛空、Fruma 的宣傳海報。
+1. **Lootrun**（2.0.3 加入）：Silverbull 貿易公司的掠奪長征部門在七個高等地區設營地，玩家在計時內連續挑戰洞窟與戰鬥點。玩法是刷寶，但每個挑戰點都蓋在一段既有的故事上——Olm 的墓場、Avos 的亡魂、Ahms 碎裂後的虛空、Fruma 的宣傳海報。
 2. **世界事件**（2.1 加入）：地圖上隨機開始的波次戰。一半是舊任務首領的「重戰」，另一半用一行說明文字（語料已收）替一個地區補上設定；其中**毀滅前奏**是全伺服器的大型事件，首領湮滅（Annihilation）有完整的背景。
 3. **小型故事**：沒有任務名的**角色任務**（Afelis、Angie）、迷你任務告示裡的地方小事，以及**四個節慶**——節慶表面上是限時活動，底下卻藏著一條跨年度的主線：四位主持人其實是一家四兄弟。
 
@@ -18,15 +18,15 @@
 
 ---
 
-## 二、Lootrun
+## 二、掠奪長征
 
-### 1. Silverbull 的 Lootrun 部門
+### 1. Silverbull 的掠奪長征部門
 
-Lootrun 的入口在 Cinfras 東邊的 **Silverbull Company Headquarters**——前身是 Gavel 王室的避暑行宮（第八章 §一）。北翼的 **Lootrun 主管**（Lootrun Chief）替七十五級以上的冒險者免費入會；入會後，各營地的 **Lootrun 大師**（Lootrun Master）負責驗裝備、開跑。Lootrun 部門是 Silverbull 的第一個「集團」（Syndicate），第二個是討伐戰部門（2.1）。
+掠奪長征的入口在 Cinfras 東邊的 **Silverbull Company Headquarters**——前身是 Gavel 王室的避暑行宮（第八章 §一）。北翼的 **掠奪長征主管**（Lootrun Chief）替七十五級以上的冒險者免費入會；入會後，各營地的 **掠奪長征大師**（Lootrun Master）負責驗裝備、開跑。掠奪長征部門是 Silverbull 的第一個「集團」（Syndicate），第二個是討伐戰部門（2.1）。
 
-總部大廳的職員會招呼你：「你可以報名加入各個部門，享有公司替你談來的各種優惠。」「直接走進我身後左邊的房間，找我們的 Lootrun 主管談談。他很快就會幫你安排好！」（語料，但歸錯檔，見文末語料問題 1）。主管本人入會後只說一句「看來你已經是我部門的人了！**目前**我沒什麼能為你做的了」（本章轉述）——「目前」在 wiki 抄錄裡是斜體，像在暗示部門以後還有別的事（推測；總部頂樓有一間進不去的祕密辦公室，wiki 附有截圖）。
+總部大廳的職員會招呼你：「你可以報名加入各個部門，享有公司替你談來的各種優惠。」「直接走進我身後左邊的房間，找我們的掠奪長征主管談談。他很快就會幫你安排好！」（語料，但歸錯檔，見文末語料問題 1）。主管本人入會後只說一句「看來你已經是我部門的人了！**目前**我沒什麼能為你做的了」（本章轉述）——「目前」在 wiki 抄錄裡是斜體，像在暗示部門以後還有別的事（推測；總部頂樓有一間進不去的祕密辦公室，wiki 附有截圖）。
 
-部門的十六個階級從 Rookie 一路到 Grandmaster（語料只收了最高階「Lootrun 宗師」），每升一級解鎖一種信標或一項特權。
+部門的十六個階級從 Rookie 一路到 Grandmaster（語料只收了最高階「掠奪長征宗師」），每升一級解鎖一種信標或一項特權。
 
 出處：wiki〈[Lootrun Chief](https://wynncraft.wiki.gg/wiki/Lootrun_Chief)〉〈[Silverbull Company Headquarters](https://wynncraft.wiki.gg/wiki/Silverbull_Company_Headquarters)〉〈[Silverbull Syndicates](https://wynncraft.wiki.gg/wiki/Silverbull_Syndicates)〉；語料 `npc.json`、`gui.json`、`quest/aldorei-s-secret-part-i.json` #000–#008
 
@@ -94,7 +94,7 @@ Lootrun 的入口在 Cinfras 東邊的 **Silverbull Company Headquarters**——
 
 前置是《逐深之旅》（第五章）。四個區塊——Olm 古城、眼球森林、毒廢之地、虛空谷——各有自己的設定，wiki 的冷知識欄也特別多：
 
-- **Graveyard of the Thousand（千人墓場）**：在虛空洞裡，其實是一座 **Olm 的墓場**——除了首領「骸骨怪物」，其餘亡者生前都是 Olm，牆上還嵌著一具巨大的 Olm 骨骸。不在 Lootrun 時想進去，會被告知「一股看不見的力量阻止你進入這個虛空洞，你該去找別的虛空洞」（本章自譯）。
+- **Graveyard of the Thousand（千人墓場）**：在虛空洞裡，其實是一座 **Olm 的墓場**——除了首領「骸骨怪物」，其餘亡者生前都是 Olm，牆上還嵌著一具巨大的 Olm 骨骸。不在掠奪長征時想進去，會被告知「一股看不見的力量阻止你進入這個虛空洞，你該去找別的虛空洞」（本章自譯）。
 - **False Respite（虛假的安歇）**：目標是**典範者**（Exemplar，語料）。設計者 Deusphage 說它是「冒牌的神」：原本是從無名異常體那片群島漂出來的畸形怪物，靠信徒（迷途的眼族）的供奉長大，信徒把自己的身體獻上、成了它的一部分，「久而久之它長得越來越像它的信徒」。名字取自《Darkest Dungeon II》。
 - **Forlorn Library（被遺棄的圖書館）**：防守一堆古書。獻火者（Immolatist）專燒書，毀書者（Biblioclast）與執意無知者攻擊玩家（語料名牌）；wiki 說毀書者的祭司面具底下是被黑暗汙染的 Olm。
 - **毒廢之地的雙關**：Lesionary＝病灶（lesion）＋軍團兵（legionary）；Terra-Toma＝大地（terra）＋畸胎瘤（teratoma），呼應「整片毒廢之地是一頭融進大地的活物」；喘息者（Respirator，語料）是被改造來替毒廢之地「呼吸」的礦工屍體，肺脹到撐破肋骨。
@@ -368,7 +368,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 
 | 名字 | 身分 | 在本章的作用 | 出現於 |
 |---|---|---|---|
-| Lootrun 主管／Lootrun 大師 | Silverbull Lootrun 部門 | 入會與開跑 | 總部、各營地 |
+| 掠奪長征主管／掠奪長征大師 | Silverbull 掠奪長征部門 | 入會與開跑 | 總部、各營地 |
 | Astraulus | Sky Islands 的法師 | 把玩家射上太空 | 挑戰 Astraulus' Comet |
 | 典範者（Exemplar） | 虛空裡的冒牌神 | 吞噬信徒的身體長大 | 挑戰 False Respite |
 | 湮滅（Annihilation） | 戰爭領域的惡魔 | 900 AP、985 AP、1000 AP 三度破門 | 毀滅前奏 |
@@ -407,7 +407,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 - **英雄節 2023 的門**：用英雄節徽記開門，見 Aster。
 - **Isles of Fiction**：Aster 為弟弟們立的紀念碑在中央島頂（wiki 冷知識）。
 - **Snow Storm Detlas／靈魂節之謎**：暴雪節銀行附近有一根「奇怪的拐杖糖」；靈魂節 Detlas 地下有一隻「巨大的騙子老鼠」，牠甚至附身過懸賞靈魂的隊伍，讓使者與嚮導找不到牠的紀錄，只留下一塊起司。
-- **Lootrun 的罕見事件**：毒廢之地的餵食孔、眼球隧道的「膿液之眼」、Olm 古城偶爾來助陣的「薄暮 Kantyr」（語料名牌）、Colossus Islet 的巨像面容。
+- **掠奪長征的罕見事件**：毒廢之地的餵食孔、眼球隧道的「膿液之眼」、Olm 古城偶爾來助陣的「薄暮 Kantyr」（語料名牌）、Colossus Islet 的巨像面容。
 - **烽火王宮背景的湮滅群**：第八章討伐戰的戰爭領域背景裡有好幾頭湮滅。
 - **湮滅的模型**：設計者 Deusphage 說它的貼圖參考了生鴕鳥絞肉，肌肉纖維裡藏著「HELL」字樣（wiki）。
 
@@ -419,7 +419,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 
 | 原文 | 本章用的譯名 | 說明 |
 |---|---|---|
-| Lootrun Division ranks：Rookie／Assistant／Sentinel／Elite／Admiral／Commander／Master | 新手／助理／哨衛／精銳／上將／指揮官／大師 | Elite 不要用「精英」，會撞 Radiant＝精英；Master 與 NPC「Lootrun 大師」同字，可接受 |
+| Lootrun Division ranks：Rookie／Assistant／Sentinel／Elite／Admiral／Commander／Master | 新手／助理／哨衛／精銳／上將／指揮官／大師 | Elite 不要用「精英」，會撞 Radiant＝精英；Master 與 NPC「掠奪長征大師」同字，可接受 |
 | Spelunk（挑戰類型） | 探洞 | 其餘：殲滅（Slay Mobs）、獵殺目標、摧毀、防守 |
 | Imperitia（試煉） | 生疏 | 語料留原文 |
 | 挑戰點名（The Armory、Shackles of the Past、Armistice Sapling、Graveyard of the Thousand、False Respite、Forlorn Library、Propaganda Vandal、Canopy Ambush 等） | 軍械庫、過往的枷鎖、停戰樹苗、千人墓場、虛假的安歇、被遺棄的圖書館、塗鴉宣傳的人、樹冠伏擊 | 語料未收，遊戲內是否顯示需 capture 確認 |
@@ -441,7 +441,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 
 ## 十、出處清單
 
-- wiki（Lootrun）：[Lootrunning](https://wynncraft.wiki.gg/wiki/Lootrunning)、[Lootrun Chief](https://wynncraft.wiki.gg/wiki/Lootrun_Chief)、[Silverbull Company Headquarters](https://wynncraft.wiki.gg/wiki/Silverbull_Company_Headquarters)、[Silverbull Syndicates](https://wynncraft.wiki.gg/wiki/Silverbull_Syndicates)、[Canyon of the Lost Excursion (South)](https://wynncraft.wiki.gg/wiki/Canyon_of_the_Lost_Excursion_(South))、[The Corkus Traversal](https://wynncraft.wiki.gg/wiki/The_Corkus_Traversal)、[Molten Heights Hike](https://wynncraft.wiki.gg/wiki/Molten_Heights_Hike)、[Sky Islands Exploration](https://wynncraft.wiki.gg/wiki/Sky_Islands_Exploration)、[Silent Expanse Expedition](https://wynncraft.wiki.gg/wiki/Silent_Expanse_Expedition)、[The Fruma Foray (West)](https://wynncraft.wiki.gg/wiki/The_Fruma_Foray_(West))、[The Fruma Foray (East)](https://wynncraft.wiki.gg/wiki/The_Fruma_Foray_(East))、[Exemplar](https://wynncraft.wiki.gg/wiki/Exemplar)、[The Cultivator](https://wynncraft.wiki.gg/wiki/The_Cultivator)
+- wiki（掠奪長征）：[Lootrunning](https://wynncraft.wiki.gg/wiki/Lootrunning)、[Lootrun Chief](https://wynncraft.wiki.gg/wiki/Lootrun_Chief)、[Silverbull Company Headquarters](https://wynncraft.wiki.gg/wiki/Silverbull_Company_Headquarters)、[Silverbull Syndicates](https://wynncraft.wiki.gg/wiki/Silverbull_Syndicates)、[Canyon of the Lost Excursion (South)](https://wynncraft.wiki.gg/wiki/Canyon_of_the_Lost_Excursion_(South))、[The Corkus Traversal](https://wynncraft.wiki.gg/wiki/The_Corkus_Traversal)、[Molten Heights Hike](https://wynncraft.wiki.gg/wiki/Molten_Heights_Hike)、[Sky Islands Exploration](https://wynncraft.wiki.gg/wiki/Sky_Islands_Exploration)、[Silent Expanse Expedition](https://wynncraft.wiki.gg/wiki/Silent_Expanse_Expedition)、[The Fruma Foray (West)](https://wynncraft.wiki.gg/wiki/The_Fruma_Foray_(West))、[The Fruma Foray (East)](https://wynncraft.wiki.gg/wiki/The_Fruma_Foray_(East))、[Exemplar](https://wynncraft.wiki.gg/wiki/Exemplar)、[The Cultivator](https://wynncraft.wiki.gg/wiki/The_Cultivator)
 - wiki（世界事件）：[World Events](https://wynncraft.wiki.gg/wiki/World_Events) 與其分類下 68 個事件頁、[Annihilation](https://wynncraft.wiki.gg/wiki/Annihilation)、[Prelude to Annihilation](https://wynncraft.wiki.gg/wiki/Prelude_to_Annihilation)、[Admiral Aegis](https://wynncraft.wiki.gg/wiki/Admiral_Aegis)、[Corrupted Cache](https://wynncraft.wiki.gg/wiki/Corrupted_Cache)、[Bane of the Great Bridge](https://wynncraft.wiki.gg/wiki/Bane_of_the_Great_Bridge)、[Sayleros' Brother](https://wynncraft.wiki.gg/wiki/Sayleros%27_Brother)
 - wiki（小型故事）：[Afelis](https://wynncraft.wiki.gg/wiki/Afelis)、[Afelis's Locket](https://wynncraft.wiki.gg/wiki/Afelis%27s_Locket)、[Angie](https://wynncraft.wiki.gg/wiki/Angie)、[Slay Hedoro](https://wynncraft.wiki.gg/wiki/Slay_Hedoro)、[Collect Stackpeak Eggs](https://wynncraft.wiki.gg/wiki/Collect_Stackpeak_Eggs)、[Collect White Lilies](https://wynncraft.wiki.gg/wiki/Collect_White_Lilies)、[Hunt Woolly Rhinos](https://wynncraft.wiki.gg/wiki/Hunt_Woolly_Rhinos)、[Hunt Banshee Stags](https://wynncraft.wiki.gg/wiki/Hunt_Banshee_Stags)、[Collect Liff Leaves](https://wynncraft.wiki.gg/wiki/Collect_Liff_Leaves)、[Gather Abyssal Matter](https://wynncraft.wiki.gg/wiki/Gather_Abyssal_Matter)
 - wiki（節慶）：[Festival of the Heroes](https://wynncraft.wiki.gg/wiki/Festival_of_the_Heroes)、[Festival of the Bonfire](https://wynncraft.wiki.gg/wiki/Festival_of_the_Bonfire)、[Festival of the Spirits](https://wynncraft.wiki.gg/wiki/Festival_of_the_Spirits)、[Festival of the Blizzard](https://wynncraft.wiki.gg/wiki/Festival_of_the_Blizzard)、[Aster](https://wynncraft.wiki.gg/wiki/Aster)、[Bonfire Keeper](https://wynncraft.wiki.gg/wiki/Bonfire_Keeper)、[The Envoy](https://wynncraft.wiki.gg/wiki/The_Envoy)、[The Traveler](https://wynncraft.wiki.gg/wiki/The_Traveler)、[The Guide](https://wynncraft.wiki.gg/wiki/The_Guide)、[Festival of the Heroes Mystery](https://wynncraft.wiki.gg/wiki/Festive_Detlas_Mystery)、[Talespun Citadel](https://wynncraft.wiki.gg/wiki/Talespun_Citadel)、[Siegfried](https://wynncraft.wiki.gg/wiki/Siegfried)
@@ -457,7 +457,7 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 
 | # | 檔案／條目 | 問題 | 建議 |
 |---|---|---|---|
-| 1 | `quest/aldorei-s-secret-part-i.json` #000–#008 | 九句全是 Silverbull 總部的台詞（「加入我們的討伐戰部門」「找我們的 Lootrun 主管談談」「祝你往後的討伐戰一切順利」等），#004 還標著 speaker「Silverbull 階級專家」，跟《Aldorei 的祕密 第一部》無關；任務內容從 #009 才開始 | 搬到 quest.json（不屬任何任務的台詞），七個語言一起，比照 #1373 的作法 **已處理（#1411）** |
+| 1 | `quest/aldorei-s-secret-part-i.json` #000–#008 | 九句全是 Silverbull 總部的台詞（「加入我們的討伐戰部門」「找我們的掠奪長征主管談談」「祝你往後的討伐戰一切順利」等），#004 還標著 speaker「Silverbull 階級專家」，跟《Aldorei 的祕密 第一部》無關；任務內容從 #009 才開始 | 搬到 quest.json（不屬任何任務的台詞），七個語言一起，比照 #1373 的作法 **已處理（#1411）** |
 | 2 | `quest/cook-assistant.json` #021 | speaker Afelis 的「我真的很想做點有意義的事」是 Afelis 在 Ragni 的角色任務台詞，不是《廚師助理》 | 搬到 npc.json 或 quest.json **已處理（#1411）** |
 | 3 | `npc.json`「Burning Iris」 | 譯「燃燒鳶尾」（花）；這是湮滅「戰爭之眼」召喚的眼球怪，與「惡魔凝視」成對，iris 指**虹膜** | 改「燃燒虹膜」或「燃燒之瞳」 **已處理（#1411）** |
 | 4 | `npc.json`「Padrone」 | 譯「教父」；首領出現在「過勞工會」，padrone 是義大利文「工頭、老闆」，「教父」會讀成黑手黨 | 改「工頭」 **已處理（#1411）**：「工頭」已是 Foreman 的譯名，改「老闆」；**已定案（使用者 10-24）**：維持「老闆／老板」 |

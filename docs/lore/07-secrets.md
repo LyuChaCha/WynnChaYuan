@@ -572,7 +572,7 @@ Fruma 的 16 個探索點有三條互相咬合的線：Gale Nasin 的出逃（�
 |---|---|---|
 | Time Trial Master | 計時賽大師 | 語料已有（`npc.json`） |
 | Rank B／A／S／S+ | B 級／A 級／S 級／S+ 級 | 照原文字母 |
-| Daily Bonus（計時賽） | 每日獎勵 | 語料 Lootrun 的 Daily Bonus 已用此譯 |
+| Daily Bonus（計時賽） | 每日獎勵 | 語料掠奪長征的 Daily Bonus 已用此譯 |
 | Speed／Energy／Handling／Acceleration／Toughness／Altitude／Training Limit | 速度／能量／操控／動量／韌性／高度／訓練上限 | 能力名照語料；Limit＝上限 |
 | Powerup（坐騎） | （暫留原文） | 語料無 |
 | Black Road Runaround | Black Road 兜圈跑 | 暫譯；runaround 也有「推託」之意 |
