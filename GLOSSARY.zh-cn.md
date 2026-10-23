@@ -94,7 +94,7 @@
 | Mastery Tome | 精通书卷 | Tome 为书卷 |
 | Liquid Emeralds | 液态绿宝石 | |
 | Item Identifier | 物品鉴定师 | NPC 职业，不是「鉴定道具」 |
-| Lootrun | Lootrun | 保留原文 |
+| Lootrun | 掠夺长征 | 2026-10-24 定案（原本保留原文） |
 | Dungeon | 地牢 | 与 zh_tw 不同（地城） |
 | Raid | 副本 | 与 zh_tw 不同（討伐戰）。指后期需要 4 人加入的副本；一般语意的 raid／assault 仍用「突袭」 |
 | Quest | 任务 | |
@@ -226,7 +226,7 @@ Gikyo 照原文：别人称 they 的写「他们」，Gikyo 自称 it 的写「�
 
 - **地名**（Ragni、Detlas、Troms…）——用 `{p}` 占位符自动处理
 - **装备与物品名称**——专有名词，翻了对不上 wiki 与交易市场
-- **Lootrun**、**Guild** 等社群通用词（Raid 不在此列，见上面的对照表）
+- **Guild** 等社群通用词（Raid 不在此列，见上面的对照表）
 - **职业技能名**——目前大半保留英文，见「职业内容相关」一节的说明
 
 ## 想改某个词？

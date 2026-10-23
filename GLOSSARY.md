@@ -77,7 +77,7 @@
 | Mastery Tome | 精通書卷 | Tome 為書卷 |
 | Liquid Emeralds | 液態綠寶石 | |
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
-| Lootrun | Lootrun | |
+| Lootrun | 掠奪長征 | 使用者 2026-10-24 定案（原本留英文） |
 | Dungeon | 地城 |  |
 | Raid | 討伐戰 | 此指後期需要 4 人加入的副本。**一般語意的 raid／assault 仍用「突襲」**——任務對話裡的「突襲一座腐敗據點」、「獸人突襲」不是這個 |
 | Scale | 適性 | 此指裝備詞條經加權計算後得出評估該物品是否良好的值 |
@@ -314,7 +314,7 @@ Gikyo 照原文：別人稱 they 的寫「他們」，Gikyo 自稱 it 的寫「�
 
 - **地名**（Ragni、Detlas、Troms…）——用 `{p}` 佔位符自動處理，共 137 個
 - **裝備與物品名稱**——專有名詞，翻了對不上 wiki 與交易市場
-- **Lootrun**、**Guild** 等社群通用詞（`Raid` 不在此列，見上面的對照表）
+- **Guild** 等社群通用詞（`Raid` 不在此列，見上面的對照表）
 
 
 ## 想改某個詞？
