@@ -524,7 +524,7 @@ Timeline、Wynn_Province、Corruption、Corruption_War、Corruption_Portal、Bak
 
 | # | 任務／檔案 | 條目 | 問題 | 建議 |
 |---|---|---|---|---|
-| A16 | misc.json vs gear-armour.json | Aerolia Boots | 裝備名作「Aerolia 靴」，Mossy Grotto 洞窟完成的獎勵列卻留「Aerolia Boots」 | 獎勵列照裝備名 |
+| A16 | misc.json vs gear-armour.json | Aerolia Boots | 裝備名作「Aerolia 靴」，Mossy Grotto 洞窟完成的獎勵列卻留「Aerolia Boots」 | 獎勵列照裝備名 **已處理（#1411）** |
 | A17 | 《WynnExcavation B 號遺址》 | 考古學家說的「紫水晶」 | 道具名是「紫色水晶碎片」，對話作「紫水晶」；字面沒錯，但「紫水晶」在中文也是礦物名（amethyst） | 低優先；可考慮「紫色水晶」 |
 | A18 | quest/ | 《凝時之花》 | 已移除的任務，語料只有任務名（quest-name.json、misc.json），沒有台詞 | 不必補（實機已無此任務） |
 

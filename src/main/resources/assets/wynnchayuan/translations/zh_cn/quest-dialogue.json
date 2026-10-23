@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23729,
-  "translated": 23726,
+  "count": 23719,
+  "translated": 23716,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -10499,7 +10499,7 @@
   },
   "A Marauder's Dues#016": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
-   "dst": "……我几乎什么都不记得了。只有……愤怒的感觉，还有……大概是厌恶吧，可是……Grand-Peli，你不会骗我的。",
+   "dst": "……我几乎什么都不记得了。只有……愤怒的感觉，还有……大概是厌恶吧，可是……Peli 爷爷，你不会骗我的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -16915,102 +16915,6 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part I#000": {
-   "src": "Hey {u}! Come back to me when you are level {~}, we have a lot to do!",
-   "dst": "嘿，{u}！等你到 {~} 级再来找我，我们有很多事要做！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#001": {
-   "src": "Hey there! Seems like you are now Combat Lv. {~}! You can't start a raid before you've joined our Raiding Division at the {p}!",
-   "dst": "嘿！看来你现在已经是战斗等级 {~} 了！你得先到 {p} 加入我们的副本分部，才能开始副本！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#002": {
-   "src": "You can sign up for the different divisions and benefit from advantages negotiated by the company on your behalf.",
-   "dst": "你可以报名加入各个分部，享受公司替你谈下来的各种优惠。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#003": {
-   "src": "If you'd like to sign up to join our Lootrun Division, speak to the Lootrun Chief!",
-   "dst": "如果你想报名加入我们的 Lootrun 分部，就去找 Lootrun 主管谈谈！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#004": {
-   "src": "Unfortunately Silverbull's Lootrun Division is only open to people who are level {~} or over.",
-   "dst": "很遗憾，Silverbull 的 Lootrun 分部只对 {~} 级及以上的人开放。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "Silverbull Rank Expert",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#005": {
-   "src": "Just head into the room behind me on the right and talk to our Raid Chief. She will get you set up in no time!",
-   "dst": "只要走进我身后右手边的房间，找我们的副本主管谈谈就行。她马上就能帮你办好！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Just head into the room behind me on the left and talk to our Lootrun Chief. He will get you set up in no time!",
-    "file": "quest.json",
-    "ratio": 0.905,
-    "reason": "名字或框架差一個字就是另一條，原文沒有改"
-   }
-  },
-  "Aldorei's Secret Part I#006": {
-   "src": "Just head into the room behind me on the left and talk to our Lootrun Chief. He will get you set up in no time!",
-   "dst": "直接走进我身后左边的房间，找我们的 Lootrun 主管谈谈。他很快就会帮你安排好！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#007": {
-   "src": "Would you like to return to your previous location?",
-   "dst": "你要回到之前所在的位置吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#008": {
-   "src": "Very well. I wish you luck in your future raiding endeavours!",
-   "dst": "好的。祝你今后的副本之旅一切顺利！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#009": {
    "src": "For the safety of the citizens, these doors shall remain shut until the criminal is captured.",
    "dst": "为了居民的安全，在抓到犯人之前，这些门都会保持关闭。",
    "role": "desc",
@@ -17020,7 +16924,7 @@
    "speaker": "Elf Guard",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#010": {
+  "Aldorei's Secret Part I#001": {
    "src": "[+{~} Rusted Bucket]",
    "dst": "[+{~} 生锈的水桶]",
    "role": "desc",
@@ -17036,7 +16940,7 @@
     "reason": "candidate"
    }
   },
-  "Aldorei's Secret Part I#011": {
+  "Aldorei's Secret Part I#002": {
    "src": "This is utterly inane. A full lockdown, over a petty theft... Are we not to help one another? To thieve is unnecessary.",
    "dst": "这简直疯了。为了一件小偷小摸就全面封锁……我们不是该互相帮助吗？偷窃根本没有必要。",
    "role": "desc",
@@ -17046,7 +16950,7 @@
    "speaker": "Vaenr",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#012": {
+  "Aldorei's Secret Part I#003": {
    "src": "The plant has been disturbed- Looks like it was knocked over.",
    "dst": "这株植物被动过——看起来是被撞倒的。",
    "role": "desc",
@@ -17056,7 +16960,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#013": {
+  "Aldorei's Secret Part I#004": {
    "src": "It's missing a few leaves- Many of them are scattered around the area.",
    "dst": "少了几片叶子——很多都散落在这附近。",
    "role": "desc",
@@ -17066,7 +16970,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#014": {
+  "Aldorei's Secret Part I#005": {
    "src": "There seem to be some footprints leading away... It would probably be best to ask about the plant.",
    "dst": "好像有一些脚印往外延伸……最好还是去问问这株植物的事。",
    "role": "desc",
@@ -17076,7 +16980,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#015": {
+  "Aldorei's Secret Part I#006": {
    "src": "I pray to the Light that you are able to help before the situation degrades further.",
    "dst": "我向光明祈祷，希望你能在情况继续恶化之前帮上忙。",
    "role": "desc",
@@ -17086,7 +16990,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#016": {
+  "Aldorei's Secret Part I#007": {
    "src": "This book describes a potion of enhanced vision.",
    "dst": "这本书描述了一种强化视觉的药水。",
    "role": "desc",
@@ -17096,7 +17000,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#017": {
+  "Aldorei's Secret Part I#008": {
    "src": "...why are so many of the pages ripped out?",
    "dst": "……为什么这么多页都被撕掉了？",
    "role": "desc",
@@ -17106,7 +17010,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#018": {
+  "Aldorei's Secret Part I#009": {
    "src": "See me as I truly am- My name is Korben, and I mustn't be delayed further!",
    "dst": "看清我的真面目吧——我叫 Korben，我不能再被耽搁了！",
    "role": "desc",
@@ -17116,7 +17020,7 @@
    "speaker": "Criminal",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#019": {
+  "Aldorei's Secret Part I#010": {
    "src": "Maybe there's another way to the window...",
    "dst": "也许还有别的路能通到那扇窗……",
    "role": "desc",
@@ -17126,7 +17030,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#020": {
+  "Aldorei's Secret Part I#011": {
    "src": "You should probably investigate the collapsed bridge to see where Korben went.",
    "dst": "你应该去查看那座塌掉的桥，看看 Korben 去了哪里。",
    "role": "desc",
@@ -17136,7 +17040,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#021": {
+  "Aldorei's Secret Part I#012": {
    "src": "You may come and go as you wish to {p} Town. We shall open the doors for you.",
    "dst": "你可以自由进出 {p} 镇。我们会为你开门。",
    "role": "desc",
@@ -17152,7 +17056,7 @@
     "reason": "candidate"
    }
   },
-  "Aldorei's Secret Part I#022": {
+  "Aldorei's Secret Part I#013": {
    "src": "Hey! Please come talk to me.",
    "dst": "喂！请过来跟我谈谈。",
    "role": "desc",
@@ -17162,7 +17066,7 @@
    "speaker": "Olon",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#023": {
+  "Aldorei's Secret Part I#014": {
    "src": "Have you ever heard the saying \"Elves never die\"- well it's true, or so I thought.",
    "dst": "你听过「精灵不会死」这句话吗？那是真的——至少我以前是这么以为的。",
    "role": "desc",
@@ -17172,7 +17076,7 @@
    "speaker": "Olon",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#024": {
+  "Aldorei's Secret Part I#015": {
    "src": "Talk to the Elf Guard at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的精灵守卫交谈。",
    "role": "desc",
@@ -17182,7 +17086,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#025": {
+  "Aldorei's Secret Part I#016": {
    "src": "Halt, traveler! Entry to {p} Town is forbidden at present.",
    "dst": "站住，旅人！{p} 镇目前禁止进入。",
    "role": "desc",
@@ -17192,7 +17096,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#026": {
+  "Aldorei's Secret Part I#017": {
    "src": "There is a dangerous criminal on the loose in this valley.",
    "dst": "这座山谷里有个危险的罪犯逍遥法外。",
    "role": "desc",
@@ -17202,7 +17106,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#027": {
+  "Aldorei's Secret Part I#018": {
    "src": "These doors shall remain closed until the criminal is captured.",
    "dst": "在抓到罪犯之前，这些门都会一直关着。",
    "role": "desc",
@@ -17212,7 +17116,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#028": {
+  "Aldorei's Secret Part I#019": {
    "src": "See if anyone in {p} Valley knows what happened",
    "dst": "看看 {p} 谷里有没有人知道发生了什么事",
    "role": "desc",
@@ -17222,7 +17126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#029": {
+  "Aldorei's Secret Part I#020": {
    "src": "An outsider in our midst? Exciting to see. I have wished to share our magic with new people for a long while.",
    "dst": "外人来到我们之中？真令人兴奋。我一直很想把我们的魔法分享给新的人。",
    "role": "desc",
@@ -17232,7 +17136,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#030": {
+  "Aldorei's Secret Part I#021": {
    "src": "However, I am...well, rather hungry. And I must tend to my garden here for the time being.",
    "dst": "不过，我……嗯，相当饿。而且我暂时得照料这里的花园。",
    "role": "desc",
@@ -17242,7 +17146,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#031": {
+  "Aldorei's Secret Part I#022": {
    "src": "Have you heard the saying “You scratch my ears, I scratch yours”? People must help one another.",
    "dst": "你听过“你挠我耳朵，我挠你耳朵”这句话吗？人与人之间应该互相帮助。",
    "role": "desc",
@@ -17252,7 +17156,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#032": {
+  "Aldorei's Secret Part I#023": {
    "src": "If you would be so kind as to bring me a loaf of fresh bread you may take my enchanted bucket.",
    "dst": "如果你愿意好心给我带一条新鲜面包来，我的魔法桶就可以给你。",
    "role": "desc",
@@ -17262,7 +17166,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#033": {
+  "Aldorei's Secret Part I#024": {
    "src": "I saw you toil to bake this yourself. Frankly, that is above and beyond what I expected, so here is your exchange.",
    "dst": "我看到你辛辛苦苦亲手烤了面包。说实话，这远远超出我的期望，所以这是给你的交换。",
    "role": "desc",
@@ -17272,7 +17176,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#034": {
+  "Aldorei's Secret Part I#025": {
    "src": "If you require help in the future with anything, do not be afraid to ask. If you put such effort for me, I shall give you the same.",
    "dst": "以后有任何需要帮忙的地方，别怕开口。你为我付出这样的心力，我也会同样回报你。",
    "role": "desc",
@@ -17282,7 +17186,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#035": {
+  "Aldorei's Secret Part I#026": {
    "src": "Find a use for Damys' Bucket",
    "dst": "为 Damys 的桶找个用途",
    "role": "desc",
@@ -17292,7 +17196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#036": {
+  "Aldorei's Secret Part I#027": {
    "src": "The thieving is not the reason, from what I have heard. It is that the grove was jealously hidden due to the potency of the plants there.",
    "dst": "据我所知，不是因为偷窃。而是因为那片林地里的植物药效太强，一直被刻意藏起来。",
    "role": "desc",
@@ -17302,7 +17206,7 @@
    "speaker": "Sylvar",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#037": {
+  "Aldorei's Secret Part I#028": {
    "src": "Tattytale, Iridesca, Subtraxerim... The Light only knows what else. It is impossible to reach without unusual means- And that is cause for grave concern.",
    "dst": "Tattytale、Iridesca、Subtraxerim……天知道还有什么。不用特殊手段根本到不了那里——而这正是令人严重担忧的地方。",
    "role": "desc",
@@ -17312,7 +17216,7 @@
    "speaker": "Sylvar",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#038": {
+  "Aldorei's Secret Part I#029": {
    "src": "Find a way to grow the plant by the waterfall",
    "dst": "想办法让瀑布旁的植物长大",
    "role": "desc",
@@ -17322,7 +17226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#039": {
+  "Aldorei's Secret Part I#030": {
    "src": "Explore the secret garden",
    "dst": "探索秘密花园",
    "role": "desc",
@@ -17332,7 +17236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#040": {
+  "Aldorei's Secret Part I#031": {
    "src": "Halt! This area is strictly off limits, especially for an outsider. Turn back now!",
    "dst": "站住！这里严禁进入，外人更是不行。马上回头！",
    "role": "desc",
@@ -17342,7 +17246,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#041": {
+  "Aldorei's Secret Part I#032": {
    "src": "Investigate the [Iridescent Leaves]",
    "dst": "调查 [彩虹叶]",
    "role": "desc",
@@ -17352,7 +17256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#042": {
+  "Aldorei's Secret Part I#033": {
    "src": "Aha, the outsider returns. Is there something troubling you?",
    "dst": "啊哈，外人回来了。有什么烦心事吗？",
    "role": "desc",
@@ -17362,7 +17266,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#043": {
+  "Aldorei's Secret Part I#034": {
    "src": "...mmm. Unfortunate, that. I cannot help with this.",
    "dst": "……嗯。真不巧。这件事我帮不上忙。",
    "role": "desc",
@@ -17372,7 +17276,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#044": {
+  "Aldorei's Secret Part I#035": {
    "src": "It is not a matter of secrecy or morals- I simply do not know what that leaf is from or what it may be capable of.",
    "dst": "这无关保密或道德——我只是不知道那片叶子来自什么植物，也不知道它有什么作用。",
    "role": "desc",
@@ -17382,7 +17286,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#045": {
+  "Aldorei's Secret Part I#036": {
    "src": "I am no botanist- Simply a gardener. The mistake is understandable, if regrettable.",
    "dst": "我不是植物学家——只是个园丁。搞错也情有可原，虽然很遗憾。",
    "role": "desc",
@@ -17392,7 +17296,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#046": {
+  "Aldorei's Secret Part I#037": {
    "src": "However, I was taught under a much more storied botanist who may have the answers you seek.",
    "dst": "不过，我曾经跟一位更有名望的植物学家学习过，她也许有你要的答案。",
    "role": "desc",
@@ -17402,7 +17306,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#047": {
+  "Aldorei's Secret Part I#038": {
    "src": "Her name is Fiona- Her home is across the valley from here. Take the bridge across. She often stays inside studying.",
    "dst": "她叫 Fiona——她家在山谷对面。过桥就到了。她常常待在屋里做研究。",
    "role": "desc",
@@ -17412,7 +17316,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#048": {
+  "Aldorei's Secret Part I#039": {
    "src": "She has forgotten more than I will ever hope to know about plants. If she cannot help you, I fear none can.",
    "dst": "她忘掉的植物知识都比我这辈子能学到的还多。如果连她都帮不了你，恐怕就没人帮得了了。",
    "role": "desc",
@@ -17422,7 +17326,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#049": {
+  "Aldorei's Secret Part I#040": {
    "src": "Go to the botanist's house at [-{~}, {~}, -{~}]",
    "dst": "前往 [-{~}, {~}, -{~}] 的植物学家家中",
    "role": "desc",
@@ -17432,7 +17336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#050": {
+  "Aldorei's Secret Part I#041": {
    "src": "This is outrageous! To think one of our own would stoop to such thievery and destruction!",
    "dst": "太过分了！真没想到我们自己人会堕落到这样偷窃破坏！",
    "role": "desc",
@@ -17442,7 +17346,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#051": {
+  "Aldorei's Secret Part I#042": {
    "src": "Outsider, this is not the time to be asking me anything. My home has been ransacked!",
    "dst": "外人，现在不是问我事情的时候。我家被洗劫了！",
    "role": "desc",
@@ -17452,7 +17356,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#052": {
+  "Aldorei's Secret Part I#043": {
    "src": "Mm? Damys sent you... You have leaves of Iridesca? Hm... Then perhaps we may be able to help one another.",
    "dst": "嗯？Damys 叫你来的……你有 Iridesca 的叶子？嗯……那也许我们可以互相帮助。",
    "role": "desc",
@@ -17462,7 +17366,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#053": {
+  "Aldorei's Secret Part I#044": {
    "src": "They tore through my shelves and furniture searching, and scanned the pages as fervently once they found it.",
    "dst": "他翻遍了我的书架和家具，找到之后又那么急切地翻看书页。",
    "role": "desc",
@@ -17472,7 +17376,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#054": {
+  "Aldorei's Secret Part I#045": {
    "src": "Afterwards, they threw the book into the back garden, and forced a carnivorous plant to grow and consume my notes!",
    "dst": "后来，他把书扔进后花园，还硬让一株食肉植物长出来，把我的笔记吞掉了！",
    "role": "desc",
@@ -17482,7 +17386,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#055": {
+  "Aldorei's Secret Part I#046": {
    "src": "I assume when the desired information was found, they went into my garden, threw the book into the carnivorous plant and stormed off towards the lab.",
    "dst": "我猜他找到想要的情报之后，就去了我的花园，把书扔进食肉植物里，然后气冲冲地往实验室去了。",
    "role": "desc",
@@ -17492,7 +17396,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#056": {
+  "Aldorei's Secret Part I#047": {
    "src": "I have researched the Iridesca bloom, and many other plants, for a long time. All my knowledge is stored in that book!",
    "dst": "我研究 Iridesca 花和很多其他植物很久了。我所有的知识都记在那本书里！",
    "role": "desc",
@@ -17502,7 +17406,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#057": {
+  "Aldorei's Secret Part I#048": {
    "src": "Retrieve it for me, and I will share my knowledge with you.",
    "dst": "帮我把它拿回来，我就把我的知识分享给你。",
    "role": "desc",
@@ -17512,7 +17416,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#058": {
+  "Aldorei's Secret Part I#049": {
    "src": "Kill the carnivorous plant and loot the book",
    "dst": "杀死食肉植物，拿回那本书",
    "role": "desc",
@@ -17522,7 +17426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#059": {
+  "Aldorei's Secret Part I#050": {
    "src": "...disgusting. I will have to hang the pages to dry later, but first, our exchange.",
    "dst": "……恶心。书页我得之后再晾干，不过先来完成我们的交换。",
    "role": "desc",
@@ -17532,7 +17436,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#060": {
+  "Aldorei's Secret Part I#051": {
    "src": "Hmm... Herbstzeitlose... Death Whistle, no...where is Iridesca, again...?",
    "dst": "嗯……Herbstzeitlose……死亡哨草，不对……Iridesca 在哪来着……？",
    "role": "desc",
@@ -17542,7 +17446,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#061": {
+  "Aldorei's Secret Part I#052": {
    "src": "Aha, there it is. The pages were sticking together. Iridesca leaves are potent in various ways and are very versatile in their use.",
    "dst": "啊哈，在这里。书页都粘在一起了。Iridesca 叶子有多种强效作用，用途非常广泛。",
    "role": "desc",
@@ -17552,7 +17456,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#062": {
+  "Aldorei's Secret Part I#053": {
    "src": "They have an incredibly broad range of usage, from soothing joint pain or curing sickness to emetic effect and lethal poison, depending on what it is brewed with.",
    "dst": "它们的用途极其广泛，从缓解关节疼痛、治疗疾病，到催吐和致命毒药，全看它跟什么一起调制。",
    "role": "desc",
@@ -17562,7 +17466,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#063": {
+  "Aldorei's Secret Part I#054": {
    "src": "Mm? The book thief also possesses Iridesca...? This... This is very troubling. There are few notes aside from mine on how to heal Iridesca poisoning.",
    "dst": "嗯？偷书贼也有 Iridesca……？这……这非常令人不安。除了我的笔记之外，关于怎么治疗 Iridesca 中毒的记载少之又少。",
    "role": "desc",
@@ -17572,7 +17476,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#064": {
+  "Aldorei's Secret Part I#055": {
    "src": "They were headed in the direction of the potionmaker's guild. If they intend something wicked...",
    "dst": "他朝药剂师公会的方向去了。如果他打算做什么坏事……",
    "role": "desc",
@@ -17582,7 +17486,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#065": {
+  "Aldorei's Secret Part I#056": {
    "src": "Investigate the alchemist's shop at [-{~}, {~}, -{~}]",
    "dst": "调查 [-{~}, {~}, -{~}] 的炼金术士商店",
    "role": "desc",
@@ -17592,7 +17496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#066": {
+  "Aldorei's Secret Part I#057": {
    "src": "..you! You have been seeking me! I have seen you tracing my footsteps...",
    "dst": "……你！你一直在找我！我看到你一路追着我的脚步……",
    "role": "desc",
@@ -17602,7 +17506,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#067": {
+  "Aldorei's Secret Part I#058": {
    "src": "I apologize for this... But what I do is a necessity!",
    "dst": "对此我很抱歉……但我做的事是必要的！",
    "role": "desc",
@@ -17612,7 +17516,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#068": {
+  "Aldorei's Secret Part I#059": {
    "src": "I beg you, do not pursue me any further!",
    "dst": "我求你，别再追我了！",
    "role": "desc",
@@ -17622,7 +17526,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#069": {
+  "Aldorei's Secret Part I#060": {
    "src": "Chase the criminal.",
    "dst": "追赶罪犯。",
    "role": "desc",
@@ -17632,7 +17536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#070": {
+  "Aldorei's Secret Part I#061": {
    "src": "Outsider, I realize the circumstances appear damning, but you must stop!",
    "dst": "外人，我知道现在的情况对我很不利，但你必须停下！",
    "role": "desc",
@@ -17642,7 +17546,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#071": {
+  "Aldorei's Secret Part I#062": {
    "src": "What I have done is needed, and if there were another path I would have taken it over this.",
    "dst": "我做的事是必须的，如果有别的路可走，我一定不会选这条。",
    "role": "desc",
@@ -17652,7 +17556,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#072": {
+  "Aldorei's Secret Part I#063": {
    "src": "I must take my concoction to where it is needed!",
    "dst": "我必须把我的药剂送到需要它的地方！",
    "role": "desc",
@@ -17662,7 +17566,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#073": {
+  "Aldorei's Secret Part I#064": {
    "src": "G R O W! (In High Gavellian)",
    "dst": "长 大 吧！(高等 Gavel 语)",
    "role": "desc",
@@ -17672,7 +17576,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#074": {
+  "Aldorei's Secret Part I#065": {
    "src": "A damnable pace you have... I cannot let you stop me for a moment longer!",
    "dst": "你的速度真是该死的快……我不能再让你拦我一刻！",
    "role": "desc",
@@ -17682,7 +17586,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#075": {
+  "Aldorei's Secret Part I#066": {
    "src": "It will be done soon, but I must reach my destination first!",
    "dst": "很快就好了，但我得先赶到目的地！",
    "role": "desc",
@@ -17692,7 +17596,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#076": {
+  "Aldorei's Secret Part I#067": {
    "src": "Finally... I apologize for the delay. I needed to take strong measures to get this to you.",
    "dst": "终于……抱歉耽搁了。为了把这个带给你，我不得不采取强硬手段。",
    "role": "desc",
@@ -17702,7 +17606,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#077": {
+  "Aldorei's Secret Part I#068": {
    "src": "Here, here... Drink, father. It will clear your throat.",
    "dst": "来，来……喝吧，父亲。它会让你的喉咙舒服些。",
    "role": "desc",
@@ -17712,7 +17616,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#078": {
+  "Aldorei's Secret Part I#069": {
    "src": "...there. It is done. Now... Outsider... Hear me, please.",
    "dst": "……好了。完成了。现在……外人……请听我说。",
    "role": "desc",
@@ -17722,7 +17626,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#079": {
+  "Aldorei's Secret Part I#070": {
    "src": "I am aware of exactly what I have done. Shredded Fiona’s research, disturbed the forbidden gardens, unsettled the hearts of many...",
    "dst": "我很清楚自己做了什么。撕毁了 Fiona 的研究，惊扰了禁忌花园，让许多人心神不宁……",
    "role": "desc",
@@ -17732,7 +17636,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#080": {
+  "Aldorei's Secret Part I#071": {
    "src": "My father fell ill. A trek to {p}’s borders left him stricken with Kerasot poisoning. He was near death...",
    "dst": "我父亲病倒了。去了一趟 {p} 的边境，他就中了 Kerasot 毒。他差点就死了……",
    "role": "desc",
@@ -17742,7 +17646,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#081": {
+  "Aldorei's Secret Part I#072": {
    "src": "{p}’s village is one of outcasts- to visit is, stupidly, forbidden. He would have been exiled, and that would have ensured his death with his affliction.",
    "dst": "{p} 的村子是被放逐者的村子——去那里拜访是被禁止的，真是愚蠢。他会被放逐，而以他的病情，那就等于判了他死刑。",
    "role": "desc",
@@ -17752,7 +17656,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#082": {
+  "Aldorei's Secret Part I#073": {
    "src": "Desperation causes one to do strange things. I thought only of his safety- I cared little about anything else.",
    "dst": "绝望会让人做出奇怪的事。我只想到他的安危——其他的我都不在乎。",
    "role": "desc",
@@ -17762,7 +17666,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#083": {
+  "Aldorei's Secret Part I#074": {
    "src": "Even now I am simply relieved for his safety. If you must turn me in, I understand- I have already done what I set out to do.",
    "dst": "即使到现在，我也只是为他平安而松了一口气。如果你必须告发我，我能理解——我想做的事已经做完了。",
    "role": "desc",
@@ -17772,7 +17676,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#084": {
+  "Aldorei's Secret Part I#075": {
    "src": "Though I wish to remain free, whether you choose to report my activities or not does not matter to me now.",
    "dst": "虽然我希望保住自由，但你选择要不要举报我，现在对我来说已经不重要了。",
    "role": "desc",
@@ -17782,7 +17686,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#085": {
+  "Aldorei's Secret Part I#076": {
    "src": "Choose",
    "dst": "做出选择",
    "role": "desc",
@@ -17792,7 +17696,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#086": {
+  "Aldorei's Secret Part I#077": {
    "src": "Traveler, I must remind you- The doors shall remain shut until the criminal has been found.",
    "dst": "旅人，我必须提醒你——在找到罪犯之前，这些门都会一直关着。",
    "role": "desc",
@@ -17802,7 +17706,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#087": {
+  "Aldorei's Secret Part I#078": {
    "src": "...ah. You have found him, then. The name is Korben... Understood. We shall interrogate him for his actions.",
    "dst": "……啊。那么你找到他了。名字是 Korben……明白了。我们会审问他的所作所为。",
    "role": "desc",
@@ -17812,7 +17716,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#088": {
+  "Aldorei's Secret Part I#079": {
    "src": "This being the case... You may come and go as you wish to {p} Town. We shall re-open the doors.",
    "dst": "既然如此……你可以自由进出 {p} 镇了。我们会重新打开大门。",
    "role": "desc",
@@ -17822,7 +17726,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#089": {
+  "Aldorei's Secret Part I#080": {
    "src": "...you... You are... You would lie to the guards and say I perished in the chase? You will keep my identity secret?",
    "dst": "……你……你竟然……你要骗守卫说我在追逐中死了？你会替我保守身份的秘密？",
    "role": "desc",
@@ -17832,7 +17736,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#090": {
+  "Aldorei's Secret Part I#081": {
    "src": "Outsider... You show generosity akin to my father. He passed his Sol Medallion onto me to continue his legacy...",
    "dst": "外人……你的慷慨就像我父亲一样。他把他的太阳奖章传给我，让我延续他的传承……",
    "role": "desc",
@@ -17842,7 +17746,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#091": {
+  "Aldorei's Secret Part I#082": {
    "src": "...after what I have done, I do not deserve it. You take it, instead. It is in sufficiently worthy hands, I believe.",
    "dst": "……做了这些事之后，我不配拥有它。你拿去吧。我相信，交到你手里才算所托得人。",
    "role": "desc",
@@ -17852,7 +17756,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#092": {
+  "Aldorei's Secret Part I#083": {
    "src": "I shall beg the Light to shine upon you for the rest of your days. A thousand thanks to you.",
    "dst": "我会祈求光明在你余生的每一天都照耀你。万分感谢你。",
    "role": "desc",
@@ -39934,7 +39838,7 @@
   },
   "Blazing Retribution#003": {
    "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
-   "dst": "哦，我的小牛宝宝啊，我的房子，我该怎么办？等等，你是谁？",
+   "dst": "哦，我的小圣牛啊，我的房子，我该怎么办？等等，你是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -49591,16 +49495,6 @@
    "kind": "dialogue",
    "quest": "Cook Assistant",
    "source": "capture"
-  },
-  "Cook Assistant#021": {
-   "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
-   "dst": "我只是……我真的很想做点有意义的事，你懂吗？我是说，我大老远跑来总有个理由。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Cook Assistant",
-   "stage": "",
-   "speaker": "Afelis",
-   "source": "captured"
   },
   "Corrupted Betrayal#000": {
    "src": "{u}, good to see you again! Been a while, huh?",
@@ -85205,7 +85099,7 @@
   },
   "Forbidden Prison (Quest)#107": {
    "src": "M-my son? He's alive?!? Oh, sweet baby bovine, that's...! Where is he??",
-   "dst": "我、我的儿子？他还活着？！？哦，我亲爱的小神牛啊，这真是……！他在哪里？？",
+   "dst": "我、我的儿子？他还活着？！？哦，我的小圣牛啊，这真是……！他在哪里？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -221382,7 +221276,7 @@
   },
   "The Ultimate Weapon#000": {
    "src": "These must be the Wood Sprites Dodegar was talking about...",
-   "dst": "这些一定就是 Dodegar 说的木精灵了……",
+   "dst": "这些一定就是 Dodegar 说的木之精灵了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -221502,7 +221396,7 @@
   },
   "The Ultimate Weapon#012": {
    "src": "Collect [{~} Enchanted Stick] from Wood Sprites at [-{~}, {~}, -{~}] and return them to Dodegar",
-   "dst": "收集 [{~} 附魔木棍]，从 [-{~}, {~}, -{~}] 的木精灵身上取得，带回给 Dodegar",
+   "dst": "收集 [{~} 附魔木棍]，从 [-{~}, {~}, -{~}] 的木之精灵身上取得，带回给 Dodegar",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -222082,7 +221976,7 @@
   },
   "The Ultimate Weapon#070": {
    "src": "The only known creature in the west, probably the whole world if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
-   "dst": "老实说，西边、大概全世界唯一已知有这东西的生物，叫作冥界荧尘叶甲虫，不知道这名字是怎么来的。",
+   "dst": "老实说，西边、大概全世界唯一已知有这东西的生物，叫作冥界辉光尘叶甲虫，不知道这名字是怎么来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",

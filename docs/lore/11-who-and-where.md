@@ -1078,13 +1078,13 @@
 | C3 | misc.json | `Unlocks Upper Mesa - Cannot be started` | 同一組五條解鎖訊息，四條作「方山高地」，這一條留「Upper Mesa」 | 統一 |
 | C4 | quest/hunger-of-the-gerts-*.json；npc.json | Gylia Watch | 台詞留英文 Gylia Watch，名牌（Gylia 守望隊見習生、守衛、騎士）作「Gylia 守望隊」 | 擇一；組織名可以翻，也可以照地區名慣例留英文 |
 | C5 | discovery.json；discovery-name.json；quest-name.json | Tower of Ascension | 探索點名稱與任務名作「登天之塔」，兩條探索點說明文留 Tower of Ascension | 說明文改「登天之塔」 |
-| C6 | 多個檔（Enter the Dojo、From the Bottom、The Qira Hive、quest.json、misc.json） | 24 句 | 10-24 裁示 the Hive＝蜂巢，本工作樹的語料還有 24 句留 Hive（含「Hive 商店」「Qira Hive」） | 若裁示的 PR 還沒合，合併後再掃一次 |
+| C6 | 多個檔（Enter the Dojo、From the Bottom、The Qira Hive、quest.json、misc.json） | 24 句 | 10-24 裁示 the Hive＝蜂巢，本工作樹的語料還有 24 句留 Hive（含「Hive 商店」「Qira Hive」） | 若裁示的 PR 還沒合，合併後再掃一次 **已處理（#1404；#1411 複查繁中已無 Hive）** |
 | C7 | quest/a-new-beginning.json；quest/a-journey-home.json | A New Beginning#053、A Journey Home#124 | the Driver 留英文（#053 連冠詞寫成「由 the Driver 帶進」），名牌 Caravan Driver 作「車隊駕駛」 | 決定 the Driver 的譯名後兩句一起改（見第五節） |
 | C8 | quest/the-missing-piece.json；npc.json | The Missing Piece#101–104；`Bush` | 會說話的灌木自稱 Bush，台詞留英文（「我是 Bush」「Bush 我可太清楚她了」），npc.json 的名牌 `Bush` 卻是「灌木」 | 確認名牌 `Bush` 是不是這一位；是的話兩邊擇一 |
 | C9 | npc.json | Elder Oak | 其他 Aldorei 長老（Willow、Rowan、Alder、Hawthorn、Birch、Elm、Hickory）都有「X 長老」名牌，唯獨沒有 Elder Oak；只有怪物 `Elder Oak {#}{#}`＝古橡 | 實機看 Oak 長老的名牌；有的話補「Oak 長老」 |
 | C10 | npc.json | 綻放之刃的代號 | Bleeding Rose、Dusk Garden、Crimson Dagger、Thorn Blade、Violent Heather、Wilted Camellia 台詞裡都翻成中文，npc.json 沒有這幾條名牌 | 若實機頭上有名牌，會顯示英文；看過再補 |
 | C11 | quest/recipe-for-disaster.json | speaker `Astralus`、src「Welcome to Astralaus' Astral House!」 | 同一個 Sky Islands 法師有三種拼法：speaker Astralus、原文 Astralaus、wiki 與第十章 Astraulus；譯文統一寫 Astralus（照 speaker） | 譯文維持一種即可；src 照遊戲保留 |
-| C12 | npc.json；quest/star-thief.json | `Agent` | 名牌 Agent 留英文，任務目標作「密探」 | 名牌補「密探」 |
+| C12 | npc.json；quest/star-thief.json | `Agent` | 名牌 Agent 留英文，任務目標作「密探」 | 名牌補「密探」 **已處理（#1411）** |
 
 另外，第十章語料問題 #2（Afelis 的一句台詞誤放在 `quest/cook-assistant.json` #021）與本章人物表的 Afelis 一列相關，這裡不重複列。
 

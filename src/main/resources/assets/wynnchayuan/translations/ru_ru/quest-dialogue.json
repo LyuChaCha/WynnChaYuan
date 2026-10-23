@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23729,
-  "translated": 23726,
+  "count": 23719,
+  "translated": 23716,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -16915,102 +16915,6 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part I#000": {
-   "src": "Hey {u}! Come back to me when you are level {~}, we have a lot to do!",
-   "dst": "Эй, {u}! Возвращайся, когда достигнешь {~} уровня, у нас много дел!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#001": {
-   "src": "Hey there! Seems like you are now Combat Lv. {~}! You can't start a raid before you've joined our Raiding Division at the {p}!",
-   "dst": "Привет! Похоже, у тебя теперь {~} боевой ур.! Рейд не начать, пока не вступишь в наш Рейдовый отдел в {p}!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#002": {
-   "src": "You can sign up for the different divisions and benefit from advantages negotiated by the company on your behalf.",
-   "dst": "Можно записаться в разные отделы и пользоваться преимуществами, которые компания выторговала для вас.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#003": {
-   "src": "If you'd like to sign up to join our Lootrun Division, speak to the Lootrun Chief!",
-   "dst": "Если хотите вступить в наш отдел Lootrun, поговорите с главой Lootrun!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#004": {
-   "src": "Unfortunately Silverbull's Lootrun Division is only open to people who are level {~} or over.",
-   "dst": "К сожалению, отдел Lootrun Silverbull открыт только для тех, у кого {~} уровень или выше.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "Silverbull Rank Expert",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#005": {
-   "src": "Just head into the room behind me on the right and talk to our Raid Chief. She will get you set up in no time!",
-   "dst": "Просто зайдите в комнату позади меня справа и поговорите с главой рейдов. Она мигом всё для вас устроит!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Just head into the room behind me on the left and talk to our Lootrun Chief. He will get you set up in no time!",
-    "file": "quest.json",
-    "ratio": 0.905,
-    "reason": "名字或框架差一個字就是另一條，原文沒有改"
-   }
-  },
-  "Aldorei's Secret Part I#006": {
-   "src": "Just head into the room behind me on the left and talk to our Lootrun Chief. He will get you set up in no time!",
-   "dst": "Просто зайдите в комнату позади меня слева и поговорите с главой Lootrun. Он мигом всё для вас устроит!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#007": {
-   "src": "Would you like to return to your previous location?",
-   "dst": "Хотите вернуться туда, где были?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#008": {
-   "src": "Very well. I wish you luck in your future raiding endeavours!",
-   "dst": "Хорошо. Желаю удачи в будущих рейдах!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Aldorei's Secret Part I#009": {
    "src": "For the safety of the citizens, these doors shall remain shut until the criminal is captured.",
    "dst": "Ради безопасности горожан эти двери останутся закрытыми, пока преступник не будет схвачен.",
    "role": "desc",
@@ -17020,7 +16924,7 @@
    "speaker": "Elf Guard",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#010": {
+  "Aldorei's Secret Part I#001": {
    "src": "[+{~} Rusted Bucket]",
    "dst": "[+{~} Ржавое ведро]",
    "role": "desc",
@@ -17036,7 +16940,7 @@
     "reason": "candidate"
    }
   },
-  "Aldorei's Secret Part I#011": {
+  "Aldorei's Secret Part I#002": {
    "src": "This is utterly inane. A full lockdown, over a petty theft... Are we not to help one another? To thieve is unnecessary.",
    "dst": "Это безумие. Полная блокада из-за мелкой кражи… Разве мы не помогаем друг другу? Воровать незачем.",
    "role": "desc",
@@ -17046,7 +16950,7 @@
    "speaker": "Vaenr",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#012": {
+  "Aldorei's Secret Part I#003": {
    "src": "The plant has been disturbed- Looks like it was knocked over.",
    "dst": "Растение потревожили - похоже, его опрокинули.",
    "role": "desc",
@@ -17056,7 +16960,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#013": {
+  "Aldorei's Secret Part I#004": {
    "src": "It's missing a few leaves- Many of them are scattered around the area.",
    "dst": "Не хватает нескольких листьев - многие из них разбросаны вокруг.",
    "role": "desc",
@@ -17066,7 +16970,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#014": {
+  "Aldorei's Secret Part I#005": {
    "src": "There seem to be some footprints leading away... It would probably be best to ask about the plant.",
    "dst": "Похоже, отсюда ведут какие-то следы… Пожалуй, лучше всего расспросить об этом растении.",
    "role": "desc",
@@ -17076,7 +16980,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#015": {
+  "Aldorei's Secret Part I#006": {
    "src": "I pray to the Light that you are able to help before the situation degrades further.",
    "dst": "Молю Свет, чтобы вы смогли помочь, прежде чем всё станет ещё хуже.",
    "role": "desc",
@@ -17086,7 +16990,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#016": {
+  "Aldorei's Secret Part I#007": {
    "src": "This book describes a potion of enhanced vision.",
    "dst": "В этой книге описано зелье обострённого зрения.",
    "role": "desc",
@@ -17096,7 +17000,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#017": {
+  "Aldorei's Secret Part I#008": {
    "src": "...why are so many of the pages ripped out?",
    "dst": "…почему столько страниц вырвано?",
    "role": "desc",
@@ -17106,7 +17010,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#018": {
+  "Aldorei's Secret Part I#009": {
    "src": "See me as I truly am- My name is Korben, and I mustn't be delayed further!",
    "dst": "Узрите меня истинного - я Korben, и мне нельзя больше медлить!",
    "role": "desc",
@@ -17116,7 +17020,7 @@
    "speaker": "Criminal",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#019": {
+  "Aldorei's Secret Part I#010": {
    "src": "Maybe there's another way to the window...",
    "dst": "Может быть, к тому окну есть другой путь…",
    "role": "desc",
@@ -17126,7 +17030,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#020": {
+  "Aldorei's Secret Part I#011": {
    "src": "You should probably investigate the collapsed bridge to see where Korben went.",
    "dst": "Пожалуй, стоит осмотреть обрушившийся мост и выяснить, куда делся Korben.",
    "role": "desc",
@@ -17136,7 +17040,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#021": {
+  "Aldorei's Secret Part I#012": {
    "src": "You may come and go as you wish to {p} Town. We shall open the doors for you.",
    "dst": "Вы можете приходить и уходить из {p} Town, когда пожелаете. Мы откроем для вас двери.",
    "role": "desc",
@@ -17152,7 +17056,7 @@
     "reason": "candidate"
    }
   },
-  "Aldorei's Secret Part I#022": {
+  "Aldorei's Secret Part I#013": {
    "src": "Hey! Please come talk to me.",
    "dst": "Эй! Подойдите, пожалуйста, поговорить со мной.",
    "role": "desc",
@@ -17162,7 +17066,7 @@
    "speaker": "Olon",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#023": {
+  "Aldorei's Secret Part I#014": {
    "src": "Have you ever heard the saying \"Elves never die\"- well it's true, or so I thought.",
    "dst": "Вы когда-нибудь слышали поговорку «Эльфы не умирают»? Что ж, это правда - или так я думала.",
    "role": "desc",
@@ -17172,7 +17076,7 @@
    "speaker": "Olon",
    "source": "captured"
   },
-  "Aldorei's Secret Part I#024": {
+  "Aldorei's Secret Part I#015": {
    "src": "Talk to the Elf Guard at [-{~}, {~}, -{~}].",
    "dst": "Поговори со стражником-эльфом в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -17182,7 +17086,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#025": {
+  "Aldorei's Secret Part I#016": {
    "src": "Halt, traveler! Entry to {p} Town is forbidden at present.",
    "dst": "Стой, путник! Вход в город {p} сейчас закрыт.",
    "role": "desc",
@@ -17192,7 +17096,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#026": {
+  "Aldorei's Secret Part I#017": {
    "src": "There is a dangerous criminal on the loose in this valley.",
    "dst": "В этой долине на свободе опасный преступник.",
    "role": "desc",
@@ -17202,7 +17106,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#027": {
+  "Aldorei's Secret Part I#018": {
    "src": "These doors shall remain closed until the criminal is captured.",
    "dst": "Ворота останутся закрытыми, пока его не поймают.",
    "role": "desc",
@@ -17212,7 +17116,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#028": {
+  "Aldorei's Secret Part I#019": {
    "src": "See if anyone in {p} Valley knows what happened",
    "dst": "Узнай в долине {p}, что случилось",
    "role": "desc",
@@ -17222,7 +17126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#029": {
+  "Aldorei's Secret Part I#020": {
    "src": "An outsider in our midst? Exciting to see. I have wished to share our magic with new people for a long while.",
    "dst": "Чужак среди нас? Как интересно. Я давно мечтаю поделиться нашей магией с новыми людьми.",
    "role": "desc",
@@ -17232,7 +17136,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#030": {
+  "Aldorei's Secret Part I#021": {
    "src": "However, I am...well, rather hungry. And I must tend to my garden here for the time being.",
    "dst": "Однако я… что ж, довольно голоден. И пока мне нужно ухаживать за садом.",
    "role": "desc",
@@ -17242,7 +17146,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#031": {
+  "Aldorei's Secret Part I#022": {
    "src": "Have you heard the saying “You scratch my ears, I scratch yours”? People must help one another.",
    "dst": "Знаете поговорку «Ты чешешь мне уши, я - тебе»? Люди должны помогать друг другу.",
    "role": "desc",
@@ -17252,7 +17156,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#032": {
+  "Aldorei's Secret Part I#023": {
    "src": "If you would be so kind as to bring me a loaf of fresh bread you may take my enchanted bucket.",
    "dst": "Будьте добры, принесите мне свежий хлеб - и можете взять моё зачарованное ведро.",
    "role": "desc",
@@ -17262,7 +17166,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#033": {
+  "Aldorei's Secret Part I#024": {
    "src": "I saw you toil to bake this yourself. Frankly, that is above and beyond what I expected, so here is your exchange.",
    "dst": "Я видел, как вы сами его пекли. Право, это больше, чем я ждал, так что вот ваша награда.",
    "role": "desc",
@@ -17272,7 +17176,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#034": {
+  "Aldorei's Secret Part I#025": {
    "src": "If you require help in the future with anything, do not be afraid to ask. If you put such effort for me, I shall give you the same.",
    "dst": "Если вам понадобится помощь, не бойтесь просить. Раз вы так постарались для меня, я отвечу тем же.",
    "role": "desc",
@@ -17282,7 +17186,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#035": {
+  "Aldorei's Secret Part I#026": {
    "src": "Find a use for Damys' Bucket",
    "dst": "Найди применение ведру Damys",
    "role": "desc",
@@ -17292,7 +17196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#036": {
+  "Aldorei's Secret Part I#027": {
    "src": "The thieving is not the reason, from what I have heard. It is that the grove was jealously hidden due to the potency of the plants there.",
    "dst": "Дело, как я слышал, не в краже. Рощу ревниво скрывали из-за силы растущих там растений.",
    "role": "desc",
@@ -17302,7 +17206,7 @@
    "speaker": "Sylvar",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#037": {
+  "Aldorei's Secret Part I#028": {
    "src": "Tattytale, Iridesca, Subtraxerim... The Light only knows what else. It is impossible to reach without unusual means- And that is cause for grave concern.",
    "dst": "Tattytale, Iridesca, Subtraxerim… и лишь Свет знает, что ещё. Без особых средств туда не попасть - вот что по-настоящему тревожит.",
    "role": "desc",
@@ -17312,7 +17216,7 @@
    "speaker": "Sylvar",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#038": {
+  "Aldorei's Secret Part I#029": {
    "src": "Find a way to grow the plant by the waterfall",
    "dst": "Найди способ вырастить растение у водопада",
    "role": "desc",
@@ -17322,7 +17226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#039": {
+  "Aldorei's Secret Part I#030": {
    "src": "Explore the secret garden",
    "dst": "Исследуй тайный сад",
    "role": "desc",
@@ -17332,7 +17236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#040": {
+  "Aldorei's Secret Part I#031": {
    "src": "Halt! This area is strictly off limits, especially for an outsider. Turn back now!",
    "dst": "Стой! Сюда вход строго запрещён, особенно чужакам. Немедленно поворачивай!",
    "role": "desc",
@@ -17342,7 +17246,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#041": {
+  "Aldorei's Secret Part I#032": {
    "src": "Investigate the [Iridescent Leaves]",
    "dst": "Изучи [Iridescent Leaves]",
    "role": "desc",
@@ -17352,7 +17256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#042": {
+  "Aldorei's Secret Part I#033": {
    "src": "Aha, the outsider returns. Is there something troubling you?",
    "dst": "А, чужак вернулся. Вас что-то тревожит?",
    "role": "desc",
@@ -17362,7 +17266,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#043": {
+  "Aldorei's Secret Part I#034": {
    "src": "...mmm. Unfortunate, that. I cannot help with this.",
    "dst": "…ммм. Досадно. Тут я не помогу.",
    "role": "desc",
@@ -17372,7 +17276,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#044": {
+  "Aldorei's Secret Part I#035": {
    "src": "It is not a matter of secrecy or morals- I simply do not know what that leaf is from or what it may be capable of.",
    "dst": "Дело не в тайне или морали - я просто не знаю, с какого растения этот лист и на что он способен.",
    "role": "desc",
@@ -17382,7 +17286,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#045": {
+  "Aldorei's Secret Part I#036": {
    "src": "I am no botanist- Simply a gardener. The mistake is understandable, if regrettable.",
    "dst": "Я не ботаник, а лишь садовник. Ошибка понятна, хоть и досадна.",
    "role": "desc",
@@ -17392,7 +17296,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#046": {
+  "Aldorei's Secret Part I#037": {
    "src": "However, I was taught under a much more storied botanist who may have the answers you seek.",
    "dst": "Но я учился у куда более известного ботаника - у неё могут быть ответы.",
    "role": "desc",
@@ -17402,7 +17306,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#047": {
+  "Aldorei's Secret Part I#038": {
    "src": "Her name is Fiona- Her home is across the valley from here. Take the bridge across. She often stays inside studying.",
    "dst": "Её зовут Fiona, она живёт на другой стороне долины. Идите по мосту. Она часто сидит дома за работой.",
    "role": "desc",
@@ -17412,7 +17316,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#048": {
+  "Aldorei's Secret Part I#039": {
    "src": "She has forgotten more than I will ever hope to know about plants. If she cannot help you, I fear none can.",
    "dst": "О растениях она забыла больше, чем я когда-либо узнаю. Если не поможет она, не поможет никто.",
    "role": "desc",
@@ -17422,7 +17326,7 @@
    "speaker": "Damys",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#049": {
+  "Aldorei's Secret Part I#040": {
    "src": "Go to the botanist's house at [-{~}, {~}, -{~}]",
    "dst": "Иди в дом ботаника в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -17432,7 +17336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#050": {
+  "Aldorei's Secret Part I#041": {
    "src": "This is outrageous! To think one of our own would stoop to such thievery and destruction!",
    "dst": "Возмутительно! Подумать только, один из наших опустился до кражи и разрушения!",
    "role": "desc",
@@ -17442,7 +17346,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#051": {
+  "Aldorei's Secret Part I#042": {
    "src": "Outsider, this is not the time to be asking me anything. My home has been ransacked!",
    "dst": "Чужак, сейчас не время меня расспрашивать. Мой дом разграбили!",
    "role": "desc",
@@ -17452,7 +17356,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#052": {
+  "Aldorei's Secret Part I#043": {
    "src": "Mm? Damys sent you... You have leaves of Iridesca? Hm... Then perhaps we may be able to help one another.",
    "dst": "Мм? Вас прислал Damys… У вас листья Iridesca? Хм… Тогда, возможно, мы поможем друг другу.",
    "role": "desc",
@@ -17462,7 +17366,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#053": {
+  "Aldorei's Secret Part I#044": {
    "src": "They tore through my shelves and furniture searching, and scanned the pages as fervently once they found it.",
    "dst": "Вор перерыл мои полки и мебель, а найдя книгу, жадно пролистал её страницы.",
    "role": "desc",
@@ -17472,7 +17376,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#054": {
+  "Aldorei's Secret Part I#045": {
    "src": "Afterwards, they threw the book into the back garden, and forced a carnivorous plant to grow and consume my notes!",
    "dst": "Потом он швырнул книгу в сад и заставил вырасти хищное растение, чтобы оно сожрало мои записи!",
    "role": "desc",
@@ -17482,7 +17386,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#055": {
+  "Aldorei's Secret Part I#046": {
    "src": "I assume when the desired information was found, they went into my garden, threw the book into the carnivorous plant and stormed off towards the lab.",
    "dst": "Видимо, найдя нужное, он пошёл в мой сад, бросил книгу хищному растению и умчался к лаборатории.",
    "role": "desc",
@@ -17492,7 +17396,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#056": {
+  "Aldorei's Secret Part I#047": {
    "src": "I have researched the Iridesca bloom, and many other plants, for a long time. All my knowledge is stored in that book!",
    "dst": "Я долго изучала цветок Iridesca и многие другие растения. Все мои знания - в той книге!",
    "role": "desc",
@@ -17502,7 +17406,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#057": {
+  "Aldorei's Secret Part I#048": {
    "src": "Retrieve it for me, and I will share my knowledge with you.",
    "dst": "Верните её, и я поделюсь с вами знаниями.",
    "role": "desc",
@@ -17512,7 +17416,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#058": {
+  "Aldorei's Secret Part I#049": {
    "src": "Kill the carnivorous plant and loot the book",
    "dst": "Убей хищное растение и забери книгу",
    "role": "desc",
@@ -17522,7 +17426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#059": {
+  "Aldorei's Secret Part I#050": {
    "src": "...disgusting. I will have to hang the pages to dry later, but first, our exchange.",
    "dst": "…мерзость. Страницы потом придётся сушить, но сперва - наш обмен.",
    "role": "desc",
@@ -17532,7 +17436,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#060": {
+  "Aldorei's Secret Part I#051": {
    "src": "Hmm... Herbstzeitlose... Death Whistle, no...where is Iridesca, again...?",
    "dst": "Хмм… Herbstzeitlose… смертельный свист, нет… где же Iridesca…?",
    "role": "desc",
@@ -17542,7 +17446,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#061": {
+  "Aldorei's Secret Part I#052": {
    "src": "Aha, there it is. The pages were sticking together. Iridesca leaves are potent in various ways and are very versatile in their use.",
    "dst": "А, вот она. Страницы слиплись. Листья Iridesca сильнодействующие и очень разносторонние в применении.",
    "role": "desc",
@@ -17552,7 +17456,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#062": {
+  "Aldorei's Secret Part I#053": {
    "src": "They have an incredibly broad range of usage, from soothing joint pain or curing sickness to emetic effect and lethal poison, depending on what it is brewed with.",
    "dst": "Применение у них невероятно широкое: от облегчения боли в суставах и лечения болезней до рвотного средства и смертельного яда - смотря с чем варить.",
    "role": "desc",
@@ -17562,7 +17466,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#063": {
+  "Aldorei's Secret Part I#054": {
    "src": "Mm? The book thief also possesses Iridesca...? This... This is very troubling. There are few notes aside from mine on how to heal Iridesca poisoning.",
    "dst": "Мм? У вора тоже есть Iridesca…? Это… это очень тревожно. Кроме моих, записей о лечении отравления Iridesca почти нет.",
    "role": "desc",
@@ -17572,7 +17476,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#064": {
+  "Aldorei's Secret Part I#055": {
    "src": "They were headed in the direction of the potionmaker's guild. If they intend something wicked...",
    "dst": "Он направлялся к гильдии зельеваров. Если он замыслил что-то дурное…",
    "role": "desc",
@@ -17582,7 +17486,7 @@
    "speaker": "Fiona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#065": {
+  "Aldorei's Secret Part I#056": {
    "src": "Investigate the alchemist's shop at [-{~}, {~}, -{~}]",
    "dst": "Осмотри лавку алхимика в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -17592,7 +17496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#066": {
+  "Aldorei's Secret Part I#057": {
    "src": "..you! You have been seeking me! I have seen you tracing my footsteps...",
    "dst": "…вы! Вы искали меня! Я видел, как вы шли по моим следам…",
    "role": "desc",
@@ -17602,7 +17506,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#067": {
+  "Aldorei's Secret Part I#058": {
    "src": "I apologize for this... But what I do is a necessity!",
    "dst": "Простите меня… Но то, что я делаю, необходимо!",
    "role": "desc",
@@ -17612,7 +17516,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#068": {
+  "Aldorei's Secret Part I#059": {
    "src": "I beg you, do not pursue me any further!",
    "dst": "Умоляю, не преследуйте меня!",
    "role": "desc",
@@ -17622,7 +17526,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#069": {
+  "Aldorei's Secret Part I#060": {
    "src": "Chase the criminal.",
    "dst": "Преследуй преступника.",
    "role": "desc",
@@ -17632,7 +17536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#070": {
+  "Aldorei's Secret Part I#061": {
    "src": "Outsider, I realize the circumstances appear damning, but you must stop!",
    "dst": "Чужак, я знаю, всё против меня, но остановитесь!",
    "role": "desc",
@@ -17642,7 +17546,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#071": {
+  "Aldorei's Secret Part I#062": {
    "src": "What I have done is needed, and if there were another path I would have taken it over this.",
    "dst": "Мой поступок был необходим, и будь другой путь, я выбрал бы его.",
    "role": "desc",
@@ -17652,7 +17556,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#072": {
+  "Aldorei's Secret Part I#063": {
    "src": "I must take my concoction to where it is needed!",
    "dst": "Я должен доставить своё зелье туда, где оно нужно!",
    "role": "desc",
@@ -17662,7 +17566,7 @@
    "speaker": "Criminal",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#073": {
+  "Aldorei's Secret Part I#064": {
    "src": "G R O W! (In High Gavellian)",
    "dst": "Р А С Т И! (на высоком наречии Gavel)",
    "role": "desc",
@@ -17672,7 +17576,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#074": {
+  "Aldorei's Secret Part I#065": {
    "src": "A damnable pace you have... I cannot let you stop me for a moment longer!",
    "dst": "Ну и прыть у вас… Я не дам вам задержать меня ни на миг!",
    "role": "desc",
@@ -17682,7 +17586,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#075": {
+  "Aldorei's Secret Part I#066": {
    "src": "It will be done soon, but I must reach my destination first!",
    "dst": "Скоро всё свершится, но сперва мне нужно добраться до места!",
    "role": "desc",
@@ -17692,7 +17596,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#076": {
+  "Aldorei's Secret Part I#067": {
    "src": "Finally... I apologize for the delay. I needed to take strong measures to get this to you.",
    "dst": "Наконец… Прости за задержку. Мне пришлось пойти на крайние меры, чтобы добыть это.",
    "role": "desc",
@@ -17702,7 +17606,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#077": {
+  "Aldorei's Secret Part I#068": {
    "src": "Here, here... Drink, father. It will clear your throat.",
    "dst": "Вот, вот… Пей, отец. Это прочистит тебе горло.",
    "role": "desc",
@@ -17712,7 +17616,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#078": {
+  "Aldorei's Secret Part I#069": {
    "src": "...there. It is done. Now... Outsider... Hear me, please.",
    "dst": "…вот. Готово. А теперь… чужак… прошу, выслушайте меня.",
    "role": "desc",
@@ -17722,7 +17626,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#079": {
+  "Aldorei's Secret Part I#070": {
    "src": "I am aware of exactly what I have done. Shredded Fiona’s research, disturbed the forbidden gardens, unsettled the hearts of many...",
    "dst": "Я прекрасно знаю, что натворил. Уничтожил труд Fiona, потревожил запретные сады, смутил многих…",
    "role": "desc",
@@ -17732,7 +17636,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#080": {
+  "Aldorei's Secret Part I#071": {
    "src": "My father fell ill. A trek to {p}’s borders left him stricken with Kerasot poisoning. He was near death...",
    "dst": "Мой отец заболел. Поход к границам {p} обернулся отравлением Kerasot. Он был при смерти…",
    "role": "desc",
@@ -17742,7 +17646,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#081": {
+  "Aldorei's Secret Part I#072": {
    "src": "{p}’s village is one of outcasts- to visit is, stupidly, forbidden. He would have been exiled, and that would have ensured his death with his affliction.",
    "dst": "Деревня {p} - деревня изгоев, и бывать там по глупости запрещено. Его бы изгнали, а с его недугом это верная смерть.",
    "role": "desc",
@@ -17752,7 +17656,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#082": {
+  "Aldorei's Secret Part I#073": {
    "src": "Desperation causes one to do strange things. I thought only of his safety- I cared little about anything else.",
    "dst": "Отчаяние толкает на странное. Я думал лишь о его спасении, до остального мне не было дела.",
    "role": "desc",
@@ -17762,7 +17666,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#083": {
+  "Aldorei's Secret Part I#074": {
    "src": "Even now I am simply relieved for his safety. If you must turn me in, I understand- I have already done what I set out to do.",
    "dst": "Даже сейчас я просто рад, что он жив. Если должны сдать меня - я пойму. Своё дело я уже сделал.",
    "role": "desc",
@@ -17772,7 +17676,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#084": {
+  "Aldorei's Secret Part I#075": {
    "src": "Though I wish to remain free, whether you choose to report my activities or not does not matter to me now.",
    "dst": "Я хотел бы остаться на свободе, но донесёте вы на меня или нет - теперь мне всё равно.",
    "role": "desc",
@@ -17782,7 +17686,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#085": {
+  "Aldorei's Secret Part I#076": {
    "src": "Choose",
    "dst": "Сделай выбор",
    "role": "desc",
@@ -17792,7 +17696,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#086": {
+  "Aldorei's Secret Part I#077": {
    "src": "Traveler, I must remind you- The doors shall remain shut until the criminal has been found.",
    "dst": "Путник, напоминаю: ворота останутся закрытыми, пока преступника не найдут.",
    "role": "desc",
@@ -17802,7 +17706,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#087": {
+  "Aldorei's Secret Part I#078": {
    "src": "...ah. You have found him, then. The name is Korben... Understood. We shall interrogate him for his actions.",
    "dst": "…а. Значит, вы его нашли. Его зовут Korben… Понятно. Мы допросим его о содеянном.",
    "role": "desc",
@@ -17812,7 +17716,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#088": {
+  "Aldorei's Secret Part I#079": {
    "src": "This being the case... You may come and go as you wish to {p} Town. We shall re-open the doors.",
    "dst": "В таком случае… вы можете свободно посещать город {p}. Мы откроем ворота.",
    "role": "desc",
@@ -17822,7 +17726,7 @@
    "speaker": "Elf Guard",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#089": {
+  "Aldorei's Secret Part I#080": {
    "src": "...you... You are... You would lie to the guards and say I perished in the chase? You will keep my identity secret?",
    "dst": "…вы… Вы… Вы солжёте страже, что я погиб в погоне? Вы сохраните мою тайну?",
    "role": "desc",
@@ -17832,7 +17736,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#090": {
+  "Aldorei's Secret Part I#081": {
    "src": "Outsider... You show generosity akin to my father. He passed his Sol Medallion onto me to continue his legacy...",
    "dst": "Чужак… Вы щедры, как мой отец. Он передал мне свой Sol Medallion, чтобы я продолжил его дело…",
    "role": "desc",
@@ -17842,7 +17746,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#091": {
+  "Aldorei's Secret Part I#082": {
    "src": "...after what I have done, I do not deserve it. You take it, instead. It is in sufficiently worthy hands, I believe.",
    "dst": "…после содеянного я его недостоин. Возьмите его вы. Думаю, он в достойных руках.",
    "role": "desc",
@@ -17852,7 +17756,7 @@
    "speaker": "Korben",
    "source": "wiki"
   },
-  "Aldorei's Secret Part I#092": {
+  "Aldorei's Secret Part I#083": {
    "src": "I shall beg the Light to shine upon you for the rest of your days. A thousand thanks to you.",
    "dst": "Я буду молить Свет озарять вас до конца ваших дней. Тысяча благодарностей.",
    "role": "desc",
@@ -29824,7 +29728,7 @@
   },
   "An Iron Heart Part II#023": {
    "src": "BZZT. [ERROR]...? Madeleine...?",
-   "dst": "БЗЗТ. [ОШИБКА]…? Madeleine…?",
+   "dst": "БЗЗТ. [ERROR]…? Madeleine…?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part II",
@@ -30064,7 +29968,7 @@
   },
   "An Iron Heart Part II#047": {
    "src": "Talk to Dr. Urelix in his office",
-   "dst": "Поговори с Dr. Urelix в его кабинете",
+   "dst": "Поговори с доктором Urelix в его кабинете",
    "role": "desc",
    "kind": "objective",
    "quest": "An Iron Heart Part II",
@@ -49591,16 +49495,6 @@
    "kind": "dialogue",
    "quest": "Cook Assistant",
    "source": "capture"
-  },
-  "Cook Assistant#021": {
-   "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
-   "dst": "Я просто... очень хочу делать что-то важное, понимаешь? Я ведь проделала весь этот путь не просто так.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Cook Assistant",
-   "stage": "",
-   "speaker": "Afelis",
-   "source": "captured"
   },
   "Corrupted Betrayal#000": {
    "src": "{u}, good to see you again! Been a while, huh?",

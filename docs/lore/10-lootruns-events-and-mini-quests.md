@@ -457,16 +457,16 @@ Aster 下來後，旅人用他「花掉大半清醒」記住的唯一一句話�
 
 | # | 檔案／條目 | 問題 | 建議 |
 |---|---|---|---|
-| 1 | `quest/aldorei-s-secret-part-i.json` #000–#008 | 九句全是 Silverbull 總部的台詞（「加入我們的討伐戰部門」「找我們的 Lootrun 主管談談」「祝你往後的討伐戰一切順利」等），#004 還標著 speaker「Silverbull 階級專家」，跟《Aldorei 的祕密 第一部》無關；任務內容從 #009 才開始 | 搬到 quest.json（不屬任何任務的台詞），七個語言一起，比照 #1373 的作法 |
-| 2 | `quest/cook-assistant.json` #021 | speaker Afelis 的「我真的很想做點有意義的事」是 Afelis 在 Ragni 的角色任務台詞，不是《廚師助理》 | 搬到 npc.json 或 quest.json |
-| 3 | `npc.json`「Burning Iris」 | 譯「燃燒鳶尾」（花）；這是湮滅「戰爭之眼」召喚的眼球怪，與「惡魔凝視」成對，iris 指**虹膜** | 改「燃燒虹膜」或「燃燒之瞳」 |
-| 4 | `npc.json`「Padrone」 | 譯「教父」；首領出現在「過勞工會」，padrone 是義大利文「工頭、老闆」，「教父」會讀成黑手黨 | 改「工頭」 |
-| 5 | `quest.json`「From the decay of the earth…」（不安的遭遇說明） | decay 譯「腐朽」；wiki 原文連到 [[Decay]]，同組的光之使者、脫韁幼龍都譯「黯蝕」 | 改「從大地的黯蝕裡……」 |
-| 6 | `misc.json`「Player was annihilated.」 | 字面的 Player 被當成原文收進來，應為 {u}；was annihilated 是首領名雙關，譯「殲滅」斷了連結 | 改 {u} 模板，譯「{u} 被湮滅了」 |
-| 7 | `misc.json` 腐敗寶匣 lore「Annihilation has been averted…」 | 大寫的 Annihilation 譯「毀滅」，與首領名「湮滅」不一致（README 待查 #14 已把武器 lore 改成「湮滅」） | 改「湮滅暫時被擋下了」 |
-| 8 | `misc.json`「Absolution Sheep fell to inevitable extinction.」 | 帶具體名字的死亡訊息，dst 空白；應是 capture 時把某個名字整句收進來 | 刪除（已有 {u} 版本） |
+| 1 | `quest/aldorei-s-secret-part-i.json` #000–#008 | 九句全是 Silverbull 總部的台詞（「加入我們的討伐戰部門」「找我們的 Lootrun 主管談談」「祝你往後的討伐戰一切順利」等），#004 還標著 speaker「Silverbull 階級專家」，跟《Aldorei 的祕密 第一部》無關；任務內容從 #009 才開始 | 搬到 quest.json（不屬任何任務的台詞），七個語言一起，比照 #1373 的作法 **已處理（#1411）** |
+| 2 | `quest/cook-assistant.json` #021 | speaker Afelis 的「我真的很想做點有意義的事」是 Afelis 在 Ragni 的角色任務台詞，不是《廚師助理》 | 搬到 npc.json 或 quest.json **已處理（#1411）** |
+| 3 | `npc.json`「Burning Iris」 | 譯「燃燒鳶尾」（花）；這是湮滅「戰爭之眼」召喚的眼球怪，與「惡魔凝視」成對，iris 指**虹膜** | 改「燃燒虹膜」或「燃燒之瞳」 **已處理（#1411）** |
+| 4 | `npc.json`「Padrone」 | 譯「教父」；首領出現在「過勞工會」，padrone 是義大利文「工頭、老闆」，「教父」會讀成黑手黨 | 改「工頭」 **已處理（#1411）**：「工頭」已是 Foreman 的譯名，改「老闆」 |
+| 5 | `quest.json`「From the decay of the earth…」（不安的遭遇說明） | decay 譯「腐朽」；wiki 原文連到 [[Decay]]，同組的光之使者、脫韁幼龍都譯「黯蝕」 | 改「從大地的黯蝕裡……」 **已處理（#1411）** |
+| 6 | `misc.json`「Player was annihilated.」 | 字面的 Player 被當成原文收進來，應為 {u}；was annihilated 是首領名雙關，譯「殲滅」斷了連結 | 改 {u} 模板，譯「{u} 被湮滅了」 **已處理（#1411）** |
+| 7 | `misc.json` 腐敗寶匣 lore「Annihilation has been averted…」 | 大寫的 Annihilation 譯「毀滅」，與首領名「湮滅」不一致（README 待查 #14 已把武器 lore 改成「湮滅」） | 改「湮滅暫時被擋下了」 **已處理（#1411）** |
+| 8 | `misc.json`「Absolution Sheep fell to inevitable extinction.」 | 帶具體名字的死亡訊息，dst 空白；應是 capture 時把某個名字整句收進來 | 刪除（已有 {u} 版本） **已處理（#1411）** |
 | 9 | `npc.json`／`quest.json`「Ursa Major」 | 譯「大熊座」，讀起來是星座；這是 Auburn Forest 的巨熊（另有 Ursa Minor 小熊） | 「大熊」，或保留雙關另議 |
-| 10 | Woolly Rhino | 迷你任務名「長毛犀」、名牌與 label「長毛犀牛」、任務目標留英文「Woolly Rhino」 | 統一 |
+| 10 | Woolly Rhino | 迷你任務名「長毛犀」、名牌與 label「長毛犀牛」、任務目標留英文「Woolly Rhino」 | 統一 **已處理（#1411）** |
 | 11 | Syndicate | `misc.json`「集團書卷欄位」與「聯合會！請前往 Silverbull」兩種譯法 | 統一（建議「集團」） |
 | 12 | Apiary Hive（世界事件） | 譯「蜂巢」，撞 10-24 定案的 Qira 的 the Hive＝蜂巢 | 事件名改「蜂房」或「養蜂巢」 |
 | 13 | Citadel（Aelumia） | `discovery.json` 留「Citadel」、皇家鍊金師說明作「城塞」、事件名「堡壘營房」 | 統一（ja 已定「城塞」） |

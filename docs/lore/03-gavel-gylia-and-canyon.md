@@ -656,6 +656,6 @@ WynnExcavation 的四個遺址都在 Wynn 省（A 在沙漠、B 在一座洞窟�
 
 | # | 任務／檔案 | 條目 | 問題 | 建議 |
 |---|---|---|---|---|
-| A19 | 《掠奪者的買路錢》a-marauder-s-dues.json | Norsten「You wouldn't lie to me, Grand-Peli」 | 「Grand-Peli」留英文；這是孫子對爺爺的稱呼 | 改「Peli 爺爺」 |
+| A19 | 《掠奪者的買路錢》a-marauder-s-dues.json | Norsten「You wouldn't lie to me, Grand-Peli」 | 「Grand-Peli」留英文；這是孫子對爺爺的稱呼 | 改「Peli 爺爺」 **已處理（#1411）** |
 | A20 | 《掠奪者的買路錢》 | 開頭幾條 speaker 空白的巫師台詞（「光是看到你就讓我不快！」等） | 從內容看是 Dramele（或他借 Norsten 之口）在說話，speaker 欄位空白；另有一批 Dramele 借 Norsten 之口說的話標成 Norsten（這是遊戲顯示的方式，不算錯） | 空白的可補 Dramele；標 Norsten 的不動 |
 

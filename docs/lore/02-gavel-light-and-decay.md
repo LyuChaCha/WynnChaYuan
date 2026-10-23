@@ -704,17 +704,17 @@ the-worm-holes、taproot、a-headless-history、finding-the-light、the-realm-of
 |---|---|---|---|---|
 | A1 | 《鋼鐵之心 第二部》an-iron-heart-part-ii.json | Stage 1 標 Detective Hart 的「那具魔像會危害周遭的一切。拜託，順著廢料的痕跡追過去……」 | 內容是第一部 Duvale 的台詞（第一部有幾乎相同的兩句），第二部的 Hart 沒有理由說這句；疑似歸錯檔或 speaker 標錯 | 核對 capture；歸錯就移回第一部或刪除 |
 | A2 | 《鋼鐵之心 第一部》an-iron-heart-part-i.json | 開頭「What^s my...name」與檔末「What's my...name」 | 同一句收了兩次，前者的 ^ 是撇號的錯字（capture 字元錯誤） | 刪掉帶 ^ 的那條 |
-| A3 | 《鋼鐵之心》一、二部 | 魔像的 [ERROR] | 第一部留「[ERROR]」，第二部譯成「［錯誤］」（全形括號） | 兩部統一（建議都留 [ERROR]，畫面上是故障字樣） |
-| A4 | 《烈焰復仇》blazing-retribution.json | Piere「Oh sweet baby bovine」 | 譯「噢我的老天爺」，Gavel 村民的聖牛誓語不見了（本章之十：慣用「我的小聖牛啊」） | 改「噢我的小聖牛啊」之類 |
+| A3 | 《鋼鐵之心》一、二部 | 魔像的 [ERROR] | 第一部留「[ERROR]」，第二部譯成「［錯誤］」（全形括號） | 兩部統一（建議都留 [ERROR]，畫面上是故障字樣） **已處理（#1411）** |
+| A4 | 《烈焰復仇》blazing-retribution.json | Piere「Oh sweet baby bovine」 | 譯「噢我的老天爺」，Gavel 村民的聖牛誓語不見了（本章之十：慣用「我的小聖牛啊」） | 改「噢我的小聖牛啊」之類 **已處理（#1411）** |
 | A5 | npc.json | 「Cliffhearth Rai-Elisu」→「崖爐 Rai-Elisu」 | 同檔的 Earthpit、Trunkstump，以及《烈焰復仇》的十幾個營地名都留英文，只有這一個意譯 | 統一（建議都留英文） |
-| A6 | 《究極的武器》the-ultimate-weapon.json／npc.json | Glow Dust Leaf Beetle of the Underworld；Wood Sprite | 甲蟲名對話留英文、名牌譯「冥界輝光塵葉甲蟲」；Wood Sprite 名牌「木之精靈」、任務「木精靈」 | 對話照名牌 |
-| A7 | misc.json | 「Speak to Dodegar Bandysnoot at」 | dst 空白 | 補譯 |
-| A8 | 《究極的武器》 | Reyoretrsed「I'm {~}.」 | 譯「我 {~}。」讀不通；{~} 原本是什麼數字要看 capture | 查 capture 後補完整句 |
-| A9 | misc.json vs 《山中來客》from-the-mountains.json | 帶進度前綴的 Axelus 台詞 | 同一句兩種譯法：royal rumble「王室混戰」vs「皇家大亂鬥」；It inflamed the creatures「把……激怒了」vs「都點著了」、Fleris 的代名詞「它」vs「他」 | 照任務檔統一 |
-| A10 | misc.json | 寵物 Warm Fleris | 「召喚 Warm Fleris」留英文，同檔另一條作「溫暖 Fleris」 | 統一為「溫暖 Fleris」 |
+| A6 | 《究極的武器》the-ultimate-weapon.json／npc.json | Glow Dust Leaf Beetle of the Underworld；Wood Sprite | 甲蟲名對話留英文、名牌譯「冥界輝光塵葉甲蟲」；Wood Sprite 名牌「木之精靈」、任務「木精靈」 | 對話照名牌 **已處理（#1411）** |
+| A7 | misc.json | 「Speak to Dodegar Bandysnoot at」 | dst 空白 | 補譯 **已處理（#1411）** |
+| A8 | 《究極的武器》 | Reyoretrsed「I'm {~}.」 | 譯「我 {~}。」讀不通；{~} 原本是什麼數字要看 capture | 查 capture 後補完整句 **已處理（#1411）** |
+| A9 | misc.json vs 《山中來客》from-the-mountains.json | 帶進度前綴的 Axelus 台詞 | 同一句兩種譯法：royal rumble「王室混戰」vs「皇家大亂鬥」；It inflamed the creatures「把……激怒了」vs「都點著了」、Fleris 的代名詞「它」vs「他」 | 照任務檔統一 **已處理（#1411）** |
+| A10 | misc.json | 寵物 Warm Fleris | 「召喚 Warm Fleris」留英文，同檔另一條作「溫暖 Fleris」 | 統一為「溫暖 Fleris」 **已處理（#1411）** |
 | A11 | 《少女之塔》the-maiden-tower.json | 日記第一頁 | 同一條裡 Fiona 先作「他」後作「她」；原文本來就是 it→her，但中文讀起來像錯字 | 要不要統一用「牠」或「她」，請決定 |
 | A12 | gear-weapon.json vs quest-name.json | Dodegar's Ultimate Weapon｜The Ultimate Weapon | 物品「終極兵器」、任務名「究極的武器」，同一個 Ultimate 兩種譯法 | 確認是否刻意；否則擇一 |
 | A13 | gear-armour.json vs misc.json | Shameful Greaves／Greaves of Shame | 物品名「可恥脛甲」，獎勵列「恥辱脛甲」（原文本身就是兩種寫法） | 低優先，可統一為物品名 |
 | A14 | quest-name.json | All Roads to Peace＝「條條大路達自由」 | peace 譯成「自由」；任務內容是獸人與村民的停火和談 | 確認是否刻意改寫；否則考慮「條條大路通和平」之類 |
-| A15 | npc.json vs 任務檔 | Dr. Urelix | 名牌作「Urelix 博士」，任務目標與本書作「Dr. Urelix」 | 擇一 |
+| A15 | npc.json vs 任務檔 | Dr. Urelix | 名牌作「Urelix 博士」，任務目標與本書作「Dr. Urelix」 | 擇一 **已處理（#1411）** |
 
