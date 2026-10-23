@@ -1,6 +1,6 @@
 # 第一章　Wynn 行省：世界的骨架
 
-> **劇透提醒**：本章劇透語料裡 Wynn 行省的全部任務，重點是《國王的新兵》《尋回過往》《既視感》《Tempo Town 風波》《墮落者的宿命》《Bob 的失落之魂》《轉世重生》《黃沙王朝》《傳說神殿》《腐敗之叛》《WynnExcavation D 號遺址》；以及 Wynn Plains、沙漠、Nesaak 凍原三區共 34 個隱藏探索點與祕密圖書館的《Bob 的傳說》十二章。也會提到 Fruma 篇最大的揭露（女王陛下的真面目），輕度提到《獵手的呼喚》。
+> **劇透提醒**：本章劇透語料裡 Wynn 行省的全部任務，重點是《國王的新兵》《尋回過往》《既視感》《Tempo Town 風波》《墮落者的宿命》《Bob 的失落之魂》《轉世重生》《黃沙王朝》《傳說神殿》《腐敗之叛》《WynnExcavation D 號遺址》，第四輪補入的《WynnExcavation B 號遺址》與已移除的《凝時之花》；以及 Wynn Plains、沙漠、Nesaak 凍原三區共 34 個隱藏探索點與祕密圖書館的《Bob 的傳說》十二章。也會提到 Fruma 篇最大的揭露（女王陛下的真面目），輕度提到《獵手的呼喚》。
 
 ---
 
@@ -173,6 +173,29 @@ Mael 被兄弟與世人當成「玩黑魔法的」。Marius 安慰他：「人�
 
 出處：任務《腐敗之叛》《幽徑》《失落的王嗣》《少年長老》《叢林熱》《迷失叢林》《族人有難》《失魂落鞋》《神智出走》《WynnExcavation A／B／D 號遺址》；wiki〈[Slykaar](https://wynncraft.wiki.gg/wiki/Slykaar)〉、〈[General Skien](https://wynncraft.wiki.gg/wiki/General_Skien)〉、〈[WynnExcavation Site D](https://wynncraft.wiki.gg/wiki/WynnExcavation_Site_D)〉
 
+**WynnExcavation B 號遺址（第四輪補）**：四部曲的第二部，Lv. 46，要帶著 A 號遺址拿到的黃色水晶碎片才能開始。地點在 Nesaak 南邊、通往 Twain 家大宅那條路底下的洞窟（wiki 的任務頁寫「通往 Haunted Mansion 的路下方」，NPC 頁寫「Twain 家大宅」，指的是同一條路）。
+
+挖掘員 **Lykron** 一見面就說「你就是在沙漠幫過我們的那位吧？太好了！」，說工人被洞底的怪東西嚇得不肯做事，要玩家先下去找他的同事。同事 **Flendar** 站在瀑布頂端等著：
+
+> 「你在沙漠從我們手上偷了什麼，我們一清二楚！吃我這招！你這輩子別想從這條死路逃出去！」（WynnExcavation B 號遺址）
+
+玩家被推進黑暗的礦道，靠一道「從各面看過去要符合牆上圖案」的方塊謎題脫困，在深處遇到一名守門的守衛（「考古學家工作期間，我負責確保沒有人使用這條通道」）和一位困惑的考古學家：他們推測紫水晶在一扇門後，可是「經文上的描述跟這扇門對不上」，經文還提到「藏於岩石之中」，「我看其中一個字大概是『河馬』！」——玩家照經文找到了真正藏水晶的地方。回到地面，Lykron 攤牌：
+
+> 「你不過是個被派去送東西的小鬼，誰料得到你會順走一塊水晶碎片。」
+> 「傳說把四塊水晶碎片合起來，就能帶來無窮的力量！」
+> 「剩下那幾塊水晶的位置只有我們知道；火之水晶與葉之水晶都很安全。」
+> 「我們的結——我是說公司，不會再容忍你的干預了。」（WynnExcavation B 號遺址）
+
+獎勵是紫色水晶碎片。
+
+> **暗示**：
+> - 「我們的結——」是「結社」（society）只說出半個字就吞回去；D 號遺址 Troms 國王才揭穿 WynnExcavation 是祕密結社。語料「我們的結——我是說公司」保住了這個說溜嘴，請保持。
+> - **為什麼在 Twain 家門口**：C 號遺址的 Amadel 說，守護過這些水晶的有「古代的沙漠帝國、Twain 兄弟，以及把這座火山的水晶投入海中的某個不明勢力」。沙漠對 A（黃），火山對 C（火），D 在 Troms 的叢林（葉）；剩下的紫水晶藏在 Twain 家大宅的路底下，應該就是 Twain 兄弟守護的那一顆（推測，任務沒有明說）。這也讓第 4 節 Twain 家「用天生的魔法撐住行省」多了一個具體的守護對象。
+> - D 號遺址 Amadel 對玩家說「你從那一摔活了下來」——指的就是 Flendar 把你推下去這一段。B 號的陷阱從一開始就在主謀的帳上。
+> - Lykron 說要找的是「古代 Wynn 失落已久的遺跡」，講到一半還「呃……」了一下——他們要的從來不是遺跡，是水晶。
+
+出處：任務《WynnExcavation B 號遺址》《WynnExcavation C 號遺址》《WynnExcavation D 號遺址》；wiki〈[WynnExcavation Site B](https://wynncraft.wiki.gg/wiki/WynnExcavation_Site_B)〉、〈[Excavator Lykron](https://wynncraft.wiki.gg/wiki/Excavator_Lykron)〉、〈[Flendar](https://wynncraft.wiki.gg/wiki/Flendar)〉
+
 ### 6. Bob：從下水道到英雄
 
 Bob 的一生，主要記在 Ragni 城堡祕密圖書館的十二章《Bob 的傳說》（語料 secret/the-legend-of-bob.json）。要開啟它，得把一滴「Bob 之淚」丟進城堡壁爐。
@@ -256,6 +279,15 @@ Time Valley 的地區介紹寫道：「這裡的遺跡比傳送門存在得更�
 
 **《苦力怕入侵》**也從 Tempo Town 出發：Pigman Ravine 的村民 Thomas 起初不信「苦力怕」存在（Wynncraft 的世界裡本來沒有苦力怕），任務結尾洞裡有人說「我還以為只有我知道這個洞窟，畢竟我師父都說我瘋了」——那是《傳說神殿》裡被 Kelight 嘲笑「整天說苦力怕是真的」的工匠 Garull。
 
+**《凝時之花》（Suspended Flowers，已移除）**（第四輪補）：1.18 經濟更新以前的 Lv. 14 任務，在 Detlas 與 Time Valley 之間進行，1.18 時由《既視感》取代（wiki）。語料只收了任務名「凝時之花」，以下台詞是本章依 wiki〈Suspended Flowers〉轉述。
+
+Detlas 的 **Lacrona** 把做 Aerolia 靴當嗜好，材料 Aerolia 花只長在 Time Valley 一帶，她請玩家去找她在山谷裡做研究的學生——**Asher**。Asher 很興奮，說他發現「這裡的一切好像都變慢了，簡直像是時間本身在慢慢爬」，隨即又自己否定：「可是那不可能吧？沒有魔法有那麼強！」花長在山谷外一座長滿植物的洞窟裡，採回來的是「受汙染的」Aerolia 花，要交給 Asher 淨化。玩家回來時他已經改口：「時間在這裡真的比較慢！……說不定我們待在這裡就能活得更久！」最後把淨化好的花交回 Lacrona，換一雙靴子。
+
+> **前後對照**：
+> - 這是 **Asher 的第一次登場**。他在《既視感》之前就在研究山谷的「時間變慢」，當時還笑說沒有魔法那麼強——後來他正是被 Olm 的時間魔法困進了迴圈。任務名的 suspended 有「懸置、暫停」的意思，指的就是山谷裡被拖慢的時間；語料的「凝時之花」把這層譯出來了。
+> - **Lacrona 的結局在物品 lore 裡**：傳奇胸甲 Web Plate（蛛網板甲）寫著：「我只要再一點點蜘蛛絲就能把這件背心做完了！」——Lacrona，{p} 裁縫，被發現遭 Nivla 蜘蛛吃掉（語料 gear-armour.json；第九章）。wiki 說 Asher 在暴雪節的對話裡稱她「我的老師 Lacrona」。做靴子的嗜好家後來成了 Detlas 的裁縫，死在 Nivla 森林。
+> - Aerolia 靴這件裝備沒有跟著任務消失，現在是洞窟 Mossy Grotto（語料「苔蘚岩洞」）的完成獎勵。
+
 出處：任務《既視感》《Tempo Town 風波》《苦力怕入侵》《傳說神殿》；探索點〈亙古遺跡〉；wiki〈[Time Valley](https://wynncraft.wiki.gg/wiki/Time_Valley)〉、〈[Old Man Martyn](https://wynncraft.wiki.gg/wiki/Old_Man_Martyn)〉、〈[Garoth](https://wynncraft.wiki.gg/wiki/Garoth)〉、〈[Timelost Sanctum](https://wynncraft.wiki.gg/wiki/Timelost_Sanctum)〉、〈[Temple of Time](https://wynncraft.wiki.gg/wiki/Temple_of_Time)〉
 
 ### 10. 現代（1000 AP）：被洗掉記憶的新兵
@@ -321,14 +353,16 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 | Creden Tibus | 沙漠盜匪團 | 守著權杖「絕不讓它再被使用」 | 〈拆除鐵球〉《黃沙王朝》 |
 | Old Man Martyn | Time Valley 的守護者 | 看守時間線、認識 Bob，身分成謎 | 《既視感》《Tempo Town 風波》 |
 | Garoth | Olm 法師，聖殿守護者 | 把時失聖殿凍結在過去 | 時失聖殿 |
-| Asher | Time Valley 居民 | 因 Olm 鏟子陷入時間悖論 | 《既視感》 |
+| Asher | Time Valley 居民，Lacrona 的學生 | 最早發現山谷的時間變慢；因 Olm 鏟子陷入時間悖論 | 《凝時之花》（已移除）、《既視感》 |
+| Lacrona | Detlas 的裁縫，做 Aerolia 靴的嗜好家 | Asher 的老師；物品 lore 說她死於 Nivla 蜘蛛 | 《凝時之花》（已移除）、Web Plate |
+| Lykron／Flendar | WynnExcavation 的挖掘員與部下 | 在 B 號遺址設局把玩家困進死路 | 《WynnExcavation B 號遺址》 |
 | Telvu | 法師 | 帶玩家回到 589 AP 查明 Theorick 的真相 | 《墮落者的宿命》 |
 | Aledar／Tasim | 與玩家同梯的新兵 | 受詛的 Tasim 與逃犯 Aledar；Tasim 得知真相後遠走 Gavel | 《國王的新兵》《蛛群登巔》《尋回過往》 |
 | Dr. Picard | 研究記憶的怪博士 | 造出記憶復原化球，揭開 Fruma 的放逐制度 | 《尋回過往》 |
 | Caid／Reynauld | 被流放到 Wynn 的竊賊與失勢軍官 | 記憶受試者；Caid 最後賠上自己的船救了城 | 《尋回過往》 |
 | Admiral Aegis | Detlas 的上將 | 新兵的上司；985 AP 擊退湮滅 | 《蛛群登巔》等 |
 | Admiral Amerigo／Takan | Almuj 上將／叛變的 Nemract 指揮官 | 軍中階級怨恨的兩端 | 《傭兵》 |
-| Amadel | WynnExcavation 的首領 | 利用玩家集齊 Olm 水晶 | 《WynnExcavation D 號遺址》 |
+| Amadel | WynnExcavation 的首領 | 利用玩家集齊 Olm 水晶；B 號遺址的陷阱也在他的安排裡 | 《WynnExcavation B 號遺址》（提及）、《WynnExcavation D 號遺址》 |
 | 女王陛下（Anathema） | 戰爭領域的界域巨獸 | Bak'al 的主人與造物；Fruma 的統治者 | wiki〈Anathema〉（Fruma 篇） |
 
 ---
@@ -348,6 +382,8 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 - **Marius 的亡魂：「將來有一個人會需要你的幫助」、Mael 遺囑留給「最後一位榮譽 Twai——」** → 前者是 Bob；後者被撕掉，社群多猜 Bob（wiki Trivia），也有人猜是玩家（社群說法）。
 - **《既視感》的「宇宙事件」與空無一人的工地** → 正是讓 Olm 撤離 Time Valley 的那場災難。
 - **Martyn「你到底是不是人類？」「我們還會再見面的……來日方長」** → 身分未揭曉的長線伏筆（推測：與 Olm 或時間魔法有關）。
+- **（第四輪補）Asher「沒有魔法有那麼強！」**（凝時之花）→ 他後來就被 Olm 的時間魔法困住（《既視感》）。
+- **（第四輪補）Lykron「我們的結——我是說公司」** → D 號遺址揭穿的祕密結社；紫水晶藏在 Twain 家門口，應是 Twain 兄弟守護的那一顆（推測）。
 - **Ragni 石碑的古地名（Ragshniv、Trofmas、Etlas……）** → Wynn 原是 Fruma 的殖民地；今天的城市名是 Fruma 古名的磨損版（地名對照屬推測）。
 - **Ankou 說塔頂的 Death 是「她」，〈死亡的警告〉裡真正的死神卻說那是冒牌貨** → 登天之塔的主人身分未明。
 - **Canyon Condor 的「偷了顆蛋當寵物的旅人」** → 可能是 Bob 與他的雞 Cluckles（推測）。
@@ -446,6 +482,8 @@ Picard 震驚：「這就是他們在 Fruma 對付罪犯的方式？把他們丟
 | honorary Twain | 榮譽 Twain | |
 | Witherhead | （保留原文） | 地城首領名 |
 | Shadow Spears | （保留原文） | 語料洞窟名亦保留 |
+| Aerolia Flower／Tainted Aerolia Flower | Aerolia 花／受汙染的 Aerolia 花 | 第四輪補；語料只有裝備「Aerolia 靴」 |
+| Lacrona | （保留原文） | 語料 gear-armour.json 已用 |
 
 沿用語料但值得提醒的既有譯名：Corruption War＝腐敗之戰、War of the Realms＝界域之戰、Realm of War＝戰爭領域、Corrupter of Worlds＝世界腐敗者、Hero of Wynn＝Wynn 的英雄、Scion＝後裔、Temporal Anchor＝時間錨、Timelost Sanctum＝時失聖殿、Ice Barrows＝冰封墳塚、Sand-Swept Tomb＝風沙古墓、Decrepit Sewers＝破敗下水道、Underworld Crypt＝冥界墓穴、Undergrowth Ruins＝叢林遺跡、Holy Bovine＝聖牛在上；Temple of Time、Gate of Time、Creden Tibus、Old Man Martyn、Ankou 語料保留原文。
 
@@ -477,3 +515,16 @@ Timeline、Wynn_Province、Corruption、Corruption_War、Corruption_Portal、Bak
 **第二輪補讀（2026-10-22，wiki.gg 已恢復）**：Creden_Tibus、Bak'al's_Destruction_1、The_Emperor、The_Desert_Empire、Hashr、Timeline（全文）。Emperor's_Sceptre 在 wiki.gg 上**沒有這個頁面**（不是讀不到），權杖的資料分散在〈The Emperor〉〈The Desert Empire〉〈Creden Tibus〉三頁。
 
 **Fandom 舊版（https://wynncraft.fandom.com/wiki/…，內容停在 2.0.4）**：第一輪用來查各任務頁的起點與所屬行省、比對舊版 Timeline；第二輪已改以 wiki.gg 為準。
+
+**第四輪補讀（2026-10-23）**：任務語料 wynnexcavation-site-b、wynnexcavation-site-c（#017）、wynnexcavation-site-d（#123）；gear-armour.json（Web Plate）、misc.json（Mossy Grotto、Aerolia 靴）。wiki：[WynnExcavation Site B](https://wynncraft.wiki.gg/wiki/WynnExcavation_Site_B)、[Excavator Lykron](https://wynncraft.wiki.gg/wiki/Excavator_Lykron)、[Flendar](https://wynncraft.wiki.gg/wiki/Flendar)、[Suspended Flowers](https://wynncraft.wiki.gg/wiki/Suspended_Flowers)、[Asher](https://wynncraft.wiki.gg/wiki/Asher)。
+
+---
+
+## 本章發現的語料問題（第四輪）
+
+| # | 任務／檔案 | 條目 | 問題 | 建議 |
+|---|---|---|---|---|
+| A16 | misc.json vs gear-armour.json | Aerolia Boots | 裝備名作「Aerolia 靴」，Mossy Grotto 洞窟完成的獎勵列卻留「Aerolia Boots」 | 獎勵列照裝備名 |
+| A17 | 《WynnExcavation B 號遺址》 | 考古學家說的「紫水晶」 | 道具名是「紫色水晶碎片」，對話作「紫水晶」；字面沒錯，但「紫水晶」在中文也是礦物名（amethyst） | 低優先；可考慮「紫色水晶」 |
+| A18 | quest/ | 《凝時之花》 | 已移除的任務，語料只有任務名（quest-name.json、misc.json），沒有台詞 | 不必補（實機已無此任務） |
+
