@@ -369,15 +369,15 @@
 | Pyeka | Pyeka | Alekin 草藥師，懷疑 Yahya 的病因 | 物品 Pyrexia | [09](09-item-lore-index.md) | — | — |
 | Sayleros 與他的兄弟 | Sayleros | 墓碑上沒有正式名字的兄弟 | 《兄弟歸來》(13) | [09](09-item-lore-index.md)、[10](10-lootruns-events-and-mini-quests.md) | 他 | 物品名「Sayleros 兄弟」有歧義（是 Sayleros 的兄弟） |
 
-### 2.17 Lootrun、世界事件、角色任務與節慶
+### 2.17 掠奪長征、世界事件、角色任務與節慶
 
 | 英文名 | 繁中寫法 | 身分與陣營 | 出現的任務 | 章節 | 代名詞與性別 | 易錯處 |
 |---|---|---|---|---|---|---|
-| Lootrun 主管／Lootrun 大師（Lootrun Chief／Lootrun Master） | Lootrun 主管／Lootrun 大師 | Silverbull Lootrun 部門的 NPC：主管在總部替冒險者入會，大師在各營地開跑 | Lootrun | [10](10-lootruns-events-and-mini-quests.md) | 他（主管，語料） | 部門階級的 Master（大師）與這位 NPC 同字，第十章認為可接受 |
+| 掠奪長征主管／掠奪長征大師（Lootrun Chief／Lootrun Master） | 掠奪長征主管／掠奪長征大師 | Silverbull 掠奪長征部門的 NPC：主管在總部替冒險者入會，大師在各營地開跑 | Lootrun | [10](10-lootruns-events-and-mini-quests.md) | 他（主管，語料） | 部門階級的 Master（大師）與這位 NPC 同字，第十章認為可接受 |
 | Astraulus（Astralus） | Astralus | Sky Islands 塔上的法師，搶月鹽、把玩家射上太空 | 《禍從口入》(5) | [10](10-lootruns-events-and-mini-quests.md) | — | 同一人三種拼法：wiki 與第十章 Astraulus、speaker Astralus、《禍從口入》原文 Astralaus' Astral House；語料譯文統一寫 Astralus |
-| 典範者（Exemplar） | 典範者 | 虛空裡的冒牌神，靠信徒獻上的身體長大 | Lootrun 挑戰 False Respite | [10](10-lootruns-events-and-mini-quests.md) | 它 | — |
+| 典範者（Exemplar） | 典範者 | 虛空裡的冒牌神，靠信徒獻上的身體長大 | 掠奪長征挑戰 False Respite | [10](10-lootruns-events-and-mini-quests.md) | 它 | — |
 | 湮滅（Annihilation） | 湮滅（首領名）／毀滅前奏（世界事件名） | 戰爭領域的惡魔；900、985、1000 AP 三度破門 | 世界事件毀滅前奏 | [01](01-wynn.md)、[05](05-silent-expanse-and-dern.md)、[10](10-lootruns-events-and-mini-quests.md) | 它 | 事件名與首領名不同是刻意的；大寫 Annihilation 指首領時譯「湮滅」，不要寫「毀滅」 |
-| 薄暮 Kantyr | 薄暮 Kantyr | Lootrun 時 Olm 古城偶爾來助陣的存在（名牌） | Silent Expanse 遠征 | [10](10-lootruns-events-and-mini-quests.md) | — | — |
+| 薄暮 Kantyr | 薄暮 Kantyr | 掠奪長征時 Olm 古城偶爾來助陣的存在（名牌） | Silent Expanse 遠征 | [10](10-lootruns-events-and-mini-quests.md) | — | — |
 | Afelis | Afelis | 角色任務的新兵，從 Ragni 走到 Gelibord，為保護孩子而死 | 角色任務（語料只收一句，誤放在《廚師助理》） | [10](10-lootruns-events-and-mini-quests.md) | 非二元，原文用 they；語料避開代名詞，非用不可時寫「他們」 | 墜盒 lore 的「A+E」中的 E 是誰遊戲沒說 |
 | Angie | Angie | Hyloch 出身、Aelumia 大學的畫家；發現「農業區」是謊言 | 角色任務（Fruma） | [10](10-lootruns-events-and-mini-quests.md) | 她 | 「農業區」是 Fruma 的宣傳用語，工業區的舊名 |
 | Aster | Aster | 說書人，四兄弟的長子，能把故事變成現實 | 英雄節、營火節 | [10](10-lootruns-events-and-mini-quests.md) | 他 | — |
@@ -557,13 +557,13 @@
 | Wybel | Wybel | 小型生物，對宇宙魔法有親近感 | [09](09-item-lore-index.md) | — |
 | 冰亞龍（Ice Drake） | 冰亞龍 | Molten Heights 的龍 | [04](04-ocean-corkus-heights-sky.md) | 已統一；任務道具 [Ice Drake Scales] 留英文 |
 
-### 3.8 Lootrun、世界事件與節慶的地點
+### 3.8 掠奪長征、世界事件與節慶的地點
 
 | 英文 | 繁中寫法 | 在哪、是什麼 | 章節 | 易錯處 |
 |---|---|---|---|---|
-| Silverbull Company Headquarters | Silverbull 總部（本書） | Cinfras 東邊，Lootrun 的入口；前身是 Gavel 王室的避暑行宮 | [08](08-dungeons-and-raids.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
-| Lootrun 營地（Canyon of the Lost Excursion 等七個） | （營地名見第十章） | 各大區的 Lootrun 起點 | [10](10-lootruns-events-and-mini-quests.md) | 地區名照慣例留英文 |
-| Colossus Islet | Colossus Islet | Sky Islands 的 Lootrun 地點，有碎裂哨兵與巨像面容 | [10](10-lootruns-events-and-mini-quests.md) | — |
+| Silverbull Company Headquarters | Silverbull 總部（本書） | Cinfras 東邊，掠奪長征的入口；前身是 Gavel 王室的避暑行宮 | [08](08-dungeons-and-raids.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
+| 掠奪長征營地（Canyon of the Lost Excursion 等七個） | （營地名見第十章） | 各大區的掠奪長征起點 | [10](10-lootruns-events-and-mini-quests.md) | 地區名照慣例留英文 |
+| Colossus Islet | Colossus Islet | Sky Islands 的掠奪長征地點，有碎裂哨兵與巨像面容 | [10](10-lootruns-events-and-mini-quests.md) | — |
 | Festive Detlas | Festive Detlas | 節慶期間的 Detlas | [10](10-lootruns-events-and-mini-quests.md) | — |
 | Talespun Citadel | Talespun 城塞（第十章暫定） | Aster 的故事長出來的城塞 | [10](10-lootruns-events-and-mini-quests.md) | Citadel 的譯法見 3.5 |
 | Isles of Fiction | Isles of Fiction | 海上的群島，Aster 為弟弟們立的紀念碑在中央島頂 | [04](04-ocean-corkus-heights-sky.md)、[10](10-lootruns-events-and-mini-quests.md) | — |
@@ -1038,7 +1038,7 @@
 | Excavator Vade | 挖掘員 Vade | 《WynnExcavation A 號遺址》(14) | — |
 | Tesha | Tesha | 《WynnExcavation A 號遺址》(8) | — |
 
-### 第十章範圍（Lootrun、世界事件與迷你任務）
+### 第十章範圍（掠奪長征、世界事件與迷你任務）
 
 | 英文（speaker） | 繁中寫法 | 出現的任務（句數） | 代名詞 |
 |---|---|---|---|
