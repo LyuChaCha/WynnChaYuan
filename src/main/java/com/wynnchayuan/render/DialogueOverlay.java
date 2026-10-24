@@ -243,7 +243,9 @@ public final class DialogueOverlay {
         List<String> sources = new ArrayList<>(raws.length);
         List<List<Component>> rendered = new ArrayList<>(raws.length);
         for (int i = 0; i < raws.length; i++) {
-            StyledText line = StyledText.fromString(raws[i]);
+            // 句中的圖示拆成自己一段，模板裡才會是 {#}；語料只認得舊格式的句子
+            // 退回舊的那一份。收集端與就地取代用的是同一支，見 DialogueIcons。
+            StyledText line = DialogueIcons.line(raws[i], store);
             String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
             List<Component> target = lines;
 
@@ -320,7 +322,19 @@ public final class DialogueOverlay {
         if (DialogueRewriter.learnName(line.getString(), store)) {
             template = com.wynnchayuan.capture.LineParts.of(line).template();
         }
-        Component translated = LineTranslator.translate(line, store);
+        // 句中有圖示的句子：譯文的「{#}火{/}」要先換成 LineTranslator 認得的顏色寫法，
+        // 「火」才會跟著圖示上色（Wynntils 給的文字沒有顏色，只能這樣搬）。
+        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
+        boolean iconic = DialogueIcons.iconic(parts);
+        Component translated;
+        if (iconic) {
+            String dst = store.lookup(template.strip());
+            translated = dst == null || dst.isBlank() ? null
+                    : LineTranslator.translateKnown(line, DialogueIcons.spans(dst, parts.glyphs()),
+                                                    store);
+        } else {
+            translated = LineTranslator.translate(line, store);
+        }
         String source = translated == null ? null : template;
         if (translated != null && !steady && unfinished(template, store)) {
             // 這半句自己剛好也是語料裡的一條：「Not even death saw…」打到第二個字
@@ -347,10 +361,13 @@ public final class DialogueOverlay {
                 // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
                 // 還原地名／玩家名；參數尚未齊全就先等，不能把 raw {p}/{u}
                 // 放進 shown，否則 settledSource 會一路沿用到整句完成。
+                String dst = store.lookup(source);
                 translated = LineTranslator.translateKnown(
-                        line, store.lookup(source), store);
+                        line, iconic ? DialogueIcons.spans(dst, parts.glyphs()) : dst, store);
             }
         }
+        // 對話字型的圖示在小框（預設字型）裡是別的圖，換成聊天那套。見 DialogueIcons。
+        translated = DialogueIcons.forPanel(translated);
         return translated == null ? null : new LineResult(source, translated);
     }
 
