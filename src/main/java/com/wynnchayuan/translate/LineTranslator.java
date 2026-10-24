@@ -7294,31 +7294,57 @@ public final class LineTranslator {
      *
      * <p>門檻本來要擋的是圖示前的微調（{@code - +1 }{@literal <+2>}{@code 🔒Unidentified Helmet}）：
      * 造字區的圖示既不是字母也不是數字，照樣擋得住。
+     *
+     * <h2>方括號裡的數字也算</h2>
+     * Wynntils 的物品權重區塊（Nori／Wynnpool）把百分比靠右排到整份 tooltip
+     * 最寬的那一行，數值欄是 {@code [47.4%]}：
+     *
+     * <pre>
+     *   Water spellsteal Scale{@literal <+4>}[47.4%]
+     * </pre>
+     *
+     * 標籤最長的那一行欄距只剩幾 px，跟上面同一個道理，只是開頭換成了方括號。
+     * 只放「{@code [} 後面緊接數字或帶正負號的數字」：{@code [Cave]} 這種括號裡是字的
+     * 不算，一般句子裡的括號照樣擋在門檻外。
      */
     private static boolean startsWithValue(List<Run> runs, int from) {
         String head = headAfter(runs, from);
         if (head.isEmpty()) {
             return false;
         }
+        if (head.charAt(0) == '[') {
+            return signedNumber(head, 1);      // 權重的百分比欄 [47.4%]
+        }
         int first = head.codePointAt(0);
         if (Character.isLetterOrDigit(first)) {
             return true;
         }
-        if (first != '+' && first != '-') {
-            return false;                      // 圖示、括號、破折號都不是欄位內容
+        return signedNumber(head, 0);          // 圖示、括號、破折號都不是欄位內容
+    }
+
+    /** {@code head} 從 {@code at} 起是數字，或正負號接數字。 */
+    private static boolean signedNumber(String head, int at) {
+        if (head.length() <= at) {
+            return false;
         }
-        return head.length() > 1 && Character.isDigit(head.charAt(1));
+        char c = head.charAt(at);
+        if (Character.isDigit(c)) {
+            return true;
+        }
+        return (c == '+' || c == '-')
+                && head.length() > at + 1 && Character.isDigit(head.charAt(at + 1));
     }
 
     /**
-     * 間隔後面那一欄的頭兩個字。
+     * 間隔後面那一欄的頭三個字（{@code [+1} 要三個才判得出來）。
      *
      * <p>要跨片段收：重建過的數值是一段一段的（{@code "+" "15" "/" "5" "s"}），
      * 只看第一段的話正負號後面什麼都沒有，整個欄界就被判掉了。
      */
     private static String headAfter(List<Run> runs, int from) {
-        StringBuilder head = new StringBuilder(2);
-        for (int i = from; i < runs.size() && head.length() < 2; i++) {
+        final int want = 3;
+        StringBuilder head = new StringBuilder(want);
+        for (int i = from; i < runs.size() && head.length() < want; i++) {
             Run r = runs.get(i);
             if (r.space()) {
                 continue;
@@ -7327,7 +7353,7 @@ public final class LineTranslator {
             if (text.isEmpty()) {
                 continue;
             }
-            head.append(text, 0, Math.min(text.length(), 2 - head.length()));
+            head.append(text, 0, Math.min(text.length(), want - head.length()));
         }
         return head.toString();
     }
