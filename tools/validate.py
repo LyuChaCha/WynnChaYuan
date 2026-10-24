@@ -332,14 +332,17 @@ def check_pair(path: str, key: str, src: str, dst: str,
     # 反過來「色段開著沒關」<b>不報</b>：一路染到這一段結尾是正當寫法
     # （`提升 Uppercut 的傷害\n{c1}與魔力消耗。`），而且色段的作用範圍
     # 本來就止於這一條，不會外溢到別的條目。
+    #
+    # 對話句中的圖示（{#}）也算開了一段：「{#}火{/}」是「火跟著圖示上色到這裡」
+    # （見 DialogueIcons），那個 {/} 有作用。
     stray_end = 0
     open_span = False
-    for piece in re.split(r"(\{(?:[cw][1-9]|c:[^}]+)\}|\{/\})", dst):
+    for piece in re.split(r"(\{(?:[cw][1-9]|c:[^}]+)\}|\{/\}|\{#\})", dst):
         if piece == COLOUR_END:
             if not open_span:
                 stray_end += 1
             open_span = False
-        elif COLOUR.fullmatch(piece or ""):
+        elif COLOUR.fullmatch(piece or "") or piece == "{#}":
             open_span = True
     if stray_end:
         out.append(Problem("warn", path, key,
