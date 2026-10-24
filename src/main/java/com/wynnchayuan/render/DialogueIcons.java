@@ -108,16 +108,203 @@ public final class DialogueIcons {
             return;
         }
         Map<Integer, Style> found = new HashMap<>();
+        List<TextColor> colours = new ArrayList<>();
+        List<TextColor> words = new ArrayList<>();
+        boolean[] body = {false};
         message.visit((style, text) -> {
-            if (hasIcon(text) && bodyFont(style)) {
+            if (!bodyFont(style)) {
+                return Optional.empty();
+            }
+            body[0] = true;
+            if (hasIcon(text)) {
                 text.codePoints().filter(DialogueIcons::isIcon)
                     .forEach(cp -> found.putIfAbsent(cp, style));
             }
+            // 顏色編號：照物品說明那邊的規則（LineTranslator#palette／wordPalette），
+            // 只是比的是顏色不是整個樣式——對話每一列的字型都不同，比樣式的話同一個
+            // 顏色在第二列會變成另一個編號。
+            if (hasContent(text) && !colours.contains(style.getColor())) {
+                colours.add(style.getColor());
+            }
+            if (GlyphSplitter.hasLetter(text) && !words.contains(style.getColor())) {
+                words.add(style.getColor());
+            }
             return Optional.empty();
         }, Style.EMPTY);
-        if (!found.isEmpty()) {
+        boolean changed = false;
+        if (!found.isEmpty() && !found.equals(seen)) {
             seen = Map.copyOf(found);
+            changed = true;
         }
+        if (body[0] && (!colours.equals(palette) || !words.equals(wordPalette))) {
+            palette = java.util.Collections.unmodifiableList(colours);
+            wordPalette = java.util.Collections.unmodifiableList(words);
+            changed = true;
+        }
+        if (changed) {
+            generation++;
+        }
+    }
+
+    /** 有實字的一段：不全是空白或排版／圖示字元。跟 LineTranslator#hasContent 同一條。 */
+    private static boolean hasContent(String text) {
+        return text.codePoints().anyMatch(cp -> !Character.isWhitespace(cp)
+                && !GlyphSplitter.isGlyphCodePoint(cp));
+    }
+
+    /**
+     * 最近一幀對話內文用到的顏色，依第一次出現的順序。{@code {c1}} 是第一個。
+     * 沒有顏色的那一段記成 {@code null}（{@code {cN}} 指到它就是「不指定」）。
+     */
+    private static volatile List<TextColor> palette = List.of();
+
+    /** 同 {@link #palette}，但只數有字母的段。{@code {w1}} 是第一個。 */
+    private static volatile List<TextColor> wordPalette = List.of();
+
+    /**
+     * 記下來的圖示或顏色變了幾次。小框把譯文快取起來重用（見
+     * {@code DialogueOverlay#settledSource}），而顏色是跟著打字一格一格冒出來的——
+     * 第一次算的時候 {@code {c4}} 可能還沒有對象；這個數字變了就該重算一次。
+     */
+    private static volatile int generation = 0;
+
+    public static int generation() {
+        return generation;
+    }
+
+    /** 這一句原文的顏色編號（{@code {cN}} 用）。 */
+    static List<TextColor> palette() {
+        return palette;
+    }
+
+    /**
+     * 譯文的 {@code at} 位置是不是顏色標記。
+     *
+     * @return {@code {長度, 種類}}：種類 0 是 {@code {/}}，1 是 {@code {cN}}／
+     *         {@code {wN}}／{@code {c:…}}；不是標記時回 {@code null}
+     */
+    public static int[] colourToken(String text, int at) {
+        if (text.startsWith("{/}", at)) {
+            return new int[] {3, 0};
+        }
+        if (at + 3 > text.length() || text.charAt(at) != '{') {
+            return null;
+        }
+        char kind = text.charAt(at + 1);
+        if (kind != 'c' && kind != 'w') {
+            return null;
+        }
+        int end = text.indexOf('}', at + 2);
+        if (end < 0) {
+            return null;
+        }
+        String body = text.substring(at + 2, end);
+        if (body.length() == 1 && body.charAt(0) >= '1' && body.charAt(0) <= '9') {
+            return new int[] {end + 1 - at, 1};
+        }
+        if (kind == 'c' && body.length() > 1 && body.charAt(0) == ':') {
+            return new int[] {end + 1 - at, 1};
+        }
+        return null;
+    }
+
+    /**
+     * 一個顏色標記（{@code {c2}}、{@code {w1}}、{@code {c:#FF55FF}}、{@code {c:gold}}）
+     * 對到的顏色；對不到（編號超出範圍、寫錯）回 {@code null}，當作沒寫。
+     */
+    public static TextColor resolve(String token) {
+        if (token == null || token.length() < 4) {
+            return null;
+        }
+        String body = token.substring(2, token.length() - 1);
+        if (body.length() == 1 && Character.isDigit(body.charAt(0))) {
+            List<TextColor> from = token.charAt(1) == 'w' ? wordPalette : palette;
+            int slot = body.charAt(0) - '1';
+            return slot >= 0 && slot < from.size() ? from.get(slot) : null;
+        }
+        if (!body.startsWith(":")) {
+            return null;
+        }
+        String spec = body.substring(1).strip();
+        if (spec.startsWith("#")) {
+            try {
+                return TextColor.fromRgb(Integer.parseInt(spec.substring(1), 16));
+            } catch (NumberFormatException e) {
+                return null;
+            }
+        }
+        net.minecraft.ChatFormatting named = net.minecraft.ChatFormatting.getByName(spec);
+        return named == null || named.getColor() == null ? null : TextColor.fromLegacyFormat(named);
+    }
+
+    /**
+     * 小框那條路的譯文前處理：{@code {#}…{/}} 換成圖示的色碼（見 {@link #spans}），
+     * {@code {cN}}／{@code {wN}} 換成這一句原文的色碼。
+     *
+     * <p>Wynntils 給小框的文字沒有顏色，{@link LineParts} 從那裡收的調色盤是空的，
+     * {@code {c1}} 交給 {@code LineTranslator} 會對不到任何顏色——實機回報「認得是
+     * 另一個框，但顏色沒變」（PR #1436）。所以先照 action bar 記下來的顏色換成
+     * {@code {c:#RRGGBB}}；對不到的原樣留著，LineTranslator 會當作沒寫並把它吃掉。
+     */
+    public static String prepare(String dst, List<LineParts.Piece> glyphs) {
+        if (dst == null) {
+            return null;
+        }
+        String out = spans(dst, glyphs);
+        if (out.indexOf('{') < 0) {
+            return out;
+        }
+        StringBuilder done = new StringBuilder(out.length());
+        int i = 0;
+        while (i < out.length()) {
+            int[] token = colourToken(out, i);
+            if (token == null || token[1] == 0 || out.startsWith("{c:", i)) {
+                int step = token == null ? 1 : token[0];
+                done.append(out, i, i + step);
+                i += step;
+                continue;
+            }
+            String whole = out.substring(i, i + token[0]);
+            TextColor colour = resolve(whole);
+            done.append(colour == null ? whole
+                    : String.format("{c:#%06X}", colour.getValue() & 0xFFFFFF));
+            i += token[0];
+        }
+        return done.toString();
+    }
+
+    /**
+     * 拿掉顏色標記。就地取代的選項列與 SHIFT 提示列不上色，但標記也絕不能原樣
+     * 畫出來（PR #1436：畫面上直接印出「{c1}」）。
+     */
+    public static String stripMarks(String text) {
+        if (!hasColourMarks(text)) {
+            return text;
+        }
+        StringBuilder out = new StringBuilder(text.length());
+        int i = 0;
+        while (i < text.length()) {
+            int[] token = colourToken(text, i);
+            if (token != null) {
+                i += token[0];
+            } else {
+                out.append(text.charAt(i++));
+            }
+        }
+        return out.toString();
+    }
+
+    /** 譯文裡有沒有顏色標記（{@code {cN}}、{@code {wN}}、{@code {c:…}}、{@code {/}}）。 */
+    public static boolean hasColourMarks(String dst) {
+        if (dst == null || dst.indexOf('{') < 0) {
+            return false;
+        }
+        for (int i = dst.indexOf('{'); i >= 0; i = dst.indexOf('{', i + 1)) {
+            if (colourToken(dst, i) != null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 這幾段文字裡有沒有句中圖示收成的碎片——小框要不要換譯文寫法的依據。 */
@@ -140,6 +327,9 @@ public final class DialogueIcons {
     /** 測試用：清掉記下來的樣式。 */
     static void forget() {
         seen = Map.of();
+        palette = List.of();
+        wordPalette = List.of();
+        generation++;
     }
 
     /** 這個圖示在遊戲裡的樣式；沒記到就回 {@code null}。 */
@@ -398,30 +588,5 @@ public final class DialogueIcons {
         boolean common = id == null || id.getPath().contains("/common/")
                 || id.equals(((FontDescription.Resource) MARK).id());
         return common ? CHAT.get(cp) : null;
-    }
-
-    /**
-     * 就地取代那條路：一段譯文裡每個圖示與它的上色範圍，給 {@code paint} 當強調色用。
-     *
-     * @param filled 填好佔位符的譯文（圖示已經是私用區字元本身）
-     * @param ends   每個圖示上色到哪裡（不含）；{@code -1} 是只有圖示自己
-     */
-    static List<LineParts.Piece> tint(String filled, List<int[]> ends) {
-        List<LineParts.Piece> out = new ArrayList<>();
-        for (int[] span : ends) {
-            int at = span[0];
-            int end = span[1];
-            int cp = filled.codePointAt(at);
-            TextColor colour = colourOf(cp);
-            if (colour == null) {
-                continue;
-            }
-            Style style = Style.EMPTY.withColor(colour);
-            if (end > at + Character.charCount(cp)) {
-                out.add(new LineParts.Piece(filled.substring(at, end), style));
-            }
-            out.add(new LineParts.Piece(filled.substring(at, at + Character.charCount(cp)), style));
-        }
-        return out;
     }
 }

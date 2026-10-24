@@ -72,6 +72,11 @@ public final class DialogueInlineIconTest {
         panelWhole(store);
         panelTyping(store);
         legacy();
+        markersReplace();
+        markersReplaceTyping();
+        markersPanel();
+        markersPanelTyping();
+        markersNeverDrawn();
 
         System.out.println(failures == 0 ? "\n句中圖示：全部通過"
                 : "\n句中圖示：" + failures + " 項失敗");
@@ -175,10 +180,14 @@ public final class DialogueInlineIconTest {
 
     /** 打到第 {@code typed} 個字元那一幀的 action bar：[前導][列][位移][列][尾隨]。 */
     private static Component message(int typed) {
+        return message(rows(), typed);
+    }
+
+    private static Component message(List<List<Seg>> rows, int typed) {
         MutableComponent out = Component.empty();
         int left = typed;
         boolean first = true;
-        for (List<Seg> row : rows()) {
+        for (List<Seg> row : rows) {
             if (left <= 0) {
                 break;
             }
@@ -377,6 +386,226 @@ public final class DialogueInlineIconTest {
         // 收集端：語料認得舊格式就記舊格式，不另外生一條新格式的鍵
         check("舊格式：收集端記的也是舊鍵", LEGACY.equals(GlyphSplitter.toTemplate(
                 DialogueIcons.line(WYNNTILS, old))));
+    }
+
+    // ------------------------------------------------------------------ 顏色標記（PR #1436）
+
+    private static final TextColor GREEN = TextColor.fromRgb(0x55FF55);
+    private static final TextColor BLUE = TextColor.fromRgb(0x5555FF);
+    private static final TextColor RED = TextColor.fromRgb(0xFF5555);
+
+    /** The Great Sap Siphon 的警告：nine／six／three 各自一個顏色，折成三列。 */
+    private static List<List<Seg>> sapRows() {
+        return List.of(
+                List.of(new Seg("\"WARNING: Do NOT, under any circumstances, fill the",
+                        body(0).withColor(BODY))),
+                List.of(new Seg("tubes with sap doses of ", body(1).withColor(BODY)),
+                        new Seg("nine", body(1).withColor(GREEN)),
+                        new Seg(", ", body(1).withColor(BODY)),
+                        new Seg("six", body(1).withColor(BLUE)),
+                        new Seg(", and ", body(1).withColor(BODY)),
+                        new Seg("three", body(1).withColor(RED))),
+                List.of(new Seg("respectively.\"", body(2).withColor(BODY))));
+    }
+
+    private static final String SAP = "\"WARNING: Do NOT, under any circumstances, fill the "
+            + "tubes with sap doses of nine, six, and three respectively.\"";
+
+    /** {c1} 是底色、{c2}～{c4} 是三個數字的顏色；{c:gold} 是自己指定的；{w1} 照字母段數。 */
+    private static final String SAP_JA = "「警告：いかなる状況においても、チューブにそれぞれ"
+            + "{c2}9{/}、{c3}6{/}、{c4}3{/}の量の樹液を{c:gold}絶対に{/}注入して{w1}はなりません。」";
+
+    private static TranslationStore sapStore() throws Exception {
+        return store(json(SAP) + ": " + json(SAP_JA));
+    }
+
+    private static String json(String text) {
+        return "\"" + text.replace("\\", "\\\\").replace("\"", "\\\"") + "\"";
+    }
+
+    private static void markersReplace() throws Exception {
+        TranslationStore store = sapStore();
+        DialogueRewriter.forget();
+        DialogueIcons.forget();
+        Component frame = message(sapRows(), length(sapRows()));
+        Component out = null;
+        for (int again = 0; again < 12; again++) {
+            out = DialogueRewriter.rewrite(frame, store);
+        }
+        check("標記：就地取代翻得出來", out != null);
+        if (out == null) {
+            return;
+        }
+        String text = bodyText(out);
+        check("★ 標記：就地取代沒有把 {c2}、{/}、{c:gold} 畫出來（實際 " + text + "）",
+                !text.contains("{") && !text.contains("}"));
+        check("★ 標記：9 是 {c2}（綠）", GREEN.equals(colourAt(out, "9")));
+        check("★ 標記：6 是 {c3}（藍）", BLUE.equals(colourAt(out, "6")));
+        check("★ 標記：3 是 {c4}（紅）", RED.equals(colourAt(out, "3")));
+        check("標記：{c:gold} 照名稱上色",
+                TextColor.fromLegacyFormat(net.minecraft.ChatFormatting.GOLD)
+                        .equals(colourAt(out, "絶対に")));
+        check("標記：{w1} 是第一個有字母的段的顏色（底色）", BODY.equals(colourAt(out, "はなりません")));
+        check("標記：{/} 之後回到底色", BODY.equals(colourAt(out, "の量の樹液を")));
+    }
+
+    /** 逐字打：任何一幀都不准畫出標記；出過中文不准掉回英文；顏色打到哪有到哪。 */
+    private static void markersReplaceTyping() throws Exception {
+        TranslationStore store = sapStore();
+        DialogueRewriter.forget();
+        DialogueIcons.forget();
+        int total = length(sapRows());
+        boolean shown = false;
+        boolean flip = false;
+        String leaked = null;
+        Component last = null;
+        for (int at = 1; at <= total + 12; at++) {
+            Component out = DialogueRewriter.rewrite(message(sapRows(), Math.min(at, total)), store);
+            String text = out == null ? null : bodyText(out);
+            if (text != null && (text.contains("{") || text.contains("}")) && leaked == null) {
+                leaked = "第 " + at + " 幀：" + text;
+            }
+            boolean chinese = text != null && text.codePoints().anyMatch(cp -> cp >= 0x3040);
+            if (chinese) {
+                shown = true;
+            } else if (shown) {
+                flip = true;
+            }
+            last = out;
+        }
+        check("標記逐字：任何一幀都沒有畫出標記" + (leaked == null ? "" : "（" + leaked + "）"),
+                leaked == null);
+        check("標記逐字：出過中文就不再掉回英文", shown && !flip);
+        check("標記逐字：最後一幀 9／6／3 的顏色都對", last != null
+                && GREEN.equals(colourAt(last, "9")) && BLUE.equals(colourAt(last, "6"))
+                && RED.equals(colourAt(last, "3")));
+    }
+
+    private static void markersPanel() throws Exception {
+        TranslationStore store = sapStore();
+        DialogueIcons.forget();
+        DialogueIcons.note(message(sapRows(), length(sapRows())));
+        StyledText line = DialogueIcons.line(SAP, store);
+        DialogueOverlay.LineResult result = DialogueOverlay.translateLine(
+                line, GlyphSplitter.toTemplate(line), store, true);
+        check("標記：小框翻得出來", result != null);
+        if (result == null) {
+            return;
+        }
+        Component out = result.translated();
+        String text = out.getString();
+        check("標記：小框沒有標記字面（實際 " + text + "）", !text.contains("{"));
+        check("★ 標記：小框 9 是綠的", GREEN.equals(colourAt(out, "9")));
+        check("★ 標記：小框 6 是藍的", BLUE.equals(colourAt(out, "6")));
+        check("★ 標記：小框 3 是紅的", RED.equals(colourAt(out, "3")));
+        check("標記：小框 {c:gold}",
+                TextColor.fromLegacyFormat(net.minecraft.ChatFormatting.GOLD)
+                        .equals(colourAt(out, "絶対に")));
+    }
+
+    /**
+     * 小框逐字：顏色跟著 action bar 一格一格冒出來（{c4} 要等 three 打出來才有對象），
+     * 跟 DialogueOverlay#setCurrent 一樣先問快取，記下來的顏色變了就照同一條原文重新上色。
+     */
+    private static void markersPanelTyping() throws Exception {
+        TranslationStore store = sapStore();
+        DialogueIcons.forget();
+        int total = length(sapRows());
+        String cachedSource = null;
+        Component cached = null;
+        int cachedGen = -1;
+        boolean shown = false;
+        boolean flip = false;
+        boolean leaked = false;
+        Component last = null;
+        for (int at = 1; at <= total + 8; at++) {
+            int typed = Math.min(at, total);
+            DialogueIcons.note(message(sapRows(), typed));
+            String raw = SAP.substring(0, Math.min(typed + rowsBefore(sapRows(), typed), SAP.length()));
+            StyledText line = DialogueIcons.line(raw, store);
+            String template = GlyphSplitter.toTemplate(line);
+            Component out;
+            if (DialogueOverlay.canReuse(cachedSource, template)) {
+                out = cached;
+                if (cachedGen != DialogueIcons.generation()) {
+                    Component again = DialogueOverlay.recolour(line, cachedSource, store);
+                    if (again != null) {
+                        out = again;
+                        cached = again;
+                    }
+                    cachedGen = DialogueIcons.generation();
+                }
+            } else {
+                DialogueOverlay.LineResult result = DialogueOverlay.translateLine(
+                        line, template, store, at > total + 6);
+                out = result == null ? null : result.translated();
+                if (result != null) {
+                    cachedSource = result.source();
+                    cached = out;
+                    cachedGen = DialogueIcons.generation();
+                }
+            }
+            if (out != null) {
+                shown = true;
+                leaked |= out.getString().contains("{");
+            } else if (shown) {
+                flip = true;
+            }
+            last = out;
+        }
+        check("標記小框逐字：出過中文就不再掉回原文", shown && !flip);
+        check("標記小框逐字：沒有標記字面", !leaked);
+        check("★ 標記小框逐字：打完之後 3 也變紅（顏色晚到也補得上）", last != null
+                && RED.equals(colourAt(last, "3")) && GREEN.equals(colourAt(last, "9")));
+    }
+
+    /** 攤平的原文打到第 typed 個字（不含列間空白）時，前面已經有幾個列間空白。 */
+    private static int rowsBefore(List<List<Seg>> rows, int typed) {
+        int seen = 0;
+        int gaps = 0;
+        for (int n = 0; n < rows.size(); n++) {
+            int len = 0;
+            for (Seg seg : rows.get(n)) {
+                len += seg.text().length();
+            }
+            seen += len;
+            if (typed > seen && n + 1 < rows.size()) {
+                gaps++;
+            }
+        }
+        return gaps;
+    }
+
+    /**
+     * 原文這一句還沒有那個顏色（編號超出範圍）、寫錯的名稱、孤零零的 {/}：
+     * 就地取代一律吃掉，不畫出來。
+     */
+    private static void markersNeverDrawn() throws Exception {
+        String src = "Hello there, traveller.";
+        TranslationStore store = store(json(src) + ": "
+                + json("{c9}你好{/}，{c:nosuchcolour}旅人{/}{/}。"));
+        DialogueRewriter.forget();
+        DialogueIcons.forget();
+        List<List<Seg>> rows = List.of(List.of(new Seg(src, body(0).withColor(BODY))));
+        Component out = null;
+        for (int again = 0; again < 12; again++) {
+            out = DialogueRewriter.rewrite(message(rows, src.length()), store);
+        }
+        String text = out == null ? "" : bodyText(out);
+        check("標記：對不到的標記也吃掉（實際 " + text + "）",
+                out != null && text.contains("你好，旅人。") && !text.contains("{"));
+
+        // 選項列：不上色，但標記同樣不准畫出來
+        TranslationStore choices = store(json("Who are you?") + ": " + json("{c2}你{/}是誰？"));
+        Style choice = font("hud/dialogue/text/wynncraft/choice_1");
+        MutableComponent message = Component.empty();
+        message.append(Component.literal(offset(42)).withStyle(choice));
+        message.append(Component.literal("Who are you?").withStyle(choice));
+        message.append(Component.literal(offset(-73)).withStyle(choice));
+        Component picked = DialogueRewriter.rewrite(message, choices);
+        String row = picked == null ? "" : picked.getString();
+        check("標記：選項列也把標記吃掉（實際 " + visible(row) + "）",
+                row.contains("你是誰？") && !row.contains("{"));
     }
 
     // ------------------------------------------------------------------
