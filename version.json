@@ -1,11 +1,29 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.3_5",
+ "latest": "1.0.3_6",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.3_6": {
+   "headline": "1.0.3_6: no more lag while NPCs talk",
+   "items": [
+    "Fixed: the game no longer stutters while an NPC is talking in quests with many lines; a line that stays on screen is matched once instead of every frame (thanks anilken)."
+   ],
+   "zh_tw": {
+    "headline": "1.0.3_6：NPC 說話時不再卡頓",
+    "items": [
+     "修正：台詞多的任務裡 NPC 說話時畫面不再卡頓；停在畫面上的同一句只比對一次，不再每一幀重算（感謝 anilken）。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.3_6：NPC 说话时不再卡顿",
+    "items": [
+     "修正：台词多的任务里 NPC 说话时画面不再卡顿；停在画面上的同一句只比对一次，不再每一帧重算（感谢 anilken）。"
+    ]
+   }
+  },
   "1.0.3_5": {
    "headline": "1.0.3_5: dialogue icons and colours, Lootrun is 掠奪長征",
    "items": [
