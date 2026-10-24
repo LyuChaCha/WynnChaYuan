@@ -1,11 +1,41 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.3_4",
+ "latest": "1.0.3_5",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.3_5": {
+   "headline": "1.0.3_5: dialogue icons and colours, Lootrun is 掠奪長征",
+   "items": [
+    "Fixed: dialogue lines with element icons in the middle (Detlas soldier) are translated in both dialogue modes, with the icons in place and each word in its element colour; colour marks in translations no longer show up as text in the replace mode.",
+    "Fixed: the streamer mode boss bar keeps the moving highlight on the server address instead of flashing.",
+    "Fixed: item weight percentages line up even on the longest weight label.",
+    "Changed: Chinese calls Lootrun 掠奪長征 (Simplified 掠夺长征), settings screen included.",
+    "Translations: Korean, Russian, Spanish and Turkish quest dialogue reread against the story guide, Solidarity of Steel, three secret stories and Espren NPCs in all languages, more Lootrun boons, cards and nameplates."
+   ],
+   "zh_tw": {
+    "headline": "1.0.3_5：對話框的圖示與顏色，Lootrun 改稱掠奪長征",
+    "items": [
+     "修正：句中夾著元素圖示的對話（Detlas 士兵）兩種對話模式都會翻，圖示留在原位、每個詞照元素上色；譯文裡的顏色標記在就地取代模式不再直接顯示成文字。",
+     "修正：實況模式上方的狀態列，網址的亮光照常掃過，不再整段跳色。",
+     "修正：物品權重區塊最長的那一行，百分比也對齊同一欄。",
+     "變更：中文的 Lootrun 改稱掠奪長征（簡中掠夺长征），設定畫面也一起改。",
+     "譯文：韓俄西土任務對話照故事導讀重新校對，七種語言補上鋼鐵同心、三個秘密故事與 Espren 的 NPC，補上更多掠奪長征的加持、卡片與名牌。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.3_5：对话框的图示与颜色，Lootrun 改称掠夺长征",
+    "items": [
+     "修正：句中夹着元素图示的对话（Detlas 士兵）两种对话模式都会翻译，图示留在原位、每个词按元素上色；译文里的颜色标记在就地替换模式不再直接显示成文字。",
+     "修正：主播模式上方的状态条，网址的亮光照常扫过，不再整段跳色。",
+     "修正：物品权重区块最长的那一行，百分比也对齐同一列。",
+     "变更：中文的 Lootrun 改称掠夺长征（繁中掠奪長征），设置界面也一起改。",
+     "译文：韩俄西土任务对话按故事导读重新校对，七种语言补上钢铁同心、三个秘密故事与 Espren 的 NPC，补上更多掠夺长征的加持、卡片与名牌。"
+    ]
+   }
+  },
   "1.0.3_4": {
    "headline": "1.0.3_4: the translation panel lines up with the original",
    "items": [
