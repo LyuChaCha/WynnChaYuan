@@ -356,6 +356,17 @@ def lone_plates() -> dict[Path, set[str]]:
     return out
 
 
+def story_file(path: Path) -> bool:
+    """任務與秘密故事的台詞檔（含合併檔）。
+
+    這些檔裡的「名字⏎台詞」是 NPC 頭上的浮字（《Solidarity of Steel》的
+    `Quill⏎Are either of you good with cooking?`），第一行剛好跟物品同名也不是
+    玩家改過名字的物品——玩家取的名字不會被歸進某個任務的台詞裡。
+    """
+    rel = path.relative_to(TRANSLATIONS).as_posix().split("/", 1)[-1]
+    return rel.startswith(("quest/", "secret/")) or rel in ("quest-dialogue.json", "secret-dialogue.json")
+
+
 def player_sign(src: str, items: set) -> str | None:
     """第一行是遊戲的物品名、其餘是玩家自己打的字 —— 回傳說明，否則 None。"""
     if "\n" not in src:
@@ -474,6 +485,17 @@ def selftest() -> int:
     sign("Lost Soul\nShift Right-Click to open", False)
     # 只是剛好提到 click 的玩家文字照擋
     sign("Lost Soul\nclick to buy pls", True)
+
+    # 任務台詞檔裡的「名字⏎台詞」是 NPC 浮字，不算改過名字的物品；扁平檔照擋
+    for rel, want in (("zh_tw/quest/solidarity-of-steel.json", True),
+                      ("ja_jp/secret/the-great-sap-siphon.json", True),
+                      ("ko_kr/quest-dialogue.json", True),
+                      ("zh_tw/misc.json", False),
+                      ("ru_ru/npc.json", False)):
+        got = story_file(TRANSLATIONS / rel)
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + ("台詞檔" if want else "不是台詞檔") + "：" + rel)
+        bad += 0 if ok else 1
 
     # 要抓到 —— 名字夾在句子中間，上面兩條限定位置的規則都漏過去
     for src in (
@@ -614,7 +636,7 @@ def main(argv: list[str]) -> int:
             if any(a in src for a in ALLOW):
                 continue
             why = next((w for p, w in compiled if p.search(src)), None)
-            if why is None:
+            if why is None and not story_file(path):
                 why = player_sign(src, items)
             if why is None:
                 why = glued_name(src)
