@@ -262,7 +262,13 @@ public final class DialogueRewriter {
             if (lead == null || trail == null) {
                 continue;
             }
-            int was = width(texts.get(i), styles.get(i));
+            // 原本那一段照它<b>自己的字型</b>量，跟下面量 prefix 的方式一樣。
+            //
+            // 不能走 width(String, Style)：那一支把私用區字元一律當成句中圖示，
+            // 寬度去查內文裡學到的圖示樣式（DialogueIcons#forRow）。SHIFT 按鈕
+            // 與滑鼠圖示（U+E000、U+E011）不在內文裡，查不到就算成 0，
+            // 尾隨偏移多補了一個按鈕寬，提示列整條往右歪出框外。
+            int was = width(Component.literal(texts.get(i)).withStyle(styles.get(i)));
             // SHIFT 那個按鈕圖示是<b>混在同一段文字裡</b>的，不是獨立片段：
             // 這一段長得像「<U+E000> to continue」。整段拿去查表就是
             // " to continue"，而語料裡是 "to continue"，永遠對不上。
