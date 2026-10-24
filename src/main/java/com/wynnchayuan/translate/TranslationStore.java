@@ -318,6 +318,8 @@ public final class TranslationStore {
         market.clear();
         ordered.clear();
         byQuest.clear();
+        nearWordCache.clear();
+        lastNear = null;
         questCast.clear();
         questOfLine.clear();
         playerKeys.clear();
@@ -1795,6 +1797,19 @@ public final class TranslationStore {
         if (scoped == null) {
             return null;
         }
+        // 對話還在畫面上時同一行會一直送進來（逐字打完之後也是），每一次都把整個任務
+        // 掃一遍、把每一句重新拆字，在台詞多的任務裡會讓畫面卡頓（實機 2026-10-24，
+        // 錄到的繪製執行緒時間有四成在這裡）。同一句、同一個任務就直接回上一次的結果。
+        NearQuery last = lastNear;
+        if (last != null && last.typed().equals(typed) && last.quest().equals(quest)) {
+            return last.result();
+        }
+        String result = nearQuestLineUncached(typed, scoped);
+        lastNear = new NearQuery(typed, quest, result);
+        return result;
+    }
+
+    private String nearQuestLineUncached(String typed, java.util.TreeMap<String, String> scoped) {
         String[] said = nearWords(typed);
         if (said.length < NEAR_MIN_WORDS) {
             return null;
@@ -1804,7 +1819,7 @@ public final class TranslationStore {
         int bestCost = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
         for (String src : scoped.keySet()) {
-            String[] words = nearWords(src);
+            String[] words = nearWordCache.computeIfAbsent(src, TranslationStore::nearWords);
             int cost = Integer.MAX_VALUE;
             // 還在打字時只看得到開頭，拿候選前面差不多長的一截來比
             for (int take = Math.max(1, said.length - allowed);
@@ -1827,13 +1842,26 @@ public final class TranslationStore {
 
     private static final int NEAR_MIN_WORDS = 8;
 
+    /** 見 {@link #nearQuestLine}：上一次問的那一句與結果。 */
+    private record NearQuery(String typed, String quest, String result) {}
+
+    private volatile NearQuery lastNear;
+
+    /** 語料台詞拆好的字。語料換一份時跟著清掉（見 loadAll）。 */
+    private final Map<String, String[]> nearWordCache =
+            new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static final java.util.regex.Pattern NEAR_SPACE = java.util.regex.Pattern.compile("\\s+");
+
+    private static final java.util.regex.Pattern NEAR_EDGES =
+            java.util.regex.Pattern.compile("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$");
+
     /** 拆成比對用的字：小寫、去掉頭尾標點。 */
     private static String[] nearWords(String text) {
-        String[] raw = text.strip().split("\\s+");
+        String[] raw = NEAR_SPACE.split(text.strip());
         List<String> out = new java.util.ArrayList<>(raw.length);
         for (String w : raw) {
-            String t = w.toLowerCase(java.util.Locale.ROOT)
-                        .replaceAll("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$", "");
+            String t = NEAR_EDGES.matcher(w.toLowerCase(java.util.Locale.ROOT)).replaceAll("");
             if (!t.isEmpty()) {
                 out.add(t);
             }
