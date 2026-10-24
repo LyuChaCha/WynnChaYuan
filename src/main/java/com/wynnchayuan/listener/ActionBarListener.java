@@ -254,6 +254,22 @@ public final class ActionBarListener {
      * <p>換不動就什麼都不做，原文照樣顯示。這比「藏掉原文卻補不上譯文」好，
      * 也比自己畫一個框好——框、名牌、頭像都在那條訊息裡，動它們就沒了。
      */
+    /**
+     * 先記下對話內文裡句中圖示的字型與顏色，再讓 Wynntils 解析。
+     *
+     * <p>Wynntils 發出的對話事件只帶攤平過的純文字，小框那條路拿不到圖示的顏色；
+     * 最高優先權在它之前讀同一則訊息，事件進來的時候這一幀的已經記好了。
+     * 見 {@link com.wynnchayuan.render.DialogueIcons}。
+     */
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onGameInfoIcons(SystemMessageEvent.GameInfoReceivedEvent event) {
+        try {
+            com.wynnchayuan.render.DialogueIcons.note(event.getMessage());
+        } catch (Throwable t) {
+            // action bar 每 tick 都會走這裡，出錯絕不能讓遊戲停下來
+        }
+    }
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onGameInfoRewrite(SystemMessageEvent.GameInfoReceivedEvent event) {
         // 內文與選項是兩個開關，任一邊要就地取代就得進來——

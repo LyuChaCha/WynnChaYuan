@@ -243,7 +243,9 @@ public final class DialogueOverlay {
         List<String> sources = new ArrayList<>(raws.length);
         List<List<Component>> rendered = new ArrayList<>(raws.length);
         for (int i = 0; i < raws.length; i++) {
-            StyledText line = StyledText.fromString(raws[i]);
+            // 句中的圖示拆成自己一段，模板裡才會是 {#}；語料只認得舊格式的句子
+            // 退回舊的那一份。收集端與就地取代用的是同一支，見 DialogueIcons。
+            StyledText line = DialogueIcons.line(raws[i], store);
             String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
             List<Component> target = lines;
 
@@ -251,9 +253,18 @@ public final class DialogueOverlay {
             // 見 #settledSource 說明——重算才是閃爍的來源。
             String settled = settledSource(i, template);
             if (settled != null) {
+                List<Component> box = shown.get(i);
+                if (shownGeneration != DialogueIcons.generation()) {
+                    // 顏色是跟著打字一格一格冒出來的：上次算的時候 {c4} 可能還沒有
+                    // 對象。記下來的顏色變了就照同一條原文再上一次色，字不變。
+                    Component again = recolour(line, settled, store);
+                    if (again != null) {
+                        box = Boxes.toLines(again);
+                    }
+                }
                 sources.add(settled);
-                rendered.add(shown.get(i));
-                target.addAll(shown.get(i));
+                rendered.add(box);
+                target.addAll(box);
                 any = true;
                 if (said == null) {
                     said = speakerFor(store, settled);
@@ -289,6 +300,7 @@ public final class DialogueOverlay {
         // 日誌裡那幾千筆例外也是從這裡來的。
         settledFor = java.util.Collections.unmodifiableList(new ArrayList<>(sources));
         shown = List.copyOf(rendered);
+        shownGeneration = DialogueIcons.generation();
         // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
         // 語料裡本來就有這個欄位，只是先前沒被帶到畫面上。
         speaker = said != null && !said.isBlank() ? said : null;
@@ -302,6 +314,24 @@ public final class DialogueOverlay {
         if ((any && !bodyOff) || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
+    }
+
+    /** {@link #shown} 算出來的時候，{@link DialogueIcons} 記的顏色是第幾版。 */
+    private static volatile int shownGeneration = -1;
+
+    /**
+     * 已經認出來的這一條，照現在記下來的顏色重新上色一次。只有譯文帶顏色標記或
+     * 句中圖示的才需要；其他的回 {@code null}（沿用快取，不重算）。
+     */
+    static Component recolour(StyledText line, String source, TranslationStore store) {
+        String dst = store.lookup(source);
+        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
+        if (dst == null || dst.isBlank()
+                || !(DialogueIcons.iconic(parts) || DialogueIcons.hasColourMarks(dst))) {
+            return null;
+        }
+        return DialogueIcons.forPanel(LineTranslator.translateKnown(
+                line, DialogueIcons.prepare(dst, parts.glyphs()), store));
     }
 
     /** 翻譯目前打到的這一行；抽成獨立入口，讓逐字輸入的 prefix 行為可以驗證。 */
@@ -320,7 +350,20 @@ public final class DialogueOverlay {
         if (DialogueRewriter.learnName(line.getString(), store)) {
             template = com.wynnchayuan.capture.LineParts.of(line).template();
         }
-        Component translated = LineTranslator.translate(line, store);
+        // 句中有圖示、或譯文帶顏色標記的句子：要先把「{#}火{/}」「{c2}」換成
+        // LineTranslator 認得的色碼——Wynntils 給的文字沒有顏色，{c2} 交給它會對不到
+        // 任何顏色（PR #1436 回報的「認得是另一個框，但顏色沒變」）。見 DialogueIcons#prepare。
+        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
+        boolean iconic = DialogueIcons.iconic(parts);
+        String exact = store.lookup(template.strip());
+        Component translated;
+        if (iconic || DialogueIcons.hasColourMarks(exact)) {
+            translated = exact == null || exact.isBlank() ? null
+                    : LineTranslator.translateKnown(line,
+                            DialogueIcons.prepare(exact, parts.glyphs()), store);
+        } else {
+            translated = LineTranslator.translate(line, store);
+        }
         String source = translated == null ? null : template;
         if (translated != null && !steady && unfinished(template, store)) {
             // 這半句自己剛好也是語料裡的一條：「Not even death saw…」打到第二個字
@@ -347,10 +390,13 @@ public final class DialogueOverlay {
                 // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
                 // 還原地名／玩家名；參數尚未齊全就先等，不能把 raw {p}/{u}
                 // 放進 shown，否則 settledSource 會一路沿用到整句完成。
+                String dst = store.lookup(source);
                 translated = LineTranslator.translateKnown(
-                        line, store.lookup(source), store);
+                        line, DialogueIcons.prepare(dst, parts.glyphs()), store);
             }
         }
+        // 對話字型的圖示在小框（預設字型）裡是別的圖，換成聊天那套。見 DialogueIcons。
+        translated = DialogueIcons.forPanel(translated);
         return translated == null ? null : new LineResult(source, translated);
     }
 

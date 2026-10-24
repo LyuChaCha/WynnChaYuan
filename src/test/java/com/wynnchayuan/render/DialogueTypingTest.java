@@ -466,8 +466,8 @@ public final class DialogueTypingTest {
 
     private static String panelFrame(String raw, TranslationStore store,
                                      String[] cache, boolean steady) {
-        com.wynntils.core.text.StyledText line =
-                com.wynntils.core.text.StyledText.fromString(raw);
+        // 跟 DialogueOverlay#setCurrent 一樣：句中圖示拆成自己一段（見 DialogueIcons）
+        com.wynntils.core.text.StyledText line = DialogueIcons.line(raw, store);
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
         if (DialogueOverlay.canReuse(cache[0], template)) {
             return cache[1];

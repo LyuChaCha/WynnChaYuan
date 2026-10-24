@@ -156,6 +156,9 @@ public final class DialogueRewriter {
         if (message == null || store == null) {
             return null;
         }
+        // 句中圖示的字型與顏色。小框那條路在 ActionBarListener 最高優先權記，
+        // 這裡再記一次：測試與其他呼叫端不一定經過那裡。見 DialogueIcons。
+        DialogueIcons.note(message);
         // 跑馬燈的時鐘：這一幀所有在捲的列共用同一個「現在」
         long now = clock.getAsLong();
         List<Style> styles = new ArrayList<>();
@@ -276,6 +279,7 @@ public final class DialogueRewriter {
                 continue;
             }
             tip = oneLine(tip);                 // 提示列也是一列，\n 畫出來是方框
+            tip = DialogueIcons.stripMarks(tip); // 顏色標記不畫出來（PR #1436）
 
             if (!drawable(tip, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
                 continue;                       // 沒有這一份中文字型，換了是一排方框
@@ -342,6 +346,7 @@ public final class DialogueRewriter {
                 continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
             pick = oneLine(pick);               // 譯文裡的 \n 一樣攤平，見 oneLine
+            pick = DialogueIcons.stripMarks(pick); // 顏色標記不畫出來（PR #1436）
             int was = 0;
             for (int k = i; k <= end; k++) {
                 was += width(texts.get(k), styles.get(k));
@@ -416,6 +421,9 @@ public final class DialogueRewriter {
                             Style.EMPTY.withColor(piece.style().getColor())));
                 }
             }
+            // 譯者在譯文裡指定的顏色（{c1}、{c:gold}、{#}…{/}）最後貼，蓋過猜的。
+            // 記憶（learned）不收這些：它們每一次都由譯文自己帶，不必記。見 fill。
+            inked = overlay(inked, rows, starts);
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
                 // 只把偏移「補上長度差」，不要自己算一個新的。
@@ -490,12 +498,23 @@ public final class DialogueRewriter {
             // 留英文的那一截（物品名、NPC 名）本來就畫得出來，換了反而掉高度。
             List<LineParts.Piece> pieces = painted.get(i);
             if (pieces != null) {
-                for (LineParts.Piece piece : pieces) {
-                    Style worn = fitted(piece.text(), piece.style(), styles.get(i));
-                    if (tofu == null) {
-                        tofu = unpaintable(piece.text(), worn);
+                for (LineParts.Piece chunk : pieces) {
+                    // 句中圖示要用遊戲自己的字型畫（這一列的 common/body_N），
+                    // 其餘的字照舊。見 DialogueIcons。
+                    for (LineParts.Piece piece : iconRuns(chunk, styles.get(i))) {
+                        if (piece.style() == null) {
+                            continue;              // 記不到樣式的圖示不畫
+                        }
+                        if (DialogueIcons.hasIcon(piece.text())) {
+                            out.append(Component.literal(piece.text()).withStyle(piece.style()));
+                            continue;
+                        }
+                        Style worn = fitted(piece.text(), piece.style(), styles.get(i));
+                        if (tofu == null) {
+                            tofu = unpaintable(piece.text(), worn);
+                        }
+                        out.append(Component.literal(piece.text()).withStyle(worn));
                     }
-                    out.append(Component.literal(piece.text()).withStyle(worn));
                 }
                 continue;
             }
@@ -528,6 +547,38 @@ public final class DialogueRewriter {
      *
      * @return 畫不出來的那幾個碼位，全畫得出來時回 {@code null}
      */
+    /**
+     * 一截貼好色的字，拆成「句中圖示」與「其餘」。圖示那幾截換成它在這一列該用的
+     * 樣式（{@link DialogueIcons#forRow}），記不到樣式的圖示樣式是 {@code null}。
+     */
+    static List<LineParts.Piece> iconRuns(LineParts.Piece piece, Style row) {
+        String text = piece.text();
+        if (!DialogueIcons.hasIcon(text)) {
+            return List.of(piece);
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        StringBuilder run = new StringBuilder();
+        int i = 0;
+        while (i < text.length()) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            if (!DialogueIcons.isIcon(cp)) {
+                run.appendCodePoint(cp);
+                continue;
+            }
+            if (!run.isEmpty()) {
+                out.add(new LineParts.Piece(run.toString(), piece.style()));
+                run.setLength(0);
+            }
+            out.add(new LineParts.Piece(new String(Character.toChars(cp)),
+                    DialogueIcons.forRow(cp, row)));
+        }
+        if (!run.isEmpty()) {
+            out.add(new LineParts.Piece(run.toString(), piece.style()));
+        }
+        return out;
+    }
+
     private static String unpaintable(String text, Style style) {
         String font = fontOf(style);
         boolean ours = font.startsWith(WynnChaYuan.MOD_ID + ":");
@@ -856,7 +907,9 @@ public final class DialogueRewriter {
             }
             char head = moved < text.length() ? text.charAt(moved) : '\0';
             char tail = text.charAt(moved - 1);
-            if (OPENING.indexOf(tail) >= 0 || CLOSING.indexOf(head) >= 0) {
+            // 句中圖示跟後面那個詞是一組的（「✹火」），不留在行尾。
+            if (OPENING.indexOf(tail) >= 0 || CLOSING.indexOf(head) >= 0
+                    || DialogueIcons.isIcon(tail)) {
                 moved--;
                 continue;
             }
@@ -902,28 +955,64 @@ public final class DialogueRewriter {
      *
      * <p>{@code {~1}} 這種帶編號的寫法指名要原文的第幾個數值——中文語序常常
      * 跟英文相反，沒有編號就沒辦法把數字擺到正確的位置。
+     *
+     * <h2>顏色標記</h2>
+     * 譯文裡的 {@code {c1}}、{@code {w1}}、{@code {c:#FF55FF}}、{@code {c:gold}}、
+     * {@code {/}} 跟物品說明那邊同一套語意（見 {@code LineTranslator#colourToken}），
+     * 編號照這一句原文用到的顏色排（見 {@link DialogueIcons#palette}）。這些標記
+     * <b>一律吃掉、絕不畫出來</b>——先前就地取代原樣抄過去，畫面上直接印出「{c1}」
+     * （PR #1436）。顏色記在 {@link #explicit}，{@link #rewrite} 排好版之後照位置貼。
+     *
+     * <p>{@code {#}…{/}}：句中圖示後面到 {@code {/}} 的字跟著圖示上色，見
+     * {@link DialogueIcons}。
      */
     static String fill(String translated, LineParts parts) {
         StringBuilder out = new StringBuilder();
+        // 每一個字元自己的顏色（null 是沒指定，照強調色／底色）
+        List<TextColor> colours = new ArrayList<>();
         int place = 0;
         int user = 0;
         int number = 0;
+        int glyph = 0;
+        TextColor current = null;                  // 開著的色段
         for (int i = 0; i < translated.length(); ) {
-            if (translated.startsWith("{#}", i)) {
-                // 圖示在對話框裡<b>畫不出來</b>：換過的那一段用的是中文字型，
+            int[] token = DialogueIcons.colourToken(translated, i);
+            if (token != null) {
+                // {cN}／{wN}／{c:…}：從這裡開始換顏色；{/}：回到沒指定。
+                // 編號超出範圍（原文還沒打到那個顏色）就當作沒寫，照舊吃掉。
+                current = token[1] == 0 ? null
+                        : DialogueIcons.resolve(translated.substring(i, i + token[0]));
+                i += token[0];
+            } else if (translated.startsWith("{#}", i)) {
+                LineParts.Piece piece = glyph < parts.glyphs().size()
+                        ? parts.glyphs().get(glyph) : null;
+                glyph++;
+                i += 3;
+                if (piece != null && DialogueIcons.hasIcon(piece.text())
+                        && DialogueIcons.styleOf(piece.text().codePointAt(0)) != null) {
+                    // 對話字型的圖示（元素、按鍵…）。整段只留圖示字元本身，畫的時候
+                    // 換回遊戲自己的那套字型（見 rewrite 的組裝），所以畫得出來。
+                    String icon = iconsOf(piece.text());
+                    TextColor own = DialogueIcons.colourOf(icon.codePointAt(0));
+                    append(out, colours, icon, own);
+                    if (DialogueIcons.closes(translated, i) > 0) {
+                        current = own;             // 後面到 {/} 的字跟著圖示上色
+                    }
+                    continue;
+                }
+                // 其他圖示在對話框裡<b>畫不出來</b>：換過的那一段用的是中文字型，
                 // 材質包的私用區字元到了那裡就是一個方框。原樣抄「{#}」更糟——
                 // 實機回報畫面上直接印出「{#}敏捷嘛，那是給愛冒險的人的」。
                 // 那個圖示只是屬性名旁邊的小裝飾，拿掉不影響意思。
-                i += 3;
                 while (i < translated.length() && translated.charAt(i) == ' '
                         && out.length() == 0) {
                     i++;                           // 行首的圖示後面那個空白一起拿掉
                 }
             } else if (translated.startsWith("{p}", i)) {
-                out.append(pick(parts.places(), place++));
+                append(out, colours, pick(parts.places(), place++), current);
                 i += 3;
             } else if (translated.startsWith("{u}", i)) {
-                out.append(pick(parts.users(), user++));
+                append(out, colours, pick(parts.users(), user++), current);
                 i += 3;
             } else if (translated.startsWith("{~", i)
                     && translated.indexOf('}', i) > 0) {
@@ -939,12 +1028,140 @@ public final class DialogueRewriter {
                 } else {
                     number++;
                 }
-                out.append(pick(parts.numbers(), at));
+                append(out, colours, pick(parts.numbers(), at), current);
                 i = close + 1;
             } else {
                 out.append(translated.charAt(i++));
+                colours.add(current);
             }
         }
+        // 譯文裡的 \n 在這裡就攤平，顏色才跟得上每一個字的新位置。見 oneLine。
+        String filled = oneLine(out.toString(), colours);
+        boolean any = false;
+        for (TextColor colour : colours) {
+            any |= colour != null;
+        }
+        explicitText = any ? filled : null;
+        explicit = any ? colours.toArray(new TextColor[0]) : null;
+        return filled;
+    }
+
+    private static void append(StringBuilder out, List<TextColor> colours, String text,
+                               TextColor colour) {
+        out.append(text);
+        for (int k = 0; k < text.length(); k++) {
+            colours.add(colour);
+        }
+    }
+
+    /**
+     * 最近一次 {@link #fill} 的結果裡，譯者指定的顏色：每個字元一格，跟
+     * {@link #explicitText} 對齊。沒有任何指定時兩個都是 {@code null}。
+     *
+     * <p>打字途中畫的是它的開頭一截（{@link #typedSoFar}），沿用上一幀的譯文時
+     * （見 {@link #kept}）不會再叫 fill，所以留著上一次的；{@link #overlay}
+     * 照字面確認對得上才貼。
+     */
+    private static String explicitText;
+    private static TextColor[] explicit;
+
+    /**
+     * 同 {@link #oneLine(String)}，但 {@code colours}（每個字元一格）跟著挪：
+     * 拿掉的 \r、\n 一起拿掉，補上的空白補一格沒指定的顏色。
+     */
+    static String oneLine(String text, List<TextColor> colours) {
+        if (text.indexOf('\n') < 0) {
+            return text;
+        }
+        StringBuilder out = new StringBuilder();
+        List<TextColor> moved = new ArrayList<>();
+        boolean broke = false;
+        for (int k = 0; k < text.length(); k++) {
+            char c = text.charAt(k);
+            if (c == '\r') {
+                continue;
+            }
+            if (c == '\n') {
+                broke = true;
+                continue;
+            }
+            if (broke) {
+                broke = false;
+                boolean spaced = out.length() == 0 || out.charAt(out.length() - 1) == ' '
+                        || c == ' ';
+                boolean wide = out.length() > 0 && out.charAt(out.length() - 1) >= 0x2E80
+                        && c >= 0x2E80;
+                if (!spaced && !wide) {
+                    out.append(' ');
+                    moved.add(null);
+                }
+            }
+            out.append(c);
+            moved.add(colours.get(k));
+        }
+        colours.clear();
+        colours.addAll(moved);
+        return out.toString();
+    }
+
+    /**
+     * 把譯者指定的顏色（{@link #explicit}）照位置貼到排好版的那幾列上，蓋過
+     * 照字面猜出來的強調色。
+     *
+     * <p>每一列都是譯文的一段子字串（{@link #wrap} 只切不改），依序在
+     * {@link #explicitText} 裡找到它的位置就知道每個字是第幾個；對不上（換句了）
+     * 就整個不貼。
+     */
+    static List<LineParts.Piece> overlay(List<LineParts.Piece> inked, List<String> rows,
+                                         int[] starts) {
+        if (explicitText == null || explicit == null) {
+            return inked;
+        }
+        int length = 0;
+        for (LineParts.Piece piece : inked) {
+            length += piece.text().length();
+        }
+        TextColor[] at = new TextColor[length];
+        int cursor = 0;
+        for (int n = 0; n < rows.size(); n++) {
+            String row = rows.get(n);
+            if (row.isEmpty()) {
+                continue;
+            }
+            int found = explicitText.indexOf(row, cursor);
+            if (found < 0) {
+                return inked;
+            }
+            for (int k = 0; k < row.length() && starts[n] + k < length; k++) {
+                at[starts[n] + k] = explicit[found + k];
+            }
+            cursor = found + row.length();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        int pos = 0;
+        for (LineParts.Piece piece : inked) {
+            String text = piece.text();
+            int from = 0;
+            for (int k = 1; k <= text.length(); k++) {
+                boolean cut = k == text.length()
+                        || !java.util.Objects.equals(at[pos + k], at[pos + from]);
+                if (cut) {
+                    TextColor colour = at[pos + from];
+                    Style style = colour == null ? piece.style()
+                            : piece.style().withColor(colour);
+                    out.add(new LineParts.Piece(text.substring(from, k), style));
+                    from = k;
+                }
+            }
+            pos += text.length();
+        }
+        return out;
+    }
+
+    /** 只留圖示字元。{@code {#}} 對到的碎片偶爾連著排版字元，那些不畫。 */
+    private static String iconsOf(String text) {
+        StringBuilder out = new StringBuilder();
+        text.codePoints().filter(DialogueIcons::isIcon).forEach(out::appendCodePoint);
         return out.toString();
     }
 
@@ -1314,7 +1531,8 @@ public final class DialogueRewriter {
         // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
         String raw = text.strip();
         learnName(raw, store);
-        LineParts parts = LineParts.of(StyledText.fromString(raw));
+        // 句中的圖示收成 {#}（新格式）；語料只認得舊格式的句子退回舊的。見 DialogueIcons。
+        LineParts parts = DialogueIcons.parts(raw, store);
         // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務
         // 就有好幾句。那幾句語料裡早就翻好了（鍵是 {u}），只是模板對不起來。
         // 見 LineParts#namingPlayer；只在整行查不到時才改，介面上那幾條正經的
@@ -1472,7 +1690,8 @@ public final class DialogueRewriter {
         // 要在 fill <b>之後</b>檢查。先前檢的是<b>模板</b>，而真名、地名是
         // 填回去的時候才進來的——玩家 ID 或地名裡只要有一個字不在字型的
         // 覆蓋範圍，守門就放它過去，畫面上是一排方框。
-        if (!renderable(hit)) {
+        // 句中圖示是用遊戲自己的字型畫的（見 rewrite 的組裝），不歸這一關管。
+        if (!renderable(DialogueIcons.strip(hit))) {
             return drop();
         }
         // 塞不塞得下要問 wrap 本身，不能只量總寬度。
@@ -1966,6 +2185,20 @@ public final class DialogueRewriter {
     }
 
     private static int width(String text, Style original) {
+        if (DialogueIcons.hasIcon(text)) {
+            // 句中圖示用的是遊戲自己的字型，寬度照那一套量；其餘照舊。
+            int total = 0;
+            for (LineParts.Piece piece : iconRuns(new LineParts.Piece(text, original), original)) {
+                if (!DialogueIcons.hasIcon(piece.text())) {
+                    total += width(piece.text(), original);
+                } else if (piece.style() != null && Minecraft.getInstance() != null) {
+                    total += width(Component.literal(piece.text()).withStyle(piece.style()));
+                } else if (piece.style() != null) {
+                    total += width(piece.text());
+                }
+            }
+            return total;
+        }
         if (drawable(text, fontOf(original))) {
             return width(Component.literal(text).withStyle(original));
         }
