@@ -142,7 +142,9 @@ public final class CaptureListener {
         }
         // 對話框沒畫名牌時，說話者是玩家剛剛右鍵點的那個 NPC。見 ConversationPartner
         String partner = com.wynnchayuan.capture.ConversationPartner.forLine();
-        String done = buffer.offer(styled.getString(), GlyphSplitter.toTemplate(styled));
+        // 句中的圖示收成 {#}，跟就地取代、小框查表用的是同一份。見 DialogueIcons。
+        String done = buffer.offer(styled.getString(), GlyphSplitter.toTemplate(
+                com.wynnchayuan.render.DialogueIcons.line(text, WynnChaYuan.translations())));
         if (done != null) {
             // 送出的是上一句：用上一句自己的名牌，再換成這一句的
             record(done, lineSpeaker, lineHadChoices);
