@@ -350,8 +350,12 @@ public final class WynntilsText {
         net.minecraft.network.chat.Component hit = BARS.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
-            StyledText shown = line(text, store);
-            hit = shown == text ? name : shown.getComponent();
+            // 譯文跟原文同一個結尾（網址）的，先走純文字那條路，結尾的顏色才不會被重新上色
+            hit = bossBarPlain(name, store);
+            if (hit == null) {
+                StyledText shown = line(text, store);
+                hit = shown == text ? name : shown.getComponent();
+            }
             // 逐段那條路可能翻了別段（狀態詞），名字仍是英文，所以不論如何都再換一次
             net.minecraft.network.chat.Component named = bossBarName(hit, store);
             if (named != null) {
@@ -373,6 +377,63 @@ public final class WynntilsText {
             }
         }
         return hit;
+    }
+
+    /**
+     * 整行照純文字查：實況模式的「Streamer mode enabled PLAY.WYNNCRAFT.COM」。
+     *
+     * <h2>為什麼不走逐段那條路</h2>
+     * 網址那一截有一道亮光逐字掃過，每一幀的顏色分段都不一樣。逐段那條路查得到，但它
+     * 照「主要的顏色」重新上色，亮光那個字一出現，整截網址就被染成前面那段的顏色，
+     * 只有沒有亮光的那一幀是原色——實機回報「英文 IP 在跑的時候顏色會跳」。
+     *
+     * <p>譯文與原文結尾相同的那一截（網址）照原樣留下，連同每一幀的顏色，亮光照掃；
+     * 前面換成譯文，用原本第一段的樣式。沒有共同結尾、譯文還留著佔位符、或原文夾著
+     * 圖示的都不用，交回逐段那條路。
+     *
+     * @return 換好的標題；不適用回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component bossBarPlain(
+            net.minecraft.network.chat.Component bar, TranslationStore store) {
+        String raw = bar.getString();
+        String key = raw.strip();
+        if (key.isEmpty() || !key.equals(com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(key))) {
+            return null;
+        }
+        String dst = store.lookup(key);
+        if (dst == null || dst.isEmpty() || dst.contains("{")) {
+            return null;
+        }
+        int same = 0;
+        while (same < key.length() && same < dst.length()
+                && key.charAt(key.length() - 1 - same) == dst.charAt(dst.length() - 1 - same)) {
+            same++;
+        }
+        if (same == 0) {
+            return null;                                  // 沒有共同結尾就交給逐段那條路配色
+        }
+        int start = raw.indexOf(key);
+        int keep = start + key.length() - same;           // 原文從這裡起照原樣
+        String head = raw.substring(0, start) + dst.substring(0, dst.length() - same);
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        int[] at = {0};
+        boolean[] headDone = {false};
+        bar.visit((style, text) -> {
+            int from = at[0];
+            int to = from + text.length();
+            at[0] = to;
+            if (!headDone[0] && !text.isEmpty()) {
+                out.append(net.minecraft.network.chat.Component.literal(head).withStyle(style));
+                headDone[0] = true;
+            }
+            if (to > keep && !text.isEmpty()) {
+                out.append(net.minecraft.network.chat.Component.literal(
+                        text.substring(Math.max(0, keep - from))).withStyle(style));
+            }
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return headDone[0] ? out : null;
     }
 
     /**
