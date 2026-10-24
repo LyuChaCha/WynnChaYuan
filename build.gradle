@@ -1360,6 +1360,15 @@ tasks.register('runStatValueColumnChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runStatValueColumnChecks' }
 
+// Wynntils 的權重區塊：英文標籤最長那一行欄距最窄，「[xx%]」那一欄也要認得欄界。
+tasks.register('runWeightColumnChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WeightColumnTest'
+}
+tasks.named('check') { dependsOn 'runWeightColumnChecks' }
+
 // 一排名牌：框各用自己的高度，矮的置中，不整排拉成一樣高。
 tasks.register('runNametagRowChecks', JavaExec) {
     group = 'verification'

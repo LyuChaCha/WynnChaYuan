@@ -1,0 +1,221 @@
+package com.wynnchayuan.translate;
+
+import com.wynnchayuan.CollectorConfig;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
+
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Wynntils 的物品權重區塊（Nori／Wynnpool）：「[xx.x%]」那一欄要落回原文的位置。
+ *
+ * <h2>實機回報</h2>
+ * 宿露（Stardew）的權重區塊，只有「水屬性法術竊取適性」那一行的百分比緊貼在
+ * 標籤後面，其他行的「[xx.x%]」都對在同一欄：
+ *
+ * <pre>
+ *   主要適性            [57.0%]
+ *   法術竊取適性        [48.2%]
+ *   水屬性法術竊取適性 [47.4%]      ← 沒跳到那一欄
+ *   Obli 適性           [46.4%]
+ * </pre>
+ *
+ * <p>Wynntils 把每一行的數值靠右排到整份 tooltip 最寬的那一行
+ * （{@code GearTooltipAlignmentComponent.alignRightSegment}：
+ * 偏移 = max(0, 最寬 − 標籤 − 數值)），所以英文標籤越長、欄距越窄。
+ * {@code Water spellsteal Scale} 是這一區最長的，欄距只剩幾 px，低於
+ * {@link LineTranslator#MIN_GAP_PX}，要靠 {@code tooltipGaps} 的放寬才數得到——
+ * 而那道放寬認的是「字母、數字、帶正負號的數值」，百分比欄卻是以 {@code [} 開頭。
+ * 欄界數不到，中文標籤短掉多少，百分比就往左縮多少。
+ *
+ * <p>片段的形狀照實機：標籤一段、{@code minecraft:space} 的偏移一段、數值一段
+ * （有時前面還帶一個空白，見語料的 {@code {#}[{~}]} 與 {@code {#} [{~}]} 兩種）。
+ * 譯文不寫死，斷言只比「數值的起點」。
+ */
+public final class WeightColumnTest {
+
+    private static int failures = 0;
+
+    private static final Style WYNN = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF))
+            .withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                    net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
+    private static final Style PCT = WYNN.withColor(TextColor.fromRgb(0xFFCB21));
+
+    /**
+     * 整份 tooltip 最寬那一行的寬度。照這份測試的字寬，
+     * {@code Water spellsteal Scale[47.4%]} 是 146px，欄距剩 4px。
+     */
+    private static final int WIDEST = 150;
+
+    private static final String[][] ROWS = {
+        {"Main Scale",             "57.0%"},
+        {"Spellsteal Scale",       "48.2%"},
+        {"Water spellsteal Scale", "47.4%"},
+        {"Obli Scale",             "46.4%"},
+    };
+
+    public static void main(String[] args) {
+        Path root = Path.of(args.length > 0 ? args[0]
+                                            : "src/main/resources/assets/wynnchayuan/translations");
+        LineTranslator.measureForTest = WeightColumnTest::measure;
+        try {
+            for (String lang : new String[] {"zh_tw", "zh_cn"}) {
+                TranslationStore store = new TranslationStore();
+                store.loadAll(List.of(root.resolve(lang)));
+                store.setNameMode(CollectorConfig.ItemNames.OFF);
+                System.out.println("== " + lang);
+                run(lang + "／[xx%] 一段", store, "", false);
+                run(lang + "／ [xx%] 一段", store, " ", false);
+                run(lang + "／[ xx% ] 分三段", store, "", true);
+            }
+            guards();
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
+        System.out.println(failures == 0 ? "權重百分比欄：全部通過"
+                                         : "權重百分比欄：" + failures + " 項失敗");
+        System.exit(failures == 0 ? 0 : 1);
+    }
+
+    private static void run(String what, TranslationStore store, String lead, boolean split) {
+        List<Component> lines = new ArrayList<>();
+        lines.add(Component.literal("Stardew"));
+        lines.add(Component.literal("Stardew"));
+        int tightest = Integer.MAX_VALUE;
+        for (String[] r : ROWS) {
+            // 帶前導空白的那種，最寬那一行也一樣多一個空白，欄距不變
+            int gap = gapFor(r[0], "[" + r[1] + "]");
+            tightest = Math.min(tightest, gap);
+            lines.add(row(r[0], gap, lead, r[1], split));
+        }
+        check(what + "：測資裡最窄的欄距低於門檻（" + tightest + "px）",
+              tightest > 0 && tightest < LineTranslator.MIN_GAP_PX);
+        List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
+        for (int i = 2; i < lines.size(); i++) {
+            String[] r = ROWS[i - 2];
+            if (out.get(i).getString().equals(lines.get(i).getString())) {
+                check(what + "「" + r[0] + "」有翻到", false);
+                continue;
+            }
+            int want = valueX(lines.get(i));
+            int got = valueX(out.get(i));
+            System.out.println("  " + out.get(i).getString()
+                               + "　數值起點 原文=" + want + " 譯文=" + got);
+            check(what + "「" + r[0] + "」的百分比落在原文的位置"
+                  + "（原文 " + want + "、譯文 " + got + "）", want == got);
+        }
+    }
+
+    /**
+     * 放寬不能放到一般句子：小偏移後面接的是括號但不是數字（{@code [Cave]}），
+     * 或前面沒有字母（圖示的微調），都不是欄界。
+     */
+    private static void guards() {
+        System.out.println("== 不該認成欄界的");
+        check("「標籤 <+3>[47.4%]」認得欄界", gaps(run("Water spellsteal Scale"), space(3),
+                                                  run("[47.4%]")) == 1);
+        check("「標籤 <+3> [47.4%]」認得欄界", gaps(run("Water spellsteal Scale"), space(3),
+                                                   run(" [47.4%]")) == 1);
+        check("「標籤 <+3>[」「47.4%」「]」跨片段也認得", gaps(run("Water spellsteal Scale"),
+                space(3), run("["), run("47.4%"), run("]")) == 1);
+        check("「字 <+3>[Cave]」不是欄界", gaps(run("Ragni"), space(3), run("[Cave]")) == 0);
+        check("「字 <+3>[」後面沒東西不是欄界", gaps(run("Ragni"), space(3), run("[")) == 0);
+        check("「- +1 <+2>[5%]」前面沒有字母不是欄界", gaps(run("- +1 "), space(2),
+                                                       run("[5%]")) == 0);
+    }
+
+    private static int gaps(LineTranslator.Run... runs) {
+        int n = 0;
+        for (boolean b : LineTranslator.tooltipGaps(List.of(runs))) {
+            if (b) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    private static LineTranslator.Run run(String text) {
+        return new LineTranslator.Run(false, 0, WYNN, text);
+    }
+
+    private static LineTranslator.Run space(int px) {
+        return new LineTranslator.Run(true, px, SpaceOffset.styleFor(WYNN), SpaceOffset.encode(px));
+    }
+
+    /** Wynntils 的算法：數值靠右排到最寬那一行。 */
+    private static int gapFor(String label, String value) {
+        return Math.max(0, WIDEST - measure(Component.literal(label + value)));
+    }
+
+    private static Component row(String label, int gap, String lead, String pct, boolean split) {
+        MutableComponent c = Component.empty();
+        c.append(Component.literal(label).withStyle(WYNN));
+        c.append(Component.literal(SpaceOffset.encode(gap))
+                 .withStyle(SpaceOffset.styleFor(WYNN)));
+        if (split) {
+            c.append(Component.literal(lead + "[").withStyle(PCT));
+            c.append(Component.literal(pct).withStyle(PCT));
+            c.append(Component.literal("]").withStyle(PCT));
+        } else {
+            c.append(Component.literal(lead + "[" + pct + "]").withStyle(PCT));
+        }
+        return c;
+    }
+
+    /** 「[」畫在第幾個像素。 */
+    private static int valueX(Component c) {
+        int[] x = {0};
+        int[] found = {Integer.MIN_VALUE};
+        c.visit((style, text) -> {
+            text.codePoints().forEach(cp -> {
+                if (found[0] != Integer.MIN_VALUE) {
+                    return;
+                }
+                if (cp == '[') {
+                    found[0] = x[0];
+                    return;
+                }
+                x[0] += advance(cp);
+            });
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return found[0];
+    }
+
+    private static int advance(int cp) {
+        if (cp >= 0xCF000 && cp <= 0xD0400) {
+            return cp - 0xD0000;               // 排版偏移
+        }
+        if (cp >= 0x2E80) {
+            return 9;
+        }
+        return switch (cp) {
+            case 'i', '.', ':', ',', ';', '!' -> 2;
+            case 'l' -> 3;
+            case '[', ']', '(', ')' -> 4;
+            case 't', 'I', ' ' -> 4;
+            case 'f', 'k' -> 5;
+            default -> 6;
+        };
+    }
+
+    static int measure(Component component) {
+        int[] w = {0};
+        component.visit((style, text) -> {
+            text.codePoints().forEach(cp -> w[0] += advance(cp));
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return w[0];
+    }
+
+    private static void check(String what, boolean ok) {
+        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
+        if (!ok) {
+            failures++;
+        }
+    }
+}
