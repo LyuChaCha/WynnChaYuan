@@ -318,6 +318,12 @@ public final class TranslationStore {
         market.clear();
         ordered.clear();
         byQuest.clear();
+        questSeq.clear();
+        questSeqAt.clear();
+        seqKeys.clear();
+        seqQuestOf.clear();
+        bySpeaker.clear();
+        unplacedLines.clear();
         nearWordCache.clear();
         lastNear = null;
         questCast.clear();
@@ -636,6 +642,13 @@ public final class TranslationStore {
                 // 不是每個扁平檔都能這樣用：`gui.json` 那種收的是整行，
                 // 把它們全部當成詞會在不相干的句子裡亂換。所以用檔名明說。
                 readFlat(obj, file.getFileName().toString().endsWith("-terms.json"));
+                if (file.getFileName().toString().equals("quest.json")) {
+                    for (String key : obj.keySet()) {
+                        if (!key.startsWith("_") && !key.isBlank()) {
+                            unplacedLines.add(key.strip());   // 見 #forecast
+                        }
+                    }
+                }
                 for (String key : obj.keySet()) {
                     String name = PageNames.nameOfTitle(key);
                     if (name != null && name.indexOf('{') < 0) {
@@ -823,6 +836,11 @@ public final class TranslationStore {
             // 收過就記下來，翻了沒有另外算——見 seenSources 的說明。
             if (src != null && !src.isBlank()) {
                 seenSources.add(src.strip());
+                // 還沒翻的也要排進去：它可能正是下一句，少了它會讓預測挑到後面那句。
+                // 見 #forecast。
+                noteSequence(key, src.strip(), questName(optString(e, "quest")),
+                        optString(e, "kind"), optString(e, "speaker"),
+                        "wiki".equals(optString(e, "source")));
             }
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
@@ -1752,7 +1770,10 @@ public final class TranslationStore {
                 String hit = unique(scoped, key);
                 if (hit != null) {
                     String better = curatedRival(hit, key);
-                    return better != null ? better : hit;
+                    String pick = better != null ? better : hit;
+                    if (aloneInQuest(pick, key, GlyphSplitter.stripGlyphChars(quest).strip())) {
+                        return pick;
+                    }
                 }
             }
         }
@@ -1839,6 +1860,379 @@ public final class TranslationStore {
         }
         return best;
     }
+
+    // ------------------------------------------------------------------
+    // 預測下一句（見 #forecast）
+    // ------------------------------------------------------------------
+
+    /**
+     * 任務台詞的一行，照語料的順序排。
+     *
+     * @param speaker 說話者，已正規化（見 {@link #speakerKey}）；沒標是空字串
+     * @param wiki    從 wiki 抄的（同一句話有兩個版本時，校訂版優先）
+     */
+    record SeqLine(String src, String speaker, boolean wiki) {}
+
+    /**
+     * 每個故事（任務、祕密發現）的台詞，照語料檔的順序。<b>還沒翻的也在裡面</b>：
+     * 預測要知道「下一句是哪一句」，跳過沒翻的那句就會挑到再下一句。
+     *
+     * <p>任務檔本來就照劇情的順序排（wiki 的對話頁是照劇情抄的，實機收的插在旁邊），
+     * {@code tools/quest-bundle.py} 合併時保留這個順序。
+     */
+    private final Map<String, List<SeqLine>> questSeq = new ConcurrentHashMap<>();
+
+    /** 每一句在 {@link #questSeq} 裡的位置（同一句可以出現好幾次）。 */
+    private final Map<String, Map<String, List<Integer>>> questSeqAt = new ConcurrentHashMap<>();
+
+    /** 已經排進去的條目鍵。疊層會把同一個條目讀兩次（墊底那層與上面那層）。 */
+    private final Set<String> seqKeys = ConcurrentHashMap.newKeySet();
+
+    /** 這一句排在哪幾個故事裡。「Alright!」這種短句十幾個任務都有。 */
+    private final Map<String, Set<String>> seqQuestOf = new ConcurrentHashMap<>();
+
+    /** 每個說話者講過的所有台詞（全庫、翻了沒都算）。見 {@link #forecast} 的競爭者。 */
+    private final Map<String, Set<String>> bySpeaker = new ConcurrentHashMap<>();
+
+    /** 扁平的 {@code quest.json}：還沒歸到任務、也不知道誰講的台詞。見 {@link #forecast}。 */
+    private final Set<String> unplacedLines = ConcurrentHashMap.newKeySet();
+
+    private void noteSequence(String entryKey, String src, String quest, String kind,
+                              String speaker, boolean wiki) {
+        String who = speakerKey(speaker);
+        if (!who.isEmpty()) {
+            bySpeaker.computeIfAbsent(who, k -> ConcurrentHashMap.newKeySet()).add(src);
+        }
+        if (quest == null || quest.isBlank()) {
+            return;
+        }
+        // 只排台詞。任務目標（「Talk to the Soldier at [...]」）畫在追蹤欄，不在對話框裡
+        if (kind != null && !kind.isBlank() && !"dialogue".equals(kind)) {
+            return;
+        }
+        String q = quest.strip();
+        if (!seqKeys.add(q + '\0' + entryKey)) {
+            return;
+        }
+        List<SeqLine> seq = questSeq.computeIfAbsent(q,
+                k -> new java.util.concurrent.CopyOnWriteArrayList<>());
+        questSeqAt.computeIfAbsent(q, k -> new ConcurrentHashMap<>())
+                .computeIfAbsent(src, k -> new java.util.concurrent.CopyOnWriteArrayList<>())
+                .add(seq.size());
+        seq.add(new SeqLine(src, who, wiki));
+        seqQuestOf.computeIfAbsent(src, k -> ConcurrentHashMap.newKeySet()).add(q);
+    }
+
+    /**
+     * 說話者的比對用寫法：只留名字那一列（剝掉圖示）、小寫、只留字母數字與問號。
+     *
+     * <p>名牌是遊戲畫的（{@code DialogueSpeaker}），語料的 speaker 是 wiki 抄的，
+     * 大小寫與空白不一定一樣。「???」是遊戲刻意藏名字的角色，問號要留著。
+     */
+    public static String speakerKey(String raw) {
+        String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(raw);
+        if (name == null) {
+            return "";
+        }
+        StringBuilder out = new StringBuilder(name.length());
+        for (int i = 0; i < name.length(); i++) {
+            char c = Character.toLowerCase(name.charAt(i));
+            if (Character.isLetterOrDigit(c) || c == '?') {
+                out.append(c);
+            }
+        }
+        return out.toString();
+    }
+
+    /**
+     * 這一句排在哪個故事裡。
+     *
+     * <p>先看 {@code prefer}（上一句的故事、追蹤中的任務）裡有沒有；都沒有時，
+     * 只有<b>一個</b>故事有這一句才回答。「Alright!」這種短句十幾個任務都有，
+     * 隨便挑一個當起點，下一句就會拿那個任務的台詞去比——實測會貼出別的任務的句子。
+     *
+     * @return 故事名；不知道或分不出是哪一個時回傳 {@code null}
+     */
+    public String sequenceQuestOf(String src, String... prefer) {
+        if (src == null) {
+            return null;
+        }
+        String key = src.strip();
+        Set<String> homes = seqQuestOf.get(key);
+        if (homes == null || homes.isEmpty()) {
+            return null;
+        }
+        for (String p : prefer) {
+            if (p != null) {
+                String q = GlyphSplitter.stripGlyphChars(p).strip();
+                if (homes.contains(q)) {
+                    return q;
+                }
+            }
+        }
+        return homes.size() == 1 ? homes.iterator().next() : null;
+    }
+
+    /**
+     * 這一句在故事裡排第幾。同一句出現好幾次時，取 {@code after} 之後的第一個，
+     * 沒有就取第一個。
+     *
+     * @return 位置；這個故事裡沒有這一句時回傳 -1
+     */
+    public int sequenceIndex(String quest, String src, int after) {
+        if (quest == null || src == null) {
+            return -1;
+        }
+        Map<String, List<Integer>> at = questSeqAt.get(quest);
+        List<Integer> spots = at == null ? null : at.get(src.strip());
+        if (spots == null || spots.isEmpty()) {
+            return -1;
+        }
+        for (int spot : spots) {
+            if (spot > after) {
+                return spot;
+            }
+        }
+        return spots.get(0);
+    }
+
+    /**
+     * 從前後文<b>預測</b>畫面上剛開始打的這句是哪一句——不等前綴長到全庫唯一。
+     *
+     * <h2>為什麼</h2>
+     * 逐字打字時要等開頭對上夠多字（全庫 12 個字、追蹤中的任務 4 個字）才敢認，
+     * 玩家看到的是每一句都先跑一段英文才換成中文。但對話是<b>一句接一句</b>來的：
+     * 上一句認出來是任務檔的第 N 句，下一句幾乎一定就在後面幾句裡；
+     * 對話框的名牌又寫著是誰在講。這兩件事夠把候選縮到一句，第一個字就認得出來。
+     *
+     * <h2>錯的中文比沒翻更糟</h2>
+     * 預測只在<b>沒有任何別的可能</b>時才給答案，所有條件都要成立：
+     * <ol>
+     *   <li>名牌上有名字，而且預測的那句語料標的就是這個人說的。</li>
+     *   <li>上一句之後的 {@code window} 句裡，對得上目前這幾個字的（說話者不知道或就是
+     *       這個人）只有這一句——同一句話的 wiki／校訂兩個版本算同一句。</li>
+     *   <li>整個故事裡、這個人在全庫講過的所有台詞裡、還沒歸屬的台詞（{@code quest.json}）
+     *       裡，<b>都沒有別句</b>也對得上這幾個字。所以玩家回頭再找 NPC、NPC 重講前面
+     *       那句提醒、或是順路跟同名的 NPC 聊天，只要那句在語料裡就不會猜錯。</li>
+     *   <li>「對得上」對別句從寬（岔開的地方是 {@code {} 就算，名字可能正打到一半），
+     *       對預測的那句從嚴（{@code fits}，跟就地取代沿用上一幀用的是同一條規則）。</li>
+     * </ol>
+     * 剩下猜得錯的只有「這句根本不在語料裡、開頭又剛好一樣」；那時下一個岔開的字一進來，
+     * 呼叫端就會退回原本的判斷（{@code fits} 不再成立）。
+     *
+     * @param typed  畫面上目前打到的模板
+     * @param quest  上一句所在的故事；沒有上一句時是追蹤中的任務
+     * @param after  上一句的位置；-1 表示不知道上一句，整個故事都是候選
+     * @param window 上一句之後看幾句
+     * @param speaker 名牌上的名字（原樣）
+     * @param floor  至少打出幾個字才敢猜
+     * @param fits   預測的那句還對不對得上（從嚴）
+     * @return 預測的那一句的原文；不夠確定就回傳 {@code null}
+     */
+    public String forecast(String typed, String quest, int after, int window, String speaker,
+                           int floor, java.util.function.BiPredicate<String, String> fits) {
+        if (typed == null || quest == null || speaker == null) {
+            return null;
+        }
+        String key = typed.strip();
+        String who = speakerKey(speaker);
+        if (key.isEmpty() || key.length() < floor || who.isEmpty()) {
+            return null;
+        }
+        return forecastUncached(key, GlyphSplitter.stripGlyphChars(quest).strip(), after,
+                window, who, fits);
+    }
+
+    private String forecastUncached(String key, String quest, int after, int window, String who,
+                                    java.util.function.BiPredicate<String, String> fits) {
+        List<SeqLine> seq = questSeq.get(quest);
+        if (seq == null) {
+            return null;
+        }
+        int from = after >= 0 ? after + 1 : 0;
+        int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
+        // 一、上一句後面那幾句裡，對得上的只能有一句（同一句話的兩個版本併成一組）
+        List<SeqLine> group = new java.util.ArrayList<>();
+        for (int i = from; i < to; i++) {
+            SeqLine line = seq.get(i);
+            if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
+                continue;                      // 語料說是別人講的
+            }
+            if (!looseFit(line.src(), key)) {
+                continue;
+            }
+            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
+                    && !versionOf(group.get(0).src(), line.src())) {
+                return null;                   // 兩句不同的話都可能，等它岔開
+            }
+            group.add(line);
+        }
+        if (group.isEmpty()) {
+            return null;
+        }
+        // 名牌要對得上：這一組裡至少有一條語料標的就是這個人
+        boolean vouched = false;
+        for (SeqLine line : group) {
+            vouched |= line.speaker().equals(who);
+        }
+        if (!vouched) {
+            return null;
+        }
+        // 挑有譯文的；兩個版本都有就用校訂版（理由同 #curatedRival）
+        String pick = null;
+        for (SeqLine line : group) {
+            String dst = entries.get(line.src());
+            if (dst == null || dst.isBlank() || !fits.test(line.src(), key)) {
+                continue;
+            }
+            if (pick == null || (!line.wiki() && fromWiki.contains(pick))) {
+                pick = line.src();
+            }
+        }
+        if (pick == null) {
+            return null;
+        }
+        // 二、別的地方也沒有任何一句對得上
+        for (SeqLine line : seq) {
+            if ((line.speaker().isEmpty() || line.speaker().equals(who))
+                    && rival(pick, line.src(), key)) {
+                return null;
+            }
+        }
+        Set<String> theirs = bySpeaker.get(who);
+        if (theirs != null) {
+            for (String src : theirs) {
+                if (rival(pick, src, key)) {
+                    return null;
+                }
+            }
+        }
+        for (String src : unplacedLines) {
+            if (rival(pick, src, key)) {
+                return null;
+            }
+        }
+        return pick;
+    }
+
+
+    /**
+     * 這個任務裡沒有<b>別句</b>也對得上這幾個字——連還沒翻的、岔在佔位符上的都算。
+     *
+     * <h2>為什麼前綴唯一還不夠</h2>
+     * 限定任務的前綴比對只看「以這幾個字開頭」的句子。可是畫面上的玩家名、地名是一個字
+     * 一個字打出來的，要打完才收成 {@code {u}}、{@code {p}}：打到「...S」時，
+     * 「...{u}, can we talk outside?」不算以它開頭，唯一的候選就成了「...S-S-Syndra?」，
+     * 整句貼錯（真語料逐字模擬抓到的）。還沒翻的句子也不在那份索引裡。
+     */
+    private boolean aloneInQuest(String pick, String key, String quest) {
+        List<SeqLine> seq = questSeq.get(quest);
+        if (seq == null) {
+            return true;                       // 沒有順序資料（舊格式的檔）：照舊
+        }
+        for (SeqLine line : seq) {
+            if (rival(pick, line.src(), key)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** {@code src} 是 {@code pick} 以外、也對得上目前這幾個字的另一句。 */
+    private boolean rival(String pick, String src, String key) {
+        return !src.equals(pick) && looseFit(src, key) && !versionOf(pick, src);
+    }
+
+    /**
+     * 從寬的「對得上」：開頭一樣，或岔開的位置在語料的佔位符上、而畫面上岔出去的那一截
+     * <b>可能正是那個佔位符打到一半</b>（見 {@link #couldBe}）。英式拼法也算。
+     */
+    static boolean looseFit(String src, String typed) {
+        if (src.startsWith(typed) || slotFits(src, typed)) {
+            return true;
+        }
+        String other = respell(typed);
+        return !other.equals(typed) && src.startsWith(other);
+    }
+
+    /**
+     * 畫面上的字跟 {@code src} 岔開的地方正好是一個佔位符，而岔出去的那一截
+     * <b>可能正是那個佔位符打到一半</b>（見 {@link #couldBe}）。
+     *
+     * <p>就地取代沿用上一幀時也用這一條（{@code DialogueRewriter#within}）：先前那邊要求
+     * 岔開之前至少對上 12 個字，預測在第一個字就認出「Hey, {u}! …」之後，打到名字的
+     * 那幾幀反而對不上、掉回英文再跳回中文。
+     */
+    public static boolean slotFits(String src, String typed) {
+        int room = Math.min(src.length(), typed.length());
+        int agreed = 0;
+        while (agreed < room && src.charAt(agreed) == typed.charAt(agreed)) {
+            agreed++;
+        }
+        if (agreed >= src.length() || src.charAt(agreed) != '{'
+                || typed.length() > agreed + FORECAST_NAME_ROOM) {
+            return false;
+        }
+        int close = src.indexOf('}', agreed);
+        String slot = close < 0 ? src.substring(agreed) : src.substring(agreed, close + 1);
+        return couldBe(slot, typed.substring(agreed));
+    }
+
+    /**
+     * 畫面上這一截，可能是佔位符 {@code slot} 還沒打完的樣子嗎。
+     *
+     * <p>不分青紅皂白都算「可能」的話，任務裡只要有一句以玩家名開頭（「{u}, why don't
+     * you…」），前 24 個字就永遠分不出是哪一句。名字只會是玩家自己的名字、地名只會是
+     * 地名清單裡的、數字只會是數字——不像的就不是。認不得的佔位符一律算「可能」。
+     */
+    private static boolean couldBe(String slot, String partial) {
+        if (partial.isEmpty()) {
+            return true;
+        }
+        if (slot.equals("{u}")) {
+            // Minecraft 的名字只有英數與底線、最多 16 個字：有空白就不是名字打到一半
+            if (partial.length() > 16) {
+                return false;
+            }
+            for (int i = 0; i < partial.length(); i++) {
+                char c = partial.charAt(i);
+                if (!(c < 128 && (Character.isLetterOrDigit(c) || c == '_'))) {
+                    return false;
+                }
+            }
+            List<String> names = com.wynnchayuan.capture.SelfNames.all();
+            if (names.isEmpty()) {
+                return true;                   // 還不知道玩家叫什麼：像名字的都算可能
+            }
+            String low = partial.toLowerCase(Locale.ROOT);
+            for (String name : names) {
+                if (name.toLowerCase(Locale.ROOT).startsWith(low)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (slot.equals("{p}")) {
+            return com.wynnchayuan.capture.PlaceNames.anyStartsWith(partial);
+        }
+        if (slot.equals("{#}")) {
+            // 句中圖示：畫面上是私用區的圖示字元（收成模板時才變成 {#}），不會是字母
+            return GlyphSplitter.isGlyphCodePoint(partial.codePointAt(0));
+        }
+        if (slot.startsWith("{~")) {
+            for (int i = 0; i < partial.length(); i++) {
+                if ("0123456789,.-+".indexOf(partial.charAt(i)) < 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return true;
+    }
+
+    /** 一個還沒收成佔位符的名字最多多長。跟 {@code DialogueRewriter.NAME_ROOM} 一樣。 */
+    private static final int FORECAST_NAME_ROOM = 24;
+
 
     private static final int NEAR_MIN_WORDS = 8;
 
@@ -2006,15 +2400,43 @@ public final class TranslationStore {
             if (fromWiki.contains(e.getKey()) || e.getKey().equals(wikiHit)) {
                 continue;
             }
+            // 別的任務的台詞不是這一句的校訂版。短句的用字重疊率很容易過門檻：
+            // The Missing Piece 的「Who are you!?」打到「Who a」，被換成 Point of No Return
+            // 的「Who are you now?」（四個字重疊三個），整句貼上「現在的你是誰？」。
+            // 校訂版要嘛跟它在同一個任務檔裡，要嘛還沒歸任務（quest.json）。
+            String home = questOfLine.get(wikiHit);
+            String theirs = questOfLine.get(e.getKey());
+            if (home != null && theirs != null && !home.equals(theirs)) {
+                continue;
+            }
             // 校訂版只有墊底那層翻了、wiki 版卻是上面那層翻的：換過去等於
             // 把簡體換成繁體。這時候留在命中的那條。
-            if (sameLine(wikiHit, e.getKey())
+            if (versionOf(wikiHit, e.getKey())
                     && layerOf(e.getKey()) >= layerOf(wikiHit)) {
                 return e.getKey();
             }
         }
         return null;
     }
+
+    /**
+     * 兩條原文是不是同一句話的兩個版本（wiki 抄的與實機校訂的），可以拿其中一條的譯文
+     * 代替另一條。
+     *
+     * <p>比 {@link #sameLine} 多要求一件事：兩邊都要有至少 {@link #VERSION_WORDS} 個不同的字。
+     * 用字重疊率在短句上不可靠——「What brings you here, child.」對「What brings you here?」
+     * 重疊八成、「Who are you!?」對「Who are you now?」七成五，卻都是不同的台詞；
+     * 先前被當成同一句換過去，打到一半貼出別句的中文（逐字模擬真語料抓到十幾句）。
+     * 真正的改詞版本（King's Recruit 的「You alright in there?」對「Are you alright in
+     * there?」）都是長句。
+     */
+    static boolean versionOf(String a, String b) {
+        return words(a).size() >= VERSION_WORDS && words(b).size() >= VERSION_WORDS
+                && sameLine(a, b);
+    }
+
+    /** 見 {@link #versionOf}。 */
+    private static final int VERSION_WORDS = 6;
 
     /** 兩條原文是不是同一句話的兩個版本。見 {@link #curatedRival}。 */
     static boolean sameLine(String a, String b) {

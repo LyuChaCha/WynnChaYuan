@@ -66,6 +66,24 @@ public final class DialogueSpeaker {
     }
 
     /**
+     * 畫面上這個對話框的名牌，不比對內文。
+     *
+     * <p>給「預測下一句」用（{@code DialogueForecast}）：就地取代那條路跟名牌讀的是
+     * <b>同一則</b>原始訊息（{@link #noteRaw} 在最高優先權先跑），不會錯開一句。
+     *
+     * @return 名牌上的名字；沒有名牌就回傳 {@code null}
+     */
+    public static String current() {
+        return current;
+    }
+
+    /** 測試用：直接指定名牌（實機由 {@link #noteRaw} 從原始訊息讀）。 */
+    public static void noteName(String name) {
+        current = named(name == null ? null : name.strip());
+        currentText = "";
+    }
+
+    /**
      * 畫面上這個對話框的名牌——但只在它<b>就是這一句</b>的對話框時。
      *
      * <h2>為什麼要比對內文</h2>
