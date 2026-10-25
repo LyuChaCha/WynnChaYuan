@@ -66,6 +66,8 @@ public final class ActionBarListener {
     public void onGameInfo(SystemMessageEvent.GameInfoReceivedEvent event) {
         // 名牌只在這一手資料裡，對話事件拿不到。見 DialogueSpeaker#noteRaw
         com.wynnchayuan.capture.DialogueSpeaker.noteRaw(event.getMessage());
+        // 診斷：每一句打字之前拿得到什麼（進度條、名牌、任務）、多久認出來。見 DialogueStartLog
+        com.wynnchayuan.render.DialogueStartLog.frame(event.getMessage());
         DialogueProbe.record(event.getMessage());
         // 有選項的對話另外留格子錄——不然八格會被沒有選項的用光，
         // 而最需要看的偏偏是有選項的那一種。見 DialogueProbe#recordChoices。

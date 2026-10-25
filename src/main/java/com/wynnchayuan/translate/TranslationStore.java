@@ -2540,6 +2540,50 @@ public final class TranslationStore {
         return next != null && next.startsWith(bare);
     }
 
+    /**
+     * 語料裡還有沒有<b>任何一句</b>（有譯文的）可能就是畫面上正在打的這句。
+     *
+     * <p>就地取代在認出是哪一句之前先不畫英文（見 {@code DialogueRewriter#holds}）；
+     * 一句根本不在語料裡的話，等也等不到，越早知道越早把英文放出來。
+     * 「對得上」照 {@link #looseFit} 的意思：開頭一樣，或岔在一個看起來正打到一半的
+     * 佔位符上（「Hey, STE」對「Hey, {u}! …」）。
+     */
+    public boolean couldStillMatch(String typed) {
+        if (typed == null) {
+            return false;
+        }
+        String key = typed.strip();
+        if (key.isEmpty()) {
+            return true;
+        }
+        if (startsSome(key)) {
+            return true;
+        }
+        String other = respell(key);
+        if (!other.equals(key) && startsSome(other)) {
+            return true;
+        }
+        // 岔在佔位符上的：語料那條在第 cut 個字是「{」
+        for (int cut = key.length() - 1; cut >= 0; cut--) {
+            String head = key.substring(0, cut) + "{";
+            int scanned = 0;
+            for (String src : ordered.tailSet(head)) {
+                if (!src.startsWith(head) || ++scanned > 64) {
+                    break;
+                }
+                if (slotFits(src, key)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean startsSome(String key) {
+        String next = ordered.ceiling(key);
+        return next != null && next.startsWith(key);
+    }
+
     /** 每一條原文，排序後放著，只為了 {@link #hasLonger}。 */
     private final java.util.concurrent.ConcurrentSkipListSet<String> ordered =
             new java.util.concurrent.ConcurrentSkipListSet<>();
