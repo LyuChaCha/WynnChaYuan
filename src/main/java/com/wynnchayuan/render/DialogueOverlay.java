@@ -224,7 +224,10 @@ public final class DialogueOverlay {
         // 原始訊息偶爾也還是舊的）。照單全收的話，小框就是「上一句 → 空 → 上一句 →
         // 空 → 這一句」：使用者回報的「閃爍兩下才完整翻譯」。新的一句已經開始之後，
         // 上一句的文字一律不理。
-        String whole = dialogue.getString();
+        // 比對「同一句」用看得見的字：Wynntils 給的文字結尾常帶一個排版偏移字元
+        //（U+D00xx，跟著打到的長度每一幀都換一個），照原樣比的話每一幀都像換了一句——
+        // test3 實機：快取永遠用不上、每幀重算，認不出來的那幾幀小框就收掉一次。
+        String whole = plainOf(dialogue.getString());
         long now = System.currentTimeMillis();
         if (!lineText.isEmpty() && whole.startsWith(lineText)) {
             lineText = whole;                  // 同一句，又多打了幾個字
@@ -258,7 +261,12 @@ public final class DialogueOverlay {
         // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
         String said = null;
+        // 每一行先拿掉排版偏移字元（見上面 plainOf）：留著的話模板就跟語料對不上，
+        // 認出來的那條也沒辦法沿用，每一幀重算、算不出來的那幀小框就收掉
         String[] raws = dialogue.getString().split("\n");
+        for (int r = 0; r < raws.length; r++) {
+            raws[r] = plainOf(raws[r]);
+        }
         List<String> sources = new ArrayList<>(raws.length);
         List<String> seenRaws = new ArrayList<>(raws.length);
         List<List<Component>> rendered = new ArrayList<>(raws.length);
@@ -338,6 +346,7 @@ public final class DialogueOverlay {
             current = blankLike(lastShown);
             speaker = null;
             lastUpdate = now;
+            logPanel();
             return;
         }
         if (any && !bodyOff) {
@@ -353,6 +362,29 @@ public final class DialogueOverlay {
         if ((any && !bodyOff) || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
+        logPanel();
+    }
+
+    /** 診斷：這一則事件之後小框畫著幾個字、幾列（見 DialogueStartLog#panelFrame）。 */
+    private static void logPanel() {
+        int chars = 0;
+        for (Component row : current) {
+            chars += (int) row.getString().codePoints().filter(cp -> !Character.isWhitespace(cp)
+                    && cp != 0x3000).count();
+        }
+        DialogueStartLog.panelFrame(lineText.length(), chars, current.size());
+    }
+
+    /** 只留看得見的字：拿掉排版偏移與材質包圖示（見 {@link #setCurrent} 開頭）。 */
+    static String plainOf(String text) {
+        if (text == null) {
+            return "";
+        }
+        StringBuilder out = new StringBuilder(text.length());
+        text.codePoints()
+                .filter(cp -> !com.wynnchayuan.translate.SpaceOffset.isOffset(cp))
+                .forEach(out::appendCodePoint);
+        return out.toString().strip();
     }
 
     /** 這一句目前打到的文字；換句時移到 {@link #previousText}。見 {@link #setCurrent}。 */

@@ -66,6 +66,7 @@ public final class DialogueForecastTest {
         nameFirst();
         midway(store);
         panelFlicker(store);
+        pacing();
 
         corpus();
 
@@ -426,7 +427,10 @@ public final class DialogueForecastTest {
         st.setAccessible(true);
         st.set(null, new com.wynnchayuan.capture.CaptureStore(tmp.resolve("captured.json")));
 
-        for (boolean named : new boolean[] {true, false}) {
+        // 實機（test3）：Wynntils 給的文字結尾帶一個排版偏移字元，每一幀換一個
+        for (int variant = 0; variant < 4; variant++) {
+            boolean named = variant % 2 == 0;
+            tail = variant >= 2;
             begin();
             DialogueOverlay.resetForTest();
             String a = LINES[3][1];                    // Good work. Now head below deck.
@@ -465,16 +469,59 @@ public final class DialogueForecastTest {
                     shown.add(now);
                 }
             }
-            String label = named ? "（有名牌，會預測）" : "（沒名牌，先空著）";
+            String label = (named ? "（有名牌，會預測" : "（沒名牌，先空著")
+                    + (tail ? "、結尾帶排版偏移）" : "）");
             check("小框換句時框不會收掉再冒出來" + label + "（收掉 " + hides + " 次）", hides == 0);
             check("小框換句後不再出現上一句的譯文" + label + "（" + stale + " 次）", stale == 0);
             check("小框這一句的譯文只出現一次、沒有換來換去" + label + "（" + shown + "）",
                   shown.size() == 1 && shown.get(0).contains(LINES[2][2]));
         }
+        tail = false;
     }
 
+    /**
+     * 「逐字忽快忽慢」（test3）：數字在中文裡比英文早出現，英文還沒打到數字時中文只能停在
+     * 數字前面，打到了就一口氣跳出一大段。跳的那段要分幾幀補上（DialogueRewriter#MAX_STEP），
+     * 一幀不准長太多字，也不准倒退。
+     */
+    private static void pacing() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-forecast-pace");
+        Files.writeString(dir.resolve("quest.json"), "{"
+                + "\"Please go to the old mill by the river and fetch me {~} sacks of grain.\": "
+                + "\"請幫我拿 {~} 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。\"}",
+                StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        begin();
+        List<String> frames = type(store,
+                "Please go to the old mill by the river and fetch me 12 sacks of grain.", null);
+        int prev = -1;
+        int worst = 0;
+        boolean back = false;
+        for (String f : frames) {
+            if (blank(f)) {
+                continue;
+            }
+            int len = f.codePointCount(0, f.length());
+            if (prev >= 0) {
+                worst = Math.max(worst, len - prev);
+                back |= len < prev;
+            }
+            prev = len;
+        }
+        check("中文一幀最多長 " + DialogueRewriter.MAX_STEP + " 個字（實際最多 " + worst + "）",
+              worst <= DialogueRewriter.MAX_STEP);
+        check("中文不倒退", !back);
+        check("最後補成整句", "請幫我拿 12 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。".equals(last(frames)));
+    }
+
+    /** 見 {@link #panelFlicker}：文字結尾要不要帶一個跟著長度變的排版偏移字元。 */
+    private static boolean tail;
+
     private static void panelEvent(String text, TranslationStore store) {
-        DialogueOverlay.setCurrent(com.wynntils.core.text.StyledText.fromString(text), store);
+        String shown = tail ? text + new String(Character.toChars(0xD0000 + 80 - text.length()))
+                : text;
+        DialogueOverlay.setCurrent(com.wynntils.core.text.StyledText.fromString(shown), store);
     }
 
     private static String text(List<net.minecraft.network.chat.Component> rows) {

@@ -267,9 +267,11 @@ public final class DialogueTypingTest {
             if (settledAt == null) {
                 continue;                      // 這句從頭到尾沒翻出來，不是這裡的事
             }
+            // 字停下來之後還在「補字」（只變長、最後變成整句）不算變：那是跳太多時分幾幀補上
+            //（DialogueRewriter#MAX_STEP）。換成別的字才算。
             boolean moved = false;
             for (String frame : still) {
-                if (!settledAt.equals(frame)) {
+                if (!settledAt.equals(frame) && (frame == null || !settledAt.startsWith(frame))) {
                     moved = true;
                 }
             }
