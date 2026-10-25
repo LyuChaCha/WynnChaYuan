@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Through the Pipes",
-  "count": 210,
-  "translated": 210,
+  "count": 259,
+  "translated": 259,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -333,14 +333,14 @@
    "source": "wiki"
   },
   "Through the Pipes#032": {
-   "src": "Y-You will? I knew there was still some good left in this world!",
-   "dst": "도, 도와준다고요? 세상에 아직 좋은 사람이 있을 줄 알았어요!",
+   "src": "Y-You will? I knew there was some good left in this world!",
+   "dst": "도, 도와준다고요? 이 세상에 좋은 사람이 남아 있을 줄 알았어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
    "stage": "Stage 1",
    "speaker": "Fichu",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Through the Pipes#033": {
    "src": "Right! Last time I saw that raccoon, it was running into an alleyway south of the town center. It can't have gone too far!",
@@ -2111,6 +2111,496 @@
    "stage": "Stage 11",
    "speaker": "Fichu",
    "source": "wiki"
+  },
+  "Through the Pipes#223": {
+   "src": "What will I do?\nFichu",
+   "dst": "난 어떡하지?\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#224": {
+   "src": "If I see that raccoon...\nFichu",
+   "dst": "그 너구리 보기만 해 봐...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#225": {
+   "src": "I'm rushing to finish a gift I made for Sovereign Soosu! The festival's gonna be this week, and I can't miss my opportunity to give it to her!",
+   "dst": "Soosu 군주님께 드릴 선물을 서둘러 마무리하는 중이에요! 축제가 이번 주라서, 선물을 드릴 기회를 놓칠 수 없거든요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#226": {
+   "src": "Just as I was about to add the finishing details, a raccoon snuck up on me and snatched it from my bag! Can you believe it?",
+   "dst": "마무리 손질을 하려던 참에 너구리가 몰래 다가와서 가방에서 그걸 낚아채 갔어요! 믿어져요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#228": {
+   "src": "Oh, you're wondering what the gift is? Well, that's a surprise!",
+   "dst": "아, 선물이 뭔지 궁금해요? 그건 깜짝 선물이라 비밀이에요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#229": {
+   "src": "It might be the best thing I've made all year. I really think Soosu would love it, especially for all of the work she's done for our district!",
+   "dst": "올해 만든 것 중 최고일지도 몰라요. 특히 Soosu가 우리 구역을 위해 해 준 그 많은 일을 생각하면, 정말 좋아할 거예요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#230": {
+   "src": "If you want to see it, you'll have to help me find it. How does that sound?",
+   "dst": "보고 싶으면 찾는 걸 도와줘야 해요. 어때요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#231": {
+   "src": "The water seems to have cleared the debris.",
+   "dst": "물살에 잔해가 쓸려 나간 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#232": {
+   "src": "It looks like a valve handle could fit into this slot.",
+   "dst": "이 홈에 밸브 손잡이가 들어갈 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#233": {
+   "src": "{#} to add fuel to\n the generator\n[{~}/{~}]",
+   "dst": "{#} 발전기에\n 연료 넣기\n[{~}/{~}]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#227": {
+   "src": "This water looks too dangerous to swim in.",
+   "dst": "이 물은 헤엄치기엔 너무 위험해 보인다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#234": {
+   "src": "Different materials around the room can be used as raft parts.",
+   "dst": "방 안 곳곳의 여러 재료를 뗏목 부품으로 쓸 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#235": {
+   "src": "{#} Right-Click to sail\n{#} Left-Click to reset",
+   "dst": "{#} 우클릭하여 출항\n{#} 좌클릭하여 초기화",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#236": {
+   "src": "Some raft parts may have unique functions.",
+   "dst": "어떤 뗏목 부품에는 특별한 기능이 있을지도 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#237": {
+   "src": "Place the raft parts on the building mat to construct your raft.",
+   "dst": "뗏목 부품을 조립 매트 위에 놓아 뗏목을 만들자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#238": {
+   "src": "There's... no propellers here?",
+   "dst": "여기엔... 프로펠러가 없나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#239": {
+   "src": "Maybe you need to find a different method of propulsion.",
+   "dst": "다른 추진 방법을 찾아야 할지도 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#240": {
+   "src": "You must have a fully constructed raft to set sail.",
+   "dst": "출항하려면 뗏목을 완전히 조립해야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#241": {
+   "src": "The lever appears to be jammed. Maybe it needs power?",
+   "dst": "레버가 꽉 끼어 있는 것 같다. 전력이 필요한 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#242": {
+   "src": "It looks like this station hasn't been powered in a very long time.",
+   "dst": "이 역은 아주 오랫동안 전력이 끊겨 있었던 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#243": {
+   "src": "Fortunately, it still seems to be accepting power.",
+   "dst": "다행히 아직 전력은 받을 수 있는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#244": {
+   "src": "You could fit this with a grappling hook.",
+   "dst": "여기에 Grappling Hook을 걸 수 있을 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#245": {
+   "src": "You seem to have gone off track. Sadly, your raft isn't able to survive this far.",
+   "dst": "경로를 벗어난 것 같다. 아쉽게도 뗏목이 여기까지는 버티지 못한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#246": {
+   "src": "Your raft seems to have vanished into thin air. (Unknown error occured!)",
+   "dst": "뗏목이 감쪽같이 사라진 것 같다. (알 수 없는 오류 발생!)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#247": {
+   "src": "You shouldn't open this just yet.",
+   "dst": "아직은 이걸 열면 안 될 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#248": {
+   "src": "It's locked...\nFichu",
+   "dst": "잠겼네...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#249": {
+   "src": "Nothing interesting to steal...\nFichu",
+   "dst": "훔칠 만한 재밌는 건 없네...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#250": {
+   "src": "But I would never steal, right?\nFichu",
+   "dst": "그래도 난 절대 안 훔치지, 그치?\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#251": {
+   "src": "No wonder the water tastes so weird...\nFichu",
+   "dst": "어쩐지 물맛이 이상하더라...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#252": {
+   "src": "Hmm...\nFichu",
+   "dst": "흠...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#253": {
+   "src": "Stupid lever!\nFichu",
+   "dst": "멍청한 레버!\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#254": {
+   "src": "I should take these...\nFichu",
+   "dst": "이건 챙겨야겠다...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#255": {
+   "src": "This workbench is quite convenient.\nFichu",
+   "dst": "이 작업대 꽤 편리하네.\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#256": {
+   "src": "Oh, don't mind me. I'm just seeing if there's anything interesting here.",
+   "dst": "아, 신경 쓰지 마요. 여기 뭐 재밌는 게 있나 보는 중이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#257": {
+   "src": "Usually there's cool things to, well- steal, but this place seems to be a bust.",
+   "dst": "보통은 멋진 게 있어서, 그러니까- 훔칠 수 있는데, 여긴 꽝인 것 같네요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#258": {
+   "src": "There sure is a lot hidden underground, you wouldn't believe some of the things I've seen!",
+   "dst": "지하엔 숨겨진 게 정말 많아요, 내가 본 것 중엔 믿기 힘든 것도 있다니까요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#259": {
+   "src": "They seem to be busy with something. You should check in later.",
+   "dst": "뭔가로 바빠 보인다. 나중에 다시 와 보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#260": {
+   "src": "That's great to hear! I haven't found anything useful unfortunately.",
+   "dst": "잘됐네요! 난 아쉽게도 쓸 만한 걸 못 찾았어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#261": {
+   "src": "I'm quite interested to see what you come up with, return to me when you're done!",
+   "dst": "뭘 생각해 낼지 정말 궁금해요, 다 되면 나한테 다시 와요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#262": {
+   "src": "You know what, not a bad idea! Let's give it a try!",
+   "dst": "있잖아요, 나쁘지 않은 생각이에요! 한번 해 봐요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#263": {
+   "src": "{#} Right-Click to board",
+   "dst": "{#} 우클릭하여 탑승",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#264": {
+   "src": "Trains are cool... not when they're speeding right next to you.",
+   "dst": "열차는 멋지죠... 바로 옆에서 쌩쌩 달릴 때만 빼고요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#265": {
+   "src": "Oh, thank the Queen! It's the halfway point.",
+   "dst": "아, 여왕님 감사합니다! 중간 지점이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#266": {
+   "src": "Woah, that looks like an expensive ring! You really think the raccoon will take it?",
+   "dst": "와, 비싸 보이는 반지네요! 정말 너구리가 그걸 가져갈까요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#267": {
+   "src": "Hold on, where did you even get that- nevermind, I won't ask any questions. Give it a try!",
+   "dst": "잠깐, 그건 대체 어디서 난- 됐어요, 아무것도 안 물어볼게요. 해 봐요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#268": {
+   "src": "{#} to place Shiny Object",
+   "dst": "{#} 반짝이는 물건 놓기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#269": {
+   "src": "Oh! That was surprisingly easy.",
+   "dst": "오! 생각보다 쉬웠네요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#270": {
+   "src": "I hope no one cared about that ring, because they sure aren't getting it back...",
+   "dst": "그 반지 주인이 신경 안 썼으면 좋겠네요, 절대 못 돌려받을 테니까요...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#271": {
+   "src": "Great work! After all of that, we've finally gotten the gift back! I knew we could do it.",
+   "dst": "잘했어요! 그 난리 끝에 드디어 선물을 되찾았어요! 우리라면 할 수 있을 줄 알았어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
   }
  }
 }
