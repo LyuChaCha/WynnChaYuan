@@ -44,6 +44,12 @@ public final class ActionBarListener {
      */
     private static final int GRACE = 3;
 
+    /**
+     * 對話框消失多久才算「這段對話結束了」（見 DialogueProgress#endConversation）。
+     * 比 {@link #GRACE} 寬得多：兩句之間那幾幀空檔不能被當成對話結束。
+     */
+    private static final int CONVERSATION_GAP = 20;
+
     private int missing = 0;
 
     /**
@@ -66,6 +72,10 @@ public final class ActionBarListener {
     public void onGameInfo(SystemMessageEvent.GameInfoReceivedEvent event) {
         // 名牌只在這一手資料裡，對話事件拿不到。見 DialogueSpeaker#noteRaw
         com.wynnchayuan.capture.DialogueSpeaker.noteRaw(event.getMessage());
+        // 進度條（這段對話講到第幾句），預測下一句用。見 DialogueProgress
+        com.wynnchayuan.capture.DialogueProgress.noteRaw(event.getMessage());
+        // 診斷：每一句打字之前拿得到什麼（進度條、名牌、任務）、多久認出來。見 DialogueStartLog
+        com.wynnchayuan.render.DialogueStartLog.frame(event.getMessage());
         DialogueProbe.record(event.getMessage());
         // 有選項的對話另外留格子錄——不然八格會被沒有選項的用光，
         // 而最需要看的偏偏是有選項的那一種。見 DialogueProbe#recordChoices。
@@ -307,6 +317,10 @@ public final class ActionBarListener {
 
         inDialogue = present;
         if (!present) {
+            if (missing + 1 >= CONVERSATION_GAP) {
+                // 對話框收掉了：這段對話結束（講完或被打斷）。進度條「還沒講完」不再算數。
+                com.wynnchayuan.capture.DialogueProgress.endConversation();
+            }
             if (++missing >= GRACE && DialogueOverlay.hasContent()) {
                 DialogueOverlay.clear();
             }
