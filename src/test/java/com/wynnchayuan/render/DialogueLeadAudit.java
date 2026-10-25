@@ -40,7 +40,7 @@ public final class DialogueLeadAudit {
     /** 模擬用的玩家名。Wynncraft 在對話裡送的是全大寫。 */
     private static final String PLAYER = "STEVEN";
 
-    record Line(String quest, String raw, String speaker, String group) {}
+    record Line(String quest, String raw, String speaker, String group, String stage) {}
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -48,6 +48,22 @@ public final class DialogueLeadAudit {
         String lang = System.getProperty("wcy.lang", Languages.DEFAULT);
         int every = Integer.parseInt(System.getProperty("wcy.every", "1"));
         SelfNames.remember(PLAYER);
+        // 實驗開關：-Pvariant=nospeaker / floor3 / floor2 / nounplaced
+        String variant = System.getProperty("wcy.variant", "");
+        DialogueForecast.speakerScope = !variant.contains("nospeaker");
+        DialogueForecast.nextLine = !variant.contains("nonext");
+        if (variant.contains("next1")) {
+            DialogueForecast.nextFloor = 1;
+        } else if (variant.contains("next3")) {
+            DialogueForecast.nextFloor = 3;
+        }
+        if (variant.contains("floor3")) {
+            DialogueForecast.speakerFloor = 3;
+        } else if (variant.contains("floor2")) {
+            DialogueForecast.speakerFloor = 2;
+        }
+        TranslationStore.unplacedRivals = !variant.contains("nounplaced");
+        System.out.println("實驗：" + (variant.isEmpty() ? "預設" : variant));
 
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
         List<Path> layers = new ArrayList<>();
@@ -83,6 +99,7 @@ public final class DialogueLeadAudit {
         Map<String, String> panelAnswer = new java.util.HashMap<>();
         for (List<Line> story : picked.values()) {
             for (Line l : story) {
+                com.wynnchayuan.capture.DialogueProgress.settle(-1);
                 CurrentQuest.set(l.quest());
                 speak(null);
                 DialogueRewriter.forget();
@@ -130,17 +147,30 @@ public final class DialogueLeadAudit {
             DialogueRewriter.forget();
             DialogueForecast.forgetAll();
             panelCache = new String[3];
-            for (Line l : story) {
+            for (int li = 0; li < story.size(); li++) {
+                Line l = story.get(li);
                 if (!chained) {
                     DialogueRewriter.forget();
                     DialogueForecast.forgetAll();
                     panelCache = new String[3];
                 }
+                // 進度條：照 wiki 的階段切成一段一段對話，一段的最後一句停在滿格，
+                // 其他句停在半格（「還沒講完」）。單句模擬沒有上一句，不給。
+                boolean lastOfTalk = li + 1 >= story.size()
+                        || !story.get(li + 1).stage().equals(l.stage());
+                com.wynnchayuan.capture.DialogueProgress.settle(
+                        !chained ? -1 : lastOfTalk ? com.wynnchayuan.capture.DialogueProgress.FULL : 100);
                 CurrentQuest.set(tracked ? l.quest() : null);
                 speak(nameplate ? l.speaker() : null);
+                DialogueForecast f = DialogueRewriter.FORECAST;
+                String anchor = f.fresh() ? f.anchorQuest() : null;
+                int anchorAt = f.index();
                 List<String> frames = panel ? panelFrames(l.raw(), store) : typeOut(l.raw(), store);
-                byGroup.computeIfAbsent(l.group(), g -> new Stats(title + "・" + g))
-                        .add(frames, l.raw().length(), want.get(l.raw()));
+                Stats stats = byGroup.computeIfAbsent(l.group(), g -> new Stats(title + "・" + g));
+                stats.add(frames, l.raw().length(), want.get(l.raw()));
+                if (!panel && chained) {
+                    stats.why(frames, l, store, anchor, anchorAt, tracked ? l.quest() : null);
+                }
             }
         }
         byGroup.values().forEach(Stats::print);
@@ -278,6 +308,44 @@ public final class DialogueLeadAudit {
             return out.toString();
         }
 
+        final Map<String, Integer> reasons = new java.util.TreeMap<>();
+        int slow;
+
+        /**
+         * 空白至少 {@link #SLOW} 個字（或放了英文）的句子：最後一個空白幀為什麼還認不出來。
+         * 用這一句開始時的「上一句」重算兩層的判斷，記下卡在哪一關。
+         */
+        void why(List<String> frames, Line l, TranslationStore store, String anchor,
+                 int anchorAt, String trackedQuest) {
+            int blank = 0;
+            while (blank < frames.size() && blank < l.raw().length()
+                    && "".equals(frames.get(blank))) {
+                blank++;
+            }
+            boolean released = blank < l.raw().length() && blank < frames.size()
+                    && frames.get(blank) == null;
+            if (blank < SLOW && !released) {
+                return;
+            }
+            slow++;
+            String raw = l.raw().substring(0, Math.max(1, blank));
+            String typed = DialogueIcons.parts(raw, store).template().strip();
+            String reason;
+            if (anchor == null && trackedQuest == null) {
+                reason = "沒有上一句也沒追蹤（全庫要 12 字）";
+            } else {
+                String quest = anchor != null ? anchor : trackedQuest;
+                String b = store.explainQuest(typed, quest);
+                String a = l.speaker() == null ? "沒有名牌"
+                        : store.explainForecast(typed, quest, anchor != null ? anchorAt : -1,
+                                DialogueForecast.WINDOW, l.speaker(), DialogueRewriter::within);
+                reason = "任務範圍：" + b + "／預測：" + a;
+            }
+            reasons.merge((released ? "[放英文] " : "[慢] ") + reason, 1, Integer::sum);
+        }
+
+        static final int SLOW = 5;
+
         void print() {
             List<Integer> v = new ArrayList<>(leads);
             Collections.sort(v);
@@ -293,6 +361,13 @@ public final class DialogueLeadAudit {
                             + "  空白ms 平均 %3.0f P90 %3d 最長 %3d  沒翻出來 %d  中→英 %d  貼錯 %d%n",
                     title, n, mean, n == 0 ? 0 : v.get(n / 2), n == 0 ? 0 : v.get((int) (n * 0.9)),
                     n == 0 ? 0 : 100.0 * zero / n, blank, blankP90, blankMax, never, flips, wrong);
+            if (slow > 0) {
+                System.out.println("    空白 >= " + SLOW + " 字或放英文：" + slow + " 句");
+                reasons.entrySet().stream()
+                        .sorted((x, y) -> y.getValue() - x.getValue())
+                        .limit(25)
+                        .forEach(e -> System.out.printf("      %5d  %s%n", e.getValue(), e.getKey()));
+            }
             if (Boolean.getBoolean("wcy.samples")) {
                 for (String w : wrongSamples) {
                     System.out.println("    [錯] " + w);
@@ -417,6 +492,7 @@ public final class DialogueLeadAudit {
         for (Map.Entry<String, List<com.google.gson.JsonObject>> story : raw.entrySet()) {
             List<com.google.gson.JsonObject> ls = story.getValue();
             List<Line> lines = new ArrayList<>();
+            String lastStage = "";
             for (int i = 0; i < ls.size(); i++) {
                 com.google.gson.JsonObject e = ls.get(i);
                 String src = e.get("src").getAsString().strip();
@@ -427,7 +503,13 @@ public final class DialogueLeadAudit {
                 if (shown == null) {
                     continue;
                 }
-                lines.add(new Line(story.getKey(), shown, emptyToNull(str(e, "speaker")), group));
+                String stage = str(e, "stage");
+                if (stage.isBlank()) {
+                    stage = lastStage;             // 實機收的沒標階段：跟著前一句
+                }
+                lastStage = stage;
+                lines.add(new Line(story.getKey(), shown, emptyToNull(str(e, "speaker")), group,
+                        stage));
             }
             out.put(story.getKey(), lines);
         }
@@ -465,7 +547,7 @@ public final class DialogueLeadAudit {
             }
             String shown = fill(key.strip());
             if (shown != null) {
-                out.add(new Line(null, shown, null, "flat"));
+                out.add(new Line(null, shown, null, "flat", ""));
             }
         }
         return out;

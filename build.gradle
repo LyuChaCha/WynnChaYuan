@@ -1244,6 +1244,7 @@ tasks.register('runDialogueLeadAudit', JavaExec) {
     systemProperty 'wcy.dump', findProperty('dump') ?: ''
     systemProperty 'wcy.only', findProperty('only') ?: ''
     systemProperty 'wcy.msPerChar', findProperty('msPerChar') ?: '40'
+    systemProperty 'wcy.variant', findProperty('variant') ?: ''
 }
 
 tasks.register('runLabelColourChecks', JavaExec) {

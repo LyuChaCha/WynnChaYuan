@@ -2040,11 +2040,90 @@ public final class TranslationStore {
             return null;
         }
         return forecastUncached(key, GlyphSplitter.stripGlyphChars(quest).strip(), after,
-                window, who, fits);
+                window, who, fits, true);
     }
 
-    private String forecastUncached(String key, String quest, int after, int window, String who,
+    /**
+     * 第三層：限定任務的前綴比對，但<b>把語料標明是別人講的句子排除</b>。
+     *
+     * <p>追蹤欄那條（{@link #matchPrefix}）要整個任務裡只剩一句以這幾個字開頭；
+     * 一個任務幾百句，四五個字常常還撞好幾句——逐字模擬裡最慢才認出的句子，
+     * 九成卡在這裡。可是名牌寫著是誰在講：別人的台詞不可能是這一句。
+     * 門檻與風險跟追蹤欄那條同一級（都是「在這個任務裡唯一」），差別只在多信了
+     * 語料的說話者欄位；不知道誰講的（實機收的多半沒標）照樣算在競爭者裡。
+     */
+    public String forecastBySpeaker(String typed, String quest, String speaker, int floor,
                                     java.util.function.BiPredicate<String, String> fits) {
+        if (typed == null || quest == null || speaker == null) {
+            return null;
+        }
+        String key = typed.strip();
+        String who = speakerKey(speaker);
+        if (key.isEmpty() || key.length() < floor || who.isEmpty()) {
+            return null;
+        }
+        return forecastUncached(key, GlyphSplitter.stripGlyphChars(quest).strip(), -1, 0, who,
+                fits, false);
+    }
+
+    /**
+     * 第零層：已經知道對話還沒講完（進度條在上一句停下來時沒滿格），這一句就是上一句的
+     * 下一句。只看上一句之後 {@code window} 句：對得上目前這幾個字的只能有一句
+     * （同一句話的兩個版本算一句；名牌知道時，語料標明是別人講的不算）。
+     *
+     * <p>不再跟整個任務、這個人全部的台詞、未歸屬台詞比——那些是防「玩家回頭找 NPC、
+     * NPC 重講前面那句」「順路跟別人聊天」的，而那兩種情形進度條都會從頭來。
+     * 剩下猜得錯的是語料漏了這段對話裡的一句、或順序跟遊戲不一樣；所以至少要
+     * {@code floor} 個字對上，岔開的那一幀起照樣退回原本的判斷。
+     */
+    public String forecastNext(String typed, String quest, int after, int window, String speaker,
+                               int floor, java.util.function.BiPredicate<String, String> fits) {
+        if (typed == null || quest == null || after < 0) {
+            return null;
+        }
+        String key = typed.strip();
+        if (key.length() < floor) {
+            return null;
+        }
+        List<SeqLine> seq = questSeq.get(GlyphSplitter.stripGlyphChars(quest).strip());
+        if (seq == null) {
+            return null;
+        }
+        String who = speaker == null ? "" : speakerKey(speaker);
+        List<SeqLine> group = new java.util.ArrayList<>();
+        for (int i = after + 1; i < Math.min(seq.size(), after + 1 + window); i++) {
+            SeqLine line = seq.get(i);
+            if (!who.isEmpty() && !line.speaker().isEmpty() && !line.speaker().equals(who)) {
+                continue;
+            }
+            if (!looseFit(line.src(), key)) {
+                continue;
+            }
+            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
+                    && !versionOf(group.get(0).src(), line.src())) {
+                return null;
+            }
+            group.add(line);
+        }
+        String pick = null;
+        for (SeqLine line : group) {
+            String dst = entries.get(line.src());
+            if (dst == null || dst.isBlank() || !fits.test(line.src(), key)) {
+                continue;
+            }
+            if (pick == null || (!line.wiki() && fromWiki.contains(pick))) {
+                pick = line.src();
+            }
+        }
+        return pick;
+    }
+
+    /** 測試用：第一層要不要把 quest.json 的未歸屬台詞算成競爭者。實機永遠是 true。 */
+    public static volatile boolean unplacedRivals = true;
+
+    private String forecastUncached(String key, String quest, int after, int window, String who,
+                                    java.util.function.BiPredicate<String, String> fits,
+                                    boolean elsewhere) {
         List<SeqLine> seq = questSeq.get(quest);
         if (seq == null) {
             return null;
@@ -2099,6 +2178,9 @@ public final class TranslationStore {
                 return null;
             }
         }
+        if (!elsewhere) {
+            return pick;
+        }
         Set<String> theirs = bySpeaker.get(who);
         if (theirs != null) {
             for (String src : theirs) {
@@ -2107,7 +2189,7 @@ public final class TranslationStore {
                 }
             }
         }
-        for (String src : unplacedLines) {
+        for (String src : unplacedRivals ? unplacedLines : Set.<String>of()) {
             if (rival(pick, src, key)) {
                 return null;
             }
@@ -2115,6 +2197,115 @@ public final class TranslationStore {
         return pick;
     }
 
+
+    /**
+     * 診斷用（量表 {@code DialogueLeadAudit}）：{@link #forecast} 第一層這幾個字為什麼還不給答案。
+     * 跟 {@link #forecastUncached} 同一套條件，只是回傳卡在哪一關。
+     */
+    public String explainForecast(String typed, String quest, int after, int window,
+                                  String speaker, java.util.function.BiPredicate<String, String> fits) {
+        String who = speakerKey(speaker);
+        if (who.isEmpty()) {
+            return "沒有名牌";
+        }
+        String key = typed.strip();
+        List<SeqLine> seq = questSeq.get(quest == null ? "" : quest);
+        if (seq == null) {
+            return "沒有任務";
+        }
+        int from = after >= 0 ? after + 1 : 0;
+        int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
+        List<SeqLine> group = new java.util.ArrayList<>();
+        for (int i = from; i < to; i++) {
+            SeqLine line = seq.get(i);
+            if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
+                continue;
+            }
+            if (!looseFit(line.src(), key)) {
+                continue;
+            }
+            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
+                    && !versionOf(group.get(0).src(), line.src())) {
+                return "後面幾句裡有兩句同開頭";
+            }
+            group.add(line);
+        }
+        if (group.isEmpty()) {
+            return "不在後面幾句裡";
+        }
+        boolean vouched = false;
+        String pick = null;
+        for (SeqLine line : group) {
+            vouched |= line.speaker().equals(who);
+            String dst = entries.get(line.src());
+            if (dst != null && !dst.isBlank() && fits.test(line.src(), key)) {
+                pick = line.src();
+            }
+        }
+        if (!vouched) {
+            return "語料沒標說話者";
+        }
+        if (pick == null) {
+            return "沒有譯文";
+        }
+        for (SeqLine line : seq) {
+            if ((line.speaker().isEmpty() || line.speaker().equals(who))
+                    && rival(pick, line.src(), key)) {
+                return line.src().startsWith(key) ? "任務裡別句同開頭" : "任務裡別句岔在佔位符";
+            }
+        }
+        Set<String> theirs = bySpeaker.get(who);
+        if (theirs != null) {
+            for (String src : theirs) {
+                if (rival(pick, src, key)) {
+                    return "同一人別的任務有句同開頭";
+                }
+            }
+        }
+        for (String src : unplacedLines) {
+            if (rival(pick, src, key)) {
+                return "未歸屬台詞同開頭";
+            }
+        }
+        return "可以";
+    }
+
+    /** 診斷用：限定任務的前綴比對（4 個字、任務裡唯一）這幾個字為什麼還不給答案。 */
+    public String explainQuest(String typed, String quest) {
+        String key = typed.strip();
+        if (quest == null) {
+            return "沒有任務";
+        }
+        String q = GlyphSplitter.stripGlyphChars(quest).strip();
+        if (key.length() < MIN_QUEST_PREFIX) {
+            return "不到4字";
+        }
+        java.util.TreeMap<String, String> scoped = byQuest.get(q);
+        if (scoped == null) {
+            return "沒有任務";
+        }
+        String hit = unique(scoped, key);
+        if (hit == null) {
+            Map.Entry<String, String> first = scoped.ceilingEntry(key);
+            return first == null || !first.getKey().startsWith(key) ? "任務裡沒有這句"
+                    : "任務裡多句同開頭";
+        }
+        String better = curatedRival(hit, key);
+        String pick = better != null ? better : hit;
+        List<SeqLine> seq = questSeq.get(q);
+        if (seq != null) {
+            for (SeqLine line : seq) {
+                if (rival(pick, line.src(), key)) {
+                    if (!line.src().startsWith(key)) {
+                        return "任務裡別句岔在佔位符";
+                    }
+                    String dst = entries.get(line.src());
+                    return dst == null || dst.isBlank() ? "任務裡沒翻的句同開頭" : "任務裡短版本同開頭";
+                }
+            }
+        }
+        return "可以";
+    }
 
     /**
      * 這個任務裡沒有<b>別句</b>也對得上這幾個字——連還沒翻的、岔在佔位符上的都算。
@@ -2563,21 +2754,31 @@ public final class TranslationStore {
         if (!other.equals(key) && startsSome(other)) {
             return true;
         }
-        // 岔在佔位符上的：語料那條在第 cut 個字是「{」
+        // 岔在佔位符上的：語料那條在第 cut 個字是「{」。
+        //
+        // 每一種佔位符各掃一段。先前只掃「{」開頭的前 64 條，而排序後最前面全是
+        // 「{#}」（圖示）：實機「{u}, why don't you do the honours?」打到玩家名的
+        // 第 6 個字就被判成「語料裡沒有」，英文提早放了出來（test2 的探針）。
         for (int cut = key.length() - 1; cut >= 0; cut--) {
-            String head = key.substring(0, cut) + "{";
-            int scanned = 0;
-            for (String src : ordered.tailSet(head)) {
-                if (!src.startsWith(head) || ++scanned > 64) {
-                    break;
-                }
-                if (slotFits(src, key)) {
-                    return true;
+            String before = key.substring(0, cut);
+            for (String slot : SLOTS) {
+                String head = before + slot;
+                int scanned = 0;
+                for (String src : ordered.tailSet(head)) {
+                    if (!src.startsWith(head) || ++scanned > 64) {
+                        break;
+                    }
+                    if (slotFits(src, key)) {
+                        return true;
+                    }
                 }
             }
         }
         return false;
     }
+
+    /** 見 {@link #couldStillMatch}：畫面上可能還沒收成模板的佔位符。 */
+    private static final String[] SLOTS = {"{u}", "{p}", "{~", "{#}"};
 
     private boolean startsSome(String key) {
         String next = ordered.ceiling(key);

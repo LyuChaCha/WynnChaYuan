@@ -57,11 +57,35 @@ final class DialogueForecast {
     /** 沒有上一句時至少幾個字，跟 {@code TranslationStore#MIN_QUEST_PREFIX} 一樣。 */
     static final int COLD_FLOOR = 4;
 
+    /** 第零層看上一句之後幾句。對話講到一半，下一句就是緊接著的那句（加上 wiki／實機兩個版本）。 */
+    static final int NEXT_WINDOW = 4;
+
+    /** 第零層至少打幾個字。量表會試別的值；實機用預設。 */
+    static volatile int nextFloor = 2;
+
+    /** 測試用：關掉第零層。 */
+    static volatile boolean nextLine = true;
+
+    /** 第三層的門檻（見 {@link #guess}）。量表會試別的值；實機用預設。 */
+    static volatile int speakerFloor = COLD_FLOOR;
+
+    /** 測試用：關掉第三層。 */
+    static volatile boolean speakerScope = true;
+
     /** 測試用：關掉預測，量「沒有預測時」的樣子。實機永遠是開的。 */
     static volatile boolean enabled = true;
 
     private String quest;
     private int index = -1;
+
+    /**
+     * 上一句停下來時進度條的值（{@link com.wynnchayuan.capture.DialogueProgress}）；
+     * 不知道是 -1。沒滿格就表示那段對話還沒講完。
+     */
+    private int progress = -1;
+
+    /** 記下 {@link #progress} 時是第幾段對話；對話框收掉過就不算數。 */
+    private int talk = -1;
     private String source;
     private long seen;
 
@@ -91,6 +115,7 @@ final class DialogueForecast {
         index = -1;
         source = null;
         seen = 0;
+        progress = -1;
     }
 
     /**
@@ -119,20 +144,39 @@ final class DialogueForecast {
         // 同一個問題問第二次直接回上一次的答案。認不出來的句子打完之後每一幀都會再問，
         // 每次都掃一遍整個任務與那個人的全部台詞，會在畫面上卡（#1444 的教訓）。
         // 快取放在這裡、一條路一份：兩條路同時在問時才不會互相把對方的答案擠掉。
+        boolean midway = fresh && progress > 0
+                && progress < com.wynnchayuan.capture.DialogueProgress.FULL - 2
+                && talk == com.wynnchayuan.capture.DialogueProgress.conversation();
         Query ask = new Query(typed, where, fresh ? index : -1, speaker, tracked,
-                store.generation());
+                store.generation(), midway);
         if (ask.equals(asked)) {
             return answer;
         }
-        String guess = speaker == null ? null
-                : store.forecast(typed, where, fresh ? index : -1, WINDOW, speaker,
-                        fresh ? 1 : COLD_FLOOR, DialogueRewriter::within);
+        String guess = null;
+        if (midway && nextLine) {
+            // 第零層：上一句停下來時進度條沒滿格——那段對話還沒講完，這一句就是它的
+            // 下一句。玩家回頭找 NPC 重講、順路跟別人聊天，進度條都會從頭來，
+            // 不會落在這裡；所以只要在上一句後面幾句裡唯一就夠了，不必再跟整個任務、
+            // 這個人全部的台詞比。見 TranslationStore#forecastNext。
+            guess = store.forecastNext(typed, where, index, NEXT_WINDOW, speaker, nextFloor,
+                    DialogueRewriter::within);
+        }
+        if (guess == null && speaker != null) {
+            guess = store.forecast(typed, where, fresh ? index : -1, WINDOW, speaker,
+                    fresh ? 1 : COLD_FLOOR, DialogueRewriter::within);
+        }
         if (guess == null && fresh && !quest.equals(tracked)) {
             // 第二層：上一句所在的任務，當成「追蹤中的任務」那樣查（至少 4 個字、
             // 在這個任務裡唯一）。條件跟追蹤欄那條一模一樣，差別只在任務是從上一句
             // 認出來的——玩家沒追蹤任務、或追著別的任務時，這段對話照樣認得出來，
             // 不必等到全庫唯一的 12 個字。
             guess = store.matchPrefix(typed, 0, quest);
+        }
+        if (guess == null && speaker != null && speakerScope) {
+            // 第三層：同一個任務裡、名牌那個人（或不知道誰）講的句子裡唯一。
+            // 見 TranslationStore#forecastBySpeaker。
+            guess = store.forecastBySpeaker(typed, where, speaker, speakerFloor,
+                    DialogueRewriter::within);
         }
         asked = ask;
         answer = guess;
@@ -141,7 +185,7 @@ final class DialogueForecast {
 
     /** 見 {@link #guess}：上一次問了什麼、答了什麼。 */
     private record Query(String typed, String where, int after, String speaker, String tracked,
-                         int generation) {}
+                         int generation, boolean midway) {}
 
     private Query asked;
     private String answer;
@@ -158,6 +202,11 @@ final class DialogueForecast {
         long now = clock.getAsLong();
         if (heard.equals(source)) {
             seen = now;
+            int bar = com.wynnchayuan.capture.DialogueProgress.settled();
+            if (bar >= 0) {
+                progress = bar;                // 這一句停下來時，對話講到哪
+                talk = com.wynnchayuan.capture.DialogueProgress.conversation();
+            }
             return;
         }
         String q = store.sequenceQuestOf(heard, quest,
@@ -170,10 +219,21 @@ final class DialogueForecast {
         index = at;
         source = heard;
         seen = now;
+        progress = -1;                         // 換了一句：等進度條停下來再記
     }
 
     /** 給測試看的：上一句排在第幾。 */
     int index() {
         return index;
+    }
+
+    /** 給量表看的：上一句的故事。 */
+    String anchorQuest() {
+        return quest;
+    }
+
+    /** 給量表看的：上一句還算不算同一段對話。 */
+    boolean fresh() {
+        return quest != null && clock.getAsLong() - seen <= FRESH_MS;
     }
 }
