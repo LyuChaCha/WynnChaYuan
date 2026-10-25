@@ -63,6 +63,9 @@ public final class DialogueForecastTest {
         lookalikes();
         holdBlank(store);
         holdOnScreen(store);
+        nameFirst();
+        midway(store);
+        panelFlicker(store);
 
         corpus();
 
@@ -362,6 +365,126 @@ public final class DialogueForecastTest {
                 + "、含 We：" + shown.contains("We") + "）", out != null && !shown.contains("We"));
     }
 
+    /**
+     * 開頭就是玩家名的句子（test2 實機：「{u}, why don't you do the honours?」打到名字的
+     * 第 6 個字就放了英文）。語料裡「{」開頭的句子排序後前面全是「{#}」，先前只掃前 64 條，
+     * 「{u}…」根本掃不到，就被判成「語料裡沒有這句」。
+     */
+    private static void nameFirst() throws Exception {
+        SelfNames.remember("STEVEN");
+        Path dir = Files.createTempDirectory("wynnchayuan-forecast-name");
+        StringBuilder json = new StringBuilder("{\"entries\":{");
+        for (int i = 0; i < 80; i++) {
+            json.append(entry("I#" + i, "Icons", "", "{#} Icon line number " + i + ".",
+                    "圖示第 " + i + " 句。")).append(',');
+        }
+        json.append(entry("N#0", "Gate", "Aledar", "{u}, why don't you do the honours?",
+                "{u}，要不要由你來開門？"));
+        json.append("}}");
+        Files.writeString(dir.resolve("quest-dialogue.json"), json, StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        begin();
+        List<String> frames = type(store, "STEVEN, why don't you do the honours?", null);
+        check("玩家名開頭的句子打到名字中間時還空著（第 3 個字 " + quote(frames.get(2)) + "）",
+              "".equals(frames.get(2)));
+    }
+
+    /**
+     * 進度條在上一句停下來時沒滿格：對話還沒講完，下一句就是緊接著那句，
+     * 不必再跟整個任務比（#1 也以 Get 開頭，平常要打到「Get s」才分得開）。
+     * 滿格時（對話講完了，可能是回頭重講）照舊。
+     */
+    private static void midway(TranslationStore store) {
+        begin();
+        com.wynnchayuan.capture.DialogueProgress.settle(100);
+        say(store, 4, "Tasim");
+        List<String> mid = type(store, LINES[5][1], "Tasim");
+        check("對話講到一半：第 2 個字就認出下一句（" + mid.subList(0, 3) + "）",
+              !blank(mid.get(1)) && ownLine(mid, LINES[5][2]));
+
+        begin();
+        com.wynnchayuan.capture.DialogueProgress.settle(com.wynnchayuan.capture.DialogueProgress.FULL);
+        say(store, 4, "Tasim");
+        List<String> full = type(store, LINES[5][1], "Tasim");
+        check("對話講完了（滿格）：照舊等到跟別句分開（" + full.subList(0, 5) + "）",
+              blank(full.get(3)));
+        com.wynnchayuan.capture.DialogueProgress.settle(-1);
+    }
+
+    /**
+     * 小框模式：換句時「閃爍兩下才完整翻譯」（test2 實機回報）。走真正的
+     * {@link DialogueOverlay#setCurrent}，照 Wynntils 的事件順序餵：上一句整句的 Ended、
+     * 新一句逐字的 Started／Updated，中間再補發一次上一句（實機會這樣）。
+     */
+    private static void panelFlicker(TranslationStore store) throws Exception {
+        var cfg = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
+        cfg.setAccessible(true);
+        Path tmp = Files.createTempDirectory("wynnchayuan-forecast-panel");
+        cfg.set(null, new com.wynnchayuan.CollectorConfig(tmp.resolve("config.json")));
+        var st = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("store");
+        st.setAccessible(true);
+        st.set(null, new com.wynnchayuan.capture.CaptureStore(tmp.resolve("captured.json")));
+
+        for (boolean named : new boolean[] {true, false}) {
+            begin();
+            DialogueOverlay.resetForTest();
+            String a = LINES[3][1];                    // Good work. Now head below deck.
+            String b = LINES[2][1];                    // Quickly now, the storm is coming!
+            DialogueLeadAudit.speak("Tasim");
+            for (int i = 1; i <= a.length(); i++) {
+                panelEvent(a.substring(0, i), store);
+            }
+            for (int i = 0; i < 8; i++) {
+                panelEvent(a, store);
+            }
+            String old = text(DialogueOverlay.currentForTest());
+            DialogueLeadAudit.speak(named ? "Aledar" : null);
+            List<String> seen = new ArrayList<>();
+            panelEvent(a, store);                      // Ended：上一句整句
+            seen.add(text(DialogueOverlay.currentForTest()));
+            for (int i = 1; i <= b.length(); i++) {
+                panelEvent(b.substring(0, i), store);
+                seen.add(text(DialogueOverlay.currentForTest()));
+                if (i == 2) {
+                    panelEvent(a, store);              // 補發上一句
+                    seen.add(text(DialogueOverlay.currentForTest()));
+                }
+            }
+            int hides = 0;
+            int stale = 0;
+            List<String> shown = new ArrayList<>();
+            boolean started = false;
+            for (int i = 1; i < seen.size(); i++) {
+                String now = seen.get(i);
+                if (now.isEmpty()) {
+                    hides++;
+                } else if (now.equals(old)) {
+                    stale++;
+                } else if (!now.isBlank() && (shown.isEmpty() || !shown.get(shown.size() - 1).equals(now))) {
+                    shown.add(now);
+                }
+            }
+            String label = named ? "（有名牌，會預測）" : "（沒名牌，先空著）";
+            check("小框換句時框不會收掉再冒出來" + label + "（收掉 " + hides + " 次）", hides == 0);
+            check("小框換句後不再出現上一句的譯文" + label + "（" + stale + " 次）", stale == 0);
+            check("小框這一句的譯文只出現一次、沒有換來換去" + label + "（" + shown + "）",
+                  shown.size() == 1 && shown.get(0).contains(LINES[2][2]));
+        }
+    }
+
+    private static void panelEvent(String text, TranslationStore store) {
+        DialogueOverlay.setCurrent(com.wynntils.core.text.StyledText.fromString(text), store);
+    }
+
+    private static String text(List<net.minecraft.network.chat.Component> rows) {
+        StringBuilder out = new StringBuilder();
+        for (net.minecraft.network.chat.Component row : rows) {
+            out.append(row.getString());
+        }
+        return out.toString();
+    }
+
     private static String quote(String frame) {
         return frame == null ? "英文" : frame.isEmpty() ? "空白" : frame;
     }
@@ -428,7 +551,13 @@ public final class DialogueForecastTest {
         int lines = 0;
         for (List<DialogueLeadAudit.Line> story : stories) {
             begin();
-            for (DialogueLeadAudit.Line l : story) {
+            for (int li = 0; li < story.size(); li++) {
+                DialogueLeadAudit.Line l = story.get(li);
+                // 進度條照 wiki 的階段切段：一段的最後一句滿格，其他半格（見 DialogueLeadAudit）
+                boolean lastOfTalk = li + 1 >= story.size()
+                        || !story.get(li + 1).stage().equals(l.stage());
+                com.wynnchayuan.capture.DialogueProgress.settle(
+                        lastOfTalk ? com.wynnchayuan.capture.DialogueProgress.FULL : 100);
                 CurrentQuest.set(null);
                 DialogueLeadAudit.speak(l.speaker());
                 List<String> frames = panel ? DialogueLeadAudit.panelFrames(l.raw(), store)
@@ -492,6 +621,7 @@ public final class DialogueForecastTest {
 
     /** 換一段對話：兩條路的狀態都清掉，沒追蹤任務。 */
     private static void begin() {
+        com.wynnchayuan.capture.DialogueProgress.settle(-1);   // 不知道進度條
         DialogueRewriter.forget();
         DialogueForecast.forgetAll();
         DialogueLeadAudit.resetPanel();
