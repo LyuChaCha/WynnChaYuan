@@ -1243,6 +1243,7 @@ tasks.register('runDialogueLeadAudit', JavaExec) {
     systemProperty 'wcy.quest', findProperty('quest') ?: ''
     systemProperty 'wcy.dump', findProperty('dump') ?: ''
     systemProperty 'wcy.only', findProperty('only') ?: ''
+    systemProperty 'wcy.msPerChar', findProperty('msPerChar') ?: '40'
 }
 
 tasks.register('runLabelColourChecks', JavaExec) {

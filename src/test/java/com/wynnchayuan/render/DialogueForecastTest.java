@@ -61,6 +61,8 @@ public final class DialogueForecastTest {
         sharedShortLine();
         otherQuestTwin();
         lookalikes();
+        holdBlank(store);
+        holdOnScreen(store);
 
         corpus();
 
@@ -89,7 +91,7 @@ public final class DialogueForecastTest {
         List<String> without = type(store, LINES[2][1], "Aledar");
         DialogueForecast.enabled = true;
         check("沒有預測時第一個字還是英文（對照組，實際 " + without.get(0) + "）",
-              without.get(0) == null);
+              blank(without.get(0)));
     }
 
     /** 玩家跳過一句：真正打出來的是後面那句。兩句同一個字母開頭時要等它分開。 */
@@ -99,10 +101,10 @@ public final class DialogueForecastTest {
         List<String> frames = type(store, LINES[5][1], "Tasim");   // 跳過 #2、#3、#4
         check("跳著對話不會貼出別句（" + frames.subList(0, 4) + "）",
               ownLine(frames, LINES[5][2]));
-        check("「G」同時對得上兩句時先不猜", frames.get(0) == null);
+        check("「G」同時對得上兩句時先不猜", blank(frames.get(0)));
         // 「Get 」也還對得上 #1（整個任務裡的另一句），要到「Get s」才分得開
-        check("跟任務裡別句分開之前不猜", frames.get(3) == null);
-        check("分開之後（Get s）就認得出來", frames.get(4) != null);
+        check("跟任務裡別句分開之前不猜", blank(frames.get(3)));
+        check("分開之後（Get s）就認得出來", !blank(frames.get(4)));
     }
 
     /**
@@ -141,7 +143,7 @@ public final class DialogueForecastTest {
         begin();
         say(store, 1, "Tasim");
         List<String> frames = type(store, LINES[2][1], "Harbour Villager");
-        check("名牌對不上時不猜（實際 " + frames.get(0) + "）", frames.get(0) == null);
+        check("名牌對不上時不猜（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
     /** 沒有名牌（旁白框）：第一層不猜。 */
@@ -149,7 +151,7 @@ public final class DialogueForecastTest {
         begin();
         say(store, 1, "Tasim");
         List<String> frames = type(store, LINES[2][1], null);
-        check("沒有名牌時不猜（實際 " + frames.get(0) + "）", frames.get(0) == null);
+        check("沒有名牌時不猜（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
     /** 上一句是很久以前的事：不當成同一段對話。 */
@@ -161,7 +163,7 @@ public final class DialogueForecastTest {
         clock[0] += DialogueForecast.FRESH_MS + 1;
         List<String> frames = type(store, LINES[2][1], "Aledar");
         DialogueForecast.now = System::currentTimeMillis;
-        check("隔太久不沿用上一句（實際 " + frames.get(0) + "）", frames.get(0) == null);
+        check("隔太久不沿用上一句（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
     /** 沒追蹤任務、沒有名牌：上一句所在的任務照樣縮小範圍（4 個字，跟追蹤欄一樣）。 */
@@ -282,6 +284,86 @@ public final class DialogueForecastTest {
               ownLine(name, "……STEVEN，我們可以到外面談談嗎？"));
         check("短句不當成同一句的另一個版本（" + child.subList(4, 9) + "）",
               ownLine(child, "是什麼風把你吹來的，孩子。"));
+    }
+
+    /**
+     * 認出是哪一句之前先空著，不露英文（DialogueRewriter#holds）。
+     * 但語料裡根本沒有的句子、字已經停下來的，英文要立刻出來。
+     */
+    private static void holdBlank(TranslationStore store) {
+        begin();
+        DialogueLeadAudit.speak(null);
+        CurrentQuest.set(QUEST);                       // 追蹤任務：第 4 個字就認得出來
+        List<String> known = DialogueLeadAudit.typeOut(LINES[0][1], store);
+        CurrentQuest.set(null);
+        boolean english = false;
+        int first = firstShown(known);
+        for (int i = 0; i < first; i++) {
+            english |= known.get(i) == null;
+        }
+        check("認出來之前先空著（第一幀 " + quote(known.get(0)) + "）", "".equals(known.get(0)));
+        check("中文出來之前一個英文字都沒露（第 " + (first + 1) + " 個字出中文）",
+              first >= 0 && !english);
+
+        begin();
+        List<String> stranger = DialogueLeadAudit.typeOut("Zebras are lovely today.", store);
+        check("語料裡沒有任何一句以它開頭：英文立刻出來（第一幀 " + quote(stranger.get(0)) + "）",
+              stranger.get(0) == null);
+
+        begin();
+        String odd = "Welcome to the jungle, friend.";   // 第 9 個字跟「Welcome aboard」岔開
+        List<String> parted = DialogueLeadAudit.typeOut(odd, store);
+        check("岔開、語料裡再也對不上之後英文就出來（第 9 個字 " + quote(parted.get(8)) + "）",
+              parted.get(8) == null);
+
+        begin();
+        List<String> stopped = DialogueLeadAudit.typeOut("Welc", store);   // 打到一半就停
+        check("字停下來了還認不出來：放英文（最後一幀 " + quote(last(stopped)) + "）",
+              last(stopped) == null);
+
+        // 空白有時間上限（DialogueRewriter#HOLD_MS）：沒追蹤任務時這句要打到第 12 個字
+        // 才認得出來。從第一幀起算超過上限的那一幀（第 cap+1 幀）起就該是英文
+        begin();
+        List<String> slow = DialogueLeadAudit.typeOut(LINES[0][1], store);
+        int cap = (int) (DialogueRewriter.HOLD_MS / DialogueLeadAudit.MS_PER_CHAR) + 1;
+        check("空白不超過 " + DialogueRewriter.HOLD_MS + " 毫秒（第 " + (cap + 1) + " 個字 "
+                        + quote(slow.get(cap)) + "）", slow.get(cap) == null);
+        boolean noBlankAfter = true;
+        for (int i = cap; i < slow.size(); i++) {
+            noBlankAfter &= !"".equals(slow.get(i));
+        }
+        check("放了英文之後不再蓋回空白", noBlankAfter);
+    }
+
+    /**
+     * 空著那幾幀真的畫成空白：整則 action bar 走一次 {@link DialogueRewriter#rewrite}，
+     * 內文那一列不再有英文字母，框與名牌照舊。
+     */
+    private static void holdOnScreen(TranslationStore store) throws Exception {
+        var field = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
+        field.setAccessible(true);
+        field.set(null, new com.wynnchayuan.CollectorConfig(
+                Files.createTempDirectory("wynnchayuan-forecast-cfg").resolve("config.json")));
+        begin();
+        net.minecraft.network.chat.Style body = net.minecraft.network.chat.Style.EMPTY.withFont(
+                new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace(
+                                "hud/dialogue/text/wynncraft/body_0")));
+        net.minecraft.network.chat.MutableComponent message =
+                net.minecraft.network.chat.Component.empty();
+        message.append(net.minecraft.network.chat.Component.literal(
+                new String(Character.toChars(0xD0000 - 116))).withStyle(body));
+        message.append(net.minecraft.network.chat.Component.literal("We").withStyle(body));
+        message.append(net.minecraft.network.chat.Component.literal(
+                new String(Character.toChars(0xD0000 + 100))).withStyle(body));
+        net.minecraft.network.chat.Component out = DialogueRewriter.rewrite(message, store);
+        String shown = out == null ? "We" : out.getString();
+        check("框裡畫成空白，沒有英文（實際 " + (out == null ? "沒改寫" : "改寫了")
+                + "、含 We：" + shown.contains("We") + "）", out != null && !shown.contains("We"));
+    }
+
+    private static String quote(String frame) {
+        return frame == null ? "英文" : frame.isEmpty() ? "空白" : frame;
     }
 
     // ------------------------------------------------------------------
@@ -441,9 +523,14 @@ public final class DialogueForecastTest {
         return true;
     }
 
+    /** 這一幀沒有中文：留英文（{@code null}）或先空著（{@code ""}，見 DialogueRewriter#holds）。 */
+    private static boolean blank(String frame) {
+        return frame == null || frame.isEmpty();
+    }
+
     private static int firstShown(List<String> frames) {
         for (int i = 0; i < frames.size(); i++) {
-            if (frames.get(i) != null) {
+            if (!blank(frames.get(i))) {
                 return i;
             }
         }

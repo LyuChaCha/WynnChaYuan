@@ -193,6 +193,8 @@ public final class DialogueLeadAudit {
     static final class Stats {
         final String title;
         final List<Integer> leads = new ArrayList<>();
+        final List<Integer> blanks = new ArrayList<>();
+        int english;
         int never;
         int wrong;
         int flips;
@@ -203,21 +205,38 @@ public final class DialogueLeadAudit {
         }
 
         void add(List<String> frames, int length, String want) {
+            // 空字串是「認出來之前先空著」（DialogueRewriter#holds）：不是中文，也不是英文
             int first = -1;
             for (int i = 0; i < frames.size(); i++) {
-                if (frames.get(i) != null) {
+                if (frames.get(i) != null && !frames.get(i).isEmpty()) {
                     first = i;
                     break;
+                }
+            }
+            int englishChars = 0;
+            int blankChars = 0;
+            for (int i = 0; i < (first < 0 ? Math.min(length, frames.size()) : Math.min(first, length)); i++) {
+                if (frames.get(i) == null) {
+                    englishChars++;
+                } else {
+                    blankChars++;
                 }
             }
             if (first < 0) {
                 never++;
             } else {
-                leads.add(Math.min(first, length));
+                leads.add(englishChars);
+                blanks.add(blankChars);
+                if (englishChars > 0) {
+                    english++;
+                }
             }
             boolean shown = false;
             boolean bad = false;
             for (String f : frames) {
+                if (f != null && f.isEmpty()) {
+                    continue;
+                }
                 if (f == null) {
                     if (shown) {
                         flips++;
@@ -265,10 +284,15 @@ public final class DialogueLeadAudit {
             int n = v.size();
             double mean = v.stream().mapToInt(Integer::intValue).average().orElse(0);
             long zero = v.stream().filter(x -> x == 0).count();
-            System.out.printf("%-40s 句數 %5d  平均 %5.2f  中位 %3d  P90 %3d  第一幀就是中文 %5.1f%%"
-                            + "  沒翻出來 %d  中→英 %d  貼錯 %d%n",
+            List<Integer> b = new ArrayList<>(blanks);
+            Collections.sort(b);
+            double blank = b.stream().mapToInt(Integer::intValue).average().orElse(0) * MS_PER_CHAR;
+            int blankP90 = b.isEmpty() ? 0 : b.get((int) (b.size() * 0.9)) * MS_PER_CHAR;
+            int blankMax = b.isEmpty() ? 0 : b.get(b.size() - 1) * MS_PER_CHAR;
+            System.out.printf("%-40s 句數 %5d  英文字元 平均 %5.2f 中位 %3d P90 %3d  沒露英文 %5.1f%%"
+                            + "  空白ms 平均 %3.0f P90 %3d 最長 %3d  沒翻出來 %d  中→英 %d  貼錯 %d%n",
                     title, n, mean, n == 0 ? 0 : v.get(n / 2), n == 0 ? 0 : v.get((int) (n * 0.9)),
-                    n == 0 ? 0 : 100.0 * zero / n, never, flips, wrong);
+                    n == 0 ? 0 : 100.0 * zero / n, blank, blankP90, blankMax, never, flips, wrong);
             if (Boolean.getBoolean("wcy.samples")) {
                 for (String w : wrongSamples) {
                     System.out.println("    [錯] " + w);
@@ -282,12 +306,25 @@ public final class DialogueLeadAudit {
     static List<String> typeOut(String src, TranslationStore store) {
         List<String> frames = new ArrayList<>();
         for (int at = 1; at <= src.length(); at++) {
+            tick();
             frames.add(frame(src.substring(0, at), store));
         }
         for (int again = 0; again < STILL_FRAMES; again++) {
+            tick();
             frames.add(frame(src, store));
         }
         return frames;
+    }
+
+    /** 一個字多少毫秒。實機打字大約每秒二三十個字；-PmsPerChar= 可以換。 */
+    static final int MS_PER_CHAR = Integer.getInteger("wcy.msPerChar", 40);
+
+    private static long fakeNow = 1_000_000L;
+
+    /** 逐字模擬的時鐘：一幀推進一個字的時間（就地取代「先空著」的上限照它算）。 */
+    private static void tick() {
+        fakeNow += MS_PER_CHAR;
+        DialogueRewriter.holdClock = () -> fakeNow;
     }
 
     private static String frame(String raw, TranslationStore store) {

@@ -354,7 +354,10 @@ public final class DialogueTypingTest {
 
     private static String frame(String raw, TranslationStore store) {
         try {
-            return DialogueRewriter.line(raw, store, rowsFor(raw), null, WIDTH);
+            String out = DialogueRewriter.line(raw, store, rowsFor(raw), null, WIDTH);
+            // 認出來之前先空著（""，見 DialogueRewriter#holds）在這裡跟留英文一樣算「沒有中文」：
+            // 這支測的是中文會不會閃、會不會改口，空白與英文的分別由 DialogueForecastTest 管
+            return out == null || out.isEmpty() ? null : out;
         } catch (RuntimeException e) {
             return "！" + e;
         }

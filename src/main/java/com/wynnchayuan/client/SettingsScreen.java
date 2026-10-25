@@ -490,6 +490,7 @@ public final class SettingsScreen extends Screen {
         List<Row> rows = new ArrayList<>();
         rows.add(dialogueMode("dialogue.mode", cfg()::dialogueMode, cfg()::cycleDialogueMode));
         rows.add(dialogueMode("dialogue.choices", cfg()::choiceMode, cfg()::cycleChoiceMode));
+        rows.add(toggle("dialogue.cover", true, cfg()::dialogueCover, cfg()::toggleDialogueCover));
         rows.add(Row.slider("dialogue.hold", t("dialogue.hold"), t("dialogue.hold.hint"))
                 .range(0, 30)
                 .value(() -> Math.min(30, holdSeconds()))

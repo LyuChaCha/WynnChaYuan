@@ -1344,6 +1344,10 @@ public final class DialogueRewriter {
         held = null;
         heldRaw = "";
         heldSource = null;
+        lineShown = false;
+        lineRaw = "";
+        released = false;
+        lineStart = 0;
     }
 
     /**
@@ -1526,6 +1530,93 @@ public final class DialogueRewriter {
     }
 
     static String line(String text, TranslationStore store, int rows,
+            Style style, int width) {
+        String out = recognise(text, store, rows, style, width);
+        String raw = text == null ? "" : text.strip();
+        long now = holdClock.getAsLong();
+        if (lineRaw.isEmpty() || !raw.startsWith(lineRaw)) {
+            lineShown = false;                 // 換句話了
+            lineStart = now;
+            released = false;
+        }
+        lineRaw = raw;
+        if (out != null && !out.isEmpty()) {
+            if (!lineShown) {
+                DialogueStartLog.recognised(raw.length(), now - lineStart);
+            }
+            lineShown = true;
+            return out;
+        }
+        if (out == null && !released && holds(raw, store, now)) {
+            return "";
+        }
+        if (out == null && !lineShown && !released) {
+            released = true;                   // 這一句放英文了，之後不再蓋回去
+            DialogueStartLog.gaveUp(raw.length(), now - lineStart);
+        }
+        return out;
+    }
+
+    /** 測試用的時鐘：逐字模擬時一幀推進一個字的時間。 */
+    static java.util.function.LongSupplier holdClock = System::currentTimeMillis;
+
+    /** 這一句第一幀的時間。見 {@link #holds}。 */
+    private static long lineStart;
+
+    /** 這一句已經放出英文了：之後不再蓋回空白（不然英文與空白會來回閃）。 */
+    private static boolean released;
+
+    /**
+     * 認出是哪一句之前，先別讓英文露出來。
+     *
+     * <h2>為什麼</h2>
+     * 使用者回報「對話還是會先出現原文、再出現譯文」。伺服器是一個字一個字送的
+     * （每一則 action bar 只帶到目前打到的地方，Wynntils 的對話事件也一樣），
+     * 頭幾個字本來就認不出是哪一句——要嘛等到認得出來、要嘛猜。猜錯會貼出別句的中文，
+     * 那比沒翻更糟；而等的那幾幀，畫面上就是英文。
+     *
+     * <p>第三條路：那幾幀先<b>什麼都不畫</b>。逐字模擬兩萬多句任務對話，認出來平均
+     * 只要五、六個字（打字大約每秒二三十個字，也就是零點二秒左右）；那段時間框裡是空的，
+     * 認出來就從第一個中文字開始打，玩家看不到英文，也不會看到猜錯的中文。
+     *
+     * <h2>什麼時候不等</h2>
+     * <ul>
+     *   <li>這一句已經出過中文（之後的空檔照舊沿用或退回英文，不在這裡變空）。</li>
+     *   <li>原文已經打超過 {@link #HOLD_CHARS} 個字還認不出來。</li>
+     *   <li>字停下來了（{@link #settled}）：講完了還認不出來，就是沒翻。</li>
+     *   <li>語料裡已經沒有任何一句對得上這幾個字（{@link TranslationStore#couldStillMatch}）
+     *       ——那句不在語料裡，等也等不到，英文立刻出來。</li>
+     *   <li>翻得出來但要小框接手（{@link #tooLong}）。</li>
+     * </ul>
+     */
+    private static boolean holds(String raw, TranslationStore store, long now) {
+        var config = com.wynnchayuan.WynnChaYuan.config();
+        if ((config != null && !config.dialogueCover())
+                || lineShown || tooLong || raw.isEmpty() || raw.length() > HOLD_CHARS
+                || now - lineStart > HOLD_MS || still >= SETTLE_FRAMES || store == null) {
+            return false;
+        }
+        String typed = DialogueIcons.parts(raw, store).template().strip();
+        return store.couldStillMatch(typed);
+    }
+
+    /**
+     * 見 {@link #holds}：最多先空著多久。使用者要求「不能拖太久」：超過就把已經打出來的
+     * 英文補上，不再等。打字大約每秒二三十個字，三百毫秒是六到九個字。
+     */
+    static final long HOLD_MS = 300;
+
+    /** 同上，以字數算的保險（時鐘不準時也不會一直空著）。 */
+    static final int HOLD_CHARS = 12;
+
+    /** 這一句出過中文了嗎。見 {@link #holds}。 */
+    private static boolean lineShown;
+
+    /** 上一幀的原文，用來認出「換句話了」。見 {@link #holds}。 */
+    private static String lineRaw = "";
+
+    /** 見 {@link #line}：認得出就回譯文，認不出回 {@code null}（留英文）。 */
+    private static String recognise(String text, TranslationStore store, int rows,
             Style style, int width) {
         // 「翻得出來但放不下」的旗標在這裡也歸零，不只在 rewrite() 開頭。
         //

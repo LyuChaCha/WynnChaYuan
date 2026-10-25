@@ -134,6 +134,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
             com.wynnchayuan.translate.FlowedDebug.init(debug);
             com.wynnchayuan.capture.DialogueProbe.init(debug);
+            com.wynnchayuan.render.DialogueStartLog.init(debug);
             com.wynnchayuan.render.FpsLog.init(debug);
         }
         com.wynnchayuan.translate.ErrorDebug.into(dir);

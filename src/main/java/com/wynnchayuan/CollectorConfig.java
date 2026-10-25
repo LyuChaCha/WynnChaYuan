@@ -189,6 +189,14 @@ public final class CollectorConfig {
     private boolean wynntilsFps = true;
 
     /**
+     * 就地取代時，認出是哪一句之前先空著、不先閃英文（見 {@code DialogueRewriter#holds}）。
+     *
+     * <p>預設<b>開啟</b>：使用者回報「對話還是會先出現原文、再出現譯文」。代價是每一句開頭
+     * 空白一小段（有上限）；不喜歡可以在 F6「對話」關掉，回到原本先出英文的樣子。
+     */
+    private boolean dialogueCover = true;
+
+    /**
      * 市集搜尋打中文自動換成英文。
      *
      * <p>預設<b>開啟</b>：用就地取代的人看到的是中文，照著打卻搜不到東西——
@@ -631,6 +639,16 @@ public final class CollectorConfig {
 
     public boolean wynntilsFps() {
         return wynntilsFps;
+    }
+
+    public boolean dialogueCover() {
+        return dialogueCover;
+    }
+
+    public boolean toggleDialogueCover() {
+        dialogueCover = !dialogueCover;
+        save();
+        return dialogueCover;
     }
 
     public boolean toggleWynntilsFps() {
@@ -1516,6 +1534,7 @@ public final class CollectorConfig {
         ownCape = bool(o, "ownCape", ownCape);
         wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
         wynntilsFps = bool(o, "wynntilsFps", wynntilsFps);
+        dialogueCover = bool(o, "dialogueCover", dialogueCover);
         translateTitles = bool(o, "translateTitles", translateTitles);
         translationsEnabled = bool(o, "translationsEnabled", translationsEnabled);
         // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
@@ -1797,6 +1816,7 @@ public final class CollectorConfig {
             o.addProperty("ownCape", ownCape);
             o.addProperty("wynntilsUi", wynntilsUi);
             o.addProperty("wynntilsFps", wynntilsFps);
+            o.addProperty("dialogueCover", dialogueCover);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shiftPeekNames", shiftPeekNames);
             o.addProperty("shotMode", shotMode.name());
