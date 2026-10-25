@@ -1,9 +1,9 @@
 {
  "_meta": {
   "quest": "Through the Pipes",
-  "count": 210,
-  "translated": 210,
-  "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
+  "count": 259,
+  "translated": 259,
+  "note": "一个故事一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Through the Pipes#000": {
@@ -333,14 +333,14 @@
    "source": "wiki"
   },
   "Through the Pipes#032": {
-   "src": "Y-You will? I knew there was still some good left in this world!",
+   "src": "Y-You will? I knew there was some good left in this world!",
    "dst": "你、你愿意？我就知道这世上还有好人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
    "stage": "Stage 1",
    "speaker": "Fichu",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Through the Pipes#033": {
    "src": "Right! Last time I saw that raccoon, it was running into an alleyway south of the town center. It can't have gone too far!",
@@ -2111,6 +2111,496 @@
    "stage": "Stage 11",
    "speaker": "Fichu",
    "source": "wiki"
+  },
+  "Through the Pipes#223": {
+   "src": "What will I do?\nFichu",
+   "dst": "我该怎么办？\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#224": {
+   "src": "If I see that raccoon...\nFichu",
+   "dst": "要是让我看到那只浣熊……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#225": {
+   "src": "I'm rushing to finish a gift I made for Sovereign Soosu! The festival's gonna be this week, and I can't miss my opportunity to give it to her!",
+   "dst": "我正赶着完成一份要送给 Soosu 统领的礼物！庆典就在这周，我可不能错过把它送给她的机会！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#226": {
+   "src": "Just as I was about to add the finishing details, a raccoon snuck up on me and snatched it from my bag! Can you believe it?",
+   "dst": "就在我准备加上最后的细节时，一只浣熊偷偷溜到我身边，从我包里把它抢走了！你敢信吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#228": {
+   "src": "Oh, you're wondering what the gift is? Well, that's a surprise!",
+   "dst": "哦，你想知道礼物是什么？这个嘛，那可是个惊喜！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#229": {
+   "src": "It might be the best thing I've made all year. I really think Soosu would love it, especially for all of the work she's done for our district!",
+   "dst": "那可能是我今年做过最好的东西了。我真的觉得 Soosu 会喜欢，尤其她为我们这个区做了那么多！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#230": {
+   "src": "If you want to see it, you'll have to help me find it. How does that sound?",
+   "dst": "你要是想看，就得帮我把它找回来。怎么样？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#231": {
+   "src": "The water seems to have cleared the debris.",
+   "dst": "水流似乎把残骸冲走了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#232": {
+   "src": "It looks like a valve handle could fit into this slot.",
+   "dst": "看起来有个阀门把手能装进这个槽里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#233": {
+   "src": "{#} to add fuel to\n the generator\n[{~}/{~}]",
+   "dst": "{#} 为发电机\n 添加燃料\n[{~}/{~}]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#227": {
+   "src": "This water looks too dangerous to swim in.",
+   "dst": "这水看起来太危险了，不能下去游。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#234": {
+   "src": "Different materials around the room can be used as raft parts.",
+   "dst": "房间里的各种材料都能拿来当木筏零件。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#235": {
+   "src": "{#} Right-Click to sail\n{#} Left-Click to reset",
+   "dst": "{#} 右键点击出航\n{#} 左键点击重置",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#236": {
+   "src": "Some raft parts may have unique functions.",
+   "dst": "有些木筏零件可能有特殊功能。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#237": {
+   "src": "Place the raft parts on the building mat to construct your raft.",
+   "dst": "把木筏零件放到建造垫上，组装你的木筏。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#238": {
+   "src": "There's... no propellers here?",
+   "dst": "这里……没有螺旋桨？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#239": {
+   "src": "Maybe you need to find a different method of propulsion.",
+   "dst": "也许你得找别的推进方式。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#240": {
+   "src": "You must have a fully constructed raft to set sail.",
+   "dst": "必须有一艘完整组装好的木筏才能出航。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#241": {
+   "src": "The lever appears to be jammed. Maybe it needs power?",
+   "dst": "这根拉杆好像卡住了。也许它需要电力？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#242": {
+   "src": "It looks like this station hasn't been powered in a very long time.",
+   "dst": "看起来这座车站已经很久很久没通电了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#243": {
+   "src": "Fortunately, it still seems to be accepting power.",
+   "dst": "幸好，它似乎还能接收电力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#244": {
+   "src": "You could fit this with a grappling hook.",
+   "dst": "你可以在这上面装一个抓钩。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#245": {
+   "src": "You seem to have gone off track. Sadly, your raft isn't able to survive this far.",
+   "dst": "你好像偏离航道了。很遗憾，你的木筏撑不到这么远。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#246": {
+   "src": "Your raft seems to have vanished into thin air. (Unknown error occured!)",
+   "dst": "你的木筏似乎凭空消失了。(发生未知错误！)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#247": {
+   "src": "You shouldn't open this just yet.",
+   "dst": "你现在还不该打开这个。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#248": {
+   "src": "It's locked...\nFichu",
+   "dst": "锁住了……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#249": {
+   "src": "Nothing interesting to steal...\nFichu",
+   "dst": "没什么有意思的东西可偷……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#250": {
+   "src": "But I would never steal, right?\nFichu",
+   "dst": "不过我从来不偷东西的，对吧？\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#251": {
+   "src": "No wonder the water tastes so weird...\nFichu",
+   "dst": "难怪这水喝起来那么怪……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#252": {
+   "src": "Hmm...\nFichu",
+   "dst": "嗯……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#253": {
+   "src": "Stupid lever!\nFichu",
+   "dst": "破拉杆！\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#254": {
+   "src": "I should take these...\nFichu",
+   "dst": "这些我该带走……\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#255": {
+   "src": "This workbench is quite convenient.\nFichu",
+   "dst": "这张工作台还真方便。\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#256": {
+   "src": "Oh, don't mind me. I'm just seeing if there's anything interesting here.",
+   "dst": "哦，别在意我。我只是看看这里有没有什么有意思的东西。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#257": {
+   "src": "Usually there's cool things to, well- steal, but this place seems to be a bust.",
+   "dst": "通常会有很酷的东西可以，呃——偷，不过这地方好像什么都没有。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#258": {
+   "src": "There sure is a lot hidden underground, you wouldn't believe some of the things I've seen!",
+   "dst": "地底下藏着的东西可真多，我见过的一些东西你绝对不会相信！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#259": {
+   "src": "They seem to be busy with something. You should check in later.",
+   "dst": "他们好像在忙什么。晚点再来看看吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#260": {
+   "src": "That's great to hear! I haven't found anything useful unfortunately.",
+   "dst": "那太好了！可惜我还没找到什么有用的东西。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#261": {
+   "src": "I'm quite interested to see what you come up with, return to me when you're done!",
+   "dst": "我很好奇你会想出什么，弄好了就回来找我！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#262": {
+   "src": "You know what, not a bad idea! Let's give it a try!",
+   "dst": "你知道吗，这主意不错！我们来试试！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#263": {
+   "src": "{#} Right-Click to board",
+   "dst": "{#} 右键点击登上木筏",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#264": {
+   "src": "Trains are cool... not when they're speeding right next to you.",
+   "dst": "火车很酷……但它在你身边呼啸而过的时候就不酷了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#265": {
+   "src": "Oh, thank the Queen! It's the halfway point.",
+   "dst": "哦，感谢女王！到半路了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#266": {
+   "src": "Woah, that looks like an expensive ring! You really think the raccoon will take it?",
+   "dst": "哇，那看起来是枚很贵的戒指！你真觉得那只浣熊会拿走它？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#267": {
+   "src": "Hold on, where did you even get that- nevermind, I won't ask any questions. Give it a try!",
+   "dst": "等等，你到底是从哪弄来的——算了，我不问了。试试吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#268": {
+   "src": "{#} to place Shiny Object",
+   "dst": "{#} 放置闪亮物品",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#269": {
+   "src": "Oh! That was surprisingly easy.",
+   "dst": "哦！比想象中简单嘛。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#270": {
+   "src": "I hope no one cared about that ring, because they sure aren't getting it back...",
+   "dst": "希望没人在乎那枚戒指，因为他们肯定拿不回来了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#271": {
+   "src": "Great work! After all of that, we've finally gotten the gift back! I knew we could do it.",
+   "dst": "干得好！经历了这一切，我们终于把礼物拿回来了！我就知道我们做得到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
   }
  }
 }

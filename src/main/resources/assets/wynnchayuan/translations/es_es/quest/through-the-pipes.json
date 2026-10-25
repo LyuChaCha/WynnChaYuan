@@ -1,13 +1,9 @@
 {
  "_meta": {
   "quest": "Through the Pipes",
-  "count": 210,
-  "translated": 210,
-  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
-  "review": {
-   "translator": "claude",
-   "proofread": false
-  }
+  "count": 259,
+  "translated": 259,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Through the Pipes#000": {
@@ -337,14 +333,14 @@
    "source": "wiki"
   },
   "Through the Pipes#032": {
-   "src": "Y-You will? I knew there was still some good left in this world!",
-   "dst": "¿D-de verdad? ¡Sabía que aún quedaba algo de bondad en el mundo!",
+   "src": "Y-You will? I knew there was some good left in this world!",
+   "dst": "¿D-de verdad? ¡Sabía que quedaba algo de bondad en este mundo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
    "stage": "Stage 1",
    "speaker": "Fichu",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Through the Pipes#033": {
    "src": "Right! Last time I saw that raccoon, it was running into an alleyway south of the town center. It can't have gone too far!",
@@ -2115,6 +2111,496 @@
    "stage": "Stage 11",
    "speaker": "Fichu",
    "source": "wiki"
+  },
+  "Through the Pipes#223": {
+   "src": "What will I do?\nFichu",
+   "dst": "¿Qué voy a hacer?\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#224": {
+   "src": "If I see that raccoon...\nFichu",
+   "dst": "Como vea a ese mapache...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#225": {
+   "src": "I'm rushing to finish a gift I made for Sovereign Soosu! The festival's gonna be this week, and I can't miss my opportunity to give it to her!",
+   "dst": "¡Tengo prisa por terminar un regalo que he hecho para la Soberana Soosu! La fiesta es esta semana, ¡y no puedo perder la ocasión de dárselo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#226": {
+   "src": "Just as I was about to add the finishing details, a raccoon snuck up on me and snatched it from my bag! Can you believe it?",
+   "dst": "¡Justo cuando iba a darle los últimos retoques, un mapache se me acercó a hurtadillas y me lo quitó de la bolsa! ¿Te lo puedes creer?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#228": {
+   "src": "Oh, you're wondering what the gift is? Well, that's a surprise!",
+   "dst": "Oh, ¿quieres saber qué es el regalo? Bueno, ¡es una sorpresa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#229": {
+   "src": "It might be the best thing I've made all year. I really think Soosu would love it, especially for all of the work she's done for our district!",
+   "dst": "Puede que sea lo mejor que he hecho en todo el año. De verdad creo que a Soosu le encantaría, ¡sobre todo por todo lo que ha hecho por nuestro distrito!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#230": {
+   "src": "If you want to see it, you'll have to help me find it. How does that sound?",
+   "dst": "Si quieres verlo, tendrás que ayudarme a encontrarlo. ¿Qué te parece?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 1",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#231": {
+   "src": "The water seems to have cleared the debris.",
+   "dst": "El agua parece haber despejado los escombros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#232": {
+   "src": "It looks like a valve handle could fit into this slot.",
+   "dst": "Parece que en esta ranura podría encajar una {c2}manivela de válvula{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#233": {
+   "src": "{#} to add fuel to\n the generator\n[{~}/{~}]",
+   "dst": "{#} para echar\n{c2}combustible{c1} al generador\n[{~}/{~}]",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#227": {
+   "src": "This water looks too dangerous to swim in.",
+   "dst": "Esta agua parece demasiado peligrosa para nadar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#234": {
+   "src": "Different materials around the room can be used as raft parts.",
+   "dst": "Los distintos materiales de la sala pueden usarse como {c2}piezas de balsa{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#235": {
+   "src": "{#} Right-Click to sail\n{#} Left-Click to reset",
+   "dst": "{#} Clic derecho{c2} para {c3}zarpar\n{#} {c1}Clic izquierdo{c2} para {c4}reiniciar",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#236": {
+   "src": "Some raft parts may have unique functions.",
+   "dst": "Algunas piezas de balsa pueden tener {c2}funciones únicas{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#237": {
+   "src": "Place the raft parts on the building mat to construct your raft.",
+   "dst": "Coloca las piezas de balsa sobre el {c2}tapete de montaje{c1} para construir tu balsa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#238": {
+   "src": "There's... no propellers here?",
+   "dst": "¿Aquí no hay... hélices?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#239": {
+   "src": "Maybe you need to find a different method of propulsion.",
+   "dst": "Quizá tengas que buscar {c2}otro método de propulsión{c1}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#240": {
+   "src": "You must have a fully constructed raft to set sail.",
+   "dst": "Para zarpar necesitas una {c2}balsa completamente montada{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#241": {
+   "src": "The lever appears to be jammed. Maybe it needs power?",
+   "dst": "La palanca parece atascada. ¿Quizá {c2}necesite corriente{/}?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#242": {
+   "src": "It looks like this station hasn't been powered in a very long time.",
+   "dst": "Parece que esta estación lleva muchísimo tiempo sin corriente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#243": {
+   "src": "Fortunately, it still seems to be accepting power.",
+   "dst": "Por suerte, parece que todavía admite corriente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#244": {
+   "src": "You could fit this with a grappling hook.",
+   "dst": "Podrías acoplarle un {c2}garfio{/}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#245": {
+   "src": "You seem to have gone off track. Sadly, your raft isn't able to survive this far.",
+   "dst": "Parece que te has salido del recorrido. Por desgracia, tu balsa no aguanta tan lejos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#246": {
+   "src": "Your raft seems to have vanished into thin air. (Unknown error occured!)",
+   "dst": "Tu balsa parece haberse esfumado. {c2}(¡Se ha producido un error desconocido!)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#247": {
+   "src": "You shouldn't open this just yet.",
+   "dst": "Todavía no deberías abrir esto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#248": {
+   "src": "It's locked...\nFichu",
+   "dst": "Está cerrado con llave...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#249": {
+   "src": "Nothing interesting to steal...\nFichu",
+   "dst": "Nada interesante que robar...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#250": {
+   "src": "But I would never steal, right?\nFichu",
+   "dst": "Pero yo nunca robaría, ¿verdad?\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#251": {
+   "src": "No wonder the water tastes so weird...\nFichu",
+   "dst": "Con razón el agua sabe tan rara...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#252": {
+   "src": "Hmm...\nFichu",
+   "dst": "Mmm...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#253": {
+   "src": "Stupid lever!\nFichu",
+   "dst": "¡Estúpida palanca!\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#254": {
+   "src": "I should take these...\nFichu",
+   "dst": "Debería llevarme esto...\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#255": {
+   "src": "This workbench is quite convenient.\nFichu",
+   "dst": "Este banco de trabajo es bastante práctico.\nFichu",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#256": {
+   "src": "Oh, don't mind me. I'm just seeing if there's anything interesting here.",
+   "dst": "Oh, no me hagas caso. Solo estoy mirando si hay algo interesante por aquí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#257": {
+   "src": "Usually there's cool things to, well- steal, but this place seems to be a bust.",
+   "dst": "Normalmente hay cosas chulas que, bueno- robar, pero este sitio parece un chasco.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#258": {
+   "src": "There sure is a lot hidden underground, you wouldn't believe some of the things I've seen!",
+   "dst": "Bajo tierra hay muchísimo escondido, ¡no te creerías algunas de las cosas que he visto!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#259": {
+   "src": "They seem to be busy with something. You should check in later.",
+   "dst": "Parece que tiene algo entre manos. Deberías volver más tarde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#260": {
+   "src": "That's great to hear! I haven't found anything useful unfortunately.",
+   "dst": "¡Me alegra oírlo! Por desgracia, yo no he encontrado nada útil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#261": {
+   "src": "I'm quite interested to see what you come up with, return to me when you're done!",
+   "dst": "Tengo mucha curiosidad por ver qué se te ocurre, ¡{c2}vuelve conmigo cuando acabes{/}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#262": {
+   "src": "You know what, not a bad idea! Let's give it a try!",
+   "dst": "Pues, ¿sabes qué? ¡No es mala idea! ¡Probemos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#263": {
+   "src": "{#} Right-Click to board",
+   "dst": "{#} Clic derecho{c2} para {c3}subir",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#264": {
+   "src": "Trains are cool... not when they're speeding right next to you.",
+   "dst": "Los trenes molan... pero no cuando pasan a toda velocidad justo a tu lado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#265": {
+   "src": "Oh, thank the Queen! It's the halfway point.",
+   "dst": "¡Oh, gracias a la reina! Ya vamos por la mitad del camino.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#266": {
+   "src": "Woah, that looks like an expensive ring! You really think the raccoon will take it?",
+   "dst": "¡Hala, ese anillo parece caro! ¿De verdad crees que el mapache se lo llevará?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#267": {
+   "src": "Hold on, where did you even get that- nevermind, I won't ask any questions. Give it a try!",
+   "dst": "Espera, ¿de dónde has sacado eso- da igual, no haré preguntas. ¡Pruébalo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#268": {
+   "src": "{#} to place Shiny Object",
+   "dst": "{#} para colocar {c2}Objeto brillante",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Through the Pipes#269": {
+   "src": "Oh! That was surprisingly easy.",
+   "dst": "¡Oh! Ha sido sorprendentemente fácil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#270": {
+   "src": "I hope no one cared about that ring, because they sure aren't getting it back...",
+   "dst": "Espero que a nadie le importara ese anillo, porque desde luego no lo va a recuperar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
+  },
+  "Through the Pipes#271": {
+   "src": "Great work! After all of that, we've finally gotten the gift back! I knew we could do it.",
+   "dst": "¡Buen trabajo! ¡Después de todo eso, por fin hemos recuperado el regalo! Sabía que podíamos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "captured.json"
   }
  }
 }
