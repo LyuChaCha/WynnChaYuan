@@ -224,6 +224,12 @@ public final class DialogueLeadAudit {
         final String title;
         final List<Integer> leads = new ArrayList<>();
         final List<Integer> blanks = new ArrayList<>();
+        final List<Integer> jumps = new ArrayList<>();
+        final List<String> jumpSamples = new ArrayList<>();
+        int backs;
+        int steps;
+        int bigSteps;
+        static final int JUMP = 4;
         int english;
         int never;
         int wrong;
@@ -260,6 +266,43 @@ public final class DialogueLeadAudit {
                 if (englishChars > 0) {
                     english++;
                 }
+            }
+            // 平不平順：一個英文字進來，中文長了幾個字；有沒有倒退
+            int prevLen = -1;
+            int maxJump = 0;
+            boolean back = false;
+            for (int i = 0; i < Math.min(length, frames.size()); i++) {
+                String f = frames.get(i);
+                if (f == null || f.isEmpty()) {
+                    continue;
+                }
+                int len = f.codePointCount(0, f.length());
+                if (prevLen >= 0) {
+                    if (len < prevLen) {
+                        back = true;
+                    } else {
+                        maxJump = Math.max(maxJump, len - prevLen);
+                        steps++;
+                        if (len - prevLen >= JUMP) {
+                            bigSteps++;
+                        }
+                    }
+                }
+                prevLen = len;
+            }
+            if (back) {
+                backs++;
+            }
+            if (maxJump >= 8 && jumpSamples.size() < 8) {
+                StringBuilder seq = new StringBuilder();
+                for (int i = 0; i < Math.min(length, frames.size()); i++) {
+                    String f = frames.get(i);
+                    seq.append(f == null ? "-" : f.isEmpty() ? "_" : String.valueOf(f.codePointCount(0, f.length()))).append(' ');
+                }
+                jumpSamples.add(want + " | " + seq);
+            }
+            if (prevLen >= 0) {
+                jumps.add(maxJump);
             }
             boolean shown = false;
             boolean bad = false;
@@ -361,6 +404,17 @@ public final class DialogueLeadAudit {
                             + "  空白ms 平均 %3.0f P90 %3d 最長 %3d  沒翻出來 %d  中→英 %d  貼錯 %d%n",
                     title, n, mean, n == 0 ? 0 : v.get(n / 2), n == 0 ? 0 : v.get((int) (n * 0.9)),
                     n == 0 ? 0 : 100.0 * zero / n, blank, blankP90, blankMax, never, flips, wrong);
+            if (!jumps.isEmpty()) {
+                List<Integer> j = new ArrayList<>(jumps);
+                Collections.sort(j);
+                System.out.printf("    平順：中文倒退的句子 %d  一幀跳 %d 字以上的幀 %.2f%%  每句最大一跳 平均 %.1f P90 %d 最大 %d%n",
+                        backs, JUMP, steps == 0 ? 0 : 100.0 * bigSteps / steps,
+                        j.stream().mapToInt(Integer::intValue).average().orElse(0),
+                        j.get((int) (j.size() * 0.9)), j.get(j.size() - 1));
+            }
+            if (Boolean.getBoolean("wcy.samples")) {
+                jumpSamples.forEach(x -> System.out.println("    [跳] " + x));
+            }
             if (slow > 0) {
                 System.out.println("    空白 >= " + SLOW + " 字或放英文：" + slow + " 句");
                 reasons.entrySet().stream()

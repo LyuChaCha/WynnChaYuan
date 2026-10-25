@@ -53,11 +53,54 @@ public final class DialogueStartLog {
 
     public static void init(Path debugDir) {
         file = debugDir.resolve("dialogue-start.txt");
+        framesFile = debugDir.resolve("dialogue-frames.txt");
         written = 0;
+        frameLines = 0;
         try {
             Files.deleteIfExists(file);
+            Files.deleteIfExists(framesFile);
         } catch (Exception ignored) {
             // 刪不掉就接著寫
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // 逐幀：每一則訊息畫出去多少字（test3「小框閃一次」「逐字忽快忽慢」要的資料）
+    // ------------------------------------------------------------------
+
+    private static Path framesFile;
+    private static int frameLines;
+    private static final int FRAME_LIMIT = 6000;
+    private static final long T0 = System.currentTimeMillis();
+    private static String lastRow = "";
+
+    /**
+     * 一幀：就地取代送出去幾個中文字（-1 是留英文、0 是先空著），或小框畫了幾個字、幾列。
+     * 跟上一幀完全一樣就不記（字停下來之後每 tick 都會再送一次）。
+     *
+     * <pre>
+     *   毫秒 | 模式 | 原文已打字數 | 畫出的中文字數 | 小框列數
+     * </pre>
+     */
+    static void frame(String mode, int raw, int shown) {
+        frameRow(mode + " | " + raw + " | " + shown + " | -");
+    }
+
+    static void panelFrame(int raw, int chars, int rows) {
+        frameRow("小框 | " + raw + " | " + chars + " | " + rows);
+    }
+
+    private static void frameRow(String row) {
+        if (framesFile == null || frameLines >= FRAME_LIMIT || row.equals(lastRow)) {
+            return;
+        }
+        lastRow = row;
+        try {
+            Files.writeString(framesFile, (System.currentTimeMillis() - T0) + " | " + row + '\n',
+                    StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            frameLines++;
+        } catch (Exception ignored) {
+            framesFile = null;
         }
     }
 

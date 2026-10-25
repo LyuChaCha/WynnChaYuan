@@ -1348,6 +1348,7 @@ public final class DialogueRewriter {
         lineRaw = "";
         released = false;
         lineStart = 0;
+        lastOut = null;
     }
 
     /**
@@ -1538,6 +1539,7 @@ public final class DialogueRewriter {
             lineShown = false;                 // 換句話了
             lineStart = now;
             released = false;
+            lastOut = null;
         }
         lineRaw = raw;
         if (out != null && !out.isEmpty()) {
@@ -1545,8 +1547,11 @@ public final class DialogueRewriter {
                 DialogueStartLog.recognised(raw.length(), now - lineStart);
             }
             lineShown = true;
+            out = paced(out);
+            DialogueStartLog.frame("就地", raw.length(), out.codePointCount(0, out.length()));
             return out;
         }
+        DialogueStartLog.frame("就地", raw.length(), out == null ? -1 : 0);
         if (out == null && !released && holds(raw, store, now)) {
             return "";
         }
@@ -1554,6 +1559,34 @@ public final class DialogueRewriter {
             released = true;                   // 這一句放英文了，之後不再蓋回去
             DialogueStartLog.gaveUp(raw.length(), now - lineStart);
         }
+        return out;
+    }
+
+    /**
+     * 中文一幀最多長幾個字。
+     *
+     * <h2>為什麼</h2>
+     * 譯文照「英文打了幾成」出幾成，平常一幀長 0～1 個字。可是佔位符（數字、地名、玩家名）
+     * 在中文裡常常比英文早出現：英文還沒打到那個數字，中文就只能停在數字前面等；
+     * 等英文打到了，中文一口氣跳出十幾個字（逐字模擬：「…3 種」停二十幾幀再跳 10 字）。
+     * test3 實機「忽快忽慢」有一部分是這個。跳的那一段改成每幀最多長這麼多字，
+     * 接連幾幀補上——不影響「先空著」多久（那是認出來之前的事）。
+     */
+    static final int MAX_STEP = 2;
+
+    /** 上一幀這一句送出去的中文。見 {@link #paced}。 */
+    private static String lastOut;
+
+    /** 見 {@link #MAX_STEP}：跟上一幀接得上（只是變長）時，一幀最多多出這麼多字。 */
+    private static String paced(String out) {
+        String before = lastOut;
+        if (before != null && out.startsWith(before)) {
+            int allowed = before.codePointCount(0, before.length()) + MAX_STEP;
+            if (out.codePointCount(0, out.length()) > allowed) {
+                out = out.substring(0, out.offsetByCodePoints(0, allowed));
+            }
+        }
+        lastOut = out;
         return out;
     }
 
