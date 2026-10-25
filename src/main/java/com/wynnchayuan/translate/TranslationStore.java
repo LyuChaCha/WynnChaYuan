@@ -3959,9 +3959,9 @@ public final class TranslationStore {
      */
     static String respell(String text) {
         String out = text;
-        for (String[] pair : SPELLING) {
-            out = out.replace(pair[0], pair[1]);
-            out = out.replace(upper(pair[0]), upper(pair[1]));
+        for (int i = 0; i < SPELLING.length; i++) {
+            out = out.replace(SPELLING[i][0], SPELLING[i][1]);
+            out = out.replace(SPELLING_UPPER[i][0], SPELLING_UPPER[i][1]);
         }
         return out;
     }
@@ -3985,6 +3985,22 @@ public final class TranslationStore {
         {"apologise", "apologize"}, {"recognise", "recognize"},
         {"organise", "organize"},
     };
+
+    /**
+     * {@link #SPELLING} 的開頭大寫版，跟它一一對應。
+     *
+     * <p>先前每次查不到都在迴圈裡現組這六十個字串（{@link #upper}），名牌與 tooltip 查不到的時候
+     * 這一步佔了查表時間的四到五成。內容跟現組的完全一樣，只是算一次就好。
+     */
+    private static final String[][] SPELLING_UPPER = upperPairs();
+
+    private static String[][] upperPairs() {
+        String[][] out = new String[SPELLING.length][];
+        for (int i = 0; i < SPELLING.length; i++) {
+            out[i] = new String[] {upper(SPELLING[i][0]), upper(SPELLING[i][1])};
+        }
+        return out;
+    }
 
     /**
      * Wynncraft 拿來做<b>縮排</b>的字元。在它的字型裡 {@code À} 是一格固定寬度的空白，

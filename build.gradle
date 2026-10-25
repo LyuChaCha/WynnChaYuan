@@ -1687,3 +1687,21 @@ tasks.register('runItemFileOriginalChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ItemFileOriginalTest'
 }
 tasks.named('check') { dependsOn 'runItemFileOriginalChecks' }
+
+// 查表加速（地名首字元索引、拼法換算預先算好）：結果要跟原本的寫法逐字相同。
+tasks.register('runRespellPlacesChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.RespellPlacesTest'
+}
+tasks.named('check') { dependsOn 'runRespellPlacesChecks' }
+
+// 算繪端加速（tooltip 每行只切一次、追蹤欄與名牌的快取）：畫出去的跟原本逐字相同、該重算時重算。
+tasks.register('runHotPathCacheChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.HotPathCacheTest'
+}
+tasks.named('check') { dependsOn 'runHotPathCacheChecks' }

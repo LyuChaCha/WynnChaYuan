@@ -38,10 +38,32 @@ public final class PlaceNames {
 
     private static final List<String> NAMES;
 
+    /**
+     * 地名照<b>第一個字元</b>分組，給 {@link #mayContain} 先篩用。
+     *
+     * <h2>為什麼需要</h2>
+     * 比對式是四百多個地名串成的一長串「或」，Java 的正則不會把它整理成字典樹：
+     * 每一個起點都要把四百多個分支試一遍。{@link LineParts#of} 每一段字都會掃一次，
+     * tooltip 整段查表的時候同一行還會被掃上幾十次——離線量測冷 tooltip 有一半的時間
+     * 花在這裡（51 行的裝備說明 11.6ms，其中約 7ms 是這條比對式）。
+     *
+     * <p>絕大多數的字裡根本沒有地名。先用這張表問「有沒有任何一個地名出現在這裡」，
+     * 沒有就不必跑比對式。這只是<b>必要條件</b>：有出現才交給原本的比對式，邊界規則、
+     * 長的優先，全部照舊，所以結果跟以前逐字相同（見 {@code PlaceNamesIndexTest}）。
+     */
+    private static final java.util.Map<Character, String[]> BY_FIRST;
+
     static {
         List<String> names = load();
         NAMES = List.copyOf(names);
         PATTERN = names.isEmpty() ? null : compile(names);
+        java.util.Map<Character, List<String>> grouped = new java.util.HashMap<>();
+        for (String name : NAMES) {
+            grouped.computeIfAbsent(name.charAt(0), k -> new ArrayList<>()).add(name);
+        }
+        java.util.Map<Character, String[]> index = new java.util.HashMap<>();
+        grouped.forEach((first, list) -> index.put(first, list.toArray(new String[0])));
+        BY_FIRST = java.util.Map.copyOf(index);
     }
 
     private PlaceNames() {}
@@ -87,7 +109,31 @@ public final class PlaceNames {
 
     /** 這段文字裡的地名。回傳的 matcher 已經套好邊界規則。 */
     public static Matcher matcher(String text) {
-        return PATTERN == null ? null : PATTERN.matcher(text);
+        if (PATTERN == null) {
+            return null;
+        }
+        // 沒有任何地名出現在這段字裡：比對式一定找不到，給它一段空字串就好——
+        // 呼叫端照樣拿到一個 matcher，find() 一次都不會成立，跟以前掃完整段的結果一樣。
+        return PATTERN.matcher(text == null || mayContain(text) ? text : "");
+    }
+
+    /**
+     * 這段字裡有沒有<b>可能</b>出現地名：有沒有任何一個位置剛好接著某個地名的全文。
+     * 不看邊界——邊界交給比對式判斷；這裡回答「否」時比對式一定也找不到。
+     */
+    static boolean mayContain(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            String[] names = BY_FIRST.get(text.charAt(i));
+            if (names == null) {
+                continue;
+            }
+            for (String name : names) {
+                if (text.startsWith(name, i)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** 是否剛好等於某個地名（用於 NPC 名牌那種整段就是地名的情況）。 */

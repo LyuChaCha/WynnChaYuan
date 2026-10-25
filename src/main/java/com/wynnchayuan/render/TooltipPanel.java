@@ -232,6 +232,18 @@ public final class TooltipPanel {
      * 由長到短試，讓涵蓋比較多行的條目優先——短的那些多半只是碰巧撞上。
      */
     public static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
+        return translateLines(tooltip, store, true);
+    }
+
+    /**
+     * @param reuseParts 每一行的 {@link com.wynnchayuan.capture.LineParts} 只算一次。
+     *     整段查表會從每個起點把 15 到 2 行的窗格都試一遍，同一行先前每試一次就重切一次
+     *     （51 行的說明切了上千次）。切的結果只看那一行本身與當下的玩家名字，這一份 tooltip
+     *     翻完之前都不會變，所以記在這次呼叫裡就好——不放靜態欄位，背景執行緒碰不到。
+     *     {@code false} 是原本每次重切的走法，只給 {@code TooltipPartsReuseTest} 比對結果用。
+     */
+    static List<Component> translateLines(List<Component> tooltip, TranslationStore store,
+                                          boolean reuseParts) {
         int n = tooltip.size();
         List<Component> out = new ArrayList<>(n);
         boolean anyTranslated = false;
@@ -247,6 +259,13 @@ public final class TooltipPanel {
             // <b>每一句</b>提到玩家名字的台詞都翻不出來。見 SelfNames。
             com.wynnchayuan.capture.SelfNames.learn(line.getString());
         }
+
+        // 每一行切好的片段：這一次呼叫裡同一行只切一次，見 reuseParts
+        java.util.IdentityHashMap<StyledText, com.wynnchayuan.capture.LineParts> parts =
+                new java.util.IdentityHashMap<>();
+        java.util.function.Function<StyledText, com.wynnchayuan.capture.LineParts> partsOf =
+                reuseParts ? line -> parts.computeIfAbsent(line, com.wynnchayuan.capture.LineParts::of)
+                           : com.wynnchayuan.capture.LineParts::of;
 
         // 第二欄靠左還是靠右，一行看不出來，得看整份 tooltip
         boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
@@ -281,13 +300,13 @@ public final class TooltipPanel {
         // 會被一起擋住，所以要先排除技能樹。見 #isAbilityNode。
         boolean abilityPanel = isAbilityNode(styled);
         String gearName = n == 0 || abilityPanel ? null : bareName(
-                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
+                partsOf.apply(styled.get(0)).template());
         // 另外取了名字的裝備（scoped/gear.json）不擋：它在一般語料裡可能還沒翻
         // （Chief、Red 這種跟介面詞同名的），但它有自己的名字可以用。
         // F6 關掉物品名稱時照舊留原文。見 TranslationStore#gearOwnName。
         boolean ownName = gearName != null && store.translatesNames()
                 && store.gearOwnName(gearName) != null
-                && TranslationStore.nameRowInner(com.wynnchayuan.capture.LineParts.of(
+                && TranslationStore.nameRowInner(partsOf.apply(
                         styled.get(0)).template()) != null;
         if (gearName != null && !ownName && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
@@ -309,7 +328,7 @@ public final class TooltipPanel {
             // 素材不在 gearNameKeys（ingredient.json 標了 gearNames:false），
             // 技能樹的節點標題也不是裝備名，兩者都碰不到這一段。
             if (n > 1 && gearName.equals(bareName(
-                    com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                    partsOf.apply(styled.get(1)).template()))) {
                 out.add(LineTranslator.untranslated(styled.get(1)));
                 spans.add(new int[] {1, 2, 1, 2});
                 i = 2;
@@ -322,13 +341,13 @@ public final class TooltipPanel {
         // 有那一行，第一列就是人取的名字。原版的說明名字佔兩列（第 0 列寬度是 0），
         // WynnMod 重畫的只有一列；第二列剝掉裝飾之後是同一個名字才一起留。
         if (i == 0 && n > 0 && !abilityPanel && crafted(styled)) {
-            String name = bareName(com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
+            String name = bareName(partsOf.apply(styled.get(0)).template());
             if (!name.isEmpty()) {
                 out.add(LineTranslator.untranslated(styled.get(0)));
                 spans.add(new int[] {0, 1, 0, 1});
                 i = 1;
                 if (n > 1 && name.equals(bareName(
-                        com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                        partsOf.apply(styled.get(1)).template()))) {
                     out.add(LineTranslator.untranslated(styled.get(1)));
                     spans.add(new int[] {1, 2, 1, 2});
                     i = 2;
@@ -346,7 +365,7 @@ public final class TooltipPanel {
         // 整條鍵另外有條目的不擋：Lootrun 使命卡的「{#}Redemption」在語料裡有自己的
         // 一條，查到的是使命名，不是那件護腿。
         if (i == 0 && n > 0 && !abilityPanel) {
-            String row0 = com.wynnchayuan.capture.LineParts.of(styled.get(0)).template();
+            String row0 = partsOf.apply(styled.get(0)).template();
             String name = bareName(row0);
             if (!name.isEmpty() && store.gearNameOnly(name)
                     && (row0.strip().equals(name) || store.lookupExact(row0) == null)
@@ -357,7 +376,7 @@ public final class TooltipPanel {
                 nameList[0] = true;
                 i = 1;
                 if (n > 1 && name.equals(bareName(
-                        com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                        partsOf.apply(styled.get(1)).template()))) {
                     out.add(LineTranslator.untranslated(styled.get(1)));
                     spans.add(new int[] {1, 2, 1, 2});
                     nameList[1] = true;
@@ -376,12 +395,12 @@ public final class TooltipPanel {
         // 一個圖示，不是名稱列，所以使命「救贖」不會變成那件護腿的名字。
         // （新版卡片的標題是裸名，見下面的 lootrunTitle。）
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
-                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null;
+                partsOf.apply(styled.get(0)).template()) != null;
         // Lootrun 試煉卡／使命卡的標題：新版卡片是裸名（Hubris），只查得到同名的那件
         // 裝備。標題那一列改問使命名自己的譯名，見 TranslationStore#lootrunTitle。
         boolean lootrunTitle = n > 0 && isLootrunCard(styled)
                 && com.wynnchayuan.translate.LootrunNames.isName(bareName(
-                        com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()));
+                        partsOf.apply(styled.get(0)).template()));
         try {
             while (i < n) {
                 TranslationStore.holdAppendedOriginal(i >= 2);
@@ -411,7 +430,7 @@ public final class TooltipPanel {
                     boolean[] slice = new boolean[len];
                     System.arraycopy(centered, i, slice, 0, len);
                     block = LineTranslator.translateBlock(
-                            styled.subList(i, i + len), store, slice);
+                            styled.subList(i, i + len), store, slice, partsOf);
                     used = len;
                 }
                 if (block != null) {
@@ -443,7 +462,7 @@ public final class TooltipPanel {
                         if (k > i) {
                             key.append(System.lineSeparator());
                         }
-                        key.append(com.wynnchayuan.capture.LineParts.of(styled.get(k)).template());
+                        key.append(partsOf.apply(styled.get(k)).template());
                     }
                     LineTranslator.noteBlockMiss(key.toString(), store);
                 }
