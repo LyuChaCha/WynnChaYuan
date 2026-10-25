@@ -241,6 +241,7 @@ public final class DialogueOverlay {
         String said = null;
         String[] raws = dialogue.getString().split("\n");
         List<String> sources = new ArrayList<>(raws.length);
+        List<String> seenRaws = new ArrayList<>(raws.length);
         List<List<Component>> rendered = new ArrayList<>(raws.length);
         for (int i = 0; i < raws.length; i++) {
             // 句中的圖示拆成自己一段，模板裡才會是 {#}；語料只認得舊格式的句子
@@ -251,8 +252,10 @@ public final class DialogueOverlay {
 
             // 還在打字：這一行是我們已經認出的那句話的開頭，那就別再算一次。
             // 見 #settledSource 說明——重算才是閃爍的來源。
-            String settled = settledSource(i, template);
+            String settled = settledSource(i, raws[i], template);
+            seenRaws.add(raws[i]);
             if (settled != null) {
+                noteHeard(store, settled, template);
                 List<Component> box = shown.get(i);
                 if (shownGeneration != DialogueIcons.generation()) {
                     // 顏色是跟著打字一格一格冒出來的：上次算的時候 {c4} 可能還沒有
@@ -277,6 +280,7 @@ public final class DialogueOverlay {
             String source = result == null ? null : result.source();
             if (translated != null) {
                 any = true;
+                noteHeard(store, source, template);
                 if (said == null) {
                     said = speakerFor(store, template);
                 }
@@ -299,6 +303,7 @@ public final class DialogueOverlay {
         // 說話者不會換，畫面上看起來像「這句沒翻譯」，實際上是整段沒跑完。
         // 日誌裡那幾千筆例外也是從這裡來的。
         settledFor = java.util.Collections.unmodifiableList(new ArrayList<>(sources));
+        settledRaws = java.util.Collections.unmodifiableList(seenRaws);
         shown = List.copyOf(rendered);
         shownGeneration = DialogueIcons.generation();
         // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
@@ -386,6 +391,10 @@ public final class DialogueOverlay {
                 source = store.nearQuestLine(template,
                                              com.wynnchayuan.capture.CurrentQuest.get());
             }
+            if (source == null) {
+                // 還要更多字才敢認：從上一句與名牌預測。見 DialogueForecast。
+                source = FORECAST.guess(store, template.strip());
+            }
             if (source != null) {
                 // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
                 // 還原地名／玩家名；參數尚未齊全就先等，不能把 raw {p}/{u}
@@ -461,14 +470,48 @@ public final class DialogueOverlay {
      *
      * @return 沿用的原文；這一行是新的、得重算時回傳 {@code null}
      */
-    private static String settledSource(int index, String template) {
+    private static String settledSource(int index, String raw, String template) {
         List<String> sources = settledFor;
+        List<String> raws = settledRaws;
         List<List<Component>> boxes = shown;
-        if (index >= sources.size() || index >= boxes.size()) {
+        if (index >= sources.size() || index >= boxes.size() || index >= raws.size()) {
             return null;
         }
         String source = sources.get(index);
-        return canReuse(source, template) ? source : null;
+        return continues(raws.get(index), raw) && canReuse(source, template) ? source : null;
+    }
+
+    /**
+     * 這一行還是上一次那一句、只是又多打了幾個字嗎。
+     *
+     * <h2>為什麼光看 {@link #canReuse} 不夠</h2>
+     * 它只問「認出來的那條原文是不是以畫面上這幾個字開頭」。換到下一句的頭一兩個字時，
+     * 這件事常常剛好成立——上一句是「This graveyard is empty.」，下一句打到「Th」，
+     * 小框就照舊擺著上一句的譯文，等打到岔開的字才換掉：<b>別句的中文</b>閃了兩幀。
+     * 逐字模擬整段任務對話（一句接一句）抓到一成多的句子是這樣開頭的。
+     * 原文是一個字一個字加上去的，所以同一句的這一幀一定以上一幀開頭。
+     */
+    static boolean continues(String before, String now) {
+        return before != null && now != null && now.startsWith(before);
+    }
+
+    /** 每一行上一次的原文。見 {@link #continues}。 */
+    private static volatile List<String> settledRaws = List.of();
+
+    /** 小框這條路的「上一句」。見 {@link DialogueForecast}。 */
+    static final DialogueForecast FORECAST = new DialogueForecast();
+
+    /**
+     * 這一幀確定畫面上是哪一句：打出夠多字、或整句打完。預測下一句從這裡往後找。
+     */
+    static void noteHeard(TranslationStore store, String source, String template) {
+        if (source == null || template == null) {
+            return;
+        }
+        String typed = template.strip();
+        if (typed.length() >= DialogueForecast.CONFIRM || source.equals(typed)) {
+            FORECAST.heard(store, source);
+        }
     }
 
     /**
@@ -573,6 +616,7 @@ public final class DialogueOverlay {
         speaker = null;
         needsShift = false;
         settledFor = List.of();
+        settledRaws = List.of();
         shown = List.of();
         lastUpdate = 0;
     }

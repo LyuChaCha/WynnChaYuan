@@ -141,6 +141,21 @@ public final class PlaceNames {
         return text != null && NAMES.contains(text.strip());
     }
 
+    /**
+     * 有沒有哪個地名以這幾個字開頭——地名打到一半時，判斷「這裡可能是一個 {@code {p}}」。
+     */
+    public static boolean anyStartsWith(String partial) {
+        if (partial == null || partial.isEmpty()) {
+            return true;
+        }
+        for (String name : NAMES) {
+            if (name.startsWith(partial)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static int size() {
         return NAMES.size();
     }
