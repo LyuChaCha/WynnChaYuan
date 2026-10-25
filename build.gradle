@@ -1223,6 +1223,30 @@ tasks.register('runDialogueTypingChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueTypingChecks' }
 
+tasks.register('runDialogueForecastChecks', JavaExec) {
+    group = 'verification'
+    description = '預測下一句：第一個字就是中文，跳著對話、重講、名牌不符都不准貼錯'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueForecastTest'
+}
+tasks.named('check') { dependsOn 'runDialogueForecastChecks' }
+
+// 量表，不掛 check：台詞逐字打出來時，第一個中文之前已經打了幾個英文字元
+tasks.register('runDialogueLeadAudit', JavaExec) {
+    group = 'verification'
+    description = '量表：對話第一個中文出現之前打了幾個英文字元（-Plang=、-Pevery=、-Psamples=true）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueLeadAudit'
+    systemProperty 'wcy.lang', findProperty('lang') ?: 'zh_tw'
+    systemProperty 'wcy.every', findProperty('every') ?: '1'
+    systemProperty 'wcy.samples', findProperty('samples') ?: 'false'
+    systemProperty 'wcy.quest', findProperty('quest') ?: ''
+    systemProperty 'wcy.dump', findProperty('dump') ?: ''
+    systemProperty 'wcy.only', findProperty('only') ?: ''
+    systemProperty 'wcy.msPerChar', findProperty('msPerChar') ?: '40'
+    systemProperty 'wcy.variant', findProperty('variant') ?: ''
+}
+
 tasks.register('runLabelColourChecks', JavaExec) {
     group = 'verification'
     description = '採集點名牌：每一段的顏色要跟原文對得起來'

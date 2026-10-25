@@ -220,6 +220,28 @@ public final class DialogueOverlay {
             clear();                           // 快取也要跟著倒掉，否則下一段對話
             return;                            // 會拿上一段的結果去比對開頭
         }
+        // 換句的那一刻，Wynntils 還會用<b>上一句</b>的文字補發事件（先發 Ended，
+        // 原始訊息偶爾也還是舊的）。照單全收的話，小框就是「上一句 → 空 → 上一句 →
+        // 空 → 這一句」：使用者回報的「閃爍兩下才完整翻譯」。新的一句已經開始之後，
+        // 上一句的文字一律不理。
+        // 比對「同一句」用看得見的字：Wynntils 給的文字結尾常帶一個排版偏移字元
+        //（U+D00xx，跟著打到的長度每一幀都換一個），照原樣比的話每一幀都像換了一句——
+        // test3 實機：快取永遠用不上、每幀重算，認不出來的那幾幀小框就收掉一次。
+        String whole = plainOf(dialogue.getString());
+        long now = System.currentTimeMillis();
+        if (!lineText.isEmpty() && whole.startsWith(lineText)) {
+            lineText = whole;                  // 同一句，又多打了幾個字
+        } else if (!previousText.isEmpty() && previousText.equals(whole)) {
+            // 上一句補發的事件（Wynntils 補發的是上一句<b>整句</b>）。只認完全相同：
+            // 新的一句開頭剛好跟上一句一樣時（「I…」「I…」），那幾幀不能被當成補發吞掉
+            return;
+        } else {
+            previousText = lineText;           // 換句了
+            lineText = whole;
+            lineStart = now;
+            lineLogged = false;
+        }
+        boolean wasShowing = !current.isEmpty();
         // 字停下來了嗎。一次只能問一次（它自己在數），所以擺在這裡，
         // 底下每一行共用同一個答案。
         boolean steady = settled(dialogue.getString());
@@ -239,8 +261,14 @@ public final class DialogueOverlay {
         // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
         String said = null;
+        // 每一行先拿掉排版偏移字元（見上面 plainOf）：留著的話模板就跟語料對不上，
+        // 認出來的那條也沒辦法沿用，每一幀重算、算不出來的那幀小框就收掉
         String[] raws = dialogue.getString().split("\n");
+        for (int r = 0; r < raws.length; r++) {
+            raws[r] = plainOf(raws[r]);
+        }
         List<String> sources = new ArrayList<>(raws.length);
+        List<String> seenRaws = new ArrayList<>(raws.length);
         List<List<Component>> rendered = new ArrayList<>(raws.length);
         for (int i = 0; i < raws.length; i++) {
             // 句中的圖示拆成自己一段，模板裡才會是 {#}；語料只認得舊格式的句子
@@ -251,8 +279,10 @@ public final class DialogueOverlay {
 
             // 還在打字：這一行是我們已經認出的那句話的開頭，那就別再算一次。
             // 見 #settledSource 說明——重算才是閃爍的來源。
-            String settled = settledSource(i, template);
+            String settled = settledSource(i, raws[i], template);
+            seenRaws.add(raws[i]);
             if (settled != null) {
+                noteHeard(store, settled, template);
                 List<Component> box = shown.get(i);
                 if (shownGeneration != DialogueIcons.generation()) {
                     // 顏色是跟著打字一格一格冒出來的：上次算的時候 {c4} 可能還沒有
@@ -277,6 +307,7 @@ public final class DialogueOverlay {
             String source = result == null ? null : result.source();
             if (translated != null) {
                 any = true;
+                noteHeard(store, source, template);
                 if (said == null) {
                     said = speakerFor(store, template);
                 }
@@ -299,6 +330,7 @@ public final class DialogueOverlay {
         // 說話者不會換，畫面上看起來像「這句沒翻譯」，實際上是整段沒跑完。
         // 日誌裡那幾千筆例外也是從這裡來的。
         settledFor = java.util.Collections.unmodifiableList(new ArrayList<>(sources));
+        settledRaws = java.util.Collections.unmodifiableList(seenRaws);
         shown = List.copyOf(rendered);
         shownGeneration = DialogueIcons.generation();
         // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
@@ -308,12 +340,99 @@ public final class DialogueOverlay {
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any && !bodyOff ? List.copyOf(lines) : List.of();
+        if (!any && !bodyOff && wasShowing && covers(raws, store, steady, now)) {
+            // 換到下一句、還認不出是哪一句：框留著、字先空著，認出來再換上譯文。
+            // 收掉再冒出來，就是一次閃爍（就地取代那條路的「先蓋住」，見 DialogueRewriter#holds）。
+            current = blankLike(lastShown);
+            speaker = null;
+            lastUpdate = now;
+            logPanel();
+            return;
+        }
+        if (any && !bodyOff) {
+            lastShown = current;
+            if (!lineLogged) {
+                lineLogged = true;             // 診斷：小框這一句多久認出來
+                DialogueStartLog.recognised(lineText.length(), now - lineStart);
+            }
+        }
         // 選項獨立於本文：NPC 那句查不到的時候，選項照樣要能顯示——
         // 玩家等一下就得從裡面挑一個。它自己跟著 action bar 更新，
         // 這裡不要再蓋一次（蓋了就又變成慢半拍的那一份）。
         if ((any && !bodyOff) || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
+        logPanel();
+    }
+
+    /** 診斷：這一則事件之後小框畫著幾個字、幾列（見 DialogueStartLog#panelFrame）。 */
+    private static void logPanel() {
+        int chars = 0;
+        for (Component row : current) {
+            chars += (int) row.getString().codePoints().filter(cp -> !Character.isWhitespace(cp)
+                    && cp != 0x3000).count();
+        }
+        DialogueStartLog.panelFrame(lineText.length(), chars, current.size());
+    }
+
+    /** 只留看得見的字：拿掉排版偏移與材質包圖示（見 {@link #setCurrent} 開頭）。 */
+    static String plainOf(String text) {
+        if (text == null) {
+            return "";
+        }
+        StringBuilder out = new StringBuilder(text.length());
+        text.codePoints()
+                .filter(cp -> !com.wynnchayuan.translate.SpaceOffset.isOffset(cp))
+                .forEach(out::appendCodePoint);
+        return out.toString().strip();
+    }
+
+    /** 這一句目前打到的文字；換句時移到 {@link #previousText}。見 {@link #setCurrent}。 */
+    private static String lineText = "";
+    private static String previousText = "";
+    private static long lineStart;
+    private static boolean lineLogged;
+
+    /** 最後一次畫出來的譯文，空著時照它的大小留框。 */
+    private static List<Component> lastShown = List.of();
+
+    /**
+     * 小框的「先蓋住」：跟就地取代同一組條件與上限（{@link DialogueRewriter#HOLD_MS}、
+     * {@link DialogueRewriter#HOLD_CHARS}、字停下來、語料裡已經沒有任何一句對得上）。
+     */
+    private static boolean covers(String[] raws, TranslationStore store, boolean steady, long now) {
+        var config = WynnChaYuan.config();
+        if ((config != null && !config.dialogueCover()) || steady || raws.length == 0
+                || now - lineStart > DialogueRewriter.HOLD_MS
+                || raws[raws.length - 1].strip().length() > DialogueRewriter.HOLD_CHARS) {
+            return false;
+        }
+        StyledText line = DialogueIcons.line(raws[raws.length - 1], store);
+        return store.couldStillMatch(com.wynnchayuan.capture.GlyphSplitter.toTemplate(line));
+    }
+
+    /** 跟 {@code shown} 一樣寬、一樣行數的空白（中文字的位置放全形空白）。 */
+    static List<Component> blankLike(List<Component> shown) {
+        if (shown.isEmpty()) {
+            return List.of(Component.literal(" "));
+        }
+        List<Component> out = new ArrayList<>(shown.size());
+        for (Component row : shown) {
+            StringBuilder sb = new StringBuilder();
+            row.getString().codePoints().forEach(cp -> sb.append(cp >= 0x2E80 ? '　' : ' '));
+            out.add(Component.literal(sb.toString()));
+        }
+        return List.copyOf(out);
+    }
+
+    /** 測試用：小框現在畫的內容。 */
+    static List<Component> currentForTest() {
+        return current;
+    }
+
+    /** 測試用：換一段對話。 */
+    static void resetForTest() {
+        clear();
     }
 
     /** {@link #shown} 算出來的時候，{@link DialogueIcons} 記的顏色是第幾版。 */
@@ -385,6 +504,10 @@ public final class DialogueOverlay {
                 // wiki 抄來的台詞跟實機差一兩個字，見 TranslationStore#nearQuestLine
                 source = store.nearQuestLine(template,
                                              com.wynnchayuan.capture.CurrentQuest.get());
+            }
+            if (source == null) {
+                // 還要更多字才敢認：從上一句與名牌預測。見 DialogueForecast。
+                source = FORECAST.guess(store, template.strip());
             }
             if (source != null) {
                 // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
@@ -461,14 +584,48 @@ public final class DialogueOverlay {
      *
      * @return 沿用的原文；這一行是新的、得重算時回傳 {@code null}
      */
-    private static String settledSource(int index, String template) {
+    private static String settledSource(int index, String raw, String template) {
         List<String> sources = settledFor;
+        List<String> raws = settledRaws;
         List<List<Component>> boxes = shown;
-        if (index >= sources.size() || index >= boxes.size()) {
+        if (index >= sources.size() || index >= boxes.size() || index >= raws.size()) {
             return null;
         }
         String source = sources.get(index);
-        return canReuse(source, template) ? source : null;
+        return continues(raws.get(index), raw) && canReuse(source, template) ? source : null;
+    }
+
+    /**
+     * 這一行還是上一次那一句、只是又多打了幾個字嗎。
+     *
+     * <h2>為什麼光看 {@link #canReuse} 不夠</h2>
+     * 它只問「認出來的那條原文是不是以畫面上這幾個字開頭」。換到下一句的頭一兩個字時，
+     * 這件事常常剛好成立——上一句是「This graveyard is empty.」，下一句打到「Th」，
+     * 小框就照舊擺著上一句的譯文，等打到岔開的字才換掉：<b>別句的中文</b>閃了兩幀。
+     * 逐字模擬整段任務對話（一句接一句）抓到一成多的句子是這樣開頭的。
+     * 原文是一個字一個字加上去的，所以同一句的這一幀一定以上一幀開頭。
+     */
+    static boolean continues(String before, String now) {
+        return before != null && now != null && now.startsWith(before);
+    }
+
+    /** 每一行上一次的原文。見 {@link #continues}。 */
+    private static volatile List<String> settledRaws = List.of();
+
+    /** 小框這條路的「上一句」。見 {@link DialogueForecast}。 */
+    static final DialogueForecast FORECAST = new DialogueForecast();
+
+    /**
+     * 這一幀確定畫面上是哪一句：打出夠多字、或整句打完。預測下一句從這裡往後找。
+     */
+    static void noteHeard(TranslationStore store, String source, String template) {
+        if (source == null || template == null) {
+            return;
+        }
+        String typed = template.strip();
+        if (typed.length() >= DialogueForecast.CONFIRM || source.equals(typed)) {
+            FORECAST.heard(store, source);
+        }
     }
 
     /**
@@ -565,6 +722,9 @@ public final class DialogueOverlay {
     }
 
     public static void clear() {
+        lineText = "";
+        previousText = "";
+        lastShown = List.of();
         current = List.of();
         choices = List.of();
         rawChoices = List.of();
@@ -573,6 +733,7 @@ public final class DialogueOverlay {
         speaker = null;
         needsShift = false;
         settledFor = List.of();
+        settledRaws = List.of();
         shown = List.of();
         lastUpdate = 0;
     }

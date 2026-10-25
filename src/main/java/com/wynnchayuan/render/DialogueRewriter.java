@@ -1344,6 +1344,11 @@ public final class DialogueRewriter {
         held = null;
         heldRaw = "";
         heldSource = null;
+        lineShown = false;
+        lineRaw = "";
+        released = false;
+        lineStart = 0;
+        lastOut = null;
     }
 
     /**
@@ -1399,9 +1404,13 @@ public final class DialogueRewriter {
         while (agreed < room && source.charAt(agreed) == typed.charAt(agreed)) {
             agreed++;
         }
-        return agreed >= AGREED && agreed < source.length()
+        return (agreed >= AGREED && agreed < source.length()
                 && source.charAt(agreed) == '{'
-                && typed.length() <= source.length() + NAME_ROOM;
+                && typed.length() <= source.length() + NAME_ROOM)
+                // 對上不到 12 個字也行，只要岔出去的那一截<b>像</b>那個佔位符打到一半：
+                // 玩家自己名字的開頭、地名的開頭、數字。預測下一句在第一個字就認出
+                // 「Hey, {u}! …」時，打到名字的那幾幀才不會掉回英文。見 TranslationStore#slotFits。
+                || com.wynnchayuan.translate.TranslationStore.slotFits(source, typed);
     }
 
     /** 岔開之前至少要對上這麼多，才算「還是同一句」。 */
@@ -1523,6 +1532,125 @@ public final class DialogueRewriter {
 
     static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
+        String out = recognise(text, store, rows, style, width);
+        String raw = text == null ? "" : text.strip();
+        long now = holdClock.getAsLong();
+        if (lineRaw.isEmpty() || !raw.startsWith(lineRaw)) {
+            lineShown = false;                 // 換句話了
+            lineStart = now;
+            released = false;
+            lastOut = null;
+        }
+        lineRaw = raw;
+        if (out != null && !out.isEmpty()) {
+            if (!lineShown) {
+                DialogueStartLog.recognised(raw.length(), now - lineStart);
+            }
+            lineShown = true;
+            out = paced(out);
+            DialogueStartLog.frame("就地", raw.length(), out.codePointCount(0, out.length()));
+            return out;
+        }
+        DialogueStartLog.frame("就地", raw.length(), out == null ? -1 : 0);
+        if (out == null && !released && holds(raw, store, now)) {
+            return "";
+        }
+        if (out == null && !lineShown && !released) {
+            released = true;                   // 這一句放英文了，之後不再蓋回去
+            DialogueStartLog.gaveUp(raw.length(), now - lineStart);
+        }
+        return out;
+    }
+
+    /**
+     * 中文一幀最多長幾個字。
+     *
+     * <h2>為什麼</h2>
+     * 譯文照「英文打了幾成」出幾成，平常一幀長 0～1 個字。可是佔位符（數字、地名、玩家名）
+     * 在中文裡常常比英文早出現：英文還沒打到那個數字，中文就只能停在數字前面等；
+     * 等英文打到了，中文一口氣跳出十幾個字（逐字模擬：「…3 種」停二十幾幀再跳 10 字）。
+     * test3 實機「忽快忽慢」有一部分是這個。跳的那一段改成每幀最多長這麼多字，
+     * 接連幾幀補上——不影響「先空著」多久（那是認出來之前的事）。
+     */
+    static final int MAX_STEP = 2;
+
+    /** 上一幀這一句送出去的中文。見 {@link #paced}。 */
+    private static String lastOut;
+
+    /** 見 {@link #MAX_STEP}：跟上一幀接得上（只是變長）時，一幀最多多出這麼多字。 */
+    private static String paced(String out) {
+        String before = lastOut;
+        if (before != null && out.startsWith(before)) {
+            int allowed = before.codePointCount(0, before.length()) + MAX_STEP;
+            if (out.codePointCount(0, out.length()) > allowed) {
+                out = out.substring(0, out.offsetByCodePoints(0, allowed));
+            }
+        }
+        lastOut = out;
+        return out;
+    }
+
+    /** 測試用的時鐘：逐字模擬時一幀推進一個字的時間。 */
+    static java.util.function.LongSupplier holdClock = System::currentTimeMillis;
+
+    /** 這一句第一幀的時間。見 {@link #holds}。 */
+    private static long lineStart;
+
+    /** 這一句已經放出英文了：之後不再蓋回空白（不然英文與空白會來回閃）。 */
+    private static boolean released;
+
+    /**
+     * 認出是哪一句之前，先別讓英文露出來。
+     *
+     * <h2>為什麼</h2>
+     * 使用者回報「對話還是會先出現原文、再出現譯文」。伺服器是一個字一個字送的
+     * （每一則 action bar 只帶到目前打到的地方，Wynntils 的對話事件也一樣），
+     * 頭幾個字本來就認不出是哪一句——要嘛等到認得出來、要嘛猜。猜錯會貼出別句的中文，
+     * 那比沒翻更糟；而等的那幾幀，畫面上就是英文。
+     *
+     * <p>第三條路：那幾幀先<b>什麼都不畫</b>。逐字模擬兩萬多句任務對話，認出來平均
+     * 只要五、六個字（打字大約每秒二三十個字，也就是零點二秒左右）；那段時間框裡是空的，
+     * 認出來就從第一個中文字開始打，玩家看不到英文，也不會看到猜錯的中文。
+     *
+     * <h2>什麼時候不等</h2>
+     * <ul>
+     *   <li>這一句已經出過中文（之後的空檔照舊沿用或退回英文，不在這裡變空）。</li>
+     *   <li>原文已經打超過 {@link #HOLD_CHARS} 個字還認不出來。</li>
+     *   <li>字停下來了（{@link #settled}）：講完了還認不出來，就是沒翻。</li>
+     *   <li>語料裡已經沒有任何一句對得上這幾個字（{@link TranslationStore#couldStillMatch}）
+     *       ——那句不在語料裡，等也等不到，英文立刻出來。</li>
+     *   <li>翻得出來但要小框接手（{@link #tooLong}）。</li>
+     * </ul>
+     */
+    private static boolean holds(String raw, TranslationStore store, long now) {
+        var config = com.wynnchayuan.WynnChaYuan.config();
+        if ((config != null && !config.dialogueCover())
+                || lineShown || tooLong || raw.isEmpty() || raw.length() > HOLD_CHARS
+                || now - lineStart > HOLD_MS || still >= SETTLE_FRAMES || store == null) {
+            return false;
+        }
+        String typed = DialogueIcons.parts(raw, store).template().strip();
+        return store.couldStillMatch(typed);
+    }
+
+    /**
+     * 見 {@link #holds}：最多先空著多久。使用者要求「不能拖太久」：超過就把已經打出來的
+     * 英文補上，不再等。打字大約每秒二三十個字，三百毫秒是六到九個字。
+     */
+    static final long HOLD_MS = 300;
+
+    /** 同上，以字數算的保險（時鐘不準時也不會一直空著）。 */
+    static final int HOLD_CHARS = 12;
+
+    /** 這一句出過中文了嗎。見 {@link #holds}。 */
+    private static boolean lineShown;
+
+    /** 上一幀的原文，用來認出「換句話了」。見 {@link #holds}。 */
+    private static String lineRaw = "";
+
+    /** 見 {@link #line}：認得出就回譯文，認不出回 {@code null}（留英文）。 */
+    private static String recognise(String text, TranslationStore store, int rows,
+            Style style, int width) {
         // 「翻得出來但放不下」的旗標在這裡也歸零，不只在 rewrite() 開頭。
         //
         // rewrite() 有好幾條路會在還沒叫到這裡之前就 return（沒有內文行、
@@ -1614,9 +1742,23 @@ public final class DialogueRewriter {
                 near = hit != null;
             }
         }
+        if (hit == null) {
+            // 上面每一條都還要更多字才敢認：從上一句與名牌<b>預測</b>這一句。
+            // 只有完全沒有別的可能時才給答案，見 DialogueForecast 與 TranslationStore#forecast。
+            // 猜的那句之後岔開了，下一幀上面那道「沿用上一幀」就不成立（within 從嚴），
+            // 退回原本的判斷。
+            String guess = FORECAST.guess(store, typed);
+            if (guess != null) {
+                source = guess;
+                hit = store.lookup(guess);
+            }
+        }
         if (hit != null && source != null) {
             said = raw;                // 記住這一幀畫面上打到哪
             spoken = source;           // 以及它是語料裡的哪一條
+            if (typed.length() >= DialogueForecast.CONFIRM || source.equals(typed)) {
+                FORECAST.heard(store, source);      // 下一句從這裡往後預測
+            }
         } else if (!raw.startsWith(said)) {
             said = "";                 // 換句話了，別讓舊的那條黏著
             spoken = null;
@@ -1685,6 +1827,16 @@ public final class DialogueRewriter {
             source = typed;
             said = raw;
             spoken = typed;
+            FORECAST.heard(store, typed);
+        }
+        if (!source.equals(typed)) {
+            // 還在打字：名字、地名、數字可能還沒打出來（畫面上是「...STE」）。那個佔位符
+            // 之後的譯文先不出——不然填不到值，中文裡會空一格，等名字打完又插回來，
+            // 畫面上的中文中途變形。
+            int cut = unfilledAt(hit, parts);
+            if (cut >= 0) {
+                hit = hit.substring(0, cut);
+            }
         }
         hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 譯文裡手寫的換行（給小框用的，見 DialogueOverlay）在這裡沒有意義：
@@ -1757,8 +1909,60 @@ public final class DialogueRewriter {
             }
             part = typedSoFar(part, lo, part.length());
         }
+        if (part.isEmpty() && !hit.isEmpty() && wrap(hit.substring(0, firstUnit(hit)),
+                rows, style, width) != null) {
+            // 認得出是哪一句了，原文才打出一兩個字、照比例一個中文字都還分不到：
+            // 先給第一個字。不然那幾幀畫面上是英文，玩家看到的就是「先跳一段原文」。
+            part = hit.substring(0, firstUnit(hit));
+        }
         return part.isEmpty() ? kept(raw, typed, steady) : show(raw, part, source);
     }
+
+    /**
+     * 譯文裡第一個「畫面上還沒有值」的佔位符在哪裡。
+     *
+     * @return 位置；全部都有值時回傳 -1
+     */
+    static int unfilledAt(String translated, LineParts parts) {
+        int place = 0;
+        int user = 0;
+        int number = 0;
+        for (int i = 0; i < translated.length(); i++) {
+            if (translated.startsWith("{p}", i)) {
+                if (place++ >= parts.places().size()) {
+                    return i;
+                }
+            } else if (translated.startsWith("{u}", i)) {
+                if (user++ >= parts.users().size()) {
+                    return i;
+                }
+            } else if (translated.startsWith("{~", i) && translated.indexOf('}', i) > 0) {
+                String index = translated.substring(i + 2, translated.indexOf('}', i));
+                int at = number;
+                if (index.isEmpty()) {
+                    number++;
+                } else {
+                    try {
+                        at = Integer.parseInt(index) - 1;
+                    } catch (NumberFormatException e) {
+                        at = number++;
+                    }
+                }
+                if (at >= parts.numbers().size()) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    /** 第一個字佔幾個 char（不把補充平面的字切成半個）。 */
+    private static int firstUnit(String text) {
+        return Character.charCount(text.codePointAt(0));
+    }
+
+    /** 就地取代這條路的「上一句」。見 {@link DialogueForecast}。 */
+    static final DialogueForecast FORECAST = new DialogueForecast();
 
     /** 上一幀貼上畫面的譯文，以及當時原文打到哪。見 {@link #kept}。 */
     private static String held;
