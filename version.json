@@ -1,11 +1,44 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.3_6",
+ "latest": "1.0.4",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.4": {
+   "headline": "1.0.4: dialogue starts in your language",
+   "items": [
+    "Added: NPC dialogue starts in the translation instead of flashing a few English characters first; in the replace mode the box stays blank until the line is recognised (about 0.3s at most). Can be turned off in F6.",
+    "Fixed: the separate dialogue panel no longer flashes or closes and reopens while a line is being typed.",
+    "Fixed: translated dialogue in the replace mode types out more evenly; lines with numbers or place names no longer pause and then jump ahead.",
+    "Fixed: the hint bar under the dialogue box no longer shifts to the right when the hint is translated (thanks anilken).",
+    "Changed: translating costs less per frame, for steadier FPS.",
+    "Translations: An Unexpected Departure, The Price of Ingenuity, Through the Pipes and two secret stories in all seven languages; Traditional Chinese ranges read 到 everywhere."
+   ],
+   "zh_tw": {
+    "headline": "1.0.4：對話一開口就是譯文",
+    "items": [
+     "新增：NPC 對話一開始就是譯文，不再先閃出幾個英文字；就地取代模式在認出那句之前先蓋住原文（最多約 0.3 秒），可在 F6 關掉。",
+     "修正：另開的對話小框打字途中不再閃爍、收掉又出現。",
+     "修正：就地取代模式的譯文出字更平均，句中有數字或地名時不再停住再一口氣跳出一大段。",
+     "修正：對話框下方的提示列翻譯後不再往右偏（感謝 anilken）。",
+     "變更：翻譯每一幀的負擔變輕，FPS 更穩。",
+     "譯文：七種語言補上 An Unexpected Departure、The Price of Ingenuity、Through the Pipes 與兩個秘密故事；繁中的數值範圍一律寫「到」。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.4：对话一开口就是译文",
+    "items": [
+     "新增：NPC 对话一开始就是译文，不再先闪出几个英文字；就地替换模式在认出那句之前先盖住原文（最多约 0.3 秒），可在 F6 关闭。",
+     "修正：另开的对话小框打字途中不再闪烁、收起又出现。",
+     "修正：就地替换模式的译文出字更均匀，句中有数字或地名时不再停住再一口气跳出一大段。",
+     "修正：对话框下方的提示栏翻译后不再往右偏（感谢 anilken）。",
+     "变更：翻译每一帧的负担变轻，FPS 更稳。",
+     "译文：七种语言补上 An Unexpected Departure、The Price of Ingenuity、Through the Pipes 与两个秘密故事；繁中的数值范围一律写“到”。"
+    ]
+   }
+  },
   "1.0.3_6": {
    "headline": "1.0.3_6: no more lag while NPCs talk",
    "items": [
