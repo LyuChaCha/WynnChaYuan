@@ -71,6 +71,19 @@ public final class LineTranslator {
     public static List<Component> translateBlock(List<StyledText> run,
                                                  TranslationStore store,
                                                  boolean[] centered) {
+        return translateBlock(run, store, centered, LineParts::of);
+    }
+
+    /**
+     * 同 {@link #translateBlock(List, TranslationStore, boolean[])}，但每一行怎麼切由呼叫端給。
+     *
+     * <p>{@code TooltipPanel} 會拿同一份 tooltip 從每個起點試好幾種長度，同一行要切上十幾次；
+     * 它傳一個記得結果的 {@code partsOf} 進來，同一行就只切一次。切法本身不變。
+     */
+    public static List<Component> translateBlock(List<StyledText> run,
+                                                 TranslationStore store,
+                                                 boolean[] centered,
+                                                 java.util.function.Function<StyledText, LineParts> partsOf) {
         if (run.size() < 2) {
             return null;                       // 單行走原本那條路就好
         }
@@ -78,7 +91,7 @@ public final class LineTranslator {
         StringBuilder key = new StringBuilder();
         boolean layoutRow = false;
         for (StyledText line : run) {
-            LineParts p = LineParts.of(line);
+            LineParts p = partsOf.apply(line);
             if (p.template().isBlank()) {
                 // 段落之間的空行不能併進來。攤平查表會把它壓成一個空格，
                 // 於是整段連著空行一起被換掉——譯文出來就跟上一段黏在一起了。

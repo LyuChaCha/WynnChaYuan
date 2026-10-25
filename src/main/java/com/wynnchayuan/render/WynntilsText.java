@@ -73,10 +73,68 @@ public final class WynntilsText {
         StyledText[] out = new StyledText[lines.length];
         boolean any = false;
         for (int i = 0; i < lines.length; i++) {
-            out[i] = line(lines[i], store);
+            out[i] = trackerLine(lines[i], store);
             any |= out[i] != lines[i];
         }
         return any ? out : lines;
+    }
+
+    /**
+     * 追蹤欄的一行，同一份內容只翻一次。
+     *
+     * <h2>為什麼要記</h2>
+     * Wynntils 的文字疊層<b>每一幀</b>都把同一組行送進來（它每個 tick 才重算一次內容），
+     * 先前這裡每一幀都整行查表、查不到再逐段查——離線量測兩行有譯文的追蹤欄每幀約 90µs，
+     * 三行沒有譯文的約 340µs（160fps 時佔一幀的 5%）。同一份內容的答案不會變，
+     * 作廢的條件跟 {@link #screenText} 那一份一樣（語料重載、名稱模式、Shift），
+     * 所以結果跟每幀重算逐字相同（見 {@code TrackerLineCacheTest}）。
+     *
+     * <p>只在算繪執行緒上用；加鎖只是保險，背景整理語料不會走到這裡。
+     */
+    private static StyledText trackerLine(StyledText line, TranslationStore store) {
+        if (line == null || line.isEmpty()) {
+            return line;
+        }
+        Cached seen;
+        synchronized (TRACKER_CACHE) {
+            seen = TRACKER_CACHE.get(line);
+        }
+        if (seen != null && seen.fresh(store)) {
+            // 查不到的那一種回傳呼叫端那一個，「一行都沒換」的判斷才是對的
+            return seen.out() == null ? line : seen.out();
+        }
+        StyledText shown = line(line, store);
+        synchronized (TRACKER_CACHE) {
+            TRACKER_CACHE.put(line, new Cached(store.generation(),
+                    store.namesWithOriginal(), store.translatesNames(),
+                    store.peeksPlainNames(), store.pageNameMode(), false,
+                    shown == line ? null : shown));
+        }
+        return shown;
+    }
+
+    /** 見 {@link #trackerLine}。追蹤欄一次就幾行，留一點餘裕給任務切換。 */
+    private static final java.util.Map<StyledText, Cached> TRACKER_CACHE = lru(64);
+
+    /** 照最近用過的順序淘汰：畫面上還在用的那幾條永遠不會被擠掉。 */
+    private static <K, V> java.util.Map<K, V> lru(int limit) {
+        return new java.util.LinkedHashMap<>(16, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(java.util.Map.Entry<K, V> eldest) {
+                return size() > limit;
+            }
+        };
+    }
+
+    /**
+     * 記一筆「收過了」。同一份內容第二次就不必再過一次濾網與查表。
+     *
+     * @return 先前沒收過（這一次要收）時為 {@code true}
+     */
+    private static boolean firstTime(java.util.Map<String, Boolean> noted, String key) {
+        synchronized (noted) {
+            return noted.put(key, Boolean.TRUE) == null;
+        }
     }
 
     /** 一行：翻不出來就原樣留著，別的行照樣可能翻得出來。 */
@@ -618,12 +676,20 @@ public final class WynntilsText {
                 || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
             return name;
         }
-        if (nameAge != store.generation() || NAMES.size() > 512) {
+        if (nameAge != store.generation()) {
             NAMES.clear();
+            INDICATORS.clear();
+            synchronized (NAMES_NOTED) {
+                NAMES_NOTED.clear();
+            }
             nameAge = store.generation();
         }
-        net.minecraft.network.chat.Component hit = NAMES.get(name);
-        if (hit == null) {
+        Name entry = NAMES.get(name);
+        if (entry == null) {
+            entry = INDICATORS.get(name);
+        }
+        if (entry == null) {
+            net.minecraft.network.chat.Component hit;
             StyledText text = StyledText.fromComponent(name);
             // 漂浮字那一支：專用譯法優先（見 TranslationStore#labelLookup），整塊查得到時
             // 照原文的分段上色（見 LineTranslator#labelColours）。先前只有查到專用譯法才走它，
@@ -634,30 +700,38 @@ public final class WynntilsText {
                     ? StyledText.fromComponent(floating)
                     : byPart(text, store);
             hit = shown == text ? name : shown.getComponent();
-            NAMES.put(name, hit);
             if (hit == name && config.collect()) {
                 collectName(text, "label/floating");
             }
+            // 小框要的是<b>原文</b>——它每一幀自己重新翻，所以換語言會立刻跟著變。
+            // 戰鬥數字與純圖示不登記：前者每次都不一樣，後者沒有字可翻。
+            // 要不要登記只看這段字本身，跟著快取記一次就好——先前每一幀、每個名牌都
+            // 重新拆一次字、判一次圖示，畫面上的名牌一多就是每幀幾十微秒。
+            boolean indicator = com.wynnchayuan.capture.CombatText.isIndicator(text);
+            StyledText original = !name.getString().isBlank()
+                    && !com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
+                    && !indicator ? text : null;
+            entry = new Name(hit, original);
+            // 戰鬥數字每一下都是新的一條，另外放：不然一場仗打下來會把名牌的位置擠光
+            (indicator ? INDICATORS : NAMES).put(name, entry);
         }
-        // 小框要的是<b>原文</b>——它每一幀自己重新翻，所以換語言會立刻跟著變。
-        // 戰鬥數字與純圖示不登記：前者每次都不一樣，後者沒有字可翻。
-        if (entity != null && !name.getString().isBlank()) {
-            StyledText original = StyledText.fromComponent(name);
-            if (!com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(original)
-                    && !com.wynnchayuan.capture.CombatText.isIndicator(original)) {
-                LookAtTranslator.remember(entity, original);
-            }
+        if (entity != null && entry.original() != null) {
+            LookAtTranslator.remember(entity, entry.original());
         }
         if (config.nametagMode() == CollectorConfig.NametagMode.LOOK_AT) {
             return name;                       // 原文不動，等玩家看向它
         }
-        return hit;
+        return entry.shown();
     }
 
     /** 沒譯文的浮空字收進 capture，濾網跟 TextDisplay 那條路一樣。 */
     private static void collectName(StyledText text, String ctx) {
         if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
+            return;
+        }
+        // 同一個名字收過就不再收：快取擠掉之後再遇到同一個名牌，不必再查一次表、算一次雜湊
+        if (!firstTime(NAMES_NOTED, ctx + '\0' + text.getString())) {
             return;
         }
         var captured = WynnChaYuan.store();
@@ -684,8 +758,24 @@ public final class WynntilsText {
         }
     }
 
-    private static final java.util.Map<net.minecraft.network.chat.Component,
-            net.minecraft.network.chat.Component> NAMES = new java.util.HashMap<>();
+    /**
+     * 名牌的一筆：畫出去的樣子，以及要登記給注視小框的原文（不登記就是 {@code null}）。
+     */
+    private record Name(net.minecraft.network.chat.Component shown, StyledText original) {}
+
+    /**
+     * 名牌的結果，照最近用過的順序淘汰。
+     *
+     * <h2>為什麼不是滿了就整份清掉</h2>
+     * 先前滿 512 條就 {@code clear()}，下一幀畫面上每一個名牌都要重翻——離線量測
+     * 60 個名牌那一幀要 4～9ms，打怪時每隔一陣子就卡一下。照最近用過的順序淘汰，
+     * 畫面上還看得到的名牌每一幀都會被用到，不會被擠掉。
+     */
+    private static final java.util.Map<net.minecraft.network.chat.Component, Name> NAMES = lru(512);
+    /** 戰鬥數字另外一份，見 {@link #entityName}。 */
+    private static final java.util.Map<net.minecraft.network.chat.Component, Name> INDICATORS = lru(256);
+    /** 見 {@link #collectName}：收過的名字（前面是 ctx）。 */
+    private static final java.util.Map<String, Boolean> NAMES_NOTED = lru(1024);
     /** 見 {@link TranslationStore#generation}。 */
     private static int nameAge = -1;
 
@@ -714,6 +804,10 @@ public final class WynntilsText {
                 || !WynnChaYuan.config().collect()) {
             return;
         }
+        // 追蹤欄每一幀都畫，同一行先前每幀都收一次（濾網、查表、雜湊全部重跑）。收一次就夠
+        if (!firstTime(TRACKER_NOTED, line.getString())) {
+            return;
+        }
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
         if (template.isBlank()
                 || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
@@ -727,6 +821,9 @@ public final class WynntilsText {
             captured.record(template, "desc", "quest", "tracker/line");
         }
     }
+
+    /** 見 {@link #noteTracker}：收過的追蹤欄行（原樣帶色碼）。 */
+    private static final java.util.Map<String, Boolean> TRACKER_NOTED = lru(256);
 
     /** 這一塊是追蹤欄嗎。用類別名比對，不必把 Wynntils 的型別帶進來。 */
     private static boolean tracker(Object overlay) {
