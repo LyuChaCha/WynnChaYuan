@@ -5399,6 +5399,11 @@ public final class LineTranslator {
                 continue;
             }
             String hit = lookup(row, store);
+            if (hit == null || hit.isBlank()) {
+                // 名字只收在整塊名牌裡的怪：被打、上了狀態之後整塊對不上，
+                // 名字那一行要從那些整塊的鍵學。見 TranslationStore#plateName。
+                hit = store.plateName(row);
+            }
             if (hit != null && !hit.isBlank()) {
                 if (withOwner(row, store) != null) {
                     owned = true;

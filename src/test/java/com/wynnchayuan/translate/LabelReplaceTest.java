@@ -160,6 +160,37 @@ public final class LabelReplaceTest {
         check("Distorted 後面還有字就不算狀態列",
               LineTranslator.translateLabel(label("Frosted Guard", "Distorted Memories"), store) == null);
 
+        // ★ 名字只收在整塊名牌裡的怪：被打、上了狀態之後名字不能跳回英文。
+        //
+        // 使用者回報：「怪物名稱有翻譯，但是打牠（可能上狀態）血條開始變動，
+        // 頭上名稱就變回原文」。語料裡一百多隻怪只有整塊名牌的鍵（沒被打時的樣子），
+        // 名字那一行沒有單獨的條目，狀態列一變就整塊對不上。見 TranslationStore#plateName。
+        String calm = com.wynnchayuan.capture.LineParts.of(label("Carnagator", "✦")).template();
+        com.google.gson.JsonObject mobs = new com.google.gson.JsonObject();
+        mobs.addProperty(calm, calm.replace("Carnagator", "血肉鱷"));
+        Files.writeString(dir.resolve("npc.json"), mobs.toString(), StandardCharsets.UTF_8);
+        store = new TranslationStore();
+        store.loadAll(dir);
+
+        Component before = LineTranslator.translateLabel(label("Carnagator", "✦"), store);
+        check("沒被打時整塊的鍵對得上",
+              before != null && before.getString().contains("血肉鱷"));
+        for (String status : new String[] {"✦ ✦", "❄ 5 ✦ 12", "⬤ 1s"}) {
+            Component out = LineTranslator.translateLabel(label("Carnagator", status), store);
+            String shown = out == null ? "null" : out.getString().replace("\n", " ⏎ ");
+            check("狀態列變成「" + status + "」名字照樣是譯名（實際：" + shown + "）",
+                  out != null && shown.contains("血肉鱷") && shown.contains(status));
+        }
+        // 反方向：整塊名牌的第二行有字（告示看板），名字不從那裡學
+        String sign = com.wynnchayuan.capture.LineParts.of(label("Teleporter", "to dock")).template();
+        mobs = new com.google.gson.JsonObject();
+        mobs.addProperty(sign, sign.replace("Teleporter", "傳送點").replace("to dock", "往碼頭"));
+        Files.writeString(dir.resolve("npc.json"), mobs.toString(), StandardCharsets.UTF_8);
+        store = new TranslationStore();
+        store.loadAll(dir);
+        check("第二行有字的整塊鍵不拿來學名字",
+              LineTranslator.translateLabel(label("Teleporter", "✦"), store) == null);
+
         report();
     }
 

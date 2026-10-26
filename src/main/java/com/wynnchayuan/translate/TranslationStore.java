@@ -356,6 +356,7 @@ public final class TranslationStore {
         // 名字換成 {u} 再記（還沒翻的那幾條正是要記的缺口）。見 NameFrames。
         nameFrames = com.wynnchayuan.capture.NameFrames.of(seenSources);
         chatSpeakers = learnChatSpeakers(entries);
+        plateNames = learnPlateNames(entries, scopedOnly.get("label"));
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
 
@@ -418,6 +419,111 @@ public final class TranslationStore {
             }
         }
         return Map.copyOf(out);
+    }
+
+    /**
+     * 怪物名牌的<b>名字那一行</b>，從整塊名牌的鍵學來的譯法。
+     *
+     * <h2>實機回報</h2>
+     * 「怪物名稱有翻譯，但是打牠（可能上狀態）血條開始變動，頭上名稱就變回原文」。
+     *
+     * <h2>為什麼會這樣</h2>
+     * 有一百多隻怪的名字<b>只以整塊名牌的形狀</b>收在語料裡：
+     * <pre>
+     *   "Carnagator {#}{#}\n{#} {#} {#}": "血肉鱷 {#}{#}\n{#} {#} {#}"
+     * </pre>
+     * 沒被打的時候名牌剛好長這樣，整塊的鍵對得上，所以看起來有翻。一被打、
+     * 身上掛了狀態，最後那一行就換成另一種組合，整塊對不上；退到逐行查
+     * （{@code LineTranslator#labelByLine}）時，「Carnagator {#}{#}」這一行
+     * 自己又沒有條目——於是整塊放棄，名字跳回英文。
+     *
+     * <h2>做法</h2>
+     * 譯者其實已經翻過名字了，就在那些整塊的鍵的第一行。載入時把它抽出來：
+     * 第一行有字、其餘每一行都只是血條與狀態列（沒有字，見
+     * {@link com.wynnchayuan.capture.GlyphSplitter#hasWordBesidesStatus}），而且
+     * 譯文行數相同、第一行的佔位符個數對得上，才收。同一個名字有好幾種叫法時
+     * 取多數，平手就不收。
+     *
+     * @return 名字那一行的譯文；語料沒有這隻怪的整塊名牌時回 {@code null}
+     */
+    public String plateName(String row) {
+        return row == null ? null : plateNames.get(row.strip());
+    }
+
+    /** 見 {@link #plateName}。每次載入整份換掉、不可變。 */
+    private volatile Map<String, String> plateNames = Map.of();
+
+    static Map<String, String> learnPlateNames(Map<String, String> entries,
+                                               Map<String, String> labels) {
+        Map<String, Map<String, Integer>> votes = new java.util.HashMap<>();
+        java.util.List<Map<String, String>> sources = labels == null
+                ? java.util.List.of(entries) : java.util.List.of(entries, labels);
+        for (Map<String, String> source : sources) {
+            for (Map.Entry<String, String> e : source.entrySet()) {
+                String key = e.getKey();
+                if (key.indexOf('\n') < 0) {
+                    continue;
+                }
+                String[] src = key.split("\n", -1);
+                String[] dst = e.getValue().split("\n", -1);
+                if (src.length != dst.length) {
+                    continue;
+                }
+                String name = src[0].strip();
+                String shown = dst[0].strip();
+                if (!GlyphSplitter.hasWord(name)
+                        || shown.isEmpty() || shown.equals(name)
+                        || !samePlaceholders(name, shown)) {
+                    continue;
+                }
+                boolean plate = true;
+                for (int i = 1; i < src.length && plate; i++) {
+                    plate = !GlyphSplitter.hasWordBesidesStatus(src[i]);
+                }
+                if (plate) {
+                    votes.computeIfAbsent(name, k -> new java.util.HashMap<>())
+                         .merge(shown, 1, Integer::sum);
+                }
+            }
+        }
+        Map<String, String> out = new java.util.HashMap<>();
+        for (Map.Entry<String, Map<String, Integer>> e : votes.entrySet()) {
+            String best = null;
+            int top = 0;
+            boolean tie = false;
+            for (Map.Entry<String, Integer> v : e.getValue().entrySet()) {
+                if (v.getValue() > top) {
+                    best = v.getKey();
+                    top = v.getValue();
+                    tie = false;
+                } else if (v.getValue() == top) {
+                    tie = true;
+                }
+            }
+            if (best != null && !tie) {
+                out.put(e.getKey(), best);
+            }
+        }
+        return Map.copyOf(out);
+    }
+
+    /** 圖示與數值佔位符的個數一樣——編號過的 {@code {~1}} 不算，那一行就不收。 */
+    private static boolean samePlaceholders(String src, String dst) {
+        for (String p : new String[] {GlyphSplitter.GLYPH_PLACEHOLDER,
+                GlyphSplitter.NUMBER_PLACEHOLDER}) {
+            if (count(src, p) != count(dst, p)) {
+                return false;
+            }
+        }
+        return dst.replace("{#}", "").replace("{~}", "").indexOf('{') < 0;
+    }
+
+    private static int count(String s, String p) {
+        int n = 0;
+        for (int at = s.indexOf(p); at >= 0; at = s.indexOf(p, at + p.length())) {
+            n++;
+        }
+        return n;
     }
 
     /**
