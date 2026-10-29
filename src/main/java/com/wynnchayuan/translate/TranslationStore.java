@@ -3107,6 +3107,12 @@ public final class TranslationStore {
             // 在物品說明的第三行以後，那個旗標是擋「敘述裡提到的同名裝備」用的。
             return withOriginal(hit, template.strip());
         }
+        if (abilityNamesWithOriginal) {
+            String labelled = abilityLabelWithOriginal(template.strip(), hit);
+            if (labelled != null) {
+                return labelled;
+            }
+        }
         // Lootrun 使命名跟著「任務與洞窟名稱」的設定，見 LootrunNames
         return holdAppended ? hit : LootrunNames.apply(template, hit, pageNameMode);
     }
@@ -3158,6 +3164,26 @@ public final class TranslationStore {
      *
      * @return {@code null} 代表這個名字附不了原文
      */
+    private String abilityLabelWithOriginal(String key, String hit) {
+        if (key.length() < 2 || !isLabelColon(key.charAt(key.length() - 1))) {
+            return null;
+        }
+        String hitCore = hit.stripTrailing();
+        if (hitCore.isEmpty() || !isLabelColon(hitCore.charAt(hitCore.length() - 1))) {
+            return null;
+        }
+        String name = key.substring(0, key.length() - 1).strip();
+        String own = hitCore.substring(0, hitCore.length() - 1).strip();
+        if (!ownAbilityName(name, own)) {
+            return null;
+        }
+        return withOriginal(own, name) + hitCore.charAt(hitCore.length() - 1);
+    }
+
+    private static boolean isLabelColon(char c) {
+        return c == ':' || c == '：';
+    }
+
     static String originalOf(String key) {
         if (key.indexOf('{') < 0) {
             return key;                        // 絕大多數的名字

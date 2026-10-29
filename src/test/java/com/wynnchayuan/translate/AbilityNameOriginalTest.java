@@ -64,7 +64,8 @@ public final class AbilityNameOriginalTest {
 
         lookups(store, ability, majorId);
         abilityRow(store);
-        majorIdLine(store);
+        majorIdLine(store, MAJOR_ID, ALTRUISM_ROWS);
+        majorIdLine(store, "Requiem", REQUIEM_ROWS);
 
         finish();
     }
@@ -131,12 +132,12 @@ public final class AbilityNameOriginalTest {
      * 裝備說明裡的 Major ID：「✦ Altruism: 說明…」名稱與說明各有顏色、依寬度斷行。
      * 走 tooltip 那一條路（第三行以後，物品名稱的「附原文」在那裡是擋住的）。
      */
-    private static void majorIdLine(TranslationStore store) {
-        List<StyledText> block = majorIdBlock();
+    private static void majorIdLine(TranslationStore store, String name, String[][] rows) {
+        List<StyledText> block = majorIdBlock(rows);
         List<Component> off = LineTranslator.translateBlock(block, store, new boolean[block.size()]);
         String offText = join(off);
         check("前提：關著時整段翻得出來（" + shorten(offText) + "）", off != null && !off.isEmpty());
-        check("★ 關著：Major ID 那一列沒有附原文", !offText.contains(MAJOR_ID));
+        check("★ 關著：Major ID 那一列沒有附原文", !offText.contains(name));
 
         store.setAbilityNamesWithOriginal(true);
         TranslationStore.holdAppendedOriginal(true);   // 物品說明第三行以後的樣子
@@ -145,9 +146,9 @@ public final class AbilityNameOriginalTest {
                     new boolean[block.size()]);
             String onText = join(on);
             check("★ 開著：Major ID 名稱附了原文（" + shorten(onText) + "）",
-                    onText.contains("(" + MAJOR_ID + ")"));
-            check("原文只附一次", onText.indexOf(MAJOR_ID) == onText.lastIndexOf(MAJOR_ID));
-            Integer colour = colourOf(on, "(" + MAJOR_ID);
+                    onText.contains("(" + name + ")"));
+            check("原文只附一次", onText.indexOf(name) == onText.lastIndexOf(name));
+            Integer colour = colourOf(on, "(" + name);
             check("附的原文是名稱的顏色，不是說明的（拿到 "
                             + (colour == null ? "null" : String.format("#%06X", colour)) + "）",
                     colour != null && colour == NAME_COLOUR);
@@ -157,14 +158,20 @@ public final class AbilityNameOriginalTest {
         }
     }
 
-    private static List<StyledText> majorIdBlock() {
-        String[][] rows = {
-            {"✦ Altruism: ", "Whenever you gain"},
-            {null, "health from your Life Steal"},
-            {null, "and Health Regen IDs, allies"},
-            {null, "within 16 blocks will receive"},
-            {null, "the same amount."},
-        };
+    private static final String[][] ALTRUISM_ROWS = {
+        {"✦ Altruism: ", "Whenever you gain"},
+        {null, "health from your Life Steal"},
+        {null, "and Health Regen IDs, allies"},
+        {null, "within 16 blocks will receive"},
+        {null, "the same amount."},
+    };
+
+    private static final String[][] REQUIEM_ROWS = {
+        {"✦ Requiem: ", "Sunflare regenerates"},
+        {null, "twice the health and mana."},
+    };
+
+    private static List<StyledText> majorIdBlock(String[][] rows) {
         List<StyledText> out = new ArrayList<>();
         for (String[] row : rows) {
             MutableComponent line = Component.empty();
