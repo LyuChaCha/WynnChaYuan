@@ -224,6 +224,17 @@ public final class TranslationStore {
      * 哪一層的答案勝出都認得。見 {@link #ownItemName}。
      */
     private final Map<String, java.util.Set<String>> itemNameDsts = new ConcurrentHashMap<>();
+
+    /**
+     * 技能樹（{@code ability/}）與 Major ID（{@code major-id.json}）的<b>名稱</b>條目
+     *（{@code role: name}）自己寫的譯名。給 F6「技能與 Major ID 名稱附原文」用，
+     * 見 {@link #setAbilityNamesWithOriginal}。
+     *
+     * <p>跟 {@link #itemNameDsts} 同一個想法：問的是「查到的這個譯名，是不是技能檔
+     * 替這個原文寫的那一個」。同一個字在介面上另有一條譯文（{@code Focus} 是技能、
+     * 也是按鈕上的字）時，查到的若是那一條就不附——那個位置不是技能名。
+     */
+    private final Map<String, java.util.Set<String>> abilityNameDsts = new ConcurrentHashMap<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -314,6 +325,7 @@ public final class TranslationStore {
         otherOwners.clear();
         nonItemOwners.clear();
         itemNameDsts.clear();
+        abilityNameDsts.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -634,7 +646,7 @@ public final class TranslationStore {
 
             if (obj.has("entries") && obj.get("entries").isJsonObject()) {
                 readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj), gearNames(obj),
-                        tradable(file));
+                        tradable(file), abilityNames(file, obj));
             } else {
                 // 檔名以 -terms.json 結尾的，內容是<b>可以在別的句子裡自動替換的詞</b>
                 // （魔力儲庫、失衡、裂隙之裔…），不是一整行的譯文。
@@ -803,6 +815,27 @@ public final class TranslationStore {
                 || name.equals("material.json");
     }
 
+    /**
+     * 這個檔是不是技能樹（{@code ability/} 底下）或 Major ID（{@code major-id.json}）。
+     * 認路徑，也認 {@code _meta.domain}（{@code ability/archer}、{@code major-id}）：
+     * 遠端同步下來的快取與內附的語料是同一個結構，兩種認法都對得上。
+     */
+    private static boolean abilityNames(Path file, JsonObject root) {
+        String name = file.getFileName().toString();
+        Path parent = file.getParent();
+        if (name.equals("major-id.json")
+                || parent != null && parent.getFileName() != null
+                        && parent.getFileName().toString().equals("ability")) {
+            return true;
+        }
+        JsonElement meta = root.get("_meta");
+        if (meta == null || !meta.isJsonObject()) {
+            return false;
+        }
+        String domain = optString(meta.getAsJsonObject(), "domain");
+        return domain != null && (domain.startsWith("ability/") || domain.equals("major-id"));
+    }
+
     /** 沒寫、寫壞、或不是布林值都算 true——見 {@link #itemNames} 談預設值。 */
     private static boolean metaFlag(JsonObject root, String name) {
         JsonElement meta = root.get("_meta");
@@ -814,7 +847,7 @@ public final class TranslationStore {
     }
 
     private void readWorkspace(JsonObject entriesObj, boolean itemNames, boolean gearNames,
-                               boolean tradable) {
+                               boolean tradable, boolean abilityNames) {
         for (String key : entriesObj.keySet()) {
             JsonElement el = entriesObj.get(key);
             if (!el.isJsonObject()) {
@@ -899,6 +932,10 @@ public final class TranslationStore {
                         // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
                         // 裝備與素材名稱不會，收進來只會亂替換。
                         noteTerm(srcKey, dst.strip());
+                        if (abilityNames) {
+                            abilityNameDsts.computeIfAbsent(srcKey,
+                                    k -> ConcurrentHashMap.newKeySet()).add(dst.strip());
+                        }
                     } else if (gearNames) {
                         nameKeys.add(srcKey);       // 受 F6 開關管
                         noteBareName(srcKey);
@@ -1615,6 +1652,41 @@ public final class TranslationStore {
 
     /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */
     private volatile boolean namesWithOriginal = false;
+
+    /** 見 {@link #setAbilityNamesWithOriginal}。 */
+    private volatile boolean abilityNamesWithOriginal = false;
+
+    /**
+     * 技能名稱（技能樹的節點標題、「解鎖後將封鎖」底下那幾列）與 Major ID 名稱
+     *（裝備說明的「Altruism:」）後面要不要括號附原文——F6 那一格，跟物品名稱的
+     * 「譯名加原文」同一個畫法。
+     *
+     * <p>只附在<b>整格</b>查到技能檔自己的譯名時（{@link #ownAbilityName}）。敘述裡
+     * 被詞表換掉的技能名不走這裡（{@code noteTerm} 那一條），不會在句子中間冒出括號；
+     * 譯名跟原文一樣（還沒翻、或刻意留英文）時也不附。
+     *
+     * <p>切換時作廢繪製端的快取，跟 {@link #setPageNameMode} 一樣。
+     */
+    public void setAbilityNamesWithOriginal(boolean on) {
+        if (on != abilityNamesWithOriginal) {
+            generation++;
+        }
+        abilityNamesWithOriginal = on;
+    }
+
+    /** 見 {@link #setAbilityNamesWithOriginal}。 */
+    public boolean abilityNamesWithOriginal() {
+        return abilityNamesWithOriginal;
+    }
+
+    /**
+     * 查到的這個譯名是技能檔或 Major ID 檔替這個原文寫的嗎，而且跟原文不一樣。
+     * 見 {@link #abilityNameDsts}。
+     */
+    private boolean ownAbilityName(String key, String hit) {
+        java.util.Set<String> own = abilityNameDsts.get(key);
+        return own != null && hit != null && !hit.strip().equals(key) && own.contains(hit);
+    }
 
     /** @return 譯文；沒有對應條目時回傳 {@code null} */
     /**
@@ -3030,6 +3102,11 @@ public final class TranslationStore {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return withOriginal(hit, template.strip());
         }
+        if (abilityNamesWithOriginal && ownAbilityName(template.strip(), hit)) {
+            // 技能與 Major ID 的「譯名 (原文)」。不看 holdAppended：Major ID 那一列
+            // 在物品說明的第三行以後，那個旗標是擋「敘述裡提到的同名裝備」用的。
+            return withOriginal(hit, template.strip());
+        }
         // Lootrun 使命名跟著「任務與洞窟名稱」的設定，見 LootrunNames
         return holdAppended ? hit : LootrunNames.apply(template, hit, pageNameMode);
     }
@@ -3175,6 +3252,8 @@ public final class TranslationStore {
      *   <li>Lootrun 使命／試煉名：「任務與洞窟名稱」不是只顯示譯名時，附在後面的原文、
      *       或整格換回的原文，見 {@link LootrunNames#spans}。實機的
      *       「小丑的把戲 (Jester's 詭計)」就是少了這一條。</li>
+     *   <li>技能與 Major ID 名稱附的原文，見 {@link #abilityOriginalSpans}。那些名字本身
+     *       就在詞表裡，不擋的話「箭矢炸彈 (Arrow Bomb)」會被換成「箭矢炸彈 (箭矢炸彈)」。</li>
      * </ul>
      *
      * @return 每一段 {@code {起, 迄}}；沒有就是空清單
@@ -3190,6 +3269,40 @@ public final class TranslationStore {
         }
         if (pageNameMode != com.wynnchayuan.CollectorConfig.ItemNames.ON) {
             out.addAll(LootrunNames.spans(text));
+        }
+        out.addAll(abilityOriginalSpans(text));
+        return out;
+    }
+
+    /**
+     * 技能與 Major ID 的「譯名 {@code  (原文)}」裡括號那一段，每一處一份 {@code {起, 迄}}。
+     *
+     * <p>不一定在結尾：Major ID 那一列是「利他主義 (Altruism): 說明…」。
+     * 認的是括號裡正好是一個技能／Major ID 名稱，而括號前面緊貼著它自己的譯名
+     *（見 {@link #abilityNameDsts}）——敘述本來就帶的括號碰不到。
+     */
+    List<int[]> abilityOriginalSpans(String text) {
+        if (!abilityNamesWithOriginal || text == null || text.indexOf(" (") < 0) {
+            return List.of();
+        }
+        List<int[]> out = new java.util.ArrayList<>();
+        int at = text.indexOf(" (");
+        while (at >= 0) {
+            int close = text.indexOf(')', at + 2);
+            if (close < 0) {
+                break;
+            }
+            java.util.Set<String> own = abilityNameDsts.get(text.substring(at + 2, close));
+            if (own != null) {
+                String before = text.substring(0, at);
+                for (String dst : own) {
+                    if (!dst.isEmpty() && before.endsWith(dst)) {
+                        out.add(new int[] {at, close + 1});
+                        break;
+                    }
+                }
+            }
+            at = text.indexOf(" (", at + 2);
         }
         return out;
     }
