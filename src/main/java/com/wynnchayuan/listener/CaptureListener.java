@@ -499,6 +499,9 @@ public final class CaptureListener {
             // 見 LineTranslator#translateLabel。
             Component translated =
                     LineTranslator.translateLabel(original, WynnChaYuan.translations());
+            // 名字自己翻得出來、整塊卻沒翻的多行名牌，留下片段結構（診斷檔開著才寫）
+            com.wynnchayuan.translate.NameplateProbe.check(
+                    "TextDisplay", original, translated, WynnChaYuan.translations());
             if (translated != null) {
                 event.setText(StyledText.fromComponent(translated));
             }
