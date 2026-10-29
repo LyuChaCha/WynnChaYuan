@@ -696,6 +696,8 @@ public final class WynntilsText {
             // 其餘的走一般那條路，寶箱上的字就整行一個顏色。都查不到才照舊逐段查。
             net.minecraft.network.chat.Component floating =
                     LineTranslator.translateFloating(text, store);
+            // 見 NameplateProbe：盔甲座這條路也記，才分得出血條名牌是走哪一條來的
+            com.wynnchayuan.translate.NameplateProbe.check("盔甲座名稱", text, floating, store);
             StyledText shown = floating != null
                     ? StyledText.fromComponent(floating)
                     : byPart(text, store);
@@ -883,16 +885,27 @@ public final class WynntilsText {
      *
      * @param shown    每一列的字（去掉樣式），含各段的標題；追蹤任務那一段不在裡面
      * @param replaced 其中有現成譯文的那幾列，見 {@code ScoreboardFlow}
+     * @param kept     其中是玩家名字的那幾列，一律原樣，見 {@code ScoreboardFlow#keptRows}
      */
     private record Board(java.util.Set<String> shown,
-                         java.util.Map<String, StyledText> replaced) {}
+                         java.util.Map<String, StyledText> replaced,
+                         java.util.Set<String> kept) {}
 
-    private static volatile Board board = new Board(java.util.Set.of(), java.util.Map.of());
+    private static volatile Board board =
+            new Board(java.util.Set.of(), java.util.Map.of(), java.util.Set.of());
+
+    /** 沒有玩家名字那幾列的版本，見 {@link #setScoreboard(java.util.Set, java.util.Map, java.util.Set)}。 */
+    public static void setScoreboard(java.util.Set<String> shown,
+                                     java.util.Map<String, StyledText> replaced) {
+        setScoreboard(shown, replaced, java.util.Set.of());
+    }
 
     /** {@code ScoreboardListener} 每次記分板更新叫一次，整份換掉。 */
     public static void setScoreboard(java.util.Set<String> shown,
-                                     java.util.Map<String, StyledText> replaced) {
-        board = new Board(java.util.Set.copyOf(shown), java.util.Map.copyOf(replaced));
+                                     java.util.Map<String, StyledText> replaced,
+                                     java.util.Set<String> kept) {
+        board = new Board(java.util.Set.copyOf(shown), java.util.Map.copyOf(replaced),
+                java.util.Set.copyOf(kept));
     }
 
     static StyledText screenText(StyledText text, CollectorConfig config,
@@ -918,6 +931,11 @@ public final class WynntilsText {
             // 擋在快取前面——同一列字開關一切就要換答案，而且整句的譯文會隨著
             // 記分板更新（倒數的秒數）一直變。
             String plain = text.getStringWithoutFormatting();
+            if (now.kept().contains(plain)) {
+                // 隊伍成員那幾列是玩家的名字，不是遊戲的文案：一個叫 General 的玩家
+                // 被換成了 Lootrun 的「綜合」（使用者 2026-10-27 的截圖）。見 ScoreboardFlow#keptRows。
+                return text;
+            }
             if (now.shown().contains(plain)) {
                 if (!config.translateScoreboard()) {
                     return text;

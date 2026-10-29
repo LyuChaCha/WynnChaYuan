@@ -573,6 +573,15 @@ tasks.register('runNameplateTimerColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runNameplateTimerColourChecks' }
 
+// 怪物被打之後名牌多出血條與效果列：名字照樣是譯文，血條與效果列逐字元原樣。
+tasks.register('runDamagedNameplateChecks', JavaExec) {
+    group = 'verification'
+    description = '被打的怪物名牌：名字不能變回英文，血條與效果列不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.DamagedNameplateTest'
+}
+tasks.named('check') { dependsOn 'runDamagedNameplateChecks' }
+
 tasks.register('runCaptureStoreChecks', JavaExec) {
     group = 'verification'
     description = '驗證 captured.json 只列還沒有譯文的字串'
@@ -887,6 +896,14 @@ tasks.register('runMajorIdColourChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.MajorIdColourTest'
 }
 tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
+
+tasks.register('runAbilityNameOriginalChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6「技能名稱附原文」：技能名與 Major ID 名稱附原文，關著不附、不重複'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AbilityNameOriginalTest'
+}
+tasks.named('check') { dependsOn 'runAbilityNameOriginalChecks' }
 
 tasks.register('runGlyphHugChecks', JavaExec) {
     group = 'verification'

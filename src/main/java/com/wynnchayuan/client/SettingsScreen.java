@@ -356,6 +356,10 @@ public final class SettingsScreen extends Screen {
                         CollectorConfig.ItemNames.values()[i]))
                 .reset(() -> cfg().itemNames() == CollectorConfig.ItemNames.OFF,
                         () -> cycleTo(cfg()::itemNames, nextName, CollectorConfig.ItemNames.OFF)));
+        // 技能與 Major ID 名稱附原文：跟上面物品名稱的「譯名加原文」同一個畫法
+        rows.add(toggle("items.abilitynames", false, cfg()::abilityNamesOriginal, () ->
+                WynnChaYuan.translations().setAbilityNamesWithOriginal(
+                        cfg().toggleAbilityNamesOriginal())));
         rows.add(toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                 cfg()::toggleShiftPeekNames));
         // 內容名稱（任務、洞窟、探索點…）：同樣三格，預設是譯名。見 PageNames。

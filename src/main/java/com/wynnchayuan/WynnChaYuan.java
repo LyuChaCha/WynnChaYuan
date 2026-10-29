@@ -131,6 +131,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.TooltipDebug.init(debug.resolve("tooltip-debug.json"));
             com.wynnchayuan.render.Boxes.init(debug.resolve("overlay-debug.txt"));
             com.wynnchayuan.translate.LineDebug.init(debug.resolve("line-debug.txt"));
+            com.wynnchayuan.translate.NameplateProbe.init(debug);
             com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
             com.wynnchayuan.translate.FlowedDebug.init(debug);
             com.wynnchayuan.capture.DialogueProbe.init(debug);
@@ -164,6 +165,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         translations = new TranslationStore();
         translations.setNameMode(config.itemNames());
         translations.setPageNameMode(config.pageNames());
+        translations.setAbilityNamesWithOriginal(config.abilityNamesOriginal());
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
         // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
         // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
@@ -393,6 +395,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static void loadLayers() {
         translations.setNameMode(config.itemNames());
         translations.setPageNameMode(config.pageNames());
+        translations.setAbilityNamesWithOriginal(config.abilityNamesOriginal());
         // 總開關關著：譯文一條都不載，所有查表都落空，畫面上就是原文。
         // loadAll 會把世代往前推，各處的快取（tooltip、Wynntils、Wynnventory）下一幀
         // 自己重查——跟切換語言走的是同一套，不必另外通知誰。

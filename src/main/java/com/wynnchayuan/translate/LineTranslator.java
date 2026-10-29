@@ -4801,8 +4801,12 @@ public final class LineTranslator {
         }
         // 漂浮字專用的譯法優先，見 TranslationStore#labelLookup
         String translated = store.labelLookup(parts.template());
+        // 尾巴整列都是圖示（怪物被打之後多出來的血條）時，先別讓整塊查表把那幾列剝掉
+        // 去查前面的名字——見 #trimsWholeRows。整塊的鍵本身照樣先查。
+        boolean rowTail = trimsWholeRows(parts.template());
         if (translated == null || translated.isBlank()) {
-            translated = lookup(parts.template(), store);
+            translated = rowTail ? withPercent(parts.template(), store, false)
+                                 : lookup(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
             translated = withoutSpacerRows(parts.template(), store);
@@ -4813,6 +4817,9 @@ public final class LineTranslator {
         }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store, label);
+        }
+        if ((translated == null || translated.isBlank()) && rowTail) {
+            translated = lookup(parts.template(), store);   // 逐行也翻不出來才退回原本那條路
         }
         if (translated == null || translated.isBlank()) {
             // 「某人的力量之井」「某人的鳥」：主人的名字收成 {u}。見 NameFrames。
@@ -5392,6 +5399,8 @@ public final class LineTranslator {
         // 別的漂浮字沒有這種行，照舊整塊放棄。
         boolean owned = false;
         boolean missed = false;
+        // 怪物名牌：血條底下那幾列全是狀態，見 #statusFrom
+        int status = statusFrom(rows);
         for (int i = 0; i < rows.length; i++) {
             String row = rows[i];
             if (!hasWord(row)) {
@@ -5407,7 +5416,7 @@ public final class LineTranslator {
                 any = true;
                 continue;
             }
-            if (!com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
+            if (i >= status || !com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
                 out[i] = statusRow(row, store);   // 狀態列：只換狀態詞，其餘原樣
                 continue;
             }
@@ -5470,6 +5479,76 @@ public final class LineTranslator {
             }
         }
         return out;
+    }
+
+    /**
+     * 怪物名牌的狀態列從第幾列開始；不是怪物名牌就回傳列數（等於沒有狀態列）。
+     *
+     * <h2>實機回報</h2>
+     * 「名牌原本有翻，一打下去頭上的名字就變回英文」。怪物被打之後名牌多出血條與狀態：
+     * <pre>
+     *   Stone Golem {#}{#}
+     *   {#}
+     *   ❈ {~} {#} {~} Mantles
+     * </pre>
+     * 第三列是身上掛著的效果，會隨著戰鬥一直變。先前只有 {@code Distorted} 被認成狀態詞
+     * （{@link com.wynnchayuan.capture.GlyphSplitter#STATUS_WORDS}），其餘帶字的效果
+     * （語料裡就躺著 {@code Mantles}）被當成「有字卻查不到」，於是<b>整塊放棄</b>，
+     * 連名字一起變回英文。效果是排列組合，不可能一個一個補進語料或清單。
+     *
+     * <p>維護者補充：出事的是<b>精英怪</b>（Lootrun 的 Radiant 怪）。精英怪的名牌
+     * 用另一套名牌字型（{@code nameplate/default_radiant}、{@code gold} 的大血條），
+     * 被打之後掛的效果也多，最容易碰到帶字的那一種。
+     *
+     * <h2>怎麼認</h2>
+     * 第一個有字的列是「名字 {@code {#}{#}}」（名字後面接等級膠囊；前面可以有幾列純圖示，
+     * 精英怪頭上的標記就是），下一列<b>沒有字、帶著圖示</b>（血條；大血條旁邊可能有數值）。
+     * 這種形狀在血條之後的列一律是狀態列：照原樣留著，只換認得的狀態詞。
+     *
+     * <p>只認這個形狀，不放寬到「圖示列後面的都算」：告示看板也有圖示列
+     * （{@code {#}{#} / Aelumia Safe Zone / / {#} To Aelumia Gates {#}}），
+     * 那裡查不到的字仍然要整塊放棄，不能半中半英。名字下面直接接一列字（沒有血條）的
+     * NPC 名牌也一樣。
+     */
+    static int statusFrom(String[] rows) {
+        int name = 0;
+        while (name < rows.length && !hasWord(rows[name])) {
+            name++;                            // 名字上面的純圖示列（精英怪的標記）
+        }
+        int bar = name + 1;
+        if (bar + 1 >= rows.length || !MOB_NAME_ROW.matcher(rows[name]).matches()
+                || hasWord(rows[bar])
+                || !rows[bar].contains(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER)) {
+            return rows.length;
+        }
+        return bar + 1;
+    }
+
+    /** 怪物名牌的名字列：名字後面接空白與等級膠囊（兩個以上的圖示）。名字本身可能帶著尾巴的空白。 */
+    private static final java.util.regex.Pattern MOB_NAME_ROW =
+            java.util.regex.Pattern.compile(".*\\S\\s+(?:\\{#\\}){2,}");
+
+    /**
+     * 整塊查表剝尾巴時，會不會<b>連整列一起剝掉</b>。
+     *
+     * <h2>實機回報</h2>
+     * 「一打下去名字就變回英文」的另一條路：怪物被打之後名牌是
+     * {@code Orange Cybel {#}{#} ⏎ {#}}，尾巴那列只有血條。整塊的鍵查不到時，
+     * {@link #lookupTrimmed} 會把尾巴的圖示與空白一路剝到只剩 {@code Orange Cybel}
+     * 再查——而語料裡剛好有一條<b>單獨的</b> {@code Orange Cybel}（別的介面收的，
+     * 還沒翻，譯文就是原文）。於是整塊「查到了」，名字變成英文，
+     * 名牌那條 {@code Orange Cybel {#}{#}} 的譯名根本輪不到。
+     *
+     * <p>名字那一列自己的鍵比剝光之後的名字可靠，所以這種形狀先走逐行
+     * （{@link #labelByLine}），翻不出來才退回原本那條路。
+     */
+    static boolean trimsWholeRows(String template) {
+        int nl = template.lastIndexOf(NEWLINE);
+        if (nl < 0) {
+            return false;
+        }
+        return trimEnd(template, 0, com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, true)
+                <= nl;
     }
 
     /**
