@@ -131,6 +131,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.TooltipDebug.init(debug.resolve("tooltip-debug.json"));
             com.wynnchayuan.render.Boxes.init(debug.resolve("overlay-debug.txt"));
             com.wynnchayuan.translate.LineDebug.init(debug.resolve("line-debug.txt"));
+            com.wynnchayuan.translate.NameplateProbe.init(debug);
             com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
             com.wynnchayuan.translate.FlowedDebug.init(debug);
             com.wynnchayuan.capture.DialogueProbe.init(debug);
