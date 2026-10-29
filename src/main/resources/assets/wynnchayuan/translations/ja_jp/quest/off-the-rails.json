@@ -1,11 +1,21 @@
 {
  "_meta": {
   "quest": "Off the Rails",
-  "count": 752,
-  "translated": 752,
+  "count": 921,
+  "translated": 921,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
+  "Off the Rails#000": {
+   "src": "Talk to the businessman at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] にいる実業家と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Off the Rails",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Off the Rails#001": {
    "src": "Tch... Another filthy poor... No, I won't give you any money.",
    "dst": "チッ…また薄汚い貧乏人か…いや、金はやらんぞ。",
@@ -155,7 +165,7 @@
    "stage": "Stage 3",
    "speaker": "Businessman",
    "source": "wiki",
-   "note":"全て斜体"
+   "note": "全て斜体"
   },
   "Off the Rails#016": {
    "src": "..Y-you? You're waiting for this train?",
@@ -216,7 +226,7 @@
    "stage": "Stage 3",
    "speaker": "Businessman",
    "source": "wiki",
-   "note":"Sighは斜体"
+   "note": "Sighは斜体"
   },
   "Off the Rails#022": {
    "src": "Sigh... Happy travels...",
@@ -450,7 +460,7 @@
   },
   "Off the Rails#045": {
    "src": "Roughworks? Oh, right, that's what the people there call it. To me, it's the {p}.",
-   "dst": "Roughworks？あ、そっか、ここの人はそう呼ぶんだっけ。私にとっては {p} だよ。",
+   "dst": "Roughworks？あ、そっか、あそこの人はそう呼ぶんだっけ。私にとっては {p} だよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -460,7 +470,7 @@
   },
   "Off the Rails#046": {
    "src": "I always imagined it being a bit... cleaner. Maybe the people there are just used to it being messy, though?",
-   "dst": "ここはもうちょっと…きれいな所だと思ってた。でも、ここの人は散らかってるのに慣れてるのかな？",
+   "dst": "あそこはもうちょっと…きれいな所だと思ってた。でも、あそこの人は散らかってるのに慣れてるのかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -490,7 +500,7 @@
   },
   "Off the Rails#049": {
    "src": "I already mentioned the pretty murals, but there was a bunch of other cool stuff, too. Did you know the people there fight to resolve disputes?",
-   "dst": "きれいな壁画のことはもう話したけど、他にも面白いものがたくさんあったの。ここの人って揉め事を喧嘩で解決するって知ってた？",
+   "dst": "きれいな壁画のことはもう話したけど、他にも面白いものがたくさんあったの。あそこの人って揉め事を喧嘩で解決するって知ってた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -600,7 +610,7 @@
   },
   "Off the Rails#060": {
    "src": "The {p}? It's... I guess I've come to learn that some people live by different standards to me, which is... interesting.",
-   "dst": "{p} ？ここは…自分と違う基準で暮らす人もいるって分かったかな。それって…興味深いよね。",
+   "dst": "{p}？あそこは…自分と違う基準で暮らす人もいるって分かったかな。それって…興味深いよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -767,7 +777,7 @@
    "stage": "Stage 3",
    "speaker": "???",
    "source": "wiki",
-   "note":"Sighは斜体"
+   "note": "Sighは斜体"
   },
   "Off the Rails#077": {
    "src": "I'm Flinn.",
@@ -781,7 +791,7 @@
   },
   "Off the Rails#078": {
    "src": "Ugh. Well, see, I'm from {p}. I... don't like it there. So I wanted to see what the Industrial Distict was like.",
-   "dst": "はあ。まあ、僕は {p} 出身なんだ。あそこは…好きじゃない。だから Industrial Distict がどんな所か見たかった。",
+   "dst": "はあ。まあ、僕は {p} 出身なんだ。あそこは…好きじゃない。だから Industrial District がどんな所か見たかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -821,7 +831,7 @@
   },
   "Off the Rails#082": {
    "src": "Anything else?",
-   "dst": "…ともかく。他には？",
+   "dst": "他に何か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1488,7 +1498,7 @@
    "stage": "Stage 4",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"Sighは斜体"
+   "note": "Sighは斜体"
   },
   "Off the Rails#150": {
    "src": "The train's like a second home to me. Maybe more of a home to me than my real home...",
@@ -1529,7 +1539,7 @@
    "stage": "Stage 4",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"justは斜体"
+   "note": "justは斜体"
   },
   "Off the Rails#154": {
    "src": "...I've only been to {p} a couple of times. It's military-only and they typically use their own trains to travel there...",
@@ -2482,7 +2492,7 @@
    "source": "wiki"
   },
   "Off the Rails#259": {
-   "src": "...Let's just... Move on to another subject. ",
+   "src": "...Let's just... Move on to another subject.",
    "dst": "…ええと…別の話題にしましょう。",
    "role": "desc",
    "kind": "dialogue",
@@ -2903,7 +2913,7 @@
   },
   "Off the Rails#301": {
    "src": "...Anyway, is there anything you'd like to talk about?",
-   "dst": "…とにかく、何か話したい？",
+   "dst": "…とにかく、何か話したいことある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2970,7 +2980,7 @@
    "stage": "Stage 4",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}General Levi{/}, {c2}Constables Division{/}"
+   "note": "{c2}General Levi{/}, {c2}Constables Division{/}"
   },
   "Off the Rails#310": {
    "src": "She took on the role a few years ago, when the previous General, General Daimyo, stepped down. She's pretty cool, it was a nice surprise seeing her here!",
@@ -3051,7 +3061,7 @@
    "stage": "Stage 4",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"Sighは斜体"
+   "note": "Sighは斜体"
   },
   "Off the Rails#318": {
    "src": "...Fine. I suppose I can indulge. But you had better leave me to read my book in peace when you're done.",
@@ -3542,7 +3552,7 @@
    "stage": "Stage 5",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}prove yer innocence{/}"
+   "note": "{c2}prove yer innocence{/}"
   },
   "Off the Rails#368": {
    "src": "All of you, out. This is private business. Get back to yer seats.",
@@ -3563,7 +3573,7 @@
    "stage": "Stage 5",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}figure out who actually did it.{/}"
+   "note": "{c2}figure out who actually did it.{/}"
   },
   "Off the Rails#370": {
    "src": "If yer gonna be playin' detective, you're gonna want somewhere to jot yer findings, right? Where are we gonna get ya somethin' like that...",
@@ -3624,7 +3634,7 @@
    "stage": "Stage 5",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}scene of the crime{/}"
+   "note": "{c2}scene of the crime{/}"
   },
   "Off the Rails#376": {
    "src": "Go poke around at the body and see what ya can find.",
@@ -3635,7 +3645,7 @@
    "stage": "Stage 5",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}body{/}"
+   "note": "{c2}body{/}"
   },
   "Off the Rails#377": {
    "src": "Inspect the General's corpse to find clues.",
@@ -3686,7 +3696,7 @@
    "stage": "Stage 6",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}premeditated{/}"
+   "note": "{c2}premeditated{/}"
   },
   "Off the Rails#382": {
    "src": "Well, anyway, that ain't for us ta worry about. You're gonna figure out who did this.",
@@ -3707,7 +3717,7 @@
    "stage": "Stage 6",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}talk{/}, {c2}fellow passengers{/}, {c2}physical evidence{/}"
+   "note": "{c2}talk{/}, {c2}fellow passengers{/}, {c2}physical evidence{/}"
   },
   "Off the Rails#384": {
    "src": "Hey, Maury... How are we gonna stop them from just accusing someone random? There would be no point to any of this, and we'd might as well just arrest them instead...",
@@ -3738,7 +3748,7 @@
    "stage": "Stage 6",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}compelling pieces of evidence{/}, {c2}{~}{/}"
+   "note": "{c2}compelling pieces of evidence{/}, {c2}{~}{/}"
   },
   "Off the Rails#387": {
    "src": "Once ya have {~} pieces of strong evidence, come back ta us and make yer accusation.",
@@ -3749,7 +3759,7 @@
    "stage": "Stage 6",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}{~}{/}, {c2}strong evidence{/}, {c2}come back ta us{/}, {c2}make yer accusation.{/}"
+   "note": "{c2}{~}{/}, {c2}strong evidence{/}, {c2}come back ta us{/}, {c2}make yer accusation.{/}"
   },
   "Off the Rails#388": {
    "src": "Look around and interrogate passengers to find at least {~} pieces of strong evidence.",
@@ -3820,7 +3830,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"Sighは斜体"
+   "note": "Sighは斜体"
   },
   "Off the Rails#396": {
    "src": "Oh, you're the one from the murder scene, aren't you? The one those guards accused?",
@@ -3941,7 +3951,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}I was loitering in this carriage, just trying to avoid Cemor. I... didn't want to make his meal.{/}"
+   "note": "{c2}I was loitering in this carriage, just trying to avoid Cemor. I... didn't want to make his meal.{/}"
   },
   "Off the Rails#410": {
    "src": "Yes, it was wrong of me. I ought to apologise to him... Anyway, he showed up here to go to the bathroom, so I quickly left before he could talk to me.",
@@ -3952,7 +3962,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}he showed up here to go to the bathroom, so I quickly left before he could talk to me.{/}"
+   "note": "{c2}he showed up here to go to the bathroom, so I quickly left before he could talk to me.{/}"
   },
   "Off the Rails#411": {
    "src": "I headed down to the passenger carriages and spoke to everyone I saw. I was a little stressed, so I don't remember the specifics.",
@@ -3963,7 +3973,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}I headed down to the passenger carriages{/}, {c2}spoke to everyone I saw.{/}, {c2}I don't remember the specifics.{/}"
+   "note": "{c2}I headed down to the passenger carriages{/}, {c2}spoke to everyone I saw.{/}, {c2}I don't remember the specifics.{/}"
   },
   "Off the Rails#412": {
    "src": "Well, not everyone, I suppose. You were asleep. Malic and I had a chuckle about it.",
@@ -3974,7 +3984,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"everyoneは斜体"
+   "note": "everyoneは斜体"
   },
   "Off the Rails#413": {
    "src": "I also didn't speak to the guards... One was asleep in the same carriage as you, and the other started walking towards the back carriage when I came by.",
@@ -3995,7 +4005,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}I made sure to dash by Cemor.{/}"
+   "note": "{c2}I made sure to dash by Cemor.{/}"
   },
   "Off the Rails#415": {
    "src": "I was going back to loitering when suddenly, the purple guard came barging in shouting for his compatriot, who was in the bathroom.",
@@ -4036,7 +4046,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}I do have a master key for all rooms{/}"
+   "note": "{c2}I do have a master key for all rooms{/}"
   },
   "Off the Rails#419": {
    "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
@@ -4077,7 +4087,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}find that key{/}"
+   "note": "{c2}find that key{/}"
   },
   "Off the Rails#423": {
    "src": "Wait, You did? But I have it right h-",
@@ -4138,7 +4148,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}I'm not much of a reader{/}"
+   "note": "{c2}I'm not much of a reader{/}"
   },
   "Off the Rails#430": {
    "src": "...It was used to hide the knife, you say? That's... worrying.",
@@ -4159,7 +4169,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}the murderer used the closet as something of a staging ground{/}"
+   "note": "{c2}the murderer used the closet as something of a staging ground{/}"
   },
   "Off the Rails#432": {
    "src": "Oh, no, did he really not forget? Damnit. Damnit damnit damnit.",
@@ -4190,7 +4200,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}make the meal{/}, {c2}whole roast Grookiva.{/}"
+   "note": "{c2}make the meal{/}, {c2}whole roast Grookiva.{/}"
   },
   "Off the Rails#435": {
    "src": "My absent colleague, Zathie, left a recipe book that you can use. I'm sure you can follow it better than I ever could.",
@@ -4201,7 +4211,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}left a recipe book that you can use{/}"
+   "note": "{c2}left a recipe book that you can use{/}"
   },
   "Off the Rails#436": {
    "src": "I give you my full permission to enter the kitchen for this task, it's in the canteen carriage. Thank you for this.",
@@ -4212,7 +4222,7 @@
    "stage": "Stage 7",
    "speaker": "Telati",
    "source": "wiki",
-   "note":"{c2}enter the kitchen for this task{/}, {c2}canteen carriage{/}"
+   "note": "{c2}enter the kitchen for this task{/}, {c2}canteen carriage{/}"
   },
   "Off the Rails#438": {
    "src": "Ugh, what is it now?",
@@ -4293,7 +4303,7 @@
    "stage": "Stage 7",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"thisは斜体"
+   "note": "thisは斜体"
   },
   "Off the Rails#446": {
    "src": "We were travellin' to {p}, to investigate some sort of incident.",
@@ -4304,7 +4314,7 @@
    "stage": "Stage 7",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}{p}{/}"
+   "note": "{c2}{p}{/}"
   },
   "Off the Rails#447": {
    "src": "Apparently, someone got in and killed all the soldiers, plus Commander Lilles... Serious stuff.",
@@ -4355,7 +4365,7 @@
    "stage": "Stage 7",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"{c2}our highest-ranking leader{/}"
+   "note": "{c2}our highest-ranking leader{/}"
   },
   "Off the Rails#452": {
    "src": "Well. Er. y'know, I got... tired. So I... took a nap.",
@@ -4496,7 +4506,7 @@
    "stage": "Stage 7",
    "speaker": "Harvin",
    "source": "wiki",
-   "note":"{c2}{p} guy. He was in the bathroom{/}"
+   "note": "{c2}{p} guy. He was in the bathroom{/}"
   },
   "Off the Rails#466": {
    "src": "Took his sweet time in there, I tell you... Maybe I would've been able to protect the General if he had been quicker.",
@@ -4507,7 +4517,7 @@
    "stage": "Stage 7",
    "speaker": "Harvin",
    "source": "wiki",
-   "note":"{c1}Took his sweet time in there{c2}, I tell you... Maybe I would've been able to protect the General if he had been quicker.{/}"
+   "note": "{c1}Took his sweet time in there{c2}, I tell you... Maybe I would've been able to protect the General if he had been quicker.{/}"
   },
   "Off the Rails#467": {
    "src": "I noticed that the one with the white shirt and red dress was weirdly quiet back when everyone was gathered around... I'm suspcious of 'em.",
@@ -4518,7 +4528,7 @@
    "stage": "Stage 7",
    "speaker": "Maury",
    "source": "captured.json",
-   "note":"{c2}the white shirt and red dress{/}, {c2}weirdly quiet{/}"
+   "note": "{c2}the white shirt and red dress{/}, {c2}weirdly quiet{/}"
   },
   "Off the Rails#468": {
    "src": "Pal, you must really be kiddin' me. Are ya really tellin' me you've lived in Fruma yer whole life, and haven't heard of Deraj?",
@@ -4589,7 +4599,7 @@
    "stage": "Stage 7",
    "speaker": "Maury",
    "source": "wiki",
-   "note":"neverは太字"
+   "note": "neverは太字"
   },
   "Off the Rails#475": {
    "src": "I hear he's a scary guy, so honestly, I'm glad...",
@@ -4800,7 +4810,7 @@
    "stage": "Stage 7",
    "speaker": "Flinn",
    "source": "wiki",
-   "note":"{c2}the attendant came by{/}"
+   "note": "{c2}the attendant came by{/}"
   },
   "Off the Rails#503": {
    "src": "I've just been sat right here for pretty much the entire ride. Just thinking.",
@@ -4984,7 +4994,7 @@
   },
   "Off the Rails#521": {
    "src": "Got more questions?",
-   "dst": "まだ質問はありますか？",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5004,7 +5014,7 @@
   },
   "Off the Rails#523": {
    "src": "Well?",
-   "dst": "どうです？",
+   "dst": "で？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5051,7 +5061,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}I wanted to get my notebook{/}, {c2}storage{/}, {c2}I didn't pay attention{/}"
+   "note": "{c2}I wanted to get my notebook{/}, {c2}storage{/}, {c2}I didn't pay attention{/}"
   },
   "Off the Rails#528": {
    "src": "In the storage room, I encountered the attendant, Telati, who seemed to be walking from the back of the train to the front. He asked me if I needed anything, and moved by.",
@@ -5062,7 +5072,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}I encountered the attendant, Telati{/}, {c2}walking from the back of the train to the front{/}, {c2}moved by.{/}"
+   "note": "{c2}I encountered the attendant, Telati{/}, {c2}walking from the back of the train to the front{/}, {c2}moved by.{/}"
   },
   "Off the Rails#529": {
    "src": "Then, as I was on the way back here, I encountered a man named Malic, who was walking towards the back of the train, and we had a chat. He's now sat over there, with Maddison.",
@@ -5073,7 +5083,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}on the way back here{/}, {c2}Malic{/}, {c2}towards the back of the train{/}"
+   "note": "{c2}on the way back here{/}, {c2}Malic{/}, {c2}towards the back of the train{/}"
   },
   "Off the Rails#530": {
    "src": "I didn't see where he ended up going, because it was none of my business, and I had no reason to suspect foul play.",
@@ -5084,7 +5094,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}didn't see where he ended up going{/}"
+   "note": "{c2}didn't see where he ended up going{/}"
   },
   "Off the Rails#531": {
    "src": "I got seated, and then the man from the canteen came back... And then...",
@@ -5095,7 +5105,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}the man from the canteen came back{/}"
+   "note": "{c2}the man from the canteen came back{/}"
   },
   "Off the Rails#532": {
    "src": "...Shortly after that, those two guards came in panicking, and brought us to the scene of the murder.",
@@ -5166,7 +5176,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c1}Help me put my luggage back{/}"
+   "note": "{c1}Help me put my luggage back{/}"
   },
   "Off the Rails#539": {
    "src": "So you're taking my deal, then?",
@@ -5310,7 +5320,7 @@
   },
   "Off the Rails#553": {
    "src": "It's speculated that the similarly-large {p} Slug of the, well, {p} may hold answers, but it's highly elusive, only living on the branches of massive trees, so...",
-   "dst": "同じくらい大きな {p} の Banana Slug 、つまり {p} 答えを握っているかもという説もありますが、巨木の枝にしか住まず、ほとんど見つからないので…",
+   "dst": "同じくらい大きな {p} Slug、そう、{p} に棲むあのナメクジが答えを握っているかもという説もありますが、巨木の枝にしか住まず、ほとんど見つからないので…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5387,7 +5397,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}helped me with my luggage{/}"
+   "note": "{c2}helped me with my luggage{/}"
   },
   "Off the Rails#562": {
    "src": "Oh, thank you so much! It took me hours to pack this the first time, you know.",
@@ -5408,7 +5418,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "wiki",
-   "note":"{c2}read the book{/}"
+   "note": "{c2}read the book{/}"
   },
   "Off the Rails#564": {
    "src": "Alright, here. Murex Molluscs. Take a read.",
@@ -5449,7 +5459,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}from the Roughworks{/}, {c2}seen more than enough corrupt antics from dastards like them{/}"
+   "note": "{c2}from the Roughworks{/}, {c2}seen more than enough corrupt antics from dastards like them{/}"
   },
   "Off the Rails#568": {
    "src": "What a generally... horrible turn of events. Until that killer is caught, we might all be in danger. I'm nervous, to be honest.",
@@ -5573,7 +5583,7 @@
   },
   "Off the Rails#581": {
    "src": "Got more questions?",
-   "dst": "まだ質問がある？",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5600,7 +5610,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}it's important to note that I was in the seating carriage-{/}"
+   "note": "{c2}it's important to note that I was in the seating carriage-{/}"
   },
   "Off the Rails#584": {
    "src": "The first thing I saw was some posh-looking guy walking to the back, with a book in hand. Seems he was going to the bathroom, so I didn't bother him.",
@@ -5611,7 +5621,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}posh-looking guy walking to the back{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
+   "note": "{c2}posh-looking guy walking to the back{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
   },
   "Off the Rails#585": {
    "src": "I then got up to go grab my puzzle magazine from the lockers, and, on the way, encountered the attendant, Telati, who I briefly talked to.",
@@ -5622,7 +5632,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}got up to go grab my puzzle magazine from the lockers{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
+   "note": "{c2}got up to go grab my puzzle magazine from the lockers{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
   },
   "Off the Rails#586": {
    "src": "During this conversation, I also noticed you, sleeping in your seat. You were muttering something about a snotty businessman, I think. We chuckled about it.",
@@ -5643,7 +5653,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "captured.json",
-   "note":"{c2}I noticed the purple guard was also taking a nap in one of the seats. Didn't pay attention to anything else{/}"
+   "note": "{c2}I noticed the purple guard was also taking a nap in one of the seats. Didn't pay attention to anything else{/}"
   },
   "Off the Rails#588": {
    "src": "When I entered the storage carriage, I encountered Demma, who was walking towards the front, and we talked for a little while. It was nice getting to chat with someone.",
@@ -5654,7 +5664,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}I encountered Demma, who was walking towards the front{/}"
+   "note": "{c2}I encountered Demma, who was walking towards the front{/}"
   },
   "Off the Rails#589": {
    "src": "As I was getting my newspaper, the posh guy passed by behind me, and then I bumped into Telati again as I was walking back to my seat.",
@@ -5665,7 +5675,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}the posh guy passed by behind me{/}, {c2}I bumped into Telati again{/}"
+   "note": "{c2}the posh guy passed by behind me{/}, {c2}I bumped into Telati again{/}"
   },
   "Off the Rails#590": {
    "src": "Then, just when I thought I had a chance to relax and solve some crosswords, the guards came barging in asking everyone to gather around. And now you're filled in.",
@@ -5706,7 +5716,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}when people from the higher regions come visit the Roughworks... they're rude{/}"
+   "note": "{c2}when people from the higher regions come visit the Roughworks... they're rude{/}"
   },
   "Off the Rails#594": {
    "src": "Maddison? She's been nothing but respectful and kind, even if it meant... viewing some things in a questionable manner. She's cool.",
@@ -5727,7 +5737,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"constantは斜体"
+   "note": "constantは斜体"
   },
   "Off the Rails#596": {
    "src": "Most of us have come to deeply dislike them. A lot of them are just local troublemakers who joined the Guard for a position of power over everyone else.",
@@ -5941,7 +5951,7 @@
   },
   "Off the Rails#617": {
    "src": "Got more questions?",
-   "dst": "まだ質問ある？",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5988,7 +5998,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"tooは斜体"
+   "note": "tooは斜体"
   },
   "Off the Rails#622": {
    "src": "That's not to say that I saw nothing at all, though. Here's my recollection of the events:",
@@ -6009,7 +6019,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}the guy from the canteen passed by on his way towards the back of the train...{/}"
+   "note": "{c2}the guy from the canteen passed by on his way towards the back of the train...{/}"
   },
   "Off the Rails#624": {
    "src": "Then, Demma got up and walked away in the same direction.",
@@ -6020,7 +6030,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}Demma got up and walked away in the same direction.{/}"
+   "note": "{c2}Demma got up and walked away in the same direction.{/}"
   },
   "Off the Rails#625": {
    "src": "The attendant, Telati, arrived shortly after, to ask if everything was alright, and then made his way towards the back again.",
@@ -6031,7 +6041,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}Telati, arrived shortly after{/}, {c2}made his way towards the back{/}"
+   "note": "{c2}Telati, arrived shortly after{/}, {c2}made his way towards the back{/}"
   },
   "Off the Rails#626": {
    "src": "Soon after that, Demma came back, and the guy from the canteen soon followed.",
@@ -6042,7 +6052,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}Demma came back{/}, {c2}the guy from the canteen soon followed.{/}"
+   "note": "{c2}Demma came back{/}, {c2}the guy from the canteen soon followed.{/}"
   },
   "Off the Rails#627": {
    "src": "Malic's so nice... You know, back when I visited the {p}, I found the citizens to be... intimidating, unkind. But Malic? He's different.",
@@ -6193,7 +6203,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}I was going to say something else{/}"
+   "note": "{c2}I was going to say something else{/}"
   },
   "Off the Rails#642": {
    "src": "Uhhm. Uhhhhh. Um.",
@@ -6214,7 +6224,7 @@
    "stage": "Stage 7",
    "speaker": "Malic",
    "source": "wiki",
-   "note":"{c2}clear your head{/}, {c2}solves the crossword{/}"
+   "note": "{c2}clear your head{/}, {c2}solves the crossword{/}"
   },
   "Off the Rails#644": {
    "src": "I promise you it isn't!!!",
@@ -6455,7 +6465,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}the {p}{/}, {c2}House Takshah.{/}"
+   "note": "{c2}the {p}{/}, {c2}House Takshah.{/}"
   },
   "Off the Rails#670": {
    "src": "Apparently, some people have it out for that house in particular... That's all I know though, sorry.",
@@ -6466,7 +6476,7 @@
    "stage": "Stage 7",
    "speaker": "Maddison",
    "source": "wiki",
-   "note":"{c2}some people have it out for that house{/}"
+   "note": "{c2}some people have it out for that house{/}"
   },
   "Off the Rails#671": {
    "src": "...That blasted attendant... He better give me m-",
@@ -6477,7 +6487,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"That blasted attendantは斜体"
+   "note": "That blasted attendantは斜体"
   },
   "Off the Rails#672": {
    "src": "...Ah, you! You again. They let you go, hm?",
@@ -6498,7 +6508,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}I don't trust people like them.{/}"
+   "note": "{c2}I don't trust people like them.{/}"
   },
   "Off the Rails#674": {
    "src": "Still, I suppose Levi would have been different, given her high role. How cruel it is that someone cut her life short...",
@@ -6619,7 +6629,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}I was in the bathroom for much of the time.{/}"
+   "note": "{c2}I was in the bathroom for much of the time.{/}"
   },
   "Off the Rails#692": {
    "src": "When I reached the back of the train, where the bathroom is located, I noticed the attendant, Telati.",
@@ -6630,7 +6640,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}I noticed the attendant, Telati.{/}"
+   "note": "{c2}I noticed the attendant, Telati.{/}"
   },
   "Off the Rails#693": {
    "src": "He was just stood around, up to... something. When he saw me enter, he seemed to panic and left the carriage. How suspicious.",
@@ -6641,7 +6651,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}When he saw me enter, {/}, {c2}How suspicious.{/}"
+   "note": "{c2}When he saw me enter, {/}, {c2}How suspicious.{/}"
   },
   "Off the Rails#694": {
    "src": "Ech. Constables. Always a pain.",
@@ -6652,7 +6662,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}Ech. Constables. Always a pain.{/}"
+   "note": "{c2}Ech. Constables. Always a pain.{/}"
   },
   "Off the Rails#695": {
    "src": "They're supposedly stronger than the regular divisional soldiers, but at least those divisional soldiers knew respect.",
@@ -6683,7 +6693,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}Majin, replaced the {p} guard with Constables a few years ago.{/}"
+   "note": "{c2}Majin, replaced the {p} guard with Constables a few years ago.{/}"
   },
   "Off the Rails#698": {
    "src": "Given his lack of improvements to the town besides that, I doubt that's the real reason. He just did it for the praise.",
@@ -6694,7 +6704,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}I doubt that's the real reason.{/}"
+   "note": "{c2}I doubt that's the real reason.{/}"
   },
   "Off the Rails#699": {
    "src": "If he REALLY wanted to please us, he should have had some of those spangly Wings guard us. They don't do anything but stand around looking cool, anyway.",
@@ -6755,7 +6765,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "captured.json",
-   "note":"{c2}Constables are no good. I am not fond of them.{/}"
+   "note": "{c2}Constables are no good. I am not fond of them.{/}"
   },
   "Off the Rails#705": {
    "src": "Ugh. It's that attendant, Telati. I asked him for a meal hours ago, and he STILL hasn't even STARTED on it!",
@@ -6776,7 +6786,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}go and ask him to get a move on{/}"
+   "note": "{c2}go and ask him to get a move on{/}"
   },
   "Off the Rails#707": {
    "src": "You..? You made it? He really had you do it for him???",
@@ -6797,7 +6807,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"Goodnessは斜体"
+   "note": "Goodnessは斜体"
   },
   "Off the Rails#709": {
    "src": "...Speaking of gossip, I just thought of something I heard recently that might be useful to you...",
@@ -6818,7 +6828,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}I heard from some friends{/}, {c2}General Levi was being called to {p}{/}"
+   "note": "{c2}I heard from some friends{/}, {c2}General Levi was being called to {p}{/}"
   },
   "Off the Rails#711": {
    "src": "Of course, I'm sure you already knew that. My point is this- word was out about what was happening, so I bet whoever killed her had this insider information.",
@@ -6829,7 +6839,7 @@
    "stage": "Stage 7",
    "speaker": "Cemor",
    "source": "wiki",
-   "note":"{c2}word was out about what was happening{/}"
+   "note": "{c2}word was out about what was happening{/}"
   },
   "Off the Rails#712": {
    "src": "Truly curious... Who might know about that?",
@@ -7012,7 +7022,7 @@
    "source": "wiki"
   },
   "Off the Rails#731": {
-   "src": "{c1}Hahaha... HAHAHAHA...",
+   "src": "Hahaha... HAHAHAHA...",
    "dst": "ハハハ…ハハハハハ…",
    "role": "desc",
    "kind": "dialogue",
@@ -8210,7 +8220,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}If you do this, you may miss some interactions!{/}"
+   "note": "{c2}If you do this, you may miss some interactions!{/}"
   },
   "Off the Rails#853": {
    "src": "It's your seat.",
@@ -8231,7 +8241,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}take a nap{/}"
+   "note": "{c2}take a nap{/}"
   },
   "Off the Rails#855": {
    "src": "The train's pretty comfortable. You could get used to this as a mode of transport.",
@@ -8241,8 +8251,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#856": {
    "src": "And to think, if that businessman back in {p} had not been such a jerk to you, you wouldn't be here now...",
@@ -8252,8 +8261,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#857": {
    "src": "It was all worth it, even if just to see that frustrated look on his face...",
@@ -8263,8 +8271,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#858": {
    "src": "... hey ... something wrong? ...",
@@ -8274,8 +8281,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#859": {
    "src": "... oh no ... dead? ...",
@@ -8286,7 +8292,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}dead?{/}"
+   "note": "{c2}dead?{/}"
   },
   "Off the Rails#860": {
    "src": "Something's wrong. You should go investigate.",
@@ -8297,7 +8303,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}investigate.{/}"
+   "note": "{c2}investigate.{/}"
   },
   "Off the Rails#861": {
    "src": "It sounded like they were headed towards the back of the train.",
@@ -8308,7 +8314,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}back of the train.{/}"
+   "note": "{c2}back of the train.{/}"
   },
   "Off the Rails#862": {
    "src": "Cemor\n...Oh dear.",
@@ -8318,8 +8324,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Cemor",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#863": {
    "src": "Demma\n...Hm.",
@@ -8329,8 +8334,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Demma",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#864": {
    "src": "Telati\nSigh.",
@@ -8340,8 +8344,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Telati",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#867": {
    "src": "Maddison\n...Oh... Oh no...",
@@ -8351,8 +8354,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Maddison",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#868": {
    "src": "Malic\n...Yikes.",
@@ -8362,8 +8364,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Malic",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#869": {
    "src": "Whenever you find potentially relevant info, it will be automatically recorded in the notebook, for you to check later.",
@@ -8374,7 +8375,7 @@
    "stage": "Stage 4",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}potentially relevant info{/}"
+   "note": "{c2}potentially relevant info{/}"
   },
   "Off the Rails#870": {
    "src": "{#} You should inspect the crime scene first.",
@@ -8384,8 +8385,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#871": {
    "src": "Text highlighted in yellow indicates case-relevant information, which will be recorded in your notebook.",
@@ -8396,7 +8396,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}highlighted{/}, {c3}yellow{/}, {c2}case-relevant information{/}, {c2}notebook{/}"
+   "note": "{c2}highlighted{/}, {c3}yellow{/}, {c2}case-relevant information{/}, {c2}notebook{/}"
   },
   "Off the Rails#872": {
    "src": "What would you like to inspect first?",
@@ -8406,8 +8406,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#873": {
    "src": "The knife is lodged deep in her neck. It seems to be the only wound present on her body.",
@@ -8418,7 +8417,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}in her neck.{/}, {c2}the only wound present{/}"
+   "note": "{c2}in her neck.{/}, {c2}the only wound present{/}"
   },
   "Off the Rails#874": {
    "src": "You pull out the knife. It seems to be of a high quality.",
@@ -8429,7 +8428,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}high quality.{/}"
+   "note": "{c2}high quality.{/}"
   },
   "Off the Rails#875": {
    "src": "Some kind of purple goo appears to be slathered on the blade, though not much remains, as it has been washed away by blood.",
@@ -8440,7 +8439,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}purple goo{/}"
+   "note": "{c2}purple goo{/}"
   },
   "Off the Rails#876": {
    "src": "What would you like to inspect next?",
@@ -8450,8 +8449,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#877": {
    "src": "Though it seems that the victim did not struggle, there is blood all over the room...",
@@ -8462,7 +8460,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}did not struggle{/}"
+   "note": "{c2}did not struggle{/}"
   },
   "Off the Rails#878": {
    "src": "Could it be possible the body was moved?",
@@ -8473,7 +8471,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}the body was moved?{/}"
+   "note": "{c2}the body was moved?{/}"
   },
   "Off the Rails#879": {
    "src": "You check her pockets...",
@@ -8483,8 +8481,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#880": {
    "src": "From them you pull a card. It reads:",
@@ -8494,8 +8491,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#881": {
    "src": "\"TRAIN PASS: GENERAL OF THE PROVINCIAL GUARD\"",
@@ -8505,8 +8501,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#882": {
    "src": "\"Possession of this pass entitles its bearer to a train ride anywhere they request, free of charge, by Her Majesty's orders.\"",
@@ -8517,7 +8512,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}anywhere{/}, {c2}free{/}"
+   "note": "{c2}anywhere{/}, {c2}free{/}"
   },
   "Off the Rails#884": {
    "src": "\"Rejection of such a request is considered obstruction of the Crown's will, and a serious crime.\"",
@@ -8527,8 +8522,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#883": {
    "src": "Seems you've inspected everything now. Time to speak to the guards.",
@@ -8538,8 +8532,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#885": {
    "src": "It seems that these rooms are all connected by vents... It's possible the murderer could have used them to travel between rooms.",
@@ -8550,7 +8543,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}the murderer could have used them to travel between rooms.{/}"
+   "note": "{c2}the murderer could have used them to travel between rooms.{/}"
   },
   "Off the Rails#886": {
    "src": "So our chat's over then? Great, now I have no reason to procrastinate. Ha.",
@@ -8561,7 +8554,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"Greatは斜体"
+   "note": "Greatは斜体"
   },
   "Off the Rails#887": {
    "src": "The sign says \"Staff Only\".",
@@ -8572,7 +8565,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}\"Staff Only\"{/}"
+   "note": "{c2}\"Staff Only\"{/}"
   },
   "Off the Rails#888": {
    "src": "The door is locked, but you'd better not break the rules, anyway.",
@@ -8582,8 +8575,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#889": {
    "src": "The sign says \"Bathroom\".",
@@ -8594,7 +8586,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}\"Bathroom\"{/}"
+   "note": "{c2}\"Bathroom\"{/}"
   },
   "Off the Rails#890": {
    "src": "Open the door?",
@@ -8604,8 +8596,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#891": {
    "src": "You didn't need the bathroom.",
@@ -8615,8 +8606,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#892": {
    "src": "The sign says \"Private Cabin {~}\".",
@@ -8627,7 +8617,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}\"Private Cabin {~}\"{/}"
+   "note": "{c2}\"Private Cabin {~}\"{/}"
   },
   "Off the Rails#893": {
    "src": "Nothing more to see here. You can check your findings in the notebook.",
@@ -8638,7 +8628,7 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}notebook{/}"
+   "note": "{c2}notebook{/}"
   },
   "Off the Rails#894": {
    "src": "The sign says \"Kitchen, Staff Only\".",
@@ -8648,8 +8638,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#895": {
    "src": "The door does not appear to be locked, but it'd be best not to break the rules.",
@@ -8659,8 +8648,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#896": {
    "src": "Have a good journey, and good luck.",
@@ -8670,8 +8658,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Cemor",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#899": {
    "src": "Our most excellent\nruler.",
@@ -8681,8 +8668,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#900": {
    "src": "{#}/{#} Click here to exit",
@@ -8692,8 +8678,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#901": {
    "src": "The cool soldiers\nwith the grey helmets.",
@@ -8703,8 +8688,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#902": {
    "src": "--- do attitude.",
@@ -8714,8 +8698,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#903": {
    "src": "Our District's unique\nmix of industry\nand tree.",
@@ -8725,8 +8708,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#904": {
    "src": "Earning money takes a\nlot of -----.",
@@ -8736,8 +8718,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#905": {
    "src": "Agents of the vile\nforce that seeks to\ndestroy our Province.",
@@ -8747,8 +8728,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#906": {
    "src": "A state of great\nsadness, rhyming with\nthe next day.",
@@ -8758,8 +8738,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#907": {
    "src": "It is illegal to\ncreate this on the\nproperty of others.\nStop.",
@@ -8769,8 +8748,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#908": {
    "src": "It's easy to get\n---- in a region as\ndense as ours.",
@@ -8780,8 +8758,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#909": {
    "src": "Yearly celebration\nhappening this week!",
@@ -8791,8 +8768,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#910": {
    "src": "Hauling heavy items\nshould be done by\ns-----l people.",
@@ -8802,8 +8778,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#911": {
    "src": "The Sovereign of\n{p}",
@@ -8813,8 +8788,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#912": {
    "src": "If everything is all\njumbled up, you might\nwant to ---- it.",
@@ -8824,8 +8798,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#913": {
    "src": "A word describing our\nProvince, pronounced the\nsame as something you\ndo to cheese.",
@@ -8835,8 +8808,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#914": {
    "src": "Best Sovereign\nand maker of the best\ndrink, available in\nany vending machine!",
@@ -8846,8 +8818,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#915": {
    "src": "A workforce of\n---- proportions.",
@@ -8857,8 +8828,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#916": {
    "src": "A word to describe a\nlong-lasting state of\nunconsciousness.",
@@ -8868,8 +8838,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#917": {
    "src": "Your patriotic duty\nfor our Province.",
@@ -8879,8 +8848,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#918": {
    "src": "Your reward for\nyour efforts.",
@@ -8890,8 +8858,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#919": {
    "src": "Common crop taking\nlittle skill to harvest.",
@@ -8901,8 +8868,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#920": {
    "src": "Her Majesty promises to\nimprove the accessibility\nof drinkable -----.",
@@ -8912,8 +8878,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#921": {
    "src": "Oh, alright. I wish you luck with the case!",
@@ -8923,8 +8888,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Maddison",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#922": {
    "src": "Good luck finding that murderer!",
@@ -8934,8 +8898,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Malic",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#923": {
    "src": "...Anything else you wanna ask about?",
@@ -8966,7 +8929,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}If you do, your progress will be lost!{/}"
+   "note": "{c2}If you do, your progress will be lost!{/}"
   },
   "Off the Rails#926": {
    "src": "Remarkably, there's a perfectly-prepared platter of whole roast Grookiva on the kitchen counter, still warm, perfect for consumption.",
@@ -8976,8 +8939,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#927": {
    "src": "You accept this wonderful blessing from the gods. This will do nicely. Serve it to Cemor.",
@@ -8988,7 +8950,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}Serve it to Cemor.{/}"
+   "note": "{c2}Serve it to Cemor.{/}"
   },
   "Off the Rails#928": {
    "src": "The man in the canteen carriage came through here and took a while to come back. Not sure why, though I think it likely he was in the bathroom at the back of the train.",
@@ -8999,7 +8961,7 @@
    "stage": "Stage 7",
    "speaker": "Demma",
    "source": "captured.json",
-   "note":"{c2}man in the canteen{/}, {c2}came through here{/}, {c2}took a while to come back.{/}, {c2}the bathroom{/}"
+   "note": "{c2}man in the canteen{/}, {c2}came through here{/}, {c2}took a while to come back.{/}, {c2}the bathroom{/}"
   },
   "Off the Rails#929": {
    "src": "Good luck with the case.",
@@ -9009,8 +8971,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#930": {
    "src": "{#} Click here to exit",
@@ -9020,8 +8981,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#931": {
    "src": "\"The Murex Mollusc is a relative of the Gigastropod native to the {p}.\"",
@@ -9032,7 +8992,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}{p}{/}"
+   "note": "{c2}{p}{/}"
   },
   "Off the Rails#932": {
    "src": "\"Unlike the herbivorous Gigastropod, the Murex Mollusc is a carnivore that hunts for food. From its shell, it can fire toxic darts to aid in this task.\"",
@@ -9043,7 +9003,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}toxic{/}"
+   "note": "{c2}toxic{/}"
   },
   "Off the Rails#933": {
    "src": "\"Due to the size of some of the {p}' creatures, the toxin in these darts is extremely potent, to the point where it is often lethal to humans.\"",
@@ -9054,7 +9014,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}extremely potent{/}, {c2}lethal{/}"
+   "note": "{c2}extremely potent{/}, {c2}lethal{/}"
   },
   "Off the Rails#934": {
    "src": "\"This toxin is also known to incapacitate and paralyse those affected by it, a property which has made it desirable to crooks and murderers.\"",
@@ -9065,7 +9025,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}incapacitate and paralyse{/}"
+   "note": "{c2}incapacitate and paralyse{/}"
   },
   "Off the Rails#935": {
    "src": "\"However, it has almost never been used in crime, as it is extremely difficult to collect from the Mollusc's fragile darts, which break on impact.\"",
@@ -9075,8 +9035,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#936": {
    "src": "\"It is known, however, that the slime trail left behind by Murex Molluscs contains traces of this toxin.\"",
@@ -9087,7 +9046,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}slime trail{/}"
+   "note": "{c2}slime trail{/}"
   },
   "Off the Rails#937": {
    "src": "\"Raids on black markets have found containers of this slime, though the difficulty involved in collecting it has led to a high price.\"",
@@ -9098,7 +9057,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}black markets{/}, {c2}high price{/}"
+   "note": "{c2}black markets{/}, {c2}high price{/}"
   },
   "Off the Rails#938": {
    "src": "\"As such, fortunately, few have chosen to use it to these ends.\"",
@@ -9108,8 +9067,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#939": {
    "src": "There's also an illustration of Murex Mollusc slime. It seems to match what you found on the blade perfectly. This must be it!",
@@ -9120,7 +9078,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}match what you found on the blade{/}"
+   "note": "{c2}match what you found on the blade{/}"
   },
   "Off the Rails#940": {
    "src": "It's a key. Engraved on it is the word \"MASTER\". This must be Telati's missing key!",
@@ -9130,8 +9088,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#941": {
    "src": "You slip it into your pocket. You can now access locked rooms.",
@@ -9142,7 +9099,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You can now access locked rooms{/}"
+   "note": "{c2}You can now access locked rooms{/}"
   },
   "Off the Rails#942": {
    "src": "You're sure you can break that rule for the sake of the case, though. Open the door?",
@@ -9152,8 +9109,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#943": {
    "src": "It's a book with a knife on the cover, with no title to be seen. You try to read.",
@@ -9163,8 +9119,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#944": {
    "src": "...Almost all of the pages are glued together, and a knife-shaped compartment is carved into them.",
@@ -9174,8 +9129,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#945": {
    "src": "This must be how the murderer smuggled the weapon onto the train!",
@@ -9185,8 +9139,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#946": {
    "src": "Go on, go interrogate people.",
@@ -9196,8 +9149,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#947": {
    "src": "I mean, maybe they want to ask us some questions, Maury.",
@@ -9208,7 +9160,7 @@
    "stage": "Stage 7",
    "speaker": "Harvin",
    "source": "captured.json",
-   "note":"usは斜体"
+   "note": "usは斜体"
   },
   "Off the Rails#948": {
    "src": "Ugh. Fine. Whaddaya want?",
@@ -9218,8 +9170,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#949": {
    "src": "Your takeaway from that... conversation... is that the General was completely unguarded.",
@@ -9230,7 +9181,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}completely unguarded{/}"
+   "note": "{c2}completely unguarded{/}"
   },
   "Off the Rails#950": {
    "src": "Yeah, get back ta work.",
@@ -9240,8 +9191,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#951": {
    "src": "Then leave me alone...",
@@ -9251,8 +9201,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Flinn",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#952": {
    "src": "It seems that the cafe isn't open right now.",
@@ -9262,8 +9211,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#953": {
    "src": "Are you sure you want to make an accusation? You will not be able to go back on this decision!",
@@ -9274,7 +9222,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#955": {
    "src": "Are you sure you would like to accuse Flinn? You cannot go back on this decision!",
@@ -9285,7 +9233,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#956": {
    "src": "Are you sure you would like to accuse Demma? You cannot go back on this decision!",
@@ -9296,7 +9244,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#957": {
    "src": "Are you sure you would like to accuse Telati? You cannot go back on this decision!",
@@ -9307,7 +9255,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#958": {
    "src": "Are you sure you would like to accuse Malic? You cannot go back on this decision!",
@@ -9318,7 +9266,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#954": {
    "src": "Are you sure you would like to accuse Cemor? You cannot go back on this decision!",
@@ -9329,7 +9277,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#959": {
    "src": "Are you sure you would like to accuse Maddison? You cannot go back on this decision!",
@@ -9340,7 +9288,7 @@
    "stage": "Stage 7",
    "speaker": "",
    "source": "captured.json",
-   "note":"{c2}You will not be able to go back on this decision!{/}"
+   "note": "{c2}You will not be able to go back on this decision!{/}"
   },
   "Off the Rails#960": {
    "src": "...Looks like that's all- Huh?",
@@ -9350,8 +9298,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#961": {
    "src": "Cemor\n...Soon you'll all see!",
@@ -9361,8 +9308,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#962": {
    "src": "Thank goodness he didn't stick around. After all, you wouldn't want him to see what you kept from the crime scene, would you?",
@@ -9372,8 +9318,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "Off the Rails#963": {
    "src": "How convenient!",
@@ -9383,8 +9328,7 @@
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   }
  }
 }

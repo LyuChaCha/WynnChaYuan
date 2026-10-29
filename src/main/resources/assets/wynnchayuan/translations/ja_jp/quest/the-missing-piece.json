@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Missing Piece",
-  "count": 556,
-  "translated": 556,
+  "count": 617,
+  "translated": 617,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -1657,8 +1657,8 @@
    "source": "wiki"
   },
   "The Missing Piece#165": {
-   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, tZoEsb?",
-   "dst": "あ、そうだ！木陰でピクニックができるわ。素敵じゃない、tZoEsb？",
+   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, {u}?",
+   "dst": "あ、そうだ！木陰でピクニックができるわ。素敵じゃない、{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1707,8 +1707,8 @@
    "source": "wiki"
   },
   "The Missing Piece#170": {
-   "src": "What is it, RxmCQz?",
-   "dst": "どうしたの、RxmCQz？",
+   "src": "What is it, {u}?",
+   "dst": "どうしたの、{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1879,6 +1879,16 @@
   "The Missing Piece#187": {
    "src": "Those were good days. On those occasions, we'd go and have ourselves a picnic, me and- hm. Just me, I suppose.",
    "dst": "いい日々だったわ。そういう時はピクニックに行ったの、私と― うーん。私一人だったかしら。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 18",
+   "speaker": "Elise",
+   "source": "wiki"
+  },
+  "The Missing Piece#188": {
+   "src": "A shame it's so hard to come by... the thefts became a real problem, you know. The Crown ended up building a vault down under the factory to keep it all secure!",
+   "dst": "手に入りにくいのが残念ね…盗みが大問題になったのよ。結局王家が工場の地下に金庫を造って、厳重に保管するようになったの！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4727,7 +4737,7 @@
    "stage": "Stage 50",
    "speaker": "Elise",
    "source": "wiki",
-   "note":"you're と clearlyは斜体"
+   "note": "you're と clearlyは斜体"
   },
   "The Missing Piece#472": {
    "src": "I barely get to see you anymore. And now, out of nowhere, you're here in this state... What's going on? Please, just talk to me.",
@@ -4868,7 +4878,7 @@
    "stage": "Stage 50",
    "speaker": "Elise",
    "source": "wiki",
-   "note":"What have you done?は斜体"
+   "note": "What have you done?は斜体"
   },
   "The Missing Piece#486": {
    "src": "I... how did I overlook this...?",
@@ -5069,7 +5079,7 @@
    "stage": "Stage 50",
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki",
-   "note":"rightは斜体"
+   "note": "rightは斜体"
   },
   "The Missing Piece#506": {
    "src": "But then... I met you, Elise.",
@@ -5773,7 +5783,7 @@
   },
   "The Missing Piece#576": {
    "src": "{#} Right-Click to stop.",
-   "dst": "{#} Right-Click{c2}でやめる",
+   "dst": "{#} {c1}右クリック{c2}でやめる",
    "role": "desc",
    "kind": "Bossbar",
    "quest": "The Missing Piece",
@@ -5830,7 +5840,7 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json",
-   "note":"SNEAKは太字"
+   "note": "SNEAKは太字"
   },
   "The Missing Piece#582": {
    "src": "You could knock out the workers with this...",
@@ -5851,7 +5861,7 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json",
-   "note":"LEFT-CLICKは太字"
+   "note": "LEFT-CLICKは太字"
   },
   "The Missing Piece#584": {
    "src": "{#} Left-Click with Bottle to Knock Out",
@@ -5862,7 +5872,7 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json",
-   "note":"Bottleは太字"
+   "note": "Bottleは太字"
   },
   "The Missing Piece#585": {
    "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
@@ -5873,7 +5883,7 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json",
-   "note":"RIGHT-CLICKは太字"
+   "note": "RIGHT-CLICKは太字"
   },
   "The Missing Piece#586": {
    "src": "With this, you can open the grate to the pipe and progress.",
@@ -5883,8 +5893,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#587": {
    "src": "Enter the pipe?",
@@ -5894,8 +5903,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#588": {
    "src": "To stay out of sight of workers, use Bottles to distract them.",
@@ -5905,8 +5913,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#589": {
    "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
@@ -5917,7 +5924,7 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json",
-   "note":"EMERGENCY SHUTDOWNは太字"
+   "note": "EMERGENCY SHUTDOWNは太字"
   },
   "The Missing Piece#590": {
    "src": "There's nothing worth taking.",
@@ -5927,8 +5934,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#591": {
    "src": "The bottle is too high up to reach...",
@@ -5938,8 +5944,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#592": {
    "src": "That must be the way in to the vault Elise mentioned.",
@@ -5949,8 +5954,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#593": {
    "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
@@ -5960,8 +5964,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#594": {
    "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
@@ -5971,8 +5974,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 22",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#595": {
    "src": "They really ought to improve their security around here...",
@@ -5982,8 +5984,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#596": {
    "src": "Deactivating oven...",
@@ -5993,8 +5994,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#597": {
    "src": "Now, to find the Maintenance Key...",
@@ -6004,8 +6004,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#598": {
    "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
@@ -6016,7 +6015,7 @@
    "stage": "Stage 23",
    "speaker": "",
    "source": "captured.json",
-   "note":"EMERGENCY SHUTDOWNは太字"
+   "note": "EMERGENCY SHUTDOWNは太字"
   },
   "The Missing Piece#599": {
    "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
@@ -6026,8 +6025,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#600": {
    "src": "Do you want to infiltrate the Bread Vault through this method?",
@@ -6037,8 +6035,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 23",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#601": {
    "src": "Initiating EMERGENCY SHUTDOWN...",
@@ -6049,7 +6046,7 @@
    "stage": "Stage 23",
    "speaker": "",
    "source": "captured.json",
-   "note":"EMERGENCY SHUTDOWNは太字 Initiatingは斜体"
+   "note": "EMERGENCY SHUTDOWNは太字 Initiatingは斜体"
   },
   "The Missing Piece#602": {
    "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
@@ -6059,8 +6056,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 24",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#603": {
    "src": "There must be a way to get to that balcony above.",
@@ -6070,8 +6066,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 25",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#604": {
    "src": "Switch between selected beams using the switch button.",
@@ -6081,8 +6076,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 27",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#605": {
    "src": "They're having a discussion you can just barely make out...",
@@ -6092,8 +6086,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 28",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#606": {
    "src": "Finally... The bread you've been looking for.",
@@ -6103,8 +6096,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#607": {
    "src": "→ Backward",
@@ -6114,8 +6106,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#608": {
    "src": "↓ Down",
@@ -6125,19 +6116,17 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#609": {
    "src": "⭯ Rotate",
-   "dst": "⭯ 回転",
+   "dst": "↺ 回転",
    "role": "desc",
    "kind": "Floating Text",
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#610": {
    "src": "↩ Switch",
@@ -6147,19 +6136,17 @@
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#611": {
    "src": "Guard\nOh well...",
-   "dst": "衛兵\nまあ、いいか…",
+   "dst": "Guard\nまあ、いいか…",
    "role": "desc",
    "kind": "Floating Text",
    "quest": "The Missing Piece",
    "stage": "Stage 31",
    "speaker": "Guard",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#612": {
    "src": "Inspector\nOpen up!",
@@ -6169,8 +6156,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "Inspector",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#613": {
    "src": "It seems Elise has visitors...",
@@ -6180,8 +6166,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#614": {
    "src": "Confront the inspection.",
@@ -6191,8 +6176,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 36",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#615": {
    "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
@@ -6202,8 +6186,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 37",
    "speaker": "Elise",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   },
   "The Missing Piece#616": {
    "src": "Pick up Elise at [-{~}, {~}, -{~}]",
@@ -6213,8 +6196,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 51",
    "speaker": "",
-   "source": "captured.json",
-   "note":""
+   "source": "captured.json"
   }
  }
 }
