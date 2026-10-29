@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 258,
-  "translated": 258,
+  "count": 259,
+  "translated": 259,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -1387,7 +1387,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "谢谢你，{u}！我感觉好多了。你准备好了我们就继续深入。",
    "role": "desc",
    "kind": "dialogue",
@@ -1627,7 +1627,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "我在想……要是我们能想办法利用这个间歇泉呢？它看起来是休眠的，不过我觉得我们能让它重新喷发。",
    "role": "desc",
    "kind": "dialogue",
@@ -1737,8 +1737,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "我、我们成功了？……我们做到了！我们回来了！哈哈哈！我还活着！",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "我、我们成功了？……{u}，我们做到了！我们回来了！哈哈哈！我还活着！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1777,7 +1777,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "哈，别理那边那个爱开玩笑的家伙。不过他那身装扮倒是很像样！",
    "role": "desc",
    "kind": "dialogue",
@@ -2584,6 +2584,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 采矿炸药]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   }
  }

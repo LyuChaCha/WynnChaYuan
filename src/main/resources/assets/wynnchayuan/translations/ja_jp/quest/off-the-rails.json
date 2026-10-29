@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Off the Rails",
-  "count": 752,
-  "translated": 752,
+  "count": 921,
+  "translated": 921,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -38,7 +38,7 @@
   },
   "Off the Rails#003": {
    "src": "Besides, I've talked to enough of you hobos for one day. I'll be glad to take the Subway out of here.",
-   "dst": "それに、今日はお前ら浮浪者の相手はもう十分だ。地下鉄でここを離れられて清々する。",
+   "dst": "それに、今日はお前ら浮浪者の相手はもう十分だ。{c2}地下鉄{/}でここを離れられて清々する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -68,7 +68,7 @@
   },
   "Off the Rails#006": {
    "src": "Well, it's an underground transport system that goes all over the province... Not that that matters for a beggar like you, of course. You'll never be able to afford a trip! Ha!",
-   "dst": "まあ、州じゅうを走る地下の交通機関だ…もっとも、お前のような物乞いには関係ない話だがな。一生切符など買えんだろう！ハッ！",
+   "dst": "まあ、{c2}州じゅう{/}を走る地下の{c2}交通機関{/}だ…もっとも、お前のような物乞いには関係ない話だがな。一生切符など買えんだろう！ハッ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -138,7 +138,7 @@
   },
   "Off the Rails#013": {
    "src": "The train gets here in about fifteen minutes. Happy travels...",
-   "dst": "列車は十五分ほどで着きます。よい旅を…",
+   "dst": "列車は{c2}十五分{/}ほどで着きます。よい旅を…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -164,7 +164,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Businessman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Off the Rails#016": {
    "src": "..Y-you? You're waiting for this train?",
@@ -224,7 +225,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Businessman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Off the Rails#022": {
    "src": "Sigh... Happy travels...",
@@ -297,8 +299,8 @@
    "source": "wiki"
   },
   "Off the Rails#029": {
-   "src": "Heh. Enough yammering from me, though. You probably have your own stuff you wanna talk about, right? (After Malic's introduction)",
-   "dst": "へへ。俺ばっかり喋りすぎたな。君も話したいことがあるんだろ？(Malic の自己紹介後)",
+   "src": "Heh. Enough yammering from me, though. You probably have your own stuff you wanna talk about, right?",
+   "dst": "へへ。俺ばっかり喋りすぎたな。君も話したいことがあるんだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -307,8 +309,8 @@
    "source": "wiki"
   },
   "Off the Rails#030": {
-   "src": "Anything else you wanna talk about? (When the dialogue options reappear)",
-   "dst": "他に話したいことは？(選択肢の再表示時)",
+   "src": "Anything else you wanna talk about?",
+   "dst": "他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -317,8 +319,8 @@
    "source": "wiki"
   },
   "Off the Rails#031": {
-   "src": "Hey again! Anything to say? (Subsequent conversations with Malic)",
-   "dst": "やあ、また会ったね！何か話す？(Malic との再会時)",
+   "src": "Hey again! Anything to say?",
+   "dst": "やあ、また会ったね！何か話す？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -327,8 +329,8 @@
    "source": "wiki"
   },
   "Off the Rails#032": {
-   "src": "Enough of this, though, or I'll get too excited. Anything else you wanna talk about? (After asking about the {p})",
-   "dst": "まあこの辺にしとこう、興奮しすぎちゃうから。他に話したいことは？({p} について聞いた後)",
+   "src": "Enough of this, though, or I'll get too excited. Anything else you wanna talk about?",
+   "dst": "まあこの辺にしとこう、興奮しすぎちゃうから。他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -337,8 +339,8 @@
    "source": "wiki"
   },
   "Off the Rails#033": {
-   "src": "Sigh. Anything else you wanna talk about? (After asking about Soda)",
-   "dst": "はあ。他に話したいことは？(Soda について聞いた後)",
+   "src": "Sigh. Anything else you wanna talk about?",
+   "dst": "はあ。他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -417,8 +419,8 @@
    "source": "wiki"
   },
   "Off the Rails#041": {
-   "src": "...Anyway, is there anything you'd like to talk about? (After Maddison's introduction)",
-   "dst": "…とにかく、何か話したいことある？(Maddison の自己紹介後)",
+   "src": "...Anyway, is there anything you'd like to talk about?",
+   "dst": "…とにかく、何か話したいことある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -427,8 +429,8 @@
    "source": "wiki"
   },
   "Off the Rails#042": {
-   "src": "...Anything else you'd like to discuss? (When the dialogue options reappear)",
-   "dst": "…他に話したいことは？(選択肢の再表示時)",
+   "src": "...Anything else you'd like to discuss?",
+   "dst": "…他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -437,8 +439,8 @@
    "source": "wiki"
   },
   "Off the Rails#043": {
-   "src": "Hi again! Want to talk? (Subsequent conversations with Maddison)",
-   "dst": "また会ったね！お話しする？(Maddison との再会時)",
+   "src": "Hi again! Want to talk?",
+   "dst": "また会ったね！お話しする？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -447,8 +449,8 @@
    "source": "wiki"
   },
   "Off the Rails#044": {
-   "src": "Oh, well... Anything else you'd like to discuss?(After asking about Maddison's trip)",
-   "dst": "あ、まあ…他に話したいことは？(Maddison の旅について聞いた後)",
+   "src": "Oh, well... Anything else you'd like to discuss?",
+   "dst": "あ、まあ…他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -457,24 +459,24 @@
    "source": "wiki"
   },
   "Off the Rails#045": {
-   "src": "Roughworks? Oh, right, that's what the people here call it. To me, it's the {p}.",
-   "dst": "Roughworks？あ、そっか、ここの人はそう呼ぶんだっけ。私にとっては {p} だよ。",
+   "src": "Roughworks? Oh, right, that's what the people there call it. To me, it's the {p}.",
+   "dst": "Roughworks？あ、そっか、あそこの人はそう呼ぶんだっけ。私にとっては {p} だよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#046": {
-   "src": "I always imagined this place being a bit... cleaner. Maybe the people here are just used to it being messy, though?",
-   "dst": "ここはもうちょっと…きれいな所だと思ってた。でも、ここの人は散らかってるのに慣れてるのかな？",
+   "src": "I always imagined it being a bit... cleaner. Maybe the people there are just used to it being messy, though?",
+   "dst": "あそこはもうちょっと…きれいな所だと思ってた。でも、あそこの人は散らかってるのに慣れてるのかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#047": {
    "src": "A lot of the people I tried talking to were, well, not very nice. They didn't seem to like tourists all that much...",
@@ -487,7 +489,7 @@
    "source": "wiki"
   },
   "Off the Rails#048": {
-   "src": "Overall, this... has probably been the low point of my trip. I think it's just not for me, really. But there were some parts I liked!",
+   "src": "Overall, it was... probably been the low point of my trip. I think it's just not for me, really. But there were some parts I liked!",
    "dst": "全体的に、ここは…旅でいちばん残念だったかも。私には合わないんだと思う。でも、好きなところもあったよ！",
    "role": "desc",
    "kind": "dialogue",
@@ -497,8 +499,8 @@
    "source": "wiki"
   },
   "Off the Rails#049": {
-   "src": "I already mentioned the pretty murals, but there was a bunch of other cool stuff, too. Did you know the people here fight to resolve disputes?",
-   "dst": "きれいな壁画のことはもう話したけど、他にも面白いものがたくさんあったの。ここの人って揉め事を喧嘩で解決するって知ってた？",
+   "src": "I already mentioned the pretty murals, but there was a bunch of other cool stuff, too. Did you know the people there fight to resolve disputes?",
+   "dst": "きれいな壁画のことはもう話したけど、他にも面白いものがたくさんあったの。あそこの人って揉め事を喧嘩で解決するって知ってた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -587,8 +589,8 @@
    "source": "wiki"
   },
   "Off the Rails#058": {
-   "src": "I've only been to the {p} and here, though. Both have been enlightening, in their own ways.",
-   "dst": "でも行ったのは {p} とここだけなの。どっちもそれぞれ勉強になったよ。",
+   "src": "I've only been to the {p} and {p}, though. Both have been enlightening, in their own ways.",
+   "dst": "でも行ったのは {p} と {p} だけなの。どっちもそれぞれ勉強になったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -607,8 +609,8 @@
    "source": "wiki"
   },
   "Off the Rails#060": {
-   "src": "This place? It's... I guess I've come to learn that some people live by different standards to me, which is... interesting.",
-   "dst": "ここ？ここは…自分と違う基準で暮らす人もいるって分かったかな。それって…興味深いよね。",
+   "src": "The {p}? It's... I guess I've come to learn that some people live by different standards to me, which is... interesting.",
+   "dst": "{p}？あそこは…自分と違う基準で暮らす人もいるって分かったかな。それって…興味深いよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -774,7 +776,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "???",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Off the Rails#077": {
    "src": "I'm Flinn.",
@@ -787,14 +790,14 @@
    "source": "wiki"
   },
   "Off the Rails#078": {
-   "src": "Ugh. Well, see, I'm from {p}. I... don't like it there. So I wanted to see what the {p} was like.",
-   "dst": "はあ。まあ、僕は {p} 出身なんだ。あそこは…好きじゃない。だから {p} がどんな所か見たかった。",
+   "src": "Ugh. Well, see, I'm from {p}. I... don't like it there. So I wanted to see what the Industrial Distict was like.",
+   "dst": "はあ。まあ、僕は {p} 出身なんだ。あそこは…好きじゃない。だから Industrial District がどんな所か見たかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Flinn",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#079": {
    "src": "Having been here yourself, I'm sure you understand well how that turned out. Now, I'm heading home.",
@@ -817,8 +820,8 @@
    "source": "wiki"
   },
   "Off the Rails#081": {
-   "src": "...But enough about me. What do you want to say? (After Flinn's introduction)",
-   "dst": "…僕の話はもういい。何が言いたいの？(Flinn の自己紹介後)",
+   "src": "...But enough about me. What do you want to say?",
+   "dst": "…僕の話はもういい。何が言いたいの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -827,8 +830,8 @@
    "source": "wiki"
   },
   "Off the Rails#082": {
-   "src": "Anything else? (When the dialogue options reappear)",
-   "dst": "他には？(選択肢の再表示時)",
+   "src": "Anything else?",
+   "dst": "他に何か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -837,8 +840,8 @@
    "source": "wiki"
   },
   "Off the Rails#083": {
-   "src": "What? (Subsequent conversations with Flinn)",
-   "dst": "何？(Flinn との再会時)",
+   "src": "What?",
+   "dst": "何？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -847,8 +850,8 @@
    "source": "wiki"
   },
   "Off the Rails#084": {
-   "src": "Sorry about that, I got... Madder, than expected... Anything else you'd like to discuss? (After asking about the {p})",
-   "dst": "ごめん、思ったより…イライラしちゃって…他に話したいことは？({p} について聞いた後)",
+   "src": "Sorry about that, I got... Madder, than expected... Anything else you'd like to discuss?",
+   "dst": "ごめん、思ったより…イライラしちゃって…他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -857,14 +860,14 @@
    "source": "wiki"
   },
   "Off the Rails#085": {
-   "src": "I chose this place because it was the cheapest ticket... I had to exchange so many materials for those weird emeralds they use here.",
-   "dst": "ここを選んだのは切符が一番安かったから…ここで使う変なエメラルドと交換するのに、材料をすごくたくさん手放したよ。",
+   "src": "I chose the {p} because it was the cheapest ticket... I had to exchange so many materials for those weird emeralds they use here.",
+   "dst": "{p}を選んだのは切符が一番安かったから…ここで使う変なエメラルドと交換するのに、材料をすごくたくさん手放したよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Flinn",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#086": {
    "src": "I had high expectations, thought seeing another part of the province might restore my hopes... It didn't.",
@@ -877,8 +880,8 @@
    "source": "wiki"
   },
   "Off the Rails#087": {
-   "src": "I hoped, at least, that the Festival here would be cool, and instead, it was a complete disaster. On top of that, I missed the one back home...",
-   "dst": "せめてここのお祭りはいいものだろうと思ったのに、完全な大失敗。しかも地元のお祭りも見逃したし…",
+   "src": "I didn't even want to witness whatever mess the Festival there was going to end up being. It couldn't possibly compensate for missing the one back home.",
+   "dst": "あそこの祭りがどんな大混乱になるか、見たくもなかった。故郷のフェスティバルを見逃したことを、それだけでは到底埋め合わせられないからだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1178,7 +1181,7 @@
   },
   "Off the Rails#118": {
    "src": "We don't get passengers often, to be honest with you, so to have even this many... That was a surprise. Not to mention General Levi being here, too.",
-   "dst": "正直、普段はお客様が少ないので、これだけの人数でも…驚きでした。Levi 将軍までいらっしゃいますし。",
+   "dst": "正直、普段はお客様が少ないので、これだけの人数でも…驚きでした。{c2}Levi 将軍{/}までいらっしゃいますし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1188,7 +1191,7 @@
   },
   "Off the Rails#119": {
    "src": "Anyway, we should be arriving in {p} in an hour or two. Until then, feel free to talk with your fellow passengers, or take a nap.",
-   "dst": "ともかく、一、二時間ほどで {p} に到着します。それまで他のお客様とお話しするなり、お昼寝するなりご自由にどうぞ。",
+   "dst": "ともかく、一、二時間ほどで {p} に到着します。それまで{c2}他のお客様とお話しする{/}なり、{c2}お昼寝{/}するなりご自由にどうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1267,8 +1270,8 @@
    "source": "wiki"
   },
   "Off the Rails#127": {
-   "src": "Enough about that though. What would you like to talk about? (After Telati's introduction)",
-   "dst": "それはさておき、何のお話をしましょう？(Telati の自己紹介後)",
+   "src": "Enough about that though. What would you like to talk about?",
+   "dst": "それはさておき、何のお話をしましょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1277,8 +1280,8 @@
    "source": "wiki"
   },
   "Off the Rails#128": {
-   "src": "...Anything else to say? (When the dialogue options reappear)",
-   "dst": "…他に何か？(選択肢の再表示時)",
+   "src": "...Anything else to say?",
+   "dst": "…他に何か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1287,8 +1290,8 @@
    "source": "wiki"
   },
   "Off the Rails#129": {
-   "src": "Anything wrong? Or do you just want to chat? (Subsequent conversations with Telati)",
-   "dst": "何か問題が？それともお話ししたいだけですか？(Telati との再会時)",
+   "src": "Anything wrong? Or do you just want to chat?",
+   "dst": "何か問題が？それともお話ししたいだけですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1297,8 +1300,8 @@
    "source": "wiki"
   },
   "Off the Rails#130": {
-   "src": "...It's okay. I can handle it... Anything else to say? (After asking about the Other staff)",
-   "dst": "…大丈夫です。何とかなります…他に何か？(他の乗務員について聞いた後)",
+   "src": "...It's okay. I can handle it... Anything else to say?",
+   "dst": "…大丈夫です。何とかなります…他に何か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1307,8 +1310,8 @@
    "source": "wiki"
   },
   "Off the Rails#131": {
-   "src": "...Whatever... Anything else to say? (After asking about Cemor)",
-   "dst": "…まあいいです…他に何か？(Cemor について聞いた後)",
+   "src": "...Whatever... Anything else to say?",
+   "dst": "…まあいいです…他に何か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1317,8 +1320,8 @@
    "source": "wiki"
   },
   "Off the Rails#132": {
-   "src": "...Perhaps I shouldn't have let that slip... Uhm... Anything else to say...? (After asking about his Thoughts on the train)",
-   "dst": "…口を滑らせるべきではなかったかも…えっと…他に何か…？(列車への思いを聞いた後)",
+   "src": "...Perhaps I shouldn't have let that slip... Uhm... Anything else to say...?",
+   "dst": "…口を滑らせるべきではなかったかも…えっと…他に何か…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1358,7 +1361,7 @@
   },
   "Off the Rails#136": {
    "src": "It's usually only Aelumians and Highlanders who can afford trips, and, well... Most of those guys don't seem interested in seeing other regions.",
-   "dst": "旅行できるのはたいてい Aelumia 人か高地人だけで、その…彼らの多くは他の地域を見ることに興味がないようで。",
+   "dst": "旅行できるのはたいてい Aelumia 人か highland 人だけで、その…彼らの多くは他の地域を見ることに興味がないようで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1377,7 +1380,7 @@
    "source": "wiki"
   },
   "Off the Rails#138": {
-   "src": "For today's trip to have so many people - and such a diverse set too - is an anomaly. It's unfortunate timing, too, since Zathie's on break.",
+   "src": "For today's trip to have so many people - and such a diverse set too - is an anomaly. It's... unfortunate timing, too, since Zathie's on break.",
    "dst": "今日これほど大勢、しかも様々な方が乗るのは異例です。Zathie が休暇中なので、間も悪くて。",
    "role": "desc",
    "kind": "dialogue",
@@ -1438,7 +1441,7 @@
   },
   "Off the Rails#144": {
    "src": "Ah, him. Yes, he's the Highlander sat in the dining carriage.",
-   "dst": "ああ、あの方。食堂車に座っている高地人の方です。",
+   "dst": "ああ、あの方。食堂車に座っている highland 人の方です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1494,10 +1497,11 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Off the Rails#150": {
-   "src": "The train's like a second home to me. Maybe more of a home than my real home...",
+   "src": "The train's like a second home to me. Maybe more of a home to me than my real home...",
    "dst": "列車は私の第二の家みたいなものです。本当の家より家らしいかも…",
    "role": "desc",
    "kind": "dialogue",
@@ -1534,7 +1538,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "justは斜体"
   },
   "Off the Rails#154": {
    "src": "...I've only been to {p} a couple of times. It's military-only and they typically use their own trains to travel there...",
@@ -1677,18 +1682,18 @@
    "source": "wiki"
   },
   "Off the Rails#168": {
-   "src": "Well, I though you knew.",
+   "src": "Well, I thought you knew.",
    "dst": "いや、知ってると思って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#169": {
-   "src": "Ech... Whatever. You. Whaddaya ya want. You wanna chat? Got a problem to report? What's goin' on. (After Harvin and Maury's introduction)",
-   "dst": "チッ…まあいい。おい。何の用だ。雑談か？通報か？どうした。(Harvin と Maury の自己紹介後)",
+   "src": "Ech... Whatever. You. Whaddaya ya want. You wanna chat? Got a problem to report? What's goin' on.",
+   "dst": "チッ…まあいい。おい。何の用だ。雑談か？通報か？どうした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1697,8 +1702,8 @@
    "source": "wiki"
   },
   "Off the Rails#170": {
-   "src": "Got anythin' else you wanna say? (When the dialogue options reappear)",
-   "dst": "他に言いてえことは？(選択肢の再表示時)",
+   "src": "Got anythin' else you wanna say?",
+   "dst": "他に言いてえことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1707,8 +1712,8 @@
    "source": "wiki"
   },
   "Off the Rails#171": {
-   "src": "Ugh, what is it now? (Subsequent conversations with Harvin and Maury)",
-   "dst": "はあ、今度は何だ？(Harvin と Maury との再会時)",
+   "src": "Ugh, what is it now?",
+   "dst": "はあ、今度は何だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1717,8 +1722,8 @@
    "source": "wiki"
   },
   "Off the Rails#172": {
-   "src": "...We're movin' on before he says any more. Ask about somethin' else. (After asking about Whats going on)",
-   "dst": "…こいつがこれ以上しゃべる前に次だ。他のことを聞け。(「何が起きてる」を聞いた後)",
+   "src": "...We're movin' on before he says any more. Ask about somethin' else.",
+   "dst": "…こいつがこれ以上しゃべる前に次だ。他のことを聞け。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1727,8 +1732,8 @@
    "source": "wiki"
   },
   "Off the Rails#173": {
-   "src": "Me too, bud, me too... Ah, right. You. Anythin' else to say? (After asking about Any stories)",
-   "dst": "俺もだよ、相棒…ああ、そうだ。お前。他に言いてえことは？(「何か話は」を聞いた後)",
+   "src": "Me too, bud, me too... Ah, right. You. Anythin' else to say?",
+   "dst": "俺もだよ、相棒…ああ、そうだ。お前。他に言いてえことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -1737,8 +1742,8 @@
    "source": "wiki"
   },
   "Off the Rails#174": {
-   "src": "Talk about somethin' else instead. (After asking about the Sewage incident)",
-   "dst": "別の話にしろ。(汚水の件を聞いた後)",
+   "src": "Talk about somethin' else instead.",
+   "dst": "別の話にしろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2077,8 +2082,8 @@
    "source": "wiki"
   },
   "Off the Rails#213": {
-   "src": "What do you want to say? (After initial dialogue)",
-   "dst": "何が言いたいの？(最初の会話の後)",
+   "src": "What do you want to say?",
+   "dst": "何が言いたいの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2087,8 +2092,8 @@
    "source": "wiki"
   },
   "Off the Rails#214": {
-   "src": "Ugh... Anything else? (When the dialogue options reappear)",
-   "dst": "はあ…他には？(選択肢の再表示時)",
+   "src": "Ugh... Anything else?",
+   "dst": "はあ…他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2097,8 +2102,8 @@
    "source": "wiki"
   },
   "Off the Rails#216": {
-   "src": "...I have a lot of thinking to do, basically. It would be easier to do that if you left me alone... (After asking about the Military)",
-   "dst": "…要するに、考えることがたくさんあるんだ。放っておいてくれた方が考えやすいんだけど…(軍について聞いた後)",
+   "src": "...I have a lot of thinking to do, basically. It would be easier to do that if you left me alone...",
+   "dst": "…要するに、考えることがたくさんあるんだ。放っておいてくれた方が考えやすいんだけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2237,8 +2242,8 @@
    "source": "wiki"
   },
   "Off the Rails#232": {
-   "src": "...Anyway, what do you want to talk about? (After initial dialogue)",
-   "dst": "…で、何を話したい？(最初の会話の後)",
+   "src": "...Anyway, what do you want to talk about?",
+   "dst": "…で、何を話したい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2247,8 +2252,8 @@
    "source": "wiki"
   },
   "Off the Rails#235": {
-   "src": "...Let's move on. (After asking about the Train)",
-   "dst": "…次の話にしよう。(列車について聞いた後)",
+   "src": "...Let's move on.",
+   "dst": "…次の話にしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2397,14 +2402,14 @@
    "source": "wiki"
   },
   "Off the Rails#250": {
-   "src": "I'm traveling to Auburn for my study project... I can't wait!",
+   "src": "I'm travelling to Auburn for my study project... I can't wait!",
    "dst": "研究課題で Auburn に行くところで…待ちきれません！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#251": {
    "src": "See, I'm from the Blossom House. We study biology, and one of the highlights of the course is getting to travel and do fieldwork.",
@@ -2437,8 +2442,8 @@
    "source": "wiki"
   },
   "Off the Rails#254": {
-   "src": "Goodness, I must stop myself before I bore you with one of my rants. I do that all too often. What do you actually want to talk about? (After Demma's introduction)",
-   "dst": "まあ、長話で退屈させる前にやめないと。いつもこうなんです。本当は何を話したいんですか？(Demma の自己紹介後)",
+   "src": "Goodness, I must stop myself before I bore you with one of my rants. I do that all too often. What do you actually want to talk about?",
+   "dst": "まあ、長話で退屈させる前にやめないと。いつもこうなんです。本当は何を話したいんですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2447,8 +2452,8 @@
    "source": "wiki"
   },
   "Off the Rails#255": {
-   "src": "Got more to talk about? (Subsequent conversations with Demma)",
-   "dst": "まだお話がありますか？(Demma との再会時)",
+   "src": "Got more to talk about?",
+   "dst": "まだお話がありますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2457,8 +2462,8 @@
    "source": "wiki"
   },
   "Off the Rails#256": {
-   "src": "...Let's move on. Anything else to discuss? (After asking about the University)",
-   "dst": "…次の話にしましょう。他に話したいことは？(大学について聞いた後)",
+   "src": "...Let's move on. Anything else to discuss?",
+   "dst": "…次の話にしましょう。他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2467,8 +2472,8 @@
    "source": "wiki"
   },
   "Off the Rails#257": {
-   "src": "...Ah, sorry, I'm trailing off into tangents. Let's change topics. (After asking about the {p})",
-   "dst": "…あ、すみません、話がそれてしまって。話題を変えましょう。({p} について聞いた後)",
+   "src": "...Ah, sorry, I'm trailing off into tangents. Let's change topics.",
+   "dst": "…あ、すみません、話がそれてしまって。話題を変えましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2477,8 +2482,8 @@
    "source": "wiki"
   },
   "Off the Rails#258": {
-   "src": "Gah! I need to stop going into tangents. Sorry. Let's change topics. (After asking about Biology)",
-   "dst": "ああ！脱線癖を直さないと。すみません。話題を変えましょう。(生物学について聞いた後)",
+   "src": "Gah! I need to stop going into tangents. Sorry. Let's change topics.",
+   "dst": "ああ！脱線癖を直さないと。すみません。話題を変えましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2487,8 +2492,8 @@
    "source": "wiki"
   },
   "Off the Rails#259": {
-   "src": "...Let's just... Move on to another subject. (After asking about Snails)",
-   "dst": "…ええと…別の話題にしましょう。(カタツムリについて聞いた後)",
+   "src": "...Let's just... Move on to another subject.",
+   "dst": "…ええと…別の話題にしましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2627,7 +2632,7 @@
    "source": "wiki"
   },
   "Off the Rails#273": {
-   "src": "From a young age, I've always loved animals. so joining Blossom House at the university just made sense.",
+   "src": "From a young age, I've always loved animals, so joining Blossom House at the university just made sense.",
    "dst": "小さい頃からずっと動物が好きで、大学で花寮に入るのは自然なことでした。",
    "role": "desc",
    "kind": "dialogue",
@@ -2797,14 +2802,14 @@
    "source": "wiki"
   },
   "Off the Rails#290": {
-   "src": "...People survived by clinging onto the Gigastropods, because despite their hardy shells, they're also buoyant!",
+   "src": "...People survived by clinging onto the Gigastropods, because despite their hardy shells, they're also bouyant!",
    "dst": "…人々は Gigastropod にしがみついて生き延びたそうです。殻は頑丈なのに、水に浮くんですよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#291": {
    "src": "Speaking of the dam, isn't it fascinating that Gigastropods are so closely related to the Murex Mollusc despite the sheer cliff between them?",
@@ -2907,8 +2912,8 @@
    "source": "wiki"
   },
   "Off the Rails#301": {
-   "src": "...Anyway, is there anything you'd like to talk about? (After initial dialogue)",
-   "dst": "…とにかく、何か話したい？(最初の会話の後)",
+   "src": "...Anyway, is there anything you'd like to talk about?",
+   "dst": "…とにかく、何か話したいことある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -2968,13 +2973,14 @@
   },
   "Off the Rails#309": {
    "src": "That scary lady we saw back there? That was General Levi, the leader of the Constables Division.",
-   "dst": "さっきの怖そうな女の人？あれは警邏部隊の長、Levi 将軍よ。",
+   "dst": "さっきの怖そうな女の人？あれは{c2}警邏部隊の長{/}、{c2}Levi 将軍{/}よ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}General Levi{/}, {c2}Constables Division{/}"
   },
   "Off the Rails#310": {
    "src": "She took on the role a few years ago, when the previous General, General Daimyo, stepped down. She's pretty cool, it was a nice surprise seeing her here!",
@@ -3054,7 +3060,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Off the Rails#318": {
    "src": "...Fine. I suppose I can indulge. But you had better leave me to read my book in peace when you're done.",
@@ -3097,8 +3104,8 @@
    "source": "wiki"
   },
   "Off the Rails#322": {
-   "src": "But enough about little old me. What do you want to talk about? (After Cemor's introduction)",
-   "dst": "だが、私の話はこのくらいにしよう。何を話したいのかね？(Cemor の自己紹介後)",
+   "src": "But enough about little old me. What do you want to talk about?",
+   "dst": "だが、私の話はこのくらいにしよう。何を話したいのかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3107,8 +3114,8 @@
    "source": "wiki"
   },
   "Off the Rails#323": {
-   "src": "What is it now? (Subsequent conversations with Cemor)",
-   "dst": "今度は何だね？(Cemor との再会時)",
+   "src": "What is it now?",
+   "dst": "今度は何だね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3117,8 +3124,8 @@
    "source": "wiki"
   },
   "Off the Rails#324": {
-   "src": "But let us move on from that. What else have you to discuss? (After asking about the Book)",
-   "dst": "だがその話はここまでだ。他に何を話したい？(本について聞いた後)",
+   "src": "But let us move on from that. What else have you to discuss?",
+   "dst": "だがその話はここまでだ。他に何を話したい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3127,8 +3134,8 @@
    "source": "wiki"
   },
   "Off the Rails#325": {
-   "src": "Let us move on. What else would you like to speak about? (After asking about the {p})",
-   "dst": "次に移ろう。他に何を話したいかね？({p} について聞いた後)",
+   "src": "Let us move on. What else would you like to speak about?",
+   "dst": "次に移ろう。他に何を話したいかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3137,8 +3144,8 @@
    "source": "wiki"
   },
   "Off the Rails#326": {
-   "src": "Moving on. What else is there to speak of? (After asking about the {p})",
-   "dst": "次へ。他に何か話すことは？({p} について聞いた後)",
+   "src": "Moving on. What else is there to speak of?",
+   "dst": "次へ。他に何か話すことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3147,8 +3154,8 @@
    "source": "wiki"
   },
   "Off the Rails#327": {
-   "src": "...Anywho. Anything else? (After asking about the Train)",
-   "dst": "…ともかく。他には？(列車について聞いた後)",
+   "src": "...Anywho. Anything else?",
+   "dst": "…ともかく。他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3188,7 +3195,7 @@
   },
   "Off the Rails#331": {
    "src": "It's a shame... The Auburn Festival is usually quite good. A few of us Highlanders go down to Auburn to see it.",
-   "dst": "残念だ…Auburn の祭りは普段なかなか良いのだ。我々高地人も何人か Auburn まで見に行く。",
+   "dst": "残念だ…Auburn の祭りは普段なかなか良いのだ。我々 Highland 人も何人か Auburn まで見に行く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3467,7 +3474,7 @@
    "source": "wiki"
   },
   "Off the Rails#360": {
-   "src": "Evidence? Heh, They'll believe it - ye're suspicious-lookin', and have some oddd tools on yer person. Don't think we haven't seen 'em.",
+   "src": "Evidence? Heh. They'll believe it - ye're suspicious-lookin', and have some odd tools on yer person. Don't think we haven't seen 'em.",
    "dst": "証拠？へっ、みんな信じるさ――お前は怪しい見た目だし、妙な道具を持ち歩いてる。見てねえと思うなよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -3538,13 +3545,14 @@
   },
   "Off the Rails#367": {
    "src": "If you can prove yer innocence before the train reaches the station... Ye're free to go. Otherwise? We go with Plan A.",
-   "dst": "列車が駅に着くまでに無実を証明できたら…自由にしてやる。できなきゃ？最初の計画通りだ。",
+   "dst": "列車が駅に着くまでに{c2}無実を証明{/}できたら…自由にしてやる。できなきゃ？最初の計画通りだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 5",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}prove yer innocence{/}"
   },
   "Off the Rails#368": {
    "src": "All of you, out. This is private business. Get back to yer seats.",
@@ -3558,13 +3566,14 @@
   },
   "Off the Rails#369": {
    "src": "Alright. Uhh. The best way to prove that ye're innocent would probably be to figure out who actually did it.",
-   "dst": "よし。えーと。無実を証明する一番の方法は、本当の犯人を突き止めることだろうな。",
+   "dst": "よし。えーと。無実を証明する一番の方法は、{c2}本当の犯人を突き止める{/}ことだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 5",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}figure out who actually did it.{/}"
   },
   "Off the Rails#370": {
    "src": "If yer gonna be playin' detective, you're gonna want somewhere to jot yer findings, right? Where are we gonna get ya somethin' like that...",
@@ -3618,23 +3627,25 @@
   },
   "Off the Rails#375": {
    "src": "Uh. Anyway. You. Yeah. A good place to start yer investigation would be the scene of the crime, probably.",
-   "dst": "あー。とにかく。お前。そう。捜査の手始めは、たぶん犯行現場だろうな。",
+   "dst": "あー。とにかく。お前。そう。捜査の手始めは、たぶん{c2}犯行現場{/}だろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 5",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}scene of the crime{/}"
   },
   "Off the Rails#376": {
    "src": "Go poke around at the body and see what ya can find.",
-   "dst": "死体を調べて、何が見つかるか見てこい。",
+   "dst": "{c2}死体{/}を調べて、何が見つかるか見てこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 5",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}body{/}"
   },
   "Off the Rails#377": {
    "src": "Inspect the General's corpse to find clues.",
@@ -3678,13 +3689,14 @@
   },
   "Off the Rails#381": {
    "src": "Interestin' evidence... this seems highly premeditated, if ya ask me...",
-   "dst": "興味深い証拠だ…俺に言わせりゃ、こいつはかなり計画的だな…",
+   "dst": "興味深い証拠だ…俺に言わせりゃ、こいつはかなり{c2}計画的{/}だな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}premeditated{/}"
   },
   "Off the Rails#382": {
    "src": "Well, anyway, that ain't for us ta worry about. You're gonna figure out who did this.",
@@ -3698,13 +3710,14 @@
   },
   "Off the Rails#383": {
    "src": "Ya should go around an' talk to yer fellow passengers, see if they got any dirt. Ya might also spot some physical evidence along the way...",
-   "dst": "他の乗客に話を聞いて回って、何か知らねえか探れ。途中で物的証拠も見つかるかもしれねえ…",
+   "dst": "{c2}他の乗客{/}に{c2}話を聞いて回って{/}、何か知らねえか探れ。途中で{c2}物的証拠{/}も見つかるかもしれねえ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}talk{/}, {c2}fellow passengers{/}, {c2}physical evidence{/}"
   },
   "Off the Rails#384": {
    "src": "Hey, Maury... How are we gonna stop them from just accusing someone random? There would be no point to any of this, and we'd might as well just arrest them instead...",
@@ -3728,23 +3741,25 @@
   },
   "Off the Rails#386": {
    "src": "Ye're gonna have to find some compelling pieces of evidence, I guess. We'll say {~}.",
-   "dst": "説得力のある証拠を見つけてもらうしかねえな。{~} つってことにしよう。",
+   "dst": "{c2}説得力のある証拠{/}を見つけてもらうしかねえな。{c2}{~}{/} つってことにしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}compelling pieces of evidence{/}, {c2}{~}{/}"
   },
   "Off the Rails#387": {
    "src": "Once ya have {~} pieces of strong evidence, come back ta us and make yer accusation.",
-   "dst": "強い証拠を {~} つ集めたら、戻ってきて告発しろ。",
+   "dst": "{c2}強い証拠{/}を {c2}{~}{/} つ集めたら、{c2}戻ってきて告発しろ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 6",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{~}{/}, {c2}strong evidence{/}, {c2}come back ta us{/}, {c2}make yer accusation.{/}"
   },
   "Off the Rails#388": {
    "src": "Look around and interrogate passengers to find at least {~} pieces of strong evidence.",
@@ -3814,7 +3829,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Off the Rails#396": {
    "src": "Oh, you're the one from the murder scene, aren't you? The one those guards accused?",
@@ -3877,8 +3893,8 @@
    "source": "wiki"
   },
   "Off the Rails#404": {
-   "src": "...What questions do you have? (After initial conversation)",
-   "dst": "…何をお聞きになりたいですか？(最初の会話の後)",
+   "src": "...What questions do you have?",
+   "dst": "…何をお聞きになりたいですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3887,8 +3903,8 @@
    "source": "wiki"
   },
   "Off the Rails#405": {
-   "src": "Anything wrong? Or do you have more questions? (Subsequent conversations with Telati)",
-   "dst": "何か問題が？それともまだ質問が？(Telati との再会時)",
+   "src": "Anything wrong? Or do you have more questions?",
+   "dst": "何か問題が？それともまだ質問が？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3897,8 +3913,8 @@
    "source": "wiki"
   },
   "Off the Rails#406": {
-   "src": "Any more questions? (After asking about what Telati saw before the murder)",
-   "dst": "他に質問は？(事件前に Telati が見たことを聞いた後)",
+   "src": "Any more questions?",
+   "dst": "他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3907,8 +3923,8 @@
    "source": "wiki"
   },
   "Off the Rails#407": {
-   "src": "Anything else to say...? (After choosing any purple dialogue option)",
-   "dst": "他に何か…？(紫の選択肢を選んだ後)",
+   "src": "Anything else to say...?",
+   "dst": "他に何か…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -3928,33 +3944,36 @@
   },
   "Off the Rails#409": {
    "src": "Well, for starters... I was loitering in this carriage, just trying to avoid Cemor. I... didn't want to make his meal.",
-   "dst": "まず…私はこの車両でぶらぶらしていました、Cemor 様を避けるために。あの方の料理を…作りたくなくて。",
+   "dst": "{c1}まず…私は{c2}この車両でぶらぶらしていました、Cemor 様を避けるために。あの方の料理を…作りたくなくて。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I was loitering in this carriage, just trying to avoid Cemor. I... didn't want to make his meal.{/}"
   },
   "Off the Rails#410": {
    "src": "Yes, it was wrong of me. I ought to apologise to him... Anyway, he showed up here to go to the bathroom, so I quickly left before he could talk to me.",
-   "dst": "ええ、いけないことでした。あの方に謝らないと…とにかく、あの方がお手洗いに来たので、話しかけられる前にさっと離れました。",
+   "dst": "ええ、いけないことでした。あの方に謝らないと…とにかく、{c2}あの方がお手洗いに来たので、話しかけられる前にさっと離れました。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}he showed up here to go to the bathroom, so I quickly left before he could talk to me.{/}"
   },
   "Off the Rails#411": {
    "src": "I headed down to the passenger carriages and spoke to everyone I saw. I was a little stressed, so I don't remember the specifics.",
-   "dst": "客車の方へ行って、会った方全員とお話ししました。少し気が張っていたので、細かいことは覚えていません。",
+   "dst": "{c2}客車の方へ行って、会った方全員とお話ししました。{c1}少し気が張っていたので、{c2}細かいことは覚えていません。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I headed down to the passenger carriages{/}, {c2}spoke to everyone I saw.{/}, {c2}I don't remember the specifics.{/}"
   },
   "Off the Rails#412": {
    "src": "Well, not everyone, I suppose. You were asleep. Malic and I had a chuckle about it.",
@@ -3964,7 +3983,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "everyoneは斜体"
   },
   "Off the Rails#413": {
    "src": "I also didn't speak to the guards... One was asleep in the same carriage as you, and the other started walking towards the back carriage when I came by.",
@@ -3978,13 +3998,14 @@
   },
   "Off the Rails#414": {
    "src": "I made my way back to the back and encountered Demma and Cemor on the way back to their seats. I made sure to dash by Cemor.",
-   "dst": "後ろへ戻る途中、席に戻る Demma さんと Cemor 様に会いました。Cemor 様の横は急いで通り過ぎました。",
+   "dst": "後ろへ戻る途中、席に戻る Demma さんと Cemor 様に会いました。{c2}Cemor 様の横は急いで通り過ぎました。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I made sure to dash by Cemor.{/}"
   },
   "Off the Rails#415": {
    "src": "I was going back to loitering when suddenly, the purple guard came barging in shouting for his compatriot, who was in the bathroom.",
@@ -4018,13 +4039,14 @@
   },
   "Off the Rails#418": {
    "src": "Sure, I do have a master key for all rooms I can lend you. Let me find it...",
-   "dst": "ええ、全室共通のマスターキーをお貸しできます。探しますね…",
+   "dst": "ええ、{c2}全室共通のマスターキーをお貸し{c1}できます。探しますね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I do have a master key for all rooms{/}"
   },
   "Off the Rails#419": {
    "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
@@ -4058,13 +4080,14 @@
   },
   "Off the Rails#422": {
    "src": "Please, you must find that key. It must be on the train somewhere.",
-   "dst": "お願いです、あの鍵を見つけてください。きっと列車のどこかにあります。",
+   "dst": "お願いです、{c2}あの鍵を見つけて{/}ください。きっと列車のどこかにあります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}find that key{/}"
   },
   "Off the Rails#423": {
    "src": "Wait, You did? But I have it right h-",
@@ -4118,13 +4141,14 @@
   },
   "Off the Rails#429": {
    "src": "A book? In the closet? Hm, I'm not much of a reader, so I doubt it was mine...",
-   "dst": "本？用具室に？うーん、私は本をあまり読まないので、私のではないと思います…",
+   "dst": "本？クローゼットに？うーん、{c2}私は本をあまり読まない{/}ので、私のではないと思います…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I'm not much of a reader{/}"
   },
   "Off the Rails#430": {
    "src": "...It was used to hide the knife, you say? That's... worrying.",
@@ -4138,13 +4162,14 @@
   },
   "Off the Rails#431": {
    "src": "Perhaps the murderer used the closet as something of a staging ground for their attack...",
-   "dst": "犯人は用具室を犯行の準備場所のように使ったのかもしれません…",
+   "dst": "{c2}犯人はクローゼットを犯行の準備場所のように使った{c1}のかもしれません…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the murderer used the closet as something of a staging ground{/}"
   },
   "Off the Rails#432": {
    "src": "Oh, no, did he really not forget? Damnit. Damnit damnit damnit.",
@@ -4168,37 +4193,40 @@
   },
   "Off the Rails#434": {
    "src": "I'm... I'm so sorry to ask you this, but... Could you please make the meal for him? He wanted whole roast Grookiva.",
-   "dst": "…本当に申し訳ないのですが…あの方の料理を作っていただけませんか？Grookiva の丸焼きをご所望です。",
+   "dst": "…本当に申し訳ないのですが…あの方の{c2}料理を作って{/}いただけませんか？{c2}Grookiva の丸焼き{/}をご所望です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}make the meal{/}, {c2}whole roast Grookiva.{/}"
   },
   "Off the Rails#435": {
-   "src": "My absent colleagu, Zathie, left a recipe book that you can use. I'm sure you can follow it better than I ever could.",
-   "dst": "不在の同僚の Zathie がレシピ本を残しているので、それを使ってください。私よりずっと上手に作れるはずです。",
+   "src": "My absent colleague, Zathie, left a recipe book that you can use. I'm sure you can follow it better than I ever could.",
+   "dst": "不在の同僚の Zathie が{c2}レシピ本を残しているので、それを使って{/}ください。私よりずっと上手に作れるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}left a recipe book that you can use{/}"
   },
   "Off the Rails#436": {
    "src": "I give you my full permission to enter the kitchen for this task, it's in the canteen carriage. Thank you for this.",
-   "dst": "この件のために厨房への立ち入りを許可します。食堂車にあります。ありがとうございます。",
+   "dst": "{c2}この件のために厨房への立ち入り{/}を許可します。{c2}食堂車{/}にあります。ありがとうございます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Telati",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}enter the kitchen for this task{/}, {c2}canteen carriage{/}"
   },
   "Off the Rails#438": {
-   "src": "Ugh, what is it now? (Initial conversations with Harvin and Maury)",
-   "dst": "はあ、今度は何だ？(Harvin と Maury との最初の会話)",
+   "src": "Ugh, what is it now?",
+   "dst": "はあ、今度は何だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4207,8 +4235,8 @@
    "source": "wiki"
   },
   "Off the Rails#439": {
-   "src": "None of it matters now, though. Anythin' else? (After asking about What were you doing on the train)",
-   "dst": "まあ、今となっちゃどうでもいい。他には？(「列車で何をしていた」を聞いた後)",
+   "src": "None of it matters now, though. Anythin' else?",
+   "dst": "まあ、今となっちゃどうでもいい。他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4217,8 +4245,8 @@
    "source": "wiki"
   },
   "Off the Rails#440": {
-   "src": "Sorry, kid. Anythin' else to ask? (After asking about General Levi)",
-   "dst": "悪いな、坊主。他に聞くことは？(Levi 将軍について聞いた後)",
+   "src": "Sorry, kid. Anythin' else to ask?",
+   "dst": "悪いな、坊主。他に聞くことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4227,8 +4255,8 @@
    "source": "wiki"
   },
   "Off the Rails#441": {
-   "src": "Uh... Anythin' else ta say? (After asking about Where were you during the murder)",
-   "dst": "えー…他に言うことは？(「事件の時どこにいた」を聞いた後)",
+   "src": "Uh... Anythin' else ta say?",
+   "dst": "えー…他に言うことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4237,8 +4265,8 @@
    "source": "wiki"
   },
   "Off the Rails#442": {
-   "src": "'s'all we got, though. Any other questions? (After asking about the Passengers)",
-   "dst": "知ってるのはそれだけだ。他に質問は？(乗客について聞いた後)",
+   "src": "'s'all we got, though. Any other questions?",
+   "dst": "知ってるのはそれだけだ。他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4247,8 +4275,8 @@
    "source": "wiki"
   },
   "Off the Rails#443": {
-   "src": "Anyway, Got any questions that'll actually help ya with the case? (After asking about the Deraj)",
-   "dst": "とにかく、事件の役に本当に立つ質問はねえのか？(Deraj について聞いた後)",
+   "src": "Anyway, Got any questions that'll actually help ya with the case?",
+   "dst": "とにかく、事件の役に本当に立つ質問はねえのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4257,8 +4285,8 @@
    "source": "wiki"
   },
   "Off the Rails#444": {
-   "src": "...anythin' else to say before ya get back to it? (After asking to make an accusation)",
-   "dst": "…戻る前に他に言うことは？(告発を申し出た後)",
+   "src": "...anythin' else to say before ya get back to it?",
+   "dst": "…戻る前に他に言うことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4274,17 +4302,19 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thisは斜体"
   },
   "Off the Rails#446": {
    "src": "We were travellin' to {p}, to investigate some sort of incident.",
-   "dst": "俺たちは {p} へ、ある事件の調査に向かってたんだ。",
+   "dst": "俺たちは {c2}{p} {/}へ、ある事件の調査に向かってたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{p}{/}"
   },
   "Off the Rails#447": {
    "src": "Apparently, someone got in and killed all the soldiers, plus Commander Lilles... Serious stuff.",
@@ -4328,13 +4358,14 @@
   },
   "Off the Rails#451": {
    "src": "Yeah, all we knew was that she was our highest-ranking leader, aside from the Marshal, Majin.",
-   "dst": "ああ、分かってたのは、元帥の Majin を除けば、俺たちの一番上の指揮官だってことだけだ。",
+   "dst": "ああ、分かってたのは、元帥の Majin を除けば、{c2}俺たちの一番上の指揮官{/}だってことだけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}our highest-ranking leader{/}"
   },
   "Off the Rails#452": {
    "src": "Well. Er. y'know, I got... tired. So I... took a nap.",
@@ -4468,33 +4499,36 @@
   },
   "Off the Rails#465": {
    "src": "I can vouch for the {p} guy. He was in the bathroom while I was waiting outside.",
-   "dst": "{p} の男なら保証できる。俺が外で待ってる間、便所にいたからな。",
+   "dst": "{c2}{p} の男{c1}なら保証できる。俺が外で待ってる間、{c2}便所にいた{/}からな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{p} guy. He was in the bathroom{/}"
   },
   "Off the Rails#466": {
    "src": "Took his sweet time in there, I tell you... Maybe I would've been able to protect the General if he had been quicker.",
-   "dst": "中でえらくのんびりしてやがったぜ…あいつがもっと早けりゃ、将軍を守れたかもしれねえのに。",
+   "dst": "{c1}中でえらくのんびり{c2}してやがったぜ…あいつがもっと早けりゃ、将軍を守れたかもしれねえのに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}Took his sweet time in there{c2}, I tell you... Maybe I would've been able to protect the General if he had been quicker.{/}"
   },
   "Off the Rails#467": {
-   "src": "I noticed that the one with the white shirt and red dress was weirdly quiet back when everyone was gathered around... I'm suspicious of 'em.",
-   "dst": "白いシャツに赤いドレスのやつ、みんなが集まってた時に妙に静かだったんだ…怪しいと思ってる。",
+   "src": "I noticed that the one with the white shirt and red dress was weirdly quiet back when everyone was gathered around... I'm suspcious of 'em.",
+   "dst": "{c2}白いシャツに赤いドレスのやつ{/}、みんなが集まってた時に{c2}妙に静か{/}だったんだ…怪しいと思ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "{c2}the white shirt and red dress{/}, {c2}weirdly quiet{/}"
   },
   "Off the Rails#468": {
    "src": "Pal, you must really be kiddin' me. Are ya really tellin' me you've lived in Fruma yer whole life, and haven't heard of Deraj?",
@@ -4564,7 +4598,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "neverは太字"
   },
   "Off the Rails#475": {
    "src": "I hear he's a scary guy, so honestly, I'm glad...",
@@ -4587,8 +4622,8 @@
    "source": "wiki"
   },
   "Off the Rails#477": {
-   "src": "'Til then, we're not lettin' ya make an accusation. Anythin' else ta say? (Harvin and Maury's normal dialogue options reappear)",
-   "dst": "それまでは告発はさせねえ。他に言うことは？(Harvin と Maury の通常の選択肢が再表示)",
+   "src": "'Til then, we're not lettin' ya make an accusation. Anythin' else ta say?",
+   "dst": "それまでは告発はさせねえ。他に言うことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4727,8 +4762,8 @@
    "source": "wiki"
   },
   "Off the Rails#498": {
-   "src": "What do you need to know? (After initial conversation)",
-   "dst": "何が知りたい？(最初の会話の後)",
+   "src": "What do you need to know?",
+   "dst": "何が知りたい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4737,8 +4772,8 @@
    "source": "wiki"
   },
   "Off the Rails#499": {
-   "src": "What? More questions? (Subsequent conversations with Flinn)",
-   "dst": "何？まだ質問？(Flinn との再会時)",
+   "src": "What? More questions?",
+   "dst": "何？まだ質問？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4747,8 +4782,8 @@
    "source": "wiki"
   },
   "Off the Rails#500": {
-   "src": "Any more questions? (When the dialogue options reappear)",
-   "dst": "他に質問は？(選択肢の再表示時)",
+   "src": "Any more questions?",
+   "dst": "他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4768,13 +4803,14 @@
   },
   "Off the Rails#502": {
    "src": "The one thing I can recount is that the attendant came by and asked me if everything was to my liking. I ignored him.",
-   "dst": "一つ話せるのは、乗務員が来て、何かご不満はないかって聞いてきたこと。無視したけど。",
+   "dst": "一つ話せるのは、{c2}乗務員が来て{/}、何かご不満はないかって聞いてきたこと。無視したけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Flinn",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the attendant came by{/}"
   },
   "Off the Rails#503": {
    "src": "I've just been sat right here for pretty much the entire ride. Just thinking.",
@@ -4857,14 +4893,14 @@
    "source": "wiki"
   },
   "Off the Rails#511": {
-   "src": "...It wasn't you, was it..? No... No, a guilty person wouldn't react the way you did. I trust you.",
+   "src": "...It wasn't you, was it..? No... No, a guility person wouldn't react the way you did. I trust you.",
    "dst": "…あなたじゃないですよね…？いえ…犯人ならあんな反応はしません。信じます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#512": {
    "src": "It wasn't right of those guards to throw the blame on you like that... I'll tell you anything you need to know to figure out who really did it...",
@@ -4947,8 +4983,8 @@
    "source": "wiki"
   },
   "Off the Rails#520": {
-   "src": "So, let's get to the questionining, shall we? (After initial conversation)",
-   "dst": "では、質問を始めましょうか？(最初の会話の後)",
+   "src": "So, let's get to the questionining, shall we?",
+   "dst": "では、質問を始めましょうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4957,8 +4993,8 @@
    "source": "wiki"
   },
   "Off the Rails#521": {
-   "src": "Got more questions? (Subsequent conversations with Demma)",
-   "dst": "まだ質問はありますか？(Demma との再会時)",
+   "src": "Got more questions?",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4967,8 +5003,8 @@
    "source": "wiki"
   },
   "Off the Rails#522": {
-   "src": "...That should be everything. I'm sorry I didn't catch all the details. Any more questions? (After asking about what Demma saw before the murder)",
-   "dst": "…これで全部だと思います。細かいところまで見ていなくてすみません。他に質問は？(事件前に Demma が見たことを聞いた後)",
+   "src": "...That should be everything. I'm sorry I didn't catch all the details. Any more questions?",
+   "dst": "…これで全部だと思います。細かいところまで見ていなくてすみません。他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4977,8 +5013,8 @@
    "source": "wiki"
   },
   "Off the Rails#523": {
-   "src": "Well? (After asking about the Slime)",
-   "dst": "どうです？(粘液について聞いた後)",
+   "src": "Well?",
+   "dst": "で？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4987,8 +5023,8 @@
    "source": "wiki"
   },
   "Off the Rails#524": {
-   "src": "...Would you like to talk about anything else? (After asking about Helping with the bag)",
-   "dst": "…他に話したいことはありますか？(荷物の手伝いについて聞いた後)",
+   "src": "...Would you like to talk about anything else?",
+   "dst": "…他に話したいことはありますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -4997,8 +5033,8 @@
    "source": "wiki"
   },
   "Off the Rails#525": {
-   "src": "...Let's just... Move on to another subject. (After asking about the Book)",
-   "dst": "…ええと…別の話題にしましょう。(本について聞いた後)",
+   "src": "...Let's just... Move on to another subject.",
+   "dst": "…ええと…別の話題にしましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5018,53 +5054,58 @@
   },
   "Off the Rails#527": {
    "src": "Shortly after, I wanted to get my notebook from my storage to write some thoughts I was having in regards to my research. On the way, I didn't pay attention to where anyone was sat.",
-   "dst": "その少し後、研究について考えていたことを書こうと、荷物からノートを取りに行きました。途中、誰がどこに座っているかは気にしていませんでした。",
+   "dst": "その少し後、研究について考えていたことを書こうと、{c2}荷物からノートを取りに{/}行きました。途中、誰がどこに座っているかは{c2}気にしていません{/}でした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I wanted to get my notebook{/}, {c2}storage{/}, {c2}I didn't pay attention{/}"
   },
   "Off the Rails#528": {
    "src": "In the storage room, I encountered the attendant, Telati, who seemed to be walking from the back of the train to the front. He asked me if I needed anything, and moved by.",
-   "dst": "荷物車で乗務員の Telati さんに会いました。列車の後ろから前へ歩いているようでした。何か必要かと聞かれて、そのまま通り過ぎていきました。",
+   "dst": "荷物車で{c2}乗務員の Telati さんに会いました。列車の後ろから前へ歩いている{c1}ようでした。何か必要かと聞かれて、そのまま{c2}通り過ぎて{/}いきました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I encountered the attendant, Telati{/}, {c2}walking from the back of the train to the front{/}, {c2}moved by.{/}"
   },
   "Off the Rails#529": {
    "src": "Then, as I was on the way back here, I encountered a man named Malic, who was walking towards the back of the train, and we had a chat. He's now sat over there, with Maddison.",
-   "dst": "それからここへ戻る途中、Malic という男性に会いました。列車の後ろへ向かっていて、少しお話ししました。今はあそこで Maddison と座っています。",
+   "dst": "それから{c2}ここへ戻る途中、Malic という男性{c1}に会いました。{c2}列車の後ろへ向かって{c1}いて、少しお話ししました。今はあそこで Maddison と座っています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}on the way back here{/}, {c2}Malic{/}, {c2}towards the back of the train{/}"
   },
   "Off the Rails#530": {
    "src": "I didn't see where he ended up going, because it was none of my business, and I had no reason to suspect foul play.",
-   "dst": "その後どこへ行ったかは見ていません。私には関係ないし、何かを疑う理由もなかったので。",
+   "dst": "その後{c2}どこへ行ったかは見ていません{c1}。私には関係ないし、何かを疑う理由もなかったので。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}didn't see where he ended up going{/}"
   },
   "Off the Rails#531": {
    "src": "I got seated, and then the man from the canteen came back... And then...",
-   "dst": "私が席に着いて、それから食堂車の男性が戻ってきて…それで…",
+   "dst": "私が席に着いて、それから{c2}食堂車の男性が戻ってきて{/}…それで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the man from the canteen came back{/}"
   },
   "Off the Rails#532": {
    "src": "...Shortly after that, those two guards came in panicking, and brought us to the scene of the murder.",
@@ -5128,13 +5169,14 @@
   },
   "Off the Rails#538": {
    "src": "Help me put my luggage back. Until you do, I'll not let you read that book. I think that's a fair deal.",
-   "dst": "荷物を元に戻すのを手伝ってください。それまで、あの本は読ませません。公平な取引だと思います。",
+   "dst": "{c1}荷物を元に戻すのを手伝ってください{/}。それまで、あの本は読ませません。公平な取引だと思います。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}Help me put my luggage back{/}"
   },
   "Off the Rails#539": {
    "src": "So you're taking my deal, then?",
@@ -5227,24 +5269,24 @@
    "source": "wiki"
   },
   "Off the Rails#548": {
-   "src": "Think, toxins strong enough to bring down even Wooly Rhinos, in the {p}, with all its bugs? It'd be so strong!",
+   "src": "Think, toxins strong enough to bring down even Woolly Rhinos, in the {p}, with all its bugs? It'd be so strong!",
    "dst": "考えてみて、Wooly Rhino さえ倒せる毒が、虫だらけの {p} にあったら？すごく強いはずです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#549": {
-   "src": "But then, you know, there is also the argument that the Gigastropod's impenetrable shell would be useful to the Murex Mollusc, too...",
+   "src": "But then, you know, there is also the argument that the Gigastropod's impenatrable shell would be useful to the Murex Mollusc, too...",
    "dst": "でも一方で、Gigastropod の貫けない殻が Murex Mollusc にとっても役に立つはず、という主張もあって…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#550": {
    "src": "That's why modern researchers, like my professor and I, tend to believe that there used to be other megasnails that served as a missing link between the two.",
@@ -5277,8 +5319,8 @@
    "source": "wiki"
   },
   "Off the Rails#553": {
-   "src": "It's speculated that the similarly-large Banana Slug of the {p} may hold answers, but it's highly elusive, only living on the branches of massive trees, so...",
-   "dst": "同じくらい大きな {p} の Banana Slug が答えを握っているかもという説もありますが、巨木の枝にしか住まず、ほとんど見つからないので…",
+   "src": "It's speculated that the similarly-large {p} Slug of the, well, {p} may hold answers, but it's highly elusive, only living on the branches of massive trees, so...",
+   "dst": "同じくらい大きな {p} Slug、そう、{p} に棲むあのナメクジが答えを握っているかもという説もありますが、巨木の枝にしか住まず、ほとんど見つからないので…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5297,14 +5339,14 @@
    "source": "wiki"
   },
   "Off the Rails#555": {
-   "src": "I'd love to study the Banana Slug... It's a dream of mine, for sure. If only the {p} were not so deadly...",
-   "dst": "Banana Slug を研究してみたい…間違いなく私の夢です。{p} があんなに危険じゃなければ…",
+   "src": "I'd love to study the {p} Slug... It's a dream of mine, for sure. If only the region were not so deadly...",
+   "dst": "{p} Slug を研究してみたい…間違いなく私の夢です。あの地域があんなに危険じゃなければ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#556": {
    "src": "Did you know that the {p} has huge creatures speculated to be the missing link between bird and-",
@@ -5348,13 +5390,14 @@
   },
   "Off the Rails#561": {
    "src": "I'm not letting you read that until you've helped me with my luggage, sorry.",
-   "dst": "荷物を手伝ってくれるまで、それは読ませません、ごめんなさい。",
+   "dst": "{c2}荷物を手伝ってくれる{/}まで、それは読ませません、ごめんなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}helped me with my luggage{/}"
   },
   "Off the Rails#562": {
    "src": "Oh, thank you so much! It took me hours to pack this the first time, you know.",
@@ -5368,13 +5411,14 @@
   },
   "Off the Rails#563": {
    "src": "You're free to read the book now. I'll show you the page I have in mind.",
-   "dst": "もう本を読んでいいですよ。考えていたページを見せますね。",
+   "dst": "もう{c2}本を読んでいい{/}ですよ。考えていたページを見せますね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}read the book{/}"
   },
   "Off the Rails#564": {
    "src": "Alright, here. Murex Molluscs. Take a read.",
@@ -5408,13 +5452,14 @@
   },
   "Off the Rails#567": {
    "src": "Being from the Roughworks, I've seen more than enough corrupt antics from dastards like them. It's really tiring.",
-   "dst": "Roughworks 出身だから、ああいう卑劣な連中の腐った手口はうんざりするほど見てきた。本当に疲れるよ。",
+   "dst": "{c2}Roughworks 出身{c1}だから、{c2}ああいう卑劣な連中の腐った手口はうんざりするほど見てきた{c1}。本当に疲れるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}from the Roughworks{/}, {c2}seen more than enough corrupt antics from dastards like them{/}"
   },
   "Off the Rails#568": {
    "src": "What a generally... horrible turn of events. Until that killer is caught, we might all be in danger. I'm nervous, to be honest.",
@@ -5517,8 +5562,8 @@
    "source": "wiki"
   },
   "Off the Rails#579": {
-   "src": "Well, go on, then. (After initial conversation)",
-   "dst": "さあ、どうぞ。(最初の会話の後)",
+   "src": "Well, go on, then.",
+   "dst": "さあ、どうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5527,8 +5572,8 @@
    "source": "wiki"
   },
   "Off the Rails#580": {
-   "src": "Anything else you wanna ask about? (When the dialogue options reappear)",
-   "dst": "他に聞きたいことは？(選択肢の再表示時)",
+   "src": "Anything else you wanna ask about?",
+   "dst": "他に聞きたいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5537,8 +5582,8 @@
    "source": "wiki"
   },
   "Off the Rails#581": {
-   "src": "Got more questions? (Subsequent conversations with Malic)",
-   "dst": "まだ質問がある？(Malic との再会時)",
+   "src": "Got more questions?",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5558,33 +5603,36 @@
   },
   "Off the Rails#583": {
    "src": "To begin with, it's important to note that I was in the seating carriage- the one behind me right now, for much of that time.",
-   "dst": "まず大事なのは、その間ほとんど座席車両――今俺の後ろにある車両にいたってことだ。",
+   "dst": "まず大事なのは、その間ほとんど{c2}座席車両――今俺の後ろにある車両にいた{c1}ってことだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}it's important to note that I was in the seating carriage-{/}"
   },
   "Off the Rails#584": {
    "src": "The first thing I saw was some posh-looking guy walking to the back, with a book in hand. Seems he was going to the bathroom, so I didn't bother him.",
-   "dst": "最初に見たのは、上品そうな男が本を手に後ろへ歩いていくところ。便所に行くみたいだったから、邪魔しなかった。",
+   "dst": "最初に見たのは、{c2}上品そうな男が本を手に後ろへ歩いていく{c1}ところ。{c2}便所に行く{c1}みたいだったから、邪魔しなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}posh-looking guy walking to the back{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
   },
   "Off the Rails#585": {
    "src": "I then got up to go grab my puzzle magazine from the lockers, and, on the way, encountered the attendant, Telati, who I briefly talked to.",
-   "dst": "それからロッカーにパズル雑誌を取りに立って、途中で乗務員の Telati に会って、少し話した。",
+   "dst": "それから{c2}ロッカーにパズル雑誌を取りに立って{c1}、途中で乗務員の {c2}Telati に会って{c1}、少し話した。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}got up to go grab my puzzle magazine from the lockers{/}, {c2}book in hand{/}, {c2}going to the bathroom{/}"
   },
   "Off the Rails#586": {
    "src": "During this conversation, I also noticed you, sleeping in your seat. You were muttering something about a snotty businessman, I think. We chuckled about it.",
@@ -5597,34 +5645,37 @@
    "source": "wiki"
   },
   "Off the Rails#587": {
-   "src": "On the way out of the carriage, I noticed the purple guard taking a nap in one of the seats. Didn't pay attention to anything else going on in there.",
-   "dst": "車両を出る時、紫の衛兵が座席で昼寝してるのに気づいた。中で他に何があったかは気にしてなかった。",
+   "src": "On the way out of the carriage, I noticed the purple guard was also taking a nap in one of the seats. Didn't pay attention to anything else going on in there.",
+   "dst": "車両を出る時、{c2}紫の衛兵が座席で昼寝してる{c1}のに気づいた。中で他に何があったかは{c2}気にしてなかった{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "{c2}I noticed the purple guard was also taking a nap in one of the seats. Didn't pay attention to anything else{/}"
   },
   "Off the Rails#588": {
    "src": "When I entered the storage carriage, I encountered Demma, who was walking towards the front, and we talked for a little while. It was nice getting to chat with someone.",
-   "dst": "荷物車に入ると、前の方へ歩いてくる Demma に会って、しばらく話した。誰かとおしゃべりできてよかったよ。",
+   "dst": "荷物車に入ると、{c2}前の方へ歩いてくる Demma に会って{c1}、しばらく話した。誰かとおしゃべりできてよかったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I encountered Demma, who was walking towards the front{/}"
   },
   "Off the Rails#589": {
    "src": "As I was getting my newspaper, the posh guy passed by behind me, and then I bumped into Telati again as I was walking back to my seat.",
-   "dst": "新聞を取ってる時、上品な男が後ろを通り過ぎて、席に戻る途中でまた Telati とばったり会った。",
+   "dst": "新聞を取ってる時、{c2}上品な男が後ろを通り過ぎて{/}、席に戻る途中で{c2}また Telati とばったり会った。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the posh guy passed by behind me{/}, {c2}I bumped into Telati again{/}"
   },
   "Off the Rails#590": {
    "src": "Then, just when I thought I had a chance to relax and solve some crosswords, the guards came barging in asking everyone to gather around. And now you're filled in.",
@@ -5658,13 +5709,14 @@
   },
   "Off the Rails#593": {
    "src": "...You know, typically... when people from the higher regions come visit the Roughworks... they're rude. They treat us like filth. But...",
-   "dst": "…なあ、普通は…上の地域から Roughworks に来る連中は…無礼なんだ。俺たちをゴミみたいに扱う。でも…",
+   "dst": "…なあ、普通は…{c2}上の地域から Roughworks に来る連中は…無礼なんだ。俺たちをゴミみたいに扱う{/}。でも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}when people from the higher regions come visit the Roughworks... they're rude{/}"
   },
   "Off the Rails#594": {
    "src": "Maddison? She's been nothing but respectful and kind, even if it meant... viewing some things in a questionable manner. She's cool.",
@@ -5684,7 +5736,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "constantは斜体"
   },
   "Off the Rails#596": {
    "src": "Most of us have come to deeply dislike them. A lot of them are just local troublemakers who joined the Guard for a position of power over everyone else.",
@@ -5887,8 +5940,8 @@
    "source": "wiki"
   },
   "Off the Rails#616": {
-   "src": "Well, ask away, then. (After initial conversation)",
-   "dst": "じゃあ、どうぞ聞いて。(最初の会話の後)",
+   "src": "Well, ask away, then.",
+   "dst": "じゃあ、どうぞ聞いて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5897,8 +5950,8 @@
    "source": "wiki"
   },
   "Off the Rails#617": {
-   "src": "Got more questions? (Subsequent conversations with Maddison)",
-   "dst": "まだ質問ある？(Maddison との再会時)",
+   "src": "Got more questions?",
+   "dst": "まだ質問はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5907,8 +5960,8 @@
    "source": "wiki"
   },
   "Off the Rails#618": {
-   "src": "That's all I remember, sorry. (After asking about what Maddison saw before the murder)",
-   "dst": "覚えてるのはそれだけ、ごめんね。(事件前に Maddison が見たことを聞いた後)",
+   "src": "That's all I remember, sorry.",
+   "dst": "覚えてるのはそれだけ、ごめんね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5917,8 +5970,8 @@
    "source": "wiki"
   },
   "Off the Rails#619": {
-   "src": "Anything else you'd like to discuss? (After asking about Malic)",
-   "dst": "他に話したいことは？(Malic について聞いた後)",
+   "src": "Anything else you'd like to discuss?",
+   "dst": "他に話したいことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5927,8 +5980,8 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about? (After asking about General Levi or the Crossword)",
-   "dst": "他に話すことは？(Levi 将軍かクロスワードについて聞いた後)",
+   "src": "Anything else to talk about?",
+   "dst": "他に話すことは？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -5944,7 +5997,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "tooは斜体"
   },
   "Off the Rails#622": {
    "src": "That's not to say that I saw nothing at all, though. Here's my recollection of the events:",
@@ -5958,43 +6012,47 @@
   },
   "Off the Rails#623": {
    "src": "The first thing I remember is that the guy from the canteen passed by on his way towards the back of the train... Not sure where he went.",
-   "dst": "最初に覚えてるのは、食堂車の人が列車の後ろの方へ通っていったこと…どこへ行ったかは分からない。",
+   "dst": "{c1}最初に覚えてるのは、{c2}食堂車の人が列車の後ろの方へ通っていった{c1}こと…どこへ行ったかは分からない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the guy from the canteen passed by on his way towards the back of the train...{/}"
   },
   "Off the Rails#624": {
    "src": "Then, Demma got up and walked away in the same direction.",
-   "dst": "それから、Demma が立ち上がって同じ方へ歩いていった。",
+   "dst": "{c1}それから、{c2}Demma が立ち上がって同じ方へ歩いていった。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Demma got up and walked away in the same direction.{/}"
   },
   "Off the Rails#625": {
    "src": "The attendant, Telati, arrived shortly after, to ask if everything was alright, and then made his way towards the back again.",
-   "dst": "すぐ後に乗務員の Telati さんが来て、問題ないか聞いて、また後ろの方へ行ったの。",
+   "dst": "{c2}すぐ後に乗務員の Telati さんが来て{c1}、問題ないか聞いて、{c2}また後ろの方へ行ったの。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Telati, arrived shortly after{/}, {c2}made his way towards the back{/}"
   },
   "Off the Rails#626": {
    "src": "Soon after that, Demma came back, and the guy from the canteen soon followed.",
-   "dst": "その少し後、Demma が戻ってきて、食堂車の人もすぐに続いた。",
+   "dst": "その少し後、{c2}Demma が戻ってきて{c1}、{c2}食堂車の人もすぐに続いた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Demma came back{/}, {c2}the guy from the canteen soon followed.{/}"
   },
   "Off the Rails#627": {
    "src": "Malic's so nice... You know, back when I visited the {p}, I found the citizens to be... intimidating, unkind. But Malic? He's different.",
@@ -6138,13 +6196,14 @@
   },
   "Off the Rails#641": {
    "src": "You know, I was going to say something else, but now I forgot!!!",
-   "dst": "あのね、何か別のこと言おうとしてたのに、忘れちゃったじゃない！！！",
+   "dst": "{c1}あのね、{c2}何か別のこと言おうとしてた{/}のに、忘れちゃったじゃない！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I was going to say something else{/}"
   },
   "Off the Rails#642": {
    "src": "Uhhm. Uhhhhh. Um.",
@@ -6158,13 +6217,14 @@
   },
   "Off the Rails#643": {
    "src": "Maybe it'll clear your head if our friend here solves the crossword. Proves it's easy.",
-   "dst": "ここの友達がクロスワードを解いたら、頭がすっきりするかもな。簡単だって証明にもなるし。",
+   "dst": "{c1}ここの友達が{c2}クロスワードを解いたら{c1}、{c2}頭がすっきりする{c1}かもな。簡単だって証明にもなるし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}clear your head{/}, {c2}solves the crossword{/}"
   },
   "Off the Rails#644": {
    "src": "I promise you it isn't!!!",
@@ -6237,14 +6297,14 @@
    "source": "wiki"
   },
   "Off the Rails#652": {
-   "src": "As a subscriber to this paper, I'm honestly getting a little tired of the riddles that just talk about how great the province is... Some variation of this question's in like, every single issue.",
+   "src": "As a subscriber to this paper, I'm getting tired of the riddles that just talk about how great the province is... Some variation of this question's in like, every issue.",
    "dst": "この雑誌の購読者として、正直、州の素晴らしさを語るだけの謎解きにはちょっと飽きてきたよ…毎号この手の問題が何かしら載ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#653": {
    "src": "Ugh.",
@@ -6398,23 +6458,25 @@
   },
   "Off the Rails#669": {
    "src": "General Levi came from the {p}, specifically a noble house called House Takshah.",
-   "dst": "Levi 将軍は {p} の出身で、Takshah 家っていう貴族の家の人なの。",
+   "dst": "Levi 将軍は {c2}{p}{/} の出身で、{c2}Takshah 家{/}っていう貴族の家の人なの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the {p}{/}, {c2}House Takshah.{/}"
   },
   "Off the Rails#670": {
    "src": "Apparently, some people have it out for that house in particular... That's all I know though, sorry.",
-   "dst": "その家を特に恨んでる人たちがいるらしいの…知ってるのはそれだけ、ごめんね。",
+   "dst": "{c2}その家を特に恨んでる人たち{/}がいるらしいの…知ってるのはそれだけ、ごめんね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}some people have it out for that house{/}"
   },
   "Off the Rails#671": {
    "src": "...That blasted attendant... He better give me m-",
@@ -6424,7 +6486,8 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "That blasted attendantは斜体"
   },
   "Off the Rails#672": {
    "src": "...Ah, you! You again. They let you go, hm?",
@@ -6438,13 +6501,14 @@
   },
   "Off the Rails#673": {
    "src": "Lucky. Those Constables... Majin has them stationed around {p} for our safety, but they're always causing trouble. I don't trust people like them.",
-   "dst": "運のいいことだ。あの警邏隊め…Majin が我々の安全のため {p} 周辺に配置しているが、いつも問題ばかり起こす。ああいう連中は信用できん。",
+   "dst": "運のいいことだ。あの警邏隊め…Majin が我々の安全のため {p} 周辺に配置しているが、いつも問題ばかり起こす。{c2}ああいう連中は信用できん。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I don't trust people like them.{/}"
   },
   "Off the Rails#674": {
    "src": "Still, I suppose Levi would have been different, given her high role. How cruel it is that someone cut her life short...",
@@ -6497,8 +6561,8 @@
    "source": "wiki"
   },
   "Off the Rails#685": {
-   "src": "Go ahead, now. Ask away. (After initial conversation)",
-   "dst": "さあ、どうぞ。聞きたまえ。(最初の会話の後)",
+   "src": "Go ahead, now. Ask away.",
+   "dst": "さあ、どうぞ。聞きたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6507,8 +6571,8 @@
    "source": "wiki"
   },
   "Off the Rails#686": {
-   "src": "What is it now? More questions? (Subsequent conversations with Cemor)",
-   "dst": "今度は何だね？まだ質問か？(Cemor との再会時)",
+   "src": "What is it now? More questions?",
+   "dst": "今度は何だね？まだ質問か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6517,8 +6581,8 @@
    "source": "wiki"
   },
   "Off the Rails#687": {
-   "src": "What else have you to ask? (After asking about what Cemor saw before the murder)",
-   "dst": "他に何を聞きたい？(事件前に Cemor が見たことを聞いた後)",
+   "src": "What else have you to ask?",
+   "dst": "他に何を聞きたい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6527,8 +6591,8 @@
    "source": "wiki"
   },
   "Off the Rails#688": {
-   "src": "But let us move on from that. Any more questions? (After asking about Constables)",
-   "dst": "だがその話はここまでだ。他に質問は？(警邏隊について聞いた後)",
+   "src": "But let us move on from that. Any more questions?",
+   "dst": "だがその話はここまでだ。他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6537,8 +6601,8 @@
    "source": "wiki"
   },
   "Off the Rails#689": {
-   "src": "Any more questions? (After asking about what Cemor is mad about)",
-   "dst": "他に質問は？(Cemor が怒っている理由を聞いた後)",
+   "src": "Any more questions?",
+   "dst": "他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6547,8 +6611,8 @@
    "source": "wiki"
   },
   "Off the Rails#690": {
-   "src": "Anywho, thank you for the food. Now, ask me questions if you have any, leave me to my meal otherwise. (After giving Cemor his meal)",
-   "dst": "ともかく、食事をありがとう。では、質問があれば聞きたまえ。なければ食事の邪魔をしないでくれ。(Cemor に料理を渡した後)",
+   "src": "Anywho, thank you for the food. Now, ask me questions if you have any, leave me to my meal otherwise.",
+   "dst": "ともかく、食事をありがとう。では、質問があれば聞きたまえ。なければ食事の邪魔をしないでくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -6558,43 +6622,47 @@
   },
   "Off the Rails#691": {
    "src": "I didn't see much at all, because I was in the bathroom for much of the time. There's only one thing I saw that could be of note.",
-   "dst": "ほとんど何も見ていない、その間ほぼ手洗いにいたからな。注目に値しそうなことが一つだけある。",
+   "dst": "ほとんど何も見ていない、{c2}その間ほぼ手洗いにいた{/}からな。注目に値しそうなことが一つだけある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I was in the bathroom for much of the time.{/}"
   },
   "Off the Rails#692": {
    "src": "When I reached the back of the train, where the bathroom is located, I noticed the attendant, Telati.",
-   "dst": "手洗いのある列車の後部に着いた時、乗務員の Telati に気づいた。",
+   "dst": "手洗いのある列車の後部に着いた時、{c2}乗務員の Telati に気づいた。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I noticed the attendant, Telati.{/}"
   },
   "Off the Rails#693": {
    "src": "He was just stood around, up to... something. When he saw me enter, he seemed to panic and left the carriage. How suspicious.",
-   "dst": "ただ突っ立って、何か…していた。私が入るのを見ると、慌てたように車両を出ていった。実に怪しい。",
+   "dst": "{c1}ただ突っ立って、何か…していた。{c2}私が入るのを見ると、{c1}慌てたように車両を出ていった。{c2}実に怪しい。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}When he saw me enter, {/}, {c2}How suspicious.{/}"
   },
   "Off the Rails#694": {
    "src": "Ech. Constables. Always a pain.",
-   "dst": "ふん。警邏隊。いつも厄介だ。",
+   "dst": "{c1}ふん。警邏隊。いつも厄介だ。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Ech. Constables. Always a pain.{/}"
   },
   "Off the Rails#695": {
    "src": "They're supposedly stronger than the regular divisional soldiers, but at least those divisional soldiers knew respect.",
@@ -6618,23 +6686,25 @@
   },
   "Off the Rails#697": {
    "src": "I speak from experience. Our Sovereign, Majin, replaced the {p} guard with Constables a few years ago. Supposedly to better protect us.",
-   "dst": "経験から言っている。我らが君主 Majin は数年前、{p} の衛兵を警邏隊に替えた。我々をよりよく守るため、だそうだ。",
+   "dst": "経験から言っている。我らが君主 {c2}Majin は数年前、{p} の衛兵を警邏隊に替えた。{c1}我々をよりよく守るため、だそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Majin, replaced the {p} guard with Constables a few years ago.{/}"
   },
   "Off the Rails#698": {
    "src": "Given his lack of improvements to the town besides that, I doubt that's the real reason. He just did it for the praise.",
-   "dst": "それ以外に町を何ひとつ良くしていないことを思えば、それが本当の理由とは思えん。称賛が欲しかっただけだ。",
+   "dst": "それ以外に町を何ひとつ良くしていないことを思えば、{c2}それが本当の理由とは思えん。{/}称賛が欲しかっただけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I doubt that's the real reason.{/}"
   },
   "Off the Rails#699": {
    "src": "If he REALLY wanted to please us, he should have had some of those spangly Wings guard us. They don't do anything but stand around looking cool, anyway.",
@@ -6687,14 +6757,15 @@
    "source": "wiki"
   },
   "Off the Rails#704": {
-   "src": "...Anyway. All of this to say: Constables are no good. I am not fond of them.",
-   "dst": "…ともかく。要するに、警邏隊はろくでもない。私は好かん。",
+   "src": "...Anyway. All of this is to say: Constables are no good. I am not fond of them.",
+   "dst": "…ともかく。要するに、{c2}警邏隊はろくでもない。私は好かん。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "{c2}Constables are no good. I am not fond of them.{/}"
   },
   "Off the Rails#705": {
    "src": "Ugh. It's that attendant, Telati. I asked him for a meal hours ago, and he STILL hasn't even STARTED on it!",
@@ -6708,23 +6779,24 @@
   },
   "Off the Rails#706": {
    "src": "...Could you do me a favour go and ask him to get a move on? I'm tired of waiting here.",
-   "dst": "…ひとつ頼まれて、急ぐよう言ってきてくれんか？ここで待つのはもううんざりだ。",
+   "dst": "…ひとつ頼まれて、{c2}急ぐよう言ってきてくれんか{/}？ここで待つのはもううんざりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}go and ask him to get a move on{/}"
   },
   "Off the Rails#707": {
-   "src": "You..? You made it? He reallu had you do it for him???",
+   "src": "You..? You made it? He really had you do it for him???",
    "dst": "君が…？君が作ったのか？本当に君に作らせたのか？？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#708": {
    "src": "Goodness... I'm going to be leaving a poor review of this train in the paper, and telling my friends of this disappointment...",
@@ -6734,10 +6806,11 @@
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Goodnessは斜体"
   },
   "Off the Rails#709": {
-   "src": "...Speaking of gossip, I thought of something I heard recently that might be useful to you...",
+   "src": "...Speaking of gossip, I just thought of something I heard recently that might be useful to you...",
    "dst": "…噂話と言えば、最近耳にしたことで君の役に立ちそうなことを思い出した…",
    "role": "desc",
    "kind": "dialogue",
@@ -6748,23 +6821,25 @@
   },
   "Off the Rails#710": {
    "src": "Yes, I heard from some friends that General Levi was being called to {p} by Sovereign Zhiraok.",
-   "dst": "そう、Levi 将軍が 君主 Zhiraokに {p} へ呼ばれていると友人から聞いたのだ。",
+   "dst": "そう、{c2}Levi 将軍{c1}が 君主 Zhiraokに {c2}{p} へ呼ばれている{c1}と{c2}友人から聞いた{c1}のだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}I heard from some friends{/}, {c2}General Levi was being called to {p}{/}"
   },
   "Off the Rails#711": {
    "src": "Of course, I'm sure you already knew that. My point is this- word was out about what was happening, so I bet whoever killed her had this insider information.",
-   "dst": "もちろん、君はもう知っているだろう。私が言いたいのはこうだ――事の次第は知れ渡っていた。だから彼女を殺した者はこの内部情報を持っていたに違いない。",
+   "dst": "もちろん、君はもう知っているだろう。私が言いたいのはこうだ――{c2}事の次第は知れ渡っていた{/}。だから彼女を殺した者はこの内部情報を持っていたに違いない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}word was out about what was happening{/}"
   },
   "Off the Rails#712": {
    "src": "Truly curious... Who might know about that?",
@@ -7467,14 +7542,14 @@
    "source": "wiki"
   },
   "Off the Rails#785": {
-   "src": "Don't tell Maury, but I felt like you deserved a small cut of the profits, Y'know, for figuring it out, and all.",
+   "src": "Don't tell Maury, but I felt like you deserved a small cut of the profits. Y'know, for figuring it out, and all.",
    "dst": "Maury には内緒だけど、お前にも少し分け前をやるべきだと思ってさ。ほら、解決したのはお前だしな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#786": {
    "src": "HEY! HARVIN! Didn't I tell ya not to go and give 'em anything? Idiot!",
@@ -7525,6 +7600,1735 @@
    "stage": "Stage 8",
    "speaker": "Ticket Collector",
    "source": "wiki"
+  },
+  "Off the Rails#791": {
+   "src": "Looks like someone dropped their train ticket... You're sure they wouldn't mind if you kept it.",
+   "dst": "誰かが電車の切符を落としたみたいだ……これを{c2}持って行っても{/}、誰も気にしないだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#792": {
+   "src": "It's for a train to {p}! Might be worth checking out.",
+   "dst": "{c2}{p}{/}行きの乗車券だ！ {c2}チェックしてみる価値がある{/}かも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#793": {
+   "src": "You should talk to the Ticket Collector first.",
+   "dst": "まずは切符の係員に話した方がいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#794": {
+   "src": "Businessman\nI-I swear I had it right here...",
+   "dst": "Businessman\nた、確かにここにあったはずなのに……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Off the Rails#795": {
+   "src": "Ticket Collector\nMove.",
+   "dst": "Ticket Collector\nどいて！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "Ticket Collector",
+   "source": "captured.json"
+  },
+  "Off the Rails#796": {
+   "src": "You might as well look around while you wait for the train to arrive.",
+   "dst": "電車が来るのを{c2}待っている{/}間、{c2}周囲を見回してみる{/}のもいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#797": {
+   "src": "Alternatively, you could find somewhere to sit to pass the time.",
+   "dst": "あるいは、{c2}時間を潰すため{/}に{c2}座れる場所{/}を探してみるのもいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#798": {
+   "src": "You can check how long is left at the top of the screen.",
+   "dst": "{c2}画面上部{/}で、{c2}残り時間{/}を確認できる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#799": {
+   "src": "You have a ticket, so don't you know the price? Ah, whatever- it's like, {~} Liquid Emeralds. That's a LOT.",
+   "dst": "切符を持ってるんだから、値段は知ってるでしょ？　まあ、いいや――{~}　Liquid Emeraldくらいかな。それって、すごく高いよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#800": {
+   "src": "Saving up's been a real nightmare, I tell ya. What with the price of rent and food, it's hard to hold onto any money at all!",
+   "dst": "貯金するのは本当に悪夢みたいだったよ。家賃や食費がかさむから、お金を貯めるのがすごく大変なんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#801": {
+   "src": "In order to afford this trip, I've been working overtime every day for the past year, and even eating less just to save on food.",
+   "dst": "この旅行の費用を捻出するために、この1年間は毎日残業をして、食費を節約するために食事の量も減らしてきたんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#802": {
+   "src": "I'm glad the nightmare's finally over, though. Once I'm back from this trip, I'm never doing anything like that again!",
+   "dst": "でも、ようやくその悪夢が終わってよかった。この旅行から戻ったら、もう二度とあんなことはしないぞ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#803": {
+   "src": "My job? I work at a tool factory up in the north, we make stuff like nice cutlery for export to the other regions.",
+   "dst": "仕事？　北の方にある工具工場で働いてるんだ。他の地域へ輸出する、素敵なカトラリーみたいなものを作ってるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#804": {
+   "src": "Really, I don't get why we can't keep some for ourselves... We're the ones who put in all the work, why do THEY get rewarded for- Agh, whatever.",
+   "dst": "本当に、なんで自分たち用に少しは残しておけないのか、さっぱり分からないよ…… 苦労して作ってるのはこっちなのに、なんであいつらがご褒美をもらうんだ…… あー、もういいや。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#805": {
+   "src": "...Anyway. My factory's let us all take a week off. Usually we only get a day off at this time of year, since the Festival's in town, but...",
+   "dst": "……とにかく、うちの工場が全員に一週間の休みをくれたんだ。普段は、この時期は町でお祭りが開かれるから、休みは一日だけなんだけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#806": {
+   "src": "It turns out the old steelworks next to the station most of us use to commute to work had a slag beetle infestation, so said station had to be closed. Nasty critters, them, they destroy metals.",
+   "dst": "どうやら、私たちのほとんどが通勤に使っている駅の隣にある古い製鉄所に鉱滓カブトムシが大量発生して、その駅が閉鎖されることになったらしい。あの虫は厄介で、金属を破壊しちゃうんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#807": {
+   "src": "Ended up working out for me, though- it's the perfect time for me to finally put my holiday plans into action!",
+   "dst": "でも、結果的には私にとっては好都合だった――ついに休暇の計画を実行に移すのに絶好のタイミングだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#808": {
+   "src": "Yeah... Working overtime every day does that to ya...",
+   "dst": "うん…毎日残業していると、ついこうなっちゃうんだよね…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#809": {
+   "src": "I've also been expending a lot of energy preparing for my trip... Yawn...",
+   "dst": "それに、旅行の準備にもかなりのエネルギーを費やしているし…あぁ、眠い…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#810": {
+   "src": "Say... I could go for an energy drink. There's a vending machine in this station. Wanna come?",
+   "dst": "ねえ…エナジードリンクが飲みたいんだけど。この駅に自販機があるよ。一緒に行く？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#811": {
+   "src": "Sweet. Follow me.",
+   "dst": "いいね。ついてきて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#812": {
+   "src": "Malic\nYeesh.... Do they ever clean this place?",
+   "dst": "Malic\nうわっ……ここ、掃除とかしないのかな？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#813": {
+   "src": "You hear about that new Majin PEACOCK POWER stuff they're selling in these?",
+   "dst": "最近、ここで売ってる新しい「Majin PEACOCK POWER」っての、知ってる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#814": {
+   "src": "Me personally? I'm sticking to Zhirao Sleep. PEACOCK POWER is too... flavorful for my tastes.",
+   "dst": "俺個人としては？ やっぱり「Zhirao Sleep」一筋だね。「PEACOCK POWER」は…俺の好みには味が強すぎるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#815": {
+   "src": "...On top of that, I... Honestly, just don't really like Highlanders.",
+   "dst": "…それに、正直言って… Highlander って連中、あまり好きじゃないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#816": {
+   "src": "...I mean, seriously! Every time one of them visits the Roughworks, they're always so... inconsiderate. They act like we live in filth... Like they're somehow better than us...",
+   "dst": "…マジでさ！ あいつらが Roughworks に来るたびに、いつもすごく……無神経なんだよ。まるで俺たちが汚いところで暮らしてるみたいに振る舞うし……まるで自分たちが俺たちより優れてるみたいに……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#817": {
+   "src": "And Majin is the embodiment of that. I mean, he is the Sovereign of the {p}, so, y'know... His drink doesn't really appeal to me.",
+   "dst": "そして、Majinはその体現者なんだ。だって、彼は{p}の支配者なんだから、まあ、わかるだろ……彼の飲み物は、正直あまり魅力的じゃないな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#818": {
+   "src": "Oh, yeah. It's ridiculously expensive, too.",
+   "dst": "ああ、そうだ。それに、とんでもなく高いし。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#819": {
+   "src": "I have high expectations for {p}. I've heard it's beautiful over there- a couple of my buddies are lucky enough to work at the Auburn Lumbermill.",
+   "dst": "{p}には大きな期待を寄せているんだ。 あっちはすごく美しいって聞いたよ――友達の何人かは、運よく Auburn 製材所で働いているんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#820": {
+   "src": "I've never seen what it looks like, personally. The Wall of Xima has made sure of that. But apparently they've got beautiful trees there, trees with golden leaves...",
+   "dst": "個人的には、どんなところか見たことはない。 Xima の壁がそれを許してくれないからね。でも、どうやらあそこには美しい木々があるらしい。黄金色の葉をつけた木々が……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#821": {
+   "src": "Sadly, I'm just slightly too late to get to see what the Queen's Festival there is like. I can't imagine it's much different to ours, though.",
+   "dst": "残念ながら、女王の祭りがどんなものかを見るには、ほんの少しだけ遅すぎました。とはいえ、私たちのお祭りとそれほど変わらないだろうと思います。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#822": {
+   "src": "I bet the people there are lovely, too, just based on what I've seen from their Sovereign. Although, he is apparently a Highlander... Still! Can't be worse than our bunch.",
+   "dst": "彼らの君主の様子を見る限り、そこの人々もきっと素敵な人たちなんだろうな。とはいえ、彼はどうやら Highlander らしいけれど……それでも！　うちの連中より悪いはずがない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#823": {
+   "src": "Gosh, I'm so excited to get there. This is gonna be the highlight of my life, for certain.",
+   "dst": "うわぁ、そこに行けるなんて本当にワクワクする。これは間違いなく、私の人生で最高の瞬間になるはず。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#824": {
+   "src": "Oh yeah, right, those people. I've not talked with them, but maybe I should.",
+   "dst": "ああ、そうだ、あの人たちね。まだ話したことはないけど、話してみたほうがいいかも。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#825": {
+   "src": "Just judging from their attire, as well as the odds, they're probably not from around here. Probably tourists.",
+   "dst": "服装や雰囲気から判断する限り、たぶんこの辺りの人じゃないだろうね。たぶん観光客だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#826": {
+   "src": "It'd be interesting to hear from them what their regions are like... D'you think one of them might be from Auburn?",
+   "dst": "彼らの出身地がどんなところか聞いてみるのも面白そうだな……もしかして、その中に Auburn 出身の人がいるかも？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#827": {
+   "src": "You want to hear more opinions on the soda from me? Zhirao Sleep's pretty nice, the branding feels tasteful, and just... understanding of us.",
+   "dst": "ソーダについて、もっと私の意見を聞きたい？「Zhirao Sleep」はなかなかいいよ。ブランディングも上品だし、とにかく……私たちのことを理解してくれている感じがする。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#828": {
+   "src": "Majin's is all about HIM. Just HIM. And the soda itself? It's basically just the same drink as Zhirao Sleep but with a bit more flavour. Too much, in my opinion.",
+   "dst": "Majin の場合は、すべてが「彼」一色。ただ「彼」だけ。そしてソーダそのものは？　基本的には「Zhirao Sleep」と同じ飲み物だけど、風味が少し強い。個人的には、ちょっと強すぎると思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#829": {
+   "src": "Pretty much everyone seems to feel this way about it, too, but its advertising is inescapable... It's tiring.",
+   "dst": "ほぼ誰もがそう感じているみたいだけど、その広告は避けようがない……疲れるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#830": {
+   "src": "See ya in a bit!",
+   "dst": "じゃあ、また後で！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#831": {
+   "src": "Malic\nFinally...",
+   "dst": "Malic\nやっと来た…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#832": {
+   "src": "Malic\nHm?",
+   "dst": "Malic\nおや？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#833": {
+   "src": "Malic\nA general?!",
+   "dst": "Malic\n将軍？！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#834": {
+   "src": "It's been fun talking. Come back sometime, won't you?",
+   "dst": "お話しできて楽しかったです。またいつか遊びに来てくださいね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#835": {
+   "src": "Oh, hi! Looking for a chat? My name's Maddison, I'm a tourist from Aelumia.",
+   "dst": "あっ、こんにちは！おしゃべりしませんか？私の名前は Maddison 、 Aelumia から来た観光客です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#836": {
+   "src": "The {p} was... Not quite what I expected. There's quite a unique culture there, though! Did you know they cover everything with gorgeous murals?",
+   "dst": "{p}は……思ったような感じではなかった。でも、あそこにはかなり独特な文化があるの！ そこでは、あらゆるものが豪華な壁画で覆われているって知ってる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#837": {
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "dst": "この旅行のスケジュールをちゃんと組んでおけばよかったのに……そうすれば、2か所で開催される女王の祭りを見られたのに、今は両方とも見逃しちゃう……まあ、仕方ないか……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#838": {
+   "src": "Thank you for the chat. See you later!",
+   "dst": "お話しできてよかった。またね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#839": {
+   "src": "Have a good journey.",
+   "dst": "良い旅を。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#840": {
+   "src": "Oh, alright. See you around!",
+   "dst": "ええ、わかった。またね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#841": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Malic\"",
+   "dst": "このロッカーには、「Malic」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#842": {
+   "src": "It's locked, but it would be rude to look at his belongings, anyway.",
+   "dst": "鍵がかかっているが、それでも彼の持ち物を覗き見るのは失礼だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#843": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"{u}\"",
+   "dst": "このロッカーには、「{u}」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#844": {
+   "src": "...Telati did not mention that you had a locker when you were boarding the train, though he seemed in a hurry, so perhaps he forgot.",
+   "dst": "… Telati は、列車に乗る際、自分にロッカーがあることについては何も言わなかった。彼は急いでいたようだが、おそらく忘れていたのだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#845": {
+   "src": "...he also forgot to give you your key, so you couldn't use it even if you wanted to.",
+   "dst": "……それに、鍵を渡すのを忘れていたため、たとえ使いたくても使えなかった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#846": {
+   "src": "It's locked, but it would be rude to look at her belongings, anyway.",
+   "dst": "鍵がかかっているが、それでも彼女の持ち物を覗き見るのは失礼だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#847": {
+   "src": "This locker doesn't seem to belong to anyone, but it's locked anyway.",
+   "dst": "このロッカーは誰のものでもないようですが、とにかく鍵がかかっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#848": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Maddison\"",
+   "dst": "このロッカーには、「Maddison」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#849": {
+   "src": "It's locked, but it would be rude to look at their belongings, anyway.",
+   "dst": "鍵がかかっているけど、それでも他人の持ち物を覗き見るのは失礼だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#850": {
+   "src": "Yeah, you get outta here.",
+   "dst": "ああ、さっさとどっか行ってくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#851": {
+   "src": "Have a good trip!",
+   "dst": "よい旅を！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Telati",
+   "source": "captured.json"
+  },
+  "Off the Rails#852": {
+   "src": "Would you like to take a nap now? If you do this, you may miss some interactions!",
+   "dst": "今すぐ昼寝をする？ そうすると、{c2}大切なやり取りを見逃してしまう{/}かもしれない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}If you do this, you may miss some interactions!{/}"
+  },
+  "Off the Rails#853": {
+   "src": "It's your seat.",
+   "dst": "自分の座席だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#854": {
+   "src": "Once you're done exploring the train, you should take a nap here.",
+   "dst": "電車の中をじっくり見て回ったら、ここでちょっと{c2}昼寝をする{/}のもいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}take a nap{/}"
+  },
+  "Off the Rails#855": {
+   "src": "The train's pretty comfortable. You could get used to this as a mode of transport.",
+   "dst": "この電車はなかなか快適だ。移動手段として、これなら慣れてきそう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#856": {
+   "src": "And to think, if that businessman back in {p} had not been such a jerk to you, you wouldn't be here now...",
+   "dst": "考えてみれば、あの{p}のビジネスマンが、あんなにひどい態度をとっていなければ、自分は今ここにいなかっただろう……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#857": {
+   "src": "It was all worth it, even if just to see that frustrated look on his face...",
+   "dst": "たとえ彼のあの苛立った表情を見るためだけでも、それだけの価値はあった……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#858": {
+   "src": "... hey ... something wrong? ...",
+   "dst": "…ねえ…何かおかしい？…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#859": {
+   "src": "... oh no ... dead? ...",
+   "dst": "…えっ、まさか…{c2}死んでる？{/}…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}dead?{/}"
+  },
+  "Off the Rails#860": {
+   "src": "Something's wrong. You should go investigate.",
+   "dst": "何かおかしい。{c2}調べてみたほうがいい。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}investigate.{/}"
+  },
+  "Off the Rails#861": {
+   "src": "It sounded like they were headed towards the back of the train.",
+   "dst": "どうやら彼らは{c2}列車の最後尾{/}の方へ向かっているようだった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}back of the train.{/}"
+  },
+  "Off the Rails#862": {
+   "src": "Cemor\n...Oh dear.",
+   "dst": "Cemor\n…あらまあ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#863": {
+   "src": "Demma\n...Hm.",
+   "dst": "Demma\n…うーん。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#864": {
+   "src": "Telati\nSigh.",
+   "dst": "Telati\nはあ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Telati",
+   "source": "captured.json"
+  },
+  "Off the Rails#867": {
+   "src": "Maddison\n...Oh... Oh no...",
+   "dst": "Maddison\n…ああ… いや、そんな…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#868": {
+   "src": "Malic\n...Yikes.",
+   "dst": "Malic\n...うわっ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#869": {
+   "src": "Whenever you find potentially relevant info, it will be automatically recorded in the notebook, for you to check later.",
+   "dst": "{c2}関連がありそうな情報{/}が見つかるたびに、後で確認できるよう、自動的にノートに記録される。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}potentially relevant info{/}"
+  },
+  "Off the Rails#870": {
+   "src": "{#} You should inspect the crime scene first.",
+   "dst": "{#} まずは犯行現場を調べるべきだろう。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#871": {
+   "src": "Text highlighted in yellow indicates case-relevant information, which will be recorded in your notebook.",
+   "dst": "{c3}黄色{/}で{c2}強調表示{/}されているテキストは、{c2}ノート{/}に記録すべき{c2}重要な情報{/}です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}highlighted{/}, {c3}yellow{/}, {c2}case-relevant information{/}, {c2}notebook{/}"
+  },
+  "Off the Rails#872": {
+   "src": "What would you like to inspect first?",
+   "dst": "まずはどこを調べる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#873": {
+   "src": "The knife is lodged deep in her neck. It seems to be the only wound present on her body.",
+   "dst": "ナイフは{c2}彼女の首{/}に深く突き刺さっている。彼女の体には、{c2}この傷しか見当たらない{/}ようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}in her neck.{/}, {c2}the only wound present{/}"
+  },
+  "Off the Rails#874": {
+   "src": "You pull out the knife. It seems to be of a high quality.",
+   "dst": "ナイフを取り出す。それは{c2}上質なものの{/}ようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}high quality.{/}"
+  },
+  "Off the Rails#875": {
+   "src": "Some kind of purple goo appears to be slathered on the blade, though not much remains, as it has been washed away by blood.",
+   "dst": "刃には何らかの{c2}紫色の粘液{/}がべっとりと付着しているようだが、血で洗い流されてしまったため、ほとんど残っていない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}purple goo{/}"
+  },
+  "Off the Rails#876": {
+   "src": "What would you like to inspect next?",
+   "dst": "次は何を調べる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#877": {
+   "src": "Though it seems that the victim did not struggle, there is blood all over the room...",
+   "dst": "被害者は{c2}抵抗しなかった{/}ようだが、部屋中が血まみれになっている……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}did not struggle{/}"
+  },
+  "Off the Rails#878": {
+   "src": "Could it be possible the body was moved?",
+   "dst": "{c2}遺体を動かした{/}可能性はあるのかな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}the body was moved?{/}"
+  },
+  "Off the Rails#879": {
+   "src": "You check her pockets...",
+   "dst": "彼女のポケットを調べてみる……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#880": {
+   "src": "From them you pull a card. It reads:",
+   "dst": "そこからカードを1枚引く。そこにはこう書かれている：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#881": {
+   "src": "\"TRAIN PASS: GENERAL OF THE PROVINCIAL GUARD\"",
+   "dst": "「乗車券：州警総監」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#882": {
+   "src": "\"Possession of this pass entitles its bearer to a train ride anywhere they request, free of charge, by Her Majesty's orders.\"",
+   "dst": "「この乗車券所持している者は、女王陛下の命令により、{c2}希望する場所へ無料{/}で列車に乗車する権利を有します。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}anywhere{/}, {c2}free{/}"
+  },
+  "Off the Rails#884": {
+   "src": "\"Rejection of such a request is considered obstruction of the Crown's will, and a serious crime.\"",
+   "dst": "「そのような要求を拒否することは、王室の意思に対する妨害とみなされ、重大な犯罪となる。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#883": {
+   "src": "Seems you've inspected everything now. Time to speak to the guards.",
+   "dst": "どうやら、もうすべてを調べ終えたようだ。そろそろ衛兵と話しをしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#885": {
+   "src": "It seems that these rooms are all connected by vents... It's possible the murderer could have used them to travel between rooms.",
+   "dst": "どうやら、これらの部屋はすべて通気口でつながっているようだ……{c2}犯人はそれを使って部屋から部屋へと移動した可能性もある。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}the murderer could have used them to travel between rooms.{/}"
+  },
+  "Off the Rails#886": {
+   "src": "So our chat's over then? Great, now I have no reason to procrastinate. Ha.",
+   "dst": "じゃあ、お話はこれで終わり？ よかった、これで先延ばしにする理由がなくなった。はは。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "Greatは斜体"
+  },
+  "Off the Rails#887": {
+   "src": "The sign says \"Staff Only\".",
+   "dst": "看板には{c2}「Staff Only」{/}と書かれている",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}\"Staff Only\"{/}"
+  },
+  "Off the Rails#888": {
+   "src": "The door is locked, but you'd better not break the rules, anyway.",
+   "dst": "ドアは鍵がかかっているが、ルールを破らないほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#889": {
+   "src": "The sign says \"Bathroom\".",
+   "dst": "看板には{c2}「トイレ」{/}と書かれている",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}\"Bathroom\"{/}"
+  },
+  "Off the Rails#890": {
+   "src": "Open the door?",
+   "dst": "ドアを開ける？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#891": {
+   "src": "You didn't need the bathroom.",
+   "dst": "トイレに行く必要はなかった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#892": {
+   "src": "The sign says \"Private Cabin {~}\".",
+   "dst": "看板には{c2}「Private Cabin {~}」{/}と書かれている",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}\"Private Cabin {~}\"{/}"
+  },
+  "Off the Rails#893": {
+   "src": "Nothing more to see here. You can check your findings in the notebook.",
+   "dst": "これ以上見るものはない。調査結果は{c2}ノート{/}を確認しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}notebook{/}"
+  },
+  "Off the Rails#894": {
+   "src": "The sign says \"Kitchen, Staff Only\".",
+   "dst": "看板には「キッチン 従業員専用」と書かれている",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#895": {
+   "src": "The door does not appear to be locked, but it'd be best not to break the rules.",
+   "dst": "ドアにカギはかかってないようだが、ルールを破らないほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#896": {
+   "src": "Have a good journey, and good luck.",
+   "dst": "良い旅を、そして頑張れ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#899": {
+   "src": "Our most excellent\nruler.",
+   "dst": "我らが最も優れた\n統治者。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#900": {
+   "src": "{#}/{#} Click here to exit",
+   "dst": "{#}/{#} ここをクリックしてやめる",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#901": {
+   "src": "The cool soldiers\nwith the grey helmets.",
+   "dst": "灰色のヘルメットをかぶった\nかっこいい兵士たち。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#902": {
+   "src": "--- do attitude.",
+   "dst": "--- そんな態度。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#903": {
+   "src": "Our District's unique\nmix of industry\nand tree.",
+   "dst": "当地区ならではの\n産業と緑が織りなす\n独特の景観。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#904": {
+   "src": "Earning money takes a\nlot of -----.",
+   "dst": "お金を稼ぐには\nたくさんの-----が必要。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#905": {
+   "src": "Agents of the vile\nforce that seeks to\ndestroy our Province.",
+   "dst": "我らの州を\n破壊しようとする邪悪な\n勢力の手先たち。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#906": {
+   "src": "A state of great\nsadness, rhyming with\nthe next day.",
+   "dst": "深い悲しみの状態。\nそれは翌日(the next day)と\n韻を踏んでいる。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#907": {
+   "src": "It is illegal to\ncreate this on the\nproperty of others.\nStop.",
+   "dst": "他人の敷地内で\nこれを作成することは違法です。\nやめてください。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#908": {
+   "src": "It's easy to get\n---- in a region as\ndense as ours.",
+   "dst": "私たちのような\n人口密度の高い地域では\n----になりがちです。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#909": {
+   "src": "Yearly celebration\nhappening this week!",
+   "dst": "今週は毎年恒例の祝賀イベントが\n開催されます！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#910": {
+   "src": "Hauling heavy items\nshould be done by\ns-----l people.",
+   "dst": "重い荷物の運搬は\ns-----lな人が\n行うべきだ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#911": {
+   "src": "The Sovereign of\n{p}",
+   "dst": "{p}\nの君主",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#912": {
+   "src": "If everything is all\njumbled up, you might\nwant to ---- it.",
+   "dst": "すべてがごちゃごちゃに\nなっているなら、----してみると\nいいかもしれません。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#913": {
+   "src": "A word describing our\nProvince, pronounced the\nsame as something you\ndo to cheese.",
+   "dst": "私たちの州を表す言葉で\nチーズに施すある作業と\n同じ発音です。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#914": {
+   "src": "Best Sovereign\nand maker of the best\ndrink, available in\nany vending machine!",
+   "dst": "最高の君主であり\n最高の飲み物の製造者。\nどの自動販売機でも\n手に入ります！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#915": {
+   "src": "A workforce of\n---- proportions.",
+   "dst": "----規模の労働力。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#916": {
+   "src": "A word to describe a\nlong-lasting state of\nunconsciousness.",
+   "dst": "長期間続く\n意識不明の状態を\n表す言葉。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#917": {
+   "src": "Your patriotic duty\nfor our Province.",
+   "dst": "当州に対するあなたの\n愛国的な義務です。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#918": {
+   "src": "Your reward for\nyour efforts.",
+   "dst": "あなたの努力に対する\nご褒美です。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#919": {
+   "src": "Common crop taking\nlittle skill to harvest.",
+   "dst": "収穫にほとんど技術を\n要しない一般的な作物。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#920": {
+   "src": "Her Majesty promises to\nimprove the accessibility\nof drinkable -----.",
+   "dst": "女王陛下は、飲用可能な-----の\n利用しやすさを向上させることを\n約束されました。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#921": {
+   "src": "Oh, alright. I wish you luck with the case!",
+   "dst": "ええ、わかった。その事件、うまくいくといいね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#922": {
+   "src": "Good luck finding that murderer!",
+   "dst": "犯人がみつかるといいな！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#923": {
+   "src": "...Anything else you wanna ask about?",
+   "dst": "…他に聞きたいことは？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Malic",
+   "source": "wiki"
+  },
+  "Off the Rails#924": {
+   "src": "Dang, shame I'll be out of town for that.",
+   "dst": "ちっ、その時はちょうど町を離れているから残念だな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#925": {
+   "src": "Are you sure you want to leave the minigame? If you do, your progress will be lost!",
+   "dst": "ミニゲームを終了する？ {c2}終了すると、これまでの進捗が失われる！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}If you do, your progress will be lost!{/}"
+  },
+  "Off the Rails#926": {
+   "src": "Remarkably, there's a perfectly-prepared platter of whole roast Grookiva on the kitchen counter, still warm, perfect for consumption.",
+   "dst": "驚くべきことに、キッチンのカウンターには、完璧に調理された Grookiva の丸焼きが盛り付けられたお皿が置かれており、まだ温かくて、今すぐ食べるのにぴったりだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#927": {
+   "src": "You accept this wonderful blessing from the gods. This will do nicely. Serve it to Cemor.",
+   "dst": "神々からのこの素晴らしい恵みを受け取ってください。これで十分でしょう。 {c2}Cemor に差し出そう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}Serve it to Cemor.{/}"
+  },
+  "Off the Rails#928": {
+   "src": "The man in the canteen carriage came through here and took a while to come back. Not sure why, though I think it likely he was in the bathroom at the back of the train.",
+   "dst": "{c2}食堂車の男性がここを通って、なかなか戻ってきません{c1}でした。理由は分かりませんが、列車後部の{c2}お手洗い{c1}にいたんだと思います。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Demma",
+   "source": "captured.json",
+   "note": "{c2}man in the canteen{/}, {c2}came through here{/}, {c2}took a while to come back.{/}, {c2}the bathroom{/}"
+  },
+  "Off the Rails#929": {
+   "src": "Good luck with the case.",
+   "dst": "この件、頑張ってね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#930": {
+   "src": "{#} Click here to exit",
+   "dst": "{#} ここをクリックしてやめる",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#931": {
+   "src": "\"The Murex Mollusc is a relative of the Gigastropod native to the {p}.\"",
+   "dst": "{c1}「Murex Mollusc 、{c2}{p}{c1}に自生する Gigastropod の近縁種である。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}{p}{/}"
+  },
+  "Off the Rails#932": {
+   "src": "\"Unlike the herbivorous Gigastropod, the Murex Mollusc is a carnivore that hunts for food. From its shell, it can fire toxic darts to aid in this task.\"",
+   "dst": "{c1}「草食性の Gigastropod とは異なり、Murex Mollusc は、獲物を狩って食べる肉食動物です。Murex Mollusc は、貝殻から{c2}有毒{c1}な矢を放ち、狩りを助けています。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}toxic{/}"
+  },
+  "Off the Rails#933": {
+   "src": "\"Due to the size of some of the {p}' creatures, the toxin in these darts is extremely potent, to the point where it is often lethal to humans.\"",
+   "dst": "{c1}「{p}に生息する生物の中には巨大なものも存在するため、これらの矢に含まれる毒は{c2}極めて強力{c1}であり、人間にとってはしばしば{c2}致命的{c1}となるほどである。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}extremely potent{/}, {c2}lethal{/}"
+  },
+  "Off the Rails#934": {
+   "src": "\"This toxin is also known to incapacitate and paralyse those affected by it, a property which has made it desirable to crooks and murderers.\"",
+   "dst": "{c1}「この毒素は、被害者を{c2}無力化・麻痺{c1}させることも知られており、その特性ゆえに、犯罪者や殺人犯に好んで利用されてきた。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}incapacitate and paralyse{/}"
+  },
+  "Off the Rails#935": {
+   "src": "\"However, it has almost never been used in crime, as it is extremely difficult to collect from the Mollusc's fragile darts, which break on impact.\"",
+   "dst": "{c1}「しかし、衝撃で壊れてしまう Mollusc の壊れやすい矢からは採取することが極めて困難であるため、犯罪に利用された例はほとんどない。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#936": {
+   "src": "\"It is known, however, that the slime trail left behind by Murex Molluscs contains traces of this toxin.\"",
+   "dst": "{c1}「しかし、Mollusc 属の軟体動物が残す{c2}粘液の跡{c1}には、この毒素の痕跡が含まれていることが知られている。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}slime trail{/}"
+  },
+  "Off the Rails#937": {
+   "src": "\"Raids on black markets have found containers of this slime, though the difficulty involved in collecting it has led to a high price.\"",
+   "dst": "{c1}「{c2}闇市場{c1}への摘発で、このスライムが入った容器が見つかったが、採取の難しさから価格は{c2}高騰{c1}している。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}black markets{/}, {c2}high price{/}"
+  },
+  "Off the Rails#938": {
+   "src": "\"As such, fortunately, few have chosen to use it to these ends.\"",
+   "dst": "{c1}「そうしたわけで、幸いなことに、こうした目的でこれを利用することを選んだ人はほとんどいない。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#939": {
+   "src": "There's also an illustration of Murex Mollusc slime. It seems to match what you found on the blade perfectly. This must be it!",
+   "dst": "Murex Mollusc の粘液のイラストもある。{c2}自分が刃に見つけたものと完全に一致している{/}ようだ。これに違いない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}match what you found on the blade{/}"
+  },
+  "Off the Rails#940": {
+   "src": "It's a key. Engraved on it is the word \"MASTER\". This must be Telati's missing key!",
+   "dst": "鍵だ。その表面には「MASTER」という文字が刻まれている。これこそが、 Telati が失くした鍵に違いない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#941": {
+   "src": "You slip it into your pocket. You can now access locked rooms.",
+   "dst": "それをポケットに滑り込ませる。これで、{c2}鍵のかかった部屋に入ることができる{/}ようになった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You can now access locked rooms{/}"
+  },
+  "Off the Rails#942": {
+   "src": "You're sure you can break that rule for the sake of the case, though. Open the door?",
+   "dst": "この件のためなら、そのルールを破ってもいいと確信しているんだろう。ドアを開ける？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#943": {
+   "src": "It's a book with a knife on the cover, with no title to be seen. You try to read.",
+   "dst": "表紙にナイフが描かれた本で、タイトルはどこにも見当たらない。自分はそれを読もうとする。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#944": {
+   "src": "...Almost all of the pages are glued together, and a knife-shaped compartment is carved into them.",
+   "dst": "…ページのほとんどすべてが貼り合わされており、その中にナイフの形をした収納スペースがくり抜かれている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#945": {
+   "src": "This must be how the murderer smuggled the weapon onto the train!",
+   "dst": "殺人犯は、きっとこうして凶器を列車に持ち込んだに違いない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#946": {
+   "src": "Go on, go interrogate people.",
+   "dst": "さあ、さっさと人を尋問しに行け。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#947": {
+   "src": "I mean, maybe they want to ask us some questions, Maury.",
+   "dst": "まあ、たぶん彼は俺らに何か質問したいんだろうな、Maury。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Harvin",
+   "source": "captured.json",
+   "note": "usは斜体"
+  },
+  "Off the Rails#948": {
+   "src": "Ugh. Fine. Whaddaya want?",
+   "dst": "うっ。わかったよ。何が欲しいんだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#949": {
+   "src": "Your takeaway from that... conversation... is that the General was completely unguarded.",
+   "dst": "その……会話……から得られる教訓は、将軍が{c2}まったく警戒していなかった{/}ということだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}completely unguarded{/}"
+  },
+  "Off the Rails#950": {
+   "src": "Yeah, get back ta work.",
+   "dst": "ああ、さっさと仕事に戻れ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#951": {
+   "src": "Then leave me alone...",
+   "dst": "それなら、私を放っておいて……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Flinn",
+   "source": "captured.json"
+  },
+  "Off the Rails#952": {
+   "src": "It seems that the cafe isn't open right now.",
+   "dst": "どうやらカフェは今は営業していないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#953": {
+   "src": "Are you sure you want to make an accusation? You will not be able to go back on this decision!",
+   "dst": "本当に告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#955": {
+   "src": "Are you sure you would like to accuse Flinn? You cannot go back on this decision!",
+   "dst": "本当に Flinn を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#956": {
+   "src": "Are you sure you would like to accuse Demma? You cannot go back on this decision!",
+   "dst": "本当に Demma を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#957": {
+   "src": "Are you sure you would like to accuse Telati? You cannot go back on this decision!",
+   "dst": "本当に Telati を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#958": {
+   "src": "Are you sure you would like to accuse Malic? You cannot go back on this decision!",
+   "dst": "本当に Malic を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#954": {
+   "src": "Are you sure you would like to accuse Cemor? You cannot go back on this decision!",
+   "dst": "本当に Cemor を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#959": {
+   "src": "Are you sure you would like to accuse Maddison? You cannot go back on this decision!",
+   "dst": "本当に Maddison を告発する？{c2}この決定を撤回することはできません！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}You will not be able to go back on this decision!{/}"
+  },
+  "Off the Rails#960": {
+   "src": "...Looks like that's all- Huh?",
+   "dst": "…どうやらこれで全部のようだ――えっ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#961": {
+   "src": "Cemor\n...Soon you'll all see!",
+   "dst": "Cemor\n…もうすぐみんなにもわかるだろう！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#962": {
+   "src": "Thank goodness he didn't stick around. After all, you wouldn't want him to see what you kept from the crime scene, would you?",
+   "dst": "彼がそこに居座らなかったのは本当に良かった。何しろ、自分が犯行現場から持ち帰ったものを彼に見られたくはないだろう？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#963": {
+   "src": "How convenient!",
+   "dst": "なんて便利なんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
