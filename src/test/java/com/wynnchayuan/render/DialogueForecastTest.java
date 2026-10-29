@@ -67,6 +67,7 @@ public final class DialogueForecastTest {
         midway(store);
         panelFlicker(store);
         pacing();
+        skip();
 
         corpus();
 
@@ -517,6 +518,68 @@ public final class DialogueForecastTest {
 
     /** 見 {@link #panelFlicker}：文字結尾要不要帶一個跟著長度變的排版偏移字元。 */
     private static boolean tail;
+
+    /**
+     * 按 SHIFT 跳過（1.0.4 回報）：伺服器一則就把整句送來，之後不太再送更新。
+     * 那一則就要是整句譯文——不能分幾幀補（補字要等零星的封包，畫面卡在半句好幾秒），
+     * 也不能先空著。早跳、半句跳、數字後面跳、一段對話的第一句一開始就跳、
+     * 以及短到剛好是語料裡另一句開頭的那種，兩條路都跑。
+     */
+    private static void skip() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-forecast-skip");
+        Files.writeString(dir.resolve("quest.json"), "{"
+                + "\"Please go to the old mill by the river and fetch me {~} sacks of grain.\": "
+                + "\"請幫我拿 {~} 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。\","
+                + "\"Do you like what I've done with the palace? And my most precious collection...\": "
+                + "\"你喜歡我把宮殿佈置成這樣嗎？還有我最珍貴的收藏……\","
+                + "\"Hold on now\": \"等一下\","
+                + "\"Hold on now, wait for me.\": \"等一下，等等我。\"}",
+                StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        String grain = "Please go to the old mill by the river and fetch me 12 sacks of grain.";
+        String grainZh = "請幫我拿 12 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。";
+        String palace = "Do you like what I've done with the palace? And my most precious collection...";
+        String palaceZh = "你喜歡我把宮殿佈置成這樣嗎？還有我最珍貴的收藏……";
+        Object[][] cases = {
+            {"一開始就跳", palace, palaceZh, 3},
+            {"半句跳", palace, palaceZh, palace.length() / 2},
+            {"數字出來之後跳", grain, grainZh, grain.indexOf("12 sacks") + 9},
+            {"第一句第一幀就是整句", palace, palaceZh, 0},
+            {"短句、又是另一句的開頭", "Hold on now", "等一下", 0},
+        };
+        for (Object[] c : cases) {
+            String name = (String) c[0];
+            String src = (String) c[1];
+            String want = (String) c[2];
+            int typed = (Integer) c[3];
+            // 就地取代：先照常打 typed 個字，接著一則整句，之後沒有更新
+            begin();
+            DialogueLeadAudit.speak(null);
+            long[] clock = {5_000_000L};
+            DialogueRewriter.holdClock = () -> clock[0];
+            String out = null;
+            for (int i = 1; i <= typed; i++) {
+                clock[0] += 40;
+                DialogueRewriter.line(src.substring(0, i), store, 3, null, 232);
+            }
+            clock[0] += 40;
+            out = DialogueRewriter.line(src, store, 3, null, 232);
+            check("跳過（" + name + "）：就地取代那一則就是整句（實際 " + quote(out) + "）",
+                  want.equals(out));
+            // 小框：同樣的事件順序
+            begin();
+            DialogueOverlay.resetForTest();
+            for (int i = 1; i <= typed; i++) {
+                panelEvent(src.substring(0, i), store);
+            }
+            panelEvent(src, store);
+            String panel = text(DialogueOverlay.currentForTest());
+            check("跳過（" + name + "）：小框那一則就是整句（實際 " + panel + "）",
+                  panel.contains(want));
+        }
+        DialogueRewriter.holdClock = System::currentTimeMillis;
+    }
 
     private static void panelEvent(String text, TranslationStore store) {
         String shown = tail ? text + new String(Character.toChars(0xD0000 + 80 - text.length()))

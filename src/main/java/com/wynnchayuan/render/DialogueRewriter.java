@@ -1349,6 +1349,7 @@ public final class DialogueRewriter {
         released = false;
         lineStart = 0;
         lastOut = null;
+        skipNow = false;
     }
 
     /**
@@ -1532,10 +1533,13 @@ public final class DialogueRewriter {
 
     static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
-        String out = recognise(text, store, rows, style, width);
         String raw = text == null ? "" : text.strip();
+        // SHIFT 跳過：伺服器一次把整句送來（原文一則就多了一大截）。見 #SKIP_JUMP。
+        boolean newLine = lineRaw.isEmpty() || !raw.startsWith(lineRaw);
+        skipNow = raw.length() - (newLine ? 0 : lineRaw.length()) >= SKIP_JUMP;
+        String out = recognise(text, store, rows, style, width);
         long now = holdClock.getAsLong();
-        if (lineRaw.isEmpty() || !raw.startsWith(lineRaw)) {
+        if (newLine) {
             lineShown = false;                 // 換句話了
             lineStart = now;
             released = false;
@@ -1547,12 +1551,15 @@ public final class DialogueRewriter {
                 DialogueStartLog.recognised(raw.length(), now - lineStart);
             }
             lineShown = true;
-            out = paced(out);
+            // 整句（打完了、或 SHIFT 跳過）直接整句給，不分幾幀補：跳過之後伺服器不太再送
+            // 更新，補字要等零星的封包，畫面就卡在半句好幾秒（1.0.4 回報）。
+            boolean whole = heldSource == null && out.equals(held);
+            out = whole || skipNow ? caughtUp(out) : paced(out);
             DialogueStartLog.frame("就地", raw.length(), out.codePointCount(0, out.length()));
             return out;
         }
         DialogueStartLog.frame("就地", raw.length(), out == null ? -1 : 0);
-        if (out == null && !released && holds(raw, store, now)) {
+        if (out == null && !released && !skipNow && holds(raw, store, now)) {
             return "";
         }
         if (out == null && !lineShown && !released) {
@@ -1573,6 +1580,23 @@ public final class DialogueRewriter {
      * 接連幾幀補上——不影響「先空著」多久（那是認出來之前的事）。
      */
     static final int MAX_STEP = 2;
+
+    /**
+     * 原文一則更新就多出這麼多字，當成玩家按了 SHIFT 跳過、整句一次出來。
+     *
+     * <p>正常打字一則多 1～3 個字（實機最快約每秒一百字、每秒二三十則）。跳過的那一則
+     * 是整句：這一則就當成「字停下來了」（認得出整句就給整句）、不先空著、不分幾幀補。
+     */
+    static final int SKIP_JUMP = 8;
+
+    /** 這一則是不是跳過（見 {@link #SKIP_JUMP}）。{@link #recognise} 拿它當「字停下來了」。 */
+    private static boolean skipNow;
+
+    /** 整句直接給，記成上一幀，之後的補字從這裡接。 */
+    private static String caughtUp(String out) {
+        lastOut = out;
+        return out;
+    }
 
     /** 上一幀這一句送出去的中文。見 {@link #paced}。 */
     private static String lastOut;
@@ -1685,7 +1709,7 @@ public final class DialogueRewriter {
         //（{@link TranslationStore#hasLonger}），就<b>連打完了都不准定案</b>。
         //
         // 拉出來自己站一行，這一段才真的有在數。
-        boolean steady = settled(raw);
+        boolean steady = settled(raw) || skipNow;
         String hit = store.lookup(typed);
         // 被下面那一關擋下來的整句譯文。擋歸擋，它終究是<b>這幾個字</b>自己的
         // 譯文——別條路全部走不通時還輪得到它，見下面的 sentenceEnd。
