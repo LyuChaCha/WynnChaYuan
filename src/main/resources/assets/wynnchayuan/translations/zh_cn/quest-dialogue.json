@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23997,
-  "translated": 23994,
+  "count": 24252,
+  "translated": 24249,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -5325,6 +5325,16 @@
    "speaker": "Tasim",
    "source": "captured"
   },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "是的。我明白。愚勇的力量展示毫无意义。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "嗯……是这样，不过我想先跟 {u} 说明细节。这是个危险的任务，所以……我觉得最好让他们了解一下情况。",
@@ -10335,6 +10345,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "……啊。它被施了魔法……考虑到你见过的那些，这倒是挺奇怪的，不过守卫们正往你这边看。你最好别再这么做了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "还是没有回应。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "似乎没有人知道你在这里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19335,7 +19375,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "我会上报谁进出镇子。谁卖了什么。谁买了什么。谁跟谁说话。",
    "role": "desc",
    "kind": "dialogue",
@@ -19935,7 +19975,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "我不确定跟 {p} 精灵说话会受什么惩罚，不过我想至少是黎明时分吊死吧。还是说根本没有惩罚？",
    "role": "desc",
    "kind": "dialogue",
@@ -19945,7 +19985,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "我们还是离开这里吧。我说过，一开始就去查地下河才是最聪明的做法。",
    "role": "desc",
    "kind": "dialogue",
@@ -24204,6 +24244,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "我们四处看看吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "我们四处看看吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "你对这一切怎么看？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "与 [-{~}, -{~}] 的 Goruca 队长交谈",
@@ -25155,7 +25225,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "Ureietun！人类救了 Ressinter 的命！为什么不信任？",
    "role": "desc",
    "kind": "dialogue",
@@ -25205,7 +25275,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "……可以信任人类不会杀。人类可以在 Centerworld 走动。但人类不能见 Arrai-Veretel！",
    "role": "desc",
    "kind": "dialogue",
@@ -26195,7 +26265,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "嗯，也许你读读里面写的东西，能自己学到些什么。",
    "role": "desc",
    "kind": "dialogue",
@@ -50547,7 +50617,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "第二个围栏可能也有类似的问题，不过我相信你自己想得出办法。",
    "role": "desc",
    "kind": "dialogue",
@@ -58311,7 +58381,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "你需要 [{~} 火焰蛛丝]。镇子底下的热疤蜘蛛会吐这种丝，入口拱门旁边就有个洞窟。",
    "role": "desc",
    "kind": "dialogue",
@@ -80471,6 +80541,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "……哦，你要跟 Relend 出海啊？你确定？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "这个看起来……能吃。你该问问 Relend 怎么看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "啊，{p} 军队的一员。我们正想多了解这座冰之坟冢。我们需要你的帮助。",
@@ -86486,7 +86576,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "炽热岩浆水晶大拍卖！纯度 {~}！拒绝替代品，除非你付的是绿宝石，那就用……很多很多绿宝石来替代！！",
    "role": "desc",
    "kind": "dialogue",
@@ -90212,7 +90302,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "可是大约一个月前，那些史莱姆变强了。我再也拿不到了，还差点被打死好几次！",
    "role": "desc",
    "kind": "dialogue",
@@ -94408,7 +94498,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "呃……没有。一点印象都没有。",
    "role": "desc",
    "kind": "dialogue",
@@ -95996,6 +96086,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "有什么能帮你的吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "我一直在试着让这块 Kanderstone 接触各种不同的魔法能量，看看能不能逆转黯蚀对它造成的影响。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "只要我能找到黯蚀从森林里吸走的那股能量，那么十之八九……这块 Kanderstone 就会变回钴，也就是这片森林开始衰败之前出产的矿物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "……可那到底会是什么呢？我能想到的魔法都试过了。没有任何东西能逆转黯蚀的影响。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "我很确定。黯蚀是由魔法能量被抽走造成的。只是我没办法确定究竟是什么……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103098,7 +103238,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "食尸鬼差不多都清掉了，你该回去找 Plaatic 大人。",
    "role": "desc",
    "kind": "dialogue",
@@ -113258,8 +113398,8 @@
    "source": "wiki"
   },
   "Off the Rails#029": {
-   "src": "Heh. Enough yammering from me, though. You probably have your own stuff you wanna talk about, right? (After Malic's introduction)",
-   "dst": "嘿。不过我也唠叨够了。你大概也有自己想聊的事吧，对吧？(Malic 自我介绍之后)",
+   "src": "Heh. Enough yammering from me, though. You probably have your own stuff you wanna talk about, right?",
+   "dst": "嘿。不过我也唠叨够了。你大概也有自己想聊的事吧，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113268,8 +113408,8 @@
    "source": "wiki"
   },
   "Off the Rails#030": {
-   "src": "Anything else you wanna talk about? (When the dialogue options reappear)",
-   "dst": "还有什么想聊的吗？(对话选项再次出现时)",
+   "src": "Anything else you wanna talk about?",
+   "dst": "还有什么想聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113278,8 +113418,8 @@
    "source": "wiki"
   },
   "Off the Rails#031": {
-   "src": "Hey again! Anything to say? (Subsequent conversations with Malic)",
-   "dst": "又见面了！有什么要说的吗？(之后与 Malic 交谈时)",
+   "src": "Hey again! Anything to say?",
+   "dst": "又见面了！有什么要说的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113288,8 +113428,8 @@
    "source": "wiki"
   },
   "Off the Rails#032": {
-   "src": "Enough of this, though, or I'll get too excited. Anything else you wanna talk about? (After asking about the {p})",
-   "dst": "不过聊到这就好，不然我会太兴奋。还有什么想聊的吗？(问过 {p} 之后)",
+   "src": "Enough of this, though, or I'll get too excited. Anything else you wanna talk about?",
+   "dst": "不过聊到这就好，不然我会太兴奋。还有什么想聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113298,8 +113438,8 @@
    "source": "wiki"
   },
   "Off the Rails#033": {
-   "src": "Sigh. Anything else you wanna talk about? (After asking about Soda)",
-   "dst": "唉。还有什么想聊的吗？(问过 Soda 之后)",
+   "src": "Sigh. Anything else you wanna talk about?",
+   "dst": "唉。还有什么想聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113378,8 +113518,8 @@
    "source": "wiki"
   },
   "Off the Rails#041": {
-   "src": "...Anyway, is there anything you'd like to talk about? (After Maddison's introduction)",
-   "dst": "……总之，你有什么想聊的吗？(Maddison 自我介绍之后)",
+   "src": "...Anyway, is there anything you'd like to talk about?",
+   "dst": "……总之，你有什么想聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113388,8 +113528,8 @@
    "source": "wiki"
   },
   "Off the Rails#042": {
-   "src": "...Anything else you'd like to discuss? (When the dialogue options reappear)",
-   "dst": "……还有什么想讨论的吗？(对话选项再次出现时)",
+   "src": "...Anything else you'd like to discuss?",
+   "dst": "……还有什么想讨论的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113398,8 +113538,8 @@
    "source": "wiki"
   },
   "Off the Rails#043": {
-   "src": "Hi again! Want to talk? (Subsequent conversations with Maddison)",
-   "dst": "又见面了！想聊聊吗？(之后与 Maddison 交谈时)",
+   "src": "Hi again! Want to talk?",
+   "dst": "又见面了！想聊聊吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113408,8 +113548,8 @@
    "source": "wiki"
   },
   "Off the Rails#044": {
-   "src": "Oh, well... Anything else you'd like to discuss?(After asking about Maddison's trip)",
-   "dst": "哦，嗯……还有什么想讨论的吗？(问过 Maddison 的旅行之后)",
+   "src": "Oh, well... Anything else you'd like to discuss?",
+   "dst": "哦，嗯……还有什么想讨论的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113418,24 +113558,24 @@
    "source": "wiki"
   },
   "Off the Rails#045": {
-   "src": "Roughworks? Oh, right, that's what the people here call it. To me, it's the {p}.",
-   "dst": "Roughworks？哦，对，这里的人都这么叫它。对我来说，它是 {p}。",
+   "src": "Roughworks? Oh, right, that's what the people there call it. To me, it's the {p}.",
+   "dst": "Roughworks？哦，对，那里的人都这么叫它。对我来说，它是 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#046": {
-   "src": "I always imagined this place being a bit... cleaner. Maybe the people here are just used to it being messy, though?",
-   "dst": "我一直以为这地方会……干净一点。不过也许这里的人只是习惯了乱糟糟的？",
+   "src": "I always imagined it being a bit... cleaner. Maybe the people there are just used to it being messy, though?",
+   "dst": "我一直以为那里会……干净一点。不过也许那里的人只是习惯了乱糟糟的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Maddison",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#047": {
    "src": "A lot of the people I tried talking to were, well, not very nice. They didn't seem to like tourists all that much...",
@@ -113448,8 +113588,8 @@
    "source": "wiki"
   },
   "Off the Rails#048": {
-   "src": "Overall, this... has probably been the low point of my trip. I think it's just not for me, really. But there were some parts I liked!",
-   "dst": "整体来说，这里……大概是我这趟旅行的低谷。我想这里就是不适合我吧。不过也有一些我喜欢的地方！",
+   "src": "Overall, it was... probably been the low point of my trip. I think it's just not for me, really. But there were some parts I liked!",
+   "dst": "整体来说，那里……大概是我这趟旅行的低谷。我想那里就是不适合我吧。不过也有一些我喜欢的地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113458,8 +113598,8 @@
    "source": "wiki"
   },
   "Off the Rails#049": {
-   "src": "I already mentioned the pretty murals, but there was a bunch of other cool stuff, too. Did you know the people here fight to resolve disputes?",
-   "dst": "我已经提过那些漂亮的壁画了，不过还有很多别的酷东西。你知道这里的人会用打架来解决纠纷吗？",
+   "src": "I already mentioned the pretty murals, but there was a bunch of other cool stuff, too. Did you know the people there fight to resolve disputes?",
+   "dst": "我已经提过那些漂亮的壁画了，不过还有很多别的酷东西。你知道那里的人会用打架来解决纠纷吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113548,8 +113688,8 @@
    "source": "wiki"
   },
   "Off the Rails#058": {
-   "src": "I've only been to the {p} and here, though. Both have been enlightening, in their own ways.",
-   "dst": "不过我只去过 {p} 和这里。两个地方都各自给了我一些启发。",
+   "src": "I've only been to the {p} and {p}, though. Both have been enlightening, in their own ways.",
+   "dst": "不过我只去过 {p} 和 {p}。两个地方都各自给了我一些启发。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113568,8 +113708,8 @@
    "source": "wiki"
   },
   "Off the Rails#060": {
-   "src": "This place? It's... I guess I've come to learn that some people live by different standards to me, which is... interesting.",
-   "dst": "这里？这里……我想我学到了，有些人的生活标准跟我不一样，这……挺有意思的。",
+   "src": "The {p}? It's... I guess I've come to learn that some people live by different standards to me, which is... interesting.",
+   "dst": "{p}？那里……我想我学到了，有些人的生活标准跟我不一样，这……挺有意思的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113748,14 +113888,14 @@
    "source": "wiki"
   },
   "Off the Rails#078": {
-   "src": "Ugh. Well, see, I'm from {p}. I... don't like it there. So I wanted to see what the {p} was like.",
-   "dst": "呃。嗯，是这样，我是 {p} 人。我……不喜欢那里。所以我想看看 {p} 是什么样子。",
+   "src": "Ugh. Well, see, I'm from {p}. I... don't like it there. So I wanted to see what the Industrial Distict was like.",
+   "dst": "呃。嗯，是这样，我是 {p} 人。我……不喜欢那里。所以我想看看工业区是什么样子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Flinn",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#079": {
    "src": "Having been here yourself, I'm sure you understand well how that turned out. Now, I'm heading home.",
@@ -113778,8 +113918,8 @@
    "source": "wiki"
   },
   "Off the Rails#081": {
-   "src": "...But enough about me. What do you want to say? (After Flinn's introduction)",
-   "dst": "……不过我的事就不说了。你想说什么？(Flinn 自我介绍之后)",
+   "src": "...But enough about me. What do you want to say?",
+   "dst": "……不过我的事就不说了。你想说什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113788,8 +113928,8 @@
    "source": "wiki"
   },
   "Off the Rails#082": {
-   "src": "Anything else? (When the dialogue options reappear)",
-   "dst": "还有别的吗？(对话选项再次出现时)",
+   "src": "Anything else?",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113798,8 +113938,8 @@
    "source": "wiki"
   },
   "Off the Rails#083": {
-   "src": "What? (Subsequent conversations with Flinn)",
-   "dst": "干嘛？(之后与 Flinn 交谈时)",
+   "src": "What?",
+   "dst": "什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113808,8 +113948,8 @@
    "source": "wiki"
   },
   "Off the Rails#084": {
-   "src": "Sorry about that, I got... Madder, than expected... Anything else you'd like to discuss? (After asking about the {p})",
-   "dst": "抱歉，我……比预期的还火大……还有什么想讨论的吗？(问过 {p} 之后)",
+   "src": "Sorry about that, I got... Madder, than expected... Anything else you'd like to discuss?",
+   "dst": "抱歉，我……比预期的还火大……还有什么想讨论的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -113818,14 +113958,14 @@
    "source": "wiki"
   },
   "Off the Rails#085": {
-   "src": "I chose this place because it was the cheapest ticket... I had to exchange so many materials for those weird emeralds they use here.",
-   "dst": "我选这里是因为票最便宜……我得拿好多材料去换这里用的那些奇怪的绿宝石。",
+   "src": "I chose the {p} because it was the cheapest ticket... I had to exchange so many materials for those weird emeralds they use here.",
+   "dst": "我选 {p} 是因为票最便宜……我得拿好多材料去换这里用的那些奇怪的绿宝石。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 3",
    "speaker": "Flinn",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#086": {
    "src": "I had high expectations, thought seeing another part of the province might restore my hopes... It didn't.",
@@ -113838,8 +113978,8 @@
    "source": "wiki"
   },
   "Off the Rails#087": {
-   "src": "I hoped, at least, that the Festival here would be cool, and instead, it was a complete disaster. On top of that, I missed the one back home...",
-   "dst": "我本来至少希望这里的庆典会很酷，结果却是一场彻底的灾难。更糟的是，我还错过了家乡的那场……",
+   "src": "I didn't even want to witness whatever mess the Festival there was going to end up being. It couldn't possibly compensate for missing the one back home.",
+   "dst": "那里的庆典最后会搞成什么烂摊子，我连看都不想看。反正再怎么样，也弥补不了错过家乡那场的遗憾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114228,8 +114368,8 @@
    "source": "wiki"
   },
   "Off the Rails#127": {
-   "src": "Enough about that though. What would you like to talk about? (After Telati's introduction)",
-   "dst": "不过那个就不说了。您想聊什么？(Telati 自我介绍之后)",
+   "src": "Enough about that though. What would you like to talk about?",
+   "dst": "不过那个就不说了。您想聊什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114238,8 +114378,8 @@
    "source": "wiki"
   },
   "Off the Rails#128": {
-   "src": "...Anything else to say? (When the dialogue options reappear)",
-   "dst": "……还有什么要说的吗？(对话选项再次出现时)",
+   "src": "...Anything else to say?",
+   "dst": "……还有什么要说的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114248,8 +114388,8 @@
    "source": "wiki"
   },
   "Off the Rails#129": {
-   "src": "Anything wrong? Or do you just want to chat? (Subsequent conversations with Telati)",
-   "dst": "有什么问题吗？还是只是想聊聊？(之后与 Telati 交谈时)",
+   "src": "Anything wrong? Or do you just want to chat?",
+   "dst": "有什么问题吗？还是只是想聊聊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114258,8 +114398,8 @@
    "source": "wiki"
   },
   "Off the Rails#130": {
-   "src": "...It's okay. I can handle it... Anything else to say? (After asking about the Other staff)",
-   "dst": "……没关系。我应付得来……还有什么要说的吗？(问过其他工作人员之后)",
+   "src": "...It's okay. I can handle it... Anything else to say?",
+   "dst": "……没关系。我应付得来……还有什么要说的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114268,8 +114408,8 @@
    "source": "wiki"
   },
   "Off the Rails#131": {
-   "src": "...Whatever... Anything else to say? (After asking about Cemor)",
-   "dst": "……随便吧……还有什么要说的吗？(问过 Cemor 之后)",
+   "src": "...Whatever... Anything else to say?",
+   "dst": "……随便吧……还有什么要说的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114278,8 +114418,8 @@
    "source": "wiki"
   },
   "Off the Rails#132": {
-   "src": "...Perhaps I shouldn't have let that slip... Uhm... Anything else to say...? (After asking about his Thoughts on the train)",
-   "dst": "……也许我不该说漏嘴的……嗯……还有什么要说的吗……？(问过他对列车的看法之后)",
+   "src": "...Perhaps I shouldn't have let that slip... Uhm... Anything else to say...?",
+   "dst": "……也许我不该说漏嘴的……嗯……还有什么要说的吗……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114338,8 +114478,8 @@
    "source": "wiki"
   },
   "Off the Rails#138": {
-   "src": "For today's trip to have so many people - and such a diverse set too - is an anomaly. It's unfortunate timing, too, since Zathie's on break.",
-   "dst": "今天这趟有这么多人——而且还这么多样——真是反常。时机也不巧，因为 Zathie 在休假。",
+   "src": "For today's trip to have so many people - and such a diverse set too - is an anomaly. It's... unfortunate timing, too, since Zathie's on break.",
+   "dst": "今天这趟有这么多人——而且还这么多样——真是反常。时机也……不巧，因为 Zathie 在休假。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114458,8 +114598,8 @@
    "source": "wiki"
   },
   "Off the Rails#150": {
-   "src": "The train's like a second home to me. Maybe more of a home than my real home...",
-   "dst": "列车就像我的第二个家。也许比我真正的家更像家……",
+   "src": "The train's like a second home to me. Maybe more of a home to me than my real home...",
+   "dst": "列车就像我的第二个家。对我来说，也许比我真正的家更像家……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114638,18 +114778,18 @@
    "source": "wiki"
   },
   "Off the Rails#168": {
-   "src": "Well, I though you knew.",
+   "src": "Well, I thought you knew.",
    "dst": "嗯，我以为你知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#169": {
-   "src": "Ech... Whatever. You. Whaddaya ya want. You wanna chat? Got a problem to report? What's goin' on. (After Harvin and Maury's introduction)",
-   "dst": "呃……随便。你。你想干嘛。想聊天？有问题要报告？怎么回事。(Harvin 和 Maury 自我介绍之后)",
+   "src": "Ech... Whatever. You. Whaddaya ya want. You wanna chat? Got a problem to report? What's goin' on.",
+   "dst": "呃……随便。你。你想干嘛。想聊天？有问题要报告？怎么回事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114658,8 +114798,8 @@
    "source": "wiki"
   },
   "Off the Rails#170": {
-   "src": "Got anythin' else you wanna say? (When the dialogue options reappear)",
-   "dst": "还有别的想说吗？(对话选项再次出现时)",
+   "src": "Got anythin' else you wanna say?",
+   "dst": "还有别的想说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114668,8 +114808,8 @@
    "source": "wiki"
   },
   "Off the Rails#171": {
-   "src": "Ugh, what is it now? (Subsequent conversations with Harvin and Maury)",
-   "dst": "呃，又怎么了？(之后与 Harvin 和 Maury 交谈时)",
+   "src": "Ugh, what is it now?",
+   "dst": "呃，又怎么了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114678,8 +114818,8 @@
    "source": "wiki"
   },
   "Off the Rails#172": {
-   "src": "...We're movin' on before he says any more. Ask about somethin' else. (After asking about Whats going on)",
-   "dst": "……趁他说出更多之前我们换个话题。问点别的吧。(问过发生什么事之后)",
+   "src": "...We're movin' on before he says any more. Ask about somethin' else.",
+   "dst": "……趁他说出更多之前我们换个话题。问点别的吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114688,8 +114828,8 @@
    "source": "wiki"
   },
   "Off the Rails#173": {
-   "src": "Me too, bud, me too... Ah, right. You. Anythin' else to say? (After asking about Any stories)",
-   "dst": "我也是，老弟，我也是……啊，对。你。还有别的要说吗？(问过有没有故事之后)",
+   "src": "Me too, bud, me too... Ah, right. You. Anythin' else to say?",
+   "dst": "我也是，老弟，我也是……啊，对。你。还有别的要说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114698,8 +114838,8 @@
    "source": "wiki"
   },
   "Off the Rails#174": {
-   "src": "Talk about somethin' else instead. (After asking about the Sewage incident)",
-   "dst": "聊点别的吧。(问过污水那件事之后)",
+   "src": "Talk about somethin' else instead.",
+   "dst": "聊点别的吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115038,8 +115178,8 @@
    "source": "wiki"
   },
   "Off the Rails#213": {
-   "src": "What do you want to say? (After initial dialogue)",
-   "dst": "你想说什么？(初次对话之后)",
+   "src": "What do you want to say?",
+   "dst": "你想说什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115048,8 +115188,8 @@
    "source": "wiki"
   },
   "Off the Rails#214": {
-   "src": "Ugh... Anything else? (When the dialogue options reappear)",
-   "dst": "呃……还有别的吗？(对话选项再次出现时)",
+   "src": "Ugh... Anything else?",
+   "dst": "呃……还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115058,8 +115198,8 @@
    "source": "wiki"
   },
   "Off the Rails#216": {
-   "src": "...I have a lot of thinking to do, basically. It would be easier to do that if you left me alone... (After asking about the Military)",
-   "dst": "……基本上，我有很多事要想。你让我一个人待着会比较容易……(问过军方之后)",
+   "src": "...I have a lot of thinking to do, basically. It would be easier to do that if you left me alone...",
+   "dst": "……基本上，我有很多事要想。你让我一个人待着会比较容易……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115198,8 +115338,8 @@
    "source": "wiki"
   },
   "Off the Rails#232": {
-   "src": "...Anyway, what do you want to talk about? (After initial dialogue)",
-   "dst": "……总之，你想聊什么？(初次对话之后)",
+   "src": "...Anyway, what do you want to talk about?",
+   "dst": "……总之，你想聊什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115208,8 +115348,8 @@
    "source": "wiki"
   },
   "Off the Rails#235": {
-   "src": "...Let's move on. (After asking about the Train)",
-   "dst": "……我们换个话题吧。(问过列车之后)",
+   "src": "...Let's move on.",
+   "dst": "……我们换个话题吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115358,14 +115498,14 @@
    "source": "wiki"
   },
   "Off the Rails#250": {
-   "src": "I'm traveling to Auburn for my study project... I can't wait!",
+   "src": "I'm travelling to Auburn for my study project... I can't wait!",
    "dst": "我要去 Auburn 做研究项目……真等不及了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#251": {
    "src": "See, I'm from the Blossom House. We study biology, and one of the highlights of the course is getting to travel and do fieldwork.",
@@ -115398,8 +115538,8 @@
    "source": "wiki"
   },
   "Off the Rails#254": {
-   "src": "Goodness, I must stop myself before I bore you with one of my rants. I do that all too often. What do you actually want to talk about? (After Demma's introduction)",
-   "dst": "天哪，我得打住，免得我又滔滔不绝把你闷坏了。我太常这样了。你到底想聊什么？(Demma 自我介绍之后)",
+   "src": "Goodness, I must stop myself before I bore you with one of my rants. I do that all too often. What do you actually want to talk about?",
+   "dst": "天哪，我得打住，免得我又滔滔不绝把你闷坏了。我太常这样了。你到底想聊什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115408,8 +115548,8 @@
    "source": "wiki"
   },
   "Off the Rails#255": {
-   "src": "Got more to talk about? (Subsequent conversations with Demma)",
-   "dst": "还有别的要聊吗？(之后与 Demma 交谈时)",
+   "src": "Got more to talk about?",
+   "dst": "还有别的要聊吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115418,8 +115558,8 @@
    "source": "wiki"
   },
   "Off the Rails#256": {
-   "src": "...Let's move on. Anything else to discuss? (After asking about the University)",
-   "dst": "……我们换个话题吧。还有别的要讨论吗？(问过大学之后)",
+   "src": "...Let's move on. Anything else to discuss?",
+   "dst": "……我们换个话题吧。还有别的要讨论吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115428,8 +115568,8 @@
    "source": "wiki"
   },
   "Off the Rails#257": {
-   "src": "...Ah, sorry, I'm trailing off into tangents. Let's change topics. (After asking about the {p})",
-   "dst": "……啊，抱歉，我又扯远了。我们换个话题吧。(问过 {p} 之后)",
+   "src": "...Ah, sorry, I'm trailing off into tangents. Let's change topics.",
+   "dst": "……啊，抱歉，我又扯远了。我们换个话题吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115438,8 +115578,8 @@
    "source": "wiki"
   },
   "Off the Rails#258": {
-   "src": "Gah! I need to stop going into tangents. Sorry. Let's change topics. (After asking about Biology)",
-   "dst": "呃！我得别再扯远了。抱歉。我们换个话题吧。(问过生物学之后)",
+   "src": "Gah! I need to stop going into tangents. Sorry. Let's change topics.",
+   "dst": "呃！我得别再扯远了。抱歉。我们换个话题吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115448,8 +115588,8 @@
    "source": "wiki"
   },
   "Off the Rails#259": {
-   "src": "...Let's just... Move on to another subject. (After asking about Snails)",
-   "dst": "……我们就……换个主题吧。(问过蜗牛之后)",
+   "src": "...Let's just... Move on to another subject.",
+   "dst": "……我们就……换个主题吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -115588,7 +115728,7 @@
    "source": "wiki"
   },
   "Off the Rails#273": {
-   "src": "From a young age, I've always loved animals. so joining Blossom House at the university just made sense.",
+   "src": "From a young age, I've always loved animals, so joining Blossom House at the university just made sense.",
    "dst": "我从小就一直很爱动物，所以进大学选繁花学院是很自然的事。",
    "role": "desc",
    "kind": "dialogue",
@@ -115758,14 +115898,14 @@
    "source": "wiki"
   },
   "Off the Rails#290": {
-   "src": "...People survived by clinging onto the Gigastropods, because despite their hardy shells, they're also buoyant!",
+   "src": "...People survived by clinging onto the Gigastropods, because despite their hardy shells, they're also bouyant!",
    "dst": "……人们靠攀着 Gigastropod 活了下来，因为它们的壳虽然坚硬，却也能浮在水上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 4",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#291": {
    "src": "Speaking of the dam, isn't it fascinating that Gigastropods are so closely related to the Murex Mollusc despite the sheer cliff between them?",
@@ -115868,8 +116008,8 @@
    "source": "wiki"
   },
   "Off the Rails#301": {
-   "src": "...Anyway, is there anything you'd like to talk about? (After initial dialogue)",
-   "dst": "……总之，你有什么想聊的吗？(初次对话之后)",
+   "src": "...Anyway, is there anything you'd like to talk about?",
+   "dst": "……总之，你有什么想聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116058,8 +116198,8 @@
    "source": "wiki"
   },
   "Off the Rails#322": {
-   "src": "But enough about little old me. What do you want to talk about? (After Cemor's introduction)",
-   "dst": "不过我这点小事就不说了。你想聊什么？(Cemor 自我介绍之后)",
+   "src": "But enough about little old me. What do you want to talk about?",
+   "dst": "不过我这点小事就不说了。你想聊什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116068,8 +116208,8 @@
    "source": "wiki"
   },
   "Off the Rails#323": {
-   "src": "What is it now? (Subsequent conversations with Cemor)",
-   "dst": "又怎么了？(之后与 Cemor 交谈时)",
+   "src": "What is it now?",
+   "dst": "又怎么了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116078,8 +116218,8 @@
    "source": "wiki"
   },
   "Off the Rails#324": {
-   "src": "But let us move on from that. What else have you to discuss? (After asking about the Book)",
-   "dst": "不过这个就说到这里。你还有什么要讨论的？(问过书之后)",
+   "src": "But let us move on from that. What else have you to discuss?",
+   "dst": "不过这个就说到这里。你还有什么要讨论的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116088,8 +116228,8 @@
    "source": "wiki"
   },
   "Off the Rails#325": {
-   "src": "Let us move on. What else would you like to speak about? (After asking about the {p})",
-   "dst": "我们换个话题吧。你还想谈什么？(问过 {p} 之后)",
+   "src": "Let us move on. What else would you like to speak about?",
+   "dst": "我们换个话题吧。你还想谈什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116098,8 +116238,8 @@
    "source": "wiki"
   },
   "Off the Rails#326": {
-   "src": "Moving on. What else is there to speak of? (After asking about the {p})",
-   "dst": "换个话题。还有什么可谈的？(问过 {p} 之后)",
+   "src": "Moving on. What else is there to speak of?",
+   "dst": "换个话题。还有什么可谈的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116108,8 +116248,8 @@
    "source": "wiki"
   },
   "Off the Rails#327": {
-   "src": "...Anywho. Anything else? (After asking about the Train)",
-   "dst": "……总之。还有别的吗？(问过列车之后)",
+   "src": "...Anywho. Anything else?",
+   "dst": "……总之。还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116428,8 +116568,8 @@
    "source": "wiki"
   },
   "Off the Rails#360": {
-   "src": "Evidence? Heh, They'll believe it - ye're suspicious-lookin', and have some oddd tools on yer person. Don't think we haven't seen 'em.",
-   "dst": "证据？嘿，他们会信的——你长得就很可疑，身上还带着一些奇怪的工具。别以为我们没看到。",
+   "src": "Evidence? Heh. They'll believe it - ye're suspicious-lookin', and have some odd tools on yer person. Don't think we haven't seen 'em.",
+   "dst": "证据？嘿。他们会信的——你长得就很可疑，身上还带着一些奇怪的工具。别以为我们没看到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116838,8 +116978,8 @@
    "source": "wiki"
   },
   "Off the Rails#404": {
-   "src": "...What questions do you have? (After initial conversation)",
-   "dst": "……你有什么问题？(初次对话之后)",
+   "src": "...What questions do you have?",
+   "dst": "……你有什么问题？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116848,8 +116988,8 @@
    "source": "wiki"
   },
   "Off the Rails#405": {
-   "src": "Anything wrong? Or do you have more questions? (Subsequent conversations with Telati)",
-   "dst": "有什么问题吗？还是还有问题要问？(之后与 Telati 交谈时)",
+   "src": "Anything wrong? Or do you have more questions?",
+   "dst": "有什么问题吗？还是还有问题要问？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116858,8 +116998,8 @@
    "source": "wiki"
   },
   "Off the Rails#406": {
-   "src": "Any more questions? (After asking about what Telati saw before the murder)",
-   "dst": "还有问题吗？(问过 Telati 在谋杀前看到什么之后)",
+   "src": "Any more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -116868,8 +117008,8 @@
    "source": "wiki"
   },
   "Off the Rails#407": {
-   "src": "Anything else to say...? (After choosing any purple dialogue option)",
-   "dst": "还有什么要说的吗……？(选择任一紫色对话选项之后)",
+   "src": "Anything else to say...?",
+   "dst": "还有什么要说的吗……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117138,7 +117278,7 @@
    "source": "wiki"
   },
   "Off the Rails#435": {
-   "src": "My absent colleagu, Zathie, left a recipe book that you can use. I'm sure you can follow it better than I ever could.",
+   "src": "My absent colleague, Zathie, left a recipe book that you can use. I'm sure you can follow it better than I ever could.",
    "dst": "我那位不在的同事 Zathie 留了一本食谱，你可以照着做。我相信你一定比我更能照着做。",
    "role": "desc",
    "kind": "dialogue",
@@ -117158,8 +117298,8 @@
    "source": "wiki"
   },
   "Off the Rails#438": {
-   "src": "Ugh, what is it now? (Initial conversations with Harvin and Maury)",
-   "dst": "呃，又怎么了？(初次与 Harvin 和 Maury 交谈时)",
+   "src": "Ugh, what is it now?",
+   "dst": "呃，又怎么了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117168,8 +117308,8 @@
    "source": "wiki"
   },
   "Off the Rails#439": {
-   "src": "None of it matters now, though. Anythin' else? (After asking about What were you doing on the train)",
-   "dst": "不过现在那些都不重要了。还有别的吗？(问过你们在车上做什么之后)",
+   "src": "None of it matters now, though. Anythin' else?",
+   "dst": "不过现在那些都不重要了。还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117178,8 +117318,8 @@
    "source": "wiki"
   },
   "Off the Rails#440": {
-   "src": "Sorry, kid. Anythin' else to ask? (After asking about General Levi)",
-   "dst": "抱歉，小鬼。还有别的要问吗？(问过 Levi 将军之后)",
+   "src": "Sorry, kid. Anythin' else to ask?",
+   "dst": "抱歉，小鬼。还有别的要问吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117188,8 +117328,8 @@
    "source": "wiki"
   },
   "Off the Rails#441": {
-   "src": "Uh... Anythin' else ta say? (After asking about Where were you during the murder)",
-   "dst": "呃……还有别的要说吗？(问过谋杀发生时你们在哪之后)",
+   "src": "Uh... Anythin' else ta say?",
+   "dst": "呃……还有别的要说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117198,8 +117338,8 @@
    "source": "wiki"
   },
   "Off the Rails#442": {
-   "src": "'s'all we got, though. Any other questions? (After asking about the Passengers)",
-   "dst": "我们知道的就这些了。还有其他问题吗？(问过乘客之后)",
+   "src": "'s'all we got, though. Any other questions?",
+   "dst": "我们知道的就这些了。还有其他问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117208,8 +117348,8 @@
    "source": "wiki"
   },
   "Off the Rails#443": {
-   "src": "Anyway, Got any questions that'll actually help ya with the case? (After asking about the Deraj)",
-   "dst": "总之，有什么真的能帮你破案的问题吗？(问过 Deraj 之后)",
+   "src": "Anyway, Got any questions that'll actually help ya with the case?",
+   "dst": "总之，有什么真的能帮你破案的问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117218,8 +117358,8 @@
    "source": "wiki"
   },
   "Off the Rails#444": {
-   "src": "...anythin' else to say before ya get back to it? (After asking to make an accusation)",
-   "dst": "……回去调查之前还有别的要说吗？(要求提出指控之后)",
+   "src": "...anythin' else to say before ya get back to it?",
+   "dst": "……回去调查之前还有别的要说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117448,14 +117588,14 @@
    "source": "wiki"
   },
   "Off the Rails#467": {
-   "src": "I noticed that the one with the white shirt and red dress was weirdly quiet back when everyone was gathered around... I'm suspicious of 'em.",
+   "src": "I noticed that the one with the white shirt and red dress was weirdly quiet back when everyone was gathered around... I'm suspcious of 'em.",
    "dst": "我注意到那个穿白衬衫配红裙的，在大家围过去的时候安静得很反常……我怀疑那个人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Maury",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#468": {
    "src": "Pal, you must really be kiddin' me. Are ya really tellin' me you've lived in Fruma yer whole life, and haven't heard of Deraj?",
@@ -117548,8 +117688,8 @@
    "source": "wiki"
   },
   "Off the Rails#477": {
-   "src": "'Til then, we're not lettin' ya make an accusation. Anythin' else ta say? (Harvin and Maury's normal dialogue options reappear)",
-   "dst": "在那之前，我们不会让你提出指控。还有别的要说吗？(Harvin 和 Maury 的一般对话选项再次出现时)",
+   "src": "'Til then, we're not lettin' ya make an accusation. Anythin' else ta say?",
+   "dst": "在那之前，我们不会让你提出指控。还有别的要说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117688,8 +117828,8 @@
    "source": "wiki"
   },
   "Off the Rails#498": {
-   "src": "What do you need to know? (After initial conversation)",
-   "dst": "你需要知道什么？(初次对话之后)",
+   "src": "What do you need to know?",
+   "dst": "你需要知道什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117698,8 +117838,8 @@
    "source": "wiki"
   },
   "Off the Rails#499": {
-   "src": "What? More questions? (Subsequent conversations with Flinn)",
-   "dst": "什么？还有问题？(之后与 Flinn 交谈时)",
+   "src": "What? More questions?",
+   "dst": "什么？还有问题？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117708,8 +117848,8 @@
    "source": "wiki"
   },
   "Off the Rails#500": {
-   "src": "Any more questions? (When the dialogue options reappear)",
-   "dst": "还有问题吗？(对话选项再次出现时)",
+   "src": "Any more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117818,14 +117958,14 @@
    "source": "wiki"
   },
   "Off the Rails#511": {
-   "src": "...It wasn't you, was it..? No... No, a guilty person wouldn't react the way you did. I trust you.",
+   "src": "...It wasn't you, was it..? No... No, a guility person wouldn't react the way you did. I trust you.",
    "dst": "……不是你，对吧……？不……不，有罪的人不会像你那样反应。我相信你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#512": {
    "src": "It wasn't right of those guards to throw the blame on you like that... I'll tell you anything you need to know to figure out who really did it...",
@@ -117908,8 +118048,8 @@
    "source": "wiki"
   },
   "Off the Rails#520": {
-   "src": "So, let's get to the questionining, shall we? (After initial conversation)",
-   "dst": "那么，我们开始问问题吧？(初次对话之后)",
+   "src": "So, let's get to the questionining, shall we?",
+   "dst": "那么，我们开始问问题吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117918,8 +118058,8 @@
    "source": "wiki"
   },
   "Off the Rails#521": {
-   "src": "Got more questions? (Subsequent conversations with Demma)",
-   "dst": "还有问题吗？(之后与 Demma 交谈时)",
+   "src": "Got more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117928,8 +118068,8 @@
    "source": "wiki"
   },
   "Off the Rails#522": {
-   "src": "...That should be everything. I'm sorry I didn't catch all the details. Any more questions? (After asking about what Demma saw before the murder)",
-   "dst": "……应该就这些了。抱歉我没注意到所有细节。还有问题吗？(问过 Demma 在谋杀前看到什么之后)",
+   "src": "...That should be everything. I'm sorry I didn't catch all the details. Any more questions?",
+   "dst": "……应该就这些了。抱歉我没注意到所有细节。还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117938,8 +118078,8 @@
    "source": "wiki"
   },
   "Off the Rails#523": {
-   "src": "Well? (After asking about the Slime)",
-   "dst": "怎么样？(问过黏液之后)",
+   "src": "Well?",
+   "dst": "怎么样？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117948,8 +118088,8 @@
    "source": "wiki"
   },
   "Off the Rails#524": {
-   "src": "...Would you like to talk about anything else? (After asking about Helping with the bag)",
-   "dst": "……你还想聊别的吗？(问过帮忙整理行李之后)",
+   "src": "...Would you like to talk about anything else?",
+   "dst": "……你还想聊别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -117958,8 +118098,8 @@
    "source": "wiki"
   },
   "Off the Rails#525": {
-   "src": "...Let's just... Move on to another subject. (After asking about the Book)",
-   "dst": "……我们就……换个主题吧。(问过书之后)",
+   "src": "...Let's just... Move on to another subject.",
+   "dst": "……我们就……换个主题吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118188,24 +118328,24 @@
    "source": "wiki"
   },
   "Off the Rails#548": {
-   "src": "Think, toxins strong enough to bring down even Wooly Rhinos, in the {p}, with all its bugs? It'd be so strong!",
+   "src": "Think, toxins strong enough to bring down even Woolly Rhinos, in the {p}, with all its bugs? It'd be so strong!",
    "dst": "想想看，毒素强到连长毛犀牛都能放倒，在充满虫子的 {p} 里？那得有多强！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#549": {
-   "src": "But then, you know, there is also the argument that the Gigastropod's impenetrable shell would be useful to the Murex Mollusc, too...",
+   "src": "But then, you know, there is also the argument that the Gigastropod's impenatrable shell would be useful to the Murex Mollusc, too...",
    "dst": "不过，你知道的，也有另一种说法，认为 Gigastropod 那坚不可摧的壳对 Murex Mollusc 也会很有用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#550": {
    "src": "That's why modern researchers, like my professor and I, tend to believe that there used to be other megasnails that served as a missing link between the two.",
@@ -118238,8 +118378,8 @@
    "source": "wiki"
   },
   "Off the Rails#553": {
-   "src": "It's speculated that the similarly-large Banana Slug of the {p} may hold answers, but it's highly elusive, only living on the branches of massive trees, so...",
-   "dst": "有人推测，{p} 那种同样巨大的香蕉蛞蝓也许握有答案，但它极难寻觅，只生活在巨树的枝干上，所以……",
+   "src": "It's speculated that the similarly-large {p} Slug of the, well, {p} may hold answers, but it's highly elusive, only living on the branches of massive trees, so...",
+   "dst": "有人推测，同样巨大的 {p} 蛞蝓——嗯，就是 {p} 的那种——也许握有答案，但它极难寻觅，只生活在巨树的枝干上，所以……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118258,14 +118398,14 @@
    "source": "wiki"
   },
   "Off the Rails#555": {
-   "src": "I'd love to study the Banana Slug... It's a dream of mine, for sure. If only the {p} were not so deadly...",
-   "dst": "我好想研究香蕉蛞蝓……这绝对是我的梦想之一。要是 {p} 没那么致命就好了……",
+   "src": "I'd love to study the {p} Slug... It's a dream of mine, for sure. If only the region were not so deadly...",
+   "dst": "我好想研究 {p} 蛞蝓……这绝对是我的梦想之一。要是那个地区没那么致命就好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Demma",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#556": {
    "src": "Did you know that the {p} has huge creatures speculated to be the missing link between bird and-",
@@ -118478,8 +118618,8 @@
    "source": "wiki"
   },
   "Off the Rails#579": {
-   "src": "Well, go on, then. (After initial conversation)",
-   "dst": "嗯，那就问吧。(初次对话之后)",
+   "src": "Well, go on, then.",
+   "dst": "嗯，那就问吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118488,8 +118628,8 @@
    "source": "wiki"
   },
   "Off the Rails#580": {
-   "src": "Anything else you wanna ask about? (When the dialogue options reappear)",
-   "dst": "还有什么想问的吗？(对话选项再次出现时)",
+   "src": "Anything else you wanna ask about?",
+   "dst": "还有什么想问的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118498,8 +118638,8 @@
    "source": "wiki"
   },
   "Off the Rails#581": {
-   "src": "Got more questions? (Subsequent conversations with Malic)",
-   "dst": "还有问题吗？(之后与 Malic 交谈时)",
+   "src": "Got more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118558,14 +118698,14 @@
    "source": "wiki"
   },
   "Off the Rails#587": {
-   "src": "On the way out of the carriage, I noticed the purple guard taking a nap in one of the seats. Didn't pay attention to anything else going on in there.",
-   "dst": "离开那节车厢的时候，我注意到紫色的守卫在其中一个座位上打盹。那里其他的事我就没注意了。",
+   "src": "On the way out of the carriage, I noticed the purple guard was also taking a nap in one of the seats. Didn't pay attention to anything else going on in there.",
+   "dst": "离开那节车厢的时候，我注意到紫色的守卫也在其中一个座位上打盹。那里其他的事我就没注意了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#588": {
    "src": "When I entered the storage carriage, I encountered Demma, who was walking towards the front, and we talked for a little while. It was nice getting to chat with someone.",
@@ -118848,8 +118988,8 @@
    "source": "wiki"
   },
   "Off the Rails#616": {
-   "src": "Well, ask away, then. (After initial conversation)",
-   "dst": "嗯，那就问吧。(初次对话之后)",
+   "src": "Well, ask away, then.",
+   "dst": "嗯，那就问吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118858,8 +118998,8 @@
    "source": "wiki"
   },
   "Off the Rails#617": {
-   "src": "Got more questions? (Subsequent conversations with Maddison)",
-   "dst": "还有问题吗？(之后与 Maddison 交谈时)",
+   "src": "Got more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118868,8 +119008,8 @@
    "source": "wiki"
   },
   "Off the Rails#618": {
-   "src": "That's all I remember, sorry. (After asking about what Maddison saw before the murder)",
-   "dst": "我记得的就这些了，抱歉。(问过 Maddison 在谋杀前看到什么之后)",
+   "src": "That's all I remember, sorry.",
+   "dst": "我记得的就这些了，抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118878,8 +119018,8 @@
    "source": "wiki"
   },
   "Off the Rails#619": {
-   "src": "Anything else you'd like to discuss? (After asking about Malic)",
-   "dst": "还有什么想讨论的吗？(问过 Malic 之后)",
+   "src": "Anything else you'd like to discuss?",
+   "dst": "还有什么想讨论的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -118888,8 +119028,8 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about? (After asking about General Levi or the Crossword)",
-   "dst": "还有什么要聊的吗？(问过 Levi 将军或填字游戏之后)",
+   "src": "Anything else to talk about?",
+   "dst": "还有什么要聊的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119198,14 +119338,14 @@
    "source": "wiki"
   },
   "Off the Rails#652": {
-   "src": "As a subscriber to this paper, I'm honestly getting a little tired of the riddles that just talk about how great the province is... Some variation of this question's in like, every single issue.",
-   "dst": "身为这份报刊的订阅者，老实说，我有点受够那些只会吹捧行省有多伟大的谜语了……几乎每一期都有这题的某种变体。",
+   "src": "As a subscriber to this paper, I'm getting tired of the riddles that just talk about how great the province is... Some variation of this question's in like, every issue.",
+   "dst": "身为这份报刊的订阅者，我有点受够那些只会吹捧行省有多伟大的谜语了……几乎每一期都有这题的某种变体。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Malic",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#653": {
    "src": "Ugh.",
@@ -119458,8 +119598,8 @@
    "source": "wiki"
   },
   "Off the Rails#685": {
-   "src": "Go ahead, now. Ask away. (After initial conversation)",
-   "dst": "好了，问吧。尽管问。(初次对话之后)",
+   "src": "Go ahead, now. Ask away.",
+   "dst": "好了，问吧。尽管问。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119468,8 +119608,8 @@
    "source": "wiki"
   },
   "Off the Rails#686": {
-   "src": "What is it now? More questions? (Subsequent conversations with Cemor)",
-   "dst": "又怎么了？还有问题？(之后与 Cemor 交谈时)",
+   "src": "What is it now? More questions?",
+   "dst": "又怎么了？还有问题？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119478,8 +119618,8 @@
    "source": "wiki"
   },
   "Off the Rails#687": {
-   "src": "What else have you to ask? (After asking about what Cemor saw before the murder)",
-   "dst": "你还有什么要问的？(问过 Cemor 在谋杀前看到什么之后)",
+   "src": "What else have you to ask?",
+   "dst": "你还有什么要问的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119488,8 +119628,8 @@
    "source": "wiki"
   },
   "Off the Rails#688": {
-   "src": "But let us move on from that. Any more questions? (After asking about Constables)",
-   "dst": "不过这个就说到这里。还有问题吗？(问过警备兵之后)",
+   "src": "But let us move on from that. Any more questions?",
+   "dst": "不过这个就说到这里。还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119498,8 +119638,8 @@
    "source": "wiki"
   },
   "Off the Rails#689": {
-   "src": "Any more questions? (After asking about what Cemor is mad about)",
-   "dst": "还有问题吗？(问过 Cemor 在气什么之后)",
+   "src": "Any more questions?",
+   "dst": "还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119508,8 +119648,8 @@
    "source": "wiki"
   },
   "Off the Rails#690": {
-   "src": "Anywho, thank you for the food. Now, ask me questions if you have any, leave me to my meal otherwise. (After giving Cemor his meal)",
-   "dst": "总之，谢谢你的食物。好了，有问题就问，没有就让我好好吃饭。(把餐交给 Cemor 之后)",
+   "src": "Anywho, thank you for the food. Now, ask me questions if you have any, leave me to my meal otherwise.",
+   "dst": "总之，谢谢你的食物。好了，有问题就问，没有就让我好好吃饭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -119648,14 +119788,14 @@
    "source": "wiki"
   },
   "Off the Rails#704": {
-   "src": "...Anyway. All of this to say: Constables are no good. I am not fond of them.",
+   "src": "...Anyway. All of this is to say: Constables are no good. I am not fond of them.",
    "dst": "……总之。说了这么多，就是: 警备兵没一个好东西。我不喜欢他们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#705": {
    "src": "Ugh. It's that attendant, Telati. I asked him for a meal hours ago, and he STILL hasn't even STARTED on it!",
@@ -119678,14 +119818,14 @@
    "source": "wiki"
   },
   "Off the Rails#707": {
-   "src": "You..? You made it? He reallu had you do it for him???",
+   "src": "You..? You made it? He really had you do it for him???",
    "dst": "你……？是你做的？他真的叫你替他做？？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 7",
    "speaker": "Cemor",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#708": {
    "src": "Goodness... I'm going to be leaving a poor review of this train in the paper, and telling my friends of this disappointment...",
@@ -119698,8 +119838,8 @@
    "source": "wiki"
   },
   "Off the Rails#709": {
-   "src": "...Speaking of gossip, I thought of something I heard recently that might be useful to you...",
-   "dst": "……说到八卦，我想起最近听到的一件事，可能对你有用……",
+   "src": "...Speaking of gossip, I just thought of something I heard recently that might be useful to you...",
+   "dst": "……说到八卦，我刚想起最近听到的一件事，可能对你有用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -120428,14 +120568,14 @@
    "source": "wiki"
   },
   "Off the Rails#785": {
-   "src": "Don't tell Maury, but I felt like you deserved a small cut of the profits, Y'know, for figuring it out, and all.",
-   "dst": "别告诉 Maury，不过我觉得你该分一小份，你知道的，毕竟是你破的案嘛。",
+   "src": "Don't tell Maury, but I felt like you deserved a small cut of the profits. Y'know, for figuring it out, and all.",
+   "dst": "别告诉 Maury，不过我觉得你该分一小份。你知道的，毕竟是你破的案嘛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
    "stage": "Stage 8",
    "speaker": "Harvin",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Off the Rails#786": {
    "src": "HEY! HARVIN! Didn't I tell ya not to go and give 'em anything? Idiot!",
@@ -120486,6 +120626,1696 @@
    "stage": "Stage 8",
    "speaker": "Ticket Collector",
    "source": "wiki"
+  },
+  "Off the Rails#791": {
+   "src": "Looks like someone dropped their train ticket... You're sure they wouldn't mind if you kept it.",
+   "dst": "看来有人把车票弄丢了……你相信对方不会介意你把它留着。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#792": {
+   "src": "It's for a train to {p}! Might be worth checking out.",
+   "dst": "是去 {p} 的车票！也许值得去看看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#793": {
+   "src": "You should talk to the Ticket Collector first.",
+   "dst": "你应该先跟检票员谈谈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#794": {
+   "src": "Businessman\nI-I swear I had it right here...",
+   "dst": "Businessman\n我、我发誓我刚才还放在这里的……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "Businessman",
+   "source": "captured.json"
+  },
+  "Off the Rails#795": {
+   "src": "Ticket Collector\nMove.",
+   "dst": "Ticket Collector\n让开。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "Ticket Collector",
+   "source": "captured.json"
+  },
+  "Off the Rails#796": {
+   "src": "You might as well look around while you wait for the train to arrive.",
+   "dst": "等火车进站的时候，你不妨四处看看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#797": {
+   "src": "Alternatively, you could find somewhere to sit to pass the time.",
+   "dst": "或者，你也可以找个地方坐下来打发时间。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#798": {
+   "src": "You can check how long is left at the top of the screen.",
+   "dst": "你可以在屏幕上方查看还剩多少时间。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#799": {
+   "src": "You have a ticket, so don't you know the price? Ah, whatever- it's like, {~} Liquid Emeralds. That's a LOT.",
+   "dst": "你有票，难道不知道票价吗？啊，算了——大概是 {~} 个液态绿宝石。那可是一大笔钱。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#800": {
+   "src": "Saving up's been a real nightmare, I tell ya. What with the price of rent and food, it's hard to hold onto any money at all!",
+   "dst": "存钱真是一场噩梦，我跟你说。又是房租又是伙食，钱根本存不住！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#801": {
+   "src": "In order to afford this trip, I've been working overtime every day for the past year, and even eating less just to save on food.",
+   "dst": "为了负担这趟旅行，过去一年我每天都在加班，连饭都少吃，就为了省伙食费。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#802": {
+   "src": "I'm glad the nightmare's finally over, though. Once I'm back from this trip, I'm never doing anything like that again!",
+   "dst": "不过很高兴这场噩梦终于结束了。等这趟旅行回来，我再也不干那种事了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#803": {
+   "src": "My job? I work at a tool factory up in the north, we make stuff like nice cutlery for export to the other regions.",
+   "dst": "我的工作？我在北边一家工具厂上班，我们做一些像精致餐具之类的东西，出口到其他地区。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#804": {
+   "src": "Really, I don't get why we can't keep some for ourselves... We're the ones who put in all the work, why do THEY get rewarded for- Agh, whatever.",
+   "dst": "说真的，我不懂为什么我们不能留一点给自己……活都是我们干的，凭什么“他们”得到回报——唉，算了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#805": {
+   "src": "...Anyway. My factory's let us all take a week off. Usually we only get a day off at this time of year, since the Festival's in town, but...",
+   "dst": "……总之。我们工厂让大家放一个星期的假。通常每年这个时候我们只放一天，因为庆典来了，不过……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#806": {
+   "src": "It turns out the old steelworks next to the station most of us use to commute to work had a slag beetle infestation, so said station had to be closed. Nasty critters, them, they destroy metals.",
+   "dst": "结果车站旁边那座老炼钢厂闹了熔渣甲虫，我们大多数人上下班都坐那个站，所以那个站只好关了。那些小东西可讨厌了，专门啃坏金属。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#807": {
+   "src": "Ended up working out for me, though- it's the perfect time for me to finally put my holiday plans into action!",
+   "dst": "不过对我来说反倒是好事——正好是我终于能把度假计划付诸行动的时候！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#808": {
+   "src": "Yeah... Working overtime every day does that to ya...",
+   "dst": "是啊……每天加班就会这样……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#809": {
+   "src": "I've also been expending a lot of energy preparing for my trip... Yawn...",
+   "dst": "我为了准备这趟旅行也耗了不少精力……哈欠……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#810": {
+   "src": "Say... I could go for an energy drink. There's a vending machine in this station. Wanna come?",
+   "dst": "我说……我想来罐能量饮料。这个车站里有台自动贩卖机。要一起去吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#811": {
+   "src": "Sweet. Follow me.",
+   "dst": "太好了。跟我来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#812": {
+   "src": "Malic\nYeesh.... Do they ever clean this place?",
+   "dst": "Malic\n哎哟……他们到底有没有打扫过这地方？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#813": {
+   "src": "You hear about that new Majin PEACOCK POWER stuff they're selling in these?",
+   "dst": "你听说过这些机器里在卖的那款新的“Majin PEACOCK POWER”吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#814": {
+   "src": "Me personally? I'm sticking to Zhirao Sleep. PEACOCK POWER is too... flavorful for my tastes.",
+   "dst": "我个人？我还是喝“Zhirao Sleep”。“PEACOCK POWER”的味道对我来说太……重了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#815": {
+   "src": "...On top of that, I... Honestly, just don't really like Highlanders.",
+   "dst": "……而且，我……老实说，就是不太喜欢高地人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#816": {
+   "src": "...I mean, seriously! Every time one of them visits the Roughworks, they're always so... inconsiderate. They act like we live in filth... Like they're somehow better than us...",
+   "dst": "……我是说，真的！每次有高地人来 Roughworks，他们总是那么……不体谅人。表现得好像我们活在垃圾堆里……好像他们比我们高贵似的……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#817": {
+   "src": "And Majin is the embodiment of that. I mean, he is the Sovereign of the {p}, so, y'know... His drink doesn't really appeal to me.",
+   "dst": "而 Majin 就是这种人的化身。我是说，他是 {p} 的统领嘛，所以，你懂的……他的饮料我实在没什么兴趣。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#818": {
+   "src": "Oh, yeah. It's ridiculously expensive, too.",
+   "dst": "哦，对。而且还贵得离谱。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#819": {
+   "src": "I have high expectations for {p}. I've heard it's beautiful over there- a couple of my buddies are lucky enough to work at the Auburn Lumbermill.",
+   "dst": "我对 {p} 期望很高。听说那边很美——我有几个哥们运气好，在 Auburn 伐木场工作。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#820": {
+   "src": "I've never seen what it looks like, personally. The Wall of Xima has made sure of that. But apparently they've got beautiful trees there, trees with golden leaves...",
+   "dst": "我自己倒是从没见过那里长什么样。Xima 之墙让我们看不到。不过听说那里有很美的树，长着金色叶子的树……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#821": {
+   "src": "Sadly, I'm just slightly too late to get to see what the Queen's Festival there is like. I can't imagine it's much different to ours, though.",
+   "dst": "可惜，我刚好晚了一步，看不到那里的女王庆典是什么样子。不过我想应该跟我们这边的差不多。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#822": {
+   "src": "I bet the people there are lovely, too, just based on what I've seen from their Sovereign. Although, he is apparently a Highlander... Still! Can't be worse than our bunch.",
+   "dst": "光看他们的统领，我敢说那里的人一定也很好。虽然听说他是高地人……不管怎样！总不会比我们这边那帮人更糟。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#823": {
+   "src": "Gosh, I'm so excited to get there. This is gonna be the highlight of my life, for certain.",
+   "dst": "天哪，我好兴奋能去那里。这肯定会是我人生中最精彩的时刻。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#824": {
+   "src": "Oh yeah, right, those people. I've not talked with them, but maybe I should.",
+   "dst": "哦对，没错，那些人。我还没跟他们聊过，不过也许我该去聊聊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#825": {
+   "src": "Just judging from their attire, as well as the odds, they're probably not from around here. Probably tourists.",
+   "dst": "光看他们的穿着，再加上概率，他们大概不是本地人。多半是游客。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#826": {
+   "src": "It'd be interesting to hear from them what their regions are like... D'you think one of them might be from Auburn?",
+   "dst": "听他们讲讲自己的地区是什么样子，应该会很有意思……你觉得他们之中会有人是从 Auburn 来的吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#827": {
+   "src": "You want to hear more opinions on the soda from me? Zhirao Sleep's pretty nice, the branding feels tasteful, and just... understanding of us.",
+   "dst": "你还想听我对那汽水的看法？“Zhirao Sleep”挺不错的，品牌形象很有品位，而且就是……很理解我们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#828": {
+   "src": "Majin's is all about HIM. Just HIM. And the soda itself? It's basically just the same drink as Zhirao Sleep but with a bit more flavour. Too much, in my opinion.",
+   "dst": "Majin 那款全是关于“他”的。只有“他”。至于汽水本身？基本上就跟“Zhirao Sleep”是同一种饮料，只是味道重一点。依我看是太重了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#829": {
+   "src": "Pretty much everyone seems to feel this way about it, too, but its advertising is inescapable... It's tiring.",
+   "dst": "好像几乎每个人都这么觉得，可它的广告就是无处不在……真累人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#830": {
+   "src": "See ya in a bit!",
+   "dst": "待会儿见！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#831": {
+   "src": "Malic\nFinally...",
+   "dst": "Malic\n终于……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#832": {
+   "src": "Malic\nHm?",
+   "dst": "Malic\n嗯？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#833": {
+   "src": "Malic\nA general?!",
+   "dst": "Malic\n将军？！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 3",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#834": {
+   "src": "It's been fun talking. Come back sometime, won't you?",
+   "dst": "聊得很开心。有空再来找我，好吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#835": {
+   "src": "Oh, hi! Looking for a chat? My name's Maddison, I'm a tourist from Aelumia.",
+   "dst": "哦，嗨！想聊聊吗？我叫 Maddison，是从 Aelumia 来的游客。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#836": {
+   "src": "The {p} was... Not quite what I expected. There's quite a unique culture there, though! Did you know they cover everything with gorgeous murals?",
+   "dst": "{p}……跟我想的不太一样。不过那里的文化很独特！你知道他们把所有东西都画满了漂亮的壁画吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#837": {
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "dst": "只可惜我这趟旅行没安排好……我本来可以在两个地方看到女王庆典，现在两边都要错过了……唉，算了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#838": {
+   "src": "Thank you for the chat. See you later!",
+   "dst": "谢谢你陪我聊天。回头见！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#839": {
+   "src": "Have a good journey.",
+   "dst": "祝你旅途愉快。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#840": {
+   "src": "Oh, alright. See you around!",
+   "dst": "哦，好吧。改天见！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#841": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Malic\"",
+   "dst": "这个储物柜上贴着一张潦草的字条，写着“Malic”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#842": {
+   "src": "It's locked, but it would be rude to look at his belongings, anyway.",
+   "dst": "柜子锁着，不过翻看他的东西也太没礼貌了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#843": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"{u}\"",
+   "dst": "这个储物柜上贴着一张潦草的字条，写着“{u}”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#844": {
+   "src": "...Telati did not mention that you had a locker when you were boarding the train, though he seemed in a hurry, so perhaps he forgot.",
+   "dst": "……你上车的时候，Telati 没提到你有储物柜，不过他当时好像很匆忙，也许是忘了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#845": {
+   "src": "...he also forgot to give you your key, so you couldn't use it even if you wanted to.",
+   "dst": "……他也忘了给你钥匙，所以就算你想用也用不了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#846": {
+   "src": "It's locked, but it would be rude to look at her belongings, anyway.",
+   "dst": "柜子锁着，不过翻看她的东西也太没礼貌了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#847": {
+   "src": "This locker doesn't seem to belong to anyone, but it's locked anyway.",
+   "dst": "这个储物柜好像不属于任何人，不过还是锁着。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#848": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Maddison\"",
+   "dst": "这个储物柜上贴着一张潦草的字条，写着“Maddison”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#849": {
+   "src": "It's locked, but it would be rude to look at their belongings, anyway.",
+   "dst": "柜子锁着，不过翻看对方的东西也太没礼貌了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#850": {
+   "src": "Yeah, you get outta here.",
+   "dst": "对，你给我滚。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#851": {
+   "src": "Have a good trip!",
+   "dst": "祝您旅途愉快！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Telati",
+   "source": "captured.json"
+  },
+  "Off the Rails#852": {
+   "src": "Would you like to take a nap now? If you do this, you may miss some interactions!",
+   "dst": "要现在小睡一下吗？这样做的话，你可能会错过一些互动！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#853": {
+   "src": "It's your seat.",
+   "dst": "这是你的座位。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#854": {
+   "src": "Once you're done exploring the train, you should take a nap here.",
+   "dst": "探索完列车后，你应该在这里小睡一下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#855": {
+   "src": "The train's pretty comfortable. You could get used to this as a mode of transport.",
+   "dst": "这列车挺舒服的。你可能会习惯这种交通方式。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#856": {
+   "src": "And to think, if that businessman back in {p} had not been such a jerk to you, you wouldn't be here now...",
+   "dst": "想想看，要不是 {p} 那个商人对你那么混蛋，你现在也不会在这里……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#857": {
+   "src": "It was all worth it, even if just to see that frustrated look on his face...",
+   "dst": "就算只是为了看他脸上那副气急败坏的表情，一切也都值了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#858": {
+   "src": "... hey ... something wrong? ...",
+   "dst": "……喂……出什么事了？……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#859": {
+   "src": "... oh no ... dead? ...",
+   "dst": "……哦不……死了？……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#860": {
+   "src": "Something's wrong. You should go investigate.",
+   "dst": "出事了。你该去调查一下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#861": {
+   "src": "It sounded like they were headed towards the back of the train.",
+   "dst": "听起来他们是往列车后面去了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#862": {
+   "src": "Cemor\n...Oh dear.",
+   "dst": "Cemor\n……天哪。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#863": {
+   "src": "Demma\n...Hm.",
+   "dst": "Demma\n……嗯。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#864": {
+   "src": "Telati\nSigh.",
+   "dst": "Telati\n唉。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Telati",
+   "source": "captured.json"
+  },
+  "Off the Rails#867": {
+   "src": "Maddison\n...Oh... Oh no...",
+   "dst": "Maddison\n……哦……哦不……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#868": {
+   "src": "Malic\n...Yikes.",
+   "dst": "Malic\n……我的天。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#869": {
+   "src": "Whenever you find potentially relevant info, it will be automatically recorded in the notebook, for you to check later.",
+   "dst": "每当你发现可能相关的信息，都会自动记录在笔记本里，方便你之后查看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#870": {
+   "src": "{#} You should inspect the crime scene first.",
+   "dst": "{#} 你应该先检查犯罪现场。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#871": {
+   "src": "Text highlighted in yellow indicates case-relevant information, which will be recorded in your notebook.",
+   "dst": "以黄色标出的文字表示与案件相关的信息，会记录在你的笔记本里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#872": {
+   "src": "What would you like to inspect first?",
+   "dst": "你想先检查什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#873": {
+   "src": "The knife is lodged deep in her neck. It seems to be the only wound present on her body.",
+   "dst": "刀深深插在她的脖子上。这似乎是她身上唯一的伤口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#874": {
+   "src": "You pull out the knife. It seems to be of a high quality.",
+   "dst": "你拔出了刀。这把刀看起来质量很好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#875": {
+   "src": "Some kind of purple goo appears to be slathered on the blade, though not much remains, as it has been washed away by blood.",
+   "dst": "刀刃上似乎涂着某种紫色的黏液，不过已经被血冲掉了大半，所剩不多。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#876": {
+   "src": "What would you like to inspect next?",
+   "dst": "接下来你想检查什么？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#877": {
+   "src": "Though it seems that the victim did not struggle, there is blood all over the room...",
+   "dst": "虽然受害者似乎没有挣扎，但整个房间到处都是血……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#878": {
+   "src": "Could it be possible the body was moved?",
+   "dst": "尸体有没有可能被移动过？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#879": {
+   "src": "You check her pockets...",
+   "dst": "你检查了她的口袋……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#880": {
+   "src": "From them you pull a card. It reads:",
+   "dst": "你从里面掏出一张卡片。上面写着：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#881": {
+   "src": "\"TRAIN PASS: GENERAL OF THE PROVINCIAL GUARD\"",
+   "dst": "“列车通行证：行省卫队将军”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#882": {
+   "src": "\"Possession of this pass entitles its bearer to a train ride anywhere they request, free of charge, by Her Majesty's orders.\"",
+   "dst": "“持有此通行证者，奉女王陛下之命，可免费搭乘列车前往其要求的任何地点。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#884": {
+   "src": "\"Rejection of such a request is considered obstruction of the Crown's will, and a serious crime.\"",
+   "dst": "“拒绝此类要求即视为妨碍王室旨意，属严重罪行。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#883": {
+   "src": "Seems you've inspected everything now. Time to speak to the guards.",
+   "dst": "看来你已经检查完所有东西了。该去跟守卫谈谈了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#885": {
+   "src": "It seems that these rooms are all connected by vents... It's possible the murderer could have used them to travel between rooms.",
+   "dst": "看来这些房间都由通风管道相连……凶手有可能利用它们在房间之间移动。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#886": {
+   "src": "So our chat's over then? Great, now I have no reason to procrastinate. Ha.",
+   "dst": "所以我们聊完了？好极了，现在我没理由再拖延了。哈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#887": {
+   "src": "The sign says \"Staff Only\".",
+   "dst": "牌子上写着“仅限员工”。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#888": {
+   "src": "The door is locked, but you'd better not break the rules, anyway.",
+   "dst": "门锁着，不过你最好还是别违反规定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#889": {
+   "src": "The sign says \"Bathroom\".",
+   "dst": "牌子上写着“厕所”。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#890": {
+   "src": "Open the door?",
+   "dst": "要开门吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#891": {
+   "src": "You didn't need the bathroom.",
+   "dst": "你并不需要上厕所。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#892": {
+   "src": "The sign says \"Private Cabin {~}\".",
+   "dst": "牌子上写着“私人包厢 {~}”。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#893": {
+   "src": "Nothing more to see here. You can check your findings in the notebook.",
+   "dst": "这里没什么好看的了。你可以在笔记本里查看你的发现。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#894": {
+   "src": "The sign says \"Kitchen, Staff Only\".",
+   "dst": "牌子上写着“厨房，仅限员工”。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#895": {
+   "src": "The door does not appear to be locked, but it'd be best not to break the rules.",
+   "dst": "门似乎没锁，不过最好还是别违反规定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#896": {
+   "src": "Have a good journey, and good luck.",
+   "dst": "祝你旅途愉快，也祝你好运。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Cemor",
+   "source": "captured.json"
+  },
+  "Off the Rails#899": {
+   "src": "Our most excellent\nruler.",
+   "dst": "我们最卓越的\n统治者。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#900": {
+   "src": "{#}/{#} Click here to exit",
+   "dst": "{#}/{#} 点击这里退出",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#901": {
+   "src": "The cool soldiers\nwith the grey helmets.",
+   "dst": "戴着灰色头盔的\n酷炫士兵。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#902": {
+   "src": "--- do attitude.",
+   "dst": "--- 的态度。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#903": {
+   "src": "Our District's unique\nmix of industry\nand tree.",
+   "dst": "本区独有的\n工业与树木\n交融之景。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#904": {
+   "src": "Earning money takes a\nlot of -----.",
+   "dst": "赚钱需要\n大量的 -----。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#905": {
+   "src": "Agents of the vile\nforce that seeks to\ndestroy our Province.",
+   "dst": "妄图摧毁我们行省的\n邪恶势力\n派出的爪牙。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#906": {
+   "src": "A state of great\nsadness, rhyming with\nthe next day.",
+   "dst": "极度悲伤的状态，\n与“第二天”\n押韵。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#907": {
+   "src": "It is illegal to\ncreate this on the\nproperty of others.\nStop.",
+   "dst": "在他人财产上\n创作这个\n是违法的。\n住手。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#908": {
+   "src": "It's easy to get\n---- in a region as\ndense as ours.",
+   "dst": "在我们这样拥挤的地区，\n人很容易\n----。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#909": {
+   "src": "Yearly celebration\nhappening this week!",
+   "dst": "一年一度的庆典\n本周举行！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#910": {
+   "src": "Hauling heavy items\nshould be done by\ns-----l people.",
+   "dst": "搬运重物\n应该交给\ns-----l 的人。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#911": {
+   "src": "The Sovereign of\n{p}",
+   "dst": "{p}\n的统领",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#912": {
+   "src": "If everything is all\njumbled up, you might\nwant to ---- it.",
+   "dst": "如果一切都\n乱成一团，你也许\n该----一下。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#913": {
+   "src": "A word describing our\nProvince, pronounced the\nsame as something you\ndo to cheese.",
+   "dst": "形容我们行省的一个词，\n发音与你\n对奶酪做的某件事\n相同。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#914": {
+   "src": "Best Sovereign\nand maker of the best\ndrink, available in\nany vending machine!",
+   "dst": "最棒的统领，\n也是最棒饮料的创造者，\n任何自动贩卖机\n都买得到！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#915": {
+   "src": "A workforce of\n---- proportions.",
+   "dst": "规模----的\n劳动大军。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#916": {
+   "src": "A word to describe a\nlong-lasting state of\nunconsciousness.",
+   "dst": "用来形容\n长时间失去意识\n状态的词。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#917": {
+   "src": "Your patriotic duty\nfor our Province.",
+   "dst": "你对我们行省的\n爱国义务。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#918": {
+   "src": "Your reward for\nyour efforts.",
+   "dst": "你努力的\n回报。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#919": {
+   "src": "Common crop taking\nlittle skill to harvest.",
+   "dst": "常见作物，\n收割不需要什么技巧。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#920": {
+   "src": "Her Majesty promises to\nimprove the accessibility\nof drinkable -----.",
+   "dst": "女王陛下承诺\n改善可饮用 ----- 的\n取得途径。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#921": {
+   "src": "Oh, alright. I wish you luck with the case!",
+   "dst": "哦，好吧。祝你破案顺利！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Maddison",
+   "source": "captured.json"
+  },
+  "Off the Rails#922": {
+   "src": "Good luck finding that murderer!",
+   "dst": "祝你顺利找到那个凶手！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 6",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#923": {
+   "src": "...Anything else you wanna ask about?",
+   "dst": "……还有什么想问的吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Malic",
+   "source": "wiki"
+  },
+  "Off the Rails#924": {
+   "src": "Dang, shame I'll be out of town for that.",
+   "dst": "可恶，可惜那时候我不在城里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Malic",
+   "source": "captured.json"
+  },
+  "Off the Rails#925": {
+   "src": "Are you sure you want to leave the minigame? If you do, your progress will be lost!",
+   "dst": "确定要离开小游戏吗？离开的话，你的进度会丢失！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#926": {
+   "src": "Remarkably, there's a perfectly-prepared platter of whole roast Grookiva on the kitchen counter, still warm, perfect for consumption.",
+   "dst": "令人惊讶的是，厨房台面上竟有一盘做得恰到好处的整只烤 Grookiva，还热乎着，正适合享用。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#927": {
+   "src": "You accept this wonderful blessing from the gods. This will do nicely. Serve it to Cemor.",
+   "dst": "你接受了这份来自众神的美妙恩赐。这样就行了。把它端给 Cemor。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#928": {
+   "src": "The man in the canteen carriage came through here and took a while to come back. Not sure why, though I think it likely he was in the bathroom at the back of the train.",
+   "dst": "餐车那位先生从这里经过，过了好一阵子才回来。不知道为什么，不过我想他很可能是去了列车后面的厕所。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#929": {
+   "src": "Good luck with the case.",
+   "dst": "祝你破案顺利。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Demma",
+   "source": "captured.json"
+  },
+  "Off the Rails#930": {
+   "src": "{#} Click here to exit",
+   "dst": "{#} 点击这里退出",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#931": {
+   "src": "\"The Murex Mollusc is a relative of the Gigastropod native to the {p}.\"",
+   "dst": "“Murex Mollusc 是 Gigastropod 的近亲，原生于 {p}。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#932": {
+   "src": "\"Unlike the herbivorous Gigastropod, the Murex Mollusc is a carnivore that hunts for food. From its shell, it can fire toxic darts to aid in this task.\"",
+   "dst": "“与草食性的 Gigastropod 不同，Murex Mollusc 是会主动猎食的肉食动物。它能从壳中射出毒镖来辅助狩猎。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#933": {
+   "src": "\"Due to the size of some of the {p}' creatures, the toxin in these darts is extremely potent, to the point where it is often lethal to humans.\"",
+   "dst": "“由于 {p} 的部分生物体型庞大，这些毒镖中的毒素极为强烈，对人类往往是致命的。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#934": {
+   "src": "\"This toxin is also known to incapacitate and paralyse those affected by it, a property which has made it desirable to crooks and murderers.\"",
+   "dst": "“已知这种毒素也会使中毒者失去行动能力、全身瘫痪，这项特性让它受到恶棍和杀人犯的青睐。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#935": {
+   "src": "\"However, it has almost never been used in crime, as it is extremely difficult to collect from the Mollusc's fragile darts, which break on impact.\"",
+   "dst": "“然而，它几乎从未被用于犯罪，因为 Mollusc 的毒镖十分脆弱，一碰就碎，极难从中采集毒素。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#936": {
+   "src": "\"It is known, however, that the slime trail left behind by Murex Molluscs contains traces of this toxin.\"",
+   "dst": "“不过已知 Murex Mollusc 留下的黏液痕迹中含有微量这种毒素。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#937": {
+   "src": "\"Raids on black markets have found containers of this slime, though the difficulty involved in collecting it has led to a high price.\"",
+   "dst": "“在对黑市的突袭中曾查获装有这种黏液的容器，不过由于采集困难，其价格居高不下。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#938": {
+   "src": "\"As such, fortunately, few have chosen to use it to these ends.\"",
+   "dst": "“因此，所幸很少有人选择用它来达到这种目的。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#939": {
+   "src": "There's also an illustration of Murex Mollusc slime. It seems to match what you found on the blade perfectly. This must be it!",
+   "dst": "书上还有一幅 Murex Mollusc 黏液的插图。它看起来跟你在刀刃上发现的完全吻合。一定就是它！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#940": {
+   "src": "It's a key. Engraved on it is the word \"MASTER\". This must be Telati's missing key!",
+   "dst": "这是一把钥匙。上面刻着“万能”二字。这一定就是 Telati 丢失的那把钥匙！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#941": {
+   "src": "You slip it into your pocket. You can now access locked rooms.",
+   "dst": "你把它塞进口袋。现在你可以进入上锁的房间了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#942": {
+   "src": "You're sure you can break that rule for the sake of the case, though. Open the door?",
+   "dst": "不过为了破案，你相信打破一次规定也无妨。要开门吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#943": {
+   "src": "It's a book with a knife on the cover, with no title to be seen. You try to read.",
+   "dst": "这是一本封面上画着刀的书，看不到书名。你试着读读看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#944": {
+   "src": "...Almost all of the pages are glued together, and a knife-shaped compartment is carved into them.",
+   "dst": "……几乎所有书页都被粘在一起，中间还挖出了一个刀形的暗格。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#945": {
+   "src": "This must be how the murderer smuggled the weapon onto the train!",
+   "dst": "凶手一定就是这样把凶器偷偷带上列车的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#946": {
+   "src": "Go on, go interrogate people.",
+   "dst": "去吧，去审问别人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#947": {
+   "src": "I mean, maybe they want to ask us some questions, Maury.",
+   "dst": "我是说，也许他们想问我们一些问题，Maury。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Harvin",
+   "source": "captured.json"
+  },
+  "Off the Rails#948": {
+   "src": "Ugh. Fine. Whaddaya want?",
+   "dst": "呃。好吧。你想干嘛？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#949": {
+   "src": "Your takeaway from that... conversation... is that the General was completely unguarded.",
+   "dst": "从那段……对话……你得出的结论是：将军当时完全没人保护。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#950": {
+   "src": "Yeah, get back ta work.",
+   "dst": "对，回去干活吧你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Maury",
+   "source": "captured.json"
+  },
+  "Off the Rails#951": {
+   "src": "Then leave me alone...",
+   "dst": "那就别烦我……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "Flinn",
+   "source": "captured.json"
+  },
+  "Off the Rails#952": {
+   "src": "It seems that the cafe isn't open right now.",
+   "dst": "咖啡厅现在好像没营业。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#953": {
+   "src": "Are you sure you want to make an accusation? You will not be able to go back on this decision!",
+   "dst": "确定要提出指控吗？这个决定将无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#955": {
+   "src": "Are you sure you would like to accuse Flinn? You cannot go back on this decision!",
+   "dst": "确定要指控 Flinn 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#956": {
+   "src": "Are you sure you would like to accuse Demma? You cannot go back on this decision!",
+   "dst": "确定要指控 Demma 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#957": {
+   "src": "Are you sure you would like to accuse Telati? You cannot go back on this decision!",
+   "dst": "确定要指控 Telati 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#958": {
+   "src": "Are you sure you would like to accuse Malic? You cannot go back on this decision!",
+   "dst": "确定要指控 Malic 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#954": {
+   "src": "Are you sure you would like to accuse Cemor? You cannot go back on this decision!",
+   "dst": "确定要指控 Cemor 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#959": {
+   "src": "Are you sure you would like to accuse Maddison? You cannot go back on this decision!",
+   "dst": "确定要指控 Maddison 吗？这个决定无法撤回！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#960": {
+   "src": "...Looks like that's all- Huh?",
+   "dst": "……看来就这些了——咦？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#961": {
+   "src": "Cemor\n...Soon you'll all see!",
+   "dst": "Cemor\n……很快你们就会知道了！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#962": {
+   "src": "Thank goodness he didn't stick around. After all, you wouldn't want him to see what you kept from the crime scene, would you?",
+   "dst": "谢天谢地他没留下来。毕竟，你也不想让他看到你从犯罪现场留下的东西，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Off the Rails#963": {
+   "src": "How convenient!",
+   "dst": "真方便！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
   },
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
@@ -121735,6 +123565,26 @@
    "quest": "One Thousand Meters Under",
    "stage": "",
    "speaker": "Scientist Ynnos",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "你要找的水晶是紫色的，不是蓝色的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "你大概从另一边就能看到了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "Out of my Mind#000": {
@@ -138257,6 +140107,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "如果你在看这张字条，代表我还没回来。我……睡不着。所以出去走走，清醒一下脑袋。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "如果已经是早上了，我们就在餐厅见。如果还是晚上，也许我会在那之前碰到你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "在 {p} [{~}, {~}, -{~}] 与 Hamsey 厨师会合。",
@@ -140280,6 +142160,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "这些蛋看起来几乎……毛茸茸的？最好还是别去碰它们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "这是一颗奇怪的灰色果实，摸起来又冷又干……不过不是你要找的虚空根。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "如果我要……夺回……我需要更多火力……",
@@ -141971,7 +143871,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "你这是什么态度！像样的船都得有个钟，懂吗？你觉得 Seaskipper 会没挂钟就出航吗？我想也不会！",
    "role": "desc",
    "kind": "dialogue",
@@ -182988,6 +184888,16 @@
    "speaker": "Avos Chieftain",
    "source": "captured"
   },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "说不定，它甚至比你们的腐化还要古老！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 的 {p} 附近与 Ava 会合",
@@ -183369,7 +185279,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "我不知道这个接见是怎么运作的，不过我可以试着让大家注意到我！",
    "role": "desc",
    "kind": "dialogue",
@@ -183389,7 +185299,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "如果你有情报，我会在市中心附近！",
    "role": "desc",
    "kind": "dialogue",
@@ -185749,7 +187659,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "植物，是吗？挺少见的。我很好奇。",
    "role": "desc",
    "kind": "dialogue",
@@ -186179,8 +188089,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "所以也会操作机器？真行！",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "所以 {u} 也会操作机器？真行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190139,7 +192049,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "谢谢你，{u}！我感觉好多了。你准备好了我们就继续深入。",
    "role": "desc",
    "kind": "dialogue",
@@ -190379,7 +192289,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "我在想……要是我们能想办法利用这个间歇泉呢？它看起来是休眠的，不过我觉得我们能让它重新喷发。",
    "role": "desc",
    "kind": "dialogue",
@@ -190489,8 +192399,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "我、我们成功了？……我们做到了！我们回来了！哈哈哈！我还活着！",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "我、我们成功了？……{u}，我们做到了！我们回来了！哈哈哈！我还活着！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -190529,7 +192439,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "哈，别理那边那个爱开玩笑的家伙。不过他那身装扮倒是很像样！",
    "role": "desc",
    "kind": "dialogue",
@@ -191336,6 +193246,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 采矿炸药]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -194939,8 +196859,8 @@
    "source": "captured"
   },
   "The Missing Piece#010": {
-   "src": "Throw a Bottle by  RIGHT-CLICKING to aim and then  RIGHT-CLICKING again to throw.",
-   "dst": "按 右键瞄准，再按一次 右键把瓶子扔出去。",
+   "src": "Throw a Bottle by {#} RIGHT-CLICKING to aim and then {#} RIGHT-CLICKING again to throw.",
+   "dst": "按 {#} 右键瞄准，再按一次 {#} 右键把瓶子扔出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -196489,14 +198409,14 @@
    "source": "wiki"
   },
   "The Missing Piece#165": {
-   "src": "Oh, I know! We could have a picnic underneath its canopy Doesn't that sound nice, {u}?",
-   "dst": "哦，我知道了！我们可以在它的树荫下野餐，听起来不错吧，{u}？",
+   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, {u}?",
+   "dst": "哦，我知道了！我们可以在它的树荫下野餐。听起来不错吧，{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#166": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
@@ -196546,7 +198466,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#171": {
    "src": "Nevermind. It's nothing...",
@@ -196869,8 +198789,8 @@
    "source": "wiki"
   },
   "The Missing Piece#203": {
-   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make bread here, we don't sell it.",
-   "dst": "我看起来像自动贩卖机吗？去别处吧。我们这里只做面包，不卖面包。",
+   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make the bread here, we don't sell it.",
+   "dst": "我看起来像自动贩卖机吗？去别处吧。我们这里只负责做面包，不卖面包。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -199681,8 +201601,8 @@
    "source": "wiki"
   },
   "The Missing Piece#483": {
-   "src": "What... ... what's going on?",
-   "dst": "什么…………发生什么事了？",
+   "src": "What... {u}... what's going on?",
+   "dst": "什么……{u}……发生什么事了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -200409,6 +202329,616 @@
    "stage": "Stage 54",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Missing Piece#556": {
+   "src": "I'm searching for 'the woman on the hill'. Do you happen to know her?",
+   "dst": "我在找“山丘上的女人”。你知道她吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#557": {
+   "src": "You take a sip.",
+   "dst": "你啜了一口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#558": {
+   "src": "Ha! But that's why I moved here!",
+   "dst": "哈！可我正是因为这样才搬来这里的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#559": {
+   "src": "In the living blocks you can never be alone. No time to think, only to work. No dear, it's much better up here.",
+   "dst": "住在居住楼里，你永远别想一个人清静。没时间思考，只有干活。不，亲爱的，还是这上面好多了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#560": {
+   "src": "Lived my whole childhood in one of the towers. I was born there. That was until... until... Well, I've forgotten the reason, ha!",
+   "dst": "我整个童年都住在其中一栋楼里。我就是在那里出生的。直到……直到……嗯，我忘了是什么原因了，哈！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#561": {
+   "src": "My memory isn't so good these days. It must have been twenty-five or so years ago.",
+   "dst": "我最近记性不太好。那大概是二十五年前左右的事了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#562": {
+   "src": "But I had a reason... a good one! Ha, it's funny isn't it? At the time it probably seemed like the most important thing in the world.",
+   "dst": "不过我是有原因的……一个很好的原因！哈，很好笑吧？那时候它大概看起来像是世上最重要的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#563": {
+   "src": "But now, well, I've gone and forgotten the whole thing, haven't I?",
+   "dst": "可是现在，嗯，我把整件事都忘光了，不是吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#564": {
+   "src": "In the Roughworks? My whole life, ha. I'm only fifty... fifty-two, you know. Or maybe it was fifty-three.",
+   "dst": "在 Roughworks？一辈子了，哈。我才五十……五十二岁，你知道的。也可能是五十三。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#565": {
+   "src": "... Which year is it again? I seem to have lost track.",
+   "dst": "……现在是哪一年来着？我好像记不清了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#566": {
+   "src": "So... goodness, longer than I expected. It must have been... Oh, by Her Grace! What does it matter, the years pass quicker for every one that goes.",
+   "dst": "那么……天哪，比我想的还久。那一定是……噢，女王陛下在上！有什么关系呢，日子是一年比一年过得快。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#567": {
+   "src": "How strange... I feel like I should know who this is from... and yet, I don't.",
+   "dst": "真奇怪……我觉得我应该知道这是谁寄来的……可我就是不知道。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#568": {
+   "src": "Hm. I said I wouldn't pry, but... You don't work for the post, do you? I know your type.",
+   "dst": "嗯。我说过不打探的，不过……你不是邮局的人，对吧？你这种人我见多了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#569": {
+   "src": "Ha! Why should I care?",
+   "dst": "哈！我为什么要在乎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#570": {
+   "src": "But... you have piqued my curiosity with these letters...",
+   "dst": "不过……你带来的这些信确实勾起了我的好奇心……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#571": {
+   "src": "Say, 'letter-carrier', won't you be a dearie and water my plants while I read the rest of these letters? Maybe there is something else I can glean from reading them.",
+   "dst": "我说，“送信的”，乖，亲爱的，趁我读剩下这些信的时候，帮我浇浇花好吗？也许读了之后，我还能看出点别的什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#572": {
+   "src": "I have {~} plants outside and {~} pots inside. Just be sure not to overwater them! The watering can is just outside in the garden.",
+   "dst": "我屋外有 {~} 株植物，屋里有 {~} 盆。可千万别浇太多水！浇水壶就在外面的花园里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#573": {
+   "src": "Don't be afraid to ask if you're wondering anything! I don't bite, ha!",
+   "dst": "有什么想知道的尽管问！我又不会咬人，哈！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#574": {
+   "src": "{#}{#}\n{#} Right-click to refill.",
+   "dst": "{#}{#}\n{#} 右键补水。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#575": {
+   "src": "Elise has probably finished reading those letters by now. You should return to her in the kitchen.",
+   "dst": "Elise 现在大概已经读完那些信了。你该回厨房找她。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#576": {
+   "src": "{#} Right-Click to stop.",
+   "dst": "{#} 右键停止。",
+   "role": "desc",
+   "kind": "Bossbar",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#577": {
+   "src": "Doesn't look like you're going to get anything out of this guy...",
+   "dst": "看来从这家伙身上是问不出什么了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#578": {
+   "src": "But my friend worked here, and...",
+   "dst": "可是我朋友以前在这里工作，而且……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#579": {
+   "src": "Can I at least get a look inside...?",
+   "dst": "至少能让我进去看一眼吗……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#580": {
+   "src": "In order to steal the bread, you must stay hidden.",
+   "dst": "要偷到面包，你得保持隐蔽。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#581": {
+   "src": "When close to workers, {#} SNEAK to remain hidden.",
+   "dst": "靠近工人时，按 {#} 潜行来保持隐蔽。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#582": {
+   "src": "You could knock out the workers with this...",
+   "dst": "你可以用这个把工人打晕……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#583": {
+   "src": "When close to workers, {#} LEFT-CLICK with Bottle to knock out.",
+   "dst": "靠近工人时，拿着瓶子按 {#} 左键把他们打晕。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#584": {
+   "src": "{#} Left-Click with Bottle to Knock Out",
+   "dst": "{#} 拿着瓶子左键打晕",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#585": {
+   "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
+   "dst": "把他们打晕后，按 {#} 右键搜查工人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#586": {
+   "src": "With this, you can open the grate to the pipe and progress.",
+   "dst": "有了这个，你就能打开通往管子的格栅，继续前进。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#587": {
+   "src": "Enter the pipe?",
+   "dst": "进入管子？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#588": {
+   "src": "To stay out of sight of workers, use Bottles to distract them.",
+   "dst": "为了不被工人看见，用瓶子分散他们的注意力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#589": {
+   "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
+   "dst": "输入启动代码来启动紧急停机。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#590": {
+   "src": "There's nothing worth taking.",
+   "dst": "这里没什么值得拿的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#591": {
+   "src": "The bottle is too high up to reach...",
+   "dst": "瓶子太高了，够不着……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#592": {
+   "src": "That must be the way in to the vault Elise mentioned.",
+   "dst": "那一定就是 Elise 说的金库入口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#593": {
+   "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
+   "dst": "嘿，你要钥匙的话，我放在休息室了。不过小心点！先让主管把烤炉关掉，不然你会被烤成吐司！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#594": {
+   "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
+   "dst": "一把维修钥匙。有了它，就能打开烤炉的维修入口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#595": {
+   "src": "They really ought to improve their security around here...",
+   "dst": "这里的安保真该加强一下……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#596": {
+   "src": "Deactivating oven...",
+   "dst": "正在关闭烤炉……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#597": {
+   "src": "Now, to find the Maintenance Key...",
+   "dst": "好了，接下来要找到维修钥匙……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#598": {
+   "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
+   "dst": "紧急停机代码输入成功。按下启动按钮开始执行。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#599": {
+   "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
+   "dst": "启动紧急停机后，你将有 {~} 秒的时间赶到金库。要按下按钮吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#600": {
+   "src": "Do you want to infiltrate the Bread Vault through this method?",
+   "dst": "要用这个方法潜入面包金库吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#601": {
+   "src": "Initiating EMERGENCY SHUTDOWN...",
+   "dst": "正在启动紧急停机……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#602": {
+   "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
+   "dst": "这条走廊看起来戒备森严。也许你可以走别的路。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#603": {
+   "src": "There must be a way to get to that balcony above.",
+   "dst": "一定有办法上到上面那个阳台。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#604": {
+   "src": "Switch between selected beams using the switch button.",
+   "dst": "用切换按钮在选中的横梁之间切换。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#605": {
+   "src": "They're having a discussion you can just barely make out...",
+   "dst": "他们在交谈，你勉强能听清……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#606": {
+   "src": "Finally... The bread you've been looking for.",
+   "dst": "终于……这就是你一直在找的面包。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#607": {
+   "src": "→ Backward",
+   "dst": "→ 后退",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#608": {
+   "src": "↓ Down",
+   "dst": "↓ 向下",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#609": {
+   "src": "⭯ Rotate",
+   "dst": "↺ 旋转",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#610": {
+   "src": "↩ Switch",
+   "dst": "↩ 切换",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#611": {
+   "src": "Guard\nOh well...",
+   "dst": "Guard\n唉，算了……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "Guard",
+   "source": "captured.json"
+  },
+  "The Missing Piece#612": {
+   "src": "Inspector\nOpen up!",
+   "dst": "Inspector\n开门！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "Inspector",
+   "source": "captured.json"
+  },
+  "The Missing Piece#613": {
+   "src": "It seems Elise has visitors...",
+   "dst": "看来 Elise 有客人了……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#614": {
+   "src": "Confront the inspection.",
+   "dst": "与检查人员对质。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#615": {
+   "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
+   "dst": "哈……嗯，罪状上再添一条又何妨？看来我们成了真正的亡命之徒了，不是吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 37",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#616": {
+   "src": "Pick up Elise at [-{~}, {~}, -{~}]",
+   "dst": "到 [-{~}, {~}, -{~}] 抱起 Elise",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 51",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Olmic Rune#000": {
    "src": "It has no fuel left, maybe you can start it again?",
@@ -202037,7 +204567,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "我们继续。气！你们在呼吸它，我们被它包围着，可你们还不知道它是怎么回事，所以注意听。",
    "role": "desc",
    "kind": "dialogue",
@@ -202047,7 +204577,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "气是自由的元素！速度、风与敏捷。如果你敏捷练得好，攻击就会像直接从你身上穿过去一样！",
    "role": "desc",
    "kind": "dialogue",
@@ -202057,7 +204587,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "不过更重要的是，因为风无所不在，它是世上用途最广的魔法之一。大家用它的方式五花八门。",
    "role": "desc",
    "kind": "dialogue",
@@ -202067,7 +204597,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "在 Gavel 那边，Bantisu 风僧已经能借着风延伸视野了！他们用它来引导在那边峡谷里迷路的人。",
    "role": "desc",
    "kind": "dialogue",
@@ -202077,7 +204607,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "很多有翅膀的生物都跟风有关，但不是全部。有些魔法使用者直接就浮起来了！那不是很棒吗，嗯？",
    "role": "desc",
    "kind": "dialogue",
@@ -202087,7 +204617,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "因为形体很虚，灵魂和幽灵也常常跟风魔法有关。让你怀疑能不能直接把鬼吹出窗外！",
    "role": "desc",
    "kind": "dialogue",
@@ -202107,7 +204637,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "现在来进行实作测验！是时候让你们活动活动筋骨了！你们要跑一趟我设计的障碍赛道，不过有个小花样。",
    "role": "desc",
    "kind": "dialogue",
@@ -202117,7 +204647,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "大家都到桌子这边来！你们得带着这根羽毛才能过关。它能帮你跳得更高！",
    "role": "desc",
    "kind": "dialogue",
@@ -202127,7 +204657,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "目标是拿到我放在障碍赛道里的三颗水晶球。找到之后，带回来给我。",
    "role": "desc",
    "kind": "dialogue",
@@ -202137,7 +204667,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "赛道就在我后面。赶紧的！",
    "role": "desc",
    "kind": "dialogue",
@@ -213538,6 +216068,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 的 Pishlas 与 Maripe 交谈。",
@@ -214269,8 +216809,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "总之，出发去把消息传出去吧！不知道去哪找的话，就看看内容手册！要是把我的笔记弄丢了，可以回来，我再帮你抄一份。",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
+   "dst": "总之，出发去把消息传出去吧！不知道去哪找的话，就看看我的笔记！要是把我的笔记弄丢了，可以回来，我再帮你抄一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -214379,7 +216919,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "我对小时候去那里只有很模糊的记忆，看到那地方荒废之后，我实在想象不出它原来的样子。",
    "role": "desc",
    "kind": "dialogue",
@@ -214649,7 +217189,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "家里的事当然比泡热水澡重要，不过……我得分他一些茶叶，下次帮他买张票。他值得免费泡一次。",
    "role": "desc",
    "kind": "dialogue",
@@ -214789,7 +217329,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "这里真的就跟我记忆中的一样。大家聚在一起放松，想聊什么就聊什么，就这样让烦恼消失……",
    "role": "desc",
    "kind": "dialogue",
@@ -214809,7 +217349,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "这种感觉……像是卸下了心头的重担，同时也知道前面有新的任务在等我——维护这个地方。维护 Pishlas。这……让人神清气爽，我想。",
    "role": "desc",
    "kind": "dialogue",
@@ -214839,7 +217379,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "……哦天啊，我答应过自己不哭的……可、可我还是哭了。哈哈……天哪，忙完这一切我好累。好累好累……但是。但是是那种好的累，你懂吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -225382,6 +227922,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} 阀门把手]",
@@ -235665,7 +238215,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "我们收到的水越来越少。有些慷慨的人一直在分享，但那也只能帮到一定程度。这里一杯那里一杯，救不活我可怜的花园。",
    "role": "desc",
    "kind": "dialogue",
@@ -236145,8 +238695,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "原来这就是你的计划！来这里搞破坏……想给自己偷水？还是想造成破坏？引发洪水？",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "原来这就是你的计划！来这里破坏水坝……想给自己偷水？还是想造成破坏？引发洪水？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",

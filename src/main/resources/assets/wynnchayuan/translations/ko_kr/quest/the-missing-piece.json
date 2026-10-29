@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Missing Piece",
-  "count": 556,
-  "translated": 556,
+  "count": 617,
+  "translated": 617,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -107,8 +107,8 @@
    "source": "captured"
   },
   "The Missing Piece#010": {
-   "src": "Throw a Bottle by  RIGHT-CLICKING to aim and then  RIGHT-CLICKING again to throw.",
-   "dst": "병을 던지려면  우클릭으로 조준한 뒤  다시 우클릭하세요.",
+   "src": "Throw a Bottle by {#} RIGHT-CLICKING to aim and then {#} RIGHT-CLICKING again to throw.",
+   "dst": "병을 던지려면 {#} 우클릭으로 조준한 뒤 {#} 다시 우클릭하세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1657,14 +1657,14 @@
    "source": "wiki"
   },
   "The Missing Piece#165": {
-   "src": "Oh, I know! We could have a picnic underneath its canopy Doesn't that sound nice, {u}?",
+   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, {u}?",
    "dst": "아, 알았다! 나무 그늘 아래서 소풍을 하면 되겠다. 좋지 않아, {u}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#166": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
@@ -1714,7 +1714,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#171": {
    "src": "Nevermind. It's nothing...",
@@ -2037,7 +2037,7 @@
    "source": "wiki"
   },
   "The Missing Piece#203": {
-   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make bread here, we don't sell it.",
+   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make the bread here, we don't sell it.",
    "dst": "내가 자판기로 보이나? 딴 데 가 봐. 여긴 빵을 만들기만 하지, 팔진 않아.",
    "role": "desc",
    "kind": "dialogue",
@@ -4849,8 +4849,8 @@
    "source": "wiki"
   },
   "The Missing Piece#483": {
-   "src": "What... ... what's going on?",
-   "dst": "뭐... ... 무슨 일이야?",
+   "src": "What... {u}... what's going on?",
+   "dst": "뭐... {u}... 무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5577,6 +5577,616 @@
    "stage": "Stage 54",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Missing Piece#556": {
+   "src": "I'm searching for 'the woman on the hill'. Do you happen to know her?",
+   "dst": "'언덕 위의 여인'을 찾고 있어. 혹시 그 사람 알아?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#557": {
+   "src": "You take a sip.",
+   "dst": "차를 한 모금 마신다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#558": {
+   "src": "Ha! But that's why I moved here!",
+   "dst": "하! 그래서 여기로 이사 온 거란다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#559": {
+   "src": "In the living blocks you can never be alone. No time to think, only to work. No dear, it's much better up here.",
+   "dst": "거주 구역에선 절대 혼자 있을 수가 없어. 생각할 틈은 없고, 일할 시간뿐이지. 아니, 얘야, 여기 위가 훨씬 나아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#560": {
+   "src": "Lived my whole childhood in one of the towers. I was born there. That was until... until... Well, I've forgotten the reason, ha!",
+   "dst": "어린 시절 내내 저 탑 중 하나에서 살았어. 거기서 태어났지. 그러다... 그러다... 음, 이유는 잊어버렸네, 하!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#561": {
+   "src": "My memory isn't so good these days. It must have been twenty-five or so years ago.",
+   "dst": "요즘 기억력이 영 좋지 않구나. 25년쯤 전이었을 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#562": {
+   "src": "But I had a reason... a good one! Ha, it's funny isn't it? At the time it probably seemed like the most important thing in the world.",
+   "dst": "그래도 이유가 있었지... 그럴듯한 이유가! 하, 우습지 않니? 그땐 그게 세상에서 제일 중요한 일 같았을 텐데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#563": {
+   "src": "But now, well, I've gone and forgotten the whole thing, haven't I?",
+   "dst": "그런데 지금은, 뭐, 몽땅 잊어버리고 말았잖니?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#564": {
+   "src": "In the Roughworks? My whole life, ha. I'm only fifty... fifty-two, you know. Or maybe it was fifty-three.",
+   "dst": "Roughworks에서? 평생이지, 하. 난 아직 쉰... 쉰둘밖에 안 됐어. 아니면 쉰셋이었나.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#565": {
+   "src": "... Which year is it again? I seem to have lost track.",
+   "dst": "... 올해가 몇 년이었더라? 날짜 감각을 잃어버렸나 봐.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#566": {
+   "src": "So... goodness, longer than I expected. It must have been... Oh, by Her Grace! What does it matter, the years pass quicker for every one that goes.",
+   "dst": "그럼... 세상에, 생각보다 오래됐구나. 아마... 아이고, 여왕 폐하시여! 그게 무슨 상관이니, 해가 갈수록 세월은 더 빨리 흐르는걸.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#567": {
+   "src": "How strange... I feel like I should know who this is from... and yet, I don't.",
+   "dst": "이상하네... 누가 보낸 건지 알아야 할 것 같은데... 모르겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#568": {
+   "src": "Hm. I said I wouldn't pry, but... You don't work for the post, do you? I know your type.",
+   "dst": "흠. 캐묻지 않겠다고 했지만... 너 우체국에서 일하는 거 아니지? 너 같은 사람은 잘 알아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#569": {
+   "src": "Ha! Why should I care?",
+   "dst": "하! 내가 그걸 왜 신경 쓰겠니?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#570": {
+   "src": "But... you have piqued my curiosity with these letters...",
+   "dst": "그래도... 이 편지들 덕에 호기심이 생기긴 했구나...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#571": {
+   "src": "Say, 'letter-carrier', won't you be a dearie and water my plants while I read the rest of these letters? Maybe there is something else I can glean from reading them.",
+   "dst": "얘, '배달부 양반', 내가 나머지 편지를 읽는 동안 착하게 식물에 물 좀 줄래? 읽다 보면 뭔가 더 알아낼 수 있을지도 모르니까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#572": {
+   "src": "I have {~} plants outside and {~} pots inside. Just be sure not to overwater them! The watering can is just outside in the garden.",
+   "dst": "밖에 식물이 {~}그루, 안에 화분이 {~}개 있어. 물을 너무 많이 주지만 않게 조심하렴! 물뿌리개는 바로 밖 정원에 있단다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#573": {
+   "src": "Don't be afraid to ask if you're wondering anything! I don't bite, ha!",
+   "dst": "궁금한 게 있으면 겁내지 말고 물어보렴! 안 잡아먹어, 하!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#574": {
+   "src": "{#}{#}\n{#} Right-click to refill.",
+   "dst": "{#}{#}\n{#} 우클릭으로 다시 채우기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#575": {
+   "src": "Elise has probably finished reading those letters by now. You should return to her in the kitchen.",
+   "dst": "Elise는 지금쯤 편지를 다 읽었을 것이다. 부엌에 있는 그녀에게 돌아가는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#576": {
+   "src": "{#} Right-Click to stop.",
+   "dst": "{#} 우클릭으로 그만두기",
+   "role": "desc",
+   "kind": "Bossbar",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#577": {
+   "src": "Doesn't look like you're going to get anything out of this guy...",
+   "dst": "이 남자한테선 아무것도 얻어 내지 못할 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#578": {
+   "src": "But my friend worked here, and...",
+   "dst": "하지만 내 친구가 여기서 일했는데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#579": {
+   "src": "Can I at least get a look inside...?",
+   "dst": "안을 잠깐 보기라도 하면 안 될까...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#580": {
+   "src": "In order to steal the bread, you must stay hidden.",
+   "dst": "빵을 훔치려면 들키지 않고 숨어 있어야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#581": {
+   "src": "When close to workers, {#} SNEAK to remain hidden.",
+   "dst": "인부 가까이에선 {#} 웅크려서 몸을 숨기세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#582": {
+   "src": "You could knock out the workers with this...",
+   "dst": "이걸로 인부들을 기절시킬 수 있겠다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#583": {
+   "src": "When close to workers, {#} LEFT-CLICK with Bottle to knock out.",
+   "dst": "인부 가까이에서 병을 든 채 {#} 좌클릭해 기절시키세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#584": {
+   "src": "{#} Left-Click with Bottle to Knock Out",
+   "dst": "병을 들고 {#} 좌클릭해서 기절시키기",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#585": {
+   "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
+   "dst": "기절시킨 뒤 {#} 우클릭으로 인부들을 뒤지세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#586": {
+   "src": "With this, you can open the grate to the pipe and progress.",
+   "dst": "이걸로 파이프 창살을 열고 나아갈 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#587": {
+   "src": "Enter the pipe?",
+   "dst": "파이프로 들어갈까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#588": {
+   "src": "To stay out of sight of workers, use Bottles to distract them.",
+   "dst": "인부들 눈에 띄지 않으려면 병으로 주의를 돌리세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#589": {
+   "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
+   "dst": "작동 코드를 입력해 긴급 정지를 작동시키세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#590": {
+   "src": "There's nothing worth taking.",
+   "dst": "가져갈 만한 건 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#591": {
+   "src": "The bottle is too high up to reach...",
+   "dst": "병이 너무 높이 있어 손이 닿지 않는다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#592": {
+   "src": "That must be the way in to the vault Elise mentioned.",
+   "dst": "저게 Elise가 말한 금고로 들어가는 길이 틀림없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#593": {
+   "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
+   "dst": "이봐, 필요하면 휴게실에 열쇠를 두고 왔어. 그래도 조심해! 먼저 감독관한테 오븐을 끄게 해, 안 그러면 너도 토스트가 될 거야!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#594": {
+   "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
+   "dst": "정비실 열쇠. 이걸로 오븐의 정비용 입구를 열 수 있겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#595": {
+   "src": "They really ought to improve their security around here...",
+   "dst": "여기 보안은 정말 좀 개선해야겠는데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#596": {
+   "src": "Deactivating oven...",
+   "dst": "오븐 끄는 중...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#597": {
+   "src": "Now, to find the Maintenance Key...",
+   "dst": "이제 정비실 열쇠를 찾아야지...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#598": {
+   "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
+   "dst": "긴급 정지 코드 입력 완료. 작동 버튼을 눌러 실행하세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#599": {
+   "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
+   "dst": "긴급 정지를 실행하면 {~}초 안에 금고까지 가야 한다. 버튼을 누를까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#600": {
+   "src": "Do you want to infiltrate the Bread Vault through this method?",
+   "dst": "이 방법으로 빵 금고에 잠입할까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#601": {
+   "src": "Initiating EMERGENCY SHUTDOWN...",
+   "dst": "긴급 정지 실행 중...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#602": {
+   "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
+   "dst": "이 복도는 경비가 삼엄해 보인다. 다른 길이 있을지도 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#603": {
+   "src": "There must be a way to get to that balcony above.",
+   "dst": "저 위 발코니로 갈 방법이 있을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#604": {
+   "src": "Switch between selected beams using the switch button.",
+   "dst": "전환 버튼으로 선택할 들보를 바꾸세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#605": {
+   "src": "They're having a discussion you can just barely make out...",
+   "dst": "그들이 겨우 알아들을 수 있을 만큼 작게 이야기를 나누고 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#606": {
+   "src": "Finally... The bread you've been looking for.",
+   "dst": "드디어... 찾던 빵이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#607": {
+   "src": "→ Backward",
+   "dst": "→ 뒤로",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#608": {
+   "src": "↓ Down",
+   "dst": "↓ 아래로",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#609": {
+   "src": "⭯ Rotate",
+   "dst": "↺ 회전",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#610": {
+   "src": "↩ Switch",
+   "dst": "↩ 전환",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#611": {
+   "src": "Guard\nOh well...",
+   "dst": "Guard\n뭐, 됐다...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "Guard",
+   "source": "captured.json"
+  },
+  "The Missing Piece#612": {
+   "src": "Inspector\nOpen up!",
+   "dst": "Inspector\n문 열어!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "Inspector",
+   "source": "captured.json"
+  },
+  "The Missing Piece#613": {
+   "src": "It seems Elise has visitors...",
+   "dst": "Elise에게 손님이 온 것 같다...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#614": {
+   "src": "Confront the inspection.",
+   "dst": "조사단에 맞선다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#615": {
+   "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
+   "dst": "하... 뭐, 죄목 하나 더 늘어난들 어떠니? 우리 아주 이골이 난 도적이 된 것 같구나, 그렇지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 37",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#616": {
+   "src": "Pick up Elise at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]에서 Elise를 안아 올리세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 51",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

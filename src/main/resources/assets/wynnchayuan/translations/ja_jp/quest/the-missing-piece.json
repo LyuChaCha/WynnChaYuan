@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Missing Piece",
-  "count": 556,
-  "translated": 556,
+  "count": 617,
+  "translated": 617,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -48,7 +48,7 @@
   },
   "The Missing Piece#004": {
    "src": "Move and rotate the selected beam using the directional buttons.",
-   "dst": "方向ボタンで選択中の梁を動かしたり回転させたりする。",
+   "dst": "{c3}方向ボタンで{c1}選択中の梁を動かしたり回転させよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -58,7 +58,7 @@
   },
   "The Missing Piece#005": {
    "src": "You could either confront them or talk to Elise about what to do.",
-   "dst": "彼らを問い詰めるか、どうするか Elise に相談しよう。",
+   "dst": "{c2}彼らと対峙する{/}か、 {c2}Elise と相談{/}するか選択しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -78,7 +78,7 @@
   },
   "The Missing Piece#007": {
    "src": "It would be best to get the bread and get out of this place quickly.",
-   "dst": "パンを手に入れて、早くここを出たほうがよさそうだ。",
+   "dst": "{c2}パンを手に入れて、早くここを出たほうが{/}よさそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -107,8 +107,8 @@
    "source": "captured"
   },
   "The Missing Piece#010": {
-   "src": "Throw a Bottle by  RIGHT-CLICKING to aim and then  RIGHT-CLICKING again to throw.",
-   "dst": "右クリックで狙いを定め、もう一度右クリックで瓶を投げる。",
+   "src": "Throw a Bottle by {#} RIGHT-CLICKING to aim and then {#} RIGHT-CLICKING again to throw.",
+   "dst": "{#} {c3}右クリック{/}で狙いを定め、もう一度 {#} {c3}右クリック{/}で{c2}瓶{c4}を投げる。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -198,7 +198,7 @@
   },
   "The Missing Piece#019": {
    "src": "You could get across this gap by arranging the suspended beams into a path.",
-   "dst": "宙に浮いた梁を並べて道にすれば、この隙間を渡れそうだ。",
+   "dst": "{c2}宙に浮いた梁を並べて道にすれば{/}、この隙間を渡れそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -768,7 +768,7 @@
   },
   "The Missing Piece#076": {
    "src": "Oh, but you are! I have very many friends, in very high places! Met them in university, makes sure to remember that!",
-   "dst": "いいや、やるとも！私には高い地位の友人が大勢いるのだ！大学で知り合った、覚えておけ！",
+   "dst": "いいや、やるとも！私には大学で知り合った高い地位の友人が大勢いるのだ！覚えておけ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1388,7 +1388,7 @@
   },
   "The Missing Piece#138": {
    "src": "The watering can is just outside in the garden. There are three plants inside and three plants outside.",
-   "dst": "じょうろは外の庭にあるわ。植木鉢は家の中に三つ、外に三つよ。",
+   "dst": "じょうろは外の庭にあるわ。植木鉢は{c2}家の中に三{/}つ、{c2}外に三つ{/}よ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1657,14 +1657,14 @@
    "source": "wiki"
   },
   "The Missing Piece#165": {
-   "src": "Oh, I know! We could have a picnic underneath its canopy Doesn't that sound nice, {u}?",
+   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, {u}?",
    "dst": "あ、そうだ！木陰でピクニックができるわ。素敵じゃない、{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#166": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
@@ -1714,7 +1714,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#171": {
    "src": "Nevermind. It's nothing...",
@@ -1898,7 +1898,7 @@
   },
   "The Missing Piece#189": {
    "src": "A shame it's so hard to come by... the thefts became a real problem, you know. The Crown ended up building a vault down under the factory to keep it all secure.",
-   "dst": "手に入りにくいのが残念…盗難が本当に問題になったのよ。結局、王家が工場の地下に金庫を造って厳重にしまったの。",
+   "dst": "手に入りにくいのが残念…盗難が本当に問題になったのよ。結局、王家が{c2}工場の地下に金庫{/}を造って厳重にしまったの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1918,7 +1918,7 @@
   },
   "The Missing Piece#191": {
    "src": "Now to find a way inside without being caught...",
-   "dst": "あとは見つからずに中に入る方法を探さないと…",
+   "dst": "あとは{c2}見つからずに中に入る方法を探さないと…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2037,7 +2037,7 @@
    "source": "wiki"
   },
   "The Missing Piece#203": {
-   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make bread here, we don't sell it.",
+   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make the bread here, we don't sell it.",
    "dst": "俺が自販機に見えるか？他を当たりな。ここはパンを作るだけで、売っちゃいない。",
    "role": "desc",
    "kind": "dialogue",
@@ -2158,7 +2158,7 @@
   },
   "The Missing Piece#215": {
    "src": "It's just around the corner, you see. A pipe! Now you know! Now you know!",
-   "dst": "すぐそこの角だよ。パイプ！これで分かったね！分かったね！",
+   "dst": "{c1}すぐそこの角{c2}だよ。{c1}パイプ！{c2}これで分かったね！分かったね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2418,7 +2418,7 @@
   },
   "The Missing Piece#241": {
    "src": "Enough aimless rambling. My time is limited. Pull up those records on this Elise, immediately.",
-   "dst": "無駄話はそこまで。私の時間は限られています。この Elise の記録を、今すぐ出しなさい。",
+   "dst": "無駄話はそこまで。私の時間は限られています。この {c2}Elise{/} の記録を、今すぐ出しなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3698,7 +3698,7 @@
   },
   "The Missing Piece#369": {
    "src": "Maybe if you hit those bottles, it will move the beam.",
-   "dst": "あの瓶に当てれば、梁が動くかもしれない。",
+   "dst": "{c2}あの瓶に当てれば、梁が動く{/}かもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3738,7 +3738,7 @@
   },
   "The Missing Piece#373": {
    "src": "Well, what do you say, then? Just talk to me when you want to head out.",
-   "dst": "それで、どうかしら？出かけたくなったら声をかけてね。",
+   "dst": "それで、どうかしら？{c2}出かけたくなったら声をかけてね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3948,7 +3948,7 @@
   },
   "The Missing Piece#394": {
    "src": "Besides, it's certainly useful in situations like this, isn't it? Be a dearie and do one of your little tricks, won't you?",
-   "dst": "それに、こういう時にはとても便利でしょう？いい子だから、ちょっとした技を見せてちょうだい。",
+   "dst": "それに、こういう時にはとても便利でしょう？いい子だから、{c2}ちょっとした技{/}を見せてちょうだい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4736,7 +4736,8 @@
    "quest": "The Missing Piece",
    "stage": "Stage 50",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you're と clearlyは斜体"
   },
   "The Missing Piece#472": {
    "src": "I barely get to see you anymore. And now, out of nowhere, you're here in this state... What's going on? Please, just talk to me.",
@@ -4849,8 +4850,8 @@
    "source": "wiki"
   },
   "The Missing Piece#483": {
-   "src": "What... ... what's going on?",
-   "dst": "何…これは…どういうこと？",
+   "src": "What... {u}... what's going on?",
+   "dst": "何…{u}…これは…どういうこと？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4876,7 +4877,8 @@
    "quest": "The Missing Piece",
    "stage": "Stage 50",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "What have you done?は斜体"
   },
   "The Missing Piece#486": {
    "src": "I... how did I overlook this...?",
@@ -5076,7 +5078,8 @@
    "quest": "The Missing Piece",
    "stage": "Stage 50",
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rightは斜体"
   },
   "The Missing Piece#506": {
    "src": "But then... I met you, Elise.",
@@ -5577,6 +5580,623 @@
    "stage": "Stage 54",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Missing Piece#556": {
+   "src": "I'm searching for 'the woman on the hill'. Do you happen to know her?",
+   "dst": "「丘の上の女性」を探しているのですが、もしかしてその方をご存じですか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#557": {
+   "src": "You take a sip.",
+   "dst": "お茶を一口飲んだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#558": {
+   "src": "Ha! But that's why I moved here!",
+   "dst": "ふふ！でも、だからこそここに引っ越してきたのよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#559": {
+   "src": "In the living blocks you can never be alone. No time to think, only to work. No dear, it's much better up here.",
+   "dst": "居住棟では、決して一人になることはできない。考える暇なんてなく、ただ働くだけ。いいえ、ここの方がずっと良いわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#560": {
+   "src": "Lived my whole childhood in one of the towers. I was born there. That was until... until... Well, I've forgotten the reason, ha!",
+   "dst": "子供の頃はずっと、あのタワーのひとつで過ごしたの。そこで生まれたしね。それが……それが……まあ、理由はもう忘れてしまったけど、ふふ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#561": {
+   "src": "My memory isn't so good these days. It must have been twenty-five or so years ago.",
+   "dst": "最近は記憶力があまりよくなくて。25年くらい前のことだったと思うわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#562": {
+   "src": "But I had a reason... a good one! Ha, it's funny isn't it? At the time it probably seemed like the most important thing in the world.",
+   "dst": "でも、私には理由があったの……それなりの理由がね！　はは、おかしいよね？　当時は、それが世界で一番大事なことのように思えたんだろうね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#563": {
+   "src": "But now, well, I've gone and forgotten the whole thing, haven't I?",
+   "dst": "でも今となっては、まあ、すっかり忘れてしまったんだ、そうでしょう？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#564": {
+   "src": "In the Roughworks? My whole life, ha. I'm only fifty... fifty-two, you know. Or maybe it was fifty-three.",
+   "dst": "Roughworks？　人生ずっとだよ、はは。まだ50年……いや、52年なんだよ。それとも53年だったかしら。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#565": {
+   "src": "... Which year is it again? I seem to have lost track.",
+   "dst": "…今年は何年だったっけ？　わからなくなっちゃった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#566": {
+   "src": "So... goodness, longer than I expected. It must have been... Oh, by Her Grace! What does it matter, the years pass quicker for every one that goes.",
+   "dst": "えっと……まあ、思ったより長かったね。きっと……ああ、御寛大なるお方よ！　まあ、どうでもいいさ。歳を重ねるごとに、年月はどんどん早く過ぎていくものだから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#567": {
+   "src": "How strange... I feel like I should know who this is from... and yet, I don't.",
+   "dst": "なんだか不思議……誰からのものか、どこか見覚えがあるような気がするのに……でも、思い出せない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#568": {
+   "src": "Hm. I said I wouldn't pry, but... You don't work for the post, do you? I know your type.",
+   "dst": "ふむ。詮索はしないと約束したけど……君、郵便局には勤めてないよね？　君みたいなタイプはよく知ってるんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#569": {
+   "src": "Ha! Why should I care?",
+   "dst": "ふふ！　なんで私が気にするの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#570": {
+   "src": "But... you have piqued my curiosity with these letters...",
+   "dst": "でも……その手紙たちで、私の好奇心をくすぐってしまった……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#571": {
+   "src": "Say, 'letter-carrier', won't you be a dearie and water my plants while I read the rest of these letters? Maybe there is something else I can glean from reading them.",
+   "dst": "ねえ、「郵便配達員さん」、私が残りの手紙を読み終えるまで、お願いだから私の植物に水をやってもらえる？　もしかしたら、これらを読むことで何か別の気づきが得られるかもしれないから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#572": {
+   "src": "I have {~} plants outside and {~} pots inside. Just be sure not to overwater them! The watering can is just outside in the garden.",
+   "dst": "{c2}外には{~}本の植物{c1}があり、{c2}室内には{~}個の鉢{c1}があるわ。水やりはやりすぎないように気をつけてちょうだい！{c2}じょうろは庭のすぐ外にあるわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#573": {
+   "src": "Don't be afraid to ask if you're wondering anything! I don't bite, ha!",
+   "dst": "何か気になることがあれば、遠慮なく聞いてちょうだい！噛みついたりしないから、ふふ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#574": {
+   "src": "{#}{#}\n{#} Right-click to refill.",
+   "dst": "{#}{#}\n{#} {c1}右クリック{c2}で補充",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#575": {
+   "src": "Elise has probably finished reading those letters by now. You should return to her in the kitchen.",
+   "dst": "Elise は、もう手紙を読み終えているだろう。{c2}キッチンにいる彼女のところに戻ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#576": {
+   "src": "{#} Right-Click to stop.",
+   "dst": "{#} {c1}右クリック{c2}でやめる",
+   "role": "desc",
+   "kind": "Bossbar",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#577": {
+   "src": "Doesn't look like you're going to get anything out of this guy...",
+   "dst": "この男からは何も聞き出せそうにないな……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#578": {
+   "src": "But my friend worked here, and...",
+   "dst": "でも、友達がここで働いていて、その……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#579": {
+   "src": "Can I at least get a look inside...?",
+   "dst": "せめて中をちょっとだけ見させてもらえませんか…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#580": {
+   "src": "In order to steal the bread, you must stay hidden.",
+   "dst": "パンを盗むためには、{c2}隠れたままでいなければならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#581": {
+   "src": "When close to workers, {#} SNEAK to remain hidden.",
+   "dst": "作業員の近くにいるときは、{#} こっそりと動き、身を隠すようにしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "SNEAKは太字"
+  },
+  "The Missing Piece#582": {
+   "src": "You could knock out the workers with this...",
+   "dst": "これを使えば、{c2}作業員を気絶{/}させることができるだろう……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#583": {
+   "src": "When close to workers, {#} LEFT-CLICK with Bottle to knock out.",
+   "dst": "従業員の近くで{c3}瓶{c1}を持った状態で {#} {c2}左クリック{c1}すると気絶させることができる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "LEFT-CLICKは太字"
+  },
+  "The Missing Piece#584": {
+   "src": "{#} Left-Click with Bottle to Knock Out",
+   "dst": "{c3}瓶{c2}を持って{#} {c1}左クリック{c2}で{c4}気絶させる{/}",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "Bottleは太字"
+  },
+  "The Missing Piece#585": {
+   "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
+   "dst": "気絶させたら、{#} 右クリックして{c2}従業員を調べよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "RIGHT-CLICKは太字"
+  },
+  "The Missing Piece#586": {
+   "src": "With this, you can open the grate to the pipe and progress.",
+   "dst": "{c1}これで、{c2}パイプへの格子扉を開けて、先へ進むことができる。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#587": {
+   "src": "Enter the pipe?",
+   "dst": "パイプの中に入る？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#588": {
+   "src": "To stay out of sight of workers, use Bottles to distract them.",
+   "dst": "{c2}瓶{c1}を使って{c3}従業員の気を逸らして{/}気づかれないようにしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#589": {
+   "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
+   "dst": "{c3}アクティベーションコード{/}を入力して、{c2}緊急停止{/}させよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "EMERGENCY SHUTDOWNは太字"
+  },
+  "The Missing Piece#590": {
+   "src": "There's nothing worth taking.",
+   "dst": "使えそうな物はなさそうだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#591": {
+   "src": "The bottle is too high up to reach...",
+   "dst": "瓶が高すぎて手が届かない……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#592": {
+   "src": "That must be the way in to the vault Elise mentioned.",
+   "dst": "あれが、 Elise が話していた金庫室への入り口に違いない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#593": {
+   "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
+   "dst": "ねえ、もし必要なら、{c2}休憩室に鍵を置いておいたよ。{/}でも気をつけてね！まず上司に{c2}オーブンの電源を切ってもらわないと{/}、焼けてしまうよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#594": {
+   "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
+   "dst": "メンテナンス用の鍵。これを使えば、{c2}オーブンのメンテナンス用入口のロックを解除できる。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#595": {
+   "src": "They really ought to improve their security around here...",
+   "dst": "この辺りの警備は、本当に改善すべきだと思うんだけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#596": {
+   "src": "Deactivating oven...",
+   "dst": "オーブンの電源を切る…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#597": {
+   "src": "Now, to find the Maintenance Key...",
+   "dst": "次は{c2}メンテナンス用の鍵を見つけよう…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#598": {
+   "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
+   "dst": "{c1}緊急停止{c2}コードの入力に成功した。{c3}起動ボタンを押して実行しよう。{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "EMERGENCY SHUTDOWNは太字"
+  },
+  "The Missing Piece#599": {
+   "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
+   "dst": "緊急停止させたら、{c2}{~}秒{/}で金庫にたどり着く必要がある。ボタンを押す？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#600": {
+   "src": "Do you want to infiltrate the Bread Vault through this method?",
+   "dst": "この方法でパン金庫に潜入する？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#601": {
+   "src": "Initiating EMERGENCY SHUTDOWN...",
+   "dst": "{c2}緊急停止{/}を実行します…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "EMERGENCY SHUTDOWNは太字 Initiatingは斜体"
+  },
+  "The Missing Piece#602": {
+   "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
+   "dst": "この廊下は厳重に警備されているようだ。{c2}別の道{/}があるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#603": {
+   "src": "There must be a way to get to that balcony above.",
+   "dst": "あの{c2}上のバルコニー{/}へ行く方法があるはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#604": {
+   "src": "Switch between selected beams using the switch button.",
+   "dst": "{c3}切り替えボタン{/}を使って{c1}選択した梁を切り替えよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#605": {
+   "src": "They're having a discussion you can just barely make out...",
+   "dst": "彼らは、かろうじて聞き取れる程度の議論を交わしている……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#606": {
+   "src": "Finally... The bread you've been looking for.",
+   "dst": "遂に…ずっと探していたパンだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#607": {
+   "src": "→ Backward",
+   "dst": "→ 後ろ",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#608": {
+   "src": "↓ Down",
+   "dst": "↓ 下",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#609": {
+   "src": "⭯ Rotate",
+   "dst": "↺ 回転",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#610": {
+   "src": "↩ Switch",
+   "dst": "↩ 切り替え",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#611": {
+   "src": "Guard\nOh well...",
+   "dst": "Guard\nまあ、いいか…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "Guard",
+   "source": "captured.json"
+  },
+  "The Missing Piece#612": {
+   "src": "Inspector\nOpen up!",
+   "dst": "Inspector\n開けろ！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "Inspector",
+   "source": "captured.json"
+  },
+  "The Missing Piece#613": {
+   "src": "It seems Elise has visitors...",
+   "dst": "どうやら Elise のところへ客が来たようだ……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#614": {
+   "src": "Confront the inspection.",
+   "dst": "検査隊と対峙する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#615": {
+   "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
+   "dst": "はあ……まあ、犯罪歴がまた一つ増えたってだけのことさ。私たち、すっかり手慣れた強盗になったみたい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 37",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#616": {
+   "src": "Pick up Elise at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]にいる Elise を抱き上げる",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 51",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

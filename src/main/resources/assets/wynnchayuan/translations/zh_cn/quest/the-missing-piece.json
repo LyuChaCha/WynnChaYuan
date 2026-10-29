@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Missing Piece",
-  "count": 556,
-  "translated": 556,
+  "count": 617,
+  "translated": 617,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -107,8 +107,8 @@
    "source": "captured"
   },
   "The Missing Piece#010": {
-   "src": "Throw a Bottle by  RIGHT-CLICKING to aim and then  RIGHT-CLICKING again to throw.",
-   "dst": "按 右键瞄准，再按一次 右键把瓶子扔出去。",
+   "src": "Throw a Bottle by {#} RIGHT-CLICKING to aim and then {#} RIGHT-CLICKING again to throw.",
+   "dst": "按 {#} 右键瞄准，再按一次 {#} 右键把瓶子扔出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1657,14 +1657,14 @@
    "source": "wiki"
   },
   "The Missing Piece#165": {
-   "src": "Oh, I know! We could have a picnic underneath its canopy Doesn't that sound nice, {u}?",
-   "dst": "哦，我知道了！我们可以在它的树荫下野餐，听起来不错吧，{u}？",
+   "src": "Oh, I know! We could have a picnic underneath its canopy. Doesn't that sound nice, {u}?",
+   "dst": "哦，我知道了！我们可以在它的树荫下野餐。听起来不错吧，{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#166": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
@@ -1714,7 +1714,7 @@
    "quest": "The Missing Piece",
    "stage": "Stage 17",
    "speaker": "Elise",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Missing Piece#171": {
    "src": "Nevermind. It's nothing...",
@@ -2037,8 +2037,8 @@
    "source": "wiki"
   },
   "The Missing Piece#203": {
-   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make bread here, we don't sell it.",
-   "dst": "我看起来像自动贩卖机吗？去别处吧。我们这里只做面包，不卖面包。",
+   "src": "Do I look like a vending machine to you? Go find somewhere else. We just make the bread here, we don't sell it.",
+   "dst": "我看起来像自动贩卖机吗？去别处吧。我们这里只负责做面包，不卖面包。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4849,8 +4849,8 @@
    "source": "wiki"
   },
   "The Missing Piece#483": {
-   "src": "What... ... what's going on?",
-   "dst": "什么…………发生什么事了？",
+   "src": "What... {u}... what's going on?",
+   "dst": "什么……{u}……发生什么事了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5577,6 +5577,616 @@
    "stage": "Stage 54",
    "speaker": "",
    "source": "wiki"
+  },
+  "The Missing Piece#556": {
+   "src": "I'm searching for 'the woman on the hill'. Do you happen to know her?",
+   "dst": "我在找“山丘上的女人”。你知道她吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 7",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#557": {
+   "src": "You take a sip.",
+   "dst": "你啜了一口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#558": {
+   "src": "Ha! But that's why I moved here!",
+   "dst": "哈！可我正是因为这样才搬来这里的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#559": {
+   "src": "In the living blocks you can never be alone. No time to think, only to work. No dear, it's much better up here.",
+   "dst": "住在居住楼里，你永远别想一个人清静。没时间思考，只有干活。不，亲爱的，还是这上面好多了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#560": {
+   "src": "Lived my whole childhood in one of the towers. I was born there. That was until... until... Well, I've forgotten the reason, ha!",
+   "dst": "我整个童年都住在其中一栋楼里。我就是在那里出生的。直到……直到……嗯，我忘了是什么原因了，哈！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#561": {
+   "src": "My memory isn't so good these days. It must have been twenty-five or so years ago.",
+   "dst": "我最近记性不太好。那大概是二十五年前左右的事了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#562": {
+   "src": "But I had a reason... a good one! Ha, it's funny isn't it? At the time it probably seemed like the most important thing in the world.",
+   "dst": "不过我是有原因的……一个很好的原因！哈，很好笑吧？那时候它大概看起来像是世上最重要的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#563": {
+   "src": "But now, well, I've gone and forgotten the whole thing, haven't I?",
+   "dst": "可是现在，嗯，我把整件事都忘光了，不是吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#564": {
+   "src": "In the Roughworks? My whole life, ha. I'm only fifty... fifty-two, you know. Or maybe it was fifty-three.",
+   "dst": "在 Roughworks？一辈子了，哈。我才五十……五十二岁，你知道的。也可能是五十三。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#565": {
+   "src": "... Which year is it again? I seem to have lost track.",
+   "dst": "……现在是哪一年来着？我好像记不清了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#566": {
+   "src": "So... goodness, longer than I expected. It must have been... Oh, by Her Grace! What does it matter, the years pass quicker for every one that goes.",
+   "dst": "那么……天哪，比我想的还久。那一定是……噢，女王陛下在上！有什么关系呢，日子是一年比一年过得快。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#567": {
+   "src": "How strange... I feel like I should know who this is from... and yet, I don't.",
+   "dst": "真奇怪……我觉得我应该知道这是谁寄来的……可我就是不知道。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#568": {
+   "src": "Hm. I said I wouldn't pry, but... You don't work for the post, do you? I know your type.",
+   "dst": "嗯。我说过不打探的，不过……你不是邮局的人，对吧？你这种人我见多了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#569": {
+   "src": "Ha! Why should I care?",
+   "dst": "哈！我为什么要在乎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#570": {
+   "src": "But... you have piqued my curiosity with these letters...",
+   "dst": "不过……你带来的这些信确实勾起了我的好奇心……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#571": {
+   "src": "Say, 'letter-carrier', won't you be a dearie and water my plants while I read the rest of these letters? Maybe there is something else I can glean from reading them.",
+   "dst": "我说，“送信的”，乖，亲爱的，趁我读剩下这些信的时候，帮我浇浇花好吗？也许读了之后，我还能看出点别的什么。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#572": {
+   "src": "I have {~} plants outside and {~} pots inside. Just be sure not to overwater them! The watering can is just outside in the garden.",
+   "dst": "我屋外有 {~} 株植物，屋里有 {~} 盆。可千万别浇太多水！浇水壶就在外面的花园里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#573": {
+   "src": "Don't be afraid to ask if you're wondering anything! I don't bite, ha!",
+   "dst": "有什么想知道的尽管问！我又不会咬人，哈！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 8",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#574": {
+   "src": "{#}{#}\n{#} Right-click to refill.",
+   "dst": "{#}{#}\n{#} 右键补水。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#575": {
+   "src": "Elise has probably finished reading those letters by now. You should return to her in the kitchen.",
+   "dst": "Elise 现在大概已经读完那些信了。你该回厨房找她。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#576": {
+   "src": "{#} Right-Click to stop.",
+   "dst": "{#} 右键停止。",
+   "role": "desc",
+   "kind": "Bossbar",
+   "quest": "The Missing Piece",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#577": {
+   "src": "Doesn't look like you're going to get anything out of this guy...",
+   "dst": "看来从这家伙身上是问不出什么了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#578": {
+   "src": "But my friend worked here, and...",
+   "dst": "可是我朋友以前在这里工作，而且……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#579": {
+   "src": "Can I at least get a look inside...?",
+   "dst": "至少能让我进去看一眼吗……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 19",
+   "speaker": "Player",
+   "source": "captured.json"
+  },
+  "The Missing Piece#580": {
+   "src": "In order to steal the bread, you must stay hidden.",
+   "dst": "要偷到面包，你得保持隐蔽。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#581": {
+   "src": "When close to workers, {#} SNEAK to remain hidden.",
+   "dst": "靠近工人时，按 {#} 潜行来保持隐蔽。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#582": {
+   "src": "You could knock out the workers with this...",
+   "dst": "你可以用这个把工人打晕……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#583": {
+   "src": "When close to workers, {#} LEFT-CLICK with Bottle to knock out.",
+   "dst": "靠近工人时，拿着瓶子按 {#} 左键把他们打晕。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#584": {
+   "src": "{#} Left-Click with Bottle to Knock Out",
+   "dst": "{#} 拿着瓶子左键打晕",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#585": {
+   "src": "After knocking them out, {#} RIGHT-CLICK to search workers.",
+   "dst": "把他们打晕后，按 {#} 右键搜查工人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#586": {
+   "src": "With this, you can open the grate to the pipe and progress.",
+   "dst": "有了这个，你就能打开通往管子的格栅，继续前进。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#587": {
+   "src": "Enter the pipe?",
+   "dst": "进入管子？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#588": {
+   "src": "To stay out of sight of workers, use Bottles to distract them.",
+   "dst": "为了不被工人看见，用瓶子分散他们的注意力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#589": {
+   "src": "Activate EMERGENCY SHUTDOWN by inputting the activation code.",
+   "dst": "输入启动代码来启动紧急停机。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#590": {
+   "src": "There's nothing worth taking.",
+   "dst": "这里没什么值得拿的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#591": {
+   "src": "The bottle is too high up to reach...",
+   "dst": "瓶子太高了，够不着……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#592": {
+   "src": "That must be the way in to the vault Elise mentioned.",
+   "dst": "那一定就是 Elise 说的金库入口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#593": {
+   "src": "Hey, I left the key in the break room if you need it. Be careful though! Get the Supervisor to disable the oven first, or you'll be toast!",
+   "dst": "嘿，你要钥匙的话，我放在休息室了。不过小心点！先让主管把烤炉关掉，不然你会被烤成吐司！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#594": {
+   "src": "A maintenance key. With this you could unlock the maintenace entrance to the oven.",
+   "dst": "一把维修钥匙。有了它，就能打开烤炉的维修入口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#595": {
+   "src": "They really ought to improve their security around here...",
+   "dst": "这里的安保真该加强一下……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#596": {
+   "src": "Deactivating oven...",
+   "dst": "正在关闭烤炉……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#597": {
+   "src": "Now, to find the Maintenance Key...",
+   "dst": "好了，接下来要找到维修钥匙……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#598": {
+   "src": "EMERGENCY SHUTDOWN code successfully inputted. Press Activation Button to initiate.",
+   "dst": "紧急停机代码输入成功。按下启动按钮开始执行。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#599": {
+   "src": "After initiating emergency shutdown, you will have {~} seconds to make it to the vault. Do you want to press the button?",
+   "dst": "启动紧急停机后，你将有 {~} 秒的时间赶到金库。要按下按钮吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#600": {
+   "src": "Do you want to infiltrate the Bread Vault through this method?",
+   "dst": "要用这个方法潜入面包金库吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#601": {
+   "src": "Initiating EMERGENCY SHUTDOWN...",
+   "dst": "正在启动紧急停机……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#602": {
+   "src": "This hallway looks heavily guarded. Maybe there's a different path you could take.",
+   "dst": "这条走廊看起来戒备森严。也许你可以走别的路。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#603": {
+   "src": "There must be a way to get to that balcony above.",
+   "dst": "一定有办法上到上面那个阳台。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#604": {
+   "src": "Switch between selected beams using the switch button.",
+   "dst": "用切换按钮在选中的横梁之间切换。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#605": {
+   "src": "They're having a discussion you can just barely make out...",
+   "dst": "他们在交谈，你勉强能听清……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 28",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#606": {
+   "src": "Finally... The bread you've been looking for.",
+   "dst": "终于……这就是你一直在找的面包。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#607": {
+   "src": "→ Backward",
+   "dst": "→ 后退",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#608": {
+   "src": "↓ Down",
+   "dst": "↓ 向下",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#609": {
+   "src": "⭯ Rotate",
+   "dst": "↺ 旋转",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#610": {
+   "src": "↩ Switch",
+   "dst": "↩ 切换",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#611": {
+   "src": "Guard\nOh well...",
+   "dst": "Guard\n唉，算了……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 31",
+   "speaker": "Guard",
+   "source": "captured.json"
+  },
+  "The Missing Piece#612": {
+   "src": "Inspector\nOpen up!",
+   "dst": "Inspector\n开门！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "Inspector",
+   "source": "captured.json"
+  },
+  "The Missing Piece#613": {
+   "src": "It seems Elise has visitors...",
+   "dst": "看来 Elise 有客人了……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#614": {
+   "src": "Confront the inspection.",
+   "dst": "与检查人员对质。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 36",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Missing Piece#615": {
+   "src": "Ha... Well, what's another crime added to the tally? It seems we've become real hardened bandits, haven't we?",
+   "dst": "哈……嗯，罪状上再添一条又何妨？看来我们成了真正的亡命之徒了，不是吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "Stage 37",
+   "speaker": "Elise",
+   "source": "captured.json"
+  },
+  "The Missing Piece#616": {
+   "src": "Pick up Elise at [-{~}, {~}, -{~}]",
+   "dst": "到 [-{~}, {~}, -{~}] 抱起 Elise",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Missing Piece",
+   "stage": "Stage 51",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

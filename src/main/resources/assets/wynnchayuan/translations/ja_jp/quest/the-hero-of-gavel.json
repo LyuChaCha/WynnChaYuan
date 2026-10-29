@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 259,
-  "translated": 259,
+  "count": 260,
+  "translated": 260,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -1387,7 +1387,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "ありがとう、{u}！だいぶ楽になった。準備ができたら、すぐにでも奥へ行けるよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -1627,7 +1627,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "思うんだけど…この間欠泉をどうにかできないかな？休止してるみたいだけど、また動かせる気がする。",
    "role": "desc",
    "kind": "dialogue",
@@ -1737,8 +1737,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "や、やった？…やったぞ！戻ってきた！ははは！生きてる！",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "や、やった？…{u}、やったぞ！戻ってきた！ははは！生きてる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1777,7 +1777,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "はは、あそこのお調子者は気にしないでくれ。衣装は見事だがね！",
    "role": "desc",
    "kind": "dialogue",
@@ -2594,6 +2594,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 採掘用爆薬]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   }
  }
