@@ -1,5 +1,10 @@
 package com.wynnchayuan.render;
 
+import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
+import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
+import org.joml.Vector2i;
+import org.joml.Vector2ic;
+
 /**
  * Wynnventory 側邊框的擺法與物品說明的讓位（{@link WynnventoryLayout}）。
  *
@@ -50,11 +55,50 @@ public final class WynnventoryLayoutTest {
         check("空間太小就交回它原本的方法",
               WynnventoryLayout.place(400, 600, 30, 50, 340, 300, 100) == null);
 
+        ownPanelKeepsItsSpot();
+
         if (failures > 0) {
             System.out.println("Wynnventory 側邊框：" + failures + " 項失敗");
             System.exit(1);
         }
         System.out.println("Wynnventory 側邊框：全部通過");
+    }
+
+    private static void ownPanelKeepsItsSpot() {
+        int screenW = 960;
+        int screenH = 508;
+        OriginalTooltipBox.Box drawn = new OriginalTooltipBox.Box(420, 120, 170, 202, 1f, 170, 202);
+        TooltipPanel.Place p = TooltipPanel.layout(160, 212, 170, 202, drawn, 400, 132,
+                screenW, screenH, 12, com.wynnchayuan.CollectorConfig.PanelSide.AUTO);
+        WynnventoryBox.note(4, 150, 150, 200, System.nanoTime());
+        try {
+            OriginalTooltipBox.beginOwn();
+            int[] at;
+            try {
+                at = drawnAt(p.panelX(), p.panelY(), screenW, screenH, 160, 212);
+            } finally {
+                OriginalTooltipBox.endOwn();
+            }
+            check("★ 有價格框時面板的第一列仍對齊原文（原文 y=120，面板 y=" + at[1] + "）",
+                    at[1] == 120);
+            check("★ 面板的 x 照算好的位置（算好 " + p.panelX() + "，畫在 " + at[0] + "）",
+                    at[0] == p.panelX());
+
+            int[] item = drawnAt(400, 132, screenW, screenH, 170, 202);
+            Vector2ic plain = DefaultTooltipPositioner.INSTANCE.positionTooltip(
+                    screenW, screenH, 400, 132, 170, 202);
+            check("物品說明照舊走原版定位再讓位（y=" + item[1] + "）", item[1] == plain.y());
+        } finally {
+            WynnventoryBox.forget();
+        }
+    }
+
+    private static int[] drawnAt(int x, int y, int screenW, int screenH, int w, int h) {
+        ClientTooltipPositioner requested = (sw, sh, mx, my, tw, th) -> new Vector2i(mx, my);
+        ClientTooltipPositioner moved = WynnventoryLayout.shift(null, 1f);
+        ClientTooltipPositioner used = moved != null ? moved : requested;
+        Vector2ic at = used.positionTooltip(screenW, screenH, x, y, w, h);
+        return new int[] {at.x(), at.y()};
     }
 
     private static void check(String what, boolean ok) {

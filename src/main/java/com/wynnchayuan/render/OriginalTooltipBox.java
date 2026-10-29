@@ -70,6 +70,10 @@ public final class OriginalTooltipBox {
         ownDepth = Math.max(0, ownDepth - 1);
     }
 
+    public static boolean drawingOwn() {
+        return ownDepth > 0;
+    }
+
     /** mixin 在每一個 tooltip 畫底色之前呼叫。 */
     public static void note(GuiGraphics graphics, int x, int y, int w, int h) {
         try {

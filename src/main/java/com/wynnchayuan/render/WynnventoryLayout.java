@@ -185,7 +185,7 @@ public final class WynnventoryLayout {
      */
     public static ClientTooltipPositioner shift(ClientTooltipPositioner delegate, float scale) {
         int[] box = WynnventoryBox.current();
-        if (box == null || drawing || delegate instanceof Shifted) {
+        if (box == null || drawing || OriginalTooltipBox.drawingOwn() || delegate instanceof Shifted) {
             return null;
         }
         ClientTooltipPositioner base = delegate == null ? DefaultTooltipPositioner.INSTANCE : delegate;
