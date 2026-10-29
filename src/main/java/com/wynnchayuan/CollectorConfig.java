@@ -238,6 +238,16 @@ public final class CollectorConfig {
     private boolean shiftPeekNames = true;
 
     /**
+     * 技能名稱與 Major ID 名稱後面要不要括號附原文（「譯名 (原文)」）。
+     *
+     * <p>跟物品名稱的「譯名加原文」同一個畫法，但只是一個開關：技能名一直都是翻的，
+     * 這裡只決定要不要多附一份原文——查 wiki、跟用英文的玩家講技能時用得到。
+     * 預設關著，跟物品名稱一樣不附原文；升級上來的人畫面不會自己變長。
+     * 見 {@code TranslationStore#setAbilityNamesWithOriginal}。
+     */
+    private boolean abilityNamesOriginal = false;
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -709,6 +719,17 @@ public final class CollectorConfig {
         shiftPeekNames = !shiftPeekNames;
         save();
         return shiftPeekNames;
+    }
+
+    /** 見 {@link #abilityNamesOriginal}。 */
+    public boolean abilityNamesOriginal() {
+        return abilityNamesOriginal;
+    }
+
+    public boolean toggleAbilityNamesOriginal() {
+        abilityNamesOriginal = !abilityNamesOriginal;
+        save();
+        return abilityNamesOriginal;
     }
 
     public boolean chatCopy() {
@@ -1553,6 +1574,7 @@ public final class CollectorConfig {
         wynnmodTooltip = bool(o, "wynnmodTooltip", wynnmodTooltip);
         wynnMarketSearch = bool(o, "wynnMarketSearch", wynnMarketSearch);
         shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
+        abilityNamesOriginal = bool(o, "abilityNamesOriginal", abilityNamesOriginal);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
@@ -1819,6 +1841,7 @@ public final class CollectorConfig {
             o.addProperty("dialogueCover", dialogueCover);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shiftPeekNames", shiftPeekNames);
+            o.addProperty("abilityNamesOriginal", abilityNamesOriginal);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
