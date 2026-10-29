@@ -696,6 +696,8 @@ public final class WynntilsText {
             // 其餘的走一般那條路，寶箱上的字就整行一個顏色。都查不到才照舊逐段查。
             net.minecraft.network.chat.Component floating =
                     LineTranslator.translateFloating(text, store);
+            // 見 NameplateProbe：盔甲座這條路也記，才分得出血條名牌是走哪一條來的
+            com.wynnchayuan.translate.NameplateProbe.check("盔甲座名稱", text, floating, store);
             StyledText shown = floating != null
                     ? StyledText.fromComponent(floating)
                     : byPart(text, store);
