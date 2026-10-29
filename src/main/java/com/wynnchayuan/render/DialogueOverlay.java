@@ -229,7 +229,11 @@ public final class DialogueOverlay {
         // test3 實機：快取永遠用不上、每幀重算，認不出來的那幾幀小框就收掉一次。
         String whole = plainOf(dialogue.getString());
         long now = System.currentTimeMillis();
-        if (!lineText.isEmpty() && whole.startsWith(lineText)) {
+        // SHIFT 跳過：整句一次出來。這一則當成「字停下來了」、不先空著（見 DialogueRewriter#SKIP_JUMP）
+        boolean sameLine = !lineText.isEmpty() && whole.startsWith(lineText);
+        boolean skip = whole.length() - (sameLine ? lineText.length() : 0)
+                >= DialogueRewriter.SKIP_JUMP;
+        if (sameLine) {
             lineText = whole;                  // 同一句，又多打了幾個字
         } else if (!previousText.isEmpty() && previousText.equals(whole)) {
             // 上一句補發的事件（Wynntils 補發的是上一句<b>整句</b>）。只認完全相同：
@@ -244,7 +248,7 @@ public final class DialogueOverlay {
         boolean wasShowing = !current.isEmpty();
         // 字停下來了嗎。一次只能問一次（它自己在數），所以擺在這裡，
         // 底下每一行共用同一個答案。
-        boolean steady = settled(dialogue.getString());
+        boolean steady = settled(dialogue.getString()) || skip;
         List<Component> lines = new ArrayList<>();
         // 選項不從這段文字裡分——它們根本不在這裡。
         //
@@ -279,7 +283,9 @@ public final class DialogueOverlay {
 
             // 還在打字：這一行是我們已經認出的那句話的開頭，那就別再算一次。
             // 見 #settledSource 說明——重算才是閃爍的來源。
-            String settled = settledSource(i, raws[i], template);
+            // 跳過的那一則整句重算：沿用的那份是打到一半時算的，數字可能才打出一半
+            //（「fetch me 1」時認出來，之後模板不變就一直沿用，整句出來了還是「1 袋」）
+            String settled = skip ? null : settledSource(i, raws[i], template);
             seenRaws.add(raws[i]);
             if (settled != null) {
                 noteHeard(store, settled, template);
@@ -340,7 +346,7 @@ public final class DialogueOverlay {
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any && !bodyOff ? List.copyOf(lines) : List.of();
-        if (!any && !bodyOff && wasShowing && covers(raws, store, steady, now)) {
+        if (!any && !bodyOff && wasShowing && !skip && covers(raws, store, steady, now)) {
             // 換到下一句、還認不出是哪一句：框留著、字先空著，認出來再換上譯文。
             // 收掉再冒出來，就是一次閃爍（就地取代那條路的「先蓋住」，見 DialogueRewriter#holds）。
             current = blankLike(lastShown);

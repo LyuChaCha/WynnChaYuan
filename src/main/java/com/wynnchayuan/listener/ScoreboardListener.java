@@ -91,6 +91,8 @@ public final class ScoreboardListener {
         // 那一塊用（見 WynntilsText#screenText），每次更新整份換掉。
         Set<String> shown = new HashSet<>();
         Map<String, StyledText> replaced = new HashMap<>();
+        Set<String> kept = new HashSet<>();
+        Set<String> names = memberNames(event);
         boolean any = false;
         for (var pair : event.getScoreboardSegments()) {
             ScoreboardSegment segment = pair.b();
@@ -105,15 +107,20 @@ public final class ScoreboardListener {
             }
             List<StyledText> content = segment.getContent();
             shown.add(ScoreboardFlow.key(segment.getHeader()));
+            // 玩家名字那幾列（隊伍成員）：不翻、也不收進語料。見 ScoreboardFlow#keptRows
+            Set<String> players = ScoreboardFlow.keptRows(part, segment.getHeader(), content, names);
+            kept.addAll(players);
             for (StyledText row : content) {
                 shown.add(ScoreboardFlow.key(row));
-                capture(row, "desc");
+                if (!players.contains(ScoreboardFlow.key(row))) {
+                    capture(row, "desc");
+                }
             }
-            ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store);
+            ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store, players);
             // 每一列都翻出來了就不必再收整段：整段只是給譯者拼原句用的。
             // 不擋的話，Lootrun 那一段（狀態 × 時間加成 × 試煉，各自都翻得出來）
             // 每一種組合都會以「還沒翻」的樣子出現在 captured.json，補也補不完。
-            if (plan.missing() > 0) {
+            if (plan.missing() > 0 && players.isEmpty()) {
                 captureBlock(content);
             }
             replaced.putAll(plan.rows());
@@ -127,10 +134,38 @@ public final class ScoreboardListener {
         }
         WynnChaYuan.store().noteEvent(any ? "scoreboard.shown" : "scoreboard.noMatch");
         boolean on = WynnChaYuan.config() == null || WynnChaYuan.config().translateScoreboard();
-        WynntilsText.setScoreboard(shown, replaced);
+        WynntilsText.setScoreboard(shown, replaced, kept);
         // 一行都沒翻出來就整塊不擺：全是英文的話，右上角那一欄本來就看得到，
         // 我們再抄一次只是佔位置。開關關掉也不擺。
         TrackerOverlay.setExtras(any && on ? lines : List.of());
+    }
+
+    /**
+     * 現在知道的隊友名字：隊伍那一段每一列解出來的，加上 Wynntils 的 {@code PartyModel}
+     *（聊天裡 /party list 解出來的那一份）。給 {@link ScoreboardFlow#keptRows} 認
+     * 別段裡出現的隊友名字用；隊伍那一段本身整段原樣，不靠這份名單。
+     */
+    private static Set<String> memberNames(ScoreboardUpdatedEvent event) {
+        Set<String> names = new HashSet<>();
+        for (var pair : event.getScoreboardSegments()) {
+            ScoreboardSegment segment = pair.b();
+            String part = pair.a() == null ? null : pair.a().getClass().getSimpleName();
+            if (segment == null || !ScoreboardFlow.isParty(part, segment.getHeader())) {
+                continue;
+            }
+            for (StyledText row : segment.getContent()) {
+                String name = ScoreboardFlow.partyName(row);
+                if (name != null) {
+                    names.add(name);
+                }
+            }
+        }
+        try {
+            names.addAll(com.wynntils.core.components.Models.Party.getPartyMembers());
+        } catch (Throwable t) {
+            // Wynntils 改了 API 或還沒載入：隊伍那一段照樣整段原樣，只是別段認不到
+        }
+        return names;
     }
 
     /**
