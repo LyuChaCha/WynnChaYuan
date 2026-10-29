@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24227,
-  "translated": 24224,
+  "count": 24252,
+  "translated": 24249,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -5325,6 +5325,16 @@
    "speaker": "Tasim",
    "source": "captured"
   },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "그래. 그렇다. 무모하게 힘을 과시해 봤자 아무 의미 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "뭐... 그렇긴 한데, 먼저 {u}에게 자세한 내용을 알려 주고 싶어. 위험한 임무니까... 제대로 설명해 두는 게 좋겠어.",
@@ -10335,6 +10345,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "...아. 마법이 걸려 있다... 지금까지 본 걸 생각하면 이상한 일이지만, 경비병들이 이쪽을 보고 있다. 다시 그러지 않는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "여전히 아무 대답이 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "네가 여기 있다는 걸 아무도 모르는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19335,7 +19375,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "누가 마을에 오고 가는지 보고해요. 누가 뭘 팔고, 누가 뭘 사고, 누가 누구랑 얘기하는지도요.",
    "role": "desc",
    "kind": "dialogue",
@@ -19935,7 +19975,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "{p} 엘프와 대화한 죄가 뭔지는 모르겠지만, 최소 교수형에 능지처참쯤? 아니면 처벌이 아예 없나?",
    "role": "desc",
    "kind": "dialogue",
@@ -19945,7 +19985,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "그냥 여기서 나가자. 처음부터 지하 강을 조사하는 게 제일 현명했다니까.",
    "role": "desc",
    "kind": "dialogue",
@@ -24204,6 +24244,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "주변을 둘러보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "주변을 둘러보자!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "이 모든 걸 어떻게 생각해?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "[-{~}, -{~}]에 있는 Goruca 대장에게 말을 거세요",
@@ -25155,7 +25225,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "Ureietun! 인간이 Ressinter 목숨 구함! 왜 안 믿음?",
    "role": "desc",
    "kind": "dialogue",
@@ -25205,7 +25275,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "...인간 안 죽이는 건 믿음. Centerworld 돌아다녀도 됨. 근데 Arrai-Veretel은 못 만남!",
    "role": "desc",
    "kind": "dialogue",
@@ -26195,7 +26265,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "뭐, 여기 적힌 걸 읽으면 너도 뭔가 배울 수 있을지 몰라.",
    "role": "desc",
    "kind": "dialogue",
@@ -50547,7 +50617,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "두 번째 우리도 비슷할 텐데, 그건 네가 알아서 풀 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
@@ -58311,7 +58381,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "[{~} Fire Webs]가 필요해. 마을 아래 Heatscar Spider가 만들어. 입구 아치 바로 옆에 동굴이 있어.",
    "role": "desc",
    "kind": "dialogue",
@@ -80471,6 +80541,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "...아, Relend랑 같이 나가신다고요? 정말이에요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "이건... 먹을 수 있을 것 같다. Relend의 생각을 들어 봐야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "아, {p} 군대 분이군요. 이 얼어붙은 봉분에 대해 더 알아보려는 중인데, 도움이 필요해요.",
@@ -86486,7 +86576,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "Ardent Magma Crystal 팝니다! 순도 {~}! 대체품은 받지 마! 에메랄드로 낸다면 얘기가 다르지. 그땐... 아주 많이 대체해 줘!!",
    "role": "desc",
    "kind": "dialogue",
@@ -90212,7 +90302,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "그런데 한 달쯤 전부터 슬라임들이 강해졌어요. 더는 못 구하겠어요, 몇 번이나 죽을 뻔했다고요!",
    "role": "desc",
    "kind": "dialogue",
@@ -94408,7 +94498,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "어... 아니. 전혀 짚이는 데가 없어.",
    "role": "desc",
    "kind": "dialogue",
@@ -95996,6 +96086,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "뭘 도와주면 되겠나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "이 Kanderstone 조각에 여러 종류의 마력을 쬐어 보고 있네. 쇠락의 영향을 되돌릴 수 있을까 해서.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "쇠락이 숲에서 빨아들이는 그 에너지가 무엇인지만 찾아내면, 십중팔구... 이 Kanderstone은 코발트로 돌아갈 걸세. 이 숲이 쇠퇴하기 전에 나던 광물 말일세.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "...그런데 대체 그게 뭘까? 생각나는 마법은 다 써 봤네. 아무것도 쇠락의 영향을 되돌리지 못해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "확신하네. 쇠락은 마력이 빠져나가서 생기는 걸세. 다만 그게 정확히 뭔지 짚어 내질 못하겠어...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103098,7 +103238,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "구울은 거의 다 처리했다. Plaatic 경에게 돌아가야 한다.",
    "role": "desc",
    "kind": "dialogue",
@@ -123427,6 +123567,26 @@
    "speaker": "Scientist Ynnos",
    "source": "captured"
   },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "찾는 수정은 파란색이 아니라 보라색이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "반대편에서 봤다면 보였을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
    "dst": "잠깐, Viola, 이건 기회야! 이 낯선 사람은 뭐든 해낼 것 같잖아, 사악한 소라게까지도! 소문이 진짜인지 이 사람한테 알아봐 달라고 하면 되잖아!",
@@ -139947,6 +140107,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "이걸 읽고 있다면, 난 아직 안 돌아온 거야. 난... 잠이 안 와서. 머리 좀 식히러 산책 나가.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "아침이면 식당에서 보자. 아직 밤이면, 그 전에 마주칠지도 모르고.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "{p}의 [{~}, {~}, -{~}]에서 요리사 Hamsey와 만나세요.",
@@ -141970,6 +142160,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "이 알들은 거의... 털이 난 것 같다? 그냥 두는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "만지면 차갑고 메마른 이상한 회색 열매다... 찾고 있는 Voidroot는 아니지만.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "되찾으려면... 화력이... 더 필요해...",
@@ -143661,7 +143871,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "태도가 왜 그래! 제대로 된 배라면 종이 있어야 한다고, 알아? 연락선이 종도 없이 다닐 것 같아? 그럴 리가!",
    "role": "desc",
    "kind": "dialogue",
@@ -184678,6 +184888,16 @@
    "speaker": "Avos Chieftain",
    "source": "captured"
   },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "어쩌면 자네의 타락보다도 오래된 것일지도 모르네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 {p} 근처에서 Ava를 만나세요",
@@ -185059,7 +185279,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "알현이 어떻게 돌아가는지는 모르지만 사람들 눈길은 끌어 볼 수 있어!",
    "role": "desc",
    "kind": "dialogue",
@@ -185079,7 +185299,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "정보를 얻으면 마을 중심으로 와!",
    "role": "desc",
    "kind": "dialogue",
@@ -187439,7 +187659,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "식물이라? 특이하군. 궁금하네.",
    "role": "desc",
    "kind": "dialogue",
@@ -187869,8 +188089,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "기계 다루는 법도 안다고? 멋진데!",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "{u}도 기계 다루는 법을 안다고? 멋진데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -191829,7 +192049,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "고마워, {u}! 훨씬 나아졌어. 준비되면 언제든 더 깊이 갈 수 있어.",
    "role": "desc",
    "kind": "dialogue",
@@ -192069,7 +192289,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "내 생각엔.. 이 간헐천을 어떻게든 쓸 수 없을까? 잠든 것 같지만, 다시 깨울 수 있을 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -192179,8 +192399,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "우- 우리 살았어? …, 해냈어! 돌아왔어! 하하하! 살았다!",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "우- 우리 살았어? …{u}, 해냈어! 돌아왔어! 하하하! 살았다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -192219,7 +192439,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "하, 저기 장난꾼은 신경 쓰지 말게. 그래도 의상은 대단하군!",
    "role": "desc",
    "kind": "dialogue",
@@ -193026,6 +193246,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 채광용 폭약]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -204337,7 +204567,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "바로 넘어가자고. 바람! 지금 숨 쉬고 있고, 사방에 널려 있지만, 아직 뭔지 모르잖아? 그러니 잘 들어.",
    "role": "desc",
    "kind": "dialogue",
@@ -204347,7 +204577,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "바람은 자유의 원소야! 속도, 바람, 그리고 재빠름. 재빠름을 잘 단련하면 공격이 그냥 몸을 통과하는 것처럼 보일걸!",
    "role": "desc",
    "kind": "dialogue",
@@ -204357,7 +204587,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "근데 그보다, 바람은 어디에나 있어서 세상에서 제일 다재다능한 마법 중 하나야. 사람들이 온갖 방식으로 쓰지.",
    "role": "desc",
    "kind": "dialogue",
@@ -204367,7 +204597,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "Gavel 쪽 Bantisu 바람 수도승들은 바람으로 시야를 넓히는 데 성공했어! 그걸로 저쪽 협곡에서 길 잃은 사람들을 안내하지.",
    "role": "desc",
    "kind": "dialogue",
@@ -204377,7 +204607,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "날개 달린 생물 상당수는 바람과 이어져 있지만, 전부는 아냐. 어떤 마법사는 그냥 둥둥 떠다닌다고! 그거 좋지 않겠어, 응?",
    "role": "desc",
    "kind": "dialogue",
@@ -204387,7 +204617,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "영혼이랑 망령도 몸이 희미해서 바람 마법과 관련될 때가 많아. 유령을 그냥 창밖으로 불어 버릴 수 있나 궁금해지지!",
    "role": "desc",
    "kind": "dialogue",
@@ -204407,7 +204637,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "이제 실기 시험이다! 뼈 좀 흔들어 볼 시간이야! 내가 만든 장애물 코스를 달릴 건데, 반전이 하나 있지.",
    "role": "desc",
    "kind": "dialogue",
@@ -204417,7 +204647,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "다들 탁자로 와! 통과하려면 이 깃털이 있어야 해. 더 높이 뛰게 해 주거든!",
    "role": "desc",
    "kind": "dialogue",
@@ -204427,7 +204657,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "목표는 코스에 둔 수정 구슬 세 개를 챙기는 거야. 찾으면 나한테 가져와.",
    "role": "desc",
    "kind": "dialogue",
@@ -204437,7 +204667,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "코스는 내 뒤에 있어. 자, 움직여!",
    "role": "desc",
    "kind": "dialogue",
@@ -215838,6 +216068,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 Pishlas에 있는 Maripe에게 말을 거세요.",
@@ -216569,8 +216809,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "아무튼, 어서 가서 소문을 내 주세요! 어디를 찾아야 할지 모르겠으면 확인해 보세요! 쪽지를 잃어버리면 돌아오세요, 다시 적어 드릴게요.",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
+   "dst": "아무튼, 어서 가서 소문을 내 주세요! 어디를 찾아야 할지 모르겠으면 제 쪽지를 확인해 보세요! 쪽지를 잃어버리면 돌아오세요, 다시 적어 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -216679,7 +216919,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "어릴 때 거기 갔던 기억이 흐릿하게 남아 있는데, 버려진 모습을 본 뒤로는 그 시절이 상상이 안 됐어요.",
    "role": "desc",
    "kind": "dialogue",
@@ -216949,7 +217189,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "가족 일이 따뜻한 목욕보다 중요하긴 하지만... 찻잎 좀 나눠 주고 다음번 입장권도 사 줘야겠어. 공짜로 한번 담글 자격이 있지.",
    "role": "desc",
    "kind": "dialogue",
@@ -217089,7 +217329,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "정말 기억 속 모습 그대로예요. 다들 모여서 쉬고, 이런저런 얘기를 나누고, 걱정은 그냥 사라지게 두고...",
    "role": "desc",
    "kind": "dialogue",
@@ -217109,7 +217349,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "이 기분은... 가슴의 짐을 내려놓았지만, 앞에 새 일이 있다는 걸 아는 느낌이에요- 이곳을, Pishlas를 지켜 나가는 일이요. 그게... 상쾌한 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
@@ -217139,7 +217379,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "...세상에, 안 울기로 다짐했는데... 겨, 결국 울고 있네요. 하하... 이거 다 하고 나니 정말 피곤해요. 너무너무 피곤한데... 그래도. 기분 좋은 피곤함이에요, 아시죠?",
    "role": "desc",
    "kind": "dialogue",
@@ -227682,6 +227922,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} 밸브 손잡이]",
@@ -237965,7 +238215,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "받는 양이 갈수록 줄고 있어요. 인심 좋은 분들이 나눠 주긴 하지만 거기까지죠. 여기 한 잔 저기 한 잔으로는 제 가련한 정원을 되살릴 수 없어요.",
    "role": "desc",
    "kind": "dialogue",
@@ -238445,8 +238695,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "이게 네 계획이었군! 방해 공작을 하러 와서... 혼자 물을 훔치려 했나? 아니면 파괴가 목적이었나? 홍수를 일으키려고?",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "이게 네 계획이었군! 댐을 망가뜨리러 와서... 혼자 물을 훔치려 했나? 아니면 파괴가 목적이었나? 홍수를 일으키려고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",

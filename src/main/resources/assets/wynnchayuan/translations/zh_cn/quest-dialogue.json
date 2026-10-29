@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24227,
-  "translated": 24224,
+  "count": 24252,
+  "translated": 24249,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -5325,6 +5325,16 @@
    "speaker": "Tasim",
    "source": "captured"
   },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "是的。我明白。愚勇的力量展示毫无意义。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "嗯……是这样，不过我想先跟 {u} 说明细节。这是个危险的任务，所以……我觉得最好让他们了解一下情况。",
@@ -10335,6 +10345,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "……啊。它被施了魔法……考虑到你见过的那些，这倒是挺奇怪的，不过守卫们正往你这边看。你最好别再这么做了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "还是没有回应。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "似乎没有人知道你在这里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19335,7 +19375,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "我会上报谁进出镇子。谁卖了什么。谁买了什么。谁跟谁说话。",
    "role": "desc",
    "kind": "dialogue",
@@ -19935,7 +19975,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "我不确定跟 {p} 精灵说话会受什么惩罚，不过我想至少是黎明时分吊死吧。还是说根本没有惩罚？",
    "role": "desc",
    "kind": "dialogue",
@@ -19945,7 +19985,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "我们还是离开这里吧。我说过，一开始就去查地下河才是最聪明的做法。",
    "role": "desc",
    "kind": "dialogue",
@@ -24204,6 +24244,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "我们四处看看吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "我们四处看看吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "你对这一切怎么看？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "与 [-{~}, -{~}] 的 Goruca 队长交谈",
@@ -25155,7 +25225,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "Ureietun！人类救了 Ressinter 的命！为什么不信任？",
    "role": "desc",
    "kind": "dialogue",
@@ -25205,7 +25275,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "……可以信任人类不会杀。人类可以在 Centerworld 走动。但人类不能见 Arrai-Veretel！",
    "role": "desc",
    "kind": "dialogue",
@@ -26195,7 +26265,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "嗯，也许你读读里面写的东西，能自己学到些什么。",
    "role": "desc",
    "kind": "dialogue",
@@ -50547,7 +50617,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "第二个围栏可能也有类似的问题，不过我相信你自己想得出办法。",
    "role": "desc",
    "kind": "dialogue",
@@ -58311,7 +58381,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "你需要 [{~} 火焰蛛丝]。镇子底下的热疤蜘蛛会吐这种丝，入口拱门旁边就有个洞窟。",
    "role": "desc",
    "kind": "dialogue",
@@ -80471,6 +80541,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "……哦，你要跟 Relend 出海啊？你确定？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "这个看起来……能吃。你该问问 Relend 怎么看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "啊，{p} 军队的一员。我们正想多了解这座冰之坟冢。我们需要你的帮助。",
@@ -86486,7 +86576,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "炽热岩浆水晶大拍卖！纯度 {~}！拒绝替代品，除非你付的是绿宝石，那就用……很多很多绿宝石来替代！！",
    "role": "desc",
    "kind": "dialogue",
@@ -90212,7 +90302,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "可是大约一个月前，那些史莱姆变强了。我再也拿不到了，还差点被打死好几次！",
    "role": "desc",
    "kind": "dialogue",
@@ -94408,7 +94498,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "呃……没有。一点印象都没有。",
    "role": "desc",
    "kind": "dialogue",
@@ -95996,6 +96086,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "有什么能帮你的吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "我一直在试着让这块 Kanderstone 接触各种不同的魔法能量，看看能不能逆转黯蚀对它造成的影响。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "只要我能找到黯蚀从森林里吸走的那股能量，那么十之八九……这块 Kanderstone 就会变回钴，也就是这片森林开始衰败之前出产的矿物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "……可那到底会是什么呢？我能想到的魔法都试过了。没有任何东西能逆转黯蚀的影响。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "我很确定。黯蚀是由魔法能量被抽走造成的。只是我没办法确定究竟是什么……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103098,7 +103238,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "食尸鬼差不多都清掉了，你该回去找 Plaatic 大人。",
    "role": "desc",
    "kind": "dialogue",
@@ -123427,6 +123567,26 @@
    "speaker": "Scientist Ynnos",
    "source": "captured"
   },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "你要找的水晶是紫色的，不是蓝色的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "你大概从另一边就能看到了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
    "dst": "等等，Viola，这是我们的机会！这位陌生人看起来什么都对付得了，就算是邪恶的寄居蟹也不在话下！我们可以直接请对方去查查这些传闻是不是真的！",
@@ -139947,6 +140107,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "如果你在看这张字条，代表我还没回来。我……睡不着。所以出去走走，清醒一下脑袋。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "如果已经是早上了，我们就在餐厅见。如果还是晚上，也许我会在那之前碰到你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "在 {p} [{~}, {~}, -{~}] 与 Hamsey 厨师会合。",
@@ -141970,6 +142160,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "这些蛋看起来几乎……毛茸茸的？最好还是别去碰它们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "这是一颗奇怪的灰色果实，摸起来又冷又干……不过不是你要找的虚空根。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "如果我要……夺回……我需要更多火力……",
@@ -143661,7 +143871,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "你这是什么态度！像样的船都得有个钟，懂吗？你觉得 Seaskipper 会没挂钟就出航吗？我想也不会！",
    "role": "desc",
    "kind": "dialogue",
@@ -184678,6 +184888,16 @@
    "speaker": "Avos Chieftain",
    "source": "captured"
   },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "说不定，它甚至比你们的腐化还要古老！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 的 {p} 附近与 Ava 会合",
@@ -185059,7 +185279,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "我不知道这个接见是怎么运作的，不过我可以试着让大家注意到我！",
    "role": "desc",
    "kind": "dialogue",
@@ -185079,7 +185299,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "如果你有情报，我会在市中心附近！",
    "role": "desc",
    "kind": "dialogue",
@@ -187439,7 +187659,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "植物，是吗？挺少见的。我很好奇。",
    "role": "desc",
    "kind": "dialogue",
@@ -187869,8 +188089,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "所以也会操作机器？真行！",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "所以 {u} 也会操作机器？真行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -191829,7 +192049,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "谢谢你，{u}！我感觉好多了。你准备好了我们就继续深入。",
    "role": "desc",
    "kind": "dialogue",
@@ -192069,7 +192289,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "我在想……要是我们能想办法利用这个间歇泉呢？它看起来是休眠的，不过我觉得我们能让它重新喷发。",
    "role": "desc",
    "kind": "dialogue",
@@ -192179,8 +192399,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "我、我们成功了？……我们做到了！我们回来了！哈哈哈！我还活着！",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "我、我们成功了？……{u}，我们做到了！我们回来了！哈哈哈！我还活着！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -192219,7 +192439,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "哈，别理那边那个爱开玩笑的家伙。不过他那身装扮倒是很像样！",
    "role": "desc",
    "kind": "dialogue",
@@ -193026,6 +193246,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 采矿炸药]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -204337,7 +204567,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "我们继续。气！你们在呼吸它，我们被它包围着，可你们还不知道它是怎么回事，所以注意听。",
    "role": "desc",
    "kind": "dialogue",
@@ -204347,7 +204577,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "气是自由的元素！速度、风与敏捷。如果你敏捷练得好，攻击就会像直接从你身上穿过去一样！",
    "role": "desc",
    "kind": "dialogue",
@@ -204357,7 +204587,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "不过更重要的是，因为风无所不在，它是世上用途最广的魔法之一。大家用它的方式五花八门。",
    "role": "desc",
    "kind": "dialogue",
@@ -204367,7 +204597,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "在 Gavel 那边，Bantisu 风僧已经能借着风延伸视野了！他们用它来引导在那边峡谷里迷路的人。",
    "role": "desc",
    "kind": "dialogue",
@@ -204377,7 +204607,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "很多有翅膀的生物都跟风有关，但不是全部。有些魔法使用者直接就浮起来了！那不是很棒吗，嗯？",
    "role": "desc",
    "kind": "dialogue",
@@ -204387,7 +204617,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "因为形体很虚，灵魂和幽灵也常常跟风魔法有关。让你怀疑能不能直接把鬼吹出窗外！",
    "role": "desc",
    "kind": "dialogue",
@@ -204407,7 +204637,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "现在来进行实作测验！是时候让你们活动活动筋骨了！你们要跑一趟我设计的障碍赛道，不过有个小花样。",
    "role": "desc",
    "kind": "dialogue",
@@ -204417,7 +204647,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "大家都到桌子这边来！你们得带着这根羽毛才能过关。它能帮你跳得更高！",
    "role": "desc",
    "kind": "dialogue",
@@ -204427,7 +204657,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "目标是拿到我放在障碍赛道里的三颗水晶球。找到之后，带回来给我。",
    "role": "desc",
    "kind": "dialogue",
@@ -204437,7 +204667,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "赛道就在我后面。赶紧的！",
    "role": "desc",
    "kind": "dialogue",
@@ -215838,6 +216068,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 的 Pishlas 与 Maripe 交谈。",
@@ -216569,8 +216809,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "总之，出发去把消息传出去吧！不知道去哪找的话，就看看内容手册！要是把我的笔记弄丢了，可以回来，我再帮你抄一份。",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
+   "dst": "总之，出发去把消息传出去吧！不知道去哪找的话，就看看我的笔记！要是把我的笔记弄丢了，可以回来，我再帮你抄一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -216679,7 +216919,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "我对小时候去那里只有很模糊的记忆，看到那地方荒废之后，我实在想象不出它原来的样子。",
    "role": "desc",
    "kind": "dialogue",
@@ -216949,7 +217189,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "家里的事当然比泡热水澡重要，不过……我得分他一些茶叶，下次帮他买张票。他值得免费泡一次。",
    "role": "desc",
    "kind": "dialogue",
@@ -217089,7 +217329,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "这里真的就跟我记忆中的一样。大家聚在一起放松，想聊什么就聊什么，就这样让烦恼消失……",
    "role": "desc",
    "kind": "dialogue",
@@ -217109,7 +217349,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "这种感觉……像是卸下了心头的重担，同时也知道前面有新的任务在等我——维护这个地方。维护 Pishlas。这……让人神清气爽，我想。",
    "role": "desc",
    "kind": "dialogue",
@@ -217139,7 +217379,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "……哦天啊，我答应过自己不哭的……可、可我还是哭了。哈哈……天哪，忙完这一切我好累。好累好累……但是。但是是那种好的累，你懂吗？",
    "role": "desc",
    "kind": "dialogue",
@@ -227682,6 +227922,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} 阀门把手]",
@@ -237965,7 +238215,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "我们收到的水越来越少。有些慷慨的人一直在分享，但那也只能帮到一定程度。这里一杯那里一杯，救不活我可怜的花园。",
    "role": "desc",
    "kind": "dialogue",
@@ -238445,8 +238695,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "原来这就是你的计划！来这里搞破坏……想给自己偷水？还是想造成破坏？引发洪水？",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "原来这就是你的计划！来这里破坏水坝……想给自己偷水？还是想造成破坏？引发洪水？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",

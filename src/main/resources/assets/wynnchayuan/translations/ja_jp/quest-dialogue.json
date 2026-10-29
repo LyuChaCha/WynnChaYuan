@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24338,
-  "translated": 24335,
+  "count": 24362,
+  "translated": 24359,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -5323,6 +5323,16 @@
    "quest": "A Hunter's Calling",
    "stage": "",
    "speaker": "Tasim",
+   "source": "captured"
+  },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "ああ。そうだ。無謀な力の誇示など何の意味もない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Journey Beyond#000": {
@@ -10705,6 +10715,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "…あ。魔法がかかっている…これまで見てきたことを思えば妙だが、衛兵がこっちを見ている。もうやめておいたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "まだ返事がない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "誰もあなたがここにいることに気づいていないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19705,7 +19745,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "町に出入りする人を報告します。誰が何を売り、誰が何を買い、誰が誰と話したか。",
    "role": "desc",
    "kind": "dialogue",
@@ -20305,7 +20345,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "{p} のエルフと話した罰が何かは知りませんけど、少なくとも絞首刑は確実かと。それとも罰なんてないのかな？",
    "role": "desc",
    "kind": "dialogue",
@@ -20315,7 +20355,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "もうここを出よう。最初から地下の川を調べるのが一番賢いって言っただろ。",
    "role": "desc",
    "kind": "dialogue",
@@ -24574,6 +24614,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "辺りを見て回ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "辺りを見て回ろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "これについて、どう思う？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "[-{~}, -{~}] の Goruca 隊長と話す",
@@ -25525,7 +25595,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "Ureietun！人間 Ressinter の命救った！なぜ信じない？",
    "role": "desc",
    "kind": "dialogue",
@@ -25575,7 +25645,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "…人間殺さない、信じられる。人間 Centerworld 歩いていい。でも Arrai-Veretel に会うな！",
    "role": "desc",
    "kind": "dialogue",
@@ -26565,7 +26635,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "まあ、中身を読めば、あなた自身も何か学べるかもしれませんね。",
    "role": "desc",
    "kind": "dialogue",
@@ -50917,7 +50987,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "二つ目の囲いも似たような問題があるかもしれんが、自分でなんとかできるだろう。",
    "role": "desc",
    "kind": "dialogue",
@@ -58681,7 +58751,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "[{~} Fire Webs] が必要だ。町の下の Heatscar Spiders が作る。入口のアーチのすぐ横に洞窟がある。",
    "role": "desc",
    "kind": "dialogue",
@@ -80841,6 +80911,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "…おっ、Relend と出かけるのか、へえ？本気か？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "これは…食べられそうだ。Relend の意見を聞いてみよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "おや、{p} 軍の者か。この凍てついた墳墓のことをもっと知りたいと思っている。力を貸してほしい。",
@@ -86856,7 +86946,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "Ardent Magma Crystal 売ってるぞ！純度 {~}！代用品はお断り、エメラルド払いなら話は別、その時はぜひ代わりに…たっぷり頼む！！",
    "role": "desc",
    "kind": "dialogue",
@@ -90582,7 +90672,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "でも一か月くらい前からスライムが強くなってね。もう取りに行けないし、何度か死にかけたんだ！",
    "role": "desc",
    "kind": "dialogue",
@@ -94778,7 +94868,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "えー…いや。全然ピンとこない。",
    "role": "desc",
    "kind": "dialogue",
@@ -96366,6 +96456,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "何かご用かな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "このカンダーストーンのかけらに、いろいろな種類の魔力を当ててみているんだ。これにかかった腐朽の影響を元に戻せないかと思ってね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "腐朽が森から吸い取っている魔力が何なのかさえ分かれば、おそらく…このカンダーストーンは、森が衰える前にここで採れていた鉱物、コバルトに戻るはずなんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "…でも、それは何なんだろう？思いつく限りの魔法は試した。なのに腐朽の影響は何ひとつ元に戻らない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "間違いない。腐朽は魔力が奪われることで起きている。ただ、それが具体的に何なのかが突き止められないんだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103468,7 +103608,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "グールはおおよそ片付いた。Plaatic 卿のところへ戻るべきだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -123911,6 +124051,26 @@
    "speaker": "Scientist Ynnos",
    "source": "captured"
   },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "探している水晶は青じゃなくて紫だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "それなら反対側からでも見えたかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
    "dst": "待って Viola、これはチャンスだよ！この人なら何でも、悪いヤドカリだって倒せそう！噂が本当か確かめてもらおうよ！",
@@ -140501,6 +140661,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "これを読んでいるなら、僕はまだ戻ってない。その…眠れなくて。だから頭を冷やしに散歩に出てくる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "朝なら食堂で会おう。まだ夜なら、それより前に会えるかもね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "{p} の [{~}, {~}, -{~}] で料理長 Hamsey と会う。",
@@ -142524,6 +142714,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "この卵、なんだか…毛が生えてる？そっとしておいたほうがよさそうだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "灰色の奇妙な果実だ。触ると冷たくて乾いている…探している Voidroot ではないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "もっと火力が要る、もし…取り…戻すなら…",
@@ -144215,7 +144425,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "何だよその態度！まともな船には鐘がつきものなんだよ、わかるか？渡し船が鐘なしで出航すると思うか？だろうな！",
    "role": "desc",
    "kind": "dialogue",
@@ -185623,7 +185833,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "謁見の仕組みは知らないけど、人の目を引くことならできるかも！",
    "role": "desc",
    "kind": "dialogue",
@@ -185643,7 +185853,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "何か分かったら、街の中心あたりにいるよ！",
    "role": "desc",
    "kind": "dialogue",
@@ -188003,7 +188213,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "植物か？珍しいな。興味深い。",
    "role": "desc",
    "kind": "dialogue",
@@ -188433,8 +188643,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "じゃあ も機械の扱いがうまいのね？やるじゃない！",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "{u}も機械の扱い方を知ってるの？ すごいね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -193043,7 +193253,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "ありがとう、{u}！だいぶ楽になった。準備ができたら、すぐにでも奥へ行けるよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -193283,7 +193493,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "思うんだけど…この間欠泉をどうにかできないかな？休止してるみたいだけど、また動かせる気がする。",
    "role": "desc",
    "kind": "dialogue",
@@ -193393,8 +193603,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "や、やった？…やったぞ！戻ってきた！ははは！生きてる！",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "や、やった？…{u}、やったぞ！戻ってきた！ははは！生きてる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -193433,7 +193643,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "はは、あそこのお調子者は気にしないでくれ。衣装は見事だがね！",
    "role": "desc",
    "kind": "dialogue",
@@ -194250,6 +194460,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 採掘用爆薬]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -205571,7 +205791,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "どんどんいくぞ。風だ！吸ってるし、囲まれてる。けど何なのかはまだ知らねえだろ、よく聞けよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -205581,7 +205801,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "風は自由の元素だ！速さ、風、そして敏捷さ。俊敏さを鍛えりゃ、攻撃がすり抜けてくみてえに見えるぜ！",
    "role": "desc",
    "kind": "dialogue",
@@ -205591,7 +205811,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "だがそれ以上に、風はどこにでもあるから、この世で一番万能な魔法のひとつなんだ。使い道は色々さ。",
    "role": "desc",
    "kind": "dialogue",
@@ -205601,7 +205821,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "Gavel じゃ Bantisu の風の僧が、風で視界を広げてるんだと！それであの峡谷で迷った連中を導いてるのさ。",
    "role": "desc",
    "kind": "dialogue",
@@ -205611,7 +205831,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "翼のある生き物の多くは風と結びついてるが、全部じゃねえ。ただ浮かんじまう魔法使いもいる！いいよなあ、え？",
    "role": "desc",
    "kind": "dialogue",
@@ -205621,7 +205841,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "実体が薄いから、魂や霊も風魔法と関わることが多い。幽霊を窓から吹き飛ばせるんじゃねえかって思うよな！",
    "role": "desc",
    "kind": "dialogue",
@@ -205641,7 +205861,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "さあ実技テストだ！骨をガタガタ言わせる時間だぜ！俺が作った障害物コースを走ってもらうが、ひとひねりある。",
    "role": "desc",
    "kind": "dialogue",
@@ -205651,7 +205871,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "全員テーブルへ！通り抜けるにはこの羽根が要る。高く跳べるようになるぜ！",
    "role": "desc",
    "kind": "dialogue",
@@ -205661,7 +205881,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "目標は、コースに置いた水晶玉を3つ取ること。見つけたら俺のとこへ持ってこい。",
    "role": "desc",
    "kind": "dialogue",
@@ -205671,7 +205891,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "コースは俺の後ろだ。さあ急げ！",
    "role": "desc",
    "kind": "dialogue",
@@ -217072,6 +217292,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] の Pishlas で Maripe と話す。",
@@ -217803,8 +218033,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "とにかく、出発して宣伝を始めて！どこを探せばいいかわからなければ、確認して！メモをなくしたら、戻ってきてくれればまた書き写すよ。",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
+   "dst": "とにかく、出発して宣伝を始めて！どこを探せばいいかわからなければ、私のメモを見て！メモをなくしたら、戻ってきてくれればまた書き写すよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217913,7 +218143,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "子供の頃に行ったかすかな記憶はありますが、荒れ果てた姿を見た後では、思い描けませんでした。",
    "role": "desc",
    "kind": "dialogue",
@@ -218183,7 +218413,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "家族のことは温かい風呂より大事に決まってるけど…茶葉を分けて、次の分の券を買ってやろう。あいつにはタダで浸かる資格がある。",
    "role": "desc",
    "kind": "dialogue",
@@ -218323,7 +218553,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "本当に記憶の通りだ。みんなが集まってくつろいで、好きなことを話して、悩みを忘れて…",
    "role": "desc",
    "kind": "dialogue",
@@ -218343,7 +218573,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "この気持ちは…肩の荷が下りたけど、新しい仕事が待ってるってわかってる感じ―この場所を、Pishlas を守っていくこと。なんだか…清々しいな。",
    "role": "desc",
    "kind": "dialogue",
@@ -218373,7 +218603,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "…ああもう、泣かないって決めてたのに…け、結局泣いてる。はは…はあ、全部終わって疲れた。すごく、すごく疲れた…でも。いい疲れなんだ、わかる？",
    "role": "desc",
    "kind": "dialogue",
@@ -228916,6 +229146,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} バルブハンドル]",
@@ -239199,7 +239439,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "届く水は減る一方です。気前よく分けてくれる人もいますが、限度があります。一杯ずつでは哀れな庭は生き返りません。",
    "role": "desc",
    "kind": "dialogue",
@@ -239679,8 +239919,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "これが貴様の計画か！妨害しに来たな…自分のために水を盗む気か？それとも破壊が目的か？洪水を起こす気か？",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "これが貴様の計画か！ダムを妨害しに来たな…自分のために水を盗む気か？それとも破壊が目的か？洪水を起こす気か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",

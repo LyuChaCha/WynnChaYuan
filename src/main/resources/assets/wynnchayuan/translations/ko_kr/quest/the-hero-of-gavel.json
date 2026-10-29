@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 258,
-  "translated": 258,
+  "count": 259,
+  "translated": 259,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -1387,7 +1387,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "고마워, {u}! 훨씬 나아졌어. 준비되면 언제든 더 깊이 갈 수 있어.",
    "role": "desc",
    "kind": "dialogue",
@@ -1627,7 +1627,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "내 생각엔.. 이 간헐천을 어떻게든 쓸 수 없을까? 잠든 것 같지만, 다시 깨울 수 있을 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -1737,8 +1737,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "우- 우리 살았어? …, 해냈어! 돌아왔어! 하하하! 살았다!",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "우- 우리 살았어? …{u}, 해냈어! 돌아왔어! 하하하! 살았다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1777,7 +1777,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "하, 저기 장난꾼은 신경 쓰지 말게. 그래도 의상은 대단하군!",
    "role": "desc",
    "kind": "dialogue",
@@ -2584,6 +2584,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} 채광용 폭약]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   }
  }

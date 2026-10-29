@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 24227,
-  "translated": 24224,
+  "count": 24252,
+  "translated": 24249,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -5325,6 +5325,16 @@
    "speaker": "Tasim",
    "source": "captured"
   },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "Sí. Así es. Una temeraria exhibición de poder no significa nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "Bueno... sí, pero antes quiero ponerle al día a {u}. Es una misión peligrosa, así que... mejor que esté al tanto de todo.",
@@ -10335,6 +10345,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "...ah. Está encantado... es raro, dado lo que has visto, pero los guardias te están mirando. Probablemente no deberías volver a hacerlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "Sigue sin haber respuesta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "Nadie parece saber que estás aquí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19335,7 +19375,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "Informo de quién entra y sale del pueblo. Quién vende qué. Quién compra qué. Quién habla con quién.",
    "role": "desc",
    "kind": "dialogue",
@@ -19935,7 +19975,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "No sé cuál es el castigo por hablar con un elfo de {p}, pero imagino que la horca como mínimo. ¿O ni siquiera hay castigo?",
    "role": "desc",
    "kind": "dialogue",
@@ -19945,7 +19985,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "Vámonos de aquí. Ya dije que lo más listo era investigar el río subterráneo desde el principio.",
    "role": "desc",
    "kind": "dialogue",
@@ -24204,6 +24244,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "Echemos un vistazo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "¡Echemos un vistazo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "¿Qué opinas de todo esto?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "Habla con el capitán Goruca en [-{~}, -{~}]",
@@ -25155,7 +25225,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "¡Ureietun! ¡Humano salvar vida de Ressinter! ¿Por qué no confiar?",
    "role": "desc",
    "kind": "dialogue",
@@ -25205,7 +25275,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "...poder confiar en que humano no matar. Humano andar por Centerworld. ¡Pero no ver a Arrai-Veretel!",
    "role": "desc",
    "kind": "dialogue",
@@ -26195,7 +26265,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "Bueno, quizá si lees lo que pone en ellos puedas aprender algo por tu cuenta.",
    "role": "desc",
    "kind": "dialogue",
@@ -50547,7 +50617,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "El segundo corral quizá tenga un problema parecido, pero seguro que lo resuelves tú solo.",
    "role": "desc",
    "kind": "dialogue",
@@ -58311,7 +58381,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "Necesitarás [{~} Fire Webs]. Las Heatscar Spiders de debajo del pueblo las tejen; hay una cueva junto al arco de entrada.",
    "role": "desc",
    "kind": "dialogue",
@@ -80471,6 +80541,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "...Oh, ¿así que vas a salir con Relend, eh? ¿Seguro?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "Esto parece... comestible. Deberías ver qué opina Relend.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "Ah, un soldado del ejército de {p}. Intentamos saber más de este túmulo helado. Nos vendría bien tu ayuda.",
@@ -86486,7 +86576,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "¡Ardent Magma Crystals en venta! ¡Puros, {~}! ¡No aceptes sustitutos, salvo que pagues en esmeraldas, en cuyo caso sustituye... por muchas!!",
    "role": "desc",
    "kind": "dialogue",
@@ -90212,7 +90302,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "Pero hace cosa de un mes los limos se hicieron más fuertes. Ya no puedo sacarla, ¡y he estado a punto de morir varias veces!",
    "role": "desc",
    "kind": "dialogue",
@@ -94408,7 +94498,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "Eh... no. No me suena de nada.",
    "role": "desc",
    "kind": "dialogue",
@@ -95996,6 +96086,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "¿En qué puedo ayudarte?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "He estado exponiendo este trozo de Kanderstone a distintos tipos de energía mágica para ver si podía revertir los efectos de la Decadencia sobre él.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "Si consigo encontrar la energía que la Decadencia le está robando a los bosques, entonces con toda probabilidad... este Kanderstone volverá a ser cobalto, el mineral que había en este bosque antes de que empezara su declive.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "...Pero ¿qué podrá ser? He probado todo tipo de magia que se me ocurre. Nada revierte los efectos de la Decadencia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "Estoy seguro. La Decadencia la causa la extracción de energía mágica. Pero no logro precisar cuál, exactamente...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103098,7 +103238,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "Ya has acabado con casi todos los Ghastly Ghouls; deberías volver con lord Plaatic.",
    "role": "desc",
    "kind": "dialogue",
@@ -123427,6 +123567,26 @@
    "speaker": "Scientist Ynnos",
    "source": "captured"
   },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "El cristal que buscas es morado, no azul.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "Probablemente podrías haberlo visto desde el otro lado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
    "dst": "¡Espera, Viola, es nuestra oportunidad! Este forastero parece capaz de con todo, ¡hasta con cangrejos ermitaños malvados! ¡Pidámosle que compruebe si los rumores son ciertos!",
@@ -139947,6 +140107,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "Si estás leyendo esto, es que aún no he vuelto. No... podía dormir. Así que he salido a dar un paseo para despejarme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "Si ya es de mañana, nos vemos en el comedor. Si aún es de noche, a lo mejor te encuentro antes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "Reúnete con el chef Hamsey en {p}, en [{~}, {~}, -{~}].",
@@ -141970,6 +142160,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "Estos huevos parecen casi... ¿peludos? Probablemente sea mejor dejarlos en paz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "Es una extraña fruta gris, fría y seca al tacto... pero no es el Voidroot que buscas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Necesito más potencia de fuego si quiero... recuperar...",
@@ -143661,7 +143871,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "¡Vaya humos! Todo barco que se precie lleva campana, ¿sabes? ¿Crees que el Seaskipper se dejaría ver sin una? ¡Ya me parecía!",
    "role": "desc",
    "kind": "dialogue",
@@ -184678,6 +184888,16 @@
    "speaker": "Avos Chieftain",
    "source": "captured"
   },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "Por lo que sabemos, ¡hasta podría ser anterior a tu corrupción!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
    "dst": "Reúnete con Ava cerca de {p} en [-{~}, {~}, -{~}]",
@@ -185059,7 +185279,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "No tengo ni idea de cómo va esto de las audiencias, ¡pero puedo intentar llamar la atención!",
    "role": "desc",
    "kind": "dialogue",
@@ -185079,7 +185299,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "¡Estaré por el centro del pueblo si consigues información!",
    "role": "desc",
    "kind": "dialogue",
@@ -187439,7 +187659,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "¿Plantas? Qué raro. Me intriga.",
    "role": "desc",
    "kind": "dialogue",
@@ -187869,8 +188089,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "¿Así que sabe manejar máquinas también? ¡Qué apaño!",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "¿Así que {u} sabe manejar máquinas también? ¡Qué apaño!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -191829,7 +192049,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "¡Gracias, {u}! Me siento mucho mejor. Puedo seguir bajando cuando quieras.",
    "role": "desc",
    "kind": "dialogue",
@@ -192069,7 +192289,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "Creo.. ¿y si logramos algo con este géiser? Parece dormido, pero siento que podemos reactivarlo.",
    "role": "desc",
    "kind": "dialogue",
@@ -192179,8 +192399,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "¿L-lo logramos? …, ¡LO HICIMOS! ¡HEMOS VUELTO! ¡JAJAAA! ¡ESTOY VIVO!",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "¿L-lo logramos? …{u}, ¡LO HICIMOS! ¡HEMOS VUELTO! ¡JAJAAA! ¡ESTOY VIVO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -192219,7 +192439,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "Ja, no hagas caso al bromista de ahí. ¡Aunque su disfraz es impresionante!",
    "role": "desc",
    "kind": "dialogue",
@@ -193026,6 +193246,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} Explosivo de minería]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -204337,7 +204567,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "Seguimos. ¡El Aire! Lo estáis respirando, nos rodea, pero aún no sabéis de qué va la cosa, así que atentos.",
    "role": "desc",
    "kind": "dialogue",
@@ -204347,7 +204577,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "¡El Aire es el elemento de la libertad! Velocidad, viento y agilidad. Si entrenas bien la Agilidad, ¡los ataques parecerán atravesarte sin más!",
    "role": "desc",
    "kind": "dialogue",
@@ -204357,7 +204587,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "Y por encima de eso, como el aire está en todas partes, es de las magias más versátiles que hay. La gente la usa de mil maneras.",
    "role": "desc",
    "kind": "dialogue",
@@ -204367,7 +204597,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "Allá en Gavel, ¡los Monjes del Aire de Bantisu han logrado extender su vista con el viento! Lo usan para guiar a los que se pierden en aquel cañón.",
    "role": "desc",
    "kind": "dialogue",
@@ -204377,7 +204607,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "Muchos bichos con alas están ligados al aire, pero no todos. ¡Hay magos que directamente flotan! ¿No estaría bien, eh?",
    "role": "desc",
    "kind": "dialogue",
@@ -204387,7 +204617,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "Por lo tenue de su cuerpo, las almas y los espíritus también se ligan al aire. ¡Te hace pensar si podrías echar a un fantasma de un soplido!",
    "role": "desc",
    "kind": "dialogue",
@@ -204407,7 +204637,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "¡Y ahora, la prueba práctica! ¡Toca mover el esqueleto! Correréis un circuito de obstáculos que he montado, pero con truco.",
    "role": "desc",
    "kind": "dialogue",
@@ -204417,7 +204647,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "¡Todos a la mesa! Necesitaréis esta pluma para pasar.¡Os ayudará a saltar más alto!",
    "role": "desc",
    "kind": "dialogue",
@@ -204427,7 +204657,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "El objetivo es coger tres bolas de cristal que he puesto en el circuito. cuando las tengas, tráemelas.",
    "role": "desc",
    "kind": "dialogue",
@@ -204437,7 +204667,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "El circuito está detrás de mí. ¡Venga, rápido!",
    "role": "desc",
    "kind": "dialogue",
@@ -215838,6 +216068,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "Habla con Maripe en Pishlas, en [-{~}, {~}, -{~}].",
@@ -216569,8 +216809,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "En fin, ¡sal ahí fuera y empieza a correr la voz! Si no sabes dónde buscar, ¡echa un vistazo! Si pierdes mis notas, vuelve y te las copio otra vez.",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
+   "dst": "En fin, ¡sal ahí fuera y empieza a correr la voz! Si no sabes dónde buscar, ¡echa un vistazo a mis notas! Si pierdes mis notas, vuelve y te las copio otra vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -216679,7 +216919,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "Tengo recuerdos vagos de ir allí de niño, pero tras ver el lugar abandonado ya no conseguía imaginarlos.",
    "role": "desc",
    "kind": "dialogue",
@@ -216949,7 +217189,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "Los asuntos de familia son más importantes que un baño caliente, claro, pero... le daré unas hojas de té y le pagaré la entrada la próxima vez. Se merece un remojón gratis.",
    "role": "desc",
    "kind": "dialogue",
@@ -217089,7 +217329,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "Es tal y como lo recordaba. Todos juntos, relajándose, hablando de lo que les apetezca, dejando que sus penas se esfumen...",
    "role": "desc",
    "kind": "dialogue",
@@ -217109,7 +217349,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "Es esa sensación de... quitarme un peso de encima, pero sabiendo que me espera una nueva tarea- cuidar de este sitio. De Pishlas. Es... reconfortante, creo.",
    "role": "desc",
    "kind": "dialogue",
@@ -217139,7 +217379,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "...madre mía, me prometí no llorar... y-y aquí estoy, llorando igual. Jaja... Ay, qué cansado estoy tras todo esto. Muy, muy cansado... pero. Del cansancio bueno, ¿sabes?",
    "role": "desc",
    "kind": "dialogue",
@@ -227682,6 +227922,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} Manivela de válvula]",
@@ -237965,7 +238215,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "Cada vez recibimos menos. Hay gente generosa que comparte, pero eso no llega muy lejos. Un vaso aquí y otro allá no reviven mi pobre jardín.",
    "role": "desc",
    "kind": "dialogue",
@@ -238445,8 +238695,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "¡Así que este era tu plan! Venir a sabotear... ¿Robar agua para ti? ¿O querías sembrar la destrucción? ¿Provocar una inundación?",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "¡Así que este era tu plan! Venir a sabotear la presa... ¿Robar agua para ti? ¿O querías sembrar la destrucción? ¿Provocar una inundación?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",

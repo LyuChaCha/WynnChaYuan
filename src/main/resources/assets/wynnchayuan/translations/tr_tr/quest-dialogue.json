@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 24227,
-  "translated": 24225,
+  "count": 24252,
+  "translated": 24250,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -5325,6 +5325,16 @@
    "speaker": "Tasim",
    "source": "captured"
   },
+  "A Hunter's Calling#315": {
+   "src": "Yes. I do. A foolhardy show of power means nothing.",
+   "dst": "Evet. Biliyorum. Akılsızca bir güç gösterisi hiçbir şey ifade etmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "A Journey Beyond#000": {
    "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "Şey... öyle, ama önce {u} adlı kahramana ayrıntıları anlatmak istiyorum. Bu tehlikeli bir görev, o yüzden... bilgilendirmek en iyisi.",
@@ -10335,6 +10345,36 @@
    "quest": "A Journey Home",
    "stage": "",
    "speaker": "Ragni's King",
+   "source": "captured"
+  },
+  "A Journey Home#154": {
+   "src": "...ah. It's enchanted...that's odd, given what you've seen, but the guards are looking your way now. You probably shouldn't do that again.",
+   "dst": "...ah. Büyülü... gördüklerine bakılırsa bu tuhaf, ama muhafızlar şimdi sana bakıyor. Bunu bir daha yapmasan iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#155": {
+   "src": "There's still no response.",
+   "dst": "Hâlâ cevap yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#156": {
+   "src": "No one seems to know you're here.",
+   "dst": "Kimse burada olduğunu bilmiyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "A Marauder's Dues#000": {
@@ -19335,7 +19375,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#146": {
-   "src": "I report who comes and leaves the town. Who sells what. Who buys what. Who talks with who.",
+   "src": "I report who comes and leaves the town. Who sells what, who buys what and who talks with who.",
    "dst": "Kasabaya kimin gelip gittiğini rapor ederim. Kim ne satıyor. Kim ne alıyor. Kim kiminle konuşuyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -19935,7 +19975,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#206": {
-   "src": "I'm not sure what the punishment for talking to an {p} elf is but I would imagine at least hanging and dawn. Or is there even a punishment?",
+   "src": "I'm not sure what the punishment for talking to an {p} elf is, but I would imagine at least hanging at dawn. Or is there even a punishment?",
    "dst": "Bir {p} elfiyle konuşmanın cezası ne bilmiyorum ama en azından şafakta asılmaktır herhalde. Yoksa cezası bile yok mu?",
    "role": "desc",
    "kind": "dialogue",
@@ -19945,7 +19985,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#207": {
-   "src": "Let's just get out of here. I saw looking into the underground river would have been the smartest move in the first place.",
+   "src": "Let's just get out of here. I say looking into the underground river would have been the smartest move in the first place.",
    "dst": "Hadi buradan gidelim artık. Baştan beri en akıllıca hamlenin yeraltı nehrine bakmak olduğunu söylemiştim.",
    "role": "desc",
    "kind": "dialogue",
@@ -24204,6 +24244,36 @@
    "speaker": "",
    "source": "ja_jp"
   },
+  "Aldorei's Secret Part II#633": {
+   "src": "Let's take a look around.",
+   "dst": "Etrafa bir bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#634": {
+   "src": "Let's take a look around!",
+   "dst": "Etrafa bir bakalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
+  "Aldorei's Secret Part II#635": {
+   "src": "What do you think about all of this?",
+   "dst": "Bütün bunlar hakkında ne düşünüyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "",
+   "speaker": "Olon",
+   "source": "captured"
+  },
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
    "dst": "[-{~}, -{~}] konumundaki Kaptan Goruca ile konuş",
@@ -25155,7 +25225,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#095": {
-   "src": "Ureietun! Human save Ressinter life! Why no trust?",
+   "src": "Ureietun! Human help save Ressinter life! Why no trust?",
    "dst": "Ureietun! İnsan Ressinter'in hayatını kurtardı! Niye güvenmemek?",
    "role": "desc",
    "kind": "dialogue",
@@ -25205,7 +25275,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#100": {
-   "src": "Can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
+   "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
    "dst": "...insanın öldürmeyeceğine güvenilir. İnsan Centerworld'de dolaşabilir. Ama insan Arrai-Veretel'i görmek yok!",
    "role": "desc",
    "kind": "dialogue",
@@ -26195,7 +26265,7 @@
    "source": "wiki"
   },
   "All Roads to Peace#199": {
-   "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
+   "src": "Well, maybe if you read what these have written in them you can learn some things yourself.",
    "dst": "Neyse, belki bunlarda yazanları okursan kendin bir şeyler öğrenirsin.",
    "role": "desc",
    "kind": "dialogue",
@@ -50547,7 +50617,7 @@
    "source": "wiki"
   },
   "Cowfusion#033": {
-   "src": "The second pen might have a similar problem, but I'm sure you can figure that our yourself.",
+   "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "İkinci ağılda da benzer bir sorun olabilir ama onu kendin çözersin, eminim.",
    "role": "desc",
    "kind": "dialogue",
@@ -58311,7 +58381,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "Sana [{~} Fire Webs] lazım. Kasabanın altındaki Heatscar Örümcekleri yapıyor onları, giriş kemerinin hemen yanında bir mağara var.",
    "role": "desc",
    "kind": "dialogue",
@@ -80471,6 +80541,26 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Fantastic Voyage#311": {
+   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
+   "dst": "...Ah, Relend'le denize mi açılıyorsun, ha? Emin misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "Tavern Owner",
+   "source": "captured"
+  },
+  "Fantastic Voyage#312": {
+   "src": "This looks... edible. You should see what Relend thinks.",
+   "dst": "Bu... yenebilir görünüyor. Relend ne düşünüyor, bir bakmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Fate of the Fallen#000": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
    "dst": "Ah, {p} ordusundan biri. Bu donmuş mezar höyüğü hakkında daha fazla şey öğrenmeye çalışıyoruz. Yardımın işimize yarar.",
@@ -86486,7 +86576,7 @@
    "source": "wiki"
   },
   "From the Bottom#041": {
-   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case substitute...a lot of them!",
+   "src": "Ardent Magma Crystals for sale! Pure, {~}! Accept no substitutes, unless you're paying in emeralds, in which case kindly substitute...a lot of them!!",
    "dst": "Satılık Ardent Magma Crystal! Saf, {~}! Taklitlerine kanmayın, Zümrütle ödüyorsanız o başka, o zaman...bolca ödeyin!",
    "role": "desc",
    "kind": "dialogue",
@@ -90212,7 +90302,7 @@
    "source": "captured"
   },
   "Green Gloop#001": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "Ama yaklaşık bir ay önce balçıklar güçlendi. Artık toplayamıyorum, birkaç kez az kalsın ölüyordum!",
    "role": "desc",
    "kind": "dialogue",
@@ -94408,7 +94498,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#286": {
-   "src": "Uh... no. That doesn't ring a single bell.",
+   "src": "Uhhh... no. That doesn't ring a single bell.",
    "dst": "Iıı... hayır. Hiç tanıdık gelmiyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -95996,6 +96086,56 @@
    "stage": "",
    "speaker": "",
    "source": "ja_jp"
+  },
+  "Hollow Serenity#445": {
+   "src": "How can I help you?",
+   "dst": "Sana nasıl yardım edebilirim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "Villager",
+   "source": "captured"
+  },
+  "Hollow Serenity#446": {
+   "src": "I've been trying to expose this piece of Kanderstone to different types of magical energy to see if I could reverse the effects of this Decay upon it.",
+   "dst": "Bu Kanderstone parçasını farklı türde büyülü enerjilere maruz bırakıp Çürüme'nin üzerindeki etkilerini tersine çevirebilir miyim diye bakıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#447": {
+   "src": "If I can just find whatever energy the Decay is sapping from the forests, then in all probability... this Kanderstone will revert to Cobalt, the mineral that was found in this forest before it began its decline.",
+   "dst": "Çürüme'nin ormanlardan çektiği enerji her neyse onu bulabilirsem, büyük ihtimalle... bu Kanderstone, orman çökmeye başlamadan önce burada bulunan mineral olan Kobalt'a geri dönecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#448": {
+   "src": "...What could it be, though? I've tried every sort of magic I can think of. Nothing is reversing the effects of the Decay.",
+   "dst": "...Ama ne olabilir ki? Aklıma gelen her türlü büyüyü denedim. Hiçbir şey Çürüme'nin etkilerini tersine çevirmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hollow Serenity#449": {
+   "src": "I'm certain of it. The Decay is caused by the removal of magical energy. I just can't pinpoint what exactly, though...",
+   "dst": "Bundan eminim. Çürüme'ye büyülü enerjinin çekilip alınması yol açıyor. Ama tam olarak neyin çekildiğini bir türlü belirleyemiyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hollow Serenity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Hunger of the Gerts Part I#000": {
    "src": "You should put the mask on before you leave.",
@@ -103098,7 +103238,7 @@
    "source": "captured"
   },
   "Lazarus Pit (Quest)#082": {
-   "src": "That's most of the ghouls killed, you should head back to Lord Plaatic.",
+   "src": "That's most of the ghouls killed. You should head back to Lord Plaatic.",
    "dst": "Hortlakların çoğu öldü, Lord Plaatic'e geri dönmelisin.",
    "role": "desc",
    "kind": "dialogue",
@@ -123427,6 +123567,26 @@
    "speaker": "Scientist Ynnos",
    "source": "captured"
   },
+  "One Thousand Meters Under#129": {
+   "src": "The crystal you're looking for is purple, not blue.",
+   "dst": "Aradığın kristal mor, mavi değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "One Thousand Meters Under#130": {
+   "src": "You probably could've seen that from the other side.",
+   "dst": "Bunu muhtemelen öbür taraftan görebilirdin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "One Thousand Meters Under",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Out of my Mind#000": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
    "dst": "Dur Viola, bu bizim fırsatımız! Bu yabancı her şeyin üstesinden gelebilecek gibi duruyor, kötü keşiş yengeçlerinin bile! Şu söylentiler doğru mu diye bir ona sorabiliriz!",
@@ -139947,6 +140107,36 @@
    "speaker": "???",
    "source": "captured"
   },
+  "Queen's Recruit#715": {
+   "src": "If you're reading this, I'm not back yet. I... couldn't sleep. So I'm heading out for a walk to clear my mind.",
+   "dst": "Bunu okuyorsan henüz dönmedim demektir. Ben... uyuyamadım. Kafamı toplamak için yürüyüşe çıkıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#716": {
+   "src": "If it's morning, I'll see you at the dining hall. If it's still night, maybe I'll catch you before then.",
+   "dst": "Sabahsa yemekhanede görüşürüz. Hâlâ geceyse, belki ondan önce yakalarım seni.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#717": {
+   "src": "-Tasim",
+   "dst": "-Tasim",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
    "dst": "{p} içindeki [{~}, {~}, -{~}] konumunda Şef Hamsey ile buluş.",
@@ -141970,6 +142160,26 @@
    "speaker": "Chef Hamsey",
    "source": "captured"
   },
+  "Recipe For Disaster#212": {
+   "src": "These eggs look almost... furry? It's probably best to leave them alone.",
+   "dst": "Bu yumurtalar neredeyse... tüylü mü görünüyor? En iyisi onlara dokunmamak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#213": {
+   "src": "It's a strange grey fruit that's cold and dry to the touch... not the voidroot you're looking for though.",
+   "dst": "Dokununca soğuk ve kuru gelen tuhaf, gri bir meyve... ama aradığın voidroot bu değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Daha fazla ateş gücüne ihtiyacım var, eğer...ben...",
@@ -143661,7 +143871,7 @@
    "source": "captured"
   },
   "Recover the Past#102": {
-   "src": "What's with the attitude! Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
+   "src": "What's with the attitude? Every ship worth its salt's got to have a bell, you know? Do you think the Seaskipper'd be caught dead without one? Didn't think so!",
    "dst": "Bu tavır da ne! Adam gibi her geminin bir çanı olmalı, bilmiyor musun? Sence Seaskipper çansız bir gemiyle görünmeye razı olur muydu? Hiç sanmam!",
    "role": "desc",
    "kind": "dialogue",
@@ -184678,6 +184888,16 @@
    "speaker": "Avos Chieftain",
    "source": "captured"
   },
+  "The Feathers Fly Part I#237": {
+   "src": "For all we know, it might predate your corruption too!",
+   "dst": "Kim bilir, belki senin yozlaşmandan bile eskidir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "",
+   "speaker": "Avos Chief",
+   "source": "captured"
+  },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} yakınlarında Ava ile buluş: [-{~}, {~}, -{~}]",
@@ -185059,7 +185279,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#040": {
-   "src": "I have no idea how this audience things works but i could try to get people to notice me!",
+   "src": "I have no idea how this audience thing works, but I could try to get people to notice me!",
    "dst": "Bu huzura kabul işi nasıl işliyor hiç bilmiyorum ama insanların beni fark etmesini sağlamaya çalışabilirim!",
    "role": "desc",
    "kind": "dialogue",
@@ -185079,7 +185299,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#042": {
-   "src": "I'll be around the town center if you got any information!",
+   "src": "I'll be around the town center if ya got any information!",
    "dst": "Bir bilgi bulursan kasaba meydanının oralarda olacağım!",
    "role": "desc",
    "kind": "dialogue",
@@ -187439,7 +187659,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#581": {
-   "src": "Plants, huh? That's unusual. I'm curious.",
+   "src": "Plants? That's unusual. I'm curious.",
    "dst": "Bitkiler, ha? Alışılmadık. Merak ettim.",
    "role": "desc",
    "kind": "dialogue",
@@ -187869,8 +188089,8 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#681": {
-   "src": "So knows how to handle machines too? Nifty!",
-   "dst": "Demek  makinelerden de anlıyor? Hoş!",
+   "src": "So {u} knows how to handle machines too? Nifty!",
+   "dst": "Demek {u} makinelerden de anlıyor? Hoş!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -191829,7 +192049,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#140": {
-   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "src": "Thank you, {u}! I feel much better, I can head deeper as soon as you're ready.",
    "dst": "Teşekkürler, {u}! Çok daha iyi hissediyorum. Sen hazır olduğunda derinlere inebilirim.",
    "role": "desc",
    "kind": "dialogue",
@@ -192069,7 +192289,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#165": {
-   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "src": "I think.. what if we can use this geyser somehow? It looks dormant, but I feel like we can activate it again.",
    "dst": "Bence.. ya şu gayzeri bir şekilde kullanabilirsek? Uykuda gibi duruyor ama yeniden çalıştırabiliriz gibi geliyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -192179,8 +192399,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#176": {
-   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "B-başardık mı? …, BAŞARDIK! GERİ DÖNDÜK! HAHAAA! YAŞIYORUM!",
+   "src": "W-we made it? ...{u}, WE DID IT! WE'RE BACK! HAHAAA! I'M ALIVE!",
+   "dst": "B-başardık mı? …{u}, BAŞARDIK! GERİ DÖNDÜK! HAHAAA! YAŞIYORUM!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -192219,7 +192439,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#180": {
-   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "src": "Hah, don't mind that jokester over there. He does have an impressive costume though!",
    "dst": "Hah, şuradaki şakacıya aldırma. Gerçi kostümü etkileyici!",
    "role": "desc",
    "kind": "dialogue",
@@ -193026,6 +193246,16 @@
    "quest": "The Hero of Gavel",
    "stage": "",
    "speaker": "Gurix",
+   "source": "captured"
+  },
+  "The Hero of Gavel#262": {
+   "src": "[+{~} Mining Explosive]",
+   "dst": "[+{~} Maden Patlayıcısı]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "The Hidden City#000": {
@@ -204337,7 +204567,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#143": {
-   "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
+   "src": "Movin' right along. Air! You're breathin' it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "Devam edelim. Hava! Soluyorsunuz, etrafımız onunla çevrili, ama neyin nesi olduğunu hâlâ bilmiyorsunuz, o yüzden dikkat edin.",
    "role": "desc",
    "kind": "dialogue",
@@ -204347,7 +204577,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#144": {
-   "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
+   "src": "Air is the element of freedom! Speed, wind, and agility. If you're trained well in agility, attacks'll seem like they just phase through ya!",
    "dst": "Hava özgürlüğün elementidir! Hız, rüzgâr ve çeviklik. Çeviklikte iyi eğitildiysen saldırılar sanki içinden geçip gidiyormuş gibi gelir!",
    "role": "desc",
    "kind": "dialogue",
@@ -204357,7 +204587,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#145": {
-   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
+   "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda of magic in existence. People use it in all sorts of ways.",
    "dst": "Ama hepsinden öte, hava her yerde olduğu için var olan en çok yönlü büyü türlerinden biridir. İnsanlar onu her türlü şekilde kullanır.",
    "role": "desc",
    "kind": "dialogue",
@@ -204367,7 +204597,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#146": {
-   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
+   "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use this to help guide folks who get lost in that canyon over there.",
    "dst": "Gavel'de Bantisu Hava Keşişleri rüzgâr sayesinde görüşlerini genişletmeyi başarmış! Oradaki kanyonda kaybolanlara yol göstermek için kullanıyorlar.",
    "role": "desc",
    "kind": "dialogue",
@@ -204377,7 +204607,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#147": {
-   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
+   "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some air magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "Kanatlı yaratıkların çoğu havaya bağlıdır ama hepsi değil. Bazı büyücüler düpedüz süzülür! Ne güzel olurdu, değil mi?",
    "role": "desc",
    "kind": "dialogue",
@@ -204387,7 +204617,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#148": {
-   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
+   "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Makes ya wonder if you could just blow a ghost out the window!",
    "dst": "Bedenleri pek elle tutulur olmadığından ruhlar ve hayaletler de sık sık hava büyüsüyle ilişkilidir. İnsan bir hayaleti üfleyip pencereden atabilir mi diye düşünüyor!",
    "role": "desc",
    "kind": "dialogue",
@@ -204407,7 +204637,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#150": {
-   "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
+   "src": "Now, onto the practical test! It's time to get those bones a-shakin'! You'll be runnin' an obstacle course I have set up, but with a twist.",
    "dst": "Şimdi pratik sınava! Kemikleri biraz sallama vakti! Kurduğum bir engel parkurunu koşacaksınız, ama bir farkla.",
    "role": "desc",
    "kind": "dialogue",
@@ -204417,7 +204647,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#151": {
-   "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
+   "src": "Everyone up to the table! You'll need this feather with ya to get through. It'll help you jump higher!",
    "dst": "Herkes masaya! Geçebilmek için bu tüyü yanınızda taşımanız lazım. Daha yükseğe zıplamanıza yardım edecek!",
    "role": "desc",
    "kind": "dialogue",
@@ -204427,7 +204657,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#152": {
-   "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
+   "src": "The goal is to grab three crystal balls I put in the obstacle course. Once you find 'em, bring 'em back to me.",
    "dst": "Amaç, engel parkuruna koyduğum üç kristal küreyi almak. Bulunca bana geri getirin.",
    "role": "desc",
    "kind": "dialogue",
@@ -204437,7 +204667,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#153": {
-   "src": "The course is behind me. Shake a leg now!",
+   "src": "The course is behind me. Shake a leg, now!",
    "dst": "Parkur arkamda. Hadi, elini çabuk tut!",
    "role": "desc",
    "kind": "dialogue",
@@ -215838,6 +216068,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "The Realm of Light (Quest)#116": {
+   "src": "biodh an solas seo anois.",
+   "dst": "biodh an solas seo anois.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Realm of Light (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
    "dst": "Pishlas'taki Maripe ile konuş: [-{~}, {~}, -{~}].",
@@ -216569,7 +216809,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#073": {
-   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
+   "src": "Anyways, head off and start getting the word out! If you don't know where to look, just check my notes! If you lose my notes you can come back and I'll copy them down again for you.",
    "dst": "Neyse, yola koyul ve haberi yaymaya başla! Nereye bakacağını bilmiyorsan, notlara bak! Notlarımı kaybedersen geri gel, sana yeniden yazarım.",
    "role": "desc",
    "kind": "dialogue",
@@ -216679,7 +216919,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#084": {
-   "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
+   "src": "I have such vague memories of going there as a child, but I just couldn't imagine them after seeing how the place was abandoned.",
    "dst": "Çocukken oraya gittiğime dair belli belirsiz anılarım var, ama yerin nasıl terk edildiğini gördükten sonra onları hayal bile edemezdim.",
    "role": "desc",
    "kind": "dialogue",
@@ -216949,7 +217189,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#111": {
-   "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
+   "src": "Family concerns are definitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
    "dst": "Aile meseleleri sıcak bir banyodan kesinlikle daha önemli, ama... Onunla biraz yaprak paylaşıp bir dahaki seferin biletini alacağım. Bedava bir banyoyu hak ediyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -217089,7 +217329,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#125": {
-   "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
+   "src": "It really is just like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
    "dst": "Gerçekten tam hatırladığım gibi. Herkes bir araya gelip dinleniyor, canının istediği her şeyden konuşuyor, dertlerini unutup gidiyor...",
    "role": "desc",
    "kind": "dialogue",
@@ -217109,7 +217349,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#127": {
-   "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
+   "src": "It's this feeling of...a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
    "dst": "Sanki... omuzlarımdan bir yük kalkmış, ama önümde yeni bir görev olduğunu da biliyorum- burayı ayakta tutmak. Pishlas'ı. Bu... ferahlatıcı, sanırım.",
    "role": "desc",
    "kind": "dialogue",
@@ -217139,7 +217379,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#130": {
-   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
+   "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good kind of tired, you know?",
    "dst": "...aman tanrım, ağlamayacağıma söz vermiştim kendime... v-ve işte yine ağlıyorum. Haha... Yıldızlar adına, bunca şeyden sonra yorgunum. Çok, çok yorgunum... ama. Ama güzel bir yorgunluk, bilirsin işte?",
    "role": "desc",
    "kind": "dialogue",
@@ -227682,6 +227922,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "The Worm Holes#096": {
+   "src": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "dst": "beathach mor solais! dean ion an anam tuirseach seo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
    "dst": "[+{~} Vana Kolu]",
@@ -237965,7 +238215,7 @@
    "source": "wiki"
   },
   "Undersupply#027": {
-   "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
+   "src": "We've been receiving less and less. Some generous folks have been sharing, but that goes only so far. A glass here and there cannot revitalize my poor garden.",
    "dst": "Gelen su gittikçe azalıyor. Bazı cömert insanlar paylaşıyor ama o da bir yere kadar. Orada burada bir bardak su benim zavallı bahçemi canlandıramaz.",
    "role": "desc",
    "kind": "dialogue",
@@ -238445,8 +238695,8 @@
    "source": "wiki"
   },
   "Undersupply#085": {
-   "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "Demek planın buymuş! Oyunu sabote etmeye mi geldin... kendine su mu çalmaya çalışıyorsun? Yoksa yıkım mı getirmek istedin? Sel mi çıkaracaktın?",
+   "src": "So this was your plan! Here to sabotage the dam... Trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
+   "dst": "Demek planın buymuş! Barajı sabote etmeye mi geldin... kendine su mu çalmaya çalışıyorsun? Yoksa yıkım mı getirmek istedin? Sel mi çıkaracaktın?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
