@@ -897,6 +897,14 @@ tasks.register('runMajorIdColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
 
+tasks.register('runAbilityNameOriginalChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6「技能名稱附原文」：技能名與 Major ID 名稱附原文，關著不附、不重複'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AbilityNameOriginalTest'
+}
+tasks.named('check') { dependsOn 'runAbilityNameOriginalChecks' }
+
 tasks.register('runGlyphHugChecks', JavaExec) {
     group = 'verification'
     description = '緊貼 {#} 的標點不跟符號走顏色'

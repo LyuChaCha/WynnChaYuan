@@ -250,6 +250,8 @@ public final class UpgradeSafetyTest {
         expected.addProperty("dialogueCover", true);
         // 1.0.3_2：翻譯總開關。舊設定檔沒有，預設開著。
         expected.addProperty("translationsEnabled", true);
+        // 技能與 Major ID 名稱附原文。舊設定檔沒有，預設關著（跟原本一樣只有譯名）。
+        expected.addProperty("abilityNamesOriginal", false);
         // 徽章改成名字前面的葉子：「多重身分只看第一個」那個開關拿掉了，
         // 要展示哪些身分由本人在「徽章」那一頁決定。
         expected.remove("badgeStyle");
