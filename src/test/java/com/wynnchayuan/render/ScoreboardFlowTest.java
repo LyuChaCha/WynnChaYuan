@@ -64,6 +64,7 @@ public final class ScoreboardFlowTest {
         block(store);
         split();
         toggle(store);
+        partyMembers(store);
 
         System.out.println(failures == 0 ? "\n記分板併句：全部通過"
                 : "\n記分板併句：" + failures + " 項失敗");
@@ -285,6 +286,91 @@ public final class ScoreboardFlowTest {
         // 記分板上沒有這一列的時候，開關不影響它
         check("不在記分板上的字，關掉也照翻",
                 WynntilsText.screenText(row, off, store) != row);
+    }
+
+    /**
+     * 隊伍那一段的成員是玩家的名字，不可以拿去查表。
+     *
+     * <p>使用者 2026-10-27 的截圖：「隊伍：[Lv. 481]」底下四位隊友，名叫 {@code General}
+     * 的那位顯示成 Lootrun 語料裡 {@code General} 的譯文。列的樣子照 Wynntils
+     * {@code PartyScoreboardPart} 認的那個格式（§e- §4[血條§4] §f名字§7 [等級]）。
+     */
+    private static void partyMembers(TranslationStore store) throws Exception {
+        check("前提：語料裡 General 這個詞真的有譯文（不然這組測不出東西）",
+                store.lookup("General") != null);
+        StyledText header = StyledText.fromString("Party: [Lv. 481]");
+        List<StyledText> rows = List.of(
+                StyledText.fromString("§e- §4[§c||||||§8||§4] §fPearli§7 [121]"),
+                StyledText.fromString("§e- §4[§c||||||||§4] §fGeneral§7 [120]"),
+                StyledText.fromString("§e- §4[§c|||||§8|||§4] §fLazyEnd§7 [120]"),
+                StyledText.fromString("§e- §7PoorChaCha"));
+        StyledText general = rows.get(1);
+        Set<String> all = new java.util.HashSet<>();
+        for (StyledText row : rows) {
+            all.add(ScoreboardFlow.key(row));
+        }
+
+        // 修之前的樣子：沒標出名字那幾列，一般那條路會把 General 換掉
+        Set<String> shown = new java.util.HashSet<>(all);
+        shown.add(ScoreboardFlow.key(header));
+        Path dir = Files.createTempDirectory("wcy-board-party");
+        CollectorConfig on = new CollectorConfig(dir.resolve("on.json"));
+        WynntilsText.setScoreboard(shown, Map.of());
+        try {
+            check("前提：不標出來的話，General 那一列會被查表換掉",
+                    WynntilsText.screenText(general, on, store) != general);
+        } finally {
+            WynntilsText.setScoreboard(Set.of(), Map.of());
+        }
+
+        Set<String> kept = ScoreboardFlow.keptRows("PartyScoreboardPart", header, rows, Set.of());
+        check("★ 隊伍那一段：每一列都是玩家名字", kept.equals(all));
+        check("標題不算在裡面（照翻）", !kept.contains(ScoreboardFlow.key(header)));
+        check("認不出類別名時，靠標題「Party: [Lv. N]」也認得出來",
+                ScoreboardFlow.keptRows(null, header, rows, Set.of()).equals(all));
+        check("別段（沒有已知名字）一列都不算",
+                ScoreboardFlow.keptRows("LootrunScoreboardPart",
+                        StyledText.fromString("Lootrun:"), rows, Set.of()).isEmpty());
+
+        ScoreboardFlow.Plan plan = ScoreboardFlow.plan(rows, store, kept);
+        check("★ 排版：名字那幾列沒有任何譯文換上去", plan.rows().isEmpty() && !plan.any());
+        check("名字那幾列不算「沒翻出來」（不收進 capture）", plan.missing() == 0);
+        boolean same = plan.panel().size() == rows.size();
+        for (int i = 0; same && i < rows.size(); i++) {
+            same = plan.panel().get(i).getString().equals(ScoreboardFlow.key(rows.get(i)));
+        }
+        check("★ 面板上的名字照原文擺", same);
+
+        WynntilsText.setScoreboard(shown, plan.rows(), kept);
+        try {
+            check("★ 就地取代：General 那一列原樣回去（不是譯文）",
+                    WynntilsText.screenText(general, on, store) == general);
+            for (StyledText row : rows) {
+                check("每一位隊友都原樣（" + ScoreboardFlow.key(row) + "）",
+                        WynntilsText.screenText(row, on, store) == row);
+            }
+            check("標題照翻（隊伍：[Lv. 481]）",
+                    WynntilsText.screenText(header, on, store) != header);
+        } finally {
+            WynntilsText.setScoreboard(Set.of(), Map.of());
+        }
+
+        // 隊友的名字：方括號裡的血條、等級拿掉之後的那個詞
+        check("解得出隊友名字：Pearli", "Pearli".equals(ScoreboardFlow.partyName(rows.get(0))));
+        check("解得出隊友名字：General", "General".equals(ScoreboardFlow.partyName(general)));
+        check("離線的那種（只有名字）也解得出來",
+                "PoorChaCha".equals(ScoreboardFlow.partyName(rows.get(3))));
+
+        // 別段裡出現已知隊友的名字：伺服器送全大寫，比對不分大小寫；只認完整的詞
+        List<StyledText> other = List.of(
+                StyledText.fromString("- General"),
+                StyledText.fromString("Generally speaking"),
+                StyledText.fromString("Choose a beacon!"));
+        Set<String> elsewhere = ScoreboardFlow.keptRows("WarScoreboardPart",
+                StyledText.fromString("War:"), other, Set.of("GENERAL"));
+        check("★ 名單是全大寫也認得出別段裡的隊友名字", elsewhere.contains("- General"));
+        check("名字只是某個字的一部分不算", !elsewhere.contains("Generally speaking"));
+        check("沒有名字的列照翻", !elsewhere.contains("Choose a beacon!"));
     }
 
     private static boolean hasCjk(String s) {
