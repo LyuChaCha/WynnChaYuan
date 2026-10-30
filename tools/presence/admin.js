@@ -2,7 +2,7 @@ import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
 import { IDLE_KEEP_MS, allCapes, allHistory, discard, dropCape, groupCapes, groupVisibility, idleGroup, idleMap, idleVisibility, listed, purge, reviewOf, starMap, visibility } from './capes.js';
 import { isDeveloper } from './credits.js';
 import { HASH, ID, NAME, UUID, json, no, plainUuid, readJson } from './http.js';
-import { parseRecord } from './kv.js';
+import { listAll, parseRecord } from './kv.js';
 import { remember } from './presence.js';
 
 const DISCORD_SNOWFLAKE = /^\d{17,20}$/;
@@ -46,17 +46,12 @@ export async function handleStaff(request, env, now) {
   const mine = await authority(request, env, now);
   if (!mine || !mine.developer) return no('forbidden', 403);
   const staff = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'staff:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const record = parseRecord(await env.CORPUS.get(k.name));
-      const key = k.name.slice(6);
-      staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null, discord: record.dn || null,
-        note: record.n || '', t: record.t || null, by: record.by || null });
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, 'staff:')) {
+    const record = parseRecord(await env.CORPUS.get(k.name));
+    const key = k.name.slice(6);
+    staff.push({ key, kind: key[0], id: key.slice(2), name: record.m || null, discord: record.dn || null,
+      note: record.n || '', t: record.t || null, by: record.by || null });
+  }
   staff.sort((a, b) => (b.t || 0) - (a.t || 0));
   return json({ staff }, 200, { 'cache-control': 'no-store' });
 }
@@ -108,26 +103,21 @@ export async function handlePeople(request, env, now) {
   if (q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
   const byUuid = new Map();
   const people = [];
-  let cursor;
   let reads = 0;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'd:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const id = k.name.slice(2);
-      if (!DISCORD_ID.test(id)) continue;
-      let m = k.metadata;
-      // 舊帳號沒有 metadata：讀一次本體
-      if (!m && reads < 400) {
-        reads++;
-        m = await account(env, id);
-      }
-      if (!m) continue;
-      const person = { discord: id, dname: m.n || null, mc: m.m || null, uuid: UUID.test(m.u || '') ? m.u : null };
-      people.push(person);
-      if (person.uuid) byUuid.set(person.uuid, person);
+  for (const k of await listAll(env.CORPUS, 'd:')) {
+    const id = k.name.slice(2);
+    if (!DISCORD_ID.test(id)) continue;
+    let m = k.metadata;
+    // 舊帳號沒有 metadata：讀一次本體
+    if (!m && reads < 400) {
+      reads++;
+      m = await account(env, id);
     }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+    if (!m) continue;
+    const person = { discord: id, dname: m.n || null, mc: m.m || null, uuid: UUID.test(m.u || '') ? m.u : null };
+    people.push(person);
+    if (person.uuid) byUuid.set(person.uuid, person);
+  }
   for (const cape of await allCapes(env)) {
     if (!UUID.test(cape.u || '') || byUuid.has(cape.u)) continue;
     const person = { discord: null, dname: null, mc: NAME.test(cape.n || '') ? cape.n : null, uuid: cape.u };
@@ -154,16 +144,11 @@ export async function handleStaffRemove(request, env, now) {
 export async function handleReviews(request, env, now) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
   const reviews = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'review:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const record = parseRecord(await env.CORPUS.get(k.name));
-      reviews.push({ uuid: k.name.slice(7), name: record.n || null, note: record.note || '',
-        t: record.t || null, by: record.by || null });
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, 'review:')) {
+    const record = parseRecord(await env.CORPUS.get(k.name));
+    reviews.push({ uuid: k.name.slice(7), name: record.n || null, note: record.note || '',
+      t: record.t || null, by: record.by || null });
+  }
   reviews.sort((a, b) => (b.t || 0) - (a.t || 0));
   return json({ reviews }, 200, { 'cache-control': 'no-store' });
 }
@@ -314,21 +299,16 @@ export async function handleAdminCapes(request, env, now) {
 export async function handlePerks(request, env, now) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
   const perks = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'perk:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      let record = {};
-      try {
-        record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
-      } catch (e) {
-        record = {};
-      }
-      if (typeof record !== 'object' || record === null) record = {};
-      perks.push({ uuid: k.name.slice(5), note: record.n || '', t: record.t || null, by: record.by || null });
+  for (const k of await listAll(env.CORPUS, 'perk:')) {
+    let record = {};
+    try {
+      record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
+    } catch (e) {
+      record = {};
     }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+    if (typeof record !== 'object' || record === null) record = {};
+    perks.push({ uuid: k.name.slice(5), note: record.n || '', t: record.t || null, by: record.by || null });
+  }
   perks.sort((a, b) => (b.t || 0) - (a.t || 0));
   return json({ perks }, 200, { 'cache-control': 'no-store' });
 }
@@ -359,21 +339,16 @@ export async function handlePerkRemove(request, env, now) {
 export async function handleBans(request, env, now) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
   const bans = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'ban:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      let record = {};
-      try {
-        record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
-      } catch (e) {
-        record = {};                     // 舊格式只存了時間
-      }
-      if (typeof record !== 'object' || record === null) record = {};
-      bans.push({ uuid: k.name.slice(4), name: record.n || null, t: record.t || null, by: record.by || null });
+  for (const k of await listAll(env.CORPUS, 'ban:')) {
+    let record = {};
+    try {
+      record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
+    } catch (e) {
+      record = {};                     // 舊格式只存了時間
     }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+    if (typeof record !== 'object' || record === null) record = {};
+    bans.push({ uuid: k.name.slice(4), name: record.n || null, t: record.t || null, by: record.by || null });
+  }
   bans.sort((a, b) => (b.t || 0) - (a.t || 0));
   return json({ bans }, 200, { 'cache-control': 'no-store' });
 }

@@ -3192,6 +3192,20 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 每天的排程：一件失敗記下來，另一件照樣跑', cronLogs.some((line) => line.includes('scheduled failed') && line.includes('tidy')));
 }
 
+{
+  const { listAll } = await import('./kv.js');
+  const { timingSafeEqual, base64Bytes } = await import('./http.js');
+  const store = fakeKv();
+  for (let n = 0; n < 2500; n++) store.data.set('x:' + String(n).padStart(4, '0'), { value: '', metadata: { n } });
+  const all = await listAll(store, 'x:');
+  const lists = store.ops.list;
+  const firstPages = await listAll(store, 'x:', { more: (keys) => keys.length < 1500 });
+  check('listAll：分頁讀完整份；more 說不要了就停在那一頁', all.length === 2500 && lists === 3
+    && all[2499].metadata.n === 2499 && firstPages.length === 2000);
+  check('timingSafeEqual 與 base64Bytes', timingSafeEqual('abc', 'abc') && !timingSafeEqual('abc', 'abd')
+    && !timingSafeEqual('abc', 'ab') && !timingSafeEqual(null, 'a') && base64Bytes('AQID').join() === '1,2,3');
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
