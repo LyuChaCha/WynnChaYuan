@@ -154,6 +154,7 @@ public final class SettingsScreen extends Screen {
                 Preview.Scene.CAPE, List.of(
                         new Row.Group(t("group.badge"), false, badge()),
                         new Row.Group(t("group.cape"), false, fun()),
+                        new Row.Group(t("group.privacy"), false, privacy()),
                         new Row.Group(t("group.perf"), false, List.of(
                                 toggle("perf.highlight", true, cfg()::wynntilsFps,
                                        cfg()::toggleWynntilsFps))))));
@@ -223,6 +224,15 @@ public final class SettingsScreen extends Screen {
             rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
                     .label(t("fun.nocape.label")));
         }
+        if (!com.wynnchayuan.NetworkGate.registry()) {
+            rows.add(Row.status("fun.offline", t("fun.offline"), t("fun.offline.hint"))
+                    .label(t("fun.offline.label")));
+            rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
+                    .label(t("fun.gallery.button"))
+                    .run(() -> ConfirmLinkScreen.confirmLinkNow(this,
+                            com.wynnchayuan.Presence.GALLERY_URL)));
+            return rows;
+        }
         // 上傳：打開網站的帳號頁（上傳在那裡），順便替瀏覽器登入
         rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
                 .label(t("fun.upload.button"))
@@ -240,6 +250,47 @@ public final class SettingsScreen extends Screen {
                         url -> net.minecraft.client.Minecraft.getInstance().execute(
                                 () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
         return rows;
+    }
+
+    private List<Row> privacy() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.toggle("privacy.online", t("privacy.online"), t("privacy.online.hint"))
+                .on(() -> cfg().consent() == CollectorConfig.Consent.AGREED)
+                .flip(() -> {
+                    boolean agree = cfg().consent() != CollectorConfig.Consent.AGREED;
+                    WynnChaYuan.setConsent(agree);
+                    say(T.s(agree ? "privacy.online.on" : "privacy.online.off"), Ui.GREEN);
+                }));
+        rows.add(Row.action("privacy.policy", t("privacy.policy"), t("privacy.policy.hint"))
+                .label(t("fun.gallery.button"))
+                .run(() -> ConfirmLinkScreen.confirmLinkNow(this,
+                        com.wynnchayuan.Presence.PRIVACY_URL)));
+        rows.add(Row.toggle("privacy.optout", t("privacy.optout"), t("privacy.optout.hint"))
+                .on(() -> cfg().dataOptOut())
+                .flip(() -> {
+                    boolean on = !cfg().dataOptOut();
+                    WynnChaYuan.setDataOptOut(on, this::deleted);
+                    if (on) {
+                        fetching = true;
+                        say(T.s("privacy.deleting"), Ui.TEXT_3);
+                    } else {
+                        say(T.s("privacy.optout.off"), Ui.GREEN);
+                    }
+                }));
+        if (cfg().dataDeletePending()) {
+            rows.add(Row.status("privacy.pending", t("privacy.pending"), t("privacy.pending.hint"))
+                    .label(t("privacy.pending.label")));
+        }
+        return rows;
+    }
+
+    private void deleted(com.wynnchayuan.Presence.DeleteResult result) {
+        fetching = false;
+        if (result == com.wynnchayuan.Presence.DeleteResult.DONE) {
+            say(T.s("privacy.deleted"), Ui.GREEN);
+        } else {
+            say(T.s("privacy.delete.later"), Ui.AMBER);
+        }
     }
 
     /** 移除的結果，回到畫圖的執行緒上說。 */

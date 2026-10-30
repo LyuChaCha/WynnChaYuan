@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.wynnchayuan.client.ui.CreditsView;
+import com.wynnchayuan.client.ui.FirstRunView;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.NotesView;
 import com.wynnchayuan.client.ui.NoticeView;
@@ -77,6 +78,9 @@ public final class SubViewsTest {
                 views.put("credits", new CreditsView(shell, new FakeCredits(shell)));
                 views.put("position", new PositionView(shell, new FakePlaces(shell)));
                 views.put("nametag", nametag(lang));
+                views.put("firstrun-consent", new FirstRunView(shell, new FakeFirstRun(shell, true, true, false)));
+                views.put("firstrun-setup", new FirstRunView(shell, new FakeFirstRun(shell, false, true, true)));
+                views.put("firstrun-custom", customising(shell, lang, size));
                 for (var one : views.entrySet()) {
                     AwtCanvas c = render(one.getValue(), lang, size[0], size[1], 2, -100, -100);
                     String at = lang + " " + one.getKey() + " " + size[0] + "x" + size[1];
@@ -96,13 +100,14 @@ public final class SubViewsTest {
             must(lang + "：這幾張畫到的字，附的字型都有（缺「" + gone + "」，重跑 tools/build-ui-fonts.py）",
                     gone.length() == 0);
         }
-        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 6 張 × "
+        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 9 張 × "
                 + SIZES.length + " 種大小）");
 
         position(out);
         notes();
         notice();
         credits();
+        firstRun();
 
         if (failures > 0) {
             System.out.println("SubViews: " + failures + " 項失敗");
@@ -294,6 +299,191 @@ public final class SubViewsTest {
         press(view, "b:ok");
         must("按「知道了」才關", closes[0] == 1);
         must("Enter 也能關", view.key(Surface.KEY_ENTER, false) && closes[0] == 2);
+    }
+
+    static final class FakeFirstRun implements FirstRunView.Host {
+        final FakeShell shell;
+        final boolean consent;
+        final boolean setup;
+        final boolean upgrading;
+        final List<String> calls = new ArrayList<>();
+        int dialogue = 1;
+        int chat = 1;
+        int nametag = 1;
+        int tooltip = 2;
+        int names = 2;
+        int tracker = 0;
+        boolean scoreboard = true;
+        boolean titles = true;
+        boolean bossbar = true;
+        boolean wynntils = true;
+
+        FakeFirstRun(FakeShell shell, boolean consent, boolean setup, boolean upgrading) {
+            this.shell = shell;
+            this.consent = consent;
+            this.setup = setup;
+            this.upgrading = upgrading;
+        }
+
+        @Override
+        public boolean askConsent() {
+            return consent;
+        }
+
+        @Override
+        public boolean askSetup() {
+            return setup;
+        }
+
+        @Override
+        public boolean upgrading() {
+            return upgrading;
+        }
+
+        @Override
+        public void agree() {
+            calls.add("agree");
+        }
+
+        @Override
+        public void disagree() {
+            calls.add("disagree");
+        }
+
+        @Override
+        public void openPolicy() {
+            calls.add("policy");
+        }
+
+        @Override
+        public void recommended() {
+            calls.add("recommended");
+        }
+
+        @Override
+        public void settled() {
+            calls.add("settled");
+        }
+
+        @Override
+        public void finish() {
+            calls.add("finish");
+        }
+
+        private Row segment(String key, String[] modes, java.util.function.IntSupplier get,
+                            java.util.function.IntConsumer set) {
+            Row row = Row.segment(key, () -> shell.tr(key), () -> shell.tr(key + ".hint"));
+            for (String mode : modes) {
+                row.option(shell.tr(mode), Row.Tone.ACCENT);
+            }
+            return row.selected(get).pick(set);
+        }
+
+        private Row toggle(String key, java.util.function.BooleanSupplier get, Runnable flip) {
+            return Row.toggle(key, () -> shell.tr(key), () -> shell.tr(key + ".hint")).on(get).flip(flip);
+        }
+
+        @Override
+        public List<Row> custom() {
+            return List.of(
+                    segment("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
+                            () -> dialogue, i -> dialogue = i),
+                    segment("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
+                            () -> chat, i -> chat = i),
+                    segment("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
+                            () -> nametag, i -> nametag = i),
+                    segment("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
+                            () -> tooltip, i -> tooltip = i),
+                    segment("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
+                            () -> names, i -> names = i),
+                    segment("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
+                            () -> tracker, i -> tracker = i),
+                    toggle("world.scoreboard", () -> scoreboard, () -> scoreboard = !scoreboard),
+                    toggle("world.titles", () -> titles, () -> titles = !titles),
+                    toggle("world.bossbar", () -> bossbar, () -> bossbar = !bossbar),
+                    toggle("world.wynntils", () -> wynntils, () -> wynntils = !wynntils));
+        }
+    }
+
+    private static FirstRunView customising(FakeShell shell, String lang, int[] size) {
+        FirstRunView view = new FirstRunView(shell, new FakeFirstRun(shell, false, true, false));
+        render(view, lang, size[0], size[1], 1, -100, -100);
+        press(view, "b:custom");
+        return view;
+    }
+
+    private static void scrollTo(FirstRunView view, String key) {
+        for (int i = 0; i < 40; i++) {
+            render(view, "zh_tw", 640, 360, 1, -100, -100);
+            float[] r = view.spot(key);
+            if (r != null && r[3] > 0) {
+                return;
+            }
+            view.scroll(-1);
+        }
+    }
+
+    private static void firstRun() throws Exception {
+        FakeShell shell = new FakeShell("zh_tw");
+        FakeFirstRun host = new FakeFirstRun(shell, true, true, false);
+        FirstRunView view = new FirstRunView(shell, host);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        must("首次啟動先問同意", view.step() == FirstRunView.Step.CONSENT);
+        view.mouseDown(3, 3, 0);
+        must("點卡片外面不會關（要回答才走）", host.calls.isEmpty());
+        must("Enter 不會替玩家按同意", !view.key(Surface.KEY_ENTER, false) && host.calls.isEmpty());
+        scrollTo(view, "b:policy");
+        press(view, "b:policy");
+        must("隱私權政策的連結打得開", host.calls.equals(List.of("policy")));
+        press(view, "b:agree");
+        must("按同意：記下同意，換到翻譯設定",
+                host.calls.equals(List.of("policy", "agree")) && view.step() == FirstRunView.Step.SETUP);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        must("新安裝不出現「保留目前的設定」", view.spot("b:keep") == null);
+        press(view, "b:custom");
+        must("按自訂：換到逐項選擇", view.step() == FirstRunView.Step.CUSTOM);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        press(view, "c:world.chat:2");
+        must("自訂：點了就改（聊天 → 關閉）", host.chat == 2);
+        scrollTo(view, "t:world.wynntils");
+        float[] last = view.spot("t:world.wynntils");
+        must("自訂：十項都在（最後一項捲得到）", last != null && last[3] > 0);
+        press(view, "t:world.wynntils");
+        must("自訂：開關點得動（Wynntils 介面 → 關）", !host.wynntils);
+        press(view, "b:back");
+        must("返回：回到推薦／自訂", view.step() == FirstRunView.Step.SETUP);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        press(view, "b:recommended");
+        must("按推薦：套用、記下選過、關掉",
+                host.calls.equals(List.of("policy", "agree", "recommended", "settled", "finish")));
+
+        FakeFirstRun no = new FakeFirstRun(shell, true, true, true);
+        FirstRunView declined = new FirstRunView(shell, no);
+        render(declined, "zh_tw", 640, 360, 1, -100, -100);
+        press(declined, "b:disagree");
+        render(declined, "zh_tw", 640, 360, 1, -100, -100);
+        must("按不同意：記下不同意，一樣換到翻譯設定",
+                no.calls.equals(List.of("disagree")) && declined.step() == FirstRunView.Step.SETUP);
+        must("升級上來的人有「保留目前的設定」", declined.spot("b:keep") != null);
+        press(declined, "b:keep");
+        must("保留目前的設定：只記下選過，不套推薦",
+                no.calls.equals(List.of("disagree", "settled", "finish")));
+
+        FakeFirstRun onlyConsent = new FakeFirstRun(shell, true, false, true);
+        FirstRunView consentOnly = new FirstRunView(shell, onlyConsent);
+        render(consentOnly, "zh_tw", 640, 360, 1, -100, -100);
+        press(consentOnly, "b:agree");
+        must("已經選過設定的人：回答完同意就關",
+                onlyConsent.calls.equals(List.of("agree", "finish")));
+
+        FakeFirstRun custom = new FakeFirstRun(shell, false, true, false);
+        FirstRunView done = new FirstRunView(shell, custom);
+        must("已經回答過同意的人：直接從翻譯設定開始", done.step() == FirstRunView.Step.SETUP);
+        render(done, "zh_tw", 640, 360, 1, -100, -100);
+        press(done, "b:custom");
+        render(done, "zh_tw", 640, 360, 1, -100, -100);
+        press(done, "b:done");
+        must("自訂完按完成：記下選過、關掉", custom.calls.equals(List.of("settled", "finish")));
     }
 
     // ------------------------------------------------------------ 貢獻者
