@@ -1,72 +1,68 @@
 package com.wynnchayuan;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 
 import com.wynnchayuan.translate.ErrorDebug;
 import java.nio.file.Path;
 
 public final class CollectorConfig {
 
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-
     public static final int DEFAULT_PANEL_GAP = PanelGap.DEFAULT;
 
-    private final Path file;
+    final Path file;
 
-    private TooltipMode tooltipMode = TooltipMode.OFF;
+    final ConfigFile configFile = new ConfigFile(this);
+
+    TooltipMode tooltipMode = TooltipMode.OFF;
 
     public enum TooltipMode { PANEL, REPLACE, OFF }
 
-    private DialogueMode dialogueMode = DialogueMode.REPLACE;
+    DialogueMode dialogueMode = DialogueMode.REPLACE;
 
     public enum DialogueMode { PANEL, REPLACE, OFF }
 
-    private DialogueMode choiceMode = DialogueMode.REPLACE;
+    DialogueMode choiceMode = DialogueMode.REPLACE;
 
-    private ChatMode chatMode = ChatMode.BOTH;
+    ChatMode chatMode = ChatMode.BOTH;
 
     public enum ChatMode { REPLACE, BOTH, OFF }
 
-    private boolean translateTitles = true;
+    boolean translateTitles = true;
 
-    private boolean translationsEnabled = true;
+    boolean translationsEnabled = true;
 
-    private DialogueMode trackerMode = DialogueMode.REPLACE;
+    DialogueMode trackerMode = DialogueMode.REPLACE;
 
-    private boolean translateObjectives = true;
+    boolean translateObjectives = true;
 
-    private boolean translateScoreboard = true;
+    boolean translateScoreboard = true;
 
-    private boolean translateHeldItem = true;
+    boolean translateHeldItem = true;
 
-    private boolean chatCopy = true;
+    boolean chatCopy = true;
 
-    private boolean capes = true;
+    boolean capes = true;
 
-    private boolean ownCape = true;
+    boolean ownCape = true;
 
-    private boolean wynntilsUi = true;
+    boolean wynntilsUi = true;
 
-    private boolean wynntilsFps = true;
+    boolean wynntilsFps = true;
 
-    private boolean dialogueCover = true;
+    boolean dialogueCover = true;
 
-    private boolean marketSearch = true;
+    boolean marketSearch = true;
 
-    private boolean wynnMarketSearch = true;
+    boolean wynnMarketSearch = true;
 
-    private boolean wynnventory = true;
+    boolean wynnventory = true;
 
-    private boolean wynnmodTooltip = true;
+    boolean wynnmodTooltip = true;
 
-    private boolean shiftPeekNames = true;
+    boolean shiftPeekNames = true;
 
-    private boolean abilityNamesOriginal = false;
+    boolean abilityNamesOriginal = false;
 
-    private ShotMode shotMode = ShotMode.KEY;
+    ShotMode shotMode = ShotMode.KEY;
 
     public enum ShotMode { KEY, OFF }
 
@@ -85,47 +81,47 @@ public final class CollectorConfig {
         return shotMode;
     }
 
-    private boolean showOverlays = true;
+    boolean showOverlays = true;
 
-    private boolean collect = true;
+    boolean collect = true;
 
-    private String notifiedVersion = "";
+    String notifiedVersion = "";
 
-    private String syncedTranslations = "";
+    String syncedTranslations = "";
 
-    private String syncedTranslationsDate = "";
+    String syncedTranslationsDate = "";
 
-    private boolean autoUpdateTranslations = false;
+    boolean autoUpdateTranslations = false;
 
-    private boolean debugDumps = false;
+    boolean debugDumps = false;
 
-    private boolean collectGuiText = false;
+    boolean collectGuiText = false;
 
-    private Source source = Source.GITHUB;
+    Source source = Source.GITHUB;
 
     public enum Source { GITHUB, LOCAL }
 
-    private boolean translateBossBar = true;
+    boolean translateBossBar = true;
 
-    private NametagMode nametagMode = NametagMode.REPLACE;
+    NametagMode nametagMode = NametagMode.REPLACE;
 
     public enum NametagMode { LOOK_AT, REPLACE, OFF }
 
-    private PanelSide panelSide = PanelSide.AUTO;
+    PanelSide panelSide = PanelSide.AUTO;
 
     public enum PanelSide { AUTO, RIGHT, LEFT }
 
     public enum ItemNames { ON, BOTH, OFF }
 
-    private ItemNames itemNames = ItemNames.OFF;
+    ItemNames itemNames = ItemNames.OFF;
 
-    private boolean noticeDismissed = false;
+    boolean noticeDismissed = false;
 
     public boolean noticeDismissed() {
         return noticeDismissed;
     }
 
-    private boolean oldKeysReleased = false;
+    boolean oldKeysReleased = false;
 
     public boolean oldKeysReleased() {
         return oldKeysReleased;
@@ -141,32 +137,32 @@ public final class CollectorConfig {
         save();
     }
 
-    private String language = "";
+    String language = "";
 
-    private String uiLanguage = "";
+    String uiLanguage = "";
 
-    private String fallbackLanguage = "";
+    String fallbackLanguage = "";
 
-    private int panelGap = DEFAULT_PANEL_GAP;
+    int panelGap = DEFAULT_PANEL_GAP;
 
-    private String accentColor = "#6FA8D8";
+    String accentColor = "#6FA8D8";
 
-    private String themeColor = "#6FA8D8";
+    String themeColor = "#6FA8D8";
 
-    private int dialogueHoldMs = 6000;
+    int dialogueHoldMs = 6000;
 
-    private int nametagHoldMs = 1500;
+    int nametagHoldMs = 1500;
 
-    private PanelAnchor panelAnchor = PanelAnchor.FOLLOW;
+    PanelAnchor panelAnchor = PanelAnchor.FOLLOW;
 
     public enum PanelAnchor { FOLLOW, FIXED }
 
-    private int fixedX = 20;
-    private int fixedY = 20;
+    int fixedX = 20;
+    int fixedY = 20;
 
-    private final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
+    final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
 
-    private final java.util.EnumMap<Overlay, int[]> overlaySize = new java.util.EnumMap<>(Overlay.class);
+    final java.util.EnumMap<Overlay, int[]> overlaySize = new java.util.EnumMap<>(Overlay.class);
 
     public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG, CHOICES }
 
@@ -184,10 +180,10 @@ public final class CollectorConfig {
 
     public enum Consent { UNKNOWN, AGREED, DECLINED }
 
-    private Consent consent = Consent.UNKNOWN;
-    private boolean setupDone = false;
-    private boolean dataOptOut = false;
-    private boolean dataDeletePending = false;
+    Consent consent = Consent.UNKNOWN;
+    boolean setupDone = false;
+    boolean dataOptOut = false;
+    boolean dataDeletePending = false;
 
     public Consent consent() {
         return consent;
@@ -661,7 +657,7 @@ public final class CollectorConfig {
         save();
     }
 
-    private ItemNames pageNames = ItemNames.ON;
+    ItemNames pageNames = ItemNames.ON;
 
     public ItemNames pageNames() {
         return pageNames;
@@ -770,7 +766,7 @@ public final class CollectorConfig {
         }
     }
 
-    private static String normalHex(String hex) {
+    static String normalHex(String hex) {
         if (hex == null) {
             return null;
         }
@@ -803,15 +799,15 @@ public final class CollectorConfig {
         return true;
     }
 
-    private double nametagRange = 6.0;
+    double nametagRange = 6.0;
 
-    private double nametagAngle = 6.0;
+    double nametagAngle = 6.0;
 
-    private final java.util.Map<String, Boolean> badgeRoles = new java.util.LinkedHashMap<>();
+    final java.util.Map<String, Boolean> badgeRoles = new java.util.LinkedHashMap<>();
 
-    private Boolean badgeRainbow;
+    Boolean badgeRainbow;
 
-    private final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
+    final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
 
     public String badgeColour(String role) {
         return badgeColours.get(role);
@@ -1148,339 +1144,19 @@ public final class CollectorConfig {
         return debugDumps;
     }
 
+    static int clamp(int v, int lo, int hi) {
+        return Math.max(lo, Math.min(hi, v));
+    }
 
-
-    static final java.util.Set<String> RETIRED = java.util.Set.of("shareCaptures", "showPanel");
-
-    private static final long MAX_BYTES = 1L << 20;
+    static double clamp(double v, double lo, double hi) {
+        return Math.max(lo, Math.min(hi, v));
+    }
 
     private void load() {
-        JsonObject o = SafeFiles.readObject(file, MAX_BYTES);
-        if (o == null) {
-            return;
-        }
-        Boolean showPanel = boolOrNull(o, "showPanel");
-        TooltipMode tooltip = enumOf(o, "tooltipMode", TooltipMode.class);
-        if (tooltip != null) {
-            tooltipMode = tooltip;
-        } else if (showPanel != null) {
-            tooltipMode = showPanel ? TooltipMode.PANEL : TooltipMode.OFF;
-        }
-        shotMode = enumOr(o, "shotMode", ShotMode.class, shotMode);
-        DialogueMode dialogue = enumOf(o, "dialogueMode", DialogueMode.class);
-        if (dialogue != null) {
-            dialogueMode = dialogue;
-        }
-        DialogueMode choice = enumOf(o, "choiceMode", DialogueMode.class);
-        if (choice != null) {
-            choiceMode = choice;
-        } else if (dialogue != null) {
-            choiceMode = dialogue;
-        }
-        chatCopy = bool(o, "chatCopy", chatCopy);
-        capes = bool(o, "capes", capes);
-        ownCape = bool(o, "ownCape", ownCape);
-        wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
-        wynntilsFps = bool(o, "wynntilsFps", wynntilsFps);
-        dialogueCover = bool(o, "dialogueCover", dialogueCover);
-        translateTitles = bool(o, "translateTitles", translateTitles);
-        translationsEnabled = bool(o, "translationsEnabled", translationsEnabled);
-        DialogueMode tracker = enumOf(o, "trackerMode", DialogueMode.class);
-        if (tracker != null) {
-            trackerMode = tracker;
-        } else if (Boolean.FALSE.equals(boolOrNull(o, "showScoreboard"))) {
-            trackerMode = DialogueMode.OFF;
-        }
-        translateObjectives = bool(o, "translateObjectives", translateObjectives);
-        translateScoreboard = bool(o, "translateScoreboard", translateScoreboard);
-        translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
-        marketSearch = bool(o, "marketSearch", marketSearch);
-        wynnventory = bool(o, "wynnventory", wynnventory);
-        wynnmodTooltip = bool(o, "wynnmodTooltip", wynnmodTooltip);
-        wynnMarketSearch = bool(o, "wynnMarketSearch", wynnMarketSearch);
-        shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
-        abilityNamesOriginal = bool(o, "abilityNamesOriginal", abilityNamesOriginal);
-        chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
-        Boolean overlays = boolOrNull(o, "showOverlays");
-        if (overlays != null) {
-            showOverlays = overlays;
-        } else if (showPanel != null) {
-            showOverlays = showPanel;
-        }
-        collect = bool(o, "collect", collect);
-        notifiedVersion = str(o, "notifiedVersion", notifiedVersion);
-        syncedTranslations = str(o, "syncedTranslations", syncedTranslations);
-        syncedTranslationsDate = str(o, "syncedTranslationsDate", syncedTranslationsDate);
-        autoUpdateTranslations =
-                bool(o, "autoUpdateTranslations", autoUpdateTranslations);
-        language = str(o, "language", language).trim();
-        fallbackLanguage = str(o, "fallbackLanguage", fallbackLanguage).trim();
-        uiLanguage = str(o, "uiLanguage", uiLanguage).trim();
-        debugDumps = bool(o, "debugDumps", debugDumps);
-        collectGuiText = bool(o, "collectGuiText", collectGuiText);
-        source = enumOr(o, "source", Source.class, source);
-        translateBossBar = bool(o, "translateBossBar", translateBossBar);
-        nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
-        panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
-        noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
-        oldKeysReleased = bool(o, "oldKeysReleased", oldKeysReleased);
-        consent = enumOr(o, "privacyConsent", Consent.class, consent);
-        setupDone = bool(o, "setupDone", setupDone);
-        dataOptOut = bool(o, "dataOptOut", dataOptOut);
-        dataDeletePending = dataOptOut && bool(o, "dataDeletePending", dataDeletePending);
-        pageNames = enumOr(o, "pageNames", ItemNames.class, pageNames);
-        if (o.has("itemNames")) {
-            itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
-        } else if (bool(o, "translateItemNames", false)) {
-            itemNames = ItemNames.ON;
-        }
-        panelGap = PanelGap.clamp(integer(o, "panelGap", panelGap));
-        String accent = str(o, "accentColor", accentColor);
-        if (accent.matches("#[0-9a-fA-F]{6}")) {
-            accentColor = accent;
-        }
-        String theme = str(o, "themeColor", accentColor);
-        if (theme.matches("#[0-9a-fA-F]{6}")) {
-            themeColor = theme;
-        }
-        int hold = integer(o, "dialogueHoldMs", dialogueHoldMs);
-        dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
-        nametagHoldMs = clamp(integer(o, "nametagHoldMs", nametagHoldMs), 0, 60_000);
-        panelAnchor = enumOr(o, "panelAnchor", PanelAnchor.class, panelAnchor);
-        readPairs(o, "overlayPos", overlayPos);
-        readPairs(o, "overlaySize", overlaySize);
-        badgeRoles.clear();
-        if (o.has("badgeRoles") && o.get("badgeRoles").isJsonObject()) {
-            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
-                    : o.getAsJsonObject("badgeRoles").entrySet()) {
-                try {
-                    badgeRoles.put(e.getKey(), e.getValue().getAsBoolean());
-                } catch (Exception failure) {
-                    ErrorDebug.note("CollectorConfig#load", null, failure);
-                }
-            }
-        }
-        badgeRainbow = o.has("badgeRainbow") ? (Boolean) bool(o, "badgeRainbow", false) : null;
-        badgeColours.clear();
-        if (o.has("badgeColours") && o.get("badgeColours").isJsonObject()) {
-            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
-                    : o.getAsJsonObject("badgeColours").entrySet()) {
-                try {
-                    String hex = normalHex(e.getValue().getAsString());
-                    if (hex != null) {
-                        badgeColours.put(e.getKey(), hex);
-                    }
-                } catch (Exception failure) {
-                    ErrorDebug.note("CollectorConfig#load", null, failure);
-                }
-            }
-        }
-        nametagRange = clamp(number(o, "nametagRange", nametagRange), 2.0, 64.0);
-        nametagAngle = clamp(number(o, "nametagAngle", nametagAngle), 1.0, 45.0);
-        fixedX = integer(o, "fixedX", fixedX);
-        fixedY = integer(o, "fixedY", fixedY);
-
-        for (String old : RETIRED) {
-            if (o.has(old)) {
-                ModLog.info("設定檔帶著舊版的欄位 " + old + "，重寫一次把它清掉");
-                save();
-                break;
-            }
-        }
-    }
-
-    private static JsonElement primitive(JsonObject o, String name) {
-        JsonElement el = o.get(name);
-        return el == null || !el.isJsonPrimitive() ? null : el;
-    }
-
-    private static Boolean boolOrNull(JsonObject o, String name) {
-        JsonElement el = primitive(o, name);
-        if (el == null) {
-            return null;
-        }
-        if (el.getAsJsonPrimitive().isBoolean()) {
-            return el.getAsBoolean();
-        }
-        String s = el.getAsString().trim();
-        if (s.equalsIgnoreCase("true")) {
-            return true;
-        }
-        return s.equalsIgnoreCase("false") ? Boolean.FALSE : null;
-    }
-
-    private static boolean bool(JsonObject o, String name, boolean fallback) {
-        Boolean v = boolOrNull(o, name);
-        return v == null ? fallback : v;
-    }
-
-    private static String str(JsonObject o, String name, String fallback) {
-        JsonElement el = primitive(o, name);
-        return el == null || !el.getAsJsonPrimitive().isString() ? fallback : el.getAsString();
-    }
-
-    private static double number(JsonObject o, String name, double fallback) {
-        JsonElement el = primitive(o, name);
-        if (el == null) {
-            return fallback;
-        }
-        try {
-            double v = el.getAsDouble();
-            return Double.isFinite(v) ? v : fallback;
-        } catch (RuntimeException e) {
-            ErrorDebug.note("CollectorConfig#number", null, e);
-            return fallback;
-        }
-    }
-
-    private static int integer(JsonObject o, String name, int fallback) {
-        double v = number(o, name, Double.NaN);
-        if (Double.isNaN(v)) {
-            return fallback;
-        }
-        return (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Math.round(v)));
-    }
-
-    private static <E extends Enum<E>> E enumOf(JsonObject o, String name, Class<E> type) {
-        JsonElement el = primitive(o, name);
-        if (el == null) {
-            return null;
-        }
-        try {
-            return Enum.valueOf(type, el.getAsString().trim().toUpperCase(java.util.Locale.ROOT));
-        } catch (IllegalArgumentException e) {
-            ModLog.warn("設定 " + name + " 的值 " + el + " 這一版不認得，用預設值");
-            return null;
-        }
-    }
-
-    private static <E extends Enum<E>> E enumOr(JsonObject o, String name, Class<E> type, E fallback) {
-        E v = enumOf(o, name, type);
-        return v == null ? fallback : v;
-    }
-
-    private static int clamp(int v, int lo, int hi) {
-        return Math.max(lo, Math.min(hi, v));
-    }
-
-    private static double clamp(double v, double lo, double hi) {
-        return Math.max(lo, Math.min(hi, v));
-    }
-
-    private static void readPairs(JsonObject o, String name, java.util.EnumMap<Overlay, int[]> into) {
-        JsonElement el = o.get(name);
-        if (el == null || !el.isJsonObject()) {
-            return;
-        }
-        JsonObject all = el.getAsJsonObject();
-        for (Overlay which : Overlay.values()) {
-            JsonElement pair = all.get(which.name());
-            if (pair == null || !pair.isJsonArray() || pair.getAsJsonArray().size() != 2) {
-                continue;
-            }
-            try {
-                double a = pair.getAsJsonArray().get(0).getAsDouble();
-                double b = pair.getAsJsonArray().get(1).getAsDouble();
-                if (Double.isFinite(a) && Double.isFinite(b)) {
-                    into.put(which, new int[] {(int) a, (int) b});
-                }
-            } catch (RuntimeException failure) {
-                ErrorDebug.note("CollectorConfig#readPairs", null, failure);
-            }
-        }
+        configFile.load();
     }
 
     private synchronized void save() {
-        try {
-            JsonObject o = new JsonObject();
-            o.addProperty("tooltipMode", tooltipMode.name());
-            o.addProperty("showOverlays", showOverlays);
-            o.addProperty("collect", collect);
-            o.addProperty("notifiedVersion", notifiedVersion);
-            o.addProperty("syncedTranslations", syncedTranslations);
-            o.addProperty("syncedTranslationsDate", syncedTranslationsDate);
-            o.addProperty("autoUpdateTranslations", autoUpdateTranslations);
-            o.addProperty("language", language);
-            o.addProperty("fallbackLanguage", fallbackLanguage);
-            o.addProperty("uiLanguage", uiLanguage);
-            o.addProperty("source", source.name());
-            o.addProperty("debugDumps", debugDumps);
-            o.addProperty("collectGuiText", collectGuiText);
-            o.addProperty("translateBossBar", translateBossBar);
-            o.addProperty("nametagMode", nametagMode.name());
-            o.addProperty("panelSide", panelSide.name());
-            o.addProperty("itemNames", itemNames.name());
-            o.addProperty("pageNames", pageNames.name());
-            o.addProperty("noticeDismissed", noticeDismissed);
-            o.addProperty("oldKeysReleased", oldKeysReleased);
-            o.addProperty("privacyConsent", consent.name());
-            o.addProperty("setupDone", setupDone);
-            o.addProperty("dataOptOut", dataOptOut);
-            o.addProperty("dataDeletePending", dataDeletePending);
-            o.addProperty("panelGap", panelGap);
-            o.addProperty("accentColor", accentColor);
-            o.addProperty("themeColor", themeColor);
-            o.addProperty("dialogueHoldMs", dialogueHoldMs);
-            o.addProperty("dialogueMode", dialogueMode.name());
-            o.addProperty("choiceMode", choiceMode.name());
-            o.addProperty("chatMode", chatMode.name());
-            o.addProperty("translateTitles", translateTitles);
-            o.addProperty("translationsEnabled", translationsEnabled);
-            o.addProperty("trackerMode", trackerMode.name());
-            o.addProperty("translateObjectives", translateObjectives);
-            o.addProperty("translateScoreboard", translateScoreboard);
-            o.addProperty("translateHeldItem", translateHeldItem);
-            o.addProperty("wynnventory", wynnventory);
-            o.addProperty("wynnmodTooltip", wynnmodTooltip);
-            o.addProperty("wynnMarketSearch", wynnMarketSearch);
-            o.addProperty("chatCopy", chatCopy);
-            o.addProperty("capes", capes);
-            o.addProperty("ownCape", ownCape);
-            o.addProperty("wynntilsUi", wynntilsUi);
-            o.addProperty("wynntilsFps", wynntilsFps);
-            o.addProperty("dialogueCover", dialogueCover);
-            o.addProperty("marketSearch", marketSearch);
-            o.addProperty("shiftPeekNames", shiftPeekNames);
-            o.addProperty("abilityNamesOriginal", abilityNamesOriginal);
-            o.addProperty("shotMode", shotMode.name());
-            o.addProperty("nametagHoldMs", nametagHoldMs);
-            o.addProperty("panelAnchor", panelAnchor.name());
-            com.google.gson.JsonObject positions = new com.google.gson.JsonObject();
-            overlayPos.forEach((which, xy) -> {
-                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
-                arr.add(xy[0]);
-                arr.add(xy[1]);
-                positions.add(which.name(), arr);
-            });
-            o.add("overlayPos", positions);
-            com.google.gson.JsonObject sizes = new com.google.gson.JsonObject();
-            overlaySize.forEach((which, wh) -> {
-                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
-                arr.add(wh[0]);
-                arr.add(wh[1]);
-                sizes.add(which.name(), arr);
-            });
-            o.add("overlaySize", sizes);
-            if (!badgeRoles.isEmpty()) {
-                JsonObject roles = new JsonObject();
-                badgeRoles.forEach(roles::addProperty);
-                o.add("badgeRoles", roles);
-            }
-            if (badgeRainbow != null) {
-                o.addProperty("badgeRainbow", badgeRainbow);
-            }
-            if (!badgeColours.isEmpty()) {
-                JsonObject colours = new JsonObject();
-                badgeColours.forEach(colours::addProperty);
-                o.add("badgeColours", colours);
-            }
-            o.addProperty("nametagRange", nametagRange);
-            o.addProperty("nametagAngle", nametagAngle);
-            o.addProperty("fixedX", fixedX);
-            o.addProperty("fixedY", fixedY);
-            SafeFiles.writeAtomically(file, GSON.toJson(o));
-        } catch (Exception e) {
-            ModLog.warn("設定寫入失敗: " + e.getMessage());
-        }
+        configFile.save();
     }
 }

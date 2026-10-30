@@ -1,5 +1,7 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.LanguageLayers;
+import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
@@ -60,12 +62,12 @@ public final class FirstRunScreen extends CanvasScreen {
 
             @Override
             public void agree() {
-                WynnChaYuan.setConsent(true);
+                ModNetwork.setConsent(true);
             }
 
             @Override
             public void disagree() {
-                WynnChaYuan.setConsent(false);
+                ModNetwork.setConsent(false);
             }
 
             @Override
@@ -79,7 +81,7 @@ public final class FirstRunScreen extends CanvasScreen {
                 cfg().applyRecommended();
                 applyNameModes();
                 if (!wasOn) {
-                    WynnChaYuan.reloadTranslations();
+                    LanguageLayers.reloadTranslations();
                 }
             }
 
@@ -204,7 +206,7 @@ public final class FirstRunScreen extends CanvasScreen {
                 new Row.Group(t("group.privacy"), false, List.of(
                 toggle("privacy.online",
                         () -> cfg().consent() == CollectorConfig.Consent.AGREED,
-                        WynnChaYuan::setConsent))))));
+                        com.wynnchayuan.ModNetwork::setConsent))))));
         return tabs;
     }
 
