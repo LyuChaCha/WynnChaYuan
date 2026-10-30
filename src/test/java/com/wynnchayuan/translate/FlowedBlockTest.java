@@ -481,13 +481,13 @@ public final class FlowedBlockTest {
                                 == Character.UnicodeScript.HAN));
 
         check("譯文比原文少行 -> 要折",
-                LineTranslator.needsWrap("一句話", 3, false));
+                TextWrapper.needsWrap("一句話", 3, false));
         check("攤平查到的一律要折",
-                LineTranslator.needsWrap("一句話", 1, true));
+                TextWrapper.needsWrap("一句話", 1, true));
         check("行數一樣就不折——那是譯者排好的形狀",
-                !LineTranslator.needsWrap("一" + NL + "二" + NL + "三", 3, false));
+                !TextWrapper.needsWrap("一" + NL + "二" + NL + "三", 3, false));
         check("比原文多行也不折——折了只會更長",
-                !LineTranslator.needsWrap("一" + NL + "二" + NL + "三" + NL + "四",
+                !TextWrapper.needsWrap("一" + NL + "二" + NL + "三" + NL + "四",
                         3, false));
     }
 

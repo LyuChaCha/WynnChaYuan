@@ -252,10 +252,10 @@ public final class ColumnCentreTest {
                 .fromRgb(0xAAAAAA));
 
         check("沒有 § 時原樣輸出",
-                "純文字".equals(LineTranslator.coloured("純文字", base).getString()));
+                "純文字".equals(DisplayStyles.coloured("純文字", base).getString()));
 
         java.util.List<Component> parts =
-                flatten(LineTranslator.coloured("警告§c危險", base));
+                flatten(DisplayStyles.coloured("警告§c危險", base));
         int grey = 0;
         int red = 0;
         for (Component leaf : parts) {
@@ -271,11 +271,11 @@ public final class ColumnCentreTest {
         check("§ 之前沿用這一段原本的樣式", grey >= 1);
         check("§c 之後變成紅色", red >= 1);
         check("格式碼本身不會被印出來",
-                !LineTranslator.coloured("警告§c危險", base)
+                !DisplayStyles.coloured("警告§c危險", base)
                         .getString().contains("§"));
 
         java.util.List<Component> reset =
-                flatten(LineTranslator.coloured("§c紅§r回來", base));
+                flatten(DisplayStyles.coloured("§c紅§r回來", base));
         Integer last = reset.get(reset.size() - 1).getStyle().getColor() == null
                 ? null : reset.get(reset.size() - 1).getStyle().getColor().getValue();
         check("§r 回到這一段原本的樣式（拿到 "
@@ -283,7 +283,7 @@ public final class ColumnCentreTest {
                 last != null && last == 0xAAAAAA);
 
         check("§ 後面不是格式碼時原樣留著",
-                LineTranslator.coloured("100§z", base).getString().contains("§z"));
+                DisplayStyles.coloured("100§z", base).getString().contains("§z"));
     }
 
     private static java.util.List<Component> flatten(Component c) {

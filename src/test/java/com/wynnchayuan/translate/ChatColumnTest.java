@@ -128,21 +128,21 @@ public final class ChatColumnTest {
         }
 
         check("第一欄不動",
-              "{c1}A{/}".equals(LineTranslator.shiftColours("{c1}A{/}", 0)));
+              "{c1}A{/}".equals(ColourTemplate.shiftColours("{c1}A{/}", 0)));
         check("第二欄的 {c1} 推成 {c2}",
-              "{c2}A{/}".equals(LineTranslator.shiftColours("{c1}A{/}", 1)));
+              "{c2}A{/}".equals(ColourTemplate.shiftColours("{c1}A{/}", 1)));
 
         check("欄內重複用同一編號仍是同色",
               "{c3}A{/}{c3}B{/}".equals(
-                      LineTranslator.shiftColours("{c1}A{/}{c1}B{/}", 2)));
+                      ColourTemplate.shiftColours("{c1}A{/}{c1}B{/}", 2)));
         check("欄內兩種顏色的相對關係不變",
               "{c3}A{/}{c4}B{/}".equals(
-                      LineTranslator.shiftColours("{c1}A{/}{c2}B{/}", 2)));
+                      ColourTemplate.shiftColours("{c1}A{/}{c2}B{/}", 2)));
 
         check("算得出用了幾種顏色",
-              LineTranslator.distinctColours("{c1}A{/}{c1}B{/}{c2}C{/}") == 2);
+              ColourTemplate.distinctColours("{c1}A{/}{c1}B{/}{c2}C{/}") == 2);
         check("沒有顏色佔位符就是 0",
-              LineTranslator.distinctColours("沒有顏色") == 0);
+              ColourTemplate.distinctColours("沒有顏色") == 0);
     }
 
     private static void multiline() throws Exception {
