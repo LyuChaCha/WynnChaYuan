@@ -3438,6 +3438,15 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.CORPUS.data.delete('staff:d:' + SLY);
 }
 
+{
+  const isolate = await import('./auth.js?secret-race');
+  const store = { CORPUS: fakeKv() };
+  const uuid = 'e6'.repeat(16);
+  const [one, two] = await Promise.all([isolate.issueToken(store, uuid, 'Ann', NOW), isolate.issueToken(store, uuid, 'Ann', NOW)]);
+  const readBack = [await isolate.readToken(store, one, NOW), await isolate.readToken(store, two, NOW)];
+  check('★ 密鑰第一次用到時同時來兩個請求：兩張通行證都認得', readBack.every((user) => user && user.uuid === uuid) && one === two);
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
