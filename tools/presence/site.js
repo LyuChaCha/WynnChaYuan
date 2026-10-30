@@ -408,6 +408,11 @@ const STYLE = String.raw`
   .who-row > svg { width: 18px; height: 18px; flex: none; }
   .who-row b:only-of-type { flex: 1; }
   .who-row b + svg { margin-left: auto; }
+  .who-txt { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.45; }
+  .who-top { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+  .who-tags { min-width: 0; font-size: 12px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .who-tags .tl { color: var(--leaf); }
+  .team-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   /* 貢獻公會：比一個人大一號——旗幟、圖示、名字與標籤 */
   .lineup.guilds { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .guild { padding: 10px 14px 10px 12px; border-radius: 12px; }
@@ -969,6 +974,7 @@ export const TEXT = {
     'home.teamlede': '做出 WynnChaYuan 的人。葉子的顏色代表身分，跟遊戲裡名字前面那一片一樣；點一下可以看他在 Wynncraft 的資料。',
     'home.guilds': '貢獻公會', 'home.guildsb': '對模組提供巨大幫助，或成員之間互相協助的公會。',
     'home.teamfail': '名單現在讀不到，請重新整理。',
+    'home.teampick': '依翻譯團隊篩選',
     'home.dev': '開發者', 'home.devb': '協助程式開發與維護。',
     'home.sponsor': '贊助者', 'home.sponsorb': '單次 20 USD 或每月 2 USD 以上。',
     'home.contrib': '貢獻者', 'home.contribb': '替自己的語言翻譯、修正錯誤，或提供程式上的實質協助。',
@@ -1061,7 +1067,7 @@ export const TEXT = {
     'tr.st.open': '投票中', 'tr.st.accepted': '已採用', 'tr.st.rejected': '已駁回',
     'tr.np.term': '英文術語', 'tr.np.opts': '候選譯法（用逗號分開）', 'tr.np.note': '說明（可以不填）：出現在哪裡、為什麼有不同意見', 'tr.np.send': '開始投票',
     'admin.translators': '譯者',
-    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。',
+    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。名冊（<code>credits.json</code>）上有這個人的話，他負責的語言也會加進他的翻譯團隊（放進當天那個 PR）；移除譯者或拿掉語言不會動到翻譯團隊，要到上面的「翻譯團隊與貢獻項目」自己取消。',
     'admin.trlangs': '負責的語言', 'admin.notranslators': '還沒有譯者。',
     'admin.h1': '管理',
     'admin.gate': '這一頁只有開發者與管理員能用，請先登入。',
@@ -1074,6 +1080,7 @@ export const TEXT = {
     'admin.section': '身分', 'admin.name': '顯示的名字', 'admin.mc': 'Minecraft ID', 'admin.color': '葉子顏色（可以不填）',
     'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
     'admin.send': '開 PR',
+    'admin.teams': '翻譯團隊與貢獻項目', 'admin.teamsnote': '標出每位成員在哪個語言的翻譯團隊、做了哪些事；首頁的團隊名冊照這個分組，名字底下列出項目。選一位成員、勾好之後按「開 PR」：改的是 <code>credits.json</code>，同一天的修改都放進同一個 PR，合併之後首頁最多十分鐘內更新。還不在名單上的人，先用上面的「新增成員」加進來。', 'admin.tmember': '成員', 'admin.tpick': '選一位成員…', 'admin.tteams': '翻譯團隊', 'admin.tareas': '貢獻項目', 'admin.notmembers': '名單上還沒有成員。',
     'account.drop': '也可以把圖檔拖到這裡。尺寸對的話，上面的人偶會先穿給你看。',
     'admin.reviews': '審核名單',
     'admin.reviewsnote': '比封禁輕的處置：名單上的人還是可以上傳，但之後傳的披風要先由管理的人在披風一覽按「通過審核」，別人才看得到（一覽與遊戲裡都是）。他現在身上那一件不受影響。等審核的披風在披風一覽的「待審核」。輸入他的 Minecraft UUID；也可以在披風一覽點開一件，直接把上傳的人列進來。',
@@ -1202,6 +1209,8 @@ export const TEXT = {
       wornPending: '穿上了，但要等審核通過別人才會看到。',
       confirmUnreview: '把 {who} 從審核名單移除？等審核的披風會直接放行。',
       onWynn: '在 Wynncraft 看 {n} 的資料',
+      trTeamOf: '名冊的團隊', trTeamDone: '也把語言加進他的翻譯團隊', trTeamFail: '翻譯團隊沒改成（{s}）',
+      teamAll: '全部', teamEdit: '編輯', teamWait: '已送出，等 PR 合併', teamAreas: { translation: '翻譯', proofreading: '校對', capture: '資料收集', testing: '測試', code: '程式', design: '美術設計', website: '網站', community: '社群管理' }, teamFix: { pick: '先選一位成員', added: '已加進今天的 PR', unchanged: '跟名單上現在的一樣，沒有要改的', 'not found': '名單上找不到這個人（可能剛改過名或被移除），請重新整理', 'bad team': '翻譯團隊不對', 'bad area': '貢獻項目不對', 'bad who': '先選一位成員', forbidden: '登入過期了，或你沒有管理權限' },
       wearingThis: '你正在穿這一件。', restoreOwn: '復原成我原本的披風', takeOff: '脫下這件披風',
       wornOk: '穿上了，其他玩家幾分鐘內就會看到。', wornKept: '穿上了，其他玩家幾分鐘內就會看到。你原本那一件還留著，隨時可以復原。',
       restored: '已經換回你原本的披風。', tookOff: '已經脫下。',
@@ -1340,6 +1349,7 @@ export const TEXT = {
     'home.teamlede': 'The people behind WynnChaYuan. The colour of the leaf shows the role, the same leaf you see before their name in game; click someone to see their Wynncraft profile.',
     'home.guilds': 'Contributing guilds', 'home.guildsb': 'Guilds that have given the mod a great deal of help, or whose members help one another with it.',
     'home.teamfail': 'The list could not be loaded. Please refresh.',
+    'home.teampick': 'Filter by translation team',
     'home.dev': 'Developers', 'home.devb': 'Help build and maintain the mod.',
     'home.sponsor': 'Sponsors', 'home.sponsorb': 'A one-off 20 USD or 2 USD a month and up.',
     'home.contrib': 'Contributors', 'home.contribb': 'Translate for their language, fix mistakes, or help with the code.',
@@ -1432,7 +1442,7 @@ export const TEXT = {
     'tr.st.open': 'Voting', 'tr.st.accepted': 'Accepted', 'tr.st.rejected': 'Rejected',
     'tr.np.term': 'English term', 'tr.np.opts': 'Candidate translations (comma-separated)', 'tr.np.note': 'Note (optional): where it appears and what the disagreement is', 'tr.np.send': 'Start the vote',
     'admin.translators': 'Translators',
-    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages.',
+    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages. If the person is on the credits list (<code>credits.json</code>), their languages are also added to their translation teams (in that day’s pull request). Removing a translator or a language does not touch their teams; untick those yourself under “Translation teams and contributions” above.',
     'admin.trlangs': 'Languages', 'admin.notranslators': 'No translators yet.',
     'admin.h1': 'Admin',
     'admin.gate': 'This page is for developers and moderators only. Please sign in first.',
@@ -1445,6 +1455,7 @@ export const TEXT = {
     'admin.section': 'Role', 'admin.name': 'Display name', 'admin.mc': 'Minecraft ID', 'admin.color': 'Leaf colour (optional)',
     'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
     'admin.send': 'Open PR',
+    'admin.teams': 'Translation teams and contributions', 'admin.teamsnote': 'Mark which language’s translation team each member is in and what they have worked on; the team list on the home page is grouped by this, with the work listed under each name. Choose a member, tick the boxes and press “Open PR”: this edits <code>credits.json</code>, every change made on the same day goes into the same pull request, and once it is merged the home page updates within ten minutes. Add people who are not on the list yet with “Add a member” above.', 'admin.tmember': 'Member', 'admin.tpick': 'Choose a member…', 'admin.tteams': 'Translation teams', 'admin.tareas': 'Contributions', 'admin.notmembers': 'Nobody is on the list yet.',
     'account.drop': 'You can also drop the image here. If the size is right, the model above tries it on first.',
     'admin.reviews': 'Review list',
     'admin.reviewsnote': 'A lighter measure than a ban: people on this list can still upload, but a cape they upload later is shown to others (in the gallery and in game) only after a moderator clicks “Approve” in the cape gallery. The cape they are wearing now is not affected. Capes awaiting review are under “Awaiting review” in the gallery. Enter their Minecraft UUID; you can also open a cape in the gallery and add its uploaders from there.',
@@ -1573,6 +1584,8 @@ export const TEXT = {
       wornPending: 'You are wearing it now, but others will only see it once it has been approved.',
       confirmUnreview: 'Remove {who} from the review list? A cape awaiting review will be let through.',
       onWynn: 'See {n} on Wynncraft',
+      trTeamOf: 'Teams on the credits', trTeamDone: 'their languages were also added to their translation teams', trTeamFail: 'the translation teams were not updated ({s})',
+      teamAll: 'All', teamEdit: 'Edit', teamWait: 'sent, waiting for the pull request to be merged', teamAreas: { translation: 'Translation', proofreading: 'Proofreading', capture: 'Data collection', testing: 'Testing', code: 'Code', design: 'Art and design', website: 'Website', community: 'Community' }, teamFix: { pick: 'Choose a member first', added: 'Added to today’s pull request', unchanged: 'Nothing to change: the list already says this', 'not found': 'This person is not on the list any more (renamed or removed?). Please refresh.', 'bad team': 'Unknown translation team', 'bad area': 'Unknown contribution', 'bad who': 'Choose a member first', forbidden: 'Your sign-in expired, or you cannot manage this site' },
       wearingThis: 'You are wearing this one.', restoreOwn: 'Switch back to my own cape', takeOff: 'Take this cape off',
       wornOk: 'You are wearing it now. Other players will see it within a few minutes.', wornKept: 'You are wearing it now. Other players will see it within a few minutes. Your own cape is kept, and you can switch back any time.',
       restored: 'Your own cape is back.', tookOff: 'The cape is off.',
@@ -2991,6 +3004,7 @@ const HOME = String.raw`
   <p class="lede">%%home.teamlede%%</p>
   <template id="leaf">` + LEAF + String.raw`</template>
   <template id="out">` + ICON.out + String.raw`</template>
+  <div class="team-pick" id="team-pick" role="group" aria-label="%%home.teampick%%" hidden></div>
   <div class="team" id="team-list" aria-busy="true">
     <section class="band" id="band-developers" data-role="developers">
       <div class="band-head">` + leaf('#FFD24A') + String.raw`<h3>%%home.dev%%</h3><p>%%home.devb%%</p></div>
@@ -3069,6 +3083,48 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
   })();
   (function () {
     var ROLES = { developers: 1, sponsors: 1, contributors: 1 };
+    var TEAM_NAMES = { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' };
+    var present = {};
+    var guildsShown = false;
+    function pickTeam(code) {
+      document.querySelectorAll('#team-pick .chip').forEach(function (chip) {
+        chip.setAttribute('aria-pressed', chip.dataset.team === code ? 'true' : 'false');
+      });
+      Object.keys(ROLES).forEach(function (role) {
+        var band = document.getElementById('band-' + role);
+        var shown = 0;
+        band.querySelectorAll('.lineup > .fig').forEach(function (item) {
+          var hit = !code || (' ' + item.dataset.teams + ' ').indexOf(' ' + code + ' ') >= 0;
+          item.hidden = !hit;
+          if (hit) shown++;
+        });
+        band.hidden = shown === 0;
+      });
+      document.getElementById('band-guilds').hidden = !guildsShown || Boolean(code);
+    }
+    function buildPick() {
+      var codes = Object.keys(TEAM_NAMES).filter(function (code) { return present[code]; });
+      var host = document.getElementById('team-pick');
+      host.replaceChildren();
+      host.hidden = codes.length === 0;
+      if (!codes.length) return;
+      [''].concat(codes).forEach(function (code) {
+        var chip = el('button', 'chip', code ? TEAM_NAMES[code] : L.teamAll);
+        chip.type = 'button';
+        chip.dataset.team = code;
+        if (code) chip.lang = STAGE_TAGS[code] || '';
+        chip.onclick = function () {
+          pickTeam(code);
+          var link = new URL(location.href);
+          if (code) link.searchParams.set('team', code);
+          else link.searchParams.delete('team');
+          history.replaceState(history.state, '', link.pathname + link.search + link.hash);
+        };
+        host.append(chip);
+      });
+      var asked = new URLSearchParams(location.search).get('team') || '';
+      pickTeam(present[asked] ? asked : '');
+    }
     var shape = document.getElementById('leaf').content.firstElementChild;
     var arrow = document.getElementById('out').content.firstElementChild;
     function settle(img) {
@@ -3110,9 +3166,37 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
             blank.append(shape.cloneNode(true));
             row.append(blank);
           }
-          row.append(el('b', '', member.name));
-          /* 名單上寫的名字跟遊戲 ID 不一樣，才把遊戲 ID 另外寫出來 */
-          if (member.mc && member.mc !== member.name) row.append(el('span', 'mc', member.mc));
+          var teams = member.teams || [];
+          var areas = member.areas || [];
+          item.dataset.teams = teams.join(' ');
+          teams.forEach(function (code) { present[code] = true; });
+          if (teams.length || areas.length) {
+            var txt = el('span', 'who-txt');
+            var tags = el('span', 'who-tags');
+            var words = [];
+            teams.forEach(function (code) {
+              var tl = el('span', 'tl', TEAM_NAMES[code] || code);
+              tl.lang = STAGE_TAGS[code] || '';
+              if (words.length) tags.append(' · ');
+              tags.append(tl);
+              words.push(TEAM_NAMES[code] || code);
+            });
+            areas.forEach(function (code) {
+              var word = L.teamAreas[code] || code;
+              tags.append((words.length ? ' · ' : '') + word);
+              words.push(word);
+            });
+            tags.title = words.join(' · ');
+            var top = el('span', 'who-top');
+            top.append(el('b', '', member.name));
+            if (member.mc && member.mc !== member.name) top.append(el('span', 'mc', member.mc));
+            txt.append(top, tags);
+            row.append(txt);
+          } else {
+            row.append(el('b', '', member.name));
+            /* 名單上寫的名字跟遊戲 ID 不一樣，才把遊戲 ID 另外寫出來 */
+            if (member.mc && member.mc !== member.name) row.append(el('span', 'mc', member.mc));
+          }
           var leaf = shape.cloneNode(true);
           leaf.style.color = member.color || section.color || '';
           row.append(leaf);
@@ -3154,6 +3238,8 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
         item.append(link);
         list.append(item);
       });
+      guildsShown = guilds.length > 0;
+      buildPick();
       document.getElementById('team-list').removeAttribute('aria-busy');
     }).catch(function () {
       document.getElementById('team-list').removeAttribute('aria-busy');
@@ -4651,6 +4737,26 @@ const ADMIN = String.raw`
       <p class="msg" id="c-msg" role="status"></p>
     </div>
 
+    <h2 id="teams">%%admin.teams%%</h2>
+    <div class="panel">
+      <p class="note" style="margin:0 0 14px">%%admin.teamsnote%%</p>
+      <div class="form">
+        <div><label for="m-who">%%admin.tmember%%</label>
+          <select id="m-who"><option value="">%%admin.tpick%%</option><optgroup label="%%admin.developers%%" data-role="developers"></optgroup><optgroup label="%%admin.sponsors%%" data-role="sponsors"></optgroup><optgroup label="%%admin.contributors%%" data-role="contributors"></optgroup></select></div>
+      </div>
+      <fieldset class="tr-langs" id="m-teams"><legend>%%admin.tteams%%</legend></fieldset>
+      <fieldset class="tr-langs" id="m-areas"><legend>%%admin.tareas%%</legend></fieldset>
+      <div class="tr-actions"><button class="btn primary" id="m-send" type="button" disabled>%%admin.send%%</button></div>
+      <p class="msg" id="m-msg" role="status"></p>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>%%admin.tmember%%</th><th>%%admin.section%%</th><th>%%admin.tteams%%</th><th>%%admin.tareas%%</th><th></th></tr></thead>
+        <tbody id="mteams"></tbody>
+      </table>
+      <p class="note" id="nomteams" hidden style="margin:10px">%%admin.notmembers%%</p>
+    </div>
+
     <h2>%%admin.guilds%%</h2>
     <div class="panel">
       <p class="note" style="margin:0 0 14px">%%admin.guildsnote%%</p>
@@ -5182,7 +5288,11 @@ const ADMIN_JS = '<script>' + String.raw`
         };
         var action = el('td');
         action.append(drop);
-        row.append(who, el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、')),
+        var langCell = el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、'));
+        if (one.team) {
+          langCell.append(el('br'), el('small', 'hint', L.trTeamOf + '：' + (one.team.map(function (c) { return L.tr.langs[c] || c; }).join('、') || '—')));
+        }
+        row.append(who, langCell,
           el('td', '', one.note || '—'), el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'),
           el('td', '', one.by || '—'), action);
         body.append(row);
@@ -5201,6 +5311,18 @@ const ADMIN_JS = '<script>' + String.raw`
           if (r.ok) {
             msg.className = 'msg ok';
             msg.textContent = L.perkDone;
+            if (body.team && body.team.why) {
+              msg.append(' · ' + fmt(L.trTeamFail, { s: L.credit[body.team.why] || body.team.why }));
+            } else if (body.team && body.team.url) {
+              msg.append(' · ' + L.trTeamDone + ': ');
+              if (String(body.team.url).indexOf('https://github.com/') === 0) {
+                var prLink = el('a', '', body.team.url);
+                prLink.href = body.team.url;
+                prLink.rel = 'noopener';
+                msg.append(prLink);
+              }
+            }
+            if (body.team && (body.team.url || body.team.teams)) loadTeams();
             trPick.clear();
             document.getElementById('t-note').value = '';
             TR_CODES.forEach(function (code) { document.getElementById('t-lang-' + code).checked = false; });
@@ -5298,6 +5420,7 @@ const ADMIN_JS = '<script>' + String.raw`
     loadReviews();
     loadPerks();
     loadGuilds();
+    loadTeams();
     if (me.developer) {
       document.getElementById('staff-block').hidden = false;
       loadStaff();
@@ -5345,6 +5468,135 @@ const ADMIN_JS = '<script>' + String.raw`
         msg.textContent = r.ok ? fmt(L.botOk, { s: (b.commands || []).join(', ') }) : fmt(L.prFail, { s: b.why || r.status });
       });
     });
+  };
+  var TEAM_CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
+  var AREA_CODES = ['translation', 'proofreading', 'capture', 'testing', 'code', 'design', 'website', 'community'];
+  var teamPeople = {};
+  var teamSent = {};
+  function teamBoxes(host, prefix, codes, names) {
+    codes.forEach(function (code) {
+      var label = el('label');
+      var box = el('input');
+      box.type = 'checkbox';
+      box.value = code;
+      box.id = prefix + code;
+      box.onchange = teamDirty;
+      label.append(box, ' ' + (names[code] || code));
+      host.append(label);
+    });
+  }
+  teamBoxes(document.getElementById('m-teams'), 'm-team-', TEAM_CODES, L.tr.langs);
+  teamBoxes(document.getElementById('m-areas'), 'm-area-', AREA_CODES, L.teamAreas);
+  function teamTicked(prefix, codes) {
+    return codes.filter(function (code) { return document.getElementById(prefix + code).checked; });
+  }
+  function teamNow(key) {
+    return teamSent[key] || teamPeople[key] || { teams: [], areas: [] };
+  }
+  function teamDirty() {
+    var key = document.getElementById('m-who').value;
+    var now = teamNow(key);
+    var same = key && teamTicked('m-team-', TEAM_CODES).join() === (now.teams || []).join()
+      && teamTicked('m-area-', AREA_CODES).join() === (now.areas || []).join();
+    document.getElementById('m-send').disabled = !key || same;
+  }
+  function teamFill() {
+    var key = document.getElementById('m-who').value;
+    var now = teamNow(key);
+    TEAM_CODES.forEach(function (code) { document.getElementById('m-team-' + code).checked = (now.teams || []).indexOf(code) >= 0; });
+    AREA_CODES.forEach(function (code) { document.getElementById('m-area-' + code).checked = (now.areas || []).indexOf(code) >= 0; });
+    teamDirty();
+  }
+  document.getElementById('m-who').onchange = function () {
+    document.getElementById('m-msg').textContent = '';
+    teamFill();
+  };
+  function teamWords(list, names) {
+    return (list || []).map(function (code) { return names[code] || code; }).join('、') || '—';
+  }
+  function loadTeams() {
+    return fetch('/api/team', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      if (!data) return;
+      var pick = document.getElementById('m-who');
+      var keep = pick.value;
+      var body = document.getElementById('mteams');
+      body.replaceChildren();
+      teamPeople = {};
+      var count = 0;
+      data.team.forEach(function (section) {
+        var group = pick.querySelector('optgroup[data-role="' + section.role + '"]');
+        if (!group) return;
+        group.replaceChildren();
+        section.members.forEach(function (member) {
+          var key = section.role + '|' + (member.mc || member.name);
+          teamPeople[key] = { section: section.role, who: member.mc || member.name, name: member.name, teams: member.teams || [], areas: member.areas || [] };
+          var option = el('option', '', member.mc && member.mc !== member.name ? member.name + ' (' + member.mc + ')' : member.name);
+          option.value = key;
+          group.append(option);
+          var shown = teamNow(key);
+          var row = el('tr');
+          var who = el('td');
+          if (member.mc) {
+            var img = el('img');
+            img.alt = '';
+            img.src = head(member.mc, 44);
+            who.append(img);
+          }
+          who.append(member.name);
+          if (teamSent[key]) who.append(el('small', 'hint', ' · ' + L.teamWait));
+          var edit = el('button', 'btn', L.teamEdit);
+          edit.type = 'button';
+          edit.onclick = function () {
+            pick.value = key;
+            document.getElementById('m-msg').textContent = '';
+            teamFill();
+            document.getElementById('teams').scrollIntoView();
+          };
+          var action = el('td');
+          action.append(edit);
+          row.append(who, el('td', '', group.label), el('td', '', teamWords(shown.teams, L.tr.langs)),
+            el('td', '', teamWords(shown.areas, L.teamAreas)), action);
+          body.append(row);
+          count++;
+        });
+      });
+      document.getElementById('nomteams').hidden = count > 0;
+      pick.value = teamPeople[keep] ? keep : '';
+      teamFill();
+    });
+  }
+  document.getElementById('m-send').onclick = function () {
+    var key = document.getElementById('m-who').value;
+    var person = teamPeople[key];
+    var msg = document.getElementById('m-msg');
+    if (!person) { msg.className = 'msg bad'; msg.textContent = L.teamFix.pick; return; }
+    var entry = { section: person.section, who: person.who, teams: teamTicked('m-team-', TEAM_CODES), areas: teamTicked('m-area-', AREA_CODES) };
+    var send = document.getElementById('m-send');
+    send.disabled = true;
+    msg.className = 'msg ok';
+    msg.textContent = L.sending;
+    api('/admin/credits/teams', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (body) {
+          msg.replaceChildren();
+          if (r.ok) {
+            teamSent[key] = { teams: entry.teams, areas: entry.areas };
+            msg.className = 'msg ok';
+            msg.append(body.added ? L.teamFix.added : L.prDone);
+            if (String(body.url).indexOf('https://github.com/') === 0) {
+              var link = el('a', '', body.url);
+              link.href = body.url;
+              link.rel = 'noopener';
+              msg.append(': ', link);
+            }
+            loadTeams();
+          } else {
+            msg.className = 'msg bad';
+            msg.textContent = L.teamFix[body.why] || L.credit[body.why] || fmt(L.prFail, { s: body.why || r.status });
+            teamDirty();
+          }
+        });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; teamDirty(); });
   };
   document.getElementById('c-send').onclick = function () {
     var msg = document.getElementById('c-msg');
