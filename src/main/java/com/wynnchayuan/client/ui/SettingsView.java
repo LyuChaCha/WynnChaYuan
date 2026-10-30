@@ -60,29 +60,30 @@ public final class SettingsView extends Surface {
     static final float PREVIEW_W = 152;
     static final float NAV_H = 21;
 
+    final List<Row.Tab> tabs;
+    final Host host;
 
-    private final List<Row.Tab> tabs;
-    private final Host host;
+    final SettingsControls controls = new SettingsControls(this);
+    final SettingsNavigation navigation = new SettingsNavigation(this);
 
-    private int tab;
+    int tab;
     private float scroll;
     private float scrollTarget;
     private float maxScroll;
 
-    private final Field search = new Field(40);
-    private final Field hexField = new Field(7);
-    private Field focus;
+    final Field search = new Field(40);
+    final Field hexField = new Field(7);
+    Field focus;
 
-    private String openSelect;
-    private boolean pickerOpen;
-    private Row pickerRow;
-    private final float[] hsv = {210, 0.5f, 0.85f};
-
+    String openSelect;
+    boolean pickerOpen;
+    Row pickerRow;
+    final float[] hsv = {210, 0.5f, 0.85f};
 
     private float bodyT = 1f;
     private float gapShown = -1;
 
-    private float railW;
+    float railW;
     private boolean pageWide;
 
     public record Placed(String id, float x, float y, float w, float h, float labelRight,
@@ -90,7 +91,7 @@ public final class SettingsView extends Surface {
 
     private final List<Placed> placed = new ArrayList<>();
 
-    private final boolean sheet;
+    final boolean sheet;
     private float sheetH;
 
     public SettingsView(List<Row.Tab> tabs, Host host, int startTab) {
@@ -149,11 +150,11 @@ public final class SettingsView extends Surface {
         });
 
         if (!sheet) {
-            rail();
+            navigation.rail();
         }
-        header();
+        navigation.header();
         body();
-        footer();
+        navigation.footer();
 
         bodyT = Ui.ease(bodyT, 1f, dt, 70f);
         scroll = Ui.ease(scroll, scrollTarget, dt, 55f);
@@ -214,7 +215,6 @@ public final class SettingsView extends Surface {
     private float clampScroll(float v) {
         return Math.max(0, Math.min(maxScroll, v));
     }
-
 
     public boolean key(int key, boolean ctrl) {
         if (key == KEY_ESC) {
@@ -302,7 +302,7 @@ public final class SettingsView extends Surface {
         }
     }
 
-    private void onSearchChanged() {
+    void onSearchChanged() {
         scroll = 0;
         scrollTarget = 0;
         hoverRow = null;
@@ -315,7 +315,7 @@ public final class SettingsView extends Surface {
         }
     }
 
-    private void closePopovers() {
+    void closePopovers() {
         if (pickerOpen && pickerRow != null) {
             pickerRow.commit.run();
         }
@@ -327,7 +327,7 @@ public final class SettingsView extends Surface {
         }
     }
 
-    private void switchTab(int next) {
+    void switchTab(int next) {
         if (next == tab && search.text.length() == 0) {
             return;
         }
@@ -342,219 +342,8 @@ public final class SettingsView extends Surface {
         host.click();
     }
 
-    private boolean searching() {
+    boolean searching() {
         return search.text.toString().strip().length() > 0;
-    }
-
-    private void rail() {
-        float x = winX;
-        float y = winY;
-        boolean slim = railW < RAIL_W;
-        clip(x, y, x + railW, y + winH);
-        c.round(x, y, railW + Ui.R3 * 2, winH, Ui.R3, Ui.RAIL);
-        unclip();
-        c.fill(x + railW - c.px(), y + 1, x + railW, y + winH - 1, Ui.LINE);
-
-        float cy;
-        if (slim) {
-            c.logo(x + (railW - 20) / 2f, y + 8, 20);
-            cy = y + 36;
-        } else {
-            c.logo(x + 7, y + 8, 26);
-            String title = host.title();
-            float room = railW - 38 - 6;
-            float big = c.scale(1.25f);
-            float s = c.width(title) * big <= room ? big : 1f;
-            c.text(title, x + 38, y + 21 - 4 * s, accent, s);
-            c.text(title, x + 38 + c.px(), y + 21 - 4 * s, accent, s);
-            cy = y + 40;
-            for (String line : Ui.wrap(c, host.tagline(), (int) (railW - 16))) {
-                c.text(line, x + 8, cy, Ui.TEXT_2);
-                cy += 10;
-            }
-            c.text(host.version(), x + 8, cy, Ui.FAINT);
-            cy += 15;
-            cy = searchField(x + 7, cy, railW - 14) + 7;
-        }
-
-        boolean searching = searching();
-        float pillY = animate("nav", cy + tab * (NAV_H + 2), 55f);
-        if (!searching) {
-            c.round(x + 6, pillY, railW - 12, NAV_H, Ui.R1, Ui.alpha(accent, 0x33));
-        }
-        for (int i = 0; i < tabs.size(); i++) {
-            Row.Tab t = tabs.get(i);
-            float ny = cy + i * (NAV_H + 2);
-            boolean on = i == tab && !searching;
-            boolean hot = over(x + 6, ny, railW - 12, NAV_H);
-            float g = glow("nav" + i, hot && !on);
-            if (g > 0.01f) {
-                c.round(x + 6, ny, railW - 12, NAV_H, Ui.R1, Ui.fade(0x12FFFFFF, g));
-            }
-            int ink = on ? accent : (hot ? Ui.TEXT : Ui.TEXT_2);
-            String name = t.name().get();
-            if (slim) {
-                c.icon(t.icon(), x + (railW - 12) / 2f, ny + 4.5f, 12, ink);
-                if (hot) {
-                    tip = new Tip(name, x + railW, ny - 4, 0, NAV_H);
-                    hoverRow = "#nav" + i;
-                }
-            } else {
-                c.icon(t.icon(), x + 12, ny + 5, 11, ink);
-                String count = String.valueOf(rowCount(t));
-                float countW = c.width(count);
-                String shown = Ui.fit(c, name, (int) (railW - 12 - 22 - countW - 12));
-                c.text(shown, x + 28, ny + 6.5f, ink);
-                c.text(count, x + railW - 12 - countW, ny + 6.5f, on ? accent : Ui.FAINT);
-                if (hot && !shown.equals(name)) {
-                    tip = new Tip(name, x + railW, ny - 4, 0, NAV_H);
-                    hoverRow = "#nav" + i;
-                }
-            }
-            int index = i;
-            zone(x + 6, ny, railW - 12, NAV_H, (px, py, b) -> switchTab(index));
-        }
-
-        float nh = 18;
-        float ny = y + winH - 8 - nh;
-        float nw = railW - 14;
-        float nx = x + 7;
-        boolean hot = over(nx, ny, nw, nh);
-        float g = glow("notice", hot);
-        Ui.halo(c, nx, ny, nw, nh, Ui.R1, accent, g);
-        Ui.pane(c, nx, ny, nw, nh, Ui.R1, Ui.RAISED, edge(g));
-        String notice = host.tr("notice.button");
-        if (slim) {
-            c.icon(Icons.Icon.QUEST, nx + (nw - 11) / 2f, ny + 3.5f, 11, Ui.GOLD);
-            if (hot) {
-                tip = new Tip(notice, x + railW, ny - 4, 0, nh);
-                hoverRow = "#notice";
-            }
-        } else {
-            c.icon(Icons.Icon.QUEST, nx + 6, ny + 3.5f, 11, Ui.GOLD);
-            c.text(Ui.fit(c, notice, (int) (nw - 26)), nx + 21, ny + 5, Ui.GOLD);
-        }
-        zone(nx, ny, nw, nh, (px, py, b) -> {
-            host.click();
-            host.openNotice();
-        });
-    }
-
-    private static int rowCount(Row.Tab t) {
-        int n = 0;
-        for (Row.Group g : t.groups()) {
-            n += g.rows().size();
-        }
-        return n;
-    }
-
-    private float searchField(float x, float y, float w) {
-        float h = 18;
-        boolean focused = focus == search;
-        boolean active = focused || search.text.length() > 0;
-        float g = glow("search", focused || over(x, y, w, h));
-        Ui.halo(c, x, y, w, h, Ui.R1, accent, focused ? 1f : g * 0.6f);
-        Ui.pane(c, x, y, w, h, Ui.R1, Ui.FIELD, active ? accent : edge(g));
-        c.icon(Icons.Icon.SEARCH, x + 5, y + 4, 10, active ? accent : Ui.TEXT_3);
-        float textX = x + 19;
-        float textW = w - 19 - (search.text.length() > 0 ? 15 : 5);
-        if (search.text.length() == 0 && !focused) {
-            c.text(Ui.fit(c, host.tr("search.placeholder"), (int) textW), textX, y + 5, Ui.FAINT);
-        } else {
-            field(search, textX, y + 5, textW, focused);
-        }
-        zone(x, y, w, h, (px, py, b) -> {
-            closePopovers();
-            focus = search;
-            search.caret = search.text.length();
-        });
-        if (search.text.length() > 0) {
-            float cx = x + w - 14;
-            boolean ch = over(cx - 1, y + 3, 12, 12);
-            c.icon(Icons.Icon.CLOSE, cx + 1, y + 5, 8, ch ? Ui.TEXT : Ui.HINT);
-            zone(cx - 1, y + 3, 12, 12, (px, py, b) -> {
-                search.clear();
-                onSearchChanged();
-            });
-        }
-        return y + h;
-    }
-
-    private void header() {
-        float x = winX + railW + 12;
-        float right = winX + winW - 12;
-        float y = winY;
-        boolean searching = searching();
-
-        String reset = host.tr("reset.page");
-        int dirty = 0;
-        for (Row.Group g : tabs.get(tab).groups()) {
-            for (Row r : g.rows()) {
-                if (r.resettable() && !r.isDefault.getAsBoolean()) {
-                    dirty++;
-                }
-            }
-        }
-        boolean can = dirty > 0 && !searching;
-        float room = right - x;
-        boolean compact = c.width(reset) + 26 > room * 0.45f;
-        float rw = compact ? CTRL_H : c.width(reset) + 26;
-        float rx = right - rw;
-        float ry = y + 11;
-        boolean hot = can && over(rx, ry, rw, CTRL_H);
-        float g = glow("resetpage", hot);
-        Ui.halo(c, rx, ry, rw, CTRL_H, Ui.R1, accent, g);
-        Ui.pane(c, rx, ry, rw, CTRL_H, Ui.R1, Ui.RAISED, edge(g));
-        int ink = can ? Ui.mix(Ui.TEXT_2, Ui.TEXT, g) : Ui.fade(Ui.FAINT, 0.6f);
-        c.icon(Icons.Icon.RESET, rx + (compact ? 3.5f : 6), ry + 3.5f, 9, ink);
-        if (!compact) {
-            c.text(reset, rx + 19, ry + 4, ink);
-        } else if (over(rx, ry, rw, CTRL_H)) {
-            tip = new Tip(reset, rx, ry, rw, CTRL_H);
-            hoverRow = "#reset";
-        }
-        zone(rx, ry, rw, CTRL_H, (px, py, b) -> {
-            if (!can) {
-                return;
-            }
-            closePopovers();
-            for (Row.Group grp : tabs.get(tab).groups()) {
-                for (Row r : grp.rows()) {
-                    if (r.resettable() && !r.isDefault.getAsBoolean()) {
-                        r.reset.run();
-                    }
-                }
-            }
-            host.click();
-            host.resetDone(tabs.get(tab).name().get());
-        });
-
-        float textRoom = rx - 10 - x;
-        String title = searching ? host.tr("search.results") : tabs.get(tab).name().get();
-        float s = c.scale(1.5f);
-        if (c.width(title) * s > textRoom) {
-            s = 1f;
-        }
-        c.text(Ui.fit(c, title, (int) (textRoom / s)), x, y + 8, Ui.TEXT, s);
-        String about = searching
-                ? host.tr("search.count", shownCount())
-                : tabs.get(tab).about().get();
-        c.text(Ui.fit(c, about, (int) textRoom), x, y + 8 + 8 * s + 4, Ui.TEXT_3);
-    }
-
-    private int shownCount() {
-        String query = search.text.toString().strip().toLowerCase(Locale.ROOT);
-        int n = 0;
-        for (Row.Tab t : tabs) {
-            for (Row.Group g : t.groups()) {
-                for (Row r : g.rows()) {
-                    if (matches(r, query)) {
-                        n++;
-                    }
-                }
-            }
-        }
-        return n;
     }
 
     private void body() {
@@ -658,7 +447,7 @@ public final class SettingsView extends Surface {
         }
     }
 
-    private static boolean matches(Row r, String query) {
+    static boolean matches(Row r, String query) {
         return r.name.get().toLowerCase(Locale.ROOT).contains(query)
                 || r.hint.get().toLowerCase(Locale.ROOT).contains(query);
     }
@@ -741,7 +530,7 @@ public final class SettingsView extends Surface {
 
     private float sliderValueW;
 
-    private float valueWidth(Row r) {
+    float valueWidth(Row r) {
         return Math.max(sliderValueW, ownValueWidth(r));
     }
 
@@ -751,7 +540,7 @@ public final class SettingsView extends Surface {
                                  c.width(r.format.apply(r.value.getAsInt()))));
     }
 
-    private float swatchWidth() {
+    float swatchWidth() {
         return 4 + 12 + 5 + c.width("#MMMMMM") + 5 + 7 + 4;
     }
 
@@ -771,13 +560,13 @@ public final class SettingsView extends Surface {
         float labelRoom;
         if (wide) {
             ctrlLeft = labelX;
-            control(r, labelX, right, ctrlY);
+            controls.control(r, labelX, right, ctrlY);
             labelRoom = right - labelX;
         } else {
             float span = right - labelX;
             float room = span - Math.min(span / 3f, c.width(r.name.get()) + 16);
             ctrlLeft = right - Math.min(natural(r), room);
-            control(r, ctrlLeft, right, ctrlY);
+            controls.control(r, ctrlLeft, right, ctrlY);
             labelRoom = ctrlLeft - 8 - labelX;
         }
 
@@ -819,376 +608,6 @@ public final class SettingsView extends Surface {
             tip = new Tip(name.equals(full) ? hint : full + "\n" + hint, x, y, w, h);
         }
         placed.add(new Placed(r.id, x, y, w, h, labelRight, ctrlLeft, right, wide));
-    }
-
-    private void control(Row r, float left, float right, float y) {
-        switch (r.kind) {
-            case TOGGLE -> toggle(r, right, y);
-            case SEGMENT -> segment(r, left, right, y);
-            case SLIDER -> slider(r, left, right, y);
-            case COLOUR -> colour(r, right, y);
-            case SELECT -> select(r, left, right, y);
-            case ACTION -> action(r, left, right, y);
-            default -> status(r, left, right, y);
-        }
-    }
-
-    private void toggle(Row r, float right, float y) {
-        boolean on = r.on.getAsBoolean();
-        String text = on ? (r.onText != null ? r.onText.get() : host.tr("mode.on"))
-                         : host.tr("mode.off");
-        toggle(r.id, right, y, on, text, r.flip);
-    }
-
-    private void segment(Row r, float left, float right, float y) {
-        float end = right;
-        if (r.extra != null) {
-            String label = r.extraLabel.get();
-            float bw = c.width(label) + 12;
-            button("x:" + r.id, end - bw, y, bw, CTRL_H, label, true, false, null, r.extra);
-            end -= bw + 5;
-        }
-        segmented(r.id, left, end, y, r.options, r.selected, r.pick, host::tone);
-    }
-
-    private float resetButton(Row r, float right, float y) {
-        float x = right - CTRL_H;
-        boolean can = !r.isDefault.getAsBoolean();
-        boolean hot = can && over(x, y, CTRL_H, CTRL_H);
-        float g = glow("rs:" + r.id, hot);
-        Ui.halo(c, x, y, CTRL_H, CTRL_H, Ui.R1, accent, g);
-        Ui.pane(c, x, y, CTRL_H, CTRL_H, Ui.R1, Ui.RAISED, edge(g));
-        c.icon(Icons.Icon.RESET, x + 3.5f, y + 3.5f, 9,
-               can ? Ui.mix(Ui.TEXT_2, Ui.TEXT, g) : Ui.fade(Ui.FAINT, 0.6f));
-        if (over(x, y, CTRL_H, CTRL_H)) {
-            tip = new Tip(host.tr("reset.row"), x, y, CTRL_H, CTRL_H);
-            hoverRow = "#rs:" + r.id;
-        }
-        zone(x, y, CTRL_H, CTRL_H, (px, py, b) -> {
-            if (can) {
-                host.click();
-                r.reset.run();
-                host.resetDone(r.name.get());
-            }
-        });
-        return x;
-    }
-
-    private void slider(Row r, float left, float right, float y) {
-        float end = r.resettable() ? resetButton(r, right, y) - 5 : right;
-        int value = r.value.getAsInt();
-        String text = r.format.apply(value);
-        float textW = valueWidth(r);
-        c.text(text, end - c.width(text), y + 4, Ui.TEXT);
-        end -= textW + 6;
-        float x = left + 5;
-        float w = Math.max(30, end - x - 5);
-        int span = Math.max(1, r.max - r.min);
-        float t = (Math.max(r.min, Math.min(r.max, value)) - r.min) / (float) span;
-        String key = "d:" + r.id;
-        boolean dragged = dragging != null && key.equals(draggingKey);
-        boolean hot = over(x - 5, y, w + 10, CTRL_H) || dragged;
-        float g = glow("sl:" + r.id, hot);
-        float ty = y + CTRL_H / 2f - 1.5f;
-        c.round(x, ty, w, 3, 1.5f, Ui.TRACK_OFF);
-        float knobX = x + w * t;
-        c.round(x, ty, Math.max(3, knobX - x), 3, 1.5f, accent);
-        float size = 9 + g * 1.5f;
-        Ui.halo(c, knobX - size / 2f, y + (CTRL_H - size) / 2f, size, size, size / 2f, accent, g);
-        c.round(knobX - size / 2f, y + (CTRL_H - size) / 2f, size, size, size / 2f, 0xFFFFFFFF);
-        c.round(knobX - 2, y + CTRL_H / 2f - 2, 4, 4, 2, accent);
-        float fx = x;
-        float fw = w;
-        Zone z = zone(x - 6, y - 2, w + 12, CTRL_H + 4, (px, py, b) -> slideTo(r, fx, fw, px));
-        z.drag = (px, py, b) -> slideTo(r, fx, fw, px);
-        z.release = r.commit;
-        z.key = key;
-    }
-
-    private void slideTo(Row r, float x, float w, double px) {
-        float t = (float) Math.max(0, Math.min(1, (px - x) / Math.max(1f, w)));
-        int next = r.min + Math.round(t * (r.max - r.min));
-        if (next != r.value.getAsInt()) {
-            r.slide.accept(next);
-        }
-    }
-
-    private void colour(Row r, float right, float y) {
-        float end = r.resettable() ? resetButton(r, right, y) - 5 : right;
-        String hex = r.hex.get();
-        float w = swatchWidth();
-        float x = end - w;
-        boolean open = pickerOpen && pickerRow == r;
-        boolean hot = over(x, y, w, CTRL_H);
-        float g = glow("c:" + r.id, hot || open);
-        Ui.halo(c, x, y, w, CTRL_H, Ui.R1, accent, g);
-        Ui.pane(c, x, y, w, CTRL_H, Ui.R1, Ui.FIELD, Ui.mix(Ui.BORDER, accent, g));
-        Ui.pane(c, x + 4, y + 3.5f, 12, 9, 2.5f, Ui.parseHex(hex, accent), 0x66FFFFFF);
-        c.text(hex, x + 21, y + 4, Ui.TEXT);
-        c.icon(open ? Icons.Icon.UP : Icons.Icon.DOWN, x + w - 11, y + 4.5f, 7,
-               open ? accent : Ui.TEXT_3);
-        zone(x, y, w, CTRL_H, (px, py, b) -> {
-            host.click();
-            boolean was = pickerOpen && pickerRow == r;
-            closePopovers();
-            if (!was) {
-                pickerOpen = true;
-                pickerRow = r;
-                float[] next = Ui.toHsv(Ui.parseHex(r.hex.get(), accent));
-                System.arraycopy(next, 0, hsv, 0, 3);
-                hexField.set(r.hex.get());
-                anim.put("pop", 0f);
-            }
-        });
-        if (open) {
-            float ax = x + w;
-            popover = () -> picker(r, ax, y + CTRL_H + 3, y - 3);
-        }
-    }
-
-    private static final String[] PRESETS = {
-        "#6FA8D8", "#8FD694", "#E0BC6E", "#E0706B", "#B48EDE", "#5FC8C0", "#F0A35E", "#C5CFDA"};
-
-    private void picker(Row r, float anchorRight, float below, float above) {
-        float w = 156;
-        float svH = 70;
-        float h = 8 + 10 + 6 + svH + 6 + 8 + 6 + 12 + 6 + CTRL_H + 8;
-        float x = Math.max(winX + railW + 6, Math.min(winX + winW - w - 6, anchorRight - w));
-        float y = above - h >= winY + 6 ? above - h : Math.min(below, winY + winH - h - 6);
-        float in = animate("pop", 1f, 45f);
-        y += (1f - in) * 4f;
-        popPane(x, y, w, h, in);
-        zone(x, y, w, h, (px, py, b) -> focus = null);
-
-        float sx = x + 8;
-        float sw = w - 16;
-        float cy = y + 8;
-        c.text(Ui.fit(c, r.name.get(), (int) (sw - 14)), sx, cy + 1, Ui.fade(Ui.TEXT_3, in));
-        boolean closeHot = over(sx + sw - 11, cy - 1, 12, 12);
-        c.icon(Icons.Icon.CLOSE, sx + sw - 9, cy + 1, 8, closeHot ? Ui.TEXT : Ui.HINT);
-        zone(sx + sw - 11, cy - 1, 12, 12, (px, py, b) -> closePopovers());
-        cy += 16;
-
-        float sy = cy;
-        c.svSquare(sx, sy, sw, svH, hsv[0]);
-        c.ring(sx, sy, sw, svH, 2, c.px(), Ui.BORDER);
-        float hx = sx + hsv[1] * sw;
-        float hy = sy + (1f - hsv[2]) * svH;
-        c.ring(hx - 4.5f, hy - 4.5f, 9, 9, 4.5f, 1f, Ui.ON_ACCENT);
-        c.ring(hx - 3.5f, hy - 3.5f, 7, 7, 3.5f, 1f, 0xFFFFFFFF);
-        Zone sv = zone(sx, sy, sw, svH, (px, py, b) -> pickSv(r, sx, sy, sw, svH, px, py));
-        sv.drag = (px, py, b) -> pickSv(r, sx, sy, sw, svH, px, py);
-        sv.release = r.commit;
-        sv.key = "sv";
-        cy += svH + 6;
-
-        float by = cy;
-        c.hueBar(sx, by, sw, 8);
-        c.ring(sx, by, sw, 8, 2, c.px(), Ui.BORDER);
-        float kx = sx + hsv[0] / 360f * sw;
-        c.round(kx - 2.5f, by - 2, 5, 12, 2.5f, 0xFFFFFFFF);
-        c.ring(kx - 2.5f, by - 2, 5, 12, 2.5f, c.px(), Ui.ON_ACCENT);
-        Zone hue = zone(sx, by - 2, sw, 12, (px, py, b) -> pickHue(r, sx, sw, px));
-        hue.drag = (px, py, b) -> pickHue(r, sx, sw, px);
-        hue.release = r.commit;
-        hue.key = "hue";
-        cy += 8 + 6;
-
-        float step = (sw + 3) / PRESETS.length;
-        String current = r.hex.get();
-        for (int i = 0; i < PRESETS.length; i++) {
-            String p = PRESETS[i];
-            float px0 = sx + i * step;
-            boolean on = p.equalsIgnoreCase(current);
-            boolean hot = over(px0, cy, step - 3, 12);
-            Ui.pane(c, px0, cy, step - 3, 12, 3, Ui.parseHex(p, accent),
-                    on ? 0xFFFFFFFF : (hot ? Ui.TEXT_2 : 0x40FFFFFF));
-            zone(px0, cy, step - 3, 12, (qx, qy, b) -> {
-                host.click();
-                if (r.setHex.test(p)) {
-                    float[] next = Ui.toHsv(Ui.parseHex(p, accent));
-                    System.arraycopy(next, 0, hsv, 0, 3);
-                    hexField.set(p);
-                    r.commit.run();
-                }
-            });
-        }
-        cy += 12 + 6;
-
-        Ui.pane(c, sx, cy, CTRL_H, CTRL_H, Ui.R1, Ui.parseHex(current, accent), 0x66FFFFFF);
-        String def = host.tr("reset.default");
-        float dw = Math.min(c.width(def) + 12, sw - CTRL_H - 5 - 50 - 5);
-        float fx = sx + CTRL_H + 5;
-        float fw = sw - CTRL_H - 5 - dw - 5;
-        boolean focused = focus == hexField;
-        Ui.pane(c, fx, cy, fw, CTRL_H, Ui.R1, Ui.FIELD, focused ? accent : Ui.BORDER);
-        field(hexField, fx + 5, cy + 4, fw - 10, focused);
-        zone(fx, cy, fw, CTRL_H, (qx, qy, b) -> {
-            focus = hexField;
-            hexField.caret = hexField.text.length();
-            hexField.all = true;
-        });
-        button("pd", sx + sw - dw, cy, dw, CTRL_H, def,
-               r.resettable() && !r.isDefault.getAsBoolean(), false, null, () -> {
-                   r.reset.run();
-                   float[] next = Ui.toHsv(Ui.parseHex(r.hex.get(), accent));
-                   System.arraycopy(next, 0, hsv, 0, 3);
-                   hexField.set(r.hex.get());
-               });
-    }
-
-    private void pickSv(Row r, float sx, float sy, float sw, float sh, double px, double py) {
-        hsv[1] = (float) Math.max(0, Math.min(1, (px - sx) / Math.max(1f, sw)));
-        hsv[2] = 1f - (float) Math.max(0, Math.min(1, (py - sy) / Math.max(1f, sh)));
-        applyHsv(r);
-    }
-
-    private void pickHue(Row r, float sx, float sw, double px) {
-        hsv[0] = 359.9f * (float) Math.max(0, Math.min(1, (px - sx) / Math.max(1f, sw)));
-        applyHsv(r);
-    }
-
-    private void applyHsv(Row r) {
-        String hex = Ui.toHex(Ui.hsv(hsv[0], hsv[1], hsv[2]));
-        if (r.setHex.test(hex)) {
-            hexField.set(hex);
-        }
-    }
-
-    private void select(Row r, float left, float right, float y) {
-        float end = right;
-        boolean locked = r.locked.getAsBoolean();
-        if (r.apply != null) {
-            String label = host.tr("button.apply");
-            float bw = c.width(label) + 14;
-            boolean can = !locked && r.canApply.getAsBoolean();
-            button("ap:" + r.id, end - bw, y, bw, CTRL_H, label, can, can, null, r.apply);
-            end -= bw + 5;
-        }
-        List<Row.Choice> list = r.choices.get();
-        String id = r.current.get();
-        Row.Choice cur = null;
-        for (Row.Choice ch : list) {
-            if (ch.id().equals(id)) {
-                cur = ch;
-            }
-        }
-        if (cur == null && !list.isEmpty()) {
-            cur = list.get(0);
-        }
-        float x = left;
-        float w = Math.max(50, end - left);
-        boolean open = r.id.equals(openSelect);
-        boolean hot = !locked && over(x, y, w, CTRL_H);
-        float g = glow("s:" + r.id, hot || open);
-        Ui.halo(c, x, y, w, CTRL_H, Ui.R1, accent, g);
-        Ui.pane(c, x, y, w, CTRL_H, Ui.R1, Ui.FIELD, Ui.mix(Ui.BORDER, accent, g));
-        String busy = r.busy.get();
-        float tx = x + 5;
-        if (cur != null && busy == null) {
-            tx = badge(cur, x + 3, y + 3, true);
-        }
-        String text = busy != null ? busy : (cur == null ? "" : cur.label());
-        c.text(Ui.fit(c, text, (int) (x + w - 14 - tx)), tx, y + 4, locked ? Ui.HINT : Ui.TEXT);
-        c.icon(open ? Icons.Icon.UP : Icons.Icon.DOWN, x + w - 11, y + 4.5f, 7,
-               open ? accent : Ui.TEXT_3);
-        zone(x, y, w, CTRL_H, (px, py, b) -> {
-            if (locked) {
-                return;
-            }
-            host.click();
-            boolean was = r.id.equals(openSelect);
-            closePopovers();
-            if (!was) {
-                openSelect = r.id;
-                anim.put("pop", 0f);
-            }
-        });
-        if (open) {
-            float fw = w;
-            popover = () -> dropdown(r, list, id, x, y + CTRL_H + 3, y - 3, fw);
-        }
-    }
-
-    private float badge(Row.Choice ch, float x, float y, boolean on) {
-        String text = ch.badge();
-        if (text == null || text.isEmpty()) {
-            return x + 2;
-        }
-        float w = Math.max(14, c.width(text) + 5);
-        int bg = ch.auto() ? Ui.GOLD : (on ? accent : Ui.HINT);
-        c.round(x, y, w, 10, 3, bg);
-        c.text(text, x + (w - c.width(text)) / 2f, y + 1, Ui.ON_ACCENT);
-        return x + w + 5;
-    }
-
-    private void dropdown(Row r, List<Row.Choice> list, String id, float ax, float below,
-                          float above, float minW) {
-        float itemH = 15;
-        float w = minW;
-        for (Row.Choice ch : list) {
-            w = Math.max(w, c.width(ch.label()) + 48);
-        }
-        w = Math.min(w, winW - railW - 16);
-        float h = list.size() * itemH + 6;
-        float x = Math.max(winX + railW + 6, Math.min(winX + winW - w - 6, ax));
-        float y = below + h <= winY + winH - 6 ? below : Math.max(winY + 6, above - h);
-        float in = animate("pop", 1f, 45f);
-        y += (1f - in) * 4f;
-        popPane(x, y, w, h, in);
-        zone(x, y, w, h, (px, py, b) -> { });
-        for (int i = 0; i < list.size(); i++) {
-            Row.Choice ch = list.get(i);
-            float iy = y + 3 + i * itemH;
-            boolean on = ch.id().equals(id);
-            boolean hot = over(x + 3, iy, w - 6, itemH);
-            if (hot) {
-                c.round(x + 3, iy, w - 6, itemH, 3.5f, Ui.alpha(accent, 0x38));
-            }
-            float tx = badge(ch, x + 6, iy + 2.5f, on);
-            c.text(Ui.fit(c, ch.label(), (int) (x + w - 18 - tx)), tx, iy + 3.5f,
-                   Ui.fade(on || hot ? Ui.TEXT : Ui.TEXT_2, in));
-            if (on) {
-                c.icon(Icons.Icon.CHECK, x + w - 15, iy + 3.5f, 8, accent);
-            }
-            zone(x + 3, iy, w - 6, itemH, (px, py, b) -> {
-                host.click();
-                openSelect = null;
-                r.choose.accept(ch.id());
-            });
-        }
-    }
-
-    private void action(Row r, float left, float right, float y) {
-        String label = r.label.get();
-        if (r.danger != null) {
-            float w = Math.min(c.width(label) + 16, right - left);
-            dangerButton("a:" + r.id, right - w, y, w, CTRL_H, label, r.enabled.getAsBoolean(),
-                         r.danger.getAsBoolean(), r.run);
-            return;
-        }
-        float w = Math.min(c.width(label) + 22, right - left);
-        button("a:" + r.id, right - w, y, w, CTRL_H, label, r.enabled.getAsBoolean(), false,
-               Icons.Icon.RIGHT, r.run);
-    }
-
-    private void status(Row r, float left, float right, float y) {
-        String label = r.label.get();
-        int ink = r.labelColour != null ? r.labelColour.getAsInt() : Ui.TEXT;
-        float w = Math.min(c.width(label) + 22, right - left);
-        float x = right - w;
-        boolean hot = over(x, y, w, CTRL_H);
-        float g = glow("st:" + r.id, hot);
-        Ui.halo(c, x, y, w, CTRL_H, Ui.R1, accent, g);
-        Ui.pane(c, x, y, w, CTRL_H, Ui.R1, Ui.FIELD, edge(g));
-        String text = Ui.fit(c, label, (int) (w - 18));
-        float tx = x + (w - c.width(text) - 9) / 2f;
-        c.round(tx, y + 5.5f, 5, 5, 2.5f, ink);
-        c.text(text, tx + 9, y + 4, ink);
-        zone(x, y, w, CTRL_H, (px, py, b) -> {
-            host.click();
-            r.run.run();
-        });
     }
 
     private void preview(float x, float y, float w, float h) {
@@ -1242,50 +661,4 @@ public final class SettingsView extends Surface {
             modelDragY = py;
         };
     }
-
-    private void footer() {
-        float y = winY + winH - FOOT_H;
-        float left = winX + railW + 12;
-        float right = winX + winW - 12;
-        c.fill(winX + railW + (sheet ? 1 : 0), y, winX + winW - 1, y + c.px(), Ui.LINE);
-        float h = 18;
-        float by = y + (FOOT_H - h) / 2f;
-
-        String done = host.tr(sheet ? "button.back" : "button.done");
-        float dw = c.width(done) + 28;
-        button("done", right - dw, by, dw, h, done, true, true, null, host::done);
-        right -= dw + 5;
-
-        String credits = host.tr("button.credits");
-        float cw = c.width(credits) + 16;
-        if (!sheet && right - cw - 60 > left) {
-            button("credits", right - cw, by, cw, h, credits, true, false, null,
-                   host::openCredits);
-            right -= cw + 5;
-        }
-
-        boolean fresh = host.hasUpdate();
-        String updates = host.tr(fresh ? "button.updates.new" : "button.updates");
-        float uw = c.width(updates) + 16;
-        if (!sheet && right - uw - 40 > left) {
-            float ux = right - uw;
-            boolean hot = over(ux, by, uw, h);
-            float g = glow("b:updates", hot);
-            Ui.halo(c, ux, by, uw, h, Ui.R1, fresh ? Ui.GOLD : accent, g);
-            Ui.pane(c, ux, by, uw, h, Ui.R1, Ui.RAISED, fresh ? Ui.GOLD : edge(g));
-            c.text(updates, ux + 8, by + 5, fresh ? Ui.GOLD : Ui.mix(Ui.TEXT_2, Ui.TEXT, g));
-            zone(ux, by, uw, h, (px, py, b) -> {
-                host.click();
-                host.openUpdates();
-            });
-            right = ux - 8;
-        }
-
-        Status s = host.status();
-        if (s != null && right - left > 30) {
-            c.round(left, by + 6.5f, 5, 5, 2.5f, s.colour());
-            c.text(Ui.fit(c, s.text(), (int) (right - left - 10)), left + 9, by + 5, s.colour());
-        }
-    }
-
 }

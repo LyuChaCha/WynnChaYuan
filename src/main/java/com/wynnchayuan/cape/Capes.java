@@ -1,5 +1,6 @@
 package com.wynnchayuan.cape;
 
+import com.wynnchayuan.PresenceAccount;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
@@ -222,7 +223,7 @@ public final class Capes {
         if (Files.isRegularFile(cache) && Files.size(cache) <= MAX_BYTES) {
             return Files.readAllBytes(cache);
         }
-        byte[] fresh = Presence.capeBytes(parts[1], Long.parseLong(parts[2]));
+        byte[] fresh = PresenceAccount.capeBytes(parts[1], Long.parseLong(parts[2]));
         if (fresh != null) {
             Files.createDirectories(cache.getParent());
             Path tmp = cache.resolveSibling(cache.getFileName() + ".tmp");

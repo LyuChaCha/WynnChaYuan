@@ -1,5 +1,7 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.PresenceLogin;
+import com.wynnchayuan.PresenceAccount;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wynnchayuan.cape.CapeRules;
@@ -34,18 +36,18 @@ public final class PresenceTest {
         String uuid = ME.toString().replace("-", "");
         String challenge = "1791800000000." + "ab".repeat(16) + "." + "cd".repeat(32);
         check("★ 簽的那串字綁住網域、這一題、這個帳號",
-                new String(Presence.loginMessage(challenge, uuid), java.nio.charset.StandardCharsets.UTF_8)
+                new String(PresenceLogin.loginMessage(challenge, uuid), java.nio.charset.StandardCharsets.UTF_8)
                         .equals("wynnchayuan.com login\n" + challenge + "\n" + uuid));
-        byte[] signature = Presence.signLogin(keys.getPrivate(), challenge, uuid);
+        byte[] signature = PresenceLogin.signLogin(keys.getPrivate(), challenge, uuid);
         java.security.Signature verifier = java.security.Signature.getInstance("SHA256withRSA");
         verifier.initVerify(keys.getPublic());
-        verifier.update(Presence.loginMessage(challenge, uuid));
+        verifier.update(PresenceLogin.loginMessage(challenge, uuid));
         check("★ 簽名用公鑰驗得過（SHA256withRSA，登記站用同一種驗）", verifier.verify(signature));
         verifier.initVerify(keys.getPublic());
-        verifier.update(Presence.loginMessage(challenge, OTHER.toString().replace("-", "")));
+        verifier.update(PresenceLogin.loginMessage(challenge, OTHER.toString().replace("-", "")));
         check("換一個 UUID 就驗不過", !verifier.verify(signature));
         byte[] keySignature = {1, 2, 3, 4};
-        String sent = Presence.loginBody(uuid, 1791900000000L, keys.getPublic().getEncoded(),
+        String sent = PresenceLogin.loginBody(uuid, 1791900000000L, keys.getPublic().getEncoded(),
                 keySignature, challenge, signature, "dGV4dHVyZXM=", "c2lnbmVk");
         JsonObject login = JsonParser.parseString(sent).getAsJsonObject();
         check("★ 登入送的就是這七欄（實際 " + login.keySet() + "）",
@@ -65,16 +67,16 @@ public final class PresenceTest {
         JsonObject linkSent = JsonParser.parseString(Presence.linkBody("ABCD2345")).getAsJsonObject();
         check("★ 綁定只有一欄：code（實際 " + linkSent.keySet() + "）",
                 linkSent.keySet().equals(Set.of("code")) && "ABCD2345".equals(linkSent.get("code").getAsString()));
-        check("綁定碼不計較大小寫與前後空白", "ABCD2345".equals(Presence.linkCode(" abcd2345 ")));
-        check("★ 不像綁定碼的不送（太短、有 0／O／1／I、有怪字元）", Presence.linkCode("ABC") == null
-                && Presence.linkCode("ABCD0345") == null && Presence.linkCode("ABCDO345") == null
-                && Presence.linkCode("ABCD1345") == null && Presence.linkCode("ABCDI345") == null
-                && Presence.linkCode("ABCD-345") == null && Presence.linkCode(null) == null);
-        check("登記站的回答對得上結果", Presence.linkResultOf(200) == Presence.LinkResult.DONE
-                && Presence.linkResultOf(404) == Presence.LinkResult.UNKNOWN_CODE
-                && Presence.linkResultOf(400) == Presence.LinkResult.BAD_CODE
-                && Presence.linkResultOf(401) == Presence.LinkResult.LOGIN_FAILED
-                && Presence.linkResultOf(500) == Presence.LinkResult.FAILED);
+        check("綁定碼不計較大小寫與前後空白", "ABCD2345".equals(PresenceAccount.linkCode(" abcd2345 ")));
+        check("★ 不像綁定碼的不送（太短、有 0／O／1／I、有怪字元）", PresenceAccount.linkCode("ABC") == null
+                && PresenceAccount.linkCode("ABCD0345") == null && PresenceAccount.linkCode("ABCDO345") == null
+                && PresenceAccount.linkCode("ABCD1345") == null && PresenceAccount.linkCode("ABCDI345") == null
+                && PresenceAccount.linkCode("ABCD-345") == null && PresenceAccount.linkCode(null) == null);
+        check("登記站的回答對得上結果", PresenceAccount.linkResultOf(200) == PresenceAccount.LinkResult.DONE
+                && PresenceAccount.linkResultOf(404) == PresenceAccount.LinkResult.UNKNOWN_CODE
+                && PresenceAccount.linkResultOf(400) == PresenceAccount.LinkResult.BAD_CODE
+                && PresenceAccount.linkResultOf(401) == PresenceAccount.LinkResult.LOGIN_FAILED
+                && PresenceAccount.linkResultOf(500) == PresenceAccount.LinkResult.FAILED);
         check("★ 一般玩家 1 MB、成員 20 MB", CapeRules.limitFor(false) == 1024 * 1024
                 && CapeRules.limitFor(true) == 20 * 1024 * 1024);
         byte[] pngHead = new byte[64];
@@ -157,34 +159,34 @@ public final class PresenceTest {
         Presence.load(null);
         check("清掉之後回到空的", !Presence.installed(ME) && Presence.capeVersion(ME) == 0);
 
-        check("200 是成功", Presence.resultOf(200, "{\"ok\":true}") == Presence.Result.DONE);
+        check("200 是成功", PresenceAccount.resultOf(200, "{\"ok\":true}") == PresenceAccount.Result.DONE);
         check("登記站說的每一種理由都認得",
-                Presence.resultOf(400, "{\"why\":\"bad size\"}") == Presence.Result.BAD_SIZE
-                        && Presence.resultOf(413, "{\"why\":\"too large\"}") == Presence.Result.TOO_LARGE
-                        && Presence.resultOf(403, "{\"why\":\"not listed\"}") == Presence.Result.NOT_LISTED
-                        && Presence.resultOf(403, "{\"why\":\"banned\"}") == Presence.Result.BANNED
-                        && Presence.resultOf(403, "{\"why\":\"gif members only\"}")
-                                == Presence.Result.GIF_MEMBERS_ONLY
-                        && Presence.resultOf(403, "{\"why\":\"uploads off\"}") == Presence.Result.OFF
-                        && Presence.resultOf(429, "{\"why\":\"slow down\"}") == Presence.Result.SLOW_DOWN
-                        && Presence.resultOf(400, "{\"why\":\"too many frames\"}")
-                                == Presence.Result.TOO_MANY_FRAMES);
+                PresenceAccount.resultOf(400, "{\"why\":\"bad size\"}") == PresenceAccount.Result.BAD_SIZE
+                        && PresenceAccount.resultOf(413, "{\"why\":\"too large\"}") == PresenceAccount.Result.TOO_LARGE
+                        && PresenceAccount.resultOf(403, "{\"why\":\"not listed\"}") == PresenceAccount.Result.NOT_LISTED
+                        && PresenceAccount.resultOf(403, "{\"why\":\"banned\"}") == PresenceAccount.Result.BANNED
+                        && PresenceAccount.resultOf(403, "{\"why\":\"gif members only\"}")
+                                == PresenceAccount.Result.GIF_MEMBERS_ONLY
+                        && PresenceAccount.resultOf(403, "{\"why\":\"uploads off\"}") == PresenceAccount.Result.OFF
+                        && PresenceAccount.resultOf(429, "{\"why\":\"slow down\"}") == PresenceAccount.Result.SLOW_DOWN
+                        && PresenceAccount.resultOf(400, "{\"why\":\"too many frames\"}")
+                                == PresenceAccount.Result.TOO_MANY_FRAMES);
         check("不認得的、不是 JSON 的都是「沒有成功」",
-                Presence.resultOf(502, "<html>Bad Gateway</html>") == Presence.Result.FAILED
-                        && Presence.resultOf(400, "{\"why\":\"???\"}") == Presence.Result.FAILED);
+                PresenceAccount.resultOf(502, "<html>Bad Gateway</html>") == PresenceAccount.Result.FAILED
+                        && PresenceAccount.resultOf(400, "{\"why\":\"???\"}") == PresenceAccount.Result.FAILED);
 
         String link = Presence.BASE + "/capes#t=web.abc";
         check("登記站回的登入網址照用", link.equals(
-                Presence.signedInLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
-        check("★ 指到別的地方的網址不開", Presence.signedInLink(200,
+                PresenceAccount.signedInLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
+        check("★ 指到別的地方的網址不開", PresenceAccount.signedInLink(200,
                 "{\"url\":\"https://example.com/capes#t=web.abc\"}") == null
-                && Presence.signedInLink(200, "{\"url\":\"" + Presence.BASE + ".evil.test/capes#t=x\"}")
+                && PresenceAccount.signedInLink(200, "{\"url\":\"" + Presence.BASE + ".evil.test/capes#t=x\"}")
                         == null);
-        check("沒有通行證（401）、不是 JSON：沒有登入網址", Presence.signedInLink(401, "{}") == null
-                && Presence.signedInLink(200, "<html>") == null);
+        check("沒有通行證（401）、不是 JSON：沒有登入網址", PresenceAccount.signedInLink(401, "{}") == null
+                && PresenceAccount.signedInLink(200, "<html>") == null);
         check("★ F6 的上傳打開帳號頁，通行證照帶", (Presence.BASE + "/account#t=web.abc").equals(
-                Presence.onPage(link, "/account")) && link.equals(Presence.onPage(link, "/capes")));
-        check("沒有登入網址就沒有帳號頁的登入網址", Presence.onPage(null, "/account") == null);
+                PresenceAccount.onPage(link, "/account")) && link.equals(PresenceAccount.onPage(link, "/capes")));
+        check("沒有登入網址就沒有帳號頁的登入網址", PresenceAccount.onPage(null, "/account") == null);
         check("網站是 wynnchayuan.com", "https://wynnchayuan.com".equals(Presence.BASE));
 
         byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));

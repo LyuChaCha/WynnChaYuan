@@ -114,8 +114,9 @@ public final class CorpusExportTest {
                 }
             }
         }
-        check("★ 模組原始碼裡會把資料送出去的只有 Presence（實際 " + senders + "）",
-                senders.equals(List.of("Presence.java")));
+        check("★ 模組原始碼裡會把資料送出去的只有 Presence 系列（實際 " + senders + "）",
+                new TreeSet<>(senders).equals(Set.of(
+                        "Presence.java", "PresenceAccount.java", "PresenceLogin.java")));
         String registry = "://wynnchayuan.com";
         List<String> callers = new ArrayList<>();
         try (Stream<Path> sources = Files.walk(Path.of("src/main/java"))) {
