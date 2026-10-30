@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24362,
-  "translated": 24359,
+  "count": 24390,
+  "translated": 24387,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -60501,14 +60501,15 @@
    "source": "wiki"
   },
   "Echoes of Change#027": {
-   "src": "Hum. {u} and Yuman, let us go our plans then.",
-   "dst": "ふむ。{u}、Yuman、では計画を練ろう。",
+   "src": "Hum. {u} and Yuman, let us go discuss our plans then.",
+   "dst": "ふむ。{u}、Yuman、では{c2}計画を練ろう{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 1",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}discuss{/}"
   },
   "Echoes of Change#028": {
    "src": "Meet up with Mora and Yuman at [-{~}, {~}, -{~}].",
@@ -60618,7 +60619,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 2",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "somethingは斜体"
   },
   "Echoes of Change#039": {
    "src": "Ha! I did not think we had this in common. Well then... perhaps we can both prove ourselves to our families, eh?",
@@ -60662,13 +60664,14 @@
   },
   "Echoes of Change#043": {
    "src": "Whatever, man! Too much planning often spoils the results... but, sure! Let's meet outside the tallest building in {p}. First tunnel to the right leads there!",
-   "dst": "何でもいいって！計画しすぎると大抵うまくいかないんだよ…でも、いいぜ！{p} で一番高い建物の前で集合な。右の最初のトンネルから行ける！",
+   "dst": "何でもいいって！計画しすぎると大抵うまくいかないんだよ…でも、いいぜ！{p} で{c2}一番高い建物の前{/}で集合な。右の最初のトンネルから行ける！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 2",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}outside the tallest building{/}"
   },
   "Echoes of Change#044": {
    "src": "Meet up with Yuman and Mora in {p} at [-{~}, {~}, -{~}].",
@@ -60702,13 +60705,14 @@
   },
   "Echoes of Change#047": {
    "src": "Eh, ya get used to it. Here, follow me.",
-   "dst": "まあ、慣れるって。ほら、ついて来な。",
+   "dst": "まあ、慣れるって。ほら、{c2}ついて来な{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}follow me{/}"
   },
   "Echoes of Change#048": {
    "src": "See, {p} utilizes all the space it has... stacking things atop each other. For example, this so-called \"skyscraper\" is mainly an apartment building!",
@@ -60738,7 +60742,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "mainlyは斜体"
   },
   "Echoes of Change#051": {
    "src": "Hope you guys are in shape!",
@@ -60758,7 +60763,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Whereは斜体"
   },
   "Echoes of Change#053": {
    "src": "Uh... we're on a mission, right? Trying to prove ourselves? Schedules are up there, so...",
@@ -60778,7 +60784,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "walkは斜体"
   },
   "Echoes of Change#055": {
    "src": "Hey man, these soldiers see hundreds of people every day! If you don't give 'em a reason to pay attention, your faces won't stick out at all.",
@@ -60788,7 +60795,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "allは斜体"
   },
   "Echoes of Change#056": {
    "src": "Yuman, we were going to make a plan before rushing in. Did you forget about that?",
@@ -60798,7 +60806,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 3",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "going, planは斜体"
   },
   "Echoes of Change#057": {
    "src": "Riiight. Right. Sorry, I got excited. I am right, though - it wouldn't be hard for me to just talk us through this!",
@@ -60968,7 +60977,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 4",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Echoes of Change#074": {
    "src": "Hm? What was that?",
@@ -61012,16 +61022,17 @@
   },
   "Echoes of Change#078": {
    "src": "Yes... well, {u}, it's your turn. Hurry, please. Someone could come up here at any time.",
-   "dst": "ああ…さて、{u}、君の番だ。急いでくれ。いつ誰が上がってくるか分からない。",
+   "dst": "ああ…さて、{u}、{c2}君の番{/}だ。急いでくれ。いつ誰が上がってくるか分からない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 4",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}your turn{/}"
   },
   "Echoes of Change#079": {
-   "src": "Find guard schedules inside the guard tower at [-{~}, {~}, -{~}].",
+   "src": "Find the guard schedules inside the guard tower at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] の衛兵塔の中で衛兵の勤務表を見つける。",
    "role": "desc",
    "kind": "objective",
@@ -61042,13 +61053,14 @@
   },
   "Echoes of Change#081": {
    "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office. Let's get looking!",
-   "dst": "Yulie から聞いた話だと、指揮官は勤務表をいつも最上階の部屋に置いてるらしい。探そうぜ！",
+   "dst": "Yulie から聞いた話だと、指揮官は勤務表をいつも{c2}最上階の部屋{/}に置いてるらしい。探そうぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 5",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}top office{/}, capturteはFrom what I heard from Yulie, the commander usually keeps the schedules in the top office . Let's get looking!だが.の位置がタイポに見えるから置き換えずにそのままにした"
   },
   "Echoes of Change#082": {
    "src": "So, you? A soldier? What's the story there?",
@@ -61258,7 +61270,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 5",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "festival shiftは斜体"
   },
   "Echoes of Change#103": {
    "src": "Ouch. That's rough. Good luck out there.",
@@ -61278,7 +61291,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 5",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "hourは斜体"
   },
   "Echoes of Change#105": {
    "src": "Ah, management... putting newbies on festival shift? I wonder what the commander's thinking? Well, good luck with that.",
@@ -61488,7 +61502,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "stressは斜体"
   },
   "Echoes of Change#126": {
    "src": "Yes, ma'am. I can handle it.",
@@ -61621,14 +61636,14 @@
    "source": "wiki"
   },
   "Echoes of Change#139": {
-   "src": "But, regardless - Mora gave me the guard positions you retrieved. I was working with Rex and Zeph on our next steps, based off that information.",
+   "src": "But, regardless - Mora gave me the guard positions you retrieved. I was working with Rex and Zeph on our next steps, based off of that information.",
    "dst": "それはさておき――Mora があなたたちの手に入れた衛兵の配置を渡してくれた。それを基に、Rex と Zeph と次の手を練っていたところ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Echoes of Change#140": {
    "src": "They've gone off... somewhere, I don't know where. Until they return, you should go see if Sui and Yusanu need anything.",
@@ -61728,7 +61743,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "waterは斜体"
   },
   "Echoes of Change#150": {
    "src": "Oh... thank you. {u}, we were playing around with the idea of hiding magical water inside the, um, explosive... but I, ah, don't know how to hold its power when I can't... see it.",
@@ -61758,7 +61774,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lookは斜体"
   },
   "Echoes of Change#153": {
    "src": "Now, we just need to put it together...",
@@ -61778,7 +61795,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "I, Suiは斜体"
   },
   "Echoes of Change#155": {
    "src": "If things go awry, I'll, um, surround it in a ball of water.",
@@ -61792,13 +61810,14 @@
   },
   "Echoes of Change#156": {
    "src": "Yep! Okay, no more questions, we've got to get to it! Click the explosive parts whenever you're ready.",
-   "dst": "そう！よし、質問はここまで、始めるぞ！準備ができたら爆薬の部品をクリックしてくれ。",
+   "dst": "そう！よし、質問はここまで、始めるぞ！準備ができたら{c2}爆薬の部品をクリック{/}してくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Click the explosive parts{/}"
   },
   "Echoes of Change#157": {
    "src": "Help assemble the explosives inside the workshop at [-{~}, {~}, -{~}].",
@@ -61912,13 +61931,14 @@
   },
   "Echoes of Change#168": {
    "src": "Nope, there's still stuff to do! On that subject - {u}, Rex was looking for you earlier.",
-   "dst": "だめだめ、まだやることがあるんだ！そういえば――{u}、さっき Rex が探してたぞ。",
+   "dst": "だめだめ、まだやることがあるんだ！そういえば――{u}、さっき {c2}Rex{/} が探してたぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 7",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Rex{/}"
   },
   "Echoes of Change#169": {
    "src": "Meet up with Zeph and Rex for the next assignment at [-{~}, {~}, -{~}].",
@@ -62131,7 +62151,7 @@
    "source": "wiki"
   },
   "Echoes of Change#190": {
-   "src": "Oh. hey! Have you seen the guard schedules yet?",
+   "src": "Oh, hey! Have you seen the guard schedules yet?",
    "dst": "あ、どうも！衛兵の勤務表はもう見た？",
    "role": "desc",
    "kind": "dialogue",
@@ -62301,8 +62321,8 @@
    "source": "wiki"
   },
   "Echoes of Change#207": {
-   "src": "Great! You're here! Slowpoke. I thought Zeph's races in the {p} would've prepared you for this!",
-   "dst": "よし！来たね！のろまさん。{p} での Zeph との競走で鍛えられてると思ってたのに！",
+   "src": "Great, you're here! Slowpoke. I thought Zeph's races in the {p} would've prepared you for this!",
+   "dst": "よし、来たね！のろまさん。{p} での Zeph との競走で鍛えられてると思ってたのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -62361,8 +62381,8 @@
    "source": "wiki"
   },
   "Echoes of Change#213": {
-   "src": "I'll p- point them out for you. Ready?",
-   "dst": "ぼ、僕が場所を指すよ。準備はいい？",
+   "src": "I'll p- point them out for you! Ready?",
+   "dst": "ぼ、僕が場所を指すよ！準備はいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -62412,7 +62432,7 @@
   },
   "Echoes of Change#218": {
    "src": "And there's the s- sec- second one!",
-   "dst": "そしてあれがに、に、二つ目！",
+   "dst": "そしてあれがふ、ふ、二つ目！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -62678,7 +62698,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 10",
    "speaker": "Zeph",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Superheroは斜体"
   },
   "Echoes of Change#245": {
    "src": "...heh. I- I should go get some more pr- practice in, though... before tomorrow.",
@@ -62692,13 +62713,14 @@
   },
   "Echoes of Change#246": {
    "src": "Quill and Yulie are out- outside Sovereign Soosu's mansion, by the way.",
-   "dst": "ちなみに Quill と Yulie は君主 Soosu の屋敷のそ、外にいるよ。",
+   "dst": "ちなみに Quill と Yulie は{c2}君主 Soosu の屋敷{/}のそ、外にいるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 10",
    "speaker": "Zeph",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Sovereign Soosu's mansion{/}"
   },
   "Echoes of Change#247": {
    "src": "I'll be there in a second!",
@@ -62972,13 +62994,14 @@
   },
   "Echoes of Change#274": {
    "src": "And they're the ones most likely to be optimal, with the information from the guard schedules... alright. Let's head to the first location then.",
-   "dst": "勤務表の情報からして、一番有力なルートばかり…よし。じゃあ最初の場所に行こう。",
+   "dst": "勤務表の情報からして、一番有力なルートばかり…よし。じゃあ{c2}最初の場所{/}に行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 11",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}first location{/}"
   },
   "Echoes of Change#275": {
    "src": "Follow Yulie and Quill at [-{~}, {~}, -{~}].",
@@ -63032,13 +63055,14 @@
   },
   "Echoes of Change#280": {
    "src": "{u}, why don't you have a look around?",
-   "dst": "{u}、周りを見てきてはどうですか？",
+   "dst": "{u}、{c2}周りを見てきて{/}はどうですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 12",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}look around{/}"
   },
   "Echoes of Change#281": {
    "src": "Assess the first escape route at [-{~}, {~}, -{~}].",
@@ -63162,13 +63186,14 @@
   },
   "Echoes of Change#293": {
    "src": "Have a look around, {u}. Perhaps you'll find something which compromises this option.",
-   "dst": "周りを見てください、{u}。この案を台無しにする何かが見つかるかもしれません。",
+   "dst": "{c2}周りを見て{/}ください、{u}。この案を台無しにする何かが見つかるかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 13",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}look around{/}"
   },
   "Echoes of Change#294": {
    "src": "Leave. Me. Alone.",
@@ -63258,7 +63283,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 14",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Echoes of Change#303": {
    "src": "Look, it's perfectly safe! Mostly. I've tried it before, it works!",
@@ -63302,13 +63328,14 @@
   },
   "Echoes of Change#307": {
    "src": "But it would be worth taking a look around, either way. {u}, maybe you'll find something.",
-   "dst": "とはいえ、周りを見ておく価値はあります。{u}、何か見つかるかもしれません。",
+   "dst": "とはいえ、{c2}周りを見ておく{/}価値はあります。{u}、何か見つかるかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 14",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}look around{/}"
   },
   "Echoes of Change#308": {
    "src": "Assess the second escape route at [-{~}, {~}, -{~}].",
@@ -63381,7 +63408,7 @@
    "source": "wiki"
   },
   "Echoes of Change#315": {
-   "src": "Do you like how I have decorated my palace. And my most priced posetion... my own personal symbol of her Majesty of Fruma!",
+   "src": "Do you like how I have decorated my palace. And my most priced possession... my own personal symbol of her Majesty of Fruma!",
    "dst": "私の宮殿の飾り付けはいかが。そして一番の宝物…Fruma の女王陛下を象った私だけのシンボル！",
    "role": "desc",
    "kind": "dialogue",
@@ -63391,8 +63418,8 @@
    "source": "wiki"
   },
   "Echoes of Change#316": {
-   "src": "She is great, don't you agree. And all that she has done for us, her children.",
-   "dst": "あの方は偉大、そう思わない。私たち、あの方の子らのためにしてくださったこと全て。",
+   "src": "She is great, don't you agree? And all that she has done for us, her children.",
+   "dst": "あの方は偉大、そう思わない？私たち、あの方の子らのためにしてくださったこと全て。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -63592,13 +63619,14 @@
   },
   "Echoes of Change#336": {
    "src": "Alright... to the final spot, then. The gate to the {p}.",
-   "dst": "よし…じゃあ最後の地点へ。{p} への門だよ。",
+   "dst": "よし…じゃあ最後の地点へ。{c2}{p}{/} への門だよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 15",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{p}{/}"
   },
   "Echoes of Change#337": {
    "src": "Head to the third escape route at [-{~}, {~}, -{~}].",
@@ -63871,7 +63899,7 @@
    "source": "wiki"
   },
   "Echoes of Change#364": {
-   "src": "I'm getting there. The blessing's a little strange, but it's not unlike what I was already able to do. I just need to practice using it.",
+   "src": "I'm... getting there. The blessing's a little strange, but it's not unlike what I was already able to do. I just need to practice using it.",
    "dst": "少しずつ良くなっています。祝福は少し奇妙ですが、もともとできたこととそう違いません。使う練習をするだけです。",
    "role": "desc",
    "kind": "dialogue",
@@ -64018,7 +64046,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 17",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Howは斜体"
   },
   "Echoes of Change#379": {
    "src": "There could be any number of explanations... but it does not matter.",
@@ -64102,13 +64131,14 @@
   },
   "Echoes of Change#387": {
    "src": "Come on, let's head back to the Steel Feather.",
-   "dst": "さあ、鋼の羽根に戻ろう。",
+   "dst": "さあ、{c2}鋼の羽根{/}に戻ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 17",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Steel Feather{/}"
   },
   "Echoes of Change#388": {
    "src": "Hm... {u}, one final question.",
@@ -64141,7 +64171,7 @@
    "source": "wiki"
   },
   "Echoes of Change#391": {
-   "src": "Return to The Steel Feather and discuss the final steps at [-{~}, {~}, -{~}].",
+   "src": "Return to The Steel Feather and find discuss the final steps at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] の鋼の羽根に戻り、最後の段取りを話し合う。",
    "role": "desc",
    "kind": "objective",
@@ -64208,7 +64238,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "both , anotherは斜体"
   },
   "Echoes of Change#398": {
    "src": "This doesn't change anything. We'll proceed as planned.",
@@ -64228,7 +64259,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "threeは斜体"
   },
   "Echoes of Change#400": {
    "src": "We have all the necessary steps prepared. We know what we need to do. The plan doesn't involve facing the Sovereigns at all - the only target is Her Majesty.",
@@ -64238,7 +64270,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "involve , onlyは斜体"
   },
   "Echoes of Change#401": {
    "src": "Syndra... I agree with the young ones. It's incredibly risky, and the risk factor has only increased. Perhaps we... wait for next year?",
@@ -64248,7 +64281,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "increasedは斜体"
   },
   "Echoes of Change#402": {
    "src": "Yes, the outlook of this fight is not great. Yes, the odds are against us. As I have said previously, I will be the face of the operation.",
@@ -64258,7 +64292,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Yesは斜体(2つとも)"
   },
   "Echoes of Change#403": {
    "src": "I will deal the final blow, and I alone will draw the wrath of the crown and the people. The rest of you will work from the shadows. No one will even know you're involved.",
@@ -64268,10 +64303,11 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Iは斜体(2つとも)"
   },
   "Echoes of Change#404": {
-   "src": "Syndra, old friend... are you certain your judgement isn't... clouded? I understand your troubled history, I do... but is it worth burning yourself to ash? What would Eli-",
+   "src": "Syndra, old friend... are you certain your judgment isn't... clouded? I understand your troubled history, I do... but is it worth burning yourself to ash? What would Eli-",
    "dst": "Syndra、旧友よ…判断が…曇ってはいませんか？あなたの辛い過去は分かります、本当に…ですが、身を灰になるまで焼く価値があるのですか？Eli なら――",
    "role": "desc",
    "kind": "dialogue",
@@ -64281,14 +64317,15 @@
    "source": "wiki"
   },
   "Echoes of Change#405": {
-   "src": "Enough, Quill. My judgment is clear. I do not believe an additional Sovereign changes anything. Now, are you still ready to proceed?",
+   "src": "Enough, Quill. My judgment is clear. I do not believe an additional Sovereign changes anything. Now, are you all still ready to proceed?",
    "dst": "もういい、Quill。私の判断は確かだ。君主が一人増えても何も変わらない。さて、皆まだ進む覚悟はある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Enoughは斜体"
   },
   "Echoes of Change#406": {
    "src": "... Well, the explosives are already made and ready... so I guess we might as well use 'em.",
@@ -64338,7 +64375,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sighは斜体"
   },
   "Echoes of Change#411": {
    "src": "Mora...?",
@@ -64368,7 +64406,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Myは斜体"
   },
   "Echoes of Change#414": {
    "src": "And my decision, Syndra, is to follow you into battle.",
@@ -64378,7 +64417,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Mora",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Myは斜体"
   },
   "Echoes of Change#415": {
    "src": "Fine.",
@@ -64412,13 +64452,14 @@
   },
   "Echoes of Change#418": {
    "src": "Meet me by the north-eastern tracks.",
-   "dst": "北東の線路のそばに来て。",
+   "dst": "{c2}北東の線路{/}のそばに来て。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 18",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}north-eastern tracks{/}"
   },
   "Echoes of Change#419": {
    "src": "My water magic has gotten a lot better. I will help, no matter what!",
@@ -64592,13 +64633,14 @@
   },
   "Echoes of Change#436": {
    "src": "Alright. When you're ready, speak to me again, and we shall proceed.",
-   "dst": "よし。準備ができたらまた声をかけて、始めよう。",
+   "dst": "よし。準備ができたら{c2}また声をかけて{/}、始めよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 19",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}speak to me again{/}"
   },
   "Echoes of Change#437": {
    "src": "Fight Syndra at [-{~}, {~}, -{~}].",
@@ -64811,7 +64853,7 @@
    "source": "wiki"
   },
   "Echoes of Change#458": {
-   "src": "I've done this before, of course. So I wouldn't have thought much of it, except... except, one of the names I received... I recognized it. Of course I recognized it.",
+   "src": "I'd done this before, of course. So I wouldn't have thought much of it, except... except, one of the names I received... I recognized it. Of course I recognized it.",
    "dst": "もちろん前にもやったことだ。だから大して気にしなかったはず、ただ…ただ、渡された名前の一つに…見覚えがあった。当たり前だ、知らないはずがない。",
    "role": "desc",
    "kind": "dialogue",
@@ -64868,7 +64910,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "test , loyaltyは斜体"
   },
   "Echoes of Change#464": {
    "src": "Disgraced, I had my rank and status removed. I was disposed of, sent to the {p}, forbidden from ever leaving.",
@@ -64898,7 +64941,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "courseは斜体"
   },
   "Echoes of Change#467": {
    "src": "He gave me an assignment. To infiltrate the local resistance groups, and keep an eye on them. If I did that... I could restore my honour.",
@@ -64918,7 +64962,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lettingは斜体"
   },
   "Echoes of Change#469": {
    "src": "... But he isn't important. Not really. It's who he serves.",
@@ -64938,7 +64983,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "myselfは斜体"
   },
   "Echoes of Change#471": {
    "src": "{u}. If I don't survive... I need you to do something for me.",
@@ -64981,8 +65027,8 @@
    "source": "wiki"
   },
   "Echoes of Change#475": {
-   "src": "I did... When we first got into contact with Quill, I asked him to find her.",
-   "dst": "したよ…Quill と最初に連絡を取った時、彼女を探してと頼んだ。",
+   "src": "I did. When I first got into contact with Quill, I asked him to find her.",
+   "dst": "したよ。Quill と最初に連絡を取った時、彼女を探してと頼んだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -65008,7 +65054,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "aliveは斜体"
   },
   "Echoes of Change#478": {
    "src": "I tried sending her letters, with Quill's help. I don't know if any of them ever reached her.",
@@ -65098,7 +65145,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 20",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "herは斜体"
   },
   "Echoes of Change#487": {
    "src": "I wasn't supposed to get attached. It was just a job, and I'd be visiting many factories...",
@@ -65258,7 +65306,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 22",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "goingは斜体"
   },
   "Echoes of Change#503": {
    "src": "I need you three to help calm down the people, and to help fight off any soldiers that oppose us.",
@@ -65348,7 +65397,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 22",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "so, so←ここだけ斜体"
   },
   "Echoes of Change#512": {
    "src": "We will change Fruma for the better! We will tear down the crown's tyrannical rule, and we will free the people!!",
@@ -65728,7 +65778,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "isは斜体"
   },
   "Echoes of Change#550": {
    "src": "Oh! Hahaha, you people have attractions in Auburn?",
@@ -65738,7 +65789,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "attractionsは斜体"
   },
   "Echoes of Change#551": {
    "src": "Um... yeah! Isn't that... the point of the festival?",
@@ -65758,7 +65810,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "pointは斜体"
   },
   "Echoes of Change#553": {
    "src": "Oh! That's... nice, I guess. A little sad, though, that that's why, ha, people get excited about it...?",
@@ -65868,7 +65921,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sui , doing?! , moreは斜体"
   },
   "Echoes of Change#564": {
    "src": "...we don't want a fight, man.",
@@ -65978,7 +66032,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "doesn't matter?!は斜体"
   },
   "Echoes of Change#575": {
    "src": "That's not what I said. I... we don't have time for this. {u}, you have to-",
@@ -66031,14 +66086,15 @@
    "source": "wiki"
   },
   "Echoes of Change#580": {
-   "src": "I'm here to warn you. Your group is compromised- how, exactly, I don't know, but... the Crown knowns what you're planning to do today.",
+   "src": "I'm here to warn you. Your group is compromised- how, exactly, I don't know, but... the Crown knows what you're planning to do today.",
    "dst": "警告しに来たんだ。君たちの組織は露見してる、どうやってかは分からないけど…王家は今日の計画を知ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Sovereign Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "howは斜体"
   },
   "Echoes of Change#581": {
    "src": "What?! No, that's that's not",
@@ -66048,7 +66104,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "What?!は斜体"
   },
   "Echoes of Change#582": {
    "src": "It is. Choose to believe me, or not, but-",
@@ -66058,7 +66115,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 24",
    "speaker": "Sovereign Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "isは斜体"
   },
   "Echoes of Change#583": {
    "src": "We're still friends, aren't we? I don't want you to get hurt.",
@@ -66298,7 +66356,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "For Fruma!!!は太字"
   },
   "Echoes of Change#607": {
    "src": "Did she do it?!",
@@ -66368,7 +66427,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lifeは斜体"
   },
   "Echoes of Change#614": {
    "src": "We are fortunate that news of their plot reached the crown, and that our Sovereign Soosu could devise a construct to deceive them, to draw them out into the open.",
@@ -66428,7 +66488,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "forgottenは斜体"
   },
   "Echoes of Change#620": {
    "src": "What a shame, that your rage and desperation blinded you to the truth. You never stood a chance.",
@@ -66438,7 +66499,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "You never stood a chance.は太字"
   },
   "Echoes of Change#621": {
    "src": "No... no, no, no... what do we do?!",
@@ -66478,7 +66540,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "know , toldは斜体"
   },
   "Echoes of Change#625": {
    "src": "Besides, we... what could we even do? If Syndra can't kill her, what could we possibly do? Can't you feel it? This... this pressure?",
@@ -66488,7 +66551,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "doは斜体"
   },
   "Echoes of Change#626": {
    "src": "Is... is that coming from her? I, I felt something similar, during the Auburn festival...",
@@ -66502,13 +66566,14 @@
   },
   "Echoes of Change#627": {
    "src": "She's furious... we need to get out of here. Quickly, let's head for the underground river escape route!",
-   "dst": "激怒してる…ここから逃げないと。急げ、地下の川の脱出路へ向かおう！",
+   "dst": "激怒してる…ここから逃げないと。急げ、{c2}地下の川{/}の脱出路へ向かおう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 25",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}underground river{/}"
   },
   "Echoes of Change#628": {
    "src": "Escape using the underground river at [-{~}, {~}, {~}].",
@@ -66528,7 +66593,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 26",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "possibleは斜体"
   },
   "Echoes of Change#630": {
    "src": "I- I don't know! They must have done some last minute schedule changes, or... or...",
@@ -66618,11 +66684,12 @@
    "quest": "Echoes of Change",
    "stage": "Stage 26",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "knowは斜体"
   },
   "Echoes of Change#639": {
-   "src": "Escape using the Redwood gate at [-{~}, {~}, {~}].",
-   "dst": "[-{~}, {~}, {~}] のレッドウッドの門から脱出する。",
+   "src": "Escape using the {p} gate at [-{~}, {~}, {~}].",
+   "dst": "[-{~}, {~}, {~}] の {p} の門から脱出する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Echoes of Change",
@@ -66728,7 +66795,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 27",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "YOUは斜体"
   },
   "Echoes of Change#650": {
    "src": "Let me ask. Do you know how it feels to die? Disposed of like yesterday's garbage? Do you know how exponentially more excruciating it is to feel IN REVERSE?!",
@@ -66788,7 +66856,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 27",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "wantは斜体"
   },
   "Echoes of Change#656": {
    "src": "She chose to terminate our sequence! She threw that all away, used me for some irrational solution! She has as much value as any of you zeroes now!",
@@ -66798,7 +66867,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 27",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "usedは斜体"
   },
   "Echoes of Change#657": {
    "src": "So why don't we accelerate this? Without that traitor misusing her blessing... Your number's up!!",
@@ -66808,7 +66878,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 27",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Your number's up!!は斜体"
   },
   "Echoes of Change#658": {
    "src": "Fight Zhiraok at [-{~}, {~}, {~}].",
@@ -66968,7 +67039,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 28",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "murderers!! , WHAT ARE YOU HOLDING OVER HER?!は斜体"
   },
   "Echoes of Change#674": {
    "src": "Yeah, yeah... I know. But I think I'm sick and tired of trying.",
@@ -67058,7 +67130,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 28",
    "speaker": "Sovereign Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "knowは斜体"
   },
   "Echoes of Change#683": {
    "src": "Ugh, why are you so-! Fine! You - when I look at you, it's like I'm looking at myself, before... before I became this.",
@@ -67068,7 +67141,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 28",
    "speaker": "Sovereign Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Youは斜体 , thisは太字"
   },
   "Echoes of Change#684": {
    "src": "Now, go! Run! Flee! Just, leave!",
@@ -67098,17 +67172,19 @@
    "quest": "Echoes of Change",
    "stage": "Stage 28",
    "speaker": "Sovereign Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "sickは太字"
   },
   "Echoes of Change#687": {
    "src": "- Some pieces have special requirements.",
-   "dst": "- 一部のピースには特別な条件がある。",
+   "dst": "- 一部のピースには特別な{c2}条件{/}がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c2}requirements{/}"
   },
   "Echoes of Change#688": {
    "src": "I'll be okay, Yusanu, I'm tired of fighting. I'm tired of my duty. I'm sick of this life.",
@@ -67158,7 +67234,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Syndra the Lionessは斜体"
   },
   "Echoes of Change#693": {
    "src": "I have no words for you.",
@@ -67168,7 +67245,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "youは斜体"
   },
   "Echoes of Change#694": {
    "src": "No, I suppose you were always more fond of the language of violence...",
@@ -67238,7 +67316,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Zeph",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "standは斜体"
   },
   "Echoes of Change#701": {
    "src": "Hey, man, have faith. She'll find a way out of there! But for now, we've gotta worry 'bout ourselves, 'kay?",
@@ -67378,7 +67457,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "willは斜体"
   },
   "Echoes of Change#715": {
    "src": "Now, as for those Sovereigns of mine...",
@@ -67398,7 +67478,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "knowは斜体"
   },
   "Echoes of Change#717": {
    "src": "Sovereign Zhiraok. I cannot help but notice the obvious lack of captured terrorists, amidst the scene of a battle.",
@@ -67408,7 +67489,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lackは斜体"
   },
   "Echoes of Change#718": {
    "src": "Your Majesty!! The insurgents, they must have blackmailed Sovereign Soosu, she-",
@@ -67428,7 +67510,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Silence.は太字、twice(両方)は斜体"
   },
   "Echoes of Change#720": {
    "src": "I- The cursed have greater cunning than I cal-",
@@ -67448,7 +67531,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "forbidden , rottenは斜体"
   },
   "Echoes of Change#722": {
    "src": "...I. ... ...I alone take full responsibility for this failure, Your Majesty. Bu-",
@@ -67488,7 +67572,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "standingは斜体"
   },
   "Echoes of Change#726": {
    "src": "I- Your-",
@@ -67518,7 +67603,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "youは太字"
   },
   "Echoes of Change#729": {
    "src": "Bla, bla, whatever. Just get it over with. Kill me already, if I'm so worthless to you.",
@@ -67528,7 +67614,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Sovereign Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "worthlessは斜体"
   },
   "Echoes of Change#730": {
    "src": "And allow you a peaceful death? After I gave you everything, and you turned around and betrayed me?!",
@@ -67538,7 +67625,8 @@
    "quest": "Echoes of Change",
    "stage": "Stage 29",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "everythingは斜体"
   },
   "Echoes of Change#731": {
    "src": "No, Soosu. You deserve no such mercy from me.",
@@ -67569,6 +67657,293 @@
    "stage": "Stage 29",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "Echoes of Change#734": {
+   "src": "This shelf is filled with recent reports on military activity...",
+   "dst": "この棚には、最近の軍事活動に関する報告書が所狭しと並んでいる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#735": {
+   "src": "Nothing seems to mention guard schedules, though.",
+   "dst": "ただ、衛兵の勤務表についてはどこにも書かれていないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#736": {
+   "src": "First Division - Stationed at the main entrance to the city.",
+   "dst": "第1分隊 - 市の正門に駐屯している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "全て斜体"
+  },
+  "Echoes of Change#737": {
+   "src": "You continue to write down the rest of the guard divisions' positions...",
+   "dst": "残りの衛兵分隊の配置も書き留めていく…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#738": {
+   "src": "Right-Click a block to pick it up.",
+   "dst": "{c1}右クリック{c2}でブロックを持ち上げる",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Right-Click{c2} a block to pick it up."
+  },
+  "Echoes of Change#739": {
+   "src": "Place the block on empty tiles.",
+   "dst": "{c2}ブロックを空いているタイルの上に{c1}置く{/}",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Place{c2} the block on empty tiles."
+  },
+  "Echoes of Change#740": {
+   "src": "Fill the board to complete one puzzle!",
+   "dst": "{c2}ボードを{c1}埋めて{c2}パズルを完成させよう！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}Fill{c2} the board to complete one puzzle!"
+  },
+  "Echoes of Change#741": {
+   "src": "Instructions",
+   "dst": "手順",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#742": {
+   "src": "- Every square has to contain a piece of the bomb.",
+   "dst": "- すべてのマスに爆弾のピースが入っていなければならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#743": {
+   "src": "- Create three bomb pieces and later combine them into one.",
+   "dst": "- 爆弾のピースを{c2}3つ{/}作り、後でそれらを1つに組み合わせる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}three{/}"
+  },
+  "Echoes of Change#744": {
+   "src": "{#} This block cannot be removed!",
+   "dst": "{#} このブロックは取り除けない！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#745": {
+   "src": "Ah! Worked better than I anticipated, no rogue explosions.",
+   "dst": "ああ！予想以上にうまくいった。予期せぬ爆発もなかった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#746": {
+   "src": "Um. You- you expected it to go off?!",
+   "dst": "えっと…ば、爆発すると思ってたの？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "expectedは斜体"
+  },
+  "Echoes of Change#747": {
+   "src": "There's electric charge casings and a quiver of arrows...",
+   "dst": "電荷の入ったケースと、矢筒がある…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#748": {
+   "src": "It's good to have multiple routes leading to the escape point, in case one gets blocked.",
+   "dst": "脱出地点へ通じるルートを複数用意しておくと、万が一1つが塞がれても安心だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#749": {
+   "src": "There seem to be multiple roads leading into the escape point. That's a good sign.",
+   "dst": "脱出地点へと続く道はいくつかあるようだ。それは良い兆しだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#750": {
+   "src": "Long live Her Majesty, the Queen of Fruma. May Her presence bless us for many more years to come.",
+   "dst": "Fruma の女王陛下、万歳。陛下の御存在が、これからも末永く私たちを祝福してくださいますように。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "全て斜体"
+  },
+  "Echoes of Change#751": {
+   "src": "Return to the Steel Feather through the tunnel at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] のトンネルを通って鋼の羽根に戻る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#752": {
+   "src": "Mora\n Just... nerves...",
+   "dst": "Mora\n ただ…緊張してるだけ…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "Mora",
+   "source": "captured.json"
+  },
+  "Echoes of Change#753": {
+   "src": "Nothing ever happens...",
+   "dst": "何も起こらないな…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#754": {
+   "src": "Yaaaawn...",
+   "dst": "ふああああぁ…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#755": {
+   "src": "Rrrngh...huff...you...aren't getting away from me...huff...again. Our sequence...isn't terminated yet!",
+   "dst": "ぐぬぬ…はあ…貴様…今度こそ…はあ…逃がさんぞ。我々の数列は…まだ終わっていない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#756": {
+   "src": "Is it... over...",
+   "dst": "もう…終わり…？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#757": {
+   "src": "Was she... holding back..?",
+   "dst": "彼女…手加減してた…？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#758": {
+   "src": "To where!?",
+   "dst": "どこへ！？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#759": {
+   "src": "Hey! Let us go!",
+   "dst": "ちょっと！通してよ！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#760": {
+   "src": "There's so many of them...",
+   "dst": "本当にたくさんいる…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#761": {
+   "src": "Almost t-there.",
+   "dst": "も、もうすぐだ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24289,
-  "translated": 24197,
+  "count": 24317,
+  "translated": 24225,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -60501,7 +60501,7 @@
    "source": "wiki"
   },
   "Echoes of Change#027": {
-   "src": "Hum. {u} and Yuman, let us go our plans then.",
+   "src": "Hum. {u} and Yuman, let us go discuss our plans then.",
    "dst": "嗯。{u} 和 Yuman，那我们来商量一下计划吧。",
    "role": "desc",
    "kind": "dialogue",
@@ -61021,7 +61021,7 @@
    "source": "wiki"
   },
   "Echoes of Change#079": {
-   "src": "Find guard schedules inside the guard tower at [-{~}, {~}, -{~}].",
+   "src": "Find the guard schedules inside the guard tower at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 的守卫塔里找到守卫排班表。",
    "role": "desc",
    "kind": "objective",
@@ -61621,14 +61621,14 @@
    "source": "wiki"
   },
   "Echoes of Change#139": {
-   "src": "But, regardless - Mora gave me the guard positions you retrieved. I was working with Rex and Zeph on our next steps, based off that information.",
+   "src": "But, regardless - Mora gave me the guard positions you retrieved. I was working with Rex and Zeph on our next steps, based off of that information.",
    "dst": "不过，总之——Mora 把你们拿到的守卫位置给我了。我刚才正根据这些情报，跟 Rex 和 Zeph 商量下一步。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
    "stage": "Stage 6",
    "speaker": "Syndra",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Echoes of Change#140": {
    "src": "They've gone off... somewhere, I don't know where. Until they return, you should go see if Sui and Yusanu need anything.",
@@ -62131,8 +62131,8 @@
    "source": "wiki"
   },
   "Echoes of Change#190": {
-   "src": "Oh. hey! Have you seen the guard schedules yet?",
-   "dst": "哦。嘿！你们看过守卫排班表了吗？",
+   "src": "Oh, hey! Have you seen the guard schedules yet?",
+   "dst": "哦，嘿！你们看过守卫排班表了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -62301,8 +62301,8 @@
    "source": "wiki"
   },
   "Echoes of Change#207": {
-   "src": "Great! You're here! Slowpoke. I thought Zeph's races in the {p} would've prepared you for this!",
-   "dst": "太好了！你来了！慢吞吞的。我还以为 Zeph 在 {p} 的赛跑已经让你练出来了！",
+   "src": "Great, you're here! Slowpoke. I thought Zeph's races in the {p} would've prepared you for this!",
+   "dst": "太好了，你来了！慢吞吞的。我还以为 Zeph 在 {p} 的赛跑已经让你练出来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -62361,8 +62361,8 @@
    "source": "wiki"
   },
   "Echoes of Change#213": {
-   "src": "I'll p- point them out for you. Ready?",
-   "dst": "我来指、指给你看。准备好了吗？",
+   "src": "I'll p- point them out for you! Ready?",
+   "dst": "我来指、指给你看！准备好了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -63381,7 +63381,7 @@
    "source": "wiki"
   },
   "Echoes of Change#315": {
-   "src": "Do you like how I have decorated my palace. And my most priced posetion... my own personal symbol of her Majesty of Fruma!",
+   "src": "Do you like how I have decorated my palace. And my most priced possession... my own personal symbol of her Majesty of Fruma!",
    "dst": "你喜欢我布置宫殿的方式吗？还有我最珍贵的宝物……我专属的 Fruma 女王陛下象征！",
    "role": "desc",
    "kind": "dialogue",
@@ -63391,7 +63391,7 @@
    "source": "wiki"
   },
   "Echoes of Change#316": {
-   "src": "She is great, don't you agree. And all that she has done for us, her children.",
+   "src": "She is great, don't you agree? And all that she has done for us, her children.",
    "dst": "她很伟大，你不觉得吗？还有她为我们，她的孩子们，所做的一切。",
    "role": "desc",
    "kind": "dialogue",
@@ -63871,8 +63871,8 @@
    "source": "wiki"
   },
   "Echoes of Change#364": {
-   "src": "I'm getting there. The blessing's a little strange, but it's not unlike what I was already able to do. I just need to practice using it.",
-   "dst": "快好了。那份祝福有点奇怪，但跟我原本就能做到的事差不多。我只需要练习怎么用。",
+   "src": "I'm... getting there. The blessing's a little strange, but it's not unlike what I was already able to do. I just need to practice using it.",
+   "dst": "我……快好了。那份祝福有点奇怪，但跟我原本就能做到的事差不多。我只需要练习怎么用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -64141,7 +64141,7 @@
    "source": "wiki"
   },
   "Echoes of Change#391": {
-   "src": "Return to The Steel Feather and discuss the final steps at [-{~}, {~}, -{~}].",
+   "src": "Return to The Steel Feather and find discuss the final steps at [-{~}, {~}, -{~}].",
    "dst": "返回 [-{~}, {~}, -{~}] 的钢羽，讨论最后的步骤。",
    "role": "desc",
    "kind": "objective",
@@ -64271,7 +64271,7 @@
    "source": "wiki"
   },
   "Echoes of Change#404": {
-   "src": "Syndra, old friend... are you certain your judgement isn't... clouded? I understand your troubled history, I do... but is it worth burning yourself to ash? What would Eli-",
+   "src": "Syndra, old friend... are you certain your judgment isn't... clouded? I understand your troubled history, I do... but is it worth burning yourself to ash? What would Eli-",
    "dst": "Syndra，老朋友……你确定你的判断没有被……蒙蔽吗？我理解你那段痛苦的过去，真的……但值得把自己烧成灰烬吗？Eli 会怎么——",
    "role": "desc",
    "kind": "dialogue",
@@ -64281,8 +64281,8 @@
    "source": "wiki"
   },
   "Echoes of Change#405": {
-   "src": "Enough, Quill. My judgment is clear. I do not believe an additional Sovereign changes anything. Now, are you still ready to proceed?",
-   "dst": "够了，Quill。我的判断很清楚。我不认为多一位统领会改变什么。现在，你们还准备好继续了吗？",
+   "src": "Enough, Quill. My judgment is clear. I do not believe an additional Sovereign changes anything. Now, are you all still ready to proceed?",
+   "dst": "够了，Quill。我的判断很清楚。我不认为多一位统领会改变什么。现在，你们都还准备好继续了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -64811,8 +64811,8 @@
    "source": "wiki"
   },
   "Echoes of Change#458": {
-   "src": "I've done this before, of course. So I wouldn't have thought much of it, except... except, one of the names I received... I recognized it. Of course I recognized it.",
-   "dst": "我当然以前也做过这种事。所以我本来不会多想，只是……只是，我收到的名单里有一个名字……我认得。我当然认得。",
+   "src": "I'd done this before, of course. So I wouldn't have thought much of it, except... except, one of the names I received... I recognized it. Of course I recognized it.",
+   "dst": "这种事我当然以前也做过。所以我本来不会多想，只是……只是，我收到的名单里有一个名字……我认得。我当然认得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -64981,8 +64981,8 @@
    "source": "wiki"
   },
   "Echoes of Change#475": {
-   "src": "I did... When we first got into contact with Quill, I asked him to find her.",
-   "dst": "嗯……我们刚跟 Quill 联系上的时候，我就请他去找她了。",
+   "src": "I did. When I first got into contact with Quill, I asked him to find her.",
+   "dst": "是的。我刚跟 Quill 联系上的时候，就请他去找她了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -66031,7 +66031,7 @@
    "source": "wiki"
   },
   "Echoes of Change#580": {
-   "src": "I'm here to warn you. Your group is compromised- how, exactly, I don't know, but... the Crown knowns what you're planning to do today.",
+   "src": "I'm here to warn you. Your group is compromised- how, exactly, I don't know, but... the Crown knows what you're planning to do today.",
    "dst": "我是来警告你们的。你们的组织暴露了——怎么暴露的我不确定，但是……王室知道你们今天打算做什么。",
    "role": "desc",
    "kind": "dialogue",
@@ -66621,8 +66621,8 @@
    "source": "wiki"
   },
   "Echoes of Change#639": {
-   "src": "Escape using the Redwood gate at [-{~}, {~}, {~}].",
-   "dst": "经由 [-{~}, {~}, {~}] 的红杉门撤离。",
+   "src": "Escape using the {p} gate at [-{~}, {~}, {~}].",
+   "dst": "经由 [-{~}, {~}, {~}] 的 {p} 城门撤离。",
    "role": "desc",
    "kind": "objective",
    "quest": "Echoes of Change",
@@ -67569,6 +67569,286 @@
    "stage": "Stage 29",
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
+  },
+  "Echoes of Change#734": {
+   "src": "This shelf is filled with recent reports on military activity...",
+   "dst": "这个架子上摆满了最近的军事行动报告……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#735": {
+   "src": "Nothing seems to mention guard schedules, though.",
+   "dst": "不过，好像没有一份提到守卫排班表。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#736": {
+   "src": "First Division - Stationed at the main entrance to the city.",
+   "dst": "第一分队——驻守在城市正门。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#737": {
+   "src": "You continue to write down the rest of the guard divisions' positions...",
+   "dst": "你继续把其余守卫分队的位置记下来……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#738": {
+   "src": "Right-Click a block to pick it up.",
+   "dst": "{c1}右键点击{c2}方块即可拿起。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#739": {
+   "src": "Place the block on empty tiles.",
+   "dst": "{c1}放置{c2}方块到空格子上。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#740": {
+   "src": "Fill the board to complete one puzzle!",
+   "dst": "{c1}填满{c2}整块板即可完成一个谜题！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#741": {
+   "src": "Instructions",
+   "dst": "说明",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#742": {
+   "src": "- Every square has to contain a piece of the bomb.",
+   "dst": "- 每一格都必须放上炸弹的零件。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#743": {
+   "src": "- Create three bomb pieces and later combine them into one.",
+   "dst": "- 做出{c2}三个{/}炸弹零件，之后再合成一个。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#744": {
+   "src": "{#} This block cannot be removed!",
+   "dst": "{#} 这个方块无法移除！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "Echoes of Change",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#745": {
+   "src": "Ah! Worked better than I anticipated, no rogue explosions.",
+   "dst": "啊！效果比我预想的还好，没有意外爆炸。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#746": {
+   "src": "Um. You- you expected it to go off?!",
+   "dst": "嗯。你、你本来以为它会炸？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#747": {
+   "src": "There's electric charge casings and a quiver of arrows...",
+   "dst": "这里有电击充能的外壳，还有一筒箭……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#748": {
+   "src": "It's good to have multiple routes leading to the escape point, in case one gets blocked.",
+   "dst": "通往逃生点的路线多几条比较好，以防其中一条被堵住。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#749": {
+   "src": "There seem to be multiple roads leading into the escape point. That's a good sign.",
+   "dst": "好像有好几条路通往逃生点。这是个好兆头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#750": {
+   "src": "Long live Her Majesty, the Queen of Fruma. May Her presence bless us for many more years to come.",
+   "dst": "Fruma 的女王陛下万岁。愿陛下的存在在往后的许多年里继续庇佑我们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#751": {
+   "src": "Return to the Steel Feather through the tunnel at [-{~}, {~}, -{~}].",
+   "dst": "经由 [-{~}, {~}, -{~}] 的隧道返回钢羽。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#752": {
+   "src": "Mora\n Just... nerves...",
+   "dst": "Mora\n 只是……紧张而已……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 15",
+   "speaker": "Mora",
+   "source": "captured.json"
+  },
+  "Echoes of Change#753": {
+   "src": "Nothing ever happens...",
+   "dst": "从来都没什么事发生……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#754": {
+   "src": "Yaaaawn...",
+   "dst": "哈啊啊啊……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#755": {
+   "src": "Rrrngh...huff...you...aren't getting away from me...huff...again. Our sequence...isn't terminated yet!",
+   "dst": "呃啊……呼……你……别想再……呼……从我手上逃走。我们的序列……还没终止！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#756": {
+   "src": "Is it... over...",
+   "dst": "结束……了吗……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#757": {
+   "src": "Was she... holding back..?",
+   "dst": "她……是不是手下留情了……？",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#758": {
+   "src": "To where!?",
+   "dst": "要去哪里？！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#759": {
+   "src": "Hey! Let us go!",
+   "dst": "喂！放我们走！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#760": {
+   "src": "There's so many of them...",
+   "dst": "他们人也太多了……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Echoes of Change#761": {
+   "src": "Almost t-there.",
+   "dst": "快、快到了。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Echoes of Change",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
