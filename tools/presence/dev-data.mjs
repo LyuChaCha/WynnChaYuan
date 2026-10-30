@@ -58,7 +58,6 @@ export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {})
   const developer = DEVELOPER;
   const people = [developer, 'Steve', 'Alex', 'Notch'];
 
-  // 示範資料：每個檔當成一到三個人上傳的
   let n = 0;
   for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-.*\.(gif|png)$/.test(f)).sort()) {
     const bytes = new Uint8Array(fs.readFileSync(path.join(templates, file)));
@@ -75,7 +74,6 @@ export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {})
     }
     n++;
   }
-  // 披風一覽的幾種狀態：幾件有人加了最愛、一件不公開、一件在等審核，審核名單上一個人
   {
     const seeded = [...data.keys()].filter((k) => k.startsWith('cape:')).map((k) => data.get(k).metadata);
     const stars = {};
@@ -98,7 +96,6 @@ export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {})
       data.delete(was);
     }
     data.set('stars', { value: JSON.stringify(stars), metadata: null });
-    // 沒有人穿的披風留七天：兩件已經沒有人穿，一件還剩四天、一件是最後一天
     const idle = {};
     [[alone[2], 3], [alone[3], 6.5]].forEach(([cape, days]) => {
       if (!cape) return;
@@ -113,12 +110,10 @@ export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {})
   data.set('ban:' + '9'.repeat(32), {
     value: JSON.stringify({ n: 'Herobrine', t: Date.now() - 3 * 86400000, by: developer }), metadata: null });
 
-  // 一位管理員（照 UUID 加的）與一位還沒登入過的（照名字加的）
   data.set('staff:u:' + 'c'.repeat(32), {
     value: JSON.stringify({ n: '幫忙看披風', t: Date.now() - 86400000, by: developer, m: 'Alex' }), metadata: null });
   data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 3600000, by: developer }), metadata: null });
 
-  // 一位譯者（Alex：日文與繁中）、一個提案、一個術語投票
   data.set('tl:u:' + 'c'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp', 'zh_tw'], n: '日文組', t: Date.now() - 7200000, by: developer, m: 'Alex' }), metadata: null });
   if (demoTeams) {
     data.set('tl:n:sakura_demo', { value: JSON.stringify({ langs: ['zh_tw', 'ja_jp'], n: '', t: Date.now() - 3600000, by: developer, m: 'Sakura_Demo' }), metadata: null });
@@ -139,14 +134,12 @@ export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {})
     data.set('tq:zh_tw:fedcba987654', { value: JSON.stringify(poll), metadata: { s: poll.term, n: 2, v: 2, st: 'open', t: poll.t } });
   }
 
-  // 已註冊的人（管理頁「新增管理員」搜尋得到）：一位綁了遊戲帳號，一位只有 Discord（改版前存的，沒有 metadata）
   data.set('d:222222222222222222', {
     value: JSON.stringify({ n: 'steve_dc', m: 'Steve', u: 'd'.repeat(32), t: Date.now() - 86400000 }),
     metadata: { n: 'steve_dc', m: 'Steve', u: 'd'.repeat(32) } });
   data.set('l:' + 'd'.repeat(32), { value: '222222222222222222', metadata: null });
   data.set('d:333333333333333333', { value: JSON.stringify({ n: 'Sayla' }), metadata: null });
 
-  // 一個貢獻公會。圖示與旗幟不在倉庫裡（是公會自己的圖）：有給檔案就用，沒給就只有名字
   const guild = { slug: 'yuchayuan', name: 'YuChaYuan', tag: 'YCY', t: Date.now() - 7200000, by: developer, i: 0, b: 0 };
   [['icon', 'i', guildIcon], ['banner', 'b', guildBanner]].forEach(([kind, field, file]) => {
     if (!file || !fs.existsSync(file)) return;

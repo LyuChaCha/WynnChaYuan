@@ -1,4 +1,4 @@
-// node tools/presence/golden.mjs [write|check] [--strip-comments] [--file <path>]
+// node tools/presence/golden.mjs [write|check] [--strip-comments] [--file <path>] [--worker <path>]
 import fs from 'node:fs';
 import path from 'node:path';
 import nodeCrypto from 'node:crypto';

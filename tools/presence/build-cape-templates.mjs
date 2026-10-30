@@ -1,12 +1,4 @@
-// 披風範本：把 capes/templates/ 裡的範本、說明圖與一張示範打包成 cape-templates.js，
-// 網站才能從自己的網址（/template/<檔名>）給人下載。
-//
-//   node tools/presence/build-cape-templates.mjs           重寫 cape-templates.js
-//   node tools/presence/build-cape-templates.mjs --check   跟現在的檔案比，不一樣就以 1 結束
-//
-// 使用者 2026-10-14：「披風範本希望可以更明顯一點，有使用者回饋找不太到」。原本只是帳號頁
-// 一句話裡的連結，連到 GitHub 的資料夾；現在披風一覽與帳號頁都有一塊，按尺寸直接下載。
-// capes/templates/ 裡的範本改了要重跑這一支。
+// node tools/presence/build-cape-templates.mjs [--check]
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,7 +8,6 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(here, '..', '..', 'capes', 'templates');
 const target = path.join(here, 'cape-templates.js');
 const TYPES = { '.png': 'image/png', '.gif': 'image/gif' };
-// 範本每一種尺寸、兩份說明圖（中文、英文）、一張會動的示範
 const wanted = (name) => /^template-\d+x\d+\.png$/.test(name) || name === 'guide.png' || name === 'guide.en.png'
   || name === 'example-88x68.gif';
 

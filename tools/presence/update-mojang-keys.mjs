@@ -1,13 +1,4 @@
-/**
- * Mojang 的公鑰：抓下來寫進 mojang-keys.js，或只檢查有沒有換過。
- *
- *   node tools/presence/update-mojang-keys.mjs           重寫 mojang-keys.js
- *   node tools/presence/update-mojang-keys.mjs --check   跟現在的檔案比，不一樣就以 1 結束
- *
- * 為什麼要釘在程式裡：登記站在 Cloudflare Worker 上，而 Mojang 把 Worker 發出去的請求
- * 一律擋掉（403），所以它沒辦法自己去抓。公鑰換了的話登入會全部失敗——重跑這一支、
- * 重新部署就好；來不及部署時也可以先用 wrangler 設 MOJANG_KEYS（見 README）。
- */
+// node tools/presence/update-mojang-keys.mjs [--check]：Mojang 擋掉 Worker 的請求（403），公鑰只能釘在程式裡
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -44,7 +35,6 @@ if (process.argv.includes('--check')) {
   try {
     have = readFileSync(target, 'utf8').replace(/\r\n/g, '\n');
   } catch (e) {
-    // 沒有檔案就是不一樣
   }
   if (have !== text) {
     console.error('Mojang 的公鑰跟 mojang-keys.js 不一樣了：重跑這一支（不帶 --check）再部署。');
