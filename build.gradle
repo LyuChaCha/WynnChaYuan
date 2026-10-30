@@ -260,6 +260,14 @@ tasks.register('runDialogueInlineIconChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueInlineIconChecks' }
 
+tasks.register('runDialogueEffectColourChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話裡的特效色（晃動、淡出）不會被當成整句譯文的底色（PR #1470）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueEffectColourTest'
+}
+tasks.named('check') { dependsOn 'runDialogueEffectColourChecks' }
+
 tasks.register('runBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證置中／靠左的整塊判斷'
