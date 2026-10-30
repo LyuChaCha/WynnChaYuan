@@ -1,8 +1,8 @@
 import { LANGS, PATHS, pickLang, render, renderLost } from './site.js';
 import { handleAdminCapes, handleAdminRemove, handleApprove, handleBans, handlePeople, handlePerkAdd, handlePerkRemove, handlePerks, handleReviewAdd, handleReviewRemove, handleReviews, handleStaff, handleStaffAdd, handleStaffRemove, handleUnban } from './admin.js';
-import { ICONS, font, icon, page, texture } from './assets.js';
+import { ICONS, font, icon, page, script, texture } from './assets.js';
 import { handleChallenge, handleDiscordCallback, handleDiscordStart, handleLink, handleLinkIntent, handleLinkStart, handleLogin, handleUnlink, handleWebLink } from './auth.js';
-import { handleCape, handleCapeLink, handleCapePreview, handleCapes, handleForget, handleIdle, handleMine, handlePublic, handleRemove, handleRestore, handleStar, handleUpload, handleWear, tidy } from './capes.js';
+import { handleCape, handleCapeLink, handleCapePreview, handleCapes, handleForget, handleIdle, handleMine, handlePublic, handleRemove, handleRestore, handleStar, handleUpload, handleWear, recountStars, tidy } from './capes.js';
 import { GUILD_SLUG, handleAddCredit, handleCreditTeams, handleGuildAdd, handleGuildImage, handleGuildPicture, handleGuildRemove, handleGuilds, handleTeam } from './credits.js';
 import { handleDiscordInfo, handleDiscordInteraction, handleDiscordRegister } from './discord-bot.js';
 import { handleFeedback, handleFeedbackDelete, handleFeedbackIssue, handleFeedbackList, handleFeedbackStatus } from './feedback.js';
@@ -24,7 +24,7 @@ const API_ROUTES = new Map([
   ['GET /me', withRequest(handleMe)],
   ['POST /me/delete', withRequest(handleDeleteMe)],
   ['POST /hello', withRequest(handleHello)],
-  ['GET /list', ({ env, now }) => handleList(env, now)],
+  ['GET /list', ({ env, now, ctx }) => handleList(env, now, ctx)],
   ['PUT /cape', withRequest(handleUpload)],
   ['DELETE /cape', withRequest(handleRemove)],
   ['GET /capes', ({ env, now }) => handleCapes(env, now)],
@@ -122,6 +122,7 @@ function routeSite(call) {
   }
   if (get && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
   if (get && path.startsWith('/font/')) return font(path);
+  if (get && path.startsWith('/js/')) return script(path);
   if (get && (path.startsWith('/tex/') || path.startsWith('/template/'))) return texture(path);
   if (get && path === '/auth/discord') return handleDiscordStart(request, env, now);
   if (get && path === '/auth/discord/callback') return handleDiscordCallback(request, env, now);
@@ -151,7 +152,7 @@ function logFailure(event, detail, error) {
 
 const site = {
   async scheduled(event, env) {
-    for (const [task, run] of [['tidy', tidy], ['indexOwners', indexOwners]]) {
+    for (const [task, run] of [['tidy', tidy], ['indexOwners', indexOwners], ['recountStars', recountStars]]) {
       try {
         await run(env, Date.now());
       } catch (error) {

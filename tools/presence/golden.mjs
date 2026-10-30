@@ -53,7 +53,7 @@ const discordKey = nodeCrypto.createPrivateKey({
 });
 const DISCORD_PUBLIC_KEY = nodeCrypto.createPublicKey(discordKey).export({ format: 'der', type: 'spki' }).subarray(-32).toString('hex');
 
-const { ROOT, DEVELOPER, demoCredits, memoryKv, seedDemo } = await import('./dev-data.mjs');
+const { ROOT, DEVELOPER, DEVELOPER_UUID, demoCredits, memoryKv, seedDemo } = await import('./dev-data.mjs');
 const worker = (await import(workerUrl)).default;
 const { issueToken, issueWebToken, issueDiscordToken, publicId } = await import('./worker-api.js');
 const { LANGS, PATHS } = await import('./site.js');
@@ -200,7 +200,7 @@ base.set('auth:secret', { value: 'f'.repeat(64), metadata: null });
 await seedDemo(base, {});
 const STEVE = 'b'.repeat(32);
 const ALEX = 'c'.repeat(32);
-const DEV = 'a'.repeat(32);
+const DEV = DEVELOPER_UUID;
 const LINKED = 'd'.repeat(32);
 const tokens = {
   steve: await issueToken({ CORPUS: memoryKv(base) }, STEVE, 'Steve', FIXED_NOW),
@@ -387,8 +387,9 @@ api('interaction feedback translation', 'POST', '/discord/interactions', { signe
 api('interaction component', 'POST', '/discord/interactions', { signed: [{ type: 3 }] });
 for (const hash of hashes.slice(0, 2)) {
   api('preview ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash);
-  api('preview figure ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash + '?u=' + STEVE);
+  api('preview figure not wearing ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash + '?u=' + STEVE);
 }
+api('preview figure wearing', 'GET', '/cape-preview/' + capes.find((c) => c.id === steveId).h + '?u=' + STEVE);
 api('preview bad', 'GET', '/cape-preview/zz');
 api('unknown api', 'GET', '/nothing');
 api('unknown api post', 'POST', '/nothing');

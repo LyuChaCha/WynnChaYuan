@@ -32,6 +32,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `site-layout.js` | 頁首、頁尾、整頁骨架、每一頁都有的程式 |
 | `site-stage.js` | 遊戲畫面的預覽（首頁與功能頁共用） |
 | `site-pages.js` | 每一頁的內容與程式、`render` |
+| `site-scripts.js` | 頁面的程式是外部檔案（`/js/<名字>.<雜湊>.js`，內容的雜湊在網址上，可以長期快取）；CSP 的 `script-src` 不准內嵌程式，頁面要給程式的資料放在 `<script type="application/json">` |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |
@@ -265,7 +266,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/translators` | | 譯者名單（開發者與管理員）；每位多一個 `team`：他在名冊上的翻譯團隊，不在名冊上是 `null` |
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr）。名冊上有這個人就把語言加進他的翻譯團隊（當天的 PR），回應的 `team` 是 `{url, added}`、`{teams}`（本來就有）、`{why}`（沒改成，譯者照樣加好）或 `null`（不在名冊上） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
-| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
+| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：只給正穿著這一件的人（其他 UUID 回 404，不抓頭像、不畫），那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
 | `POST /api/feedback` | `{cat, msg, where?, lang?}` | 送一則回饋（要用 Discord 登入，或從遊戲開、綁了 Discord 的網頁；沒登入 401 `login first`、沒綁 401 `discord first`）。`cat` 是 `translation`／`content`／`website`／`feature`／`other`；`lang` 是語料的語言代號，可以不帶。一小時滿 5 則回 429 `slow down` 與 `until`。回 `{id, issue, issueFailed}` |
 | `GET /api/admin/feedback?cat=&st=` | | 回饋列表，新的在前，照分類與狀態（`open`／`done`）篩；一次最多 200 則，另回 `total` 與兩種狀態的數量（開發者與管理員） |
 | `POST /api/admin/feedback/status` | `{id, st}` | 標成已處理（`done`，記下誰、什麼時候）或重新開啟（`open`）（開發者與管理員） |
@@ -374,7 +375,9 @@ npx wrangler secret put MOJANG_KEYS
 
 上傳的限制（`worker.js` 的 `handleUpload`）：同一個人 20 秒內不能連傳；一小時內傳滿 3 次就鎖 12 小時（KV `upl:<UUID>`，`burstNote`／`burstLock`，回 429 `cooldown` 與 `until`）；在審核名單上的人已經有一件自己傳的披風（等審核的也算，從一覽穿別人的不算）就回 403 `review one`，要先移除。
 
-誰有管理權：`credits.json` 開發者那一區的人。每個請求都會重新查一次名單，所以從名單上拿掉就立刻沒有權限。
+`presence:list`、`idle`、`stars` 是整筆覆寫的熱門鍵：同一個鍵一秒只能寫一次，寫失敗只記 log，不讓請求失敗（真正的資料在 `u:*`、`cape:*`、`fav:*`，名單十分鐘內重算、`idle` 與 `stars` 每天補回）。
+
+誰有管理權：`credits.json` 開發者那一區的人。有填 `uuid` 的照 UUID 認（改名不影響，別人拿走舊名字也沒用），沒填的才看名字；開發者都要填。每個請求都會重新查一次名單，所以從名單上拿掉就立刻沒有權限。
 
 **管理員**是開發者在 `/admin` 另外加的人：做得到下面這些管理（刪除、封禁與解除、特別名單、新增成員），但不在 `credits.json` 上——團隊名單沒有他、名字前面沒有葉子、上傳的待遇也跟一般玩家一樣——而且**不能新增或移除管理員**。加的時候填 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID 其中一種：
 
@@ -398,7 +401,7 @@ npx wrangler secret put MOJANG_KEYS
   - 管理的人在一覽看得到全部，卡片與每個人標著「不公開」或「私人」。Discord 機器人的 `/cape` 兩種都不給圖。
   - 改版前的布林值 `q: 1` 讀成「不公開」；本人改一次（或重傳、套用、復原）就換成 `vis` 的寫法，`q` 拿掉。
 - **審核名單**（比封禁輕）：`/admin` 加 UUID，或在披風一覽點開一件按「上傳的人之後都要審核」。名單上的人照樣可以傳，但之後傳的披風標成等審核（`r`）：一覽與遊戲裡的名單都不給別人看，圖要帶雜湊（`?k=`）才拿得到。管理的人在一覽的「待審核」點開、按「通過審核」；通過過的雜湊記在他的 `review:<UUID>` 裡，再穿同一張不必重審。現在身上那一件不受影響。
-- **使用紀錄與最愛**：`hist:<代碼>:<雜湊>`（一個人最多 8 件；只是紀錄，不會把圖留住）、`fav:<UUID>`、`stars`（每張圖幾個人加了最愛）。照圖刪除會把所有人的紀錄與人數一起清掉。
+- **使用紀錄與最愛**：`hist:<代碼>:<雜湊>`（一個人最多 8 件；只是紀錄，不會把圖留住）、`fav:<UUID>`、`stars`（每張圖幾個人加了最愛；同時有人按可能少算，每天的排程照 `fav:*` 重算，進度在 `stars:recount`）。照圖刪除會把所有人的紀錄與人數一起清掉。
 - **新增成員**：`/admin` 的表單。送出之後在倉庫開一個分支、改 `credits.json`、開 PR；合併還是照倉庫的規矩來（檢查要過、要有人按）。要先設好 `GITHUB_TOKEN`：
 
   ```bash

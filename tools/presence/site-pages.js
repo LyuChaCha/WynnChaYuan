@@ -4,6 +4,7 @@ import { TPL, layout, leaf } from './site-layout.js';
 import { STAGE_JS, STAGE_PARTS } from './site-stage.js';
 import { TEXT, attribute, filled, plain } from './site-strings.js';
 import { TEX_URL } from './site-styles.js';
+import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
 const REVEAL_HOME = '#main > h2, #main > .lede, .features > div, #main > .more, .split > *, .band, .everyone, #main > .panel, #main > .cta';
 
@@ -92,7 +93,7 @@ const HOME = String.raw`
   </div>
 `;
 
-const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
+const HOME_JS = jsonData('demo-data', '%%demo%%') + scriptFile('home', 'var D = ' + readJsonData('demo-data') + ';' + STAGE_JS + String.raw`
   (function () {
     var host = document.getElementById('hero-stage');
     var screen = makeStage(host, D);
@@ -289,7 +290,7 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
       document.getElementById('team-fail').hidden = false;
     });
   })();
-` + '</script>';
+`);
 
 const card = (key, at, eg) => '<article class="fcard"><i class="glyph" style="--r:' + at[0] + ';--c:' + at[1]
   + '" aria-hidden="true"></i><div><h3>%%feat.' + key + '%%</h3><p>%%feat.' + key + 'b%%</p>'
@@ -395,7 +396,7 @@ const FEATURES = String.raw`
   </div>
 `;
 
-const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
+const FEATURES_JS = jsonData('demo-data', '%%demo%%') + scriptFile('features', 'var D = ' + readJsonData('demo-data') + ';' + STAGE_JS + String.raw`
   (function () {
     var ui = D.ui;
     var TAGS = STAGE_TAGS;
@@ -538,7 +539,7 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
       });
     }
   })();
-` + '</script>';
+`);
 
 const VIEWER = String.raw`
   function mannequin() {
@@ -723,7 +724,7 @@ const CAPES = String.raw`
   </dialog>
 `;
 
-const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
+const CAPES_JS = SKINVIEW + scriptFile('capes', VIEWER + String.raw`
   var grid = document.getElementById('grid');
   var dialog = document.getElementById('viewer');
   var starShape = document.getElementById('star').content.firstElementChild;
@@ -1111,7 +1112,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     slideAll();
     return load(false).then(openLinked);
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
-` + '</script>';
+`);
 
 const ACCOUNT = String.raw`
   <h1>%%account.h1%%</h1>
@@ -1223,7 +1224,7 @@ const ACCOUNT = String.raw`
   </dialog>
 `;
 
-const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
+const ACCOUNT_JS = SKINVIEW + scriptFile('account', VIEWER + String.raw`
   var msg = document.getElementById('msg');
   function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); flash(msg); }
   var viewer = null;
@@ -1507,7 +1508,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         });
       }).catch(function () { say(L.offline, false); });
   };
-` + '</script>';
+`);
 
 const FEEDBACK_CAT_OPTIONS = ['translation', 'content', 'website', 'feature', 'other']
   .map((c) => '<option value="' + c + '">%%fb.cat.' + c + '%%</option>').join('');
@@ -1538,7 +1539,7 @@ const FEEDBACK = String.raw`
   </div>
 `;
 
-const FEEDBACK_JS = '<script>' + String.raw`
+const FEEDBACK_JS = scriptFile('feedback', String.raw`
   var F = L.fb;
   var MAX = 2000;
   var form = document.getElementById('fb-form');
@@ -1632,7 +1633,7 @@ const FEEDBACK_JS = '<script>' + String.raw`
       });
     }).catch(function () { send.disabled = false; say(false, L.offline); });
   };
-` + '</script>';
+`);
 
 const ADMIN = String.raw`
   <h1>%%admin.h1%%</h1>
@@ -1787,7 +1788,7 @@ const ADMIN = String.raw`
   </div>
 `;
 
-const ADMIN_JS = '<script>' + String.raw`
+const ADMIN_JS = scriptFile('admin', String.raw`
   function loadBans() {
     return api('/admin/bans').then(function (r) { return r.json(); }).then(function (data) {
       var body = document.getElementById('bans');
@@ -2592,7 +2593,7 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
-` + '</script>';
+`);
 
 const legalPage = (name) => '<article class="policy"><h1>%%' + name + '.h1%%</h1>'
   + '<p class="policy-date">%%legal.updated%%</p>%%' + name + '.body%%</article>';
@@ -2661,7 +2662,7 @@ const TRANSLATE = String.raw`
   </section>
 `;
 
-const TRANSLATE_JS = '<script>' + String.raw`
+const TRANSLATE_JS = scriptFile('translate', String.raw`
   var T = L.tr;
   var LANG_KEY = 'wcy.trlang';
   var CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
@@ -3184,11 +3185,11 @@ const TRANSLATE_JS = '<script>' + String.raw`
     state.me = { signedIn: Boolean(me.signedIn), langs: me.langs || [], decide: Boolean(me.decide), id: me.id || '' };
     switchLang();
   });
-` + '</script>';
+`);
 
 const PAGES = {
-  '/': ['home.title', HOME, HOME_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')</script>'],
-  '/features': ['features.title', FEATURES, FEATURES_JS + '<script>revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')</script>'],
+  '/': ['home.title', HOME, HOME_JS + scriptFile('home-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_HOME) + ')')],
+  '/features': ['features.title', FEATURES, FEATURES_JS + scriptFile('features-reveal', 'revealOnScroll(' + JSON.stringify(REVEAL_FEATURES) + ')')],
   '/capes': ['capes.title', CAPES, CAPES_JS],
   '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
   '/admin': ['admin.title', ADMIN, ADMIN_JS],

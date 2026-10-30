@@ -60,6 +60,7 @@ const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名�
 let githubFile = '';
 const discordCalls = [];
 let discordAppKey = '';
+let discordWebhookAnswer = 200;
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
@@ -100,7 +101,10 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'discord.com') {
     discordCalls.push({ path: u.pathname, method: init.method || 'GET', body: String(init.body || ''),
       auth: (init.headers || {}).authorization });
-    if (u.pathname.startsWith('/api/v10/webhooks/')) return new Response('{}', { status: 200 });
+    if (u.pathname.startsWith('/api/v10/webhooks/')) {
+      if (discordWebhookAnswer === 'down') throw new Error('connection refused');
+      return new Response('{}', { status: discordWebhookAnswer });
+    }
     if (u.pathname === '/api/v10/applications/@me') {
       return new Response(JSON.stringify({ id: 'client1', name: 'WynnChaYuan', bot: { username: 'WynnChaYuan' },
         verify_key: discordAppKey, interactions_endpoint_url: 'https://wynnchayuan.com/api/discord/interactions' }), { status: 200 });
@@ -136,7 +140,7 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
-        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'data' }] },
+        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'Bea', mc: 'Bea_Old', uuid: 'ed'.repeat(16) }, { name: 'data' }] },
         { role: 'sponsor', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] }],
     }), { status: 200 });
   }
@@ -603,10 +607,24 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
+const served = {};
+const withScripts = async (html) => {
+  let out = html;
+  for (const m of [...html.matchAll(/<script src="(\/js\/[^"]+)"><\/script>/g)]) {
+    if (!served[m[1]]) {
+      const answer = await worker.fetch(new Request('https://x.test' + m[1]), env);
+      served[m[1]] = { answer, code: await answer.text() };
+    }
+    out = out.replace(m[0], () => '<script>' + served[m[1]].code + '</script>');
+  }
+  return out;
+};
+const rawPages = {};
 for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms']) {
-  english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
+  english[path] = await withScripts(await (await inLang(path, { cookie: 'lang=en' })).text());
   r = await inLang(path, { cookie: 'lang=zh' });
-  pages[path] = await r.text();
+  rawPages[path] = await r.text();
+  pages[path] = await withScripts(rawPages[path]);
   check(path + ' 兩種語言都填滿了，沒有漏掉的 %%鍵%%',
     !/%%[\w.]+%%/.test(pages[path]) && !/%%[\w.]+%%/.test(english[path]));
   check(path + ' 的 lang 屬性跟著語言走', pages[path].includes('<html lang="zh-Hant">')
@@ -710,7 +728,7 @@ const cjk = /[㐀-鿿＀-￯　-〿]/;
 for (const path of PATHS) {
   const left = visible(english[path]).match(cjk);
   check('★ 英文版的 ' + path + ' 看得到的字裡沒有中文' + (left ? '（' + left[0] + '）' : ''), !left);
-  const strings = (english[path].match(/var L = (.*);$/m) || [])[1] || '';
+  const strings = (english[path].match(/<script type="application\/json" id="site-text">(.*?)<\/script>/s) || [])[1] || '';
   check('英文版的 ' + path + ' 程式用的字也沒有中文', strings.length > 100 && !cjk.test(strings));
   check('中文版的 ' + path + ' 真的是中文', cjk.test(visible(pages[path])));
 }
@@ -764,8 +782,16 @@ check('首頁有下載的連結：主要按鈕是 GitHub Releases、其次 Curse
 check('★ 沒有任何一頁連到我們在 Modrinth 的專案頁（2026-10 起不在 Modrinth 上架）',
   PATHS.every((path) => !pages[path].includes('modrinth.com/mod/wynnchayuan') && !english[path].includes('modrinth.com/mod/wynnchayuan')));
 check('帳號頁講了怎麼從遊戲裡登入', pages['/account'].includes('F6') && pages['/account'].includes('披風一覽'));
-check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視',
-  (r.headers.get('content-security-policy') || '').includes("script-src 'unsafe-inline' https://cdn.jsdelivr.net"));
+check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視：不准頁面裡的內嵌程式',
+  (r.headers.get('content-security-policy') || '').includes("script-src 'self' https://cdn.jsdelivr.net;")
+  && !/script-src[^;]*unsafe-inline/.test(r.headers.get('content-security-policy') || ''));
+check('★ 每一頁都沒有內嵌程式：只有外部檔案與 JSON 資料', Object.values(rawPages).every((html) =>
+  [...html.matchAll(/<script([^>]*)>/g)].every((m) => / src="/.test(m[1]) || / type="application\/json"/.test(m[1]))));
+check('★ 外部程式檔：JavaScript、可以長期快取、網址帶內容的雜湊', Object.entries(served).length >= 9
+  && Object.entries(served).every(([path, { answer }]) => answer.status === 200 && /^\/js\/[a-z-]+\.[0-9a-f]{16}\.js$/.test(path)
+    && answer.headers.get('content-type').startsWith('text/javascript') && answer.headers.get('cache-control').includes('immutable')
+    && answer.headers.get('x-content-type-options') === 'nosniff'));
+check('不認得的程式檔 404', (await worker.fetch(new Request('https://x.test/js/nope.0000000000000000.js'), env)).status === 404);
 r = await worker.fetch(new Request('https://x.test/gallery', { redirect: 'manual' }), env);
 check('舊的 /gallery 轉到 /capes', r.status === 302 && r.headers.get('location').endsWith('/capes'));
 check('沒有 /api 的舊路徑不在了', (await worker.fetch(new Request('https://x.test/list'), env)).status === 404
@@ -1325,7 +1351,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
   check('★ 服務條款講了第一次會顯示使用須知；功能頁講了同意連線功能才會報到', LANGS.every((lang) => /使用須知|使用须知|Before you play|ご利用にあたって|이용 안내|Перед игрой|Antes de jugar|Oynamadan önce/.test(TEXT[lang]['terms.body'])
     && /同意連線功能|同意联网功能|agree to online features|オンライン機能に同意|온라인 기능에 동의|согласились на сетевые функции|aceptes las funciones en línea|çevrimiçi özelliklere izin/.test(TEXT[lang]['feat.s3b'])));
 
-  const embedded = (html) => JSON.parse((html.match(/<script>var D = (\{.*?\});\n/s) || [])[1] || '{}');
+  const embedded = (html) => JSON.parse((html.match(/<script type="application\/json" id="demo-data">(\{.*?\})<\/script>/s) || [])[1] || '{}');
   const zh = embedded(pages['/features']);
   const en = embedded(english['/features']);
   check('★ 功能頁有即時預覽：三個分頁、七種譯文語言，分四段', ['items', 'dialogue', 'world']
@@ -2647,15 +2673,18 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const pair = await crypto.subtle.generateKey({ name: 'Ed25519' }, true, ['sign', 'verify']);
     const raw = new Uint8Array(await crypto.subtle.exportKey('raw', pair.publicKey));
     env.DISCORD_PUBLIC_KEY = Buffer.from(raw).toString('hex');
-    const signed = async (body, tamper) => {
+    const signed = async (body, tamper, sentAt = Date.now()) => {
       const text = JSON.stringify(body);
-      const ts = String(Math.floor(Date.now() / 1000));
+      const ts = String(Math.floor(sentAt / 1000));
       const sig = Buffer.from(await crypto.subtle.sign('Ed25519', pair.privateKey, new TextEncoder().encode(ts + text))).toString('hex');
       return new Request('https://x.test/api/discord/interactions', {
         method: 'POST', body: tamper ? text.replace('1', '2') : text,
         headers: { 'x-signature-ed25519': sig, 'x-signature-timestamp': ts },
       });
     };
+    check('★ Discord 的請求太舊（超過五分鐘）就算簽名對也不收，擋重播', (await worker.fetch(await signed({ type: 1 }, false, Date.now() - 600000), env)).status === 401
+      && (await worker.fetch(await signed({ type: 1 }, false, Date.now() + 600000), env)).status === 401
+      && (await worker.fetch(await signed({ type: 1 }), env)).status === 200);
     const command = (name, options = [], locale = 'zh-TW') => ({
       type: 2, application_id: 'app1', token: 'tok1', locale, data: { name, options },
     });
@@ -2748,6 +2777,8 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       paintSkin(20, 36, 8, 12, [0, 200, 0]);
       fakeSkin = await encodePng(64, 64, sk);
       const who = 'c'.repeat(32);
+      const wear = async (uuid, h) => env.CORPUS.put('cape:' + await publicId(uuid), '', { metadata: { h, t: 'png', n: 'Wearer', v: 1, u: uuid } });
+      await wear(who, hash);
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + who), env);
       const fig = await decodePng(new Uint8Array(await r.arrayBuffer()));
       // 從背後斜看（跟網頁的 3D 檢視同一個角度）：看得到頭的背面（藍）與披風外側（紅），
@@ -2765,8 +2796,11 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       check('人物那份另外存（prev:<雜湊>:<UUID>:<畫法>，三天）', env.CORPUS.data.has('prev:' + hash + ':' + who + ':angled')
         && env.CORPUS.data.get('prev:' + hash + ':' + who + ':angled').ttl === 3 * 86400);
       fakeSkin = null;
+      await wear('d'.repeat(32), hash);
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + 'd'.repeat(32)), env);
       check('抓不到 skin 就畫灰色人偶，不會失敗', r.status === 200 && r.headers.get('content-type') === 'image/png');
+      env.CORPUS.data.delete('cape:' + await publicId('d'.repeat(32)));
+      await wear(who, ghash);
       r = await worker.fetch(api('/cape-preview/' + ghash + '?u=' + who), env);
       check('★ GIF 披風的人物預覽也會動', r.headers.get('content-type') === 'image/gif'
         && decodeGif(new Uint8Array(await r.arrayBuffer())).frames.length === 3);
@@ -2788,6 +2822,24 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     await Promise.all(waits);
     const patch = discordCalls.find((c) => c.method === 'PATCH');
     const sent = patch ? JSON.parse(patch.body) : null;
+    {
+      const logged = [];
+      const realError = console.error;
+      console.error = (...args) => logged.push(args.join(' '));
+      const settle = async (answer) => {
+        discordWebhookAnswer = answer;
+        const waits = [];
+        const replied = await worker.fetch(await signed(command('translate', [{ name: 'text', value: 'Hello' }, { name: 'lang', value: 'zh_tw' }])), env, { waitUntil: (p) => waits.push(p) });
+        await Promise.all(waits);
+        return replied.status;
+      };
+      const failed = await settle(500);
+      const down = await settle('down');
+      discordWebhookAnswer = 200;
+      console.error = realError;
+      check('★ 補上結果失敗：記在 log，不會變成沒人接住的錯誤', failed === 200 && down === 200
+        && logged.filter((line) => line.includes('discord follow-up failed')).length === 2 && logged.some((line) => line.includes('500')));
+    }
     check('★ 查完補上結果：原文、譯文都比對，沒翻的標出來', patch && patch.path === '/api/v10/webhooks/app1/tok1/messages/@original'
       && sent.embeds[0].fields.length === 2 && sent.embeds[0].fields.some((f) => f.value.startsWith('你好，{u}！'))
       && sent.embeds[0].fields.some((f) => f.value.startsWith('（還沒翻）')));
@@ -3204,6 +3256,115 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && all[2499].metadata.n === 2499 && firstPages.length === 2000);
   check('timingSafeEqual 與 base64Bytes', timingSafeEqual('abc', 'abc') && !timingSafeEqual('abc', 'abd')
     && !timingSafeEqual('abc', 'ab') && !timingSafeEqual(null, 'a') && base64Bytes('AQID').join() === '1,2,3');
+}
+
+{
+  const { recountStars } = await import('./capes.js');
+  const HOT = ['presence:list', 'idle', 'stars'];
+  const hot = { CORPUS: fakeKv() };
+  const realPut = hot.CORPUS.put.bind(hot.CORPUS);
+  let refuse = false;
+  hot.CORPUS.put = async (key, value, options) => {
+    if (refuse && HOT.includes(key)) throw new Error('KV PUT failed: 429 Too Many Requests');
+    return realPut(key, value, options);
+  };
+  const hash = 'ab'.repeat(32);
+  const PAM = { uuid: 'e1'.repeat(16), name: 'Pam' };
+  const pamGame = await issueToken(hot, PAM.uuid, PAM.name, NOW);
+  const pamWeb = await issueWebToken(hot, PAM.uuid, PAM.name, NOW);
+  hot.CORPUS.data.set('presence:list', { value: JSON.stringify({ t: Date.now() - 3600000, users: [], capes: {}, hidden: [], rainbow: [], show: {} }), metadata: null });
+  hot.CORPUS.data.set('idle', { value: JSON.stringify({ [hash]: { t: 'png', s: 10, at: Date.now() } }), metadata: null });
+  hot.CORPUS.data.set('blob:' + hash, { value: new Uint8Array([1]), metadata: { t: 'png', s: 1 } });
+  const logged = [];
+  const realError = console.error;
+  console.error = (...args) => logged.push(args.join(' '));
+  refuse = true;
+  const hello = await worker.fetch(post('/hello', { cape: true }, pamGame), hot);
+  const star = await worker.fetch(post('/cape/star', { hash, on: true }, pamWeb), hot);
+  const listed = await worker.fetch(get('/list'), hot);
+  refuse = false;
+  console.error = realError;
+  check('★ 名單、閒置清單、星星那幾個熱門的鍵寫不進去（429）：請求照樣成功，記在 log', hello.status === 200 && star.status === 200
+    && (await star.json()).on === true && listed.status === 200 && logged.some((line) => line.includes('kv write failed') && line.includes('presence:list'))
+    && logged.some((line) => line.includes('"stars"')));
+  check('★ 寫不進去也沒有弄丟真正的資料：報到紀錄與我的最愛都在', hot.CORPUS.data.has('u:' + PAM.uuid)
+    && JSON.parse(hot.CORPUS.data.get('fav:' + PAM.uuid).value).h.includes(hash));
+  await worker.scheduled({}, hot);
+  check('★ 每天的排程照最愛重算星星，修好沒寫進去或被蓋掉的人數', JSON.parse(hot.CORPUS.data.get('stars').value)[hash] === 1
+    && !hot.CORPUS.data.has('stars:recount'));
+  hot.CORPUS.data.set('stars', { value: JSON.stringify({ [hash]: 9, ['cd'.repeat(32)]: 2 }), metadata: null });
+  for (let n = 0; n < 700; n++) {
+    hot.CORPUS.data.set('fav:' + n.toString(16).padStart(32, '0'), { value: JSON.stringify({ t: 1, h: [hash, 'cd'.repeat(32)] }), metadata: null });
+  }
+  let rounds = 0;
+  let outcome;
+  do {
+    outcome = await recountStars(hot);
+    rounds++;
+  } while (!outcome.done && rounds < 10);
+  check('★ 最愛太多一次讀不完：分幾天接著算，算完才換掉人數；已經不在的圖不算', rounds > 1 && outcome.done
+    && JSON.parse(hot.CORPUS.data.get('stars').value)[hash] === 701 && !(('cd'.repeat(32)) in JSON.parse(hot.CORPUS.data.get('stars').value))
+    && !hot.CORPUS.data.has('stars:recount'));
+}
+
+{
+  const renamedDev = await issueWebToken(env, 'ed'.repeat(16), 'Bea_New', NOW);
+  const nameThief = await issueWebToken(env, 'ee'.repeat(16), 'Bea_Old', NOW);
+  const adminPage = (token) => worker.fetch(get('/admin/staff', token), env);
+  check('★ 開發者照 UUID 認：改了名字照樣是開發者', (await adminPage(renamedDev)).status === 200
+    && (await (await worker.fetch(get('/me', renamedDev), env)).json()).developer === true);
+  check('★ 別人拿走開發者的舊名字不會變成開發者', (await adminPage(nameThief)).status === 403
+    && (await (await worker.fetch(get('/me', nameThief), env)).json()).developer === false);
+  check('還沒記 UUID 的開發者照舊看名字', (await adminPage(aliceWeb)).status === 200);
+}
+
+{
+  const store = { CORPUS: fakeKv() };
+  const WEARER = 'e2'.repeat(16);
+  const STRANGER = 'e3'.repeat(16);
+  const bytes = new Uint8Array((await import('node:fs')).readFileSync(new URL('../../capes/templates/template-88x68.png', import.meta.url)));
+  const hash = 'f7'.repeat(32);
+  store.CORPUS.data.set('blob:' + hash, { value: bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength), metadata: { t: 'png', s: bytes.length } });
+  store.CORPUS.data.set('cape:' + await publicId(WEARER), { value: '', metadata: { t: 'png', v: NOW, s: bytes.length, u: WEARER, n: 'Wearer', h: hash } });
+  const fetched = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    if (String(url.url || url).includes('minotar.net')) fetched.push(String(url.url || url));
+    return realFetch(url, init);
+  };
+  const preview = (query) => worker.fetch(new Request('https://x.test/api/cape-preview/' + hash + query), store);
+  const stranger = await preview('?u=' + STRANGER);
+  const beforeWearer = fetched.length;
+  const wearer = await preview('?u=' + WEARER);
+  const plain = await preview('');
+  globalThis.fetch = realFetch;
+  check('★ 人物預覽只給真的穿著那件披風的人：別的 UUID 不抓頭像、不畫、不存', stranger.status === 404 && beforeWearer === 0
+    && ![...store.CORPUS.data.keys()].some((k) => k.includes(STRANGER)));
+  check('穿著的人照樣畫得出來', wearer.status === 200 && fetched.length === 1 && store.CORPUS.data.has('prev:' + hash + ':' + WEARER + ':angled'));
+  check('只有披風背面的那份不受影響', plain.status === 200);
+  check('壞掉的 u 不算成不帶 u', (await preview('?u=nope')).status === 404);
+}
+
+{
+  const store = { CORPUS: fakeKv() };
+  const KAY = { uuid: 'e4'.repeat(16), name: 'Kay' };
+  const kayWeb = await issueWebToken(store, KAY.uuid, KAY.name, NOW);
+  store.CORPUS.data.set('tl:u:' + KAY.uuid, { value: JSON.stringify({ langs: ['zh_tw'] }), metadata: null });
+  store.CORPUS.data.set('staff:u:' + KAY.uuid, { value: JSON.stringify({ n: '' }), metadata: null });
+  const id = 'ab'.repeat(8);
+  const pollId = 'cd'.repeat(6);
+  const statuses = [];
+  store.CORPUS.data.set('tp:zh_tw:' + id, { value: '{broken', metadata: null });
+  store.CORPUS.data.set('tq:zh_tw:' + pollId, { value: '{"term":"x"}', metadata: null });
+  for (const call of [
+    get('/tr/prop?lang=zh_tw&id=' + id), get('/tr/poll?lang=zh_tw&id=' + pollId),
+    post('/tr/vote', { lang: 'zh_tw', id, item: 'x' }, kayWeb), post('/tr/reject', { lang: 'zh_tw', id }, kayWeb),
+    post('/tr/poll/vote', { lang: 'zh_tw', id: pollId, option: 'x' }, kayWeb),
+  ]) {
+    statuses.push((await worker.fetch(call, { ...store, GITHUB_TOKEN: 'x' })).status);
+  }
+  statuses.push((await worker.fetch(post('/tr/accept', { lang: 'zh_tw', id, item: 'x' }, kayWeb), { ...store, GITHUB_TOKEN: 'x' })).status);
+  check('★ 壞掉的提案與投票紀錄回 404，不會讓請求炸掉', statuses.every((status) => status === 404));
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]

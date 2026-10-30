@@ -3,7 +3,7 @@ import { account, discordSession, publicId, who } from './auth.js';
 import { TEAM_AREAS, addMemberTeams, commitTeams, creditTeamsOf, credits, exactCodes, mergeLangTeam, setPersonTeams } from './credits.js';
 import { GitHubError, githubRepository } from './github.js';
 import { NAME, UUID, hex, json, no, readJson } from './http.js';
-import { listAll, parseRecord } from './kv.js';
+import { listAll, parseRecord, parseStored } from './kv.js';
 import { noteParticipant } from './privacy.js';
 
 export const TR_LANGS = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
@@ -131,6 +131,16 @@ async function trId(text) {
   return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))).slice(0, 16);
 }
 
+const storedProposal = (raw) => {
+  const record = parseStored(raw);
+  return Array.isArray(record?.items) ? record : null;
+};
+
+const storedPoll = (raw) => {
+  const record = parseStored(raw);
+  return Array.isArray(record?.options) ? record : null;
+};
+
 export function trMeta(record) {
   const votes = Math.max(0, ...record.items.map((it) => it.votes.length));
   return { f: record.file, s: String(record.src).slice(0, 120), n: record.items.length, v: votes,
@@ -194,8 +204,8 @@ async function handleTrProp(request, env) {
   const lang = trLang(url.searchParams.get('lang'));
   const id = url.searchParams.get('id') || '';
   if (!lang || !TR_ID.test(id)) return no('bad request');
-  const raw = await env.CORPUS.get('tp:' + lang + ':' + id);
-  return raw ? json(JSON.parse(raw), 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+  const record = storedProposal(await env.CORPUS.get('tp:' + lang + ':' + id));
+  return record ? json(record, 200, { 'cache-control': 'no-store' }) : no('not found', 404);
 }
 
 async function handleTrPropose(request, env, now) {
@@ -246,8 +256,8 @@ async function handleTrVote(request, env, now) {
   if (!canWrite(me, lang)) return no('not a translator', 403);
   const storeKey = 'tp:' + lang + ':' + body.id;
   const raw = await env.CORPUS.get(storeKey);
-  if (!raw) return no('not found', 404);
-  const record = JSON.parse(raw);
+  const record = storedProposal(raw);
+  if (!record) return no('not found', 404);
   if (record.status !== 'open') return no('closed', 409);
   const target = record.items.find((it) => it.id === body.item);
   if (!target) return no('not found', 404);
@@ -268,9 +278,8 @@ async function handleTrAccept(request, env, now) {
   const lang = trLang(body && body.lang);
   if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
   const storeKey = 'tp:' + lang + ':' + body.id;
-  const raw = await env.CORPUS.get(storeKey);
-  if (!raw) return no('not found', 404);
-  const record = JSON.parse(raw);
+  const record = storedProposal(await env.CORPUS.get(storeKey));
+  if (!record) return no('not found', 404);
   const item = record.items.find((it) => it.id === body.item);
   if (!item) return no('not found', 404);
   const repo = githubRepository(env);
@@ -319,9 +328,8 @@ async function handleTrReject(request, env, now) {
   const lang = trLang(body && body.lang);
   if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
   const storeKey = 'tp:' + lang + ':' + body.id;
-  const raw = await env.CORPUS.get(storeKey);
-  if (!raw) return no('not found', 404);
-  const record = JSON.parse(raw);
+  const record = storedProposal(await env.CORPUS.get(storeKey));
+  if (!record) return no('not found', 404);
   record.status = 'rejected';
   record.done = { by: me.by, t: now };
   record.updated = now;
@@ -340,8 +348,8 @@ async function handleTrPoll(request, env) {
   const lang = trLang(url.searchParams.get('lang'));
   const id = url.searchParams.get('id') || '';
   if (!lang || !TR_ID.test(id)) return no('bad request');
-  const raw = await env.CORPUS.get('tq:' + lang + ':' + id);
-  return raw ? json(JSON.parse(raw), 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+  const record = storedPoll(await env.CORPUS.get('tq:' + lang + ':' + id));
+  return record ? json(record, 200, { 'cache-control': 'no-store' }) : no('not found', 404);
 }
 
 const cleanOption = (text) => (typeof text === 'string' ? text.trim().replace(/\s+/g, ' ') : '');
@@ -377,8 +385,9 @@ async function pollFor(request, env, now, needDecide) {
   if (needDecide ? !me.decide : !canWrite(me, lang)) return { error: no(needDecide ? 'forbidden' : 'not a translator', 403) };
   const storeKey = 'tq:' + lang + ':' + body.id;
   const raw = await env.CORPUS.get(storeKey);
-  if (!raw) return { error: no('not found', 404) };
-  return { me, body, storeKey, raw, record: JSON.parse(raw) };
+  const record = storedPoll(raw);
+  if (!record) return { error: no('not found', 404) };
+  return { me, body, storeKey, raw, record };
 }
 
 async function savePoll(env, got, now) {
@@ -579,7 +588,8 @@ export async function scrubTr(request, env, now, answer) {
   if (!text.includes('"ghosts"') || await moderator(request, env, now)) {
     return new Response(text, { status: answer.status, headers: answer.headers });
   }
-  const body = JSON.parse(text);
+  const body = parseStored(text);
+  if (!body) return new Response(text, { status: answer.status, headers: answer.headers });
   const strip = (value) => {
     if (Array.isArray(value)) value.forEach(strip);
     else if (value && typeof value === 'object') {
