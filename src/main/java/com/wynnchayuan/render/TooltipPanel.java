@@ -94,7 +94,7 @@ public final class TooltipPanel {
         Minecraft mc = Minecraft.getInstance();
         int screenW = graphics.guiWidth();
         int screenH = graphics.guiHeight();
-        int gap = WynnChaYuan.config().panelGap();
+        int gap = com.wynnchayuan.PanelGap.layout(WynnChaYuan.config().panelGap());
 
         int[] panelBox = box(mc, lines);
         int panelW = panelBox[0] + 8;
@@ -864,7 +864,7 @@ public final class TooltipPanel {
             }
             return place(mc, lines, stripped, mouseX, mouseY,
                     mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
-                    WynnChaYuan.config().panelGap()).overlaps();
+                    com.wynnchayuan.PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
         } catch (Throwable t) {
             return false;
         }
