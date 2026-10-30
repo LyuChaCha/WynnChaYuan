@@ -1,5 +1,6 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
@@ -180,6 +181,7 @@ public final class SelfNames {
             String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
             return name == null || name.isBlank() ? null : name;
         } catch (Throwable t) {
+            ErrorDebug.note("SelfNames#accountName", null, t);
             return null;
         }
     }
@@ -200,6 +202,7 @@ public final class SelfNames {
                 }
             }
         } catch (Throwable t) {
+            ErrorDebug.note("SelfNames#displayNames", null, t);
         }
         return out;
     }

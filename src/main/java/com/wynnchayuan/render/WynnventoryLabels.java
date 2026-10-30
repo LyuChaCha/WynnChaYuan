@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.translate.WynnventoryBridge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -47,7 +48,7 @@ public final class WynnventoryLabels {
             scale = scaleField.getFloat(widget);
         } catch (Throwable t) {
             broken = true;
-            System.out.println("[WynnChaYuan] 讀不到 Wynnventory 標籤的欄位（它改版了？），"
+            ModLog.info("讀不到 Wynnventory 標籤的欄位（它改版了？），"
                     + "獎勵畫面的分區標題不翻，其餘照常：" + t);
             return false;
         }

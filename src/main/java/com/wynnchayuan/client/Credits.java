@@ -4,8 +4,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.render.Colors;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -54,7 +56,7 @@ public final class Credits {
                     out = read(new InputStreamReader(in, StandardCharsets.UTF_8));
                 }
             } catch (Exception e) {
-                System.err.println("[WynnChaYuan] 貢獻者名單讀取失敗: " + e.getMessage());
+                ModLog.warn("貢獻者名單讀取失敗: " + e.getMessage());
             }
         }
         have = List.copyOf(out);
@@ -79,6 +81,7 @@ public final class Credits {
                 return read(in);
             }
         } catch (Throwable t) {
+            ErrorDebug.note("Credits#fromSynced", null, t);
             return List.of();
         }
     }
@@ -133,6 +136,7 @@ public final class Credits {
         try {
             return m.has(name) && m.get(name).getAsBoolean();
         } catch (Exception e) {
+            ErrorDebug.note("Credits#flag", null, e);
             return false;
         }
     }
@@ -141,6 +145,7 @@ public final class Credits {
         try {
             return Integer.parseInt(hex.replace("#", "").strip(), 16);
         } catch (Exception e) {
+            ErrorDebug.note("Credits#parseHex", null, e);
             return 0xFFFFFF;
         }
     }

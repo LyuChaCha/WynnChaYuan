@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 
 import com.google.gson.JsonElement;
@@ -193,10 +194,10 @@ final class TranslationIndex {
             try {
                 Files.createDirectories(dir);
                 lastResult = com.wynnchayuan.client.T.s("status.folder_created");
-                System.out.println("[WynnChaYuan] 譯文資料夾不存在，已建立：" + dir);
+                ModLog.info("譯文資料夾不存在，已建立：" + dir);
             } catch (Exception e) {
                 lastResult = com.wynnchayuan.client.T.s("status.folder_failed", e.getMessage());
-                System.err.println("[WynnChaYuan] 建立譯文資料夾失敗 " + dir + ": " + e.getMessage());
+                ModLog.warn("建立譯文資料夾失敗 " + dir + ": " + e.getMessage());
             }
             return;
         }
@@ -223,7 +224,7 @@ final class TranslationIndex {
             loadScoped(dir);
         } catch (Exception e) {
             lastResult = com.wynnchayuan.client.T.s("status.read_failed", e.getMessage());
-            System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
+            ModLog.warn("讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
         }
     }
 
@@ -253,7 +254,7 @@ final class TranslationIndex {
                     }
                 }
             } catch (Exception e) {
-                System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
+                ModLog.warn("讀不到 " + file + "：" + e.getMessage());
             }
         }
     }
@@ -273,13 +274,13 @@ final class TranslationIndex {
         }
         if (loadedFiles == 0) {
             lastResult = com.wynnchayuan.client.T.s("status.no_json");
-            System.out.println("[WynnChaYuan] " + dir + " 裡沒有譯文檔");
+            ModLog.info(dir + " 裡沒有譯文檔");
         } else if (entries.isEmpty()) {
             lastResult = com.wynnchayuan.client.T.s("status.no_dst", loadedFiles);
-            System.out.println("[WynnChaYuan] 讀了 " + loadedFiles + " 個檔案，但沒有任何已填寫的 dst");
+            ModLog.info("讀了 " + loadedFiles + " 個檔案，但沒有任何已填寫的 dst");
         } else {
             lastResult = com.wynnchayuan.client.T.s("status.loaded", entries.size(), loadedFiles);
-            System.out.println("[WynnChaYuan] 已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）");
+            ModLog.info("已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）");
         }
     }
 
@@ -297,7 +298,7 @@ final class TranslationIndex {
             JsonElement root = JsonParser.parseReader(r);
             if (!root.isJsonObject()) {
                 broken.add(file);
-                System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：不是 JSON 物件");
+                ModLog.warn("略過 " + file.getFileName() + "：不是 JSON 物件");
                 return;
             }
             JsonObject obj = root.getAsJsonObject();
@@ -342,16 +343,16 @@ final class TranslationIndex {
                 }
             }
             loadedFiles++;
-            System.out.println("[WynnChaYuan] 載入譯文 " + file.getFileName()
+            ModLog.info("載入譯文 " + file.getFileName()
                     + "：+" + (entries.size() - before) + " 條");
         } catch (com.google.gson.JsonParseException e) {
             if (!(e instanceof com.google.gson.JsonIOException)
                     || e.getCause() instanceof java.nio.charset.CharacterCodingException) {
                 broken.add(file);
             }
-            System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
+            ModLog.warn("略過 " + file.getFileName() + "：" + e.getMessage());
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
+            ModLog.warn("略過 " + file.getFileName() + "：" + e.getMessage());
         }
     }
 

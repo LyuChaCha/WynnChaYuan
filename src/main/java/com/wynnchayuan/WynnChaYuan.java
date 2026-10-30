@@ -11,6 +11,7 @@ import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.listener.ScoreboardListener;
 import com.wynnchayuan.listener.TrackerListener;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
 import com.wynnchayuan.translate.TranslationStore;
@@ -54,7 +55,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static KeyMapping copyChatKey;
     private static Path configDir;
 
-    private static String language = com.wynnchayuan.translate.Languages.DEFAULT;
+    private static volatile String language = com.wynnchayuan.translate.Languages.DEFAULT;
 
     public static CaptureStore store() {
         return store;
@@ -140,13 +141,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         try {
             registerKeyBind();
         } catch (Throwable t) {
-            System.out.println("[" + MOD_NAME + "] 按鍵註冊失敗，其餘功能照常："
+            ModLog.info("按鍵註冊失敗，其餘功能照常："
                     + t);
         }
         try {
             registerCommand();
         } catch (Throwable t) {
-            System.out.println("[" + MOD_NAME + "] 指令註冊失敗，其餘功能照常：" + t);
+            ModLog.info("指令註冊失敗，其餘功能照常：" + t);
         }
         try {
             net.fabricmc.fabric.api.event.player.UseEntityCallback.EVENT.register(
@@ -164,7 +165,7 @@ public final class WynnChaYuan implements ClientModInitializer {
                         return net.minecraft.world.InteractionResult.PASS;
                     });
         } catch (Throwable t) {
-            System.out.println("[" + MOD_NAME + "] 點擊監聽註冊失敗，說話者只看名牌：" + t);
+            ModLog.info("點擊監聽註冊失敗，說話者只看名牌：" + t);
         }
 
         ScreenEvents.AFTER_INIT.register((client, screen, w, h) -> {
@@ -187,14 +188,14 @@ public final class WynnChaYuan implements ClientModInitializer {
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             flushQuietly();
-            System.out.println("[WynnChaYuan] 已收集 " + store.size() + " 條字串");
+            ModLog.info("已收集 " + store.size() + " 條字串");
             SelfUpdate.applyPending();
         }, MOD_ID + "-shutdown"));
 
-        System.out.println("[WynnChaYuan] 就緒，輸出於 " + dir.resolve("captured.json"));
-        System.out.println("[WynnChaYuan] 譯文 " + translations.size() + " 條（"
+        ModLog.info("就緒，輸出於 " + dir.resolve("captured.json"));
+        ModLog.info("譯文 " + translations.size() + " 條（"
                 + translations.loadedFiles() + " 個檔案），/wcy 開啟設定");
-        System.out.println("[WynnChaYuan] 地名清單 "
+        ModLog.info("地名清單 "
                 + com.wynnchayuan.capture.PlaceNames.size() + " 筆（不翻譯，原樣保留）");
     }
 
@@ -221,7 +222,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, reference);
         if (layers.contains(dir)) {
             referenceKeys = translations.sourceKeys();
-            System.out.println("[WynnChaYuan] 收集的判準用畫面上這幾層的 "
+            ModLog.info("收集的判準用畫面上這幾層的 "
                     + referenceKeys.size() + " 條原文");
             return;
         }
@@ -230,9 +231,10 @@ public final class WynnChaYuan implements ClientModInitializer {
                     new com.wynnchayuan.translate.TranslationStore();
             probe.loadAll(dir);
             referenceKeys = probe.sourceKeys();
-            System.out.println("[WynnChaYuan] 收集的判準用 " + reference
+            ModLog.info("收集的判準用 " + reference
                     + " 的 " + referenceKeys.size() + " 條原文");
         } catch (Exception e) {
+            ErrorDebug.note("WynnChaYuan#loadReferenceKeys", null, e);
             referenceKeys = null;
         }
     }
@@ -262,10 +264,11 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
     private static int fetchCurrentLanguages() {
-        com.wynnchayuan.translate.FetchedLanguages.mark(language);
+        String lang = language;
+        com.wynnchayuan.translate.FetchedLanguages.mark(lang);
         int changed = RemoteSync.fetchInto(
-                com.wynnchayuan.translate.Languages.dir(configDir, language), language);
-        String under = fallbackLanguage();
+                com.wynnchayuan.translate.Languages.dir(configDir, lang), lang);
+        String under = com.wynnchayuan.translate.Languages.underlay(config.fallbackLanguage(), lang);
         if (under != null) {
             com.wynnchayuan.translate.FetchedLanguages.mark(under);
             changed += RemoteSync.fetchInto(
@@ -286,7 +289,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, lang);
         Thread worker = new Thread(() -> {
             int changed = RemoteSync.fetchInto(dir, lang);
-            System.out.println("[" + MOD_NAME + "] 切到 " + lang + "：" + RemoteSync.lastResult());
+            ModLog.info("切到 " + lang + "：" + RemoteSync.lastResult());
             if (changed > 0) {
                 reloadOnMainThread();
             }
@@ -299,7 +302,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         try {
             net.minecraft.client.Minecraft.getInstance().execute(WynnChaYuan::loadLayers);
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] 同步完排不進主執行緒，下次啟動才會套用：" + t);
+            ModLog.warn("同步完排不進主執行緒，下次啟動才會套用：" + t);
         }
     }
 
@@ -307,18 +310,18 @@ public final class WynnChaYuan implements ClientModInitializer {
         try {
             store.flush();
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] captured.json 寫入失敗: " + t);
+            ModLog.warn("captured.json 寫入失敗: " + t);
         }
         try {
             com.wynnchayuan.capture.CardDump.flush();
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] "
+            ModLog.warn(""
                     + com.wynnchayuan.capture.CardDump.FILE + " 寫入失敗: " + t);
         }
         try {
             com.wynnchayuan.render.DialogueTint.flush();
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] "
+            ModLog.warn(""
                     + com.wynnchayuan.render.DialogueTint.FILE + " 寫入失敗: " + t);
         }
     }
@@ -438,7 +441,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             if (changed > 0) {
                 reloadOnMainThread();
             }
-            System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
+            ModLog.info(RemoteSync.lastResult());
         }, MOD_ID + "-sync");
         sync.setDaemon(true);
         sync.start();
@@ -493,7 +496,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             if (result == Presence.DeleteResult.DONE && config.dataOptOut()) {
                 config.dataDeleted();
             }
-            System.out.println("[" + MOD_NAME + "] data deletion: " + result);
+            ModLog.info("data deletion: " + result);
             if (done != null) {
                 net.minecraft.client.Minecraft.getInstance().execute(() -> done.accept(result));
             }
@@ -524,7 +527,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.DialogueTint.init(
                 configDir.resolve(com.wynnchayuan.render.DialogueTint.FILE), language);
         loadLayers();
-        System.out.println("[" + MOD_NAME + "] 跟隨遊戲語言：改用 " + language
+        ModLog.info("跟隨遊戲語言：改用 " + language
                 + "（開機時問不到，先用了 " + com.wynnchayuan.translate.Languages.DEFAULT
                 + "）");
     }
@@ -535,6 +538,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             return mc == null || mc.getLanguageManager() == null
                     ? "" : mc.getLanguageManager().getSelected();
         } catch (Throwable t) {
+            ErrorDebug.note("WynnChaYuan#gameLanguage", null, t);
             return "";
         }
     }
@@ -639,7 +643,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             }
             config.markOldKeysReleased();
         } catch (Throwable t) {
-            System.out.println("[" + MOD_NAME + "] 清舊的預設鍵時出錯，按鍵維持原樣：" + t);
+            ModLog.info("清舊的預設鍵時出錯，按鍵維持原樣：" + t);
         }
     }
 
@@ -719,14 +723,14 @@ public final class WynnChaYuan implements ClientModInitializer {
             try {
                 l.flushSettled();
             } catch (Throwable t) {
-                System.err.println("[WynnChaYuan] flushSettled 失敗: " + t);
+                ModLog.warn("flushSettled 失敗: " + t);
             }
         }
     }
 
     private static void registerWithWynntils() {
         if (!FabricLoader.getInstance().isModLoaded("wynntils")) {
-            System.out.println("[WynnChaYuan] 找不到 Wynntils，停用收集功能");
+            ModLog.info("找不到 Wynntils，停用收集功能");
             return;
         }
         try {
@@ -743,9 +747,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents
                     .MODIFY_CHAT.register(MarketListener::rewrite);
             com.wynnchayuan.client.MarketPicker.register();
-            System.out.println("[WynnChaYuan] 已掛上 Wynntils 事件，開始收集");
+            ModLog.info("已掛上 Wynntils 事件，開始收集");
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] 掛載失敗，停用收集功能: " + t);
+            ModLog.warn("掛載失敗，停用收集功能: " + t);
         }
     }
 }

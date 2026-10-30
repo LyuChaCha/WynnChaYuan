@@ -149,13 +149,10 @@ final class TemplateLookup {
             }
         }
         if (!tail.isEmpty()) {
-            boolean was = TranslationStore.itemNamesBarred();
-            TranslationStore.barItemNames(was || !countFirst(tail));
             String zh;
-            try {
+            try (LookupScope scope = LookupScope.barItemNames(
+                    TranslationStore.itemNamesBarred() || !countFirst(tail))) {
                 zh = statLabel(label, store, percent);
-            } finally {
-                TranslationStore.barItemNames(was);
             }
             if (zh != null) {
                 return zh + translateTail(tail, store);
@@ -401,6 +398,7 @@ final class TemplateLookup {
             return Component.empty().append(translated).append(
                     Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
         } catch (Throwable t) {
+            ErrorDebug.note("TemplateLookup#padSlot", null, t);
             return translated;
         }
     }
@@ -441,9 +439,8 @@ final class TemplateLookup {
             return null;
         }
         boolean plate = start == 0 && !template.substring(end).isBlank();
-        boolean was = TranslationStore.itemNamesBarred();
-        TranslationStore.barItemNames(was || plate);
-        try {
+        try (LookupScope scope = LookupScope.barItemNames(
+                TranslationStore.itemNamesBarred() || plate)) {
             String hit = null;
             int used = keepColon;
             if (keepColon > end) {
@@ -462,8 +459,6 @@ final class TemplateLookup {
                 return null;
             }
             return template.substring(0, start) + hit + reattach(hit, template.substring(used));
-        } finally {
-            TranslationStore.barItemNames(was);
         }
     }
 
@@ -790,13 +785,9 @@ final class TemplateLookup {
             return null;
         }
         String thing = core.substring(at + 3).strip();
-        boolean was = TranslationStore.itemNamesBarred();
-        TranslationStore.barItemNames(true);
         String zh;
-        try {
+        try (LookupScope scope = LookupScope.barItemNames(true)) {
             zh = thing.isEmpty() ? null : store.lookup(thing);
-        } finally {
-            TranslationStore.barItemNames(was);
         }
         if (zh == null || zh.isBlank()) {
             return null;

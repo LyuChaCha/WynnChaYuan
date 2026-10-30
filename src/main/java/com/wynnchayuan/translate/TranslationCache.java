@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.SafeFiles;
 
 import java.nio.file.Files;
@@ -95,14 +96,14 @@ public final class TranslationCache {
             SafeFiles.writeAtomically(stampFile,
                     new GsonBuilder().setPrettyPrinting().create().toJson(stamp));
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 寫不出譯文快取記錄：" + e);
+            ModLog.warn("寫不出譯文快取記錄：" + e);
         }
         if (refreshed > 0) {
-            System.out.println("[WynnChaYuan] 模組換了版本（" + mod + " → " + modVersion
+            ModLog.info("模組換了版本（" + mod + " → " + modVersion
                     + "），譯文快取 " + langDir.getFileName() + " 換回內建的 " + refreshed + " 個檔");
         }
         if (kept > 0) {
-            System.out.println("[WynnChaYuan] 譯文快取 " + langDir.getFileName() + " 有 " + kept
+            ModLog.info("譯文快取 " + langDir.getFileName() + " 有 " + kept
                     + " 個檔跟上次同步下來的不一樣（有人改過），沒有動它們");
         }
         return refreshed;
@@ -122,6 +123,7 @@ public final class TranslationCache {
             return HexFormat.of().formatHex(
                     MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));
         } catch (Exception e) {
+            ErrorDebug.note("TranslationCache#hashOf", null, e);
             return null;
         }
     }
@@ -151,12 +153,12 @@ public final class TranslationCache {
                 target = oldRoot.resolve(lang + "-" + LocalDateTime.now().format(WHEN) + "-" + n);
             }
             Files.move(langDir, target);
-            System.out.println("[WynnChaYuan] 譯文快取 " + lang + " 不能沿用（" + why
+            ModLog.info("譯文快取 " + lang + " 不能沿用（" + why
                     + "），已移到 " + OLD + "/" + target.getFileName() + "，改用內建譯文");
             pruneOld(oldRoot, lang, target);
             return true;
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 譯文快取 " + langDir.getFileName()
+            ModLog.warn("譯文快取 " + langDir.getFileName()
                     + " 不能沿用（" + why + "），也移不開：" + e);
             return false;
         }
@@ -168,7 +170,8 @@ public final class TranslationCache {
                               .filter(p -> !p.equals(keep)).toList()) {
                 deleteTree(d);
             }
-        } catch (Exception ignored) {
+        } catch (Exception failure) {
+            ErrorDebug.note("TranslationCache#pruneOld", null, failure);
         }
     }
 
@@ -201,9 +204,10 @@ public final class TranslationCache {
                 try {
                     if (Files.deleteIfExists(langDir.resolve(name))) {
                         removed++;
-                        System.out.println("[WynnChaYuan] 譯文檔 " + name + " 已不在清單上，刪掉快取裡的舊檔");
+                        ModLog.info("譯文檔 " + name + " 已不在清單上，刪掉快取裡的舊檔");
                     }
-                } catch (Exception ignored) {
+                } catch (Exception failure) {
+                    ErrorDebug.note("TranslationCache#record", null, failure);
                 }
             }
         }
@@ -231,7 +235,7 @@ public final class TranslationCache {
             SafeFiles.writeAtomically(langDir.resolve(STAMP),
                     new GsonBuilder().setPrettyPrinting().create().toJson(stamp));
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 寫不出譯文快取記錄：" + e);
+            ModLog.warn("寫不出譯文快取記錄：" + e);
         }
         return removed;
     }
@@ -254,7 +258,7 @@ public final class TranslationCache {
             }
         }
         if (restored > 0) {
-            System.out.println("[WynnChaYuan] 從內建譯文補回 " + restored + " 個讀不懂的檔，重新載入");
+            ModLog.info("從內建譯文補回 " + restored + " 個讀不懂的檔，重新載入");
             store.loadAll(layers);
         }
         return broken.size();
@@ -274,6 +278,7 @@ public final class TranslationCache {
         try {
             return el != null && el.isJsonPrimitive() ? el.getAsInt() : -1;
         } catch (RuntimeException e) {
+            ErrorDebug.note("TranslationCache#intOf", null, e);
             return -1;
         }
     }

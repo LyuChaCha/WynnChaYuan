@@ -118,14 +118,11 @@ public final class ItemNameContextTest {
         java.util.concurrent.CountDownLatch held = new java.util.concurrent.CountDownLatch(1);
         java.util.concurrent.CountDownLatch release = new java.util.concurrent.CountDownLatch(1);
         Thread holder = new Thread(() -> {
-            TranslationStore.barItemNames(true);
-            held.countDown();
-            try {
+            try (LookupScope scope = LookupScope.barItemNames(true)) {
+                held.countDown();
                 release.await();
             } catch (InterruptedException ignored) {
                 Thread.currentThread().interrupt();
-            } finally {
-                TranslationStore.barItemNames(false);
             }
         }, "holder");
         holder.start();

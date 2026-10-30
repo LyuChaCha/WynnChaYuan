@@ -549,6 +549,7 @@ final class ChatRealigner {
             return net.minecraft.client.gui.components.ChatComponent.getWidth(
                     net.minecraft.client.Minecraft.getInstance().options.chatWidth().get());
         } catch (Throwable t) {
+            ErrorDebug.note("ChatRealigner#chatWidth", null, t);
             return 0;
         }
     }

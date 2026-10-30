@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModLog;
 import com.wynntils.core.text.PartStyle;
 import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.StyledText;
@@ -92,7 +93,7 @@ public final class FlowedDebug {
             sb.append(System.lineSeparator());
             Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-            System.out.println("[WynnChaYuan] 跨行查表 #" + seen);
+            ModLog.info("跨行查表 #" + seen);
         } catch (Throwable t) {
         }
     }

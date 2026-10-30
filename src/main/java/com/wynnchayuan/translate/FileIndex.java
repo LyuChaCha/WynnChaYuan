@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.ModLog;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -82,7 +83,7 @@ public final class FileIndex {
                 }
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 譯文清單讀取失敗，改用內建集合: " + e.getMessage());
+            ModLog.warn("譯文清單讀取失敗，改用內建集合: " + e.getMessage());
             return FALLBACK;
         }
         return names.isEmpty() ? FALLBACK : List.copyOf(names);

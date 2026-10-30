@@ -1,7 +1,9 @@
 package com.wynnchayuan.listener;
 
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.T;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.MarketSearch;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -66,6 +68,7 @@ public final class MarketListener {
         try {
             store = WynnChaYuan.translations();
         } catch (Throwable t) {
+            ErrorDebug.note("MarketListener#showsTranslation", null, t);
             return false;
         }
         if (store == null || plain == null) {
@@ -111,7 +114,7 @@ public final class MarketListener {
         try {
             return translate(message);
         } catch (Throwable t) {
-            System.err.println("[WynnChaYuan] 市集搜尋轉換失敗，原樣送出: " + t);
+            ModLog.warn("市集搜尋轉換失敗，原樣送出: " + t);
             return message;
         }
     }

@@ -3,7 +3,9 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.BlockLayout;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.LookupScope;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
@@ -227,11 +229,13 @@ public final class TooltipPanel {
         boolean lootrunTitle = n > 0 && isLootrunCard(styled)
                 && com.wynnchayuan.translate.LootrunNames.isName(bareName(
                         partsOf.apply(styled.get(0)).template()));
-        try {
+        try (LookupScope holdScope = LookupScope.holdAppendedOriginal(false);
+             LookupScope nameScope = LookupScope.nameLine(false);
+             LookupScope titleScope = LookupScope.lootrunTitle(false)) {
             while (i < n) {
-                TranslationStore.holdAppendedOriginal(i >= 2);
-                TranslationStore.nameLine(itemRows && i < 2);
-                TranslationStore.lootrunTitle(lootrunTitle && i == 0);
+                holdScope.set(i >= 2);
+                nameScope.set(itemRows && i < 2);
+                titleScope.set(lootrunTitle && i == 0);
                 com.wynnchayuan.translate.GuessListRow.Row listRow = abilityPanel ? null
                         : com.wynnchayuan.translate.GuessListRow.of(styled.get(i), store);
                 if (listRow != null) {
@@ -285,7 +289,8 @@ public final class TooltipPanel {
                         if (para != null) {
                             com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
                         }
-                    } catch (Throwable ignored) {
+                    } catch (Throwable failure) {
+                        ErrorDebug.note("TooltipPanel#translateLines", null, failure);
                     }
                 }
                 Component translated =
@@ -304,10 +309,6 @@ public final class TooltipPanel {
                 }
                 i++;
             }
-        } finally {
-            TranslationStore.holdAppendedOriginal(false);
-            TranslationStore.nameLine(false);
-            TranslationStore.lootrunTitle(false);
         }
         try {
             int[] rowOf = new int[n];
@@ -320,6 +321,7 @@ public final class TooltipPanel {
             com.wynnchayuan.translate.IndentAlign.apply(
                     styled, out, rowOf, hit, centered, abilityPanel, TooltipPanel::measure);
         } catch (RuntimeException e) {
+            ErrorDebug.note("TooltipPanel#translateLines", null, e);
         }
         List<String> plain = new ArrayList<>(n);
         for (int k = 0; k < n; k++) {
@@ -395,6 +397,7 @@ public final class TooltipPanel {
                     com.wynnchayuan.capture.OverflowAudit.TOOLTIP, src, dst, frame, widest,
                     com.wynnchayuan.capture.OverflowAudit.PX_UNIT);
         } catch (Throwable t) {
+            ErrorDebug.note("TooltipPanel#noteWidened", null, t);
         }
     }
 
@@ -866,6 +869,7 @@ public final class TooltipPanel {
                     mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
                     com.wynnchayuan.PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
         } catch (Throwable t) {
+            ErrorDebug.note("TooltipPanel#wouldPush", null, t);
             return false;
         }
     }

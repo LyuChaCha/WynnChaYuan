@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -125,6 +126,7 @@ public final class ShotScreen extends Screen {
             note = T.c("shot.copied")
                     .withStyle(ChatFormatting.GREEN);
         } catch (Throwable t) {
+            ErrorDebug.note("ShotScreen#copy", null, t);
             note = T.c("shot.nocopy")
                     .withStyle(ChatFormatting.RED);
         }

@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.listener.RenderListener;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -24,6 +25,7 @@ public final class WynnModTooltip {
             try {
                 found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wynnmod");
             } catch (Throwable t) {
+                ErrorDebug.note("WynnModTooltip#installed", null, t);
                 found = false;
             }
             installed = known = found;
@@ -121,7 +123,8 @@ public final class WynnModTooltip {
                 WynnChaYuan.store().noteEvent("render.wynnmodError");
                 com.wynnchayuan.translate.ErrorDebug.note("tooltip.wynnmod",
                         text.get(0).getString(), t);
-            } catch (Throwable ignored) {
+            } catch (Throwable failure) {
+                ErrorDebug.note("WynnModTooltip#lines", null, failure);
             }
             return text;
         }
