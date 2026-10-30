@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -122,7 +123,7 @@ public final class TranslationUpdate {
         fetching = true;
         tell(client, com.wynnchayuan.client.T.c("status.fetching")
                 .withStyle(ChatFormatting.GRAY));
-        WynnChaYuan.resyncTranslations(result -> {
+        ModNetwork.resyncTranslations(result -> {
             fetching = false;
             if (client.player != null) {
                 tell(client, com.wynnchayuan.client.T.c("chat.translations.done", result)

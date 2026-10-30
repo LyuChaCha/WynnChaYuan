@@ -1,5 +1,7 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.LanguageLayers;
+import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
@@ -203,7 +205,7 @@ public final class SettingsScreen extends Screen {
 
     private void requestDelete() {
         deleting = true;
-        WynnChaYuan.setDataOptOut(true, this::deleted);
+        ModNetwork.setDataOptOut(true, this::deleted);
         say(T.s("privacy.deleting"), Ui.TEXT_3);
         rebuild();
     }
@@ -214,7 +216,7 @@ public final class SettingsScreen extends Screen {
                 .on(() -> cfg().consent() == CollectorConfig.Consent.AGREED)
                 .flip(() -> {
                     boolean agree = cfg().consent() != CollectorConfig.Consent.AGREED;
-                    WynnChaYuan.setConsent(agree);
+                    ModNetwork.setConsent(agree);
                     say(T.s(agree ? "privacy.online.on" : "privacy.online.off"), Ui.GREEN);
                     rebuild();
                 }));
@@ -252,7 +254,7 @@ public final class SettingsScreen extends Screen {
                 .label(t("privacy.resume.button"))
                 .enabled(() -> !deleting)
                 .run(() -> {
-                    WynnChaYuan.setDataOptOut(false, null);
+                    ModNetwork.setDataOptOut(false, null);
                     say(T.s("privacy.resumed"), Ui.GREEN);
                     rebuild();
                 }));
@@ -349,7 +351,7 @@ public final class SettingsScreen extends Screen {
         List<Row> rows = new ArrayList<>();
         rows.add(toggle("translations.enabled", true, cfg()::translationsEnabled, () -> {
             cfg().toggleTranslations();
-            WynnChaYuan.reloadTranslations();
+            LanguageLayers.reloadTranslations();
             say(T.s(cfg().translationsEnabled()
                     ? "translations.enabled.on" : "translations.enabled.off"), Ui.GREEN);
         }));
@@ -589,7 +591,7 @@ public final class SettingsScreen extends Screen {
                 .choices(() -> {
                     List<Row.Choice> out = new ArrayList<>();
                     out.add(new Row.Choice("", T.s("data.language.auto",
-                            Languages.nativeName(WynnChaYuan.autoLanguage())), "A", true));
+                            Languages.nativeName(LanguageLayers.autoLanguage())), "A", true));
                     for (String lang : Languages.bundled()) {
                         out.add(language(lang));
                     }
@@ -603,11 +605,11 @@ public final class SettingsScreen extends Screen {
         rows.add(Row.select("data.fallback", t("data.fallback"), t("data.fallback.hint"))
                 .choices(() -> {
                     List<Row.Choice> out = new ArrayList<>();
-                    String under = WynnChaYuan.fallbackLanguage();
+                    String under = LanguageLayers.fallbackLanguage();
                     out.add(new Row.Choice("", under == null
                             ? T.s("data.fallback.auto.none")
                             : T.s("data.fallback.auto", Languages.nativeName(under)), "A", true));
-                    out.add(new Row.Choice(WynnChaYuan.OFF, T.s("data.fallback.off"), "EN", false));
+                    out.add(new Row.Choice(LanguageLayers.OFF, T.s("data.fallback.off"), "EN", false));
                     for (String lang : Languages.bundled()) {
                         if (!lang.equals(WynnChaYuan.language())) {
                             out.add(language(lang));
@@ -625,7 +627,7 @@ public final class SettingsScreen extends Screen {
                     List<Row.Choice> out = new ArrayList<>();
                     String following = cfg().language();
                     out.add(new Row.Choice("", T.s("data.ui.auto", Languages.nativeName(
-                            following.isEmpty() ? WynnChaYuan.autoLanguage() : following)),
+                            following.isEmpty() ? LanguageLayers.autoLanguage() : following)),
                             "A", true));
                     for (String lang : T.available()) {
                         out.add(language(lang));
@@ -655,7 +657,7 @@ public final class SettingsScreen extends Screen {
         }
         fetching = true;
         say(T.s("data.language.switching"), Ui.TEXT_3);
-        WynnChaYuan.switchLanguage(next, result -> {
+        LanguageLayers.switchLanguage(next, result -> {
             pendingLanguage = null;
             if (next.equals(pendingFallback)) {
                 pendingFallback = null;
@@ -676,7 +678,7 @@ public final class SettingsScreen extends Screen {
         }
         fetching = true;
         say(T.s("data.language.switching"), Ui.TEXT_3);
-        WynnChaYuan.switchFallback(next, result -> {
+        LanguageLayers.switchFallback(next, result -> {
             pendingFallback = null;
             fetching = false;
             fallbackBusy = null;
@@ -764,7 +766,7 @@ public final class SettingsScreen extends Screen {
             return;
         }
         checkingVersion = true;
-        WynnChaYuan.recheckTranslationVersion(() -> {
+        ModNetwork.recheckTranslationVersion(() -> {
             checkingVersion = false;
             say(versionHint(),
                     versionState() == TranslationUpdate.State.LATEST ? Ui.GREEN : Ui.AMBER);
@@ -775,13 +777,13 @@ public final class SettingsScreen extends Screen {
         if (github()) {
             say(T.s("status.fetching"), Ui.TEXT_3);
             fetching = true;
-            WynnChaYuan.resyncTranslations(result -> {
+            ModNetwork.resyncTranslations(result -> {
                 fetching = false;
                 report(result, WynnChaYuan.translations().size() > 0);
             });
             return;
         }
-        WynnChaYuan.reloadTranslations();
+        LanguageLayers.reloadTranslations();
         report(WynnChaYuan.translations().lastResult(), WynnChaYuan.translations().size() > 0);
     }
 
@@ -971,10 +973,10 @@ public final class SettingsScreen extends Screen {
         s.loadedLabel = T.s("preview.loaded");
         s.panelOffNote = T.s("preview.panel.off");
         String lang = c.language();
-        String under = WynnChaYuan.fallbackLanguage();
+        String under = LanguageLayers.fallbackLanguage();
         s.facts = new String[][] {
             {T.s("data.language"), Languages.nativeName(
-                    lang.isEmpty() ? WynnChaYuan.autoLanguage() : lang)},
+                    lang.isEmpty() ? LanguageLayers.autoLanguage() : lang)},
             {T.s("data.fallback"), under == null ? T.s("data.fallback.off")
                     : Languages.nativeName(under)},
             {T.s("data.source"), T.s(github() ? "data.source.github" : "data.source.local")},
