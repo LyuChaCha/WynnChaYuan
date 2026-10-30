@@ -45,7 +45,7 @@ public final class DiscoveryNameTest {
             if (!template.equals(name)) {
                 viaTemplate++;
             }
-            String zh = LineTranslator.lookup(template, store, false);
+            String zh = TemplateLookup.lookup(template, store, false);
             report("「" + name + "」查得到（模板 " + template + " → " + zh + "）",
                    zh != null && !zh.isBlank());
         }
@@ -63,7 +63,7 @@ public final class DiscoveryNameTest {
                 {"Wynn Plains Monument", "紀念碑"}, {"Aldwell Library", "圖書館"}}) {
             String template = com.wynnchayuan.capture.LineParts
                     .of(StyledText.fromComponent(Component.literal(pair[0]))).template();
-            String zh = LineTranslator.lookup(template, store, false);
+            String zh = TemplateLookup.lookup(template, store, false);
             report("「" + pair[0] + "」譯文含「" + pair[1] + "」（實際 " + zh + "）",
                    zh != null && zh.contains(pair[1]));
         }
@@ -91,7 +91,7 @@ public final class DiscoveryNameTest {
             }
             String template = com.wynnchayuan.capture.LineParts
                     .of(StyledText.fromComponent(Component.literal(key))).template();
-            if (LineTranslator.lookup(template, store, false) == null) {
+            if (TemplateLookup.lookup(template, store, false) == null) {
                 dead++;
                 report("敘述查不到：" + template.substring(0, Math.min(90, template.length())),
                        false);

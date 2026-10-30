@@ -57,7 +57,7 @@ public final class GambitBlockTest {
                 "temporarily lock your", "equipment and potions",
                 "After being airborne for {~}s"}) {
             report("★ 逐行條目沒有譯文：「" + line + "」",
-                   LineTranslator.lookup(line, store, false) == null);
+                   TemplateLookup.lookup(line, store, false) == null);
         }
 
         System.out.println(failures == 0

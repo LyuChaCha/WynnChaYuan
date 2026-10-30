@@ -65,7 +65,7 @@ public final class ItemNameContextTest {
 
     private static int leak(TranslationStore store, String template, String name,
                             StringBuilder wrong) {
-        String hit = LineTranslator.lookup(template, store, false);
+        String hit = TemplateLookup.lookup(template, store, false);
         if (hit == null || !hit.contains("(" + name + ")")) {
             return 0;
         }
@@ -76,7 +76,7 @@ public final class ItemNameContextTest {
     }
 
     private static int shown(TranslationStore store, String template, String name) {
-        String hit = LineTranslator.lookup(template, store, false);
+        String hit = TemplateLookup.lookup(template, store, false);
         return hit != null && hit.contains("(" + name + ")") ? 1 : 0;
     }
 
@@ -151,8 +151,8 @@ public final class ItemNameContextTest {
         long until = System.nanoTime() + 1_500_000_000L;
         while (System.nanoTime() < until) {
             for (String n : names) {
-                LineTranslator.lookup(n + " {#}{#}", store, false);
-                LineTranslator.lookup(n + " to {p}", store, false);
+                TemplateLookup.lookup(n + " {#}{#}", store, false);
+                TemplateLookup.lookup(n + " to {p}", store, false);
                 if (store.lookup(n) == null) {
                     lost++;
                 }

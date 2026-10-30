@@ -191,10 +191,10 @@ public final class EventFrameTest {
         check("不是倒數的那一句不碰", LineTranslator.translateChat(StyledText.fromString(
                 "The Smoldering Ruin World Event has ended! Click to track"), store) == null);
         check("事件名裡有數值的不碰（填回去會跟倒數搶順序）",
-              LineTranslator.eventFrame("{#} The Mk{~} Ruin World Event starts in {~}s! "
+              TemplateLookup.eventFrame("{#} The Mk{~} Ruin World Event starts in {~}s! "
                       + "({~} blocks away) Click to track", store) == null);
-        check("沒有東西的不碰", LineTranslator.eventFrame(null, store) == null
-                && LineTranslator.eventFrame("", store) == null);
+        check("沒有東西的不碰", TemplateLookup.eventFrame(null, store) == null
+                && TemplateLookup.eventFrame("", store) == null);
     }
 
     private static int colourOf(Component whole, String piece) {
