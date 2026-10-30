@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModLog;
 import net.minecraft.network.chat.Component;
 
 import java.nio.charset.StandardCharsets;
@@ -64,7 +65,7 @@ public final class LayoutDebug {
                 sb.append("=== ").append(written).append(" · ").append(oneLine(key))
                   .append(" ===").append(System.lineSeparator())
                   .append(explained).append(System.lineSeparator());
-                System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator()
+                ModLog.info("版面判斷" + System.lineSeparator()
                         + explained);
             } catch (Throwable t) {
                 failures++;
@@ -223,7 +224,7 @@ public final class LayoutDebug {
         for (com.wynntils.core.text.StyledText line : run) {
             sb.append("  原文：").append(line.getString()).append(System.lineSeparator());
         }
-        System.out.println("[WynnChaYuan] 跨行查表" + System.lineSeparator() + sb);
+        ModLog.info("跨行查表" + System.lineSeparator() + sb);
         Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
                 java.nio.file.StandardOpenOption.CREATE,
                 java.nio.file.StandardOpenOption.APPEND);

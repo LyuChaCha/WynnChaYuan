@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.DialogueRewriter;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynntils.handlers.actionbar.ActionBarSegment;
 import com.wynntils.handlers.actionbar.event.ActionBarRenderEvent;
 import com.wynntils.mc.event.SystemMessageEvent;
@@ -136,6 +137,7 @@ public final class ActionBarListener {
         try {
             com.wynnchayuan.render.DialogueIcons.note(event.getMessage());
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#onGameInfoIcons", null, t);
         }
     }
 
@@ -156,6 +158,7 @@ public final class ActionBarListener {
                 DialogueProbe.plain(event.getMessage());
             }
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#onGameInfoRewrite", null, t);
             WynnChaYuan.store().noteEvent("dialogue.rewriteError");
         }
     }
@@ -196,6 +199,7 @@ public final class ActionBarListener {
                 event.setMessage(swapped);
             }
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#onPlainActionBar", null, t);
             WynnChaYuan.store().noteEvent("actionbar.plainError");
         }
     }
@@ -394,6 +398,7 @@ public final class ActionBarListener {
                 collect(raw);
             }
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#leftovers", null, t);
         }
     }
 
@@ -414,6 +419,7 @@ public final class ActionBarListener {
             }
             WynnChaYuan.store().record(template, "name", "actionbar", "actionbar/column");
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#collect", null, t);
         }
     }
 
@@ -432,6 +438,7 @@ public final class ActionBarListener {
             }
             return was - now;
         } catch (Throwable t) {
+            ErrorDebug.note("ActionBarListener#owed", null, t);
             return 0;
         }
     }

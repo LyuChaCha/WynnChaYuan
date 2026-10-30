@@ -1,5 +1,6 @@
 package com.wynnchayuan.cape;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public final class Gif {
         try {
             return walk(data, Integer.MAX_VALUE, false, null).frames().size();
         } catch (IOException e) {
+            ErrorDebug.note("Gif#countFrames", null, e);
             return 0;
         }
     }
@@ -49,6 +51,7 @@ public final class Gif {
         try {
             return walk(data, Integer.MAX_VALUE, false, null).complete();
         } catch (IOException e) {
+            ErrorDebug.note("Gif#complete", null, e);
             return false;
         }
     }

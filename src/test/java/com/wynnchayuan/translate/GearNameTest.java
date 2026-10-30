@@ -99,10 +99,10 @@ public final class GearNameTest {
         check("撞名的技能標題不加原文（實際 " + store.lookup("Diffraction") + "）",
               "晶化蔓延".equals(store.lookup("Diffraction")));
 
-        TranslationStore.holdAppendedOriginal(true);
-        check("★ 敘述那幾行只給譯名（實際 " + store.lookup("Smithy") + "）",
-              "鐵匠鋪".equals(store.lookup("Smithy")));
-        TranslationStore.holdAppendedOriginal(false);
+        try (LookupScope scope = LookupScope.holdAppendedOriginal(true)) {
+            check("★ 敘述那幾行只給譯名（實際 " + store.lookup("Smithy") + "）",
+                  "鐵匠鋪".equals(store.lookup("Smithy")));
+        }
         check("放開之後名稱那一行照樣附原文（實際 " + store.lookup("Smithy") + "）",
               "鐵匠鋪 (Smithy)".equals(store.lookup("Smithy")));
     }

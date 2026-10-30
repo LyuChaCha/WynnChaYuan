@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.Style;
@@ -22,6 +23,7 @@ public final class PairedFont {
                         .setStyle(Style.EMPTY.withFont(ours)));
             }
         } catch (Throwable t) {
+            ErrorDebug.note("PairedFont#warm", null, t);
         }
     }
 

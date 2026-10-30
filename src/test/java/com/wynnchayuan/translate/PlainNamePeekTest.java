@@ -88,10 +88,10 @@ public final class PlainNamePeekTest {
         check("★ 同名的技能不能被連坐：素材 Black Hole 也是刺客的技能，不附（實際 "
                 + store.lookup("Black Hole") + "）",
               "黑洞".equals(store.lookup("Black Hole")));
-        TranslationStore.holdAppendedOriginal(true);
-        check("★ 不是名稱那一行（敘述裡提到同一個名字）不附",
-              "酸性岩漿".equals(store.lookup("Acid Magma")));
-        TranslationStore.holdAppendedOriginal(false);
+        try (LookupScope scope = LookupScope.holdAppendedOriginal(true)) {
+            check("★ 不是名稱那一行（敘述裡提到同一個名字）不附",
+                  "酸性岩漿".equals(store.lookup("Acid Magma")));
+        }
         store.setNameMode(CollectorConfig.ItemNames.OFF);
         check("★ 關掉物品名稱：素材照舊是譯名，不附原文（實際 " + store.lookup("Acid Magma") + "）",
               "酸性岩漿".equals(store.lookup("Acid Magma")));

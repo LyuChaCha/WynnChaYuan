@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -49,6 +50,7 @@ public final class PanelShot {
                     java.nio.file.StandardOpenOption.CREATE,
                     java.nio.file.StandardOpenOption.APPEND);
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#log", null, t);
         }
     }
 
@@ -77,6 +79,7 @@ public final class PanelShot {
             return key != null
                     && key.getValue() != com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue();
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#hasKey", null, t);
             return false;
         }
     }
@@ -93,6 +96,7 @@ public final class PanelShot {
             }
             return bound.getTranslatedKeyMessage().getString();
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#keyName", null, t);
             return "未設定";
         }
     }
@@ -124,6 +128,7 @@ public final class PanelShot {
                 }
             }
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#conflict", null, t);
         }
         return null;
     }
@@ -331,6 +336,7 @@ public final class PanelShot {
                         .relativize(abs).toString().replace('\\', '/');
             }
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#shown", null, t);
         }
         return abs.toString();
     }
@@ -374,6 +380,7 @@ public final class PanelShot {
                     Component.literal(WynnChaYuan.MOD_NAME),
                     message);
         } catch (Throwable t) {
+            ErrorDebug.note("PanelShot#toast", null, t);
         }
     }
 

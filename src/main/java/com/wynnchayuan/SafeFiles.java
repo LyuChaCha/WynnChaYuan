@@ -8,6 +8,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.charset.CharacterCodingException;
@@ -65,12 +66,12 @@ public final class SafeFiles {
                 target = file.resolveSibling(base + "-" + n);
             }
             Files.move(file, target);
-            System.err.println("[WynnChaYuan] " + file.getFileName() + " 讀不懂（" + why
+            ModLog.warn(file.getFileName() + " 讀不懂（" + why
                     + "），已改名為 " + target.getFileName() + "，這次用預設值");
             prune(file, keep);
             return target;
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] " + file.getFileName() + " 讀不懂（" + why
+            ModLog.warn(file.getFileName() + " 讀不懂（" + why
                     + "），也沒辦法改名：" + e);
             return null;
         }
@@ -91,7 +92,8 @@ public final class SafeFiles {
             for (int i = Math.max(keep, 1); i < old.size(); i++) {
                 Files.deleteIfExists(old.get(i));
             }
-        } catch (Exception ignored) {
+        } catch (Exception failure) {
+            ErrorDebug.note("SafeFiles#prune", null, failure);
         }
     }
 
@@ -105,7 +107,7 @@ public final class SafeFiles {
                 return null;
             }
         } catch (IOException e) {
-            System.err.println("[WynnChaYuan] 讀不到 " + file.getFileName() + "：" + e);
+            ModLog.warn("讀不到 " + file.getFileName() + "：" + e);
             return null;
         }
         JsonElement root;
@@ -115,17 +117,18 @@ public final class SafeFiles {
             if (e.getCause() instanceof CharacterCodingException) {
                 setAside(file, "不是 UTF-8");
             } else {
-                System.err.println("[WynnChaYuan] 讀不到 " + file.getFileName() + "：" + e);
+                ModLog.warn("讀不到 " + file.getFileName() + "：" + e);
             }
             return null;
         } catch (JsonParseException | IllegalStateException e) {
+            ErrorDebug.note("SafeFiles#readObject", null, e);
             setAside(file, "JSON 不完整");
             return null;
         } catch (IOException e) {
             if (e instanceof CharacterCodingException) {
                 setAside(file, "不是 UTF-8");
             } else {
-                System.err.println("[WynnChaYuan] 讀不到 " + file.getFileName() + "：" + e);
+                ModLog.warn("讀不到 " + file.getFileName() + "：" + e);
             }
             return null;
         } catch (RuntimeException | StackOverflowError e) {
@@ -147,6 +150,7 @@ public final class SafeFiles {
             in.skipValue();
             return in.peek() == JsonToken.END_DOCUMENT;
         } catch (Exception | StackOverflowError e) {
+            ErrorDebug.note("SafeFiles#parsesAsObject", null, e);
             return false;
         }
     }

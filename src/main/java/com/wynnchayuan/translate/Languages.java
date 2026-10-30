@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModLog;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -65,6 +66,7 @@ public final class Languages {
             }
             return out.isEmpty() ? List.of(DEFAULT) : List.copyOf(out);
         } catch (Exception e) {
+            ErrorDebug.note("Languages#bundled", null, e);
             return List.of(DEFAULT);
         }
     }
@@ -103,15 +105,16 @@ public final class Languages {
                             if (inside.findAny().isEmpty()) {
                                 Files.delete(p);
                             }
-                        } catch (Exception ignored) {
+                        } catch (Exception failure) {
+                            ErrorDebug.note("Languages#migrateFlat", null, failure);
                         }
                     });
             }
-            System.out.println("[WynnChaYuan] 舊版的譯文已搬進 " + lang + "/（"
+            ModLog.info("舊版的譯文已搬進 " + lang + "/（"
                     + moved + " 個檔案）");
             return moved;
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 搬移舊版譯文失敗：" + e.getMessage());
+            ModLog.warn("搬移舊版譯文失敗：" + e.getMessage());
             return 0;
         }
     }

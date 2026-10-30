@@ -197,6 +197,7 @@ final class ChatTranslator {
             }
             return out;
         } catch (Throwable t) {
+            ErrorDebug.note("ChatTranslator#npcChatColours", null, t);
             return rebuilt;
         }
     }

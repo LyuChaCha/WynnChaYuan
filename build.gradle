@@ -1758,6 +1758,22 @@ tasks.register('runReloadRaceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runReloadRaceChecks' }
 
+tasks.register('runLookupScopeChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LookupScopeTest'
+}
+tasks.named('check') { dependsOn 'runLookupScopeChecks' }
+
+tasks.register('runErrorDebugChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ErrorDebugTest'
+}
+tasks.named('check') { dependsOn 'runErrorDebugChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'

@@ -6,6 +6,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.ModLog;
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -120,6 +122,7 @@ public final class CaptureStore {
             String w = where.get();
             return w == null || w.isBlank() ? null : w;
         } catch (Throwable t) {
+            ErrorDebug.note("CaptureStore#whereNow", null, t);
             return null;
         }
     }
@@ -403,7 +406,7 @@ public final class CaptureStore {
             com.wynnchayuan.SafeFiles.moveAtomically(tmp, file);
         } catch (IOException e) {
             dirty.set(true);
-            System.err.println("[WynnChaYuan] 寫入失敗 " + file + ": " + e.getMessage());
+            ModLog.warn("寫入失敗 " + file + ": " + e.getMessage());
         }
     }
 
@@ -455,6 +458,7 @@ public final class CaptureStore {
             c.ctx = cleanCtx(c.ctx);
             return c;
         } catch (RuntimeException e) {
+            ErrorDebug.note("CaptureStore#row", null, e);
             return null;
         }
     }

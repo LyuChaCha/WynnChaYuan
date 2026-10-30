@@ -2,6 +2,7 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import com.wynnchayuan.render.DialogueOverlay;
@@ -24,6 +25,7 @@ public final class RenderListener {
         try {
             GuiTextCapture.record(event.getTooltips(), event.getItemStack());
         } catch (Throwable t) {
+            ErrorDebug.note("RenderListener#onTooltip", null, t);
             WynnChaYuan.store().noteEvent("capture.guiError");
         }
         CollectorConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
@@ -39,6 +41,7 @@ public final class RenderListener {
             push = TooltipPanel.wouldPush(event.getTooltips(),
                     event.getMouseX(), event.getMouseY(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("RenderListener#onTooltip", null, t);
             push = false;
         }
         if (push) {
@@ -122,6 +125,7 @@ public final class RenderListener {
                     .translateInPlace(original, WynnChaYuan.translations()));
             return out == null || out.isEmpty() ? original : out;
         } catch (Throwable t) {
+            ErrorDebug.note("RenderListener#inPlaceLines", null, t);
             return original;
         }
     }
@@ -137,6 +141,7 @@ public final class RenderListener {
                 event.setPositioner(moved);
             }
         } catch (Throwable t) {
+            ErrorDebug.note("RenderListener#onTooltipPosition", null, t);
         }
     }
 
@@ -192,6 +197,7 @@ public final class RenderListener {
             TrackerOverlay.render(graphics);
             LookAtTranslator.render(graphics);
         } catch (Throwable t) {
+            ErrorDebug.note("RenderListener#renderHud", null, t);
             WynnChaYuan.store().noteEvent("render.dialogueError");
         }
     }

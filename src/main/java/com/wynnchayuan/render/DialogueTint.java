@@ -9,6 +9,7 @@ import com.google.gson.JsonParser;
 import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.capture.LineParts;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
@@ -76,6 +77,7 @@ public final class DialogueTint {
             return JsonParser.parseReader(
                     new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
         } catch (Exception e) {
+            ErrorDebug.note("DialogueTint#bundled", null, e);
             return null;
         }
     }

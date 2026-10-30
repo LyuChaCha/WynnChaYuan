@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -52,6 +53,7 @@ public final class Releases {
             return JsonParser.parseString(new String(in.readAllBytes(),
                     StandardCharsets.UTF_8)).getAsJsonObject();
         } catch (Exception e) {
+            ErrorDebug.note("Releases#bundled", null, e);
             return null;
         }
     }
@@ -87,6 +89,7 @@ public final class Releases {
                 }
                 return;
             } catch (Exception e) {
+                ErrorDebug.note("Releases#fetch", null, e);
             }
         }
     }
@@ -178,6 +181,7 @@ public final class Releases {
                 lang = net.minecraft.client.Minecraft.getInstance()
                         .getLanguageManager().getSelected();
             } catch (Exception e) {
+                ErrorDebug.note("Releases#localised", null, e);
                 return one;
             }
         }

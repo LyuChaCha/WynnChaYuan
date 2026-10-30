@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -111,6 +112,7 @@ public final class Presence {
             IDS.put(uuid, id);
             return id;
         } catch (Exception e) {
+            ErrorDebug.note("Presence#idOf", null, e);
             return null;
         }
     }
@@ -195,6 +197,7 @@ public final class Presence {
             return new Roster(Set.copyOf(users), Map.copyOf(capes), Set.copyOf(hidden),
                     Set.copyOf(rainbow), Map.copyOf(shown));
         } catch (Exception e) {
+            ErrorDebug.note("Presence#parse", null, e);
             return null;
         }
     }
@@ -326,7 +329,7 @@ public final class Presence {
         loginFailedAt = System.currentTimeMillis();
         if (!problem.equals(lastProblem)) {
             lastProblem = problem;
-            System.out.println("[WynnChaYuan] 登記站登入沒有成功：" + problem);
+            ModLog.info("登記站登入沒有成功：" + problem);
         }
         return false;
     }
@@ -393,6 +396,7 @@ public final class Presence {
                     && root.get("member").getAsJsonPrimitive().isBoolean()
                     && root.get("member").getAsBoolean();
         } catch (Exception e) {
+            ErrorDebug.note("Presence#memberOf", null, e);
             return false;
         }
     }
@@ -521,6 +525,7 @@ public final class Presence {
         try {
             why = JsonParser.parseString(body).getAsJsonObject().get("why").getAsString();
         } catch (Exception e) {
+            ErrorDebug.note("Presence#resultOf", null, e);
         }
         return switch (why) {
             case "too large" -> Result.TOO_LARGE;
@@ -608,6 +613,7 @@ public final class Presence {
             String url = JsonParser.parseString(body).getAsJsonObject().get("url").getAsString();
             return url.startsWith(BASE + "/capes#t=") ? url : null;
         } catch (Exception e) {
+            ErrorDebug.note("Presence#signedInLink", null, e);
             return null;
         }
     }
@@ -622,6 +628,7 @@ public final class Presence {
             return response.statusCode() == 200 && response.body().length <= MAX_CAPE_BYTES
                     ? response.body() : null;
         } catch (Exception e) {
+            ErrorDebug.note("Presence#capeBytes", null, e);
             return null;
         }
     }
@@ -646,6 +653,7 @@ public final class Presence {
                     && root.get("ok").getAsJsonPrimitive().isBoolean()
                     && root.get("ok").getAsBoolean() ? DeleteResult.DONE : DeleteResult.FAILED;
         } catch (Exception e) {
+            ErrorDebug.note("Presence#deleteResultOf", null, e);
             return DeleteResult.FAILED;
         }
     }

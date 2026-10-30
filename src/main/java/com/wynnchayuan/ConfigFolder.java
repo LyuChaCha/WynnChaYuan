@@ -1,5 +1,6 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -29,6 +30,7 @@ public final class ConfigFolder {
             Files.createDirectories(debug);
             return debug;
         } catch (Exception e) {
+            ErrorDebug.note("ConfigFolder#debugDir", null, e);
             return dir;
         }
     }
@@ -50,7 +52,7 @@ public final class ConfigFolder {
                 removed += delete(p);
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 整理設定資料夾失敗：" + e);
+            ModLog.warn("整理設定資料夾失敗：" + e);
         }
         Path translations = dir.resolve("translations");
         if (Files.isDirectory(translations)) {
@@ -59,19 +61,19 @@ public final class ConfigFolder {
                     removed += delete(p);
                 }
             } catch (Exception e) {
-                System.err.println("[WynnChaYuan] 整理譯文快取失敗：" + e);
+                ModLog.warn("整理譯文快取失敗：" + e);
             }
         }
         if (removed > 0) {
-            System.out.println("[WynnChaYuan] 清掉舊版留下的 " + removed + " 個檔（暫存檔與不再使用的記錄）");
+            ModLog.info("清掉舊版留下的 " + removed + " 個檔（暫存檔與不再使用的記錄）");
         }
         int moved = moveOldDebug(dir);
         if (moved > 0) {
-            System.out.println("[WynnChaYuan] 把 " + moved + " 個診斷檔搬進 " + DEBUG + "/");
+            ModLog.info("把 " + moved + " 個診斷檔搬進 " + DEBUG + "/");
         }
         int stale = pruneDebug(dir, System.currentTimeMillis());
         if (stale > 0) {
-            System.out.println("[WynnChaYuan] 刪掉 " + stale + " 個超過兩週沒更新的診斷檔");
+            ModLog.info("刪掉 " + stale + " 個超過兩週沒更新的診斷檔");
         }
         return removed;
     }
@@ -89,10 +91,11 @@ public final class ConfigFolder {
                         removed += delete(p);
                     }
                 } catch (Exception e) {
+                    ErrorDebug.note("ConfigFolder#pruneDebug", null, e);
                 }
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 清診斷檔失敗：" + e);
+            ModLog.warn("清診斷檔失敗：" + e);
         }
         return removed;
     }
@@ -116,7 +119,7 @@ public final class ConfigFolder {
                 moved++;
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 搬診斷檔失敗：" + e);
+            ModLog.warn("搬診斷檔失敗：" + e);
         }
         return moved;
     }
@@ -129,6 +132,7 @@ public final class ConfigFolder {
         try {
             return Files.deleteIfExists(p) ? 1 : 0;
         } catch (Exception e) {
+            ErrorDebug.note("ConfigFolder#delete", null, e);
             return 0;
         }
     }

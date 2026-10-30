@@ -70,7 +70,7 @@ public final class WynnventoryGearNameTest {
                 both.size() == 2 && both.get(0).getString().equals("暗物質之盔")
                         && both.get(1).getString().strip().equals("(Dark Matter)"));
 
-        check("查完不留名稱列的旗標", !TranslationStore.onNameLine() && !TranslationStore.appendedOriginalHeld());
+        check("查完不留名稱列的旗標", !TranslationStore.NAME_LINE.get() && !TranslationStore.HOLD_APPENDED.get());
 
         TranslationStore bundled = new TranslationStore();
         bundled.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations")

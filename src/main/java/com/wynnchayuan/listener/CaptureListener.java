@@ -10,6 +10,7 @@ import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.LookAtTranslator;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
@@ -115,7 +116,8 @@ public final class CaptureListener {
             } else {
                 WynnChaYuan.store().noteEvent("speaker.audit.mismatch");
             }
-        } catch (Throwable ignored) {
+        } catch (Throwable failure) {
+            ErrorDebug.note("CaptureListener#auditSpeaker", null, failure);
         }
     }
 
@@ -151,7 +153,8 @@ public final class CaptureListener {
             String verdict = withQuest ? (same ? "match" : "mismatch")
                                        : (same ? "missed" : "avoided");
             WynnChaYuan.store().noteEvent("quest.audit." + verdict);
-        } catch (Throwable ignored) {
+        } catch (Throwable failure) {
+            ErrorDebug.note("CaptureListener#auditQuest", null, failure);
         }
     }
 
@@ -283,6 +286,7 @@ public final class CaptureListener {
                 event.setText(StyledText.fromComponent(translated));
             }
         } catch (Throwable t) {
+            ErrorDebug.note("CaptureListener#translateNametag", null, t);
             WynnChaYuan.store().noteEvent("render.nametagError");
         }
     }

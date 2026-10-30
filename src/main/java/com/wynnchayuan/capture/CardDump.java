@@ -6,7 +6,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -165,6 +167,7 @@ public final class CardDump {
             }
             record(styled, key);
         } catch (Throwable t) {
+            ErrorDebug.note("CardDump#note", null, t);
         }
     }
 
@@ -268,7 +271,7 @@ public final class CardDump {
             com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
         } catch (Throwable t) {
             dirty.set(true);
-            System.err.println("[WynnChaYuan] 寫入失敗 " + target + ": " + t);
+            ModLog.warn("寫入失敗 " + target + ": " + t);
         }
     }
 
@@ -344,6 +347,7 @@ public final class CardDump {
                 top = Math.max(top, c.seq + 1);
                 cards.put(c.src, c);
             } catch (Throwable t) {
+                ErrorDebug.note("CardDump#load", null, t);
             }
         }
         nextSeq.set(top);

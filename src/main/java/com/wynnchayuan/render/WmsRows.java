@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.translate.WmsBridge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -42,7 +43,7 @@ public final class WmsRows {
             g.drawString(font, shown, right - font.width(shown), y + (height - 8) / 2, INK, false);
         } catch (Throwable t) {
             broken = true;
-            System.out.println("[WynnChaYuan] WynnMarketSearch 的結果列畫不上譯名，停用這一項"
+            ModLog.info("WynnMarketSearch 的結果列畫不上譯名，停用這一項"
                     + "（搜尋本身不受影響）：" + t);
         }
     }

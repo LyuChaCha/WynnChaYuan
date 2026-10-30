@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -66,6 +67,7 @@ public final class TrackerOverlay {
             String name = com.wynntils.core.components.Models.Activity.getTrackedName();
             return name != null && !name.isBlank();
         } catch (Throwable t) {
+            ErrorDebug.note("TrackerOverlay#stillTracking", null, t);
             return true;
         }
     }

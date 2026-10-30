@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
@@ -72,6 +73,7 @@ public final class LookAtTranslator {
             return best == null || bestPerp > SPEAKER_RADIUS
                     ? null : best.getStringWithoutFormatting().strip();
         } catch (Throwable t) {
+            ErrorDebug.note("LookAtTranslator#nearestLabel", null, t);
             return null;
         }
     }
@@ -105,6 +107,7 @@ public final class LookAtTranslator {
             }
             return best;
         } catch (Throwable t) {
+            ErrorDebug.note("LookAtTranslator#labelAbove", null, t);
             return null;
         }
     }
