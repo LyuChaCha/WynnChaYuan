@@ -10,112 +10,31 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.ToIntFunction;
 
-/**
- * 「譯名 + 原文」太長時，把原文挪到<b>下一行</b>。
- *
- * <h2>凸出去的是什麼</h2>
- * Wynncraft 2.1 的物品 tooltip 外框不是遊戲畫的方塊，是<b>字型畫的</b>：名稱那一行
- * 開頭那幾個私有區字元（{@code 󏿰󏿏󐀅}）一邊位移一邊蓋上外框與徽記的圖，
- * 而那些圖的大小是伺服器照<b>英文</b>的寬度挑好的。
- *
- * <p>所以名稱一長就凸出去——遊戲的黑底會跟著變寬，字型畫的那個框不會。實機回報：
- *
- * <pre>
- *   烬咒牧杖 (Cindercurse Crosier) [51.0%]
- *   └────────── 框在這裡就結束了 ──────────┘  後面半截在框外
- * </pre>
- *
- * <h2>怎麼判斷「太長」</h2>
- * 跟<b>整份 tooltip 最寬的那一行</b>比。中文比英文短，所以真正會超過的就是附在
- * 後面的那段原文。
- *
- * <p>先前是跟<b>同一行的原文</b>比，理由是那一行的寬度正是伺服器畫框時用的寬度。
- * 但那個門檻太低：橡木弓的英文名稱只有 68px，而整份 tooltip 被
- * 「{@code ✔ Class Type  Archer/Hunter}」撐到 160px——「{@code 橡木弓 (Oak Wood Bow)}」
- * 才 127px，整份看起來綽綽有餘，卻因為比 68px 寬而被拆成兩行。實機回報的
- * 「格式不對」就是這個：名字底下無端多出一行，把下面整排往下推。
- *
- * <p>收得進整份的寬度就留在一行；真正長到連整份都撐不下的（「{@code 烬咒牧杖
- * (Cindercurse Crosier) [51.0%]}」）才拆。
- *
- * <p>拆完第一行變成「{@code 烬咒牧杖 [51.0%]}」，比英文還窄，一定收得進框裡；
- * 原文自己一行落在框下面，看得到也複製得到。耐久度留在第一行——它跟名稱是一組，
- * 而且框上本來就替它留了位置。
- *
- * <h2>為什麼一定要排在撐寬<b>之前</b></h2>
- * 第一版排在 {@link TooltipWiden#fit} 後面，理由是撐寬那一步的前提是
- * 「譯文與原文一行對一行」，而這裡會多生一行。結果實機的欄位跑掉了：
- *
- * <pre>
- *   職業類型      法師/闇導士        ← 停在原本的右緣
- *   戰鬥等級                  1     ← 被推到新的右緣
- * </pre>
- *
- * <p>撐寬看到的還是<b>沒拆開</b>的「{@code 橡木魔杖 (Oak Wood Wand)}」——那一行比英文
- * 寬了六十幾像素，於是整份 tooltip 照那個寬度撐開，靠右的欄位跟著往右移。等這裡再把
- * 名稱拆成兩行，寬度已經回不去了，右邊就空出一大塊。
- *
- * <p>所以改成先拆再撐寬；「一行對一行」靠 {@link Split} 同步補一行原文維持：多出來的
- * 那一行拿原本的名稱那一行當對照，兩截都比它窄，撐寬那一步因此什麼都不會做——
- * 正是我們要的。
- *
- * <h2>譯文的行數可以比原文少</h2>
- * 一句折成三列的敘述，中文兩列就講完了，譯文那一份就比原文少一行。先前這裡要求
- * 置中旗標跟<b>譯文</b>等長（旗標是照原文算的，所以等於要求兩邊行數相同），對不上
- * 就整個不做事——於是「還沒鑑定的物品」一律不拆，因為它們都帶著那句三列的
- * 「This item's power has been sealed, an Item Identifier can unlock its potential.」。
- * 使用者 2026-10-10 回報的精通書卷就是這樣：名稱那一行把整份說明撐寬了一半，
- * 右邊的數值卻還停在原本的右緣。
- *
- * <p>名稱在最前面兩行，併行都發生在它後面，所以名稱那幾行兩邊的行號本來就對得上。
- * 旗標跟原文等長、或跟譯文等長都收；拆出一行時照它自己的長度補一格。
- *
- * <h2>看不見的第 0 行不會被動到</h2>
- * 物品名稱其實是兩行，第 0 行寬度是 0（見 {@code TooltipPanel}）。量出來是 0，
- * 「有沒有超過」永遠不成立，所以那一行照舊。
- */
+// Wynncraft tooltip 外框是字型畫的，大小照英文寬度挑
 public final class NameWrap {
 
     private NameWrap() {}
 
-    /**
-     * 名稱那一行超過原文寬度時，把「{@code  (原文)}」拆成下一行。
-     *
-     * @param original   遊戲送來的原文，逐行
-     * @param translated 翻好的每一行
-     * @param centered   每一行是不是置中的；拆出一行就要跟著補一格
-     * @param store      查「括號裡是不是我們附上去的原文」用的
-     * @param width      量寬度；正式路徑是 {@code mc.font.width}，測試注入假字型
-     * @return 不需要拆時三份都是傳進來的那一份；否則三份同步多一行
-     */
     public static Split split(List<Component> original, List<Component> translated,
                               boolean[] centered, TranslationStore store,
                               ToIntFunction<Component> width) {
         Split same = new Split(original, translated, centered);
         if (original == null || translated == null || centered == null || store == null
                 || !store.namesWithOriginal()
-                // 旗標是照原文算的；譯文併過行的話它跟原文等長、比譯文長。見類別說明。
                 || (centered.length != translated.size() && centered.length != original.size())) {
             return same;
         }
-        // 整份 tooltip 有多寬。名字只要收得進這個寬度就不必拆——拆了反而多一行。
         int frame = 0;
         for (Component row : original) {
             frame = Math.max(frame, width.applyAsInt(row));
         }
         int n = Math.min(original.size(), translated.size());
         for (int i = 0; i < n; i++) {
-            // 只拆名稱那兩行。行數對不上時後面的行號已經錯開；對得上時後面也不是名稱——
-            // 說明裡會附原文的只有 Wynntils「物品猜測」的候選清單（見 GuessListRow），
-            // 那幾列是一格一格的名字，從中間拆出一個原文會把清單拆散（一列兩個名字時，
-            // 第一個的原文被搬到下一列、第二個留著）。太寬就交給撐寬那一步。
             if (i >= NAME_ROWS) {
                 break;
             }
             Component line = translated.get(i);
-            // 放得下整份 tooltip 就不算太長，見 #split 的「怎麼判斷太長」。
             int budget = Math.max(width.applyAsInt(original.get(i)), frame);
-            // headless（測試、沒有字型）量出來是 0，跟第 0 行一樣不動
             if (width.applyAsInt(original.get(i)) <= 0
                     || width.applyAsInt(line) <= budget) {
                 continue;
@@ -126,7 +45,6 @@ public final class NameWrap {
                 continue;
             }
             List<Component> out = new ArrayList<>(translated);
-            // 開頭那一個空白屬於「接在名字後面」，跟著括號一起走
             out.set(i, join(slice(pieces, 0, span[0]),
                             slice(pieces, span[1], text(pieces).length())));
             out.add(i + 1, indented(indent(pieces, width),
@@ -136,18 +54,11 @@ public final class NameWrap {
         return same;
     }
 
-    /** 物品名稱最多佔前兩行：第 0 行看不見，看得見的在第 1 行。 */
     private static final int NAME_ROWS = 2;
 
-    /**
-     * 拆完的三份：原文、譯文、置中旗標，行數一致。
-     *
-     * <p>後面的 {@link TooltipWiden#fit} 要三份對得起來才肯動，見 {@link #split}。
-     */
     public record Split(List<Component> original, List<Component> translated,
                         boolean[] centered) {}
 
-    /** 第 {@code i} 項複製一份插在它後面，行數才跟拆開的譯文對得起來。 */
     private static <T> List<T> insert(List<T> rows, int i) {
         List<T> out = new ArrayList<>(rows);
         if (i < out.size()) {
@@ -156,7 +67,6 @@ public final class NameWrap {
         return out;
     }
 
-    /** 見 {@link #insert(List, int)}：置中旗標也要跟著補一格。 */
     private static boolean[] insert(boolean[] flags, int i) {
         boolean[] out = new boolean[flags.length + 1];
         System.arraycopy(flags, 0, out, 0, i + 1);
@@ -165,7 +75,6 @@ public final class NameWrap {
         return out;
     }
 
-    /** 一段字與它的樣式。整行拆成這樣才切得開。 */
     private record Piece(String text, Style style) {}
 
     private static List<Piece> pieces(Component line) {
@@ -187,7 +96,6 @@ public final class NameWrap {
         return sb.toString();
     }
 
-    /** 取 {@code [from, to)} 這一段，每一小段各自留著自己的樣式。 */
     private static List<Piece> slice(List<Piece> pieces, int from, int to) {
         List<Piece> out = new ArrayList<>();
         int at = 0;
@@ -203,37 +111,19 @@ public final class NameWrap {
         return out;
     }
 
-    /**
-     * 名字前面那一截<b>圖</b>有多寬。
-     *
-     * <h2>為什麼第二行需要它</h2>
-     * 名稱那一行開頭是位移字元與徽記的圖（{@code 󏿰󏿏󐀅}），名字是從那之後
-     * 才開始畫的。拆出來的第二行沒有那一截，於是貼著面板的左緣起頭，
-     * 比名字凸出去一大塊——使用者回報的「名稱跑掉」：
-     *
-     * <pre>
-     *       橡木魔杖          ← 名字從徽記後面開始
-     *   (Oak Wood Wand)      ← 第二行卻從最左邊開始
-     * </pre>
-     *
-     * <p>所以量出那一截的寬度，第二行用同樣的寬度墊開，兩行就對齊了。
-     * 墊的是 {@code minecraft:space} 字型的位移字元，不是空格——空格的寬度
-     * 是固定的 4px，湊不出任意寬度。
-     */
     private static int indent(List<Piece> pieces, ToIntFunction<Component> width) {
         List<Piece> lead = new ArrayList<>();
         for (Piece p : pieces) {
             if (p.text().codePoints().anyMatch(
                     cp -> !GlyphSplitter.isGlyphCodePoint(cp)
                             && !Character.isWhitespace(cp))) {
-                break;                         // 開始有字了
+                break;
             }
             lead.add(p);
         }
         return lead.isEmpty() ? 0 : width.applyAsInt(join(lead));
     }
 
-    /** 前面墊 {@code px} 寬，讓這一行對齊上一行的名字。見 {@link #indent}。 */
     private static Component indented(int px, List<Piece> body) {
         Component line = join(body);
         if (px <= 0) {

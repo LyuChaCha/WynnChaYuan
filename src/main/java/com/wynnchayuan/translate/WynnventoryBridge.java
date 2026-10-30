@@ -12,56 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Wynnventory（交易市場價格、獎勵池）的文字也翻。
- *
- * <h2>它的字從哪裡來</h2>
- * 兩條路，所以這裡也是兩塊：
- * <ol>
- *   <li><b>語言檔的鍵</b>——價格框的標籤（{@code Lowest: }）、獎勵畫面的按鈕、設定畫面、
- *       聊天提示、按鍵名稱，全部是 {@code Component.translatable("…wynnventory…")}。
- *       它只附英文一份語言檔，而我們的譯文語言又跟遊戲語言無關（多數人遊戲開英文），
- *       所以不能靠「替它補一份語言檔」。做法是把遊戲的 {@link Language} 包一層
- *       （{@link #wrap}）：帶 {@code wynnventory} 的鍵先照它自己的英文查我們的表。</li>
- *   <li><b>寫死的字</b>——價格框第一行的物品名、{@code No data yet.}、預測價格底下
- *       一項一項的數值名、獎勵池的意象清單。這些在它畫價格框之前改
- *       （{@link #lines}，掛在 {@code RenderUtils#drawTooltip} 上）。</li>
- * </ol>
- *
- * <h2>按住 Shift 看原文</h2>
- * 跟物品名稱同一個開關（「按住 Shift 暫時換成另一種」）。語言那一層有個麻煩：
- * {@code TranslatableContents} 會把查到的字記在自己身上，認的是「{@link Language}
- * 還是不是同一個物件」。所以開關一變（{@link #tick}），就重新包一個<b>新的</b>物件塞回去
- * （{@link #refresh}），所有畫面上的字下一次畫的時候自己重查——不必去找它們。
- *
- * <h2>沒裝的人</h2>
- * {@link #installed} 是假的時候三個入口都原樣放行：不包語言、不掛 tick、
- * 設定畫面也不出現那一列。
- *
- * <p>譯文在 {@code scoped/wynnventory.json}，鍵是 Wynnventory 的<b>英文原句</b>
- * （不是它的語言鍵——那樣語料檔才跟其他檔一個樣，validate 也照常檢查）。
- */
+// Wynnventory 只附英文語言檔，所以包一層 Language
 public final class WynnventoryBridge {
 
     private WynnventoryBridge() {}
 
-    /** {@code scoped/wynnventory.json}，見 {@link FileIndex#SCOPED}。 */
     public static final String SCOPE = "wynnventory";
 
     private static volatile Boolean installed;
 
-    /**
-     * 現在要不要翻：開關開著、而且沒有按住 Shift。
-     *
-     * <p>語言那一層可能在別的執行緒被問到（資源重載），所以不在那裡讀鍵盤與設定，
-     * 只讀這個旗子；旗子由 {@link #tick} 在主執行緒更新。
-     */
     private static volatile boolean active;
 
     private static boolean ticked;
     private static int seenGeneration;
 
-    /** 有沒有裝 Wynnventory。 */
     public static boolean installed() {
         Boolean known = installed;
         if (known == null) {
@@ -69,14 +33,13 @@ public final class WynnventoryBridge {
             try {
                 found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wynnventory");
             } catch (Throwable t) {
-                found = false;                 // 測試環境沒有 loader
+                found = false;
             }
             installed = known = found;
         }
         return known;
     }
 
-    /** 給測試用。 */
     static void pretend(boolean isInstalled, boolean isActive) {
         installed = isInstalled;
         active = isActive;
@@ -86,16 +49,6 @@ public final class WynnventoryBridge {
         return active;
     }
 
-    // ------------------------------------------------------------ 每一格
-
-    /**
-     * 每個 client tick 叫一次：開關、Shift、語料有沒有換過。有變就讓畫面上的字重查。
-     *
-     * @param enabled    設定裡的「Wynnventory 翻譯」
-     * @param peeking    正按著 Shift 看原文（已經算進「按住 Shift」那個開關）
-     * @param generation 語料的版本，見 {@code TranslationStore#generation}——換譯文語言、
-     *                   背景同步更新都會動到它
-     */
     public static void tick(boolean enabled, boolean peeking, int generation) {
         if (!installed()) {
             return;
@@ -110,21 +63,14 @@ public final class WynnventoryBridge {
         refresh();
     }
 
-    /** 換一個新的外殼，讓所有 {@code TranslatableContents} 下一次自己重查。 */
     private static void refresh() {
         try {
             Language.inject(wrap(Language.getInstance()));
         } catch (Throwable t) {
-            // 換不了就算了：字會停在上一種狀態，不影響別的
         }
     }
 
-    // ------------------------------------------------------------ 語言那一層
-
-    /**
-     * 把遊戲的語言包一層。已經包過的先剝掉再包，回來的一定是<b>新的</b>物件。
-     * 沒裝 Wynnventory 的時候原樣回去。
-     */
+    // TranslatableContents 靠 Language 物件身分決定要不要重查
     public static Language wrap(Language language) {
         if (language == null || !installed()) {
             return language;
@@ -133,17 +79,10 @@ public final class WynnventoryBridge {
         return new Wrapped(base);
     }
 
-    /** 這個鍵是不是 Wynnventory 的。它的鍵都把模組名夾在中間或開頭。 */
     static boolean ours(String key) {
         return key != null && key.contains("wynnventory");
     }
 
-    /**
-     * 語言鍵查到的英文 → 譯文；不翻的時候原樣回去。
-     *
-     * @param base 遊戲自己查到的字。Wynnventory 只有英文語言檔，所以不管遊戲開哪個語言
-     *             這裡都是英文；萬一有人用資源包替它翻過，查不到我們的表，照他的顯示
-     */
     static String lang(String key, String base) {
         if (!active || base == null || !ours(key)) {
             return base;
@@ -158,12 +97,6 @@ public final class WynnventoryBridge {
         return hit == null ? base : hit;
     }
 
-    /**
-     * Wynnventory 的一句英文 → 譯文；沒有就回 {@code null}。
-     *
-     * <p>頭尾的空白照原文接回去：價格框的標籤是「{@code Lowest: }」，後面直接接價格，
-     * 而語料載入時頭尾空白都會被修掉。
-     */
     public static String text(TranslationStore store, String english) {
         if (store == null || english == null) {
             return null;
@@ -180,7 +113,6 @@ public final class WynnventoryBridge {
         return english.substring(0, lead) + hit + english.substring(lead + core.length());
     }
 
-    /** 外殼：Wynnventory 的鍵多查一次，其餘原樣轉給裡面那個。 */
     private static final class Wrapped extends Language {
         private final Language inner;
 
@@ -210,15 +142,6 @@ public final class WynnventoryBridge {
         }
     }
 
-    // ------------------------------------------------------------ 獎勵畫面與通知裡寫死的字
-
-    /**
-     * 獎勵畫面上的一塊標籤（Aspects、Tomes、Mythic、Filters…）→ 譯文；
-     * 不翻、或表裡沒有的回 {@code null}，那一塊照它原本的畫。
-     *
-     * <p>只查 Wynnventory 自己的表，不查一般語料：獎勵池的名字是縮寫（NOTG、TCC）
-     * 與地區名（Sky Islands），照這個專案的規矩留英文，不能讓一般語料碰巧翻掉。
-     */
     public static Component label(Component text) {
         if (!active || text == null) {
             return null;
@@ -227,7 +150,6 @@ public final class WynnventoryBridge {
         return hit == null ? null : Component.literal(hit).withStyle(text.getStyle());
     }
 
-    /** 篩選鈕的名字。不翻或查不到就原樣回去。 */
     public static String word(String english) {
         if (!active || english == null || english.isEmpty()) {
             return english;
@@ -241,11 +163,6 @@ public final class WynnventoryBridge {
     private static final java.util.regex.Pattern TOAST_MORE = java.util.regex.Pattern.compile(
             "^(\\d+) more\\.\\.\\.$");
 
-    /**
-     * 「找到收藏的物品」通知底下那一行。兩種：
-     * 「{@code <顏色碼><物品><顏色碼> in <獎勵池>}」與「{@code N more...}」。
-     * 物品名照一般語料（跟著「翻譯物品名稱」），獎勵池的名字不動。
-     */
     public static Component toast(Component description) {
         if (!active || description == null) {
             return description;
@@ -259,7 +176,6 @@ public final class WynnventoryBridge {
         }
     }
 
-    /** 見 {@link #toast(Component)}；沒有東西可換就回 {@code null}。 */
     static String toast(TranslationStore store, String line) {
         if (store == null || line == null) {
             return null;
@@ -298,14 +214,6 @@ public final class WynnventoryBridge {
         }
     }
 
-    // ------------------------------------------------------------ 價格框裡寫死的字
-
-    /**
-     * 價格框（與意象清單）要畫的那幾行。不翻的時候<b>原樣</b>回去（同一個物件）。
-     *
-     * <p>標籤那一半已經由語言那一層換好了，這裡只管寫死的字：物品名、
-     * {@code No data yet.}、數值名、意象名。
-     */
     public static List<Component> lines(List<Component> lines) {
         if (!active || lines == null || lines.isEmpty()) {
             return lines;
@@ -319,7 +227,6 @@ public final class WynnventoryBridge {
         return lines(store, lines);
     }
 
-    /** 見 {@link #lines(List)}；測試直接叫這個。 */
     static List<Component> lines(TranslationStore store, List<Component> lines) {
         if (store == null) {
             return lines;
@@ -343,18 +250,8 @@ public final class WynnventoryBridge {
         return out == null ? lines : out;
     }
 
-    /** 原文那一行前面空多少：大約對齊上一行圓點與圖示後面的名字。 */
     private static final String ORIGINAL_INDENT = "     ";
 
-    /**
-     * 原文那一行要縮多少，看<b>譯名那一行名字前面有什麼</b>。
-     *
-     * <p>清單的列前面有圓點與圖示（「•  踐踏之蹄意象」），原文縮進去才對得齊名字。
-     * 價格框的標題沒有那些東西，名字就在最左邊——照樣縮五格的話原文會歪出去一截
-     * （使用者 2026-10-12 的截圖：「君臨權戟」底下的「(Ascendancy)」）。
-     *
-     * @param before 這一行裡名字前面的字（前幾段，加上這一段開頭不是名字的部分）
-     */
     static String indentFor(String before) {
         if (before.isEmpty()) {
             return "";
@@ -362,7 +259,6 @@ public final class WynnventoryBridge {
         return before.isBlank() ? before : ORIGINAL_INDENT;
     }
 
-    /** 這一段開頭有幾個字不是名字（空白、圓點、圖示）。 */
     private static int leadOf(String text) {
         int at = 0;
         while (at < text.length() && !Character.isLetterOrDigit(text.codePointAt(at))) {
@@ -371,19 +267,6 @@ public final class WynnventoryBridge {
         return at;
     }
 
-    /**
-     * 一行翻完之後畫成哪幾行。通常就是一行；名字後面附了原文的話，<b>原文自己一行</b>。
-     *
-     * <h2>為什麼要拆（使用者 2026-10-12）</h2>
-     * 物品名稱選「譯名加原文」的人，討伐戰的意象清單每一行都是
-     * 「刺客的超脫塵世化身 (Assassin's Embodiment of Otherworldly Detachment)」——意象的英文名
-     * 很長，整個框被撐到比旁邊的說明還寬。原文移到下一行、往內縮，框的寬度就回到譯名那麼寬。
-     *
-     * <p>只拆我們自己附上去的那一段：括號裡正好是這一段原本的英文名。行裡本來就有的括號
-     * （「{@code  (+8%)}」）不是這個形狀，不會動。
-     *
-     * @return 沒有東西可換時回只有原物件的清單
-     */
     static List<Component> rows(TranslationStore store, Component line) {
         List<Piece> pieces = new ArrayList<>();
         line.visit((style, text) -> {
@@ -404,7 +287,6 @@ public final class WynnventoryBridge {
             String tail = english == null ? null : " (" + english + ")";
             int at = tail == null ? -1 : done.lastIndexOf(tail);
             if (original == null && at > 0 && done.substring(at + tail.length()).isBlank()) {
-                // 先量名字前面有什麼，再把這一段接上去——接上去之後就量不到了
                 String before = out.getString() + done.substring(0, Math.min(at, leadOf(done)));
                 out.append(Component.literal(done.substring(0, at)
                         + done.substring(at + tail.length())).withStyle(p.style()));
@@ -419,7 +301,6 @@ public final class WynnventoryBridge {
         return original == null ? List.of(out) : List.of(out, original);
     }
 
-    /** 這一段裡的英文名：開頭不是字母的東西（圓點、圖示）不算，尾巴的空白不算。 */
     private static String englishOf(String text) {
         for (int i = 0; i < text.length(); i++) {
             if (latinLetter(text.charAt(i))) {
@@ -432,7 +313,6 @@ public final class WynnventoryBridge {
 
     private record Piece(Style style, String text) {}
 
-    /** 一行：照樣式切成一段一段，認得的那幾段換掉，樣式原封不動。沒有東西可換就回原物件。 */
     static Component line(TranslationStore store, Component line) {
         List<Piece> pieces = new ArrayList<>();
         line.visit((style, text) -> {
@@ -451,16 +331,6 @@ public final class WynnventoryBridge {
         return changed ? out : line;
     }
 
-    /**
-     * 一段字 → 譯文；不該動或查不到就回 {@code null}。
-     *
-     * <p>先整段查 Wynnventory 自己的表（{@code No data yet.}）。查不到再當成名字查一般語料：
-     * 物品名、數值名、意象名。當名字查之前先把開頭不是字母的東西留在原地——意象清單
-     * 每一行是「{@code • <職業圖示> 名字}」。
-     *
-     * <p>不碰的：沒有拉丁字母的（已經是譯文、或只是「{@code : }」），以及價格
-     * （「{@code 12.5 LE}」「{@code +3 EB}」——數字開頭）。
-     */
     static String piece(TranslationStore store, String text) {
         if (text == null) {
             return null;
@@ -473,7 +343,7 @@ public final class WynnventoryBridge {
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
             if (Character.isDigit(c)) {
-                return null;                       // 數字先出現：是價格或百分比
+                return null;
             }
             if (latinLetter(c)) {
                 start = i;

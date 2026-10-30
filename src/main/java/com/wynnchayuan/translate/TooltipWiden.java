@@ -9,67 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-/**
- * 譯文比英文<b>寬</b>時，整份 tooltip 一起撐開。
- *
- * <h2>為什麼逐行補償不夠</h2>
- * {@link LineTranslator} 的對齊是一行一行算的，前提是「譯文比原文短」——
- * 中文、日文都是，所以短掉的部分補回間隔，右緣就落回原位。
- *
- * <p>俄文<b>比英文長</b>。逐行那一套遇到放不下的行，只能把間隔收到下限
- * （{@link LineTranslator#MIN_GAP}），於是實機 line-debug 記到的是：
- *
- * <pre>
- *   Health Regen          69px  間隔 34 -&gt; 6   整行 165 -&gt; 196（+31）
- *   Haul Cost             51px  間隔 66 -&gt; 6   整行 179 -&gt; 196（+17）
- *   Mana Regen            58px  間隔 65 -&gt; 29  整行 207 -&gt; 207（守住）
- * </pre>
- *
- * 放得下的行守住舊的右緣，放不下的各自凸出不同的量——數值那一欄就參差不齊。
- * 置中的行也一樣：未鑑定物品的「an Item Identifier can unlock」寬了 71px，
- * 縮排卻沒動，整行跑出 Wynncraft 照英文寬度畫好的外框。
- *
- * <p>這兩件事都是<b>一行看不出來</b>的：新的右緣要看整份 tooltip 最寬的那行
- * 才知道在哪。所以等每一行都翻完之後，這裡再整份看一次。
- *
- * <h2>做什麼</h2>
- * <ol>
- *   <li>W = 原文的內容寬度（英文最寬那行）；W' = W 與「需要撐開的譯文行」
- *       （留足最小間隔之後）兩者取大。</li>
- *   <li>原本靠右對齊到共同右緣的欄位行，最後一個間隔一律放寬到剛好收在 W'。</li>
- *   <li>置中的行照 W' 重新置中：縮排 = (W' − 內容寬) / 2，不准是負的。</li>
- * </ol>
- *
- * <h2>什麼時候什麼都不做</h2>
- * 每一行都放得進 W（中文、日文就是這樣）時<b>原封不動回傳</b>，連物件都是同一個。
- * 這一步是給「寬的語言」的，不能讓短的語言多出任何一個像素的差別。
- *
- * <p>唯一的例外是框整個縮窄了：沒有欄位行頂著外框（aspect 那種全是敘述的），
- * 最寬的譯文行比 W 窄，置中的行就照縮窄後的寬度重新置中。
- */
 public final class TooltipWiden {
 
-    /**
-     * 原文右緣差幾像素以內算「同一個右緣」。
-     *
-     * <p>Wynncraft 算欄位時是照它自己的字寬取整的，而數值不一定跟標籤同一個字型，
-     * 量出來偶爾差一兩像素。放寬到 2 仍然遠小於「沒有靠右」的行差出去的量。
-     */
+    // Wynncraft 照自己的字寬取整，量出來偶爾差一兩像素
     private static final int EDGE_TOLERANCE = 2;
 
     private TooltipWiden() {}
 
-    /**
-     * 整份撐寬。
-     *
-     * @param original    遊戲送來的原文，逐行
-     * @param translated  翻好的每一行，與原文 1:1；沒翻的行是原文的複本
-     * @param centered    每一行是不是置中的（{@link BlockLayout#centered}）
-     * @param leftAligned 第二欄是不是靠左排的（{@link LineTranslator#columnsAreLeftAligned}）
-     * @param width       量寬度；正式路徑是 {@code mc.font.width}，測試注入假字型
-     * @return 不需要撐開時就是 {@code translated} 本身；否則是新的清單，
-     *         只有真的動到的行換成新的元件
-     */
     public static List<Component> fit(List<Component> original, List<Component> translated,
                                       boolean[] centered, boolean leftAligned,
                                       ToIntFunction<Component> width) {
@@ -77,8 +23,6 @@ public final class TooltipWiden {
             return translated;
         }
         int n = translated.size();
-        // 行數對不上就不知道哪一行對哪一行，寧可不動——只有置中排的欄例外：
-        // 那一步只配對「有多欄的行」，說明文字併段重排過也對得上。
         if (original.size() != n || centered.length != n) {
             boolean measurable = false;
             for (Component line : original) {
@@ -95,7 +39,6 @@ public final class TooltipWiden {
             madeW[i] = width.applyAsInt(translated.get(i));
             frame = Math.max(frame, origW[i]);
         }
-        // 量不到寬度（沒有字型，例如 headless 測試）就什麼都判斷不了。
         if (frame <= 0) {
             return translated;
         }
@@ -114,21 +57,15 @@ public final class TooltipWiden {
             rows.add(segments(line, width));
         }
 
-        // ---- 靠右的欄位行 ----
-        //
-        // 右緣是<b>原文</b>量出來的：英文每一行數值的結尾都落在同一個 x。
-        // 先收集「原文有欄位間隔、而且譯文也還留著那個間隔」的行，
-        // 再只留下原文右緣落在最右邊那一條線上的——沒有頂到那條線的行
-        // 本來就不是靠右對齊到共同右緣的，動它只會把它推歪。
         int[][] gap = new int[n][];
         int edge = 0;
         for (int i = 0; i < n; i++) {
             if (leftAligned || centered[i]) {
-                continue;                      // 靠左的第二欄、置中的行都不是這一種
+                continue;
             }
             int[] was = lastColumnGap(segments(original.get(i), width));
             if (was == null || was[2] < LineTranslator.MIN_GAP_PX) {
-                continue;                      // 原文沒有夠寬的欄位間隔
+                continue;
             }
             int[] now = lastColumnGap(rows.get(i));
             if (now == null) {
@@ -147,13 +84,11 @@ public final class TooltipWiden {
                 gap[i] = null;
                 continue;
             }
-            // 拿掉間隔之後的寬度，加上最小間隔，就是這一行最少要多寬。
             int need = madeW[i] - gap[i][2] + LineTranslator.MIN_GAP;
             columnsNeed = Math.max(columnsNeed, need);
             columnsOver |= madeW[i] > edge || need > edge;
         }
 
-        // ---- 置中的行 ----
         int[] lead = new int[n];
         int[] content = new int[n];
         boolean[] centre = new boolean[n];
@@ -163,7 +98,6 @@ public final class TooltipWiden {
             if (!centered[i] || !visible(rows.get(i))) {
                 continue;
             }
-            // 原文的縮排是負的（物品名稱前面那種往回退的偏移）就不是單純的置中，不碰。
             if (leadingPx(segments(original.get(i), width)) < 0) {
                 continue;
             }
@@ -178,9 +112,6 @@ public final class TooltipWiden {
         }
 
         if (!columnsOver && !centresOver) {
-            // 每一行都放得下。但沒有欄位行撐住外框時（aspect 那種全是敘述的
-            // tooltip），框會縮成譯文的寬度，置中的行卻還照英文的寬度置中——
-            // 看起來整行往右偏。照縮完的寬度重新置中。
             int box = 0;
             boolean any = false;
             for (int i = 0; i < n; i++) {
@@ -188,7 +119,7 @@ public final class TooltipWiden {
                 any |= centre[i];
             }
             if (!any || box >= frame - EDGE_TOLERANCE) {
-                return translated;             // 框沒有縮：原封不動
+                return translated;
             }
             List<Component> out = null;
             StringBuilder log = new StringBuilder();
@@ -216,8 +147,6 @@ public final class TooltipWiden {
         }
 
         int widened = Math.max(frame, Math.max(columnsNeed, centresNeed));
-        // 欄位的右緣本來就頂著整份 tooltip 的右緣（絕大多數的物品都是）時，
-        // 撐開之後也要跟著頂到新的右緣；否則只跟自己那一組對齊。
         boolean rideFrame = edge >= frame - EDGE_TOLERANCE;
         int columnTarget = rideFrame ? widened : Math.max(edge, columnsNeed);
         boolean moveColumns = columnsOver || (rideFrame && widened > frame);
@@ -247,28 +176,6 @@ public final class TooltipWiden {
         return out;
     }
 
-    /**
-     * 置中排的欄：每一欄的內容照<b>原文的中心</b>重新擺。
-     *
-     * <h2>實機回報</h2>
-     * 技能點的提示框是三欄：
-     *
-     * <pre>
-     *      Current     >>>>>>      Next
-     *       48.8%                  49.2%
-     *     60 points              61 points
-     * </pre>
-     *
-     * 每一欄的三行對著同一個中心。逐行那一步只保<b>起點</b>，「60 點」比
-     * 「60 points」短，整欄就往左偏——每個語言都一樣。
-     *
-     * <h2>怎麼認出來</h2>
-     * 一行裡被偏移隔開的幾段文字，拿去跟別行比：中心落在同一個 x、起點卻不同，
-     * 就是置中排的欄。靠左的清單起點相同、靠右的數值右緣相同，都不會被認成這種。
-     * 有負偏移（圖示疊字）的行不碰。
-     *
-     * @return 沒有要動的就是 {@code translated} 本身
-     */
     static List<Component> centreColumns(List<Component> original, List<Component> translated,
                                          ToIntFunction<Component> width) {
         int n = translated.size();
@@ -291,8 +198,6 @@ public final class TooltipWiden {
                 origMulti.add(oc);
             }
         }
-        // 有多欄的行照順序一對一。說明文字併段重排過的話兩邊總行數會不同，
-        // 但多欄的那幾行不會被併，順序也不會變；數量或欄數對不上就不動。
         if (origMulti.size() != madeRows.size()) {
             return translated;
         }
@@ -339,31 +244,6 @@ public final class TooltipWiden {
         return out == null ? translated : out;
     }
 
-    /**
-     * 這一欄是不是置中排的：別行的<b>同一欄</b>跟它中心相同、起點不同。
-     *
-     * <h2>為什麼「起點相同」要先判掉</h2>
-     * 實機回報素材 tooltip 的「防禦需求」被往右推了 12px，而數值留在原位。
-     * 那一份的需求列第一欄是這樣的（左緣／寬度）：
-     *
-     * <pre>
-     *   Durability     [ 0, 47]      Min. Defence  [ 0, 61]
-     *   &lt;圖示&gt;Defence  [11, 41]      Fire Damage   [ 0, 54]
-     * </pre>
-     *
-     * {@code Min. Defence} 的中心是 30.5、帶圖示的 {@code Defence} 是 31.5
-     * ——差一個像素就被當成「同一個置中欄」，於是中文變短之後補了半個差額
-     * （{@code (61-36)/2 = 12}）。三列都中：+12、+11、+1，跟畫面上量到的一模一樣。
-     *
-     * <p>但這四列明明是<b>靠左</b>的：有三列的起點都是 0。
-     * 「起點相同」是靠左的鐵證，而「中心相同」很容易是巧合——兩個長度不同的標籤，
-     * 其中一個前面有圖示縮排，就撞得上。所以靠左的證據優先，先判掉。
-     *
-     * <p>比的是<b>同一欄</b>（同一個索引）。跨欄比會把第二欄的座標拿來否定第一欄，
-     * 技能點那種每一欄各自置中的面板就又不動了。
-     *
-     * @param k 這是第幾欄
-     */
     private static boolean sharesCentre(int[] c, int k, int row, List<List<int[]>> all) {
         if (leftAlignedColumn(k, all)) {
             return false;
@@ -374,8 +254,6 @@ public final class TooltipWiden {
                 continue;
             }
             for (int[] d : all.get(j)) {
-                // 中心差 1px 以內、起點差 5px 以上。靠右的數值寬度差 d 時，
-                // 中心差（兩倍座標）與起點差都是 d，兩個條件不可能同時成立。
                 if (Math.abs(centre2 - (2 * d[0] + d[1])) <= 2
                         && Math.abs(c[0] - d[0]) > 2 * EDGE_TOLERANCE) {
                     return true;
@@ -385,15 +263,6 @@ public final class TooltipWiden {
         return false;
     }
 
-    /**
-     * 這一欄是靠左的嗎——<b>有兩列的起點相同</b>就是。
-     *
-     * <h2>為什麼要整欄一起判</h2>
-     * 一列一列問「別人有沒有跟我起點相同」不夠：帶圖示的那一列自己縮排 11px，
-     * 跟誰都不同，於是它逃過檢查，照樣被中心相同的鄰居拖去置中。
-     * 靠左是<b>整欄</b>的性質，欄裡只要有兩列對齊同一個左緣，這一欄就是靠左的，
-     * 縮排不同的那一列也不例外（那是圖示佔的位置，不是置中）。
-     */
     private static boolean leftAlignedColumn(int k, List<List<int[]>> all) {
         List<Integer> starts = new ArrayList<>();
         for (List<int[]> row : all) {
@@ -411,11 +280,6 @@ public final class TooltipWiden {
         return false;
     }
 
-    /**
-     * 被偏移隔開的每一段內容：{@code {起點 x, 寬度, 第一個段的索引, 最後一個段的索引}}。
-     *
-     * @return 有負偏移或看不到字的時候回傳 {@code null}
-     */
     private static List<int[]> chunks(List<Seg> segs, ToIntFunction<Component> width) {
         List<int[]> out = new ArrayList<>();
         int x = 0;
@@ -444,7 +308,6 @@ public final class TooltipWiden {
         return letters ? out : null;
     }
 
-    /** 照每一段的目標起點重排；前一段後面至少留 1px。 */
     private static Component placeChunks(List<Seg> segs, List<int[]> chunks, int[] target,
                                          ToIntFunction<Component> width) {
         MutableComponent out = Component.empty();
@@ -456,7 +319,7 @@ public final class TooltipWiden {
             if (s.gap()) {
                 gapStyle = gapStyle == null ? s.style() : gapStyle;
                 if (next >= chunks.size()) {
-                    append(out, s.text(), s.style());   // 行尾的偏移照留
+                    append(out, s.text(), s.style());
                 }
                 continue;
             }
@@ -479,17 +342,8 @@ public final class TooltipWiden {
         return next == chunks.size() ? out : null;
     }
 
-    /**
-     * 一段：文字，或一段寬度偏移。
-     *
-     * <p>{@code visit} 給的是解析過的樣式，所以組回去之後不會繼承到別人的父層。
-     */
     record Seg(String text, Style style, boolean gap, int px) {}
 
-    /**
-     * 拆成段。文字尾端黏著的偏移也拆出來——Wynncraft 常把欄位間隔接在標籤後面
-     * 同一個片段裡（見 {@link SpaceOffset#trailingOffsets}），不拆的話找不到那個間隔。
-     */
     static List<Seg> segments(Component line, ToIntFunction<Component> width) {
         List<Seg> out = new ArrayList<>();
         line.visit((style, text) -> {
@@ -512,13 +366,6 @@ public final class TooltipWiden {
         return out;
     }
 
-    /**
-     * 這段是不是能安全重新編碼的寬度偏移。
-     *
-     * <p>跟 {@link LineTranslator#isAdjustableSpace} 同一個判準：space 字型底下的偏移
-     * 一定是；別的字型底下要<b>量出來的寬度剛好等於解碼值</b>才算，材質包圖示碰巧
-     * 落在同一段碼位時才不會被當成間隔。
-     */
     private static boolean isGap(Style style, String text, ToIntFunction<Component> width) {
         if (!SpaceOffset.isOffsetRun(text)) {
             return false;
@@ -528,15 +375,6 @@ public final class TooltipWiden {
                    == SpaceOffset.decode(text);
     }
 
-    /**
-     * 最後一個<b>欄位間隔</b>：前面有標籤、後面有數值的那一串連續偏移。
-     *
-     * <p>前面只有圖示的是圖示與內文之間的排版（見 {@link LineTranslator#labelled}）；
-     * 後面沒有實字的是圖示疊字的往回退（見 {@link LineTranslator#overlayGap}）。
-     * 兩種都不是欄位，撐開時不能動。
-     *
-     * @return {@code {起, 迄, 總寬}}，迄不含；沒有就回傳 {@code null}
-     */
     static int[] lastColumnGap(List<Seg> segs) {
         int[] found = null;
         int i = 0;
@@ -558,7 +396,6 @@ public final class TooltipWiden {
         return found;
     }
 
-    /** {@code [from, to)} 之間有沒有含字母或數字的文字段。方塊字、西里爾字母都算字母。 */
     private static boolean hasWord(List<Seg> segs, int from, int to) {
         for (int i = from; i < to; i++) {
             Seg s = segs.get(i);
@@ -574,7 +411,6 @@ public final class TooltipWiden {
         return false;
     }
 
-    /** 行首那一串偏移的總寬；跟 {@link BlockLayout} 量縮排的方式一樣，碰到第一段內容就停。 */
     private static int leadingPx(List<Seg> segs) {
         int px = 0;
         for (Seg s : segs) {
@@ -586,7 +422,6 @@ public final class TooltipWiden {
         return px;
     }
 
-    /** 有沒有看得見的字。分隔線、只有圖示的行都沒有。 */
     private static boolean visible(List<Seg> segs) {
         for (Seg s : segs) {
             if (s.gap()) {
@@ -604,13 +439,6 @@ public final class TooltipWiden {
         return false;
     }
 
-    /**
-     * 把欄位間隔放寬 {@code delta} 像素。
-     *
-     * <p>只改那一串偏移的<b>最後一個</b>：前面的若是往回退的偏移
-     * （{@code 往回 41 再往前 145}），那是 Wynncraft 自己的寫法，照留。
-     * 改過的那一段換成 space 字型重新編碼——那是保證認得偏移碼位的字型。
-     */
     private static Component withGap(List<Seg> segs, int[] gap, int delta) {
         MutableComponent out = Component.empty();
         for (int i = 0; i < segs.size(); i++) {
@@ -624,13 +452,6 @@ public final class TooltipWiden {
         return out;
     }
 
-    /**
-     * 換掉行首的縮排。
-     *
-     * <p>原本多個偏移字元組成的縮排併成一個——重新編碼只需要總寬度相同
-     * （見 {@link SpaceOffset#isOffsetRun}）。最寬的那行原本可能根本沒有縮排，
-     * 那就在最前面補一個。
-     */
     private static Component withLead(List<Seg> segs, int px) {
         MutableComponent out = Component.empty();
         int i = 0;
@@ -651,7 +472,6 @@ public final class TooltipWiden {
         }
     }
 
-    /** 診斷用：這一行的文字，偏移拿掉。 */
     private static String text(List<Seg> segs) {
         StringBuilder sb = new StringBuilder();
         for (Seg s : segs) {
