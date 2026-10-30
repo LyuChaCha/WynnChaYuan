@@ -23,8 +23,10 @@ async function secret(env) {
   if (cachedSecret) return cachedSecret;
   let value = await env.CORPUS.get('auth:secret');
   if (!value) {
-    value = hex(crypto.getRandomValues(new Uint8Array(32)));
-    await env.CORPUS.put('auth:secret', value);
+    const fresh = hex(crypto.getRandomValues(new Uint8Array(32)));
+    await env.CORPUS.put('auth:secret', fresh);
+    // 兩個請求同時第一次用到：讀回存進去的那一把，大家才會用同一把
+    value = (await env.CORPUS.get('auth:secret')) || fresh;
   }
   cachedSecret = value;
   return value;
