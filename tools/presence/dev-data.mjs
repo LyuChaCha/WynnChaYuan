@@ -51,8 +51,10 @@ export function demoCredits(demoTeams) {
   return doc;
 }
 
-export const DEVELOPER = JSON.parse(fs.readFileSync(creditsFile, 'utf8'))
-  .sections.find((s) => s.key.endsWith('.developers')).members[0].mc;
+const firstDeveloper = JSON.parse(fs.readFileSync(creditsFile, 'utf8'))
+  .sections.find((s) => s.key.endsWith('.developers')).members[0];
+export const DEVELOPER = firstDeveloper.mc;
+export const DEVELOPER_UUID = firstDeveloper.uuid || 'a'.repeat(32);
 
 export async function seedDemo(data, { guildIcon, guildBanner, demoTeams } = {}) {
   const developer = DEVELOPER;

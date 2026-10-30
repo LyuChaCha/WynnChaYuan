@@ -53,7 +53,7 @@ const discordKey = nodeCrypto.createPrivateKey({
 });
 const DISCORD_PUBLIC_KEY = nodeCrypto.createPublicKey(discordKey).export({ format: 'der', type: 'spki' }).subarray(-32).toString('hex');
 
-const { ROOT, DEVELOPER, demoCredits, memoryKv, seedDemo } = await import('./dev-data.mjs');
+const { ROOT, DEVELOPER, DEVELOPER_UUID, demoCredits, memoryKv, seedDemo } = await import('./dev-data.mjs');
 const worker = (await import(workerUrl)).default;
 const { issueToken, issueWebToken, issueDiscordToken, publicId } = await import('./worker-api.js');
 const { LANGS, PATHS } = await import('./site.js');
@@ -200,7 +200,7 @@ base.set('auth:secret', { value: 'f'.repeat(64), metadata: null });
 await seedDemo(base, {});
 const STEVE = 'b'.repeat(32);
 const ALEX = 'c'.repeat(32);
-const DEV = 'a'.repeat(32);
+const DEV = DEVELOPER_UUID;
 const LINKED = 'd'.repeat(32);
 const tokens = {
   steve: await issueToken({ CORPUS: memoryKv(base) }, STEVE, 'Steve', FIXED_NOW),

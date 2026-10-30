@@ -136,7 +136,7 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
-        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'data' }] },
+        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'Bea', mc: 'Bea_Old', uuid: 'ed'.repeat(16) }, { name: 'data' }] },
         { role: 'sponsor', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] }],
     }), { status: 200 });
   }
@@ -3275,6 +3275,17 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 最愛太多一次讀不完：分幾天接著算，算完才換掉人數；已經不在的圖不算', rounds > 1 && outcome.done
     && JSON.parse(hot.CORPUS.data.get('stars').value)[hash] === 701 && !(('cd'.repeat(32)) in JSON.parse(hot.CORPUS.data.get('stars').value))
     && !hot.CORPUS.data.has('stars:recount'));
+}
+
+{
+  const renamedDev = await issueWebToken(env, 'ed'.repeat(16), 'Bea_New', NOW);
+  const nameThief = await issueWebToken(env, 'ee'.repeat(16), 'Bea_Old', NOW);
+  const adminPage = (token) => worker.fetch(get('/admin/staff', token), env);
+  check('★ 開發者照 UUID 認：改了名字照樣是開發者', (await adminPage(renamedDev)).status === 200
+    && (await (await worker.fetch(get('/me', renamedDev), env)).json()).developer === true);
+  check('★ 別人拿走開發者的舊名字不會變成開發者', (await adminPage(nameThief)).status === 403
+    && (await (await worker.fetch(get('/me', nameThief), env)).json()).developer === false);
+  check('還沒記 UUID 的開發者照舊看名字', (await adminPage(aliceWeb)).status === 200);
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
