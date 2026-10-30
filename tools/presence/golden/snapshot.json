@@ -2696,18 +2696,18 @@
     "content-type": "application/json; charset=utf-8"
    },
    "body": {
-    "json": "{\"ok\":true,\"id\":\"cbb7c7c0872b7601\",\"issue\":null,\"issueFailed\":false}"
+    "json": "{\"ok\":true,\"id\":\"84a486d81b6cf169\",\"issue\":null,\"issueFailed\":false}"
    },
    "kv": {
-    "fb:cbb7c7c0872b7601": {
-     "sha": "1ff154e4b9f94f3171dfb15b13baabd7c352526c998c09a6674800e56cb8e8f5",
+    "fb:84a486d81b6cf169": {
+     "sha": "45278a4c405ee6eb6aaf270337777df6144da9d98ceb513096f1577cc1b431f9",
      "metadata": "{\"c\":\"website\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"Sayla\",\"s\":\"hello there\"}"
     },
-    "fbr:333333333333333333": {
-     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+    "fbr:333333333333333333:1793361600000.00000003059ffbe0": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     },
-    "own:d:333333333333333333:fb:cbb7c7c0872b7601": {
+    "own:d:333333333333333333:fb:84a486d81b6cf169": {
      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     }
@@ -2720,18 +2720,18 @@
     "content-type": "application/json; charset=utf-8"
    },
    "body": {
-    "json": "{\"ok\":true,\"id\":\"059ffbe084a486d8\",\"issue\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\",\"issueFailed\":false}"
+    "json": "{\"ok\":true,\"id\":\"1b0cedddcaa1bd42\",\"issue\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\",\"issueFailed\":false}"
    },
    "kv": {
-    "fb:059ffbe084a486d8": {
-     "sha": "f54a2e1aa43c6387f6615e8cc50511e090ee110978983ac8384a966813f5589c",
+    "fb:1b0cedddcaa1bd42": {
+     "sha": "75685b863c174ddfb4f534ad40b9234a0df351f9f5929a8de0a5199803eb207a",
      "metadata": "{\"c\":\"translation\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"fix this line\",\"i\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\"}"
     },
-    "fbr:222222222222222222": {
-     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+    "fbr:222222222222222222:1793361600000.000000041c090ff8": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     },
-    "own:d:222222222222222222:fb:059ffbe084a486d8": {
+    "own:d:222222222222222222:fb:1b0cedddcaa1bd42": {
      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     }
@@ -2740,7 +2740,7 @@
     {
      "method": "POST",
      "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/issues",
-     "body": "{\"title\":\"譯文建議：fix this line\",\"body\":\"從 wynnchayuan.com/feedback 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfix this line\\n```\\n\\n**位置**\\n\\n```\\nnpc\\n```\\n\\n**語言**：沒有指定\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `059ffbe084a486d8`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
+     "body": "{\"title\":\"譯文建議：fix this line\",\"body\":\"從 wynnchayuan.com/feedback 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfix this line\\n```\\n\\n**位置**\\n\\n```\\nnpc\\n```\\n\\n**語言**：沒有指定\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `1b0cedddcaa1bd42`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
     }
    ]
   },
@@ -2909,15 +2909,15 @@
     "json": "{\"type\":4,\"data\":{\"content\":\"收到了，謝謝你的回饋！團隊會在網站的管理頁看到它。\",\"flags\":64}}"
    },
    "kv": {
-    "fb:1b6cf1691c090ff8": {
-     "sha": "6dc526fd3a429ddd7a515a4cf16bda0c9f8aadc32c59839109d34ad2b81ac867",
+    "fb:a935e0554fb3d778": {
+     "sha": "96a89562683e88a2fe22dfdc50bef5fffdf6564e9e3bfc7d2c3a87a4bd7063f2",
      "metadata": "{\"c\":\"other\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"from the bot\"}"
     },
-    "fbr:222222222222222222": {
-     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+    "fbr:222222222222222222:1793361600000.000000059d0cdebf": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     },
-    "own:d:222222222222222222:fb:1b6cf1691c090ff8": {
+    "own:d:222222222222222222:fb:a935e0554fb3d778": {
      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     }
@@ -2933,15 +2933,15 @@
     "json": "{\"type\":5,\"data\":{\"flags\":64}}"
    },
    "kv": {
-    "fb:1b0cedddcaa1bd42": {
-     "sha": "4657e8d3bf8fdeabbcf8b50a2885989009fe08bc46b4b52aa17a5c20d23d21ff",
+    "fb:16bb301b4de11dc1": {
+     "sha": "0734aa03cfb9d0854b1965435895f527b2612f1f4dd936a58d409e57cf17ead3",
      "metadata": "{\"c\":\"translation\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"from the bot\",\"i\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\"}"
     },
-    "fbr:222222222222222222": {
-     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+    "fbr:222222222222222222:1793361600000.000000068365bb8f": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     },
-    "own:d:222222222222222222:fb:1b0cedddcaa1bd42": {
+    "own:d:222222222222222222:fb:16bb301b4de11dc1": {
      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     }
@@ -2950,7 +2950,7 @@
     {
      "method": "POST",
      "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/issues",
-     "body": "{\"title\":\"譯文建議：from the bot\",\"body\":\"從 Discord 機器人的 /回饋 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfrom the bot\\n```\\n\\n**語言**：繁體中文（`zh_tw`）\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `1b0cedddcaa1bd42`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
+     "body": "{\"title\":\"譯文建議：from the bot\",\"body\":\"從 Discord 機器人的 /回饋 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfrom the bot\\n```\\n\\n**語言**：繁體中文（`zh_tw`）\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `16bb301b4de11dc1`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
     },
     {
      "method": "PATCH",

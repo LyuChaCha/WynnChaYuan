@@ -3008,9 +3008,14 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const slow = await r.json();
   check('★ 限流：一小時 ' + FEEDBACK_PER_HOUR + ' 則，再送就 429，告訴他哪時候可以再送', r.status === 429 && slow.why === 'slow down'
     && slow.until > Date.now() && slow.until <= Date.now() + 3600000);
-  check('驗證沒過的不算一則；限流紀錄一小時後自己消失', JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).length === FEEDBACK_PER_HOUR
-    && env.CORPUS.data.get('fbr:' + FAY).ttl === 3600);
-  env.CORPUS.data.get('fbr:' + FAY).value = JSON.stringify(JSON.parse(env.CORPUS.data.get('fbr:' + FAY).value).map((t) => t - 3600001));
+  const fayKeys = () => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('fbr:' + FAY + ':'));
+  check('驗證沒過的不算一則，被擋的也不算；限流紀錄一小時後自己消失', fayKeys().length === FEEDBACK_PER_HOUR
+    && fayKeys().every((k) => env.CORPUS.data.get(k).ttl === 3600));
+  for (const k of fayKeys()) {
+    const [t, tail] = k.slice(('fbr:' + FAY + ':').length).split('.');
+    env.CORPUS.data.set('fbr:' + FAY + ':' + (Number(t) - 3600001) + '.' + tail, env.CORPUS.data.get(k));
+    env.CORPUS.data.delete(k);
+  }
   check('★ 一小時前送的不算：又可以送了', (await fbPost('/feedback', { cat: 'content', msg: '希望翻譯 Raid 的結算畫面' }, fay)).status === 200);
 
   githubIssueStatus = 500;
@@ -3022,7 +3027,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && githubCalls.some((c) => c.path === '/issues') && value(failedId).issueError === 'github 500' && !value(failedId).issue
     && kv(failedId).metadata.e === 'github 500' && value(failedId).msg === 'GitHub 掛了也要留著');
   delete env.GITHUB_TOKEN;
-  env.CORPUS.data.delete('fbr:' + FAY);
+  for (const k of fayKeys()) env.CORPUS.data.delete(k);
   r = await fbPost('/feedback', { cat: 'translation', msg: '沒設 token 也要留著' }, fay);
   made = await r.json();
   check('沒設 GITHUB_TOKEN：一樣存著，原因是還沒設定', r.status === 200 && value(made.id).issueError === 'github not configured');
@@ -3365,6 +3370,28 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   }
   statuses.push((await worker.fetch(post('/tr/accept', { lang: 'zh_tw', id, item: 'x' }, kayWeb), { ...store, GITHUB_TOKEN: 'x' })).status);
   check('★ 壞掉的提案與投票紀錄回 404，不會讓請求炸掉', statuses.every((status) => status === 404));
+}
+
+{
+  const store = { CORPUS: fakeKv() };
+  const LOU = '477000000000000001';
+  store.CORPUS.data.set('d:' + LOU, { value: JSON.stringify({ n: 'Lou' }), metadata: { n: 'Lou' } });
+  const louToken = await issueDiscordToken(store, LOU, NOW);
+  const burst = await Promise.all(Array.from({ length: FEEDBACK_PER_HOUR * 3 }, (_, i) =>
+    worker.fetch(new Request('https://x.test/api/feedback', { method: 'POST', headers: { authorization: 'Bearer ' + louToken, 'content-type': 'application/json' },
+      body: JSON.stringify({ cat: 'other', msg: '同時送出的第 ' + i + ' 則回饋' }) }), store)));
+  const passed = burst.filter((one) => one.status === 200).length;
+  check('★ 回饋限流：同時送出也不會超過一小時的上限', passed === FEEDBACK_PER_HOUR
+    && burst.filter((one) => one.status === 429).length === FEEDBACK_PER_HOUR * 2
+    && [...store.CORPUS.data.keys()].filter((k) => k.startsWith('fbr:' + LOU + ':')).length === FEEDBACK_PER_HOUR);
+
+  const MAY = { uuid: 'e5'.repeat(16), name: 'May' };
+  const mayToken = await issueToken(store, MAY.uuid, MAY.name, NOW);
+  const bytes = (await import('node:fs')).readFileSync(new URL('../../capes/templates/template-88x68.png', import.meta.url));
+  const uploads = await Promise.all([0, 1, 2, 3].map(() => worker.fetch(new Request('https://x.test/api/cape', {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + mayToken } }), store)));
+  check('★ 上傳冷卻：同時傳也只有一個會過', uploads.filter((one) => one.status === 200).length === 1
+    && uploads.filter((one) => one.status === 429).length === 3);
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
