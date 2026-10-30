@@ -7,7 +7,7 @@ import net.minecraft.server.Bootstrap;
 
 import java.util.List;
 
-import static com.wynnchayuan.translate.LineTranslator.Piece;
+import com.wynnchayuan.translate.ColumnAligner.Piece;
 
 public final class AlignPointTest {
 
@@ -24,9 +24,9 @@ public final class AlignPointTest {
 
         List<Piece> labelValue = List.of(label, gap, value, margin);
         check("標籤與數值之間的空白算欄位交界",
-                LineTranslator.isAlignSpace(labelValue, 1));
+                ColumnAligner.isAlignSpace(labelValue, 1));
         check("行尾的留白邊距不算 —— 差額灌進那裡的話數值會黏在標籤旁",
-                !LineTranslator.isAlignSpace(labelValue, 3));
+                !ColumnAligner.isAlignSpace(labelValue, 3));
 
         Piece grey = Piece.text("★★★", Style.EMPTY);
         Piece back = Piece.space(-23, Style.EMPTY);
@@ -35,20 +35,20 @@ public final class AlignPointTest {
                 Piece.text("Ripe Aureate Fruit", Style.EMPTY),
                 grey, back, lit);
         check("負偏移不會被當成可調整的欄距",
-                LineTranslator.alignColumns(stars, false).get(3).spacePx() == -23);
+                ColumnAligner.alignColumns(stars, false).get(3).spacePx() == -23);
         check("正的欄距照常可以調整",
-                LineTranslator.isAlignSpace(labelValue, 1));
+                ColumnAligner.isAlignSpace(labelValue, 1));
 
-        check("譯文變短時把正間隔撐開", LineTranslator.narrowed(80, 118) == 118);
-        check("譯文變長時把正間隔收窄", LineTranslator.narrowed(80, 40) == 40);
-        check("正間隔不會收到把字黏在一起", LineTranslator.narrowed(80, -30) == 6);
+        check("譯文變短時把正間隔撐開", ColumnAligner.narrowed(80, 118) == 118);
+        check("譯文變長時把正間隔收窄", ColumnAligner.narrowed(80, 40) == 40);
+        check("正間隔不會收到把字黏在一起", ColumnAligner.narrowed(80, -30) == 6);
 
         check("負間隔照樣可以撐開（譯文比原文短）",
-                LineTranslator.narrowed(-25, -4) == -4);
-        check("負間隔可以撐到正的", LineTranslator.narrowed(-25, 12) == 12);
+                ColumnAligner.narrowed(-25, -4) == -4);
+        check("負間隔可以撐到正的", ColumnAligner.narrowed(-25, 12) == 12);
         check("負間隔不會被算得比原文更負 —— 那就是字疊在一起",
-                LineTranslator.narrowed(-25, -60) == -25);
-        check("負間隔維持原值時剛好等於原文", LineTranslator.narrowed(-25, -25) == -25);
+                ColumnAligner.narrowed(-25, -60) == -25);
+        check("負間隔維持原值時剛好等於原文", ColumnAligner.narrowed(-25, -25) == -25);
 
         String offsets = new StringBuilder()
                 .appendCodePoint(0xCFFD2).appendCodePoint(0xD0064).toString();
@@ -58,13 +58,13 @@ public final class AlignPointTest {
         Style spaceFont = SpaceOffset.styleFor(Style.EMPTY);
 
         check("space 字型的偏移照舊認得（不必量寬度）",
-                LineTranslator.isAdjustableSpace(spaceFont, offsets, 0));
+                SpaceRuns.isAdjustableSpace(spaceFont, offsets, 0));
         check("別的字型：量出來的寬度等於偏移值，就是偏移（" + px + " px）",
-                LineTranslator.isAdjustableSpace(wynn, offsets, px));
+                SpaceRuns.isAdjustableSpace(wynn, offsets, px));
         check("別的字型：寬度對不上就不當成偏移 —— 那可能是材質包的圖示",
-                !LineTranslator.isAdjustableSpace(wynn, offsets, px + 7));
+                !SpaceRuns.isAdjustableSpace(wynn, offsets, px + 7));
         check("範圍外的碼位一律不算",
-                !LineTranslator.isAdjustableSpace(spaceFont, "Defence", 41));
+                !SpaceRuns.isAdjustableSpace(spaceFont, "Defence", 41));
 
         List<Piece> twoColumns = List.of(
                 Piece.text("Spell Damage", Style.EMPTY),
@@ -73,17 +73,17 @@ public final class AlignPointTest {
                 Piece.space(24, Style.EMPTY),
                 Piece.text("+75", Style.EMPTY));
         check("兩欄的行兩個空白都算交界（第一欄）",
-                LineTranslator.isAlignSpace(twoColumns, 1));
+                ColumnAligner.isAlignSpace(twoColumns, 1));
         check("兩欄的行兩個空白都算交界（第二欄）",
-                LineTranslator.isAlignSpace(twoColumns, 3));
+                ColumnAligner.isAlignSpace(twoColumns, 3));
 
         List<Piece> centered = List.of(gap, value, margin);
         check("前導空白不算欄位交界（動它會讓整行位移）",
-                !LineTranslator.isAlignSpace(centered, 0));
+                !ColumnAligner.isAlignSpace(centered, 0));
         check("前導空白被認出是置中（差額要減半）",
-                LineTranslator.isLeading(centered, 0));
+                ColumnAligner.isLeading(centered, 0));
         check("標籤在前時不算置中",
-                !LineTranslator.isLeading(labelValue, 1));
+                !ColumnAligner.isLeading(labelValue, 1));
 
         check("空的一份：沒有欄，不補右緣",
                 LineTranslator.columnsAreLeftAligned(List.of()));
@@ -99,7 +99,7 @@ public final class AlignPointTest {
                         com.wynntils.core.text.StyledText.fromString("- +Various Items"))));
 
         check("有現成對齊空白時交界落在空白上",
-                LineTranslator.findAlignPoint(labelValue) == 1
+                ColumnAligner.findAlignPoint(labelValue) == 1
                         && labelValue.get(1).isSpace());
 
         List<Piece> gapOnlyLater = List.of(
@@ -107,17 +107,17 @@ public final class AlignPointTest {
                 Piece.text("+2% to", Style.EMPTY),
                 Piece.space(20, Style.EMPTY),
                 Piece.text("+7%", Style.EMPTY));
-        int boundary = LineTranslator.findAlignPoint(gapOnlyLater);
+        int boundary = ColumnAligner.findAlignPoint(gapOnlyLater);
         check("標籤後沒有空白時交界落在第一個數值（不是後面那個空白）",
                 boundary == 1 && !gapOnlyLater.get(1).isSpace());
 
         check("沒有對齊空白時找數值區起點",
-                LineTranslator.findAlignPoint(List.of(
+                ColumnAligner.findAlignPoint(List.of(
                         Piece.text("Combat Level", Style.EMPTY),
                         Piece.text("114", Style.EMPTY))) == 1);
 
         check("數值區沒有數字就不算欄位結構",
-                LineTranslator.findAlignPoint(List.of(
+                ColumnAligner.findAlignPoint(List.of(
                         Piece.text("Doom Stone", Style.EMPTY),
                         Piece.text("◆◆◆", Style.EMPTY))) == -1);
 
@@ -126,15 +126,15 @@ public final class AlignPointTest {
                 Piece.text("  ", Style.EMPTY),
                 Piece.text("Mage/Dark Wizard", Style.EMPTY));
         check("字面空格當間隔、數值是文字，也要認得出交界",
-                LineTranslator.findAlignPoint(literalGap) == 2);
+                ColumnAligner.findAlignPoint(literalGap) == 2);
 
         check("字面空格不足兩格時不算欄位（由 hasColumnGap 擋）",
-                !LineTranslator.hasColumnGap(List.of(
+                !ColumnAligner.hasColumnGap(List.of(
                         Piece.text("Emerald Pouch", Style.EMPTY),
                         Piece.text(" ", Style.EMPTY),
                         Piece.text("[Tier 8]", Style.EMPTY)), 1));
         check("兩格以上就算欄位",
-                LineTranslator.hasColumnGap(literalGap, 2));
+                ColumnAligner.hasColumnGap(literalGap, 2));
 
         List<Piece> range = List.of(
                 Piece.text("Earth Main Attack Damage", Style.EMPTY),
@@ -143,24 +143,24 @@ public final class AlignPointTest {
                 Piece.text(" to ", Style.EMPTY),
                 Piece.text("-1300", Style.EMPTY));
         check("範圍值不會被從中間拆開",
-                LineTranslator.findAlignPoint(range) == 1);
+                ColumnAligner.findAlignPoint(range) == 1);
 
         check("空白全在行尾時不當成對齊點",
-                LineTranslator.findAlignPoint(List.of(
+                ColumnAligner.findAlignPoint(List.of(
                         Piece.text("Weekly Objectives", Style.EMPTY), margin)) == -1);
 
-        java.util.List<LineTranslator.Piece> title = java.util.List.of(
-                LineTranslator.Piece.text("", Style.EMPTY),
-                LineTranslator.Piece.space(5, Style.EMPTY),
-                LineTranslator.Piece.text("Dragon's Tome", Style.EMPTY));
+        java.util.List<ColumnAligner.Piece> title = java.util.List.of(
+                ColumnAligner.Piece.text("", Style.EMPTY),
+                ColumnAligner.Piece.space(5, Style.EMPTY),
+                ColumnAligner.Piece.text("Dragon's Tome", Style.EMPTY));
         check("前面只有圖示，不算欄位交界",
-                !LineTranslator.labelled(title, 1));
-        java.util.List<LineTranslator.Piece> stat = java.util.List.of(
-                LineTranslator.Piece.text("Health", Style.EMPTY),
-                LineTranslator.Piece.space(40, Style.EMPTY),
-                LineTranslator.Piece.text("+390", Style.EMPTY));
+                !ColumnAligner.labelled(title, 1));
+        java.util.List<ColumnAligner.Piece> stat = java.util.List.of(
+                ColumnAligner.Piece.text("Health", Style.EMPTY),
+                ColumnAligner.Piece.space(40, Style.EMPTY),
+                ColumnAligner.Piece.text("+390", Style.EMPTY));
         check("前面有標籤，是欄位交界",
-                LineTranslator.labelled(stat, 1));
+                ColumnAligner.labelled(stat, 1));
 
         check("純字母的 ID", LineTranslator.isName("Xikys"));
         check("帶底線的 ID", LineTranslator.isName("Green_teaTW"));
