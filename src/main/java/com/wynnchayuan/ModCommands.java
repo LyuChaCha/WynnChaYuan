@@ -46,7 +46,7 @@ final class ModCommands {
 
     private static void linkAccount(String code) {
         say("chat.link.working");
-        Presence.link(code, result -> net.minecraft.client.Minecraft.getInstance().execute(() -> say(switch (result) {
+        PresenceAccount.link(code, result -> net.minecraft.client.Minecraft.getInstance().execute(() -> say(switch (result) {
             case DONE -> "chat.link.done";
             case BAD_CODE -> "chat.link.bad";
             case UNKNOWN_CODE -> "chat.link.unknown";

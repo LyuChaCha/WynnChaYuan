@@ -84,17 +84,17 @@ public final class ModNetwork {
         if (agreed) {
             startNetworked();
         } else {
-            Presence.forget();
+            PresenceAccount.forget();
         }
     }
 
     public static void setDataOptOut(boolean on,
-                                     java.util.function.Consumer<Presence.DeleteResult> done) {
+                                     java.util.function.Consumer<PresenceAccount.DeleteResult> done) {
         WynnChaYuan.config.setDataOptOut(on);
         if (!on) {
             return;
         }
-        Presence.forget();
+        PresenceAccount.forget();
         try {
             com.wynnchayuan.cape.Capes.forgetSelf(
                     net.minecraft.client.Minecraft.getInstance().getUser().getProfileId());
@@ -104,9 +104,9 @@ public final class ModNetwork {
         deleteServerData(done);
     }
 
-    private static void deleteServerData(java.util.function.Consumer<Presence.DeleteResult> done) {
-        Presence.deleteMyData(result -> {
-            if (result == Presence.DeleteResult.DONE && WynnChaYuan.config.dataOptOut()) {
+    private static void deleteServerData(java.util.function.Consumer<PresenceAccount.DeleteResult> done) {
+        PresenceAccount.deleteMyData(result -> {
+            if (result == PresenceAccount.DeleteResult.DONE && WynnChaYuan.config.dataOptOut()) {
                 WynnChaYuan.config.dataDeleted();
             }
             ModLog.info("data deletion: " + result);
