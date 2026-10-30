@@ -3,21 +3,6 @@ package com.wynnchayuan.capture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-/**
- * 「譯文比原本那一格大」的句子有沒有被記下來、記得對不對。
- *
- * <h2>為什麼要有</h2>
- * issue #864：譯文比原文長時，對話框打完字就退回英文。後來改成由小框接手，
- * 畫面不壞了——但也沒有人知道是哪幾句。{@link OverflowAudit} 把它們寫進
- * {@code captured.json}，這條測試盯的是它的判準：
- * <ul>
- *   <li>真的塞不下才記；塞得下的不記；</li>
- *   <li>物品說明寬一兩個像素不算（字型進位）；</li>
- *   <li>帶玩家資料的不記，數字換成佔位符（這份檔案是要交出去的）；</li>
- *   <li>帶 {@code {u}} 的台詞照收——那是佔位符不是名字；</li>
- *   <li>同一句只記一次；譯文改短之後再看到一次，那一句自己消失。</li>
- * </ul>
- */
 public final class OverflowAuditTest {
 
     private static int failures = 0;
@@ -34,7 +19,6 @@ public final class OverflowAuditTest {
         String src = "Did you buy the supply crate yet?";
         String dst = "¿Has comprado ya la caja de suministros que te pedí hace un rato?";
 
-        // ---- 判準 ----
         OverflowAudit.Row row = OverflowAudit.audit(D, src, dst, 1, 2, ROWS);
         check("★ 要兩列、只有一列：記下來", row != null);
         if (row != null) {
@@ -53,7 +37,6 @@ public final class OverflowAuditTest {
         check("寬兩個像素是字型進位，不記",
                 OverflowAudit.audit(T, "Health Regen", "Regeneración", 165, 167, PX) == null);
 
-        // ---- 這份檔案是要交出去的 ----
         OverflowAudit.Row numbered = OverflowAudit.audit(D,
                 "You need to be level 54 at least.", "Necesitas ser al menos de nivel 54.", 1, 2, ROWS);
         check("★ 數字換成佔位符（實際 " + (numbered == null ? null : numbered.src()) + "）",
@@ -65,7 +48,6 @@ public final class OverflowAuditTest {
         check("★ 中文譯文照收（濾網只問原文，不問譯文）",
                 OverflowAudit.audit(D, src, "補給箱你到底買了沒有啊？我已經等了你好久好久了。", 1, 2, ROWS)
                         != null);
-        // 濾網認得出來的就整條不收；判準跟 capture 其他部分同一支，這裡只盯「有沒有問它」。
         for (String line : new String[] {"Steve has joined your party!",
                 "[Party] Steve: over here", "You have been invited to join Steve's party!"}) {
             boolean flagged = PlayerDataFilter.carriesPlayerData(line);
@@ -73,7 +55,6 @@ public final class OverflowAuditTest {
                     (OverflowAudit.audit(D, line, "譯文譯文譯文", 1, 2, ROWS) == null) == flagged);
         }
 
-        // ---- 記、去重、自己消失 ----
         OverflowAudit.clear();
         OverflowAudit.takeDirty();
         OverflowAudit.note(D, src, dst, 1, 1, ROWS);
@@ -87,7 +68,6 @@ public final class OverflowAuditTest {
         OverflowAudit.note(T, src, dst, 100, 140, PX);
         check("同一句在另一個介面是另一條", OverflowAudit.size() == 2);
 
-        // 存檔再讀回來
         JsonArray saved = OverflowAudit.toJson();
         JsonObject first = saved.get(0).getAsJsonObject();
         check("存出去的欄位齊全", first.has("where") && first.has("src") && first.has("dst")
@@ -98,13 +78,11 @@ public final class OverflowAuditTest {
         OverflowAudit.load(new com.google.gson.JsonPrimitive("壞掉的"));
         check("格式不對的不會弄壞已經有的", OverflowAudit.size() == 2);
 
-        // 譯文改短了
         OverflowAudit.takeDirty();
         OverflowAudit.note(D, src, "¿Ya compraste la caja?", 1, 1, ROWS);
         check("★ 改短之後再看到一次，那一句自己消失",
                 OverflowAudit.size() == 1 && OverflowAudit.takeDirty());
 
-        // ---- 要幾列：從現有的列數往上試 ----
         String longLine = "這是一段很長很長的譯文，長到原本那一列絕對放不下，"
                 + "所以要算出它到底需要幾列才塞得進對話框裡，再把這個數字記下來。";
         int need = com.wynnchayuan.render.DialogueRewriterProbe.rowsNeeded(longLine, 1);

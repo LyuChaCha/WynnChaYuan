@@ -6,10 +6,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Wynntils 記分板疊層：畫之前換成譯文並把太寬的列折開，畫完放回原文。
- * 為什麼、怎麼折，見 {@link ScoreboardWrap}。
- */
 @Mixin(targets = "com.wynntils.overlays.ScoreboardOverlay", remap = false)
 public abstract class ScoreboardOverlayMixin {
 

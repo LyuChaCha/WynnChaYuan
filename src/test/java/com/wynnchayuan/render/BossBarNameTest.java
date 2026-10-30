@@ -10,13 +10,6 @@ import net.minecraft.network.chat.TextColor;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * boss bar 開頭的怪物名要跟頭上的名牌一樣翻出來。
- *
- * <p>實機回報：名牌是「支气管体」「凝块」，boss bar 還是
- * 「Bronchial - 113k❤ - Weak Dam Def」。名字與血量在同一個顏色段，
- * 名牌語料的鍵又帶著等級膠囊的 {@code {#}{#}}。
- */
 public final class BossBarNameTest {
 
     private static int failures = 0;
@@ -55,7 +48,6 @@ public final class BossBarNameTest {
         check("Grume → 凝塊（實際 " + (g == null ? "(沒翻)" : g.getString()) + "）",
               g != null && g.getString().startsWith("凝塊 - "));
 
-        // 右邊的屬性克制：Weak／Dam／Def 只在 boss bar 換，前面的圖示與顏色不動
         MutableComponent status = Component.empty();
         status.append(Component.literal("Grume - 37.7k❤ - ").withStyle(red));
         status.append(Component.literal("Weak ").withStyle(aqua));
@@ -71,9 +63,6 @@ public final class BossBarNameTest {
         check("沒有「 - 」的標題不動",
               WynntilsText.bossBarName(Component.literal("Bronchial"), store) == null);
 
-        // 實況模式：網址有一道亮光逐字掃過，每一幀的顏色分段都不同。
-        // 實機回報「英文 IP 在跑的時候顏色會跳」：逐段那條路把整截網址染成前面那段的顏色，
-        // 只有沒有亮光的那一幀是原色。每一幀網址的每個字都要是原本那一幀的顏色。
         Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0xAA0000));
         Style shine = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFF55));
         String url = "PLAY.WYNNCRAFT.COM";
@@ -100,7 +89,6 @@ public final class BossBarNameTest {
             if (sample == null || i == 5) {
                 sample = s;
             }
-            // 不寫死措辭：跟語料那一條一樣，而且每一幀都一樣
             everyFrame &= s.equals(store.lookup("Streamer mode enabled " + url));
             boolean same = urlColours(t, url).equals(urlColours(frame, url));
             if (!same && badFrame < 0) {
@@ -119,7 +107,6 @@ public final class BossBarNameTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 標題結尾那截網址，每個字的顏色依序排出來。 */
     private static List<String> urlColours(Component c, String url) {
         List<String> perChar = new java.util.ArrayList<>();
         c.visit((style, text) -> {

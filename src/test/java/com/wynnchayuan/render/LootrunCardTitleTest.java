@@ -15,40 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Lootrun 試煉卡與使命卡的標題照使命名顯示，不留英文、也不變成同名的裝備。
- *
- * <h2>實機回報（使用者 2026-10-22，1.0.3_2）</h2>
- * 新版的試煉卡分成「Trial:」「Reward:」兩段，標題 {@code Hubris} 是紅字、<b>沒有</b>開頭
- * 的圖示（layout-debug 的足跡是「看過 Hubris/14」）。畫面上標題留英文，底下照常翻：
- *
- * <pre>
- *   Hubris                          ← 應為「傲慢 (Hubris)」（內容名稱：譯名加原文）
- *   試煉:
- *   接下來 10 場挑戰中，…
- *   獎勵:
- * </pre>
- *
- * 語料裡 Lootrun 那一份是 {@code {#}Hubris} 與 {@code Hubris:}；裸的 {@code Hubris}
- * 只有那條項鍊，於是名稱列的守門把它當成「說明不像物品的裝備名」留原文。
- * 使命卡也換成裸標題了（cards.json：{@code "card": "High Roller"}），而使命卡被認成
- * 「不是裝備的面板」、守門讓開，標題就查到裝備：「平衡之盔 (Equilibrium)」。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>出貨語料、七個語言：每一個跟裝備撞名的 Lootrun 名稱，在新版卡片上照「內容名稱」的
- *       三種設定顯示使命名——譯名、譯名 (原文)、原文；</li>
- *   <li>舊版卡片（{@code {#}Redemption}）照舊；</li>
- *   <li>真的 Hubris 項鍊（原版兩列名稱、WynnMod 一列名稱，都有稀有度橫幅）照舊是項鍊。</li>
- * </ul>
- *
- * 期望的字從語料當場取，不寫死措辭。
- */
 public final class LootrunCardTitleTest {
 
     private static int failures = 0;
 
-    /** 試煉（Wynntils 4.2.8 的 TrialType）；其餘的名字是使命。 */
     private static final Set<String> TRIALS = Set.of(
             "Adrenaline Junkie", "Dying Light", "Monochromokopia", "Chronotrigger", "All In",
             "Gambling Beast", "Hubris", "Lights Out", "Side Hustle", "Treasury Bill",
@@ -77,11 +47,11 @@ public final class LootrunCardTitleTest {
             int names = 0;
             for (String name : LootrunNames.names()) {
                 if (!rs.isItemName(name)) {
-                    continue;                  // 沒跟物品撞名：不是這個 bug
+                    continue;
                 }
                 String cell = missionCell(rs, name);
                 if (cell == null) {
-                    continue;                  // 這個語言沒翻這個使命名
+                    continue;
                 }
                 names++;
                 hubrisSeen |= name.equals("Hubris");
@@ -94,14 +64,12 @@ public final class LootrunCardTitleTest {
             check("★ 出貨語料 " + lang + "：" + names + " 個撞裝備名的 Lootrun 名稱，新版卡片的標題"
                     + "照內容名稱設定顯示（錯的 " + wrong + "）", wrong.isEmpty());
 
-            // 新版卡片的段落本身照常翻（前提：測的真的是那張卡）
             rs.setPageNameMode(BOTH);
             List<String> trial = shown(trialCard("Hubris"), rs);
             String trialLabel = rs.lookupExact("Trial:");
             check("出貨語料 " + lang + "：試煉卡的「Trial:」照常翻（實際 " + trial.get(2) + "）",
                     trialLabel == null || trial.get(2).strip().equals(trialLabel));
 
-            // 舊版卡片：標題帶一個開頭圖示，語料另有整條
             String oldCell = rs.lookupExact("{#}Redemption");
             if (oldCell != null) {
                 rs.setPageNameMode(ON);
@@ -111,7 +79,6 @@ public final class LootrunCardTitleTest {
                                 .equals(oldCell.replace("{#}", "").strip()));
             }
 
-            // 真的 Hubris 項鍊：照舊是項鍊，「譯名加原文」照舊附原文
             String necklace = rs.lookupExact("Hubris");
             if (necklace != null && !necklace.equals(missionCell(rs, "Hubris"))) {
                 rs.setPageNameMode(BOTH);
@@ -136,7 +103,6 @@ public final class LootrunCardTitleTest {
         System.exit(0);
     }
 
-    /** 語料裡這個使命名自己的譯名：記分板那一行（名字:）與聊天面板那一格（{#}名字）。 */
     private static String missionCell(TranslationStore rs, String name) {
         String icon = rs.lookupExact("{#}" + name);
         if (icon != null && icon.startsWith("{#}") && icon.lastIndexOf("{#}") == 0) {
@@ -157,8 +123,6 @@ public final class LootrunCardTitleTest {
             wrong.add(mode + " " + name + "→" + title + "（應為 " + want + "）");
         }
     }
-
-    // ------------------------------------------------------------ 造 tooltip（照實機分段）
 
     private static final Style LANG = font("minecraft:language/wynncraft");
     private static final Style EMBLEM_FRAME = font("minecraft:tooltip/emblem/frame");
@@ -182,9 +146,6 @@ public final class LootrunCardTitleTest {
         return Component.literal(text).withStyle(s -> s.withColor(0xAAAAAA));
     }
 
-    /**
-     * 新版試煉卡（實機 2026-10-22，14 列）：紅色標題、沒有圖示，接「Trial:」「Reward:」兩段。
-     */
     private static List<Component> trialCard(String name) {
         List<Component> rows = new ArrayList<>();
         rows.add(Component.literal(name).withStyle(s -> s.withColor(0xFF5555)));
@@ -204,7 +165,6 @@ public final class LootrunCardTitleTest {
         return rows;
     }
 
-    /** 新版使命卡（cards.json：標題是裸名，接「Objective:」「Reward:」兩段）。 */
     private static List<Component> missionCard(String name) {
         List<Component> rows = new ArrayList<>();
         rows.add(Component.literal(name).withStyle(s -> s.withColor(0xFFAA00)));
@@ -222,7 +182,6 @@ public final class LootrunCardTitleTest {
         return rows;
     }
 
-    /** 舊版使命卡：標題只有開頭一個圖示。 */
     private static List<Component> oldMissionCard(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent title = Component.empty();
@@ -235,7 +194,6 @@ public final class LootrunCardTitleTest {
         return rows;
     }
 
-    /** 稀有度與類別的橫幅：整列都是圖示（實機 shiny-tooltip 的第 2 列）。 */
     private static Component banner() {
         MutableComponent row = Component.empty();
         row.append(icon(LANG, 0xD0026));
@@ -246,7 +204,6 @@ public final class LootrunCardTitleTest {
         return row;
     }
 
-    /** 原版的裝備：第 0 列寬度 0 的名稱、第 1 列五個圖示＋名稱＋鑑定度、橫幅、屬性。 */
     private static List<Component> vanillaGear(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent hidden = Component.empty();
@@ -269,7 +226,6 @@ public final class LootrunCardTitleTest {
         return rows;
     }
 
-    /** WynnMod 重畫的裝備：名稱只有一列、沒有外框，接著橫幅。 */
     private static List<Component> wynnModGear(String name) {
         List<Component> rows = new ArrayList<>();
         rows.add(Component.literal(name).withStyle(s -> s.withColor(0xFF55FF)));
@@ -287,7 +243,6 @@ public final class LootrunCardTitleTest {
         return row;
     }
 
-    /** 翻完的每一行；圖示字元換成 # 好讀。整份沒翻到就回原文。 */
     private static List<String> shown(List<Component> rows, TranslationStore store) {
         List<Component> out = TooltipPanel.translateInPlace(rows, store);
         List<Component> lines = out.isEmpty() ? rows : out;

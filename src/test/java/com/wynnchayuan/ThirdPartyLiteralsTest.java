@@ -7,28 +7,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 別的模組拿來判斷遊戲狀態的字串，我們不能翻。
- *
- * <h2>先前壞在哪</h2>
- * WynnMod 的 {@code RaidState.onTitle} 用 {@code title.contains("Raid Completed")}
- * 判斷討伐戰成功。我們把那一行換成「討伐戰完成！」之後它對不上，這一場算不出
- * 結果，上報之後連勝重置——玩家回報打完反而從 1 掉到 0。
- *
- * <p>而且當時只翻了 {@code Raid Completed!}、沒翻 {@code Raid Failed!}，
- * 所以失敗認得出來、成功認不出來，連勝<b>只會往下掉</b>。
- *
- * <h2>這裡釘住什麼</h2>
- * 兩件事：清單上的字要擋得下來（含前後有排版符號與其他文字的情況），
- * 以及<b>沒裝那個模組的人不受影響</b>——那才是「按模組分組」的意義。
- */
 public final class ThirdPartyLiteralsTest {
 
     private static int failures = 0;
 
     public static void main(String[] args) throws Exception {
-        // 這台機器上沒有真的裝 WynnMod，load() 會把它整組跳過——
-        // 那正是「沒裝的人照常看到中文」該有的行為，先釘住它。
         Path dir = Files.createTempDirectory("wynnchayuan-literals");
         ThirdPartyLiterals.load(dir);
         check("沒裝那個模組時清單是空的（實際 "
@@ -37,12 +20,10 @@ public final class ThirdPartyLiteralsTest {
         check("清單空的時候什麼都不擋",
               !ThirdPartyLiterals.reserved("Raid Completed!"));
 
-        // 裝了的情況：直接餵清單，測比對本身。
         ThirdPartyLiterals.forTest(List.of("Raid Completed", "Raid Failed"));
         check("擋得下成功", ThirdPartyLiterals.reserved("Raid Completed!"));
         check("擋得下失敗", ThirdPartyLiterals.reserved("Raid Failed!"));
 
-        // 遊戲送過來的那一行前後有排版符號，完全相等永遠不會成立。
         check("前後有別的東西也擋得下來",
               ThirdPartyLiterals.reserved("󰀡 Raid Completed! 󰁅"));
 
@@ -50,11 +31,7 @@ public final class ThirdPartyLiteralsTest {
         check("空字串不擋", !ThirdPartyLiterals.reserved(""));
         check("null 不擋", !ThirdPartyLiterals.reserved(null));
 
-        // 出貨的清單裡真的有那兩句。
-        //
-        // 這一條不能靠 load() 驗：headless 的測試 JVM 沒有 Fabric 的模組容器，
-        // isModLoaded 一律回 false，整組會被跳過——「裝了 WynnMod 會怎樣」
-        // 在 CI 上重現不了。所以直接讀出貨的資源檔，釘住內容本身。
+        // headless 沒有 Fabric 模組容器，isModLoaded 一律 false
         String shipped;
         try (java.io.InputStream in = ThirdPartyLiterals.class.getResourceAsStream(
                 "/assets/wynnchayuan/third-party-literals.json")) {
@@ -69,21 +46,15 @@ public final class ThirdPartyLiteralsTest {
         check("判斷失敗的那句也在（少一邊連勝就只會往下掉）",
               wynnmod.contains("Raid Failed"));
 
-        // 副本名稱也要在。getRaidFromName(標題) 是用來認「這是哪一場」的，
-        // 翻掉的話連 startRaid 都不會觸發——整場都不會被記錄。
         for (String raid : new String[] {
                 "Nest of The Grootslangs", "Orphion's Nexus of Light",
                 "The Canyon Colossus", "The Nameless Anomaly", "The Wartorn Palace"}) {
             check("副本名稱在清單上：" + raid, wynnmod.contains(raid));
         }
 
-        // RaidState 還解析兩句聊天。開場那句翻掉就認不出「這一場開始了」；
-        // 增益那句我們本來就不翻（帶隊友 ID，收集階段就被擋掉），列著是防手滑。
         check("開場邀請那句在清單上", wynnmod.contains("would like to start"));
         check("增益選擇那句在清單上", wynnmod.contains("has chosen the"));
 
-        // WynnMarketSearch（模組 ID：wms）靠聊天裡那句提示跳出它的搜尋面板，而且是在
-        // 聊天畫出來之前才讀——聊天開成就地取代，它讀到的就是譯文（issue #1148）。
         String prompt = "Type the item name or type 'cancel' to cancel:";
         check("清單有 wms 這一組", root.has("wms"));
         check("市集搜尋的那句提示在 wms 那一組",
@@ -93,7 +64,6 @@ public final class ThirdPartyLiteralsTest {
               ThirdPartyLiterals.reserved("󏿼 \n Type the item name or type 'cancel' to cancel:\n󏿼"));
         check("市集的其他訊息不受影響",
               !ThirdPartyLiterals.reserved(" You moved and your chat input was canceled."));
-        // 那句提示要跟語料的鍵是同一句：官方改了措辭的話，語料的鍵會跟著改，這裡要一起改
         com.google.gson.JsonObject ui = com.google.gson.JsonParser.parseString(Files.readString(
                 Path.of("src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json"),
                 StandardCharsets.UTF_8)).getAsJsonObject();
@@ -109,23 +79,12 @@ public final class ThirdPartyLiteralsTest {
         report();
     }
 
-    /**
-     * 討伐戰結算的統計數字，WynnMod 也在解——但關鍵詞跟獵殺信標撞名。
-     *
-     * <p>{@code Reward Pulls} 同時出現在結算與信標面板，兩邊都走聊天。只用
-     * 「包含」去擋會把信標的譯文一起擋掉（那是 v1.99.89 才修好的）。分別它們
-     * 的是結算那一行的百分比 {@code (30.16%)}。
-     *
-     * <p>這裡兩個方向都要測：該擋的擋得下來，<b>不該擋的不能誤傷</b>。
-     * 只測前者的話，把整個信標面板擋掉也會全過。
-     */
     private static void stats() {
         ThirdPartyLiterals.load(java.nio.file.Path.of("does-not-exist"));
         java.util.List<java.util.List<String>> shipped = ThirdPartyLiterals.activeLiterals();
         check("沒裝 WynnMod 時統計那幾條也不生效（實際 " + shipped.size() + " 組）",
               shipped.isEmpty());
 
-        // 直接餵出貨清單裡那幾組，測比對本身。
         ThirdPartyLiterals.forTestGroups(java.util.List.of(
                 java.util.List.of("Time Elapsed:"),
                 java.util.List.of("Hover for more"),
@@ -143,7 +102,6 @@ public final class ThirdPartyLiteralsTest {
         check("擋得下結算的討伐戰經驗",
               ThirdPartyLiterals.reserved("HEAL 144K/1M (13.13%)  210 Raid Experience"));
 
-        // ★ 反方向：獵殺信標的面板不能被誤傷。
         check("信標面板不受影響（次數）",
               !ThirdPartyLiterals.reserved("Reward Pulls  next Beacon Effects"));
         check("信標面板不受影響（效力）",
@@ -151,22 +109,10 @@ public final class ThirdPartyLiteralsTest {
         check("信標面板不受影響（挑戰場數）",
               !ThirdPartyLiterals.reserved("Reward Pulls  for 10 Challenges"));
 
-        // 討伐戰大廳的每日獎勵面板也不該被擋——那不是 WynnMod 在解的行。
         check("大廳的每日獎勵不受影響",
               !ThirdPartyLiterals.reserved("- Aspect Pulls: 3"));
     }
 
-    /**
-     * 討伐戰結算那幾列：WynnMod 在我們之前就讀完聊天的版本，不必為它留英文。
-     *
-     * <h2>實機回報（使用者 2026-10-12）</h2>
-     * 「raid 的翻譯消失了」：結算那一塊標題是「統計／獎勵」，底下四列全是英文。
-     * 1.0.0_1 起就地取代模式的面板也守這份清單，有裝 WynnMod 的人整塊就留成英文。
-     * 而 WynnMod 2.3.7 是在封包那一層讀聊天的（{@code S2CPacketEvents$ChatMsg}），
-     * 比 Wynntils 的事件、比我們都早——截圖裡它加的 PB 徽章已經在我們收到的那一列上。
-     *
-     * <p>這裡用出貨的清單、假的「裝了沒／類別在不在」釘住三種情況。
-     */
     private static void readsChatFirst(com.google.gson.JsonObject root) {
         String probe = "com.wynnmod.mixin.events.S2CPacketEvents$ChatMsg";
         check("★ 出貨的清單有帶條件的那一組，條件是 WynnMod 封包層的聊天事件",
@@ -181,7 +127,6 @@ public final class ThirdPartyLiteralsTest {
         String[] titles = {"Raid Completed!", "Raid Failed!", "Lootrun Completed!",
             "Orphion's Nexus of Light", "Prepare to Lootrun"};
 
-        // 新的 WynnMod：類別在
         ThirdPartyLiterals.forTestGroups(ThirdPartyLiterals.groups(root,
                 id -> id.equals("wynnmod"), probe::equals));
         for (String row : rows) {
@@ -195,7 +140,6 @@ public final class ThirdPartyLiteralsTest {
         check("開場邀請照舊留英文", ThirdPartyLiterals.reserved(
                 "Watari would like to start Nest of the Grootslangs!"));
 
-        // 舊的 WynnMod：類別不在
         ThirdPartyLiterals.forTestGroups(ThirdPartyLiterals.groups(root,
                 id -> id.equals("wynnmod"), name -> false));
         for (String row : rows) {
@@ -206,7 +150,6 @@ public final class ThirdPartyLiteralsTest {
         check("舊版 WynnMod：信標面板不受影響",
               !ThirdPartyLiterals.reserved("Reward Pulls  next Beacon Effects"));
 
-        // 沒裝：帶條件的鍵不可以被當成另一個模組 ID 而生效
         check("沒裝 WynnMod：什麼都不留", ThirdPartyLiterals.groups(root,
                 id -> false, name -> false).isEmpty());
         check("只裝了別的模組（wms）：WynnMod 那兩組都不生效",
@@ -215,14 +158,6 @@ public final class ThirdPartyLiteralsTest {
         ThirdPartyLiterals.forTestGroups(java.util.List.of());
     }
 
-    /**
-     * {@code RaidState} 解析的兩句聊天。
-     *
-     * <p>「would like to start」是開場邀請，翻掉就認不出這一場開始了；
-     * 「has chosen the … buff!」是隊伍拿了哪些增益。
-     *
-     * <p>反方向一樣要測：這兩組都是短前綴，很容易誤傷別的句子。
-     */
     private static void chat() {
         ThirdPartyLiterals.forTestGroups(java.util.List.of(
                 java.util.List.of("would like to start"),
@@ -233,8 +168,6 @@ public final class ThirdPartyLiteralsTest {
         check("擋得下增益選擇", ThirdPartyLiterals.reserved(
                 "Watari has chosen the Elder III buff!"));
 
-        // ★ 反方向。「has chosen」單獨出現在任務對話裡完全可能，所以那一組
-        //   一定要配上句尾的 buff! 才算數。
         check("任務對話不受影響（沒有 buff!）",
               !ThirdPartyLiterals.reserved(
                       "The Council has chosen the path of silence."));

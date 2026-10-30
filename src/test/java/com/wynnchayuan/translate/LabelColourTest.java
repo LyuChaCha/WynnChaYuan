@@ -12,22 +12,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 採集點的名牌：每一段的顏色要跟原文對得起來。
- *
- * <h2>實機長什麼樣</h2>
- * 銅礦脈上面那塊字是<b>一個</b>含換行的名牌，三行各有各的顏色
- *（{@code majorid-debug.txt} 錄到的調色盤）：
- *
- * <pre>
- *   §fCopper
- *   §a✔ §7Ⓑ Mining Lv Min: §f{~}
- *   §c✖ §7Equipped Tool: §fPickaxe
- * </pre>
- *
- * 綠色的勾代表等級夠、紅色的叉代表手上不是那把工具——顏色<b>就是資訊</b>，
- * 翻完之後掉了顏色，玩家得自己去讀字才知道能不能挖。
- */
 public final class LabelColourTest {
 
     private static int failures = 0;
@@ -86,9 +70,6 @@ public final class LabelColourTest {
             check("「裝備工具:」是灰的（實際 "
                             + hex(colourOf(out, "裝備工具")) + "）",
                   colourOf(out, "裝備工具") == GREY);
-            // 工具名跟著標籤走。原文的「Pickaxe」是白的，但語料裡沒有單獨的
-            // 「Pickaxe」條目——譯名只存在於整塊名牌那一條裡，沒有東西可以把
-            // 白色釘在「鎬」這個字上。跟著同一行標籤的灰色，至少不會是第三種顏色。
             check("工具名跟著標籤同色（實際 " + hex(colourOf(out, "鎬")) + "）",
                   colourOf(out, "鎬") == GREY);
         }
@@ -98,7 +79,6 @@ public final class LabelColourTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 實機那塊名牌，顏色照 majorid-debug 的調色盤。 */
     private static StyledText vein() {
         MutableComponent all = Component.empty();
         all.append(lit("Copper", WHITE));
@@ -113,7 +93,6 @@ public final class LabelColourTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 含有這段文字的那一片段是什麼顏色；找不到回傳 -1。 */
     private static int colourOf(Component component, String text) {
         int[] found = {-1};
         component.visit((style, piece) -> {

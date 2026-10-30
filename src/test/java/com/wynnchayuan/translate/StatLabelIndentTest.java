@@ -10,16 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 裝備 tooltip 的屬性列：標籤一律靠左，從原文標籤的起點開始畫。
- *
- * <h2>實機回報</h2>
- * 簡中的 Divzer：「灵巧」「防御」「法力偷取」「攻击速度」「法术伤害」都被推到中間，
- * 「生命偷取」「普攻伤害」卻靠左。英文版每一列都靠左。
- *
- * <p>遊戲送來的一列長這樣：{@code [+2]Dexterity[-標籤寬][+148]+37 to +37[-9]}——
- * 標籤畫完先退回起點，再一口氣跳到數值欄，所以數值的位置跟標籤寬度無關。
- */
 public final class StatLabelIndentTest {
 
     private static int failures = 0;
@@ -63,7 +53,6 @@ public final class StatLabelIndentTest {
         lines.add(row(0, "Water Damage", "-715% to -385%"));
         lines.add(row(0, "Spell Damage", "+76 to +329"));
         lines.add(row(0, "Main Attack Damage", "+161 to +697"));
-        // 實機記下的偏移（layout-debug）：標籤也是裝備名的兩列
         lines.add(rowAt(2, "Agility", -37, 144, "+25 to +25"));
         lines.add(iconRow("Agility", -37, 144, "+25 to +25"));
         lines.add(wynnRow("", "Agility ", 151, "+35"));
@@ -71,8 +60,6 @@ public final class StatLabelIndentTest {
         lines.add(spriteOffsetRow("Agility ", 151, "+35"));
         lines.add(rowAt(0, "Reflection", -44, 129, "+27% to +117%"));
         lines.add(rowAt(0, "Exploding", -44, 150, "+15% to +65%"));
-        // 殞命之爪（素材）的需求列。Min. Defence 整行在語料裡查得到，
-        // 其餘幾列只換得到標籤——兩條路畫出來的標籤要落在同一個左緣。
         lines.add(statRow("Durability", -41, 141, "-165"));
         lines.add(statRow("Min. Defence", -54, 144, "+35"));
         lines.add(statRow("Fire Damage", -52, 99, "+23% to +26%"));
@@ -97,7 +84,6 @@ public final class StatLabelIndentTest {
         }
     }
 
-    /** {@code [lead]label[-labelWidth][+150]value[-9]} */
     private static Component row(int lead, String label, String value) {
         MutableComponent c = Component.empty();
         if (lead != 0) {
@@ -111,7 +97,6 @@ public final class StatLabelIndentTest {
         return c;
     }
 
-    /** 實機的需求列（layout-debug 記的殞命之爪）：行尾沒有多餘的偏移。 */
     private static Component statRow(String label, int back, int jump, String value) {
         MutableComponent c = Component.empty();
         c.append(Component.literal(label).withStyle(WHITE));
@@ -134,7 +119,6 @@ public final class StatLabelIndentTest {
         return c;
     }
 
-    /** 實機的屬性列：屬性圖示（另一個字型）、+2、標籤、往回退、跳到數值欄。 */
     private static Component iconRow(String label, int back, int jump, String value) {
         MutableComponent c = Component.empty();
         c.append(Component.literal("").withStyle(Style.EMPTY.withFont(
@@ -154,10 +138,6 @@ public final class StatLabelIndentTest {
             new net.minecraft.network.chat.FontDescription.Resource(
                     net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
 
-    /**
-     * 照 tooltip-partial 記下的實機結構：偏移字元與文字都是 language/wynncraft 字型，
-     * 標籤後面帶一個空白——{@code <圖示> [+2] 'Agility ' [+151] '+35'}。
-     */
     private static Component wynnRow(String icon, String label, int jump, String value) {
         MutableComponent c = Component.empty();
         if (icon != null) {
@@ -173,7 +153,6 @@ public final class StatLabelIndentTest {
         return c;
     }
 
-    /** 同上，但 +2 那個偏移跟圖示同一個字型。 */
     private static Component spriteOffsetRow(String label, int jump, String value) {
         Style sprite = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
                 net.minecraft.resources.Identifier.withDefaultNamespace("tooltip/attribute/sprite")));
@@ -185,10 +164,6 @@ public final class StatLabelIndentTest {
         return c;
     }
 
-    /**
-     * 實機畫出去的那一列（tooltip-partial）：圖示、+2、<b>圖示字型的空白</b>、敏捷。
-     * 那個空白把標籤推開十幾像素，要拿掉；圖示與偏移留著。
-     */
     private static void iconSpace() {
         Style sprite = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
                 net.minecraft.resources.Identifier.withDefaultNamespace("tooltip/attribute/sprite")));
@@ -205,7 +180,6 @@ public final class StatLabelIndentTest {
         check("圖示、偏移與數值都還在",
               plain.startsWith(String.valueOf((char) 0xE014) + SpaceOffset.encode(2) + "敏捷")
                       && plain.endsWith("+35"));
-        // 一般字型的空白是真的排版，不動
         MutableComponent normal = Component.empty();
         normal.append(Component.literal(" 职业类型").withStyle(WHITE));
         check("預設字型的前導空白不動",
@@ -216,7 +190,6 @@ public final class StatLabelIndentTest {
         return Component.literal(SpaceOffset.encode(px)).withStyle(SpaceOffset.styleFor(WHITE));
     }
 
-    /** 第一個實字畫在第幾個像素。 */
     private static int firstTextX(Component c) {
         int[] x = {0};
         int[] found = {Integer.MIN_VALUE};
@@ -228,7 +201,7 @@ public final class StatLabelIndentTest {
                 x[0] += SpaceOffset.decode(text);
             } else if (!text.isBlank() && text.codePoints().allMatch(
                     cp -> cp >= 0xE000 && cp <= 0xF8FF)) {
-                x[0] += measure(Component.literal(text));   // 圖示
+                x[0] += measure(Component.literal(text));
             } else if (!text.isBlank()) {
                 int lead = 0;
                 while (lead < text.length() && text.charAt(lead) == ' ') {

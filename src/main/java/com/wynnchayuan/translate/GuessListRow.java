@@ -102,7 +102,7 @@ public final class GuessListRow {
             }
             out.append(shown[k] == null
                     ? Component.literal(names[k]).withStyle(style)
-                    : LineTranslator.literal(shown[k], style));
+                    : DisplayStyles.literal(shown[k], style));
         }
         if (trailingComma) {
             out.append(Component.literal(",").withStyle(styles.get(styles.size() - 1)));

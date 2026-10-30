@@ -3,17 +3,6 @@ package com.wynnchayuan.translate;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 疊層之後，<b>上面那一層</b>翻好的每一條都要贏。
- *
- * <h2>為什麼要全庫掃</h2>
- * {@link LanguageFallbackTest} 釘的是「墊底那一層還在」，用的是三條手挑的
- * 樣本。但實機回報的是另一個方向：<b>簡體明明翻好了，畫面上卻是繁體</b>。
- *
- * <p>那種洞是一個索引一個索引出現的——{@code flat} 修好了，{@code marked}
- * 還漏著；短句對了，長句錯了。手挑樣本永遠追不上，所以這一條直接拿
- * <b>簡體翻好的每一條</b>去問，有一條輸給繁體就紅燈。
- */
 public final class LayerWinsTest {
 
     private static final Path ROOT =
@@ -26,12 +15,9 @@ public final class LayerWinsTest {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(ROOT.resolve("zh_tw"));
 
-        // 畫面上的排法：簡體在上、繁體墊底
         TranslationStore stacked = new TranslationStore();
         stacked.loadAll(List.of(ROOT.resolve("zh_tw"), ROOT.resolve("zh_cn")));
 
-        // 長句走的不是主查表，而是這幾個正規化過的輔助索引。每一個都要單獨問
-        // 一次——先前 flat 修好了、marked 還漏著，就是只問主查表看不出來的。
         int failures = 0;
         failures += sweep("主查表 lookup", cn, tw, stacked,
                           TranslationStore::lookup, TranslationStore::lookup);
@@ -49,13 +35,6 @@ public final class LayerWinsTest {
         }
     }
 
-    /**
-     * 上面那一層翻的是<b>另一個寫法</b>的同一句話。
-     *
-     * <p>全庫掃描問的鍵本身就是簡體翻好的那一條，所以問不到這一種：畫面上的字
-     * 在繁體有精確的譯文、在簡體只有「只差標點或大小寫」的那一條。先前精確查表
-     * 先命中繁體，簡體那條永遠輪不到。逐字對話的校訂版替換也是一樣。
-     */
     private static int variants() {
         int lost = 0;
         try {
@@ -89,7 +68,6 @@ public final class LayerWinsTest {
                     "Hey, {u}! You alright in there? Looks like we hit something.",
                     stacked.matchPrefix("Hey, {u}!", 9, "Layer Test"));
 
-            // 反面：只有一層時行為照舊
             TranslationStore alone = new TranslationStore();
             alone.loadAll(tw);
             lost += expect("單層時精確鍵照舊",
@@ -112,12 +90,6 @@ public final class LayerWinsTest {
         String at(TranslationStore store, String src);
     }
 
-    /**
-     * 拿簡體翻好、而且跟繁體翻得不一樣的每一條，去問疊完之後的那一份。
-     *
-     * @param own  怎麼問「這一層自己」的譯文
-     * @param path 怎麼問疊完那一份——要測的就是這一條路
-     */
     private static int sweep(String what, TranslationStore cn, TranslationStore tw,
                              TranslationStore stacked, Look own, Look path) {
         int checked = 0;
@@ -130,19 +102,16 @@ public final class LayerWinsTest {
             }
             String twOwn = own.at(tw, src);
             if (twOwn == null || twOwn.equals(want)) {
-                continue;      // 繁體沒翻，或兩邊一模一樣——分不出勝負
+                continue;
             }
             String got = path.at(stacked, src);
             if (got == null) {
-                continue;      // 這條路本來就不收這一種鍵
+                continue;
             }
             checked++;
             if (want.equals(got)) {
                 continue;
             }
-            // 攤平／去折行這兩個索引會把換行壓掉，於是<b>同一層裡</b>兩條不同的
-            // 原文可能正規化成同一個鍵。那是既有的「層內先到先贏」，不是這條
-            // 測試要抓的東西——只有拿到<b>繁體那一份</b>才算輸。
             if (!got.equals(path.at(tw, src))) {
                 continue;
             }

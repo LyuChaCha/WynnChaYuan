@@ -9,26 +9,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 每一種語言各有多少台詞塞不進對話框。
- *
- * <h2>為什麼要分語言量</h2>
- * {@link DialogueFitTest} 只量繁中，而繁中一個字抵兩三個英文字母，標準框寬下
- * <b>一條都不會塞不下</b>。於是「譯文太長整句掉回英文」這個回報看起來不存在。
- *
- * <p>但回報的人（yool141，#902）翻的是<b>日文</b>：假名一個字跟漢字一樣寬，
- * 一句話的字數卻跟英文差不多，長度差了一截。俄文的單字又不能從中間切。
- * 所以要分語言量，才知道這件事到底有多大。
- *
- * <h2>這支不當成門檻</h2>
- * 塞不下的數量會隨譯文措辭浮動，訂一個上限只會在別人潤稿時無故變紅。
- * 這裡只印出來，讓人看得到比例；唯一的斷言是「每一種語言都讀得到語料」。
- */
 public final class DialogueFitLangTest {
 
     private static int failures = 0;
 
-    /** 標準框寬，以及有頭像時比較窄的那一種。 */
     private static final int[] WIDTHS = {232, 208};
 
     private static final String[] LANGS =
@@ -51,7 +35,7 @@ public final class DialogueFitLangTest {
                 String dst = pair[1];
                 if (src.isEmpty() || dst.isEmpty()
                         || src.contains("{") || dst.contains("{")) {
-                    continue;                  // 佔位符模擬不出來
+                    continue;
                 }
                 counts[0]++;
                 int need = rowsFor(src);
@@ -71,7 +55,6 @@ public final class DialogueFitLangTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 原文佔幾行：照對話框標準寬度折一次。 */
     private static int rowsFor(String src) {
         List<String> laid = DialogueRewriter.wrap(src, 5, null, 232);
         if (laid == null) {
@@ -86,7 +69,6 @@ public final class DialogueFitLangTest {
         return Math.max(1, used);
     }
 
-    /** 中日韓一個字 10px，其餘照 Wynncraft 的對話字型算 6px。 */
     private static int realWidth(String text) {
         int w = 0;
         for (int i = 0; i < text.length(); i++) {
@@ -118,7 +100,6 @@ public final class DialogueFitLangTest {
         }
     }
 
-    /** 從開頭的引號讀一個 JSON 字串，處理跳脫。 */
     private static String jsonString(String text, int quote) {
         StringBuilder out = new StringBuilder();
         for (int i = quote + 1; i < text.length(); i++) {

@@ -14,35 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 就地取代模式的多欄面板：整塊攔下來，等它跳完再一起翻。
- *
- * <h2>實機回報（2026-10-10）</h2>
- * 「又遇到老問題，字不會置中對齊 (lootrun)」。信標面板是一列一則訊息送來的，
- * 就地取代一列換一列，每一列只看得到自己：
- *
- * <pre>
- *   紅色信標
- *   +6 場挑戰以            ← 四列各自查到半句，語序是英文的
- *   本次 Lootrun。獲得
- *   完成它們不會           ← 單欄的接續列原地不動，跟上面兩列錯開
- *   獲得時間獎勵。
- * </pre>
- *
- * 原文加譯文那個模式沒有這個問題——它本來就等整塊跳完才算。所以就地取代從
- * 第一個多欄的列開始，把後面的伺服器訊息攔下來走同一條路（{@link ChatBlock#hold}）。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>多欄的列認得出來（從這一列開始攔），單欄的標題列不算；</li>
- *   <li>攔下來的一整塊：同一欄折成幾列的敘述併成整句翻、切回原本的列數；</li>
- *   <li>★ 攔下來的東西<b>一列都不能少</b>——查不到譯文的列照原文送回去，
- *       整塊一列都沒翻到也要送（原文已經被攔掉了，不送就憑空消失）；</li>
- *   <li>沒被攔的（原文加譯文模式）照舊：一列都沒翻到就不送，不然每則訊息出現兩遍。</li>
- * </ol>
- *
- * <p>欄位的實際位移要量字寬，測試環境沒有字型，這裡釘不到；能釘的是內容與列數。
- */
 public final class ChatHoldTest {
 
     private static int failures = 0;
@@ -81,11 +52,9 @@ public final class ChatHoldTest {
         root.addProperty("{#}Spawn {~} Flying Chest", "{#}飛箱 {~} 個");
         root.addProperty("{#}Click here to reroll", "{#}點這裡重抽");
         root.addProperty("{#}({~} rerolls left)", "{#}(還剩 {~} 次)");
-        // 整句：鍵是同一欄的幾格用換行接起來，譯文一列對一格
         root.addProperty("+{~} Curses, +{~} End\nReward Pulls", "詛咒 +{~}，\n結算 +{~}");
         root.addProperty("+{~} Challenges to\nthis Lootrun. Gain\nno Time Bonus for\ncompleting them.",
                          "這一趟\n多 {~} 場挑戰。\n打完它們\n沒有時間加成。");
-        // 只有半句的舊條目也在：整句有的時候不能輪到它們
         root.addProperty("{#}+{~} Challenges to", "{#}+{~} 場挑戰以");
         root.addProperty("{#}this Lootrun. Gain", "{#}本次 Lootrun。獲得");
         root.addProperty("{#}no Time Bonus for", "{#}完成它們不會");
@@ -110,7 +79,6 @@ public final class ChatHoldTest {
 
         check("多欄的列認得出來（從這一列開始攔）", LineTranslator.panelRow(panel.get(0)));
         check("單欄的標題列不算", !LineTranslator.panelRow(one(102, "Choose a Beacon!")));
-        // ★ 一般訊息裡圖示與字之間一兩個像素的字距微調不是欄界
         check("★ 字距微調不算兩欄", !LineTranslator.panelRow(two(40, "Some icon", 2, "and its text")));
         check("空行不算", !LineTranslator.panelRow(blank()));
 
@@ -145,7 +113,6 @@ public final class ChatHoldTest {
             check("空行還在", visible(rows[5]).isEmpty() && visible(rows[8]).isEmpty());
         }
 
-        // ★ 整塊一列都沒翻到：攔下來的也要送，不然伺服器送來的內容憑空消失
         ChatBlock.clear();
         ChatBlock.hold(two(10, "Nothing Here", 20, "Nothing There"), false);
         ChatBlock.hold(one(30, "Still Nothing"), false);
@@ -155,7 +122,6 @@ public final class ChatHoldTest {
                       && raw.getString().contains("Nothing There")
                       && raw.getString().contains("Still Nothing"));
 
-        // ★ 攔下來但標了「不翻」的列（夾著別人的名字）：語料裡就算查得到也照原文
         ChatBlock.clear();
         ChatBlock.hold(two(33, "Purple Beacon", 69, "Red Beacon"), false);
         ChatBlock.hold(one(105, "Click here to reroll"), true);
@@ -164,7 +130,6 @@ public final class ChatHoldTest {
               kept != null && kept.getString().contains("Click here to reroll")
                       && kept.getString().contains("紫標"));
 
-        // ★ 攔太久要強制送：後面一直有訊息進來，「安靜下來」等不到
         ChatBlock.clear();
         long now = System.currentTimeMillis();
         ChatBlock.hold(two(33, "Purple Beacon", 69, "Red Beacon"), false);
@@ -175,7 +140,6 @@ public final class ChatHoldTest {
         check("才剛開始攔、又剛來一則 -> 還不送", !ChatBlock.ready(now + 10));
         check("安靜 200ms -> 送", ChatBlock.ready(now + 200));
 
-        // 沒被攔的（原文加譯文模式）照舊：一列都沒翻到就不送
         ChatBlock.clear();
         ChatBlock.queue(two(10, "Nothing Here", 20, "Nothing There"), null);
         ChatBlock.queue(one(30, "Still Nothing"), null);
@@ -192,11 +156,6 @@ public final class ChatHoldTest {
         }
     }
 
-    /**
-     * 實際語料：log 裡還原出來的幾種信標效果，六個語言都要併成整句，不能留半句或英文。
-     *
-     * <p>列的英文原文照遊戲 log（Wynntils 記下的 {@code [CHAT/INFO]}）抄的。
-     */
     private static void realCorpus() {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
         List<StyledText> panel = List.of(
@@ -247,16 +206,6 @@ public final class ChatHoldTest {
         ChatBlock.clear();
     }
 
-    /**
-     * ★ 攔下來、翻好、送出去的那一則，再進來的時候要認得是自己送的。
-     *
-     * <h2>實機回報（2026-10-10）：「信標直接不出來了」</h2>
-     * 送出去的面板一樣是多欄的列，認不出來就會被自己再攔一次——攔下來的東西
-     * 一定會再送，於是每兩百毫秒重送一次，永遠到不了畫面（那一場的 log 裡重送了
-     * 一千三百多次）。認不出來是因為記的是純文字、比的是帶顏色碼的字；沒有顏色的
-     * 訊息兩者相同，所以上面那幾段（列都沒上色）測不出來。這裡的信標名稱照實機
-     * 上粗體與顏色。
-     */
     private static void ownMessage() {
         System.out.println("=== 自己送的那一則不會再被攔 ===");
         TranslationStore store = new TranslationStore();
@@ -284,7 +233,6 @@ public final class ChatHoldTest {
             ChatBlock.clear();
             return;
         }
-        // 聊天事件拿到的是 Wynntils 從那一則元件轉回來的 StyledText
         StyledText back = StyledText.fromComponent(made);
         check("前提：送出去的那一則本身也是多欄的列（所以不認得就會再被攔）",
               LineTranslator.panelRow(back));
@@ -300,7 +248,6 @@ public final class ChatHoldTest {
         check("換伺服器之後清掉", !ChatBlock.isOurs(back));
     }
 
-    /** 去掉排版偏移之後看得見的字。 */
     private static String visible(String row) {
         return com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(row).strip();
     }

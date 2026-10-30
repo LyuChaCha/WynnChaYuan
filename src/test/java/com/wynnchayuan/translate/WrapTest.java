@@ -2,42 +2,14 @@ package com.wynnchayuan.translate;
 
 import java.util.Random;
 
-/**
- * 折行不能丟例外。
- *
- * <h2>為什麼要有這條測試</h2>
- * 折行的位置<b>剛好是一個空白</b>時，切點 {@code cut} 就等於當前位置 {@code i}，
- * 而 {@code lineStart} 被設成 {@code cut + 1}——比 {@code i} 還大。接下來的
- * {@code substring(lineStart, i)} 就變成 {@code substring(24, 23)}，當場丟出
- * {@code StringIndexOutOfBoundsException}。
- *
- * <p>那個例外被繪製那層的 {@code catch (Throwable)} 吞掉，結果是<b>整個翻譯面板
- * 都不畫</b>。畫面上看起來像「這件物品沒翻到」，實際上語料好好的躺在那裡。
- * 使用者回報的 Halcyon 就是這樣。
- *
- * <p>所以除了那個確切的形狀，再用亂數跑一輪：任何字串、任何寬度都不該丟例外，
- * 而且折出來的內容去掉換行之後必須跟原文一模一樣。
- */
 public final class WrapTest {
 
     private static int failures = 0;
 
-    /** 一個字元算一單位。真正的量法要 Minecraft 字型，測試環境裡沒有。 */
     private static int measure(String piece) {
         return piece.codePointCount(0, piece.length());
     }
 
-    /**
-     * 貼近真實字型的量法。
-     *
-     * <h2>為什麼需要第二種量法</h2>
-     * {@link #measure} 是數 code point 的——{@code {#}} 算 3、一個中文字算 1。
-     * 真實的字型剛好相反：中文 9px、圖示大約也是 8px、拉丁字母 5px、空白 4px。
-     *
-     * <p>差別不只是比例。用數 code point 的量法，圖示比中文字<b>寬三倍</b>，
-     * 斷點永遠不會落在圖示後面那個位置；實機卻天天落在那裡。實機回報的
-     * 「圖示卡在行尾、詞掉到下一行」用舊量法怎麼掃都掃不出來，就是這個原因。
-     */
     private static int realistic(String piece) {
         int px = 0;
         for (int i = 0; i < piece.length(); ) {
@@ -46,33 +18,28 @@ public final class WrapTest {
             if (cp == ' ') {
                 px += 4;
             } else if (cp >= 0x3000) {
-                px += 9;                       // 中日韓
+                px += 9;
             } else {
                 px += 5;
             }
         }
-        // 佔位符整組算一個圖示的寬度，不是三個字母
         return piece.startsWith("{") && piece.endsWith("}") ? 8 : px;
     }
 
     public static void main(String[] args) {
-        // 使用者實際踩到的形狀：換行點正好落在空白上
         check("換行點落在空白上不會丟例外",
-                () -> LineTranslator.wrapToWidth(
+                () -> TextWrapper.wrapToWidth(
                         "Blinding Lights: All Ophanim orbs deal 250% damage",
                         8, WrapTest::measure));
 
         check("寬度只夠一個字",
-                () -> LineTranslator.wrapToWidth("a b c d e f g", 1, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("a b c d e f g", 1, WrapTest::measure));
         check("整串都是空白",
-                () -> LineTranslator.wrapToWidth("          ", 3, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("          ", 3, WrapTest::measure));
         check("佔位符不會被拆開",
-                () -> LineTranslator.wrapToWidth("{~} 格內的友軍 {~} 生命", 4, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("{~} 格內的友軍 {~} 生命", 4, WrapTest::measure));
 
-        // 避頭尾：標點不能自己站在行首。先前會折成
-        //   「…獲得 +5 層 Crystallize」
-        //   「，並改為環繞你運行。」   ← 逗號孤零零地開頭
-        String orphan = LineTranslator.wrapToWidth(
+        String orphan = TextWrapper.wrapToWidth(
                 "每次命中獲得層數，並改為環繞你運行。", 8, WrapTest::measure);
         boolean starts = false;
         for (String line : orphan.split(String.valueOf(NL))) {
@@ -82,53 +49,35 @@ public final class WrapTest {
         }
         report("標點不會被擠到行首（實際：" + show(orphan) + "）", !starts);
 
-        // 正負號跟它的數值是同一塊，不能拆開——先前會折成「增加 +」「5 層數」
-        String signed = LineTranslator.wrapToWidth("每次命中增加 +{~} 層數", 7,
+        String signed = TextWrapper.wrapToWidth("每次命中增加 +{~} 層數", 7,
                                                    WrapTest::measure);
         report("號不會跟數值分家（實際：" + show(signed) + "）",
                 !signed.contains("+" + NL));
 
-        // --- 其他語言 -------------------------------------------------
-        // 折行的規則是照中文寫的（中文可以在任何字之間斷）。西、德、法、俄
-        // 不行——把單字從中間切開，讀起來就是壞的。這裡釘住那條界線。
-        //
-        // 判準：每一個單字都塞得下時，折行只能發生在空白上。
-        //
-        // 比對前把連續空白收成一個。斷點<b>剛好落在空白之後</b>時，那個空白會
-        // 留在行尾（看不見，無所謂）；落在別處時則被吃掉。兩種都不算錯，
-        // 錯的是單字被切開——收掉空白之後，那才是唯一會讓比對失敗的情況。
         String[] latin = {
-            "Erhoeht den Schaden um",          // 德
-            "Aumenta el dano magico",          // 西
-            "Augmente les degats de sort",     // 法
-            "Увеличивает урон заклинаний",     // 俄
+            "Erhoeht den Schaden um",
+            "Aumenta el dano magico",
+            "Augmente les degats de sort",
+            "Увеличивает урон заклинаний",
         };
         for (String text : latin) {
-            String wrapped = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, 12, WrapTest::measure);
             report("不把單字切成兩半：" + text + "（實際：" + show(wrapped) + "）",
                     tidy(wrapped.replace(NL, ' ')).equals(tidy(text)));
         }
 
-        // 諺文跟中日文一樣，可以在音節之間斷（Unicode 的預設行為）。
-        // 這裡只要求內容不變——斷在哪由寬度決定。
-        String hangul = LineTranslator.wrapToWidth("마법 피해 증가량 상승", 4,
+        String hangul = TextWrapper.wrapToWidth("마법 피해 증가량 상승", 4,
                                                    WrapTest::measure);
         report("諺文折行不會掉字", bare(hangul).equals(bare("마법 피해 증가량 상승")));
 
-        // 一個單字本身就超過整行寬度時，只能從中間切——切壞總比整行滿出去好
-        String huge = LineTranslator.wrapToWidth(
+        String huge = TextWrapper.wrapToWidth(
                 "Bewegungsgeschwindigkeit", 8, WrapTest::measure);
         report("超長單字會被切開而不是滿出去",
                 huge.indexOf(NL) > 0 && bare(huge).equals("Bewegungsgeschwindigkeit"));
 
-        // 內容守恆：折行只能動空白，不能吃掉或改動任何一個字。
-        //
-        // 比對時<b>兩邊的空白全部拿掉</b>。折在空白上時那個空白會被行尾吃掉，
-        // 折在中文字之間則不會——所以不能用「換行還原成空白」去比，
-        // 那樣兩種情形只能對上一種。
         String text = "Allies within {~} blocks gain {~} of the health you gain";
         for (int px = 1; px <= 60; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             if (!bare(wrapped).equals(bare(text))) {
                 System.out.println("  [FAIL] 寬度 " + px + " 折完內容變了：" + wrapped);
                 failures++;
@@ -137,7 +86,6 @@ public final class WrapTest {
         }
         check("內容守恆（寬度 1 到 60）", () -> "");
 
-        // 亂數：任何字串、任何寬度都不該丟例外
         Random random = new Random(20260822L);
         String alphabet = " abcXYZ中文的字{~}";
         for (int round = 0; round < 4000; round++) {
@@ -149,7 +97,7 @@ public final class WrapTest {
             String input = sb.toString();
             int px = random.nextInt(30);
             try {
-                LineTranslator.wrapToWidth(input, px, WrapTest::measure);
+                TextWrapper.wrapToWidth(input, px, WrapTest::measure);
             } catch (RuntimeException e) {
                 System.out.println("  [FAIL] 亂數第 " + round + " 輪丟例外："
                         + e + "  寬度 " + px + "  輸入 [" + input + "]");
@@ -177,16 +125,10 @@ public final class WrapTest {
         }
     }
 
-    /**
-     * 中文優先斷在標點上，不要把詞切成兩半。
-     *
-     * <p>使用者回報的 Major ID「眩目之光」：字都在，但「奧法尼姆／光球」與
-     * 「所／有光球」被切開，要回頭讀一次才知道在講什麼。
-     */
     private static void clauseBreaks() {
         String text = "所有 奧法尼姆 光球造成 250% 傷害，每次命中使你獲得 +5 層 結晶化，"
                 + "並改為環繞你運行。使用普攻時，所有光球的移動速度都會加快。";
-        String wrapped = LineTranslator.wrapToWidth(text, 150, WrapTest::realistic);
+        String wrapped = TextWrapper.wrapToWidth(text, 150, WrapTest::realistic);
         String[] rows = wrapped.split(String.valueOf(NL));
         System.out.println("  折出來的樣子：");
         for (String row : rows) {
@@ -202,112 +144,57 @@ public final class WrapTest {
         report("每一行都收在標點上（實際 " + rows.length + " 行）", clean);
         report("內容沒有變", bare(wrapped).equals(bare(text)));
 
-        // 反面：一行才填一點點的時候不該為了標點提早收尾，否則整段會變成
-        // 細細長長一條，行數暴增之後外層又會把寬度放寬重折。
-        String early = LineTranslator.wrapToWidth("好，這是一句很長很長很長很長的話", 150,
+        String early = TextWrapper.wrapToWidth("好，這是一句很長很長很長很長的話", 150,
                                                   WrapTest::realistic);
         report("太早的標點不斷（實際：" + show(early) + "）", !early.startsWith("好，" + NL));
     }
 
-    /**
-     * 同樣的行數要排得平均，最後一行不該只剩零頭。
-     *
-     * <p>使用者回報的畫面：`Pounce: Escape becomes a forward lunge.` 原文兩行，
-     * 譯文也是兩行，但折成 11 字 ＋ 2 字——
-     *
-     * <pre>
-     *   ◆ 猛撲: 逃脫變成向前突
-     *   進。
-     * </pre>
-     *
-     * <p>貪心折行把第一行塞滿，剩下的全掉到最後一行。中文每個字都能斷，
-     * 沒有空白可以退，所以特別明顯。
-     */
     private static void balanced() {
         System.out.println("\n  -- 同樣行數要排得平均 --");
 
-        // 三行才輪得到平均分配：兩行的零頭已經被「放得下就一行」接走了
-        //（見 oneLine），因為<b>會出現零頭就表示只差一點點放得下</b>。
-        //
-        // 這裡不寫死字數——寫的是那條性質：同樣的行數，最短的那一行要變長。
         String text = "每次命中使你獲得層數並改為環繞你運行造成傷害";
-        String greedy = LineTranslator.wrapToWidth(text, 10, WrapTest::measure);
-        String even = LineTranslator.wrapBalanced(text, 10, WrapTest::measure);
+        String greedy = TextWrapper.wrapToWidth(text, 10, WrapTest::measure);
+        String even = TextWrapper.wrapBalanced(text, 10, WrapTest::measure);
         report("這句夠長，真的折成三行以上（" + show(greedy) + "）", rowsOf(greedy).length >= 3);
         report("行數沒變（" + show(even) + "）", rowsOf(even).length == rowsOf(greedy).length);
         report("最後一行不再是零頭（" + shortest(greedy) + " → " + shortest(even) + "）",
                 shortest(even) > shortest(greedy));
 
-        // 反面：不能為了平均而把英文單字切開。
         String withWord = "每次命中使你獲得 Crystallize 層數。";
-        String tight = LineTranslator.wrapBalanced(withWord, 14, WrapTest::measure);
+        String tight = TextWrapper.wrapBalanced(withWord, 14, WrapTest::measure);
         boolean split = false;
         for (int at = tight.indexOf(NL); at > 0 && at + 1 < tight.length();
                 at = tight.indexOf(NL, at + 1)) {
-            // 只看拉丁字母。中文字在 Java 裡也是 isLetter，拿它判斷會把
-            // 「…得 ⏎ Crystallize」誤判成切開了單字——中文本來就可以在那裡斷。
             if (latin(tight.charAt(at - 1)) && latin(tight.charAt(at + 1))) {
                 split = true;
             }
         }
         report("平均分配沒有把英文單字切開（實際：" + show(tight) + "）", !split);
 
-        // 內容守恆：平均只重排，不能吃字。
         report("字沒有變少", bare(tight).equals(bare(withWord)));
     }
 
-    /**
-     * 平均分配不能把「收在逗號上」換成「斷在詞中間」。
-     *
-     * <p>平均分配是把寬度一路收窄、取最後一個行數不變的結果。收到逗號放不進第一行時，
-     * 斷點就掉進詞裡，逗號被夾到第二行中間——行數一樣，所以先前照收：
-     *
-     * <pre>
-     *   本次剩餘的整段期
-     *   間，每提供一個信          ← 兩個接縫都在詞中間
-     *   標就增加一點傷害
-     * </pre>
-     */
     private static void balanceKeepsClause() {
         System.out.println("\n  -- 平均分配不丟掉標點上的斷點 --");
         String text = "本次剩餘的整段期間，每提供一個信標就增加一點傷害";
-        String out = LineTranslator.wrapBalanced(text, 12, WrapTest::measure);
+        String out = TextWrapper.wrapBalanced(text, 12, WrapTest::measure);
         String[] rows = rowsOf(out);
         report("第一行收在逗號上（實際：" + show(out) + "）",
                rows.length == 3 && rows[0].endsWith("，"));
         report("字沒有變少", bare(out).equals(bare(text)));
     }
 
-    /**
-     * 數值跟它的屬性名不能拆到兩行。
-     *
-     * <p>玩家回報 Lootrun 賜福 Heavensent「排版有點怪」：
-     *
-     * <pre>
-     *   本次 Lootrun 剩餘期間，
-     *   每提供一個信標就 +4%
-     *   元素傷害 (最多 x15)          ← 加的是什麼要到下一行才知道
-     * </pre>
-     *
-     * <p>不挑寬度，掃過一整段：只要「數值＋屬性名」本身放得下一行，就不能有任何一個
-     * 寬度把它拆開。這裡行數不設限；有行數限制時可以退回舊的斷法，那一半由
-     * LootrunBoonTest 拿真的賜福去測。
-     */
     private static void valueWithLabel() {
         System.out.println("\n  -- 數值跟屬性名不分家 --");
         String[][] cases = {
-            // {譯文, 不能拆開的那一段}
             {"本次 Lootrun 剩餘期間，每提供一個信標就 +{~1} 元素傷害 (最多 x{~2})", "+{~1} 元素傷害"},
             {"本次 Lootrun 剩餘期間，每提供一個信標就 +{~1} {#}防禦 (上限 x{~2})", "+{~1} {#}防禦"},
             {"本次 Lootrun 剩餘期間，寶箱每提供 {~3} 件物品就 +{~1} 寶物品質 (最多 x{~2})",
              "+{~1} 寶物品質"},
-            // 數值在屬性名<b>後面</b>：後面沒東西可黏，黏前面
             {"本次 Lootrun 出現藍色或紫色信標超過 {~} 次之後，元素傷害 +{~}", "元素傷害 +{~}"},
             {"このルートランで青か紫のビーコンが {~} 回より多く提示されると、属性ダメージ +{~}",
              "属性ダメージ +{~}"},
-            // 每單位時間、倍率
             {"每次命中回復 -{~}/5s 生命，並使周圍友軍獲得 x{~} 倍傷害", "-{~}/5s 生命"},
-            // 拉丁／西里爾字母：短介系詞後面才是屬性名
             {"Когда в этом Lootrun вам предложат маяк более {~} раз, получите +{~} к стихийному урону",
              "+{~} к стихийному"},
         };
@@ -318,7 +205,7 @@ public final class WrapTest {
             String first = null;
             boolean lost = false;
             for (int px = additive(unit); px <= 320; px++) {
-                String wrapped = LineTranslator.wrapBalanced(text, px, WrapTest::additive);
+                String wrapped = TextWrapper.wrapBalanced(text, px, WrapTest::additive);
                 if (!bare(wrapped).equals(bare(text))) {
                     lost = true;
                 }
@@ -339,13 +226,6 @@ public final class WrapTest {
         }
     }
 
-    /**
-     * 可以相加的寬度：中日韓 9、空白 4、其他 5。
-     *
-     * <p>{@link #realistic} 把整個佔位符算成 8，但折行斷完之後是拿子字串逐字重量的，
-     * 兩種量法對不起來——「放得下」的判斷就會跟折行本身打架。這裡要的是
-     * 「單位本身放得下就不能拆」這條性質，量法必須一致。
-     */
     private static int additive(String piece) {
         int px = 0;
         for (int i = 0; i < piece.length(); ) {
@@ -356,45 +236,23 @@ public final class WrapTest {
         return px;
     }
 
-    /**
-     * 只差一點就放得下的，讓它留在同一行。
-     *
-     * <p>Major ID 大多是「名稱: 一句話」，中文比英文緊湊，原文兩行的往往一句
-     * 就講完。硬折回兩行只是把一句完整的話剪成兩截——而譯文面板是我們自己畫的，
-     * 寬度本來就跟著內容長，不必為了對齊原文的形狀犧牲可讀性。
-     *
-     * <p>只放寬到 {@code SNUG}（125%）。再寬下去，一句話就能把整份 tooltip
-     * 撐得莫名其妙，所以也釘住反面：差太多的還是要折。
-     */
     private static void oneLine() {
         System.out.println("\n  -- 放得下就留在同一行 --");
 
-        // measure 數的是「幾個字」。這句 13 個字，寬 11——11 × 125% = 13，剛好放得下。
         String text = "猛撲: 逃脫變成向前突進。";
-        String fits = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String fits = TextWrapper.wrapBalanced(text, 11, WrapTest::measure);
         report("沒有斷行（實際：" + show(fits) + "）", fits.indexOf(NL) < 0);
         report("字沒有變少", bare(fits).equals(bare(text)));
 
-        // 反面：寬 8 的話 8 × 125% = 10，13 個字差太多，該折就得折。
-        String tight = LineTranslator.wrapBalanced(text, 8, WrapTest::measure);
+        String tight = TextWrapper.wrapBalanced(text, 8, WrapTest::measure);
         report("差太多的還是要折（實際：" + show(tight) + "）", tight.indexOf(NL) > 0);
     }
 
-    /**
-     * 放不下的時候，斷在名稱後面。
-     *
-     * <p>「{@code 猛撲:}」換行「{@code 逃脫變成向前突進在此}」——斷在冒號這個
-     * <b>語意</b>的接縫上，比斷在句子中間好讀。
-     *
-     * <p>但只在<b>不會多出一行</b>的時候：說明長到要三四行的，名稱獨佔一行
-     * 就是白白浪費一行，那還不如平均分配。反面也釘住。
-     */
     private static void labelBreak() {
         System.out.println("\n  -- 斷在名稱後面 --");
 
-        // 14 個字、寬 11：11 × 125% = 13 放不下，但名稱後面斷剛好兩行。
         String text = "猛撲: 逃脫變成向前突進在此";
-        String out = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String out = TextWrapper.wrapBalanced(text, 11, WrapTest::measure);
         String[] rows = rowsOf(out);
         report("折成兩行（實際：" + show(out) + "）", rows.length == 2);
         if (rows.length == 2) {
@@ -403,20 +261,14 @@ public final class WrapTest {
         }
         report("字沒有變少", bare(out).equals(bare(text)));
 
-        // 說明本來就要兩行的話，名稱再獨佔一行就變三行——比貪心多一行，
-        // 那是白白浪費一行，不該這樣折。
-        //
-        // 注意<b>不是</b>「說明長就不斷」：貪心也要三行的時候，斷在名稱後面
-        // 同樣是三行，沒有多花，那就照斷（下面第二段）。判準是行數，不是長度。
         String longer = "猛撲: 逃脫變成向前突進並造成傷害";
-        String[] wide = rowsOf(LineTranslator.wrapBalanced(longer, 11, WrapTest::measure));
+        String[] wide = rowsOf(TextWrapper.wrapBalanced(longer, 11, WrapTest::measure));
         report("貪心兩行就夠時，不為了斷在名稱後而多花一行（實際："
                 + show(String.join(String.valueOf(NL), wide)) + "）",
                 wide.length == 2 && !wide[0].equals("猛撲:"));
 
-        // 貪心本來就要三行的，斷在名稱後面也是三行——沒有多花，那就照斷。
         String longest = "猛撲: 逃脫變成向前突進並且造成大量範圍傷害。";
-        String[] three = rowsOf(LineTranslator.wrapBalanced(longest, 11, WrapTest::measure));
+        String[] three = rowsOf(TextWrapper.wrapBalanced(longest, 11, WrapTest::measure));
         report("行數一樣就照斷（實際："
                 + show(String.join(String.valueOf(NL), three)) + "）",
                 three.length == 3 && three[0].equals("猛撲:"));
@@ -424,20 +276,6 @@ public final class WrapTest {
                 three.length == 3 && Math.abs(three[1].length() - three[2].length()) <= 2);
     }
 
-    /**
-     * 圖示不能落在行尾。
-     *
-     * <p>「{@code 使用 {#} 物品鑑定師}」的 {@code {#}} 是物品鑑定師的圖示，
-     * 是它的前綴。使用者回報的畫面是斷在兩者中間——
-     *
-     * <pre>
-     *   此物品的力量已被封印，使用 ◉
-     *   物品鑑定師 即可解放其潛能。
-     * </pre>
-     *
-     * <p>這裡不挑特定寬度，而是<b>掃過所有會折行的寬度</b>：只要有一個寬度
-     * 讓圖示落在行尾就算失敗。挑一個寬度測的話，換個字數就漏掉了。
-     */
     private static void glyphNotAtLineEnd() {
         System.out.println("\n  -- 圖示不能落在行尾 --");
 
@@ -445,13 +283,8 @@ public final class WrapTest {
         int bad = 0;
         String worst = null;
         for (int px = 4; px <= 40; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             for (String row : wrapped.split(String.valueOf(NL), -1)) {
-                // strip 過再比。行尾如果是「{#} 」（圖示加一個空白），
-                // 直接 endsWith 抓不到——先前的測試就是這樣漏掉真正的形狀的。
-                //
-                // 整行<b>只有</b>圖示不算失敗：那是寬度窄到放不下「圖示＋一個字」，
-                // 沒有東西可以跟它走，往前挪只會挪出一個空行。
                 String core = row.stripTrailing();
                 if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
                     bad++;
@@ -464,17 +297,14 @@ public final class WrapTest {
         report("沒有任何寬度讓圖示落在行尾"
                 + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
 
-        // 內容守恆：避尾只是挪斷點，不能吃字
-        String once = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+        String once = TextWrapper.wrapToWidth(text, 12, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
 
-        // ★ 實機回報的另一句。掃到更寬的地方——先前只掃到 40，而真正的 tooltip
-        //   比那寬得多，圖示落在行尾的寬度全都在掃描範圍外。
         String upgrade = "一件強大的神器，可透過 {#} 物品升級師 將物品提升至全新的境界。";
         int wide = 0;
         String first = null;
         for (int px = 4; px <= 120; px++) {
-            String wrapped = LineTranslator.wrapToWidth(upgrade, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(upgrade, px, WrapTest::measure);
             for (String row : wrapped.split(String.valueOf(NL), -1)) {
                 String core = row.stripTrailing();
                 if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
@@ -488,14 +318,11 @@ public final class WrapTest {
         report("寬一點的版面也不會讓圖示落在行尾"
                 + (first == null ? "" : "（例如 " + first + "）"), wide == 0);
 
-        // ★ tooltip 走的其實是 wrapBalanced，不是 wrapToWidth。
-        //   原文三行，所以 rows=3；平均分配那一步會用更窄的寬度重折，
-        //   而重折出來的斷點沒有再過一次避尾——先前只測 wrapToWidth，測不到。
         int bal = 0;
         String balWorst = null;
         for (int px = 8; px <= 320; px++) {
             for (int rows = 2; rows <= 4; rows++) {
-                String wrapped = LineTranslator.wrapBalanced(
+                String wrapped = TextWrapper.wrapBalanced(
                         upgrade, px, rows, WrapTest::realistic);
                 for (String row : wrapped.split(String.valueOf(NL), -1)) {
                     String core = row.stripTrailing();
@@ -512,8 +339,6 @@ public final class WrapTest {
         report("平均分配之後圖示也不能落在行尾"
                 + (balWorst == null ? "" : "（例如 " + balWorst + "）"), bal == 0);
 
-        // ★★ 真正的兇手：折完之後 keepAccentsWhole 又把重點詞整個搬到下一行，
-        //    圖示就這樣被留在行尾。折行本身沒問題——所以只測折行永遠測不到。
         java.util.List<com.wynnchayuan.capture.LineParts.Piece> accents =
                 java.util.List.of(new com.wynnchayuan.capture.LineParts.Piece(
                         "物品升級師", net.minecraft.network.chat.Style.EMPTY));
@@ -527,32 +352,14 @@ public final class WrapTest {
                bare(String.join("", kept)).equals(bare(String.join("", split))));
     }
 
-    /**
-     * 佔位符不能被斷成兩半。
-     *
-     * <p>使用者回報的 Major ID：
-     *
-     * <pre>
-     *   為你恢復 15%、為友軍恢復 {~2
-     *   }，但衝鋒不再造成傷害。
-     * </pre>
-     *
-     * <p>折行本身是照「片段」走的，{@code {~2}} 會被當成一整塊；但避頭
-     * （標點不能在行首）是<b>逐字元</b>往回退的——斷點原本落在
-     * {@code ，}，退一格就退進了佔位符裡面。
-     *
-     * <p>而少了右括號就不再是佔位符，填值那一步認不得它，於是畫面上
-     * 直接露出 {@code {~2}} 這串字。<b>一個原因，兩個症狀。</b>
-     */
     private static void placeholderNotSplit() {
         System.out.println("\n  -- 佔位符不能被斷成兩半 --");
 
-        // 使用者回報的那一句。逗號緊接在佔位符後面，正是會誘發避頭往回退的形狀。
         String text = "為你恢復 {~1}、為友軍恢復 {~2}，但衝鋒不再造成傷害。";
         int bad = 0;
         String worst = null;
         for (int px = 4; px <= 40; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             for (String row : rowsOf(wrapped)) {
                 int open = 0;
                 for (int i = 0; i < row.length(); i++) {
@@ -573,18 +380,14 @@ public final class WrapTest {
         report("沒有任何寬度把佔位符斷成兩半"
                 + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
 
-        String once = LineTranslator.wrapToWidth(text, 14, WrapTest::measure);
+        String once = TextWrapper.wrapToWidth(text, 14, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
 
-        // ★ 顏色佔位符也一樣。實機回報的畫面是「進入討伐戰{/」換行「}，或製作」
-        //   ——{/} 被切成兩半，填色那一步認不得它，就整串印到畫面上。
-        //
-        //   先前只測了 {~N}。{/} 只有兩個字元，比數值佔位符更容易整個落在斷點上。
         String colour = "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}";
         int split = 0;
         String first = null;
         for (int px = 4; px <= 60; px++) {
-            String wrapped = LineTranslator.wrapToWidth(colour, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(colour, px, WrapTest::measure);
             for (String row : rowsOf(wrapped)) {
                 int open = 0;
                 for (int i = 0; i < row.length(); i++) {
@@ -606,42 +409,22 @@ public final class WrapTest {
                 + (first == null ? "" : "（例如 " + first + "）"), split == 0);
     }
 
-    /**
-     * 顏色佔位符絕對不能出現在畫面上。
-     *
-     * <p>實機回報的畫面是「使用這件物品進入討伐戰{/」換行「}，或製作腐化地城鑰匙」
-     * ——{@code {/}} 被原樣印出來，還被換行切成兩半。
-     *
-     * <p>那些標記是我們自己的，正常情況下重建時會被吃掉；但語料裡的譯文會經過
-     * 好幾條路徑，只要有一條沒處理就會一路帶到畫面上。所以在文字變成 Component
-     * 的共同出口再擋一次。
-     */
     private static void colourTokensNeverShown() {
         System.out.println("\n  -- 顏色佔位符不能印到畫面上 --");
         report("清掉編號形式",
                "使用這件物品進入討伐戰，或製作腐化地城鑰匙".equals(
-                       LineTranslator.stripColourTokens(
+                       ColourTemplate.stripColourTokens(
                                "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}")));
         report("清掉自訂色形式",
-               "警告".equals(LineTranslator.stripColourTokens("{c:#FF55FF}警告{/}")));
+               "警告".equals(ColourTemplate.stripColourTokens("{c:#FF55FF}警告{/}")));
         report("沒有大括號的原樣返回",
-               "一般文字".equals(LineTranslator.stripColourTokens("一般文字")));
+               "一般文字".equals(ColourTemplate.stripColourTokens("一般文字")));
         report("不會誤清別的佔位符",
                "{#}{~} 場挑戰".equals(
-                       LineTranslator.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
-        report("null 不會炸", LineTranslator.stripColourTokens(null) == null);
+                       ColourTemplate.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
+        report("null 不會炸", ColourTemplate.stripColourTokens(null) == null);
     }
 
-    /**
-     * 中文句子裡留著的英文名稱（幾個單字連在一起）不能被斷在兩行之間。
-     *
-     * <p>先前只保護<b>一個</b>英文單字不被切開，單字之間的空白照樣可以斷。
-     * 實機回報的 Major ID「蟲洞」就斷成「…會在 Last」換行「Laugh 的期間…」——
-     * 兩半各自都不是詞，讀起來也不像一個名字。
-     *
-     * <p>掃過所有放得下最長那個名稱的寬度；反面也釘住：整句都是英文（西、德、法文的譯文）
-     * 時不能因此變成整句不斷。
-     */
     private static void latinRunsWhole() {
         System.out.println("\n  -- 英文名稱整串不斷開 --");
         String text = "Arrow Shield 的層數固定為 {~1}，但傷害加倍。Arrow Wall 改為讓 "
@@ -652,8 +435,8 @@ public final class WrapTest {
         boolean lost = false;
         for (int px = longest; px <= 80; px++) {
             for (String wrapped : new String[] {
-                    LineTranslator.wrapToWidth(text, px, WrapTest::measure),
-                    LineTranslator.wrapBalanced(text, px, WrapTest::measure)}) {
+                    TextWrapper.wrapToWidth(text, px, WrapTest::measure),
+                    TextWrapper.wrapBalanced(text, px, WrapTest::measure)}) {
                 lost |= !bare(wrapped).equals(bare(text));
                 String[] rows = rowsOf(wrapped);
                 for (int i = 0; i + 1 < rows.length; i++) {
@@ -673,19 +456,17 @@ public final class WrapTest {
                 + (first == null ? "" : "（例如 " + first + "）"), bad == 0);
         report("字沒有變少", !lost);
 
-        String english = LineTranslator.wrapToWidth(
+        String english = TextWrapper.wrapToWidth(
                 "Arrow Shield is set to two charges but deals doubled damage", 20,
                 WrapTest::measure);
         report("整句英文照樣在空白上折行（實際：" + show(english) + "）",
                 rowsOf(english).length >= 3);
     }
 
-    /** 折行結果拆成幾行。 */
     private static String[] rowsOf(String wrapped) {
         return wrapped.split(String.valueOf(NL), -1);
     }
 
-    /** 最短的那一行有幾個字。零頭就是它很小。 */
     private static int shortest(String wrapped) {
         int least = Integer.MAX_VALUE;
         for (String row : rowsOf(wrapped)) {
@@ -694,17 +475,14 @@ public final class WrapTest {
         return least;
     }
 
-    /** 是不是拉丁字母。中文不算——它本來就可以在任何字之間斷。 */
     private static boolean latin(char c) {
         return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
     }
 
-    /** 連續空白收成一個，首尾去掉。比較折行結果時用。 */
     private static String tidy(String text) {
         return text.replaceAll("\\s+", " ").strip();
     }
 
-    /** 拿掉所有空白，只留下字本身。 */
     private static String bare(String text) {
         StringBuilder sb = new StringBuilder();
         text.codePoints().filter(c -> !Character.isWhitespace(c)).forEach(sb::appendCodePoint);
@@ -715,18 +493,8 @@ public final class WrapTest {
         String run();
     }
 
-    /** 折行用的換行字元。 */
     private static final char NL = '\n';
 
-    /** 把換行換成看得見的符號，失敗訊息才讀得出來折在哪。 */
-    /**
-     * 數值範圍（{@code +{~}-{~}}、{@code +1-2}、{@code 60-60}）不能拆到兩行。
-     *
-     * <h2>實機回報（2026-10-17）</h2>
-     * Lootrun 使命卡折成「…、+1」換行「-2 怪物強化…」——下一行開頭的「-2」讀起來是負二。
-     * 每一級 {@code Keep} 都要守，連「只看寬度」那一級也是：那一級是行數超過原文時的最後手段，
-     * 實機那張卡就是落到那裡。寬度從窄到寬掃一遍，每一種斷法都看。
-     */
     private static void rangesWhole() {
         String[] texts = {
             "甲乙丙丁每提供 {~} 件，就隨機獲得 +{~}-{~} 子丑、+{~}-{~} 寅卯、+{~}-{~} 辰巳或 +{~}-{~} 秒。",
@@ -740,11 +508,9 @@ public final class WrapTest {
         int wrapped = 0;
         String example = null;
         for (String text : texts) {
-            // 從放得下一整組範圍（「+{~}-{~}」量起來 40）的寬度開始；更窄的話範圍本身就
-            // 塞不進一行，那是另一回事（見下面「塞不下的範圍」）
             for (int px = 45; px <= 160; px++) {
-                for (LineTranslator.Keep keep : LineTranslator.Keep.values()) {
-                    String out = LineTranslator.wrapToWidth(text, px, WrapTest::additive, keep);
+                for (TextWrapper.Keep keep : TextWrapper.Keep.values()) {
+                    String out = TextWrapper.wrapToWidth(text, px, WrapTest::additive, keep);
                     if (out.indexOf(NL) >= 0) {
                         wrapped++;
                     }
@@ -755,7 +521,7 @@ public final class WrapTest {
                         }
                     }
                 }
-                String balanced = LineTranslator.wrapBalanced(text, px, 4, WrapTest::additive);
+                String balanced = TextWrapper.wrapBalanced(text, px, 4, WrapTest::additive);
                 if (splitRange.matcher(balanced).find()) {
                     bad++;
                     if (example == null) {
@@ -767,16 +533,14 @@ public final class WrapTest {
         report("這兩句真的有被折行（" + wrapped + " 種）", wrapped > 100);
         report("★ 數值範圍一次都沒有被拆開（" + bad + " 次" + (example == null ? "" : "，例如 " + example) + "）",
                bad == 0);
-        // 範圍從行首開始就放不下時不硬挪（挪了只會生出空行）——照舊斷，不能丟例外
         check("塞不下的範圍不會丟例外",
-                () -> LineTranslator.wrapToWidth("+{~}-{~}", 2, WrapTest::additive));
+                () -> TextWrapper.wrapToWidth("+{~}-{~}", 2, WrapTest::additive));
     }
 
     private static String show(String wrapped) {
         return wrapped.replace(String.valueOf(NL), " ⏎ ");
     }
 
-    /** 直接斷言一個條件（{@link #check} 只驗「有沒有丟例外」）。 */
     private static void report(String what, boolean ok) {
         System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
         if (!ok) {

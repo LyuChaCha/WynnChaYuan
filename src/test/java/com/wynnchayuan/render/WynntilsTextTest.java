@@ -9,23 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 就地取代 Wynntils 疊層裡的字。
- *
- * <h2>為什麼要有這一份</h2>
- * 真正動手的是 mixin，而 mixin 只有在遊戲裡才跑得到。所以判斷與翻譯全部
- * 留在 {@link WynntilsText}，這裡直接呼叫它——關掉開關時一個字都不准動、
- * 打開時該翻的要翻、翻不出來的要<b>原樣</b>回去（換成空字串就是把
- * 別人的疊層弄壞）。
- */
 public final class WynntilsTextTest {
 
     private static int failures = 0;
 
-    /** 名字就是判斷依據（見 {@link WynntilsText#TRACKER}），所以照抄一個。 */
+    // 類別簡名要跟 WynntilsText.TRACKER 一樣
     private static final class ContentTrackerOverlay { }
 
-    /** 別的疊層不准碰。 */
     private static final class InfoBoxOverlay { }
 
     public static void main(String[] args) throws Exception {
@@ -69,8 +59,6 @@ public final class WynntilsTextTest {
               !out[0].getString().equals("Quest"));
         check("行數不變", out.length == lines.length);
 
-        // 追蹤欄的第一行是 Wynntils 拼的：「Quest - <任務名>」。整行不在語料裡，
-        // 但每一段都在——類型是介面字串、任務名在 quest-name.json。
         StyledText composed = StyledText.fromString(
                 "§b§lQuest§7 - §fStar Thief");
         StyledText[] header = WynntilsText.lines(
@@ -80,7 +68,6 @@ public final class WynntilsTextTest {
               shown.contains("任務") && shown.contains("竊星者"));
         check("顏色沒有被抹掉", header[0].getString().contains("§b"));
 
-        // 實機那一行整行同一個顏色，Wynntils 送來的是<b>一整段</b>，破折號是 en dash。
         StyledText single = StyledText.fromString("§aQuest – Dearly Departed");
         StyledText[] one = WynntilsText.lines(
                 tracker, new StyledText[] {single}, config, store);
@@ -88,8 +75,6 @@ public final class WynntilsTextTest {
         check("一整段的「Quest – 任務名」也換得掉（實際 " + got + "）",
               got.contains("任務") && got.contains("音容宛在"));
 
-        // 實機的標題帶著 Wynncraft 的 language/wynncraft 字型（ContentTrackerOverlay 的樣板
-        // 用 with_font 包起來），那份字型沒有中文字，照抄字型就是一排方框。
         StyledText fonted = StyledText.fromComponent(net.minecraft.network.chat.Component
                 .literal("Quest – Dearly Departed")
                 .withStyle(net.minecraft.network.chat.Style.EMPTY
@@ -144,19 +129,12 @@ public final class WynntilsTextTest {
         check("翻不出來的原樣回去",
               WynntilsText.objective(odd, config, store).equals(odd));
 
-        // ★ 這一句在上面已經翻過、也進了快取。關掉開關之後還是要拿到原文——
-        // 也就是快取不可以繞過開關。
         config.toggleObjectives();
         check("★ 關掉時原樣回去（快取不可以繞過開關）",
               WynntilsText.objective("Slay Mobs: 12/100", config, store)
                       .equals("Slay Mobs: 12/100"));
         config.toggleObjectives();
 
-        // 快取本身。Wynntils 每一幀對每條目標都會問一次，所以這個入口記住上一次
-        // 的答案（見 WynntilsText#objective）。
-        //
-        // 快取壞掉的樣子是「換了語言還是舊語言」——畫面上不像快取出問題，會查很久，
-        // 所以這裡把「重載語料之後要拿到新語料的答案」釘住。
         String twice = WynntilsText.objective("Slay Mobs: 12/100", config, store);
         check("快取：同一條問兩次結果一樣（實際 " + twice + "）", done.equals(twice));
 
@@ -166,13 +144,9 @@ public final class WynntilsTextTest {
         check("快取：重載之後 generation 有往前（" + before + " -> "
               + store.generation() + "）", store.generation() != before);
         String cn = WynntilsText.objective("Slay Mobs: 12/100", config, store);
-        // 不比對措辭——術語統一的 PR 會把寫死的字串弄紅（見 tests-dont-hardcode-wording）。
-        // 只要求「換了語料就換了答案」，而繁中與簡中這一條永遠不會一樣：
-        // 一邊是「擊殺」，一邊是「击杀」。
         check("★ 快取：重載成簡中之後拿到的是新語料的答案（實際 " + cn + "）",
               !cn.equals(done) && cn.contains("12") && cn.contains("100"));
 
-        // 還原成繁中，後面那幾項測試都吃這個 store。
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                 Languages.DEFAULT));
     }
@@ -219,8 +193,6 @@ public final class WynntilsTextTest {
               shown.startsWith("馬") && shown.endsWith("47❤"));
         check("同一條再畫一次拿到同一份", WynntilsText.bossBar(bar, config, store)
                 == WynntilsText.bossBar(bar, config, store));
-        // 兩者各自獨立：把名牌關掉不該連坐 boss bar。先前它們共用一個沒有 UI 的
-        // 舊欄位，現在 F6 上是兩顆開關，連坐會讓人以為壞了。
         while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
@@ -230,8 +202,6 @@ public final class WynntilsTextTest {
             config.cycleNametagMode();
         }
 
-        // issue #825：關不掉。先前唯一的開關是 translateNametags，而那個欄位
-        // 沒有接到 F6（只有測試在切它），所以實機上永遠是開的。
         config.toggleBossBar();
         check("boss bar 自己的開關關掉時原樣回去",
                 WynntilsText.bossBar(bar, config, store) == bar);
@@ -240,19 +210,7 @@ public final class WynntilsTextTest {
                 WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
     }
 
-    /**
-     * 在遊戲裡換語言，名牌要<b>立刻</b>跟著換。
-     *
-     * <h2>實機的樣子</h2>
-     * 換完語言，NPC 名牌與浮空字還是舊語言的——要 {@code /class} 讓實體重新
-     * 生成一次才會變。原因是換語言走的 {@code loadLayers} 把新語言的譯文
-     * <b>載進同一個 store</b>，不換物件，而這裡那張快取先前是用「store 是不是
-     * 換人了」判斷該不該清的，於是永遠不清。
-     *
-     * <p>這支釘住的就是「同一個 store、換一層譯文」這件事。
-     */
     private static void switched(CollectorConfig config) {
-        // 這一段量的是「換語言立刻跟著換」，要看得到譯文才量得到，所以切就地取代。
         while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
             config.cycleNametagMode();
         }
@@ -267,17 +225,14 @@ public final class WynntilsTextTest {
                 "腐敗祭壇".equals(
                         WynntilsText.entityName(altar, config, store).getString()));
 
-        store.loadAll(Path.of(corpus, "zh_cn"));     // 同一個 store，換一層譯文
+        store.loadAll(Path.of(corpus, "zh_cn"));
         check("換語言之後立刻跟著換（實際 "
                         + WynntilsText.entityName(altar, config, store).getString() + "）",
                 "腐化祭坛".equals(
                         WynntilsText.entityName(altar, config, store).getString()));
     }
 
-    /** 盔甲座疊出來的浮空字：討伐戰祭壇上方那種。 */
     private static void entityName(CollectorConfig config, TranslationStore store) {
-        // 前面的測試會把模式留在別的段上，而這一段的前半要的是「就地取代」。
-        // 自己切到 REPLACE——別靠上一個測試收尾收得乾不乾淨。
         while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
             config.cycleNametagMode();
         }
@@ -291,23 +246,16 @@ public final class WynntilsTextTest {
         net.minecraft.network.chat.Component odd =
                 net.minecraft.network.chat.Component.literal("Qwertyuiop Zxcv");
         check("翻不出來的原樣回去", WynntilsText.entityName(odd, config, store) == odd);
-        // 跟著 F6 的「名牌與漂浮字」走（#825 之前它掛在一個沒有 UI 的欄位上）
         CollectorConfig.NametagMode was = config.nametagMode();
         while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
         check("名牌那一列關掉時原樣回去",
                 WynntilsText.entityName(altar, config, store) == altar);
-        // 「注視時顯示」要把原文留著（issue #1047）。先前這條路只認「關／不關」，
-        // 於是討伐戰的目標提示在那個模式下照樣整段變中文，而設定上寫的是
-        // 「原文保留著」。小框靠的是 LookAtTranslator 的 LABELS，那是以 Entity 為鍵的，
-        // 盔甲座一樣認得出來——缺的只是把實體從 EntityNameMixin 傳下來。
         config.cycleNametagMode();
         check("注視時顯示：原文不動（實際 "
                         + WynntilsText.entityName(altar, config, store).getString() + "）",
                 WynntilsText.entityName(altar, config, store) == altar);
-        // 沒有實體可登記時（測試就是這種情況）也不可以退回就地換——
-        // 退回去的話，實機上任何一個拿不到實體的呼叫點都會偷偷變成 REPLACE。
         check("注視時顯示：翻不出來的也原樣回去",
                 WynntilsText.entityName(odd, config, store) == odd);
         while (config.nametagMode() != was) {
@@ -315,31 +263,6 @@ public final class WynntilsTextTest {
         }
     }
 
-    /**
-     * Wynntils 自己那幾個畫面上的字（綜合頁面左邊那一列、分頁標題⋯⋯）。
-     *
-     * <h2>為什麼這一條值得釘</h2>
-     * 那些字有一半是 Wynncraft 送來的內容（任務名、洞穴名、
-     * 「Currently in progress」），Wynntils 的語言檔永遠不會有它們，
-     * 但我們的語料裡早就有。打在它的 {@code FontRenderer} 入口就換得到。
-     *
-     * <p>真正的風險是<b>換太多</b>：這個入口所有字都會經過，
-     * 所以「查不到就原樣回去」與「關掉就完全不動」兩邊都要測。
-     */
-    /**
-     * Wynntils 的 Lootrun 信標計數：顏色不能被換成同名的裝備。
-     *
-     * <h2>實機回報（2026-10-10）：「武器翻譯會翻到信標名稱」</h2>
-     * <pre>
-     *   White: 0/1       ->  纯白之戒 (White): 0/1
-     *   Crimson: 0/2     ->  绯红法器 (Crimson): 0/2
-     *   Rainbow: 0 (0)   ->  彩虹之戒 (Rainbow): 0 (0)
-     * </pre>
-     *
-     * 那幾列照 Wynntils 的樣板抄（{@code LootrunBeaconCountOverlay}）：一列一個
-     * 顏色，整列同一個樣式。釘兩件事：六個語言十三個顏色都翻得出來而且沒有裝備名
-     * 混進去；語料<b>沒收</b>的「物品名 + 冒號 + 數值」原樣留著。
-     */
     private static void beaconCount(CollectorConfig config) {
         System.out.println("=== 信標計數 ===");
         List<String> rows = List.of("\u00a7eYellow: 0", "\u00a79Blue: 0", "\u00a75Purple: 0",
@@ -365,7 +288,6 @@ public final class WynntilsTextTest {
                 if (out.equals(plain)) {
                     left.append(' ').append(colour);
                 }
-                // 「譯名 (原文)」是物品名稱才有的寫法
                 if (out.contains("(" + colour + ")")) {
                     gear.append(' ').append(colour);
                 }
@@ -375,7 +297,6 @@ public final class WynntilsTextTest {
             check(lang + "：★ 沒有顏色被換成裝備名（實際" + gear + "）", gear.length() == 0);
             check(lang + "：十三個顏色都翻了（沒翻的" + left + "）", left.length() == 0);
         }
-        // 語料沒收的那一種：冒號前面只是一件裝備的名字
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_tw"));
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
@@ -388,10 +309,6 @@ public final class WynntilsTextTest {
         }
     }
 
-    /**
-     * Wynntils 的狀態效果那一欄：效果名不是物品（使用者 2026-10-12 的截圖：
-     * 「29% 抵抗護腿 (Resistance) (00:27)」）。
-     */
     private static void statusEffects(CollectorConfig config) throws Exception {
         check("尾巴是倒數的時間：是狀態列", WynntilsText.statusRow("29% Resistance (00:27)")
                 && WynntilsText.statusRow("Tree Manipulation (**:**)")
@@ -403,7 +320,6 @@ public final class WynntilsTextTest {
         for (String lang : List.of("zh_tw", "ja_jp")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
-            // 找一個「只有裝備在用」的名字：語料改了也照樣測得到東西
             String gear = null;
             for (String candidate : List.of("Resistance", "Fatal", "Halcyon", "Warp")) {
                 if (store.itemNameOnly(candidate) && store.lookup(candidate) != null) {
@@ -430,7 +346,6 @@ public final class WynntilsTextTest {
                         out.contains(gear) && !out.contains(worn));
             }
             store.setNameMode(CollectorConfig.ItemNames.ON);
-            // 屬性也在用的字照舊翻（每個語言用不同的秒數：畫面字的快取按內容記，三份 store 的世代又一樣）
             String strength = store.lookup("Strength");
             if (strength != null && !strength.equals("Strength")) {
                 StyledText row = StyledText.fromString("\u00a778% \u00a7fStrength \u00a77(00:" + (30 + lang.charAt(0) % 20 + lang.charAt(3) % 7) + ")");
@@ -461,11 +376,6 @@ public final class WynntilsTextTest {
         check("再打開就又換得到",
               "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
 
-        // 不該翻的那兩處：公會戰地圖的領地標籤（TerritoryPoi），以及物品格角落
-        // Wynntils 自己算的簡稱（ItemTextOverlayFeature）。從它們進去到出來一律不翻。
-        //
-        // 實機各踩過一次：那一格的公會叫 Fox，被 npc.json 的「Fox: 狐狸」換掉；
-        // 傳送卷軸的簡稱被 ability/mage.json 的「Teleport: 傳送」換掉。
         WynntilsText.holdRawText(true);
         check("★ 那一段裡的字原樣回去（公會名與簡稱都不是遊戲文案，撞名躲不完）",
               WynntilsText.screenText(inProgress, config, store) == inProgress);
@@ -476,14 +386,6 @@ public final class WynntilsTextTest {
         screenCache(config, store);
     }
 
-    /**
-     * 這個入口有一份按內容記住的快取（Wynntils 畫的每一個字串、每一幀都會走一次）。
-     *
-     * <h2>快取壞掉的樣子</h2>
-     * 不是當掉，是<b>畫面上出現上一次的答案</b>：切了語言還是舊語言，
-     * 或者該原樣留著的公會名被翻掉。那種錯看起來像翻譯出問題、
-     * 不像快取出問題，會查很久。
-     */
     private static void screenCache(CollectorConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
 
@@ -491,9 +393,6 @@ public final class WynntilsTextTest {
         String twice = WynntilsText.screenText(inProgress, config, store).getString();
         check("快取：同一個字串兩次結果一樣（實際 " + twice + "）", once.equals(twice));
 
-        // ★ rawText 那一段必須擋在快取前面。這個字串剛剛已經翻過、也進快取了，
-        //   現在進了那一段就不可以再吐出翻譯——公會名叫 Fox 的那一格
-        //   就是這樣被換成「狐狸」的。
         WynntilsText.holdRawText(true);
         check("★ 快取不可以繞過「這一段不翻」",
               WynntilsText.screenText(inProgress, config, store) == inProgress);
@@ -501,7 +400,6 @@ public final class WynntilsTextTest {
         check("出了那一段又拿得到翻譯",
               once.equals(WynntilsText.screenText(inProgress, config, store).getString()));
 
-        // ★ 語料重載（換語言走的就是這條）之後不可以還是舊語言
         int before = store.generation();
         store.loadAll(java.util.List.of(
                 java.nio.file.Path.of(

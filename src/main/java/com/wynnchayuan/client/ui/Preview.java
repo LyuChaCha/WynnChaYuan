@@ -2,72 +2,31 @@ package com.wynnchayuan.client.ui;
 
 import java.util.function.UnaryOperator;
 
-/**
- * 設定畫面右邊的即時預覽。
- *
- * <h2>為什麼要有</h2>
- * 「面板間距 12」是多寬、「就地取代」跟「另開面板」差在哪——舊畫面只能調完、關掉
- * F6、找一件物品指上去才知道，不對再開回來。這裡把遊戲畫面縮成一張示意圖，
- * 左邊每動一下就跟著變：拖間距滑桿時兩個框即時拉開，換顏色時框線即時換色。
- *
- * <h2>為什麼是示意而不是真的畫面</h2>
- * 設定畫面開著的時候遊戲的 tooltip 與對話框都不會出現，沒有「真的那一個」可以畫。
- * 所以每一類各畫一張小場景，位置關係照遊戲裡的擺：tooltip 在滑鼠旁邊、對話框在
- * 底下、Boss 血條在頂端、任務追蹤在右上。
- *
- * <p>場景裡的字是真的語料：英文是遊戲原文，譯文是<b>現在這個譯文語言</b>查出來的
- * （查表由呼叫端給，見 {@link State#translate}），所以換語言之後預覽也跟著換。
- */
 public final class Preview {
 
     private Preview() {}
 
-    /**
-     * {@code PANEL} 跟 {@code TOOLTIP} 是同一張圖，差在<b>一定畫出面板</b>：「面板」那一頁
-     * 調的是面板放哪裡，物品翻譯設成就地取代或關閉的時候面板不會出現，預覽就整張不動
-     * （使用者 2026-10-08 回報「不管用哪種模式都沒有動作」）。所以那一頁照樣把面板畫出來，
-     * 底下再講一聲現在的設定下它不會出現。
-     */
     public enum Scene {
         TOOLTIP, PANEL, DIALOGUE, WORLD, DATA,
-        /**
-         * 玩家穿著披風的樣子。這裡只畫底板——人是遊戲畫的（{@code SettingsScreen} 疊在這一塊
-         * 上面），離線算畫面的時候那裡是空的。
-         */
         CAPE
     }
 
-    /**
-     * 預覽要看的值。每一幀由 {@code SettingsScreen} 從設定填一次。
-     *
-     * <p>三段的模式用整數而不是設定檔的列舉——這一層不認得 {@code CollectorConfig}。
-     * 每個欄位旁邊寫了哪個數字是哪一種。
-     */
     public static final class State {
-        /** 0 另開面板、1 就地取代、2 關閉。 */
         public int tooltipMode;
-        /** 0 譯名、1 譯名加原文、2 原文。 */
         public int names = 2;
         public boolean anchorFixed;
-        /** 0 自動、1 右側、2 左側。 */
         public int side;
         public int gap = 12;
-        /** 0 另開小框、1 就地取代、2 關閉。 */
         public int dialogueMode = 1;
         public int choiceMode = 1;
-        /** 0 是持續顯示。 */
         public int holdSeconds = 6;
         public boolean overlays = true;
-        /** 0 注視時小框、1 就地取代、2 關閉。 */
         public int nametag = 1;
-        /** 0 就地取代、1 原文加譯文、2 關閉。 */
         public int chat = 1;
         public boolean titles = true;
         public boolean bossbar = true;
-        /** 0 就地取代、1 另開面板、2 關閉。 */
         public int tracker;
         public boolean objectives = true;
-        /** 畫面右邊那一欄（記分板）翻不翻。 */
         public boolean scoreboard = true;
         public boolean heldItem = true;
 
@@ -75,14 +34,11 @@ public final class Preview {
         public String loadedLabel = "";
         public String[][] facts = new String[0][];
         public int versionColour = Ui.TEXT;
-        /** 物品翻譯不是「另開面板」時，面板那一頁預覽底下的那句提醒。 */
         public String panelOffNote = "";
 
-        /** 原文 → 現在這個語言的譯文；查不到就原樣回來。 */
         public UnaryOperator<String> translate = s -> s;
     }
 
-    // 場景裡的原文。都是語料裡六個語言都翻了的短字串（2026-10-07 查過）。
     private static final String ITEM = "Bony Bow";
     private static final String[] ITEM_LINES = {"Durability", "Health", "Mana"};
     private static final String SPEAKER = "Aledar";
@@ -94,8 +50,6 @@ public final class Preview {
     private static final String TRACK_1 = "World Event";
     private static final String TRACK_2 = "Click To Track";
     private static final String CHAT = "The trade has been completed!";
-    // 記分板：每日目標那一段。標題一行、底下兩行進度，數字是佔位符，
-    // 照語料的鍵查了再把數字填回去（見 #fill）。
     private static final String SCORE_HEAD = "Daily Objective:";
     private static final String[] SCORE_LINES = {
         "- Loot Chests T{~}+: {~}/{~}", "- Mobs slain: {~}/{~}"};
@@ -108,17 +62,10 @@ public final class Preview {
     private static final int DLG_EDGE = 0xFF7A5C2E;
     private static final int DLG_TEXT = 0xFFF1E3C4;
 
-    /**
-     * @param frame    框線顏色：遊戲裡譯文小框的框，場景裡的小框都用它
-     * @param accent   風格顏色：只有「資料」那一頁的大數字用，那不是遊戲畫面
-     * @param gapShown 動畫中的間距（像素，已經緩動過）——直接拿設定值的話滑桿
-     *                 用鍵盤一格一格跳的時候框會跟著跳
-     */
     public static void draw(Canvas c, int x, int y, int w, int h, Scene scene, State s,
                             int frame, int accent, float gapShown) {
         Ui.pane(c, x, y, w, h, Ui.R2, Ui.SCENE, Ui.BORDER);
         c.clip(x + 2, y + 2, x + w - 2, y + h - 2);
-        // 很淡的格線：讓「這是一張示意圖」一眼看得出來，也給間距一個參照
         for (int gx = x + 16; gx < x + w - 1; gx += 16) {
             c.fill(gx, y + 1, gx + 1, y + h - 1, 0x09FFFFFF);
         }
@@ -136,18 +83,10 @@ public final class Preview {
         c.unclip();
     }
 
-    // ------------------------------------------------------------ 物品與面板
-
-    /**
-     * 把譯名後面附的原文拿掉。
-     *
-     * @param appendedAt 語料認出來的「 (原文)」從哪裡開始；認不出來是 -1
-     */
     public static String bareName(String translated, String original, int appendedAt) {
         if (appendedAt > 0) {
             return translated.substring(0, appendedAt);
         }
-        // 語料認不出來的（它只認裝備名）也照字面收一次：結尾剛好是「 (原文)」
         String tail = " (" + original + ")";
         if (translated.endsWith(tail) && translated.length() > tail.length()) {
             return translated.substring(0, translated.length() - tail.length());
@@ -190,7 +129,6 @@ public final class Preview {
         int top = y + Math.max(20, (h - boxH) / 2 - 4);
 
         if (panel && s.anchorFixed) {
-            // 固定位置：面板釘在角落，不跟著 tooltip 走
             int tx = x + (w - tipW) / 2 + 12;
             lines(c, tx, top + 14, tipW, tip, tipColours, TIP_BG, TIP_EDGE);
             lines(c, x + 6, y + 6, sideW, side, tipColours, BOX_BG, accent);
@@ -214,7 +152,6 @@ public final class Preview {
         lines(c, sideX, top, sideW, side, tipColours, BOX_BG, accent);
         Ui.glow(c, sideX, top, sideW, boxH, Ui.alpha(accent, 0x40));
 
-        // 兩個框之間的量尺與數字
         int a = Math.min(tipX + tipW, sideX + sideW);
         int b = Math.max(tipX, sideX);
         int ry = top - 8;
@@ -227,7 +164,6 @@ public final class Preview {
         c.text(label, (a + b - c.width(label)) / 2, ry - 10, accent);
     }
 
-    /** 一個小框，裡面幾行字；放不下的行截斷。 */
     private static void lines(Canvas c, int x, int y, int w, String[] text, int[] colours,
                               int bg, int edge) {
         int h = text.length * 10 + 7;
@@ -246,14 +182,11 @@ public final class Preview {
         return out;
     }
 
-    /** 滑鼠游標的示意：tooltip 是跟著它出現的。 */
     private static void cursor(Canvas c, int x, int y) {
         String[] arrow = {"#....", "##...", "###..", "####.", "#####", "##...", "#.#.."};
         Ui.glyph(c, x + 1, y + 1, arrow, 0xA0000000);
         Ui.glyph(c, x, y, arrow, 0xFFFFFFFF);
     }
-
-    // ------------------------------------------------------------ 對話
 
     private static void dialogue(Canvas c, int x, int y, int w, int h, State s, int accent) {
         String zhLine = s.translate.apply(LINE);
@@ -273,7 +206,6 @@ public final class Preview {
             c.text(Ui.fit(c, text, bw - 10), bx + 5, dlgY + 26 + i * 10, 0xFFC9B38A);
         }
 
-        // 另開小框：只有小框的總開關開著才會出現
         int above = dlgY - 6;
         if (s.dialogueMode == 0 && s.overlays) {
             int tw = Math.min(bw - 30, c.width(zhLine) + 10);
@@ -281,7 +213,6 @@ public final class Preview {
             int ty = above - th;
             Ui.box(c, bx, ty, tw, th, BOX_BG, accent);
             c.text(Ui.fit(c, zhLine, tw - 8), bx + 4, ty + 4, Ui.TEXT);
-            // 停留時間：一條會走完的線。持續顯示就整條亮著
             int barW = tw - 8;
             int lit = s.holdSeconds <= 0 ? barW
                     : Math.max(2, Math.min(barW, barW * s.holdSeconds / 30));
@@ -307,15 +238,6 @@ public final class Preview {
         }
     }
 
-    // ------------------------------------------------------------ 世界與聊天
-
-    /**
-     * 把數字填回模板的佔位符。
-     *
-     * <p>語料的鍵是「{@code - Mobs slain: {~}/{~}}」，譯文可能照原順序寫 {@code {~}}，
-     * 也可能因為語序不同寫成 {@code {~1}}、{@code {~2}}（見「數字會接錯欄位」那條規矩）。
-     * 兩種都認：有編號的照編號，沒編號的照出現的順序。
-     */
     public static String fill(String template, String... values) {
         StringBuilder out = new StringBuilder();
         int next = 0;
@@ -347,7 +269,6 @@ public final class Preview {
     private static void world(Canvas c, int x, int y, int w, int h, State s, int accent) {
         UnaryOperator<String> zh = s.translate;
 
-        // 頂端：Boss 血條
         String boss = s.bossbar ? zh.apply(BOSS) : BOSS;
         int barW = Math.min(90, w - 40);
         int bx = x + (w - barW) / 2;
@@ -355,7 +276,6 @@ public final class Preview {
         c.fill(bx, y + 15, bx + barW, y + 18, 0xFF3A1414);
         c.fill(bx, y + 15, bx + barW * 62 / 100, y + 18, 0xFFC0392B);
 
-        // 右上：任務追蹤。另開面板時多一圈主題色的框
         String t1 = s.tracker == 0 ? zh.apply(TRACK_1) : TRACK_1;
         String t2 = s.tracker == 0 ? zh.apply(TRACK_2) : TRACK_2;
         int tw = Math.min(w / 2 - 4, Math.max(c.width(t1), c.width(t2)) + 8);
@@ -371,9 +291,7 @@ public final class Preview {
             c.text(Ui.fit(c, p1, pw - 6), tx + tw - pw + 3, ty + 31, Ui.TEXT);
         }
 
-        // 左邊：NPC 與名牌
         String tag = s.nametag == 1 ? zh.apply(NPC) : NPC;
-        // 放在追蹤欄底下：俄文、西文的名牌很長，並排會蓋到右上那一塊
         int nx = x + 10;
         int ny = y + 74;
         int tagW = c.width(tag) + 6;
@@ -383,21 +301,18 @@ public final class Preview {
         c.fill(px, ny + 14, px + 14, ny + 28, 0xFFB98B5E);
         c.fill(px + 2, ny + 28, px + 12, ny + 44, 0xFF4C6A8C);
         if (s.nametag == 0) {
-            // 注視時小框：名牌留原文，旁邊跳一個小框
             String z = zh.apply(NPC);
             int zw = c.width(z) + 8;
             Ui.box(c, nx + tagW + 3, ny - 2, zw, 14, BOX_BG, accent);
             c.text(z, nx + tagW + 7, ny + 1, Ui.TEXT);
         }
 
-        // 中央大字
         String title = s.titles ? zh.apply(TITLE) : TITLE;
         int cx = x + (w - c.width(title)) / 2;
         int cy = Math.max(ny + 52, y + h / 2 + 14);
         c.text(title, cx + 1, cy + 1, 0xA0000000);
         c.text(title, cx, cy, 0xFFF5C56B);
 
-        // 左下：聊天
         String chatZh = zh.apply(CHAT);
         int cw = Math.min(w - 16, 150);
         int rows = s.chat == 1 ? 2 : 1;
@@ -408,10 +323,6 @@ public final class Preview {
             c.text(Ui.fit(c, chatZh, cw - 6), x + 7, chatY + 10, accent);
         }
 
-        // 右邊：記分板。遊戲裡它貼著畫面右緣、在畫面中段。
-        // 平常放在中央大字底下、聊天上面那一段：整個寬度都能用，俄文、西文的
-        // 長句子不用截。視窗矮到那一段放不下時，退到 NPC 旁邊（名牌那一列的
-        // 下面一列），寬度讓開 NPC 的身體。
         String[] board = new String[1 + SCORE_LINES.length];
         board[0] = s.scoreboard ? zh.apply(SCORE_HEAD) : SCORE_HEAD;
         int boardW = c.width(board[0]);
@@ -435,7 +346,6 @@ public final class Preview {
                     i == 0 ? 0xFFF5C56B : 0xFFB8C0CC);
         }
 
-        // 底部：快捷列與手上那件的名字
         String held = s.heldItem ? zh.apply(ITEM) : ITEM;
         int hx = x + (w - 4 * 12) / 2;
         int hy = y + h - 14;
@@ -444,8 +354,6 @@ public final class Preview {
             Ui.box(c, hx + i * 12, hy, 11, 11, 0x80000000, i == 0 ? 0xFFE6EDF5 : 0xFF55606A);
         }
     }
-
-    // ------------------------------------------------------------ 資料
 
     private static void data(Canvas c, int x, int y, int w, int h, State s, int accent) {
         int px = x + 10;
@@ -456,7 +364,6 @@ public final class Preview {
         py += Math.round(8 * scale) + 4;
         c.text(Ui.fit(c, s.loadedLabel, w - 20), px, py, Ui.HINT);
 
-        // 名稱一行、值一行：俄文、西文的名稱很長，並排的話值只剩幾個字的位置
         int row = py + 18;
         for (int i = 0; i < s.facts.length && row + 20 < y + h; i++) {
             String[] fact = s.facts[i];

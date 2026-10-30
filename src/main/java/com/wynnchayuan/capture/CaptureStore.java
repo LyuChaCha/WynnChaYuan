@@ -20,15 +20,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * 收集到的字串暫存於記憶體，定期批次寫入磁碟。
- *
- * <p>收集發生在渲染路徑上（每畫一次物品說明就可能觸發一次），所以絕不能在
- * 事件處理裡做檔案 I/O。這裡的做法是：事件只往 {@link ConcurrentHashMap} 塞資料，
- * 實際落地交給 {@link #flush()}，由背景執行緒或登出時呼叫。
- *
- * <p>寫檔採「先寫暫存檔再原子搬移」，避免遊戲當掉時留下半截 JSON 檔。
- */
 public final class CaptureStore {
 
     private static final Gson GSON = new GsonBuilder()
@@ -40,16 +31,9 @@ public final class CaptureStore {
     private final Map<String, Captured> entries = new ConcurrentHashMap<>();
     private final AtomicBoolean dirty = new AtomicBoolean(false);
 
-    /** 收集順序的流水號。見 {@link Captured#seq}。 */
     private final java.util.concurrent.atomic.AtomicInteger nextSeq =
             new java.util.concurrent.atomic.AtomicInteger();
 
-    /**
-     * 各種事件的觸發次數，會寫進 _meta.events。
-     *
-     * <p>沒收集到東西時，光看空的 entries 無法分辨是「事件沒發」還是「發了但被過濾掉」。
-     * 這個計數器讓 captured.json 自己回答這個問題。
-     */
     private final Map<String, java.util.concurrent.atomic.AtomicInteger> eventCounts =
             new ConcurrentHashMap<>();
 
@@ -58,53 +42,20 @@ public final class CaptureStore {
         load();
     }
 
-    /** 一筆收集到的字串。欄位刻意與 corpus/workspace 的格式一致，方便合併。 */
     public static final class Captured {
-        public String src;      // 模板化後的原文，{#} 代表材質包符號
-        public String dst = ""; // 待譯者填寫
-        public String role;     // name / desc / stat / text
-        public String domain;   // quest / npc / ui / chat
-        public String ctx;      // 出現位置
-        public int seen = 1;    // 遇到次數，用來排優先度
+        public String src;
+        public String dst = "";
+        public String role;
+        public String domain;
+        public String ctx;
+        public int seen = 1;
 
-        /**
-         * 跑馬燈選項接回來的<b>整句</b>。只有那一種條目才有，其餘是 {@code null}
-         * ——Gson 預設不輸出 null，所以不會弄髒別的條目。
-         *
-         * <h2>為什麼 src 不直接放整句</h2>
-         * 算繪端手上永遠只有<b>一格</b>：那句話從來不會完整出現在畫面上
-         * （見 {@link ChoiceScroll}）。查表用的鍵必須是它看得到的那一格，
-         * 也就是第一格；換成整句就永遠查不到，選項一個字都不會被翻。
-         *
-         * <p>但只給譯者看一格（「Don't underestimate our stre」）等於要他猜
-         * 後面是什麼。所以鍵照舊是第一格，整句放在這裡給人看。
-         */
         public String full;
 
-        /**
-         * 第幾個被收集到。
-         *
-         * <h2>為什麼要記順序</h2>
-         * 條目是用雜湊當鍵的，所以檔案裡的順序等於隨機。對<b>任務對話</b>來說
-         * 這是致命的：同一段對話的十幾句話會散在檔案各處，譯者看不出上下文，
-         * 也不知道誰接誰——「他說了什麼」和「他在回答什麼」是兩回事。
-         *
-         * <p>記下收集順序之後，合併工具就能照原始順序輸出，同一段對話自然
-         * 排在一起。
-         */
         public int seq;
 
-        /**
-         * 這一行是哪一份 tooltip 裡的：那份 tooltip 的標題（物品名、選單名）。
-         * 介面字才有。物品說明一行常常只是半句，看不到是哪一件東西就翻不準。
-         * 玩家頭顱與隊伍卡的標題是玩家的名字，那種不帶。
-         */
         public String in;
 
-        /**
-         * 收到的時候人在哪裡，見 {@link Whereabouts}。漂浮字最需要它：
-         * 同一個討伐戰同一關的幾句話會排在一起。
-         */
         public String place;
 
         Captured(String src, String role, String domain, String ctx, int seq) {
@@ -116,125 +67,48 @@ public final class CaptureStore {
         }
     }
 
-    /**
-     * 已經有譯文的字串就不必收。見 {@link #record}。
-     *
-     * <p>用述詞而不是直接拿 {@code TranslationStore}，是為了讓這一條測得到，
-     * 也讓收集端不必認識翻譯端。
-     */
     private volatile java.util.function.Predicate<String> translated = t -> false;
 
-    /**
-     * 告訴收集端「哪些字串已經有譯文了」。
-     *
-     * <h2>為什麼一定要接上</h2>
-     * {@code captured.json} 的用途是<b>還沒翻的清單</b>——檔頭自己就寫著
-     * 「dst 留空代表尚未翻譯」。但先前它照單全收：看到什麼記什麼，
-     * 語料裡明明已經有譯文的也照記，{@code dst} 一樣留空。
-     *
-     * <p>實機那一份 308 條裡有 <b>249 條</b>語料早就翻好了——
-     * 「露營車駕駛」「建立角色」「{@code - 職業: 薩滿}」全在裡面。
-     * 也就是說那個檔案有八成是雜訊，真正的缺口反而淹在裡面找不到。
-     * 使用者回報「gap list 不可信」講的就是這件事。
-     *
-     * <p>接上之後，{@code captured.json} 就真的只剩<b>沒翻的</b>那些。
-     */
     public void knowsTranslations(java.util.function.Predicate<String> lookup) {
         translated = lookup == null ? t -> false : lookup;
     }
 
-    /** 語料<b>收過</b>哪些原文（不管翻了沒）。見 {@link #knowsSources}。 */
     private volatile java.util.function.Predicate<String> known = t -> false;
 
-    /**
-     * 告訴收集端「語料收過哪些原文」。
-     *
-     * <p>收過但還沒有譯文的，不當成缺口（不進 {@link #entries}、不會分享出去），
-     * 只記它被看到幾次，見 {@link #untranslated}。
-     */
     public void knowsSources(java.util.function.Predicate<String> lookup) {
         known = lookup == null ? t -> false : lookup;
     }
 
-    /** 語料裡還有<b>更長</b>的原文以這一段開頭嗎。見 {@link #knowsLonger}。 */
     private volatile java.util.function.Predicate<String> longer = t -> false;
 
-    /**
-     * 告訴收集端「語料裡還有更長的原文以這一段開頭」。
-     *
-     * <h2>擋的是什麼</h2>
-     * 對話是一個字一個字打出來的，長句在對話框裡還會重新換行——一有閃失，
-     * 半截的那一份就會被當成「打完了」送進 {@code captured.json}：
-     *
-     * <pre>
-     *   Go on, I don't have time for you. My brother          ← 收到的
-     *   Go on, I don't have time for you. My brother keeps    ← quest.json 早就有整句
-     *   sending me people all the time.
-     * </pre>
-     *
-     * 提示框也有同一個毛病：{@code Corkian Augments can be applied}、
-     * {@code This aspect socket is locked} 這些整段都翻好了，收到的卻是第一行。
-     * 實機一份 665 條的 {@code captured.json} 裡有 36 條是這樣來的。
-     *
-     * <p>這種東西<b>比沒收更糟</b>：它看起來像個缺口，翻了之後畫面上就會
-     * 夾出半中半英——整段那條才是該用的鍵。
-     *
-     * <p>代價是「剛好是某條開頭的短句」以後收不到了。可以接受：那種句子
-     * 語料裡幾乎一定已經有了，而且漏收一條的代價遠小於收進一條假缺口。
-     */
     public void knowsLonger(java.util.function.Predicate<String> lookup) {
         longer = lookup == null ? t -> false : lookup;
     }
 
-    /**
-     * 語料收過、但還沒有譯文的字串，各被看到幾次。
-     *
-     * <h2>為什麼要另外記</h2>
-     * 這些句子不是缺口——語料早就收過，再收一次、再分享一次只是重複。
-     * 但它們正是玩家看到「翻到一半變英文」的那幾句。先前一律略過，連次數都沒留，
-     * 翻譯的人就無從知道哪幾句最常被看到、該先補。
-     *
-     * <p>寫在 {@code captured.json} 的 {@code untranslated}，照次數由多到少排。
-     */
     private final Map<String, Captured> untranslated = new ConcurrentHashMap<>();
 
-    /** 某一句沒翻的被看到幾次；不在清單裡回傳 0。 */
     int untranslatedSeen(String template) {
         Captured c = untranslated.get(hash(template));
         return c == null ? 0 : c.seen;
     }
 
-    /**
-     * 記錄一段文字。已存在則只累加計數。
-     *
-     * @return 是否為新字串
-     */
     public boolean record(String template, String role, String domain, String ctx) {
         return record(template, role, domain, ctx, null);
     }
 
-    /**
-     * @param full 跑馬燈選項接回來的整句；其餘情況傳 {@code null}。
-     *             見 {@link Captured#full}。
-     */
     public boolean record(String template, String role, String domain, String ctx,
                           String full) {
         return record(template, role, domain, ctx, full, false, null);
     }
 
-    /**
-     * 介面字：多帶一個「是哪一份 tooltip 的」。見 {@link Captured#in}。
-     */
     public boolean recordIn(String template, String role, String domain, String ctx, String in) {
         return record(template, role, domain, ctx, null, false, in);
     }
 
-    /** 這一句語料已經有譯文了嗎（收集的判斷用同一個，見 {@link #knowsSources}）。 */
     public boolean isTranslated(String template) {
         return template != null && translated.test(template);
     }
 
-    /** 收到的當下人在哪裡。由 {@code WynnChaYuan} 接上 {@link Whereabouts#now}；測試不接就是沒有。 */
     private volatile java.util.function.Supplier<String> where = () -> null;
 
     public void knowsWhere(java.util.function.Supplier<String> where) {
@@ -250,68 +124,42 @@ public final class CaptureStore {
         }
     }
 
-    /**
-     * 聊天的一列。同一句話折成好幾列的會先接回去看，見 {@link ChatRows}。
-     *
-     * @param ctx 出處，例如 {@code chat/INFO}
-     * @param now 現在的時間（毫秒）；由呼叫端給，測試才控制得了
-     */
     public void recordChat(String template, String ctx, long now) {
         recordChatRows(chatRows.offer(template, ctx, now));
     }
 
-    /** 扣著等下一列的聊天，等夠久了就照常記。由計時器呼叫。 */
     public void settleChat(long now) {
         recordChatRows(chatRows.settle(now));
     }
 
     private void recordChatRows(java.util.List<ChatRows.Row> rows) {
         for (ChatRows.Row row : rows) {
-            // 放行出來的都是<b>完整的一列</b>，不是打到一半的半句，
-            // 所以不過「語料裡有更長的」那一關。見 ChatRows。
             record(row.template(), "desc", "chat", row.ctx(), null, true, null);
         }
     }
 
-    /**
-     * 聊天的列怎麼接。述詞讀的是欄位<b>當下</b>的值——{@link #knowsSources} 這些
-     * 是建好之後才接上的。
-     */
     private final ChatRows chatRows = new ChatRows(
             t -> translated.test(t) || known.test(t),
             t -> longer.test(t));
 
-    /**
-     * @param wholeLine 呼叫端已經確定這是完整的一列（聊天），不必再問
-     *                  「是不是某一條打到一半」
-     */
     private boolean record(String template, String role, String domain, String ctx,
                            String full, boolean wholeLine, String in) {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
-            return false;   // 沒有字母 = 純符號或純數字，不值得記錄
+            return false;
         }
         if (OwnOutputs.isOwn(template)) {
-            // 我們自己畫出去的譯文、模組自己的訊息，不是遊戲原文。見 OwnOutputs。
             noteEvent("skipped.ownOutput");
             return false;
         }
         if (translated.test(template)) {
-            // 已經翻好了，這不是缺口。記個數就好——數字留著，
-            // 「明明有譯文卻還是英文」那種問題才看得出來。
             noteEvent("skipped.translated");
             return false;
         }
-        // 別的模組拿來判斷遊戲狀態的句子不收。
-        //
-        // 那些字串一翻就會害對方算錯（見 ThirdPartyLiterals 的說明），
-        // 所以它們不是「待翻的缺口」——擺進這個檔只會讓人以為該翻。
-        // 記個數就好，這樣「為什麼那一行沒翻」看得到答案。
         if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(template)) {
             noteEvent("skipped.thirdParty");
             return false;
         }
         if (known.test(template)) {
-            // 語料收過、只是還沒翻。不是缺口，但要記次數——見 untranslated。
             untranslated.compute(hash(template), (k, c) -> {
                 if (c == null) {
                     return new Captured(template.strip(), role, classify(domain, ctx), ctx, 0);
@@ -323,7 +171,6 @@ public final class CaptureStore {
             return false;
         }
         if (!wholeLine && longer.test(template)) {
-            // 打到一半的半句、或提示框只收到第一行。見 knowsLonger。
             noteEvent("skipped.fragment");
             return false;
         }
@@ -331,10 +178,6 @@ public final class CaptureStore {
         Captured existing = entries.get(key);
         if (existing != null) {
             existing.seen++;
-            // 同一條先前只收到第一格、這次才拼出整句的話，補上去。
-            // 已經有整句的話，只有「更長、而且開頭一模一樣」才換掉：那是同一句
-            // 拼得更完整（ChoiceScroll 提早判定過的會這樣再回報一次）。
-            // 開頭不同就是別的句子，不能蓋掉。
             if (full != null && (existing.full == null
                     || (full.length() > existing.full.length()
                             && full.startsWith(existing.full)))) {
@@ -353,16 +196,6 @@ public final class CaptureStore {
         return true;
     }
 
-    /**
-     * 收的當下知不知道這句話是哪裡來的。
-     *
-     * <p>對話如果<b>既沒有任務名也沒有說話者</b>，那它在譯者眼裡就是一句
-     * 沒有出處的台詞——不知道誰講的、不知道接在哪裡、不知道語氣。
-     * 這種硬歸在 {@code quest} 底下是在騙人：看起來有分類，實際上沒有。
-     *
-     * <p>所以誠實標成 {@link #UNKNOWN}，鍵也會用 {@code ?} 開頭聚在一起。
-     * 塞錯的分類比沒有分類更難發現——沒有分類至少一眼看得出要補。
-     */
     private static String classify(String domain, String ctx) {
         if (ctx != null && ctx.startsWith("dialogue")
                 && questOf(ctx) == null && speakerOf(ctx) == null) {
@@ -371,27 +204,10 @@ public final class CaptureStore {
         return domain;
     }
 
-    /** 見 {@link #prune}：語料裡現成的 {@code {u}} 句型（名字已經是佔位符）。 */
     private boolean nameFrame(String src) {
         return src.contains(GlyphSplitter.PLAYER_PLACEHOLDER) && known.test(src);
     }
 
-    /**
-     * 這一條是<b>現在的濾網</b>會擋掉的個資嗎。
-     *
-     * <h2>為什麼要回頭清</h2>
-     * 濾網一直在補（公會領地、開箱廣播、製作者署名、討伐戰死亡訊息…），
-     * 但補上之後<b>只影響以後收的</b>——舊版本漏進來的那些還躺在檔案裡，
-     * 而且 {@code seen} 停在當初的數字，看起來像是還在發生。
-     * 實測一份跑過很多任務的 captured.json 裡，公會名與隊友 ID 就有六種樣子，
-     * 全部是舊版本留下的。
-     *
-     * <p>比對用的規則跟<b>收集端一模一樣</b>：名牌那條路多擋「玩家自己取的名字」，
-     * 標題那條路多擋「長得像帳號名」的整格，其餘只看夾帶特徵。
-     * 兩邊分開寫的話，濾網一補就又會不一致。
-     *
-     * <p>{@code dst} 有東西的不動——那是有人打過的字，見 {@link #prune}。
-     */
     private static boolean nowFiltered(Captured c) {
         if (PlayerDataFilter.carriesPlayerData(c.src)) {
             return true;
@@ -406,7 +222,6 @@ public final class CaptureStore {
         return false;
     }
 
-    /** 記下某個事件發生過一次（不論最後有沒有記錄內容）。 */
     public void noteEvent(String name) {
         eventCounts.computeIfAbsent(name,
                 k -> new java.util.concurrent.atomic.AtomicInteger()).incrementAndGet();
@@ -417,39 +232,21 @@ public final class CaptureStore {
         return entries.containsKey(hash(template));
     }
 
-    /**
-     * {@code entries} 那一段：照收集順序、用給人看的鍵。
-     *
-     * <h2>為什麼抽出來</h2>
-     * 本機的 {@code captured.json}（{@link #flush}）與 F6 匯出的檔案
-     * （{@link CorpusExport}）要是<b>同一個格式</b>，{@code tools/import-captured.py}
-     * 才兩種都吃得下。各寫一份的話，哪天這邊加一欄、那邊忘了，交上來的檔案
-     * 就少了任務名或第幾句，而且不會有任何錯誤訊息。
-     *
-     * <p>{@code entries} 是 {@link ConcurrentHashMap}，走訪時收集端還在寫也不會炸，
-     * 頂多少掉剛收進來的那一條，下次再寫。
-     *
-     * @param keep 哪些要寫進去：本機檔案全收，匯出只收 {@link ShareFilter} 放行的
-     */
     synchronized JsonObject rowsJson(java.util.function.Predicate<Captured> keep) {
         JsonObject rows = new JsonObject();
         java.util.List<Captured> ordered = entries.values().stream()
                 .filter(keep)
                 .sorted(java.util.Comparator.comparingInt(c -> c.seq))
                 .toList();
-        // 同一個任務／NPC 的台詞各自從 1 開始數，翻譯的人一眼就看得出這是第幾句。
         Map<String, Integer> nth = new java.util.HashMap<>();
         java.util.Set<String> used = new java.util.HashSet<>();
         for (Captured c : ordered) {
             String key = readableKey(c, nth);
-            // 理論上不會撞，但鍵撞了會<b>無聲吃掉</b>一條，所以還是保個底。
             String unique = key;
             for (int n = 2; !used.add(unique); n++) {
                 unique = key + "~" + n;
             }
             JsonObject row = GSON.toJsonTree(c).getAsJsonObject();
-            // 任務／說話者／第幾句各自一欄。ctx 是機器用的字串，
-            // 要譯者自己去解「dialogue/King's Recruit#Aledar」不合理。
             String quest = questOf(c.ctx);
             if (quest != null) {
                 row.addProperty("quest", quest);
@@ -468,16 +265,6 @@ public final class CaptureStore {
         return entries.size();
     }
 
-    /**
-     * 丟掉「已經有譯文、而且沒有人動過」的舊條目。
-     *
-     * <p>{@link #record} 從現在起不收已翻好的，但<b>上一版收進來的</b>還躺在
-     * 檔案裡。它們才是雜訊的大宗（實機那份 308 條裡佔了 249 條）。
-     *
-     * <p>{@code dst} 有東西的一律不動——那是有人打的字，不管語料裡有沒有。
-     *
-     * @return 有沒有真的丟掉東西
-     */
     private boolean prune() {
         int before = entries.size();
         entries.values().removeIf(c -> c.dst != null && c.dst.isBlank()
@@ -487,7 +274,6 @@ public final class CaptureStore {
             eventCounts.computeIfAbsent("skipped.translated",
                     k -> new java.util.concurrent.atomic.AtomicInteger()).addAndGet(gone);
         }
-        // 當初收成缺口、後來語料收進去了（還沒翻）的，搬到沒翻清單，次數帶過去。
         boolean moved = false;
         for (var it = entries.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<String, Captured> e = it.next();
@@ -502,15 +288,11 @@ public final class CaptureStore {
             }
         }
         int pending = untranslated.size();
-        // 名字收成 {u} 的句型（見 NameFrames）本身就是語料裡的一條鍵，裡面沒有任何人的
-        // 名字；濾網的片語（「 was butchered by 」）卻照樣會認出它來。那是「這裡會夾著
-        // 名字」的記號，名字已經換成 {u} 了，不算個資。
         untranslated.values().removeIf(c -> c.src == null
                 || translated.test(c.src) || (nowFiltered(c) && !nameFrame(c.src)));
         return gone > 0 || moved || untranslated.size() != pending;
     }
 
-    /** 把目前累積的內容寫到磁碟。沒有變動時直接跳過。 */
     public synchronized void flush() {
         if (prune()) {
             dirty.set(true);
@@ -567,15 +349,11 @@ public final class CaptureStore {
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(e -> events.addProperty(e.getKey(), e.getValue().get()));
         meta.add("events", events);
-        // 目前認得幾種「就是我」的寫法。暱稱認不出來的話 {u} 抽不掉，而畫面上
-        // 只看得到「這句沒翻」——把清單擺出來才分得出是沒學到還是學錯。
-        // 只寫<b>幾個</b>與長度，不寫內容：那是玩家自己的名字。見 SelfNames。
         JsonArray selves = new JsonArray();
         for (String where : SelfNames.describe()) {
             selves.add(where);
         }
         meta.add("selfNames", selves);
-        // 每一類各幾條。沒有這一欄，「這份檔案裡到底有什麼」得自己捲完整份。
         JsonObject groups = new JsonObject();
         Map<String, Integer> tally = new java.util.TreeMap<>();
         for (Captured c : entries.values()) {
@@ -584,15 +362,7 @@ public final class CaptureStore {
         tally.forEach(groups::addProperty);
         meta.add("groups", groups);
         root.add("_meta", meta);
-        // ★ 照收集順序寫，不是照雜湊順序。
-        //
-        // entries 是雜湊表，直接丟給 Gson 出來的順序是<b>亂的</b>——同一段 NPC
-        // 對話被拆散在整個檔案裡，接手的人得先自己拼回先後才看得懂在講什麼。
-        // 而缺的語料補進語料檔時，順序錯了就會突兀地插在中間。
-        //
-        // seq 本來就記了，只是沒有拿來排。
         root.add("entries", rowsJson(c -> true));
-        // 語料收過、還沒翻的，照看到的次數排——最常出現的就是最該先補的。
         if (!untranslated.isEmpty()) {
             JsonArray pending = new JsonArray();
             untranslated.values().stream()
@@ -614,15 +384,12 @@ public final class CaptureStore {
                     });
             root.add("untranslated", pending);
         }
-        // 顏色沒對上的句子。見 ColourAudit。
         if (ColourAudit.size() > 0) {
             root.add("colours", ColourAudit.toJson());
         }
-        // 譯文比原本那一格大的句子。見 OverflowAudit。
         if (OverflowAudit.size() > 0) {
             root.add("overflow", OverflowAudit.toJson());
         }
-        // 有譯文卻套不上去的句子。見 UnappliedAudit。
         if (UnappliedAudit.size() > 0) {
             root.add("unapplied", UnappliedAudit.toJson());
         }
@@ -635,28 +402,13 @@ public final class CaptureStore {
             }
             com.wynnchayuan.SafeFiles.moveAtomically(tmp, file);
         } catch (IOException e) {
-            dirty.set(true);   // 沒寫成功，下次再試
+            dirty.set(true);
             System.err.println("[WynnChaYuan] 寫入失敗 " + file + ": " + e.getMessage());
         }
     }
 
-    /**
-     * 大到不合理的 captured.json 不讀。實機一份約 10 KB；再怎麼跑也到不了這個數字，
-     * 硬讀只會把啟動卡在主執行緒上。
-     */
     static final long MAX_BYTES = 32L << 20;
 
-    /**
-     * 讀回上次存的內容。
-     *
-     * <h2>讀不懂時為什麼要把檔案移開</h2>
-     * 先前讀不懂就印一行「將重新開始」，檔案留在原地——30 秒後第一次存檔就用空的內容
-     * <b>蓋掉</b>它。遊戲被強制關掉而留下的半截檔、舊版格式，都會讓玩家收了好幾天的
-     * 缺口清單無聲消失。現在改名放旁邊（見 {@link com.wynnchayuan.SafeFiles#readObject}），
-     * 內容還在，要救可以救。
-     *
-     * <p>逐條讀：舊版少了欄位、某一條是 {@code null} 或不是物件，只跳過那一條。
-     */
     private void load() {
         JsonObject root = com.wynnchayuan.SafeFiles.readObject(file, MAX_BYTES);
         if (root == null) {
@@ -682,24 +434,12 @@ public final class CaptureStore {
             if (c == null) {
                 continue;
             }
-            // 鍵用 src 重算，不信檔案裡寫的那個。
-            //
-            // 檔案裡的鍵是<b>給人看的</b>（見 flush 的 readableKey），
-            // 而去重是照 hash(src) 查的。直接沿用檔案裡的鍵，重開遊戲之後
-            // 同一句話會被當成新的再收一次。
             entries.put(hash(c.src), c);
-            // 接續上次的流水號，重開遊戲之後收到的才會排在後面
             int seq = Math.max(0, c.seq);
             nextSeq.updateAndGet(n -> Math.max(n, seq + 1));
         }
     }
 
-    /**
-     * 一條讀得懂的紀錄；讀不懂或沒有原文就回傳 {@code null}。
-     *
-     * <p>{@code dst} 要補成空字串：Gson 建物件時不跑欄位初始值，舊版沒寫 {@code dst}
-     * 的紀錄讀回來會是 {@code null}，後面判斷「有沒有人翻過」時就會踩到。
-     */
     private static Captured row(com.google.gson.JsonElement el) {
         if (el == null || !el.isJsonObject()) {
             return null;
@@ -719,41 +459,19 @@ public final class CaptureStore {
         }
     }
 
-    /**
-     * 給人看的鍵。
-     *
-     * <h2>為什麼不用雜湊</h2>
-     * 先前的鍵是 {@code fea1ab0ad4dd} 這種 SHA-1 前綴——對程式來說夠用，對翻譯的人
-     * 卻是一串亂碼：打開檔案看不出哪句在前、哪句在後，也看不出這句屬於誰。
-     *
-     * <p>對話用「任務名 #第幾句」：同一個任務的台詞各自從 1 開始數，
-     * 照劇情順序排下來。其餘的用收集流水號。
-     *
-     * <p>鍵只是給人看的識別；去重與查表都是照 {@code src} 走的（見 {@link #load}）。
-     */
     private static String readableKey(Captured c, Map<String, Integer> nth) {
         String quest = questOf(c.ctx);
         if (quest != null) {
             int n = nth.merge(quest, 1, Integer::sum);
             return String.format("%s #%03d", quest, n);
         }
-        // 認不出歸屬的用 ? 開頭。排序時它們會聚在一起，而那個問號就是
-        // 「我不知道這是哪裡來的」——不要為了看起來整齊而塞進某一類，
-        // 塞錯的分類比沒有分類更難發現。
         return UNKNOWN.equals(c.domain)
                 ? String.format("? #%04d", c.seq)
                 : String.format("%04d", c.seq);
     }
 
-    /** 認不出歸屬時的 domain。 */
     public static final String UNKNOWN = "unknown";
 
-    /**
-     * 這一條屬於哪一堆——給 {@code _meta.groups} 統計用。
-     *
-     * <p>用的是<b>已經有的</b>欄位（任務名、domain），不另外發明分類。
-     * 發明一套只有這個檔案懂的分類，接手的人還得先學它。
-     */
     private static String groupOf(Captured c) {
         String quest = questOf(c.ctx);
         if (quest != null) {
@@ -762,12 +480,6 @@ public final class CaptureStore {
         return c.domain == null || c.domain.isBlank() ? UNKNOWN : c.domain;
     }
 
-    /**
-     * 對話 ctx 裡的說話者。
-     *
-     * <p>格式是 {@code dialogue/Cook Assistant#Aledar}，井號後面那一段。
-     * 沒有名牌的對話（旁白框）回傳 {@code null}。
-     */
     private static String speakerOf(String ctx) {
         if (ctx == null || !ctx.startsWith("dialogue")) {
             return null;
@@ -776,17 +488,9 @@ public final class CaptureStore {
         if (at < 0) {
             return null;
         }
-        // 舊版收進來的 ctx 可能帶著名牌底下那一列圖示。見 CurrentQuest#speakerName。
         return CurrentQuest.speakerName(ctx.substring(at + 1));
     }
 
-    /**
-     * 把對話 ctx 裡的說話者清成只剩名字。
-     *
-     * <p>{@link CurrentQuest#tag} 現在收的當下就會清，但<b>先前版本</b>寫進檔案的
-     * 還帶著換行與圖示（issue #1124）。讀回來時清一次，本機那份與匯出的檔案
-     * 就都是乾淨的，不必等那幾句被重新收一遍。
-     */
     static String cleanCtx(String ctx) {
         if (ctx == null || !ctx.startsWith("dialogue")) {
             return ctx;
@@ -800,12 +504,6 @@ public final class CaptureStore {
         return who == null ? head : head + "#" + who;
     }
 
-    /**
-     * 對話 ctx 裡的任務名。
-     *
-     * <p>格式是 {@code dialogue/Cook Assistant#Aledar}——收集的當下就把追蹤器上的
-     * 任務名與面前 NPC 的名字記進去了。沒有任務名的對話（路邊閒聊）回傳 null。
-     */
     private static String questOf(String ctx) {
         if (ctx == null || !ctx.startsWith("dialogue/")) {
             return null;

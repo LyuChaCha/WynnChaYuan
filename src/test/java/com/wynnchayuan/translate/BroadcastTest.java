@@ -16,26 +16,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 「某某人丟了炸彈」這類廣播：句子要翻，<b>名字一個字都不能動</b>。
- *
- * <h2>先前是什麼樣子</h2>
- * 夾著別人名字的伺服器訊息一律原樣放過，所以炸彈鈴整句是英文，同一個世界裡
- * 有人丟炸彈時是「整塊中文裡夾一句 {@code Kasyu_pwq has thrown a}」
- * （使用者 2026-10-10 回報，並要求「務必不要翻譯到玩家」）。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>四種句型都認得，而且名字是從<b>位置</b>收的——名字長得像技能、地名、
- *       炸彈種類、帶數字、帶空白、跨兩個片段，都原樣填回去；</li>
- *   <li>伺服器折行的炸彈鈴（折在 on 前後）跟沒折的是同一條語料；</li>
- *   <li>不是廣播的東西不能被當成廣播：玩家發言、Thank you for your purchase；</li>
- *   <li>認不得的炸彈種類整句不動，不會只翻一半；</li>
- *   <li>六個語言的實際語料都組得出來，名字照樣不動。</li>
- * </ol>
- *
- * <p>訊息的片段照實機 log 的分段組：圖示、名字、種類、世界名各自一段，顏色不同。
- */
 public final class BroadcastTest {
 
     private static int failures = 0;
@@ -46,7 +26,6 @@ public final class BroadcastTest {
     private static final int GOLD = 0xFFD750;
     private static final int GREY = 0xAAAAAA;
 
-    /** 行首的頻道圖示（私用區字元，自訂字型）。 */
     private static final String ICON = "";
     private static final String ICON_NEXT = "";
 
@@ -65,7 +44,6 @@ public final class BroadcastTest {
                 .withStyle(SpaceOffset.styleFor(Style.EMPTY));
     }
 
-    /** 炸彈鈴。{@code wrap}：0 不折、1 折在 on 前面、2 折在 on 後面。 */
     private static StyledText bell(String user, String article, String kind, String world, int wrap) {
         MutableComponent all = Component.empty();
         all.append(icon(ICON, BELL));
@@ -87,7 +65,6 @@ public final class BroadcastTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 同一個世界裡有人丟：置中的一列，名字自己一個顏色。 */
     private static StyledText local(String user, String rest) {
         MutableComponent all = Component.empty();
         all.append(icon(ICON_NEXT, GREEN));
@@ -119,7 +96,6 @@ public final class BroadcastTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 長得像別的東西的名字。每一個都必須原樣出現在譯文裡。 */
     private static final List<String> NAMES = List.of(
             "I_Rexpz_I", "GlitchedSouls", "xX_Pro123_Xx", "1234567", "JC grindeando",
             "Meteor", "Bash", "Totem", "Detlas", "Ragni", "Loot", "Combat Experience",
@@ -135,7 +111,6 @@ public final class BroadcastTest {
         report();
     }
 
-    /** 句型本身：認得該認的，不認不該認的。 */
     private static void frames() {
         check("炸彈鈴認得", Broadcasts.spans(" I_Rexpz_I has thrown a Combat Experience Bomb on NA1") != null);
         check("折在 on 前面也認得",
@@ -163,7 +138,6 @@ public final class BroadcastTest {
                               .substring(e.userStart(), e.userEnd())) + "）",
               e != null && e.userEnd() - e.userStart() == "Epic Loot".length());
 
-        // ★ 不是廣播的
         check("玩家發言不算（名字後面有冒號）",
               Broadcasts.spans(" Someone: I_Rexpz_I has thrown a Combat Experience Bomb on NA1") == null);
         check("Thank you for your purchase! 不是道謝那一列",
@@ -176,7 +150,6 @@ public final class BroadcastTest {
         check("空的不算", Broadcasts.spans("   ") == null && Broadcasts.spans(null) == null);
     }
 
-    /** 自己寫的小語料：措辭跟實際語料無關，只看機制。 */
     private static void ownCorpus(Path dir) throws Exception {
         com.google.gson.JsonObject root = new com.google.gson.JsonObject();
         root.addProperty("{#} {u} has thrown a Combat Experience Bomb on {~}",
@@ -190,7 +163,6 @@ public final class BroadcastTest {
                 + "{#} Get your own bombs at wynncraft.com/store",
                          "{#} {u} 的丙種炸彈沒了！\n{#} 自己去 wynncraft.com/store 買");
         root.addProperty("{#} {#}Thank {u}", "{#} {#}謝謝 {u}");
-        // 名字長得像這些也不能被換掉
         root.addProperty("Combat Experience", "戰鬥經驗");
         root.addProperty("Dungeon", "地城");
         root.addProperty("Loot", "寶物");
@@ -211,7 +183,6 @@ public final class BroadcastTest {
             every(name, store, "小語料", List.of("擲出", "的丙種炸彈沒了", "謝謝"));
         }
 
-        // 模板：名字是 {u}、世界名是一個 {~}，折行的那兩種多一個續行圖示
         check("模板（實際 " + Broadcasts.parts(bell("A_b", "a", "Combat Experience", "NA1", 0)).template() + "）",
               "{#} {u} has thrown a Combat Experience Bomb on {~}".equals(
                       Broadcasts.parts(bell("A_b", "a", "Combat Experience", "NA1", 0)).template()));
@@ -221,7 +192,6 @@ public final class BroadcastTest {
                       && spaced.users().size() == 1
                       && "12 cats 9".equals(spaced.users().get(0).text()));
 
-        // ★ 名字跨兩個片段（Wynntils 把暱稱改寫成「帳號名/暱稱」，後半斜體）
         MutableComponent split = Component.empty();
         split.append(icon(ICON_NEXT, GREEN));
         split.append(lit(" ", GREEN));
@@ -234,7 +204,6 @@ public final class BroadcastTest {
         check("名字跨兩個片段也翻得出來（實際 " + (two == null ? "null" : two.getString()) + "）",
               two != null && two.getString().contains("ImagineKami/Elaina Lover 擲出了乙種炸彈。"));
 
-        // 顏色：炸彈名照 {c2} 是淺色那一個，名字留著它自己的顏色
         Component belled = LineTranslator.translateChat(
                 bell("I_Rexpz_I", "a", "Combat Experience", "NA1", 0), store);
         if (belled != null) {
@@ -252,13 +221,11 @@ public final class BroadcastTest {
         check("同世界那一列：名字還是金色", here != null && colourOf(here, "Kasyu_pwq") == GOLD);
         check("譯文沒有殘留的顏色記號", belled != null && !belled.getString().contains("{"));
 
-        // ★ 認不得的炸彈種類：整句不動（回 null），不能只翻一半
         Component unknown = LineTranslator.translateChat(
                 bell("I_Rexpz_I", "a", "Mystery Flavour", "NA1", 0), store);
         check("語料沒有的種類整句不動（實際 " + (unknown == null ? "null" : unknown.getString()) + "）",
               unknown == null);
 
-        // 收集端那一關沒有因此放行：這幾句照樣不進 captured.json
         check("收集端照舊擋下炸彈鈴", PlayerDataFilter.carriesPlayerData(
                 com.wynnchayuan.capture.GlyphSplitter.toTemplate(
                         bell("I_Rexpz_I", "a", "Combat Experience", "NA1", 0))));
@@ -268,7 +235,6 @@ public final class BroadcastTest {
                 "PoorChaCha was butchered by Dead Lumberjack."));
     }
 
-    /** 六個語言的實際語料：每一種句型都組得出來，名字不動、沒有英文句子殘留。 */
     private static void realCorpus() {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
         for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
@@ -291,7 +257,6 @@ public final class BroadcastTest {
         }
     }
 
-    /** 同一個名字走過每一種句型：翻得出來、名字原樣出現一次、英文句型不見了。 */
     private static void every(String name, TranslationStore store, String tag, List<String> want) {
         List<StyledText> rows = List.of(
                 bell(name, "a", "Combat Experience", "NA1", 0),
@@ -323,13 +288,11 @@ public final class BroadcastTest {
         check(tag + "：「" + name + "」七種句型都翻了、名字原樣", true);
     }
 
-    /** 名字原樣出現，而且句子裡沒有多出第二份（被別的規則又貼了一次）。 */
     private static boolean once(String text, String name) {
         int at = text.indexOf(name);
         return at >= 0 && text.indexOf(name, at + name.length()) < 0;
     }
 
-    /** 譯文裡某一段字的顏色；找不到回 -1。 */
     private static int colourOf(Component whole, String piece) {
         int[] found = {-1};
         whole.visit((style, text) -> {

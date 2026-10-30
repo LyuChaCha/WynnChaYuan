@@ -14,19 +14,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 登入時的歡迎訊息：交易市場那兩行各有各的顏色。
- *
- * <h2>實機長什麼樣</h2>
- * 有東西賣出、又有坐騎沒飼料時，歡迎訊息底下多兩行：
- *
- * <pre>
- *   §d§l1§r §5item was sold on the Trade Market
- *   §#8f663dand §#bc8f62§l2§#8f663d mounts have §#bc8f62no food§#8f663d in their feeder
- * </pre>
- *
- * 第一行紫、第二行棕。實機回報譯文的第二行整行變成紫色——跟上一行同色。
- */
 public final class TradeFeederColourTest {
 
     private static int failures = 0;
@@ -95,12 +82,6 @@ public final class TradeFeederColourTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /**
-     * 升級時的「+ New Quest [Mini-Quest - Slay Spiders]」：前半淺灰、括號深灰。
-     *
-     * <p>括號那段比較長，整行的主色於是是深灰；「+ 新任務」要靠語料裡
-     * 「+ New Quest」那一條認出來，才拿得回淺灰。實機回報整行變深灰。
-     */
     private static void newQuest() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-newquest");
         FlowedDebug.init(dir);
@@ -126,7 +107,6 @@ public final class TradeFeederColourTest {
               out != null && colourOf(out, "獵殺") == 0x555555);
     }
 
-    /** 實機那則訊息，照 majorid-debug 的「聊天對齊」原文拼回來。 */
     private static StyledText message() {
         MutableComponent all = Component.empty();
         all.append(lit("\n", null, false));
@@ -168,7 +148,6 @@ public final class TradeFeederColourTest {
         return Component.literal(text).withStyle(style);
     }
 
-    /** 含有這段文字的那一片段是什麼顏色；找不到回傳 -1。 */
     private static int colourOf(Component component, String text) {
         int[] found = {-1};
         component.visit((style, piece) -> {

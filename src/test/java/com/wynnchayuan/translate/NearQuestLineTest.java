@@ -4,12 +4,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * wiki 抄來的台詞跟實機差一兩個字時，同一個任務裡還認得出是哪一句。
- *
- * <p>實機：「You're searching a [Mythic Everlasting Pufferfish]? …」，
- * 語料：「You're searching for a …」。
- */
 public final class NearQuestLineTest {
 
     private static int failures = 0;

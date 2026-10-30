@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** 每個 tooltip 畫底色之前：記下原文真正畫在哪裡，見 {@link OriginalTooltipBox}。 */
 @Mixin(TooltipRenderUtil.class)
 public abstract class TooltipBackgroundMixin {
 

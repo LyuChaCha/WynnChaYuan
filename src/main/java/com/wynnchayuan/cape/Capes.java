@@ -32,30 +32,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Pattern;
 
-/**
- * WynnChaYuan 的披風：誰有、圖從哪裡來、現在該畫哪一格。
- *
- * <h2>誰有披風</h2>
- * 跟葉子徽章同一份名單——{@code credits.json} 的成員多一欄 {@code "cape": "檔名"}，
- * 圖檔放在倉庫根目錄的 {@code capes/}。名單與圖都是下載來的，模組不為披風送任何東西。
- *
- * <h2>上傳的披風</h2>
- * 玩家在網站（wynnchayuan.com/capes）上傳自己的披風。登記站的名單會寫誰傳了、
- * 是哪一版；有上傳的人用上傳的那一件，沒有才看 {@code credits.json} 登記的。
- *
- * <p>原本還能把 {@code self.png}／{@code self.gif} 放進 {@code config/wynnchayuan/capes/}
- * 先在自己身上預覽、再從 F6 上傳。網站有了上傳與預覽之後拿掉了（使用者 2026-10-14：
- * 「披風部分希望可以把本地讀取移除掉了，現在都用網站上傳了」）。那個資料夾現在只放下載來的快取。
- *
- * <h2>別人看不看得到</h2>
- * 預設大家都看得到。本人在 F6 關掉「穿上我的披風」，那個選擇跟著報到送出去，
- * 名單上會記著；別人那邊就不畫他的披風了。名單抓不到的時候照預設畫。
- *
- * <h2>怎麼畫上去</h2>
- * 原版的披風層畫的是 {@code state.skin.cape()} 那張貼圖。{@code CapeLayerMixin} 在它開畫
- * 之前把那一欄換成我們的、畫完換回來。Wynntils 自己的披風另有一層，
- * {@code WynntilsCapeMixin} 讓它對穿著我們披風的人讓開。
- */
 public final class Capes {
 
     private Capes() {}
@@ -64,22 +40,17 @@ public final class Capes {
             "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/capes/",
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/capes/");
 
-    /** 檔名只收這個樣子：它要拿去拼網址與路徑。 */
     static final Pattern FILE = Pattern.compile("[a-z0-9][a-z0-9_-]{0,40}\\.(png|gif)");
 
-    /** 圖檔的大小上限。 */
     static final int MAX_BYTES = 21 * 1024 * 1024;
 
-    /** 下載來的圖放多久再重抓一次。 */
     private static final long REFRESH_MS = 24 * 3600_000L;
 
-    /** 失敗之後多久再試。 */
     private static final long RETRY_MS = 5 * 60_000L;
 
 
     private static final Duration TIMEOUT = Duration.ofSeconds(20);
 
-    /** 一件載好的披風：每一格的貼圖，與每一格結束在動畫的第幾毫秒。 */
     private record Loaded(Identifier[] textures, int[] ends) {
         Identifier at(long now) {
             if (textures.length == 1) {
@@ -96,7 +67,6 @@ public final class Capes {
         }
     }
 
-    /** 正在載、或載不起來（幾點之後可以再試）。 */
     private record Pending(long retryAt) {}
 
     private static final Map<String, Object> STATE = new ConcurrentHashMap<>();
@@ -107,12 +77,9 @@ public final class Capes {
         return t;
     });
 
-    // ------------------------------------------------------------ 誰穿哪一件
-
     private static volatile List<Credits.Section> tableFor;
     private static volatile Map<String, String> table = Map.of();
 
-    /** 名單上這個人登記的披風檔名；沒有就回 {@code null}。 */
     public static String registered(String account) {
         if (account == null) {
             return null;
@@ -138,28 +105,20 @@ public final class Capes {
         return Map.copyOf(out);
     }
 
-    /** 下載來的披風放在這個資料夾底下的 {@code cache/}。 */
     private static Path folder() {
         Path dir = WynnChaYuan.configDir();
         return dir == null ? null : dir.resolve("capes");
     }
 
-    /** 這個人有披風嗎。 */
     public static boolean hasCape(String account, java.util.UUID uuid) {
         return registered(account) != null || Presence.capeVersion(uuid) > 0;
     }
 
-    /** 上傳的披風在這裡的鍵：代碼加版本，換了一件鍵就不同。 */
     private static String uploadedKey(java.util.UUID uuid) {
         long version = Presence.capeVersion(uuid);
         return version > 0 ? "up:" + Presence.idOf(uuid) + ":" + version : null;
     }
 
-    /**
-     * 這個人現在該畫哪一張貼圖。
-     *
-     * @return 貼圖；沒有披風、被關掉、或還沒載好時回 {@code null}（照原本的畫）
-     */
     public static Identifier textureFor(String account, java.util.UUID uuid, boolean self,
                                         CollectorConfig config, long now) {
         if (account == null || config == null || !config.capes()
@@ -167,9 +126,8 @@ public final class Capes {
             return null;
         }
         if (self ? !config.ownCape() : Presence.capeHidden(uuid)) {
-            return null;                   // 自己關掉了「穿上我的披風」／本人關掉了
+            return null;
         }
-        // 有上傳的用上傳的那一件，沒有才看 credits.json 登記的
         String key = uploadedKey(uuid);
         if (key == null) {
             key = registered(account);
@@ -180,7 +138,6 @@ public final class Capes {
         return loaded(key, now);
     }
 
-    /** 這個鍵的披風載好了就回現在那一格；還沒載就開始載、先回 {@code null}。 */
     private static Identifier loaded(String key, long now) {
         Object state = STATE.get(key);
         if (state instanceof Loaded loaded) {
@@ -193,8 +150,6 @@ public final class Capes {
         }
         return null;
     }
-
-    // ------------------------------------------------------------ 掛點用
 
     private static Player playerOf(AvatarRenderState state) {
         Minecraft mc = Minecraft.getInstance();
@@ -219,11 +174,6 @@ public final class Capes {
         return account != null && mc != null && account.equalsIgnoreCase(mc.getUser().getName());
     }
 
-    /**
-     * 把這個玩家的披風貼圖換成我們的。
-     *
-     * @return 換之前的 skin（畫完要換回去）；沒有換就回 {@code null}
-     */
     public static PlayerSkin swap(AvatarRenderState state) {
         try {
             Identifier texture = textureFor(playerOf(state));
@@ -236,11 +186,10 @@ public final class Capes {
                     before.elytra(), before.model(), before.secure());
             return before;
         } catch (Throwable t) {
-            return null;                   // 這只是裝飾，出事就照原本的畫
+            return null;
         }
     }
 
-    /** Wynntils 要不要對這個玩家讓開：他穿著我們的披風，而且貼圖已經載好了。 */
     public static boolean overrides(Player player) {
         try {
             return textureFor(player) != null;
@@ -248,8 +197,6 @@ public final class Capes {
             return false;
         }
     }
-
-    // ------------------------------------------------------------ 載入
 
     private static void load(String key) {
         try {
@@ -266,7 +213,6 @@ public final class Capes {
         }
     }
 
-    /** 別人上傳的披風：鍵裡帶著版本，同一版的內容不會變，抓過一次就一直用本機那一份。 */
     private static byte[] readUploaded(String key) throws Exception {
         String[] parts = key.split(":");
         Path cache = folder().resolve("cache").resolve("up-" + parts[1] + "-" + parts[2]);
@@ -283,7 +229,6 @@ public final class Capes {
         return fresh;
     }
 
-    /** 下載來的圖在本機留一份；一天之內不重抓，抓不到就用舊的。 */
     private static byte[] readRemote(String file) throws Exception {
         if (!FILE.matcher(file).matches()) {
             return null;
@@ -327,20 +272,16 @@ public final class Capes {
                         }
                     }
                 } catch (Exception e) {
-                    // 換下一個來源
                 }
             }
         } catch (Exception e) {
-            // 連不上就當沒抓到
         }
         return null;
     }
 
-    /** 圖檔 → 排好版型的每一格。GIF 自己讀，PNG 交給遊戲。 */
     static List<CapeImage.Frame> decode(byte[] bytes) throws Exception {
         List<CapeImage.Frame> out = new ArrayList<>();
         if (Gif.looksLikeGif(bytes)) {
-            // 解一格排一格：大張的動畫不把每一格原圖都留著（見 Gif#each）
             int count = Math.max(1, Math.min(CapeImage.MAX_FRAMES, Gif.countFrames(bytes)));
             Gif.each(bytes, CapeImage.MAX_FRAMES, (canvas, width, height, delayMs) ->
                     out.add(CapeImage.layoutDetached(canvas, width, height, count, delayMs)));
@@ -402,7 +343,7 @@ public final class Capes {
         return removed;
     }
 
-    /** 在畫圖的執行緒上把每一格做成貼圖。 */
+    // 貼圖必須在算繪執行緒上建立
     private static void register(String key, List<CapeImage.Frame> frames) {
         try {
             Minecraft mc = Minecraft.getInstance();

@@ -17,16 +17,6 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * issue #1298 的兩個後續（#1301 之後）。
- *
- * <ul>
- *   <li><b>(a)</b> 就地取代：選項列與 SHIFT 提示列的譯文帶 \n 時，也要像內文那樣攤平
- *       （{@link DialogueRewriter#oneLine}）。#1301 只攤平了內文，這兩列的 \n 仍會畫成方框。</li>
- *   <li><b>(b)</b> 小框的自動折行要懂中文：「，」「。」不能落在行首、英文單字不切開、
- *       強調色跟著字走。先前用的是 {@code font.split}，只認空白。</li>
- * </ul>
- */
 public final class DialogueWrapTest {
 
     private static int failures = 0;
@@ -34,7 +24,6 @@ public final class DialogueWrapTest {
     private static final TextColor BODY = TextColor.fromRgb(0xe0d4c0);
     private static final TextColor ITEM = TextColor.fromRgb(0x55ffff);
 
-    /** 不能出現在行首的字元，跟 {@code DialogueRewriter#CLOSING} 同一份。 */
     private static final String CLOSING = ")]}>」』】》〉）〕］｝”’，。、；：！？%％・…‥";
 
     public static void main(String[] args) throws Exception {
@@ -52,10 +41,6 @@ public final class DialogueWrapTest {
                 : "\n對話折行：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
     }
-
-    // ------------------------------------------------------------------
-    // (a) 選項列與提示列
-    // ------------------------------------------------------------------
 
     private static void choiceAndPromptNewline() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-wrap");
@@ -108,13 +93,7 @@ public final class DialogueWrapTest {
         field.set(null, config);
     }
 
-    // ------------------------------------------------------------------
-    // (b) 小框的自動折行
-    // ------------------------------------------------------------------
-
-    /** 斷點剛好落在「，」前面：要把前一個字一起帶下去，不讓逗號開頭。 */
     private static void panelPunctuation() {
-        // 寬 90px = 9 個中文字；第 10 個字是「，」，照量到哪斷到哪就會落在行首
         String text = "一二三四五六七八九，十甲乙丙丁戊己庚。辛壬癸子丑寅卯辰巳！午未申酉戌亥。";
         List<Component> rows = DialogueOverlay.fold(Component.literal(text), 90);
         boolean head = true;
@@ -135,7 +114,6 @@ public final class DialogueWrapTest {
         check("沒有漏字", joined.toString().equals(text));
     }
 
-    /** 中英混排：英文名字整個留在同一行。 */
     private static void panelWords() {
         String text = "你要是能把那雙靴子帶回來，我就送你 Abysso Galoshes 當作謝禮，好嗎？";
         List<Component> rows = DialogueOverlay.fold(Component.literal(text), 120);
@@ -156,7 +134,6 @@ public final class DialogueWrapTest {
               joined.toString().replace(" ", "").equals(text.replace(" ", "")));
     }
 
-    /** 強調色跟著字走，跨行也一樣。 */
     private static void panelColours() {
         MutableComponent line = Component.empty();
         line.append(Component.literal("你要是能把那雙被海盜偷走的靴子 ").withStyle(
@@ -169,7 +146,6 @@ public final class DialogueWrapTest {
         boolean ok = true;
         StringBuilder name = new StringBuilder();
         for (Component row : rows) {
-            // 名字那幾截要是青色、散文那幾截要是底色
             Optional<Boolean> bad = row.visit((style, text) -> {
                 boolean inName = text.contains("Abysso") || text.contains("Galoshes");
                 if (inName) {
@@ -188,7 +164,6 @@ public final class DialogueWrapTest {
         check("★ 名字那幾截折行之後仍是強調色", ok && name.length() > 0);
     }
 
-    /** 短的不動；譯者寫的 \n 照樣是硬換行。 */
     private static void panelShortAndHard() {
         Component small = Component.literal("你好。");
         List<Component> rows = DialogueOverlay.fold(small, 200);
@@ -198,9 +173,6 @@ public final class DialogueWrapTest {
                 && lines.get(0).getString().equals("第一句。"));
     }
 
-    // ------------------------------------------------------------------
-
-    /** 中日韓一個字 10px，其餘 6px。 */
     private static int realWidth(String text) {
         int w = 0;
         for (int i = 0; i < text.length(); i++) {

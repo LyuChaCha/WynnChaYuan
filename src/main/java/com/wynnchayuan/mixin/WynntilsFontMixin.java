@@ -6,27 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-/**
- * Wynntils 自己那幾個畫面上的字（綜合頁面、地圖、疊層管理⋯⋯）。
- *
- * <h2>為什麼打在這裡</h2>
- * Wynntils 不用原版的 {@code Font} 畫自己的畫面，而是全部經過它自己的
- * {@code FontRenderer}。那個類別有十幾個多載，但它們最後都轉進<b>同一支</b>
- * 不帶 {@code maxWidth} 的 {@code renderText}——在那一支的入口把字換掉，
- * 排版、對齊、捲動全部沿用它原本的算法，我們只換內容。
- *
- * <p>選「不帶 maxWidth 的那一支」是刻意的：帶 {@code maxWidth} 的那支負責
- * 折行，折完再一行一行送進這一支。打在折行<b>之後</b>，我們拿到的就是
- * 實際要畫的那一行，不必自己重算寬度。
- *
- * <h2>只換查得到的</h2>
- * 判斷與翻譯都在 {@link WynntilsText#screenText}：查得到才換，查不到原樣回傳。
- * 所以 Wynntils 自己已經翻好的中文、以及我們上一幀換過的字，走到這裡都不動。
- * F6 關掉「Wynntils 介面」時同樣原樣回傳。
- *
- * <p>目標類別不在時整個 mixin 會被 {@link WynntilsGate} 跳過——Wynntils 改版
- * 搬家或玩家沒裝，遊戲照常開得起來。
- */
+// Wynntils FontRenderer 的多載最後都轉進不帶 maxWidth 的 renderText
 @Mixin(targets = "com.wynntils.utils.render.FontRenderer", remap = false)
 public abstract class WynntilsFontMixin {
 
@@ -42,17 +22,7 @@ public abstract class WynntilsFontMixin {
         return WynntilsText.screenText(text);
     }
 
-    /**
-     * 會自己捲動的那一種（內容書清單的每一列）。
-     *
-     * <h2>為什麼這一支要另外打</h2>
-     * {@code renderScrollingText} 先量這段字多寬、放不下才捲，然後轉進上面那一支去畫。
-     * 只打上面那一支的話，它量的是<b>英文</b>：英文放得下就不捲，畫出來的卻是比較長的
-     * 譯文——設成「譯名加原文」之後整列凸出去，蓋到隔壁那一欄（使用者 2026-10-11 的截圖）。
-     *
-     * <p>在這一支的入口就換掉，量的與畫的是同一段字，放不下時 Wynntils 自己會捲。
-     * 到了上面那一支，字已經是譯文，查不到就原樣通過，不會換第二次。
-     */
+    // renderScrollingText 先量寬度決定捲不捲，要在入口就換
     @ModifyVariable(
             method = "renderScrollingText(Lnet/minecraft/client/gui/GuiGraphics;"
                     + "Lcom/wynntils/core/text/StyledText;FFF"

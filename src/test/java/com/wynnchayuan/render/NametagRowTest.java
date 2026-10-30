@@ -1,26 +1,9 @@
 package com.wynnchayuan.render;
 
-/**
- * 一排名牌：框各用自己的高度，矮的置中。
- *
- * <h2>實機回報</h2>
- * 路邊一個三行的招牌旁邊站著兩個村民：
- *
- * <pre>
- *   ┌────────┐ ┌──────────────────────┐ ┌──────────────────────┐
- *   │交易市場│ │Hyloch 市民  LV 120   │ │Hyloch 市民  LV 120   │
- *   │在市場上│ │                      │ │                      │
- *   │買賣物品│ │                      │ │                      │
- *   └────────┘ └──────────────────────┘ └──────────────────────┘
- * </pre>
- *
- * 整排先前統一用最高的那個當高度，單行的兩個被拉成三行高，字擠在最上面。
- */
 public final class NametagRowTest {
 
     private static int failures = 0;
 
-    /** Minecraft 預設字型：lineHeight 9，{@code drawRow} 再加 1。 */
     private static final int LINE = 10;
 
     private static int boxHeight(int lines) {
@@ -28,8 +11,8 @@ public final class NametagRowTest {
     }
 
     public static void main(String[] args) {
-        int sign = boxHeight(3);               // 交易市場那一個
-        int villager = boxHeight(1);           // 兩個村民
+        int sign = boxHeight(3);
+        int villager = boxHeight(1);
         int tallest = Math.max(sign, villager);
 
         check("三行的框是 36px 高", sign == 36);
@@ -46,7 +29,6 @@ public final class NametagRowTest {
         check("★ 矮的框沒有被撐大（還是 " + villager + "px）", villager == 16);
         check("矮的框整個在這一排裡面", villagerTop + villager <= tallest);
 
-        // 一排全是單行時，誰都不該被挪動
         check("全部一樣高時不挪動", LookAtTranslator.topOf(villager, villager) == 0);
 
         System.out.println(failures == 0 ? "名牌排版：全部通過"

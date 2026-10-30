@@ -12,52 +12,24 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 貢獻者名單，讀自 {@code assets/wynnchayuan/credits.json}。
- *
- * <p>做成資料檔而不是寫死在程式裡：加一位譯者不該需要改 Java、重編譯，
- * 送 PR 的人只要動一個 json 就好。
- *
- * <p>每個分區帶自己的顏色，因為「開發者／贊助者／貢獻者」是不同性質的貢獻，
- * 顏色都一樣的話得逐行讀標題才分得出來。
- */
 public final class Credits {
 
-    /**
-     * 一位貢獻者。{@code mc} 有填就會顯示 Minecraft 頭像。
-     *
-     * @param colour  登記的徽章顏色（{@code "color": "#RRGGBB"}）；0 表示沒登記，用分區的
-     * @param rainbow 登記成彩色（{@code "rainbow": true}）
-     * @param hidden  這個身分不放在名牌上（{@code "hide": true}）——多重身分的人挑著放
-     */
     public record Member(String label, String key, String mc,
                          int colour, boolean rainbow, boolean hidden, String cape) {
         public boolean hasHead() {
             return mc != null && !mc.isBlank();
         }
 
-        /** 畫面上的稱呼。資料來源那類有 {@code key}，照 F6 介面語言翻。 */
         public String name() {
             return key == null ? label : T.s(key);
         }
     }
 
-    /** 一個分區，例如「開發者」。 */
     public record Section(String label, String key, int color, List<Member> members) {
-        /**
-         * 分區標題，照 F6 介面語言翻（{@code credits.json} 的 {@code key}）。
-         *
-         * <p>先前直接印檔案裡的中文：介面切成英文或西班牙文，標題還是「開發者」。
-         */
         public String role() {
             return key == null ? label : T.s(key);
         }
 
-        /**
-         * 分區的代號：{@code credits.role.developers} 的 {@code developers}。
-         *
-         * <p>設定檔與程式拿這個認身分，不拿標題——標題會跟著介面語言變。
-         */
         public String id() {
             return key == null ? label : key.substring(key.lastIndexOf('.') + 1);
         }
@@ -67,7 +39,6 @@ public final class Credits {
 
     private Credits() {}
 
-    /** 同步抓回來的那一份放在設定資料夾底下的檔名。 */
     public static final String FILE = "credits.json";
 
     public static List<Section> sections() {
@@ -75,8 +46,6 @@ public final class Credits {
         if (have != null) {
             return have;
         }
-        // 同步抓到的比 jar 裡的新：加人、登記顏色都不必等發版。
-        // 那一份壞了或是空的就退回 jar 裡的，名單不會因為一次抓壞就整個不見。
         List<Section> out = fromSynced();
         if (out.isEmpty()) {
             try (InputStream in = Credits.class.getResourceAsStream(
@@ -93,12 +62,6 @@ public final class Credits {
         return have;
     }
 
-    /**
-     * 名單檔換了：下次用到時重讀，名牌上的徽章也跟著重建。
-     *
-     * <p>這是同步的背景執行緒叫的，所以不上鎖——兩條執行緒各讀一次沒關係，
-     * 讀到的是同一個檔。
-     */
     public static void reload() {
         cached = null;
         com.wynnchayuan.render.Badges.reload();
@@ -120,7 +83,6 @@ public final class Credits {
         }
     }
 
-    /** 讀一份名單。壞掉的 JSON 會丟例外，由呼叫端決定退回哪一份。 */
     public static List<Section> read(java.io.Reader in) {
         List<Section> out = new ArrayList<>();
         JsonObject root = JsonParser.parseReader(in).getAsJsonObject();
@@ -159,17 +121,14 @@ public final class Credits {
                         m.has("mc") ? m.get("mc").getAsString() : null,
                         m.has("color") ? Colors.opaque(parseHex(m.get("color").getAsString())) : 0,
                         flag(m, "rainbow"), flag(m, "hide"),
-                        // 披風的檔名（倉庫根目錄 capes/ 底下）。見 Capes。
                         m.has("cape") && m.get("cape").isJsonPrimitive()
                                 ? m.get("cape").getAsString() : null));
             }
         }
-        // 空分區照樣留著：「貢獻者」欄位空著本身就是在邀請別人來填
         return new Section(role, obj.has("key") ? obj.get("key").getAsString() : null,
                 color, List.copyOf(members));
     }
 
-    /** 名單是人手寫的：寫成字串的 "true" 也認，寫壞了就當沒寫。 */
     private static boolean flag(JsonObject m, String name) {
         try {
             return m.has(name) && m.get(name).getAsBoolean();

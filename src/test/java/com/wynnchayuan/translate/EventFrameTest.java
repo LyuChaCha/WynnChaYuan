@@ -13,25 +13,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 世界事件的倒數公告當成「句型 + 事件名」翻（見 {@link LineTranslator#eventFrame}）。
- *
- * <h2>先前是什麼樣子</h2>
- * 語料一個事件一條鍵，「分秒」與「只有秒」各一條，伺服器折行的位置又各一條。
- * 任何沒收過的組合都是整句英文——使用者 2026-10-17 撞到的是
- * 「The Encroaching Destruction World Event starts in 39s! (236 blocks away)」，
- * 那個事件只收過「分秒」的那一種。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>兩種倒數、三種折行都翻得出來，數值各就各位，三段顏色照句型的 {@code {cN}}；</li>
- *   <li>事件名查 {@code <名字> [World Event]} 那一條、拿掉括號；查不到就英文原名放進譯好的句型；</li>
- *   <li>一個事件一條的舊鍵照樣優先；句型沒翻就整句不動；不是這一句的不碰；</li>
- *   <li>收集端問「翻了沒」時，折過行的那幾種也算翻了。</li>
- * </ol>
- *
- * <p>語料是測試自己寫的，措辭跟實際語料無關。
- */
 public final class EventFrameTest {
 
     private static int failures = 0;
@@ -55,7 +36,6 @@ public final class EventFrameTest {
         report();
     }
 
-    /** 七個語言的實際語料都有兩條句型鍵：使用者撞到的那一句、三種折法、沒譯名的事件都翻得出來。 */
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -89,10 +69,8 @@ public final class EventFrameTest {
         }
         misc.addProperty("Smoldering Ruin [World Event]", "悶燒廢墟 [世界活動]");
         misc.addProperty("Old Mill [World Event]", "舊磨坊 [世界活動]");
-        // 一個事件一條的舊鍵
         misc.addProperty("{#} The Old Mill World Event starts in {~}m {~}s! ({~} blocks away) Click to track",
                 "{#} {c1}舊鍵：舊磨坊 {~1} 分 {~2} 秒！{/}{c2}({~3} 格) {/}{c3}追蹤{/}");
-        // 一個事件一條的舊鍵，只收了「! ⏎ (」那一種折法（譯文也折成兩行）
         misc.addProperty("{#} The Old Mill World Event starts in {~}s! \n{#} ({~} blocks away) Click to track",
                 "{#} {c1}舊折行鍵：舊磨坊 {~1} 秒！{/}\n{#} {c2}({~2} 格) {/}{c3}追蹤{/}");
         Files.writeString(dir.resolve("misc.json"), misc.toString(), StandardCharsets.UTF_8);
@@ -111,16 +89,10 @@ public final class EventFrameTest {
         return Component.literal(text).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
 
-    /**
-     * 照 log 的分段：頻道圖示、青色的主句、灰色的距離、粉紅加底線的「Click to track」。
-     *
-     * @param wrap 0 不折；1 折在「({~}」後；2 折在「! 」後；3 折在「blocks」後
-     */
     private static StyledText event(String name, String timer, String blocks, int wrap) {
         MutableComponent all = Component.empty();
         all.append(icon());
         String head = " The " + name + " World Event starts in " + timer + "! ";
-        // 折行之後，續行開頭掛著頻道圖示（實機就是這樣）
         if (wrap == 2) {
             all.append(lit(head + "\n", CYAN));
             all.append(icon());
@@ -146,7 +118,6 @@ public final class EventFrameTest {
 
     private static void timers(TranslationStore store) {
         System.out.println("=== 兩種倒數 ===");
-        // ★ 使用者撞到的那一種：只剩秒數
         Component secs = LineTranslator.translateChat(event("Smoldering Ruin", "39s", "236", 0), store);
         String got = secs == null ? null : secs.getString();
         check("★ 只剩秒數的那一種翻了（實際 " + got + "）",
@@ -163,7 +134,6 @@ public final class EventFrameTest {
         check("★ 分秒那一種也翻了（實際 " + got + "）",
               got != null && got.contains("悶燒廢墟 活動於 6 分 58 秒後揭幕！") && got.contains("(相距 608 格)"));
 
-        // 一般翻譯那一支（Wynntils 通知框、就地取代退回的那一條）也認得
         Component general = LineTranslator.translate(event("Smoldering Ruin", "39s", "236", 0), store);
         check("一般翻譯那一支也認得（實際 " + (general == null ? null : general.getString()) + "）",
               general != null && general.getString().contains("悶燒廢墟 活動於 39 秒後揭幕！"));
@@ -181,7 +151,6 @@ public final class EventFrameTest {
                       got != null && got.contains("悶燒廢墟 " + want) && got.contains("相距 426 格"));
             }
         }
-        // ★ 舊鍵只收了一種折法，伺服器折在別處：舊鍵套不上就要退到句型，不能整句放棄
         for (int wrap = 0; wrap <= 3; wrap++) {
             Component hit = LineTranslator.translateChat(event("Old Mill", "39s", "236", wrap), store);
             String got = hit == null ? null : hit.getString().replace("\n", "⏎");
@@ -189,7 +158,6 @@ public final class EventFrameTest {
             check("★ 舊鍵只有另一種折法、這一行是折法 " + wrap + "（實際 " + got + "）",
                   got != null && got.contains(want) && got.contains("236"));
         }
-        // 收集端問「翻了沒」：折過行的模板也算翻了，不必每種斷法收一條
         String wrapped = "{#} The Smoldering Ruin World Event starts in {~}s! ({~}\n"
                 + "{#} blocks away) Click to track";
         check("★ 折過行的模板算翻了", store.hasTranslation(wrapped));

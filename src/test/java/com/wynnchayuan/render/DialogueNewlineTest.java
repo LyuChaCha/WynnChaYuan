@@ -2,14 +2,6 @@ package com.wynnchayuan.render;
 
 import java.util.List;
 
-/**
- * 譯文裡手寫的換行在就地取代模式下要攤平。issue #1298。
- *
- * <p>小框模式會照 {@code \n} 換行，於是有人在譯文裡寫了 {@code \n}；
- * 同一句在就地取代模式下卻畫成亂碼——遊戲的對話框是動作列上的一行字，
- * {@code \n} 不是換行，是一個字型裡沒有的字。列數由 wrap 照寬度重分，
- * 所以換行只要變成一般的字距就好。
- */
 public final class DialogueNewlineTest {
 
     private static int failures = 0;
@@ -28,7 +20,6 @@ public final class DialogueNewlineTest {
         check("連續兩個換行不會變成兩個空白",
                 DialogueRewriter.oneLine("A\n\nB").equals("A B"));
 
-        // 攤平之後照樣攤得進原本的列數，而且沒有字被吃掉
         String flat = DialogueRewriter.oneLine("Bu çok uzun bir cümle\nve ikinci satır burada.");
         List<String> rows = DialogueRewriter.wrap(flat, 2, null, 150);
         check("攤平的譯文攤得進兩列",

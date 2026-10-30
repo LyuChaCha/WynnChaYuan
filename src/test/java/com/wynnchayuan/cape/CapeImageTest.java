@@ -10,20 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 披風的圖：GIF 讀得對、隨便什麼尺寸的圖都排得進披風的版型。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>GIF 的每一格合成得對：交錯排列、上一格留著、上一格清掉、停留時間；</li>
- *   <li>壞掉的、太大的檔會被擋下來，不會把遊戲拖垮；</li>
- *   <li>只畫一面的圖：外側就是那張圖，內側是反過來的暗色版，四邊有補；</li>
- *   <li>完整版型照用，Wynntils 那種直排多格的 PNG 拆成動畫；</li>
- *   <li>格數多的動畫每一格自動縮小，整件披風不超過預算；</li>
- *   <li>名單上 {@code cape} 那一欄讀得到，怪檔名不收。</li>
- * </ul>
- * 測試用的 GIF 是 {@code tools4/cape_fixtures.py} 照公式畫的，這裡用同一條公式驗。
- */
 public final class CapeImageTest {
 
     private static int failures = 0;
@@ -50,7 +36,6 @@ public final class CapeImageTest {
         return Files.readAllBytes(Path.of("src/test/resources/cape", name));
     }
 
-    /** 測試圖的公式：第 f 格的 (x, y) 是調色盤的第幾色。 */
     private static int want(int f, int x, int y) {
         return PAL[(f + x / 5 + y / 8) % 4];
     }
@@ -87,7 +72,6 @@ public final class CapeImageTest {
         check("單格的圖解得對", matches(plain, 3));
         check("★ 交錯排列的解出來一模一樣", Arrays.equals(plain, interlaced));
 
-        // 第一格整張紅；之後每一格左半換色、右半透明
         List<Gif.Frame> keep = Gif.decode(file("keep.gif"), 9).frames();
         check("★ 上一格留著：透明的地方露出上一格（實際 "
                         + Integer.toHexString(keep.get(1).argb()[W - 1]) + "）",
@@ -105,7 +89,7 @@ public final class CapeImageTest {
                 throwsOn(Arrays.copyOf(anim, anim.length / 3)));
         check("不是 GIF 的丟例外", throwsOn("<html>404</html>".getBytes()));
         byte[] huge = anim.clone();
-        huge[6] = (byte) 0xFF;                       // 寬改成 65535
+        huge[6] = (byte) 0xFF;
         huge[7] = (byte) 0xFF;
         check("★ 尺寸離譜的不解", throwsOn(huge) && Gif.countFrames(huge) == 0);
         byte[] noise = anim.clone();
@@ -117,7 +101,7 @@ public final class CapeImageTest {
             Gif.decode(noise, 9);
             survived = true;
         } catch (java.io.IOException e) {
-            survived = true;                         // 丟 IOException 也算擋住了
+            survived = true;
         } catch (Throwable t) {
             survived = false;
         }
@@ -133,9 +117,7 @@ public final class CapeImageTest {
         }
     }
 
-    /** 只有一面的圖。 */
     private static void face() {
-        // 20×32 的圖剛好是 10:16，放大兩倍時一格對一格
         int[] source = new int[W * H];
         for (int y = 0; y < H; y++) {
             for (int x = 0; x < W; x++) {
@@ -166,22 +148,19 @@ public final class CapeImageTest {
                         && (out.argb()[11 * k + 3] >>> 24) == 0xFF);
         check("鞘翅那一塊留空", out.argb()[10 * 128 + 100] == 0);
 
-        // 比例不對的圖：置中裁成 10:16
         int[] wide = new int[64 * 32];
         Arrays.fill(wide, 0xFF112233);
         for (int y = 0; y < 32; y++) {
             for (int x = 22; x < 42; x++) {
-                wide[y * 64 + x] = 0xFFAABBCC;        // 中間 20 欄才是會留下來的
+                wide[y * 64 + x] = 0xFFAABBCC;
             }
         }
-        // 注意：64×32 剛好是完整版型的尺寸，所以這裡直接問 face
         CapeImage.Frame cropped = CapeImage.face(wide, 64, 32, 2, 0);
         check("★ 太寬的圖取中間那一段（實際 "
                         + Integer.toHexString(cropped.argb()[(2 + 10) * 128 + 2 + 10]) + "）",
                 cropped.argb()[(2 + 10) * 128 + 2] == 0xFFAABBCC
                         && cropped.argb()[(2 + 10) * 128 + 2 + 19] == 0xFFAABBCC);
 
-        // 大圖縮小：四個像素平均成一個，半透明的壓在黑底上
         int[] big = new int[40 * 64];
         Arrays.fill(big, 0xFF808080);
         big[0] = 0xFFFFFFFF;
@@ -196,7 +175,6 @@ public final class CapeImageTest {
                 CapeImage.opaque(0x80FF0000) == 0xFF800000 && CapeImage.opaque(0) == 0xFF000000);
     }
 
-    /** 我們的範本：裁掉空白的版型，內容原封不動放回完整貼圖的左上角。 */
     private static void template() throws Exception {
         check("22×17 與它的倍數是範本", CapeImage.template(22, 17) && CapeImage.template(44, 34)
                 && CapeImage.template(176, 136));
@@ -228,7 +206,6 @@ public final class CapeImageTest {
         }
         check("★ 範本的內容原封不動在左上角：正面、背面、邊框的位置跟完整版型一樣", same);
         check("★ 範本以外的地方（原本的空白）是空的", blank);
-        // 正面在 (1k,1k)、背面在 (12k,1k)：跟只畫一面時補出來的位置是同一個
         check("正面與背面落在披風模型讀的位置",
                 out.argb()[k * out.width() + k] == source[k * w + k]
                         && out.argb()[k * out.width() + 12 * k] == source[k * w + 12 * k]);
@@ -239,7 +216,6 @@ public final class CapeImageTest {
                 100L * shrunk.width() * shrunk.height() <= CapeImage.PIXEL_BUDGET
                         && shrunk.argb()[(shrunk.width() / 64) * shrunk.width() + shrunk.width() / 64]
                                 == 0xFF336699);
-        // ★ 一格一格交出去的讀法（大張動畫用）：內容跟整份解出來的一樣，而且每一格各自獨立
         Gif.Image whole = Gif.decode(file("anim.gif"), 99);
         List<int[]> streamed = new java.util.ArrayList<>();
         List<int[]> canvases = new java.util.ArrayList<>();
@@ -257,7 +233,7 @@ public final class CapeImageTest {
         int[] canvas64 = new int[64 * 32];
         java.util.Arrays.fill(canvas64, 0xFF112233);
         CapeImage.Frame first = CapeImage.layoutDetached(canvas64, 64, 32, 2, 100);
-        java.util.Arrays.fill(canvas64, 0xFF445566);                  // 解碼器接著畫下一格
+        java.util.Arrays.fill(canvas64, 0xFF445566);
         check("★ 完整版型的動畫：畫布被下一格蓋掉，前一格還是原本的樣子",
                 first.argb() != canvas64 && first.argb()[0] == 0xFF112233
                         && CapeImage.layout(canvas64, 64, 32, 2, 100).argb() == canvas64);
@@ -290,7 +266,6 @@ public final class CapeImageTest {
         CapeImage.Frame same = CapeImage.layout(full, 64, 32, 1, 0);
         check("★ 完整版型原樣照用", same.width() == 64 && Arrays.equals(same.argb(), full));
 
-        // Wynntils 的動畫披風：128×64 的版型直排 16 格
         check("128×1024 是 16 格（實際 " + CapeImage.stripFrames(128, 1024) + "）",
                 CapeImage.stripFrames(128, 1024) == 16);
         check("單獨一格、或高度對不上的不算直排", CapeImage.stripFrames(128, 64) == 0

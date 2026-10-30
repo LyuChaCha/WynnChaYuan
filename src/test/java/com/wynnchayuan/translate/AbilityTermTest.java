@@ -11,44 +11,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 敘述裡的技能名稱，畫面上要換成中文。
- *
- * <h2>為什麼語料裡是英文</h2>
- * 技能名稱在原文裡帶著自己的顏色與底線，而顏色是拿<b>原文的字面</b>到譯文裡
- * 找的。語料裡先換成中文，顏色就貼不回去了。所以語料寫的是
- * 「Bash 的打擊次數變為 +{~} 倍。」——真正換掉名稱的是<b>詞表</b>
- * （{@link TranslationStore#findTerm}），在畫的時候逐個替換。
- *
- * <p>也就是說：「語料裡是英文」是對的，「<b>畫面上</b>還是英文」才是壞的。
- *
- * <h2>這條測試在盯什麼</h2>
- * {@code MajorIdTermsTest} 已經在盯詞表本身——名稱有沒有進去、夠不夠長。
- * 但詞表有東西不代表換得掉：畫的時候，詞表要跟<b>重點段</b>（原文裡樣式不同
- * 的片段）搶同一個位置，而技能名稱兩邊都算——它在原文裡就是帶樣式的。
- *
- * <p>兩者同一個位置、同樣長時，先前是重點段勝，而重點段做的事是
- * <b>原樣貼回英文</b>。於是詞表滿的、validate 綠的、{@code MajorIdTermsTest}
- * 也綠的，畫面上卻始終是「Bash 的打擊次數」，而對照表寫的是「重擊」。
- * 使用者回報的正是這個。
- *
- * <p>所以這裡不問詞表，直接<b>把整段畫出來</b>再看畫面上剩什麼。
- */
 public final class AbilityTermTest {
 
     private static int failures = 0;
 
-    /** 技能名稱在原文裡的樣子：灰色、加底線，跟本文不同色。 */
     private static final int NAME_COLOUR = 0xAAAAAA;
 
     private static final int BODY_COLOUR = 0xFFFFFF;
 
-    /**
-     * 一行意象敘述：名稱一段、本文一段，兩段樣式不同。
-     *
-     * <p>這正是實機送過來的形狀——名稱之所以同時是重點段又是詞表裡的詞，
-     * 就是因為它自己帶了樣式。
-     */
     private static List<StyledText> block(String name, String rest) {
         MutableComponent line = Component.empty();
         line.append(Component.literal(name).withStyle(
@@ -78,12 +48,6 @@ public final class AbilityTermTest {
         }
     }
 
-    /**
-     * 畫出來之後，名稱是中文而不是英文。
-     *
-     * <p>只在<b>語料真的收了這一句</b>時才判斷。這條測試盯的是替換，不是覆蓋率——
-     * 語料沒有那一句時整段查不到是正常的，在這裡當成失敗只會製造假警報。
-     */
     private static void swaps(TranslationStore store, String name, String rest,
                               String want) {
         String term = store.lookup(name);
@@ -99,28 +63,13 @@ public final class AbilityTermTest {
         report("畫面上沒有留著英文的「" + name + "」（實際：" + all + "）", !all.contains(name));
     }
 
-    /** 詞表的顏色：Crystallized 在原文裡是水藍色。 */
     private static final int TERM_COLOUR = 0x55FFFF;
 
-    /**
-     * 帶顏色的那一段<b>包著</b>技能名時，名稱也要換。
-     *
-     * <h2>實機回報</h2>
-     * Diffraction 的敘述畫出來是「奧法尼姆也會施加 2 層 Crystallized」，水藍色的
-     * Crystallized 留英文。這一行是整行命中語料的，上色照佔位符切段：{@code {~}}
-     * 與 {@code {#}} 之間那一段在譯文裡是「 層 Crystallized 」，登記成重點段的是
-     * 這一整截，而重點段那條路只問「整段是不是一個詞」。
-     *
-     * <p>要點是走<b>整行命中</b>那條路——模板少一個空格就會落到逐片段，那條路本來
-     * 就換得掉，測了等於沒測。所以先釘住模板等於語料的鍵。
-     */
     private static void insideAccent(TranslationStore store) {
         String key = "Ophanim also applies +{~} Crystallized {#}.";
         report("★ 語料收著這一句（實際：" + store.lookup(key) + "）", store.lookup(key) != null);
 
         MutableComponent line = Component.empty();
-        // 名稱後面那個空格是灰的、圖示另成一段——空格跟圖示黏在同一段的話，
-        // 模板會少掉那個空格（「Crystallized{#}」），就對不上語料的鍵了。
         Object[] parts = {"Ophanim also applies ", 0xAAAAAA, "+2", 0xFFFFFF, " ", 0xAAAAAA,
                           "Crystallized", TERM_COLOUR, " ", 0xAAAAAA, "", TERM_COLOUR,
                           ".", 0xAAAAAA};
@@ -151,32 +100,12 @@ public final class AbilityTermTest {
             }, Style.EMPTY);
         }
         report("換上去的名稱保留水藍色", coloured[0]);
-        // ★ 0.1.9_4 實機回報：「2 層結晶化」的「層」也被染成水藍色。原文水藍色的只有
-        //   Crystallized，「層」是譯者加的量詞，要跟前後的正文同色。
         Integer layer = colourAt(built, "層");
         report("★ 譯者加的「層」是正文的灰色，不是名稱的水藍色（實際 "
                         + (layer == null ? "null" : String.format("#%06X", layer)) + "）",
                layer != null && layer == 0xAAAAAA);
     }
 
-    /**
-     * 底線只能蓋在技能名稱上，不能延伸到後面的正文。
-     *
-     * <h2>0.1.9_4 實機回報</h2>
-     * 法師技能 Arcane Speed（秘法疾行）的敘述，原文兩行，「Heal」與「Arcane Transfer」
-     * 是灰色加底線：
-     *
-     * <pre>
-     *   You gain a walk speed buff after
-     *   casting Heal or Arcane Transfer.
-     * </pre>
-     *
-     * 譯文是一句「使用Heal和Arcane Transfer額外獲得移動速度。」，折回兩行畫出來是
-     * 「使用<u>治療</u>和<u>祕法回流</u>」換行「<u>額外獲得移動速度。</u>」——第二行整行都有底線。
-     *
-     * <p>要設量法：沒有字型時寬度量成 0、譯文不會折行，整句一行就測不到第二行。
-     * 中文算 12px（內附的像素字型），拉丁 6px——中文算窄的話整句放得進一行，一樣測不到。
-     */
     private static void underlineStopsAtName(TranslationStore store) {
         System.out.println("=== Arcane Speed 的底線 ===");
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(NAME_COLOUR));
@@ -223,7 +152,6 @@ public final class AbilityTermTest {
         report("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
     }
 
-    /** 含有 {@code needle} 的第一個葉片段有沒有底線；找不到回傳 null。 */
     private static Boolean underlined(List<Component> rows, String needle) {
         Boolean[] found = {null};
         for (Component row : rows) {
@@ -237,17 +165,6 @@ public final class AbilityTermTest {
         return found[0];
     }
 
-    /** 含有 {@code needle} 的第一個葉片段的顏色；找不到回傳 null。 */
-    /**
-     * 譯者用 {@code {cN}…{/}} 指定顏色的那一段，裡面的技能名也要換。
-     *
-     * <h2>實機（2026-10-17）</h2>
-     * 指定顏色的那一段在重建時是原樣貼上的，不經過換詞那一步：刺客的「{@code {c2}Drained {#}}」、
-     * 意象的「{@code {c2}Sniffer Dog{c1} 的冷卻…}」一直是英文。空格規則要跟一般內文一樣——
-     * 空格常常在色段<b>外面</b>，換成中文之後「尋獵犬 的冷卻」那個空格要拿掉。
-     *
-     * <p>用自己寫的假語料，不綁真語料的措辭。
-     */
     private static void forcedSpans() throws java.io.IOException {
         System.out.println("=== 指定顏色的色段裡也換詞 ===");
         Path dir = java.nio.file.Files.createTempDirectory("wcy-forced-terms");
@@ -290,7 +207,6 @@ public final class AbilityTermTest {
         report("★ 色段前面那個空格也照規則拿掉（實際：" + b + "）", b.contains("攻擊枯竭的敵人"));
         report("數值後面的空格留著（實際：" + b + "）", b.contains("3 溢盾"));
 
-        // 對照組：沒有色段的一般內文本來就換得掉，兩條路的結果要一樣
         Component plain = LineTranslator.translate(StyledText.fromComponent(row(
                 "Fetch Hound grants Overguard to you.", grey)), fixture);
         String c = plain == null ? "" : plain.getString();

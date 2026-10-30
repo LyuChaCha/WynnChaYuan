@@ -7,18 +7,6 @@ import com.wynnchayuan.translate.TranslationStore;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 市集搜尋打中文，送出前換成英文。
- *
- * <h2>為什麼這條要測得很兇</h2>
- * 這是整個模組<b>唯一</b>會改寫玩家自己打的字的地方。改錯的話，輕則搜不到，
- * 重則把一句正常的聊天發成別的東西。所以兩邊都要釘住：該換的要換得對，
- * 不該碰的一個字都不能動。
- *
- * <h2>用真的語料</h2>
- * 反查的準度取決於語料本身，捏的資料測不出撞名。實際量過：2789 條物品名裡
- * 只有 41 個中文名對到兩個以上英文名。
- */
 public final class MarketSearchTest {
 
     private static int failures = 0;
@@ -30,24 +18,16 @@ public final class MarketSearchTest {
         MarketSearch market = store.market();
         System.out.println("  索引裡有 " + market.size() + " 個中文物品名");
 
-        // ---- 該換的 ----
-        // 使用者實際會打的樣子：中英之間<b>沒有空格</b>，而語料裡有。
         turns(market, "Corkian增幅器 III", "Corkian Amplifier III");
         turns(market, "Corkian 增幅器 III", "Corkian Amplifier III");
         turns(market, "熟成金果", "Ripe Aureate Fruit");
         turns(market, "厄運之石", "Doom Stone");
 
-        // 大小寫與前後空白不該影響結果
         turns(market, "  熟成金果  ", "Ripe Aureate Fruit");
 
-        // ---- 分類標題是複數，市集要的是單數 ----
-        // 語料裡的分類標題常常是複數（Amplifiers、Insulators），而市集上的
-        // 物品叫「Corkian Amplifier I」——用複數一筆都搜不到。實機回報的就是這個。
         turns(market, "增幅器", "Amplifier");
         turns(market, "絕緣器", "Insulator");
 
-        // 「綠寶石」先前對到三個：Emeralds、Emerald、以及模板「{~} emeralds」。
-        // 模板本來就不該當候選，複數收斂之後剩一個，就不必再問玩家了。
         List<String> emerald = market.candidates("綠寶石");
         report("「綠寶石」收斂成一個（實際：" + emerald + "）",
                 emerald.size() == 1 && "Emerald".equals(emerald.get(0)));
@@ -56,16 +36,11 @@ public final class MarketSearchTest {
                     hit.indexOf('{') < 0 && hit.indexOf('}') < 0);
         }
 
-        // 去 s 要謹慎，不能把本來就以 s 結尾的字弄壞
         keepsSingular("Glass", "Glass");
         keepsSingular("Bob's Tear", "Bob's Tear");
         keepsSingular("Corkian Amplifier III", "Corkian Amplifier III");
         keepsSingular("Boots", "Boot");
 
-        // ---- 對不準的時候不要猜 ----
-        // 「Corkian 增幅器」先前對到 Amplifier 與 Augments 兩個，那是 gui.json
-        // 把 Augments 也翻成「增幅器」造成的（其他四條都是「強化道具」）。
-        // 修好之後只剩一個，這裡順便釘住不要再撞回去。
         List<String> corkian = market.candidates("Corkian 增幅器");
         report("「Corkian 增幅器」只對到一個（實際：" + corkian + "）",
                 corkian.size() == 1);
@@ -77,14 +52,10 @@ public final class MarketSearchTest {
         report("查不到的回 null", market.lookup("這不是任何一個物品的名字") == null);
         report("太短的不查", market.lookup("石") == null);
 
-        // ---- 不該碰的 ----
-        // 沒在市集搜尋狀態時，一個字都不能動。這一關在最前面，
-        // 連語料都不會去問——所以測起來也不需要整個模組起來。
         MarketListener.searching(false);
         keeps("沒在市集裡", "熟成金果");
         keeps("沒在市集裡（英文）", "Ripe Aureate Fruit");
 
-        // 就算在市集裡，指令與空字串也不動
         MarketListener.searching(true);
         keeps("斜線指令", "/tm search 熟成金果");
         keeps("空字串", "");
@@ -100,38 +71,17 @@ public final class MarketSearchTest {
         }
     }
 
-    /**
-     * 同一個物品只問一次。
-     *
-     * <h2>實機回報</h2>
-     * 打「股份」跳出 <b>13 個</b>候選，而其中一半根本是同一個東西：
-     *
-     * <pre>
-     *   Silverbull Share
-     *   ✮ Silverbull Share              ← 差一個面板上的項目符號
-     *   Trade Silverbull Shares         ← 按鈕文字
-     *   Get Tradable Silverbull Shares  ← 按鈕文字
-     *   Only tradable shares can be     ← 句子被折斷的一截
-     *   Not enough tradable shares      ← 同上
-     *   Shares can be used on           ← 同上
-     * </pre>
-     *
-     * <p>三道處理：項目符號剝掉、句子碎片擋掉、<b>短的候選包含得到的長候選</b>
-     * 直接不問（市集是包含比對，搜短的一定不比搜長的差）。
-     */
     private static void sameItemOnce(MarketSearch market) {
         List<String> shares = market.candidates("股份");
         report("「股份」的候選收斂了（實際 " + shares.size() + " 個：" + shares + "）",
                 shares.size() <= 4);
         report("真正的物品還在", shares.contains("Silverbull Share"));
 
-        // ★ 同一個物品的其他寫法都不該再出現
         for (String dup : new String[] {"✮ Silverbull Share", "Trade Silverbull Share",
                                         "Trade Silverbull Shares",
                                         "Get Tradable Silverbull Share"}) {
             report("不再重複問「" + dup + "」", !shares.contains(dup));
         }
-        // ★ 句子碎片不該當候選
         for (String junk : new String[] {"Only tradable shares can be",
                                          "Not enough tradable shares",
                                          "Shares can be used on"}) {
@@ -143,14 +93,6 @@ public final class MarketSearchTest {
         }
     }
 
-    /**
-     * 只列市集上買賣得到的東西。
-     *
-     * <h2>實機回報</h2>
-     * 打「之心」跳出「鋼鐵之心 第一部」（任務）、「黯蝕之心」（探索點）、
-     * 「伊索特拉之心」（怪物名牌）。那些是扁平檔裡的名字，形狀像物品名就被收了，
-     * 打進市集一筆都搜不到。
-     */
     private static void tradableOnly(MarketSearch market) {
         List<String> hearts = market.suggestions("之心").stream()
                 .map(MarketSearch.Suggestion::english).toList();
@@ -160,7 +102,6 @@ public final class MarketSearchTest {
         }
         report("素材還在（Snow Heart）", hearts.contains("Snow Heart"));
         report("任務名不當候選", market.candidates("致命的失足").isEmpty());
-        // 「鐵匠」會對到飾品 Smithy（鐵匠鋪），那是正當的候選；要擋的是 NPC 本身。
         report("NPC 名不當候選（實際：" + market.candidates("鐵匠") + "）",
                !market.candidates("鐵匠").contains("Blacksmith")
                        && !market.candidates("鐵匠").contains("The Blacksmith"));
@@ -179,12 +120,6 @@ public final class MarketSearchTest {
         report("扁平檔只收物品類別與數量行（實際 " + m.size() + " 條）", m.size() == 3);
     }
 
-    /**
-     * 名字與句子的形狀判斷。
-     *
-     * <p>用<b>捏的</b>資料而不是真語料——這裡要釘住的是規則本身，
-     * 真語料哪天被改動不該讓這幾條變成假通過或假失敗。
-     */
     private static void shapes() {
         MarketSearch m = new MarketSearch();
         m.add("Silverbull Share", "Silverbull 股份");
@@ -194,28 +129,15 @@ public final class MarketSearchTest {
         m.add("Ring of the Wild", "荒野之戒");
         m.add("Tradable Shares:", "可交易股份:");
 
-        // 四條「Silverbull 股份」併成一條；「可交易股份」是<b>別的</b>標籤，
-        // 本來就該留著——收斂的是重複，不是把候選壓成一個。
         List<String> all = m.candidates("股份");
         report("同一個物品只留一條（實際：" + all + "）",
                 all.equals(List.of("Silverbull Share", "Tradable Share")));
 
-        // ★ 反面：名字裡本來就有的小寫虛詞不能被當成句子擋掉
         List<String> ring = m.candidates("荒野之戒");
         report("「Ring of the Wild」不是句子（實際：" + ring + "）",
                 ring.size() == 1 && "Ring of the Wild".equals(ring.get(0)));
     }
 
-    /**
-     * 那句提示出現才會啟動。
-     *
-     * <h2>為什麼要自己認</h2>
-     * Wynntils 判斷「市集在等你輸入」靠的是比對<b>英文原文加行尾錨點</b>：
-     * {@code ^§5(圖示) Type the item name or type 'cancel' to cancel:$}。
-     * 而我們自己會翻聊天——就地取代模式下那一行整個變成中文，原文加譯文模式下
-     * 行尾也不再是 {@code cancel:}。兩種都會讓它比不到，狀態永遠不會進入搜尋輸入。
-     * 我們的翻譯把它自己要用的訊號弄壞了，使用者回報「沒有真的轉換」就是這個。
-     */
     private static void prompts() {
         MarketListener listener = new MarketListener();
         MarketListener.searching(false);
@@ -223,28 +145,23 @@ public final class MarketSearchTest {
         listener.onChat(chat("§5✦ Type the item name or type 'cancel' to cancel:"));
         report("英文提示會啟動", MarketListener.armed());
 
-        // 就地取代之後畫面上只剩中文，一樣要認得
         MarketListener.searching(false);
         listener.onChat(chat("§5✦ 輸入物品名稱，或輸入 'cancel' 取消："));
         report("中文提示也會啟動", MarketListener.armed());
 
-        // 取消之後要關掉，不然下一句正常聊天會被改
         listener.onChat(chat("§4✖ You moved and your chat input was canceled."));
         report("取消之後就關掉", !MarketListener.armed());
 
-        // 反面：一般聊天不能啟動
         MarketListener.searching(false);
         listener.onChat(chat("§7有人說：這個增幅器不錯"));
         report("一般聊天不會啟動", !MarketListener.armed());
 
-        // ★ 簡體就地取代之後的提示。先前只認繁體，簡體底下市集搜尋整個沒有啟動。
         listener.onChat(chat("§5✦ 输入物品名称，或输入 'cancel' 取消："));
         report("簡體提示也會啟動", MarketListener.armed());
         listener.onChat(chat("§4✖ 你移动了，聊天输入已取消。"));
         report("簡體的取消也會關掉", !MarketListener.armed());
         MarketListener.searching(false);
 
-        // 其他語言靠問當下的譯文：前後只放圖示的那兩行剝掉，留下真正的字
         String core = MarketListener.core("{#} \n{#} 입력하세요 'cancel'\n{#}");
         report("譯文剝掉圖示後取最長的那一行（實際：" + core + "）",
                 "입력하세요 'cancel'".equals(core));
@@ -255,14 +172,6 @@ public final class MarketSearchTest {
         pickerList();
     }
 
-    /**
-     * 候選清單：打到一半就列出來讓玩家自己點。
-     *
-     * <h2>實機需求</h2>
-     * 「石頭」對到好幾個物品時，自動換字不敢猜，只能原樣送出——那次搜尋就浪費了。
-     * 清單要在<b>送出前</b>列出所有可能，而且跟自動換字的規則相反：
-     * 一個字也列、不把「石頭碎片」收進「石頭」裡。
-     */
     private static void pickerList() {
         MarketSearch m = new MarketSearch();
         m.add("Stone", "石頭");
@@ -290,7 +199,6 @@ public final class MarketSearchTest {
 
         report("空字串不列", m.suggestions("   ").isEmpty());
 
-        // 真語料：「石」一定列得出東西，而且每一列都是能送出去的英文名
         MarketListener.searching(false);
         report("沒在市集裡時 active() 是 false", !MarketListener.active());
         MarketListener.searching(true);
@@ -298,16 +206,6 @@ public final class MarketSearchTest {
         MarketListener.searching(false);
     }
 
-    /**
-     * 簡體玩家打的是<b>畫面上看到的</b>名字。
-     *
-     * <h2>實機回報</h2>
-     * 素材袋裡寫「龙之灵气」，打進市集卻說查不到英文名。兩個原因疊在一起：
-     * 那一行是 misc.json 的數量模板（帶佔位符，被當成模板擋掉），
-     * 而 ingredient.json 裡同一個素材寫的是「龙之光环」——同一個東西兩個名字。
-     *
-     * <p>簡體只載簡體一層，跟遊戲裡載入的順序一樣；繁體的譯名不會混進來。
-     */
     private static void simplified() {
         TranslationStore store = new TranslationStore();
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -325,7 +223,6 @@ public final class MarketSearchTest {
         }
     }
 
-    /** 數量行（素材袋、背包清單）裡的名字也要收。 */
     private static void quantityLines() {
         MarketSearch m = new MarketSearch();
         m.add("{~} x Dragon Aura {#}{#}{#}{#}", "{~} x 龙之灵气 {#}{#}{#}{#}");
@@ -335,16 +232,11 @@ public final class MarketSearchTest {
                 aura.equals(List.of("Dragon Aura")));
         turns(m, "厄运之石", "Doom Stone");
 
-        // 反面：只有一邊是數量行（譯文改了形狀）時對不準，不收
         MarketSearch odd = new MarketSearch();
         odd.add("{~} x Dragon Aura {#}{#}{#}{#}", "龙之灵气 ×{~}");
         report("只有一邊是數量行時不收（實際 " + odd.size() + " 條）", odd.size() == 0);
     }
 
-    /**
-     * 拉丁字母的譯名。法文、德文的譯名可能整串都是 ASCII，
-     * 一律當英文跳過的話那幾種語言永遠用不了市集搜尋。
-     */
     private static void latinNames() {
         MarketSearch m = new MarketSearch();
         m.add("Doom Stone", "Pierre du Destin");
@@ -353,7 +245,6 @@ public final class MarketSearchTest {
                 "Doom Stone".equals(m.exact("pierre du destin")));
         report("拉丁字母只打片段不換", m.exact("Pierre") == null);
         report("英文原名打進去不會對到東西", m.exact("Doom Stone") == null);
-        // 照抄原文的「譯名」先前會進索引（大小寫比對的疏漏）
         report("跟原文一樣的不收", m.exact("Cataratite") == null && m.size() == 1);
     }
 
@@ -363,7 +254,6 @@ public final class MarketSearchTest {
                 com.wynntils.handlers.chat.type.RecipientType.INFO);
     }
 
-    /** 去複數的 s 只該動真的複數。 */
     private static void keepsSingular(String name, String want) {
         String got = MarketSearch.singular(name);
         report("「" + name + "」→「" + want + "」（實際：" + got + "）", want.equals(got));

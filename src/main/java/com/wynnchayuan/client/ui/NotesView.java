@@ -3,44 +3,27 @@ package com.wynnchayuan.client.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 更新說明：一版一張卡片，新的在上面，可以捲。
- *
- * <p>說明有英文、繁中、簡中三份，右上角可以切——預設跟著介面語言，但介面是日文、
- * 韓文的人沒有自己語言的說明，要能自己挑看得懂的那一份。
- */
 public final class NotesView extends Surface {
 
-    /** 一版的說明。 */
     public record Note(String headline, List<String> items) {}
 
     public interface Host {
-        /** 有說明的版本，新的在前。 */
         List<String> versions();
 
-        /** 這一版在這個語言的說明；沒有就回 {@code null}。 */
         Note notes(String version, String lang);
 
-        /** 現在跑的是哪一版。 */
         String running();
 
-        /** 比現在新的版本；沒有就回 {@code null}。 */
         String newer();
 
-        /** 說明有哪幾種語言可以選。 */
         String[] languages();
 
-        /** 現在選的是第幾種。 */
         int language();
 
         void pickLanguage(int index);
 
         void download();
 
-        /**
-         * 「在遊戲裡更新」那顆按鈕上的字：還沒按、下載到幾成、下載好了、失敗了。
-         * 這個環境不能在遊戲裡更新（找不到自己的 jar）就回 {@code null}，按鈕不出現。
-         */
         String updateLabel();
 
         void update();
@@ -130,8 +113,7 @@ public final class NotesView extends Surface {
 
         String lang = codes[Math.max(0, Math.min(codes.length - 1, host.language()))];
         List<String> versions = host.versions();
-        List<Object[]> cards = new ArrayList<>();          // {版本, 說明, 高度}
-        // 說明可能是別的語言寫的：那一塊換成那個語言的字型，量寬度也要用它
+        List<Object[]> cards = new ArrayList<>();
         c.language(lang);
         float contentH = 0;
         for (String version : versions) {
@@ -179,7 +161,6 @@ public final class NotesView extends Surface {
             String download = shell.tr("notes.download", newer);
             float dw = Math.min(buttonWidth(download) + 8, end - left);
             String update = host.updateLabel();
-            // 能在遊戲裡更新的時候，那一顆是主要的；去 GitHub 下載的退成次要的
             button("download", end - dw, by, dw, 18, download, true, update == null, null,
                     host::download);
             end -= dw + 5;
@@ -195,10 +176,6 @@ public final class NotesView extends Surface {
         }
     }
 
-    /**
-     * 說明是照 GitHub 發版頁的寫法寫的，夾著 {@code <b>} 與反引號。
-     * 這裡不畫粗體也不畫等寬字，留著只會原樣印出來，所以拿掉。
-     */
     static Note plain(Note note) {
         List<String> items = new ArrayList<>();
         for (String item : note.items()) {
@@ -230,7 +207,6 @@ public final class NotesView extends Surface {
         String label = "v" + version;
         c.text(label, x + 10, ty, accent);
         if (current) {
-            // 這一句是介面的字，不是說明的一部分：換回介面的字型
             c.language(shell.language());
             String tag = shell.tr("notes.current");
             float tx = x + 10 + c.width(label) + 6;

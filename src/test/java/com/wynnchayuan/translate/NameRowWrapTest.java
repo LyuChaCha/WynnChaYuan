@@ -16,33 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 「譯名 + 原文」的名稱列拆成兩列之後，第二列要整段是「(原文)」、從名字的起點開始。
- *
- * <h2>實機回報（使用者 2026-10-17）</h2>
- * 新式外框的 Mythic 法器 {@code Shiny Transfiguration}，名稱列畫成：
- *
- * <pre>
- *   [圖示]🔒溯光的化形 (
- *   Shiny Transfiguration)  [MYTHIC] [RELIK]   ← 從最左邊開始，蓋在物品圖示上
- * </pre>
- *
- * 兩件事：斷在「(」後面；第二列貼著左緣、還把徽章那一列往右推。
- *
- * <h2>原因</h2>
- * <ol>
- *   <li>整段查表（{@link LineTranslator#translateBlock}）拿「名稱列＋徽章列」去查，
- *       Shiny 的認法剝圖示時把換行當空白 strip 掉，兩列被當成一個名字認了。
- *       譯文只剩一列，整段那條路就照兩列重折：後半截落到徽章那一列的行首。</li>
- *   <li>重折時 {@code keepLatinRunWhole} 把整串英文挪到下一行，挪到括號<b>後面</b>，
- *       括號自己留在行尾。</li>
- * </ol>
- *
- * <h2>這裡照實機的片段結構重建</h2>
- * 依 {@code tooltip-partial-5.json}（新式外框：位移、外框、位移、徽記、位移、名字，
- * 每一段各自一個字型）與 {@code layout-debug.txt} 的第 0 列（{@code 󏀀<鎖>󐀂名字󏀀}）。
- * 名字與譯名都是虛構的，不跟語料的措辭綁在一起。
- */
 public final class NameRowWrapTest {
 
     private static int failures = 0;
@@ -87,12 +60,9 @@ public final class NameRowWrapTest {
         blockKeyIsNotAName(store);
         LineTranslator.measureForTest = NameRowWrapTest::measure;
         try {
-            // 回報的那一種：layout-debug 的第 0 列是「󏀀<鎖>󐀂Shiny Transfiguration󏀀」，沒有記號
             nameRow(store, "★ Shiny", SHINY, "耀光之微光醒", "(" + SHINY + ")", false);
-            // 名字結尾黏著 Shiny 記號的那一種（語料的 {#}Shiny Fatal֎{#}）
             nameRow(store, "Shiny 帶記號", SHINY + "֎", "耀光之微光醒", "(" + SHINY + ")", false);
             nameRow(store, "非 Shiny 的長名字", LONG, "棘縛月照聖匣", "(" + LONG + ")", false);
-            // 名字前面那 2px 的縫跟名字同一段送來（「󐀂Brainwash」那種）
             nameRow(store, "縫黏在名字前面", LONG, "棘縛月照聖匣", "(" + LONG + ")", true);
         } finally {
             LineTranslator.measureForTest = null;
@@ -104,9 +74,6 @@ public final class NameRowWrapTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /**
-     * ★ 跨列的鍵不是名字。整段查表問的是「名稱列＋徽章列」，不能被 Shiny 的認法接走。
-     */
     private static void blockKeyIsNotAName(TranslationStore store) {
         for (String mark : new String[] {"", "֎"}) {
             String row = "{#}{#}{#}{#}{#}{#}{#}" + SHINY + mark;
@@ -120,11 +87,6 @@ public final class NameRowWrapTest {
         }
     }
 
-    /**
-     * 整份 tooltip 走一遍：名稱列拆成兩列，第二列從名字的起點開始，徽章列原封不動。
-     *
-     * @param glued 名字前面的 2px 縫跟名字放在同一段
-     */
     private static void nameRow(TranslationStore store, String label, String name,
                                 String translated, String original, boolean glued) {
         int before = failures;
@@ -172,45 +134,28 @@ public final class NameRowWrapTest {
         }
     }
 
-    /**
-     * 折行本身：括號跟它括住的字在同一列。
-     *
-     * <p>{@code keepLatinRunWhole} 會把整串英文挪到下一列，挪到的位置是那串英文的
-     * 開頭——括號後面。這裡直接問折行，寬度剛好讓斷點落在英文名字中間。
-     */
     private static void wrapKeepsBracketsWhole() {
         java.util.function.ToIntFunction<String> m = s -> measure(Component.literal(s));
         String text = "耀光之微光醒 (" + SHINY + ")";
-        // 「耀光之微光醒 (Shiny」放得下、加上後面那個字就放不下
         int max = m.applyAsInt("耀光之微光醒 (Shiny Glimm");
-        String wrapped = LineTranslator.wrapToWidth(text, max, m);
+        String wrapped = TextWrapper.wrapToWidth(text, max, m);
         check("★ 折行不把左括號留在行尾（實際「" + wrapped.replace("\n", "⏎") + "」）",
               wrapped.equals("耀光之微光醒\n(" + SHINY + ")"));
-        String balanced = LineTranslator.wrapBalanced(text, max, 2, m);
+        String balanced = TextWrapper.wrapBalanced(text, max, 2, m);
         boolean clean = true;
         for (String row : balanced.split("\n", -1)) {
             clean &= !row.strip().endsWith("(") && !row.strip().startsWith(")");
         }
         check("★ 平均分配之後也一樣（實際「" + balanced.replace("\n", "⏎") + "」）", clean);
-        // 右括號那一半本來就擋（避頭），一起守著
-        String closing = LineTranslator.wrapToWidth("微光醒的效果(三層)", m.applyAsInt("微光醒的效果(三層"), m);
+        String closing = TextWrapper.wrapToWidth("微光醒的效果(三層)", m.applyAsInt("微光醒的效果(三層"), m);
         check("右括號不從行首開始（實際「" + closing.replace("\n", "⏎") + "」）",
               !closing.contains("\n)"));
-        String spaced = LineTranslator.wrapToWidth("微光醒 (" + SHINY + ") 的效果",
+        String spaced = TextWrapper.wrapToWidth("微光醒 (" + SHINY + ") 的效果",
                 m.applyAsInt("微光醒 (Shiny Glimm"), m);
         check("括號後面還有字時也一樣（實際「" + spaced.replace("\n", "⏎") + "」）",
               !spaced.contains("(\n") && !spaced.contains("( \n"));
     }
 
-    /**
-     * 照實機的片段結構組一份 Mythic 法器的 tooltip。
-     *
-     * <ul>
-     *   <li>第 0 列：{@code 󏀀<鎖>󐀂名字󏀀}，寬度 0（layout-debug 的「內容 0 px」）。</li>
-     *   <li>第 1 列：位移、外框、位移、徽記、位移、鎖、2px 的縫、名字——每一段各自的字型。</li>
-     *   <li>第 2 列：往右 38px，然後 MYTHIC、RELIK 兩塊徽章（底圖、字、1px 的縫）。</li>
-     * </ul>
-     */
     private static List<Component> tooltip(String name, boolean glued) {
         List<Component> lines = new ArrayList<>();
         MutableComponent hidden = Component.empty();
@@ -266,7 +211,6 @@ public final class NameRowWrapTest {
         return sb.toString();
     }
 
-    /** 剝掉圖示與位移之後看得見的字。 */
     private static String visible(Component line) {
         StringBuilder sb = new StringBuilder();
         line.getString().codePoints()
@@ -275,7 +219,6 @@ public final class NameRowWrapTest {
         return sb.toString().strip();
     }
 
-    /** 第一個看得見的字畫在第幾個像素。 */
     private static int textX(Component line) {
         int x = 0;
         String s = line.getString();
@@ -290,13 +233,6 @@ public final class NameRowWrapTest {
         return Integer.MIN_VALUE;
     }
 
-    /**
-     * 假字型。圖示寬度照 {@code IngredientTooltipTest}（從 layout-debug 倒推的那一份）：
-     * 外框 66、徽記 16，名字從第 22px 開始；鎖 9px、後面 2px 的縫。
-     *
-     * <p>偏移碼位不管掛在哪個字型底下都算寬度。第 0 列的 {@code U+CF000} 把整列推出畫面，
-     * 量出來是 0——跟實機 layout-debug 一樣，NameWrap 因此不碰那一列。
-     */
     static int measure(Component component) {
         int[] w = {0};
         component.visit((style, text) -> {
