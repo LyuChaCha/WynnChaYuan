@@ -58,9 +58,6 @@ public final class WmsBridge {
         return known;
     }
 
-    /** 打不到兩個字不查：一個字會對到幾百件，面板只列得下十四筆，等於沒查。 */
-    private static final int MIN_QUERY = 2;
-
     /** 一次搜尋會問幾千件物品同一個字；答案算一次就好。 */
     private record Answer(String query, int indexSize, Set<String> english) {}
 
@@ -92,7 +89,7 @@ public final class WmsBridge {
 
     private static Set<String> resolve(String query) {
         String typed = query.strip();
-        if (typed.length() < MIN_QUERY || !enabled.getAsBoolean()) {
+        if (tooShort(typed) || !enabled.getAsBoolean()) {
             return Set.of();
         }
         MarketSearch market = source.get();
@@ -109,6 +106,10 @@ public final class WmsBridge {
         }
         last = new Answer(typed, market.size(), english);
         return english;
+    }
+
+    private static boolean tooShort(String typed) {
+        return typed.isEmpty() || (typed.codePointCount(0, typed.length()) < 2 && typed.codePointAt(0) < 0x80);
     }
 
     /**
