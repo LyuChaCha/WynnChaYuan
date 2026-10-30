@@ -2,7 +2,7 @@ import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
 import { IDLE_KEEP_MS, allCapes, allHistory, discard, dropCape, groupCapes, groupVisibility, idleGroup, idleMap, idleVisibility, listed, purge, reviewOf, starMap, visibility } from './capes.js';
 import { isDeveloper } from './credits.js';
 import { HASH, ID, NAME, UUID, json, no, plainUuid, readJson } from './http.js';
-import { listAll, parseRecord } from './kv.js';
+import { listAll, parseRecord, quietPut } from './kv.js';
 import { remember } from './presence.js';
 
 const DISCORD_SNOWFLAKE = /^\d{17,20}$/;
@@ -250,7 +250,7 @@ export async function handleAdminRemove(request, env, now) {
     const stars = await starMap(env);
     if (body.hash in stars) {
       delete stars[body.hash];
-      await env.CORPUS.put('stars', JSON.stringify(stars));
+      await quietPut(env.CORPUS, 'stars', JSON.stringify(stars));
     }
   }
   let removed = 0;

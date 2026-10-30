@@ -3,7 +3,7 @@ import { moderator } from './admin.js';
 import { publicId, who } from './auth.js';
 import { credits } from './credits.js';
 import { HASH, ID, UUID, hex, json, no, readJson } from './http.js';
-import { listAll, parseRecord } from './kv.js';
+import { OperationBudgetExhausted, listAll, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { remember } from './presence.js';
 import { ownerEntry } from './privacy.js';
 
@@ -273,7 +273,7 @@ export async function handleStar(request, env, now) {
     for (const key of Object.keys(map)) {
       if (!alive.has(key) || !map[key]) delete map[key];
     }
-    await env.CORPUS.put('stars', JSON.stringify(map));
+    await quietPut(env.CORPUS, 'stars', JSON.stringify(map));
   }
   return json({ ok: true, on: body.on, stars: Number(map[hash]) || 0 });
 }
@@ -471,14 +471,14 @@ export async function sweep(env, hash, from, now) {
   if (!from || vis !== 'public' || from.r) entry.q = 1;
   if (from && !from.r && vis !== 'public') entry.vis = vis;
   idle[hash] = entry;
-  await env.CORPUS.put('idle', JSON.stringify(idle));
+  await quietPut(env.CORPUS, 'idle', JSON.stringify(idle));
 }
 
 async function revive(env, hash) {
   const idle = await idleMap(env);
   if (!idle[hash]) return;
   delete idle[hash];
-  await env.CORPUS.put('idle', JSON.stringify(idle));
+  await quietPut(env.CORPUS, 'idle', JSON.stringify(idle));
 }
 
 export async function discard(env, hash) {
@@ -506,8 +506,8 @@ export async function purge(env, now) {
       starred = true;
     }
   }
-  await env.CORPUS.put('idle', JSON.stringify(idle));
-  if (starred) await env.CORPUS.put('stars', JSON.stringify(stars));
+  await quietPut(env.CORPUS, 'idle', JSON.stringify(idle));
+  if (starred) await quietPut(env.CORPUS, 'stars', JSON.stringify(stars));
   return idle;
 }
 
@@ -521,7 +521,7 @@ export async function tidy(env, now) {
     idle[hash] = { t: (k.metadata && k.metadata.t) || 'png', s: (k.metadata && k.metadata.s) || 0, at: now, q: 1 };
     added++;
   }
-  if (added) await env.CORPUS.put('idle', JSON.stringify(idle));
+  if (added) await quietPut(env.CORPUS, 'idle', JSON.stringify(idle));
   return { idle: Object.keys(idle).length, added };
 }
 
@@ -693,4 +693,31 @@ async function skinOf(uuid) {
 async function dropPreviews(env, hash) {
   await env.CORPUS.delete('prev:' + hash);
   for (const k of await listAll(env.CORPUS, 'prev:' + hash + ':')) await env.CORPUS.delete(k.name);
+}
+
+const STAR_RECOUNT_OPS = 300;
+const STAR_RECOUNT_STATE = 'stars:recount';
+
+export async function recountStars(env) {
+  const state = parseRecord(await env.CORPUS.get(STAR_RECOUNT_STATE));
+  state.counts = state.counts && typeof state.counts === 'object' ? state.counts : {};
+  const store = meteredStore(env.CORPUS, { left: STAR_RECOUNT_OPS });
+  try {
+    await scanPrefix(store, state, 'fav:', async (key) => {
+      const favs = await favsOf({ CORPUS: store }, key.name.slice('fav:'.length));
+      for (const hash of favs.h) state.counts[hash] = (state.counts[hash] || 0) + 1;
+    });
+  } catch (error) {
+    if (!(error instanceof OperationBudgetExhausted)) throw error;
+    await env.CORPUS.put(STAR_RECOUNT_STATE, JSON.stringify(state));
+    return { done: false };
+  }
+  const alive = new Set([...(await allCapes(env)).map((cape) => cape.h), ...Object.keys(await idleMap(env))]);
+  const counted = Object.fromEntries(Object.entries(state.counts).filter(([hash]) => alive.has(hash)));
+  const stored = await starMap(env);
+  const same = Object.keys(counted).length === Object.keys(stored).length
+    && Object.entries(counted).every(([hash, count]) => stored[hash] === count);
+  if (!same) await quietPut(env.CORPUS, 'stars', JSON.stringify(counted));
+  await env.CORPUS.delete(STAR_RECOUNT_STATE);
+  return { done: true, changed: !same };
 }
