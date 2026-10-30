@@ -428,8 +428,8 @@ public final class SettingsScreen extends Screen {
                 .slide(v -> cfg().setPanelGapLive(v))
                 .format(v -> v + " px")
                 .commit(cfg()::saveIfDirty)
-                .reset(() -> cfg().panelGap() == 12, () -> {
-                    cfg().setPanelGapLive(12);
+                .reset(() -> cfg().panelGap() == CollectorConfig.DEFAULT_PANEL_GAP, () -> {
+                    cfg().setPanelGapLive(CollectorConfig.DEFAULT_PANEL_GAP);
                     cfg().saveIfDirty();
                 }));
         return rows;
