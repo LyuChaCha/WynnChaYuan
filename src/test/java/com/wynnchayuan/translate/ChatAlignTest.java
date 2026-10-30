@@ -321,7 +321,7 @@ public final class ChatAlignTest {
     private static void centresKept(String what, List<SpaceRuns.Run> orig,
                                     List<SpaceRuns.Run> made,
                                     java.util.function.ToIntFunction<SpaceRuns.Run> width) {
-        int[] adjust = LineTranslator.chatColumnPad(orig, made, width);
+        int[] adjust = ChatRealigner.chatColumnPad(orig, made, width);
         check(what + "：認得兩個欄界（實際 " + adjust.length + " 個）", adjust.length == 2);
         List<Integer> before = centres(orig, new int[adjust.length], width);
         List<Integer> after = centres(made, adjust, width);
@@ -360,17 +360,17 @@ public final class ChatAlignTest {
     }
 
     private static void columns() {
-        int[] wide = LineTranslator.columnDrift(
+        int[] wide = ChatRealigner.columnDrift(
                 List.of(0, 40), List.of(0, 64), new int[] {10, 30});
         check("譯文變寬時欄距收窄（實際 " + wide[1] + "）", wide[1] == -24);
 
-        int[] stacked = LineTranslator.columnDrift(
+        int[] stacked = ChatRealigner.columnDrift(
                 List.of(0, 90, 20, 20), List.of(0, 40, 20, 20),
                 new int[] {33, -23, 40});
         check("負間隔不動（實際 " + stacked[1] + "）", stacked[1] == 0);
         check("多欄不遞延差額（實際 " + stacked[2] + "）", stacked[2] == 0);
 
-        int[] two = LineTranslator.columnDrift(
+        int[] two = ChatRealigner.columnDrift(
                 List.of(0, 90, 82), List.of(0, 40, 40), new int[] {34, 69});
         check("第一欄吸收自己縮水的一半（實際 " + two[0] + "）", two[0] == 25);
         check("間隔吸收左右各一半（實際 " + two[1] + "）", two[1] == 46);
@@ -392,7 +392,7 @@ public final class ChatAlignTest {
             madePos += made[i];
         }
 
-        int[] one = LineTranslator.columnDrift(
+        int[] one = ChatRealigner.columnDrift(
                 List.of(0, 107), List.of(0, 38), new int[] {101});
         check("單欄的行不動（實際 " + java.util.Arrays.toString(one) + "）",
               one.length == 1 && one[0] == 0);
@@ -467,7 +467,7 @@ public final class ChatAlignTest {
         int want = origLead + (origBody - madeBody) / 2;
         check("單欄行的中心要跟原文一樣（該縮排 " + want + "）", want == 127);
 
-        int[] two = LineTranslator.columnDrift(
+        int[] two = ChatRealigner.columnDrift(
                 List.of(0, 90, 82), List.of(0, 40, 40), new int[] {34, 69});
         check("兩欄的行仍然逐欄置中（實際 " + two[0] + "/" + two[1] + "）",
               two[0] == 25 && two[1] == 46);
