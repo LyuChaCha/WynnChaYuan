@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * 簡體中文沒翻到的地方，要看到<b>繁體</b>而不是英文。
+ * 簡體中文預設不墊繁體，沒翻到的地方顯示英文；玩家指名輔助語言時，疊層照順序。
  *
  * <h2>先前壞在哪</h2>
  * 啟動流程原本是連呼叫兩次 {@code loadAll}：
@@ -82,6 +82,27 @@ public final class LanguageFallbackTest {
         String twLine = onlyTw == null ? null : tw.lookup(onlyTw);
         check("繁體本來就有那一句（" + alone + " 條）", twLine != null);
         check("簡體還沒翻那一句", onlyTw != null && cn.lookup(onlyTw) == null);
+
+        check("★ 簡體預設不墊任何語言", Languages.underlay("", "zh_cn") == null);
+        List<Path> cnLayers = new java.util.ArrayList<>();
+        String under = Languages.underlay("", "zh_cn");
+        if (under != null) {
+            cnLayers.add(ROOT.resolve(under));
+        }
+        cnLayers.add(cnDir);
+        TranslationStore cnGame = new TranslationStore();
+        cnGame.loadAll(cnLayers);
+        check("★ 簡體只載簡體那一層：繁體有、簡體沒翻的那一句留英文（拿到 "
+                        + (onlyTw == null ? null : cnGame.lookup(onlyTw)) + "）",
+                onlyTw != null && cnGame.lookup(onlyTw) == null);
+        check("簡體的條目數跟單載簡體一樣（" + cnGame.size() + " / " + cn.size() + "）",
+                cnGame.size() == cn.size());
+        TranslationStore twGame = new TranslationStore();
+        String twUnder = Languages.underlay("", "zh_tw");
+        check("繁體預設也不墊", twUnder == null);
+        twGame.loadAll(List.of(ROOT.resolve("zh_tw")));
+        check("繁體不受影響（" + twGame.size() + " 條）",
+                twGame.size() == alone && twLine != null && twLine.equals(twGame.lookup(onlyTw)));
         // 期望值跟語料當場問，不寫死措辭。兩種語言必須<b>翻得不一樣</b>，
         // 否則下面那幾條「誰蓋過誰」的斷言等於沒在守。
         String twLabel = tw.lookup(BOTH);
@@ -94,7 +115,6 @@ public final class LanguageFallbackTest {
         check("兩種語言的長句翻得不一樣（" + twLong + " / " + cnLong + "）",
                 twLong != null && cnLong != null && !twLong.equals(cnLong));
 
-        // ---- 疊起來 ----
         TranslationStore both = new TranslationStore();
         both.loadAll(List.of(ROOT.resolve("zh_tw"), cnDir));
 

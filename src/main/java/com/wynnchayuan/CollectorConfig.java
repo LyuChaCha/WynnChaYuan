@@ -473,8 +473,7 @@ public final class CollectorConfig {
      * <p>三種值：
      *
      * <ul>
-     *   <li>空字串＝<b>自動</b>。同語族的墊在底下（簡中沒翻到就看繁中），
-     *       不同語族的不墊——見 {@code Languages#fallbackFor}。</li>
+     *   <li>空字串＝<b>自動</b>，不墊。</li>
      *   <li>{@code "off"}＝<b>不墊</b>。沒翻到就顯示英文原文。</li>
      *   <li>語言代碼＝指名拿那一種墊。</li>
      * </ul>

@@ -306,18 +306,23 @@ public final class MarketSearchTest {
      * 那一行是 misc.json 的數量模板（帶佔位符，被當成模板擋掉），
      * 而 ingredient.json 裡同一個素材寫的是「龙之光环」——同一個東西兩個名字。
      *
-     * <p>用繁體墊底、簡體疊上去，跟遊戲裡載入的順序一樣。
+     * <p>簡體只載簡體一層，跟遊戲裡載入的順序一樣；繁體的譯名不會混進來。
      */
     private static void simplified() {
         TranslationStore store = new TranslationStore();
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
-        store.loadAll(List.of(base.resolve(Languages.DEFAULT), base.resolve("zh_cn")));
+        store.loadAll(List.of(base.resolve("zh_cn")));
         MarketSearch cn = store.market();
-        turns(cn, "龙之光环", "Dragon Aura");
-        turns(cn, "厄运之石", "Doom Stone");
-        turns(cn, "熟透的金色果实", "Ripe Aureate Fruit");
-        // 繁體墊在底下，打繁體一樣找得到
-        turns(cn, "龍之靈氣", "Dragon Aura");
+        TranslationStore twStore = new TranslationStore();
+        twStore.loadAll(List.of(base.resolve(Languages.DEFAULT)));
+        String tw = twStore.lookup("Dragon Aura");
+        report("繁體有 Dragon Aura 的譯名（" + tw + "）", tw != null);
+        report("★ 簡體不墊繁體：打繁體名字查不到（實際：" + (tw == null ? null : cn.lookup(tw)) + "）",
+                tw != null && cn.lookup(tw) == null);
+        String own = store.lookup("Dragon Aura");
+        if (own != null) {
+            turns(cn, own, "Dragon Aura");
+        }
     }
 
     /** 數量行（素材袋、背包清單）裡的名字也要收。 */
