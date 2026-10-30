@@ -1151,6 +1151,15 @@ tasks.register('runUpgradeChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runUpgradeChecks' }
 
+tasks.register('runFirstRunChecks', JavaExec) {
+    group = 'verification'
+    description = '首次啟動：沒同意之前不連線、推薦設定、物品翻譯預設關閉、升級只跳一次、不上傳資料'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.FirstRunTest'
+}
+tasks.named('check') { dependsOn 'runFirstRunChecks' }
+
 tasks.register('runDialogueBufferChecks', JavaExec) {
     group = 'verification'
     description = '逐字對話要收斂成完整一句，不能送出半截'

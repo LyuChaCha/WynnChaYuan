@@ -74,6 +74,12 @@ public final class RemoteSync {
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
     private static volatile String lastResult;
+    private static volatile boolean blocked;
+
+    private static boolean allowed() {
+        blocked = !com.wynnchayuan.NetworkGate.online();
+        return !blocked;
+    }
 
     private RemoteSync() {}
 
@@ -148,6 +154,9 @@ public final class RemoteSync {
     }
 
     public static String lastResult() {
+        if (blocked) {
+            return com.wynnchayuan.client.T.s("status.sync_blocked");
+        }
         return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.sync_none");
     }
 
@@ -171,6 +180,9 @@ public final class RemoteSync {
      * @return commit 的 SHA；問不到時回傳 {@code null}
      */
     public static String remoteVersion() {
+        if (!allowed()) {
+            return null;
+        }
         String url = "https://api.github.com/repos/LyuChaCha/WynnChaYuan/commits"
                 + "?path=" + PATH + "&per_page=1";
         try (HttpClient client = HttpClient.newBuilder()
@@ -273,6 +285,9 @@ public final class RemoteSync {
      * @return 抓到了而且跟手上的不一樣
      */
     public static boolean fetchCredits(Path configDir) {
+        if (!allowed()) {
+            return false;
+        }
         Path target = configDir.resolve(com.wynnchayuan.client.Credits.FILE);
         Path tmp = configDir.resolve(com.wynnchayuan.client.Credits.FILE + ".tmp");
         try (HttpClient client = HttpClient.newBuilder()
@@ -339,6 +354,9 @@ public final class RemoteSync {
      * @param progress 每抓完一個檔叫一次；不需要就傳 {@code null}
      */
     public static int fetchInto(Path cacheDir, String lang, Progress progress) {
+        if (!allowed()) {
+            return 0;
+        }
         int ok = 0;
         int failed = 0;
         int changed = 0;
