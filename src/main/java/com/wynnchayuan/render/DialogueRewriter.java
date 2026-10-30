@@ -17,149 +17,47 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * 把譯文寫進 Wynncraft <b>自己那個</b>對話框裡。
- *
- * <h2>為什麼不是自己畫一個框</h2>
- * 先前的就地取代是把整段對話藏掉、另外畫一個框。那永遠不會像——因為
- * Wynncraft 的對話框有木紋外框、名牌、SHIFT 按鈕，有些 NPC 還有頭像，
- * 全部都是那條 action bar 裡的字元。藏掉原文等於把它們一起丟掉。
- *
- * <p>所以改成<b>只換裡面的字</b>，其餘每一個字元原樣抄過去。框、名牌底圖、
- * 頭像、淡入動畫、進度條都留著，因為我們根本沒碰它們。
- *
- * <h2>那段文字長什麼樣</h2>
- * 從實機錄下來的結構（見 {@code dialogue-probe}）：
- *
- * <pre>
- *   [-116px] "Let's hope no more grooks waltz "  [+(116 - 寬度)px]
- *     ↑ 固定                                       ↑ 隨文字長度變
- * </pre>
- *
- * 三次抓到的資料完全吻合：文字 35px 時尾隨 +81、93px 時 +23、149px 時 -33。
- * 也就是「往左退 116、畫字、再往右走回原位」——整段的游標淨位移是 0，
- * 後面的名牌與外框才會落在固定的地方。
- *
- * <p>名牌是<b>置中</b>的，中心固定在游標 -40px：{@code The Cook}（寬 40）
- * 是 -60／+20，{@code Enzan}（寬 25）是 -52／+27，兩個算出來的中心都是 -40。
- *
- * <p>所以換字之後<b>尾隨的偏移必須重算</b>，否則後面的東西整個位移。
- * 這是這件事唯一真正的技術內容，其餘都是抄。
- *
- * <h2>中文怎麼畫得出來</h2>
- * 那組 {@code hud/dialogue/text/...} 字型是 Wynncraft 的資源包字型，
- * 有沒有收中文我們不知道也不該賭。做法是<b>只有文字那一段</b>換成預設字型，
- * 前後的偏移字元留在原本的字型裡——偏移字元本來就不是「字」，
- * 用哪個字型畫都一樣。
- */
+// 換字後要重算尾隨偏移，否則名牌與外框整個位移
 public final class DialogueRewriter {
 
-    /**
-     * 對話內文的字型片段。{@code body_0}、{@code body_1}……一行一個。
-     *
-     * <p>認的是 {@code /body_} 而不是 {@code hud/dialogue/text/}——後者<b>也會</b>
-     * 命中 {@code text/control}（那行 SHIFT 提示）與 {@code text/nameplate}。
-     * 把提示併進整句去查表，鍵就變成「 to continueLet's hope…」，當然查不到，
-     * 於是整段都不換——就地取代整個失效就是這樣來的。
-     */
+    // hud/dialogue/text/ 也會命中 control 與 nameplate
     private static final String BODY = "/body_";
 
-    /** 說話者名字那一段。 */
     private static final String NAMEPLATE = "hud/dialogue/text/nameplate";
 
-    /** 「 to continue」那一行。它自己就是一句話，跟內文分開查。 */
     private static final String CONTROL = "hud/dialogue/text/control";
 
-    /**
-     * 選項那幾列的字型。認的是 {@code /choice_}（有底線）——
-     * {@code style/default/choice} 是畫外框的，沒有底線，不能混進來。
-     */
     private static final String CHOICE = "/choice_";
 
-    /**
-     * 這個語言有沒有附對話字型。
-     *
-     * <h2>為什麼不寫死名單</h2>
-     * 先前這裡是 {@code Set.of("zh_tw")}。簡體的字型檔<b>早就放進去了</b>
-     * （{@code font/dialogue/zh_cn/} 十一份 JSON 加一個 ttf），只是沒有人記得
-     * 回來改這一行——於是簡體玩家的對話框走「沒附字型」那條路，退回預設字型。
-     *
-     * <p>而退回預設字型對 {@code control}（那行 SHIFT 提示）是致命的：原版那一份
-     * 的垂直位移是 -38，預設字型是 7，差了四十幾格。字還在，只是畫到了畫面外——
-     * 使用者看到的是「簡體的 SHIFT 繼續會消失」。
-     *
-     * <p>改成問檔案在不在。加一個語言就只是「放一個 ttf、產十一份 JSON」，
-     * 這裡不用再動——那本來就是上面那段註解答應的事。
-     */
     private static boolean hasDialogueFonts(String lang) {
-        // body_0 當哨兵：有附字型的語言一定有它，缺了就是整套都沒有。
         return fontShipped(lang, "body_0");
     }
 
-    /** 每個語言那套字型畫得出來的碼位區間，第一次用到才讀。 */
     private static final Map<String, int[]> COVERAGE = new java.util.HashMap<>();
 
-    /** 哪幾份對話字型真的打包進來了；見 {@link #fontMissing}。 */
     private static final Map<String, Boolean> FONTS = new java.util.HashMap<>();
 
-    /** 內文的左緣：從游標往左退這麼多。實機量到的固定值。 */
+    // 實機量到：內文左緣在游標左 116px
     private static final int BODY_LEFT = 116;
 
-    /** 名牌文字的中心：游標往左 40px。實機用兩個不同長度的名字驗過。 */
     private static final int NAME_CENTRE = 40;
 
-    /** 位移字元的基準碼位。{@code 基準 + n} 代表往右 n px，n 可以是負的。 */
     private static final int OFFSET_BASE = 0xD0000;
 
     private DialogueRewriter() {}
 
-    /**
-     * 整句翻得出來，但攤不進對話框的行數。
-     *
-     * <h2>為什麼沒辦法就地放下</h2>
-     * 就地取代只能寫進 Wynncraft <b>已經送來</b>的 {@code body_N} 那幾行，而框的
-     * 高度也是照那個行數畫出來的。中文需要比原文多一行的時候，沒有地方可以放
-     * ——憑空多畫一行會直接穿出框外。
-     *
-     * <p>先前的做法是整句留英文。玩家看到的是「講到最後一刻忽然變回英文」
-     * （yool141 在 #902 回報：「部分译文过长，导致部分内容会切换回英文」，
-     * 並且指出「如果將任務翻譯設置在另一個框中，就能正確翻譯」）。
-     *
-     * <h2>改成讓小框接手</h2>
-     * 塞不下的那一句改由 {@link DialogueOverlay} 畫在小框上：原文留在遊戲自己的
-     * 框裡，譯文出現在小框。那正是「面板」模式本來的樣子，也正好是這個專案
-     * 「不取代原文」的原則——看得到中文，總比整句退回英文好。
-     *
-     * <p>只在<b>整句已經講完</b>時才會成立。打字途中走的是「照進度截一段」
-     * 那條路，本來就不會因為塞不下而放棄。
-     *
-     * <h2>2026-10-18：先捲，捲不了才接手</h2>
-     * 塞不下的譯文現在先讓最後一列跑馬燈（見 {@link #layout}），譯文留在遊戲自己的
-     * 框裡。這個旗標只剩「框窄到連一個字都放不進去」那一種會立起來。
-     */
     private static boolean tooLong;
 
-    /** 見 {@link #tooLong}。{@link DialogueOverlay} 靠這個決定要不要接手。 */
     public static boolean bodyTooLong() {
         return tooLong;
     }
 
-    /**
-     * 換掉對話裡的文字；不是對話、或沒有一段換得掉時回傳 {@code null}。
-     *
-     * @return 改寫過的訊息，或 {@code null} 表示原樣不動
-     */
     public static Component rewrite(Component message, TranslationStore store) {
-        // 每一幀重算。留著上一幀的值，會讓小框在下一句（塞得下的那一句）
-        // 上面繼續畫，變成同一句話出現兩次。
         tooLong = false;
         if (message == null || store == null) {
             return null;
         }
-        // 句中圖示的字型與顏色。小框那條路在 ActionBarListener 最高優先權記，
-        // 這裡再記一次：測試與其他呼叫端不一定經過那裡。見 DialogueIcons。
         DialogueIcons.note(message);
-        // 跑馬燈的時鐘：這一幀所有在捲的列共用同一個「現在」
         long now = clock.getAsLong();
         List<Style> styles = new ArrayList<>();
         List<String> texts = new ArrayList<>();
@@ -169,33 +67,18 @@ public final class DialogueRewriter {
             return Optional.empty();
         }, Style.EMPTY);
 
-        // 先把所有 body_N 的文字段找出來。
-        //
-        // Wynncraft 一行一個字型：body_0、body_1……一句話太長就拆成好幾行。
-        // 先前每一段各自查表，結果是整句中文全塞進 body_0、body_1 還留著英文的
-        // 後半段——版面當然跳掉。要整句一起翻，再<b>攤回同樣的行數</b>，
-        // 文字才會落在原文落的地方。
-        //
-        // 一行不一定只有一段。句子裡有顏色強調時，Wynncraft 會把它切開送過來：
-        // 「Go ahead and 」「open that gate」「.」——中間那幾段的鄰居是<b>文字</b>，
-        // 不是位移字元。先前的判斷要求左右兩側都是位移，於是這種行三段全不合格，
-        // 整行對改寫器來說等於不存在，永遠留在英文（玩家回報的「只翻了第一行」）。
-        //
-        // 改成收「兩個位移之間、連續的文字段」當作一行，頭尾各記一份。
-        // 整行是併成一段送出去的，所以句中的強調色不會自己回來——
-        // 那些顏色是另外<b>貼</b>回譯文上的，見 {@link #paint}。
-        List<Integer> body = new ArrayList<>();     // 每一行的第一段
-        List<Integer> ends = new ArrayList<>();     // 每一行的最後一段
+        List<Integer> body = new ArrayList<>();
+        List<Integer> ends = new ArrayList<>();
         for (int i = 1; i + 1 < texts.size(); i++) {
             if (offsetOf(texts.get(i - 1)) == null) {
-                continue;                           // 這裡不是一行的開頭
+                continue;
             }
             int stop = i;
             while (stop < texts.size() && offsetOf(texts.get(stop)) == null) {
-                stop++;                             // 一路吃到下一個位移字元
+                stop++;
             }
             if (stop == i || stop >= texts.size()) {
-                continue;                           // 沒有文字，或收不到結尾的位移
+                continue;
             }
             int last = stop - 1;
             if (!bodyRow(texts, styles, i, last)) {
@@ -203,11 +86,8 @@ public final class DialogueRewriter {
             }
             body.add(i);
             ends.add(last);
-            i = last;                               // 這一行收完了，跳過去
+            i = last;
         }
-        // body 是空的也要往下走：任務開始那類訊息沒有台詞行，只有底下的
-        // SHIFT 提示。先前在這裡直接 return，於是那種訊息的「to continue」
-        // 永遠翻不出來——而它是玩家最常看到的一句。
 
         StringBuilder whole = new StringBuilder();
         for (int n = 0; n < body.size(); n++) {
@@ -215,44 +95,28 @@ public final class DialogueRewriter {
                     rowText(texts, body.get(n), ends.get(n))));
         }
         boolean changed = false;
-        // 內文與選項是<b>兩個</b>開關。呼叫端只要有一邊是就地取代就會進來，
-        // 所以這裡得各自再確認一次，不然關掉的那一邊也會被換掉。
         var mode = com.wynnchayuan.CollectorConfig.DialogueMode.REPLACE;
         boolean doBody = com.wynnchayuan.WynnChaYuan.config().dialogueMode() == mode;
         boolean doChoice = com.wynnchayuan.WynnChaYuan.config().choiceMode() == mode;
-        // 一行放得下多少：兩邊都要用同一個數字。
-        //
-        // 先前 wrap() 自己寫死 232，而這裡算的是照實際前導偏移得出的寬度——
-        // 有頭像的對話文字是從頭像右邊起算的，可用寬度少了 24 像素，於是
-        // 「整句塞不塞得下」判斷用窄的、真正斷行時用寬的，中文就滿出框外。
         int room = rowWidth(texts, body);
         String hit = body.isEmpty() || !doBody ? null
                 : line(whole.toString(), store, body.size(),
                         styles.get(body.get(0)), room);
-        // 塞不下的那一句，最後一列改成跑馬燈（見 layout）。rows 是每一列的
-        // <b>完整</b>內容，貼色照它貼；實際畫出去的是 laid.shown(n)。
         Layout laid = hit == null ? null
                 : layout(hit, body.size(), styles.get(body.get(0)), room, now);
         List<String> rows = laid == null ? null : laid.rows();
-        // 有一行配不到中文字型就整段不換。少一份字型的下場不是「位置歪掉」
-        // 而是<b>那一整行變成方框</b>（見 fontMissing），跟缺字一樣糟。
         for (int n = 0; rows != null && n < body.size(); n++) {
             if (fontMissing(fontOf(styles.get(body.get(n))))) {
                 rows = null;
             }
         }
         if (rows != null) {
-            changed = true;                    // 攤不進原本的行數就只換提示
+            changed = true;
         }
 
         boolean[] swapped = new boolean[texts.size()];
-        // 換掉之後仍要留在原字型的前綴（目前只有 SHIFT 的按鈕圖示）
         Map<Integer, String> keep = new java.util.HashMap<>();
-        // 貼過顏色的那幾行：一行併成一段之後，句中的強調色要自己重新分段。
-        // 鍵是那一行的第一段，值是要照順序畫出去的幾截。見 paint。
         Map<Integer, List<LineParts.Piece>> painted = new java.util.HashMap<>();
-        // SHIFT 提示自己就是一句話，跟內文分開查。它跟內文一樣是
-        // [偏移][文字][偏移]，換完一樣要重算尾隨的偏移。
         for (int i = 1; doBody && i + 1 < texts.size(); i++) {
             if (!fontOf(styles.get(i)).contains(CONTROL) || !readable(texts.get(i))) {
                 continue;
@@ -262,18 +126,7 @@ public final class DialogueRewriter {
             if (lead == null || trail == null) {
                 continue;
             }
-            // 原本那一段照它<b>自己的字型</b>量，跟下面量 prefix 的方式一樣。
-            //
-            // 不能走 width(String, Style)：那一支把私用區字元一律當成句中圖示，
-            // 寬度去查內文裡學到的圖示樣式（DialogueIcons#forRow）。SHIFT 按鈕
-            // 與滑鼠圖示（U+E000、U+E011）不在內文裡，查不到就算成 0，
-            // 尾隨偏移多補了一個按鈕寬，提示列整條往右歪出框外。
             int was = width(Component.literal(texts.get(i)).withStyle(styles.get(i)));
-            // SHIFT 那個按鈕圖示是<b>混在同一段文字裡</b>的，不是獨立片段：
-            // 這一段長得像「<U+E000> to continue」。整段拿去查表就是
-            // " to continue"，而語料裡是 "to continue"，永遠對不上。
-            //
-            // 所以把開頭的圖示與空白剝掉再查，換完再原樣接回去。
             String raw = texts.get(i);
             int at = 0;
             while (at < raw.length() && !readable(raw.substring(at, at + 1))) {
@@ -284,20 +137,17 @@ public final class DialogueRewriter {
             if (tip == null || tip.isBlank() || !renderable(tip)) {
                 continue;
             }
-            tip = oneLine(tip);                 // 提示列也是一列，\n 畫出來是方框
-            tip = DialogueIcons.stripMarks(tip); // 顏色標記不畫出來（PR #1436）
+            tip = oneLine(tip);
+            tip = DialogueIcons.stripMarks(tip);
 
             if (!drawable(tip, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
-                continue;                       // 沒有這一份中文字型，換了是一排方框
+                continue;
             }
-            // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
-            // 換成預設字型就變成缺字。所以只有譯文那一截換字型，
-            // 組裝時再把兩截接起來（見下面的 keep）。
             int total = width(Component.literal(prefix).withStyle(styles.get(i)))
                     + width(tip, styles.get(i));
-            String back = offset(trail + was - total);        // 同上：只補長度差
+            String back = offset(trail + was - total);
             if (back == null) {
-                continue;                       // 補不回去就別動這一段，見 offset
+                continue;
             }
             keep.put(i, prefix);
             texts.set(i, tip);
@@ -305,32 +155,19 @@ public final class DialogueRewriter {
             swapped[i] = true;
             changed = true;
         }
-        // 選項那幾列。形狀跟上面的 SHIFT 提示一樣是 [偏移][文字][偏移]，
-        // 差別是<b>沒有前置圖示</b>——整段就是選項本身，直接查表就好。
-        //
-        // 每一列有自己的字型（choice_1／2／3），行號烘在 ascent 裡（97／84／71），
-        // 所以換完要配對應的中文字型，不然三列會疊在一起。見 paired()。
-        //
-        // <h2>一列不一定只有一段</h2>
-        // 「About <u>Strength</u>.」的屬性名有自己的顏色，Wynncraft 會把它切成
-        // 「About 」「Strength」「.」三段送過來——中間那幾段的鄰居是<b>文字</b>，
-        // 不是位移字元。先前要求左右兩側都是位移，於是這種列一段都不合格，
-        // 玩家看到的是整份選項都留在英文（實機回報：音容宛在的四個「About …」）。
-        // 跟內文同一個做法：收「兩個位移之間、連續的文字段」當一列，
-        // 代價一樣是整列只剩第一段的顏色。
         for (int i = 1; doChoice && i + 1 < texts.size(); i++) {
             if (!fontOf(styles.get(i)).contains(CHOICE) || !readable(texts.get(i))) {
                 continue;
             }
             if (offsetOf(texts.get(i - 1)) == null) {
-                continue;                       // 這裡不是一列的開頭
+                continue;
             }
             int end = i;
             while (end + 1 < texts.size() && offsetOf(texts.get(end + 1)) == null) {
-                end++;                          // 一路吃到下一個位移字元
+                end++;
             }
             if (end + 1 >= texts.size()) {
-                continue;                       // 收不到結尾的位移
+                continue;
             }
             Integer trail = offsetOf(texts.get(end + 1));
             String row = rowText(texts, i, end);
@@ -339,48 +176,39 @@ public final class DialogueRewriter {
             if (pick != null && !pick.isBlank()) {
                 Marquee.remember(rowFont, row.strip(), pick);
             } else {
-                // 太長的選項會像跑馬燈一樣往左捲，每一格都是從字中間切開的視窗，
-                // 查不到。接得上上一格就是同一個選項，沿用它的譯文，見 Marquee。
                 pick = Marquee.follow(rowFont, row.strip());
             }
             if (pick == null || pick.isBlank() || !renderable(pick)) {
                 i = end;
-                continue;                       // 查不到就留英文，不要換一半
+                continue;
             }
             if (!drawable(pick, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
                 i = end;
-                continue;                       // 沒有這一列的中文字型，換了是一排方框
+                continue;
             }
-            pick = oneLine(pick);               // 譯文裡的 \n 一樣攤平，見 oneLine
-            pick = DialogueIcons.stripMarks(pick); // 顏色標記不畫出來（PR #1436）
+            pick = oneLine(pick);
+            pick = DialogueIcons.stripMarks(pick);
             int was = 0;
             for (int k = i; k <= end; k++) {
                 was += width(texts.get(k), styles.get(k));
             }
-            // 原文太長時遊戲自己會讓這一列跑馬燈（一格 28 個字元），而我們貼上的是
-            // <b>整句</b>譯文——中文比那一格寬，就會穿出選項框。比框寬就照內文那套
-            // 自己捲（見 Marquee#scroll），塞得下就整句擺著。
             Style rowStyle = styles.get(i);
             int[] cut = choiceWindow(rowFont, pick, was, s -> width(s, rowStyle), now);
             String full = pick;
             pick = full.substring(cut[0], cut[1]);
-            // 跟內文一樣只補長度差：這一列縮短多少就還回去多少，
-            // 後面幾列與外框的位置才不會被推走。
             String back = offset(trail + was - width(pick, styles.get(i)));
             if (back == null) {
                 i = end;
-                continue;                       // 補不回去就別動這一列，見 offset
+                continue;
             }
-            // 顏色要在清空之前收：下面那個迴圈一跑，原文就沒了。
             TextColor colour = tone(texts, styles, List.of(i), List.of(end));
             List<LineParts.Piece> tint =
                     accents(texts, styles, List.of(i), List.of(end), colour);
-            // 照整句貼色再切出這一幀的視窗：名字捲到一半也還是強調色
             painted.put(i, cut(paint(full, styles.get(i).withColor(colour),
                     tint, new boolean[tint.size()]), cut[0], cut[1]));
             texts.set(i, pick);
             for (int k = i + 1; k <= end; k++) {
-                texts.set(k, "");               // 整列併到第一段，其餘清空
+                texts.set(k, "");
                 swapped[k] = true;
             }
             texts.set(end + 1, back);
@@ -389,62 +217,28 @@ public final class DialogueRewriter {
             i = end;
         }
         if (rows != null) {
-            // 強調色整段一起收，不是逐行收：中文重排之後，原文在第二行的
-            // 那個詞很可能落到第一行去。逐行收的話它就再也貼不回去了。
             TextColor colour = tone(texts, styles, body, ends);
             List<LineParts.Piece> tint = accents(texts, styles, body, ends, colour);
-            // 打字打到哪，顏色才送到哪——而中文比英文短，物品名早就出現在
-            // 畫面上了，那幾幀當然是白的。同一句讀第二次就沿用上次記下來的，
-            // 一開始就有顏色。見 DialogueTint。
-            //
-            // 是「補上去」不是「沒量到才用」：正在打的那幾幀，量到的往往只有
-            // 半個名字，有量到不代表量到的是對的。兩邊都放進去，paint 會挑
-            // 位置靠前、長度比較長的那一個。
+            // 伺服器打字打到哪才送到哪的顏色，常只有半個名字
             for (LineParts.Piece each : DialogueTint.of(hit)) {
                 if (!seen(tint, each.text())) {
                     tint.add(each);
                 }
             }
-            // 貼色是<b>整段一起</b>貼的，不是逐行貼。
-            //
-            // 中文的斷行位置跟原文不一樣，名字很可能剛好跨在兩行之間——第一行
-            // 結尾只有一個 {@code [}，名字整個落在第二行。逐行貼的話兩行都對
-            // 不上整個名字，畫面上就是半白半青。
             int[] starts = new int[body.size()];
             List<LineParts.Piece> inked = paint(flatten(rows, starts),
                     Style.EMPTY.withColor(colour), tint, new boolean[tint.size()]);
-            // 要記下來的是<b>譯文</b>那一截，不是原文。
-            //
-            // 先前記的是原文的片段，於是檔案裡出現 {@code bring me the}、
-            // {@code and help us!} 這種東西——那是英文散文，翻成中文之後字面
-            // 完全不一樣，下次拿去比對一個都對不上，純粹是垃圾。
             List<LineParts.Piece> learned = new ArrayList<>();
             for (int n = 0; n < inked.size() - 1; n++) {
-                // 最後一截不收：句子還在打，那一截很可能是被切斷的半個名字。
                 LineParts.Piece piece = inked.get(n);
                 if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
                     learned.add(new LineParts.Piece(piece.text(),
                             Style.EMPTY.withColor(piece.style().getColor())));
                 }
             }
-            // 譯者在譯文裡指定的顏色（{c1}、{c:gold}、{#}…{/}）最後貼，蓋過猜的。
-            // 記憶（learned）不收這些：它們每一次都由譯文自己帶，不必記。見 fill。
             inked = overlay(inked, rows, starts);
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
-                // 只把偏移「補上長度差」，不要自己算一個新的。
-                //
-                // 兩行的訊息長這樣：[前導][第一行][前導][第二行][尾隨]。
-                // 也就是說對第一行而言，at + 1 是<b>第二行的前導</b>，不是尾隨偏移。
-                // 先前每一行都照「淨位移歸零」重算 at + 1，等於把第二行的前導蓋掉，
-                // 後面的頭像與外框就整個被推走——一行的時候剛好沒事，字數多到
-                // 換行才歪，正是「跳出一定字數就把框位移」。
-                //
-                // 改成沿用原本的偏移再加上這一行縮短了多少，原文的版面就原樣保住，
-                // 不管 at + 1 是下一行的前導還是整段的尾隨都成立。
-                //
-                // 一行可能有好幾段（顏色強調），所以要看的是<b>最後一段</b>的
-                // 後面那個偏移，寬度也要把整行加起來算。
                 int end = ends.get(n);
                 Integer after = offsetOf(texts.get(end + 1));
                 if (after == null) {
@@ -454,15 +248,12 @@ public final class DialogueRewriter {
                 for (int i = at; i <= end; i++) {
                     was += width(texts.get(i), styles.get(i));
                 }
-                // 跑馬燈那一列只畫這一幀的視窗，偏移也照視窗的寬度補
                 String shown = laid.shown(n);
                 int shrink = was - width(shown, styles.get(at));
                 String back = offset(after + shrink);
                 if (back == null) {
-                    continue;                      // 補不回去就別動這一行，見 offset
+                    continue;
                 }
-                // 樣式要換回<b>這一行自己的</b>：每一行的字型不一樣（body_0、
-                // body_1……高度差 12px），拿整段那個共用的去畫會全部疊在一列。
                 List<LineParts.Piece> pieces = new ArrayList<>();
                 for (LineParts.Piece part : cutRow(laid, inked, starts, n)) {
                     pieces.add(new LineParts.Piece(part.text(),
@@ -471,7 +262,7 @@ public final class DialogueRewriter {
                 painted.put(at, pieces);
                 texts.set(at, shown);
                 for (int i = at + 1; i <= end; i++) {
-                    texts.set(i, "");              // 整行併到第一段，其餘清空
+                    texts.set(i, "");
                     swapped[i] = true;
                 }
                 texts.set(end + 1, back);
@@ -484,32 +275,18 @@ public final class DialogueRewriter {
         }
 
         MutableComponent out = Component.empty();
-        // 換上去的字，用我們挑的字型畫得出來嗎。見 unpaintable。
         String tofu = null;
         for (int i = 0; i < texts.size(); i++) {
-            // 換過的那一段用<b>預設字型</b>畫，中文才出得來；沒換的原樣抄，
-            // 包含它原本的字型——框、頭像、按鈕都是靠那些字型畫出來的。
             String prefix = keep.get(i);
             if (prefix != null && !prefix.isEmpty()) {
-                // 圖示照原樣、原字型；只有後面的譯文換成預設字型
                 out.append(Component.literal(prefix).withStyle(styles.get(i)));
             }
-            // 換過的那一段，只有<b>畫不出來</b>的時候才改字型。
-            //
-            // Wynncraft 的對話字型把行號烘進了 ascent（body_0 是 34、body_1
-            // 是 22、control 是 -38，預設字型是 7），換成預設就等於丟掉高度。
-            // 譯文如果本來就畫得出來——西班牙文、法文、德文那些只用到拉丁字母
-            // 的語言——就<b>不要碰字型</b>，位置跟原文一模一樣。
-            // 貼過顏色的行是好幾截，每一截自己決定要不要換字型：
-            // 留英文的那一截（物品名、NPC 名）本來就畫得出來，換了反而掉高度。
             List<LineParts.Piece> pieces = painted.get(i);
             if (pieces != null) {
                 for (LineParts.Piece chunk : pieces) {
-                    // 句中圖示要用遊戲自己的字型畫（這一列的 common/body_N），
-                    // 其餘的字照舊。見 DialogueIcons。
                     for (LineParts.Piece piece : iconRuns(chunk, styles.get(i))) {
                         if (piece.style() == null) {
-                            continue;              // 記不到樣式的圖示不畫
+                            continue;
                         }
                         if (DialogueIcons.hasIcon(piece.text())) {
                             out.append(Component.literal(piece.text()).withStyle(piece.style()));
@@ -534,29 +311,12 @@ public final class DialogueRewriter {
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
         if (tofu != null) {
-            // 一句話裡插幾個方框，比整句留著英文糟糕得多——而且方框的寬度
-            // 跟原本那個字元不一樣，後面的名牌與外框會整個被推出去。
             com.wynnchayuan.capture.DialogueProbe.tofu(message, out, tofu);
             return null;
         }
         return out;
     }
 
-    /**
-     * 這一段字，用這個字型畫得出來嗎。
-     *
-     * <h2>只檢我們自己換上去的</h2>
-     * Wynncraft 原本的片段裡到處都是私用區字元——位移、圖示、外框、頭像，
-     * 而且它們帶的是<b>旁邊那段文字的字型</b>而不是符號字型（名牌那一列的
-     * 位移字元就掛在 {@code text/nameplate} 底下）。拿同一把尺去量原本的片段，
-     * 每一條對話都會誤判。
-     *
-     * @return 畫不出來的那幾個碼位，全畫得出來時回 {@code null}
-     */
-    /**
-     * 一截貼好色的字，拆成「句中圖示」與「其餘」。圖示那幾截換成它在這一列該用的
-     * 樣式（{@link DialogueIcons#forRow}），記不到樣式的圖示樣式是 {@code null}。
-     */
     static List<LineParts.Piece> iconRuns(LineParts.Piece piece, Style row) {
         String text = piece.text();
         if (!DialogueIcons.hasIcon(text)) {
@@ -589,7 +349,7 @@ public final class DialogueRewriter {
         String font = fontOf(style);
         boolean ours = font.startsWith(WynnChaYuan.MOD_ID + ":");
         if (!ours && !font.startsWith("minecraft:hud/dialogue/text/")) {
-            return null;                       // 預設字型什麼都畫得出來
+            return null;
         }
         String lang = WynnChaYuan.language();
         StringBuilder bad = new StringBuilder();
@@ -603,15 +363,6 @@ public final class DialogueRewriter {
                 : bad.toString().strip() + "  字型=" + font + "  文字=" + text;
     }
 
-    /**
-     * 把譯文攤成正好 {@code rows} 行，每一行都塞得進框裡。
-     *
-     * <p>行數<b>必須</b>跟原文一樣：多了畫不下（框的高度是伺服器決定的，
-     * 我們動不了），少了文字會往上擠，看起來像浮在框裡。寧可不換。
-     *
-     * @return 每一行的內容；攤不進去時回傳 {@code null}
-     */
-    /** 多給幾列才塞得下：從現有的列數往上試。超過 {@link #ROWS_TRIED} 列就回那個上限。 */
     static int rowsNeeded(String text, int rows, Style style, int limit) {
         for (int n = rows + 1; n <= rows + ROWS_TRIED; n++) {
             if (wrap(text, n, style, limit) != null) {
@@ -621,43 +372,25 @@ public final class DialogueRewriter {
         return rows + ROWS_TRIED;
     }
 
-    /** 標準框寬下要幾列；給測試用。 */
     static int rowsNeeded(String text, int rows) {
         return rowsNeeded(text, rows, null, BODY_LEFT * 2);
     }
 
-    /** 見 {@link #rowsNeeded}：最多往上試幾列。對話框本身只有五列，再多沒有意義。 */
     static final int ROWS_TRIED = 6;
 
     static List<String> wrap(String text, int rows) {
         return wrap(text, rows, null, BODY_LEFT * 2);
     }
 
-    /**
-     * @param style 這一行實際會用的樣式。<b>一定要傳</b>——量寬度得用真正會畫出來的
-     *              字型，中日韓走的是我們自己那套（一個字 10 像素），拿預設字型
-     *              （9 像素）去量會少算一成，於是每一行都塞得比框還寬，畫出來就溢出。
-     */
+    // 中日韓走自家字型一字 10px，用預設字型量會少算
     static List<String> wrap(String text, int rows, Style style, int limit) {
         List<String> out = wrap(text, rows, style, limit, true);
         if (out != null) {
             return out;
         }
-        // 避頭尾（見 {@link #kinsoku}）把斷點往前挪，每一行因此少放幾個字。
-        // 原本剛好攤得進去的句子可能就攤不進去了——而攤不進去的代價不是
-        // 排版難看，是<b>整句掉回英文</b>（呼叫端那一關直接 drop）。
-        //
-        // 玩家看到的是「中文打到最後一幀忽然變回英文」：打字打到一半時譯文
-        // 只出來前面一截，那一截塞得下；最後一幀才輪到完整譯文，於是就在
-        // 講完的那一刻整句跳掉。issue #864。
-        //
-        // 排版好看是加分，整句變英文是減分。塞不下的時候就不做避頭尾。
         return wrap(text, rows, style, limit, false);
     }
 
-    /**
-     * @param kinsoku 要不要做避頭尾。塞不下時上面那一支會關掉它再試一次。
-     */
     static List<String> wrap(String text, int rows, Style style, int limit,
                              boolean kinsoku) {
         List<String> out = new ArrayList<>(rows);
@@ -665,18 +398,10 @@ public final class DialogueRewriter {
         return at >= text.length() ? out : null;
     }
 
-    /**
-     * 塞不進 {@code rows} 列的譯文：前面幾列照常折滿，剩下的全部放在<b>最後一列</b>，
-     * 由跑馬燈在那一列裡捲著看（見 {@link Marquee#window}）。
-     *
-     * @return 每一列的完整內容（最後一列比框寬）；連一個字都放不下、或其實塞得下時
-     *         回傳 {@code null}
-     */
     static List<String> overflow(String text, int rows, Style style, int limit) {
         if (text == null || rows <= 0) {
             return null;
         }
-        // 譯文裡的 \n 在 line() 已經攤平了（見 oneLine），這裡收到的是一整串。
         List<String> out = new ArrayList<>(rows);
         int at = pour(text, rows - 1, style, limit, true, out);
         String rest = text.substring(Math.min(at, text.length())).strip();
@@ -685,31 +410,22 @@ public final class DialogueRewriter {
         }
         String first = rest.substring(0, rest.offsetByCodePoints(0, 1));
         if (measure(first, style) > limit) {
-            return null;                       // 一個字都放不下，捲也捲不出東西
+            return null;
         }
         out.add(rest);
         return out;
     }
 
-    /**
-     * 這一幀對話框的內文要怎麼排。
-     *
-     * @param rows 每一列的<b>完整</b>內容。跑馬燈那一列比框寬，畫的時候只取
-     *             {@code [from, to)} 那一段——強調色要照完整的那一份貼，見 {@link #rewrite}
-     * @param from 最後一列這一幀從第幾個字元畫起；不捲動時是 -1
-     */
     record Layout(List<String> rows, int from, int to) {
 
         boolean scrolling() {
             return from >= 0;
         }
 
-        /** 第 n 列這一幀畫出來的那一段，在完整那一列裡從第幾個字元開始。 */
         int offset(int n) {
             return scrolling() && n == rows.size() - 1 ? from : 0;
         }
 
-        /** 第 n 列這一幀實際畫出來的字。 */
         String shown(int n) {
             String row = rows.get(n);
             return scrolling() && n == rows.size() - 1 ? row.substring(from, to) : row;
@@ -724,17 +440,6 @@ public final class DialogueRewriter {
         }
     }
 
-    /**
-     * 排這一幀：塞得下就照常折；塞不下就讓最後一列跑馬燈。
-     *
-     * <h2>為什麼不再讓原文冒出來</h2>
-     * 先前塞不下的那一句整句留英文（後來改成讓小框接手）。使用者要的是譯文留在
-     * 對話框裡：前面幾列照常，最後一列放不下的那一截像對話選項那樣在列裡捲動——
-     * 先停在開頭讓人讀，再慢慢往左捲，捲到結尾停一下，跳回開頭重來。
-     *
-     * @param now 現在的時間（毫秒）；跑馬燈的進度從「這一列第一次出現」起算
-     * @return 排好的版面；連跑馬燈都放不下時回傳 {@code null}
-     */
     static Layout layout(String text, int rows, Style style, int limit, long now) {
         List<String> fit = wrap(text, rows, style, limit);
         if (fit != null) {
@@ -750,48 +455,29 @@ public final class DialogueRewriter {
         return new Layout(List.copyOf(over), window[0], window[1]);
     }
 
-    /**
-     * 從整段貼好色的結果裡取出第 n 列這一幀要畫的那幾截。
-     *
-     * <p>顏色是照<b>完整</b>的譯文貼的（{@link #flatten} 用的是 {@link Layout#rows}），
-     * 跑馬燈只是從裡面取一段——名字捲到一半、只剩後半截在框裡，那半截照樣有顏色。
-     * 先用視窗的字去貼的話，被切開的名字對不上，整截會變回底色。
-     */
     static List<LineParts.Piece> cutRow(Layout laid, List<LineParts.Piece> inked,
                                         int[] starts, int n) {
         int from = starts[n] + laid.offset(n);
         return cut(inked, from, from + laid.shown(n).length());
     }
 
-    /**
-     * 選項那一列這一幀要畫譯文的哪一段：{@code {起, 迄}}，放得下就是整句。
-     *
-     * @param row 這一列的字型（choice_0～3），每一列有自己的跑馬燈時鐘
-     * @param was 原文這一格的寬度，見 {@link Marquee#choiceRoom}
-     */
     static int[] choiceWindow(String row, String pick, int was,
                               java.util.function.ToIntFunction<String> measure, long now) {
         int room = Marquee.choiceRoom(was, measure);
         return Marquee.scroll(row + '\u0000' + pick, pick, room, measure, now);
     }
 
-    /** 跑馬燈的時鐘。測試換成假的，才模擬得出「過了幾秒捲到哪」。 */
     static java.util.function.LongSupplier clock = System::currentTimeMillis;
 
-    /**
-     * 把 {@code text} 從頭倒進最多 {@code rows} 列；回傳倒到哪裡。
-     * 倒不完的剩下那一截由呼叫端決定要放棄（{@link #wrap}）還是捲動（{@link #overflow}）。
-     */
     private static int pour(String text, int rows, Style style, int limit, boolean kinsoku,
                             List<String> out) {
         int at = 0;
         for (int row = 0; row < rows; row++) {
             if (at >= text.length()) {
-                out.add("");                   // 中文比較短，後面幾行留空
+                out.add("");
                 continue;
             }
             int cut = step(text, at, style, limit, kinsoku);
-            // 最後一列原樣收（跟拆出 step 之前一樣），其餘列吃掉行尾空白
             out.add(cut >= text.length() ? text.substring(at)
                     : text.substring(at, cut).stripTrailing());
             at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
@@ -799,20 +485,12 @@ public final class DialogueRewriter {
         return at;
     }
 
-    /**
-     * 不限列數地折完一整段，回傳每一列在 {@code text} 裡的範圍 {@code {起, 迄}}
-     *（行尾的空白不算在內）。斷點規則跟就地取代那幾列一模一樣：英文單字不切開、
-     * 避頭尾（見 {@link #kinsoku}）——小框的自動折行用的就是這一支。
-     *
-     * @param style 量寬度用的樣式；{@code null} 是預設字型
-     */
     static List<int[]> flow(String text, Style style, int limit) {
         List<int[]> out = new ArrayList<>();
         int at = 0;
         while (at < text.length()) {
             int cut = step(text, at, style, limit, true);
             if (cut <= at) {
-                // 一個字就比框寬：硬塞一個字，不然永遠走不完
                 cut = at + Character.charCount(text.codePointAt(at));
             }
             int end = cut;
@@ -825,7 +503,6 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /** 從 {@code at} 開始的這一列該斷在哪裡（不含）。見 {@link #pour}。 */
     private static int step(String text, int at, Style style, int limit, boolean kinsoku) {
         int end = at;
         int last = at;
@@ -833,17 +510,12 @@ public final class DialogueRewriter {
                 && measure(text.substring(at, end + 1), style) <= limit) {
             end++;
             if (end < text.length() && text.charAt(end) == ' ') {
-                last = end;                // 記著最後一個可以斷的空白
+                last = end;
             }
         }
         if (end >= text.length()) {
             return text.length();
         }
-        // 英文單字不從中間切；中文可以在任何字之間斷。
-        //
-        // 退到「上一個空白」是不夠的：玩家 ID 前面常常是頓號或驚嘆號，
-        // 整行一個空白都沒有，於是 Green_teaTW 被切成 Green_ 和 teaTW。
-        // 改成退到<b>這個字自己的開頭</b>，前面有沒有空白都一樣。
         int cut = end;
         if (isWord(text.charAt(end))) {
             int back = end;
@@ -853,7 +525,7 @@ public final class DialogueRewriter {
             if (back > at) {
                 cut = back;
             } else if (last > at) {
-                cut = last;                // 整行就是一個長字，只好斷在空白
+                cut = last;
             }
         }
         if (kinsoku) {
@@ -862,58 +534,20 @@ public final class DialogueRewriter {
         return cut;
     }
 
-    /** 不能留在行尾的字元：開括號與開引號，後面接的東西要跟著它一起下去。 */
     private static final String OPENING = "([{<「『【《〈（〔［｛“‘";
 
-    /** 不能出現在行首的字元：閉括號與標點，要把前一個字一起帶下去。 */
     private static final String CLOSING = ")]}>」』】》〉）〕］｝”’，。、；：！？%％・…‥";
 
-    /** 避頭尾最多往前挪幾個字元。見 {@link #kinsoku}。 */
     private static final int KINSOKU_MAX = 3;
 
-    /**
-     * 避頭尾：把斷點往前挪，讓成對的東西不要被拆在兩行。
-     *
-     * <h2>實機回報</h2>
-     * Ferndor 那句「你要是能把 [Abysso Galoshes] 帶來幫我們」——上一行結尾停在
-     * {@code [}，物品名整個跑到下一行去，讀起來像是句子斷在一個孤零零的括號上：
-     *
-     * <pre>
-     *   多年前被一個海盜從我們這裡偷走了！你要是能把 [
-     *   Abysso Galoshes] 帶來幫我們，我可以給你報酬！
-     * </pre>
-     *
-     * 上面那一段斷字邏輯只管「英文單字不要從中間切」，所以它退到了 {@code A}，
-     * 而 {@code [} 不是字母，就被留在原地。物品名前面的方括號在 Wynncraft 裡
-     * 是「這是一件東西」的記號，跟名字是一組的。
-     *
-     * <h2>兩條規則</h2>
-     * <ul>
-     *   <li><b>行尾禁則</b>：{@link #OPENING} 那些字元不能是一行的最後一個，
-     *       斷點往前挪，它們跟著下一行走。</li>
-     *   <li><b>行首禁則</b>：{@link #CLOSING} 那些字元不能是一行的第一個，
-     *       斷點往前挪，把前一個字一起帶下去。中文的逗號句號也算——
-     *       一行開頭一個「，」比什麼都醒目。</li>
-     * </ul>
-     *
-     * <h2>只往前挪，不往後</h2>
-     * 往後挪（把閉括號拉上來）會讓那一行比框還寬，畫出來就溢出框外。
-     * 往前挪只會讓行變短，一定畫得下。
-     *
-     * <p>代價是這一行少了幾個字，整段有可能因此攤不進原本的行數而回傳
-     * {@code null}——那時整段留英文。所以最多只往前挪
-     * {@value #KINSOKU_MAX} 個字元，並且絕不挪到整行變空的地步：
-     * 寧可讓一個括號留在行尾，也不要整段掉回英文。
-     */
     static int kinsoku(String text, int at, int cut) {
         int moved = cut;
         for (int step = 0; step < KINSOKU_MAX; step++) {
             if (moved <= at + 1) {
-                break;                         // 再挪下去這一行就空了
+                break;
             }
             char head = moved < text.length() ? text.charAt(moved) : '\0';
             char tail = text.charAt(moved - 1);
-            // 句中圖示跟後面那個詞是一組的（「✹火」），不留在行尾。
             if (OPENING.indexOf(tail) >= 0 || CLOSING.indexOf(head) >= 0
                     || DialogueIcons.isIcon(tail)) {
                 moved--;
@@ -921,7 +555,6 @@ public final class DialogueRewriter {
             }
             break;
         }
-        // 挪完只剩空白的話等於白挪，還會生出一行空行。退回原本的斷點。
         return text.substring(at, moved).isBlank() ? cut : moved;
     }
 
@@ -929,20 +562,10 @@ public final class DialogueRewriter {
         return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
-    /** 不能從中間切開的一整個字。底線算在裡面：玩家 ID 幾乎都有。 */
     private static boolean isWord(char c) {
         return isLatin(c) || c == '_';
     }
 
-    /**
-     * 譯文打到哪裡了。
-     *
-     * <p>原文打了幾成，譯文就出幾成。這樣譯文的出現節奏跟原文一致，
-     * 看起來就像 Wynncraft 自己在打字。
-     *
-     * <p>不會切在佔位符中間——{@code {~1}} 被切成 {@code {~} 之後，
-     * 那一行的佔位符數量就跟原文對不上，整行會靜靜失效。
-     */
     static String typedSoFar(String full, int typed, int total) {
         if (total <= 0 || typed >= total) {
             return full;
@@ -956,36 +579,17 @@ public final class DialogueRewriter {
         return full.substring(0, take);
     }
 
-    /**
-     * 把譯文裡的佔位符換回原文的實際值。
-     *
-     * <p>{@code {~1}} 這種帶編號的寫法指名要原文的第幾個數值——中文語序常常
-     * 跟英文相反，沒有編號就沒辦法把數字擺到正確的位置。
-     *
-     * <h2>顏色標記</h2>
-     * 譯文裡的 {@code {c1}}、{@code {w1}}、{@code {c:#FF55FF}}、{@code {c:gold}}、
-     * {@code {/}} 跟物品說明那邊同一套語意（見 {@code LineTranslator#colourToken}），
-     * 編號照這一句原文用到的顏色排（見 {@link DialogueIcons#palette}）。這些標記
-     * <b>一律吃掉、絕不畫出來</b>——先前就地取代原樣抄過去，畫面上直接印出「{c1}」
-     * （PR #1436）。顏色記在 {@link #explicit}，{@link #rewrite} 排好版之後照位置貼。
-     *
-     * <p>{@code {#}…{/}}：句中圖示後面到 {@code {/}} 的字跟著圖示上色，見
-     * {@link DialogueIcons}。
-     */
     static String fill(String translated, LineParts parts) {
         StringBuilder out = new StringBuilder();
-        // 每一個字元自己的顏色（null 是沒指定，照強調色／底色）
         List<TextColor> colours = new ArrayList<>();
         int place = 0;
         int user = 0;
         int number = 0;
         int glyph = 0;
-        TextColor current = null;                  // 開著的色段
+        TextColor current = null;
         for (int i = 0; i < translated.length(); ) {
             int[] token = DialogueIcons.colourToken(translated, i);
             if (token != null) {
-                // {cN}／{wN}／{c:…}：從這裡開始換顏色；{/}：回到沒指定。
-                // 編號超出範圍（原文還沒打到那個顏色）就當作沒寫，照舊吃掉。
                 current = token[1] == 0 ? null
                         : DialogueIcons.resolve(translated.substring(i, i + token[0]));
                 i += token[0];
@@ -996,23 +600,17 @@ public final class DialogueRewriter {
                 i += 3;
                 if (piece != null && DialogueIcons.hasIcon(piece.text())
                         && DialogueIcons.styleOf(piece.text().codePointAt(0)) != null) {
-                    // 對話字型的圖示（元素、按鍵…）。整段只留圖示字元本身，畫的時候
-                    // 換回遊戲自己的那套字型（見 rewrite 的組裝），所以畫得出來。
                     String icon = iconsOf(piece.text());
                     TextColor own = DialogueIcons.colourOf(icon.codePointAt(0));
                     append(out, colours, icon, own);
                     if (DialogueIcons.closes(translated, i) > 0) {
-                        current = own;             // 後面到 {/} 的字跟著圖示上色
+                        current = own;
                     }
                     continue;
                 }
-                // 其他圖示在對話框裡<b>畫不出來</b>：換過的那一段用的是中文字型，
-                // 材質包的私用區字元到了那裡就是一個方框。原樣抄「{#}」更糟——
-                // 實機回報畫面上直接印出「{#}敏捷嘛，那是給愛冒險的人的」。
-                // 那個圖示只是屬性名旁邊的小裝飾，拿掉不影響意思。
                 while (i < translated.length() && translated.charAt(i) == ' '
                         && out.length() == 0) {
-                    i++;                           // 行首的圖示後面那個空白一起拿掉
+                    i++;
                 }
             } else if (translated.startsWith("{p}", i)) {
                 append(out, colours, pick(parts.places(), place++), current);
@@ -1029,7 +627,7 @@ public final class DialogueRewriter {
                     try {
                         at = Integer.parseInt(index) - 1;
                     } catch (NumberFormatException e) {
-                        at = number;               // 不是數字就當作沒編號
+                        at = number;
                     }
                 } else {
                     number++;
@@ -1041,7 +639,6 @@ public final class DialogueRewriter {
                 colours.add(current);
             }
         }
-        // 譯文裡的 \n 在這裡就攤平，顏色才跟得上每一個字的新位置。見 oneLine。
         String filled = oneLine(out.toString(), colours);
         boolean any = false;
         for (TextColor colour : colours) {
@@ -1060,21 +657,9 @@ public final class DialogueRewriter {
         }
     }
 
-    /**
-     * 最近一次 {@link #fill} 的結果裡，譯者指定的顏色：每個字元一格，跟
-     * {@link #explicitText} 對齊。沒有任何指定時兩個都是 {@code null}。
-     *
-     * <p>打字途中畫的是它的開頭一截（{@link #typedSoFar}），沿用上一幀的譯文時
-     * （見 {@link #kept}）不會再叫 fill，所以留著上一次的；{@link #overlay}
-     * 照字面確認對得上才貼。
-     */
     private static String explicitText;
     private static TextColor[] explicit;
 
-    /**
-     * 同 {@link #oneLine(String)}，但 {@code colours}（每個字元一格）跟著挪：
-     * 拿掉的 \r、\n 一起拿掉，補上的空白補一格沒指定的顏色。
-     */
     static String oneLine(String text, List<TextColor> colours) {
         if (text.indexOf('\n') < 0) {
             return text;
@@ -1110,14 +695,6 @@ public final class DialogueRewriter {
         return out.toString();
     }
 
-    /**
-     * 把譯者指定的顏色（{@link #explicit}）照位置貼到排好版的那幾列上，蓋過
-     * 照字面猜出來的強調色。
-     *
-     * <p>每一列都是譯文的一段子字串（{@link #wrap} 只切不改），依序在
-     * {@link #explicitText} 裡找到它的位置就知道每個字是第幾個；對不上（換句了）
-     * 就整個不貼。
-     */
     static List<LineParts.Piece> overlay(List<LineParts.Piece> inked, List<String> rows,
                                          int[] starts) {
         if (explicitText == null || explicit == null) {
@@ -1164,7 +741,6 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /** 只留圖示字元。{@code {#}} 對到的碎片偶爾連著排版字元，那些不畫。 */
     private static String iconsOf(String text) {
         StringBuilder out = new StringBuilder();
         text.codePoints().filter(DialogueIcons::isIcon).forEach(out::appendCodePoint);
@@ -1175,28 +751,6 @@ public final class DialogueRewriter {
         return at >= 0 && at < pieces.size() ? pieces.get(at).text() : "";
     }
 
-    /**
-     * 這一行放得下多寬。
-     *
-     * <p>不能寫死：有頭像的對話，文字是<b>從頭像右邊</b>開始的——前導偏移
-     * 從 −116 變成 −92，整整少了 24 像素。拿 −116 去算就會以為還有空間，
-     * 於是中文疊到頭像上（玩家回報的「任務翻譯錯位」）。
-     * 右邊界是固定的，所以寬度就是「實際前導的絕對值 + 右邊界」。
-     */
-    /**
-     * 拆成幾截各自查表，每一截都查得到才算數。
-     *
-     * <p>任務開始那則訊息就是拼出來的：「New Quest Started:」是一句、
-     * 「King's Recruit」是任務名、「[0/150 (0.0%)]」是進度。語料裡三樣<b>都有</b>，
-     * 就是沒有黏在一起的那一條——而任務有一百多個，一條條收根本收不完。
-     * 打字打到一半時前綴還對得上，任務名一出來就整句掉回英文，
-     * 畫面上看起來就是「翻譯翻到一半變英文」。
-     *
-     * <p>每一截都從<b>最長</b>的開始試，並且要求整句被吃完，湊不滿就整個不換——
-     * 半句中文半句英文比整句英文糟糕得多。
-     *
-     * @return 接起來的譯文，或 {@code null} 表示這樣拆也不成
-     */
     private static String join(String text, TranslationStore store) {
         StringBuilder out = new StringBuilder();
         String rest = text.strip();
@@ -1206,7 +760,7 @@ public final class DialogueRewriter {
             String piece = null;
             for (int at = rest.length(); at > 0; at--) {
                 if (at < rest.length() && rest.charAt(at) != ' ') {
-                    continue;                  // 只在空白處切
+                    continue;
                 }
                 head = rest.substring(0, at).strip();
                 piece = plain(head) ? head : store.lookup(head);
@@ -1225,25 +779,9 @@ public final class DialogueRewriter {
             taken++;
             rest = rest.substring(head.length()).strip();
         }
-        // 只拆出一截的話，這裡做的事跟呼叫端一開始的整句查表一模一樣——
-        // 而那一次是<b>被擋下來</b>才走到 join 的（見呼叫處）。放行等於把
-        // 剛擋掉的東西從後門放進來，玩家看到的就是「打了兩個字閃一下中文」。
-        // join 本來就是為「拼出來的訊息」寫的，至少要有兩截才算數。
         return rest.isEmpty() && taken >= 2 && out.length() > 0 ? out.toString() : null;
     }
 
-    /**
-     * 畫面上的字停下來了嗎。
-     *
-     * <h2>為什麼要問</h2>
-     * 「還在打字」與「打完了」對同一段文字要有不同的態度：還在打的時候，
-     * 現在看到的這半句隨時會變長，貿然定案等一下就得改口（見 {@link #line}）；
-     * 打完了就沒有這個顧慮，該貼就貼。
-     *
-     * <p>沒有現成的「打完了」訊號，但字停住幾幀就等於停住了。打字大約
-     * 每秒二三十個字，字與字之間頂多隔兩三幀；連續幾幀一模一樣就不是
-     * 打字的空檔，是真的停了。
-     */
     static boolean settled(String raw) {
         if (raw.equals(lastRaw)) {
             still++;
@@ -1257,42 +795,11 @@ public final class DialogueRewriter {
     private static String lastRaw = "";
     private static int still = 0;
 
-    /**
-     * 畫面上的字已經是一個<b>講完的句子</b>了嗎。
-     *
-     * <h2>為什麼要問</h2>
-     * {@link #settled} 是靠「連續幾幀沒變」認出句子講完了——要等六幀。而那六幀
-     * 之內，只要這句話剛好也是語料裡另一條的開頭（{@link TranslationStore#hasLonger}），
-     * 整句查表就會被擋下來，畫面只好先留英文。
-     *
-     * <p>玩家看到的是：NPC 的話明明已經講完，最後那個句點打出來之後
-     * 英文還停了一下才變成中文。逐字模擬 1500 句抓到三句，語料裡
-     * 符合這個形狀（以句末標點收尾、又是另一條的開頭）的有三百多條，
-     * 而且都是「The answer...」「...what?」這種短句——短句本來就最容易撞。
-     *
-     * <p>但這一關本來是為<b>半句</b>寫的：打到「Block」先貼上技能表的「格擋」。
-     * 那種半句<b>不會</b>以句末標點收尾——收了尾就是一個完整的句子，
-     * 就算等一下真的又接下去，先貼上這一句的譯文也還是對的。
-     *
-     * <p>逗號不算：「Well,」那種明顯還有下文，等它接完才對。
-     *
-     * <h2>只當最後一條路</h2>
-     * 這一句擺在<b>所有</b>其他判斷之後（見 {@link #line} 的結尾）。前綴比對認得出
-     * 更長的那一條時就照它走——那才是真的「還在打字」；沿用上一幀的譯文也優先。
-     * 直接放行的話，「Wait.」會先貼上自己的譯文，等「Wait. What?」打完再換掉，
-     * 中文換成另一段中文（逐字模擬 1500 句從 29 句漲到 130 句）。
-     */
     static boolean sentenceEnd(String text) {
         if (text == null) {
             return false;
         }
         String bare = text.strip();
-        // 一個字都沒有的不算「句子」。
-        //
-        // 台詞常常以「...」開頭，而「...」自己就是語料裡的一條。放行的話，
-        // 第三個點打出來就先貼上「……」，下一個字進來又被完整譯文的第一個
-        // 字取代——畫面上是「……」變「…」。逐字模擬 1500 句，光這一類就
-        // 讓「中文換成另一段中文」從 29 句漲到 90 句。
         boolean word = false;
         for (int i = 0; i < bare.length() && !word; i++) {
             word = Character.isLetterOrDigit(bare.charAt(i));
@@ -1300,7 +807,6 @@ public final class DialogueRewriter {
         if (!word || bare.length() < ENDED_LENGTH) {
             return false;
         }
-        // 收尾的引號、括號不算數：「"Goodbye."」的句點在引號<b>裡面</b>
         int at = bare.length() - 1;
         while (at >= 0 && CLOSERS.indexOf(bare.charAt(at)) >= 0) {
             at--;
@@ -1308,34 +814,13 @@ public final class DialogueRewriter {
         return at >= 0 && ENDINGS.indexOf(bare.charAt(at)) >= 0;
     }
 
-    /** 見 {@link #sentenceEnd}：句子講完的標點。逗號與分號<b>不</b>在裡面。 */
     private static final String ENDINGS = ".!?…。！？";
 
-    /**
-     * 見 {@link #sentenceEnd}：太短的「完整句子」不算數。
-     *
-     * <h2>為什麼要有長度</h2>
-     * 「Hm.」「No...」「Wait.」「NO!」這種嘆詞自己就是語料裡的一條，而台詞又
-     * 很愛拿它們開頭——「Hm. Convenient, that one of our…」。放行的話，
-     * 第三個字就先貼上「嗯。」，下一個字進來整句被換成別的譯文。
-     *
-     * <p>八個字元是實測分出來的：逐字模擬 1500 句，上面那幾類全部落在八個字元
-     * 以下，而真正「整句就是它」的（「The answer...」「...what?」）都在八個字元
-     * 以上。同一個道理也寫在 {@code TranslationStore#MIN_PREFIX_LENGTH}：
-     * 短句撞到別句的機會高得多。
-     */
+    // 實測 1500 句：嘆詞類完整句都在 8 字元以下
     private static final int ENDED_LENGTH = 8;
 
-    /** 見 {@link #sentenceEnd}：句點後面還可以跟著這些。 */
     private static final String CLOSERS = "\"'”’）)』」]";
 
-    /**
-     * 忘掉「上一句講到哪」。
-     *
-     * <p>只有測試用得到：這些狀態是 static 的，一句模擬完不清掉，
-     * 下一句會沿用上一句的判斷。實機不需要——換句話時
-     * {@link #line} 自己會發現原文不再是舊的延長而清掉。
-     */
     static void forget() {
         lastRaw = "";
         still = 0;
@@ -1352,50 +837,12 @@ public final class DialogueRewriter {
         skipNow = false;
     }
 
-    /**
-     * 停幾幀才算停下來。
-     *
-     * <p>六幀在 60fps 下是十分之一秒——比字與字之間的空檔長，
-     * 又短到玩家感覺不出來。真的猜錯了頂多退回舊行為，不會更糟。
-     */
     private static final int SETTLE_FRAMES = 6;
 
-    /** 上一幀畫面上打到哪（<b>原始</b>文字）。見 {@link #line}。 */
     private static String said = "";
 
-    /** 上一幀認出來的是語料裡的哪一條。 */
     private static String spoken;
 
-    /**
-     * 認出來的那一條還罩得住這一幀嗎。
-     *
-     * <p>打字打到人名、地名或數值<b>中間</b>時，模板會暫時對不上：畫面上是
-     * 「…have you seen Green_te」，語料裡是「…have you seen {u}」——要整個名字
-     * 打完才會收成佔位符。單看 {@code startsWith} 的話這中間幾幀全部落空，
-     * 玩家看到的就是「中文 → 英文 → 中文」。
-     *
-     * <p>所以岔開是允許的，但只允許岔在<b>語料那條的裡面</b>。岔開的位置
-     * 剛好是語料的結尾，代表畫面上的字已經比那條長了——那就不是同一句
-     * （任務開始那則後面還接著進度顯示就是這樣），要讓它往下走 {@link #join}。
-     *
-     * <h2>岔開的位置必須正好是佔位符</h2>
-     * 光看「對上幾個字」不夠。實機回報：Espren 市民說
-     *
-     * <pre>
-     *   They've been a symbol of our town for longer than anyone can remember…
-     * </pre>
-     *
-     * 畫面上出現的卻是「他們吵好一陣子了。你覺得明天誰會贏誰？」——那是語料裡
-     * <b>另一句</b> {@code They've been at it for a while now…} 的譯文。
-     * 兩句共同前綴「{@code They've been a}」剛好 14 個字，過了 {@link #AGREED}，
-     * 而長度又碰巧落在 {@link #NAME_ROOM} 裡，於是一路錯到底。
-     *
-     * <p>整句英文只是沒翻，錯的中文是<b>假的資訊</b>，比沒翻糟得多。
-     *
-     * <p>分辨的方法是問「岔在哪裡」：名字造成的岔開<b>一定</b>落在語料那條的
-     * 佔位符上（{@code {u}}、{@code {p}}、{@code {~}}），因為除了那裡兩邊
-     * 本來就一模一樣。岔在別的地方，就是另一句話。
-     */
     static boolean within(String source, String typed) {
         if (source.startsWith(typed)) {
             return true;
@@ -1408,27 +855,15 @@ public final class DialogueRewriter {
         return (agreed >= AGREED && agreed < source.length()
                 && source.charAt(agreed) == '{'
                 && typed.length() <= source.length() + NAME_ROOM)
-                // 對上不到 12 個字也行，只要岔出去的那一截<b>像</b>那個佔位符打到一半：
-                // 玩家自己名字的開頭、地名的開頭、數字。預測下一句在第一個字就認出
-                // 「Hey, {u}! …」時，打到名字的那幾幀才不會掉回英文。見 TranslationStore#slotFits。
                 || com.wynnchayuan.translate.TranslationStore.slotFits(source, typed);
     }
 
-    /** 岔開之前至少要對上這麼多，才算「還是同一句」。 */
     private static final int AGREED = 12;
 
-    /** 一個還沒收成佔位符的名字，最多比佔位符本身長這麼多。 */
     private static final int NAME_ROOM = 24;
 
-    /** 最多拆成幾截。再多就不是「拼出來的訊息」，是硬湊了。 */
     private static final int PARTS = 4;
 
-    /**
-     * 沒有字要翻的一截：數字、括號、佔位符。
-     *
-     * <p>像「[0/150 (0.0%)]」這種進度顯示，語料裡不會有、也不該有，
-     * 但它擋在中間會讓整句拼不起來。原樣留著就好。
-     */
     private static boolean plain(String text) {
         String bare = text.replaceAll("\\{[^}]*\\}", "");
         for (int i = 0; i < bare.length(); i++) {
@@ -1440,17 +875,10 @@ public final class DialogueRewriter {
         return true;
     }
 
-    /** 兩截之間要不要空白：接的是英文才要，中文之間不要。 */
     private static boolean gap(char left, char right) {
         return (isLatin(right) || isLatin(left)) && left != ' ' && right != ' ';
     }
 
-    /**
-     * 這幾段是不是同一行的內文。
-     *
-     * <p>整段都要是 body 字型（名牌另外處理），而且至少有一段是看得懂的文字——
-     * 純粹由排版字元組成的那幾段不算一行。
-     */
     private static boolean bodyRow(List<String> texts, List<Style> styles,
             int from, int to) {
         boolean any = false;
@@ -1464,7 +892,6 @@ public final class DialogueRewriter {
         return any;
     }
 
-    /** 一行的完整文字——顏色強調會把它切成好幾段。見 {@link #bodyRow}。 */
     private static String rowText(List<String> texts, int from, int to) {
         StringBuilder out = new StringBuilder();
         for (int i = from; i <= to; i++) {
@@ -1484,16 +911,6 @@ public final class DialogueRewriter {
         return -lead + BODY_LEFT;
     }
 
-    /**
-     * 接下一行時要補回被吃掉的空格。
-     *
-     * <p>Wynncraft 是在<b>空白處</b>折行的，而那個空白不留在任何一行裡：
-     * body_0 是「…My brother」、body_1 是「keeps sending…」。直接相接會變成
-     * 「My brotherkeeps」，語料裡永遠查不到——NPC 只要講到需要換行的長度，
-     * 整句就翻不出來。玩家看到的「多講幾句就斷掉」正是這個。
-     *
-     * @return 這一行要接上去的內容（必要時前面補一個空格）
-     */
     static String joinRow(String sofar, String row) {
         if (sofar.isEmpty() || sofar.endsWith(" ") || row.startsWith(" ")) {
             return row;
@@ -1501,24 +918,6 @@ public final class DialogueRewriter {
         return " " + row;
     }
 
-    /**
-     * 內文：整句查表，查不到就用開頭比對（NPC 是一個字一個字打出來的）。
-     *
-     * <p>{@code rows} 是原文佔了幾行。長度上限要乘上行數——先前這裡寫死
-     * 一行的寬度，等於<b>只要譯文超過一行就整句不翻</b>，兩行以上的台詞
-     * 全部留在英文。{@link #wrap} 本來就是為了攤成多行才寫的，
-     * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
-     */
-    /**
-     * 暱稱不在任何一個 Minecraft API 裡，所以反過來問語料。見
-     * {@link TranslationStore#playerNameIn}：認出來一次，往後每一句都自己抽成 {@code {u}}。
-     *
-     * <p>對話有兩條路（就地取代與小框），兩條都要叫這裡。先前只有就地取代在叫，
-     * 用小框看對話的人名字永遠學不到，叫到名字的台詞全部留在英文，
-     * 收集語料時還把名字原樣收了進去（實機回報 2026-09-18）。
-     *
-     * @return 這一句讓我們<b>新認出</b>一個名字
-     */
     static boolean learnName(String raw, TranslationStore store) {
         if (raw == null || com.wynnchayuan.capture.SelfNames.find(raw) != null) {
             return false;
@@ -1534,13 +933,12 @@ public final class DialogueRewriter {
     static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
         String raw = text == null ? "" : text.strip();
-        // SHIFT 跳過：伺服器一次把整句送來（原文一則就多了一大截）。見 #SKIP_JUMP。
         boolean newLine = lineRaw.isEmpty() || !raw.startsWith(lineRaw);
         skipNow = raw.length() - (newLine ? 0 : lineRaw.length()) >= SKIP_JUMP;
         String out = recognise(text, store, rows, style, width);
         long now = holdClock.getAsLong();
         if (newLine) {
-            lineShown = false;                 // 換句話了
+            lineShown = false;
             lineStart = now;
             released = false;
             lastOut = null;
@@ -1551,8 +949,6 @@ public final class DialogueRewriter {
                 DialogueStartLog.recognised(raw.length(), now - lineStart);
             }
             lineShown = true;
-            // 整句（打完了、或 SHIFT 跳過）直接整句給，不分幾幀補：跳過之後伺服器不太再送
-            // 更新，補字要等零星的封包，畫面就卡在半句好幾秒（1.0.4 回報）。
             boolean whole = heldSource == null && out.equals(held);
             out = whole || skipNow ? caughtUp(out) : paced(out);
             DialogueStartLog.frame("就地", raw.length(), out.codePointCount(0, out.length()));
@@ -1563,45 +959,25 @@ public final class DialogueRewriter {
             return "";
         }
         if (out == null && !lineShown && !released) {
-            released = true;                   // 這一句放英文了，之後不再蓋回去
+            released = true;
             DialogueStartLog.gaveUp(raw.length(), now - lineStart);
         }
         return out;
     }
 
-    /**
-     * 中文一幀最多長幾個字。
-     *
-     * <h2>為什麼</h2>
-     * 譯文照「英文打了幾成」出幾成，平常一幀長 0～1 個字。可是佔位符（數字、地名、玩家名）
-     * 在中文裡常常比英文早出現：英文還沒打到那個數字，中文就只能停在數字前面等；
-     * 等英文打到了，中文一口氣跳出十幾個字（逐字模擬：「…3 種」停二十幾幀再跳 10 字）。
-     * test3 實機「忽快忽慢」有一部分是這個。跳的那一段改成每幀最多長這麼多字，
-     * 接連幾幀補上——不影響「先空著」多久（那是認出來之前的事）。
-     */
     static final int MAX_STEP = 2;
 
-    /**
-     * 原文一則更新就多出這麼多字，當成玩家按了 SHIFT 跳過、整句一次出來。
-     *
-     * <p>正常打字一則多 1～3 個字（實機最快約每秒一百字、每秒二三十則）。跳過的那一則
-     * 是整句：這一則就當成「字停下來了」（認得出整句就給整句）、不先空著、不分幾幀補。
-     */
     static final int SKIP_JUMP = 8;
 
-    /** 這一則是不是跳過（見 {@link #SKIP_JUMP}）。{@link #recognise} 拿它當「字停下來了」。 */
     private static boolean skipNow;
 
-    /** 整句直接給，記成上一幀，之後的補字從這裡接。 */
     private static String caughtUp(String out) {
         lastOut = out;
         return out;
     }
 
-    /** 上一幀這一句送出去的中文。見 {@link #paced}。 */
     private static String lastOut;
 
-    /** 見 {@link #MAX_STEP}：跟上一幀接得上（只是變長）時，一幀最多多出這麼多字。 */
     private static String paced(String out) {
         String before = lastOut;
         if (before != null && out.startsWith(before)) {
@@ -1614,38 +990,12 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /** 測試用的時鐘：逐字模擬時一幀推進一個字的時間。 */
     static java.util.function.LongSupplier holdClock = System::currentTimeMillis;
 
-    /** 這一句第一幀的時間。見 {@link #holds}。 */
     private static long lineStart;
 
-    /** 這一句已經放出英文了：之後不再蓋回空白（不然英文與空白會來回閃）。 */
     private static boolean released;
 
-    /**
-     * 認出是哪一句之前，先別讓英文露出來。
-     *
-     * <h2>為什麼</h2>
-     * 使用者回報「對話還是會先出現原文、再出現譯文」。伺服器是一個字一個字送的
-     * （每一則 action bar 只帶到目前打到的地方，Wynntils 的對話事件也一樣），
-     * 頭幾個字本來就認不出是哪一句——要嘛等到認得出來、要嘛猜。猜錯會貼出別句的中文，
-     * 那比沒翻更糟；而等的那幾幀，畫面上就是英文。
-     *
-     * <p>第三條路：那幾幀先<b>什麼都不畫</b>。逐字模擬兩萬多句任務對話，認出來平均
-     * 只要五、六個字（打字大約每秒二三十個字，也就是零點二秒左右）；那段時間框裡是空的，
-     * 認出來就從第一個中文字開始打，玩家看不到英文，也不會看到猜錯的中文。
-     *
-     * <h2>什麼時候不等</h2>
-     * <ul>
-     *   <li>這一句已經出過中文（之後的空檔照舊沿用或退回英文，不在這裡變空）。</li>
-     *   <li>原文已經打超過 {@link #HOLD_CHARS} 個字還認不出來。</li>
-     *   <li>字停下來了（{@link #settled}）：講完了還認不出來，就是沒翻。</li>
-     *   <li>語料裡已經沒有任何一句對得上這幾個字（{@link TranslationStore#couldStillMatch}）
-     *       ——那句不在語料裡，等也等不到，英文立刻出來。</li>
-     *   <li>翻得出來但要小框接手（{@link #tooLong}）。</li>
-     * </ul>
-     */
     private static boolean holds(String raw, TranslationStore store, long now) {
         var config = com.wynnchayuan.WynnChaYuan.config();
         if ((config != null && !config.dialogueCover())
@@ -1657,87 +1007,32 @@ public final class DialogueRewriter {
         return store.couldStillMatch(typed);
     }
 
-    /**
-     * 見 {@link #holds}：最多先空著多久。使用者要求「不能拖太久」：超過就把已經打出來的
-     * 英文補上，不再等。打字大約每秒二三十個字，三百毫秒是六到九個字。
-     */
     static final long HOLD_MS = 300;
 
-    /** 同上，以字數算的保險（時鐘不準時也不會一直空著）。 */
     static final int HOLD_CHARS = 12;
 
-    /** 這一句出過中文了嗎。見 {@link #holds}。 */
     private static boolean lineShown;
 
-    /** 上一幀的原文，用來認出「換句話了」。見 {@link #holds}。 */
     private static String lineRaw = "";
 
-    /** 見 {@link #line}：認得出就回譯文，認不出回 {@code null}（留英文）。 */
     private static String recognise(String text, TranslationStore store, int rows,
             Style style, int width) {
-        // 「翻得出來但放不下」的旗標在這裡也歸零，不只在 rewrite() 開頭。
-        //
-        // rewrite() 有好幾條路會在還沒叫到這裡之前就 return（沒有內文行、
-        // 內文的開關關著）。只在那邊清的話，這裡設過的值會留到下一幀，
-        // 小框就會在一句根本不需要它接手的台詞上面繼續畫。
         tooLong = false;
-        // 先參數化再查表。
-        //
-        // 語料裡的鍵是「Hey, {u}! Are you alright…」，而畫面上是玩家的真名。
-        // 先前這裡拿<b>原始文字</b>直接查，凡是句子裡有玩家名、地名或數字的
-        // 一律查不到——側邊面板翻得出來、就地取代翻不出來，差別就在這一步。
-        // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
         String raw = text.strip();
         learnName(raw, store);
-        // 句中的圖示收成 {#}（新格式）；語料只認得舊格式的句子退回舊的。見 DialogueIcons。
         LineParts parts = DialogueIcons.parts(raw, store);
-        // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務
-        // 就有好幾句。那幾句語料裡早就翻好了（鍵是 {u}），只是模板對不起來。
-        // 見 LineParts#namingPlayer；只在整行查不到時才改，介面上那幾條正經的
-        // 「Player Slot」「Looking for a Player...」自己查得到，走不到這裡。
         if (store.lookup(parts.template().strip()) == null) {
             parts = parts.namingPlayer();
         }
         String typed = parts.template().strip();
         String source = typed;
-        // 「字停下來了嗎」一幀只能問一次，而且<b>每一幀都要問</b>。
-        //
-        // 先前這一句是寫在下面那個 && 的第二格：{@code hit != null && !settled(raw)}。
-        // Java 會短路，於是整句查得到的那幾幀才會呼叫到它——而打字途中整句本來就
-        // 查不到，計數器一次都沒有往前走。結果是 {@link #settled} 永遠回 false，
-        // SETTLE_FRAMES 形同不存在：一句話只要是語料裡另一條的開頭
-        //（{@link TranslationStore#hasLonger}），就<b>連打完了都不准定案</b>。
-        //
-        // 拉出來自己站一行，這一段才真的有在數。
         boolean steady = settled(raw) || skipNow;
         String hit = store.lookup(typed);
-        // 被下面那一關擋下來的整句譯文。擋歸擋，它終究是<b>這幾個字</b>自己的
-        // 譯文——別條路全部走不通時還輪得到它，見下面的 sentenceEnd。
         String exact = hit;
         if (hit != null && !steady && store.hasLonger(typed)) {
-            // 打到一半的那半句，本身剛好也是語料裡的另一條。
-            //
-            // 逐字模擬全部 5749 句台詞，這樣的情形有 105 句：打到「Block」先貼上
-            // 技能表的「格擋」、打到「Bring」先貼上任務目標的「攜帶」、
-            // 打到「...」先貼上「……」，一兩幀之後整句打完又被換掉。
-            // 玩家看到的就是中文閃一下變成別的字。
-            //
-            // 後面還有更長的候選、而畫面上的字還在長，就先不要定案——
-            // 讓它往下走前綴比對，那條路本來就是為「還沒打完」寫的。
-            // 沒有更長的候選時不受影響：「Agh!」那種短句照樣立刻換。
             hit = null;
         }
         if (hit == null) {
-            // 這一句上一幀就認出來了，繼續用同一條。
-            //
-            // 逐字打字時 matchPrefix 要求「只有一條語料以這個開頭」。打到一半
-            // 剛好有第二條也是同樣開頭時，它會回 null，畫面就掉回英文；再多打
-            // 幾個字岔開了又跳回中文——玩家看到的「講到一半忽然變英文又變回來」
-            // 就是這個。既然上一幀已經確定是哪一句，中間這幾幀沒理由再問一次。
-            //
-            // 只在<b>還是同一句話</b>時沿用。「同一句」看的是<b>原始文字</b>
-            // 有沒有繼續長出去——原文是一個字一個字加上去的，這個判斷永遠成立；
-            // 拿參數化後的模板來比反而會在打到人名中間時自己斷掉（見 within）。
             if (spoken != null && !said.isEmpty() && raw.startsWith(said)
                     && within(spoken, typed)) {
                 source = spoken;
@@ -1745,19 +1040,12 @@ public final class DialogueRewriter {
             }
         }
         if (hit == null) {
-            // 門檻要看<b>畫面上已經打出多少字</b>，不是模板有多長。
-            //
-            // 玩家名被 {u} 收掉之後模板會短一大截：畫面上打出
-            // 「Hey, Green_teaTW」十六個字，模板卻只有「Hey, {u}」八個字，
-            // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
             source = store.matchPrefix(typed, raw.length(),
                                        com.wynnchayuan.capture.CurrentQuest.get());
             hit = source == null ? null : store.lookup(source);
         }
         boolean near = false;
         if (hit == null) {
-            // wiki 抄來的台詞跟實機差一兩個字（「searching for a」vs「searching a」），
-            // 見 TranslationStore#nearQuestLine
             String close = store.nearQuestLine(typed,
                                                com.wynnchayuan.capture.CurrentQuest.get());
             if (close != null) {
@@ -1767,10 +1055,6 @@ public final class DialogueRewriter {
             }
         }
         if (hit == null) {
-            // 上面每一條都還要更多字才敢認：從上一句與名牌<b>預測</b>這一句。
-            // 只有完全沒有別的可能時才給答案，見 DialogueForecast 與 TranslationStore#forecast。
-            // 猜的那句之後岔開了，下一幀上面那道「沿用上一幀」就不成立（within 從嚴），
-            // 退回原本的判斷。
             String guess = FORECAST.guess(store, typed);
             if (guess != null) {
                 source = guess;
@@ -1778,75 +1062,27 @@ public final class DialogueRewriter {
             }
         }
         if (hit != null && source != null) {
-            said = raw;                // 記住這一幀畫面上打到哪
-            spoken = source;           // 以及它是語料裡的哪一條
+            said = raw;
+            spoken = source;
             if (typed.length() >= DialogueForecast.CONFIRM || source.equals(typed)) {
-                FORECAST.heard(store, source);      // 下一句從這裡往後預測
+                FORECAST.heard(store, source);
             }
         } else if (!raw.startsWith(said)) {
-            said = "";                 // 換句話了，別讓舊的那條黏著
+            said = "";
             spoken = null;
         }
         if (hit == null) {
-            // 「一句話 + 一個名字」：任務開始那則訊息就是這樣拼出來的。
-            //
-            // 語料裡有「New Quest Started:」也有「King's Recruit」，就是沒有
-            // 兩個黏在一起的那一條——而任務名有一百多個，一條條收根本收不完。
-            // 打字打到一半時前綴還對得上，名字一出來就整句掉回英文，
-            // 看起來就是「翻譯翻到一半變英文」。
             hit = join(typed, store);
-            // 拼出來的那條也要受「還在打字就別定案」那一關管。
-            //
-            // <h2>玩家回報的「前面跳一下英文」就是這裡</h2>
-            // 逐字模擬語料裡 1500 句台詞：1500 句裡有 190 句在<b>開頭那兩三幀</b>
-            // 閃出一段跟這句話無關的中文，再掉回英文，等到第六個字左右才換成
-            // 正確的譯文。例如
-            //
-            // <pre>
-            //   「Not even death saw the end of my misfortunes…」打到「No」 → 「不」
-            //   「Wait...it...it's n-not holding?!」打到「Wait.」         → 「等等。」
-            //   「...hm. Dang it...」打到「.」                            → 「.」
-            // </pre>
-            //
-            // join 是為「一句話 + 一個名字」寫的（任務開始那則訊息），它<b>不管</b>
-            // 現在畫面上的字還會不會繼續長。上面那道 hasLonger 的關卡攔下的
-            // 短句，走到這裡就被 join 用同一份語料原封不動地放行了。
-            //
-            // 兩道一起補：
-            // <ul>
-            //   <li>還在打字、而且語料裡還有更長的候選 → 不定案，等它長完。</li>
-            //   <li>join 只拆出<b>一截</b>時等於重做一次整句查表，那正是上面
-            //       剛擋掉的那一條；要求至少兩截，join 才回到它本來的用途。</li>
-            // </ul>
             if (hit != null && !steady && store.hasLonger(typed)) {
                 hit = null;
             }
             source = hit == null ? null : typed;
         }
         if (hit == null || hit.isBlank()) {
-            // 認不出是哪一句時，沿用上一幀<b>已經貼在畫面上</b>的那段譯文。
-            //
-            // <h2>為什麼</h2>
-            // 這一幀認不出來，不代表上一幀認錯了——原文只是又長了一個字，
-            // 而那個字剛好讓前綴變得不再獨特，或是讓拼出來的那條湊不滿。
-            // 任務開始那則訊息就是現成的例子：
-            //
-            // <pre>
-            //   New Quest Started:            → 「新任務開始：」（整句查得到）
-            //   New Quest Started: Ki         → 認不出來（任務名還沒打完）
-            //   New Quest Started: King's Recruit → 「新任務開始：國王的新兵」
-            // </pre>
-            //
-            // 中間那十幾幀先前一律掉回英文，畫面上就是中文閃一下不見再回來。
-            // 已經貼上去的譯文留著就好：它不會變得比較不對，而畫面穩定。
-            //
-            // 只在原文<b>還是同一句</b>（繼續往後長）時沿用；換句話了就放手。
             String held = kept(raw, typed, steady);
             if (held != null || exact == null || !sentenceEnd(typed)) {
                 return held;
             }
-            // 每一條路都走不通，而畫面上的字<b>已經是一個講完的句子</b>：
-            // 那就用它自己的譯文。見 {@link #sentenceEnd}。
             hit = exact;
             source = typed;
             said = raw;
@@ -1854,73 +1090,39 @@ public final class DialogueRewriter {
             FORECAST.heard(store, typed);
         }
         if (!source.equals(typed)) {
-            // 還在打字：名字、地名、數字可能還沒打出來（畫面上是「...STE」）。那個佔位符
-            // 之後的譯文先不出——不然填不到值，中文裡會空一格，等名字打完又插回來，
-            // 畫面上的中文中途變形。
             int cut = unfilledAt(hit, parts);
             if (cut >= 0) {
                 hit = hit.substring(0, cut);
             }
         }
-        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
-        // 譯文裡手寫的換行（給小框用的，見 DialogueOverlay）在這裡沒有意義：
-        // 遊戲的對話框是動作列上的一行字，各列靠字型高度排開，\n 畫出來是亂碼。
-        // 列數由 wrap 照寬度重新分，所以把它攤平成一般的字距就好。issue #1298。
+        hit = fill(hit, parts);
         hit = oneLine(hit);
-        // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
-        //
-        // 要在 fill <b>之後</b>檢查。先前檢的是<b>模板</b>，而真名、地名是
-        // 填回去的時候才進來的——玩家 ID 或地名裡只要有一個字不在字型的
-        // 覆蓋範圍，守門就放它過去，畫面上是一排方框。
-        // 句中圖示是用遊戲自己的字型畫的（見 rewrite 的組裝），不歸這一關管。
         if (!renderable(DialogueIcons.strip(hit))) {
             return drop();
         }
-        // 塞不塞得下要問 wrap 本身，不能只量總寬度。
-        //
-        // 總寬度量得到「字加起來有多寬」，量不到「斷行浪費掉的空間」：英文與俄文的
-        // 單字不從中間切，一行的尾巴常常空著一截。先前兩邊用的是不同的標準——這裡用
-        // 總寬度判定塞得下，呼叫端接著 wrap 卻攤不進去、回 null，整段就掉回英文。
-        // 俄文的單字長，玩家看到的「打字打到一半變回英文」就是這個。
-        // 差一兩個字對上的那句：字數跟語料不一樣，照「打到第幾個字」去切譯文
-        // 會把句尾切掉。畫面上已經是講完的一句，就當成整句顯示。
         boolean done = source.equals(typed)
                 || (near && (steady || sentenceEnd(typed))
                     && Math.abs(source.length() - typed.length())
                        <= Math.max(12, source.length() / 8));
         if (done) {
-            // 講完了。回的一定是<b>整句</b>譯文，不沿用上一幀打到一半的那一截——
-            // 那會讓畫面停在半句中文。塞不下的時候也是整句，由跑馬燈捲完。
             if (wrap(hit, rows, style, width) != null) {
                 com.wynnchayuan.capture.OverflowAudit.note(
                         com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
                         rows, rows, com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
                 return show(raw, hit, null);
             }
-            // 翻得出來、只是放不下。也記進 capture：譯者才知道是哪一句太長。
-            // 見 OverflowAudit。
             com.wynnchayuan.capture.OverflowAudit.note(
                     com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
                     rows, rowsNeeded(hit, rows, style, width),
                     com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
-            // 放不下的那一截讓最後一列跑馬燈捲著看（見 layout）——譯文留在對話框裡，
-            // 原文不會冒出來。這一關只回整句譯文，捲到哪是 rewrite 每一幀自己排的。
             if (overflow(hit, rows, style, width) != null) {
                 return show(raw, hit, null);
             }
-            // 連跑馬燈都放不下（框窄到一個字都進不去）才讓小框接手，見 {@link #tooLong}。
             tooLong = true;
             return drop();
         }
-        // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
-        //
-        // 先前這裡是拿<b>完整</b>譯文去比對「塞不塞得下目前這幾行」——而打到一半時
-        // 通常只有一行，完整譯文要兩行，於是整句退回英文，要等最後一行出現才
-        // 忽然跳成中文。玩家看到的「講到一半翻譯失效」就是這個。
         String part = typedSoFar(hit, typed.length(), source.length());
         if (wrap(part, rows, style, width) == null) {
-            // 找出還攤得進去的最長那一段。前綴越長越難塞，所以可以二分，
-            // 不必一個字一個字往回退（長句每一幀都要退幾十次）。
             int lo = 0;
             int hi = part.length();
             while (lo < hi) {
@@ -1935,18 +1137,11 @@ public final class DialogueRewriter {
         }
         if (part.isEmpty() && !hit.isEmpty() && wrap(hit.substring(0, firstUnit(hit)),
                 rows, style, width) != null) {
-            // 認得出是哪一句了，原文才打出一兩個字、照比例一個中文字都還分不到：
-            // 先給第一個字。不然那幾幀畫面上是英文，玩家看到的就是「先跳一段原文」。
             part = hit.substring(0, firstUnit(hit));
         }
         return part.isEmpty() ? kept(raw, typed, steady) : show(raw, part, source);
     }
 
-    /**
-     * 譯文裡第一個「畫面上還沒有值」的佔位符在哪裡。
-     *
-     * @return 位置；全部都有值時回傳 -1
-     */
     static int unfilledAt(String translated, LineParts parts) {
         int place = 0;
         int user = 0;
@@ -1980,30 +1175,17 @@ public final class DialogueRewriter {
         return -1;
     }
 
-    /** 第一個字佔幾個 char（不把補充平面的字切成半個）。 */
     private static int firstUnit(String text) {
         return Character.charCount(text.codePointAt(0));
     }
 
-    /** 就地取代這條路的「上一句」。見 {@link DialogueForecast}。 */
     static final DialogueForecast FORECAST = new DialogueForecast();
 
-    /** 上一幀貼上畫面的譯文，以及當時原文打到哪。見 {@link #kept}。 */
     private static String held;
     private static String heldRaw = "";
 
-    /**
-     * 貼上 {@link #held} 時，那段譯文是<b>哪一條語料的前半截</b>；
-     * 整句查到的（不是打到一半）是 {@code null}。見 {@link #kept}。
-     */
     private static String heldSource;
 
-    /**
-     * 記住這一幀貼上去的譯文。
-     *
-     * @param source 打到一半時是語料裡哪一條；整句定案時傳 {@code null}
-     * @return 原樣回傳 {@code text}，讓呼叫端可以寫成 {@code return show(raw, text, source)}
-     */
     private static String show(String raw, String text, String source) {
         heldRaw = raw;
         held = text;
@@ -2011,23 +1193,6 @@ public final class DialogueRewriter {
         return text;
     }
 
-    /**
-     * 這一幀認不出來時，沿用上一幀已經貼上去的譯文。
-     *
-     * <p>只在原文<b>還是同一句</b>時沿用：原文是一個字一個字加上去的，
-     * 所以「還是同一句」就是「這一幀的原文以上一幀的原文開頭」。
-     * 換句話了（或字變短了）就放手，不然會把上一句的中文黏在下一句上。
-     *
-     * <h2>光看原文有沒有繼續長不夠（issue #751）</h2>
-     * 原文一個字一個字長，「繼續長」<b>永遠</b>成立。Ensemble of Hope 的
-     * 「You tell them about…」打到「You tell the」時前綴對上了另一個任務的
-     * 「You tell the group of kids…」，貼上「你向那群」；下一個字就岔開了，
-     * 這裡卻照樣沿用，整句停在那四個字，英文也看不到。所以再加兩道：
-     * <ul>
-     *   <li>那段是<b>前綴比對</b>貼上的，而現在打出來的字已經不是那條的開頭 → 放手。</li>
-     *   <li>字已經停下來（{@link #settled}），還是認不出來 → 放手，讓玩家看完整的英文。</li>
-     * </ul>
-     */
     private static String kept(String raw, String typed, boolean steady) {
         if (held == null || heldRaw.isEmpty() || !raw.startsWith(heldRaw)
                 || steady
@@ -2037,7 +1202,6 @@ public final class DialogueRewriter {
         return held;
     }
 
-    /** 這一幀就是要留英文：把沿用的那份也倒掉，不然下一幀又會被撿回來。 */
     private static String drop() {
         held = null;
         heldRaw = "";
@@ -2045,50 +1209,27 @@ public final class DialogueRewriter {
         return null;
     }
 
-    /** 名牌：說話者的名字，語料裡本來就有（npc.json）。 */
     private static String speaker(String text, TranslationStore store) {
         String hit = store.lookup(text.strip());
         return hit == null || hit.isBlank() ? null : hit;
     }
 
-    /**
-     * 名牌是置中的，所以前導也要跟著重算——這裡回傳新的前導值。
-     *
-     * <p>內文是靠左的，前導固定不用動；名牌不是。分開處理，
-     * 不然名字一換長度就整塊偏掉。
-     */
     static int nameLead(int width) {
         return -(NAME_CENTRE + width / 2);
     }
 
-    /** 這一段是不是單純一個位移字元；是的話回傳位移的像素數。 */
     static Integer offsetOf(String text) {
         if (text.codePointCount(0, text.length()) != 1) {
             return null;
         }
         int cp = text.codePointAt(0);
-        // 位移字元的範圍，見 GlyphSplitter#isGlyphCodePoint
         if (cp < 0xCF000 || cp > 0xD1000) {
             return null;
         }
         return cp - OFFSET_BASE;
     }
 
-    /**
-     * 把像素數編回位移字元；編不出來時回傳 {@code null}。
-     *
-     * <h2>為什麼一定要擋範圍</h2>
-     * 位移字元只有 {@code U+CF000}–{@code U+D1000} 這一段有定義（見
-     * {@link #offsetOf} 解碼時的檢查），也就是 ±4096 像素。超出去的碼位
-     * <b>資源包裡根本沒有那個字</b>，Minecraft 只好畫成缺字的方框——
-     * 而位移字元常常是<b>一整串</b>的，於是畫面上就出現一長排方框。
-     *
-     * <p>先前這裡沒有檢查，只有解碼那一端有。補正值是「原本的偏移 + 這一段
-     * 縮短了多少」算出來的，長句子、或量錯寬度的時候就可能衝出去。
-     *
-     * <p>回傳 {@code null} 的時候呼叫端一律<b>放棄那一段的替換</b>：
-     * 留著英文原文至少版面是對的，比推歪加一排方框好得多。
-     */
+    // 位移字元只在 U+CF000–U+D1000（±4096px）有定義
     static String offset(int px) {
         int cp = OFFSET_BASE + px;
         if (cp < 0xCF000 || cp > 0xD1000) {
@@ -2097,15 +1238,6 @@ public final class DialogueRewriter {
         return new String(Character.toChars(cp));
     }
 
-    /**
-     * 一行（或一整段）的<b>底色</b>：照字數算，最多字的那個顏色。
-     *
-     * <h2>為什麼不取第一段</h2>
-     * 句子開頭就是強調詞的行不少——「[Abysso Galoshes] 在哪？」。取第一段的話，
-     * 整行會被染成強調色，剩下的散文反而變成例外，等於把顏色<b>接反</b>。
-     *
-     * @return 可能是 {@code null}，代表那一段沒設顏色、跟著外面繼承
-     */
     static TextColor tone(List<String> texts, List<Style> styles,
                           List<Integer> body, List<Integer> ends) {
         Map<TextColor, Integer> chars = new java.util.LinkedHashMap<>();
@@ -2121,7 +1253,7 @@ public final class DialogueRewriter {
         TextColor best = null;
         int most = -1;
         for (Map.Entry<TextColor, Integer> seen : chars.entrySet()) {
-            if (seen.getValue() > most) {     // 平手取先遇到的，所以用 Linked
+            if (seen.getValue() > most) {
                 most = seen.getValue();
                 best = seen.getKey();
             }
@@ -2129,19 +1261,6 @@ public final class DialogueRewriter {
         return best;
     }
 
-    /**
-     * 跟底色不一樣的那幾段——物品名、NPC 名、地名，Wynncraft 都是靠顏色標的。
-     *
-     * <p>純符號與單個字元不收：它們在譯文裡到處都對得上（一個
-     * {@code [} 會中在任何一個方括號上），貼回去只會染錯地方。
-     *
-     * <h2>跨行的要併成一段</h2>
-     * 原文換行的時候，同一個名字會被拆成兩段送過來——{@code [Abysso} 在第一行
-     * 結尾，{@code Galoshes]} 在第二行開頭。兩段分開收的話，中文因為斷在別的
-     * 地方（第一行結尾只剩一個 {@code [}），就只有後半截對得上，畫面上是
-     * 「Abysso 白、Galoshes] 青」。所以同色又相鄰的段要先併回一個名字，
-     * 斷行吃掉的那個空白也要補回來。
-     */
     static List<LineParts.Piece> accents(
             List<String> texts, List<Style> styles,
             List<Integer> body, List<Integer> ends, TextColor tone) {
@@ -2165,7 +1284,7 @@ public final class DialogueRewriter {
                 } else if (wrapped && run.length() > 0
                         && run.charAt(run.length() - 1) != ' '
                         && !texts.get(i).startsWith(" ")) {
-                    run.append(' ');           // 斷行吃掉的那個空白要補回來
+                    run.append(' ');
                 }
                 wrapped = false;
                 run.append(texts.get(i));
@@ -2177,12 +1296,6 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /**
-     * 收掉手上這一串同色的段：<b>整串</b>先進去，拆開的幾段當備胎跟在後面。
-     *
-     * <p>備胎是給「整串找不到」的情況用的。paint 是位置靠前的優先、同一個位置
-     * 取比較長的，所以整串對得上的時候一定輪不到備胎。
-     */
     private static Style flush(List<LineParts.Piece> out, StringBuilder run,
                                List<String> parts, Style paint) {
         if (paint != null) {
@@ -2216,7 +1329,6 @@ public final class DialogueRewriter {
         return movement || effect;
     }
 
-    /** 見 {@link #accents}：短到會亂中的、沒有半個字母數字的，都不收。 */
     private static boolean worthPainting(String core) {
         if (core.length() < 2) {
             return false;
@@ -2229,7 +1341,6 @@ public final class DialogueRewriter {
         return false;
     }
 
-    /** 這一段已經在候選裡了嗎。見呼叫處：記下來的跟量到的會有重複。 */
     private static boolean seen(List<LineParts.Piece> tint, String text) {
         for (LineParts.Piece each : tint) {
             if (each.text().equals(text)) {
@@ -2239,13 +1350,6 @@ public final class DialogueRewriter {
         return false;
     }
 
-    /**
-     * 把幾行併回一整句來貼色，順便記下每一行在裡面的起點。
-     *
-     * <p>斷行是<b>會吃掉空白</b>的（見 {@link #wrap} 的 stripTrailing），所以
-     * 兩邊都是拉丁字的時候要把那個空白補回來，跨行的名字才連得起來。中日韓
-     * 之間本來就沒有空白，補了反而多一格。
-     */
     static String flatten(List<String> rows, int[] starts) {
         StringBuilder out = new StringBuilder();
         for (int n = 0; n < rows.size(); n++) {
@@ -2260,11 +1364,6 @@ public final class DialogueRewriter {
         return out.toString();
     }
 
-    /**
-     * 從整句貼好的結果裡取出 {@code [from, to)} 這一段，跨界的那一截切開。
-     *
-     * <p>補回去的那個空白落在兩行<b>中間</b>，兩邊都取不到它，所以不會被畫出來。
-     */
     static List<LineParts.Piece> cut(
             List<LineParts.Piece> pieces, int from, int to) {
         List<LineParts.Piece> out = new ArrayList<>();
@@ -2282,21 +1381,6 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /**
-     * 把強調色貼回譯文：照字面在譯文裡找原文那幾段，找到就自成一截。
-     *
-     * <h2>只換顏色，不碰別的</h2>
-     * 粗體會讓每個字寬 +1px，而這一行要補回去的尾隨偏移是<b>先算好的</b>
-     * （見呼叫處的 shrink）。帶著粗體貼回去，框跟頭像就會被推走。
-     * 顏色不影響字寬，所以只帶顏色是唯一不會動到版面的做法。
-     *
-     * <h2>一個詞只貼一次</h2>
-     * {@code used} 是跨行共用的：同一個物品名在原文出現兩次就有兩段，
-     * 譯文裡也該是兩處。少了這個標記，第二段會再貼回第一處。
-     *
-     * @param base 這一行的底色樣式，沒中強調色的部分都用它
-     * @return 照順序畫出去的幾截；沒有一段對得上時就只有一截
-     */
     static List<LineParts.Piece> paint(String row, Style base,
                                        List<LineParts.Piece> accents,
                                        boolean[] used) {
@@ -2314,12 +1398,6 @@ public final class DialogueRewriter {
                 if (found == null) {
                     continue;
                 }
-                // 位置靠前的優先；同一個位置取<b>對到比較多字</b>的那一個。
-                //
-                // 比的是對到幾個字，不是名字本身有多長：正在打字的時候，
-                // 完整的那個名字只對得到前半截，而當下量到的那一小段是整個
-                // 對上的。照長度挑就會挑到短的那個，已經上色的後半截退回
-                // 白色，等打完才又染一次——實機看到的「顏色又跑一次」。
                 boolean better = at < 0 || found[0] < at
                         || (found[0] == at && found[1] > take);
                 if (better) {
@@ -2346,20 +1424,6 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /**
-     * 這個名字在譯文裡第一次出現在哪裡、對到幾個字。
-     *
-     * <h2>打到一半也算對上</h2>
-     * 名字在譯文裡留英文，所以它跟原文一樣是一個字母一個字母冒出來。只認
-     * 完整字面的話，那十幾幀全是白的，等最後一個 {@code ]} 打完才一次變色。
-     * 所以「句尾那一截剛好是這個名字的開頭」也算對上——正在打的就是它。
-     *
-     * <p>只有<b>句尾</b>那一截算。句子中間對到一半的，那就是別的字。
-     * 名字太短的也不算：兩三個字母的東西在句尾撞上的機會太大，
-     * 貼錯比晚一點上色糟。
-     *
-     * @return {@code {位置, 對到幾個字}}，對不上時回傳 {@code null}
-     */
     static int[] reach(String row, int from, String want) {
         int at = row.indexOf(want, from);
         if (at >= 0) {
@@ -2377,67 +1441,32 @@ public final class DialogueRewriter {
         return null;
     }
 
-    /** 短到會在句尾亂中的名字不做開頭比對。見 {@link #reach}。 */
     private static final int NAME_FLOOR = 3;
 
-    /**
-     * 物品名是<b>整組</b> {@code [ ... ]}，不是打到哪算到哪。
-     *
-     * <h2>為什麼要補這一段</h2>
-     * 對話是一個字母一個字母送過來的，顏色也跟著長：先是 {@code [A}，
-     * 再來 {@code [Ab}……而中文比英文短，整個名字早就出現在畫面上了。
-     * 只照字面貼的話，玩家會看到「{@code [Abysso} 有色、{@code Galoshes]} 沒色」
-     * 一路補到打完為止——比整句沒顏色還亂。
-     *
-     * <p>所以只要這一段是從 {@code [} 開始的，就一路吃到對應的 {@code ]}：
-     * 名字一出現就整組上色。
-     *
-     * @param stop 照字面比對到的結尾
-     * @return 延伸過的結尾；不是方括號開頭、或這一行沒有收尾就原樣回傳
-     */
     private static int bracket(String row, int at, int stop) {
         if (row.charAt(at) != '[') {
             return stop;
         }
         int close = row.indexOf(']', Math.max(at, stop - 1));
-        // 名字不會長到哪去。沒有上限的話，少一個 ] 就會把整行後面全部染色
         return close < 0 || close - at > NAME_LIMIT ? stop : close + 1;
     }
 
-    /** 見 {@link #bracket}：物品名最長就這麼長，超過的不當成一組。 */
     private static final int NAME_LIMIT = 64;
 
-    /**
-     * 這一截該用哪一份字型。
-     *
-     * <p>Wynncraft 的對話字型把行號烘進了 ascent（body_0 是 34、body_1 是 22），
-     * 換成預設就等於丟掉高度。所以只有<b>畫不出來</b>的那幾截才換——
-     * 留英文的物品名原樣用原字型，位置跟原文一模一樣。
-     */
     private static Style fitted(String text, Style style, Style original) {
         if (drawable(text, fontOf(original))) {
             return style;
         }
         FontDescription pair = paired(fontOf(original));
-        // 配不到就退回預設字型：位置會掉，但至少看得到字
         return style.withFont(pair == null ? FontDescription.DEFAULT : pair);
     }
 
-    /**
-     * 這一段文字<b>實際畫出來</b>會有多寬。
-     *
-     * <p>不能一律拿預設字型去量：中日韓走的是我們自己那套 Cubic 11，
-     * 字寬跟預設的和 Wynncraft 的都不一樣。量錯了尾隨偏移就補錯，
-     * 後面整塊會跟著偏。
-     */
-    /** 傳得到樣式就照樣式量，傳不到才退回預設字型。 */
     private static int measure(String text, Style style) {
         return style == null ? width(text) : width(text, style);
     }
 
     private static int width(String text, Style original) {
         if (DialogueIcons.hasIcon(text)) {
-            // 句中圖示用的是遊戲自己的字型，寬度照那一套量；其餘照舊。
             int total = 0;
             for (LineParts.Piece piece : iconRuns(new LineParts.Piece(text, original), original)) {
                 if (!DialogueIcons.hasIcon(piece.text())) {
@@ -2459,17 +1488,6 @@ public final class DialogueRewriter {
                         : original.withFont(pair)));
     }
 
-    /**
-     * 測試用的量寬度替身。
-     *
-     * <p>測試裡沒有 Minecraft，下面那一支只好退回「一個字元 6px」——對英文
-     * 差不多，但中日韓實機是<b>一個字 10px</b>，中英混排的句子會被量歪四成：
-     * 譯文裡留著的英文名字（{@code Corrupter of World Cave}）會被當成中文那樣寬，
-     * 於是量出一堆根本不存在的「塞不下」。
-     *
-     * <p>要量「譯文塞不塞得進原文佔的行數」就非得有真的字寬不可，
-     * 所以留一個替身給 {@code DialogueFitAudit}。實機永遠不會走到這一行。
-     */
     static java.util.function.ToIntFunction<String> widthForTest;
 
     private static int width(String text) {
@@ -2480,36 +1498,16 @@ public final class DialogueRewriter {
         return widthForTest != null ? widthForTest.applyAsInt(text) : text.length() * 6;
     }
 
-    /** 帶樣式量寬度——圖示的寬度要照它<b>原本的字型</b>算，不是預設字型。 */
     private static int width(Component text) {
         Minecraft mc = Minecraft.getInstance();
         return mc == null ? 0 : mc.font.width(text);
     }
 
-    /**
-     * Wynncraft 的對話字型畫不畫得出這一串。
-     *
-     * <p>字元集直接來自它自己的字型定義（{@code font-dump.txt}）：
-     * {@code wynncraft.png} 是可見的 ASCII，{@code wynncraft_latin.png}
-     * 補上帶重音的拉丁字母。兩張表以外的字（中日韓、西里爾、諺文）
-     * 畫出來是空框，那才需要換字型——代價是位置會掉。
-     */
     static boolean drawable(String text) {
-        // Ç／ç 不在這裡：土耳其文的「için」在提示列實機畫出來是「i in」
-        //（見下面帶字型的那一支），交給配對字型才畫得出來。內文那幾列的配對字型
-        // 第一個 provider 就是 Wynncraft 自己那份，所以外觀不變。
         return text.codePoints().allMatch(cp ->
                 plain(cp) || "ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏàáâãäåæèéêëìíîï".indexOf(cp) >= 0);
     }
 
-    /**
-     * 同上，但照<b>這一段實際用的字型</b>判斷。
-     *
-     * <p>帶重音的那張表（{@code wynncraft_latin.png}）只掛在內文、選項與名牌的
-     * 字型上；{@code text/control}（SHIFT 提示那一列）只有 ASCII 那一張
-     *（2026-10-10 解開資源包逐份核對）。在那一列，é、í、ç 都是缺字：畫出來的
-     * 缺字框落在預設字型的高度，被對話框蓋住，看起來就是字憑空少一個。
-     */
     static boolean drawable(String text, String font) {
         if (font != null && font.contains(CONTROL)) {
             return text.codePoints().allMatch(DialogueRewriter::plain);
@@ -2517,7 +1515,6 @@ public final class DialogueRewriter {
         return drawable(text);
     }
 
-    /** {@code wynncraft.png} 那張表：可見的 ASCII，空白那一格放的是破折號。 */
     private static boolean plain(int cp) {
         return (cp >= 0x20 && cp < 0x7F) || cp == 0x2014;
     }
@@ -2527,39 +1524,7 @@ public final class DialogueRewriter {
                 cp >= 0x20 && cp < 0x2E80 && !Character.isWhitespace(cp));
     }
 
-    /**
-     * 同一行、但畫得出中日韓的字型。
-     *
-     * <h2>為什麼非得自己做一套</h2>
-     * Wynncraft 把「畫在第幾行」烘進了字型的 {@code ascent}（`body_0` 是 34、
-     * `body_1` 是 22、`control` 是 -38，而 {@code minecraft:default} 是 7）。
-     * 整條對話是<b>一個</b> action bar 字串，位移字元只能左右移不能上下移——
-     * 換成預設字型就等於把行號丟掉，內文往下掉、SHIFT 提示往上跳進框裡被蓋住。
-     *
-     * <p>所以每一行各做一份字型：ASCII 直接 {@code reference} Wynncraft 自己那份
-     * （外觀與高度完全不變），中日韓走 Cubic 11 並用 {@code shift} 補回高度差。
-     * MC 的 ttf provider 把 shift 交給 FreeType 時取了負號（{@code deltaY = -shiftY}），
-     * 而 FreeType 的 +y 朝上，所以 <b>shift 的 y 是正數往下</b>；
-     * 又因為它乘上 oversample 之後才送出去，單位就是最終螢幕像素。
-     * 位移量因此正好是 {@code -(ascent - 7)}。
-     *
-     * @return 對應的字型；這一段不是對話文字就回傳 {@code null}
-     */
-    /**
-     * 那一套字型畫不畫得出這一串。
-     *
-     * <h2>為什麼要擋</h2>
-     * 點陣字是一個字一個字畫出來的，沒有哪一套是全的——Cubic 11 收了兩萬多個
-     * 漢字裡的九千多個。收不到的字畫出來是<b>方框</b>，而一句話裡插幾個方框
-     * 比整句留著英文糟糕得多。
-     *
-     * <p>所以缺一個字就整段不換。區間表由 {@code tools/font-coverage.py}
-     * 從字型檔本身抽出來，跟著字型一起放進 jar，換字型時一起重產。
-     */
-    /**
-     * 把譯文裡的換行攤平。兩邊都是中日韓字就直接接上（中文字之間沒有空格），
-     * 否則換成一個空白；換行旁邊本來就有空白的，不再多加一個。
-     */
+    // MC ttf 的 shift y 正數往下；每列位移是 7 − ascent
     static String oneLine(String text) {
         if (text.indexOf('\n') < 0) {
             return text;
@@ -2580,7 +1545,6 @@ public final class DialogueRewriter {
         return out.toString();
     }
 
-    /** 這一串在對話框裡畫不畫得出來——Wynncraft 自己那份或我們補的那套，有一個能畫就算。 */
     public static boolean renderable(String text) {
         return drawable(text) || covered(text, WynnChaYuan.language());
     }
@@ -2588,7 +1552,7 @@ public final class DialogueRewriter {
     static boolean covered(String text, String lang) {
         int[] ranges = coverage(lang);
         if (ranges.length == 0) {
-            return true;                       // 讀不到就不擋，維持原本的行為
+            return true;
         }
         return text.codePoints().allMatch(cp -> {
             if (cp < 0x80) {
@@ -2627,7 +1591,6 @@ public final class DialogueRewriter {
                 }
             }
         } catch (Exception e) {
-            // 讀不到就當作沒有限制，維持原本的行為
         }
         int[] out = new int[flat.size()];
         for (int i = 0; i < out.length; i++) {
@@ -2637,40 +1600,21 @@ public final class DialogueRewriter {
         return out;
     }
 
-    /**
-     * 這一段該配的中文字型<b>本來就該有，卻沒打包進來</b>。
-     *
-     * <h2>為什麼要跟 paired() 分開問</h2>
-     * {@link #paired} 回 {@code null} 有兩種意思，後果差很多：
-     * <ul>
-     *   <li>這個語言<b>沒附字型</b>（日文、韓文、俄文……）——退回預設字型，
-     *       位置會掉，但字看得見。</li>
-     *   <li>這個語言附了字型，<b>就是少了這一份</b>——那退回去的會是一個
-     *       Minecraft 根本沒有的字型 id，而 {@code FontManager} 對查不到的 id
-     *       是拿 {@code AllMissingGlyphProvider} 頂上，也就是
-     *       <b>每一個字都畫成方框</b>。</li>
-     * </ul>
-     *
-     * <p>後者正是對話框有五行（{@code body_0}…{@code body_4}）、選項從
-     * {@code choice_0} 起算，而我們只做到 {@code body_3} 與 {@code choice_1}
-     * 時發生的事：話一長到第五行、選項一滿四個，那一列就整排方框。
-     * 缺字型跟缺字一樣，寧可整段留著英文。
-     */
+    // 缺一份字型時 FontManager 用 AllMissingGlyphProvider，整列方框
     static boolean fontMissing(String font) {
         String lang = WynnChaYuan.language();
         if (!hasDialogueFonts(lang)) {
-            return false;                  // 本來就沒附，走既有的「退回預設字型」
+            return false;
         }
         String name = pairedName(font);
         return name != null && !fontShipped(lang, name);
     }
 
-    /** 這一份字型檔真的在 jar 裡嗎。問一次就記起來，每一幀都查太貴。 */
     private static boolean fontShipped(String lang, String name) {
         return FONTS.computeIfAbsent(lang + "/" + name, key -> {
             Minecraft mc = Minecraft.getInstance();
             if (mc == null) {
-                return true;               // 測試環境沒有資源管理員，不擋
+                return true;
             }
             var id = Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID,
                     "font/dialogue/" + key + ".json");
@@ -2678,7 +1622,6 @@ public final class DialogueRewriter {
         });
     }
 
-    /** 這一段原本的字型對應到我們哪一份中文字型；只有檔名，沒有命名空間。 */
     static String pairedName(String font) {
         String name = null;
         if (font.contains(BODY)) {
@@ -2695,7 +1638,6 @@ public final class DialogueRewriter {
         if (name == null) {
             return null;
         }
-        // 字型 id 後面常常還跟著 class 的 toString 尾巴，只留合法的部分
         StringBuilder clean = new StringBuilder();
         for (char c : name.toCharArray()) {
             if (Character.isLetterOrDigit(c) || c == '_') {
@@ -2712,14 +1654,6 @@ public final class DialogueRewriter {
         if (clean == null) {
             return null;
         }
-        // 字型是<b>按語言</b>分的。同一個碼位在不同地區的寫法不一樣
-        //（「骨」「角」「直」的內部筆畫，中文與日文就不同），所以 Ark Pixel
-        // 才拆成 zh_tw／zh_cn／ja／ko。塞同一份給所有語言，等於讓某些語言
-        // 讀到別的地區的字形。
-        //
-        // 只為<b>真的附了字型</b>的語言配對；其他語言回 null，交給呼叫端退回
-        // 預設字型——位置會掉，但總比整段空白好。之後某個語言開始翻對話時，
-        // 就只是「多一個 ttf + 多六個 JSON」，這裡不用再動。
         String lang = WynnChaYuan.language();
         if (!hasDialogueFonts(lang)) {
             return null;

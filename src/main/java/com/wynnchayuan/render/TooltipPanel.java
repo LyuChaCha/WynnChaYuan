@@ -19,45 +19,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 在原始 tooltip 旁邊畫一個翻譯面板。
- *
- * <p><b>原始 tooltip 完全不動</b>——遊戲照常畫它，所以它的格式、材質包符號、
- * 排版全都原封不動，零破圖風險。我們只是在旁邊多畫一塊。
- *
- * <p>逐行對照：譯文與原文行號 1:1 對齊，沒翻到的行顯示灰色原文。
- * 這讓「翻譯還不完整」這個必然狀態不會破版，也看得出進度。
- */
 public final class TooltipPanel {
 
 
-    /** 上一次做過診斷計數的 tooltip，用來避免每幀重複計數。 */
     private static List<Component> lastDiagnosed = List.of();
 
     private TooltipPanel() {}
 
-    /**
-     * 同一份 tooltip 的翻譯結果，按內容記住。
-     *
-     * <h2>為什麼要有</h2>
-     * 懸停期間遊戲<b>每一幀</b>都觸發一次 tooltip 事件，而 {@link #translateLines}
-     * 要對整份內容做整段查表（從 maxBlockLines 一路試到兩行）、逐行查表、
-     * 段落判定與排版。一份二三十行的裝備 tooltip 每幀重算一次，背包與箱子裡
-     * 滑鼠停著不動也在持續燒 CPU，掃過之處幀率直接掉一截。
-     * 同一份內容的翻譯結果其實不會變，記住就好。
-     *
-     * <h2>什麼時候作廢</h2>
-     * <ul>
-     *   <li>內容變了（鑑定百分比、藥水倒數）——key 對不上，自動重翻。</li>
-     *   <li>語料重載（換語言、背景同步更新）——{@code generation} 對不上，
-     *       那一筆直接失效。</li>
-     *   <li>物品名稱顯示模式（Shift 暫看原文、F6 的三段開關）——
-     *       {@code namesWithOriginal} 與 {@code translateNames} 跟著結果一起記。</li>
-     * </ul>
-     *
-     * <p>LRU 上限 {@value #CACHE_LIMIT} 份：倉庫頁一頁幾十格，掃過兩三頁
-     * 舊的就自然淘汰，不會無限長大。
-     */
     private static final int CACHE_LIMIT = 256;
 
     private static final Map<List<Component>, CachedLines> LINES_CACHE =
@@ -69,29 +37,10 @@ public final class TooltipPanel {
                 }
             };
 
-    /** 一次翻譯的結果，連同當時的語料狀態。 */
     private record CachedLines(int generation, boolean namesWithOriginal,
                                boolean translateNames, boolean peekPlain,
                                List<Component> lines) {}
 
-    /**
-     * {@link #translateLines} 的快取版：同一份內容直接回上一次的結果。
-     *
-     * <p>「記住的」與「交出去的」分開：快取裡那一份是<b>不可變</b>的
-     * （{@code List.copyOf}），回傳給呼叫端的永遠是複本。
-     * 就地取代模式會把結果交給 Wynntils 的事件（{@code event.setTooltips}），
-     * 之後還有別的模組的 listener 會跑——往 tooltip 清單後面加行是模組
-     * 最常做的事，而它們加到的如果是我們快取裡那一份，同一件物品下一次
-     * 懸停就會多出那幾行，愈看愈長。那種 bug 只在特定模組組合下出現，
-     * 而且症狀看起來跟快取八竿子打不著，會查很久。
-     *
-     * <p>一份二三十個參考的陣列複製，跟省下來的整段查表比起來可以忽略。
-     * 不回 {@code List.copyOf} 讓誤用當場炸：炸的會是<b>別人模組</b>的
-     * listener，不是我們的程式，那比較糟。
-     *
-     * <p>「一行都沒翻到」的空結果也記——沒翻到的物品恰恰是查表查到底的
-     * 那些，不記的話它們每幀都在白跑。
-     */
     static List<Component> translateLinesCached(List<Component> tooltip,
                                                 TranslationStore store) {
         if (tooltip == null || tooltip.isEmpty() || store == null) {
@@ -103,7 +52,6 @@ public final class TooltipPanel {
             if (hit != null && hit.generation() == store.generation()
                     && hit.namesWithOriginal() == store.namesWithOriginal()
                     && hit.translateNames() == store.translatesNames()
-                    // 按住 Shift 的那幾幀是另一份答案，放開要馬上換回來
                     && hit.peekPlain() == store.peeksPlainNames()) {
                 return pageTitle(key, new ArrayList<>(hit.lines()), store);
             }
@@ -117,13 +65,6 @@ public final class TooltipPanel {
         return pageTitle(key, new ArrayList<>(out), store);
     }
 
-    /**
-     * 內容書卡片的標題（「Visceral Remains [Cave]」）照 F6「任務與洞窟名稱」的設定顯示。
-     *
-     * <p>放在快取<b>外面</b>：記住的那一份永遠是「譯名」的樣子，設定一切換馬上生效，
-     * 不必多一把鑰匙去作廢整個快取。只動第一列，而且只在那一列是標題時才動，
-     * 物品的說明不受影響。見 {@link com.wynnchayuan.translate.PageNames}。
-     */
     private static List<Component> pageTitle(List<Component> tooltip, List<Component> lines,
                                              TranslationStore store) {
         if (lines.isEmpty()) {
@@ -132,26 +73,18 @@ public final class TooltipPanel {
         return com.wynnchayuan.translate.PageNames.titles(tooltip, lines, store.pageNameMode());
     }
 
-    /**
-     * 畫出翻譯面板。
-     *
-     * @param tooltip 原始 tooltip 的每一行（我們只讀不改）
-     */
     public static void render(GuiGraphics graphics, List<Component> tooltip,
                               int mouseX, int mouseY, TranslationStore store) {
         if (tooltip == null || tooltip.isEmpty()) {
             return;
         }
-        // 別的模組加進清單、但 Wynntils 沒有畫出來的區塊要先拿掉，
-        // 否則面板會比原文多出好幾行，看起來像我們憑空生了內容。
         tooltip = ThirdPartySections.strip(tooltip);
         List<Component> lines = translateLinesCached(tooltip, store);
-        // 只在物品換了才記一次，否則每幀都記會灌爆計數
         if (!tooltip.equals(lastDiagnosed)) {
             lastDiagnosed = List.copyOf(tooltip);
             WynnChaYuan.store().noteEvent(lines.isEmpty() ? "panel.noMatch" : "panel.shown");
             if (lines.isEmpty()) {
-                TooltipDebug.dump(tooltip);   // 把實際模板寫出來，才比對得出差在哪
+                TooltipDebug.dump(tooltip);
             }
         }
         if (lines.isEmpty()) {
@@ -164,7 +97,7 @@ public final class TooltipPanel {
         int gap = WynnChaYuan.config().panelGap();
 
         int[] panelBox = box(mc, lines);
-        int panelW = panelBox[0] + 8;           // 8 = tooltip 左右內距
+        int panelW = panelBox[0] + 8;
         int panelH = panelBox[1] + 8;
 
         Place spot;
@@ -174,17 +107,13 @@ public final class TooltipPanel {
         } else {
             spot = place(mc, lines, tooltip, mouseX, mouseY, screenW, screenH, gap);
         }
-        // 譯名面板一律夾進畫面：譯文一定看得到。
         int x = Math.max(0, Math.min(spot.panelX(), Math.max(0, screenW - panelW)));
         int y = Math.max(0, Math.min(spot.panelY(), Math.max(0, screenH - panelH)));
-        // Wynnventory 的價格框也放在物品說明旁邊；跟著游標的面板要讓開它。
-        // 使用者自己釘住位置的（FIXED）不動——那是他挑的地方。
         if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
             x = WynnventoryBox.place(x, y, panelW, panelH,
                     spot.leftSide(), spot.rightSide(), screenW, gap);
         }
 
-        // 原版那一份被我們沒收了（見 RenderListener#onTooltip）：改在這裡自己畫。
         if (PendingTooltip.pushed()) {
             drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
         }
@@ -194,116 +123,56 @@ public final class TooltipPanel {
                 .map(ClientTooltipComponent::create)
                 .toList();
 
-        // 位置我們自己算好了，所以用一個原樣回傳座標的 positioner，
-        // 不讓 Minecraft 的預設定位器把面板挪回滑鼠旁邊。
         OriginalTooltipBox.beginOwn();
         try {
             graphics.renderTooltip(mc.font, components, x, y, EXACT, null);
         } finally {
             OriginalTooltipBox.endOwn();
         }
-        // 記下這一塊在哪，截圖才知道要裁哪裡。名字取自譯文第一行——
-        // 那通常就是物品名稱，當檔名剛好。
         String title = lines.isEmpty() ? null : lines.get(0).getString();
-        // 截圖要框住的是<b>整個 tooltip</b>，包含它自己的底色與框線。
-        // Minecraft 的 tooltip 從 (x, y) 開始畫文字，底色往外多 3px，
-        // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                 panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
     }
 
-    /**
-     * 截圖往外多框幾個像素。
-     *
-     * <p>Minecraft 的 tooltip 底色比文字區往外多 3px，框線再多 1px。
-     * 只框文字區的話，拍出來的圖四邊都缺一條，看起來像被裁壞了。
-     */
     private static final int SHOT_MARGIN = 4;
 
-    /** 原樣採用呼叫端算好的座標。 */
     private static final ClientTooltipPositioner EXACT =
             (screenWidth, screenHeight, x, y, tooltipWidth, tooltipHeight) -> new Vector2i(x, y);
 
-    /**
-     * 翻譯整份 tooltip；查不到的行轉成灰色原文。
-     *
-     * <p>先試<b>整段</b>再退回逐行。技能說明那類的原文本來就是一整段
-     * （見 {@link LineTranslator#translateBlock}），逐行查表永遠查不到。
-     * 由長到短試，讓涵蓋比較多行的條目優先——短的那些多半只是碰巧撞上。
-     */
     public static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
         return translateLines(tooltip, store, true);
     }
 
-    /**
-     * @param reuseParts 每一行的 {@link com.wynnchayuan.capture.LineParts} 只算一次。
-     *     整段查表會從每個起點把 15 到 2 行的窗格都試一遍，同一行先前每試一次就重切一次
-     *     （51 行的說明切了上千次）。切的結果只看那一行本身與當下的玩家名字，這一份 tooltip
-     *     翻完之前都不會變，所以記在這次呼叫裡就好——不放靜態欄位，背景執行緒碰不到。
-     *     {@code false} 是原本每次重切的走法，只給 {@code TooltipPartsReuseTest} 比對結果用。
-     */
     static List<Component> translateLines(List<Component> tooltip, TranslationStore store,
                                           boolean reuseParts) {
         int n = tooltip.size();
         List<Component> out = new ArrayList<>(n);
         boolean anyTranslated = false;
 
-        // 置中與靠左在單獨一行上長得一模一樣，得看整塊才分得出來
         boolean[] centered = BlockLayout.centered(tooltip);
 
         List<StyledText> styled = new ArrayList<>(n);
         for (Component line : tooltip) {
             styled.add(StyledText.fromComponent(line));
-            // 角色選單的「- Nickname: X」是唯一把暱稱明擺出來的地方。學在這裡
-            // 而不是收集那一端，是因為收集可以被關掉，而暱稱認不出來會害
-            // <b>每一句</b>提到玩家名字的台詞都翻不出來。見 SelfNames。
             com.wynnchayuan.capture.SelfNames.learn(line.getString());
         }
 
-        // 每一行切好的片段：這一次呼叫裡同一行只切一次，見 reuseParts
         java.util.IdentityHashMap<StyledText, com.wynnchayuan.capture.LineParts> parts =
                 new java.util.IdentityHashMap<>();
         java.util.function.Function<StyledText, com.wynnchayuan.capture.LineParts> partsOf =
                 reuseParts ? line -> parts.computeIfAbsent(line, com.wynnchayuan.capture.LineParts::of)
                            : com.wynnchayuan.capture.LineParts::of;
 
-        // 第二欄靠左還是靠右，一行看不出來，得看整份 tooltip
         boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
 
-        // 每一行有沒有換成中文。用來把「同一段翻一半」抓回來，見 evenOut。
         boolean[] hit = new boolean[n];
-        // Wynntils「物品猜測」的候選名稱列（見 GuessListRow）。清單不是散文，
-        // 不在「同一段翻一半」裡投票：還沒翻的那一件不該把整份清單拉回英文。
         boolean[] nameList = new boolean[n];
 
         int i = 0;
-        // 每一塊在原文與輸出各佔哪幾行：{原文起, 原文迄, 輸出起, 輸出迄}。
-        //
-        // 輸出<b>不一定</b>跟原文一行對一行。整段查到的譯文可以比原文少行
-        // （技能點數的說明四行英文收成一句中文），之後的每一行在 out 裡的位置
-        // 就比原文往前挪了。先前「同一段不能翻一半」拿原文的行號直接去改 out，
-        // 前面收掉幾行就錯位幾行：改到別的行，或者乾脆超出範圍——
-        // 實機 error-debug 的 IndexOutOfBoundsException 就是這個。見 #regroup。
         List<int[]> spans = new ArrayList<>(n);
-        // 物品名稱那一行：還沒翻的裝備名一律保持原文。
-        //
-        // 名稱後面可能掛著 Wynntils 加的註記，所以要先剝掉——見 #bareName。
-        //
-        // 裝備名是專有名詞，而語料裡有 50 組裝備名跟別的領域撞名（技能詞、
-        // Major ID、介面詞）。沒有這一道，神話矛「Guardian」會拿到同名 Major ID
-        // 的「守護者」。
-        //
-        // 擋在<b>這裡</b>而不是查表層，是因為同一個字在別的位置可能完全正當：
-        // 有一把裝備叫 Reflection，在查表層擋掉會連屬性列的「遠程反傷」一起擋死。
-        //
-        // 但守門是<b>看名字</b>的，不看面板——技能樹的節點標題撞到同名裝備時
-        // 會被一起擋住，所以要先排除技能樹。見 #isAbilityNode。
         boolean abilityPanel = isAbilityNode(styled);
         String gearName = n == 0 || abilityPanel ? null : bareName(
                 partsOf.apply(styled.get(0)).template());
-        // 另外取了名字的裝備（scoped/gear.json）不擋：它在一般語料裡可能還沒翻
-        // （Chief、Red 這種跟介面詞同名的），但它有自己的名字可以用。
-        // F6 關掉物品名稱時照舊留原文。見 TranslationStore#gearOwnName。
         boolean ownName = gearName != null && store.translatesNames()
                 && store.gearOwnName(gearName) != null
                 && TranslationStore.nameRowInner(partsOf.apply(
@@ -312,21 +181,7 @@ public final class TooltipPanel {
             out.add(LineTranslator.untranslated(styled.get(0)));
             spans.add(new int[] {0, 1, 0, 1});
             i = 1;
-            // 名稱其實是<b>兩行</b>：第 0 行寬度是 0，玩家看不到；
-            // 看得到的名字在第 1 行。實機 layout-debug 記得很清楚：
-            //
-            // <pre>
-            //   [0] 內容   0 px  󏀀Immolation󏀀
-            //   [1] 內容 125 px  󏿰󏿏󐀅Immolation [66.3%]
-            // </pre>
-            //
-            // 只擋第 0 行等於擋了看不見的那一行，第 1 行照樣落到逐段那條路，
-            // 被詞彙表換掉——神話矛「Guardian」拿到同名 Major ID 的「守護者」
-            // 就是這樣來的，而 Guardian 其實早就在 gearNameKeys 裡了。
-            //
-            // 條件收得很緊：第 1 行剝掉裝飾之後必須<b>就是同一個名字</b>。
-            // 素材不在 gearNameKeys（ingredient.json 標了 gearNames:false），
-            // 技能樹的節點標題也不是裝備名，兩者都碰不到這一段。
+            // 物品名稱是兩行：第 0 行寬度 0 看不見
             if (n > 1 && gearName.equals(bareName(
                     partsOf.apply(styled.get(1)).template()))) {
                 out.add(LineTranslator.untranslated(styled.get(1)));
@@ -334,12 +189,6 @@ public final class TooltipPanel {
                 i = 2;
             }
         }
-        // 製作物的名字是<b>製作者自己取的</b>，跟別人的 ID 一樣不翻。
-        //
-        // 實機回報（使用者 2026-10-12）：別人做的藥水取名「XP 30」，被語料裡的
-        // 「XP {~}」翻成「經驗值 30」。認的是說明裡那一行「Crafted by 某某」——
-        // 有那一行，第一列就是人取的名字。原版的說明名字佔兩列（第 0 列寬度是 0），
-        // WynnMod 重畫的只有一列；第二列剝掉裝飾之後是同一個名字才一起留。
         if (i == 0 && n > 0 && !abilityPanel && crafted(styled)) {
             String name = bareName(partsOf.apply(styled.get(0)).template());
             if (!name.isEmpty()) {
@@ -354,16 +203,6 @@ public final class TooltipPanel {
                 }
             }
         }
-        // 名字剛好是一件裝備，但這份說明<b>不是</b>物品——介面上的按鈕。
-        //
-        // 實機回報（使用者 2026-10-22）：任務《Off the Rails》的書本介面，返回箭頭的
-        // 說明是「Return / Click this to return to / the rest of your notes」，名稱那一列
-        // 被翻成戒指 Return 的譯名，「譯名加原文」下還附了「(Return)」。語料裡只有
-        // 那枚戒指用這個原文，查表當然只答得出戒指；分得出來的是<b>這份說明長什麼樣</b>，
-        // 見 #itemShaped。名稱列以外（敘述、聊天、名牌）不歸這裡管。
-        //
-        // 整條鍵另外有條目的不擋：Lootrun 使命卡的「{#}Redemption」在語料裡有自己的
-        // 一條，查到的是使命名，不是那件護腿。
         if (i == 0 && n > 0 && !abilityPanel) {
             String row0 = partsOf.apply(styled.get(0)).template();
             String name = bareName(row0);
@@ -372,7 +211,6 @@ public final class TooltipPanel {
                     && !itemShaped(styled)) {
                 out.add(LineTranslator.untranslated(styled.get(0)));
                 spans.add(new int[] {0, 1, 0, 1});
-                // 留原文的名稱不在「同一段翻一半」裡投票，見 nameList 的說明
                 nameList[0] = true;
                 i = 1;
                 if (n > 1 && name.equals(bareName(
@@ -384,20 +222,8 @@ public final class TooltipPanel {
                 }
             }
         }
-        // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
-        // 第三行起是敘述，裡面提到的同名裝備不附原文。見
-        // TranslationStore#holdAppendedOriginal。
-        // 這份說明的頭兩行是不是「物品的名稱列」。是的話，跟技能同名的裝備在這兩行
-        // 用它自己的名字（scoped/gear.json），見 TranslationStore#gearOwnName。
-        //
-        // 認得很窄：第 0 行必須是名稱列的外框（圖示夾著名字，見 #nameRowInner），
-        // 而且不是技能樹的節點。Lootrun 使命卡的標題是「{#}Redemption」——只有開頭
-        // 一個圖示，不是名稱列，所以使命「救贖」不會變成那件護腿的名字。
-        // （新版卡片的標題是裸名，見下面的 lootrunTitle。）
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
                 partsOf.apply(styled.get(0)).template()) != null;
-        // Lootrun 試煉卡／使命卡的標題：新版卡片是裸名（Hubris），只查得到同名的那件
-        // 裝備。標題那一列改問使命名自己的譯名，見 TranslationStore#lootrunTitle。
         boolean lootrunTitle = n > 0 && isLootrunCard(styled)
                 && com.wynnchayuan.translate.LootrunNames.isName(bareName(
                         partsOf.apply(styled.get(0)).template()));
@@ -406,8 +232,6 @@ public final class TooltipPanel {
                 TranslationStore.holdAppendedOriginal(i >= 2);
                 TranslationStore.nameLine(itemRows && i < 2);
                 TranslationStore.lootrunTitle(lootrunTitle && i == 0);
-                // Wynntils「物品猜測」一列一列的候選物品名：每一格照名稱的規矩換、
-                // 縮排與逗號原樣留著。先於整段查表——這幾列不是散文。見 GuessListRow。
                 com.wynnchayuan.translate.GuessListRow.Row listRow = abilityPanel ? null
                         : com.wynnchayuan.translate.GuessListRow.of(styled.get(i), store);
                 if (listRow != null) {
@@ -443,17 +267,6 @@ public final class TooltipPanel {
                     i += used;
                     continue;
                 }
-                // 從最長試到兩行都沒中，才記一筆。記在這裡而不是 translateBlock 裡面，
-                // 是因為那邊每試一個長度就會記一次——一份八行的素材清單灌十九筆進去，
-                // 真正想查的那一段就永遠排不進診斷檔。
-                //
-                // 光是移到這裡還不夠。素材清單的每一行都查不到，而每一行都是一個新的
-                // 起點——同一份清單以「整段往後挪一行」的方式被記了十幾次，
-                // 二十個名額全被它吃光，使用者真正要查的那一段照樣看不到。
-                //
-                // 會被自動斷行的段落一定<b>接在空行後面，或從第一行開始</b>，
-                // 所以起點落在段落中間的那些窗格本來就不是要查的東西，不必記。
-                // 一樣要剝色碼：帶顏色的空行 getString 是「§7」，不算 blank。
                 boolean paragraphStart =
                         i == 0 || styled.get(i - 1).getStringWithoutFormatting().isBlank();
                 if (longest >= 2 && paragraphStart) {
@@ -466,20 +279,6 @@ public final class TooltipPanel {
                     }
                     LineTranslator.noteBlockMiss(key.toString(), store);
                 }
-                // cards.json 另外記一份，但記的是<b>那一段</b>，不是上面那個窗格。
-                //
-                // majorid-debug.txt 記的是散文、而且有名額上限（實機常被登入時的
-                // 聊天洗光）；cards.json 沒有上限、只去重，而且寫成可以直接併進
-                // 語料的形狀。
-                //
-                // 為什麼不共用上面的 key：那個窗格長達 maxBlockLines（實測 15）行，
-                // 一張 19 行的迷你任務卡會把底下 Wynntils 自己加的中文提示一起吃
-                // 進來——含中文的鍵會被隱私那一關整段擋掉，擋掉的正是卡片敘述本身。
-                // 見 CardDump#paragraphKey。
-                //
-                // 不受上面 longest >= 2 拘束：那個條件是窗格邏輯的，跟段落無關。
-                //
-                // 算繪路徑上的東西，出事就當沒發生。
                 if (paragraphStart) {
                     try {
                         String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
@@ -487,18 +286,8 @@ public final class TooltipPanel {
                             com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
                         }
                     } catch (Throwable ignored) {
-                        // 收集絕不能反過來弄壞畫面
                     }
                 }
-                // 撞名的裝備名不是只會出現在名稱那一行。套裝的成員清單、寶箱裡的
-                // 獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」單獨佔一行——那些行
-                // 一樣會被同名的技能／Major ID 譯文頂掉。實測 33 個裝備名撞名，
-                // 其中 23 個不管裸的還是帶項目符號都會被換掉。
-                //
-                // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
-                // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
-                // 所以分辨面板這一步不能省。見 #isAbilityNode。
-                // 名稱列上另外取了名字的裝備不擋，見上面的 ownName。
                 Component translated =
                         !abilityPanel && !(ownName && i < 2)
                                 && blockedGearName(styled.get(i), store)
@@ -520,12 +309,6 @@ public final class TooltipPanel {
             TranslationStore.nameLine(false);
             TranslationStore.lootrunTitle(false);
         }
-        // 行首縮排的續行（技能樹「效果」的第二、三項、傷害的小項）：模板剝掉的行首空白
-        // 重建時沒有補回來，起點要照原文、或照譯文第一行的數值欄重新補。見 IndentAlign。
-        // 放在 evenOut 之前：那時 out 的行號還跟 spans 對得上。
-        //
-        // 只管<b>一行一條</b>翻的列。整段查到、由我們重折的那幾列（Major ID 的說明）
-        // 每一列裝的不是原文那一列的字，原文的縮排對它沒有意義。
         try {
             int[] rowOf = new int[n];
             java.util.Arrays.fill(rowOf, -1);
@@ -537,23 +320,11 @@ public final class TooltipPanel {
             com.wynnchayuan.translate.IndentAlign.apply(
                     styled, out, rowOf, hit, centered, abilityPanel, TooltipPanel::measure);
         } catch (RuntimeException e) {
-            // 對齊只是錦上添花，出事就照原本的畫
         }
-        // 同一段不能一半中文一半英文，見 evenOut。
-        //
-        // 要拿<b>剝掉色碼</b>的字。StyledText#getString 會把每一段的顏色寫成
-        // 「§7」接在字前面，於是實機上每一行都是「§7gain …」——開頭不是小寫、
-        // 空行也不是空的，段落從來認不出來。Lootrun 賜福「Persnickety」的
-        // 「gain +50% Walk Speed」就這樣自己翻成「gain +50% 移動速度」，
-        // 前三行留英文。測試裡的 Component.literal 沒有顏色，所以一直測不到。
         List<String> plain = new ArrayList<>(n);
-        //
-        // 行首的 À 縮排也要剝。Fabled 物品的 Major ID 續行是「ÀÀbar is under…」，
-        // 開頭不是小寫，段落就斷成一行一段——整段沒翻到時，第一行照樣自己把名稱
-        // 換成中文，畫面上變成「自由跑者: When your sprint」接三行英文。見 LineTranslator#rejoin。
         for (int k = 0; k < n; k++) {
             if (nameList[k]) {
-                plain.add("");                 // 空行：前後都不跟它併成一段
+                plain.add("");
                 continue;
             }
             String text = com.wynnchayuan.capture.GlyphSplitter
@@ -561,37 +332,22 @@ public final class TooltipPanel {
             plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
         if (evenOut(plain, hit)) {
-            // 不能拿原文行號直接改 out——整段收短過的話行號對不上。照每一塊重組，見 #regroup。
             out = regroup(out, spans, styled, plain, hit);
             anyTranslated = false;
             for (int k = 0; k < n; k++) {
                 anyTranslated |= hit[k];
             }
         }
-        // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
         if (!anyTranslated) {
             return List.of();
         }
-        // 翻一半的記一份診斷。看得到「哪一行沒翻、它的模板長什麼樣」，才有辦法
-        // 判斷是語料沒有、還是算繪端擋掉的——這兩件事在畫面上長得一模一樣。
-        // 見 TooltipDebug#dumpPartial。
         if (anyMissed(styled, hit, store)) {
             TooltipDebug.dumpPartial(tooltip, out, hit);
         }
-        // 整塊拉正。中文不能跟著斜（會糊），但只拉正中文那幾行會讓同一份說明
-        // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。
         out.replaceAll(LineTranslator::unslantAll);
-        // 譯文比英文寬（俄文）時整份撐開：靠右的數值收在同一條新右緣、置中的行
-        // 照新寬度重新置中。放得下的語言（中文、日文）原封不動。見 TooltipWiden。
-        //
-        // 放在拉正<b>之後</b>：量的是最後真正要畫的那一份。
-        // 先拆名稱再撐寬：撐寬是照最寬那一行算的，而沒拆開的「譯名 (原文)」
-        // 就是最寬的那一行——先撐開再拆，右邊就空出一大塊。見 NameWrap。
         com.wynnchayuan.translate.NameWrap.Split split =
                 com.wynnchayuan.translate.NameWrap.split(
                         tooltip, out, centered, store, TooltipPanel::measure);
-        // 撐寬之前先量一次左緣。實機回報的「標籤被推歪」，照診斷檔重建出來卻是對的
-        // ——量完這兩次就知道是翻譯那一步加的，還是撐寬那一步加的。
         com.wynnchayuan.translate.LayoutDebug.drawn(
                 "\u7ffb\u5b8c", tooltip, out, TooltipPanel::measure);
         List<Component> fitted = com.wynnchayuan.translate.TooltipWiden.fit(
@@ -600,18 +356,12 @@ public final class TooltipPanel {
         com.wynnchayuan.translate.LayoutDebug.drawn(
                 "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipPanel::measure);
         noteWidened(split.original(), fitted);
-        // 技能樹的說明另外記幾份「原文 vs 畫出去」的片段（含粗體），見 TooltipDebug#dumpAbility。
         if (abilityPanel) {
             TooltipDebug.dumpAbility(tooltip, fitted);
         }
         return fitted;
     }
 
-    /**
-     * 整份說明比原文寬的時候記一筆：記的是譯文裡最寬的那一行。見 OverflowAudit。
-     *
-     * <p>量不到寬度（沒有字型的測試環境）時兩邊都是 0，什麼都不會記。
-     */
     private static void noteWidened(List<Component> original, List<Component> fitted) {
         try {
             if (original == null || fitted == null || original.size() != fitted.size()) {
@@ -632,39 +382,26 @@ public final class TooltipPanel {
                 return;
             }
             if (widest <= frame && com.wynnchayuan.capture.OverflowAudit.size() == 0) {
-                return;                        // 沒撐寬、也沒有記過的要拿掉
+                return;
             }
             String src = com.wynnchayuan.capture.LineParts.of(
                     com.wynntils.core.text.StyledText.fromComponent(original.get(at))).template();
             String dst = com.wynnchayuan.capture.LineParts.of(
                     com.wynntils.core.text.StyledText.fromComponent(fitted.get(at))).template();
             if (src.equals(dst)) {
-                return;                        // 最寬的是沒翻的那一行，不是譯文的事
+                return;
             }
             com.wynnchayuan.capture.OverflowAudit.note(
                     com.wynnchayuan.capture.OverflowAudit.TOOLTIP, src, dst, frame, widest,
                     com.wynnchayuan.capture.OverflowAudit.PX_UNIT);
         } catch (Throwable t) {
-            // 診斷不能弄壞畫面
         }
     }
 
-    /** 量一行畫出來多寬。跟翻譯那邊走同一個入口，測試才量得到。 */
     private static int measure(Component line) {
         return com.wynnchayuan.translate.LineTranslator.width(line);
     }
 
-    /**
-     * 這份 tooltip 裡有沒有<b>語料明明有、畫面上卻是英文</b>的行。
-     *
-     * <h2>為什麼不是「有沒有沒翻的行」</h2>
-     * 那樣幾乎每一份 tooltip 都算數——還沒翻的裝備名本來就該留原文。診斷檔的
-     * 額度會被那些吃光，真正的 bug 一份也記不到。
-     *
-     * <p>問 {@link TranslationStore#hasTranslation} 才問到重點：它跟收集端
-     * 判斷「這是不是缺口」用的是同一個問題。答案是「有譯文」而畫面上卻是英文，
-     * 那就<b>一定</b>是算繪這一端擋掉的，值得記一份。
-     */
     private static boolean anyMissed(List<StyledText> styled, boolean[] hit,
                                      TranslationStore store) {
         for (int k = 0; k < hit.length && k < styled.size(); k++) {
@@ -680,33 +417,6 @@ public final class TooltipPanel {
         return false;
     }
 
-    /**
-     * 同一段話不能一半中文一半英文。
-     *
-     * <h2>為什麼會發生</h2>
-     * 說明文字是被 tooltip 的<b>寬度</b>折成好幾行的，而語料裡很多段落是
-     * 一行一條記下來的——那等於把譯文釘死在<b>翻譯者當時的斷行</b>上。
-     * 玩家的介面縮放不一樣、或句子裡的數字多一位數，斷點就跟著跑：
-     * 有幾行對得上、有幾行對不上，畫面上就成了中英夾雜的一段。
-     *
-     * <p>實測倉庫裡有 83 條這種「只有半句、而且沒有整段條目罩著」的譯文，
-     * 散在九個檔案裡。把它們併成整段是對的長期做法，但併錯了會產生
-     * <b>錯誤的譯文</b>——試過自動併，大約每五段就有一段分組是錯的，
-     * 那比中英夾雜更糟。所以先在算繪這一端擋住症狀：整段要嘛全中文，
-     * 要嘛全英文。
-     *
-     * <p>這跟模組既有的規則是同一條：「一句話裡插幾個方框，比整句留著英文
-     * 糟糕得多」。中英夾雜也是一樣的道理。
-     *
-     * <h2>怎麼認段落</h2>
-     * 看<b>畫面上的原文</b>，不是看語料——原文就是實際的斷行結果，最準：
-     * 上一行沒有收尾（結尾不是句讀），而這一行是小寫開頭，那兩行就是同一句。
-     * 欄位列（{@code Health +120}）、標題、圖示列都不會符合這個形狀。
-     *
-     * @param plain 每一行剝掉圖示之後的純文字
-     * @param hit   每一行有沒有換成中文；<b>會被就地改掉</b>
-     * @return 有沒有動到東西
-     */
     static boolean evenOut(List<String> plain, boolean[] hit) {
         boolean changed = false;
         int i = 0;
@@ -719,9 +429,6 @@ public final class TooltipPanel {
                 boolean some = false;
                 boolean all = true;
                 for (int k = i; k < end; k++) {
-                    // 網址本來就不翻，不能拿它來判定「這段只翻了一半」。
-                    // 「You can get individual boosts at / wynncraft.com/store」
-                    // 就是因為第二行永遠是英文，第一行也跟著被收回英文。
                     if (isAddress(plain.get(k)) || nothingToTranslate(plain.get(k))) {
                         continue;
                     }
@@ -740,7 +447,6 @@ public final class TooltipPanel {
         return changed;
     }
 
-    /** 整行只是一個網址（{@code wynncraft.com/store}、{@code wynn.gg/rules}）。 */
     static boolean isAddress(String line) {
         return line != null && ADDRESS.matcher(line.strip()).matches();
     }
@@ -748,46 +454,11 @@ public final class TooltipPanel {
     private static final java.util.regex.Pattern ADDRESS = java.util.regex.Pattern.compile(
             "(?:https?://)?[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+(?:/\\S*)?");
 
-    /**
-     * 這一行<b>根本沒有字</b>可以翻——整行只剩數字與符號。
-     *
-     * <h2>為什麼要放它一馬</h2>
-     * 洞窟卡與迷你任務的敘述最後一行常常只有座標：
-     *
-     * <pre>
-     *   A deep cave full of scorched
-     *   creatures and earth lies at
-     *   [1603, 155, -5069]
-     * </pre>
-     *
-     * 前兩行的譯文語料裡<b>都有</b>，第三行卻永遠不可能有——
-     * {@link com.wynnchayuan.translate.LineTranslator} 自己就先擋了：模板
-     * （{@code [{~}, {~}, -{~}]}）一個字母都沒有，查表那一步直接回 null。
-     * 於是這一段被算成「翻了一半」，整段退回英文——畫面上整張洞窟卡的敘述
-     * 是英文，可是語料明明查得到。使用者回報的就是這個。
-     *
-     * <p>沒有東西要翻的行，本來就不該在「這一段翻完了沒」裡投票。跟網址那一條
-     * 是同一個道理（見 {@link #evenOut}）。
-     *
-     * <h2>條件要窄</h2>
-     * 只認<b>整行</b>沒有字母的。座標<b>夾在句子裡</b>的那種
-     * （{@code Highlands at [-1288, 86, -1319].}）有實字，照樣要算一票——
-     * 那種行是真的沒翻到，放過去就會夾出半中半英。
-     *
-     * <p>看的是畫面上的字而不是模板：模板裡的 {@code {p}} 帶著一個 p，
-     * 拿模板判會把「整行只有一個地名」誤當成沒字可翻。
-     */
     static boolean nothingToTranslate(String line) {
         return line != null
                 && !com.wynnchayuan.capture.GlyphSplitter.hasLetter(line);
     }
 
-    /**
-     * 畫面上看得到的字。{@code minecraft:invisible} 字型底下的東西不算。
-     *
-     * <p>角色選單的「Character Info」下面掛著一行看不見的識別碼（{@code f213e17b}），
-     * 小寫開頭，被當成標題的續行——識別碼翻不了，標題也跟著被收回英文。
-     */
     static String visibleText(StyledText line) {
         StringBuilder out = new StringBuilder();
         for (com.wynntils.core.text.StyledTextPart part : line) {
@@ -809,7 +480,6 @@ public final class TooltipPanel {
                 && resource.id() != null && "invisible".equals(resource.id().getPath());
     }
 
-    /** 下一行是不是<b>接續</b>上一行的同一句話。 */
     private static boolean continues(String prev, String line) {
         if (prev.isEmpty() || line.isEmpty()) {
             return false;
@@ -822,30 +492,6 @@ public final class TooltipPanel {
         return start >= 'a' && start <= 'z' || endsMidPhrase(prev) || prose(prev, line);
     }
 
-    /**
-     * 兩行都是<b>散文</b>，而且上一行沒有收尾——那就是同一段被折開的。
-     *
-     * <h2>為什麼小寫與連接詞那兩條還不夠</h2>
-     * 首領祭壇的敘述是
-     *
-     * <pre>
-     *   Most people don't think
-     *   Bovemists revere cows for a
-     *   good reason. The people around
-     * </pre>
-     *
-     * 第二行大寫開頭（專有名詞），而第一行結尾是 {@code think}——不是冠詞也不是
-     * 介系詞。兩條判準都不中，於是第一行自成一段：它剛好在語料裡有譯文，
-     * 其餘幾行沒有，畫面上就成了一句中文接三句英文。使用者回報的「翻譯一半」
-     * 就是這個。
-     *
-     * <h2>怎麼跟屬性列分開</h2>
-     * 真正的風險是把<b>屬性列</b>誤當成同一段（「生命 +100」「魔力 +20」各自一行、
-     * 也都沒有句點），那樣只要一行查不到就整疊退回英文。分辨的方法是看內容：
-     * 屬性列一定帶數字或冒號，敘述不帶。另外要求上一行結尾是字母或逗號——
-     * 結尾是 {@code ]} 的是完整的標籤（「Slay Slimes [Mini-Quest]」），
-     * 下一行是另一件事。
-     */
     private static boolean prose(String prev, String line) {
         char end = prev.charAt(prev.length() - 1);
         return (Character.isLetter(end) || end == ',')
@@ -853,13 +499,6 @@ public final class TooltipPanel {
                 && proseLine(prev) && proseLine(line);
     }
 
-    /**
-     * 這一行裡有<b>小寫開頭</b>的字嗎——也就是它是句子，不是一個名稱。
-     *
-     * <p>「Infested Pit Key」整行 Title Case，那是物品名；下一行「Use this item
-     * at the」是新的一句，不能跟它併成同一段（否則名稱翻好了也會被退回英文）。
-     * 「Most people don't think」裡有 people、think，一看就知道是句子的中間。
-     */
     private static boolean hasLowerWord(String line) {
         for (int i = 1; i < line.length(); i++) {
             if (line.charAt(i - 1) == ' ' && Character.isLowerCase(line.charAt(i))) {
@@ -869,10 +508,7 @@ public final class TooltipPanel {
         return false;
     }
 
-    /** 見 {@link #prose}：像散文的一行——好幾個字、不帶數字、不帶冒號。 */
     private static boolean proseLine(String line) {
-        // 項目符號開頭的是清單的一項，不是句子的續行——「- Converts up to
-        // Liquid Emeralds」被併進前一句之後，整疊都退回英文了。
         if (!Character.isLetter(line.charAt(0))) {
             return false;
         }
@@ -887,25 +523,6 @@ public final class TooltipPanel {
         return true;
     }
 
-    /**
-     * 上一行停在一個<b>不可能收尾的字</b>上（冠詞、介系詞、連接詞）。
-     *
-     * <h2>為什麼光看小寫開頭不夠</h2>
-     * 地城鑰匙的說明是
-     *
-     * <pre>
-     *   Use this item at the
-     *   Forgery to craft a
-     *   Infested Pit Key
-     * </pre>
-     *
-     * 後兩行都是大寫開頭——接下去的是專有名詞。只認小寫的話三行各自成段，
-     * 於是語料裡單獨收著的「Infested Pit Key」自己翻成「蟲蝕深坑鑰匙」，
-     * 前兩行因為整段條目沒收而留英文：畫面上就是半句英文接一個中文名字。
-     *
-     * <p>句子不會停在「the」「a」「to」上，所以上一行這樣結尾，下一行不管大小寫
-     * 都是同一句。要求那個字前面還有別的字，免得單字的按鈕或標籤（「To」）被算進來。
-     */
     private static boolean endsMidPhrase(String prev) {
         int space = prev.lastIndexOf(' ');
         if (space <= 0) {
@@ -914,53 +531,20 @@ public final class TooltipPanel {
         return LINK_WORDS.contains(prev.substring(space + 1).toLowerCase(java.util.Locale.ROOT));
     }
 
-    /** 見 {@link #endsMidPhrase}。 */
     private static final java.util.Set<String> LINK_WORDS = java.util.Set.of(
             "a", "an", "the", "of", "to", "at", "for", "with", "from", "into",
             "by", "in", "on", "and", "or", "your");
 
-    /**
-     * 就地取代模式的截圖框。
-     *
-     * <p>截圖鍵要有東西可以裁，得先有人告訴它「這一幀的框在哪」。面板模式是
-     * {@link #render} 畫完順手記的；就地取代模式<b>根本不會走到那裡</b>——
-     * 譯文是寫回事件、由遊戲自己畫的。於是實機上按 F9 沒有反應，
-     * 只有切成面板模式才拍得到。
-     *
-     * <p>這裡只記框、不畫東西。要在遊戲把 tooltip 畫完<b>之後</b>呼叫，
-     * 記下的那一幀才是完整的。
-     *
-     * <p>框的算法跟遊戲畫 tooltip 的一樣：滑鼠右下 12/-12，寬度取最長那行，
-     * 然後夾在畫面內。高度是估的（遊戲每行 10px 再加內距），所以寧可多框幾
-     * 像素——多框到的是背景，少框到的是字。
-     */
     public static void noteShot(GuiGraphics graphics, List<Component> tooltip,
                                 int mouseX, int mouseY) {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.font == null || tooltip == null || tooltip.isEmpty()) {
             return;
         }
-        // 量<b>元件</b>而不是量文字。
-        //
-        // 先前是「最長那行的字寬」配上「行數 × 10」。兩個都不準：
-        // tooltip 裡不是只有文字——物品圖示、屬性長條、空白列各有各的高度，
-        // 而中文那幾行的寬度也不是 mc.font.width(Component) 算得出來的
-        // （那條路不認得元件）。於是拍出來的框比內容大一截，四周夾著
-        // 一片背包背景，使用者回報「圖片格式超出」。
-        //
-        // ClientTooltipComponent 是遊戲自己拿去畫的那個型別，問它就準。
         int[] shotBox = box(mc, tooltip);
         int w = shotBox[0];
         int h = shotBox[1];
 
-        // 位置<b>問遊戲</b>，不要自己算。
-        //
-        // 先前是「滑鼠右下 12/-12，再夾在畫面內」。前半對，後半不對：
-        // 畫面右緣放不下時遊戲是把 tooltip 翻到滑鼠<b>左邊</b>，不是把它
-        // 推回畫面內。框於是整個偏掉，拍出來夾著一片背包背景。
-        //
-        // DefaultTooltipPositioner 就是遊戲畫 tooltip 時用的那一個，直接
-        // 拿來算——之後版本改了規則，這裡跟著改，不會再各算各的。
         org.joml.Vector2ic at = net.minecraft.client.gui.screens.inventory.tooltip
                 .DefaultTooltipPositioner.INSTANCE.positionTooltip(
                         graphics.guiWidth(), graphics.guiHeight(), mouseX, mouseY, w, h);
@@ -971,56 +555,19 @@ public final class TooltipPanel {
                        tooltip.get(0).getString());
     }
 
-    /**
-     * 物品名稱那一行去掉裝飾之後的名字。
-     *
-     * <p>Wynntils 會在名稱後面掛自己的註記，最常見的是鑑定百分比：畫面上是
-     * {@code Willow [67.5%]}，模板就成了 {@code Willow [{~}%]}。拿這個去比對
-     * 裝備名清單當然對不上，於是<b>就地取代模式下裝備名還是被翻掉了</b>——
-     * 實機回報的「Willow 變成柳木」就是這個（{@code npc.json} 裡的柳木是那棵樹，
-     * 跟這件靴子撞名）。
-     *
-     * <p>剝的是<b>結尾</b>連續的方括號，因為註記一律掛在後面；名字本身帶方括號
-     * 的裝備並不存在，而就算有，剝過頭也只是少擋一次，不會誤擋別的東西。
-     */
-    /**
-     * 這一份 tooltip 是技能樹的節點，不是一件裝備。
-     *
-     * <h2>為什麼要分</h2>
-     * 上面那道裝備名守門是<b>看名字</b>的，不看面板。而技能名跟「還沒翻的
-     * 裝備名」撞名的有 <b>25 組</b>，五個職業都有：法師的 Diffraction／
-     * Gleam／Paradox／Sunshower，戰士的 Comet／Harmony／Cyclone，
-     * 刺客的 Echo／Paranoia……只要同名的那件裝備還沒翻，守門就把技能樹的
-     * 節點標題也一起擋住，於是 {@code ability/mage.json} 裡明明寫著
-     * 「晶化蔓延」，畫面上還是 {@code Diffraction}。使用者回報的就是這個。
-     *
-     * <p>擋錯的只有<b>標題那一兩行</b>，敘述照樣翻——所以看起來像是漏翻了
-     * 幾個技能名，其實語料是滿的，capture 也抓不到（{@code hasTranslation}
-     * 說得出譯文，只是畫的時候被擋掉）。
-     *
-     * <h2>怎麼分</h2>
-     * 技能樹的每個節點都有一行「{@code Ability Points:}」，裝備永遠沒有。
-     * 用<b>英文原文</b>比對而不是譯文：原文各語言共用，這條路對
-     * {@code ja_jp}、{@code de_de} 一樣成立。
-     *
-     * <p>認不出來時退回原本的行為（標題留原文），不會比現在更糟。
-     */
     private static boolean isAbilityNode(List<StyledText> styled) {
         return anyMarkers(styled, PANEL_MARKERS);
     }
 
-    /** Lootrun 的試煉卡或使命卡。見 {@link TranslationStore#lootrunTitle}。 */
     private static boolean isLootrunCard(List<StyledText> styled) {
         return anyMarkers(styled, LOOTRUN_CARD_MARKERS);
     }
 
-    /** {@link #PANEL_MARKERS} 裡 Lootrun 卡片的那兩組。 */
     private static final String[][] LOOTRUN_CARD_MARKERS = {
         {"Objective:", "Reward:"},
         {"Trial:", "Reward:"},
     };
 
-    /** 有沒有哪一組行<b>全部</b>出現在這份說明裡。 */
     private static boolean anyMarkers(List<StyledText> styled, String[][] groups) {
         StringBuilder all = new StringBuilder();
         for (StyledText line : styled) {
@@ -1039,47 +586,17 @@ public final class TooltipPanel {
         return false;
     }
 
-    /**
-     * 見 {@link #isAbilityNode}：這幾組行只會出現在<b>不是裝備</b>的面板上。
-     *
-     * <p>一組裡的每一行都要出現才算。Lootrun 的使命用兩行認：單看
-     * {@code Objective:} 太鬆，別的地方也有類似的字。
-     *
-     * <p>撞名的使命名稱有 {@code Redemption}、{@code Stasis}、{@code Heavensent}、
-     * {@code Serendipity}、{@code Ostinato}——五個<b>全部</b>都有同名的裝備、
-     * 而且那些裝備還沒翻，所以五個全部被守門擋住。跟技能樹那次是同一個 bug，
-     * 這裡把面板清單抽出來，下次再遇到只要多加一組。
-     */
     private static final String[][] PANEL_MARKERS = {
-        {"Ability Points:"},            // 技能樹的節點
-        // 已經解鎖的節點<b>沒有</b>「Ability Points:」那一行——那是還沒點的
-        // 節點才有的花費。於是 Wall of Smoke 這種已解鎖的節點認不出是技能面板，
-        // 底下「Blocked by:」列出的技能名就被撞名的裝備守門擋成英文
-        //（Duplicity 同時是刺客技能與一把還沒翻的武器）。
-        // 這兩行只有技能樹會出現，拿來認同一件事。
+        {"Ability Points:"},
         {"Blocked by:"},
         {"Blocked by another ability"},
         {"Click to unlock this ability"},
-        {"Objective:", "Reward:"},      // Lootrun 的使命
-        // Lootrun 的試煉（新版卡片，實機 2026-10-22）：「Trial:」「Reward:」兩段。
-        // 沒認出來時，標題 Hubris 被當成「說明不像物品的裝備名」留了英文。
+        {"Objective:", "Reward:"},
         {"Trial:", "Reward:"},
-        // Lootrun 的賜福選單。Heavensent 同時是使命名、賜福名與裝備名，
-        // 使命那組認得出來，賜福選單卻沒被認出，標題就被守門擋成英文。
         {"Dynamic Boon", "Click to choose!"},
         {"Static Boon", "Click to choose!"},
     };
 
-    /**
-     * 這一行整行就是一個<b>還沒翻的裝備名</b>嗎？
-     *
-     * <p>是的話它得留原文：它自己沒有譯文，唯一查得到的必然是別的領域同名的
-     * 那一條（技能名、Major ID）——換上去一定是錯的。
-     *
-     * <p>行首的項目符號要先剝掉，套裝成員與獎勵清單都長成「- 名稱」。
-     * 剝到剩下的東西必須<b>整個</b>就是那個名字才算，所以
-     * 「- 最多可轉換成液態綠寶石」那種一般句子碰不到這一段。
-     */
     private static boolean blockedGearName(StyledText line, TranslationStore store) {
         String bare = bareName(com.wynnchayuan.capture.LineParts.of(line).template());
         int at = 0;
@@ -1090,35 +607,6 @@ public final class TooltipPanel {
                 || guessList(line.getStringWithoutFormatting(), store);
     }
 
-    /**
-     * 這一行是 Wynntils「物品猜測」列出來的<b>候選裝備清單</b>嗎。
-     *
-     * <h2>實機回報</h2>
-     * 未鑑定靴子底下那份清單長這樣（前綴是 Wynntils 自己的語言檔，所以中文介面
-     * 看到的是「等級」）：
-     *
-     * <pre>
-     *   - 可能性：
-     *   - 等級 87 [113 ₑ]: Bloodlust
-     *   - 等級 88 [113 ₑ]: Sempiternal, Statue
-     * </pre>
-     *
-     * 畫出來是「- 等級 87 [113 ₑ]: 嗜血」——冒號後面那個是<b>靴子的名字</b>，
-     * 拿到的卻是戰士技能 Bloodlust 的譯名。旁邊兩件留著英文，只是因為
-     * 「Sempiternal, Statue」剛好沒有哪一條撞得上。
-     *
-     * <p>上面那道守門只認「剝掉項目符號之後<b>整行</b>就是一個名字」，而這一行前面
-     * 還掛著等級與價格，於是整行落到逐片段那條路，名字那一段被單獨拿去查表。
-     *
-     * <h2>為什麼整行不翻</h2>
-     * 前綴本來就是 Wynntils 照自己的語言檔寫好的，我們這邊沒有東西要翻；
-     * 整行留原樣，跟旁邊沒撞名的那幾行才會一樣。
-     *
-     * <p>形狀認得很窄：「短標籤 數字［方括號］: 名稱, 名稱」，而且名稱裡至少要有
-     * 一個<b>還沒翻的裝備名</b>——「- Streak: 0」「Current Guild Goal: 5/15」
-     * 都碰不到。用畫面上的純文字比對而不是模板：名字裡有地名時模板會把它換成
-     * {@code {p}}，就再也對不上裝備名清單了。
-     */
     static boolean guessList(String plain, TranslationStore store) {
         String text = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(plain).strip();
         int at = 0;
@@ -1138,27 +626,14 @@ public final class TooltipPanel {
         return false;
     }
 
-    /**
-     * 見 {@link #guessList}：「Lv. 87 [113 ₑ]: 名稱」。標籤是 Wynntils 語言檔裡的
-     * 「Lv.」「等級」「等级」……所以不寫死字面，只限制它短、不含數字與冒號。
-     * 價格那一段是另一個開關打開才有，可有可無。
-     */
     private static final java.util.regex.Pattern GUESS_ROW = java.util.regex.Pattern.compile(
             "[^\\d:\\[\\]]{1,16} \\d+(?: \\[[^\\]]*\\])?: (.+)");
 
-    /** 見 {@link #blockedGearName}。跟 {@code LineTranslator} 那一份是同一組。 */
     private static final String BULLETS = "-–—•*";
 
-    /** 「Crafted by 某某」：製作物說明裡寫製作者的那一行。 */
     private static final java.util.regex.Pattern CRAFTED_BY =
             java.util.regex.Pattern.compile("(?:^|[^A-Za-z])Crafted by \\S");
 
-    /**
-     * 這份說明是不是製作物的。
-     *
-     * <p>只看有沒有寫製作者的那一行，不看「CRAFTED」那個標籤——標籤是圖示字，
-     * 資源包一改碼位就認不到了。
-     */
     static boolean crafted(List<StyledText> lines) {
         for (StyledText line : lines) {
             if (line != null && CRAFTED_BY.matcher(line.getStringWithoutFormatting()).find()) {
@@ -1168,28 +643,6 @@ public final class TooltipPanel {
         return false;
     }
 
-    /**
-     * 這份說明長得像不像<b>物品</b>的說明。見 {@link #translateLines} 裡「名字剛好是
-     * 一件裝備」那一段。
-     *
-     * <h2>認哪些</h2>
-     * 看說明本身，不問 Wynntils 的物品模型：快取以說明的內容為鑰匙，翻譯時手上沒有
-     * ItemStack；而且別的模組重畫的說明（WynnMod）、Wynntils 自己組的說明都要認得。
-     * 實機的裝備說明（shiny-tooltip、wynnmod-tooltip 診斷檔）三樣至少有一樣：
-     * <ul>
-     *   <li>名稱列的外框：原版的名稱是兩列，第 0 列「{@code {#}名字{#}}」寬度是 0
-     *       （{@link TranslationStore#nameRowInner}）；</li>
-     *   <li>稀有度與類別的橫幅：名稱下面幾列裡，有一列<b>整列都是圖示</b>（三個以上）。
-     *       WynnMod 重畫的、素材、書卷都有；分隔線只有兩個圖示，不算；</li>
-     *   <li>需求與傷害列：「Combat Level」「Class Type」「Combat Lv. Min」「… DPS」，
-     *       以及製作物的「Crafted by」。</li>
-     * </ul>
-     * 介面按鈕三樣都沒有：一列名字，底下幾列說明（「Price Check」「Increase Amount」
-     * 「Character Info」都是這樣）。
-     *
-     * <p>認錯的代價不對稱：把物品當成按鈕，那件裝備的名稱就變回英文；所以三樣
-     * 任一樣有就算物品。
-     */
     static boolean itemShaped(List<StyledText> styled) {
         int n = styled.size();
         if (n == 0) {
@@ -1213,10 +666,8 @@ public final class TooltipPanel {
         return false;
     }
 
-    /** 橫幅最晚出現在名稱下面第幾列（原版第 2、3 列，WynnMod 第 1、2 列）。 */
     private static final int BANNER_ROWS = 4;
 
-    /** 整列只有圖示（三個以上）與空白：稀有度與類別的橫幅。分隔線是兩個圖示。 */
     static boolean bannerRow(String template) {
         String icon = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
         String rest = template.replace(icon, "");
@@ -1227,7 +678,6 @@ public final class TooltipPanel {
         return icons >= 3;
     }
 
-    /** 只有物品說明才有的列：需求、職業、每秒傷害、製作者。 */
     private static final java.util.regex.Pattern ITEM_ROW = java.util.regex.Pattern.compile(
             "Combat Level|Combat Lv\\. Min|Class Type|Class Req|\\d DPS\\b"
                     + "|(?:^|[^A-Za-z])Crafted by \\S");
@@ -1239,29 +689,15 @@ public final class TooltipPanel {
         while (s.endsWith("]")) {
             int open = s.lastIndexOf('[');
             if (open <= 0) {
-                break;                         // 整行都是括號，那就不是名字
+                break;
             }
             s = s.substring(0, open).strip();
         }
         return s;
     }
 
-    /**
-     * 就地取代要用的版本：翻得到就換掉，翻不到的行<b>保留原文</b>。
-     *
-     * <p>與面板走的是同一套 {@link #translateLines}。先前就地取代自己寫了一個
-     * 逐行迴圈，<b>沒有跨行查表</b>——Major ID 與技能敘述那類原文本來就是一整段，
-     * 逐行永遠查不到，於是面板模式看得到中文、就地取代看到的還是英文。
-     * 同一份語料兩種結果，那是最難查的一種問題。
-     */
     public static List<Component> translateInPlace(List<Component> tooltip,
                                                    TranslationStore store) {
-        // 就地取代是<b>把譯文寫回事件</b>，出一次錯遊戲就畫不出那份 tooltip。
-        // 這裡出任何事都回傳空的，呼叫端的約定是「空的 = 原文不動」。
-        //
-        // 外層 RenderListener 雖然也包了 catch，但那一層只負責「別讓遊戲崩潰」；
-        // 「退回原文」是這個方法自己的承諾，不該靠呼叫端剛好寫對。
-        // 例外照樣記進 error-debug，否則又回到「只知道沒翻、不知道為什麼」。
         try {
             List<Component> translated = translateLinesCached(tooltip, store);
             return translated.isEmpty() ? List.of() : translated;
@@ -1273,23 +709,6 @@ public final class TooltipPanel {
         }
     }
 
-    /**
-     * 「同一段不能翻一半」退回原文之後，照<b>每一塊</b>重組輸出。
-     *
-     * <h2>為什麼不能照行號改</h2>
-     * 輸出跟原文不一定一行對一行：整段查到的譯文可以比原文少行（技能點數的說明
-     * 四行英文收成一句中文）。先前是 {@code out.set(原文行號, 原文)}，前面收掉幾行
-     * 就錯位幾行——改到別的行，或者超出範圍丟例外。實機回報的
-     * {@code IndexOutOfBoundsException: Index 15 out of bounds for length 15} 就是這個。
-     *
-     * <h2>一塊要嘛整塊翻、要嘛整塊不翻</h2>
-     * 收短過的那一塊沒辦法「只退其中一行」——那一行在輸出裡已經不存在了。所以塊裡
-     * 只要有一行被退回，整塊都退回原文。退了之後別的段落可能因此變成一半，
-     * 所以跟 {@link #evenOut} 交替做到不再變動為止（每一輪只會把「翻了」改成「沒翻」，一定停得下來）。
-     *
-     * @param spans 每一塊 {原文起, 原文迄, 輸出起, 輸出迄}，照原文順序、首尾相接
-     * @param hit   每一行有沒有翻；<b>會被就地改掉</b>
-     */
     static List<Component> regroup(List<Component> out, List<int[]> spans,
                                    List<StyledText> styled, List<String> plain, boolean[] hit) {
         boolean changed;
@@ -1330,18 +749,6 @@ public final class TooltipPanel {
         return rebuilt;
     }
 
-    // 曾經在這裡用 Font.split 把過寬的面板折行，但那會把 Nori、Wynnpool 那類
-    // 模組畫的<b>進度條</b>拆掉——那些條是一整串排版符號，中間斷開就散了。
-    // 譯文過寬要處理，但不能用「照寬度硬折」這種對內容一無所知的做法。
-
-    /**
-     * 量出這一疊行畫出來有多大（回傳 {@code {寬, 高}}）。
-     *
-     * <p>問 {@link ClientTooltipComponent}——那是遊戲自己拿去畫的型別，
-     * 問它就跟畫出來的一致。先前是「最長那行的字寬」配上「行數 × 10」，
-     * 兩個都不準：tooltip 裡不是只有文字，物品圖示、屬性長條、
-     * 空白列各有各的高度。拍出來的框因此跟內容對不上。
-     */
     static int[] box(Minecraft mc, List<Component> lines) {
         List<ClientTooltipComponent> parts = lines.stream()
                 .map(Component::getVisualOrderText)
@@ -1351,11 +758,9 @@ public final class TooltipPanel {
         for (ClientTooltipComponent part : parts) {
             w = Math.max(w, part.getWidth(mc.font));
         }
-        // 只有一個元件時遊戲會收掉那 2px 的行距，跟著收才不會多框一條。
         return new int[] {w, (parts.size() == 1 ? -2 : 0) + height(parts)};
     }
 
-    /** 多行元件的總高度，見 {@link #box}。 */
     static int height(List<ClientTooltipComponent> components) {
         int h = 0;
         for (ClientTooltipComponent c : components) {
@@ -1364,30 +769,10 @@ public final class TooltipPanel {
         return h;
     }
 
-    /**
-     * 一幀的擺放結果。
-     *
-     * @param overlaps 夾進畫面之後，譯名面板有沒有壓到原文；有的話原文由我們自己
-     *                 畫到面板外側（見 {@link #place}）
-     * @param leftSide  面板放原文左邊時的 x（給 {@link WynnventoryBox} 換邊用）
-     * @param rightSide 面板放原文右邊時的 x
-     */
     record Place(int panelX, int panelY, int originalX, int originalY, boolean overlaps,
                  int leftSide, int rightSide) {}
 
-    /**
-     * 原 tooltip 的左上角。
-     *
-     * <p>Minecraft 的 {@code DefaultTooltipPositioner} 從游標右下 12/-12 起算，貼邊時
-     * 會自己挪：右邊放不下就翻到游標左側（往左退 24 再加整個寬度，最少留 4）。
-     *
-     * <p><b>寬度要用純文字寬</b>（{@code box()[0]}），不是畫出來的底色寬。原版傳給
-     * positioner 的就是純文字寬，底色是之後才往外各畫 3px 加上去的。
-     *
-     * <p>這一格差 8px 就會翻錯（實機：游標 373、螢幕寬 640、文字寬 254。
-     * 原版 {@code 385 + 254 = 639 <= 640} 不翻；用含內距的 262 就變成
-     * {@code 385 + 262 = 647 > 640} 誤判翻了，面板於是擺到原文真正的位子上）。
-     */
+    // 仿原版 DefaultTooltipPositioner：游標右下 12/-12
     static int originalLeftFor(int mouseX, int screenW, int textWidth) {
         int left = mouseX + 12;
         if (left + textWidth > screenW) {
@@ -1396,38 +781,15 @@ public final class TooltipPanel {
         return left;
     }
 
-    /**
-     * 算出譯名面板與原文各自的位置。
-     *
-     * <h2>規則</h2>
-     * 譯名擺原文的<b>另一側</b>；面板一律夾進畫面，所以譯文一定完整看得到。
-     * 夾完之後若壓到原文，就把原文推到面板外側——那一側放不下就讓它<b>超出畫面</b>。
-     * 寧可原文被裁掉，也不要兩段字疊在一起。
-     */
     static Place place(Minecraft mc, List<Component> lines, List<Component> tooltip,
                        int mouseX, int mouseY, int screenW, int screenH, int gap) {
         int[] panelBox = box(mc, lines);
         int[] originalBox = box(mc, tooltip);
-        // 原文真正畫在哪：別的模組（Wynntils 的縮放、Wynnventory 讓位）可能挪過、縮過。
-        // 量不到才照原版公式推算。見 OriginalTooltipBox。
         OriginalTooltipBox.Box drawn = OriginalTooltipBox.find(originalBox[0], originalBox[1]);
         return layout(panelBox[0], panelBox[1], originalBox[0], originalBox[1], drawn,
                 mouseX, mouseY, screenW, screenH, gap, WynnChaYuan.config().panelSide());
     }
 
-    /**
-     * {@link #place} 的幾何部分（不碰遊戲，測試直接呼叫）。
-     *
-     * <h2>間距</h2>
-     * 使用者設的間距（預設 12）是兩個框<b>畫出來的最外圈</b>之間的距離。Wynncraft 的資源包把
-     * tooltip 的框線畫到文字區外 12px（{@link OriginalTooltipBox#FRAME}），原版只看得到 4px；
-     * 先前照 4px 算，兩邊的框線於是疊了一截（使用者 2026-10-24 回報）。
-     *
-     * <h2>上下</h2>
-     * 面板的第一列對齊原文的第一列。原文被 Wynntils 縮放或挪過的時候，照它實際畫的位置。
-     *
-     * @param drawn 原文這一幀實際畫的位置；{@code null} 時照原版的定位公式推算
-     */
     static Place layout(int panelTextW, int panelTextH, int originalTextW, int originalTextH,
                         OriginalTooltipBox.Box drawn, int mouseX, int mouseY,
                         int screenW, int screenH, int gap, CollectorConfig.PanelSide side) {
@@ -1455,7 +817,6 @@ public final class TooltipPanel {
         int shownH = Math.round(originalTextH * scale);
 
         boolean originalOnRight = originalLeft >= mouseX;
-        // 面板的 x 是它的文字區左緣；兩個框的最外圈之間隔 gap
         int rightSide = originalLeft + shownW + originalFrame + gap + frame;
         int leftSide = originalLeft - originalFrame - gap - frame - panelTextW;
 
@@ -1469,8 +830,6 @@ public final class TooltipPanel {
         x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
         y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
 
-        // 「壓到」照文字區加原版看得見的 4px 判斷：只是資源包那一圈框線碰到不算——
-        // 那種情況把原文推開、改由我們畫，反而會丟掉它的稀有度框。
         int textLeft = originalLeft - 4;
         int textTop = originalTop - 4;
         boolean overlaps = x < textLeft + shownW + 8 && x + panelW > textLeft
@@ -1479,8 +838,6 @@ public final class TooltipPanel {
         int originalX = originalLeft;
         int originalY = originalTop;
         if (overlaps) {
-            // 推到面板外側；原文比畫面還寬時這一推會直接超出邊界，那是有意的。
-            // 推開之後是我們照原大小畫，所以用沒縮放的寬度。
             originalX = originalOnRight ? x + panelTextW + frame + gap + frame
                     : x - frame - gap - frame - originalTextW;
             originalY = y;
@@ -1488,13 +845,6 @@ public final class TooltipPanel {
         return new Place(x, y, originalX, originalY, overlaps, leftSide, rightSide);
     }
 
-    /**
-     * 這一幀要不要把原版 tooltip 沒收、改由我們自己畫。
-     *
-     * <p>{@code ItemTooltipRenderEvent.Pre} 是唯一能取消它的地方，而位置要等譯名面板
-     * 的尺寸算出來才知道，所以在 Pre 先問一次；答案跟 {@link #render} 用的
-     * {@link #place} 是同一個，兩邊不會各算一套。
-     */
     public static boolean wouldPush(List<Component> tooltip, int mouseX, int mouseY,
                                     TranslationStore store) {
         try {
@@ -1516,11 +866,10 @@ public final class TooltipPanel {
                     mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
                     WynnChaYuan.config().panelGap()).overlaps();
         } catch (Throwable t) {
-            return false;                      // 判斷不出來就照原樣，不要影響原版 tooltip
+            return false;
         }
     }
 
-    /** 在指定座標畫一份 tooltip（原版那一份被我們沒收時用）。 */
     private static void drawAt(GuiGraphics graphics, Minecraft mc,
                                List<Component> lines, int x, int y) {
         List<ClientTooltipComponent> parts = lines.stream()

@@ -11,19 +11,6 @@ import java.nio.file.StandardOpenOption;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * 診斷用：每秒的 FPS 連同當時開著哪個畫面、效能開關的狀態，寫進 {@code debug/fps.txt}。
- *
- * <h2>為什麼</h2>
- * 改 Wynntils 效能（見 {@link HighlightModelCache}）要拿數字比：同一個容器、開關開與關各站一段時間。
- * 叫使用者盯著 F3 抄數字不準，所以記下來我自己讀。
- *
- * <p>每換一次「畫面＋開關」就收一段，寫一行摘要（平均、最低、幾秒）。前 3 秒不算——
- * 剛開容器時要載材質、解析物品，那幾秒的數字不代表平常。
- *
- * <p>只有開著診斷檔（{@code debugDumps}）時才寫。數字是 Minecraft 自己每秒算一次的
- * {@code Minecraft#getFps}，跟 F3 左上角同一個。
- */
 public final class FpsLog {
 
     private FpsLog() {
@@ -45,7 +32,6 @@ public final class FpsLog {
         append("=== 開遊戲 " + java.time.LocalDateTime.now().withNano(0) + " ===");
     }
 
-    /** 每個 client tick 叫一次；一秒取樣一次。 */
     public static void tick(Minecraft mc) {
         if (file == null || mc == null) {
             return;
@@ -104,7 +90,7 @@ public final class FpsLog {
             Files.writeString(file, line + System.lineSeparator(), StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            file = null;                       // 寫不了就不寫了，不影響遊戲
+            file = null;
         }
     }
 }

@@ -4,11 +4,6 @@ import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositione
 
 import java.lang.reflect.Field;
 
-/**
- * Wynntils 的「tooltip 縮放」把太高的 tooltip 縮小時換上的定位方式（{@code ScaledTooltipPositioner}），
- * 它縮了多少。讀它的私有欄位；不是那一種、或讀不到，就當沒縮（1）。
- * 給 {@link WynnventoryLayout#shift} 換算畫面座標用。
- */
 public final class TooltipScaleProbe {
 
     private TooltipScaleProbe() {
@@ -35,7 +30,6 @@ public final class TooltipScaleProbe {
         }
     }
 
-    /** Wynntils 的「tooltip 縮放」有沒有開；讀不到就當開著（交給上面那個 mixin 處理）。 */
     public static boolean fittingEnabled() {
         try {
             return com.wynntils.core.components.Managers.Feature.getFeatureInstance(
