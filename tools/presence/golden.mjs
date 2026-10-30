@@ -387,8 +387,9 @@ api('interaction feedback translation', 'POST', '/discord/interactions', { signe
 api('interaction component', 'POST', '/discord/interactions', { signed: [{ type: 3 }] });
 for (const hash of hashes.slice(0, 2)) {
   api('preview ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash);
-  api('preview figure ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash + '?u=' + STEVE);
+  api('preview figure not wearing ' + hash.slice(0, 8), 'GET', '/cape-preview/' + hash + '?u=' + STEVE);
 }
+api('preview figure wearing', 'GET', '/cape-preview/' + capes.find((c) => c.id === steveId).h + '?u=' + STEVE);
 api('preview bad', 'GET', '/cape-preview/zz');
 api('unknown api', 'GET', '/nothing');
 api('unknown api post', 'POST', '/nothing');

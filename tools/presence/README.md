@@ -266,7 +266,7 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `GET /api/admin/translators` | | 譯者名單（開發者與管理員）；每位多一個 `team`：他在名冊上的翻譯團隊，不在名冊上是 `null` |
 | `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr）。名冊上有這個人就把語言加進他的翻譯團隊（當天的 PR），回應的 `team` 是 `{url, added}`、`{teams}`（本來就有）、`{why}`（沒改成，譯者照樣加好）或 `null`（不在名冊上） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
-| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
+| `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：只給正穿著這一件的人（其他 UUID 回 404，不抓頭像、不畫），那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
 | `POST /api/feedback` | `{cat, msg, where?, lang?}` | 送一則回饋（要用 Discord 登入，或從遊戲開、綁了 Discord 的網頁；沒登入 401 `login first`、沒綁 401 `discord first`）。`cat` 是 `translation`／`content`／`website`／`feature`／`other`；`lang` 是語料的語言代號，可以不帶。一小時滿 5 則回 429 `slow down` 與 `until`。回 `{id, issue, issueFailed}` |
 | `GET /api/admin/feedback?cat=&st=` | | 回饋列表，新的在前，照分類與狀態（`open`／`done`）篩；一次最多 200 則，另回 `total` 與兩種狀態的數量（開發者與管理員） |
 | `POST /api/admin/feedback/status` | `{id, st}` | 標成已處理（`done`，記下誰、什麼時候）或重新開啟（`open`）（開發者與管理員） |
