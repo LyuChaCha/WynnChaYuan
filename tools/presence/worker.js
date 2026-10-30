@@ -3258,19 +3258,25 @@ async function handleTrAccept(request, env, now) {
   const github = githubClient(env);
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
-    const branch = 'translate/' + lang.replace('_', '-') + '-' + day;
-    let created = false;
+    let branch = 'translate/' + lang.replace('_', '-') + '-' + day;
+    let url = '';
     const ref = await github('/git/ref/heads/' + branch);
-    if (ref.status === 404) {
+    if (ref.status === 200) {
+      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
+      const list = open.status === 200 ? await open.json() : [];
+      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
+      else branch += '-' + now;
+    } else if (ref.status !== 404) {
+      return no('github ' + ref.status, 502);
+    }
+    const reuse = Boolean(url);
+    if (!reuse) {
       const head = await github('/git/ref/heads/main');
       if (head.status !== 200) return no('github ' + head.status, 502);
       const made = await github('/git/refs', {
         method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
       });
       if (made.status !== 201) return no('github ' + made.status, 502);
-      created = true;
-    } else if (ref.status !== 200) {
-      return no('github ' + ref.status, 502);
     }
     const root = 'src/main/resources/assets/wynnchayuan/translations/' + lang + '/';
     const targets = [record.file];
@@ -3290,8 +3296,7 @@ async function handleTrAccept(request, env, now) {
       });
       if (put.status !== 200 && put.status !== 201) return no('github ' + put.status, 502);
     }
-    let url = '';
-    if (created) {
+    if (!reuse) {
       const pull = await github('/pulls', {
         method: 'POST',
         body: JSON.stringify({
@@ -3302,12 +3307,9 @@ async function handleTrAccept(request, env, now) {
         }),
       });
       if (pull.status !== 201) return no('github ' + pull.status, 502);
-      url = (await pull.json()).html_url;
-    } else {
-      const open = await github('/pulls?head=' + encodeURIComponent('LyuChaCha:' + branch) + '&state=open');
-      const list = open.status === 200 ? await open.json() : [];
-      url = Array.isArray(list) && list[0] ? list[0].html_url : '';
+      url = String((await pull.json()).html_url || '');
     }
+    if (!url) return no('github pull request missing', 502);
     record.status = 'accepted';
     record.done = { item: item.id, by: me.by, t: now, pr: url };
     record.updated = now;
