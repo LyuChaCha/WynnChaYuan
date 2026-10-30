@@ -32,11 +32,39 @@ export function redirect(location, cookie) {
   return new Response(null, { status: 302, headers });
 }
 
+export async function readBounded(request, limit) {
+  if (Number(request.headers.get('content-length') || 0) > limit) return null;
+  if (!request.body) return new Uint8Array(0);
+  const reader = request.body.getReader();
+  const chunks = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.length;
+    if (total > limit) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(total);
+  let at = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, at);
+    at += chunk.length;
+  }
+  return bytes;
+}
+
+const MAX_BYTES_PER_CHAR = 4;
+
 export async function readJson(request, limit = MAX_BODY) {
-  const length = Number(request.headers.get('content-length') || 0);
-  if (length > limit) return undefined;
+  if (Number(request.headers.get('content-length') || 0) > limit) return undefined;
   try {
-    const text = await request.text();
+    const bytes = await readBounded(request, limit * MAX_BYTES_PER_CHAR);
+    if (!bytes) return undefined;
+    const text = new TextDecoder().decode(bytes);
     if (text.length > limit) return undefined;
     const body = JSON.parse(text);
     return body && typeof body === 'object' && !Array.isArray(body) ? body : null;

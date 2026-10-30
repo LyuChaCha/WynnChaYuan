@@ -2,7 +2,7 @@ import { capePreview, figurePreview } from './cape-preview.js';
 import { moderator } from './admin.js';
 import { publicId, who } from './auth.js';
 import { credits } from './credits.js';
-import { HASH, ID, UUID, hex, json, no, readJson } from './http.js';
+import { HASH, ID, UUID, hex, json, no, readBounded, readJson } from './http.js';
 import { OperationBudgetExhausted, claimSlot, listAll, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { remember } from './presence.js';
 import { ownerEntry } from './privacy.js';
@@ -127,10 +127,8 @@ export function burstNote(log, now) {
 export async function handleUpload(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
-  if (Number(request.headers.get('content-length') || 0) > MAX_CAPE_BYTES) {
-    return no('too large', 413);
-  }
-  const bytes = new Uint8Array(await request.arrayBuffer());
+  const bytes = await readBounded(request, MAX_CAPE_BYTES);
+  if (!bytes) return no('too large', 413);
   const found = inspectCape(bytes);
   if (found.why) return no(found.why, found.why === 'too large' ? 413 : 400);
   const refusal = await mayUpload(env, user, now, found.type);
