@@ -10,27 +10,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 緊貼在 {@code {#}} 後面的標點<b>不</b>跟著符號走顏色。
- *
- * <h2>畫面上長什麼樣</h2>
- * 任務完成的橫幅原文是 {@code (對齊字元)§6[Quest Completed]}——整串金色，
- * 而開頭那個對齊字元自己不帶顏色（{@code §6} 在它後面才開始）。譯文
- * {@code {#}[任務完成]} 的左中括號緊貼著 {@code {#}}，於是拿到對齊字元那一段的
- * 白色：畫面上是「白色的 [ 配金色的字」，跟原文對不起來。
- *
- * <h2>為什麼是 {@code {#}} 的問題</h2>
- * 黏著規則本來是對的——{@code §8 [66.24%]} 裡中括號跟數值同屬一個色段，
- * 譯文的括號就該跟著數值走。但那個前提只有數值、地名、玩家名成立：它們是從
- * 一段文字裡挖出來的。符號一定會被切成自己的片段，標點從來沒有跟它同過一段。
- */
 public final class GlyphHugTest {
 
     private static int failures = 0;
 
     private static final int GOLD = 0xFFAA00;
 
-    /** {@code U+D0074}：對齊用的空白字型字元，遊戲實際送來的那一個。 */
     private static final String OFFSET =
             new StringBuilder().appendCodePoint(0xD0074).toString();
 
@@ -85,12 +70,6 @@ public final class GlyphHugTest {
         report();
     }
 
-    /**
-     * 數值那一路照舊：括號跟數值同色時，譯文的括號還是要跟著數值走。
-     *
-     * <p>這一條是防止上面那個修正修過頭——{@code {#}} 不當錨點，
-     * 不表示 {@code {~}} 也不當。
-     */
     private static void hugsStillWork(TranslationStore store) {
         check("中括號仍算黏著", LineTranslator.hugs('['));
         check("空白仍不算黏著", !LineTranslator.hugs(' '));
@@ -109,7 +88,6 @@ public final class GlyphHugTest {
         return null;
     }
 
-    /** 只收葉子——最外層那個容器含有整行，而它自己沒有顏色。 */
     private static List<Component> flatten(Component component) {
         List<Component> out = new ArrayList<>();
         if (component.getSiblings().isEmpty()) {

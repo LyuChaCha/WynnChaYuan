@@ -20,42 +20,17 @@ import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
-/**
- * 市集搜尋打字時，在聊天框上方列出候選讓玩家自己點。
- *
- * <h2>要解決什麼</h2>
- * 一個中文名對到好幾個物品時（「石頭」），{@link MarketListener} 不敢猜，
- * 只能原樣送出、在聊天裡印一串英文名叫玩家重打。可是那一次搜尋已經送出去了，
- * 市集拿中文去搜只會是空的，玩家得重新開一次搜尋。
- *
- * <p>改成<b>送出之前</b>就讓玩家挑：打字的同時列出候選，點一下（或 Tab）
- * 把英文名填進輸入框，再按 Enter 送出。送出去的已經是英文，
- * {@link MarketListener#rewrite} 看到拉丁字母就不會再動它。
- *
- * <h2>什麼時候出現</h2>
- * 只在市集正在等搜尋字（{@link MarketListener#active()}）而且設定有開的時候。
- * 一般聊天打中文不會跳任何東西。指令、英文、空字串也不列。
- *
- * <h2>為什麼不攔 Enter</h2>
- * 單一對到的情況 {@link MarketListener} 本來就會自己換；攔下 Enter 的話，
- * 玩家打完名字直接送出這個最常見的動作反而要多按一次。
- */
 public final class MarketPicker {
 
-    /** 最多列幾個。再多就請玩家多打幾個字。 */
     private static final int MAX_ROWS = 8;
     private static final int ROW_H = 11;
     private static final int PAD = 4;
     private static final int COLUMN_GAP = 10;
     private static final int ENGLISH = 0xFFAAAAAA;
-    // 底色、框線、選取列都跟著 F6 的主題色走，跟其他面板一致（見 Boxes）。
 
     private MarketPicker() {}
 
-    /**
-     * 掛上聊天畫面。每次聊天畫面初始化都會重新接一次，
-     * Fabric 會在畫面重新 init 時清掉上一輪註冊在這個畫面上的事件。
-     */
+    // Fabric 重新 init 時會清掉畫面上的事件，每次都要重接
     public static void register() {
         ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
             if (screen instanceof ChatScreen chat) {
@@ -74,7 +49,6 @@ public final class MarketPicker {
                 (screen, event) -> !state.key(event.key()));
     }
 
-    /** 一個聊天畫面上的候選清單。 */
     private static final class State {
 
         private final ChatScreen chat;
@@ -87,7 +61,6 @@ public final class MarketPicker {
             this.chat = chat;
         }
 
-        /** 輸入框的字變了才重查；每一幀都查會浪費。 */
         private void refresh() {
             EditBox input = chat.input;
             if (input == null || !enabled()) {
@@ -108,7 +81,6 @@ public final class MarketPicker {
             try {
                 all = WynnChaYuan.translations().market().suggestions(value);
             } catch (Throwable t) {
-                // 語料重新載入到一半之類的狀況：這一輪不列，不能讓聊天畫面壞掉
                 all = List.of();
             }
             rows = all.subList(0, Math.min(MAX_ROWS, all.size()));
@@ -163,7 +135,6 @@ public final class MarketPicker {
                     at.left + PAD, hintY, Colors.FAINT, false);
         }
 
-        /** 點到候選就填進去，回傳 {@code true} 讓聊天畫面不再處理這一下。 */
         boolean click(double mouseX, double mouseY) {
             refresh();
             if (rows.isEmpty()) {
@@ -177,10 +148,6 @@ public final class MarketPicker {
             return true;
         }
 
-        /**
-         * 上下選、Tab 填入。清單沒出現時一個鍵都不攔——
-         * 上下鍵平常是翻聊天紀錄，不能被吃掉。
-         */
         boolean key(int key) {
             refresh();
             if (rows.isEmpty()) {
@@ -204,12 +171,11 @@ public final class MarketPicker {
             EditBox input = chat.input;
             input.setValue(rows.get(index).english());
             input.moveCursorToEnd(false);
-            refresh();                          // 填進去的是英文，清單自己收起來
+            refresh();
         }
 
         private record Layout(int left, int top, int bottom, int width, int zhWidth) {}
 
-        /** 貼著輸入框上緣往上長，寬度跟著內容走。 */
         private Layout layout(Font font) {
             EditBox input = chat.input;
             int zhWidth = 0;

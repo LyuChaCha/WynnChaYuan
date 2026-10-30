@@ -11,87 +11,18 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * 「這串字就是本機玩家」的所有寫法。
- *
- * <h2>為什麼不能照原樣比對帳號名</h2>
- * 使用者回報「有暱稱的時候翻譯就失效」，而它打到的是<b>每一句提到玩家名字的
- * 台詞</b>。實機診斷檔挖出來的原因有兩個，兩個都不是「找不到名字」：
- *
- * <ol>
- *   <li><b>伺服器把名字轉成大寫</b>。帳號名 {@code Wynnchayuan} 到了對話框是
- *       {@code Hey, WYNNCHAYUAN!}、到了角色選單是 {@code 0 QUEST WYNNCHAYUAN}。
- *       照原樣 {@code contains} 一律落空，模板留著英文名字，語料的
- *       「{@code Hey, {u}! …}」永遠對不上。見 {@link #find}。</li>
- *   <li><b>學到了假名字</b>。角色建立畫面有一行
- *       {@code - Nickname: Not Defined}，照收就等於把「Not Defined」當成玩家的
- *       名字。見 {@link #UNSET}。</li>
- * </ol>
- *
- * <p>Wynncraft 的<b>暱稱</b>另外還跟 Minecraft 帳號名毫無關係——它可以有空格、
- * 可以是數字開頭，所以名字不能只從帳號名來。
- *
- * <h2>從哪裡知道暱稱</h2>
- * 都收，哪個真的出現在字裡就用哪個，不去猜哪一個「應該」是對的：
- *
- * <ul>
- *   <li><b>語料自己</b>。鍵是「{@code Hey, {u}! Are you alright in there?…}」，
- *       畫面上是「{@code Hey, WYNNCHAYUAN! Are you…}」，前後都對得上，中間夾的
- *       就是名字。見
- *       {@link com.wynnchayuan.translate.TranslationStore#playerNameIn}。
- *       這一個最可靠：玩家一講話就認得出來，不必先去開哪個介面。</li>
- *   <li>角色選單那一行「{@code - Nickname: X}」，由 {@link #learn} 記下來。</li>
- *   <li>帳號名。<b>不等於</b>暱稱——實機診斷檔裡帳號名是 {@code Green_teaTW}，
- *       畫面上的名字卻是 {@code WYNNCHAYUAN}。</li>
- *   <li>玩家清單與實體的顯示名稱。Wynncraft 這兩個地方拿不到暱稱，留著只是
- *       因為其他伺服器可能有。可能帶著階級前綴，所以連同「去掉開頭幾個詞」的
- *       變體一起收，見 {@link #suffixes}。</li>
- * </ul>
- *
- * <p>比對時取<b>最長</b>的那一個：暱稱整個出現時就不會只換到後半截。
- */
+// 伺服器會把名字轉大寫；暱稱可含空格、與帳號名無關
 public final class SelfNames {
 
-    /** 太短的不收——一兩個字元在句子裡到處都是，換錯比沒換更糟。 */
     private static final int MIN_NAME = 3;
 
-    /** 顯示名稱最多剝掉這麼多個開頭的詞（階級前綴通常只有一個）。 */
     private static final int MAX_PREFIX_WORDS = 3;
 
-    /** 執行時學到的名字（角色選單的「- Nickname:」那一行）。 */
     private static final Set<String> learned = new LinkedHashSet<>();
 
-    /**
-     * 「還沒設定」的那幾種寫法。
-     *
-     * <p>角色<b>建立</b>畫面上就有一行「{@code - Nickname: Not Defined}」——照收
-     * 的話「Not Defined」會被當成玩家的名字，之後每一句出現這兩個字的英文都會被
-     * 抽成 {@code {u}}。實機診斷檔裡真的收到了這一筆。
-     */
     private static final Set<String> UNSET =
             Set.of("not defined", "none", "n/a", "unset", "not set", "-");
 
-    /**
-     * 英文的常用字不能當成名字。
-     *
-     * <h2>踩到什麼</h2>
-     * 顯示名稱帶空格時，{@link #suffixes} 會把開頭的詞一個一個剝掉——那是為了
-     * 認出 {@code [VIP] Someone} 裡的 {@code Someone}。但剝出來的東西沒有人檢查，
-     * 而實機有一位玩家的名字剝到最後剩下 {@code what}。
-     *
-     * <p>後果是<b>整份任務對話被改寫</b>：
-     *
-     * <pre>
-     *   If what I've done was what needed to happen, why do I feel...
-     *   → "If {u} I've done was {u} needed to happen, why do I feel..."
-     * </pre>
-     *
-     * <p>而且這些會被分享回共享語料——別人拿到的是一句句挖了洞的台詞。
-     *
-     * <p>代價是名字剛好等於這些字的玩家不會被認出來。那個代價很小：
-     * 他的名字會原樣留在模板裡，變成一條沒有人對得上的鍵；
-     * 而反過來錯認的代價是<b>語料被汙染</b>，還洗不掉。
-     */
     private static final Set<String> COMMON_WORDS = Set.of(
             "the", "and", "you", "your", "yours", "for", "with", "that",
             "this", "what", "who", "whom", "whose", "why", "how", "when",
@@ -110,11 +41,6 @@ public final class SelfNames {
 
     private SelfNames() {}
 
-    /**
-     * 記下一個「就是我」的名字。
-     *
-     * @param line 畫面上的一整行；不是「- Nickname: X」的話什麼都不做
-     */
     public static void learn(String line) {
         if (line == null) {
             return;
@@ -127,30 +53,10 @@ public final class SelfNames {
         remember(line.substring(at + tag.length()).strip());
     }
 
-    /**
-     * 一個猜出來的名字要有幾條<b>不同的鍵</b>撐腰才算數。見 {@link #propose}。
-     *
-     * <p>曾經是 2。當時語料反推只要求名字後面對上幾個字，打字中途誤認一堆，
-     * 只好靠「兩條鍵互相佐證」擋住。代價是名字要等<b>第二句</b>叫到你的台詞
-     * 才定案——而 King&apos;s Recruit 開頭那幾句全在叫名字，於是前面整段留在英文。
-     *
-     * <p>改成要求名字後面那一段<b>整段</b>吻合之後，誤認歸零（逐字模擬掃過
-     * 三萬條語料），一條鍵就夠可靠了。
-     */
     public static final int MIN_EVIDENCE = 1;
 
-    /** 猜出來的名字 → 夾出它的那些鍵。 */
     private static final Map<String, Set<String>> proposals = new LinkedHashMap<>();
 
-    /**
-     * 提出一個<b>用語料猜出來的</b>名字。
-     *
-     * <p>提出來就會被記住（見 {@link #MIN_EVIDENCE}）。記著是哪一條鍵夾出來的，
-     * 是為了診斷檔分得出「這個名字是語料反推的還是別的來源」。
-     *
-     * @param name   夾出來的名字，可以是 {@code null}
-     * @param source 夾出它的那一條鍵，用來數「幾條不同的鍵」
-     */
     public static void propose(String name, String source) {
         if (name == null || source == null) {
             return;
@@ -162,14 +68,6 @@ public final class SelfNames {
         }
     }
 
-    /**
-     * 直接記下一個名字。
-     *
-     * <p>給{@link com.wynnchayuan.translate.TranslationStore#playerNameIn 語料反推}
-     * 用的入口——那一邊已經確認過是名字，這裡只擋長度與「還沒設定」。
-     *
-     * @param name 可以是 {@code null}，那樣什麼都不做
-     */
     public static void remember(String name) {
         if (name == null) {
             return;
@@ -180,14 +78,6 @@ public final class SelfNames {
         }
     }
 
-    /**
-     * 診斷用：每一個名字是<b>哪裡來的</b>，以及它有多長。
-     *
-     * <p>不印名字本身——那是玩家的名字，不能進診斷檔。可是只印長度也查不動：
-     * 實機回報第四輪時 {@code selfNames} 是「13 個字元、11 個字元」，光看這個
-     * 分不出 13 那筆是帳號名、暱稱、還是語料反推出來的，得回頭翻別的診斷檔對
-     * 字數才猜得到。標上來源就一眼看得出該去查哪一條路。
-     */
     public static List<String> describe() {
         List<String> out = new ArrayList<>();
         for (String name : learned) {
@@ -206,7 +96,6 @@ public final class SelfNames {
         return out;
     }
 
-    /** 目前認得的所有寫法，長的排前面。 */
     public static List<String> all() {
         Set<String> out = new LinkedHashSet<>(learned);
         addName(out, accountName());
@@ -218,34 +107,13 @@ public final class SelfNames {
         return sorted;
     }
 
-    /**
-     * 這段字裡出現的、最長的那個「我」。
-     *
-     * <h2>為什麼不分大小寫</h2>
-     * Wynncraft 的對話框與角色選單把玩家名字<b>整個轉成大寫</b>再送出來：帳號名
-     * {@code Wynnchayuan} 到了台詞裡是
-     *
-     * <pre>
-     *   Hey, WYNNCHAYUAN! Are you alright in there?
-     * </pre>
-     *
-     * <p>照原樣比對就永遠差那一步——實機診斷檔裡側邊面板抽得出 {@code {u}}、
-     * 對話框抽不出，差別只在大小寫。改成不分大小寫之後，兩邊算出來的模板才會
-     * 跟語料的「{@code Hey, {u}! …}」對得上。
-     *
-     * <p>比對到的位置<b>前後不能再接英數</b>：不分大小寫會讓短名字（三個字母的
-     * ID）掉進一般英文單字裡，例如 {@code Ash} 命中 {@code flash}。
-     *
-     * @return <b>照原文大小寫</b>的那一段（呼叫端還要拿它回頭切字串）；
-     *         沒有就回傳 {@code null}
-     */
     public static String find(String text) {
         if (text == null || text.isEmpty()) {
             return null;
         }
         for (String name : all()) {
             if (!usable(name)) {
-                continue;              // 再擋一次：學來的那條路也可能塞進常用字
+                continue;
             }
             int at = indexOfWord(text, name);
             if (at >= 0) {
@@ -255,12 +123,6 @@ public final class SelfNames {
         return null;
     }
 
-    /**
-     * 這串字可以當成「我」嗎。
-     *
-     * <p>見 {@link #COMMON_WORDS}：剝前綴剝出一個英文常用字的話，
-     * 那個字會在每一句台詞裡被換成 {@code {u}}。
-     */
     static boolean usable(String name) {
         if (name == null || name.isBlank()) {
             return false;
@@ -269,7 +131,6 @@ public final class SelfNames {
         return !UNSET.contains(core) && !COMMON_WORDS.contains(core);
     }
 
-    /** 不分大小寫、且前後不接英數的位置；找不到回傳 {@code -1}。 */
     private static int indexOfWord(String text, String name) {
         int last = text.length() - name.length();
         for (int at = 0; at <= last; at++) {
@@ -288,13 +149,6 @@ public final class SelfNames {
         return -1;
     }
 
-    /**
-     * 顯示名稱可能帶著階級前綴（{@code VIP 0 QUEST WYNNCHAYUAN}），所以連同
-     * 去掉開頭幾個詞的變體一起收。
-     *
-     * <p>只往後剝、不往前剝：名字的<b>結尾</b>是穩定的，前面才會被塞東西。
-     * 而且比對時取最長的，所以完整那一個出現時不會挑到被剝過的。
-     */
     static List<String> suffixes(String shown) {
         List<String> out = new ArrayList<>();
         if (shown == null) {
@@ -326,11 +180,10 @@ public final class SelfNames {
             String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
             return name == null || name.isBlank() ? null : name;
         } catch (Throwable t) {
-            return null;                       // 啟動早期還沒有 user
+            return null;
         }
     }
 
-    /** 玩家清單與實體上的顯示名稱——伺服器把暱稱放在這裡。 */
     private static List<String> displayNames() {
         List<String> out = new ArrayList<>();
         try {
@@ -347,7 +200,6 @@ public final class SelfNames {
                 }
             }
         } catch (Throwable t) {
-            // API 換了或還沒連上線：這只是其中一個來源，拿不到不影響其他的
         }
         return out;
     }

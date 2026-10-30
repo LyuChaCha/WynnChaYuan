@@ -24,51 +24,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import java.util.EnumSet;
 import java.util.Set;
 
-/**
- * 訂閱 Wynntils 事件，把沒見過的字串記錄下來。
- *
- * <p>只處理靜態資料庫涵蓋不到的東西——裝備與技能已經可以從官方 CDN 完整離線取得
- * （見 corpus/），沒必要靠玩家在遊戲裡碰運氣遇到。這裡負責的是任務對話、
- * 系統訊息、NPC 名牌這類只存在於連線期間的內容。
- *
- * <p>全部以 {@link EventPriority#LOWEST} 註冊且不取消任何事件：這個 mod 只觀察，
- * 不改變遊戲行為，也不與其他 mod 搶順序。
- */
 public final class CaptureListener {
 
-    // ---------------------------------------------------------------- 對話
-    //
-    // Wynntils 的 DialogueModel 由 ActionBarUpdatedEvent 驅動，四種事件的觸發條件
-    // 差異很大，而且沒有哪一種保證一定會發：
-    //
-    //   Started   對話首次出現
-    //   Updated   內容變了但還沒等待輸入
-    //   Finished  只在 requiresShift 由 false 轉 true 時才發
-    //             → 不需要按 SHIFT 的對話（自動推進、商店 NPC）永遠不會觸發
-    //   Ended     對話關閉時發
-    //
-    // 更麻煩的是對話是「逐字打出來」的，每打一個字就發一次事件，
-    // 所以任何單一事件拿到的都可能是半截句子。實測 62 次 Finished 只換來 1 句完整的話。
-    //
-    // 因此這裡四種都餵進 DialogueBuffer，由它判斷哪一刻才算打完；
-    // 事件種類不再影響記錄與否，只用來計數。
+    // Wynntils 的 Finished 只在 requiresShift 轉真時發
 
     private final DialogueBuffer buffer = new DialogueBuffer();
     private volatile boolean lastHadChoices = false;
 
-    /**
-     * 緩衝區裡<b>那一句</b>的名牌與選項旗標。
-     *
-     * <p>{@link DialogueBuffer} 是延後送出的：判定「打完了」的那一刻，
-     * 畫面上往往已經換成下一句了。所以說話者要在<b>餵進去的時候</b>記下來，
-     * 不能等到記錄的時候才去讀畫面。
-     *
-     * <h2>跟著句子走，不是跟著畫面走（issue #1138）</h2>
-     * 先前只有一個 {@code lastSpeaker}，而且是先更新、再送出上一句：換人講話的
-     * 那一刻，上一句被記成下一個人的話。沒有名牌的句子（旁白、日記）又不會清掉它，
-     * 前一個人的名字就一路黏下去。現在名牌跟著緩衝區裡的那一句：送出時用它自己的，
-     * 換句或靜置送出之後就重來。
-     */
     private volatile String lineSpeaker = null;
     private volatile boolean lineHadChoices = false;
 
@@ -90,33 +52,12 @@ public final class CaptureListener {
         feed(event);
     }
 
-    /**
-     * 注意這裡<b>不能</b>呼叫 {@code buffer.flush()}。
-     *
-     * <p>{@code Ended} 名字看起來像「對話結束」，實際上是<b>每打一個字就發一次</b>。
-     * 原因在 Wynntils 的 {@code DialogueModel#isNewDialogue}：它用
-     * {@code !text.startsWith(currentText)} 判斷是不是新對話，但比對的是<b>含游標圖示</b>
-     * 的原始文字——游標每幀都不一樣，所以每個字都被當成新對話，
-     * 觸發 {@code endDialogue()} + {@code startDialogue()}。
-     *
-     * <p>實測 {@code Ended} 與 {@code Started} 各發了 152 次，而真正的對話只有幾句。
-     * 在這裡 flush 等於把每個前綴都倒出來，正是碎片的來源。
-     *
-     * <p>結束的判定改由 {@link DialogueBuffer} 負責：換句時前綴對不上會自動送出，
-     * 最後一句則由 {@link #flushSettled()} 的靜置計時器處理。
-     */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onDialogueEnded(NpcDialogueEvent.Ended event) {
         WynnChaYuan.store().noteEvent("dialogue.Ended");
         feed(event);
     }
 
-    /**
-     * 把事件內容餵進緩衝區。
-     *
-     * <p>四種事件都餵——它們帶的都是同一句話在不同階段的樣子，
-     * 由 {@link DialogueBuffer} 判斷哪一刻算打完，這裡不需要區分。
-     */
     private void feed(NpcDialogueEvent event) {
         String text = event.getDialogueText();
         if (text == null || text.isBlank()) {
@@ -124,29 +65,20 @@ public final class CaptureListener {
         }
         StyledText styled = StyledText.fromString(text);
         if (GlyphSplitter.isGlyphOnly(styled)) {
-            return;      // 純符號的過場，沒有東西可翻
+            return;
         }
         lastHadChoices = event.hasChoices();
-        // 選項的文字不在 Wynntils 的事件裡，只能從原始 action bar 找；
-        // 那條訊息在 ActionBarListener，所以用旗標串過去。
         com.wynnchayuan.capture.DialogueProbe.noteHasChoices(lastHadChoices);
         DialogueOverlay.setShiftPrompt(event.requiresShift());
-        // 顯示用的譯文吃完整原文（含符號），與收集用的模板是兩條路
         DialogueOverlay.setCurrent(styled, WynnChaYuan.translations(), lastHadChoices);
-        // 說話者要在句子送出之前記下來：等 buffer 判定「打完了」時，
-        // 畫面上通常已經換成下一句、換成下一個人了。
         String speaker = DialogueSpeaker.of(styled);
         if (speaker == null) {
-            // 對話事件的文字只有內文；名牌在 action bar 的原始訊息裡
             speaker = DialogueSpeaker.currentFor(styled.getString());
         }
-        // 對話框沒畫名牌時，說話者是玩家剛剛右鍵點的那個 NPC。見 ConversationPartner
         String partner = com.wynnchayuan.capture.ConversationPartner.forLine();
-        // 句中的圖示收成 {#}，跟就地取代、小框查表用的是同一份。見 DialogueIcons。
         String done = buffer.offer(styled.getString(), GlyphSplitter.toTemplate(
                 com.wynnchayuan.render.DialogueIcons.line(text, WynnChaYuan.translations())));
         if (done != null) {
-            // 送出的是上一句：用上一句自己的名牌，再換成這一句的
             record(done, lineSpeaker, lineHadChoices);
             lineSpeaker = speaker != null ? speaker : partner;
         } else if (speaker != null) {
@@ -157,25 +89,17 @@ public final class CaptureListener {
         lineHadChoices = lastHadChoices;
     }
 
-    /** 供定時器呼叫：內容穩定夠久就送出，避免最後一句卡在緩衝區。 */
     public void flushSettled() {
         String done = buffer.flushIfSettled();
         if (done != null) {
             record(done, lineSpeaker, lineHadChoices);
-            lineSpeaker = null;      // 緩衝區空了，下一句的名牌從頭算
+            lineSpeaker = null;
         }
-        // 聊天扣著等下一列的那幾則也一樣：等夠久了就放行。見 ChatRows。
         if (WynnChaYuan.config().collect()) {
             WynnChaYuan.store().settleChat(System.currentTimeMillis());
         }
     }
 
-    /**
-     * 診斷：語料裡已經有說話者的句子，拿來核對這次認出來的對不對。
-     *
-     * <p>收集只留沒翻過的句子，已經翻好的任務玩一輪什麼都不會留下，看不出說話者
-     * 認得準不準。語料裡大部分台詞本來就標了 speaker，正好當標準答案。
-     */
     private static void auditSpeaker(String template, String speaker) {
         try {
             String known = com.wynnchayuan.capture.DialogueSpeaker.cleanName(
@@ -192,7 +116,6 @@ public final class CaptureListener {
                 WynnChaYuan.store().noteEvent("speaker.audit.mismatch");
             }
         } catch (Throwable ignored) {
-            // 只是診斷
         }
     }
 
@@ -200,16 +123,8 @@ public final class CaptureListener {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
-        // nameplate 是 feed 時記下的：對話框的名牌（從 action bar 原始訊息讀），
-        // 沒有名牌才是玩家右鍵點的那個 NPC（ConversationPartner）。
-        //
-        // 不再退回「玩家正前方那塊名牌」（LookAtTranslator#nearestLabel）去猜：
-        // 實機（issue #1138）猜到的是寵物（別人的 Wybel、玩家自己的寵物），在 Espren
-        // 那座四個 NPC 擠在一起的小公園裡，還把衛兵的話記成園丁、園丁的話記成市民。
-        // 猜錯的說話者比沒有說話者更糟：譯者會照著錯的角色去抓語氣。
         String speaker = nameplate;
         auditSpeaker(completed, speaker);
-        // 追蹤欄上的任務不一定是這段對話的任務。見 QuestGuess
         String quest = CurrentQuest.get();
         boolean withQuest = com.wynnchayuan.capture.QuestGuess.withQuest(
                 quest, speaker,
@@ -222,16 +137,6 @@ public final class CaptureListener {
                                  speaker, withQuest));
     }
 
-    /**
-     * 診斷：語料裡已經標了任務的句子，拿來核對這次掛的任務名對不對。
-     *
-     * <ul>
-     *   <li>{@code match}：掛了，而且就是那個任務</li>
-     *   <li>{@code mismatch}：掛了，但語料說是別的任務</li>
-     *   <li>{@code avoided}：沒掛——而追蹤中的任務本來就不是它的（擋對了）</li>
-     *   <li>{@code missed}：沒掛——但它就是追蹤中那個任務的（擋錯了）</li>
-     * </ul>
-     */
     private static void auditQuest(String template, String quest, boolean withQuest) {
         try {
             if (quest == null) {
@@ -247,21 +152,9 @@ public final class CaptureListener {
                                        : (same ? "missed" : "avoided");
             WynnChaYuan.store().noteEvent("quest.audit." + verdict);
         } catch (Throwable ignored) {
-            // 只是診斷
         }
     }
 
-    // ---------------------------------------------------------------- 聊天
-
-    /**
-     * 只有伺服器發的系統訊息才會被記錄。
-     *
-     * <p>部分任務的敘述、提示、進度是走聊天視窗而不是對話框的，所以這裡也要收。
-     * 但聊天視窗同時混著<b>其他玩家打的字</b>——那些是真人寫的內容，
-     * 既不需要翻譯，記錄下來還會把別人的對話寫進檔案裡。所以採白名單：
-     * 只收 {@code INFO} 與 {@code GAME_MESSAGE}，其餘（世界、公會、隊伍、私訊、
-     * 寵物、喊話）一律不碰。
-     */
     private static final Set<RecipientType> SERVER_MESSAGES =
             EnumSet.of(RecipientType.INFO, RecipientType.GAME_MESSAGE);
 
@@ -272,7 +165,7 @@ public final class CaptureListener {
             return;
         }
         if (!SERVER_MESSAGES.contains(event.getRecipientType())) {
-            return;                  // 玩家發言，不記錄
+            return;
         }
         String template = chatTemplate(event.getMessage(), WynnChaYuan.store()::noteEvent,
                                        WynnChaYuan.translations());
@@ -283,39 +176,10 @@ public final class CaptureListener {
                 template, "chat/" + event.getRecipientType(), System.currentTimeMillis());
     }
 
-    /**
-     * 這一則聊天要收成什麼；不該收就回傳 {@code null}。
-     *
-     * <h2>我們自己重送的那一則不是原文（issue #1124）</h2>
-     * 原文加譯文模式、以及就地取代模式攔下來的面板，譯文都是 {@link ChatBlock}
-     * 用 {@code displayClientMessage} <b>另外送一則</b>——而那一則會再觸發一次
-     * {@code ChatMessageEvent.Match}，分類一樣是 {@code INFO}。翻譯那一邊早就會認
-     * （{@link ChatBlock#isOurs}），收集這一邊卻照收，於是缺口清單裡出現：
-     *
-     * <pre>
-     *   {#}[Görev Tamamlandı]⏎{#}Eve Yolculuk⏎…⏎            - +Access to the {p}
-     *   {#} Arachnid Pusu Dünya Etkinliği {~}dk {~}sn sonra başlıyor! …
-     *   {#}Welcome to Wynncraft!⏎…⏎Sis kalkıyor.
-     * </pre>
-     *
-     * 整塊都是我們畫出去的土耳其文，中間夾著沒翻到的那幾列原文。
-     * {@link com.wynnchayuan.capture.OwnOutputs} 認不出來：它比的是<b>一條</b>譯文，
-     * 而這裡是好幾條接在一起、名字也已經填回去了。沒翻的那幾列原文在它們
-     * <b>第一次</b>進來時就各自收過了，這一則整個略過不會少東西。
-     *
-     * @param skipped 略過的原因（事件名）往這裡記
-     */
     static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped) {
         return chatTemplate(message, skipped, null);
     }
 
-    /**
-     * 同上，多問一關<b>夾著別人名字的句型</b>（炸彈廣播、語料裡帶 {@code {u}} 的那些）：
-     * 認得的話記的是名字收成 {@code {u}} 的模板，名字本身不會進檔案。
-     * 見 {@link LineTranslator#nameFramed}。
-     *
-     * @param store 用來認句型的語料；{@code null} 就只走原本那一關
-     */
     static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped,
                                com.wynnchayuan.translate.TranslationStore store) {
         if (message == null || GlyphSplitter.isGlyphOnly(message)) {
@@ -333,24 +197,13 @@ public final class CaptureListener {
         String template = GlyphSplitter.toTemplate(message);
         if (PlayerDataFilter.carriesPlayerData(template)) {
             skipped.accept("chat.blocked.playerData");
-            return null;         // 夾帶玩家名稱／好友名單／座標，不寫進共享檔案
+            return null;
         }
         return template;
     }
 
-    // ---------------------------------------------------------------- 名牌
-
-    /**
-     * NPC 名牌。
-     *
-     * <p>Wynntils 已經把名牌拆成 icon / name / description 三段，
-     * 所以這裡拿到的 {@code name} 是乾淨的純文字，符號早就被分出去了。
-     */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLabel(TextDisplayChangedEvent.Text event) {
-        // 傷害數字、閃避、格擋跟 NPC 名牌是同一種東西，事件層分不出來。
-        // 收集端也要擋：傷害數字每次都不一樣，收進去只會累積成幾千條
-        // 永遠不會有人翻的垃圾。
         if (CombatText.isIndicator(event.getText())) {
             return;
         }
@@ -359,8 +212,6 @@ public final class CaptureListener {
              .map(NpcLabelInfo.class::cast)
              .ifPresent(info -> {
                  String name = info.getName();
-                 // 這條路先前完全沒過濾——玩家自己命名的寵物與坐騎就是從
-                 // 這裡漏進共享語料的。見 PlayerDataFilter#looksPlayerNamed。
                  if (name != null && !name.isBlank()) {
                      String tmpl = GlyphSplitter.toTemplate(StyledText.fromString(name));
                      if (!PlayerDataFilter.carriesPlayerData(tmpl)
@@ -370,10 +221,7 @@ public final class CaptureListener {
                  }
              });
 
-        // 同時記下「完整名牌」的模板，但<b>砍掉尾巴的狀態列</b>——見 trimStatusLines。
         StyledText full = event.getText();
-        // 「某人的力量之井」這類：主人的名字夾在語料的 {u} 句型裡，記 {u} 那一份。
-        // 那就是語料裡的鍵，名字不會進檔案。見 NameFrames。
         com.wynnchayuan.capture.LineParts owned = full == null || GlyphSplitter.isGlyphOnly(full)
                 ? null : LineTranslator.nameFramed(full, WynnChaYuan.translations());
         if (owned != null) {
@@ -381,18 +229,9 @@ public final class CaptureListener {
                                        "label/floating");
         } else if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
             String template = trimStatusLines(GlyphSplitter.toTemplate(full));
-            // 名牌也要過濾玩家資料。玩家攤位的名牌整塊都是玩家內容——
-            // 名稱是 ID，下面是他自己打的招牌字。先前只有聊天走這道濾網，
-            // 於是收到的 captured.json 裡混了一堆別人的攤位。
             if (!template.isBlank() && GlyphSplitter.hasLetter(template)
                     && !PlayerDataFilter.carriesPlayerData(template)
-                    // 玩家自己取的寵物、坐騎、飾品名。帳號名比對擋不住這些，
-                    // 因為那些名字跟 ID 無關。見 PlayerDataFilter#looksPlayerNamed。
                     && !PlayerDataFilter.looksPlayerNamed(template)) {
-                // 浮在世界裡的字不只有 NPC 名牌：突襲裡選增益的那幾塊、
-                // 地上的指示與提示，用的都是同一種實作。混在 npc.json 裡的話
-                // 譯者要在幾百個 NPC 名字之間翻找，等於找不到，
-                // 所以 Wynntils 沒認成 NPC 的另外放一個檔。
                 boolean isNpc = event.getLabelInfo()
                         .filter(NpcLabelInfo.class::isInstance).isPresent();
                 WynnChaYuan.store().record(
@@ -405,43 +244,12 @@ public final class CaptureListener {
         translateNametag(event);
     }
 
-    /**
-     * 砍掉名牌尾巴那幾行「沒有一個字」的狀態列。
-     *
-     * <h2>為什麼非砍不可</h2>
-     * 怪物名牌的下半是血條與狀態圖示，長這樣：
-     * <pre>
-     * Jagaubis {#}{#}
-     * {#}
-     * {#} {#} {~} ❁ {#}s ⬣ {~}s
-     * </pre>
-     * 那一行會隨著身上掛了哪些增益／減益、各自剩幾秒而<b>每一種組合都不一樣</b>。
-     * 整塊當成一個鍵記下來，同一隻怪就會被拆成幾十條：實機打一輪突襲，
-     * {@code Grootslang Whelp} 一隻就收了 <b>95 條</b>，1,018 條多行名牌其實只有
-     * 173 個不同的名字。譯者打開檔案看到的是一片幾乎一樣的東西，
-     * 而真正缺的字串被埋在裡面。
-     *
-     * <h2>為什麼可以砍</h2>
-     * 名牌的翻譯早就有<b>逐行</b>的退路（見 {@code LineTranslator#labelByLine}）：
-     * 只翻得到第一行也照樣貼得回去。所以留著整塊當鍵已經沒有必要——那是
-     * 逐行退路還不存在時的寫法。
-     *
-     * <h2>怎麼分辨「狀態列」與「真的第二行」</h2>
-     * 看那一行有沒有<b>成字</b>的字母（{@link GlyphSplitter#hasWord}）。
-     * 狀態列只有圖示、數值，加上當單位的單個字母（{@code s} 是秒）；
-     * 而 {@code Teleporter / to dock}、{@code Binding Seal / {#} to activate}
-     * 這種真的有第二行的告示看板，第二行是有詞的。
-     *
-     * <p>只從<b>尾巴</b>往回砍：{@code {#}{#} / The Nameless Anomaly} 這種
-     * 第一行是圖示的，前面那行要留著。
-     */
     static String trimStatusLines(String template) {
         if (template == null || template.indexOf('\n') < 0) {
             return template;
         }
         String[] lines = template.split("\n", -1);
         int keep = lines.length;
-        // 狀態詞（Distorted）也算狀態列的一部分，見 GlyphSplitter#STATUS_WORDS
         while (keep > 1 && !GlyphSplitter.hasWordBesidesStatus(lines[keep - 1])) {
             keep--;
         }
@@ -449,16 +257,6 @@ public final class CaptureListener {
                 : String.join("\n", java.util.Arrays.copyOf(lines, keep));
     }
 
-    /**
-     * NPC 頭頂名牌的翻譯。
-     *
-     * <p>名牌浮在 3D 世界裡，沒辦法像 tooltip 那樣在旁邊開一塊面板，
-     * 所以這裡是<b>唯一採用就地替換</b>的地方。
-     *
-     * <p>風險由三件事壓住：{@link com.wynnchayuan.translate.LineTranslator} 保證符號連同
-     * 原字型整段填回、地名原樣保留、佔位符對不上就整行放棄。所以最壞情況是「沒翻到」，
-     * 不會變成亂碼。
-     */
     private void translateNametag(TextDisplayChangedEvent.Text event) {
         CollectorConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
         try {
@@ -466,40 +264,19 @@ public final class CaptureListener {
             if (original == null || GlyphSplitter.isGlyphOnly(original)) {
                 return;
             }
-            // 傷害數字、閃避、格擋也是用名牌實作的，事件層分不出來。
-            // 不擋的話打怪時每被打一下就會冒一個翻譯小框。
             if (CombatText.isIndicator(original)) {
                 return;
             }
-            // 不管現在是哪個模式，都先把原文記下來。
-            //
-            // 小框是從 {@code LookAtTranslator} 的 LABELS 畫出來的，而 LABELS
-            // 只有在名牌事件發生時才填得到東西——那個事件是<b>伺服器送實體資料
-            // 封包</b>時才來的，NPC 站在那裡不動就一次都不會再來。
-            //
-            // 先前只有 LOOK_AT 模式才記。於是玩家在 F6 把「名牌與漂浮字」切到
-            // 「注視時小框」之後，畫面上已經站著的 NPC 一個都不在 LABELS 裡，
-            // 怎麼盯都不會跳框——要走遠到它們卸載、再走回來重新送一次資料才行。
-            // 實機回報就是「切過去之後完全沒反應，以為功能壞了」。
-            //
-            // 記下來的是<b>原文</b>，而且在替換之前。REPLACE 模式下面那一段會
-            // 把封包裡的文字換掉，先記才拿得到原文；小框每一幀都從原文重新翻，
-            // 所以換語言也會立刻跟著變。
             LookAtTranslator.remember(event.getTextDisplay(), original);
             if (!WynnChaYuan.config().showOverlays()
                     || mode == CollectorConfig.NametagMode.OFF) {
                 return;
             }
             if (mode == CollectorConfig.NametagMode.LOOK_AT) {
-                return;                        // 原文完全不動，等玩家看向它
+                return;
             }
-            // 名牌走專用那一支：只認整塊的鍵，而且不碰排版。
-            // 一般那條路查不到整行時會退到逐片段替換再跑 tooltip 的欄位對齊，
-            // 那會把遊戲自己排好的漂浮標籤弄歪——連我們根本沒翻的也一樣。
-            // 見 LineTranslator#translateLabel。
             Component translated =
                     LineTranslator.translateLabel(original, WynnChaYuan.translations());
-            // 名字自己翻得出來、整塊卻沒翻的多行名牌，留下片段結構（診斷檔開著才寫）
             com.wynnchayuan.translate.NameplateProbe.check(
                     "TextDisplay", original, translated, WynnChaYuan.translations());
             if (translated != null) {

@@ -13,23 +13,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 跟技能同名的裝備，在物品說明的名稱列要用<b>它自己的</b>名字。
- *
- * <h2>為什麼要有</h2>
- * 一般語料一個原文只能一種譯法。{@code Frenzy} 是弓箭手技能「得寸進尺」，
- * 也是一把長矛——那把矛在畫面上就叫「得寸進尺」。這種裝備有五十幾件
- * （使用者 2026-10-09：「46 件也要處理」）。{@code scoped/gear.json} 另外收它們
- * 當物品名稱時的譯名，只在名稱列生效。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>物品說明的名稱列用裝備自己的名字；三種名稱模式都照規矩；</li>
- *   <li>技能樹的節點、Lootrun 使命卡、敘述裡提到的同一個字，<b>不</b>變成裝備名；</li>
- *   <li>名稱列以外直接查表，拿到的還是一般語料那一份；</li>
- *   <li>一般語料裡還沒翻、但另外取了名字的裝備（跟介面詞同名的），名稱列也翻得出來。</li>
- * </ul>
- */
 public final class GearOwnNameTest {
 
     private static int failures = 0;
@@ -55,7 +38,6 @@ public final class GearOwnNameTest {
                    "a1": {"src": "Redemption", "dst": "救贖", "role": "name"}
                  }}
                 """, StandardCharsets.UTF_8);
-        // 技能、使命、介面詞：跟上面三件裝備同一個原文
         Files.writeString(dir.resolve("ability").resolve("archer.json"), """
                 {"_meta": {"itemNames": false},
                  "entries": {
@@ -83,7 +65,6 @@ public final class GearOwnNameTest {
         check("裝備專用的名字讀得到", "狂躁之矛".equals(store.gearOwnName("Frenzy")));
         check("沒有另外取名的回 null", store.gearOwnName("Oak Wood Dagger") == null);
 
-        // ---- ★ 物品說明：名稱列用裝備自己的名字 ----
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
         List<String> item = shown(item("Frenzy"), store);
         check("★ 看得見的那一行是裝備自己的名字（實際 " + item.get(1) + "）",
@@ -92,11 +73,9 @@ public final class GearOwnNameTest {
         check("敘述裡提到的同一個字照舊是技能名（實際 " + item.get(2) + "）",
                 item.get(2).contains("得寸進尺") && !item.get(2).contains("狂躁之矛"));
 
-        // ---- ★ 名稱列以外，同一個字還是一般語料那一份 ----
         check("★ 名稱列畫完之後直接查表，拿到的是技能名（實際 " + store.lookup("Frenzy") + "）",
                 "得寸進尺".equals(store.lookup("Frenzy")));
 
-        // ---- 譯名加原文 ----
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
         List<String> both = shown(item("Frenzy"), store);
         check("★ 譯名加原文：附的是英文原名（實際 " + both.get(1) + "）",
@@ -109,7 +88,6 @@ public final class GearOwnNameTest {
         check("沒撞名的裝備照舊附原文",
                 shown(item("Oak Wood Dagger"), store).get(1).contains("橡木匕首 (Oak Wood Dagger)"));
 
-        // ---- F6 關掉物品名稱 ----
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
         List<String> off = shown(item("Frenzy"), store);
         check("★ 關掉物品名稱時留原文（實際 " + off.get(1) + "）",
@@ -117,12 +95,10 @@ public final class GearOwnNameTest {
                         && !off.get(1).contains("得寸進尺"));
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
 
-        // ---- ★ 一般語料沒翻、但另外取了名字的裝備 ----
         List<String> chief = shown(item("Chief"), store);
         check("★ 跟介面詞同名的裝備：用裝備的名字，不是介面那個詞（實際 " + chief.get(1) + "）",
                 chief.get(1).contains("酋長之矛") && !chief.get(1).contains("首領"));
 
-        // ---- ★ 不是物品的面板不受影響 ----
         List<String> node = shown(abilityNode("Frenzy"), store);
         check("★ 技能樹的節點標題還是技能名（實際 " + node.get(0) + "）",
                 node.get(0).contains("得寸進尺") && !node.get(0).contains("狂躁之矛"));
@@ -130,14 +106,6 @@ public final class GearOwnNameTest {
         check("★ Lootrun 使命卡的標題還是使命名（實際 " + mission.get(0) + "）",
                 mission.get(0).contains("救贖") && !mission.get(0).contains("護腿"));
 
-        // ---- ★ 真實語料：scoped/gear.json 的每一條都要真的顯示在名稱列 ----
-        // 上面是自己造的語料。這裡拿出貨的那一份跑：某一條被別的守門擋掉
-        // （名字像玩家資料、跟整列條目撞到…）只有這樣才看得出來。不寫死任何譯名。
-        //
-        // 六個語言用同一個 store 重載：TooltipPanel 的快取認的是「同樣的內容＋
-        // 同一個 generation」，各開一個新的 store 的話每個都是第 1 代，後面五個語言
-        // 會直接拿到繁中那一輪的結果（實機只有一個 store，不會遇到）。先載一次上面
-        // 那份自己造的語料，讓真實語料從第 2 代開始，也不跟上面那個 store 撞。
         TranslationStore rs = new TranslationStore();
         rs.loadAll(dir);
         for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
@@ -169,8 +137,6 @@ public final class GearOwnNameTest {
                 if (!rows.get(1).contains(name) || !rows.get(0).contains(name)) {
                     missed.add(key + "→" + rows.get(1));
                 }
-                // 技能樹的節點不能變成裝備名。裝備的名字本來就跟技能那個一樣的
-                // （Dancing Blade 兩邊都是「舞動之刃」那一類）看不出差別，不算。
                 String title = shown(abilityNode(key), rs).get(0);
                 if (title.contains(name) && !name.equals(rs.lookup(key))) {
                     leaked.add(key + "→" + title);
@@ -190,8 +156,6 @@ public final class GearOwnNameTest {
         System.exit(0);
     }
 
-    // ------------------------------------------------------------ 造 tooltip
-
     private static final Style LANG = font("minecraft:language/wynncraft");
     private static final Style FRAME = font("minecraft:tooltip/emblem/frame");
     private static final Style SPACE = font("minecraft:space");
@@ -204,7 +168,6 @@ public final class GearOwnNameTest {
         return Component.literal(new String(Character.toChars(cp))).withStyle(style);
     }
 
-    /** 照實機的分段：第 0 行寬度是 0 的名稱、第 1 行五個圖示＋名稱＋鑑定度、第 2 行敘述。 */
     private static List<Component> item(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent hidden = Component.empty();
@@ -227,7 +190,6 @@ public final class GearOwnNameTest {
         return rows;
     }
 
-    /** 技能樹的節點：標題一行，底下有「Ability Points:」。 */
     private static List<Component> abilityNode(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent title = Component.empty();
@@ -241,7 +203,6 @@ public final class GearOwnNameTest {
         return rows;
     }
 
-    /** Lootrun 使命卡：標題只有開頭一個圖示。 */
     private static List<Component> missionCard(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent title = Component.empty();
@@ -252,7 +213,6 @@ public final class GearOwnNameTest {
         return rows;
     }
 
-    /** 翻完的每一行；圖示字元換成 # 好讀。沒翻到的行回原文。 */
     private static List<String> shown(List<Component> rows, TranslationStore store) {
         List<Component> out = TooltipPanel.translateInPlace(rows, store);
         List<String> text = new ArrayList<>();

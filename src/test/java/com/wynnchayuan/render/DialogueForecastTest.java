@@ -13,19 +13,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 預測下一句（{@link DialogueForecast}）：逐字模擬，兩條對話路徑都跑。
- *
- * <h2>釘住什麼</h2>
- * <ul>
- *   <li>上一句認出來、名牌對得上、而且沒有別句可能時，下一句<b>第一個字</b>就是中文。</li>
- *   <li>玩家跳著對話、NPC 重講前面那句、名牌不是語料標的那個人：都<b>不准</b>貼出別句的中文。</li>
- *   <li>猜的那句之後岔開了（那句話不在語料裡）：岔開的那一幀起退回英文，不會一路錯下去。</li>
- *   <li>沒追蹤任務時，上一句所在的任務照樣能拿來縮小範圍（4 個字，跟追蹤欄同一個門檻）。</li>
- *   <li>小框換到下一句時，不准沿用上一句的譯文（舊句子剛好以新句子開頭那種）。</li>
- *   <li>真語料一句接一句模擬：預測開著的時候貼錯的句數不比關著多，第一個中文出現得更早。</li>
- * </ul>
- */
 public final class DialogueForecastTest {
 
     private static int failures = 0;
@@ -33,9 +20,7 @@ public final class DialogueForecastTest {
 
     private static final String QUEST = "Harbour Tale";
     private static final String[][] LINES = {
-        // speaker, src, dst
         {"Tasim", "Welcome aboard, recruit.", "歡迎上船，新兵。"},
-        // 實機收的那種：語料沒標說話者。名牌比對不到它，只有「整個任務裡還有別句」那一道擋得住
         {"", "Get the rope and help me tie this down.", "去拿繩子來幫我綁好。"},
         {"Aledar", "Quickly now, the storm is coming!", "快點，暴風雨要來了！"},
         {"Tasim", "Good work. Now head below deck.", "幹得好。現在下甲板去。"},
@@ -78,9 +63,6 @@ public final class DialogueForecastTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    // ------------------------------------------------------------------
-
-    /** 上一句認出來、名牌對得上：下一句第一個字就是中文。 */
     private static void predicted(TranslationStore store) {
         begin();
         say(store, 1, "Tasim");
@@ -89,7 +71,6 @@ public final class DialogueForecastTest {
               frames.get(0) != null && LINES[2][2].startsWith(frames.get(0)));
         check("一路都是這句自己的譯文", ownLine(frames, LINES[2][2]));
         check("講完是整句譯文", LINES[2][2].equals(last(frames)));
-        // 對照：沒有預測時，沒追蹤任務要打到全庫唯一（12 個字）才認得出來
         DialogueForecast.enabled = false;
         begin();
         say(store, 1, "Tasim");
@@ -99,24 +80,17 @@ public final class DialogueForecastTest {
               blank(without.get(0)));
     }
 
-    /** 玩家跳過一句：真正打出來的是後面那句。兩句同一個字母開頭時要等它分開。 */
     private static void skipped(TranslationStore store) {
         begin();
         say(store, 1, "Tasim");
-        List<String> frames = type(store, LINES[5][1], "Tasim");   // 跳過 #2、#3、#4
+        List<String> frames = type(store, LINES[5][1], "Tasim");
         check("跳著對話不會貼出別句（" + frames.subList(0, 4) + "）",
               ownLine(frames, LINES[5][2]));
         check("「G」同時對得上兩句時先不猜", blank(frames.get(0)));
-        // 「Get 」也還對得上 #1（整個任務裡的另一句），要到「Get s」才分得開
         check("跟任務裡別句分開之前不猜", blank(frames.get(3)));
         check("分開之後（Get s）就認得出來", !blank(frames.get(4)));
     }
 
-    /**
-     * NPC 重講<b>前面</b>那句提醒（玩家講完又回頭找他）。上一句之後的那幾句裡
-     * 只有 #5 以 Get 開頭，但整個任務裡 #1 也是——那就不能猜。#1 語料沒標說話者，
-     * 所以擋住它的是「整個任務」那一道，不是「同一個人講過的話」那一道。
-     */
     private static void repeated(TranslationStore store) {
         begin();
         say(store, 4, "Tasim");
@@ -126,16 +100,12 @@ public final class DialogueForecastTest {
         check("講完仍然翻得出來", LINES[1][2].equals(last(frames)));
     }
 
-    /**
-     * 語料裡沒有的一句，開頭跟預測的那句一樣。這是唯一猜得錯的情形；
-     * 岔開的那一幀起一定要退回英文。
-     */
     private static void unknownLine(TranslationStore store) {
         begin();
         say(store, 4, "Tasim");
         String odd = "Get some water, all of you!";
         List<String> frames = type(store, odd, "Tasim");
-        int split = 9;                                 // 「Get some w」岔開
+        int split = 9;
         boolean back = true;
         for (int i = split; i < frames.size(); i++) {
             back &= frames.get(i) == null;
@@ -143,7 +113,6 @@ public final class DialogueForecastTest {
         check("岔開之後退回英文（" + frames.subList(0, 12) + "）", back);
     }
 
-    /** 名牌不是語料標的那個人：不猜。 */
     private static void wrongSpeaker(TranslationStore store) {
         begin();
         say(store, 1, "Tasim");
@@ -151,7 +120,6 @@ public final class DialogueForecastTest {
         check("名牌對不上時不猜（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
-    /** 沒有名牌（旁白框）：第一層不猜。 */
     private static void noNameplate(TranslationStore store) {
         begin();
         say(store, 1, "Tasim");
@@ -159,7 +127,6 @@ public final class DialogueForecastTest {
         check("沒有名牌時不猜（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
-    /** 上一句是很久以前的事：不當成同一段對話。 */
     private static void stale(TranslationStore store) {
         begin();
         long[] clock = {1_000_000L};
@@ -171,7 +138,6 @@ public final class DialogueForecastTest {
         check("隔太久不沿用上一句（實際 " + frames.get(0) + "）", blank(frames.get(0)));
     }
 
-    /** 沒追蹤任務、沒有名牌：上一句所在的任務照樣縮小範圍（4 個字，跟追蹤欄一樣）。 */
     private static void anchorQuest(TranslationStore store) {
         begin();
         say(store, 2, "Aledar");
@@ -182,7 +148,6 @@ public final class DialogueForecastTest {
         check("一路都是這句自己的譯文", ownLine(frames, LINES[3][2]));
     }
 
-    /** 小框那條路：同樣第一個字就認得出來。 */
     private static void panel(TranslationStore store) {
         begin();
         panelSay(store, 1, "Tasim");
@@ -193,13 +158,9 @@ public final class DialogueForecastTest {
         check("小框：一路都是這句自己的譯文", ownLine(frames, LINES[2][2]));
     }
 
-    /**
-     * 小框換到下一句：上一句「Good work…」，下一句打到「G」——舊的那條原文剛好以
-     * 「G」開頭，先前就照舊擺著上一句的譯文。
-     */
     private static void panelNextLine(TranslationStore store) {
         begin();
-        DialogueForecast.enabled = false;              // 只看沿用那一道
+        DialogueForecast.enabled = false;
         DialogueLeadAudit.speak(null);
         DialogueLeadAudit.panelFrames(LINES[3][1], store);
         List<String> frames = DialogueLeadAudit.panelFrames(LINES[5][1], store);
@@ -208,12 +169,6 @@ public final class DialogueForecastTest {
               frames.get(0) == null || LINES[5][2].equals(frames.get(0)));
     }
 
-    /**
-     * 「Alright!」這種短句好幾個任務都有。它打完會先貼上自己的譯文（句子講完了），
-     * 接著同一句又打下去變成「Alright! Let's see…」。先前把「Alright!」當成上一句、
-     * 隨便挑了第一個有它的任務當範圍，下一個字就貼出那個任務的「Alright! Let's get to
-     * work…」（真語料逐字模擬抓到的）。
-     */
     private static void sharedShortLine() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-short");
         Files.writeString(dir.resolve("quest-dialogue.json"), "{\"entries\":{"
@@ -232,12 +187,6 @@ public final class DialogueForecastTest {
               ownLine(frames, "好！來看看誰比較強！"));
     }
 
-    /**
-     * 限定任務的前綴比對命中 wiki 那條時，會去找「同一句話的校訂版」換過去
-     * （{@code TranslationStore#curatedRival}）。短句的用字重疊率很容易過門檻：
-     * 「Who are you!?」被換成<b>別的任務</b>的「Who are you now?」，整句貼上
-     * 「現在的你是誰？」（真語料逐字模擬抓到的，追蹤任務時就會發生）。
-     */
     private static void otherQuestTwin() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-twin");
         Files.writeString(dir.resolve("quest-dialogue.json"), "{\"entries\":{"
@@ -255,15 +204,6 @@ public final class DialogueForecastTest {
               ownLine(frames, "你是誰！？"));
     }
 
-    /**
-     * 追蹤任務時的前綴比對（4 個字、任務裡唯一）也會挑錯，兩種都是真語料逐字模擬抓到的：
-     * <ul>
-     *   <li>玩家名打到一半：「...S」時「...{u}, can we talk…」還不算以它開頭，
-     *       唯一的候選變成「...S-S-Syndra?」。</li>
-     *   <li>短句被當成同一句的另一個版本：「What brings you here, child.」換成
-     *       quest.json 裡的「What brings you here?」。</li>
-     * </ul>
-     */
     private static void lookalikes() throws Exception {
         SelfNames.remember("STEVEN");
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-alike");
@@ -291,14 +231,10 @@ public final class DialogueForecastTest {
               ownLine(child, "是什麼風把你吹來的，孩子。"));
     }
 
-    /**
-     * 認出是哪一句之前先空著，不露英文（DialogueRewriter#holds）。
-     * 但語料裡根本沒有的句子、字已經停下來的，英文要立刻出來。
-     */
     private static void holdBlank(TranslationStore store) {
         begin();
         DialogueLeadAudit.speak(null);
-        CurrentQuest.set(QUEST);                       // 追蹤任務：第 4 個字就認得出來
+        CurrentQuest.set(QUEST);
         List<String> known = DialogueLeadAudit.typeOut(LINES[0][1], store);
         CurrentQuest.set(null);
         boolean english = false;
@@ -316,18 +252,16 @@ public final class DialogueForecastTest {
               stranger.get(0) == null);
 
         begin();
-        String odd = "Welcome to the jungle, friend.";   // 第 9 個字跟「Welcome aboard」岔開
+        String odd = "Welcome to the jungle, friend.";
         List<String> parted = DialogueLeadAudit.typeOut(odd, store);
         check("岔開、語料裡再也對不上之後英文就出來（第 9 個字 " + quote(parted.get(8)) + "）",
               parted.get(8) == null);
 
         begin();
-        List<String> stopped = DialogueLeadAudit.typeOut("Welc", store);   // 打到一半就停
+        List<String> stopped = DialogueLeadAudit.typeOut("Welc", store);
         check("字停下來了還認不出來：放英文（最後一幀 " + quote(last(stopped)) + "）",
               last(stopped) == null);
 
-        // 空白有時間上限（DialogueRewriter#HOLD_MS）：沒追蹤任務時這句要打到第 12 個字
-        // 才認得出來。從第一幀起算超過上限的那一幀（第 cap+1 幀）起就該是英文
         begin();
         List<String> slow = DialogueLeadAudit.typeOut(LINES[0][1], store);
         int cap = (int) (DialogueRewriter.HOLD_MS / DialogueLeadAudit.MS_PER_CHAR) + 1;
@@ -340,10 +274,6 @@ public final class DialogueForecastTest {
         check("放了英文之後不再蓋回空白", noBlankAfter);
     }
 
-    /**
-     * 空著那幾幀真的畫成空白：整則 action bar 走一次 {@link DialogueRewriter#rewrite}，
-     * 內文那一列不再有英文字母，框與名牌照舊。
-     */
     private static void holdOnScreen(TranslationStore store) throws Exception {
         var field = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
         field.setAccessible(true);
@@ -367,11 +297,6 @@ public final class DialogueForecastTest {
                 + "、含 We：" + shown.contains("We") + "）", out != null && !shown.contains("We"));
     }
 
-    /**
-     * 開頭就是玩家名的句子（test2 實機：「{u}, why don't you do the honours?」打到名字的
-     * 第 6 個字就放了英文）。語料裡「{」開頭的句子排序後前面全是「{#}」，先前只掃前 64 條，
-     * 「{u}…」根本掃不到，就被判成「語料裡沒有這句」。
-     */
     private static void nameFirst() throws Exception {
         SelfNames.remember("STEVEN");
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-name");
@@ -392,11 +317,6 @@ public final class DialogueForecastTest {
               "".equals(frames.get(2)));
     }
 
-    /**
-     * 進度條在上一句停下來時沒滿格：對話還沒講完，下一句就是緊接著那句，
-     * 不必再跟整個任務比（#1 也以 Get 開頭，平常要打到「Get s」才分得開）。
-     * 滿格時（對話講完了，可能是回頭重講）照舊。
-     */
     private static void midway(TranslationStore store) {
         begin();
         com.wynnchayuan.capture.DialogueProgress.settle(100);
@@ -414,11 +334,6 @@ public final class DialogueForecastTest {
         com.wynnchayuan.capture.DialogueProgress.settle(-1);
     }
 
-    /**
-     * 小框模式：換句時「閃爍兩下才完整翻譯」（test2 實機回報）。走真正的
-     * {@link DialogueOverlay#setCurrent}，照 Wynntils 的事件順序餵：上一句整句的 Ended、
-     * 新一句逐字的 Started／Updated，中間再補發一次上一句（實機會這樣）。
-     */
     private static void panelFlicker(TranslationStore store) throws Exception {
         var cfg = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
         cfg.setAccessible(true);
@@ -428,14 +343,13 @@ public final class DialogueForecastTest {
         st.setAccessible(true);
         st.set(null, new com.wynnchayuan.capture.CaptureStore(tmp.resolve("captured.json")));
 
-        // 實機（test3）：Wynntils 給的文字結尾帶一個排版偏移字元，每一幀換一個
         for (int variant = 0; variant < 4; variant++) {
             boolean named = variant % 2 == 0;
             tail = variant >= 2;
             begin();
             DialogueOverlay.resetForTest();
-            String a = LINES[3][1];                    // Good work. Now head below deck.
-            String b = LINES[2][1];                    // Quickly now, the storm is coming!
+            String a = LINES[3][1];
+            String b = LINES[2][1];
             DialogueLeadAudit.speak("Tasim");
             for (int i = 1; i <= a.length(); i++) {
                 panelEvent(a.substring(0, i), store);
@@ -446,13 +360,13 @@ public final class DialogueForecastTest {
             String old = text(DialogueOverlay.currentForTest());
             DialogueLeadAudit.speak(named ? "Aledar" : null);
             List<String> seen = new ArrayList<>();
-            panelEvent(a, store);                      // Ended：上一句整句
+            panelEvent(a, store);
             seen.add(text(DialogueOverlay.currentForTest()));
             for (int i = 1; i <= b.length(); i++) {
                 panelEvent(b.substring(0, i), store);
                 seen.add(text(DialogueOverlay.currentForTest()));
                 if (i == 2) {
-                    panelEvent(a, store);              // 補發上一句
+                    panelEvent(a, store);
                     seen.add(text(DialogueOverlay.currentForTest()));
                 }
             }
@@ -480,11 +394,6 @@ public final class DialogueForecastTest {
         tail = false;
     }
 
-    /**
-     * 「逐字忽快忽慢」（test3）：數字在中文裡比英文早出現，英文還沒打到數字時中文只能停在
-     * 數字前面，打到了就一口氣跳出一大段。跳的那段要分幾幀補上（DialogueRewriter#MAX_STEP），
-     * 一幀不准長太多字，也不准倒退。
-     */
     private static void pacing() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-pace");
         Files.writeString(dir.resolve("quest.json"), "{"
@@ -516,15 +425,8 @@ public final class DialogueForecastTest {
         check("最後補成整句", "請幫我拿 12 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。".equals(last(frames)));
     }
 
-    /** 見 {@link #panelFlicker}：文字結尾要不要帶一個跟著長度變的排版偏移字元。 */
     private static boolean tail;
 
-    /**
-     * 按 SHIFT 跳過（1.0.4 回報）：伺服器一則就把整句送來，之後不太再送更新。
-     * 那一則就要是整句譯文——不能分幾幀補（補字要等零星的封包，畫面卡在半句好幾秒），
-     * 也不能先空著。早跳、半句跳、數字後面跳、一段對話的第一句一開始就跳、
-     * 以及短到剛好是語料裡另一句開頭的那種，兩條路都跑。
-     */
     private static void skip() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-forecast-skip");
         Files.writeString(dir.resolve("quest.json"), "{"
@@ -553,7 +455,6 @@ public final class DialogueForecastTest {
             String src = (String) c[1];
             String want = (String) c[2];
             int typed = (Integer) c[3];
-            // 就地取代：先照常打 typed 個字，接著一則整句，之後沒有更新
             begin();
             DialogueLeadAudit.speak(null);
             long[] clock = {5_000_000L};
@@ -567,7 +468,6 @@ public final class DialogueForecastTest {
             out = DialogueRewriter.line(src, store, 3, null, 232);
             check("跳過（" + name + "）：就地取代那一則就是整句（實際 " + quote(out) + "）",
                   want.equals(out));
-            // 小框：同樣的事件順序
             begin();
             DialogueOverlay.resetForTest();
             for (int i = 1; i <= typed; i++) {
@@ -599,17 +499,6 @@ public final class DialogueForecastTest {
         return frame == null ? "英文" : frame.isEmpty() ? "空白" : frame;
     }
 
-    // ------------------------------------------------------------------
-    // 真語料：一句接一句
-    // ------------------------------------------------------------------
-
-    /**
-     * 照語料順序把整段任務對話一句接一句打出來，名牌照語料的 speaker，
-     * 預測開與關各跑一次，兩條路都跑。
-     *
-     * <p>「貼錯」：任何一幀的中文不是這一句自己譯文的開頭。預測開著時不能比關著多——
-     * 多出來的每一句都是預測猜錯貼上去的。
-     */
     private static void corpus() throws Exception {
         SelfNames.remember("STEVEN");
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -625,7 +514,6 @@ public final class DialogueForecastTest {
                 picked.add(story);
             }
         }
-        // 正確答案：單獨打完、停下來那一幀
         Map<String, String> want = new java.util.HashMap<>();
         Map<String, String> wantPanel = new java.util.HashMap<>();
         for (List<DialogueLeadAudit.Line> story : picked) {
@@ -652,7 +540,6 @@ public final class DialogueForecastTest {
         }
     }
 
-    /** @return {英文字元合計, 貼錯句數, 句數}。沒追蹤任務（預測最用得上的情境）。 */
     private static int[] chain(List<List<DialogueLeadAudit.Line>> stories, TranslationStore store,
                                Map<String, String> want, boolean panel, boolean forecast) {
         DialogueForecast.enabled = forecast;
@@ -663,7 +550,6 @@ public final class DialogueForecastTest {
             begin();
             for (int li = 0; li < story.size(); li++) {
                 DialogueLeadAudit.Line l = story.get(li);
-                // 進度條照 wiki 的階段切段：一段的最後一句滿格，其他半格（見 DialogueLeadAudit）
                 boolean lastOfTalk = li + 1 >= story.size()
                         || !story.get(li + 1).stage().equals(l.stage());
                 com.wynnchayuan.capture.DialogueProgress.settle(
@@ -690,8 +576,6 @@ public final class DialogueForecastTest {
         return new int[] {lead, wrong, lines};
     }
 
-    // ------------------------------------------------------------------
-
     private static TranslationStore miniStore() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-forecast");
         StringBuilder json = new StringBuilder("{\"entries\":{");
@@ -701,12 +585,10 @@ public final class DialogueForecastTest {
             }
             json.append(entry(QUEST + "#" + i, QUEST, LINES[i][0], LINES[i][1], LINES[i][2]));
         }
-        // 另一個任務裡同一個 Tasim 也講過以 Q 開頭的話；#2 是 Aledar 講的，名牌分得開
         json.append(',').append(entry("Other#0", "Other Tale", "Tasim",
                 "Quiet! Someone is coming.", "安靜！有人來了。"));
         json.append("}}");
         Files.writeString(dir.resolve("quest-dialogue.json"), json, StandardCharsets.UTF_8);
-        // 還沒歸到任務的台詞
         Files.writeString(dir.resolve("quest.json"), """
                 {
                   "Hello there, traveller.": "你好啊，旅人。",
@@ -729,16 +611,14 @@ public final class DialogueForecastTest {
                 + speaker + "\",\"source\":\"" + source + "\"}";
     }
 
-    /** 換一段對話：兩條路的狀態都清掉，沒追蹤任務。 */
     private static void begin() {
-        com.wynnchayuan.capture.DialogueProgress.settle(-1);   // 不知道進度條
+        com.wynnchayuan.capture.DialogueProgress.settle(-1);
         DialogueRewriter.forget();
         DialogueForecast.forgetAll();
         DialogueLeadAudit.resetPanel();
         CurrentQuest.set(null);
     }
 
-    /** 就地取代：把第 {@code n} 句整句打完（當成上一句）。 */
     private static void say(TranslationStore store, int n, String speaker) {
         type(store, LINES[n][1], speaker);
     }
@@ -753,7 +633,6 @@ public final class DialogueForecastTest {
         return DialogueLeadAudit.typeOut(src, store);
     }
 
-    /** 每一幀的中文都是 {@code dst} 的開頭（或還沒出現）。 */
     private static boolean ownLine(List<String> frames, String dst) {
         for (String f : frames) {
             if (f != null && !dst.startsWith(f)) {
@@ -763,7 +642,6 @@ public final class DialogueForecastTest {
         return true;
     }
 
-    /** 這一幀沒有中文：留英文（{@code null}）或先空著（{@code ""}，見 DialogueRewriter#holds）。 */
     private static boolean blank(String frame) {
         return frame == null || frame.isEmpty();
     }

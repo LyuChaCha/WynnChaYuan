@@ -3,24 +3,10 @@ package com.wynnchayuan.client.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 線條圖示與圓角的遮罩。
- *
- * <h2>為什麼自己算</h2>
- * 遊戲的畫布只會畫矩形與貼圖。圓角、圓形開關、斜線都得先算成一張「每個點蓋住
- * 幾成」的遮罩，再當貼圖染色貼上去。這裡只做算的那一半——純 Java、不碰遊戲，
- * 所以測試用的畫布也拿同一份遮罩來畫，兩邊看到的形狀一模一樣。
- *
- * <h2>圖示</h2>
- * 每個圖示是 24×24 格子裡的幾條折線，線寬 2 格。題材是 Wynncraft 的東西：
- * 弓（物品）、卷軸（面板）、對話框、羅盤（世界）、任務書（資料）、任務標記（須知）。
- * 遮罩是照「這個點離最近的線多遠」算的，所以放大縮小都是平滑的邊，不是把小圖拉大。
- */
 public final class Icons {
 
     private Icons() {}
 
-    /** 圖示的格子邊長與線寬（格）。 */
     private static final float BOX = 24f;
     private static final float STROKE = 2f;
 
@@ -42,11 +28,9 @@ public final class Icons {
         RIGHT(line(9, 6, 15, 12, 9, 18)),
         CHECK(line(5, 12.5f, 10, 17.5f, 19, 7)),
         CLOSE(line(6, 6, 18, 18), line(18, 6, 6, 18)),
-        /** 名牌徽章那片葉子，同一個外形。 */
         LEAF(join(cubic(9, 18, 15.2f, 18, 19.5f, 14.7f, 20, 6), line(20, 4, 16, 4),
                   cubic(16, 4, 7, 4, 4, 8, 4, 13), cubic(4, 13, 4, 14, 4, 16, 6, 18), line(9, 18)),
              cubic(5, 21, 5.5f, 16.5f, 7.5f, 13, 12, 11)),
-        /** 娛樂那一頁：一件披風（肩上兩個扣、下襬微微展開）。 */
         CAPE(closed(8, 4, 16, 4, 19, 20, 5, 20), line(8, 4, 8, 6.5f), line(16, 4, 16, 6.5f),
              line(12, 8, 12, 20));
 
@@ -61,7 +45,6 @@ public final class Icons {
         return xy;
     }
 
-    /** 幾段接成一條連續的線。 */
     private static float[] join(float[]... parts) {
         int n = 0;
         for (float[] part : parts) {
@@ -88,7 +71,6 @@ public final class Icons {
         return closed(x, y, x + w, y, x + w, y + h, x, y + h);
     }
 
-    /** 一個點：長度是零的線段，畫出來是線寬那麼大的圓點。 */
     private static float[] dot(float x, float y) {
         return new float[] {x, y, x, y};
     }
@@ -97,7 +79,6 @@ public final class Icons {
         return arc(cx, cy, r, 0, 360);
     }
 
-    /** 角度是螢幕座標（y 往下），從 {@code from} 順時針走到 {@code to}。 */
     private static float[] arc(float cx, float cy, float r, float from, float to) {
         int steps = Math.max(8, Math.round(Math.abs(to - from) / 12f));
         float[] out = new float[(steps + 1) * 2];
@@ -123,16 +104,9 @@ public final class Icons {
         return out;
     }
 
-    /**
-     * 圖示的遮罩。
-     *
-     * @param size 邊長（螢幕上的點）
-     * @return {@code size × size} 個值，0 是沒蓋到、255 是整個蓋住
-     */
     public static byte[] mask(Icon icon, int size) {
         int n = Math.max(1, size);
         float k = n / BOX;
-        // 線寬跟著縮放走，但不讓它細過 1.25 個點——再細就斷斷續續了
         float half = Math.max(0.625f, STROKE * k / 2f);
         List<float[]> segs = new ArrayList<>();
         for (float[] path : icon.paths) {
@@ -167,11 +141,6 @@ public final class Icons {
         return (float) Math.sqrt(cx * cx + cy * cy);
     }
 
-    /**
-     * 一個圓的遮罩，邊長 {@code 2r}。圓角矩形的四個角就是它的四個象限。
-     *
-     * @param inner 大於零的話挖掉裡面這個半徑的圓，剩一圈——畫框線用
-     */
     public static byte[] disc(int r, float inner) {
         int n = Math.max(1, r) * 2;
         byte[] out = new byte[n * n];

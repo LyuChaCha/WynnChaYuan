@@ -7,9 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 漂浮字專用的譯法：解謎地板上的 Back 是「向後」，介面上的 Back 仍是「返回」。
- */
 public final class ScopedLabelTest {
 
     private static int failures = 0;

@@ -5,26 +5,16 @@ import com.wynnchayuan.CollectorConfig;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 指名輔助語言時是「輔助語言墊底、選定的語言在上」兩層一起載入的。裝備名稱在這條路上要照樣翻。
- *
- * <p>實機回報：0.2.2 測試版切到簡中，物品名稱全部沒翻；繁中正常。
- */
 public final class LayeredGearNameTest {
 
     private static int failures = 0;
 
     public static void main(String[] args) {
-        // 可以指定別的根目錄，例如遊戲裡的快取 config/wynnchayuan/translations
         Path root = Path.of(args.length > 0 ? args[0]
                                             : "src/main/resources/assets/wynnchayuan/translations");
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(root.resolve("zh_cn"), root.resolve("zh_tw")));
 
-        // 不寫死措辭：這幾條要守的是「疊層之後拿到的是<b>簡中那層</b>的譯名」，
-        // 不是「Abhorrence 一定要叫某三個字」。所以答案去問一份只載簡中的 store
-        // ——譯名改了它會跟著改，而「被繁中那層壓過去」還是會被抓出來。
-        // （2026-10-06 簡中裝備名拿掉類別字時，寫死的「憎恶之矛」弄紅了這一支。）
         TranslationStore cnOnly = new TranslationStore();
         cnOnly.loadAll(List.of(root.resolve("zh_tw")));
         cnOnly.setNameMode(CollectorConfig.ItemNames.ON);
@@ -44,7 +34,6 @@ public final class LayeredGearNameTest {
         check("★ 開：tooltip 名稱那一行畫成上層的譯名（實際 " + shown + "）",
               want != null && want.equals(shown));
 
-        // ★ 繁中那層的 Mythic 是空的（刻意不翻）；簡中那層的譯名不能被它擋回英文
         check("上層的 Mythic 不算「還沒翻的裝備名」", !store.isBareGearName("Sunstar"));
         List<net.minecraft.network.chat.Component> myth =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
@@ -52,10 +41,6 @@ public final class LayeredGearNameTest {
                         net.minecraft.network.chat.Component.literal("Sunstar"),
                         banner()), store);
         String mythShown = myth.isEmpty() ? "(沒翻)" : myth.get(1).getString();
-        // 不寫死措辭：這一條要守的是「繁中那層是空的，不可以把簡中的譯名擋回英文」，
-        // 不是「Sunstar 一定要叫某四個字」。寫死的話，每次統一術語或改譯名都會
-        // 弄紅一支跟那件事無關的測試——2026-09-29 把 Mythic 名稱改成照背景敘述
-        // 取的那一套時就中了一次。拿語料自己的答案來比，才是在守那條規則。
         String mythName = store.lookup("Sunstar");
         check("上層的 Mythic 有譯名（實際 " + mythName + "）",
               mythName != null && !mythName.equals("Sunstar")
@@ -76,12 +61,6 @@ public final class LayeredGearNameTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /**
-     * 稀有度橫幅：整列都是圖示（三段，各自一個顏色才不會被併成一段）。
-     *
-     * <p>名字只套在<b>長得像物品</b>的說明上（見 TooltipPanel#itemShaped）；
-     * 只有兩列名字、沒有橫幅的說明會被當成介面按鈕，名稱留原文。
-     */
     private static net.minecraft.network.chat.Component banner() {
         net.minecraft.network.chat.MutableComponent row =
                 net.minecraft.network.chat.Component.empty();

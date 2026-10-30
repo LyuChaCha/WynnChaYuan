@@ -15,26 +15,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * WynnMod 重畫的裝備說明：標籤被拆成兩個片段、或被砍掉尾巴的那幾列。
- *
- * <h2>實機回報（2026-10-10）</h2>
- * 整份說明都翻好了，只剩這幾列是英文：
- *
- * <pre>
- *   Main Scale            [90.7%]
- *   Elemental Spell Da..  *+366 [92.0%]
- * </pre>
- *
- * 兩列是同一個原因。WynnMod 的說明是它自己一段一段接起來的，標籤拆成
- * 「Main」＋「 Scale」、「Elemental Spell Da」＋「..」兩個樣式相同的片段，而屬性列
- * 是逐片段查的——拆開的每一半都不是標籤。「Damage Scale」翻得出來只是因為語料
- * 剛好另外收了整列的條目。
- *
- * <p>下面的列照診斷檔 {@code wynnmod-tooltip-2.json} 的片段重建（字型、顏色、偏移
- * 都照抄），整份丟進跟實機同一個入口。不寫死譯文：標籤該翻成什麼，問沒被拆開的
- * 那一種寫法。
- */
 public final class WynnModRowsTest {
 
     private static int failures = 0;
@@ -71,7 +51,6 @@ public final class WynnModRowsTest {
     }
 
     private static void split(TranslationStore store) {
-        // 同一份說明裡沒被拆、沒被砍的寫法：標籤一段。這一份只拿來問標籤該翻成什麼。
         List<Component> whole = List.of(
                 row("Halcyon"),
                 scale(73, "Main Scale"),
@@ -83,7 +62,6 @@ public final class WynnModRowsTest {
                 stat(9, false, "+405", "Fire Main Attack Damage"),
                 stat(9, false, "+32%", "Fire Main Attack Damage"),
                 stat(9, false, "+29%", "Elemental Spell Damage"));
-        // 實機的寫法：「Main」＋「 Scale」，「Elemental Spell Da」＋「..」
         List<Component> split = List.of(
                 row("Halcyon"),
                 scale(73, "Main", " Scale"),
@@ -92,11 +70,8 @@ public final class WynnModRowsTest {
                 stat(9, true, "+366", "Elemental Spell Da", ".."),
                 stat(9, true, "+12%", "Elemental Spell Da", ".."),
                 stat(44, false, "-5", "Ice Snake Cost"),
-                // 第二版測試還是沒翻到的那一種：兩個點是 WynnMod 另外做好接上去的，
-                // 畫出來一樣，樣式物件卻不相等（斜體「沒設」對「否」、顏色「沒設」對白色）。
                 truncated(9, "+405", "Fire Main Attack Da", WYNN.withItalic(false)),
                 truncated(9, "+32%", "Fire Main Attack D", font("language/wynncraft")),
-                // 連懸停事件都不一樣的兩個點：照樣是那個標籤的一部分
                 truncated(9, "+29%", "Elemental Spell Da", WYNN.withInsertion("x")));
         check("前提：那兩種兩個點的樣式跟標籤不相等，但畫出來一樣",
                 !WYNN.equals(WYNN.withItalic(false)) && !WYNN.equals(font("language/wynncraft")));
@@ -131,7 +106,6 @@ public final class WynnModRowsTest {
         check("★ 兩個點帶著別的欄位也併（實際 " + got.get(9) + "）", got.get(9).equals(want.get(9)));
         check("前提：火屬性普攻的實數與百分比是兩種標籤（實際 " + want.get(7) + "／" + want.get(8) + "）",
                 !want.get(7).equals(want.get(8)));
-        // 顏色不同的不併：那是兩個欄位，不是一個標籤
         Component twoColours = Component.empty()
                 .append(Component.literal("Main").withStyle(WYNN))
                 .append(Component.literal(" Scale").withStyle(VALUE));
@@ -140,7 +114,6 @@ public final class WynnModRowsTest {
         check("沒被拆的列不受影響（實際 " + got.get(3) + "、" + got.get(6) + "）",
                 got.get(3).equals(want.get(3)) && got.get(6).equals(want.get(6)));
 
-        // 數值那一欄要留在原位：每一列「標籤寬＋欄距」跟原文一樣。
         for (int i = 1; i < split.size(); i++) {
             int before = valueStart(split.get(i));
             int after = valueStart(shown.get(i));
@@ -148,11 +121,9 @@ public final class WynnModRowsTest {
                     before == after);
         }
 
-        // 反面：沒有任何可併的片段時，原本那一行原樣交回去（同一個物件）。
         Component untouched = stat(14, true, "+34%", "Healing Efficiency");
         check("沒有可併的片段時不重建那一行",
                 WynnModTooltip.joinSameStyle(List.of(untouched)).get(0) == untouched);
-        // 圖示與排版偏移不併：個數與順序是版面的一部分。
         MutableComponent offsets = Component.empty()
                 .append(Component.literal(SpaceOffset.encode(-1)).withStyle(SPACE))
                 .append(Component.literal(SpaceOffset.encode(-1)).withStyle(SPACE));
@@ -167,7 +138,6 @@ public final class WynnModRowsTest {
         }
     }
 
-    /** 每一列在第一個排版偏移之前的字（去掉圖示）——也就是標籤。 */
     private static List<String> labels(List<Component> lines) {
         List<String> out = new ArrayList<>();
         for (Component line : lines) {
@@ -188,7 +158,6 @@ public final class WynnModRowsTest {
         return out;
     }
 
-    /** 最後一個排版偏移結束的位置：數值那一欄從這裡開始。 */
     private static int valueStart(Component line) {
         int[] at = {0};
         int[] start = {0};
@@ -212,7 +181,6 @@ public final class WynnModRowsTest {
         return Component.literal(text).withStyle(WYNN);
     }
 
-    /** 「圖示＋空白＋標籤＋欄距＋[適性]」。 */
     private static Component scale(int gap, String... label) {
         MutableComponent row = Component.empty()
                 .append(Component.literal(new String(Character.toChars(0xE000))).withStyle(ICON))
@@ -224,7 +192,6 @@ public final class WynnModRowsTest {
                 .append(Component.literal("[90.7%]").withStyle(ROLL));
     }
 
-    /** 「標籤＋欄距＋(星號)＋數值＋空白＋[品質]」。 */
     private static Component stat(int gap, boolean star, String value, String... label) {
         MutableComponent row = Component.empty();
         for (String part : label) {
@@ -239,7 +206,6 @@ public final class WynnModRowsTest {
                 .append(Component.literal("[92.0%]").withStyle(ROLL));
     }
 
-    /** 砍過的標籤：兩個點用另一個「畫出來一樣」的樣式接上去。 */
     private static Component truncated(int gap, String value, String label, Style dots) {
         return Component.empty()
                 .append(Component.literal(label).withStyle(WYNN))
@@ -255,7 +221,6 @@ public final class WynnModRowsTest {
                 Identifier.withDefaultNamespace(id)));
     }
 
-    /** 量尺：半形 6、全形 9、圖示 0、偏移碼位照面值。 */
     private static int width(Component component) {
         int[] w = {0};
         component.visit((style, text) -> {

@@ -15,28 +15,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 未鑑定物品的「力量已被封印」說明：整段攤平查到、我們自己重折之後，要照原文那樣置中。
- *
- * <h2>實機回報（使用者 2026-10-17）</h2>
- * 未鑑定的 Legendary 項鍊（新式外框、繁中）：英文的三行說明是置中的，譯文的兩行
- * 從左緣畫起。layout-debug 的左緣對照：原文 17、21，譯文 0。
- *
- * <p>原文的結構照 majorid-debug 錄到的那幾份（每一行開頭一個白色的偏移，
- * 後面是灰字；第二行中間夾著鑑定師的圖示與粉紫色的名字）：
- *
- * <pre>
- *   §f[偏移 15]§7This item's power has been sealed,
- *   §f[偏移 20]§7an §f[圖示]§7 §#e0b3e6Item Identifier§7 can unlock
- *   §f[偏移 64]§7its potential.
- * </pre>
- *
- * 語料收的是攤平的一句，{@link LineTranslator#translateBlock} 剝掉行首偏移、攤平
- * 查到之後照原文寬度重折。折出來比原文少一行時，先前是「行數不一樣就照原樣出」，
- * 行首偏移已經剝掉了，於是兩行都從 0 畫起。
- *
- * <p>譯文是這裡自己編的，不綁語料的措辭。
- */
 public final class SealedCentreTest {
 
     private static int failures = 0;
@@ -46,7 +24,6 @@ public final class SealedCentreTest {
 
     private static final String ICON = String.valueOf((char) 0xE000);
 
-    /** 撐住外框的那一列：22 個圖示，假字型每個 9px。 */
     private static final int FRAME = 22 * 9;
 
     private static final String INDENT = "        ";
@@ -56,10 +33,8 @@ public final class SealedCentreTest {
             "an " + ICON + " Item Identifier can unlock",
             "its potential."};
 
-    /** 折出來比原文少一行（中文）。 */
     private static final String SHORT = "封印之句甲乙丙丁，使用 {#} 鑑定之人 即可解開它的潛能。";
 
-    /** 折出來跟原文一樣三行（較長的語言）。 */
     private static final String LONG =
             "封印之句甲乙丙丁戊己庚辛壬癸子丑寅卯，請使用 {#} 鑑定之人 才能解開它沉睡的潛能。";
 
@@ -102,7 +77,6 @@ public final class SealedCentreTest {
         return store;
     }
 
-    /** ★ 回報的那一種：三行英文折成兩行中文，每一行都要照原文的中心置中。 */
     private static void fewerRows(TranslationStore store) {
         List<Component> out = translate(tooltip(true), store);
         List<Component> rows = sealedRows(out);
@@ -110,7 +84,6 @@ public final class SealedCentreTest {
         centred("少一行", rows);
     }
 
-    /** 折成跟原文一樣的行數也一樣：每一行都要置中，不能因為行首偏移被剝掉而從 0 畫起。 */
     private static void sameRows(TranslationStore store) {
         List<Component> out = translate(tooltip(true), store);
         List<Component> rows = sealedRows(out);
@@ -118,7 +91,6 @@ public final class SealedCentreTest {
         centred("同樣行數", rows);
     }
 
-    /** 反面：同一句話原文是靠左的（縮排全是 0），譯文就不能被加上縮排。 */
     private static void leftAlignedStaysLeft(TranslationStore store) {
         List<Component> out = translate(tooltip(false), store);
         List<Component> rows = sealedRows(out);
@@ -129,7 +101,6 @@ public final class SealedCentreTest {
         }
     }
 
-    /** 底下 Wynntils 的候選清單照舊：縮排、逗號、附原文都不變。 */
     private static void guessListUntouched(TranslationStore store) {
         List<Component> out = translate(tooltip(true), store);
         int last = out.size() - 1;
@@ -137,8 +108,6 @@ public final class SealedCentreTest {
         same("候選清單最後一列：縮排還在", INDENT + "乙墜 (Pendant of the Gale)",
                 out.get(last).getString());
     }
-
-    // ---- 檢查 ----
 
     private static void centred(String what, List<Component> rows) {
         for (Component row : rows) {
@@ -151,7 +120,6 @@ public final class SealedCentreTest {
         }
     }
 
-    /** 行首那一串偏移的總寬。 */
     private static int lead(Component line) {
         int[] px = {0};
         boolean[] done = {false};
@@ -169,7 +137,6 @@ public final class SealedCentreTest {
         return px[0];
     }
 
-    /** 譯文裡屬於封印說明的那幾行：含「封印之句」到「潛能。」之間。 */
     private static List<Component> sealedRows(List<Component> out) {
         List<Component> rows = new ArrayList<>();
         boolean in = false;
@@ -186,18 +153,11 @@ public final class SealedCentreTest {
         return rows;
     }
 
-    // ---- 組 tooltip ----
-
     private static List<Component> translate(List<Component> t, TranslationStore store) {
         List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(t, store);
         return out.isEmpty() ? t : out;
     }
 
-    /**
-     * 名稱、撐住外框的分隔列、三行封印說明、空行、Wynntils 的候選清單。
-     *
-     * @param centred 說明照外框置中（實機）還是全部靠左（反面對照）
-     */
     private static List<Component> tooltip(boolean centred) {
         List<Component> t = new ArrayList<>();
         MutableComponent name = Component.empty();
@@ -220,7 +180,6 @@ public final class SealedCentreTest {
         return t;
     }
 
-    /** 一行封印說明：白色的行首偏移，接灰字；第二行夾著白色圖示與粉紫色的名字。 */
     private static Component sealedRow(int k, boolean centred) {
         MutableComponent body = Component.empty();
         if (k == 1) {

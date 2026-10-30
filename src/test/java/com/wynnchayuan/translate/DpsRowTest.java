@@ -10,12 +10,6 @@ import net.minecraft.resources.Identifier;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 武器 tooltip 的「370 DPS」：數字用大字型、黃色；DPS 用一般字型、白色。
- *
- * <p>實機回報：翻出來的「370 每秒伤害」數字變小、「每秒伤害」跟著變成數字的顏色。
- * 數字要留在原本的大字型，「每秒伤害」要拿 DPS 那段的顏色。
- */
 public final class DpsRowTest {
 
     private static int failures = 0;
@@ -66,10 +60,6 @@ public final class DpsRowTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /**
-     * 「+4,250 Health」：原文整串數字（含 + 號）都在放大字型裡。
-     * 譯文把數值拆成 {~}，+ 號留在文字那半——實機回報「+ 是小的」。
-     */
     private static void healthRow(TranslationStore store) {
         MutableComponent row = Component.empty();
         row.append(Component.literal("+4,250").withStyle(NUMBER));

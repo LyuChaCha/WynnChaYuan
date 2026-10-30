@@ -9,29 +9,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 靈魂節小遊戲（Banish the Beyond）的說明卡要整張翻得出來。
- *
- * <h2>這種卡長什麼樣</h2>
- * 惡靈類型的說明是<b>條列</b>，每一項被寬度折成兩三行，續行開頭有一個縮排用的
- * 偏移字元（抽成模板就是行首的 {@code {#}}）：
- *
- * <pre>
- *   Special - False Facade
- *   - Using the Formless Heart, transform into
- *   {#}the most distant survivor. Upon disguising,
- *   {#}all survivors are inflicted with Paranoia.
- *   - Paranoia causes survivors' hearts to beat
- *   {#}whenever anyone approaches them within a
- *   …
- * </pre>
- *
- * 整段之間沒有空行，所以它在算繪端是<b>一段</b>。語料收的是「一個條列項目一句」：
- * 呼叫端從每一行開始、由長到短試，試到剛好是那一項的那幾行就會中。這條測試釘的
- * 就是那個假設——收成整段會被重新折行、條列全黏在一起；逐行收則是半中半英。
- *
- * <p>不釘譯文的措辭（翻譯團隊會改），釘的是「每一項都換掉了、沒有留半句英文」。
- */
 public final class FestivalCardTest {
 
     private static int failures = 0;
@@ -43,7 +20,6 @@ public final class FestivalCardTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
 
-        // 惡靈類型：標題列、條列項目、縮排的續行
         String[] facade = {
                 "Special - False Facade",
                 "- Using the Formless Heart, transform into",
@@ -66,7 +42,6 @@ public final class FestivalCardTest {
         check("第二項的 16 格還在", String.join(" ", out).contains("16"));
         check("第三項的 8 格還在", String.join(" ", out).contains("8"));
 
-        // 續行以大寫開頭的那一項（Vulnerable）也要接得回去
         String[] shade = {
                 "Special - Stalking Shade",
                 "- Use the Stalking Shade to enter the hunt,",
@@ -86,7 +61,6 @@ public final class FestivalCardTest {
         check("盯梢 5 秒、脆弱 12 秒沒有對調（實際：" + all + "）",
                 all.indexOf("5") >= 0 && all.indexOf("5") < all.indexOf("12"));
 
-        // 特長：被寬度折斷的一句，沒有條列
         String[] tunnel = {
                 "After the final Spirit Well is powered,",
                 "instantly lose the injured condition,",
@@ -96,7 +70,6 @@ public final class FestivalCardTest {
         out = shown(card("Light in the Tunnel", tunnel), store);
         allTranslated("折斷的一句", out);
 
-        // 一句引言加上幾個單行的條列
         String[] syndrome = {
                 "While you are the last survivor alive,",
                 "gain the following effects:",
@@ -115,7 +88,6 @@ public final class FestivalCardTest {
         }
     }
 
-    /** 標題、空行、內容。內容裡以 {@code >} 開頭的是帶縮排偏移的續行。 */
     private static List<Component> card(String title, String[] body) {
         List<Component> tip = new ArrayList<>();
         tip.add(Component.literal(title).withStyle(GREY));
@@ -134,7 +106,6 @@ public final class FestivalCardTest {
         return tip;
     }
 
-    /** 翻完之後內容那幾列的字（標題與空行不算，排版偏移剝掉）。 */
     private static List<String> shown(List<Component> tip, TranslationStore store) {
         List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(tip, store);
         List<String> rows = new ArrayList<>();
@@ -152,7 +123,6 @@ public final class FestivalCardTest {
         return rows.stream().filter(r -> r.startsWith("- ")).count();
     }
 
-    /** 每一列都有中文，而且沒有留下兩個以上連在一起的英文單字（專有名詞一個字的不算）。 */
     private static void allTranslated(String what, List<String> rows) {
         check(what + "：有翻出東西（" + rows.size() + " 列）", !rows.isEmpty());
         for (String row : rows) {

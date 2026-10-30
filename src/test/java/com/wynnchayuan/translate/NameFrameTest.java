@@ -21,26 +21,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 夾著<b>別人名字</b>的句子，照語料裡帶 {@code {u}} 的句型翻（見 {@link NameFrames}）。
- *
- * <h2>先前是什麼樣子</h2>
- * {@code {u}} 只認得自己的名字。隊友給的增益（「Green_teaTW/RichaCha has given you 29%
- * resistance and 8% strength.」）、別人的死亡快訊、別人的力量之井，語料裡明明有
- * {@code {u}} 那一條，畫面上還是整句英文（使用者 2026-10-17 的截圖）。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>聊天、標題、名牌三條路都認得；名字從<b>位置</b>收，帳號/暱稱、多詞暱稱、
- *       底線、數字、長得像技能名的都原樣填回，名字裡的數字不會跟句子的數值搶順序；</li>
- *   <li>名字在句中、句尾、所有格前面都認得；伺服器折過行的也認得；</li>
- *   <li>不是名字的不能被當成名字：「Your pet」、一整句話、帶冒號的發言；
- *       語料本來就有整句的鍵時，整句那條優先；</li>
- *   <li>收集端記的是 {@code {u}} 那一份，名字不進檔案；那一份也不會被濾網的片語當成個資清掉。</li>
- * </ol>
- *
- * <p>語料是測試自己寫的，措辭跟實際語料無關。訊息照實機 log 的分段組。
- */
 public final class NameFrameTest {
 
     private static int failures = 0;
@@ -70,28 +50,16 @@ public final class NameFrameTest {
         notNames(store);
         privacy(store, dir);
         realCorpus();
-        // 這一段會記下「自己的名字」（靜態的），放在最後，不影響上面幾段
         ownNameInsideName(store);
         report();
     }
 
-    /**
-     * 實機回報（2026-10-17，test jar 8）：「Green_teaTW/RichaCha has given you 29% resistance
-     * and 8% strength.」整句英文。
-     *
-     * <p>log 裡伺服器送的是 {@code &b&o&<1>RichaCha&7 has given you &b29% resistance&7 and
-     * &b8% strength&7.}——暱稱是青色斜體、掛著滑鼠提示（{@code &<1>} 是 Wynntils 記 hover
-     * 的寫法），Wynntils 再把它改寫成「帳號/暱稱」。帳號那一半是<b>玩家自己</b>，
-     * SelfNames 先把它收成 {@code {u}}，模板成了「{u}/RichaCha has given you …」：整句查不到，
-     * 而句型那一關看到模板裡已經有 {u} 就放棄了。
-     */
     private static void ownNameInsideName(TranslationStore store) {
         System.out.println("=== 名字裡有自己的帳號名 ===");
         com.wynnchayuan.capture.SelfNames.remember("Green_teaTW");
         Style hover = Style.EMPTY.withColor(TextColor.fromRgb(AQUA)).withItalic(true)
                 .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
                         Component.literal("Green_teaTW")));
-        // Wynntils 改寫後：帳號/ 與暱稱兩段，都帶著同一個 hover
         MutableComponent rewritten = Component.empty();
         rewritten.append(Component.literal("Green_teaTW/").withStyle(hover));
         rewritten.append(Component.literal("RichaCha").withStyle(hover));
@@ -103,7 +71,6 @@ public final class NameFrameTest {
         String got = hit == null ? null : hit.getString();
         check("★ 「帳號/暱稱」而帳號是自己：照樣翻（實際 " + got + "）",
               "Green_teaTW/RichaCha 賦予你 29% 甲盾與 8% 乙力。".equals(got));
-        // 實機回報（10-19，test jar 9）：翻出來了，可是名字變黃、其餘整句同一個顏色
         check("★ 帳號那一半是名字的顏色（實際 " + hex(colourOf(hit, "Green_teaTW")) + "）",
               hit != null && colourOf(hit, "Green_teaTW") == AQUA);
         check("★ 暱稱是名字的顏色（實際 " + hex(colourOf(hit, "RichaCha")) + "）",
@@ -118,7 +85,6 @@ public final class NameFrameTest {
         String captured = com.wynnchayuan.listener.CaptureProbe.chatTemplate(line, store);
         check("★ 收集端記的是 {u} 那一份（實際 " + captured + "）", BUFF.equals(captured));
 
-        // 伺服器原本那一段：只有暱稱，數值那一段是「&b 8% strength」（空白在數值段裡）
         com.wynnchayuan.capture.SelfNames.remember("RichaCha");
         MutableComponent raw = Component.empty();
         raw.append(Component.literal("RichaCha").withStyle(hover));
@@ -137,10 +103,6 @@ public final class NameFrameTest {
                               .getString().contains("被收拾了"));
     }
 
-    /**
-     * 七個語言的實際語料都有這幾個句型：翻得出來、名字原樣、英文句型不見了。
-     * 只看結構，不看措辭。
-     */
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -178,7 +140,6 @@ public final class NameFrameTest {
                               && got.indexOf(names[i]) == got.lastIndexOf(names[i])
                               && !got.contains(cases[i][1]) && !got.contains("{"));
             }
-            // 標題：{#}{#}名字 has been slain
             MutableComponent title = Component.empty();
             title.append(icon(ICON, GOLD));
             title.append(lit("Elaina Lover has been slain", GOLD));
@@ -186,7 +147,6 @@ public final class NameFrameTest {
             String got = slain == null ? null : slain.getString();
             check(lang + "：死亡快訊的標題（實際 " + got + "）",
                   got != null && got.contains("Elaina Lover") && !got.contains("slain"));
-            // 名牌：某人的力量之井
             Component well = LineTranslator.translateLabel(
                     StyledText.fromString("Green_teaTW/RichaCha's Well of Power"), real);
             got = well == null ? null : well.getString();
@@ -195,14 +155,11 @@ public final class NameFrameTest {
         }
     }
 
-    // ------------------------------------------------------------ 語料
-
     private static TranslationStore corpus(Path dir) throws Exception {
         Files.createDirectories(dir);
         JsonObject misc = new JsonObject();
         misc.addProperty(BUFF, "{u}{c:gray} 賦予你 {c:aqua}{~1} 甲盾{c:gray}與 {c:aqua}{~2} 乙力{c:gray}。");
         misc.addProperty("{u} has given you {~} strength.", "{u} 賦予你 {~} 乙力。");
-        // 名字排在數值後面：名字裡的數字要是混進 {~}，這一條就會填錯
         misc.addProperty(SPEED, "+{~} 分鐘疾行，來自 {u}。");
         misc.addProperty("{#} {u} was minced to bits by the Grootslang.", "{#} {u} 被巨蛇剁成碎塊。");
         misc.addProperty("{u} has been slain", "{u} 倒地不起");
@@ -211,7 +168,6 @@ public final class NameFrameTest {
         misc.addProperty("{#} Not even ash remains of {u}", "{#} {u} 連灰燼都不剩");
         misc.addProperty("{#} {u} was annuled from reality by The Nameless.",
                          "{#} {u} 被無名者自現實中抹消。");
-        // 同一句話：伺服器折好行的那條（兩行譯文）排在沒折的那條前面
         misc.addProperty("{#} {u} was removed from the physical plane by\n{#} Octo Beast",
                          "{#} {u} 被八足獸\n{#} 從物質界抹去");
         misc.addProperty("{#} {u} was removed from the physical plane by Octo Beast",
@@ -221,12 +177,9 @@ public final class NameFrameTest {
         misc.addProperty("{#} {u} has died", "{#} {u} 斷氣了");
         misc.addProperty("{#} {u} was killed", "{#} {u} 被收拾了");
         misc.addProperty("{#} Guard Captain was killed", "{#} 衛隊長遭到殺害");
-        // 句型夠不夠格：名字緊貼著數值、或句子太短的不收
         misc.addProperty("{u}{~} points", "{u}{~} 分");
         misc.addProperty("{u} ok", "{u} 好");
-        // 還沒翻的句型：收集端要靠它把名字換成 {u}
         misc.addProperty("{#} {u} was swallowed up by the Black Hole.", "");
-        // 名字長得像這些也不能被換掉
         misc.addProperty("Bash", "猛擊（不該出現）");
         Files.writeString(dir.resolve("misc.json"), misc.toString(), StandardCharsets.UTF_8);
 
@@ -245,8 +198,6 @@ public final class NameFrameTest {
         return store;
     }
 
-    // ------------------------------------------------------------ 訊息
-
     private static MutableComponent lit(String text, int colour) {
         return Component.literal(text).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
@@ -262,7 +213,6 @@ public final class NameFrameTest {
                 .withFont(new FontDescription.Resource(Identifier.parse("minecraft:chat/prefix"))));
     }
 
-    /** 隊友給的增益，照 log 的分段：名字（斜體）、灰色句子、數值那兩段是青色。 */
     private static StyledText buff(MutableComponent... name) {
         MutableComponent all = Component.empty();
         for (MutableComponent part : name) {
@@ -285,7 +235,6 @@ public final class NameFrameTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 聊天的死亡快訊：頻道圖示、名字自己一個顏色、句子是紅的。 */
     private static StyledText death(String before, String name, String after) {
         MutableComponent all = Component.empty();
         all.append(icon(ICON, RED));
@@ -295,9 +244,6 @@ public final class NameFrameTest {
         return StyledText.fromComponent(all);
     }
 
-    // ------------------------------------------------------------ 檢查
-
-    /** 句型本身：哪些鍵收、名字像不像。 */
     private static void frames(TranslationStore store) {
         System.out.println("=== 句型 ===");
         NameFrames frames = store.nameFrames();
@@ -319,7 +265,6 @@ public final class NameFrameTest {
 
     private static void buffs(TranslationStore store) {
         System.out.println("=== 隊友給的增益 ===");
-        // ★ 使用者截圖那一句：帳號/暱稱，暱稱斜體
         Component hit = LineTranslator.translateChat(
                 buff(lit("Green_teaTW/", AQUA), nick("RichaCha", AQUA)), store);
         String text = hit == null ? null : hit.getString();
@@ -338,13 +283,11 @@ public final class NameFrameTest {
                   got != null && got.equals(name + " 賦予你 29% 甲盾與 8% 乙力。"));
         }
 
-        // ★ 名字裡有數字、句型把名字排在數值後面：數字不能跟 +2 搶位置
         Component fast = LineTranslator.translateChat(speed("woody123_is_god/radiance morph"), store);
         String got = fast == null ? null : fast.getString();
         check("★ 名字裡的數字不會被當成數值（實際 " + got + "）",
               "+2 分鐘疾行，來自 woody123_is_god/radiance morph。".equals(got));
 
-        // 一般翻譯那一支（就地取代退到它）也認得
         Component general = LineTranslator.translate(speed("Rabbit_flower"), store);
         check("一般翻譯那一支也認得（實際 " + (general == null ? null : general.getString()) + "）",
               general != null && general.getString().equals("+2 分鐘疾行，來自 Rabbit_flower。"));
@@ -369,7 +312,6 @@ public final class NameFrameTest {
                 death("", "Kasyu_pwq", " was minced to bits by the Grootslang."), store);
         check("名字是它自己的顏色", minced != null && colourOf(minced, "Kasyu_pwq") == ORANGE);
 
-        // ★ 伺服器折過行：語料只有一條沒折的
         MutableComponent wrapped = Component.empty();
         wrapped.append(icon(ICON, RED));
         wrapped.append(lit(" ", RED));
@@ -382,8 +324,6 @@ public final class NameFrameTest {
         check("★ 折過行的死亡快訊也翻了（實際 " + got + "）",
               got != null && got.contains("Elaina Lover 被無名者自現實中抹消。"));
 
-        // ★ 語料裡同一句有折好行的與沒折的兩條，伺服器卻折在第三個地方：
-        //   併句索引要拿沒折的那條，折好行的那條帶著續行圖示，填回去數量對不上
         MutableComponent elsewhere = Component.empty();
         elsewhere.append(icon(ICON, RED));
         elsewhere.append(lit(" ", RED));
@@ -410,7 +350,6 @@ public final class NameFrameTest {
 
     private static void titles(TranslationStore store) {
         System.out.println("=== 標題 ===");
-        // 標題是「{#}{#}名字 has been slain」，語料只有沒圖示的那一條
         MutableComponent title = Component.empty();
         title.append(icon(ICON, GOLD));
         title.append(icon(ICON_NEXT, GOLD));
@@ -478,11 +417,9 @@ public final class NameFrameTest {
         check("標題那條路收到的也沒有名字",
               title != null && !title.template().contains("Bob_77"));
 
-        // 送加速的那一句，沒有句型可認的時候也不能把名字收進來
         check("★ 送加速的句子算夾帶玩家名", PlayerDataFilter.carriesPlayerData(
                 "woody{~}_is_god/radiance morph gave you +{~} minutes speed boost."));
 
-        // ★ 收進「沒翻」清單的 {u} 句型，整理時不能被濾網的片語當成個資刪掉
         Path file = dir.resolve("captured.json");
         CaptureStore capture = new CaptureStore(file);
         capture.knowsSources(t -> t.strip().equals(BUFF));
@@ -499,8 +436,6 @@ public final class NameFrameTest {
         }
         check("★ 沒翻的 {u} 句型留在清單裡（濾網的片語不算個資）", kept);
     }
-
-    // ------------------------------------------------------------ 工具
 
     private static String hex(int colour) {
         return colour < 0 ? "無" : String.format("#%06X", colour);

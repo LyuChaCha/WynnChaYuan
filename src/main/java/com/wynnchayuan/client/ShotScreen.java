@@ -23,18 +23,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-/**
- * 拍完之後跳出來的小面板：看一眼、決定要存檔還是複製到剪貼簿。
- *
- * <h2>為什麼不是按一下就存檔</h2>
- * 先前 F8 直接寫檔，然後在聊天欄留一行字。使用者的回報是「按了沒有任何反應」
- * ——Wynncraft 的聊天欄一直在刷，一行字兩秒就被沖掉了，而檔案存在
- * screenshots 資料夾裡，畫面上什麼都看不到。
- *
- * <p>跳一個面板出來就沒有這個問題：拍到什麼、要拿它做什麼，都在眼前。
- * 而且校稿的人多半是要把圖<b>貼進聊天軟體</b>，複製到剪貼簿比存檔再去翻資料夾
- * 直接得多。
- */
 public final class ShotScreen extends Screen {
 
     private static final DateTimeFormatter STAMP =
@@ -62,15 +50,11 @@ public final class ShotScreen extends Screen {
     @Override
     protected void init() {
         if (preview == null) {
-            // 貼圖只註冊一次。每次 init（改視窗大小時會再跑）都註冊一張的話，
-            // 調整幾次視窗就漏掉幾張貼圖。
             preview = Identifier.fromNamespaceAndPath(
                     WynnChaYuan.MOD_ID, "shot/" + System.nanoTime());
             texture = new DynamicTexture(() -> "wynnchayuan-shot", shot);
             this.minecraft.getTextureManager().register(preview, texture);
         }
-        // 圖靠右、按鈕靠左：圖片以 1:1 畫出來才看得清楚，而 1:1 常常很寬，
-        // 擺中間就會把按鈕擠到畫面外。左右分開兩邊都放得下。
         int w = 150;
         int x = leftColumn() - w / 2;
         int y = this.height / 2 - 22;
@@ -83,7 +67,6 @@ public final class ShotScreen extends Screen {
                 b -> onClose()).bounds(x, y + 48, w, 20).build());
     }
 
-    /** 左半邊的中線——標題與按鈕都對齊這裡。 */
     private int leftColumn() {
         return Math.max(90, (this.width - previewWidth() - 24) / 2);
     }
@@ -96,21 +79,6 @@ public final class ShotScreen extends Screen {
         return scaled(shot.getHeight());
     }
 
-    /**
-     * 用<b>整數倍</b>縮到放得下為止。
-     *
-     * <h2>兩次都踩到的地方</h2>
-     * 截圖是照畫面像素拍的（GUI 縮放 3 倍就是 3 倍大）。第一版等比縮到 260 以內，
-     * 比例不是整數，每個原始像素被攤到 0.7 個螢幕像素上，邊緣全糊。
-     *
-     * <p>第二版改成「先除以 GUI 倍率，再除以一個整數」——結果實際除數變成
-     * {@code 倍率 × 整數}，跳過了中間所有可用的倍數（3 之後直接跳到 6），
-     * 圖就縮得比需要的小很多。
-     *
-     * <p>現在直接在<b>原始圖</b>上找「放得下的最小整數除數」。除數是整數，
-     * 一個螢幕像素正好對應 k 個原始像素，不會糊；又因為是能放下的最小值，
-     * 圖也不會白白縮小。
-     */
     private int divisor() {
         int roomW = Math.max(60, this.width - 210);
         int roomH = Math.max(60, this.height - 20);
@@ -134,7 +102,6 @@ public final class ShotScreen extends Screen {
         int x = this.width - w - 12;
         int y = this.height / 2 - h / 2;
 
-        // 外框跟著設定裡的主題色，跟其他面板同一套
         int accent = WynnChaYuan.config().themeARGB();
         graphics.fill(x - 3, y - 3, x + w + 3, y + h + 3, accent);
         graphics.fill(x - 1, y - 1, x + w + 1, y + h + 1, 0xFF000000);
@@ -150,12 +117,6 @@ public final class ShotScreen extends Screen {
         }
     }
 
-    /**
-     * 複製到剪貼簿，之後在任何地方 Ctrl+V 就貼得出來。
-     *
-     * <p>走的是 AWT 的系統剪貼簿。Minecraft 本身沒有「複製圖片」的介面，
-     * 它的 {@code keyboardHandler.setClipboard} 只吃文字。
-     */
     private void copy() {
         try {
             BufferedImage image = toBuffered(shot);
@@ -164,8 +125,6 @@ public final class ShotScreen extends Screen {
             note = T.c("shot.copied")
                     .withStyle(ChatFormatting.GREEN);
         } catch (Throwable t) {
-            // 有些環境沒有可用的剪貼簿（無頭、遠端桌面）。存檔那條路還在，
-            // 所以這裡只要說清楚就好，不必當成錯誤。
             note = T.c("shot.nocopy")
                     .withStyle(ChatFormatting.RED);
         }
@@ -179,11 +138,6 @@ public final class ShotScreen extends Screen {
             Path file = dir.resolve(name + "_"
                     + LocalDateTime.now().format(STAMP) + ".png");
             shot.writeToFile(file);
-            // 面板上這一行，跟聊天欄那一行，是<b>同一句</b>。
-            //
-            // 使用者的回報是「存到哪裡去了？」——先前面板上只寫檔名，
-            // 而且面板一關就什麼都沒了。現在兩邊都給完整位置，
-            // 聊天欄那份還會發成 toast（背包開著也看得到）並響一聲快門。
             note = com.wynnchayuan.render.PanelShot.saved(file);
             com.wynnchayuan.render.PanelShot.announce(note);
         } catch (Exception e) {
@@ -192,7 +146,6 @@ public final class ShotScreen extends Screen {
         }
     }
 
-    /** {@link NativeImage} 是 ABGR，AWT 要的是 ARGB，逐點換位。 */
     private static BufferedImage toBuffered(NativeImage source) {
         BufferedImage out = new BufferedImage(source.getWidth(), source.getHeight(),
                 BufferedImage.TYPE_INT_ARGB);
@@ -218,7 +171,6 @@ public final class ShotScreen extends Screen {
         return false;
     }
 
-    /** 把一張圖交給系統剪貼簿。 */
     private record ImageClip(BufferedImage image) implements Transferable {
 
         @Override

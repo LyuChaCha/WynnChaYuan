@@ -20,25 +20,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 內容名稱（任務、洞窟、探索點…）的三段式顯示：譯名／譯名加原文／保留原文。
- *
- * <h2>為什麼要有（使用者 2026-10-11）</h2>
- * 「Wynntils 頁面的名稱希望也可以像物品名稱一樣可以開啟完全取代、中英對照、關閉」。
- * 內容書卡片的標題是語料裡的整列條目（{@code Glacier Tunnels [Cave]} → 冰河隧道 [洞窟]），
- * 不經過物品名稱那條路，原本沒有任何設定管得到它。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>卡片標題三種設定各自的樣子，而且名字與類型標籤的顏色都留著；</li>
- *   <li>設定一切換馬上生效——同一張卡不會被快取卡在上一種樣子；</li>
- *   <li>清單那一列的裸名同樣三種；</li>
- *   <li>不是內容名稱的東西不受影響：物品的說明、{@code + New Quest [X]} 這種訊息、
- *       沒翻到的名字。</li>
- * </ul>
- *
- * 用出貨的語料跑，不寫死譯名：標題該翻成什麼，問語料。
- */
 public final class PageNamesTest {
 
     private static int failures = 0;
@@ -60,7 +41,6 @@ public final class PageNamesTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        // 從語料挑一張真的洞窟卡：名字有翻、沒有佔位符
         JsonObject misc = JsonParser.parseString(
                 Files.readString(dir.resolve("misc.json"), StandardCharsets.UTF_8)).getAsJsonObject();
         String name = null;
@@ -96,7 +76,6 @@ public final class PageNamesTest {
                 PageNames.nameOfTitle("Builder's Toolbelt [Region Tool]") == null);
         check("多行的不是標題", PageNames.nameOfTitle(name + " [Cave]\nCan be explored") == null);
 
-        // ---- ★ 卡片：跟實機同一個入口 ----
         List<Component> card = card(name, "Cave");
         store.setPageNameMode(ItemNames.ON);
         List<Component> on = TooltipPanel.translateInPlace(card, store);
@@ -126,8 +105,6 @@ public final class PageNamesTest {
         check("★ 切回譯名馬上生效，不會被快取卡在上一種",
                 (local + tag).equals(text(TooltipPanel.translateInPlace(card, store), 0)));
 
-        // ---- ★ 名字裡留著英文的卡，名字整段一個顏色 ----
-        // 使用者 2026-10-11 的截圖：「Aelumia 冶金廠」的 Aelumia 是橘的、冶金廠是白的。
         String mixedKey = null;
         for (String key : misc.keySet()) {
             String dst = misc.get(key).isJsonPrimitive() ? misc.get(key).getAsString() : "";
@@ -158,8 +135,6 @@ public final class PageNamesTest {
             store.setPageNameMode(ItemNames.ON);
         }
 
-        // 上面那一段在沒有字型的測試環境裡重現不出花掉的顏色（實機才會），所以直接拿
-        // 截圖上的樣子餵進去：Aelumia 橘、冶金廠白、標籤灰。
         Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
         List<Component> seen = List.of(Component.empty()
                 .append(Component.literal("Aelumia ").withStyle(NAME))
@@ -180,9 +155,6 @@ public final class PageNamesTest {
                 "Aelumia Metalmill".equals(text(PageNames.titles(
                         card("Aelumia Metalmill", "Cave"), seen, ItemNames.BOTH), 1)));
 
-        // ---- ★ 標題開頭有一個別種顏色的隱形字元 ----
-        // 使用者 2026-10-11 實測第二版：任務卡的標題從綠色變成白的。拿「第一個字元」的顏色
-        // 去塗會塗錯——開頭那個看不見的字元不是名字的顏色。
         Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x33B33B));
         List<Component> quest = new ArrayList<>();
         quest.add(Component.empty()
@@ -200,7 +172,6 @@ public final class PageNamesTest {
             }
             check("★ " + mode + "：標題照樣是名字的顏色，不被開頭那個隱形字元帶歪", stays);
         }
-        // 譯文那一側花掉、原文開頭又有隱形字元：照名字佔多數的顏色塗
         List<Component> questMixed = List.of(Component.empty()
                 .append(Component.literal("Burning ").withStyle(green))
                 .append(Component.literal("之絆").withStyle(white))
@@ -209,7 +180,6 @@ public final class PageNamesTest {
         check("★ 花掉的標題塗回名字佔多數的顏色（綠），不是開頭那個字元的白",
                 colourAt(repainted.get(0), "Burning ".length()) == 0x33B33B);
 
-        // ---- 不是內容名稱的不動 ----
         store.setPageNameMode(ItemNames.BOTH);
         List<Component> made = card("Zzyzx Made Up Place", "Cave");
         List<Component> madeOut = TooltipPanel.translateInPlace(made, store);
@@ -225,7 +195,6 @@ public final class PageNamesTest {
                         + (chatOut.isEmpty() ? "（原文不動）" : chatOut.size() + " 列") + "）",
                 chatOut.isEmpty() || chatOut.size() == chat.size());
 
-        // ---- ★ 清單那一列的裸名 ----
         check("前提：清單認得這個名字", store.isPageName(name));
         check("不相干的字不算", !store.isPageName("Can be explored"));
         Path cfgFile = Files.createTempDirectory("wcy-pagenames").resolve("config.json");
@@ -245,7 +214,6 @@ public final class PageNamesTest {
         check("★ 清單切回譯名馬上生效",
                 local.equals(plain(WynntilsText.screenText(row, config, store))));
 
-        // 不是內容名稱的字，三種設定都一樣
         StyledText other = StyledText.fromComponent(
                 Component.literal("Can be explored").withStyle(TAG));
         String otherOn = plain(WynntilsText.screenText(other, config, store));
@@ -256,9 +224,6 @@ public final class PageNamesTest {
         check("不是名稱的字照樣翻",
                 otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
 
-        // ---- ★ 清單與卡片要是同一個名字（使用者 2026-10-13 的截圖） ----
-        // 內容書左邊那一列是「燃燒大地」、右邊那張卡是「焦土 [洞窟]」：裸名 Scorched Earth
-        // 照一般的查表對到弓箭手的技能。譯名從語料讀，不寫死（術語統一會改它）。
         store.setPageNameMode(ItemNames.ON);
         for (String clash : new String[] {"Scorched Earth", "Dust Bowl"}) {
             String cardRow = misc.has(clash + " [Cave]") ? misc.get(clash + " [Cave]").getAsString() : "";
@@ -304,7 +269,6 @@ public final class PageNamesTest {
         check("不是內容名稱的字照舊", otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
         check("語料沒有這張卡的名字：沒有答案", store.pageTitleName("Can be explored") == null
                 && store.pageTitleName(null) == null);
-        // 同一個名字兩種類型、兩種譯名：光看名字分不出來，不硬挑
         {
             Path two = Files.createTempDirectory("wcy-pagetitles");
             Files.writeString(two.resolve("misc.json"), "{\"Taproot [Quest]\": \"甲 [任務]\","
@@ -320,7 +284,6 @@ public final class PageNamesTest {
         }
         WynntilsText.contentScreen = () -> false;
 
-        // ---- 設定存得住 ----
         check("預設是譯名", config.pageNames() == ItemNames.ON);
         config.cyclePageNames(1);
         check("輪到下一格是譯名加原文", config.pageNames() == ItemNames.BOTH);
@@ -329,7 +292,6 @@ public final class PageNamesTest {
         done();
     }
 
-    /** 內容書的一張卡：標題、空行、狀態、敘述。標題是兩段顏色。 */
     private static List<Component> card(String name, String type) {
         List<Component> out = new ArrayList<>();
         out.add(Component.empty()

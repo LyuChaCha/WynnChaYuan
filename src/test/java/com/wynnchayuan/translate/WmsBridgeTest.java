@@ -1,12 +1,5 @@
 package com.wynnchayuan.translate;
 
-/**
- * WynnMarketSearch 的搜尋框打譯名找不找得到。
- *
- * <p>真正掛進那個模組的是 mixin，要實機才跑得到；這裡測的是它轉過來問的那一句
- * （{@link WmsBridge#matches}）答得對不對，以及幾個不能出事的地方：功能關著時
- * 不插手、索引壞掉時不丟例外——那段程式跑在別人的搜尋迴圈裡，丟出去會把它弄壞。
- */
 public final class WmsBridgeTest {
 
     private static int failures = 0;

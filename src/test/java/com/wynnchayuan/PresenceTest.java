@@ -10,14 +10,6 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * 登記站：送出去的東西只有登入、披風開關與玩家自己選的圖；名單讀得對；上傳之前先驗得出問題。
- *
- * <h2>為什麼要釘</h2>
- * 這是整個模組唯一往外送資料的地方。{@code CorpusExportTest} 管的是「只有這一個檔會送、
- * 只送到這一個網址」，這裡管的是<b>送什麼</b>：哪天有人順手多加一欄（世界、版本、
- * 登入憑證……），這裡要紅。
- */
 public final class PresenceTest {
 
     private static int failures = 0;
@@ -27,26 +19,20 @@ public final class PresenceTest {
     private static final UUID GHOST = UUID.fromString("cccccccc-cccc-cccc-cccc-cccccccccccc");
 
     public static void main(String[] args) throws Exception {
-        // ---- 代碼 ----
         String id = Presence.idOf(ME);
         check("代碼是 24 個小寫十六進位字元（實際 " + id + "）",
                 id != null && id.matches("[0-9a-f]{24}"));
-        // SHA-256("wynnchayuan:" + 32 個 a) 的前 12 個位元組——登記站的 publicId 是同一條算式，
-        // tools/presence/worker.test.mjs 用同一個 UUID。兩邊算的不一樣就互相看不到。
         check("★ 演算法跟登記站一樣（改了的話誰都看不到誰）",
                 "3dd509c0fcb112e29c04ee34".equals(id) && id.equals(expected()));
         check("不同的人不同的代碼", !id.equals(Presence.idOf(OTHER)));
         check("沒有 UUID 就沒有代碼", Presence.idOf(null) == null);
         check("★ 代碼裡看不出 UUID", !id.contains("aaaaaaaa"));
 
-        // ---- ★ 送出去的東西 ----
-        // 登入：用玩家金鑰的私鑰對登記站出的題簽名。私鑰與登入憑證都不在送出去的內容裡。
         java.security.KeyPairGenerator generator = java.security.KeyPairGenerator.getInstance("RSA");
         generator.initialize(2048);
         java.security.KeyPair keys = generator.generateKeyPair();
         String uuid = ME.toString().replace("-", "");
         String challenge = "1791800000000." + "ab".repeat(16) + "." + "cd".repeat(32);
-        // worker.test.mjs 簽的是同一串：LOGIN_PREFIX + 題目 + 換行 + UUID
         check("★ 簽的那串字綁住網域、這一題、這個帳號",
                 new String(Presence.loginMessage(challenge, uuid), java.nio.charset.StandardCharsets.UTF_8)
                         .equals("wynnchayuan.com login\n" + challenge + "\n" + uuid));
@@ -76,7 +62,6 @@ public final class PresenceTest {
         String privateKey = java.util.Base64.getEncoder().encodeToString(keys.getPrivate().getEncoded());
         check("★ 私鑰不在送出去的內容裡", !sent.contains(privateKey.substring(0, 64))
                 && !sent.contains(privateKey.substring(privateKey.length() - 64)));
-        // 綁定網站帳號：只送玩家自己打的那組碼
         JsonObject linkSent = JsonParser.parseString(Presence.linkBody("ABCD2345")).getAsJsonObject();
         check("★ 綁定只有一欄：code（實際 " + linkSent.keySet() + "）",
                 linkSent.keySet().equals(Set.of("code")) && "ABCD2345".equals(linkSent.get("code").getAsString()));
@@ -90,7 +75,6 @@ public final class PresenceTest {
                 && Presence.linkResultOf(400) == Presence.LinkResult.BAD_CODE
                 && Presence.linkResultOf(401) == Presence.LinkResult.LOGIN_FAILED
                 && Presence.linkResultOf(500) == Presence.LinkResult.FAILED);
-        // 檔案上限分級：一般玩家 1 MB，名單上的成員 20 MB（登記站是同一條規矩）
         check("★ 一般玩家 1 MB、成員 20 MB", CapeRules.limitFor(false) == 1024 * 1024
                 && CapeRules.limitFor(true) == 20 * 1024 * 1024);
         byte[] pngHead = new byte[64];
@@ -117,13 +101,11 @@ public final class PresenceTest {
         check("不在名單上的人沒有身分可挑：不送 show",
                 JsonParser.parseString(Presence.helloBody(true, false, null)).getAsJsonObject()
                         .keySet().equals(Set.of("cape", "rainbow")));
-        // 名單上別人的選擇讀得回來
         String mine = Presence.idOf(ME);
         String theirs = Presence.idOf(OTHER);
         Presence.load(Presence.parse("{\"t\":1,\"users\":[\"" + mine + "\",\"" + theirs
                 + "\"],\"capes\":{},\"hidden\":[],\"rainbow\":[\"" + theirs + "\",\"ffffffffffffffffffffffff\"],"
                 + "\"show\":{\"" + theirs + "\":\"developers,sponsors\",\"" + mine + "\":\"Dev!,contributors\"}}"));
-        // 特別名單：登入的回覆說這個人有沒有成員的上傳待遇
         JsonObject yes = new JsonObject();
         yes.addProperty("token", "x");
         yes.addProperty("member", true);
@@ -152,7 +134,6 @@ public final class PresenceTest {
                         && !JsonParser.parseString(Presence.helloBody(false, false, null)).getAsJsonObject()
                                 .get("cape").getAsBoolean());
 
-        // ---- 名單 ----
         String other = Presence.idOf(OTHER);
         String ghost = Presence.idOf(GHOST);
         Presence.Roster roster = Presence.parse("{\"t\":1,\"users\":[\"" + id + "\",\"" + other
@@ -176,7 +157,6 @@ public final class PresenceTest {
         Presence.load(null);
         check("清掉之後回到空的", !Presence.installed(ME) && Presence.capeVersion(ME) == 0);
 
-        // ---- 登記站回的理由 ----
         check("200 是成功", Presence.resultOf(200, "{\"ok\":true}") == Presence.Result.DONE);
         check("登記站說的每一種理由都認得",
                 Presence.resultOf(400, "{\"why\":\"bad size\"}") == Presence.Result.BAD_SIZE
@@ -193,7 +173,6 @@ public final class PresenceTest {
                 Presence.resultOf(502, "<html>Bad Gateway</html>") == Presence.Result.FAILED
                         && Presence.resultOf(400, "{\"why\":\"???\"}") == Presence.Result.FAILED);
 
-        // ---- 替瀏覽器登入的網址 ----
         String link = Presence.BASE + "/capes#t=web.abc";
         check("登記站回的登入網址照用", link.equals(
                 Presence.signedInLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
@@ -208,8 +187,7 @@ public final class PresenceTest {
         check("沒有登入網址就沒有帳號頁的登入網址", Presence.onPage(null, "/account") == null);
         check("網站是 wynnchayuan.com", "https://wynnchayuan.com".equals(Presence.BASE));
 
-        // ---- 上傳之前先驗 ----
-        byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));   // 22×17，三格
+        byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));
         check("照範本畫的 GIF 可以上傳", CapeRules.check(gif) == null);
         check("★ 只畫一面的圖不能上傳——要照範本", CapeRules.check(Files.readAllBytes(
                 Path.of("src/test/resources/cape/anim.gif"))) == CapeRules.Problem.BAD_SIZE
@@ -232,7 +210,7 @@ public final class PresenceTest {
                 && CapeRules.check(png(990, 765)) == CapeRules.Problem.BAD_SIZE
                 && CapeRules.check(png(1408, 1088)) == CapeRules.Problem.BAD_SIZE);
         byte[] wide = gif.clone();
-        wide[6] = 23;                                   // 寬改成 23
+        wide[6] = 23;
         check("GIF：別的尺寸不行", CapeRules.check(wide) == CapeRules.Problem.BAD_SIZE);
 
         System.out.println(failures == 0 ? "登記站：全部通過" : "登記站：" + failures + " 項失敗");
@@ -241,7 +219,6 @@ public final class PresenceTest {
         }
     }
 
-    /** 自己算一次，跟寫死的那個值互相對照（哪一邊抄錯都看得出來）。 */
     private static String expected() throws Exception {
         byte[] hash = java.security.MessageDigest.getInstance("SHA-256").digest(
                 ("wynnchayuan:" + "a".repeat(32)).getBytes(java.nio.charset.StandardCharsets.UTF_8));
@@ -252,7 +229,6 @@ public final class PresenceTest {
         return out.toString();
     }
 
-    /** 只有檔頭的 PNG：簽章加 IHDR 的寬高，夠驗尺寸用。 */
     private static byte[] png(int width, int height) {
         byte[] bytes = new byte[64];
         int[] head = {0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0, 0, 0, 13, 'I', 'H', 'D', 'R'};

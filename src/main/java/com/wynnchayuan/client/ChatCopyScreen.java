@@ -14,30 +14,10 @@ import net.minecraft.util.FormattedCharSequence;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 「複製聊天」的挑選畫面。
- *
- * <h2>為什麼不是滑鼠指哪就複製哪</h2>
- * 那需要問 Minecraft「游標下面是第幾行聊天」。1.21.11 的 {@code ChatComponent}
- * 沒有公開這件事，資料是私有的，得靠 mixin 挖，還要自己重算它的排版幾何——
- * 而這個模組到目前為止一個 mixin 都沒有。
- *
- * <p>改成列出最近的訊息讓玩家挑，反而多了一個好處：<b>捲得回去</b>。
- *
- * <h2>畫成原本的樣子</h2>
- * 每一則都用 {@link net.minecraft.client.gui.Font#split} 依面板寬度斷行，
- * 再逐行畫出<b>原本的 {@link Component}</b>——顏色、粗體、圖示全部都在，
- * 跟聊天視窗裡看到的一樣。先前畫的是去掉格式的純文字，
- * 一整片灰色，根本認不出哪則是哪則。
- *
- * <h2>複製哪一份</h2>
- * 照「聊天訊息」那個設定走：只顯示原文就複製原文，就地取代就複製譯文，
- * 兩份都顯示就兩份都複製。畫面上看到什麼，複製起來就是什麼。
- */
 public final class ChatCopyScreen extends Screen {
 
     private static final int LINE_H = 10;
-    private static final int GAP = 4;            // 訊息之間空一行的高度
+    private static final int GAP = 4;
     private static final int PAD = 8;
     private static final int TOP = 34;
     private static final int PANEL_BG = 0xD0101018;
@@ -45,7 +25,6 @@ public final class ChatCopyScreen extends Screen {
     private static final int ROW_HOVER = 0x40FFD24A;
     private static final int COPIED_MS = 1200;
 
-    /** 攤平後的一行：知道它屬於哪一則，點下去才複製得到整則。 */
     private record Row(int entry, FormattedCharSequence line, boolean last) {}
 
     private List<ChatLog.Entry> entries = List.of();
@@ -66,12 +45,6 @@ public final class ChatCopyScreen extends Screen {
                 .bounds(this.width / 2 - 50, this.height - 28, 100, 20).build());
     }
 
-    /**
-     * 把每一則拆成畫得出來的行。
-     *
-     * <p>{@code split} 同時處理<b>自動斷行與訊息本身的換行</b>，所以多行的
-     * 系統訊息（歡迎訊息、任務獎勵清單）會跟遊戲裡斷在一樣的地方。
-     */
     private List<Row> flatten() {
         int room = panelWidth() - PAD * 2;
         List<Row> out = new ArrayList<>();
@@ -130,7 +103,6 @@ public final class ChatCopyScreen extends Screen {
             if (over == row.entry()) {
                 g.fill(left + 1, y - 1, left + width - 1, y + LINE_H - 1, ROW_HOVER);
             }
-            // 原樣畫出來——顏色、粗體、圖示都在原本的 Component 裡
             g.drawString(this.font, row.line(), left + PAD, y, Colors.TEXT, false);
             if (row.last() && i + 1 < shown) {
                 g.fill(left + PAD, y + LINE_H - 1, left + width - PAD,
@@ -149,7 +121,6 @@ public final class ChatCopyScreen extends Screen {
         }
     }
 
-    /** 游標下面是第幾則；不在任何一則上就是 {@code -1}。 */
     private int entryAt(double mouseX, double mouseY) {
         int left = panelLeft();
         int width = panelWidth();
@@ -166,7 +137,6 @@ public final class ChatCopyScreen extends Screen {
         return -1;
     }
 
-    // 1.21.11 把滑鼠事件包成 MouseButtonEvent，不再是三個散的參數。
     @Override
     public boolean mouseClicked(net.minecraft.client.input.MouseButtonEvent event,
                                 boolean doubleClick) {

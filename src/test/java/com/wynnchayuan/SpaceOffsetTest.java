@@ -2,12 +2,6 @@ package com.wynnchayuan;
 
 import com.wynnchayuan.translate.SpaceOffset;
 
-/**
- * 驗證排版偏移的判斷與編解碼。
- *
- * <p>這一段錯了，畫面上的表現是「欄位間隔憑空消失」或「圖示變方框」——
- * 兩者都完全看不出跟空白字元有關，前後追了好幾版才定位到。
- */
 public final class SpaceOffsetTest {
 
     private static final int ZERO = 0xD0000;
@@ -19,7 +13,6 @@ public final class SpaceOffsetTest {
     }
 
     public static void main(String[] args) {
-        // --- 認得出來的 ---------------------------------------------------
         check("正偏移", SpaceOffset.isOffsetRun(cp(104)));
         check("負偏移（Wynncraft 實際會用，例如 U+CFFE7）",
                 SpaceOffset.isOffsetRun(cp(-25)));
@@ -28,7 +21,6 @@ public final class SpaceOffsetTest {
         check("多個字元組成的偏移 —— 配方那種一行兩欄的間隔",
                 SpaceOffset.isOffsetRun(cp(40) + cp(-6) + cp(12)));
 
-        // --- 不該誤認的 ---------------------------------------------------
         check("空字串不算", !SpaceOffset.isOffsetRun(""));
         check("普通文字不算", !SpaceOffset.isOffsetRun("Health"));
         check("範圍外的碼位不算（材質包自訂圖示）",
@@ -36,7 +28,6 @@ public final class SpaceOffsetTest {
         check("一半是偏移一半是圖示，整段都不算",
                 !SpaceOffset.isOffsetRun(cp(40) + ""));
 
-        // --- 編解碼 -------------------------------------------------------
         check("解正偏移", SpaceOffset.decode(cp(104)) == 104);
         check("解負偏移", SpaceOffset.decode(cp(-25)) == -25);
         check("多字元會加總", SpaceOffset.decode(cp(40) + cp(-6)) == 34);

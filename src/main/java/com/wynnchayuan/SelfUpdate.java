@@ -19,45 +19,21 @@ import java.time.Duration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/**
- * 在遊戲裡把模組更新到最新版（使用者 2026-10-12：「不用去 GitHub 重新下載」）。
- *
- * <h2>做什麼</h2>
- * 玩家在「更新說明」按下更新 → 背景下載 GitHub Releases 上那一版的 jar → 確認它真的是
- * 這個模組的那一版 → <b>關閉遊戲的時候</b>蓋掉 mods 資料夾裡現在這個檔。下次開遊戲就是新版。
- *
- * <h2>為什麼等到關遊戲才換</h2>
- * 遊戲開著的時候 jar 是被打開的：之後第一次用到的類別要從裡面讀，檔案中途被換掉，
- * 讀出來就是壞的（{@code ZipException}）。這個專案自己踩過——測試時在遊戲開著的時候換 jar，
- * 之後開某個畫面就崩了。所以下載放在別的資料夾，等 JVM 要結束了才動 mods 裡那個檔。
- *
- * <h2>為什麼是「蓋過去」而不是「放新檔、刪舊檔」</h2>
- * Windows 上打開中的檔案刪不掉，但寫得進去。把新版的內容寫進舊檔原本的位置，是 Wynntils
- * 用了很多年的做法。代價是<b>檔名不會變</b>：mods 裡還是舊版號的檔名，裡面是新版
- * （F6 與模組清單顯示的版本是對的）。
- *
- * <h2>只下載，不送東西</h2>
- * 網址是寫死的 GitHub Releases，版本號來自 {@link Releases#newer}。不照線上任何欄位去別的
- * 地方下載——能被遠端改的網址加上會被執行的檔案，是最不該放在一起的兩件事。
- * 也不會自己動：一定是玩家按了才下載。
- */
+// 遊戲開著換 jar 會 ZipException；Windows 刪不掉開著的檔
 public final class SelfUpdate {
 
     private SelfUpdate() {}
 
-    /** 現在在哪一步。 */
     public enum State { IDLE, DOWNLOADING, READY, FAILED }
 
     private static final String BASE = "https://github.com/LyuChaCha/WynnChaYuan/releases/download/";
 
-    /** 一個 jar 不該比這個大。現在大約 45 MB；讀到離譜的大小就不要了。 */
     private static final long MAX_BYTES = 300L * 1024 * 1024;
 
     private static volatile State state = State.IDLE;
     private static volatile int percent = -1;
     private static volatile String target;
 
-    /** 下載好、等關遊戲時套用的那一份：新檔在哪、要蓋掉的舊檔在哪。 */
     private record Pending(Path fresh, Path old) {}
 
     private static volatile Pending pending;
@@ -66,43 +42,26 @@ public final class SelfUpdate {
         return state;
     }
 
-    /** 下載到幾成（0～100）；還不知道總長度時是 −1。 */
     public static int percent() {
         return percent;
     }
 
-    /** 正在下載、或已經下載好等著套用的是哪一版；沒有就回 {@code null}。 */
     public static String target() {
         return target;
     }
 
-    /** 這一版的 jar 在 GitHub Releases 的網址。tag 是 {@code v版本}，檔名是 {@code wynnchayuan-版本.jar}。 */
     static String assetUrl(String version) {
         return BASE + "v" + version + "/wynnchayuan-" + version + ".jar";
     }
 
-    /** 版本號只會有這些字。別的東西不拿去拼網址與檔名。 */
     static boolean plausibleVersion(String version) {
         return version != null && version.matches("[0-9A-Za-z._+-]{1,40}") && !version.contains("..");
     }
 
-    /**
-     * 能不能在遊戲裡更新：要找得到自己那個 jar。
-     *
-     * <p>開發環境裡模組是一個資料夾不是 jar，沒有東西可以換；那時候這個功能不出現。
-     */
     public static boolean available() {
         return NetworkGate.online() && ownJar() != null;
     }
 
-    /**
-     * 記一步。寫進設定資料夾的 {@code update-log.txt}，同時印到主控台。
-     *
-     * <h2>為什麼要另外寫檔（使用者 2026-10-14：「遊戲內更新似乎沒有生效」）</h2>
-     * 回報時手上只有 latest.log，而它看不出按鈕按了沒、下載到哪一步、關遊戲時套用成功沒有——
-     * 關遊戲那一步跑在關機掛鉤裡，那時 log4j 已經收掉，印出來的字根本不會進 latest.log。
-     * 所以每一步都追加到自己的檔案，只留最後 200 行。
-     */
     static void trace(String message) {
         String line = java.time.LocalDateTime.now().withNano(0) + " " + message;
         System.out.println("[WynnChaYuan] 更新：" + message);
@@ -121,14 +80,9 @@ public final class SelfUpdate {
             }
             Files.write(file, lines, StandardCharsets.UTF_8);
         } catch (Throwable ignored) {
-            // 記不下來就算了：更新本身不能因為記錄失敗而停
         }
     }
 
-    /**
-     * 打開「更新說明」而且有新版的時候記一次：「直接更新」那顆按鈕會不會出現。
-     * 按鈕沒出現是最難從回報看出來的情況——玩家只會說「沒有生效」。
-     */
     public static void noteScreenOpened() {
         String newer = Releases.newer();
         if (newer == null || newer.equals(screenNoted)) {
@@ -144,7 +98,6 @@ public final class SelfUpdate {
     private static final String LOG = "update-log.txt";
     private static final int LOG_LINES = 200;
 
-    /** 找不到自己那個 jar 的時候，Fabric 說模組是從哪裡載入的。 */
     private static String originOf() {
         try {
             return net.fabricmc.loader.api.FabricLoader.getInstance()
@@ -165,7 +118,6 @@ public final class SelfUpdate {
         }
     }
 
-    /** mods 資料夾裡現在跑的這個 jar；找不到（或不是一個檔）就回 {@code null}。 */
     static Path ownJar() {
         try {
             return net.fabricmc.loader.api.FabricLoader.getInstance()
@@ -181,16 +133,10 @@ public final class SelfUpdate {
         }
     }
 
-    /** 下載放在哪：設定資料夾底下，不放 mods——半截的檔出現在 mods 裡，下次開遊戲會被當成模組載入。 */
     static Path holding(Path configDir, String version) {
         return configDir.resolve("update").resolve("wynnchayuan-" + version + ".jar");
     }
 
-    /**
-     * 開始下載這一版。已經在下載、或已經下載好了就不重來。
-     *
-     * @param version 要更新到的版本（{@link Releases#newer} 給的）
-     */
     public static synchronized void start(String version) {
         trace("按下更新：要更新到 " + version + "，目前是 " + WynnChaYuan.version() + "，狀態 " + state);
         if (state == State.DOWNLOADING || state == State.READY) {
@@ -239,7 +185,6 @@ public final class SelfUpdate {
             try {
                 Files.deleteIfExists(part);
             } catch (Exception ignored) {
-                // 留著也只是設定資料夾裡的一個暫存檔
             }
             com.wynnchayuan.translate.ErrorDebug.note("update.download", version, t);
             state = State.FAILED;
@@ -288,12 +233,6 @@ public final class SelfUpdate {
         }
     }
 
-    /**
-     * 這個檔是不是這個模組的那一版。
-     *
-     * <p>讀得開的 zip（半截的檔沒有目錄區，開不起來）、裡面有 {@code fabric.mod.json}、
-     * 模組 ID 是我們、版本就是要的那一版。錯誤頁面、別的模組、別的版本都過不了。
-     */
     static boolean isRelease(Path jar, String version) {
         try (ZipFile zip = new ZipFile(jar.toFile())) {
             ZipEntry entry = zip.getEntry("fabric.mod.json");
@@ -311,13 +250,6 @@ public final class SelfUpdate {
         }
     }
 
-    /**
-     * 關遊戲時叫的：有下載好的新版就蓋到舊檔上。
-     *
-     * <p>由模組<b>自己那個</b>關機掛鉤在存完檔之後叫（見 {@code WynnChaYuan#onInitializeClient}），
-     * 不另外掛一個——JVM 的關機掛鉤是同時跑的，另外掛的話可能在我們還在存 captured.json 的
-     * 時候就把 jar 換掉，存檔要用的類別若還沒載入過，就會從換掉的檔裡讀出壞東西。
-     */
     public static void applyPending() {
         Pending p = pending;
         if (p != null) {
@@ -327,14 +259,6 @@ public final class SelfUpdate {
         }
     }
 
-    /**
-     * 把新版的內容寫進舊檔的位置，成功就把暫放的那一份刪掉。
-     *
-     * <p>用「打開舊檔、清空、寫入」而不是「刪掉再放」——見類別說明。失敗的話兩個檔都留著：
-     * 舊的照常能用，新的還在設定資料夾，{@link #leftover} 會在下次開遊戲時看到它。
-     *
-     * @return 套用成功
-     */
     static boolean apply(Path fresh, Path old) {
         try {
             if (!Files.isRegularFile(fresh) || !Files.isRegularFile(old)) {
@@ -353,13 +277,6 @@ public final class SelfUpdate {
         }
     }
 
-    /**
-     * 上一次下載好、卻沒有套用成功的那一版（關遊戲時寫不進去）。
-     *
-     * <p>已經在跑的那一版留下的檔案是套用成功後沒刪乾淨的，順手清掉。
-     *
-     * @return 還躺在設定資料夾裡的新版 jar；沒有就回 {@code null}
-     */
     public static Path leftover(Path configDir, String running) {
         try {
             Path dir = configDir.resolve("update");
@@ -371,7 +288,7 @@ public final class SelfUpdate {
                 for (Path file : (Iterable<Path>) files::iterator) {
                     String name = file.getFileName().toString();
                     if (!name.startsWith("wynnchayuan-") || !name.endsWith(".jar")) {
-                        Files.deleteIfExists(file);          // 半截的 .part
+                        Files.deleteIfExists(file);
                         continue;
                     }
                     String version = name.substring("wynnchayuan-".length(),
@@ -391,19 +308,13 @@ public final class SelfUpdate {
 
     private static volatile boolean leftoverTold;
 
-    /**
-     * 上次下載的更新沒有套用成功的話，在聊天室說一次檔案在哪。
-     *
-     * <p>平常走不到：關遊戲時寫得進去，檔案就被刪掉了。寫不進去（檔案唯讀、防毒軟體擋著）
-     * 的時候，玩家會以為更新了而其實沒有——至少要讓他知道，還有手動怎麼換。
-     */
     public static void tellLeftover(net.minecraft.client.Minecraft client) {
         if (leftoverTold || client == null || client.player == null) {
             return;
         }
         leftoverTold = true;
         if (state != State.IDLE) {
-            return;      // 這場已經按過更新了：資料夾裡的是正在下載、或等著套用的那一份
+            return;
         }
         Path configDir = WynnChaYuan.configDir();
         Path file = configDir == null ? null : leftover(configDir, WynnChaYuan.version());
@@ -417,12 +328,6 @@ public final class SelfUpdate {
         client.player.displayClientMessage(line, false);
     }
 
-    /**
-     * 從聊天室（{@code /wcy update}）開始的更新：先說一聲，下載完或失敗時再說一聲。
-     *
-     * <p>「更新說明」頁的按鈕自己會顯示進度；從聊天室按的人不會開那一頁，
-     * 不說的話看起來就是點了沒反應。
-     */
     public static void startFromChat(net.minecraft.client.Minecraft client) {
         if (!NetworkGate.online()) {
             chat(client, com.wynnchayuan.client.T.c("chat.update.offline"));
@@ -450,7 +355,6 @@ public final class SelfUpdate {
         chat(client, com.wynnchayuan.client.T.c("chat.update.started", latest));
     }
 
-    /** 每個 tick 叫：從聊天室開始的那一次下載完了（或失敗了）就說一聲。 */
     public static void announceProgress(net.minecraft.client.Minecraft client) {
         if (!announce || client == null || client.player == null) {
             return;
@@ -476,7 +380,6 @@ public final class SelfUpdate {
         client.player.displayClientMessage(shown, false);
     }
 
-    /** 測試用：回到還沒開始的樣子。 */
     static void reset() {
         state = State.IDLE;
         percent = -1;
@@ -484,7 +387,6 @@ public final class SelfUpdate {
         pending = null;
     }
 
-    /** 測試用：把檔案搬成另一個（給 {@link #leftover} 的測試準備資料）。 */
     static void copy(Path from, Path to) throws java.io.IOException {
         Files.createDirectories(to.getParent());
         Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);

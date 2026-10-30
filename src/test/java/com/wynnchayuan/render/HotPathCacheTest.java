@@ -24,25 +24,11 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * 三處算繪端加速，畫出去的東西必須跟改之前<b>逐字相同</b>。
- *
- * <ul>
- *   <li><b>tooltip 整段查表</b>：每一行的片段在同一次翻譯裡只切一次。拿語料裡的整段條目
- *       組出幾百份 tooltip，「只切一次」與「每次重切」（原本的走法，留著的那個參數）
- *       兩條路的每一行都要一樣。</li>
- *   <li><b>追蹤欄</b>：同一份內容只翻一次。每一幀的結果要跟「當場重翻」（原本的 line()）
- *       一樣；語料重載、名稱模式、Shift、內容名稱模式一換，要重算；沒譯文的行只收一次。</li>
- *   <li><b>名牌</b>：快取照最近用過的順序淘汰、戰鬥數字另外放、要不要登記給注視小框跟著
- *       快取記。結果要跟原本的算法一樣；打一陣子仗畫面上的名牌不能被擠掉；語料一換要重算；
- *       沒譯文的名字只收一次。</li>
- * </ul>
- */
 public final class HotPathCacheTest {
 
     private static int failures = 0;
 
-    /** 類別名就是 WynntilsText 認追蹤欄用的那個。 */
+    // 類別簡名要跟 WynntilsText.TRACKER 一樣
     private static final class ContentTrackerOverlay { }
 
     private static final Path ROOT = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -71,8 +57,6 @@ public final class HotPathCacheTest {
                 : "\n算繪端加速：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
     }
-
-    // ------------------------------------------------------------------ tooltip
 
     private static final Pattern NUMBER = Pattern.compile("\\{~\\d*}");
     private static final Pattern OTHER = Pattern.compile("\\{[^}]*}");
@@ -117,7 +101,7 @@ public final class HotPathCacheTest {
         int s = 0;
         while (b < blocks.size() && total < 900) {
             List<Component> tip = new ArrayList<>();
-            tip.add(line(singles.get(s++ % singles.size()), 0xFFAA00));   // 名稱列
+            tip.add(line(singles.get(s++ % singles.size()), 0xFFAA00));
             tip.add(line("", 0xAAAAAA));
             int want = 6 + total % 20;
             while (tip.size() < want && b < blocks.size()) {
@@ -149,7 +133,6 @@ public final class HotPathCacheTest {
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
     }
 
-    /** 語料的鍵填上實機會出現的樣子；有認不得的佔位符就不用。 */
     private static String fill(String key, int seed) {
         Matcher m = NUMBER.matcher(key);
         StringBuilder sb = new StringBuilder();
@@ -177,8 +160,6 @@ public final class HotPathCacheTest {
         return sb.toString();
     }
 
-    // ------------------------------------------------------------------ 追蹤欄
-
     private static void tracker(CollectorConfig config, TranslationStore store,
                                 CaptureStore captured) throws Exception {
         Method line = WynntilsText.class.getDeclaredMethod("line", StyledText.class,
@@ -203,7 +184,6 @@ public final class HotPathCacheTest {
                 break;
             }
         }
-        // 裝備名吃「翻譯物品名稱」與 Shift：拿來確認換設定之後真的有重算
         for (String gear : List.of("Halcyon", "Warp", "Divzer", "Idol", "Ignis", "Grandmother")) {
             panels.add(new StyledText[] {StyledText.fromString(gear)});
         }
@@ -221,8 +201,6 @@ public final class HotPathCacheTest {
         Map<Integer, java.util.Set<String>> perPanel = new java.util.HashMap<>();
         String[] phases = {"一開始", "第二、三幀（命中快取）", "名稱模式 BOTH", "按住 Shift",
                 "名稱模式 OFF", "內容名稱 BOTH", "內容名稱 OFF", "換成簡中", "換回繁中"};
-        // 換設定那幾輪只用一小組：要整組放得進快取，不然每輪都被擠掉重算，
-        // 「沒有重算」的錯誤就測不出來了（實機的追蹤欄也只有幾行）
         List<StyledText[]> small = new ArrayList<>(panels.subList(0, 3));
         small.addAll(panels.subList(panels.size() - 12, panels.size()));
         for (int phase = 0; phase < phases.length; phase++) {
@@ -278,7 +256,6 @@ public final class HotPathCacheTest {
         report("★ 追蹤欄每一幀、每次換設定之後，都跟當場重翻逐行相同（" + compared + " 行次，不同 "
                 + differ + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
 
-        // 沒譯文的行只收一次：先前每一幀都收，seen 會一路往上加
         StyledText[] english = {
                 StyledText.fromString("§fWalk carefully through the misty swamp near the old mill"),
                 StyledText.fromString("§7(Optional) Bring the curious child some shiny pebbles"),
@@ -290,8 +267,6 @@ public final class HotPathCacheTest {
         report("★ 沒譯文的追蹤欄行收進語料，而且只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
                 seen[0] == 1 && seen[1] == 1);
     }
-
-    // ------------------------------------------------------------------ 名牌
 
     private static void nameplates(CollectorConfig config, TranslationStore store,
                                    CaptureStore captured) throws Exception {
@@ -335,7 +310,6 @@ public final class HotPathCacheTest {
         String example = null;
         for (int phase = 0; phase < phases.length; phase++) {
             if (phase == 2) {
-                // 打怪：每一幀畫面上的名牌照畫，另外冒出 20 個新的傷害數字與 5 個新名字
                 int fresh = 0;
                 for (int frame = 0; frame < 200; frame++) {
                     for (Component c : visible.subList(0, 60)) {
@@ -387,7 +361,6 @@ public final class HotPathCacheTest {
         report("★ 名牌跟原本的算法逐條相同（" + compared + " 次，不同 " + differ
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
 
-        // 要不要登記給注視小框：跟原本每幀判斷的結果一樣
         Component normal = visible.get(0);
         WynntilsText.entityName(normal, config, store);
         report("一般名牌要登記，登記的就是它的原文",
@@ -398,7 +371,6 @@ public final class HotPathCacheTest {
                     original(names, indicators, skip) == null);
         }
 
-        // 注視小框模式：原文不動
         var mode = CollectorConfig.class.getDeclaredField("nametagMode");
         mode.setAccessible(true);
         Object was = mode.get(config);
@@ -406,7 +378,6 @@ public final class HotPathCacheTest {
         report("注視小框模式下原樣回傳", WynntilsText.entityName(normal, config, store) == normal);
         mode.set(config, was);
 
-        // 沒譯文的名字只收一次，快取被擠掉之後再遇到也不重收
         Component stranger = Component.literal("Totally Unknown Wanderer Of The Mists");
         WynntilsText.entityName(stranger, config, store);
         names.clear();
@@ -417,7 +388,6 @@ public final class HotPathCacheTest {
                 seen[0] == 1 && seen[1] == 1);
     }
 
-    /** 原本 entityName 查不到快取時的算法（不含收集與登記）。 */
     private static Component oldEntityName(Component name, TranslationStore store, Method byPart)
             throws Exception {
         StyledText text = StyledText.fromComponent(name);
@@ -438,15 +408,12 @@ public final class HotPathCacheTest {
         return (StyledText) accessor.invoke(entry);
     }
 
-    // ------------------------------------------------------------------ 共用
-
     private static Map<?, ?> map(String field) throws Exception {
         var f = WynntilsText.class.getDeclaredField(field);
         f.setAccessible(true);
         return (Map<?, ?>) f.get(null);
     }
 
-    /** captured 裡原文是 {@code src} 的有幾條、第一條的 seen。 */
     private static int[] seen(CaptureStore captured, String src) throws Exception {
         var f = CaptureStore.class.getDeclaredField("entries");
         f.setAccessible(true);

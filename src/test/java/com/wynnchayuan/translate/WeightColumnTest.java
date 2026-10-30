@@ -10,32 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Wynntils 的物品權重區塊（Nori／Wynnpool）：「[xx.x%]」那一欄要落回原文的位置。
- *
- * <h2>實機回報</h2>
- * 宿露（Stardew）的權重區塊，只有「水屬性法術竊取適性」那一行的百分比緊貼在
- * 標籤後面，其他行的「[xx.x%]」都對在同一欄：
- *
- * <pre>
- *   主要適性            [57.0%]
- *   法術竊取適性        [48.2%]
- *   水屬性法術竊取適性 [47.4%]      ← 沒跳到那一欄
- *   Obli 適性           [46.4%]
- * </pre>
- *
- * <p>Wynntils 把每一行的數值靠右排到整份 tooltip 最寬的那一行
- * （{@code GearTooltipAlignmentComponent.alignRightSegment}：
- * 偏移 = max(0, 最寬 − 標籤 − 數值)），所以英文標籤越長、欄距越窄。
- * {@code Water spellsteal Scale} 是這一區最長的，欄距只剩幾 px，低於
- * {@link LineTranslator#MIN_GAP_PX}，要靠 {@code tooltipGaps} 的放寬才數得到——
- * 而那道放寬認的是「字母、數字、帶正負號的數值」，百分比欄卻是以 {@code [} 開頭。
- * 欄界數不到，中文標籤短掉多少，百分比就往左縮多少。
- *
- * <p>片段的形狀照實機：標籤一段、{@code minecraft:space} 的偏移一段、數值一段
- * （有時前面還帶一個空白，見語料的 {@code {#}[{~}]} 與 {@code {#} [{~}]} 兩種）。
- * 譯文不寫死，斷言只比「數值的起點」。
- */
 public final class WeightColumnTest {
 
     private static int failures = 0;
@@ -45,10 +19,6 @@ public final class WeightColumnTest {
                     net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
     private static final Style PCT = WYNN.withColor(TextColor.fromRgb(0xFFCB21));
 
-    /**
-     * 整份 tooltip 最寬那一行的寬度。照這份測試的字寬，
-     * {@code Water spellsteal Scale[47.4%]} 是 146px，欄距剩 4px。
-     */
     private static final int WIDEST = 150;
 
     private static final String[][] ROWS = {
@@ -87,7 +57,6 @@ public final class WeightColumnTest {
         lines.add(Component.literal("Stardew"));
         int tightest = Integer.MAX_VALUE;
         for (String[] r : ROWS) {
-            // 帶前導空白的那種，最寬那一行也一樣多一個空白，欄距不變
             int gap = gapFor(r[0], "[" + r[1] + "]");
             tightest = Math.min(tightest, gap);
             lines.add(row(r[0], gap, lead, r[1], split));
@@ -110,10 +79,6 @@ public final class WeightColumnTest {
         }
     }
 
-    /**
-     * 放寬不能放到一般句子：小偏移後面接的是括號但不是數字（{@code [Cave]}），
-     * 或前面沒有字母（圖示的微調），都不是欄界。
-     */
     private static void guards() {
         System.out.println("== 不該認成欄界的");
         check("「標籤 <+3>[47.4%]」認得欄界", gaps(run("Water spellsteal Scale"), space(3),
@@ -146,7 +111,6 @@ public final class WeightColumnTest {
         return new LineTranslator.Run(true, px, SpaceOffset.styleFor(WYNN), SpaceOffset.encode(px));
     }
 
-    /** Wynntils 的算法：數值靠右排到最寬那一行。 */
     private static int gapFor(String label, String value) {
         return Math.max(0, WIDEST - measure(Component.literal(label + value)));
     }
@@ -166,7 +130,6 @@ public final class WeightColumnTest {
         return c;
     }
 
-    /** 「[」畫在第幾個像素。 */
     private static int valueX(Component c) {
         int[] x = {0};
         int[] found = {Integer.MIN_VALUE};
@@ -188,7 +151,7 @@ public final class WeightColumnTest {
 
     private static int advance(int cp) {
         if (cp >= 0xCF000 && cp <= 0xD0400) {
-            return cp - 0xD0000;               // 排版偏移
+            return cp - 0xD0000;
         }
         if (cp >= 0x2E80) {
             return 9;

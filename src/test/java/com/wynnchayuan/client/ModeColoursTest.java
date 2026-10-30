@@ -1,11 +1,5 @@
 package com.wynnchayuan.client;
 
-/**
- * F6 每一種顯示方式的顏色，見 {@link ModeColours}。
- *
- * <p>釘住的是「分得出來、讀得清楚」：另開與就地取代不能是同一個色，
- * 每個顏色畫在按鈕上都要夠亮，主題色太暗時也一樣。
- */
 public final class ModeColoursTest {
 
     private static int failures = 0;
@@ -13,7 +7,7 @@ public final class ModeColoursTest {
     public static void main(String[] args) {
         System.out.println("=== F6 模式顏色 ===");
 
-        int accent = 0xFF6FA8D8;                    // 預設的主題色（淡藍）
+        int accent = 0xFF6FA8D8;
         int sep = ModeColours.separate(accent);
         int rep = ModeColours.replace(accent);
         int both = ModeColours.both(accent);
@@ -27,13 +21,13 @@ public final class ModeColoursTest {
         check("關閉跟其他三個都不同",
               ModeColours.OFF != sep && ModeColours.OFF != rep && ModeColours.OFF != both);
 
-        int dark = 0xFF101830;                      // 深藍：畫在按鈕上看不清楚
+        int dark = 0xFF101830;
         check("主題色太暗時另開面板仍讀得清楚",
               ModeColours.luminance(ModeColours.separate(dark)) >= 96);
         check("主題色太暗時就地取代仍讀得清楚",
               ModeColours.luminance(ModeColours.replace(dark)) >= 96);
 
-        int red = 0xFFE05050;                       // 換主題色，整組跟著換
+        int red = 0xFFE05050;
         check("換成紅色主題，另開面板偏紅",
               red(ModeColours.separate(red)) > blue(ModeColours.separate(red)));
         check("換成紅色主題，就地取代換成青色系",

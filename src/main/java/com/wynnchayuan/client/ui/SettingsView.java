@@ -4,66 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * 設定畫面的版面、互動與動畫。
- *
- * <h2>版面</h2>
- * 畫面中央一張霧面玻璃的視窗：
- * <pre>
- *   側欄            | 分類名稱與一句說明 ……………………………… 重置本頁
- *   圖示、名稱、版本 | 左：這一類的設定（卡片分組，可捲動）   右：即時預覽
- *   搜尋            |
- *   物品／面板／…   |
- *   使用須知        | 狀態 ………………… 更新說明  關於／貢獻者  完成
- * </pre>
- * 三塊的寬度是固定的：字再長也只會讓某一列變高，不會把側欄或預覽擠掉。
- *
- * <h2>字太長的時候</h2>
- * 俄文、西班牙文的選項常常放不到名稱右邊。逐列各自換行的話，同一頁會有的擠、
- * 有的鬆，很難看。所以規則是<b>整頁一起</b>：這一頁只要有一列放不下，分段、
- * 下拉與滑桿就全部改成「名稱一列、控制項整列寬」；開關與按鈕本來就短，留在右邊。
- * 見 {@link #measure}。
- *
- * <h2>為什麼是「邊畫邊登記可以點的地方」</h2>
- * 舊畫面漂掉的根源是按鈕的位置與畫出來的位置各算各的。這裡每畫一個控制項就
- * 順手登記一塊「點這裡會怎樣」（{@link #zone}），用的是<b>同一組座標</b>：
- * 畫在哪就點得到哪，結構上不可能對不上。點的時候從最後登記的往回找，所以後畫的
- * （彈出的色盤、下拉選單）自然蓋在先畫的上面。
- *
- * <h2>這一層不認得遊戲</h2>
- * 只碰 {@link Canvas} 與 {@link Host}。測試接一張假畫布就能整個跑起來，
- * 見 {@code SettingsViewTest}。
- */
 public final class SettingsView extends Surface {
 
-    /** 這個畫面需要外面幫忙的事。 */
     public interface Host {
-        /** 風格顏色（ARGB）：這個畫面自己的重點色。 */
         int accent();
 
-        /** 框線顏色（ARGB）：遊戲裡譯文小框的框，只有預覽會用到。 */
         int frame();
 
-        /** 分段控制器選到某一種顯示方式時的顏色。 */
         int tone(Row.Tone tone);
 
-        /** 介面字串。鍵不含 {@code wynnchayuan.} 前綴。 */
         String tr(String key, Object... args);
 
         String title();
 
-        /** 標題底下那一句：這個模組是做什麼的。 */
         String tagline();
 
         String version();
 
-        /** 底列現在要講的那一句與它的顏色。 */
         Status status();
 
-        /** 有新版的模組：更新說明那顆要亮起來。 */
         boolean hasUpdate();
 
-        /** 視窗底下有沒有模糊。沒有的話玻璃要不透明一點，不然字讀不清楚。 */
         boolean blurred();
 
         void openNotice();
@@ -78,18 +39,14 @@ public final class SettingsView extends Surface {
 
         void setClipboard(String text);
 
-        /** 按下去的那一聲。 */
         void click();
 
         Preview.State preview();
 
-        /** 重置之後要在底列講一聲。 */
         void resetDone(String what);
     }
 
     public record Status(String text, int colour) {}
-
-    // ------------------------------------------------------------ 版面常數
 
     static final float MAX_W = 628;
     static final float MAX_H = 334;
@@ -98,14 +55,11 @@ public final class SettingsView extends Surface {
     static final float HEAD_H = 38;
     static final float FOOT_H = 28;
     static final float ROW_H = 22;
-    /** 名稱一列、控制項一列的那種列。 */
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
     static final float PREVIEW_W = 152;
     static final float NAV_H = 21;
 
-
-    // ------------------------------------------------------------ 狀態
 
     private final List<Row.Tab> tabs;
     private final Host host;
@@ -131,18 +85,12 @@ public final class SettingsView extends Surface {
     private float railW;
     private boolean pageWide;
 
-    /** 給測試看的：每一列實際畫在哪、名稱與控制項各佔到哪。 */
     public record Placed(String id, float x, float y, float w, float h, float labelRight,
                          float ctrlLeft, float ctrlRight, boolean wide) {}
 
     private final List<Placed> placed = new ArrayList<>();
 
-    /**
-     * 只有一類設定的小視窗（名牌的進階設定）：沒有側欄與搜尋，底列只有一顆「返回」。
-     * 列的畫法、重置、說明、預覽都跟完整的設定畫面是同一份。
-     */
     private final boolean sheet;
-    /** 小視窗這一幀量到的「剛好放得下」的高度，下一幀照它開；還沒量過是 0。 */
     private float sheetH;
 
     public SettingsView(List<Row.Tab> tabs, Host host, int startTab) {
@@ -190,13 +138,11 @@ public final class SettingsView extends Surface {
     protected void draw() {
         placed.clear();
         float w = Math.min(screenW - 12, sheet ? 470 : MAX_W);
-        // 小視窗照內容長：四列的中文與換成兩列的俄文差了快一倍，固定高度不是空一截就是要捲
         float h = Math.min(screenH - 14, sheet ? (sheetH > 0 ? sheetH : 236) : MAX_H);
         window(Math.round((screenW - w) / 2f), Math.round((screenH - h) / 2f), w, h,
                host.blurred());
         railW = sheet ? 0 : (winW >= 430 ? RAIL_W : RAIL_SLIM);
 
-        // 點到空白處：收起彈出層、放掉輸入框的焦點
         zone(0, 0, screenW, screenH, (x, y, b) -> {
             closePopovers();
             focus = null;
@@ -221,7 +167,6 @@ public final class SettingsView extends Surface {
         return placed;
     }
 
-    /** 這一頁是不是整頁改成兩列了。 */
     public boolean pageWide() {
         return pageWide;
     }
@@ -234,13 +179,11 @@ public final class SettingsView extends Surface {
         return pickerOpen || openSelect != null;
     }
 
-    /** 給測試用：直接把搜尋字設好。 */
     public void searchFor(String text) {
         search.set(text);
         onSearchChanged();
     }
 
-    /** 給測試用：切到第幾個分類，不播動畫。 */
     public float scrollPosition() {
         return scrollTarget;
     }
@@ -260,10 +203,6 @@ public final class SettingsView extends Surface {
         settle();
     }
 
-    // ------------------------------------------------------------ 可以點的地方
-
-    // ------------------------------------------------------------ 輸入
-
     public boolean scroll(double dy) {
         if (popoverOpen()) {
             return true;
@@ -277,11 +216,6 @@ public final class SettingsView extends Surface {
     }
 
 
-    /**
-     * @param ctrl Ctrl（mac 上是 Cmd）有沒有按著
-     * @return 這個鍵有沒有被這裡用掉。Esc 沒東西可關的時候回 {@code false}，
-     *         外面就照原版的做法關掉畫面
-     */
     public boolean key(int key, boolean ctrl) {
         if (key == KEY_ESC) {
             if (popoverOpen()) {
@@ -412,15 +346,10 @@ public final class SettingsView extends Surface {
         return search.text.toString().strip().length() > 0;
     }
 
-    // ------------------------------------------------------------ 繪製
-
-    // ------------------------------------------------------------ 側欄
-
     private void rail() {
         float x = winX;
         float y = winY;
         boolean slim = railW < RAIL_W;
-        // 側欄比視窗再亮一點點；左邊兩個角要跟著視窗圓，所以畫寬一點再裁掉右半
         clip(x, y, x + railW, y + winH);
         c.round(x, y, railW + Ui.R3 * 2, winH, Ui.R3, Ui.RAIL);
         unclip();
@@ -436,8 +365,6 @@ public final class SettingsView extends Surface {
             float room = railW - 38 - 6;
             float big = c.scale(1.25f);
             float s = c.width(title) * big <= room ? big : 1f;
-            // 同一行字往右錯開一個點再畫一次：點陣字沒有粗體，這樣筆畫會厚一點，
-            // 在圖示旁邊才撐得住
             c.text(title, x + 38, y + 21 - 4 * s, accent, s);
             c.text(title, x + 38 + c.px(), y + 21 - 4 * s, accent, s);
             cy = y + 40;
@@ -488,7 +415,6 @@ public final class SettingsView extends Surface {
             zone(x + 6, ny, railW - 12, NAV_H, (px, py, b) -> switchTab(index));
         }
 
-        // 使用須知：釘在側欄最底下
         float nh = 18;
         float ny = y + winH - 8 - nh;
         float nw = railW - 14;
@@ -522,7 +448,6 @@ public final class SettingsView extends Surface {
         return n;
     }
 
-    /** @return 搜尋框的下緣 */
     private float searchField(float x, float y, float w) {
         float h = 18;
         boolean focused = focus == search;
@@ -555,15 +480,12 @@ public final class SettingsView extends Surface {
         return y + h;
     }
 
-    // ------------------------------------------------------------ 頁首
-
     private void header() {
         float x = winX + railW + 12;
         float right = winX + winW - 12;
         float y = winY;
         boolean searching = searching();
 
-        // 重置本頁：這一頁有東西不是預設值才按得下去
         String reset = host.tr("reset.page");
         int dirty = 0;
         for (Row.Group g : tabs.get(tab).groups()) {
@@ -635,8 +557,6 @@ public final class SettingsView extends Surface {
         return n;
     }
 
-    // ------------------------------------------------------------ 內容
-
     private void body() {
         float top = winY + HEAD_H;
         float bottom = winY + winH - FOOT_H - 8;
@@ -645,7 +565,7 @@ public final class SettingsView extends Surface {
         float full = winX + winW - 12 - left;
         float previewW = full >= 380 ? PREVIEW_W : (full >= 320 ? 130 : 0);
         if (h < 190 || sheet) {
-            previewW = 0;                      // 矮到這樣示意圖裡的東西會疊在一起，乾脆不畫
+            previewW = 0;
         }
         float listW = previewW > 0 ? full - previewW - 8 : full;
         list(left, top, listW, h);
@@ -654,7 +574,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    /** 一張卡片：一組設定與這次要顯示的那幾列。 */
     private record Card(Row.Group group, List<Row> rows, String tabName) {}
 
     private void list(float x, float y, float w, float h) {
@@ -691,8 +610,6 @@ public final class SettingsView extends Surface {
             return;
         }
 
-        // 捲軸那一條永遠留著位置：出不出現會改變列寬，列寬又決定要不要換成兩列，
-        // 留著就不會有「多一條捲軸 → 變兩列 → 更長」這種來回跳
         float cardW = w - 6;
         float rowW = cardW - 4;
         pageWide = measure(cards, rowW - 14, searching);
@@ -709,7 +626,6 @@ public final class SettingsView extends Surface {
         scroll = clampScroll(scroll);
 
         clip(x, y, x + w, y + h);
-        // 換分類時整塊往上滑進來
         float cy = y - scroll + (1f - bodyT) * 7f;
         for (Card card : cards) {
             float cardH = cardHeight(card);
@@ -730,7 +646,6 @@ public final class SettingsView extends Surface {
         }
         unclip();
 
-        // 換分類的淡入：蓋一層跟視窗同色、慢慢變透明的布
         if (bodyT < 0.99f) {
             c.fill(x, y, x + w, y + h, Ui.fade(0xC8181F2A, 1f - bodyT));
         }
@@ -760,24 +675,15 @@ public final class SettingsView extends Surface {
         return wide(r) ? ROW_WIDE_H : ROW_H;
     }
 
-    /** 這一列是不是「名稱一列、控制項一列」。 */
     private boolean wide(Row r) {
         return pageWide && stretches(r.kind);
     }
 
-    /** 整頁換成兩列時，會跟著換的那三種控制項。 */
     private static boolean stretches(Row.Kind kind) {
         return kind == Row.Kind.SEGMENT || kind == Row.Kind.SLIDER || kind == Row.Kind.SELECT;
     }
 
-    /**
-     * 這一頁要不要整頁改成兩列。
-     *
-     * @param inner 一列裡名稱加控制項總共能用多寬
-     */
     private boolean measure(List<Card> cards, float inner, boolean searching) {
-        // 同一頁的滑桿，數值那一欄留一樣寬：不然「1 秒」「6」「6°」各自留各自的，
-        // 幾條軌道的左緣就參差不齊
         sliderValueW = 0;
         for (Card card : cards) {
             for (Row r : card.rows()) {
@@ -803,7 +709,6 @@ public final class SettingsView extends Surface {
         return false;
     }
 
-    /** 控制項照自己的內容排，需要多寬。 */
     private float natural(Row r) {
         switch (r.kind) {
             case TOGGLE: {
@@ -834,7 +739,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    /** 這一頁滑桿的數值欄要留多寬；{@link #measure} 每一幀先算好。 */
     private float sliderValueW;
 
     private float valueWidth(Row r) {
@@ -850,8 +754,6 @@ public final class SettingsView extends Surface {
     private float swatchWidth() {
         return 4 + 12 + 5 + c.width("#MMMMMM") + 5 + 7 + 4;
     }
-
-    // ------------------------------------------------------------ 一列
 
     private void row(Row r, float x, float y, float w, String query, String chip) {
         boolean wide = wide(r);
@@ -872,7 +774,6 @@ public final class SettingsView extends Surface {
             control(r, labelX, right, ctrlY);
             labelRoom = right - labelX;
         } else {
-            // 名稱至少留三分之一；控制項再長也只能吃掉剩下的
             float span = right - labelX;
             float room = span - Math.min(span / 3f, c.width(r.name.get()) + 16);
             ctrlLeft = right - Math.min(natural(r), room);
@@ -897,7 +798,6 @@ public final class SettingsView extends Surface {
         int ink = Ui.mix(Ui.TEXT_2, Ui.TEXT, g);
         int hit = query.isEmpty() ? -1 : name.toLowerCase(Locale.ROOT).indexOf(query);
         if (hit >= 0 && hit + query.length() <= name.length()) {
-            // 搜尋命中的那幾個字反白
             String pre = name.substring(0, hit);
             String mid = name.substring(hit, hit + query.length());
             float px = tx + c.width(pre);
@@ -910,20 +810,17 @@ public final class SettingsView extends Surface {
         }
         float labelRight = tx + c.width(name);
         if (changed) {
-            // 改過、不是預設值的記號
             c.round(labelRight + 4, labelY + 2, 4, 4, 2, Ui.GOLD);
             labelRight += 8;
         }
         if (hot && tip == null) {
             hoverRow = r.id;
-            // 名稱被截斷的時候，說明的第一行補上完整的名稱
             String hint = r.hint.get();
             tip = new Tip(name.equals(full) ? hint : full + "\n" + hint, x, y, w, h);
         }
         placed.add(new Placed(r.id, x, y, w, h, labelRight, ctrlLeft, right, wide));
     }
 
-    /** 把控制項畫在 {@code [left, right]} 這一段裡。 */
     private void control(Row r, float left, float right, float y) {
         switch (r.kind) {
             case TOGGLE -> toggle(r, right, y);
@@ -936,16 +833,12 @@ public final class SettingsView extends Surface {
         }
     }
 
-    // ---- 開關
-
     private void toggle(Row r, float right, float y) {
         boolean on = r.on.getAsBoolean();
         String text = on ? (r.onText != null ? r.onText.get() : host.tr("mode.on"))
                          : host.tr("mode.off");
         toggle(r.id, right, y, on, text, r.flip);
     }
-
-    // ---- 分段
 
     private void segment(Row r, float left, float right, float y) {
         float end = right;
@@ -957,8 +850,6 @@ public final class SettingsView extends Surface {
         }
         segmented(r.id, left, end, y, r.options, r.selected, r.pick, host::tone);
     }
-
-    // ---- 滑桿
 
     private float resetButton(Row r, float right, float y) {
         float x = right - CTRL_H;
@@ -1022,8 +913,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    // ---- 顏色
-
     private void colour(Row r, float right, float y) {
         float end = r.resettable() ? resetButton(r, right, y) - 5 : right;
         String hex = r.hex.get();
@@ -1060,7 +949,6 @@ public final class SettingsView extends Surface {
     private static final String[] PRESETS = {
         "#6FA8D8", "#8FD694", "#E0BC6E", "#E0706B", "#B48EDE", "#5FC8C0", "#F0A35E", "#C5CFDA"};
 
-    /** 彈出的色盤：上面一塊飽和×明度，下面一條色相，再來幾個預設色與色碼。 */
     private void picker(Row r, float anchorRight, float below, float above) {
         float w = 156;
         float svH = 70;
@@ -1070,7 +958,6 @@ public final class SettingsView extends Surface {
         float in = animate("pop", 1f, 45f);
         y += (1f - in) * 4f;
         popPane(x, y, w, h, in);
-        // 吃掉點在色盤空白處的點擊，不然會被當成「點外面」而收起來
         zone(x, y, w, h, (px, py, b) -> focus = null);
 
         float sx = x + 8;
@@ -1168,8 +1055,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    // ---- 下拉
-
     private void select(Row r, float left, float right, float y) {
         float end = right;
         boolean locked = r.locked.getAsBoolean();
@@ -1225,14 +1110,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    /**
-     * 語言的小徽章。
-     *
-     * <p>用代碼的字而不是國旗：語言不等於國家，同一面旗底下不只一種語言，
-     * 同一種語言也不只一面旗——而且旗子畫成十像素見方誰也認不出來。
-     *
-     * @return 徽章之後字該從哪裡開始
-     */
     private float badge(Row.Choice ch, float x, float y, boolean on) {
         String text = ch.badge();
         if (text == null || text.isEmpty()) {
@@ -1282,8 +1159,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    // ---- 動作與狀態
-
     private void action(Row r, float left, float right, float y) {
         String label = r.label.get();
         if (r.danger != null) {
@@ -1316,12 +1191,9 @@ public final class SettingsView extends Surface {
         });
     }
 
-    // ------------------------------------------------------------ 預覽
-
     private void preview(float x, float y, float w, float h) {
         Row.Tab t = tabs.get(searching() ? 0 : tab);
         String title = host.tr("preview.title");
-        // 標題前面一顆會呼吸的小點：這一塊是活的
         float pulse = 0.55f + 0.45f * (float) Math.sin(now / 420.0);
         c.round(x, y + 2, 4, 4, 2, Ui.fade(accent, pulse));
         String shown = Ui.fit(c, title, (int) (w - 10));
@@ -1342,7 +1214,6 @@ public final class SettingsView extends Surface {
         }
     }
 
-    /** 模型預覽轉到哪裡：0 是正面，180 是背面（披風那一面）。一開始稍微側一點，看得出立體。 */
     private float modelYaw = 205;
     private float modelPitch = -8;
     private double modelDragX;
@@ -1356,12 +1227,6 @@ public final class SettingsView extends Surface {
         return modelPitch;
     }
 
-    /**
-     * 玩家穿著披風的預覽（使用者 2026-10-12：「放玩家＋披風的樣子，然後使用者能旋轉」）。
-     *
-     * <p>這裡只管那一塊在哪、拖曳轉了多少；人是 {@code SettingsScreen} 照 {@code "preview.model"}
-     * 這一塊的位置請遊戲畫上去的。左右拖是轉身，上下拖是俯仰（限制在看得到的範圍）。
-     */
     private void modelPreview(float x, float y, float w, float h) {
         String hint = Ui.fit(c, host.tr("preview.cape.hint"), (int) (w - 12));
         c.text(hint, x + (w - c.width(hint)) / 2, y + h - 14, Ui.TEXT_3);
@@ -1371,16 +1236,12 @@ public final class SettingsView extends Surface {
         });
         z.key = "preview.model";
         z.drag = (px, py, b) -> {
-            // 往右拖，人的正面跟著往右轉（跟物品欄那個小人看滑鼠的方向一樣）。
-            // 原本是加的，使用者 2026-10-12：「滑鼠拖曳方向反了」。
             modelYaw = (float) ((modelYaw - (px - modelDragX) * 1.5) % 360.0);
             modelPitch = (float) Math.max(-35, Math.min(35, modelPitch - (py - modelDragY) * 0.6));
             modelDragX = px;
             modelDragY = py;
         };
     }
-
-    // ------------------------------------------------------------ 底列
 
     private void footer() {
         float y = winY + winH - FOOT_H;
@@ -1426,9 +1287,5 @@ public final class SettingsView extends Surface {
             c.text(Ui.fit(c, s.text(), (int) (right - left - 10)), left + 9, by + 5, s.colour());
         }
     }
-
-    // ------------------------------------------------------------ 說明
-
-    // ------------------------------------------------------------ 輸入框
 
 }

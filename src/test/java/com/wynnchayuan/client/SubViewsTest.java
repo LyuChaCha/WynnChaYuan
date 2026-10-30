@@ -30,22 +30,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 設定畫面以外的那幾張：使用須知、更新說明、貢獻者、調整面板位置、名牌進階。
- *
- * <h2>為什麼要有</h2>
- * 設定畫面改版之後，這幾張還是舊的樣子，使用者一打開就看得出是兩套
- * （2026-10-08 回報）。改成同一套畫法之後，跟 {@link SettingsViewTest} 一樣
- * 不開遊戲就能整張算出來——所以每種語言、幾種畫面大小都算一次，量：
- * <ul>
- *   <li>每個按鈕、開關、分段都在畫面裡面，沒有被擠到外面去；</li>
- *   <li>同一列的按鈕沒有疊在一起（俄文與西班牙文的字最長）；</li>
- *   <li>畫得到的每一個字，隨模組附的字型都有。</li>
- * </ul>
- * 再點幾下最要緊的：拖一個框、存檔、全部回到預設、換說明的語言、勾「不再顯示」。
- *
- * <p>算出來的圖一樣存在 {@code build/ui-preview/}。
- */
 public final class SubViewsTest {
 
     private static int failures = 0;
@@ -130,12 +114,11 @@ public final class SubViewsTest {
         return c;
     }
 
-    /** 每個叫得出名字的控制項都在畫面裡面。 */
     private static void inside(String at, Surface view, int w, int h) {
         for (var spot : view.spots().entrySet()) {
             float[] r = spot.getValue();
             if (spot.getKey().startsWith("box:") || spot.getKey().startsWith("grip:")) {
-                continue;   // 框本來就可以拖到貼邊
+                continue;
             }
             must(at + "：" + spot.getKey() + " 凸出畫面（" + r[0] + "," + r[1] + " "
                             + r[2] + "×" + r[3] + "）",
@@ -144,7 +127,6 @@ public final class SubViewsTest {
         }
     }
 
-    /** 按鈕彼此不重疊。 */
     private static void apart(String at, Surface view) {
         List<Map.Entry<String, float[]>> buttons = new ArrayList<>();
         for (var spot : view.spots().entrySet()) {
@@ -173,8 +155,6 @@ public final class SubViewsTest {
         }
     }
 
-    // ------------------------------------------------------------ 調整面板位置
-
     private static void position(File out) throws Exception {
         FakeShell shell = new FakeShell("zh_tw");
         FakePlaces places = new FakePlaces(shell);
@@ -186,9 +166,7 @@ public final class SubViewsTest {
         if (box == null) {
             return;
         }
-        // 區塊含框上面那條 13px 的名稱，所以框本身的 y 是區塊的 y + 13
         must("沒擺過的框放在預設位置，而且不會壓到頂列", box[0] == 20 && box[1] + 13 >= 56);
-        // 預設位置下任務追蹤那個框疊在它左半邊上面，所以抓右半邊
         double gx = box[0] + 135;
         double gy = box[1] + 60;
         view.mouseDown(gx, gy, 0);
@@ -211,7 +189,6 @@ public final class SubViewsTest {
         must("置中的框存的是中心的 x（畫面一半）", dialogue != null && dialogue[0] == 320);
         must("沒拉過大小的框不寫大小", tooltip != null && tooltip[2] == -1);
 
-        // 拉大小：任務追蹤的右下角
         render(view, "zh_tw", 640, 360, 1, -100, -100);
         float[] grip = view.spot("grip:TRACKER");
         must("能改大小的框右下角有把手", grip != null);
@@ -227,7 +204,6 @@ public final class SubViewsTest {
                     tracker[2] == 152 && tracker[3] == 82);
         }
 
-        // 全部回到預設
         render(view, "zh_tw", 640, 360, 1, -100, -100);
         press(view, "b:all");
         render(view, "zh_tw", 640, 360, 1, -100, -100);
@@ -240,7 +216,6 @@ public final class SubViewsTest {
         press(view, "b:cancel");
         must("取消會關掉畫面", places.closes == before + 1);
 
-        // 存過的位置，下次打開要在同一個地方
         places.saved.put("TOOLTIP", new PositionView.Saved(300, 120, null, null));
         places.saved.put("DIALOGUE", new PositionView.Saved(320, 200, 260, 60));
         PositionView again = new PositionView(shell, places);
@@ -251,8 +226,6 @@ public final class SubViewsTest {
         must("置中的框存的是中心：畫出來要往左退半個寬度（" + d[0] + "，寬 " + d[2] + "）",
                 d[0] == 320 - 130 && d[2] == 260);
     }
-
-    // ------------------------------------------------------------ 更新說明
 
     private static void notes() throws Exception {
         FakeShell shell = new FakeShell("ja_jp");
@@ -284,8 +257,6 @@ public final class SubViewsTest {
         must("不能在遊戲裡更新的環境：只有下載鈕，沒有更新鈕",
                 byHand.spot("b:download") != null && byHand.spot("b:update") == null);
     }
-
-    // ------------------------------------------------------------ 使用須知
 
     private static void notice() throws Exception {
         FakeShell shell = new FakeShell("zh_tw");
@@ -534,8 +505,6 @@ public final class SubViewsTest {
         must("自訂完按完成：記下選過、關掉", custom.calls.equals(List.of("settled", "finish")));
     }
 
-    // ------------------------------------------------------------ 貢獻者
-
     private static void credits() throws Exception {
         FakeShell shell = new FakeShell("zh_tw");
         FakeCredits host = new FakeCredits(shell);
@@ -545,9 +514,6 @@ public final class SubViewsTest {
         must("返回會關掉畫面", host.closes == 1);
     }
 
-    // ------------------------------------------------------------ 名牌進階
-
-    /** 跟 {@code NametagScreen#rows} 同一張表：一個分段、三條滑桿。 */
     private static SettingsView nametag(String lang) throws Exception {
         SettingsViewTest.Fake fake = new SettingsViewTest.Fake(lang);
         int[] mode = {1};
@@ -578,8 +544,6 @@ public final class SubViewsTest {
                 () -> fake.tr("nametag.about1"), Icons.Icon.COMPASS, Preview.Scene.WORLD,
                 List.of(new Row.Group(() -> fake.tr("world.nametag"), false, rows)))), fake, 0, true);
     }
-
-    // ------------------------------------------------------------ 假的外殼與資料
 
     static final class FakeShell implements Shell {
         private final Map<String, String> strings;
@@ -642,7 +606,6 @@ public final class SubViewsTest {
         public void click() { }
     }
 
-    /** 更新說明：讀倉庫根目錄那份真的 version.json，字數與語言都是實際的。 */
     private static final class FakeNotes implements NotesView.Host {
         private static final String[] CODES = {"en_us", "zh_tw", "zh_cn"};
         private final JsonObject notes;
@@ -652,7 +615,6 @@ public final class SubViewsTest {
         int downloads;
         int updates;
         int closes;
-        /** 這個環境能不能在遊戲裡更新（找不找得到自己的 jar）。 */
         boolean canUpdate = true;
 
         FakeNotes(FakeShell shell, boolean newer) throws Exception {
@@ -686,7 +648,6 @@ public final class SubViewsTest {
 
         @Override
         public String running() {
-            // 有新版的那一種：假裝手上是第二新的
             List<String> all = versions();
             return newer && all.size() > 1 ? all.get(1) : all.get(0);
         }
@@ -740,7 +701,6 @@ public final class SubViewsTest {
         }
     }
 
-    /** 貢獻者：讀真的 credits.json，人數與名字長度都是實際的。 */
     private static final class FakeCredits implements CreditsView.Host {
         private final FakeShell shell;
         private final List<CreditsView.Section> sections = new ArrayList<>();
@@ -793,11 +753,9 @@ public final class SubViewsTest {
         }
     }
 
-    /** 五個框：跟 {@code PositionScreen#specs} 同樣的大小與預設位置。 */
     private static final class FakePlaces implements PositionView.Host {
         private final FakeShell shell;
         final Map<String, PositionView.Saved> saved = new HashMap<>();
-        /** 存進去的 {@code {x, y, w, h}}；沒寫大小的是 -1。 */
         final Map<String, int[]> stored = new LinkedHashMap<>();
         int commits;
         int closes;

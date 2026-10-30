@@ -19,27 +19,11 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 把 {@link Canvas} 的繪製動作畫到遊戲畫面上。
- *
- * <h2>為什麼先把座標放大</h2>
- * 遊戲的介面座標是「GUI 像素」，介面縮放是 3 的時候一個 GUI 像素是螢幕上三個點。
- * 圓角與髮絲線要畫到那三個點的精度，所以這裡一開始就把座標系縮小成<b>螢幕上的點</b>
- * （{@link #begin}），之後每個動作把傳進來的 GUI 像素乘回去、取整數再畫。
- * 字還是照原本的大小畫——畫字的時候再把座標系放大回去。
- *
- * <h2>圓角怎麼來的</h2>
- * {@code GuiGraphics} 只會畫矩形與貼圖。圓角是先算一張白色圓形的遮罩
- * （{@link Icons#disc}），當貼圖註冊起來，畫的時候四個角各貼一個象限、染成要的顏色，
- * 中間用矩形補滿。遮罩照實際要畫的點數算，一對一貼上去，所以邊是平滑的。
- * 同一個半徑只算一次。
- */
 final class GuiCanvas implements Canvas {
 
     private static final Identifier ICON =
             Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID, "textures/gui/icon.png");
 
-    /** 遮罩貼圖。鍵是「哪一種形狀＋尺寸」，整個遊戲期間共用。 */
     private static final Map<String, Identifier> MASKS = new HashMap<>();
     private static final Map<String, DynamicTexture> LIVE = new HashMap<>();
     private static int serial;
@@ -57,17 +41,9 @@ final class GuiCanvas implements Canvas {
                 : Minecraft.getInstance().getLanguageManager().getSelected());
     }
 
-    // ------------------------------------------------------------ 字型
-    //
-    // 設定畫面用隨模組附的 Noto Sans，不用原版的點陣字（見 tools/build-ui-fonts.py）。
-    // 字型定義照「語言」與「一個字點畫成螢幕上幾個點」各一份：TTF 字是先畫成點陣再
-    // 貼上去的，畫的解析度跟實際貼出來的大小一比一時邊緣才乾淨。
-
-    /** 有哪幾種倍率的字型定義。跟 build-ui-fonts.py 的 DOTS 要一致。 */
     private static final int[] DOTS = {2, 3, 4, 6};
     private static final java.util.Map<String, Style> STYLES = new HashMap<>();
 
-    /** 這個語言用哪一組字型定義；不是中日韓的都用拉丁那一組。 */
     private static String family(String code) {
         if (code == null) {
             return "latin";
@@ -81,7 +57,6 @@ final class GuiCanvas implements Canvas {
         };
     }
 
-    /** 要畫成每個字點 {@code dots} 個螢幕點時，用哪一份定義：剛好的那份，沒有就挑大一級的。 */
     private Style style(int dots) {
         int pick = DOTS[DOTS.length - 1];
         for (int d : DOTS) {
@@ -105,7 +80,6 @@ final class GuiCanvas implements Canvas {
         PlayerHeads.draw(g, minecraftName, p(x), p(y), Math.max(8, p(size)));
     }
 
-    /** 把座標系換成螢幕上的點。畫完要叫 {@link #end}。 */
     void begin() {
         g.pose().pushMatrix();
         g.pose().scale(1f / scale, 1f / scale);
@@ -203,7 +177,6 @@ final class GuiCanvas implements Canvas {
         }
     }
 
-    /** 四個角各貼圓形遮罩的一個象限。 */
     private void corners(Identifier tex, int ax, int ay, int bx, int by, int r, int argb) {
         int size = r * 2;
         g.blit(RenderPipelines.GUI_TEXTURED, tex, ax, ay, 0f, 0f, r, r, size, size, argb);
@@ -237,7 +210,7 @@ final class GuiCanvas implements Canvas {
 
     private void draw(String text, float x, float y, int argb, int dots) {
         if (text == null || text.isEmpty() || (argb >>> 24) < 4) {
-            return;                            // 透明到這樣就是看不見，原版也是不畫
+            return;
         }
         g.pose().pushMatrix();
         g.pose().translate(p(x), p(y));
@@ -277,13 +250,6 @@ final class GuiCanvas implements Canvas {
         }
     }
 
-    /**
-     * 把圖示縮成要畫的大小。
-     *
-     * <p>原圖 256×256。直接叫遊戲縮的話它是「跳著取點」，縮到幾十個點會鋸齒；
-     * 這裡把每個目的點涵蓋到的原圖範圍平均起來，縮一次存起來。
-     * 讀不到原圖就退回直接貼——頂多鋸齒，不會沒有圖示。
-     */
     private static Identifier shrunkLogo(int size) {
         try (InputStream in = Minecraft.getInstance().getResourceManager().open(ICON);
              NativeImage src = NativeImage.read(in)) {
@@ -327,7 +293,7 @@ final class GuiCanvas implements Canvas {
     public void svSquare(float x, float y, float w, float h, float hue) {
         int pw = Math.max(2, p(x + w) - p(x));
         int ph = Math.max(2, p(y + h) - p(y));
-        int step = Math.round(hue * 2);        // 半度一格：拖色相條時不必每一幀都重算
+        int step = Math.round(hue * 2);
         Identifier tex = live("sv", pw, ph, step, image -> {
             for (int yy = 0; yy < ph; yy++) {
                 float v = 1f - yy / (float) (ph - 1);
@@ -354,13 +320,10 @@ final class GuiCanvas implements Canvas {
         g.blit(RenderPipelines.GUI_TEXTURED, tex, p(x), p(y), 0f, 0f, pw, ph, pw, ph);
     }
 
-    // ------------------------------------------------------------ 貼圖
-
     private interface MaskSource {
         byte[] get();
     }
 
-    /** 白色、只有透明度的遮罩貼圖；畫的時候再染色。 */
     private static Identifier mask(String key, int w, int h, MaskSource source) {
         Identifier id = MASKS.get(key);
         if (id != null) {
@@ -391,10 +354,6 @@ final class GuiCanvas implements Canvas {
 
     private static final Map<String, int[]> LIVE_STATE = new HashMap<>();
 
-    /**
-     * 內容會變的貼圖（色盤那一塊）。尺寸沒變就在原地重畫、重新上傳；
-     * 尺寸變了（改了視窗大小或介面縮放）才丟掉重做。
-     */
     private static Identifier live(String key, int w, int h, int version, Painter painter) {
         int[] state = LIVE_STATE.get(key);
         DynamicTexture texture = LIVE.get(key);

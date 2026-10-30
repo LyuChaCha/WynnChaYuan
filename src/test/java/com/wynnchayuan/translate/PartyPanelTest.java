@@ -6,28 +6,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 排隊找隊伍那一面板整片都要是中文。
- *
- * <h2>實機回報</h2>
- * 面板上九行只有兩行翻出來，其餘全是英文：
- *
- * <pre>
- *   Looking for a party        For 烽火王宮      ← 只有副本名被詞表換掉
- *   Status:                    - Time estimate: 快速
- *   - Region: AS, NA           (keep 1 Ek Rune in your ...
- * </pre>
- *
- * <p>討伐戰的排隊面板早就收在 {@code raid.json} 了，但找隊伍那一份是<b>另一組
- * 字串</b>：{@code Time estimate} 的 e 是小寫、地區是「AS, NA」兩個一起、
- * 底下還多了三行提示。一個字不一樣就整條對不到。
- *
- * <h2>這條測試在盯什麼</h2>
- * 那三行提示是 tooltip 照寬度切開的<b>一句話</b>，語料收的是接起來的整句。
- * 逐行去問永遠問不到，所以整段那條路一斷，畫面上就會剩三行英文——
- * 而且逐行補回去只會補出半中半英（見 {@code GuiBlockGapTest}）。
- * 這裡把「接得起來」釘住。
- */
 public final class PartyPanelTest {
 
     private static int failures = 0;
@@ -37,7 +15,6 @@ public final class PartyPanelTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
 
-        // 實機那一份，照畫面上的行序
         List<String> panel = List.of(
                 "Looking for a party",
                 "For The Wartorn Palace",
@@ -64,8 +41,6 @@ public final class PartyPanelTest {
         String zh = all.toString();
         System.out.println(zh.stripTrailing().indent(4));
 
-        // ★ 一個英文字母都不該剩。副本名（烽火王宮）與符文名（Ek Rune）除外——
-        //   符文名照團隊慣例留原文，所以只挑幾個必須消失的字來問。
         for (String english : new String[] {"Looking for a party", "Status:",
                                             "Region:", "Time estimate:",
                                             "keep", "inventory", "faster",
@@ -73,8 +48,6 @@ public final class PartyPanelTest {
             report("「" + english + "」不該再出現", !zh.contains(english));
         }
 
-        // ★ 那三行提示是接起來查的，隨便挑一行單獨問要查不到——
-        //   查得到就代表有人補了逐行條目，那會蓋掉整段那條路。
         report("沒有逐行條目蓋掉整段",
                 LineTranslator.lookup("inventory to find a party", store, false) == null);
 
@@ -87,30 +60,15 @@ public final class PartyPanelTest {
         }
     }
 
-    /**
-     * Lootrun 的信標與挑戰說明也是照寬度切開的整段。
-     *
-     * <p>跟排隊面板同一個道理，只是切得更碎（三到四行）。這些段落在
-     * {@code misc.json} / {@code lootrun.json} 裡本來就躺著一批<b>逐行</b>的
-     * 空條目——那是照 capture 補出來的形狀。逐行填下去就會半中半英，
-     * 所以整段收一條、逐行那些留空（空的不會載入，不會蓋掉整段）。
-     */
     private static void lootrunBlocks(TranslationStore store) {
-        // 探針不用 Curse 的譯名：2026-10-14 從「詛咒」改成「怪物強化」
         block(store, "詛咒加傷", new String[] {
                 "For the rest of this Lootrun,",
                 "gain +100% Damage (Max x5)",
                 "everytime you get a Curse"}, "傷害");
-        // 這一段最後一行帶著材質包圖示（「gain +{~} {#}Defence」），
-        // 而 Component.literal 造不出真的圖示字元——照上面那樣畫一次會假失敗。
-        // 改成直接問模板，至少釘住鍵的形狀沒被改壞。
         String beacon = "Once you have been offered a\nBlue or Purple Beacon more\n"
                 + "than {~} times this Lootrun,\ngain +{~} {#}Defence";
         report("信標加防：模板查得到（實際 " + store.lookup(beacon) + "）",
                 store.lookup(beacon) != null && store.lookup(beacon).contains("信標"));
-        // 詞用 GLOSSARY.md 的「寶物品質」。這條測試就是拿來擋詞表漂移的——
-        // 語料裡先前兩種譯法並存過（寶物品質／戰利品品質），統一之後這裡
-        // 一起釘住，下次再分岔會馬上失敗。
         block(store, "寶箱寶物品質", new String[] {
                 "For the rest of this Lootrun,",
                 "gain +5% Loot Quality (Max",
@@ -120,8 +78,6 @@ public final class PartyPanelTest {
                 "Once you reach 10 Challenges",
                 "completed during your",
                 "Lootrun, gain +500 Health"}, "挑戰");
-        // 探針別挑正在動的術語：Pull 的譯名 2026-09-28 從「抽數」改成「結算獎勵」，
-        // 原本釘「抽數」的兩條就整支紅了。挑句子裡不會被術語 PR 動到的那個動詞。
         block(store, "獻祭儀式", new String[] {
                 "After finishing a Challenge,",
                 "consume 1 Pull to gain +2",
@@ -140,29 +96,15 @@ public final class PartyPanelTest {
         lootrunEnd(store);
     }
 
-    /**
-     * Lootrun 跑完之後那幾面：結算統計、獎勵寶箱、信標次數。
-     *
-     * <h2>為什麼單獨列一塊</h2>
-     * 這幾面只有<b>跑完一整趟</b>才看得到，所以一直沒人收。實機 capture 一次
-     * 就吐出四十幾條缺口，形狀分成三種：面板標題（{@code Yellow Beacon}）、
-     * 統計列（{@code Offered: {~}}）、照寬度切碎的說明（三到六行）。
-     * 三種各釘一條，下次改動哪一種都會被抓到。
-     */
     private static void lootrunEnd(TranslationStore store) {
-        // 信標名稱：雙欄的那些早就翻好了（「{#}黃色信標{#}藍色信標」），
-        // 單獨當標題出現的那一份卻一直是空的。顏色詞要跟雙欄那份一致。
         row(store, "Yellow Beacon", "黃色信標");
         row(store, "Dark Grey Beacon", "深灰信標");
         row(store, "Crimson Beacon", "緋紅信標");
         row(store, "Obscured Beacon", "晦暗信標");
-        // 統計列
-        // beacon "offered" 譯「出現」（data/boons-2），跟賜福敘述的「每出現一個信標」一致
         row(store, "Offered: {~}", "出現次數");
         row(store, "Chosen: {~}/{~}", "選取次數");
         row(store, "Decay: {~} Challenges", "衰減");
         row(store, "Choices: +{~}", "信標選項");
-        // 使命名稱照團隊的語調——兩個字的意象詞（救贖、停滯、天賜、機緣）
         row(store, "Knife Edge", "刀鋒");
         row(store, "Thrill Seeker", "逐險者");
 
@@ -176,7 +118,6 @@ public final class PartyPanelTest {
                 "3 challenges completed (max",
                 "+5). This boost is reset upon",
                 "taking a Green Beacon."}, "紅色信標");
-        // Sacrifice 譯「獻祭」，不是「捨棄」——使用者 2026-09-15 定的，語料已全面改過。
         block(store, "獻祭獎勵說明", new String[] {
                 "Sacrificing your rewards",
                 "will add a percentage of your",
@@ -190,14 +131,12 @@ public final class PartyPanelTest {
                 "inside of it will be lost"}, "寶箱");
     }
 
-    /** 單獨一行的條目：查得到，而且用的是講好的詞。 */
     private static void row(TranslationStore store, String src, String want) {
         String zh = LineTranslator.lookup(src, store, false);
         report("「" + src + "」→「" + want + "」（實際 " + zh + "）",
                 zh != null && zh.contains(want));
     }
 
-    /** 整段要翻出來，而且不能剩下英文的原句。 */
     private static void block(TranslationStore store, String what,
                               String[] lines, String want) {
         List<Component> in = new ArrayList<>(lines.length);

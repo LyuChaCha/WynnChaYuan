@@ -16,35 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 怪物被打之後，頭上的名字要照樣是譯文——血條與狀態列原樣留著。
- *
- * <h2>回報（1.0.4，名牌＝就地取代）</h2>
- * 「怪物頭上的名牌有翻，一打下去（血條出現、身上掛了效果）名字就變回英文。」
- * 被打的怪物名牌是一塊三列的字：
- * <pre>
- *   Stone Golem {#}{#}          ← 名字＋等級膠囊
- *   {#}                         ← 血條（nameplate 字型的私用區字元）
- *   ❈ {~} {#} {~} Mantles       ← 身上的效果
- * </pre>
- *
- * <h2>壞在哪（兩條路）</h2>
- * <ol>
- *   <li><b>效果列有字。</b>逐行退路只認 {@code Distorted} 是狀態詞，其餘帶字的效果
- *       （語料裡就有 {@code Mantles}）被當成「有字卻查不到」，整塊放棄，名字一起變回英文。</li>
- *   <li><b>只多一列血條。</b>整塊的鍵查不到時，整塊查表把尾巴的血條與等級膠囊一路剝到
- *       只剩名字再查；語料裡若剛好有一條<b>單獨的</b>名字（別的介面收的、譯文就是原文，
- *       正式語料的 {@code Orange Cybel} 就是），整塊就「查到了」原文。</li>
- * </ol>
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>被打之後第一列跟沒被打時<b>一模一樣</b>（不寫死譯文措辭，拿沒被打的那塊當答案）；</li>
- *   <li>血條與效果列逐字元原樣：碼位、字型、顏色都不動；</li>
- *   <li>反方向：告示看板查不到的列仍然整塊放棄，不能半中半英；</li>
- *   <li>正式語料逐隻跑一遍：每一隻翻得出來的怪，被打之後名字都不能變。</li>
- * </ul>
- */
 public final class DamagedNameplateTest {
 
     private static int failures = 0;
@@ -57,7 +28,6 @@ public final class DamagedNameplateTest {
     private static final int AQUA = 0x55FFFF;
     private static final int PURPLE = 0xAA00AA;
 
-    /** 名牌的字型：等級膠囊與血條都是 {@code minecraft:nameplate/default} 的私用區字元。 */
     private static final Style PLATE_FONT = Style.EMPTY.withFont(
             new FontDescription.Resource(Identifier.withDefaultNamespace("nameplate/default")));
 
@@ -65,7 +35,6 @@ public final class DamagedNameplateTest {
         Path dir = Files.createTempDirectory("wynnchayuan-damaged-plate");
         FlowedDebug.init(dir);
 
-        // 名字的譯文只寫在名牌的鍵上，跟正式語料一樣；另外放一條單獨的名字，譯文是原文。
         com.google.gson.JsonObject npc = new com.google.gson.JsonObject();
         npc.addProperty("Ashen Wisp {#}{#}", "灰燼幽光 {#}{#}");
         npc.addProperty("Mossback Golem {#}{#}", "苔背魔像 {#}{#}");
@@ -77,7 +46,6 @@ public final class DamagedNameplateTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        // --- 1. 效果列帶字 -----------------------------------------------
         String fresh = firstRow(LineTranslator.translateLabel(plate("Mossback Golem", null), store));
         check("前提：沒被打的名牌翻得出來（" + fresh + "）",
               fresh != null && !fresh.startsWith("Mossback"));
@@ -98,9 +66,6 @@ public final class DamagedNameplateTest {
         check("只有圖示與倒數的效果列：底下逐字元原樣",
               timed != null && belowName(timed).equals(belowName(timers.getComponent())));
 
-        // --- 1b. 精英怪（維護者補充：出事的是精英怪）-------------------------
-        // 名字上面一列純圖示的標記、名牌字型換成 radiant／gold 那幾套、大血條旁邊帶數值，
-        // 被打之後的效果列帶字。
         Component eliteFresh = LineTranslator.translateLabel(elite("Mossback Golem", false), store);
         String eliteName = row(eliteFresh, 1);
         check("前提：沒被打的精英名牌翻得出來（" + shown(eliteFresh) + "）",
@@ -118,7 +83,6 @@ public final class DamagedNameplateTest {
         check("★ 被打的精英怪：血條與效果列逐字元原樣",
               eliteOut != null && belowRow(eliteOut, 2).equals(belowRow(eliteHit.getComponent(), 2)));
 
-        // --- 2. 只多一列血條，語料裡另有一條單獨的名字 ------------------------
         String wisp = firstRow(LineTranslator.translateLabel(plate("Ashen Wisp", null), store));
         check("前提：沒被打的 Ashen Wisp 翻得出來（" + wisp + "）",
               wisp != null && !wisp.startsWith("Ashen"));
@@ -129,7 +93,6 @@ public final class DamagedNameplateTest {
         check("只多一列血條：血條逐字元原樣",
               barred != null && belowName(barred).equals(belowName(bar.getComponent())));
 
-        // --- 3. 反方向：不是怪物名牌的，查不到的列照樣整塊放棄 -----------------
         check("告示看板（圖示列＋名稱＋空列＋查不到的一列）仍然整塊不動",
               LineTranslator.translateLabel(sign(), store) == null);
         check("名字下面直接接一列查不到的字（沒有血條）仍然整塊不動",
@@ -138,7 +101,6 @@ public final class DamagedNameplateTest {
         check("名字查不到的怪物名牌照樣不翻",
               LineTranslator.translateLabel(plate("Unknown Beast", Status.MANTLES), store) == null);
 
-        // --- 4. 正式語料逐隻跑 -------------------------------------------
         realCorpus();
 
         System.out.println(failures == 0
@@ -146,7 +108,6 @@ public final class DamagedNameplateTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 正式語料的每一隻怪：被打之後（只多血條、血條＋帶字的效果）名字都跟沒被打時一樣。 */
     private static void realCorpus() throws Exception {
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
         TranslationStore store = new TranslationStore();
@@ -196,11 +157,6 @@ public final class DamagedNameplateTest {
                 new FontDescription.Resource(Identifier.withDefaultNamespace(path)));
     }
 
-    /**
-     * 精英怪的名牌：名字上面一列純圖示的標記（{@code nameplate/gold_radiant} 的 phase 字元），
-     * 等級膠囊用 {@code nameplate/default_radiant}；被打之後是 {@code nameplate/gold} 的大血條
-     * （{@code U+E015/E017/E035/E037}，資源包裡那一格是 16 像素高）加上血量數值，再接帶字的效果列。
-     */
     private static StyledText elite(String name, boolean damaged) {
         MutableComponent all = Component.empty();
         all.append(Component.literal("").withStyle(font("nameplate/gold_radiant", WHITE)));
@@ -224,7 +180,6 @@ public final class DamagedNameplateTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 第幾列（去掉頭尾空白）；沒有那一列就是 {@code null}。 */
     private static String row(Component c, int index) {
         if (c == null) {
             return null;
@@ -233,14 +188,12 @@ public final class DamagedNameplateTest {
         return index < rows.length ? rows[index].strip() : null;
     }
 
-    /** 第一個換行之前的每一個字元。 */
     private static List<String> aboveName(Component c) {
         List<String> all = chars(c);
         int nl = all.indexOf("⏎");
         return nl < 0 ? all : all.subList(0, nl);
     }
 
-    /** 第 {@code from} 列（從 0 算）開始的每一個字元。 */
     private static List<String> belowRow(Component c, int from) {
         List<String> all = chars(c);
         int seen = 0;
@@ -252,7 +205,6 @@ public final class DamagedNameplateTest {
         return List.of();
     }
 
-    /** 每一個字元：碼位、字型、顏色、粗體（換行寫成 ⏎，空白不看顏色）。 */
     private static List<String> chars(Component c) {
         List<String> out = new ArrayList<>();
         c.visit((style, text) -> {
@@ -265,12 +217,6 @@ public final class DamagedNameplateTest {
         return out;
     }
 
-    /**
-     * 照實機的分段組一塊怪物名牌：名字（紅）＋空白＋等級膠囊（兩段不同色的名牌字型字元）；
-     * 被打之後換行接血條（滿的一段、空的一段），再換行接效果列。
-     *
-     * @param status {@code null} 是沒被打的名牌（只有名字那一列）
-     */
     private static StyledText plate(String name, Status status) {
         MutableComponent all = Component.empty();
         all.append(lit(name, RED));
@@ -299,7 +245,6 @@ public final class DamagedNameplateTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 告示看板：圖示列、名稱、空列、一列語料沒有的字。 */
     private static StyledText sign() {
         MutableComponent all = Component.empty();
         all.append(glyphs("", GOLD));
@@ -333,7 +278,6 @@ public final class DamagedNameplateTest {
         return c == null ? null : c.getString().split("\n", -1)[0].strip();
     }
 
-    /** 第一個換行之後的每一個字元（含那個換行）。 */
     private static List<String> belowName(Component c) {
         return belowRow(c, 1);
     }

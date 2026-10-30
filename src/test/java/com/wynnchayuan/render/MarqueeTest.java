@@ -1,10 +1,5 @@
 package com.wynnchayuan.render;
 
-/**
- * 對話選項跑馬燈：捲動中的每一格都要沿用第一格的譯文。見 {@link Marquee}。
- *
- * <p>下面的視窗是實機截圖上那四個選項的真實樣子（2026-09-18 回報）。
- */
 public final class MarqueeTest {
 
     private static int failures = 0;
@@ -26,18 +21,15 @@ public final class MarqueeTest {
         }
         report("★ 捲到最後一格都沿用第一格的譯文", all);
 
-        // 實機截圖上那一格
         Marquee.clear();
         Marquee.remember("choice_3", "Aren't you scared of what's", "你不怕外面的世界嗎？");
         report("★ 「ren't you scared of what's o」接得上",
                "你不怕外面的世界嗎？".equals(
                        Marquee.follow("choice_3", "ren't you scared of what's o")));
 
-        // 別列的不能借用
         report("別的列不借用這一列的譯文",
                Marquee.follow("choice_1", "ren't you scared of what's o") == null);
 
-        // 完全不相干的字不能被當成同一個選項
         Marquee.clear();
         Marquee.remember("choice_0", "What are you going to do now", "你接下來打算怎麼辦？");
         report("不相干的一格不沿用",

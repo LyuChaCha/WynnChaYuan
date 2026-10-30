@@ -18,24 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 名字前面的葉子徽章。
- *
- * <h2>為什麼要有（使用者 2026-10-11）</h2>
- * 徽章從「名牌上方多一行字」改成「名字前面一片葉子」：開發者金、贊助者青藍、
- * 貢獻者綠，各自可以登記顏色，開發者可以彩色；只是裝了模組的人是灰色；
- * 多重身分的人可以挑要展示哪些。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>葉子接在名牌<b>前面</b>，原本的名牌一個字、一個顏色都不動；</li>
- *   <li>同一個名牌再送一次不會多接一片（事件一幀可能發好幾次）；</li>
- *   <li>顏色照「登記的 → 分區的」，彩色模式的顏色是切成格的；</li>
- *   <li>登記成不展示的身分不畫；本機的選擇（展示哪些、顏色、彩色）只管自己，
- *       別人照登記的；</li>
- *   <li>不在名單上的人：自己是灰色，別人沒有。</li>
- * </ul>
- */
 public final class BadgesTest {
 
     private static int failures = 0;
@@ -48,8 +30,6 @@ public final class BadgesTest {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
 
-        // Solo 只有一個身分；Multi 三個都有，其中貢獻者登記成不展示、贊助者登記了自己的顏色；
-        // Shiny 是登記成彩色的開發者；Pinky 是想要彩色的贊助者（不該有）。
         List<Credits.Section> sections = Credits.read(new StringReader("""
                 {"sections": [
                   {"role": "開發者", "key": "credits.role.developers", "color": "#FFD24A", "members": [
@@ -71,7 +51,6 @@ public final class BadgesTest {
         Files.deleteIfExists(file);
         CollectorConfig config = new CollectorConfig(file);
 
-        // ---- 名單讀得到三個新欄位 ----
         Credits.Member sponsor = sections.get(1).members().get(0);
         Credits.Member hidden = sections.get(2).members().get(0);
         check("名單：登記的顏色讀得到", (sponsor.colour() & 0xFFFFFF) == 0xFF66AA);
@@ -90,7 +69,6 @@ public final class BadgesTest {
                         && poly.label().equals("Poly") && poly.mc().equals("Poly_Glot")
                         && (poly.colour() & 0xFFFFFF) == 0x123456 && poly.hidden() && "poly.png".equals(poly.cape()));
 
-        // ---- 一個身分 ----
         Component plain = Component.literal("[CHAMPION] ").withStyle(Style.EMPTY.withColor(
                         TextColor.fromRgb(0xFFAA00)))
                 .append(Component.literal("Solo_Dev").withStyle(Style.EMPTY.withColor(
@@ -106,13 +84,11 @@ public final class BadgesTest {
         check("貢獻者是綠色", icons(Badges.decorate(Component.literal("Leafy"),
                 "Leafy", "Someone", config, 0)).equals(List.of(GREEN)));
 
-        // ---- 多重身分 ----
         Component multi = Badges.decorate(Component.literal("Multi_Role"),
                 "Multi_Role", "Someone", config, 0);
         check("多重身分：照名單順序一人一片，登記成不展示的不畫；登記的顏色蓋過分區的",
                 icons(multi).equals(List.of(GOLD, 0xFF66AA)));
 
-        // ---- 彩色 ----
         List<Integer> a = icons(Badges.decorate(Component.literal("Shiny"), "Shiny", "Someone", config, 0));
         List<Integer> same = icons(Badges.decorate(Component.literal("Shiny"), "Shiny", "Someone", config, 40));
         List<Integer> later = icons(Badges.decorate(Component.literal("Shiny"), "Shiny", "Someone", config, 1000));
@@ -124,7 +100,6 @@ public final class BadgesTest {
                 !icons(Badges.decorate(Component.literal("Pinky"), "Pinky", "Someone", config, 0))
                         .equals(List.of(CYAN)));
 
-        // ---- 顏色自己調 ----
         check("自己調顏色：馬上照自己選的畫", config.setBadgeColourLive("developers", "#123456")
                 && icons(Badges.decorate(Component.literal("Solo_Dev"), "Solo_Dev", "solo_dev", config, 0))
                         .equals(List.of(0x123456)));
@@ -139,7 +114,6 @@ public final class BadgesTest {
         config.setBadgeColourLive("sponsors", "#ABCDEF");
         config.saveIfDirty();
 
-        // ---- 本機的選擇只管自己 ----
         config.setBadgeRole("sponsors", false);
         config.setBadgeRole("contributors", true);
         config.setBadgeRainbow(true);
@@ -149,7 +123,6 @@ public final class BadgesTest {
                         "Multi_Role", "multi_role", config, 0)).get(1) == GREEN);
         check("自己：開了彩色，開發者那片不再是金色", icons(Badges.decorate(
                 Component.literal("Multi_Role"), "Multi_Role", "multi_role", config, 500)).get(0) != GOLD);
-        // ★ 別人報到時帶的選擇（使用者 2026-10-12：「我有開啟全彩模式，他看我也只是金色而已」）
         com.wynnchayuan.Presence.BadgeChoice rainbowOn =
                 new com.wynnchayuan.Presence.BadgeChoice(true, null);
         List<Integer> gold = icons(Badges.decorate(Component.literal("Solo_Dev"),
@@ -190,7 +163,6 @@ public final class BadgesTest {
         check("名單上唯一的身分登記成不展示：別人還是看得到那一片", icons(Badges.decorate(
                 Component.literal("Shy_One"), "Shy_One", "Someone", config, 0)).equals(List.of(GREEN)));
 
-        // ---- 設定存得回來 ----
         CollectorConfig again = new CollectorConfig(file);
         check("本機的選擇存檔再讀回來還在", !again.badgeRoleShown("sponsors", true)
                 && !again.badgeRoleShown("developers", true) && again.badgeRainbow(false)
@@ -208,14 +180,12 @@ public final class BadgesTest {
         check("沒動過就照名單上登記的", untouched.badgeRoleShown("x", true)
                 && !untouched.badgeRoleShown("x", false) && !untouched.badgeRainbow(false));
 
-        // ---- 不在名單上 ----
         check("不在名單上的自己：灰色的葉子", icons(Badges.decorate(Component.literal("Nobody"),
                 "Nobody", "nobody", untouched, 0)).equals(List.of(Badges.INSTALLED)));
         check("不在名單上的別人：沒有葉子", Badges.decorate(Component.literal("Nobody"),
                 "Nobody", "Someone", untouched, 0) == null);
         check("沒有名牌就什麼都不做", Badges.decorate(null, "Solo_Dev", "Someone", untouched, 0) == null);
 
-        // ---- ★ 別人有沒有裝：看登記站的名單（使用者 2026-10-12）----
         check("★ 名單上的別人：灰色的葉子", icons(Badges.decorate(Component.literal("Nobody"),
                 "Nobody", "Someone", untouched, 0, true)).equals(List.of(Badges.INSTALLED)));
         check("不在名單上的別人還是沒有", Badges.decorate(Component.literal("Stranger"),
@@ -224,14 +194,12 @@ public final class BadgesTest {
                 Component.literal("Solo_Dev"), "Solo_Dev", "Someone", untouched, 0, true))
                 .contains(Badges.INSTALLED));
 
-        // ---- 認不出帳號時看名牌文字 ----
         check("帳號問不到：名牌文字裡有名單上的 ID 就認", icons(Badges.decorate(
                 Component.literal("[VIP+] Solo_Dev [Lv. 105]"), null, "Someone", untouched, 0))
                 .equals(List.of(GOLD)));
         check("ID 要是完整的詞：Solo_Dev2 不算", Badges.decorate(
                 Component.literal("Solo_Dev2"), null, "Someone", untouched, 0) == null);
 
-        // ---- 字型檔與圖 ----
         try (InputStream in = Badges.class.getResourceAsStream("/assets/wynnchayuan/font/nametag.json")) {
             JsonObject font = JsonParser.parseReader(
                     new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
@@ -243,9 +211,7 @@ public final class BadgesTest {
                     && provider.get("file").getAsString().equals("wynnchayuan:font/nametag_leaf.png"));
         }
 
-        // ---- 圖只能有全透明與全不透明 ----
-        // Wynncraft 的文字 shader 拿特定的透明度當記號。葉子的圖有過半透明的邊（縮圖留下的
-        // 251～254），實機上筆畫中間就冒出一粒一粒的黑點（使用者 2026-10-12）。
+        // Wynncraft 文字 shader 拿特定透明度當記號
         try (InputStream in = Badges.class.getResourceAsStream(
                 "/assets/wynnchayuan/textures/font/nametag_leaf.png")) {
             java.awt.image.BufferedImage leaf = javax.imageio.ImageIO.read(in);
@@ -258,7 +224,7 @@ public final class BadgesTest {
                     if (alpha == 255) {
                         solid++;
                         if ((argb & 0xFFFFFF) != 0xFFFFFF) {
-                            odd++;          // 不是純白的話，上色會偏
+                            odd++;
                         }
                     } else if (alpha != 0) {
                         odd++;
@@ -269,7 +235,6 @@ public final class BadgesTest {
             check("葉子的圖不是空的", solid > 200);
         }
 
-        // ---- 出貨的名單讀得進來 ----
         Badges.reload();
         check("出貨的 credits.json 讀得進來，開發者有人", !Credits.sections().isEmpty()
                 && !Credits.sections().get(0).members().isEmpty()
@@ -278,7 +243,6 @@ public final class BadgesTest {
         done();
     }
 
-    /** 名牌開頭那幾片葉子的顏色，照順序。 */
     private static List<Integer> icons(Component line) {
         List<Integer> out = new ArrayList<>();
         if (line == null) {
@@ -295,7 +259,6 @@ public final class BadgesTest {
         return out;
     }
 
-    /** 每一段有顏色的字的顏色，照順序（空白那一段沒有顏色，不算）。 */
     private static List<Integer> colours(Component line) {
         List<Integer> out = new ArrayList<>();
         if (line == null) {

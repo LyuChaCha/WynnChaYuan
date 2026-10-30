@@ -12,19 +12,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 素材 tooltip 的需求列：標籤一律從原文的左緣開始。
- *
- * <h2>實機回報</h2>
- * 「殞命之爪」那一份裡，「耐久度」貼著左緣，「防禦需求」卻往右縮了十幾像素，
- * 看起來像縮排排錯。兩列的結構一模一樣——
- * {@code 標籤[往回退][跳到數值欄]數值}——差別只在
- * {@code Min. Defence{#}+{~}} 在語料裡<b>整行</b>查得到，其餘幾列只換得到標籤。
- *
- * <p>{@link StatLabelIndentTest} 已經釘過單獨幾列的情況而且過得了，所以這裡照
- * {@code layout-debug} 記下的<b>整份</b> tooltip 重建：名稱、分隔線、效果倍率的
- * 方格都在。跨行的對齊判斷（撐寬、置中欄）只有在整份都在的時候才看得到。
- */
 public final class IngredientTooltipTest {
 
     private static int failures = 0;
@@ -63,10 +50,9 @@ public final class IngredientTooltipTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 照 layout-debug 的第 24 份重建「殞命之爪」。 */
     private static List<Component> claw() {
         List<Component> lines = new ArrayList<>();
-        lines.add(glyphs("󰀀", "Claw of Demise", "󰀀"));   // U+CF000
+        lines.add(glyphs("󰀀", "Claw of Demise", "󰀀"));
         MutableComponent name = Component.empty();
         name.append(off(-16));
         name.append(Component.literal("").withStyle(font("tooltip/emblem/frame")));
@@ -125,7 +111,6 @@ public final class IngredientTooltipTest {
                     + "  " + clean(lines.get(i).getString()));
         }
         System.out.println("== 殞命之爪（原文 " + lines.size() + " 行，譯文 " + out.size() + " 行）");
-        // 需求列在原文裡的位置；譯文行數可能因為敘述併段而變少，所以照內容找。
         for (int i = 0; i < lines.size() && i < out.size(); i++) {
             String plain = lines.get(i).getString();
             if (!plain.startsWith("Durability") && !plain.startsWith("Min. Defence")
@@ -157,7 +142,6 @@ public final class IngredientTooltipTest {
         return c;
     }
 
-    /** 名稱底下與效果倍率上面那兩條裝飾，寬度跟分隔線不同。 */
     private static Component band(int px, String glyph) {
         MutableComponent c = Component.empty();
         if (px != 0) {
@@ -189,14 +173,6 @@ public final class IngredientTooltipTest {
         return c;
     }
 
-    /**
-     * {@code 標籤[往回退][跳到數值欄]數值}。
-     *
-     * <p>兩個偏移跟標籤<b>同一個片段</b>——實機就是這樣送過來的（見
-     * {@link SpaceOffset#trailingOffsets}）。拆成三段的話
-     * {@code realign} 會因為「空白數對不上」整行原樣返回，補償根本不會跑，
-     * 測試就永遠是綠的。
-     */
     private static Component statRow(String label, int back, int jump, String value) {
         MutableComponent c = Component.empty();
         c.append(Component.literal(label + SpaceOffset.encode(back) + SpaceOffset.encode(jump))
@@ -205,7 +181,6 @@ public final class IngredientTooltipTest {
         return c;
     }
 
-    /** 同上，但標籤前面有屬性圖示。 */
     private static Component iconStatRow(String label, int back, int jump, String value) {
         MutableComponent c = Component.empty();
         c.append(off(-1));
@@ -218,7 +193,6 @@ public final class IngredientTooltipTest {
         return c;
     }
 
-    /** 效果倍率的方格：三欄，中間那格可能是圖示。 */
     private static Component grid(String[] cells) {
         MutableComponent c = Component.empty();
         c.append(off(26));
@@ -242,7 +216,6 @@ public final class IngredientTooltipTest {
         return s.replaceAll("[\\x{D0000}-\\x{DFFFF}\\x{CF000}-\\x{CFFFF}]", "·");
     }
 
-    /** 第一個實字畫在第幾個像素。 */
     private static int firstTextX(Component c) {
         int[] x = {0};
         int[] found = {Integer.MIN_VALUE};
@@ -269,37 +242,13 @@ public final class IngredientTooltipTest {
         return found[0];
     }
 
-    /**
-     * 靠左的需求列不可以被當成「置中排的欄」。
-     *
-     * <h2>實機回報</h2>
-     * 「殞命之爪」的「防禦需求」被往右推了 12px，數值卻留在原位。
-     * {@code layout-debug} 的左緣對照指到 {@code TooltipWiden}：
-     *
-     * <pre>
-     *   === 左緣對照（翻完）===      （沒有這幾列）
-     *   === 左緣對照（撐寬後）===
-     *     [ 9] 原文左緣 0  譯文左緣 12  差 +12   防禦需求
-     *     [11] 原文左緣 11 譯文左緣 22  差 +11   &lt;圖示&gt;防禦
-     * </pre>
-     *
-     * <h2>為什麼會中</h2>
-     * 第一欄的左緣／寬度是 {@code [0, 61]}（Min. Defence）與 {@code [11, 41]}
-     * （帶圖示的 Defence）。中心分別是 30.5 與 31.5——差一個像素就被
-     * {@code sharesCentre} 當成同一個置中欄，於是補了半個寬度差
-     * {@code (61-36)/2 = 12}。
-     *
-     * <p>但它們是<b>靠左</b>的：別的需求列第一欄起點也是 0。
-     */
     private static void centreFalseMatch() {
         List<Component> orig = new ArrayList<>();
         List<Component> made = new ArrayList<>();
-        // Durability / Min. Defence / Fire Damage：標籤靠左，起點都是 0
         orig.add(twoCol(0, 47, 100, 24));
         orig.add(twoCol(0, 61, 90, 18));
-        orig.add(twoCol(11, 41, 77, 49));      // 前面有屬性圖示的那一列
+        orig.add(twoCol(11, 41, 77, 49));
         orig.add(twoCol(0, 54, 47, 72));
-        // 譯文：標籤短了，欄距自己補回去，起點都沒變
         made.add(twoCol(0, 27, 120, 24));
         made.add(twoCol(0, 36, 115, 18));
         made.add(twoCol(11, 18, 100, 49));
@@ -316,7 +265,6 @@ public final class IngredientTooltipTest {
         }
     }
 
-    /** {@code [縮排]標籤[欄距]數值}，寬度照給的像素湊出來。 */
     private static Component twoCol(int lead, int label, int gap, int value) {
         MutableComponent c = Component.empty();
         if (lead != 0) {
@@ -328,13 +276,12 @@ public final class IngredientTooltipTest {
         return c;
     }
 
-    /** 湊出剛好這麼寬的一串字。a=6、f=5、t=4、l=3、i=2。 */
     private static String fill(int px) {
         StringBuilder sb = new StringBuilder();
         int wide = px / 6;
         int left = px - wide * 6;
         if (left == 1 && wide > 0) {
-            wide--;                            // 餘 1 湊不出來，拆一個 6 變成 7＝5+2
+            wide--;
             left = 7;
         }
         for (int i = 0; i < wide; i++) {
@@ -352,13 +299,6 @@ public final class IngredientTooltipTest {
         return sb.toString();
     }
 
-    /**
-     * 照 {@code layout-debug} 反推的假字型。
-     *
-     * <p>圖示的寬度是從那一份記下的「內容」倒推的：需求列五行的總寬用這張表量出來
-     * 剛好是 171/169/171/173/177，跟實機一字不差——撐寬那一步是拿整份最寬的一行
-     * 當基準的，量錯了就重現不出來。
-     */
     static int measure(Component component) {
         int[] w = {0};
         component.visit((style, text) -> {
@@ -373,22 +313,21 @@ public final class IngredientTooltipTest {
     }
 
     private static int advance(int cp) {
-        // 偏移碼位不管掛在哪個字型底下都是寬度，實機就是這樣畫的。
         if (SpaceOffset.isOffset(cp)) {
             return SpaceOffset.decode(new String(Character.toChars(cp)));
         }
         return switch (cp) {
             case '\n' -> 0;
-            case 0xCF000 -> 0;                  // 名稱兩側的記號
-            case 0xE031 -> 66;                  // 徽章外框
-            case 0xE034 -> 16;                  // 徽章圖示
-            case 0xE000 -> 112;                 // 分隔線
-            case 0xE00A, 0xE00B -> 16;          // 職業圖示
-            case 0xE013 -> 9;                   // 屬性圖示
-            case 0xE002 -> 12;                  // 方格中間的素材圖示
-            case 0xF000 -> 115;                 // 效果倍率的表頭
-            case 0xE100 -> 85;                  // 名稱底下那條
-            case 0xE101 -> 80;                  // 效果倍率上面那條
+            case 0xCF000 -> 0;
+            case 0xE031 -> 66;
+            case 0xE034 -> 16;
+            case 0xE000 -> 112;
+            case 0xE00A, 0xE00B -> 16;
+            case 0xE013 -> 9;
+            case 0xE002 -> 12;
+            case 0xF000 -> 115;
+            case 0xE100 -> 85;
+            case 0xE101 -> 80;
             case 'i', '.', ':', ',', ';', '!', '\'' -> 2;
             case 'l' -> 3;
             case 't', 'I', ' ' -> 4;

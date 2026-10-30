@@ -9,18 +9,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 中文、日文的多行聊天訊息要重新斷行，不能照英文的換行位置斷。
- *
- * <h2>實機回報</h2>
- * <pre>
- *   傳送門湧出充滿憎恨的回音。Wynn 正面臨
- *   湮滅。
- * </pre>
- * 英文在 {@code Wynn faces} 後面折行，譯文照抄同一個位置，「正面臨／湮滅」被拆開。
- *
- * <p>假字型：漢字 9px、其他 6px；排版偏移照解碼值。
- */
 public final class ChatReflowTest {
 
     private static int failures = 0;
@@ -66,7 +54,6 @@ public final class ChatReflowTest {
         System.out.println("      輸出：" + sb.replace("\n", " ⏎ "));
         check("第三四句併在同一行", sb.contains("行省，還有 43 分 5 秒！") && !sb.contains("\n"));
 
-        // 清單：前兩行很短，不是折行，不能併起來。
         MutableComponent list = Component.empty();
         list.append(offset(8)).append(Component.literal("Rewards:")).append(Component.literal("\n"));
         list.append(offset(8)).append(Component.literal("- +500 XP")).append(Component.literal("\n"));
@@ -76,7 +63,6 @@ public final class ChatReflowTest {
         System.out.println("      輸出：" + sc.replace("\n", " ⏎ "));
         check("清單照原本的三行", sc.split("\n").length == 3);
 
-        // 很長的一段：寬度上限內要斷在標點後面，而且每一行不超過英文最寬那行。
         String longEn = "The trail through the forest leads you to the central city";
         com.google.gson.JsonObject root2 = new com.google.gson.JsonObject();
         root2.addProperty("{#}" + longEn + "\n{#}of the Wynn Province, where many travellers\n{#}gather.",
@@ -110,10 +96,6 @@ public final class ChatReflowTest {
         report();
     }
 
-    /**
-     * 「[Objective Completed]」三行用半形空白墊到中間，三行的中心差了將近 40px。
-     * 整則送來、一行一則送來兩條路都要守住各自的中心。
-     */
     private static void objective() throws Exception {
         String[] en = {"[Objective Completed]", "Loot Chests T3+", "Click here to claim your rewards!"};
         String[] zh = {"[目標完成]", "戰利品寶箱 T3+", "點這裡領取你的獎勵！"};
@@ -168,10 +150,6 @@ public final class ChatReflowTest {
         check("★ 一行一則送來：每一行守住原文的中心（" + seen.toString().strip() + "）", ok);
     }
 
-    /**
-     * 任務獎勵一行一則、同一個縮排排成一列。譯文比英文寬一點（多了「張」），
-     * 聊天視窗還放得下就不能把縮排收掉。
-     */
     private static void rewardIndent() {
         Style space = SpaceOffset.styleFor(Style.EMPTY);
         java.util.List<LineTranslator.Run> orig = java.util.List.of(
@@ -185,7 +163,6 @@ public final class ChatReflowTest {
         int tight = LineTranslator.fitWidth(orig, made, 10, new int[0], 0);
         check("不知道視窗多寬時照舊收回（補=" + tight + "）", tight < 10);
 
-        // 五行同一個縮排、寬度各不相同：就算整塊判斷說某一行置中，也要改回靠左。
         String[] rows = {"Rewards:", "- +Access to the Province of Wynn",
                          "- +1 Ragni Teleportation Scroll", "- +35 Experience Points", "- +6 Emeralds"};
         java.util.List<java.util.List<LineTranslator.Run>> list = new java.util.ArrayList<>();
@@ -194,7 +171,7 @@ public final class ChatReflowTest {
             list.add(java.util.List.of(
                     new LineTranslator.Run(true, 50, space, SpaceOffset.encode(50)),
                     new LineTranslator.Run(false, 0, Style.EMPTY, rows[i])));
-            centre[i] = i == 2;                // 模擬實機：只有 Ragni 那一行被判成置中
+            centre[i] = i == 2;
         }
         LineTranslator.sameLeadList(list, centre);
         boolean none = true;
@@ -204,7 +181,6 @@ public final class ChatReflowTest {
         check("★ 同一個縮排的獎勵清單全部靠左", none);
     }
 
-    /** 第 {@code row} 行實字的中心：最左一個非空白字到最右一個字的中點。 */
     private static int centreOf(Component c, int row) {
         int[] r = {0};
         int[] x = {0};
@@ -242,7 +218,6 @@ public final class ChatReflowTest {
         return (left[0] + right[0]) / 2;
     }
 
-    /** 用縮排墊到中間的招募訊息：四行的中心差幾像素，但都是置中的。 */
     private static void recruit() throws Exception {
         String[] en = {"Enjoying Wynncraft?", "Recruit a friend and both of you will get rewards!",
                        "", "Click here to recruit", "(or type /recruit)"};
@@ -285,7 +260,6 @@ public final class ChatReflowTest {
         check("★ 每一行照原文的中心置中（原文→譯文 " + seen.toString().strip() + "）", ok);
     }
 
-    /** 第 {@code row} 行的縮排與內容寬度。 */
     private static int[] leadAndBody(Component c, int row) {
         int[] r = {0};
         int[] lead = {0};
@@ -322,7 +296,6 @@ public final class ChatReflowTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 拿掉排版偏移之後的文字。 */
     private static String text(Component c) {
         if (c == null) {
             return "(null)";
