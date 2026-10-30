@@ -123,8 +123,8 @@ public final class Preview {
         int[] tipColours = {0xFFFFFFFF, 0xFFB8C0CC, 0xFFF08A8A, 0xFF7FC8E8};
 
         int room = w - 12;
-        int tipW = Math.min(widest(c, tip) + 10, panel ? room * 48 / 100 : room);
-        int sideW = panel ? Math.min(widest(c, side) + 10, room * 48 / 100) : 0;
+        int tipW = Math.min(widest(c, tip) + 10, panel ? room * 42 / 100 : room);
+        int sideW = panel ? Math.min(widest(c, side) + 10, room * 42 / 100) : 0;
         int boxH = tip.length * 10 + 7;
         int top = y + Math.max(20, (h - boxH) / 2 - 4);
 
@@ -137,7 +137,7 @@ public final class Preview {
             return;
         }
         int budget = Math.max(0, room - tipW - sideW);
-        int gap = panel ? Math.min(Math.round(gapShown * 0.3f), budget) : 0;
+        int gap = panel ? com.wynnchayuan.PanelGap.preview(gapShown, budget) : 0;
         int total = tipW + (panel ? gap + sideW : 0);
         int left = x + (w - total) / 2;
         boolean leftSide = s.side == 2;

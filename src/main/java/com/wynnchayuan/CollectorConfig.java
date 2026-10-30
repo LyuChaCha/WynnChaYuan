@@ -11,7 +11,7 @@ public final class CollectorConfig {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public static final int DEFAULT_PANEL_GAP = 4;
+    public static final int DEFAULT_PANEL_GAP = PanelGap.DEFAULT;
 
     private final Path file;
 
@@ -754,7 +754,7 @@ public final class CollectorConfig {
     }
 
     public void setPanelGapLive(int px) {
-        int v = Math.max(0, Math.min(px, 200));
+        int v = PanelGap.clamp(px);
         if (v != panelGap) {
             panelGap = v;
             dirty = true;
@@ -963,7 +963,7 @@ public final class CollectorConfig {
         if (px == null) {
             return false;
         }
-        panelGap = Math.max(0, Math.min(px, 200));
+        panelGap = PanelGap.clamp(px);
         save();
         return true;
     }
@@ -1232,7 +1232,7 @@ public final class CollectorConfig {
         } else if (bool(o, "translateItemNames", false)) {
             itemNames = ItemNames.ON;
         }
-        panelGap = clamp(integer(o, "panelGap", panelGap), 0, 200);
+        panelGap = PanelGap.clamp(integer(o, "panelGap", panelGap));
         String accent = str(o, "accentColor", accentColor);
         if (accent.matches("#[0-9a-fA-F]{6}")) {
             accentColor = accent;

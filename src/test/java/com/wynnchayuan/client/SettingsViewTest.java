@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.wynnchayuan.client.ui.Canvas;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
@@ -84,6 +85,12 @@ public final class SettingsViewTest {
             privacyShot(out, lang, null, true, false);
             privacyShot(out, lang, null, false, true);
         }
+        tooltipAboveModel(out);
+        for (String lang : new String[] {"zh_tw", "en_us"}) {
+            for (int value : new int[] {0, 12, 40}) {
+                gapShot(out, lang, value);
+            }
+        }
 
         must("語料附的原文要先拿掉（認得出來的那種）",
                 "骨弓".equals(Preview.bareName("骨弓 (Bony Bow)", "Bony Bow", 2)));
@@ -159,6 +166,176 @@ public final class SettingsViewTest {
     private static long CLOCK = 1000;
 
     static String PRIVACY_HOVER = "privacy.delete";
+
+    private static void standIn(AwtCanvas c, float[] box) {
+        float cx = box[0] + box[2] / 2f;
+        float top = box[1] + 18;
+        float unit = Math.min(box[2] / 5f, (box[3] - 40) / 8f);
+        c.fill(cx - unit, top, cx + unit, top + 2 * unit, 0xFFB98A5E);
+        c.fill(cx - unit * 1.6f, top + 2 * unit, cx + unit * 1.6f, top + 5 * unit, 0xFF7A3B3B);
+        c.fill(cx - unit, top + 5 * unit, cx + unit, top + 8 * unit, 0xFF2F3B6B);
+    }
+
+    private static final class OrderCanvas implements Canvas {
+        final AwtCanvas base;
+        final List<String> events = new ArrayList<>();
+
+        OrderCanvas(AwtCanvas base) {
+            this.base = base;
+        }
+
+        public void fill(float x0, float y0, float x1, float y1, int argb) {
+            base.fill(x0, y0, x1, y1, argb);
+        }
+
+        public void round(float x, float y, float w, float h, float r, int argb) {
+            base.round(x, y, w, h, r, argb);
+        }
+
+        public void ring(float x, float y, float w, float h, float r, float t, int argb) {
+            base.ring(x, y, w, h, r, t, argb);
+        }
+
+        public void text(String text, float x, float y, int argb) {
+            events.add("text:" + text);
+            base.text(text, x, y, argb);
+        }
+
+        public void text(String text, float x, float y, int argb, float scale) {
+            events.add("text:" + text);
+            base.text(text, x, y, argb, scale);
+        }
+
+        public float scale(float wanted) {
+            return base.scale(wanted);
+        }
+
+        public int width(String text) {
+            return base.width(text);
+        }
+
+        public void language(String lang) {
+            base.language(lang);
+        }
+
+        public void head(String minecraftName, float x, float y, float size) {
+            base.head(minecraftName, x, y, size);
+        }
+
+        public void clip(float x0, float y0, float x1, float y1) {
+            base.clip(x0, y0, x1, y1);
+        }
+
+        public void unclip() {
+            base.unclip();
+        }
+
+        public void logo(float x, float y, float size) {
+            base.logo(x, y, size);
+        }
+
+        public void icon(Icons.Icon icon, float x, float y, float size, int argb) {
+            base.icon(icon, x, y, size, argb);
+        }
+
+        public void svSquare(float x, float y, float w, float h, float hue) {
+            base.svSquare(x, y, w, h, hue);
+        }
+
+        public void hueBar(float x, float y, float w, float h) {
+            base.hueBar(x, y, w, h);
+        }
+
+        public float px() {
+            return base.px();
+        }
+
+        public void raise() {
+            events.add("raise");
+        }
+    }
+
+    private static void gapShot(File out, String lang, int value) throws Exception {
+        String was = LANG;
+        LANG = lang;
+        Fake fake = new Fake(lang);
+        List<Row.Tab> tabs = fake.tabs();
+        fake.values.put("panel.gap", value);
+        SettingsView view = new SettingsView(tabs, fake, 1);
+        view.showTab(1);
+        AwtCanvas c = render(view, 640, 360, 2);
+        ImageIO.write(c.image, "png", new File(out, lang + "-panel-gap-" + value + ".png"));
+        LANG = was;
+    }
+
+    private static void tooltipAboveModel(File out) throws Exception {
+        for (String lang : new String[] {"zh_tw", "en_us"}) {
+            String was = LANG;
+            LANG = lang;
+            Fake fake = new Fake(lang);
+            List<Row.Tab> tabs = fake.tabs();
+            SettingsView view = new SettingsView(tabs, fake, tabs.size() - 1);
+            view.showTab(tabs.size() - 1);
+            render(view, 640, 360, 2);
+            for (int i = 0; i < 30; i++) {
+                view.scroll(-1);
+            }
+            render(view, 640, 360, 2);
+            double mx = -100;
+            double my = -100;
+            for (SettingsView.Placed p : view.placed()) {
+                if (p.id().equals(PRIVACY_HOVER)) {
+                    mx = p.x() + 20;
+                    my = p.y() + p.h() / 2;
+                }
+            }
+            for (boolean fixed : new boolean[] {false, true}) {
+                OrderCanvas c = null;
+                for (int i = 0; i < 10; i++) {
+                    AwtCanvas awt = new AwtCanvas(640, 360, 2, lang);
+                    awt.backdrop();
+                    OrderCanvas order = new OrderCanvas(awt);
+                    view.beneathOverlays(fixed ? () -> {
+                        order.events.add("model");
+                        float[] box = view.spot("preview.model");
+                        if (box != null) {
+                            standIn(awt, box);
+                        }
+                    } : null);
+                    view.render(order, 640, 360, mx, my, CLOCK += 90);
+                    if (!fixed) {
+                        float[] box = view.spot("preview.model");
+                        if (box != null) {
+                            standIn(awt, box);
+                        }
+                    }
+                    awt.done();
+                    c = order;
+                }
+                ImageIO.write(c.base.image, "png", new File(out, lang + "-badge-tooltip-model"
+                        + (fixed ? "" : "-old-order") + ".png"));
+                if (fixed) {
+                    String hint = fake.tr("privacy.delete.hint");
+                    int model = c.events.indexOf("model");
+                    int raise = c.events.indexOf("raise");
+                    int tipAt = -1;
+                    for (int i = 0; i < c.events.size(); i++) {
+                        String e = c.events.get(i);
+                        if (e.startsWith("text:") && e.length() > 8
+                                && hint.startsWith(e.substring(5, Math.min(e.length(), 13)))) {
+                            tipAt = i;
+                        }
+                    }
+                    must(lang + "：預覽的人物在說明框之前畫（" + model + " < " + raise + "）",
+                            model >= 0 && raise > model);
+                    must(lang + "：說明框畫在上面那一層（" + tipAt + " > " + raise + "）",
+                            tipAt > raise);
+                }
+            }
+            view.beneathOverlays(null);
+            LANG = was;
+        }
+    }
 
     private static void privacyShot(File out, String lang, String hover) throws Exception {
         privacyShot(out, lang, hover, false, false);
@@ -471,7 +648,7 @@ public final class SettingsViewTest {
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),
                     segment("panel.side", 0, new Row.Tone[] {pl, pl, pl}, "mode.auto", "mode.right", "mode.left"),
-                    slider("panel.gap", 0, 200, 12, false));
+                    slider("panel.gap", 12, 200, 12, false));
             List<Row> look = List.of(colour("panel.theme"), colour("panel.colour"));
             List<Row> dialogue = List.of(
                     segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
@@ -670,6 +847,9 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
+            if (values.get("panel.gap") instanceof Integer gap) {
+                s.gap = gap;
+            }
             s.translate = text -> {
                 String hit = corpus.get(text);
                 return hit == null || hit.isBlank() ? text : hit;

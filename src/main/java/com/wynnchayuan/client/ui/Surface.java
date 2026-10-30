@@ -72,6 +72,12 @@ public abstract class Surface {
     protected void click() {
     }
 
+    private Runnable beneath;
+
+    public void beneathOverlays(Runnable underlay) {
+        beneath = underlay;
+    }
+
     public final void render(Canvas canvas, int screenW, int screenH, double mouseX,
                              double mouseY, long nowMs) {
         this.c = canvas;
@@ -92,6 +98,10 @@ public abstract class Surface {
         hoverRow = null;
 
         draw();
+        if (beneath != null) {
+            beneath.run();
+        }
+        c.raise();
 
         if (popover != null) {
             zone(0, 0, screenW, screenH, (x, y, b) -> dismiss());

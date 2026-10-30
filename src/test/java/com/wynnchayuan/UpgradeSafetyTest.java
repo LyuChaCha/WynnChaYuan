@@ -139,7 +139,7 @@ public final class UpgradeSafetyTest {
         check("不認得的 tooltipMode 退回舊欄位 showPanel=false 的換算（OFF）",
                 c.tooltipMode() == CollectorConfig.TooltipMode.OFF && !c.showOverlays());
         check("\"wide\" 的 panelGap、null 的 language 用預設（已經拿掉的 badgeStyle 不礙事）",
-                c.panelGap() == 4 && c.language().isEmpty());
+                c.panelGap() == 12 && c.language().isEmpty());
         check("極端數值夾回範圍（名牌距離 64、對話停留 = 持續顯示）",
                 c.nametagRange() == 64.0 && c.dialogueHoldMs() == Integer.MAX_VALUE);
         check("小寫的列舉值、字串的布林值也認得", c.chatMode() == CollectorConfig.ChatMode.BOTH
@@ -169,6 +169,9 @@ public final class UpgradeSafetyTest {
                 && c.itemNames() == CollectorConfig.ItemNames.ON
                 && c.source() == CollectorConfig.Source.GITHUB);
         check("存過 12 px 間距的舊設定照舊是 12，不跟著新預設改", c.panelGap() == 12);
+        Path small = Files.createTempDirectory("wcy-up-gap").resolve("config.json");
+        Files.writeString(small, "{\"panelGap\": 4}");
+        check("★ 存過 12 px 以下的間距：讀進來夾到 12", new CollectorConfig(small).panelGap() == 12);
         JsonObject expected = JsonParser.parseString(PLAYER_CONFIG).getAsJsonObject();
         expected.remove("shareCaptures");
         expected.addProperty("uiLanguage", "");

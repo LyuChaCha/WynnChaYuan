@@ -438,7 +438,7 @@ public final class SettingsScreen extends Screen {
                         () -> cycleTo(cfg()::panelSide, cfg()::cyclePanelSide,
                                 CollectorConfig.PanelSide.AUTO)));
         rows.add(Row.slider("panel.gap", t("panel.gap"), t("panel.gap.hint"))
-                .range(0, 200)
+                .range(com.wynnchayuan.PanelGap.MIN, com.wynnchayuan.PanelGap.MAX)
                 .value(() -> cfg().panelGap())
                 .slide(v -> cfg().setPanelGapLive(v))
                 .format(v -> v + " px")
@@ -1004,6 +1004,18 @@ public final class SettingsScreen extends Screen {
         Minecraft mc = Minecraft.getInstance();
         int guiScale = (int) mc.getWindow().getGuiScale();
         GuiCanvas canvas = new GuiCanvas(g, this.font, guiScale);
+        view.beneathOverlays(() -> {
+            float[] model = view.spot("preview.model");
+            if (model != null && mc.player != null) {
+                canvas.outside(() -> {
+                    try {
+                        drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
+                    } catch (Throwable t) {
+                        com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
+                    }
+                });
+            }
+        });
         canvas.begin();
         try {
             double mx = mc.mouseHandler.xpos() * mc.getWindow().getGuiScaledWidth()
@@ -1013,14 +1025,6 @@ public final class SettingsScreen extends Screen {
             view.render(canvas, this.width, this.height, mx, my, Util.getMillis());
         } finally {
             canvas.end();
-        }
-        float[] model = view.spot("preview.model");
-        if (model != null && mc.player != null) {
-            try {
-                drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
-            } catch (Throwable t) {
-                com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
-            }
         }
     }
 
