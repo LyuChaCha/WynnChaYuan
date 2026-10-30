@@ -300,16 +300,12 @@ gradle build
 | 名稱 | Minecraft ID |
 |---|---|
 | suSCP | `SCP_Night_sky` |
-| 隨意 | `brine7459` |
-| Chicken_sky | `Chicken_sky` |
 | Pure | `21_Pure` |
 | 泥巴先生 | `MrMud8033112` |
 | 幻影Joker | `NOT_Joker` |
 | Pootato | `Pootato__` |
 | N02sAyLa | `eric18960` |
-| 鳥鳥 | `Smellybird_` |
 | 98 | `Jackandmina98` |
-| Jimmy | `0110jimmy` |
 | 雪花 | `ThEsnowF` |
 | Roy | `aaroye` |
 | Chq | `Chqrish` |
