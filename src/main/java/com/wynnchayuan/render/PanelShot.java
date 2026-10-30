@@ -16,68 +16,27 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-/**
- * 把翻譯面板單獨拍成一張圖。
- *
- * <h2>做這個是為了校稿</h2>
- * 譯文在遊戲裡長什麼樣，跟它在 JSON 裡長什麼樣是兩回事：欄位有沒有對齊、
- * 顏色有沒有掉、有沒有被擠到換行、標點是不是跑到行首。這些全都只有畫出來
- * 才看得見，而翻譯的人多半不會為了確認一行字專程進遊戲跑到那個 NPC 面前。
- *
- * <p>所以拍下來。一張圖貼進討論串，比十句「那個地方好像怪怪的」有用。
- *
- * <h2>為什麼是裁切而不是重畫</h2>
- * 重畫一次面板到離屏緩衝區聽起來比較乾淨，實際上會拍到<b>另一次</b>繪製的
- * 結果——字型圖集、動態顏色、淡入淡出的透明度都可能跟畫面上那一幀不同。
- * 於是圖裡的東西跟使用者當下看到的對不起來，那正好毀掉這個功能的用途。
- *
- * <p>直接從已經畫好的畫面上裁，拍到的就是他看到的那一幀。
- */
 public final class PanelShot {
 
-    /** 圖存在哪。放在 screenshots 底下自己的資料夾，不跟一般截圖混在一起。 */
     private static final String FOLDER = "wynnchayuan";
 
     private static final DateTimeFormatter STAMP =
             DateTimeFormatter.ofPattern("yyyy-MM-dd_HH.mm.ss", Locale.ROOT);
 
-    /**
-     * 上一次畫出來的面板在哪、有多大（GUI 座標）。
-     *
-     * <p>由繪製端每幀更新。沒有這個就只能拍整個畫面，而整個畫面裡有九成
-     * 是跟譯文無關的東西。
-     */
     private static volatile int lastX;
     private static volatile int lastY;
     private static volatile int lastW;
     private static volatile int lastH;
     private static volatile String lastName = "panel";
 
-    /** 這一幀有沒有畫過面板。沒畫過就沒有東西好拍。 */
     private static volatile long lastFrame = 0;
 
-    /**
-     * 按了快捷鍵，等這一幀畫完就拍。
-     *
-     * <p>按鍵是在 tick 裡讀到的，那時候這一幀還沒畫。當場拍會拍到<b>上一幀</b>，
-     * 而上一幀常常正好是滑鼠剛移到物品上、面板還沒出現的那一幀——
-     * 於是使用者按了鍵，拿到一張空白的圖。
-     */
     private static volatile boolean pending = false;
 
-    /** 截圖鍵本身。畫面開著的時候直接問 GLFW「這顆鍵現在按著嗎」。 */
     private static KeyMapping bound;
 
     private PanelShot() {}
 
-    /**
-     * 每一個階段都留一行在 {@code shot-debug.txt}。
-     *
-     * <h2>為什麼要寫檔</h2>
-     * 聊天欄在背包開著時看不見，toast 又可能根本沒發到（如果連按鍵都沒讀到）。
-     * 「什麼都沒發生」有好幾種完全不同的原因，而它們在畫面上長得一模一樣。
-     * 寫進檔案的話，不管卡在哪一步都留得下痕跡。
-     */
     private static void log(String stage) {
         try {
             java.nio.file.Path dir = com.wynnchayuan.ConfigFolder.debugDir(
@@ -90,15 +49,11 @@ public final class PanelShot {
                     java.nio.file.StandardOpenOption.CREATE,
                     java.nio.file.StandardOpenOption.APPEND);
         } catch (Throwable t) {
-            // 日誌寫不出來也不能擋住拍照
         }
     }
 
-    /** 由 {@link com.wynnchayuan.WynnChaYuan} 在註冊按鍵時交進來。 */
     public static void bind(KeyMapping mapping) {
         bound = mapping;
-        // 什麼都不能讓模組在啟動時炸掉——截圖是個附加功能，
-        // 它壞掉頂多少一張圖，不該把整個遊戲擋在門外。
         String where = "?";
         try {
             var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
@@ -112,19 +67,6 @@ public final class PanelShot {
         log("bind：截圖鍵已交給 PanelShot（目前綁定 " + where + "）");
     }
 
-    /**
-     * 目前綁在哪個鍵，給 F6 顯示用。
-     *
-     * <p>先前 F6 寫死「按 F8 拍」。使用者改綁之後那行字還是說 F8，
-     * 而<b>沒改綁</b>的人按 F8 又沒反應（見 {@link #conflict}）——
-     * 兩邊都在騙人。改成讀真正的綁定。
-     */
-    /**
-     * 截圖鍵有沒有綁。
-     *
-     * <p>預設不綁（見 {@code WynnChaYuan#registerKeyBind}）。沒綁的時候設定畫面
-     * 那一格要寫「還沒綁鍵」，不是把「未設定」塞進「按 %s 拍」裡。
-     */
     public static boolean hasKey() {
         if (bound == null) {
             return false;
@@ -155,21 +97,6 @@ public final class PanelShot {
         }
     }
 
-    /**
-     * 有沒有別的按鍵設定也綁在同一個鍵上。
-     *
-     * <h2>為什麼要查</h2>
-     * 實機回報：預設的 F8 按下去<b>完全沒反應</b>，改綁成別的鍵才會動。
-     * 診斷檔（shot-debug.txt）裡從頭到尾只有 bind 那一行——按鍵事件根本沒進來。
-     * 同一個鍵被兩個功能搶著用時就是這樣，而按鍵設定畫面上那個紅色警告
-     * 玩家多半不會特地去翻。
-     *
-     * <p>查得到的只有走原版 {@code KeyMapping} 註冊的那些；自己讀原始輸入的
-     * 模組（Wynntils 就是）查不到。所以這只是「查到就一定有問題」，
-     * 查不到<b>不代表</b>沒問題——因此文案寫的是提醒，不是保證。
-     *
-     * @return 撞在一起的那個功能的名稱；沒撞就回傳 {@code null}
-     */
     public static String conflict() {
         if (bound == null) {
             return null;
@@ -197,7 +124,6 @@ public final class PanelShot {
                 }
             }
         } catch (Throwable t) {
-            // 查不到就當作沒撞，這只是提醒
         }
         return null;
     }
@@ -208,76 +134,17 @@ public final class PanelShot {
             return;
         }
         pending = true;
-        // 立刻回一句。
-        //
-        // 「按了沒反應」有兩種完全不同的原因：按鍵根本沒被讀到，或者讀到了
-        // 但後面某一步失敗。從畫面上分不出來，而分不出來就只能一直猜。
-        // 先在收到按鍵的當下說一聲，後面每一步失敗也各自說——
-        // 這樣使用者回報「停在哪一句」就等於告訴我卡在哪一步。
         log("request：收到，準備拍");
         tell(Component.literal(com.wynnchayuan.client.T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
     }
 
-    /**
-     * 每個 tick 呼叫一次。真正的拍照在這裡發生。
-     *
-     * <h2>為什麼是 tick，不是「繪製之後」</h2>
-     * Minecraft 1.21.5 之後 GUI 是<b>延後繪製</b>的：{@code GuiGraphics} 只把
-     * 指令排進 {@code GuiRenderState}，要到一幀的最後 {@code GuiRenderer}
-     * 才一次畫掉。所以在任何「繪製中」的掛鉤讀 framebuffer，讀到的都是
-     * <b>只有世界、沒有 GUI</b> 的半成品——先前拍出來全是地板與木箱，
-     * 就是這個原因，跟座標一點關係也沒有。
-     *
-     * <p>tick 跑在兩幀<b>之間</b>，那時 framebuffer 裡是上一幀完整合成後的
-     * 結果。vanilla 的 F2 截圖也是在這個時機抓的。
-     */
-    /** 上一個 tick 那顆鍵是不是按著的。用來抓「剛按下」那一刻。 */
+    // MC 1.21.5 起 GUI 延後繪製，改在 tick 讀 framebuffer
     private static boolean wasDown = false;
 
-    /**
-     * 畫面開著時直接讀鍵盤。
-     *
-     * <h2>為什麼要繞過 Minecraft 的鍵位系統</h2>
-     * {@code KeyMapping.consumeClick()} 與 {@code isDown()} 都只在
-     * <b>沒有畫面</b>時才會更新——{@code KeyboardHandler.keyPress} 是先看
-     * {@code screen == null} 才去餵鍵位佇列的。而「開著背包、滑鼠停在物品上」
-     * 正是最需要拍照的時刻。
-     *
-     * <p>Fabric 的 {@code ScreenKeyboardEvents} 理論上補得起這個洞，實測沒有
-     * 生效（原因不明，可能被畫面吃掉了）。所以這裡直接問 GLFW 那顆鍵現在是不是
-     * 按著的——不經過任何中間層，畫面開不開都一樣。
-     *
-     * <p>{@code KeyMapping.key} 是 protected，但 Fabric 的
-     * {@code KeyBindingHelper.getBoundKeyOf} 讀得到——所以改綁一樣有效，
-     * 不必認死 F8。
-     */
-    /**
-     * 畫面開著時，把截圖鍵掛到<b>那個畫面自己</b>的鍵盤事件上。
-     *
-     * <h2>前兩次為什麼失敗</h2>
-     * {@code KeyMapping.consumeClick()} 只在沒有畫面時才會更新——
-     * {@code KeyboardHandler.keyPress} 是先看 {@code screen == null}
-     * 才去餵鍵位佇列的。改用 GLFW 直接輪詢也沒有用：{@code shot-debug.txt}
-     * 裡從頭到尾只有 bind 那一行，一次都沒讀到按下。
-     *
-     * <p>{@code ScreenKeyboardEvents} 是<b>每個畫面各自</b>的事件，必須在
-     * {@code ScreenEvents.AFTER_INIT} 裡對那個畫面註冊——之前註冊在全域，
-     * 所以什麼都收不到。這一版按畫面註冊。
-     *
-     * <p>比對用 {@link KeyMapping#matches}，玩家改綁一樣有效。
-     */
     public static void listen() {
         net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT.register(
                 (client, screen, width, height) -> {
-                    // <b>前置</b>與<b>後置</b>都掛。
-                    //
-                    // afterKeyPress 只在畫面自己沒有吃掉那顆鍵時才會跑，而
-                    // 背包畫面與 Wynntils 都會吃掉一部分按鍵。實機回報
-                    // 「按了完全沒反應」，而 shot-debug.txt 從頭到尾只有
-                    // bind 與 listen 兩行——按鍵事件一次都沒進來，正是這個樣子。
-                    //
-                    // 兩邊都設同一個旗標，同一顆鍵被收到兩次也沒有副作用：
-                    // pending 是布林，tick 只會拍一張。
+                    // afterKeyPress 只在畫面沒吃鍵時跑，背包與 Wynntils 會吃鍵
                     net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
                             .beforeKeyPress(screen).register((s, keyEvent) -> {
                                 if (bound != null && bound.matches(keyEvent)) {
@@ -300,17 +167,6 @@ public final class PanelShot {
         log("listen：已掛上畫面鍵盤事件（前置與後置）");
     }
 
-    /**
-     * 收到的不是截圖鍵——記前幾筆就好。
-     *
-     * <h2>為什麼要記別的鍵</h2>
-     * 「一筆都沒有」跟「有收到、但比對不中」是兩件<b>完全不同</b>的事：
-     * 前者是事件根本沒掛上（或被別的模組攔走），後者是綁定比對出了問題。
-     * 而它們在畫面上、在診斷檔裡先前都長得一模一樣——只有 bind 與 listen 兩行。
-     *
-     * <p>有上限是因為這個功能是拿來查一次問題的，不是拿來記錄整場遊戲的
-     * 每一次按鍵。{@link #KEY_LOG_LIMIT} 筆足夠分辨是哪一種。
-     */
     private static void noteOtherKey(net.minecraft.client.gui.screens.Screen screen,
                                      Object keyEvent) {
         if (keyLogged >= KEY_LOG_LIMIT) {
@@ -321,31 +177,10 @@ public final class PanelShot {
                 + screen.getClass().getSimpleName() + "，截圖鍵是 " + keyName());
     }
 
-    /** 見 {@link #noteOtherKey}：最多記幾筆別的鍵。 */
     private static final int KEY_LOG_LIMIT = 20;
 
     private static int keyLogged = 0;
 
-    /**
-     * <h2>沒有框可以裁的時候，改拍整個畫面</h2>
-     * 先前這裡是<b>什麼都不做</b>，只回一句「現在沒有翻譯面板可以拍」。
-     * 而「有框」這件事只有<b>物品 tooltip</b> 成立——面板模式是自己畫的，
-     * 就地取代模式靠 {@code TooltipPanel#noteShot} 回推。
-     *
-     * <p>對話框、名牌、行動列這些走就地取代的東西<b>根本沒有框</b>：
-     * 譯文是寫回原本的元件、由遊戲自己畫的，模組沒有任何座標可以記。
-     * 於是玩家想拍一張對話跑版的畫面回報，按 F9 只會得到一句拒絕——
-     * 而那正是最需要截圖的時候。
-     *
-     * <p>拍整個畫面雖然不如裁好的漂亮，但<b>一定拍得到</b>。
-     * 要精確裁切的場合（物品 tooltip）本來就會走上面那條路。
-     *
-     * <h2>但畫面上什麼譯文都沒有的時候要拒絕</h2>
-     * 「沒有框」有兩種：一種是<b>有譯文但畫不出框</b>（對話框、名牌），
-     * 那就該拍整個畫面；另一種是<b>根本沒有譯文</b>——玩家只是按到了鍵，
-     * 滑鼠不在任何東西上。後者拍出來的是一張純風景照，存了也沒有用，
-     * 而且會讓人以為截圖功能壞了（「我明明拍了，怎麼沒有面板」）。
-     */
     public static void tick() {
         if (!pending) {
             return;
@@ -369,7 +204,6 @@ public final class PanelShot {
         captureScreen();
     }
 
-    /** 繪製端呼叫：記下這一幀面板的位置與大小。 */
     public static void note(int x, int y, int w, int h, String name) {
         lastX = x;
         lastY = y;
@@ -381,37 +215,22 @@ public final class PanelShot {
         lastFrame = System.currentTimeMillis();
     }
 
-    /** 現在有沒有面板可以拍。 */
     public static boolean ready() {
         return lastW > 0 && lastH > 0
                 && System.currentTimeMillis() - lastFrame < 500;
     }
 
-    /**
-     * 拍下目前的面板。
-     *
-     * <p>要在<b>繪製之後</b>呼叫，這一幀才畫得完整。抓畫面是非同步的
-     * （GPU 讀回來要時間），所以裁切與存檔都在回呼裡做。
-     */
     public static void capture() {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || !ready()) {
             return;
         }
-        // GUI 座標與實際像素差一個縮放倍率。用整數倍率會在 125% 這種
-        // 設定下差幾個像素，邊框就被切掉一條。
         double scale = mc.getWindow().getGuiScale();
         shoot(mc, (int) Math.floor(lastX * scale), (int) Math.floor(lastY * scale),
               (int) Math.ceil(lastW * scale), (int) Math.ceil(lastH * scale),
               safe(lastName));
     }
 
-    /**
-     * 整個畫面。沒有框可以裁時的退路，見 {@link #tick}。
-     *
-     * <p>對話框與名牌走的是就地取代——譯文寫回原本的元件、由遊戲自己畫，
-     * 模組拿不到任何座標。那些畫面只能整張拍。
-     */
     public static void captureScreen() {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.getWindow() == null) {
@@ -421,11 +240,6 @@ public final class PanelShot {
               "screen");
     }
 
-    /**
-     * 抓畫面、裁下指定的像素範圍，然後照模式決定要存檔還是先給玩家看。
-     *
-     * <p>座標是<b>實際像素</b>，不是 GUI 座標——呼叫端自己乘好縮放倍率。
-     */
     private static void shoot(Minecraft mc, int px, int py, int pw, int ph,
                               String name) {
         Screenshot.takeScreenshot(mc.getMainRenderTarget(), full -> {
@@ -437,14 +251,11 @@ public final class PanelShot {
                         .withStyle(ChatFormatting.RED));
                 return;
             }
-            // 按了截圖鍵就跳面板：那一下就是「我要拿這張圖做事」。
             mc.execute(() -> {
                 try {
                     mc.setScreen(new com.wynnchayuan.client.ShotScreen(
                             cropped, name, mc.screen));
                 } catch (Throwable t) {
-                    // 面板開不起來時<b>還是要把圖留下</b>，而且要說原因。
-                    // 先前這裡沒有退路：面板開失敗＝什麼都沒發生。
                     com.wynnchayuan.translate.ErrorDebug.note(
                             "shot.screen", name, t);
                     tell(Component.literal(com.wynnchayuan.client.T.s("shot.panel_failed",
@@ -456,13 +267,6 @@ public final class PanelShot {
         });
     }
 
-    /**
-     * 從整張畫面裁出面板那一塊。
-     *
-     * <p>邊界一律夾住。面板可能有一部分在畫面外（貼著邊緣的時候），
-     * 不夾的話 {@code getPixel} 會直接丟例外，而那個例外會在回呼裡
-     * 被吞掉——使用者按了鍵，什麼都沒發生，也沒有任何訊息。
-     */
     private static NativeImage crop(NativeImage full, int x, int y, int w, int h) {
         int left = Math.max(0, Math.min(x, full.getWidth() - 1));
         int top = Math.max(0, Math.min(y, full.getHeight() - 1));
@@ -494,19 +298,6 @@ public final class PanelShot {
         }
     }
 
-    /**
-     * 「存好了」那一句：路徑寫出來，而且點得開。
-     *
-     * <h2>為什麼不只寫檔名</h2>
-     * 使用者的回報是「存到哪裡去了？」。只寫檔名的話，要自己去翻
-     * {@code .minecraft/screenshots/wynnchayuan/}——那個資料夾平常沒人會開。
-     * 寫出相對路徑就知道在哪一層，點一下直接用系統的看圖程式開起來；
-     * 旁邊再給一個開資料夾的，要一次拿好幾張時比較方便。
-     *
-     * <p>滑鼠停上去顯示<b>絕對</b>路徑——要貼給別人時那個才有用。
-     *
-     * @param file 剛寫好的檔案
-     */
     public static Component saved(Path file) {
         Path abs = file.toAbsolutePath();
         Path dir = abs.getParent();
@@ -532,12 +323,6 @@ public final class PanelShot {
                                                             : dir.toString())))));
     }
 
-    /**
-     * 顯示用的路徑：能算出相對於遊戲資料夾的就用相對的。
-     *
-     * <p>絕對路徑在聊天欄裡會長到換好幾行，而
-     * {@code screenshots/wynnchayuan/…} 一眼就知道在哪。
-     */
     private static String shown(Path abs) {
         try {
             Minecraft mc = Minecraft.getInstance();
@@ -546,17 +331,14 @@ public final class PanelShot {
                         .relativize(abs).toString().replace('\\', '/');
             }
         } catch (Throwable t) {
-            // 不同磁碟機時 relativize 會丟例外，退回絕對路徑就好
         }
         return abs.toString();
     }
 
-    /** 讓別的畫面也能用同一套通知（聊天欄一行 + toast + 快門聲）。 */
     public static void announce(Component message) {
         tell(message);
     }
 
-    /** 檔名裡不能有的字元一律換掉——物品名稱裡什麼都有可能。 */
     private static String safe(String name) {
         StringBuilder out = new StringBuilder();
         name.codePoints().forEach(cp -> {
@@ -575,16 +357,7 @@ public final class PanelShot {
         return clean.length() > 60 ? clean.substring(0, 60) : clean;
     }
 
-    /**
-     * 說一聲。
-     *
-     * <p>一定要丟回<b>主執行緒</b>。抓畫面是非同步的，回呼跑在算繪執行緒上，
-     * 在那裡呼叫 {@code displayClientMessage} 不會顯示——使用者按了鍵、
-     * 檔案也存好了，畫面上卻什麼都沒發生。第一版就是這樣。
-     *
-     * <p>順便發一個快門聲。Wynncraft 的聊天欄常常在刷，一行字很容易被沖掉，
-     * 但聲音不會。
-     */
+    // 截圖回呼在算繪執行緒，displayClientMessage 不會顯示
     private static void tell(Component message) {
         Minecraft mc = Minecraft.getInstance();
         if (mc != null) {
@@ -592,16 +365,6 @@ public final class PanelShot {
         }
     }
 
-    /**
-     * 訊息也發一份成 toast。
-     *
-     * <h2>為什麼非發不可</h2>
-     * F8 最需要用的時機是<b>背包開著、滑鼠停在物品上</b>，而那個時候聊天欄
-     * 被畫面蓋住——按了鍵之後不管成功還失敗，玩家看到的都是「什麼都沒發生」，
-     * 連「卡在哪一步」都無從得知。toast 畫在畫面<b>之上</b>，開著背包也看得到。
-     *
-     * <p>{@code addOrUpdate} 而不是 {@code add}：連按幾下不會疊出一排。
-     */
     private static void toast(Minecraft mc, Component message) {
         try {
             net.minecraft.client.gui.components.toasts.SystemToast.addOrUpdate(
@@ -611,7 +374,6 @@ public final class PanelShot {
                     Component.literal(WynnChaYuan.MOD_NAME),
                     message);
         } catch (Throwable t) {
-            // toast 發不出來也不能擋住存檔那條路
         }
     }
 

@@ -7,27 +7,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Wynntils「物品高亮」每次讀物品模型資料時做的那一步，結果記起來。
- *
- * <h2>為什麼</h2>
- * Wynntils 在每一次讀 ItemStack 的 {@code custom_model_data} 時都發一個事件
- * （它的 {@code DataComponentHolderMixin}），物品高亮的 {@code onGetModelData} 收到之後
- * 把稀有度那幾個字串換成空字串：開一條 stream、逐字比前綴、組一份新清單再比一次。
- * 一格物品一幀要讀好幾次，容器開著時每一幀上百次。2026-10-15 在市集錄的 JFR 裡，
- * 這一步佔渲染執行緒取樣的 8%（Wynntils 全部是 58%）。
- *
- * <h2>做法</h2>
- * 結果只取決於原本那份模型資料與「隱藏專業星等」這個設定。模型資料是不可變的 record，
- * 同一件物品每次讀到的是<b>同一個物件</b>，所以照物件身分快取：命中就直接回答案，
- * 沒命中才照 Wynntils 原本的規則算一次。算法照抄它的（換掉的前綴從它的常數讀），
- * 畫面跟原本一模一樣。
- *
- * <p>快取是固定大小的直接對應表：一格放一筆不可變的紀錄，寫入只是換一個參考，
- * 別的執行緒同時讀也只會讀到舊的或新的那一筆，不會讀到一半。
- *
- * <p>讀不到 Wynntils 的欄位（它改版了）就整個停用，交回它原本的方法。
- */
+// Wynntils 每次讀 custom_model_data 都發事件，照物件身分快取
 public final class HighlightModelCache {
 
     private HighlightModelCache() {
@@ -35,7 +15,6 @@ public final class HighlightModelCache {
 
     private static final int SIZE = 1024;
 
-    /** 一筆：原本那份、當時「隱藏專業星等」的值、換好的那份（沒有要換的時候是原本那份）。 */
     private record Entry(CustomModelData key, boolean hideStar, CustomModelData value) { }
 
     private static final Entry[] TABLE = new Entry[SIZE];
@@ -47,20 +26,11 @@ public final class HighlightModelCache {
     private static java.lang.reflect.Method configGet;
     private static Class<?> guideScreen;
 
-    /**
-     * 物品高亮的 {@code onGetModelData} 開頭問這裡。
-     *
-     * @param feature  那個 Wynntils 功能本身（讀它的設定）
-     * @param original 事件帶來的原本那份模型資料
-     * @return 要換成的那份（跟原本相同就回原本那個物件）；回 {@code null} 代表不處理，
-     *         交給 Wynntils 原本的方法
-     */
     public static CustomModelData lookup(Object feature, CustomModelData original) {
         if (broken || original == null || !enabled() || !ready(feature)) {
             return null;
         }
         try {
-            // 跟 Wynntils 一樣：導覽畫面裡不動
             if (guideScreen != null && guideScreen.isInstance(Minecraft.getInstance().screen)) {
                 return null;
             }
@@ -79,7 +49,6 @@ public final class HighlightModelCache {
         }
     }
 
-    /** 照 Wynntils 的規則：稀有度那幾個前綴（與選擇隱藏時的專業星等）換成空字串，位置不變。 */
     static CustomModelData compute(CustomModelData original, boolean hideStar) {
         List<String> strings = original.strings();
         List<String> out = null;
@@ -108,7 +77,6 @@ public final class HighlightModelCache {
         return hideStar && starKey != null && s.startsWith(starKey);
     }
 
-    /** 測試用：直接給前綴。 */
     static void useKeys(List<String> keys, String star) {
         highlightKeys = List.copyOf(keys);
         starKey = star;
@@ -119,7 +87,6 @@ public final class HighlightModelCache {
         return config == null || config.wynntilsFps();
     }
 
-    /** 「隱藏專業星等」讀一次就記半秒：每次讀模型資料都走反射，反射本身成了熱點（JFR 1%）。 */
     private static boolean hideCached;
     private static long hideReadAt;
 

@@ -17,120 +17,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/**
- * 看著 NPC 時，在準心旁邊顯示名牌的翻譯。
- *
- * <h2>為什麼不直接把名牌換成中文</h2>
- * 就地取代會讓<b>畫面上再也看不到原文</b>。Wynncraft 是多人遊戲，跟其他玩家討論
- * 「去找 Blacksmith」時，如果你的畫面只有「鐵匠」，就對不上話——尤其老玩家
- * 只認得英文名。
- *
- * <p>所以改成：原文名牌<b>完全不動</b>，注視時另外跳一個小框顯示譯文。
- * 想知道意思就看一眼，要跟人溝通時原文就在那裡。
- *
- * <h2>判定方式</h2>
- * 用<b>視線夾角</b>而不是螢幕座標——後者會在名牌被其他東西擋住、或轉頭很快時
- * 抖動。夾角判定只看「有沒有對著它」，穩定得多。
- */
 public final class LookAtTranslator {
 
-    /**
-     * 名牌實體本身幾乎沒有體積，直接拿它的碰撞箱去打射線會永遠打不中。
-     * 撐開成大約一個方塊，對應玩家眼中「名牌那一塊」的大小。
-     */
     private static final double LABEL_BOX = 0.5;
 
-    /**
-     * 夾角錐再窄，也至少允許偏離視線這麼多格。
-     *
-     * <p>名牌浮在<b>頭頂</b>，玩家卻是對著<b>身體</b>看的。站在 NPC 面前兩格時，
-     * 那個高度差就是十幾度——純用夾角判定的話，明明就站在他面前卻什麼都不跳。
-     *
-     * <p>改成「離視線這條直線多遠」就沒有這個問題：這是世界座標的距離，
-     * 不隨距離變化。夾角設定則繼續管遠處——遠了才需要「對準」的語意。
-     */
     private static final double MIN_AIM_RADIUS = 1.4;
 
-    /**
-     * 名牌從實體頂端往上抬多少格。
-     *
-     * <p>Minecraft 畫名牌的位置是 {@code getNameTagOffsetY()}，也就是碰撞箱頂端
-     * 再往上 0.5 格。瞄準要瞄<b>字畫在哪</b>，不是實體站在哪。
-     */
     private static final double LABEL_LIFT = 0.5;
 
-    /**
-     * 名牌一行在世界座標裡大約多高。
-     *
-     * <p>多行的名牌是<b>往上長</b>的：第一行在最下面，後面幾行疊在它上頭。
-     * 所以一塊四行的浮空字，最上面那一行離實體有一格多。
-     *
-     * <p>issue #1047 就是這件事——討伐戰的「PUZZLE! / Destabilize the Research
-     * Lab!」是一個實體上的多行名牌，對著字看打不中，要低頭看到字<b>下方</b>
-     * 才跳得出小框；而最上面那一行怎麼看都跳不出來。
-     */
     private static final double LINE_HEIGHT = 0.28;
 
-    /**
-     * 記錄看過的名牌。
-     *
-     * <p>用 {@link WeakHashMap} 是刻意的：實體離開視野後 Minecraft 會回收它，
-     * 這裡就跟著自動清掉，不需要自己管生命週期，也不會累積成記憶體洩漏。
-     */
     private static final Map<Entity, StyledText> LABELS = new WeakHashMap<>();
 
-    /** 上一次看到的譯文與時間，用來做「移開視線後再顯示一下」。 */
     private static volatile Component lastShown = null;
     private static volatile long lastSeen = 0;
 
-    /**
-     * 上一段譯文是<b>誰</b>的。
-     *
-     * <p>「移開視線後再顯示一下」是為了不讓框在準心稍微晃開時閃掉，但它有個
-     * 副作用：那段字的來源消失之後，框還會照著停留時間繼續飄在畫面上。
-     * 突襲選增益就是這樣——選完了，那幾塊字沒了，框卻還在。
-     *
-     * <p>所以記住來源。來源不在了就立刻收掉，不走停留與淡出。
-     */
     private static volatile Entity lastSource = null;
 
-    /**
-     * 上一段譯文的<b>模板</b>（數字已經抽掉）。
-     *
-     * <p>戰鬥假人的名牌每被打一下就換一個數字，實體也可能整個換掉，
-     * 光比實體不夠。比模板才問得到「其實還是同一句話」。
-     */
     private static volatile String lastTemplate = null;
 
-    /** 這一段譯文是什麼時候<b>第一次</b>顯示的。見 {@link #MIN_SHOW_MS}。 */
     private static volatile long shownAt = 0;
 
-    /**
-     * 一段譯文最少要顯示這麼久。
-     *
-     * <h2>為什麼需要下限</h2>
-     * 判斷是<b>每幀</b>做的，所以只要來源的字變了一下、或準心晃開一格，
-     * 框就會收掉再出現。戰鬥假人最明顯：它的字每被打一次就換一個數字，
-     * 於是框以每秒好幾次的頻率閃。
-     *
-     * <p>框出現得比人看得完還快就消失，比不顯示更糟。所以一旦顯示，
-     * 這段時間內就不再重新判斷——0.6 秒大約是看完一行中文的時間。
-     */
     private static final long MIN_SHOW_MS = 600;
 
     private LookAtTranslator() {}
 
-    /**
-     * 玩家<b>正前方最近</b>的那個名牌寫什麼。
-     *
-     * <h2>用途</h2>
-     * 對話事件本身不帶說話的是誰（Wynntils 的 {@code NpcDialogueEvent} 只有文字），
-     * 但玩家在講話的當下一定面對著那個 NPC。收集對話時記下來，譯者就知道
-     * 這句話是誰說的——一整串沒有出處的台詞很難翻對語氣。
-     *
-     * <p>是<b>猜測</b>不是事實：旁邊剛好站著別的 NPC 就可能記錯。所以它只進
-     * {@code ctx}（給譯者分堆用），永遠不會影響譯文本身。
-     */
+    // Wynntils NpcDialogueEvent 不帶說話者，最近名牌只是猜測
     public static String nearestLabel() {
         try {
             Minecraft mc = Minecraft.getInstance();
@@ -149,7 +61,7 @@ public final class LookAtTranslator {
                 Vec3 delta = entity.position().subtract(eye);
                 double along = delta.dot(look);
                 if (along <= 0 || along > SPEAKER_RANGE) {
-                    continue;                  // 在身後、或太遠
+                    continue;
                 }
                 double perpendicular = delta.subtract(look.scale(along)).length();
                 if (perpendicular < bestPerp) {
@@ -160,25 +72,14 @@ public final class LookAtTranslator {
             return best == null || bestPerp > SPEAKER_RADIUS
                     ? null : best.getStringWithoutFormatting().strip();
         } catch (Throwable t) {
-            return null;   // 這只是給譯者的線索，取不到不影響任何事
+            return null;
         }
     }
 
-    /** 對話時玩家與 NPC 的距離。超過這個距離的不算在講話。 */
     private static final double SPEAKER_RANGE = 8.0;
 
-    /** 離視線這麼遠以內才算是「面對著他」。 */
     private static final double SPEAKER_RADIUS = 2.5;
 
-    /** 由名牌事件呼叫，記下這個實體對應的原文。 */
-    /**
-     * 頭頂上那塊名牌：給「右鍵點了誰」用，見 {@code ConversationPartner}。
-     *
-     * <p>Wynncraft 的 NPC 名字是另一個 TextDisplay 實體，浮在模型正上方。
-     * 找水平距離最近、高度在模型上方幾格內的那一塊。
-     *
-     * @return 名牌原文（不含格式碼）；附近沒有就回傳 {@code null}
-     */
     public static String labelAbove(Entity target) {
         if (target == null) {
             return null;
@@ -204,14 +105,12 @@ public final class LookAtTranslator {
             }
             return best;
         } catch (Throwable t) {
-            return null;   // 只是給譯者的線索，取不到不影響任何事
+            return null;
         }
     }
 
-    /** 名牌離模型多高以內算「頭頂上」。 */
     private static final double ABOVE_HEIGHT = 3.5;
 
-    /** 名牌離模型水平多遠以內算同一個 NPC。 */
     private static final double ABOVE_RADIUS = 0.75;
 
     public static void remember(Entity entity, StyledText label) {
@@ -228,20 +127,12 @@ public final class LookAtTranslator {
         shownAt = 0;
     }
 
-    /** 這一段字跟上一次顯示的是不是同一句（只有數字不同不算變）。 */
     private static boolean sameContent(StyledText text) {
         return lastTemplate != null && text != null
                 && lastTemplate.equals(GlyphSplitter.toTemplate(text));
     }
 
-    /** 每幀呼叫。沒有對著任何名牌時什麼都不畫。 */
     public static void render(GuiGraphics graphics) {
-        // 模式要自己問，不能靠「LABELS 是空的」當作沒開。
-        //
-        // 先前只有 LOOK_AT 模式才會有人呼叫 remember，所以其他模式下 LABELS
-        // 永遠是空的，這一支等於自動關著。現在 CaptureListener 不管哪個模式
-        // 都記（不然切過來之後畫面上現有的 NPC 一個都不在裡面），
-        // 那個隱性的開關就沒了——就地取代模式會冒出多餘的小框。
         if (WynnChaYuan.config() == null
                 || WynnChaYuan.config().nametagMode()
                         != CollectorConfig.NametagMode.LOOK_AT) {
@@ -251,8 +142,6 @@ public final class LookAtTranslator {
         if (mc == null || mc.player == null || LABELS.isEmpty()) {
             return;
         }
-        // 還在最短顯示時間內，就不重新判斷——這是防閃爍的第一道，
-        // 也是唯一一道跟「看向哪裡」完全無關的。
         if (lastShown != null && System.currentTimeMillis() - shownAt < MIN_SHOW_MS) {
             drawRow(graphics, mc, List.of(lastShown), 1.0f);
             return;
@@ -264,9 +153,6 @@ public final class LookAtTranslator {
             if (translated == null) {
                 noteOnce("nametag.noMatch");
                 if (lastShown != null && (aimed == lastSource || sameContent(target))) {
-                    // 還在看同一個東西，只是它的字變了（戰鬥假人的傷害數字每擊都跳）。
-                    // 這種時候把框收掉會讓它一直閃——維持上一次的譯文，
-                    // 直到玩家真的看向別處。
                     lastSeen = System.currentTimeMillis();
                     drawRow(graphics, mc, List.of(lastShown), 1.0f);
                 }
@@ -275,13 +161,12 @@ public final class LookAtTranslator {
             noteOnce("nametag.shown");
             String template = GlyphSplitter.toTemplate(target);
             if (!template.equals(lastTemplate)) {
-                shownAt = System.currentTimeMillis();   // 換內容才重新計時
+                shownAt = System.currentTimeMillis();
             }
             lastShown = translated;
             lastSource = aimed;
             lastTemplate = template;
             lastSeen = System.currentTimeMillis();
-            // 準心對著的那個排第一，旁邊看得到的一起列出來
             List<Component> row = new ArrayList<>();
             row.add(translated);
             for (Entity other : nearbyLabels(mc, aimed)) {
@@ -298,12 +183,8 @@ public final class LookAtTranslator {
             drawRow(graphics, mc, row, 1.0f);
             return;
         }
-        // 視線稍微移開時不要立刻消失 —— 準心對著 NPC 本來就不容易穩住，
-        // 一離開就閃掉會讓人以為功能壞了。停留時間到了之後淡出，不是啪一聲不見。
         if (lastSource != null
                 && (!lastSource.isAlive() || !LABELS.containsKey(lastSource))) {
-            // 那段字的來源已經不在了（例如突襲的增益選完就收掉）。
-            // 這種是「內容消失」不是「視線移開」，不該再停留。
             lastShown = null;
             lastSource = null;
             return;
@@ -317,40 +198,6 @@ public final class LookAtTranslator {
         }
     }
 
-    /**
-     * 找出玩家正對著的那個名牌。
-     *
-     * <h2>為什麼不是「夾角最小的贏」</h2>
-     * 夾角會隨距離變小：遠處的 NPC 就算在畫面邊緣，夾角也可能比你面前這位還小。
-     * 只比夾角的話，站在攤位前面卻翻到後面那排的名字。
-     *
-     * <p>所以分兩層：
-     *
-     * <ol>
-     *   <li><b>準心真的打到誰</b>——用射線打名牌的碰撞箱，最近的那個贏。
-     *       這是「我就是在看他」的情況，最明確，優先權最高。</li>
-     *   <li>都沒打到才看<b>離視線多遠</b>，取最近的。名牌浮在頭頂而玩家
-     *       對著身體看，所以容許範圍除了夾角錐，還有一個不隨距離縮小的
-     *       下限（見 {@link #MIN_AIM_RADIUS}）。</li>
-     * </ol>
-     *
-     * <p>距離與夾角都可以在設定裡調：城裡 NPC 站得密，錐要收窄；
-     * 曠野找人則希望掃過去就跳。沒有一個值兩邊都好用。
-     */
-    /**
-     * 這個名牌被牆擋住了嗎。
-     *
-     * <h2>為什麼要問</h2>
-     * 先前只看角度與距離，於是準心對著牆時，牆<b>後面</b>那位商人的名字照樣跳出來。
-     * 玩家看不到他，畫面上卻有他的名字——那讀起來像雜訊，不像資訊。
-     *
-     * <p>射線打的是<b>方塊</b>不是實體：實體那一段已經由 findAimedLabel 處理。
-     * 打到方塊就代表視線被擋住了。
-     *
-     * <p>瞄的是名牌的高度（實體頭頂）而不是腳下——蹲在櫃台後面的商人，
-     * 身體被擋住但名字看得見，那還是該顯示。呼叫端把那個點算好傳進來，
-     * 見 {@link #labelBox}。
-     */
     private static boolean blocked(Minecraft mc, Vec3 eye, Vec3 head) {
         if (mc.level == null) {
             return false;
@@ -365,12 +212,6 @@ public final class LookAtTranslator {
                 != net.minecraft.world.phys.HitResult.Type.MISS;
     }
 
-    /**
-     * 附近所有<b>看得到</b>的名牌，準心對著的排第一，其餘依離視線的遠近。
-     *
-     * <p>上限 {@link #MAX_NEARBY} 個。城裡的攤位一排五六個，全列出來會蓋掉
-     * 半個畫面——而玩家真正在意的永遠是最前面那幾個。
-     */
     private static List<Entity> nearbyLabels(Minecraft mc, Entity aimed) {
         double range = WynnChaYuan.config().nametagRange();
         Vec3 eye = mc.player.getEyePosition();
@@ -391,9 +232,8 @@ public final class LookAtTranslator {
             }
             double along = delta.dot(look);
             if (along <= 0) {
-                continue;                      // 在身後，玩家看不到
+                continue;
             }
-            // 視野內：夾角超過這個就不是「畫面上看得到」了
             if (Math.toDegrees(Math.acos(along / distance)) > VIEW_CONE) {
                 continue;
             }
@@ -410,36 +250,15 @@ public final class LookAtTranslator {
         return found.size() > MAX_NEARBY ? found.subList(0, MAX_NEARBY) : found;
     }
 
-    /** 一次最多列幾個名牌。 */
     private static final int MAX_NEARBY = 5;
 
-    /**
-     * 算「看得到」的視野角度（半角）。
-     *
-     * <p>比準心那個窄錐大得多——這一層問的是「他在不在畫面上」，
-     * 不是「我是不是在看他」。
-     */
     private static final double VIEW_CONE = 35.0;
 
-    /**
-     * 這個名牌實際畫在哪一塊空間。
-     *
-     * <p>不是實體的碰撞箱：浮空字用的是<b>隱形盔甲座</b>，碰撞箱幾乎是個點，
-     * 而字畫在它上方，多行的話還會一路往上長。拿碰撞箱去瞄，玩家對著字看
-     * 永遠打不中（issue #1047）。
-     *
-     * <p>回傳的是「實體本身」與「字那一塊」的聯集，所以會說話的 NPC
-     * （身體看得到）跟純粹的浮空字都瞄得到。
-     */
     private static AABB labelBox(Entity entity, StyledText label) {
         return labelBox(entity.getBoundingBox(), entity.position(),
                         lineCount(label));
     }
 
-    /**
-     * 幾何的部分單獨抽出來——headless 的測試造不出 {@code Entity}，
-     * 但這幾行正是 issue #1047 的核心，不測等於沒修。
-     */
     static AABB labelBox(AABB body, Vec3 at, int lines) {
         AABB around = body.inflate(LABEL_BOX);
         double bottom = body.maxY + LABEL_LIFT;
@@ -453,7 +272,6 @@ public final class LookAtTranslator {
                 Math.max(around.maxZ, at.z + LABEL_BOX));
     }
 
-    /** 名牌那一塊的中心。算「離視線多遠」與「有沒有被牆擋住」都用這個點。 */
     private static Vec3 labelCentre(Entity entity, StyledText label) {
         return labelCentre(entity.getBoundingBox(), entity.position(),
                            lineCount(label));
@@ -465,7 +283,6 @@ public final class LookAtTranslator {
         return new Vec3(at.x, (bottom + top) / 2, at.z);
     }
 
-    /** 名牌有幾行。多行的名牌是一個實體、名字裡夾著換行。 */
     static int lineCount(StyledText label) {
         if (label == null) {
             return 1;
@@ -498,14 +315,13 @@ public final class LookAtTranslator {
             if (entity == null || !entity.isAlive()) {
                 continue;
             }
-            // 距離、瞄準、擋住與否都從<b>字畫在哪</b>算，不是實體站在哪。
             Vec3 centre = labelCentre(entity, e.getValue());
             double distance = centre.distanceTo(eye);
             if (distance > range || distance < 0.1) {
                 continue;
             }
             if (blocked(mc, eye, centre)) {
-                continue;                      // 牆後面的不算，見 blocked
+                continue;
             }
             AABB box = labelBox(entity, e.getValue());
             if (box.clip(eye, end).isPresent()) {
@@ -516,13 +332,12 @@ public final class LookAtTranslator {
                 continue;
             }
             if (hit != null) {
-                continue;                      // 已經有直接命中的，其他都不用看了
+                continue;
             }
-            // 這個名牌離視線那條直線多遠（垂直距離，世界座標）
             Vec3 delta = centre.subtract(eye);
             double along = delta.dot(look);
             if (along <= 0) {
-                continue;                      // 在身後
+                continue;
             }
             double perpendicular = delta.subtract(look.scale(along)).length();
             double allowed = Math.max(Math.sin(Math.acos(minDot)) * distance,
@@ -535,9 +350,6 @@ public final class LookAtTranslator {
         return hit != null ? hit : nearest;
     }
 
-    /**
-     * 每幀都會走到，所以只在狀態變了才記一次，否則計數會被灌爆。
-     */
     private static String lastNoted = "";
 
     private static void noteOnce(String event) {
@@ -547,16 +359,6 @@ public final class LookAtTranslator {
         }
     }
 
-    /** 在準心下方畫一個小框。{@code alpha} 用於停留結束後的淡出。 */
-    /**
-     * 把幾個名牌並排畫在一起。
-     *
-     * <p>準心對著的那個排第一，也畫得亮一點——同時列出五個的時候，
-     * 玩家還是要一眼看出「我現在對著誰」。
-     *
-     * <p>擺不下就少畫幾個，而不是換行：這一排的用途是「掃一眼有誰」，
-     * 擠成兩三行反而比原本更難讀。
-     */
     private static void drawRow(GuiGraphics graphics, Minecraft mc,
                                 List<Component> boxes, float alpha) {
         if (boxes.isEmpty()) {
@@ -579,7 +381,7 @@ public final class LookAtTranslator {
             }
             w += 8;
             if (total > 0 && total + GAP + w > graphics.guiWidth() - 20) {
-                break;                         // 擺不下就到此為止
+                break;
             }
             int h = lines.size() * lineHeight + 6;
             rows.add(lines);
@@ -595,11 +397,9 @@ public final class LookAtTranslator {
         int x = (graphics.guiWidth() - total) / 2;
         int y = defaultY(graphics);
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.NAMETAG)) {
-            // 存的是水平中心 —— 名字長短差很多，對齊左緣的話短名會偏左
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - total / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
         }
-        // 存的位置是照當時的視窗大小；視窗縮小之後可能已經在畫面外。見 Boxes#intoScreen。
         int[] at = Boxes.intoScreen(x, y, total, tallest, graphics.guiWidth(), graphics.guiHeight());
         x = at[0];
         y = at[1];
@@ -607,7 +407,6 @@ public final class LookAtTranslator {
         for (int i = 0; i < rows.size(); i++) {
             List<Component> lines = rows.get(i);
             int w = widths.get(i);
-            // 第一個是準心對著的，其餘淡一點：一排五個時要看得出主從
             float a = i == 0 ? alpha : alpha * 0.65f;
             int h = heights.get(i);
             int top = y + topOf(tallest, h);
@@ -621,45 +420,15 @@ public final class LookAtTranslator {
         }
     }
 
-    /**
-     * 矮的框在這一排裡往下挪多少。
-     *
-     * <h2>為什麼不把整排拉成一樣高</h2>
-     * 一排名牌裡常常只有一個是多行的——路邊的招牌寫著「交易市場／在市場上／
-     * 買賣物品」三行，旁邊兩個村民只有「Hyloch 市民 LV 120」一行。先前整排
-     * 統一用最高的那個當高度，於是那兩個單行的框被拉成三行高，字擠在最上面，
-     * 底下空一大片。實機回報就是這個。
-     *
-     * <p>改成每個框各用自己的高度，矮的<b>在最高的那個中間</b>。框不會被
-     * 無謂地撐大，一排看起來也還是對齊的——對齊的是中線，不是上緣。
-     */
     static int topOf(int tallest, int height) {
         return (tallest - height) / 2;
     }
 
-    /** 兩個名牌之間的間隔。 */
     private static final int GAP = 4;
 
-    /**
-     * 沒有自訂位置時擺哪裡：boss bar 底下。
-     *
-     * <p>先前是準心下方，那裡剛好是玩家瞄準時眼睛落點的正下方，
-     * 一排五個會直接擋住視線。boss bar 底下是畫面上本來就用來放
-     * 「跟現在這個場合有關」的資訊的地方。
-     *
-     * <p>高度隨 boss bar 的數量走——Wynncraft 常常同時掛好幾條。
-     * 寫死一個高度的話，沒有 boss bar 時會浮在半空，有三條時又會被蓋住。
-     */
     private static int defaultY(GuiGraphics graphics) {
         return TOP_MARGIN;
     }
 
-    /**
-     * 沒有自訂位置時距畫面頂端的高度。
-     *
-     * <p>抓在一條 boss bar 底下。Wynncraft 幾乎隨時掛著至少一條，而
-     * {@code BossHealthOverlay} 沒有公開的方式問「現在有幾條」——所以這裡
-     * 取一個涵蓋常見情況的固定值，玩家可以在「調整面板位置」裡自己挪。
-     */
     private static final int TOP_MARGIN = 34;
 }

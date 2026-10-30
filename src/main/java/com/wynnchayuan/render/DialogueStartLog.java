@@ -9,24 +9,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Optional;
 
-/**
- * 診斷：每一句台詞「打字之前」拿得到什麼，以及多久才認出來。只寫檔，不影響畫面。
- *
- * <h2>為什麼要有</h2>
- * 使用者提議「給台詞編號、照編號出來」。查過 Wynntils 與探針：伺服器是<b>逐字</b>送的
- * （每一則 action bar 只帶到目前打到的地方），沒有整句先到。但對話框裡有一條
- * {@code hud/dialogue/effect/progress} 的進度條（U+E000…U+E0DF，224 格），已知的一筆
- * 「Hey, …」停在 U+E095（約 2/3），看起來像「這段對話第幾句／共幾句」——如果是，
- * 就是現成的編號。還不能確定，也不知道換句的第一幀它是不是還停在上一句的值。
- * 這份檔一句一行記下來，下一輪拿來驗證、建對照表：
- *
- * <pre>
- *   時間 | 進度(第一幀→最後) | 名牌 | 追蹤任務 | 框的樣式 | 頭像 | 打了幾字、幾毫秒（每秒幾字）
- *        | 認出來：第幾個字、幾毫秒 / 放英文：第幾個字、幾毫秒 | 原文（玩家名換成 {u}）
- * </pre>
- *
- * <p>只在 F6 的診斷開著時寫（跟其他探針一樣），最多 {@link #LIMIT} 句。
- */
 public final class DialogueStartLog {
 
     private static final int LIMIT = 600;
@@ -36,7 +18,6 @@ public final class DialogueStartLog {
     private static Path file;
     private static int written;
 
-    // 目前這一句
     private static String text = "";
     private static long start;
     private static long lastFrame;
@@ -60,13 +41,8 @@ public final class DialogueStartLog {
             Files.deleteIfExists(file);
             Files.deleteIfExists(framesFile);
         } catch (Exception ignored) {
-            // 刪不掉就接著寫
         }
     }
-
-    // ------------------------------------------------------------------
-    // 逐幀：每一則訊息畫出去多少字（test3「小框閃一次」「逐字忽快忽慢」要的資料）
-    // ------------------------------------------------------------------
 
     private static Path framesFile;
     private static int frameLines;
@@ -74,14 +50,6 @@ public final class DialogueStartLog {
     private static final long T0 = System.currentTimeMillis();
     private static String lastRow = "";
 
-    /**
-     * 一幀：就地取代送出去幾個中文字（-1 是留英文、0 是先空著），或小框畫了幾個字、幾列。
-     * 跟上一幀完全一樣就不記（字停下來之後每 tick 都會再送一次）。
-     *
-     * <pre>
-     *   毫秒 | 模式 | 原文已打字數 | 畫出的中文字數 | 小框列數
-     * </pre>
-     */
     static void frame(String mode, int raw, int shown) {
         frameRow(mode + " | " + raw + " | " + shown + " | -");
     }
@@ -104,7 +72,6 @@ public final class DialogueStartLog {
         }
     }
 
-    /** 每一則對話框的原始 action bar（還沒被任何人改過）。 */
     public static void frame(Component message) {
         if (file == null || message == null || written >= LIMIT) {
             return;
@@ -150,14 +117,12 @@ public final class DialogueStartLog {
         lastProgress = progress[0];
     }
 
-    /** 就地取代認出這一句的那一幀。 */
     static void recognised(int chars, long ms) {
         if (outcome.isEmpty()) {
             outcome = "認出 第" + chars + "字 " + ms + "ms";
         }
     }
 
-    /** 就地取代放棄、改放英文的那一幀。 */
     static void gaveUp(int chars, long ms) {
         if (outcome.isEmpty()) {
             outcome = "放英文 第" + chars + "字 " + ms + "ms";
@@ -188,7 +153,7 @@ public final class DialogueStartLog {
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             written++;
         } catch (Exception ignored) {
-            file = null;                       // 寫不了就別再試
+            file = null;
         }
     }
 
@@ -196,7 +161,6 @@ public final class DialogueStartLog {
         return progress < 0 ? "-" : String.format("E0%02X", progress);
     }
 
-    /** 把排版偏移與圖示拿掉，只留看得見的文字。 */
     private static String letters(String raw) {
         StringBuilder out = new StringBuilder();
         raw.codePoints().filter(cp -> !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)
