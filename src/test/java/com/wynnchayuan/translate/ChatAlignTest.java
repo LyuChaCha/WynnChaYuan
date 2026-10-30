@@ -263,25 +263,25 @@ public final class ChatAlignTest {
                 "Vibrant Crimson Beacon", 150, "Vibrant Aqua Beacon", 128,
                 "璀璨深灰信標", 57, "璀璨彩虹信標", 57, "璀璨緋紅信標", 57, "璀璨水藍信標", 57,
                 "- +1 ", 22, "🔒Unidentified Helmet", 120);
-        java.util.function.ToIntFunction<LineTranslator.Run> width =
+        java.util.function.ToIntFunction<SpaceRuns.Run> width =
                 r -> r.space() ? 0 : px.getOrDefault(r.text(), 0);
 
-        List<LineTranslator.Run> darkOrig = List.of(gap(0), word("Vibrant Dark Grey Beacon"),
+        List<SpaceRuns.Run> darkOrig = List.of(gap(0), word("Vibrant Dark Grey Beacon"),
                                                     gap(7), word("Vibrant Rainbow Beacon"));
-        List<LineTranslator.Run> darkMade = List.of(gap(0), word("璀璨深灰信標"),
+        List<SpaceRuns.Run> darkMade = List.of(gap(0), word("璀璨深灰信標"),
                                                     gap(7), word("璀璨彩虹信標"));
         centresKept("縮排 0、欄距 7", darkOrig, darkMade, width);
 
-        List<LineTranslator.Run> crimsonOrig = List.of(gap(7), word("Vibrant Crimson Beacon"),
+        List<SpaceRuns.Run> crimsonOrig = List.of(gap(7), word("Vibrant Crimson Beacon"),
                                                        gap(23), word("Vibrant Aqua Beacon"));
-        List<LineTranslator.Run> crimsonMade = List.of(gap(7), word("璀璨緋紅信標"),
+        List<SpaceRuns.Run> crimsonMade = List.of(gap(7), word("璀璨緋紅信標"),
                                                        gap(23), word("璀璨水藍信標"));
         centresKept("縮排 7、欄距 23", crimsonOrig, crimsonMade, width);
 
-        List<LineTranslator.Run> helmet = List.of(word("- +1 "), gap(2),
+        List<SpaceRuns.Run> helmet = List.of(word("- +1 "), gap(2),
                                                   word("🔒Unidentified Helmet"));
         int gaps = 0;
-        for (boolean g : LineTranslator.chatGaps(helmet)) {
+        for (boolean g : SpaceRuns.chatGaps(helmet)) {
             gaps += g ? 1 : 0;
         }
         check("圖示前的 2px 微調不算欄界（實際 " + gaps + " 個）", gaps == 0);
@@ -290,37 +290,37 @@ public final class ChatAlignTest {
     private static final String ICON = new String(Character.toChars(0xE000));
 
     private static void tooltipColumns() {
-        List<LineTranslator.Run> classType = List.of(
+        List<SpaceRuns.Run> classType = List.of(
                 word(ICON + " Class Type"), gap(4), word("Mage/Dark Wizard"));
         check("職業類型那一行認得 4px 的欄界", gapCount(classType) == 1);
 
-        List<LineTranslator.Run> made = List.of(
+        List<SpaceRuns.Run> made = List.of(
                 word(ICON + " 職業類型"), gap(4), word("法師/闇導士"));
         check("譯文那一行也認得（兩邊數量要一樣才會補償）", gapCount(made) == 1);
-        check("補償看得到標籤", LineTranslator.labelledRun(made, 0));
+        check("補償看得到標籤", SpaceRuns.labelledRun(made, 0));
 
-        List<LineTranslator.Run> helmet = List.of(word("- +1 "), gap(2),
+        List<SpaceRuns.Run> helmet = List.of(word("- +1 "), gap(2),
                                                   word(ICON + "Unidentified Helmet"));
         check("圖示前的 2px 微調不算欄界", gapCount(helmet) == 0);
 
-        List<LineTranslator.Run> reward = List.of(gap(4), word("Rewards:"));
+        List<SpaceRuns.Run> reward = List.of(gap(4), word("Rewards:"));
         check("行首的縮排不算欄界", gapCount(reward) == 0);
 
-        List<LineTranslator.Run> overlay = List.of(word("Bonder"), gap(-4), word(ICON));
+        List<SpaceRuns.Run> overlay = List.of(word("Bonder"), gap(-4), word(ICON));
         check("往回拉的負偏移不算欄界", gapCount(overlay) == 0);
     }
 
-    private static int gapCount(List<LineTranslator.Run> runs) {
+    private static int gapCount(List<SpaceRuns.Run> runs) {
         int n = 0;
-        for (boolean g : LineTranslator.tooltipGaps(runs)) {
+        for (boolean g : SpaceRuns.tooltipGaps(runs)) {
             n += g ? 1 : 0;
         }
         return n;
     }
 
-    private static void centresKept(String what, List<LineTranslator.Run> orig,
-                                    List<LineTranslator.Run> made,
-                                    java.util.function.ToIntFunction<LineTranslator.Run> width) {
+    private static void centresKept(String what, List<SpaceRuns.Run> orig,
+                                    List<SpaceRuns.Run> made,
+                                    java.util.function.ToIntFunction<SpaceRuns.Run> width) {
         int[] adjust = LineTranslator.chatColumnPad(orig, made, width);
         check(what + "：認得兩個欄界（實際 " + adjust.length + " 個）", adjust.length == 2);
         List<Integer> before = centres(orig, new int[adjust.length], width);
@@ -332,14 +332,14 @@ public final class ChatAlignTest {
         check(what + "：兩欄的中心不動（原文 " + before + "、譯文 " + after + "）", kept);
     }
 
-    private static List<Integer> centres(List<LineTranslator.Run> row, int[] adjust,
-                                         java.util.function.ToIntFunction<LineTranslator.Run> width) {
-        boolean[] gaps = LineTranslator.chatGaps(row);
+    private static List<Integer> centres(List<SpaceRuns.Run> row, int[] adjust,
+                                         java.util.function.ToIntFunction<SpaceRuns.Run> width) {
+        boolean[] gaps = SpaceRuns.chatGaps(row);
         List<Integer> out = new ArrayList<>();
         int pos = 0;
         int index = 0;
         for (int i = 0; i < row.size(); i++) {
-            LineTranslator.Run r = row.get(i);
+            SpaceRuns.Run r = row.get(i);
             if (r.space()) {
                 pos += r.px() + (gaps[i] && index < adjust.length ? adjust[index++] : 0);
                 continue;
@@ -351,12 +351,12 @@ public final class ChatAlignTest {
         return out;
     }
 
-    private static LineTranslator.Run gap(int px) {
-        return new LineTranslator.Run(true, px, Style.EMPTY, SpaceOffset.encode(px));
+    private static SpaceRuns.Run gap(int px) {
+        return new SpaceRuns.Run(true, px, Style.EMPTY, SpaceOffset.encode(px));
     }
 
-    private static LineTranslator.Run word(String text) {
-        return new LineTranslator.Run(false, 0, Style.EMPTY, text);
+    private static SpaceRuns.Run word(String text) {
+        return new SpaceRuns.Run(false, 0, Style.EMPTY, text);
     }
 
     private static void columns() {

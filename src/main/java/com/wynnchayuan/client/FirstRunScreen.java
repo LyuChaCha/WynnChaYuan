@@ -26,10 +26,23 @@ public final class FirstRunScreen extends CanvasScreen {
     public FirstRunScreen(Screen parent) {
         super(T.c("firstrun.title"), parent);
         CollectorConfig config = WynnChaYuan.config();
+        boolean askNotice = !config.noticeDismissed();
         boolean askConsent = config.consent() == CollectorConfig.Consent.UNKNOWN;
         boolean askSetup = !config.setupDone();
         boolean upgrading = config.existedBefore();
         this.view = new FirstRunView(SHELL, new FirstRunView.Host() {
+            @Override
+            public boolean askNotice() {
+                return askNotice;
+            }
+
+            @Override
+            public void noticeRead() {
+                if (!cfg().noticeDismissed()) {
+                    cfg().setNoticeDismissed(true);
+                }
+            }
+
             @Override
             public boolean askConsent() {
                 return askConsent;
