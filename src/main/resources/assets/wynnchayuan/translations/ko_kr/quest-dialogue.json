@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24252,
-  "translated": 24249,
+  "count": 24289,
+  "translated": 24286,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -7760,6 +7760,376 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#248": {
+   "src": "We need a plan.",
+   "dst": "계획이 필요해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#249": {
+   "src": "Explore the cave at [{~}, {~}, -{~}] for the Shard.",
+   "dst": "파편을 찾아 [{~}, {~}, -{~}]의 동굴을 탐색하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#250": {
+   "src": "Kill the Progenitors to open the entrance.",
+   "dst": "Progenitor를 처치해 입구를 여세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#251": {
+   "src": "[{~}/{~}] Aledar: Stay with us {u}! We've just had a loss, you can't go wandering around!",
+   "dst": "[{~}/{~}] Aledar: 우리 곁에 있어, {u}! 방금 한 명을 잃었는데, 함부로 돌아다니면 안 돼!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#252": {
+   "src": "[{~}/{~}] Aledar: Stay with me!",
+   "dst": "[{~}/{~}] Aledar: 내 곁에 있어!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#253": {
+   "src": "You quickly escape the worm before it eats you...",
+   "dst": "벌레에게 먹히기 전에 재빨리 빠져나왔어요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#254": {
+   "src": "[{~}/{~}] Obsessor: Please, you have to understand!",
+   "dst": "[{~}/{~}] 집착자: 제발, 이해해 줘!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#255": {
+   "src": "[{~}/{~}] Obsessor: You need to come with us!",
+   "dst": "[{~}/{~}] 집착자: 우리와 함께 가야 해!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#256": {
+   "src": "[{~}/{~}] Obsessor: It's the only way to make you happy here!",
+   "dst": "[{~}/{~}] 집착자: 그래야만 여기서 행복할 수 있어!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#257": {
+   "src": "[{~}/{~}] Obsessor: IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
+   "dst": "[{~}/{~}] 집착자: 이 방법밖에 없어, 알아들어?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#258": {
+   "src": "[{~}/{~}] Obsessor: AM I NOT SPEAKING CLEARLY?",
+   "dst": "[{~}/{~}] 집착자: 내 말이 안 들려?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#259": {
+   "src": "[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!",
+   "dst": "[{~}/{~}] 집착자: 넌 빠져 있어!!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#260": {
+   "src": "[{~}/{~}] Aledar: No! How did she disable my spell?!",
+   "dst": "[{~}/{~}] Aledar: 안 돼! 어떻게 내 주문을 풀었지?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#261": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
+   "dst": "[{~}/{~}] 집착자: 같이 가면 훨씬 더 행복해질 거야!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#262": {
+   "src": "[{~}/{~}] Obsessor: WE'LL KEEP YOU SAFE!",
+   "dst": "[{~}/{~}] 집착자: 우리가 지켜 줄게!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#263": {
+   "src": "[{~}/{~}] Obsessor: We'll bring you someplace warm!",
+   "dst": "[{~}/{~}] 집착자: 따뜻한 곳으로 데려가 줄게!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#264": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SAFE WITH US!",
+   "dst": "[{~}/{~}] 집착자: 우리와 함께면 안전해!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#265": {
+   "src": "[{~}/{~}] Obsessor: NO MORE FEAR! NO MORE CONCERN!",
+   "dst": "[{~}/{~}] 집착자: 두려움도! 걱정도 이제 없어!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#266": {
+   "src": "[{~}/{~}] Obsessor: Foreeeever...",
+   "dst": "[{~}/{~}] 집착자: 영원히이이...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#268": {
+   "src": "Broken Pickaxe\nRight-Click to get item\nÀ",
+   "dst": "부서진 곡괭이\n우클릭하여 아이템 받기\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#269": {
+   "src": "Is that the monster that captured Lucio?! Don't let it get away!",
+   "dst": "저게 Lucio를 붙잡아 간 괴물인가?! 놓치지 마!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#270": {
+   "src": "As you get a new pickaxe, the cracks reset allowing you to try again.",
+   "dst": "새 곡괭이를 받으면 금이 초기화되어 다시 시도할 수 있어요.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#271": {
+   "src": "This pickaxe can only be used a few times as it's almost completely broken...",
+   "dst": "이 곡괭이는 거의 완전히 부서져서 몇 번밖에 쓸 수 없어요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#272": {
+   "src": "Your pickaxe has broken! If you don't have enough blocks to go through the tar, get a new pickaxe and try again...",
+   "dst": "곡괭이가 부서졌어요! 타르를 지나갈 블록이 부족하다면 새 곡괭이를 받아 다시 시도하세요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#273": {
+   "src": "You need an item to break this...",
+   "dst": "이걸 부수려면 아이템이 필요해요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#274": {
+   "src": "Lucio's body appears out of the Enraptured Obsessor. He must have become one.",
+   "dst": "황홀경에 빠진 집착자에게서 Lucio의 몸이 나타났어요. 그도 그중 하나가 되어 버린 게 틀림없어요.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#275": {
+   "src": "You must find Elphaba and Aledar before it's too late.",
+   "dst": "너무 늦기 전에 Elphaba와 Aledar를 찾아야 해요.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#276": {
+   "src": "Right-Click\nTo get the Body Part\nÀ",
+   "dst": "우클릭하여\n신체 부위 얻기\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#277": {
+   "src": "Is that the monster that captured Elphaba?!",
+   "dst": "저게 Elphaba를 붙잡아 간 괴물인가?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#278": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "그들을 따라 꼭대기까지 올라갈 방법을 찾아야 한다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#279": {
+   "src": "Sound Wave Emitter\nRight-Click to get Item\nÀ",
+   "dst": "음파 발생기\n우클릭하여 아이템 받기\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#280": {
+   "src": "Right-Clicking this Item emits sound connections with the Irritacks...",
+   "dst": "이 아이템을 우클릭하면 Irritack과 이어지는 소리가 나요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#281": {
+   "src": "It's... Elphaba! Aledar might still be alive... Quick!",
+   "dst": "저건... Elphaba야! Aledar는 아직 살아 있을지도 몰라... 서둘러!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#282": {
+   "src": "You should use these body parts to enter the worm and find Aledar...",
+   "dst": "이 신체 부위들을 써서 벌레 안으로 들어가 Aledar를 찾아야 해요...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#283": {
+   "src": "This is where Aledar was taken... Perhaps you can lure the worm somehow.",
+   "dst": "Aledar가 끌려간 곳이 여기예요... 어떻게든 벌레를 유인할 수 있을지도 몰라요.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#284": {
+   "src": "The stomach acid seems to rise and fall consistently.",
+   "dst": "위산이 일정하게 차올랐다 빠지기를 반복하는 것 같아요.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#285": {
+   "src": "Aledar must've fallen somewhere near the road too!",
+   "dst": "Aledar도 분명 길 근처 어딘가에 떨어졌을 거야!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Beyond#286": {
    "src": "Well, hello there, traveler. Don't think I've seen you in here before.",

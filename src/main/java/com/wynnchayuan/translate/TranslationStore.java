@@ -268,9 +268,7 @@ public final class TranslationStore {
      * 依序載入好幾層，後面的蓋掉前面的。
      *
      * <h2>為什麼要有這個多層版本</h2>
-     * 新語言是從 {@code zh_tw} 複製、把 {@code dst} 清空的骨架，剛開張時一條
-     * 譯文都沒有。所以簡體中文的玩家要先鋪一層繁體當底，再把簡體疊上去——
-     * 讀得懂，而且比看英文原文近得多（見 {@code Languages#fallbackFor}）。
+     * 玩家在 F6 指名輔助語言時，先鋪那一層當底，再把選定的語言疊上去。
      *
      * <p>先前的寫法是<b>連呼叫兩次</b> {@link #loadAll(Path)}：
      *
@@ -1427,7 +1425,7 @@ public final class TranslationStore {
                 end++;
             }
             if (best != null) {
-                return new Term(i, bestEnd, best);
+                return new Term(i, bestEnd, shownTerm(text.substring(i, bestEnd), best));
             }
         }
         return null;
@@ -1457,7 +1455,7 @@ public final class TranslationStore {
         String key = text.strip();
         String hit = terms.get(key);
         if (hit != null) {
-            return hit;
+            return shownTerm(key, hit);
         }
         int end = key.length();
         while (end > 0 && !Character.isLetterOrDigit(key.charAt(end - 1))) {
@@ -1466,8 +1464,16 @@ public final class TranslationStore {
         if (end == key.length() || end == 0) {
             return null;
         }
-        String core = terms.get(key.substring(0, end).strip());
-        return core == null ? null : core + key.substring(end);
+        String coreKey = key.substring(0, end).strip();
+        String core = terms.get(coreKey);
+        return core == null ? null : shownTerm(coreKey, core) + key.substring(end);
+    }
+
+    private String shownTerm(String name, String hit) {
+        if (abilityNamesWithOriginal && ownAbilityName(name, hit)) {
+            return withOriginal(hit, name);
+        }
+        return hit;
     }
 
     /**
@@ -1661,9 +1667,10 @@ public final class TranslationStore {
      *（裝備說明的「Altruism:」）後面要不要括號附原文——F6 那一格，跟物品名稱的
      * 「譯名加原文」同一個畫法。
      *
-     * <p>只附在<b>整格</b>查到技能檔自己的譯名時（{@link #ownAbilityName}）。敘述裡
-     * 被詞表換掉的技能名不走這裡（{@code noteTerm} 那一條），不會在句子中間冒出括號；
-     * 譯名跟原文一樣（還沒翻、或刻意留英文）時也不附。
+     * <p>整格查到技能檔自己的譯名時（{@link #ownAbilityName}）附在後面；敘述裡被詞表
+     * 換掉的技能名（{@link #findTerm}、{@link #lookupTerm}）也一樣附，「日耀 (Sunflare)
+     * 恢復的…」。附上去的原文由 {@link #abilityOriginalSpans} 擋著不再被換。
+     * 譯名跟原文一樣（還沒翻、或刻意留英文）時不附。
      *
      * <p>切換時作廢繪製端的快取，跟 {@link #setPageNameMode} 一樣。
      */
@@ -3308,29 +3315,41 @@ public final class TranslationStore {
      *（見 {@link #abilityNameDsts}）——敘述本來就帶的括號碰不到。
      */
     List<int[]> abilityOriginalSpans(String text) {
-        if (!abilityNamesWithOriginal || text == null || text.indexOf(" (") < 0) {
+        if (!abilityNamesWithOriginal || text == null || text.indexOf('(') < 0) {
             return List.of();
         }
         List<int[]> out = new java.util.ArrayList<>();
-        int at = text.indexOf(" (");
-        while (at >= 0) {
-            int close = text.indexOf(')', at + 2);
+        int open = text.indexOf('(');
+        while (open >= 0) {
+            int close = text.indexOf(')', open + 1);
             if (close < 0) {
                 break;
             }
-            java.util.Set<String> own = abilityNameDsts.get(text.substring(at + 2, close));
-            if (own != null) {
-                String before = text.substring(0, at);
-                for (String dst : own) {
-                    if (!dst.isEmpty() && before.endsWith(dst)) {
-                        out.add(new int[] {at, close + 1});
-                        break;
-                    }
-                }
+            java.util.Set<String> own = abilityNameDsts.get(text.substring(open + 1, close));
+            boolean spaced = open > 0 && text.charAt(open - 1) == ' ';
+            int start = spaced ? open - 1 : open;
+            if (own != null && follows(text.substring(0, start), own, spaced)) {
+                out.add(new int[] {start, close + 1});
             }
-            at = text.indexOf(" (", at + 2);
+            open = text.indexOf('(', open + 1);
         }
         return out;
+    }
+
+    private static boolean follows(String before, java.util.Set<String> own, boolean spaced) {
+        if (before.isBlank()) {
+            return true;
+        }
+        if (!spaced) {
+            return false;
+        }
+        String lead = before.strip();
+        for (String dst : own) {
+            if (!dst.isEmpty() && (before.endsWith(dst) || dst.endsWith(lead))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

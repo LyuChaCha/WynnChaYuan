@@ -66,6 +66,10 @@ public final class AbilityNameOriginalTest {
         abilityRow(store);
         majorIdLine(store, MAJOR_ID, ALTRUISM_ROWS);
         majorIdLine(store, "Requiem", REQUIEM_ROWS);
+        termLookups(store);
+        inDescription(store, "Major ID 說明", majorIdBlock(REQUIEM_ROWS), true);
+        inDescription(store, "技能樹說明", greyBlock(SUNFLARE_TREE_ROWS), false);
+        alreadyAppended(corpus, store);
 
         finish();
     }
@@ -156,6 +160,109 @@ public final class AbilityNameOriginalTest {
             TranslationStore.holdAppendedOriginal(false);
             store.setAbilityNamesWithOriginal(false);
         }
+    }
+
+    private static final String TERM = "Sunflare";
+
+    private static final String[] SUNFLARE_TREE_ROWS = {
+        "While Sunflare is active, you will restore",
+        "health and mana to all nearby allies, and",
+        "your Ophanim orbs will attack constantly.",
+    };
+
+    private static void termLookups(TranslationStore store) {
+        String term = store.lookupTerm(TERM);
+        check("前提：Sunflare 在詞表裡、譯名不是原文（" + term + "）",
+                term != null && !term.equals(TERM) && !term.contains("("));
+        TranslationStore.Term fishingOff = store.findTerm("Lv. 52 Fishing", 0);
+        TranslationStore.Term off = store.findTerm(TERM + " regenerates", 0);
+        check("關著：詞表換出來只有譯名", off != null && off.translation().equals(term));
+        store.setAbilityNamesWithOriginal(true);
+        try {
+            String want = term + " (" + TERM + ")";
+            check("★ 開著：lookupTerm 附原文（" + store.lookupTerm(TERM) + "）",
+                    want.equals(store.lookupTerm(TERM)));
+            check("★ 開著：lookupTerm 剝掉尾巴的那條也附原文",
+                    (want + " ✺").equals(store.lookupTerm(TERM + " ✺")));
+            TranslationStore.Term on = store.findTerm(TERM + " regenerates", 0);
+            check("★ 開著：findTerm 附原文，範圍仍是原文那個詞",
+                    on != null && want.equals(on.translation())
+                            && on.start() == 0 && on.end() == TERM.length());
+            TranslationStore.Term fishing = store.findTerm("Lv. 52 Fishing", 0);
+            check("不是技能名的詞不附原文（Fishing）", fishingOff != null && fishing != null
+                    && fishingOff.translation().equals(fishing.translation()));
+            check("附上去的原文被擋著不再換", store.keptOriginals(want + " x").size() == 1);
+            check("折行把附的原文推到下一行開頭，照樣擋著",
+                    store.keptOriginals("(" + TERM + ") x").size() == 1);
+            check("折行切在譯名中間，下一行開頭是譯名的後半，照樣擋著",
+                    term.length() < 2 || store.keptOriginals(
+                            term.substring(1) + " (" + TERM + ") x").size() == 1);
+        } finally {
+            store.setAbilityNamesWithOriginal(false);
+        }
+    }
+
+    private static void inDescription(TranslationStore store, String what,
+                                      List<StyledText> block, boolean hold) {
+        String term = store.lookupTerm(TERM);
+        if (term == null) {
+            return;
+        }
+        String appended = "(" + TERM + ")";
+        String offText = join(LineTranslator.translateBlock(block, store,
+                new boolean[block.size()]));
+        check(what + "：關著時技能名換成譯名、沒有附原文（" + shorten(offText) + "）",
+                offText.contains(term) && !offText.contains(appended));
+        store.setAbilityNamesWithOriginal(true);
+        TranslationStore.holdAppendedOriginal(hold);
+        try {
+            List<Component> on = LineTranslator.translateBlock(block, store,
+                    new boolean[block.size()]);
+            String onText = join(on);
+            check("★ " + what + "：開著時句子裡的技能名附了原文（" + shorten(onText) + "）",
+                    onText.contains(term + " " + appended));
+            check(what + "：原文只出現一次", onText.indexOf(TERM) == onText.lastIndexOf(TERM));
+            check(what + "：附的原文沒有再被換成譯名", !onText.contains("(" + term));
+            Integer colour = colourOf(on, appended);
+            check(what + "：附的原文是說明的顏色（拿到 "
+                            + (colour == null ? "null" : String.format("#%06X", colour)) + "）",
+                    colour != null && colour == BODY_COLOUR);
+            check(what + "：行數跟關著時一樣",
+                    on != null && onText.split("\n", -1).length == offText.split("\n", -1).length);
+        } finally {
+            TranslationStore.holdAppendedOriginal(false);
+            store.setAbilityNamesWithOriginal(false);
+        }
+    }
+
+    private static void alreadyAppended(Path corpus, TranslationStore base) throws Exception {
+        String term = base.lookupTerm(TERM);
+        if (term == null) {
+            return;
+        }
+        Path dir = Files.createTempDirectory("wcy-ability-original-flat");
+        com.google.gson.JsonObject flat = new com.google.gson.JsonObject();
+        String key = "Zq the " + TERM + " line.";
+        flat.addProperty(key, "zq " + term + " (" + TERM + ") zq");
+        Files.writeString(dir.resolve("npc.json"), flat.toString(), StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(List.of(corpus, dir));
+        store.setAbilityNamesWithOriginal(true);
+        StyledText row = StyledText.fromComponent(Component.literal(key).withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
+        String got = text(LineTranslator.translate(row, store));
+        check("★ 譯文本來就寫了「譯名 (原文)」：不再附第二次（" + got + "）",
+                got.contains(term + " (" + TERM + ")")
+                        && got.indexOf(TERM) == got.lastIndexOf(TERM));
+    }
+
+    private static List<StyledText> greyBlock(String[] rows) {
+        List<StyledText> out = new ArrayList<>();
+        for (String row : rows) {
+            out.add(StyledText.fromComponent(Component.literal(row).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))));
+        }
+        return out;
     }
 
     private static final String[][] ALTRUISM_ROWS = {
