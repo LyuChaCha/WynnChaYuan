@@ -2,7 +2,7 @@
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
-  addMember, setMemberTeams, addMemberTeams, teamsInput, TEAM_AREAS, TR_LANGS, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
+  addMember, setMemberTeams, addMemberTeams, setPersonTeams, mergeLangTeam, teamsInput, TEAM_AREAS, TR_LANGS, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
   visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
@@ -2471,6 +2471,101 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     githubBranches.clear();
     githubOpenPulls = [];
   }
+  {
+    const merged = mergeLangTeam([
+      { role: 'developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['zh_tw'] }] },
+      { role: 'sponsors', members: [{ name: 'C', mc: 'Carol' }] },
+      { role: 'contributors', members: [{ name: 'C', mc: 'Carol', teams: ['ja_jp'], areas: ['testing'] }, { name: 'NoId' }] }], [
+      { key: 'u:' + '1'.repeat(32), name: 'carol', langs: ['ko_kr'], note: '韓文組', t: 5, by: 'A' },
+      { key: 'n:alice_dev', name: 'Alice_Dev', langs: ['zh_tw'], t: 3 },
+      { key: 'd:123456789012345678', name: null, discord: 'Dee', langs: ['es_es'] },
+      { key: 'n:solo', name: 'Solo', langs: ['tr_tr', 'ja_jp'] }]);
+    const who = (name) => merged.find((p) => p.name === name);
+    check('★ mergeLangTeam：名冊與譯者照遊戲 ID 併成一人一列（不分大小寫，多個身分算一人）', merged.length === 5
+      && who('C').roles.join() === 'sponsors,contributors' && who('C').rights.keys[0] === 'u:' + '1'.repeat(32)
+      && who('C').teams.join() === 'ja_jp' && who('C').areas.join() === 'testing' && who('C').rights.note === '韓文組');
+    check('★ mergeLangTeam：兩邊都有又對不上才標不一致；只有一邊的不算', who('C').mismatch === true && who('A').mismatch === false
+      && who('NoId').rights === null && who('NoId').mismatch === false && who('Solo').listed === false && who('Solo').mismatch === false);
+    check('mergeLangTeam：不在名冊的譯者照樣列出；只有 Discord 的沒有遊戲 ID', who('Dee').listed === false && who('Dee').mc === null
+      && who('Dee').rights.langs.join() === 'es_es' && who('Solo').mc === 'Solo' && who('Solo').rights.langs.join() === 'ja_jp,tr_tr');
+
+    const UNI = JSON.stringify({ sections: [
+      { role: '開發者', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['zh_tw'] }] },
+      { role: '贊助者', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] },
+      { role: '貢獻者', key: 'credits.role.contributors', members: [{ name: 'C', mc: 'Carol', teams: ['ja_jp'], areas: ['testing'] }] }] }, null, 2) + '\n';
+    const cleared = JSON.parse(setPersonTeams(UNI, 'carol', [], null).text);
+    check('★ setPersonTeams：同一個人的每一列一起改；null 的那一欄不動；清空就拿掉', !('teams' in cleared.sections[2].members[0])
+      && cleared.sections[2].members[0].areas.join() === 'testing' && !('teams' in cleared.sections[1].members[0])
+      && JSON.parse(setPersonTeams(UNI, 'Carol', ['ko_kr'], ['code']).text).sections[1].members[0].areas.join() === 'code'
+      && setPersonTeams(UNI, 'Alice_Dev', ['zh_tw'], null).why === 'unchanged' && setPersonTeams(UNI, 'Nobody', [], null).why === 'not found');
+    const joined = JSON.parse(addMember(CREDITS, { section: 'contributors', name: 'J', mc: 'Join_1', teams: ['ja_jp', 'zh_tw'], areas: ['code'] }).text);
+    check('★ 新增成員可以一起帶翻譯團隊與貢獻項目（「加進名冊」用）', JSON.stringify(joined.sections[1].members[0])
+      === JSON.stringify({ name: 'J', mc: 'Join_1', teams: ['zh_tw', 'ja_jp'], areas: ['code'] })
+      && addMember(CREDITS, { section: 'contributors', name: 'J', mc: 'Join_1', teams: ['xx'] }).why === 'bad team');
+
+    const ltEnv = { ...env, GITHUB_TOKEN: 't' };
+    const ltPost = (body, token, which = ltEnv) => worker.fetch(post('/admin/langteam', body, token), which);
+    const tl = (key) => (env.CORPUS.data.has('tl:' + key) ? JSON.parse(env.CORPUS.data.get('tl:' + key).value) : null);
+    const putOf = () => {
+      const put = githubCalls.find((c) => c.method === 'PUT');
+      return put ? JSON.parse(Buffer.from(put.body.content, 'base64').toString('utf8')) : null;
+    };
+    check('★ 一般玩家看不到也改不了翻譯團隊', (await worker.fetch(get('/admin/langteam', bobNow), ltEnv)).status === 403
+      && (await ltPost({ who: 'Carol', langs: ['ja_jp'] }, bobNow)).status === 403);
+    env.CORPUS.data.set('tl:n:solo_tl', { value: JSON.stringify({ langs: ['tr_tr'], m: 'Solo_TL', t: 1, by: 'A' }), metadata: null });
+    const listing = await (await worker.fetch(get('/admin/langteam', aliceWeb), ltEnv)).json();
+    check('★ GET /admin/langteam：名冊的人與譯者併在一起', listing.credits === true
+      && listing.people.some((p) => p.mc === 'Alice_Dev' && p.listed && p.teams.join() === 'zh_tw,ja_jp')
+      && listing.people.some((p) => p.mc === 'Solo_TL' && !p.listed && p.rights.langs.join() === 'tr_tr'));
+
+    githubFile = UNI;
+    githubBranches.clear();
+    githubOpenPulls = [];
+    githubCalls.length = 0;
+    let res = await ltPost({ who: 'Carol', langs: ['ko_kr', 'ja_jp'], note: '日韓' }, aliceWeb);
+    let out = await res.json();
+    let doc3 = putOf();
+    check('★ 勾語言：馬上給譯者權限，名冊的翻譯團隊放進當天的 PR（同一個人的每一列都改）', res.status === 200 && out.listed === true
+      && tl('n:carol').langs.join() === 'ja_jp,ko_kr' && tl('n:carol').n === '日韓' && out.rights.keys.join() === 'n:carol'
+      && out.team.url.endsWith('/pull/9999') && doc3.sections[1].members[0].teams.join() === 'ja_jp,ko_kr'
+      && doc3.sections[2].members[0].teams.join() === 'ja_jp,ko_kr' && doc3.sections[2].members[0].areas.join() === 'testing');
+    env.CORPUS.data.delete('tl:n:carol');
+    env.CORPUS.data.set('tl:u:' + '2'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp'], m: 'Carol', n: '舊備註', t: 1, by: 'A' }), metadata: null });
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'carol', langs: ['ja_jp', 'zh_cn'] }, aliceWeb);
+    check('★ 已經有照 UUID 存的譯者：改那一筆，不另外多存一筆；沒送備註就留著原本的', res.status === 200 && tl('u:' + '2'.repeat(32)).langs.join() === 'zh_cn,ja_jp'
+      && tl('u:' + '2'.repeat(32)).m === 'Carol' && tl('u:' + '2'.repeat(32)).n === '舊備註' && !tl('n:carol'));
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Carol', langs: [] }, aliceWeb);
+    out = await res.json();
+    doc3 = putOf();
+    check('★ 拿掉全部語言：譯者權限與名冊的團隊一起拿掉', res.status === 200 && !tl('u:' + '2'.repeat(32)) && out.rights === null
+      && doc3 && !('teams' in doc3.sections[2].members[0]) && doc3.sections[2].members[0].areas.join() === 'testing');
+    env.CORPUS.data.set('tl:n:carol', { value: JSON.stringify({ langs: ['ko_kr'], m: 'Carol', t: 1, by: 'A' }), metadata: null });
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Carol', areas: ['code', 'testing'] }, aliceWeb);
+    doc3 = putOf();
+    check('★ 只改貢獻項目：譯者權限與團隊都不動', res.status === 200 && tl('n:carol').langs.join() === 'ko_kr'
+      && doc3.sections[2].members[0].areas.join() === 'testing,code' && doc3.sections[2].members[0].teams.join() === 'ja_jp');
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Dave_Y', langs: ['es_es'] }, aliceWeb);
+    out = await res.json();
+    check('★ 不在名冊上的人：只給譯者權限，不碰 GitHub', res.status === 200 && out.listed === false && out.team === null
+      && tl('n:dave_y').langs.join() === 'es_es' && githubCalls.length === 0);
+    check('不在名冊上的人不能登記貢獻項目', (await (await ltPost({ who: 'Dave_Y', areas: ['code'] }, aliceWeb)).json()).why === 'not listed');
+    res = await ltPost({ who: 'Carol', langs: ['ru_ru'] }, aliceWeb, { ...env, GITHUB_TOKEN: undefined });
+    out = await res.json();
+    check('★ 沒設 GITHUB_TOKEN：譯者權限照樣改好，只說名冊沒改成', res.status === 200 && tl('n:carol').langs.join() === 'ru_ru'
+      && out.team.why === 'github not configured');
+    check('★ 送來的東西不對都擋', (await (await ltPost({ who: 'Carol', langs: ['xx_yy'] }, aliceWeb)).json()).why === 'bad team'
+      && (await (await ltPost({ who: 'Carol', areas: 'code' }, aliceWeb)).json()).why === 'bad area'
+      && (await (await ltPost({ who: 'Carol' }, aliceWeb)).json()).why === 'bad request'
+      && (await (await ltPost({ who: 'bad name!', langs: [] }, aliceWeb)).json()).why === 'bad who'
+      && (await (await ltPost({ who: 'Carol', langs: [], note: 'x'.repeat(61) }, aliceWeb)).json()).why === 'bad note');
+    for (const key of ['n:carol', 'n:dave_y', 'n:solo_tl']) env.CORPUS.data.delete('tl:' + key);
+    githubBranches.clear();
+    githubOpenPulls = [];
+  }
   // ---- Discord 機器人：簽名、三個指令、註冊 ----
   {
     const pair = await crypto.subtle.generateKey({ name: 'Ed25519' }, true, ['sign', 'verify']);
@@ -2873,15 +2968,18 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.GITHUB_TOKEN = hadToken;
 }
 
-check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁有譯者名單', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
-  .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="translators"') && pages['/admin'].includes("'/admin/translator'")
+check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
+  .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
-check('★ 首頁有照翻譯團隊篩選的那一排；管理頁有翻譯團隊與貢獻項目', pages['/'].includes('id="team-pick"')
-  && pages['/'].includes('who-tags') && pages['/'].includes("get('team')") && pages['/admin'].includes('id="mteams"')
-  && pages['/admin'].includes("'/admin/credits/teams'") && english['/admin'].includes('Translation teams and contributions'));
-check('★ 八種語言都有八個貢獻項目的名字、「全部」與錯誤訊息', LANGS.every((code) => TEXT[code] && TEXT[code].js.teamAreas
-  && TEAM_AREAS.every((area) => TEXT[code].js.teamAreas[area]) && TEXT[code].js.teamAll && TEXT[code].js.teamFix.unchanged
-  && TEXT[code]['admin.teams'] && TEXT[code]['home.teampick'] && TEXT[code].js.trTeamOf && TEXT[code].js.trTeamFail.includes('{s}')));
+check('★ 首頁有照翻譯團隊篩選的那一排；管理頁的譯者名單與翻譯團隊併成一節', pages['/'].includes('id="team-pick"')
+  && pages['/'].includes('who-tags') && pages['/'].includes("get('team')") && pages['/admin'].includes('id="lt-save"')
+  && !pages['/admin'].includes('id="translators"') && !pages['/admin'].includes('id="mteams"')
+  && pages['/admin'].includes('id="c-teams"') && english['/admin'].includes('Translation teams'));
+check('★ 八種語言都有貢獻項目、「全部」與翻譯團隊那一節的字', LANGS.every((code) => TEXT[code] && TEXT[code].js.teamAreas
+  && TEAM_AREAS.every((area) => TEXT[code].js.teamAreas[area]) && TEXT[code].js.teamAll && TEXT[code]['home.teampick']
+  && TEXT[code]['admin.lt'] && TEXT[code]['admin.ltnote'] && TEXT[code].js.lt && TEXT[code].js.lt.confirmDrop.includes('{langs}')
+  && TEXT[code].js.lt.teamFail.includes('{s}') && ['developers', 'sponsors', 'contributors'].every((role) => TEXT[code].js.lt.roles[role])
+  && ['bad who', 'bad team', 'bad area', 'not listed', 'bad note'].every((why) => TEXT[code].js.lt.why[why])));
 check('★ 首頁與管理頁的程式都是合法的 JavaScript', ['/', '/admin'].every((path) => [...pages[path].matchAll(/<script>([\s\S]*?)<\/script>/g)]
   .every((m) => { try { new Function(m[1]); return true; } catch (e) { console.log(path, e.message); return false; } })));
 for (const path of ['/privacy', '/terms', '/', '/favicon.png']) {

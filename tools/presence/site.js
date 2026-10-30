@@ -279,6 +279,13 @@ const STYLE = String.raw`
   .tr-newpoll { margin-bottom: 14px; display: grid; gap: 4px; }
   .tr-langs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 12px 0 0; padding: 0; border: 0; }
   .tr-langs legend { font-size: 13px; color: var(--ink-2); margin-bottom: 6px; padding: 0; }
+  .lt-state { margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); font-size: 13px; }
+  .lt-state p { margin: 0; }
+  .lt-state p + p { margin-top: 4px; color: var(--ink-2); }
+  .lt-state.warn { border-color: var(--gold); }
+  .tr-langs[disabled] { opacity: .5; }
+  .lt-table { min-width: 680px; }
+  .lt-table .tr-chip { white-space: nowrap; }
   .tr-langs label { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--ink); font-size: 14px; }
   .note { color: var(--ink-2); font-size: 14px; }
   .note b { color: var(--gold); font-weight: 600; }
@@ -1066,9 +1073,6 @@ export const TEXT = {
     'tr.terms.note': '同一個詞有不同譯法時在這裡投票。定案之後，由維護的人把它套到整份語料。',
     'tr.st.open': '投票中', 'tr.st.accepted': '已採用', 'tr.st.rejected': '已駁回',
     'tr.np.term': '英文術語', 'tr.np.opts': '候選譯法（用逗號分開）', 'tr.np.note': '說明（可以不填）：出現在哪裡、為什麼有不同意見', 'tr.np.send': '開始投票',
-    'admin.translators': '譯者',
-    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。名冊（<code>credits.json</code>）上有這個人的話，他負責的語言也會加進他的翻譯團隊（放進當天那個 PR）；移除譯者或拿掉語言不會動到翻譯團隊，要到上面的「翻譯團隊與貢獻項目」自己取消。',
-    'admin.trlangs': '負責的語言', 'admin.notranslators': '還沒有譯者。',
     'admin.h1': '管理',
     'admin.gate': '這一頁只有開發者與管理員能用，請先登入。',
     'admin.lede': '披風的刪除與封禁在<a href="/capes">披風一覽</a>：點開一件，就看得到是誰傳的。',
@@ -1080,7 +1084,8 @@ export const TEXT = {
     'admin.section': '身分', 'admin.name': '顯示的名字', 'admin.mc': 'Minecraft ID', 'admin.color': '葉子顏色（可以不填）',
     'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
     'admin.send': '開 PR',
-    'admin.teams': '翻譯團隊與貢獻項目', 'admin.teamsnote': '標出每位成員在哪個語言的翻譯團隊、做了哪些事；首頁的團隊名冊照這個分組，名字底下列出項目。選一位成員、勾好之後按「開 PR」：改的是 <code>credits.json</code>，同一天的修改都放進同一個 PR，合併之後首頁最多十分鐘內更新。還不在名單上的人，先用上面的「新增成員」加進來。', 'admin.tmember': '成員', 'admin.tpick': '選一位成員…', 'admin.tteams': '翻譯團隊', 'admin.tareas': '貢獻項目', 'admin.notmembers': '名單上還沒有成員。',
+    'admin.lt': '翻譯團隊', 'admin.ltnote': '一個人負責哪些語言，在這裡一次管好。勾一個語言等於兩件事：他在「協作翻譯」頁可以替那個語言提案與投票（馬上生效），也列進名冊（<code>credits.json</code>）那個語言的翻譯團隊（放進當天的 PR，合併之後首頁跟著變）。拿掉語言兩邊一起拿掉。不在名冊上的譯者只有權限，按「加進名冊」才能登記團隊與貢獻項目；名冊上還沒有權限的人只列出團隊。兩邊對不上的會標「不一致」，選一邊為準再儲存，不會自動同步。', 'admin.ltlangs': '語言（譯者權限與翻譯團隊）', 'admin.ltsave': '儲存', 'admin.ltjoin': '加進名冊', 'admin.ltrights': '譯者權限', 'admin.ltteams': '名冊的翻譯團隊', 'admin.nolt': '還沒有成員或譯者。',
+    'admin.tmember': '成員', 'admin.tareas': '貢獻項目',
     'account.drop': '也可以把圖檔拖到這裡。尺寸對的話，上面的人偶會先穿給你看。',
     'admin.reviews': '審核名單',
     'admin.reviewsnote': '比封禁輕的處置：名單上的人還是可以上傳，但之後傳的披風要先由管理的人在披風一覽按「通過審核」，別人才看得到（一覽與遊戲裡都是）。他現在身上那一件不受影響。等審核的披風在披風一覽的「待審核」。輸入他的 Minecraft UUID；也可以在披風一覽點開一件，直接把上傳的人列進來。',
@@ -1209,8 +1214,8 @@ export const TEXT = {
       wornPending: '穿上了，但要等審核通過別人才會看到。',
       confirmUnreview: '把 {who} 從審核名單移除？等審核的披風會直接放行。',
       onWynn: '在 Wynncraft 看 {n} 的資料',
-      trTeamOf: '名冊的團隊', trTeamDone: '也把語言加進他的翻譯團隊', trTeamFail: '翻譯團隊沒改成（{s}）',
-      teamAll: '全部', teamEdit: '編輯', teamWait: '已送出，等 PR 合併', teamAreas: { translation: '翻譯', proofreading: '校對', capture: '資料收集', testing: '測試', code: '程式', design: '美術設計', website: '網站', community: '社群管理' }, teamFix: { pick: '先選一位成員', added: '已加進今天的 PR', unchanged: '跟名單上現在的一樣，沒有要改的', 'not found': '名單上找不到這個人（可能剛改過名或被移除），請重新整理', 'bad team': '翻譯團隊不對', 'bad area': '貢獻項目不對', 'bad who': '先選一位成員', forbidden: '登入過期了，或你沒有管理權限' },
+      lt: { roles: { developers: '開發者', sponsors: '贊助者', contributors: '貢獻者' }, inSync: '譯者權限與名冊的翻譯團隊一致。', mismatch: '譯者權限與名冊的翻譯團隊對不上：選一邊為準（或直接勾選），再按「儲存」。', rightsNow: '譯者權限：{s}', teamsNow: '名冊的翻譯團隊：{s}', useRights: '以譯者權限為準', useTeams: '以名冊團隊為準', noRights: '在名冊上，還沒有譯者權限。改了語言再儲存，就會同時給權限。', grantTeams: '照名冊團隊給權限', notListed: '不在名冊上：只有譯者權限。要登記翻譯團隊與貢獻項目，先按「加進名冊」。', discordOnly: '只用 Discord 登記的譯者，沒有遊戲 ID，加不進名冊。', fresh: '還不在名單上：儲存之後，他勾選的語言就有譯者權限。', notListedChip: '不在名冊', mismatchChip: '不一致', pending: '等 PR 合併', edit: '編輯', confirmDrop: '拿掉 {who} 的 {langs}？譯者權限馬上收回，名冊的翻譯團隊放進今天的 PR。', saved: '存好了', teamPr: '名冊的修改放進 PR', teamSame: '名冊本來就是這樣', teamFail: '名冊沒改成（{s}）', joinHint: '會一併登記翻譯團隊：{s}', pick: '先選一位成員', why: { 'bad who': '看不懂這個人：填遊戲 ID、UUID 或 Discord 使用者 ID', 'bad team': '語言不對', 'bad area': '貢獻項目不對', 'not listed': '不在名冊上，不能登記貢獻項目', 'bad note': '備註太長了（最多 60 個字）', 'try later': '名單暫時讀不到，等一下再試', 'bad request': '沒有要改的', forbidden: '登入過期了，或你沒有管理權限' } },
+      teamAll: '全部', teamAreas: { translation: '翻譯', proofreading: '校對', capture: '資料收集', testing: '測試', code: '程式', design: '美術設計', website: '網站', community: '社群管理' },
       wearingThis: '你正在穿這一件。', restoreOwn: '復原成我原本的披風', takeOff: '脫下這件披風',
       wornOk: '穿上了，其他玩家幾分鐘內就會看到。', wornKept: '穿上了，其他玩家幾分鐘內就會看到。你原本那一件還留著，隨時可以復原。',
       restored: '已經換回你原本的披風。', tookOff: '已經脫下。',
@@ -1229,12 +1234,6 @@ export const TEXT = {
       noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
       revoke: '移除', confirmRevoke: '把 {who} 從特別名單移除？', perkDone: '加好了',
       confirmUnstaff: '把 {who} 從管理員移除？', notYet: '還沒登入過',
-      translator: {
-        confirm: '把 {who} 從譯者名單移除？',
-        'bad who': '看不懂這一格：從清單選一位，或填 Minecraft ID、UUID、Discord 使用者 ID',
-        'bad langs': '至少勾一個語言',
-        'bad note': '備註最多 60 個字',
-      },
       tr: {
         gone: "已刪除的使用者 #{id}",
         langs: { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' },
@@ -1441,9 +1440,6 @@ export const TEXT = {
     'tr.terms.note': 'Vote here when a term has more than one translation. After a decision, maintainers apply it across the translations.',
     'tr.st.open': 'Voting', 'tr.st.accepted': 'Accepted', 'tr.st.rejected': 'Rejected',
     'tr.np.term': 'English term', 'tr.np.opts': 'Candidate translations (comma-separated)', 'tr.np.note': 'Note (optional): where it appears and what the disagreement is', 'tr.np.send': 'Start the vote',
-    'admin.translators': 'Translators',
-    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages. If the person is on the credits list (<code>credits.json</code>), their languages are also added to their translation teams (in that day’s pull request). Removing a translator or a language does not touch their teams; untick those yourself under “Translation teams and contributions” above.',
-    'admin.trlangs': 'Languages', 'admin.notranslators': 'No translators yet.',
     'admin.h1': 'Admin',
     'admin.gate': 'This page is for developers and moderators only. Please sign in first.',
     'admin.lede': 'Deleting capes and banning uploaders happens in the <a href="/capes">cape gallery</a>: open a cape to see who uploaded it.',
@@ -1455,7 +1451,8 @@ export const TEXT = {
     'admin.section': 'Role', 'admin.name': 'Display name', 'admin.mc': 'Minecraft ID', 'admin.color': 'Leaf colour (optional)',
     'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
     'admin.send': 'Open PR',
-    'admin.teams': 'Translation teams and contributions', 'admin.teamsnote': 'Mark which language’s translation team each member is in and what they have worked on; the team list on the home page is grouped by this, with the work listed under each name. Choose a member, tick the boxes and press “Open PR”: this edits <code>credits.json</code>, every change made on the same day goes into the same pull request, and once it is merged the home page updates within ten minutes. Add people who are not on the list yet with “Add a member” above.', 'admin.tmember': 'Member', 'admin.tpick': 'Choose a member…', 'admin.tteams': 'Translation teams', 'admin.tareas': 'Contributions', 'admin.notmembers': 'Nobody is on the list yet.',
+    'admin.lt': 'Translation teams', 'admin.ltnote': 'Manage which languages a person works on, all in one place. Ticking a language does two things: they can suggest and vote for that language on the Translate page (at once), and they are listed in that language’s translation team in the credits (<code>credits.json</code>, in that day’s pull request; the home page follows once it is merged). Removing a language removes both. Translators who are not in the credits only have the rights; press “Add to credits” before recording teams and contributions. Credits members without translator rights only show their teams. Where the two disagree the row is marked “Mismatch”: pick a side and save; nothing is synced automatically.', 'admin.ltlangs': 'Languages (translator rights and teams)', 'admin.ltsave': 'Save', 'admin.ltjoin': 'Add to credits', 'admin.ltrights': 'Translator rights', 'admin.ltteams': 'Teams in the credits', 'admin.nolt': 'No members or translators yet.',
+    'admin.tmember': 'Member', 'admin.tareas': 'Contributions',
     'account.drop': 'You can also drop the image here. If the size is right, the model above tries it on first.',
     'admin.reviews': 'Review list',
     'admin.reviewsnote': 'A lighter measure than a ban: people on this list can still upload, but a cape they upload later is shown to others (in the gallery and in game) only after a moderator clicks “Approve” in the cape gallery. The cape they are wearing now is not affected. Capes awaiting review are under “Awaiting review” in the gallery. Enter their Minecraft UUID; you can also open a cape in the gallery and add its uploaders from there.',
@@ -1584,8 +1581,8 @@ export const TEXT = {
       wornPending: 'You are wearing it now, but others will only see it once it has been approved.',
       confirmUnreview: 'Remove {who} from the review list? A cape awaiting review will be let through.',
       onWynn: 'See {n} on Wynncraft',
-      trTeamOf: 'Teams on the credits', trTeamDone: 'their languages were also added to their translation teams', trTeamFail: 'the translation teams were not updated ({s})',
-      teamAll: 'All', teamEdit: 'Edit', teamWait: 'sent, waiting for the pull request to be merged', teamAreas: { translation: 'Translation', proofreading: 'Proofreading', capture: 'Data collection', testing: 'Testing', code: 'Code', design: 'Art and design', website: 'Website', community: 'Community' }, teamFix: { pick: 'Choose a member first', added: 'Added to today’s pull request', unchanged: 'Nothing to change: the list already says this', 'not found': 'This person is not on the list any more (renamed or removed?). Please refresh.', 'bad team': 'Unknown translation team', 'bad area': 'Unknown contribution', 'bad who': 'Choose a member first', forbidden: 'Your sign-in expired, or you cannot manage this site' },
+      lt: { roles: { developers: 'Developer', sponsors: 'Sponsor', contributors: 'Contributor' }, inSync: 'Translator rights and credits teams match.', mismatch: 'Translator rights and credits teams do not match: pick a side (or tick the boxes yourself), then press “Save”.', rightsNow: 'Translator rights: {s}', teamsNow: 'Teams in the credits: {s}', useRights: 'Use translator rights', useTeams: 'Use credits teams', noRights: 'In the credits, but no translator rights yet. Change the languages and save to grant rights as well.', grantTeams: 'Grant rights for these teams', notListed: 'Not in the credits: translator rights only. Press “Add to credits” to record teams and contributions.', discordOnly: 'Added by Discord only, with no game ID, so they cannot be added to the credits.', fresh: 'Not on the list yet: once you save, they get translator rights for the ticked languages.', notListedChip: 'Not in credits', mismatchChip: 'Mismatch', pending: 'waiting for the PR', edit: 'Edit', confirmDrop: 'Remove {langs} from {who}? Translator rights are taken away at once; the credits change goes into today’s pull request.', saved: 'Saved', teamPr: 'credits change added to a pull request', teamSame: 'the credits already say this', teamFail: 'the credits were not changed ({s})', joinHint: 'Their translation teams will be recorded too: {s}', pick: 'Choose a member first', why: { 'bad who': 'Who is that? Enter a game ID, UUID or Discord user ID', 'bad team': 'Unknown language', 'bad area': 'Unknown contribution', 'not listed': 'Not in the credits, so contributions cannot be recorded', 'bad note': 'The note is too long (60 characters at most)', 'try later': 'The credits list cannot be read right now; try again shortly', 'bad request': 'Nothing to change', forbidden: 'Your sign-in expired, or you cannot manage this site' } },
+      teamAll: 'All', teamAreas: { translation: 'Translation', proofreading: 'Proofreading', capture: 'Data collection', testing: 'Testing', code: 'Code', design: 'Art and design', website: 'Website', community: 'Community' },
       wearingThis: 'You are wearing this one.', restoreOwn: 'Switch back to my own cape', takeOff: 'Take this cape off',
       wornOk: 'You are wearing it now. Other players will see it within a few minutes.', wornKept: 'You are wearing it now. Other players will see it within a few minutes. Your own cape is kept, and you can switch back any time.',
       restored: 'Your own cape is back.', tookOff: 'The cape is off.',
@@ -1603,12 +1600,6 @@ export const TEXT = {
       previewHint: 'Trying it on: {w}×{h}, not uploaded yet.',
       noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
       confirmUnstaff: 'Remove {who} from the moderators?', notYet: 'Has not signed in yet',
-      translator: {
-        confirm: 'Remove {who} from the translators?',
-        'bad who': 'Choose someone from the list, or enter a Minecraft ID, UUID or Discord user ID',
-        'bad langs': 'Tick at least one language',
-        'bad note': 'The note can be 60 characters at most',
-      },
       tr: {
         gone: "Deleted user #{id}",
         langs: { zh_tw: 'Traditional Chinese', zh_cn: 'Simplified Chinese', ja_jp: 'Japanese', ko_kr: 'Korean', ru_ru: 'Russian', es_es: 'Spanish', tr_tr: 'Turkish' },
@@ -4734,27 +4725,30 @@ const ADMIN = String.raw`
         <div><label for="c-color">%%admin.color%%</label><input type="text" id="c-color" maxlength="7" placeholder="#RRGGBB" autocomplete="off" spellcheck="false"></div>
         <div><button class="btn primary" id="c-send">%%admin.send%%</button></div>
       </div>
+      <p class="hint" id="c-teams" hidden></p>
       <p class="msg" id="c-msg" role="status"></p>
     </div>
 
-    <h2 id="teams">%%admin.teams%%</h2>
+    <h2 id="langteam">%%admin.lt%%</h2>
     <div class="panel">
-      <p class="note" style="margin:0 0 14px">%%admin.teamsnote%%</p>
+      <p class="note" style="margin:0 0 14px">%%admin.ltnote%%</p>
       <div class="form">
-        <div><label for="m-who">%%admin.tmember%%</label>
-          <select id="m-who"><option value="">%%admin.tpick%%</option><optgroup label="%%admin.developers%%" data-role="developers"></optgroup><optgroup label="%%admin.sponsors%%" data-role="sponsors"></optgroup><optgroup label="%%admin.contributors%%" data-role="contributors"></optgroup></select></div>
+        <div class="finder"><label for="t-who">%%admin.who%%</label><input type="text" id="t-who" maxlength="40" autocomplete="off" spellcheck="false" placeholder="%%admin.findph%%" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="t-hits"><ul class="finder-hits" id="t-hits" role="listbox" hidden></ul></div>
+        <div><label for="t-note">%%admin.note%%</label><input type="text" id="t-note" maxlength="60" autocomplete="off"></div>
       </div>
-      <fieldset class="tr-langs" id="m-teams"><legend>%%admin.tteams%%</legend></fieldset>
-      <fieldset class="tr-langs" id="m-areas"><legend>%%admin.tareas%%</legend></fieldset>
-      <div class="tr-actions"><button class="btn primary" id="m-send" type="button" disabled>%%admin.send%%</button></div>
-      <p class="msg" id="m-msg" role="status"></p>
+      <p class="hint" id="t-pick" style="margin-top:8px"></p>
+      <div class="lt-state" id="lt-state" hidden></div>
+      <fieldset class="tr-langs" id="t-langs"><legend>%%admin.ltlangs%%</legend></fieldset>
+      <fieldset class="tr-langs" id="lt-areas"><legend>%%admin.tareas%%</legend></fieldset>
+      <div class="tr-actions"><button class="btn primary" id="lt-save" type="button" disabled>%%admin.ltsave%%</button><button class="btn" id="lt-join" type="button" hidden>%%admin.ltjoin%%</button></div>
+      <p class="msg" id="t-msg" role="status"></p>
     </div>
     <div class="panel scroll">
-      <table>
-        <thead><tr><th>%%admin.tmember%%</th><th>%%admin.section%%</th><th>%%admin.tteams%%</th><th>%%admin.tareas%%</th><th></th></tr></thead>
-        <tbody id="mteams"></tbody>
+      <table class="lt-table">
+        <thead><tr><th>%%admin.tmember%%</th><th>%%admin.section%%</th><th>%%admin.ltrights%%</th><th>%%admin.ltteams%%</th><th>%%admin.tareas%%</th><th></th></tr></thead>
+        <tbody id="langteam-rows"></tbody>
       </table>
-      <p class="note" id="nomteams" hidden style="margin:10px">%%admin.notmembers%%</p>
+      <p class="note" id="nolangteam" hidden style="margin:10px">%%admin.nolt%%</p>
     </div>
 
     <h2>%%admin.guilds%%</h2>
@@ -4774,26 +4768,6 @@ const ADMIN = String.raw`
         <tbody id="guilds"></tbody>
       </table>
       <p class="note" id="noguilds" hidden style="margin:10px">%%admin.noguilds%%</p>
-    </div>
-
-    <h2>%%admin.translators%%</h2>
-    <div class="panel">
-      <p class="note" style="margin:0 0 14px">%%admin.translatorsnote%%</p>
-      <div class="form">
-        <div class="finder"><label for="t-who">%%admin.who%%</label><input type="text" id="t-who" maxlength="40" autocomplete="off" spellcheck="false" placeholder="%%admin.findph%%" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="t-hits"><ul class="finder-hits" id="t-hits" role="listbox" hidden></ul></div>
-        <div><label for="t-note">%%admin.note%%</label><input type="text" id="t-note" maxlength="60" autocomplete="off"></div>
-        <div><button class="btn primary" id="t-send">%%admin.grant%%</button></div>
-      </div>
-      <fieldset class="tr-langs" id="t-langs"><legend>%%admin.trlangs%%</legend></fieldset>
-      <p class="hint" id="t-pick" style="margin-top:8px"></p>
-      <p class="msg" id="t-msg" role="status"></p>
-    </div>
-    <div class="panel scroll">
-      <table>
-        <thead><tr><th>%%admin.player%%</th><th>%%admin.trlangs%%</th><th>%%admin.note%%</th><th>%%admin.pwhen%%</th><th>%%admin.pby%%</th><th></th></tr></thead>
-        <tbody id="translators"></tbody>
-      </table>
-      <p class="note" id="notranslators" hidden style="margin:10px">%%admin.notranslators%%</p>
     </div>
 
     <div id="staff-block" hidden>
@@ -5135,7 +5109,7 @@ const ADMIN_JS = '<script>' + String.raw`
   }
   /* 選成員的下拉選單：管理員名單與譯者名單共用。prefix 是那一組元素 id 的開頭（s-who、s-hits、s-pick），
      taken(p) 說這個人是不是已經在名單上（標出來、不能選），takenLabel 是標在他底下的字。 */
-  function memberPicker(prefix, taken, takenLabel) {
+  function memberPicker(prefix, taken, takenLabel, onPick) {
   var finder = document.getElementById(prefix + '-who');
   var hits = document.getElementById(prefix + '-hits');
   var pickNote = document.getElementById(prefix + '-pick');
@@ -5175,6 +5149,7 @@ const ADMIN_JS = '<script>' + String.raw`
     finder.value = personName(p);
     pickNote.textContent = fmt(L.chosen, { who: personLines(p).join(' · ') });
     closeHits();
+    if (onPick) onPick(p);
   }
   function showHits(list, total) {
     found = list;
@@ -5209,6 +5184,7 @@ const ADMIN_JS = '<script>' + String.raw`
   finder.addEventListener('input', function () {
     picked = null;
     pickNote.textContent = '';
+    if (onPick) onPick(null);
     openHits();
   });
   finder.addEventListener('keydown', function (e) {
@@ -5223,7 +5199,8 @@ const ADMIN_JS = '<script>' + String.raw`
   return {
     /* 選了的人記 UUID（有綁遊戲帳號的）或 Discord ID；沒選就照打的字 */
     who: function () { return picked ? (picked.uuid || picked.discord) : finder.value.trim(); },
-    clear: function () { finder.value = ''; picked = null; pickNote.textContent = ''; }
+    clear: function () { finder.value = ''; picked = null; pickNote.textContent = ''; },
+    set: function (text) { finder.value = text; picked = null; pickNote.textContent = ''; }
   };
   }
   var staffPick = memberPicker('s', function (p) {
@@ -5246,90 +5223,6 @@ const ADMIN_JS = '<script>' + String.raw`
           } else {
             msg.className = 'msg bad';
             msg.textContent = L.staff[body.why] || fmt(L.prFail, { s: body.why || r.status });
-          }
-        });
-      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
-  };
-  /* 譯者名單：管理員與開發者都能管。同一個人再送一次就是改他負責的語言，所以名單上的人照樣可以選。 */
-  var TR_CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
-  var trBox = document.getElementById('t-langs');
-  TR_CODES.forEach(function (code) {
-    var label = el('label');
-    var box = el('input');
-    box.type = 'checkbox';
-    box.value = code;
-    box.id = 't-lang-' + code;
-    label.append(box, ' ' + (L.tr.langs[code] || code));
-    trBox.append(label);
-  });
-  var trPick = memberPicker('t', function () { return false; }, '');
-  function loadTranslators() {
-    return api('/admin/translators').then(function (r) { return r.json(); }).then(function (data) {
-      var body = document.getElementById('translators');
-      body.replaceChildren();
-      document.getElementById('notranslators').hidden = data.translators.length > 0;
-      data.translators.forEach(function (one) {
-        var row = el('tr');
-        var who = el('td');
-        var known = one.name || (one.kind === 'n' ? one.id : '');
-        if (known) {
-          var img = el('img');
-          img.alt = '';
-          img.src = head(known, 44);
-          who.append(img, known);
-        }
-        if (one.discord) who.append(el('small', 'hint', (known ? ' · ' : '') + 'Discord ' + one.discord));
-        if (!known && !one.discord) who.append(el('code', '', one.id));
-        var drop = el('button', 'btn', L.revoke);
-        drop.onclick = function () {
-          if (!confirm(fmt(L.translator.confirm, { who: one.name || one.discord || one.id }))) return;
-          api('/admin/untranslator', { method: 'POST', body: JSON.stringify({ key: one.key }), headers: { 'content-type': 'application/json' } })
-            .then(function (r) { if (r.ok) loadTranslators(); else alert(fmt(L.liftFail, { s: r.status })); });
-        };
-        var action = el('td');
-        action.append(drop);
-        var langCell = el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、'));
-        if (one.team) {
-          langCell.append(el('br'), el('small', 'hint', L.trTeamOf + '：' + (one.team.map(function (c) { return L.tr.langs[c] || c; }).join('、') || '—')));
-        }
-        row.append(who, langCell,
-          el('td', '', one.note || '—'), el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'),
-          el('td', '', one.by || '—'), action);
-        body.append(row);
-      });
-    });
-  }
-  document.getElementById('t-send').onclick = function () {
-    var msg = document.getElementById('t-msg');
-    var langs = TR_CODES.filter(function (code) { return document.getElementById('t-lang-' + code).checked; });
-    var entry = { who: trPick.who(), langs: langs, note: document.getElementById('t-note').value.trim() };
-    msg.className = 'msg ok';
-    msg.textContent = L.sending;
-    api('/admin/translator', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
-      .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (body) {
-          if (r.ok) {
-            msg.className = 'msg ok';
-            msg.textContent = L.perkDone;
-            if (body.team && body.team.why) {
-              msg.append(' · ' + fmt(L.trTeamFail, { s: L.credit[body.team.why] || body.team.why }));
-            } else if (body.team && body.team.url) {
-              msg.append(' · ' + L.trTeamDone + ': ');
-              if (String(body.team.url).indexOf('https://github.com/') === 0) {
-                var prLink = el('a', '', body.team.url);
-                prLink.href = body.team.url;
-                prLink.rel = 'noopener';
-                msg.append(prLink);
-              }
-            }
-            if (body.team && (body.team.url || body.team.teams)) loadTeams();
-            trPick.clear();
-            document.getElementById('t-note').value = '';
-            TR_CODES.forEach(function (code) { document.getElementById('t-lang-' + code).checked = false; });
-            loadTranslators();
-          } else {
-            msg.className = 'msg bad';
-            msg.textContent = L.translator[body.why] || fmt(L.prFail, { s: body.why || r.status });
           }
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
@@ -5415,12 +5308,11 @@ const ADMIN_JS = '<script>' + String.raw`
     document.getElementById('gate').hidden = true;
     document.getElementById('panel').hidden = false;
     loadFeedback();
-    loadTranslators();
     loadBans();
     loadReviews();
     loadPerks();
     loadGuilds();
-    loadTeams();
+    loadLangTeam();
     if (me.developer) {
       document.getElementById('staff-block').hidden = false;
       loadStaff();
@@ -5469,135 +5361,235 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   };
+  var LT = L.lt;
   var TEAM_CODES = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
   var AREA_CODES = ['translation', 'proofreading', 'capture', 'testing', 'code', 'design', 'website', 'community'];
-  var teamPeople = {};
-  var teamSent = {};
-  function teamBoxes(host, prefix, codes, names) {
+  var ltPeople = [];
+  var ltSent = {};
+  var ltCur = null;
+  var ltTouched = false;
+  var ltAreasStart = '';
+  var joinTeams = null;
+  var joinFor = '';
+  function ltBoxes(host, prefix, codes, names, onChange) {
     codes.forEach(function (code) {
       var label = el('label');
       var box = el('input');
       box.type = 'checkbox';
       box.value = code;
       box.id = prefix + code;
-      box.onchange = teamDirty;
+      box.onchange = onChange;
       label.append(box, ' ' + (names[code] || code));
       host.append(label);
     });
   }
-  teamBoxes(document.getElementById('m-teams'), 'm-team-', TEAM_CODES, L.tr.langs);
-  teamBoxes(document.getElementById('m-areas'), 'm-area-', AREA_CODES, L.teamAreas);
-  function teamTicked(prefix, codes) {
+  ltBoxes(document.getElementById('t-langs'), 't-lang-', TEAM_CODES, L.tr.langs, function () { ltTouched = true; ltDirty(); });
+  ltBoxes(document.getElementById('lt-areas'), 'lt-area-', AREA_CODES, L.teamAreas, function () { ltDirty(); });
+  function ltTicked(prefix, codes) {
     return codes.filter(function (code) { return document.getElementById(prefix + code).checked; });
   }
-  function teamNow(key) {
-    return teamSent[key] || teamPeople[key] || { teams: [], areas: [] };
+  function ltSet(prefix, codes, list) {
+    codes.forEach(function (code) { document.getElementById(prefix + code).checked = list.indexOf(code) >= 0; });
   }
-  function teamDirty() {
-    var key = document.getElementById('m-who').value;
-    var now = teamNow(key);
-    var same = key && teamTicked('m-team-', TEAM_CODES).join() === (now.teams || []).join()
-      && teamTicked('m-area-', AREA_CODES).join() === (now.areas || []).join();
-    document.getElementById('m-send').disabled = !key || same;
+  function ltWords(list, names) {
+    return (list || []).map(function (code) { return (names || L.tr.langs)[code] || code; }).join('、') || '—';
   }
-  function teamFill() {
-    var key = document.getElementById('m-who').value;
-    var now = teamNow(key);
-    TEAM_CODES.forEach(function (code) { document.getElementById('m-team-' + code).checked = (now.teams || []).indexOf(code) >= 0; });
-    AREA_CODES.forEach(function (code) { document.getElementById('m-area-' + code).checked = (now.areas || []).indexOf(code) >= 0; });
-    teamDirty();
+  function ltWho(person) {
+    if (person.mc) return person.mc;
+    var key = person.rights && person.rights.keys[0];
+    return key ? key.slice(2) : '';
   }
-  document.getElementById('m-who').onchange = function () {
-    document.getElementById('m-msg').textContent = '';
-    teamFill();
-  };
-  function teamWords(list, names) {
-    return (list || []).map(function (code) { return names[code] || code; }).join('、') || '—';
+  function ltFind(text) {
+    var q = String(text || '').trim().toLowerCase();
+    if (!q) return null;
+    return ltPeople.find(function (p) { return p.mc && p.mc.toLowerCase() === q; })
+      || ltPeople.find(function (p) { return p.rights && p.rights.keys.some(function (k) { return k.slice(2) === q; }); }) || null;
   }
-  function loadTeams() {
-    return fetch('/api/team', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+  var ltPick = memberPicker('t', function () { return false; }, '', function (p) {
+    ltShow(p ? (ltFind(p.mc) || ltFind(p.uuid) || ltFind(p.discord)) : ltFind(document.getElementById('t-who').value));
+  });
+  function ltDirty() {
+    var areasMoved = Boolean(ltCur && ltCur.listed) && ltTicked('lt-area-', AREA_CODES).join() !== ltAreasStart;
+    document.getElementById('lt-save').disabled = !ltPick.who() || !(ltTouched || areasMoved);
+  }
+  function ltButton(text, langs) {
+    var button = el('button', 'btn small', text);
+    button.type = 'button';
+    button.onclick = function () {
+      ltSet('t-lang-', TEAM_CODES, langs);
+      ltTouched = true;
+      ltDirty();
+    };
+    return button;
+  }
+  function ltShow(person) {
+    ltCur = person;
+    ltTouched = false;
+    var rights = person && person.rights ? person.rights.langs : [];
+    var start = person ? (person.rights ? rights : person.teams) : [];
+    ltSet('t-lang-', TEAM_CODES, start);
+    ltSet('lt-area-', AREA_CODES, person ? person.areas : []);
+    ltAreasStart = person ? person.areas.join() : '';
+    document.getElementById('lt-areas').disabled = !(person && person.listed);
+    document.getElementById('t-note').value = person && person.rights ? person.rights.note || '' : '';
+    var state = document.getElementById('lt-state');
+    state.replaceChildren();
+    state.className = 'lt-state';
+    var join = document.getElementById('lt-join');
+    join.hidden = !(person && !person.listed && person.mc);
+    var typed = document.getElementById('t-who').value.trim();
+    state.hidden = !person && !typed;
+    if (!person) {
+      if (typed) state.append(el('p', '', LT.fresh));
+      ltDirty();
+      return;
+    }
+    var lines = el('p', '');
+    if (person.rights) lines.append(fmt(LT.rightsNow, { s: ltWords(rights) }));
+    if (person.listed) {
+      if (person.rights) lines.append(el('br'));
+      lines.append(fmt(LT.teamsNow, { s: ltWords(person.teams) }));
+    }
+    var says = el('p', '');
+    var bar = el('div', 'tr-actions');
+    if (!person.listed) {
+      says.textContent = person.mc ? LT.notListed : LT.discordOnly;
+    } else if (!person.rights) {
+      says.textContent = LT.noRights;
+      if (person.teams.length) bar.append(ltButton(LT.grantTeams, person.teams));
+    } else if (person.mismatch) {
+      state.className = 'lt-state warn';
+      says.textContent = LT.mismatch;
+      bar.append(ltButton(LT.useRights, rights), ltButton(LT.useTeams, person.teams));
+    } else {
+      says.textContent = LT.inSync;
+    }
+    state.append(lines, says);
+    if (bar.children.length) state.append(bar);
+    ltDirty();
+  }
+  function loadLangTeam() {
+    return api('/admin/langteam').then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
       if (!data) return;
-      var pick = document.getElementById('m-who');
-      var keep = pick.value;
-      var body = document.getElementById('mteams');
-      body.replaceChildren();
-      teamPeople = {};
-      var count = 0;
-      data.team.forEach(function (section) {
-        var group = pick.querySelector('optgroup[data-role="' + section.role + '"]');
-        if (!group) return;
-        group.replaceChildren();
-        section.members.forEach(function (member) {
-          var key = section.role + '|' + (member.mc || member.name);
-          teamPeople[key] = { section: section.role, who: member.mc || member.name, name: member.name, teams: member.teams || [], areas: member.areas || [] };
-          var option = el('option', '', member.mc && member.mc !== member.name ? member.name + ' (' + member.mc + ')' : member.name);
-          option.value = key;
-          group.append(option);
-          var shown = teamNow(key);
-          var row = el('tr');
-          var who = el('td');
-          if (member.mc) {
-            var img = el('img');
-            img.alt = '';
-            img.src = head(member.mc, 44);
-            who.append(img);
-          }
-          who.append(member.name);
-          if (teamSent[key]) who.append(el('small', 'hint', ' · ' + L.teamWait));
-          var edit = el('button', 'btn', L.teamEdit);
-          edit.type = 'button';
-          edit.onclick = function () {
-            pick.value = key;
-            document.getElementById('m-msg').textContent = '';
-            teamFill();
-            document.getElementById('teams').scrollIntoView();
-          };
-          var action = el('td');
-          action.append(edit);
-          row.append(who, el('td', '', group.label), el('td', '', teamWords(shown.teams, L.tr.langs)),
-            el('td', '', teamWords(shown.areas, L.teamAreas)), action);
-          body.append(row);
-          count++;
-        });
+      ltPeople = data.people.map(function (person) {
+        var sent = person.mc && ltSent[person.mc.toLowerCase()];
+        if (sent) {
+          if (sent.teams) person.teams = sent.teams;
+          if (sent.areas) person.areas = sent.areas;
+          person.pending = true;
+          person.mismatch = Boolean(person.rights) && person.rights.langs.join() !== person.teams.join();
+        }
+        return person;
       });
-      document.getElementById('nomteams').hidden = count > 0;
-      pick.value = teamPeople[keep] ? keep : '';
-      teamFill();
+      ltPeople.sort(function (a, b) { return (b.mismatch ? 1 : 0) - (a.mismatch ? 1 : 0); });
+      var body = document.getElementById('langteam-rows');
+      body.replaceChildren();
+      document.getElementById('nolangteam').hidden = ltPeople.length > 0;
+      ltPeople.forEach(function (person) {
+        var row = el('tr');
+        var who = el('td');
+        if (person.mc) {
+          var img = el('img');
+          img.alt = '';
+          img.src = head(person.mc, 44);
+          who.append(img);
+        }
+        who.append(person.name);
+        if (person.rights && person.rights.discord && person.rights.discord !== person.name) who.append(el('small', 'hint', ' · Discord ' + person.rights.discord));
+        if (person.mismatch) who.append(' ', el('span', 'tr-chip gold', LT.mismatchChip));
+        var roles = el('td');
+        if (person.listed) roles.textContent = person.roles.map(function (role) { return LT.roles[role] || role; }).join('、');
+        else roles.append(el('span', 'tr-chip', LT.notListedChip));
+        var teams = el('td', '', person.listed ? ltWords(person.teams) : '—');
+        if (person.pending) teams.append(el('br'), el('small', 'hint', LT.pending));
+        var edit = el('button', 'btn', LT.edit);
+        edit.type = 'button';
+        edit.onclick = function () {
+          ltPick.set(ltWho(person));
+          document.getElementById('t-msg').textContent = '';
+          ltShow(person);
+          document.getElementById('langteam').scrollIntoView();
+        };
+        var action = el('td');
+        action.append(edit);
+        row.append(who, roles, el('td', '', person.rights ? ltWords(person.rights.langs) : '—'), teams,
+          el('td', '', person.listed ? ltWords(person.areas, L.teamAreas) : '—'), action);
+        body.append(row);
+      });
+      if (ltCur) ltShow(ltFind(ltWho(ltCur)));
     });
   }
-  document.getElementById('m-send').onclick = function () {
-    var key = document.getElementById('m-who').value;
-    var person = teamPeople[key];
-    var msg = document.getElementById('m-msg');
-    if (!person) { msg.className = 'msg bad'; msg.textContent = L.teamFix.pick; return; }
-    var entry = { section: person.section, who: person.who, teams: teamTicked('m-team-', TEAM_CODES), areas: teamTicked('m-area-', AREA_CODES) };
-    var send = document.getElementById('m-send');
-    send.disabled = true;
+  document.getElementById('lt-save').onclick = function () {
+    var msg = document.getElementById('t-msg');
+    var who = ltPick.who();
+    if (!who) { msg.className = 'msg bad'; msg.textContent = LT.pick; return; }
+    var entry = { who: who, note: document.getElementById('t-note').value.trim() };
+    var langs = ltTicked('t-lang-', TEAM_CODES);
+    if (ltTouched) entry.langs = langs;
+    var areas = ltTicked('lt-area-', AREA_CODES);
+    if (ltCur && ltCur.listed && areas.join() !== ltAreasStart) entry.areas = areas;
+    if (entry.langs && ltCur) {
+      var had = TEAM_CODES.filter(function (code) {
+        return (ltCur.rights ? ltCur.rights.langs : []).indexOf(code) >= 0 || (ltCur.listed && ltCur.teams.indexOf(code) >= 0);
+      });
+      var dropped = had.filter(function (code) { return langs.indexOf(code) < 0; });
+      if (dropped.length && !confirm(fmt(LT.confirmDrop, { who: ltCur.name, langs: ltWords(dropped) }))) return;
+    }
+    var save = document.getElementById('lt-save');
+    save.disabled = true;
     msg.className = 'msg ok';
     msg.textContent = L.sending;
-    api('/admin/credits/teams', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
+    api('/admin/langteam', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (body) {
           msg.replaceChildren();
-          if (r.ok) {
-            teamSent[key] = { teams: entry.teams, areas: entry.areas };
-            msg.className = 'msg ok';
-            msg.append(body.added ? L.teamFix.added : L.prDone);
-            if (String(body.url).indexOf('https://github.com/') === 0) {
-              var link = el('a', '', body.url);
-              link.href = body.url;
-              link.rel = 'noopener';
-              msg.append(': ', link);
-            }
-            loadTeams();
-          } else {
+          if (!r.ok) {
             msg.className = 'msg bad';
-            msg.textContent = L.teamFix[body.why] || L.credit[body.why] || fmt(L.prFail, { s: body.why || r.status });
-            teamDirty();
+            msg.textContent = LT.why[body.why] || L.credit[body.why] || fmt(L.prFail, { s: body.why || r.status });
+            ltDirty();
+            return;
           }
+          msg.className = 'msg ok';
+          msg.append(LT.saved);
+          var team = body.team;
+          if (team && team.url) {
+            ltSent[String(body.mc).toLowerCase()] = { teams: entry.langs, areas: entry.areas };
+            msg.append(' · ' + LT.teamPr + ': ');
+            if (String(team.url).indexOf('https://github.com/') === 0) {
+              var link = el('a', '', team.url);
+              link.href = team.url;
+              link.rel = 'noopener';
+              msg.append(link);
+            }
+          } else if (team && team.unchanged) {
+            msg.append(' · ' + LT.teamSame);
+          } else if (team && team.why) {
+            msg.className = 'msg bad';
+            msg.append(' · ' + fmt(LT.teamFail, { s: L.credit[team.why] || team.why }));
+          }
+          loadLangTeam();
         });
-      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; teamDirty(); });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; ltDirty(); });
   };
+  document.getElementById('lt-join').onclick = function () {
+    if (!ltCur || !ltCur.mc) return;
+    document.getElementById('c-section').value = 'contributors';
+    document.getElementById('c-name').value = ltCur.name;
+    document.getElementById('c-mc').value = ltCur.mc;
+    joinTeams = ltCur.rights ? ltCur.rights.langs : [];
+    joinFor = ltCur.mc.toLowerCase();
+    var hint = document.getElementById('c-teams');
+    hint.textContent = fmt(LT.joinHint, { s: ltWords(joinTeams) });
+    hint.hidden = !joinTeams.length;
+    document.getElementById('c-name').scrollIntoView({ block: 'center' });
+    document.getElementById('c-name').focus();
+  };
+  document.getElementById('c-mc').addEventListener('input', function () {
+    if (this.value.trim().toLowerCase() === joinFor) return;
+    joinTeams = null;
+    joinFor = '';
+    document.getElementById('c-teams').hidden = true;
+  });
   document.getElementById('c-send').onclick = function () {
     var msg = document.getElementById('c-msg');
     var entry = {
@@ -5607,6 +5599,7 @@ const ADMIN_JS = '<script>' + String.raw`
     };
     var color = document.getElementById('c-color').value.trim();
     if (color) entry.color = color;
+    if (joinTeams && joinTeams.length && entry.mc.toLowerCase() === joinFor) entry.teams = joinTeams;
     msg.className = 'msg ok';
     msg.textContent = L.sending;
     api('/admin/credits', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
@@ -5616,6 +5609,9 @@ const ADMIN_JS = '<script>' + String.raw`
           if (r.ok) {
             msg.className = 'msg ok';
             msg.append(L.prDone);
+            joinTeams = null;
+            joinFor = '';
+            document.getElementById('c-teams').hidden = true;
             if (String(body.url).indexOf('https://github.com/') === 0) {
               var link = el('a', '', body.url);
               link.href = body.url;
