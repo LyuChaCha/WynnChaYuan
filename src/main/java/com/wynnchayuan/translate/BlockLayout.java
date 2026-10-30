@@ -8,72 +8,20 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.ToIntFunction;
 
-/**
- * 判斷 tooltip 裡哪些行是<b>置中</b>的。
- *
- * <h2>為什麼一行一行看不出來</h2>
- * 置中與靠左，在單獨一行上長得<b>一模一樣</b>：都是「一段前導偏移，後面接文字」。
- *
- * <pre>
- *   未鑑定物品的說明（置中）      材料的配方清單（靠左）
- *   偏移 0  ← 最寬的那行          偏移 0
- *   偏移 4                        偏移 0
- *   偏移 49                       偏移 0
- * </pre>
- *
- * 兩邊的第一行都是「偏移 0」，但正確的處理完全相反：置中的行譯文變短時要
- * <b>加大</b>縮排才會維持置中；靠左的行加了縮排就變成整段歪掉。
- *
- * <h2>怎麼分</h2>
- * 置中的行，前導偏移必然滿足一條算式：
- *
- * <blockquote>{@code 偏移 ≈ (整塊最寬 − 本行寬) / 2}</blockquote>
- *
- * 逐行驗證這條算式，<b>每一行都吻合</b>才算這一塊是置中的。只要有一行對不上，
- * 那個縮排就是別的用途（版面裝飾、清單縮排），整塊都不該動。
- *
- * <p>先前試過「偏移不全相同就是置中」，那太寬鬆——材料 tooltip 裡
- * {@code 4 Crafting Level} 的偏移剛好和配方清單不同，整塊就被誤判成置中推歪了。
- *
- * <p>「一塊」以空行分隔。tooltip 本來就是用空行分段的，段落內的對齊方式一致。
- */
 public final class BlockLayout {
 
-    /**
-     * 偏移與算式的容許誤差（像素）。
-     *
-     * <p>伺服器算置中時會取整，所以不能要求完全相等。6 像素大約是一個字元寬，
-     * 放寬到這裡仍然遠小於「靠左」與「置中」之間的差距（動輒數十像素）。
-     */
     private static final int TOLERANCE = 6;
 
-    /**
-     * 沒有分隔線時，一串連續的行至少要這麼多行才敢當成置中。
-     *
-     * <p>兩行的「巧合吻合」太容易發生——任兩行只要寬度差得夠少，
-     * 縮排 0 就會落在容差內。三行以上才有足夠的證據。
-     */
     private static final int MIN_RUN = 3;
 
     private BlockLayout() {}
 
-    /**
-     * 每一行是不是置中的。
-     *
-     * @return 與輸入等長；{@code true} 表示這一行的前導偏移該跟著譯文寬度調整
-     */
     public static boolean[] centered(List<Component> lines) {
         boolean[] result = centered(lines, BlockLayout::measure);
         LayoutDebug.record(lines, result);
         return result;
     }
 
-    /**
-     * 把置中判斷的中間值寫成人看得懂的樣子。
-     *
-     * <p>判斷失敗時畫面上只看得到「沒有跟著置中」，看不出是分段切錯、寬度量錯、
-     * 還是算式差了幾像素——三種的修法完全不同。
-     */
     static String explain(List<Component> lines, boolean[] result) {
         return explain(lines, result, BlockLayout::measure);
     }
@@ -101,7 +49,6 @@ public final class BlockLayout {
         return sb.toString();
     }
 
-    /** 供測試注入寬度計算——正式路徑要有字型才量得出來。 */
     static boolean[] centered(List<Component> lines, ToIntFunction<Component> width) {
         int n = lines.size();
         boolean[] result = new boolean[n];
@@ -115,7 +62,6 @@ public final class BlockLayout {
             Component line = lines.get(i);
             blank[i] = isSeparator(line);
             lead[i] = leadingOffset(line);
-            // 量出來的寬度含前導偏移，扣掉才是實際內容有多寬
             content[i] = Math.max(0, width.applyAsInt(line) - lead[i]);
         }
 
@@ -135,12 +81,6 @@ public final class BlockLayout {
         return result;
     }
 
-    /**
-     * 整塊最寬的一行有多寬。
-     *
-     * <p>單獨一行的區段要靠它才判斷得出置中——那一行自己看不出左右留白，
-     * 得拿整塊的寬度來比。見 {@link #markCentred}。
-     */
     private static int widest(int[] lead, int[] content, boolean[] blank) {
         int max = 0;
         for (int i = 0; i < lead.length; i++) {
@@ -151,36 +91,8 @@ public final class BlockLayout {
         return max;
     }
 
-    /**
-     * 標出這一段裡置中的行。
-     *
-     * <h2>為什麼不能只看整段</h2>
-     * tooltip 的分段<b>不一定有分隔線</b>。未鑑定物品就是這樣：
-     *
-     * <pre>
-     *   {@literal 🔒} Waist Apron              ← 靠左，縮排 0
-     *   [RARE] LEGGINGS                ← 靠左，縮排 0
-     *   This item's power has been sealed,   ← 置中，縮排 0（最寬的那行）
-     *     an {@literal ◉} Item Identifier can unlock  ← 置中，縮排 4
-     *            its potential.        ← 置中，縮排 52
-     * </pre>
-     *
-     * 名稱、稀有度跟後面那三行中間沒有任何分隔，整段一起判斷時前兩行對不上
-     * 置中的算式，於是<b>五行全部</b>被判成靠左，一行都沒調整——譯文變短之後
-     * 整塊往左塌。
-     *
-     * <p>所以整段對不上時，再找<b>段內最長的一串</b>吻合的行。要求至少
-     * {@value #MIN_RUN} 行，而且其中要有明顯的縮排：兩行的巧合太容易發生，
-     * 縮排全是 0 的清單則本來就不是置中。
-     */
     private static void markCentred(boolean[] result, int[] lead, int[] content,
                                     int start, int end, int blockWidth) {
-        // 自成一段的<b>單獨一行</b>：拿整塊的寬度來比。
-        //
-        // 「只有一行時置中與靠左畫出來沒有差別」只在那一行是整塊<b>最寬</b>的
-        // 時候才成立。像「{@literal 🖱} Right-Click to Consume」自己就是一段，
-        // 卻是相對整個 tooltip 置中的——先前一律當靠左，於是中文變短之後
-        // 縮排沒重算，整行往左偏。
         if (end - start == 1 && isCentredAlone(lead, content, start, blockWidth)) {
             result[start] = true;
             return;
@@ -196,7 +108,7 @@ public final class BlockLayout {
                 if (isCentredBlock(lead, content, from, to, blockWidth)) {
                     bestFrom = from;
                     bestLen = to - from;
-                    break;              // 由長到短試，第一個吻合的就是這個起點最長的
+                    break;
                 }
             }
         }
@@ -205,20 +117,11 @@ public final class BlockLayout {
         }
     }
 
-    /**
-     * 單獨一行的區段是不是置中的。
-     *
-     * <p>判準是「左邊的留白剛好等於右邊剩下的一半」。要求縮排明顯大於零——
-     * 縮排是 0 的行本來就是靠左，動它只會把版面弄壞。也要求這一行比整塊窄，
-     * 不然它自己就是最寬的那行，置中與靠左畫出來一樣，不動最安全。
-     */
     private static boolean isCentredAlone(int[] lead, int[] content,
                                           int at, int blockWidth) {
         if (lead[at] <= TOLERANCE || content[at] <= 0) {
             return false;
         }
-        // 一定要有<b>別的行比它寬</b>才判斷得出來。整份 tooltip 只有這一行時，
-        // 「置中」與「縮排 N 像素的靠左」畫出來一模一樣，沒得比就不要動。
         if (blockWidth - (lead[at] + content[at]) <= TOLERANCE) {
             return false;
         }
@@ -227,12 +130,6 @@ public final class BlockLayout {
         return Math.abs(lead[at] - room / 2) <= allowed;
     }
 
-    /**
-     * 這一段的每一行，前導偏移是不是都吻合置中的算式。
-     *
-     * <p>只有一行、或每行都一樣寬時，「置中」與「靠左」畫出來沒有差別，
-     * 一律當靠左——不動它最安全。
-     */
     private static boolean isCentredBlock(int[] lead, int[] content, int start, int end,
                                           int blockWidth) {
         if (end - start < 2) {
@@ -245,30 +142,10 @@ public final class BlockLayout {
         for (int i = start; i < end; i++) {
             minLead = Math.min(minLead, lead[i]);
             maxLead = Math.max(maxLead, lead[i]);
-            // 置中的行，左右留白一樣寬，所以「本行內容 + 兩側留白」就是整塊的寬度。
-            // 每一行算出來的這個值都該相同。
             int span = content[i] + lead[i] * 2;
             minSpan = Math.min(minSpan, span);
             maxSpan = Math.max(maxSpan, span);
         }
-        // 縮排<b>與內容寬度</b>都沒變化的話，這一塊「置中」與「靠左」畫出來
-        // 一模一樣，當靠左最安全。
-        //
-        // 只看縮排不夠：置中的行，縮排差<b>是內容差的一半</b>，所以兩行內容只
-        // 差 9px 時縮排才差 4px——落進容差裡就被當成「沒變化」。洞穴完成那塊
-        // 的標題兩行就是這樣被判成靠左的：
-        //
-        // <pre>
-        //   縮排 92  內容 85   [Cave Completed]
-        //   縮排 96  內容 76   Grook's Nest
-        // </pre>
-        //
-        // 兩行的 span（內容 + 兩側留白）是 269 與 268——置中得不能再置中。
-        //
-        // 放寬不會放進誤判：縮排相同時 span 差就等於內容差，所以底下那道
-        // span 一致性檢查照樣擋得住靠左的清單。
-        // 一行縮排都沒有的話一律靠左：置中的行左邊一定留白，除非它自己就是
-        // 最寬的那行，而那種時候置中與靠左畫出來也一樣。
         if (maxSpan <= 0 || maxLead <= TOLERANCE) {
             return false;
         }
@@ -281,13 +158,6 @@ public final class BlockLayout {
         if (maxLead - minLead <= TOLERANCE && maxContent - minContent <= TOLERANCE) {
             return false;
         }
-        // 縮排不同、<b>右緣卻對齊</b>的是表格，不是置中。
-        //
-        // 置中的行右邊留白等於左邊，縮排多 d 像素，右緣就往內縮 d 像素。
-        // 裝備的屬性表剛好相反：數值靠右排到同一條線，只有帶圖示的那幾列
-        // 開頭多幾像素的偏移。每一列都幾乎撐滿整塊，span 落在 15% 的容差裡，
-        // 先前整塊被判成置中——簡中的 Divzer「灵巧」「法力偷取」「攻击速度」
-        // 就這樣被擺到原文標籤那一格的正中間。
         int minRight = Integer.MAX_VALUE;
         int maxRight = Integer.MIN_VALUE;
         for (int i = start; i < end; i++) {
@@ -297,12 +167,6 @@ public final class BlockLayout {
         if (maxLead - minLead > TOLERANCE && maxRight - minRight <= TOLERANCE) {
             return false;
         }
-        // 越長的行縮排越小——這是置中的定義，而且它<b>不受量測誤差影響</b>：
-        // 就算整塊的寬度都量偏了，長短的順序還是對的。
-        //
-        // 這條很重要。未鑑定物品那三行有兩行用 Wynncraft 自己的字型
-        // （language/wynncraft），量出來跟預設字型差得夠多，光比像素會對不上，
-        // 但長的行縮排小、短的行縮排大這件事永遠成立。
         for (int i = start; i < end; i++) {
             for (int j = i + 1; j < end; j++) {
                 if (contradicts(lead, content, i, j) || contradicts(lead, content, j, i)) {
@@ -310,33 +174,6 @@ public final class BlockLayout {
                 }
             }
         }
-        // 縮排<b>一模一樣</b>、內容卻不一樣寬的兩行，不可能是置中的。
-        //
-        // 置中的行，縮排是<b>算出來</b>的：內容差 d 像素，縮排就差 d/2。
-        // 兩行縮排完全相同，只可能是因為它們一樣寬。靠左的清單反過來——
-        // 縮排是版面給的固定值，內容多長都不影響它。
-        //
-        // <h2>實機回報</h2>
-        // 釣魚迷你任務那張卡（診斷檔「27 · Gather Koi I [Mini-Quest]」）：
-        //
-        // <pre>
-        //   [3] 縮排  0  內容 101  ✖ Fishing Lv. Min: 61
-        //   [4] 縮排 14  內容  80  {#}Distance: Medium
-        //   [5] 縮排 14  內容  68  {#}Length: Short
-        //   [6] 縮排 14  內容  75  {#}Difficulty: Easy
-        //   整份最寬 122
-        // </pre>
-        //
-        // span 是 101／108／96／103，差 12 像素，容差是 16——每一道檢查都過了，
-        // 四行全被判成置中，於是「距離／長度／難度」各自照自己的寬度重新置中，
-        // 畫面上飄到卡片正中間。
-        //
-        // 同樣形狀的卡片只要 Distance 那行多了「(824 Blocks)」，span 就差到
-        // 78 像素，容差擋得住——所以這個誤判只在<b>窄的卡片</b>上發生，
-        // 玩家回報的是「少部分頁面歪掉」。
-        //
-        // 這一條不受量測誤差影響：比的是排版偏移字元解出來的<b>整數</b>，
-        // 兩邊都來自同一串 {@code {#}}，不經過字型。
         for (int i = start; i < end; i++) {
             for (int j = i + 1; j < end; j++) {
                 if (lead[i] == lead[j] && Math.abs(content[i] - content[j]) > TOLERANCE) {
@@ -344,64 +181,21 @@ public final class BlockLayout {
                 }
             }
         }
-        // 像素上的容差用<b>比例</b>而不是固定值：量測誤差會隨字型與行長放大，
-        // 固定幾像素在長行上太嚴，在短行上又太鬆。
         int allowed = Math.max(TOLERANCE * 2, maxSpan * SPAN_TOLERANCE_PERCENT / 100);
         if (maxSpan - minSpan > allowed) {
             return false;
         }
-        // span 就是這一段<b>自以為</b>的容器有多寬。它比整塊<b>窄</b>的話，
-        // 這一段不可能是置中的——沒有人會在 158px 的 tooltip 裡，
-        // 對著一個 72px 的假想容器置中。
-        //
-        // <h2>迷你任務的獎勵欄</h2>
-        // 只有一項獎勵的迷你任務，獎勵那一段就只有兩行：
-        //
-        // <pre>
-        //   縮排 14  內容 44   Rewards:
-        //   縮排  4  內容 62   - +32400 XP
-        // </pre>
-        //
-        // span 是 72 與 70，差 2 像素——「吻合得不能再吻合」。但那是
-        // <b>巧合</b>：整塊有 158px 寬，這兩行只是靠左的清單，縮排差 10px
-        // 純粹因為項目符號比標題往左凸一格。先前這一段被判成置中，
-        // 中文變短之後縮排跟著加大，獎勵那兩行就整個往右飄。
-        //
-        // 反過來 span <b>大於</b>整塊是正常的：聊天的歡迎訊息是相對
-        // <b>聊天視窗</b>置中的（span 309、最長的一行只有 252），
-        // 那種一律放行。
         return maxSpan >= blockWidth - allowed;
     }
 
-    /**
-     * {@code a} 明顯比 {@code b} 長，縮排卻也明顯比較大——置中不可能長這樣。
-     *
-     * <p>兩邊都要求「明顯」，是因為量測本來就有誤差：差幾像素的兩行誰長誰短
-     * 說不準，拿它當否決條件會把真正置中的區塊擋掉。要否決就得是那種
-     * 一看就知道不對的差距。
-     */
     private static boolean contradicts(int[] lead, int[] content, int a, int b) {
         return content[a] - content[b] > RANK_SLACK && lead[a] - lead[b] > RANK_SLACK;
     }
 
-    /** 見 {@link #contradicts}。約三個字元寬。 */
     private static final int RANK_SLACK = TOLERANCE * 3;
 
-    /** 見 {@link #isCentredBlock}。整塊寬度的百分之幾以內都算吻合。 */
     private static final int SPAN_TOLERANCE_PERCENT = 15;
 
-    /**
-     * 這一行是不是段落分隔。
-     *
-     * <h2>為什麼不能只看 {@code isBlank}</h2>
-     * tooltip 的分隔不一定是空行——很多是<b>由排版字元組成的分隔線</b>
-     * （{@code ◇} 那種、或純粹的寬度偏移）。那些行 {@code isBlank()} 是 false，
-     * 於是整份 tooltip 被當成<b>同一段</b>：未鑑定物品那三行置中的說明，
-     * 跟上面的物品名稱、稀有度擠在一起判斷，當然對不上置中的算式，
-     * 整段就被判成靠左，一行都沒有被調整。
-     *
-     * <p>改成看「有沒有可讀的字」。剝掉符號之後什麼都不剩的，就是分隔線。
-     */
     private static boolean isSeparator(Component line) {
         String text = line.getString();
         for (int i = 0; i < text.length(); ) {
@@ -414,11 +208,6 @@ public final class BlockLayout {
         return true;
     }
 
-    /**
-     * 這一行開頭那段排版偏移有多寬。
-     *
-     * <p>只看<b>第一段</b>：後面的偏移是欄位對齊，跟縮排無關。
-     */
     private static int leadingOffset(Component line) {
         int[] px = {0};
         boolean[] done = {false};
@@ -429,20 +218,13 @@ public final class BlockLayout {
             if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
                 px[0] += SpaceOffset.decode(text);
             } else {
-                done[0] = true;                // 碰到實際內容就停
+                done[0] = true;
             }
             return Optional.empty();
         }, Style.EMPTY);
         return px[0];
     }
 
-    /**
-     * 跟翻譯那邊走同一個入口（{@link LineTranslator#width}），測試的假字型才量得到。
-     *
-     * <p>先前自己問 {@code Minecraft.getInstance()}，headless 一律是 0——
-     * 從 {@code TooltipPanel.translateLines} 一路跑下來的測試，置中判斷永遠是
-     * 「全部靠左」，重排過的置中段落怎麼歪都測不出來。
-     */
     private static int measure(Component line) {
         return LineTranslator.width(line);
     }

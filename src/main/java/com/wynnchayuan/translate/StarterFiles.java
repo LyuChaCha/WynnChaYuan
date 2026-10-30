@@ -9,62 +9,32 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
-/**
- * 首次啟動時把內建的翻譯工作檔倒進 config 目錄。
- *
- * <h2>為什麼要內建</h2>
- * 沒有這一步，玩家裝好 mod 只會看到一個空資料夾和「資料夾裡沒有 .json 檔案」，
- * 完全不知道該放什麼、格式長什麼樣。內建之後裝好就有東西可以翻，
- * 也等於附上了格式範例。
- *
- * <p>檔案來自 {@code corpus/} 的離線語料（裝備、技能、材料…）加上一份手寫的
- * 介面標籤。{@code dst} 全部留空，等人填。
- *
- * <h2>只在資料夾是空的時候寫入</h2>
- * 已經有譯文檔就不碰——否則每次啟動都會蓋掉玩家翻好的內容。
- * 想拿回原始檔就把資料夾清空再啟動一次。
- *
- * <h2>倒到一半被關掉</h2>
- * 第一次啟動要倒出四十幾個檔、二十幾 MB，比平常久得多——實際上就有玩家以為當掉了
- * 而把遊戲關掉。先前那樣關掉之後，資料夾裡已經「有 .json」，於是永遠不會再補：
- * 缺的檔一直缺，寫到一半的那個檔一直是半截。
- *
- * <p>現在每個檔先寫暫存檔再換上去（不會有半截），而清單 {@code _index.json} 排在
- * <b>最後</b>寫：有譯文檔卻沒有清單，就代表上次沒倒完，把缺的補上——已經在的一個都不蓋。
- */
 public final class StarterFiles {
 
     private static final String INDEX = "_index.json";
 
-    /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
     private static List<String> bundled(String lang) {
         List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
-        names.addAll(FileIndex.SCOPED);          // 不在清單裡，見 FileIndex#SCOPED
-        names.add(INDEX);                      // 清單本身也要放出去，使用者才能自己加檔案；排最後，見類別說明
+        names.addAll(FileIndex.SCOPED);
+        names.add(INDEX);
         return names;
     }
 
     private StarterFiles() {}
 
-    /**
-     * @return 實際寫出的檔案數；資料夾已有內容時回傳 0
-     */
     public static int installIfEmpty(Path dir) {
         return installIfEmpty(dir, Languages.DEFAULT);
     }
 
-    /**
-     * @param lang 要倒出哪一種語言的工作檔
-     */
     public static int installIfEmpty(Path dir, String lang) {
         boolean resume = false;
         try {
             Files.createDirectories(dir);
             if (hasTranslations(dir)) {
                 if (Files.isRegularFile(dir.resolve(INDEX))) {
-                    return 0;                  // 已有內容，不覆蓋
+                    return 0;
                 }
-                resume = true;                 // 上次沒倒完，見類別說明
+                resume = true;
             }
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 無法準備譯文資料夾 " + dir + ": " + e.getMessage());
@@ -75,7 +45,7 @@ public final class StarterFiles {
         for (String name : bundled(lang)) {
             Path out = dir.resolve(name);
             if (resume && Files.exists(out)) {
-                continue;                      // 已經在的不蓋——可能是玩家翻過的
+                continue;
             }
             try (InputStream in = StarterFiles.class.getResourceAsStream(
                     Languages.resource(lang) + name)) {
@@ -95,21 +65,6 @@ public final class StarterFiles {
         return written;
     }
 
-    /**
-     * 補上<b>缺少的</b> scoped 檔（見 {@link FileIndex#SCOPED}）。
-     *
-     * <h2>為什麼不能只靠 installIfEmpty</h2>
-     * 那個方法看到資料夾裡已經有譯文就整個跳過，而升級上來的人資料夾一定不是空的。
-     * scoped 的檔刻意不列進 {@code _index.json}，同步時抓不到（遠端還沒有就是 404），
-     * 於是新加的 scoped 檔<b>永遠</b>不會出現在他們的快取裡。
-     *
-     * <p>實機回報：boss bar 右邊的 Weak／Dam／Def 沒翻，同步紀錄寫著「3 個檔案失敗」
-     * ——就是這三個 scoped 檔。
-     *
-     * <p>只補<b>不存在</b>的，已經在的一個都不蓋：那可能是使用者自己改過的。
-     *
-     * @return 補了幾個
-     */
     public static int installMissingScoped(Path dir, String lang) {
         int written = 0;
         for (String name : FileIndex.SCOPED) {
@@ -127,14 +82,6 @@ public final class StarterFiles {
         return written;
     }
 
-    /**
-     * 從 jar 補回一個檔，蓋掉原本那份。
-     *
-     * <p>給讀不懂的快取檔用（見 {@link TranslationCache#loadRepairing}）：半截的檔
-     * 已經改名放旁邊了，這裡把內建的那份放回去，那個檔的譯文才不會整片消失。
-     *
-     * @return 有沒有補回來；jar 裡沒有這個檔時回傳 {@code false}
-     */
     public static boolean restore(Path dir, String lang, String name) {
         if (!FileIndex.safeName(name)) {
             return false;
@@ -153,14 +100,12 @@ public final class StarterFiles {
     }
 
     private static void copyAtomically(InputStream in, Path out) throws IOException {
-        // 清單裡的名字可能帶資料夾（`ability/mage.json`），先把它建出來
         Files.createDirectories(out.toAbsolutePath().getParent());
         Path tmp = out.resolveSibling(out.getFileName() + ".tmp");
         Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
         SafeFiles.moveAtomically(tmp, out);
     }
 
-    /** 有沒有譯文檔。底線開頭的（清單、快取記錄）不算——只有那些的資料夾等於是空的。 */
     private static boolean hasTranslations(Path dir) throws IOException {
         try (var files = Files.list(dir)) {
             return files.map(p -> p.getFileName().toString())
