@@ -152,12 +152,12 @@ public final class ChatReflowTest {
 
     private static void rewardIndent() {
         Style space = SpaceOffset.styleFor(Style.EMPTY);
-        java.util.List<LineTranslator.Run> orig = java.util.List.of(
-                new LineTranslator.Run(true, 50, space, SpaceOffset.encode(50)),
-                new LineTranslator.Run(false, 0, Style.EMPTY, "- +1 Ragni Teleportation Scroll"));
-        java.util.List<LineTranslator.Run> made = java.util.List.of(
-                new LineTranslator.Run(true, 50, space, SpaceOffset.encode(50)),
-                new LineTranslator.Run(false, 0, Style.EMPTY, "- +1 張 Ragni Teleportation Scroll"));
+        java.util.List<SpaceRuns.Run> orig = java.util.List.of(
+                new SpaceRuns.Run(true, 50, space, SpaceOffset.encode(50)),
+                new SpaceRuns.Run(false, 0, Style.EMPTY, "- +1 Ragni Teleportation Scroll"));
+        java.util.List<SpaceRuns.Run> made = java.util.List.of(
+                new SpaceRuns.Run(true, 50, space, SpaceOffset.encode(50)),
+                new SpaceRuns.Run(false, 0, Style.EMPTY, "- +1 張 Ragni Teleportation Scroll"));
         int kept = LineTranslator.fitWidth(orig, made, 10, new int[0], 320);
         check("單欄的行：視窗放得下就不收縮排（補=" + kept + "）", kept == 10);
         int tight = LineTranslator.fitWidth(orig, made, 10, new int[0], 0);
@@ -165,12 +165,12 @@ public final class ChatReflowTest {
 
         String[] rows = {"Rewards:", "- +Access to the Province of Wynn",
                          "- +1 Ragni Teleportation Scroll", "- +35 Experience Points", "- +6 Emeralds"};
-        java.util.List<java.util.List<LineTranslator.Run>> list = new java.util.ArrayList<>();
+        java.util.List<java.util.List<SpaceRuns.Run>> list = new java.util.ArrayList<>();
         boolean[] centre = new boolean[rows.length];
         for (int i = 0; i < rows.length; i++) {
             list.add(java.util.List.of(
-                    new LineTranslator.Run(true, 50, space, SpaceOffset.encode(50)),
-                    new LineTranslator.Run(false, 0, Style.EMPTY, rows[i])));
+                    new SpaceRuns.Run(true, 50, space, SpaceOffset.encode(50)),
+                    new SpaceRuns.Run(false, 0, Style.EMPTY, rows[i])));
             centre[i] = i == 2;
         }
         LineTranslator.sameLeadList(list, centre);
