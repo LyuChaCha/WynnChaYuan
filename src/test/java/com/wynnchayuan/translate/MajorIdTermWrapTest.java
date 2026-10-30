@@ -62,6 +62,8 @@ public final class MajorIdTermWrapTest {
 
     private static final Pattern WORD = Pattern.compile("[A-Za-z][A-Za-z'-]+");
 
+    private static final Pattern NESTED = Pattern.compile("\\([^()]*\\([^()]*\\)\\)");
+
     /**
      * 已知會失敗、而且原因不在程式的說明，以語料的鍵列出，每一條寫明原因。空的最好。
      */
@@ -88,6 +90,13 @@ public final class MajorIdTermWrapTest {
         reported(store, entries);
         gearNamesAreNotTheCause(store);
         corpus(store, entries);
+        say("-- 技能名稱附原文開著 --");
+        store.setAbilityNamesWithOriginal(true);
+        try {
+            corpus(store, entries);
+        } finally {
+            store.setAbilityNamesWithOriginal(false);
+        }
 
         say(failures == 0 ? "MajorIdTermWrap: 全部通過" : "MajorIdTermWrap: " + failures + " 項失敗");
         out.close();
@@ -232,6 +241,10 @@ public final class MajorIdTermWrapTest {
                     List<String> rows = MajorIdWrapTest.wrap(name, sample);
                     List<String> shown = descRows(render(store, name, rows, indent, measure));
                     List<String> problems = rowProblems(shown, store);
+                    Matcher nested = NESTED.matcher(String.join(" ", shown));
+                    if (nested.find()) {
+                        problems.add("括號裡又換了一次「" + nested.group() + "」");
+                    }
                     // 逐行換出來剩下的英文，不能比「整句一次換」剩下的多——多出來的就是
                     // 被折行拆壞、換不掉的名稱。
                     Set<String> expected = words(swapWhole(dst, store));
