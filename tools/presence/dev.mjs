@@ -41,8 +41,36 @@ const env = { CORPUS: kv, DISCORD_CLIENT_ID: 'dev', DISCORD_CLIENT_SECRET: 'dev'
 // 協作翻譯的語料索引：攔下 Worker 去 translate-index 分支讀的那一次，改從本機產生
 const realFetch = globalThis.fetch;
 let indexDir = null;
+const creditsFile = path.join(root, 'src/main/resources/assets/wynnchayuan/credits.json');
+function demoCredits() {
+  const doc = JSON.parse(fs.readFileSync(creditsFile, 'utf8'));
+  if (!process.env.DEMO_TEAMS) return doc;
+  const demo = [
+    ['Steve', ['zh_tw'], ['translation', 'proofreading']], ['Alex', ['ja_jp', 'zh_tw'], ['translation']],
+    ['Sakura_Demo', ['ja_jp'], ['translation', 'testing']], ['MinJun_Demo', ['ko_kr'], ['translation']],
+    ['Ivan_Demo', ['ru_ru'], ['translation', 'proofreading']], ['Lucia_Demo', ['es_es'], ['proofreading']],
+    ['Emre_Demo', ['tr_tr'], ['translation', 'capture']], ['Xiao_Demo', ['zh_cn'], ['translation', 'community']],
+    ['Tester_Demo', [], ['capture', 'testing']], ['Plain_Demo', [], []]];
+  for (const section of doc.sections) {
+    if (section.key.endsWith('.developers')) {
+      section.members.forEach((member) => Object.assign(member, { teams: ['zh_tw'], areas: ['code', 'website', 'translation'] }));
+    }
+    if (section.key.endsWith('.contributors')) {
+      section.members = demo.map(([mc, teams, areas]) => {
+        const member = { name: mc, mc };
+        if (teams.length) member.teams = teams;
+        if (areas.length) member.areas = areas;
+        return member;
+      });
+    }
+  }
+  return doc;
+}
 globalThis.fetch = async (url, init) => {
   const u = String(typeof url === 'string' ? url : url.url);
+  if (u.endsWith('/main/src/main/resources/assets/wynnchayuan/credits.json')) {
+    return new Response(JSON.stringify(demoCredits()), { status: 200 });
+  }
   const m = /\/translate-index\/([a-z_]+\.json)$/.exec(u);
   if (!m) return realFetch(url, init);
   if (!indexDir) {
@@ -174,7 +202,8 @@ http.createServer(async (req, res) => {
     const [uuid, name] = as === 'user' ? ['b'.repeat(32), 'Steve']
       : as === 'staff' ? ['c'.repeat(32), 'Alex'] : ['a'.repeat(32), developer];
     const token = await issueWebToken(env, uuid, name, Date.now());
-    res.writeHead(302, { location: '/account#t=' + token });
+    const to = /^\/[a-z]*$/.test(url.searchParams.get('to') || '') ? url.searchParams.get('to') : '/account';
+    res.writeHead(302, { location: to + '#t=' + token });
     res.end();
     return;
   }
