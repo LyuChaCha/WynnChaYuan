@@ -6,6 +6,10 @@ import java.util.List;
 public final class FirstRunView extends Surface {
 
     public interface Host {
+        boolean askNotice();
+
+        void noticeRead();
+
         boolean askConsent();
 
         boolean askSetup();
@@ -29,7 +33,7 @@ public final class FirstRunView extends Surface {
         void finish();
     }
 
-    public enum Step { CONSENT, SETUP, CUSTOM }
+    public enum Step { NOTICE, CONSENT, SETUP, CUSTOM }
 
     private static final String[] FEATURES = {
         "firstrun.privacy.update", "firstrun.privacy.sync", "firstrun.privacy.checkin",
@@ -42,7 +46,7 @@ public final class FirstRunView extends Surface {
 
     private final Shell shell;
     private final Host host;
-    private final int steps;
+    private final List<Step> flow = new ArrayList<>();
     private Step step;
     private List<Row.Tab> tabs;
     private int category;
@@ -57,8 +61,29 @@ public final class FirstRunView extends Surface {
     public FirstRunView(Shell shell, Host host) {
         this.shell = shell;
         this.host = host;
-        this.steps = (host.askConsent() ? 1 : 0) + (host.askSetup() ? 1 : 0);
-        this.step = host.askConsent() ? Step.CONSENT : Step.SETUP;
+        if (host.askNotice()) {
+            flow.add(Step.NOTICE);
+        }
+        if (host.askConsent()) {
+            flow.add(Step.CONSENT);
+        }
+        if (host.askSetup() || flow.isEmpty()) {
+            flow.add(Step.SETUP);
+        }
+        this.step = flow.get(0);
+    }
+
+    private int stepIndex() {
+        return Math.max(0, flow.indexOf(step == Step.CUSTOM ? Step.SETUP : step));
+    }
+
+    private void advance() {
+        int next = stepIndex() + 1;
+        if (next < flow.size()) {
+            go(flow.get(next));
+        } else {
+            host.finish();
+        }
     }
 
     public Step step() {
@@ -130,11 +155,7 @@ public final class FirstRunView extends Surface {
         } else {
             host.disagree();
         }
-        if (host.askSetup()) {
-            go(Step.SETUP);
-        } else {
-            host.finish();
-        }
+        advance();
     }
 
     private List<Row.Tab> tabs() {
@@ -181,14 +202,14 @@ public final class FirstRunView extends Surface {
             }
             return out;
         }
-        int number = 1;
-        if (host.askConsent()) {
-            out.add(new Nav(Icons.Icon.LEAF, shell.tr("firstrun.privacy.short"),
-                    String.valueOf(number++), step != Step.CONSENT));
-        }
-        if (host.askSetup()) {
-            out.add(new Nav(Icons.Icon.BOOK, shell.tr("firstrun.setup.title"),
-                    String.valueOf(number), false));
+        int at = stepIndex();
+        for (int i = 0; i < flow.size(); i++) {
+            Step s = flow.get(i);
+            Icons.Icon icon = s == Step.NOTICE ? Icons.Icon.QUEST
+                    : s == Step.CONSENT ? Icons.Icon.LEAF : Icons.Icon.BOOK;
+            String name = shell.tr(s == Step.NOTICE ? "notice.title"
+                    : s == Step.CONSENT ? "firstrun.privacy.short" : "firstrun.setup.title");
+            out.add(new Nav(icon, name, String.valueOf(i + 1), i < at));
         }
         return out;
     }
@@ -197,7 +218,7 @@ public final class FirstRunView extends Surface {
         if (step == Step.CUSTOM) {
             return category;
         }
-        return step == Step.CONSENT || !host.askConsent() ? 0 : 1;
+        return stepIndex();
     }
 
     private void rail() {
@@ -303,11 +324,12 @@ public final class FirstRunView extends Surface {
             title = t == null ? shell.tr("firstrun.custom.title") : t.name().get();
             about = t == null ? "" : t.about().get();
         } else {
-            title = shell.tr(step == Step.CONSENT ? "firstrun.privacy.title" : "firstrun.setup.title");
+            title = shell.tr(step == Step.NOTICE ? "notice.title"
+                    : step == Step.CONSENT ? "firstrun.privacy.title" : "firstrun.setup.title");
             about = shell.tr("firstrun.title");
         }
         String count = step == Step.CUSTOM ? shell.tr("firstrun.custom.title")
-                : (steps > 1 ? (step == Step.CONSENT ? 1 : 2) + " / " + steps : "");
+                : (flow.size() > 1 ? (stepIndex() + 1) + " / " + flow.size() : "");
         float countW = 0;
         if (!count.isEmpty()) {
             float cw = c.width(count) + 12;
@@ -336,7 +358,14 @@ public final class FirstRunView extends Surface {
         c.fill(winX + railW, y, winX + winW - 1, y + c.px(), Ui.LINE);
         float h = 18;
         float by = y + (SettingsView.FOOT_H - h) / 2f;
-        if (step == Step.CONSENT) {
+        if (step == Step.NOTICE) {
+            String ok = shell.tr("notice.ok");
+            float ow = Math.max(64, c.width(ok) + 28);
+            button("noticeok", right - ow, by, ow, h, ok, true, true, null, () -> {
+                host.noticeRead();
+                advance();
+            });
+        } else if (step == Step.CONSENT) {
             String yes = shell.tr("firstrun.agree");
             String no = shell.tr("firstrun.disagree");
             float yw = Math.max(64, c.width(yes) + 28);
@@ -370,6 +399,7 @@ public final class FirstRunView extends Surface {
         float w = winX + winW - 12 - left;
         float inner = w - 6;
         float contentH = switch (step) {
+            case NOTICE -> noticeHeight(inner);
             case CONSENT -> consentHeight(inner);
             case SETUP -> setupHeight(inner);
             case CUSTOM -> customHeight(inner);
@@ -383,6 +413,7 @@ public final class FirstRunView extends Surface {
         clip(left, top, left + w, bottom);
         float cy = top - scroll + (1f - bodyT) * 7f;
         switch (step) {
+            case NOTICE -> notice(left, cy, inner);
             case CONSENT -> consent(left, cy, inner);
             case SETUP -> setup(left, cy, inner);
             case CUSTOM -> custom(left, cy, inner);
@@ -410,6 +441,62 @@ public final class FirstRunView extends Surface {
 
     private float paragraphHeight(String text, float width) {
         return Ui.wrap(c, text, (int) width).size() * LINE;
+    }
+
+    private static final String[] NOTICE_LINES = {"notice.line1", "notice.line2", "notice.line3"};
+    private static final String[] NOTICE_ENGLISH = {"notice.en1", "notice.en2", "notice.en3"};
+
+    private boolean noticeEnglish() {
+        return !shell.tr("notice.line1").equals(shell.tr("notice.en1"));
+    }
+
+    private String joined(String[] keys) {
+        StringBuilder out = new StringBuilder();
+        for (String key : keys) {
+            String part = shell.tr(key).strip();
+            if (out.length() > 0 && !part.isEmpty()) {
+                int last = out.codePointBefore(out.length());
+                if (last < 0x2E80) {
+                    out.append(' ');
+                }
+            }
+            out.append(part);
+        }
+        return out.toString();
+    }
+
+    private float noticeWidth(float inner, boolean icon) {
+        return Math.min(inner - (icon ? 34 : 18), 380);
+    }
+
+    private float noticeCardHeight(String[] keys, float inner, boolean icon) {
+        return 10 + paragraphHeight(joined(keys), noticeWidth(inner, icon)) + 8;
+    }
+
+    private float noticeHeight(float inner) {
+        float h = noticeCardHeight(NOTICE_LINES, inner, true);
+        if (noticeEnglish()) {
+            h += 6 + noticeCardHeight(NOTICE_ENGLISH, inner, false);
+        }
+        return h;
+    }
+
+    private float noticeCard(String[] keys, float left, float y, float inner, int ink,
+                             boolean icon) {
+        float ch = noticeCardHeight(keys, inner, icon);
+        Ui.pane(c, left, y, inner, ch, Ui.R2, Ui.CARD, icon ? Ui.alpha(Ui.GOLD, 0x66) : Ui.LINE);
+        if (icon) {
+            c.icon(Icons.Icon.QUEST, left + 9, y + 9, 11, Ui.GOLD);
+        }
+        paragraph(joined(keys), left + (icon ? 25 : 9), y + 10, noticeWidth(inner, icon), ink);
+        return y + ch;
+    }
+
+    private void notice(float left, float y, float inner) {
+        y = noticeCard(NOTICE_LINES, left, y, inner, Ui.TEXT, true);
+        if (noticeEnglish()) {
+            noticeCard(NOTICE_ENGLISH, left, y + 6, inner, Ui.TEXT_3, false);
+        }
     }
 
     private float featureHeight(String key, float inner) {
