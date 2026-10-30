@@ -48,7 +48,7 @@ final class DialogueForecast {
     }
 
     static void forgetAll() {
-        DialogueRewriter.FORECAST.forget();
+        DialogueTyping.FORECAST.forget();
         DialogueOverlay.FORECAST.forget();
     }
 
@@ -87,18 +87,18 @@ final class DialogueForecast {
         String guess = null;
         if (midway && nextLine) {
             guess = store.forecastNext(typed, where, index, NEXT_WINDOW, speaker, nextFloor,
-                    DialogueRewriter::within);
+                    DialogueTyping::within);
         }
         if (guess == null && speaker != null) {
             guess = store.forecast(typed, where, fresh ? index : -1, WINDOW, speaker,
-                    fresh ? 1 : COLD_FLOOR, DialogueRewriter::within);
+                    fresh ? 1 : COLD_FLOOR, DialogueTyping::within);
         }
         if (guess == null && fresh && !quest.equals(tracked)) {
             guess = store.matchPrefix(typed, 0, quest);
         }
         if (guess == null && speaker != null && speakerScope) {
             guess = store.forecastBySpeaker(typed, where, speaker, speakerFloor,
-                    DialogueRewriter::within);
+                    DialogueTyping::within);
         }
         asked = ask;
         answer = guess;

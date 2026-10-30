@@ -46,7 +46,7 @@ public final class DialogueInlineIconTest {
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
-        DialogueRewriter.widthForTest = DialogueInlineIconTest::realWidth;
+        DialogueLayout.widthForTest = DialogueInlineIconTest::realWidth;
         setConfig(new CollectorConfig(Files.createTempDirectory("wynnchayuan-icon")
                 .resolve("config.json")));
 
@@ -185,7 +185,7 @@ public final class DialogueInlineIconTest {
     }
 
     private static void replaceWhole(TranslationStore store) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         Component frame = message(length(rows()));
         Component out = null;
@@ -222,7 +222,7 @@ public final class DialogueInlineIconTest {
     }
 
     private static void replaceTyping(TranslationStore store) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         int total = length(rows());
         boolean shown = false;
@@ -337,7 +337,7 @@ public final class DialogueInlineIconTest {
         TranslationStore old = store("\"" + LEGACY + "\": \"元素有火、風、水、地、雷。\"");
         check("舊格式的鍵退回舊模板",
                 LEGACY.equals(DialogueIcons.parts(WYNNTILS, old).template()));
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         Component out = null;
         for (int again = 0; again < 12; again++) {
@@ -388,7 +388,7 @@ public final class DialogueInlineIconTest {
 
     private static void markersReplace() throws Exception {
         TranslationStore store = sapStore();
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         Component frame = message(sapRows(), length(sapRows()));
         Component out = null;
@@ -414,7 +414,7 @@ public final class DialogueInlineIconTest {
 
     private static void markersReplaceTyping() throws Exception {
         TranslationStore store = sapStore();
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         int total = length(sapRows());
         boolean shown = false;
@@ -537,7 +537,7 @@ public final class DialogueInlineIconTest {
         String src = "Hello there, traveller.";
         TranslationStore store = store(json(src) + ": "
                 + json("{c9}你好{/}，{c:nosuchcolour}旅人{/}{/}。"));
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         List<List<Seg>> rows = List.of(List.of(new Seg(src, body(0).withColor(BODY))));
         Component out = null;
