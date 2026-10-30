@@ -92,19 +92,19 @@ public final class ChatColumnTest {
     private static void numbers() {
         check("第一欄不動（偏移 0）",
               "經過時間：{~1}:{~2}".equals(
-                      LineTranslator.renumber("經過時間：{~1}:{~2}", 0)));
+                      ColumnTemplates.renumber("經過時間：{~1}:{~2}", 0)));
         check("指名的往後推",
               "經過時間：{~2}:{~3}".equals(
-                      LineTranslator.renumber("經過時間：{~1}:{~2}", 1)));
+                      ColumnTemplates.renumber("經過時間：{~1}:{~2}", 1)));
         check("沒編號的也改寫成指名",
-              "共 {~3} 場".equals(LineTranslator.renumber("共 {~} 場", 2)));
+              "共 {~3} 場".equals(ColumnTemplates.renumber("共 {~} 場", 2)));
         check("混用時忠實保留原本的語意",
               "{~3} / {~4} 共 {~3}".equals(
-                      LineTranslator.renumber("{~1} / {~2} 共 {~}", 2)));
+                      ColumnTemplates.renumber("{~1} / {~2} 共 {~}", 2)));
         check("沒有數值的譯文原樣回傳",
-              "獎勵抽數".equals(LineTranslator.renumber("獎勵抽數", 3)));
+              "獎勵抽數".equals(ColumnTemplates.renumber("獎勵抽數", 3)));
         check("超過一位數就回傳 null",
-              LineTranslator.renumber("{~2}", 8) == null);
+              ColumnTemplates.renumber("{~2}", 8) == null);
     }
 
     private static void colours() throws Exception {

@@ -207,7 +207,7 @@ final class ColourTemplate {
     private static final int WORD_SLOT = 100;
 
     static Style colourOf(Token token, List<Style> palette,
-                                  List<Style> words, Style base) {
+                          List<Style> words, Style base) {
         if (token.index() == 0) {
             return null;
         }

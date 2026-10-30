@@ -21,7 +21,7 @@ public final class ChatReflowTest {
                     w[0] += SpaceOffset.decode(text);
                 } else {
                     text.codePoints().forEach(cp ->
-                            w[0] += LineTranslator.isCjkBreakable(cp) || cp > 0x2FFF ? 9 : 6);
+                            w[0] += ChatRealigner.isCjkBreakable(cp) || cp > 0x2FFF ? 9 : 6);
                 }
                 return java.util.Optional.empty();
             }, Style.EMPTY);
@@ -158,9 +158,9 @@ public final class ChatReflowTest {
         java.util.List<SpaceRuns.Run> made = java.util.List.of(
                 new SpaceRuns.Run(true, 50, space, SpaceOffset.encode(50)),
                 new SpaceRuns.Run(false, 0, Style.EMPTY, "- +1 張 Ragni Teleportation Scroll"));
-        int kept = LineTranslator.fitWidth(orig, made, 10, new int[0], 320);
+        int kept = ChatRealigner.fitWidth(orig, made, 10, new int[0], 320);
         check("單欄的行：視窗放得下就不收縮排（補=" + kept + "）", kept == 10);
-        int tight = LineTranslator.fitWidth(orig, made, 10, new int[0], 0);
+        int tight = ChatRealigner.fitWidth(orig, made, 10, new int[0], 0);
         check("不知道視窗多寬時照舊收回（補=" + tight + "）", tight < 10);
 
         String[] rows = {"Rewards:", "- +Access to the Province of Wynn",
@@ -173,7 +173,7 @@ public final class ChatReflowTest {
                     new SpaceRuns.Run(false, 0, Style.EMPTY, rows[i])));
             centre[i] = i == 2;
         }
-        LineTranslator.sameLeadList(list, centre);
+        ChatRealigner.sameLeadList(list, centre);
         boolean none = true;
         for (boolean c : centre) {
             none &= !c;
