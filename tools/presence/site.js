@@ -4470,8 +4470,15 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var button = this;
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
-    api('/me/delete', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
-      if (!r.ok) throw new Error('delete');
+    var erase = function (attempt) {
+      return api('/me/delete', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
+        if (r.status === 202 && attempt < 30) {
+          return new Promise(function (resolve) { setTimeout(resolve, 1000); }).then(function () { return erase(attempt + 1); });
+        }
+        if (r.status !== 200) throw new Error('delete');
+      });
+    };
+    erase(0).then(function () {
       try { localStorage.removeItem(TOKEN_KEY); } catch (e) {}
       history.replaceState(null, '', '/account#wiped');
       location.reload();
