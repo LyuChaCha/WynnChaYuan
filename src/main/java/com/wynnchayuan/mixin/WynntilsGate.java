@@ -8,21 +8,7 @@ import org.spongepowered.asm.service.MixinService;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 只有目標類別真的在的時候才套用 mixin。
- *
- * <h2>為什麼需要這一道</h2>
- * 這兩個 mixin 打的是<b>另一個模組</b>（Wynntils）的類別。目標類別不見時，
- * mixin 預設的反應是讓遊戲<b>開不起來</b>——對一個「翻譯輔助」來說那是
- * 最糟的失敗方式：玩家只是想看中文，結果連遊戲都進不去。
- *
- * <p>Wynntils 改版把類別搬家、或哪天 fabric.mod.json 的相依放寬，
- * 都會走到這條路。查得到就套、查不到就跳過，其餘功能照常。
- *
- * <p>查的方法是<b>讀位元組</b>（{@code MixinService} 的 bytecode provider），
- * 不是 {@code Class.forName}——後者會把目標類別提前載入，而提前載入的類別
- * <b>套不到 mixin</b>，等於自己把要修的東西弄壞。
- */
+// 用 MixinService 讀位元組：Class.forName 提前載入會套不到 mixin
 public final class WynntilsGate implements IMixinConfigPlugin {
 
     @Override

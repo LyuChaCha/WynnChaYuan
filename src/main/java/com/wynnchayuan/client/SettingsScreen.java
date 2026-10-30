@@ -30,21 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-/**
- * 設定畫面。
- *
- * <p>從三個地方打得開：Mod Menu 的模組清單、{@code /wynnchayuan}（{@code /wcy}）指令，
- * 以及按鍵設定裡自己綁的鍵——預設不綁，見 {@code WynnChaYuan#registerKeyBind}。
- *
- * <h2>這個類別只做接線</h2>
- * 版面、命中判定與動畫全部在 {@link SettingsView}，它不認得遊戲；這裡負責兩件事：
- * 把每一項設定寫成「值去哪裡問、改了去哪裡講」（{@link #buildTabs}），以及把遊戲的
- * 滑鼠鍵盤事件轉給它。所有的值都是<b>當下</b>問設定檔問到的，畫面不另外存一份，
- * 不會有畫面上一個值、設定檔裡另一個值的時候。
- */
 public final class SettingsScreen extends Screen {
 
-    /** 上次停在哪一類；關掉再開回到同一頁。 */
     private static int lastTab = 0;
 
     private final Screen parent;
@@ -54,11 +41,9 @@ public final class SettingsScreen extends Screen {
     private int statusColour = Ui.TEXT_3;
     private long statusAt = 0;
     private static final long STATUS_MS = 4000;
-    /** 正在抓資料：狀態列那一句要留到抓完，不照平常的幾秒後讓開。 */
     private boolean fetching = false;
     private boolean checkingVersion;
 
-    /** 選了但還沒按「套用」的語言；{@code null} 是沒有動過。 */
     private String pendingLanguage;
     private String pendingFallback;
     private String languageBusy;
@@ -68,7 +53,6 @@ public final class SettingsScreen extends Screen {
         this(null);
     }
 
-    /** @param parent 關掉之後要回到哪個畫面（從 Mod Menu 進來時是它的清單） */
     public SettingsScreen(Screen parent) {
         super(Component.literal("WynnChaYuan"));
         this.parent = parent;
@@ -76,7 +60,6 @@ public final class SettingsScreen extends Screen {
 
     @Override
     protected void init() {
-        // 改視窗大小會再跑一次 init：畫面留著，捲到哪、開著哪個選單都不要丟
         if (view == null) {
             view = new SettingsView(buildTabs(), new Host(), lastTab);
         }
@@ -92,17 +75,10 @@ public final class SettingsScreen extends Screen {
         statusAt = System.currentTimeMillis();
     }
 
-    // ------------------------------------------------------------ 每一項設定
-
     private static Supplier<String> t(String key) {
         return () -> T.s(key);
     }
 
-    /**
-     * 開關，附預設值。
-     *
-     * @param byDefault 預設是開還是關——跟 {@code CollectorConfig} 欄位的初始值一致
-     */
     private static Row toggle(String key, boolean byDefault,
                               java.util.function.BooleanSupplier get, Runnable flip) {
         return Row.toggle(key, t(key), t(key + ".hint")).on(get).flip(flip)
@@ -113,13 +89,6 @@ public final class SettingsScreen extends Screen {
                 });
     }
 
-    /**
-     * 一直按「下一個」直到變成要的那一個。
-     *
-     * <p>設定檔對外只有「換下一種」的方法（舊畫面是一顆按了會輪的按鈕）。
-     * 分段控制器要的是「直接選這一個」，這裡用現成的方法湊出來，不必為了新畫面
-     * 把每個欄位都再開一個寫入口。最多轉一圈就停，設定檔被手改成怪值也不會卡死。
-     */
     private static <E extends Enum<E>> void cycleTo(Supplier<E> get, Runnable next, E want) {
         for (int i = 0; i < want.getDeclaringClass().getEnumConstants().length
                 && get.get() != want; i++) {
@@ -146,10 +115,6 @@ public final class SettingsScreen extends Screen {
                 Preview.Scene.DATA, List.of(
                         new Row.Group(t("group.lang"), false, languages()),
                         new Row.Group(t("group.tools"), true, tools()))));
-        // 徽章自己一頁，排在左邊那一列的最後（使用者 2026-10-11）。
-        // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
-        // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
-        // 不影響翻譯。2026-10-19 改名「功能」，效能的開關也放這裡。
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
                 Preview.Scene.CAPE, List.of(
                         new Row.Group(t("group.badge"), false, badge()),
@@ -161,12 +126,6 @@ public final class SettingsScreen extends Screen {
         return tabs;
     }
 
-    /**
-     * 別的模組的支援，放在一起（使用者 2026-10-09）。
-     *
-     * <p>Wynntils 是必要的相依，那一列永遠在；另外兩個是選裝的，<b>有裝才出現</b>——
-     * 沒裝的人看到一個按了沒有任何反應的開關，只會以為功能壞了。
-     */
     private List<Row> mods() {
         List<Row> rows = new ArrayList<>();
         rows.add(toggle("world.wynntils", true, cfg()::wynntilsUi, cfg()::toggleWynntilsUi));
@@ -184,40 +143,17 @@ public final class SettingsScreen extends Screen {
         return rows;
     }
 
-    /** 怎麼參與翻譯（貢獻者）。 */
     private static final String CONTRIBUTE_URL =
             "https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md";
 
-    /**
-     * 怎麼贊助（贊助者）。指到 README 的「贊助」那一節，不直接寫贊助平台的網址——
-     * 模組裡寫死的網址只留 GitHub 與 jsDelivr（CorpusExportTest 會擋），平台換了也只要改 README。
-     */
     private static final String SPONSOR_URL =
             "https://github.com/LyuChaCha/WynnChaYuan#%E8%B4%8A%E5%8A%A9";
 
-    /**
-     * 徽章那一頁（使用者 2026-10-11、10-12）。
-     *
-     * <p>徽章<b>不能關</b>：它是「這個人是誰」。在名單上的人可以調自己那片葉子的顏色；
-     * 有好幾個身分的人可以挑要放哪幾片，但最少留一片。不在名單上的人沒有東西可以選，
-     * 看到的是「怎麼拿到有顏色的徽章」——參與翻譯成為貢獻者，或是贊助成為贊助者。
-     *
-     * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是 repo 上
-     * {@code credits.json} 的那一份，那一份由維護名單的人改。
-     */
-    /**
-     * 披風。
-     *
-     * <p>第一列是「畫面上要不要有 WynnChaYuan 的披風」，每個人都有。第二列是自己那一件
-     * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是去網站上傳。
-     * 上傳在網站上做：「上傳披風」打開網站的帳號頁，順便替瀏覽器登入。
-     */
     private List<Row> fun() {
         List<Row> rows = new ArrayList<>();
         rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
         String self = com.wynnchayuan.render.Badges.selfName();
         java.util.UUID me = this.minecraft == null ? null : this.minecraft.getUser().getProfileId();
-        // 關掉穿戴後，公開名單不再帶披風版本；仍要保留重新開啟的入口。
         if (!cfg().ownCape() || com.wynnchayuan.cape.Capes.hasCape(self, me)) {
             rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
         } else {
@@ -233,7 +169,6 @@ public final class SettingsScreen extends Screen {
                             com.wynnchayuan.Presence.GALLERY_URL)));
             return rows;
         }
-        // 上傳：打開網站的帳號頁（上傳在那裡），順便替瀏覽器登入
         rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
                 .label(t("fun.upload.button"))
                 .run(() -> com.wynnchayuan.Presence.site("/account", true,
@@ -242,8 +177,6 @@ public final class SettingsScreen extends Screen {
         rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
                 .label(t("fun.remove.button"))
                 .run(() -> com.wynnchayuan.Presence.remove(this::removed)));
-        // 披風一覽：網站上的一頁。從這裡開會順便替瀏覽器登入（網站自己沒辦法確認帳號），
-        // 登入之後可以在網站上傳；開發者還看得到管理的頁面。
         rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
                 .label(t("fun.gallery.button"))
                 .run(() -> com.wynnchayuan.Presence.gallery(true,
@@ -335,7 +268,6 @@ public final class SettingsScreen extends Screen {
         }
     }
 
-    /** 移除的結果，回到畫圖的執行緒上說。 */
     private void removed(com.wynnchayuan.Presence.Result result) {
         net.minecraft.client.Minecraft.getInstance().execute(() -> {
             if (result == com.wynnchayuan.Presence.Result.DONE) {
@@ -348,13 +280,10 @@ public final class SettingsScreen extends Screen {
 
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
-        // 「讓別人知道我有裝」的開關拿掉了：每個 WynnChaYuan 使用者都有葉子（使用者 2026-10-12）。
-        // 報到這件事寫在灰色葉子的說明、README 與商店頁上。
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);
         if (mine.isEmpty()) {
-            // 沒有身分的人：說明葉子是什麼，還有兩條加入的路。
             rows.add(Row.status("badge.none", t("badge.none"), t("badge.none.hint"))
                     .label(t("badge.none.label"))
                     .labelColour(() -> com.wynnchayuan.render.Colors.opaque(
@@ -368,7 +297,6 @@ public final class SettingsScreen extends Screen {
             return rows;
         }
         for (com.wynnchayuan.render.Badges.Role role : mine) {
-            // 只有一個身分的人沒有開關——那一片就是他的徽章
             if (mine.size() > 1) {
                 java.util.function.BooleanSupplier shown =
                         () -> cfg().badgeRoleShown(role.id(), !role.hidden());
@@ -376,7 +304,6 @@ public final class SettingsScreen extends Screen {
                                 () -> T.s("badge.role", role.name()), t("badge.role.hint"))
                         .on(shown)
                         .flip(() -> {
-                            // 最後一片關不掉
                             if (!shown.getAsBoolean() || badgesShown(mine) > 1) {
                                 cfg().setBadgeRole(role.id(), !shown.getAsBoolean());
                             }
@@ -408,7 +335,6 @@ public final class SettingsScreen extends Screen {
         return rows;
     }
 
-    /** 這個人現在開著幾片葉子。 */
     private int badgesShown(List<com.wynnchayuan.render.Badges.Role> mine) {
         int n = 0;
         for (com.wynnchayuan.render.Badges.Role role : mine) {
@@ -421,7 +347,6 @@ public final class SettingsScreen extends Screen {
 
     private List<Row> items() {
         List<Row> rows = new ArrayList<>();
-        // 總開關放在第一頁最上面：想暫時看原文的人，打開設定第一眼就找得到。
         rows.add(toggle("translations.enabled", true, cfg()::translationsEnabled, () -> {
             cfg().toggleTranslations();
             WynnChaYuan.reloadTranslations();
@@ -449,13 +374,11 @@ public final class SettingsScreen extends Screen {
                         CollectorConfig.ItemNames.values()[i]))
                 .reset(() -> cfg().itemNames() == CollectorConfig.ItemNames.OFF,
                         () -> cycleTo(cfg()::itemNames, nextName, CollectorConfig.ItemNames.OFF)));
-        // 技能與 Major ID 名稱附原文：跟上面物品名稱的「譯名加原文」同一個畫法
         rows.add(toggle("items.abilitynames", false, cfg()::abilityNamesOriginal, () ->
                 WynnChaYuan.translations().setAbilityNamesWithOriginal(
                         cfg().toggleAbilityNamesOriginal())));
         rows.add(toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                 cfg()::toggleShiftPeekNames));
-        // 內容名稱（任務、洞窟、探索點…）：同樣三格，預設是譯名。見 PageNames。
         Runnable nextPage = () ->
                 WynnChaYuan.translations().setPageNameMode(cfg().cyclePageNames(1));
         rows.add(Row.segment("items.pages", t("items.pages"), t("items.pages.hint"))
@@ -481,7 +404,6 @@ public final class SettingsScreen extends Screen {
                 .selected(() -> cfg().shotMode().ordinal())
                 .pick(i -> cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
                         CollectorConfig.ShotMode.values()[i]))
-                // 鍵在遊戲自己的按鍵設定裡綁；這顆直接帶過去，不必自己找
                 .extra(t("button.keybinds"), () -> this.minecraft.setScreen(
                         new net.minecraft.client.gui.screens.options.controls.KeyBindsScreen(
                                 this, this.minecraft.options)))
@@ -556,7 +478,6 @@ public final class SettingsScreen extends Screen {
                 .selected(() -> get.get().ordinal())
                 .pick(i -> {
                     cycleTo(get, next, CollectorConfig.DialogueMode.values()[i]);
-                    // 選項的小框不受總開關管（見 RenderListener#renderHud），只有內文要
                     needBoxes("dialogue.mode".equals(key)
                             && get.get() == CollectorConfig.DialogueMode.PANEL);
                 })
@@ -564,14 +485,6 @@ public final class SettingsScreen extends Screen {
                         () -> cycleTo(get, next, CollectorConfig.DialogueMode.REPLACE));
     }
 
-    /**
-     * 選了「小框」就把小框的總開關一起打開。
-     *
-     * <p>「對話／追蹤小框」那個總開關關著的時候，對話、追蹤、名牌選成小框模式，
-     * 畫面上什麼都不會出現——原文照舊、譯文沒有，而設定畫面上兩邊各自看起來都
-     * 沒問題。挑小框的人要的就是看到小框，所以直接替他打開，不要讓兩個設定互相抵消
-     * （issue #1081 的其中一種可能）。反過來關掉總開關仍然是一鍵全收，不受影響。
-     */
     private static void needBoxes(boolean box) {
         if (box && !cfg().showOverlays()) {
             cfg().toggleOverlays();
@@ -632,7 +545,6 @@ public final class SettingsScreen extends Screen {
                 .onText(t("mode.replace")));
         rows.add(toggle("world.bossbar", true, cfg()::translateBossBar, cfg()::toggleBossBar)
                 .onText(t("mode.replace")));
-        // 追蹤欄跟對話共用同一個列舉，但畫面上的順序是「就地取代、另開面板、關閉」
         CollectorConfig.DialogueMode[] order = {
             CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
             CollectorConfig.DialogueMode.OFF};
@@ -656,8 +568,6 @@ public final class SettingsScreen extends Screen {
         rows.add(toggle("world.chatcopy", true, cfg()::chatCopy, cfg()::toggleChatCopy));
         return rows;
     }
-
-    // ---- 語言
 
     private static String badge(String lang) {
         return switch (lang) {
@@ -725,7 +635,6 @@ public final class SettingsScreen extends Screen {
                 .current(() -> cfg().uiLanguage())
                 .choose(id -> {
                     cfg().setUiLanguage(id);
-                    // 分段上的字是建表的時候取的；換了介面語言整張表重建，字才會跟著換
                     lastTab = view.tab();
                     view = new SettingsView(buildTabs(), new Host(), lastTab);
                 }));
@@ -777,8 +686,6 @@ public final class SettingsScreen extends Screen {
             say(fallbackBusy, Ui.TEXT_3);
         }));
     }
-
-    // ---- 工具
 
     private static boolean github() {
         return cfg().source() == CollectorConfig.Source.GITHUB;
@@ -878,7 +785,6 @@ public final class SettingsScreen extends Screen {
         report(WynnChaYuan.translations().lastResult(), WynnChaYuan.translations().size() > 0);
     }
 
-    /** 結果同時寫進狀態列與聊天：聊天留得久，按完切回遊戲還看得到。 */
     private void report(String result, boolean ok) {
         say((ok ? "✔ " : "✘ ") + result, ok ? Ui.GREEN : Ui.RED);
         if (this.minecraft != null && this.minecraft.player != null) {
@@ -917,8 +823,6 @@ public final class SettingsScreen extends Screen {
         worker.setDaemon(true);
         worker.start();
     }
-
-    // ------------------------------------------------------------ 給畫面問的事
 
     private final class Host implements SettingsView.Host {
 
@@ -1002,8 +906,6 @@ public final class SettingsScreen extends Screen {
 
         @Override
         public void done() {
-            // 選了語言沒按「套用」就按完成：當作要套用。不然選了等於沒選，
-            // 而且畫面關掉之後沒有任何地方會告訴玩家那一下沒有生效。
             if (pendingLanguage != null) {
                 applyLanguage();
             } else if (pendingFallback != null) {
@@ -1041,7 +943,6 @@ public final class SettingsScreen extends Screen {
 
     private final Preview.State previewState = new Preview.State();
 
-    /** 預覽要看的值，每一幀從設定填一次。 */
     private Preview.State previewState() {
         Preview.State s = previewState;
         CollectorConfig c = cfg();
@@ -1089,16 +990,6 @@ public final class SettingsScreen extends Screen {
         return s;
     }
 
-    /**
-     * 預覽用的查表：只要譯文本身，不要語料順手附上的原文。
-     *
-     * <h2>為什麼不能直接用 lookup</h2>
-     * 物品名稱設成「譯名加原文」時，{@code lookup} 回來的就已經是
-     * 「骨弓 (Bony Bow)」。預覽自己會照設定再接一次原文，於是畫成
-     * 「骨弓 (Bony Bow) (Bony Bow)」（使用者 2026-10-09 回報）。
-     * 預覽要示範的是「三種模式各長什麼樣」，接不接原文由它自己決定，
-     * 所以這裡把語料附的那一段拿掉。
-     */
     static String previewLookup(String text) {
         var store = WynnChaYuan.translations();
         String hit = store.lookup(text);
@@ -1108,8 +999,6 @@ public final class SettingsScreen extends Screen {
         return Preview.bareName(hit, text, store.appendedOriginalAt(hit));
     }
 
-    // ------------------------------------------------------------ 遊戲事件
-
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
         Minecraft mc = Minecraft.getInstance();
@@ -1117,7 +1006,6 @@ public final class SettingsScreen extends Screen {
         GuiCanvas canvas = new GuiCanvas(g, this.font, guiScale);
         canvas.begin();
         try {
-            // 滑鼠座標給的是整數的 GUI 像素；問視窗可以拿到小數，拖滑桿才不會一格一格跳
             double mx = mc.mouseHandler.xpos() * mc.getWindow().getGuiScaledWidth()
                     / Math.max(1, mc.getWindow().getScreenWidth());
             double my = mc.mouseHandler.ypos() * mc.getWindow().getGuiScaledHeight()
@@ -1126,7 +1014,6 @@ public final class SettingsScreen extends Screen {
         } finally {
             canvas.end();
         }
-        // 「徽章與披風」的預覽：玩家本人穿著披風，疊在預覽那一塊上面
         float[] model = view.spot("preview.model");
         if (model != null && mc.player != null) {
             try {
@@ -1137,20 +1024,13 @@ public final class SettingsScreen extends Screen {
         }
     }
 
-    /**
-     * 把玩家畫在預覽那一塊裡。做法跟物品欄畫面左邊那個小人一樣（{@code InventoryScreen}），
-     * 差別是不跟著滑鼠轉頭——轉多少由拖曳決定。
-     *
-     * <p>披風照遊戲裡的規則畫（{@code CapeLayerMixin}）：穿不穿、穿哪一件，跟走在路上
-     * 看到的一樣，所以改了設定、換了資料夾裡的圖，這裡馬上跟著變。
-     */
     private static void drawPlayer(GuiGraphics g, Minecraft mc, float[] box, float yaw,
                                    float pitch) {
         net.minecraft.world.entity.LivingEntity player = mc.player;
         int x1 = Math.round(box[0]);
         int y1 = Math.round(box[1]);
         int x2 = Math.round(box[0] + box[2]);
-        int y2 = Math.round(box[1] + box[3]) - 14;          // 底下那一行提示讓出來
+        int y2 = Math.round(box[1] + box[3]) - 14;
         if (x2 - x1 < 20 || y2 - y1 < 30) {
             return;
         }
@@ -1159,7 +1039,7 @@ public final class SettingsScreen extends Screen {
         state.lightCoords = 15728880;
         state.shadowPieces.clear();
         state.outlineColor = 0;
-        state.nameTag = null;                               // 預覽裡不要名牌
+        state.nameTag = null;
         if (state instanceof net.minecraft.client.renderer.entity.state.LivingEntityRenderState
                 living) {
             living.bodyRot = 180.0f + yaw;
@@ -1170,7 +1050,6 @@ public final class SettingsScreen extends Screen {
             living.scale = 1.0f;
         }
         if (state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar) {
-            // 披風稍微掀起來一點，看得到它不是貼在背上的一張圖
             avatar.capeFlap = 0;
             avatar.capeLean = 6;
             avatar.capeLean2 = 0;
@@ -1179,7 +1058,6 @@ public final class SettingsScreen extends Screen {
         org.joml.Quaternionf camera = new org.joml.Quaternionf()
                 .rotateX(pitch * (float) (Math.PI / 180.0));
         pose.mul(camera);
-        // 人高 1.8 格：上下各留一點邊，寬度也要塞得下（轉到側面時手臂會伸出去）
         float size = Math.min((y2 - y1) / 2.3f, (x2 - x1) / 1.5f);
         org.joml.Vector3f lift = new org.joml.Vector3f(0, state.boundingBoxHeight / 2.0f, 0);
         g.submitEntityRenderState(state, size, lift, pose, camera, x1, y1, x2, y2);
@@ -1207,7 +1085,7 @@ public final class SettingsScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyEvent event) {
-        // GLFW 的修飾鍵位元：2 是 Ctrl、8 是 Super（mac 的 Cmd）
+        // GLFW 修飾鍵位元：2 是 Ctrl、8 是 Super（mac 的 Cmd）
         boolean ctrl = (event.modifiers() & (2 | 8)) != 0;
         if (view.key(event.key(), ctrl)) {
             return true;
@@ -1229,7 +1107,6 @@ public final class SettingsScreen extends Screen {
 
     @Override
     public void removed() {
-        // 切到子畫面（調整位置、更新說明）也會經過這裡：拖到一半的值先落地
         cfg().saveIfDirty();
         if (view != null) {
             lastTab = view.tab();

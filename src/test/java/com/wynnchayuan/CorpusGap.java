@@ -13,22 +13,12 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * 替「某一句別的語言還沒翻」的測試<b>自己造</b>一個缺口。
- *
- * <p>先前那幾條測試是從語料裡當場挑一句「繁體有、簡體沒翻」的——語言補齊之後
- * （2026-09-18 各語言都補到跟繁體一樣多），這樣的句子一條都不剩，測試就架不起
- * 情境而整條紅掉。缺口是測試要的<b>情境</b>，不該靠語料剛好還沒補完。
- *
- * <p>做法：把那個語言的資料夾整份複製到暫存目錄，只把 {@code key} 那一條的譯文清空。
- */
 public final class CorpusGap {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     private CorpusGap() {}
 
-    /** 複製 {@code dir}，把原文是 {@code key} 的譯文全部清空；回傳複本的位置。 */
     public static Path without(Path dir, String key) throws IOException {
         Path out = Files.createTempDirectory("wynnchayuan-gap");
         List<Path> files;
@@ -66,7 +56,6 @@ public final class CorpusGap {
         return out;
     }
 
-    /** {@code key} 寫進 JSON 字串之後的樣子，用來先粗篩要不要解析這個檔。 */
     private static String jsonText(String key) {
         String quoted = GSON.toJson(key);
         return quoted.substring(1, quoted.length() - 1);

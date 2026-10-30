@@ -24,27 +24,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-/**
- * 測試用的畫布：把 {@link Canvas} 的動作畫進一張記憶體裡的圖。
- *
- * <h2>跟遊戲裡差在哪</h2>
- * 形狀是同一套算法（圖示直接用 {@link Icons#mask}），字用的也是<b>同一批字型檔</b>
- * （{@code assets/wynnchayuan/font/ui/*.ttf}），大小與遊戲裡的字型定義一樣是 9。
- * 所以版面寬度可信，字的長相也八九不離十；差別在遊戲是用 FreeType 畫的，
- * 筆畫的粗細與邊緣會有一點點不同。
- *
- * <p>字型檔裡沒有的字，遊戲會退回原版的點陣字；這裡用系統字型代替，並且記在
- * {@link #missing} 裡——測試用它來抓「加了介面字串卻沒重裁字型」。
- */
 final class AwtCanvas implements Canvas {
 
-    /** 跟字型定義裡的 size 一樣。 */
     private static final float SIZE = 9f;
     private static final FontRenderContext FRC = new FontRenderContext(null, true, true);
     private static final Map<String, Font> FILES = new HashMap<>();
     private static final Map<String, float[]> ADVANCES = new HashMap<>();
 
-    /** 這次畫了哪些字型檔裡沒有的字。 */
     static final Set<Integer> missing = new TreeSet<>();
 
     final BufferedImage image;
@@ -66,8 +52,6 @@ final class AwtCanvas implements Canvas {
         language(lang);
     }
 
-    // ------------------------------------------------------------ 字型
-
     private static Font file(String name) {
         return FILES.computeIfAbsent(name, n -> {
             try (InputStream in = AwtCanvas.class.getResourceAsStream(
@@ -79,7 +63,6 @@ final class AwtCanvas implements Canvas {
         });
     }
 
-    /** 跟 tools/build-ui-fonts.py 的 definition() 同一個順序：自己的，再來是別的語言借字用的。 */
     static List<Font> chainFor(String lang) {
         String own = switch (lang == null ? "" : lang) {
             case "zh_tw" -> "tc";
@@ -99,7 +82,6 @@ final class AwtCanvas implements Canvas {
         return out;
     }
 
-    /** 這個語言的字型鏈畫不畫得出這個字。 */
     static boolean covers(String lang, int cp) {
         for (Font f : chainFor(lang)) {
             if (f.canDisplay(cp)) {
@@ -174,7 +156,7 @@ final class AwtCanvas implements Canvas {
         }
         g.setColor(colour(argb));
         float cx = p(x);
-        // 遊戲把 TTF 字的基線放在這一行往下 7 的地方，跟原版點陣字同一條線
+        // 遊戲把 TTF 基線放在這一行往下 7
         float baseline = p(y) + 7f * scale * k;
         for (int i = 0; i < text.length(); ) {
             int cp = text.codePointAt(i);
@@ -186,9 +168,6 @@ final class AwtCanvas implements Canvas {
         }
     }
 
-    // ------------------------------------------------------------ 形狀
-
-    /** 墊一張假的遊戲畫面：幾塊模糊的顏色，讓半透明的視窗底下有東西。 */
     void backdrop() {
         int w = image.getWidth();
         int h = image.getHeight();
@@ -202,7 +181,6 @@ final class AwtCanvas implements Canvas {
         g.setPaint(new java.awt.RadialGradientPaint(centre, w * 0.4f, new float[] {0f, 1f},
                 new Color[] {new Color(0x2C5A3E), new Color(44, 90, 62, 0)}));
         g.fillRect(0, 0, w, h);
-        // 原版在畫面底下墊的那層暗色
         g.setPaint(new Color(8, 12, 18, 140));
         g.fillRect(0, 0, w, h);
     }
@@ -298,7 +276,6 @@ final class AwtCanvas implements Canvas {
 
     @Override
     public void logo(float x, float y, float size) {
-        // 沒有貼圖管理員：畫一塊主題色的圓角方塊佔位，位置與大小是對的
         g.setColor(new Color(0x6FA8D8));
         g.fill(shape(x, y, size, size, size / 5f));
         g.setColor(new Color(0x0B1420));
@@ -307,7 +284,6 @@ final class AwtCanvas implements Canvas {
 
     @Override
     public void head(String minecraftName, float x, float y, float size) {
-        // 沒有皮膚可抓：照名字給一個固定的顏色，看得出每個人一格
         int hash = minecraftName == null ? 0 : minecraftName.hashCode();
         g.setColor(new Color(Ui.hsv(Math.floorMod(hash, 360), 0.45f, 0.8f), false));
         g.fill(new Rectangle2D.Float(p(x), p(y), p(x + size) - p(x), p(y + size) - p(y)));

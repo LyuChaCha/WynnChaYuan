@@ -2,32 +2,18 @@ package com.wynnchayuan.render;
 
 import java.util.List;
 
-/**
- * 對話框的位移編碼與重算。
- *
- * <h2>為什麼要釘住這幾個數字</h2>
- * Wynncraft 的對話框是「往左退 N、畫字、再走回原位」拼出來的。換掉文字之後
- * 尾隨的位移<b>必須</b>照新寬度重算，否則後面的名牌、外框、頭像整塊偏掉——
- * 而且偏掉的畫面看起來像「框壞了」，不會有人聯想到是一個減法寫錯。
- *
- * <p>下面三組是從實機錄下來的（dialogue-probe），不是推測：
- * 文字 35px 時尾隨 +81、93px 時 +23、149px 時 -33，前導固定 -116。
- */
+// 實機錄下：文字 35px 尾隨 +81、93px +23、149px -33
 public final class DialogueOffsetTest {
 
     private static int failures = 0;
 
     public static void main(String[] args) {
-        // 位移字元編碼／解碼要對得起來
         check("編碼 -116 再解回來還是 -116",
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(-116)) == -116);
         check("正的也一樣",
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(81)) == 81);
         check("0 也是合法的位移",
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(0)) == 0);
-        // 位移字元只有 U+CF000-U+D1000 有定義，也就是 ±4096 像素。超出去的碼位
-        // 資源包裡沒有那個字，Minecraft 會畫成缺字的方框——而位移常常是一整串，
-        // 畫面上就是一長排方框。編碼這一端先前完全沒擋，只有解碼那端有。
         check("超出上限就編不出來", DialogueRewriter.offset(4097) == null);
         check("超出下限也編不出來", DialogueRewriter.offset(-4097) == null);
         check("剛好在邊界上還是可以", DialogueRewriter.offset(4096) != null);
@@ -35,27 +21,19 @@ public final class DialogueOffsetTest {
         check("編得出來的一定解得回去",
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(4096)) == 4096);
 
-        // 實機資料：前導 -116，尾隨 = -(-116) - 寬度
         check("35px 的文字 → 尾隨 +81", -(-116) - 35 == 81);
         check("93px 的文字 → 尾隨 +23", -(-116) - 93 == 23);
         check("149px 的文字 → 尾隨 -33", -(-116) - 149 == -33);
 
-        // 名牌置中：The Cook（寬 40）是 -60，Enzan（寬 25）是 -52
         check("The Cook 的前導是 -60", DialogueRewriter.nameLead(40) == -60);
         check("Enzan 的前導是 -52", DialogueRewriter.nameLead(25) == -52);
 
-        // 小框要拿掉位移字、但圖示要留著。
-        // 實機：dialogue-probe-1 的「Agh!」尾巴接一個 U+D0063，
-        // 小框用預設字型畫就變成豆腐方塊（overlay-debug-2）。
         check("尾隨的位移字要拿掉",
                 Boxes.dropOffsets("Agh!" + new String(Character.toChars(0xD0063))).equals("Agh!"));
         check("前導的也一樣",
                 Boxes.dropOffsets(new String(Character.toChars(0xCFF8C)) + "Agh!").equals("Agh!"));
         check("私用區的圖示不能拿掉",
                 Boxes.dropOffsets(" 空手右鍵").equals(" 空手右鍵"));
-        // 等級徽章是「圖示 + 位移」交錯拼出來的，那些位移是用來定位圖示的。
-        // 實機：majorid-debug 的「填回去的符號 7」——馬的名牌。
-        // 1.99.40 一律拿掉位移，徽章就散成「馬 ⬛⬛ LV 1」。
         String badge = new String(Character.toChars(0xE060))
                 + new String(Character.toChars(0xCFFFF))
                 + new String(Character.toChars(0xE03B));
@@ -68,18 +46,12 @@ public final class DialogueOffsetTest {
         check("沒有位移字就原字串回去",
                 Boxes.dropOffsets("啊！").equals("啊！"));
 
-        // 拆開之後的名牌：定位用的位移<b>自己成一段</b>，那一段裡就沒有圖示了。
-        // 守衛是對「一段」問的，於是 -30px 被當成排版偏移拿掉，徽章底圖跟數字
-        // 並排成兩塊——實機回報的「Kandon-Beda 市民 LV 95 LV 95」。
-        // 現在以<b>整行</b>為單位判斷，拆法就影響不到它。
         badgeLine();
 
-        // 普通文字不能被當成位移字元
         check("英文不是位移", DialogueRewriter.offsetOf("A") == null);
         check("中文不是位移", DialogueRewriter.offsetOf("廚") == null);
         check("兩個字元不是位移", DialogueRewriter.offsetOf("AB") == null);
 
-        // 字型只有在畫不出來的時候才該換掉——換了就丟掉行號（ascent）
         check("英文畫得出來", DialogueRewriter.drawable("Let's hope no more grooks"));
         check("數字符號畫得出來", DialogueRewriter.drawable("+12% (3/5) [80.0%]"));
         check("西班牙文畫得出來", DialogueRewriter.drawable("Aumenta el dano magico"));
@@ -90,7 +62,6 @@ public final class DialogueOffsetTest {
         check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
         check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
         check("ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için"));
-        // 提示列的字型只有 ASCII 那張表，帶重音的字母在那一列全是缺字
         String control = "minecraft:hud/dialogue/text/control";
         String body = "minecraft:hud/dialogue/text/wynncraft/body_0";
         check("提示列：é 交給配對字型", !DialogueRewriter.drawable("Muévete para continuar", control));
@@ -98,7 +69,6 @@ public final class DialogueOffsetTest {
         check("內文列：é 留在原字型", DialogueRewriter.drawable("Muévete para continuar", body));
         check("內文列：ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için", body));
 
-        // 折行處被吃掉的空格要補回來，否則跨行的台詞永遠查不到
         check("接第一行不補空格",
                 DialogueRewriter.joinRow("", "Go on").equals("Go on"));
         check("接下一行補一個空格",
@@ -111,18 +81,15 @@ public final class DialogueOffsetTest {
                 DialogueRewriter.joinRow("My brother", " keeps")
                         .equals(" keeps"));
 
-        // 譯文跟著原文的進度一個字一個字出來
         check("打完就是全部",
                 DialogueRewriter.typedSoFar("希望別再有人闖進來", 20, 20)
                         .equals("希望別再有人闖進來"));
-        // 九個字打到一半 → round(9 × 0.5) = 5
         check("打一半就取一半",
                 DialogueRewriter.typedSoFar("希望別再有人闖進來", 10, 20)
                         .equals("希望別再有"));
         check("一個字都還沒打就空的",
                 DialogueRewriter.typedSoFar("希望別再有人闖進來", 0, 20)
                         .isEmpty());
-        // 切在佔位符中間會讓那一行的佔位符數量對不上，整行靜靜不顯示
         check("不切在佔位符中間",
                 DialogueRewriter.typedSoFar("你好 {~1} 位客人", 5, 10)
                         .equals("你好 "));
@@ -130,11 +97,6 @@ public final class DialogueOffsetTest {
                 DialogueRewriter.typedSoFar("你好 {~1} 位", 8, 10)
                         .equals("你好 {~1}"));
 
-        // 斷行要照<b>呼叫端算出來的寬度</b>，不能自己寫死。
-        //
-        // 有頭像的對話文字是從頭像右邊起算的，可用寬度少了 24 像素。先前
-        // wrap() 收下寬度卻沒用，一律照最寬的算，中文就滿出框外。
-        // 測試環境沒有字型，一個字算 6 像素。
         List<String> narrow = DialogueRewriter.wrap("abcdefgh", 2, null, 24);
         check("窄的時候一行只放得下四個字",
                 narrow != null && narrow.get(0).equals("abcd")
@@ -143,17 +105,11 @@ public final class DialogueOffsetTest {
         check("寬的時候一行就放得完",
                 wide != null && wide.get(0).equals("abcdefgh"));
 
-        // 玩家 ID 不能被切成兩半。前面是頓號、整行一個空白都沒有時，
-        // 「退到上一個空白」沒得退，先前就切在 Green_ 和 teaTW 中間。
         List<String> id = DialogueRewriter.wrap("走吧！Tasim、Green_teaTW，來比", 2, null, 84);
         check("玩家 ID 不從中間切（實際：" + id + "）",
                 id != null && id.get(0).equals("走吧！Tasim、")
                         && id.get(1).startsWith("Green_teaTW"));
 
-        // 認出來的那一條，要撐得過「名字還在一個字一個字打」的那幾幀。
-        //
-        // 玩家回報的「中文 → 英文 → 中文」就是這裡：名字要整個打完才會收成
-        // {u}，中間幾幀模板對不上，整句掉回英文，名字一打完又跳回中文。
         String says = "I don't suppose you've seen {u} around here?";
         check("整句還沒打完，是同一句",
                 DialogueRewriter.within(says, "I don't suppose you've"));
@@ -163,8 +119,6 @@ public final class DialogueOffsetTest {
                 DialogueRewriter.within(says, "I don't suppose you've seen {u} around"));
         check("開頭就不一樣的，不是同一句",
                 !DialogueRewriter.within(says, "Well met, traveller!"));
-        // 岔在語料那條的<b>結尾之後</b> → 畫面上的字比它長，不是它。
-        // 任務開始那則後面還接著進度顯示，要讓它往下走 join()。
         check("後面還接了別的東西，就不是同一句",
                 !DialogueRewriter.within("New Quest Started: King's Recruit",
                         "New Quest Started: King's Recruit [{~}/{~} ({~}%)]"));
@@ -174,13 +128,6 @@ public final class DialogueOffsetTest {
                                 + "abcdefghijklmnopqrstuvwxyz0123456789"
                                 + "abcdefghijklmnopqrstuvwxyz"));
 
-        // ★ 岔開的位置必須正好是佔位符。實機回報：Espren 市民那句
-        //   「They've been a symbol of our town…」畫面上出現的是語料裡<b>另一句</b>
-        //   「They've been at it for a while now…」的譯文（他們吵好一陣子了）。
-        //
-        //   兩句共同前綴「They've been a」剛好 14 個字，過了 AGREED 門檻，
-        //   長度又碰巧落在 NAME_ROOM 裡，於是一路錯到底。錯的中文是假的資訊，
-        //   比整句沒翻糟得多。
         String rival = "They've been at it for a while now. "
                 + "Which one do you think will beat the other tomorrow?";
         check("岔在句子中間的，是別句話（打到一半）",
@@ -190,13 +137,10 @@ public final class DialogueOffsetTest {
                 !DialogueRewriter.within(rival,
                         "They've been a symbol of our town for longer than anyone "
                                 + "can remember, their original use long forgotten."));
-        // 反面：岔在佔位符上的還是要放行，不然名字打到一半又會掉回英文
         check("岔在佔位符上的仍然算同一句",
                 DialogueRewriter.within("Nice to see you again, {u}! How goes it?",
                         "Nice to see you again, Green_te"));
 
-        // 「還在打字」與「打完了」要有不同的態度。沒有現成的訊號，
-        // 字停住幾幀就等於停住了。見 DialogueRewriter#settled。
         check("字還在長就不算停下來",
                 !DialogueRewriter.settled("Bloc") && !DialogueRewriter.settled("Block"));
         boolean early = false;
@@ -220,7 +164,6 @@ public final class DialogueOffsetTest {
         }
     }
 
-    /** 見呼叫處。徽章的定位位移被拆成獨立片段之後也要留著。 */
     private static void badgeLine() {
         net.minecraft.network.chat.Style pill =
                 net.minecraft.network.chat.Style.EMPTY.withFont(
@@ -249,15 +192,11 @@ public final class DialogueOffsetTest {
                 plateLines.get(0).getString().contains(bg)
                         && plateLines.get(0).getString().contains(lv));
 
-        // 反例：對話那種「純文字加排版偏移」的行沒有圖示，位移照樣要拿掉，
-        // 不然小框用預設字型畫會變成豆腐方塊。
         net.minecraft.network.chat.Component talk =
                 net.minecraft.network.chat.Component.literal("Agh!" + cp(0xD0063));
         check("沒有圖示的行，位移還是照拿",
                 !Boxes.toLines(talk).get(0).getString().contains(cp(0xD0063)));
 
-        // 兩行各判各的：第一行有徽章要留，第二行沒有要拿。
-        // 第一行要有可讀的字——純圖示的行本來就不成一行（見 toLines 的 hasContent）。
         net.minecraft.network.chat.Component both =
                 net.minecraft.network.chat.Component.empty()
                         .append(net.minecraft.network.chat.Component.literal("市民 "))

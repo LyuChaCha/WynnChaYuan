@@ -11,27 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 聊天形式的 NPC 台詞（{@code [1/3] Obsessor: You need to come with us!}）拆成三段組
- * （見 {@link LineTranslator#npcChatLine}）。
- *
- * <h2>先前是什麼樣子</h2>
- * 台詞本身在任務檔裡有譯文（對話框裡就是翻好的），可是聊天多了計數與說話者，
- * 查的是整句鍵——語料沒有那一條就整句英文。capture 一次收了六十三句這種，
- * 一半的台詞任務檔裡早就有了。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>台詞照任務檔的譯文，說話者照既有聊天鍵的叫法（沒有就查同名鍵、再沒有就原文），
- *       計數原樣，三段的顏色照原文；</li>
- *   <li>說話者帶數值時，數值各就各位；</li>
- *   <li>整句鍵照樣優先；台詞查不到就整句不動；不是這種句子的不碰；</li>
- *   <li>收集端問「翻了沒」時這種句子算翻了；</li>
- *   <li>七個語言的實際語料：任務檔裡有台詞的那幾句都翻得出來。</li>
- * </ol>
- *
- * <p>語料是測試自己寫的，措辭跟實際語料無關。
- */
 public final class NpcChatLineTest {
 
     private static int failures = 0;
@@ -55,7 +34,6 @@ public final class NpcChatLineTest {
 
     private static TranslationStore corpus(Path dir) throws Exception {
         Files.createDirectories(dir);
-        // 任務檔：台詞的鍵就是台詞本身
         JsonObject entries = new JsonObject();
         entry(entries, "T#1", "You need to come with us!", "測：你得跟我們走！", "Obsessor");
         entry(entries, "T#2", "I was made to be angry. I can't stop myself...", "測：我生來就憤怒。", "Big boss Mech-DM2");
@@ -66,13 +44,10 @@ public final class NpcChatLineTest {
         Files.writeString(dir.resolve("quest-dialogue.json"), quest.toString(), StandardCharsets.UTF_8);
 
         JsonObject misc = new JsonObject();
-        // 既有的整句聊天鍵：說話者的叫法從這裡學
         misc.addProperty("[{~}/{~}] Obsessor: It's the only way to make us feel whole!",
                 "[{~}/{~}] 測執念者: 測：這是唯一的辦法！");
         misc.addProperty("[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!", "[{~}/{~}] 測執念者: 測：你別插手！！");
-        // 整句鍵：照樣優先
         misc.addProperty("[{~}/{~}] Qira: Begin, the Air Division!", "[{~}/{~}] 測琪拉: 整句鍵：風之部隊！");
-        // 同名的 NPC 名牌
         misc.addProperty("Jesp", "測傑斯普");
         Files.writeString(dir.resolve("misc.json"), misc.toString(), StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
@@ -95,7 +70,6 @@ public final class NpcChatLineTest {
         return Component.literal(text).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
 
-    /** 照 log 的分段：{@code &7[1/3] &2Obsessor: &aYou need to come with us!} */
     private static StyledText chat(String counter, String speaker, String line) {
         return StyledText.fromComponent(Component.empty()
                 .append(lit(counter + " ", GREY))
@@ -151,7 +125,6 @@ public final class NpcChatLineTest {
                 && LineTranslator.npcChatLine("", store) == null);
     }
 
-    /** 七個語言：capture 裡的這幾句，台詞都在任務檔裡。 */
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");

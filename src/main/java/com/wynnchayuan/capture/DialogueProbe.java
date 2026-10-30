@@ -13,66 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 把 NPC 對話那一整條 action bar 原封不動記下來。
- *
- * <h2>為什麼需要這一份</h2>
- * Wynncraft 的對話框不是普通文字——它是用 {@code hud/dialogue/} 底下一整組
- * 自訂字型畫出來的：{@code text/body_1}、{@code text/body_2}……一行一個字型，
- * 外加 {@code text/choice}、{@code text/control}（SHIFT 提示）與
- * {@code effect/fade}。框線與頭像應該也在那組字型裡。
- *
- * <p>要「保留原本的框、只換掉裡面的字」，得先確定三件事，而這三件事都<b>看不出來</b>，
- * 只能從實際資料讀：
- *
- * <ul>
- *   <li>那組字型有沒有涵蓋中文。只有 ASCII 的話，中文會掉回預設字型，
- *       連帶失去 {@code body_N} 自帶的行位移——四行譯文會疊在同一行上。</li>
- *   <li>頭像與框是不是同一條訊息裡的字元。如果是，改寫文字時必須整段留著。</li>
- *   <li>每一行的寬度是誰決定的。若位移是照英文寬度算好的，換成中文就會歪。</li>
- * </ul>
- *
- * <p>{@link com.wynntils.models.dialogue.event.NpcDialogueEvent} 拿到的是
- * Wynntils 清理過的純文字，那些字型資訊在那一步就沒了。所以這裡直接接
- * action bar 的原始訊息。
- *
- * <p>只在收集模式下寫，而且只寫前幾次——這是一次性的勘查，不是常駐功能。
- */
 public final class DialogueProbe {
 
-    /** 錄幾份就停。同一句話會被送幾十次（NPC 逐字打字），不擋會寫爆。 */
     private static final int LIMIT = 8;
 
-    /**
-     * <b>另外</b>保留給「有選項」的對話的格數。
-     *
-     * <h2>為什麼要分開算</h2>
-     * {@link #LIMIT} 那八格會被<b>先遇到的</b>對話用光，而有選項的對話少見得多——
-     * 實測八份 probe 全是沒有選項的。於是最需要看的那一種永遠錄不到。
-     *
-     * <p>選項的文字<b>不在</b> Wynntils 的事件裡（{@code NpcDialogueEvent} 與
-     * {@code DialogueSegment} 都只有 {@code getDialogueText}／
-     * {@code requiresShift}／{@code hasChoices}），所以只能從<b>未經清理的
-     * 原始 action bar</b> 去找——原始訊息本來就是分區的（{@code top_right}、
-     * {@code bottom_middle}、對話字型各一段），選項多半在其中某一區。
-     */
     private static final int CHOICE_LIMIT = 3;
 
     private static int written = 0;
 
     private static int choicesWritten = 0;
 
-    /**
-     * 目前這段對話有沒有選項。
-     *
-     * <p>由 {@code CaptureListener} 從 Wynntils 的事件設進來——原始訊息在另一個
-     * listener，兩邊只能用旗標串。Wynntils 的事件是<b>從 action bar 推導</b>的，
-     * 多半晚一拍，所以第一格可能錄到旗標還沒設起來的那一幀；
-     * 留三格就夠涵蓋到設起來之後的樣子。
-     */
     private static volatile boolean hasChoices = false;
 
-    /** 由 {@code CaptureListener} 呼叫。見 {@link #hasChoices}。 */
     public static void noteHasChoices(boolean value) {
         hasChoices = value;
     }
@@ -81,16 +33,8 @@ public final class DialogueProbe {
 
     private static String lastPlain = "";
 
-    /** 上一次錄到的台詞佔了幾段（也就是框裡有幾行）。 */
     private static int lastRows = -1;
 
-    /**
-     * 這一輪的 {@link #record} 有沒有真的寫出檔案。
-     *
-     * <p>{@link #after} 靠它決定要不要把取代後的樣子附到同一個檔案裡——
-     * 兩者收到的是<b>同一條</b>訊息（record 掛 HIGHEST、取代掛 LOWEST），
-     * 所以只有 record 寫了的那一輪，after 才有對照的對象。
-     */
     private static boolean justWrote = false;
 
     private DialogueProbe() {}
@@ -99,19 +43,6 @@ public final class DialogueProbe {
         dir = configDir;
     }
 
-    /**
-     * 把對話框用到的字型定義原樣抄出來。
-     *
-     * <h2>為什麼需要這一份</h2>
-     * {@code body_0}、{@code body_1}、{@code control} 不是普通字型——它們把
-     * <b>「畫在第幾行」烘進了字型本身</b>（bitmap provider 的 {@code ascent}）。
-     * 整條對話是一個 action bar 字串，MC 的位移字元只能左右移不能上下移，
-     * 所以 Wynncraft 只能用字型編號來表示行號。
-     *
-     * <p>就地取代把字型換成預設，等於把那個高度丟掉，文字就掉到 action bar
-     * 自己的基線去了。要補回來，得知道每一個 {@code body_N} 的 ascent 是多少——
-     * 那是伺服器資源包裡的數字，猜不出來，但那個包就在玩家的硬碟上。
-     */
     public static void dumpFonts() {
         if (dir == null) {
             return;
@@ -125,17 +56,8 @@ public final class DialogueProbe {
             "hud/dialogue/text/wynncraft/body_1",
             "hud/dialogue/text/wynncraft/body_2",
             "hud/dialogue/text/wynncraft/body_3",
-            // 內文是<b>五行</b>。先前這裡只探到 body_3，body_4 因此一直沒被
-            // 發現：話一長到第五行，那一列就整排方框——Minecraft 對查不到的
-            // 字型 id 是拿 AllMissingGlyphProvider 頂上，每個字都畫成框。
             "hud/dialogue/text/wynncraft/body_4",
             "hud/dialogue/text/wynncraft/body_5",
-            // 選項那幾列。跟 body_N 一樣把 ascent 烘進了字型，所以要就地把
-            // 選項換成中文，就得先知道每一列的 ascent 才能算出對應的 shift
-            // (shift = 7 - ascent，既有字型都符合)。
-            //
-            // 是<b>從 0 起算</b>的：choice_0…choice_3 共四列。先前從 1 探起，
-            // 探到不存在的 choice_4／choice_5 就以為收齊了，choice_0 於是漏掉。
             "hud/dialogue/text/wynncraft/choice_0",
             "hud/dialogue/text/wynncraft/choice_1",
             "hud/dialogue/text/wynncraft/choice_2",
@@ -168,26 +90,9 @@ public final class DialogueProbe {
             Files.writeString(dir.resolve("font-dump.txt"), sb.toString(),
                     StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 寫不出來就算了
         }
     }
 
-    /**
-     * 這一條 action bar 裡有沒有<b>已經打出字的台詞</b>。
-     *
-     * <h2>為什麼不能只認「有對話字型」</h2>
-     * 第一版是這樣寫的，結果三份錄下來的全是同一個東西：對話框<b>淡入</b>的
-     * 第 0、1、2 幀。那時候框已經在畫了（{@code effect/fade} 與
-     * {@code style/default/box} 的字碼一幀一幀往上加），但一句台詞都還沒打出來，
-     * {@code body_0} 裡只有兩個位移字元。
-     *
-     * <p>三份資料看起來很豐富，卻剛好漏掉唯一要看的東西。所以改成認
-     * {@code hud/dialogue/text/…/body_N} 裡有沒有<b>看得懂的字</b>——
-     * 有字才是我們要研究的那一幀。
-     *
-     * <p>{@code text/control}（「 to continue」）不算：那行提示從第一幀就在，
-     * 認它等於沒有篩選。
-     */
     private static boolean hasBodyText(Component message) {
         boolean[] found = {false};
         message.visit((style, text) -> {
@@ -199,41 +104,20 @@ public final class DialogueProbe {
         return found[0];
     }
 
-    /** 有沒有非排版、非圖示的字。 */
     private static boolean readable(String text) {
         return text.codePoints().anyMatch(cp ->
                 cp >= 0x20 && cp < 0x7F && !Character.isWhitespace(cp));
     }
 
-    /**
-     * 換不掉的那些訊息，另外留位子。
-     *
-     * <h2>為什麼需要跟 {@link #record} 分開</h2>
-     * {@code record} 的八個名額是先到先得，而玩家一進遊戲就會先跟 NPC 講一段話——
-     * 那段話把八個名額全吃光，真正翻不出來的那則訊息（任務開始）連一次都錄不到。
-     * 連續四次回報都是這樣：附了八份 probe，八份全是同一段對話。
-     *
-     * <p>這裡只收<b>改寫失敗</b>的訊息，而且同一則訊息一直覆寫同一個檔案——
-     * 逐字打字的每一幀都會進來，最後留在檔案裡的自然是打完的那一幀，
-     * 也就是最有診斷價值的那一幀。
-     */
     public static void miss(Component message) {
         if (dir == null || message == null
                 || !WynnChaYuan.config().debugDumps() || !hasBodyText(message)) {
             return;
         }
         String body = bodyOf(message);
-        // 開頭那幾幀翻不出來是<b>設計上就會這樣</b>：字數還不夠認出是哪一句。
-        // 把它們也收進來的話，名額會被同一句話的「I do / I don / I don' / I don't」
-        // 全部吃光——真正要查的「講到一半忽然掉回英文」與任務開始那則就進不來。
         if (body.strip().length() < ENOUGH) {
             return;
         }
-        // 逐字打字的每一幀都是<b>前一幀再加幾個字</b>，所以「其中一個是另一個的
-        // 開頭」就代表還是同一則訊息。
-        //
-        // 先前是比前八個字，於是「I don」與「I don't s」被當成兩則不同的訊息——
-        // 四個名額又被同一句話的打字過程吃光，真正翻不出來的那則照樣錄不到。
         boolean same = !missKey.isEmpty()
                 && (body.startsWith(missKey) || missKey.startsWith(body));
         if (!same) {
@@ -262,26 +146,9 @@ public final class DialogueProbe {
             Files.writeString(dir.resolve("dialogue-miss-" + misses + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 寫不出來就算了，不要影響遊戲
         }
     }
 
-    /**
-     * <b>不是</b>對話的 action bar，長什麼樣。
-     *
-     * <h2>為什麼要另外記</h2>
-     * {@link #miss} 只收有對話字型的訊息——那是刻意的，不然 HUD 每 tick
-     * 都會把名額吃光。可是玩家回報的「大廳那一列 {@code Left-Click to play}
-     * 沒翻」正好落在這個盲區：它不是 NPC 對話，所以既沒被收集、也沒被改寫，
-     * 連一份現場都留不下來。
-     *
-     * <p>要翻它得先知道兩件事：Wynncraft 送過來的<b>確切字串</b>，
-     * 以及它用哪一份字型（字型沒有中文的話，換了就是一排方框——
-     * 見 {@code DialogueRewriter#fontMissing}）。這支就是去拿這兩件事。
-     *
-     * <p>帶數字的一律不收：血量、魔力、{@code Teleport Cast! -11} 那些
-     * 每 tick 都在變，收進來只會把名額佔滿。
-     */
     public static void plain(Component message) {
         if (message == null || hasBodyText(message)) {
             return;
@@ -289,54 +156,18 @@ public final class DialogueProbe {
         dumpPlain(message, "actionbar-probe-");
     }
 
-    /**
-     * 有字的那幾行 action bar——大廳與 {@code /class} 畫面下方的滑鼠提示。
-     *
-     * <h2>為什麼 {@link #plain} 看不到它</h2>
-     * 那一支要求 {@code !hasBodyText}，所以<b>只有沒有字的</b>才錄得到。
-     * 偏偏會翻不出來的正是有字的那些——{@code /class} 下方那行實機就是這樣：
-     * 整行進了 {@code captured.json}，卻沒有任何線索說明它被切成幾個片段。
-     *
-     * <p>切成幾段是決定性的：語料裡
-     * {@code Left-Click to play} 與 {@code Right-Click to switch} 兩句都翻好了，
-     * 兩句各自是一個片段的話逐片段那條路就會中；查不到就表示整串（含中間那
-     * 一長串空白）是<b>同一個片段</b>，而那一串當然查不到。這支留下的就是
-     * 那個答案：每個片段的字型、顏色與逐字碼位。
-     */
     public static void plainColumns(Component message) {
         columns(message, null, null);
     }
 
-    /**
-     * 同一行的<b>原文與譯文並排</b>——換成功的那些也要錄。
-     *
-     * <h2>為什麼不能只錄失敗的</h2>
-     * {@link #plainColumns} 掛在「整行與逐片段都落空」之後，所以
-     * {@code columnSwap} 一旦成功就永遠不會寫檔。偏偏畫面會跑掉的正是
-     * <b>換成功</b>的那一行：{@code /class} 下方三欄換掉第一欄之後整行變窄，
-     * action bar 是照整行寬度置中的，於是後面兩欄跟著左移，
-     * 嚴重時整行被推出畫面外（使用者 2026-10-05 的截圖）。
-     *
-     * <p>要補償就得知道「原本多寬、換完多寬」，而那隻能從實機量。
-     * 這一支就是去拿它：逐片段的字型、顏色、空白字型的偏移像素，
-     * 外加整行與每一欄在<b>目前字型</b>下的量測寬度。
-     */
     public static void columnsHit(Component before, Component after) {
         columns(before, after, null);
     }
 
-    /**
-     * @param after 實際送去畫的那一行；跟原文一樣就傳 {@code null}
-     * @param note  附在檔尾的說明（定位格矯正的結果）；沒有就 {@code null}
-     */
     public static void columns(Component before, Component after, String note) {
         if (dir == null || before == null || !WynnChaYuan.config().debugDumps()) {
             return;
         }
-        // 這裡<b>不能</b>用 words()：它遇到任何數字就回傳空字串（那是給
-        // plain() 擋血量魔力用的），而 action bar 這幾行偏偏都帶數字——
-        // 大廳那行有世界編號、/class 那行有物品數量。先前診斷檔一直是空的
-        // 就是被這一條擋掉的。
         String body = letters(before);
         if (body.isEmpty() || body.equals(columnsKey)) {
             return;
@@ -368,13 +199,10 @@ public final class DialogueProbe {
             Files.writeString(dir.resolve("actionbar-columns-" + columnsWritten + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 寫不出來就算了，不要影響遊戲
         }
     }
 
     private static void dumpSide(StringBuilder sb, String label, Component message) {
-        // action bar 是整行置中的：起點 = (畫面寬 - 整行寬) / 2，之後每個片段
-        // 的推進量累加就是它實際落在哪。x < 0 代表那一段畫到畫面外面去了。
         int screen = guiWidth();
         int start = screen < 0 ? Integer.MIN_VALUE : (screen - widthOf(message)) / 2;
         sb.append("=== ").append(label).append("（getString） ===")
@@ -393,9 +221,6 @@ public final class DialogueProbe {
         java.util.List<String> offscreen = new java.util.ArrayList<>();
         message.visit((style, text) -> {
             int at = cursor[0];
-            // 退回的片段<b>寬度本來就是負的</b>（Wynncraft 就是靠它把游標拉回去），
-            // 所以不能拿 w < 0 當「量不到」——量不到是 MIN_VALUE。先前那樣寫的
-            // 結果是游標只進不退，x 一路加到畫面寬的一倍半。
             int w = advance(Component.literal(text).setStyle(style));
             sb.append(String.format(
                     "  [%02d] x=%-6s 寬=%-5s font=%-38s color=%-9s px=%-6s text=%s%n",
@@ -430,7 +255,6 @@ public final class DialogueProbe {
         sb.append(System.lineSeparator());
     }
 
-    /** 推進量，<b>可以是負的</b>；量不到回 {@code Integer.MIN_VALUE}。 */
     private static int advance(Component message) {
         try {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
@@ -441,7 +265,6 @@ public final class DialogueProbe {
         }
     }
 
-    /** 目前的畫面寬（GUI 縮放後）；量不到回 -1。 */
     private static int guiWidth() {
         try {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
@@ -452,7 +275,6 @@ public final class DialogueProbe {
         }
     }
 
-    /** 量不到就回 -1——headless 測試與還沒開畫面的時候都量不到。 */
     private static int widthOf(Component message) {
         try {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
@@ -495,20 +317,9 @@ public final class DialogueProbe {
             Files.writeString(dir.resolve(prefix + plains + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 寫不出來就算了，不要影響遊戲
         }
     }
 
-    /**
-     * 我們自己換上去的字，用我們自己挑的字型<b>畫不出來</b>。
-     *
-     * <h2>為什麼要整段收手</h2>
-     * 畫不出來的下場是一排方框，而方框的寬度跟原本那個字元不一樣——對話框裡
-     * 的位置全靠位移字元一格一格算出來，寬度一變，後面的名牌、頭像、外框
-     * 就整個被推出去（實機回報的「莫名突出」）。與其那樣，不如整句留英文。
-     *
-     * <p>這支負責留下現場：哪幾個碼位畫不出來、換之前與換之後各長什麼樣。
-     */
     public static void tofu(Component before, Component after, String why) {
         if (dir == null || before == null || !WynnChaYuan.config().debugDumps()
                 || tofus >= TOFU_LIMIT) {
@@ -530,11 +341,9 @@ public final class DialogueProbe {
             Files.writeString(dir.resolve("dialogue-tofu-" + tofus + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 診斷寫不出來就算了，不要影響遊戲
         }
     }
 
-    /** 逐片段倒出來：字型、顏色、文字。 */
     private static void segments(StringBuilder sb, Component message) {
         if (message == null) {
             sb.append("  （沒有）").append(System.lineSeparator());
@@ -550,7 +359,6 @@ public final class DialogueProbe {
         }, Style.EMPTY);
     }
 
-    /** 見 {@link #plain}：帶數字的不算，那些每 tick 都在變。 */
     private static String words(Component message) {
         StringBuilder sb = new StringBuilder();
         message.visit(text -> {
@@ -573,18 +381,6 @@ public final class DialogueProbe {
         return letters >= MIN_WORDS ? core : "";
     }
 
-    /**
-     * 跟 {@link #words} 一樣，但<b>不排斥數字</b>。
-     *
-     * <p>{@code words} 的「帶數字一律不收」是給血量魔力那條用的——那種每個
-     * tick 都在變，收進來只會把名額佔滿。可是 action bar 的欄位那幾行偏偏
-     * 都帶數字（大廳那行有世界編號 {@code AS1}、{@code /class} 那行有物品
-     * 數量），用同一個過濾等於把要查的東西全擋掉：先前
-     * {@code actionbar-columns-*.txt} 一直沒產出就是這個原因。
-     *
-     * <p>重複的那一行靠 {@link #columnsKey} 擋，額度靠
-     * {@link #COLUMNS_LIMIT} 擋，不需要再靠數字判斷。
-     */
     private static String letters(Component message) {
         StringBuilder sb = new StringBuilder();
         message.visit(text -> {
@@ -603,14 +399,10 @@ public final class DialogueProbe {
         return letters >= MIN_WORDS ? core : "";
     }
 
-    /** 見 {@link #plain}：短到這樣的多半是 HUD 的碎片，不是給人讀的句子。 */
     private static final int MIN_WORDS = 8;
 
-    /** 見 {@link #plain}。 */
-    /** 字型只倒一次；見 {@link #record} 改成繞圈之後 written 不再單調遞增。 */
     private static int fonts0 = 0;
 
-    /** 畫不出來的那幾段最多記幾份。見 {@link #tofu}。 */
     private static final int TOFU_LIMIT = 3;
 
     private static int tofus = 0;
@@ -621,41 +413,19 @@ public final class DialogueProbe {
 
     private static String plainKey = "";
 
-    /**
-     * 欄位探針自己的額度。
-     *
-     * <p>不能跟 {@link #plains} 共用：那一支每個 tick 都在看血量魔力那條，
-     * 六個名額一下就被吃光，真正要查的 {@code /class} 那行就永遠輪不到
-     * （[[wynnchayuan-palette-log-on-success]] 同一種坑）。
-     */
     private static final int COLUMNS_LIMIT = 4;
 
     private static int columnsWritten = 0;
 
     private static String columnsKey = "";
 
-    /** 改寫失敗的訊息最多留幾則。 */
     private static final int MISS_LIMIT = 6;
 
-    /**
-     * 短於這麼多字的失敗不記。
-     *
-     * <p>跟 {@code TranslationStore.MIN_PREFIX_LENGTH} 同一個道理：字數不夠就
-     * 認不出是哪一句，那不是問題，是還沒到能查的時候。
-     */
     private static final int ENOUGH = 12;
 
     private static int misses = 0;
     private static String missKey = "";
 
-    /**
-     * 有選項的對話：把<b>原始</b> action bar 整條記下來。
-     *
-     * <p>與 {@link #record} 分開計數，因為那邊的格子會被沒有選項的對話用光。
-     * 這裡也不做「長度變化」的過濾——有選項的對話本來就少，寧可多錄幾份。
-     *
-     * @param message 未經 Wynntils 清理的原始 action bar 訊息
-     */
     public static void recordChoices(Component message) {
         if (dir == null || !hasChoices || choicesWritten >= CHOICE_LIMIT
                 || message == null || !WynnChaYuan.config().debugDumps()) {
@@ -682,7 +452,6 @@ public final class DialogueProbe {
                                                   + choicesWritten + ".txt"),
                               sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
-            // 診斷寫不出來就算了，不能反過來弄壞畫面
         }
     }
 
@@ -692,24 +461,14 @@ public final class DialogueProbe {
                 || !WynnChaYuan.config().debugDumps() || !hasBodyText(message)) {
             return;
         }
-        // 同一句話的每一個字都會送一次。比的是<b>台詞本身</b>的長度，
-        // 不是整條訊息——整條訊息裡九成是固定不變的框線與位移字元，
-        // 拿它去比，一句話從頭打到尾的長度變化根本不到門檻。
         String plain = message.getString();
         String body = bodyOf(message);
         int rows = rowsOf(message);
-        // 行數變了也要錄。門檻只看長度的話，<b>換行的那一刻</b>剛好錄不到——
-        // 而「超出方格有沒有換行」正是要看的東西。
         if (body.length() < lastPlain.length() + 12 && rows == lastRows) {
             return;
         }
         lastPlain = body;
         lastRows = rows;
-        // 錄<b>最近</b>的幾句，不是最前面的幾句。
-        //
-        // 先前錄滿八格就停，而那八格一定是進伺服器之後遇到的第一個 NPC——
-        // 玩家回報畫面有問題的那一句幾乎永遠在後面，檔案裡一次都沒有它。
-        // 改成繞回去蓋掉最舊的：看到問題就離開遊戲，檔案裡就是現場。
         written = written % LIMIT + 1;
         if (fonts0 == 0) {
             fonts0 = 1;
@@ -746,20 +505,9 @@ public final class DialogueProbe {
                     sb.toString(), StandardCharsets.UTF_8);
             justWrote = true;
         } catch (Exception e) {
-            // 勘查寫不出來就算了，不要影響遊戲
         }
     }
 
-    /**
-     * 就地取代<b>之後</b>的樣子，附在同一個檔案後面。
-     *
-     * <h2>為什麼要錄這一份</h2>
-     * 原始那一份告訴我們 Wynncraft 怎麼排版，卻不會告訴我們<b>我們自己送出去
-     * 的是什麼</b>。譯文沒出現的時候，光看原始那一份完全分不出是查表沒中、
-     * 位移算錯、還是根本沒被呼叫到——三種原因在畫面上長得一模一樣。
-     *
-     * <p>兩份寫在同一個檔案裡，是為了能直接上下對照同一句話。
-     */
     public static void after(Component message) {
         if (!justWrote || dir == null || message == null) {
             return;
@@ -786,11 +534,9 @@ public final class DialogueProbe {
                     sb.toString(), StandardCharsets.UTF_8,
                     java.nio.file.StandardOpenOption.APPEND);
         } catch (Exception e) {
-            // 同上，寫不出來就算了
         }
     }
 
-    /** 只把台詞那幾段接起來，用來判斷「這句話打到哪了」。 */
     private static String bodyOf(Component message) {
         StringBuilder out = new StringBuilder();
         message.visit((style, text) -> {
@@ -802,7 +548,6 @@ public final class DialogueProbe {
         return out.toString();
     }
 
-    /** 台詞被拆成幾段（一段就是框裡的一行）。 */
     private static int rowsOf(Component message) {
         int[] rows = {0};
         message.visit((style, text) -> {
@@ -818,13 +563,6 @@ public final class DialogueProbe {
         return style.getFont() == null ? "(預設)" : style.getFont().toString();
     }
 
-    /**
-     * 一段文字連同它每一個字的碼位。
-     *
-     * <p>對話框的內容大半是看不見的字元：{@code minecraft:space} 的寬度位移、
-     * PUA 區的圖示、還有拿來當位置標記的控制字元。只印字串的話那些全都是空白，
-     * 完全看不出結構——而結構正是這份勘查要看的東西。
-     */
     private static String describe(String text) {
         StringBuilder out = new StringBuilder();
         text.codePoints().forEach(cp -> {

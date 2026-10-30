@@ -14,39 +14,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 裝備名只套在<b>真的是那件裝備</b>的說明上。
- *
- * <h2>實機回報（使用者 2026-10-22）</h2>
- * 任務《Off the Rails》的「Cemon Notes」書本介面，左上角返回箭頭的說明是
- *
- * <pre>
- *   Return
- *   Click this to return to
- *   the rest of your notes
- * </pre>
- *
- * 名稱那一列被翻成戒指 {@code Return} 的譯名，「譯名加原文」下還附了「(Return)」。
- * 那只是按鈕的名字。語料裡只有那枚戒指用這個原文，查表當然只答得出戒指。
- * 使用者說這類「裝備名翻到介面上別的東西」已經抓到好幾個。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>介面按鈕的說明（沒有名稱列外框、沒有稀有度橫幅、沒有需求列）：名稱留原文；</li>
- *   <li>對照組：真的戒指——原版兩列名稱＋橫幅，與 WynnMod 重畫的一列名稱＋橫幅——照舊翻、
- *       「譯名加原文」照舊附原文；</li>
- *   <li>按鈕的說明文字照常翻，名稱留原文不會把它拖回英文；</li>
- *   <li>Lootrun 使命卡（{@code {#}Redemption}，語料另有整條）不受影響；</li>
- *   <li>出貨的語料、七個語言，跟介面詞撞名的裝備名每一個都照上面的規矩。</li>
- * </ul>
- *
- * 譯文一律從語料當場查，不寫死措辭。
- */
 public final class GearNameOnGearTest {
 
     private static int failures = 0;
 
-    /** 跟介面上的字撞名的裝備名（只有裝備用這個原文）。見回報。 */
     private static final List<String> UI_WORDS = List.of(
             "Return", "Withdrawal", "Crystal", "Shield", "Torch", "Quill", "Remembrance",
             "Departure", "Secret", "Hidden", "Pursuit", "Lookout", "Relic");
@@ -69,7 +40,6 @@ public final class GearNameOnGearTest {
         System.exit(0);
     }
 
-    /** 自己造的語料：一枚戒指、按鈕的說明、一張使命卡。 */
     private static void selfMadeCorpus() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-gear-on-gear");
         Files.writeString(dir.resolve("gear-accessory.json"), """
@@ -116,12 +86,6 @@ public final class GearNameOnGearTest {
         store.setNameMode(CollectorConfig.ItemNames.ON);
     }
 
-    /**
-     * 出貨的語料、七個語言：每一個跟介面詞撞名的裝備名都照規矩。
-     *
-     * <p>同一個 store 重載各語言：TooltipPanel 的快取認「同樣的內容＋同一個 generation」，
-     * 各開一個新 store 的話每個都是第 1 代，後面的語言會拿到前一個語言的結果。
-     */
     private static void shippedCorpus() throws Exception {
         TranslationStore rs = new TranslationStore();
         rs.loadAll(Files.createTempDirectory("wynnchayuan-gear-on-gear-empty"));
@@ -133,7 +97,6 @@ public final class GearNameOnGearTest {
             }
             rs.loadAll(real);
             rs.setNameMode(CollectorConfig.ItemNames.BOTH);
-            // 按鈕的說明：語料收了（攤平成一句的鍵）就要翻出來，名稱留原文不能把它拖回英文
             String desc = rs.lookupExact(DESC_1 + " " + DESC_2);
             List<String> notes = shown(button("Return"), rs);
             String rest = String.join(" ", notes.subList(1, notes.size()));
@@ -145,7 +108,6 @@ public final class GearNameOnGearTest {
             int names = 0;
             for (String name : UI_WORDS) {
                 String ring = rs.lookup(name);
-                // 這個語言沒翻（西文的裝備名刻意空著）或別的檔也有同一個原文：不是這個 bug
                 if (ring == null || !rs.itemNameOnly(name)) {
                     continue;
                 }
@@ -169,8 +131,6 @@ public final class GearNameOnGearTest {
         check("前提——出貨語料裡真的有撞名的裝備名（不然上面什麼都沒驗）", covered > 0);
     }
 
-    // ------------------------------------------------------------ 造 tooltip（照實機分段）
-
     private static final Style LANG = font("minecraft:language/wynncraft");
     private static final Style EMBLEM_FRAME = font("minecraft:tooltip/emblem/frame");
     private static final Style EMBLEM_SPRITE = font("minecraft:tooltip/emblem/sprite");
@@ -189,7 +149,6 @@ public final class GearNameOnGearTest {
         return Component.literal(sb.toString()).withStyle(style);
     }
 
-    /** 介面按鈕：名稱一列，底下兩列說明。沒有外框、橫幅、需求列。 */
     private static List<Component> button(String name) {
         List<Component> rows = new ArrayList<>();
         rows.add(Component.literal(name).withStyle(s -> s.withColor(0xFFFFFF).withBold(true)));
@@ -198,7 +157,6 @@ public final class GearNameOnGearTest {
         return rows;
     }
 
-    /** 稀有度與類別的橫幅：整列都是圖示（實機 shiny-tooltip 的第 2 列）。 */
     private static Component banner() {
         MutableComponent row = Component.empty();
         row.append(icon(LANG, 0xD0026));
@@ -209,7 +167,6 @@ public final class GearNameOnGearTest {
         return row;
     }
 
-    /** 原版的裝備：第 0 列寬度 0 的名稱、第 1 列五個圖示＋名稱＋鑑定度、橫幅、屬性。 */
     private static List<Component> vanillaGear(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent hidden = Component.empty();
@@ -232,7 +189,6 @@ public final class GearNameOnGearTest {
         return rows;
     }
 
-    /** WynnMod 重畫的裝備：名稱只有一列、沒有外框，接著橫幅。 */
     private static List<Component> wynnModGear(String name) {
         List<Component> rows = new ArrayList<>();
         rows.add(Component.literal(name).withStyle(s -> s.withColor(0xAA00AA)));
@@ -250,7 +206,6 @@ public final class GearNameOnGearTest {
         return row;
     }
 
-    /** Lootrun 使命卡：標題只有開頭一個圖示。 */
     private static List<Component> missionCard(String name) {
         List<Component> rows = new ArrayList<>();
         MutableComponent title = Component.empty();
@@ -261,7 +216,6 @@ public final class GearNameOnGearTest {
         return rows;
     }
 
-    /** 翻完的每一行；圖示字元換成 # 好讀。整份沒翻到就回原文。 */
     private static List<String> shown(List<Component> rows, TranslationStore store) {
         List<Component> out = TooltipPanel.translateInPlace(rows, store);
         List<Component> lines = out.isEmpty() ? rows : out;

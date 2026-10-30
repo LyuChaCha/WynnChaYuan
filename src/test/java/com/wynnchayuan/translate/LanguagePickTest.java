@@ -5,23 +5,11 @@ import com.wynnchayuan.CollectorConfig;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 要用哪一種語言的譯文，以及那個選擇存不存得住。
- *
- * <h2>為什麼值得一條測試</h2>
- * {@code language} 這個設定原本是<b>死的</b>：欄位在、javadoc 在、getter 在，
- * 但存檔與讀檔都沒有它，所以怎麼改都沒有用。這種漏掉不會有任何錯誤訊息——
- * 改了設定檔、重開遊戲、畫面沒變，看起來就像「這個設定沒有效果」。
- *
- * <p>它的用途是校稿：譯者的 Minecraft 是繁中，但要看簡中翻得對不對，
- * 總不能為了看一眼就把整個遊戲切成簡體再切回來。
- */
 public final class LanguagePickTest {
 
     private static int failures = 0;
 
     public static void main(String[] args) throws Exception {
-        // ---- 挑語言 ----
         check("沒指定就跟著遊戲走",
                 "zh_cn".equals(Languages.pick("", "zh_cn")));
         check("指名了就用指名的",
@@ -34,7 +22,6 @@ public final class LanguagePickTest {
         check("前後空白不算",
                 "zh_cn".equals(Languages.pick("  zh_cn  ", "zh_tw")));
 
-        // ---- 簡中要能被選到 ----
         check("jar 裡打包了簡體中文", Languages.bundled().contains("zh_cn"));
         check("繁體中文一定在（它是回退的底）",
                 Languages.bundled().contains(Languages.DEFAULT));
@@ -49,7 +36,6 @@ public final class LanguagePickTest {
                 "ja_jp".equals(Languages.underlay("ja_jp", "zh_cn")));
         check("指名自己不墊", Languages.underlay("zh_cn", "zh_cn") == null);
 
-        // ---- 存得住嗎 ----
         Path dir = Files.createTempDirectory("wynnchayuan-lang");
         Path file = dir.resolve("config.json");
         CollectorConfig first = new CollectorConfig(file);
@@ -65,7 +51,6 @@ public final class LanguagePickTest {
         check("清回空字串也存得住",
                 new CollectorConfig(file).language().isEmpty());
 
-        // ---- 輔助語言 ----
         check("輔助語言預設是自動（空字串）",
                 again.fallbackLanguage().isEmpty());
         again.setFallbackLanguage("off");

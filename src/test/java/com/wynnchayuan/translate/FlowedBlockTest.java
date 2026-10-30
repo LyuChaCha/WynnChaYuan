@@ -10,25 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 被 tooltip 寬度<b>自動斷行</b>的長敘述要查得到。
- *
- * <h2>畫面上長什麼樣</h2>
- * 裝備的背景敘述在語料裡是<b>沒有斷行的一整句</b>，遊戲卻依畫面寬度把它切成
- * 十來行。兩邊字面上永遠不相等，所以查表得先把那幾行併回一句。
- *
- * <p>這條路先前有兩個各自獨立的破口，合起來讓<b>整批</b>裝備敘述都不生效——
- * 譯文明明在檔案裡，畫面上還是整段英文：
- *
- * <ol>
- *   <li>併起來的行數上限是 8，而敘述普遍十行以上，永遠湊不齊。</li>
- *   <li>地名是<b>逐行</b>認的。「the peak of the Tower of ⏎ Ascension,」
- *       被切開之後兩行都不含完整地名，模板裡留著原樣英文；
- *       而語料裡存的是 {@code {p}}。</li>
- * </ol>
- *
- * <p>兩個都得修才會生效，所以這條測試同時盯著它們。
- */
 public final class FlowedBlockTest {
 
     private static int failures = 0;
@@ -37,7 +18,6 @@ public final class FlowedBlockTest {
 
     private static final int BODY = 0xAAAAAA;
 
-    /** Oblivion 的背景敘述，照遊戲的寬度斷行。地名剛好斷在第二、三行之間。 */
     private static final String[] LORE = {
             "This sacrificial kris, fallen from",
             "the peak of the Tower of",
@@ -67,16 +47,11 @@ public final class FlowedBlockTest {
                 && lore.contains("Tower of Ascension"));
         check("譯文裡不留 {p}", lore != null && !lore.contains("{p}"));
 
-        // 反面：湊不齊的那幾行不能硬翻。少了最後兩行就不是完整的那一句，
-        // 這時候應該讓原文照樣顯示，而不是拿半句話去撞別的條目。
         check("湊不齊就不硬翻",
                 LineTranslator.translateBlock(
                         block(java.util.Arrays.copyOf(LORE, 8)),
                         store, new boolean[8]) == null);
 
-        // 整份 tooltip 走一遍。單獨一段會過，不代表放進上下文裡也會過——
-        // 呼叫端是「由長到短試、中了就往後跳」，前面某一段多吃了幾行的話，
-        // 起點就會落在段落中間，那一段從此再也湊不出來。
         List<Component> tip = new ArrayList<>();
         tip.add(plain("Oblivion"));
         tip.add(plain(""));
@@ -92,9 +67,6 @@ public final class FlowedBlockTest {
         check("放進整份 tooltip 也翻得出來（實際：" + shorten(all) + "）",
                 all.contains("獻祭之刃"));
 
-        // 遊戲實際送來的樣子：置中的段落，<b>每一行開頭</b>都有一個推位置用的
-        // 隱形字元。抽成模板就是行首的 {#}，攤平之後整段夾著一堆 {#}，
-        // 而語料裡是乾淨的一句話。診斷檔第 20 筆就是這個樣子。
         String offset = joined(centred(LORE), store);
         check("每行開頭帶排版偏移也翻得出來（實際：" + shorten(offset) + "）",
                 offset != null && offset.startsWith("這把從"));
@@ -117,12 +89,6 @@ public final class FlowedBlockTest {
         }
     }
 
-    /**
-     * Major ID 照遊戲送來的樣子：名稱那半是亮色、帶排版偏移，
-     * 末尾的 {@code elements} 自成一個綠色的段。
-     *
-     * <p>那個綠色要跟著譯文走——使用者要的是「翻出來也保留原始格式」。
-     */
     private static void majorId(TranslationStore store) {
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
@@ -158,8 +124,6 @@ public final class FlowedBlockTest {
         }
         String all = out.stream().map(Component::getString)
                 .reduce("", String::concat);
-        // 不釘特定譯名——翻譯團隊隨時會改（實測 華綻 就被改成了 散華）。
-        // 從語料把當下的譯名查出來，釘的是「有翻」與「顏色跟過去了」。
         String zh = store.lookup("Efflorescence");
         check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
                 zh != null && all.contains(zh) && all.contains("所有元素"));
@@ -169,16 +133,6 @@ public final class FlowedBlockTest {
                 colourOf(out, "元素") == 0x55FF55);
     }
 
-    /**
-     * 第二個 Major ID，拿實機收到的斷行來測。
-     *
-     * <p>{@code captured.json} 是<b>累積</b>的，裡面至今列著三十七個
-     * Major ID 沒譯文，Superconductor 是其中一個。上面的
-     * Efflorescence 又是過的，所以分不出來那些到底是真的失效，
-     * 還是舊版本留下的紀錄。這條測試就是來釘這件事的。
-     *
-     * <p>斷行位置照抄 captured.json 的 0121–0128，一字不改。
-     */
     private static void superconductor(TranslationStore store) {
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
@@ -217,12 +171,6 @@ public final class FlowedBlockTest {
         check("敘述也翻了", all.contains("閃電"));
     }
 
-    /**
-     * 斷行之後<b>最後一行只剩圖示與數值</b>的 Major ID。
-     *
-     * <p>「🔥+65%.」抽成模板是 {@code {#}+{~}.}，沒有字母。先前只要有一行沒有
-     * 字母就當成整段夾著分隔線，攤平查表整個略過——名稱換掉了，敘述留英文。
-     */
     private static void napalm(TranslationStore store) {
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
@@ -272,16 +220,6 @@ public final class FlowedBlockTest {
                 zh != null && all.contains(zh) && !all.contains("times the"));
     }
 
-    /**
-     * 官方改過措辭的 Major ID，照實機的斷行測。
-     *
-     * <p>語料的說明停在舊版：Wavebreak 前面還多一句「Meteor's damage is
-     * replaced by…」，Fallout 的 area 還寫成 range。遊戲裡整段對不上，
-     * 畫面上只剩名稱有翻、說明整段英文。斷行照抄 majorid-debug.txt。
-     *
-     * <p>後面接著的「֎: ֎」與分隔線也一起放進整份 tooltip：呼叫端是由長到短試，
-     * 要確定說明那七行單獨湊得出來，不會被後面幾行拖著一起落空。
-     */
     private static void wavebreak(TranslationStore store) {
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
@@ -338,16 +276,11 @@ public final class FlowedBlockTest {
         check("放進整份 tooltip 也翻得出來（實際：" + shorten(all) + "）",
                 zh != null && all.contains(zh) && !all.contains("bounce up"));
 
-        // 另一個改過措辭的：range → area。語料若停在舊版就查不到。
         String fallout = store.lookupFlat(
                 "Bomb Arrow gains +{~} area, {#}+{~}, severely increased recoil, and {#}{~} self-damage.");
         check("Fallout 的新措辭查得到（實際：" + fallout + "）", fallout != null);
     }
 
-    /**
-     * Starcrossed 也是改過措辭的一條，實機 tooltip 裡說明後面緊接著一整列
-     * 圖示（majorid-debug.txt 攤平後尾巴那九個 {#}）。斷行照抄 captured.json。
-     */
     private static void starcrossed(TranslationStore store) {
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
@@ -394,13 +327,6 @@ public final class FlowedBlockTest {
                 zh != null && all.contains(zh) && !all.contains("links up"));
     }
 
-    /**
-     * 討伐戰選單的整份 tooltip。
-     *
-     * <p>{@code captured.json} 把裡面兩段的<b>每一行</b>都當成沒譯文收了
-     * 起來，而兩段在語料裡都在、斷行也一字不差。這條測試分開問兩件事：
-     * 單拿敘述那一段查得到嗎，以及放進整份 tooltip 之後還查得到嗎。
-     */
     private static void raidPicker(TranslationStore store) {
         String[] lore = {
                 "Void Holes are strange... Are",
@@ -423,8 +349,6 @@ public final class FlowedBlockTest {
         check("敘述單獨查得到（實際：" + shorten(alone) + "）",
                 alone != null && alone.contains("虛空洞"));
 
-        // 選單裡的字是置中的，每一行都帶著推位置的隆形字元——
-        // 連<b>空行</b>也帶。空行不空的話，translateBlock 就不會在那裡收手。
         List<Component> tip = new ArrayList<>();
         tip.add(offset("The Nameless Anomaly"));
         tip.add(offset(""));
@@ -449,19 +373,6 @@ public final class FlowedBlockTest {
                 all.contains("要加入這場討伐戰"));
     }
 
-    /**
-     * 置中的段落，而且語料的鍵含地名。
-     *
-     * <h2>兩件事疊在一起才壞</h2>
-     * 行首的排版偏移由 {@code rejoin} 剝掉，地名由
-     * {@code LineParts.of} <b>逐行</b>認。各自都對，一起來就不對：
-     * 重組出來的地名池只裝「跨行才認得出來」的那幾個，
-     * 而逐行已經認掉的那些反而不見了——譯文裡的 {p}
-     * 沒有東西可以填，整段被判定佔位符不符而放棄。
-     *
-     * <p>畫面上就是第一行中文、其餘英文——而且只要是
-     * 「置中且含地名」的整段敍述全部中招。
-     */
     private static void grootslang(TranslationStore store) {
         String[] lore = {
                 "Homes ravaged by Decay, the",
@@ -500,7 +411,6 @@ public final class FlowedBlockTest {
                 !all.contains("subterranean"));
     }
 
-    /** 譯文裡某一段文字實際被塗上的顏色。 */
     private static int colourOf(List<Component> out, String needle) {
         for (Component line : out) {
             for (Component part : flatten(line)) {
@@ -522,19 +432,11 @@ public final class FlowedBlockTest {
         return out;
     }
 
-    /**
-     * 這一批補的 UI 字串真的查得到。
-     *
-     * <p>光是「寫進 json」不代表畫面上會換——鍵要跟遊戲送來的模板一模一樣。
-     * 這裡拿實際出貨的語料跑一次，少一個空格、多一個標點都會在這裡被抓到。
-     */
     private static void newLabels(TranslationStore store) {
         String[][] want = {
                 {"POWDER SOCKETS", "粉末插槽"},
                 {"Empty", "空"},
                 {"SET", "套裝"},
-                // #1036：名牌本來是「平均每秒傷害」，但 label.json 與 npc.json
-                // 那三行都寫「平均 DPS」，而且日文的名牌也是，所以統一到較短的那個。
                 {"Average DPS", "平均 DPS"},
                 {"Earth", "地屬性"},
                 {"Thunder", "雷屬性"},
@@ -551,28 +453,17 @@ public final class FlowedBlockTest {
                     pair[1].equals(got));
         }
 
-        // 專業名稱在畫面上是包在整段裡的（`Lv. 52 Fishing [34.57%]`），
-        // 整段查不到，所以收成可替換的詞。
         TranslationStore.Term term = store.findTerm("Lv. 52 Fishing [34.57%]", 0);
         check("整段裡的專業名稱換得掉（拿到："
                         + (term == null ? "null" : term.translation()) + "）",
                 term != null && "釣魚".equals(term.translation()));
-        // 反面：小寫的一般字不能被當成專業名稱換掉
         check("小寫的不換", store.findTerm("go fishing with me", 0) == null);
     }
 
-    /**
-     * 譯文<b>比原文少行</b>時要自己折回去。
-     *
-     * <p>譯者常把三行的英文寫成一句中文——那在語料裡就是沒有換行的一整句。
-     * 先前只有「攤平查表」那條路會折，精準命中的不會，
-     * 於是畫面上就是一條長到衝出面板的行（issue #90 第 4 點）。
-     */
     private static void shaman(TranslationStore store) {
         String[] src = {
                 "When casting Uproot, instead",
                 "wear one of the Mystic Masks.",
-                // 面具重做之後的措辭；舊的「to remove it」那一條已經從語料清掉了
                 "(Shift + Uproot to equip the previous mask)",
         };
         List<StyledText> run = block(src);
@@ -584,16 +475,11 @@ public final class FlowedBlockTest {
         }
         String all = out.stream().map(Component::getString)
                 .reduce("", String::concat);
-        // 不釘特定譯名——那是翻譯團隊的內容，他們隨時會改（實測就被改過一次）。
-        // 釘的是「有換成中文」這件事。
         check("內容是譯文（實際：" + shorten(all) + "）",
                 all.codePoints().anyMatch(cp ->
                         Character.UnicodeScript.of(cp)
                                 == Character.UnicodeScript.HAN));
 
-        // 折行本身量的是<b>像素寬度</b>，而測試環境沒有字型（Minecraft.getInstance()
-        // 是 null），量出來一律是 0，折不出東西。所以這裡釘的是<b>判斷</b>：
-        // 「要不要折」才是這次改的地方，折的機制本來就在，只是沒被叫到。
         check("譯文比原文少行 -> 要折",
                 LineTranslator.needsWrap("一句話", 3, false));
         check("攤平查到的一律要折",
@@ -605,13 +491,6 @@ public final class FlowedBlockTest {
                         3, false));
     }
 
-    /**
-     * lore 上下那條分隔線（◆—◆）不能被吃掉。
-     *
-     * <p>它整行都是符號，抽成模板就是一串 {@code {#}}——跟行首的排版偏移
-     * 長得一模一樣。把它當成偏移剝掉的話，這一行會變成空的，
-     * 於是整段連分隔線一起被當成同一句話併進去，譯文出來就少了那條線。
-     */
     private static void divider(TranslationStore store) {
         List<Component> tip = new ArrayList<>();
         tip.add(plain("Halcyon"));
@@ -634,7 +513,6 @@ public final class FlowedBlockTest {
         check("上下兩條分隔線都還在（實際 " + rules + " 條）", rules == 2);
     }
 
-    /** 整行都是符號的分隔線。 */
     private static final String RULE = "";
 
     private static Component rule() {
@@ -643,7 +521,6 @@ public final class FlowedBlockTest {
                         net.minecraft.resources.Identifier.withDefaultNamespace("common"))));
     }
 
-    /** 置中的段落：每一行前面都掛一個推位置用的隱形字元。 */
     private static List<StyledText> centred(String[] lines) {
         List<StyledText> run = new ArrayList<>(lines.length);
         for (String line : lines) {
@@ -671,7 +548,6 @@ public final class FlowedBlockTest {
         return run;
     }
 
-    /** 置中的一行：開頭一個推位置的隆形字元，連空行也一樣。 */
     private static MutableComponent offset(String text) {
         MutableComponent c = Component.empty();
         c.append(Component.literal(SpaceOffset.encode(12))

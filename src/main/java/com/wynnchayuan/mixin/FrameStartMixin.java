@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** 每一幀的開頭：物品資料的一幀快取換新的幀號（{@link ComponentMemo}），原文 tooltip 的位置也重記。 */
 @Mixin(GameRenderer.class)
 public abstract class FrameStartMixin {
 

@@ -11,27 +11,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 寶箱上的漂浮字：翻完之後每一段的顏色、每一顆星的顏色都要跟原文一樣。
- *
- * <h2>實機回報</h2>
- * 「loot chest 上的飄浮字 格式與顏色與原文不同」。{@code majorid-debug.txt} 錄到的：
- *
- * <pre>
- *   Loot Chest [✫✫✫✫]              §7Loot Chest [ §f✫ §8✫✫✫ §7]
- *   Locked Loot Chest [✫✫✫✫]       §dLocked §5Loot Chest [ §d✫✫✫ §8✫ §5]
- *   SLAY! Defeat a Grume           §c§lSLAY! §7Defeat a §fGrume
- * </pre>
- *
- * 星星的顏色<b>就是寶箱等級</b>——亮的幾顆是等級、暗的是還差幾級。
- * 翻完之後四顆星同一個顏色，等級就看不出來了；診斷的「重點段」寫著
- * 兩段星星都「在譯文裡卻沒貼上」。第二行則整行只剩一個顏色。
- *
- * <p>星星的分段隨等級變（一級是 1+3、三級是 3+1、四級是 4+0），所以語料裡的
- * {@code {cN}} 寫不死——這裡測的是程式自己照原文把顏色貼回去。
- *
- * <p>語料用真的：繁中墊底、簡中在上，跟遊戲裡切到簡中時一樣（見 LayeredGearNameTest）。
- */
 public final class LootChestColourTest {
 
     private static int failures = 0;
@@ -57,7 +36,6 @@ public final class LootChestColourTest {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(List.of(root.resolve("zh_tw")));
 
-        // ---- 一級寶箱：一顆白星、三顆暗星
         StyledText plain = styled(
                 lit("Loot Chest ", GREY), lit("[", GREY), lit("✫", WHITE),
                 lit("✫✫✫", DARK), lit("]", GREY));
@@ -75,7 +53,6 @@ public final class LootChestColourTest {
             expectStars(e.path(), out, new int[] {WHITE, DARK, DARK, DARK});
         }
 
-        // ---- 上鎖的三級寶箱：三顆粉紅星、一顆暗星，第二行是討伐目標
         StyledText locked3 = styled(
                 lit("Locked ", PINK), lit("Loot Chest [", PURPLE), lit("✫✫✫", PINK),
                 lit("✫", DARK), lit("]", PURPLE), lit("\n", PURPLE),
@@ -98,7 +75,6 @@ public final class LootChestColourTest {
             expect(e.path(), out, "凝块", WHITE, false);
         }
 
-        // ---- 上鎖的四級寶箱：四顆星全亮，沒有暗星那一段（{cN} 的編號因此跟上面不同）
         StyledText locked4 = styled(
                 lit("Locked ", AQUA), lit("Loot Chest [", TEAL), lit("✫✫✫✫", AQUA),
                 lit("]", TEAL), lit("\n", TEAL),
@@ -117,7 +93,6 @@ public final class LootChestColourTest {
             expect(e.path(), out, "凝块", WHITE, false);
         }
 
-        // ---- 帶數值的討伐目標：數值照樣填回，插了顏色也不能讓佔位符對不上
         StyledText mobs = styled(
                 lit("Locked ", PINK), lit("Loot Chest [", PURPLE), lit("✫✫✫", PINK),
                 lit("✫", DARK), lit("]", PURPLE), lit("\n", PURPLE),
@@ -136,7 +111,6 @@ public final class LootChestColourTest {
             expect(e.path(), out, "3", WHITE, false);
         }
 
-        // ---- 繁中單層也一樣（語料的鍵是同一條，譯名是另一套字）
         StyledText seal = styled(
                 lit("Locked ", PINK), lit("Loot Chest [", PURPLE), lit("✫✫✫", PINK),
                 lit("✫", DARK), lit("]", PURPLE), lit("\n", PURPLE),
@@ -156,9 +130,6 @@ public final class LootChestColourTest {
             expect(e.path(), out, "]", PURPLE, false);
         }
 
-        // 使用者 2026-10-21：「[」是白的。原文的「[」跟寶箱名同一段（§5Loot Chest [），
-        // 短鍵 Loot Chest 的譯名只涵蓋名字，括號落在錨點之間的空檔、沒有任何一段認領，
-        // 交回一般的上色——簡中剛好猜成紫色，繁中猜成白色。這裡只看括號與星星，不看措辭。
         StyledText guardian = styled(
                 lit("Locked ", PINK), lit("Loot Chest [", PURPLE), lit("✫✫✫✫", PINK),
                 lit("]", PURPLE), lit("\n", PURPLE),
@@ -176,8 +147,6 @@ public final class LootChestColourTest {
             }
         }
 
-        // issue #1237：遊戲送來的漂浮字最後多一列只有 À，條目只寫了看得見的兩行也要翻到
-        // \uff08\u9078\u4e00\u689d\u55ae\u5217\u5404\u81ea\u67e5\u4e0d\u5230\u7684\uff0c\u9010\u5217\u90a3\u689d\u8def\u88dc\u4e0d\u56de\u4f86\uff0c\u624d\u5b88\u5f97\u4f4f\u6574\u584a\u67e5\u8868\uff09
         StyledText spaced = StyledText.fromString("\u00a7fStand here to\n\u00a7fdefend the elder\n\u00c0");
         for (Entry e : entries(spaced, tw)) {
             String got = e.out() == null ? "" : e.out().getString();
@@ -192,7 +161,6 @@ public final class LootChestColourTest {
 
     private record Entry(String path, Component out) {}
 
-    /** 漂浮字的兩個入口：TextDisplay 走 translateLabel，看向才翻的那條走 translateFloating。 */
     private static List<Entry> entries(StyledText label, TranslationStore store) {
         System.out.println("原文");
         for (String row : describe(label.getComponent())) {
@@ -214,7 +182,6 @@ public final class LootChestColourTest {
         return out;
     }
 
-    /** 這段字的每一個字元都是這個顏色（與粗體與否）。 */
     private static void expect(String path, Component out, String text, int colour,
                                boolean bold) {
         List<Style> styles = stylesOf(out, text, 0);
@@ -232,7 +199,6 @@ public final class LootChestColourTest {
               + "（實際 " + seen + "）", ok);
     }
 
-    /** 四顆星從左到右各自的顏色。 */
     private static void expectStars(String path, Component out, int[] colours) {
         List<Style> styles = stylesOf(out, "✫✫✫✫", 0);
         boolean ok = styles != null && styles.size() == colours.length;
@@ -249,7 +215,6 @@ public final class LootChestColourTest {
               + "（實際 " + (styles == null ? "找不到" : seen.toString().strip()) + "）", ok);
     }
 
-    /** 攤平成逐字元的樣式，找出這段字每個字元的樣式；找不到回傳 {@code null}。 */
     private static List<Style> stylesOf(Component out, String text, int from) {
         StringBuilder plain = new StringBuilder();
         List<Style> at = new ArrayList<>();

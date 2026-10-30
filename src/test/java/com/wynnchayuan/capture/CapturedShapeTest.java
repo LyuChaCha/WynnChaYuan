@@ -6,19 +6,6 @@ import com.google.gson.JsonParser;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * {@code captured.json} 的分類看得懂嗎。
- *
- * <h2>這份檔案是給人讀的</h2>
- * 譯者拿到的是幾百句斷了脈絡的台詞。要翻得對，他得知道三件事：
- * <b>哪個任務、誰講的、第幾句</b>。這三件事收集的當下都知道，
- * 所以應該各自一欄寫出來——要他自己去解
- * {@code "dialogue/King's Recruit#Aledar"} 這種機器字串不合理。
- *
- * <h2>認不出來就說認不出來</h2>
- * 既沒有任務名也沒有說話者的對話，硬歸在 {@code quest} 底下是在騙人：
- * 看起來有分類，實際上沒有。塞錯的分類比沒有分類更難發現。
- */
 public final class CapturedShapeTest {
 
     private static int failures = 0;
@@ -72,7 +59,6 @@ public final class CapturedShapeTest {
                 rows.getAsJsonObject("King's Recruit #002")
                         .get("line").getAsInt() == 2);
 
-        // ---- 認不出來的那一堆 ----
         String orphan = rows.keySet().stream()
                 .filter(k -> k.startsWith("?")).findFirst().orElse(null);
         check("★ 沒有任務也沒有說話者的對話，鍵用 ? 開頭", orphan != null);
@@ -94,7 +80,6 @@ public final class CapturedShapeTest {
         check("介面文字照舊是 gui，沒有被當成不明",
                 gui != null && "gui".equals(gui.get("domain").getAsString()));
 
-        // ---- 群組統計 ----
         JsonObject groups = root.getAsJsonObject("_meta")
                 .getAsJsonObject("groups");
         check("★ _meta.groups 一眼看得出這份檔案裡有什麼",
@@ -103,7 +88,6 @@ public final class CapturedShapeTest {
         check("不明的那一堆也列在 groups 裡",
                 groups.has(CaptureStore.UNKNOWN));
 
-        // ---- 第三方模組的字串不收 ----
         com.wynnchayuan.render.ThirdPartyLiterals.forTest(
                 java.util.List.of("Raid Completed"));
         CaptureStore other = new CaptureStore(dir.resolve("second.json"));

@@ -19,25 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * Wynnventory 的文字：價格框裡寫死的字、語言鍵那一層、按住 Shift、沒裝的人。
- *
- * <h2>這裡釘住什麼</h2>
- * <ul>
- *   <li>價格框：物品名、{@code No data yet.}、數值名、意象名換成譯文；價格、百分比、
- *       樣式（顏色）一個都不動；沒有東西可換的那一行回<b>同一個物件</b>；</li>
- *   <li>語言鍵：Wynnventory 的鍵照它的英文查我們的表，頭尾空白接回去
- *       （{@code Lowest: } 後面直接接價格）；別人的鍵原樣；</li>
- *   <li>不翻的時候（開關關著或按住 Shift）兩條路都原樣；</li>
- *   <li>沒裝 Wynnventory：語言不包；</li>
- *   <li>出貨的六個語言：Wynnventory 語言檔的每一句都有譯文，{@code %s} 與換行的數目對得上。</li>
- * </ul>
- */
 public final class WynnventoryBridgeTest {
 
     private static int failures = 0;
 
-    /** Wynnventory 2.2.5 的 en_us.json（CC0），發版時對過一次；它加了新句子這裡會先知道。 */
     private static final Path THEIR_LANG = Path.of("src/test/resources/wynnventory-en_us.json");
 
     public static void main(String[] args) throws Exception {
@@ -73,14 +58,12 @@ public final class WynnventoryBridgeTest {
         store.loadAll(dir);
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
 
-        // ---- 一句英文 → 譯文 ----
         check("標籤：尾巴那個空白接回去（實際 [" + WynnventoryBridge.text(store, "Lowest: ") + "]）",
                 "最低: ".equals(WynnventoryBridge.text(store, "Lowest: ")));
         check("表裡沒有的回 null", WynnventoryBridge.text(store, "Highest: ") == null);
         check("%s 留著", "有新版本: %s。正在嘗試自動更新...".equals(WynnventoryBridge.text(store,
                 "New version available: %s. Attempting to auto-update...")));
 
-        // ---- ★ 價格框 ----
         List<Component> box = new ArrayList<>();
         box.add(Component.literal("Trade Market Price Info")
                 .withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
@@ -123,13 +106,10 @@ public final class WynnventoryBridgeTest {
                 WynnventoryBridge.lines(store, List.of(box.get(2))) != null
                         && WynnventoryBridge.lines(store, List.of(box.get(2))).get(0) == box.get(2));
 
-        // 價格不能被當成名字查：一般語料裡就算剛好有同樣的字也不行
         check("數字開頭的不查（實際 " + WynnventoryBridge.piece(store, "12 Lowest:") + "）",
                 WynnventoryBridge.piece(store, "12 Lowest:") == null);
         check("已經是譯文的不查", WynnventoryBridge.piece(store, "最低: ") == null);
 
-        // ---- ★ 譯名加原文：原文自己一行 ----
-        // 意象的英文名很長，「譯名 (原文)」會把整個框撐寬（使用者 2026-10-12 的截圖）
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
         List<Component> both = WynnventoryBridge.lines(store, box);
         check("★ 譯名加原文：意象那一行拆成兩行、物品名那一行也是（實際 " + both.size() + " 行）",
@@ -145,7 +125,6 @@ public final class WynnventoryBridgeTest {
                         + both.get(2).getString().strip() + "）",
                 "橡木匕首".equals(both.get(1).getString())
                         && "(Oak Wood Dagger)".equals(both.get(2).getString().strip()));
-        // 標題那一行名字前面什麼都沒有：原文不縮（使用者 2026-10-12 的截圖多出一截空白）
         check("★ 名字在最左邊的行，原文也在最左邊（實際 [" + both.get(2).getString() + "]）",
                 "(Oak Wood Dagger)".equals(both.get(2).getString()));
         check("縮多少看名字前面有什麼", WynnventoryBridge.indentFor("").isEmpty()
@@ -157,14 +136,12 @@ public final class WynnventoryBridgeTest {
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
         check("只顯示譯名時行數不變", WynnventoryBridge.lines(store, box).size() == box.size());
 
-        // 關掉物品名稱的人：價格框的物品名也留原文
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
         check("★ F6 關掉物品名稱時，價格框的物品名留原文（實際 "
                         + WynnventoryBridge.lines(store, box).get(1).getString() + "）",
                 "Oak Wood Dagger".equals(WynnventoryBridge.lines(store, box).get(1).getString()));
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
 
-        // ---- ★ 語言那一層 ----
         Map<String, String> english = new HashMap<>();
         english.put("feature.wynnventory.tooltip.lowest", "Lowest: ");
         english.put("gui.wynnventory.reward.raid", "Raid");
@@ -184,11 +161,9 @@ public final class WynnventoryBridgeTest {
         check("認得哪些鍵是它的", WynnventoryBridge.ours("key.category.wynnventory.root")
                 && WynnventoryBridge.ours("feature.wynnventory.tooltip.avg")
                 && !WynnventoryBridge.ours("gui.done") && !WynnventoryBridge.ours(null));
-        // lang() 用的是全域那份語料（遊戲裡才有），這裡驗它在沒有語料時原樣放行
         check("沒有語料可查的時候原樣（不炸）",
                 "Lowest: ".equals(wrapped.getOrDefault("feature.wynnventory.tooltip.lowest", "?")));
 
-        // ---- ★ 通知底下那一行 ----
         check("★ 通知：物品名換了、顏色碼與獎勵池的名字原樣（實際 "
                         + WynnventoryBridge.toast(store, "\u00a75Oak Wood Dagger\u00a7f in NOTG") + "）",
                 "\u00a75橡木匕首\u00a7f，在 NOTG".equals(
@@ -200,8 +175,6 @@ public final class WynnventoryBridgeTest {
                 "還有 3 件...".equals(WynnventoryBridge.toast(store, "3 more...")));
         check("不是這兩種句子的不動", WynnventoryBridge.toast(store, "Hello there") == null);
 
-        // ---- ★ 不翻的時候 ----
-        // label／word 用的是全域那份語料，遊戲裡才有；這裡驗沒有語料時原樣放行、不炸
         WynnventoryBridge.pretend(true, true);
         check("沒有語料可查：標籤回 null（照它原本的畫）",
                 WynnventoryBridge.label(Component.literal("Aspects")) == null);
@@ -218,7 +191,6 @@ public final class WynnventoryBridgeTest {
                 "Lowest: ".equals(WynnventoryBridge.lang("feature.wynnventory.tooltip.lowest",
                         "Lowest: ")));
 
-        // ---- ★ 出貨的語料 ----
         JsonObject theirs = JsonParser.parseString(
                 Files.readString(THEIR_LANG, StandardCharsets.UTF_8)).getAsJsonObject();
         List<String> sentences = new ArrayList<>();
@@ -227,7 +199,6 @@ public final class WynnventoryBridgeTest {
             sentences.add(theirs.get(key).getAsString());
         }
         sentences.addAll(List.of("No data yet.", "Mythic Aspects", "Filters",
-                // 獎勵畫面的分區標題與篩選名、通知的兩種句子：寫死在它的程式裡
                 "Aspects", "Tomes", "Gear", "Misc", "Mythic", "Fabled", "Legendary", "Rare",
                 "Unique", "Normal", "Common", "Set", "%s in %s", "%s more..."));
         for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
@@ -239,7 +210,6 @@ public final class WynnventoryBridgeTest {
             for (String s : sentences) {
                 String hit = WynnventoryBridge.text(rs, s);
                 if (hit == null) {
-                    // 譯文跟原文一樣的（Wynnventory、某些語言的 Lootrun）不必收
                     if (!SAME_IN_EVERY_LANGUAGE.contains(s.strip())
                             && rs.scopedLookup(WynnventoryBridge.SCOPE, s) == null) {
                         missing.add(s);
@@ -265,7 +235,6 @@ public final class WynnventoryBridgeTest {
         System.exit(0);
     }
 
-    /** 專有名詞，哪個語言都不翻。 */
     private static final List<String> SAME_IN_EVERY_LANGUAGE = List.of("Wynnventory", "Lootrun");
 
     private static int count(String text, String what) {
@@ -284,7 +253,6 @@ public final class WynnventoryBridgeTest {
         return s.substring(s.stripTrailing().length());
     }
 
-    /** 一行裡每一段的顏色，照順序；沒上色的記 -1。 */
     private static List<Integer> colours(Component line) {
         List<Integer> out = new ArrayList<>();
         line.visit((style, text) -> {

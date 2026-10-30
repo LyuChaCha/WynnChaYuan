@@ -10,23 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 迷你任務卡片的說明段：底色是灰的，只有道具與座標有自己的顏色。
- *
- * <h2>實機回報</h2>
- * 「採集鯉魚 II」那張卡，說明的<b>第一列</b>顏色不對——應該跟後面兩列一樣是灰的。
- * 英文那三列長這樣（{@code majorid-debug} 的「可用的顏色 34」）：
- *
- * <pre>
- *   §7Bring §3[30 Carp Oil]§7 or §3[30 Carp
- *   §3Meat]§7 to the Gathering Post at
- *   §f[1094, 43, -1356]
- * </pre>
- *
- * 整段命中之後重新折行成三列中文，色段是照<b>文字比對</b>貼回去的：
- * 灰的「Bring」在譯文裡根本不存在，貼不上；貼不上的那一段就該留底色（灰），
- * 不能拿別段的顏色去補。
- */
 public final class MiniQuestCardTest {
 
     private static int failures = 0;
@@ -47,8 +30,6 @@ public final class MiniQuestCardTest {
         dirs.add(root.resolve("zh_tw"));
         store.loadAll(dirs);
         store.setNameMode(CollectorConfig.ItemNames.ON);
-        // 要量得到寬度，說明段才會像實機那樣折成三列——顏色是<b>折完之後</b>
-        // 才貼回每一列的，不折就測不到那一步。
         LineTranslator.measureForTest = MiniQuestCardTest::measure;
         try {
             run(store);
@@ -66,7 +47,6 @@ public final class MiniQuestCardTest {
         oakLogs(store);
     }
 
-    /** 採集鯉魚 II：說明折成三列，每一列開頭都是說明本文。 */
     private static void carp(TranslationStore store) {
         List<Component> lines = new ArrayList<>();
         lines.add(Component.literal("Gather Carp II ").withStyle(of(0xB38FAD))
@@ -79,14 +59,6 @@ public final class MiniQuestCardTest {
         check3("採集鯉魚 II", store, lines);
     }
 
-    /**
-     * 採集橡木原木：折行的位置不一樣，<b>第一列只剩說明本文、一個方括號都沒有</b>。
-     *
-     * <h2>實機回報</h2>
-     * 「到採集告示繳交」那一列是青色的，應該跟後面兩列一樣是灰的。鯉魚那張卡
-     * 第一列折進了「[30 鯉魚油]」所以看不出來——同一段文字，只因為折在別的地方
-     * 就變色，那是色段貼回去的時候錯位了。
-     */
     private static void oakLogs(TranslationStore store) {
         List<Component> lines = new ArrayList<>();
         lines.add(Component.literal("Gather Oak Logs ").withStyle(of(0xB38FAD))
@@ -105,12 +77,6 @@ public final class MiniQuestCardTest {
         for (Component line : out) {
             System.out.println("  " + describe(line));
         }
-        // 方括號裡的道具與座標有自己的顏色，說明本文該是灰的。折在哪裡都一樣。
-        //
-        // 找的字<b>不要帶術語</b>。這裡本來寫「到採集站繳交」，Gathering Post 的
-        // 譯名統一成「採集告示」之後整句就找不到，測試會紅在「找不到」而不是
-        // 顏色不對——那是測試自己壞了，不是程式壞了。「繳交」「座標」是句子的
-        // 骨架，換譯名也還在。
         for (String prose : new String[] {"繳交", "座標"}) {
             Integer colour = colourOf(out, prose);
             check("★ " + what + "「" + prose + "」是灰的（實際 "
@@ -119,7 +85,6 @@ public final class MiniQuestCardTest {
         }
     }
 
-    /** 含有這段文字的那個片段是什麼顏色。 */
     private static Integer colourOf(List<Component> lines, String needle) {
         Integer[] found = {null};
         for (Component line : lines) {
@@ -134,7 +99,6 @@ public final class MiniQuestCardTest {
         return found[0];
     }
 
-    /** 照 layout-debug 反推的假字型：中日文 9px，英數大多 6px。 */
     static int measure(Component component) {
         int[] w = {0};
         component.visit((style, text) -> {

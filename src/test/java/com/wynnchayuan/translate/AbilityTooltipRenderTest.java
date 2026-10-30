@@ -13,29 +13,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 技能樹節點說明的三個算繪問題（使用者 2026-10-17 的截圖：審判、強固陣式、充能儀式）。
- *
- * <h2>遊戲送來的樣子</h2>
- * 照 Wynntils 快取 {@code dataStaticAbilitiesV2} 的片段與顏色重建——那份是 Wynntils 從
- * 遊戲裡傾印出來的，{@code margin-left} 是它對行首縮排的寫法：{@code thin} 是一個
- * {@code À}、{@code large} 是四個，前面再接幾個一般空白（{@code StyledTextPart#toJson}）。
- * 所以審判「效果」的第二項在遊戲裡是「十個空白 + ÀÀ + 兩個空白 + +20%」，模板剝掉
- * 行首空白之後是 cards.json 收到的「ÀÀ  +{~} …」。
- *
- * <ol>
- *   <li><b>續行對不齊</b>：模板剝掉的行首空白在重建時沒有補回來，第二、三項從行首
- *       附近畫起；而且「效果:」比「Effects:」短，就算補回原文的縮排也不在第一項的
- *       數值底下。要對齊<b>譯文</b>第一行的數值。傷害的小項「   (✣ Damage: 25%)」
- *       與「  ÀÀÀÀ(…)」也是同一件事。</li>
- *   <li><b>❁ 掉色</b>：「Resistance Bonus (❁) to Self」裡的「(❁)」整串都不是字母，被當成
- *       同一段混色的標點，整段不登記；這一段只剩灰色，整行數不到兩種顏色，於是退回
- *       「冒號後面整段是數值色」，❁ 跟著變白。</li>
- * </ol>
- *
- * 譯文用的是這裡自己寫的假字（甲乙丙），不綁語料的措辭；量法是一份照 Minecraft
- * 預設字型抄的寬度表。
- */
 public final class AbilityTooltipRenderTest {
 
     private static int failures = 0;
@@ -81,13 +58,11 @@ public final class AbilityTooltipRenderTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 審判的「效果」：第二、三項要落在<b>譯文</b>第一項的數值底下。 */
     private static void continuationRows(TranslationStore store) {
         MutableComponent head = line("", COMMON.withColor(0xFFFF55), " ", c(0xFFFF55),
                 "Effects: ", c(GREY), "+20% ", c(WHITE), "Damage Bonus (", c(GREY),
                 "⚔", c(GREEN), ") to Allies", c(GREY));
         int valueX = xOf(head, "+");
-        // Wynncraft 自己算的縮排：空白湊到差不多，再用一像素的 À 補齊
         String indent = indentTo(valueX);
         List<Component> t = panel(head,
                 line(indent, c(GREY), "+20% ", c(WHITE), "Resistance Bonus (", c(GREY),
@@ -113,7 +88,6 @@ public final class AbilityTooltipRenderTest {
               firstVisibleX(out.get(5)) == firstVisibleX(t.get(5)));
     }
 
-    /** 傷害的小項：一般空白縮排與 ÀÀÀÀ 縮排，都照原文的縮排畫。 */
     private static void subDamageRows(TranslationStore store) {
         List<Component> t = panel(
                 line("⚔ ", c(0xFF5555), "Total Damage: ", c(GREY), "30% ", c(WHITE),
@@ -134,7 +108,6 @@ public final class AbilityTooltipRenderTest {
         }
     }
 
-    /** 強固陣式：「(❁)」的 ❁ 是綠的，括號與說明是灰的，只有數值是白的。 */
     private static void iconColour(TranslationStore store) {
         List<Component> t = panel(
                 line("", COMMON.withColor(0xFFFF55), " ", c(0xFFFF55), "Effect: ", c(GREY),
@@ -148,7 +121,6 @@ public final class AbilityTooltipRenderTest {
         check("說明文字不會被染成數值的白色（實際 " + hex(colourAt(row, "丙")) + "）",
               Integer.valueOf(GREY).equals(colourAt(row, "丙")));
         check("數值仍是白色", Integer.valueOf(WHITE).equals(colourAt(row, "50%")));
-        // 對照組：「+{~}」那種本來就對的行不受影響
         List<Component> plus = panel(line("", COMMON.withColor(0xFFFF55), " ", c(0xFFFF55),
                 "Effects: ", c(GREY), "+20% ", c(WHITE), "Damage Bonus (", c(GREY),
                 "⚔", c(GREEN), ") to Allies", c(GREY)));
@@ -156,7 +128,6 @@ public final class AbilityTooltipRenderTest {
         check("對照組的 ⚔ 仍是綠色", Integer.valueOf(GREEN).equals(colourAt(other, "⚔")));
     }
 
-    /** 不是技能樹的 tooltip，只有一般空白的縮排照舊不動——那些空白各有用途，不去猜。 */
     private static void notAbilityPanel(TranslationStore store) {
         List<Component> t = new ArrayList<>();
         t.add(line("Judgement", c(WHITE)));
@@ -167,9 +138,6 @@ public final class AbilityTooltipRenderTest {
               out.size() == 2 && !hasOffset(out.get(1)));
     }
 
-    // ------------------------------------------------------------------ 工具
-
-    /** 一份技能節點說明：名稱、空行、傳進來的那幾列、空行、技能點數。 */
     private static List<Component> panel(Component... rows) {
         List<Component> t = new ArrayList<>();
         t.add(line("Judgement", c(WHITE).withBold(true)));
@@ -180,7 +148,6 @@ public final class AbilityTooltipRenderTest {
         return t;
     }
 
-    /** 照 Wynncraft 的做法湊出 {@code px} 寬的行首縮排：空白、至少兩個 À、再兩個空白。 */
     private static String indentTo(int px) {
         int spaces = (px - 8 - 2) / 4;
         int accents = px - 8 - spaces * 4;
@@ -199,7 +166,6 @@ public final class AbilityTooltipRenderTest {
         return m;
     }
 
-    /** {@code needle} 第一次出現的地方畫在第幾個像素；找不到回傳 -1。 */
     private static int xOf(Component line, String needle) {
         StringBuilder text = new StringBuilder();
         List<Style> styles = new ArrayList<>();
@@ -214,7 +180,6 @@ public final class AbilityTooltipRenderTest {
         if (at < 0) {
             return -1;
         }
-        // 一段一段接回去：偏移字元是代理對，拆成單一 char 就量不出寬度
         MutableComponent prefix = Component.empty();
         int from = 0;
         for (int i = 1; i <= at; i++) {
@@ -226,7 +191,6 @@ public final class AbilityTooltipRenderTest {
         return measure(prefix);
     }
 
-    /** 第一個看得見的字畫在第幾個像素。 */
     private static int firstVisibleX(Component line) {
         String s = line.getString();
         for (int i = 0; i < s.length(); ) {
@@ -275,7 +239,6 @@ public final class AbilityTooltipRenderTest {
         }
     }
 
-    /** Minecraft 預設字型的寬度（含字距），圖示 9、方塊字 9、À 是 Wynncraft 的一像素空白。 */
     private static int advance(int cp, Style style) {
         if (cp == 0xC0) {
             return 1;

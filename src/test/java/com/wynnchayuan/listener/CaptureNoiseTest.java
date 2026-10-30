@@ -19,19 +19,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 匯出的 {@code captured.json} 裡三種要人手清掉的雜訊（issue #1124，土耳其文）。
- *
- * <ol>
- *   <li><b>說話者帶著名牌底下那一列圖示</b>——{@code Old Drunk⏎U+E060 U+CFFFF…}；</li>
- *   <li><b>我們自己重送的譯文被當成原文收回來</b>——整塊土耳其文，中間夾著沒翻到的
- *       那一列；</li>
- *   <li><b>折行的句子收到後半截</b>——發現地區的說明整句早就翻好了，
- *       第二列以後卻一列一列進了缺口清單。</li>
- * </ol>
- *
- * 字串照那一份檔案裡的樣子；獎勵列的地名換成不在地名清單裡的，免得被收成 {@code {p}}。
- */
 public final class CaptureNoiseTest {
 
     private static int failures = 0;
@@ -48,9 +35,6 @@ public final class CaptureNoiseTest {
         System.out.println("收集雜訊：全部通過");
     }
 
-    // ------------------------------------------------------------ 1. 說話者
-
-    /** 名字底下那一列等級牌，照 issue #1124 那份檔案裡的碼位。 */
     private static String plate() {
         int[] cps = {0xE060, 0xCFFFF, 0xE03D, 0xCFFFF, 0xE03F, 0xCFFFF, 0xE032, 0xCFFFF,
                      0xE062, 0xCFFEC, 0xE00D, 0xE00F, 0xE002, 0xD0002};
@@ -67,8 +51,8 @@ public final class CaptureNoiseTest {
 
     private static void speakerIsNameOnly() throws Exception {
         System.out.println("=== 說話者只留名字 ===");
-        String label = "Old Drunk\n" + plate();          // 玩家面前那塊名牌，整塊
-        String inline = "Espren Citizen " + plate();     // 圖示直接跟在名字後面的那一種
+        String label = "Old Drunk\n" + plate();
+        String inline = "Espren Citizen " + plate();
 
         CurrentQuest.set("A New Beginning");
         String ctx = CurrentQuest.tag("dialogue", label);
@@ -87,7 +71,6 @@ public final class CaptureNoiseTest {
         check("整塊都是圖示：當成沒有說話者",
               "dialogue/A New Beginning".equals(CurrentQuest.tag("dialogue", plate())));
 
-        // 匯出的那一份
         Path dir = Files.createTempDirectory("wynnchayuan-noise");
         Path file = dir.resolve("captured.json");
         CaptureStore store = new CaptureStore(file);
@@ -100,7 +83,6 @@ public final class CaptureNoiseTest {
         check("ctx 裡沒有換行與圖示", clean(text(row, "ctx")));
         CurrentQuest.set(null);
 
-        // 先前版本寫進檔案的：讀回來就清掉，不必等那一句被重新收一次
         Path old = dir.resolve("old.json");
         JsonObject entry = new JsonObject();
         entry.addProperty("src", "You're not from around here, are you?");
@@ -126,8 +108,6 @@ public final class CaptureNoiseTest {
         check("舊檔讀回來：任務名還在", "choices/The Cursed One".equals(text(kept, "quest")));
     }
 
-    // ------------------------------------------------- 2. 自己重送的那一則
-
     private static StyledText row(String text) {
         return StyledText.fromComponent(Component.literal(text));
     }
@@ -147,7 +127,6 @@ public final class CaptureNoiseTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        // 一列一則送來的；最後一列語料裡沒有
         String gap = "- +Access to the Outer Reaches";
         List<StyledText> block = List.of(
                 row("[Quest Completed]"), row("A Journey Home"), row("Rewards:"),
@@ -157,7 +136,6 @@ public final class CaptureNoiseTest {
         List<String> captured = new ArrayList<>();
         ChatBlock.clear();
         for (StyledText one : block) {
-            // 原文第一次進來：收集照常看到它
             String template = CaptureListener.chatTemplate(one, notes::add);
             if (template != null) {
                 captured.add(template.strip());
@@ -177,25 +155,22 @@ public final class CaptureNoiseTest {
         check("前提：送出去的那一則是譯文夾著沒翻的原文",
               shown.contains("[Görev Tamamlandı]") && shown.contains("Eve Yolculuk")
                       && shown.contains(gap));
-        // 送出去的那一則會再觸發一次聊天事件，Wynntils 給的是轉回來的 StyledText
         StyledText echo = StyledText.fromComponent(sent);
         ChatBlock.clear();
         check("前提：不知道是自己送的話，它會被收成一條「原文」",
               CaptureListener.chatTemplate(echo, notes::add) != null);
         notes.clear();
-        ChatBlock.remember(sent);                        // flush 送之前做的事
+        ChatBlock.remember(sent);
         check("★ 自己送的那一則不收", CaptureListener.chatTemplate(echo, notes::add) == null);
         check("略過的原因記下來了（實際 " + notes + "）",
               notes.contains("chat.skipped.ownOutput"));
 
-        // 整則都翻好的也一樣：名字已經填回去了，OwnOutputs 認不出來
         Component event = Component.literal(
                 " Arachnid Pusu Dünya Etkinliği 4dk 12sn sonra başlıyor! (312\n"
                 + " blok uzakta) Takip için tıkla");
         ChatBlock.remember(event);
         check("★ 整則都是譯文的也不收",
               CaptureListener.chatTemplate(StyledText.fromComponent(event), notes::add) == null);
-        // 黏著別的訊息的登入橫幅：原文加上已經翻好的那一句
         Component banner = Component.literal(
                 "Welcome to Wynncraft!\nplay.wynncraft.com -/- wynncraft.com\nSis kalkıyor.");
         ChatBlock.remember(banner);
@@ -208,8 +183,6 @@ public final class CaptureNoiseTest {
         check("純符號的照舊不收", CaptureListener.chatTemplate(row(" "), notes::add) == null);
         ChatBlock.clear();
     }
-
-    // ------------------------------------------------------ 3. 折行的句子
 
     private static final String TITLE = "Area Discovered: {p} (+{~} XP)";
 
@@ -226,7 +199,6 @@ public final class CaptureNoiseTest {
             "the forest. Spooky stories about what lies within the",
             "bog have led to it being an unfavourable place to live.");
 
-    /** 一份只認得這幾條的語料。 */
     private static CaptureStore storeKnowing(Set<String> keys) throws Exception {
         Path file = Files.createTempDirectory("wynnchayuan-rows").resolve("captured.json");
         CaptureStore store = new CaptureStore(file);
@@ -258,7 +230,6 @@ public final class CaptureNoiseTest {
         String autumn = String.join(" ", AUTUMN);
         String bog = String.join(" ", BOG);
 
-        // 先前的做法：每一列進來各自記。第一列被「語料有更長的」擋掉，後面三列進了清單
         Set<String> corpus = new LinkedHashSet<>(List.of(TITLE, autumn, TITLE + "\n" + autumn));
         CaptureStore before = storeKnowing(corpus);
         before.record(TITLE, "desc", "chat", "chat/INFO");
@@ -272,32 +243,27 @@ public final class CaptureNoiseTest {
         feed(store, with(TITLE, AUTUMN), 1_000);
         check("★ 整句在語料裡：一列都不收（實際 " + store.size() + " 條）", store.size() == 0);
 
-        // 語料只有「標題⏎整句」那一條
         CaptureStore blockOnly = storeKnowing(Set.of(TITLE, TITLE + "\n" + bog));
         feed(blockOnly, with(TITLE, BOG), 1_000);
         check("★ 只有「標題＋整句」那一條也接得起來（實際 " + blockOnly.size() + " 條）",
               blockOnly.size() == 0);
 
-        // 語料只有整句那一條，標題是另一條
         CaptureStore sentenceOnly = storeKnowing(Set.of(TITLE, bog));
         feed(sentenceOnly, with(TITLE, BOG), 1_000);
         check("★ 只有整句那一條也接得起來（實際 " + sentenceOnly.size() + " 條）",
               sentenceOnly.size() == 0);
 
-        // 續行開頭掛著頻道圖示的那一種
         String event = "{#} The Encroaching Blaze World Event starts in {~}s! ({~} blocks away) Click to track";
         CaptureStore iconed = storeKnowing(Set.of(event));
         feed(iconed, List.of("{#} The Encroaching Blaze World Event starts in {~}s! ({~}",
                              "{#} blocks away) Click to track"), 1_000);
         check("續行開頭的圖示不算句子的一部分（實際 " + iconed.size() + " 條）", iconed.size() == 0);
 
-        // 語料沒有的句子：每一列都要在，匯入的人才拼得回整句
         CaptureStore unknown = storeKnowing(Set.of(TITLE));
         feed(unknown, with(TITLE, AUTUMN), 1_000);
         check("語料沒有的句子四列都收（實際 " + unknown.size() + " 條）",
               unknown.size() == 4 && unknown.contains(AUTUMN.get(0)));
 
-        // 遊戲改了後半句：前面扣著的也要放出來，不能只剩後半截
         CaptureStore drifted = storeKnowing(corpus);
         feed(drifted, List.of(TITLE, AUTUMN.get(0), AUTUMN.get(1),
                               "inhabitants barter for what little they need."), 1_000);
@@ -306,13 +272,6 @@ public final class CaptureNoiseTest {
                       && drifted.contains(AUTUMN.get(1)));
     }
 
-    /**
-     * 完整的一列不是「打到一半的半句」。
-     *
-     * <p>「{@code - +Access to the {p}}」是獎勵清單裡完整的一列，語料卻剛好有
-     * 「{@code - +Access to the {p} Dungeon}」——先前因此被當成半句丟掉，畫面上是
-     * 英文，缺口清單裡卻沒有它（issue #1124 那一塊唯一沒翻的就是這一列）。
-     */
     private static void wholeRowsAreStillCaptured() throws Exception {
         System.out.println("=== 完整的一列照收 ===");
         Set<String> corpus = Set.of("[Quest Completed]", "Rewards:",
@@ -334,7 +293,6 @@ public final class CaptureNoiseTest {
         check("後面那一列也照收", store.contains("+ New Quest [Undersupply]"));
         check("翻好的那幾列沒有混進來（實際 " + store.size() + " 條）", store.size() == 2);
 
-        // 後面沒有別的訊息：計時器放行
         CaptureStore last = storeKnowing(corpus);
         last.recordChat(gap, "chat/INFO", t);
         last.settleChat(t + 100);
@@ -342,13 +300,10 @@ public final class CaptureNoiseTest {
         last.settleChat(t + 5_000);
         check("★ 等夠久了：放行", last.contains(gap));
 
-        // 對話那條路的半句照舊擋（逐字打出來的才是真的半句）
         CaptureStore typed = storeKnowing(corpus);
         check("對話打到一半的照舊不收",
               !typed.record(gap, "desc", "quest", "dialogue/x"));
     }
-
-    // ---------------------------------------------------------------- 工具
 
     private static JsonObject firstEntry(Path file) throws Exception {
         try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
@@ -362,7 +317,6 @@ public final class CaptureNoiseTest {
         return row.has(field) ? row.get(field).getAsString() : null;
     }
 
-    /** 圖示與換行印成看得見的樣子，失敗訊息才讀得出來。 */
     private static String show(String text) {
         if (text == null) {
             return "null";

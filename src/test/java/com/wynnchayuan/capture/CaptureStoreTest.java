@@ -8,25 +8,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * {@code captured.json} 只該列<b>還沒有譯文</b>的字串。
- *
- * <h2>先前壞在哪</h2>
- * 檔頭自己寫著「dst 留空代表尚未翻譯」，但收集端照單全收：看到什麼記什麼，
- * 語料裡明明已經有譯文的也照記，{@code dst} 一樣留空。
- *
- * <p>實機回報的那一份 308 條裡有 <b>249 條</b>語料早就翻好了——
- * 「露營車駕駛」「建立角色」「- 職業: 薩滿」全在裡面。八成是雜訊，
- * 真正的缺口反而找不到。使用者說「那個檔案不能當待辦清單」，就是這件事。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>已經有譯文的不收，而且要記在 events 裡（數字留著才看得出
- *       「明明有譯文卻還是英文」）</li>
- *   <li>上一版收進來的舊條目，flush 的時候要清掉</li>
- *   <li><b>有人打過字的一律不動</b>——那是別人的工，不管語料裡有沒有</li>
- * </ol>
- */
 public final class CaptureStoreTest {
 
     private static int failures = 0;
@@ -40,21 +21,6 @@ public final class CaptureStoreTest {
         report();
     }
 
-    /**
-     * 打到一半的半句、提示框只收到第一行：不是缺口。
-     *
-     * <h2>先前壞在哪</h2>
-     * 對話是逐字打出來的，長句在對話框裡還會重新換行——一有閃失，半截的
-     * 那一份就被當成「打完了」收進 {@code captured.json}。實機一份 665 條的
-     * 檔案裡有 36 條是這樣來的，而<b>整段早就翻好了</b>：
-     *
-     * <pre>
-     *   Go on, I don't have time for you. My brother           ← 收到的
-     *   Go on, I don't have time for you. My brother keeps …   ← quest.json 有整句
-     * </pre>
-     *
-     * <p>這種東西比沒收更糟：看起來像缺口，翻了就會夾出半中半英。
-     */
     private static void fragmentsAreSkipped() throws Exception {
         Path file = Files.createTempDirectory("wynnchayuan-frag").resolve("captured.json");
         CaptureStore store = new CaptureStore(file);
@@ -71,11 +37,6 @@ public final class CaptureStoreTest {
         check("缺口清單只有那兩條（實際 " + store.size() + " 條）", store.size() == 2);
     }
 
-    /**
-     * 語料收過、只是還沒翻的：不當缺口，但要記次數。
-     *
-     * <p>先前這種句子一律略過、連次數都沒留，翻譯的人不知道哪幾句最常被看到。
-     */
     private static void untranslatedAreCounted() throws Exception {
         Path file = Files.createTempDirectory("wynnchayuan-cap").resolve("captured.json");
         CaptureStore store = new CaptureStore(file);
@@ -102,7 +63,6 @@ public final class CaptureStoreTest {
         CaptureStore again = new CaptureStore(file);
         check("重開遊戲次數還在", again.untranslatedSeen("Halt, recruits!") == 2);
 
-        // 舊版當成缺口收進來、後來語料收了（還沒翻）的，要搬到沒翻清單。
         Path oldFile = Files.createTempDirectory("wynnchayuan-cap").resolve("captured.json");
         CaptureStore old = new CaptureStore(oldFile);
         old.record("Halt, recruits!", "desc", "quest", "dialogue/x");
@@ -134,13 +94,11 @@ public final class CaptureStoreTest {
     private static void staleOnesArePruned() throws Exception {
         Path file = Files.createTempDirectory("wynnchayuan-cap").resolve("captured.json");
 
-        // 先照舊版的樣子收一輪：那時候還不知道哪些已經有譯文，兩條都收了。
         CaptureStore old = new CaptureStore(file);
         old.record("Caravan Driver", "name", "label", "label/floating");
         old.record("Halt, recruits!", "desc", "quest", "dialogue/x");
         old.flush();
 
-        // 換成接上譯文的版本再開一次。
         CaptureStore store = new CaptureStore(file);
         check("兩條都讀進來了（實際 " + store.size() + " 條）", store.size() == 2);
         store.knowsTranslations(t -> t.equals("Caravan Driver"));
@@ -160,7 +118,6 @@ public final class CaptureStoreTest {
         old.record("Caravan Driver", "name", "label", "label/floating");
         old.flush();
 
-        // 有人在這個檔裡打了譯文。就算語料裡也有一份，也不能替他丟掉。
         JsonObject root = read(file);
         JsonObject saved = root.getAsJsonObject("entries");
         String key = saved.keySet().iterator().next();

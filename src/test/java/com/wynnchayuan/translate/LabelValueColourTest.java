@@ -9,38 +9,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 「標籤: 數值」兩半各自的顏色要跟原文一樣。
- *
- * <h2>先前壞在哪</h2>
- * 派對面板與世界清單整片都是這個形狀，而兩半的顏色<b>是不一樣的</b>：
- *
- * <pre>
- *   #00AAAA 「Type: 」   #55FFFF 「Grinding Mobs」
- *   #00AAAA 「World: 」  #55FFFF 「NA12」
- * </pre>
- *
- * 這種行是整行收在語料裡的，走不到「名稱：說明」那條路，於是整行只拿得到一個
- * 主樣式——而主樣式是<b>照字數</b>算的：
- *
- * <pre>
- *   Type:  6 字 &lt; Grinding Mobs 13 字   -&gt; 整行套上數值的顏色，標籤變亮
- *   World: 7 字 &gt; NA12          4 字   -&gt; 整行套上標籤的顏色，數值變暗
- * </pre>
- *
- * 同一個面板上下兩行，一行標籤太亮、一行數值太暗，錯的方向還相反——
- * 純粹看哪半的字比較多。實機回報的顏色錯誤就是這個。
- *
- * <h2>這條測試在盯什麼</h2>
- * 顏色是<b>畫出來</b>才看得到的，光問語料查不查得到沒有用。所以照實機
- * majorid-debug 記下來的顏色把原文重建一次，翻完再把每一段的顏色印出來比對。
- */
 public final class LabelValueColourTest {
 
     private static int failures = 0;
 
-    private static final int LABEL = 0x00AAAA;   // 深青，標籤
-    private static final int VALUE = 0x55FFFF;   // 亮青，數值
+    private static final int LABEL = 0x00AAAA;
+    private static final int VALUE = 0x55FFFF;
     private static final int WHITE = 0xFFFFFF;
 
     public static void main(String[] args) throws Exception {
@@ -48,12 +22,8 @@ public final class LabelValueColourTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
 
-        // 實機 majorid-debug「可用的顏色 186／187」記下來的兩行。
-        // 兩半的字數一長一短，先前的錯法剛好相反，所以兩行都要測。
         row(store, "數值比標籤長", new String[] {"Type: ", "Grinding Mobs"},
                 new int[] {LABEL, VALUE},
-                // 冒號統一成半形之後切成三段：標籤／冒號／數值。冒號還是標籤色，
-                // 多出來的那個空白在數值那一段裡——空白沒有字形，畫面上一樣。
                 new String[] {"類型", ":", " 刷怪"},
                 new int[] {LABEL, LABEL, VALUE});
 
@@ -61,53 +31,40 @@ public final class LabelValueColourTest {
                 new int[] {LABEL, VALUE},
                 new String[] {"世界: ", "NA", "12"}, new int[] {LABEL, VALUE, VALUE});
 
-        // 反面：本來就對的不能被弄壞。數值走 {~} 佔位符，冒號前面還有個「- 」。
         row(store, "數值是佔位符的照舊",
                 new String[] {"- ", "Elapsed Time: ", "00:02"},
                 new int[] {LABEL, LABEL, WHITE},
                 new String[] {"- 已等待: ", "00", ":", "02"},
                 new int[] {LABEL, WHITE, WHITE, WHITE});
 
-        // ★ 反面：整行同色的不能被切開。冒號兩邊一樣的顏色本來就沒得分，
-        //   硬切只會多登記一段重點段，讓貼樣式那一步挑錯。
         uniform(store, "整行同色不切", new String[] {"Type: ", "Grinding Mobs"},
                 new int[] {VALUE, VALUE}, VALUE);
 
-        // 實機回報：數值後面的括號註解是深灰，不能跟著數值變白。
-        // 行首的愛心是符號，語料的鍵是「{#} Total Damage: {~} (of your DPS, Attack)」。
         colours(store, "括號註解不跟著數值變色",
                 new String[] {"\uE000", " Total Damage: ", "2400%", " (of your DPS, Attack)"},
                 new int[] {0xFF5555, GREY, WHITE, DARK},
                 new String[] {"總傷害", "每秒傷害"}, new int[] {GREY, DARK});
 
-        // 實機回報（簡中技能面板）：「(圆形)」該是灰色，卻跟著「7 格」變白。
-        // 標籤與括號同為灰；原文括號裡的連字號譯文沒有，標點數量對不上。
         colours(store, "括號與標籤同色時不跟著數值變白",
                 new String[] {"", " Area of Effect: ", "7", " Blocks ", "(Circle-Shaped)"},
                 new int[] {0xFF5555, GREY, WHITE, WHITE, GREY},
                 new String[] {"範圍", "格", "圓形"}, new int[] {GREY, WHITE, GREY});
 
-        // 實機回報：句首的 grant 是粉紅，其餘是白。
         colours(store, "句首換色的詞保住自己的顏色",
                 new String[] {"grant ", "2048", " Emeralds"},
                 new int[] {PINK, WHITE, WHITE},
                 new String[] {"給予", "綠寶石"}, new int[] {PINK, WHITE});
 
-        // 實機回報：公會獎勵清單。數字兩邊的「✖ Lv.」「: +」本身就混色，
-        // 譯文照抄這兩段，Lv. 要保住白色、後面的說明保住灰色。
         colours(store, "數字兩邊混色的段落照抄時逐段貼色",
                 new String[] {"✖", " Lv. 90: ", "+5 New Badges"},
                 new int[] {0xFF5555, WHITE, GREY},
                 new String[] {"✖", "Lv.", "新徽章"}, new int[] {0xFF5555, WHITE, GREY});
 
-        // 實機回報：交易市場的掛單狀態。「Expired」黃、「- Sold」深灰，兩個顏色在同一段裡，
-        // 譯文翻掉了字但留著同一個「-」，照這個標點切開對回去。
         colours(store, "同一段混色時照相同的標點切開對色",
                 new String[] {"Expired", " - Sold ", "0", "/1 items"},
                 new int[] {0xFFFF55, DARK, WHITE, DARK},
                 new String[] {"已過期", "已售出"}, new int[] {0xFFFF55, DARK});
 
-        // 實機 majorid-debug「可用的顏色 14」：譯文用了 {~1}{~2}，照順序的仍然對得上。
         colours(store, "照順序指名的數值也對得上",
                 new String[] {"- 3 Rows", " (2stx Total)"},
                 new int[] {GREY, DARK},
@@ -123,15 +80,8 @@ public final class LabelValueColourTest {
         }
     }
 
-    private static final int GREEN = 0x55FF55;  // 未鑑定裝備的數值
+    private static final int GREEN = 0x55FF55;
 
-    /**
-     * 未鑑定裝備的範圍：「Walk Speed +2% to +9%」是四個不同顏色的元件。
-     *
-     * <p>實機回報畫面是「移動速度 +2% to +9%」——標籤翻了，中間那段獨立的
-     * 「 to 」原樣抄過去。連接詞來自語料的「{~} to {~}」「{~} tier」，那兩個鍵
-     * 由資料 PR 補進來，所以這裡疊一層只有這兩條的暫存語料。
-     */
     private static void ranges() throws Exception {
         Path zhTw = Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT);
@@ -151,7 +101,6 @@ public final class LabelValueColourTest {
                 new String[] {"攻擊速度", "-60 階", " 到 ", "-60 階"},
                 new int[] {LABEL, GREEN, GREY, GREEN});
 
-        // 反面：標籤查不到的行不動，句子裡零星的 to 不能被換掉
         List<String> text = new ArrayList<>();
         List<Integer> got = new ArrayList<>();
         dump(store, List.of(
@@ -161,7 +110,6 @@ public final class LabelValueColourTest {
         report("標籤查不到的行，to 留英文（實際 " + text + "）",
                 text.contains(" to ") && text.stream().noneMatch(t -> t.contains("到")));
 
-        // 語料沒有連接詞的鍵：標籤照翻，to 留英文，不拿寫死的中文頂上
         TranslationStore bare = new TranslationStore();
         bare.loadAll(StatRowTest.corpus("wynnchayuan-range-none", "Walk Speed", "移動速度"));
         row(bare, "沒有連接詞的語料留英文",
@@ -171,7 +119,6 @@ public final class LabelValueColourTest {
                 new int[] {LABEL, GREEN, GREY, GREEN});
     }
 
-    /** 翻完之後每一段的文字與顏色要剛好是 {@code wantText} / {@code wantColours}。 */
     private static void row(TranslationStore store, String what,
                             String[] parts, int[] colours,
                             String[] wantText, int[] wantColours) {
@@ -188,7 +135,6 @@ public final class LabelValueColourTest {
                 text.equals(List.of(wantText)) && got.equals(want));
     }
 
-    /** 整行只有一個顏色時，譯文也整行同一個顏色。 */
     private static void uniform(TranslationStore store, String what,
                                 String[] parts, int[] colours, int want) {
         List<String> text = new ArrayList<>();
@@ -228,15 +174,10 @@ public final class LabelValueColourTest {
         }
     }
 
-    private static final int GREY = 0xAAAAAA;   // 淺灰，技能面板的標籤
-    private static final int DARK = 0x555555;   // 深灰，括號註解
-    private static final int PINK = 0xFF55FF;   // 粉紅，句首換色的詞
+    private static final int GREY = 0xAAAAAA;
+    private static final int DARK = 0x555555;
+    private static final int PINK = 0xFF55FF;
 
-    /**
-     * 譯文裡含有 {@code probes[i]} 的那一段，顏色要是 {@code wantColours[i]}。
-     *
-     * <p>不比對整行怎麼切段：數值、單位與全形標點各自成段的方式跟這件事無關。
-     */
     private static void colours(TranslationStore store, String what,
                                 String[] parts, int[] colours,
                                 String[] probes, int[] wantColours) {

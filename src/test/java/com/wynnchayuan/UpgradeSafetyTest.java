@@ -16,28 +16,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * 留著舊版的 {@code config/wynnchayuan} 升級，遊戲也要開得起來。
- *
- * <h2>回報長什麼樣</h2>
- * 玩家測過舊版、升上新版<b>沒刪</b>設定資料夾（語料收集開著），遊戲偶爾開不起來；
- * 刪掉資料夾就好了。那個資料夾裡有：還帶著已移除欄位 {@code shareCaptures} 的
- * {@code config.json}、{@code captured.json}、舊版的分享記錄 {@code shared.json}、
- * 一包診斷檔，以及從 GitHub 同步下來的譯文快取。
- *
- * <h2>這裡釘住什麼</h2>
- * 每一種「舊的、壞的、寫到一半的」檔都要：照樣建得起來、用預設值（或補回內建的），
- * 並且把壞檔<b>改名放旁邊</b>而不是留在原地等著被蓋掉。
- *
- * <p>最後一段拿整個資料夾照啟動順序跑一次：一份用內建資源拼出來的「舊版資料夾」
- * 一定跑；指定 {@code -PplayerFolder=} 時再拿真實玩家資料夾的副本跑一次
- * （那份含玩家的字，不進 repo）。
- */
 public final class UpgradeSafetyTest {
 
     private static int failures = 0;
 
-    /** 玩家那份 config.json 的欄位（只有設定值，沒有玩家的字）。 */
     private static final String PLAYER_CONFIG = """
             {
               "tooltipMode": "REPLACE",
@@ -100,8 +82,6 @@ public final class UpgradeSafetyTest {
         report();
     }
 
-    // ── config.json ────────────────────────────────────────────────────
-
     private static void truncatedConfig() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-cfg");
         Path file = dir.resolve("config.json");
@@ -118,7 +98,7 @@ public final class UpgradeSafetyTest {
         check("放旁邊的那份內容原封不動（要救可以救）",
                 aside.size() == 1 && Files.readString(aside.get(0)).equals(bad));
 
-        c.toggleCollect();                     // 會存檔
+        c.toggleCollect();
         check("之後存得出一份讀得懂的設定檔", !new CollectorConfig(file).collect()
                 && brokenCopies(dir, "config.json").size() == 1);
         check("存檔沒有留下 config.json.tmp", !Files.exists(dir.resolve("config.json.tmp")));
@@ -133,13 +113,11 @@ public final class UpgradeSafetyTest {
                 empty.tooltipMode() == CollectorConfig.TooltipMode.OFF
                         && brokenCopies(dir, "config.json").size() == 1);
 
-        // NTFS 上寫到一半斷電，檔案常常是正確長度但內容全是 0
         Files.write(file, new byte[64]);
         new CollectorConfig(file);
         check("整份是 0 位元組的 config.json：一樣改名放旁邊",
                 brokenCopies(dir, "config.json").size() == 2 && !Files.exists(file));
 
-        // 用記事本以 Big5 另存
         Files.write(file, "{\"language\": \"繁中\"}".getBytes("Big5"));
         new CollectorConfig(file);
         check("不是 UTF-8 的 config.json：一樣改名放旁邊",
@@ -193,70 +171,37 @@ public final class UpgradeSafetyTest {
         check("存過 12 px 間距的舊設定照舊是 12，不跟著新預設改", c.panelGap() == 12);
         JsonObject expected = JsonParser.parseString(PLAYER_CONFIG).getAsJsonObject();
         expected.remove("shareCaptures");
-        // 這兩欄先前從來沒被寫出去過（見 settingsThatUsedToReset），舊設定檔裡不會有，
-        // 重寫之後會帶著預設值出現。
         expected.addProperty("uiLanguage", "");
         expected.addProperty("marketSearch", true);
-        // 0.2.0 加的：右上那一欄怎麼翻、目標進度條要不要翻。
-        // 舊設定檔沒有，重寫時補上預設值。
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
-        // 1.0.0：記分板的開關。舊設定檔沒有，預設開著（跟原本的行為一樣）。
         expected.addProperty("translateScoreboard", true);
         expected.addProperty("translateHeldItem", true);
-        // 0.2.2：物品名稱從開／關改成三段。舊的 true 換成「只顯示譯名」。
         expected.remove("translateItemNames");
         expected.addProperty("itemNames", "ON");
-        // 0.2.2：「跟別人講話請用原文」的警語。升級上來的人還沒看過，所以是 false。
         expected.addProperty("noticeDismissed", false);
-        // 0.2.3：Wynntils 自己那幾個畫面要不要換成中文。舊設定檔沒有，補上預設值。
         expected.addProperty("wynntilsUi", true);
-        // 0.2.3：按住 Shift 暫時看另一種物品名稱。舊設定檔沒有，補上預設值。
         expected.addProperty("shiftPeekNames", true);
-        // 0.2.3：翻譯改成「先問有沒有新的」。上一次抓到哪一版、要不要自己抓。
         expected.addProperty("syncedTranslations", "");
         expected.addProperty("autoUpdateTranslations", false);
-        // 0.2.3_1：boss bar 自己的開關（issue #825）。舊設定檔沒有，補上預設值。
         expected.addProperty("translateBossBar", true);
-        // 0.2.3_1：translateNametags 拿掉了。它沒有接到 F6 卻擋著算繪，正是 #825
-        // 的病根；浮空字改成跟「名牌與漂浮字」那一列走。
         expected.remove("translateNametags");
-        // 0.2.6：F6 的譯文版本改印日期，不再印 commit 短碼（使用者說那看起來像
-        // 亂碼）。日期跟 SHA 一起記在設定檔裡，舊設定檔沒有這一欄，補上空字串
-        // ——空的代表不知道日期，下一次問版本時會補回來，
-        // 見 TranslationUpdate#adoptDate。
         expected.addProperty("syncedTranslationsDate", "");
-        // 設定畫面改版：畫面自己的主題色（themeColor）從框線顏色拆出來。舊設定檔沒有
-        // 這一欄，補上的是<b>原本的框線顏色</b>——升級之後畫面的顏色不能自己變。
         expected.addProperty("themeColor", expected.has("accentColor")
                 ? expected.get("accentColor").getAsString() : "#6FA8D8");
-        // 同一版：舊的預設鍵（F6、F9）清過了沒。舊設定檔沒有，補上「還沒」——
-        // 清的動作在遊戲啟動完之後才做，見 WynnChaYuan#releaseOldDefaultKeys。
         expected.addProperty("oldKeysReleased", false);
-        // 1.0.0 之後：Wynnventory 的文字也翻（有裝才有作用）。舊設定檔沒有，補上預設值。
         expected.addProperty("wynnventory", true);
-        // 同一輪：WynnMarketSearch 的支援有了自己的開關。舊設定檔沒有，補上預設值。
         expected.addProperty("wynnMarketSearch", true);
-        // WynnMod 重畫的物品說明也翻（有裝才有作用）。舊設定檔沒有，補上預設值。
         expected.addProperty("wynnmodTooltip", true);
-        // 披風的兩個開關。舊設定檔沒有，補上預設值。
-        // 「讓別人知道我有裝」（presence）拿掉了：每個使用者都有葉子，這一欄不再寫出去。
         expected.remove("presence");
         expected.addProperty("capes", true);
         expected.addProperty("ownCape", true);
-        // 1.0.2：內容名稱（任務、洞窟…）的三段式顯示。舊設定檔沒有，預設是譯名（跟原本一樣）。
         expected.addProperty("pageNames", "ON");
-        // 1.0.2_4：加速 Wynntils 物品高亮。舊設定檔沒有，預設開著。
         expected.addProperty("wynntilsFps", true);
         expected.addProperty("dialogueCover", true);
-        // 1.0.3_2：翻譯總開關。舊設定檔沒有，預設開著。
         expected.addProperty("translationsEnabled", true);
-        // 技能與 Major ID 名稱附原文。舊設定檔沒有，預設關著（跟原本一樣只有譯名）。
         expected.addProperty("abilityNamesOriginal", false);
-        // 徽章改成名字前面的葉子：「多重身分只看第一個」那個開關拿掉了，
-        // 要展示哪些身分由本人在「徽章」那一頁決定。
         expected.remove("badgeStyle");
-        // 徽章不能關：開關連同這一欄一起拿掉（使用者 2026-10-12）。
         expected.remove("showBadges");
         expected.addProperty("privacyConsent", "UNKNOWN");
         expected.addProperty("setupDone", false);
@@ -273,20 +218,6 @@ public final class UpgradeSafetyTest {
                         && again.itemNames() == CollectorConfig.ItemNames.ON);
     }
 
-    /**
-     * F6 選的介面語言與市集搜尋開關要記得住。
-     *
-     * <h2>先前壞在哪</h2>
-     * {@code setUiLanguage} 與 {@code toggleMarketSearch} 都有呼叫 {@code save()}，
-     * 但 {@code save} 沒寫這兩欄、{@code load} 也沒讀——設定檔裡從來沒有它們，
-     * 於是每次重開遊戲都回到預設。日文、韓文的介面檔早就翻好了，選了卻留不住。
-     */
-    /**
-     * 設定畫面的主題色是從框線顏色拆出來的。
-     *
-     * <p>把框線調成別的顏色的玩家，升級之後設定畫面要<b>維持他原本看到的顏色</b>，
-     * 不能自己跳回預設的藍。之後兩個各自改、各自存。
-     */
     private static void themeColourFollowsOldBorder() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-theme");
         Path file = dir.resolve("config.json");
@@ -309,7 +240,7 @@ public final class UpgradeSafetyTest {
         Path file = dir.resolve("config.json");
         CollectorConfig first = new CollectorConfig(file);
         first.setUiLanguage("ja_jp");
-        boolean market = first.toggleMarketSearch();   // 預設開著，切成關
+        boolean market = first.toggleMarketSearch();
         check("市集搜尋預設是開的，切過之後是關的", !market);
 
         CollectorConfig reopened = new CollectorConfig(file);
@@ -317,21 +248,17 @@ public final class UpgradeSafetyTest {
                 "ja_jp".equals(reopened.uiLanguage()));
         check("★ 重開之後市集搜尋還是關的（先前會變回開啟）", !reopened.marketSearch());
 
-        // 手寫的設定檔也讀得到
         Files.writeString(file, "{\"uiLanguage\": \" ko_kr \", \"marketSearch\": false}");
         CollectorConfig handWritten = new CollectorConfig(file);
         check("手寫的設定檔讀得到這兩欄，前後空白照樣去掉",
                 "ko_kr".equals(handWritten.uiLanguage()) && !handWritten.marketSearch());
 
-        // 型別不對時跟別的欄位一樣：只有那一欄回預設
         Files.writeString(file, "{\"uiLanguage\": 5, \"marketSearch\": \"nope\", \"collect\": false}");
         CollectorConfig wrongTypes = new CollectorConfig(file);
         check("型別不對的那兩欄用預設，別的欄位照讀",
                 wrongTypes.uiLanguage().isEmpty() && wrongTypes.marketSearch()
                         && !wrongTypes.collect());
     }
-
-    // ── captured.json ──────────────────────────────────────────────────
 
     private static void truncatedCaptured() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-cap");
@@ -388,8 +315,6 @@ public final class UpgradeSafetyTest {
         check("沒翻清單讀得懂的那一條留著",
                 root.has("untranslated") && root.getAsJsonArray("untranslated").size() == 1);
     }
-
-    // ── 舊版留下的檔 ────────────────────────────────────────────────────
 
     private static void obsoleteFilesAreRemoved() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-tidy");
@@ -470,13 +395,10 @@ public final class UpgradeSafetyTest {
         return SafeFiles.parsesAsObject(f);
     }
 
-    // ── 譯文快取 ────────────────────────────────────────────────────────
-
     private static void partialStarterInstall() throws Exception {
         Path root = Files.createTempDirectory("wcy-up-starter");
         try {
             Path dir = Files.createDirectories(root.resolve("translations/zh_tw"));
-            // 第一次倒工作檔時被關掉：只倒出一個檔，清單還沒寫
             Files.writeString(dir.resolve("ui-labels.json"), "{\"Custom\": \"自訂\"}");
             int written = StarterFiles.installIfEmpty(dir, "zh_tw");
             check("上次沒倒完（有譯文檔、沒有清單）：把缺的補上（實際 " + written + " 個）",
@@ -536,7 +458,6 @@ public final class UpgradeSafetyTest {
         check("戳記寫著格式版本", stamp.get("format").getAsInt() == TranslationCache.FORMAT);
     }
 
-    /** 0.2.0_4 實機回報：舊版同步下來的快取蓋住了新版 jar 內建的譯文。 */
     private static void staleCacheRefreshedOnUpgrade() throws Exception {
         Path config = Files.createTempDirectory("wcy-up-stale");
         String before = TranslationCache.modVersion;
@@ -564,19 +485,12 @@ public final class UpgradeSafetyTest {
         }
     }
 
-    /**
-     * #979 實機回報：自己改過的譯文檔，升一次版就被 jar 內建的那份整份蓋掉。
-     *
-     * <p>戳記記著同步那一刻的雜湊，所以「原封不動」與「有人改過」分得出來：
-     * 前者該換成新版 jar 的（那是 0.2.0_4 那個回報），後者不能碰。
-     */
     private static void editedCacheSurvivesUpgrade() throws Exception {
         Path config = Files.createTempDirectory("wcy-up-edited");
         String before = TranslationCache.modVersion;
         try {
             Path dir = Languages.dir(config, "zh_tw");
             StarterFiles.installIfEmpty(dir, "zh_tw");
-            // 同步下來的兩個檔，戳記連雜湊一起記
             Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"同步來的\"}");
             Files.writeString(dir.resolve("npc.json"), "{\"Aledar\": \"同步來的\"}");
             List<String> synced = List.of("misc.json", "npc.json");
@@ -585,7 +499,6 @@ public final class UpgradeSafetyTest {
                     Files.readString(dir.resolve("_cache.json"))).getAsJsonObject();
             check("戳記記下了同步那一刻的雜湊",
                     stamp.has("hashes") && stamp.getAsJsonObject("hashes").has("misc.json"));
-            // 之後譯者自己改了其中一個
             Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"我自己改的\"}");
 
             TranslationCache.modVersion = "9.9.9";
@@ -596,7 +509,6 @@ public final class UpgradeSafetyTest {
             check("沒動過的檔照舊換回內建的",
                     !npc.contains("同步來的") && npc.length() > 1000);
 
-            // 改過的那個檔，新的戳記要記著它現在的內容，不然下一次升版又被判成「沒動過」
             Files.writeString(dir.resolve("npc.json"), "{\"Aledar\": \"又是同步來的\"}");
             TranslationCache.modVersion = "9.9.10";
             TranslationCache.prepare(dir, "zh_tw");
@@ -608,7 +520,6 @@ public final class UpgradeSafetyTest {
         }
     }
 
-    /** #979：切到「只用本機檔案」的人，升版時整個快取資料夾不該被動。 */
     private static void localOnlyCacheUntouchedOnUpgrade() throws Exception {
         Path config = Files.createTempDirectory("wcy-up-local");
         String before = TranslationCache.modVersion;
@@ -617,7 +528,6 @@ public final class UpgradeSafetyTest {
             Path dir = Languages.dir(config, "zh_tw");
             StarterFiles.installIfEmpty(dir, "zh_tw");
             Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"我自己翻的\"}");
-            // 以前同步過，所以戳記裡有這個檔名（0.2.7 以前的戳記，沒有雜湊）
             Files.writeString(dir.resolve("_cache.json"),
                     "{\"format\": 1, \"mod\": \"0.0.1\", \"files\": [\"misc.json\"]}");
             TranslationCache.modVersion = "9.9.9";
@@ -693,18 +603,9 @@ public final class UpgradeSafetyTest {
         }
     }
 
-    // ── 整個資料夾照啟動順序跑一次 ─────────────────────────────────────
-
-    /** 啟動時讀檔的結果。 */
     private record Started(CollectorConfig config, CaptureStore store,
                            TranslationStore translations, int broken, long millis) {}
 
-    /**
-     * 照 {@code WynnChaYuan#onInitializeClient} 的順序呼叫同一批讀檔的方法。
-     *
-     * <p>那個類別本身載不進測試（靜態欄位會去註冊按鍵分類），所以這裡照抄順序，
-     * 呼叫的是完全相同的方法。
-     */
     private static Started startUp(Path dir) {
         long t0 = System.nanoTime();
         ConfigFolder.tidy(dir);
@@ -730,7 +631,6 @@ public final class UpgradeSafetyTest {
                 (System.nanoTime() - t0) / 1_000_000);
     }
 
-    /** 用內建資源拼出一份「測過舊版、留著沒刪」的資料夾，一定跑。 */
     private static void oldVersionFolder() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-old").resolve("wynnchayuan");
         try {
@@ -769,7 +669,6 @@ public final class UpgradeSafetyTest {
         }
     }
 
-    /** 指定 -PplayerFolder= 時，拿真實玩家資料夾的副本跑一次。 */
     private static void playerFolder() throws Exception {
         String given = System.getProperty("wcy.playerFolder", "");
         if (given.isBlank()) {
@@ -802,11 +701,9 @@ public final class UpgradeSafetyTest {
             check("玩家資料夾：config.json 不再帶著 shareCaptures",
                     !Files.readString(dir.resolve("config.json")).contains("shareCaptures"));
         } finally {
-            deleteTree(dir.getParent());       // 副本裡有玩家的字，跑完就刪
+            deleteTree(dir.getParent());
         }
     }
-
-    // ── 工具 ────────────────────────────────────────────────────────────
 
     private static List<Path> brokenCopies(Path dir, String name) throws Exception {
         try (Stream<Path> files = Files.list(dir)) {
@@ -838,7 +735,6 @@ public final class UpgradeSafetyTest {
                 Files.deleteIfExists(p);
             }
         } catch (Exception ignored) {
-            // 暫存資料夾刪不乾淨不影響結果
         }
     }
 

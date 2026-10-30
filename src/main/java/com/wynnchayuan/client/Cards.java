@@ -6,23 +6,12 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 
-/**
- * 設定畫面的卡片樣式。
- *
- * <p>深色底 + 主題色細邊，分區用卡片而不是一長串按鈕——
- * 純按鈕堆疊看不出哪些設定是一組的。
- *
- * <p>Minecraft 的 {@code fill} 只能畫矩形，做不出圓角，
- * 所以改用「四角各缺一格」來暗示圓角，遠看夠像。
- */
 public final class Cards {
 
-    /** 卡片底色：比畫面暗景再深一點，讓卡片浮起來。 */
     private static final int CARD_BG = 0xC0121A24;
 
     private Cards() {}
 
-    /** 一張卡片：深色底、主題色細邊、四角內縮。 */
     public static void panel(GuiGraphics g, int x, int y, int w, int h) {
         int edge = (WynnChaYuan.config().themeARGB() & 0x00FFFFFF) | 0x50000000;
 
@@ -36,7 +25,6 @@ public final class Cards {
         g.fill(x + w - 1, y + 1, x + w, y + h - 1, edge);
     }
 
-    /** 卡片標題：主題色文字加一條短底線。 */
     public static void title(GuiGraphics g, Font font, int x, int y, String text) {
         int accent = WynnChaYuan.config().themeARGB();
         g.drawString(font, Component.literal(text), x, y, accent);
@@ -44,14 +32,6 @@ public final class Cards {
         g.fill(x, y + 10, x + w, y + 11, accent);
     }
 
-    /**
-     * 放不下就截斷，尾巴補上省略號。
-     *
-     * <p>中文一個字九像素，英文一個字母六像素——同一句話換成中文常常寬一截。
-     * 凸出格子外比截斷難看得多，而且看起來像壞掉。所以寧可截。
-     *
-     * <p>會變動的字（按鍵名稱、GitHub 回來的訊息）長度事先不知道，一定要走這裡。
-     */
     public static String fit(Font font, String text, int maxW) {
         if (maxW <= 0 || font.width(text) <= maxW) {
             return text;
@@ -60,28 +40,16 @@ public final class Cards {
         return cut + "…";
     }
 
-    /** 按鈕下方的說明文字。 */
     public static void hint(GuiGraphics g, Font font, int x, int y, String text) {
         g.drawString(font, Component.literal(text), x, y, Colors.HINT);
     }
 
-    /**
-     * 模組圖示。跟模組清單上那顆是同一張圖，只是放到 {@code textures/} 底下
-     * 讓貼圖管理員找得到——那邊是 Fabric 自己讀檔，不走貼圖那條路。
-     */
     private static final net.minecraft.resources.Identifier ICON =
             net.minecraft.resources.Identifier.fromNamespaceAndPath(
                     "wynnchayuan", "textures/gui/icon.png");
 
-    /** 圖示畫多大。原圖是 256×256，縮到這個尺寸。 */
     private static final int ICON_SIZE = 22;
 
-    /**
-     * 畫面頂端的標題列。
-     *
-     * <p>圖示與標題當成<b>一組</b>置中，不是各自置中——分開算的話標題一長
-     * 兩個就會疊在一起。
-     */
     public static void header(GuiGraphics g, Font font, int screenW, String title, String subtitle) {
         int accent = WynnChaYuan.config().themeARGB();
         g.fill(0, 0, screenW, 46, 0xD00B1119);
