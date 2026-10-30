@@ -325,6 +325,14 @@ final class TranslationIndex {
                         }
                     }
                 }
+                if (file.getFileName().toString().equals(QUEST_NAMES)) {
+                    for (String key : obj.keySet()) {
+                        JsonElement value = obj.get(key);
+                        if (!key.startsWith("_") && value.isJsonPrimitive()) {
+                            noteQuestName(key.strip(), value.getAsString().strip());
+                        }
+                    }
+                }
                 if (file.getFileName().toString().equals(UI_LABELS)) {
                     for (String key : obj.keySet()) {
                         if (!key.startsWith("_")) {
@@ -348,6 +356,7 @@ final class TranslationIndex {
     }
 
     private static final String UI_LABELS = "ui-labels.json";
+    private static final String QUEST_NAMES = "quest-name.json";
 
     private final java.util.Set<String> uiLabels = new java.util.HashSet<>();
 
@@ -841,12 +850,27 @@ final class TranslationIndex {
     }
 
     public String pageTitleName(String text) {
-        return text == null ? null : pageTitleNames.get(text.strip());
+        if (text == null) {
+            return null;
+        }
+        String name = text.strip();
+        String title = pageTitleNames.get(name);
+        return title != null || pageTitleSplit.contains(name) ? title : questNames.get(name);
     }
 
     private final Map<String, String> pageTitleNames = new java.util.HashMap<>();
 
     private final java.util.Set<String> pageTitleSplit = new java.util.HashSet<>();
+
+    private final Map<String, String> questNames = new java.util.HashMap<>();
+
+    // 名字含地名的任務，卡片的鍵是 {p} 版本，名字只能從這裡拿
+    private void noteQuestName(String name, String translated) {
+        pageNames.add(name);
+        if (!translated.isEmpty() && !translated.equals(name)) {
+            questNames.put(name, translated);
+        }
+    }
 
     private void notePageTitle(String name, String translated) {
         if (translated == null || pageTitleSplit.contains(name)) {

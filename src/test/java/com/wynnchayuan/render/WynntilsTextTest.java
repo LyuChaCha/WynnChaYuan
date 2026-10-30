@@ -5,6 +5,16 @@ import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.tree.AbstractInsnNode;
+import org.objectweb.asm.tree.AnnotationNode;
+import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.LdcInsnNode;
+import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.MethodNode;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -36,6 +46,7 @@ public final class WynntilsTextTest {
         entityName(config, store);
         switched(config);
         wynntilsScreens(config, store);
+        bookHint(config);
         beaconCount(config);
         statusEffects(config);
 
@@ -354,6 +365,76 @@ public final class WynntilsTextTest {
             }
         }
         check("狀態列查完之後旗標有還原", !TranslationStore.itemNamesBarred());
+    }
+
+    private static final String BOOK_HINT =
+            "Filter and sort using the buttons at the top and select content to track from the list!";
+
+    private static void bookHint(CollectorConfig config) throws Exception {
+        ClassNode book = classNode("com/wynntils/screens/activities/WynntilsContentBookScreen");
+        String drawn = null;
+        boolean seen = false;
+        for (MethodNode method : book.methods) {
+            if (!method.name.equals("doRender")) {
+                continue;
+            }
+            for (AbstractInsnNode insn : method.instructions) {
+                if (insn instanceof LdcInsnNode ldc
+                        && "screens.wynntils.contentBook.selectToTrack".equals(ldc.cst)) {
+                    seen = true;
+                } else if (seen && drawn == null && insn instanceof MethodInsnNode call
+                        && call.name.equals("renderAlignedTextInBox")) {
+                    drawn = "L" + call.owner + ";" + call.name + call.desc;
+                }
+            }
+        }
+        check("內容書的提示還是整句交給 renderAlignedTextInBox（" + drawn + "）", drawn != null);
+
+        ClassNode mixin = classNode("com/wynnchayuan/mixin/WynntilsBookTextMixin");
+        boolean hooked = false;
+        for (MethodNode method : mixin.methods) {
+            if (method.visibleAnnotations == null) {
+                continue;
+            }
+            for (AnnotationNode note : method.visibleAnnotations) {
+                if (note.desc.endsWith("/ModifyArg;")) {
+                    hooked |= targetOf(note).equals(drawn);
+                }
+            }
+        }
+        check("★ mixin 掛在畫那句提示的呼叫上", hooked);
+
+        Path dir = Files.createTempDirectory("wcy-bookhint");
+        Files.writeString(dir.resolve("wynntils.json"), "{\"" + BOOK_HINT + "\": \"整句譯文\"}",
+                StandardCharsets.UTF_8);
+        TranslationStore small = new TranslationStore();
+        small.loadAll(dir);
+        check("★ 整句查得到（折行之前就要換）", "整句譯文".equals(
+                WynntilsText.screenText(StyledText.fromString(BOOK_HINT), config, small)
+                        .getStringWithoutFormatting()));
+    }
+
+    private static String targetOf(AnnotationNode modifyArg) {
+        for (int i = 0; i + 1 < modifyArg.values.size(); i += 2) {
+            if ("at".equals(modifyArg.values.get(i))) {
+                AnnotationNode at = (AnnotationNode) modifyArg.values.get(i + 1);
+                for (int j = 0; j + 1 < at.values.size(); j += 2) {
+                    if ("target".equals(at.values.get(j))) {
+                        return String.valueOf(at.values.get(j + 1));
+                    }
+                }
+            }
+        }
+        return "";
+    }
+
+    private static ClassNode classNode(String path) throws Exception {
+        try (InputStream in = WynntilsTextTest.class.getClassLoader()
+                .getResourceAsStream(path + ".class")) {
+            ClassNode node = new ClassNode();
+            new ClassReader(in).accept(node, 0);
+            return node;
+        }
     }
 
     private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
