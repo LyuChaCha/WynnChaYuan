@@ -10,18 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Major ID 的<b>名稱</b>要保住它自己的顏色。
- *
- * <h2>畫面上長什麼樣</h2>
- * 原文的 {@code ✦ Altruism: Allies within 16 blocks...} 裡，名稱那半是亮色的，
- * 說明那半是暗一階的。譯文如果整段用同一個顏色，「利他主義」就跟說明糊在一起，
- * 一眼看不出哪裡是名字。
- *
- * <p>難處在於譯文是中文，跟原文的字面對不起來，一般的樣式沿用比對不到。
- * 程式的做法是把<b>譯出來的名稱</b>連同原文名稱的樣式一起交給重建那一步
- * （見 {@code labelAccent}）。這條測試就是釘住那一步。
- */
 public final class MajorIdColourTest {
 
     private static int failures = 0;
@@ -30,17 +18,10 @@ public final class MajorIdColourTest {
     private static final int BODY_COLOUR = 0xAAAAAA;
     private static final int MARK_COLOUR = 0xFFFF55;
 
-    /** 遊戲送來的樣子：名稱與說明各有顏色，並依 tooltip 寬度斷成五行。 */
     private static List<StyledText> block() {
         return block(false);
     }
 
-    /**
-     * @param markSeparate {@code ✦} 自成一個色段。遊戲實際上就是這樣送的，
-     *                     而「純符號的段也算重點段」是後來為了保住 {@code ✖}
-     *                     的紅色才加的——兩件事湊在一起，名稱的樣式就被
-     *                     {@code ✦} 擠掉了。
-     */
     private static List<StyledText> block(boolean markSeparate) {
         String[][] rows = {
             {"✦ Altruism: ", "Whenever you gain"},
@@ -74,8 +55,6 @@ public final class MajorIdColourTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
 
-        // 診斷檔要真的寫得出來。使用者回報「layout-debug.txt 根本沒生成」，
-        // 而那個檔正是查 Major ID 顏色唯一的依據——它不寫出來，就等於沒有診斷。
         Path dir = java.nio.file.Files.createTempDirectory("wynnchayuan");
         FlowedDebug.init(dir);
         Path debug = dir.resolve("majorid-debug.txt");
@@ -101,7 +80,6 @@ public final class MajorIdColourTest {
                     colour != BODY_COLOUR);
             check("名稱沿用原文名稱的顏色", colour == NAME_COLOUR);
         }
-        // ✦ 自成一個色段——遊戲實際上就是這樣送的
         List<StyledText> split = block(true);
         List<Component> two = LineTranslator.translateBlock(
                 split, store, new boolean[split.size()]);
@@ -112,8 +90,6 @@ public final class MajorIdColourTest {
                             + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
                     c != null && c == NAME_COLOUR);
         }
-        // 名稱比同一行露出的說明<b>還長</b>——這一行的「主要樣式」於是變成名稱，
-        // 被判為「不同」的反而是說明。先前程式就是在這裡挑錯，兩邊顏色對調。
         List<StyledText> longName = new ArrayList<>();
         MutableComponent head = Component.empty();
         head.append(Component.literal("✦ Altruism: ").withStyle(
@@ -142,12 +118,6 @@ public final class MajorIdColourTest {
                 written.contains("原文第一行的色段"));
         check("診斷檔記下了原文的色段", written.contains("#FF55FF"));
         check("診斷檔記下了每一次呼叫的流水號", written.contains("=== 1 ==="));
-        // 遊戲實際送來的結構（取自使用者回報的 majorid-debug.txt）：
-        //   [0] #E0B3E6 「」                        ← 空字串
-        //   [1] #E0B3E6 「(位移字元)Transcendence: 」 ← 前綴是寬度位移字元，不是 ✦
-        //   [2] #AAAAAA 「25% chance for」
-        // 名稱那一段比同一行的說明長，前面還掛著一個空的片段——
-        // 這兩件事都是我自己捏測試時沒有的，所以先前三種情境全過卻修不好。
         String offset = new StringBuilder().appendCodePoint(0xD0002).toString();
         List<StyledText> real = new ArrayList<>();
         MutableComponent head2 = Component.empty();
@@ -172,7 +142,6 @@ public final class MajorIdColourTest {
             check("遊戲實際結構下名稱保住自己的顏色（拿到 "
                             + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
                     c != null && c == 0xE0B3E6);
-            // 「顏色相反」的意思是說明那半拿到了名稱的顏色。分開驗一次。
             Integer body = colourOf(got, "機率");
             check("說明那半沒有拿到名稱的顏色（拿到 "
                             + (body == null ? "null" : "#" + String.format("%06X", body))
@@ -187,9 +156,6 @@ public final class MajorIdColourTest {
             }
         }
 
-        // 名稱在原文裡是一個字一個顏色拼出來的（彩虹字）。
-        // 譯文<b>不</b>重現那道漸層——照專案的原則保留原始樣式，不特地改顏色。
-        // 這裡釘住的是：名稱仍然是名稱那個顏色，說明仍然是說明那個顏色。
         int[] rainbow = {0xFF5555, 0xFFAA00, 0xFFFF55, 0x55FF55, 0x55FFFF,
                          0x5555FF, 0xFF55FF, 0xFF5555, 0xFFAA00, 0xFFFF55,
                          0x55FF55, 0x55FFFF, 0x5555FF};
@@ -215,9 +181,6 @@ public final class MajorIdColourTest {
                 shiny, store, new boolean[shiny.size()]);
         check("彩虹名稱的整段查得到", painted != null && !painted.isEmpty());
         if (painted != null && !painted.isEmpty()) {
-            // 名稱那一段只能有<b>一個</b>顏色。先前這裡會被拆成一個字一段、
-            // 各自套上漸層裡的一個顏色；現在保留原始樣式，整段是同一色。
-            // 不釘特定譯名——翻譯團隊隨時會改（華綻 就被改成了 散華）。
             String zh = store.lookup("Efflorescence");
             int leaves = 0;
             java.util.LinkedHashSet<Integer> used = new java.util.LinkedHashSet<>();
@@ -236,9 +199,6 @@ public final class MajorIdColourTest {
             check("譯名維持單一顏色，沒有被重新上色（用到 " + used.size() + " 個）",
                     used.size() == 1);
             check("用的是原文名稱本來的顏色", rainbowContains(rainbow, used));
-            // 說明裡的那個標記詞也不寫死——同樣會被翻譯團隊改掉（先前釘的是
-            // 「分散」，說明重寫成「平均分攤」之後這條就紅了）。改成從語料拿
-            // 譯文的<b>結尾</b>幾個字：那一定落在說明那半，而且跟著語料走。
             Integer bodyColour = colourOf(painted, tailWord(store.lookup(
                     "Serpent's Garden now centers to where you land with Swan Dive. "
                     + "Damage of Swan Dive, Serpent's Garden and Jasmine Bloom "
@@ -248,7 +208,6 @@ public final class MajorIdColourTest {
                                : "#" + String.format("%06X", bodyColour)) + "）",
                     bodyColour != null && bodyColour == BODY_COLOUR);
         }
-        // 普通的兩段上色照舊
         List<StyledText> ordinary = block();
         List<Component> plain = LineTranslator.translateBlock(
                 ordinary, store, new boolean[ordinary.size()]);
@@ -267,21 +226,6 @@ public final class MajorIdColourTest {
         report();
     }
 
-    /**
-     * 屬性面板的說明：強調詞與元素名都要保住自己的顏色。
-     *
-     * <h2>為什麼要釘住</h2>
-     * 這一段有<b>兩種</b>重點段，壞法不一樣：
-     *
-     * <ul>
-     *   <li>{@code <圖示> Air} —— 圖示與名稱同一個色段，剝不掉圖示就查不到，
-     *       畫面上「風屬性」整個沒有顏色，只剩圖示是亮的。</li>
-     *   <li>{@code increase} —— 語料裡本來沒有這個詞，查不到中文的說法，
-     *       於是「提高」跟著整段變灰。原文那兩個字是粉紅色的。</li>
-     * </ul>
-     *
-     * <p>兩者在畫面上長得一模一樣（就是「沒有顏色」），所以分開驗。
-     */
     private static void skillPanelColours(TranslationStore store) {
         Style body = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
         Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF));
@@ -322,24 +266,6 @@ public final class MajorIdColourTest {
                 emphasis != null && emphasis == 0xFF55FF);
     }
 
-    /**
-     * 名稱被 tooltip 寬度<b>拆成兩行</b>時仍然要翻得出來。
-     *
-     * <h2>畫面上長什麼樣</h2>
-     * 原文的 {@code Dimensional Tear} 斷在行尾，第一行只剩 {@code Dimensional}：
-     *
-     * <pre>
-     *   §7Casting §nFrozen Tornado§r§7 inside your §nDimensional
-     *   §7§nTear§r§7 infuses it with otherworldly energies,
-     * </pre>
-     *
-     * <p>於是 {@code Dimensional} 成了一個「帶樣式的片段」。它跟詞典裡的
-     * {@code Dimensional Tear} <b>從同一個位置開始</b>，而先前同位置時片段無條件勝，
-     * 短的贏——譯文就卡著半個英文名字，旁邊的 Frozen Tornado 與 Time Vortex
-     * 卻都翻好了，看起來莫名其妙。
-     *
-     * <p>改成同位置取比較長的（片段彼此之間本來就是這個規則）。
-     */
     private static void splitNameStillTranslates(TranslationStore store) {
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
         Style underlined = grey.withUnderlined(true);
@@ -367,33 +293,11 @@ public final class MajorIdColourTest {
             return;
         }
         String all = out.stream().map(Component::getString).reduce("", (a, b) -> a + b);
-        // 不釘特定譯名。這條要盯的是<b>被斷行切開的名稱不會只換掉一半</b>——
-        // 原本的壞法是第一行的 Dimensional 被當成重點段吃掉，畫面上留著半個
-        // 英文名字。名字最後是中文還是英文，是翻譯團隊的決定，不是這條測試的事。
-        // 先前釘死「次元裂隙」，團隊把技能名稱改成保留英文之後這條就紅了，
-        // 而程式其實沒壞。
         check("整段確實翻成了中文（實際：" + all.replace("\n", " ") + "）", hasHan(all));
         check("沒有留下半個英文名字",
                 !all.contains("Dimensional") || all.contains("Dimensional Tear"));
     }
 
-    /**
-     * 帶顏色的專有名詞<b>翻成中文之後</b>還要保住顏色。
-     *
-     * <h2>畫面上長什麼樣</h2>
-     * 原文的 {@code Mana Bank ✺} 是青色的，翻成「魔力儲庫」之後變成白的——
-     * 使用者連續回報了魔力儲庫、失衡、裂隙之裔三個。
-     *
-     * <h2>為什麼會掉</h2>
-     * 顏色是拿<b>原文的字面</b>去譯文裡找的。{@code Meteor} 保留英文所以找得到，
-     * 但 {@code Mana Bank} 在譯文裡是「魔力儲庫」，字面對不上。
-     *
-     * <p>程式本來就有對策（{@code withTranslations}：把帶樣式的片段連同<b>它的
-     * 譯文</b>一起登記）——但那要語料裡查得到這個詞才行。而
-     * {@code Mana Bank}、{@code Unstable}、{@code Riftspawn} 這些
-     * <b>根本不在語料裡</b>：它們不是技能名、不是標籤，是句子裡的名詞，
-     * 先前沒有任何一個檔在收。現在收在 {@code ability-terms.json}。
-     */
     private static void translatedTermKeepsColour(TranslationStore store) {
         final int TERM = 0x55FFFF;
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
@@ -409,29 +313,22 @@ public final class MajorIdColourTest {
                 StyledText.fromComponent(second));
         List<Component> out = LineTranslator.translateBlock(
                 run, store, new boolean[run.size()]);
-        // 這一段語料裡不一定查得到，重點是<b>詞</b>本身要登記得到
         check("語料查得到 Mana Bank 的譯文",
                 "魔力儲庫".equals(store.lookup("Mana Bank")));
         check("語料查得到 Unstable 的譯文",
                 "失衡".equals(store.lookup("Unstable")));
         check("語料查得到 Riftspawn 的譯文",
                 "裂隙之裔".equals(store.lookup("Riftspawn")));
-        // 查得到還不夠：要能<b>在別的句子裡自動替換</b>，那走的是 terms 那條路。
-        // 先前扁平檔的載入根本沒呼叫 noteTerm，於是詞典裡有、畫面上還是英文。
         check("Mana Bank 有登記成可替換的詞",
                 "魔力儲庫".equals(store.lookupTerm("Mana Bank")));
-        // Wynncraft 把資源符號跟詞放在同一個色段：「Mana Bank ✺」。
-        // 拿整段去查會落空，剝掉尾巴查到之後要把尾巴接回去。
         check("詞後面黏著圖示也認得（拿到 "
                         + store.lookupTerm("Mana Bank ✺") + "）",
                 "魔力儲庫 ✺".equals(store.lookupTerm("Mana Bank ✺")));
         check("Crystallized 有登記成可替換的詞",
                 "結晶化".equals(store.lookupTerm("Crystallized")));
-        // gui.json 那種扁平檔收的是整行，不能被當成可替換的詞——
-        // 否則「返回」會在不相干的句子裡到處亂換
         check("一般的扁平檔不會被當成詞典", store.lookupTerm("Mastery Tomes") == null);
         if (out == null || out.isEmpty()) {
-            return;                            // 這一段沒有對應的敘述條目，正常
+            return;
         }
         Integer colour = colourOf(out, "魔力儲庫");
         if (colour != null) {
@@ -440,26 +337,6 @@ public final class MajorIdColourTest {
         }
     }
 
-    /**
-     * 括號註解<b>比正文長</b>時，正文不能被染成註解的顏色。
-     *
-     * <h2>實際的數字</h2>
-     * 技能樹的 {@code Heal}：
-     *
-     * <pre>
-     *   Heals you and nearby allies in
-     *   a large area around you.                ← 正文，亮灰，54 字
-     *   (When healing others, you can't heal
-     *   more than 50% of their max health)      ← 括號註解，暗灰，70 字
-     * </pre>
-     *
-     * <p>照字數算註解贏，整段譯文就被染成暗灰。但註解依定義是附帶說明，
-     * 不是這一段的主要聲音——所以它不參與底色的統計。
-     *
-     * <p>不參與統計之後還得<b>把顏色還回去</b>，否則註解變成正文的亮色，
-     * 那只是把錯誤換一個方向。括號在中英文裡都是註解的記號，
-     * 所以譯文那半也切得出來。
-     */
     private static void bracketedNote(TranslationStore store) {
         final int BODY = 0xAAAAAA;
         final int NOTE = 0x555555;
@@ -497,23 +374,6 @@ public final class MajorIdColourTest {
                 noteColour != null && noteColour == NOTE);
     }
 
-    /**
-     * 底線詞的總長度跟內文<b>剛好一樣</b>時，整段也不能變成底線。
-     *
-     * <h2>實際的數字</h2>
-     * 取自使用者回報的 {@code majorid-debug.txt} 第 18 筆（秘術師流派）：
-     *
-     * <pre>
-     *   Meteor, Main Attack and Powder Specials      ← 三個底線詞共 32 字
-     *   consume Unstable ⚡ to deal +100% damage.     ← 灰字共 32 字
-     * </pre>
-     *
-     * <p>32 比 32，<b>平手</b>。平手時先遇到的勝出，而第一段剛好是 {@code Meteor}
-     * 那個底線詞——整段譯文就全部畫上了底線。
-     *
-     * <p>修法不是去調平手規則（那只是把運氣換一邊），而是<b>累計時不看裝飾</b>：
-     * 「灰＋底線」與「灰」併成同一個，灰以 64 字獨贏，平手根本不會發生。
-     */
     private static void tiedUnderline(TranslationStore store) {
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
         Style underlined = grey.withUnderlined(true);
@@ -523,14 +383,11 @@ public final class MajorIdColourTest {
         MutableComponent first = Component.empty();
         first.append(Component.literal("Meteor").withStyle(underlined));
         first.append(Component.literal(", ").withStyle(grey));
-        // 遊戲改版後這裡是 Main Attack（原本是 Pyrokinesis，一樣 11 個字，平手的條件沒變）
         first.append(Component.literal("Main Attack").withStyle(underlined));
         first.append(Component.literal(" and ").withStyle(grey));
         first.append(Component.literal("Powder Specials").withStyle(underlined));
 
         MutableComponent second = Component.empty();
-        // ⚡ 那個材質包圖示要帶自己的字型，否則不會被當成 {#}，
-        // 模板就跟語料裡的 src 對不上（那條的 src 是 `Unstable {#} to deal`）
         Style icon = Style.EMPTY.withColor(TextColor.fromRgb(0x7A3CFF))
                 .withFont(new net.minecraft.network.chat.FontDescription.Resource(
                         net.minecraft.resources.Identifier.withDefaultNamespace("common")));
@@ -549,18 +406,12 @@ public final class MajorIdColourTest {
         if (out == null || out.isEmpty()) {
             return;
         }
-        // 「有幾段帶底線」是不夠的判斷——舊的算法下也只有一部分帶底線，
-        // 卻剛好是<b>內文</b>那一部分。要直接問那幾個字。
         check("內文「消耗」沒有底線", underlinedAt(out, "消耗") == Boolean.FALSE);
         check("內文「傷害」沒有底線", underlinedAt(out, "傷害") == Boolean.FALSE);
-        // 技能名稱現在是中文了（Meteor -> 隕石）。底線得跟著搬到譯名上——
-        // 那正是 withTranslations 的用途：帶樣式的片段連同它的譯文一起登記。
-        // 不釘譯名寫成哪一種：這一條現在的譯文把 Meteor 留成英文，哪天改回「隕石」也一樣要過
         check("術語 Meteor（或它的譯名）仍然有底線", underlinedAt(out, "隕石") == Boolean.TRUE
                 || underlinedAt(out, "Meteor") == Boolean.TRUE);
     }
 
-    /** 含有 needle 的那一段有沒有底線；找不到回傳 null。 */
     private static Boolean underlinedAt(List<Component> lines, String needle) {
         for (Component line : lines) {
             for (Component leaf : flatten(line)) {
@@ -572,22 +423,6 @@ public final class MajorIdColourTest {
         return null;
     }
 
-    /**
-     * 行內最長的那一段是底線，整段譯文<b>不能</b>跟著全部畫上底線。
-     *
-     * <h2>畫面上長什麼樣</h2>
-     * 技能樹的 {@code Halo}：
-     *
-     * <pre>
-     *   Increase your Max Orbs        ← 整行灰色，22 字
-     *   from Lightweaver by +2.       ← Lightweaver 帶底線、11 字
-     * </pre>
-     *
-     * <p>「哪個樣式代表整段」先前是<b>逐行</b>算的：每一行的主樣式拿走整行的份量。
-     * 第二行裡 Lightweaver（11）比 from（5）與 by +2.（7）都長，於是「底線」成了
-     * 那一行的主樣式，還帶著整行 25 字的份量，壓過第一行的 22 字——
-     * 整段譯文就全部畫上了底線。改成逐<b>段</b>累計：灰 22+5+7=34、底線 11。
-     */
     private static void noStrayUnderline(TranslationStore store) {
         Style underlined = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))
                                       .withUnderlined(true);
@@ -626,13 +461,6 @@ public final class MajorIdColourTest {
                 underlinedLeaves >= 1);
     }
 
-    /**
-     * 遊戲實際把 Major ID 斷成<b>七行</b>時仍然查得到。
-     *
-     * <p>使用者回報「原文正確但是沒有正確翻譯」，而 {@code line-debug.txt} 顯示
-     * 那一段走的是「逐片段」——也就是整段查表<b>沒被叫到或沒中</b>。
-     * 這裡照畫面上真正的斷行方式重現一次，把它釘住。
-     */
     private static void wrappedSevenLines(TranslationStore store) {
         String[] rows = {
             "Garden now centers to where",
@@ -664,24 +492,6 @@ public final class MajorIdColourTest {
                 out != null && !out.isEmpty());
     }
 
-    /**
-     * 一段被切成好幾行之後，行內那個<b>最長</b>的彩色詞不能掉色。
-     *
-     * <h2>畫面上長什麼樣</h2>
-     * 技能樹的 {@code Larger Mana Bank II} 寫著：
-     *
-     * <pre>
-     *   Increase your maximum          ← 整行灰色
-     *   Mana Bank ✺ by +30.            ← 「Mana Bank」是藍的
-     * </pre>
-     *
-     * <p>重點段是拿<b>那一行自己的</b>主樣式篩出來的。第二行裡「Mana Bank」比
-     * 「 by +30.」長，於是藍色成了那一行的主樣式，這一段就被當成「不是重點」丟掉——
-     * 譯文重建時沒有東西可以把藍色貼回去，畫面上 Mana Bank 變成白的。
-     *
-     * <p>Major ID 的敘述整段套上標題顏色，也是同一個機制的另一面：名稱比同一行
-     * 露出的說明長時，說明那半的灰色被丟掉。
-     */
     private static void keepWordColour(TranslationStore store) {
         final int WORD = 0x55FFFF;
         MutableComponent second = Component.empty();
@@ -702,14 +512,10 @@ public final class MajorIdColourTest {
         if (out == null || out.isEmpty()) {
             return;
         }
-        // Mana Bank 現在收在 ability-terms.json，會被換成「魔力儲庫」——
-        // 所以要找的是譯文，不是原文。顏色一樣得跟著搬過去。
         Integer word = colourOf(out, "魔力儲庫");
         check("行內最長的那個彩色詞沒有掉色（拿到 "
                         + (word == null ? "null" : "#" + String.format("%06X", word))
                         + "）", word != null && word == WORD);
-        // 同樣不釘用詞：要找的是「不是那個彩色詞的中文片段」，而不是某個特定的詞。
-        // 先前釘死「上限提高」，團隊換了說法就紅了。
         boolean bodyKept = false;
         for (Component leaf : flatten(out.get(out.size() - 1))) {
             String text = leaf.getString();
@@ -722,13 +528,11 @@ public final class MajorIdColourTest {
         check("其餘敘述仍然是敘述的顏色", bodyKept);
     }
 
-    /** 這段文字裡有沒有方塊字。用來確認「確實翻成中文了」而不必釘特定的詞。 */
     private static boolean hasHan(String text) {
         return text.codePoints().anyMatch(cp ->
                 Character.UnicodeScript.of(cp) == Character.UnicodeScript.HAN);
     }
 
-    /** 譯名用到的顏色，得是原文名稱那幾段裡本來就有的。 */
     private static boolean rainbowContains(int[] ramp, java.util.Set<Integer> used) {
         for (int colour : used) {
             boolean found = false;
@@ -742,13 +546,6 @@ public final class MajorIdColourTest {
         return !used.isEmpty();
     }
 
-    /** 找出含有 needle 的那一段是什麼顏色。 */
-    /**
-     * 譯文結尾的三個方塊字，拿來當「這一段是說明」的標記。
-     *
-     * <p>不寫死某個詞是刻意的：翻譯團隊隨時會改用詞，寫死的話這條測試
-     * 會在譯文變好的時候變紅——而它要盯的其實是顏色，不是用詞。
-     */
     private static String tailWord(String translated) {
         String t = translated == null ? "" : translated.replaceAll("[。，、！？\\s]+$", "");
         return t.length() <= 3 ? t : t.substring(t.length() - 3);
@@ -766,8 +563,6 @@ public final class MajorIdColourTest {
         return null;
     }
 
-    /** 只收<b>葉子</b>。最外層那個容器的 getString() 含有整行，會先被撈到，
-     *  而它自己沒有顏色——那樣量到的永遠是 null。 */
     private static List<Component> flatten(Component component) {
         List<Component> out = new ArrayList<>();
         if (component.getSiblings().isEmpty()) {
@@ -779,16 +574,6 @@ public final class MajorIdColourTest {
         return out;
     }
 
-    /**
-     * 複數與所有格的詞幹。見 {@code LineTranslator#addStem}。
-     *
-     * <p>原文寫 {@code Marks}、譯文寫 {@code Mark}——中文沒有複數，譯者保留英文
-     * 專有名詞時自然寫單數。顏色是拿原文的字面到譯文裡找的，於是那一段掉回底色。
-     *
-     * <p><b>反面才是重點</b>：貼樣式那一步用 {@code indexOf}，沒有詞界。
-     * 詞幹 {@code Mark} 會中在技能名 {@code Marked} 裡面，把前四個字母染成
-     * 別的顏色。所以詞幹只在譯文裡「自成一個詞」時才算數。
-     */
     private static void stems() {
         System.out.println("\n  -- 複數與所有格的詞幹 --");
 

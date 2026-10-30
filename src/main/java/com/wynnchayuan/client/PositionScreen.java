@@ -11,12 +11,6 @@ import net.minecraft.client.gui.screens.Screen;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 調整面板位置：翻譯面板、任務追蹤、NPC 對話、對話選項、NPC 名牌五個小框各擺在哪。
- *
- * <p>畫面與拖曳的邏輯在 {@link PositionView}；這裡只負責跟設定檔之間的那一段：
- * 每個框多大、能不能改大小、沒擺過的時候放哪裡、存的時候寫到哪一欄。
- */
 public final class PositionScreen extends CanvasScreen {
 
     private final PositionView view;
@@ -88,10 +82,6 @@ public final class PositionScreen extends CanvasScreen {
         return new PositionView.Line(T.s(key), colour);
     }
 
-    /**
-     * 五個框。尺寸是遊戲裡那個小框大概的大小；能改大小的只有內容長短不一的三個——
-     * 翻譯面板與名牌是照內容自己長的，給它固定的框沒有意義。
-     */
     private static List<PositionView.Spec> specs() {
         List<PositionView.Spec> out = new ArrayList<>();
         out.add(new PositionView.Spec(Overlay.TOOLTIP.name(), T.s("pos.box.tooltip"), 150, 90,

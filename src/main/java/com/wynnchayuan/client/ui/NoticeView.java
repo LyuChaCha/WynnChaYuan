@@ -4,12 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 
-/**
- * 使用須知：一張置中的小卡片。
- *
- * <p>內文三句，介面不是英文的時候底下再附一份英文——這段話是在提醒玩家
- * 「跟別人講話請用原文」，看得懂原文的那一份本身就是重點。
- */
 public final class NoticeView extends Surface {
 
     private final Shell shell;
@@ -54,7 +48,6 @@ public final class NoticeView extends Surface {
         float x = Math.round((screenW - w) / 2f);
         float y = Math.max(6, Math.round((screenH - h) / 2f));
         window(x, y, w, h, shell.blurred());
-        // 點到卡片外面不關：這是要玩家讀過才走的東西
         zone(0, 0, screenW, screenH, (px, py, b) -> { });
 
         float cy = y + 14;

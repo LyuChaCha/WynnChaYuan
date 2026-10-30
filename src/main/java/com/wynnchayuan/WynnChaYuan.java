@@ -31,18 +31,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 收集 Wynncraft 遊戲內尚未翻譯的字串。
- *
- * <p>裝備與技能可以從官方 CDN 完整離線取得（見 corpus/ 的工具），
- * 這個 mod 只補齊靜態資料涵蓋不到的部分：任務對話、NPC 名牌、介面字串。
- */
 public final class WynnChaYuan implements ClientModInitializer {
 
     public static final String MOD_ID = "wynnchayuan";
     public static final String MOD_NAME = "WynnChaYuan";
 
-    /** 版本號取自 fabric.mod.json，不必兩個地方各寫一次。 */
     public static String version() {
         return FabricLoader.getInstance().getModContainer(MOD_ID)
                 .map(c -> c.getMetadata().getVersion().getFriendlyString())
@@ -56,27 +49,17 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static TranslationStore translations;
     private static KeyMapping openSettingsKey;
 
-    /** 把目前的翻譯面板拍成一張圖，給校稿用。 */
     private static KeyMapping screenshotKey;
 
-    /**
-     * 開啟「複製聊天」。
-     *
-     * <p>預設<b>不綁</b>：F6／F8 是我們自己挑的，再多搶一個鍵對誰都不好。
-     * 想用的人到按鍵設定的 WynnChaYuan 那一區綁一個順手的。
-     */
     private static KeyMapping copyChatKey;
     private static Path configDir;
 
-    /** 目前使用的譯文語言。見 {@code Languages}。 */
     private static String language = com.wynnchayuan.translate.Languages.DEFAULT;
 
-    /** 收集結果的存放位置。 */
     public static CaptureStore store() {
         return store;
     }
 
-    /** 模組的設定資料夾（{@code config/wynnchayuan}）。F6 的匯出要知道檔案放在哪。 */
     public static Path configDir() {
         return configDir;
     }
@@ -93,40 +76,18 @@ public final class WynnChaYuan implements ClientModInitializer {
     public void onInitializeClient() {
         Path dir = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID);
         configDir = dir;
-        // 升級時玩家不會刪這個資料夾，也不該需要刪。先清掉舊版留下的暫存檔與
-        // 不再使用的記錄，再讓任何人讀它——見 ConfigFolder。後面每一個讀檔的地方
-        // 讀不懂都會把檔案改名放旁邊、用預設值繼續（見 SafeFiles），不會擋住啟動。
         ConfigFolder.tidy(dir);
         com.wynnchayuan.translate.TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
         NetworkGate.use(config);
-        // 滑過卡片時，把模組<b>實際查表用的整段鍵</b>另外記一份。
-        //
-        // 不跟著 debugDumps 走：這不是診斷檔，是要交出去的語料稿。它自己看
-        // 「收集介面文字」那個開關（跟 GuiTextCapture 同一個），所以這裡
-        // 無條件備妥路徑就好，關著的時候整支是空轉。見 CardDump。
         com.wynnchayuan.capture.CardDump.init(dir.resolve(
                 com.wynnchayuan.capture.CardDump.FILE));
-        // 對話裡的強調色是打字打到哪才送到哪，中文又比英文早出現那個詞——
-        // 記著上次量到的，同一句才不會每次都先白一下。見 DialogueTint。
         com.wynnchayuan.render.DialogueTint.init(dir.resolve(
                 com.wynnchayuan.render.DialogueTint.FILE), language);
         com.wynnchayuan.render.ThirdPartySections.load(dir);
-        // 聊天裡那顆「按這裡更新」要有指令接著才按得下去，見 TranslationUpdate。
         com.wynnchayuan.translate.TranslationUpdate.registerCommand();
         com.wynnchayuan.render.ThirdPartyLiterals.load(dir);
-        // 診斷檔預設不寫。
-        //
-        // 每一支寫檔的程式都是「沒 init 過就什麼都不做」，所以只要在這裡
-        // 不呼叫 init，整包診斷檔就一個都不會出現——不必在十幾個地方各加
-        // 一個判斷，也不會漏掉哪一支。要回報問題的人在 F6 裡打開再重進遊戲。
-        //
-        // ErrorDebug 不在此列：它只在真的丟例外時寫，是當機紀錄不是洗版，
-        // 而那正是最需要留下來的東西。
-        //
-        // 全部寫進 debug/ 子資料夾：十幾種、每種好幾份，放在外面會把 captured.json
-        // 與設定檔淹掉。見 ConfigFolder#DEBUG。
         if (config.debugDumps()) {
             Path debug = ConfigFolder.debugDir(dir);
             com.wynnchayuan.render.TooltipDebug.init(debug.resolve("tooltip-debug.json"));
@@ -140,21 +101,12 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.FpsLog.init(debug);
         }
         com.wynnchayuan.translate.ErrorDebug.into(dir);
-        // 版本說明：先讀 jar 內建那份，背景再換成線上的。見 Releases。
         Releases.init();
 
-        // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
-        // 所以離線語料與遊戲內收集的內容可以直接混放。
-        // 第一次啟動時把內建的工作檔倒出來，玩家才有東西可以翻
-        // 譯文按語言分層（translations/<lang>/），見 Languages。
-        // 舊版是平的，第一次跑到新版時搬進 zh_tw/——不搬的話使用者自己翻的
-        // 東西會突然全部失效，而且看不出原因。
         language = com.wynnchayuan.translate.Languages.pick(
                 config.language(), gameLanguage());
         com.wynnchayuan.translate.Languages.migrateFlat(dir, language);
         Path trDir = com.wynnchayuan.translate.Languages.dir(dir, language);
-        // 別的版本寫的快取整包移開、上次沒倒完的補齊。墊底那一層也一樣——見 TranslationCache。
-        // 切成「只用本機檔案」的人，升版時那個資料夾一個檔都不碰（#979）。
         com.wynnchayuan.translate.TranslationCache.syncsFromGitHub =
                 config.source() == CollectorConfig.Source.GITHUB;
         com.wynnchayuan.translate.TranslationCache.prepare(trDir, language);
@@ -167,71 +119,35 @@ public final class WynnChaYuan implements ClientModInitializer {
         translations.setNameMode(config.itemNames());
         translations.setPageNameMode(config.pageNames());
         translations.setAbilityNamesWithOriginal(config.abilityNamesOriginal());
-        // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
-        // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
-        // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
         store.knowsTranslations(WynnChaYuan::alreadyTranslated);
-        // 語料收過、只是還沒翻的不當缺口，但照樣記次數——見 CaptureStore#knowsSources。
         store.knowsSources(WynnChaYuan::alreadyCollected);
         store.knowsWhere(com.wynnchayuan.capture.Whereabouts::now);
-        // 打到一半的半句、或提示框只收到第一行——見 CaptureStore#knowsLonger。
         store.knowsLonger(t -> translations.hasLonger(t));
-        // 切換語言之後，先前畫出去的譯文會被當成原文收進來——見 OwnOutputs。
         com.wynnchayuan.capture.OwnOutputs.buildAsync();
-        // 玩家在 F6 指名輔助語言時先鋪那一層當底，再把選定的那一種疊上去。
-        //
-        // 疊得起來是因為載入端本來就會跳過空的 dst（見 TranslationStore），
-        // 而後載入的會蓋掉先載入的。於是每一條各自回退。
         loadLayers();
 
-        // 先問一句「有沒有新翻譯」，要不要抓由玩家決定。
-        //
-        // 以前這裡無條件把整個語言的三十幾個檔重抓一遍。翻譯一個月可能只動幾條，
-        // 玩家卻每天都在付那個流量與那幾十秒。改成一次請求問 commit
-        // （見 RemoteSync#remoteVersion），有新的才在聊天室說一聲。
-        //
-        // 兩個例外照抓不誤：F6 打開了自動更新，以及<b>從來沒抓過</b>——
-        // 新玩家不該先被問一次才有翻譯。
-        //
-        // 放背景執行緒，不拖慢進遊戲；問不到或抓不到都只是沿用剛剛載入的本機版本。
-        //
-        // 開始的時機在 CLIENT_STARTED，不在這裡——它抓的是<b>目前這個語言</b>的檔
-        // （見 #fetchCurrentLanguages），而「跟隨遊戲語言」的玩家在這個時間點
-        // 語言還是錯的（見 #settleAutoLanguage）。在這裡抓，韓文玩家會年復一年
-        // 下載繁體中文，自己那一份永遠停在 jar 內建的版本。
+        // CLIENT_STARTED 之前，跟隨遊戲語言的玩家語言還沒定
 
-        // 註冊必須等到 CLIENT_STARTED，不能在這裡直接做。
-        //
-        // Wynntils 的 event bus 是在 WynntilsMod.init() 裡才建立的，而那發生在
-        // client entrypoint 之後——在 onInitializeClient 呼叫 registerEventListener
-        // 會直接吃到 NullPointerException 並讓遊戲開不起來。
-        // WynnScribe 也是這樣處理的（見其 WynnscribeFabric）。
+        // Wynntils event bus 在 WynntilsMod.init() 才建立
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> registerWithWynntils());
-        // 按鍵綁定這時候已經從 options.txt 讀進來了，才看得出誰還停在舊的預設鍵上
         ClientLifecycleEvents.CLIENT_STARTED.register(WynnChaYuan::releaseOldDefaultKeys);
 
-        // 遊戲語言也要等到這裡才問得到（見 #settleAutoLanguage），
-        // 而同步要抓哪一個語言的檔得先知道語言是哪一個，所以接在它後面。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
             settleAutoLanguage();
             startNetworked();
         });
 
-        // 按鍵綁定壞掉不該把整個遊戲擋在門外。1.99.2 就是在這裡丟了一個
-        // NullPointerException，玩家連主畫面都進不去——而少的只是一個截圖鍵。
         try {
             registerKeyBind();
         } catch (Throwable t) {
             System.out.println("[" + MOD_NAME + "] 按鍵註冊失敗，其餘功能照常："
                     + t);
         }
-        // 指令跟按鍵分開包：其中一個壞掉，另一個還是打得開設定
         try {
             registerCommand();
         } catch (Throwable t) {
             System.out.println("[" + MOD_NAME + "] 指令註冊失敗，其餘功能照常：" + t);
         }
-        // 右鍵點了哪個 NPC：沒有名牌的對話框靠它知道是誰在講話。見 ConversationPartner
         try {
             net.fabricmc.fabric.api.event.player.UseEntityCallback.EVENT.register(
                     (player, world, hand, entity, hit) -> {
@@ -251,43 +167,27 @@ public final class WynnChaYuan implements ClientModInitializer {
             System.out.println("[" + MOD_NAME + "] 點擊監聽註冊失敗，說話者只看名牌：" + t);
         }
 
-        // tooltip 面板要在整個畫面畫完之後才畫，否則會被原始 tooltip 蓋掉。
-        // Wynntils 的 ItemTooltipRenderEvent.Post 從來沒被發送過，用不了，
-        // 所以改掛 Fabric 的螢幕事件。
         ScreenEvents.AFTER_INIT.register((client, screen, w, h) -> {
             ScreenEvents.afterRender(screen).register(
                     (s, graphics, mx, my, delta) ->
                             RenderListener.renderAfterScreen(graphics, mx, my));
-            // 畫面開著時的按鍵要另外接。
-            //
-            // KeyMapping.consumeClick() 只有在<b>沒有畫面</b>時才會有事件——
-            // Minecraft 的鍵位佇列是在 handleKeybinds() 裡餵的，而那只在
-            // screen == null 時跑。所以「開著背包、滑鼠停在物品上按 F8」
-            // 永遠不會被讀到，而那正好是最需要拍照的時刻。
-            // 畫面開著時的 F8 由 PanelShot 直接讀鍵盤——見 pollWhileScreenOpen。
-            // 先前試過 ScreenKeyboardEvents，實測沒有生效。
+            // KeyMapping.consumeClick() 只在沒有畫面時有事件
         });
         HudElementRegistry.addLast(
                 net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "dialogue"),
                 (graphics, tickCounter) -> RenderListener.renderHud(graphics));
 
-        // 收集發生在渲染路徑上，寫檔一律交給背景執行緒，避免卡住遊戲主迴圈
         flusher = Executors.newSingleThreadScheduledExecutor(r -> {
             Thread t = new Thread(r, MOD_ID + "-flush");
             t.setDaemon(true);
             return t;
         });
-        // 每秒檢查對話是否已經打完（打字停住夠久就送出），寫檔仍維持 30 秒一次
         flusher.scheduleWithFixedDelay(WynnChaYuan::tick, 1, 1, TimeUnit.SECONDS);
         flusher.scheduleWithFixedDelay(WynnChaYuan::flushQuietly, 30, 30, TimeUnit.SECONDS);
-        // 收集到的東西只留在這一台。要交給翻譯團隊，由玩家在 F6 按「匯出」、
-        // 自己看過再附到 Issue——模組本身不把任何字串送出去（見 CorpusExport）。
 
-        // 關遊戲時確保最後一批資料有落地
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             flushQuietly();
             System.out.println("[WynnChaYuan] 已收集 " + store.size() + " 條字串");
-            // 最後才換 jar：上面存檔要用的類別都載入過了。見 SelfUpdate#applyPending。
             SelfUpdate.applyPending();
         }, MOD_ID + "-shutdown"));
 
@@ -298,45 +198,10 @@ public final class WynnChaYuan implements ClientModInitializer {
                 + com.wynnchayuan.capture.PlaceNames.size() + " 筆（不翻譯，原樣保留）");
     }
 
-    /**
-     * 重新載入譯文檔，不用重開遊戲。
-     *
-     * <p>只讀本機檔案。譯文來源設在 GitHub 時，這樣按下去只會把同一份舊快取
-     * 再讀一次——所以另外有 {@link #resyncTranslations}。
-     */
     public static void reloadTranslations() {
         loadLayers();
     }
 
-    /**
-     * 把目前語言的譯文載入，底下鋪同語族的那一層。
-     *
-     * <h2>為什麼抽出來</h2>
-     * 「要鋪哪幾層」先前寫在啟動流程裡，而 {@link #reloadTranslations} 只讀
-     * 自己那一層——按一次「重新載入譯文檔」，墊底的那一層就沒了。
-     * 一份邏輯兩個地方寫，遲早會分岔，這次就是。
-     *
-     * <p>疊的動作交給 {@code TranslationStore#loadAll(List)}：清空只做一次，
-     * 然後照順序讀，後面的蓋掉前面的。
-     */
-    /**
-     * 這一句<b>收過了嗎</b>。
-     *
-     * <h2>收集的缺口與畫面的缺口是兩件事</h2>
-     * 簡體玩家看到英文，多半只代表<b>簡體還沒翻</b>——那一句繁體早就收過、
-     * 也早就翻好了。把它記成缺口，{@code captured.json} 就會被別人早就收過的
-     * 東西塞滿，而真正沒人遇過的句子淹在裡面。
-     *
-     * <p>所以判準是「{@link Languages#DEFAULT} 有沒有這一條」，不是
-     * 「我這一種語言有沒有」。
-     *
-     * <p>多數情況下畫面那一份就夠用：簡體底下墊著繁體，查得到就不會記。
-     * 但<b>輔助語言設成「顯示原文」</b>時那一層不在，整份繁體語料就全變成
-     * 「缺口」了——{@link #referenceKeys} 補的正是這個洞。
-     *
-     * <p>收過但畫面上沒有譯文的，收集端不當缺口，只記次數
-     * （見 {@code CaptureStore#knowsSources}）。
-     */
     private static boolean alreadyCollected(String template) {
         if (alreadyTranslated(template)) {
             return true;
@@ -345,30 +210,16 @@ public final class WynnChaYuan implements ClientModInitializer {
         return keys != null && template != null && keys.contains(template.strip());
     }
 
-    /** 畫面上這幾層查得到譯文嗎。查得到的連次數都不必記。 */
     private static boolean alreadyTranslated(String template) {
         return translations.hasTranslation(template);
     }
 
-    /**
-     * 繁體收過哪些原文。
-     *
-     * <p>只在繁體<b>沒有</b>鋪在畫面那幾層裡時才建——鋪著的話
-     * {@code translations.hasTranslation} 本來就查得到，再存一份是白花記憶體。
-     */
     private static volatile java.util.Set<String> referenceKeys;
 
     private static void loadReferenceKeys(java.util.List<Path> layers) {
         String reference = com.wynnchayuan.translate.Languages.DEFAULT;
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, reference);
         if (layers.contains(dir)) {
-            // 這一層已經載進畫面用的 store 了，直接跟它要就好。
-            //
-            // 這裡原本寫 null，理由是「鋪著的話 hasTranslation 本來就查得到」。
-            // 那是錯的：hasTranslation 只認<b>有譯文</b>的，而這份判準要的是
-            // 「語料裡有沒有這一條」。還沒翻的那幾千條每次都會被判成「沒有」，
-            // 於是繁體玩家每進一次遊戲就把它們重收一遍、重傳一遍——收集站
-            // 每天撈回來的幾乎都是早就在倉庫裡的東西。
             referenceKeys = translations.sourceKeys();
             System.out.println("[WynnChaYuan] 收集的判準用畫面上這幾層的 "
                     + referenceKeys.size() + " 條原文");
@@ -382,7 +233,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             System.out.println("[WynnChaYuan] 收集的判準用 " + reference
                     + " 的 " + referenceKeys.size() + " 條原文");
         } catch (Exception e) {
-            referenceKeys = null;            // 讀不到就退回舊行為，不要壞掉
+            referenceKeys = null;
         }
     }
 
@@ -390,9 +241,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         translations.setNameMode(config.itemNames());
         translations.setPageNameMode(config.pageNames());
         translations.setAbilityNamesWithOriginal(config.abilityNamesOriginal());
-        // 總開關關著：譯文一條都不載，所有查表都落空，畫面上就是原文。
-        // loadAll 會把世代往前推，各處的快取（tooltip、Wynntils、Wynnventory）下一幀
-        // 自己重查——跟切換語言走的是同一套，不必另外通知誰。
         if (!config.translationsEnabled()) {
             translations.loadAll(java.util.List.of());
             com.wynnchayuan.capture.UnappliedAudit.clear();
@@ -406,39 +254,14 @@ public final class WynnChaYuan implements ClientModInitializer {
             layers.add(fallback);
         }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
-        StarterFiles.installIfEmpty(dir, language);   // 被清空的話順手補回來
+        StarterFiles.installIfEmpty(dir, language);
         layers.add(dir);
-        // 讀不懂的檔（上次被關掉時寫到一半）改名放旁邊、從 jar 補回來再載一次
         com.wynnchayuan.translate.TranslationCache.loadRepairing(translations, layers);
         loadReferenceKeys(layers);
-        // 譯文換了一份：「套不上去」的清單重新問，改好的那幾條才會消失。
         com.wynnchayuan.capture.UnappliedAudit.clear();
     }
 
-    /**
-     * 同步完在主執行緒重載。
-     *
-     * <h2>為什麼不在同步的執行緒上直接載</h2>
-     * {@code loadAll} 是先清空再一條一條填回去，而且裡面有幾張表不是執行緒安全的
-     * （前綴比對的 TreeMap、介面標籤的 HashSet）。先前是在同步執行緒上直接載，
-     * 同一時間主執行緒正在畫 tooltip、對話框、查這幾張表——輕則那一幀查到半空的表，
-     * 重則 TreeMap 在走訪途中被改掉而丟例外、甚至卡在迴圈裡。切語言、重新同步那幾條路
-     * 早就是「背景抓、主執行緒載」，這裡跟它們一致。
-     *
-     * <p>只有真的抓到新內容才會走到這裡（見 {@link RemoteSync#fetchInto}），
-     * 所以大多數啟動根本不會重載。
-     */
-    /**
-     * 把<b>目前這一疊</b>語言的譯文都抓下來：選定的那一種，加上墊底的那一種。
-     *
-     * <p>墊底那一種也要跟著更新，而且重載要整疊重載。先前有一版只重載了選定的
-     * 那一種：同步一完成，墊底那層就從記憶體裡消失，而它的快取也從來沒有在
-     * 啟動時更新過。
-     *
-     * @return 內容真的有變的檔案數；0 表示不必重新載入
-     */
     private static int fetchCurrentLanguages() {
-        // 先記再抓：抓到一半使用者切語言的話，那一邊不必再排一趟。見 FetchedLanguages。
         com.wynnchayuan.translate.FetchedLanguages.mark(language);
         int changed = RemoteSync.fetchInto(
                 com.wynnchayuan.translate.Languages.dir(configDir, language), language);
@@ -448,21 +271,12 @@ public final class WynnChaYuan implements ClientModInitializer {
             changed += RemoteSync.fetchInto(
                     com.wynnchayuan.translate.Languages.dir(configDir, under), under);
         }
-        // 名單跟著譯文一起抓，但不算進「有變」——它變了不必重載譯文。
         if (RemoteSync.fetchCredits(configDir)) {
             com.wynnchayuan.client.Credits.reload();
         }
         return changed;
     }
 
-    /**
-     * 剛切到這一種語言：這一次開遊戲還沒跟 GitHub 對過的話，在背景對一次。
-     *
-     * <p>有變才重載，沒變就什麼都不做。只在「自動更新翻譯」開著時做——關著的人
-     * 是自己決定什麼時候更新的，切語言不該替他偷抓；他那一邊至少有
-     * {@code TranslationCache#prepare} 換上來的這一版 jar 內建的那一份。
-     * 為什麼需要，見 {@link com.wynnchayuan.translate.FetchedLanguages}。
-     */
     private static void refreshOncePerSession(String lang) {
         if (config.source() != CollectorConfig.Source.GITHUB
                 || !config.autoUpdateTranslations()
@@ -489,21 +303,12 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
     }
 
-    /**
-     * 寫 captured.json，出錯只記一筆。
-     *
-     * <p>排程的工作只要丟出一次例外，之後每一次都會被<b>安靜地取消</b>——
-     * captured.json 從此不再更新，而且沒有任何訊息。關遊戲時的那一次也一樣：
-     * 讓例外從關閉掛鉤裡飛出去沒有任何好處。
-     */
     private static void flushQuietly() {
         try {
             store.flush();
         } catch (Throwable t) {
             System.err.println("[WynnChaYuan] captured.json 寫入失敗: " + t);
         }
-        // 各自一個 try：cards.json 寫不出來不該連帶讓 captured.json 也停掉，
-        // 反過來也一樣。見上面「排程丟一次例外就再也不跑」。
         try {
             com.wynnchayuan.capture.CardDump.flush();
         } catch (Throwable t) {
@@ -518,38 +323,21 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
     }
 
-    /**
-     * 沒翻到的地方要拿哪一種語言墊底。
-     *
-     * <p>只有玩家指名了才墊；沒指定或 {@code "off"} 都不墊，沒翻到的地方顯示英文原文。
-     *
-     * @return 要墊的語言；不墊時回傳 {@code null}
-     */
     public static String fallbackLanguage() {
         return com.wynnchayuan.translate.Languages.underlay(config.fallbackLanguage(), language);
     }
 
-    /**
-     * 換輔助語言，不必重開遊戲。
-     *
-     * <p>跟 {@link #switchLanguage} 的差別是<b>主語言沒有變</b>，所以只要
-     * 重新鋪層；但墊底那一種可能還沒抓下來過，所以照樣去同步一次。
-     */
     public static void switchFallback(String lang,
                                       java.util.function.Consumer<String> done) {
         switchFallback(lang, done, null);
     }
 
-    /**
-     * @param progress 下載進度，在背景執行緒上叫；不需要就傳 {@code null}
-     */
     public static void switchFallback(String lang,
                                       java.util.function.Consumer<String> done,
                                       RemoteSync.Progress progress) {
         config.setFallbackLanguage(lang);
         String wanted = fallbackLanguage();
         if (wanted != null) {
-            // 跟 switchLanguage 一樣：墊底那一種的快取也可能是舊版留下的
             com.wynnchayuan.translate.TranslationCache.prepare(
                     com.wynnchayuan.translate.Languages.dir(configDir, wanted), wanted);
         }
@@ -574,52 +362,21 @@ public final class WynnChaYuan implements ClientModInitializer {
         worker.start();
     }
 
-    /** {@code fallbackLanguage} 設成這個就是「不墊，顯示原文」。 */
     public static final String OFF = com.wynnchayuan.translate.Languages.OFF;
 
-    /**
-     * 換一種語言的譯文，不必重開遊戲。
-     *
-     * <h2>為什麼要能在遊戲裡換</h2>
-     * 校稿的人要看的是「這一句在畫面上長什麼樣」。改設定檔再重開遊戲，
-     * 每看一句就是一次重開——實際上沒有人會這樣校稿。
-     *
-     * <p>換完要做三件事：記住選擇、重新鋪層、把新語言的譯文抓下來。
-     * 抓取放背景執行緒，抓完再載入一次。
-     *
-     * @param lang 語言代碼；空字串表示「跟著遊戲語言走」
-     */
     public static void switchLanguage(String lang,
                                       java.util.function.Consumer<String> done) {
         switchLanguage(lang, done, null);
     }
 
-    /**
-     * @param progress 下載進度，在背景執行緒上叫；不需要就傳 {@code null}
-     */
     public static void switchLanguage(String lang,
                                       java.util.function.Consumer<String> done,
                                       RemoteSync.Progress progress) {
         config.setLanguage(lang);
         language = com.wynnchayuan.translate.Languages.pick(
                 config.language(), gameLanguage());
-        // 對話強調色附在 jar 裡的那一份是<b>按語言</b>分的，換語言也要再吃一次，
-        // 不然新語言那幾句第一次讀還是先白一下才上色。見 DialogueTint。
         com.wynnchayuan.render.DialogueTint.init(configDir.resolve(
                 com.wynnchayuan.render.DialogueTint.FILE), language);
-        // 切語言<b>不再下載</b>：載入手上已經有的那一份就好。
-        //
-        // 以前每切一次就把那個語言的三十幾個檔重抓一遍。在遊戲裡對照兩種語言
-        // 的人來回切一次就是兩趟完整下載，測試時尤其惱人——而絕大多數時候
-        // 那些檔跟上一次抓的一模一樣。
-        //
-        // 要最新的就按資料頁的「更新翻譯」，或在 F6 打開自動更新。
-        // progress 留著不用：呼叫端的簽章不動，將來要接回進度條也還在。
-        //
-        // 但「手上那一份」不能是好幾個版本以前的：平常沒在用的語言不會被背景同步抓到，
-        // 快取就停在最後一次用它的那一天。先照啟動時的做法備好快取（換過模組版本的話
-        // 換回這一版 jar 內建的那一份），載入之後再在背景跟 GitHub 對一次——
-        // 每種語言每次開遊戲只對一次。見 FetchedLanguages。
         Path chosen = com.wynnchayuan.translate.Languages.dir(configDir, language);
         com.wynnchayuan.translate.TranslationCache.prepare(chosen, language);
         loadLayers();
@@ -630,20 +387,8 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
 
-    /**
-     * 重新從 GitHub 抓一次譯文，抓完再載入。
-     *
-     * <p>譯者在 GitHub 上改完之後，需要進遊戲對照才能確認翻得對不對。
-     * 沒有這個按鈕就得重開遊戲，來回一趟的成本高到沒人會認真校對。
-     *
-     * <p>網路動作放在背景執行緒，按下去畫面不會卡住；抓完再回到主執行緒載入。
-     *
-     * @param done 完成後在主執行緒呼叫，參數是要顯示給使用者的結果
-     */
     public static void resyncTranslations(java.util.function.Consumer<String> done) {
         Thread worker = new Thread(() -> {
-            // 問版本要在抓之前：抓完才問的話，中間剛好有人合併進去，
-            // 記下的就是那一個新的，而手上其實是舊的——之後再也不會提示。
             String remote = RemoteSync.remoteVersion();
             fetchCurrentLanguages();
             String result = RemoteSync.lastResult();
@@ -657,16 +402,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         worker.start();
     }
 
-    /**
-     * 只問一句「GitHub 上最新是哪一個 commit」，<b>不</b>抓檔案。
-     *
-     * <h2>為什麼要跟 {@link #resyncTranslations} 分開</h2>
-     * 「我這份是不是最新的」跟「幫我更新」是兩個問題。問版本是一次請求、
-     * 一點幾 KB；抓檔案是三十幾個檔。想確認一下的人不該被迫付後者的代價，
-     * 尤其是答案很可能是「你已經是最新的了」。
-     *
-     * @param done 問完後在主執行緒呼叫
-     */
     public static void recheckTranslationVersion(Runnable done) {
         Thread worker = new Thread(() -> {
             String remote = RemoteSync.remoteVersion();
@@ -680,41 +415,16 @@ public final class WynnChaYuan implements ClientModInitializer {
         worker.start();
     }
 
-    /**
-     * 遊戲本身的語系代碼（{@code zh_tw}、{@code ja_jp}…）。
-     *
-     * <p>取不到就回傳空字串，交給 {@code Languages#pick} 退回預設——
-     * 這個方法在遊戲還沒初始化完時也可能被呼叫到。
-     */
-    /** 「跟著遊戲」會挑到哪一種。設定畫面要先算得出來才能顯示。 */
     public static String autoLanguage() {
         return com.wynnchayuan.translate.Languages.pick("", gameLanguage());
     }
 
-    /**
-     * 開機時問一句「有沒有新翻譯」，要不要抓由玩家決定。
-     *
-     * <h2>為什麼不無條件重抓</h2>
-     * 以前每次進遊戲都把整個語言的三十幾個檔重抓一遍。翻譯一個月可能只動幾條，
-     * 玩家卻每天都在付那個流量與那幾十秒。改成一次請求問 commit
-     * （見 {@code RemoteSync#remoteVersion}），有新的才在聊天室說一聲。
-     *
-     * <p>兩個例外照抓不誤：F6 打開了自動更新，以及<b>從來沒抓過</b>——
-     * 新玩家不該先被問一次才有翻譯。
-     *
-     * <h2>為什麼在 CLIENT_STARTED 才開始</h2>
-     * 它抓的是{@link #fetchCurrentLanguages() 目前這個語言}的檔，而「跟隨遊戲
-     * 語言」的玩家要等到 {@link #settleAutoLanguage()} 跑完語言才是對的。
-     * 在 client entrypoint 裡就開始抓的話，韓文玩家會年復一年下載繁體中文。
-     */
     private static void startBackgroundSync() {
         if (config.source() != CollectorConfig.Source.GITHUB) {
             return;
         }
         Thread sync = new Thread(() -> {
             String remote = RemoteSync.remoteVersion();
-            // 問到什麼就記什麼。F6 的「譯文版本」那一列要分得出「已經是最新」
-            // 與「根本沒問到」，而 found 只有前者會被呼叫。
             com.wynnchayuan.translate.TranslationUpdate.checked(remote);
             boolean first = config.syncedTranslations().isBlank();
             if (!first && !config.autoUpdateTranslations()) {
@@ -790,44 +500,19 @@ public final class WynnChaYuan implements ClientModInitializer {
         });
     }
 
-    /**
-     * 遊戲起來之後再問一次語言，跟錯的那一次對不上就改過來。
-     *
-     * <h2>實機回報</h2>
-     * 第一次安裝、遊戲語言是韓文、模組維持預設的「跟隨遊戲語言」，出來卻是中文；
-     * 要在 F6 手動選一次韓文才正常。
-     *
-     * <h2>為什麼</h2>
-     * 語言是在 {@link #onInitializeClient} 裡決定的，而 client entrypoint 跑在
-     * {@code Minecraft} 的建構式裡——那時候 {@code getLanguageManager()} 還是
-     * {@code null}。{@link #gameLanguage()} 取不到就回傳空字串，而空字串走進
-     * {@code Languages#pick} 會被 {@code normalise} 當成預設值，於是
-     * 「問不到」被靜靜地講成「遊戲語言是繁體中文」。見 {@code Languages#known}。
-     *
-     * <p>手動選過一次之後 config 裡就有明確的值，所以<b>只有第一次會中</b>——
-     * 也因此這個 bug 很難從重現步驟看出來。
-     *
-     * <h2>只在「跟隨遊戲語言」時動</h2>
-     * 使用者自己選過語言就不能蓋掉他的選擇，哪怕遊戲語言是別的：
-     * 有人就是要一邊玩英文介面一邊看中文翻譯。
-     *
-     * <p>也<b>不</b>寫回 config：寫回去就從「跟隨」變成「釘死在韓文」，
-     * 之後玩家把遊戲換成日文，模組不會再跟著動。
-     */
     private static void settleAutoLanguage() {
         if (!config.language().isBlank()) {
-            return;                            // 使用者自己選過了
+            return;
         }
         String game = gameLanguage();
         if (!com.wynnchayuan.translate.Languages.known(game)) {
-            return;                            // 還是問不到，維持現狀比亂猜好
+            return;
         }
         String want = com.wynnchayuan.translate.Languages.pick("", game);
         if (want.equals(language)) {
-            return;                            // 開機那次剛好猜對
+            return;
         }
         language = want;
-        // 換語言要做的三件事跟 switchLanguage 一樣：備好快取、吃對應的強調色、重載。
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         com.wynnchayuan.translate.TranslationCache.prepare(dir, language);
         String underneath = fallbackLanguage();
@@ -854,42 +539,14 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
     }
 
-    /** 目前使用的譯文語言。 */
     public static String language() {
         return language;
     }
 
-    /**
-     * 按鍵設定裡的分類。
-     *
-     * <p>原本掛在原版的 {@link KeyMapping.Category#MISC}下。這兩個鍵
-     * 確實有註冊成功（shot-debug 記得到 key.keyboard.f8），但「雜項」
-     * 裡面已經堆了一堆東西，玩家捲到底也找不到。
-     *
-     * <p>自己開一個分類，列表裡就會出現一塊寫著
-     * 「WynnChaYuan」的標題。名稱走 {@code key.category.wynnchayuan.main}——
-     * 這是 {@code Category.label()} 拿 {@code Identifier.toLanguageKey("key.category")}
-     * 拼出來的，兩個語言檔都要有這把鑰匙。
-     */
     private static final KeyMapping.Category KEY_CATEGORY =
             KeyMapping.Category.register(
                     net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "main"));
 
-    /**
-     * 三個鍵<b>預設都不綁</b>。
-     *
-     * <p>原本開設定是 F6、截圖是 F9（更早是 F8）。那兩個鍵是我們自己挑的，
-     * 而每個玩家裝的模組不一樣——F8 就撞過別人的鍵，按下去完全沒反應
-     * （見 {@code PanelShot#conflict}），換成 F9 也只是換一個還沒撞到的。
-     * 不替玩家佔鍵之後，設定從這幾個地方打得開：
-     * <ul>
-     *   <li>Mod Menu 的模組清單（見 {@code client.ModMenuEntry}）；</li>
-     *   <li>聊天輸入 {@code /wynnchayuan} 或 {@code /wcy}（見 {@link #registerCommand}）；</li>
-     *   <li>按鍵設定的 WynnChaYuan 那一區，自己綁一個順手的。</li>
-     * </ul>
-     * 已經在用的玩家不受影響：按鍵綁定存在遊戲自己的 {@code options.txt}，
-     * 這裡改的只是「從來沒設過的人」拿到什麼。
-     */
     private static void registerKeyBind() {
         openSettingsKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.openSettings",
@@ -904,18 +561,11 @@ public final class WynnChaYuan implements ClientModInitializer {
         copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.copyChat",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,   // 預設不綁，見欄位說明
+                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
                 KEY_CATEGORY));
-        // 畫面開著時 KeyMapping 收不到事件，PanelShot 掛在畫面自己的鍵盤事件上——
-        // 把 mapping 交給它，改綁才會跟著生效。
-        //
-        // 這兩行必須在 screenshotKey <b>指派之後</b>：1.99.2 誤植在上面那個
-        // F6 綁定的後面，交出去的是還沒指派的 null，整個模組在啟動時就炸了。
         com.wynnchayuan.render.PanelShot.bind(screenshotKey);
         com.wynnchayuan.render.PanelShot.listen();
 
-        // Wynnventory 的文字：開關、Shift、語料一有變就讓它畫面上的字重查。
-        // 沒裝的人不掛這一格。見 WynnventoryBridge。
         if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
                 CollectorConfig c = config();
@@ -929,12 +579,10 @@ public final class WynnChaYuan implements ClientModInitializer {
             });
         }
 
-        // 診斷：每秒的 FPS 與當時的畫面，見 FpsLog（沒開診斷檔時 init 沒跑，這裡什麼都不做）
         ClientTickEvents.END_CLIENT_TICK.register(com.wynnchayuan.render.FpsLog::tick);
 
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> com.wynnchayuan.client.FirstRunScreen.clientTick());
-        // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> com.wynnchayuan.client.NoticeScreen.clientTick());
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -948,7 +596,6 @@ public final class WynnChaYuan implements ClientModInitializer {
                 com.wynnchayuan.capture.OwnOutputs.note(line);
                 client.player.displayClientMessage(line, false);
             }
-            // 指令要求的那一次：見 #registerCommand 為什麼要拖到這裡
             if (openSettingsNextTick) {
                 openSettingsNextTick = false;
                 client.setScreen(new SettingsScreen());
@@ -956,18 +603,11 @@ public final class WynnChaYuan implements ClientModInitializer {
             while (copyChatKey.consumeClick()) {
                 client.setScreen(new com.wynnchayuan.client.ChatCopyScreen());
             }
-            // 截圖的按鍵在 tick 裡只記一個旗標，真正拍是在下一次繪製<b>之後</b>。
-            // tick 的時候這一幀還沒畫完，當場拍會拍到上一幀，
-            // 而上一幀常常正好是滑鼠剛移到物品上、面板還沒出現的那一幀。
             while (screenshotKey.consumeClick()) {
                 com.wynnchayuan.render.PanelShot.request();
             }
-            // 真正的拍照在這裡——tick 跑在兩幀之間，那時畫面裡才是
-            // 上一幀完整合成後的結果。見 PanelShot#tick。
             com.wynnchayuan.render.PanelShot.tick();
-            // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
             Releases.tellOnce(client);
-            // 上線報到、定時抓「誰有裝」的名單。只在連著 Wynncraft 的時候做。見 Presence。
             if (client.player != null && client.getCurrentServer() != null
                     && client.getCurrentServer().ip.toLowerCase(java.util.Locale.ROOT)
                             .contains("wynncraft")) {
@@ -975,32 +615,14 @@ public final class WynnChaYuan implements ClientModInitializer {
                         com.wynnchayuan.render.Badges.ownRainbow(config),
                         com.wynnchayuan.render.Badges.ownShown(config));
             }
-            // 上次在遊戲裡下載的更新沒套用成功的話，說一聲檔案在哪。見 SelfUpdate#tellLeftover。
             SelfUpdate.tellLeftover(client);
-            // 從聊天室按的更新：下載完或失敗時說一聲。見 SelfUpdate#startFromChat。
             SelfUpdate.announceProgress(client);
-            // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
-            // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
         });
     }
 
-    /** 這次啟動清掉了舊的預設鍵：進到遊戲之後在聊天講一次。 */
     private static volatile boolean tellKeysReleased = false;
 
-    /**
-     * 把還停在<b>舊預設鍵</b>上的綁定清掉，只做一次。
-     *
-     * <h2>為什麼不是改預設值就好</h2>
-     * 遊戲會把<b>每一個</b>按鍵寫進 {@code options.txt}，包括從來沒改過的。
-     * 所以裝過舊版的人，檔案裡白紙黑字寫著「開啟設定＝F6」——預設值改成不綁，
-     * 對他們一點作用都沒有，F6 與 F9 照樣被佔著（使用者 2026-10-08 回報）。
-     *
-     * <p>這裡分不出「沒動過，所以是 F6」與「特地選了 F6」。只清<b>剛好等於舊預設</b>的
-     * 那幾個（開啟設定＝F6，截圖＝F9 或更早的 F8），改綁成別的鍵的人不動；
-     * 清完在聊天講一次怎麼開設定、去哪裡綁回來。旗子記在設定檔裡，之後玩家自己
-     * 再綁回 F6 也不會被清第二次。
-     */
     private static void releaseOldDefaultKeys(net.minecraft.client.Minecraft client) {
         try {
             if (config == null || config.oldKeysReleased() || openSettingsKey == null
@@ -1031,20 +653,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         return true;
     }
 
-    /** 指令已經下了，等下一個 tick 開畫面。 */
     private static volatile boolean openSettingsNextTick = false;
 
-    /**
-     * {@code /wynnchayuan} 與 {@code /wcy}：打開設定。
-     *
-     * <p>這是<b>客戶端指令</b>，不會送到伺服器，Wynncraft 那邊完全不知道。
-     *
-     * <h2>為什麼不在指令裡直接開畫面</h2>
-     * 指令是聊天框送出時執行的，而聊天框在那之後才把自己關掉
-     * （{@code setScreen(null)}）。在指令裡開的畫面會立刻被那一下關掉，
-     * 看起來就是「打了指令沒反應」。所以這裡只舉一個旗子，由下一個 tick 去開——
-     * 那時候聊天框已經收完了。
-     */
     private static void registerCommand() {
         net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback.EVENT
                 .register((dispatcher, registryAccess) -> {
@@ -1056,7 +666,6 @@ public final class WynnChaYuan implements ClientModInitializer {
                                             openSettingsNextTick = true;
                                             return 1;
                                         })
-                                        // /wcy update：下載最新版，關閉遊戲時換上。聊天室的更新通知點的就是它。
                                         .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
                                                 .literal("update")
                                                 .executes(context -> {
@@ -1064,7 +673,6 @@ public final class WynnChaYuan implements ClientModInitializer {
                                                             net.minecraft.client.Minecraft.getInstance());
                                                     return 1;
                                                 }))
-                                        // /wcy link <綁定碼>：把遊戲 ID 綁到網站帳號。見 Presence#link。
                                         .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
                                                 .literal("link")
                                                 .executes(context -> {
@@ -1083,7 +691,6 @@ public final class WynnChaYuan implements ClientModInitializer {
                 });
     }
 
-    /** {@code /wcy link <綁定碼>}：送出去，結果說在聊天欄。 */
     private static void linkAccount(String code) {
         say("chat.link.working");
         Presence.link(code, result -> net.minecraft.client.Minecraft.getInstance().execute(() -> say(switch (result) {
@@ -1096,7 +703,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         })));
     }
 
-    /** 在聊天欄對玩家說一行（只有自己看得到）。 */
     private static void say(String key) {
         net.minecraft.client.Minecraft client = net.minecraft.client.Minecraft.getInstance();
         if (client.player == null) {
@@ -1107,7 +713,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         client.player.displayClientMessage(line, false);
     }
 
-    /** 把打完但還沒送出的對話收進 store。 */
     private static void tick() {
         CaptureListener l = listener;
         if (l != null) {
@@ -1119,13 +724,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
     }
 
-    /**
-     * 掛上 Wynntils 的事件匯流排。
-     *
-     * <p>整段包在 try/catch 裡是刻意的：這個 mod 只是輔助工具，
-     * 就算因為 Wynntils 改版而註冊失敗，也絕對不該讓玩家的遊戲開不起來。
-     * 失敗就安靜地不收集，其他功能照常。
-     */
     private static void registerWithWynntils() {
         if (!FabricLoader.getInstance().isModLoaded("wynntils")) {
             System.out.println("[WynnChaYuan] 找不到 Wynntils，停用收集功能");
@@ -1137,17 +735,13 @@ public final class WynnChaYuan implements ClientModInitializer {
             WynntilsMod.registerEventListener(new RenderListener());
             WynntilsMod.registerEventListener(new ActionBarListener());
             WynntilsMod.registerEventListener(new TrackerListener());
-            // 右上那一欄（每日目標、世界事件）走計分板，跟追蹤欄是兩個事件
             WynntilsMod.registerEventListener(new ScoreboardListener());
             WynntilsMod.registerEventListener(new BadgeListener());
             WynntilsMod.registerEventListener(new ChatListener());
             WynntilsMod.registerEventListener(new TitleListener());
             WynntilsMod.registerEventListener(new MarketListener());
-            // 市集搜尋打中文換成英文。這是唯一會改寫玩家自己打的字的地方，
-            // 觸發條件由 Wynntils 的市集狀態決定，見 MarketListener。
             net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents
                     .MODIFY_CHAT.register(MarketListener::rewrite);
-            // 打字時在聊天框上方列出候選，對到好幾個物品時讓玩家自己點。
             com.wynnchayuan.client.MarketPicker.register();
             System.out.println("[WynnChaYuan] 已掛上 Wynntils 事件，開始收集");
         } catch (Throwable t) {

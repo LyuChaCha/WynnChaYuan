@@ -12,50 +12,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 原文的色段<b>整塊</b>被方括號包起來時，譯文的方括號要跟著上色。
- *
- * <h2>實機回報（Wynntils 內容書右邊那張卡的標題）</h2>
- * 卡片標題是「名稱 + 類型」兩個顏色，而類型那一段<b>含方括號</b>：
- *
- * <pre>
- *   #FF8C19 「Theatre Royal 」       名稱，橘色
- *   #AAAAAA 「[Cave]」               類型，灰色
- * </pre>
- *
- * 使用者回報「[洞窟] 應該是灰色」——畫面上它不是。診斷檔
- * {@code tooltip-partial-6.json} 看得到實際畫出去的分段：原文是
- * {@code ["Dragonkin Nest ", "[Cave]"]} 兩段，譯文卻被拆成
- * {@code ["龍裔巢穴 ", "[", "洞窟", "]"]} 四段。
- *
- * <h2>怎麼壞的</h2>
- * 語料的條目是純文字、沒有 {@code {cN}}，所以灰色是拿原文色段的<b>字面</b>到
- * 譯文裡找位置貼回去的（見 {@code appendText}）。{@code [Cave]} 查表查不到，
- * {@link LineTranslator#lookupWordCore} 剝掉標點之後查到的是 {@code Cave}
- * →「洞窟」，於是登記進去的重點段是<b>沒有括號</b>的「洞窟」兩個字，
- * 括號留在名稱那一段的顏色裡。
- *
- * <p>畫面上看得出來的有兩種：
- * <ul>
- *   <li>「獵殺怨靈與幻影 {@code [}迷你任務{@code ]}」——兩個括號是名稱的橘色，
- *       中間四個字才是灰的。</li>
- *   <li>「末日洞窟 [洞窟]」——名稱<b>自己就含有</b>類型詞，而字面比對挑的是
- *       <b>第一個</b>，於是灰色貼到了名稱裡的「洞窟」，真正該灰的那個還是橘的。
- *       這一種錯得更明顯：看起來像名稱中間隨機兩個字變色。</li>
- * </ul>
- *
- * <h2>修法</h2>
- * {@link LineTranslator#wrapLikeSource}：原文那一段本身就是 {@code [...]}
- * 包起來的，而譯文裡找到的是去掉括號的內層時，把重點段<b>往外擴到括號</b>。
- * 擴出去之後字面唯一，名稱裡的同名詞也不會再被挑中。
- * {@link #rules()} 釘住它不會擴過頭。
- */
 public final class BracketAccentTest {
 
     private static int failures = 0;
 
-    private static final int NAME = 0xFF8C19;   // 橘：名稱
-    private static final int TYPE = 0xAAAAAA;   // 灰：類型
+    private static final int NAME = 0xFF8C19;
+    private static final int TYPE = 0xAAAAAA;
 
     public static void main(String[] args) throws Exception {
         FlowedDebug.init(Files.createTempDirectory("wynnchayuan"));
@@ -75,12 +37,6 @@ public final class BracketAccentTest {
         report();
     }
 
-    /**
-     * 遊戲送來的樣子：名稱一段、{@code [類型]} 整塊另一段。
-     *
-     * @param name 名稱那一段，含它後面那個空格
-     * @param type 類型那一段，含兩個方括號
-     */
     private static StyledText title(String name, String type) {
         MutableComponent line = Component.empty();
         line.append(Component.literal(name).withStyle(
@@ -90,11 +46,6 @@ public final class BracketAccentTest {
         return StyledText.fromComponent(line);
     }
 
-    /**
-     * 語料另外寫一份（不讀 {@code misc.json}），這樣別人改語料不會讓這幾條測試
-     * 莫名其妙地紅燈或綠燈。內容跟實機的那幾條一模一樣：整條標題有譯文，
-     * 類型詞自己也有一條。
-     */
     private static TranslationStore corpus(String key, String zh,
                                            String type, String typeZh) throws Exception {
         Path dir = Files.createTempDirectory("bracket-accent");
@@ -106,16 +57,6 @@ public final class BracketAccentTest {
         return store;
     }
 
-    /**
-     * 卡片寫複數、語料收單數。
-     *
-     * <p>迷你任務的方括號寫的是「這一次要幾個」，所以物品名是複數
-     * （{@code [15 Arcane Anomalies]}）；語料收的是物品本身，鍵永遠是單數
-     * （{@code Arcane Anomaly}）。查不到就拿不到重點色，那一塊會掉回底色。
-     *
-     * <p>拿實機那幾張卡的物品名對過，七個查不到的複數裡這一步救回六個。
-     * 見 {@code LineTranslator#asSingular}。
-     */
     private static void plurals() throws Exception {
         TranslationStore store = corpus(
                 "Arcane Anomaly", "奧祕異象", "Dragonling Scale", "龍崽鱗片");
@@ -134,7 +75,6 @@ public final class BracketAccentTest {
               LineTranslator.lookupWordCore("[3 Widgets]", ss) == null);
     }
 
-    /** 使用者回報的那張卡：「[洞窟]」三個字元是同一段、而且是灰的。 */
     private static void card() throws Exception {
         TranslationStore store = corpus(
                 "Dragonkin Nest [Cave]", "龍裔巢穴 [洞窟]", "Cave", "洞窟");
@@ -152,20 +92,12 @@ public final class BracketAccentTest {
         check("類型翻出來了", text(built).contains("[洞窟]"));
         check("名稱是橘的（拿到 " + show(colourOf(built, "龍裔巢穴")) + "）",
               is(colourOf(built, "龍裔巢穴"), NAME));
-        // 括號連著類型詞是同一段——原文就是這樣切的，譯文也該這樣。
         check("★ 「[洞窟]」是完整的一段（實際分段：" + pieces(built) + "）",
               pieces(built).contains("[洞窟]"));
         check("★ 「[洞窟]」整段是灰的（拿到 " + show(colourOf(built, "[洞窟]")) + "）",
               is(colourOf(built, "[洞窟]"), TYPE));
     }
 
-    /**
-     * 名稱的譯文<b>自己就含有</b>類型詞：「末日洞窟 [洞窟]」。
-     *
-     * <p>字面比對挑的是第一個，所以沒有括號的「洞窟」會貼到名稱裡去——
-     * 畫面上是「末日」橘、「洞窟」灰，後面真正的 [洞窟] 反而是橘的。
-     * 語料裡這種名稱不少：Cave of Doom、Cave of the Seasons、Cave of Sand…
-     */
     private static void nameContainsType() throws Exception {
         TranslationStore store = corpus(
                 "Cave of Doom [Cave]", "末日洞窟 [洞窟]", "Cave", "洞窟");
@@ -188,7 +120,6 @@ public final class BracketAccentTest {
               is(colourOf(built, "[洞窟]"), TYPE));
     }
 
-    /** 迷你任務那一種：整塊 {@code [迷你任務]} 要是灰的，兩個括號不可以留在橘色裡。 */
     private static void miniQuest() throws Exception {
         TranslationStore store = corpus(
                 "Slay Wraiths & Phantasms [Mini-Quest]", "獵殺怨靈與幻影 [迷你任務]",
@@ -212,35 +143,12 @@ public final class BracketAccentTest {
               is(colourOf(built, "獵殺怨靈與幻影"), NAME));
     }
 
-    /**
-     * 座標整串（連同開頭那個 {@code [}）都是白的——折行之後也要是。
-     *
-     * <h2>實機回報（採集站的迷你任務卡）</h2>
-     * 原文四行（{@code majorid-debug.txt} 的「=== 12 ===」那一段）：
-     *
-     * <pre>
-     *   §7Bring §3[40 Kanderstone Ingots]
-     *   §7or §3[40 Kanderstone Gems]§7 to the
-     *   §7Gathering Post §3[Mining Lv. 73]
-     *   §7at §f[-712, 46, -5553]
-     * </pre>
-     *
-     * 譯文被面板折成四行，座標自己占最後一行。畫面上數字是白的，
-     * 開頭那個 {@code [} 卻是散文的灰。
-     *
-     * <h2>為什麼要餵折好的行進來</h2>
-     * 斷行是照<b>面板寬度</b>折的，測試環境沒有真的字型，
-     * {@code translateBlock} 折不出實機那一刀——整段會留在同一行，
-     * 而同一行裡這個 bug 根本不會發生。所以直接把實機折好的四行餵給
-     * {@code rebuildAll}，測的就是「這一刀之後誰拿到什麼顏色」。
-     */
     private static void coordBracketOnOwnRow() throws Exception {
         List<StyledText> run = List.of(
                 line("Bring ", BODY, "[40 Kanderstone Ingots]", ITEM),
                 line("or ", BODY, "[40 Kanderstone Gems]", ITEM, " to the", BODY),
                 line("Gathering Post ", BODY, "[Mining Lv. 73]", ITEM),
                 line("at ", BODY, "[-712, 46, -5553]", COORD));
-        // 實機折出來的四行，照 majorid-debug 的「譯文：」原樣抄
         String[] flowed = {
             "把 [{~} Kanderstone 錠]",
             "或 [{~} Kanderstone 寶",
@@ -279,19 +187,6 @@ public final class BracketAccentTest {
               is(charColour(built, text.lastIndexOf(']')), COORD));
     }
 
-    /**
-     * 譯文把座標搬到物品前面：顏色要跟著<b>種類</b>走，不是跟著「第幾個」。
-     *
-     * <h2>實機回報（2026-10-08）</h2>
-     * 「任務說明顏色還是會有錯誤」。英文把座標放句尾，中文習慣先講去哪裡：
-     *
-     * <pre>
-     *   Collect [4 Gold Chunks] for Jankan in the mineshaft at [605, 80, -4920].
-     *   到 [{~2}, {~3}, -{~4}] 的礦坑替 Jankan 收集 [{~1} 塊金塊]。
-     * </pre>
-     *
-     * 方括號原本是照出現順序配色的，於是座標拿到物品的青色、物品拿到座標的白色。
-     */
     private static void reorderedBrackets() {
         List<LineParts.Piece> runs = List.of(
                 piece("Collect ", BODY),
@@ -318,17 +213,14 @@ public final class BracketAccentTest {
         check("★［括號換位］物品那一組拿到物品的青（拿到 " + show(item) + "）",
                 is(item, ITEM));
 
-        // 順序沒變的照舊：第 i 個對第 i 個
         check("［括號換位］種類順序一樣時不重排",
                 java.util.Arrays.equals(LineTranslator.pairBrackets(
                         List.of("4 Gold Chunks", "605, 80, -4920"),
                         List.of("[{~} 塊金塊]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
-        // 兩邊各類的個數對不上：沒有根據可以猜，照舊第 i 個對第 i 個
         check("［括號換位］個數對不上時不亂配",
                 java.util.Arrays.equals(LineTranslator.pairBrackets(
                         List.of("4 Gold Chunks", "605, 80, -4920"),
                         List.of("[{~}, {~}]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
-        // 三個括號、兩種混著換：同一類的照順序
         check("［括號換位］三組：同類的照順序配",
                 java.util.Arrays.equals(LineTranslator.pairBrackets(
                         List.of("Combat Lv. 88", "4 Hides", "1, 2, -3"),
@@ -336,12 +228,11 @@ public final class BracketAccentTest {
                         new int[] {2, 0, 1}));
     }
 
-    /** 折行用的換行字元，跟 LineTranslator 那邊同一個。 */
     private static final char NL = '\n';
 
-    private static final int BODY = 0xAAAAAA;   // 灰：散文
-    private static final int ITEM = 0x00AAAA;   // 青：括號裡的物品
-    private static final int COORD = 0xFFFFFF;  // 白：座標
+    private static final int BODY = 0xAAAAAA;
+    private static final int ITEM = 0x00AAAA;
+    private static final int COORD = 0xFFFFFF;
 
     private static Style colour(int rgb) {
         return Style.EMPTY.withColor(TextColor.fromRgb(rgb));
@@ -351,28 +242,7 @@ public final class BracketAccentTest {
         return new LineParts.Piece(text, colour(rgb));
     }
 
-    /**
-     * 面板寬度把 {@code [{~} 麥芽穀粒]} 斷在數值後面。
-     *
-     * <h2>實機回報</h2>
-     * 「把 {@code [20 麥芽線]} 或 {@code [20}」換行「麥芽穀粒{@code ]} 交到採集站，」
-     * ——名字是青的，緊跟在後面的那個 {@code ]} 卻掉回灰色。
-     *
-     * <h2>怎麼壞的</h2>
-     * 斷行點就是數值後面那個空格，而空格會被<b>吃掉</b>：上一行結尾是
-     * {@code …[{~}}、下一行開頭是 {@code 麥芽穀粒]}。
-     * {@link LineTranslator#bracketAccents} 為佔位符切出來的那幾段各登記一次，
-     * 而收尾那一段是 {@code " 麥芽穀粒]"}——<b>帶著前導空格</b>，於是斷行之後
-     * 兩行都對不上。{@code keepAccentsWhole} 也搬不動它：要搬的那一半含佔位符。
-     * 剩下能貼的只有物品名查表拿到的「麥芽穀粒」四個字，{@code ]} 沒人管。
-     *
-     * <h2>為什麼測登記、不測畫面</h2>
-     * 斷行是照<b>面板寬度</b>折的，而測試環境沒有真的字型，折不出實機那一刀。
-     * 登記進去之後誰勝出是既有規則：{@code appendText} 同一個位置取<b>比較長</b>
-     * 的那一段，所以「麥芽穀粒{@code ]}」會壓過查表來的「麥芽穀粒」。
-     */
     private static void wrappedSpan() {
-        // 實機那張卡的三行，照原樣切段
         List<LineParts.Piece> runs = List.of(
                 piece("Bring ", BODY), piece("[20 Malt String]", ITEM), piece(" or", BODY),
                 piece("[20 Malt Grains]", ITEM), piece(" to the", BODY),
@@ -392,23 +262,10 @@ public final class BracketAccentTest {
               texts.contains(" 麥芽穀粒]"));
         check("★［跨行括號］去掉前導空格的「麥芽穀粒]」也登記了（斷行之後靠它）",
               texts.contains("麥芽穀粒]"));
-        // 座標那組不可以跟著剝：「, 」「-」到處都有，貼上去會貼到別的地方
         check("［跨行括號］座標那組沒有多登記短到會撞的片段（實際：" + texts + "）",
               !texts.contains(", ") && !texts.contains("-"));
     }
 
-    /**
-     * 斷行落在<b>詞中間</b>：「…Kanderstone 寶」換行「石]」。
-     *
-     * <h2>實機回報</h2>
-     * 採集站那張卡：「把 {@code [32 Kanderstone 錠]} 或 {@code [32 Kanderstone 寶}」
-     * 換行「石{@code ]} 交到採集站 {@code [採礦等級 71]}，」——下半截掉回底色。
-     *
-     * <h2>為什麼 keepAccentsWhole 救不了</h2>
-     * 它最多搬十二個字，而這裡要搬的是「{@code  Kanderstone 寶}」十五個字；
-     * 真搬下去會把面板撐寬一大截。{@link LineTranslator#halvesAcrossBreaks}
-     * 改成認這一刀，兩半各自登記。
-     */
     private static void splitWord() {
         String[] flowed = {
             "把 [{~} Kanderstone 錠] 或 [{~} Kanderstone 寶",
@@ -429,38 +286,20 @@ public final class BracketAccentTest {
         check("★［詞被切開］上一行那半登記了", texts.contains(" Kanderstone 寶"));
         check("★［詞被切開］下一行那半登記了（收尾那個 ] 靠它才有色）",
               texts.contains("石]"));
-        // 沒被切到的那一段不該多出東西來
         check("［詞被切開］沒被切到的重點段不補（實際：" + texts + "）",
               !texts.contains(" Kanderstone 錠]"));
-        // 含佔位符的那一半不登記：畫的時候它在畫面上不連續
         for (String t : texts) {
             check("［詞被切開］補的兩半都不含佔位符（" + t + "）",
                   t.indexOf('{') < 0 && t.indexOf('}') < 0);
         }
     }
 
-    /**
-     * 括號落在折行處時，整組括號著色不可以整個關掉。
-     *
-     * <h2>實機回報</h2>
-     * 採集站那張卡：「把 {@code [24 鮭魚油]} 或 {@code [}」換行「{@code 24 鮭魚肉]}
-     * 交到採集站，」——兩組括號都只剩底色，而且左中括號孤零零留在行尾。
-     *
-     * <h2>怎麼壞的</h2>
-     * {@code bracketAccents} 拿到的譯文<b>已經照面板寬度折過</b>，而
-     * {@code squareSpans} 先前碰到跨行的括號就 {@code return List.of()}——
-     * 一組跨行，整張卡的括號全部沒得貼。三、四行的卡片落在折行處是常態。
-     *
-     * <p>改成把斷行接回來再收。接回來的字面正好是 {@code keepAccentsWhole}
-     * 要的：它靠「上一行結尾 ＋ 下一行開頭」認出被切開的詞，再把前半搬下去。
-     */
     private static void spanAcrossRows() {
         List<LineParts.Piece> runs = List.of(
                 piece("Bring ", BODY), piece("[24 Salmon Oil]", ITEM), piece(" or ", BODY),
                 piece("[24", ITEM),
                 piece("Salmon Meat]", ITEM), piece(" to the Gathering", BODY),
                 piece("Post at ", BODY), piece("[-57, 46, -2166]", COORD));
-        // 面板寬度折出來的三行——第二組括號被切在 `[` 後面
         String[] flowed = {
             "把 [{~} 鮭魚油] 或 [",
             "{~} 鮭魚肉] 交到採集站，",
@@ -481,7 +320,6 @@ public final class BracketAccentTest {
                   t.indexOf(NL) < 0);
         }
 
-        // 接回來之後 keepAccentsWhole 就搬得動行尾那個孤零零的 [
         String[] moved = LineTranslator.keepAccentsWhole(
                 flowed, List.of(piece("[{~} 鮭魚肉]", ITEM)));
         check("★［跨行的整組］行尾那個 [ 被搬到下一行（拿到 「" + moved[0]
@@ -490,10 +328,6 @@ public final class BracketAccentTest {
               && moved[1].startsWith("[{~} 鮭魚肉]"));
     }
 
-    /**
-     * 譯文<b>沒有</b>照原文寫方括號時，維持原本的行為：內層那個詞照樣上色，
-     * 不可以憑空把附近的字括進來。
-     */
     private static void noBracketsInTranslation() throws Exception {
         TranslationStore store = corpus(
                 "Dragonkin Nest [Cave]", "龍裔巢穴洞窟", "Cave", "洞窟");
@@ -512,46 +346,31 @@ public final class BracketAccentTest {
               is(colourOf(built, "洞窟"), TYPE));
     }
 
-    /**
-     * 往外擴的規則本身：該擴的擴、不該擴的一個都不能擴。
-     *
-     * <p>語料裡 630 條這種標題（{@code 名稱 [文字類型]}）全是同一個樣子，
-     * 六個語言都一樣：{@code Cave} 199、{@code Quest} 110、{@code Mini-Quest} 85、
-     * {@code Secret Discovery} 23、{@code Dungeon} 19、{@code Boss Altar} 14、
-     * {@code World Discovery} 12 …，譯文一律寫成 {@code 譯名 [類型譯名]}。
-     */
     private static void rules() {
-        // 該擴的：原文整塊被括起來，譯文裡是去掉括號的內層。
         wraps("[Cave]", "洞窟", "龍裔巢穴 [洞窟]", "[洞窟]");
         wraps("[Mini-Quest]", "迷你任務", "獵殺蜘蛛 [迷你任務]", "[迷你任務]");
         wraps("[Secret Discovery]", "隱藏探索點", "英雄的起點 [隱藏探索點]", "[隱藏探索點]");
         wraps("[Boss Altar]", "首領祭壇", "腐化祭壇 [首領祭壇]", "[首領祭壇]");
-        // 名稱自己含有類型詞也照擴——擴出去之後字面唯一，才不會貼到名稱裡去。
         wraps("[Cave]", "洞窟", "末日洞窟 [洞窟]", "[洞窟]");
 
-        // 括號裡除了那個詞還有一個<b>數量</b>。迷你任務的敘述全長這樣；
-        // 不連數量一起擴的話方括號會半青半灰（[24 青、蓬鬆毛皮] 掉回底色）。
         wraps("[24 Fluffy Fur]", "蓬鬆毛皮",
               "把 [{~} 蓬鬆毛皮] 交到討伐告示", "[{~} 蓬鬆毛皮]");
         wraps("[16 Salmon Oil]", "鮭魚油",
               "把 [{~} 鮭魚油] 或 [{~} 鮭魚肉] 交到", "[{~} 鮭魚油]");
-        // 數量已經填回真正的數字時一樣認得
         wraps("[24 Fluffy Fur]", "蓬鬆毛皮", "把 [24 蓬鬆毛皮] 交到", "[24 蓬鬆毛皮]");
 
-        // 數量以外還有實字的不擴——免得把兩個詞的括號整塊吃掉
         wraps("[24 Fluffy Fur]", "蓬鬆毛皮", "把 [上等 蓬鬆毛皮] 交到", null);
 
-        // 不該擴的：
-        wraps("[Cave]", "[洞窟]", "龍裔巢穴 [洞窟]", null);       // 譯文本來就帶括號
-        wraps("Nest [Cave]", "巢穴 洞窟", "龍裔巢穴 洞窟", null);   // 括號左邊還有字
-        wraps("[Cave] Lv. 30", "洞窟 30 級", "洞窟 30 級", null);   // 括號右邊還有字
-        wraps("[Cave]", "洞窟", "龍裔巢穴的洞窟", null);            // 譯文沒寫括號
-        wraps("[Cave]", "洞窟", "龍裔巢穴 (洞窟)", null);           // 譯文換成圓括號
-        wraps("[-1763, 136,", "座標", "座標", null);                // 座標被寬度切斷
-        wraps("[]", "空", "[空]", null);                           // 括號裡沒東西
-        wraps("[a] [b]", "甲乙", "[甲乙]", null);                   // 兩組括號，看不出擴到哪
-        wraps("(Cave)", "洞窟", "龍裔巢穴 (洞窟)", null);           // 只處理方括號
-        wraps("[Cave]", "   ", "[   ]", null);                     // 譯文是空白
+        wraps("[Cave]", "[洞窟]", "龍裔巢穴 [洞窟]", null);
+        wraps("Nest [Cave]", "巢穴 洞窟", "龍裔巢穴 洞窟", null);
+        wraps("[Cave] Lv. 30", "洞窟 30 級", "洞窟 30 級", null);
+        wraps("[Cave]", "洞窟", "龍裔巢穴的洞窟", null);
+        wraps("[Cave]", "洞窟", "龍裔巢穴 (洞窟)", null);
+        wraps("[-1763, 136,", "座標", "座標", null);
+        wraps("[]", "空", "[空]", null);
+        wraps("[a] [b]", "甲乙", "[甲乙]", null);
+        wraps("(Cave)", "洞窟", "龍裔巢穴 (洞窟)", null);
+        wraps("[Cave]", "   ", "[   ]", null);
     }
 
     private static void wraps(String core, String zh, String translated, String want) {
@@ -576,7 +395,6 @@ public final class BracketAccentTest {
         return out.toString();
     }
 
-    /** 一整行原文：交錯的「文字, 顏色」。 */
     private static StyledText line(Object... pairs) {
         MutableComponent out = Component.empty();
         for (int i = 0; i < pairs.length; i += 2) {
@@ -586,7 +404,6 @@ public final class BracketAccentTest {
         return StyledText.fromComponent(out);
     }
 
-    /** 畫出去的整串文字（所有段接起來）。 */
     private static String flat(List<Component> built) {
         StringBuilder out = new StringBuilder();
         for (Component c : built) {
@@ -598,7 +415,6 @@ public final class BracketAccentTest {
         return out.toString();
     }
 
-    /** {@link #flat} 裡第 {@code index} 個字的顏色。 */
     private static Integer charColour(List<Component> built, int index) {
         List<Integer> hit = new ArrayList<>();
         int[] seen = {0};
@@ -628,7 +444,6 @@ public final class BracketAccentTest {
         }
     }
 
-    /** 畫出去的每一段文字，照順序。 */
     private static List<String> pieces(List<Component> built) {
         List<String> out = new ArrayList<>();
         for (Component c : built) {
@@ -640,12 +455,6 @@ public final class BracketAccentTest {
         return out;
     }
 
-    /**
-     * 含有 {@code needle} 的<b>第一</b>段的顏色。
-     *
-     * <p>找不到<b>一整段</b>裝得下 {@code needle} 的就回傳 {@code null}——那表示
-     * 那幾個字被拆到了兩段以上，而拆開本身就是這條測試要擋的事。
-     */
     private static Integer colourOf(List<Component> built, String needle) {
         List<Integer> found = new ArrayList<>();
         for (Component c : built) {

@@ -10,47 +10,22 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 聊天訊息的譯文要保住原文的顏色。
- *
- * <h2>畫面上長什麼樣</h2>
- * 進伺服器的歡迎訊息裡，{@code Welcome to Wynncraft!} 是金色粗體。
- * 譯文「歡迎來到 Wynncraft！」先前整行掉成灰色，兩行擺在一起一亮一暗，
- * 一看就知道下面那行是外掛貼的。
- *
- * <h2>先前為什麼會掉色</h2>
- * 上色是拿原文的<b>字面</b>到譯文裡找。單一個詞還有救——{@code withTranslations}
- * 會把詞的譯文也登記一份；但整句不行：{@code Welcome to Wynncraft!} 不是語料的鍵
- * （鍵是整段四行），lookup、lookupTerm、lookupWordCore 三條路全落空，
- * 於是那一段被記成「譯文裡找不到」，顏色就沒貼上去。
- *
- * <p>而這種情況根本不必查表——原文那一行從頭到尾只有一個顏色，
- * 譯文那一行就整行照它。見 {@code LineTranslator#wholeLineStyles}。
- */
 public final class ChatColourTest {
 
     private static int failures = 0;
 
-    private static final int GOLD = 0xFFAA00;     // Welcome to Wynncraft!
-    private static final int GREY = 0xAAAAAA;     // 網址與說明
-    private static final int RED  = 0xFF5555;     // TIP:
-    private static final int WHITE = 0xFFFFFF;    // /char
-    private static final int BROWN = 0x8F663D;    // 坐騎那一行的主色
-    private static final int LIGHT = 0xBC8F62;    // 同一行裡被挑亮的「no food」
-    private static final int LIME = 0x55FF55;     // Lootrun 結算的 Rewards
-    private static final int MAGENTA = 0xFF55FF;  // 同一行右欄的 Statistics
-    private static final int CYAN = 0x55FFFF;     // 結算數字
+    private static final int GOLD = 0xFFAA00;
+    private static final int GREY = 0xAAAAAA;
+    private static final int RED  = 0xFF5555;
+    private static final int WHITE = 0xFFFFFF;
+    private static final int BROWN = 0x8F663D;
+    private static final int LIGHT = 0xBC8F62;
+    private static final int LIME = 0x55FF55;
+    private static final int MAGENTA = 0xFF55FF;
+    private static final int CYAN = 0x55FFFF;
 
-    /** 行首那個符號。語料裡它是 {@code {#}}，實際送來的是私用區碼位。 */
     private static final String ICON = "\ue001";
 
-    /**
-     * 遊戲送來的樣子，取自使用者回報的 majorid-debug.txt 重點段 8。
-     *
-     * <p>聊天訊息是<b>一個</b> StyledText，換行包在裡面——
-     * 不是 tooltip 那種一行一個的清單。{@code ChatListener} 走的是
-     * {@code LineTranslator#translate}，不是 {@code translateBlock}。
-     */
     private static StyledText welcome() {
         MutableComponent all = Component.empty();
         all.append(lit(ICON, GOLD, true));
@@ -69,14 +44,6 @@ public final class ChatColourTest {
         return StyledText.fromComponent(all);
     }
 
-    /**
-     * 同一則歡迎訊息的另一個變體，最後一行是<b>混色</b>的。
-     *
-     * <p>取自使用者回報的 majorid-debug 重點段 1：三個片語兩種棕色交錯，
-     * 而它們都是句子中間的片語，翻成中文之後一段都對不上字面
-     * （診斷檔裡那三行「譯文裡找不到」）。混色的行先前不登記，
-     * 於是整行掉回底色——原文一片棕、譯文一片灰。
-     */
     private static StyledText mounts() {
         MutableComponent all = Component.empty();
         all.append(lit(ICON, GOLD, true));
@@ -97,15 +64,6 @@ public final class ChatColourTest {
         return StyledText.fromComponent(all);
     }
 
-    /**
-     * 同一則訊息，但前後各多一個空行。
-     *
-     * <p>語料的鍵是<b>去掉首尾空白</b>之後的樣子，而遊戲送來的訊息前後常常
-     * 多幾個空行——實機錄到的 [Cave Completed] 原文八行、語料六行。
-     * 逐行對齊如果硬要求行數相同，這種訊息一輩子對不齊，
-     * 然後會退回為 tooltip 寫的「欄位交界」那條路，把整段的寬度差
-     * 全部加到某一行的某一個空白上（診斷檔「逐行對齊 9」的 +222px）。
-     */
     private static StyledText padded() {
         MutableComponent all = Component.empty();
         all.append(lit("\n", GREY, false));
@@ -146,39 +104,24 @@ public final class ChatColourTest {
         Boolean bold = boldOf(built, "歡迎來到");
         check("標題跟原文一樣是粗體", Boolean.TRUE.equals(bold));
 
-        // 網址那一行原文就是灰的，不該被標題的金色波及
         Integer url = colourOf(built, "wynncraft.com");
         check("網址那一行仍是灰色（拿到 "
                         + (url == null ? "null" : "#" + String.format("%06X", url))
                         + "）", url != null && url == GREY);
 
-        // 一行裡有好幾個顏色的，不能整行套同一色——那是另一種壞法
         Integer slash = colourOf(built, "/char");
         check("一行多色時 /char 仍保住自己的白色（拿到 "
                         + (slash == null ? "null" : "#" + String.format("%06X", slash))
                         + "）", slash == null || slash == WHITE);
 
-        // 整行同色的行不能把已經登記過的重點段再登一次。
-        //
-        // 兩條一模一樣的重點段，只有第一條會被用到，第二條在診斷檔裡
-        // 成了「★在譯文裡卻沒貼上」（使用者回報的 majorid-debug 裡那一排星號）；
-        // 多余的長串還會跟真正該貼的重點段互投位置。
         long titles = flatten(hit).stream()
                 .filter(c -> c.getString().contains("歡迎來到"))
                 .count();
         check("標題只被貼一次（實際 " + titles + " 段）", titles == 1);
 
-        // 多行系統訊息：每一行前面都有一個自己的置中縮排，
-        // 而那些數字是照英文寬度算的（診斷檔「填回去的符號 2」）。
-        // 原樣填回去，中文那一块就歪了——回報的聊天排版問題。
-        //
-        // 釘的是「三個縮排都還在」：逐行重算不能把它們弄不見，
-        // 也不能把換行吃掉。具體的像素值跟字型渲染有關，這裡不釘。
         long rows = hit.getString().chars().filter(c -> c == 10).count() + 1;
         check("多行訊息的行數保住不變（實際 " + rows + " 行）", rows == 4);
 
-        // 混色的那一行：三個片語一段都對不上字面，先前整行掉回底色的灰。
-        // 退而求其次套上<b>多數色</b>，比一片灰接近原文得多。見 LineTranslator#fallback。
         Component mount = LineTranslator.translate(mounts(), store);
         check("坐騎那則查得到譯文", mount != null);
         if (mount != null) {
@@ -190,14 +133,12 @@ public final class ChatColourTest {
                             + (feeder == null ? "null" : "#" + String.format("%06X", feeder))
                             + "）", feeder != null && feeder != GREY);
             check("混色的行套的是原文的多數色", feeder != null && feeder == BROWN);
-            // 同一則訊息裡其餘各行不能被波及
             Integer stillGold = colourOf(one, "歡迎來到");
             check("標題還是金色", stillGold != null && stillGold == GOLD);
             Integer stillGrey = colourOf(one, "wynncraft.com");
             check("網址還是灰色", stillGrey != null && stillGrey == GREY);
         }
 
-        // 前後多幾個空行時，逐行對齊仍要對得起來（不能退回整段那一路）
         Component pad = LineTranslator.translate(padded(), store);
         check("前後多空行時仍翻得出來", pad != null);
         if (pad != null) {
@@ -205,9 +146,6 @@ public final class ChatColourTest {
             check("前後多空行時標題還是金色（拿到 "
                             + (padTitle == null ? "null" : "#" + String.format("%06X", padTitle))
                             + "）", padTitle != null && padTitle == GOLD);
-            // 行數跟著<b>譯文</b>走，不是跟著原文——中文比英文緊湊，
-            // 譯者本來就可以少斷一行（見 rebuildAll 的說明）。這裡要釘的是
-            // 「首尾多出來的空行不會害逐行對齊整個放棄」，不是行數要一樣。
             long padRows = pad.getString().chars().filter(c -> c == 10).count() + 1;
             check("譯文維持自己的行數（實際 " + padRows + " 行）", padRows == 4);
         }
@@ -217,19 +155,6 @@ public final class ChatColourTest {
         report();
     }
 
-    /**
-     * Lootrun 結算面板：兩欄各有各的顏色。
-     *
-     * <h2>為什麼要釘</h2>
-     * 「{@code Rewards}／{@code Statistics}」左綠右粉，是<b>同一行</b>的兩欄。
-     * 譯文如果不標顏色，主色是<b>照字數</b>挑的——「獎勵」與「統計」一樣長，
-     * 挑到誰全憑順序，實測整行都變成粉紅。兩欄不同色的行一律用
-     * {@code &#123;c1&#125;}／{@code &#123;c2&#125;} 明寫，跟信標那一批一致。
-     *
-     * <p>底下那一列相反：數字自己就是一個帶樣式的片段，字面在譯文裡找得到，
-     * 顏色會自動貼回去，不必標。兩種一起釘住，免得日後有人「順手補齊」
-     * 把每一行都加上顏色標記。
-     */
     private static void lootrunEnd(TranslationStore store) {
         MutableComponent heads = Component.empty();
         heads.append(lit(ICON, LIME, false));
@@ -260,8 +185,6 @@ public final class ChatColourTest {
         check("結算抽數列翻得出來", stat != null);
         if (stat != null) {
             String zh = stat.getString();
-            // 問「英文還在不在」，不要釘中文措辭：Pull 的譯名 2026-09-28 從
-            // 「獎勵抽數」改成「結算獎勵」，原本釘措辭的斷言就整支紅了。
             check("兩欄都換成中文（實際 " + zh + "）",
                     !zh.contains("Reward Pulls") && !zh.contains("Time Elapsed"));
             Integer number = colourOf(List.of(stat), "31");

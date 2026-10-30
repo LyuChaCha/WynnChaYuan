@@ -5,21 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 每一個畫面共用的底：可以點的區塊、滑過的光暈、按鈕、輸入框、彈出層、說明。
- *
- * <h2>為什麼有這一層</h2>
- * 設定、調整位置、更新說明、貢獻者、使用須知原本各寫各的，按鈕長得不一樣、
- * 滑過的反應也不一樣。這裡把「一個畫面怎麼畫、怎麼點」收成一份：每個畫面只要
- * 實作 {@link #draw}，在裡面呼叫這裡的 {@link #button}、{@link #zone} 等等。
- *
- * <h2>邊畫邊登記可以點的地方</h2>
- * 每畫一個控制項就順手登記一塊「點這裡會怎樣」（{@link #zone}），用的是
- * <b>同一組座標</b>：畫在哪就點得到哪，結構上不可能對不上。點的時候從最後登記的
- * 往回找，所以後畫的（彈出的色盤、下拉選單）自然蓋在先畫的上面。
- *
- * <p>這一層不認得遊戲，只碰 {@link Canvas}。
- */
 public abstract class Surface {
 
     public static final int KEY_ESC = 256;
@@ -39,7 +24,6 @@ public abstract class Surface {
     protected static final float CTRL_H = 16;
     private static final long TIP_DELAY_MS = 380;
 
-    // 這一幀的東西
     protected Canvas c;
     protected int accent;
     protected float mx;
@@ -48,15 +32,12 @@ public abstract class Surface {
     protected float dt;
     protected int screenW;
     protected int screenH;
-    /** 這個畫面的視窗；說明與彈出層不會跑到它外面。 */
     protected float winX;
     protected float winY;
     protected float winW;
     protected float winH;
-    /** 這一幀結束前要畫在最上層的東西（色盤、下拉）。 */
     protected Runnable popover;
     protected Tip tip;
-    /** 滑鼠現在在哪一塊上面；同一塊停夠久才跳說明。 */
     protected String hoverRow;
 
     protected Zone dragging;
@@ -70,18 +51,14 @@ public abstract class Surface {
     private long hoverSince;
     private long lastFrame;
 
-    /** 這個畫面的重點色（ARGB）。 */
     protected abstract int accentColour();
 
-    /** 畫這一幀。座標是 GUI 像素。 */
     protected abstract void draw();
 
-    /** 有彈出層開著：底下的東西不該有滑過的反應。 */
     protected boolean covered() {
         return false;
     }
 
-    /** 點到彈出層外面。 */
     protected void dismiss() {
     }
 
@@ -92,7 +69,6 @@ public abstract class Surface {
     protected void setClipboard(String text) {
     }
 
-    /** 按下去的那一聲。 */
     protected void click() {
     }
 
@@ -118,14 +94,12 @@ public abstract class Surface {
         draw();
 
         if (popover != null) {
-            // 彈出層底下墊一塊「點外面就收起來」，而且不讓點擊穿到底下的控制項
             zone(0, 0, screenW, screenH, (x, y, b) -> dismiss());
             inPopover = true;
             popover.run();
             inPopover = false;
         }
 
-        // 說明：滑鼠在同一塊上停一下才出現，不然掃過去整片都在閃
         if (hoverRow == null || !hoverRow.equals(wasHover)) {
             hoverSince = now;
         }
@@ -133,8 +107,6 @@ public abstract class Surface {
             tooltip(tip, Math.min(1f, (now - hoverSince - TIP_DELAY_MS) / 120f));
         }
     }
-
-    // ------------------------------------------------------------ 可以點的地方
 
     protected interface Press {
         void at(double x, double y, int button);
@@ -146,7 +118,6 @@ public abstract class Surface {
         float w;
         float h;
         Press press;
-        /** 按住拖曳時每動一下叫一次；{@code null} 就是普通的按鈕。 */
         public Press drag;
         public Runnable release;
         public String key;
@@ -158,7 +129,6 @@ public abstract class Surface {
         float y0 = y;
         float x1 = x + w;
         float y1 = y + h;
-        // 捲出可視範圍的那一截不能點——畫的時候被裁掉了，點得到就是鬼按鈕
         for (float[] clip : clips) {
             x0 = Math.max(x0, clip[0]);
             y0 = Math.max(y0, clip[1]);
@@ -184,7 +154,6 @@ public abstract class Surface {
         clips.remove(clips.size() - 1);
     }
 
-    /** 滑鼠在不在這塊上面（沒有被裁掉、沒有被彈出層蓋住、也沒有正在拖別的東西）。 */
     protected boolean over(float x, float y, float w, float h) {
         if (dragging != null || (covered() && !inPopover)) {
             return false;
@@ -196,8 +165,6 @@ public abstract class Surface {
         }
         return Ui.in(mx, my, x, y, w, h);
     }
-
-    // ------------------------------------------------------------ 輸入
 
     public boolean mouseDown(double x, double y, int button) {
         for (int i = zones.size() - 1; i >= 0; i--) {
@@ -239,12 +206,6 @@ public abstract class Surface {
         return false;
     }
 
-    /**
-     * 上一幀畫出來、叫這個名字的那一塊在哪：{@code {x, y, w, h}}，沒有就回 {@code null}。
-     *
-     * <p>按鈕是 {@code "b:" + 名字}，開關是 {@code "t:" + 名字}。給離線的測試用——
-     * 它要點「儲存」的時候不必自己把版面再算一次。
-     */
     public float[] spot(String key) {
         for (int i = zones.size() - 1; i >= 0; i--) {
             Zone z = zones.get(i);
@@ -255,7 +216,6 @@ public abstract class Surface {
         return null;
     }
 
-    /** 上一幀所有叫得出名字的區塊：名字與 {@code {x, y, w, h}}。 */
     public java.util.Map<String, float[]> spots() {
         java.util.Map<String, float[]> out = new java.util.LinkedHashMap<>();
         for (Zone z : zones) {
@@ -266,11 +226,6 @@ public abstract class Surface {
         return out;
     }
 
-    /**
-     * @param ctrl Ctrl（mac 上是 Cmd）有沒有按著
-     * @return 這個鍵有沒有被用掉。Esc 沒東西可關的時候回 {@code false}，
-     *         外面就照原版的做法關掉畫面
-     */
     public boolean key(int key, boolean ctrl) {
         return false;
     }
@@ -279,8 +234,6 @@ public abstract class Surface {
         return false;
     }
 
-    // ------------------------------------------------------------ 動畫
-
     protected float animate(String key, float target, float tau) {
         float at = anim.getOrDefault(key, target);
         at = Ui.ease(at, target, dt, tau);
@@ -288,12 +241,10 @@ public abstract class Surface {
         return at;
     }
 
-    /** 滑過的光暈強度：進去快、出來慢一點，掃過一排按鈕時才不會閃。 */
     protected float glow(String key, boolean hot) {
         return animate("g:" + key, hot ? 1f : 0f, hot ? 35f : 90f);
     }
 
-    /** 顏色也慢慢換過去：從「另開面板」切到「就地取代」時滑塊邊滑邊變色。 */
     protected int colourTo(String key, int target) {
         int at = colours.getOrDefault(key, target);
         int next = at;
@@ -314,29 +265,20 @@ public abstract class Surface {
         return next;
     }
 
-    /** 不播動畫，直接跳到定位——測試與重建畫面時用。 */
     protected void settle() {
         anim.clear();
         colours.clear();
     }
 
-    /** 控制項的框線：平常是淡淡的白，滑過時往重點色靠。 */
     protected int edge(float g) {
         return Ui.mix(Ui.BORDER, Ui.alpha(accent, 0x8C), g);
     }
 
-    // ------------------------------------------------------------ 零件
-
-    /**
-     * 畫面中央的玻璃視窗：影子、底色、一圈髮絲線。順便記下它的範圍，
-     * 說明與彈出層會留在它裡面。
-     */
     protected void window(float x, float y, float w, float h, boolean blurred) {
         winX = x;
         winY = y;
         winW = w;
         winH = h;
-        // 底下一圈柔和的影子：往外幾層、一層比一層淡
         for (int i = 4; i >= 1; i--) {
             float g = i * 1.6f;
             c.round(x - g, y - g + 2, w + g * 2, h + g * 2, Ui.R3 + g, 0x12000000);
@@ -344,7 +286,6 @@ public abstract class Surface {
         Ui.pane(c, x, y, w, h, Ui.R3, blurred ? Ui.WINDOW : Ui.WINDOW_SOLID, Ui.WIN_EDGE);
     }
 
-    /** 一顆按鈕。 */
     protected void button(String key, float x, float y, float w, float h, String label,
                           boolean enabled, boolean primary, Icons.Icon icon, Runnable go) {
         boolean hot = enabled && over(x, y, w, h);
@@ -465,12 +406,10 @@ public abstract class Surface {
         }
     }
 
-    /** 按鈕照自己的字要多寬。 */
     protected float buttonWidth(String label) {
         return c.width(label) + 18;
     }
 
-    /** 一顆開關。@return 整塊（含左邊的字）的左緣 */
     protected float toggle(String key, float right, float y, boolean on, String text,
                            Runnable flip) {
         float t = animate("t:" + key, on ? 1f : 0f, 55f);
@@ -497,11 +436,6 @@ public abstract class Surface {
         return x - 5 - c.width(text);
     }
 
-    /**
-     * 一排互斥的小選項，靠右排。選到的那一格是重點色。
-     *
-     * @return 這一排的左緣
-     */
     protected float chips(String key, float right, float y, String[] labels, int selected,
                           java.util.function.IntConsumer pick) {
         float total = 2;
@@ -537,7 +471,6 @@ public abstract class Surface {
         return x;
     }
 
-    /** 彈出層的底：影子、幾乎不透明的底色、一圈重點色的髮絲線。 */
     protected void popPane(float x, float y, float w, float h, float in) {
         for (int i = 3; i >= 1; i--) {
             float g = i * 1.5f;
@@ -546,7 +479,6 @@ public abstract class Surface {
         Ui.pane(c, x, y, w, h, Ui.R2, Ui.fade(Ui.POP, in), Ui.fade(Ui.alpha(accent, 0x8C), in));
     }
 
-    /** 捲軸：右邊一條細細的軌道與滑塊。 */
     protected void scrollbar(float x, float y, float h, float contentH, float scroll,
                              float maxScroll) {
         if (maxScroll <= 0) {
@@ -557,8 +489,6 @@ public abstract class Surface {
         float thumbY = y + (h - thumbH) * (scroll / maxScroll);
         c.round(x, thumbY, 2.5f, thumbH, 1.25f, Ui.alpha(accent, 0xC8));
     }
-
-    // ------------------------------------------------------------ 說明
 
     protected record Tip(String text, float x, float y, float w, float h) {}
 
@@ -594,9 +524,6 @@ public abstract class Surface {
         }
     }
 
-    // ------------------------------------------------------------ 輸入框
-
-    /** 輸入框裡的字與游標；字比框長時讓游標那一段留在看得到的地方。 */
     protected void field(Field f, float x, float y, float w, boolean focused) {
         String text = f.text.toString();
         String head = text.substring(0, Math.min(f.caret, text.length()));
@@ -613,18 +540,10 @@ public abstract class Surface {
         unclip();
     }
 
-    /**
-     * 一行文字的輸入框。
-     *
-     * <p>不用原版的 {@code EditBox}：那個要活在 {@code Screen} 的元件樹裡，
-     * 這一層就得認得遊戲了。這裡只需要一行、不折行、游標在哪裡——夠用，
-     * 而且輸入法送進來的字照樣收得到（{@code charTyped} 給的就是選好的字）。
-     */
     protected final class Field {
         public final StringBuilder text = new StringBuilder();
         final int max;
         public int caret;
-        /** 全選：下一個打進來的字會把整段換掉。 */
         public boolean all;
 
         public Field(int max) {
@@ -659,7 +578,6 @@ public abstract class Surface {
             return true;
         }
 
-        /** @return 內容有沒有變 */
         public boolean key(int key, boolean ctrl) {
             if (ctrl && key == 'A') {
                 all = text.length() > 0;

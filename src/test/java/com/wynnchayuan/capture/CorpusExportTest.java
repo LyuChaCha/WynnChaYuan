@@ -14,21 +14,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-/**
- * F6「匯出未翻譯字串」寫出來的檔案。
- *
- * <h2>為什麼要測</h2>
- * 自動上傳拿掉之後，玩家交來的就是這個檔，而且是公開附在 Issue 上的。
- * 這裡釘住四件事：
- *
- * <ol>
- *   <li>檔案放在哪（跟本機的 captured.json 分開）</li>
- *   <li>公會頻道與別人的名字有沒有濾掉；本機檔案沒有被動到</li>
- *   <li>網址裡的 Issue 表單真的存在</li>
- *   <li><b>模組原始碼裡沒有任何把資料送出去的 HTTP 呼叫</b>，連出去的網址全是寫死的
- *       那幾個主機——CurseForge 就是因為這件事退件的，不能哪天又悄悄長回來</li>
- * </ol>
- */
 public final class CorpusExportTest {
 
     private static int failures = 0;
@@ -107,25 +92,13 @@ public final class CorpusExportTest {
                         && Files.isRegularFile(Path.of(".github", "ISSUE_TEMPLATE", template)));
     }
 
-    /**
-     * 模組原始碼裡會往外送的只有登記站那一個檔，而且連出去的主機只有寫死的那幾個。
-     *
-     * <p>下載（GET）照常允許：譯文同步與更新檢查要用。擋的是「把東西送出去」的寫法。
-     *
-     * <p>唯一的例外是 {@code Presence}（使用者 2026-10-12：「可以放寬那條測試、讓模組報到」）：
-     * 它向登記站驗證身分、報到、上傳玩家自己選的披風，送出去的內容由 {@code PresenceTest}
-     * 釘住。別的檔出現送資料的寫法、別的檔連到登記站、或多了別的主機，這裡照舊會紅。
-     */
     private static void noUpload() throws Exception {
         Pattern send = Pattern.compile(
                 "BodyPublishers|\\.POST\\(|\\.PUT\\(|HttpURLConnection|setDoOutput");
         Pattern host = Pattern.compile("\"https?://([^/\"]+)");
-        // api.github.com 是唯讀的：問「譯文最後一次改動是哪一個 commit」，
-        // 一次 GET、不帶任何本機資料。見 RemoteSync#remoteVersion。
         Set<String> allowed = Set.of(
                 "raw.githubusercontent.com", "cdn.jsdelivr.net", "github.com",
                 "api.github.com",
-                // 我們自己的網站與登記站，只有 Presence 連它。
                 "wynnchayuan.com");
         List<String> senders = new ArrayList<>();
         Set<String> hosts = new TreeSet<>();

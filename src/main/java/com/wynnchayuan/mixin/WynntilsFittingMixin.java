@@ -8,14 +8,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/**
- * Wynntils 的「tooltip 縮放」決定位置的那一步：
- * <ul>
- *   <li>我們在畫 Wynnventory 的價格框時跳過——位置與縮放已經算好了；</li>
- *   <li>它定好之後，物品說明蓋到價格框的話往右讓開。</li>
- * </ul>
- * 見 {@link WynnventoryLayout}。
- */
 @Mixin(targets = "com.wynntils.features.tooltips.TooltipFittingFeature", remap = false)
 public abstract class WynntilsFittingMixin {
 

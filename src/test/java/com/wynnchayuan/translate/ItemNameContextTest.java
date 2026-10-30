@@ -12,21 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 物品的名字只在<b>物品會出現的位置</b>才算數。
- *
- * <h2>實機回報（2026-10-10）</h2>
- * 傳送點上的漂浮字「Return to Detlas」畫成「回归之戒 (Return) 至 Detlas」。
- * {@code Return} 是一枚戒指的名字；「名字 + 數值尾巴」那條路把它當成屬性標籤查到了。
- * 拿手上五萬多條實機字串掃過一遍，同一類還有血條（{@code Frog - 1200❤}）、
- * 怪物名牌（{@code Fatal {#}{#}}、{@code Defective Bolt {#}{#}}）與「某人的東西」
- * （{@code Grook's Nest}）。
- *
- * <h2>怎麼測</h2>
- * 名字<b>從語料裡挑</b>，不寫死：之後把「Fatal」這隻怪補進 {@code npc.json}，
- * 寫死的測試就會無條件通過、再也守不住東西。挑的是「只有物品在用、而且套進這幾種
- * 形狀之後語料沒有整條收」的裝備名，每種語言各挑一批。
- */
 public final class ItemNameContextTest {
 
     private static int failures = 0;
@@ -45,14 +30,12 @@ public final class ItemNameContextTest {
             int list = 0, bullet = 0, count = 0, bare = 0;
             StringBuilder wrong = new StringBuilder();
             for (String name : names) {
-                // ---- 不是物品的位置：一律不能換成那件物品
                 plate += leak(store, name + " {#}{#}", name, wrong);
                 bar += leak(store, name + " - {~}❤", name, wrong);
                 range += leak(store, name + " to {p}", name, wrong);
                 owner += leak(store, "Somebody's " + name, name, wrong);
                 quality += leak(store, "Defective " + name + " {#}{#}", name, wrong);
                 colon += leak(store, name + ":", name, wrong);
-                // ---- 物品會出現的位置：照舊翻
                 list += shown(store, "{#}{#}" + name, name);
                 bullet += shown(store, "- " + name, name);
                 count += shown(store, name + " [{~}/{~}]", name);
@@ -80,7 +63,6 @@ public final class ItemNameContextTest {
         }
     }
 
-    /** 拼出來的結果帶著「(名字)」——物品名稱才有的寫法——就算漏了一個。 */
     private static int leak(TranslationStore store, String template, String name,
                             StringBuilder wrong) {
         String hit = LineTranslator.lookup(template, store, false);
@@ -98,10 +80,6 @@ public final class ItemNameContextTest {
         return hit != null && hit.contains("(" + name + ")") ? 1 : 0;
     }
 
-    /**
-     * 只有物品在用、譯文跟原文不一樣、而且這幾種形狀語料都沒有整條收的裝備名。
-     * 單字的優先（一般的字最容易撞名），取前五十個。
-     */
     private static List<String> pick(TranslationStore store, String lang) throws Exception {
         List<String> out = new ArrayList<>();
         for (String file : List.of("gear-accessory.json", "gear-weapon.json", "gear-armour.json")) {
@@ -134,18 +112,6 @@ public final class ItemNameContextTest {
         return out;
     }
 
-    /**
-     * 別條執行緒也在查表時，這一條的物品名不能受影響。
-     *
-     * <h2>實機回報（2026-10-10，1.0.1）：「切換語言之後物品翻譯都會失效」</h2>
-     * 「這個位置不是物品」原本是一個全域旗標。收集端每 30 秒在背景執行緒整理
-     * {@code captured.json}，每一條都問 {@code hasTranslation}，那條路同樣會
-     * 掛上再還原這個旗標；跟算繪那一條交錯時，旗標被「還原」成對方掛上的值，
-     * 從此卡在開著——所有只有物品在用的名字都查不到，重開遊戲才會好。
-     *
-     * <p>第一段是必現的寫法：別條執行緒掛著旗標不放，這一條照樣要翻得到。
-     * 第二段是實機那個情境：兩條一起跑，跑完旗標要是放下的。
-     */
     private static void otherThreads(TranslationStore store, List<String> names, String lang)
             throws Exception {
         String name = names.get(0);
@@ -169,7 +135,6 @@ public final class ItemNameContextTest {
         holder.join();
         check(lang + "：★ 別條執行緒掛著旗標，這一條的物品名照舊翻", mine);
 
-        // 背景那一條：收集端整理時問的就是 hasTranslation（名牌、血條、某人的東西）
         java.util.concurrent.atomic.AtomicBoolean stop =
                 new java.util.concurrent.atomic.AtomicBoolean();
         Thread pruner = new Thread(() -> {

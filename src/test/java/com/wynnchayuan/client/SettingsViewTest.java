@@ -18,30 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 把設定畫面<b>不開遊戲</b>算出來，量一遍有沒有東西凸出去或疊在一起。
- *
- * <h2>為什麼要有</h2>
- * 舊畫面的版面漂過好幾次，每次都是使用者截圖回報才知道；而這一版多了六種語言，
- * 俄文與西班牙文的選項比中文長一倍以上，靠人一頁一頁看看不完。
- * {@link SettingsView} 不認得遊戲，接一張記憶體裡的畫布就能整個跑——所以這裡把
- * 六種語言 × 五個分類 × 幾種畫面大小全部算一次，每一列都量：
- * <ul>
- *   <li>整列在視窗裡面；</li>
- *   <li>名稱的右緣沒有壓到控制項的左緣；</li>
- *   <li>同一頁的分段、下拉、滑桿要嘛全部在名稱右邊，要嘛全部換到下一列——
- *       不能有的擠有的鬆（使用者 2026-10-08 回報俄文那樣很難看）。</li>
- * </ul>
- *
- * <h2>順便存圖</h2>
- * 算出來的畫面存在 {@code build/ui-preview/}。字的寬度是照原版字型估的
- * （見 {@link AwtCanvas}），所以「放不放得下」可信，字的長相不可信。
- *
- * <h2>這裡的設定表是抄的</h2>
- * 真正的表在 {@code SettingsScreen#buildTabs}，但那個類別要遊戲才載得起來。
- * 這裡照同樣的鍵與同樣的選項再列一次；兩邊對不上的話量出來的就不是實際的畫面，
- * 所以改了那邊的列要回來改這裡。
- */
 public final class SettingsViewTest {
 
     private static int failures = 0;
@@ -79,7 +55,6 @@ public final class SettingsViewTest {
                     }
                 }
             }
-            // 矮視窗：示意圖裡的記分板放不進大字底下，會退到 NPC 旁邊。那個排法另外留一張
             SettingsView low = new SettingsView(fake.tabs(), fake, 0);
             low.showTab(3);
             ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-world-short.png"));
@@ -88,7 +63,6 @@ public final class SettingsViewTest {
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × "
                 + TABS.length + " 個分類 × 4 種大小）");
 
-        // 繁中在標準大小下每一頁都排得成一列：這是設計的基準，變成兩列代表哪裡的寬度算錯了
         Fake zh = new Fake("zh_tw");
         SettingsView view = new SettingsView(zh.tabs(), zh, 0);
         for (int tab = 0; tab < TABS.length; tab++) {
@@ -96,7 +70,6 @@ public final class SettingsViewTest {
             render(view, 640, 360, 1);
             must("zh_tw " + TABS[tab] + "：標準大小下不必換成兩列", !view.pageWide());
         }
-        // 俄文的「世界與聊天」放不下，要整頁換成兩列
         LANG = "ru_ru";
         Fake ru = new Fake("ru_ru");
         view = new SettingsView(ru.tabs(), ru, 3);
@@ -112,8 +85,6 @@ public final class SettingsViewTest {
             privacyShot(out, lang, null, false, true);
         }
 
-        // 預覽的物品名：語料在「譯名加原文」時回來的已經帶著原文，預覽自己還會再接一次
-        // （使用者 2026-10-09 回報畫成「骨弓 (Bony Bow) (Bony Bow)」）
         must("語料附的原文要先拿掉（認得出來的那種）",
                 "骨弓".equals(Preview.bareName("骨弓 (Bony Bow)", "Bony Bow", 2)));
         must("語料認不出來、但結尾剛好是「 (原文)」的也拿掉",
@@ -122,7 +93,6 @@ public final class SettingsViewTest {
         must("譯文本來就帶別的括號的不動",
                 "緩慢 (每秒 1.5 次)".equals(Preview.bareName("緩慢 (每秒 1.5 次)", "Slow", -1)));
 
-        // 預覽的記分板：語料的鍵帶佔位符，數字要填對位置（使用者 2026-10-09：記分板的預覽也要做）
         must("沒編號的佔位符照順序填",
                 "- Mobs slain: 42/100".equals(Preview.fill("- Mobs slain: {~}/{~}", "42", "100")));
         must("有編號的照編號填（譯文換過語序的那種）",
@@ -130,10 +100,9 @@ public final class SettingsViewTest {
         must("數字不夠也不會炸、不留佔位符",
                 "T2+: 0/0".equals(Preview.fill("T{~1}+: {~2}/{~3}", "2")));
         must("別種大括號不動", "{#}甲 3".equals(Preview.fill("{#}甲 {~}", "3")));
-        // 範例句在六個語言的語料裡都要查得到——查不到的語言開了開關預覽也不會變
         for (String lang : LANGS) {
             if ("en_us".equals(lang)) {
-                continue;                       // 介面語言，不是譯文語言，沒有語料
+                continue;
             }
             Map<String, String> corpus = corpus(lang);
             for (String key : new String[] {"Daily Objective:", "- Loot Chests T{~}+: {~}/{~}",
@@ -152,10 +121,8 @@ public final class SettingsViewTest {
         System.out.println("SettingsView: 全部通過，圖在 " + out.getPath());
     }
 
-    /** 現在用哪個語言的字型畫。 */
     private static String LANG = "zh_tw";
 
-    /** 一個語言出貨的扁平語料（兩種檔案形狀都讀），只給示意圖查範例句用。 */
     private static Map<String, String> corpus(String lang) throws Exception {
         Map<String, String> out = new HashMap<>();
         File dir = new File("src/main/resources/assets/wynnchayuan/translations", lang);
@@ -189,10 +156,8 @@ public final class SettingsViewTest {
         return out;
     }
 
-    /** 假的時鐘：每畫一幀往前走一點，動畫才會走完。 */
     private static long CLOCK = 1000;
 
-    /** 連畫幾幀：第一幀量出捲動範圍與動畫的起點，後面幾幀讓彈出層淡入、滑塊滑到定位。 */
     static String PRIVACY_HOVER = "privacy.delete";
 
     private static void privacyShot(File out, String lang, String hover) throws Exception {
@@ -251,13 +216,6 @@ public final class SettingsViewTest {
         return c;
     }
 
-    /**
-     * 這個語言的介面字串，隨模組附的字型都畫得出來。
-     *
-     * <p>字型是裁過的（見 {@code tools/build-ui-fonts.py}），只留用得到的字。
-     * 加了介面字串卻沒重裁，新的字會退回原版的點陣字——不會壞，但一行裡混著兩種字。
-     * 這裡把整份語言檔掃一遍，缺的字直接列出來。
-     */
     private static void fontCovers(String lang, Fake fake) {
         StringBuilder gone = new StringBuilder();
         java.util.Set<Integer> seen = new java.util.HashSet<>();
@@ -299,32 +257,27 @@ public final class SettingsViewTest {
         }
     }
 
-    /** 整頁換成兩列時會跟著換的那些列（分段、下拉、滑桿）。 */
     private static final java.util.Set<String> STRETCHY = java.util.Set.of(
             "items.tooltip", "items.names", "items.pages", "items.shot", "panel.anchor", "panel.side", "panel.gap",
             "dialogue.mode", "dialogue.choices", "dialogue.hold", "world.nametag", "world.chat",
             "world.tracker", "data.language", "data.fallback", "data.ui", "data.source");
 
-    /** 點得到、拖得動、彈得出來。 */
     private static void interactions(File out) throws Exception {
         Fake zh = new Fake("zh_tw");
         SettingsView view = new SettingsView(zh.tabs(), zh, 0);
         render(view, 640, 360, 1);
 
-        // 開關：點那一列控制項的右端
         SettingsView.Placed market = find(view, "items.market");
         boolean before = zh.flag("items.market");
         view.mouseDown(market.ctrlRight() - 8, market.y() + market.h() / 2, 0);
         must("點開關會翻過去", zh.flag("items.market") != before);
 
-        // 分段：點最左邊那一格
         SettingsView.Placed names = find(view, "items.names");
         view.mouseDown(names.ctrlLeft() + 6, names.y() + names.h() / 2, 0);
         must("點分段的第一格會選到它", zh.index("items.names") == 0);
         render(view, 640, 360, 1);
         must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.names"));
 
-        // 滑桿：按住拖到最右邊，放手才存
         view.showTab(1);
         render(view, 640, 360, 1);
         SettingsView.Placed gap = find(view, "panel.gap");
@@ -335,7 +288,6 @@ public final class SettingsViewTest {
         view.mouseUp();
         must("放手才存檔", zh.commits == 1);
 
-        // 色盤
         SettingsView.Placed theme = find(view, "panel.theme");
         view.mouseDown(theme.ctrlRight() - 40, theme.y() + theme.h() / 2, 0);
         must("點色塊會打開色盤", view.popoverOpen());
@@ -344,7 +296,6 @@ public final class SettingsViewTest {
         view.key(SettingsView.KEY_ESC, false);
         must("Esc 先收色盤，不是關掉整個畫面", !view.popoverOpen());
 
-        // 下拉
         view.showTab(4);
         render(view, 640, 360, 1);
         SettingsView.Placed language = find(view, "data.language");
@@ -354,7 +305,6 @@ public final class SettingsViewTest {
         ImageIO.write(c.image, "png", new File(out, "zh_tw-dropdown.png"));
         view.key(SettingsView.KEY_ESC, false);
 
-        // 搜尋：跨分類找，找不到也不能壞
         view.searchFor("翻譯");
         c = render(view, 640, 360, 3);
         ImageIO.write(c.image, "png", new File(out, "zh_tw-search.png"));
@@ -364,7 +314,6 @@ public final class SettingsViewTest {
         must("搜不到的時候沒有列，也不丟例外", view.placed().isEmpty());
         view.searchFor("");
 
-        // 大圖：給人看的
         for (String lang : new String[] {"zh_tw", "ru_ru", "es_es", "ja_jp", "ko_kr", "zh_cn"}) {
             LANG = lang;
             Fake fake = new Fake(lang);
@@ -376,7 +325,6 @@ public final class SettingsViewTest {
             }
         }
         LANG = "zh_tw";
-        // 小畫面：介面縮放開到最大、或視窗很小的時候
         for (int[] size : new int[][] {{480, 270}, {427, 240}, {320, 240}}) {
             Fake fake = new Fake("zh_tw");
             SettingsView small = new SettingsView(fake.tabs(), fake, 3);
@@ -396,9 +344,6 @@ public final class SettingsViewTest {
         throw new IllegalStateException("畫面上沒有 " + id);
     }
 
-    // ------------------------------------------------------------ 假的設定
-
-    /** 一份假的設定：值存在表裡，字從語言檔讀。 */
     static final class Fake implements SettingsView.Host {
         private final Map<String, String> strings;
         private final Map<String, String> english;
@@ -453,7 +398,6 @@ public final class SettingsViewTest {
 
         private Row segment(String id, int selected, Row.Tone[] tones, String... keys) {
             init(id, selected);
-            // 截圖那一列的說明看有沒有綁鍵，沒有固定的 .hint
             String hintKey = english.containsKey("wynnchayuan." + id + ".hint")
                     ? id + ".hint" : id + ".unbound";
             Row r = Row.segment(id, () -> tr(id), () -> tr(hintKey));
@@ -562,7 +506,6 @@ public final class SettingsViewTest {
                     action("data.export", "data.export.button"),
                     action("data.submit", "data.submit.button"));
             List<Row.Tab> tabs = new ArrayList<>();
-            // 「模組支援」：Wynntils 那一列永遠在，另外兩列有裝才出現；版面照「都有」的情況量
             List<Row> mods = List.of(
                     toggle("world.wynntils", true, null),
                     toggle("items.wms", true, null),
@@ -727,7 +670,6 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
-            // 示意圖用真的譯文畫：俄文、西文比中文長一倍，疊不疊要看它們
             s.translate = text -> {
                 String hit = corpus.get(text);
                 return hit == null || hit.isBlank() ? text : hit;

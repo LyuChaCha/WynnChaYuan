@@ -14,20 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 登入的歡迎訊息：整則的鍵查不到時一段一段組（{@link LineTranslator#welcomeBanner}）。
- *
- * <h2>實機回報（2026-10-17）</h2>
- * 歡迎訊息底下的幾行是看當下狀況拼的（交易市場賣出／買進、坐騎吃完飼料／飼料槽空了、單複數），
- * 語料一種組合一條整則的鍵。這一次登入是
- *
- * <pre>
- *   1 item was sold on the Trade Market
- *   and 2 Mounts finished eating while you were offline
- * </pre>
- *
- * 語料沒有這個組合，整則留英文。訊息的分段與顏色照遊戲 log 的 {@code [CHAT/INFO]} 抄的。
- */
 public final class WelcomeBannerTest {
 
     private static int failures = 0;
@@ -56,10 +42,8 @@ public final class WelcomeBannerTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 假語料：只有舊的整則鍵與逐行鍵，沒有這一次的組合。 */
     private static void fixture() throws Exception {
         com.google.gson.JsonObject root = new com.google.gson.JsonObject();
-        // 舊的整則鍵（別的組合），長得跟語料一樣
         root.addProperty(HEAD + "\n\n{#}{~} item was sold on the Trade Market\n{#}and {~} mounts have no food in their feeder",
                 "{#}歡迎來到 Wynncraft！\n{#}play.wynncraft.com -/- wynncraft.com\n\n"
                         + "{#}交易市場上賣出了 {~1} 件物品\n{#}另外有 {~2} 匹坐騎的餵食器沒有食物");
@@ -67,7 +51,6 @@ public final class WelcomeBannerTest {
         root.addProperty("{#}{~} item was sold on the Trade Market", "{#}交易市場上賣出了 {~} 件物品");
         root.addProperty("{#}and {~} Mounts finished eating while you were offline",
                 "{#}另外有 {~} 匹坐騎在你離線期間吃完了食物");
-        // 不是歡迎訊息、可是每一行都有鍵的另一則：不能被逐行組
         root.addProperty("{#}Some other notice", "{#}別的公告");
         root.addProperty("{#}and {~} more lines", "{#}還有 {~} 行");
         Path dir = Files.createTempDirectory("wynnchayuan-welcome-fixture");
@@ -98,12 +81,10 @@ public final class WelcomeBannerTest {
             check("每一行開頭的排版偏移還在", glyphRows(out) >= 4);
         }
 
-        // ★ 有一行查不到就整則放棄，不翻出半中半英
         Component partial = LineTranslator.translateChat(soldAndFed(1, 2, "and 2 Pets are hungry"), store);
         check("★ 有一行查不到：整則不翻（實際 "
               + (partial == null ? "null" : visible(partial.getString())) + "）", partial == null);
 
-        // 不是歡迎訊息的多行訊息，每一行都有鍵也不逐行組
         MutableComponent other = Component.empty();
         other.append(space(0xD0010)).append(lit("Some other notice", WHITE, false));
         other.append(lit("\n", null, false));
@@ -112,7 +93,6 @@ public final class WelcomeBannerTest {
               LineTranslator.translateChat(StyledText.fromComponent(other), store) == null);
     }
 
-    /** 實際語料：七個語言都要翻得出這一次的組合與另外幾種沒有整則鍵的組合。 */
     private static void realCorpus() {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
         List<String> english = List.of("Welcome", "item", "Trade Market", "Mounts", "mounts",
@@ -150,20 +130,10 @@ public final class WelcomeBannerTest {
         }
     }
 
-    /**
-     * ★ 每一行的顏色要跟原文那一行一樣（實機回報，test5）。
-     *
-     * <p>「2 items were sold」那一段用的是整則的舊鍵當前綴，它帶著 {@code {cN}}；
-     * 接在後面的「and 2 Mounts…」沒有，結果整行沿用上一行的紫色，只有數字是對的。
-     * 單數那種（前綴沒有 {@code {cN}}）測不出來，所以這裡用複數。
-     * 原文的顏色照 log 的 {@code [CHAT/INFO]}。
-     */
     private static void colours() {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
-        // 實機截圖那一則
         StyledText shot = soldAndFed(2, 2, "and 2 Mounts finished eating while you were offline",
                                      "items were sold");
-        // 另一種：買進、也賣出、坐騎吃完了
         MutableComponent bought = header();
         bought.append(space(0xD0038));
         bought.append(lit("4", PINK, true));
@@ -191,11 +161,6 @@ public final class WelcomeBannerTest {
         }
     }
 
-    /**
-     * 標頭與內文每一行的顏色。
-     *
-     * @param body 內文每一行 {字的顏色, 數字的顏色}；數字一律要粗體
-     */
     private static void rowColours(String name, Component out, int[][] body) {
         check(name + "：翻得出來", out != null);
         if (out == null) {
@@ -222,10 +187,8 @@ public final class WelcomeBannerTest {
         if (rows.size() != 3 + body.length) {
             return;
         }
-        // 標頭：每一個字都是金色粗體（中日韓的字也是）
         String header = describeRow(rows.get(0), GOLD, -1, true);
         check(name + "：標頭整行金色粗體" + header, header.isEmpty());
-        // 網址那一行：白、「-/-」灰
         boolean url = true;
         for (Object[] c : rows.get(1)) {
             int cp = (Integer) c[0];
@@ -244,13 +207,6 @@ public final class WelcomeBannerTest {
         }
     }
 
-    /**
-     * 一行裡顏色不對的字。
-     *
-     * @param number 數字的顏色；{@code -1} 表示這一行沒有數字要分開看
-     * @param allBold 每一個字都要粗體
-     * @return 不對的字列出來；全對時是空字串
-     */
     private static String describeRow(List<Object[]> row, int text, int number, boolean allBold) {
         StringBuilder bad = new StringBuilder();
         for (Object[] c : row) {
@@ -284,7 +240,6 @@ public final class WelcomeBannerTest {
         return soldAndFed(sold, mounts, second, sold == 1 ? "item was sold" : "items were sold");
     }
 
-    /** 實機那則訊息（log 的 {@code [CHAT/INFO]}）：標頭、空行、賣出、坐騎。 */
     private static StyledText soldAndFed(int sold, int mounts, String second, String verb) {
         MutableComponent all = header();
         all.append(space(0xD003F));
@@ -301,7 +256,6 @@ public final class WelcomeBannerTest {
         return StyledText.fromComponent(all);
     }
 
-    /** 標頭＋幾行內文，內文每一行一個顏色、數字另一個顏色。 */
     private static StyledText banner(String[] body) {
         MutableComponent all = header();
         for (int i = 0; i < body.length; i++) {
@@ -357,10 +311,6 @@ public final class WelcomeBannerTest {
         return Component.literal(text).withStyle(style);
     }
 
-    /**
-     * 行數，不算開頭的空行。原文第一行是空的；整則的舊鍵翻出來也一向沒有那一行，
-     * 這裡比的是內容的行數。
-     */
     private static int rowCount(String text) {
         int start = 0;
         while (start < text.length() && text.charAt(start) == '\n') {
@@ -369,7 +319,6 @@ public final class WelcomeBannerTest {
         return text.substring(start).split("\n", -1).length;
     }
 
-    /** 有幾行帶著排版偏移字元。 */
     private static int glyphRows(Component out) {
         int n = 0;
         for (String row : out.getString().split("\n", -1)) {

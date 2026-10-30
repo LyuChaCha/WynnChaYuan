@@ -15,53 +15,18 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Major ID 的敘述裡引用到的技能名稱，畫面上要換得成中文。
- *
- * <h2>為什麼語料裡看起來是半中半英</h2>
- * 技能與狀態的名稱在敘述裡是<b>刻意留英文</b>的——它們在原文裡各自有顏色，
- * 而顏色是拿原文的字面到譯文裡找的（見 {@code LineTranslator#appendText}）。
- * 語料裡先把名稱換成中文的話，顏色就貼不回去了。
- *
- * <p>真正換掉名稱的是<b>詞表</b>：{@link TranslationStore#findTerm} 在畫的時候
- * 逐個名稱替換。所以「語料裡是英文」是對的，「畫面上還是英文」才是壞的。
- *
- * <pre>
- *   語料  Serpent's Garden 改以你使用 Swan Dive 的落地位置為中心。
- *   畫面  秘技·蛇華苑 改以你使用 飛燕落 的落地位置為中心。
- * </pre>
- *
- * <h2>這條測試在盯什麼</h2>
- * 詞表有兩道門檻會讓名稱靜靜地掉出去：名稱短於
- * {@code MIN_TERM_LENGTH}（四個字元），或是收名稱的檔案沒有標
- * {@code itemNames:false}。掉出去之後畫面上就是英文，而且<b>不會有任何診斷
- * 跳出來</b>——語料是滿的、validate 也是綠的。
- *
- * <p>所以這裡拿真正的 {@code findTerm} 把每一條敘述跑一遍，剩下的英文
- * 必須都在 {@link #PROPER_NOUNS} 裡。要新增例外就得在這裡寫下來，
- * 那正是希望有人看一眼的時候。
- */
 public final class MajorIdTermsTest {
 
     private static int failures = 0;
 
-    /**
-     * 刻意留原文的專有名詞。
-     *
-     * <p>人名、教派名、傳說武器名——整份語料的慣例都是留原文
-     * （{@code Grootslang 之巢}、{@code Corkian 強化道具}），這裡跟著。
-     */
     private static final Set<String> PROPER_NOUNS = Set.of(
-            "Twain",        // Twain's Arc  -> Twain 之弧
-            "Aubri",        // Aubri's Tears -> Aubri 之淚
-            "Flain",        // Flain Remnants -> Flain 殘影
-            "Bakal",        // Bakal's Grasp -> Bakal 之握
-            "Orphion",      // Orphion's Pulse -> Orphion 之脈
-            // 技能在遊戲裡的正式名稱是複數的 Mantle of the Bovemists，
-            // 而 Major ID 的句子用的是單數所有格。譯名跟著技能走。
-            "Bovemists");   // Mantle of the Bovemists -> Bovemists 之庇
+            "Twain",
+            "Aubri",
+            "Flain",
+            "Bakal",
+            "Orphion",
+            "Bovemists");
 
-    /** 鍵盤按鍵不翻。 */
     private static final Set<String> KEYS = Set.of("Shift", "Ctrl", "Alt");
 
     private static final Pattern WORD = Pattern.compile("[A-Za-z][A-Za-z'-]+");
@@ -81,7 +46,6 @@ public final class MajorIdTermsTest {
 
         int descs = 0;
         int swapped = 0;
-        // 用 TreeMap 讓輸出穩定：同一個字每次都印在同一個地方，diff 才看得懂。
         TreeMap<String, String> leftover = new TreeMap<>();
         List<String> blank = new ArrayList<>();
 
@@ -130,15 +94,8 @@ public final class MajorIdTermsTest {
         }
     }
 
-    /** @param count 換掉了幾個名稱 */
     private record Swap(String text, int count) {}
 
-    /**
-     * 照畫面上的做法把名稱換成中文。
-     *
-     * <p>與 {@code LineTranslator#appendText} 同一條路：從左到右找下一個詞表
-     * 命中，命中就換、沒有就把剩下的原樣接上。
-     */
     private static Swap render(String text, TranslationStore store) {
         StringBuilder out = new StringBuilder(text.length());
         int at = 0;

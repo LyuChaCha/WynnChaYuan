@@ -7,29 +7,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 玩家自己取的名字不能進共享語料。
- *
- * <h2>先前壞在哪</h2>
- * 過濾器只擋得住<b>自己</b>的帳號名（{@code {u}} 佔位符也只認自己），別人的一律
- * 穿過去。而且名牌有兩條收集路徑，其中 {@code npc/name} 那條<b>完全沒過濾</b>。
- *
- * <p>一份貢獻者回傳的語料裡因此混進了：隊友技能生成的召喚物
- * （{@code Critar's Totem}、{@code Noxy_OwO's Rubber Duck}）、玩家自己命名的
- * 寵物與飾品（{@code epoch}、{@code oily femboy choker}），以及<b>整批其他玩家
- * 的角色名牌</b>（{@code heal kitty [Lv 106]} 這種）。
- *
- * <h2>這裡釘住什麼</h2>
- * 這條規則真正的風險是<b>誤擋</b>——擋太兇會把正當的怪物名字一起濾掉，而且
- * 不會有任何錯誤訊息，只會安靜地少收東西。所以兩個方向都測，而且誤擋那一邊
- * 是拿<b>真實語料</b>當對照：現有的 npc.json 是人工翻過的，裡面的名字全部都
- * 應該通得過。
- */
 public final class PlayerNameplateTest {
 
     private static int failures = 0;
 
-    /** 真實回報裡漏進來的，全部都要擋下來。 */
     private static final String[] LEAKED = {
         "nunot's Totem",
         "Noxy_OwO's Rubber Duck",
@@ -39,12 +20,10 @@ public final class PlayerNameplateTest {
         "NexusRolly Love",
         "heal kitty {#}[Lv {~}]",
         "coca cola {#}[{~}/{~}]",
-        // 石碑廣播：誰放的就寫誰的名字，後面還跟著座標
         "{#} PoorChaCha has placed a mob totem in {p} at {~}, {~},",
         "{#} You are inside of PoorChaCha's mob totem. Get your own",
     };
 
-    /** 正當的遊戲內容，一個都不能擋。 */
     private static final String[] KEEP = {
         "Grootslang Wyrmling",
         "Voracious Octiped",
@@ -53,11 +32,11 @@ public final class PlayerNameplateTest {
         "Corrupted Goliath",
         "Bob the Zombie",
         "Zombie Pigman",
-        "Orphion's Grace",          // 設定裡的所有格，不是玩家的
+        "Orphion's Grace",
         "Grook's Nest Rewards",
-        "{~}k",                     // 血條的單位，剝掉佔位符只剩一個字母
+        "{~}k",
         "{~}m {#}",
-        "on the Trade Market!",     // 多行提示被折出來的續行
+        "on the Trade Market!",
         "untradable, and quest items",
     };
 
@@ -71,10 +50,6 @@ public final class PlayerNameplateTest {
 
         partyCards();
 
-        // ★ 拿真實語料當對照。npc.json 是人工翻過的，裡面的名字都是遊戲內容。
-        //
-        // 只測上面那幾個手寫的例子是不夠的——真正的風險是某個沒想到的命名
-        // 形狀被規則掃到，而那種東西只有整份語料掃過才看得見。
         Path npc = Path.of("src/main/resources/assets/wynnchayuan/translations",
                            "zh_tw/npc.json");
         if (!Files.isRegularFile(npc)) {
@@ -99,21 +74,6 @@ public final class PlayerNameplateTest {
         for (String b : blocked) {
             System.out.println("        · " + b);
         }
-        // 已知且可接受的誤擋。
-        //
-        // 這兩條是多行提示被折出來的續行，結構上跟「oily femboy choker」
-        // 一模一樣（開頭小寫、兩三個字、不帶句讀），分不出來。
-        //
-        // 接受它們，是因為<b>擋掉它們沒有任何損失</b>：兩者的整段都另外收了
-        // （「Blacksmith⏎Sell, scrap, and⏎repair items」），而按「逐行 vs 整段」
-        // 的規矩，整段本來就才是該用的鍵——只翻其中一行會夾出半中半英。
-        //
-        // 清單寫死在這裡是刻意的：將來有人放寬規則、造成<b>新的</b>誤擋，
-        // 這條就會紅，而那正是需要有人看一眼的時候。
-        // ★ 翻譯團隊跑一場討伐戰回傳的語料裡漏掉的那幾類。
-        //
-        // 「Watari has chosen the Elder III buff!」一場就收進 80 條——前面那個是
-        // 隊友的 ID。隊伍搜尋則是每一支隊伍兩條（名稱與隊長）。
         check("擋得下增益選擇（帶隊友 ID）",
               com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(
                       "{#} Watari has chosen the Elder III buff!"));
@@ -124,7 +84,6 @@ public final class PlayerNameplateTest {
               com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(
                       "Leader: TheTankZone__"));
 
-        // 討伐戰的死亡與治療訊息。句子是遊戲的模板，主詞永遠是隊友的 ID。
         for (String death : new String[] {
                 "{#} Watari was purified by Orphion.",
                 "{#} King lost their color to The Parasite.",
@@ -138,20 +97,14 @@ public final class PlayerNameplateTest {
                 "{#} Yorikatsu{~} has been overtaken! Keep attacking The"
                         + " {#} Parasite to save them!",
                 "{#} userUwU has gotten a Steampunk Spear from their crate!",
-                // 聊天室折行折在 their 後面，下一片還補了符號
                 "{#} Sleepy toaster has gotten a Gray Wybel from their\n{#} crate!\n"
                         + "{#} Get your own at wynncraft.com/store or type /store",
-                // Loot 以外的炸彈到期，主詞一樣是丟炸彈的人
                 "{#} Sleepy toaster Combat Experience Bomb has expired! \n"
                         + "{#} Get your own bombs at wynncraft.com/store",
-                // 立牌署名，名字有空白
                 "Toaster Alleyway\nby Very Sleepy Toasters",
-                // 市集篩選：冒號後面是玩家打的搜尋字
                 "- Name Contains: Ripe Aureate Fruit",
-                // 地圖上的死亡快訊，主詞是死掉的玩家
                 "Sleepy Toaster has Scarlet Megabat to thank for their death",
                 "Toaster got a new skull piercing from T-{~} Overseer",
-                // 主詞帶數字的帳號名，任何動詞都擋
                 "Toaster{~} was sniped by T-{~} Overseer",
                 "{#} toaster{~} was de-animated by the powers of\n{#} Encroaching Tunneler",
                 "{#}Crafted by Bunnub",
@@ -160,8 +113,6 @@ public final class PlayerNameplateTest {
                 "Weeeeeeeeeezard was minced to bits by the Grootslang.",
                 "{#}{#}Weeeeeeeeeezard began to glow and then faded into nothing.",
                 "Linger{~}_ has been crystallized!",
-                // 公會的領地全像投影與成員名牌：公會名沒有形狀可以認，
-                // 靠底下那一行 < ... > 把整塊擋掉。
                 "YuChaYuan\n< Season {~} - Platinum >",
                 "YuChaYuan\n< Radiant >",
                 "{#} Party Finder: Hey MorphCascade, over here! Join the queue"}) {
@@ -169,8 +120,6 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(death));
         }
 
-        // 介面裡整格就是一個帳號名的情況（隊伍、好友、公會清單的玩家頭顱）。
-        // 片語比對抓不到這些，實機的 captured.json 就混進了六個。
         for (String who : new String[] {
                 "{#}{#}PoorChaCha", "{#}RichaCha", "{#}ChangJenChief",
                 "{#}PeeYan Hunter", "YuChaYuan [YCY]", "- [{~}] YuanYoIn",
@@ -179,9 +128,6 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.looksAccountNamed(who));
         }
 
-        // 公會清單的一列。公會名是玩家取的，什麼樣子都有——靠名字的形狀
-        // （底線、駝峰）幾乎全部擋不住，實機開一次公會選單就漏了七個。
-        // 認得出來的是<b>那一列的形狀</b>：結尾是方括號包起來的二到四碼標籤。
         for (String guild : new String[] {
                 "- RabbitHouse [Maya]", "- Blank [BLK]", "- TimeCity [tmxt]",
                 "- Uchouten Tea House [THTS]", "- Death Star [LIVE]",
@@ -190,11 +136,6 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(guild));
         }
 
-        // ★ 隊伍計分板那一欄，與帶箭頭的交易／收送紀錄。
-        //
-        // 這兩類是<b>出現次數最高</b>的漏網之魚：一份實機 captured.json 裡
-        // 前十一條全是隊友的名字，光第一條就記了 2438 次。名字被欄寬截斷、
-        // 數字又先變成 {~}，字形那幾條判準整個落空。
         for (String row : new String[] {
                 "- [||{~}||] PoorChaC [{~}]",
                 "- [||{~}{~}||] {~}tao_ [{~}]",
@@ -207,10 +148,6 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(row));
         }
 
-        // ★ 反方向：破折號開頭的<b>數量列</b>不能一起擋。
-        //
-        // 「- {~}x 松木板」跟隊友那一列只差在後面還接著東西。規則放寬一個字
-        // 就會掃掉一百多條正當的語料——這幾條就是當時量出來的。
         for (String amount : new String[] {
                 "- {~}x Pine Plank", "- {~}x Corkian Amplifier III",
                 "- {~}m Guild Experience", "- {~}x {#}{#}Cumulonimbus"}) {
@@ -218,10 +155,6 @@ public final class PlayerNameplateTest {
                   !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(amount));
         }
 
-        // ★ 反方向：長得有點像、但不是公會清單的那些。
-        //
-        // 這條規則只認「整行就是一個名字加標籤」。方括號裡有空白、斜線或
-        // 百分比的都不算，遊戲自己的介面字才不會被掃到。
         for (String ui : new String[] {
                 "[+2800 ❤] Potions of Healing [9/30]",
                 "Willow [67.5%]", "Emerald Pouch [Tier 8]",
@@ -230,22 +163,15 @@ public final class PlayerNameplateTest {
                   !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(ui));
         }
 
-        // ★ 反方向：介面文字不能被這條規則掃到。判準比名牌那支嚴，
-        //   因為介面滿是被折出來的小寫續行，寬判準量過去會誤擋 62 條。
         for (String ui : new String[] {
                 "to confirm", "offering better chances", "Reward Sacrifices",
                 "Active Boosts", "Unlock Rewards", "Emerald Block",
                 "You will be in permanent hunted mode (PvP on)",
-                // 地城鑰匙中間那幾個 À 是對齊字元，不是駝峰。
                 "UnderworldÀÀÀCrypt Key", "Broken DecrepitÀÀÀSewers Key"}) {
             check("不誤擋介面文字：" + ui,
                   !com.wynnchayuan.capture.PlayerDataFilter.looksAccountNamed(ui));
         }
 
-        // ★ 反方向：同樣帶所有格的<b>物品名</b>一個都不能誤擋。
-        //
-        // 只測「擋得下來」的話，把所有 X's Y 擋死也會全過——而語料裡那種形狀的
-        // 物品名多得是。
         for (String item : new String[] {
                 "Famished's Gambit", "Harvester's Tome of Mysticism III",
                 "Major's Badge", "Heroine's Blessing: Devout",
@@ -254,18 +180,10 @@ public final class PlayerNameplateTest {
                   !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(item));
         }
 
-        // ★ 這一輪跑世界事件回傳的語料裡漏掉的四類。
-        //
-        // 四類的共同點是<b>名字沒有出現在線上名單能比對的形狀裡</b>：
-        // 被折行截斷、被數字佔位符吃掉半截、或是伺服器根本沒把那個人
-        // 放進分頁清單。所以四條都改認<b>句型</b>，不認名字。
         for (String leak : new String[] {
-                // 死亡快訊走標題那條路，前綴是連著的兩個符號、中間沒有空白
                 "ChangJenChief has died",
                 "{#}{#}ChangJenChief has died",
-                // 名字開頭是數字，數字先被抽成佔位符，剩下半截名字
                 "{~}jimmy's Totem of Tales",
-                // 寶物炸彈廣播被折成好幾片，名字散在不同片上
                 "{#} {#}JC grindeando has thrown a",
                 "{#} {#}Thank JC grindeando",
                 "{#} JC grindeando Loot Bomb has expired! "
@@ -274,11 +192,6 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(leak));
         }
 
-        // ★ 反方向：同一批語料裡<b>該收</b>的那些一條都不能誤擋。
-        //
-        // 上面四條都用句型比對，句型比對最容易連坐到旁邊的正常句子——
-        // 「Totem of Tales」不帶所有格時是遊戲自己的提示，
-        // 「has died」不接在行首的一個詞後面時是劇情。
         for (String keep : new String[] {
                 "{#} You are gaining effects from a Totem of Tales!",
                 "{#} You did not enter the event radius in time",
@@ -299,23 +212,11 @@ public final class PlayerNameplateTest {
         report();
     }
 
-    /**
-     * 組隊尋找清單上的隊伍名不進語料。
-     *
-     * <h2>怎麼漏掉的</h2>
-     * 隊伍名是玩家自己打的字——實機那一份 captured.json 裡有
-     * {@code Batcave}、{@code Gikyu Boss Fight :(}、{@code Scrapyard dxp totems}。
-     * 它們沒有底線也沒有駝峰，{@code looksPlayerNamed} 認不出來；也沒有公會標籤，
-     * {@code GUILD_TAG} 一樣認不出來。逐行看永遠擋不住。
-     *
-     * <p>擋得住的是<b>整份</b>：卡片上一定有一行伺服器世界，那是遊戲自己排的。
-     */
     private static void partyCards() {
         List<String> card = List.of(
                 "Batcave", "World: NA{~}", "✖ This party's world is full");
         check("認得出隊伍卡", PlayerDataFilter.isPartyCard(card));
 
-        // 反面：一般的介面 tooltip 不能被誤認，不然那些標題就白白少收了
         check("素材袋不是隊伍卡", !PlayerDataFilter.isPartyCard(
                 List.of("Packed Crafter Bag [{~}/{~}]", "Contains one of several")));
         check("技能節點不是隊伍卡", !PlayerDataFilter.isPartyCard(
@@ -323,7 +224,6 @@ public final class PlayerNameplateTest {
         check("空的不是隊伍卡", !PlayerDataFilter.isPartyCard(List.of()));
         check("null 不是隊伍卡", !PlayerDataFilter.isPartyCard(null));
 
-        // 世界那一行本身是正常的介面字，收得到才對——擋的只有標題
         check("世界那一行不算玩家資料",
                 !PlayerDataFilter.carriesPlayerData("World: NA{~}"));
     }

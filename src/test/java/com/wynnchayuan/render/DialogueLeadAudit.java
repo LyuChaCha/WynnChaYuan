@@ -17,27 +17,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * 量表：NPC 台詞逐字打出來時，<b>第一個中文出現之前，畫面上已經打了幾個英文字元</b>。
- *
- * <p>不是合併關卡（數字隨語料而動），是給人看的報告：
- * {@code gradle runDialogueLeadAudit [-Plang=zh_cn] [-Pevery=3]}。
- *
- * <h2>量哪幾種情境</h2>
- * <ul>
- *   <li><b>單句</b>：每一句各自打（上一句是什麼不知道），追蹤／沒追蹤任務各一輪。</li>
- *   <li><b>連續</b>：同一個任務的台詞照語料的順序一句接一句打——實機的對話本來就是
- *       這樣進來的。名牌（說話者）照語料的 speaker 填。</li>
- * </ul>
- * 另外量「貼錯」：任何一幀的中文<b>不是這一句自己譯文的開頭</b>就算一句。
- * 正確答案取「這一句單獨打完、停下來」那一幀的結果。
- */
 public final class DialogueLeadAudit {
 
     private static final int WIDTH = 232;
     private static final int STILL_FRAMES = 12;
 
-    /** 模擬用的玩家名。Wynncraft 在對話裡送的是全大寫。 */
     private static final String PLAYER = "STEVEN";
 
     record Line(String quest, String raw, String speaker, String group, String stage) {}
@@ -48,7 +32,6 @@ public final class DialogueLeadAudit {
         String lang = System.getProperty("wcy.lang", Languages.DEFAULT);
         int every = Integer.parseInt(System.getProperty("wcy.every", "1"));
         SelfNames.remember(PLAYER);
-        // 實驗開關：-Pvariant=nospeaker / floor3 / floor2 / nounplaced
         String variant = System.getProperty("wcy.variant", "");
         DialogueForecast.speakerScope = !variant.contains("nospeaker");
         DialogueForecast.nextLine = !variant.contains("nonext");
@@ -90,7 +73,6 @@ public final class DialogueLeadAudit {
         System.out.println("語言 " + lang + "：故事 " + picked.size() + " 個、台詞 " + total
                 + " 句、未歸屬台詞 " + flat.size() + " 句");
 
-        // 正確答案：單獨打完、停下來那一幀
         Map<String, String> answer = new java.util.HashMap<>();
         Map<String, String> panelAnswer = new java.util.HashMap<>();
         for (List<Line> story : picked.values()) {
@@ -115,7 +97,6 @@ public final class DialogueLeadAudit {
                 run(path + "・連續・" + t + "・有名牌", picked, store, want, panel, tracked, true, true);
             }
         }
-        // 沒歸到任務的台詞：沒有任務、沒有順序可言
         Stats s = new Stats("就地取代・未歸屬台詞（quest.json）");
         for (Line l : flat) {
             CurrentQuest.set(null);
@@ -150,8 +131,6 @@ public final class DialogueLeadAudit {
                     DialogueForecast.forgetAll();
                     panelCache = new String[3];
                 }
-                // 進度條：照 wiki 的階段切成一段一段對話，一段的最後一句停在滿格，
-                // 其他句停在半格（「還沒講完」）。單句模擬沒有上一句，不給。
                 boolean lastOfTalk = li + 1 >= story.size()
                         || !story.get(li + 1).stage().equals(l.stage());
                 com.wynnchayuan.capture.DialogueProgress.settle(
@@ -172,10 +151,6 @@ public final class DialogueLeadAudit {
         byGroup.values().forEach(Stats::print);
     }
 
-    /**
-     * 一個任務逐句列出：沒追蹤任務、有名牌、一句接一句，預測關／開各打幾個英文字元。
-     * 給實機測試挑句子用：{@code -Pquest="King's Recruit"}。
-     */
     private static void perLine(List<Line> story, TranslationStore store) {
         if (story == null) {
             System.out.println("沒有這個任務");
@@ -209,12 +184,9 @@ public final class DialogueLeadAudit {
         }
     }
 
-    /** 名牌。測試用的入口，實機由 ActionBarListener 從原始訊息讀。 */
     static void speak(String name) {
         DialogueSpeaker.noteName(name);
     }
-
-    // ------------------------------------------------------------------
 
     static final class Stats {
         final String title;
@@ -237,7 +209,6 @@ public final class DialogueLeadAudit {
         }
 
         void add(List<String> frames, int length, String want) {
-            // 空字串是「認出來之前先空著」（DialogueRewriter#holds）：不是中文，也不是英文
             int first = -1;
             for (int i = 0; i < frames.size(); i++) {
                 if (frames.get(i) != null && !frames.get(i).isEmpty()) {
@@ -263,7 +234,6 @@ public final class DialogueLeadAudit {
                     english++;
                 }
             }
-            // 平不平順：一個英文字進來，中文長了幾個字；有沒有倒退
             int prevLen = -1;
             int maxJump = 0;
             boolean back = false;
@@ -339,7 +309,6 @@ public final class DialogueLeadAudit {
             }
         }
 
-        /** 只比譯文自己的字：名字、地名、數字是逐字填進去的，打到一半時本來就不一樣。 */
         static String core(String text) {
             StringBuilder out = new StringBuilder();
             text.codePoints().filter(cp -> cp > 0x7F && !Character.isWhitespace(cp))
@@ -350,10 +319,6 @@ public final class DialogueLeadAudit {
         final Map<String, Integer> reasons = new java.util.TreeMap<>();
         int slow;
 
-        /**
-         * 空白至少 {@link #SLOW} 個字（或放了英文）的句子：最後一個空白幀為什麼還認不出來。
-         * 用這一句開始時的「上一句」重算兩層的判斷，記下卡在哪一關。
-         */
         void why(List<String> frames, Line l, TranslationStore store, String anchor,
                  int anchorAt, String trackedQuest) {
             int blank = 0;
@@ -426,8 +391,6 @@ public final class DialogueLeadAudit {
         }
     }
 
-    // ------------------------------------------------------------------
-
     static List<String> typeOut(String src, TranslationStore store) {
         List<String> frames = new ArrayList<>();
         for (int at = 1; at <= src.length(); at++) {
@@ -441,12 +404,10 @@ public final class DialogueLeadAudit {
         return frames;
     }
 
-    /** 一個字多少毫秒。實機打字大約每秒二三十個字；-PmsPerChar= 可以換。 */
     static final int MS_PER_CHAR = Integer.getInteger("wcy.msPerChar", 40);
 
     private static long fakeNow = 1_000_000L;
 
-    /** 逐字模擬的時鐘：一幀推進一個字的時間（就地取代「先空著」的上限照它算）。 */
     private static void tick() {
         fakeNow += MS_PER_CHAR;
         DialogueRewriter.holdClock = () -> fakeNow;
@@ -462,7 +423,6 @@ public final class DialogueLeadAudit {
 
     private static String[] panelCache = new String[3];
 
-    /** 小框的快取倒掉（換一段對話）。 */
     static void resetPanel() {
         panelCache = new String[3];
     }
@@ -481,7 +441,6 @@ public final class DialogueLeadAudit {
     private static String panelFrame(String raw, TranslationStore store, boolean steady) {
         com.wynntils.core.text.StyledText line = DialogueIcons.line(raw, store);
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
-        // 跟 DialogueOverlay#setCurrent 一樣：同一句（原文往後長）才沿用
         boolean same = DialogueOverlay.continues(panelCache[2], raw);
         panelCache[2] = raw;
         if (same && DialogueOverlay.canReuse(panelCache[0], template)) {
@@ -513,14 +472,6 @@ public final class DialogueLeadAudit {
         return frames.isEmpty() ? null : frames.get(frames.size() - 1);
     }
 
-    // ------------------------------------------------------------------
-
-    /**
-     * 照語料順序讀一個 bundle，一個故事一串。
-     *
-     * <p>只收台詞（{@code kind} 是 dialogue）。同一句台詞收了 wiki 與實機兩條的，
-     * 實機只會送其中一條——wiki 那條旁邊兩格內有一條實機收的、用字重疊過半，就跳過它。
-     */
     static void read(Path file, String group, Map<String, List<Line>> out)
             throws Exception {
         if (!Files.isRegularFile(file)) {
@@ -555,7 +506,7 @@ public final class DialogueLeadAudit {
                 }
                 String stage = str(e, "stage");
                 if (stage.isBlank()) {
-                    stage = lastStage;             // 實機收的沒標階段：跟著前一句
+                    stage = lastStage;
                 }
                 lastStage = stage;
                 lines.add(new Line(story.getKey(), shown, emptyToNull(str(e, "speaker")), group,
@@ -603,7 +554,6 @@ public final class DialogueLeadAudit {
         return out;
     }
 
-    /** 佔位符換回畫面上會出現的樣子；圖示與顏色那類還原不回去的整句跳過。 */
     private static String fill(String src) {
         if (src.isEmpty() || src.contains("{#}") || src.contains("\n")) {
             return null;

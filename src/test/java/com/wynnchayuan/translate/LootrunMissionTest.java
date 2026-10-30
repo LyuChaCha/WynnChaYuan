@@ -8,15 +8,6 @@ import net.minecraft.network.chat.Style;
 
 import java.nio.file.Path;
 
-/**
- * Lootrun 使命名：不被同名的裝備搶走，並且照「任務與洞窟名稱」的設定附原文。
- *
- * <h2>實機回報（使用者 2026-10-14）</h2>
- * 使命 {@code Equilibrium} 跟一頂頭盔同名，聊天面板上畫成「平衡之盔 (Equilibrium)」；
- * 另外希望使命名也能像物品一樣在後面附 (原文)。見 {@link LootrunNames}。
- *
- * <p>期望的字從語料取，不寫死措辭。
- */
 public final class LootrunMissionTest {
 
     private static int failures = 0;
@@ -85,7 +76,6 @@ public final class LootrunMissionTest {
         }
     }
 
-    /** 兩欄併排的面板那一行：排版偏移、左欄、排版偏移、右欄。 */
     private static String chat(TranslationStore store, String left, String right) {
         MutableComponent row = Component.empty();
         row.append(offset(36)).append(Component.literal(left))

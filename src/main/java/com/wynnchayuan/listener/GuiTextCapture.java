@@ -10,23 +10,8 @@ import net.minecraft.world.item.Items;
 
 import java.util.List;
 
-/**
- * 收集介面文字（公會選單、任務書、製作台這類 GUI 的 tooltip）。
- *
- * <h2>為什麼這個要另外開關</h2>
- * 裝備與技能的文案可以從官方 CDN 完整離線取得，在遊戲裡掃是重工——
- * 所以預設不收 tooltip。
- *
- * <p>但伺服器自製的 GUI（公會週目標、任務書、製作台）<b>不在任何官方資料裡</b>，
- * 只能靠玩家打開那些畫面才會被記下來。這是唯一的取得方式。
- *
- * <p>做成獨立開關而不是預設開啟：平常玩的時候一直掃背包只會累積大量
- * 「其實 CDN 已經有」的裝備文字，把真正缺的 GUI 字串淹掉。
- * 想補 GUI 翻譯時再打開，逛一輪選單就夠了。
- */
 public final class GuiTextCapture {
 
-    /** 上一次處理過的內容，用來跳過同一份 tooltip 的後續幀。 */
     private static List<Component> lastSeen = List.of();
 
     private GuiTextCapture() {}
@@ -35,10 +20,6 @@ public final class GuiTextCapture {
         record(tooltip, ItemStack.EMPTY);
     }
 
-    /**
-     * @param stack 這份 tooltip 屬於哪一格。玩家頭顱的第一行<b>一定</b>是帳號名，
-     *              見下面的說明。
-     */
     public static void record(List<Component> tooltip, ItemStack stack) {
         if (tooltip == null || tooltip.isEmpty()
                 || !WynnChaYuan.config().collect()
@@ -46,49 +27,26 @@ public final class GuiTextCapture {
             return;
         }
         if (tooltip.equals(lastSeen)) {
-            return;                            // 同一份的下一幀，沒有新東西
+            return;
         }
         lastSeen = List.copyOf(tooltip);
 
-        // 玩家頭顱的標題就是帳號名，一個都不要收。
-        //
-        // <h2>為什麼要看格子而不是看字串</h2>
-        // 帳號名<b>沒有形狀</b>可以認：Cynrik、Kicev、Neonrat、Idrisu 跟隨便一個
-        // 奇幻 NPC 名長得一模一樣，只有底線與駝峰那種才擋得下來。實機開一次公會
-        // 成員清單就漏了二十幾個真人 ID 進共享語料——那是不能出事的一類。
-        //
-        // 但「這一格是玩家頭顱」是<b>確定</b>的事實，不是猜的。公會成員、隊伍、
-        // 好友、排行榜全部用頭顱擺人，所以擋這個就等於擋掉整類。
-        //
-        // 只跳過標題那一行：底下的「Left-Click to set rank」那些是正常的介面字，
-        // 照收。
         boolean skipTitle = stack != null && stack.is(Items.PLAYER_HEAD);
 
-        // 先把整份攤成模板再決定要不要收。
-        //
-        // 「這是不是一張隊伍卡」看的是<b>整份</b>——卡片上那一行伺服器世界
-        // （World: NA{~}）是遊戲自己排的，而標題是玩家打的字。逐行看的時候
-        // 標題還沒遇到那一行，判斷不出來。見 PlayerDataFilter#isPartyCard。
         List<String> templates = new java.util.ArrayList<>(tooltip.size());
         for (Component line : tooltip) {
             StyledText styled = StyledText.fromComponent(line);
             if (GlyphSplitter.isGlyphOnly(styled)) {
-                templates.add(null);           // 純圖示的分隔行
+                templates.add(null);
                 continue;
             }
             templates.add(GlyphSplitter.toTemplate(styled));
         }
-        // 隊伍名是玩家自己取的，跟帳號名一樣不進共享語料。
         skipTitle = skipTitle || PlayerDataFilter.isPartyCard(templates);
-        // 算繪那一端拿不到 ItemStack（{@code TooltipPanel#translateLines} 只有幾行
-        // 文字），但它也要擋玩家頭顱。這裡<b>先</b>跑，而且判斷已經算好了，
-        // 順手交過去——多寫一份判斷遲早會不一致。見 CardDump。
         com.wynnchayuan.capture.CardDump.fromPlayerHead(
                 stack != null && stack.is(Items.PLAYER_HEAD));
-        // 整段翻好了的，它的每一行都不是缺口。見 #covered。
         boolean[] covered = covered(templates, GuiTextCapture::whole);
 
-        // 標題是第一行有字的。底下每一段都帶著它（in），譯者才知道是哪一件東西的說明。
         int titleAt = -1;
         for (int i = 0; i < templates.size(); i++) {
             String t = templates.get(i);
@@ -102,9 +60,6 @@ public final class GuiTextCapture {
         }
         String title = null;
         String head = templates.get(titleAt);
-        // 公會選單常帶成員名稱；隊伍與好友介面則是<b>整格就是一個帳號名</b>
-        // （玩家頭顱的標題），那種片語比對抓不到——實機收到的 captured.json
-        // 裡就混進了六個玩家與公會名。見 PlayerDataFilter#looksAccountNamed。
         if (skipTitle || PlayerDataFilter.carriesPlayerData(head)
                 || PlayerDataFilter.looksAccountNamed(head)) {
             WynnChaYuan.store().noteEvent("gui.blocked.playerData");
@@ -127,28 +82,6 @@ public final class GuiTextCapture {
         }
     }
 
-    /**
-     * 標題底下要收的東西：一段一條。
-     *
-     * <h2>為什麼一段一條</h2>
-     * tooltip 的一句話被寬度切成好幾行。先前一行收一條，captured.json 裡就是
-     * 「restores {~} Mana to all」「nearby players every {~}s.」這種半句，散在
-     * 檔案各處，譯者要自己猜前後文；照著補又會補出逐行條目，蓋掉整段那條路。
-     * 現在照畫面的樣子把整段接起來（{@code gui/block}，行與行之間是換行），
-     * 收語料時再接成一句。
-     *
-     * <h2>什麼時候還是一行一條</h2>
-     * 段落裡有哪一行<b>自己</b>就有譯文——那是條列（「- {~}x Mydium」那種），
-     * 語料本來就是一行一條，硬接起來反而對不上。這時照舊逐行收（{@code gui/line}）。
-     *
-     * <h2>玩家資料</h2>
-     * 一段裡只要有一行帶著玩家資料，整段都不收：接回去的句子會把名字夾在中間。
-     *
-     * @param from       從哪一行開始（標題的下一行）
-     * @param translated 這一行自己有沒有譯文
-     * @param personal   這一行是不是帶著玩家資料
-     * @return 每一筆是 {模板, ctx}；ctx 是 {@code null} 的那筆是事件名（只記次數）
-     */
     static List<String[]> rows(List<String> templates, boolean[] covered, int from,
                                java.util.function.Predicate<String> translated,
                                java.util.function.Predicate<String> personal) {
@@ -204,30 +137,6 @@ public final class GuiTextCapture {
         out.add(new String[] {String.join("\n", words), "gui/block"});
     }
 
-    /**
-     * 哪幾行屬於<b>整段已經翻好</b>的段落。
-     *
-     * <h2>為什麼需要這個</h2>
-     * tooltip 的一段話在畫面上是被寬度切成好幾行的，而語料收的是<b>整段</b>：
-     *
-     * <pre>
-     *   畫面  Contains one of several
-     *         exclusive ingredients in
-     *         high quantities.
-     *   語料  Contains one of several exclusive ingredients in high quantities.
-     *         內含數種專屬素材之一，數量豐沛。
-     * </pre>
-     *
-     * 逐行問「這一行翻了沒」，三行都是「沒有」——於是整段明明翻好了，
-     * captured.json 還是把三行都列成缺口。實機那一份 123 條裡有 70 條是這種。
-     *
-     * <p>後果不只是雜訊：翻譯團隊照著清單補，補出來的是<b>逐行</b>條目，
-     * 而逐行條目會蓋掉整段那條路，畫面上就成了半中半英。
-     *
-     * <p>整段是什麼，這裡<b>知道</b>——同一份 tooltip 裡連續的幾行就是一段，
-     * 中間隔著純圖示或空白行。所以在這裡問一次整段，比在別處猜便宜也準。
-     * 空白接法與換行接法都問：語料兩種形狀都有。
-     */
     static boolean[] covered(List<String> templates,
                              java.util.function.Predicate<List<String>> known) {
         boolean[] out = new boolean[templates.size()];
@@ -253,31 +162,10 @@ public final class GuiTextCapture {
         return out;
     }
 
-    /** 這幾行接起來，語料裡有沒有。見 {@link #covered}。 */
     private static boolean whole(List<String> lines) {
         return whole(lines, WynnChaYuan.translations());
     }
 
-    /**
-     * 同上，語料由呼叫端給——測試用得到。
-     *
-     * <h2>置中的段落要先剝掉行首的偏移</h2>
-     * 坐騎飼料那種置中的說明，每一行前面都掛著一個推位置用的排版偏移，抽成模板
-     * 就是行首的 {@code {#}}：
-     *
-     * <pre>
-     *   {#}Feed to your Mount to upgrade its
-     *   {#}Acceleration, Toughness and Speed
-     *   {#}Can be used to purchase blocks in
-     * </pre>
-     *
-     * 那幾個 {@code {#}} 的數量取決於<b>斷成幾行</b>，是排版不是內容；語料裡的那一條
-     * 是乾淨的兩句話，而且斷行位置跟畫面上不一樣。原樣接起來怎麼問都是「沒有」，
-     * 於是畫面上明明是中文，captured.json 還是一行一行列成缺口（每一行十幾次）。
-     *
-     * <p>顯示那一端早就這樣查了（{@code LineTranslator#rejoin} 剝行首偏移、
-     * {@code lookupFlat} 不管斷行），這裡問同一個問題。
-     */
     static boolean whole(List<String> lines, com.wynnchayuan.translate.TranslationStore store) {
         if (store == null) {
             return false;

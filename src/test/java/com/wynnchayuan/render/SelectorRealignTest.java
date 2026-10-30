@@ -11,13 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * {@code /class} 的第一個原型圖示要被拉回跟其他格子同一個錨點；Wynncraft 自己
- * 修好之後這裡要自動變成什麼都不做。
- *
- * <p>資料照 2026-10-05 實機的 {@code actionbar-columns-2.txt} 原文側縮排：
- * 提示列 {@code bottom_middle} 淨寬 +39 排在第二個，第一格在它前面。
- */
 public final class SelectorRealignTest {
 
     private static int failures = 0;
@@ -29,7 +22,6 @@ public final class SelectorRealignTest {
     private static final String OURS = "wynnchayuan:actionbar/zh_tw/selector_desc_2";
 
     public static void main(String[] args) {
-        // 跟實機一樣的順序：第一格、提示列（淨 +39）、其餘格子
         MutableComponent broken = Component.empty();
         slot(broken, ARCH0, 12, "icon", 0);
         slot(broken, BOTTOM, -210, "hint-row", 39);
@@ -50,7 +42,6 @@ public final class SelectorRealignTest {
         SelectorRealign.Result again = SelectorRealign.apply(fixed.out(), SelectorRealignTest::fake);
         check("再跑一次不會再插（冪等）", !again.changed());
 
-        // Wynncraft 修好的樣子之一：第一格移到提示列後面
         MutableComponent reordered = Component.empty();
         slot(reordered, BOTTOM, -210, "hint-row", 39);
         slot(reordered, ARCH0, 12, "icon", 0);
@@ -58,7 +49,6 @@ public final class SelectorRealignTest {
         check("格子順序對了就什麼都不做",
               !SelectorRealign.apply(reordered, SelectorRealignTest::fake).changed());
 
-        // Wynncraft 修好的樣子之二：提示列淨寬改成 0
         MutableComponent balanced = Component.empty();
         slot(balanced, ARCH0, 12, "icon", 0);
         slot(balanced, BOTTOM, -230, "hint-row", 0);
@@ -66,7 +56,6 @@ public final class SelectorRealignTest {
         check("提示列淨寬 0 就什麼都不做",
               !SelectorRealign.apply(balanced, SelectorRealignTest::fake).changed());
 
-        // 已翻的格子：配對字型的譯文加補白夾在中間，仍然是同一格
         MutableComponent translated = Component.empty();
         slot(translated, ARCH0, 12, "icon", 0);
         slot(translated, BOTTOM, -210, "hint-row", 39);
@@ -79,8 +68,6 @@ public final class SelectorRealignTest {
         check("已翻的格子不會被切成兩半（只插一對）", mixed.changed() && spaces(mixed.out()) == 3);
         check("已翻那一行的總寬也不變", width(translated) == width(mixed.out()));
 
-        // Wynncraft 送來的元件順序不固定：排在提示列前面的格子比較多時，
-        // 錨點仍然是行尾（提示列後面那一格的起點），不能靠多數決。
         MutableComponent frontHeavy = Component.empty();
         slot(frontHeavy, ARCH0, 12, "icon", 0);
         slot(frontHeavy, DESC2, 36, "description", 0);
@@ -93,7 +80,6 @@ public final class SelectorRealignTest {
               starts(heavy.out()).stream().allMatch(s -> s == 39));
         check("後面那一格沒被動（只插一對）", spaces(heavy.out()) == 2);
 
-        // 不是 selector 的行一個字都不碰
         MutableComponent plain = Component.empty();
         plain.append(piece("default", "100/100"));
         SelectorRealign.Result none = SelectorRealign.apply(plain, SelectorRealignTest::fake);
@@ -106,10 +92,6 @@ public final class SelectorRealignTest {
         }
     }
 
-    /**
-     * {@code [跳 +a] 內容 [退回 -b]} 三段，同一份字型；退回量照 {@code net}
-     * 算回來（假的量寬是一個字 1 px，不能直接抄實機的數字）。
-     */
     private static void slot(MutableComponent out, String font, int jump, String body, int net) {
         out.append(piece(font, SpaceOffset.encode(jump)));
         out.append(piece(font, body));
@@ -123,7 +105,6 @@ public final class SelectorRealignTest {
                 Style.EMPTY.withFont(new FontDescription.Resource(id)));
     }
 
-    /** 假的量寬：位移字元照碼位解、其餘一個字 1 px。 */
     private static int fake(Component piece) {
         int[] total = {0};
         piece.visit((style, text) -> {
@@ -140,7 +121,6 @@ public final class SelectorRealignTest {
         return fake(message);
     }
 
-    /** 每一個定位格的起點（相對行首）。 */
     private static List<Integer> starts(Component message) {
         List<Integer> out = new ArrayList<>();
         int[] cursor = {0};

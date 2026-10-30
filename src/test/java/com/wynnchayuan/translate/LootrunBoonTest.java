@@ -12,9 +12,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Lootrun 賜福（boon）的敘述：整段沒翻時一個字都不翻，整段翻了要折得好看、顏色跟著來源走。
- */
 public final class LootrunBoonTest {
 
     private static int failures = 0;
@@ -57,11 +54,6 @@ public final class LootrunBoonTest {
         tip.add(line(GREY, "Persnickety"));
         tip.add(line(GREY, " "));
         tip.add(line(GREY, "Once you have been offered a"));
-        // 這一行故意改成遊戲裡沒有的顏色組合。
-        //
-        // 原本用的是實機的「Blue or Purple Beacon more」，但語料後來補上了 Persnickety 的整段譯文，
-        // 整段一翻就收成較少行，這個測試要驗的「整段沒翻時一個字都不翻」就測不到了。
-        // 換成語料永遠不會有的句子，測的才一直是「查不到整段」這條路。
         tip.add(line(GREY, "Grey or Silver Beacon more"));
         tip.add(join(part(GREY, "than "), part(AQUA, "20"), part(GREY, " times this Lootrun,")));
         tip.add(join(part(GREY, "gain "), part(AQUA, "+50%"), part(GREY, " Walk Speed")));
@@ -117,7 +109,6 @@ public final class LootrunBoonTest {
               valueRow >= 0 && valueRow == iconRow);
         check("數值用原文數值的顏色", colourOf(out, "2") == 0x55FFFF);
         check("屬性名用原文屬性名的顏色", colourOf(out, "防禦") == 0xFF5555);
-        // 期望的字從語料取，不寫死措辭：翻譯團隊改譯法時這條不該跟著紅。
         String dst = store.lookup("For the rest of your Lootrun,\ngain +{~} {#}Defence (Max x{~}) for"
                 + "\neach Beacon offered");
         check("語料收著這一段", dst != null);
@@ -132,10 +123,6 @@ public final class LootrunBoonTest {
               all.replace(" ", "").equals(want.replace("\n", "").replace(" ", "")));
     }
 
-    /**
-     * 真正的屬性列不能被「句子不翻片段」那條規則拖下水：它們前面是空行或別的欄位，
-     * 不是一句沒收尾的話。
-     */
     private static void statRows(TranslationStore store) {
         System.out.println("=== 屬性列 ===");
         List<Component> tip = new ArrayList<>();
@@ -155,11 +142,6 @@ public final class LootrunBoonTest {
               !out.get(3).getString().contains("Health"));
     }
 
-    /**
-     * 整段譯文是<b>我們自己折</b>回原文行數的時候，「第 i 行」兩邊指的不是同一段字。
-     * 原文最後一行整行是深灰，但折出來的最後一行裝的是第二行的「防禦 (上限 x15)」——
-     * 那幾個字不能被染成深灰。
-     */
     private static void rewrapColour(TranslationStore store) {
         System.out.println("=== 折行後的顏色 ===");
         Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0x555555));
@@ -181,16 +163,11 @@ public final class LootrunBoonTest {
             return;
         }
         dump(out);
-        // 找括號本身，不找「上限／最多」——那是措辭，翻譯團隊會改
         int paren = colourOf(out, "(");
         check("括號註解不會拿到原文最後一行的深灰（實際 #" + Integer.toHexString(paren) + "）",
               paren != -1 && paren != 0x555555);
     }
 
-    /**
-     * 實機的斷法：折行斷在「+{~1} {#}防／禦」，重點詞「防禦」整個搬下去時，
-     * 圖示與它前面的數值都要跟著走。只看折行測不到——兇手是折完之後的搬詞。
-     */
     private static void accentMove() {
         System.out.println("=== 搬詞時數值跟著圖示 ===");
         String[] split = {"本次 Lootrun 剩餘期間，", "每提供一個信標就 +{~1} {#}防",
@@ -202,7 +179,6 @@ public final class LootrunBoonTest {
         check("上一行留下的是句子", kept[1].strip().equals("每提供一個信標就"));
         check("字沒有變少", String.join("", kept).equals(String.join("", split)));
 
-        // 反面：圖示前面是字不是數值，照舊只搬圖示
         String[] word = LineTranslator.keepAccentsWhole(
                 new String[] {"可透過 {#}物品升", "級師 將物品提升"},
                 List.of(new com.wynnchayuan.capture.LineParts.Piece("物品升級師", RED)));
@@ -210,38 +186,6 @@ public final class LootrunBoonTest {
               word[0].equals("可透過 ") && word[1].startsWith("{#}物品升級師"));
     }
 
-    /**
-     * 玩家回報的那一塊：Heavensent 的元素傷害版。實機畫成
-     *
-     * <pre>
-     *   本次 Lootrun 剩餘期間，
-     *   每提供一個信標就 +4%
-     *   元素傷害 (最多 x15)
-     * </pre>
-     *
-     * <p>「+4%」跟「元素傷害」分家，「(最多 x15)」也跟著離開了它的數值。
-     * 寬度用 {@link #mc}——拿它量，舊的折法斷出來的正是實機那三行。
-     *
-     * <p>期望的字從語料取，不寫死措辭：譯法會改（「每提供一個信標就」後來改成
-     * 「每出現一個信標，獲得」），這條要盯的是折法，不是譯法。
-     */
-    /**
-     * 圖示與屬性名之間的那條縫不能被撐開。
-     *
-     * <h2>實機回報（2026-10-10）：「lootrun 的文字格式怪怪的」</h2>
-     * <pre>
-     *   每开启一个宝箱，
-     *   +2 [圖示]　　　灵巧 (上限 x15)，
-     *   本次 Lootrun 都会持续生效
-     * </pre>
-     *
-     * 圖示後面是一個兩像素的排版偏移。譯文照使用者的語序重寫、由我們重折成三列，
-     * 圖示剛好落在跟原文同一列；逐列對座標那一步就把「靈巧」推回原文「Dexterity」
-     * 的起點——原文那一列前面多一個「gain 」，縫被撐開三十像素。
-     *
-     * <p>{@link #heavensent} 那一條抓不到：它的圖示是三個一般的圖示碼位，沒有
-     * <b>可以調整的偏移</b>。這裡照實機放一個 space 字型的偏移。
-     */
     private static void serendipity(TranslationStore store) {
         System.out.println("=== Serendipity（圖示後面的縫）===");
         String key = "For the rest of this Lootrun, gain +{~} {#}Dexterity (Max x{~})"
@@ -252,7 +196,6 @@ public final class LootrunBoonTest {
             return;
         }
         String sprite = "\uE003";
-        // 圖示與偏移是同一個片段（語料裡那一句只有一個 {#}），掛在 space 字型底下
         MutableComponent icon = Component.literal(sprite + SpaceOffset.encode(2))
                 .setStyle(SpaceOffset.styleFor(Style.EMPTY));
         List<StyledText> run = List.of(
@@ -273,7 +216,6 @@ public final class LootrunBoonTest {
             return;
         }
         dump(out);
-        // 屬性名怎麼寫由語料決定：{#} 後面到下一個空白為止
         int at = dst.indexOf("{#}") + 3;
         int end = dst.indexOf(' ', at);
         String name = dst.substring(at, end < 0 ? dst.length() : end);
@@ -317,15 +259,8 @@ public final class LootrunBoonTest {
               all.replace(" ", "").equals(want.replace("\n", "").replace(" ", "")));
     }
 
-    /**
-     * 語料裡現有的幾個賜福，四個語言各跑一次。
-     *
-     * <p>中文是一句話、要我們自己折回原文的行數；日文與俄文是譯者自己排好行的，
-     * 不會重折——一起跑是為了確定新規則沒有去動它們。
-     */
     private static void corpusBoons() {
         String[][] labels = {
-            // 語言, Damage, Spell Damage, Defence, Elemental（藍紫信標次數那條）
             {"zh_tw", "傷害", "法術傷害", "防禦", "元素傷害"},
             {"zh_cn", "伤害", "法术伤害", "防御", "元素伤害"},
             {"ja_jp", "ダメージ", "呪文ダメージ", "防御", "属性ダメージ"},
@@ -376,12 +311,6 @@ public final class LootrunBoonTest {
         }
     }
 
-    /**
-     * 一塊賜福折完之後都該成立的事。
-     *
-     * @param ours 這一段是不是我們自己折的（中文）。譯者自己排好行的不量寬度——
-     *             那是譯者的決定，不是折行規則的。
-     */
     private static void checkBoon(String name, List<StyledText> run, List<Component> out,
                                   String value, String label, boolean ours) {
         check(name + "：整段查得到", out != null);
@@ -413,24 +342,6 @@ public final class LootrunBoonTest {
         }
     }
 
-    /**
-     * 使命卡的獎勵敘述：原文白灰混排，譯文自己標了 {@code {cN}}，兩個顏色都要貼對。
-     *
-     * <h2>實機回報（2026-09-28，靛藍路線的獎勵那段）</h2>
-     * <pre>
-     *   白 「Purple and Blue Beacons 」  灰 「are」
-     *   灰 「obscured, but will always be」
-     *   白 「Greatly Empowered.」
-     * </pre>
-     *
-     * 白的 42 個字、灰的 31 個字，底色由 {@code dominantStyle} 按字數投票——白贏，
-     * 於是該灰的敘述整段變白。中文比英文短，三行折成兩行，{@code wholeLineAccents}
-     * 行數對不上就讓開，救不了；只剩譯文自己寫 {@code {cN}} 這條路。
-     *
-     * <h2>不寫死措辭</h2>
-     * 期望的字直接從語料的 {@code {cN}} 分段切出來：翻譯團隊改譯法時這條不該跟著紅，
-     * 它要盯的是「c1 那幾段是白的、c2 那幾段是灰的」。
-     */
     private static void missionReward(TranslationStore store) {
         System.out.println("=== 使命獎勵（白灰混排）===");
         String key = "Purple and Blue Beacons are\nobscured, but will always be"
@@ -450,11 +361,6 @@ public final class LootrunBoonTest {
             return;
         }
         dump(out);
-        // 逐<b>字</b>比對，不整段找。
-        //
-        // 折行會把一段切成兩半（實機這一段就斷在「會被遮／蔽」），拿整段去
-        // contains 永遠落空——那是測試寫錯，不是顏色錯。所以把畫出來的每個字
-        // 連同它的顏色攤平，再跟語料切出來的期望值一個字一個字對。
         StringBuilder shown = new StringBuilder();
         List<Integer> painted = new ArrayList<>();
         for (Component row : out) {
@@ -467,7 +373,6 @@ public final class LootrunBoonTest {
                 }
             }
         }
-        // 語料裡 {c1} 是原文第一個顏色（白）、{c2} 是第二個（灰），{/} 收尾。
         StringBuilder want = new StringBuilder();
         List<Integer> expect = new ArrayList<>();
         int slot = 0;
@@ -490,12 +395,6 @@ public final class LootrunBoonTest {
         if (!shown.toString().equals(want.toString())) {
             return;
         }
-        // ★ 這兩條才是真正在守的。
-        //
-        // 上面那圈逐字比對只問「語料說 c1/c2 的地方畫對了沒」——把 {cN} 從語料
-        // 拿掉，expect 全變 -1，每個字都跳過，測試照樣綠，而畫面正是壞掉的樣子
-        //（整段變白）。所以另外釘兩件跟標記無關的事：語料必須標了兩個顏色，
-        // 而且畫出來不可以只有一個顏色。
         check("語料這一條有標 {c1} 與 {c2}（少了底色投票會把敘述染白）",
               dst.contains("{c1}") && dst.contains("{c2}"));
         java.util.Set<Integer> seen = new java.util.LinkedHashSet<>(painted);
@@ -504,7 +403,7 @@ public final class LootrunBoonTest {
               seen.size() >= 2);
         for (int i = 0; i < expect.size(); i++) {
             if (expect.get(i) < 0) {
-                continue;                      // 語料沒指定的字不管
+                continue;
             }
             if (painted.get(i).equals(expect.get(i))) {
                 continue;
@@ -512,7 +411,7 @@ public final class LootrunBoonTest {
             check("★「" + want.charAt(i) + "」（第 " + i + " 個字）該是 #"
                             + String.format("%06X", expect.get(i)) + "（實際 #"
                             + String.format("%06X", painted.get(i)) + "）", false);
-            return;                            // 一個字錯就夠了，不要洗版
+            return;
         }
         check("★ 白的信標名與「大幅強化」、灰的敘述都貼對了（" + expect.size() + " 個字）",
               true);
@@ -527,7 +426,6 @@ public final class LootrunBoonTest {
         }
     }
 
-    /** 第一個包含 {@code needle} 的行；找不到是 -1。 */
     private static int rowOf(List<Component> rows, String needle) {
         for (int r = 0; r < rows.size(); r++) {
             if (rows.get(r).getString().contains(needle)) {
@@ -541,12 +439,6 @@ public final class LootrunBoonTest {
         return StyledText.fromComponent(c);
     }
 
-    /**
-     * 照 Minecraft 預設字型逐字的前進寬度（含 1px 字距）量；中日韓 9、屬性圖示 3。
-     *
-     * <p>{@link #width} 把拉丁字母一律算 6，原文量得偏寬，實機那種「剛好放不下」的斷法
-     * 就重現不出來。這一份把 i、l、t、括號這些窄字算對，舊的折法才會斷出實機的三行。
-     */
     private static int mc(Component c) {
         int px = 0;
         String s = c.getString();
@@ -574,7 +466,6 @@ public final class LootrunBoonTest {
         return px;
     }
 
-    /** 包含 {@code needle} 的第一個片段的顏色；找不到是 -1。 */
     private static int colourOf(List<Component> rows, String needle) {
         for (Component row : rows) {
             for (StyledTextPart p : StyledText.fromComponent(row)) {
@@ -587,7 +478,6 @@ public final class LootrunBoonTest {
         return -1;
     }
 
-    /** 貼近實機字型：拉丁 6、中日韓 9、空白 4、圖示 9。 */
     private static int width(Component c) {
         int px = 0;
         String s = c.getString();
