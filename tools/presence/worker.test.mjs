@@ -3419,6 +3419,25 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('不是物件也擋掉', r.status === 400 && githubCalls.length === 0);
 }
 
+{
+  const { markdownText, withoutMentions } = await import('./github.js');
+  const SLY = '466600000000000001';
+  env.CORPUS.data.set('d:' + SLY, { value: JSON.stringify({ n: '@maintainers [click](http://evil.example) **now**' }), metadata: null });
+  env.CORPUS.data.set('staff:d:' + SLY, { value: JSON.stringify({ n: '' }), metadata: null });
+  const sly = await issueDiscordToken(env, SLY, NOW);
+  const github = { CORPUS: env.CORPUS, GITHUB_TOKEN: 'secret-token' };
+  githubFile = JSON.stringify({ sections: [{ role: '貢獻者', key: 'credits.role.contributors', members: [] }] }, null, 2) + '\n';
+  githubCalls.length = 0;
+  r = await worker.fetch(post('/admin/credits', { section: 'contributors', name: '@friends hello', mc: 'Plain_Name', color: '#55ff55' }, sly), github);
+  const pull = githubCalls.find((c) => c.method === 'POST' && c.path === '/pulls');
+  check('★ PR 內文裡使用者取的名字：不會 @ 到人、不會變成連結或粗體', r.status === 200 && !/@maintainers/.test(pull.body.body)
+    && pull.body.body.includes('@​maintainers') && pull.body.body.includes('\\[click\\]\\(http://evil.example\\)')
+    && pull.body.body.includes('\\*\\*now\\*\\*') && !/@friends/.test(pull.body.title) && pull.body.title.includes('@​friends'));
+  check('markdownText：反斜線與換行也處理', markdownText('a\\b\nc') === 'a\\\\b c' && withoutMentions(' @a ') === '@​a');
+  env.CORPUS.data.delete('d:' + SLY);
+  env.CORPUS.data.delete('staff:d:' + SLY);
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));

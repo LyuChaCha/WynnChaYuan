@@ -1,5 +1,5 @@
 import { moderator } from './admin.js';
-import { GitHubError, githubRepository } from './github.js';
+import { GitHubError, githubRepository, markdownText, withoutMentions } from './github.js';
 import { NAME, json, no, plainUuid, readJson } from './http.js';
 import { TR_LANGS } from './translate.js';
 
@@ -298,9 +298,9 @@ export async function handleAddCredit(request, env, now) {
     const title = '名單：' + SECTIONS[entry.section] + '加入 ' + entry.name.trim() + '（' + entry.mc + '）';
     await repo.writeFile(CREDITS_PATH, { message: title, text: changed.text, sha: current.sha, branch });
     const url = await repo.openPull({
-      title,
+      title: withoutMentions(title),
       head: branch,
-      body: '從網站的管理頁送出，送出的人：' + by + '。\n\n'
+      body: '從網站的管理頁送出，送出的人：' + markdownText(by) + '。\n\n'
         + '在 `credits.json` 的「' + SECTIONS[entry.section] + '」加一個成員。合併之後，名牌上的葉子與'
         + '披風的資格會在玩家下次同步名單時生效。',
     });
@@ -366,7 +366,7 @@ export async function commitTeams(env, by, now, change) {
       url = String(await repo.openPull({
         title: '名單：翻譯團隊與貢獻項目（' + day + '）',
         head: branch,
-        body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
+        body: '從網站的管理頁送出，第一筆由 ' + markdownText(by) + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
           + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
       }) || '');
     }
