@@ -73,7 +73,7 @@ public final class TooltipWidenTest {
         List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
 
         int want = Math.max(EDGE, CHAR * "Регенерация здоровья".length()
-                + LineTranslator.MIN_GAP + CHAR * "+20%".length());
+                + ColumnAligner.MIN_GAP + CHAR * "+20%".length());
         List<Integer> ends = new ArrayList<>();
         for (int i = 2; i <= 5; i++) {
             ends.add(WIDTH.applyAsInt(out.get(i)));
@@ -81,7 +81,7 @@ public final class TooltipWidenTest {
         report("★ 靠右的四行收在同一個右緣 " + want + "px（實際 " + ends + "）",
                 ends.equals(List.of(want, want, want, want)));
         report("放不下的那行間隔不小於最小間隔（實際 " + gapOf(out.get(2)) + "px）",
-                gapOf(out.get(2)) >= LineTranslator.MIN_GAP);
+                gapOf(out.get(2)) >= ColumnAligner.MIN_GAP);
         report("數值還在（實際「" + out.get(3).getString().replaceAll("[\\x{C0000}-\\x{DFFFF}]", "")
                         + "」）",
                 out.get(3).getString().contains("Регенерация маны")
@@ -343,7 +343,7 @@ public final class TooltipWidenTest {
     private static Component shrunk(String en, String translated, String value) {
         int gap = EDGE - CHAR * en.length() - CHAR * value.length();
         int adjusted = gap - (CHAR * translated.length() - CHAR * en.length());
-        return parts(translated, LineTranslator.narrowed(gap, adjusted), value);
+        return parts(translated, ColumnAligner.narrowed(gap, adjusted), value);
     }
 
     private static Component parts(String before, int px, String after) {
