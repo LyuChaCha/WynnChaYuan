@@ -3,6 +3,8 @@ package com.wynnchayuan.capture;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.ModLog;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Component;
 
 import java.io.InputStream;
@@ -54,7 +56,7 @@ public final class OwnOutputs {
         }
         Arrays.sort(sorted);
         translations = sorted;
-        System.out.println("[WynnChaYuan] 收集時會略過我們自己的譯文：" + sorted.length + " 行");
+        ModLog.info("收集時會略過我們自己的譯文：" + sorted.length + " 行");
     }
 
     static void addForTest(JsonObject root) {
@@ -164,6 +166,7 @@ public final class OwnOutputs {
             }
             return JsonParser.parseReader(new InputStreamReader(in, StandardCharsets.UTF_8));
         } catch (Exception e) {
+            ErrorDebug.note("OwnOutputs#read", null, e);
             return null;
         }
     }

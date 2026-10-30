@@ -33,6 +33,7 @@ public final class WynnventoryBridge {
             try {
                 found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wynnventory");
             } catch (Throwable t) {
+                ErrorDebug.note("WynnventoryBridge#installed", null, t);
                 found = false;
             }
             installed = known = found;
@@ -221,6 +222,7 @@ public final class WynnventoryBridge {
         try {
             return WynnChaYuan.translations();
         } catch (Throwable t) {
+            ErrorDebug.note("WynnventoryBridge#store", null, t);
             return null;
         }
     }
@@ -381,15 +383,9 @@ public final class WynnventoryBridge {
         if (store.isBareGearName(text) && !(store.translatesNames() && store.gearOwnName(text) != null)) {
             return null;
         }
-        boolean held = TranslationStore.appendedOriginalHeld();
-        boolean onName = TranslationStore.onNameLine();
-        try {
-            TranslationStore.holdAppendedOriginal(false);
-            TranslationStore.nameLine(true);
+        try (LookupScope hold = LookupScope.holdAppendedOriginal(false);
+             LookupScope nameLine = LookupScope.nameLine(true)) {
             return store.lookup(text);
-        } finally {
-            TranslationStore.holdAppendedOriginal(held);
-            TranslationStore.nameLine(onName);
         }
     }
 

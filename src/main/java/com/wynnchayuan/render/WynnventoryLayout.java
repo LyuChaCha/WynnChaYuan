@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -90,6 +91,7 @@ public final class WynnventoryLayout {
                     System.nanoTime());
             return true;
         } catch (Throwable t) {
+            ErrorDebug.note("WynnventoryLayout#draw", null, t);
             drawing = false;
             return false;
         }
@@ -173,6 +175,7 @@ public final class WynnventoryLayout {
             Object settings = settingsGet.invoke(configGet.invoke(null));
             return Boolean.TRUE.equals(anchorGet.invoke(settings));
         } catch (Throwable t) {
+            ErrorDebug.note("WynnventoryLayout#anchored", null, t);
             return false;
         }
     }
@@ -256,6 +259,7 @@ public final class WynnventoryLayout {
                     com.wynntils.features.tooltips.TooltipFittingFeature.class);
             return feature.isEnabled() ? feature.universalScale.get() : 1f;
         } catch (Throwable t) {
+            ErrorDebug.note("WynnventoryLayout#wynntilsScale", null, t);
             return 1f;
         }
     }

@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -52,6 +53,7 @@ public final class OverflowAudit {
             }
             dirty = true;
         } catch (Throwable t) {
+            ErrorDebug.note("OverflowAudit#note", null, t);
         }
     }
 
@@ -124,6 +126,7 @@ public final class OverflowAudit {
                         ROWS.putIfAbsent(row.where() + '\u0000' + row.src(), row);
                     }
                 } catch (RuntimeException e) {
+                    ErrorDebug.note("OverflowAudit#load", null, e);
                 }
             }
         }

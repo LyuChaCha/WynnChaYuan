@@ -3,6 +3,7 @@ package com.wynnchayuan;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -64,7 +65,7 @@ public final class SelfUpdate {
 
     static void trace(String message) {
         String line = java.time.LocalDateTime.now().withNano(0) + " " + message;
-        System.out.println("[WynnChaYuan] 更新：" + message);
+        ModLog.info("更新：" + message);
         Path dir = WynnChaYuan.configDir();
         if (dir == null) {
             return;
@@ -79,7 +80,8 @@ public final class SelfUpdate {
                 lines = lines.subList(lines.size() - LOG_LINES, lines.size());
             }
             Files.write(file, lines, StandardCharsets.UTF_8);
-        } catch (Throwable ignored) {
+        } catch (Throwable failure) {
+            ErrorDebug.note("SelfUpdate#trace", null, failure);
         }
     }
 
@@ -129,6 +131,7 @@ public final class SelfUpdate {
                             && path.getFileName().toString().endsWith(".jar"))
                     .orElse(null);
         } catch (Throwable t) {
+            ErrorDebug.note("SelfUpdate#ownJar", null, t);
             return null;
         }
     }
@@ -184,7 +187,8 @@ public final class SelfUpdate {
             trace("下載失敗：" + t);
             try {
                 Files.deleteIfExists(part);
-            } catch (Exception ignored) {
+            } catch (Exception failure) {
+                ErrorDebug.note("SelfUpdate#run", null, failure);
             }
             com.wynnchayuan.translate.ErrorDebug.note("update.download", version, t);
             state = State.FAILED;
@@ -246,6 +250,7 @@ public final class SelfUpdate {
                         && version.equals(mod.get("version").getAsString());
             }
         } catch (Throwable t) {
+            ErrorDebug.note("SelfUpdate#isRelease", null, t);
             return false;
         }
     }
@@ -302,6 +307,7 @@ public final class SelfUpdate {
             }
             return found;
         } catch (Throwable t) {
+            ErrorDebug.note("SelfUpdate#leftover", null, t);
             return null;
         }
     }

@@ -127,8 +127,7 @@ public final class AbilityNameOriginalTest {
         check("★ 關著：Major ID 那一列沒有附原文", !offText.contains(name));
 
         store.setAbilityNamesWithOriginal(true);
-        TranslationStore.holdAppendedOriginal(true);
-        try {
+        try (LookupScope scope = LookupScope.holdAppendedOriginal(true)) {
             List<Component> on = LineTranslator.translateBlock(block, store,
                     new boolean[block.size()]);
             String onText = join(on);
@@ -140,7 +139,6 @@ public final class AbilityNameOriginalTest {
                             + (colour == null ? "null" : String.format("#%06X", colour)) + "）",
                     colour != null && colour == NAME_COLOUR);
         } finally {
-            TranslationStore.holdAppendedOriginal(false);
             store.setAbilityNamesWithOriginal(false);
         }
     }
@@ -197,8 +195,7 @@ public final class AbilityNameOriginalTest {
         check(what + "：關著時技能名換成譯名、沒有附原文（" + shorten(offText) + "）",
                 offText.contains(term) && !offText.contains(appended));
         store.setAbilityNamesWithOriginal(true);
-        TranslationStore.holdAppendedOriginal(hold);
-        try {
+        try (LookupScope scope = LookupScope.holdAppendedOriginal(hold)) {
             List<Component> on = LineTranslator.translateBlock(block, store,
                     new boolean[block.size()]);
             String onText = join(on);
@@ -213,7 +210,6 @@ public final class AbilityNameOriginalTest {
             check(what + "：行數跟關著時一樣",
                     on != null && onText.split("\n", -1).length == offText.split("\n", -1).length);
         } finally {
-            TranslationStore.holdAppendedOriginal(false);
             store.setAbilityNamesWithOriginal(false);
         }
     }

@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.nio.file.Path;
 
 public final class CollectorConfig {
@@ -909,6 +910,7 @@ public final class CollectorConfig {
         try {
             return Double.parseDouble(value.strip());
         } catch (Exception e) {
+            ErrorDebug.note("CollectorConfig#parseNumber", null, e);
             return null;
         }
     }
@@ -1253,7 +1255,8 @@ public final class CollectorConfig {
                     : o.getAsJsonObject("badgeRoles").entrySet()) {
                 try {
                     badgeRoles.put(e.getKey(), e.getValue().getAsBoolean());
-                } catch (Exception ignored) {
+                } catch (Exception failure) {
+                    ErrorDebug.note("CollectorConfig#load", null, failure);
                 }
             }
         }
@@ -1267,7 +1270,8 @@ public final class CollectorConfig {
                     if (hex != null) {
                         badgeColours.put(e.getKey(), hex);
                     }
-                } catch (Exception ignored) {
+                } catch (Exception failure) {
+                    ErrorDebug.note("CollectorConfig#load", null, failure);
                 }
             }
         }
@@ -1278,7 +1282,7 @@ public final class CollectorConfig {
 
         for (String old : RETIRED) {
             if (o.has(old)) {
-                System.out.println("[WynnChaYuan] 設定檔帶著舊版的欄位 " + old + "，重寫一次把它清掉");
+                ModLog.info("設定檔帶著舊版的欄位 " + old + "，重寫一次把它清掉");
                 save();
                 break;
             }
@@ -1324,6 +1328,7 @@ public final class CollectorConfig {
             double v = el.getAsDouble();
             return Double.isFinite(v) ? v : fallback;
         } catch (RuntimeException e) {
+            ErrorDebug.note("CollectorConfig#number", null, e);
             return fallback;
         }
     }
@@ -1344,7 +1349,7 @@ public final class CollectorConfig {
         try {
             return Enum.valueOf(type, el.getAsString().trim().toUpperCase(java.util.Locale.ROOT));
         } catch (IllegalArgumentException e) {
-            System.err.println("[WynnChaYuan] 設定 " + name + " 的值 " + el + " 這一版不認得，用預設值");
+            ModLog.warn("設定 " + name + " 的值 " + el + " 這一版不認得，用預設值");
             return null;
         }
     }
@@ -1379,7 +1384,8 @@ public final class CollectorConfig {
                 if (Double.isFinite(a) && Double.isFinite(b)) {
                     into.put(which, new int[] {(int) a, (int) b});
                 }
-            } catch (RuntimeException ignored) {
+            } catch (RuntimeException failure) {
+                ErrorDebug.note("CollectorConfig#readPairs", null, failure);
             }
         }
     }
@@ -1474,7 +1480,7 @@ public final class CollectorConfig {
             o.addProperty("fixedY", fixedY);
             SafeFiles.writeAtomically(file, GSON.toJson(o));
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 設定寫入失敗: " + e.getMessage());
+            ModLog.warn("設定寫入失敗: " + e.getMessage());
         }
     }
 }

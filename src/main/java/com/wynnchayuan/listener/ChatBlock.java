@@ -1,6 +1,7 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
@@ -193,6 +194,7 @@ public final class ChatBlock {
             return LineTranslator.translateChat(StyledText.fromComponent(joined),
                                                 store);
         } catch (Throwable t) {
+            ErrorDebug.note("ChatBlock#asBlock", null, t);
             return null;
         }
     }
@@ -210,6 +212,7 @@ public final class ChatBlock {
                 centred = LineTranslator.chatCentred(originals);
                 panel = LineTranslator.chatPanel(originals);
             } catch (Throwable t) {
+                ErrorDebug.note("ChatBlock#stacked", null, t);
                 centred = null;
                 panel = false;
             }
@@ -223,6 +226,7 @@ public final class ChatBlock {
                 }
                 flowed = LineTranslator.flowPanel(originals, store, centred);
             } catch (Throwable t) {
+                ErrorDebug.note("ChatBlock#stacked", null, t);
                 flowed = null;
             }
         } else if (rows.size() > 1) {
@@ -233,6 +237,7 @@ public final class ChatBlock {
                 }
                 flowed = LineTranslator.flowColumn(originals, store, centred);
             } catch (Throwable t) {
+                ErrorDebug.note("ChatBlock#stacked", null, t);
                 flowed = null;
             }
         }
@@ -251,6 +256,7 @@ public final class ChatBlock {
                                                         centred == null ? null : centred[i],
                                                         panel);
                 } catch (Throwable t) {
+                    ErrorDebug.note("ChatBlock#stacked", null, t);
                     line = null;
                 }
             }
@@ -261,6 +267,7 @@ public final class ChatBlock {
                 try {
                     line = LineTranslator.translate(rows.get(i).original(), store);
                 } catch (Throwable t) {
+                    ErrorDebug.note("ChatBlock#stacked", null, t);
                     line = null;
                 }
             }

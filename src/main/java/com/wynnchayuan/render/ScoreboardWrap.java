@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.StringSplitter;
@@ -84,6 +85,7 @@ public final class ScoreboardWrap {
             swapped = overlay;
             WynntilsText.holdRawText(true);
         } catch (Throwable t) {
+            ErrorDebug.note("ScoreboardWrap#begin", null, t);
             broken = true;
         }
     }
@@ -98,6 +100,7 @@ public final class ScoreboardWrap {
             longest.setFloat(overlay, savedLongest);
             height.setFloat(overlay, savedHeight);
         } catch (Throwable t) {
+            ErrorDebug.note("ScoreboardWrap#end", null, t);
             broken = true;
         }
         swapped = null;
@@ -189,6 +192,7 @@ public final class ScoreboardWrap {
             float scale = (Float) scaleGet.invoke(scaleField.get(overlay));
             return scale > 0 ? overlayWidth / scale : overlayWidth;
         } catch (Throwable t) {
+            ErrorDebug.note("ScoreboardWrap#roomOf", null, t);
             return 0;
         }
     }
@@ -229,6 +233,7 @@ public final class ScoreboardWrap {
             height = h;
             return true;
         } catch (Throwable t) {
+            ErrorDebug.note("ScoreboardWrap#fields", null, t);
             broken = true;
             return false;
         }

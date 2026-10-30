@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.InputStream;
@@ -84,6 +85,7 @@ public final class ThirdPartyLiterals {
             return ThirdPartyLiterals.class.getClassLoader()
                     .getResource(name.replace('.', '/') + ".class") != null;
         } catch (Throwable t) {
+            ErrorDebug.note("ThirdPartyLiterals#classPresent", null, t);
             return false;
         }
     }
@@ -115,6 +117,7 @@ public final class ThirdPartyLiterals {
                         .getAsJsonObject();
             }
         } catch (Exception e) {
+            ErrorDebug.note("ThirdPartyLiterals#read", null, e);
         }
         try (InputStream in = ThirdPartyLiterals.class.getResourceAsStream(RESOURCE)) {
             if (in == null) {
@@ -123,6 +126,7 @@ public final class ThirdPartyLiterals {
             return JsonParser.parseReader(
                     new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
         } catch (Exception e) {
+            ErrorDebug.note("ThirdPartyLiterals#read", null, e);
             return null;
         }
     }

@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.SafeFiles;
 
 import java.io.IOException;
@@ -37,7 +38,7 @@ public final class StarterFiles {
                 resume = true;
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 無法準備譯文資料夾 " + dir + ": " + e.getMessage());
+            ModLog.warn("無法準備譯文資料夾 " + dir + ": " + e.getMessage());
             return 0;
         }
 
@@ -55,11 +56,11 @@ public final class StarterFiles {
                 copyAtomically(in, out);
                 written++;
             } catch (Exception e) {
-                System.err.println("[WynnChaYuan] 寫出 " + name + " 失敗: " + e.getMessage());
+                ModLog.warn("寫出 " + name + " 失敗: " + e.getMessage());
             }
         }
         if (written > 0) {
-            System.out.println("[WynnChaYuan] " + (resume ? "補上上次沒倒完的 " : "已放入 ")
+            ModLog.info((resume ? "補上上次沒倒完的 " : "已放入 ")
                     + written + " 個翻譯工作檔於 " + dir);
         }
         return written;
@@ -77,7 +78,7 @@ public final class StarterFiles {
             }
         }
         if (written > 0) {
-            System.out.println("[WynnChaYuan] 補上 " + written + " 個內建的 scoped 譯文檔");
+            ModLog.info("補上 " + written + " 個內建的 scoped 譯文檔");
         }
         return written;
     }
@@ -94,7 +95,7 @@ public final class StarterFiles {
             copyAtomically(in, dir.resolve(name));
             return true;
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 補回 " + name + " 失敗: " + e.getMessage());
+            ModLog.warn("補回 " + name + " 失敗: " + e.getMessage());
             return false;
         }
     }

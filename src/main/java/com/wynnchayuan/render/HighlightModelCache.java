@@ -1,5 +1,7 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.ModLog;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.component.CustomModelData;
 
@@ -44,6 +46,7 @@ public final class HighlightModelCache {
             TABLE[slot] = new Entry(original, hide, value);
             return value;
         } catch (Throwable t) {
+            ErrorDebug.note("HighlightModelCache#lookup", null, t);
             broken = true;
             return null;
         }
@@ -126,7 +129,7 @@ public final class HighlightModelCache {
             hideStarField = hide;
             return true;
         } catch (Throwable t) {
-            System.out.println("[WynnChaYuan] Wynntils 物品高亮的欄位對不上，加速停用：" + t);
+            ModLog.info("Wynntils 物品高亮的欄位對不上，加速停用：" + t);
             broken = true;
             return false;
         }

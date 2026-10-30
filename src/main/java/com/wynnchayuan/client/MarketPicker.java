@@ -3,6 +3,7 @@ package com.wynnchayuan.client;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.listener.MarketListener;
 import com.wynnchayuan.render.Colors;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.MarketSearch;
 import com.wynnchayuan.translate.TranslationStore;
 
@@ -81,6 +82,7 @@ public final class MarketPicker {
             try {
                 all = WynnChaYuan.translations().market().suggestions(value);
             } catch (Throwable t) {
+                ErrorDebug.note("MarketPicker#State", null, t);
                 all = List.of();
             }
             rows = all.subList(0, Math.min(MAX_ROWS, all.size()));
@@ -98,6 +100,7 @@ public final class MarketPicker {
                 return store != null && WynnChaYuan.config().marketSearch()
                         && MarketListener.active();
             } catch (Throwable t) {
+                ErrorDebug.note("MarketPicker#State", null, t);
                 return false;
             }
         }

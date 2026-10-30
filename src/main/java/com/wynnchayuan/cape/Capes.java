@@ -5,6 +5,7 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.texture.DynamicTexture;
@@ -186,6 +187,7 @@ public final class Capes {
                     before.elytra(), before.model(), before.secure());
             return before;
         } catch (Throwable t) {
+            ErrorDebug.note("Capes#swap", null, t);
             return null;
         }
     }
@@ -194,6 +196,7 @@ public final class Capes {
         try {
             return textureFor(player) != null;
         } catch (Throwable t) {
+            ErrorDebug.note("Capes#overrides", null, t);
             return false;
         }
     }
@@ -272,9 +275,11 @@ public final class Capes {
                         }
                     }
                 } catch (Exception e) {
+                    ErrorDebug.note("Capes#download", null, e);
                 }
             }
         } catch (Exception e) {
+            ErrorDebug.note("Capes#download", null, e);
         }
         return null;
     }
@@ -334,11 +339,13 @@ public final class Capes {
                     try {
                         Files.deleteIfExists(file);
                         removed++;
-                    } catch (Exception ignored) {
+                    } catch (Exception failure) {
+                        ErrorDebug.note("Capes#deleteUploaded", null, failure);
                     }
                 }
             }
-        } catch (Exception ignored) {
+        } catch (Exception failure) {
+            ErrorDebug.note("Capes#deleteUploaded", null, failure);
         }
         return removed;
     }

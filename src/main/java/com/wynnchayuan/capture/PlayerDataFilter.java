@@ -1,5 +1,6 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 
 import java.util.List;
@@ -204,6 +205,7 @@ public final class PlayerDataFilter {
                 }
             }
         } catch (Throwable t) {
+            ErrorDebug.note("PlayerDataFilter#mentionsOnlinePlayer", null, t);
         }
         return false;
     }
@@ -283,6 +285,7 @@ public final class PlayerDataFilter {
             }
             return out;
         } catch (Throwable t) {
+            ErrorDebug.note("PlayerDataFilter#onlineNames", null, t);
             return List.of();
         }
     }
@@ -353,6 +356,7 @@ public final class PlayerDataFilter {
             Minecraft mc = Minecraft.getInstance();
             return mc == null || mc.getUser() == null ? null : mc.getUser().getName();
         } catch (Throwable t) {
+            ErrorDebug.note("PlayerDataFilter#localPlayerName", null, t);
             return null;
         }
     }

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.PartStyle;
@@ -143,7 +144,7 @@ public final class TooltipDebug {
                 GSON.toJson(root, w);
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 診斷檔寫入失敗: " + e.getMessage());
+            ModLog.warn("診斷檔寫入失敗: " + e.getMessage());
         }
     }
 

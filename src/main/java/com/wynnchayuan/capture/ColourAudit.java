@@ -3,6 +3,7 @@ package com.wynnchayuan.capture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
@@ -64,6 +65,7 @@ public final class ColourAudit {
             }
             dirty = true;
         } catch (Throwable t) {
+            ErrorDebug.note("ColourAudit#note", null, t);
         }
     }
 
@@ -222,6 +224,7 @@ public final class ColourAudit {
                         ROWS.putIfAbsent(src, new Row(src, dst, runs, missed));
                     }
                 } catch (RuntimeException e) {
+                    ErrorDebug.note("ColourAudit#load", null, e);
                 }
             }
         }

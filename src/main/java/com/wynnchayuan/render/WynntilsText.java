@@ -2,7 +2,9 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.LookupScope;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 
@@ -27,6 +29,7 @@ public final class WynntilsText {
             }
             return out;
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#lines", null, t);
             return lines;
         }
     }
@@ -182,6 +185,7 @@ public final class WynntilsText {
                     out.equals(text) ? "objective.noMatch" : "objective.shown");
             return out;
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#objective", null, t);
             return text;
         }
     }
@@ -216,6 +220,7 @@ public final class WynntilsText {
         try {
             return marker(text, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#marker", null, t);
             return text;
         }
     }
@@ -251,6 +256,7 @@ public final class WynntilsText {
         try {
             return heldItemName(name, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#heldItemName", null, t);
             return name;
         }
     }
@@ -270,6 +276,7 @@ public final class WynntilsText {
         try {
             return bossBar(name, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#bossBar", null, t);
             return name;
         }
     }
@@ -447,6 +454,7 @@ public final class WynntilsText {
             }
             return shown;
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#notification", null, t);
             return text;
         }
     }
@@ -457,6 +465,7 @@ public final class WynntilsText {
         try {
             return entityName(name, entity, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#entityName", null, t);
             return name;
         }
     }
@@ -563,6 +572,7 @@ public final class WynntilsText {
                     WynnChaYuan.config(), WynnChaYuan.translations());
             return shown == text.getComponent() ? text : StyledText.fromComponent(shown);
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#heldItemText", null, t);
             return text;
         }
     }
@@ -599,6 +609,7 @@ public final class WynntilsText {
         try {
             return screenText(text, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#screenText", null, t);
             return text;
         }
     }
@@ -663,12 +674,8 @@ public final class WynntilsText {
         }
         net.minecraft.network.chat.Component hit;
         if (statusRow(text.getStringWithoutFormatting())) {
-            boolean was = TranslationStore.itemNamesBarred();
-            TranslationStore.barItemNames(true);
-            try {
+            try (LookupScope scope = LookupScope.barItemNames(true)) {
                 hit = LineTranslator.translate(text, store);
-            } finally {
-                TranslationStore.barItemNames(was);
             }
         } else {
             hit = LineTranslator.translate(text, store);
@@ -711,6 +718,7 @@ public final class WynntilsText {
             return name.startsWith("com.wynntils.screens.activities.")
                     || name.startsWith("com.wynntils.screens.maps.");
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#onContentScreen", null, t);
             return false;
         }
     }
@@ -761,6 +769,7 @@ public final class WynntilsText {
             }
             return out;
         } catch (Throwable t) {
+            ErrorDebug.note("WynntilsText#menuTooltip", null, t);
             return lines;
         }
     }

@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
@@ -50,6 +51,7 @@ public final class T {
             }
             return lang == null || lang.isBlank() ? null : lang;
         } catch (Exception e) {
+            ErrorDebug.note("T#pinnedLanguage", null, e);
             return null;
         }
     }
@@ -82,6 +84,7 @@ public final class T {
             }
             return Map.copyOf(out);
         } catch (Exception e) {
+            ErrorDebug.note("T#read", null, e);
             return Map.of();
         }
     }

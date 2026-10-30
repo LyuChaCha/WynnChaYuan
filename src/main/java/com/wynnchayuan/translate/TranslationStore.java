@@ -457,16 +457,8 @@ public final class TranslationStore {
     // 實測：官方改詞重疊 71%、不同任務目標 60%，取 65
     private static final int SAME_LINE_PERCENT = 65;
 
-    public static void nameLine(boolean on) {
-        NAME_LINE.set(on);
-    }
-
     static final ThreadLocal<Boolean> NAME_LINE =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
-
-    public static void lootrunTitle(boolean on) {
-        LOOTRUN_TITLE.set(on);
-    }
 
     static final ThreadLocal<Boolean> LOOTRUN_TITLE =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
@@ -499,24 +491,8 @@ public final class TranslationStore {
                 : key.replace(ICON, " ").strip().replaceAll(" {2,}", " ");
     }
 
-    public static void holdAppendedOriginal(boolean on) {
-        HOLD_APPENDED.set(on);
-    }
-
-    static boolean appendedOriginalHeld() {
-        return HOLD_APPENDED.get();
-    }
-
-    static boolean onNameLine() {
-        return NAME_LINE.get();
-    }
-
     static final ThreadLocal<Boolean> HOLD_APPENDED =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
-
-    public static void barItemNames(boolean on) {
-        BAR_ITEMS.set(on);
-    }
 
     public static boolean itemNamesBarred() {
         return BAR_ITEMS.get();

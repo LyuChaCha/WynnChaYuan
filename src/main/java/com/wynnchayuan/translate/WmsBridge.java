@@ -24,6 +24,7 @@ public final class WmsBridge {
             try {
                 found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wms");
             } catch (Throwable t) {
+                ErrorDebug.note("WmsBridge#installed", null, t);
                 found = false;
             }
             installed = known = found;
@@ -44,6 +45,7 @@ public final class WmsBridge {
             return !hits.isEmpty()
                     && hits.contains(MarketSearch.singular(english).toLowerCase(Locale.ROOT));
         } catch (Throwable t) {
+            ErrorDebug.note("WmsBridge#matches", null, t);
             return false;
         }
     }
@@ -84,6 +86,7 @@ public final class WmsBridge {
             MarketSearch market = source.get();
             return market == null ? null : market.shownFor(english);
         } catch (Throwable t) {
+            ErrorDebug.note("WmsBridge#translatedName", null, t);
             return null;
         }
     }

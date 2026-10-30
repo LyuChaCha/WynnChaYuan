@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
@@ -37,6 +38,7 @@ public final class WynnventoryBox {
                     Math.round(w * scale) + PAD * 2, Math.round(h * scale) + PAD * 2,
                     System.nanoTime());
         } catch (Throwable t) {
+            ErrorDebug.note("WynnventoryBox#note", null, t);
         }
     }
 
