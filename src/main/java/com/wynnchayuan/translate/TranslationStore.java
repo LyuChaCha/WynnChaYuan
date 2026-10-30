@@ -2,19 +2,9 @@ package com.wynnchayuan.translate;
 
 import com.wynnchayuan.capture.GlyphSplitter;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import java.io.Reader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 譯文查詢表：模板 → 譯文。
@@ -36,221 +26,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class TranslationStore {
 
-    private final Map<String, String> entries = new ConcurrentHashMap<>();
-
-    /**
-     * 這一份收過哪些原文，<b>包含還沒翻的</b>。給收集端判斷「這句收過沒有」。
-     *
-     * <h2>為什麼不能拿 {@link #entries} 當判準</h2>
-     * {@code entries} 只放<b>有譯文</b>的——載入時就把空 dst 跳掉了。拿它去問
-     * 「收過沒有」，語料裡已經躺著、只是還沒翻的那幾千條每一次都會回答「沒有」，
-     * 於是每個玩家每一次進遊戲看到就再收一次、再上傳一次。收集站每天撈回來的
-     * 因此幾乎都是早就有的東西。
-     *
-     * <p>所以另外記一份。代價是多存一組字串，換掉的是每天成千上萬筆重複上傳。
-     */
-    private final java.util.Set<String> seenSources =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
-
-    /** 見 {@link #maxBlockLines()}。載入時一併算出來，查詢時不必再掃一次。 */
-    private volatile int maxBlockLines = 1;
-
-    /**
-     * 把所有空白（含換行）壓成單一空格之後的索引。
-     *
-     * <h2>為什麼需要另一份索引</h2>
-     * 長敘述在遊戲裡是<b>依 tooltip 寬度自動斷行</b>的，斷在哪裡取決於玩家的
-     * 畫面設定；語料裡存的則是沒斷行的完整句子。兩者永遠不會逐字相等，
-     * 所以 Major ID 的說明翻了也不會生效。
-     *
-     * <p>把兩邊的空白都正規化之後就對得上了——差別只在空白，文字是一樣的。
-     */
-    private final Map<String, String> flat = new ConcurrentHashMap<>();
-
-    /**
-     * 技能名稱 → 譯名。
-     *
-     * <h2>為什麼需要</h2>
-     * 技能說明裡到處都在提別的技能：「{@code Bash will hit a second time}」。
-     * 那個 {@code Bash} 是<b>同一個東西</b>，卻散在幾百條敘述裡各翻各的——
-     * 翻譯團隊要一條一條改，而且改完還是會不一致。
-     *
-     * <p>所以只翻一次：{@code ability.json} 裡 {@code Bash} 這一條翻好，
-     * 所有提到它的敘述自動跟著換。
-     *
-     * <p>用<b>名稱本身</b>當參照，不用座標代號。技能樹的位置會隨版本改動，
-     * 而且譯者在語料裡看到 {@code Bash} 一眼就懂，看到 {@code warrior-1-1-5}
-     * 只能去查表。
-     */
-    private final Map<String, String> terms = new ConcurrentHashMap<>();
-
-    /** 一個術語最多幾個字。用來限制比對時往前看多遠。 */
-    private volatile int maxTermWords = 1;
-
-    /**
-     * 來自 {@code role: "name"} 條目的鍵。
-     *
-     * <p>裝備名稱多半是專有名詞，翻了反而對不上社群討論與 wiki，
-     * 所以要能單獨關掉。工作檔已經標好 role，這裡照著記就好。
-     */
-    /**
-     * 所有裝備名，<b>不論翻了沒</b>。
-     *
-     * <p>只收<b>自己還沒翻</b>的那些。翻好的走 {@link #nameKeys}（那管的是 F6
-     * 開關），本來就會拿到裝備自己的譯名。
-     *
-     * <p>還沒翻的那些同樣需要保護：語料裡有 50 組裝備名跟別的領域撞名（技能詞、
-     * Major ID、介面詞），沒有這份清單的話，別的檔案的譯文會替裝備名頂上去。
-     *
-     * <p>不能用「entries 裡有沒有這個鍵」來判斷——撞名的那一方<b>就是</b>把鍵
-     * 放進 entries 的人，那樣問等於永遠問不出來。第一版就是這樣寫的，測試抓到了。
-     */
-    private final java.util.Set<String> gearNameKeys = new java.util.HashSet<>();
-
-    /**
-     * 中文物品名 → 英文原文，給市集搜尋用。見 {@link MarketSearch}。
-     *
-     * <p>跟其他索引一起在載入時建好——市集在等你打字的那一秒才建會卡一下，
-     * 而那正是最不能卡的時候。
-     */
-    private final MarketSearch market = new MarketSearch();
-
-    public MarketSearch market() {
-        return market;
-    }
-
-    private final java.util.Set<String> nameKeys =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
-
-    /**
-     * 素材與材料的名稱：<b>不受</b> F6「翻譯物品名稱」管，但按住 Shift 要看得到原文。
-     *
-     * <h2>為什麼另外一份</h2>
-     * {@link #nameKeys} 管的是那個開關，而素材與材料從一開始就刻意不歸它管
-     * （見 {@link #itemNames}：那個開關是為了讓<b>裝備</b>對得上交易市場）。
-     * 於是「按住 Shift 看另一種」——它的做法是暫時把開關撥到另一邊——對這兩類
-     * 完全沒有作用：名稱永遠是譯名，要去 wiki 查配方、跟別人講要哪個素材的時候
-     * 沒有地方看原文。
-     *
-     * <p>塞進 {@link #nameKeys} 不行，那樣 F6 關掉裝備名稱時素材也會跟著變英文
-     * ——v1.99.71 踩過的就是這個。所以另外記一份，只給 {@link #peekPlainNames} 用。
-     */
-    private final java.util.Set<String> plainNameKeys =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
-
-    /**
-     * 這一刻要不要把 {@link #plainNameKeys} 當成沒翻。
-     *
-     * <p>只有按住 Shift 畫物品 tooltip 的那一小段會是 {@code true}，畫完就還原
-     * （見 {@code RenderListener#withPeek}）。跟 {@link #translateNames} 一樣做成
-     * 旗標而不是直接問鍵盤：查詢表不該伸手抓遊戲狀態。
-     */
-    private volatile boolean peekPlainNames = false;
-
-    public void setPeekPlainNames(boolean value) {
-        this.peekPlainNames = value;
-    }
-
-    /** 見 {@link #setPeekPlainNames}：給算繪端的快取做有效性判斷用。 */
-    public boolean peeksPlainNames() {
-        return peekPlainNames;
-    }
-
-    /**
-     * 採集工具的名稱（{@code Dernic Pickaxe T{~}}），含名稱那一列的外框。
-     *
-     * <h2>為什麼不放進 {@link #plainNameKeys}</h2>
-     * 工具的名稱帶著等級的數字，模板裡是 {@code T{~}}。名稱列的那條路
-     * （{@link #nameRowInner}）不收帶佔位符的名字，所以工具的名稱列在語料裡是
-     * <b>整列</b>的條目（{@code {#}{#}{#}{#}{#}Dernic Pickaxe T{~}}），跟素材那種
-     * 「一個名字、各種外框共用」不一樣，按住 Shift 也就輪不到它
-     * （使用者 2026-10-10：「工具 shift 變回原文也可以裝」）。
-     *
-     * <p>認形狀而不是列名單：材質是一個首字大寫的詞，工具是四種之一，後面接
-     * {@code T{~}}，前後只能是圖示。句子裡提到工具的（「再 {~} 級就能使用…」
-     * 「已完成購買…」）不是這個形狀，按住 Shift 照舊是譯文。
-     */
-    private static final java.util.regex.Pattern TOOL_NAME = java.util.regex.Pattern.compile(
-            "^(?:\\{#})*[A-Z][a-z]+ (?:Pickaxe|Axe|Scythe|Rod) T\\{~}(?:\\{#})*$");
-
-    /** 見 {@link #TOOL_NAME}。 */
-    static boolean isToolName(String key) {
-        return key != null && TOOL_NAME.matcher(key).matches();
-    }
-
-    /** 按住 Shift 時要看原文的名字：素材、材料，以及採集工具。 */
-    private boolean peeked(String key) {
-        return peekPlainNames && (plainNameKeys.contains(key) || isToolName(key));
-    }
-
-    /** 這個原文是不是素材或材料的名稱。見 {@link #plainNameKeys}。 */
-    public boolean isPlainName(String key) {
-        return key != null && plainNameKeys.contains(key.strip());
-    }
-
-    /**
-     * 除了裝備名稱以外，<b>別的檔案</b>也有條目的原文（技能名、使命、Major ID⋯）。
-     *
-     * <p>F6 關掉物品名稱時，{@link #lookupBase} 會把 {@link #nameKeys} 一律當成
-     * 沒翻。裝備名翻開之後，撞名的那些（飾品 Diffraction＝技能「晶化蔓延」）
-     * 就被連坐，技能樹與使命的標題一起變回英文。撞名的交給名稱那一行的守門
-     * 處理（見 {@link #isBareGearName}），查表層不擋。
-     */
-    private final java.util.Set<String> otherOwners = new java.util.HashSet<>();
-
-    /**
-     * <b>不是物品名稱</b>的條目也用到的原文：技能名、Major ID、介面上的字、整句話。
-     *
-     * <p>跟 {@link #otherOwners} 差在哪：那一份把素材與材料也算成「別人」（它問的是
-     * 「除了<b>裝備</b>以外還有誰」），這一份只算物品以外的。「譯名加原文」要不要替
-     * 素材附原文靠它判斷（{@link #plainOnly}）：素材 {@code Black Hole} 同時是刺客的
-     * 技能，在技能樹上附一個「(Black Hole)」就錯了；而素材 {@code Dark Matter} 只跟一頂
-     * 頭盔同名，兩邊都是物品，附上去沒有問題。
-     */
-    private final java.util.Set<String> nonItemOwners = new java.util.HashSet<>();
-
-    /**
-     * 物品檔（裝備、書卷、素材、材料…，{@code role: name}）<b>自己</b>寫的譯名。
-     *
-     * <h2>為什麼要另外記</h2>
-     * {@link #getsOriginal} 只替「物品以外沒人用」的原文附原文——同一個字在技能樹、
-     * 名牌、介面上出現時，附一個括號就錯了。但那是<b>查表層</b>的判斷，不知道自己被問的
-     * 是哪個位置，於是物品說明的名稱那兩行也一起被擋：素材 {@code Black Hole}
-     * 同時是刺客技能，在「譯名 + 原文」下名稱列只有「引力黑洞」，其他素材都附了原文
-     * （使用者 2026-10-17：「有些材料沒有顯示原文」）。
-     *
-     * <p>名稱那兩行是呼叫端認出來的（{@link #nameLine}），在那裡改問「這個譯名是不是
-     * 物品檔自己寫的」——是的話就照裝備的規矩附原文。疊層時每一層各收一份，
-     * 哪一層的答案勝出都認得。見 {@link #ownItemName}。
-     */
-    private final Map<String, java.util.Set<String>> itemNameDsts = new ConcurrentHashMap<>();
-
-    /**
-     * 技能樹（{@code ability/}）與 Major ID（{@code major-id.json}）的<b>名稱</b>條目
-     *（{@code role: name}）自己寫的譯名。給 F6「技能與 Major ID 名稱附原文」用，
-     * 見 {@link #setAbilityNamesWithOriginal}。
-     *
-     * <p>跟 {@link #itemNameDsts} 同一個想法：問的是「查到的這個譯名，是不是技能檔
-     * 替這個原文寫的那一個」。同一個字在介面上另有一條譯文（{@code Focus} 是技能、
-     * 也是按鈕上的字）時，查到的若是那一條就不附——那個位置不是技能名。
-     */
-    private final Map<String, java.util.Set<String>> abilityNameDsts = new ConcurrentHashMap<>();
-    private volatile int loadedFiles = 0;
-
-    /**
-     * 這一次載入時<b>內容讀不懂</b>的檔（半截、空檔、不是物件）。
-     *
-     * <p>讀檔本身失敗（被防毒軟體鎖住之類）不算，那種下次開遊戲可能就好了。
-     * 見 {@link TranslationCache#loadRepairing}。
-     */
-    private final List<Path> broken = new java.util.concurrent.CopyOnWriteArrayList<>();
-
-    public List<Path> brokenFiles() {
-        return List.copyOf(broken);
-    }
-
-    /** 上一次載入的結果，供設定面板顯示。 */
-    private volatile String lastResult;
+    // 整份在旁邊建好再一次換上：重載時，背景的寫檔與匯出執行緒還在查。
+    private volatile TranslationIndex index = new TranslationIndex(this);
 
     /**
      * 讀取一個目錄下的所有 .json。
@@ -282,9 +59,16 @@ public final class TranslationStore {
      * 都沒留下——也就是說墊底這件事<b>從來沒有生效過</b>，而畫面上看到的是
      * 英文，正好是那段程式碼寫來要避免的結果。
      *
-     * <p>改成一次把所有層交進來：清空只做一次，然後照順序讀。
-     * 「疊」這件事現在是這個方法的職責，呼叫端想弄錯也弄不錯。
+     * <p>改成一次把所有層交進來，照順序讀。「疊」這件事現在是這個方法的職責，
+     * 呼叫端想弄錯也弄不錯。
      */
+    public synchronized void loadAll(List<Path> dirs) {
+        TranslationIndex next = new TranslationIndex(this);
+        next.load(dirs);
+        index = next;
+        generation++;
+    }
+
     /**
      * 載入的<b>第幾版</b>；每重載一次就往前一格。
      *
@@ -300,1246 +84,22 @@ public final class TranslationStore {
 
     private volatile int generation;
 
-    public void loadAll(List<Path> dirs) {
-        generation++;
-        entries.clear();
-        scopedOnly.clear();
-        seenSources.clear();
-        flat.clear();
-        unwrapped.clear();
-        unindented.clear();
-        speakers.clear();
-        prefixIndex.clear();
-        terms.clear();
-        uiLabels.clear();
-        pageNames.clear();
-        pageTitleNames.clear();
-        pageTitleSplit.clear();
-        maxTermWords = 1;
-        maxBlockLines = 1;
-        nameKeys.clear();
-        plainNameKeys.clear();
-        bareNames.clear();
-        otherOwners.clear();
-        nonItemOwners.clear();
-        itemNameDsts.clear();
-        abilityNameDsts.clear();
-        gearNameKeys.clear();
-        market.clear();
-        ordered.clear();
-        byQuest.clear();
-        questSeq.clear();
-        questSeqAt.clear();
-        seqKeys.clear();
-        seqQuestOf.clear();
-        bySpeaker.clear();
-        unplacedLines.clear();
-        nearWordCache.clear();
-        lastNear = null;
-        questCast.clear();
-        questOfLine.clear();
-        playerKeys.clear();
-        wordCount.clear();
-        fromWiki.clear();
-        loose.clear();
-        looseDst.clear();
-        looseClash.clear();
-        thisLayer.clear();
-        unwrappedFromWrapped.clear();
-        layerOf.clear();
-        indexLayer.clear();
-        loadedFiles = 0;
-        broken.clear();
-
-        topLayer =Math.max(0, dirs.size() - 1);
-        for (layer = 0; layer < dirs.size(); layer++) {
-            readOne(dirs.get(layer));
-        }
-        layer = topLayer;
-        // 墊底那層沒翻、上面那層翻了的裝備名，不再算「還沒翻」。
-        //
-        // 簡中是「繁中墊底、簡中在上」：繁中的 Mythic 刻意留空，於是全部進了
-        // gearNameKeys；簡中那層明明有譯名，名稱那一行的守門卻照樣把它擋回英文。
-        // 實機回報「簡中還是看不到 Mythic 的譯名」就是這個。
-        gearNameKeys.removeAll(nameKeys);
-        // 帶 {u} 的鍵就是「別人的名字夾在這裡」的框，翻了沒有都收：收集端要靠它把
-        // 名字換成 {u} 再記（還沒翻的那幾條正是要記的缺口）。見 NameFrames。
-        nameFrames = com.wynnchayuan.capture.NameFrames.of(seenSources);
-        chatSpeakers = learnChatSpeakers(entries);
-        report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
-    }
-
     /**
-     * 聊天形式的 NPC 台詞（{@code [1/3] Doan: …}）裡，說話者的名字在這個語言叫什麼。
+     * 這一刻要不要把 {@link TranslationIndex#plainNameKeys} 當成沒翻。
      *
-     * <h2>從哪裡學</h2>
-     * 語料裡已經有幾百條整句的聊天鍵（{@code [{~}/{~}] Seaskipper Captain: …}），
-     * 譯文裡冒號前那一段就是譯者給這個名字的叫法。同一個名字在不同條目裡叫法不同時
-     * 取多數，平手就不收（呼叫端照原文留著）。見 {@code LineTranslator#npcChatLine}。
-     *
-     * @return 名字的譯法；語料沒有這個名字的聊天鍵時回 {@code null}
+     * <p>只有按住 Shift 畫物品 tooltip 的那一小段會是 {@code true}，畫完就還原
+     * （見 {@code RenderListener#withPeek}）。跟 {@link #translateNames} 一樣做成
+     * 旗標而不是直接問鍵盤：查詢表不該伸手抓遊戲狀態。
      */
-    public String chatSpeaker(String speaker) {
-        return speaker == null ? null : chatSpeakers.get(speaker.strip());
+    private volatile boolean peekPlainNames = false;
+
+    public void setPeekPlainNames(boolean value) {
+        this.peekPlainNames = value;
     }
 
-    /** 見 {@link #chatSpeaker}。每次載入整份換掉、不可變。 */
-    private volatile Map<String, String> chatSpeakers = Map.of();
-
-    /** 聊天形式的台詞鍵：計數、說話者、台詞。 */
-    static final java.util.regex.Pattern CHAT_LINE = java.util.regex.Pattern.compile(
-            "\\[\\{~}/\\{~}] (?<speaker>[^:\\n\\[\\]]+?): (?<line>[^\\n]+)");
-
-    /** 聊天鍵的譯文：計數（編號可有可無）、說話者、半形或全形冒號、台詞。 */
-    private static final java.util.regex.Pattern CHAT_LINE_DST = java.util.regex.Pattern.compile(
-            "\\[\\{~[12]?}/\\{~[12]?}] (?<speaker>[^:：\\n]+?)(?:: |：)(?<line>[^\\n]+)");
-
-    private static Map<String, String> learnChatSpeakers(Map<String, String> entries) {
-        Map<String, Map<String, Integer>> votes = new java.util.HashMap<>();
-        for (Map.Entry<String, String> e : entries.entrySet()) {
-            String key = e.getKey();
-            if (!key.startsWith("[{~}/{~}] ")) {
-                continue;
-            }
-            java.util.regex.Matcher src = CHAT_LINE.matcher(key);
-            java.util.regex.Matcher dst = CHAT_LINE_DST.matcher(e.getValue());
-            if (!src.matches() || !dst.matches()) {
-                continue;
-            }
-            votes.computeIfAbsent(src.group("speaker").strip(), k -> new java.util.HashMap<>())
-                 .merge(dst.group("speaker").strip(), 1, Integer::sum);
-        }
-        Map<String, String> out = new java.util.HashMap<>();
-        for (Map.Entry<String, Map<String, Integer>> e : votes.entrySet()) {
-            String best = null;
-            int top = 0;
-            boolean tie = false;
-            for (Map.Entry<String, Integer> v : e.getValue().entrySet()) {
-                if (v.getValue() > top) {
-                    best = v.getKey();
-                    top = v.getValue();
-                    tie = false;
-                } else if (v.getValue() == top) {
-                    tie = true;
-                }
-            }
-            if (best != null && !tie) {
-                out.put(e.getKey(), best);
-            }
-        }
-        return Map.copyOf(out);
-    }
-
-    /**
-     * 語料裡帶一個 {@code {u}} 的句型，用來認出<b>別人的名字</b>。見
-     * {@link com.wynnchayuan.capture.NameFrames}。
-     *
-     * <p>每次載入整份換掉、不可變，算繪與收集端的背景執行緒都可以直接讀。
-     */
-    public com.wynnchayuan.capture.NameFrames nameFrames() {
-        return nameFrames;
-    }
-
-    private volatile com.wynnchayuan.capture.NameFrames nameFrames =
-            com.wynnchayuan.capture.NameFrames.EMPTY;
-
-    /** 正在讀第幾層（0 是最底下那層）。見 {@link #layerOf}。 */
-    private int layer = 0;
-
-    /** 最上面那一層的編號，也就是玩家選的語言。只有一層時是 0。 */
-    private int topLayer = 0;
-
-    /**
-     * 每一條原文的譯文<b>來自哪一層</b>。
-     *
-     * <h2>為什麼主查表之外還要記這個</h2>
-     * {@link #entries} 後來居上，精確鍵本身沒有問題。出問題的是「精確鍵只在墊底那層
-     * 有譯文、而上面那層翻的是<b>只差標點或大小寫的同一句話</b>」：精確查表先命中
-     * 繁體，就不會再走鬆化、記號那幾條路，簡體明明翻了卻顯示繁體。
-     * 逐字對話的校訂版替換也是同一回事——見 {@link #curatedRival}。
-     */
-    private final Map<String, Integer> layerOf = new ConcurrentHashMap<>();
-
-    /** 輔助索引裡每個鍵是哪一層寫的。鍵是 {@code tag + '\0' + key}，見 {@link #layered}。 */
-    private final Map<String, Integer> indexLayer = new ConcurrentHashMap<>();
-
-    private int layerOf(String src) {
-        Integer at = src == null ? null : layerOf.get(src);
-        return at == null ? -1 : at;
-    }
-
-    /**
-     * 這一層已經寫過哪些鍵。見 {@link #layered}。
-     *
-     * <p>每讀一層清一次，所以它記的永遠是「<b>這一層</b>寫過什麼」。
-     */
-    private final java.util.Set<String> thisLayer = new java.util.HashSet<>();
-
-    /**
-     * 往輔助索引寫一筆，遵守「層內先到先贏、跨層後來居上」。
-     *
-     * <h2>為什麼不能直接用 putIfAbsent</h2>
-     * 四個輔助索引（{@link #flat}、{@link #unwrapped}、{@link #marked}、
-     * {@link #unindented}）原本都是 {@code putIfAbsent}——<b>先寫的贏</b>。
-     * 單層的時候那是對的：同一層裡撞鍵時，排在前面的檔案勝出。
-     *
-     * <p>但疊層之後就反了。墊底的那一層<b>先</b>載入，於是它把每一條長句都
-     * 先佔走，上面那一層永遠寫不進去。實機的症狀是「簡體明明翻好了，
-     * 畫面上卻是繁體」，而且<b>只發生在長句</b>——短標籤走的是主查表
-     * （{@code entries.put}，後來居上），長句走的才是這幾個索引。
-     *
-     * <p>所以判準從「這個鍵有沒有人寫過」改成「<b>這一層</b>有沒有人寫過」。
-     * 層內的先到先贏沒有變，跨層則跟主查表一致：後面那一層蓋掉前面那一層。
-     *
-     * @param tag 哪一個索引。不同索引的鍵可能長得一樣，要分開記
-     */
-    private void layered(java.util.Map<String, String> index, String tag,
-                         String key, String value) {
-        if (thisLayer.add(tag + '\u0000' + key)) {
-            index.put(key, value);
-            indexLayer.put(tag + '\0' + key, layer);
-        }
-    }
-
-    /** 讀一層。清空是 {@link #loadAll(List)} 的事，這裡只負責往上疊。 */
-    private void readOne(Path dir) {
-        thisLayer.clear();
-        unwrappedFromWrapped.clear();
-        if (!Files.isDirectory(dir)) {
-            try {
-                Files.createDirectories(dir);
-                lastResult = com.wynnchayuan.client.T.s("status.folder_created");
-                System.out.println("[WynnChaYuan] 譯文資料夾不存在，已建立：" + dir);
-            } catch (Exception e) {
-                lastResult = com.wynnchayuan.client.T.s("status.folder_failed", e.getMessage());
-                System.err.println("[WynnChaYuan] 建立譯文資料夾失敗 " + dir + ": " + e.getMessage());
-            }
-            return;
-        }
-
-        try {
-            // 依 _index.json 的順序載入。順序有意義：後載入的會覆蓋先前同鍵的譯文，
-            // 所以專用檔（npc、quest）排在通用檔之後才能勝出。
-            //
-            // 直接照清單解析路徑，不用 Files.list——後者<b>不會遞迴</b>，
-            // 技能樹依職業拆成 `ability/mage.json` 之後就整片讀不到了。
-            List<String> order = FileIndex.forDirectory(dir);
-            java.util.LinkedHashSet<Path> wanted = new java.util.LinkedHashSet<>();
-            for (String name : order) {
-                if (name.startsWith("_") || !name.endsWith(".json")) {
-                    continue;
-                }
-                Path file = dir.resolve(name);
-                if (Files.isRegularFile(file)) {
-                    wanted.add(file);
-                }
-            }
-            // 清單沒提到、但使用者自己丟進來的也要讀，排在最後
-            try (var extra = Files.list(dir)) {
-                extra.filter(p -> p.getFileName().toString().endsWith(".json"))
-                     .filter(p -> !p.getFileName().toString().startsWith("_"))
-                     .sorted()
-                     .forEach(wanted::add);
-            }
-            wanted.forEach(this::load);
-            loadScoped(dir);
-        } catch (Exception e) {
-            lastResult = com.wynnchayuan.client.T.s("status.read_failed", e.getMessage());
-            System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
-        }
-    }
-
-    /**
-     * 只在特定位置用的譯法，見 {@link FileIndex#SCOPED}。鍵是範圍（檔名去掉
-     * {@code .json}：{@code label}、{@code bossbar}），後面的層蓋前面的。
-     */
-    private final Map<String, Map<String, String>> scopedOnly = new java.util.HashMap<>();
-
-    private void loadScoped(Path dir) {
-        for (String name : FileIndex.SCOPED) {
-            Path file = dir.resolve(name);
-            if (!Files.isRegularFile(file)) {
-                continue;
-            }
-            String scope = file.getFileName().toString().replaceFirst("\\.json$", "");
-            try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-                JsonElement root = JsonParser.parseReader(r);
-                if (!root.isJsonObject()) {
-                    continue;
-                }
-                JsonObject obj = root.getAsJsonObject();
-                Map<String, String> into =
-                        scopedOnly.computeIfAbsent(scope, k -> new java.util.HashMap<>());
-                for (String key : obj.keySet()) {
-                    JsonElement v = obj.get(key);
-                    if (!key.startsWith("_") && v.isJsonPrimitive()
-                            && !v.getAsString().isBlank()) {
-                        into.put(key.strip(), LineTranslator.deIcon(
-                                v.getAsString().strip()));
-                    }
-                }
-            } catch (Exception e) {
-                System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
-            }
-        }
-    }
-
-    /**
-     * 漂浮字專用的譯法；沒有就回 {@code null}，呼叫端再照一般語料查。
-     *
-     * <p>實機：挖掘遺址 B 的解謎地板寫著 Forwards／Back／Left／Right，
-     * 一般語料裡的 Back 是介面上的「返回」，於是地板上冒出一塊「返回」。
-     */
-    public String labelLookup(String template) {
-        return scopedLookup("label", template);
-    }
-
-    /** 某個範圍專用的譯法；沒有就回 {@code null}。 */
-    public String scopedLookup(String scope, String template) {
-        Map<String, String> m = scopedOnly.get(scope);
-        return m == null || template == null ? null : m.get(template.strip());
-    }
-
-    /** 全部載完之後給人看的一句話。 */
-    private void report(Path dir) {
-        if (dir == null) {
-            return;
-        }
-        if (loadedFiles == 0) {
-            lastResult = com.wynnchayuan.client.T.s("status.no_json");
-            System.out.println("[WynnChaYuan] " + dir + " 裡沒有譯文檔");
-        } else if (entries.isEmpty()) {
-            // 檔案讀到了但一條也沒有 —— 幾乎都是 dst 全部留空
-            lastResult = com.wynnchayuan.client.T.s("status.no_dst", loadedFiles);
-            System.out.println("[WynnChaYuan] 讀了 " + loadedFiles + " 個檔案，但沒有任何已填寫的 dst");
-        } else {
-            lastResult = com.wynnchayuan.client.T.s("status.loaded", entries.size(), loadedFiles);
-            System.out.println("[WynnChaYuan] 已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）");
-        }
-    }
-
-    /** 不在清單裡的檔案排到最後，但仍然會載入。 */
-    private static int indexOf(List<String> order, String name) {
-        int i = order.indexOf(name);
-        return i < 0 ? Integer.MAX_VALUE : i;
-    }
-
-    /** 上一次載入的人話結果，直接顯示給使用者看。 */
-    public String lastResult() {
-        return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.not_loaded");
-    }
-
-    private void load(Path file) {
-        try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-            JsonElement root = JsonParser.parseReader(r);
-            if (!root.isJsonObject()) {
-                // 空檔也走這裡（JsonParser 讀到空內容回傳 JsonNull）。先前是安靜地略過，
-                // 那個檔的譯文就一直不見，而且完全看不出原因。
-                broken.add(file);
-                System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：不是 JSON 物件");
-                return;
-            }
-            JsonObject obj = root.getAsJsonObject();
-            int before = entries.size();
-
-            if (obj.has("entries") && obj.get("entries").isJsonObject()) {
-                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj), gearNames(obj),
-                        tradable(file), abilityNames(file, obj));
-            } else {
-                // 檔名以 -terms.json 結尾的，內容是<b>可以在別的句子裡自動替換的詞</b>
-                // （魔力儲庫、失衡、裂隙之裔…），不是一整行的譯文。
-                //
-                // 不是每個扁平檔都能這樣用：`gui.json` 那種收的是整行，
-                // 把它們全部當成詞會在不相干的句子裡亂換。所以用檔名明說。
-                readFlat(obj, file.getFileName().toString().endsWith("-terms.json"));
-                if (file.getFileName().toString().equals("quest.json")) {
-                    for (String key : obj.keySet()) {
-                        if (!key.startsWith("_") && !key.isBlank()) {
-                            unplacedLines.add(key.strip());   // 見 #forecast
-                        }
-                    }
-                }
-                for (String key : obj.keySet()) {
-                    String name = PageNames.nameOfTitle(key);
-                    if (name != null && name.indexOf('{') < 0) {
-                        pageNames.add(name.strip());   // 見 #isPageName
-                        JsonElement value = obj.get(key);
-                        if (value != null && value.isJsonPrimitive()) {
-                            notePageTitle(name.strip(), value.getAsString());   // 見 #pageTitleName
-                        }
-                    }
-                }
-                if (file.getFileName().toString().equals(UI_LABELS)) {
-                    for (String key : obj.keySet()) {
-                        if (!key.startsWith("_")) {
-                            uiLabels.add(key.strip());   // 見 #isUiLabel
-                        }
-                    }
-                }
-            }
-            loadedFiles++;
-            System.out.println("[WynnChaYuan] 載入譯文 " + file.getFileName()
-                    + "：+" + (entries.size() - before) + " 條");
-        } catch (com.google.gson.JsonParseException e) {
-            // 半截的檔（下載或第一次倒工作檔時被關掉）。JsonIOException 是讀檔本身失敗，
-            // 只有編碼不對才算內容壞了。
-            if (!(e instanceof com.google.gson.JsonIOException)
-                    || e.getCause() instanceof java.nio.charset.CharacterCodingException) {
-                broken.add(file);
-            }
-            System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
-        } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
-        }
-    }
-
-    /** 介面標籤檔。屬性標籤（Walk Speed、Main Attack Damage%…）都收在這裡。 */
-    private static final String UI_LABELS = "ui-labels.json";
-
-    /** {@link #UI_LABELS} 裡的每一條鍵，不管翻了沒。見 {@link #isUiLabel}。 */
-    private final java.util.Set<String> uiLabels = new java.util.HashSet<>();
-
-    /**
-     * 這個字是 {@code ui-labels.json} 裡的一條介面標籤嗎。
-     *
-     * <p>給「數值在前面」的屬性列用（{@code LineTranslator#statRow}）：逐片段那條路
-     * 常常把「+22 Main Attack Damage」切成一段，後面沒有數值尾巴可以當證據。
-     * 這時候只認介面標籤——任何「數字 + 語料裡的詞」都拼的話，
-     * 「2 Guardian」就成了「2 守護者」。
-     */
-    public boolean isUiLabel(String key) {
-        return key != null && uiLabels.contains(key.strip());
-    }
-
-    /** 短於這個長度的開頭不拿來猜：三四個字母對得上的標籤太多。見 {@link #completeUiLabel}。 */
-    private static final int MIN_TRUNCATED_LABEL = 6;
-
-    /**
-     * 被截短的介面標籤原本是哪一條。
-     *
-     * <h2>實機回報（2026-10-10）</h2>
-     * WynnMod 重畫的裝備說明把標籤欄限在固定寬度，放不下的砍掉尾巴接兩個點：
-     *
-     * <pre>
-     *   Elemental Spell Da..  *+366 [92.0%]
-     * </pre>
-     *
-     * 整份說明都翻好了，只有這一列留著英文——「Elemental Spell Da」不是任何一條鍵。
-     *
-     * <h2>怎麼認</h2>
-     * 拿開頭去對 {@code ui-labels.json} 的每一條鍵，<b>只對得上一個標籤</b>才算數。
-     * 同一個屬性的三條鍵（{@code X}、{@code X%}、{@code X Raw}）是同一個標籤的
-     * 三種數值，不算三個；要挑哪一種由呼叫端照數值決定。對得上兩個以上不同的
-     * 標籤就不猜，那一列留原文。
-     *
-     * @param prefix 砍剩的開頭，結尾的空白有意義（砍在空白後面的，下一個字要從頭對）
-     * @return 完整的標籤（不帶 {@code %} 與 {@code Raw}）；認不出來回傳 {@code null}
-     */
-    public String completeUiLabel(String prefix) {
-        if (prefix == null) {
-            return null;
-        }
-        String head = prefix.stripLeading();
-        if (head.strip().length() < MIN_TRUNCATED_LABEL) {
-            return null;
-        }
-        String found = null;
-        for (String key : uiLabels) {
-            String base = labelBase(key);
-            if (base.length() <= head.length() || !base.startsWith(head)) {
-                continue;
-            }
-            if (found != null && !found.equals(base)) {
-                return null;                   // 兩個不同的標籤都對得上，不猜
-            }
-            found = base;
-        }
-        return found;
-    }
-
-    /** 標籤去掉數值種類的記號：{@code "Spell Damage%"}、{@code "Spell Damage Raw"} 都是「Spell Damage」。 */
-    private static String labelBase(String key) {
-        if (key.endsWith("%")) {
-            return key.substring(0, key.length() - 1).stripTrailing();
-        }
-        if (key.endsWith(" Raw")) {
-            return key.substring(0, key.length() - 4).stripTrailing();
-        }
-        return key;
-    }
-
-    /**
-     * 名稱要怎麼收，是<b>兩個各自獨立的問題</b>，用兩個旗標分開問。
-     *
-     * <h2>一、會不會出現在別的句子裡（{@code _meta.itemNames}）</h2>
-     * 技能名稱與 Major ID 名稱會被別的敘述引用（「Bash 會增加範圍」），
-     * 所以要收進<b>可替換的詞</b>表。裝備與素材名稱不會，收進來只會亂替換——
-     * v1.99.71 就是這樣讓素材 Dark Matter 的譯名蓋到同名盔甲上的。
-     *
-     * <h2>二、受不受 F6「翻譯物品名稱」管（{@code _meta.gearNames}）</h2>
-     * 那個開關是為了讓<b>裝備</b>名稱保持英文——對得上 wiki、交易市場與社群討論。
-     * 素材、材料、典籍、面向、護符跟交易市場無關，不該被它關掉；
-     * {@code ingredient.json} 的 {@code _meta.note} 從一開始就這樣寫著。
-     *
-     * <h2>為什麼要拆開</h2>
-     * 這兩件事本來共用 {@code itemNames} 一個旗標。六個道具檔標成 false，
-     * 原意是第二個問題（「不受開關管」），但那個值同時觸發了第一個問題，
-     * 於是道具名全變成可替換的詞。v1.99.71 把它們改成 true 修好了替換，
-     * 卻讓素材名稱一起落進裝備開關底下——玩家看到的就是「素材翻譯全部消失」。
-     * 一個旗標答兩個問題，怎麼填都會錯一半，所以拆成兩個。
-     *
-     * <p>兩個都預設「當成裝備」：漏標一個裝備檔會讓開關<b>無聲失效</b>，
-     * 漏標一個非裝備檔頂多是名稱跟著開關關掉——後者看得出來，前者看不出來。
-     */
-    private static boolean itemNames(JsonObject root) {
-        return metaFlag(root, "itemNames");
-    }
-
-    /** 這個檔的名稱受不受 F6「翻譯物品名稱」管。見 {@link #itemNames}。 */
-    private static boolean gearNames(JsonObject root) {
-        return metaFlag(root, "gearNames");
-    }
-
-    /**
-     * 這個檔的名稱能不能拿去市集搜尋。
-     *
-     * <p>只有裝備、素材、材料。典籍與護符在 Wynntils 的物品資料裡全部標成不可交易，
-     * 面向不是背包裡的物品，技能與 Major ID 更不是——收進去只會讓候選清單
-     * 冒出市集搜不到的東西。扁平檔另外過濾，見 {@link MarketSearch#addListed}。
-     */
-    private static boolean tradable(Path file) {
-        String name = file.getFileName().toString();
-        return name.startsWith("gear-") || name.equals("ingredient.json")
-                || name.equals("material.json");
-    }
-
-    /**
-     * 這個檔是不是技能樹（{@code ability/} 底下）或 Major ID（{@code major-id.json}）。
-     * 認路徑，也認 {@code _meta.domain}（{@code ability/archer}、{@code major-id}）：
-     * 遠端同步下來的快取與內附的語料是同一個結構，兩種認法都對得上。
-     */
-    private static boolean abilityNames(Path file, JsonObject root) {
-        String name = file.getFileName().toString();
-        Path parent = file.getParent();
-        if (name.equals("major-id.json")
-                || parent != null && parent.getFileName() != null
-                        && parent.getFileName().toString().equals("ability")) {
-            return true;
-        }
-        JsonElement meta = root.get("_meta");
-        if (meta == null || !meta.isJsonObject()) {
-            return false;
-        }
-        String domain = optString(meta.getAsJsonObject(), "domain");
-        return domain != null && (domain.startsWith("ability/") || domain.equals("major-id"));
-    }
-
-    /** 沒寫、寫壞、或不是布林值都算 true——見 {@link #itemNames} 談預設值。 */
-    private static boolean metaFlag(JsonObject root, String name) {
-        JsonElement meta = root.get("_meta");
-        if (meta == null || !meta.isJsonObject()) {
-            return true;
-        }
-        JsonElement flag = meta.getAsJsonObject().get(name);
-        return flag == null || !flag.isJsonPrimitive() || flag.getAsBoolean();
-    }
-
-    private void readWorkspace(JsonObject entriesObj, boolean itemNames, boolean gearNames,
-                               boolean tradable, boolean abilityNames) {
-        for (String key : entriesObj.keySet()) {
-            JsonElement el = entriesObj.get(key);
-            if (!el.isJsonObject()) {
-                continue;
-            }
-            JsonObject e = el.getAsJsonObject();
-            String src = optString(e, "src");
-            // 被 Wynncraft 拿去當全螢幕黑幕的字母在這裡換掉。src 不能碰，
-            // 換了就對不上原文。見 LineTranslator#deIcon。
-            String dst = LineTranslator.deIcon(optString(e, "dst"));
-            // 還沒翻的裝備名也要記下來。它是專有名詞，不能讓別的檔案裡剛好同名
-            // 的條目替它翻譯——實機踩到的是武器「Guardian」被 Major ID 的
-            // 「守護者」蓋掉。全庫掃過去這種撞名有 50 組。見 #gearNameKeys。
-            if (gearNames && src != null && !src.isBlank()
-                    && (dst == null || dst.isBlank())
-                    && "name".equals(optString(e, "role"))) {
-                gearNameKeys.add(src.strip());
-            }
-            // 收過就記下來，翻了沒有另外算——見 seenSources 的說明。
-            if (src != null && !src.isBlank()) {
-                seenSources.add(src.strip());
-                // 還沒翻的也要排進去：它可能正是下一句，少了它會讓預測挑到後面那句。
-                // 見 #forecast。
-                noteSequence(key, src.strip(), questName(optString(e, "quest")),
-                        optString(e, "kind"), optString(e, "speaker"),
-                        "wiki".equals(optString(e, "source")));
-            }
-            if (src != null && dst != null && !dst.isBlank()) {
-                String srcKey = src.strip();
-                entries.put(srcKey, dst.strip());
-                // 跟下面收 nameKeys 同一個判準；gearNames 沒標時預設是 true，
-                // 技能檔也沒標，只看它會漏掉技能名。
-                if (!(itemNames && gearNames && "name".equals(optString(e, "role")))) {
-                    otherOwners.add(srcKey);
-                }
-                if (!(itemNames && "name".equals(optString(e, "role")))) {
-                    nonItemOwners.add(srcKey);      // 見 #plainOnly
-                } else {
-                    itemNameDsts.computeIfAbsent(srcKey,
-                            k -> ConcurrentHashMap.newKeySet()).add(dst.strip());
-                }
-                layerOf.put(srcKey, layer);
-                ordered.add(srcKey);
-                if (srcKey.length() >= MIN_PREFIX_LENGTH) {
-                    prefixIndex.put(srcKey, dst.strip());
-                }
-                noteBlockSize(srcKey);
-                noteFlat(srcKey, dst.strip());
-                notePlayerKey(srcKey);
-                noteWords(srcKey);
-                noteUnwrapped(srcKey, dst.strip());
-                noteIndented(srcKey, dst.strip());
-                noteMarked(srcKey, dst.strip());
-                noteLoose(srcKey, dst.strip());
-                // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
-                // 單一個任務裡通常只有一句。見 #matchPrefix(String, int, String)。
-                String quest = questName(optString(e, "quest"));
-                if (quest != null && !quest.isBlank()) {
-                    byQuest.computeIfAbsent(quest.strip(),
-                            q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
-                }
-                if (quest != null && !quest.isBlank()) {
-                    questOfLine.put(srcKey, quest.strip());
-                }
-                if ("wiki".equals(optString(e, "source"))) {
-                    fromWiki.add(srcKey);      // 見 #curatedRival
-                }
-                String who = optString(e, "speaker");
-                if (who != null && !who.isBlank()) {
-                    speakers.put(srcKey, who.strip());
-                    String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(who);
-                    if (quest != null && !quest.isBlank() && name != null) {
-                        questCast.computeIfAbsent(quest.strip(),
-                                q -> ConcurrentHashMap.newKeySet()).add(name);
-                    }
-                }
-                if ("name".equals(optString(e, "role"))) {
-                    if (tradable) {
-                        market.add(srcKey, dst.strip());       // 見 #tradable
-                    }
-                    if (!itemNames) {
-                        // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
-                        // 裝備與素材名稱不會，收進來只會亂替換。
-                        noteTerm(srcKey, dst.strip());
-                        if (abilityNames) {
-                            abilityNameDsts.computeIfAbsent(srcKey,
-                                    k -> ConcurrentHashMap.newKeySet()).add(dst.strip());
-                        }
-                    } else if (gearNames) {
-                        nameKeys.add(srcKey);       // 受 F6 開關管
-                        noteBareName(srcKey);
-                    } else {
-                        // 兩個都不是（素材、材料）：照一般條目翻，既不會被拿去
-                        // 替換別的句子，也不受裝備開關影響——只有按住 Shift
-                        // 看原文那一下會用到，見 #plainNameKeys。
-                        plainNameKeys.add(srcKey);
-                        noteBareName(srcKey);
-                    }
-                }
-            }
-        }
-    }
-
-    /** 見 {@link #bareNames}。 */
-    private void noteBareName(String key) {
-        if (key.indexOf(ICON) >= 0) {
-            bareNames.putIfAbsent(bareName(key), key);
-        }
-    }
-
-    /**
-     * @param asTerms 這個檔收的是<b>可替換的詞</b>而不是整行的譯文。
-     *                見呼叫處：靠檔名 {@code *-terms.json} 判斷。
-     */
-    private void readFlat(JsonObject obj, boolean asTerms) {
-        for (String key : obj.keySet()) {
-            if (key.startsWith("_")) {
-                continue;                     // _meta 之類的欄位
-            }
-            JsonElement v = obj.get(key);
-            // 平鋪格式的鍵就是原文，翻了沒有一律記下來——見 seenSources。
-            seenSources.add(key.strip());
-            if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                // 見 LineTranslator#deIcon：黑幕那個字母在進記憶體時就換掉
-                String flat = LineTranslator.deIcon(v.getAsString().strip());
-                entries.put(key.strip(), flat);
-                otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
-                nonItemOwners.add(key.strip());
-                layerOf.put(key.strip(), layer);
-                market.addListed(key.strip(), flat);
-                ordered.add(key.strip());
-                // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
-                //
-                // 先前只有 workspace 格式的檔案會進來，而台詞幾乎都放在扁平格式的
-                // quest.json 裡——於是整句打完才查得到，打字中途一律落空。玩家看到的
-                // 「英文跑完才忽然跳成中文」就是這裡漏掉的一行。
-                // 詞彙表不收：短詞進來只會讓前綴變得分不出是哪一句。
-                if (!asTerms && key.strip().length() >= MIN_PREFIX_LENGTH) {
-                    prefixIndex.put(key.strip(), flat);
-                }
-                noteBlockSize(key.strip());
-                noteFlat(key.strip(), flat);
-                notePlayerKey(key.strip());
-                noteWords(key.strip());
-                noteUnwrapped(key.strip(), flat);
-                noteIndented(key.strip(), flat);
-                noteMarked(key.strip(), flat);
-                if (!asTerms) {
-                    noteLoose(key.strip(), flat);
-                }
-                if (asTerms) {
-                    noteTerm(key.strip(), flat, true);
-                }
-            }
-        }
-    }
-
-    /**
-     * 空白正規化之後也記一份。
-     *
-     * <p>只收<b>夠長</b>的條目。短詞正規化之後很容易跟別的東西撞在一起，
-     * 而短詞本來就不會被自動斷行，不需要走這條路。
-     */
-    private void noteFlat(String key, String value) {
-        if (key.length() < MIN_FLAT_LENGTH) {
-            return;
-        }
-        // 不能只收「正規化之後有變」的。語料裡的長句本來就沒有換行——
-        // 會斷行的是<b>畫面</b>，不是語料。查詢端才是那個帶著換行進來的。
-        layered(flat, "flat", normalise(key), value);
-    }
-
-    /** 名字前後至少要有這麼多字被打出來，才敢認。見 {@link #playerNameIn}。 */
-    private static final int NAME_EVIDENCE = 12;
-
-    /** 認得出來的名字長度上限——暱稱可以有空格，但不會是一整句話。 */
-    private static final int MAX_PLAYER_NAME = 24;
-
-    /**
-     * 鍵裡帶著一個 {@code {u}} 的那些，拆成「名字前面」與「名字後面」兩段。
-     *
-     * <p>前面那一段還有別的佔位符就不收——那種鍵沒辦法直接拿來比對開頭。
-     */
-    private final List<String[]> playerKeys = new java.util.ArrayList<>();
-
-    private void notePlayerKey(String key) {
-        int at = key.indexOf(GlyphSplitter.PLAYER_PLACEHOLDER);
-        if (at < 0 || key.indexOf(GlyphSplitter.PLAYER_PLACEHOLDER,
-                                 at + GlyphSplitter.PLAYER_PLACEHOLDER.length()) >= 0) {
-            return;                        // 沒有 {u}，或不只一個
-        }
-        String pre = key.substring(0, at);
-        if (pre.indexOf('{') >= 0) {
-            return;                        // 前面還有別的佔位符，比不了開頭
-        }
-        String post = key.substring(at + GlyphSplitter.PLAYER_PLACEHOLDER.length());
-        int stop = post.indexOf('{');
-        if (stop >= 0) {
-            post = post.substring(0, stop); // 只留到下一個佔位符為止
-        }
-        if (post.length() < NAME_EVIDENCE) {
-            return;                        // 名字後面沒幾個字，認不準
-        }
-        // 第三欄：後面那一段是不是被下一個佔位符截斷的。截斷的話畫面上
-        // 那一段之後還會接著地名、數字，見 #nameBetween。
-        playerKeys.add(new String[] {pre, post, stop >= 0 ? "open" : ""});
-    }
-
-    /**
-     * 從語料反推「玩家在這句話裡叫什麼名字」。
-     *
-     * <h2>為什麼需要這個</h2>
-     * Wynncraft 的<b>暱稱</b>不在任何一個 Minecraft API 裡：帳號名是
-     * {@code Green_teaTW}，畫面上卻是 {@code Hey, WYNNCHAYUAN!}。玩家清單與實體
-     * 的顯示名稱都拿不到它，只有角色選單那一行「{@code - Nickname:}」有——而那要
-     * 玩家自己去開。沒開過就等於<b>每一句叫到名字的台詞都翻不出來</b>。
-     *
-     * <p>可是語料自己就知道答案：鍵是「{@code Hey, {u}! Are you alright in
-     * there?…}」，畫面上是「{@code Hey, WYNNCHAYUAN! Are you alright in ther}」。
-     * 前面對得上、後面也對得上，中間夾的那一段就是名字。認出來之後交給
-     * {@link com.wynnchayuan.capture.SelfNames}，往後每一句、連同收集語料那一邊
-     * 都會自己抽成 {@code {u}}。
-     *
-     * <h2>怎麼防止認錯</h2>
-     * <ul>
-     *   <li>名字<b>後面</b>至少要打出 {@value #NAME_EVIDENCE} 個字才算數——
-     *       逐字打字時前幾幀還看不出邊界在哪。</li>
-     *   <li>兩條鍵推出<b>不一樣</b>的名字就整個放棄，寧可不認。</li>
-     *   <li>推出來的字本身是語料裡的一條（NPC 名字之類）就不算——
-     *       「{@code Aledar, I've been waiting.}」不該把 Aledar 當成玩家。</li>
-     * </ul>
-     *
-     * @param raw 畫面上的原文，可能只打到一半
-     * @return 玩家在這句話裡的名字；認不出來或不只一種答案時回傳 {@code null}
-     */
-    /** 目前收了哪些鍵。只給檢查用——正式查表一律走 {@link #lookup}。 */
-    java.util.Set<String> keys() {
-        return java.util.Collections.unmodifiableSet(entries.keySet());
-    }
-
-    public Guess playerNameIn(String raw) {
-        if (raw == null || raw.isEmpty()) {
-            return null;
-        }
-        Guess found = null;
-        for (String[] key : playerKeys) {
-            String name = nameBetween(raw, key[0], key[1], !key[2].isEmpty());
-            if (name == null) {
-                continue;
-            }
-            if (found == null) {
-                found = new Guess(name, key[0] + '\u0000' + key[1]);
-            } else if (!found.name().equals(name)) {
-                return null;               // 兩條鍵各說各話，不猜
-            }
-        }
-        return found;
-    }
-
-    /**
-     * 一次猜測：夾出來的名字，以及夾出它的<b>是哪一條鍵</b>。
-     *
-     * <p>來源要記著，因為單獨一條鍵不足以定案——見
-     * {@link com.wynnchayuan.capture.SelfNames#propose}。
-     */
-    public record Guess(String name, String source) {}
-
-    /**
-     * {@code raw} 去掉開頭的 {@code pre}、結尾對得上 {@code post} 之後夾著的那一段。
-     *
-     * @param open {@code post} 在語料裡後面還接著佔位符（「{@code {u}! Nice to meet
-     *             you! I haven't been here in {p}…}」）。畫面上那一段之後會接著地名
-     *             和剩下的句子，永遠不會「以 post 結尾」——先前只比結尾，這種鍵
-     *             一條都認不出名字。這時改成找 post <b>第一次出現</b>的位置：
-     *             post 已經整段打出來了，證據跟整句吻合一樣強。
-     */
-    private String nameBetween(String raw, String pre, String post, boolean open) {
-        if (!raw.startsWith(pre)) {
-            return null;
-        }
-        String rest = raw.substring(pre.length());
-        if (open) {
-            int at = rest.indexOf(post);
-            if (at <= 0 || at > post.length()) {
-                return null;               // 還沒打到，或夾出來的比後面那段還長
-            }
-            String name = rest.substring(0, at);
-            return plausibleName(name) ? name : null;
-        }
-        // 名字後面那一段要<b>整段</b>對上，不能只對上前幾個字。
-        //
-        // 先前為了「打字打到一半就認出名字」而放寬成只要對上
-        // {@value #NAME_EVIDENCE} 個字，結果整份語料逐字模擬掃出 29 種誤認
-        // ——都發生在打字中途，那時後面還沒打完，看起來像什麼都有可能。
-        // 要求整段對上就等於「整句話完全吻合語料，只差名字那一段」，
-        // 證據強得多，也就不必再靠「兩條鍵互相佐證」把定案時機往後拖。
-        int k = post.length();
-        if (rest.length() > k && rest.regionMatches(rest.length() - k, post, 0, k)) {
-            String name = rest.substring(0, rest.length() - k);
-            // 名字不會佔掉半句話。夾出來的東西比後面對上的字還長，
-            // 幾乎都是「整句英文剛好尾巴撞上某條 {u} 的鍵」。
-            if (name.length() > k) {
-                return null;
-            }
-            return plausibleName(name) ? name : null;
-        }
-        return null;
-    }
-
-    /** 名字最多幾個詞。暱稱可以有空格，但不會是一句話。 */
-    private static final int MAX_NAME_WORDS = 3;
-
-    /**
-     * 英文原文裡每個詞出現過幾次。<b>語料自己就是一本英文字典。</b>
-     *
-     * <h2>為什麼需要</h2>
-     * 逐字打字時 {@code post} 只要對上 {@value #NAME_EVIDENCE} 個字就算數，
-     * 於是打到「{@code If you want to survive out here, you're}」那一幀，語料裡
-     * 某條「{@code {u}, you're…}」的鍵夾出了<b>半句台詞</b>當名字。實機診斷檔
-     * 裡 {@code selfNames} 真的躺著那 31 個字元，之後每一句含這幾個字的台詞
-     * 都被抽成 {@code {u}}，模板全對不上——畫面上就是「翻到一半忽然變英文」。
-     *
-     * <p>短的版本一樣危險：語料有兩百多條以 {@code {u}} 開頭的鍵，於是
-     * 「{@code Well, I guess…}」「{@code Alright, let's…}」開頭那個詞都會被夾
-     * 出來。手寫一份虛詞表擋不完——{@code Exploring}、{@code Psst}、
-     * {@code Anyway}、NPC 的 {@code Tasim}⋯⋯ 每補一個就多一個漏網的。
-     *
-     * <p>所以換個問法：<b>這個詞在三萬條英文原文裡出現過嗎</b>。玩家的名字不會
-     * 出現在語料裡，普通英文詞與 NPC 名字則到處都是。這份字典隨語料自己長大，
-     * 不必維護，換一種語言也照樣成立。
-     */
-    private final Map<String, Integer> wordCount = new ConcurrentHashMap<>();
-
-    /** 在語料裡出現這麼多次以上，就當成「英文本來就有的詞」，不是名字。 */
-    private static final int COMMON_WORD = 2;
-
-    private void noteWords(String key) {
-        for (String word : key.split("[^A-Za-z0-9_]+")) {
-            if (word.length() >= 2) {
-                wordCount.merge(word.toLowerCase(Locale.ROOT), 1, Integer::sum);
-            }
-        }
-    }
-
-    /** 看起來像名字嗎——長度、字元、詞數，而且不是語料裡本來就有的字。 */
-    private boolean plausibleName(String name) {
-        if (name.length() < 3 || name.length() > MAX_PLAYER_NAME) {
-            return false;
-        }
-        if (name.strip().length() != name.length()) {
-            return false;                  // 前後有空白：邊界切錯了
-        }
-        for (int i = 0; i < name.length(); i++) {
-            char c = name.charAt(i);
-            if (!Character.isLetterOrDigit(c) && c != '_' && c != ' ') {
-                return false;
-            }
-        }
-        String[] words = name.split(" ");
-        if (words.length > MAX_NAME_WORDS) {
-            return false;
-        }
-        // 至少要有一個詞是語料裡沒有的。名字整串都是英文本來就有的詞，
-        // 那夾出來的就是一句話，不是名字。
-        boolean own = false;
-        for (String word : words) {
-            if (wordCount.getOrDefault(word.toLowerCase(Locale.ROOT), 0) < COMMON_WORD) {
-                own = true;
-                break;
-            }
-        }
-        if (!own) {
-            return false;
-        }
-        return !entries.containsKey(name) && !speakers.containsKey(name);
-    }
-
-    /** 把所有連續空白（含換行）壓成一個空格。 */
-    public static String normalise(String text) {
-        return text == null ? "" : text.strip().replaceAll("\\s+", " ");
-    }
-
-    /**
-     * 續行的<b>行首圖示</b>也一併拿掉之後的索引。
-     *
-     * <h2>為什麼 {@link #flat} 不夠</h2>
-     * 聊天訊息是伺服器<b>先斷好行</b>送過來的，而且每一行開頭都掛著頻道圖示：
-     *
-     * <pre>
-     *   {#} The Karoshi Union World Event starts in {~}m {~}s! ({~}
-     *   {#} blocks away) Click to track
-     * </pre>
-     *
-     * 斷在哪裡取決於事件名多長、以及玩家自己設定的聊天欄寬度。
-     * {@link #normalise} 只壓空白，那個續行的 {@code {#}} 會留在原地——
-     * 而它的位置正好隨著斷點移動，於是同一句話的每一種斷法都是不同的鍵。
-     *
-     * <p>七十個世界事件 × 三種斷點，一條一條收是收不完的（而且斷點算不出來）。
-     * 把換行與續行的圖示一起拿掉，同一句話就只剩一個鍵。
-     */
-    private final Map<String, String> unwrapped = new ConcurrentHashMap<>();
-
-    /**
-     * 把換行與續行的行首圖示都拿掉，併成一句。
-     *
-     * <p>只拿掉<b>緊接在換行後面</b>的圖示。句子中間的圖示是內容的一部分
-     * （{@code craft {#} Boots}），拿掉會改變語意，也會讓佔位符數量對不上。
-     */
-    public static String unwrap(String text) {
-        if (text == null) {
-            return "";
-        }
-        String glyph = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
-        StringBuilder out = new StringBuilder(text.length());
-        int at = 0;
-        while (at < text.length()) {
-            if (text.charAt(at) != '\n') {
-                out.append(text.charAt(at));
-                at++;
-                continue;
-            }
-            at++;                              // 吃掉換行
-            while (at < text.length()) {
-                if (text.startsWith(glyph, at)) {
-                    at += glyph.length();      // 續行的行首圖示
-                } else if (Character.isWhitespace(text.charAt(at))) {
-                    at++;
-                } else {
-                    break;
-                }
-            }
-            out.append(' ');                   // 接起來的兩截之間要有一個空白
-        }
-        return normalise(out.toString());
-    }
-
-    /** 見 {@link #unwrapped}。索引<b>所有</b>夠長的條目，語料那邊不必也帶著換行。 */
-    private void noteUnwrapped(String key, String value) {
-        if (key.length() < MIN_FLAT_LENGTH) {
-            return;
-        }
-        String joined = unwrap(key);
-        boolean single = key.indexOf('\n') < 0;
-        // 同一句話同時有「伺服器折好行」的鍵與沒折的鍵時，併句索引要的是<b>沒折的</b>
-        // 那一條：查到之後是照併起來的一句重建（見 LineTranslator#unwrappedGlyphs），
-        // 折過行的譯文多帶著一個續行圖示，填回去數量對不上，整句放棄。
-        // 先前同一層裡誰先載入誰贏，折過行的那條排在前面時，別的斷法就永遠翻不出來
-        // （死亡快訊「… by Voracious\n Octiped」就是這樣）。
-        if (single && unwrappedFromWrapped.remove(joined)) {
-            unwrapped.put(joined, value);
-            indexLayer.put("unwrapped" + '\0' + joined, layer);
-            return;
-        }
-        if (!thisLayer.contains("unwrapped" + '\u0000' + joined) && !single) {
-            unwrappedFromWrapped.add(joined);
-        }
-        layered(unwrapped, "unwrapped", joined, value);
-    }
-
-    /**
-     * 這一層裡，併句索引目前是由<b>折過行</b>的鍵佔著的那幾句。見 {@link #noteUnwrapped}。
-     * 跟 {@link #thisLayer} 一起每層清一次。
-     */
-    private final java.util.Set<String> unwrappedFromWrapped = new java.util.HashSet<>();
-
-    /**
-     * 把斷好行的整則訊息當成一句話查。
-     *
-     * @param text 帶著換行與續行圖示的完整模板
-     * @return 譯文；沒有對應條目時回傳 {@code null}
-     */
-    public String lookupUnwrapped(String text) {
-        if (text == null || text.length() < MIN_FLAT_LENGTH) {
-            return null;
-        }
-        String key = unwrap(text);
-        return preferTop(unwrapped.get(key), "unwrapped", key);
-    }
-
-    /**
-     * 輔助索引命中的是墊底那層時，先問最上面那層有沒有「只差標點或大小寫」的同一句。
-     * 理由同 {@link #lookup}。
-     */
-    private String preferTop(String hit, String tag, String key) {
-        if (hit == null || topLayer == 0 || fromTop(tag, key)) {
-            return hit;
-        }
-        String top = lookupChain(key, true);
-        return top != null ? top : hit;
-    }
-
-    /**
-     * 查一段<b>可能被自動斷行</b>的長文字。
-     *
-     * @param text 已經把幾行併起來的模板
-     * @return 譯文；沒有對應條目時回傳 {@code null}
-     */
-    public String lookupFlat(String text) {
-        if (text == null || text.length() < MIN_FLAT_LENGTH) {
-            return null;
-        }
-        String key = normalise(text);
-        return preferTop(flat.get(key), "flat", key);
-    }
-
-    /** 短於這個長度的不進正規化索引，見 {@link #noteFlat}。 */
-    private static final int MIN_FLAT_LENGTH = 24;
-
-    /**
-     * 記一個可以在別的敘述裡自動替換的名稱。
-     *
-     * <p>太短的不收：{@code Aid}、{@code Ice} 這種在一般句子裡到處都是，
-     * 換錯比沒換更糟。含佔位符或換行的也不收，那不是一個名稱。
-     */
-    private void noteTerm(String name, String translation) {
-        noteTerm(name, translation, false);
-    }
-
-    /**
-     * @param curated 這個詞是<b>人挑進 {@code *-terms.json} 的</b>，不是從
-     *                {@code role:name} 的條目自動收來的。長度下限只擋自動收的
-     *                那一批：技能名裡真的有三個字母的（刺客的 {@code Hop}），
-     *                被擋掉之後 Major ID 的敘述換不掉它，畫面上就留著一個
-     *                英文單字（「Hop 與 Leap 的水平衝力大幅提升」）。
-     *                人挑的詞不必替它擔心誤中——那本來就是一個一個決定收的。
-     */
-    private void noteTerm(String name, String translation, boolean curated) {
-        if ((!curated && name.length() < MIN_TERM_LENGTH) || translation.isBlank()
-                || name.indexOf('{') >= 0 || name.indexOf('\n') >= 0) {
-            return;
-        }
-        terms.put(name, translation);
-        maxTermWords = Math.max(maxTermWords, name.split(" ").length);
-    }
-
-    /** 見 {@link #noteTerm}。四個字元大約是最短不會誤中的名稱。 */
-    private static final int MIN_TERM_LENGTH = 4;
-
-    /**
-     * 在 {@code text} 裡從 {@code from} 起找第一個技能名稱。
-     *
-     * <h2>同一個起點取最長的</h2>
-     * 詞表裡有不少名稱是另一個名稱的開頭：{@code Guardian}（守護者）跟
-     * {@code Guardian Angels}（守護天使）、{@code Meteor}（隕石）跟
-     * {@code Meteor Shower}（流星雨）、{@code Mask}（假面）跟
-     * {@code Mask of the Lunatic}（赤狂假面）。
-     *
-     * <p>先前是比中哪個就回哪個，而字數是從少往多試的——於是<b>短的永遠贏</b>，
-     * 畫面上是「守護者Angels」「隕石 Shower」「假面 of the Lunatic」。
-     * 語料裡兩邊都翻好了，玩家看到的卻是半個英文名字，實測有 37 個名稱長這樣。
-     *
-     * <p>改成把這個起點能接的字都試完，留最長的那一個。這跟
-     * {@code LineTranslator#appendText} 拿詞表跟重點段比的時候已經在用的
-     * 「同一個位置取比較長的」是同一條規則。
-     */
-    public Term findTerm(String text, int from) {
-        if (terms.isEmpty()) {
-            return null;
-        }
-        for (int i = from; i < text.length(); i++) {
-            if (!startsWord(text, i) || !Character.isUpperCase(text.charAt(i))) {
-                continue;                      // 名稱一律是大寫開頭的專有名詞
-            }
-            int end = i;
-            int bestEnd = -1;
-            String best = null;
-            for (int words = 0; words < maxTermWords && end <= text.length(); words++) {
-                end = wordEnd(text, end);
-                String hit = terms.get(text.substring(i, end));
-                if (hit != null) {
-                    best = hit;                // 不能就此回去，後面可能還有更長的
-                    bestEnd = end;
-                }
-                if (end >= text.length() || text.charAt(end) != ' ') {
-                    break;                     // 後面不是空格，接不下去了
-                }
-                end++;
-            }
-            if (best != null) {
-                return new Term(i, bestEnd, shownTerm(text.substring(i, bestEnd), best));
-            }
-        }
-        return null;
-    }
-
-    /** 這一整段剛好就是一個技能名稱的話，回傳它的譯名。 */
-    /**
-     * 查一個可替換的詞。
-     *
-     * <h2>為什麼要處理尾巴</h2>
-     * Wynncraft 把資源符號跟詞放在<b>同一個色段</b>裡：
-     *
-     * <pre>
-     *   §7adds §f+8§7 Mana to your §bMana Bank ✺
-     * </pre>
-     *
-     * 藍色那一段是「{@code Mana Bank ✺}」，連著符號。拿整段去查當然查不到，
-     * 而使用者看到的就是「詞典裡明明有，畫面上還是英文」。
-     *
-     * <p>剝掉尾巴查到之後<b>把尾巴接回去</b>——符號跟詞是同一個色段，
-     * 一起換掉才會連顏色都對。
-     */
-    public String lookupTerm(String text) {
-        if (text == null) {
-            return null;
-        }
-        String key = text.strip();
-        String hit = terms.get(key);
-        if (hit != null) {
-            return shownTerm(key, hit);
-        }
-        int end = key.length();
-        while (end > 0 && !Character.isLetterOrDigit(key.charAt(end - 1))) {
-            end--;
-        }
-        if (end == key.length() || end == 0) {
-            return null;
-        }
-        String coreKey = key.substring(0, end).strip();
-        String core = terms.get(coreKey);
-        return core == null ? null : shownTerm(coreKey, core) + key.substring(end);
-    }
-
-    private String shownTerm(String name, String hit) {
-        if (abilityNamesWithOriginal && ownAbilityName(name, hit)) {
-            return withOriginal(hit, name);
-        }
-        return hit;
-    }
-
-    /**
-     * 詞表裡所有的名稱（唯讀）。<b>測試用</b>：整份語料檢查「多字的技能名有沒有被拆到
-     * 兩行、有沒有只換了前半」時，要知道哪些名稱是多字的。
-     */
-    java.util.Set<String> termNames() {
-        return java.util.Collections.unmodifiableSet(terms.keySet());
-    }
-
-    /** 找到的名稱在原文的哪一段，以及它的譯名。 */
-    public record Term(int start, int end, String translation) {}
-
-    private static boolean startsWord(String text, int at) {
-        return at == 0 || !wordChar(text.charAt(at - 1));
-    }
-
-    private static int wordEnd(String text, int from) {
-        int i = from;
-        while (i < text.length() && (wordChar(text.charAt(i))
-                || text.charAt(i) == '\'' || text.charAt(i) == '-')) {
-            i++;
-        }
-        return i;
-    }
-
-    /**
-     * 這個字元算不算「同一個詞的一部分」。
-     *
-     * <h2>中日韓文字不算</h2>
-     * Java 認為漢字是字母，所以「{@code 降低Meteor的魔力消耗}」裡的
-     * {@code Meteor} 兩邊都被當成同一個詞的一部分：開頭那個 M 前面是「低」，
-     * {@link #startsWord} 判定它不是詞首；就算過得了那一關，{@link #wordEnd}
-     * 也會一路吃到「{@code Meteor的魔力消耗}」，跟詞表裡的 {@code Meteor}
-     * 對不上。
-     *
-     * <p>結果是<b>詞表整個不觸發</b>——技能名在 {@code ability/*.json} 明明
-     * 翻好了，敘述裡照樣顯示英文。實測語料裡有 77 條長這樣（薩滿 40、法師 26、
-     * 弓手 11），差別只在譯者有沒有在名字前面留一個空格。
-     *
-     * <p>中文本來就不用空格分詞，緊貼著寫是<b>正常的中文</b>，不該被當成同一個
-     * 詞。界線用 {@code 0x2E80}，跟 {@code LineTranslator#isLatin} 同一條。
-     *
-     * <p>{@link LineTranslator} 把重點段的樣式貼回譯文時用<b>同一條</b>界線。
-     * 「算不算同一個詞」在一份語料裡只能有一種答案，兩邊各自判會在
-     * {@code Lootrun} 那種詞上分岔：詞表不把 {@code Loot} 當詞首，
-     * 重點段卻照樣貼上去，於是 {@code run} 三個字母掉色。
-     */
-    static boolean wordChar(char c) {
-        return c < 0x2E80 && Character.isLetterOrDigit(c);
-    }
-
-    /** 這個鍵跨了幾行，比目前記錄的多就更新。 */
-    private void noteBlockSize(String key) {
-        int lines = 1;
-        for (int i = key.indexOf('\n'); i >= 0; i = key.indexOf('\n', i + 1)) {
-            lines++;
-        }
-        if (lines > maxBlockLines) {
-            maxBlockLines = lines;
-        }
-    }
-
-    private static String optString(JsonObject o, String field) {
-        JsonElement el = o.get(field);
-        return el != null && el.isJsonPrimitive() ? el.getAsString() : null;
+    /** 見 {@link #setPeekPlainNames}：給算繪端的快取做有效性判斷用。 */
+    public boolean peeksPlainNames() {
+        return peekPlainNames;
     }
 
     /**
@@ -1592,70 +152,6 @@ public final class TranslationStore {
     private volatile com.wynnchayuan.CollectorConfig.ItemNames pageNameMode =
             com.wynnchayuan.CollectorConfig.ItemNames.ON;
 
-    /**
-     * 語料裡每一條「名字 [類型]」卡片標題的<b>名字</b>那一段。見 {@link #isPageName}。
-     */
-    private final java.util.Set<String> pageNames = new java.util.HashSet<>();
-
-    /**
-     * 這段字是不是一個內容的名稱（清單那一列送來的裸名）。
-     *
-     * <p>語料裡有「這個名字 [Cave]」「這個名字 [Quest]」這種卡片標題才算——清單與卡片
-     * 是同一批內容，卡片認得的名字清單也認得。{@code Scorched Earth} 這種跟技能撞名的
-     * 洞窟也會中，但呼叫端只在 Wynntils 自己的畫面上問，那裡出現的就是洞窟。
-     */
-    public boolean isPageName(String text) {
-        return text != null && pageNames.contains(text.strip());
-    }
-
-    /**
-     * 卡片標題上這個內容叫什麼：{@code Scorched Earth [Cave]} 的譯文是「焦土 [洞窟]」，
-     * 這裡記的就是 {@code Scorched Earth -> 焦土}。
-     *
-     * <h2>為什麼要有（使用者 2026-10-13 的截圖）</h2>
-     * Wynntils 內容書左邊那一列寫著「燃燒大地」，右邊那張卡的標題是「焦土 [洞窟]」——
-     * 同一個洞窟兩個名字。清單送來的是裸名 {@code Scorched Earth}，照一般的查表拿到的是
-     * 弓箭手技能的譯名；卡片走的是帶 {@code [Cave]} 的那一條。兩個鍵各自都沒錯，
-     * 錯在清單問錯了人。裸名在語料裡補不進去——跟技能、裝備撞名的那幾個
-     * （{@code Dust Bowl} 是一雙靴子）會被「同一句原文只能一種譯法」擋下來。
-     *
-     * <p>所以清單不靠裸名的條目：卡片怎麼叫，清單就怎麼叫。
-     *
-     * <p>同一個名字有兩種類型、譯名又不一樣的（{@code Taproot} 是任務也是探索點）
-     * 不在這裡——光看名字分不出是哪一個，照舊走一般的查表。
-     *
-     * @return 卡片上的譯名；語料沒有這張卡、譯名跟原文一樣（還沒翻）、或上面說的
-     *         那種分不出來的，回傳 {@code null}
-     */
-    public String pageTitleName(String text) {
-        return text == null ? null : pageTitleNames.get(text.strip());
-    }
-
-    private final Map<String, String> pageTitleNames = new java.util.HashMap<>();
-
-    /** 兩種類型、兩種譯名的那幾個名字。見 {@link #pageTitleName}。 */
-    private final java.util.Set<String> pageTitleSplit = new java.util.HashSet<>();
-
-    private void notePageTitle(String name, String translated) {
-        if (translated == null || pageTitleSplit.contains(name)) {
-            return;
-        }
-        String shown = translated.strip();
-        int cut = shown.lastIndexOf(" [");
-        if (cut <= 0 || !shown.endsWith("]") || shown.indexOf('\n') >= 0) {
-            return;                            // 譯文不是「名字 [類型]」的形狀（空白、還沒翻）
-        }
-        String local = shown.substring(0, cut).strip();
-        if (local.isEmpty() || local.equals(name)) {
-            return;                            // 名字還是原文：不算一種譯法
-        }
-        String had = pageTitleNames.putIfAbsent(name, local);
-        if (had != null && !had.equals(local)) {
-            pageTitleNames.remove(name);
-            pageTitleSplit.add(name);
-        }
-    }
-
     /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */
     private volatile boolean namesWithOriginal = false;
 
@@ -1667,7 +163,7 @@ public final class TranslationStore {
      *（裝備說明的「Altruism:」）後面要不要括號附原文——F6 那一格，跟物品名稱的
      * 「譯名加原文」同一個畫法。
      *
-     * <p>整格查到技能檔自己的譯名時（{@link #ownAbilityName}）附在後面；敘述裡被詞表
+     * <p>整格查到技能檔自己的譯名時（{@link TranslationIndex#ownAbilityName}）附在後面；敘述裡被詞表
      * 換掉的技能名（{@link #findTerm}、{@link #lookupTerm}）也一樣附，「日耀 (Sunflare)
      * 恢復的…」。附上去的原文由 {@link #abilityOriginalSpans} 擋著不再被換。
      * 譯名跟原文一樣（還沒翻、或刻意留英文）時不附。
@@ -1686,744 +182,335 @@ public final class TranslationStore {
         return abilityNamesWithOriginal;
     }
 
-    /**
-     * 查到的這個譯名是技能檔或 Major ID 檔替這個原文寫的嗎，而且跟原文不一樣。
-     * 見 {@link #abilityNameDsts}。
-     */
-    private boolean ownAbilityName(String key, String hit) {
-        java.util.Set<String> own = abilityNameDsts.get(key);
-        return own != null && hit != null && !hit.strip().equals(key) && own.contains(hit);
+    /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
+    public boolean namesWithOriginal() {
+        return namesWithOriginal;
     }
 
-    /** @return 譯文；沒有對應條目時回傳 {@code null} */
-    /**
-     * 這句話是誰講的。
-     *
-     * <h2>為什麼要有</h2>
-     * 對話疊層只顯示一段文字，玩家看不出來是誰在說——尤其是同一個場景裡
-     * 好幾個 NPC 輪流講話的時候。語料裡本來就有 `speaker`，只是沒被帶進遊戲。
-     *
-     * @return 說話者的名字，沒有就回 null
-     */
+    public MarketSearch market() {
+        return index.market();
+    }
+
+    public boolean isPlainName(String key) {
+        return index.isPlainName(key);
+    }
+
+    public List<Path> brokenFiles() {
+        return index.brokenFiles();
+    }
+
+    public String chatSpeaker(String speaker) {
+        return index.chatSpeaker(speaker);
+    }
+
+    public com.wynnchayuan.capture.NameFrames nameFrames() {
+        return index.nameFrames();
+    }
+
+    public String labelLookup(String template) {
+        return index.labelLookup(template);
+    }
+
+    public String scopedLookup(String scope, String template) {
+        return index.scopedLookup(scope, template);
+    }
+
+    public String lastResult() {
+        return index.lastResult();
+    }
+
+    public boolean isUiLabel(String key) {
+        return index.isUiLabel(key);
+    }
+
+    public String completeUiLabel(String prefix) {
+        return index.completeUiLabel(prefix);
+    }
+
+    java.util.Set<String> keys() {
+        return index.keys();
+    }
+
+    public Guess playerNameIn(String raw) {
+        return index.playerNameIn(raw);
+    }
+
+    public String lookupUnwrapped(String text) {
+        return index.lookupUnwrapped(text);
+    }
+
+    public String lookupFlat(String text) {
+        return index.lookupFlat(text);
+    }
+
+    public Term findTerm(String text, int from) {
+        return index.findTerm(text, from);
+    }
+
+    public String lookupTerm(String text) {
+        return index.lookupTerm(text);
+    }
+
+    java.util.Set<String> termNames() {
+        return index.termNames();
+    }
+
+    public boolean isPageName(String text) {
+        return index.isPageName(text);
+    }
+
+    public String pageTitleName(String text) {
+        return index.pageTitleName(text);
+    }
+
     public String speakerOf(String template) {
-        return template == null ? null : speakers.get(template.strip());
+        return index.speakerOf(template);
     }
 
-    /** 每一句對話的說話者。見 {@link #speakerOf}。 */
-    private final Map<String, String> speakers = new ConcurrentHashMap<>();
-
-    /**
-     * 這個說話者是不是這個任務的人。
-     *
-     * <h2>為什麼要有（issue #1138）</h2>
-     * 收集時的任務名稱是追蹤欄上的那一個，而玩家追著 Undersupply 的時候，順路跟
-     * 茶館的 Marseled 聊天、跑完整段祕密發現 Solace in Pain——一百多句全被記成
-     * Undersupply，匯入時會進錯的任務檔。語料知道每個任務有哪些說話者：
-     * 說話者不在名單上，這句多半不是這個任務的台詞。
-     *
-     * @return {@code true}／{@code false}；任務在語料裡沒有說話者名單（新任務）
-     *         或不知道說話者時回傳 {@code null}——判斷不了
-     */
     public Boolean inCast(String quest, String speaker) {
-        if (quest == null || speaker == null || speaker.isBlank()) {
-            return null;
-        }
-        java.util.Set<String> cast = questCast.get(
-                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
-        if (cast == null || cast.isEmpty()) {
-            return null;
-        }
-        return cast.contains(speaker.strip());
+        return index.inCast(quest, speaker);
     }
 
-    /**
-     * 語料的任務名換成遊戲追蹤欄送的那個名字。
-     *
-     * <p>wiki 用「X (Quest)」跟同名的地點、發現區分（Tower of Ascension 既是任務也是
-     * 發現），任務檔的 quest 欄位照抄了 wiki 的頁名；追蹤欄送的是「Tower of Ascension」。
-     * 不剝掉的話，那 12 個任務的任務限定比對、說話者名單一直都對不上，
-     * 而且沒有任何錯誤訊息。資料照 wiki 留著（工具用它找 {@code -quest.json} 檔）。
-     */
-    static String questName(String quest) {
-        if (quest == null) {
-            return null;
-        }
-        String q = quest.strip();
-        return q.endsWith(" (Quest)") ? q.substring(0, q.length() - " (Quest)".length()).strip() : q;
-    }
-
-    /** @return 語料裡這一句屬於哪個任務；沒有標就回傳 {@code null}。給收集端核對用 */
     public String questOf(String template) {
-        return template == null ? null : questOfLine.get(template.strip());
+        return index.questOf(template);
     }
 
-    /** 每個任務在語料裡出現過的說話者（已剝掉名牌圖示）。見 {@link #inCast}。 */
-    private final Map<String, java.util.Set<String>> questCast = new ConcurrentHashMap<>();
-
-    /** 每一句台詞的任務。見 {@link #questOf}。 */
-    private final Map<String, String> questOfLine = new ConcurrentHashMap<>();
-
-    /**
-     * 半句話也查得到：拿<b>開頭</b>去比對。
-     *
-     * <h2>為什麼需要</h2>
-     * NPC 的對話是一個字一個字打出來的，打到一半的句子當然不在語料裡——
-     * 於是譯文要等整句打完才出現，而玩家常常已經按 shift 跳過去了。
-     *
-     * <p>只要開頭夠長、而且<b>只有一條</b>語料以它開頭，就可以確定是哪一句，
-     * 直接把整句譯文先顯示出來。有兩條以上以它開頭就再等等——寧可晚一點出現，
-     * 也不要先顯示錯的那一句再跳掉。
-     *
-     * @return 整句的譯文，還不能確定就回 null
-     */
     public String lookupPrefix(String partial) {
-        String source = matchPrefix(partial);
-        return source == null ? null : prefixIndex.get(source);
+        return index.lookupPrefix(partial);
     }
 
-    /** 半句話也認得出說話者。見 {@link #matchPrefix}。 */
     public String speakerOfPrefix(String partial) {
-        String source = matchPrefix(partial);
-        return source == null ? null : speakers.get(source);
+        return index.speakerOfPrefix(partial);
     }
 
-    /**
-     * 這半句是<b>哪一條</b>原文的開頭。
-     *
-     * <h2>為什麼要把原文也交出去</h2>
-     * NPC 是一個字一個字打出來的，同一句話在打完之前會以幾十種長度進來。
-     * 光拿到譯文的話，呼叫端分不出「這是新的一句」還是「還是剛才那句、只是又長了」，
-     * 於是每一次都重算一遍——算出來的東西時有時無，畫面就閃。
-     * 知道命中的是哪一條原文，就能直接判斷：新進來的還是它的開頭，那就什麼都不用做。
-     *
-     * @return 完整的原文；開頭還不夠獨特、分不出是哪一句時回傳 {@code null}
-     */
     public String matchPrefix(String partial) {
-        return matchPrefix(partial, partial == null ? 0 : partial.strip().length());
+        return index.matchPrefix(partial);
     }
 
-    /**
-     * 同上，但門檻另外算。
-     *
-     * <p>參數化會把玩家名收成 {@code {u}}，模板因此比畫面上實際打出來的字短一大截。
-     * 拿模板長度當門檻，開頭那一小段就會查不到而先閃出英文。呼叫端知道畫面上
-     * 究竟打了多少字，就用那個數字當「證據夠不夠」的依據。
-     *
-     * @param evidence 畫面上已經打出來的字數
-     */
     public String matchPrefix(String partial, int evidence) {
-        return matchPrefix(partial, evidence, null);
+        return index.matchPrefix(partial, evidence);
     }
 
-    /**
-     * 同上，但先在<b>目前這個任務</b>裡找。
-     *
-     * <h2>為什麼要分任務</h2>
-     * 卡住翻譯的不是長度門檻，是<b>撞句</b>：{@code Hey, {u}} 在全庫裡撞到幾十句，
-     * {@code matchPrefix} 分不出是哪一句就只好回 {@code null}，於是英文一路跑到
-     * 二十幾個字、開頭夠獨特了才忽然跳成中文。
-     *
-     * <p>但玩家正在做的任務是<b>知道的</b>——追蹤器上就寫著。同一個任務裡
-     * {@code Hey, {u}} 通常只有一句，第一個字打出來就分得出來了。
-     *
-     * <p>範圍窄到一個任務之後長度門檻也不需要了：{@code MIN_PREFIX_LENGTH} 是
-     * 為「全庫幾萬句」定的，一個任務只有一百多句，撞不到就是撞不到。
-     * 只要求至少一個字，避免空字串命中第一條。
-     *
-     * @param quest 目前追蹤中的任務原名；{@code null} 就跟以前一樣只查全庫
-     */
     public String matchPrefix(String partial, int evidence, String quest) {
-        if (partial == null) {
-            return null;
-        }
-        String key = partial.strip();
-        if (key.isEmpty()) {
-            return null;
-        }
-        if (quest != null && !quest.isBlank() && key.length() >= MIN_QUEST_PREFIX) {
-            // 追蹤器送來的名稱可能帶著圖示（任務類型的小標誌），
-            // 語料裡的 quest 欄位是乾淨的，不剔會永遠對不上。
-            java.util.TreeMap<String, String> scoped = byQuest.get(
-                    com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
-            if (scoped != null) {
-                String hit = unique(scoped, key);
-                if (hit != null) {
-                    String better = curatedRival(hit, key);
-                    String pick = better != null ? better : hit;
-                    if (aloneInQuest(pick, key, GlyphSplitter.stripGlyphChars(quest).strip())) {
-                        return pick;
-                    }
-                }
-            }
-        }
-        if (evidence < MIN_PREFIX_LENGTH) {
-            return null;
-        }
-        return unique(prefixIndex, key);
+        return index.matchPrefix(partial, evidence, quest);
     }
 
-    /**
-     * 同一個任務裡、只差一兩個字的那一句。
-     *
-     * <h2>實機回報</h2>
-     * 語料裡兩萬多句台詞是從 wiki 抄的，措辭常跟實機差一點：
-     * <pre>
-     *   語料  You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard…
-     *   實機  You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard…
-     * </pre>
-     * 少一個 for，整句查不到，前綴比對也在 searching 之後斷掉，整句留在英文。
-     * 玩家看到的「有特別顏色的句子都變英文」多半是這種——帶物品名的句子
-     * 最常被 wiki 改寫。
-     *
-     * <h2>為什麼不怕貼錯</h2>
-     * 錯的中文比沒翻更糟（見 {@code matchPrefix} 的撞句問題），所以條件很緊：
-     * <ul>
-     *   <li>只在<b>目前追蹤的任務</b>裡找，不碰全庫</li>
-     *   <li>畫面上至少八個字</li>
-     *   <li>逐字比對，差的字數不超過總字數的八分之一（至少容許一個）</li>
-     *   <li>第二像的那句要差得明顯更多，分不出是哪一句就不給</li>
-     * </ul>
-     * 畫面上還在逐字打字時拿候選的<b>開頭同樣字數</b>來比，
-     * 所以打到一半也認得出來。
-     *
-     * @return 語料裡那一句的原文；找不到或不夠確定時回傳 {@code null}
-     */
     public String nearQuestLine(String typed, String quest) {
-        if (typed == null || quest == null || quest.isBlank()) {
-            return null;
-        }
-        java.util.TreeMap<String, String> scoped = byQuest.get(
-                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
-        if (scoped == null) {
-            return null;
-        }
-        // 對話還在畫面上時同一行會一直送進來（逐字打完之後也是），每一次都把整個任務
-        // 掃一遍、把每一句重新拆字，在台詞多的任務裡會讓畫面卡頓（實機 2026-10-24，
-        // 錄到的繪製執行緒時間有四成在這裡）。同一句、同一個任務就直接回上一次的結果。
-        NearQuery last = lastNear;
-        if (last != null && last.typed().equals(typed) && last.quest().equals(quest)) {
-            return last.result();
-        }
-        String result = nearQuestLineUncached(typed, scoped);
-        lastNear = new NearQuery(typed, quest, result);
-        return result;
+        return index.nearQuestLine(typed, quest);
     }
 
-    private String nearQuestLineUncached(String typed, java.util.TreeMap<String, String> scoped) {
-        String[] said = nearWords(typed);
-        if (said.length < NEAR_MIN_WORDS) {
-            return null;
-        }
-        int allowed = Math.max(1, said.length / 8);
-        String best = null;
-        int bestCost = Integer.MAX_VALUE;
-        int second = Integer.MAX_VALUE;
-        for (String src : scoped.keySet()) {
-            String[] words = nearWordCache.computeIfAbsent(src, TranslationStore::nearWords);
-            int cost = Integer.MAX_VALUE;
-            // 還在打字時只看得到開頭，拿候選前面差不多長的一截來比
-            for (int take = Math.max(1, said.length - allowed);
-                 take <= Math.min(words.length, said.length + allowed); take++) {
-                cost = Math.min(cost, wordDistance(said, words, take));
-            }
-            if (cost < bestCost) {
-                second = bestCost;
-                bestCost = cost;
-                best = src;
-            } else if (cost < second) {
-                second = cost;
-            }
-        }
-        if (best == null || bestCost > allowed || second - bestCost < 2) {
-            return null;
-        }
-        return best;
-    }
-
-    // ------------------------------------------------------------------
-    // 預測下一句（見 #forecast）
-    // ------------------------------------------------------------------
-
-    /**
-     * 任務台詞的一行，照語料的順序排。
-     *
-     * @param speaker 說話者，已正規化（見 {@link #speakerKey}）；沒標是空字串
-     * @param wiki    從 wiki 抄的（同一句話有兩個版本時，校訂版優先）
-     */
-    record SeqLine(String src, String speaker, boolean wiki) {}
-
-    /**
-     * 每個故事（任務、祕密發現）的台詞，照語料檔的順序。<b>還沒翻的也在裡面</b>：
-     * 預測要知道「下一句是哪一句」，跳過沒翻的那句就會挑到再下一句。
-     *
-     * <p>任務檔本來就照劇情的順序排（wiki 的對話頁是照劇情抄的，實機收的插在旁邊），
-     * {@code tools/quest-bundle.py} 合併時保留這個順序。
-     */
-    private final Map<String, List<SeqLine>> questSeq = new ConcurrentHashMap<>();
-
-    /** 每一句在 {@link #questSeq} 裡的位置（同一句可以出現好幾次）。 */
-    private final Map<String, Map<String, List<Integer>>> questSeqAt = new ConcurrentHashMap<>();
-
-    /** 已經排進去的條目鍵。疊層會把同一個條目讀兩次（墊底那層與上面那層）。 */
-    private final Set<String> seqKeys = ConcurrentHashMap.newKeySet();
-
-    /** 這一句排在哪幾個故事裡。「Alright!」這種短句十幾個任務都有。 */
-    private final Map<String, Set<String>> seqQuestOf = new ConcurrentHashMap<>();
-
-    /** 每個說話者講過的所有台詞（全庫、翻了沒都算）。見 {@link #forecast} 的競爭者。 */
-    private final Map<String, Set<String>> bySpeaker = new ConcurrentHashMap<>();
-
-    /** 扁平的 {@code quest.json}：還沒歸到任務、也不知道誰講的台詞。見 {@link #forecast}。 */
-    private final Set<String> unplacedLines = ConcurrentHashMap.newKeySet();
-
-    private void noteSequence(String entryKey, String src, String quest, String kind,
-                              String speaker, boolean wiki) {
-        String who = speakerKey(speaker);
-        if (!who.isEmpty()) {
-            bySpeaker.computeIfAbsent(who, k -> ConcurrentHashMap.newKeySet()).add(src);
-        }
-        if (quest == null || quest.isBlank()) {
-            return;
-        }
-        // 只排台詞。任務目標（「Talk to the Soldier at [...]」）畫在追蹤欄，不在對話框裡
-        if (kind != null && !kind.isBlank() && !"dialogue".equals(kind)) {
-            return;
-        }
-        String q = quest.strip();
-        if (!seqKeys.add(q + '\0' + entryKey)) {
-            return;
-        }
-        List<SeqLine> seq = questSeq.computeIfAbsent(q,
-                k -> new java.util.concurrent.CopyOnWriteArrayList<>());
-        questSeqAt.computeIfAbsent(q, k -> new ConcurrentHashMap<>())
-                .computeIfAbsent(src, k -> new java.util.concurrent.CopyOnWriteArrayList<>())
-                .add(seq.size());
-        seq.add(new SeqLine(src, who, wiki));
-        seqQuestOf.computeIfAbsent(src, k -> ConcurrentHashMap.newKeySet()).add(q);
-    }
-
-    /**
-     * 說話者的比對用寫法：只留名字那一列（剝掉圖示）、小寫、只留字母數字與問號。
-     *
-     * <p>名牌是遊戲畫的（{@code DialogueSpeaker}），語料的 speaker 是 wiki 抄的，
-     * 大小寫與空白不一定一樣。「???」是遊戲刻意藏名字的角色，問號要留著。
-     */
-    public static String speakerKey(String raw) {
-        String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(raw);
-        if (name == null) {
-            return "";
-        }
-        StringBuilder out = new StringBuilder(name.length());
-        for (int i = 0; i < name.length(); i++) {
-            char c = Character.toLowerCase(name.charAt(i));
-            if (Character.isLetterOrDigit(c) || c == '?') {
-                out.append(c);
-            }
-        }
-        return out.toString();
-    }
-
-    /**
-     * 這一句排在哪個故事裡。
-     *
-     * <p>先看 {@code prefer}（上一句的故事、追蹤中的任務）裡有沒有；都沒有時，
-     * 只有<b>一個</b>故事有這一句才回答。「Alright!」這種短句十幾個任務都有，
-     * 隨便挑一個當起點，下一句就會拿那個任務的台詞去比——實測會貼出別的任務的句子。
-     *
-     * @return 故事名；不知道或分不出是哪一個時回傳 {@code null}
-     */
     public String sequenceQuestOf(String src, String... prefer) {
-        if (src == null) {
-            return null;
-        }
-        String key = src.strip();
-        Set<String> homes = seqQuestOf.get(key);
-        if (homes == null || homes.isEmpty()) {
-            return null;
-        }
-        for (String p : prefer) {
-            if (p != null) {
-                String q = GlyphSplitter.stripGlyphChars(p).strip();
-                if (homes.contains(q)) {
-                    return q;
-                }
-            }
-        }
-        return homes.size() == 1 ? homes.iterator().next() : null;
+        return index.sequenceQuestOf(src, prefer);
     }
 
-    /**
-     * 這一句在故事裡排第幾。同一句出現好幾次時，取 {@code after} 之後的第一個，
-     * 沒有就取第一個。
-     *
-     * @return 位置；這個故事裡沒有這一句時回傳 -1
-     */
     public int sequenceIndex(String quest, String src, int after) {
-        if (quest == null || src == null) {
-            return -1;
-        }
-        Map<String, List<Integer>> at = questSeqAt.get(quest);
-        List<Integer> spots = at == null ? null : at.get(src.strip());
-        if (spots == null || spots.isEmpty()) {
-            return -1;
-        }
-        for (int spot : spots) {
-            if (spot > after) {
-                return spot;
-            }
-        }
-        return spots.get(0);
+        return index.sequenceIndex(quest, src, after);
     }
 
-    /**
-     * 從前後文<b>預測</b>畫面上剛開始打的這句是哪一句——不等前綴長到全庫唯一。
-     *
-     * <h2>為什麼</h2>
-     * 逐字打字時要等開頭對上夠多字（全庫 12 個字、追蹤中的任務 4 個字）才敢認，
-     * 玩家看到的是每一句都先跑一段英文才換成中文。但對話是<b>一句接一句</b>來的：
-     * 上一句認出來是任務檔的第 N 句，下一句幾乎一定就在後面幾句裡；
-     * 對話框的名牌又寫著是誰在講。這兩件事夠把候選縮到一句，第一個字就認得出來。
-     *
-     * <h2>錯的中文比沒翻更糟</h2>
-     * 預測只在<b>沒有任何別的可能</b>時才給答案，所有條件都要成立：
-     * <ol>
-     *   <li>名牌上有名字，而且預測的那句語料標的就是這個人說的。</li>
-     *   <li>上一句之後的 {@code window} 句裡，對得上目前這幾個字的（說話者不知道或就是
-     *       這個人）只有這一句——同一句話的 wiki／校訂兩個版本算同一句。</li>
-     *   <li>整個故事裡、這個人在全庫講過的所有台詞裡、還沒歸屬的台詞（{@code quest.json}）
-     *       裡，<b>都沒有別句</b>也對得上這幾個字。所以玩家回頭再找 NPC、NPC 重講前面
-     *       那句提醒、或是順路跟同名的 NPC 聊天，只要那句在語料裡就不會猜錯。</li>
-     *   <li>「對得上」對別句從寬（岔開的地方是 {@code {} 就算，名字可能正打到一半），
-     *       對預測的那句從嚴（{@code fits}，跟就地取代沿用上一幀用的是同一條規則）。</li>
-     * </ol>
-     * 剩下猜得錯的只有「這句根本不在語料裡、開頭又剛好一樣」；那時下一個岔開的字一進來，
-     * 呼叫端就會退回原本的判斷（{@code fits} 不再成立）。
-     *
-     * @param typed  畫面上目前打到的模板
-     * @param quest  上一句所在的故事；沒有上一句時是追蹤中的任務
-     * @param after  上一句的位置；-1 表示不知道上一句，整個故事都是候選
-     * @param window 上一句之後看幾句
-     * @param speaker 名牌上的名字（原樣）
-     * @param floor  至少打出幾個字才敢猜
-     * @param fits   預測的那句還對不對得上（從嚴）
-     * @return 預測的那一句的原文；不夠確定就回傳 {@code null}
-     */
-    public String forecast(String typed, String quest, int after, int window, String speaker,
-                           int floor, java.util.function.BiPredicate<String, String> fits) {
-        if (typed == null || quest == null || speaker == null) {
-            return null;
-        }
-        String key = typed.strip();
-        String who = speakerKey(speaker);
-        if (key.isEmpty() || key.length() < floor || who.isEmpty()) {
-            return null;
-        }
-        return forecastUncached(key, GlyphSplitter.stripGlyphChars(quest).strip(), after,
-                window, who, fits, true);
+    public String forecast(String typed, String quest, int after, int window, String speaker, int floor,
+                           java.util.function.BiPredicate<String, String> fits) {
+        return index.forecast(typed, quest, after, window, speaker, floor, fits);
     }
 
-    /**
-     * 第三層：限定任務的前綴比對，但<b>把語料標明是別人講的句子排除</b>。
-     *
-     * <p>追蹤欄那條（{@link #matchPrefix}）要整個任務裡只剩一句以這幾個字開頭；
-     * 一個任務幾百句，四五個字常常還撞好幾句——逐字模擬裡最慢才認出的句子，
-     * 九成卡在這裡。可是名牌寫著是誰在講：別人的台詞不可能是這一句。
-     * 門檻與風險跟追蹤欄那條同一級（都是「在這個任務裡唯一」），差別只在多信了
-     * 語料的說話者欄位；不知道誰講的（實機收的多半沒標）照樣算在競爭者裡。
-     */
     public String forecastBySpeaker(String typed, String quest, String speaker, int floor,
                                     java.util.function.BiPredicate<String, String> fits) {
-        if (typed == null || quest == null || speaker == null) {
-            return null;
-        }
-        String key = typed.strip();
-        String who = speakerKey(speaker);
-        if (key.isEmpty() || key.length() < floor || who.isEmpty()) {
-            return null;
-        }
-        return forecastUncached(key, GlyphSplitter.stripGlyphChars(quest).strip(), -1, 0, who,
-                fits, false);
+        return index.forecastBySpeaker(typed, quest, speaker, floor, fits);
+    }
+
+    public String forecastNext(String typed, String quest, int after, int window, String speaker, int floor,
+                               java.util.function.BiPredicate<String, String> fits) {
+        return index.forecastNext(typed, quest, after, window, speaker, floor, fits);
+    }
+
+    public String explainForecast(String typed, String quest, int after, int window, String speaker,
+                                  java.util.function.BiPredicate<String, String> fits) {
+        return index.explainForecast(typed, quest, after, window, speaker, fits);
+    }
+
+    public String explainQuest(String typed, String quest) {
+        return index.explainQuest(typed, quest);
+    }
+
+    public boolean hasLonger(String key) {
+        return index.hasLonger(key);
+    }
+
+    public boolean couldStillMatch(String typed) {
+        return index.couldStillMatch(typed);
+    }
+
+    public boolean isBareGearName(String key) {
+        return index.isBareGearName(key);
+    }
+
+    public boolean itemNameOnly(String key) {
+        return index.itemNameOnly(key);
+    }
+
+    public boolean gearNameOnly(String key) {
+        return index.gearNameOnly(key);
+    }
+
+    public boolean isItemName(String key) {
+        return index.isItemName(key);
+    }
+
+    public String lookupExact(String key) {
+        return index.lookupExact(key);
+    }
+
+    public String gearOwnName(String key) {
+        return index.gearOwnName(key);
+    }
+
+    String lootrunName(String name) {
+        return index.lootrunName(name);
+    }
+
+    public String lookup(String template) {
+        return index.lookup(template);
+    }
+
+    public int appendedOriginalAt(String text) {
+        return index.appendedOriginalAt(text);
+    }
+
+    public List<int[]> keptOriginals(String text) {
+        return index.keptOriginals(text);
+    }
+
+    List<int[]> abilityOriginalSpans(String text) {
+        return index.abilityOriginalSpans(text);
+    }
+
+    public int[] appendedOriginalSpan(String text) {
+        return index.appendedOriginalSpan(text);
+    }
+
+    public java.util.Set<String> sourceKeys() {
+        return index.sourceKeys();
+    }
+
+    public boolean hasTranslation(String template) {
+        return index.hasTranslation(template);
+    }
+
+    public int maxBlockLines() {
+        return index.maxBlockLines();
+    }
+
+    public int size() {
+        return index.size();
+    }
+
+    public int loadedFiles() {
+        return index.loadedFiles();
     }
 
     /**
-     * 第零層：已經知道對話還沒講完（進度條在上一句停下來時沒滿格），這一句就是上一句的
-     * 下一句。只看上一句之後 {@code window} 句：對得上目前這幾個字的只能有一句
-     * （同一句話的兩個版本算一句；名牌知道時，語料標明是別人講的不算）。
+     * 採集工具的名稱（{@code Dernic Pickaxe T{~}}），含名稱那一列的外框。
      *
-     * <p>不再跟整個任務、這個人全部的台詞、未歸屬台詞比——那些是防「玩家回頭找 NPC、
-     * NPC 重講前面那句」「順路跟別人聊天」的，而那兩種情形進度條都會從頭來。
-     * 剩下猜得錯的是語料漏了這段對話裡的一句、或順序跟遊戲不一樣；所以至少要
-     * {@code floor} 個字對上，岔開的那一幀起照樣退回原本的判斷。
+     * <h2>為什麼不放進 {@link TranslationIndex#plainNameKeys}</h2>
+     * 工具的名稱帶著等級的數字，模板裡是 {@code T{~}}。名稱列的那條路
+     * （{@link #nameRowInner}）不收帶佔位符的名字，所以工具的名稱列在語料裡是
+     * <b>整列</b>的條目（{@code {#}{#}{#}{#}{#}Dernic Pickaxe T{~}}），跟素材那種
+     * 「一個名字、各種外框共用」不一樣，按住 Shift 也就輪不到它
+     * （使用者 2026-10-10：「工具 shift 變回原文也可以裝」）。
+     *
+     * <p>認形狀而不是列名單：材質是一個首字大寫的詞，工具是四種之一，後面接
+     * {@code T{~}}，前後只能是圖示。句子裡提到工具的（「再 {~} 級就能使用…」
+     * 「已完成購買…」）不是這個形狀，按住 Shift 照舊是譯文。
      */
-    public String forecastNext(String typed, String quest, int after, int window, String speaker,
-                               int floor, java.util.function.BiPredicate<String, String> fits) {
-        if (typed == null || quest == null || after < 0) {
-            return null;
+    private static final java.util.regex.Pattern TOOL_NAME = java.util.regex.Pattern.compile(
+            "^(?:\\{#})*[A-Z][a-z]+ (?:Pickaxe|Axe|Scythe|Rod) T\\{~}(?:\\{#})*$");
+
+    /** 見 {@link #TOOL_NAME}。 */
+    static boolean isToolName(String key) {
+        return key != null && TOOL_NAME.matcher(key).matches();
+    }
+
+    /** 聊天形式的台詞鍵：計數、說話者、台詞。 */
+    static final java.util.regex.Pattern CHAT_LINE = java.util.regex.Pattern.compile(
+            "\\[\\{~}/\\{~}] (?<speaker>[^:\\n\\[\\]]+?): (?<line>[^\\n]+)");
+
+    /**
+     * 一次猜測：夾出來的名字，以及夾出它的<b>是哪一條鍵</b>。
+     *
+     * <p>來源要記著，因為單獨一條鍵不足以定案——見
+     * {@link com.wynnchayuan.capture.SelfNames#propose}。
+     */
+    public record Guess(String name, String source) {}
+
+    /** 把所有連續空白（含換行）壓成一個空格。 */
+    public static String normalise(String text) {
+        return text == null ? "" : text.strip().replaceAll("\\s+", " ");
+    }
+
+    /**
+     * 把換行與續行的行首圖示都拿掉，併成一句。
+     *
+     * <p>只拿掉<b>緊接在換行後面</b>的圖示。句子中間的圖示是內容的一部分
+     * （{@code craft {#} Boots}），拿掉會改變語意，也會讓佔位符數量對不上。
+     */
+    public static String unwrap(String text) {
+        if (text == null) {
+            return "";
         }
-        String key = typed.strip();
-        if (key.length() < floor) {
-            return null;
-        }
-        List<SeqLine> seq = questSeq.get(GlyphSplitter.stripGlyphChars(quest).strip());
-        if (seq == null) {
-            return null;
-        }
-        String who = speaker == null ? "" : speakerKey(speaker);
-        List<SeqLine> group = new java.util.ArrayList<>();
-        for (int i = after + 1; i < Math.min(seq.size(), after + 1 + window); i++) {
-            SeqLine line = seq.get(i);
-            if (!who.isEmpty() && !line.speaker().isEmpty() && !line.speaker().equals(who)) {
+        String glyph = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
+        StringBuilder out = new StringBuilder(text.length());
+        int at = 0;
+        while (at < text.length()) {
+            if (text.charAt(at) != '\n') {
+                out.append(text.charAt(at));
+                at++;
                 continue;
             }
-            if (!looseFit(line.src(), key)) {
-                continue;
+            at++;                              // 吃掉換行
+            while (at < text.length()) {
+                if (text.startsWith(glyph, at)) {
+                    at += glyph.length();      // 續行的行首圖示
+                } else if (Character.isWhitespace(text.charAt(at))) {
+                    at++;
+                } else {
+                    break;
+                }
             }
-            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
-                    && !versionOf(group.get(0).src(), line.src())) {
-                return null;
-            }
-            group.add(line);
+            out.append(' ');                   // 接起來的兩截之間要有一個空白
         }
-        String pick = null;
-        for (SeqLine line : group) {
-            String dst = entries.get(line.src());
-            if (dst == null || dst.isBlank() || !fits.test(line.src(), key)) {
-                continue;
-            }
-            if (pick == null || (!line.wiki() && fromWiki.contains(pick))) {
-                pick = line.src();
-            }
-        }
-        return pick;
+        return normalise(out.toString());
+    }
+
+    /** 找到的名稱在原文的哪一段，以及它的譯名。 */
+    public record Term(int start, int end, String translation) {}
+
+    /**
+     * 這個字元算不算「同一個詞的一部分」。
+     *
+     * <h2>中日韓文字不算</h2>
+     * Java 認為漢字是字母，所以「{@code 降低Meteor的魔力消耗}」裡的
+     * {@code Meteor} 兩邊都被當成同一個詞的一部分：開頭那個 M 前面是「低」，
+     * {@link TranslationIndex#startsWord} 判定它不是詞首；就算過得了那一關，{@link TranslationIndex#wordEnd}
+     * 也會一路吃到「{@code Meteor的魔力消耗}」，跟詞表裡的 {@code Meteor}
+     * 對不上。
+     *
+     * <p>結果是<b>詞表整個不觸發</b>——技能名在 {@code ability/*.json} 明明
+     * 翻好了，敘述裡照樣顯示英文。實測語料裡有 77 條長這樣（薩滿 40、法師 26、
+     * 弓手 11），差別只在譯者有沒有在名字前面留一個空格。
+     *
+     * <p>中文本來就不用空格分詞，緊貼著寫是<b>正常的中文</b>，不該被當成同一個
+     * 詞。界線用 {@code 0x2E80}，跟 {@code LineTranslator#isLatin} 同一條。
+     *
+     * <p>{@link LineTranslator} 把重點段的樣式貼回譯文時用<b>同一條</b>界線。
+     * 「算不算同一個詞」在一份語料裡只能有一種答案，兩邊各自判會在
+     * {@code Lootrun} 那種詞上分岔：詞表不把 {@code Loot} 當詞首，
+     * 重點段卻照樣貼上去，於是 {@code run} 三個字母掉色。
+     */
+    static boolean wordChar(char c) {
+        return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
     /** 測試用：第一層要不要把 quest.json 的未歸屬台詞算成競爭者。實機永遠是 true。 */
     public static volatile boolean unplacedRivals = true;
-
-    private String forecastUncached(String key, String quest, int after, int window, String who,
-                                    java.util.function.BiPredicate<String, String> fits,
-                                    boolean elsewhere) {
-        List<SeqLine> seq = questSeq.get(quest);
-        if (seq == null) {
-            return null;
-        }
-        int from = after >= 0 ? after + 1 : 0;
-        int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
-        // 一、上一句後面那幾句裡，對得上的只能有一句（同一句話的兩個版本併成一組）
-        List<SeqLine> group = new java.util.ArrayList<>();
-        for (int i = from; i < to; i++) {
-            SeqLine line = seq.get(i);
-            if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
-                continue;                      // 語料說是別人講的
-            }
-            if (!looseFit(line.src(), key)) {
-                continue;
-            }
-            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
-                    && !versionOf(group.get(0).src(), line.src())) {
-                return null;                   // 兩句不同的話都可能，等它岔開
-            }
-            group.add(line);
-        }
-        if (group.isEmpty()) {
-            return null;
-        }
-        // 名牌要對得上：這一組裡至少有一條語料標的就是這個人
-        boolean vouched = false;
-        for (SeqLine line : group) {
-            vouched |= line.speaker().equals(who);
-        }
-        if (!vouched) {
-            return null;
-        }
-        // 挑有譯文的；兩個版本都有就用校訂版（理由同 #curatedRival）
-        String pick = null;
-        for (SeqLine line : group) {
-            String dst = entries.get(line.src());
-            if (dst == null || dst.isBlank() || !fits.test(line.src(), key)) {
-                continue;
-            }
-            if (pick == null || (!line.wiki() && fromWiki.contains(pick))) {
-                pick = line.src();
-            }
-        }
-        if (pick == null) {
-            return null;
-        }
-        // 二、別的地方也沒有任何一句對得上
-        for (SeqLine line : seq) {
-            if ((line.speaker().isEmpty() || line.speaker().equals(who))
-                    && rival(pick, line.src(), key)) {
-                return null;
-            }
-        }
-        if (!elsewhere) {
-            return pick;
-        }
-        Set<String> theirs = bySpeaker.get(who);
-        if (theirs != null) {
-            for (String src : theirs) {
-                if (rival(pick, src, key)) {
-                    return null;
-                }
-            }
-        }
-        for (String src : unplacedRivals ? unplacedLines : Set.<String>of()) {
-            if (rival(pick, src, key)) {
-                return null;
-            }
-        }
-        return pick;
-    }
-
-
-    /**
-     * 診斷用（量表 {@code DialogueLeadAudit}）：{@link #forecast} 第一層這幾個字為什麼還不給答案。
-     * 跟 {@link #forecastUncached} 同一套條件，只是回傳卡在哪一關。
-     */
-    public String explainForecast(String typed, String quest, int after, int window,
-                                  String speaker, java.util.function.BiPredicate<String, String> fits) {
-        String who = speakerKey(speaker);
-        if (who.isEmpty()) {
-            return "沒有名牌";
-        }
-        String key = typed.strip();
-        List<SeqLine> seq = questSeq.get(quest == null ? "" : quest);
-        if (seq == null) {
-            return "沒有任務";
-        }
-        int from = after >= 0 ? after + 1 : 0;
-        int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
-        List<SeqLine> group = new java.util.ArrayList<>();
-        for (int i = from; i < to; i++) {
-            SeqLine line = seq.get(i);
-            if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
-                continue;
-            }
-            if (!looseFit(line.src(), key)) {
-                continue;
-            }
-            if (!group.isEmpty() && !group.get(0).src().equals(line.src())
-                    && !versionOf(group.get(0).src(), line.src())) {
-                return "後面幾句裡有兩句同開頭";
-            }
-            group.add(line);
-        }
-        if (group.isEmpty()) {
-            return "不在後面幾句裡";
-        }
-        boolean vouched = false;
-        String pick = null;
-        for (SeqLine line : group) {
-            vouched |= line.speaker().equals(who);
-            String dst = entries.get(line.src());
-            if (dst != null && !dst.isBlank() && fits.test(line.src(), key)) {
-                pick = line.src();
-            }
-        }
-        if (!vouched) {
-            return "語料沒標說話者";
-        }
-        if (pick == null) {
-            return "沒有譯文";
-        }
-        for (SeqLine line : seq) {
-            if ((line.speaker().isEmpty() || line.speaker().equals(who))
-                    && rival(pick, line.src(), key)) {
-                return line.src().startsWith(key) ? "任務裡別句同開頭" : "任務裡別句岔在佔位符";
-            }
-        }
-        Set<String> theirs = bySpeaker.get(who);
-        if (theirs != null) {
-            for (String src : theirs) {
-                if (rival(pick, src, key)) {
-                    return "同一人別的任務有句同開頭";
-                }
-            }
-        }
-        for (String src : unplacedLines) {
-            if (rival(pick, src, key)) {
-                return "未歸屬台詞同開頭";
-            }
-        }
-        return "可以";
-    }
-
-    /** 診斷用：限定任務的前綴比對（4 個字、任務裡唯一）這幾個字為什麼還不給答案。 */
-    public String explainQuest(String typed, String quest) {
-        String key = typed.strip();
-        if (quest == null) {
-            return "沒有任務";
-        }
-        String q = GlyphSplitter.stripGlyphChars(quest).strip();
-        if (key.length() < MIN_QUEST_PREFIX) {
-            return "不到4字";
-        }
-        java.util.TreeMap<String, String> scoped = byQuest.get(q);
-        if (scoped == null) {
-            return "沒有任務";
-        }
-        String hit = unique(scoped, key);
-        if (hit == null) {
-            Map.Entry<String, String> first = scoped.ceilingEntry(key);
-            return first == null || !first.getKey().startsWith(key) ? "任務裡沒有這句"
-                    : "任務裡多句同開頭";
-        }
-        String better = curatedRival(hit, key);
-        String pick = better != null ? better : hit;
-        List<SeqLine> seq = questSeq.get(q);
-        if (seq != null) {
-            for (SeqLine line : seq) {
-                if (rival(pick, line.src(), key)) {
-                    if (!line.src().startsWith(key)) {
-                        return "任務裡別句岔在佔位符";
-                    }
-                    String dst = entries.get(line.src());
-                    return dst == null || dst.isBlank() ? "任務裡沒翻的句同開頭" : "任務裡短版本同開頭";
-                }
-            }
-        }
-        return "可以";
-    }
-
-    /**
-     * 這個任務裡沒有<b>別句</b>也對得上這幾個字——連還沒翻的、岔在佔位符上的都算。
-     *
-     * <h2>為什麼前綴唯一還不夠</h2>
-     * 限定任務的前綴比對只看「以這幾個字開頭」的句子。可是畫面上的玩家名、地名是一個字
-     * 一個字打出來的，要打完才收成 {@code {u}}、{@code {p}}：打到「...S」時，
-     * 「...{u}, can we talk outside?」不算以它開頭，唯一的候選就成了「...S-S-Syndra?」，
-     * 整句貼錯（真語料逐字模擬抓到的）。還沒翻的句子也不在那份索引裡。
-     */
-    private boolean aloneInQuest(String pick, String key, String quest) {
-        List<SeqLine> seq = questSeq.get(quest);
-        if (seq == null) {
-            return true;                       // 沒有順序資料（舊格式的檔）：照舊
-        }
-        for (SeqLine line : seq) {
-            if (rival(pick, line.src(), key)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /** {@code src} 是 {@code pick} 以外、也對得上目前這幾個字的另一句。 */
-    private boolean rival(String pick, String src, String key) {
-        return !src.equals(pick) && looseFit(src, key) && !versionOf(pick, src);
-    }
-
-    /**
-     * 從寬的「對得上」：開頭一樣，或岔開的位置在語料的佔位符上、而畫面上岔出去的那一截
-     * <b>可能正是那個佔位符打到一半</b>（見 {@link #couldBe}）。英式拼法也算。
-     */
-    static boolean looseFit(String src, String typed) {
-        if (src.startsWith(typed) || slotFits(src, typed)) {
-            return true;
-        }
-        String other = respell(typed);
-        return !other.equals(typed) && src.startsWith(other);
-    }
 
     /**
      * 畫面上的字跟 {@code src} 岔開的地方正好是一個佔位符，而岔出去的那一截
@@ -2503,212 +590,7 @@ public final class TranslationStore {
     /** 一個還沒收成佔位符的名字最多多長。跟 {@code DialogueRewriter.NAME_ROOM} 一樣。 */
     private static final int FORECAST_NAME_ROOM = 24;
 
-
-    private static final int NEAR_MIN_WORDS = 8;
-
-    /** 見 {@link #nearQuestLine}：上一次問的那一句與結果。 */
-    private record NearQuery(String typed, String quest, String result) {}
-
-    private volatile NearQuery lastNear;
-
-    /** 語料台詞拆好的字。語料換一份時跟著清掉（見 loadAll）。 */
-    private final Map<String, String[]> nearWordCache =
-            new java.util.concurrent.ConcurrentHashMap<>();
-
-    private static final java.util.regex.Pattern NEAR_SPACE = java.util.regex.Pattern.compile("\\s+");
-
-    private static final java.util.regex.Pattern NEAR_EDGES =
-            java.util.regex.Pattern.compile("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$");
-
-    /** 拆成比對用的字：小寫、去掉頭尾標點。 */
-    private static String[] nearWords(String text) {
-        String[] raw = NEAR_SPACE.split(text.strip());
-        List<String> out = new java.util.ArrayList<>(raw.length);
-        for (String w : raw) {
-            String t = NEAR_EDGES.matcher(w.toLowerCase(java.util.Locale.ROOT)).replaceAll("");
-            if (!t.isEmpty()) {
-                out.add(t);
-            }
-        }
-        return out.toArray(new String[0]);
-    }
-
-    /** {@code a} 對 {@code b} 前 {@code take} 個字的編輯距離（以字為單位）。 */
-    private static int wordDistance(String[] a, String[] b, int take) {
-        int[] prev = new int[take + 1];
-        int[] cur = new int[take + 1];
-        for (int j = 0; j <= take; j++) {
-            prev[j] = j;
-        }
-        for (int i = 1; i <= a.length; i++) {
-            cur[0] = i;
-            for (int j = 1; j <= take; j++) {
-                int sub = prev[j - 1] + (a[i - 1].equals(b[j - 1]) ? 0 : 1);
-                cur[j] = Math.min(sub, Math.min(prev[j] + 1, cur[j - 1] + 1));
-            }
-            int[] t = prev;
-            prev = cur;
-            cur = t;
-        }
-        return prev[take];
-    }
-
-    /**
-     * 這個開頭在這份索引裡是不是<b>只</b>對得上一句。
-     *
-     * @return 那一句的完整原文；對不上或分不出是哪一句時回傳 {@code null}
-     */
-    private String unique(java.util.TreeMap<String, String> index, String key) {
-        Map.Entry<String, String> first = index.ceilingEntry(key);
-        if (first == null || !first.getKey().startsWith(key)) {
-            String other = respell(key);        // 見 respell：英式拼法對不上語料
-            if (other.equals(key)) {
-                return null;
-            }
-            first = index.ceilingEntry(other);
-            if (first == null || !first.getKey().startsWith(other)) {
-                return null;
-            }
-            key = other;
-        }
-        String next = index.higherKey(first.getKey());
-        if (next != null && next.startsWith(key)) {
-            return settle(index, key, first.getKey());
-        }
-        return first.getKey();
-    }
-
-    /**
-     * 候選不只一條，但它們可能只是<b>同一句話的新舊版本</b>。
-     *
-     * <h2>為什麼要分這個</h2>
-     * 官方改過詞、wiki 還沒跟上時，同一句台詞在庫裡有兩條。逐字打字打到
-     * 「Hey, {u}!」，前綴比對看到兩條就回 {@code null}——玩家眼前的英文於是
-     * 一路跑到岔開的那個字才忽然跳成中文。但這裡根本不必猶豫：兩條講的是
-     * 同一句話，人工校訂過的那條就是答案。
-     *
-     * <p>只在<b>全部</b>候選都是同一句話、而且校訂版<b>只有一條</b>時才敢答。
-     * 少一個條件都可能貼上完全無關的台詞。
-     *
-     * @return 校訂版的原文；真的分不出來時回傳 {@code null}
-     */
-    private String settle(java.util.TreeMap<String, String> index, String key, String first) {
-        String curated = null;
-        int scanned = 0;
-        int best = -1;
-        for (Map.Entry<String, String> e : index.tailMap(key).entrySet()) {
-            if (!e.getKey().startsWith(key)) {
-                break;
-            }
-            if (++scanned > RIVAL_SCAN || !sameLine(first, e.getKey())) {
-                return null;                   // 真的是不同的句子，分不出來
-            }
-            best = Math.max(best, layerOf(e.getKey()));
-            if (!fromWiki.contains(e.getKey())) {
-                if (curated != null) {
-                    return null;               // 兩條都是校訂版，也分不出來
-                }
-                curated = e.getKey();
-            }
-        }
-        // 校訂版來自比別的候選低的那一層時不換，理由同 #curatedRival
-        return curated != null && layerOf(curated) < best ? null : curated;
-    }
-
-    /**
-     * 開頭要多長才敢猜。太短的話「I」「Well,」會撞到幾百句。
-     */
-    private static final int MIN_PREFIX_LENGTH = 12;
-
-    /**
-     * 限定任務之後的門檻。
-     *
-     * <h2>為什麼還是要留一道</h2>
-     * 追蹤中的任務<b>不保證</b>就是這段對話所屬的任務——玩家可能追著 A
-     * 卻順手跟 B 的 NPC 講話（見 {@code CurrentQuest} 的「限制」）。
-     * 一兩個字就敢猜的話，那種時候會很有把握地貼上<b>完全無關</b>的譯文。
-     *
-     * <p>四個字幾乎不花成本：實測 King's Recruit 全部 102 句台詞，
-     * 限定任務後平均第 4 個字就分得出來（全庫要 16 個字）。
-     */
-    private static final int MIN_QUEST_PREFIX = 4;
-
-    /**
-     * 同一句話的<b>校訂版</b>；沒有就回傳 {@code null}。
-     *
-     * <h2>為什麼需要</h2>
-     * wiki 抄來的台詞會跟遊戲裡實際跑的字<b>不一樣</b>——官方改過詞、wiki 還沒跟上。
-     * King's Recruit 第一句實測就是這樣：
-     *
-     * <pre>
-     *   wiki   Hey, {u}! You alright in there? Looks like we hit something.
-     *   實機   Hey, {u}! Are you alright in there? It looks like we've hit something.
-     * </pre>
-     *
-     * <p>兩條都在庫裡（校訂版放在 quest.json，是人工對著遊戲補的）。
-     * NPC 逐字打字時，打到「Hey, {u}」限定任務的索引<b>只看得到 wiki 那條</b>
-     * ——校訂版沒有 quest 欄位——於是先貼上「嘿，」；再多打幾個字岔開了，
-     * 全庫索引接手換成校訂版的「喂，」。玩家看到的就是講到一半中文自己換了一個字。
-     *
-     * <p>所以限定任務命中 wiki 條目時，先問一句：全庫裡有沒有一條<b>同一句話</b>
-     * 但不是 wiki 來的。有的話用那條——從第一幀就是校訂版，中途不會再換。
-     *
-     * <h2>怎麼算「同一句話」</h2>
-     * 共同前綴不管用：上面兩條在 {@code Hey, {u}! } 之後立刻岔開。
-     * 改看<b>用字的重疊比例</b>（Jaccard）：改詞頂多動幾個字，重疊會很高；
-     * 剛好同開頭的另一句台詞則低得多。
-     */
-    private String curatedRival(String wikiHit, String key) {
-        if (!fromWiki.contains(wikiHit)) {
-            return null;                       // 命中的本來就是校訂版，不必再找
-        }
-        int scanned = 0;
-        for (Map.Entry<String, String> e : prefixIndex.tailMap(key).entrySet()) {
-            if (!e.getKey().startsWith(key) || ++scanned > RIVAL_SCAN) {
-                break;
-            }
-            if (fromWiki.contains(e.getKey()) || e.getKey().equals(wikiHit)) {
-                continue;
-            }
-            // 別的任務的台詞不是這一句的校訂版。短句的用字重疊率很容易過門檻：
-            // The Missing Piece 的「Who are you!?」打到「Who a」，被換成 Point of No Return
-            // 的「Who are you now?」（四個字重疊三個），整句貼上「現在的你是誰？」。
-            // 校訂版要嘛跟它在同一個任務檔裡，要嘛還沒歸任務（quest.json）。
-            String home = questOfLine.get(wikiHit);
-            String theirs = questOfLine.get(e.getKey());
-            if (home != null && theirs != null && !home.equals(theirs)) {
-                continue;
-            }
-            // 校訂版只有墊底那層翻了、wiki 版卻是上面那層翻的：換過去等於
-            // 把簡體換成繁體。這時候留在命中的那條。
-            if (versionOf(wikiHit, e.getKey())
-                    && layerOf(e.getKey()) >= layerOf(wikiHit)) {
-                return e.getKey();
-            }
-        }
-        return null;
-    }
-
-    /**
-     * 兩條原文是不是同一句話的兩個版本（wiki 抄的與實機校訂的），可以拿其中一條的譯文
-     * 代替另一條。
-     *
-     * <p>比 {@link #sameLine} 多要求一件事：兩邊都要有至少 {@link #VERSION_WORDS} 個不同的字。
-     * 用字重疊率在短句上不可靠——「What brings you here, child.」對「What brings you here?」
-     * 重疊八成、「Who are you!?」對「Who are you now?」七成五，卻都是不同的台詞；
-     * 先前被當成同一句換過去，打到一半貼出別句的中文（逐字模擬真語料抓到十幾句）。
-     * 真正的改詞版本（King's Recruit 的「You alright in there?」對「Are you alright in
-     * there?」）都是長句。
-     */
-    static boolean versionOf(String a, String b) {
-        return words(a).size() >= VERSION_WORDS && words(b).size() >= VERSION_WORDS
-                && sameLine(a, b);
-    }
-
-    /** 見 {@link #versionOf}。 */
-    private static final int VERSION_WORDS = 6;
-
-    /** 兩條原文是不是同一句話的兩個版本。見 {@link #curatedRival}。 */
+    /** 兩條原文是不是同一句話的兩個版本。見 {@link TranslationIndex#curatedRival}。 */
     static boolean sameLine(String a, String b) {
         java.util.Set<String> left = words(a);
         java.util.Set<String> right = words(b);
@@ -2726,7 +608,7 @@ public final class TranslationStore {
     }
 
     /** 只留字母與數字，大小寫不分。撇號、逗號那些正是改詞時會動的東西。 */
-    private static java.util.Set<String> words(String text) {
+    static java.util.Set<String> words(String text) {
         java.util.Set<String> out = new java.util.HashSet<>();
         StringBuilder word = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -2765,256 +647,6 @@ public final class TranslationStore {
      */
     private static final int SAME_LINE_PERCENT = 65;
 
-    /** 最多往後看幾條。同一個開頭的候選本來就沒幾條，掃太多只是白花時間。 */
-    private static final int RIVAL_SCAN = 16;
-
-    /**
-     * 從 wiki 抄下來的條目。
-     *
-     * <p>不是「品質比較差」的意思——絕大多數 wiki 條目都是對的。
-     * 只有在<b>同一句話有兩個版本</b>時才拿它來分高下：人工校訂過的那條
-     * 是對著遊戲畫面打的，一定比較新。見 {@link #curatedRival}。
-     */
-    private final java.util.Set<String> fromWiki =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
-
-    /**
-     * 語料裡還有<b>更長</b>的原文以這一段開頭嗎。
-     *
-     * <h2>為什麼呼叫端需要問這個</h2>
-     * NPC 是一個字一個字打出來的，而打到一半的那半句<b>本身</b>常常剛好就是
-     * 語料裡的另一條。逐字模擬全部 5749 句台詞抓出來的例子：
-     *
-     * <pre>
-     *   打到「Block」      → ability-labels 的「格擋」
-     *   打到「Bring」      → quest-ui 的「攜帶」
-     *   打到「...」        → 「……」
-     * </pre>
-     *
-     * 一兩幀之後整句打完，畫面上那幾個字就被換掉——玩家看到的是中文閃一下
-     * 變成別的字。而這種情形是<b>問得出來</b>的：後面還有更長的候選，就代表
-     * 現在定案有機會等一下要改口。
-     *
-     * <p>反過來說，沒有更長的候選時就沒有這個風險，可以立刻定案——
-     * 「Agh!」那種短短一句的台詞不會因此被拖慢。
-     */
-    public boolean hasLonger(String key) {
-        if (key == null) {
-            return false;
-        }
-        String bare = key.strip();
-        if (bare.isEmpty()) {
-            return false;
-        }
-        String next = ordered.higher(bare);
-        return next != null && next.startsWith(bare);
-    }
-
-    /**
-     * 語料裡還有沒有<b>任何一句</b>（有譯文的）可能就是畫面上正在打的這句。
-     *
-     * <p>就地取代在認出是哪一句之前先不畫英文（見 {@code DialogueRewriter#holds}）；
-     * 一句根本不在語料裡的話，等也等不到，越早知道越早把英文放出來。
-     * 「對得上」照 {@link #looseFit} 的意思：開頭一樣，或岔在一個看起來正打到一半的
-     * 佔位符上（「Hey, STE」對「Hey, {u}! …」）。
-     */
-    public boolean couldStillMatch(String typed) {
-        if (typed == null) {
-            return false;
-        }
-        String key = typed.strip();
-        if (key.isEmpty()) {
-            return true;
-        }
-        if (startsSome(key)) {
-            return true;
-        }
-        String other = respell(key);
-        if (!other.equals(key) && startsSome(other)) {
-            return true;
-        }
-        // 岔在佔位符上的：語料那條在第 cut 個字是「{」。
-        //
-        // 每一種佔位符各掃一段。先前只掃「{」開頭的前 64 條，而排序後最前面全是
-        // 「{#}」（圖示）：實機「{u}, why don't you do the honours?」打到玩家名的
-        // 第 6 個字就被判成「語料裡沒有」，英文提早放了出來（test2 的探針）。
-        for (int cut = key.length() - 1; cut >= 0; cut--) {
-            String before = key.substring(0, cut);
-            for (String slot : SLOTS) {
-                String head = before + slot;
-                int scanned = 0;
-                for (String src : ordered.tailSet(head)) {
-                    if (!src.startsWith(head) || ++scanned > 64) {
-                        break;
-                    }
-                    if (slotFits(src, key)) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    /** 見 {@link #couldStillMatch}：畫面上可能還沒收成模板的佔位符。 */
-    private static final String[] SLOTS = {"{u}", "{p}", "{~", "{#}"};
-
-    private boolean startsSome(String key) {
-        String next = ordered.ceiling(key);
-        return next != null && next.startsWith(key);
-    }
-
-    /** 每一條原文，排序後放著，只為了 {@link #hasLonger}。 */
-    private final java.util.concurrent.ConcurrentSkipListSet<String> ordered =
-            new java.util.concurrent.ConcurrentSkipListSet<>();
-
-    /** 依原文排序，才能用 ceiling/higher 做前綴比對。見 {@link #lookupPrefix}。 */
-    private final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();
-
-    /**
-     * 一個任務一份前綴索引。
-     *
-     * <p>沒有長度門檻——範圍已經窄到一個任務，短前綴不再危險。
-     */
-    private final Map<String, java.util.TreeMap<String, String>> byQuest =
-            new java.util.HashMap<>();
-
-    /**
-     * 這個字是<b>還沒翻的裝備名</b>嗎。
-     *
-     * <h2>為什麼不在 lookup 裡直接擋</h2>
-     * 第一版是在 {@link #lookup} 裡擋的，結果把介面標籤一起擋死了：有一把裝備
-     * 叫 {@code Reflection}，於是屬性列的「遠程反傷」也翻不出來——同一份 tooltip
-     * 裡其他標籤都是中文，只有那一行是英文。
-     *
-     * <p>{@code Guardian} 與 {@code Reflection} 在<b>鍵</b>上分不出來：兩個都是
-     * 「沒有自己譯文的裝備名，而別的檔案剛好有同名條目」。分得出來的是<b>位置</b>
-     * ——一個出現在物品名稱那一行，另一個出現在敘述裡的屬性標籤。
-     *
-     * <p>所以判斷交給呼叫端：只有畫物品名稱的地方才問這個問題。
-     * 見 {@code TooltipPanel#translateLines}。
-     */
-    public boolean isBareGearName(String key) {
-        if (key == null) {
-            return false;
-        }
-        String k = key.strip();
-        // F6 關掉物品名稱時，翻好的裝備名在名稱那一行也要留原文
-        return gearNameKeys.contains(k) || (!translateNames && nameKeys.contains(k));
-    }
-
-    /** 只有裝備名稱用到這個原文，別的檔案沒有同名條目。見 {@link #otherOwners}。 */
-    private boolean gearOnly(String key) {
-        return nameKeys.contains(key) && !otherOwners.contains(key);
-    }
-
-    /**
-     * 素材或材料的名稱，而且物品以外沒有別的條目用這個原文。
-     *
-     * <p>「譯名加原文」原本只替裝備附原文（那個模式是為了對得上交易市場，而素材從
-     * 一開始就不歸那個開關管）。使用者 2026-10-09：素材、材料也要有——要去 wiki 查
-     * 配方、跟別人講要哪個素材的時候，一樣需要原文。只有「附原文」這一段套過來，
-     * 「關閉」照舊不管素材：關掉物品名稱時素材還是譯名。
-     */
-    private boolean plainOnly(String key) {
-        return plainNameKeys.contains(key) && !nonItemOwners.contains(key);
-    }
-
-    /** 「譯名加原文」會替它附原文的名字：裝備，或素材與材料。 */
-    private boolean getsOriginal(String key) {
-        return gearOnly(key) || plainOnly(key);
-    }
-
-    /**
-     * 這個譯名是物品檔<b>自己</b>替這個原文寫的嗎。見 {@link #itemNameDsts}。
-     *
-     * <p>只在名稱那兩行問（{@link #nameLine}）：別的檔也有同名條目時，
-     * {@link #getsOriginal} 說不附——那是為了技能樹、名牌與敘述——但在物品自己的
-     * 名稱列上，它就是那件物品。
-     */
-    private boolean ownItemName(String key, String hit) {
-        java.util.Set<String> own = itemNameDsts.get(key);
-        return own != null && hit != null && own.contains(hit);
-    }
-
-    /**
-     * 這個原文<b>只是</b>一件物品的名字——裝備、素材或材料，別的檔案沒有同名條目。
-     *
-     * <p>給「名字: 數值」那條路用（{@code LineTranslator#itemAsLabel}）：物品的名字
-     * 不是標籤。見那邊的說明。
-     */
-    public boolean itemNameOnly(String key) {
-        return key != null && getsOriginal(key.strip());
-    }
-
-    /**
-     * 這個原文<b>只是</b>裝備（或書卷、護符、精華——{@code gearNames} 的那幾類）的名字，
-     * 別的檔案沒有同名條目。查表會把它答成那件裝備的譯名，「譯名加原文」下還附原文。
-     *
-     * <p>給物品說明的名稱列認「這份說明是不是那件裝備」用（{@code TooltipPanel}）：
-     * 任務書本的返回按鈕叫 {@code Return}，語料裡只有同名的戒指，按鈕就被翻成戒指。
-     * 素材與材料不算——那兩類不歸這一道管。
-     */
-    public boolean gearNameOnly(String key) {
-        return key != null && gearOnly(key.strip());
-    }
-
-    /**
-     * 這個原文是某件物品的名字——裝備、書卷、素材或材料，翻了沒都算，
-     * 別的檔案有沒有同名條目也不管。
-     *
-     * <p>給「一列只有名字」的清單認形狀用（{@link GuessListRow}）：要問的是
-     * 「這一格是不是物品」，不是「這個名字要不要附原文」。
-     */
-    public boolean isItemName(String key) {
-        if (key == null) {
-            return false;
-        }
-        String k = key.strip();
-        return nameKeys.contains(k) || gearNameKeys.contains(k) || plainNameKeys.contains(k);
-    }
-
-    /**
-     * 只認<b>一字不差</b>的那一條，不放寬標點、不看縮排。
-     *
-     * <p>{@link #lookup} 查不到精確的鍵時會放掉行尾的冒號再查一次——
-     * 「語料有沒有另外收帶冒號的那一條」這個問題不能問它，它一律說有。
-     *
-     * @return 譯文；沒有這一條、或譯文留空時回傳 {@code null}
-     */
-    public String lookupExact(String key) {
-        if (key == null) {
-            return null;
-        }
-        String hit = entries.get(key.strip());
-        return hit == null || hit.isBlank() ? null : hit;
-    }
-
-    /** 裝備專用的名字放在哪個範圍。見 {@link #gearOwnName}。 */
-    private static final String GEAR_SCOPE = "gear";
-
-    /**
-     * 這件裝備<b>自己的</b>譯名；沒有另外取名的回 {@code null}。
-     *
-     * <h2>為什麼要另外放一份</h2>
-     * 一般語料一個原文只能有一種譯法（validate 會擋）。而 Wynncraft 有五十幾件裝備
-     * 的名字跟技能、Lootrun 使命、Major ID 一模一樣：{@code Frenzy} 是弓箭手技能
-     * 「得寸進尺」也是一把長矛，{@code Aerodynamics} 是戰士技能「流線身法」也是一件
-     * 胸甲，{@code Radiance} 是「榮光賜福」也是一把弓。裝備只能跟著技能叫——
-     * 畫面上就是一把叫「得寸進尺」的矛（使用者 2026-10-09：這 46 件也要處理）。
-     *
-     * <p>{@code scoped/gear.json} 收的是這些裝備當<b>物品名稱</b>時的譯名
-     * （「狂躁之矛」「空氣動力胸甲」「光輝之弓」）。它只在物品說明的名稱那兩行生效
-     * ——由 {@code TooltipPanel#translateLines} 掛 {@link #nameLine} 決定——
-     * 技能樹、使命卡、Major ID 的說明照舊用一般語料那一份。
-     *
-     * <p>不列進 {@code _index.json}（見 {@link FileIndex#SCOPED}）：舊版不認得這個檔，
-     * 不會把它當一般語料載進去、反過來把技能名蓋成裝備名。
-     */
-    public String gearOwnName(String key) {
-        return key == null ? null : scopedLookup(GEAR_SCOPE, key);
-    }
-
     /**
      * 現在畫的是物品說明的<b>名稱那兩行</b>。見 {@link #gearOwnName}。
      *
@@ -3027,7 +659,7 @@ public final class TranslationStore {
     }
 
     /** 見 {@link #nameLine}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
-    private static final ThreadLocal<Boolean> NAME_LINE =
+    static final ThreadLocal<Boolean> NAME_LINE =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
 
     /**
@@ -3049,147 +681,8 @@ public final class TranslationStore {
     }
 
     /** 見 {@link #lootrunTitle}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
-    private static final ThreadLocal<Boolean> LOOTRUN_TITLE =
+    static final ThreadLocal<Boolean> LOOTRUN_TITLE =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
-
-    /**
-     * 使命／試煉名自己的譯名：聊天面板那一格（{@code {#}名字}）或記分板那一行
-     * （{@code 名字:}）。都沒有就回 {@code null}。
-     */
-    String lootrunName(String name) {
-        String icon = lookupExact(ICON + name);
-        if (icon != null && icon.startsWith(ICON) && icon.lastIndexOf(ICON) == 0) {
-            String cell = icon.substring(ICON.length()).strip();
-            if (!cell.isEmpty()) {
-                return cell;
-            }
-        }
-        String colon = lookupExact(name + ":");
-        if (colon != null && (colon.endsWith(":") || colon.endsWith("："))) {
-            String cell = colon.substring(0, colon.length() - 1).strip();
-            if (!cell.isEmpty()) {
-                return cell;
-            }
-        }
-        return null;
-    }
-
-    public String lookup(String template) {
-        if (BAR_ITEMS.get() && template != null && getsOriginal(template.strip())) {
-            return null;                       // 這個位置不會是物品，見 barItemNames
-        }
-        boolean holdAppended = HOLD_APPENDED.get();
-        if (LOOTRUN_TITLE.get() && LootrunNames.isName(template)) {
-            String name = template.strip();
-            String own = lootrunName(name);
-            if (own != null) {
-                return holdAppended ? own : LootrunNames.apply(name, own, pageNameMode);
-            }
-            if (gearOnly(name)) {
-                return null;                   // 只有裝備用這個原文：留原文，不畫成那件裝備
-            }
-        }
-        if (NAME_LINE.get() && template != null) {
-            String own = gearOwnName(template);
-            if (own != null) {
-                if (!translateNames) {
-                    return null;               // 使用者選擇不翻物品名稱
-                }
-                // 「譯名 (原文)」：跟一般裝備名同一個規矩
-                return namesWithOriginal && !holdAppended
-                        ? withOriginal(own, template.strip()) : own;
-            }
-        }
-        String hit = lookupBase(template);
-        if (hit == null) {
-            return shiny(template);
-        }
-        if (namesWithOriginal && !holdAppended && (getsOriginal(template.strip())
-                || NAME_LINE.get() && ownItemName(template.strip(), hit))) {
-            // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
-            return withOriginal(hit, template.strip());
-        }
-        if (abilityNamesWithOriginal && ownAbilityName(template.strip(), hit)) {
-            // 技能與 Major ID 的「譯名 (原文)」。不看 holdAppended：Major ID 那一列
-            // 在物品說明的第三行以後，那個旗標是擋「敘述裡提到的同名裝備」用的。
-            return withOriginal(hit, template.strip());
-        }
-        if (abilityNamesWithOriginal) {
-            String labelled = abilityLabelWithOriginal(template.strip(), hit);
-            if (labelled != null) {
-                return labelled;
-            }
-        }
-        // Lootrun 使命名跟著「任務與洞窟名稱」的設定，見 LootrunNames
-        return holdAppended ? hit : LootrunNames.apply(template, hit, pageNameMode);
-    }
-
-    /**
-     * 「譯名 (原文)」。原文裡的佔位符<b>不能照抄</b>。
-     *
-     * <h2>實機回報（2026-10-12）</h2>
-     * 「譯名 + 原文」模式下，書卷 {@code Arsonist's Tome of Allegiance} 的名稱留英文。
-     * 使用者的 {@code captured.json} 記著：
-     *
-     * <pre>
-     *   src  {#}Arsonist's Tome of Allegiance{#}
-     *   dst  {#}戀火效忠書卷{#} ({#}Arsonist's Tome of Allegiance{#})
-     *   why  {#}: src 2, dst 4
-     * </pre>
-     *
-     * 語料那一條的鍵本身帶著圖示（當時的 {@code tome.json}：遊戲把稀有度外框當圖示送來），
-     * 這裡原本把鍵<b>整個</b>接在後面，圖示就多了一倍。原文只有兩個圖示可以填，
-     * {@code LineTranslator#rebuildAll} 判定佔位符對不上、整條放棄——開了這個模式
-     * 反而連譯名都看不到。名字裡帶數值或地名的裝備（{@code H-{~} Micro Defibrillator}、
-     * {@code {p} Banner}，五十幾件）是同一個毛病。
-     *
-     * <h2>各種佔位符怎麼辦</h2>
-     * <ul>
-     *   <li>{@code {#}} 圖示：外框不是名字的一部分，原文那一份不帶。括號接在譯名後面、
-     *       <b>結尾的圖示之前</b>——圖示留在遊戲擺的位置，跟逐片段那條路畫出來的
-     *       「{@code {#}越相杖 (Warp){#}}」同一個樣子；</li>
-     *   <li>{@code {~}} 數值：改成指名的 {@code {~1}}、{@code {~2}}，同一個數字再用一次，
-     *       不多消耗；</li>
-     *   <li>{@code {p}} 地名、{@code {u}} 玩家名：沒有指名的寫法，照順序只填得了一次。
-     *       這種名字只給譯名、不附原文——地名本來就不翻，譯名裡看得到。</li>
-     * </ul>
-     */
-    private static String withOriginal(String hit, String key) {
-        String original = originalOf(key);
-        if (original == null) {
-            return hit;
-        }
-        int tail = hit.length();
-        while (tail >= ICON.length() && hit.startsWith(ICON, tail - ICON.length())) {
-            tail -= ICON.length();
-        }
-        return hit.substring(0, tail) + " (" + original + ")" + hit.substring(tail);
-    }
-
-    /**
-     * 附在譯名後面的那一份原文。見 {@link #withOriginal}。
-     *
-     * @return {@code null} 代表這個名字附不了原文
-     */
-    private String abilityLabelWithOriginal(String key, String hit) {
-        if (key.length() < 2 || !isLabelColon(key.charAt(key.length() - 1))) {
-            return null;
-        }
-        String hitCore = hit.stripTrailing();
-        if (hitCore.isEmpty() || !isLabelColon(hitCore.charAt(hitCore.length() - 1))) {
-            return null;
-        }
-        String name = key.substring(0, key.length() - 1).strip();
-        String own = hitCore.substring(0, hitCore.length() - 1).strip();
-        if (!ownAbilityName(name, own)) {
-            return null;
-        }
-        return withOriginal(own, name) + hitCore.charAt(hitCore.length() - 1);
-    }
-
-    private static boolean isLabelColon(char c) {
-        return c == ':' || c == '：';
-    }
 
     static String originalOf(String key) {
         if (key.indexOf('{') < 0) {
@@ -3214,242 +707,10 @@ public final class TranslationStore {
         return out.append(bare, from, bare.length()).toString();
     }
 
-    /** 名稱的鍵拿掉圖示之後的樣子；圖示兩邊的空白併成一個。見 {@link #bareNames}。 */
-    private static String bareName(String key) {
+    /** 名稱的鍵拿掉圖示之後的樣子；圖示兩邊的空白併成一個。見 {@link TranslationIndex#bareNames}。 */
+    static String bareName(String key) {
         return key.indexOf(ICON) < 0 ? key
                 : key.replace(ICON, " ").strip().replaceAll(" {2,}", " ");
-    }
-
-    /** 指名的數值（{@code {~1}}）。見 {@link #originalOf}。 */
-    private static final java.util.regex.Pattern NUMBERED =
-            java.util.regex.Pattern.compile("\\{~\\d+}");
-
-    /**
-     * 鍵本身帶圖示的物品名稱：拿掉圖示的樣子 → 語料的鍵。
-     *
-     * <p>附上去的原文不帶圖示（見 {@link #withOriginal}），所以括號裡的字
-     * 「{@code Arsonist's Tome of Allegiance}」本身<b>不是</b>語料的鍵，
-     * {@link #isAppendedOriginal} 要靠這一份才認得出那是我們自己附的——認不出來的話，
-     * 括號裡的英文會被詞表換掉，太長時也不會挪到下一行。
-     */
-    private final Map<String, String> bareNames = new ConcurrentHashMap<>();
-
-    /**
-     * 「譯名 + 原文」附在後面的那段「{@code  (原文)}」從哪裡開始。
-     *
-     * <h2>為什麼需要</h2>
-     * 附上去的原文是<b>刻意留的英文</b>，玩家拿它去對 wiki 與交易市場，
-     * 所以它必須原封不動。但它附得早（{@link #lookup}），而畫之前還會對整句
-     * 掃一次詞表把技能名換成中文（折行前換，見 {@code LineTranslator#termsWithin}）
-     * ——那一掃連括號裡的英文一起換掉了。
-     *
-     * <p>實機回報：Legendary 頭盔 {@code Mask of Courage} 畫成
-     * 「{@code 勇氣面具 (假面 of 勇氣)}」。{@code 假面} 與 {@code 勇氣} 分別是
-     * Shaman 的 {@code Mask} 與 {@code Courage}，只有 {@code of} 沒有對應的詞
-     * 而留了下來。
-     *
-     * <p>判斷條件收得很緊：必須是<b>結尾</b>的括號，而且括號裡正好是一個
-     * 只有裝備檔用到的名字（或 {@code Shiny} + 這種名字）。敘述本來就帶的括號
-     * ——「{@code Mask (Courage)}」——括號裡不是裝備名，照樣換。
-     *
-     * <p>括號後面只剩圖示的也算結尾：鍵本身帶圖示的名字，原文接在結尾的圖示
-     * <b>之前</b>（見 {@link #withOriginal}），整句是
-     * 「{@code {#}戀火效忠書卷 (Arsonist's Tome of Allegiance){#}}」。
-     *
-     * @return 「{@code  (}」的索引；沒有附原文時回傳 {@code -1}
-     */
-    public int appendedOriginalAt(String text) {
-        if (!namesWithOriginal || text == null) {
-            return -1;
-        }
-        int end = text.length();
-        while (end >= ICON.length() && text.startsWith(ICON, end - ICON.length())) {
-            end -= ICON.length();
-        }
-        if (end == 0 || text.charAt(end - 1) != ')') {
-            return -1;
-        }
-        int at = text.lastIndexOf(" (", end);
-        if (at < 0) {
-            return -1;
-        }
-        return isAppendedOriginal(text.substring(at + 2, end - 1),
-                text.substring(0, at)) ? at : -1;
-    }
-
-    /**
-     * 畫的時候<b>不能被詞表換掉</b>的幾段：我們自己附上去、或照設定留著的英文原名。
-     *
-     * <ul>
-     *   <li>物品名稱的「譯名 (原文)」，見 {@link #appendedOriginalAt}。</li>
-     *   <li>Lootrun 使命／試煉名：「任務與洞窟名稱」不是只顯示譯名時，附在後面的原文、
-     *       或整格換回的原文，見 {@link LootrunNames#spans}。實機的
-     *       「小丑的把戲 (Jester's 詭計)」就是少了這一條。</li>
-     *   <li>技能與 Major ID 名稱附的原文，見 {@link #abilityOriginalSpans}。那些名字本身
-     *       就在詞表裡，不擋的話「箭矢炸彈 (Arrow Bomb)」會被換成「箭矢炸彈 (箭矢炸彈)」。</li>
-     * </ul>
-     *
-     * @return 每一段 {@code {起, 迄}}；沒有就是空清單
-     */
-    public List<int[]> keptOriginals(String text) {
-        List<int[]> out = new java.util.ArrayList<>();
-        if (text == null) {
-            return out;
-        }
-        int at = appendedOriginalAt(text);
-        if (at >= 0) {
-            out.add(new int[] {at, text.length()});
-        }
-        if (pageNameMode != com.wynnchayuan.CollectorConfig.ItemNames.ON) {
-            out.addAll(LootrunNames.spans(text));
-        }
-        out.addAll(abilityOriginalSpans(text));
-        return out;
-    }
-
-    /**
-     * 技能與 Major ID 的「譯名 {@code  (原文)}」裡括號那一段，每一處一份 {@code {起, 迄}}。
-     *
-     * <p>不一定在結尾：Major ID 那一列是「利他主義 (Altruism): 說明…」。
-     * 認的是括號裡正好是一個技能／Major ID 名稱，而括號前面緊貼著它自己的譯名
-     *（見 {@link #abilityNameDsts}）——敘述本來就帶的括號碰不到。
-     */
-    List<int[]> abilityOriginalSpans(String text) {
-        if (!abilityNamesWithOriginal || text == null || text.indexOf('(') < 0) {
-            return List.of();
-        }
-        List<int[]> out = new java.util.ArrayList<>();
-        int open = text.indexOf('(');
-        while (open >= 0) {
-            int close = text.indexOf(')', open + 1);
-            if (close < 0) {
-                break;
-            }
-            java.util.Set<String> own = abilityNameDsts.get(text.substring(open + 1, close));
-            boolean spaced = open > 0 && text.charAt(open - 1) == ' ';
-            int start = spaced ? open - 1 : open;
-            if (own != null && follows(text.substring(0, start), own, spaced)) {
-                out.add(new int[] {start, close + 1});
-            }
-            open = text.indexOf('(', open + 1);
-        }
-        return out;
-    }
-
-    private static boolean follows(String before, java.util.Set<String> own, boolean spaced) {
-        if (before.isBlank()) {
-            return true;
-        }
-        if (!spaced) {
-            return false;
-        }
-        String lead = before.strip();
-        for (String dst : own) {
-            if (!dst.isEmpty() && (before.endsWith(dst) || dst.endsWith(lead))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * 「譯名 {@code  (原文)}」那一段在<b>整行</b>裡的位置。
-     *
-     * <h2>為什麼不能只看結尾</h2>
-     * {@link #appendedOriginalAt} 拿到的是<b>一段</b>（物品名稱自己一段），所以附在
-     * 結尾。但畫到面板上的是<b>一整行</b>，名稱後面還跟著 Wynncraft 的耐久度：
-     *
-     * <pre>
-     *   󏿰󏿏󐀅烬咒牧杖 (Cindercurse Crosier) [51.0%]
-     * </pre>
-     *
-     * 括號不在結尾，{@code appendedOriginalAt} 一律回傳 −1。要把原文挪到下一行
-     * 就得知道它<b>從哪到哪</b>，所以這裡回傳一對索引。
-     *
-     * <p>判斷條件跟 {@link #appendedOriginalAt} 同一套（{@link #isAppendedOriginal}）：
-     * 括號裡必須正好是一個只有裝備檔用到的名字。敘述本來就帶的括號
-     * ——「{@code 緩慢 (每秒 1.5 次)}」——括號裡不是裝備名，碰不到。
-     *
-     * @return {@code {起, 迄}}：起是「{@code  (}」的索引，迄是「{@code )}」的<b>下一個</b>
-     *         索引；沒有附原文時回傳 {@code null}
-     */
-    public int[] appendedOriginalSpan(String text) {
-        if (!namesWithOriginal || text == null) {
-            return null;
-        }
-        int at = text.indexOf(" (");
-        while (at >= 0) {
-            int close = text.indexOf(')', at + 2);
-            if (close < 0) {
-                return null;
-            }
-            if (isAppendedOriginal(text.substring(at + 2, close), text.substring(0, at))) {
-                return new int[] {at, close + 1};
-            }
-            at = text.indexOf(" (", at + 2);
-        }
-        return null;
-    }
-
-    /**
-     * 括號前面就是那件裝備自己的名字時也算。
-     *
-     * <p>另外取名的裝備（跟技能同名的那幾十件，見 {@link #gearOwnName}）不是
-     * {@link #gearOnly}——別的檔也有這個原文——所以光看括號裡的字分不出來。
-     * 但「狂躁之矛 (Frenzy)」只有我們自己會寫：括號前面緊貼著的正是那個原文的
-     * 裝備專用譯名。拆名稱那一步（NameWrap）在名稱列畫完<b>之後</b>才跑，那時
-     * {@link #nameLine} 已經放下了，所以不能靠那個旗標認。
-     */
-    private boolean isAppendedOriginal(String inner, String before) {
-        if (isAppendedOriginal(inner)) {
-            return true;
-        }
-        if (before == null) {
-            return false;
-        }
-        String own = gearOwnName(inner);
-        if (own != null) {
-            // 名稱列上用的是它自己的名字；物品檔那一份跟著技能叫（Frenzy＝得寸進尺），
-            // 「得寸進尺 (Frenzy)」不會是我們寫的
-            return before.endsWith(own);
-        }
-        // 別的檔也有這個原文、只在名稱列上附原文的物品（素材 Black Hole 同時是技能）。
-        // 一樣只認括號前面緊貼著物品檔自己的譯名：「引力黑洞 (Black Hole)」只有我們會寫。
-        java.util.Set<String> item = itemNameDsts.get(inner);
-        if (item != null) {
-            for (String dst : item) {
-                if (before.endsWith(dst)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
-    private boolean isAppendedOriginal(String inner) {
-        if (getsOriginal(inner)) {
-            return true;
-        }
-        // 鍵裡帶佔位符的名字，附上去的那一份跟鍵不是同一個字。見 #withOriginal。
-        // 畫之前數值是指名的 {~1}；畫好之後（NameWrap 看到的）已經填成數字了。
-        String templated = inner.indexOf('{') >= 0
-                ? NUMBERED.matcher(inner).replaceAll(java.util.regex.Matcher.quoteReplacement(
-                        GlyphSplitter.NUMBER_PLACEHOLDER))
-                : GlyphSplitter.parametrizeNumbers(inner);
-        if (!templated.equals(inner) && getsOriginal(templated)) {
-            return true;
-        }
-        String wrapped = bareNames.get(templated);
-        if (wrapped != null && getsOriginal(wrapped)) {
-            return true;
-        }
-        // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
-        if (inner.startsWith(SHINY)) {
-            String rest = inner.substring(SHINY.length()).strip();
-            return gearNameKeys.contains(rest) || nameKeys.contains(rest);
-        }
-        return false;
     }
 
     /**
@@ -3466,7 +727,7 @@ public final class TranslationStore {
      * </pre>
      *
      * 最後那一行是徽章的名字，而 Wynncraft 剛好有一件飾品也叫 {@code Snowflake}
-     * ——只有裝備檔用到這個原文，{@link #gearOnly} 說是，於是敘述裡的徽章名
+     * ——只有裝備檔用到這個原文，{@link TranslationIndex#gearOnly} 說是，於是敘述裡的徽章名
      * 被當成裝備名附上原文，「雪花 (Snowflake)」還被 {@code NameWrap} 折成兩行，
      * 夾在一段英文敘述中間。
      *
@@ -3492,7 +753,7 @@ public final class TranslationStore {
     }
 
     /** 見 {@link #holdAppendedOriginal}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
-    private static final ThreadLocal<Boolean> HOLD_APPENDED =
+    static final ThreadLocal<Boolean> HOLD_APPENDED =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
 
     /**
@@ -3514,7 +775,7 @@ public final class TranslationStore {
      * （{@code LineTranslator}）掛上這個旗標；物品清單（{@code - 名字}、圖示開頭的
      * {@code {#}{#}名字}）與「名字 [數量]」不掛，照舊翻。
      *
-     * <p>只擋<b>只有物品在用</b>的原文（{@link #getsOriginal}）：別的檔案有同名條目的
+     * <p>只擋<b>只有物品在用</b>的原文（{@link TranslationIndex#getsOriginal}）：別的檔案有同名條目的
      * （{@code Thorns} 既是屬性也是裝備）照舊查得到。擋下來的結果是留原文——
      * 留英文比寫上一件不相干的裝備好，真正該翻的怪物名補進 {@code npc.json} 就會先命中。
      *
@@ -3554,115 +815,11 @@ public final class TranslationStore {
      * <p>{@link #NAME_LINE}、{@link #HOLD_APPENDED} 只有算繪那條在寫，不會卡住，
      * 但背景那條不該讀到「現在正在畫名稱列」，一起改掉。
      */
-    private static final ThreadLocal<Boolean> BAR_ITEMS =
+    static final ThreadLocal<Boolean> BAR_ITEMS =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
 
-    /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
-    public boolean namesWithOriginal() {
-        return namesWithOriginal;
-    }
-
-    /** Shiny 裝備名稱的前綴。 */
-    private static final String SHINY = "Shiny ";
-
-    /**
-     * 「Shiny Sunstar」「Shiny Masterwork Divzer」：前綴照 {@code scoped/name.json}
-     * 的 {@code Shiny} 翻，後面的裝備名照裝備自己的譯名。
-     *
-     * <p>語料裡不會有「Shiny X」這種鍵——那是遊戲替追蹤數據的 Mythic 加上的前綴，
-     * 每一件都收一條只會翻倍。後面的名字沒有自己的譯文時（純造字的名字）
-     * 保留英文，而且<b>不能</b>去借別的檔案的同名譯文：Shiny Guardian 不是
-     * Major ID 的「守護者」，見 {@link #gearNameKeys} 與 {@link #gearOwnName}。
-     *
-     * <p>F6 關掉物品名稱時整個留英文；真的叫「Shiny Mask」的物品先被精確查表
-     * 接走，走不到這裡。
-     *
-     * @return 翻好的名稱；不是 Shiny 裝備、這個語言沒有前綴譯法時回傳 {@code null}
-     */
-    private String shiny(String template) {
-        if (template == null || !translateNames) {
-            return null;
-        }
-        // 名稱只佔一列。跨列的鍵是整段查表（LineTranslator#translateBlock）在問
-        // 「名稱列＋底下那一列」，例如名稱列接著 MYTHIC／RELIK 徽章那一列：
-        // 「{#}{#}{#}{#}{#}Shiny X\n{#}{#}」。下面剝圖示時換行算空白被 strip 吃掉，
-        // 兩列就被當成一個名字認了，譯文只剩一列——整段那條路於是把「譯名 (原文)」
-        // 重折回兩列：斷在「(」後面，後半截落到徽章那一列的行首，蓋在物品圖示上
-        // （使用者 2026-10-17 回報的 Shiny Transfiguration）。名稱要走逐列那條路，
-        // 由 NameWrap 照名字的起點拆。
-        if (template.indexOf('\n') >= 0 || template.indexOf('\r') >= 0) {
-            return null;
-        }
-        // 名稱列實際送來的樣子帶著外框圖示，結尾還黏著一個 Shiny 記號：
-        // 「{#}Shiny Fatal֎{#}」。原本只認裸的「Shiny 名字」，於是 Shiny 裝備的名稱
-        // 一律查不到（使用者 2026-10-14：「Shiny Masterwork 武器名稱不會被翻譯到」）。
-        // 圖示與記號剝掉再認，翻完原樣接回去。
-        String key = template.strip();
-        String head = "";
-        String tail = "";
-        while (key.startsWith(ICON)) {
-            head += ICON;
-            key = key.substring(ICON.length());
-        }
-        while (key.endsWith(ICON)) {
-            tail = ICON + tail;
-            key = key.substring(0, key.length() - ICON.length());
-        }
-        int end = key.length();
-        while (end > 0 && shinyMark(key.charAt(end - 1))) {
-            end--;
-        }
-        tail = key.substring(end) + tail;
-        key = key.substring(0, end).strip();
-        if (head.isEmpty() && tail.isEmpty()) {
-            return shinyName(key);
-        }
-        String core = shinyName(key);
-        return core == null ? null : head + core + tail;
-    }
-
-    /** 名稱結尾的記號（֎ 之類）：不是字母、數字，也不是名字裡會出現的標點。 */
-    private static boolean shinyMark(char c) {
-        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c) && "'.)!?-".indexOf(c) < 0;
-    }
-
-    private String shinyName(String key) {
-        if (!key.startsWith(SHINY)) {
-            return null;
-        }
-        String rest = key.substring(SHINY.length()).strip();
-        boolean bare = gearNameKeys.contains(rest);
-        if (!bare && !nameKeys.contains(rest)) {
-            return null;                       // 後面不是裝備名
-        }
-        String pattern = scopedLookup("name", "Shiny");
-        if (pattern == null || !pattern.contains("{name}")) {
-            return null;
-        }
-        // 先問裝備自己的名字：Guardian 的扁平條目跟 Major ID 一樣是「守護者」，
-        // 它自己的名字在 scoped/gear.json（見 #gearOwnName）。
-        String name = gearOwnName(rest);
-        if (name == null) {
-            name = bare ? null : lookupBase(rest);
-        }
-        if (name == null) {
-            name = rest;
-        }
-        String out = pattern.replace("{name}", name);
-        // 前綴是中日文、名字是英文時中間要空一格：「溯光的 Breuil」
-        int at = pattern.indexOf("{name}");
-        if (at > 0 && name.equals(rest) && !Character.isWhitespace(pattern.charAt(at - 1))
-                && pattern.charAt(at - 1) > 0x2E80) {
-            out = pattern.substring(0, at) + " " + name + pattern.substring(at + "{name}".length());
-        }
-        if (namesWithOriginal) {
-            out = out + " (" + key + ")";
-        }
-        return out;
-    }
-
     /** 圖示的佔位符。 */
-    private static final String ICON = "{#}";
+    static final String ICON = "{#}";
 
     /** 名稱列尾巴的鑑定度。 */
     private static final String ROLLED = " [{~}]";
@@ -3732,380 +889,6 @@ public final class TranslationStore {
         return inner.indexOf('{') >= 0 || !inner.equals(inner.strip()) ? null : inner;
     }
 
-    /** 這個鍵是不是「圖示 + 已知的物品名稱」那一列。見 {@link #nameRowInner}。 */
-    private boolean isNameRow(String key) {
-        String inner = nameRowInner(key);
-        return inner != null && (nameKeys.contains(inner) || gearNameKeys.contains(inner)
-                || plainNameKeys.contains(inner));
-    }
-
-    private String lookupBase(String template) {
-        if (template == null) {
-            return null;
-        }
-        String key = template.strip();
-        if (!translateNames && gearOnly(key)) {
-            return null;                       // 使用者選擇不翻物品名稱
-        }
-        if (peeked(key)) {
-            return null;                       // 按住 Shift：素材、材料與採集工具看原文
-        }
-        if (isNameRow(key)) {
-            return null;                       // 名稱那一列不收整列的譯文，見 #nameRowInner
-        }
-
-        if (topLayer > 0) {
-            // 疊層時先只收最上面那一層的答案。見 #layerOf：簡體翻的是只差標點或
-            // 大小寫的那一句時，繁體的精確鍵不能先搶走。
-            String top = lookupChain(key, true);
-            if (top != null) {
-                return top;
-            }
-        }
-        return lookupChain(key, false);
-    }
-
-    /**
-     * {@link #lookup} 的查法順序：精確、縮排、拼法、記號、鬆化。
-     *
-     * @param topOnly 每一步只收最上面那一層寫進去的答案
-     */
-    private String lookupChain(String key, boolean topOnly) {
-        String hit = exact(key, topOnly);
-        if (hit == null) {
-            hit = indented(key, topOnly);
-        }
-        if (hit == null) {
-            String other = respell(key);
-            if (!other.equals(key)) {
-                hit = exact(other, topOnly);
-                if (hit == null) {
-                    hit = indented(other, topOnly);
-                }
-            }
-        }
-        if (hit == null && (!topOnly || fromTop("marked", sameMarks(key)))) {
-            hit = lookupMarked(key);
-        }
-        if (hit == null) {
-            hit = loose(key, topOnly);
-        }
-        if (hit == null) {
-            String other = respell(key);
-            if (!other.equals(key)) {
-                hit = loose(other, topOnly);
-            }
-        }
-        return hit;
-    }
-
-    private String exact(String key, boolean topOnly) {
-        return topOnly && layerOf(key) != topLayer ? null : entries.get(key);
-    }
-
-    private String indented(String key, boolean topOnly) {
-        if (topOnly) {
-            int n = indentOf(key);
-            if (n == 0 || !fromTop("unindented", key.substring(n))) {
-                return null;
-            }
-        }
-        return lookupIndented(key);
-    }
-
-    private String loose(String key, boolean topOnly) {
-        if (topOnly && layerOf(looseSource(key)) != topLayer) {
-            return null;
-        }
-        return lookupLoose(key);
-    }
-
-    /** 輔助索引裡這個鍵是不是最上面那一層寫的。 */
-    private boolean fromTop(String tag, String key) {
-        Integer at = indexLayer.get(tag + '\0' + key);
-        return at != null && at == topLayer;
-    }
-
-    /** 符合／不符合的那兩個記號。見 {@link #lookupMarked}。 */
-    private static final char MARK_YES = '✔';
-
-    private static final char MARK_NO = '✖';
-
-    /** 記號全部換成同一個之後的索引。見 {@link #lookupMarked}。 */
-    private final Map<String, String> marked = new ConcurrentHashMap<>();
-
-    private static boolean hasMark(String text) {
-        return text.indexOf(MARK_YES) >= 0 || text.indexOf(MARK_NO) >= 0;
-    }
-
-    private static String sameMarks(String text) {
-        return text.replace(MARK_YES, MARK_NO);
-    }
-
-    private void noteMarked(String src, String dst) {
-        if (hasMark(src) && countMarks(src) == countMarks(dst)) {
-            layered(marked, "marked", sameMarks(src), dst);
-        }
-    }
-
-    private static int countMarks(String text) {
-        int n = 0;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (c == MARK_YES || c == MARK_NO) {
-                n++;
-            }
-        }
-        return n;
-    }
-
-    /**
-     * {@code ✔} 與 {@code ✖} 只差<b>符合或不符合</b>，句子是同一句。
-     *
-     * <h2>為什麼要有這一層</h2>
-     * 採集點的名牌與裝備的需求列，每一行前面都掛一個記號：
-     *
-     * <pre>
-     *   Blossom              Blossom
-     *   ✖ Ⓒ Woodcutting…     ✔ Ⓒ Woodcutting…
-     *   ✖ Equipped Tool…     ✖ Equipped Tool…
-     * </pre>
-     *
-     * 兩者在語料裡是<b>兩筆</b>，而記號取決於玩家<b>當下的等級與手上的工具</b>——
-     * 那是狀態，不是內容。於是同一句話要翻兩次到四次，而實機上永遠有一半沒翻：
-     * 等級夠了的那些採集點、職業對得上的那些裝備需求，整行掉回英文
-     * （{@code ✖ Ability Points:} 與 {@code ✔ Class Req:} 每開一次背包就中一次）。
-     *
-     * <p>所以查表時把記號<b>全部換成同一個</b>再查，查到之後再依序把呼叫端
-     * 自己那幾個記號填回譯文——畫面上顯示的還是遊戲當下的狀態。
-     *
-     * <p>只在記號數量兩邊相同時才收（見 {@link #noteMarked}），不然無從對應。
-     * 實測全庫 144 條帶記號的鍵收斂成 74 組，<b>沒有任何一組</b>的譯文在
-     * 換掉記號之後不一致——也就是說這一層只會多命中，不會改變任何既有結果。
-     */
-    private String lookupMarked(String key) {
-        if (!hasMark(key)) {
-            return null;
-        }
-        String hit = marked.get(sameMarks(key));
-        if (hit == null || countMarks(hit) != countMarks(key)) {
-            return null;
-        }
-        StringBuilder out = new StringBuilder(hit);
-        int at = 0;
-        for (int i = 0; i < out.length(); i++) {
-            char c = out.charAt(i);
-            if (c == MARK_YES || c == MARK_NO) {
-                out.setCharAt(i, markAt(key, at++));
-            }
-        }
-        return out.toString();
-    }
-
-    /** 原文裡第 {@code n} 個記號。 */
-    private static char markAt(String text, int n) {
-        int seen = 0;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if ((c == MARK_YES || c == MARK_NO) && seen++ == n) {
-                return c;
-            }
-        }
-        return MARK_NO;
-    }
-
-    /**
-     * 只差標點、引號或大小寫的同一句話。
-     *
-     * <h2>為什麼要有這一層</h2>
-     * 任務對話的語料九成八抄自 wiki，而 wiki 是人打的：彎引號寫成直引號、
-     * {@code …} 寫成 {@code ...}、句尾少一個句號、兩個字之間多一個空白。
-     * 差這麼一點，精確比對就整句落空——畫面上跟「沒人翻」一模一樣，
-     * 玩家看到的是一段對話翻到一半突然冒出一句英文。
-     *
-     * <p>所以前面幾層都查不到時，兩邊都{@link #loosen 鬆化}之後再查一次。
-     *
-     * <h2>怎麼避免貼錯</h2>
-     * <ul>
-     *   <li>只收夠長、有空白的句子（{@link #MIN_LOOSE_LENGTH}）：{@code Fire} 與
-     *       {@code fire} 這種短詞，大小寫一換可能就是另一個意思。</li>
-     *   <li>鬆化之後撞在一起、譯文又不同的（{@code Not yet!} 與 {@code Not yet?}），
-     *       這一層一律不給答案，見 {@link #looseClash}。</li>
-     *   <li>永遠排在最後：精確、縮排、拼法、記號都查不到才走這裡，
-     *       不會蓋掉任何本來查得到的結果。</li>
-     * </ul>
-     */
-    private String lookupLoose(String key) {
-        String src = looseSource(key);
-        if (src == null) {
-            return null;
-        }
-        if (!translateNames && gearOnly(src)) {
-            return null;                       // 使用者選擇不翻物品名稱
-        }
-        if (peeked(src)) {
-            return null;                       // 按住 Shift：素材、材料與採集工具看原文
-        }
-        return entries.get(src);
-    }
-
-    /** 鬆化之後對得上的語料原文；對不上或有歧義時回傳 {@code null}。 */
-    private String looseSource(String key) {
-        if (key == null) {
-            return null;
-        }
-        String loosened = loosen(key);
-        if (!looseEnough(loosened) || looseClash.contains(loosened)) {
-            return null;
-        }
-        return loose.get(loosened);
-    }
-
-    private void noteLoose(String src, String dst) {
-        String loosened = loosen(src);
-        if (!looseEnough(loosened)) {
-            return;
-        }
-        // 跟 #layered 同一條規則：層內先到先贏、跨層後來居上。先前是 putIfAbsent，
-        // 墊底那層先佔了鍵，上面那層翻的同一句話就只能進 looseClash——整條不給答案。
-        boolean firstHere = thisLayer.add("loose" + '\0' + loosened);
-        String before = loose.get(loosened);
-        if (before == null || firstHere) {
-            loose.put(loosened, src);
-            looseDst.put(loosened, dst);
-            looseClash.remove(loosened);
-        } else if (!before.equals(src) && !dst.equals(looseDst.get(loosened))) {
-            looseClash.add(loosened);
-        }
-    }
-
-    private static boolean looseEnough(String loosened) {
-        return loosened.length() >= MIN_LOOSE_LENGTH && loosened.indexOf(' ') >= 0;
-    }
-
-    /**
-     * 把只影響外觀、不影響句意的差異抹平。
-     *
-     * <p>彎引號換直引號，{@code …} 與兩個以上的句點一律寫成 {@code ...}，
-     * 連續空白併成一個，去掉句尾的 {@code . ! ? ~}，最後轉小寫。佔位符（{@code {u}}、
-     * {@code {~}}）本來就是小寫，不受影響。
-     *
-     * <p>句尾的冒號、逗號<b>不</b>去掉：{@code Spell Damage:} 與 {@code Spell Damage}
-     * 是標籤的兩種寫法，譯文一個帶冒號一個不帶，混在一起就會貼錯
-     * （見 {@code LabelColonTest}）。
-     */
-    static String loosen(String text) {
-        StringBuilder out = new StringBuilder(text.length());
-        boolean space = false;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (c == '‘' || c == '’' || c == 'ʼ') {
-                c = '\'';
-            } else if (c == '“' || c == '”') {
-                c = '"';
-            }
-            if (Character.isWhitespace(c)) {
-                space = out.length() > 0;
-                continue;
-            }
-            if (space) {
-                out.append(' ');
-                space = false;
-            }
-            if (c == '…') {
-                out.append("...");
-            } else {
-                out.append(c);
-            }
-        }
-        String flat = out.toString().replaceAll("\\.{2,}", "...");
-        int end = flat.length();
-        while (end > 0 && ".!?~".indexOf(flat.charAt(end - 1)) >= 0) {
-            end--;
-        }
-        return flat.substring(0, end).strip().toLowerCase(java.util.Locale.ROOT);
-    }
-
-    /** 短於這個長度（或沒有空白）的不進寬鬆索引，見 {@link #lookupLoose}。 */
-    private static final int MIN_LOOSE_LENGTH = 12;
-
-    /** 鬆化後的原文 → 語料原文。 */
-    private final Map<String, String> loose = new ConcurrentHashMap<>();
-
-    /** 鬆化後的原文 → 第一個收進來的譯文，只拿來判斷有沒有歧義。 */
-    private final Map<String, String> looseDst = new ConcurrentHashMap<>();
-
-    /** 鬆化之後撞在一起、而譯文又不同的鍵。這些不給寬鬆比對用。 */
-    private final java.util.Set<String> looseClash = ConcurrentHashMap.newKeySet();
-
-    /**
-     * 語料裡到底有沒有這一條的譯文——<b>不管</b>使用者有沒有把
-     * 「翻譯物品名稱」關掉。
-     *
-     * <h2>為什麼不能直接用 lookup</h2>
-     * 收集端拿這個判斷「這是不是還沒翻的缺口」（見
-     * {@code CaptureStore#knowsTranslations}）。{@link #lookup} 在使用者關掉
-     * 物品名稱時對名稱回傳 {@code null}——那是「不要顯示」，不是「沒有譯文」。
-     * 拿它來判斷缺口的話，每一件裝備的名稱都會被當成沒翻，
-     * {@code captured.json} 又會塞滿雜訊。
-     */
-    /**
-     * 這一份收了哪些原文（不管翻了沒）。
-     *
-     * <p>給收集那一關判斷「這句<b>繁體</b>收過沒有」用的。回傳的是拷貝，
-     * 呼叫端存起來之後整個 store 就可以丟掉。
-     */
-    public java.util.Set<String> sourceKeys() {
-        return java.util.Set.copyOf(seenSources);
-    }
-
-    public boolean hasTranslation(String template) {
-        if (template == null) {
-            return false;
-        }
-        String key = template.strip();
-        if (entries.containsKey(key) || lookupIndented(key) != null) {
-            return true;
-        }
-        if (isNameRow(key)) {
-            // 名稱列不是語料的單位：名稱翻了就是翻了，沒翻的缺口是「名稱」那一條。
-            // 記成缺口的話，補出來的整列條目會把名稱那條路蓋掉。見 #nameRowInner。
-            return true;
-        }
-        if (lookupMarked(key) != null) {
-            return true;                       // 換個記號就查得到，不是缺口
-        }
-        if (looseSource(key) != null || looseSource(respell(key)) != null) {
-            return true;                       // 只差標點或大小寫，不是缺口
-        }
-        // 屬性列不是整行收的，是「標籤 + 數值」拆開查的（見 LineTranslator#statRow）。
-        //
-        // 這裡漏掉那條路的話，畫面上明明是中文的「移動速度 +5%」還是會被記成缺口，
-        // 而翻譯團隊照著 captured.json 補，補出來的就是<b>整行</b>條目——那正是
-        // 先前 misc.json 裡那兩百多條、把標籤那條路整個蓋掉的東西。這一份
-        // capture 的 186 條裡就有五十幾條是這種假缺口。
-        //
-        // 百分比與實數兩種都問：同一個標籤兩種譯名（法術傷害百分比／法術傷害值），
-        // 只問一種會把另一種記成缺口。
-        if (LineTranslator.lookup(key, this, false) != null
-                || LineTranslator.lookup(key, this, true) != null) {
-            return true;
-        }
-        // 世界事件的倒數公告走句型（見 LineTranslator#eventFrame）；伺服器折過行的
-        // 那幾種要併起來才認得，不問的話每種斷法都會被記成一條缺口。
-        if (key.indexOf('\n') >= 0 && LineTranslator.eventFrame(unwrap(key), this) != null) {
-            return true;
-        }
-        // 商店的倒數看板一列一列組（見 LineTranslator#countdownBoard）；時間格式與附加列
-        // 的每一種組合都要記成一條缺口的話，永遠補不完。
-        if (key.indexOf('\n') >= 0 && LineTranslator.countdownBoard(key, this) != null) {
-            return true;
-        }
-        String other = respell(key);
-        return !other.equals(key)
-                && (entries.containsKey(other) || lookupIndented(other) != null);
-    }
-
     /**
      * 英式拼法換成語料裡用的美式拼法。
      *
@@ -4166,9 +949,6 @@ public final class TranslationStore {
      */
     private static final char INDENT = 'À';
 
-    /** 去掉開頭縮排之後的索引。見 {@link #lookupIndented}。 */
-    private final Map<String, String> unindented = new ConcurrentHashMap<>();
-
     /**
      * 開頭有幾格縮排。
      *
@@ -4182,77 +962,5 @@ public final class TranslationStore {
             n++;
         }
         return n;
-    }
-
-    private void noteIndented(String src, String dst) {
-        int n = indentOf(src);
-        if (n > 0) {
-            layered(unindented, "unindented",
-                    src.substring(n), dst.substring(indentOf(dst)));
-        }
-    }
-
-    /**
-     * 縮排<b>幾格不算內容</b>，所以查表時不該把它算進去。
-     *
-     * <h2>為什麼需要這一層</h2>
-     * 語料是從 CDN 來的，同一句話在那裡的縮排是 38、39、40 格；遊戲實際送出來的
-     * 卻是 4 格或 42 格。兩邊字面上永遠不相等，於是
-     * {@code Knockback Immunity to Allies} 這種句子一直維持英文——不是漏翻，
-     * 是<b>查不到</b>。
-     *
-     * <p>縮排幾格取決於畫面寬度與同一組細項裡最長的那一行，是<b>排版</b>不是語意。
-     * 所以剝掉開頭的縮排來查，查到之後把<b>呼叫端自己的那一串</b>接回去——
-     * 用遊戲當下的格數，對齊才不會跑掉。
-     */
-    private String lookupIndented(String key) {
-        int indent = indentOf(key);
-        if (indent == 0) {
-            return null;
-        }
-        String body = unindented.get(key.substring(indent));
-        return body == null ? null : key.substring(0, indent) + body;
-    }
-
-    /**
-     * 跨行條目最多幾行。
-     *
-     * <p>技能說明那類的原文<b>本來就是一整段</b>，CDN 給的是含換行的一大串。
-     * 逐行查表永遠查不到——遊戲畫面上是五行，鍵是那五行黏在一起的樣子，
-     * 兩者不可能相等。{@code ability.json} 翻了卻沒反應就是這個原因。
-     *
-     * <p>所以呼叫端得先試著把連續幾行併起來查。這裡回報最多要試到幾行，
-     * 沒有跨行條目時是 1，呼叫端就會跳過整段比對。
-     */
-    public int maxBlockLines() {
-        // 攤平查表的對象是「依畫面寬度自動斷行」的長敘述——它在語料裡是<b>一行</b>，
-        // 所以 maxBlockLines 對它一無所知。先前就是這樣：Major ID 的說明在畫面上
-        // 佔四行，而 maxBlockLines 只有 2，那四行從來沒有被併起來試過。
-        return flat.isEmpty() ? maxBlockLines : Math.max(maxBlockLines, FLOWED_SCAN_LINES);
-    }
-
-    /**
-     * 攤平查表最多把幾行併起來試。
-     *
-     * <h2>為什麼是這個數字</h2>
-     * 這個上限決定了「多長的段落還救得回來」。先前是 8，而<b>裝備的背景敘述
-     * 普遍比這長</b>——語料裡最長的一條 346 個字元，在 tooltip 裡是十一行。
-     * 併不到十一行就永遠湊不出那個鍵，於是譯文明明在檔案裡，畫面上還是整段英文。
-     *
-     * <p>現在照著語料裡最長的那一條抓：316 條攤平條目裡有 26 條超過八行，
-     * 沒有一條超過十二行。留兩行餘裕給窄一點的畫面。
-     *
-     * <p>成本是每個位置最多多查十三次，而查一次只是雜湊表比對；
-     * 真正會擋下來的是 {@code translateBlock} 開頭那個「有空行就放棄」的判斷，
-     * 段落之間的空行讓大部分長度連查都不會查。
-     */
-    private static final int FLOWED_SCAN_LINES = 14;
-
-    public int size() {
-        return entries.size();
-    }
-
-    public int loadedFiles() {
-        return loadedFiles;
     }
 }

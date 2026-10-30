@@ -1740,6 +1740,24 @@ tasks.register('runHotPathCacheChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runHotPathCacheChecks' }
 
+// 換語言時記號索引（✔／✖）要一起清掉，不能留著上一個語言的譯文。
+tasks.register('runMarkedReloadChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MarkedReloadTest'
+}
+tasks.named('check') { dependsOn 'runMarkedReloadChecks' }
+
+// 重載時查表的執行緒只會看到完整的舊語言或新語言，不會看到清到一半的索引。
+tasks.register('runReloadRaceChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ReloadRaceTest'
+}
+tasks.named('check') { dependsOn 'runReloadRaceChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
