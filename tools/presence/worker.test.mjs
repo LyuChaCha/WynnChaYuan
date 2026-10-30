@@ -5,6 +5,7 @@ import worker, {
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
+  visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -1781,11 +1782,12 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const P9 = mark(png(88, 68), 9);
     const H9 = await sha(P9);
     later(oak);
-    check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).q === 1);
+    check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).vis === 'unlisted' && !('q' in meta(oak)));
     later(oak);
     await upload(oak, P3, '?public=1');
-    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能穿', idleNow()[H9].q === 1
-      && !(await gallery()).some((c) => c.h === H9) && (await send('/cape/wear', { hash: H9 }, ivy)).status === 404);
+    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能加最愛', idleNow()[H9].q === 1
+      && idleNow()[H9].vis === 'unlisted' && !(await gallery()).some((c) => c.h === H9)
+      && (await send('/cape/star', { hash: H9, on: true }, ivy)).status === 404);
     const seenByStaff = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === H9);
     check('★ 管理的人看得到它：沒有人穿、不公開、在倒數', Boolean(seenByStaff) && seenByStaff.hidden === true
       && seenByStaff.owners.length === 0 && seenByStaff.idle > 0);
@@ -1818,21 +1820,20 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 管理的人看得到全部，標著誰不公開', await (async () => {
     const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes;
     const owner = seen.flatMap((c) => c.owners).find((o) => o.id === ivy.id);
-    return owner && owner.private === true && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
+    return owner && owner.vis === 'unlisted' && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
   })());
-  check('★ 只有她一個人穿的不公開披風：別人不能穿、不能加最愛', await (async () => {
+  check('★ 只有她一個人穿的不公開披風：別人不能加最愛', await (async () => {
     later(ivy);
     await upload(ivy, mark(png(352, 272), 12));
     const lone = meta(ivy).h;
-    return meta(ivy).q === 1 && (await send('/cape/wear', { hash: lone }, elm)).status === 404
-      && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
+    return meta(ivy).vis === 'unlisted' && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
   })());
   later(ivy);
-  check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q
+  check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q && !meta(ivy).vis
     && (await gallery()).some((c) => c.ids.includes(ivy.id)));
   later(ivy);
-  check('上傳的時候說不公開', (await upload(ivy, mark(png(44, 34), 14), '?public=0')).status === 200 && meta(ivy).q === 1);
-  check('改回公開', (await send('/cape/public', { on: true }, ivy)).status === 200 && !meta(ivy).q);
+  check('上傳的時候說不公開', (await upload(ivy, mark(png(44, 34), 14), '?public=0')).status === 200 && meta(ivy).vis === 'unlisted');
+  check('改回公開', (await send('/cape/public', { on: true }, ivy)).status === 200 && !meta(ivy).vis);
 
   // 審核
   check('★ 一般玩家動不了審核名單', (await worker.fetch(get('/admin/reviews', elm.token), env)).status === 403
@@ -1944,12 +1945,263 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.CORPUS.data.delete('review:' + oak.uuid);
   forgetBursts();
 
-  check('★ 披風一覽有排序、篩選與星星；管理的人多兩個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
-    'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="hidden"', 'value="pending"', 'id="skinpick"',
+  check('★ 披風一覽有排序、篩選與星星；管理的人多三個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
+    'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="unlisted"', 'value="private"', 'value="pending"', 'id="skinpick"',
     'id="fav"', 'id="approve"', 'id="review"', 'id="forget"']
     .every((w) => pages['/capes'].includes(w)) && pages['/capes'].includes("'/cape/star'") && pages['/capes'].includes("'/capes/mine'"));
-  check('★ 帳號頁有公開的開關；管理頁有審核名單', pages['/account'].includes('id="public"') && pages['/account'].includes("'/cape/public'")
+  check('★ 帳號頁有公開程度的選擇；管理頁有審核名單', pages['/account'].includes('id="vis"') && pages['/account'].includes("'/cape/visibility'")
     && pages['/account'].includes('id="pending"') && pages['/admin'].includes('id="reviews"') && pages['/admin'].includes("'/admin/review'"));
+}
+
+{
+  const person = async (pair, name) => {
+    const uuid = pair.repeat(16);
+    return { uuid, name, id: await publicId(uuid), token: await issueWebToken(env, uuid, name, NOW) };
+  };
+  const fern = await person('f1', 'Fern');
+  const moss = await person('f2', 'Moss');
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const mark = (bytes, n) => { const out = bytes.slice(); out[40] = n; out[41] = 7; return out; };
+  const send = (path, value, who) => worker.fetch(post(path, value, who && who.token), env);
+  const upload = (who, bytes, query = '') => worker.fetch(new Request('https://x.test/api/cape' + query, {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + who.token } }), env);
+  const gallery = async () => (await (await worker.fetch(api('/capes'), env)).json()).capes;
+  const meta = (who) => env.CORPUS.data.get('cape:' + who.id).metadata;
+  const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json());
+  const roster = async () => (await (await worker.fetch(get('/list'), env)).json()).capes;
+  const link = (hash, who) => worker.fetch(get('/capes/' + hash, who && who.token), env);
+  const later = (who) => { meta(who).v -= 60000; forgetBursts(); };
+  const staff = { token: aliceWeb };
+
+  check('visibility：舊的 q 讀成不公開，新的 vis 優先，認不得的當公開', visibility(null) === 'public'
+    && visibility({}) === 'public' && visibility({ q: 1 }) === 'unlisted' && visibility({ q: 1, vis: 'private' }) === 'private'
+    && visibility({ vis: 'bogus' }) === 'public' && VISIBILITY.join() === 'public,unlisted,private');
+  check('askedVisibility：?vis= 優先，舊的 ?public=0／1 照舊，沒說回 null', askedVisibility(new URLSearchParams('vis=private&public=1')) === 'private'
+    && askedVisibility(new URLSearchParams('public=0')) === 'unlisted' && askedVisibility(new URLSearchParams('public=1')) === 'public'
+    && askedVisibility(new URLSearchParams('vis=nope')) === null && askedVisibility(new URLSearchParams('')) === null);
+
+  forgetBursts();
+  const A = mark(png(88, 68), 61);
+  const HA = await sha(A);
+  check('上傳時選私人', (await upload(fern, A, '?vis=private')).status === 200 && meta(fern).vis === 'private');
+  check('★ 私人：一覽沒有；別人拿到連結也看不到；不能穿、不能加最愛', !(await gallery()).some((c) => c.h === HA)
+    && (await link(HA)).status === 404 && (await link(HA, moss)).status === 404
+    && (await send('/cape/wear', { hash: HA }, moss)).status === 404
+    && (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  r = await link(HA, fern);
+  body = await r.json();
+  check('★ 私人：本人用連結看得到，標著是自己的', r.status === 200 && body.cape.own === true && body.cape.vis === 'private'
+    && body.cape.ids.join() === fern.id);
+  const staffSeen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === HA);
+  check('★ 管理的人看得到私人的那一件，整筆與每個人都標著私人', Boolean(staffSeen) && staffSeen.vis === 'private'
+    && staffSeen.owners[0].vis === 'private' && staffSeen.hidden === true && (await link(HA, staff)).status === 200);
+  check('★ 私人只管網站：遊戲裡的名單照樣有她的披風', fern.id in (await roster()));
+  body = await mine(fern);
+  check('/api/me 說是私人', body.cape.vis === 'private' && body.cape.public === false);
+
+  r = await send('/cape/visibility', { vis: 'unlisted' }, fern);
+  check('改成不公開', r.status === 200 && (await r.json()).vis === 'unlisted' && meta(fern).vis === 'unlisted');
+  r = await link(HA);
+  body = await r.json();
+  check('★ 不公開：一覽沒有，拿到連結的人（沒登入也可以）看得到', !(await gallery()).some((c) => c.h === HA)
+    && r.status === 200 && body.cape.vis === 'unlisted' && body.cape.ids.join() === fern.id && !body.cape.own
+    && body.cape.hidden === true);
+  r = await send('/cape/wear', { hash: HA }, moss);
+  check('★ 不公開：拿到連結的人可以穿上；他那一筆記著是從連結來的（lk），一覽上照樣沒有這件', r.status === 200
+    && meta(moss).h === HA && meta(moss).lk === 1 && !meta(moss).vis && (await mine(moss)).cape.listed === false
+    && !(await gallery()).some((c) => c.h === HA) && (await link(HA)).status === 200);
+  check('★ 管理的人看得到他是從連結穿的，整筆仍標不公開', await (async () => {
+    const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === HA);
+    return Boolean(seen) && seen.vis === 'unlisted' && seen.hidden === true
+      && seen.owners.some((o) => o.id === moss.id && o.linked === true);
+  })());
+  check('不公開的照樣不能加最愛', (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  later(moss);
+  check('他脫下：一覽上照樣沒有', (await send('/cape/restore', {}, moss)).status === 200 && !env.CORPUS.data.has('cape:' + moss.id)
+    && !(await gallery()).some((c) => c.h === HA));
+  check('亂寫的連結、沒有這件：404', (await link('nope')).status === 404 && (await link('f'.repeat(64))).status === 404);
+  check('不認得的程度擋掉；沒登入不能改', (await send('/cape/visibility', { vis: 'secret' }, fern)).status === 400
+    && (await send('/cape/visibility', { vis: 'public' })).status === 401);
+
+  const row = env.CORPUS.data.get('cape:' + fern.id);
+  const { vis: dropped, ...legacy } = row.metadata;
+  row.metadata = { ...legacy, q: 1 };
+  r = await link(HA);
+  check('★ 舊資料（q＝1）讀成不公開：一覽沒有、連結看得到、/api/me 說不公開', !(await gallery()).some((c) => c.h === HA)
+    && r.status === 200 && (await r.json()).cape.vis === 'unlisted' && (await mine(fern)).cape.vis === 'unlisted');
+  check('★ 改過一次就換成新的寫法：q 拿掉、記 vis', (await send('/cape/visibility', { vis: 'private' }, fern)).status === 200
+    && !('q' in meta(fern)) && meta(fern).vis === 'private');
+  later(fern);
+  check('★ 沒帶程度的上傳（從遊戲傳的）照原本的', (await upload(fern, mark(png(88, 68), 62))).status === 200 && meta(fern).vis === 'private');
+  later(fern);
+  await upload(fern, A);
+
+  forgetBursts();
+  const B = mark(png(88, 68), 63);
+  const HB = await sha(B);
+  check('他傳一件公開的', (await upload(moss, B, '?vis=public')).status === 200 && !meta(moss).vis
+    && (await gallery()).some((c) => c.h === HB));
+  later(fern);
+  r = await send('/cape/wear', { hash: HB }, fern);
+  check('★ 穿別人公開的那一件：她自己的程度不變（還是私人），一覽上那一筆只算公開的人', r.status === 200
+    && meta(fern).vis === 'private' && meta(fern).p.h === HA
+    && (await gallery()).find((c) => c.h === HB).ids.join() === moss.id);
+  later(fern);
+  check('★ 復原：換回自己那一件，程度照舊', (await send('/cape/restore', {}, fern)).status === 200
+    && meta(fern).h === HA && meta(fern).vis === 'private');
+
+  later(fern);
+  const C = mark(png(88, 68), 64);
+  const HC = await sha(C);
+  check('她換一件新的：私人的那一件沒人穿了，開始倒數', (await upload(fern, C)).status === 200 && HA in idleNow()
+    && idleNow()[HA].q === 1 && idleNow()[HA].vis === 'private');
+  check('★ 倒數中的私人披風：拿到連結也看不到，管理的人看得到', (await link(HA)).status === 404
+    && (await link(HA, staff)).status === 200);
+  await send('/cape/visibility', { vis: 'unlisted' }, fern);
+  later(fern);
+  await upload(fern, A);
+  check('★ 倒數中的不公開披風：拿到連結看得到（標著不公開、沒有人穿）', idleNow()[HC].vis === 'unlisted'
+    && await (async () => { const got = await link(HC); const one = (await got.json()).cape; return got.status === 200 && one.vis === 'unlisted' && one.idle > 0 && one.ids.length === 0; })());
+  check('★ 舊的開關（/cape/public）照樣能用：關掉＝不公開，打開＝公開',
+    (await send('/cape/public', { on: true }, fern)).status === 200 && !meta(fern).vis
+    && (await send('/cape/public', { on: false }, fern)).status === 200 && meta(fern).vis === 'unlisted');
+  check('★ 帳號頁有三種程度與分享連結；披風一覽的管理篩選分成不公開與私人，有複製連結',
+    ['id="vis"', 'data-v="public"', 'data-v="unlisted"', 'data-v="private"', 'id="sharebox"', "'/cape/visibility'"]
+      .every((w) => pages['/account'].includes(w))
+    && ['value="unlisted"', 'value="private"', 'id="share"', "'/capes/' + "].every((w) => pages['/capes'].includes(w))
+    && !pages['/capes'].includes('value="hidden"'));
+}
+
+{
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const mark = (bytes, n) => { const out = bytes.slice(); out[40] = n; out[41] = 9; return out; };
+  const RUE = { uuid: 'f3'.repeat(16), name: 'Rue' };
+  const SAGE = { uuid: 'f4'.repeat(16), name: 'Sage' };
+  const rueId = await publicId(RUE.uuid);
+  const sageId = await publicId(SAGE.uuid);
+  const rueGame = await issueToken(env, RUE.uuid, RUE.name, NOW);
+  const rueWeb = await issueWebToken(env, RUE.uuid, RUE.name, NOW);
+  const sageWeb = await issueWebToken(env, SAGE.uuid, SAGE.name, NOW);
+  const THYME = { uuid: 'f5'.repeat(16), name: 'Thyme' };
+  const thymeId = await publicId(THYME.uuid);
+  const thymeWeb = await issueWebToken(env, THYME.uuid, THYME.name, NOW);
+  const RUE_DC = '466666666666666666';
+  const OTHER_DC = '477777777777777777';
+  const upload = (token, bytes) => worker.fetch(new Request('https://x.test/api/cape', {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + token } }), env);
+  const send = (path, value, token) => worker.fetch(post(path, value, token), env);
+  const later = (id) => { const row = env.CORPUS.data.get('cape:' + id); if (row) row.metadata.v -= 60000; forgetBursts(); };
+  const has = (key) => env.CORPUS.data.has(key);
+  const starsNow = () => JSON.parse((env.CORPUS.data.get('stars') || { value: '{}' }).value);
+
+  check('沒登入不能刪', (await send('/me/delete', {})).status === 401);
+
+  forgetBursts();
+  const R1 = mark(png(88, 68), 71);
+  const R2 = mark(png(88, 68), 72);
+  const R3 = mark(png(88, 68), 73);
+  const S1 = mark(png(88, 68), 74);
+  const [H1, H2, H3, HS] = [await sha(R1), await sha(R2), await sha(R3), await sha(S1)];
+  await send('/hello', { cape: true, rainbow: true, show: ['dev'] }, rueGame);
+  await upload(rueGame, R1);
+  later(rueId);
+  await upload(sageWeb, S1);
+  check('別人穿上她的第一件', (await send('/cape/wear', { hash: H1 }, thymeWeb)).status === 200);
+  later(rueId);
+  await upload(rueGame, R2);
+  later(rueId);
+  await upload(rueGame, R3);
+  check('她的第二件沒有人穿了，在倒數', H2 in idleNow());
+  later(rueId);
+  check('她穿上別人的一件（自己的第三件收著）', (await send('/cape/wear', { hash: HS }, rueWeb)).status === 200
+    && env.CORPUS.data.get('cape:' + rueId).metadata.p.h === H3);
+  check('她把別人那一件加進最愛', (await (await send('/cape/star', { hash: HS, on: true }, rueWeb)).json()).stars >= 1);
+  const starsBefore = starsNow()[HS];
+  env.CORPUS.data.set('d:' + RUE_DC, { value: JSON.stringify({ n: 'Rue DC', u: RUE.uuid, m: RUE.name, t: NOW }), metadata: { n: 'Rue DC', u: RUE.uuid, m: RUE.name } });
+  env.CORPUS.data.set('l:' + RUE.uuid, { value: RUE_DC, metadata: null });
+  env.CORPUS.data.set('fb:' + 'c1'.repeat(8), { value: JSON.stringify({ id: 'c1'.repeat(8), uid: RUE_DC, name: 'Rue DC', msg: 'hello there', cat: 'other', st: 'open' }), metadata: { c: 'other' } });
+  env.CORPUS.data.set('fb:' + 'c2'.repeat(8), { value: JSON.stringify({ id: 'c2'.repeat(8), uid: OTHER_DC, name: 'Other', msg: 'not hers', cat: 'other', st: 'open' }), metadata: { c: 'other' } });
+  env.CORPUS.data.set('prev:' + HS + ':' + RUE.uuid + ':angled', { value: new Uint8Array([1]), metadata: { t: 'png' } });
+  env.CORPUS.data.set('prev:' + HS, { value: new Uint8Array([1]), metadata: { t: 'png' } });
+  for (const kept of ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:']) {
+    env.CORPUS.data.set(kept + RUE.uuid, { value: JSON.stringify({ n: RUE.name, t: NOW }), metadata: null });
+  }
+  let roster = await (await worker.fetch(get('/list'), env)).json();
+  check('刪之前：名單上有她、葉子是彩色的', roster.users.includes(rueId) && roster.rainbow.includes(rueId));
+
+  const PROP = 'tp:zh_tw:' + 'ab12'.repeat(4);
+  const POLL = 'tq:zh_tw:' + 'cd34'.repeat(3);
+  const OTHER_ID = 'u:' + 'f6'.repeat(16);
+  env.CORPUS.data.set(PROP, { value: JSON.stringify({ lang: 'zh_tw', file: 'npc.json', key: null, src: 'Hi', base: '', status: 'open', t: NOW,
+    items: [{ id: 'i1', text: '嗨', by: 'u:' + RUE.uuid, name: 'Rue', t: NOW, votes: ['u:' + RUE.uuid, OTHER_ID] },
+      { id: 'i2', text: '你好', by: OTHER_ID, name: 'Other', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
+  env.CORPUS.data.set(POLL, { value: JSON.stringify({ lang: 'zh_tw', term: 'Hi', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, status: 'open',
+    options: [{ id: 'o1', text: '嗨', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
+  r = await send('/me/delete', {}, rueGame);
+  body = await r.json();
+  check('★ 用模組的通行證刪：回 {"ok":true}', r.status === 200 && body.ok === true && Object.keys(body).join() === 'ok');
+  roster = await (await worker.fetch(get('/list'), env)).json();
+  check('★ 名單上馬上就沒有她（有裝的人、披風、彩色、徽章都清掉）', !roster.users.includes(rueId) && !(rueId in roster.capes)
+    && !roster.rainbow.includes(rueId) && !(rueId in (roster.show || {})) && !has('u:' + RUE.uuid));
+  check('★ 她的披風那一筆、使用紀錄、最愛都刪了', !has('cape:' + rueId) && !has('fav:' + RUE.uuid)
+    && ![...env.CORPUS.data.keys()].some((k) => k.startsWith('hist:' + rueId + ':')));
+  check('★ 只有她用的圖馬上刪（收著的第三件、倒數中的第二件），不必等七天', !has('blob:' + H3) && !has('blob:' + H2)
+    && !(H2 in idleNow()) && !(H3 in idleNow()));
+  check('★ 別人正在穿的圖留著（她傳的第一件、她穿的那件）', has('blob:' + H1) && has('blob:' + HS)
+    && env.CORPUS.data.get('cape:' + thymeId).metadata.h === H1);
+  check('★ 最愛的人數扣掉她那一票', (starsNow()[HS] || 0) === starsBefore - 1);
+  check('★ 她的 skin 畫的預覽刪了，只有披風的那份留著', !has('prev:' + HS + ':' + RUE.uuid + ':angled') && has('prev:' + HS));
+  check('★ 網站帳號與綁定一起刪；她送的回饋刪了，別人的留著', !has('d:' + RUE_DC) && !has('l:' + RUE.uuid)
+    && !has('fb:' + 'c1'.repeat(8)) && has('fb:' + 'c2'.repeat(8)));
+  check('★ 管理用的紀錄不給自己刪：封禁、審核、特別名單、管理員、譯者', ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:']
+    .every((kept) => has(kept + RUE.uuid)));
+  {
+    const code = await goneCode(RUE.uuid);
+    const prop = JSON.parse(env.CORPUS.data.get(PROP).value);
+    const poll = JSON.parse(env.CORPUS.data.get(POLL).value);
+    check('★ 協作翻譯的提案與投票留著，名字拿掉、改記同一個代碼；別人的不動', /^[0-9a-f]{8}$/.test(code)
+      && prop.items[0].name === null && prop.items[0].gone === code && prop.items[0].by === 'x:' + code && prop.items[0].text === '嗨'
+      && prop.items[0].votes.join() === 'x:' + code + ',' + OTHER_ID && prop.items[1].name === 'Other' && prop.items[1].votes.join() === 'x:' + code
+      && poll.name === null && poll.gone === code && poll.options[0].gone === code && poll.options[0].votes.join() === 'x:' + code
+      && !JSON.stringify(prop.items).includes(RUE.uuid) && !JSON.stringify(poll.options).includes(RUE_DC));
+    check('★ 帳號代號留在紀錄上（ghosts），刪除者是誰查得到', prop.ghosts[code].join() === 'u:' + RUE.uuid + ',d:' + RUE_DC
+      && poll.ghosts[code].includes('d:' + RUE_DC) && env.CORPUS.data.get(PROP).metadata.n === 2);
+    const publicView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4)), env)).text();
+    const staffView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4), aliceWeb), env)).json();
+    const pollView = await (await worker.fetch(get('/tr/poll?lang=zh_tw&id=' + 'cd34'.repeat(3)), env)).text();
+    check('★ 一般人看不到帳號代號；開發者與管理員看得到', !publicView.includes('ghosts') && !publicView.includes(RUE.uuid)
+      && publicView.includes(code) && staffView.ghosts[code].includes('u:' + RUE.uuid) && !pollView.includes(RUE_DC));
+    check('anonymise：沒有這個人的紀錄不動', anonymise({ items: [{ by: 'u:x', votes: ['u:y'] }] }, ['u:z'], 'abcd1234') === false);
+    check('★ 協作翻譯頁把刪除者畫成「已刪除的使用者 #代碼」', pages['/translate'].includes('whoOf(it, prop)')
+      && TEXT.zh.js.tr.gone === '已刪除的使用者 #{id}' && LANGS.every((l) => TEXT[l].js.tr.gone.includes('#{id}')));
+    env.CORPUS.data.delete(PROP);
+    env.CORPUS.data.delete(POLL);
+  }
+  check('★ 刪完再報到就是一個新的人（模組關掉開關就不會再報到）', (await send('/hello', { cape: true }, rueGame)).status === 200
+    && has('u:' + RUE.uuid));
+  for (const kept of ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:', 'u:']) env.CORPUS.data.delete(kept + RUE.uuid);
+  env.CORPUS.data.delete('fb:' + 'c2'.repeat(8));
+
+  const lone = '488888888888888888';
+  env.CORPUS.data.set('d:' + lone, { value: JSON.stringify({ n: 'Only DC' }), metadata: { n: 'Only DC' } });
+  r = await send('/me/delete', {}, await issueDiscordToken(env, lone, NOW));
+  check('★ 只用 Discord 登入、還沒綁遊戲帳號：網站帳號刪掉', r.status === 200 && (await r.json()).ok === true && !has('d:' + lone));
+  check('刪掉之後那張通行證就沒用了', (await worker.fetch(get('/me', await issueDiscordToken(env, lone, NOW)), env)).status === 401);
+  check('★ 帳號頁有刪除資料的按鈕與確認視窗', ['id="wipe"', 'id="wipe-open"', 'id="wipe-go"', "'/me/delete'"]
+    .every((w) => pages['/account'].includes(w)));
+  check('★ 隱私政策講了怎麼刪、留多久、同意與不賣資料（中英）',
+    ['/account', '7', '14', '180'].every((w) => pages['/privacy'].includes(w) && english['/privacy'].includes(w))
+    && english['/privacy'].includes('consent') && english['/privacy'].includes('never sell')
+    && english['/privacy'].includes('Deleted user #code') && pages['/privacy'].includes('已刪除的使用者 #代碼'));
+  check('★ 服務條款八種語言都講了可以刪資料、連到隱私政策', LANGS.every((lang) => TEXT[lang]['terms.body'].includes('href="/privacy"')));
+  check('dropFromList：每一欄都拿掉；本來就沒有的回 null', (() => {
+    const list = { t: 1, users: ['a', 'b'], capes: { a: 3 }, hidden: ['a'], rainbow: ['a'], show: { a: 'dev' } };
+    const out = dropFromList(list, 'a');
+    return out.users.join() === 'b' && !('a' in out.capes) && !out.hidden.length && !out.rainbow.length
+      && !('a' in out.show) && out.t === 1 && dropFromList(out, 'a') === null && list.users.length === 2;
+  })());
 }
 
 // ---- ★ 協作翻譯（使用者 2026-10-16：像 Crowdin 一樣提交、投票，管理員定案） ----
@@ -2454,9 +2706,10 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && pages['/'].includes('<a href="/feedback">') && english['/terms'].includes('<a href="/feedback">')
     && ['id="fbf-list"', 'id="fbf-cat"', 'id="fbf-st"', "'/admin/feedback/status'", "'/admin/feedback/delete'", "'/admin/feedback/issue'"]
       .every((w) => pages['/admin'].includes(w)));
-  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、顯示名稱、保留多久）', LANGS.every((lang) => {
+  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、保留多久）與怎麼刪資料', LANGS.every((lang) => {
     const body = TEXT[lang]['privacy.body'];
-    return body.split('<h2>').length === 14 && body.includes('GitHub') && body.includes('180') && body.includes('/feedback');
+    return body.split('<h2>').length === 12 && body.includes('GitHub') && body.includes('180') && /issue/i.test(body)
+      && body.includes('/api/me/delete') && body.includes('href="/account"') && body.includes('version.json');
   }));
 
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
