@@ -1,5 +1,6 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.PlayerFaceRenderer;
@@ -55,6 +56,7 @@ public final class PlayerHeads {
                         return null;
                     });
         } catch (Throwable t) {
+            ErrorDebug.note("PlayerHeads#request", null, t);
         }
     }
 }

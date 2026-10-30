@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Canvas;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Ui;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -299,6 +300,7 @@ final class GuiCanvas implements Canvas {
             }
             return register("logo" + size, out);
         } catch (Exception e) {
+            ErrorDebug.note("GuiCanvas#shrunkLogo", null, e);
             return ICON;
         }
     }

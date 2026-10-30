@@ -75,18 +75,12 @@ public final class GuessListRow {
         List<Integer> charAt = charIndex(texts);
         String[] shown = new String[names.length];
         boolean any = false;
-        boolean held = TranslationStore.appendedOriginalHeld();
-        boolean onName = TranslationStore.onNameLine();
-        try {
-            TranslationStore.holdAppendedOriginal(false);
-            TranslationStore.nameLine(true);
+        try (LookupScope hold = LookupScope.holdAppendedOriginal(false);
+             LookupScope nameLine = LookupScope.nameLine(true)) {
             for (int k = 0; k < names.length; k++) {
                 shown[k] = name(names[k], store);
                 any |= shown[k] != null;
             }
-        } finally {
-            TranslationStore.holdAppendedOriginal(held);
-            TranslationStore.nameLine(onName);
         }
         if (!any) {
             return new Row(null);

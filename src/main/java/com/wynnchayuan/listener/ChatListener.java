@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
@@ -37,6 +38,7 @@ public final class ChatListener {
         try {
             panel = ChatBlock.holding() || LineTranslator.panelRow(message);
         } catch (Throwable t) {
+            ErrorDebug.note("ChatListener#onMatch", null, t);
             panel = false;
         }
         if (panel) {
@@ -51,6 +53,7 @@ public final class ChatListener {
                                 || LineTranslator.translateChat(
                                         message, WynnChaYuan.translations()) == null));
             } catch (Throwable t) {
+                ErrorDebug.note("ChatListener#onMatch", null, t);
                 keep = true;
             }
             event.cancelChat();

@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynntils.core.text.StyledText;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.client.Minecraft;
@@ -1591,6 +1592,7 @@ public final class DialogueRewriter {
                 }
             }
         } catch (Exception e) {
+            ErrorDebug.note("DialogueRewriter#coverage", null, e);
         }
         int[] out = new int[flat.size()];
         for (int i = 0; i < out.length; i++) {

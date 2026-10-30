@@ -3,6 +3,7 @@ package com.wynnchayuan.capture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -49,6 +50,7 @@ public final class UnappliedAudit {
             }
             dirty = true;
         } catch (Throwable t) {
+            ErrorDebug.note("UnappliedAudit#note", null, t);
         }
     }
 

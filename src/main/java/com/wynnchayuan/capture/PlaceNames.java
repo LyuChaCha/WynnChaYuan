@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import com.wynnchayuan.ModLog;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -54,7 +55,7 @@ public final class PlaceNames {
                 }
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 地名清單載入失敗，將不做地名參數化: " + e.getMessage());
+            ModLog.warn("地名清單載入失敗，將不做地名參數化: " + e.getMessage());
         }
         return names;
     }

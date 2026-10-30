@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -173,6 +174,7 @@ public final class Boxes {
                     debugFile.resolveSibling("overlay-debug-" + dumped + ".txt"),
                     sb.toString(), java.nio.charset.StandardCharsets.UTF_8);
         } catch (Exception e) {
+            ErrorDebug.note("Boxes#dump", null, e);
         }
     }
 

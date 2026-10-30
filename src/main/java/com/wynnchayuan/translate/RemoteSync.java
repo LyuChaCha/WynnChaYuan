@@ -82,9 +82,11 @@ public final class RemoteSync {
                 com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
                 return CHANGED;
             } catch (Exception e) {
+                ErrorDebug.note("RemoteSync#fetchOne", null, e);
                 try {
                     Files.deleteIfExists(tmp);
-                } catch (Exception ignored) {
+                } catch (Exception failure) {
+                    ErrorDebug.note("RemoteSync#fetchOne", null, failure);
                 }
             }
         }
@@ -133,6 +135,7 @@ public final class RemoteSync {
             lastDate = dateOf(commit);
             return sha.getAsString();
         } catch (Exception e) {
+            ErrorDebug.note("RemoteSync#remoteVersion", null, e);
             return null;
         }
     }
@@ -144,6 +147,7 @@ public final class RemoteSync {
             int t = date.indexOf('T');
             return t > 0 ? date.substring(0, t) : date;
         } catch (Exception e) {
+            ErrorDebug.note("RemoteSync#dateOf", null, e);
             return null;
         }
     }
@@ -206,13 +210,16 @@ public final class RemoteSync {
                     com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
                     return true;
                 } catch (Exception e) {
+                    ErrorDebug.note("RemoteSync#fetchCredits", null, e);
                     try {
                         Files.deleteIfExists(tmp);
-                    } catch (Exception ignored) {
+                    } catch (Exception failure) {
+                        ErrorDebug.note("RemoteSync#fetchCredits", null, failure);
                     }
                 }
             }
         } catch (Exception e) {
+            ErrorDebug.note("RemoteSync#fetchCredits", null, e);
         }
         return false;
     }

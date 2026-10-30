@@ -41,6 +41,7 @@ final class TemplateRenderer {
                 com.wynnchayuan.capture.UnappliedAudit.note(key, corpus);
             }
         } catch (Throwable t) {
+            ErrorDebug.note("TemplateRenderer#noteUnapplied", null, t);
         }
     }
 

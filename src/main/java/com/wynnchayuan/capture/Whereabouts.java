@@ -1,5 +1,6 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynntils.core.components.Models;
 import com.wynntils.models.lootrun.type.LootrunningState;
 import com.wynntils.models.raid.type.RaidInfo;
@@ -25,6 +26,7 @@ public final class Whereabouts {
             }
             return area;
         } catch (Throwable t) {
+            ErrorDebug.note("Whereabouts#now", null, t);
             return null;
         }
     }

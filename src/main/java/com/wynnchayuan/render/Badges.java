@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -224,6 +225,7 @@ public final class Badges {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
             return mc == null ? null : mc.getUser().getName();
         } catch (Throwable t) {
+            ErrorDebug.note("Badges#selfName", null, t);
             return null;
         }
     }
@@ -239,6 +241,7 @@ public final class Badges {
             return entity instanceof net.minecraft.world.entity.player.Player player
                     ? player.getUUID() : null;
         } catch (Throwable t) {
+            ErrorDebug.note("Badges#uuidOf", null, t);
             return null;
         }
     }
@@ -256,6 +259,7 @@ public final class Badges {
             return entity instanceof net.minecraft.world.entity.player.Player player
                     ? player.getGameProfile().name() : null;
         } catch (Throwable t) {
+            ErrorDebug.note("Badges#accountName", null, t);
             return null;
         }
     }

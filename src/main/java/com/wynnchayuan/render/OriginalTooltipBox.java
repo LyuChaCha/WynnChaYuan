@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.gui.GuiGraphics;
 import org.joml.Matrix3x2f;
 import org.joml.Vector2f;
@@ -54,6 +55,7 @@ public final class OriginalTooltipBox {
             float sw = b.x - a.x;
             now[nowCount++] = new Box(a.x, a.y, sw, b.y - a.y, w == 0 ? 1f : sw / w, w, h);
         } catch (Throwable t) {
+            ErrorDebug.note("OriginalTooltipBox#note", null, t);
         }
     }
 

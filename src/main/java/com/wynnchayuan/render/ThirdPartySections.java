@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.ModLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import net.minecraft.network.chat.Component;
 
@@ -109,7 +110,7 @@ public final class ThirdPartySections {
                 }
             }
         } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 第三方區塊清單讀取失敗: " + e.getMessage());
+            ModLog.warn("第三方區塊清單讀取失敗: " + e.getMessage());
         }
     }
 

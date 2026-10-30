@@ -1,5 +1,6 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
@@ -79,7 +80,8 @@ public final class ConversationPartner {
     private static void note(String event) {
         try {
             com.wynnchayuan.WynnChaYuan.store().noteEvent(event);
-        } catch (Throwable ignored) {
+        } catch (Throwable failure) {
+            ErrorDebug.note("ConversationPartner#note", null, failure);
         }
     }
 
@@ -97,6 +99,7 @@ public final class ConversationPartner {
             String l = label.toLowerCase(java.util.Locale.ROOT);
             return l.equals(a) || (a.length() >= 3 && l.contains(a));
         } catch (Throwable t) {
+            ErrorDebug.note("ConversationPartner#isRealPlayer", null, t);
             return true;
         }
     }

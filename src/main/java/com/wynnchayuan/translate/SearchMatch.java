@@ -14,6 +14,7 @@ public final class SearchMatch {
             return alsoMatches(content, query,
                     WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("SearchMatch#alsoMatches", null, t);
             return false;
         }
     }
@@ -27,7 +28,8 @@ public final class SearchMatch {
         noted = true;
         try {
             WynnChaYuan.store().noteEvent("search.hook");
-        } catch (Throwable ignored) {
+        } catch (Throwable failure) {
+            ErrorDebug.note("SearchMatch#noteHook", null, failure);
         }
     }
 
@@ -67,6 +69,7 @@ public final class SearchMatch {
             noteHook();
             return nameAlsoMatches(itemName, tokens, WynnChaYuan.translations());
         } catch (Throwable t) {
+            ErrorDebug.note("SearchMatch#nameAlsoMatches", null, t);
             return false;
         }
     }
