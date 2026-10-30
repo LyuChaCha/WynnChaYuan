@@ -61,6 +61,7 @@ const githubCalls = [];
 let githubIssueStatus = 201;
 const githubBranches = new Set();
 let githubOpenPulls = [];         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
+let githubPullStatus = 201;
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -84,7 +85,10 @@ globalThis.fetch = async (url, init = {}) => {
         : answer({ message: 'nope' }, githubIssueStatus);
     }
     if (call.method === 'PUT') return answer({}, 200);
-    if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
+    if (path === '/pulls') {
+      if (githubPullStatus === 'no url') return answer({ number: 1 }, 201);
+      return githubPullStatus === 201 ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201) : answer({ message: 'nope' }, githubPullStatus);
+    }
     return answer({}, 404);
   }
   // 沒有 Mojang 這一支：Worker 連不到它（403），登入不可以再去問。問了就在下面丟例外。
@@ -2382,6 +2386,57 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const puts = githubCalls.filter((c) => c.method === 'PUT').map((c) => c.path);
   check('★ 任務檔的句子連合併檔一起改（PR 的檢查才不會紅）', r.status === 200 && puts.length === 2
     && puts.some((p) => p.endsWith('/zh_tw/quest/q.json')) && puts.some((p) => p.endsWith('/zh_tw/quest-dialogue.json')));
+  {
+    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    const dayBranch = 'translate/ja-jp-' + today;
+    const proposeJa = async (src) => {
+      githubFile = '{\n "' + src + '": ""\n}\n';
+      const made = await (await trPost('/tr/propose', { lang: 'ja_jp', file: 'npc.json', src, base: '', text: '訳' + src }, bobNow)).json();
+      return made;
+    };
+    const accept = (made) => trPost('/tr/accept', { lang: 'ja_jp', id: made.id, item: made.prop.items[0].id }, aliceWeb);
+    const stored = (made) => JSON.parse(env.CORPUS.data.get('tp:ja_jp:' + made.id).value);
+
+    githubBranches.add(dayBranch);
+    githubOpenPulls = [];
+    githubCalls.length = 0;
+    let made = await proposeJa('Merged already');
+    r = await accept(made);
+    let answer = await r.json();
+    const branchMade = githubCalls.find((c) => c.path === '/git/refs');
+    const pullMade = githubCalls.find((c) => c.method === 'POST' && c.path === '/pulls');
+    const putTo = githubCalls.find((c) => c.method === 'PUT');
+    check('★ 當天的分支已經合併或關掉：開新的分支與 PR，不提交到舊分支', r.status === 200
+      && branchMade && branchMade.body.ref.startsWith('refs/heads/' + dayBranch + '-')
+      && putTo && putTo.body.branch === pullMade.body.head && pullMade.body.head !== dayBranch
+      && answer.url.endsWith('/pull/9999') && stored(made).done.pr.endsWith('/pull/9999'));
+    check('查開著的 PR 用倉庫設定的擁有者', githubCalls.some((c) => c.path.startsWith('/pulls?head=' + encodeURIComponent('LyuChaCha:' + dayBranch))));
+
+    githubOpenPulls = [{ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/4242' }];
+    githubCalls.length = 0;
+    made = await proposeJa('Still open');
+    r = await accept(made);
+    answer = await r.json();
+    check('★ 當天的 PR 還開著：加進同一個分支，不另開 PR', r.status === 200 && answer.url.endsWith('/pull/4242')
+      && !githubCalls.some((c) => c.method === 'POST' && (c.path === '/pulls' || c.path === '/git/refs'))
+      && githubCalls.find((c) => c.method === 'PUT').body.branch === dayBranch);
+
+    githubOpenPulls = [];
+    githubPullStatus = 'no url';
+    made = await proposeJa('No link');
+    r = await accept(made);
+    check('★ 拿不到 PR 網址就不標成已定案', r.status === 502 && stored(made).status === 'open' && !stored(made).done);
+    githubPullStatus = 201;
+
+    githubBranches.delete(dayBranch);
+    githubOpenPulls = [];
+    githubPullStatus = 422;
+    made = await proposeJa('Pull fails');
+    r = await accept(made);
+    check('★ 開 PR 失敗就不標成已定案', r.status === 502 && stored(made).status === 'open');
+    githubPullStatus = 201;
+  }
+
   check('改過指派：重送一次就覆寫語言', JSON.parse(env.CORPUS.data.get('tl:u:' + BOB.id).value).langs.join() === 'ja_jp,zh_tw');
 
   r = await trPost('/tr/poll', { lang: 'ja_jp', term: 'Weaken Enemy', note: 'Lootrun の加持', options: ['敵弱体化', '敵を弱体化'] }, bobNow);
