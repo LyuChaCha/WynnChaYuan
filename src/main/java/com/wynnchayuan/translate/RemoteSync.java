@@ -12,62 +12,21 @@ import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import java.util.List;
 
-/**
- * 從 GitHub 同步譯文，讓所有人看到同一份最新翻譯。
- *
- * <h2>為什麼需要</h2>
- * 譯文如果只打包在 jar 裡，每翻好一批就得重新發布一次模組，玩家也得重新下載。
- * 改成從 GitHub 讀取之後，譯者把 PR 合進去，所有人下次進遊戲就更新了，
- * 模組本身不必動。
- *
- * <h2>離線與失敗處理</h2>
- * 抓不到就用<b>上一次抓到的快取</b>；沒有快取就用 jar 內建的版本。
- * 所以斷網、GitHub 掛掉、或防火牆擋住都只是「沒有最新的」，不會變成沒有翻譯。
- *
- * <p>整個過程在背景執行緒進行，不會拖慢進遊戲的速度。
- */
 public final class RemoteSync {
 
-    /** 譯文檔在 repo 裡的路徑。 */
     private static final String PATH = "src/main/resources/assets/wynnchayuan/translations/";
 
-    /**
-     * 依序嘗試的來源。
-     *
-     * <h2>為什麼 raw 在前、CDN 在後</h2>
-     * 原本反過來，結果是譯者在 GitHub 上合併之後<b>最多 12 小時</b>遊戲裡才會變——
-     * jsDelivr 的快取就是這麼久，而且它從來不會「失敗」，所以永遠退不到備援那條。
-     *
-     * <p>對這個專案來說，翻譯剛改完就要看得到比省流量重要得多：譯者改完進遊戲
-     * 對照，是唯一能確認自己翻對的方法。改成 raw 在前之後，合併完重開就生效。
-     *
-     * <p>jsDelivr 留作備援，扛的是 raw 被擋掉或流量受限的情況——那時候拿到
-     * 稍微舊一點的譯文，總比完全沒有好。
-     */
     private static final List<String> SOURCES = List.of(
             "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH,
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH);
 
-    /** 清單本身的檔名。它不會出現在清單裡（清單濾掉 {@code _} 開頭），得單獨抓。 */
     private static final String INDEX = "_index.json";
 
-    /**
-     * 要同步的檔案。
-     *
-     * <h2>為什麼要看兩份清單</h2>
-     * {@link FileIndex#bundled} 讀的是<b>打包在 jar 裡</b>的清單。只看它的話，
-     * repo 上新增一個譯文檔之後永遠不會被下載——玩家得等下一次發版才拿得到，
-     * 而「翻譯改完不必發版」正是這支同步存在的意義。
-     *
-     * <p>所以每次同步都先把 {@code _index.json} 本身抓下來，再合併兩份清單：
-     * 內建那份保證基本盤還在（遠端清單壞掉時不會突然少檔），
-     * 剛抓下來的那份負責帶進新增的檔案。
-     */
     private static List<String> files(Path cacheDir, String lang) {
         java.util.LinkedHashSet<String> names =
                 new java.util.LinkedHashSet<>(FileIndex.bundled(lang));
         names.addAll(FileIndex.inDirectory(cacheDir));
-        names.addAll(FileIndex.SCOPED);          // 不在清單裡，見 FileIndex#SCOPED
+        names.addAll(FileIndex.SCOPED);
         return List.copyOf(names);
     }
 
@@ -83,20 +42,12 @@ public final class RemoteSync {
 
     private RemoteSync() {}
 
-    /** {@link #fetchOne} 抓不到。 */
     private static final int FAILED = 0;
 
-    /** 抓到了，但跟快取裡那份一模一樣——不必重新載入。 */
     private static final int SAME = 1;
 
-    /** 抓到了，而且換掉了快取裡的舊檔。 */
     private static final int CHANGED = 2;
 
-    /**
-     * 依序試每個來源，任一成功就算數。
-     *
-     * @return {@link #FAILED}、{@link #SAME} 或 {@link #CHANGED}
-     */
     private static int fetchOne(HttpClient client, Path cacheDir,
                                 String lang, String name) {
         Path target = cacheDir.resolve(name);
@@ -107,7 +58,6 @@ public final class RemoteSync {
                         URI.create(base + Languages.path(lang) + name))
                         .timeout(TIMEOUT)
                         .header("User-Agent", "WynnChaYuan")
-                        // 中間還可能有公司／ISP 的快取代理，一併請它們別給舊的
                         .header("Cache-Control", "no-cache")
                         .header("Pragma", "no-cache")
                         .GET()
@@ -117,24 +67,14 @@ public final class RemoteSync {
                 if (response.statusCode() != 200) {
                     continue;
                 }
-                // 清單裡的名字可能帶資料夾（`ability/mage.json`）。資料夾不存在的話
-                // 這裡會丟 NoSuchFileException，兩個來源都失敗，那個檔就<b>整個沒下載</b>——
-                // GitHub 上明明有譯文，遊戲裡卻一條都沒有。
                 Files.createDirectories(tmp.getParent());
                 try (InputStream in = response.body()) {
                     Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                 }
-                // 先確認<b>整份</b>是合法 JSON 再蓋上去。半截或錯誤頁面蓋掉舊檔的話，
-                // 使用者會從「翻譯有點舊」變成「翻譯全沒了」。
-                //
-                // 先前只看開頭是不是「{」：連線中途斷掉的半截檔照樣過關，
-                // 那個檔的譯文就一直不見，直到下一次同步剛好抓完整。
                 if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
                     Files.deleteIfExists(tmp);
                     continue;
                 }
-                // 跟快取一模一樣就不換，並回報「沒變」。呼叫端靠這個決定要不要重載——
-                // 重載一次一兩秒，而大多數時候 GitHub 上什麼都沒改。
                 if (Files.isRegularFile(target) && Files.mismatch(tmp, target) == -1L) {
                     Files.deleteIfExists(tmp);
                     return SAME;
@@ -142,11 +82,9 @@ public final class RemoteSync {
                 com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
                 return CHANGED;
             } catch (Exception e) {
-                // 這個來源不通就試下一個。寫到一半的暫存檔別留著。
                 try {
                     Files.deleteIfExists(tmp);
                 } catch (Exception ignored) {
-                    // 刪不掉的話下次啟動 ConfigFolder 會清
                 }
             }
         }
@@ -160,25 +98,6 @@ public final class RemoteSync {
         return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.sync_none");
     }
 
-    /**
-     * 譯文最後一次改動是哪一個 commit。
-     *
-     * <h2>為什麼要有</h2>
-     * 以前每次進遊戲、每次切語言都把整個語言的三十幾個檔重抓一遍。翻譯一個月
-     * 可能只動幾條，而玩家每天都在付那個流量與那幾十秒；想在遊戲裡比對兩種語言
-     * 的人更慘——來回切一次就是兩趟完整下載。
-     *
-     * <p>所以改成先問一句「有沒有新的」。GitHub 的 commits API 帶上路徑就會回
-     * <b>只動到譯文的</b>最新一筆，一次請求、一點幾 KB。跟上一次下載時記下的
-     * 那一個比，一樣就什麼都不用做。
-     *
-     * <h2>失敗就當作沒有新的</h2>
-     * API 有每小時六十次的限制（沒帶權杖時），斷網、被擋、超時也都可能。
-     * 這種時候回傳 {@code null}，呼叫端一律當成「沒有新的」——
-     * 寧可少提示一次，也不要在玩家沒得選的時候自作主張下載。
-     *
-     * @return commit 的 SHA；問不到時回傳 {@code null}
-     */
     public static String remoteVersion() {
         if (!allowed()) {
             return null;
@@ -211,21 +130,13 @@ public final class RemoteSync {
             if (sha == null || !sha.isJsonPrimitive()) {
                 return null;
             }
-            lastDate = dateOf(commit);         // 同一份回應裡就有，不必多問一次
+            lastDate = dateOf(commit);
             return sha.getAsString();
         } catch (Exception e) {
-            return null;                       // 問不到就當作沒有新的
+            return null;
         }
     }
 
-    /**
-     * 那一筆 commit 的日期，{@code 2026-09-30} 這種寫法。
-     *
-     * <p>GitHub 回的是 ISO 8601（{@code 2026-09-30T09:50:02Z}），取到 {@code T}
-     * 為止就好——時分秒對玩家沒有意義，而且那是 UTC，印出來只會跟本地時間對不上
-     * 惹人疑惑。挑 committer 而不是 author：squash 合併時 author 是提交者原本
-     * 寫 patch 的日子，可能是好幾天前，而玩家要知道的是「這份譯文什麼時候進 main」。
-     */
     private static String dateOf(com.google.gson.JsonObject commit) {
         try {
             String date = commit.getAsJsonObject("commit")
@@ -233,57 +144,30 @@ public final class RemoteSync {
             int t = date.indexOf('T');
             return t > 0 ? date.substring(0, t) : date;
         } catch (Exception e) {
-            return null;                       // 沒有日期就不顯示日期，不是錯誤
+            return null;
         }
     }
 
-    /**
-     * 最後一次 {@link #remoteVersion()} 問到的那一筆的日期；問不到是 {@code null}。
-     *
-     * <p>做成旁路而不是改 {@code remoteVersion} 的回傳型別，是因為 SHA 是
-     * <b>身分</b>：比對新舊、存進設定檔的都是它，換成複合型別等於要動每一個
-     * 呼叫處，而日期純粹是講給人看的。
-     */
     public static String lastRemoteDate() {
         return lastDate;
     }
 
     private static volatile String lastDate;
 
-    /**
-     * 把遠端譯文抓下來放進 {@code cacheDir}。
-     *
-     * <p>每個檔案先寫暫存檔再原子搬移，中途失敗不會留下半截 JSON 蓋掉舊的好檔案。
-     *
-     * @return 內容真的有變的檔案數（抓到但跟快取一樣的不算）。0 表示不必重新載入
-     */
     public static int fetchInto(Path cacheDir) {
         return fetchInto(cacheDir, Languages.DEFAULT);
     }
 
-    /**
-     * @param lang 只抓這一種語言。其他語言的檔案不會被下載——
-     *             多語言對玩家來說因此是零流量成本。
-     */
     public static int fetchInto(Path cacheDir, String lang) {
         return fetchInto(cacheDir, lang, null);
     }
 
-    /** 貢獻者名單。跟譯文同一個 repo、同一個分支，網址寫死在這裡。 */
     private static final List<String> CREDITS = List.of(
             "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/"
                     + "src/main/resources/assets/wynnchayuan/credits.json",
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/"
                     + "src/main/resources/assets/wynnchayuan/credits.json");
 
-    /**
-     * 抓貢獻者名單，放在設定資料夾底下。
-     *
-     * <p>名牌上的徽章照這份名單畫：加人、登記顏色、改展示的身分都只要改 repo 上那個檔，
-     * 不必發版。這裡只有下載，不送出任何東西。
-     *
-     * @return 抓到了而且跟手上的不一樣
-     */
     public static boolean fetchCredits(Path configDir) {
         if (!allowed()) {
             return false;
@@ -311,7 +195,6 @@ public final class RemoteSync {
                     try (InputStream in = response.body()) {
                         Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                     }
-                    // 半截或錯誤頁面不能蓋掉手上那一份
                     if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
                         Files.deleteIfExists(tmp);
                         continue;
@@ -326,33 +209,19 @@ public final class RemoteSync {
                     try {
                         Files.deleteIfExists(tmp);
                     } catch (Exception ignored) {
-                        // 刪不掉的話下次抓的時候會蓋掉
                     }
                 }
             }
         } catch (Exception e) {
-            // 名單只是裝飾，抓不到就用手上的
         }
         return false;
     }
 
-    /**
-     * 抓到第幾個檔了。
-     *
-     * <h2>為什麼要有</h2>
-     * 一種語言是三十幾個檔，其中幾個很大。玩家按下切換之後，畫面上唯一的
-     * 變化是按鈕變成「…」，然後幾十秒沒有動靜——分不出「正在下載」與「當掉了」。
-     *
-     * <p>回呼是在<b>背景執行緒</b>上叫的，收的人自己負責回主執行緒再動畫面。
-     */
     @FunctionalInterface
     public interface Progress {
         void at(int done, int total);
     }
 
-    /**
-     * @param progress 每抓完一個檔叫一次；不需要就傳 {@code null}
-     */
     public static int fetchInto(Path cacheDir, String lang, Progress progress) {
         if (!allowed()) {
             return 0;
@@ -372,11 +241,9 @@ public final class RemoteSync {
                 .followRedirects(HttpClient.Redirect.NORMAL)
                 .build()) {
 
-            // 先抓清單本身，後面才知道 repo 上有沒有新增譯文檔。
-            // 這一步失敗不算錯——那就只是沿用內建清單而已。
             int index = fetchOne(client, cacheDir, lang, INDEX);
             if (index == CHANGED) {
-                changed++;                     // 清單的順序就是載入順序，變了也要重載
+                changed++;
             }
 
             List<String> names = files(cacheDir, lang);
@@ -399,7 +266,6 @@ public final class RemoteSync {
                     progress.at(ok + failed, names.size());
                 }
             }
-            // 蓋上快取戳記，順便刪掉 repo 已經不列的舊檔——見 TranslationCache。
             changed += TranslationCache.record(cacheDir, fetched, names, index != FAILED);
         } catch (Exception e) {
             lastResult = com.wynnchayuan.client.T.s("status.sync_offline", e.getMessage());

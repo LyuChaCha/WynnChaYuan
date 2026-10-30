@@ -11,31 +11,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
 
-/**
- * 多行名牌「名字那一列自己翻得出來，整塊卻沒翻（或翻成別的名字）」時，把那塊名牌的
- * 片段結構寫進 {@code debug/nameplate-miss.txt}。
- *
- * <h2>為什麼需要這個</h2>
- * 實機回報「名牌原本有翻，一打下去頭上的名字就變回英文」。怪物被打之後名牌多出血條與
- * 狀態列，而那幾列長什麼樣子——哪個字型、哪些碼位、換行黏在哪一段——語料與
- * {@code captured.json} 都看不到：收集端只記<b>砍掉狀態列</b>之後的名字
- * （見 {@code CaptureListener#trimStatusLines}），而名字本身早就翻好了，所以缺口清單裡
- * 一條都不會出現。離線只能照猜的形狀測，猜錯了就修不到真正那一種。
- *
- * <p>所以只記「名字自己翻得出來、整塊卻不行」的那幾塊：那正是這個症狀，
- * 一般沒翻的名牌（名字本來就不在語料裡）不記，免得額度被洗光。
- *
- * <p>只在 F6 的「診斷檔」開著時寫（{@code WynnChaYuan} 照那個開關決定要不要 init），
- * 同一個模板只記一次，最多幾十筆。
- */
 public final class NameplateProbe {
 
     private static final String FILE = "nameplate-miss.txt";
 
-    /** 最多記幾塊。夠看出形狀就好。 */
     private static final int LIMIT = 40;
 
-    /** 看過的模板（含路徑），最多記這麼多個，滿了就不再查。 */
     private static final int SEEN_LIMIT = 4096;
 
     private static Path file;
@@ -54,13 +35,6 @@ public final class NameplateProbe {
               .append(System.lineSeparator()).append(System.lineSeparator());
     }
 
-    /**
-     * 名牌翻完之後叫一次。
-     *
-     * @param path   哪一條路（TextDisplay 的名牌事件，或盔甲座的實體名稱）
-     * @param label  原文
-     * @param result 整塊的譯文；沒翻就是 {@code null}
-     */
     public static void check(String path, StyledText label, Component result,
                              TranslationStore store) {
         if (file == null || label == null || store == null || written >= LIMIT
@@ -84,12 +58,12 @@ public final class NameplateProbe {
             }
             Component alone = LineTranslator.translateLabel(rows[0], store);
             if (alone == null) {
-                return;                        // 名字本來就翻不出來，不是這個症狀
+                return;
             }
             String name = alone.getString().strip();
             String got = result == null ? null : result.getString().split("\n", -1)[0].strip();
             if (got != null && got.equals(name)) {
-                return;                        // 名字照樣翻出來了
+                return;
             }
             synchronized (buffer) {
                 if (written >= LIMIT) {
@@ -111,7 +85,6 @@ public final class NameplateProbe {
                 Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
             }
         } catch (Throwable t) {
-            // 診斷本身絕不能影響遊戲
         }
     }
 
@@ -130,7 +103,6 @@ public final class NameplateProbe {
         }, Style.EMPTY);
     }
 
-    /** 看不見的碼位寫成 U+XXXX，換行寫成 ⏎，空白寫成 ␠。 */
     private static String describe(String text) {
         StringBuilder sb = new StringBuilder();
         text.codePoints().forEach(cp -> {
