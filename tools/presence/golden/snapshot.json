@@ -1,0 +1,4360 @@
+{
+ "routes": {
+  "GET / :: home bare": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "99c1199b2f89fd94b3d847c129a77b6f3a7f2b526dae7f9494c8548de3b07f8a",
+    "length": 195678
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET / :: home cookie lang": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "3ba49486bb39b938bd3b07f3f6db979b8952a4f34e84195c481178eabc641f92",
+    "length": 202268
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET / :: home accept-language": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "ae337e81fd51a3a09866ec6294ec60f0d798e7a3e6502e64bc6b2e596f16422b",
+    "length": 199437
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "HEAD / :: head home": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "HEAD /privacy :: head privacy": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "HEAD /nope :: head missing": {
+   "status": 404,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /nope :: lost page": {
+   "status": 404,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "855f3475ecba109a0432e0c46d3dc04e4fb2395efd05297c53eefec315998465",
+    "length": 136928
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /nope :: lost post": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /gallery :: gallery redirect": {
+   "status": 302,
+   "headers": {
+    "location": "https://wynnchayuan.com/capes"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /favicon.png :: icon /favicon.png": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "7138b94f1b06fd427c4aa9ce701048512bd8a4643b751949fb748fc6c9a331cb",
+    "length": 3926
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /favicon.ico :: icon /favicon.ico": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "7138b94f1b06fd427c4aa9ce701048512bd8a4643b751949fb748fc6c9a331cb",
+    "length": 3926
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /apple-touch-icon.png :: icon /apple-touch-icon.png": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "ec1c4d0fbeca23eb1864c6543bac851ed743d571eb6dc67a04302bfa3cc4d7fa",
+    "length": 12933
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /icon-192.png :: icon /icon-192.png": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "b1df714d0a4afb6d4b4f7b2f04b27dc9c2acade24c0531531fb5d3217021d132",
+    "length": 24978
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /font/px-tc.ttf :: font": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=31536000, immutable",
+    "content-type": "font/ttf",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "ee0cb74d0bd68b3b2a977cb95634575c4b438c7dd7c426b068f1e07a02631803",
+    "length": 30792
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /font/px-xx.ttf :: font missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /tex/hud.png :: texture": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=31536000, immutable",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "b044a6a2ddfdf1f81a0ff5c491771780a6a430e83ddccc48e989efe341d6d5d3",
+    "length": 2275
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /tex/nope.png :: texture missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /template/template-88x68.png :: template png": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=31536000, immutable",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "b726ea90136aa6ae5cfa88fa37258fa39ebef0a768c3377200557f282a01d081",
+    "length": 271
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /template/example-88x68.gif :: template gif": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=31536000, immutable",
+    "content-type": "image/gif",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "d8a8ba59ad5acd5efc142820ee893ef68f265c5ec9620dab758b38e23c98fe1d",
+    "length": 18088
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /template/README.md :: template readme": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /auth/discord :: discord start": {
+   "status": 302,
+   "headers": {
+    "cache-control": "no-store",
+    "location": "https://discord.com/oauth2/authorize?client_id=client1&response_type=code&redirect_uri=https%3A%2F%2Fwynnchayuan.com%2Fauth%2Fdiscord%2Fcallback&scope=identify&state=1793361600000.193e3ab51f37d0bf39b8eeb4d33cb85f.1a0c3168c8350b8a9e90972a4e2c1bf1ded74d18c9b47c648522355714c4564c",
+    "referrer-policy": "no-referrer",
+    "set-cookie": "wcy_oauth=193e3ab51f37d0bf39b8eeb4d33cb85f; Path=/auth; Max-Age=600; HttpOnly; Secure; SameSite=Lax"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /auth/discord?intent=abababababababababababababababab :: discord start with intent": {
+   "status": 302,
+   "headers": {
+    "cache-control": "no-store",
+    "location": "https://discord.com/oauth2/authorize?client_id=client1&response_type=code&redirect_uri=https%3A%2F%2Fwynnchayuan.com%2Fauth%2Fdiscord%2Fcallback&scope=identify&state=1793361600000.8ade7d3fbfded8a21c49ea8ee174a69a.446ea7ae46d3fbc5d7c48cfef7dbb79d41bc82a007074ef4cd9aa96d01a1dabc",
+    "referrer-policy": "no-referrer",
+    "set-cookie": "wcy_oauth=8ade7d3fbfded8a21c49ea8ee174a69a; Path=/auth; Max-Age=600; HttpOnly; Secure; SameSite=Lax"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /auth/discord/callback?code=x&state=y :: discord callback without cookie": {
+   "status": 302,
+   "headers": {
+    "cache-control": "no-store",
+    "location": "https://wynnchayuan.com/account#e=discord&r=cookie",
+    "referrer-policy": "no-referrer",
+    "set-cookie": "wcy_oauth=; Path=/auth; Max-Age=0; HttpOnly; Secure; SameSite=Lax"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /auth/discord/callback?error=access_denied :: discord callback denied": {
+   "status": 302,
+   "headers": {
+    "cache-control": "no-store",
+    "location": "https://wynnchayuan.com/account#e=discord&r=denied",
+    "referrer-policy": "no-referrer",
+    "set-cookie": "wcy_oauth=; Path=/auth; Max-Age=0; HttpOnly; Secure; SameSite=Lax"
+   },
+   "body": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "length": 0
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/challenge :: challenge": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"challenge\":\"1793361600000.6b41c77a7e7eaedf9d7329b476653da6.677b49a8e9f8cd58897f360fa27825907d148d349a163748499e1bb07f5ba8e5\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/login :: login bad body": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad login\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/login :: login stale challenge": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"stale challenge\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/web-link :: web-link anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/web-link :: web-link steve": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"https://wynnchayuan.com/capes#t=web.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.Steve.1793448000000.b758fa754da11fb31a807a2498eef0ed4741eae40f9dfcc0c0dad8fc21044182\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/web-link :: web-link expired": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/link/start :: link start discord": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"code\":\"5WQ77ERJ\",\"minutes\":10}"
+   },
+   "kv": {
+    "link:5WQ77ERJ": {
+     "sha": "bb07f2abd24d01dd1bdebd9bfe8fed436138f83461a13323b5695f1974560e79",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/link/start :: link start anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/link/intent :: link intent": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8",
+    "set-cookie": "wcy_intent=77e529b894982ec053cfe2ecb0ab2cbd; Path=/auth; Max-Age=600; HttpOnly; Secure; SameSite=Lax"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"/auth/discord?intent=77e529b894982ec053cfe2ecb0ab2cbd\"}"
+   },
+   "kv": {
+    "intent:77e529b894982ec053cfe2ecb0ab2cbd": {
+     "sha": "9ccbad81212e4c731fd0bd11c62ca372b869aab15bb48e1f4b989acc1fe63f2b",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/link :: link bad code": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"unknown code\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/link :: link anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/unlink :: unlink linked": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "d:222222222222222222": {
+     "sha": "c2c7d7b50c58d96a01a3cdcdd7e6d5465e0b811cf198cdc4ad29caf34bc92652",
+     "metadata": "{\"n\":\"steve_dc\"}"
+    },
+    "l:dddddddddddddddddddddddddddddddd": null
+   },
+   "fetch": []
+  },
+  "POST /api/unlink :: unlink anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me steve": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":true,\"discord\":null,\"name\":\"Steve\",\"id\":\"4bbb08ad5b1f549e6a729208\",\"developer\":false,\"staff\":false,\"member\":false,\"banned\":false,\"uploads\":\"tiered\",\"limit\":1048576,\"cape\":{\"t\":\"png\",\"v\":1792584000000,\"s\":172,\"x\":0,\"y\":0,\"h\":\"5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b\",\"worn\":false,\"back\":false,\"public\":false,\"vis\":\"unlisted\",\"listed\":false,\"pending\":false},\"review\":false}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/src/main/resources/assets/wynnchayuan/credits.json",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/me :: me steveWeb": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":true,\"discord\":null,\"name\":\"Steve\",\"id\":\"4bbb08ad5b1f549e6a729208\",\"developer\":false,\"staff\":false,\"member\":false,\"banned\":false,\"uploads\":\"tiered\",\"limit\":1048576,\"cape\":{\"t\":\"png\",\"v\":1792584000000,\"s\":172,\"x\":0,\"y\":0,\"h\":\"5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b\",\"worn\":false,\"back\":false,\"public\":false,\"vis\":\"unlisted\",\"listed\":false,\"pending\":false},\"review\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me alex": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":true,\"discord\":null,\"name\":\"Alex\",\"id\":\"dc165342ad64feb88bcc5d59\",\"developer\":false,\"staff\":true,\"member\":false,\"banned\":false,\"uploads\":\"tiered\",\"limit\":1048576,\"cape\":null,\"review\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me dev": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":true,\"discord\":null,\"name\":\"Green_teaTW\",\"id\":\"3dd509c0fcb112e29c04ee34\",\"developer\":true,\"staff\":true,\"member\":true,\"banned\":false,\"uploads\":\"tiered\",\"limit\":20971520,\"cape\":null,\"review\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me linkedDc": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":true,\"discord\":{\"name\":\"steve_dc\"},\"name\":\"Steve\",\"id\":\"b61a9788db6a437211001471\",\"developer\":false,\"staff\":false,\"member\":false,\"banned\":false,\"uploads\":\"tiered\",\"limit\":1048576,\"cape\":null,\"review\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me loneDc": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"linked\":false,\"discord\":{\"name\":\"Sayla\"},\"staff\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/me :: me anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/me/delete :: delete me anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/me/delete :: delete me steve": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "blob:5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b": null,
+    "cape:4bbb08ad5b1f549e6a729208": null,
+    "stars": {
+     "sha": "bf8578714d7434c9810f2140e420e537b9c80503297a614020468034f8eeb55f",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/me/delete :: delete me lone discord": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "d:333333333333333333": null
+   },
+   "fetch": []
+  },
+  "POST /api/me/delete :: delete me linked discord": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "d:222222222222222222": null,
+    "l:dddddddddddddddddddddddddddddddd": null
+   },
+   "fetch": []
+  },
+  "POST /api/hello :: hello steve": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"4bbb08ad5b1f549e6a729208\",\"cape\":true}"
+   },
+   "kv": {
+    "u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"i\":\"4bbb08ad5b1f549e6a729208\",\"c\":1,\"d\":20756,\"v\":1792584000000,\"r\":1,\"s\":\"dev\"}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/hello :: hello web token": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"4bbb08ad5b1f549e6a729208\",\"cape\":true}"
+   },
+   "kv": {
+    "u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"i\":\"4bbb08ad5b1f549e6a729208\",\"c\":1,\"d\":20756,\"v\":1792584000000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/hello :: hello bad json": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad hello\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/list :: list": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=60",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"t\":1793361600000,\"users\":[],\"capes\":{},\"hidden\":[],\"rainbow\":[],\"show\":{}}"
+   },
+   "kv": {
+    "presence:list": {
+     "sha": "78cd733950f65a0bb04f1a27fc1e06950eecd7251c6aa6ac84f4ebb7b8c345da",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/status :: status": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"what\":\"WynnChaYuan\",\"users\":0,\"capes\":0,\"uploads\":\"tiered\",\"discord\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/team :: team": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=300",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"team\":[{\"role\":\"developers\",\"color\":\"#FFD24A\",\"members\":[{\"name\":\"LyuChaCha\",\"mc\":\"Green_teaTW\",\"teams\":[\"zh_tw\"],\"areas\":[\"code\",\"website\"]}]},{\"role\":\"sponsors\",\"color\":\"#5BD8E8\",\"members\":[{\"name\":\"ㄉ綠\",\"mc\":\"MlyuL\",\"teams\":[\"zh_tw\"]},{\"name\":\"蛇蛇\",\"mc\":\"snakiesnake\",\"teams\":[\"zh_cn\"]},{\"name\":\"hey you great\",\"mc\":\"Brokeboys_\",\"teams\":[\"zh_tw\"]},{\"name\":\"Zero\",\"mc\":\"HEYAZero\",\"teams\":[\"zh_tw\"]}]},{\"role\":\"contributors\",\"color\":\"#5BD86F\",\"members\":[{\"name\":\"suSCP\",\"mc\":\"SCP_Night_sky\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"]},{\"name\":\"Pure\",\"mc\":\"21_Pure\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"]},{\"name\":\"泥巴先生\",\"mc\":\"MrMud8033112\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"]},{\"name\":\"幻影Joker\",\"mc\":\"NOT_Joker\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"]},{\"name\":\"Pootato\",\"mc\":\"Pootato__\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"]},{\"name\":\"N02sAyLa\",\"mc\":\"eric18960\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"testing\",\"community\"]},{\"name\":\"98\",\"mc\":\"Jackandmina98\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"]},{\"name\":\"雪花\",\"mc\":\"ThEsnowF\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"]},{\"name\":\"Roy\",\"mc\":\"aaroye\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\"]},{\"name\":\"Chq\",\"mc\":\"Chqrish\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"]},{\"name\":\"邊緣安德\",\"mc\":\"Enderchen2580\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"]},{\"name\":\"AdoreFuSei\",\"mc\":\"AdoreFuSei\",\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"code\"]},{\"name\":\"anilken\",\"mc\":\"Pandik\",\"teams\":[\"tr_tr\"],\"areas\":[\"translation\",\"capture\",\"code\"]},{\"name\":\"yool\",\"mc\":\"yool141\",\"teams\":[\"ja_jp\"],\"areas\":[\"translation\",\"capture\"]},{\"name\":\"早安白月\",\"mc\":\"ZLGX\",\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\",\"testing\"]},{\"name\":\"百里莫凌\",\"mc\":\"BaiLiML\",\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"capture\"]}]}],\"guilds\":[{\"slug\":\"yuchayuan\",\"name\":\"YuChaYuan\",\"tag\":\"YCY\",\"icon\":0,\"banner\":0}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "PUT /api/cape :: upload anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "PUT /api/cape :: upload steve png": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"4bbb08ad5b1f549e6a729208\",\"v\":1793361600000,\"type\":\"png\",\"width\":88,\"height\":68,\"frames\":1,\"pending\":false}"
+   },
+   "kv": {
+    "cape:4bbb08ad5b1f549e6a729208": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"v\":1793361600000,\"c\":1793361600000,\"s\":1055,\"u\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"n\":\"Steve\",\"h\":\"7791cc4282ef7f978de1d9da09b7e24e9dc65ac4da274396be7d0965e7d3fcb9\",\"x\":88,\"y\":68,\"vis\":\"unlisted\"}"
+    },
+    "hist:4bbb08ad5b1f549e6a729208:7791cc4282ef7f978de1d9da09b7e24e9dc65ac4da274396be7d0965e7d3fcb9": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"s\":1055,\"x\":88,\"y\":68,\"at\":1793361600000}"
+    },
+    "idle": {
+     "sha": "21f84f2582208a11e0eca401979797701d33540bc5cac3b0ed973f1b8142a68f",
+     "metadata": null
+    },
+    "u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"i\":\"4bbb08ad5b1f549e6a729208\",\"c\":1,\"d\":20756,\"v\":1793361600000}"
+    },
+    "upl:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "3324e477f93852c3e5e83ed6266fc931202e9b19c41ee99d39eb17f6b6732eb2",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "PUT /api/cape :: upload dev gif": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"3dd509c0fcb112e29c04ee34\",\"v\":1793361600000,\"type\":\"gif\",\"width\":88,\"height\":68,\"frames\":15,\"pending\":false}"
+   },
+   "kv": {
+    "cape:3dd509c0fcb112e29c04ee34": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"gif\",\"v\":1793361600000,\"c\":1793361600000,\"s\":18088,\"u\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"n\":\"Green_teaTW\",\"h\":\"d8a8ba59ad5acd5efc142820ee893ef68f265c5ec9620dab758b38e23c98fe1d\",\"x\":88,\"y\":68}"
+    },
+    "hist:3dd509c0fcb112e29c04ee34:d8a8ba59ad5acd5efc142820ee893ef68f265c5ec9620dab758b38e23c98fe1d": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"gif\",\"s\":18088,\"x\":88,\"y\":68,\"at\":1793361600000}"
+    },
+    "u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"i\":\"3dd509c0fcb112e29c04ee34\",\"c\":1,\"d\":20756,\"v\":1793361600000}"
+    },
+    "upl:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+     "sha": "3324e477f93852c3e5e83ed6266fc931202e9b19c41ee99d39eb17f6b6732eb2",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "PUT /api/cape :: upload garbage": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad format\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "DELETE /api/cape :: remove cape steve": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "cape:4bbb08ad5b1f549e6a729208": null,
+    "idle": {
+     "sha": "21f84f2582208a11e0eca401979797701d33540bc5cac3b0ed973f1b8142a68f",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/capes :: capes": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"capes\":[{\"h\":\"4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9\",\"t\":\"gif\",\"s\":7121,\"v\":1793188800000,\"c\":1793174400000,\"ids\":[\"01f2d6ada34752387a67cc26\",\"c77e004e94d9422e4e46912e\",\"762c054db4e3c30cb7529c79\"],\"stars\":4},{\"h\":\"7791cc4282ef7f978de1d9da09b7e24e9dc65ac4da274396be7d0965e7d3fcb9\",\"t\":\"png\",\"s\":1055,\"v\":1793016000000,\"c\":1793005200000,\"ids\":[\"1ab31614578cd53958c4114c\",\"875b3baf00009877ec1b1870\"],\"stars\":0},{\"h\":\"b08fe62eebf60e1ebf9b9bde294f6e3e74ed256d3f7e3482b3abeabc90011e32\",\"t\":\"png\",\"s\":4890,\"v\":1792929600000,\"c\":1792915200000,\"ids\":[\"9862e781ebfd6d8295981f7c\",\"05d8c9822ca0244742eaa6d0\",\"adc83f746694a587e1127611\"],\"stars\":2},{\"h\":\"21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944\",\"t\":\"png\",\"s\":119,\"v\":1792756800000,\"c\":1792742400000,\"ids\":[\"c1ba14bfaadd3b18e1e924ec\",\"bfdde36c7963139767831fd2\"],\"stars\":0},{\"h\":\"d517a1045c330184f7586911e8aea891ca5ded9ec580e36ff90952fb19c1cea5\",\"t\":\"png\",\"s\":835,\"v\":1792670400000,\"c\":1792663200000,\"ids\":[\"818a728b8022d7d414d1256e\",\"e6bde8667ea297db933e89d4\",\"0fe545c0f2263913e375d7c1\"],\"stars\":4},{\"h\":\"e290750bb0c8dc934a5819d7f40ad8cdec67e062fa7dfd233913b4e303dacc89\",\"t\":\"png\",\"s\":2356,\"v\":1792497600000,\"c\":1792483200000,\"ids\":[\"25b7f98077bd71bad3b3d17d\",\"6e005a3a21b99f46f6100cdf\"],\"stars\":0},{\"h\":\"b726ea90136aa6ae5cfa88fa37258fa39ebef0a768c3377200557f282a01d081\",\"t\":\"png\",\"s\":271,\"v\":1792411200000,\"c\":1792400400000,\"ids\":[\"be0c668fa3a55d7e5c328d93\",\"6c630718ce9501d44126694b\",\"311e2f060d7c1e2535eef41a\"],\"stars\":2},{\"h\":\"e60ee17e88bb7679394ace6155553834dabc369176de548f17481f7583be859d\",\"t\":\"png\",\"s\":487,\"v\":1793102400000,\"c\":1792836000000,\"ids\":[],\"idle\":1793102400000,\"stars\":1}],\"keep\":604800000,\"now\":1793361600000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/mine :: capes mine steve": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"4bbb08ad5b1f549e6a729208\",\"favs\":[],\"history\":[],\"removed\":0}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/mine :: capes mine anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944 :: cape link 21edabf9": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"cape\":{\"h\":\"21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944\",\"t\":\"png\",\"s\":119,\"v\":1792756800000,\"c\":1792742400000,\"ids\":[\"c1ba14bfaadd3b18e1e924ec\",\"bfdde36c7963139767831fd2\"],\"vis\":\"public\",\"pending\":false,\"hidden\":false,\"stars\":0},\"keep\":604800000,\"now\":1793361600000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13 :: cape link 4761ebe1": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"cape\":{\"h\":\"4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13\",\"t\":\"gif\",\"s\":31858,\"v\":1793361600000,\"c\":1793361600000,\"ids\":[\"faaf8740023a573e7c79b683\"],\"vis\":\"unlisted\",\"pending\":false,\"hidden\":true,\"stars\":1},\"keep\":604800000,\"now\":1793361600000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9 :: cape link 4de7e2ec": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"cape\":{\"h\":\"4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9\",\"t\":\"gif\",\"s\":7121,\"v\":1793188800000,\"c\":1793174400000,\"ids\":[\"01f2d6ada34752387a67cc26\",\"c77e004e94d9422e4e46912e\",\"762c054db4e3c30cb7529c79\"],\"vis\":\"public\",\"pending\":false,\"hidden\":false,\"stars\":4},\"keep\":604800000,\"now\":1793361600000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/capes/zzz :: cape link bad": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape/01f2d6ada34752387a67cc26 :: cape by id": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400, immutable",
+    "content-type": "image/gif",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9",
+    "length": 7121
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape/01f2d6ada34752387a67cc26?k=4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9 :: cape by id with key": {
+   "status": 200,
+   "headers": {
+    "cache-control": "private, max-age=86400, immutable",
+    "content-type": "image/gif",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "4de7e2ecc9e0b2d4a488e2032e32a03d34b9588ea62be8004361ad1f2a035ba9",
+    "length": 7121
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape/000000000000000000000000 :: cape by id missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape/4bbb08ad5b1f549e6a729208 :: cape steve unlisted": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400, immutable",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b",
+    "length": 172
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/idle/e60ee17e88bb7679394ace6155553834dabc369176de548f17481f7583be859d :: idle e60ee17e": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=3600",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "e60ee17e88bb7679394ace6155553834dabc369176de548f17481f7583be859d",
+    "length": 487
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/idle/nothex :: idle bad": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/wear :: wear": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"gif members only\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/wear :: wear idle": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"dc165342ad64feb88bcc5d59\",\"v\":1793361600000,\"t\":\"png\",\"back\":false,\"pending\":false}"
+   },
+   "kv": {
+    "cape:dc165342ad64feb88bcc5d59": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"v\":1793361600000,\"c\":1792836000000,\"s\":487,\"u\":\"cccccccccccccccccccccccccccccccc\",\"n\":\"Alex\",\"h\":\"e60ee17e88bb7679394ace6155553834dabc369176de548f17481f7583be859d\",\"w\":1}"
+    },
+    "hist:dc165342ad64feb88bcc5d59:e60ee17e88bb7679394ace6155553834dabc369176de548f17481f7583be859d": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"s\":487,\"x\":0,\"y\":0,\"at\":1793361600000}"
+    },
+    "idle": {
+     "sha": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+     "metadata": null
+    },
+    "u:cccccccccccccccccccccccccccccccc": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"i\":\"dc165342ad64feb88bcc5d59\",\"c\":1,\"d\":20756,\"v\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/cape/wear :: wear anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/restore :: restore": {
+   "status": 409,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"nothing to restore\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/star :: star on": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"on\":true,\"stars\":5}"
+   },
+   "kv": {
+    "fav:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "9aa0bcc35c27d1df6c9e08720de8e024784db843f7253430b36e45194c8c52af",
+     "metadata": null
+    },
+    "stars": {
+     "sha": "0a5bc8495777c3fea58baa21181ae17a40d458897fa1ccc4cf03925a32854140",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/cape/star :: star off": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"on\":false,\"stars\":4}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/public :: public on": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"vis\":\"public\",\"public\":true}"
+   },
+   "kv": {
+    "cape:4bbb08ad5b1f549e6a729208": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"v\":1792584000000,\"s\":172,\"u\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"n\":\"Steve\",\"h\":\"5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b\",\"c\":1792573200000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/cape/visibility :: visibility private": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"vis\":\"private\",\"public\":false}"
+   },
+   "kv": {
+    "cape:4bbb08ad5b1f549e6a729208": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": "{\"t\":\"png\",\"v\":1792584000000,\"s\":172,\"u\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"n\":\"Steve\",\"h\":\"5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b\",\"c\":1792573200000,\"vis\":\"private\"}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/cape/visibility :: visibility bad": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad request\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/cape/forget :: forget": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/capes :: /admin/capes dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "sha": "18eae2826ff87ffb293bf3810b101b71ef27b9359b09ce96fe2ec0fb30d1bdff",
+    "length": 7027
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/perks :: /admin/perks dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"perks\":[]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/bans :: /admin/bans dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"bans\":[{\"uuid\":\"99999999999999999999999999999999\",\"name\":\"Herobrine\",\"t\":1793102400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/staff :: /admin/staff dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"staff\":[{\"key\":\"n:notch\",\"kind\":\"n\",\"id\":\"notch\",\"name\":null,\"discord\":null,\"note\":\"\",\"t\":1793358000000,\"by\":\"Green_teaTW\"},{\"key\":\"u:cccccccccccccccccccccccccccccccc\",\"kind\":\"u\",\"id\":\"cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"discord\":null,\"note\":\"幫忙看披風\",\"t\":1793275200000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/translators :: /admin/translators dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"translators\":[{\"key\":\"u:cccccccccccccccccccccccccccccccc\",\"kind\":\"u\",\"id\":\"cccccccccccccccccccccccccccccccc\",\"langs\":[\"ja_jp\",\"zh_tw\"],\"name\":\"Alex\",\"team\":null,\"discord\":null,\"note\":\"日文組\",\"t\":1793354400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/langteam :: /admin/langteam dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"name\":\"LyuChaCha\",\"mc\":\"Green_teaTW\",\"roles\":[\"developers\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"code\",\"website\"],\"rights\":null,\"mismatch\":false},{\"name\":\"ㄉ綠\",\"mc\":\"MlyuL\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"蛇蛇\",\"mc\":\"snakiesnake\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"hey you great\",\"mc\":\"Brokeboys_\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"Zero\",\"mc\":\"HEYAZero\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"suSCP\",\"mc\":\"SCP_Night_sky\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pure\",\"mc\":\"21_Pure\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"泥巴先生\",\"mc\":\"MrMud8033112\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"幻影Joker\",\"mc\":\"NOT_Joker\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pootato\",\"mc\":\"Pootato__\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"N02sAyLa\",\"mc\":\"eric18960\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"testing\",\"community\"],\"rights\":null,\"mismatch\":false},{\"name\":\"98\",\"mc\":\"Jackandmina98\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"雪花\",\"mc\":\"ThEsnowF\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Roy\",\"mc\":\"aaroye\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Chq\",\"mc\":\"Chqrish\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"邊緣安德\",\"mc\":\"Enderchen2580\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"AdoreFuSei\",\"mc\":\"AdoreFuSei\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"anilken\",\"mc\":\"Pandik\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"tr_tr\"],\"areas\":[\"translation\",\"capture\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"yool\",\"mc\":\"yool141\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"ja_jp\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"早安白月\",\"mc\":\"ZLGX\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"百里莫凌\",\"mc\":\"BaiLiML\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Alex\",\"mc\":\"Alex\",\"roles\":[],\"listed\":false,\"teams\":[],\"areas\":[],\"rights\":{\"keys\":[\"u:cccccccccccccccccccccccccccccccc\"],\"langs\":[\"zh_tw\",\"ja_jp\"],\"note\":\"日文組\",\"discord\":null,\"t\":1793354400000,\"by\":\"Green_teaTW\"},\"mismatch\":false}],\"credits\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/reviews :: /admin/reviews dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"reviews\":[{\"uuid\":\"00000000000000000000000000000000\",\"name\":\"Steve\",\"note\":\"示範\",\"t\":1793356200000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/guilds :: /admin/guilds dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"guilds\":[{\"slug\":\"yuchayuan\",\"name\":\"YuChaYuan\",\"tag\":\"YCY\",\"t\":1793354400000,\"by\":\"Green_teaTW\",\"i\":0,\"b\":0}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback :: /admin/feedback dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"items\":[],\"total\":0,\"counts\":{\"open\":0,\"done\":0}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/discord :: /admin/discord dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"publicKey\":true,\"token\":true,\"clientId\":true,\"invite\":\"https://discord.com/oauth2/authorize?client_id=client1&scope=applications.commands+bot&permissions=0\",\"endpoint\":\"https://wynnchayuan.com/api/discord/interactions\",\"check\":{\"error\":null,\"app\":\"WynnChaYuan\",\"appId\":\"client1\",\"bot\":\"WynnChaYuan\",\"sameClient\":true,\"sameKey\":true,\"endpointSet\":\"https://wynnchayuan.com/api/discord/interactions\",\"commands\":[\"status\"],\"guilds\":[\"YuChaYuan\"]}}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/applications/@me",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/applications/client1/commands",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/users/@me/guilds",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/admin/people?q=ste :: /admin/people?q=ste dev": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"discord\":\"222222222222222222\",\"dname\":\"steve_dc\",\"mc\":\"Steve\",\"uuid\":\"dddddddddddddddddddddddddddddddd\"},{\"discord\":null,\"dname\":null,\"mc\":\"Steve\",\"uuid\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/capes :: /admin/capes staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "sha": "18eae2826ff87ffb293bf3810b101b71ef27b9359b09ce96fe2ec0fb30d1bdff",
+    "length": 7027
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/perks :: /admin/perks staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"perks\":[]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/bans :: /admin/bans staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"bans\":[{\"uuid\":\"99999999999999999999999999999999\",\"name\":\"Herobrine\",\"t\":1793102400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/staff :: /admin/staff staff": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/translators :: /admin/translators staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"translators\":[{\"key\":\"u:cccccccccccccccccccccccccccccccc\",\"kind\":\"u\",\"id\":\"cccccccccccccccccccccccccccccccc\",\"langs\":[\"ja_jp\",\"zh_tw\"],\"name\":\"Alex\",\"team\":null,\"discord\":null,\"note\":\"日文組\",\"t\":1793354400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/langteam :: /admin/langteam staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"name\":\"LyuChaCha\",\"mc\":\"Green_teaTW\",\"roles\":[\"developers\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"code\",\"website\"],\"rights\":null,\"mismatch\":false},{\"name\":\"ㄉ綠\",\"mc\":\"MlyuL\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"蛇蛇\",\"mc\":\"snakiesnake\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"hey you great\",\"mc\":\"Brokeboys_\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"Zero\",\"mc\":\"HEYAZero\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"suSCP\",\"mc\":\"SCP_Night_sky\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pure\",\"mc\":\"21_Pure\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"泥巴先生\",\"mc\":\"MrMud8033112\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"幻影Joker\",\"mc\":\"NOT_Joker\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pootato\",\"mc\":\"Pootato__\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"N02sAyLa\",\"mc\":\"eric18960\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"testing\",\"community\"],\"rights\":null,\"mismatch\":false},{\"name\":\"98\",\"mc\":\"Jackandmina98\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"雪花\",\"mc\":\"ThEsnowF\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Roy\",\"mc\":\"aaroye\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Chq\",\"mc\":\"Chqrish\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"邊緣安德\",\"mc\":\"Enderchen2580\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"AdoreFuSei\",\"mc\":\"AdoreFuSei\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"anilken\",\"mc\":\"Pandik\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"tr_tr\"],\"areas\":[\"translation\",\"capture\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"yool\",\"mc\":\"yool141\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"ja_jp\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"早安白月\",\"mc\":\"ZLGX\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"百里莫凌\",\"mc\":\"BaiLiML\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Alex\",\"mc\":\"Alex\",\"roles\":[],\"listed\":false,\"teams\":[],\"areas\":[],\"rights\":{\"keys\":[\"u:cccccccccccccccccccccccccccccccc\"],\"langs\":[\"zh_tw\",\"ja_jp\"],\"note\":\"日文組\",\"discord\":null,\"t\":1793354400000,\"by\":\"Green_teaTW\"},\"mismatch\":false}],\"credits\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/reviews :: /admin/reviews staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"reviews\":[{\"uuid\":\"00000000000000000000000000000000\",\"name\":\"Steve\",\"note\":\"示範\",\"t\":1793356200000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/guilds :: /admin/guilds staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"guilds\":[{\"slug\":\"yuchayuan\",\"name\":\"YuChaYuan\",\"tag\":\"YCY\",\"t\":1793354400000,\"by\":\"Green_teaTW\",\"i\":0,\"b\":0}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback :: /admin/feedback staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"items\":[],\"total\":0,\"counts\":{\"open\":0,\"done\":0}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/discord :: /admin/discord staff": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/people?q=ste :: /admin/people?q=ste staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"discord\":\"222222222222222222\",\"dname\":\"steve_dc\",\"mc\":\"Steve\",\"uuid\":\"dddddddddddddddddddddddddddddddd\"},{\"discord\":null,\"dname\":null,\"mc\":\"Steve\",\"uuid\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/capes :: /admin/capes admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "sha": "18eae2826ff87ffb293bf3810b101b71ef27b9359b09ce96fe2ec0fb30d1bdff",
+    "length": 7027
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/perks :: /admin/perks admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"perks\":[]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/bans :: /admin/bans admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"bans\":[{\"uuid\":\"99999999999999999999999999999999\",\"name\":\"Herobrine\",\"t\":1793102400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/staff :: /admin/staff admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"staff\":[{\"key\":\"n:notch\",\"kind\":\"n\",\"id\":\"notch\",\"name\":null,\"discord\":null,\"note\":\"\",\"t\":1793358000000,\"by\":\"Green_teaTW\"},{\"key\":\"u:cccccccccccccccccccccccccccccccc\",\"kind\":\"u\",\"id\":\"cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"discord\":null,\"note\":\"幫忙看披風\",\"t\":1793275200000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/translators :: /admin/translators admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"translators\":[{\"key\":\"u:cccccccccccccccccccccccccccccccc\",\"kind\":\"u\",\"id\":\"cccccccccccccccccccccccccccccccc\",\"langs\":[\"ja_jp\",\"zh_tw\"],\"name\":\"Alex\",\"team\":null,\"discord\":null,\"note\":\"日文組\",\"t\":1793354400000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/langteam :: /admin/langteam admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"name\":\"LyuChaCha\",\"mc\":\"Green_teaTW\",\"roles\":[\"developers\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"code\",\"website\"],\"rights\":null,\"mismatch\":false},{\"name\":\"ㄉ綠\",\"mc\":\"MlyuL\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"蛇蛇\",\"mc\":\"snakiesnake\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"hey you great\",\"mc\":\"Brokeboys_\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"Zero\",\"mc\":\"HEYAZero\",\"roles\":[\"sponsors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[],\"rights\":null,\"mismatch\":false},{\"name\":\"suSCP\",\"mc\":\"SCP_Night_sky\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pure\",\"mc\":\"21_Pure\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"泥巴先生\",\"mc\":\"MrMud8033112\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"幻影Joker\",\"mc\":\"NOT_Joker\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Pootato\",\"mc\":\"Pootato__\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"N02sAyLa\",\"mc\":\"eric18960\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"testing\",\"community\"],\"rights\":null,\"mismatch\":false},{\"name\":\"98\",\"mc\":\"Jackandmina98\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"雪花\",\"mc\":\"ThEsnowF\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Roy\",\"mc\":\"aaroye\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Chq\",\"mc\":\"Chqrish\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\"],\"rights\":null,\"mismatch\":false},{\"name\":\"邊緣安德\",\"mc\":\"Enderchen2580\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"proofreading\"],\"rights\":null,\"mismatch\":false},{\"name\":\"AdoreFuSei\",\"mc\":\"AdoreFuSei\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"anilken\",\"mc\":\"Pandik\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"tr_tr\"],\"areas\":[\"translation\",\"capture\",\"code\"],\"rights\":null,\"mismatch\":false},{\"name\":\"yool\",\"mc\":\"yool141\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"ja_jp\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"早安白月\",\"mc\":\"ZLGX\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_tw\"],\"areas\":[\"translation\",\"capture\",\"testing\"],\"rights\":null,\"mismatch\":false},{\"name\":\"百里莫凌\",\"mc\":\"BaiLiML\",\"roles\":[\"contributors\"],\"listed\":true,\"teams\":[\"zh_cn\"],\"areas\":[\"translation\",\"capture\"],\"rights\":null,\"mismatch\":false},{\"name\":\"Alex\",\"mc\":\"Alex\",\"roles\":[],\"listed\":false,\"teams\":[],\"areas\":[],\"rights\":{\"keys\":[\"u:cccccccccccccccccccccccccccccccc\"],\"langs\":[\"zh_tw\",\"ja_jp\"],\"note\":\"日文組\",\"discord\":null,\"t\":1793354400000,\"by\":\"Green_teaTW\"},\"mismatch\":false}],\"credits\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/reviews :: /admin/reviews admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"reviews\":[{\"uuid\":\"00000000000000000000000000000000\",\"name\":\"Steve\",\"note\":\"示範\",\"t\":1793356200000,\"by\":\"Green_teaTW\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/guilds :: /admin/guilds admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"guilds\":[{\"slug\":\"yuchayuan\",\"name\":\"YuChaYuan\",\"tag\":\"YCY\",\"t\":1793354400000,\"by\":\"Green_teaTW\",\"i\":0,\"b\":0}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback :: /admin/feedback admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"items\":[],\"total\":0,\"counts\":{\"open\":0,\"done\":0}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/discord :: /admin/discord admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"publicKey\":true,\"token\":true,\"clientId\":true,\"invite\":\"https://discord.com/oauth2/authorize?client_id=client1&scope=applications.commands+bot&permissions=0\",\"endpoint\":\"https://wynnchayuan.com/api/discord/interactions\",\"check\":{\"error\":null,\"app\":\"WynnChaYuan\",\"appId\":\"client1\",\"bot\":\"WynnChaYuan\",\"sameClient\":true,\"sameKey\":true,\"endpointSet\":\"https://wynnchayuan.com/api/discord/interactions\",\"commands\":[\"status\"],\"guilds\":[\"YuChaYuan\"]}}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/applications/@me",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/applications/client1/commands",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://discord.com/api/v10/users/@me/guilds",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/admin/people?q=ste :: /admin/people?q=ste admin": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"people\":[{\"discord\":\"222222222222222222\",\"dname\":\"steve_dc\",\"mc\":\"Steve\",\"uuid\":\"dddddddddddddddddddddddddddddddd\"},{\"discord\":null,\"dname\":null,\"mc\":\"Steve\",\"uuid\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/capes :: /admin/capes steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/perks :: /admin/perks steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/bans :: /admin/bans steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/staff :: /admin/staff steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/translators :: /admin/translators steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/langteam :: /admin/langteam steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/reviews :: /admin/reviews steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/guilds :: /admin/guilds steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback :: /admin/feedback steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/discord :: /admin/discord steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/people?q=ste :: /admin/people?q=ste steve": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/capes :: /admin/capes anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/perks :: /admin/perks anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/bans :: /admin/bans anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/staff :: /admin/staff anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/translators :: /admin/translators anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/langteam :: /admin/langteam anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/reviews :: /admin/reviews anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/guilds :: /admin/guilds anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback :: /admin/feedback anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/discord :: /admin/discord anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/people?q=ste :: /admin/people?q=ste anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/admin/feedback?cat=translation&st=open :: admin feedback filtered": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"items\":[],\"total\":0,\"counts\":{\"open\":0,\"done\":0}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/remove :: admin remove by hash": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"removed\":2,\"banned\":true}"
+   },
+   "kv": {
+    "ban:00000000000000000000000000000000": {
+     "sha": "18a1070bef033fdf3f9b79f6660ddb67919bba70d63658520f245cabc84cd7d1",
+     "metadata": null
+    },
+    "ban:11111111111111111111111111111111": {
+     "sha": "e299ca60cc0705d23a09beb380f5a471c5a264b39aa06d53c74ad1321b4443f1",
+     "metadata": null
+    },
+    "blob:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944": null,
+    "cape:bfdde36c7963139767831fd2": null,
+    "cape:c1ba14bfaadd3b18e1e924ec": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/remove :: admin remove by id": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"removed\":1,\"banned\":false}"
+   },
+   "kv": {
+    "cape:01f2d6ada34752387a67cc26": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/remove :: admin remove anon": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/perk :: perk add": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"uuid\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}"
+   },
+   "kv": {
+    "perk:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "7d133d64550c19eacac79fa6eebbe418576b6e7fcfaa1aff9c6d2963cc4b0f20",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/unperk :: perk remove": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/unban :: unban": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "ban:99999999999999999999999999999999": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/credits :: credits add": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\"}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/credits.json?ref=main",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/main",
+     "body": ""
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/refs",
+     "body": "{\"ref\":\"refs/heads/credits/add-golden_mc-1793361600000\",\"sha\":\"mainsha\"}"
+    },
+    {
+     "method": "PUT",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/credits.json",
+     "body": "sha:a368d2edc2763ad0725a2af57b1d60795d3843b42867c67a2b65311f0928d092"
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/pulls",
+     "body": "{\"title\":\"名單：貢獻者加入 Golden（Golden_Mc）\",\"head\":\"credits/add-golden_mc-1793361600000\",\"base\":\"main\",\"body\":\"從網站的管理頁送出，送出的人：Green_teaTW。\\n\\n在 `credits.json` 的「貢獻者」加一個成員。合併之後，名牌上的葉子與披風的資格會在玩家下次同步名單時生效。\"}"
+    }
+   ]
+  },
+  "POST /api/admin/credits :: credits add bad": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad section\"}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/credits.json?ref=main",
+     "body": ""
+    }
+   ]
+  },
+  "POST /api/admin/credits :: credits add staff": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\"}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/credits.json?ref=main",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/main",
+     "body": ""
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/refs",
+     "body": "{\"ref\":\"refs/heads/credits/add-golden_mc-1793361600000\",\"sha\":\"mainsha\"}"
+    },
+    {
+     "method": "PUT",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/credits.json",
+     "body": "sha:07c1276dc9a1848c7a0309e56ff6f10d5c0405235c12954523413c4aca3d3120"
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/pulls",
+     "body": "{\"title\":\"名單：貢獻者加入 Golden（Golden_Mc）\",\"head\":\"credits/add-golden_mc-1793361600000\",\"base\":\"main\",\"body\":\"從網站的管理頁送出，送出的人：Alex。\\n\\n在 `credits.json` 的「貢獻者」加一個成員。合併之後，名牌上的葉子與披風的資格會在玩家下次同步名單時生效。\"}"
+    }
+   ]
+  },
+  "POST /api/admin/credits/teams :: credits teams": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad section\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/staff :: staff add": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"key\":\"n:notch2\"}"
+   },
+   "kv": {
+    "staff:n:notch2": {
+     "sha": "99125b093d5ec4edb92d763f038ba27cf0649c01dfa0eacc8723dcd4eab3c038",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/staff :: staff add by staff": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/unstaff :: staff remove": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "staff:n:notch": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/translator :: translator add": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"key\":\"n:steve\",\"team\":null}"
+   },
+   "kv": {
+    "tl:n:steve": {
+     "sha": "b67a8079a7647a30fedc681d00d31f88523a118a21c49d1e02cc3ffb94136b39",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/untranslator :: translator remove": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "tl:u:cccccccccccccccccccccccccccccccc": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/langteam :: langteam set": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not listed\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/langteam :: langteam bad": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad team\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/review :: review add uuid": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"added\":1}"
+   },
+   "kv": {
+    "review:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+     "sha": "6990821495ef8bdaed124b248d9c950412fa75e01ca7ebf80857347da25c122e",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/review :: review add hash": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"added\":2}"
+   },
+   "kv": {
+    "review:11111111111111111111111111111111": {
+     "sha": "07ef4887c05d2e3a03ea96cab38105e74902082ec1e00b5a0e5850eb1d2c8dd9",
+     "metadata": null
+    },
+    "review:22222222222222222222222222222222": {
+     "sha": "d3fee4a883b4fde12bfcb2f5d61b1817c17aa391d84d88fadd79fead7842c30e",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/unreview :: review remove": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "review:00000000000000000000000000000000": null
+   },
+   "fetch": []
+  },
+  "POST /api/admin/approve :: approve": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"approved\":0}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/guild :: guild add": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"slug\":\"golden-guild\"}"
+   },
+   "kv": {
+    "guilds": {
+     "sha": "98f1f5237f7ec86ada2a98dd244ea029c6ce6adfb323d90f886154fffeca6424",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/admin/guild :: guild add bad": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad name\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/unguild :: guild remove": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true}"
+   },
+   "kv": {
+    "guilds": {
+     "sha": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "PUT /api/admin/guild/yuchayuan/icon :: guild image upload": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"v\":1793361600000}"
+   },
+   "kv": {
+    "gimg:yuchayuan:icon": {
+     "sha": "7791cc4282ef7f978de1d9da09b7e24e9dc65ac4da274396be7d0965e7d3fcb9",
+     "metadata": "{\"t\":\"image/png\"}"
+    },
+    "guilds": {
+     "sha": "39338453704ab4472a1f9138601ea84f4a889ad6170229e25fbd93bf49d0f04a",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/guild/yuchayuan/icon :: guild image missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/guild/zz/icon :: guild image bad slug": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/me :: tr me anon": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"signedIn\":false,\"langs\":[],\"decide\":false}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/me :: tr me alex": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"signedIn\":true,\"id\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"langs\":[\"ja_jp\",\"zh_tw\"],\"decide\":true}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/index/zh_tw :: tr index": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=600",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"files\":[\"raid.json\",\"npc.json\"],\"rows\":[[0,null,\"Choose a buff or go to the exit\",\"選一個增益，或前往出口\"],[1,null,\"Weapon Merchant\",\"武器商人\"]]}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/translate-index/zh_tw.json",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/tr/index/xx_xx :: tr index bad": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad lang\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/props?lang=zh_tw :: tr props": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"props\":[{\"id\":\"0123456789abcdef\",\"f\":\"raid.json\",\"s\":\"Choose a buff or go to the exit\",\"n\":2,\"v\":1,\"st\":\"open\",\"t\":1793359800000}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/props?lang=xx :: tr props bad": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"bad lang\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/prop?lang=zh_tw&id=0123456789abcdef :: tr prop": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[]}],\"status\":\"open\",\"t\":1793358000000,\"updated\":1793359800000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/prop?lang=zh_tw&id=0123456789abcdef :: tr prop staff": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[]}],\"status\":\"open\",\"t\":1793358000000,\"updated\":1793359800000}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/prop?lang=zh_tw&id=ffffffffffffffff :: tr prop missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/tr/propose :: tr propose": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"6666cdddf005addc\",\"prop\":{\"lang\":\"zh_tw\",\"file\":\"npc.json\",\"key\":null,\"src\":\"Weapon Merchant\",\"base\":\"武器商人\",\"items\":[{\"id\":\"1c4ca9307dcd\",\"text\":\"兵器商人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"status\":\"open\",\"t\":1793361600000,\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "own:u:cccccccccccccccccccccccccccccccc:tp:zh_tw:6666cdddf005addc": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    },
+    "tp:zh_tw:6666cdddf005addc": {
+     "sha": "c86bdbf5119acedc11f3ce7ff3107d110f2fd7a4a94484d1b18d711497c1385c",
+     "metadata": "{\"f\":\"npc.json\",\"s\":\"Weapon Merchant\",\"n\":1,\"v\":1,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/propose :: tr propose not translator": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not a translator\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/tr/propose :: tr propose placeholder": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"792f360efa9d5ab5\",\"prop\":{\"lang\":\"zh_tw\",\"file\":\"npc.json\",\"key\":null,\"src\":\"Hi {u}\",\"base\":\"\",\"items\":[{\"id\":\"bb0b89199954\",\"text\":\"嗨\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"status\":\"open\",\"t\":1793361600000,\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "own:u:cccccccccccccccccccccccccccccccc:tp:zh_tw:792f360efa9d5ab5": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    },
+    "tp:zh_tw:792f360efa9d5ab5": {
+     "sha": "ca9306aac887784b373483991b92239dce2f562bb80c0114f621595e972b3f5c",
+     "metadata": "{\"f\":\"npc.json\",\"s\":\"Hi {u}\",\"n\":1,\"v\":1,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/vote :: tr vote": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"prop\":{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"status\":\"open\",\"t\":1793358000000,\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "tp:zh_tw:0123456789abcdef": {
+     "sha": "6e31ab7e4ad235370a948eba9281cef504557555bc98b75e7d130538b027c2ea",
+     "metadata": "{\"f\":\"raid.json\",\"s\":\"Choose a buff or go to the exit\",\"n\":2,\"v\":1,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/accept :: tr accept": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\",\"prop\":{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[]}],\"status\":\"accepted\",\"t\":1793358000000,\"updated\":1793361600000,\"done\":{\"item\":\"a1b2c3d4e5f6\",\"by\":\"Green_teaTW\",\"t\":1793361600000,\"pr\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\"}}}"
+   },
+   "kv": {
+    "tp:zh_tw:0123456789abcdef": {
+     "sha": "1e9bb19ca934f6c81817cee43bb3a92b2b7aca77ed8802998acc50bbe137cd7d",
+     "metadata": "{\"f\":\"raid.json\",\"s\":\"Choose a buff or go to the exit\",\"n\":2,\"v\":1,\"st\":\"accepted\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/translate/zh-tw-20261030",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/main",
+     "body": ""
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/refs",
+     "body": "{\"ref\":\"refs/heads/translate/zh-tw-20261030\",\"sha\":\"mainsha\"}"
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/translations/zh_tw/raid.json?ref=translate%2Fzh-tw-20261030",
+     "body": ""
+    },
+    {
+     "method": "PUT",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/translations/zh_tw/raid.json",
+     "body": "sha:7165737d55b95f512bedb1f43e5a142b8b1391367e0b3c8d208b1d3f6ed8de5f"
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/pulls",
+     "body": "{\"title\":\"協作翻譯：zh_tw（20261030）\",\"head\":\"translate/zh-tw-20261030\",\"base\":\"main\",\"body\":\"網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\\n\\n第一條由 Green_teaTW 定案。每一條的原文、提案人與票數記在網站上。\"}"
+    }
+   ]
+  },
+  "POST /api/tr/accept :: tr accept translator": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"url\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\",\"prop\":{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[]}],\"status\":\"accepted\",\"t\":1793358000000,\"updated\":1793361600000,\"done\":{\"item\":\"a1b2c3d4e5f6\",\"by\":\"Alex\",\"t\":1793361600000,\"pr\":\"https://github.com/LyuChaCha/WynnChaYuan/pull/1\"}}}"
+   },
+   "kv": {
+    "tp:zh_tw:0123456789abcdef": {
+     "sha": "954096807a4266d0933f6b6f27ae57bfe6c0ec1b96d94c3e06b48d672f348dd7",
+     "metadata": "{\"f\":\"raid.json\",\"s\":\"Choose a buff or go to the exit\",\"n\":2,\"v\":1,\"st\":\"accepted\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/translate/zh-tw-20261030",
+     "body": ""
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/ref/heads/main",
+     "body": ""
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/git/refs",
+     "body": "{\"ref\":\"refs/heads/translate/zh-tw-20261030\",\"sha\":\"mainsha\"}"
+    },
+    {
+     "method": "GET",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/translations/zh_tw/raid.json?ref=translate%2Fzh-tw-20261030",
+     "body": ""
+    },
+    {
+     "method": "PUT",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/contents/src/main/resources/assets/wynnchayuan/translations/zh_tw/raid.json",
+     "body": "sha:7165737d55b95f512bedb1f43e5a142b8b1391367e0b3c8d208b1d3f6ed8de5f"
+    },
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/pulls",
+     "body": "{\"title\":\"協作翻譯：zh_tw（20261030）\",\"head\":\"translate/zh-tw-20261030\",\"base\":\"main\",\"body\":\"網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\\n\\n第一條由 Alex 定案。每一條的原文、提案人與票數記在網站上。\"}"
+    }
+   ]
+  },
+  "POST /api/tr/reject :: tr reject": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"prop\":{\"lang\":\"zh_tw\",\"file\":\"raid.json\",\"key\":null,\"src\":\"Choose a buff or go to the exit\",\"base\":\"選一個增益，或前往出口\",\"items\":[{\"id\":\"a1b2c3d4e5f6\",\"text\":\"選一個增益，或走向出口\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793358000000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"b1b2c3d4e5f6\",\"text\":\"挑一個增益，或前往出口\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793359800000,\"votes\":[]}],\"status\":\"rejected\",\"t\":1793358000000,\"updated\":1793361600000,\"done\":{\"by\":\"Green_teaTW\",\"t\":1793361600000}}}"
+   },
+   "kv": {
+    "tp:zh_tw:0123456789abcdef": {
+     "sha": "93ed9cef99ca2107d880d4a25c7c762e4e031d0d7ff3020bcdf21f47081e2afb",
+     "metadata": "{\"f\":\"raid.json\",\"s\":\"Choose a buff or go to the exit\",\"n\":2,\"v\":1,\"st\":\"rejected\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/tr/polls?lang=zh_tw :: tr polls": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"polls\":[{\"id\":\"fedcba987654\",\"s\":\"Weaken Enemy\",\"n\":2,\"v\":2,\"st\":\"open\",\"t\":1793356200000}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/tr/poll?lang=zh_tw&id=fedcba987654 :: tr poll": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"lang\":\"zh_tw\",\"term\":\"Weaken Enemy\",\"note\":\"Lootrun 加持與討伐戰增益裡的屬性\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356200000,\"status\":\"open\",\"options\":[{\"id\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793356200000,\"votes\":[\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]},{\"id\":\"d1d2d3d4d5d6\",\"text\":\"削弱敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}]}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/tr/poll :: tr poll open": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"8f5fb6b48ecd\",\"poll\":{\"lang\":\"zh_tw\",\"term\":\"Golden Term\",\"note\":\"n\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"status\":\"open\",\"options\":[{\"id\":\"3a73e7c9033e\",\"text\":\"金\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"votes\":[]},{\"id\":\"e31d25040846\",\"text\":\"黃金\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"votes\":[]}]}}"
+   },
+   "kv": {
+    "own:u:cccccccccccccccccccccccccccccccc:tq:zh_tw:8f5fb6b48ecd": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    },
+    "tq:zh_tw:8f5fb6b48ecd": {
+     "sha": "089b25bef7021a463e32f56f73f1d95baa6b8ba321e765da395cb6dcff60c145",
+     "metadata": "{\"s\":\"Golden Term\",\"n\":2,\"v\":0,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/poll/option :: tr poll option": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"poll\":{\"lang\":\"zh_tw\",\"term\":\"Weaken Enemy\",\"note\":\"Lootrun 加持與討伐戰增益裡的屬性\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356200000,\"status\":\"open\",\"options\":[{\"id\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793356200000,\"votes\":[\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]},{\"id\":\"d1d2d3d4d5d6\",\"text\":\"削弱敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356600000,\"votes\":[]},{\"id\":\"7a74a755bcd3\",\"text\":\"弱化敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793361600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "tq:zh_tw:fedcba987654": {
+     "sha": "fa7dd051df5559b4f8fa7eece52004d3baec9669b685bc8a8c311b7c0eb712f7",
+     "metadata": "{\"s\":\"Weaken Enemy\",\"n\":3,\"v\":2,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/poll/vote :: tr poll vote": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"poll\":{\"lang\":\"zh_tw\",\"term\":\"Weaken Enemy\",\"note\":\"Lootrun 加持與討伐戰增益裡的屬性\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356200000,\"status\":\"open\",\"options\":[{\"id\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793356200000,\"votes\":[\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"u:cccccccccccccccccccccccccccccccc\"]},{\"id\":\"d1d2d3d4d5d6\",\"text\":\"削弱敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356600000,\"votes\":[]}],\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "tq:zh_tw:fedcba987654": {
+     "sha": "938aed23b38113b45760db9e40474f1f09a34a671035f2fb45c855fbafd65bf8",
+     "metadata": "{\"s\":\"Weaken Enemy\",\"n\":2,\"v\":2,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/poll/decide :: tr poll decide": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"poll\":{\"lang\":\"zh_tw\",\"term\":\"Weaken Enemy\",\"note\":\"Lootrun 加持與討伐戰增益裡的屬性\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356200000,\"status\":\"decided\",\"options\":[{\"id\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793356200000,\"votes\":[\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]},{\"id\":\"d1d2d3d4d5d6\",\"text\":\"削弱敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"decided\":{\"option\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"Green_teaTW\",\"t\":1793361600000},\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "tq:zh_tw:fedcba987654": {
+     "sha": "25c2482842ac01fa4db4db16e9f8dfab7ffede94b66ad37787f9d43ef359ea79",
+     "metadata": "{\"s\":\"Weaken Enemy\",\"n\":2,\"v\":2,\"st\":\"decided\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/tr/poll/reopen :: tr poll reopen": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"poll\":{\"lang\":\"zh_tw\",\"term\":\"Weaken Enemy\",\"note\":\"Lootrun 加持與討伐戰增益裡的屬性\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356200000,\"status\":\"open\",\"options\":[{\"id\":\"c1c2c3c4c5c6\",\"text\":\"削弱敵傷\",\"by\":\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"name\":\"Green_teaTW\",\"t\":1793356200000,\"votes\":[\"u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]},{\"id\":\"d1d2d3d4d5d6\",\"text\":\"削弱敵人\",\"by\":\"u:cccccccccccccccccccccccccccccccc\",\"name\":\"Alex\",\"t\":1793356600000,\"votes\":[\"u:cccccccccccccccccccccccccccccccc\"]}],\"updated\":1793361600000}}"
+   },
+   "kv": {
+    "tq:zh_tw:fedcba987654": {
+     "sha": "4a29afdc5ce0e561413f41b21a98e0293b0230f6a19a1501ebcbc3528b66dfcc",
+     "metadata": "{\"s\":\"Weaken Enemy\",\"n\":2,\"v\":2,\"st\":\"open\",\"t\":1793361600000}"
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/tr/nothing :: tr unknown": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/feedback :: feedback anon": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"login first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/feedback :: feedback game without discord": {
+   "status": 401,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"discord first\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/feedback :: feedback discord": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"cbb7c7c0872b7601\",\"issue\":null,\"issueFailed\":false}"
+   },
+   "kv": {
+    "fb:cbb7c7c0872b7601": {
+     "sha": "1ff154e4b9f94f3171dfb15b13baabd7c352526c998c09a6674800e56cb8e8f5",
+     "metadata": "{\"c\":\"website\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"Sayla\",\"s\":\"hello there\"}"
+    },
+    "fbr:333333333333333333": {
+     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+     "metadata": null
+    },
+    "own:d:333333333333333333:fb:cbb7c7c0872b7601": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/feedback :: feedback translation": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"id\":\"059ffbe084a486d8\",\"issue\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\",\"issueFailed\":false}"
+   },
+   "kv": {
+    "fb:059ffbe084a486d8": {
+     "sha": "f54a2e1aa43c6387f6615e8cc50511e090ee110978983ac8384a966813f5589c",
+     "metadata": "{\"c\":\"translation\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"fix this line\",\"i\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\"}"
+    },
+    "fbr:222222222222222222": {
+     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+     "metadata": null
+    },
+    "own:d:222222222222222222:fb:059ffbe084a486d8": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    }
+   },
+   "fetch": [
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/issues",
+     "body": "{\"title\":\"譯文建議：fix this line\",\"body\":\"從 wynnchayuan.com/feedback 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfix this line\\n```\\n\\n**位置**\\n\\n```\\nnpc\\n```\\n\\n**語言**：沒有指定\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `059ffbe084a486d8`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
+    }
+   ]
+  },
+  "POST /api/feedback :: feedback too short": {
+   "status": 400,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"too short\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/feedback/status :: feedback status missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/feedback/delete :: feedback delete missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/feedback/issue :: feedback issue missing": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/admin/discord/register :: discord register": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":true,\"commands\":[\"status\",\"cape\",\"translate\",\"feedback\"]}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "PUT",
+     "url": "https://discord.com/api/v10/applications/client1/commands",
+     "body": "sha:d60ef5e5311d4144d8e990b623ce2bff7bad17a5341aa3923dff372b51a0b4b5"
+    }
+   ]
+  },
+  "POST /api/admin/discord/register :: discord register staff": {
+   "status": 403,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"forbidden\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction bad signature": {
+   "status": 401,
+   "headers": {
+    "content-type": "text/plain;charset=UTF-8"
+   },
+   "body": {
+    "sha": "757bee1fa6d0fdebf603792d88b2d98a69fb108bd4833ce3167d8f0ae897361a",
+    "length": 13
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction ping": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":1}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction status": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":4,\"data\":{\"embeds\":[{\"title\":\"網站狀態\",\"url\":\"https://wynnchayuan.com\",\"color\":8376458,\"fields\":[{\"name\":\"裝了模組的玩家\",\"value\":\"0\",\"inline\":true},{\"name\":\"穿著披風\",\"value\":\"0\",\"inline\":true},{\"name\":\"待審核的披風\",\"value\":\"1\",\"inline\":true},{\"name\":\"協作翻譯：投票中的提案\",\"value\":\"繁體中文 1\"},{\"name\":\"協作翻譯：投票中的術語\",\"value\":\"繁體中文 1\"}]}]}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction status en": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":4,\"data\":{\"embeds\":[{\"title\":\"Website status\",\"url\":\"https://wynnchayuan.com\",\"color\":8376458,\"fields\":[{\"name\":\"Players with the mod\",\"value\":\"0\",\"inline\":true},{\"name\":\"Wearing a cape\",\"value\":\"0\",\"inline\":true},{\"name\":\"Capes awaiting review\",\"value\":\"1\",\"inline\":true},{\"name\":\"Translate: suggestions open for voting\",\"value\":\"繁體中文 1\"},{\"name\":\"Translate: terms open for voting\",\"value\":\"繁體中文 1\"}]}]}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction cape": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":5}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "PATCH",
+     "url": "https://discord.com/api/v10/webhooks/client1/tok/messages/@original",
+     "body": "{\"content\":\"這不像 Minecraft 的名字。\",\"flags\":64}"
+    }
+   ]
+  },
+  "POST /api/discord/interactions :: interaction translate": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":5}"
+   },
+   "kv": {},
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/translate-index/zh_tw.json",
+     "body": ""
+    },
+    {
+     "method": "PATCH",
+     "url": "https://discord.com/api/v10/webhooks/client1/tok/messages/@original",
+     "body": "{\"embeds\":[{\"title\":\"「Weapon Merchant」找到 1 條，列出前 1 條\",\"url\":\"https://wynnchayuan.com/translate\",\"color\":8376458,\"fields\":[{\"name\":\"Weapon Merchant\",\"value\":\"武器商人\\n`npc.json`\"}],\"footer\":{\"text\":\"繁體中文 · 在網站上看更多\"}}]}"
+    }
+   ]
+  },
+  "POST /api/discord/interactions :: interaction feedback": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":4,\"data\":{\"content\":\"收到了，謝謝你的回饋！團隊會在網站的管理頁看到它。\",\"flags\":64}}"
+   },
+   "kv": {
+    "fb:1b6cf1691c090ff8": {
+     "sha": "6dc526fd3a429ddd7a515a4cf16bda0c9f8aadc32c59839109d34ad2b81ac867",
+     "metadata": "{\"c\":\"other\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"from the bot\"}"
+    },
+    "fbr:222222222222222222": {
+     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+     "metadata": null
+    },
+    "own:d:222222222222222222:fb:1b6cf1691c090ff8": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    }
+   },
+   "fetch": []
+  },
+  "POST /api/discord/interactions :: interaction feedback translation": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":5,\"data\":{\"flags\":64}}"
+   },
+   "kv": {
+    "fb:1b0cedddcaa1bd42": {
+     "sha": "4657e8d3bf8fdeabbcf8b50a2885989009fe08bc46b4b52aa17a5c20d23d21ff",
+     "metadata": "{\"c\":\"translation\",\"st\":\"open\",\"t\":1793361600000,\"n\":\"steve_dc\",\"s\":\"from the bot\",\"i\":\"https://github.com/LyuChaCha/WynnChaYuan/issues/2\"}"
+    },
+    "fbr:222222222222222222": {
+     "sha": "fb843669f3acf9e1fb0c91aff0f239fa83908f76c6526f89e7dd705ed7f96fb0",
+     "metadata": null
+    },
+    "own:d:222222222222222222:fb:1b0cedddcaa1bd42": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    }
+   },
+   "fetch": [
+    {
+     "method": "POST",
+     "url": "https://api.github.com/repos/LyuChaCha/WynnChaYuan/issues",
+     "body": "{\"title\":\"譯文建議：from the bot\",\"body\":\"從 Discord 機器人的 /回饋 送來的譯文建議。\\n\\n**內容**\\n\\n```\\nfrom the bot\\n```\\n\\n**語言**：繁體中文（`zh_tw`）\\n**送出的人**：`steve_dc`（Discord 顯示名稱）\\n\\n網站上的編號 `1b0cedddcaa1bd42`；處理完請到網站的管理頁標成已處理。\",\"labels\":[\"translation\"]}"
+    },
+    {
+     "method": "PATCH",
+     "url": "https://discord.com/api/v10/webhooks/client1/tok/messages/@original",
+     "body": "{\"content\":\"收到了，謝謝你的回饋！團隊會在網站的管理頁看到它。\\n譯文建議已經在 GitHub 開了 Issue：https://github.com/LyuChaCha/WynnChaYuan/issues/2\",\"flags\":64}"
+    }
+   ]
+  },
+  "POST /api/discord/interactions :: interaction component": {
+   "status": 200,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"type\":4,\"data\":{\"content\":\"…\",\"flags\":64}}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape-preview/21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944 :: preview 21edabf9": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=604800, immutable",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "4a6e81415b17ab0bb15750de518f5b6b03997a8ce738d9bc9e946b96bd4d7c68",
+    "length": 1871
+   },
+   "kv": {
+    "prev:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944": {
+     "sha": "4a6e81415b17ab0bb15750de518f5b6b03997a8ce738d9bc9e946b96bd4d7c68",
+     "metadata": "{\"t\":\"png\"}"
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/cape-preview/21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure 21edabf9": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/png",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
+    "length": 13420
+   },
+   "kv": {
+    "own:u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:prev:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    },
+    "prev:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+     "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
+     "metadata": "{\"t\":\"png\"}"
+    }
+   },
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://minotar.net/skin/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/cape-preview/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13 :: preview 4761ebe1": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=604800, immutable",
+    "content-type": "image/gif",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "43046e7ae5ea4369dc42776b4974321ee3cce84ea3a8cd39657a582094c4ea43",
+    "length": 121013
+   },
+   "kv": {
+    "prev:4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13": {
+     "sha": "43046e7ae5ea4369dc42776b4974321ee3cce84ea3a8cd39657a582094c4ea43",
+     "metadata": "{\"t\":\"gif\"}"
+    }
+   },
+   "fetch": []
+  },
+  "GET /api/cape-preview/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure 4761ebe1": {
+   "status": 200,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-type": "image/gif",
+    "x-content-type-options": "nosniff"
+   },
+   "body": {
+    "sha": "92e14aa98f7e6a5f58f528c33e38080ee6d832b0498e02560f43cd47e86c0174",
+    "length": 147537
+   },
+   "kv": {
+    "own:u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:prev:4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "metadata": null
+    },
+    "prev:4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+     "sha": "92e14aa98f7e6a5f58f528c33e38080ee6d832b0498e02560f43cd47e86c0174",
+     "metadata": "{\"t\":\"gif\"}"
+    }
+   },
+   "fetch": [
+    {
+     "method": "GET",
+     "url": "https://minotar.net/skin/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "body": ""
+    }
+   ]
+  },
+  "GET /api/cape-preview/zz :: preview bad": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/nothing :: unknown api": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "POST /api/nothing :: unknown api post": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  }
+ },
+ "pages": {
+  "/ zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "d58bab37e9f2ed3e67e810952070065428baaa85a3cca4a5f53e38c9258cb991",
+    "length": 194334
+   }
+  },
+  "/ zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "7a5ecad16798397973d08dd98aa1ed72876e806ec0610d7fe7f388eedf906401",
+    "length": 194576
+   }
+  },
+  "/ en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "70601c0c90d40027afb62ba7ed2c36da2bb74f225e84ac444f66e97459059a85",
+    "length": 195284
+   }
+  },
+  "/ ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "3ba49486bb39b938bd3b07f3f6db979b8952a4f34e84195c481178eabc641f92",
+    "length": 202268
+   }
+  },
+  "/ ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "ae337e81fd51a3a09866ec6294ec60f0d798e7a3e6502e64bc6b2e596f16422b",
+    "length": 199437
+   }
+  },
+  "/ ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "b396173cb69b3c11c6bfcedacbad04bc649f078d2fb6731e23a36c4958578986",
+    "length": 207619
+   }
+  },
+  "/ es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "8477373f610e96432b0a62f7f288bb61ff6206f3eaea4e1c0f36f09e54ee6e5b",
+    "length": 197616
+   }
+  },
+  "/ tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f44301dfdb5cd5bd77c5545388c20b186551946c401c458a842051c98febe50a",
+    "length": 197025
+   }
+  },
+  "/features zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "da6e3eff2732af60fa9bdafffac3cfcd1bc69eaed95c5dc05c5399d7d58a9df7",
+    "length": 197008
+   }
+  },
+  "/features zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "81290084de4b60ab6a4f18a1b13e65aee1ecc43d64ff2e74b1c6ff32eb7a1fbe",
+    "length": 197373
+   }
+  },
+  "/features en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "3041c7451e9451537e2e7ec52bbe4746ccd71a76b947292166f87fa72446531b",
+    "length": 198360
+   }
+  },
+  "/features ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "11735cf033ff54c6f042572e4f8e4426e4af629a3c76b48a81158769fbde3e6b",
+    "length": 205833
+   }
+  },
+  "/features ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e15b2363907a757d3937c07cfb047a74df040d75c701318f42c57098e43f9f28",
+    "length": 202958
+   }
+  },
+  "/features ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2b494ce0a7add0730167e1c14486e5b570c796d6b3b7686cbd7755a5d1710044",
+    "length": 212264
+   }
+  },
+  "/features es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "b2c3697cbc74a023b665a20a0e065076c0eb3214c2fb808b9be9f078287f7989",
+    "length": 200850
+   }
+  },
+  "/features tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e4afc209839d2b71c5f7f652964bfa3dea4fc07b95aabe974d45c55f200131aa",
+    "length": 200245
+   }
+  },
+  "/capes zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "7f6f7c7daf91e93240d0c9bb2a75d73abb89127203327ae9ad090bed02139109",
+    "length": 169626
+   }
+  },
+  "/capes zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "6c1f8deb650266c448afa5406ca822fda551277ced24dfe1ceea09bec28b1453",
+    "length": 169846
+   }
+  },
+  "/capes en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2a5bfa04929024801b8da9393dfec21b4412b8467c1382bdc1a51c1809bd35b6",
+    "length": 170312
+   }
+  },
+  "/capes ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "adf2b7fd2abb3b13e4db7363c2e86a9c74e204f207cb266b435227360d389feb",
+    "length": 176538
+   }
+  },
+  "/capes ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f6653bf9de120ff15eceba185fcd8acb9b3877668cacacf01cd6a55090d45fe3",
+    "length": 174010
+   }
+  },
+  "/capes ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "dabdff9263503292a8a2c96ad1318651f5e03b775ee21105ba49d8a93048ef2c",
+    "length": 180856
+   }
+  },
+  "/capes es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "92fa26347e0cf408a8d5fc6eec9afccc4ff29b98a7bfec182a591965ea659180",
+    "length": 172239
+   }
+  },
+  "/capes tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c59be3918d57e4a1adc02355e7f529938d62e0cb5a6bb0f41b398e6aac9d28b5",
+    "length": 171701
+   }
+  },
+  "/account zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "06a116563bcad125dbdc66c702a40b648ab823d45488e86de807543b888e1f67",
+    "length": 167290
+   }
+  },
+  "/account zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e23367ed3932d71488c049a5dda94635894c05a67f251c4775469114f571f2d7",
+    "length": 167564
+   }
+  },
+  "/account en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "efc88e7356757ed5dc99734a6736b9b26be9dfe65af8e84fdee54619fd7e768b",
+    "length": 168170
+   }
+  },
+  "/account ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c3716c64bbb401ad9207325ff56b5c47588b433513162f57c6b12e82afd6fea6",
+    "length": 175717
+   }
+  },
+  "/account ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f4dc5ffdea0d556b22c1bfa5930b45a77e804edb2e06c8b89ed69ab49c599def",
+    "length": 172610
+   }
+  },
+  "/account ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "6e0b965f69a7fc7ab5b8fadf26a4acf1bacb4c6488ae8d1595742c2cf739ad5a",
+    "length": 180738
+   }
+  },
+  "/account es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f6e54bf52ef889c6d2760b3d7d7caace16fec1a82029b7672dddac8321bd4f0a",
+    "length": 170601
+   }
+  },
+  "/account tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "e7b1425bd382f7a20707297c6f188af9083d672dc5cee77bb8945c3be1566b9d",
+    "length": 169972
+   }
+  },
+  "/admin zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "83ec302eec3c439e524e9f0fcfeb5311ff7a715a15420b5c673fe0ad960dfade",
+    "length": 187496
+   }
+  },
+  "/admin zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "42a6d82ec61e2fab9283533040d0b41c21cc8215935b6994f8b491fb83fc25ff",
+    "length": 187746
+   }
+  },
+  "/admin en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "a1a657cb7b07f4aff9426d7899ca4fe11b3dc0f2621d92a136769dbef0ef8cc9",
+    "length": 188339
+   }
+  },
+  "/admin ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c0f3a5b8ff4afc219406eada6240a84ebea611cb3d9d593f31c345e03185ab14",
+    "length": 195654
+   }
+  },
+  "/admin ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f1bae0b846c6e2aa80070016aa15deeddd16dae739d9d5dc04b068f027008489",
+    "length": 192698
+   }
+  },
+  "/admin ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c2b19da83bef2cce7cf59e1a5aa7756a093e8aae90ba2111ef982ddc2ab62916",
+    "length": 201242
+   }
+  },
+  "/admin es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "6a5f8352cb568861d381b8aca05940fdfb40079867c864ddfdddcd9447b6c9c9",
+    "length": 190706
+   }
+  },
+  "/admin tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "ed59b8c4a7782d454b0d3b0b97dee9a590a5f2ed3f9990670d15650723350e7f",
+    "length": 190062
+   }
+  },
+  "/translate zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "fbe202a34784902649b0ae0794fcff909e02b7aee7100bebaf4558ec6951b202",
+    "length": 163797
+   }
+  },
+  "/translate zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "279db9356b6e3c9ca5334e11140ad0aff3a63b6ba23cfc5b4c75fb7db52aa15b",
+    "length": 163962
+   }
+  },
+  "/translate en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "243223449bd9c5d5d9b07f02670bd23160ee362a1cdec9786c81bba4095302a0",
+    "length": 164480
+   }
+  },
+  "/translate ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c0c5ae689095845ee1c1dbafb21bfd489b401ee1c7f35bc1ed64761eb2ac76d3",
+    "length": 170072
+   }
+  },
+  "/translate ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2731c6ba268233e8fc56b45316297de0f7042ed7088184dc0de8e3383e1c4397",
+    "length": 167923
+   }
+  },
+  "/translate ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2a6841b50b08c7f86cd2b3f1bc659267ad56e6ff63be05e1bf7c0a53b53103c5",
+    "length": 174051
+   }
+  },
+  "/translate es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2c0d8417c0ec84c0326dce257bf70e843244e0e87bbcce3576bfe153ca1b0331",
+    "length": 166204
+   }
+  },
+  "/translate tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "95889ff1f9124d744985f379e02a0977fdf3901030f0687bf702f82303fec41a",
+    "length": 165682
+   }
+  },
+  "/feedback zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "c9e8f4cf3e23c0a2381e011af184ab087cc34ae48ea3f1ff6560130d6b502ae6",
+    "length": 142733
+   }
+  },
+  "/feedback zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "7f5370f34f88c3832c1e754981b557661c5555c7a59b3fd2201ff8bac4936caf",
+    "length": 142928
+   }
+  },
+  "/feedback en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "fd7fbbd2961d2930c11e2a625a667ca84a21be442a475c34742e2bc9f29cdab0",
+    "length": 143392
+   }
+  },
+  "/feedback ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "a826bf975dfba4e471eee352fa033d7fa8fffe3c55ac89e060ada486c2f50ba9",
+    "length": 149223
+   }
+  },
+  "/feedback ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "289d257483bf88811dc984d035ad3122e675f5564208b68acfdf7cbc12a9ead8",
+    "length": 147014
+   }
+  },
+  "/feedback ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "d597f233a0f6c166fd8980fdde05e7fb57bd7f640cf0a54f1396f5cb6185c619",
+    "length": 153221
+   }
+  },
+  "/feedback es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "489a9228f5ff557fba2bd8e07c4f09f92a7d5f4e964e1c5c0e94d136ae18e74c",
+    "length": 145243
+   }
+  },
+  "/feedback tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "ef9539b5dec7b4c960983577a3249beb299603e86ba9d72e009636f79ed6890a",
+    "length": 144732
+   }
+  },
+  "/privacy zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "a680a3d147fb2432d5f9590d3ae6014b302bf47bc427f5817af8780b512b4775",
+    "length": 145008
+   }
+  },
+  "/privacy zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "a350e0253244c4f7b6d3042189ea628ed2ac1b3bf8267b15ba64bfcd16ac3e50",
+    "length": 145432
+   }
+  },
+  "/privacy en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f00bf18c5135456785fac528edad5f685bf9a5fab46f398a5b8f41714230bc15",
+    "length": 146085
+   }
+  },
+  "/privacy ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "0ebe481da5eff6d65ab32baab04ca7a3345833ec0b245d5673bf0eabfc46ed47",
+    "length": 155006
+   }
+  },
+  "/privacy ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "8c12991e73dec15abe65260a15a1a4c47d6777d00ef0988c0c4ce69b83b025bc",
+    "length": 151085
+   }
+  },
+  "/privacy ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "9f35043be7740b83c24e63d715069916c3fd12b6404f5bffb60ef0a5d8c7924f",
+    "length": 161508
+   }
+  },
+  "/privacy es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "195e329174d66ea3a5efc4ca52c437920544c68400dcb93fc8c069d72c2dc124",
+    "length": 149061
+   }
+  },
+  "/privacy tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "40c1d513f8015944544b15bffea617ca38ed66c034555ef55f7cd6f35f77253d",
+    "length": 148633
+   }
+  },
+  "/terms zh": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hant",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "ad2bfdec6af79cd2d690a23bc40b9ff7f5dff0da9851fc59767611904d7b73ca",
+    "length": 139399
+   }
+  },
+  "/terms zh-cn": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "zh-Hans",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f147a16df913a22e8ff1e3ce5f6022c5da9d34e0f2a33092ec72ee66db32b044",
+    "length": 139664
+   }
+  },
+  "/terms en": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "en",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "f2300b07fa5cb0cf12ef21dbb240a45276e0efa2e8344b5233ce5caccccaa4d3",
+    "length": 140330
+   }
+  },
+  "/terms ja": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ja",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "738cc3563d6b690ef2489303bf02f7961eaa3feb7a21b5171ac55eecbdf78fe5",
+    "length": 147141
+   }
+  },
+  "/terms ko": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ko",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "02e9f77d3ed1f48a48c169c085cd716252dba874c9c6c645f4ec424567df31aa",
+    "length": 144535
+   }
+  },
+  "/terms ru": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "ru",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "cdae769148768457c9a619385189f2958d1ada6ee9603247a8ad763306999d51",
+    "length": 152200
+   }
+  },
+  "/terms es": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "es",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "d42d2766b6fc1ee662539645839894360ce74ce7faa4099d708fbf5b2aeac0b3",
+    "length": 142410
+   }
+  },
+  "/terms tr": {
+   "status": 200,
+   "headers": {
+    "cache-control": "no-store",
+    "content-language": "tr",
+    "content-security-policy": "default-src 'self'; img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; base-uri 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer",
+    "vary": "Cookie, Accept-Language",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY"
+   },
+   "body": {
+    "sha": "2af29b29d8a507532c36c6994bcb4b0258379513e664a57851fca01f80c6216e",
+    "length": 142019
+   }
+  }
+ },
+ "previews": {
+  "png": "2a9f856917000c1321e4cee53b32b7286e2b15e4b153a86199e889e0fb62c9df",
+  "gif": "ecee47f46ebde0e9cc18ef433fedb62ef947148fe9f0ae181078ab0c8180d447",
+  "figure": "868480cd15753a59b85b1f5b7a95682c30b9c6816ea199971104a43fabcfe8fd",
+  "figureNoSkin": "7cd9a7e08d50ae81b0b0effa79e157877d2e3c51788b74f03aa70e366173f983"
+ },
+ "scheduled": {
+  "kv": {
+   "own-index:ready": {
+    "sha": "2fd2fa68eb31ab8a57d1c076538fac6ae32af2256e3c968603fbe4538d80fae8",
+    "metadata": null
+   },
+   "own:u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:tp:zh_tw:0123456789abcdef": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": null
+   },
+   "own:u:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:tq:zh_tw:fedcba987654": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": null
+   },
+   "own:u:cccccccccccccccccccccccccccccccc:tp:zh_tw:0123456789abcdef": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": null
+   },
+   "own:u:cccccccccccccccccccccccccccccccc:tq:zh_tw:fedcba987654": {
+    "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metadata": null
+   }
+  },
+  "fetch": []
+ }
+}
