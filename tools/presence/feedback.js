@@ -3,7 +3,7 @@ import { DISCORD_ID, account, discordSession, who } from './auth.js';
 import { LANG_LABEL } from './discord-bot.js';
 import { githubClient } from './github.js';
 import { clip, hex, json, no, readJson } from './http.js';
-import { parseRecord } from './kv.js';
+import { claimSlot, parseRecord } from './kv.js';
 import { ownerEntry } from './privacy.js';
 import { TR_BODY, TR_LANGS, trList } from './translate.js';
 
@@ -49,15 +49,11 @@ async function feedbackPerson(request, env, now) {
   return found ? { id: discord, name: found.n || discord } : { error: 'discord first' };
 }
 
+const FEEDBACK_WINDOW_MS = 3600 * 1000;
+
 async function feedbackGate(env, id, now) {
-  let log = [];
-  try {
-    const raw = JSON.parse(await env.CORPUS.get('fbr:' + id) || '[]');
-    if (Array.isArray(raw)) log = raw.filter((t) => typeof t === 'number' && now - t < 3600000).sort((a, b) => a - b);
-  } catch (e) {
-    log = [];
-  }
-  return log.length >= FEEDBACK_PER_HOUR ? { until: log[0] + 3600000 } : { log };
+  const slot = await claimSlot(env.CORPUS, 'fbr:' + id + ':', { windowMs: FEEDBACK_WINDOW_MS, limit: FEEDBACK_PER_HOUR });
+  return slot.granted ? {} : { until: slot.oldest + FEEDBACK_WINDOW_MS };
 }
 
 function feedbackMeta(record) {
@@ -129,7 +125,6 @@ export async function submitFeedback(env, person, input, via, now) {
   const id = hex(crypto.getRandomValues(new Uint8Array(8)));
   const record = { id, ...checked.entry, uid: person.id, name: String(person.name).slice(0, 64), via, t: now, st: 'open' };
   await saveFeedback(env, record);
-  await env.CORPUS.put('fbr:' + person.id, JSON.stringify([...gate.log, now]), { expirationTtl: 3600 });
   if (record.cat === 'translation') await fileFeedbackIssue(env, record);
   return { record };
 }

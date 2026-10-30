@@ -3,7 +3,7 @@ import { moderator } from './admin.js';
 import { publicId, who } from './auth.js';
 import { credits } from './credits.js';
 import { HASH, ID, UUID, hex, json, no, readJson } from './http.js';
-import { OperationBudgetExhausted, listAll, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
+import { OperationBudgetExhausted, claimSlot, listAll, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { remember } from './presence.js';
 import { ownerEntry } from './privacy.js';
 
@@ -148,6 +148,16 @@ export async function handleUpload(request, env, now) {
   if (have && have.metadata && (!have.metadata.w || have.metadata.p) && await reviewOf(env, user.uuid)) {
     return no('review one', 403);
   }
+  const slot = await claimSlot(env.CORPUS, 'upl:claim:' + user.uuid + ':', { windowMs: UPLOAD_EVERY_MS, limit: 1 });
+  if (!slot.granted) return no('slow down', 429);
+  try {
+    return await storeUpload(request, env, now, { user, bytes, found, log, id, have });
+  } finally {
+    await env.CORPUS.delete(slot.key);
+  }
+}
+
+async function storeUpload(request, env, now, { user, bytes, found, log, id, have }) {
   const hash = hex(await crypto.subtle.digest('SHA-256', bytes));
   const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
   if (blob && blob.value && blob.value.cancel) blob.value.cancel();
