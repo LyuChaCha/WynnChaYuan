@@ -9,6 +9,15 @@ export async function listAll(store, prefix, { limit = 1000, more } = {}) {
   return keys;
 }
 
+export function parseStored(raw) {
+  try {
+    const value = JSON.parse(raw);
+    return value && typeof value === 'object' ? value : null;
+  } catch (e) {
+    return null;
+  }
+}
+
 export function parseRecord(raw) {
   try {
     const value = JSON.parse(raw || '{}');

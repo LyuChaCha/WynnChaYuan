@@ -3320,6 +3320,28 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('壞掉的 u 不算成不帶 u', (await preview('?u=nope')).status === 404);
 }
 
+{
+  const store = { CORPUS: fakeKv() };
+  const KAY = { uuid: 'e4'.repeat(16), name: 'Kay' };
+  const kayWeb = await issueWebToken(store, KAY.uuid, KAY.name, NOW);
+  store.CORPUS.data.set('tl:u:' + KAY.uuid, { value: JSON.stringify({ langs: ['zh_tw'] }), metadata: null });
+  store.CORPUS.data.set('staff:u:' + KAY.uuid, { value: JSON.stringify({ n: '' }), metadata: null });
+  const id = 'ab'.repeat(8);
+  const pollId = 'cd'.repeat(6);
+  const statuses = [];
+  store.CORPUS.data.set('tp:zh_tw:' + id, { value: '{broken', metadata: null });
+  store.CORPUS.data.set('tq:zh_tw:' + pollId, { value: '{"term":"x"}', metadata: null });
+  for (const call of [
+    get('/tr/prop?lang=zh_tw&id=' + id), get('/tr/poll?lang=zh_tw&id=' + pollId),
+    post('/tr/vote', { lang: 'zh_tw', id, item: 'x' }, kayWeb), post('/tr/reject', { lang: 'zh_tw', id }, kayWeb),
+    post('/tr/poll/vote', { lang: 'zh_tw', id: pollId, option: 'x' }, kayWeb),
+  ]) {
+    statuses.push((await worker.fetch(call, { ...store, GITHUB_TOKEN: 'x' })).status);
+  }
+  statuses.push((await worker.fetch(post('/tr/accept', { lang: 'zh_tw', id, item: 'x' }, kayWeb), { ...store, GITHUB_TOKEN: 'x' })).status);
+  check('★ 壞掉的提案與投票紀錄回 404，不會讓請求炸掉', statuses.every((status) => status === 404));
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
