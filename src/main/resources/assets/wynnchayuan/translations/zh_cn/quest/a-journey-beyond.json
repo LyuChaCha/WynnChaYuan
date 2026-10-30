@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 249,
-  "translated": 249,
+  "count": 286,
+  "translated": 284,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -2431,6 +2431,376 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#248": {
+   "src": "We need a plan.",
+   "dst": "我们得想个计划。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#249": {
+   "src": "Explore the cave at [{~}, {~}, -{~}] for the Shard.",
+   "dst": "探索 [{~}, {~}, -{~}] 的洞穴寻找碎片。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#250": {
+   "src": "Kill the Progenitors to open the entrance.",
+   "dst": "杀死始祖以打开入口。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#251": {
+   "src": "[{~}/{~}] Aledar: Stay with us {u}! We've just had a loss, you can't go wandering around!",
+   "dst": "[{~}/{~}] Aledar: 跟紧我们，{u}！我们刚失去了一位同伴，你可不能到处乱跑！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#252": {
+   "src": "[{~}/{~}] Aledar: Stay with me!",
+   "dst": "[{~}/{~}] Aledar: 跟紧我！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#253": {
+   "src": "You quickly escape the worm before it eats you...",
+   "dst": "你赶在被蠕虫吃掉之前飞快地逃了出来……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#254": {
+   "src": "[{~}/{~}] Obsessor: Please, you have to understand!",
+   "dst": "[{~}/{~}] 执念者: 拜托，你得明白！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#255": {
+   "src": "[{~}/{~}] Obsessor: You need to come with us!",
+   "dst": "[{~}/{~}] 执念者: 你得跟我们走！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#256": {
+   "src": "[{~}/{~}] Obsessor: It's the only way to make you happy here!",
+   "dst": "[{~}/{~}] 执念者: 这是让你在这里快乐的唯一办法！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#257": {
+   "src": "[{~}/{~}] Obsessor: IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
+   "dst": "[{~}/{~}] 执念者: 这是唯一的办法，你明白吗？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#258": {
+   "src": "[{~}/{~}] Obsessor: AM I NOT SPEAKING CLEARLY?",
+   "dst": "[{~}/{~}] 执念者: 我说得不够清楚吗？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#259": {
+   "src": "[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!",
+   "dst": "[{~}/{~}] 执念者: 你别插手！！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#260": {
+   "src": "[{~}/{~}] Aledar: No! How did she disable my spell?!",
+   "dst": "[{~}/{~}] Aledar: 不！她怎么解除了我的法术？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#261": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
+   "dst": "[{~}/{~}] 执念者: 你跟我们走会快乐得多！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#262": {
+   "src": "[{~}/{~}] Obsessor: WE'LL KEEP YOU SAFE!",
+   "dst": "[{~}/{~}] 执念者: 我们会保护你的安全！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#263": {
+   "src": "[{~}/{~}] Obsessor: We'll bring you someplace warm!",
+   "dst": "[{~}/{~}] 执念者: 我们会带你去温暖的地方！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#264": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SAFE WITH US!",
+   "dst": "[{~}/{~}] 执念者: 跟我们在一起你会很安全！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#265": {
+   "src": "[{~}/{~}] Obsessor: NO MORE FEAR! NO MORE CONCERN!",
+   "dst": "[{~}/{~}] 执念者: 不再恐惧！不再忧虑！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#266": {
+   "src": "[{~}/{~}] Obsessor: Foreeeever...",
+   "dst": "[{~}/{~}] 执念者: 永——远——……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#268": {
+   "src": "Broken Pickaxe\nRight-Click to get item\nÀ",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#269": {
+   "src": "Is that the monster that captured Lucio?! Don't let it get away!",
+   "dst": "那就是抓走 Lucio 的怪物吗？！别让它跑了！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#270": {
+   "src": "As you get a new pickaxe, the cracks reset allowing you to try again.",
+   "dst": "换一把新镐子后，裂痕会重置，你就能再试一次。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#271": {
+   "src": "This pickaxe can only be used a few times as it's almost completely broken...",
+   "dst": "这把镐子几乎完全坏了，只能再用几次……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#272": {
+   "src": "Your pickaxe has broken! If you don't have enough blocks to go through the tar, get a new pickaxe and try again...",
+   "dst": "你的镐子坏了！如果方块不够让你穿过焦油，就换一把新镐子再试一次……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#273": {
+   "src": "You need an item to break this...",
+   "dst": "需要某样物品才能打破这个……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#274": {
+   "src": "Lucio's body appears out of the Enraptured Obsessor. He must have become one.",
+   "dst": "Lucio 的身体从痴迷的执念者体内现身。他一定已经变成了它们的一员。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#275": {
+   "src": "You must find Elphaba and Aledar before it's too late.",
+   "dst": "你必须在为时已晚之前找到 Elphaba 和 Aledar。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#276": {
+   "src": "Right-Click\nTo get the Body Part\nÀ",
+   "dst": "右键点击\n取得身体部位\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#277": {
+   "src": "Is that the monster that captured Elphaba?!",
+   "dst": "那就是抓走 Elphaba 的怪物吗？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#278": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "你得想办法跟着他们到顶端去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#279": {
+   "src": "Sound Wave Emitter\nRight-Click to get Item\nÀ",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#280": {
+   "src": "Right-Clicking this Item emits sound connections with the Irritacks...",
+   "dst": "右键点击这件物品会发出声音，与 Irritack 建立联系……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#281": {
+   "src": "It's... Elphaba! Aledar might still be alive... Quick!",
+   "dst": "那是……Elphaba！Aledar 也许还活着……快！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#282": {
+   "src": "You should use these body parts to enter the worm and find Aledar...",
+   "dst": "你应该用这些身体部位钻进蠕虫体内，找到 Aledar……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#283": {
+   "src": "This is where Aledar was taken... Perhaps you can lure the worm somehow.",
+   "dst": "Aledar 就是在这里被带走的……也许你能想办法把蠕虫引出来。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#284": {
+   "src": "The stomach acid seems to rise and fall consistently.",
+   "dst": "胃酸似乎在有规律地涨落。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#285": {
+   "src": "Aledar must've fallen somewhere near the road too!",
+   "dst": "Aledar 一定也掉在路边附近的某处了！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Beyond#286": {
    "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
