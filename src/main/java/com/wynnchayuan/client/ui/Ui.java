@@ -307,13 +307,14 @@ public final class Ui {
                 at += len;
                 continue;
             }
-            if (wide(cp) && line.length() > 0) {
+            boolean free = wide(cp) && !hangul(cp);
+            if (free && line.length() > 0) {
                 lastBreak = line.length();
             }
             line.appendCodePoint(cp);
             if (cp == ' ') {
                 lastBreak = line.length();
-            } else if (wide(cp)) {
+            } else if (free) {
                 lastBreak = line.length();
             }
             if (c.width(line.toString()) > maxW && line.length() > len) {
@@ -339,6 +340,10 @@ public final class Ui {
         return (cp >= 0x2E80 && cp <= 0x9FFF) || (cp >= 0xAC00 && cp <= 0xD7AF)
                 || (cp >= 0xF900 && cp <= 0xFAFF) || (cp >= 0xFF00 && cp <= 0xFFEF)
                 || (cp >= 0x3000 && cp <= 0x30FF);
+    }
+
+    private static boolean hangul(int cp) {
+        return cp >= 0xAC00 && cp <= 0xD7AF;
     }
 
     /** 點在不在這個矩形裡。 */

@@ -110,7 +110,7 @@ public final class UpgradeSafetyTest {
 
         CollectorConfig c = new CollectorConfig(file);
         check("半截的 config.json：建得起來，全部用預設值",
-                c.tooltipMode() == CollectorConfig.TooltipMode.PANEL && c.collect()
+                c.tooltipMode() == CollectorConfig.TooltipMode.OFF && c.collect()
                         && c.source() == CollectorConfig.Source.GITHUB);
         List<Path> aside = brokenCopies(dir, "config.json");
         check("半截的 config.json 改名放旁邊，原位空出來",
@@ -130,7 +130,7 @@ public final class UpgradeSafetyTest {
         Files.writeString(file, "");
         CollectorConfig empty = new CollectorConfig(file);
         check("空的 config.json：預設值、改名放旁邊",
-                empty.tooltipMode() == CollectorConfig.TooltipMode.PANEL
+                empty.tooltipMode() == CollectorConfig.TooltipMode.OFF
                         && brokenCopies(dir, "config.json").size() == 1);
 
         // NTFS 上寫到一半斷電，檔案常常是正確長度但內容全是 0
@@ -257,9 +257,19 @@ public final class UpgradeSafetyTest {
         expected.remove("badgeStyle");
         // 徽章不能關：開關連同這一欄一起拿掉（使用者 2026-10-12）。
         expected.remove("showBadges");
+        expected.addProperty("privacyConsent", "UNKNOWN");
+        expected.addProperty("setupDone", false);
+        expected.addProperty("dataOptOut", false);
+        expected.addProperty("dataDeletePending", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));
+        CollectorConfig again = new CollectorConfig(file);
+        check("★ 舊設定檔沒有同意欄位：首次啟動畫面要跳一次，設定照舊",
+                again.needsFirstRun() && again.existedBefore()
+                        && again.consent() == CollectorConfig.Consent.UNKNOWN
+                        && again.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
+                        && again.itemNames() == CollectorConfig.ItemNames.ON);
     }
 
     /**
@@ -704,8 +714,7 @@ public final class UpgradeSafetyTest {
         Path trDir = Languages.dir(dir, lang);
         TranslationCache.prepare(trDir, lang);
         List<Path> layers = new ArrayList<>();
-        String under = config.fallbackLanguage().isEmpty()
-                ? Languages.fallbackFor(lang) : null;
+        String under = Languages.underlay(config.fallbackLanguage(), lang);
         if (under != null) {
             Path f = Languages.dir(dir, under);
             TranslationCache.prepare(f, under);

@@ -268,9 +268,7 @@ public final class TranslationStore {
      * 依序載入好幾層，後面的蓋掉前面的。
      *
      * <h2>為什麼要有這個多層版本</h2>
-     * 新語言是從 {@code zh_tw} 複製、把 {@code dst} 清空的骨架，剛開張時一條
-     * 譯文都沒有。所以簡體中文的玩家要先鋪一層繁體當底，再把簡體疊上去——
-     * 讀得懂，而且比看英文原文近得多（見 {@code Languages#fallbackFor}）。
+     * 玩家在 F6 指名輔助語言時，先鋪那一層當底，再把選定的語言疊上去。
      *
      * <p>先前的寫法是<b>連呼叫兩次</b> {@link #loadAll(Path)}：
      *

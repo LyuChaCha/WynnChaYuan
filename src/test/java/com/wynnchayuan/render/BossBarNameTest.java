@@ -24,7 +24,7 @@ public final class BossBarNameTest {
     public static void main(String[] args) {
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
         TranslationStore store = new TranslationStore();
-        store.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
+        store.loadAll(List.of(root.resolve("zh_tw")));
 
         Style red = Style.EMPTY.withColor(TextColor.fromRgb(0xFF5555));
         Style aqua = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
@@ -35,12 +35,12 @@ public final class BossBarNameTest {
         Component out = WynntilsText.bossBarName(bar, store);
         String shown = out == null ? "(沒翻)" : out.getString();
         check("★ 名字換成名牌的譯名（實際 " + shown + "）",
-              shown.startsWith("支气管体 - 113k❤ - "));
+              shown.startsWith("支氣管體 - 113k❤ - "));
         check("名字後面的血量與狀態照原樣", shown.endsWith("113k❤ - Weak"));
         String[] colour = {null};
         if (out != null) {
             out.visit((style, text) -> {
-                if (text.contains("支气管体")) {
+                if (text.contains("支氣管體")) {
                     colour[0] = String.valueOf(style.getColor());
                 }
                 return java.util.Optional.empty();
@@ -52,8 +52,8 @@ public final class BossBarNameTest {
         MutableComponent grume = Component.empty();
         grume.append(Component.literal("Grume - 37.7k❤ - ").withStyle(red));
         Component g = WynntilsText.bossBarName(grume, store);
-        check("Grume → 凝块（實際 " + (g == null ? "(沒翻)" : g.getString()) + "）",
-              g != null && g.getString().startsWith("凝块 - "));
+        check("Grume → 凝塊（實際 " + (g == null ? "(沒翻)" : g.getString()) + "）",
+              g != null && g.getString().startsWith("凝塊 - "));
 
         // 右邊的屬性克制：Weak／Dam／Def 只在 boss bar 換，前面的圖示與顏色不動
         MutableComponent status = Component.empty();
@@ -62,10 +62,10 @@ public final class BossBarNameTest {
         status.append(Component.literal("Dam Def").withStyle(red));
         Component w = WynntilsText.bossBarWords(status, store);
         String ws = w == null ? "(沒翻)" : w.getString();
-        check("★ 屬性克制換成易伤／增伤／防护（實際 " + ws + "）",
-              ws.equals("Grume - 37.7k❤ - 易伤 增伤 防护"));
-        check("一般語料不受影響：Def 不會在別處變成防护",
-              !"防护".equals(store.lookup("Def")));
+        check("★ 屬性克制換成易傷／增傷／防護（實際 " + ws + "）",
+              ws.equals("Grume - 37.7k❤ - 易傷 增傷 防護"));
+        check("一般語料不受影響：Def 不會在別處變成防護",
+              !"防護".equals(store.lookup("Def")));
         check("查不到的名字回 null",
               WynntilsText.bossBarName(Component.literal("Zzqxv - 5❤"), store) == null);
         check("沒有「 - 」的標題不動",

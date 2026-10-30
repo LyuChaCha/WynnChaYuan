@@ -17,7 +17,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import os from 'node:os';
-import worker, { issueDiscordToken, issueToken, issueWebToken } from './worker.js';
+import worker, { issueDiscordToken, issueToken, issueWebToken, publicId } from './worker.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(here, '..', '..');
@@ -41,8 +41,36 @@ const env = { CORPUS: kv, DISCORD_CLIENT_ID: 'dev', DISCORD_CLIENT_SECRET: 'dev'
 // 協作翻譯的語料索引：攔下 Worker 去 translate-index 分支讀的那一次，改從本機產生
 const realFetch = globalThis.fetch;
 let indexDir = null;
+const creditsFile = path.join(root, 'src/main/resources/assets/wynnchayuan/credits.json');
+function demoCredits() {
+  const doc = JSON.parse(fs.readFileSync(creditsFile, 'utf8'));
+  if (!process.env.DEMO_TEAMS) return doc;
+  const demo = [
+    ['Steve', ['zh_tw'], ['translation', 'proofreading']], ['Alex', ['ja_jp', 'zh_tw'], ['translation']],
+    ['Sakura_Demo', ['ja_jp'], ['translation', 'testing']], ['MinJun_Demo', ['ko_kr'], ['translation']],
+    ['Ivan_Demo', ['ru_ru'], ['translation', 'proofreading']], ['Lucia_Demo', ['es_es'], ['proofreading']],
+    ['Emre_Demo', ['tr_tr'], ['translation', 'capture']], ['Xiao_Demo', ['zh_cn'], ['translation', 'community']],
+    ['Tester_Demo', [], ['capture', 'testing']], ['Plain_Demo', [], []]];
+  for (const section of doc.sections) {
+    if (section.key.endsWith('.developers')) {
+      section.members.forEach((member) => Object.assign(member, { teams: ['zh_tw'], areas: ['code', 'website', 'translation'] }));
+    }
+    if (section.key.endsWith('.contributors')) {
+      section.members = demo.map(([mc, teams, areas]) => {
+        const member = { name: mc, mc };
+        if (teams.length) member.teams = teams;
+        if (areas.length) member.areas = areas;
+        return member;
+      });
+    }
+  }
+  return doc;
+}
 globalThis.fetch = async (url, init) => {
   const u = String(typeof url === 'string' ? url : url.url);
+  if (u.endsWith('/main/src/main/resources/assets/wynnchayuan/credits.json')) {
+    return new Response(JSON.stringify(demoCredits()), { status: 200 });
+  }
   const m = /\/translate-index\/([a-z_]+\.json)$/.exec(u);
   if (!m) return realFetch(url, init);
   if (!indexDir) {
@@ -86,6 +114,17 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
   const alone = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 1);
   if (alone[0]) alone[0].q = 1;
   if (alone[1]) alone[1].r = 1;
+  const pairs = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 2);
+  if (pairs[0]) pairs.filter((cape) => cape.h === pairs[0].h).forEach((cape) => { cape.vis = 'private'; });
+  const steve = alone.pop();
+  if (steve && alone.length >= 3) {
+    steve.vis = 'unlisted';
+    steve.u = 'b'.repeat(32);
+    steve.n = 'Steve';
+    const was = [...data.keys()].find((k) => k.startsWith('cape:') && data.get(k).metadata === steve);
+    data.set('cape:' + await publicId('b'.repeat(32)), data.get(was));
+    data.delete(was);
+  }
   data.set('stars', { value: JSON.stringify(stars), metadata: null });
   // 沒有人穿的披風留七天：兩件已經沒有人穿，一件還剩四天、一件是最後一天
   const idle = {};
@@ -109,6 +148,11 @@ data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 36000
 
 // 一位譯者（Alex：日文與繁中）、一個提案、一個術語投票
 data.set('tl:u:' + 'c'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp', 'zh_tw'], n: '日文組', t: Date.now() - 7200000, by: developer, m: 'Alex' }), metadata: null });
+if (process.env.DEMO_TEAMS) {
+  data.set('tl:n:sakura_demo', { value: JSON.stringify({ langs: ['zh_tw', 'ja_jp'], n: '', t: Date.now() - 3600000, by: developer, m: 'Sakura_Demo' }), metadata: null });
+  data.set('tl:n:outsider_demo', { value: JSON.stringify({ langs: ['ko_kr'], n: '韓文組', t: Date.now() - 1800000, by: developer, m: 'Outsider_Demo' }), metadata: null });
+  data.set('tl:d:555555555555555555', { value: JSON.stringify({ langs: ['es_es'], n: '', t: Date.now() - 900000, by: developer, dn: 'lucia_dc' }), metadata: null });
+}
 {
   const prop = { lang: 'zh_tw', file: 'raid.json', key: null, src: 'Choose a buff or go to the exit', base: '選一個增益，或前往出口',
     items: [
@@ -163,7 +207,8 @@ http.createServer(async (req, res) => {
     const [uuid, name] = as === 'user' ? ['b'.repeat(32), 'Steve']
       : as === 'staff' ? ['c'.repeat(32), 'Alex'] : ['a'.repeat(32), developer];
     const token = await issueWebToken(env, uuid, name, Date.now());
-    res.writeHead(302, { location: '/account#t=' + token });
+    const to = /^\/[a-z]*$/.test(url.searchParams.get('to') || '') ? url.searchParams.get('to') : '/account';
+    res.writeHead(302, { location: to + '#t=' + token });
     res.end();
     return;
   }

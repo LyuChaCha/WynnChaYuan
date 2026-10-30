@@ -209,6 +209,9 @@ public final class GlyphNameOriginalTest {
                 for (String tome : tomes) {
                     store.setNameMode(CollectorConfig.ItemNames.ON);
                     String name = store.lookup(tome);
+                    if (name == null && untranslated(lang.resolve("tome.json"), tome)) {
+                        continue;
+                    }
                     String who = lang.getFileName() + " " + tome;
                     check(who + "：鍵是裸名（實際 " + name + "）",
                             name != null && !name.equals(tome) && name.indexOf('{') < 0);
@@ -223,6 +226,19 @@ public final class GlyphNameOriginalTest {
                 }
             }
         }
+    }
+
+    private static boolean untranslated(Path file, String src) throws Exception {
+        com.google.gson.JsonObject entries = com.google.gson.JsonParser.parseString(
+                Files.readString(file, java.nio.charset.StandardCharsets.UTF_8))
+                .getAsJsonObject().getAsJsonObject("entries");
+        for (String key : entries.keySet()) {
+            com.google.gson.JsonObject e = entries.getAsJsonObject(key);
+            if (src.equals(e.get("src").getAsString())) {
+                return e.get("dst").getAsString().isBlank();
+            }
+        }
+        return false;
     }
 
     /** 假字型：一個字一格，中日文兩格。正式的要 Minecraft 的字型，測試環境量出來全是 0。 */

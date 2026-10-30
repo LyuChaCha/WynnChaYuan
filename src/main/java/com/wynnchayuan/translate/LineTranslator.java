@@ -8206,8 +8206,7 @@ public final class LineTranslator {
      * 先前這裡直接對應「到」「階」。那是繁中的字，而屬性列這條路每個語言都會走——
      * 日文、俄文、韓文的標籤查到之後，數值中間照樣被塞進中文。
      * 店家本身不知道自己是哪個語言，所以不在程式裡分語言，改查語料：
-     * 每個語言的 {@code ui-labels.json} 自己寫連接詞，簡體沒寫時照疊層規則退到繁體
-     * （見 {@code Languages#fallbackFor}），其他語言沒寫就留英文。
+     * 每個語言的 {@code ui-labels.json} 自己寫連接詞，沒寫就留英文。
      */
     private static final java.util.Map<String, String> CONNECTOR_KEYS = java.util.Map.of(
             "to", "{~} to {~}", "tier", "{~} tier", "tiers", "{~} tier");

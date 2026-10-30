@@ -66,6 +66,12 @@ public final class Releases {
      */
     public static void init() {
         data = bundled();
+    }
+
+    public static void fetchLatest() {
+        if (!NetworkGate.online()) {
+            return;
+        }
         Thread fetch = new Thread(Releases::refresh, WynnChaYuan.MOD_ID + "-version");
         fetch.setDaemon(true);
         fetch.start();
