@@ -2989,34 +2989,16 @@
    },
    "fetch": []
   },
-  "GET /api/cape-preview/21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure 21edabf9": {
-   "status": 200,
+  "GET /api/cape-preview/21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure not wearing 21edabf9": {
+   "status": 404,
    "headers": {
-    "cache-control": "public, max-age=86400",
-    "content-type": "image/png",
-    "x-content-type-options": "nosniff"
+    "content-type": "application/json; charset=utf-8"
    },
    "body": {
-    "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
-    "length": 13420
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
    },
-   "kv": {
-    "own:u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:prev:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
-     "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-     "metadata": null
-    },
-    "prev:21edabf9591cdfd9a9a895f9eea98737e88b0fde671716a62e81727363456944:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
-     "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
-     "metadata": "{\"t\":\"png\"}"
-    }
-   },
-   "fetch": [
-    {
-     "method": "GET",
-     "url": "https://minotar.net/skin/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-     "body": ""
-    }
-   ]
+   "kv": {},
+   "fetch": []
   },
   "GET /api/cape-preview/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13 :: preview 4761ebe1": {
    "status": 200,
@@ -3037,25 +3019,36 @@
    },
    "fetch": []
   },
-  "GET /api/cape-preview/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure 4761ebe1": {
+  "GET /api/cape-preview/4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure not wearing 4761ebe1": {
+   "status": 404,
+   "headers": {
+    "content-type": "application/json; charset=utf-8"
+   },
+   "body": {
+    "json": "{\"ok\":false,\"why\":\"not found\"}"
+   },
+   "kv": {},
+   "fetch": []
+  },
+  "GET /api/cape-preview/5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b?u=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb :: preview figure wearing": {
    "status": 200,
    "headers": {
     "cache-control": "public, max-age=86400",
-    "content-type": "image/gif",
+    "content-type": "image/png",
     "x-content-type-options": "nosniff"
    },
    "body": {
-    "sha": "92e14aa98f7e6a5f58f528c33e38080ee6d832b0498e02560f43cd47e86c0174",
-    "length": 147537
+    "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
+    "length": 13420
    },
    "kv": {
-    "own:u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:prev:4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+    "own:u:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:prev:5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
      "metadata": null
     },
-    "prev:4761ebe11020d0c3abb0e43fb7adfde41cf3fb735ce261a83d90769e655b6d13:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
-     "sha": "92e14aa98f7e6a5f58f528c33e38080ee6d832b0498e02560f43cd47e86c0174",
-     "metadata": "{\"t\":\"gif\"}"
+    "prev:5cbae709fd316efc10074fa37aab265dac974e1c10ab8afdce7fe71ad9694d7b:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb:angled": {
+     "sha": "536a379fcccce1a81a18de6a9a894d42361d4afe48b04d1cf9c3b5c17f8c0e47",
+     "metadata": "{\"t\":\"png\"}"
     }
    },
    "fetch": [
