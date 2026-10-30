@@ -44,7 +44,8 @@ public final class WmsBridgeTest {
 
         System.out.println("不該插手的時候");
         check("打英文：我們沒有意見，照它原本的規則", !WmsBridge.matches("Bony Bow", "bony"));
-        check("只打一個字不查", !WmsBridge.matches("Bony Bow", "骨"));
+        check("只打一個中文字也查", WmsBridge.matches("Bony Bow", "骨"));
+        check("只打一個英文字母不查", !WmsBridge.matches("Bony Bow", "b"));
         check("空的搜尋字", !WmsBridge.matches("Bony Bow", "") && !WmsBridge.matches("Bony Bow", null));
         check("物品沒有名字", !WmsBridge.matches(null, "骨弓"));
         on[0] = false;
