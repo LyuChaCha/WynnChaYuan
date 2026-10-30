@@ -308,6 +308,7 @@ public final class TranslationStore {
         flat.clear();
         unwrapped.clear();
         unindented.clear();
+        marked.clear();
         speakers.clear();
         prefixIndex.clear();
         terms.clear();

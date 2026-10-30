@@ -1739,3 +1739,12 @@ tasks.register('runHotPathCacheChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.HotPathCacheTest'
 }
 tasks.named('check') { dependsOn 'runHotPathCacheChecks' }
+
+// 換語言時記號索引（✔／✖）要一起清掉，不能留著上一個語言的譯文。
+tasks.register('runMarkedReloadChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MarkedReloadTest'
+}
+tasks.named('check') { dependsOn 'runMarkedReloadChecks' }
