@@ -68,6 +68,7 @@ let githubIssueStatus = 201;
 const githubBranches = new Set();
 let githubOpenPulls = [];         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
 let githubPullStatus = 201;
+let githubPutStatus = 200;
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -90,7 +91,8 @@ globalThis.fetch = async (url, init = {}) => {
         ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/issues/77', number: 77 }, 201)
         : answer({ message: 'nope' }, githubIssueStatus);
     }
-    if (call.method === 'PUT') return answer({}, 200);
+    if (call.method === 'PUT') return githubPutStatus === 200 ? answer({}, 200) : answer({ message: 'nope' }, githubPutStatus);
+    if (call.method === 'DELETE' && path.startsWith('/git/refs/heads/')) return new Response(null, { status: 204 });
     if (path === '/pulls') {
       if (githubPullStatus === 'no url') return answer({ number: 1 }, 201);
       return githubPullStatus === 201 ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201) : answer({ message: 'nope' }, githubPullStatus);
@@ -3392,6 +3394,29 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + mayToken } }), store)));
   check('★ 上傳冷卻：同時傳也只有一個會過', uploads.filter((one) => one.status === 200).length === 1
     && uploads.filter((one) => one.status === 429).length === 3);
+}
+
+{
+  const entry = { section: 'contributors', name: 'New One', mc: 'New_One', color: '#55ff55' };
+  const github = { CORPUS: env.CORPUS, GITHUB_TOKEN: 'secret-token' };
+  githubFile = JSON.stringify({ sections: [{ role: '貢獻者', key: 'credits.role.contributors', members: [] }] }, null, 2) + '\n';
+  githubCalls.length = 0;
+  githubPutStatus = 500;
+  r = await worker.fetch(post('/admin/credits', entry, aliceWeb), github);
+  githubPutStatus = 200;
+  const removed = githubCalls.find((c) => c.method === 'DELETE');
+  check('★ 新增成員中途失敗：不留下沒用的分支', r.status === 502 && (await r.json()).why === 'github 500'
+    && removed && removed.path.startsWith('/git/refs/heads/credits/add-new_one-'));
+  githubCalls.length = 0;
+  githubPullStatus = 500;
+  r = await worker.fetch(post('/admin/credits', entry, aliceWeb), github);
+  githubPullStatus = 201;
+  check('★ 開 PR 失敗也一樣清掉分支', r.status === 502 && githubCalls.some((c) => c.method === 'DELETE'));
+  githubCalls.length = 0;
+  r = await worker.fetch(post('/admin/credits', { ...entry, name: 'x'.repeat(2000) }, aliceWeb), github);
+  check('★ 新增成員的請求太大：擋在讀進來之前，不碰 GitHub', r.status === 400 && githubCalls.length === 0);
+  r = await worker.fetch(post('/admin/credits', ['not', 'an', 'object'], aliceWeb), github);
+  check('不是物件也擋掉', r.status === 400 && githubCalls.length === 0);
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
