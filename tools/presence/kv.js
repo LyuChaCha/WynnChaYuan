@@ -1,3 +1,5 @@
+import { hex } from './http.js';
+
 export async function listAll(store, prefix, { limit = 1000, more } = {}) {
   const keys = [];
   let cursor;
@@ -64,4 +66,22 @@ export async function scanPrefix(store, state, prefix, visit) {
     if (page.list_complete || !page.cursor) return;
     state.cursor = page.cursor;
   }
+}
+
+let slotSequence = 0;
+
+export async function claimSlot(store, prefix, { windowMs, limit }) {
+  slotSequence += 1;
+  const claimedAt = Date.now();
+  const stamp = claimedAt + '.' + String(slotSequence).padStart(8, '0') + hex(crypto.getRandomValues(new Uint8Array(4)));
+  const key = prefix + stamp;
+  await store.put(key, '', { expirationTtl: Math.max(60, Math.ceil(windowMs / 1000)) });
+  const recent = (await listAll(store, prefix))
+    .map((entry) => entry.name.slice(prefix.length))
+    .filter((name) => claimedAt - Number(name.split('.')[0]) < windowMs)
+    .sort((a, b) => Number(a.split('.')[0]) - Number(b.split('.')[0]) || a.localeCompare(b));
+  const rank = recent.indexOf(stamp);
+  if (rank >= 0 && rank < limit) return { granted: true, key };
+  await store.delete(key);
+  return { granted: false, oldest: Number((recent[0] || stamp).split('.')[0]) };
 }
