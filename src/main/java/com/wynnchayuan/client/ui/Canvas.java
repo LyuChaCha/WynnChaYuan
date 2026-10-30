@@ -81,4 +81,7 @@ public interface Canvas {
 
     /** 螢幕上一個點是多少 GUI 像素（介面縮放的倒數）。 */
     float px();
+
+    default void raise() {
+    }
 }

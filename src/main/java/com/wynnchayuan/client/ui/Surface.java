@@ -96,6 +96,12 @@ public abstract class Surface {
     protected void click() {
     }
 
+    private Runnable beneath;
+
+    public void beneathOverlays(Runnable underlay) {
+        beneath = underlay;
+    }
+
     public final void render(Canvas canvas, int screenW, int screenH, double mouseX,
                              double mouseY, long nowMs) {
         this.c = canvas;
@@ -116,6 +122,10 @@ public abstract class Surface {
         hoverRow = null;
 
         draw();
+        if (beneath != null) {
+            beneath.run();
+        }
+        c.raise();
 
         if (popover != null) {
             // 彈出層底下墊一塊「點外面就收起來」，而且不讓點擊穿到底下的控制項

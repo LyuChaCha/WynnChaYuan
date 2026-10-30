@@ -1115,9 +1115,20 @@ public final class SettingsScreen extends Screen {
         Minecraft mc = Minecraft.getInstance();
         int guiScale = (int) mc.getWindow().getGuiScale();
         GuiCanvas canvas = new GuiCanvas(g, this.font, guiScale);
+        view.beneathOverlays(() -> {
+            float[] model = view.spot("preview.model");
+            if (model != null && mc.player != null) {
+                canvas.outside(() -> {
+                    try {
+                        drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
+                    } catch (Throwable t) {
+                        com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
+                    }
+                });
+            }
+        });
         canvas.begin();
         try {
-            // 滑鼠座標給的是整數的 GUI 像素；問視窗可以拿到小數，拖滑桿才不會一格一格跳
             double mx = mc.mouseHandler.xpos() * mc.getWindow().getGuiScaledWidth()
                     / Math.max(1, mc.getWindow().getScreenWidth());
             double my = mc.mouseHandler.ypos() * mc.getWindow().getGuiScaledHeight()
@@ -1125,15 +1136,6 @@ public final class SettingsScreen extends Screen {
             view.render(canvas, this.width, this.height, mx, my, Util.getMillis());
         } finally {
             canvas.end();
-        }
-        // 「徽章與披風」的預覽：玩家本人穿著披風，疊在預覽那一塊上面
-        float[] model = view.spot("preview.model");
-        if (model != null && mc.player != null) {
-            try {
-                drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
-            } catch (Throwable t) {
-                com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
-            }
         }
     }
 
