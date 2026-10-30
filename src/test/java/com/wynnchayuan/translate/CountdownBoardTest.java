@@ -126,16 +126,16 @@ public final class CountdownBoardTest {
               old != null && old.getString().startsWith("整塊舊鍵\n4 小時 7 分"));
         StyledText unknownRow = board(new String[] {"Crate Offer", "3h 5m 2s", "", "Get a Mystery Thing FREE"},
                                       new int[] {GOLD, WHITE, WHITE, YELLOW});
-        check("有一列查不到：整塊不組", LineTranslator.countdownBoard(
+        check("有一列查不到：整塊不組", TemplateLookup.countdownBoard(
                 "Crate Offer\n{~}h {~}m {~}s\n\nGet a Mystery Thing FREE", store) == null);
         Component partial = LineTranslator.translateLabel(unknownRow, store);
         check("有一列查不到：就地取代整塊不動", partial == null);
-        check("沒有倒數列的牌子不碰", LineTranslator.countdownBoard(
+        check("沒有倒數列的牌子不碰", TemplateLookup.countdownBoard(
                 "Crate Offer\n\n{~} OFF Crates", store) == null);
-        check("單行不碰", LineTranslator.countdownBoard("{~}h {~}m {~}s", store) == null);
-        check("只有倒數、沒有字的不碰", LineTranslator.countdownBoard("{~}h\n{~}s", store) == null);
-        check("沒有東西的不碰", LineTranslator.countdownBoard(null, store) == null
-                && LineTranslator.countdownBoard("", store) == null);
+        check("單行不碰", TemplateLookup.countdownBoard("{~}h {~}m {~}s", store) == null);
+        check("只有倒數、沒有字的不碰", TemplateLookup.countdownBoard("{~}h\n{~}s", store) == null);
+        check("沒有東西的不碰", TemplateLookup.countdownBoard(null, store) == null
+                && TemplateLookup.countdownBoard("", store) == null);
         check("時間格式的短鍵不會漏到一般語料（聊天、tooltip 的計時不受影響）",
               store.lookup("{~}h {~}m {~}s") == null);
     }

@@ -29,19 +29,19 @@ public final class NameOriginalTermTest {
         check("查表先附上原文（實際 " + shown + "）",
               "勇氣面具 (Mask of Courage)".equals(shown));
 
-        String swapped = LineTranslator.termsWithin(shown, store);
+        String swapped = TermSubstitution.termsWithin(shown, store);
         String after = swapped == null ? shown : swapped;
         check("附的原文不被詞表動到（實際 " + after + "）",
               after.endsWith("(Mask of Courage)"));
         check("譯名本身還在（實際 " + after + "）", after.startsWith("勇氣面具"));
 
         String body = "Mask of the Lunatic grants Courage";
-        String bodyOut = LineTranslator.termsWithin(body, store);
+        String bodyOut = TermSubstitution.termsWithin(body, store);
         check("一般內文照樣換詞（實際 " + bodyOut + "）",
               bodyOut != null && bodyOut.contains("假面") && bodyOut.contains("勇氣"));
 
         String parens = "Mask (Courage)";
-        String parensOut = LineTranslator.termsWithin(parens, store);
+        String parensOut = TermSubstitution.termsWithin(parens, store);
         check("不是附原文的括號照樣換（實際 " + parensOut + "）",
               parensOut != null && parensOut.contains("假面"));
 
@@ -55,20 +55,20 @@ public final class NameOriginalTermTest {
 
         String one = "勇氣面具 (Mask of Courage)";
         int origin = measure.applyAsInt("Mask of Courage");
-        String broken = LineTranslator.breakBeforeOriginal(one, origin, store, measure);
+        String broken = TermSubstitution.breakBeforeOriginal(one, origin, store, measure);
         check("太寬就斷在原文前面（實際 " + broken.replace("\n", "\\n") + "）",
               "勇氣面具\n(Mask of Courage)".equals(broken));
 
-        String roomy = LineTranslator.breakBeforeOriginal(one, 999, store, measure);
+        String roomy = TermSubstitution.breakBeforeOriginal(one, 999, store, measure);
         check("放得下就維持一行（實際 " + roomy.replace("\n", "\\n") + "）",
               one.equals(roomy));
 
         check("量不出寬度就不動",
-              one.equals(LineTranslator.breakBeforeOriginal(one, 0, store, measure)));
+              one.equals(TermSubstitution.breakBeforeOriginal(one, 0, store, measure)));
 
         String body2 = "這是一段很長的說明文字 (not a gear name)";
         check("不是附原文的括號不斷",
-              body2.equals(LineTranslator.breakBeforeOriginal(body2, 1, store, measure)));
+              body2.equals(TermSubstitution.breakBeforeOriginal(body2, 1, store, measure)));
 
         lootrunNames();
 
@@ -94,7 +94,7 @@ public final class NameOriginalTermTest {
         String board = store.lookup("Jester's Trick:");
         check("記分板那一格附上原文（實際 " + board + "）",
               "甲乙之計 (Jester's Trick):".equals(board));
-        String swapped = LineTranslator.termsWithin(board, store);
+        String swapped = TermSubstitution.termsWithin(board, store);
         String afterSwap = swapped == null ? board : swapped;
         check("★ 折行前的整句換詞不動附的原文（實際 " + afterSwap + "）",
               afterSwap.contains("(Jester's Trick)"));

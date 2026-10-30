@@ -43,7 +43,7 @@ final class ChatTranslator {
         if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return null;
         }
-        String hit = LineTranslator.lookup(template, store);
+        String hit = TemplateLookup.lookup(template, store);
         if (hit == null || hit.isBlank()) {
             hit = store.lookupUnwrapped(template);
         }
@@ -58,7 +58,7 @@ final class ChatTranslator {
         if (line == null || framed == null || store == null) {
             return null;
         }
-        String translated = LineTranslator.lookup(framed.template(), store);
+        String translated = TemplateLookup.lookup(framed.template(), store);
         List<LineParts.Piece> glyphs = null;
         if (translated == null || translated.isBlank()) {
             translated = store.lookupUnwrapped(framed.template());
@@ -94,7 +94,7 @@ final class ChatTranslator {
             List<LineParts.Piece> glyphs = null;
             String hit = null;
             switch (step) {
-                case 0 -> hit = LineTranslator.lookup(parts.template(), store);
+                case 0 -> hit = TemplateLookup.lookup(parts.template(), store);
                 case 1 -> hit = ColumnTemplates.byColumn(parts.template(), store);
                 case 2 -> {
                     hit = store.lookupUnwrapped(parts.template());
@@ -106,7 +106,7 @@ final class ChatTranslator {
                     if (framed != null) {
                         using = framed;
                         if (step == 3) {
-                            hit = LineTranslator.lookup(framed.template(), store);
+                            hit = TemplateLookup.lookup(framed.template(), store);
                         } else {
                             hit = store.lookupUnwrapped(framed.template());
                             glyphs = LineTranslator.unwrappedGlyphs(framed.template(), framed.glyphs());
@@ -115,7 +115,7 @@ final class ChatTranslator {
                 }
                 case 5 -> {
                     if (parts.template().indexOf('\n') >= 0) {
-                        hit = LineTranslator.eventFrame(TranslationStore.unwrap(parts.template()), store);
+                        hit = TemplateLookup.eventFrame(TranslationStore.unwrap(parts.template()), store);
                         glyphs = LineTranslator.unwrappedGlyphs(parts.template(), parts.glyphs());
                     }
                 }
@@ -143,7 +143,7 @@ final class ChatTranslator {
             return null;
         }
         rebuilt = rowColours(message, rebuilt, LineTranslator.dominantStyle(List.of(parts)));
-        if (parts.template().startsWith(LineTranslator.CHAT_COUNTER)) {
+        if (parts.template().startsWith(TemplateLookup.CHAT_COUNTER)) {
             rebuilt = npcChatColours(message, rebuilt);
         }
         return DisplayStyles.unslant(ChatRealigner.realignChat(message, rebuilt, centred, inPanel));

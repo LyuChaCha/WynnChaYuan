@@ -69,7 +69,7 @@ public final class LabelColonTest {
     }
 
     private static String look(String template, TranslationStore store, boolean percent) {
-        return LineTranslator.lookup(template, store, percent);
+        return TemplateLookup.lookup(template, store, percent);
     }
 
     private static void check(String what, boolean ok) {

@@ -101,12 +101,12 @@ public final class StatRowTest {
         owner(store, "PoorChaCha’s Mob Totem", "PoorChaCha 的怪物石碑");
 
         report("後半不認得就不翻（實際："
-                        + LineTranslator.lookup("Someone's Unknown Thingy", store, false) + "）",
-                LineTranslator.lookup("Someone's Unknown Thingy", store, false) == null);
+                        + TemplateLookup.lookup("Someone's Unknown Thingy", store, false) + "）",
+                TemplateLookup.lookup("Someone's Unknown Thingy", store, false) == null);
     }
 
     private static void owner(TranslationStore store, String row, String want) {
-        String hit = LineTranslator.lookup(row, store, false);
+        String hit = TemplateLookup.lookup(row, store, false);
         report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）",
                 want.equals(hit));
     }
@@ -117,7 +117,7 @@ public final class StatRowTest {
         for (String label : labels()) {
             for (String shape : new String[] {" {#}+{~} [{~}]", "{#}-{~} to -{~}"}) {
                 checked++;
-                if (LineTranslator.lookup(label + shape, store, false) == null) {
+                if (TemplateLookup.lookup(label + shape, store, false) == null) {
                     missed.add(label + shape);
                 }
             }
@@ -150,7 +150,7 @@ public final class StatRowTest {
             {"{~} Earth Damage {#} [{~}]", "地屬性傷害"},
         };
         for (String[] r : rows) {
-            String hit = LineTranslator.lookup(r[0], store, false);
+            String hit = TemplateLookup.lookup(r[0], store, false);
             report("數值在前：「" + r[0] + "」-> 含「" + r[1] + "」（實際：" + hit + "）",
                     hit != null && hit.contains(r[1]));
             report("數值在前：「" + r[0] + "」數值原樣在前、括號原樣在後（實際：" + hit + "）",
@@ -160,11 +160,11 @@ public final class StatRowTest {
         starts(store, true, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害百分比");
         starts(store, false, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害值");
 
-        String seg = LineTranslator.lookup("{~} Walk Speed", store, false);
+        String seg = TemplateLookup.lookup("{~} Walk Speed", store, false);
         report("只有「數值 + 標籤」的片段也翻得出來（實際：" + seg + "）",
                 seg != null && seg.contains("移動速度"));
 
-        String gear = LineTranslator.lookup("{~} Guardian", store, false);
+        String gear = TemplateLookup.lookup("{~} Guardian", store, false);
         report("數字 + 不是介面標籤的詞不拼（實際：" + gear + "）", gear == null);
         nothing(store, "{~} blocks away from the nearest city {#} [{~}]");
 
@@ -189,8 +189,8 @@ public final class StatRowTest {
     }
 
     private static void truncated(TranslationStore store) {
-        String raw = LineTranslator.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, false);
-        String pct = LineTranslator.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, true);
+        String raw = TemplateLookup.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, false);
+        String pct = TemplateLookup.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, true);
         report("前提：完整的標籤查得到，實數與百分比是兩種譯法（實際：" + raw + "／" + pct + "）",
                 raw != null && pct != null && !raw.equals(pct));
         String rawLabel = raw == null ? "" : raw.substring(0, raw.indexOf(" {#}"));
@@ -220,8 +220,8 @@ public final class StatRowTest {
         nothing(store, "Elemental Spell Da...");
         nothing(store, "Elemental..");
 
-        String plainRaw = LineTranslator.lookup("Elemental Spell Damage", store, false);
-        String plainPct = LineTranslator.lookup("Elemental Spell Damage", store, true);
+        String plainRaw = TemplateLookup.lookup("Elemental Spell Damage", store, false);
+        String plainPct = TemplateLookup.lookup("Elemental Spell Damage", store, true);
         report("前提：單獨一段的完整標籤查得到（實際：" + plainRaw + "／" + plainPct + "）",
                 plainRaw != null && plainPct != null);
         equals(store, false, "Elemental Spell Da..", plainRaw);
@@ -230,39 +230,39 @@ public final class StatRowTest {
     }
 
     private static void equals(TranslationStore store, boolean percent, String row, String want) {
-        String hit = LineTranslator.lookup(row, store, percent);
+        String hit = TemplateLookup.lookup(row, store, percent);
         report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
                 + "-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     private static void starts(TranslationStore store, boolean percent,
                                String row, String head) {
-        String hit = LineTranslator.lookup(row, store, percent);
+        String hit = TemplateLookup.lookup(row, store, percent);
         report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
                 + "換成「" + head + "」（實際：" + hit + "）",
                 hit != null && hit.startsWith(head));
     }
 
     private static void starts(TranslationStore store, String row, String head) {
-        String hit = LineTranslator.lookup(row, store, false);
+        String hit = TemplateLookup.lookup(row, store, false);
         report("「" + row + "」的標籤換成「" + head + "」（實際：" + hit + "）",
                 hit != null && hit.startsWith(head));
     }
 
     private static void keeps(TranslationStore store, String row, String tail) {
-        String hit = LineTranslator.lookup(row, store, false);
+        String hit = TemplateLookup.lookup(row, store, false);
         report("「" + row + "」的數值原樣留著（實際：" + hit + "）",
                 hit != null && hit.endsWith(tail));
     }
 
     private static void contains(TranslationStore store, String row, String want) {
-        String hit = LineTranslator.lookup(row, store, false);
+        String hit = TemplateLookup.lookup(row, store, false);
         report("「" + row + "」裡有「" + want + "」（實際：" + hit + "）",
                 hit != null && hit.contains(want));
     }
 
     private static void equals(TranslationStore store, String row, String want) {
-        String hit = LineTranslator.lookup(row, store, false);
+        String hit = TemplateLookup.lookup(row, store, false);
         report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
@@ -277,7 +277,7 @@ public final class StatRowTest {
     }
 
     private static void nothing(TranslationStore store, String sentence) {
-        String hit = LineTranslator.lookup(sentence, store, false);
+        String hit = TemplateLookup.lookup(sentence, store, false);
         report("句子不會被當成屬性列：" + sentence + "（實際：" + hit + "）", hit == null);
     }
 

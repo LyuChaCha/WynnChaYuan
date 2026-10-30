@@ -91,14 +91,14 @@ public final class LineTranslator {
         FlowedDebug.note(run, extra.isEmpty() ? null : extra.get(0).text(),
                          labelStyleOf(run.get(0)), dominantStyle(parts));
         if (TextWrapper.needsWrap(translated, run.size(), flowed)) {
-            String swapped = termsWithin(translated, store);
+            String swapped = TermSubstitution.termsWithin(translated, store);
             if (swapped != null) {
                 translated = swapped;
             }
             translated = wrapToBlock(translated, run);
             rewrapped = true;
         }
-        translated = breakBeforeOriginal(translated, widestOf(run), store,
+        translated = TermSubstitution.breakBeforeOriginal(translated, widestOf(run), store,
                                          piece -> widthOf(Component.literal(piece)));
         String[] dst = translated.split("\n", -1);
         List<Component> built = rebuildAll(dst, parts, extra, glyphs, places, store);
@@ -318,9 +318,9 @@ public final class LineTranslator {
     }
 
     static String labelHead(String label, TranslationStore store) {
-        String hit = lookup(label, store);
+        String hit = TemplateLookup.lookup(label, store);
         if (hit == null || hit.isBlank()) {
-            hit = lookup(label.substring(0, label.length() - 1), store);
+            hit = TemplateLookup.lookup(label.substring(0, label.length() - 1), store);
         }
         return hit == null || hit.isBlank() ? null : hit;
     }
@@ -465,7 +465,7 @@ public final class LineTranslator {
                 .withObfuscated(false);
     }
 
-    private static void addStem(List<LineParts.Piece> out, String core,
+    static void addStem(List<LineParts.Piece> out, String core,
                                 Style style, String translated) {
         String stem = stemOf(core);
         if (stem == null || translated == null || translated.contains(core)
@@ -505,7 +505,7 @@ public final class LineTranslator {
             if (core.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
                 core = core.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length());
             } else if (Character.isWhitespace(core.charAt(0))
-                    || isDecoration(core.codePointAt(0))) {
+                    || TemplateLookup.isDecoration(core.codePointAt(0))) {
                 core = core.substring(Character.charCount(core.codePointAt(0)));
             } else {
                 break;
@@ -703,7 +703,7 @@ public final class LineTranslator {
             Component replaced = body.isEmpty()
                     ? null : translateOneSegment(body, style, store, percent);
             if (replaced == null) {
-                if (!body.isEmpty() && isConnectorSegment(body)) {
+                if (!body.isEmpty() && TemplateLookup.isConnectorSegment(body)) {
                     connectorAt.add(pieces.size());
                 }
                 pieces.add(Piece.text(raw.substring(lead.length()), style));
@@ -713,7 +713,7 @@ public final class LineTranslator {
             Component orig = DisplayStyles.literal(body, style);
             pieces.add(Piece.translated(
                     com.wynnchayuan.render.PairedFont.absolutelyPositioned(style)
-                            ? padSlot(replaced, orig, style) : replaced,
+                            ? TemplateLookup.padSlot(replaced, orig, style) : replaced,
                     orig));
             if (!tail.isEmpty()) {
                 pieces.add(Piece.space(SpaceOffset.decode(tail),
@@ -723,7 +723,7 @@ public final class LineTranslator {
         if (!any) {
             return null;
         }
-        translateConnectors(pieces, connectorAt, store);
+        TemplateLookup.translateConnectors(pieces, connectorAt, store);
 
         int boundary = ColumnAligner.findAlignPoint(pieces);
         if (boundary >= 0 && !pieces.get(boundary).isSpace()
@@ -805,7 +805,7 @@ public final class LineTranslator {
 
         StyledText one = StyledText.fromComponent(Component.literal(core).withStyle(style));
         LineParts parts = LineParts.of(one);
-        String hit = lookup(parts.template(), store, percent);
+        String hit = TemplateLookup.lookup(parts.template(), store, percent);
         if (hit == null) {
             return null;
         }
@@ -818,7 +818,7 @@ public final class LineTranslator {
             out.append(DisplayStyles.literal(prefix, style));
         }
         out.append(rebuilt);
-        String tail = reattach(rebuilt.getString(), suffix);
+        String tail = TemplateLookup.reattach(rebuilt.getString(), suffix);
         if (!tail.isEmpty()) {
             out.append(DisplayStyles.literal(tail, style));
         }
@@ -831,10 +831,10 @@ public final class LineTranslator {
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
-        String translated = lookup(parts.template(), store);
+        String translated = TemplateLookup.lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
             LineParts framed = ChatTranslator.framedOnMiss(line, parts, store);
-            translated = framed == null ? null : lookup(framed.template(), store);
+            translated = framed == null ? null : TemplateLookup.lookup(framed.template(), store);
             if (translated == null || translated.isBlank()) {
                 return null;
             }
@@ -864,7 +864,7 @@ public final class LineTranslator {
                 joined.append(NEWLINE);
             }
             String row = rows[i];
-            String hit = GlyphSplitter.hasLetter(row) ? lookup(row, store) : null;
+            String hit = GlyphSplitter.hasLetter(row) ? TemplateLookup.lookup(row, store) : null;
             if (hit != null && !hit.isBlank()) {
                 joined.append(hit);
                 any = true;
@@ -883,1412 +883,6 @@ public final class LineTranslator {
         LineDebug.record(line, result);
         return result;
     }
-
-    public static Component translateFloating(StyledText label, TranslationStore store) {
-        LineParts parts = LineParts.of(label);
-        String scoped = store.labelLookup(parts.template());
-        if (scoped != null && !scoped.isBlank()) {
-            Component rebuilt = rebuildLabel(label, scoped, parts, store);
-            if (rebuilt != null) {
-                return DisplayStyles.unslant(rebuilt);
-            }
-        }
-        Component whole = floatingWhole(label, parts, store);
-        if (whole != null) {
-            return DisplayStyles.unslant(dropIconSpaces(whole));
-        }
-        return translate(label, store);
-    }
-
-    private static Component floatingWhole(StyledText label, LineParts parts,
-                                           TranslationStore store) {
-        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
-            return null;
-        }
-        String translated = lookup(parts.template(), store);
-        if (translated == null || translated.isBlank()) {
-            translated = withoutSpacerRows(parts.template(), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            return null;
-        }
-        Component rebuilt = rebuildLabel(label, translated, parts, store);
-        if (rebuilt == null) {
-            return null;
-        }
-        Component result = RowRealigner.realign(label, rebuilt, true, false);
-        LineDebug.record(label, result);
-        return result;
-    }
-
-    private static Component rebuildLabel(StyledText label, String translated,
-                                          LineParts parts, TranslationStore store) {
-        String coloured = labelColours(label, parts, translated, store);
-        Component rebuilt = rebuild(coloured, parts, store);
-        if (rebuilt == null && !coloured.equals(translated)) {
-            rebuilt = rebuild(translated, parts, store);
-        }
-        return rebuilt;
-    }
-
-    public static Component translateLabel(StyledText label, TranslationStore store) {
-        LineParts parts = LineParts.of(label);
-        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
-            return null;
-        }
-        String translated = store.labelLookup(parts.template());
-        boolean rowTail = trimsWholeRows(parts.template());
-        if (translated == null || translated.isBlank()) {
-            translated = rowTail ? withPercent(parts.template(), store, false)
-                                 : lookup(parts.template(), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            translated = withoutSpacerRows(parts.template(), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            translated = boardColours(label, parts, countdownBoard(parts.template(), store), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            translated = labelByLine(parts.template(), store, label);
-        }
-        if ((translated == null || translated.isBlank()) && rowTail) {
-            translated = lookup(parts.template(), store);
-        }
-        if (translated == null || translated.isBlank()) {
-            LineParts framed = ChatTranslator.framedOnMiss(label, parts, store);
-            if (framed != null) {
-                translated = store.labelLookup(framed.template());
-                if (translated == null || translated.isBlank()) {
-                    translated = lookup(framed.template(), store);
-                }
-                if (translated != null && !translated.isBlank()) {
-                    parts = framed;
-                }
-            }
-        }
-        if (translated == null || translated.isBlank()) {
-            return null;
-        }
-        Component rebuilt = rebuildLabel(label, translated, parts, store);
-        return rebuilt == null ? null : DisplayStyles.unslant(rebuilt);
-    }
-
-    static String labelColours(StyledText label, LineParts parts, String translated,
-                               TranslationStore store) {
-        if (label == null || translated == null || store == null
-                || LABEL_COLOUR_TOKEN.matcher(translated).find()) {
-            return translated;
-        }
-        List<List<LabelRun>> rows = labelRows(label);
-        String[] dst = translated.split(NL, -1);
-        if (rows.size() != dst.length) {
-            return translated;
-        }
-        List<Style> palette = ColourTemplate.palette(parts.runs());
-        StringBuilder out = new StringBuilder(translated.length() + 16);
-        boolean any = false;
-        for (int i = 0; i < dst.length; i++) {
-            if (i > 0) {
-                out.append(NL);
-            }
-            List<LabelRun> row = rows.get(i);
-            if (distinctStyles(row) < 2) {
-                out.append(dst[i]);
-                continue;
-            }
-            List<int[]> regions = new ArrayList<>();
-            List<Style> styles = new ArrayList<>();
-            alignLabel(row, 0, row.size(), dst[i], 0, dst[i].length(), regions, styles, store);
-            String coloured = paint(dst[i], regions, styles, palette);
-            any |= !coloured.equals(dst[i]);
-            out.append(coloured);
-        }
-        return any ? out.toString() : translated;
-    }
-
-    static String boardColours(StyledText label, LineParts parts, String composed,
-                               TranslationStore store) {
-        if (composed == null || label == null) {
-            return composed;
-        }
-        String coloured = labelColours(label, parts, composed, store);
-        List<List<LabelRun>> rows = labelRows(label);
-        String[] dst = coloured.split(NL, -1);
-        if (rows.size() != dst.length) {
-            return coloured;
-        }
-        List<Style> palette = ColourTemplate.palette(parts.runs());
-        StringBuilder out = new StringBuilder(coloured.length() + 32);
-        for (int i = 0; i < dst.length; i++) {
-            if (i > 0) {
-                out.append(NL);
-            }
-            String row = dst[i];
-            List<LabelRun> source = rows.get(i);
-            if (!row.isBlank() && source.size() > 0 && distinctStyles(source) == 1
-                    && !LABEL_COLOUR_TOKEN.matcher(row).find()) {
-                row = paint(row, List.of(new int[] {0, row.length()}),
-                            List.of(source.get(0).style()), palette);
-            }
-            out.append(row);
-        }
-        return out.toString();
-    }
-
-    private static final java.util.regex.Pattern LABEL_COLOUR_TOKEN =
-            java.util.regex.Pattern.compile("\\{(?:c[^}]*|w\\d|/)}");
-
-    private record LabelRun(String text, Style style) {}
-
-    private static List<List<LabelRun>> labelRows(StyledText label) {
-        List<List<LabelRun>> rows = new ArrayList<>();
-        List<LabelRun> row = new ArrayList<>();
-        for (StyledTextPart part : label) {
-            if (GlyphSplitter.isGlyphPart(part)) {
-                continue;
-            }
-            String raw = part.getString(null, StyleType.NONE);
-            PartStyle ps = part.getPartStyle();
-            Style style = ps == null ? Style.EMPTY : ps.getStyle();
-            String[] pieces = raw.split(NL, -1);
-            for (int p = 0; p < pieces.length; p++) {
-                if (p > 0) {
-                    rows.add(row);
-                    row = new ArrayList<>();
-                }
-                String text = GlyphSplitter.stripGlyphChars(pieces[p]);
-                if (text.isEmpty()) {
-                    continue;
-                }
-                LabelRun last = row.isEmpty() ? null : row.get(row.size() - 1);
-                if (last != null && (!hasContent(text)
-                        || java.util.Objects.equals(last.style(), style))) {
-                    row.set(row.size() - 1, new LabelRun(last.text() + text, last.style()));
-                } else if (hasContent(text)) {
-                    row.add(new LabelRun(text, style));
-                }
-            }
-        }
-        rows.add(row);
-        return rows;
-    }
-
-    private static int distinctStyles(List<LabelRun> row) {
-        java.util.Set<Style> seen = new java.util.HashSet<>();
-        for (LabelRun run : row) {
-            seen.add(run.style());
-        }
-        return seen.size();
-    }
-
-    private static void alignLabel(List<LabelRun> runs, int lo, int hi, String dst, int x, int y,
-                                   List<int[]> regions, List<Style> styles,
-                                   TranslationStore store) {
-        while (x < y && Character.isWhitespace(dst.charAt(x))) {
-            x++;
-        }
-        while (y > x && Character.isWhitespace(dst.charAt(y - 1))) {
-            y--;
-        }
-        if (lo >= hi || x >= y) {
-            return;
-        }
-        if (hi - lo == 1) {
-            regions.add(new int[] {x, y});
-            styles.add(runs.get(lo).style());
-            return;
-        }
-        String window = dst.substring(x, y);
-        for (int k = lo + 1; k < hi; k++) {
-            String hit = labelLookup(joined(runs, k, hi), store);
-            if (hit != null && hit.length() < window.length() && window.endsWith(hit)
-                    && coversEnds(runs, k, hi, hit)) {
-                int cut = claimHead(runs.get(k).text(), hit, dst, x, y - hit.length());
-                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
-                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
-                return;
-            }
-        }
-        for (int k = hi - 1; k > lo; k--) {
-            String hit = labelLookup(joined(runs, lo, k), store);
-            if (hit != null && hit.length() < window.length() && window.startsWith(hit)
-                    && coversEnds(runs, lo, k, hit)) {
-                int cut = claimTail(runs.get(k - 1).text(), hit, dst, x + hit.length(), y);
-                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
-                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
-                return;
-            }
-        }
-        List<int[]> anchors = new ArrayList<>();
-        int cursor = x;
-        for (int j = lo; j < hi; j++) {
-            int[] at = findRun(runs.get(j).text().strip(), dst, cursor, y, store);
-            if (at != null) {
-                anchors.add(new int[] {j, at[0], at[1]});
-                cursor = at[1];
-            }
-        }
-        if (anchors.isEmpty()) {
-            List<int[]> chunks = new ArrayList<>();
-            int i = x;
-            while (i < y) {
-                while (i < y && Character.isWhitespace(dst.charAt(i))) {
-                    i++;
-                }
-                int start = i;
-                while (i < y && !Character.isWhitespace(dst.charAt(i))) {
-                    i++;
-                }
-                if (i > start) {
-                    chunks.add(new int[] {start, i});
-                }
-            }
-            if (chunks.size() == hi - lo) {
-                for (int k = 0; k < chunks.size(); k++) {
-                    regions.add(chunks.get(k));
-                    styles.add(runs.get(lo + k).style());
-                }
-            }
-            return;
-        }
-        int prevRun = lo;
-        int prevEnd = x;
-        for (int[] anchor : anchors) {
-            alignLabel(runs, prevRun, anchor[0], dst, prevEnd, anchor[1], regions, styles, store);
-            regions.add(new int[] {anchor[1], anchor[2]});
-            styles.add(runs.get(anchor[0]).style());
-            prevRun = anchor[0] + 1;
-            prevEnd = anchor[2];
-        }
-        alignLabel(runs, prevRun, hi, dst, prevEnd, y, regions, styles, store);
-    }
-
-    private static boolean coversEnds(List<LabelRun> runs, int from, int to, String hit) {
-        if (to - from < 2) {
-            return true;
-        }
-        for (int i : new int[] {from, to - 1}) {
-            String core = runs.get(i).text().strip();
-            if (!core.isEmpty() && core.codePoints().noneMatch(Character::isLetterOrDigit)
-                    && !hit.contains(core)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static String joined(List<LabelRun> runs, int from, int to) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = from; i < to; i++) {
-            sb.append(runs.get(i).text());
-        }
-        return sb.toString().strip();
-    }
-
-    private static int[] findRun(String core, String dst, int from, int to,
-                                 TranslationStore store) {
-        if (!hasContent(core)) {
-            return null;
-        }
-        int at = dst.indexOf(core, from);
-        while (at >= 0 && at + core.length() <= to) {
-            boolean letters = core.codePoints().anyMatch(Character::isLetter);
-            int after = at + core.length();
-            boolean whole = !letters
-                    || ((at == 0 || !TextWrapper.isWordChar(dst.charAt(at - 1)))
-                        && (after >= dst.length() || !TextWrapper.isWordChar(dst.charAt(after))));
-            if (whole) {
-                return new int[] {at, after};
-            }
-            at = dst.indexOf(core, at + 1);
-        }
-        String hit = labelLookup(core, store);
-        if (hit != null) {
-            int found = dst.indexOf(hit, from);
-            if (found >= 0 && found + hit.length() <= to) {
-                return new int[] {claimHead(core, hit, dst, from, found),
-                                  claimTail(core, hit, dst, found + hit.length(), to)};
-            }
-        }
-        return null;
-    }
-
-    private static int claimTail(String run, String hit, String dst, int end, int limit) {
-        String core = run.strip();
-        int i = core.length();
-        while (i > 0 && isLabelSymbol(core.charAt(i - 1))) {
-            i--;
-        }
-        String symbols = core.substring(i);
-        if (symbols.isEmpty() || i == 0 || hit.endsWith(symbols)) {
-            return end;
-        }
-        int at = end;
-        while (at < limit && Character.isWhitespace(dst.charAt(at))) {
-            at++;
-        }
-        return at + symbols.length() <= limit && dst.startsWith(symbols, at)
-                ? at + symbols.length() : end;
-    }
-
-    private static int claimHead(String run, String hit, String dst, int limit, int start) {
-        String core = run.strip();
-        int i = 0;
-        while (i < core.length() && isLabelSymbol(core.charAt(i))) {
-            i++;
-        }
-        String symbols = core.substring(0, i);
-        if (symbols.isEmpty() || i == core.length() || hit.startsWith(symbols)) {
-            return start;
-        }
-        int at = start;
-        while (at > limit && Character.isWhitespace(dst.charAt(at - 1))) {
-            at--;
-        }
-        return at - symbols.length() >= limit && dst.startsWith(symbols, at - symbols.length())
-                ? at - symbols.length() : start;
-    }
-
-    private static boolean isLabelSymbol(char c) {
-        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c);
-    }
-
-    private static String labelLookup(String text, TranslationStore store) {
-        if (!GlyphSplitter.hasLetter(text)) {
-            return null;
-        }
-        String template = GlyphSplitter.toTemplate(StyledText.fromString(text));
-        String hit = lookup(template, store);
-        if (hit == null || hit.isBlank()) {
-            hit = store.lookupTerm(template);
-        }
-        if (hit == null || hit.isBlank()) {
-            hit = lookupWordCore(template, store);
-        }
-        if (hit == null || hit.isBlank()) {
-            String plate = store.lookup(template + " " + GlyphSplitter.GLYPH_PLACEHOLDER
-                                        + GlyphSplitter.GLYPH_PLACEHOLDER);
-            String tail = GlyphSplitter.GLYPH_PLACEHOLDER + GlyphSplitter.GLYPH_PLACEHOLDER;
-            if (plate != null && plate.strip().endsWith(tail)) {
-                hit = plate.strip();
-                hit = hit.substring(0, hit.length() - tail.length());
-            }
-        }
-        if (hit == null) {
-            return null;
-        }
-        hit = LABEL_COLOUR_TOKEN.matcher(hit).replaceAll("").strip();
-        return hasContent(hit) ? hit : null;
-    }
-
-    private static String paint(String row, List<int[]> regions, List<Style> styles,
-                                List<Style> palette) {
-        Integer[] order = new Integer[regions.size()];
-        for (int i = 0; i < order.length; i++) {
-            order[i] = i;
-        }
-        java.util.Arrays.sort(order, java.util.Comparator.comparingInt(i -> regions.get(i)[0]));
-        StringBuilder out = new StringBuilder(row.length() + 16);
-        int at = 0;
-        int current = 0;
-        for (int i : order) {
-            int[] region = regions.get(i);
-            int slot = palette.indexOf(styles.get(i)) + 1;
-            if (region[0] < at || slot < 1 || slot > 9) {
-                continue;
-            }
-            if (region[0] > at) {
-                String gap = row.substring(at, region[0]);
-                if (current != 0 && hasContent(gap)) {
-                    out.append(ColourTemplate.COLOR_END);
-                    current = 0;
-                }
-                out.append(gap);
-            }
-            if (slot != current) {
-                out.append("{c").append(slot).append('}');
-                current = slot;
-            }
-            out.append(row, region[0], region[1]);
-            at = region[1];
-        }
-        if (at < row.length()) {
-            String rest = row.substring(at);
-            if (current != 0 && hasContent(rest)) {
-                out.append(ColourTemplate.COLOR_END);
-                current = 0;
-            }
-            out.append(rest);
-        }
-        if (current != 0) {
-            out.append(ColourTemplate.COLOR_END);
-        }
-        return out.toString();
-    }
-
-    private static boolean hasWord(String text) {
-        int run = 0;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (Character.isLetter(c) && !isHan(c)) {
-                if (++run >= 2) {
-                    return true;
-                }
-            } else {
-                run = 0;
-            }
-        }
-        return false;
-    }
-
-    private static String labelByLine(String template, TranslationStore store) {
-        return labelByLine(template, store, null);
-    }
-
-    private static String labelByLine(String template, TranslationStore store, StyledText label) {
-        if (template.indexOf(NEWLINE) < 0) {
-            return null;
-        }
-        String[] rows = template.split("\n", -1);
-        StyledText[] styled = label == null ? null : label.split("\n");
-        if (styled != null && styled.length != rows.length) {
-            styled = null;
-        }
-        String[] out = new String[rows.length];
-        boolean any = false;
-        boolean owned = false;
-        boolean missed = false;
-        int status = statusFrom(rows);
-        for (int i = 0; i < rows.length; i++) {
-            String row = rows[i];
-            if (!hasWord(row)) {
-                out[i] = row;
-                continue;
-            }
-            String hit = lookup(row, store);
-            if (hit != null && !hit.isBlank()) {
-                if (withOwner(row, store) != null) {
-                    owned = true;
-                }
-                out[i] = hit;
-                any = true;
-                continue;
-            }
-            if (i >= status || !com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
-                out[i] = statusRow(row, store);
-                continue;
-            }
-            String framed = styled == null ? null : framedRow(styled[i], row, store);
-            if (framed != null) {
-                owned = true;
-                out[i] = framed;
-                any = true;
-                continue;
-            }
-            out[i] = row;
-            missed = true;
-        }
-        if (!any || (missed && !owned)) {
-            return null;
-        }
-        return String.join(String.valueOf(NEWLINE), out);
-    }
-
-    private static String framedRow(StyledText row, String template, TranslationStore store) {
-        if (row == null || !LineParts.of(row).template().equals(template)) {
-            return null;
-        }
-        com.wynnchayuan.capture.Broadcasts.Spans spans = store.nameFrames().find(row, template);
-        if (spans == null) {
-            return null;
-        }
-        String name = LineParts.flat(row).substring(spans.userStart(), spans.userEnd());
-        if (name.chars().anyMatch(Character::isDigit)) {
-            return null;
-        }
-        String hit = lookup(LineParts.of(row, spans).template(), store);
-        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
-        if (hit == null || hit.isBlank() || hit.indexOf(user) != hit.lastIndexOf(user)
-                || !hit.contains(user)) {
-            return null;
-        }
-        return hit.replace(user, name);
-    }
-
-    private static String statusRow(String row, TranslationStore store) {
-        String out = row;
-        for (String word : com.wynnchayuan.capture.GlyphSplitter.STATUS_WORDS) {
-            if (!out.contains(word)) {
-                continue;
-            }
-            String shown = store.lookup(word);
-            if (shown != null && !shown.isBlank() && shown.indexOf('{') < 0) {
-                out = out.replace(word, shown.strip());
-            }
-        }
-        return out;
-    }
-
-    static int statusFrom(String[] rows) {
-        int name = 0;
-        while (name < rows.length && !hasWord(rows[name])) {
-            name++;
-        }
-        int bar = name + 1;
-        if (bar + 1 >= rows.length || !MOB_NAME_ROW.matcher(rows[name]).matches()
-                || hasWord(rows[bar])
-                || !rows[bar].contains(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER)) {
-            return rows.length;
-        }
-        return bar + 1;
-    }
-
-    private static final java.util.regex.Pattern MOB_NAME_ROW =
-            java.util.regex.Pattern.compile(".*\\S\\s+(?:\\{#\\}){2,}");
-
-    static boolean trimsWholeRows(String template) {
-        int nl = template.lastIndexOf(NEWLINE);
-        if (nl < 0) {
-            return false;
-        }
-        return trimEnd(template, 0, com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, true)
-                <= nl;
-    }
-
-    static String withoutSpacerRows(String template, TranslationStore store) {
-        if (template == null) {
-            return null;
-        }
-        java.util.regex.Matcher m = SPACER_ROWS.matcher(template);
-        if (!m.matches()) {
-            return null;
-        }
-        String body = m.group(1);
-        String hit = store.labelLookup(body);
-        if (hit == null || hit.isBlank()) {
-            hit = lookup(body, store);
-        }
-        return hit == null || hit.isBlank() ? null : hit + m.group(2);
-    }
-
-    private static final java.util.regex.Pattern SPACER_ROWS = java.util.regex.Pattern.compile(
-            "(?s)(.*\\S)((?:\n[ \t]*À[ \tÀ]*)+)");
-
-    static String lookup(String template, TranslationStore store) {
-        return lookupTrimmed(template, store, false);
-    }
-
-    static String lookup(String template, TranslationStore store, boolean percent) {
-        String hit = lookupTrimmed(template, store, percent);
-        if (hit == null) {
-            hit = statRow(template, store, percent);
-        }
-        return hit != null ? hit : nameRow(template, store);
-    }
-
-    private static String nameRow(String template, TranslationStore store) {
-        int start = 0;
-        while (start < template.length()
-                && Character.isWhitespace(template.charAt(start))) {
-            start++;
-        }
-        int body = start;
-        for (int next = bulletEnd(template, body); next > body;
-                next = bulletEnd(template, body)) {
-            body = next;
-        }
-        String rest = template.substring(body);
-        String head = template.substring(0, body);
-
-        int colon = labelEnd(rest);
-        if (colon > 0) {
-            String label = rest.substring(0, colon);
-            String zhLabel = lookupTrimmed(label, store, false);
-            int name = colon;
-            while (name < rest.length() && rest.charAt(name) == ' ') {
-                name++;
-            }
-            String tail = rest.substring(name);
-            if (zhLabel != null && !zhLabel.isBlank() && !tail.isBlank()) {
-                String zhName = TYPED_LABELS.contains(label.strip())
-                        ? tail : lookupTrimmed(tail, store, false);
-                if ((zhName == null || zhName.isBlank())
-                        && NAME_LABELS.contains(label.strip())) {
-                    zhName = tail;
-                }
-                if (zhName != null && !zhName.isBlank()) {
-                    return head + zhLabel
-                            + reattach(zhLabel, rest.substring(colon, name)) + zhName;
-                }
-            }
-        }
-        if (body == start) {
-            return null;
-        }
-        String zh = lookupTrimmed(rest, store, false);
-        return zh == null || zh.isBlank() ? null : head + zh;
-    }
-
-    private static final java.util.Set<String> NAME_LABELS = java.util.Set.of(
-            "Required Ability:", "Unlocked Ability:",
-            "Cave:",
-            "Name Contains:");
-
-    private static final java.util.Set<String> TYPED_LABELS = java.util.Set.of(
-            "Name Contains:");
-
-    private static int bulletEnd(String template, int at) {
-        if (at >= template.length()) {
-            return at;
-        }
-        int cp = template.codePointAt(at);
-        boolean bullet = BULLETS.indexOf(cp) >= 0;
-        if (!bullet && !isDecoration(cp)) {
-            return at;
-        }
-        int next = at + Character.charCount(cp);
-        int spaced = next;
-        while (spaced < template.length() && template.charAt(spaced) == ' ') {
-            spaced++;
-        }
-        if (bullet && spaced == next) {
-            return at;
-        }
-        return spaced;
-    }
-
-    private static int labelEnd(String rest) {
-        int at = rest.indexOf(':');
-        return at > 0 && at + 1 < rest.length() && rest.charAt(at + 1) == ' '
-                ? at + 1 : -1;
-    }
-
-    private static final String BULLETS = "-–—•*";
-
-    private static String statRow(String template, TranslationStore store, boolean percent) {
-        int from = valueTailStart(template);
-        if (from <= 0) {
-            return null;
-        }
-        String label = template.substring(0, from);
-        if (!GlyphSplitter.hasLetter(label)) {
-            return null;
-        }
-        String tail = template.substring(from);
-        String whole = untruncated(label, tail, store);
-        if (whole != null) {
-            tail = tail.substring(tail.indexOf(TRUNCATED) + TRUNCATED.length());
-            label = whole;
-            if (tail.isBlank()) {
-                String zh = lookupTrimmed(label, store, percent);
-                return zh == null || zh.isBlank() ? null : zh + tail;
-            }
-        }
-        if (store.itemNameOnly(label)) {
-            if (colonFirst(tail)) {
-                return itemAsLabel(label, tail, store);
-            }
-            if (!countFirst(tail)) {
-                return null;
-            }
-        }
-        if (!tail.isEmpty()) {
-            boolean was = TranslationStore.itemNamesBarred();
-            TranslationStore.barItemNames(was || !countFirst(tail));
-            String zh;
-            try {
-                zh = statLabel(label, store, percent);
-            } finally {
-                TranslationStore.barItemNames(was);
-            }
-            if (zh != null) {
-                return zh + translateTail(tail, store);
-            }
-            if (colonFirst(tail)) {
-                String own = itemAsLabel(label, tail, store);
-                if (own != null) {
-                    return own;
-                }
-            }
-        }
-        int head = valueHeadEnd(label);
-        String lead = label.substring(0, head);
-        if (lead.indexOf(GlyphSplitter.NUMBER_PLACEHOLDER) < 0) {
-            return null;
-        }
-        String name = label.substring(head);
-        if (tail.isEmpty() && !store.isUiLabel(name.strip())) {
-            return null;
-        }
-        String zh = statLabel(name, store, percent);
-        return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
-    }
-
-    // WynnMod 標籤放不下時會砍尾並接上 ..
-    private static final String TRUNCATED = "..";
-
-    private static final int MIN_BARE_TRUNCATED = 10;
-
-    private static String untruncated(String label, String tail, TranslationStore store) {
-        int dots = 0;
-        while (dots < tail.length() && Character.isWhitespace(tail.charAt(dots))) {
-            dots++;
-        }
-        if (!tail.startsWith(TRUNCATED, dots)) {
-            return null;
-        }
-        String after = tail.substring(dots + TRUNCATED.length());
-        boolean bare = after.isBlank();
-        if (!bare && after.indexOf(GlyphSplitter.NUMBER_PLACEHOLDER) < 0) {
-            return null;
-        }
-        int start = 0;
-        while (start < label.length()) {
-            if (label.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER, start)) {
-                start += GlyphSplitter.GLYPH_PLACEHOLDER.length();
-            } else if (Character.isWhitespace(label.charAt(start))) {
-                start++;
-            } else {
-                break;
-            }
-        }
-        String head = label.substring(start) + tail.substring(0, dots);
-        if (bare && head.strip().length() < MIN_BARE_TRUNCATED) {
-            return null;
-        }
-        String whole = store.completeUiLabel(head);
-        return whole == null ? null : label.substring(0, start) + whole;
-    }
-
-    private static boolean countFirst(String tail) {
-        String t = tail.stripLeading();
-        return !t.isEmpty() && (t.charAt(0) == '[' || t.charAt(0) == '(');
-    }
-
-    private static boolean colonFirst(String tail) {
-        String t = tail.stripLeading();
-        return !t.isEmpty() && ColumnAligner.isTrailingColon(t.charAt(0));
-    }
-
-    private static String itemAsLabel(String label, String tail, TranslationStore store) {
-        String word = label.strip();
-        String own = store.lookupExact(word + ":");
-        if (own == null) {
-            return null;
-        }
-        String lead = label.substring(0, label.indexOf(word));
-        String t = tail.stripLeading();
-        String rest = t.substring(1);
-        return lead + own + translateTail(reattach(own, rest), store);
-    }
-
-    private static int valueHeadEnd(String label) {
-        int at = 0;
-        while (at < label.length()) {
-            char c = label.charAt(at);
-            if (c == '{') {
-                int close = label.indexOf('}', at);
-                if (close < 0) {
-                    break;
-                }
-                at = close + 1;
-            } else if (c != '}' && isValueChar(c)) {
-                at++;
-            } else {
-                break;
-            }
-        }
-        return at;
-    }
-
-    private static String statLabel(String label, TranslationStore store, boolean percent) {
-        String zh = lookupTrimmed(label + (percent ? "%" : " Raw"), store, false);
-        if (zh == null || zh.isBlank()) {
-            zh = lookupTrimmed(label, store, percent);
-        }
-        return zh == null || zh.isBlank() ? null : zh;
-    }
-
-    private static int valueTailStart(String template) {
-        int at = template.length();
-        while (at > 0) {
-            char last = template.charAt(at - 1);
-            if (last == '}') {
-                int open = template.lastIndexOf('{', at - 1);
-                if (open < 0) {
-                    break;
-                }
-                at = open;
-            } else if (isValueChar(last)) {
-                at--;
-            } else {
-                int word = tailWordStart(template, at);
-                if (word < 0) {
-                    break;
-                }
-                at = word;
-            }
-        }
-        return at;
-    }
-
-    private static int tailWordStart(String template, int at) {
-        int start = at;
-        while (start > 0 && Character.isLetter(template.charAt(start - 1))) {
-            start--;
-        }
-        return start < at && CONNECTOR_KEYS.containsKey(template.substring(start, at))
-                ? start : -1;
-    }
-
-    private static String translateTail(String tail, TranslationStore store) {
-        StringBuilder out = new StringBuilder(tail.length());
-        int at = 0;
-        while (at < tail.length()) {
-            if (!Character.isLetter(tail.charAt(at))) {
-                out.append(tail.charAt(at));
-                at++;
-                continue;
-            }
-            int end = at;
-            while (end < tail.length() && Character.isLetter(tail.charAt(end))) {
-                end++;
-            }
-            String word = tail.substring(at, end);
-            String local = connector(word, store);
-            out.append(local != null ? local : word);
-            at = end;
-        }
-        return out.toString();
-    }
-
-    private static boolean isValueChar(char c) {
-        return Character.isDigit(c) || Character.isWhitespace(c)
-                || "+-±%/[](){}<>,.:~*★⇧⇩⇨❤✦✤✹✽✧'\"".indexOf(c) >= 0;
-    }
-
-    private static final java.util.Map<String, String> CONNECTOR_KEYS = java.util.Map.of(
-            "to", "{~} to {~}", "tier", "{~} tier", "tiers", "{~} tier");
-
-    private static final java.util.regex.Pattern CONNECTOR_SLOT =
-            java.util.regex.Pattern.compile("\\{~\\d*}");
-
-    static String connector(String word, TranslationStore store) {
-        String key = CONNECTOR_KEYS.get(word);
-        if (key == null || store == null) {
-            return null;
-        }
-        String dst = store.lookup(key);
-        if (dst == null || dst.isBlank()) {
-            return null;
-        }
-        String local = CONNECTOR_SLOT.matcher(dst).replaceAll("").strip();
-        return local.isEmpty() ? null : local;
-    }
-
-    private static boolean isConnectorSegment(String body) {
-        boolean word = false;
-        int at = 0;
-        while (at < body.length()) {
-            char c = body.charAt(at);
-            if (Character.isLetter(c)) {
-                int end = at;
-                while (end < body.length() && Character.isLetter(body.charAt(end))) {
-                    end++;
-                }
-                if (!CONNECTOR_KEYS.containsKey(body.substring(at, end))) {
-                    return false;
-                }
-                word = true;
-                at = end;
-            } else if (isValueChar(c)) {
-                at++;
-            } else {
-                return false;
-            }
-        }
-        return word;
-    }
-
-    private static void translateConnectors(List<Piece> pieces, List<Integer> at,
-                                            TranslationStore store) {
-        for (int k = at.size() - 1; k >= 0; k--) {
-            int index = at.get(k);
-            Piece piece = pieces.get(index);
-            String raw = piece.text();
-            String tail = SpaceOffset.trailingOffsets(raw);
-            String body = raw.substring(0, raw.length() - tail.length());
-            String local = translateTail(body, store);
-            if (local.equals(body)) {
-                continue;
-            }
-            pieces.set(index, Piece.translated(DisplayStyles.literal(local, DisplayStyles.forDisplay(piece.style())),
-                                               DisplayStyles.literal(body, piece.style())));
-            if (!tail.isEmpty()) {
-                pieces.add(index + 1, Piece.space(SpaceOffset.decode(tail),
-                        SpaceOffset.styleFor(piece.style())));
-            }
-        }
-    }
-
-    private static Component padSlot(Component translated, Component original, Style style) {
-        try {
-            int want = widthOf(original);
-            int got = widthOf(translated);
-            if (want <= 0 || got <= 0 || want == got) {
-                return translated;
-            }
-            String fill = SpaceOffset.encode(want - got);
-            if (fill.isEmpty()) {
-                return translated;
-            }
-            return Component.empty().append(translated).append(
-                    Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
-        } catch (Throwable t) {
-            return translated;
-        }
-    }
-
-    private static String lookupTrimmed(String template, TranslationStore store,
-                                        boolean percent) {
-        String exact = withPercent(template, store, percent);
-        if (exact != null) {
-            int head = 0;
-            while (head < template.length()
-                    && Character.isWhitespace(template.charAt(head))) {
-                head++;
-            }
-            int tail = template.length();
-            while (tail > head && Character.isWhitespace(template.charAt(tail - 1))) {
-                tail--;
-            }
-            return template.substring(0, head) + exact
-                    + reattach(exact, template.substring(tail));
-        }
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-
-        int start = 0;
-        while (start < template.length()) {
-            if (template.startsWith(glyph, start)) {
-                start += glyph.length();
-            } else if (Character.isWhitespace(template.charAt(start))) {
-                start++;
-            } else if (isDecoration(template.codePointAt(start))) {
-                start += Character.charCount(template.codePointAt(start));
-            } else {
-                break;
-            }
-        }
-        int keepColon = trimEnd(template, start, glyph, false);
-        int end = trimEnd(template, start, glyph, true);
-        if (start == 0 && end == template.length()) {
-            return null;
-        }
-        boolean plate = start == 0 && !template.substring(end).isBlank();
-        boolean was = TranslationStore.itemNamesBarred();
-        TranslationStore.barItemNames(was || plate);
-        try {
-            String hit = null;
-            int used = keepColon;
-            if (keepColon > end) {
-                String withColon = template.substring(start, keepColon);
-                hit = withColon.isBlank() ? null : withPercent(withColon, store, percent);
-            }
-            if (hit == null) {
-                used = end;
-                String core = template.substring(start, end);
-                if (core.isBlank()) {
-                    return null;
-                }
-                hit = withPercent(core, store, percent);
-            }
-            if (hit == null) {
-                return null;
-            }
-            return template.substring(0, start) + hit + reattach(hit, template.substring(used));
-        } finally {
-            TranslationStore.barItemNames(was);
-        }
-    }
-
-    private static int trimEnd(String template, int start, String glyph, boolean colons) {
-        int end = template.length();
-        while (end > start) {
-            if (end >= start + glyph.length() && template.startsWith(glyph, end - glyph.length())) {
-                end -= glyph.length();
-            } else if (Character.isWhitespace(template.charAt(end - 1))
-                    || (colons && ColumnAligner.isTrailingColon(template.charAt(end - 1)))) {
-                end--;
-            } else {
-                break;
-            }
-        }
-        return end;
-    }
-
-    private static boolean isDecoration(int codePoint) {
-        return Character.getType(codePoint) == Character.OTHER_SYMBOL;
-    }
-
-    private static String reattach(String translated, String suffix) {
-        if (translated.isEmpty()) {
-            return suffix;
-        }
-        char last = translated.charAt(translated.length() - 1);
-        if (suffix.isBlank()) {
-            return isFullWidthPunctuation(last) ? "" : suffix;
-        }
-        if (ColumnAligner.isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()
-                && ColumnAligner.isTrailingColon(last)) {
-            return suffix.substring(1);
-        }
-        return suffix;
-    }
-
-    private static boolean isFullWidthPunctuation(char c) {
-        return "：，。、！？；）」』】".indexOf(c) >= 0;
-    }
-
-    private static String withPercent(String key, TranslationStore store, boolean percent) {
-        if (percent) {
-            String hit = store.lookup(key.strip() + "%");
-            if (hit != null) {
-                return hit;
-            }
-        }
-        String hit = store.lookup(key);
-        if (hit != null) {
-            return hit;
-        }
-        hit = withQuality(key, store, percent);
-        if (hit != null) {
-            return hit;
-        }
-        hit = withMaker(key, store);
-        if (hit != null) {
-            return hit;
-        }
-        hit = withOwner(key, store);
-        if (hit == null) {
-            hit = eventFrame(key, store);
-        }
-        if (hit == null) {
-            hit = iconlessReward(key, store);
-        }
-        return hit != null ? hit : npcChatLine(key, store);
-    }
-
-    private static final String REWARD_ROW = "- +";
-
-    static String iconlessReward(String key, TranslationStore store) {
-        if (key == null || store == null) {
-            return null;
-        }
-        String core = key.strip();
-        if (!core.startsWith(REWARD_ROW) || core.indexOf('\n') >= 0) {
-            return null;
-        }
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-        String hit = store.lookup(glyph + core);
-        if (hit == null || hit.isBlank() || !hit.startsWith(glyph)) {
-            return null;
-        }
-        String rest = hit.substring(glyph.length());
-        return rest.isBlank() ? null : rest;
-    }
-
-    static String npcChatLine(String template, TranslationStore store) {
-        if (template == null || store == null || !template.startsWith(CHAT_COUNTER)) {
-            return null;
-        }
-        java.util.regex.Matcher m = TranslationStore.CHAT_LINE.matcher(template.strip());
-        if (!m.matches()) {
-            return null;
-        }
-        String speaker = m.group("speaker").strip();
-        String line = m.group("line").strip();
-        if (speaker.isEmpty() || !hasWord(line)
-                || speaker.contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
-            return null;
-        }
-        String said = lookup(line, store);
-        if (said == null || said.isBlank()) {
-            return null;
-        }
-        said = oneLine(said.strip());
-        String name = speakerName(speaker, store);
-        String numberedName = ColumnTemplates.renumber(name, 2);
-        String numberedLine = ColumnTemplates.renumber(said, 2 + ColumnTemplates.countNumbers(speaker));
-        if (numberedName == null || numberedLine == null) {
-            return null;
-        }
-        return "[{~1}/{~2}] " + numberedName + ": " + numberedLine;
-    }
-
-    static final String CHAT_COUNTER = "[{~}/{~}] ";
-
-    private static String speakerName(String speaker, TranslationStore store) {
-        String learned = store.chatSpeaker(speaker);
-        if (learned == null && !store.isItemName(speaker)) {
-            learned = store.lookupExact(speaker);
-        }
-        if (learned == null || learned.isBlank() || learned.indexOf('\n') >= 0
-                || !samePlaceholders(speaker, learned)) {
-            return speaker;
-        }
-        return learned.strip();
-    }
-
-    private static boolean samePlaceholders(String a, String b) {
-        return ColumnTemplates.countNumbers(a) == ColumnTemplates.countNumbers(ColourTemplate.stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
-                && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
-                && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
-                && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
-    }
-
-    private static String oneLine(String text) {
-        if (text.indexOf('\n') < 0) {
-            return text;
-        }
-        StringBuilder out = new StringBuilder(text.length());
-        String[] parts = text.split("\n");
-        for (String part : parts) {
-            String piece = part.strip();
-            if (piece.isEmpty()) {
-                continue;
-            }
-            if (out.length() > 0) {
-                char before = out.charAt(out.length() - 1);
-                char after = piece.charAt(0);
-                if (!isWide(before) && !isWide(after)) {
-                    out.append(' ');
-                }
-            }
-            out.append(piece);
-        }
-        return out.toString();
-    }
-
-    private static boolean isWide(char c) {
-        return Character.UnicodeScript.of(c) == Character.UnicodeScript.HAN
-                || Character.UnicodeScript.of(c) == Character.UnicodeScript.HIRAGANA
-                || Character.UnicodeScript.of(c) == Character.UnicodeScript.KATAKANA
-                || (c >= '　' && c <= '〿') || (c >= '＀' && c <= '￯');
-    }
-
-    static String countdownBoard(String template, TranslationStore store) {
-        if (template == null || store == null || template.indexOf('\n') < 0) {
-            return null;
-        }
-        String[] rows = template.split("\n", -1);
-        boolean timer = false;
-        boolean words = false;
-        for (String row : rows) {
-            timer |= TIMER_ROW.matcher(row.strip()).matches();
-            words |= hasWord(row);
-        }
-        if (!timer || !words) {
-            return null;
-        }
-        StringBuilder out = new StringBuilder();
-        int values = 0;
-        for (int i = 0; i < rows.length; i++) {
-            if (i > 0) {
-                out.append(NEWLINE);
-            }
-            String row = rows[i];
-            String hit;
-            if (TIMER_ROW.matcher(row.strip()).matches()) {
-                hit = store.labelLookup(row);
-                if (hit == null || hit.isBlank()) {
-                    hit = row;
-                }
-            } else if (!hasWord(row)) {
-                hit = row;
-            } else {
-                hit = store.labelLookup(row);
-                if (hit == null || hit.isBlank()) {
-                    hit = lookup(row, store);
-                }
-                if (hit == null || hit.isBlank() || hit.indexOf('\n') >= 0) {
-                    return null;
-                }
-            }
-            String shifted = ColumnTemplates.renumber(ColourTemplate.stripColourTokens(hit), values);
-            if (shifted == null) {
-                return null;
-            }
-            values += ColumnTemplates.countNumbers(row);
-            out.append(shifted);
-        }
-        return out.toString();
-    }
-
-    private static final java.util.regex.Pattern TIMER_ROW =
-            java.util.regex.Pattern.compile("\\{~}[dhms](?: \\{~}[dhms])*");
-
-    static String eventFrame(String template, TranslationStore store) {
-        if (template == null || store == null || template.indexOf('\n') >= 0
-                || !template.contains(EVENT_MARK)) {
-            return null;
-        }
-        java.util.regex.Matcher m = EVENT_LINE.matcher(template.strip());
-        if (!m.matches()) {
-            return null;
-        }
-        String name = m.group("name").strip();
-        if (name.isEmpty() || name.contains(GlyphSplitter.NUMBER_PLACEHOLDER)
-                || name.contains(GlyphSplitter.GLYPH_PLACEHOLDER)
-                || name.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
-            return null;
-        }
-        int lead = count(m.group("lead"), GlyphSplitter.GLYPH_PLACEHOLDER);
-        if (lead > 1) {
-            return null;
-        }
-        String key = GlyphSplitter.GLYPH_PLACEHOLDER + " The " + GlyphSplitter.PLACE_PLACEHOLDER
-                + " World Event starts in "
-                + (m.group("timer").contains("m") ? "{~}m {~}s" : "{~}s")
-                + "! (" + GlyphSplitter.NUMBER_PLACEHOLDER + " blocks away) Click to track";
-        String frame = store.lookup(key);
-        if (frame == null || frame.isBlank()
-                || count(frame, GlyphSplitter.PLACE_PLACEHOLDER) != 1) {
-            return null;
-        }
-        if (lead == 0) {
-            if (!frame.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
-                return null;
-            }
-            frame = frame.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).stripLeading();
-        }
-        return frame.replace(GlyphSplitter.PLACE_PLACEHOLDER, eventName(name, store));
-    }
-
-    private static String eventName(String name, TranslationStore store) {
-        String hit = store.lookup(name + EVENT_SUFFIX);
-        if (hit == null || hit.isBlank()) {
-            return name;
-        }
-        String bare = TRAILING_BRACKET.matcher(hit.strip()).replaceFirst("").strip();
-        return bare.isEmpty() || bare.contains("{") ? name : bare;
-    }
-
-    private static int count(String text, String token) {
-        int n = 0;
-        for (int at = text.indexOf(token); at >= 0; at = text.indexOf(token, at + token.length())) {
-            n++;
-        }
-        return n;
-    }
-
-    private static final String EVENT_MARK = " World Event starts in ";
-
-    private static final String EVENT_SUFFIX = " [World Event]";
-
-    private static final java.util.regex.Pattern TRAILING_BRACKET =
-            java.util.regex.Pattern.compile("\\s*[\\[［][^\\[\\]［］]*[\\]］]$");
-
-    private static final java.util.regex.Pattern EVENT_LINE = java.util.regex.Pattern.compile(
-            "(?<lead>(?:\\{#}\\s*)*)The (?<name>.+?) World Event starts in "
-                    + "(?<timer>\\{~}m\\s*\\{~}s|\\{~}s)!\\s*\\(\\{~} blocks away\\)\\s*Click to track");
-
-    private static String withMaker(String key, TranslationStore store) {
-        String core = key.strip();
-        for (String prefix : NAME_PREFIXES) {
-            if (!core.startsWith(prefix)) {
-                continue;
-            }
-            String name = core.substring(prefix.length()).strip();
-            if (!isName(name)) {
-                continue;
-            }
-            String word = store.lookup(prefix.strip());
-            if (word != null && !word.isBlank()) {
-                return word + " " + name;
-            }
-        }
-        return null;
-    }
-
-    private static String withOwner(String key, TranslationStore store) {
-        String core = key.strip();
-        int at = -1;
-        for (String mark : OWNER_MARKS) {
-            int found = core.indexOf(mark);
-            if (found > 0 && (at < 0 || found < at)) {
-                at = found;
-            }
-        }
-        if (at <= 0) {
-            return null;
-        }
-        String name = core.substring(0, at);
-        if (!isName(name)) {
-            return null;
-        }
-        String whole = core;
-        while (whole.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
-            whole = whole.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length()).strip();
-        }
-        if (store.lookupExact(whole) != null || store.isItemName(whole)) {
-            return null;
-        }
-        String thing = core.substring(at + 3).strip();
-        boolean was = TranslationStore.itemNamesBarred();
-        TranslationStore.barItemNames(true);
-        String zh;
-        try {
-            zh = thing.isEmpty() ? null : store.lookup(thing);
-        } finally {
-            TranslationStore.barItemNames(was);
-        }
-        if (zh == null || zh.isBlank()) {
-            return null;
-        }
-        String form = store.lookup(OWNER_FORM);
-        if (form == null || !form.contains("{owner}") || !form.contains("{thing}")) {
-            return null;
-        }
-        return form.replace("{owner}", name).replace("{thing}", zh);
-    }
-
-    private static final String OWNER_FORM = "{owner}'s {thing}";
-
-    private static final String[] OWNER_MARKS = {"'s ", "’s "};
-
-    static boolean isName(String text) {
-        if (text.isEmpty() || text.length() > NAME_ROOM) {
-            return false;
-        }
-        String bare = text.replaceAll("\\{[^}]*\\}", "");
-        return bare.chars().allMatch(c ->
-                (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-                        || (c >= '0' && c <= '9') || c == '_');
-    }
-
-    private static final int NAME_ROOM = 40;
-
-    private static final String[] NAME_PREFIXES = {"Crafted by "};
-
-    private static String withQuality(String key, TranslationStore store, boolean percent) {
-        String core = key.strip();
-        for (String prefix : QUALITY_PREFIXES) {
-            if (!core.startsWith(prefix)) {
-                continue;
-            }
-            String name = withPercent(core.substring(prefix.length()), store, percent);
-            String word = store.lookup(prefix.strip());
-            if (name != null && word != null) {
-                return word + name;
-            }
-        }
-        return null;
-    }
-
-    private static final String[] QUALITY_PREFIXES = {"Perfect ", "Defective "};
 
     public static Component untranslated(StyledText line) {
         MutableComponent out = Component.empty();
@@ -3112,7 +1706,7 @@ public final class LineTranslator {
             glyphs = new ArrayList<>(overrideGlyphs);
         }
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
-        accents = withTranslations(accents, String.join(String.valueOf(NEWLINE), translated), store);
+        accents = TermSubstitution.withTranslations(accents, String.join(String.valueOf(NEWLINE), translated), store);
         List<LineParts.Piece> segmented = segmentAccents(parts, translated, blockStyle, accents);
         if (segmented != null) {
             accents.addAll(segmented);
@@ -3124,7 +1718,7 @@ public final class LineTranslator {
 
         String[] flowed = keepAccentsWhole(translated, accents);
         accents.addAll(halvesAcrossBreaks(flowed, accents));
-        flowed = forcedTerms(flowed, store);
+        flowed = TermSubstitution.forcedTerms(flowed, store);
 
         List<List<ColourTemplate.Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
@@ -3349,7 +1943,7 @@ public final class LineTranslator {
             lead = unit;
         }
         int mid = lead;
-        while (mid < tail && isPictograph(text.charAt(mid))) {
+        while (mid < tail && TermSubstitution.isPictograph(text.charAt(mid))) {
             mid++;
         }
         if (mid > lead) {
@@ -3371,7 +1965,7 @@ public final class LineTranslator {
                 end--;
             }
             int start = end;
-            while (start > lead && isPictograph(text.charAt(start - 1))) {
+            while (start > lead && TermSubstitution.isPictograph(text.charAt(start - 1))) {
                 start--;
             }
             if (start < end && exactAccent(text.substring(start, end), accents, used) < 0) {
@@ -3396,7 +1990,7 @@ public final class LineTranslator {
             if (text == null || text.isEmpty()) {
                 continue;
             }
-            return isPictograph(text.charAt(0)) ? run.style() : null;
+            return TermSubstitution.isPictograph(text.charAt(0)) ? run.style() : null;
         }
         return null;
     }
@@ -3450,7 +2044,7 @@ public final class LineTranslator {
     }
 
     static boolean hugs(char c) {
-        if (Character.isLetterOrDigit(c) || Character.isWhitespace(c) || isHan(c)) {
+        if (Character.isLetterOrDigit(c) || Character.isWhitespace(c) || TermSubstitution.isHan(c)) {
             return false;
         }
         return c != '(' && c != ')' && c != '（' && c != '）';
@@ -3600,13 +2194,13 @@ public final class LineTranslator {
                     which = k;
                 }
             }
-            TranslationStore.Term term = store == null ? null : termOutside(store, text, from, kept);
+            TranslationStore.Term term = store == null ? null : TermSubstitution.termOutside(store, text, from, kept);
             boolean longer = term != null && at >= 0 && term.start() == at
                     && term.end() - term.start() >= accents.get(which).text().length();
             if (term != null && (at < 0 || term.start() < at || longer)) {
                 if (term.start() > from) {
                     String before = text.substring(from, term.start());
-                    if (dropsSpaceBefore(before, term.translation())) {
+                    if (TermSubstitution.dropsSpaceBefore(before, term.translation())) {
                         before = before.substring(0, before.length() - 1);
                     }
                     out.append(DisplayStyles.literal(before, base));
@@ -3626,7 +2220,7 @@ public final class LineTranslator {
                 }
                 out.append(DisplayStyles.literal(term.translation(), style));
                 from = term.end();
-                if (dropsSpaceAfter(term.translation(), text, from)) {
+                if (TermSubstitution.dropsSpaceAfter(term.translation(), text, from)) {
                     from++;
                 }
                 continue;
@@ -3639,327 +2233,16 @@ public final class LineTranslator {
                 out.append(DisplayStyles.literal(text.substring(from, at), base));
             }
             LineParts.Piece accent = accents.get(which);
-            boolean keep = overlapping(kept, at, at + accent.text().length()) != null;
+            boolean keep = TermSubstitution.overlapping(kept, at, at + accent.text().length()) != null;
             String shown = store == null || keep ? null : store.lookupTerm(accent.text());
             if (shown == null && store != null && !keep) {
-                shown = termsWithin(accent.text(), store);
+                shown = TermSubstitution.termsWithin(accent.text(), store);
             }
             out.append(DisplayStyles.literal(shown != null ? shown : accent.text(),
                                DisplayStyles.forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
-    }
-
-    static String breakBeforeOriginal(String text, int maxPx, TranslationStore store,
-                                      ToIntFunction<String> measure) {
-        if (store == null || maxPx <= 0 || text.indexOf('\n') >= 0) {
-            return text;
-        }
-        int at = store.appendedOriginalAt(text);
-        if (at < 0 || measure.applyAsInt(text) <= maxPx) {
-            return text;
-        }
-        int close = text.lastIndexOf(')') + 1;
-        return text.substring(0, at) + text.substring(close) + "\n"
-                + text.substring(at + 1, close);
-    }
-
-    static String termsWithin(String text, TranslationStore store) {
-        List<int[]> kept = store == null ? List.of() : store.keptOriginals(text);
-
-        StringBuilder out = new StringBuilder();
-        int from = 0;
-        boolean any = false;
-        TranslationStore.Term term;
-        while (from < text.length() && (term = termOutside(store, text, from, kept)) != null) {
-            String before = text.substring(from, term.start());
-            if (dropsSpaceBefore(before, term.translation())) {
-                before = before.substring(0, before.length() - 1);
-            }
-            out.append(before).append(term.translation());
-            from = term.end();
-            if (dropsSpaceAfter(term.translation(), text, from)) {
-                from++;
-            }
-            any = true;
-        }
-        return any ? out.append(text.substring(Math.min(from, text.length()))).toString()
-                   : null;
-    }
-
-    static String[] forcedTerms(String[] lines, TranslationStore store) {
-        if (store == null || lines.length == 0) {
-            return lines;
-        }
-        String joined = String.join(String.valueOf(NEWLINE), lines);
-        if (joined.indexOf("{c") < 0 && joined.indexOf("{w") < 0) {
-            return lines;
-        }
-        StringBuilder plain = new StringBuilder(joined.length());
-        int[] origin = new int[joined.length()];
-        boolean[] inSpan = new boolean[joined.length()];
-        boolean forced = false;
-        for (int i = 0; i < joined.length(); ) {
-            ColourTemplate.Token colour = ColourTemplate.colourToken(joined, i);
-            if (colour != null) {
-                forced = colour.index() != 0;
-                i += colour.text().length();
-                continue;
-            }
-            origin[plain.length()] = i;
-            inSpan[plain.length()] = forced;
-            plain.append(joined.charAt(i++));
-        }
-        String text = plain.toString();
-        List<int[]> kept = store.keptOriginals(text);
-        List<int[]> cuts = new ArrayList<>();
-        List<String> with = new ArrayList<>();
-        int from = 0;
-        TranslationStore.Term term;
-        while (from < text.length() && (term = termOutside(store, text, from, kept)) != null) {
-            from = term.end();
-            int start = term.start();
-            int end = term.end();
-            boolean whole = true;
-            for (int k = start; k < end && whole; k++) {
-                whole = inSpan[k];
-            }
-            if (!whole || origin[end - 1] - origin[start] != end - 1 - start) {
-                continue;
-            }
-            if (dropsSpaceBefore(text.substring(0, start), term.translation())) {
-                cuts.add(new int[] {origin[start - 1], origin[start - 1] + 1});
-                with.add("");
-            }
-            cuts.add(new int[] {origin[start], origin[end - 1] + 1});
-            with.add(term.translation());
-            if (dropsSpaceAfter(term.translation(), text, end)) {
-                cuts.add(new int[] {origin[end], origin[end] + 1});
-                with.add("");
-                from = end + 1;
-            }
-        }
-        if (cuts.isEmpty()) {
-            return lines;
-        }
-        StringBuilder out = new StringBuilder(joined);
-        for (int k = cuts.size() - 1; k >= 0; k--) {
-            out.replace(cuts.get(k)[0], cuts.get(k)[1], with.get(k));
-        }
-        return out.toString().split(String.valueOf(NEWLINE), -1);
-    }
-
-    private static TranslationStore.Term termOutside(TranslationStore store, String text,
-                                                     int from, List<int[]> kept) {
-        int at = from;
-        while (at < text.length()) {
-            TranslationStore.Term term = store.findTerm(text, at);
-            if (term == null) {
-                return null;
-            }
-            int[] in = overlapping(kept, term.start(), term.end());
-            if (in == null) {
-                return term;
-            }
-            at = Math.max(term.start() + 1, in[1]);
-        }
-        return null;
-    }
-
-    private static int[] overlapping(List<int[]> spans, int start, int end) {
-        for (int[] span : spans) {
-            if (start < span[1] && end > span[0]) {
-                return span;
-            }
-        }
-        return null;
-    }
-
-    private static List<LineParts.Piece> withTranslations(List<LineParts.Piece> accents,
-                                                          String translated,
-                                                          TranslationStore store) {
-        if (store == null || accents.isEmpty()) {
-            return accents;
-        }
-        List<LineParts.Piece> out = new ArrayList<>(accents);
-        for (LineParts.Piece accent : accents) {
-            String core = accent.text().strip();
-            if (core.isEmpty()) {
-                continue;
-            }
-            addStem(out, core, accent.style(), translated);
-            String zh = store.lookup(core);
-            if (zh == null || zh.isBlank()) {
-                zh = store.lookupTerm(core);
-            }
-            if (zh == null || zh.isBlank()) {
-                zh = lookupWordCore(core, store);
-            }
-            if (zh != null && !zh.isBlank() && !zh.equals(core)) {
-                String wrapped = wrapLikeSource(core, zh, translated);
-                out.add(new LineParts.Piece(wrapped != null ? wrapped : zh, accent.style()));
-            }
-        }
-        return out;
-    }
-
-    static String wrapLikeSource(String core, String zh, String translated) {
-        if (core == null || zh == null || translated == null
-                || core.length() < 3 || zh.isBlank()) {
-            return null;
-        }
-        if (core.charAt(0) != '[' || core.charAt(core.length() - 1) != ']') {
-            return null;
-        }
-        String inner = core.substring(1, core.length() - 1);
-        if (inner.isBlank() || inner.indexOf('[') >= 0 || inner.indexOf(']') >= 0) {
-            return null;
-        }
-        if (zh.indexOf('[') >= 0 || zh.indexOf(']') >= 0) {
-            return null;
-        }
-        String wrapped = "[" + zh + "]";
-        if (translated.contains(wrapped)) {
-            return wrapped;
-        }
-        return countedWrap(zh, translated);
-    }
-
-    private static String countedWrap(String zh, String translated) {
-        int at = 0;
-        while ((at = translated.indexOf('[', at)) >= 0) {
-            int close = translated.indexOf(']', at + 1);
-            if (close < 0) {
-                return null;
-            }
-            String inner = translated.substring(at + 1, close);
-            if (inner.endsWith(zh)
-                    && onlyCount(inner.substring(0, inner.length() - zh.length()))) {
-                return translated.substring(at, close + 1);
-            }
-            at = close + 1;
-        }
-        return null;
-    }
-
-    private static boolean onlyCount(String lead) {
-        if (lead.isBlank()) {
-            return false;
-        }
-        String bare = lead.replace(com.wynnchayuan.capture.GlyphSplitter.NUMBER_PLACEHOLDER, "")
-                          .replace(" ", "");
-        for (int i = 0; i < bare.length(); i++) {
-            if (!Character.isDigit(bare.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    static String lookupWordCore(String text, TranslationStore store) {
-        int from = 0;
-        int to = text.length();
-        while (from < to && !Character.isLetterOrDigit(text.charAt(from))) {
-            from++;
-        }
-        while (to > from && !Character.isLetterOrDigit(text.charAt(to - 1))) {
-            to--;
-        }
-        if (from == 0 && to == text.length()) {
-            return null;
-        }
-        String core = text.substring(from, to).strip();
-        if (core.isEmpty()) {
-            return null;
-        }
-        String zh = store.lookup(core);
-        if (zh == null || zh.isBlank()) {
-            zh = store.lookupTerm(core);
-        }
-        return zh == null || zh.isBlank() ? withoutCount(core, store) : zh;
-    }
-
-    private static String withoutCount(String core, TranslationStore store) {
-        int at = 0;
-        while (at < core.length() && Character.isDigit(core.charAt(at))) {
-            at++;
-        }
-        if (at > 0) {
-            while (at + 1 < core.length() && (core.charAt(at) == '.' || core.charAt(at) == ',')
-                    && Character.isDigit(core.charAt(at + 1))) {
-                at++;
-                while (at < core.length() && Character.isDigit(core.charAt(at))) {
-                    at++;
-                }
-            }
-            if (at < core.length() && core.charAt(at) == '%') {
-                at++;
-            }
-        }
-        if (at == 0 || at >= core.length() || core.charAt(at) != ' ') {
-            return null;
-        }
-        String rest = core.substring(at + 1).strip();
-        if (rest.isEmpty() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(rest)) {
-            return null;
-        }
-        String zh = store.lookup(rest);
-        if (zh == null || zh.isBlank()) {
-            zh = store.lookupTerm(rest);
-        }
-        return zh == null || zh.isBlank() ? asSingular(rest, store) : zh;
-    }
-
-    private static String asSingular(String plural, TranslationStore store) {
-        List<String> tries = new ArrayList<>(2);
-        if (plural.endsWith("ies") && plural.length() > 3) {
-            tries.add(plural.substring(0, plural.length() - 3) + "y");
-        } else if (plural.endsWith("es") && plural.length() > 2) {
-            tries.add(plural.substring(0, plural.length() - 2));
-            tries.add(plural.substring(0, plural.length() - 1));
-        } else if (plural.endsWith("s") && !plural.endsWith("ss")
-                && plural.length() > 1) {
-            tries.add(plural.substring(0, plural.length() - 1));
-        }
-        for (String one : tries) {
-            String zh = store.lookup(one);
-            if (zh == null || zh.isBlank()) {
-                zh = store.lookupTerm(one);
-            }
-            if (zh != null && !zh.isBlank()) {
-                return zh;
-            }
-        }
-        return null;
-    }
-
-    static boolean dropsSpaceBefore(String before, String translation) {
-        return before.length() >= 2
-                && before.charAt(before.length() - 1) == ' '
-                && isHan(before.charAt(before.length() - 2))
-                && !translation.isEmpty() && isHan(translation.charAt(0));
-    }
-
-    static boolean dropsSpaceAfter(String translation, String text, int at) {
-        return !translation.isEmpty() && isHan(translation.charAt(translation.length() - 1))
-                && at + 1 < text.length()
-                && text.charAt(at) == ' '
-                && isHan(text.charAt(at + 1));
-    }
-
-    private static boolean isPictograph(char c) {
-        return c > 0x7F && !isHan(c) && !Character.isLetterOrDigit(c)
-                && !Character.isWhitespace(c);
-    }
-
-    private static boolean isHan(char c) {
-        Character.UnicodeScript script = Character.UnicodeScript.of(c);
-        return script == Character.UnicodeScript.HAN
-                || script == Character.UnicodeScript.HIRAGANA
-                || script == Character.UnicodeScript.KATAKANA
-                || (c >= '＀' && c <= '￯')
-                || (c >= '　' && c <= '〿');
     }
 
     public static Component unslantAll(Component line) {
@@ -4009,5 +2292,13 @@ public final class LineTranslator {
 
     public static Component[] flowColumn(List<StyledText> rows, TranslationStore store, boolean[] centred) {
         return ChatPanelFlow.flowColumn(rows, store, centred);
+    }
+
+    public static Component translateFloating(StyledText label, TranslationStore store) {
+        return LabelTranslator.translateFloating(label, store);
+    }
+
+    public static Component translateLabel(StyledText label, TranslationStore store) {
+        return LabelTranslator.translateLabel(label, store);
     }
 }

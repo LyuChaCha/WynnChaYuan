@@ -70,17 +70,17 @@ public final class GlyphNameOriginalTest {
         check("★ 沒有被記成「翻了卻沒顯示」（實際 " + UnappliedAudit.toJson() + "）",
                 UnappliedAudit.size() == 0);
 
-        String swapped = LineTranslator.termsWithin(shown, store);
+        String swapped = TermSubstitution.termsWithin(shown, store);
         check("★ 折行前換詞不動附的原文（實際 " + swapped + "）",
                 swapped == null || swapped.contains("(" + TOME + ")"));
         check("「 (」的位置找得到（實際 " + store.appendedOriginalAt(shown) + "）",
                 store.appendedOriginalAt(shown) == shown.indexOf(" ("));
-        String body = LineTranslator.termsWithin("Tome of Allegiance grants power", store);
+        String body = TermSubstitution.termsWithin("Tome of Allegiance grants power", store);
         check("一般內文照樣換詞（實際 " + body + "）",
                 body != null && body.contains("效忠") && body.contains("書"));
 
         ToIntFunction<String> measure = GlyphNameOriginalTest::cells;
-        String broken = LineTranslator.breakBeforeOriginal(shown, cells(WRAPPED), store, measure);
+        String broken = TermSubstitution.breakBeforeOriginal(shown, cells(WRAPPED), store, measure);
         same("折行前那一刀：結尾的圖示留在名字那一行",
                 "{#}戀火效忠書卷{#}\n(" + TOME + ")", broken);
         if (built != null) {

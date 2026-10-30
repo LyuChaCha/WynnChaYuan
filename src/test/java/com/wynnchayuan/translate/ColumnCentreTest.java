@@ -132,27 +132,27 @@ public final class ColumnCentreTest {
 
     private static void spacing() {
         check("中文 + 空格 + 換成中文的譯名 → 空格要吃掉",
-                LineTranslator.dropsSpaceBefore("提高 ", "重擊"));
+                TermSubstitution.dropsSpaceBefore("提高 ", "重擊"));
         check("英文後面的空格要留著 —— 拿掉會黏成一團",
-                !LineTranslator.dropsSpaceBefore("gains ", "重擊"));
+                !TermSubstitution.dropsSpaceBefore("gains ", "重擊"));
         check("譯名還是英文時空格照留",
-                !LineTranslator.dropsSpaceBefore("提高 ", "Bash"));
-        check("沒有空格就沒事", !LineTranslator.dropsSpaceBefore("提高", "重擊"));
+                !TermSubstitution.dropsSpaceBefore("提高 ", "Bash"));
+        check("沒有空格就沒事", !TermSubstitution.dropsSpaceBefore("提高", "重擊"));
 
         check("中文譯名後面接空格再接中文 → 吃掉",
-                LineTranslator.dropsSpaceAfter("重擊", "重擊 的作用範圍", 2));
+                TermSubstitution.dropsSpaceAfter("重擊", "重擊 的作用範圍", 2));
         check("後面接的是英文就留著",
-                !LineTranslator.dropsSpaceAfter("重擊", "重擊 gains", 2));
+                !TermSubstitution.dropsSpaceAfter("重擊", "重擊 gains", 2));
         check("行尾沒有東西可以黏，不動",
-                !LineTranslator.dropsSpaceAfter("重擊", "重擊 ", 2));
+                !TermSubstitution.dropsSpaceAfter("重擊", "重擊 ", 2));
 
-        check("德文不吃空格", !LineTranslator.dropsSpaceBefore("mehr ", "Schaden"));
-        check("西班牙文不吃空格", !LineTranslator.dropsSpaceBefore("del ", "hechizo"));
-        check("俄文不吃空格", !LineTranslator.dropsSpaceBefore("урон ", "заклинаний"));
+        check("德文不吃空格", !TermSubstitution.dropsSpaceBefore("mehr ", "Schaden"));
+        check("西班牙文不吃空格", !TermSubstitution.dropsSpaceBefore("del ", "hechizo"));
+        check("俄文不吃空格", !TermSubstitution.dropsSpaceBefore("урон ", "заклинаний"));
         check("諺文不吃空格 —— 韓文是靠空格分詞的",
-                !LineTranslator.dropsSpaceBefore("마법 ", "피해"));
+                !TermSubstitution.dropsSpaceBefore("마법 ", "피해"));
         check("諺文後面的空格也要留著",
-                !LineTranslator.dropsSpaceAfter("피해", "피해 증가", 2));
+                !TermSubstitution.dropsSpaceAfter("피해", "피해 증가", 2));
     }
 
     private static void glyphPrefixedAccent() throws IOException {
@@ -169,13 +169,13 @@ public final class ColumnCentreTest {
         check("直接查帶圖示的色段會落空（這就是原本的狀況）",
                 store.lookup(segment) == null);
         check("剝掉前後的圖示與空白之後查得到",
-                "地屬性".equals(LineTranslator.lookupWordCore(segment, store)));
+                "地屬性".equals(TermSubstitution.lookupWordCore(segment, store)));
         check("圖示在後面也認得",
-                "普攻".equals(LineTranslator.lookupWordCore("Main Attack ", store)));
+                "普攻".equals(TermSubstitution.lookupWordCore("Main Attack ", store)));
         check("沒有東西可剝就回傳 null，交給前面的查法",
-                LineTranslator.lookupWordCore("Earth", store) == null);
+                TermSubstitution.lookupWordCore("Earth", store) == null);
         check("剝完查不到就是查不到",
-                LineTranslator.lookupWordCore(" Nonsense", store) == null);
+                TermSubstitution.lookupWordCore(" Nonsense", store) == null);
     }
 
     private static void wrapKeepsAccentsWhole() {
