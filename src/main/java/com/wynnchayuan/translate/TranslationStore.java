@@ -92,7 +92,7 @@ public final class TranslationStore {
     }
 
     public boolean isPlainName(String key) {
-        return index.isPlainName(key);
+        return index.nameRules.isPlainName(key);
     }
 
     public List<Path> brokenFiles() {
@@ -132,7 +132,7 @@ public final class TranslationStore {
     }
 
     public Guess playerNameIn(String raw) {
-        return index.playerNameIn(raw);
+        return index.playerNames.playerNameIn(raw);
     }
 
     public String lookupUnwrapped(String text) {
@@ -144,15 +144,15 @@ public final class TranslationStore {
     }
 
     public Term findTerm(String text, int from) {
-        return index.findTerm(text, from);
+        return index.termIndex.findTerm(text, from);
     }
 
     public String lookupTerm(String text) {
-        return index.lookupTerm(text);
+        return index.termIndex.lookupTerm(text);
     }
 
     java.util.Set<String> termNames() {
-        return index.termNames();
+        return index.termIndex.termNames();
     }
 
     public boolean isPageName(String text) {
@@ -164,95 +164,95 @@ public final class TranslationStore {
     }
 
     public String speakerOf(String template) {
-        return index.speakerOf(template);
+        return index.questIndex.speakerOf(template);
     }
 
     public Boolean inCast(String quest, String speaker) {
-        return index.inCast(quest, speaker);
+        return index.questIndex.inCast(quest, speaker);
     }
 
     public String questOf(String template) {
-        return index.questOf(template);
+        return index.questIndex.questOf(template);
     }
 
     public String lookupPrefix(String partial) {
-        return index.lookupPrefix(partial);
+        return index.questIndex.lookupPrefix(partial);
     }
 
     public String speakerOfPrefix(String partial) {
-        return index.speakerOfPrefix(partial);
+        return index.questIndex.speakerOfPrefix(partial);
     }
 
     public String matchPrefix(String partial) {
-        return index.matchPrefix(partial);
+        return index.questIndex.matchPrefix(partial);
     }
 
     public String matchPrefix(String partial, int evidence) {
-        return index.matchPrefix(partial, evidence);
+        return index.questIndex.matchPrefix(partial, evidence);
     }
 
     public String matchPrefix(String partial, int evidence, String quest) {
-        return index.matchPrefix(partial, evidence, quest);
+        return index.questIndex.matchPrefix(partial, evidence, quest);
     }
 
     public String nearQuestLine(String typed, String quest) {
-        return index.nearQuestLine(typed, quest);
+        return index.questIndex.nearQuestLine(typed, quest);
     }
 
     public String sequenceQuestOf(String src, String... prefer) {
-        return index.sequenceQuestOf(src, prefer);
+        return index.questIndex.sequenceQuestOf(src, prefer);
     }
 
     public int sequenceIndex(String quest, String src, int after) {
-        return index.sequenceIndex(quest, src, after);
+        return index.questIndex.sequenceIndex(quest, src, after);
     }
 
     public String forecast(String typed, String quest, int after, int window, String speaker, int floor,
                            java.util.function.BiPredicate<String, String> fits) {
-        return index.forecast(typed, quest, after, window, speaker, floor, fits);
+        return index.questIndex.forecast(typed, quest, after, window, speaker, floor, fits);
     }
 
     public String forecastBySpeaker(String typed, String quest, String speaker, int floor,
                                     java.util.function.BiPredicate<String, String> fits) {
-        return index.forecastBySpeaker(typed, quest, speaker, floor, fits);
+        return index.questIndex.forecastBySpeaker(typed, quest, speaker, floor, fits);
     }
 
     public String forecastNext(String typed, String quest, int after, int window, String speaker, int floor,
                                java.util.function.BiPredicate<String, String> fits) {
-        return index.forecastNext(typed, quest, after, window, speaker, floor, fits);
+        return index.questIndex.forecastNext(typed, quest, after, window, speaker, floor, fits);
     }
 
     public String explainForecast(String typed, String quest, int after, int window, String speaker,
                                   java.util.function.BiPredicate<String, String> fits) {
-        return index.explainForecast(typed, quest, after, window, speaker, fits);
+        return index.questIndex.explainForecast(typed, quest, after, window, speaker, fits);
     }
 
     public String explainQuest(String typed, String quest) {
-        return index.explainQuest(typed, quest);
+        return index.questIndex.explainQuest(typed, quest);
     }
 
     public boolean hasLonger(String key) {
-        return index.hasLonger(key);
+        return index.questIndex.hasLonger(key);
     }
 
     public boolean couldStillMatch(String typed) {
-        return index.couldStillMatch(typed);
+        return index.questIndex.couldStillMatch(typed);
     }
 
     public boolean isBareGearName(String key) {
-        return index.isBareGearName(key);
+        return index.nameRules.isBareGearName(key);
     }
 
     public boolean itemNameOnly(String key) {
-        return index.itemNameOnly(key);
+        return index.nameRules.itemNameOnly(key);
     }
 
     public boolean gearNameOnly(String key) {
-        return index.gearNameOnly(key);
+        return index.nameRules.gearNameOnly(key);
     }
 
     public boolean isItemName(String key) {
-        return index.isItemName(key);
+        return index.nameRules.isItemName(key);
     }
 
     public String lookupExact(String key) {
@@ -272,19 +272,19 @@ public final class TranslationStore {
     }
 
     public int appendedOriginalAt(String text) {
-        return index.appendedOriginalAt(text);
+        return index.nameRules.appendedOriginalAt(text);
     }
 
     public List<int[]> keptOriginals(String text) {
-        return index.keptOriginals(text);
+        return index.nameRules.keptOriginals(text);
     }
 
     List<int[]> abilityOriginalSpans(String text) {
-        return index.abilityOriginalSpans(text);
+        return index.nameRules.abilityOriginalSpans(text);
     }
 
     public int[] appendedOriginalSpan(String text) {
-        return index.appendedOriginalSpan(text);
+        return index.nameRules.appendedOriginalSpan(text);
     }
 
     public java.util.Set<String> sourceKeys() {
