@@ -1757,3 +1757,18 @@ tasks.register('runReloadRaceChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ReloadRaceTest'
 }
 tasks.named('check') { dependsOn 'runReloadRaceChecks' }
+
+tasks.register('goldenDump', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    description = '把翻譯輸出攤成逐行快照，重構前後比對用（tools/golden-diff.py）'
+    mainClass = 'com.wynnchayuan.golden.TranslationGoldenDump'
+    maxHeapSize = '4g'
+    def out = providers.gradleProperty('golden.out')
+            .orElse(layout.buildDirectory.file('golden/golden.txt').get().asFile.path).get()
+    def corpus = providers.gradleProperty('golden.corpus')
+            .orElse(file('src/main/resources/assets/wynnchayuan/translations').path).get()
+    def samples = providers.gradleProperty('golden.samples').orElse('').get()
+    args([out, corpus] + samples.tokenize(File.pathSeparator))
+}
