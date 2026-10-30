@@ -67,6 +67,7 @@ public final class WynnventoryBridge {
         try {
             Language.inject(wrap(Language.getInstance()));
         } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.refresh", null, t);
         }
     }
 
@@ -87,14 +88,13 @@ public final class WynnventoryBridge {
         if (!active || base == null || !ours(key)) {
             return base;
         }
-        TranslationStore store;
         try {
-            store = WynnChaYuan.translations();
+            String hit = text(WynnChaYuan.translations(), base);
+            return hit == null ? base : hit;
         } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.lang", key, t);
             return base;
         }
-        String hit = text(store, base);
-        return hit == null ? base : hit;
     }
 
     public static String text(TranslationStore store, String english) {
@@ -146,16 +146,26 @@ public final class WynnventoryBridge {
         if (!active || text == null) {
             return null;
         }
-        String hit = text(store(), text.getString());
-        return hit == null ? null : Component.literal(hit).withStyle(text.getStyle());
+        try {
+            String hit = text(store(), text.getString());
+            return hit == null ? null : Component.literal(hit).withStyle(text.getStyle());
+        } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.label", null, t);
+            return null;
+        }
     }
 
     public static String word(String english) {
         if (!active || english == null || english.isEmpty()) {
             return english;
         }
-        String hit = text(store(), english);
-        return hit == null ? english : hit;
+        try {
+            String hit = text(store(), english);
+            return hit == null ? english : hit;
+        } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.word", english, t);
+            return english;
+        }
     }
 
     private static final java.util.regex.Pattern TOAST_FOUND = java.util.regex.Pattern.compile(
@@ -172,6 +182,7 @@ public final class WynnventoryBridge {
             return done == null ? description
                     : Component.literal(done).withStyle(description.getStyle());
         } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.toast", null, t);
             return description;
         }
     }
@@ -189,7 +200,7 @@ public final class WynnventoryBridge {
         if (!found.matches()) {
             return null;
         }
-        String name = store.lookup(found.group(2));
+        String name = shownName(store, found.group(2));
         String frame = text(store, "%s in %s");
         if ((name == null || name.isBlank()) && frame == null) {
             return null;
@@ -218,13 +229,12 @@ public final class WynnventoryBridge {
         if (!active || lines == null || lines.isEmpty()) {
             return lines;
         }
-        TranslationStore store;
         try {
-            store = WynnChaYuan.translations();
+            return lines(WynnChaYuan.translations(), lines);
         } catch (Throwable t) {
+            ErrorDebug.note("wynnventory.lines", null, t);
             return lines;
         }
-        return lines(store, lines);
     }
 
     static List<Component> lines(TranslationStore store, List<Component> lines) {
@@ -357,11 +367,30 @@ public final class WynnventoryBridge {
         if (body.isEmpty()) {
             return null;
         }
-        String hit = store.lookup(body);
+        String hit = shownName(store, body);
         if (hit == null || hit.isBlank() || hit.equals(body)) {
             return null;
         }
         return text.substring(0, start) + hit + text.substring(start + body.length());
+    }
+
+    static String shownName(TranslationStore store, String text) {
+        if (!store.isItemName(text)) {
+            return store.lookup(text);
+        }
+        if (store.isBareGearName(text) && !(store.translatesNames() && store.gearOwnName(text) != null)) {
+            return null;
+        }
+        boolean held = TranslationStore.appendedOriginalHeld();
+        boolean onName = TranslationStore.onNameLine();
+        try {
+            TranslationStore.holdAppendedOriginal(false);
+            TranslationStore.nameLine(true);
+            return store.lookup(text);
+        } finally {
+            TranslationStore.holdAppendedOriginal(held);
+            TranslationStore.nameLine(onName);
+        }
     }
 
     private static boolean latinLetter(char c) {
