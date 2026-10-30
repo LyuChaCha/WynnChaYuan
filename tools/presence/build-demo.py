@@ -132,6 +132,16 @@ def find(node, src):
     return None
 
 
+def has_source(node, src):
+    if isinstance(node, dict):
+        if node.get('src') == src or (src in node and src not in ('src', 'dst')):
+            return True
+        return any(has_source(value, src) for value in node.values() if isinstance(value, (dict, list)))
+    if isinstance(node, list):
+        return any(has_source(value, src) for value in node)
+    return False
+
+
 def collect():
     problems = []
     ui = {}
@@ -151,8 +161,8 @@ def collect():
             if name not in cache:
                 cache[name] = load(os.path.join(ASSETS, 'translations', lang, *name.split('/')))
             value = find(cache[name], src)
-            if not value:
-                problems.append('%s 的 %s 沒有「%s」的譯文' % (lang, name, src))
+            if not value and not has_source(cache[name], src):
+                problems.append('%s 的 %s 沒有「%s」這一條' % (lang, name, src))
             text[lang][src] = value or ''
     if problems:
         sys.exit('\n'.join(problems))
