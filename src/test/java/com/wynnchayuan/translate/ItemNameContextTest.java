@@ -34,7 +34,7 @@ public final class ItemNameContextTest {
     private static final String ROOT = "src/main/resources/assets/wynnchayuan/translations";
 
     public static void main(String[] args) throws Exception {
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp")) {
+        for (String lang : List.of("zh_tw", "ja_jp")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of(ROOT, lang));
             store.setNameMode(CollectorConfig.ItemNames.BOTH);

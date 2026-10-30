@@ -100,6 +100,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
+        NetworkGate.use(config);
         // 滑過卡片時，把模組<b>實際查表用的整段鍵</b>另外記一份。
         //
         // 不跟著 debugDumps 走：這不是診斷檔，是要交出去的語料稿。它自己看
@@ -177,14 +178,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         store.knowsLonger(t -> translations.hasLonger(t));
         // 切換語言之後，先前畫出去的譯文會被當成原文收進來——見 OwnOutputs。
         com.wynnchayuan.capture.OwnOutputs.buildAsync();
-        // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
-        //
-        // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文
-        // 都沒有。少了這一層，簡體中文的玩家會在 zh_cn/ 建好的那一刻，
-        // 從「看得到繁體」變成「什麼都看不到」——多一種語言反而害了他。
-        //
-        // 只在同語族之內墊，見 Languages#fallbackFor：日文與俄文的玩家
-        // 不該因為那邊還沒翻就突然看到滿畫面中文。
+        // 玩家在 F6 指名輔助語言時先鋪那一層當底，再把選定的那一種疊上去。
         //
         // 疊得起來是因為載入端本來就會跳過空的 dst（見 TranslationStore），
         // 而後載入的會蓋掉先載入的。於是每一條各自回退。
@@ -220,7 +214,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 而同步要抓哪一個語言的檔得先知道語言是哪一個，所以接在它後面。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
             settleAutoLanguage();
-            startBackgroundSync();
+            startNetworked();
         });
 
         // 按鍵綁定壞掉不該把整個遊戲擋在門外。1.99.2 就是在這裡丟了一個
@@ -527,21 +521,12 @@ public final class WynnChaYuan implements ClientModInitializer {
     /**
      * 沒翻到的地方要拿哪一種語言墊底。
      *
-     * <p>設定沒指定時照 {@code Languages#fallbackFor} 的自動規則（同語族才墊）；
-     * 指名了就照指名的；{@code "off"} 就不墊，沒翻到的地方顯示英文原文。
+     * <p>只有玩家指名了才墊；沒指定或 {@code "off"} 都不墊，沒翻到的地方顯示英文原文。
      *
      * @return 要墊的語言；不墊時回傳 {@code null}
      */
     public static String fallbackLanguage() {
-        String chosen = config.fallbackLanguage();
-        if (OFF.equals(chosen)) {
-            return null;
-        }
-        if (!chosen.isEmpty()) {
-            // 指名自己沒有意義，那會讀同一個資料夾兩次
-            return chosen.equals(language) ? null : chosen;
-        }
-        return com.wynnchayuan.translate.Languages.fallbackFor(language);
+        return com.wynnchayuan.translate.Languages.underlay(config.fallbackLanguage(), language);
     }
 
     /**
@@ -590,7 +575,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
     /** {@code fallbackLanguage} 設成這個就是「不墊，顯示原文」。 */
-    public static final String OFF = "off";
+    public static final String OFF = com.wynnchayuan.translate.Languages.OFF;
 
     /**
      * 換一種語言的譯文，不必重開遊戲。
@@ -749,6 +734,62 @@ public final class WynnChaYuan implements ClientModInitializer {
         sync.start();
     }
 
+    public static void startNetworked() {
+        NetworkGate.start(config, new NetworkGate.Services() {
+            @Override
+            public void updateCheck() {
+                Releases.fetchLatest();
+            }
+
+            @Override
+            public void translationSync() {
+                startBackgroundSync();
+            }
+
+            @Override
+            public void deleteData() {
+                deleteServerData(null);
+            }
+        });
+    }
+
+    public static void setConsent(boolean agreed) {
+        config.setConsent(agreed ? CollectorConfig.Consent.AGREED : CollectorConfig.Consent.DECLINED);
+        if (agreed) {
+            startNetworked();
+        } else {
+            Presence.forget();
+        }
+    }
+
+    public static void setDataOptOut(boolean on,
+                                     java.util.function.Consumer<Presence.DeleteResult> done) {
+        config.setDataOptOut(on);
+        if (!on) {
+            return;
+        }
+        Presence.forget();
+        try {
+            com.wynnchayuan.cape.Capes.forgetSelf(
+                    net.minecraft.client.Minecraft.getInstance().getUser().getProfileId());
+        } catch (Throwable t) {
+            com.wynnchayuan.translate.ErrorDebug.note("privacy.capes", null, t);
+        }
+        deleteServerData(done);
+    }
+
+    private static void deleteServerData(java.util.function.Consumer<Presence.DeleteResult> done) {
+        Presence.deleteMyData(result -> {
+            if (result == Presence.DeleteResult.DONE && config.dataOptOut()) {
+                config.dataDeleted();
+            }
+            System.out.println("[" + MOD_NAME + "] data deletion: " + result);
+            if (done != null) {
+                net.minecraft.client.Minecraft.getInstance().execute(() -> done.accept(result));
+            }
+        });
+    }
+
     /**
      * 遊戲起來之後再問一次語言，跟錯的那一次對不上就改過來。
      *
@@ -891,6 +932,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 診斷：每秒的 FPS 與當時的畫面，見 FpsLog（沒開診斷檔時 init 沒跑，這裡什麼都不做）
         ClientTickEvents.END_CLIENT_TICK.register(com.wynnchayuan.render.FpsLog::tick);
 
+        ClientTickEvents.END_CLIENT_TICK.register(
+                client -> com.wynnchayuan.client.FirstRunScreen.clientTick());
         // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> com.wynnchayuan.client.NoticeScreen.clientTick());
@@ -1049,6 +1092,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             case UNKNOWN_CODE -> "chat.link.unknown";
             case LOGIN_FAILED -> "chat.link.login";
             case FAILED -> "chat.link.failed";
+            case OFF -> "chat.link.off";
         })));
     }
 

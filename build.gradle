@@ -955,7 +955,7 @@ tasks.named('check') { dependsOn 'runLanguagePickChecks' }
 
 tasks.register('runLanguageFallbackChecks', JavaExec) {
     group = 'verification'
-    description = '簡中沒翻到的地方要看到繁中，不是英文'
+    description = '簡中預設不墊繁中，沒翻到的地方顯示英文；指名輔助語言時疊層照順序'
     classpath = sourceSets.test.runtimeClasspath
     mainClass = 'com.wynnchayuan.translate.LanguageFallbackTest'
 }
@@ -1158,6 +1158,15 @@ tasks.register('runUpgradeChecks', JavaExec) {
     }
 }
 tasks.named('check') { dependsOn 'runUpgradeChecks' }
+
+tasks.register('runFirstRunChecks', JavaExec) {
+    group = 'verification'
+    description = '首次啟動：沒同意之前不連線、推薦設定、物品翻譯預設關閉、升級只跳一次、不上傳資料'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.FirstRunTest'
+}
+tasks.named('check') { dependsOn 'runFirstRunChecks' }
 
 tasks.register('runDialogueBufferChecks', JavaExec) {
     group = 'verification'

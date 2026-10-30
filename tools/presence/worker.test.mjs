@@ -2,9 +2,10 @@
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
-  addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
+  addMember, setMemberTeams, addMemberTeams, setPersonTeams, mergeLangTeam, teamsInput, TEAM_AREAS, TR_LANGS, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
+  visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -57,7 +58,9 @@ let discordAppKey = '';
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
-let githubIssueStatus = 201;         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
+let githubIssueStatus = 201;
+const githubBranches = new Set();
+let githubOpenPulls = [];         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -70,6 +73,10 @@ globalThis.fetch = async (url, init = {}) => {
       return answer({ content: Buffer.from(githubFile, 'utf8').toString('base64'), sha: 'filesha' });
     }
     if (path === '/git/ref/heads/main') return answer({ object: { sha: 'mainsha' } });
+    if (path.startsWith('/git/ref/heads/') && githubBranches.has(path.slice('/git/ref/heads/'.length))) {
+      return answer({ object: { sha: 'branchsha' } });
+    }
+    if (call.method === 'GET' && path.startsWith('/pulls?')) return answer(githubOpenPulls);
     if (path === '/git/refs') return answer({}, 201);
     if (path === '/issues' && call.method === 'POST') {
       return githubIssueStatus === 201
@@ -120,7 +127,7 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
-        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev' }, { name: 'data' }] },
+        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'data' }] },
         { role: 'sponsor', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] }],
     }), { status: 200 });
   }
@@ -916,6 +923,84 @@ r = await worker.fetch(post('/admin/credits', { section: 'developers', name: 'A'
   { CORPUS: env.CORPUS, GITHUB_TOKEN: 't' });
 check('已經在名單上：409', r.status === 409 && (await r.json()).why === 'already listed');
 
+const TEAMED = JSON.stringify({
+  _note: 'x',
+  sections: [
+    { role: '開發者', key: 'credits.role.developers', color: '#FFD24A', members: [{ name: 'A', mc: 'Alice_Dev', cape: 'a.gif' }] },
+    { role: '貢獻者', key: 'credits.role.contributors', color: '#5BD86F', members: [{ name: '小明', mc: 'Ming_01' }, { name: '沒有 ID' }] },
+  ],
+}, null, 2) + '\n';
+let teamed = setMemberTeams(TEAMED, { section: 'contributors', who: 'ming_01', teams: ['ja_jp', 'zh_tw', 'ja_jp'], areas: ['testing', 'translation'] });
+doc = JSON.parse(teamed.text);
+check('★ teams／areas 寫進那個人（遊戲 ID 不分大小寫），照固定順序、去掉重複', JSON.stringify(doc.sections[1].members[0])
+  === JSON.stringify({ name: '小明', mc: 'Ming_01', teams: ['zh_tw', 'ja_jp'], areas: ['translation', 'testing'] }) && teamed.name === '小明');
+check('★ 別人一個字都沒動；全部取消勾選就把兩欄拿掉，檔案回到原樣',
+  JSON.stringify(doc.sections[0]) === JSON.stringify(JSON.parse(TEAMED).sections[0])
+  && setMemberTeams(teamed.text, { section: 'contributors', who: 'Ming_01', teams: [], areas: [] }).text === TEAMED);
+check('只改其中一欄，另一欄不會多出空陣列', !('teams' in JSON.parse(setMemberTeams(TEAMED,
+  { section: 'contributors', who: 'Ming_01', teams: [], areas: ['code'] }).text).sections[1].members[0]));
+check('沒有遊戲 ID 的成員照名字找', JSON.parse(setMemberTeams(TEAMED,
+  { section: 'contributors', who: '沒有 ID', teams: ['ko_kr'], areas: [] }).text).sections[1].members[1].teams.join() === 'ko_kr');
+const whyTeams = (entry) => setMemberTeams(TEAMED, { section: 'contributors', who: 'Ming_01', teams: [], areas: [], ...entry }).why;
+check('★ 不認得的語言、項目、區、人都擋，什麼都沒改也擋', whyTeams({ teams: ['xx_xx'] }) === 'bad team'
+  && whyTeams({ teams: 'zh_tw' }) === 'bad team' && whyTeams({ teams: [1] }) === 'bad team'
+  && whyTeams({ areas: ['hack'] }) === 'bad area' && whyTeams({ areas: null }) === 'bad area'
+  && whyTeams({ section: 'sources' }) === 'bad section' && whyTeams({ who: '  ' }) === 'bad who'
+  && whyTeams({ who: 'x'.repeat(41) }) === 'bad who' && whyTeams({ who: 'Nobody', areas: ['code'] }) === 'not found'
+  && whyTeams({}) === 'unchanged' && setMemberTeams('{', { section: 'contributors', who: 'a', teams: [], areas: [] }).why === 'bad credits');
+check('同一個人要在那一區才找得到', whyTeams({ section: 'developers', teams: ['zh_tw'] }) === 'not found');
+check('語言就是協作翻譯那七種，項目八種', TR_LANGS.length === 7 && TEAM_AREAS.length === 8
+  && teamsInput({ section: 'sponsors', who: 'x', teams: TR_LANGS, areas: TEAM_AREAS }).teams.length === 7);
+
+const teamEntry = { section: 'contributors', who: 'Ming_01', teams: ['zh_tw'], areas: ['translation'] };
+const teamPost = (entry, token, extra = {}) => worker.fetch(post('/admin/credits/teams', entry, token), { CORPUS: env.CORPUS, ...extra });
+check('★ 一般玩家不能改團隊', (await teamPost(teamEntry, bobWeb, { GITHUB_TOKEN: 't' })).status === 403
+  && (await teamPost(teamEntry, undefined, { GITHUB_TOKEN: 't' })).status === 403);
+r = await teamPost(teamEntry, aliceWeb);
+check('沒設 GITHUB_TOKEN：說清楚是沒設定', r.status === 503 && (await r.json()).why === 'github not configured');
+githubCalls.length = 0;
+r = await teamPost({ ...teamEntry, teams: ['en_us'] }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('★ 送來的東西不對：還沒碰 GitHub 就擋掉', r.status === 400 && (await r.json()).why === 'bad team' && githubCalls.length === 0);
+githubFile = TEAMED;
+r = await teamPost(teamEntry, aliceWeb, { GITHUB_TOKEN: 'secret-token' });
+body = await r.json();
+const teamBranch = githubCalls.find((c) => c.method === 'PUT').body.branch;
+check('★ 開發者送出：開好當天的分支與 PR', r.status === 200 && body.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999'
+  && body.added === false && /^credits\/teams-\d{8}$/.test(teamBranch));
+check('★ 照順序：查當天的分支、從 main 讀檔、讀 main、開分支、寫檔、開 PR（實際 ' + githubCalls.map((c) => c.method + ' ' + c.path.split('?')[0]).join('、') + '）',
+  githubCalls.length === 6 && githubCalls[0].path === '/git/ref/heads/' + teamBranch
+  && githubCalls[1].path.endsWith('?ref=main') && githubCalls[2].path === '/git/ref/heads/main'
+  && githubCalls[3].method === 'POST' && githubCalls[3].body.ref === 'refs/heads/' + teamBranch
+  && githubCalls[4].method === 'PUT' && githubCalls[5].path === '/pulls' && githubCalls.every((c) => c.auth === 'Bearer secret-token'));
+const teamWritten = JSON.parse(Buffer.from(githubCalls[4].body.content, 'base64').toString('utf8'));
+check('★ 寫回去的檔：那個人多了 teams 與 areas，其他人照舊', JSON.stringify(teamWritten.sections[1].members[0])
+  === JSON.stringify({ name: '小明', mc: 'Ming_01', teams: ['zh_tw'], areas: ['translation'] })
+  && teamWritten.sections[0].members[0].cape === 'a.gif' && githubCalls[4].body.message.includes('小明'));
+check('PR 開到 main，說明寫了是誰送的，沒有多餘的署名行', githubCalls[5].body.base === 'main' && githubCalls[5].body.head === teamBranch
+  && githubCalls[5].body.body.includes('Alice_Dev') && !/Generated with|Co-Authored-By/.test(githubCalls[5].body.body));
+githubBranches.add(teamBranch);
+githubOpenPulls = [{ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/42' }];
+githubCalls.length = 0;
+r = await teamPost({ ...teamEntry, who: '沒有 ID', teams: ['ja_jp'] }, aliceWeb, { GITHUB_TOKEN: 't' });
+body = await r.json();
+check('★ 同一天第二筆：加進同一個分支與 PR，不再開新的', r.status === 200 && body.added === true
+  && body.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/42'
+  && githubCalls.some((c) => c.path.startsWith('/contents/') && c.path.endsWith('?ref=' + encodeURIComponent(teamBranch)))
+  && githubCalls.find((c) => c.method === 'PUT').body.branch === teamBranch
+  && !githubCalls.some((c) => c.method === 'POST'));
+githubOpenPulls = [];
+githubCalls.length = 0;
+r = await teamPost(teamEntry, aliceWeb, { GITHUB_TOKEN: 't' });
+body = await r.json();
+const lateBranch = (githubCalls.find((c) => c.method === 'PUT') || { body: {} }).body.branch || '';
+check('★ 當天的 PR 已經合併或關掉：另開一個分支與 PR，不寫進舊分支', r.status === 200 && body.added === false
+  && lateBranch.startsWith(teamBranch + '-') && githubCalls.some((c) => c.path === '/pulls' && c.method === 'POST'));
+githubBranches.clear();
+r = await teamPost({ ...teamEntry, teams: [], areas: [] }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('沒有要改的：409，不開分支', r.status === 409 && (await r.json()).why === 'unchanged');
+r = await teamPost({ ...teamEntry, who: 'Nobody' }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('名單上沒有這個人：404', r.status === 404 && (await r.json()).why === 'not found');
+
 // ---- 自己拿掉 ----
 pushBack(bobId);
 await worker.fetch(put('/cape', png(22, 17), bobToken), env);
@@ -1406,6 +1491,12 @@ body = await r.json();
 check('★ /api/team：公開、可以快取，照名單回開發者與贊助者', r.status === 200
   && /max-age=\d+/.test(r.headers.get('cache-control')) && body.team.map((s) => s.role).join() === 'developers,sponsors'
   && body.team[0].members.some((m) => m.mc === 'Alice_Dev') && body.team[1].members[0].mc === 'Carol');
+check('★ /api/team 帶著翻譯團隊與貢獻項目：只留認得的，照固定順序',
+  JSON.stringify(body.team[0].members[0].teams) === '["zh_tw","ja_jp"]' && JSON.stringify(body.team[0].members[0].areas) === '["code"]'
+  && !('teams' in body.team[1].members[0]) && !('areas' in body.team[1].members[0]));
+check('★ teamOf：teams 與 areas 不是陣列或是空的就不帶這兩欄', JSON.stringify(teamOf([{ key: 'credits.role.contributors', members: [
+  { name: 'P', teams: ['ja_jp', 'zh_tw', 'xx', 3, 'ja_jp'], areas: 'code' }, { name: 'Q', teams: [], areas: ['testing', 'nope'] }] }]))
+  === JSON.stringify([{ role: 'contributors', color: null, members: [{ name: 'P', teams: ['zh_tw', 'ja_jp'] }, { name: 'Q', areas: ['testing'] }] }]));
 
 // ---- ★ 管理員：開發者加的，做得到網站上的管理，但不在名單上、也動不了管理員名單 ----
 check('staffKey：UUID、Discord 代號、遊戲名字分得出來', staffKey(dashed(BOB.id).toUpperCase()) === 'u:' + BOB.id
@@ -1443,6 +1534,10 @@ check('★ 另一個帳號改成同一個名字：不是管理員',
 check('★ 管理員進得了管理：披風、封禁、特別名單', (await worker.fetch(get('/admin/capes', bobNow), env)).status === 200
   && (await worker.fetch(get('/admin/bans', bobNow), env)).status === 200
   && (await worker.fetch(get('/admin/perks', bobNow), env)).status === 200);
+githubFile = TEAMED;
+r = await worker.fetch(post('/admin/credits/teams', { section: 'contributors', who: 'Ming_01', teams: ['ko_kr'], areas: [] }, bobNow),
+  { ...env, GITHUB_TOKEN: 't' });
+check('★ 管理員也能改翻譯團隊與貢獻項目（跟新增成員一樣）', r.status === 200 && (await r.json()).ok === true);
 r = await staffPost('/admin/perk', { uuid: 'f'.repeat(32), note: '管理員加的' }, bobNow);
 check('管理員加的特別名單，紀錄上寫的是他', r.status === 200
   && JSON.parse(env.CORPUS.data.get('perk:' + 'f'.repeat(32)).value).by === BOB.name);
@@ -1781,11 +1876,12 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const P9 = mark(png(88, 68), 9);
     const H9 = await sha(P9);
     later(oak);
-    check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).q === 1);
+    check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).vis === 'unlisted' && !('q' in meta(oak)));
     later(oak);
     await upload(oak, P3, '?public=1');
-    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能穿', idleNow()[H9].q === 1
-      && !(await gallery()).some((c) => c.h === H9) && (await send('/cape/wear', { hash: H9 }, ivy)).status === 404);
+    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能加最愛', idleNow()[H9].q === 1
+      && idleNow()[H9].vis === 'unlisted' && !(await gallery()).some((c) => c.h === H9)
+      && (await send('/cape/star', { hash: H9, on: true }, ivy)).status === 404);
     const seenByStaff = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === H9);
     check('★ 管理的人看得到它：沒有人穿、不公開、在倒數', Boolean(seenByStaff) && seenByStaff.hidden === true
       && seenByStaff.owners.length === 0 && seenByStaff.idle > 0);
@@ -1818,21 +1914,20 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 管理的人看得到全部，標著誰不公開', await (async () => {
     const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes;
     const owner = seen.flatMap((c) => c.owners).find((o) => o.id === ivy.id);
-    return owner && owner.private === true && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
+    return owner && owner.vis === 'unlisted' && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
   })());
-  check('★ 只有她一個人穿的不公開披風：別人不能穿、不能加最愛', await (async () => {
+  check('★ 只有她一個人穿的不公開披風：別人不能加最愛', await (async () => {
     later(ivy);
     await upload(ivy, mark(png(352, 272), 12));
     const lone = meta(ivy).h;
-    return meta(ivy).q === 1 && (await send('/cape/wear', { hash: lone }, elm)).status === 404
-      && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
+    return meta(ivy).vis === 'unlisted' && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
   })());
   later(ivy);
-  check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q
+  check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q && !meta(ivy).vis
     && (await gallery()).some((c) => c.ids.includes(ivy.id)));
   later(ivy);
-  check('上傳的時候說不公開', (await upload(ivy, mark(png(44, 34), 14), '?public=0')).status === 200 && meta(ivy).q === 1);
-  check('改回公開', (await send('/cape/public', { on: true }, ivy)).status === 200 && !meta(ivy).q);
+  check('上傳的時候說不公開', (await upload(ivy, mark(png(44, 34), 14), '?public=0')).status === 200 && meta(ivy).vis === 'unlisted');
+  check('改回公開', (await send('/cape/public', { on: true }, ivy)).status === 200 && !meta(ivy).vis);
 
   // 審核
   check('★ 一般玩家動不了審核名單', (await worker.fetch(get('/admin/reviews', elm.token), env)).status === 403
@@ -1944,12 +2039,263 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.CORPUS.data.delete('review:' + oak.uuid);
   forgetBursts();
 
-  check('★ 披風一覽有排序、篩選與星星；管理的人多兩個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
-    'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="hidden"', 'value="pending"', 'id="skinpick"',
+  check('★ 披風一覽有排序、篩選與星星；管理的人多三個篩選', ['id="sort"', 'value="worn"', 'value="stars"', 'value="old"',
+    'id="kind"', 'id="scope"', 'value="fav"', 'value="hist"', 'value="unlisted"', 'value="private"', 'value="pending"', 'id="skinpick"',
     'id="fav"', 'id="approve"', 'id="review"', 'id="forget"']
     .every((w) => pages['/capes'].includes(w)) && pages['/capes'].includes("'/cape/star'") && pages['/capes'].includes("'/capes/mine'"));
-  check('★ 帳號頁有公開的開關；管理頁有審核名單', pages['/account'].includes('id="public"') && pages['/account'].includes("'/cape/public'")
+  check('★ 帳號頁有公開程度的選擇；管理頁有審核名單', pages['/account'].includes('id="vis"') && pages['/account'].includes("'/cape/visibility'")
     && pages['/account'].includes('id="pending"') && pages['/admin'].includes('id="reviews"') && pages['/admin'].includes("'/admin/review'"));
+}
+
+{
+  const person = async (pair, name) => {
+    const uuid = pair.repeat(16);
+    return { uuid, name, id: await publicId(uuid), token: await issueWebToken(env, uuid, name, NOW) };
+  };
+  const fern = await person('f1', 'Fern');
+  const moss = await person('f2', 'Moss');
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const mark = (bytes, n) => { const out = bytes.slice(); out[40] = n; out[41] = 7; return out; };
+  const send = (path, value, who) => worker.fetch(post(path, value, who && who.token), env);
+  const upload = (who, bytes, query = '') => worker.fetch(new Request('https://x.test/api/cape' + query, {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + who.token } }), env);
+  const gallery = async () => (await (await worker.fetch(api('/capes'), env)).json()).capes;
+  const meta = (who) => env.CORPUS.data.get('cape:' + who.id).metadata;
+  const mine = async (who) => (await (await worker.fetch(get('/me', who.token), env)).json());
+  const roster = async () => (await (await worker.fetch(get('/list'), env)).json()).capes;
+  const link = (hash, who) => worker.fetch(get('/capes/' + hash, who && who.token), env);
+  const later = (who) => { meta(who).v -= 60000; forgetBursts(); };
+  const staff = { token: aliceWeb };
+
+  check('visibility：舊的 q 讀成不公開，新的 vis 優先，認不得的當公開', visibility(null) === 'public'
+    && visibility({}) === 'public' && visibility({ q: 1 }) === 'unlisted' && visibility({ q: 1, vis: 'private' }) === 'private'
+    && visibility({ vis: 'bogus' }) === 'public' && VISIBILITY.join() === 'public,unlisted,private');
+  check('askedVisibility：?vis= 優先，舊的 ?public=0／1 照舊，沒說回 null', askedVisibility(new URLSearchParams('vis=private&public=1')) === 'private'
+    && askedVisibility(new URLSearchParams('public=0')) === 'unlisted' && askedVisibility(new URLSearchParams('public=1')) === 'public'
+    && askedVisibility(new URLSearchParams('vis=nope')) === null && askedVisibility(new URLSearchParams('')) === null);
+
+  forgetBursts();
+  const A = mark(png(88, 68), 61);
+  const HA = await sha(A);
+  check('上傳時選私人', (await upload(fern, A, '?vis=private')).status === 200 && meta(fern).vis === 'private');
+  check('★ 私人：一覽沒有；別人拿到連結也看不到；不能穿、不能加最愛', !(await gallery()).some((c) => c.h === HA)
+    && (await link(HA)).status === 404 && (await link(HA, moss)).status === 404
+    && (await send('/cape/wear', { hash: HA }, moss)).status === 404
+    && (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  r = await link(HA, fern);
+  body = await r.json();
+  check('★ 私人：本人用連結看得到，標著是自己的', r.status === 200 && body.cape.own === true && body.cape.vis === 'private'
+    && body.cape.ids.join() === fern.id);
+  const staffSeen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === HA);
+  check('★ 管理的人看得到私人的那一件，整筆與每個人都標著私人', Boolean(staffSeen) && staffSeen.vis === 'private'
+    && staffSeen.owners[0].vis === 'private' && staffSeen.hidden === true && (await link(HA, staff)).status === 200);
+  check('★ 私人只管網站：遊戲裡的名單照樣有她的披風', fern.id in (await roster()));
+  body = await mine(fern);
+  check('/api/me 說是私人', body.cape.vis === 'private' && body.cape.public === false);
+
+  r = await send('/cape/visibility', { vis: 'unlisted' }, fern);
+  check('改成不公開', r.status === 200 && (await r.json()).vis === 'unlisted' && meta(fern).vis === 'unlisted');
+  r = await link(HA);
+  body = await r.json();
+  check('★ 不公開：一覽沒有，拿到連結的人（沒登入也可以）看得到', !(await gallery()).some((c) => c.h === HA)
+    && r.status === 200 && body.cape.vis === 'unlisted' && body.cape.ids.join() === fern.id && !body.cape.own
+    && body.cape.hidden === true);
+  r = await send('/cape/wear', { hash: HA }, moss);
+  check('★ 不公開：拿到連結的人可以穿上；他那一筆記著是從連結來的（lk），一覽上照樣沒有這件', r.status === 200
+    && meta(moss).h === HA && meta(moss).lk === 1 && !meta(moss).vis && (await mine(moss)).cape.listed === false
+    && !(await gallery()).some((c) => c.h === HA) && (await link(HA)).status === 200);
+  check('★ 管理的人看得到他是從連結穿的，整筆仍標不公開', await (async () => {
+    const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === HA);
+    return Boolean(seen) && seen.vis === 'unlisted' && seen.hidden === true
+      && seen.owners.some((o) => o.id === moss.id && o.linked === true);
+  })());
+  check('不公開的照樣不能加最愛', (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  later(moss);
+  check('他脫下：一覽上照樣沒有', (await send('/cape/restore', {}, moss)).status === 200 && !env.CORPUS.data.has('cape:' + moss.id)
+    && !(await gallery()).some((c) => c.h === HA));
+  check('亂寫的連結、沒有這件：404', (await link('nope')).status === 404 && (await link('f'.repeat(64))).status === 404);
+  check('不認得的程度擋掉；沒登入不能改', (await send('/cape/visibility', { vis: 'secret' }, fern)).status === 400
+    && (await send('/cape/visibility', { vis: 'public' })).status === 401);
+
+  const row = env.CORPUS.data.get('cape:' + fern.id);
+  const { vis: dropped, ...legacy } = row.metadata;
+  row.metadata = { ...legacy, q: 1 };
+  r = await link(HA);
+  check('★ 舊資料（q＝1）讀成不公開：一覽沒有、連結看得到、/api/me 說不公開', !(await gallery()).some((c) => c.h === HA)
+    && r.status === 200 && (await r.json()).cape.vis === 'unlisted' && (await mine(fern)).cape.vis === 'unlisted');
+  check('★ 改過一次就換成新的寫法：q 拿掉、記 vis', (await send('/cape/visibility', { vis: 'private' }, fern)).status === 200
+    && !('q' in meta(fern)) && meta(fern).vis === 'private');
+  later(fern);
+  check('★ 沒帶程度的上傳（從遊戲傳的）照原本的', (await upload(fern, mark(png(88, 68), 62))).status === 200 && meta(fern).vis === 'private');
+  later(fern);
+  await upload(fern, A);
+
+  forgetBursts();
+  const B = mark(png(88, 68), 63);
+  const HB = await sha(B);
+  check('他傳一件公開的', (await upload(moss, B, '?vis=public')).status === 200 && !meta(moss).vis
+    && (await gallery()).some((c) => c.h === HB));
+  later(fern);
+  r = await send('/cape/wear', { hash: HB }, fern);
+  check('★ 穿別人公開的那一件：她自己的程度不變（還是私人），一覽上那一筆只算公開的人', r.status === 200
+    && meta(fern).vis === 'private' && meta(fern).p.h === HA
+    && (await gallery()).find((c) => c.h === HB).ids.join() === moss.id);
+  later(fern);
+  check('★ 復原：換回自己那一件，程度照舊', (await send('/cape/restore', {}, fern)).status === 200
+    && meta(fern).h === HA && meta(fern).vis === 'private');
+
+  later(fern);
+  const C = mark(png(88, 68), 64);
+  const HC = await sha(C);
+  check('她換一件新的：私人的那一件沒人穿了，開始倒數', (await upload(fern, C)).status === 200 && HA in idleNow()
+    && idleNow()[HA].q === 1 && idleNow()[HA].vis === 'private');
+  check('★ 倒數中的私人披風：拿到連結也看不到，管理的人看得到', (await link(HA)).status === 404
+    && (await link(HA, staff)).status === 200);
+  await send('/cape/visibility', { vis: 'unlisted' }, fern);
+  later(fern);
+  await upload(fern, A);
+  check('★ 倒數中的不公開披風：拿到連結看得到（標著不公開、沒有人穿）', idleNow()[HC].vis === 'unlisted'
+    && await (async () => { const got = await link(HC); const one = (await got.json()).cape; return got.status === 200 && one.vis === 'unlisted' && one.idle > 0 && one.ids.length === 0; })());
+  check('★ 舊的開關（/cape/public）照樣能用：關掉＝不公開，打開＝公開',
+    (await send('/cape/public', { on: true }, fern)).status === 200 && !meta(fern).vis
+    && (await send('/cape/public', { on: false }, fern)).status === 200 && meta(fern).vis === 'unlisted');
+  check('★ 帳號頁有三種程度與分享連結；披風一覽的管理篩選分成不公開與私人，有複製連結',
+    ['id="vis"', 'data-v="public"', 'data-v="unlisted"', 'data-v="private"', 'id="sharebox"', "'/cape/visibility'"]
+      .every((w) => pages['/account'].includes(w))
+    && ['value="unlisted"', 'value="private"', 'id="share"', "'/capes/' + "].every((w) => pages['/capes'].includes(w))
+    && !pages['/capes'].includes('value="hidden"'));
+}
+
+{
+  const sha = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map((b) => b.toString(16).padStart(2, '0')).join('');
+  const mark = (bytes, n) => { const out = bytes.slice(); out[40] = n; out[41] = 9; return out; };
+  const RUE = { uuid: 'f3'.repeat(16), name: 'Rue' };
+  const SAGE = { uuid: 'f4'.repeat(16), name: 'Sage' };
+  const rueId = await publicId(RUE.uuid);
+  const sageId = await publicId(SAGE.uuid);
+  const rueGame = await issueToken(env, RUE.uuid, RUE.name, NOW);
+  const rueWeb = await issueWebToken(env, RUE.uuid, RUE.name, NOW);
+  const sageWeb = await issueWebToken(env, SAGE.uuid, SAGE.name, NOW);
+  const THYME = { uuid: 'f5'.repeat(16), name: 'Thyme' };
+  const thymeId = await publicId(THYME.uuid);
+  const thymeWeb = await issueWebToken(env, THYME.uuid, THYME.name, NOW);
+  const RUE_DC = '466666666666666666';
+  const OTHER_DC = '477777777777777777';
+  const upload = (token, bytes) => worker.fetch(new Request('https://x.test/api/cape', {
+    method: 'PUT', body: bytes, headers: { authorization: 'Bearer ' + token } }), env);
+  const send = (path, value, token) => worker.fetch(post(path, value, token), env);
+  const later = (id) => { const row = env.CORPUS.data.get('cape:' + id); if (row) row.metadata.v -= 60000; forgetBursts(); };
+  const has = (key) => env.CORPUS.data.has(key);
+  const starsNow = () => JSON.parse((env.CORPUS.data.get('stars') || { value: '{}' }).value);
+
+  check('沒登入不能刪', (await send('/me/delete', {})).status === 401);
+
+  forgetBursts();
+  const R1 = mark(png(88, 68), 71);
+  const R2 = mark(png(88, 68), 72);
+  const R3 = mark(png(88, 68), 73);
+  const S1 = mark(png(88, 68), 74);
+  const [H1, H2, H3, HS] = [await sha(R1), await sha(R2), await sha(R3), await sha(S1)];
+  await send('/hello', { cape: true, rainbow: true, show: ['dev'] }, rueGame);
+  await upload(rueGame, R1);
+  later(rueId);
+  await upload(sageWeb, S1);
+  check('別人穿上她的第一件', (await send('/cape/wear', { hash: H1 }, thymeWeb)).status === 200);
+  later(rueId);
+  await upload(rueGame, R2);
+  later(rueId);
+  await upload(rueGame, R3);
+  check('她的第二件沒有人穿了，在倒數', H2 in idleNow());
+  later(rueId);
+  check('她穿上別人的一件（自己的第三件收著）', (await send('/cape/wear', { hash: HS }, rueWeb)).status === 200
+    && env.CORPUS.data.get('cape:' + rueId).metadata.p.h === H3);
+  check('她把別人那一件加進最愛', (await (await send('/cape/star', { hash: HS, on: true }, rueWeb)).json()).stars >= 1);
+  const starsBefore = starsNow()[HS];
+  env.CORPUS.data.set('d:' + RUE_DC, { value: JSON.stringify({ n: 'Rue DC', u: RUE.uuid, m: RUE.name, t: NOW }), metadata: { n: 'Rue DC', u: RUE.uuid, m: RUE.name } });
+  env.CORPUS.data.set('l:' + RUE.uuid, { value: RUE_DC, metadata: null });
+  env.CORPUS.data.set('fb:' + 'c1'.repeat(8), { value: JSON.stringify({ id: 'c1'.repeat(8), uid: RUE_DC, name: 'Rue DC', msg: 'hello there', cat: 'other', st: 'open' }), metadata: { c: 'other' } });
+  env.CORPUS.data.set('fb:' + 'c2'.repeat(8), { value: JSON.stringify({ id: 'c2'.repeat(8), uid: OTHER_DC, name: 'Other', msg: 'not hers', cat: 'other', st: 'open' }), metadata: { c: 'other' } });
+  env.CORPUS.data.set('prev:' + HS + ':' + RUE.uuid + ':angled', { value: new Uint8Array([1]), metadata: { t: 'png' } });
+  env.CORPUS.data.set('prev:' + HS, { value: new Uint8Array([1]), metadata: { t: 'png' } });
+  for (const kept of ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:']) {
+    env.CORPUS.data.set(kept + RUE.uuid, { value: JSON.stringify({ n: RUE.name, t: NOW }), metadata: null });
+  }
+  let roster = await (await worker.fetch(get('/list'), env)).json();
+  check('刪之前：名單上有她、葉子是彩色的', roster.users.includes(rueId) && roster.rainbow.includes(rueId));
+
+  const PROP = 'tp:zh_tw:' + 'ab12'.repeat(4);
+  const POLL = 'tq:zh_tw:' + 'cd34'.repeat(3);
+  const OTHER_ID = 'u:' + 'f6'.repeat(16);
+  env.CORPUS.data.set(PROP, { value: JSON.stringify({ lang: 'zh_tw', file: 'npc.json', key: null, src: 'Hi', base: '', status: 'open', t: NOW,
+    items: [{ id: 'i1', text: '嗨', by: 'u:' + RUE.uuid, name: 'Rue', t: NOW, votes: ['u:' + RUE.uuid, OTHER_ID] },
+      { id: 'i2', text: '你好', by: OTHER_ID, name: 'Other', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
+  env.CORPUS.data.set(POLL, { value: JSON.stringify({ lang: 'zh_tw', term: 'Hi', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, status: 'open',
+    options: [{ id: 'o1', text: '嗨', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
+  r = await send('/me/delete', {}, rueGame);
+  body = await r.json();
+  check('★ 用模組的通行證刪：回 {"ok":true}', r.status === 200 && body.ok === true && Object.keys(body).join() === 'ok');
+  roster = await (await worker.fetch(get('/list'), env)).json();
+  check('★ 名單上馬上就沒有她（有裝的人、披風、彩色、徽章都清掉）', !roster.users.includes(rueId) && !(rueId in roster.capes)
+    && !roster.rainbow.includes(rueId) && !(rueId in (roster.show || {})) && !has('u:' + RUE.uuid));
+  check('★ 她的披風那一筆、使用紀錄、最愛都刪了', !has('cape:' + rueId) && !has('fav:' + RUE.uuid)
+    && ![...env.CORPUS.data.keys()].some((k) => k.startsWith('hist:' + rueId + ':')));
+  check('★ 只有她用的圖馬上刪（收著的第三件、倒數中的第二件），不必等七天', !has('blob:' + H3) && !has('blob:' + H2)
+    && !(H2 in idleNow()) && !(H3 in idleNow()));
+  check('★ 別人正在穿的圖留著（她傳的第一件、她穿的那件）', has('blob:' + H1) && has('blob:' + HS)
+    && env.CORPUS.data.get('cape:' + thymeId).metadata.h === H1);
+  check('★ 最愛的人數扣掉她那一票', (starsNow()[HS] || 0) === starsBefore - 1);
+  check('★ 她的 skin 畫的預覽刪了，只有披風的那份留著', !has('prev:' + HS + ':' + RUE.uuid + ':angled') && has('prev:' + HS));
+  check('★ 網站帳號與綁定一起刪；她送的回饋刪了，別人的留著', !has('d:' + RUE_DC) && !has('l:' + RUE.uuid)
+    && !has('fb:' + 'c1'.repeat(8)) && has('fb:' + 'c2'.repeat(8)));
+  check('★ 管理用的紀錄不給自己刪：封禁、審核、特別名單、管理員、譯者', ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:']
+    .every((kept) => has(kept + RUE.uuid)));
+  {
+    const code = await goneCode(RUE.uuid);
+    const prop = JSON.parse(env.CORPUS.data.get(PROP).value);
+    const poll = JSON.parse(env.CORPUS.data.get(POLL).value);
+    check('★ 協作翻譯的提案與投票留著，名字拿掉、改記同一個代碼；別人的不動', /^[0-9a-f]{8}$/.test(code)
+      && prop.items[0].name === null && prop.items[0].gone === code && prop.items[0].by === 'x:' + code && prop.items[0].text === '嗨'
+      && prop.items[0].votes.join() === 'x:' + code + ',' + OTHER_ID && prop.items[1].name === 'Other' && prop.items[1].votes.join() === 'x:' + code
+      && poll.name === null && poll.gone === code && poll.options[0].gone === code && poll.options[0].votes.join() === 'x:' + code
+      && !JSON.stringify(prop.items).includes(RUE.uuid) && !JSON.stringify(poll.options).includes(RUE_DC));
+    check('★ 帳號代號留在紀錄上（ghosts），刪除者是誰查得到', prop.ghosts[code].join() === 'u:' + RUE.uuid + ',d:' + RUE_DC
+      && poll.ghosts[code].includes('d:' + RUE_DC) && env.CORPUS.data.get(PROP).metadata.n === 2);
+    const publicView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4)), env)).text();
+    const staffView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4), aliceWeb), env)).json();
+    const pollView = await (await worker.fetch(get('/tr/poll?lang=zh_tw&id=' + 'cd34'.repeat(3)), env)).text();
+    check('★ 一般人看不到帳號代號；開發者與管理員看得到', !publicView.includes('ghosts') && !publicView.includes(RUE.uuid)
+      && publicView.includes(code) && staffView.ghosts[code].includes('u:' + RUE.uuid) && !pollView.includes(RUE_DC));
+    check('anonymise：沒有這個人的紀錄不動', anonymise({ items: [{ by: 'u:x', votes: ['u:y'] }] }, ['u:z'], 'abcd1234') === false);
+    check('★ 協作翻譯頁把刪除者畫成「已刪除的使用者 #代碼」', pages['/translate'].includes('whoOf(it, prop)')
+      && TEXT.zh.js.tr.gone === '已刪除的使用者 #{id}' && LANGS.every((l) => TEXT[l].js.tr.gone.includes('#{id}')));
+    env.CORPUS.data.delete(PROP);
+    env.CORPUS.data.delete(POLL);
+  }
+  check('★ 刪完再報到就是一個新的人（模組關掉開關就不會再報到）', (await send('/hello', { cape: true }, rueGame)).status === 200
+    && has('u:' + RUE.uuid));
+  for (const kept of ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:', 'u:']) env.CORPUS.data.delete(kept + RUE.uuid);
+  env.CORPUS.data.delete('fb:' + 'c2'.repeat(8));
+
+  const lone = '488888888888888888';
+  env.CORPUS.data.set('d:' + lone, { value: JSON.stringify({ n: 'Only DC' }), metadata: { n: 'Only DC' } });
+  r = await send('/me/delete', {}, await issueDiscordToken(env, lone, NOW));
+  check('★ 只用 Discord 登入、還沒綁遊戲帳號：網站帳號刪掉', r.status === 200 && (await r.json()).ok === true && !has('d:' + lone));
+  check('刪掉之後那張通行證就沒用了', (await worker.fetch(get('/me', await issueDiscordToken(env, lone, NOW)), env)).status === 401);
+  check('★ 帳號頁有刪除資料的按鈕與確認視窗', ['id="wipe"', 'id="wipe-open"', 'id="wipe-go"', "'/me/delete'"]
+    .every((w) => pages['/account'].includes(w)));
+  check('★ 隱私政策講了怎麼刪、留多久、同意與不賣資料（中英）',
+    ['/account', '7', '14', '180'].every((w) => pages['/privacy'].includes(w) && english['/privacy'].includes(w))
+    && english['/privacy'].includes('consent') && english['/privacy'].includes('never sell')
+    && english['/privacy'].includes('Deleted user #code') && pages['/privacy'].includes('已刪除的使用者 #代碼'));
+  check('★ 服務條款八種語言都講了可以刪資料、連到隱私政策', LANGS.every((lang) => TEXT[lang]['terms.body'].includes('href="/privacy"')));
+  check('dropFromList：每一欄都拿掉；本來就沒有的回 null', (() => {
+    const list = { t: 1, users: ['a', 'b'], capes: { a: 3 }, hidden: ['a'], rainbow: ['a'], show: { a: 'dev' } };
+    const out = dropFromList(list, 'a');
+    return out.users.join() === 'b' && !('a' in out.capes) && !out.hidden.length && !out.rainbow.length
+      && !('a' in out.show) && out.t === 1 && dropFromList(out, 'a') === null && list.users.length === 2;
+  })());
 }
 
 // ---- ★ 協作翻譯（使用者 2026-10-16：像 Crowdin 一樣提交、投票，管理員定案） ----
@@ -2063,6 +2409,163 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('一般玩家看不到', (await trGet('/admin/translators', bobNow)).status === 403);
   await trPost('/admin/untranslator', { key: 'u:' + BOB.id }, aliceWeb);
   check('移除之後馬上不能提案', (await trPost('/tr/propose', sample, bobNow)).status === 403);
+  {
+    const LINKED = JSON.stringify({ sections: [
+      { role: '開發者', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['zh_tw'] }] },
+      { role: '贊助者', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] },
+      { role: '貢獻者', key: 'credits.role.contributors', members: [{ name: 'C', mc: 'Carol', areas: ['testing'] }] },
+      { role: '資料來源', key: 'credits.role.sources', members: [{ name: 'Carol 的資料', mc: 'Carol' }] }] }, null, 2) + '\n';
+    const added = addMemberTeams(LINKED, 'carol', ['ko_kr', 'ja_jp', 'xx_yy']);
+    const linkedDoc = JSON.parse(added.text);
+    check('★ addMemberTeams：名冊上同一個人的每一列都加上語言，照固定順序，項目與資料來源不動',
+      linkedDoc.sections[1].members[0].teams.join() === 'ja_jp,ko_kr' && linkedDoc.sections[2].members[0].teams.join() === 'ja_jp,ko_kr'
+      && linkedDoc.sections[2].members[0].areas.join() === 'testing' && !('teams' in linkedDoc.sections[3].members[0]));
+    check('addMemberTeams：已經有的語言不重複，只加沒有的；都有了算沒改', addMemberTeams(LINKED, 'Alice_Dev', ['ja_jp']).text.includes('"ja_jp"')
+      && JSON.parse(addMemberTeams(LINKED, 'Alice_Dev', ['ja_jp']).text).sections[0].members[0].teams.join() === 'zh_tw,ja_jp'
+      && addMemberTeams(LINKED, 'Alice_Dev', ['zh_tw']).why === 'unchanged');
+    check('addMemberTeams：不在名冊、怪名字、沒有認得的語言都不改', addMemberTeams(LINKED, 'Nobody', ['ja_jp']).why === 'not found'
+      && addMemberTeams(LINKED, 'bad name!', ['ja_jp']).why === 'bad who' && addMemberTeams(LINKED, 'Carol', ['xx_yy']).why === 'bad team');
+
+    const tlEnv = { ...env, GITHUB_TOKEN: 't' };
+    const tlPost = (body, token, which = tlEnv) => worker.fetch(post(body.key ? '/admin/untranslator' : '/admin/translator', body, token), which);
+    githubFile = LINKED;
+    githubBranches.clear();
+    githubOpenPulls = [];
+    githubCalls.length = 0;
+    let res = await tlPost({ who: 'Carol', langs: ['ko_kr', 'ja_jp'] }, aliceWeb);
+    let out = await res.json();
+    const linkPut = githubCalls.find((c) => c.method === 'PUT');
+    const linkDoc = linkPut ? JSON.parse(Buffer.from(linkPut.body.content, 'base64').toString('utf8')) : null;
+    check('★ 指派名冊上的人當譯者：語言一起加進他的翻譯團隊，開當天的 PR', res.status === 200 && out.ok === true
+      && out.team && out.team.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' && out.team.added === false
+      && linkDoc && linkDoc.sections[1].members[0].teams.join() === 'ja_jp,ko_kr' && /^credits\/teams-\d{8}$/.test(linkPut.body.branch)
+      && env.CORPUS.data.has('tl:n:carol'));
+    githubBranches.add(linkPut ? linkPut.body.branch : '');
+    githubOpenPulls = [{ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/42' }];
+    githubCalls.length = 0;
+    out = await (await tlPost({ who: 'Carol', langs: ['ru_ru'] }, aliceWeb)).json();
+    check('★ 同一天再指派：加進同一個 PR', out.team && out.team.added === true && out.team.url.endsWith('/pull/42')
+      && !githubCalls.some((c) => c.method === 'POST'));
+    githubCalls.length = 0;
+    out = await (await tlPost({ who: 'Alice_Dev', langs: ['ja_jp'] }, aliceWeb)).json();
+    check('團隊裡已經有那個語言：不碰 GitHub，回他現在的團隊', out.ok === true && out.team && out.team.teams.join() === 'zh_tw,ja_jp'
+      && githubCalls.length === 0);
+    out = await (await tlPost({ who: 'Dave_X', langs: ['ja_jp'] }, aliceWeb)).json();
+    check('★ 不在名冊上的人：照樣是譯者，不動 credits.json', out.ok === true && out.team === null && githubCalls.length === 0
+      && env.CORPUS.data.has('tl:n:dave_x'));
+    res = await tlPost({ who: 'Carol', langs: ['es_es'] }, aliceWeb, { ...env, GITHUB_TOKEN: undefined });
+    out = await res.json();
+    check('★ 沒設 GITHUB_TOKEN：譯者照樣加好，只說團隊沒改成', res.status === 200 && out.ok === true
+      && out.team.why === 'github not configured' && JSON.parse(env.CORPUS.data.get('tl:n:carol').value).langs.join() === 'es_es');
+    check('一般玩家照樣不能指派（也不會碰到名冊）', (await tlPost({ who: 'Carol', langs: ['ja_jp'] }, bobNow)).status === 403
+      && githubCalls.length === 0);
+    const listed = (await (await worker.fetch(get('/admin/translators', aliceWeb), tlEnv)).json()).translators;
+    const row = (name) => listed.find((t) => t.name === name);
+    check('★ 譯者名單帶著名冊上的翻譯團隊；不在名冊上的是 null', row('Carol') && Array.isArray(row('Carol').team)
+      && row('Alice_Dev').team.join() === 'zh_tw,ja_jp' && row('Dave_X').team === null);
+    githubCalls.length = 0;
+    res = await tlPost({ key: 'n:carol' }, aliceWeb);
+    check('★ 移除譯者不會動到翻譯團隊', res.status === 200 && !env.CORPUS.data.has('tl:n:carol') && githubCalls.length === 0);
+    await tlPost({ key: 'n:alice_dev' }, aliceWeb);
+    await tlPost({ key: 'n:dave_x' }, aliceWeb);
+    githubBranches.clear();
+    githubOpenPulls = [];
+  }
+  {
+    const merged = mergeLangTeam([
+      { role: 'developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['zh_tw'] }] },
+      { role: 'sponsors', members: [{ name: 'C', mc: 'Carol' }] },
+      { role: 'contributors', members: [{ name: 'C', mc: 'Carol', teams: ['ja_jp'], areas: ['testing'] }, { name: 'NoId' }] }], [
+      { key: 'u:' + '1'.repeat(32), name: 'carol', langs: ['ko_kr'], note: '韓文組', t: 5, by: 'A' },
+      { key: 'n:alice_dev', name: 'Alice_Dev', langs: ['zh_tw'], t: 3 },
+      { key: 'd:123456789012345678', name: null, discord: 'Dee', langs: ['es_es'] },
+      { key: 'n:solo', name: 'Solo', langs: ['tr_tr', 'ja_jp'] }]);
+    const who = (name) => merged.find((p) => p.name === name);
+    check('★ mergeLangTeam：名冊與譯者照遊戲 ID 併成一人一列（不分大小寫，多個身分算一人）', merged.length === 5
+      && who('C').roles.join() === 'sponsors,contributors' && who('C').rights.keys[0] === 'u:' + '1'.repeat(32)
+      && who('C').teams.join() === 'ja_jp' && who('C').areas.join() === 'testing' && who('C').rights.note === '韓文組');
+    check('★ mergeLangTeam：兩邊都有又對不上才標不一致；只有一邊的不算', who('C').mismatch === true && who('A').mismatch === false
+      && who('NoId').rights === null && who('NoId').mismatch === false && who('Solo').listed === false && who('Solo').mismatch === false);
+    check('mergeLangTeam：不在名冊的譯者照樣列出；只有 Discord 的沒有遊戲 ID', who('Dee').listed === false && who('Dee').mc === null
+      && who('Dee').rights.langs.join() === 'es_es' && who('Solo').mc === 'Solo' && who('Solo').rights.langs.join() === 'ja_jp,tr_tr');
+
+    const UNI = JSON.stringify({ sections: [
+      { role: '開發者', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['zh_tw'] }] },
+      { role: '贊助者', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] },
+      { role: '貢獻者', key: 'credits.role.contributors', members: [{ name: 'C', mc: 'Carol', teams: ['ja_jp'], areas: ['testing'] }] }] }, null, 2) + '\n';
+    const cleared = JSON.parse(setPersonTeams(UNI, 'carol', [], null).text);
+    check('★ setPersonTeams：同一個人的每一列一起改；null 的那一欄不動；清空就拿掉', !('teams' in cleared.sections[2].members[0])
+      && cleared.sections[2].members[0].areas.join() === 'testing' && !('teams' in cleared.sections[1].members[0])
+      && JSON.parse(setPersonTeams(UNI, 'Carol', ['ko_kr'], ['code']).text).sections[1].members[0].areas.join() === 'code'
+      && setPersonTeams(UNI, 'Alice_Dev', ['zh_tw'], null).why === 'unchanged' && setPersonTeams(UNI, 'Nobody', [], null).why === 'not found');
+    const joined = JSON.parse(addMember(CREDITS, { section: 'contributors', name: 'J', mc: 'Join_1', teams: ['ja_jp', 'zh_tw'], areas: ['code'] }).text);
+    check('★ 新增成員可以一起帶翻譯團隊與貢獻項目（「加進名冊」用）', JSON.stringify(joined.sections[1].members[0])
+      === JSON.stringify({ name: 'J', mc: 'Join_1', teams: ['zh_tw', 'ja_jp'], areas: ['code'] })
+      && addMember(CREDITS, { section: 'contributors', name: 'J', mc: 'Join_1', teams: ['xx'] }).why === 'bad team');
+
+    const ltEnv = { ...env, GITHUB_TOKEN: 't' };
+    const ltPost = (body, token, which = ltEnv) => worker.fetch(post('/admin/langteam', body, token), which);
+    const tl = (key) => (env.CORPUS.data.has('tl:' + key) ? JSON.parse(env.CORPUS.data.get('tl:' + key).value) : null);
+    const putOf = () => {
+      const put = githubCalls.find((c) => c.method === 'PUT');
+      return put ? JSON.parse(Buffer.from(put.body.content, 'base64').toString('utf8')) : null;
+    };
+    check('★ 一般玩家看不到也改不了翻譯團隊', (await worker.fetch(get('/admin/langteam', bobNow), ltEnv)).status === 403
+      && (await ltPost({ who: 'Carol', langs: ['ja_jp'] }, bobNow)).status === 403);
+    env.CORPUS.data.set('tl:n:solo_tl', { value: JSON.stringify({ langs: ['tr_tr'], m: 'Solo_TL', t: 1, by: 'A' }), metadata: null });
+    const listing = await (await worker.fetch(get('/admin/langteam', aliceWeb), ltEnv)).json();
+    check('★ GET /admin/langteam：名冊的人與譯者併在一起', listing.credits === true
+      && listing.people.some((p) => p.mc === 'Alice_Dev' && p.listed && p.teams.join() === 'zh_tw,ja_jp')
+      && listing.people.some((p) => p.mc === 'Solo_TL' && !p.listed && p.rights.langs.join() === 'tr_tr'));
+
+    githubFile = UNI;
+    githubBranches.clear();
+    githubOpenPulls = [];
+    githubCalls.length = 0;
+    let res = await ltPost({ who: 'Carol', langs: ['ko_kr', 'ja_jp'], note: '日韓' }, aliceWeb);
+    let out = await res.json();
+    let doc3 = putOf();
+    check('★ 勾語言：馬上給譯者權限，名冊的翻譯團隊放進當天的 PR（同一個人的每一列都改）', res.status === 200 && out.listed === true
+      && tl('n:carol').langs.join() === 'ja_jp,ko_kr' && tl('n:carol').n === '日韓' && out.rights.keys.join() === 'n:carol'
+      && out.team.url.endsWith('/pull/9999') && doc3.sections[1].members[0].teams.join() === 'ja_jp,ko_kr'
+      && doc3.sections[2].members[0].teams.join() === 'ja_jp,ko_kr' && doc3.sections[2].members[0].areas.join() === 'testing');
+    env.CORPUS.data.delete('tl:n:carol');
+    env.CORPUS.data.set('tl:u:' + '2'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp'], m: 'Carol', n: '舊備註', t: 1, by: 'A' }), metadata: null });
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'carol', langs: ['ja_jp', 'zh_cn'] }, aliceWeb);
+    check('★ 已經有照 UUID 存的譯者：改那一筆，不另外多存一筆；沒送備註就留著原本的', res.status === 200 && tl('u:' + '2'.repeat(32)).langs.join() === 'zh_cn,ja_jp'
+      && tl('u:' + '2'.repeat(32)).m === 'Carol' && tl('u:' + '2'.repeat(32)).n === '舊備註' && !tl('n:carol'));
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Carol', langs: [] }, aliceWeb);
+    out = await res.json();
+    doc3 = putOf();
+    check('★ 拿掉全部語言：譯者權限與名冊的團隊一起拿掉', res.status === 200 && !tl('u:' + '2'.repeat(32)) && out.rights === null
+      && doc3 && !('teams' in doc3.sections[2].members[0]) && doc3.sections[2].members[0].areas.join() === 'testing');
+    env.CORPUS.data.set('tl:n:carol', { value: JSON.stringify({ langs: ['ko_kr'], m: 'Carol', t: 1, by: 'A' }), metadata: null });
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Carol', areas: ['code', 'testing'] }, aliceWeb);
+    doc3 = putOf();
+    check('★ 只改貢獻項目：譯者權限與團隊都不動', res.status === 200 && tl('n:carol').langs.join() === 'ko_kr'
+      && doc3.sections[2].members[0].areas.join() === 'testing,code' && doc3.sections[2].members[0].teams.join() === 'ja_jp');
+    githubCalls.length = 0;
+    res = await ltPost({ who: 'Dave_Y', langs: ['es_es'] }, aliceWeb);
+    out = await res.json();
+    check('★ 不在名冊上的人：只給譯者權限，不碰 GitHub', res.status === 200 && out.listed === false && out.team === null
+      && tl('n:dave_y').langs.join() === 'es_es' && githubCalls.length === 0);
+    check('不在名冊上的人不能登記貢獻項目', (await (await ltPost({ who: 'Dave_Y', areas: ['code'] }, aliceWeb)).json()).why === 'not listed');
+    res = await ltPost({ who: 'Carol', langs: ['ru_ru'] }, aliceWeb, { ...env, GITHUB_TOKEN: undefined });
+    out = await res.json();
+    check('★ 沒設 GITHUB_TOKEN：譯者權限照樣改好，只說名冊沒改成', res.status === 200 && tl('n:carol').langs.join() === 'ru_ru'
+      && out.team.why === 'github not configured');
+    check('★ 送來的東西不對都擋', (await (await ltPost({ who: 'Carol', langs: ['xx_yy'] }, aliceWeb)).json()).why === 'bad team'
+      && (await (await ltPost({ who: 'Carol', areas: 'code' }, aliceWeb)).json()).why === 'bad area'
+      && (await (await ltPost({ who: 'Carol' }, aliceWeb)).json()).why === 'bad request'
+      && (await (await ltPost({ who: 'bad name!', langs: [] }, aliceWeb)).json()).why === 'bad who'
+      && (await (await ltPost({ who: 'Carol', langs: [], note: 'x'.repeat(61) }, aliceWeb)).json()).why === 'bad note');
+    for (const key of ['n:carol', 'n:dave_y', 'n:solo_tl']) env.CORPUS.data.delete('tl:' + key);
+    githubBranches.clear();
+    githubOpenPulls = [];
+  }
   // ---- Discord 機器人：簽名、三個指令、註冊 ----
   {
     const pair = await crypto.subtle.generateKey({ name: 'Ed25519' }, true, ['sign', 'verify']);
@@ -2454,9 +2957,10 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && pages['/'].includes('<a href="/feedback">') && english['/terms'].includes('<a href="/feedback">')
     && ['id="fbf-list"', 'id="fbf-cat"', 'id="fbf-st"', "'/admin/feedback/status'", "'/admin/feedback/delete'", "'/admin/feedback/issue'"]
       .every((w) => pages['/admin'].includes(w)));
-  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、顯示名稱、保留多久）', LANGS.every((lang) => {
+  check('★ 隱私政策八種語言都講了回饋（會變成公開的 Issue、保留多久）與怎麼刪資料', LANGS.every((lang) => {
     const body = TEXT[lang]['privacy.body'];
-    return body.split('<h2>').length === 14 && body.includes('GitHub') && body.includes('180') && body.includes('/feedback');
+    return body.split('<h2>').length === 12 && body.includes('GitHub') && body.includes('180') && /issue/i.test(body)
+      && body.includes('/api/me/delete') && body.includes('href="/account"') && body.includes('version.json');
   }));
 
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
@@ -2464,9 +2968,20 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.GITHUB_TOKEN = hadToken;
 }
 
-check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁有譯者名單', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
-  .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="translators"') && pages['/admin'].includes("'/admin/translator'")
+check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
+  .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
+check('★ 首頁有照翻譯團隊篩選的那一排；管理頁的譯者名單與翻譯團隊併成一節', pages['/'].includes('id="team-pick"')
+  && pages['/'].includes('who-tags') && pages['/'].includes("get('team')") && pages['/admin'].includes('id="lt-save"')
+  && !pages['/admin'].includes('id="translators"') && !pages['/admin'].includes('id="mteams"')
+  && pages['/admin'].includes('id="c-teams"') && english['/admin'].includes('Translation teams'));
+check('★ 八種語言都有貢獻項目、「全部」與翻譯團隊那一節的字', LANGS.every((code) => TEXT[code] && TEXT[code].js.teamAreas
+  && TEAM_AREAS.every((area) => TEXT[code].js.teamAreas[area]) && TEXT[code].js.teamAll && TEXT[code]['home.teampick']
+  && TEXT[code]['admin.lt'] && TEXT[code]['admin.ltnote'] && TEXT[code].js.lt && TEXT[code].js.lt.confirmDrop.includes('{langs}')
+  && TEXT[code].js.lt.teamFail.includes('{s}') && ['developers', 'sponsors', 'contributors'].every((role) => TEXT[code].js.lt.roles[role])
+  && ['bad who', 'bad team', 'bad area', 'not listed', 'bad note'].every((why) => TEXT[code].js.lt.why[why])));
+check('★ 首頁與管理頁的程式都是合法的 JavaScript', ['/', '/admin'].every((path) => [...pages[path].matchAll(/<script>([\s\S]*?)<\/script>/g)]
+  .every((m) => { try { new Function(m[1]); return true; } catch (e) { console.log(path, e.message); return false; } })));
 for (const path of ['/privacy', '/terms', '/', '/favicon.png']) {
   r = await worker.fetch(new Request('https://x.test' + path, { method: 'HEAD' }), env);
   check('★ HEAD ' + path + ' 跟 GET 一樣是 200、不帶內容（Discord 檢查網址用 HEAD）', r.status === 200 && (await r.text()) === '');

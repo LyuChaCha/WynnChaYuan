@@ -61,8 +61,14 @@ public final class ShinyNameTest {
               (twShiny + sunstarTw).equals(shown));
 
         TranslationStore cn = new TranslationStore();
-        cn.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
+        cn.loadAll(List.of(root.resolve("zh_cn")));
         cn.setNameMode(CollectorConfig.ItemNames.ON);
+        if (cn.lookup("Sunstar") == null || pattern(root.resolve("zh_cn")).isEmpty()) {
+            check("簡中沒有 Sunstar 或 Shiny 的譯名時留原文（實際 " + cn.lookup("Shiny Sunstar") + "）",
+                  cn.lookup("Shiny Sunstar") == null);
+            System.out.println(failures == 0 ? "Shiny 名稱：全部通過" : "Shiny 名稱：" + failures + " 項失敗");
+            System.exit(failures == 0 ? 0 : 1);
+        }
         String cnShiny = prefix(root.resolve("zh_cn"));
         // 「Sunstar 叫什麼」是語料的事，不是這支測試的事——這裡守的是
         // 「Shiny 這個前綴要接上裝備自己的譯名」。先前寫死「太阳与星星圣器」，
@@ -86,10 +92,14 @@ public final class ShinyNameTest {
 
     /** 這個語言的 Shiny 前綴：{@code scoped/name.json} 裡 {@code {name}} 前面那一段。 */
     private static String prefix(Path lang) throws Exception {
-        String pattern = com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(
+        String pattern = pattern(lang);
+        return pattern.substring(0, pattern.indexOf("{name}"));
+    }
+
+    private static String pattern(Path lang) throws Exception {
+        return com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(
                 lang.resolve("scoped/name.json"), java.nio.charset.StandardCharsets.UTF_8))
                 .getAsJsonObject().get("Shiny").getAsString();
-        return pattern.substring(0, pattern.indexOf("{name}"));
     }
 
     /** 一件還沒有譯名的裝備（名稱條目的 dst 是空的，而且查表也認它是沒翻的裝備名）。 */

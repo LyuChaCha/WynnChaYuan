@@ -789,6 +789,27 @@ export function applyRecord(list, record) {
   };
 }
 
+export function dropFromList(list, id) {
+  const rainbows = list.rainbow || [];
+  const roles = list.show || {};
+  if (!list.users.includes(id) && !(id in list.capes) && !list.hidden.includes(id)
+      && !rainbows.includes(id) && !(id in roles)) {
+    return null;
+  }
+  const capes = { ...list.capes };
+  delete capes[id];
+  const show = { ...roles };
+  delete show[id];
+  return {
+    ...list,
+    users: list.users.filter((one) => one !== id),
+    capes,
+    hidden: list.hidden.filter((one) => one !== id),
+    rainbow: rainbows.filter((one) => one !== id),
+    show,
+  };
+}
+
 function validList(list) {
   return list && typeof list.t === 'number' && Array.isArray(list.users)
     && list.capes && typeof list.capes === 'object' && Array.isArray(list.hidden);
@@ -933,6 +954,10 @@ export function teamOf(sections) {
       const entry = { name: member.name.trim().slice(0, 40) };
       if (typeof member.mc === 'string' && NAME.test(member.mc)) entry.mc = member.mc;
       if (typeof member.color === 'string' && COLOUR.test(member.color)) entry.color = member.color;
+      const teams = knownCodes(member.teams, TR_LANGS);
+      if (teams.length) entry.teams = teams;
+      const areas = knownCodes(member.areas, TEAM_AREAS);
+      if (areas.length) entry.areas = areas;
       members.push(entry);
     }
     team.push({ role: found[1], color: COLOUR.test(section.color || '') ? section.color : null, members });
@@ -1406,8 +1431,9 @@ async function handleUpload(request, env, now) {
   const metadata = { t: found.type, v: now, c: now, s: bytes.length, u: user.uuid, n: user.name, h: hash,
     x: found.width, y: found.height };
   // 要不要出現在一覽：這一次有說（?public=0／1）就照這一次，沒說（從遊戲裡傳的）照原本的
-  const asked = new URL(request.url).searchParams.get('public');
-  if (asked === '0' || (asked !== '1' && have && have.metadata && have.metadata.q)) metadata.q = 1;
+  const vis = askedVisibility(new URL(request.url).searchParams)
+    || (have && have.metadata ? visibility(have.metadata) : 'public');
+  if (vis !== 'public') metadata.vis = vis;
   // 在審核名單上的人：這張圖沒通過過，就先不給別人看
   const pending = await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
@@ -1419,7 +1445,7 @@ async function handleUpload(request, env, now) {
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h, have.metadata, now);
   // 自己傳了新的：先前從一覽套用時收著的那一件就不必留了
   if (have && have.metadata && have.metadata.p && have.metadata.p.h !== hash) {
-    await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
+    await sweep(env, have.metadata.p.h, { ...have.metadata.p, vis: visibility(have.metadata) }, now);
   }
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
@@ -1453,8 +1479,39 @@ const HISTORY_MAX = 8;
 /** 我的最愛最多幾件。 */
 const FAVS_MAX = 200;
 
+export const VISIBILITY = ['public', 'unlisted', 'private'];
+
+export function visibility(meta) {
+  if (!meta) return 'public';
+  if (meta.vis === 'unlisted' || meta.vis === 'private') return meta.vis;
+  return meta.q ? 'unlisted' : 'public';
+}
+
+export function askedVisibility(params) {
+  const vis = params.get('vis');
+  if (VISIBILITY.includes(vis)) return vis;
+  const pub = params.get('public');
+  return pub === '0' ? 'unlisted' : pub === '1' ? 'public' : null;
+}
+
+function withVisibility(meta, vis) {
+  const { q, vis: old, ...rest } = meta;
+  if (vis !== 'public') rest.vis = vis;
+  return rest;
+}
+
+export function groupVisibility(wearers) {
+  if (wearers.some(listed)) return 'public';
+  if (wearers.some((cape) => visibility(cape) !== 'private')) return 'unlisted';
+  return 'private';
+}
+
+const idleVisibility = (one) => (!one.q ? 'public' : one.vis === 'private' ? 'private' : 'unlisted');
+
+const linkable = (one) => !one.q || one.vis === 'unlisted';
+
 /** 一覽上看得到的：公開，而且不是等審核的。 */
-const listed = (cape) => !cape.q && !cape.r;
+const listed = (cape) => visibility(cape) === 'public' && !cape.r && !cape.lk;
 
 /** 所有人的使用紀錄（只有鍵：誰、哪張圖）。sweep 與管理的人照圖刪除的時候用。 */
 async function allHistory(env, prefix = 'hist:') {
@@ -1588,14 +1645,14 @@ async function handlePublic(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
   const body = await readJson(request);
-  if (!body || typeof body.on !== 'boolean') return no('bad request');
+  const vis = !body ? null : VISIBILITY.includes(body.vis) ? body.vis
+    : typeof body.on === 'boolean' ? (body.on ? 'public' : 'unlisted') : null;
+  if (!vis) return no('bad request');
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (!have || !have.metadata) return no('no cape', 404);
-  const { q: before, ...rest } = have.metadata;
-  if (!body.on) rest.q = 1;
-  await env.CORPUS.put('cape:' + id, '', { metadata: rest });
-  return json({ ok: true, public: body.on });
+  await env.CORPUS.put('cape:' + id, '', { metadata: withVisibility(have.metadata, vis) });
+  return json({ ok: true, vis, public: vis === 'public' });
 }
 
 /** 審核名單。 */
@@ -1711,15 +1768,23 @@ async function handleWear(request, env, now) {
   if (!/^[0-9a-f]{64}$/.test(hash)) return no('bad request');
   // 只能套用一覽上看得到的（公開、通過審核的），或自己用過的；別人收著準備復原的那一張不算
   const id = await publicId(user.uuid);
-  let onShow = (await allCapes(env)).find((cape) => cape.h === hash && listed(cape));
+  const everyone = await allCapes(env);
+  const idleNow = await idleMap(env);
+  let onShow = everyone.find((cape) => cape.h === hash && listed(cape));
   if (!onShow) {
     // 沒有人穿、還在倒數的那幾件也在一覽上
-    const waiting = (await idleMap(env))[hash];
+    const waiting = idleNow[hash];
     if (waiting && !waiting.q) onShow = { ...waiting, h: hash };
   }
-  const past = onShow ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
-  let source = onShow || (past && past.metadata ? { ...past.metadata, h: hash } : null);
-  if (source && !onShow) {
+  let linked = null;
+  if (!onShow) {
+    const shared = everyone.find((cape) => cape.h === hash && !cape.r && visibility(cape) !== 'private');
+    if (shared) linked = shared;
+    else if (idleNow[hash] && linkable(idleNow[hash])) linked = { ...idleNow[hash], h: hash };
+  }
+  const past = onShow || linked ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
+  let source = onShow || linked || (past && past.metadata ? { ...past.metadata, h: hash } : null);
+  if (source && !onShow && !linked) {
     // 從自己的紀錄穿回去：那張圖要還在（沒有人穿滿七天的圖會被刪掉）
     const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
     if (blob && blob.value && blob.value.cancel) blob.value.cancel();
@@ -1743,9 +1808,10 @@ async function handleWear(request, env, now) {
     metadata.y = source.y;
   }
   if (keep) metadata.p = keep;
-  if (mine && mine.q) metadata.q = 1;                        // 公開與否照他原本的
+  if (mine && visibility(mine) !== 'public') metadata.vis = visibility(mine);
+  if (linked) metadata.lk = 1;
   // 一覽上看得到的本來就給大家看了；從自己的紀錄穿回去的，在審核名單上的人照樣要審
-  const pending = !onShow && await needsReview(env, user.uuid, hash);
+  const pending = !onShow && !linked && await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
@@ -1777,7 +1843,7 @@ async function handleRestore(request, env, now) {
     metadata.x = kept.x;
     metadata.y = kept.y;
   }
-  if (mine.q) metadata.q = 1;
+  if (visibility(mine) !== 'public') metadata.vis = visibility(mine);
   if (await needsReview(env, user.uuid, kept.h)) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
@@ -1859,7 +1925,9 @@ async function sweep(env, hash, from, now) {
     entry.y = from.y;
   }
   if (from && (from.c || from.v)) entry.c = from.c || from.v;
-  if (!from || from.q || from.r) entry.q = 1;
+  const vis = !from ? 'private' : from.lk && visibility(from) === 'public' ? 'unlisted' : visibility(from);
+  if (!from || vis !== 'public' || from.r) entry.q = 1;
+  if (from && !from.r && vis !== 'public') entry.vis = vis;
   idle[hash] = entry;
   await env.CORPUS.put('idle', JSON.stringify(idle));
 }
@@ -1874,10 +1942,11 @@ async function revive(env, hash) {
 
 /** 馬上刪掉這張圖（管理的人移除的）。還有人在用就不動。 */
 async function discard(env, hash) {
-  if (!hash || inUse(await allCapes(env), hash)) return;
+  if (!hash || inUse(await allCapes(env), hash)) return false;
   await env.CORPUS.delete('blob:' + hash);
   await dropPreviews(env, hash);
   await revive(env, hash);
+  return true;
 }
 
 /** 期滿的刪掉。回傳整理過的閒置清單。 */
@@ -1952,7 +2021,7 @@ async function dropCape(env, id, now) {
   if (!have || !have.metadata) return null;
   await env.CORPUS.delete('cape:' + id);
   await sweep(env, have.metadata.h, have.metadata, now);
-  if (have.metadata.p) await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
+  if (have.metadata.p) await sweep(env, have.metadata.p.h, { ...have.metadata.p, vis: visibility(have.metadata) }, now);
   const uuid = have.metadata.u;
   if (uuid && UUID.test(uuid)) {
     const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
@@ -2011,6 +2080,31 @@ async function handleCapes(env, now) {
   const stars = await starMap(env);
   for (const group of groups) group.stars = Number(stars[group.h]) || 0;
   return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleCapeLink(request, env, now, hash) {
+  if (!HASH.test(hash)) return no('not found', 404);
+  const user = await who(request, env, now);
+  const viewer = user ? await publicId(user.uuid) : null;
+  const staff = Boolean(await moderator(request, env, now));
+  const wearers = (await allCapes(env)).filter((cape) => cape.h === hash);
+  const shown = staff ? wearers
+    : wearers.filter((cape) => cape.id === viewer || (!cape.r && visibility(cape) !== 'private'));
+  let group = groupCapes(shown)[0] || null;
+  if (group) {
+    group.vis = groupVisibility(shown);
+    group.pending = shown.some((cape) => cape.r);
+    group.hidden = !shown.some(listed);
+    if (shown.some((cape) => cape.id === viewer)) group.own = true;
+  } else {
+    const one = (await purge(env, now))[hash];
+    if (one && (staff || linkable(one))) {
+      group = { ...idleGroup(hash, one), vis: idleVisibility(one), pending: false, hidden: Boolean(one.q) };
+    }
+  }
+  if (!group) return no('not found', 404);
+  group.stars = Number((await starMap(env))[hash]) || 0;
+  return json({ cape: group, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
 
 /**
@@ -2093,10 +2187,140 @@ async function handleMe(request, env, now) {
       x: cape.metadata.x || 0, y: cape.metadata.y || 0, h: cape.metadata.h,
       worn: Boolean(cape.metadata.w), back: Boolean(cape.metadata.w && cape.metadata.p),
       // public：出現在披風一覽上；pending：在等審核，通過之前別人看不到
-      public: !cape.metadata.q, pending: Boolean(cape.metadata.r) } : null,
+      public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata), listed: listed(cape.metadata),
+      pending: Boolean(cape.metadata.r) } : null,
     // 在審核名單上：之後上傳的披風要先通過
     review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
   });
+}
+
+async function forgetPlayer(env, uuid, now) {
+  const id = await publicId(uuid);
+  await env.CORPUS.delete('u:' + uuid);
+  const list = await storedList(env);
+  const trimmed = list && dropFromList(list, id);
+  if (trimmed) await env.CORPUS.put('presence:list', JSON.stringify(trimmed));
+  const history = await allHistory(env, 'hist:' + id + ':');
+  for (const one of history) await env.CORPUS.delete(one.key);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  const mine = have && have.metadata && typeof have.metadata.h === 'string' ? have.metadata : null;
+  const own = new Set();
+  if (mine) {
+    await env.CORPUS.delete('cape:' + id);
+    if (mine.w) await sweep(env, mine.h, mine, now);
+    else own.add(mine.h);
+    if (mine.p && HASH.test(mine.p.h || '')) own.add(mine.p.h);
+  }
+  const idle = await idleMap(env);
+  const others = new Set((await allHistory(env)).map((one) => one.h));
+  for (const one of history) {
+    if (idle[one.h] && !others.has(one.h)) own.add(one.h);
+  }
+  const gone = [];
+  for (const hash of own) {
+    if (await discard(env, hash)) gone.push(hash);
+  }
+  const favs = await favsOf(env, uuid);
+  await env.CORPUS.delete('fav:' + uuid);
+  const stars = await starMap(env);
+  let changed = false;
+  for (const hash of favs.h) {
+    if (!(hash in stars)) continue;
+    stars[hash] = Math.max(0, (Number(stars[hash]) || 0) - 1);
+    if (!stars[hash]) delete stars[hash];
+    changed = true;
+  }
+  for (const hash of gone) {
+    if (!(hash in stars)) continue;
+    delete stars[hash];
+    changed = true;
+  }
+  if (changed) await env.CORPUS.put('stars', JSON.stringify(stars));
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'prev:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      if (k.name.split(':')[2] === uuid) await env.CORPUS.delete(k.name);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+}
+
+async function forgetDiscord(env, id) {
+  const record = await account(env, id);
+  if (record && UUID.test(record.u || '') && await env.CORPUS.get('l:' + record.u) === id) {
+    await env.CORPUS.delete('l:' + record.u);
+  }
+  await env.CORPUS.delete('d:' + id);
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'fb:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      if (parseRecord(await env.CORPUS.get(k.name)).uid === id) await env.CORPUS.delete(k.name);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+}
+
+export async function goneCode(key) {
+  return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode('gone:' + key))).slice(0, 8);
+}
+
+export function anonymise(record, ids, code) {
+  const mark = 'x:' + code;
+  let changed = false;
+  const hide = (entry) => {
+    if (!entry || !ids.includes(entry.by)) return;
+    entry.by = mark;
+    entry.name = null;
+    entry.gone = code;
+    changed = true;
+  };
+  const votes = (entry) => {
+    if (!Array.isArray(entry.votes) || !entry.votes.some((v) => ids.includes(v))) return;
+    entry.votes = [...new Set(entry.votes.map((v) => (ids.includes(v) ? mark : v)))];
+    changed = true;
+  };
+  hide(record);
+  for (const entry of [...(record.items || []), ...(record.options || [])]) {
+    hide(entry);
+    votes(entry);
+  }
+  if (changed) record.ghosts = { ...(record.ghosts || {}), [code]: ids };
+  return changed;
+}
+
+async function forgetTranslate(env, ids, code) {
+  for (const [prefix, meta] of [['tp:', trMeta], ['tq:', pollMeta]]) {
+    let cursor;
+    do {
+      const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
+      for (const k of page.keys) {
+        const record = parseRecord(await env.CORPUS.get(k.name));
+        if (anonymise(record, ids, code)) {
+          await env.CORPUS.put(k.name, JSON.stringify(record), { metadata: meta(record) });
+        }
+      }
+      cursor = page.list_complete ? undefined : page.cursor;
+    } while (cursor);
+  }
+}
+
+async function handleDeleteMe(request, env, now) {
+  const user = await who(request, env, now);
+  const session = user ? null : await discordSession(request, env, now);
+  if (!user && !session) return no('login first', 401);
+  const discord = user ? user.discord || await env.CORPUS.get('l:' + user.uuid) : session.id;
+  const ids = [];
+  if (user) ids.push('u:' + user.uuid);
+  if (discord && DISCORD_ID.test(discord)) ids.push('d:' + discord);
+  await forgetTranslate(env, ids, await goneCode(user ? user.uuid : discord));
+  if (user) {
+    await forgetPlayer(env, user.uuid, now);
+    await env.CORPUS.delete('l:' + user.uuid);
+  }
+  if (discord && DISCORD_ID.test(discord)) await forgetDiscord(env, discord);
+  return json({ ok: true }, 200, { 'cache-control': 'no-store' });
 }
 
 /**
@@ -2173,10 +2397,11 @@ async function handleAdminCapes(request, env, now) {
   for (const group of groups) {
     const wearers = capes.filter((cape) => cape.h === group.h);
     group.owners = wearers.map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v,
-      private: Boolean(cape.q), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
+      vis: visibility(cape), linked: Boolean(cape.lk), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
     group.stars = Number(stars[group.h]) || 0;
     // 管理的人看得到全部：沒有人公開的標「不公開」，有人在等審核的標「待審核」
-    group.hidden = wearers.every((cape) => cape.q || cape.r);
+    group.hidden = wearers.every((cape) => !listed(cape));
+    group.vis = groupVisibility(wearers);
     group.pending = wearers.some((cape) => cape.r);
   }
   // 沒有人穿、還在倒數的：管理的人全部看得到（原本不公開的也是），要刪可以馬上刪
@@ -2184,7 +2409,7 @@ async function handleAdminCapes(request, env, now) {
   for (const hash of Object.keys(idle)) {
     if (capes.some((cape) => cape.h === hash)) continue;
     groups.push({ ...idleGroup(hash, idle[hash]), owners: [], stars: Number(stars[hash]) || 0,
-      hidden: Boolean(idle[hash].q), pending: false });
+      hidden: Boolean(idle[hash].q), vis: idleVisibility(idle[hash]), pending: false });
   }
   return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
@@ -2274,6 +2499,57 @@ const CREDITS_PATH = 'src/main/resources/assets/wynnchayuan/credits.json';
 /** 可以加到哪幾區。鍵是 credits.json 裡那一區 key 的最後一段。 */
 const SECTIONS = { developers: '開發者', sponsors: '贊助者', contributors: '貢獻者' };
 
+export const TEAM_AREAS = ['translation', 'proofreading', 'capture', 'testing', 'code', 'design', 'website', 'community'];
+
+function knownCodes(value, allowed) {
+  return Array.isArray(value) ? allowed.filter((code) => value.includes(code)) : [];
+}
+
+function exactCodes(value, allowed) {
+  if (!Array.isArray(value) || value.length > allowed.length * 2) return null;
+  if (!value.every((code) => typeof code === 'string' && allowed.includes(code))) return null;
+  return knownCodes(value, allowed);
+}
+
+export function teamsInput(entry) {
+  if (!entry || typeof entry !== 'object') return { why: 'bad request' };
+  if (!Object.hasOwn(SECTIONS, entry.section)) return { why: 'bad section' };
+  const who = typeof entry.who === 'string' ? entry.who.trim() : '';
+  if (!who || who.length > 40) return { why: 'bad who' };
+  const teams = exactCodes(entry.teams, TR_LANGS);
+  if (!teams) return { why: 'bad team' };
+  const areas = exactCodes(entry.areas, TEAM_AREAS);
+  if (!areas) return { why: 'bad area' };
+  return { section: entry.section, who, teams, areas };
+}
+
+export function setMemberTeams(text, entry) {
+  const input = teamsInput(entry);
+  if (input.why) return input;
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const target = (Array.isArray(doc.sections) ? doc.sections : []).find((item) => item && typeof item.key === 'string'
+    && item.key.endsWith('.' + input.section));
+  if (!target || !Array.isArray(target.members)) return { why: 'bad credits' };
+  const lower = input.who.toLowerCase();
+  const member = target.members.find((one) => one && typeof one.mc === 'string' && one.mc.toLowerCase() === lower)
+    || target.members.find((one) => one && !one.mc && one.name === input.who);
+  if (!member) return { why: 'not found' };
+  const held = (field) => JSON.stringify(field in member ? member[field] : []);
+  if (held('teams') === JSON.stringify(input.teams) && held('areas') === JSON.stringify(input.areas)) {
+    return { why: 'unchanged' };
+  }
+  if (input.teams.length) member.teams = input.teams;
+  else delete member.teams;
+  if (input.areas.length) member.areas = input.areas;
+  else delete member.areas;
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(member.name || input.who) };
+}
+
 /**
  * 加一個成員之後的 credits.json。純函式，測試直接餵。
  *
@@ -2305,6 +2581,12 @@ export function addMember(text, entry) {
   }
   const member = { name: name.trim(), mc };
   if (color) member.color = color.toUpperCase();
+  const teams = entry.teams === undefined ? [] : exactCodes(entry.teams, TR_LANGS);
+  if (!teams) return { why: 'bad team' };
+  const areas = entry.areas === undefined ? [] : exactCodes(entry.areas, TEAM_AREAS);
+  if (!areas) return { why: 'bad area' };
+  if (teams.length) member.teams = teams;
+  if (areas.length) member.areas = areas;
   target.members.push(member);
   // 倉庫裡那一份就是兩格縮排、結尾一個換行；照這樣寫回去，diff 只有新增的那幾行
   return { text: JSON.stringify(doc, null, 2) + '\n' };
@@ -2381,6 +2663,122 @@ async function handleAddCredit(request, env, now) {
   } catch (e) {
     return no('github unreachable', 502);
   }
+}
+
+const TEAMS_WHY_STATUS = { unchanged: 409, 'not found': 404 };
+
+export function addMemberTeams(text, mc, langs) {
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad who' };
+  const adding = knownCodes(langs, TR_LANGS);
+  if (!adding.length) return { why: 'bad team' };
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const lower = mc.toLowerCase();
+  let found = null;
+  let changed = false;
+  for (const section of Array.isArray(doc.sections) ? doc.sections : []) {
+    if (!section || !/\.(developers|sponsors|contributors)$/.test(String(section.key)) || !Array.isArray(section.members)) continue;
+    for (const member of section.members) {
+      if (!member || typeof member.mc !== 'string' || member.mc.toLowerCase() !== lower) continue;
+      found = found || member;
+      const had = Array.isArray(member.teams) ? member.teams : [];
+      const next = knownCodes([...had, ...adding], TR_LANGS);
+      if (JSON.stringify(next) === JSON.stringify(had)) continue;
+      member.teams = next;
+      changed = true;
+    }
+  }
+  if (!found) return { why: 'not found' };
+  if (!changed) return { why: 'unchanged' };
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(found.name || mc) };
+}
+
+async function commitTeams(env, by, now, change) {
+  if (!env.GITHUB_TOKEN) return { why: 'github not configured', status: 503 };
+  const github = githubClient(env);
+  try {
+    const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
+    let branch = 'credits/teams-' + day;
+    let url = '';
+    const ref = await github('/git/ref/heads/' + branch);
+    if (ref.status === 200) {
+      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
+      const list = open.status === 200 ? await open.json() : [];
+      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
+      else branch += '-' + now;
+    } else if (ref.status !== 404) {
+      return { why: 'github ' + ref.status, status: 502 };
+    }
+    const reuse = Boolean(url);
+    const file = await github('/contents/' + CREDITS_PATH + '?ref=' + encodeURIComponent(reuse ? branch : 'main'));
+    if (file.status !== 200) return { why: 'github ' + file.status, status: 502 };
+    const current = await file.json();
+    const changed = change(base64ToUtf8(current.content));
+    if (changed.why) return { why: changed.why, status: TEAMS_WHY_STATUS[changed.why] || 400 };
+    if (!reuse) {
+      const head = await github('/git/ref/heads/main');
+      if (head.status !== 200) return { why: 'github ' + head.status, status: 502 };
+      const made = await github('/git/refs', {
+        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
+      });
+      if (made.status !== 201) return { why: 'github ' + made.status, status: 502 };
+    }
+    const message = '名單：' + changed.name + ' 的翻譯團隊與貢獻項目';
+    const put = await github('/contents/' + CREDITS_PATH, {
+      method: 'PUT',
+      body: JSON.stringify({ message, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
+    });
+    if (put.status !== 200 && put.status !== 201) return { why: 'github ' + put.status, status: 502 };
+    if (!reuse) {
+      const pull = await github('/pulls', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: '名單：翻譯團隊與貢獻項目（' + day + '）',
+          head: branch,
+          base: 'main',
+          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
+            + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
+        }),
+      });
+      if (pull.status !== 201) return { why: 'github ' + pull.status, status: 502 };
+      url = String((await pull.json()).html_url || '');
+    }
+    return { url, added: reuse };
+  } catch (e) {
+    return { why: 'github unreachable', status: 502 };
+  }
+}
+
+async function handleCreditTeams(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const input = teamsInput(body);
+  if (input.why) return no(input.why);
+  const done = await commitTeams(env, by, now, (text) => setMemberTeams(text, input));
+  if (done.why) return no(done.why, done.status);
+  return json({ ok: true, url: done.url, added: done.added });
+}
+
+function creditTeamsOf(list, mc) {
+  if (!list || typeof mc !== 'string' || !mc) return null;
+  const lower = mc.toLowerCase();
+  let hit = false;
+  const teams = new Set();
+  for (const section of list.team) {
+    for (const member of section.members) {
+      if (!member.mc || member.mc.toLowerCase() !== lower) continue;
+      hit = true;
+      for (const code of member.teams || []) teams.add(code);
+    }
+  }
+  return hit ? TR_LANGS.filter((code) => teams.has(code)) : null;
 }
 
 // ---------------------------------------------------------------- 協作翻譯
@@ -2876,8 +3274,7 @@ async function handleTrPollReopen(request, env, now) {
 
 // ---- 譯者名單（管理頁）
 
-async function handleTranslators(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+async function translatorList(env, list) {
   const out = [];
   let cursor;
   do {
@@ -2886,15 +3283,35 @@ async function handleTranslators(request, env, now) {
       const record = parseRecord(await env.CORPUS.get(k.name));
       const key = k.name.slice(3);
       out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
+        team: creditTeamsOf(list, record.m),
         discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
     }
     cursor = page.list_complete ? undefined : page.cursor;
   } while (cursor);
-  out.sort((a, b) => (b.t || 0) - (a.t || 0));
-  return json({ translators: out }, 200, { 'cache-control': 'no-store' });
+  return out.sort((a, b) => (b.t || 0) - (a.t || 0));
 }
 
-/** 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）。 */
+async function handleTranslators(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  return json({ translators: await translatorList(env, await credits(now)) }, 200, { 'cache-control': 'no-store' });
+}
+
+async function translatorIdentity(env, key, who) {
+  const found = {};
+  if (key.startsWith('n:')) found.m = String(who).trim();
+  const linked = key.startsWith('d:') ? key.slice(2) : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
+  const known = linked ? await account(env, linked) : null;
+  if (known) {
+    if (known.n) found.dn = known.n;
+    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) found.m = known.m;
+  }
+  if (key.startsWith('u:') && !found.m) {
+    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
+    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) found.m = cape.metadata.n;
+  }
+  return found;
+}
+
 async function handleTranslatorAdd(request, env, now) {
   const by = await moderator(request, env, now);
   if (!by) return no('forbidden', 403);
@@ -2906,20 +3323,144 @@ async function handleTranslatorAdd(request, env, now) {
   if (!langs.length) return no('bad langs');
   const note = typeof body.note === 'string' ? body.note.trim() : '';
   if (note.length > 60) return no('bad note');
-  const record = { langs, n: note, t: now, by };
-  if (key.startsWith('n:')) record.m = String(body.who).trim();
-  const linked = key.startsWith('d:') ? key.slice(2) : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
-  const known = linked ? await account(env, linked) : null;
-  if (known) {
-    if (known.n) record.dn = known.n;
-    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) record.m = known.m;
-  }
-  if (key.startsWith('u:') && !record.m) {
-    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
-    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) record.m = cape.metadata.n;
-  }
+  const record = { langs, n: note, t: now, by, ...(await translatorIdentity(env, key, body.who)) };
   await env.CORPUS.put('tl:' + key, JSON.stringify(record));
-  return json({ ok: true, key });
+  const listed = creditTeamsOf(await credits(now), record.m);
+  if (!listed) return json({ ok: true, key, team: null });
+  if (langs.every((code) => listed.includes(code))) return json({ ok: true, key, team: { teams: listed } });
+  const done = await commitTeams(env, by, now, (text) => addMemberTeams(text, record.m, langs));
+  if (done.why && done.why !== 'unchanged') return json({ ok: true, key, team: { why: done.why } });
+  return json({ ok: true, key, team: done.why ? { teams: listed } : { url: done.url, added: done.added } });
+}
+
+export function mergeLangTeam(team, translators) {
+  const people = [];
+  const byMc = new Map();
+  const union = (a, b, all) => all.filter((code) => a.includes(code) || (Array.isArray(b) && b.includes(code)));
+  for (const section of Array.isArray(team) ? team : []) {
+    for (const member of Array.isArray(section.members) ? section.members : []) {
+      const mc = typeof member.mc === 'string' && member.mc ? member.mc.toLowerCase() : null;
+      let person = mc ? byMc.get(mc) : null;
+      if (!person) {
+        person = { name: member.name, mc: member.mc || null, roles: [], listed: true, teams: [], areas: [], rights: null };
+        people.push(person);
+        if (mc) byMc.set(mc, person);
+      }
+      person.roles.push(section.role);
+      person.teams = union(person.teams, member.teams, TR_LANGS);
+      person.areas = union(person.areas, member.areas, TEAM_AREAS);
+    }
+  }
+  for (const one of Array.isArray(translators) ? translators : []) {
+    const mc = typeof one.name === 'string' && one.name ? one.name.toLowerCase() : null;
+    let person = mc ? byMc.get(mc) : null;
+    if (!person) {
+      person = { name: one.name || one.discord || one.id, mc: one.name || null, roles: [], listed: false, teams: [], areas: [], rights: null };
+      people.push(person);
+      if (mc) byMc.set(mc, person);
+    }
+    const rights = person.rights || { keys: [], langs: [], note: '', discord: null, t: null, by: null };
+    rights.keys.push(one.key);
+    rights.langs = union(rights.langs, one.langs, TR_LANGS);
+    if (!rights.note && one.note) rights.note = one.note;
+    if (!rights.discord && one.discord) rights.discord = one.discord;
+    if ((one.t || 0) > (rights.t || 0)) {
+      rights.t = one.t;
+      rights.by = one.by || null;
+    }
+    person.rights = rights;
+  }
+  for (const person of people) {
+    person.mismatch = Boolean(person.listed && person.rights && person.rights.langs.join() !== person.teams.join());
+  }
+  return people;
+}
+
+export function setPersonTeams(text, mc, teams, areas) {
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad who' };
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const before = JSON.stringify(doc);
+  const lower = mc.toLowerCase();
+  let found = null;
+  for (const section of Array.isArray(doc.sections) ? doc.sections : []) {
+    if (!section || !/\.(developers|sponsors|contributors)$/.test(String(section.key)) || !Array.isArray(section.members)) continue;
+    for (const member of section.members) {
+      if (!member || typeof member.mc !== 'string' || member.mc.toLowerCase() !== lower) continue;
+      found = found || member;
+      if (Array.isArray(teams)) {
+        if (teams.length) member.teams = teams;
+        else delete member.teams;
+      }
+      if (Array.isArray(areas)) {
+        if (areas.length) member.areas = areas;
+        else delete member.areas;
+      }
+    }
+  }
+  if (!found) return { why: 'not found' };
+  if (JSON.stringify(doc) === before) return { why: 'unchanged' };
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(found.name || mc) };
+}
+
+async function handleLangTeam(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const list = await credits(now);
+  const translators = await translatorList(env, list);
+  return json({ people: mergeLangTeam(list ? list.team : [], translators), credits: Boolean(list) }, 200,
+    { 'cache-control': 'no-store' });
+}
+
+async function handleLangTeamSet(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request, TR_BODY);
+  if (!body) return no('bad request');
+  const key = staffKey(body.who);
+  if (!key) return no('bad who');
+  const langs = body.langs === undefined ? null : exactCodes(body.langs, TR_LANGS);
+  if (body.langs !== undefined && !langs) return no('bad team');
+  const areas = body.areas === undefined ? null : exactCodes(body.areas, TEAM_AREAS);
+  if (body.areas !== undefined && !areas) return no('bad area');
+  if (!langs && !areas) return no('bad request');
+  const note = typeof body.note === 'string' ? body.note.trim() : null;
+  if (note && note.length > 60) return no('bad note');
+  const identity = await translatorIdentity(env, key, body.who);
+  const mc = identity.m || null;
+  const list = await credits(now);
+  const listed = Boolean(mc && list && list.names.has(mc.toLowerCase()));
+  if (areas && !listed) return no(list ? 'not listed' : 'try later', list ? 400 : 503);
+  let rights = null;
+  if (langs) {
+    const matched = [];
+    for (const one of await translatorList(env, null)) {
+      if (one.key === key || (mc && one.name && one.name.toLowerCase() === mc.toLowerCase())) matched.push(one.key);
+    }
+    if (!langs.length) {
+      for (const k of matched) await env.CORPUS.delete('tl:' + k);
+    } else {
+      const keys = matched.length ? matched : [key];
+      for (const k of keys) {
+        const old = parseRecord(await env.CORPUS.get('tl:' + k));
+        const record = { ...old, ...identity, ...(old.m ? { m: old.m } : {}), langs, t: now, by };
+        record.n = note === null ? (old.n || '') : note;
+        await env.CORPUS.put('tl:' + k, JSON.stringify(record));
+      }
+      rights = { keys, langs };
+    }
+  }
+  let team = null;
+  if (listed) {
+    const done = await commitTeams(env, by, now, (text) => setPersonTeams(text, mc, langs, areas));
+    team = done.why === 'unchanged' ? { unchanged: true } : done.why ? { why: done.why } : { url: done.url, added: done.added };
+  } else if (langs && mc && !list) {
+    team = { why: 'try later' };
+  }
+  return json({ ok: true, mc, listed, rights, team });
 }
 
 async function handleTranslatorRemove(request, env, now) {
@@ -3515,7 +4056,7 @@ async function botCape(env, text, name) {
   const mine = capes.find((c) => String(c.n || '').toLowerCase() === name.toLowerCase());
   if (!mine) return { content: botFmt(text.noCape, { name }) };
   if (mine.r) return { content: botFmt(text.pendingCape, { name: mine.n }) };
-  if (mine.q) return { content: botFmt(text.privateCape, { name: mine.n }) };
+  if (!listed(mine)) return { content: botFmt(text.privateCape, { name: mine.n }) };
   return {
     embeds: [{
       title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
@@ -3698,6 +4239,42 @@ async function handleDiscordRegister(request, env, now) {
   }
 }
 
+async function trRoute(route, request, env, now) {
+  if (route === 'GET /tr/me') return handleTrMe(request, env, now);
+  if (route === 'GET /tr/props') return handleTrProps(request, env);
+  if (route === 'GET /tr/prop') return handleTrProp(request, env);
+  if (route === 'POST /tr/propose') return handleTrPropose(request, env, now);
+  if (route === 'POST /tr/vote') return handleTrVote(request, env, now);
+  if (route === 'POST /tr/accept') return handleTrAccept(request, env, now);
+  if (route === 'POST /tr/reject') return handleTrReject(request, env, now);
+  if (route === 'GET /tr/polls') return handleTrPolls(request, env);
+  if (route === 'GET /tr/poll') return handleTrPoll(request, env);
+  if (route === 'POST /tr/poll') return handleTrPollOpen(request, env, now);
+  if (route === 'POST /tr/poll/option') return handleTrPollOption(request, env, now);
+  if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
+  if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
+  if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+  return no('not found', 404);
+}
+
+async function scrubTr(request, env, now, answer) {
+  if (!(answer.headers.get('content-type') || '').includes('json')) return answer;
+  const text = await answer.text();
+  if (!text.includes('"ghosts"') || await moderator(request, env, now)) {
+    return new Response(text, { status: answer.status, headers: answer.headers });
+  }
+  const body = JSON.parse(text);
+  const strip = (value) => {
+    if (Array.isArray(value)) value.forEach(strip);
+    else if (value && typeof value === 'object') {
+      delete value.ghosts;
+      Object.values(value).forEach(strip);
+    }
+  };
+  strip(body);
+  return new Response(JSON.stringify(body), { status: answer.status, headers: answer.headers });
+}
+
 const site = {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
@@ -3748,6 +4325,7 @@ const site = {
     if (route === 'POST /link') return handleLink(request, env, now);
     if (route === 'POST /unlink') return handleUnlink(request, env, now);
     if (route === 'GET /me') return handleMe(request, env, now);
+    if (route === 'POST /me/delete') return handleDeleteMe(request, env, now);
     if (route === 'POST /hello') return handleHello(request, env, now);
     if (route === 'GET /list') return handleList(env, now);
     if (route === 'PUT /cape') return handleUpload(request, env, now);
@@ -3761,6 +4339,7 @@ const site = {
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (route === 'POST /admin/credits/teams') return handleCreditTeams(request, env, now);
     if (route === 'GET /admin/staff') return handleStaff(request, env, now);
     if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
     if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
@@ -3768,21 +4347,12 @@ const site = {
     if (route === 'GET /admin/translators') return handleTranslators(request, env, now);
     if (route === 'POST /admin/translator') return handleTranslatorAdd(request, env, now);
     if (route === 'POST /admin/untranslator') return handleTranslatorRemove(request, env, now);
-    if (route === 'GET /tr/me') return handleTrMe(request, env, now);
+    if (route === 'GET /admin/langteam') return handleLangTeam(request, env, now);
+    if (route === 'POST /admin/langteam') return handleLangTeamSet(request, env, now);
     if (route.startsWith('GET /tr/index/')) return handleTrIndex(request, env, route.slice('GET /tr/index/'.length), ctx);
-    if (route === 'GET /tr/props') return handleTrProps(request, env);
-    if (route === 'GET /tr/prop') return handleTrProp(request, env);
-    if (route === 'POST /tr/propose') return handleTrPropose(request, env, now);
-    if (route === 'POST /tr/vote') return handleTrVote(request, env, now);
-    if (route === 'POST /tr/accept') return handleTrAccept(request, env, now);
-    if (route === 'POST /tr/reject') return handleTrReject(request, env, now);
-    if (route === 'GET /tr/polls') return handleTrPolls(request, env);
-    if (route === 'GET /tr/poll') return handleTrPoll(request, env);
-    if (route === 'POST /tr/poll') return handleTrPollOpen(request, env, now);
-    if (route === 'POST /tr/poll/option') return handleTrPollOption(request, env, now);
-    if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
-    if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
-    if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+    if (route.startsWith('GET /tr/') || route.startsWith('POST /tr/')) {
+      return scrubTr(request, env, now, await trRoute(route, request, env, now));
+    }
     if (route === 'POST /feedback') return handleFeedback(request, env, now);
     if (route === 'GET /admin/feedback') return handleFeedbackList(request, env, now);
     if (route === 'POST /admin/feedback/status') return handleFeedbackStatus(request, env, now);
@@ -3795,9 +4365,10 @@ const site = {
     if (route === 'POST /cape/wear') return handleWear(request, env, now);
     if (route === 'POST /cape/restore') return handleRestore(request, env, now);
     if (route === 'POST /cape/star') return handleStar(request, env, now);
-    if (route === 'POST /cape/public') return handlePublic(request, env, now);
+    if (route === 'POST /cape/public' || route === 'POST /cape/visibility') return handlePublic(request, env, now);
     if (route === 'POST /cape/forget') return handleForget(request, env, now);
     if (route === 'GET /capes/mine') return handleMine(request, env, now);
+    if (route.startsWith('GET /capes/')) return handleCapeLink(request, env, now, route.slice('GET /capes/'.length));
     if (route === 'GET /admin/reviews') return handleReviews(request, env, now);
     if (route === 'POST /admin/review') return handleReviewAdd(request, env, now);
     if (route === 'POST /admin/unreview') return handleReviewRemove(request, env, now);
