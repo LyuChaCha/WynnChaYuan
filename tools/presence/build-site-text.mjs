@@ -1,12 +1,4 @@
-/**
- * 把 lang/<代碼>.json 併成 site-text.js（Worker 直接 import，不必在執行時讀檔）。
- *
- *   node tools/presence/build-site-text.mjs           重寫 site-text.js
- *   node tools/presence/build-site-text.mjs --check   跟現在的檔案比，不一樣就以 1 結束
- *
- * 繁體中文與英文的字在 site.js 的 TEXT（那兩份是正本）；其他語言一個檔一種，鍵跟英文那一份
- * 一樣。改了 lang/ 底下的檔要重跑這一支，再部署。少翻的鍵網頁會拿英文補。
- */
+// node tools/presence/build-site-text.mjs [--check]
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -31,7 +23,6 @@ if (process.argv.includes('--check')) {
   try {
     have = readFileSync(target, 'utf8').replace(/\r\n/g, '\n');
   } catch (e) {
-    // 沒有檔案就是不一樣
   }
   if (have !== out) {
     console.error('site-text.js 跟 lang/*.json 不一樣了：重跑 node tools/presence/build-site-text.mjs');

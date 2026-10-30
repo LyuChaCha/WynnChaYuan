@@ -11,7 +11,20 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 | 檔案 | |
 |---|---|
-| `worker.js` | API 與路由 |
+| `worker.js` | Worker 的入口：只匯出處理請求的那一個（入口不能匯出別的值，新版 workerd 不收） |
+| `worker-api.js` | 測試與工具要用的函式都從這裡拿 |
+| `router.js` | 路由、最外層的錯誤處理、每天的排程 |
+| `http.js`、`kv.js` | 回應、讀 JSON、base64、KV 紀錄 |
+| `auth.js` | 通行證、Mojang 登入、Discord 帳號與綁定 |
+| `presence.js` | 報到、名單、`/api/me`、`/api/status` |
+| `capes.js` | 披風：上傳、一覽、最愛、紀錄、閒置清單、預覽 |
+| `credits.js`、`github.js` | 名單與貢獻公會、開 PR |
+| `admin.js` | 管理員、封禁、特別名單、審核 |
+| `translate.js` | 協作翻譯與譯者名單 |
+| `feedback.js` | 回饋 |
+| `privacy.js` | 刪除我的資料 |
+| `discord-bot.js` | Discord 機器人 |
+| `assets.js` | 網頁回應、圖示、字型、材質 |
 | `site.js` | 五張網頁與「找不到這一頁」（共用樣式、頁首、頁尾），中文與英文 |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
@@ -22,7 +35,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `cape-preview.js` | 披風的預覽圖（`/api/cape-preview/<雜湊>`，Discord 機器人的 `/cape` 用）：跟披風一覽的卡片一樣只露出背面、像素放大、墊上卡片的深綠底。Worker 沒有 canvas，PNG 與 GIF 的解碼、編碼都在這支裡（不靠套件；GIF 逐格切、每格自己的調色盤） |
 | `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
-| `dev.mjs` | 在本機用假資料開網站來看 |
+| `dev.mjs`、`dev-data.mjs` | 在本機用假資料開網站來看；`dev-data.mjs` 是示範資料，`golden.mjs` 也用它 |
+| `golden.mjs`、`golden/` | 路由快照：重構前後比對行為有沒有變 |
 
 ## 網頁
 
@@ -432,3 +446,14 @@ node tools/presence/dev.mjs
 ```bash
 node tools/presence/worker.test.mjs
 ```
+
+### 路由快照（重構用）
+
+```bash
+node tools/presence/golden.mjs check                 # 跟 golden/snapshot.json 比
+node tools/presence/golden.mjs write                 # 行為本來就該變的時候重寫
+node tools/presence/golden.mjs check --strip-comments --file <舊的快照>   # 只差註解的時候
+node tools/presence/golden.mjs check --worker <wrangler 打包出來的 worker.js 改名 .mjs>
+```
+
+時間、亂數、外部連線（GitHub、Discord、minotar）都固定，KV 用 `dev-data.mjs` 的示範資料，每一個請求各自從同一份資料開始。記下每一條路由的狀態碼、標頭、內容（JSON 原樣，其他記雜湊）、KV 的變動與送出去的請求；每一頁 × 八種語言的雜湊；披風預覽圖的雜湊；每天的排程。打包檢查：`npx wrangler deploy --dry-run --outdir <資料夾>` 打包，再用 `--worker` 拿打包出來的那一份跑一次快照。

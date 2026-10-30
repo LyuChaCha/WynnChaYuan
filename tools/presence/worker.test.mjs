@@ -1,5 +1,6 @@
 // node tools/presence/worker.test.mjs
-import worker, {
+import worker from './worker.js';
+import {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
   addMember, setMemberTeams, addMemberTeams, setPersonTeams, mergeLangTeam, teamsInput, TEAM_AREAS, TR_LANGS, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
@@ -7,7 +8,7 @@ import worker, {
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
   visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
   indexOwners, ownerEntry, participantsOf, OWNER_INDEX_READY,
-} from './worker.js';
+} from './worker-api.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
 
