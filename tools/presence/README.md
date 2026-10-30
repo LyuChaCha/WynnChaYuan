@@ -25,7 +25,13 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `privacy.js` | 刪除我的資料 |
 | `discord-bot.js` | Discord 機器人 |
 | `assets.js` | 網頁回應、圖示、字型、材質 |
-| `site.js` | 五張網頁與「找不到這一頁」（共用樣式、頁首、頁尾），中文與英文 |
+| `site.js` | 入口：把網頁模組對外的東西轉出去 |
+| `site-styles.js` | 樣式、字型與材質的 CSS |
+| `site-strings.js` | 中文與英文的字、語言挑選 |
+| `site-constants.js` | 外部連結、線條圖示 |
+| `site-layout.js` | 頁首、頁尾、整頁骨架、每一頁都有的程式 |
+| `site-stage.js` | 遊戲畫面的預覽（首頁與功能頁共用） |
+| `site-pages.js` | 每一頁的內容與程式、`render` |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |
