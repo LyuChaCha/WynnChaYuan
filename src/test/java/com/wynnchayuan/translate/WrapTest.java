@@ -28,18 +28,18 @@ public final class WrapTest {
 
     public static void main(String[] args) {
         check("換行點落在空白上不會丟例外",
-                () -> LineTranslator.wrapToWidth(
+                () -> TextWrapper.wrapToWidth(
                         "Blinding Lights: All Ophanim orbs deal 250% damage",
                         8, WrapTest::measure));
 
         check("寬度只夠一個字",
-                () -> LineTranslator.wrapToWidth("a b c d e f g", 1, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("a b c d e f g", 1, WrapTest::measure));
         check("整串都是空白",
-                () -> LineTranslator.wrapToWidth("          ", 3, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("          ", 3, WrapTest::measure));
         check("佔位符不會被拆開",
-                () -> LineTranslator.wrapToWidth("{~} 格內的友軍 {~} 生命", 4, WrapTest::measure));
+                () -> TextWrapper.wrapToWidth("{~} 格內的友軍 {~} 生命", 4, WrapTest::measure));
 
-        String orphan = LineTranslator.wrapToWidth(
+        String orphan = TextWrapper.wrapToWidth(
                 "每次命中獲得層數，並改為環繞你運行。", 8, WrapTest::measure);
         boolean starts = false;
         for (String line : orphan.split(String.valueOf(NL))) {
@@ -49,7 +49,7 @@ public final class WrapTest {
         }
         report("標點不會被擠到行首（實際：" + show(orphan) + "）", !starts);
 
-        String signed = LineTranslator.wrapToWidth("每次命中增加 +{~} 層數", 7,
+        String signed = TextWrapper.wrapToWidth("每次命中增加 +{~} 層數", 7,
                                                    WrapTest::measure);
         report("號不會跟數值分家（實際：" + show(signed) + "）",
                 !signed.contains("+" + NL));
@@ -61,23 +61,23 @@ public final class WrapTest {
             "Увеличивает урон заклинаний",
         };
         for (String text : latin) {
-            String wrapped = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, 12, WrapTest::measure);
             report("不把單字切成兩半：" + text + "（實際：" + show(wrapped) + "）",
                     tidy(wrapped.replace(NL, ' ')).equals(tidy(text)));
         }
 
-        String hangul = LineTranslator.wrapToWidth("마법 피해 증가량 상승", 4,
+        String hangul = TextWrapper.wrapToWidth("마법 피해 증가량 상승", 4,
                                                    WrapTest::measure);
         report("諺文折行不會掉字", bare(hangul).equals(bare("마법 피해 증가량 상승")));
 
-        String huge = LineTranslator.wrapToWidth(
+        String huge = TextWrapper.wrapToWidth(
                 "Bewegungsgeschwindigkeit", 8, WrapTest::measure);
         report("超長單字會被切開而不是滿出去",
                 huge.indexOf(NL) > 0 && bare(huge).equals("Bewegungsgeschwindigkeit"));
 
         String text = "Allies within {~} blocks gain {~} of the health you gain";
         for (int px = 1; px <= 60; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             if (!bare(wrapped).equals(bare(text))) {
                 System.out.println("  [FAIL] 寬度 " + px + " 折完內容變了：" + wrapped);
                 failures++;
@@ -97,7 +97,7 @@ public final class WrapTest {
             String input = sb.toString();
             int px = random.nextInt(30);
             try {
-                LineTranslator.wrapToWidth(input, px, WrapTest::measure);
+                TextWrapper.wrapToWidth(input, px, WrapTest::measure);
             } catch (RuntimeException e) {
                 System.out.println("  [FAIL] 亂數第 " + round + " 輪丟例外："
                         + e + "  寬度 " + px + "  輸入 [" + input + "]");
@@ -128,7 +128,7 @@ public final class WrapTest {
     private static void clauseBreaks() {
         String text = "所有 奧法尼姆 光球造成 250% 傷害，每次命中使你獲得 +5 層 結晶化，"
                 + "並改為環繞你運行。使用普攻時，所有光球的移動速度都會加快。";
-        String wrapped = LineTranslator.wrapToWidth(text, 150, WrapTest::realistic);
+        String wrapped = TextWrapper.wrapToWidth(text, 150, WrapTest::realistic);
         String[] rows = wrapped.split(String.valueOf(NL));
         System.out.println("  折出來的樣子：");
         for (String row : rows) {
@@ -144,7 +144,7 @@ public final class WrapTest {
         report("每一行都收在標點上（實際 " + rows.length + " 行）", clean);
         report("內容沒有變", bare(wrapped).equals(bare(text)));
 
-        String early = LineTranslator.wrapToWidth("好，這是一句很長很長很長很長的話", 150,
+        String early = TextWrapper.wrapToWidth("好，這是一句很長很長很長很長的話", 150,
                                                   WrapTest::realistic);
         report("太早的標點不斷（實際：" + show(early) + "）", !early.startsWith("好，" + NL));
     }
@@ -153,15 +153,15 @@ public final class WrapTest {
         System.out.println("\n  -- 同樣行數要排得平均 --");
 
         String text = "每次命中使你獲得層數並改為環繞你運行造成傷害";
-        String greedy = LineTranslator.wrapToWidth(text, 10, WrapTest::measure);
-        String even = LineTranslator.wrapBalanced(text, 10, WrapTest::measure);
+        String greedy = TextWrapper.wrapToWidth(text, 10, WrapTest::measure);
+        String even = TextWrapper.wrapBalanced(text, 10, WrapTest::measure);
         report("這句夠長，真的折成三行以上（" + show(greedy) + "）", rowsOf(greedy).length >= 3);
         report("行數沒變（" + show(even) + "）", rowsOf(even).length == rowsOf(greedy).length);
         report("最後一行不再是零頭（" + shortest(greedy) + " → " + shortest(even) + "）",
                 shortest(even) > shortest(greedy));
 
         String withWord = "每次命中使你獲得 Crystallize 層數。";
-        String tight = LineTranslator.wrapBalanced(withWord, 14, WrapTest::measure);
+        String tight = TextWrapper.wrapBalanced(withWord, 14, WrapTest::measure);
         boolean split = false;
         for (int at = tight.indexOf(NL); at > 0 && at + 1 < tight.length();
                 at = tight.indexOf(NL, at + 1)) {
@@ -177,7 +177,7 @@ public final class WrapTest {
     private static void balanceKeepsClause() {
         System.out.println("\n  -- 平均分配不丟掉標點上的斷點 --");
         String text = "本次剩餘的整段期間，每提供一個信標就增加一點傷害";
-        String out = LineTranslator.wrapBalanced(text, 12, WrapTest::measure);
+        String out = TextWrapper.wrapBalanced(text, 12, WrapTest::measure);
         String[] rows = rowsOf(out);
         report("第一行收在逗號上（實際：" + show(out) + "）",
                rows.length == 3 && rows[0].endsWith("，"));
@@ -205,7 +205,7 @@ public final class WrapTest {
             String first = null;
             boolean lost = false;
             for (int px = additive(unit); px <= 320; px++) {
-                String wrapped = LineTranslator.wrapBalanced(text, px, WrapTest::additive);
+                String wrapped = TextWrapper.wrapBalanced(text, px, WrapTest::additive);
                 if (!bare(wrapped).equals(bare(text))) {
                     lost = true;
                 }
@@ -240,11 +240,11 @@ public final class WrapTest {
         System.out.println("\n  -- 放得下就留在同一行 --");
 
         String text = "猛撲: 逃脫變成向前突進。";
-        String fits = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String fits = TextWrapper.wrapBalanced(text, 11, WrapTest::measure);
         report("沒有斷行（實際：" + show(fits) + "）", fits.indexOf(NL) < 0);
         report("字沒有變少", bare(fits).equals(bare(text)));
 
-        String tight = LineTranslator.wrapBalanced(text, 8, WrapTest::measure);
+        String tight = TextWrapper.wrapBalanced(text, 8, WrapTest::measure);
         report("差太多的還是要折（實際：" + show(tight) + "）", tight.indexOf(NL) > 0);
     }
 
@@ -252,7 +252,7 @@ public final class WrapTest {
         System.out.println("\n  -- 斷在名稱後面 --");
 
         String text = "猛撲: 逃脫變成向前突進在此";
-        String out = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String out = TextWrapper.wrapBalanced(text, 11, WrapTest::measure);
         String[] rows = rowsOf(out);
         report("折成兩行（實際：" + show(out) + "）", rows.length == 2);
         if (rows.length == 2) {
@@ -262,13 +262,13 @@ public final class WrapTest {
         report("字沒有變少", bare(out).equals(bare(text)));
 
         String longer = "猛撲: 逃脫變成向前突進並造成傷害";
-        String[] wide = rowsOf(LineTranslator.wrapBalanced(longer, 11, WrapTest::measure));
+        String[] wide = rowsOf(TextWrapper.wrapBalanced(longer, 11, WrapTest::measure));
         report("貪心兩行就夠時，不為了斷在名稱後而多花一行（實際："
                 + show(String.join(String.valueOf(NL), wide)) + "）",
                 wide.length == 2 && !wide[0].equals("猛撲:"));
 
         String longest = "猛撲: 逃脫變成向前突進並且造成大量範圍傷害。";
-        String[] three = rowsOf(LineTranslator.wrapBalanced(longest, 11, WrapTest::measure));
+        String[] three = rowsOf(TextWrapper.wrapBalanced(longest, 11, WrapTest::measure));
         report("行數一樣就照斷（實際："
                 + show(String.join(String.valueOf(NL), three)) + "）",
                 three.length == 3 && three[0].equals("猛撲:"));
@@ -283,7 +283,7 @@ public final class WrapTest {
         int bad = 0;
         String worst = null;
         for (int px = 4; px <= 40; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             for (String row : wrapped.split(String.valueOf(NL), -1)) {
                 String core = row.stripTrailing();
                 if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
@@ -297,14 +297,14 @@ public final class WrapTest {
         report("沒有任何寬度讓圖示落在行尾"
                 + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
 
-        String once = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+        String once = TextWrapper.wrapToWidth(text, 12, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
 
         String upgrade = "一件強大的神器，可透過 {#} 物品升級師 將物品提升至全新的境界。";
         int wide = 0;
         String first = null;
         for (int px = 4; px <= 120; px++) {
-            String wrapped = LineTranslator.wrapToWidth(upgrade, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(upgrade, px, WrapTest::measure);
             for (String row : wrapped.split(String.valueOf(NL), -1)) {
                 String core = row.stripTrailing();
                 if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
@@ -322,7 +322,7 @@ public final class WrapTest {
         String balWorst = null;
         for (int px = 8; px <= 320; px++) {
             for (int rows = 2; rows <= 4; rows++) {
-                String wrapped = LineTranslator.wrapBalanced(
+                String wrapped = TextWrapper.wrapBalanced(
                         upgrade, px, rows, WrapTest::realistic);
                 for (String row : wrapped.split(String.valueOf(NL), -1)) {
                     String core = row.stripTrailing();
@@ -359,7 +359,7 @@ public final class WrapTest {
         int bad = 0;
         String worst = null;
         for (int px = 4; px <= 40; px++) {
-            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(text, px, WrapTest::measure);
             for (String row : rowsOf(wrapped)) {
                 int open = 0;
                 for (int i = 0; i < row.length(); i++) {
@@ -380,14 +380,14 @@ public final class WrapTest {
         report("沒有任何寬度把佔位符斷成兩半"
                 + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
 
-        String once = LineTranslator.wrapToWidth(text, 14, WrapTest::measure);
+        String once = TextWrapper.wrapToWidth(text, 14, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
 
         String colour = "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}";
         int split = 0;
         String first = null;
         for (int px = 4; px <= 60; px++) {
-            String wrapped = LineTranslator.wrapToWidth(colour, px, WrapTest::measure);
+            String wrapped = TextWrapper.wrapToWidth(colour, px, WrapTest::measure);
             for (String row : rowsOf(wrapped)) {
                 int open = 0;
                 for (int i = 0; i < row.length(); i++) {
@@ -413,16 +413,16 @@ public final class WrapTest {
         System.out.println("\n  -- 顏色佔位符不能印到畫面上 --");
         report("清掉編號形式",
                "使用這件物品進入討伐戰，或製作腐化地城鑰匙".equals(
-                       LineTranslator.stripColourTokens(
+                       ColourTemplate.stripColourTokens(
                                "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}")));
         report("清掉自訂色形式",
-               "警告".equals(LineTranslator.stripColourTokens("{c:#FF55FF}警告{/}")));
+               "警告".equals(ColourTemplate.stripColourTokens("{c:#FF55FF}警告{/}")));
         report("沒有大括號的原樣返回",
-               "一般文字".equals(LineTranslator.stripColourTokens("一般文字")));
+               "一般文字".equals(ColourTemplate.stripColourTokens("一般文字")));
         report("不會誤清別的佔位符",
                "{#}{~} 場挑戰".equals(
-                       LineTranslator.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
-        report("null 不會炸", LineTranslator.stripColourTokens(null) == null);
+                       ColourTemplate.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
+        report("null 不會炸", ColourTemplate.stripColourTokens(null) == null);
     }
 
     private static void latinRunsWhole() {
@@ -435,8 +435,8 @@ public final class WrapTest {
         boolean lost = false;
         for (int px = longest; px <= 80; px++) {
             for (String wrapped : new String[] {
-                    LineTranslator.wrapToWidth(text, px, WrapTest::measure),
-                    LineTranslator.wrapBalanced(text, px, WrapTest::measure)}) {
+                    TextWrapper.wrapToWidth(text, px, WrapTest::measure),
+                    TextWrapper.wrapBalanced(text, px, WrapTest::measure)}) {
                 lost |= !bare(wrapped).equals(bare(text));
                 String[] rows = rowsOf(wrapped);
                 for (int i = 0; i + 1 < rows.length; i++) {
@@ -456,7 +456,7 @@ public final class WrapTest {
                 + (first == null ? "" : "（例如 " + first + "）"), bad == 0);
         report("字沒有變少", !lost);
 
-        String english = LineTranslator.wrapToWidth(
+        String english = TextWrapper.wrapToWidth(
                 "Arrow Shield is set to two charges but deals doubled damage", 20,
                 WrapTest::measure);
         report("整句英文照樣在空白上折行（實際：" + show(english) + "）",
@@ -509,8 +509,8 @@ public final class WrapTest {
         String example = null;
         for (String text : texts) {
             for (int px = 45; px <= 160; px++) {
-                for (LineTranslator.Keep keep : LineTranslator.Keep.values()) {
-                    String out = LineTranslator.wrapToWidth(text, px, WrapTest::additive, keep);
+                for (TextWrapper.Keep keep : TextWrapper.Keep.values()) {
+                    String out = TextWrapper.wrapToWidth(text, px, WrapTest::additive, keep);
                     if (out.indexOf(NL) >= 0) {
                         wrapped++;
                     }
@@ -521,7 +521,7 @@ public final class WrapTest {
                         }
                     }
                 }
-                String balanced = LineTranslator.wrapBalanced(text, px, 4, WrapTest::additive);
+                String balanced = TextWrapper.wrapBalanced(text, px, 4, WrapTest::additive);
                 if (splitRange.matcher(balanced).find()) {
                     bad++;
                     if (example == null) {
@@ -534,7 +534,7 @@ public final class WrapTest {
         report("★ 數值範圍一次都沒有被拆開（" + bad + " 次" + (example == null ? "" : "，例如 " + example) + "）",
                bad == 0);
         check("塞不下的範圍不會丟例外",
-                () -> LineTranslator.wrapToWidth("+{~}-{~}", 2, WrapTest::additive));
+                () -> TextWrapper.wrapToWidth("+{~}-{~}", 2, WrapTest::additive));
     }
 
     private static String show(String wrapped) {
