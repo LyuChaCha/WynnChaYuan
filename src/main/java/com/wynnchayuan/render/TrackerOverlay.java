@@ -12,19 +12,10 @@ import net.minecraft.network.chat.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 追蹤任務的譯文小框。
- *
- * <p>畫在畫面左側、Wynntils 自己的追蹤器<b>下方</b>，兩份並存——
- * 原本的追蹤器不動，譯文另外一塊。
- *
- * <p>內容由 {@link com.wynnchayuan.listener.TrackerListener} 在
- * {@code ActivityTrackerUpdatedEvent} 觸發時餵進來，不是每幀重算。
- */
 public final class TrackerOverlay {
 
     private static final int LEFT_MARGIN = 6;
-    private static final int TOP_OFFSET = 90;   // 避開 Wynntils 自己的追蹤器
+    private static final int TOP_OFFSET = 90;
     private static final int PADDING = 3;
     private static final int BACKGROUND = 0xB0100010;
     private static final int BORDER = 0xFF3A1E5C;
@@ -33,15 +24,11 @@ public final class TrackerOverlay {
 
     private TrackerOverlay() {}
 
-    /** 追蹤內容變了就更新；名稱與目標都翻不到時整塊不顯示。 */
     public static void setCurrent(String name, StyledText task,
                                   TranslationStore store) {
         setCurrent(null, name, task, store);
     }
 
-    /**
-     * @param type Wynntils 說這是哪一種活動；不知道時傳 {@code null}
-     */
     public static void setCurrent(Object type, String name, StyledText task,
                                   TranslationStore store) {
         List<Component> lines = new ArrayList<>();
@@ -50,11 +37,6 @@ public final class TrackerOverlay {
         if (name != null && !name.isBlank()) {
             StyledText styled = StyledText.fromString(name);
             Component translated = LineTranslator.translate(styled, store);
-            // 掛上「進行中的任務」這個抬頭。
-            //
-            // 光一個任務名擺在畫面角落，看起來像隨便一段文字；原文那一欄是靠
-            // Wynntils 自己的框線與位置在說明「這是任務追蹤」，我們的面板沒有
-            // 那些線索，所以把身分直接寫出來。
             Component shown = translated != null
                     ? translated : LineTranslator.untranslated(styled);
             if (translated != null) {
@@ -79,24 +61,6 @@ public final class TrackerOverlay {
         current = List.of();
     }
 
-    /**
-     * Wynntils 現在還在追蹤東西嗎。
-     *
-     * <h2>為什麼要在繪製當下問，而不是等事件</h2>
-     * 這塊疊層原本純粹由 {@code ActivityTrackerUpdatedEvent} 推動，追蹤欄空掉時
-     * 靠「事件補送一則空的」來收掉。問題是<b>任務完成的那一刻，那則空事件不一定會來</b>
-     * ——Wynncraft 直接把追蹤欄收掉，Wynntils 就不再發事件了。
-     *
-     * <p>結果是原文那一欄已經消失，我們的譯文還孤零零地留在畫面上，而且停在一個
-     * <b>已經完成</b>的任務上，看起來像沒做完。使用者回報的正是這個畫面。
-     *
-     * <p>所以改成在畫之前直接問 Wynntils 的權威狀態：它沒在追蹤，我們就不畫。
-     * 這比任何「多久沒更新就清掉」的計時器都可靠——追蹤內容本來就可能好幾分鐘不變，
-     * 計時器會把正常顯示中的譯文誤清掉。
-     *
-     * <p>拿不到狀態（Wynntils 還沒初始化、之後 API 有變動）時回傳 {@code true}，
-     * 維持原本的行為：寧可多顯示一下，也不要讓正常的譯文憑空消失。
-     */
     private static boolean stillTracking() {
         try {
             String name = com.wynntils.core.components.Models.Activity.getTrackedName();
@@ -106,60 +70,30 @@ public final class TrackerOverlay {
         }
     }
 
-    /**
-     * 右上那一欄的其他段落（每日目標、公會目標、團隊、公會戰）。
-     *
-     * <p>由 {@link com.wynnchayuan.listener.ScoreboardListener} 餵進來，
-     * 接在追蹤中的任務底下畫成同一個框——那一欄在遊戲裡本來就是同一塊。
-     *
-     * <p>Lootrun 那一段<b>不在這裡</b>：它有自己的記分板與疊層，抄過來只是
-     * 同一件事出現兩次，而且它夠長，會把上半部的任務擠掉。
-     * 見 {@link com.wynnchayuan.listener.ScoreboardListener#mirrors}。
-     */
     private static volatile List<Component> extras = List.of();
 
-    /** 見 {@link #extras}；空的清單代表那一欄現在沒有別的東西。 */
     public static void setExtras(List<Component> lines) {
         extras = lines == null ? List.of() : List.copyOf(lines);
     }
 
-    /**
-     * 右上那一欄的其他段落要不要補進面板。見 {@link #render} 裡的說明。
-     *
-     * <p>抽成獨立一支是為了測得到：{@code render} 要有 {@code Minecraft} 才跑得起來，
-     * 而這個判斷錯掉的後果（同一份隊伍清單出現兩次）測試看不到，只有玩家看得到。
-     */
     public static boolean showsExtras(CollectorConfig config) {
         return config != null && !config.wynntilsUi();
     }
 
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
-        // 就地取代模式下，右上那一欄本身已經是中文了（見 WynntilsText），
-        // 這裡再畫一份就是同一件事出現兩次。
         boolean panel = WynnChaYuan.config().trackerMode()
                 == CollectorConfig.DialogueMode.PANEL;
         if (!panel) {
             return;
         }
-        // 右上那一欄的其他段落（隊伍、每日目標、公會目標⋯⋯）只在
-        // <b>F6 的「Wynntils 介面」關掉</b>時才補。
-        //
-        // 開著的時候，Wynntils 自己畫的那一欄早就經過 WynntilsFontMixin 換成中文了
-        //（那條路只看 wynntilsUi，不看 trackerMode），我們再畫一份，畫面上就是
-        // 同一份隊伍清單出現兩次——一份在面板裡、一份在右邊的記分板。使用者
-        // 回報過兩次：2026-09-28 先是 Lootrun 那一段，後來是隊伍那一段。
-        //
-        // 關掉的時候沒有別人會翻那一欄，那才是這個面板存在的理由，照舊補。
         List<Component> more = showsExtras(WynnChaYuan.config()) ? extras : List.of();
         if (lines.isEmpty() && more.isEmpty()) {
             return;
         }
         if (!stillTracking()) {
-            current = List.of();      // 原文那一欄沒了，譯文也跟著收
+            current = List.of();
             lines = List.of();
-            // 但右上那一欄的其他段落（每日目標、世界事件）跟追蹤任務無關，
-            // 沒在追蹤任務時照樣要畫。
             if (more.isEmpty()) {
                 return;
             }
@@ -178,11 +112,9 @@ public final class TrackerOverlay {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.TRACKER);
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.TRACKER);
         }
-        // 拖曳畫面拉過大小的話，寬度就是折行寬度、高度是最小高度，跟對話框同一套。
         CollectorConfig cfg = WynnChaYuan.config();
         boolean sized = cfg.hasOverlaySize(CollectorConfig.Overlay.TRACKER);
         int fixedW = sized ? cfg.overlayW(CollectorConfig.Overlay.TRACKER) : 0;
-        // 第一行是放大的抬頭，量寬度要照放大後的算，所以換行寬度也要先縮回去。
         int wrapAt = sized
                 ? Math.max(MIN_WRAP, fixedW - PADDING * 2)
                 : wrapWidth(x, graphics.guiWidth());
@@ -201,8 +133,6 @@ public final class TrackerOverlay {
             }
             wrapped.addAll(parts);
         }
-        // 第一行是任務名，其餘是目標。原文那一欄也是這樣分主次的，
-        // 全部畫成同一個大小的話，一眼看不出「現在在做哪個任務」。
         int nameHeight = Math.round(lineHeight * NAME_SCALE);
         int boxH = firstRows * nameHeight
                 + (wrapped.size() - firstRows) * lineHeight + PADDING * 2;
@@ -216,7 +146,6 @@ public final class TrackerOverlay {
             boxW = Math.max(boxW, fixedW);
             boxH = Math.max(boxH, cfg.overlayH(CollectorConfig.Overlay.TRACKER));
         }
-        // 拉大之後可能超出畫面，拉回來，不然框會整個看不見
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
 
@@ -240,28 +169,10 @@ public final class TrackerOverlay {
         }
     }
 
-    /** 任務名比目標大多少。1.25 倍看得出主次，又不會壓過下面的目標。 */
     private static final float NAME_SCALE = 1.25f;
 
-    /**
-     * 任務名的顏色：青綠。
-     *
-     * <p>配合原文那一欄的色調。先前跟著強調色走，但強調色同時也是截圖邊框與
-     * 面板外框的顏色，改一個就得三個一起變——任務名該有自己的顏色。
-     */
     private static final int NAME_COLOR = 0xFF40E0C0;
 
-    /**
-     * 任務名前面的抬頭。
-     *
-     * <h2>為什麼不能寫死</h2>
-     * 追蹤欄不只追任務——世界事件、洞穴、地城、Raid、祕密發現都走同一個欄位。
-     * 先前抬頭寫死成「進行中的任務」，於是世界事件也被說成任務，
-     * 而原文那一欄明明白白寫著 {@code World Event}。一眼就對不起來。
-     *
-     * <p>Wynntils 的事件本來就帶著類型（{@code ActivityType}），拿它就好，
-     * 不必猜。認不出來的類型退回通用的「進行中」。
-     */
     private static String heading(Object type) {
         String key = type == null ? null : String.valueOf(type);
         String suffix = key == null ? "default"
@@ -273,22 +184,10 @@ public final class TrackerOverlay {
         return text + " - ";
     }
 
-    /**
-     * 一行最寬畫到哪裡。
-     *
-     * <h2>踩到什麼</h2>
-     * 世界事件的說明是一整句話（「Though these pirates are long past their
-     * prime…」）。原文那一欄由 Wynntils 自己換行，我們這一塊沒有——
-     * 於是整句往右畫出去，直接衝出螢幕外。實機截圖裡右半句就這樣不見了。
-     *
-     * <p>所以量一次：從框的左緣到螢幕右緣，再留一點邊。上限是螢幕的一半，
-     * 不然一句長話會橫跨整個畫面，比截掉還難讀。
-     */
     private static int wrapWidth(int x, int screenWidth) {
         int room = screenWidth - x - LEFT_MARGIN - PADDING * 2;
         return Math.max(MIN_WRAP, Math.min(room, screenWidth / 2));
     }
 
-    /** 再窄就一行擠不下幾個字了，寧可讓它超出去。 */
     private static final int MIN_WRAP = 80;
 }

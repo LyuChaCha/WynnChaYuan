@@ -6,34 +6,13 @@ import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 
-/**
- * 換掉 Wynntils <b>自己那幾塊疊層</b>裡的字。
- *
- * <h2>為什麼要動別人畫的東西</h2>
- * 右上角的任務追蹤與每日目標是 Wynntils 的疊層：位置、字型、進度條都是它排的，
- * 我們沒有地方插手。先前的做法是另外畫一個框把譯文擺在旁邊，但那樣同一件事
- * 在畫面上出現兩次，而使用者要的是「那一欄變成中文」。
- *
- * <p>所以多一個「就地取代」模式：在 Wynntils 把字送去畫之前換掉它
- *（見 {@code com.wynnchayuan.mixin}）。位置與樣式完全沿用它的，
- * 我們只換內容。
- *
- * <h2>這個類別為什麼存在</h2>
- * mixin 裡不方便寫邏輯（測不到、出錯也不好查），所以 mixin 只負責轉手，
- * 判斷與翻譯全部在這裡。設定與語料<b>用參數傳</b>，測試才進得來——
- * 靜態的那兩個在測試裡是 null。
- *
- * <p>每一個入口都<b>包在 try/catch 裡</b>：這是別人的算繪流程，
- * 我們丟出例外等於讓別人的疊層畫不出來。
- */
+// 跑在 Wynntils 算繪流程裡，丟例外會讓疊層畫不出來
 public final class WynntilsText {
 
-    /** 追蹤欄那一塊的類別名。只動這一塊，別的疊層不碰。 */
     static final String TRACKER = "ContentTrackerOverlay";
 
     private WynntilsText() {}
 
-    /** mixin 的入口；設定與語料從全域拿，順便記一筆診斷。 */
     public static StyledText[] lines(Object overlay, StyledText[] lines) {
         try {
             StyledText[] out = lines(overlay, lines,
@@ -41,10 +20,6 @@ public final class WynntilsText {
             if (out != lines) {
                 WynnChaYuan.store().noteEvent("overlay.shown");
             } else if (tracker(overlay)) {
-                // 追蹤欄畫了、但一行都沒換掉。先前這裡不記，於是
-                // 「右上那一欄沒翻」跟「那一欄根本沒畫出來」在診斷檔裡
-                // 長得一模一樣——兩次都只能靠截圖猜。現在把原文收進來，
-                // captured.json 就直接寫著那一欄實際上有哪幾行。
                 WynnChaYuan.store().noteEvent("overlay.noMatch");
                 for (StyledText line : lines) {
                     noteTracker(line);
@@ -52,17 +27,10 @@ public final class WynntilsText {
             }
             return out;
         } catch (Throwable t) {
-            return lines;                      // 別人的算繪流程，不能讓它炸
+            return lines;
         }
     }
 
-    /**
-     * Wynntils 的文字疊層要畫的那幾行。
-     *
-     * @param overlay 疊層本身，用來分辨是哪一塊
-     * @param lines   它算好的每一行
-     * @return 換好的那幾行；不該換或一行都翻不出來時<b>原樣</b>回傳
-     */
     static StyledText[] lines(Object overlay, StyledText[] lines,
                               CollectorConfig config, TranslationStore store) {
         if (lines == null || lines.length == 0 || store == null || config == null
@@ -79,18 +47,6 @@ public final class WynntilsText {
         return any ? out : lines;
     }
 
-    /**
-     * 追蹤欄的一行，同一份內容只翻一次。
-     *
-     * <h2>為什麼要記</h2>
-     * Wynntils 的文字疊層<b>每一幀</b>都把同一組行送進來（它每個 tick 才重算一次內容），
-     * 先前這裡每一幀都整行查表、查不到再逐段查——離線量測兩行有譯文的追蹤欄每幀約 90µs，
-     * 三行沒有譯文的約 340µs（160fps 時佔一幀的 5%）。同一份內容的答案不會變，
-     * 作廢的條件跟 {@link #screenText} 那一份一樣（語料重載、名稱模式、Shift），
-     * 所以結果跟每幀重算逐字相同（見 {@code TrackerLineCacheTest}）。
-     *
-     * <p>只在算繪執行緒上用；加鎖只是保險，背景整理語料不會走到這裡。
-     */
     private static StyledText trackerLine(StyledText line, TranslationStore store) {
         if (line == null || line.isEmpty()) {
             return line;
@@ -100,7 +56,6 @@ public final class WynntilsText {
             seen = TRACKER_CACHE.get(line);
         }
         if (seen != null && seen.fresh(store)) {
-            // 查不到的那一種回傳呼叫端那一個，「一行都沒換」的判斷才是對的
             return seen.out() == null ? line : seen.out();
         }
         StyledText shown = line(line, store);
@@ -113,10 +68,8 @@ public final class WynntilsText {
         return shown;
     }
 
-    /** 見 {@link #trackerLine}。追蹤欄一次就幾行，留一點餘裕給任務切換。 */
     private static final java.util.Map<StyledText, Cached> TRACKER_CACHE = lru(64);
 
-    /** 照最近用過的順序淘汰：畫面上還在用的那幾條永遠不會被擠掉。 */
     private static <K, V> java.util.Map<K, V> lru(int limit) {
         return new java.util.LinkedHashMap<>(16, 0.75f, true) {
             @Override
@@ -126,18 +79,12 @@ public final class WynntilsText {
         };
     }
 
-    /**
-     * 記一筆「收過了」。同一份內容第二次就不必再過一次濾網與查表。
-     *
-     * @return 先前沒收過（這一次要收）時為 {@code true}
-     */
     private static boolean firstTime(java.util.Map<String, Boolean> noted, String key) {
         synchronized (noted) {
             return noted.put(key, Boolean.TRUE) == null;
         }
     }
 
-    /** 一行：翻不出來就原樣留著，別的行照樣可能翻得出來。 */
     private static StyledText line(StyledText line, TranslationStore store) {
         if (line == null || line.isEmpty()) {
             return line;
@@ -149,19 +96,6 @@ public final class WynntilsText {
         return byPart(line, store);
     }
 
-    /**
-     * 整行查不到時，<b>一段一段</b>查。
-     *
-     * <h2>為什麼需要</h2>
-     * 追蹤欄的第一行是 Wynntils 自己拼的：「Quest - Star Thief」——類型一段、
-     * 破折號一段、任務名一段。整行當然不在語料裡（那是它拼的，不是遊戲送的），
-     * 但<b>每一段都在</b>：「Quest」是介面字串、「Star Thief」是任務名。
-     *
-     * <p>一段一段換還有一個好處：每一段的顏色原樣留著。Wynntils 用顏色分
-     * 「類型」與「名稱」，整行重組會把那個分別弄丟。
-     *
-     * @return 至少換掉一段時回傳新的；一段都沒換就原樣回去
-     */
     private static StyledText byPart(StyledText line, TranslationStore store) {
         net.minecraft.network.chat.MutableComponent out =
                 net.minecraft.network.chat.Component.empty();
@@ -176,12 +110,9 @@ public final class WynntilsText {
             }
             net.minecraft.network.chat.Component done = LineTranslator.translate(one, store);
             if (done == null) {
-                // 這一段自己就是「類型 - 名稱」：實機的追蹤欄整行只有一個顏色，
-                // Wynntils 送過來就是一整段，上面那道「一段一段查」沒有東西可以拆。
                 String split = splitHeader(one.getStringWithoutFormatting(), store);
                 if (split != null) {
-                    // 字型要換回預設：Wynntils 的標題樣板用 with_font 包成
-                    // language/wynncraft，那份字型沒有中文字，照抄就是一排方框。
+                    // Wynntils 標題樣板包成 language/wynncraft，沒有中文字
                     done = net.minecraft.network.chat.Component.literal(split)
                             .withStyle(styleOf(one).withFont(
                                     net.minecraft.network.chat.FontDescription.DEFAULT));
@@ -193,16 +124,6 @@ public final class WynntilsText {
         return any ? StyledText.fromComponent(out) : line;
     }
 
-    /**
-     * 「Quest – Dearly Departed」這種一段裡的兩半各自查。
-     *
-     * <h2>實機回報</h2>
-     * 0.2.0 的追蹤欄第二行（任務目標）換成中文了，第一行「Quest – Dearly Departed」
-     * 還是英文。測試裡那一行是三段不同顏色，一段一段查就過了；實機那一行
-     * <b>整行同一個顏色</b>，Wynntils 送來的是一整段，上面那道拆不開。
-     *
-     * @return 至少一半查得到時回傳換好的字；兩半都查不到回傳 {@code null}
-     */
     static String splitHeader(String text, TranslationStore store) {
         for (String dash : DASHES) {
             int at = text.indexOf(dash);
@@ -221,10 +142,8 @@ public final class WynntilsText {
         return null;
     }
 
-    /** 見 {@link #splitHeader}：Wynntils 拼標題用過的幾種破折號，兩邊都有空白。 */
     private static final String[] DASHES = {" - ", " – ", " — "};
 
-    /** 一半：前面的圖示與空白原樣留著，只查中間那段字。 */
     private static String half(String text, TranslationStore store) {
         int start = 0;
         while (start < text.length()
@@ -237,7 +156,6 @@ public final class WynntilsText {
         if (core.isEmpty()) {
             return null;
         }
-        // 追蹤的那個內容的名字：照卡片標題的叫法（見 TranslationStore#pageTitleName）
         String hit = store.pageTitleName(core);
         if (hit == null) {
             hit = store.lookup(core);
@@ -245,7 +163,6 @@ public final class WynntilsText {
         return hit == null || hit.isBlank() ? null : text.substring(0, start) + hit;
     }
 
-    /** 這一段原本的樣式（顏色、粗體）；換字的時候照抄。 */
     private static net.minecraft.network.chat.Style styleOf(StyledText one) {
         net.minecraft.network.chat.Style[] found = {net.minecraft.network.chat.Style.EMPTY};
         one.getComponent().visit((style, text) -> {
@@ -258,7 +175,6 @@ public final class WynntilsText {
         return found[0];
     }
 
-    /** mixin 的入口；設定與語料從全域拿，順便記一筆診斷。 */
     public static String objective(String text) {
         try {
             String out = objective(text, WynnChaYuan.config(), WynnChaYuan.translations());
@@ -270,22 +186,11 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * 每日／公會目標那幾條（「Finish Quests: 2/3」）。
-     *
-     * <p>Wynntils 把它畫成進度條，字是從 {@code WynnObjective#asObjectiveString}
-     * 來的，跟上面的樣板系統無關，所以另外一個入口、另外一個開關。
-     *
-     * @return 換好的字；不該換或翻不出來時原樣回傳
-     */
     static String objective(String text, CollectorConfig config, TranslationStore store) {
         if (text == null || text.isBlank() || store == null || config == null
                 || !config.translateObjectives()) {
             return text;
         }
-        // 每一幀每條目標都會問一次（「Finish Quests: 2/3」），進度沒變時原文相同，
-        // 所以跟 marker 一樣記住上一次的答案——語料換了就整份清掉。
-        // spark 採樣顯示這裡未快取時約佔渲染執行緒 3~4%。
         synchronized (OBJECTIVES) {
             if (objectiveAge != store.generation()) {
                 OBJECTIVES.clear();
@@ -305,10 +210,8 @@ public final class WynntilsText {
     }
 
     private static final java.util.Map<String, String> OBJECTIVES = new java.util.HashMap<>();
-    /** 見 {@link TranslationStore#generation}。 */
     private static int objectiveAge = -1;
 
-    /** mixin 的入口：Wynntils 任務指引標記底下那行字。見 {@code WaypointTextMixin}。 */
     public static String marker(String text) {
         try {
             return marker(text, WynnChaYuan.config(), WynnChaYuan.translations());
@@ -317,14 +220,6 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * 任務指引的標記文字（通常就是任務名）。
-     *
-     * <p>跟追蹤欄同一個開關：追蹤欄關掉翻譯的人，指引也照原文。
-     * 每一幀每個標記都會問一次，所以記住上一次的答案——語料換了就整份清掉。
-     *
-     * @return 翻好的字；不該換或翻不出來時原樣回傳
-     */
     static String marker(String text, CollectorConfig config, TranslationStore store) {
         if (text == null || text.isBlank() || store == null || config == null
                 || config.trackerMode() == CollectorConfig.DialogueMode.OFF) {
@@ -349,10 +244,8 @@ public final class WynntilsText {
     }
 
     private static final java.util.Map<String, String> MARKERS = new java.util.HashMap<>();
-    /** 見 {@link TranslationStore#generation}。 */
     private static int markerAge = -1;
 
-    /** mixin 的入口：快捷列上方那行手持物品名稱。見 {@code HeldItemNameMixin}。 */
     public static net.minecraft.network.chat.Component heldItemName(
             net.minecraft.network.chat.Component name) {
         try {
@@ -362,11 +255,6 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * 手持物品名稱。F6 開關預設關閉（名稱慣例留英文）。
-     *
-     * @return 翻好的名稱；關掉或翻不出來時原樣回傳
-     */
     static net.minecraft.network.chat.Component heldItemName(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
@@ -377,7 +265,6 @@ public final class WynntilsText {
         return translated == null ? name : translated;
     }
 
-    /** mixin 的入口：畫面頂端的 boss bar 標題。見 {@code BossBarNameMixin}。 */
     public static net.minecraft.network.chat.Component bossBar(
             net.minecraft.network.chat.Component name) {
         try {
@@ -387,14 +274,6 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * boss bar 標題：攻擊生物時掛上的「Horse - 47❤」這種。
-     *
-     * <p>整行查不到時一段一段查——名字與血量是不同顏色的兩段，名字就是名牌語料裡那一條。
-     * 跟名牌翻譯同一個開關。每一幀都會畫，結果照原字記下；血量一直在變，記滿就清。
-     *
-     * @return 翻好的標題；關掉或翻不出來時原樣回傳
-     */
     static net.minecraft.network.chat.Component bossBar(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
@@ -408,13 +287,11 @@ public final class WynntilsText {
         net.minecraft.network.chat.Component hit = BARS.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
-            // 譯文跟原文同一個結尾（網址）的，先走純文字那條路，結尾的顏色才不會被重新上色
             hit = bossBarPlain(name, store);
             if (hit == null) {
                 StyledText shown = line(text, store);
                 hit = shown == text ? name : shown.getComponent();
             }
-            // 逐段那條路可能翻了別段（狀態詞），名字仍是英文，所以不論如何都再換一次
             net.minecraft.network.chat.Component named = bossBarName(hit, store);
             if (named != null) {
                 hit = named;
@@ -424,8 +301,6 @@ public final class WynntilsText {
                 hit = worded;
             }
             BARS.put(name, hit);
-            // 畫面上是英文時，先分清楚是「根本沒走到這裡」還是「走到了但查不到」：
-            // captured.json 的 events 裡有沒有 bossbar.* 就知道。查不到的收進 capture。
             var captured = WynnChaYuan.store();
             if (captured != null) {
                 captured.noteEvent(hit == name ? "bossbar.noMatch" : "bossbar.shown");
@@ -437,20 +312,6 @@ public final class WynntilsText {
         return hit;
     }
 
-    /**
-     * 整行照純文字查：實況模式的「Streamer mode enabled PLAY.WYNNCRAFT.COM」。
-     *
-     * <h2>為什麼不走逐段那條路</h2>
-     * 網址那一截有一道亮光逐字掃過，每一幀的顏色分段都不一樣。逐段那條路查得到，但它
-     * 照「主要的顏色」重新上色，亮光那個字一出現，整截網址就被染成前面那段的顏色，
-     * 只有沒有亮光的那一幀是原色——實機回報「英文 IP 在跑的時候顏色會跳」。
-     *
-     * <p>譯文與原文結尾相同的那一截（網址）照原樣留下，連同每一幀的顏色，亮光照掃；
-     * 前面換成譯文，用原本第一段的樣式。沒有共同結尾、譯文還留著佔位符、或原文夾著
-     * 圖示的都不用，交回逐段那條路。
-     *
-     * @return 換好的標題；不適用回傳 {@code null}
-     */
     static net.minecraft.network.chat.Component bossBarPlain(
             net.minecraft.network.chat.Component bar, TranslationStore store) {
         String raw = bar.getString();
@@ -468,10 +329,10 @@ public final class WynntilsText {
             same++;
         }
         if (same == 0) {
-            return null;                                  // 沒有共同結尾就交給逐段那條路配色
+            return null;
         }
         int start = raw.indexOf(key);
-        int keep = start + key.length() - same;           // 原文從這裡起照原樣
+        int keep = start + key.length() - same;
         String head = raw.substring(0, start) + dst.substring(0, dst.length() - same);
         net.minecraft.network.chat.MutableComponent out =
                 net.minecraft.network.chat.Component.empty();
@@ -494,20 +355,6 @@ public final class WynntilsText {
         return headDone[0] ? out : null;
     }
 
-    /**
-     * 只換 boss bar 開頭的怪物名：「Bronchial - 113k❤ - Weak Dam Def」。
-     *
-     * <h2>為什麼逐段查不到</h2>
-     * Wynncraft 把「名字 - 血量❤ - 」放在<b>同一個</b>顏色段裡，逐段查表拿到的是
-     * 整串，永遠對不上。名牌語料又是「Bronchial {#}{#}」——後面兩個是等級膠囊
-     * 的圖示——所以只拿名字精確查也查不到。實機回報：頭上名牌是「支气管体」，
-     * boss bar 還是 Bronchial。
-     *
-     * <p>先精確查名字，查不到再查名牌的鍵、拿掉尾巴的圖示。譯文裡還留著
-     * 佔位符的不用，寧可留英文。名字跨了顏色段就放棄。
-     *
-     * @return 換好名字的標題；查不到回傳 {@code null}
-     */
     static net.minecraft.network.chat.Component bossBarName(
             net.minecraft.network.chat.Component bar, TranslationStore store) {
         String plain = bar.getString();
@@ -548,15 +395,6 @@ public final class WynntilsText {
         return done[0] ? out : null;
     }
 
-    /**
-     * boss bar 右邊的屬性克制：{@code Weak}（易傷）、{@code Dam}（增傷）、{@code Def}（防護）。
-     *
-     * <p>這幾個字放進一般語料會換到別的地方去（Def、Dam 在介面上另有意思），
-     * 所以譯法放在 {@code scoped/bossbar.json}，只在 boss bar 用。
-     * 逐個英文單字查，前後的圖示、空白與顏色都不動。
-     *
-     * @return 換好的標題；一個字都沒換到回傳 {@code null}
-     */
     static net.minecraft.network.chat.Component bossBarWords(
             net.minecraft.network.chat.Component bar, TranslationStore store) {
         net.minecraft.network.chat.MutableComponent out =
@@ -587,16 +425,8 @@ public final class WynntilsText {
 
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
-    /** 見 {@link TranslationStore#generation}：換語言不換 store，只能比這個。 */
     private static int barAge = -1;
 
-    /**
-     * mixin 的入口：Wynntils 通知框（畫面中下方帶暗底的那一行）。
-     * 見 {@code NotificationMixin}。
-     *
-     * <p>Wynntils 會把某些系統訊息攔下來改畫在這個框裡，那些訊息就不會再走聊天事件——
-     * 所以先前既沒翻、也沒收進 capture。聊天翻譯關掉時不動。
-     */
     public static StyledText notification(StyledText text) {
         try {
             CollectorConfig config = WynnChaYuan.config();
@@ -621,7 +451,6 @@ public final class WynntilsText {
         }
     }
 
-    /** mixin 的入口：實體頭上的自訂名稱。見 {@code EntityNameMixin}。 */
     public static net.minecraft.network.chat.Component entityName(
             net.minecraft.network.chat.Component name,
             net.minecraft.world.entity.Entity entity) {
@@ -632,42 +461,13 @@ public final class WynntilsText {
         }
     }
 
-    /** 沒有實體可用時的入口（測試用）。 */
     static net.minecraft.network.chat.Component entityName(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
         return entityName(name, null, config, store);
     }
 
-    /**
-     * 實體的自訂名稱：隱形盔甲座疊出來的那種浮空字（討伐戰的「Void Altar」
-     * 與下面那行提示）。
-     *
-     * <p>這種字不是 TextDisplay，Wynntils 的名牌事件收不到，先前完全沒經過模組——
-     * 沒翻、也沒收進 capture。
-     *
-     * <h2>為什麼跟名牌同一個開關</h2>
-     * 收到的內容進的是 {@code label/floating}，跟名牌那條路<b>同一種東西</b>；
-     * 差別只在 Wynccraft 有些字還是舊式盔甲座、走不到 Wynntils 的名牌事件。
-     * 那是實作差異，玩家分不出來，所以不另外開一列（#825 的討論）。
-     *
-     * <h2>三段都照做（issue #1047）</h2>
-     * 先前這條路只看「關／不關」：玩家在 F6 把「名牌與漂浮字」切到「注視時小框」，
-     * 盔甲座疊出來的浮空字還是被就地換掉——討伐戰的目標提示整段變中文，而設定上
-     * 寫的是「原文保留著」。
-     *
-     * <p>當時的理由是「小框靠 TextDisplay 認位置，盔甲座沒有那個實體」。那是誤判：
-     * {@code LookAtTranslator} 的 LABELS 是<b>以 Entity 為鍵</b>的，射線也只用
-     * {@code position()} 與 {@code getBoundingBox()}，盔甲座一樣有。真正缺的只是
-     * 把實體從 mixin 傳下來——{@code EntityNameMixin} 本來就拿得到。
-     *
-     * <p>所以現在：不管哪個模式都先把<b>原文</b>登記給小框（跟名牌那條路一樣，
-     * 見 {@code CaptureListener#translateNametag}），LOOK_AT 就原樣回傳。
-     *
-     * <p>每一幀都會畫，結果照原字記下；查不到的只在第一次看到時收進 capture。
-     *
-     * @return 翻好的名稱；關掉、翻不出來、或在「注視時顯示」模式下原樣回傳
-     */
+    // 盔甲座浮空字不是 TextDisplay，Wynntils 名牌事件收不到
     static net.minecraft.network.chat.Component entityName(
             net.minecraft.network.chat.Component name,
             net.minecraft.world.entity.Entity entity, CollectorConfig config,
@@ -691,12 +491,8 @@ public final class WynntilsText {
         if (entry == null) {
             net.minecraft.network.chat.Component hit;
             StyledText text = StyledText.fromComponent(name);
-            // 漂浮字那一支：專用譯法優先（見 TranslationStore#labelLookup），整塊查得到時
-            // 照原文的分段上色（見 LineTranslator#labelColours）。先前只有查到專用譯法才走它，
-            // 其餘的走一般那條路，寶箱上的字就整行一個顏色。都查不到才照舊逐段查。
             net.minecraft.network.chat.Component floating =
                     LineTranslator.translateFloating(text, store);
-            // 見 NameplateProbe：盔甲座這條路也記，才分得出血條名牌是走哪一條來的
             com.wynnchayuan.translate.NameplateProbe.check("盔甲座名稱", text, floating, store);
             StyledText shown = floating != null
                     ? StyledText.fromComponent(floating)
@@ -705,39 +501,31 @@ public final class WynntilsText {
             if (hit == name && config.collect()) {
                 collectName(text, "label/floating");
             }
-            // 小框要的是<b>原文</b>——它每一幀自己重新翻，所以換語言會立刻跟著變。
-            // 戰鬥數字與純圖示不登記：前者每次都不一樣，後者沒有字可翻。
-            // 要不要登記只看這段字本身，跟著快取記一次就好——先前每一幀、每個名牌都
-            // 重新拆一次字、判一次圖示，畫面上的名牌一多就是每幀幾十微秒。
             boolean indicator = com.wynnchayuan.capture.CombatText.isIndicator(text);
             StyledText original = !name.getString().isBlank()
                     && !com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
                     && !indicator ? text : null;
             entry = new Name(hit, original);
-            // 戰鬥數字每一下都是新的一條，另外放：不然一場仗打下來會把名牌的位置擠光
             (indicator ? INDICATORS : NAMES).put(name, entry);
         }
         if (entity != null && entry.original() != null) {
             LookAtTranslator.remember(entity, entry.original());
         }
         if (config.nametagMode() == CollectorConfig.NametagMode.LOOK_AT) {
-            return name;                       // 原文不動，等玩家看向它
+            return name;
         }
         return entry.shown();
     }
 
-    /** 沒譯文的浮空字收進 capture，濾網跟 TextDisplay 那條路一樣。 */
     private static void collectName(StyledText text, String ctx) {
         if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
             return;
         }
-        // 同一個名字收過就不再收：快取擠掉之後再遇到同一個名牌，不必再查一次表、算一次雜湊
         if (!firstTime(NAMES_NOTED, ctx + '\0' + text.getString())) {
             return;
         }
         var captured = WynnChaYuan.store();
-        // 主人的名字夾在語料的 {u} 句型裡（「某人的鳥」）：記 {u} 那一份。見 NameFrames。
         com.wynnchayuan.capture.LineParts owned =
                 LineTranslator.nameFramed(text, WynnChaYuan.translations());
         if (owned != null) {
@@ -750,8 +538,6 @@ public final class WynntilsText {
         if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
                 || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
                 || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)
-                // 寵物與坐騎的名字帶著主人的 ID（「Tomzd{~}'s Bird」），
-                // 數字被抽掉之後字形判準認不出來。見 #mentionsOnlinePlayerLoose。
                 || com.wynnchayuan.capture.PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             return;
         }
@@ -760,28 +546,14 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * 名牌的一筆：畫出去的樣子，以及要登記給注視小框的原文（不登記就是 {@code null}）。
-     */
     private record Name(net.minecraft.network.chat.Component shown, StyledText original) {}
 
-    /**
-     * 名牌的結果，照最近用過的順序淘汰。
-     *
-     * <h2>為什麼不是滿了就整份清掉</h2>
-     * 先前滿 512 條就 {@code clear()}，下一幀畫面上每一個名牌都要重翻——離線量測
-     * 60 個名牌那一幀要 4～9ms，打怪時每隔一陣子就卡一下。照最近用過的順序淘汰，
-     * 畫面上還看得到的名牌每一幀都會被用到，不會被擠掉。
-     */
+    // 實測 60 個名牌全部重翻一幀要 4～9ms
     private static final java.util.Map<net.minecraft.network.chat.Component, Name> NAMES = lru(512);
-    /** 戰鬥數字另外一份，見 {@link #entityName}。 */
     private static final java.util.Map<net.minecraft.network.chat.Component, Name> INDICATORS = lru(256);
-    /** 見 {@link #collectName}：收過的名字（前面是 ctx）。 */
     private static final java.util.Map<String, Boolean> NAMES_NOTED = lru(1024);
-    /** 見 {@link TranslationStore#generation}。 */
     private static int nameAge = -1;
 
-    /** mixin 的入口：Wynntils「手持物品名稱」疊層記下的那份字。見 {@code HeldItemOverlayMixin}。 */
     public static StyledText heldItemText(StyledText text) {
         try {
             if (text == null || text.isEmpty()) {
@@ -795,18 +567,11 @@ public final class WynntilsText {
         }
     }
 
-    /**
-     * 追蹤欄裡查不到的那一行，收進語料缺口。
-     *
-     * <p>跟別的收集路徑一樣先過個資濾網：那一欄同時也放隊伍那一段，
-     * 隊友的 ID 會跟著出現。
-     */
     private static void noteTracker(StyledText line) {
         if (line == null || line.isEmpty()
                 || !WynnChaYuan.config().collect()) {
             return;
         }
-        // 追蹤欄每一幀都畫，同一行先前每幀都收一次（濾網、查表、雜湊全部重跑）。收一次就夠
         if (!firstTime(TRACKER_NOTED, line.getString())) {
             return;
         }
@@ -824,69 +589,26 @@ public final class WynntilsText {
         }
     }
 
-    /** 見 {@link #noteTracker}：收過的追蹤欄行（原樣帶色碼）。 */
     private static final java.util.Map<String, Boolean> TRACKER_NOTED = lru(256);
 
-    /** 這一塊是追蹤欄嗎。用類別名比對，不必把 Wynntils 的型別帶進來。 */
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());
     }
 
-    /**
-     * mixin 的入口：Wynntils 自己那幾個畫面上的<b>每一段字</b>。
-     *
-     * <h2>換的是什麼</h2>
-     * 綜合頁面左邊那一列任務／洞穴名、分頁標題、按鈕說明⋯⋯Wynntils 畫自己的
-     * 畫面時，字全部經過它的 {@code FontRenderer}。那裡面有兩種來源：
-     *
-     * <ul>
-     *   <li>Wynntils 自己的介面字串。它附了 zh_tw／zh_cn 語言檔，但四千多條只翻了
-     *       兩千多條——沒翻到的那些送到這裡時還是英文。</li>
-     *   <li><b>Wynncraft 送來的內容</b>：任務名、洞穴名、「Currently in progress」。
-     *       Wynntils 只是把伺服器給的字重畫一次，它的語言檔永遠不會有這些，
-     *       但我們的語料裡早就有了。</li>
-     * </ul>
-     *
-     * <p>查得到才換，查不到原樣回傳——所以已經是中文的字（Wynntils 自己翻好的、
-     * 或我們上一幀換過的）走到這裡一律不動。
-     *
-     * @return 換好的那一段；不該換或查不到時<b>原樣</b>回傳
-     */
     public static StyledText screenText(StyledText text) {
         try {
             return screenText(text, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
-            return text;                       // 別人的算繪流程，不能讓它炸
+            return text;
         }
     }
 
-    /**
-     * 現在畫的是不是「<b>不該翻</b>的那種字」。
-     *
-     * <p>目前有三處：公會戰地圖那一格一格的領地標籤（{@code TerritoryPoiMixin}）、
-     * 物品格角落 Wynntils 自己算出來的簡稱（{@code ItemTextOverlayMixin}），
-     * 以及 Tab 玩家清單的名字（{@code PlayerListNamesMixin}）。
-     * 都不是遊戲的文案——玩家取的公會名與玩家名、Wynntils 拼的縮寫——
-     * 卻都會跟語料裡正當的條目撞名（{@code Fox} 對上 NPC 狐狸，
-     * {@code Teleport} 對上法師技能，{@code Mark64118} 對上技能詞表的 Mark）。
-     *
-     * <p>只在算繪執行緒上動，所以不必同步。宣告成 {@code volatile} 是為了
-     * 萬一哪天 Wynntils 改到別的執行緒去畫，讀到的至少不是過期的值。
-     */
     private static volatile boolean rawText;
 
-    /** mixin 的入口：進了那一段就掛上，出來就放掉。見 {@link #rawText}。 */
     public static void holdRawText(boolean on) {
         rawText = on;
     }
 
-    /**
-     * 記分板上現在有哪幾列，以及哪幾列有「整句切回來」的譯文。
-     *
-     * @param shown    每一列的字（去掉樣式），含各段的標題；追蹤任務那一段不在裡面
-     * @param replaced 其中有現成譯文的那幾列，見 {@code ScoreboardFlow}
-     * @param kept     其中是玩家名字的那幾列，一律原樣，見 {@code ScoreboardFlow#keptRows}
-     */
     private record Board(java.util.Set<String> shown,
                          java.util.Map<String, StyledText> replaced,
                          java.util.Set<String> kept) {}
@@ -894,13 +616,11 @@ public final class WynntilsText {
     private static volatile Board board =
             new Board(java.util.Set.of(), java.util.Map.of(), java.util.Set.of());
 
-    /** 沒有玩家名字那幾列的版本，見 {@link #setScoreboard(java.util.Set, java.util.Map, java.util.Set)}。 */
     public static void setScoreboard(java.util.Set<String> shown,
                                      java.util.Map<String, StyledText> replaced) {
         setScoreboard(shown, replaced, java.util.Set.of());
     }
 
-    /** {@code ScoreboardListener} 每次記分板更新叫一次，整份換掉。 */
     public static void setScoreboard(java.util.Set<String> shown,
                                      java.util.Map<String, StyledText> replaced,
                                      java.util.Set<String> kept) {
@@ -914,26 +634,13 @@ public final class WynntilsText {
                 || config == null || !config.wynntilsUi()) {
             return text;
         }
-        // 先看這一段：容器裡每一格角落的簡稱每一幀都走這裡，不必先為記分板組一次字串
-        //（Wynntils 的 getStringWithoutFormatting 每次都重組）。記分板不會畫在這兩段裡。
         if (rawText) {
-            // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
-            // 只是遲早的事（實機那格叫 Fox，被換成了「狐狸」；傳送卷軸的簡稱
-            // 被換成了法師技能的「傳送」）。兩者都不是遊戲的文案，不該翻。
-            //
-            // 這一段<b>刻意擋在快取前面</b>：同一個字串在這一段裡不翻、
-            // 出了這一段要翻，進了快取就分不出來了。
             return text;
         }
         Board now = board;
         if (!now.shown().isEmpty()) {
-            // 記分板那幾列先看：開關關掉就原樣，有整句切回來的譯文就用那一份。
-            // 擋在快取前面——同一列字開關一切就要換答案，而且整句的譯文會隨著
-            // 記分板更新（倒數的秒數）一直變。
             String plain = text.getStringWithoutFormatting();
             if (now.kept().contains(plain)) {
-                // 隊伍成員那幾列是玩家的名字，不是遊戲的文案：一個叫 General 的玩家
-                // 被換成了 Lootrun 的「綜合」（使用者 2026-10-27 的截圖）。見 ScoreboardFlow#keptRows。
                 return text;
             }
             if (now.shown().contains(plain)) {
@@ -946,21 +653,16 @@ public final class WynntilsText {
                 }
             }
         }
-        // 現在是不是 Wynntils 的內容書或地圖：那裡的裸名是內容的名字。進快取的鍵——
-        // 同一個字串在別的畫面上可能是技能或裝備。
         boolean content = contentScreen.getAsBoolean();
         Cached seen;
         synchronized (SCREEN_CACHE) {
             seen = SCREEN_CACHE.get(text);
         }
         if (seen != null && seen.fresh(store) && seen.content() == content) {
-            // 查不到的那一種回傳<b>呼叫端那一個</b>，不是快取裡的——
-            // 「沒翻到就原樣回去」在這個入口是用 == 比的（見 WynntilsTextTest）。
             return seen.out() == null ? text : seen.out();
         }
         net.minecraft.network.chat.Component hit;
         if (statusRow(text.getStringWithoutFormatting())) {
-            // 狀態效果那一欄：效果的名字不是物品。見 #statusRow。
             boolean was = TranslationStore.itemNamesBarred();
             TranslationStore.barItemNames(true);
             try {
@@ -971,24 +673,16 @@ public final class WynntilsText {
         } else {
             hit = LineTranslator.translate(text, store);
         }
-        // 這個入口一次只畫一行。查表不分換行與空白，所以單行的字可能對到
-        // 兩行的條目（「Hold the platform」對到漂浮字的「Hold\nthe platform」），
-        // 譯文裡的換行會被畫成方框——併掉。
         if (hit != null && text.getString().indexOf('\n') < 0) {
             hit = ScoreboardFlow.oneLine(hit);
         }
-        // 內容書清單那一列：卡片標題怎麼叫，這裡就怎麼叫。裸名照一般的查表會對到
-        // 同名的技能或裝備（Scorched Earth、Dust Bowl）——清單一個名字、卡片另一個名字。
         if (content) {
             String title = store.pageTitleName(text.getStringWithoutFormatting());
             if (title != null && (hit == null || !hit.getString().equals(title))) {
-                // 字型換回預設：那一列原本可能包著 language/wynncraft，那份字型沒有中文字
                 hit = net.minecraft.network.chat.Component.literal(title).withStyle(
                         styleOf(text).withFont(net.minecraft.network.chat.FontDescription.DEFAULT));
             }
         }
-        // 清單那一列的裸名（「Visceral Remains」）：照 F6「任務與洞窟名稱」的設定
-        // 附原文或留原文。見 PageNames。
         if (hit != null && store.pageNameMode() != CollectorConfig.ItemNames.ON
                 && store.isPageName(text.getStringWithoutFormatting())) {
             hit = com.wynnchayuan.translate.PageNames.bare(
@@ -1003,12 +697,7 @@ public final class WynntilsText {
         return out == null ? text : out;
     }
 
-    /**
-     * 現在開著的是不是 Wynntils 的內容書（任務、洞窟、探索點那一本）或地圖。
-     *
-     * <p>用類別的套件名比對，不必把那幾個畫面的型別帶進來；Wynntils 搬了套件的話
-     * 這裡安靜地變成「不是」，清單就回到照裸名查表的老樣子。測試換掉這一個來假裝。
-     */
+    // 以 Wynntils 套件名比對，它搬套件時會安靜失效
     static java.util.function.BooleanSupplier contentScreen = WynntilsText::onContentScreen;
 
     private static boolean onContentScreen() {
@@ -1022,26 +711,10 @@ public final class WynntilsText {
             return name.startsWith("com.wynntils.screens.activities.")
                     || name.startsWith("com.wynntils.screens.maps.");
         } catch (Throwable t) {
-            return false;                      // headless 測試沒有 Minecraft
+            return false;
         }
     }
 
-    /**
-     * 這一行是不是 Wynntils 狀態效果那一欄的一列：尾巴掛著倒數的時間。
-     *
-     * <h2>實機回報（使用者 2026-10-12 的截圖）</h2>
-     * <pre>
-     *   29% 抵抗護腿 (Resistance) (00:27)
-     *    8% 力量 (00:27)
-     * </pre>
-     * 第一列的效果叫 {@code Resistance}，剛好是一件護腿的名字——語料裡這個字只有裝備在用，
-     * 查表就把護腿的譯名寫了上去。狀態效果是技能、藥水、圖騰給的增益，那一欄不會出現物品；
-     * 跟漂浮字、血條同一類（見 {@code TranslationStore#barItemNames}）：只有物品在用的名字
-     * 在這裡查到了也不算數，留原文。屬性與技能也在用的字（{@code Strength}）照舊翻。
-     *
-     * <p>認的是形狀：行尾是 {@code (00:27)}、{@code (1:05:00)} 或沒有期限的 {@code (**:**)}。
-     * 物品的名字後面不會接這個。
-     */
     static boolean statusRow(String plain) {
         return plain != null && STATUS_TIMER.matcher(plain).find();
     }
@@ -1049,29 +722,8 @@ public final class WynntilsText {
     private static final java.util.regex.Pattern STATUS_TIMER = java.util.regex.Pattern.compile(
             "\\((?:\\d{1,2}:)?(?:\\d{1,2}:\\d{2}|\\*\\*:\\*\\*)\\)\\s*$");
 
-    /**
-     * 同一個字串的翻譯結果，按內容記住。
-     *
-     * <h2>為什麼要有</h2>
-     * 這個入口是 Wynntils 畫的<b>每一個字串、每一幀</b>都會走一次的地方，
-     * 比物品 tooltip 還熱（見 {@code TooltipPanel#translateLinesCached}，
-     * 同一套做法）。而 {@link LineTranslator#translate} 一次要跑整行查表、
-     * 多行標籤查表、再逐段查表——記分板那一欄、物品格角落的簡稱、
-     * 畫面上每一個 Wynntils 標籤，滑鼠停著不動也在每幀重算一次。
-     *
-     * <p>同一份內容的答案不會變，記住就好。
-     *
-     * <h2>什麼時候作廢</h2>
-     * 跟 tooltip 那一份同樣三件事：語料重載（換語言、背景同步）、
-     * 物品名稱顯示模式的兩個旗標。{@code rawText} 不進鍵，它擋在快取前面。
-     *
-     * <p>上限 {@value #SCREEN_CACHE_LIMIT}：畫面上的字有一大半帶數字
-     * （座標、倒數、血量），那些每幀都是新的一筆，靠 LRU 自然淘汰；
-     * 真正省下來的是那些固定不動的標籤。
-     */
     private static final int SCREEN_CACHE_LIMIT = 512;
 
-    /** 一次翻譯的結果；{@code out} 是 {@code null} 代表「查不到，原樣就是答案」。 */
     private record Cached(int generation, boolean namesWithOriginal,
                           boolean translateNames, boolean peekPlain,
                           CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
@@ -1094,18 +746,6 @@ public final class WynntilsText {
                 }
             };
 
-    /**
-     * mixin 的入口：Wynntils 清單畫面右邊那張卡（滑鼠停在某一項時跳出來的）。
-     *
-     * <h2>為什麼不能跟上面共用</h2>
-     * 那張卡不走 {@code FontRenderer}——Wynntils 把它交給原版的
-     * {@code renderComponentTooltip}，一次送一整份 {@code List<Component>}。
-     * 一整份送過來反而更好：可以走跟物品 tooltip <b>完全同一套</b>的替換，
-     * 整段查得到就用整段，查不到才逐行——「Bring [20 Void Essences] to the
-     * Slaying Post」那種跨行的句子只有整段那條路查得到。
-     *
-     * @return 換好的那一份；沒有東西可換時<b>原樣</b>回傳同一個 list
-     */
     public static java.util.List<net.minecraft.network.chat.Component> menuTooltip(
             java.util.List<net.minecraft.network.chat.Component> lines) {
         try {
@@ -1113,18 +753,11 @@ public final class WynntilsText {
             if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
                 return lines;
             }
-            // 收一份。這張卡上的字<b>沒有別的路進得來</b>——它不是物品 tooltip，
-            // 走的是 Wynntils 自己的畫面，所以在這裡不收就永遠不會出現在
-            // captured.json 裡，缺什麼只能靠截圖問。
-            //
-            // 交給 GuiTextCapture 而不是自己寫一份：玩家頭顱的標題、隊伍卡、
-            // 整段 vs 逐行那幾道判斷都在那邊，分兩份寫遲早會不一致。
-            // 它自己看「收集介面文字」那個開關，預設關著。
             com.wynnchayuan.listener.GuiTextCapture.record(lines);
             java.util.List<net.minecraft.network.chat.Component> out =
                     TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
             if (out == null || out.isEmpty()) {
-                return lines;                  // 約定：空的代表原文不動
+                return lines;
             }
             return out;
         } catch (Throwable t) {

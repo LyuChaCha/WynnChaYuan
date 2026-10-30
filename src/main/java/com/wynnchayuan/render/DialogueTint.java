@@ -22,48 +22,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * 記住每一句對話裡<b>哪幾段是強調色</b>，存成檔案。
- *
- * <h2>為什麼非記不可</h2>
- * Wynncraft 的顏色是跟著打字長出來的：打到 {@code [A} 才送 {@code [A} 的顏色。
- * 而中文比英文短——「不知道那雙靴子跑到哪去了……你聽說過 <b>[</b>」這個方括號，
- * 在中文裡出現在整句的 57%，在英文裡卻要等到 83%。中間那段時間我們手上
- * <b>根本沒有顏色可以貼</b>，只能先畫成底色，等英文打到了才變。
- * 玩家看到的就是「白一下再變色」。
- *
- * <p>所以把看過的顏色記下來。同一句再讀一次，第一幀就有顏色。
- *
- * <h2>為什麼要落地成檔案</h2>
- * 先前只記在記憶體裡，重開遊戲就空了——而玩家正是一邊重開一邊測，
- * 等於完全沒有效果。寫進 {@code config/wynnchayuan/dialogue-colours.json}
- * 之後，一句話這輩子只會白那一次。
- *
- * <p>只記<b>顏色</b>，不記譯文：譯文在語料裡，這裡存的是畫面上量到的東西。
- * 檔案掉了、壞了都只是退回「第一次會白一下」，不影響任何翻譯。
- */
 public final class DialogueTint {
 
-    /** 檔名。跟 captured.json、cards.json 放在一起。 */
     public static final String FILE = "dialogue-colours.json";
 
-    /**
-     * 記幾句。
-     *
-     * <p>一次遊玩會經過的台詞是幾百句的量級，而每一條只有幾十個位元組。
-     * 上限存在的意義是「檔案不會無限長大」，不是省記憶體。
-     */
     private static final int KEEP = 2048;
 
-    /**
-     * 短於這個長度就不做前綴比對。
-     *
-     * <p>打字的頭幾幀只有兩三個字，語料裡一大堆句子都是那樣開頭的，
-     * 比出來的多半是別句話。反正那幾幀名字根本還沒出現，晚幾幀不吃虧。
-     */
     private static final int PREFIX_FLOOR = 4;
 
-    /** 最久沒用到的先丟。鍵是整句譯文。 */
     private static final Map<String, List<LineParts.Piece>> SEEN =
             new LinkedHashMap<>(64, 0.75f, true) {
                 @Override
@@ -79,19 +45,6 @@ public final class DialogueTint {
 
     private DialogueTint() {}
 
-    /**
-     * 讀進來：先吃 jar 裡附的那份，再讓玩家自己那份蓋上去。
-     *
-     * <h2>為什麼要附一份</h2>
-     * 自己學的只能救「第二次讀」——一句話第一次讀到的時候，Wynncraft
-     * 還沒把顏色送出來，我們手上真的什麼都沒有。附一份跑過的結果進 jar，
-     * 玩家<b>第一次</b>讀就已經有顏色了，這是唯一能讓顏色跟著逐字一起出來
-     * 的辦法。
-     *
-     * <p>附的那份是產生物：玩過一輪把 {@code dialogue-colours.json} 收回來，
-     * 放進 {@code assets/wynnchayuan/colours/<lang>.json} 就是了。沒有也不會怎樣，
-     * 只是退回「第一次會白一下」。
-     */
     public static void init(Path target, String lang) {
         file = target;
         merge(bundled(lang));
@@ -114,7 +67,6 @@ public final class DialogueTint {
         }
     }
 
-    /** jar 裡附的那份，沒有就回 {@code null}。 */
     private static JsonObject bundled(String lang) {
         try (InputStream in = DialogueTint.class.getResourceAsStream(
                 "/assets/wynnchayuan/colours/" + lang + ".json")) {
@@ -124,11 +76,10 @@ public final class DialogueTint {
             return JsonParser.parseReader(
                     new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
         } catch (Exception e) {
-            return null;               // 附的那份壞了不該害遊戲開不起來
+            return null;
         }
     }
 
-    /** 測試用：不落地，只清空。 */
     static void forTest() {
         file = null;
         synchronized (SEEN) {
@@ -137,13 +88,6 @@ public final class DialogueTint {
         dirty.set(false);
     }
 
-    /**
-     * 這一句上次看到的強調色。
-     *
-     * <p>打字中拿到的是<b>前綴</b>，記下來的是整句，所以不能只比相等。
-     *
-     * @return 找不到時回傳空的
-     */
     public static List<LineParts.Piece> of(String line) {
         if (line == null || line.isEmpty()) {
             return List.of();
@@ -154,11 +98,8 @@ public final class DialogueTint {
                 return exact;
             }
             if (line.length() < PREFIX_FLOOR) {
-                return List.of();          // 太短，誰都對得上；見下面
+                return List.of();
             }
-            // 對得上的可能不只一條（同一個 NPC 的幾句話開頭常常一樣），
-            // 取<b>最接近</b>目前這幾個字的那一條——差最多的那條很可能
-            // 根本是別句話，貼上去就是錯的顏色配錯的位置。
             String best = null;
             for (String each : SEEN.keySet()) {
                 if (each.startsWith(line)
@@ -173,12 +114,6 @@ public final class DialogueTint {
         return List.of();
     }
 
-    /**
-     * 記住這一句的強調色。
-     *
-     * <p>同一句會在打字途中被記很多次，一次比一次完整。後記的蓋掉先記的——
-     * 我們要的就是<b>最完整</b>的那一版。
-     */
     public static void learn(String line, List<LineParts.Piece> pieces) {
         if (file == null || line == null || line.isEmpty() || pieces.isEmpty()) {
             return;
@@ -186,23 +121,13 @@ public final class DialogueTint {
         synchronized (SEEN) {
             List<LineParts.Piece> had = SEEN.get(line);
             if (had != null && had.equals(pieces)) {
-                return;                    // 一模一樣，不必再寫一次檔
+                return;
             }
-            // 打字途中每一幀都是同一句的<b>前綴</b>。不清掉的話，一句話會在
-            // 檔案裡留下三十筆「多年前…」「多年前…你」「多年前…你要」，
-            // 名額幾句話就被吃光。留最完整的那一筆就好。
-            // 只清掉<b>比較短</b>的那幾筆。
-            //
-            // 反過來清不得：打字途中每一幀都比整句短，而先前這裡連
-            // 「比自己長的」一起清，於是一句話的第一幀就把整句那一筆
-            //（包含 jar 附的那一份）換成半句，後面每一幀再也查不到，
-            // 只能等遊戲自己把顏色送過來——玩家看到的「打完之後才又
-            // 白一次再上色」就是這個。
             SEEN.keySet().removeIf(each ->
                     !each.equals(line) && line.startsWith(each));
             for (String each : SEEN.keySet()) {
                 if (!each.equals(line) && each.startsWith(line)) {
-                    return;                // 已經有更完整的一條，別用半句蓋掉
+                    return;
                 }
             }
             SEEN.put(line, List.copyOf(pieces));
@@ -210,7 +135,6 @@ public final class DialogueTint {
         dirty.set(true);
     }
 
-    /** 寫檔。跟 captured.json 同一個排程呼叫，見 {@code WynnChaYuan#flushQuietly}。 */
     public static void flush() {
         Path target = file;
         if (target == null || !dirty.getAndSet(false)) {
@@ -231,12 +155,10 @@ public final class DialogueTint {
         try {
             SafeFiles.writeAtomically(target, gson.toJson(root));
         } catch (Exception e) {
-            dirty.set(true);               // 沒寫成功，下次再試
+            dirty.set(true);
             throw new RuntimeException(e);
         }
     }
-
-    // ------------------------------------------------------------------
 
     private static List<LineParts.Piece> read(JsonElement value) {
         List<LineParts.Piece> out = new ArrayList<>();

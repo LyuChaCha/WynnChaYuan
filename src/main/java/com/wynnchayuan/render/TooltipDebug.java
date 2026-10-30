@@ -18,28 +18,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/**
- * 把「查不到譯文的 tooltip」實際算出來的模板寫成檔案，供對照。
- *
- * <p>純診斷用途，<b>與收集分開</b>：裝備／技能的文案來自離線語料，
- * 不從遊戲收集；這裡只是在翻譯沒生效時，把「字典的鍵」與「實際查詢的鍵」
- * 攤開來比對——光看畫面完全看不出兩者差在哪。
- *
- * <p>連每個片段的字型也一併記下來，因為最可能的原因就是<b>整行帶了自訂字型</b>
- * 而被當成圖示整段跳過。
- *
- * <p>只寫前幾份遇到的內容就停，避免檔案無限長大。
- *
- * <h2>兩種情形</h2>
- * <ul>
- *   <li><b>整份都查不到</b>——{@link #dump}。多半是鍵對不上（模板差一個圖示、
- *       多一個空白），比對 {@code template} 跟語料的 {@code src} 就看得出來。</li>
- *   <li><b>翻了一半</b>——{@link #dumpPartial}。這種更難查：語料裡明明有，
- *       畫面上偏偏是英文，代表卡在算繪這一端的某道守門。少了這一份就只能猜
- *       實機到底送進來什麼——技能樹「解鎖後標題變回英文」那次就是這樣，
- *       語料、capture、三個診斷檔全都查不到那一行。</li>
- * </ul>
- */
 public final class TooltipDebug {
 
     private static final Gson GSON = new GsonBuilder()
@@ -47,20 +25,12 @@ public final class TooltipDebug {
 
     private static final int MAX_TOOLTIPS = 5;
 
-    /**
-     * 翻一半的另外算額度。整份沒翻的那種多半是還沒翻的裝備名（本來就該留原文），
-     * 共用額度的話真正的 bug 永遠排不進去。
-     */
     private static final int MAX_PARTIAL = 6;
 
     private static Path file;
     private static int written = 0;
     private static int partial = 0;
 
-    /**
-     * 已經寫過的 tooltip。算繪是<b>每幀</b>呼叫的，不記著的話滑鼠在同一件
-     * 物品上停一秒就把額度吃光。
-     */
     private static final java.util.Set<String> seen = new java.util.HashSet<>();
 
     private TooltipDebug() {}
@@ -69,7 +39,6 @@ public final class TooltipDebug {
         file = path;
     }
 
-    /** 記下一份查不到譯文的 tooltip。 */
     public static synchronized void dump(List<Component> tooltip) {
         if (file == null || written >= MAX_TOOLTIPS || tooltip.isEmpty()) {
             return;
@@ -79,20 +48,13 @@ public final class TooltipDebug {
               "查不到譯文的 tooltip。比對 template 與譯文檔的 src 是否相同。");
     }
 
-    /**
-     * 記下一份<b>只翻到一半</b>的 tooltip。
-     *
-     * <p>整份沒翻、整份翻好都不記——只記中英夾雜的那些，那才是查得出東西的。
-     *
-     * @param hit 每一行有沒有換成中文，長度與 {@code tooltip} 相同
-     */
     public static synchronized void dumpPartial(List<Component> tooltip,
                                                 List<Component> shown, boolean[] hit) {
         if (file == null || partial >= MAX_PARTIAL || tooltip.isEmpty()) {
             return;
         }
         if (!seen.add(key(tooltip))) {
-            return;                            // 同一件物品只記一次
+            return;
         }
         partial++;
         write(tooltip, shown, hit, "tooltip-partial-" + partial + ".json",
@@ -101,26 +63,15 @@ public final class TooltipDebug {
               + "shown 是實際畫出去的那一行；兩邊的 spacePx 對照就看得出欄距補了多少。");
     }
 
-    /** 技能樹節點說明最多記幾份。 */
     private static final int MAX_ABILITY = 6;
     private static int ability = 0;
 
-    /**
-     * 記下一份<b>技能樹節點</b>的說明：原文每一行，連同我們畫出去的那一行。
-     *
-     * <p>技能樹整份都翻得到，{@link #dumpPartial} 從來輪不到它；而 line-debug／layout-debug
-     * 只記開遊戲後的前幾十筆，進到技能樹時早就滿了。實機回報「總傷害: 30%(」數值壓到
-     * 括號、底下還有一份灰色的數字時，手上沒有任何一份實際的片段可以對——
-     * 字型、粗體、偏移，離線重建出來的都是對的。這份就是給那種時候用的。
-     *
-     * @param shown 畫出去的那一份；行數可能跟原文不同（整段收短過），照行號並排而已
-     */
     public static synchronized void dumpAbility(List<Component> tooltip, List<Component> shown) {
         if (file == null || ability >= MAX_ABILITY || tooltip.isEmpty()) {
             return;
         }
         if (!seen.add("ability|" + key(tooltip))) {
-            return;                            // 同一個節點只記一次
+            return;
         }
         ability++;
         write(tooltip, shown, null, "ability-tooltip-" + ability + ".json",
@@ -128,33 +79,22 @@ public final class TooltipDebug {
               + "（行數不同時只是照行號並排）；bold 只在粗體的片段上出現。");
     }
 
-    /** 別的模組重畫的 tooltip 最多記幾份。 */
     private static final int MAX_FOREIGN = 8;
     private static int foreign = 0;
 
-    /**
-     * 記下一份<b>別的模組重畫</b>的 tooltip（WynnMod）。
-     *
-     * <p>它的排版跟伺服器送來的不一樣——字型、欄距的做法、標籤的措辭都是它自己的，
-     * 而我們的語料與對齊都是照伺服器那一份寫的。哪幾行翻不到、翻了之後欄位歪不歪，
-     * 只有把它實際交出來的片段記下來才看得出來。
-     *
-     * @param shown 我們交回去的那幾行；一行都沒翻到就是 {@code null}
-     */
     public static synchronized void dumpForeign(String who, List<Component> tooltip,
                                                 List<Component> shown) {
         if (file == null || foreign >= MAX_FOREIGN || tooltip.isEmpty()) {
             return;
         }
         if (!seen.add(who + "|" + key(tooltip))) {
-            return;                            // 同一件物品只記一次
+            return;
         }
         foreign++;
         write(tooltip, shown, null, who + "-tooltip-" + foreign + ".json",
               who + " 重畫的 tooltip。shown 是我們翻完交回去的那一行；沒有 shown 就是整份都沒翻到。");
     }
 
-    /** 同一份 tooltip 只寫一次，見 {@link #seen}。 */
     private static String key(List<Component> tooltip) {
         StringBuilder sb = new StringBuilder();
         for (Component line : tooltip) {
@@ -172,9 +112,6 @@ public final class TooltipDebug {
             JsonObject o = describe(line);
             o.addProperty("row", at);
             if (line.getString().contains("..")) {
-                // 被砍過的標籤（「Elemental Spell Da..」）：兩個點是不是跟標籤同一種樣式，
-                // 上面的 segments 看不出來——那裡只有字型與顏色，「沒設」與「設成預設值」
-                // 長得一樣。這裡把原始的樣式物件整個印出來。
                 JsonArray raw = new JsonArray();
                 line.visit((style, text) -> {
                     JsonObject each = new JsonObject();
@@ -188,10 +125,6 @@ public final class TooltipDebug {
             if (hit != null && at < hit.length) {
                 o.addProperty("translated", hit[at]);
             }
-            // 同一行<b>畫出去</b>的樣子。欄距是用空白偏移字元做的，譯文比原文
-            // 短多少就要往那個偏移補多少——補了沒有、補了多少，只有把兩邊的
-            // spacePx 擺在一起才看得出來。實機回報「兩欄沒對齊」時，畫面上
-            // 看到的只有結果，看不出是沒補、補錯方向、還是補過頭。
             if (shown != null && at < shown.size()) {
                 o.add("shown", describe(shown.get(at)));
             }
@@ -214,7 +147,6 @@ public final class TooltipDebug {
         }
     }
 
-    /** 一行的模板、片段、字型與空白偏移。 */
     private static JsonObject describe(Component line) {
         StyledText styled = StyledText.fromComponent(line);
         JsonObject o = new JsonObject();
@@ -227,7 +159,6 @@ public final class TooltipDebug {
         o.addProperty("places", parts.places().size());
         o.addProperty("numbers", parts.numbers().size());
 
-        // 每個片段的字型 —— 整行被當成圖示時，原因幾乎都在這裡
         JsonArray segs = new JsonArray();
         for (StyledTextPart part : styled) {
             String raw = part.getString(null, StyleType.NONE);
@@ -237,17 +168,12 @@ public final class TooltipDebug {
             seg.addProperty("font", ps == null || ps.getFont() == null
                     ? "(none)" : ps.getFont().toString());
             seg.addProperty("isGlyph", GlyphSplitter.isGlyphPart(part));
-            // 顏色。原文與譯文兩邊對照才看得出是哪一段上錯色——先前這裡
-            // 只記字型，顏色的回報永遠只能靠截圖猜。
             if (ps != null && ps.getColor() != null) {
                 seg.addProperty("colour", ps.getColor().toHexString());
             }
-            // 粗體會讓每個字多 1px。數值壓到後面的字、看起來畫了兩次的時候，
-            // 先看這一欄兩邊對不對得上。
             if (ps != null && ps.isBold()) {
                 seg.addProperty("bold", true);
             }
-            // 排版用的空白偏移。這是欄距真正的載體，沒有它就只能猜。
             int px = com.wynnchayuan.translate.SpaceOffset.decode(raw);
             if (px != 0) {
                 seg.addProperty("spacePx", px);
