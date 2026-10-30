@@ -5,7 +5,7 @@ import worker, {
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
-  visibility, askedVisibility, VISIBILITY, dropFromList,
+  visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -1785,8 +1785,9 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     check('他傳一件不公開的，再換回第三件', (await upload(oak, P9, '?public=0')).status === 200 && meta(oak).vis === 'unlisted' && !('q' in meta(oak)));
     later(oak);
     await upload(oak, P3, '?public=1');
-    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能穿', idleNow()[H9].q === 1
-      && !(await gallery()).some((c) => c.h === H9) && (await send('/cape/wear', { hash: H9 }, ivy)).status === 404);
+    check('★ 不公開的那一件：清單上記著不公開，一覽上沒有，別人不能加最愛', idleNow()[H9].q === 1
+      && idleNow()[H9].vis === 'unlisted' && !(await gallery()).some((c) => c.h === H9)
+      && (await send('/cape/star', { hash: H9, on: true }, ivy)).status === 404);
     const seenByStaff = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === H9);
     check('★ 管理的人看得到它：沒有人穿、不公開、在倒數', Boolean(seenByStaff) && seenByStaff.hidden === true
       && seenByStaff.owners.length === 0 && seenByStaff.idle > 0);
@@ -1821,12 +1822,11 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const owner = seen.flatMap((c) => c.owners).find((o) => o.id === ivy.id);
     return owner && owner.vis === 'unlisted' && seen.every((c) => typeof c.hidden === 'boolean' && typeof c.pending === 'boolean');
   })());
-  check('★ 只有她一個人穿的不公開披風：別人不能穿、不能加最愛', await (async () => {
+  check('★ 只有她一個人穿的不公開披風：別人不能加最愛', await (async () => {
     later(ivy);
     await upload(ivy, mark(png(352, 272), 12));
     const lone = meta(ivy).h;
-    return meta(ivy).vis === 'unlisted' && (await send('/cape/wear', { hash: lone }, elm)).status === 404
-      && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
+    return meta(ivy).vis === 'unlisted' && (await send('/cape/star', { hash: lone, on: true }, elm)).status === 404;
   })());
   later(ivy);
   check('★ 上傳的時候說要公開：照這一次的', (await upload(ivy, mark(png(176, 136), 13), '?public=1')).status === 200 && !meta(ivy).q && !meta(ivy).vis
@@ -2007,8 +2007,19 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 不公開：一覽沒有，拿到連結的人（沒登入也可以）看得到', !(await gallery()).some((c) => c.h === HA)
     && r.status === 200 && body.cape.vis === 'unlisted' && body.cape.ids.join() === fern.id && !body.cape.own
     && body.cape.hidden === true);
-  check('★ 不公開：拿到連結的人也不能穿、不能加最愛', (await send('/cape/wear', { hash: HA }, moss)).status === 404
-    && (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  r = await send('/cape/wear', { hash: HA }, moss);
+  check('★ 不公開：拿到連結的人可以穿上；他那一筆記著是從連結來的（lk），一覽上照樣沒有這件', r.status === 200
+    && meta(moss).h === HA && meta(moss).lk === 1 && !meta(moss).vis && (await mine(moss)).cape.listed === false
+    && !(await gallery()).some((c) => c.h === HA) && (await link(HA)).status === 200);
+  check('★ 管理的人看得到他是從連結穿的，整筆仍標不公開', await (async () => {
+    const seen = (await (await worker.fetch(get('/admin/capes', aliceWeb), env)).json()).capes.find((c) => c.h === HA);
+    return Boolean(seen) && seen.vis === 'unlisted' && seen.hidden === true
+      && seen.owners.some((o) => o.id === moss.id && o.linked === true);
+  })());
+  check('不公開的照樣不能加最愛', (await send('/cape/star', { hash: HA, on: true }, moss)).status === 404);
+  later(moss);
+  check('他脫下：一覽上照樣沒有', (await send('/cape/restore', {}, moss)).status === 200 && !env.CORPUS.data.has('cape:' + moss.id)
+    && !(await gallery()).some((c) => c.h === HA));
   check('亂寫的連結、沒有這件：404', (await link('nope')).status === 404 && (await link('f'.repeat(64))).status === 404);
   check('不認得的程度擋掉；沒登入不能改', (await send('/cape/visibility', { vis: 'secret' }, fern)).status === 400
     && (await send('/cape/visibility', { vis: 'public' })).status === 401);
@@ -2120,6 +2131,14 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   let roster = await (await worker.fetch(get('/list'), env)).json();
   check('刪之前：名單上有她、葉子是彩色的', roster.users.includes(rueId) && roster.rainbow.includes(rueId));
 
+  const PROP = 'tp:zh_tw:' + 'ab12'.repeat(4);
+  const POLL = 'tq:zh_tw:' + 'cd34'.repeat(3);
+  const OTHER_ID = 'u:' + 'f6'.repeat(16);
+  env.CORPUS.data.set(PROP, { value: JSON.stringify({ lang: 'zh_tw', file: 'npc.json', key: null, src: 'Hi', base: '', status: 'open', t: NOW,
+    items: [{ id: 'i1', text: '嗨', by: 'u:' + RUE.uuid, name: 'Rue', t: NOW, votes: ['u:' + RUE.uuid, OTHER_ID] },
+      { id: 'i2', text: '你好', by: OTHER_ID, name: 'Other', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
+  env.CORPUS.data.set(POLL, { value: JSON.stringify({ lang: 'zh_tw', term: 'Hi', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, status: 'open',
+    options: [{ id: 'o1', text: '嗨', by: 'd:' + RUE_DC, name: 'Rue DC', t: NOW, votes: ['d:' + RUE_DC] }] }), metadata: { st: 'open' } });
   r = await send('/me/delete', {}, rueGame);
   body = await r.json();
   check('★ 用模組的通行證刪：回 {"ok":true}', r.status === 200 && body.ok === true && Object.keys(body).join() === 'ok');
@@ -2138,6 +2157,28 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && !has('fb:' + 'c1'.repeat(8)) && has('fb:' + 'c2'.repeat(8)));
   check('★ 管理用的紀錄不給自己刪：封禁、審核、特別名單、管理員、譯者', ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:']
     .every((kept) => has(kept + RUE.uuid)));
+  {
+    const code = await goneCode(RUE.uuid);
+    const prop = JSON.parse(env.CORPUS.data.get(PROP).value);
+    const poll = JSON.parse(env.CORPUS.data.get(POLL).value);
+    check('★ 協作翻譯的提案與投票留著，名字拿掉、改記同一個代碼；別人的不動', /^[0-9a-f]{8}$/.test(code)
+      && prop.items[0].name === null && prop.items[0].gone === code && prop.items[0].by === 'x:' + code && prop.items[0].text === '嗨'
+      && prop.items[0].votes.join() === 'x:' + code + ',' + OTHER_ID && prop.items[1].name === 'Other' && prop.items[1].votes.join() === 'x:' + code
+      && poll.name === null && poll.gone === code && poll.options[0].gone === code && poll.options[0].votes.join() === 'x:' + code
+      && !JSON.stringify(prop.items).includes(RUE.uuid) && !JSON.stringify(poll.options).includes(RUE_DC));
+    check('★ 帳號代號留在紀錄上（ghosts），刪除者是誰查得到', prop.ghosts[code].join() === 'u:' + RUE.uuid + ',d:' + RUE_DC
+      && poll.ghosts[code].includes('d:' + RUE_DC) && env.CORPUS.data.get(PROP).metadata.n === 2);
+    const publicView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4)), env)).text();
+    const staffView = await (await worker.fetch(get('/tr/prop?lang=zh_tw&id=' + 'ab12'.repeat(4), aliceWeb), env)).json();
+    const pollView = await (await worker.fetch(get('/tr/poll?lang=zh_tw&id=' + 'cd34'.repeat(3)), env)).text();
+    check('★ 一般人看不到帳號代號；開發者與管理員看得到', !publicView.includes('ghosts') && !publicView.includes(RUE.uuid)
+      && publicView.includes(code) && staffView.ghosts[code].includes('u:' + RUE.uuid) && !pollView.includes(RUE_DC));
+    check('anonymise：沒有這個人的紀錄不動', anonymise({ items: [{ by: 'u:x', votes: ['u:y'] }] }, ['u:z'], 'abcd1234') === false);
+    check('★ 協作翻譯頁把刪除者畫成「已刪除的使用者 #代碼」', pages['/translate'].includes('whoOf(it, prop)')
+      && TEXT.zh.js.tr.gone === '已刪除的使用者 #{id}' && LANGS.every((l) => TEXT[l].js.tr.gone.includes('#{id}')));
+    env.CORPUS.data.delete(PROP);
+    env.CORPUS.data.delete(POLL);
+  }
   check('★ 刪完再報到就是一個新的人（模組關掉開關就不會再報到）', (await send('/hello', { cape: true }, rueGame)).status === 200
     && has('u:' + RUE.uuid));
   for (const kept of ['ban:', 'review:', 'perk:', 'staff:u:', 'tl:u:', 'u:']) env.CORPUS.data.delete(kept + RUE.uuid);
@@ -2152,7 +2193,8 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     .every((w) => pages['/account'].includes(w)));
   check('★ 隱私政策講了怎麼刪、留多久、同意與不賣資料（中英）',
     ['/account', '7', '14', '180'].every((w) => pages['/privacy'].includes(w) && english['/privacy'].includes(w))
-    && english['/privacy'].includes('consent') && english['/privacy'].includes('never sell'));
+    && english['/privacy'].includes('consent') && english['/privacy'].includes('never sell')
+    && english['/privacy'].includes('Deleted user #code') && pages['/privacy'].includes('已刪除的使用者 #代碼'));
   check('★ 服務條款八種語言都講了可以刪資料、連到隱私政策', LANGS.every((lang) => TEXT[lang]['terms.body'].includes('href="/privacy"')));
   check('dropFromList：每一欄都拿掉；本來就沒有的回 null', (() => {
     const list = { t: 1, users: ['a', 'b'], capes: { a: 3 }, hidden: ['a'], rainbow: ['a'], show: { a: 'dev' } };

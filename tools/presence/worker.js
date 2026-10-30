@@ -1497,7 +1497,7 @@ function withVisibility(meta, vis) {
 }
 
 export function groupVisibility(wearers) {
-  if (wearers.some((cape) => !cape.r && visibility(cape) === 'public')) return 'public';
+  if (wearers.some(listed)) return 'public';
   if (wearers.some((cape) => visibility(cape) !== 'private')) return 'unlisted';
   return 'private';
 }
@@ -1507,7 +1507,7 @@ const idleVisibility = (one) => (!one.q ? 'public' : one.vis === 'private' ? 'pr
 const linkable = (one) => !one.q || one.vis === 'unlisted';
 
 /** 一覽上看得到的：公開，而且不是等審核的。 */
-const listed = (cape) => visibility(cape) === 'public' && !cape.r;
+const listed = (cape) => visibility(cape) === 'public' && !cape.r && !cape.lk;
 
 /** 所有人的使用紀錄（只有鍵：誰、哪張圖）。sweep 與管理的人照圖刪除的時候用。 */
 async function allHistory(env, prefix = 'hist:') {
@@ -1764,15 +1764,23 @@ async function handleWear(request, env, now) {
   if (!/^[0-9a-f]{64}$/.test(hash)) return no('bad request');
   // 只能套用一覽上看得到的（公開、通過審核的），或自己用過的；別人收著準備復原的那一張不算
   const id = await publicId(user.uuid);
-  let onShow = (await allCapes(env)).find((cape) => cape.h === hash && listed(cape));
+  const everyone = await allCapes(env);
+  const idleNow = await idleMap(env);
+  let onShow = everyone.find((cape) => cape.h === hash && listed(cape));
   if (!onShow) {
     // 沒有人穿、還在倒數的那幾件也在一覽上
-    const waiting = (await idleMap(env))[hash];
+    const waiting = idleNow[hash];
     if (waiting && !waiting.q) onShow = { ...waiting, h: hash };
   }
-  const past = onShow ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
-  let source = onShow || (past && past.metadata ? { ...past.metadata, h: hash } : null);
-  if (source && !onShow) {
+  let linked = null;
+  if (!onShow) {
+    const shared = everyone.find((cape) => cape.h === hash && !cape.r && visibility(cape) !== 'private');
+    if (shared) linked = shared;
+    else if (idleNow[hash] && linkable(idleNow[hash])) linked = { ...idleNow[hash], h: hash };
+  }
+  const past = onShow || linked ? null : await env.CORPUS.getWithMetadata('hist:' + id + ':' + hash);
+  let source = onShow || linked || (past && past.metadata ? { ...past.metadata, h: hash } : null);
+  if (source && !onShow && !linked) {
     // 從自己的紀錄穿回去：那張圖要還在（沒有人穿滿七天的圖會被刪掉）
     const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
     if (blob && blob.value && blob.value.cancel) blob.value.cancel();
@@ -1797,8 +1805,9 @@ async function handleWear(request, env, now) {
   }
   if (keep) metadata.p = keep;
   if (mine && visibility(mine) !== 'public') metadata.vis = visibility(mine);
+  if (linked) metadata.lk = 1;
   // 一覽上看得到的本來就給大家看了；從自己的紀錄穿回去的，在審核名單上的人照樣要審
-  const pending = !onShow && await needsReview(env, user.uuid, hash);
+  const pending = !onShow && !linked && await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
@@ -1912,7 +1921,7 @@ async function sweep(env, hash, from, now) {
     entry.y = from.y;
   }
   if (from && (from.c || from.v)) entry.c = from.c || from.v;
-  const vis = from ? visibility(from) : 'private';
+  const vis = !from ? 'private' : from.lk && visibility(from) === 'public' ? 'unlisted' : visibility(from);
   if (!from || vis !== 'public' || from.r) entry.q = 1;
   if (from && !from.r && vis !== 'public') entry.vis = vis;
   idle[hash] = entry;
@@ -2174,7 +2183,7 @@ async function handleMe(request, env, now) {
       x: cape.metadata.x || 0, y: cape.metadata.y || 0, h: cape.metadata.h,
       worn: Boolean(cape.metadata.w), back: Boolean(cape.metadata.w && cape.metadata.p),
       // public：出現在披風一覽上；pending：在等審核，通過之前別人看不到
-      public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata),
+      public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata), listed: listed(cape.metadata),
       pending: Boolean(cape.metadata.r) } : null,
     // 在審核名單上：之後上傳的披風要先通過
     review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
@@ -2249,11 +2258,59 @@ async function forgetDiscord(env, id) {
   } while (cursor);
 }
 
+export async function goneCode(key) {
+  return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode('gone:' + key))).slice(0, 8);
+}
+
+export function anonymise(record, ids, code) {
+  const mark = 'x:' + code;
+  let changed = false;
+  const hide = (entry) => {
+    if (!entry || !ids.includes(entry.by)) return;
+    entry.by = mark;
+    entry.name = null;
+    entry.gone = code;
+    changed = true;
+  };
+  const votes = (entry) => {
+    if (!Array.isArray(entry.votes) || !entry.votes.some((v) => ids.includes(v))) return;
+    entry.votes = [...new Set(entry.votes.map((v) => (ids.includes(v) ? mark : v)))];
+    changed = true;
+  };
+  hide(record);
+  for (const entry of [...(record.items || []), ...(record.options || [])]) {
+    hide(entry);
+    votes(entry);
+  }
+  if (changed) record.ghosts = { ...(record.ghosts || {}), [code]: ids };
+  return changed;
+}
+
+async function forgetTranslate(env, ids, code) {
+  for (const [prefix, meta] of [['tp:', trMeta], ['tq:', pollMeta]]) {
+    let cursor;
+    do {
+      const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
+      for (const k of page.keys) {
+        const record = parseRecord(await env.CORPUS.get(k.name));
+        if (anonymise(record, ids, code)) {
+          await env.CORPUS.put(k.name, JSON.stringify(record), { metadata: meta(record) });
+        }
+      }
+      cursor = page.list_complete ? undefined : page.cursor;
+    } while (cursor);
+  }
+}
+
 async function handleDeleteMe(request, env, now) {
   const user = await who(request, env, now);
   const session = user ? null : await discordSession(request, env, now);
   if (!user && !session) return no('login first', 401);
   const discord = user ? user.discord || await env.CORPUS.get('l:' + user.uuid) : session.id;
+  const ids = [];
+  if (user) ids.push('u:' + user.uuid);
+  if (discord && DISCORD_ID.test(discord)) ids.push('d:' + discord);
+  await forgetTranslate(env, ids, await goneCode(user ? user.uuid : discord));
   if (user) {
     await forgetPlayer(env, user.uuid, now);
     await env.CORPUS.delete('l:' + user.uuid);
@@ -2336,7 +2393,7 @@ async function handleAdminCapes(request, env, now) {
   for (const group of groups) {
     const wearers = capes.filter((cape) => cape.h === group.h);
     group.owners = wearers.map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v,
-      vis: visibility(cape), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
+      vis: visibility(cape), linked: Boolean(cape.lk), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
     group.stars = Number(stars[group.h]) || 0;
     // 管理的人看得到全部：沒有人公開的標「不公開」，有人在等審核的標「待審核」
     group.hidden = wearers.every((cape) => !listed(cape));
@@ -3679,7 +3736,7 @@ async function botCape(env, text, name) {
   const mine = capes.find((c) => String(c.n || '').toLowerCase() === name.toLowerCase());
   if (!mine) return { content: botFmt(text.noCape, { name }) };
   if (mine.r) return { content: botFmt(text.pendingCape, { name: mine.n }) };
-  if (visibility(mine) !== 'public') return { content: botFmt(text.privateCape, { name: mine.n }) };
+  if (!listed(mine)) return { content: botFmt(text.privateCape, { name: mine.n }) };
   return {
     embeds: [{
       title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
@@ -3862,6 +3919,42 @@ async function handleDiscordRegister(request, env, now) {
   }
 }
 
+async function trRoute(route, request, env, now) {
+  if (route === 'GET /tr/me') return handleTrMe(request, env, now);
+  if (route === 'GET /tr/props') return handleTrProps(request, env);
+  if (route === 'GET /tr/prop') return handleTrProp(request, env);
+  if (route === 'POST /tr/propose') return handleTrPropose(request, env, now);
+  if (route === 'POST /tr/vote') return handleTrVote(request, env, now);
+  if (route === 'POST /tr/accept') return handleTrAccept(request, env, now);
+  if (route === 'POST /tr/reject') return handleTrReject(request, env, now);
+  if (route === 'GET /tr/polls') return handleTrPolls(request, env);
+  if (route === 'GET /tr/poll') return handleTrPoll(request, env);
+  if (route === 'POST /tr/poll') return handleTrPollOpen(request, env, now);
+  if (route === 'POST /tr/poll/option') return handleTrPollOption(request, env, now);
+  if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
+  if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
+  if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+  return no('not found', 404);
+}
+
+async function scrubTr(request, env, now, answer) {
+  if (!(answer.headers.get('content-type') || '').includes('json')) return answer;
+  const text = await answer.text();
+  if (!text.includes('"ghosts"') || await moderator(request, env, now)) {
+    return new Response(text, { status: answer.status, headers: answer.headers });
+  }
+  const body = JSON.parse(text);
+  const strip = (value) => {
+    if (Array.isArray(value)) value.forEach(strip);
+    else if (value && typeof value === 'object') {
+      delete value.ghosts;
+      Object.values(value).forEach(strip);
+    }
+  };
+  strip(body);
+  return new Response(JSON.stringify(body), { status: answer.status, headers: answer.headers });
+}
+
 const site = {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
@@ -3933,21 +4026,10 @@ const site = {
     if (route === 'GET /admin/translators') return handleTranslators(request, env, now);
     if (route === 'POST /admin/translator') return handleTranslatorAdd(request, env, now);
     if (route === 'POST /admin/untranslator') return handleTranslatorRemove(request, env, now);
-    if (route === 'GET /tr/me') return handleTrMe(request, env, now);
     if (route.startsWith('GET /tr/index/')) return handleTrIndex(request, env, route.slice('GET /tr/index/'.length), ctx);
-    if (route === 'GET /tr/props') return handleTrProps(request, env);
-    if (route === 'GET /tr/prop') return handleTrProp(request, env);
-    if (route === 'POST /tr/propose') return handleTrPropose(request, env, now);
-    if (route === 'POST /tr/vote') return handleTrVote(request, env, now);
-    if (route === 'POST /tr/accept') return handleTrAccept(request, env, now);
-    if (route === 'POST /tr/reject') return handleTrReject(request, env, now);
-    if (route === 'GET /tr/polls') return handleTrPolls(request, env);
-    if (route === 'GET /tr/poll') return handleTrPoll(request, env);
-    if (route === 'POST /tr/poll') return handleTrPollOpen(request, env, now);
-    if (route === 'POST /tr/poll/option') return handleTrPollOption(request, env, now);
-    if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
-    if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
-    if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
+    if (route.startsWith('GET /tr/') || route.startsWith('POST /tr/')) {
+      return scrubTr(request, env, now, await trRoute(route, request, env, now));
+    }
     if (route === 'POST /feedback') return handleFeedback(request, env, now);
     if (route === 'GET /admin/feedback') return handleFeedbackList(request, env, now);
     if (route === 'POST /admin/feedback/status') return handleFeedbackStatus(request, env, now);
