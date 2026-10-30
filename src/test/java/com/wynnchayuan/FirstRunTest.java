@@ -1,5 +1,6 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.PresenceAccount;
 import com.wynnchayuan.translate.RemoteSync;
 
 import java.nio.file.Files;
@@ -212,13 +213,13 @@ public final class FirstRunTest {
                     System.nanoTime() - t0 < 2_000_000_000L);
             check("★ 沒同意：不能遊戲內更新", !SelfUpdate.available());
             check("★ 沒同意：不下載別人的披風",
-                    Presence.capeBytes("0123456789abcdef01234567", 3) == null);
-            Presence.LinkResult[] link = {null};
-            Presence.link("ABCDEFGH", r -> link[0] = r);
-            check("★ 沒同意：/wcy link 不送", link[0] == Presence.LinkResult.OFF);
-            Presence.Result[] removed = {null};
-            Presence.remove(r -> removed[0] = r);
-            check("★ 沒同意：移除披風不送", removed[0] == Presence.Result.PRIVACY);
+                    PresenceAccount.capeBytes("0123456789abcdef01234567", 3) == null);
+            PresenceAccount.LinkResult[] link = {null};
+            PresenceAccount.link("ABCDEFGH", r -> link[0] = r);
+            check("★ 沒同意：/wcy link 不送", link[0] == PresenceAccount.LinkResult.OFF);
+            PresenceAccount.Result[] removed = {null};
+            PresenceAccount.remove(r -> removed[0] = r);
+            check("★ 沒同意：移除披風不送", removed[0] == PresenceAccount.Result.PRIVACY);
             check("★ 沒同意：不畫（也不下載）任何披風",
                     com.wynnchayuan.cape.Capes.textureFor("Someone", UUID.randomUUID(), false,
                             withConsent(CollectorConfig.Consent.DECLINED), 0) == null);
@@ -228,9 +229,9 @@ public final class FirstRunTest {
                     com.wynnchayuan.cape.Capes.textureFor("Someone", UUID.randomUUID(), false,
                             optedOut, 0) == null);
             NetworkGate.use(optedOut);
-            Presence.LinkResult[] link2 = {null};
-            Presence.link("ABCDEFGH", r -> link2[0] = r);
-            check("★ 選了不上傳資料：/wcy link 也不送", link2[0] == Presence.LinkResult.OFF);
+            PresenceAccount.LinkResult[] link2 = {null};
+            PresenceAccount.link("ABCDEFGH", r -> link2[0] = r);
+            check("★ 選了不上傳資料：/wcy link 也不送", link2[0] == PresenceAccount.LinkResult.OFF);
         } finally {
             NetworkGate.use(before);
         }
@@ -286,18 +287,18 @@ public final class FirstRunTest {
 
     private static void deleteAnswers() {
         check("刪除：200 而且 ok:true 才算成功",
-                Presence.deleteResultOf(200, "{\"ok\":true}") == Presence.DeleteResult.DONE);
+                PresenceAccount.deleteResultOf(200, "{\"ok\":true}") == PresenceAccount.DeleteResult.DONE);
         check("刪除：200 但 ok:false 不算",
-                Presence.deleteResultOf(200, "{\"ok\":false}") == Presence.DeleteResult.FAILED);
+                PresenceAccount.deleteResultOf(200, "{\"ok\":false}") == PresenceAccount.DeleteResult.FAILED);
         check("刪除：200 但不是 JSON 不算",
-                Presence.deleteResultOf(200, "<html>") == Presence.DeleteResult.FAILED);
+                PresenceAccount.deleteResultOf(200, "<html>") == PresenceAccount.DeleteResult.FAILED);
         check("刪除：ok 是字串不算",
-                Presence.deleteResultOf(200, "{\"ok\":\"true\"}") == Presence.DeleteResult.FAILED);
+                PresenceAccount.deleteResultOf(200, "{\"ok\":\"true\"}") == PresenceAccount.DeleteResult.FAILED);
         check("刪除：404（登記站還沒有這個端點）",
-                Presence.deleteResultOf(404, "") == Presence.DeleteResult.NOT_FOUND);
+                PresenceAccount.deleteResultOf(404, "") == PresenceAccount.DeleteResult.NOT_FOUND);
         check("刪除：401 是登入問題",
-                Presence.deleteResultOf(401, "{}") == Presence.DeleteResult.LOGIN_FAILED);
-        check("刪除：500 失敗", Presence.deleteResultOf(500, "") == Presence.DeleteResult.FAILED);
+                PresenceAccount.deleteResultOf(401, "{}") == PresenceAccount.DeleteResult.LOGIN_FAILED);
+        check("刪除：500 失敗", PresenceAccount.deleteResultOf(500, "") == PresenceAccount.DeleteResult.FAILED);
     }
 
     private static void selfCapeCache() throws Exception {
