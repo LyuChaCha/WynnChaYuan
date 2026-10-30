@@ -152,14 +152,19 @@ public final class GearOwnNameTest {
             com.google.gson.JsonObject own = com.google.gson.JsonParser.parseString(
                     Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
             int total = 0;
+            int blank = 0;
             List<String> missed = new ArrayList<>();
             List<String> leaked = new ArrayList<>();
             for (String key : own.keySet()) {
                 if (key.startsWith("_")) {
                     continue;
                 }
-                total++;
                 String name = own.get(key).getAsString();
+                if (name.isEmpty()) {
+                    blank++;
+                    continue;
+                }
+                total++;
                 List<String> rows = shown(item(key), rs);
                 if (!rows.get(1).contains(name) || !rows.get(0).contains(name)) {
                     missed.add(key + "→" + rows.get(1));
@@ -172,7 +177,7 @@ public final class GearOwnNameTest {
                 }
             }
             check("★ 真實語料 " + lang + "：" + total + " 條裝備專用名都顯示在名稱列（沒顯示的 "
-                    + missed + "）", total > 0 && missed.isEmpty());
+                    + missed + "）", (total > 0 || blank > 0) && missed.isEmpty());
             check("★ 真實語料 " + lang + "：技能樹節點沒有變成裝備名（變了的 " + leaked + "）",
                     leaked.isEmpty());
         }

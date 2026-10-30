@@ -38,10 +38,16 @@ public final class LanguagePickTest {
         check("jar 裡打包了簡體中文", Languages.bundled().contains("zh_cn"));
         check("繁體中文一定在（它是回退的底）",
                 Languages.bundled().contains(Languages.DEFAULT));
-        check("簡體沒翻到的地方拿繁體墊底",
-                Languages.DEFAULT.equals(Languages.fallbackFor("zh_cn")));
-        check("日文不拿中文墊底——沒要求就滿畫面中文比留原文糟",
-                Languages.fallbackFor("ja_jp") == null);
+        check("★ 簡體沒指定輔助語言就不墊繁體",
+                Languages.underlay("", "zh_cn") == null);
+        check("繁體沒指定輔助語言也不墊",
+                Languages.underlay("", "zh_tw") == null);
+        check("日文不拿中文墊底",
+                Languages.underlay("", "ja_jp") == null);
+        check("off 就不墊", Languages.underlay(Languages.OFF, "zh_cn") == null);
+        check("指名了就照指名的",
+                "ja_jp".equals(Languages.underlay("ja_jp", "zh_cn")));
+        check("指名自己不墊", Languages.underlay("zh_cn", "zh_cn") == null);
 
         // ---- 存得住嗎 ----
         Path dir = Files.createTempDirectory("wynnchayuan-lang");

@@ -67,10 +67,6 @@ public final class DialogueLeadAudit {
 
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
         List<Path> layers = new ArrayList<>();
-        String base = Languages.fallbackFor(lang);
-        if (base != null && !base.equals(lang)) {
-            layers.add(root.resolve(base));
-        }
         layers.add(root.resolve(lang));
         TranslationStore store = new TranslationStore();
         store.loadAll(layers);

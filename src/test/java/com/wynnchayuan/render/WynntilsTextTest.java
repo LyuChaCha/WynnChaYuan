@@ -377,7 +377,7 @@ public final class WynntilsTextTest {
         }
         // 語料沒收的那一種：冒號前面只是一件裝備的名字
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_cn"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_tw"));
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
         for (String name : List.of("Halcyon", "Cumulonimbus")) {
             check("前提：" + name + " 是翻好的裝備名", store.lookup(name) != null);
@@ -400,7 +400,7 @@ public final class WynntilsTextTest {
                 !WynntilsText.statusRow("Resistance") && !WynntilsText.statusRow("Loot Chests: 0/12")
                         && !WynntilsText.statusRow("Oak Wood Dagger (Lv. 12)")
                         && !WynntilsText.statusRow(null));
-        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp")) {
+        for (String lang : List.of("zh_tw", "ja_jp")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
             // 找一個「只有裝備在用」的名字：語料改了也照樣測得到東西
@@ -504,8 +504,6 @@ public final class WynntilsTextTest {
         // ★ 語料重載（換語言走的就是這條）之後不可以還是舊語言
         int before = store.generation();
         store.loadAll(java.util.List.of(
-                java.nio.file.Path.of(
-                        "src/main/resources/assets/wynnchayuan/translations/zh_tw"),
                 java.nio.file.Path.of(
                         "src/main/resources/assets/wynnchayuan/translations/zh_cn")));
         check("快取：重載之後 generation 有往前（" + before + " -> "

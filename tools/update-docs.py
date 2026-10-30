@@ -23,8 +23,7 @@ from pathlib import Path
 
 TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
-# 主語言。它一定會被打包——其他語言沒翻到的地方靠它墊底，
-# 見 Languages#fallbackFor。
+# 主語言。它一定會被打包。
 DEFAULT_LANG = "zh_tw"
 
 START = "<!-- 進度:開始 -->"
