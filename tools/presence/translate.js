@@ -1,9 +1,9 @@
 import { authority, moderator, staffKey } from './admin.js';
 import { account, discordSession, publicId, who } from './auth.js';
 import { TEAM_AREAS, addMemberTeams, commitTeams, creditTeamsOf, credits, exactCodes, mergeLangTeam, setPersonTeams } from './credits.js';
-import { REPO, base64ToUtf8, githubClient, utf8ToBase64 } from './github.js';
+import { GitHubError, githubRepository } from './github.js';
 import { NAME, UUID, hex, json, no, readJson } from './http.js';
-import { parseRecord } from './kv.js';
+import { listAll, parseRecord } from './kv.js';
 import { noteParticipant } from './privacy.js';
 
 export const TR_LANGS = ['zh_tw', 'zh_cn', 'ja_jp', 'ko_kr', 'ru_ru', 'es_es', 'tr_tr'];
@@ -144,12 +144,7 @@ export function pollMeta(record) {
 
 export async function trList(env, prefix) {
   const out = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
-    for (const k of page.keys) out.push({ id: k.name.slice(prefix.length), ...(k.metadata || {}) });
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, prefix)) out.push({ id: k.name.slice(prefix.length), ...(k.metadata || {}) });
   return out.sort((a, b) => (b.t || 0) - (a.t || 0));
 }
 
@@ -278,59 +273,33 @@ async function handleTrAccept(request, env, now) {
   const record = JSON.parse(raw);
   const item = record.items.find((it) => it.id === body.item);
   if (!item) return no('not found', 404);
-  const github = githubClient(env);
+  const repo = githubRepository(env);
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
     let branch = 'translate/' + lang.replace('_', '-') + '-' + day;
-    let url = '';
-    const ref = await github('/git/ref/heads/' + branch);
-    if (ref.status === 200) {
-      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
-      const list = open.status === 200 ? await open.json() : [];
-      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
-      else branch += '-' + now;
-    } else if (ref.status !== 404) {
-      return no('github ' + ref.status, 502);
-    }
+    const existing = await repo.openPullFor(branch);
+    let url = existing.url;
+    if (existing.exists && !url) branch += '-' + now;
     const reuse = Boolean(url);
-    if (!reuse) {
-      const head = await github('/git/ref/heads/main');
-      if (head.status !== 200) return no('github ' + head.status, 502);
-      const made = await github('/git/refs', {
-        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
-      });
-      if (made.status !== 201) return no('github ' + made.status, 502);
-    }
+    if (!reuse) await repo.createBranch(branch);
     const root = 'src/main/resources/assets/wynnchayuan/translations/' + lang + '/';
     const targets = [record.file];
     if (record.key != null && record.file.startsWith('quest/')) targets.push('quest-dialogue.json');
     if (record.key != null && record.file.startsWith('secret/')) targets.push('secret-dialogue.json');
     const short = record.src.replace(/\s+/g, ' ').slice(0, 50);
     for (const name of targets) {
-      const file = await github('/contents/' + root + name + '?ref=' + encodeURIComponent(branch));
-      if (file.status !== 200) return no('github ' + file.status, 502);
-      const current = await file.json();
-      const changed = replaceTranslation(base64ToUtf8(current.content), record.key, record.src, item.text);
+      const current = await repo.readFile(root + name, branch);
+      const changed = replaceTranslation(current.text, record.key, record.src, item.text);
       if (changed == null) return no('line not found', 409);
-      const put = await github('/contents/' + root + name, {
-        method: 'PUT',
-        body: JSON.stringify({ message: '譯文（' + lang + '）：' + short, content: utf8ToBase64(changed),
-          sha: current.sha, branch }),
-      });
-      if (put.status !== 200 && put.status !== 201) return no('github ' + put.status, 502);
+      await repo.writeFile(root + name, { message: '譯文（' + lang + '）：' + short, text: changed, sha: current.sha, branch });
     }
     if (!reuse) {
-      const pull = await github('/pulls', {
-        method: 'POST',
-        body: JSON.stringify({
-          title: '協作翻譯：' + lang + '（' + day + '）',
-          head: branch, base: 'main',
-          body: '網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\n\n'
-            + '第一條由 ' + me.by + ' 定案。每一條的原文、提案人與票數記在網站上。',
-        }),
-      });
-      if (pull.status !== 201) return no('github ' + pull.status, 502);
-      url = String((await pull.json()).html_url || '');
+      url = String(await repo.openPull({
+        title: '協作翻譯：' + lang + '（' + day + '）',
+        head: branch,
+        body: '網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\n\n'
+          + '第一條由 ' + me.by + ' 定案。每一條的原文、提案人與票數記在網站上。',
+      }) || '');
     }
     if (!url) return no('github pull request missing', 502);
     record.status = 'accepted';
@@ -339,7 +308,7 @@ async function handleTrAccept(request, env, now) {
     await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
     return json({ ok: true, url, prop: record });
   } catch (e) {
-    return no('github unreachable', 502);
+    return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
 
@@ -469,18 +438,13 @@ async function handleTrPollReopen(request, env, now) {
 
 async function translatorList(env, list) {
   const out = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'tl:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const record = parseRecord(await env.CORPUS.get(k.name));
-      const key = k.name.slice(3);
-      out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
-        team: creditTeamsOf(list, record.m),
-        discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, 'tl:')) {
+    const record = parseRecord(await env.CORPUS.get(k.name));
+    const key = k.name.slice(3);
+    out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
+      team: creditTeamsOf(list, record.m),
+      discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
+  }
   return out.sort((a, b) => (b.t || 0) - (a.t || 0));
 }
 

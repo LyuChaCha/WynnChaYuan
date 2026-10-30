@@ -45,16 +45,24 @@ export async function readJson(request, limit = MAX_BODY) {
   }
 }
 
+export function base64Bytes(text) {
+  return Uint8Array.from(atob(text), (c) => c.charCodeAt(0));
+}
+
 export function fromBase64(text, max) {
   if (typeof text !== 'string' || !text || text.length > max || !BASE64.test(text)) return null;
   try {
-    const raw = atob(text);
-    const out = new Uint8Array(raw.length);
-    for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
-    return out;
+    return base64Bytes(text);
   } catch (e) {
     return null;
   }
+}
+
+export function timingSafeEqual(expected, actual) {
+  if (typeof expected !== 'string' || typeof actual !== 'string' || expected.length !== actual.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ actual.charCodeAt(i);
+  return diff === 0;
 }
 
 export function plainUuid(text) {
