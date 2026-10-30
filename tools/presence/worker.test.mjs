@@ -60,6 +60,7 @@ const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名�
 let githubFile = '';
 const discordCalls = [];
 let discordAppKey = '';
+let discordWebhookAnswer = 200;
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
@@ -100,7 +101,10 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'discord.com') {
     discordCalls.push({ path: u.pathname, method: init.method || 'GET', body: String(init.body || ''),
       auth: (init.headers || {}).authorization });
-    if (u.pathname.startsWith('/api/v10/webhooks/')) return new Response('{}', { status: 200 });
+    if (u.pathname.startsWith('/api/v10/webhooks/')) {
+      if (discordWebhookAnswer === 'down') throw new Error('connection refused');
+      return new Response('{}', { status: discordWebhookAnswer });
+    }
     if (u.pathname === '/api/v10/applications/@me') {
       return new Response(JSON.stringify({ id: 'client1', name: 'WynnChaYuan', bot: { username: 'WynnChaYuan' },
         verify_key: discordAppKey, interactions_endpoint_url: 'https://wynnchayuan.com/api/discord/interactions' }), { status: 200 });
@@ -2669,15 +2673,18 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     const pair = await crypto.subtle.generateKey({ name: 'Ed25519' }, true, ['sign', 'verify']);
     const raw = new Uint8Array(await crypto.subtle.exportKey('raw', pair.publicKey));
     env.DISCORD_PUBLIC_KEY = Buffer.from(raw).toString('hex');
-    const signed = async (body, tamper) => {
+    const signed = async (body, tamper, sentAt = Date.now()) => {
       const text = JSON.stringify(body);
-      const ts = String(Math.floor(Date.now() / 1000));
+      const ts = String(Math.floor(sentAt / 1000));
       const sig = Buffer.from(await crypto.subtle.sign('Ed25519', pair.privateKey, new TextEncoder().encode(ts + text))).toString('hex');
       return new Request('https://x.test/api/discord/interactions', {
         method: 'POST', body: tamper ? text.replace('1', '2') : text,
         headers: { 'x-signature-ed25519': sig, 'x-signature-timestamp': ts },
       });
     };
+    check('★ Discord 的請求太舊（超過五分鐘）就算簽名對也不收，擋重播', (await worker.fetch(await signed({ type: 1 }, false, Date.now() - 600000), env)).status === 401
+      && (await worker.fetch(await signed({ type: 1 }, false, Date.now() + 600000), env)).status === 401
+      && (await worker.fetch(await signed({ type: 1 }), env)).status === 200);
     const command = (name, options = [], locale = 'zh-TW') => ({
       type: 2, application_id: 'app1', token: 'tok1', locale, data: { name, options },
     });
@@ -2815,6 +2822,24 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     await Promise.all(waits);
     const patch = discordCalls.find((c) => c.method === 'PATCH');
     const sent = patch ? JSON.parse(patch.body) : null;
+    {
+      const logged = [];
+      const realError = console.error;
+      console.error = (...args) => logged.push(args.join(' '));
+      const settle = async (answer) => {
+        discordWebhookAnswer = answer;
+        const waits = [];
+        const replied = await worker.fetch(await signed(command('translate', [{ name: 'text', value: 'Hello' }, { name: 'lang', value: 'zh_tw' }])), env, { waitUntil: (p) => waits.push(p) });
+        await Promise.all(waits);
+        return replied.status;
+      };
+      const failed = await settle(500);
+      const down = await settle('down');
+      discordWebhookAnswer = 200;
+      console.error = realError;
+      check('★ 補上結果失敗：記在 log，不會變成沒人接住的錯誤', failed === 200 && down === 200
+        && logged.filter((line) => line.includes('discord follow-up failed')).length === 2 && logged.some((line) => line.includes('500')));
+    }
     check('★ 查完補上結果：原文、譯文都比對，沒翻的標出來', patch && patch.path === '/api/v10/webhooks/app1/tok1/messages/@original'
       && sent.embeds[0].fields.length === 2 && sent.embeds[0].fields.some((f) => f.value.startsWith('你好，{u}！'))
       && sent.embeds[0].fields.some((f) => f.value.startsWith('（還沒翻）')));

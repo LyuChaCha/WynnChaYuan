@@ -165,6 +165,8 @@ export async function verifyDiscord(publicKey, signature, timestamp, body) {
   }
 }
 
+const INTERACTION_MAX_AGE_SECONDS = 300;
+
 const parsedIndex = new Map();
 
 async function corpusIndex(env, lang, ctx) {
@@ -296,11 +298,24 @@ async function botFeedback(env, text, interaction, option, now) {
   return { content: lines.join('\n'), flags: 64 };
 }
 
+async function sendFollowUp(interaction, data) {
+  try {
+    const sent = await fetch(DISCORD_V10 + '/webhooks/' + interaction.application_id + '/' + interaction.token + '/messages/@original', {
+      method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data),
+    });
+    if (!sent.ok) console.error(JSON.stringify({ event: 'discord follow-up failed', status: sent.status }));
+  } catch (error) {
+    console.error(JSON.stringify({ event: 'discord follow-up failed', error: String(error?.message ?? error) }));
+  }
+}
+
 export async function handleDiscordInteraction(request, env, ctx) {
   const body = await request.text();
-  const ok = await verifyDiscord(env.DISCORD_PUBLIC_KEY, request.headers.get('x-signature-ed25519'),
-    request.headers.get('x-signature-timestamp'), body);
-  if (!ok) return new Response('bad signature', { status: 401 });
+  const timestamp = request.headers.get('x-signature-timestamp');
+  const ok = await verifyDiscord(env.DISCORD_PUBLIC_KEY, request.headers.get('x-signature-ed25519'), timestamp, body);
+  if (!ok || Math.abs(Date.now() / 1000 - Number(timestamp)) > INTERACTION_MAX_AGE_SECONDS) {
+    return new Response('bad signature', { status: 401 });
+  }
   let interaction;
   try {
     interaction = JSON.parse(body);
@@ -321,9 +336,7 @@ export async function handleDiscordInteraction(request, env, ctx) {
       } catch (e) {
         data = { content: botLocale(interaction.locale).text.indexFail };
       }
-      await fetch(DISCORD_V10 + '/webhooks/' + interaction.application_id + '/' + interaction.token + '/messages/@original', {
-        method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data),
-      });
+      await sendFollowUp(interaction, data);
     })());
     return json(asked.name === 'feedback' ? { type: 5, data: { flags: 64 } } : { type: 5 });
   }
