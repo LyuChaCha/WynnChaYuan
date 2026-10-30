@@ -2770,6 +2770,8 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       paintSkin(20, 36, 8, 12, [0, 200, 0]);
       fakeSkin = await encodePng(64, 64, sk);
       const who = 'c'.repeat(32);
+      const wear = async (uuid, h) => env.CORPUS.put('cape:' + await publicId(uuid), '', { metadata: { h, t: 'png', n: 'Wearer', v: 1, u: uuid } });
+      await wear(who, hash);
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + who), env);
       const fig = await decodePng(new Uint8Array(await r.arrayBuffer()));
       // 從背後斜看（跟網頁的 3D 檢視同一個角度）：看得到頭的背面（藍）與披風外側（紅），
@@ -2787,8 +2789,11 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
       check('人物那份另外存（prev:<雜湊>:<UUID>:<畫法>，三天）', env.CORPUS.data.has('prev:' + hash + ':' + who + ':angled')
         && env.CORPUS.data.get('prev:' + hash + ':' + who + ':angled').ttl === 3 * 86400);
       fakeSkin = null;
+      await wear('d'.repeat(32), hash);
       r = await worker.fetch(api('/cape-preview/' + hash + '?u=' + 'd'.repeat(32)), env);
       check('抓不到 skin 就畫灰色人偶，不會失敗', r.status === 200 && r.headers.get('content-type') === 'image/png');
+      env.CORPUS.data.delete('cape:' + await publicId('d'.repeat(32)));
+      await wear(who, ghash);
       r = await worker.fetch(api('/cape-preview/' + ghash + '?u=' + who), env);
       check('★ GIF 披風的人物預覽也會動', r.headers.get('content-type') === 'image/gif'
         && decodeGif(new Uint8Array(await r.arrayBuffer())).frames.length === 3);
@@ -3286,6 +3291,33 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 別人拿走開發者的舊名字不會變成開發者', (await adminPage(nameThief)).status === 403
     && (await (await worker.fetch(get('/me', nameThief), env)).json()).developer === false);
   check('還沒記 UUID 的開發者照舊看名字', (await adminPage(aliceWeb)).status === 200);
+}
+
+{
+  const store = { CORPUS: fakeKv() };
+  const WEARER = 'e2'.repeat(16);
+  const STRANGER = 'e3'.repeat(16);
+  const bytes = new Uint8Array((await import('node:fs')).readFileSync(new URL('../../capes/templates/template-88x68.png', import.meta.url)));
+  const hash = 'f7'.repeat(32);
+  store.CORPUS.data.set('blob:' + hash, { value: bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength), metadata: { t: 'png', s: bytes.length } });
+  store.CORPUS.data.set('cape:' + await publicId(WEARER), { value: '', metadata: { t: 'png', v: NOW, s: bytes.length, u: WEARER, n: 'Wearer', h: hash } });
+  const fetched = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    if (String(url.url || url).includes('minotar.net')) fetched.push(String(url.url || url));
+    return realFetch(url, init);
+  };
+  const preview = (query) => worker.fetch(new Request('https://x.test/api/cape-preview/' + hash + query), store);
+  const stranger = await preview('?u=' + STRANGER);
+  const beforeWearer = fetched.length;
+  const wearer = await preview('?u=' + WEARER);
+  const plain = await preview('');
+  globalThis.fetch = realFetch;
+  check('★ 人物預覽只給真的穿著那件披風的人：別的 UUID 不抓頭像、不畫、不存', stranger.status === 404 && beforeWearer === 0
+    && ![...store.CORPUS.data.keys()].some((k) => k.includes(STRANGER)));
+  check('穿著的人照樣畫得出來', wearer.status === 200 && fetched.length === 1 && store.CORPUS.data.has('prev:' + hash + ':' + WEARER + ':angled'));
+  check('只有披風背面的那份不受影響', plain.status === 200);
+  check('壞掉的 u 不算成不帶 u', (await preview('?u=nope')).status === 404);
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]

@@ -653,9 +653,16 @@ export async function handleCape(env, id, key) {
 
 export const FIGURE_STYLE = 'angled';
 
+async function wearing(env, uuid, hash) {
+  if (!uuid) return false;
+  const worn = await env.CORPUS.getWithMetadata('cape:' + await publicId(uuid));
+  return worn?.metadata?.h === hash;
+}
+
 export async function handleCapePreview(env, hash, uuid) {
   if (!HASH.test(hash || '')) return no('not found', 404);
   const who = UUID.test(uuid || '') ? uuid.replace(/-/g, '').toLowerCase() : null;
+  if (uuid && !await wearing(env, who, hash)) return no('not found', 404);
   const key = 'prev:' + hash + (who ? ':' + who + ':' + FIGURE_STYLE : '');
   const headers = (type) => ({
     'content-type': type === 'gif' ? 'image/gif' : 'image/png',
