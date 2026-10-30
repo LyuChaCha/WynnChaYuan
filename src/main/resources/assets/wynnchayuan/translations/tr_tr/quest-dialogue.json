@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 24252,
-  "translated": 24250,
+  "count": 24289,
+  "translated": 24287,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -7760,6 +7760,376 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#248": {
+   "src": "We need a plan.",
+   "dst": "Bir plana ihtiyacımız var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#249": {
+   "src": "Explore the cave at [{~}, {~}, -{~}] for the Shard.",
+   "dst": "Parça için [{~}, {~}, -{~}] konumundaki mağarayı keşfet.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#250": {
+   "src": "Kill the Progenitors to open the entrance.",
+   "dst": "Girişi açmak için Progenitor'ları öldür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#251": {
+   "src": "[{~}/{~}] Aledar: Stay with us {u}! We've just had a loss, you can't go wandering around!",
+   "dst": "[{~}/{~}] Aledar: Bizimle kal {u}! Az önce bir kayıp verdik, ortalıkta dolaşamazsın!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#252": {
+   "src": "[{~}/{~}] Aledar: Stay with me!",
+   "dst": "[{~}/{~}] Aledar: Benimle kal!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#253": {
+   "src": "You quickly escape the worm before it eats you...",
+   "dst": "Solucan seni yemeden önce hızla kaçıyorsun...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#254": {
+   "src": "[{~}/{~}] Obsessor: Please, you have to understand!",
+   "dst": "[{~}/{~}] Obsessor: Lütfen, anlaman lazım!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#255": {
+   "src": "[{~}/{~}] Obsessor: You need to come with us!",
+   "dst": "[{~}/{~}] Obsessor: Bizimle gelmen lazım!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#256": {
+   "src": "[{~}/{~}] Obsessor: It's the only way to make you happy here!",
+   "dst": "[{~}/{~}] Obsessor: Seni burada mutlu etmenin tek yolu bu!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#257": {
+   "src": "[{~}/{~}] Obsessor: IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
+   "dst": "[{~}/{~}] Obsessor: TEK YOL BU, ANLIYOR MUSUN?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#258": {
+   "src": "[{~}/{~}] Obsessor: AM I NOT SPEAKING CLEARLY?",
+   "dst": "[{~}/{~}] Obsessor: AÇIK KONUŞMUYOR MUYUM?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#259": {
+   "src": "[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!",
+   "dst": "[{~}/{~}] Obsessor: SEN BU İŞE KARIŞMA!!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#260": {
+   "src": "[{~}/{~}] Aledar: No! How did she disable my spell?!",
+   "dst": "[{~}/{~}] Aledar: Hayır! Büyümü nasıl etkisiz bıraktı?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#261": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
+   "dst": "[{~}/{~}] Obsessor: GELİRSEN ÇOK DAHA MUTLU OLACAKSIN!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#262": {
+   "src": "[{~}/{~}] Obsessor: WE'LL KEEP YOU SAFE!",
+   "dst": "[{~}/{~}] Obsessor: SENİ KORUYACAĞIZ!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#263": {
+   "src": "[{~}/{~}] Obsessor: We'll bring you someplace warm!",
+   "dst": "[{~}/{~}] Obsessor: Seni sıcak bir yere götüreceğiz!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#264": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SAFE WITH US!",
+   "dst": "[{~}/{~}] Obsessor: BİZİMLE GÜVENDE OLACAKSIN!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#265": {
+   "src": "[{~}/{~}] Obsessor: NO MORE FEAR! NO MORE CONCERN!",
+   "dst": "[{~}/{~}] Obsessor: ARTIK KORKU YOK! ARTIK ENDİŞE YOK!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#266": {
+   "src": "[{~}/{~}] Obsessor: Foreeeever...",
+   "dst": "[{~}/{~}] Obsessor: Sonsuzaaaa dek...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#268": {
+   "src": "Broken Pickaxe\nRight-Click to get item\nÀ",
+   "dst": "Kırık Kazma\nEşyayı almak için Sağ Tıkla\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#269": {
+   "src": "Is that the monster that captured Lucio?! Don't let it get away!",
+   "dst": "Lucio'yu yakalayan canavar bu mu?! Kaçmasına izin verme!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#270": {
+   "src": "As you get a new pickaxe, the cracks reset allowing you to try again.",
+   "dst": "Yeni bir kazma aldığında çatlaklar sıfırlanır ve tekrar deneyebilirsin.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#271": {
+   "src": "This pickaxe can only be used a few times as it's almost completely broken...",
+   "dst": "Bu kazma neredeyse tamamen kırık olduğu için yalnızca birkaç kez kullanılabilir...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#272": {
+   "src": "Your pickaxe has broken! If you don't have enough blocks to go through the tar, get a new pickaxe and try again...",
+   "dst": "Kazman kırıldı! Katranı geçmeye yetecek kadar bloğun yoksa yeni bir kazma al ve tekrar dene...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#273": {
+   "src": "You need an item to break this...",
+   "dst": "Bunu kırmak için bir eşyaya ihtiyacın var...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#274": {
+   "src": "Lucio's body appears out of the Enraptured Obsessor. He must have become one.",
+   "dst": "Lucio'nun bedeni Kendinden Geçmiş Takıntılı'nın içinden çıkıyor. O da onlardan birine dönüşmüş olmalı.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#275": {
+   "src": "You must find Elphaba and Aledar before it's too late.",
+   "dst": "Çok geç olmadan Elphaba ve Aledar'ı bulmalısın.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#276": {
+   "src": "Right-Click\nTo get the Body Part\nÀ",
+   "dst": "Sağ Tık:\nVücut Parçasını al\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#277": {
+   "src": "Is that the monster that captured Elphaba?!",
+   "dst": "Elphaba'yı yakalayan canavar bu mu?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#278": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "Onları zirveye kadar takip etmenin bir yolunu bulmalısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#279": {
+   "src": "Sound Wave Emitter\nRight-Click to get Item\nÀ",
+   "dst": "Ses Dalgası Yayıcı\nEşyayı almak için Sağ Tıkla\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#280": {
+   "src": "Right-Clicking this Item emits sound connections with the Irritacks...",
+   "dst": "Bu Eşyaya Sağ Tıklamak, Irritack'larla bağlantı kuran sesler yayar...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#281": {
+   "src": "It's... Elphaba! Aledar might still be alive... Quick!",
+   "dst": "Bu... Elphaba! Aledar hâlâ hayatta olabilir... Çabuk!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#282": {
+   "src": "You should use these body parts to enter the worm and find Aledar...",
+   "dst": "Solucanın içine girip Aledar'ı bulmak için bu vücut parçalarını kullanmalısın...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#283": {
+   "src": "This is where Aledar was taken... Perhaps you can lure the worm somehow.",
+   "dst": "Aledar'ın götürüldüğü yer burası... Belki solucanı bir şekilde dışarı çekebilirsin.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#284": {
+   "src": "The stomach acid seems to rise and fall consistently.",
+   "dst": "Mide asidi düzenli olarak yükselip alçalıyor gibi görünüyor.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#285": {
+   "src": "Aledar must've fallen somewhere near the road too!",
+   "dst": "Aledar da yolun yakınında bir yere düşmüş olmalı!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Beyond#286": {
    "src": "Well, hello there, traveler. Don't think I've seen you in here before.",

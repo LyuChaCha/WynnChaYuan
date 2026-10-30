@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 249,
-  "translated": 249,
+  "count": 286,
+  "translated": 286,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -2431,6 +2431,376 @@
    "stage": "Stage 18",
    "speaker": "Aledar",
    "source": "wiki"
+  },
+  "A Journey Beyond#248": {
+   "src": "We need a plan.",
+   "dst": "Нам нужен план.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#249": {
+   "src": "Explore the cave at [{~}, {~}, -{~}] for the Shard.",
+   "dst": "Исследуй пещеру в [{~}, {~}, -{~}] в поисках осколка.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#250": {
+   "src": "Kill the Progenitors to open the entrance.",
+   "dst": "Убей Прародителей, чтобы открыть вход.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#251": {
+   "src": "[{~}/{~}] Aledar: Stay with us {u}! We've just had a loss, you can't go wandering around!",
+   "dst": "[{~}/{~}] Aledar: Не отходи от нас, {u}! Мы только что понесли потерю, нельзя бродить где попало!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#252": {
+   "src": "[{~}/{~}] Aledar: Stay with me!",
+   "dst": "[{~}/{~}] Aledar: Держись рядом!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#253": {
+   "src": "You quickly escape the worm before it eats you...",
+   "dst": "Ты успеваешь вырваться от червя, пока он тебя не съел...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#254": {
+   "src": "[{~}/{~}] Obsessor: Please, you have to understand!",
+   "dst": "[{~}/{~}] Одержимый: Прошу, пойми же!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#255": {
+   "src": "[{~}/{~}] Obsessor: You need to come with us!",
+   "dst": "[{~}/{~}] Одержимый: Тебе надо пойти с нами!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#256": {
+   "src": "[{~}/{~}] Obsessor: It's the only way to make you happy here!",
+   "dst": "[{~}/{~}] Одержимый: Только так тебе будет здесь хорошо!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#257": {
+   "src": "[{~}/{~}] Obsessor: IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
+   "dst": "[{~}/{~}] Одержимый: ДРУГОГО ПУТИ НЕТ, ПОНИМАЕШЬ?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#258": {
+   "src": "[{~}/{~}] Obsessor: AM I NOT SPEAKING CLEARLY?",
+   "dst": "[{~}/{~}] Одержимый: Я ЧТО, НЕЯСНО ГОВОРЮ?",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#259": {
+   "src": "[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!",
+   "dst": "[{~}/{~}] Одержимый: А ТЫ НЕ ВМЕШИВАЙСЯ!!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#260": {
+   "src": "[{~}/{~}] Aledar: No! How did she disable my spell?!",
+   "dst": "[{~}/{~}] Aledar: Нет! Как она сняла моё заклинание?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#261": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
+   "dst": "[{~}/{~}] Одержимый: С НАМИ ТЕБЕ БУДЕТ НАМНОГО ЛУЧШЕ!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#262": {
+   "src": "[{~}/{~}] Obsessor: WE'LL KEEP YOU SAFE!",
+   "dst": "[{~}/{~}] Одержимый: МЫ ТЕБЯ ЗАЩИТИМ!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#263": {
+   "src": "[{~}/{~}] Obsessor: We'll bring you someplace warm!",
+   "dst": "[{~}/{~}] Одержимый: Мы отведём тебя в тёплое место!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#264": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SAFE WITH US!",
+   "dst": "[{~}/{~}] Одержимый: С НАМИ ТЫ В БЕЗОПАСНОСТИ!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#265": {
+   "src": "[{~}/{~}] Obsessor: NO MORE FEAR! NO MORE CONCERN!",
+   "dst": "[{~}/{~}] Одержимый: НИ СТРАХА! НИ ЗАБОТ!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#266": {
+   "src": "[{~}/{~}] Obsessor: Foreeeever...",
+   "dst": "[{~}/{~}] Одержимый: Навсегда-а-а…",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#268": {
+   "src": "Broken Pickaxe\nRight-Click to get item\nÀ",
+   "dst": "Сломанная кирка\nПКМ - взять предмет\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#269": {
+   "src": "Is that the monster that captured Lucio?! Don't let it get away!",
+   "dst": "Это то чудовище, что схватило Lucio?! Не дай ему уйти!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#270": {
+   "src": "As you get a new pickaxe, the cracks reset allowing you to try again.",
+   "dst": "Когда берёшь новую кирку, трещины сбрасываются, и можно попробовать снова.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#271": {
+   "src": "This pickaxe can only be used a few times as it's almost completely broken...",
+   "dst": "Эта кирка почти полностью сломана, её хватит всего на несколько раз...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#272": {
+   "src": "Your pickaxe has broken! If you don't have enough blocks to go through the tar, get a new pickaxe and try again...",
+   "dst": "Кирка сломалась! Если блоков не хватает, чтобы пройти сквозь смолу, возьми новую кирку и попробуй снова...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#273": {
+   "src": "You need an item to break this...",
+   "dst": "Чтобы это сломать, нужен предмет...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#274": {
+   "src": "Lucio's body appears out of the Enraptured Obsessor. He must have become one.",
+   "dst": "Из Восторженного одержимца появляется тело Lucio. Должно быть, он сам стал одним из них.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#275": {
+   "src": "You must find Elphaba and Aledar before it's too late.",
+   "dst": "Нужно найти Elphaba и Aledar, пока не стало слишком поздно.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#276": {
+   "src": "Right-Click\nTo get the Body Part\nÀ",
+   "dst": "ПКМ -\nвзять часть тела\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#277": {
+   "src": "Is that the monster that captured Elphaba?!",
+   "dst": "Это то чудовище, что схватило Elphaba?!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#278": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "Нужно найти способ последовать за ними наверх!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#279": {
+   "src": "Sound Wave Emitter\nRight-Click to get Item\nÀ",
+   "dst": "Излучатель звуковых волн\nПКМ - взять предмет\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#280": {
+   "src": "Right-Clicking this Item emits sound connections with the Irritacks...",
+   "dst": "ПКМ по этому предмету издаёт звук, связывающий тебя с Irritack...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#281": {
+   "src": "It's... Elphaba! Aledar might still be alive... Quick!",
+   "dst": "Это... Elphaba! Aledar, может, ещё жив... Скорее!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#282": {
+   "src": "You should use these body parts to enter the worm and find Aledar...",
+   "dst": "С помощью этих частей тела проберись внутрь червя и найди Aledar...",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#283": {
+   "src": "This is where Aledar was taken... Perhaps you can lure the worm somehow.",
+   "dst": "Вот куда утащили Aledar... Может, червя как-то удастся выманить.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#284": {
+   "src": "The stomach acid seems to rise and fall consistently.",
+   "dst": "Желудочная кислота, похоже, равномерно поднимается и опускается.",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#285": {
+   "src": "Aledar must've fallen somewhere near the road too!",
+   "dst": "Aledar тоже, наверное, упал где-то у дороги!",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A Journey Beyond#286": {
    "src": "Well, hello there, traveler. Don't think I've seen you in here before.",

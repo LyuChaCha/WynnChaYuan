@@ -81,7 +81,7 @@ public final class TooltipCacheTest {
 
         // ★ 語料重載要重算：換語言走的就是這條（generation 會往前一格）
         int before = store.generation();
-        store.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
+        store.loadAll(List.of(root.resolve("zh_cn")));
         store.setNameMode(CollectorConfig.ItemNames.ON);
         report("重載之後 generation 有往前（" + before + " -> "
                 + store.generation() + "）", store.generation() != before);

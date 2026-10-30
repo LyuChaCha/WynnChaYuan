@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 /**
- * 簡中是「繁中墊底、簡中在上」兩層一起載入的。裝備名稱在這條路上要照樣翻。
+ * 指名輔助語言時是「輔助語言墊底、選定的語言在上」兩層一起載入的。裝備名稱在這條路上要照樣翻。
  *
  * <p>實機回報：0.2.2 測試版切到簡中，物品名稱全部沒翻；繁中正常。
  */
@@ -19,21 +19,21 @@ public final class LayeredGearNameTest {
         Path root = Path.of(args.length > 0 ? args[0]
                                             : "src/main/resources/assets/wynnchayuan/translations");
         TranslationStore store = new TranslationStore();
-        store.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
+        store.loadAll(List.of(root.resolve("zh_cn"), root.resolve("zh_tw")));
 
         // 不寫死措辭：這幾條要守的是「疊層之後拿到的是<b>簡中那層</b>的譯名」，
         // 不是「Abhorrence 一定要叫某三個字」。所以答案去問一份只載簡中的 store
         // ——譯名改了它會跟著改，而「被繁中那層壓過去」還是會被抓出來。
         // （2026-10-06 簡中裝備名拿掉類別字時，寫死的「憎恶之矛」弄紅了這一支。）
         TranslationStore cnOnly = new TranslationStore();
-        cnOnly.loadAll(List.of(root.resolve("zh_cn")));
+        cnOnly.loadAll(List.of(root.resolve("zh_tw")));
         cnOnly.setNameMode(CollectorConfig.ItemNames.ON);
         String want = cnOnly.lookup("Abhorrence");
 
         store.setNameMode(CollectorConfig.ItemNames.ON);
-        check("簡中那層本來就有 Abhorrence 的譯名（實際 " + want + "）",
+        check("上層本來就有 Abhorrence 的譯名（實際 " + want + "）",
               want != null && !want.equals("Abhorrence"));
-        check("開：簡中查得到裝備名（實際 " + store.lookup("Abhorrence") + "）",
+        check("開：查得到上層的裝備名（實際 " + store.lookup("Abhorrence") + "）",
               want != null && want.equals(store.lookup("Abhorrence")));
         List<net.minecraft.network.chat.Component> out =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
@@ -41,11 +41,11 @@ public final class LayeredGearNameTest {
                         net.minecraft.network.chat.Component.literal("Abhorrence"),
                         banner()), store);
         String shown = out.isEmpty() ? "(沒翻)" : out.get(1).getString();
-        check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）",
+        check("★ 開：tooltip 名稱那一行畫成上層的譯名（實際 " + shown + "）",
               want != null && want.equals(shown));
 
         // ★ 繁中那層的 Mythic 是空的（刻意不翻）；簡中那層的譯名不能被它擋回英文
-        check("簡中的 Mythic 不算「還沒翻的裝備名」", !store.isBareGearName("Sunstar"));
+        check("上層的 Mythic 不算「還沒翻的裝備名」", !store.isBareGearName("Sunstar"));
         List<net.minecraft.network.chat.Component> myth =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
                         net.minecraft.network.chat.Component.literal("Sunstar"),
@@ -57,10 +57,10 @@ public final class LayeredGearNameTest {
         // 弄紅一支跟那件事無關的測試——2026-09-29 把 Mythic 名稱改成照背景敘述
         // 取的那一套時就中了一次。拿語料自己的答案來比，才是在守那條規則。
         String mythName = store.lookup("Sunstar");
-        check("簡中的 Mythic 有譯名（實際 " + mythName + "）",
+        check("上層的 Mythic 有譯名（實際 " + mythName + "）",
               mythName != null && !mythName.equals("Sunstar")
                       && mythName.codePoints().anyMatch(c -> c >= 0x4E00 && c <= 0x9FFF));
-        check("★ 簡中 Mythic 的名稱行畫成中文（實際 " + mythShown + "）",
+        check("★ 上層 Mythic 的名稱行畫成中文（實際 " + mythShown + "）",
               mythName != null && mythName.equals(mythShown));
 
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
@@ -71,8 +71,8 @@ public final class LayeredGearNameTest {
         check("關：留原文（實際 " + store.lookup("Abhorrence") + "）",
               store.lookup("Abhorrence") == null);
 
-        System.out.println(failures == 0 ? "簡中疊層的裝備名：全部通過"
-                                         : "簡中疊層的裝備名：" + failures + " 項失敗");
+        System.out.println(failures == 0 ? "疊層的裝備名：全部通過"
+                                         : "疊層的裝備名：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
     }
 

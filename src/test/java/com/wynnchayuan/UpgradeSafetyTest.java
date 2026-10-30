@@ -714,8 +714,7 @@ public final class UpgradeSafetyTest {
         Path trDir = Languages.dir(dir, lang);
         TranslationCache.prepare(trDir, lang);
         List<Path> layers = new ArrayList<>();
-        String under = config.fallbackLanguage().isEmpty()
-                ? Languages.fallbackFor(lang) : null;
+        String under = Languages.underlay(config.fallbackLanguage(), lang);
         if (under != null) {
             Path f = Languages.dir(dir, under);
             TranslationCache.prepare(f, under);

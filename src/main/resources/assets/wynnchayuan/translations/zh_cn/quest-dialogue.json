@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24252,
-  "translated": 24249,
+  "count": 24289,
+  "translated": 24197,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -287,7 +287,7 @@
   },
   "A Headless History#008": {
    "src": "[+{~} Referick's Soul]",
-   "dst": "[+{~} Referick 的灵魂]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -307,7 +307,7 @@
   },
   "A Headless History#010": {
    "src": "[-{~} Referick's Soul]",
-   "dst": "[-{~} Referick 的灵魂]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -7761,6 +7761,376 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "A Journey Beyond#248": {
+   "src": "We need a plan.",
+   "dst": "我们得想个计划。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#249": {
+   "src": "Explore the cave at [{~}, {~}, -{~}] for the Shard.",
+   "dst": "探索 [{~}, {~}, -{~}] 的洞穴寻找碎片。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#250": {
+   "src": "Kill the Progenitors to open the entrance.",
+   "dst": "杀死始祖以打开入口。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#251": {
+   "src": "[{~}/{~}] Aledar: Stay with us {u}! We've just had a loss, you can't go wandering around!",
+   "dst": "[{~}/{~}] Aledar: 跟紧我们，{u}！我们刚失去了一位同伴，你可不能到处乱跑！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#252": {
+   "src": "[{~}/{~}] Aledar: Stay with me!",
+   "dst": "[{~}/{~}] Aledar: 跟紧我！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#253": {
+   "src": "You quickly escape the worm before it eats you...",
+   "dst": "你赶在被蠕虫吃掉之前飞快地逃了出来……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#254": {
+   "src": "[{~}/{~}] Obsessor: Please, you have to understand!",
+   "dst": "[{~}/{~}] 执念者: 拜托，你得明白！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#255": {
+   "src": "[{~}/{~}] Obsessor: You need to come with us!",
+   "dst": "[{~}/{~}] 执念者: 你得跟我们走！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#256": {
+   "src": "[{~}/{~}] Obsessor: It's the only way to make you happy here!",
+   "dst": "[{~}/{~}] 执念者: 这是让你在这里快乐的唯一办法！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#257": {
+   "src": "[{~}/{~}] Obsessor: IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
+   "dst": "[{~}/{~}] 执念者: 这是唯一的办法，你明白吗？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#258": {
+   "src": "[{~}/{~}] Obsessor: AM I NOT SPEAKING CLEARLY?",
+   "dst": "[{~}/{~}] 执念者: 我说得不够清楚吗？",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#259": {
+   "src": "[{~}/{~}] Obsessor: YOU STAY OUT OF THIS!!",
+   "dst": "[{~}/{~}] 执念者: 你别插手！！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#260": {
+   "src": "[{~}/{~}] Aledar: No! How did she disable my spell?!",
+   "dst": "[{~}/{~}] Aledar: 不！她怎么解除了我的法术？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#261": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
+   "dst": "[{~}/{~}] 执念者: 你跟我们走会快乐得多！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#262": {
+   "src": "[{~}/{~}] Obsessor: WE'LL KEEP YOU SAFE!",
+   "dst": "[{~}/{~}] 执念者: 我们会保护你的安全！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#263": {
+   "src": "[{~}/{~}] Obsessor: We'll bring you someplace warm!",
+   "dst": "[{~}/{~}] 执念者: 我们会带你去温暖的地方！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#264": {
+   "src": "[{~}/{~}] Obsessor: YOU'LL BE SAFE WITH US!",
+   "dst": "[{~}/{~}] 执念者: 跟我们在一起你会很安全！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#265": {
+   "src": "[{~}/{~}] Obsessor: NO MORE FEAR! NO MORE CONCERN!",
+   "dst": "[{~}/{~}] 执念者: 不再恐惧！不再忧虑！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#266": {
+   "src": "[{~}/{~}] Obsessor: Foreeeever...",
+   "dst": "[{~}/{~}] 执念者: 永——远——……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Obsessor",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#268": {
+   "src": "Broken Pickaxe\nRight-Click to get item\nÀ",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#269": {
+   "src": "Is that the monster that captured Lucio?! Don't let it get away!",
+   "dst": "那就是抓走 Lucio 的怪物吗？！别让它跑了！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#270": {
+   "src": "As you get a new pickaxe, the cracks reset allowing you to try again.",
+   "dst": "换一把新镐子后，裂痕会重置，你就能再试一次。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#271": {
+   "src": "This pickaxe can only be used a few times as it's almost completely broken...",
+   "dst": "这把镐子几乎完全坏了，只能再用几次……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#272": {
+   "src": "Your pickaxe has broken! If you don't have enough blocks to go through the tar, get a new pickaxe and try again...",
+   "dst": "你的镐子坏了！如果方块不够让你穿过焦油，就换一把新镐子再试一次……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#273": {
+   "src": "You need an item to break this...",
+   "dst": "需要某样物品才能打破这个……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#274": {
+   "src": "Lucio's body appears out of the Enraptured Obsessor. He must have become one.",
+   "dst": "Lucio 的身体从痴迷的执念者体内现身。他一定已经变成了它们的一员。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#275": {
+   "src": "You must find Elphaba and Aledar before it's too late.",
+   "dst": "你必须在为时已晚之前找到 Elphaba 和 Aledar。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#276": {
+   "src": "Right-Click\nTo get the Body Part\nÀ",
+   "dst": "右键点击\n取得身体部位\nÀ",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#277": {
+   "src": "Is that the monster that captured Elphaba?!",
+   "dst": "那就是抓走 Elphaba 的怪物吗？！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#278": {
+   "src": "You have to find a way of following them to the top!",
+   "dst": "你得想办法跟着他们到顶端去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#279": {
+   "src": "Sound Wave Emitter\nRight-Click to get Item\nÀ",
+   "dst": "",
+   "role": "desc",
+   "kind": "Floting Text",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#280": {
+   "src": "Right-Clicking this Item emits sound connections with the Irritacks...",
+   "dst": "右键点击这件物品会发出声音，与 Irritack 建立联系……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#281": {
+   "src": "It's... Elphaba! Aledar might still be alive... Quick!",
+   "dst": "那是……Elphaba！Aledar 也许还活着……快！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#282": {
+   "src": "You should use these body parts to enter the worm and find Aledar...",
+   "dst": "你应该用这些身体部位钻进蠕虫体内，找到 Aledar……",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#283": {
+   "src": "This is where Aledar was taken... Perhaps you can lure the worm somehow.",
+   "dst": "Aledar 就是在这里被带走的……也许你能想办法把蠕虫引出来。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#284": {
+   "src": "The stomach acid seems to rise and fall consistently.",
+   "dst": "胃酸似乎在有规律地涨落。",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "A Journey Beyond#285": {
+   "src": "Aledar must've fallen somewhere near the road too!",
+   "dst": "Aledar 一定也掉在路边附近的某处了！",
+   "role": "desc",
+   "kind": "Chat",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "A Journey Beyond#286": {
    "src": "Well, hello there, traveler. Don't think I've seen you in here before.",
    "dst": "哎呀，你好啊，旅人。我好像没在店里见过你。",
@@ -7773,7 +8143,7 @@
   },
   "A Journey Beyond#287": {
    "src": "[+{~} {p} Whiskey]",
-   "dst": "[+{~} {p} 威士忌]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -7813,7 +8183,7 @@
   },
   "A Journey Beyond#291": {
    "src": "[-{~} Corrupt Pearl]",
-   "dst": "[-{~} 腐化珍珠]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -10269,7 +10639,7 @@
   },
   "A Journey Home#146": {
    "src": "[+{~} TNT Placer]",
-   "dst": "[+{~} TNT 放置器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -11329,7 +11699,7 @@
   },
   "A New Beginning#025": {
    "src": "[+{~} Lotus Seedpods]",
-   "dst": "[+{~} 莲蓬]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11569,7 +11939,7 @@
   },
   "A New Beginning#049": {
    "src": "[+{~} Record Storage #{~} Key]",
-   "dst": "[+{~1} 第 {~2} 号记录库钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11589,7 +11959,7 @@
   },
   "A New Beginning#051": {
    "src": "[-{~} Record Storage Key]",
-   "dst": "[-{~} 记录库钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11979,7 +12349,7 @@
   },
   "A New Beginning#090": {
    "src": "[+{~} {p} Passport]",
-   "dst": "[+{~} {p} 通行证]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -15910,7 +16280,7 @@
   },
   "Acquiring Credentials#019": {
    "src": "[-{~} Quartz]",
-   "dst": "[-{~} 石英]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -15950,7 +16320,7 @@
   },
   "Acquiring Credentials#023": {
    "src": "[-{~} Pumpkin]",
-   "dst": "[-{~} 南瓜]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Acquiring Credentials",
@@ -16966,7 +17336,7 @@
   },
   "Aldorei's Secret Part I#001": {
    "src": "[+{~} Rusted Bucket]",
-   "dst": "[+{~} 生锈的水桶]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -18850,7 +19220,7 @@
   },
   "Aldorei's Secret Part II#094": {
    "src": "[+{~} Amulet of Safe Passing]",
-   "dst": "[+{~} 安行护符]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -36518,7 +36888,7 @@
   },
   "Arachnids' Ascent#006": {
    "src": "[+{~} Military Supply Crate]",
-   "dst": "[+{~} 军用补给箱]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -36628,7 +36998,7 @@
   },
   "Arachnids' Ascent#017": {
    "src": "[+{~} Mount Wynn's Flame]",
-   "dst": "[+{~} Wynn 山之焰]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -39848,7 +40218,7 @@
   },
   "Beyond the Grave#193": {
    "src": "[+{~} Krolton's Remains]",
-   "dst": "[+{~} Krolton 的残骸]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -41248,7 +41618,7 @@
   },
   "Brothers Return#009": {
    "src": "[-{~} Second Floor Key]",
-   "dst": "[-{~} 二楼钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -41258,7 +41628,7 @@
   },
   "Brothers Return#010": {
    "src": "[-{~} Sealed Room Key]",
-   "dst": "[-{~} 密室钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -41278,7 +41648,7 @@
   },
   "Brothers Return#012": {
    "src": "[+{~} Dusty Will]",
-   "dst": "[+{~} 积灰的遗嘱]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -41298,7 +41668,7 @@
   },
   "Brothers Return#014": {
    "src": "[-{~} Dusty Will]",
-   "dst": "[-{~} 积灰的遗嘱]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -44978,7 +45348,7 @@
   },
   "Celebrations in Smoke#132": {
    "src": "[+ {~} Burnt Medallion]",
-   "dst": "[+ {~} 烧焦的徽章]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -49598,7 +49968,7 @@
   },
   "Corrupted Betrayal#003": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "[+{~} 法师的谜语]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -53176,7 +53546,7 @@
   },
   "Dearly Departed#002": {
    "src": "[+{~} Muddy Shovel]",
-   "dst": "[+{~} 沾满泥的铲子]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -55406,7 +55776,7 @@
   },
   "Dwarves and Doguns Part I#000": {
    "src": "[+{~} Ancient Dogun Tablet]",
-   "dst": "[+{~} 古老的 Dogun 石板]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part I",
@@ -56776,7 +57146,7 @@
   },
   "Dwarves and Doguns Part I#142": {
    "src": "[+{~} Dwarven Axe]",
-   "dst": "[+{~} 矮人斧]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part I",
@@ -89197,7 +89567,7 @@
   },
   "General's Orders#070": {
    "src": "[+{~} Cell Key]",
-   "dst": "[+{~} 牢房钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -96939,7 +97309,7 @@
   },
   "Hunger of the Gerts Part I#080": {
    "src": "[+{~} Carving Knife]",
-   "dst": "[+{~} 雕刻刀]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -98669,7 +99039,7 @@
   },
   "Infested Plants#002": {
    "src": "[+{~} Saccharum Plant]",
-   "dst": "[+{~} Saccharum 植株]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -98679,7 +99049,7 @@
   },
   "Infested Plants#003": {
    "src": "[-{~} Saccharum Plant]",
-   "dst": "[-{~} Saccharum 植株]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Infested Plants",
@@ -101359,7 +101729,7 @@
   },
   "Kingdom of Sand#012": {
    "src": "[-{~} The Emperor's Sceptre]",
-   "dst": "[-{~} 皇帝权杖]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -108681,7 +109051,7 @@
   },
   "Misadventure on the Sea#016": {
    "src": "[+{~} Sponge]",
-   "dst": "[+{~} 海绵]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -109021,7 +109391,7 @@
   },
   "Misadventure on the Sea#050": {
    "src": "[+{~} Cannon Fuse]",
-   "dst": "[+{~} 大炮导火索]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -110297,7 +110667,7 @@
   },
   "Misadventure on the Sea#177": {
    "src": "[+{~} Fake Tooth]",
-   "dst": "[+{~} 假牙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -124451,7 +124821,7 @@
   },
   "Overture to Despair#024": {
    "src": "[+{~} {p} Clothes]",
-   "dst": "[+{~} {p} 服装]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -126601,7 +126971,7 @@
   },
   "Overture to Despair#239": {
    "src": "[+{~} Letter]",
-   "dst": "[+{~} 信件]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -130749,7 +131119,7 @@
   },
   "Point of No Return#006": {
    "src": "[-{~} Soul Retainer]",
-   "dst": "[-{~} 灵魂容器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -132169,7 +132539,7 @@
   },
   "Purple and Blue#022": {
    "src": "[+{~} Gylia Treasure Map]",
-   "dst": "[+{~} Gylia 藏宝图]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -132229,7 +132599,7 @@
   },
   "Purple and Blue#028": {
    "src": "[+{~} Cosmic Stone]",
-   "dst": "[+{~} 宇宙之石]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -132249,7 +132619,7 @@
   },
   "Purple and Blue#030": {
    "src": "[+{~} Impervious Talisman]",
-   "dst": "[+{~} 不侵护符]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -141872,7 +142242,7 @@
   },
   "Recipe For Disaster#183": {
    "src": "[+{~} Recipe Book]",
-   "dst": "[+{~} 菜谱]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -142962,7 +143332,7 @@
   },
   "Recover the Past#011": {
    "src": "[-{~} Wrapped Package]",
-   "dst": "[-{~} 包裹]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -143562,7 +143932,7 @@
   },
   "Recover the Past#071": {
    "src": "[+{~} Wrapped Package]",
-   "dst": "[+{~} 包裹]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -149796,7 +150166,7 @@
   },
   "Revelations in Fall#304": {
    "src": "[+{~} Passport - Roughworks-Auburn]",
-   "dst": "[+{~} 护照 - Roughworks-Auburn]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -149806,7 +150176,7 @@
   },
   "Revelations in Fall#305": {
    "src": "[-{~} Passport]",
-   "dst": "[-{~} 护照]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
@@ -149866,7 +150236,7 @@
   },
   "Rise of the Quartron#004": {
    "src": "[+{~} Karoc's Cracked Clock]",
-   "dst": "[+{~} Karoc 的破裂时钟]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -152036,7 +152406,7 @@
   },
   "Shattered Minds#002": {
    "src": "[+{~} Bluecap Mushroom]",
-   "dst": "[+{~} 蓝帽菇]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -152676,7 +153046,7 @@
   },
   "Shrouded in Mist#000": {
    "src": "[-{~} Sweeper]",
-   "dst": "[-{~} 扫帚]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -152786,7 +153156,7 @@
   },
   "Shrouded in Mist#011": {
    "src": "[+{~} Dirt Covered Rake]",
-   "dst": "[+{~} 沾满泥土的耙子]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -152796,7 +153166,7 @@
   },
   "Shrouded in Mist#012": {
    "src": "[+{~} Frail Sweeper]",
-   "dst": "[+{~} 破旧的扫帚]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -162682,7 +163052,7 @@
   },
   "Taking the Tower#008": {
    "src": "[+{~} Water Powder I]",
-   "dst": "[+{~} 水元素粉末 I]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -168110,7 +168480,7 @@
   },
   "The Breaking Point#149": {
    "src": "[-{~} Magmaflux Capacitor]",
-   "dst": "[-{~} 熔流电容器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -168380,7 +168750,7 @@
   },
   "The Breaking Point#176": {
    "src": "[+{~} Trusty Grappling Hook]",
-   "dst": "[+{~} 可靠的抓钩]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -169650,7 +170020,7 @@
   },
   "The Breaking Point#303": {
    "src": "[+{~} Magmaflux Capacitor]",
-   "dst": "[+{~} 熔流电容器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -170190,7 +170560,7 @@
   },
   "The Canary Calls#035": {
    "src": "[+{~} Chewed-up Toothpick]",
-   "dst": "[+{~} 嚼烂的牙签]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -170406,7 +170776,7 @@
   },
   "The Canary Calls#056": {
    "src": "[+{~} Gear Stick]",
-   "dst": "[+{~} 换挡杆]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -173332,7 +173702,7 @@
   },
   "The Canyon Guides#016": {
    "src": "[+{~} Ornamental Coat]",
-   "dst": "[+{~} 华饰外衣]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -174628,7 +174998,7 @@
   },
   "The Cursed One#000": {
    "src": "[+{~} Crystal Focus]",
-   "dst": "[+{~} 水晶媒介]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Cursed One",
@@ -174638,7 +175008,7 @@
   },
   "The Cursed One#001": {
    "src": "[-{~} Crystal Focus]",
-   "dst": "[-{~} 水晶媒介]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Cursed One",
@@ -189910,7 +190280,7 @@
   },
   "The Feathers Fly Part II#1353": {
    "src": "[+{~} Growth Accelerator Remote]",
-   "dst": "[+{~} 生长加速器遥控器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -189920,7 +190290,7 @@
   },
   "The Feathers Fly Part II#1354": {
    "src": "[-{~} Growth Accelerator Remote]",
-   "dst": "[-{~} 生长加速器遥控器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -189970,7 +190340,7 @@
   },
   "The Feathers Fly Part II#1359": {
    "src": "[+{~} Azure Outfit]",
-   "dst": "[+{~} 天蓝服装]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190000,7 +190370,7 @@
   },
   "The Feathers Fly Part II#1362": {
    "src": "[+{~} Dirty Clothes]",
-   "dst": "[+{~} 脏衣服]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190080,7 +190450,7 @@
   },
   "The Feathers Fly Part II#1370": {
    "src": "[+{~} Mechanic Outfit]",
-   "dst": "[+{~} 机械师服装]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190100,7 +190470,7 @@
   },
   "The Feathers Fly Part II#1372": {
    "src": "[+{~} Bone]",
-   "dst": "[+{~} 骨头]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190120,7 +190490,7 @@
   },
   "The Feathers Fly Part II#1374": {
    "src": "[-{~} Mechanic Corkian Outfit]",
-   "dst": "[-{~} Corkus 机械师服装]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190130,7 +190500,7 @@
   },
   "The Feathers Fly Part II#1375": {
    "src": "[-{~} Azure Outfit]",
-   "dst": "[-{~} 天蓝服装]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -190190,7 +190560,7 @@
   },
   "The Feathers Fly Part II#1381": {
    "src": "[+{~} Audience Invitation Letter]",
-   "dst": "[+{~} 接见邀请函]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part II",
@@ -193090,7 +193460,7 @@
   },
   "The Hero of Gavel#246": {
    "src": "[+{~} Scavenger Hunt Ticket]",
-   "dst": "[+{~} 寻宝游戏门票]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -193100,7 +193470,7 @@
   },
   "The Hero of Gavel#247": {
    "src": "[-{~} Siegfried's Autograph]",
-   "dst": "[-{~} Siegfried 的亲笔签名]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -193250,7 +193620,7 @@
   },
   "The Hero of Gavel#262": {
    "src": "[+{~} Mining Explosive]",
-   "dst": "[+{~} 采矿炸药]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -195120,7 +195490,7 @@
   },
   "The Maiden Tower#020": {
    "src": "[-{~} Ancient Urn]",
-   "dst": "[-{~} 远古骨灰坛]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -195480,7 +195850,7 @@
   },
   "The Mercenary#006": {
    "src": "[+{~} Tower Key]",
-   "dst": "[+{~} 塔楼钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -195500,7 +195870,7 @@
   },
   "The Mercenary#008": {
    "src": "[+{~} Takan's Badge]",
-   "dst": "[+{~} Takan 的徽章]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -196820,7 +197190,7 @@
   },
   "The Missing Piece#006": {
    "src": "[+{~} Maintenance Key]",
-   "dst": "[+{~} 维修钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -200460,7 +200830,7 @@
   },
   "The Missing Piece#370": {
    "src": "[+{~} Vault Bread]",
-   "dst": "[+{~} 金库面包]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -200470,7 +200840,7 @@
   },
   "The Missing Piece#371": {
    "src": "[+{~} Queue Ticket]",
-   "dst": "[+{~} 排队号码牌]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -200770,7 +201140,7 @@
   },
   "The Missing Piece#401": {
    "src": "[+{~} Watering Can]",
-   "dst": "[+{~} 洒水壶]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -201072,7 +201442,7 @@
   },
   "The Missing Piece#430": {
    "src": "[-{~} Grate Key]",
-   "dst": "[-{~} 格栅钥匙]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -202982,7 +203352,7 @@
   },
   "The Olmic Rune#004": {
    "src": "[-{~} Fuel Sprites]",
-   "dst": "[-{~} 燃料精灵]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Olmic Rune",
@@ -205914,7 +206284,7 @@
   },
   "The Order of the Grook#277": {
    "src": "[+{~} Amulet]",
-   "dst": "[+{~} 护符]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -210060,7 +210430,7 @@
   },
   "The Price of Ingenuity#384": {
    "src": "[+{~} Steel Feather Tickets]",
-   "dst": "[+{~} Steel Feather 票券]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -225496,7 +225866,7 @@
   },
   "The Thanos Depository#001": {
    "src": "[+{~} Track Controller]",
-   "dst": "[+{~} 轨道控制器]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -227934,7 +228304,7 @@
   },
   "Through the Pipes#000": {
    "src": "[+{~} Valve Handle]",
-   "dst": "[+{~} 阀门把手]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -228010,7 +228380,7 @@
   },
   "Through the Pipes#007": {
    "src": "[+{~} Curious Bag]",
-   "dst": "[+{~} 奇怪的袋子]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -228070,7 +228440,7 @@
   },
   "Through the Pipes#013": {
    "src": "[+{~} Shiny Jewelry]",
-   "dst": "[+{~} 闪亮的首饰]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -228100,7 +228470,7 @@
   },
   "Through the Pipes#016": {
    "src": "[+{~} Leaf Litter]",
-   "dst": "[+{~} 落叶]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -228180,7 +228550,7 @@
   },
   "Through the Pipes#024": {
    "src": "[+{~} Rusted Rake]",
-   "dst": "[+{~} 生锈的耙子]",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
