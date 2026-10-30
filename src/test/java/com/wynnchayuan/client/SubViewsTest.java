@@ -62,6 +62,9 @@ public final class SubViewsTest {
                 views.put("credits", new CreditsView(shell, new FakeCredits(shell)));
                 views.put("position", new PositionView(shell, new FakePlaces(shell)));
                 views.put("nametag", nametag(lang));
+                FakeFirstRun withNotice = new FakeFirstRun(shell, true, true, false);
+                withNotice.notice = true;
+                views.put("firstrun-notice", new FirstRunView(shell, withNotice));
                 views.put("firstrun-consent", new FirstRunView(shell, new FakeFirstRun(shell, true, true, false)));
                 views.put("firstrun-setup", new FirstRunView(shell, new FakeFirstRun(shell, false, true, true)));
                 for (int cat = 0; cat < 4; cat++) {
@@ -86,7 +89,7 @@ public final class SubViewsTest {
             must(lang + "：這幾張畫到的字，附的字型都有（缺「" + gone + "」，重跑 tools/build-ui-fonts.py）",
                     gone.length() == 0);
         }
-        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 12 張 × "
+        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 13 張 × "
                 + SIZES.length + " 種大小）");
 
         position(out);
@@ -94,6 +97,7 @@ public final class SubViewsTest {
         notice();
         credits();
         firstRun();
+        firstRunNotice();
 
         if (failures > 0) {
             System.out.println("SubViews: " + failures + " 項失敗");
@@ -279,6 +283,7 @@ public final class SubViewsTest {
         final boolean consent;
         final boolean setup;
         final boolean upgrading;
+        boolean notice;
         final List<String> calls = new ArrayList<>();
         int dialogue = 1;
         int choices = 1;
@@ -298,6 +303,16 @@ public final class SubViewsTest {
             this.consent = consent;
             this.setup = setup;
             this.upgrading = upgrading;
+        }
+
+        @Override
+        public boolean askNotice() {
+            return notice;
+        }
+
+        @Override
+        public void noticeRead() {
+            calls.add("notice");
         }
 
         @Override
@@ -408,6 +423,35 @@ public final class SubViewsTest {
                             false, List.of(
                             toggle("privacy.online", () -> online, () -> online = !online))))));
         }
+    }
+
+    private static void firstRunNotice() throws Exception {
+        FakeShell shell = new FakeShell("zh_tw");
+        FakeFirstRun host = new FakeFirstRun(shell, true, true, false);
+        host.notice = true;
+        FirstRunView view = new FirstRunView(shell, host);
+        must("沒看過使用須知：先看使用須知", view.step() == FirstRunView.Step.NOTICE);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        must("使用須知在側欄是第一步，隱私是第二步",
+                view.spot("b:noticeok") != null && view.spot("b:agree") == null);
+        press(view, "b:noticeok");
+        must("按「我知道了」：記下看過，換到隱私", host.calls.equals(List.of("notice"))
+                && view.step() == FirstRunView.Step.CONSENT);
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        press(view, "b:agree");
+        must("同意之後到翻譯設定", view.step() == FirstRunView.Step.SETUP);
+
+        FakeFirstRun seen = new FakeFirstRun(shell, true, true, true);
+        must("看過使用須知的人不再問", new FirstRunView(shell, seen).step()
+                == FirstRunView.Step.CONSENT);
+
+        FakeFirstRun onlyNotice = new FakeFirstRun(shell, false, false, true);
+        onlyNotice.notice = true;
+        FirstRunView alone = new FirstRunView(shell, onlyNotice);
+        render(alone, "zh_tw", 640, 360, 1, -100, -100);
+        press(alone, "b:noticeok");
+        must("只剩使用須知時，看完就關",
+                onlyNotice.calls.equals(List.of("notice", "finish")));
     }
 
     private static FirstRunView customising(FakeShell shell, String lang, int[] size, int category) {
