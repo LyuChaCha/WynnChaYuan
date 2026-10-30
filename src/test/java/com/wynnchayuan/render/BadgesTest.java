@@ -80,6 +80,15 @@ public final class BadgesTest {
                 sections.get(0).members().get(2).rainbow() && hidden.hidden() && !sponsor.hidden());
         check("名單：分區的代號取自 key 的最後一段", sections.get(0).id().equals("developers")
                 && sections.get(1).id().equals("sponsors") && sections.get(2).id().equals("contributors"));
+        List<Credits.Section> teamed = Credits.read(new StringReader("""
+                {"sections": [{"role": "貢獻者", "key": "credits.role.contributors", "color": "#5BD86F", "members": [
+                  {"name": "Poly", "mc": "Poly_Glot", "teams": ["zh_tw", "ja_jp"], "areas": ["translation", "testing"],
+                   "color": "#123456", "hide": true, "cape": "poly.png"}]}]}"""));
+        Credits.Member poly = teamed.get(0).members().get(0);
+        check("名單：多了 teams 與 areas 兩欄照樣讀得進來，其他欄位不受影響",
+                teamed.size() == 1 && teamed.get(0).members().size() == 1
+                        && poly.label().equals("Poly") && poly.mc().equals("Poly_Glot")
+                        && (poly.colour() & 0xFFFFFF) == 0x123456 && poly.hidden() && "poly.png".equals(poly.cape()));
 
         // ---- 一個身分 ----
         Component plain = Component.literal("[CHAMPION] ").withStyle(Style.EMPTY.withColor(
