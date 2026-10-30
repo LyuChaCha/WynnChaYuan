@@ -114,8 +114,8 @@ public final class HotPathCacheTest {
                 tip.add(line(singles.get(s++ % singles.size()), 0x55FF55));
             }
             store.setNameMode(modes[total % modes.length]);
-            List<Component> reused = TooltipPanel.translateLines(tip, store, true);
-            List<Component> fresh = TooltipPanel.translateLines(tip, store, false);
+            List<Component> reused = TooltipTranslator.translateLines(tip, store, true);
+            List<Component> fresh = TooltipTranslator.translateLines(tip, store, false);
             total++;
             if (!reused.isEmpty()) {
                 translated++;
@@ -313,15 +313,15 @@ public final class HotPathCacheTest {
                 int fresh = 0;
                 for (int frame = 0; frame < 200; frame++) {
                     for (Component c : visible.subList(0, 60)) {
-                        WynntilsText.entityName(c, config, store);
+                        WynntilsNames.entityName(c, config, store);
                     }
                     for (int k = 0; k < 20; k++) {
-                        WynntilsText.entityName(Component.literal("-" + (fresh * 7919 % 99999) + " ✤")
+                        WynntilsNames.entityName(Component.literal("-" + (fresh * 7919 % 99999) + " ✤")
                                 .withStyle(Style.EMPTY.withColor(0xFF5555)), config, store);
                         fresh++;
                     }
                     for (int k = 0; k < 5; k++) {
-                        WynntilsText.entityName(Component.literal("Passerby " + (frame * 5 + k)), config, store);
+                        WynntilsNames.entityName(Component.literal("Passerby " + (frame * 5 + k)), config, store);
                     }
                 }
                 int kept = 0;
@@ -341,7 +341,7 @@ public final class HotPathCacheTest {
                 store.loadAll(List.of(ROOT.resolve(Languages.DEFAULT)));
             }
             for (Component c : visible) {
-                Component got = WynntilsText.entityName(c, config, store);
+                Component got = WynntilsNames.entityName(c, config, store);
                 Component want = oldEntityName(c, store, byPart);
                 compared++;
                 if (want != c) {
@@ -362,11 +362,11 @@ public final class HotPathCacheTest {
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
 
         Component normal = visible.get(0);
-        WynntilsText.entityName(normal, config, store);
+        WynntilsNames.entityName(normal, config, store);
         report("一般名牌要登記，登記的就是它的原文",
                 StyledText.fromComponent(normal).equals(original(names, indicators, normal)));
         for (Component skip : visible.subList(visible.size() - 4, visible.size())) {
-            WynntilsText.entityName(skip, config, store);
+            WynntilsNames.entityName(skip, config, store);
             report("戰鬥數字、純圖示、空白不登記（" + skip.getString().strip() + "）",
                     original(names, indicators, skip) == null);
         }
@@ -375,14 +375,14 @@ public final class HotPathCacheTest {
         mode.setAccessible(true);
         Object was = mode.get(config);
         mode.set(config, CollectorConfig.NametagMode.LOOK_AT);
-        report("注視小框模式下原樣回傳", WynntilsText.entityName(normal, config, store) == normal);
+        report("注視小框模式下原樣回傳", WynntilsNames.entityName(normal, config, store) == normal);
         mode.set(config, was);
 
         Component stranger = Component.literal("Totally Unknown Wanderer Of The Mists");
-        WynntilsText.entityName(stranger, config, store);
+        WynntilsNames.entityName(stranger, config, store);
         names.clear();
         indicators.clear();
-        WynntilsText.entityName(stranger, config, store);
+        WynntilsNames.entityName(stranger, config, store);
         int[] seen = seen(captured, "Totally Unknown Wanderer Of The Mists");
         report("★ 沒譯文的名牌只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
                 seen[0] == 1 && seen[1] == 1);
@@ -409,7 +409,7 @@ public final class HotPathCacheTest {
     }
 
     private static Map<?, ?> map(String field) throws Exception {
-        var f = WynntilsText.class.getDeclaredField(field);
+        var f = WynntilsNames.class.getDeclaredField(field);
         f.setAccessible(true);
         return (Map<?, ?>) f.get(null);
     }

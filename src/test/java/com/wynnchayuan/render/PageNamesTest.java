@@ -202,27 +202,27 @@ public final class PageNamesTest {
         StyledText row = StyledText.fromComponent(Component.literal(name).withStyle(NAME));
 
         store.setPageNameMode(ItemNames.ON);
-        check("★ 清單・譯名（實際 " + plain(WynntilsText.screenText(row, config, store)) + "）",
-                local.equals(plain(WynntilsText.screenText(row, config, store))));
+        check("★ 清單・譯名（實際 " + plain(WynntilsScreenText.screenText(row, config, store)) + "）",
+                local.equals(plain(WynntilsScreenText.screenText(row, config, store))));
         store.setPageNameMode(ItemNames.BOTH);
-        check("★ 清單・譯名加原文（實際 " + plain(WynntilsText.screenText(row, config, store)) + "）",
-                (local + " (" + name + ")").equals(plain(WynntilsText.screenText(row, config, store))));
+        check("★ 清單・譯名加原文（實際 " + plain(WynntilsScreenText.screenText(row, config, store)) + "）",
+                (local + " (" + name + ")").equals(plain(WynntilsScreenText.screenText(row, config, store))));
         store.setPageNameMode(ItemNames.OFF);
         check("★ 清單・保留原文：原樣交回同一個物件",
-                WynntilsText.screenText(row, config, store) == row);
+                WynntilsScreenText.screenText(row, config, store) == row);
         store.setPageNameMode(ItemNames.ON);
         check("★ 清單切回譯名馬上生效",
-                local.equals(plain(WynntilsText.screenText(row, config, store))));
+                local.equals(plain(WynntilsScreenText.screenText(row, config, store))));
 
         StyledText other = StyledText.fromComponent(
                 Component.literal("Can be explored").withStyle(TAG));
-        String otherOn = plain(WynntilsText.screenText(other, config, store));
+        String otherOn = plain(WynntilsScreenText.screenText(other, config, store));
         store.setPageNameMode(ItemNames.BOTH);
-        check("不是名稱的字不附原文（實際 " + plain(WynntilsText.screenText(other, config, store)) + "）",
-                otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
+        check("不是名稱的字不附原文（實際 " + plain(WynntilsScreenText.screenText(other, config, store)) + "）",
+                otherOn.equals(plain(WynntilsScreenText.screenText(other, config, store))));
         store.setPageNameMode(ItemNames.OFF);
         check("不是名稱的字照樣翻",
-                otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
+                otherOn.equals(plain(WynntilsScreenText.screenText(other, config, store))));
 
         store.setPageNameMode(ItemNames.ON);
         for (String clash : new String[] {"Scorched Earth", "Dust Bowl"}) {
@@ -233,12 +233,12 @@ public final class PageNamesTest {
                 continue;
             }
             StyledText clashRow = StyledText.fromComponent(Component.literal(clash).withStyle(NAME));
-            WynntilsText.contentScreen = () -> false;
-            String elsewhere = plain(WynntilsText.screenText(clashRow, config, store));
+            WynntilsScreenText.contentScreen = () -> false;
+            String elsewhere = plain(WynntilsScreenText.screenText(clashRow, config, store));
             check("前提：" + clash + " 照一般的查表拿到的是別的東西（" + elsewhere + "）", !cardName.equals(elsewhere));
             check("卡片的名字查得到（" + store.pageTitleName(clash) + "）", cardName.equals(store.pageTitleName(clash)));
-            WynntilsText.contentScreen = () -> true;
-            StyledText shown = WynntilsText.screenText(clashRow, config, store);
+            WynntilsScreenText.contentScreen = () -> true;
+            StyledText shown = WynntilsScreenText.screenText(clashRow, config, store);
             check("★ 內容書的清單跟卡片同一個名字：" + clash + "（實際 " + plain(shown) + "）", cardName.equals(plain(shown)));
             net.minecraft.network.chat.TextColor[] colour = {null};
             shown.getComponent().visit((style, part) -> {
@@ -250,20 +250,20 @@ public final class PageNamesTest {
             check("★ 顏色照原本那一列", NAME.getColor() != null && NAME.getColor().equals(colour[0]));
             store.setPageNameMode(ItemNames.BOTH);
             check("★ 譯名加原文：附的是原文，名字還是卡片那一個（實際 "
-                            + plain(WynntilsText.screenText(clashRow, config, store)) + "）",
-                    (cardName + " (" + clash + ")").equals(plain(WynntilsText.screenText(clashRow, config, store))));
+                            + plain(WynntilsScreenText.screenText(clashRow, config, store)) + "）",
+                    (cardName + " (" + clash + ")").equals(plain(WynntilsScreenText.screenText(clashRow, config, store))));
             store.setPageNameMode(ItemNames.OFF);
-            check("★ 保留原文：原樣交回", WynntilsText.screenText(clashRow, config, store) == clashRow);
+            check("★ 保留原文：原樣交回", WynntilsScreenText.screenText(clashRow, config, store) == clashRow);
             store.setPageNameMode(ItemNames.ON);
-            WynntilsText.contentScreen = () -> false;
+            WynntilsScreenText.contentScreen = () -> false;
             check("★ 離開內容書：同一個字串回到一般的查表，不吃到剛剛的快取（實際 "
-                            + plain(WynntilsText.screenText(clashRow, config, store)) + "）",
-                    elsewhere.equals(plain(WynntilsText.screenText(clashRow, config, store))));
+                            + plain(WynntilsScreenText.screenText(clashRow, config, store)) + "）",
+                    elsewhere.equals(plain(WynntilsScreenText.screenText(clashRow, config, store))));
             String header = WynntilsText.splitHeader("Cave - " + clash, store);
             check("★ 追蹤欄的標題也是卡片那一個名字（實際 " + header + "）",
                     header != null && header.endsWith(" - " + cardName));
         }
-        WynntilsText.contentScreen = () -> true;
+        WynntilsScreenText.contentScreen = () -> true;
         {
             String trial = null;
             String trialLocal = null;
@@ -282,13 +282,13 @@ public final class PageNamesTest {
                 StyledText hovered = StyledText.fromComponent(
                         Component.literal(trial).withStyle(NAME.withBold(true)));
                 check("★ 計時賽的清單列跟卡片同一個名字（實際 "
-                                + plain(WynntilsText.screenText(trialRow, config, store)) + "）",
-                        trialLocal.equals(plain(WynntilsText.screenText(trialRow, config, store))));
+                                + plain(WynntilsScreenText.screenText(trialRow, config, store)) + "）",
+                        trialLocal.equals(plain(WynntilsScreenText.screenText(trialRow, config, store))));
                 check("★ 滑鼠停在上面（粗體）也一樣（實際 "
-                                + plain(WynntilsText.screenText(hovered, config, store)) + "）",
-                        trialLocal.equals(plain(WynntilsText.screenText(hovered, config, store))));
+                                + plain(WynntilsScreenText.screenText(hovered, config, store)) + "）",
+                        trialLocal.equals(plain(WynntilsScreenText.screenText(hovered, config, store))));
                 store.setPageNameMode(ItemNames.OFF);
-                check("★ 保留原文也管得到計時賽", WynntilsText.screenText(trialRow, config, store) == trialRow);
+                check("★ 保留原文也管得到計時賽", WynntilsScreenText.screenText(trialRow, config, store) == trialRow);
                 store.setPageNameMode(ItemNames.ON);
             }
         }
@@ -299,10 +299,10 @@ public final class PageNamesTest {
                 StyledText questRow = StyledText.fromComponent(Component.literal(listed).withStyle(NAME));
                 String questLocal = quests.get(listed).getAsString();
                 check("★ 名字含地名的任務，清單照任務名（" + listed + "，實際 "
-                                + plain(WynntilsText.screenText(questRow, config, store)) + "）",
-                        questLocal.equals(plain(WynntilsText.screenText(questRow, config, store))));
+                                + plain(WynntilsScreenText.screenText(questRow, config, store)) + "）",
+                        questLocal.equals(plain(WynntilsScreenText.screenText(questRow, config, store))));
                 store.setPageNameMode(ItemNames.OFF);
-                check("★ 保留原文也管得到這種任務", WynntilsText.screenText(questRow, config, store) == questRow);
+                check("★ 保留原文也管得到這種任務", WynntilsScreenText.screenText(questRow, config, store) == questRow);
                 store.setPageNameMode(ItemNames.ON);
             }
             Path named = Files.createTempDirectory("wcy-questnames");
@@ -318,9 +318,9 @@ public final class PageNamesTest {
             check("任務名單裡留原文或空白的不算", small.pageTitleName("Same Name") == null
                     && small.pageTitleName("Blank") == null && small.pageTitleName("_note") == null);
         }
-        check("本來就一致的名字照舊（實際 " + plain(WynntilsText.screenText(row, config, store)) + "）",
-                local.equals(plain(WynntilsText.screenText(row, config, store))));
-        check("不是內容名稱的字照舊", otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
+        check("本來就一致的名字照舊（實際 " + plain(WynntilsScreenText.screenText(row, config, store)) + "）",
+                local.equals(plain(WynntilsScreenText.screenText(row, config, store))));
+        check("不是內容名稱的字照舊", otherOn.equals(plain(WynntilsScreenText.screenText(other, config, store))));
         check("語料沒有這張卡的名字：沒有答案", store.pageTitleName("Can be explored") == null
                 && store.pageTitleName(null) == null);
         {
@@ -336,7 +336,7 @@ public final class PageNamesTest {
             check("名字還是原文、或譯文空白的不算", small.pageTitleName("Plain") == null
                     && small.pageTitleName("Blank") == null);
         }
-        WynntilsText.contentScreen = () -> false;
+        WynntilsScreenText.contentScreen = () -> false;
 
         check("預設是譯名", config.pageNames() == ItemNames.ON);
         config.cyclePageNames(1);

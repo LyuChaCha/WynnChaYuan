@@ -101,10 +101,10 @@ public final class EvenParagraphTest {
         same("後面接網址的那一句照樣翻",
              List.of("You can get individual boosts at", "wynncraft.com/store"),
              new boolean[] {true, false});
-        check("wynncraft.com/store 是網址", TooltipPanel.isAddress("wynncraft.com/store"));
-        check("wynn.gg/rules 是網址", TooltipPanel.isAddress("wynn.gg/rules"));
-        check("一般句子不是網址", !TooltipPanel.isAddress("Guild Bank"));
-        check("句點結尾的句子不是網址", !TooltipPanel.isAddress("This item has been sealed."));
+        check("wynncraft.com/store 是網址", TooltipShape.isAddress("wynncraft.com/store"));
+        check("wynn.gg/rules 是網址", TooltipShape.isAddress("wynn.gg/rules"));
+        check("一般句子不是網址", !TooltipShape.isAddress("Guild Bank"));
+        check("句點結尾的句子不是網址", !TooltipShape.isAddress("This item has been sealed."));
 
         same("整行只有座標的那一行不算一票",
              List.of("A deep cave full of scorched",
@@ -139,15 +139,15 @@ public final class EvenParagraphTest {
                      "[1603, 155, -5069]"),
              new boolean[] {false, false, false});
 
-        check("整行座標沒有字可翻", TooltipPanel.nothingToTranslate("[1603, 155, -5069]"));
-        check("帶負號的座標沒有字可翻", TooltipPanel.nothingToTranslate("[-480, 72, -707]"));
+        check("整行座標沒有字可翻", TooltipShape.nothingToTranslate("[1603, 155, -5069]"));
+        check("帶負號的座標沒有字可翻", TooltipShape.nothingToTranslate("[-480, 72, -707]"));
         check("句子裡夾著座標算有字",
-              !TooltipPanel.nothingToTranslate("Highlands at [-1288, 86, -1319]."));
+              !TooltipShape.nothingToTranslate("Highlands at [-1288, 86, -1319]."));
         check("停在介系詞上的行算有字",
-              !TooltipPanel.nothingToTranslate("creatures and earth lies at"));
+              !TooltipShape.nothingToTranslate("creatures and earth lies at"));
         check("單位那一個字母也算有字（放寬只認整行沒字母）",
-              !TooltipPanel.nothingToTranslate("2m30s"));
-        check("中文也算有字", !TooltipPanel.nothingToTranslate("坐標"));
+              !TooltipShape.nothingToTranslate("2m30s"));
+        check("中文也算有字", !TooltipShape.nothingToTranslate("坐標"));
 
         keyTooltip();
         skillPointTooltip();
@@ -163,14 +163,14 @@ public final class EvenParagraphTest {
     private static void mixed(String what, List<String> lines,
                               boolean[] hit, boolean[] want) {
         boolean[] got = hit.clone();
-        boolean changed = TooltipPanel.evenOut(lines, got);
+        boolean changed = TooltipShape.evenOut(lines, got);
         check(what + "（有動到）", changed);
         check(what + "（結果 " + show(got) + "）", java.util.Arrays.equals(got, want));
     }
 
     private static void same(String what, List<String> lines, boolean[] hit) {
         boolean[] got = hit.clone();
-        boolean changed = TooltipPanel.evenOut(lines, got);
+        boolean changed = TooltipShape.evenOut(lines, got);
         check(what + "（結果 " + show(got) + "）",
               !changed && java.util.Arrays.equals(got, hit));
     }
