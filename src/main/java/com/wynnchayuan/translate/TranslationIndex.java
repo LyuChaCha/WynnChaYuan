@@ -248,7 +248,7 @@ final class TranslationIndex {
                     JsonElement v = obj.get(key);
                     if (!key.startsWith("_") && v.isJsonPrimitive()
                             && !v.getAsString().isBlank()) {
-                        into.put(key.strip(), LineTranslator.deIcon(
+                        into.put(key.strip(), DisplayStyles.deIcon(
                                 v.getAsString().strip()));
                     }
                 }
@@ -437,7 +437,7 @@ final class TranslationIndex {
             }
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
-            String dst = LineTranslator.deIcon(optString(e, "dst"));
+            String dst = DisplayStyles.deIcon(optString(e, "dst"));
             if (gearNames && src != null && !src.isBlank()
                     && (dst == null || dst.isBlank())
                     && "name".equals(optString(e, "role"))) {
@@ -530,7 +530,7 @@ final class TranslationIndex {
             JsonElement v = obj.get(key);
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                String flat = LineTranslator.deIcon(v.getAsString().strip());
+                String flat = DisplayStyles.deIcon(v.getAsString().strip());
                 entries.put(key.strip(), flat);
                 otherOwners.add(key.strip());
                 nonItemOwners.add(key.strip());

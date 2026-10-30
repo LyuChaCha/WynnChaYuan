@@ -190,14 +190,14 @@ public final class ColourPlaceholderTest {
                 new LineParts.Piece("[0/4]", white));
 
         for (var runs : List.of(half, none)) {
-            List<Style> words = LineTranslator.wordPalette(runs);
+            List<Style> words = ColourTemplate.wordPalette(runs);
             check("{w1} 是目前層級的灰（實際 " + words.size() + " 色）",
                     words.size() >= 2 && grey.equals(words.get(0)));
             check("{w2} 是下一層級的稀有度色", words.size() >= 2 && rare.equals(words.get(1)));
         }
 
         check("舊編號確實會挪位",
-                LineTranslator.palette(half).size() != LineTranslator.palette(none).size());
+                ColourTemplate.palette(half).size() != ColourTemplate.palette(none).size());
     }
 
     private static void progressBar() {
@@ -214,10 +214,10 @@ public final class ColourPlaceholderTest {
                 new LineParts.Piece(" Tier II ", rare),
                 new LineParts.Piece("[2/4]", white));
 
-        List<LineTranslator.Bar> bars = LineTranslator.bars(half);
+        List<ColourTemplate.Bar> bars = ColourTemplate.bars(half);
         check("整行只認出一條進度條（實際 " + bars.size() + " 條）", bars.size() == 1);
         if (bars.size() == 1) {
-            LineTranslator.Bar bar = bars.get(0);
+            ColourTemplate.Bar bar = bars.get(0);
             check("符號是箭頭", bar.sign() == '>');
             check("十格（實際 " + bar.styles().size() + "）", bar.styles().size() == 10);
             check("前五格是綠的",
@@ -231,18 +231,18 @@ public final class ColourPlaceholderTest {
                 new LineParts.Piece(">>>>>>>>>>", dark),
                 new LineParts.Piece(" Tier II ", rare),
                 new LineParts.Piece("[0/4]", white));
-        List<LineTranslator.Bar> flat = LineTranslator.bars(none);
+        List<ColourTemplate.Bar> flat = ColourTemplate.bars(none);
         check("進度 0 也是一條十格",
                 flat.size() == 1 && flat.get(0).styles().size() == 10);
 
-        int[] span = LineTranslator.barSpan(" >>>>>>>>>> ");
+        int[] span = ColourTemplate.barSpan(" >>>>>>>>>> ");
         check("找得到譯文裡的那條（實際 " + java.util.Arrays.toString(span) + "）",
                 span != null && span[0] == 1 && span[1] == 11);
 
-        check("中文不是進度條", LineTranslator.barSpan("第 I 層") == null);
-        check("兩格的重複符號不算", LineTranslator.barSpan("看!! 這樣") == null);
-        check("[2/4] 不算", LineTranslator.barSpan("[2/4]") == null);
-        check("空白不算", LineTranslator.barSpan("第 I 層     第 II 層") == null);
+        check("中文不是進度條", ColourTemplate.barSpan("第 I 層") == null);
+        check("兩格的重複符號不算", ColourTemplate.barSpan("看!! 這樣") == null);
+        check("[2/4] 不算", ColourTemplate.barSpan("[2/4]") == null);
+        check("空白不算", ColourTemplate.barSpan("第 I 層     第 II 層") == null);
     }
 
     private static void tierBrackets() throws Exception {

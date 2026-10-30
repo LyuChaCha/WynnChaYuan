@@ -1,6 +1,5 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.capture.PlaceNames;
@@ -9,7 +8,6 @@ import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -91,7 +89,7 @@ public final class LineTranslator {
         }
         FlowedDebug.note(run, extra.isEmpty() ? null : extra.get(0).text(),
                          labelStyleOf(run.get(0)), dominantStyle(parts));
-        if (needsWrap(translated, run.size(), flowed)) {
+        if (TextWrapper.needsWrap(translated, run.size(), flowed)) {
             String swapped = termsWithin(translated, store);
             if (swapped != null) {
                 translated = swapped;
@@ -111,21 +109,21 @@ public final class LineTranslator {
         if (!Double.isNaN(centre)) {
             List<Component> recentred = new ArrayList<>(built.size());
             for (Component one : built) {
-                recentred.add(unslant(centreOn(one, centre)));
+                recentred.add(DisplayStyles.unslant(centreOn(one, centre)));
             }
             return recentred;
         }
         if (dst.length != run.size()) {
             List<Component> plain = new ArrayList<>(built.size());
             for (Component one : built) {
-                plain.add(unslant(one));
+                plain.add(DisplayStyles.unslant(one));
             }
             return plain;
         }
         List<Component> out = new ArrayList<>(run.size());
         for (int i = 0; i < run.size(); i++) {
             Component row = built.get(i);
-            out.add(unslant(rewrapped && hasInnerGap(row)
+            out.add(DisplayStyles.unslant(rewrapped && hasInnerGap(row)
                     ? row : realign(run.get(i), row, centered[i])));
         }
         return out;
@@ -170,10 +168,10 @@ public final class LineTranslator {
         String encoded = SpaceOffset.encode(px);
         if (!encoded.isEmpty()) {
             Style base = first > 0 ? parts.get(0).style() : parts.get(first).style();
-            out.append(literal(encoded, SpaceOffset.styleFor(base)));
+            out.append(DisplayStyles.literal(encoded, SpaceOffset.styleFor(base)));
         }
         for (int i = first; i < parts.size(); i++) {
-            out.append(literal(parts.get(i).text(), parts.get(i).style()));
+            out.append(DisplayStyles.literal(parts.get(i).text(), parts.get(i).style()));
         }
         return out;
     }
@@ -302,7 +300,7 @@ public final class LineTranslator {
             return new Flowed(whole, null);
         }
         int colon = template.indexOf(": ");
-        if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
+        if (colon <= 0 || colon > TextWrapper.MAX_LABEL_LENGTH) {
             return null;
         }
         String head = labelHead(template.substring(0, colon + 1), store);
@@ -451,7 +449,7 @@ public final class LineTranslator {
         for (LineParts.Piece run : runs) {
             if (isNote(run.text())) {
                 Style style = undecorated(run.style());
-                return style.equals(base) ? null : forDisplay(run.style());
+                return style.equals(base) ? null : DisplayStyles.forDisplay(run.style());
             }
         }
         return null;
@@ -489,8 +487,8 @@ public final class LineTranslator {
     static boolean standsAlone(String text, String word) {
         for (int at = text.indexOf(word); at >= 0; at = text.indexOf(word, at + 1)) {
             int after = at + word.length();
-            boolean left = at == 0 || !isWordChar(text.charAt(at - 1));
-            boolean right = after >= text.length() || !isWordChar(text.charAt(after));
+            boolean left = at == 0 || !TextWrapper.isWordChar(text.charAt(at - 1));
+            boolean right = after >= text.length() || !TextWrapper.isWordChar(text.charAt(after));
             if (left && right) {
                 return true;
             }
@@ -536,8 +534,6 @@ public final class LineTranslator {
         return null;
     }
 
-    private static final int MAX_LABEL_LENGTH = 40;
-
     private static int widestOf(List<StyledText> run) {
         int widest = 0;
         for (StyledText line : run) {
@@ -546,718 +542,17 @@ public final class LineTranslator {
         return widest;
     }
 
-    static boolean needsWrap(String translated, int originalLines, boolean flowed) {
-        return flowed || lines(translated) < originalLines;
-    }
-
     private static String wrapToBlock(String text, List<StyledText> run) {
         int width = widestOf(run);
         if (width <= 0) {
             return text;
         }
-        return wrapBalanced(text, width, run.size(),
+        return TextWrapper.wrapBalanced(text, width, run.size(),
                 piece -> widthOf(Component.literal(piece)));
     }
 
-    static String wrapBalanced(String text, int maxPx, ToIntFunction<String> measure) {
-        return wrapBalanced(text, maxPx, Integer.MAX_VALUE, measure);
-    }
-
-    static String wrapBalanced(String text, int maxPx, int rows,
-                               ToIntFunction<String> measure) {
-        String wrapped = wrapBalanced(text, maxPx, rows, measure, true);
-        if (rows == Integer.MAX_VALUE || widestRow(wrapped, measure) <= maxPx) {
-            return wrapped;
-        }
-        String inside = wrapBalanced(text, maxPx, rows, measure, false);
-        return lines(inside) <= rows && widestRow(inside, measure) < widestRow(wrapped, measure)
-                ? inside : wrapped;
-    }
-
-    private static String wrapBalanced(String text, int maxPx, int rows,
-                                       ToIntFunction<String> measure, boolean reach) {
-        int width = maxPx;
-        Keep keep = Keep.NONE;
-        String wrapped = null;
-        for (int attempt = 0; ; attempt++) {
-            for (Keep level : Keep.values()) {
-                String tried = wrapToWidth(text, width, measure, level, reach);
-                if (lines(tried) <= rows) {
-                    keep = level;
-                    wrapped = tried;
-                    break;
-                }
-            }
-            if (wrapped != null || attempt >= WRAP_RETRIES) {
-                break;
-            }
-            width = width * 11 / 10;
-        }
-        if (wrapped == null) {
-            wrapped = wrapToWidth(text, width, measure, Keep.NONE, reach);
-        }
-        if (lines(wrapped) == 2 && measure.applyAsInt(text) <= width * SNUG / 100) {
-            return text;
-        }
-        String head = labelBreak(text, width, rows, measure, keep, reach);
-        if (head != null && lines(head) <= lines(wrapped)) {
-            return head;
-        }
-        return balance(text, wrapped, width, measure, keep, reach);
-    }
-
-    private static String labelBreak(String text, int width, int rows,
-                                     ToIntFunction<String> measure, Keep keep,
-                                     boolean reach) {
-        int colon = text.indexOf(": ");
-        if (colon <= 0 || colon > MAX_LABEL_LENGTH || text.indexOf(NEWLINE) >= 0) {
-            return null;
-        }
-        String label = text.substring(0, colon + 1);
-        if (measure.applyAsInt(label) > width) {
-            return null;
-        }
-        String body = text.substring(colon + 2);
-        String rest = wrapToWidth(body, width, measure, keep, reach);
-        rest = balance(body, rest, width, measure, keep, reach);
-        return 1 + lines(rest) > rows ? null : label + NEWLINE + rest;
-    }
-
-    private static final int SNUG = 125;
-
-    private static String balance(String text, String wrapped, int width,
-                                  ToIntFunction<String> measure, Keep keep, boolean reach) {
-        int rows = lines(wrapped);
-        if (rows < 2) {
-            return wrapped;
-        }
-        String best = wrapped;
-        int bestCost = wrapCost(text, wrapped, keep);
-        int at = width;
-        for (int step = 0; step < BALANCE_STEPS; step++) {
-            int narrower = at * 19 / 20;
-            if (narrower <= 0 || narrower == at) {
-                break;
-            }
-            String tighter = wrapToWidth(text, narrower, measure, keep, reach);
-            if (lines(tighter) != rows) {
-                break;
-            }
-            if (splitsWord(tighter) && !splitsWord(wrapped)) {
-                break;
-            }
-            at = narrower;
-            int cost = wrapCost(text, tighter, keep);
-            if (cost <= bestCost) {
-                best = tighter;
-                bestCost = cost;
-            }
-        }
-        return best;
-    }
-
-    private static int wrapCost(String text, String wrapped, Keep keep) {
-        return unitsSplit(text, wrapped, keep) * 10 + breakCost(wrapped);
-    }
-
-    static int unitsSplit(String text, String wrapped, Keep keep) {
-        List<List<int[]>> units = valueUnits(text, keep);
-        if (units.isEmpty()) {
-            return 0;
-        }
-        int count = 0;
-        int t = 0;
-        for (int w = 0; w < wrapped.length() && t <= text.length(); w++) {
-            if (wrapped.charAt(w) != NEWLINE || (t < text.length() && text.charAt(t) == NEWLINE)) {
-                t++;
-                continue;
-            }
-            for (List<int[]> layer : units) {
-                for (int[] unit : layer) {
-                    if (unit[0] < t && t < unit[1]) {
-                        count++;
-                    }
-                }
-            }
-            if (t < text.length() && text.charAt(t) == ' '
-                    && (w + 1 >= wrapped.length() || wrapped.charAt(w + 1) != ' '
-                        || (t + 1 < text.length() && text.charAt(t + 1) == ' '))) {
-                t++;
-            }
-        }
-        return count;
-    }
-
-    static int breakCost(String wrapped) {
-        int cost = 0;
-        for (int at = wrapped.indexOf(NEWLINE); at >= 0; at = wrapped.indexOf(NEWLINE, at + 1)) {
-            int prev = at;
-            while (prev > 0 && wrapped.charAt(prev - 1) == ' ') {
-                prev--;
-            }
-            int next = at + 1;
-            while (next < wrapped.length() && wrapped.charAt(next) == ' ') {
-                next++;
-            }
-            if (prev == 0 || next >= wrapped.length() || wrapped.charAt(prev - 1) == NEWLINE
-                    || wrapped.charAt(next) == NEWLINE) {
-                continue;
-            }
-            char before = wrapped.charAt(prev - 1);
-            char after = wrapped.charAt(next);
-            if (cannotStartLine(after) || cannotEndLine(before)) {
-                cost += 4;
-            } else if (after == '(' || after == '（') {
-                cost += 2;
-            } else if (CLAUSE_END.indexOf(before) < 0 && ",;:".indexOf(before) < 0) {
-                cost += 1;
-            }
-        }
-        return cost;
-    }
-
-    private static boolean splitsWord(String wrapped) {
-        for (int at = wrapped.indexOf(NEWLINE); at > 0 && at + 1 < wrapped.length();
-                at = wrapped.indexOf(NEWLINE, at + 1)) {
-            if (isWordChar(wrapped.charAt(at - 1)) && isWordChar(wrapped.charAt(at + 1))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static final int BALANCE_STEPS = 20;
-
-    private static final int WRAP_RETRIES = 5;
-
-    private static int widestRow(String wrapped, ToIntFunction<String> measure) {
-        int widest = 0;
-        for (String row : wrapped.split(NL, -1)) {
-            widest = Math.max(widest, measure.applyAsInt(row));
-        }
-        return widest;
-    }
-
-    private static int lines(String text) {
-        int n = 1;
-        for (int i = text.indexOf(NEWLINE); i >= 0; i = text.indexOf(NEWLINE, i + 1)) {
-            n++;
-        }
-        return n;
-    }
-
     private static String wrapToWidth(String text, int maxPx) {
-        return wrapToWidth(text, maxPx, piece -> widthOf(Component.literal(piece)));
-    }
-
-    static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure) {
-        return wrapToWidth(text, maxPx, measure, Keep.NOTE);
-    }
-
-    static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
-                              Keep keep) {
-        return wrapToWidth(text, maxPx, measure, keep, true);
-    }
-
-    private static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
-                                      Keep keep, boolean reach) {
-        if (maxPx <= 0) {
-            return text;
-        }
-        List<List<int[]>> units = valueUnits(text, keep);
-        StringBuilder out = new StringBuilder(text.length() + 8);
-        int lineStart = 0;
-        int width = 0;
-        int lastSpace = -1;
-        int lastClause = -1;
-        int i = 0;
-        while (i < text.length()) {
-            int at = i;
-            if ((text.charAt(i) == '+' || text.charAt(i) == '-')
-                    && i + 1 < text.length() && text.charAt(i + 1) == '{') {
-                at = i + 1;
-            }
-            int close = text.charAt(at) == '{' ? text.indexOf('}', at) : -1;
-            int end = close > at
-                    ? close + 1
-                    : i + Character.charCount(text.codePointAt(i));
-            String piece = text.substring(i, end);
-            int pieceWidth = measure.applyAsInt(piece);
-            if (width + pieceWidth > maxPx && i > lineStart) {
-                int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
-                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure,
-                                         reach);
-                if (clause > lineStart) {
-                    cut = clause;
-                }
-                cut = avoidOrphan(text, cut, lineStart);
-                cut = keepUnitWhole(text, units, cut, lineStart);
-                cut = keepRangeWhole(text, cut, lineStart);
-                int run = keepLatinRunWhole(text, cut, lineStart);
-                if (run != cut) {
-                    cut = keepGlyphWithWord(text, run, lineStart);
-                }
-                cut = keepOpenerWithNext(text, cut, lineStart);
-                out.append(text, lineStart, cut).append(NEWLINE);
-                boolean atSpace = cut < text.length() && text.charAt(cut) == ' ';
-                lineStart = atSpace ? cut + 1 : cut;
-                lastSpace = -1;
-                lastClause = -1;
-                if (atSpace && cut == i) {
-                    width = 0;
-                    i = end;
-                    continue;
-                }
-                if (lineStart > i) {
-                    width = 0;
-                    i = lineStart;
-                    continue;
-                }
-                width = measure.applyAsInt(text.substring(lineStart, i));
-                for (int k = lineStart; k < i; k++) {
-                    if (text.charAt(k) == ' ') {
-                        lastSpace = k;
-                    } else if (CLAUSE_END.indexOf(text.charAt(k)) >= 0) {
-                        lastClause = k + 1;
-                    }
-                }
-            }
-            if (" ".equals(piece)) {
-                lastSpace = i;
-            }
-            if (piece.length() == 1 && CLAUSE_END.indexOf(piece.charAt(0)) >= 0) {
-                lastClause = end;
-            }
-            width += pieceWidth;
-            i = end;
-        }
-        return out.append(text, lineStart, text.length()).toString();
-    }
-
-    private static int clauseBreak(String text, int lineStart, int at, int lastClause,
-                                   int maxPx, ToIntFunction<String> measure, boolean reach) {
-        int ahead = reach ? clauseAhead(text, lineStart, at, maxPx, measure) : lineStart;
-        if (ahead > lineStart) {
-            return ahead;
-        }
-        if (lastClause <= lineStart || lastClause >= at) {
-            return lineStart;
-        }
-        int filled = measure.applyAsInt(text.substring(lineStart, lastClause));
-        return filled * 100 >= maxPx * CLAUSE_FILL ? lastClause : lineStart;
-    }
-
-    private static int clauseAhead(String text, int lineStart, int at,
-                                   int maxPx, ToIntFunction<String> measure) {
-        int limit = Math.min(text.length(), at + CLAUSE_LOOKAHEAD);
-        for (int i = at; i < limit; i++) {
-            if (CLAUSE_END.indexOf(text.charAt(i)) < 0) {
-                continue;
-            }
-            int end = i + 1;
-            if (end >= text.length()) {
-                return lineStart;
-            }
-            int wide = measure.applyAsInt(text.substring(lineStart, end));
-            return wide * 100 <= maxPx * (100 + CLAUSE_REACH) ? end : lineStart;
-        }
-        return lineStart;
-    }
-
-    private static final String CLAUSE_END = "，。、；：！？》」』）】…";
-
-    private static final int CLAUSE_FILL = 60;
-
-    private static final int CLAUSE_REACH = 20;
-
-    private static final int CLAUSE_LOOKAHEAD = 6;
-
-    private static int avoidOrphan(String text, int cut, int lineStart) {
-        int at = cut;
-        while (at > lineStart + 1 && at < text.length() && cannotStartLine(text.charAt(at))) {
-            at--;
-        }
-        while (at < cut && at > lineStart + 1 && breaksWord(text, at)) {
-            at--;
-        }
-        at = keepGlyphWithWord(text, at, lineStart);
-        at = keepValueWithGlyph(text, at, lineStart);
-        int outside = outsidePlaceholder(text, at, lineStart);
-        if (outside != at) {
-            at = outside > lineStart ? outside : cut;
-        }
-        return at > lineStart ? at : cut;
-    }
-
-    private static int keepOpenerWithNext(String text, int cut, int lineStart) {
-        int at = cut;
-        while (at > lineStart && cannotEndLine(text.charAt(at - 1))) {
-            at--;
-        }
-        if (at == cut) {
-            return cut;
-        }
-        if (at > lineStart + 1 && text.charAt(at - 1) == ' ') {
-            at--;
-        }
-        return at > lineStart ? at : cut;
-    }
-
-    private static boolean cannotEndLine(char c) {
-        return "(（[［「『【〈《〔".indexOf(c) >= 0;
-    }
-
-    private static int outsidePlaceholder(String text, int cut, int lineStart) {
-        int open = text.lastIndexOf('{', cut - 1);
-        if (open < lineStart) {
-            return cut;
-        }
-        int close = text.indexOf('}', open);
-        return close >= cut ? open : cut;
-    }
-
-    private static int keepGlyphWithWord(String text, int cut, int lineStart) {
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-        int at = cut;
-        while (true) {
-            int back = at;
-            while (back > lineStart && text.charAt(back - 1) == ' ') {
-                back--;
-            }
-            if (back - glyph.length() < lineStart
-                    || !text.startsWith(glyph, back - glyph.length())) {
-                return at > lineStart ? at : cut;
-            }
-            at = back - glyph.length();
-        }
-    }
-
-    private static int keepValueWithGlyph(String text, int cut, int lineStart) {
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-        if (!text.startsWith(glyph, cut)) {
-            return cut;
-        }
-        int back = cut;
-        while (back > lineStart && text.charAt(back - 1) == ' ') {
-            back--;
-        }
-        if (back == cut || back <= lineStart || text.charAt(back - 1) != '}') {
-            return cut;
-        }
-        int open = text.lastIndexOf('{', back - 1);
-        if (open < lineStart || !text.substring(open, back).matches("\\{~\\d*\\}")) {
-            return cut;
-        }
-        if (open > lineStart && (text.charAt(open - 1) == '+' || text.charAt(open - 1) == '-')) {
-            open--;
-        }
-        return open > lineStart ? open : cut;
-    }
-
-    enum Keep {
-        NOTE,
-        VALUE,
-        NONE
-    }
-
-    private static final int LABEL_MAX = 6;
-
-    private static final int NOTE_MAX = 16;
-
-    static List<List<int[]>> valueUnits(String text, Keep keep) {
-        if (keep == Keep.NONE) {
-            return List.of();
-        }
-        List<int[]> values = new ArrayList<>();
-        List<int[]> notes = new ArrayList<>();
-        int i = 0;
-        while (i < text.length()) {
-            int end = valueEnd(text, i);
-            if (end <= i) {
-                i++;
-                continue;
-            }
-            int start = i;
-            int stop = labelAfter(text, end);
-            if (stop == end) {
-                start = labelBefore(text, i);
-            }
-            values.add(new int[] {start, stop});
-            notes.add(new int[] {start, noteAfter(text, stop)});
-            i = end;
-        }
-        return keep == Keep.VALUE ? List.of(merged(values))
-                                  : List.of(merged(notes), merged(values));
-    }
-
-    private static List<int[]> merged(List<int[]> spans) {
-        spans.sort(java.util.Comparator.comparingInt(s -> s[0]));
-        List<int[]> out = new ArrayList<>();
-        for (int[] span : spans) {
-            int[] last = out.isEmpty() ? null : out.get(out.size() - 1);
-            if (last != null && span[0] < last[1]) {
-                last[1] = Math.max(last[1], span[1]);
-            } else {
-                out.add(new int[] {span[0], span[1]});
-            }
-        }
-        return out;
-    }
-
-    private static int keepUnitWhole(String text, List<List<int[]>> units, int cut,
-                                     int lineStart) {
-        for (List<int[]> layer : units) {
-            for (int[] unit : layer) {
-                if (unit[0] < cut && cut < unit[1]) {
-                    if (unit[0] > lineStart) {
-                        return keepGlyphWithWord(text, unit[0], lineStart);
-                    }
-                    break;
-                }
-            }
-        }
-        return cut;
-    }
-
-    static int keepRangeWhole(String text, int cut, int lineStart) {
-        if (cut <= lineStart || cut >= text.length()) {
-            return cut;
-        }
-        java.util.regex.Matcher m = NUMBER_RANGE.matcher(text);
-        while (m.find()) {
-            if (m.start() >= cut) {
-                break;
-            }
-            if (cut < m.end()) {
-                return m.start() > lineStart ? keepGlyphWithWord(text, m.start(), lineStart)
-                                             : m.end();
-            }
-        }
-        return cut;
-    }
-
-    private static final java.util.regex.Pattern NUMBER_RANGE = java.util.regex.Pattern.compile(
-            "[+\\-−]?(?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?"
-            + "(?:[\\-+–−](?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?)+");
-
-    static int keepLatinRunWhole(String text, int cut, int lineStart) {
-        if (cut <= lineStart || cut >= text.length() || !hasCjkLetter(text)) {
-            return cut;
-        }
-        int left = cut;
-        while (left > lineStart && text.charAt(left - 1) == ' ') {
-            left--;
-        }
-        int right = cut;
-        while (right < text.length() && text.charAt(right) == ' ') {
-            right++;
-        }
-        if (left <= lineStart || right >= text.length() || right - left != 1
-                || !isWordChar(text.charAt(left - 1)) || !isWordChar(text.charAt(right))) {
-            return cut;
-        }
-        int start = left;
-        while (start > lineStart) {
-            char c = text.charAt(start - 1);
-            if (isWordChar(c)) {
-                start--;
-            } else if (c == ' ' && start - 2 >= lineStart && isWordChar(text.charAt(start - 2))) {
-                start--;
-            } else {
-                break;
-            }
-        }
-        while (start > lineStart && cannotEndLine(text.charAt(start - 1))) {
-            start--;
-        }
-        if (start <= lineStart) {
-            return cut;
-        }
-        return text.charAt(start - 1) == ' ' && start - 1 > lineStart ? start - 1 : start;
-    }
-
-    private static boolean hasCjkLetter(String text) {
-        for (int i = 0; i < text.length(); i++) {
-            if (isCjkLetter(text.charAt(i))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static int valueEnd(String text, int i) {
-        int n = text.length();
-        char c = text.charAt(i);
-        boolean signed = false;
-        int j = i;
-        if (c == '+' || c == '-' || c == '−' || c == 'x' || c == '×') {
-            if (c != '+' && i > 0 && isWordChar(text.charAt(i - 1))) {
-                return -1;
-            }
-            signed = true;
-            j++;
-        }
-        int k = numberEnd(text, j);
-        if (k <= j) {
-            return -1;
-        }
-        boolean placeholder = text.charAt(j) == '{';
-        if (k < n && (text.charAt(k) == '%' || text.charAt(k) == '‰')) {
-            k++;
-            signed = true;
-        }
-        if (!signed && !placeholder) {
-            return -1;
-        }
-        if (k < n && text.charAt(k) == '/') {
-            int per = numberEnd(text, k + 1);
-            int from = per > k + 1 ? per : k + 1;
-            int letters = unitLetters(text, from);
-            if (letters > k + 1) {
-                k = letters;
-            }
-        }
-        return unitLetters(text, k);
-    }
-
-    private static int unitLetters(String text, int from) {
-        int k = from;
-        while (k < text.length() && k - from < MAX_UNIT && isUnitLetter(text.charAt(k))) {
-            k++;
-        }
-        return k < text.length() && Character.isLetter(text.charAt(k)) ? from : k;
-    }
-
-    private static int numberEnd(String text, int j) {
-        int n = text.length();
-        if (j >= n) {
-            return -1;
-        }
-        if (text.startsWith("{~", j)) {
-            int close = text.indexOf('}', j);
-            if (close < 0) {
-                return -1;
-            }
-            for (int d = j + 2; d < close; d++) {
-                if (text.charAt(d) < '0' || text.charAt(d) > '9') {
-                    return -1;
-                }
-            }
-            return close + 1;
-        }
-        int k = j;
-        while (k < n && text.charAt(k) >= '0' && text.charAt(k) <= '9') {
-            k++;
-            if (k + 1 < n && (text.charAt(k) == '.' || text.charAt(k) == ',')
-                    && text.charAt(k + 1) >= '0' && text.charAt(k + 1) <= '9') {
-                k++;
-            }
-        }
-        return k > j ? k : -1;
-    }
-
-    private static int labelAfter(String text, int end) {
-        int n = text.length();
-        int j = end;
-        if (j < n && text.charAt(j) == ' ') {
-            j++;
-        }
-        int glyphEnd = -1;
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-        if (text.startsWith(glyph, j)) {
-            j += glyph.length();
-            glyphEnd = j;
-            if (j < n && text.charAt(j) == ' ') {
-                j++;
-            }
-        }
-        if (j < n && isCjkLetter(text.charAt(j))) {
-            int k = j;
-            while (k < n && k - j < LABEL_MAX && isCjkLetter(text.charAt(k))) {
-                k++;
-            }
-            return k;
-        }
-        if (j < n && isLatinLetter(text.charAt(j))) {
-            int k = wordEndAt(text, j);
-            if (k - j <= 2 && k + 1 < n && text.charAt(k) == ' '
-                    && isLatinLetter(text.charAt(k + 1))) {
-                k = wordEndAt(text, k + 1);
-            }
-            return k;
-        }
-        return glyphEnd > 0 ? glyphEnd : end;
-    }
-
-    private static int labelBefore(String text, int start) {
-        int j = start;
-        if (j > 0 && text.charAt(j - 1) == ' ') {
-            j--;
-        }
-        int k = j;
-        if (k > 0 && isCjkLetter(text.charAt(k - 1))) {
-            while (k > 0 && isCjkLetter(text.charAt(k - 1))) {
-                k--;
-            }
-            if (j - k > LABEL_MAX) {
-                return start;
-            }
-            String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-            if (k >= glyph.length() && text.startsWith(glyph, k - glyph.length())) {
-                k -= glyph.length();
-            }
-        } else if (k > 0 && isLatinLetter(text.charAt(k - 1))) {
-            while (k > 0 && isWordChar(text.charAt(k - 1))) {
-                k--;
-            }
-        } else {
-            return start;
-        }
-        if (k > 0 && (text.charAt(k - 1) == '(' || text.charAt(k - 1) == '（')) {
-            k--;
-        }
-        return k;
-    }
-
-    private static int noteAfter(String text, int stop) {
-        int j = stop;
-        if (j < text.length() && text.charAt(j) == ' ') {
-            j++;
-        }
-        if (j >= text.length() || (text.charAt(j) != '(' && text.charAt(j) != '（')) {
-            return stop;
-        }
-        int close = text.indexOf(text.charAt(j) == '(' ? ')' : '）', j);
-        return close > j && close - j <= NOTE_MAX ? close + 1 : stop;
-    }
-
-    private static int wordEndAt(String text, int from) {
-        int k = from;
-        while (k < text.length() && isWordChar(text.charAt(k))) {
-            k++;
-        }
-        return k;
-    }
-
-    private static boolean isCjkLetter(char c) {
-        return c >= 0x2E80 && Character.isLetter(c);
-    }
-
-    private static boolean isLatinLetter(char c) {
-        return c < 0x2E80 && Character.isLetter(c);
-    }
-
-    private static boolean cannotStartLine(char c) {
-        return "，。、；：！？）」』】〉》%‰°′″…・)]".indexOf(c) >= 0;
-    }
-
-    private static boolean breaksWord(String text, int at) {
-        return at > 0 && at < text.length()
-                && isWordChar(text.charAt(at - 1)) && isWordChar(text.charAt(at));
-    }
-
-    private static boolean isWordChar(char c) {
-        return c < 0x2E80 && (Character.isLetterOrDigit(c) || c == '-' || c == '\'');
+        return TextWrapper.wrapToWidth(text, maxPx, piece -> widthOf(Component.literal(piece)));
     }
 
     private static final char NEWLINE = '\n';
@@ -1275,10 +570,10 @@ public final class LineTranslator {
                                       boolean centered, boolean leftAligned) {
         Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
-            return sameTextKeepsStyle(line, keepClick(line, unslant(dropIconSpaces(whole))));
+            return sameTextKeepsStyle(line, keepClick(line, DisplayStyles.unslant(dropIconSpaces(whole))));
         }
         Component perLine = translatePerLine(line, store, centered);
-        return sameTextKeepsStyle(line, keepClick(line, unslant(dropIconSpaces(
+        return sameTextKeepsStyle(line, keepClick(line, DisplayStyles.unslant(dropIconSpaces(
                 perLine != null ? perLine
                         : translateSegments(line, store, centered, leftAligned)))));
     }
@@ -1367,7 +662,7 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(translated, LineParts.of(line), store);
-        return rebuilt == null ? null : unslant(realign(line, rebuilt, true));
+        return rebuilt == null ? null : DisplayStyles.unslant(realign(line, rebuilt, true));
     }
 
     private static Component translateSegments(StyledText line, TranslationStore store,
@@ -1414,7 +709,7 @@ public final class LineTranslator {
                 continue;
             }
             any = true;
-            Component orig = literal(body, style);
+            Component orig = DisplayStyles.literal(body, style);
             pieces.add(Piece.translated(
                     com.wynnchayuan.render.PairedFont.absolutelyPositioned(style)
                             ? padSlot(replaced, orig, style) : replaced,
@@ -1501,7 +796,7 @@ public final class LineTranslator {
             if (GlyphSplitter.hasLetter(raw)) {
                 sawText = true;
             }
-            x += widthOf(literal(raw, r.style()));
+            x += widthOf(DisplayStyles.literal(raw, r.style()));
         }
         return start < 0 ? null : new int[] {start, x};
     }
@@ -1895,7 +1190,7 @@ public final class LineTranslator {
             int px = p.spacePx() + (i == adjustIndex ? adjustPx : 0);
             String encoded = SpaceOffset.encode(px);
             if (!encoded.isEmpty()) {
-                out.append(literal(encoded, p.style()));
+                out.append(DisplayStyles.literal(encoded, p.style()));
             }
         }
         return out;
@@ -1926,7 +1221,7 @@ public final class LineTranslator {
     record Piece(Component rendered, Component orig, Style style, int spacePx, boolean isSpace) {
 
         static Piece text(String t, Style s) {
-            Component c = literal(t, s);
+            Component c = DisplayStyles.literal(t, s);
             return new Piece(c, c, s, 0, false);
         }
 
@@ -1991,12 +1286,12 @@ public final class LineTranslator {
         }
         MutableComponent out = Component.empty();
         if (!prefix.isEmpty()) {
-            out.append(literal(prefix, style));
+            out.append(DisplayStyles.literal(prefix, style));
         }
         out.append(rebuilt);
         String tail = reattach(rebuilt.getString(), suffix);
         if (!tail.isEmpty()) {
-            out.append(literal(tail, style));
+            out.append(DisplayStyles.literal(tail, style));
         }
         return out;
     }
@@ -2166,7 +1461,7 @@ public final class LineTranslator {
         int x = 0;
         int g = 0;
         for (Run r : o) {
-            x += r.space() ? r.px() : widthOf(literal(r.text(), r.style()));
+            x += r.space() ? r.px() : widthOf(DisplayStyles.literal(r.text(), r.style()));
             if (r.space()) {
                 target[g++] = x;
             }
@@ -2177,8 +1472,8 @@ public final class LineTranslator {
         boolean textBefore = false;
         for (Run r : m) {
             if (!r.space()) {
-                out.append(literal(r.text(), r.style()));
-                x += widthOf(literal(r.text(), r.style()));
+                out.append(DisplayStyles.literal(r.text(), r.style()));
+                x += widthOf(DisplayStyles.literal(r.text(), r.style()));
                 textBefore = true;
                 continue;
             }
@@ -2189,7 +1484,7 @@ public final class LineTranslator {
             g++;
             String encoded = SpaceOffset.encode(px);
             if (!encoded.isEmpty()) {
-                out.append(literal(encoded, r.style()));
+                out.append(DisplayStyles.literal(encoded, r.style()));
             }
             x += px;
         }
@@ -2359,7 +1654,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        return unslant(realign(line, rebuilt, true, false));
+        return DisplayStyles.unslant(realign(line, rebuilt, true, false));
     }
 
     public static Component translateChat(StyledText message, TranslationStore store,
@@ -2432,7 +1727,7 @@ public final class LineTranslator {
         if (parts.template().startsWith(CHAT_COUNTER)) {
             rebuilt = npcChatColours(message, rebuilt);
         }
-        return unslant(realignChat(message, rebuilt, centred, inPanel));
+        return DisplayStyles.unslant(realignChat(message, rebuilt, centred, inPanel));
     }
 
     private static final java.util.regex.Pattern CHAT_HEAD =
@@ -2614,11 +1909,11 @@ public final class LineTranslator {
         for (String part : parts) {
             String hit = GlyphSplitter.hasLetter(part) ? lookup(part, store) : null;
             if (hit != null && !hit.isBlank()) {
-                String shifted = renumber(shiftColours(hit, colours), values);
+                String shifted = renumber(ColourTemplate.shiftColours(hit, colours), values);
                 if (shifted == null) {
                     return null;
                 }
-                colours += distinctColours(hit);
+                colours += ColourTemplate.distinctColours(hit);
                 out.append(shifted);
                 hits++;
             } else {
@@ -2682,7 +1977,7 @@ public final class LineTranslator {
             if (shifted == null) {
                 return null;
             }
-            marked |= distinctColours(hit) > 0 || hit.contains(COLOR_END);
+            marked |= ColourTemplate.distinctColours(hit) > 0 || hit.contains(ColourTemplate.COLOR_END);
             segments++;
             for (int k = i; k < end; k++) {
                 values += countNumbers(lines[k]);
@@ -2690,7 +1985,7 @@ public final class LineTranslator {
             out.append(shifted);
             i = end;
         }
-        return segments > 1 && marked ? stripColourTokens(out.toString()) : out.toString();
+        return segments > 1 && marked ? ColourTemplate.stripColourTokens(out.toString()) : out.toString();
     }
 
     private static int countNumbers(String template) {
@@ -2727,33 +2022,6 @@ public final class LineTranslator {
         return at == 0 ? text : out.append(text.substring(at)).toString();
     }
 
-    static String shiftColours(String text, int offset) {
-        if (offset == 0) {
-            return text;
-        }
-        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
-        StringBuilder out = new StringBuilder();
-        int at = 0;
-        while (m.find()) {
-            out.append(text, at, m.start())
-               .append("{c").append(Integer.parseInt(m.group(1)) + offset).append('}');
-            at = m.end();
-        }
-        return at == 0 ? text : out.append(text.substring(at)).toString();
-    }
-
-    static int distinctColours(String text) {
-        java.util.Set<String> seen = new java.util.HashSet<>();
-        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
-        while (m.find()) {
-            seen.add(m.group(1));
-        }
-        return seen.size();
-    }
-
-    private static final java.util.regex.Pattern COLOUR_TOKEN =
-            java.util.regex.Pattern.compile("\\{c(\\d+)}");
-
     private static List<String> splitColumns(String template) {
         String mark = GlyphSplitter.GLYPH_PLACEHOLDER;
         List<String> out = new ArrayList<>();
@@ -2775,12 +2043,12 @@ public final class LineTranslator {
         if (scoped != null && !scoped.isBlank()) {
             Component rebuilt = rebuildLabel(label, scoped, parts, store);
             if (rebuilt != null) {
-                return unslant(rebuilt);
+                return DisplayStyles.unslant(rebuilt);
             }
         }
         Component whole = floatingWhole(label, parts, store);
         if (whole != null) {
-            return unslant(dropIconSpaces(whole));
+            return DisplayStyles.unslant(dropIconSpaces(whole));
         }
         return translate(label, store);
     }
@@ -2858,7 +2126,7 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuildLabel(label, translated, parts, store);
-        return rebuilt == null ? null : unslant(rebuilt);
+        return rebuilt == null ? null : DisplayStyles.unslant(rebuilt);
     }
 
     static String labelColours(StyledText label, LineParts parts, String translated,
@@ -2872,7 +2140,7 @@ public final class LineTranslator {
         if (rows.size() != dst.length) {
             return translated;
         }
-        List<Style> palette = palette(parts.runs());
+        List<Style> palette = ColourTemplate.palette(parts.runs());
         StringBuilder out = new StringBuilder(translated.length() + 16);
         boolean any = false;
         for (int i = 0; i < dst.length; i++) {
@@ -2905,7 +2173,7 @@ public final class LineTranslator {
         if (rows.size() != dst.length) {
             return coloured;
         }
-        List<Style> palette = palette(parts.runs());
+        List<Style> palette = ColourTemplate.palette(parts.runs());
         StringBuilder out = new StringBuilder(coloured.length() + 32);
         for (int i = 0; i < dst.length; i++) {
             if (i > 0) {
@@ -3083,8 +2351,8 @@ public final class LineTranslator {
             boolean letters = core.codePoints().anyMatch(Character::isLetter);
             int after = at + core.length();
             boolean whole = !letters
-                    || ((at == 0 || !isWordChar(dst.charAt(at - 1)))
-                        && (after >= dst.length() || !isWordChar(dst.charAt(after))));
+                    || ((at == 0 || !TextWrapper.isWordChar(dst.charAt(at - 1)))
+                        && (after >= dst.length() || !TextWrapper.isWordChar(dst.charAt(after))));
             if (whole) {
                 return new int[] {at, after};
             }
@@ -3188,7 +2456,7 @@ public final class LineTranslator {
             if (region[0] > at) {
                 String gap = row.substring(at, region[0]);
                 if (current != 0 && hasContent(gap)) {
-                    out.append(COLOR_END);
+                    out.append(ColourTemplate.COLOR_END);
                     current = 0;
                 }
                 out.append(gap);
@@ -3203,13 +2471,13 @@ public final class LineTranslator {
         if (at < row.length()) {
             String rest = row.substring(at);
             if (current != 0 && hasContent(rest)) {
-                out.append(COLOR_END);
+                out.append(ColourTemplate.COLOR_END);
                 current = 0;
             }
             out.append(rest);
         }
         if (current != 0) {
-            out.append(COLOR_END);
+            out.append(ColourTemplate.COLOR_END);
         }
         return out.toString();
     }
@@ -3542,7 +2810,7 @@ public final class LineTranslator {
                 rebuilt.append(cell);
                 rebuilt.append(PanelRow.text(row.gaps().get(c)));
             }
-            out[i] = unslant(realignChat(rows.get(i), rebuilt,
+            out[i] = DisplayStyles.unslant(realignChat(rows.get(i), rebuilt,
                     centred == null ? null : centred[i], inPanel));
         }
         return out;
@@ -3797,10 +3065,10 @@ public final class LineTranslator {
             }
             List<Run> prefix = prefixes.get(Math.min(i, 1));
             for (Run r : prefix) {
-                out.append(literal(r.space() ? SpaceOffset.encode(r.px()) : r.text(), r.style()));
+                out.append(DisplayStyles.literal(r.space() ? SpaceOffset.encode(r.px()) : r.text(), r.style()));
             }
             for (Run r : lines.get(i)) {
-                out.append(literal(r.text(), r.style()));
+                out.append(DisplayStyles.literal(r.text(), r.style()));
             }
         }
         return out;
@@ -3823,7 +3091,7 @@ public final class LineTranslator {
     private static int runsWidth(List<Run> runs) {
         int w = 0;
         for (Run r : runs) {
-            w += r.space() ? r.px() : widthOf(literal(r.text(), r.style()));
+            w += r.space() ? r.px() : widthOf(DisplayStyles.literal(r.text(), r.style()));
         }
         return w;
     }
@@ -3877,7 +3145,7 @@ public final class LineTranslator {
         }
         int[] w = new int[cps.size()];
         for (int i = 0; i < cps.size(); i++) {
-            w[i] = widthOf(literal(new String(Character.toChars(cps.get(i)[0])),
+            w[i] = widthOf(DisplayStyles.literal(new String(Character.toChars(cps.get(i)[0])),
                     body.get(cps.get(i)[1]).style()));
         }
         List<int[]> ranges = new ArrayList<>();
@@ -4131,7 +3399,7 @@ public final class LineTranslator {
         MutableComponent row = Component.empty();
         String encoded = SpaceOffset.encode(pad);
         if (!encoded.isEmpty()) {
-            row.append(literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
+            row.append(DisplayStyles.literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
         }
         for (int px : columns) {
             if (px != 0) {
@@ -4278,7 +3546,7 @@ public final class LineTranslator {
             while (n < text.length() && Character.isWhitespace(text.charAt(n))) {
                 n++;
             }
-            px += widthOf(literal(text.substring(0, n), run.style()));
+            px += widthOf(DisplayStyles.literal(text.substring(0, n), run.style()));
             if (n < text.length()) {
                 return px;
             }
@@ -4289,7 +3557,7 @@ public final class LineTranslator {
     private static int rowWidth(List<Run> row) {
         int px = 0;
         for (Run run : row) {
-            px += run.space() ? run.px() : widthOf(literal(run.text(), run.style()));
+            px += run.space() ? run.px() : widthOf(DisplayStyles.literal(run.text(), run.style()));
         }
         return px;
     }
@@ -4347,7 +3615,7 @@ public final class LineTranslator {
     }
 
     private static boolean isAdjustableSpace(Style style, String text) {
-        return isAdjustableSpace(style, text, widthOf(literal(text, style)));
+        return isAdjustableSpace(style, text, widthOf(DisplayStyles.literal(text, style)));
     }
 
     // language/wynncraft 字型也收了偏移碼位，量寬等於解碼值才算
@@ -4609,7 +3877,7 @@ public final class LineTranslator {
     }
 
     static int runWidth(Run r) {
-        return widthOf(literal(r.text(), r.style()));
+        return widthOf(DisplayStyles.literal(r.text(), r.style()));
     }
 
     static List<Integer> chatSegmentWidths(List<Run> runs, ToIntFunction<Run> width) {
@@ -4635,12 +3903,12 @@ public final class LineTranslator {
         for (int i = 0; i < runs.size(); i++) {
             Run r = runs.get(i);
             if (!gaps[i]) {
-                out.append(literal(r.text(), r.style()));
+                out.append(DisplayStyles.literal(r.text(), r.style()));
                 continue;
             }
             String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
             if (!encoded.isEmpty()) {
-                out.append(literal(encoded, r.style()));
+                out.append(DisplayStyles.literal(encoded, r.style()));
             }
         }
         return out;
@@ -4660,7 +3928,7 @@ public final class LineTranslator {
                 out.add(width);
                 width = 0;
             } else {
-                width += widthOf(literal(r.text(), r.style()));
+                width += widthOf(DisplayStyles.literal(r.text(), r.style()));
             }
         }
         out.add(width);
@@ -4682,12 +3950,12 @@ public final class LineTranslator {
         for (int i = 0; i < runs.size(); i++) {
             Run r = runs.get(i);
             if (!gaps[i]) {
-                out.append(literal(r.text(), r.style()));
+                out.append(DisplayStyles.literal(r.text(), r.style()));
                 continue;
             }
             String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
             if (!encoded.isEmpty()) {
-                out.append(literal(encoded, r.style()));
+                out.append(DisplayStyles.literal(encoded, r.style()));
             }
         }
         return out;
@@ -5060,8 +4328,8 @@ public final class LineTranslator {
             if (local.equals(body)) {
                 continue;
             }
-            pieces.set(index, Piece.translated(literal(local, forDisplay(piece.style())),
-                                               literal(body, piece.style())));
+            pieces.set(index, Piece.translated(DisplayStyles.literal(local, DisplayStyles.forDisplay(piece.style())),
+                                               DisplayStyles.literal(body, piece.style())));
             if (!tail.isEmpty()) {
                 pieces.add(index + 1, Piece.space(SpaceOffset.decode(tail),
                         SpaceOffset.styleFor(piece.style())));
@@ -5278,7 +4546,7 @@ public final class LineTranslator {
     }
 
     private static boolean samePlaceholders(String a, String b) {
-        return countNumbers(a) == countNumbers(stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
+        return countNumbers(a) == countNumbers(ColourTemplate.stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
                 && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
                 && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
                 && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
@@ -5352,7 +4620,7 @@ public final class LineTranslator {
                     return null;
                 }
             }
-            String shifted = renumber(stripColourTokens(hit), values);
+            String shifted = renumber(ColourTemplate.stripColourTokens(hit), values);
             if (shifted == null) {
                 return null;
             }
@@ -5533,7 +4801,7 @@ public final class LineTranslator {
                 continue;
             }
             PartStyle ps = part.getPartStyle();
-            out.append(literal(raw, ps == null ? Style.EMPTY : ps.getStyle()));
+            out.append(DisplayStyles.literal(raw, ps == null ? Style.EMPTY : ps.getStyle()));
         }
         return out;
     }
@@ -6316,7 +5584,7 @@ public final class LineTranslator {
         return false;
     }
 
-    private static boolean hasContent(String text) {
+    static boolean hasContent(String text) {
         return text.codePoints().anyMatch(cp -> !Character.isWhitespace(cp)
                 && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp));
     }
@@ -6361,16 +5629,16 @@ public final class LineTranslator {
         accents.addAll(halvesAcrossBreaks(flowed, accents));
         flowed = forcedTerms(flowed, store);
 
-        List<List<Token>> lines = new ArrayList<>(flowed.length);
+        List<List<ColourTemplate.Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
         long wantPlaces = 0;
         long wantNumbers = 0;
         long wantUsers = 0;
         int numbered = 0;
         for (String line : flowed) {
-            List<Token> tokens = tokenize(line);
+            List<ColourTemplate.Token> tokens = ColourTemplate.tokenize(line);
             lines.add(tokens);
-            for (Token token : tokens) {
+            for (ColourTemplate.Token token : tokens) {
                 switch (token.kind()) {
                     case GLYPH -> wantGlyphs++;
                     case PLACE -> wantPlaces++;
@@ -6395,7 +5663,7 @@ public final class LineTranslator {
             return null;
         }
 
-        Style textStyle = forDisplay(blockStyle);
+        Style textStyle = DisplayStyles.forDisplay(blockStyle);
         Style symbolStyle = leadingSymbolStyle(allRuns);
         if (symbolStyle == null) {
             symbolStyle = SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
@@ -6408,22 +5676,22 @@ public final class LineTranslator {
         int number = 0;
         int user = 0;
 
-        List<Style> palette = palette(allRuns);
-        List<Style> words = wordPalette(allRuns);
-        List<Bar> bars = bars(allRuns);
+        List<Style> palette = ColourTemplate.palette(allRuns);
+        List<Style> words = ColourTemplate.wordPalette(allRuns);
+        List<ColourTemplate.Bar> bars = ColourTemplate.bars(allRuns);
         boolean[] usedBar = new boolean[bars.size()];
         FlowedDebug.palette(palette, allRuns, flowed);
 
         Style forced = null;
         List<Component> out = new ArrayList<>(lines.size());
-        for (List<Token> tokens : lines) {
+        for (List<ColourTemplate.Token> tokens : lines) {
             MutableComponent line = Component.empty();
             Style justFilled = null;
             boolean afterNumber = false;
             for (int i = 0; i < tokens.size(); i++) {
-                Token token = tokens.get(i);
+                ColourTemplate.Token token = tokens.get(i);
                 switch (token.kind()) {
-                    case COLOR -> forced = colourOf(token, palette, words, textStyle);
+                    case COLOR -> forced = ColourTemplate.colourOf(token, palette, words, textStyle);
                     case GLYPH -> {
                         LineParts.Piece piece = glyphs.get(glyph++);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
@@ -6432,7 +5700,7 @@ public final class LineTranslator {
                     }
                     case PLACE -> {
                         LineParts.Piece piece = places.get(place++);
-                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                        line.append(DisplayStyles.literal(piece.text(), DisplayStyles.forDisplay(piece.style())));
                         justFilled = piece.style();
                         afterNumber = false;
                     }
@@ -6442,21 +5710,21 @@ public final class LineTranslator {
                             return null;
                         }
                         LineParts.Piece piece = numbers.get(at);
-                        line.append(literal(piece.text(), numberDisplay(piece.style())));
+                        line.append(DisplayStyles.literal(piece.text(), DisplayStyles.numberDisplay(piece.style())));
                         justFilled = piece.style();
                         afterNumber = true;
                     }
                     case USER -> {
                         LineParts.Piece piece = users.get(user++);
-                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                        line.append(DisplayStyles.literal(piece.text(), DisplayStyles.forDisplay(piece.style())));
                         justFilled = piece.style();
                         afterNumber = false;
                     }
                     case TEXT -> {
                         String text = token.text();
                         Style bigNext = i + 1 < tokens.size()
-                                && tokens.get(i + 1).kind() == Kind.NUMBER
-                                ? displayFont(peekStyle(tokens.get(i + 1), glyphs, places,
+                                && tokens.get(i + 1).kind() == ColourTemplate.Kind.NUMBER
+                                ? DisplayStyles.displayFont(peekStyle(tokens.get(i + 1), glyphs, places,
                                               numbers, users, glyph, place, number, user))
                                 : null;
                         if (bigNext != null && !text.isEmpty()
@@ -6468,22 +5736,22 @@ public final class LineTranslator {
                                               store, i > 0 ? justFilled : null, null,
                                               afterNumber);
                             }
-                            line.append(literal(text.substring(text.length() - 1), bigNext));
+                            line.append(DisplayStyles.literal(text.substring(text.length() - 1), bigNext));
                             justFilled = null;
                             afterNumber = false;
                             break;
                         }
                         if (forced != null) {
-                            line.append(literal(token.text(), forced));
+                            line.append(DisplayStyles.literal(token.text(), forced));
                         } else {
                             Style before = i > 0 ? justFilled : null;
                             Style after = i + 1 < tokens.size()
                                     ? peekStyle(tokens.get(i + 1), glyphs, places,
                                                 numbers, users, glyph, place, number, user)
                                     : null;
-                            int[] span = barSpan(token.text());
-                            Bar bar = span == null ? null
-                                    : takeBar(bars, usedBar, token.text().charAt(span[0]),
+                            int[] span = ColourTemplate.barSpan(token.text());
+                            ColourTemplate.Bar bar = span == null ? null
+                                    : ColourTemplate.takeBar(bars, usedBar, token.text().charAt(span[0]),
                                               span[1] - span[0]);
                             if (bar == null) {
                                 appendHugging(line, token.text(), textStyle, symbolStyle,
@@ -6497,7 +5765,7 @@ public final class LineTranslator {
                                                   noteStyle, inNote, accents, usedAccent,
                                                   store, before, null, afterNumber);
                                 }
-                                appendBar(line, bar);
+                                ColourTemplate.appendBar(line, bar);
                                 if (!tail.isEmpty()) {
                                     appendHugging(line, tail, textStyle, symbolStyle,
                                                   noteStyle, inNote, accents, usedAccent,
@@ -6529,7 +5797,7 @@ public final class LineTranslator {
         return out;
     }
 
-    private static Style peekStyle(Token next,
+    private static Style peekStyle(ColourTemplate.Token next,
                                    List<LineParts.Piece> glyphs, List<LineParts.Piece> places,
                                    List<LineParts.Piece> numbers, List<LineParts.Piece> users,
                                    int glyph, int place, int number, int user) {
@@ -6557,7 +5825,7 @@ public final class LineTranslator {
                                       boolean afterNumber) {
         if (before != null && after != null && sameColour(before, after)
                 && !hasLetter(text)) {
-            out.append(literal(text, forDisplay(before)));
+            out.append(DisplayStyles.literal(text, DisplayStyles.forDisplay(before)));
             return;
         }
         int lead = 0;
@@ -6576,11 +5844,11 @@ public final class LineTranslator {
         }
         if (lead > 0) {
             Style owner = leadTakesNext(text, lead, after) ? after : before;
-            out.append(literal(text.substring(0, lead), forDisplay(owner)));
+            out.append(DisplayStyles.literal(text.substring(0, lead), DisplayStyles.forDisplay(owner)));
         }
         int unit = before == null ? 0 : unitLength(text, afterNumber, lead, tail);
         if (unit > 0) {
-            out.append(literal(text.substring(0, unit), forDisplay(before)));
+            out.append(DisplayStyles.literal(text.substring(0, unit), DisplayStyles.forDisplay(before)));
             lead = unit;
         }
         int mid = lead;
@@ -6593,10 +5861,10 @@ public final class LineTranslator {
             if (own >= 0) {
                 used[own] = true;
                 Style mine = accents.get(own).style();
-                paint = mine == null || paint == null ? forDisplay(mine)
+                paint = mine == null || paint == null ? DisplayStyles.forDisplay(mine)
                         : paint.withColor(mine.getColor());
             }
-            out.append(literal(text.substring(lead, mid), paint));
+            out.append(DisplayStyles.literal(text.substring(lead, mid), paint));
             lead = mid;
         }
         int back = tail;
@@ -6618,14 +5886,12 @@ public final class LineTranslator {
                          depth, accents, used, store);
         }
         if (back < tail) {
-            out.append(literal(text.substring(back, tail), forDisplay(after)));
+            out.append(DisplayStyles.literal(text.substring(back, tail), DisplayStyles.forDisplay(after)));
         }
         if (tail < text.length()) {
-            out.append(literal(text.substring(tail), forDisplay(after)));
+            out.append(DisplayStyles.literal(text.substring(tail), DisplayStyles.forDisplay(after)));
         }
     }
-
-    private static final int MAX_UNIT = 3;
 
     private static Style leadingSymbolStyle(List<LineParts.Piece> runs) {
         for (LineParts.Piece run : runs) {
@@ -6672,16 +5938,12 @@ public final class LineTranslator {
         return c == '[' || c == ']' || c == '【' || c == '】';
     }
 
-    private static boolean isUnitLetter(char c) {
-        return c >= 'a' && c <= 'z';
-    }
-
     static int unitLength(String text, boolean afterNumber, int lead, int tail) {
         if (!afterNumber || lead != 0 || text.isEmpty()) {
             return 0;
         }
         int unit = 0;
-        while (unit < tail && unit < MAX_UNIT && isUnitLetter(text.charAt(unit))) {
+        while (unit < tail && unit < TextWrapper.MAX_UNIT && TextWrapper.isUnitLetter(text.charAt(unit))) {
             unit++;
         }
         if (unit == 0) {
@@ -6707,7 +5969,7 @@ public final class LineTranslator {
             if (move > 0) {
                 move += trailingGlyph(out[i], out[i].length() - move);
                 move = out[i].length()
-                        - keepValueWithGlyph(out[i], out[i].length() - move, 0);
+                        - TextWrapper.keepValueWithGlyph(out[i], out[i].length() - move, 0);
                 String moved = out[i].substring(out[i].length() - move);
                 out[i] = out[i].substring(0, out[i].length() - move);
                 out[i + 1] = moved + out[i + 1];
@@ -6850,7 +6112,7 @@ public final class LineTranslator {
                     if (dropsSpaceBefore(before, term.translation())) {
                         before = before.substring(0, before.length() - 1);
                     }
-                    out.append(literal(before, base));
+                    out.append(DisplayStyles.literal(before, base));
                 }
                 Style style = base;
                 for (int k = 0; k < accents.size(); k++) {
@@ -6860,12 +6122,12 @@ public final class LineTranslator {
                     String accentText = accents.get(k).text();
                     if (text.startsWith(accentText, term.start())
                             && term.start() + accentText.length() <= term.end()) {
-                        style = forDisplay(accents.get(k).style());
+                        style = DisplayStyles.forDisplay(accents.get(k).style());
                         used[k] = true;
                         break;
                     }
                 }
-                out.append(literal(term.translation(), style));
+                out.append(DisplayStyles.literal(term.translation(), style));
                 from = term.end();
                 if (dropsSpaceAfter(term.translation(), text, from)) {
                     from++;
@@ -6873,11 +6135,11 @@ public final class LineTranslator {
                 continue;
             }
             if (at < 0) {
-                out.append(literal(text.substring(from), base));
+                out.append(DisplayStyles.literal(text.substring(from), base));
                 return;
             }
             if (at > from) {
-                out.append(literal(text.substring(from, at), base));
+                out.append(DisplayStyles.literal(text.substring(from, at), base));
             }
             LineParts.Piece accent = accents.get(which);
             boolean keep = overlapping(kept, at, at + accent.text().length()) != null;
@@ -6885,8 +6147,8 @@ public final class LineTranslator {
             if (shown == null && store != null && !keep) {
                 shown = termsWithin(accent.text(), store);
             }
-            out.append(literal(shown != null ? shown : accent.text(),
-                               forDisplay(accent.style())));
+            out.append(DisplayStyles.literal(shown != null ? shown : accent.text(),
+                               DisplayStyles.forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
@@ -6942,7 +6204,7 @@ public final class LineTranslator {
         boolean[] inSpan = new boolean[joined.length()];
         boolean forced = false;
         for (int i = 0; i < joined.length(); ) {
-            Token colour = colourToken(joined, i);
+            ColourTemplate.Token colour = ColourTemplate.colourToken(joined, i);
             if (colour != null) {
                 forced = colour.index() != 0;
                 i += colour.text().length();
@@ -7203,384 +6465,7 @@ public final class LineTranslator {
                 || (c >= '　' && c <= '〿');
     }
 
-    // /class 畫面的高度烘進字型 ascent，換 default 會整段移位
-    private static Style forDisplay(Style style) {
-        Style base = style == null ? Style.EMPTY : style;
-        FontDescription paired = com.wynnchayuan.render.PairedFont.forStyle(base);
-        return base.withFont(paired == null ? FontDescription.DEFAULT : paired);
-    }
-
-    private static final java.util.regex.Pattern WIDE_SCRIPT =
-            java.util.regex.Pattern.compile(
-                    "[\\u0400-\\u04ff\\u3040-\\u30ff\\u3400-\\u4dbf"
-                            + "\\u4e00-\\u9fff\\uac00-\\ud7af\\uff00-\\uffef]");
-
-    private static Style numberDisplay(Style style) {
-        Style big = displayFont(style);
-        return big != null ? big : forDisplay(style);
-    }
-
-    private static Style displayFont(Style style) {
-        return style != null && style.getFont() instanceof FontDescription.Resource r
-                && r.id() != null && r.id().getPath().startsWith("offset/") ? style : null;
-    }
-
-    private static Style greyed() {
-        return Style.EMPTY
-                .withColor(ChatFormatting.DARK_GRAY)
-                .withFont(FontDescription.DEFAULT);
-    }
-
-    static String stripColourTokens(String text) {
-        if (text == null || text.indexOf('{') < 0) {
-            return text;
-        }
-        String out = text;
-        if (out.contains(COLOR_END)) {
-            out = out.replace(COLOR_END, "");
-        }
-        return COLOUR_ANY.matcher(out).replaceAll("");
-    }
-
-    private static final java.util.regex.Pattern COLOUR_ANY =
-            java.util.regex.Pattern.compile("\\{c[^}]*}");
-
-    static Component literal(String text, Style style) {
-        text = stripColourTokens(text);
-        text = deIcon(text);
-        if (style != null && com.wynnchayuan.render.PairedFont.isOurs(style)
-                && !WIDE_SCRIPT.matcher(text).find()) {
-            style = style.withFont(FontDescription.DEFAULT);
-        }
-        Style base = upright(text, style);
-        if (style != null && style.getFont() != null
-                && !FontDescription.DEFAULT.equals(style.getFont())) {
-            base = base.withItalic(false);
-        }
-        return text.indexOf(SECTION) < 0
-                ? Component.literal(text).withStyle(base)
-                : coloured(text, base);
-    }
-
-    // Wynncraft 資源包把 Á 指到全螢幕黑幕 fade.png
-    static String deIcon(String text) {
-        return text == null || text.indexOf(HIJACKED_LETTER) < 0
-                ? text : text.replace(HIJACKED_LETTER, SAFE_LETTER);
-    }
-
-    private static final char HIJACKED_LETTER = 'Á';
-
-    private static final char SAFE_LETTER = 'A';
-
-    private static final char SECTION = '§';
-
-    static Component coloured(String text, Style base) {
-        MutableComponent out = Component.empty();
-        Style now = base;
-        int from = 0;
-        for (int i = 0; i + 1 < text.length(); i++) {
-            if (text.charAt(i) != SECTION) {
-                continue;
-            }
-            ChatFormatting code = ChatFormatting.getByCode(
-                    Character.toLowerCase(text.charAt(i + 1)));
-            if (code == null) {
-                continue;
-            }
-            if (i > from) {
-                out.append(Component.literal(text.substring(from, i)).withStyle(now));
-            }
-            now = code == ChatFormatting.RESET ? base : now.applyFormat(code);
-            i++;
-            from = i + 1;
-        }
-        if (from < text.length()) {
-            out.append(Component.literal(text.substring(from)).withStyle(now));
-        }
-        return out;
-    }
-
-    private static Style upright(String text, Style style) {
-        Style base = style == null ? Style.EMPTY : style;
-        return base.withItalic(base.isItalic() && !hasHan(text));
-    }
-
-    // MC 對自訂名稱物品自動加斜體，Wynncraft 沒關
     public static Component unslantAll(Component line) {
-        if (line == null) {
-            return null;
-        }
-        MutableComponent out = Component.empty();
-        line.visit((style, text) -> {
-            if (!text.isEmpty()) {
-                out.append(Component.literal(text).withStyle(style.withItalic(false)));
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return out;
-    }
-
-    static Component unslant(Component line) {
-        if (line == null || !hasHan(line.getString())) {
-            return line;
-        }
-        MutableComponent out = Component.empty();
-        line.visit((style, text) -> {
-            if (!text.isEmpty()) {
-                out.append(Component.literal(text).withStyle(style.withItalic(false)));
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return out;
-    }
-
-    private static boolean hasHan(String text) {
-        for (int i = 0; i < text.length(); ) {
-            int cp = text.codePointAt(i);
-            if (Character.UnicodeScript.of(cp) == Character.UnicodeScript.HAN) {
-                return true;
-            }
-            i += Character.charCount(cp);
-        }
-        return false;
-    }
-
-    private enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER, COLOR }
-
-    private record Token(Kind kind, String text, int index) {
-        Token(Kind kind, String text) {
-            this(kind, text, 0);
-        }
-    }
-
-    static final String COLOR_END = "{/}";
-
-    private static Token colourToken(String template, int at) {
-        if (template.startsWith(COLOR_END, at)) {
-            return new Token(Kind.COLOR, COLOR_END, 0);
-        }
-        boolean word = at + 3 <= template.length()
-                && template.charAt(at) == '{' && template.charAt(at + 1) == 'w';
-        if (!word && (at + 3 > template.length()
-                || template.charAt(at) != '{' || template.charAt(at + 1) != 'c')) {
-            return null;
-        }
-        int end = template.indexOf('}', at + 2);
-        if (end < 0) {
-            return null;
-        }
-        String body = template.substring(at + 2, end);
-        String whole = template.substring(at, end + 1);
-        if (body.length() == 1 && body.charAt(0) >= '1' && body.charAt(0) <= '9') {
-            int slot = body.charAt(0) - '0';
-            return new Token(Kind.COLOR, whole, word ? slot + WORD_SLOT : slot);
-        }
-        if (word) {
-            return null;
-        }
-        if (body.length() > 1 && body.charAt(0) == ':') {
-            return new Token(Kind.COLOR, whole, -1);
-        }
-        return null;
-    }
-
-    record Bar(char sign, List<Style> styles) { }
-
-    private static final int MIN_BAR = 3;
-
-    static List<Bar> bars(List<LineParts.Piece> runs) {
-        List<Bar> out = new ArrayList<>();
-        char sign = 0;
-        List<Style> styles = new ArrayList<>();
-        for (LineParts.Piece run : runs) {
-            Style style = run.style() == null ? Style.EMPTY : run.style();
-            for (int i = 0; i < run.text().length(); i++) {
-                char c = run.text().charAt(i);
-                if (c == sign) {
-                    styles.add(style);
-                    continue;
-                }
-                if (styles.size() >= MIN_BAR) {
-                    out.add(new Bar(sign, List.copyOf(styles)));
-                }
-                styles.clear();
-                sign = isBarSign(c) ? c : 0;
-                if (sign != 0) {
-                    styles.add(style);
-                }
-            }
-        }
-        if (styles.size() >= MIN_BAR) {
-            out.add(new Bar(sign, List.copyOf(styles)));
-        }
-        return out;
-    }
-
-    private static boolean isBarSign(char c) {
-        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c)
-                && !Character.isSurrogate(c);
-    }
-
-    static int[] barSpan(String text) {
-        int i = 0;
-        while (i < text.length()) {
-            char c = text.charAt(i);
-            if (!isBarSign(c)) {
-                i++;
-                continue;
-            }
-            int j = i;
-            while (j < text.length() && text.charAt(j) == c) {
-                j++;
-            }
-            if (j - i >= MIN_BAR) {
-                return new int[] {i, j};
-            }
-            i = j;
-        }
-        return null;
-    }
-
-    private static Bar takeBar(List<Bar> bars, boolean[] used, char sign, int length) {
-        for (int i = 0; i < bars.size(); i++) {
-            Bar bar = bars.get(i);
-            if (!used[i] && bar.sign() == sign && bar.styles().size() == length) {
-                used[i] = true;
-                return bar;
-            }
-        }
-        return null;
-    }
-
-    private static void appendBar(MutableComponent line, Bar bar) {
-        int at = 0;
-        while (at < bar.styles().size()) {
-            Style style = bar.styles().get(at);
-            int end = at;
-            while (end < bar.styles().size() && bar.styles().get(end).equals(style)) {
-                end++;
-            }
-            line.append(literal(String.valueOf(bar.sign()).repeat(end - at),
-                                forDisplay(style)));
-            at = end;
-        }
-    }
-
-    static List<Style> palette(List<LineParts.Piece> runs) {
-        List<Style> out = new ArrayList<>();
-        for (LineParts.Piece run : runs) {
-            if (!hasContent(run.text())) {
-                continue;
-            }
-            Style style = run.style() == null ? Style.EMPTY : run.style();
-            if (!out.contains(style)) {
-                out.add(style);
-            }
-        }
-        return out;
-    }
-
-    static List<Style> wordPalette(List<LineParts.Piece> runs) {
-        List<Style> out = new ArrayList<>();
-        for (LineParts.Piece run : runs) {
-            if (!GlyphSplitter.hasLetter(run.text())) {
-                continue;
-            }
-            Style style = run.style() == null ? Style.EMPTY : run.style();
-            if (!out.contains(style)) {
-                out.add(style);
-            }
-        }
-        return out;
-    }
-
-    private static final int WORD_SLOT = 100;
-
-    private static Style colourOf(Token token, List<Style> palette,
-                                  List<Style> words, Style base) {
-        if (token.index() == 0) {
-            return null;
-        }
-        if (token.index() > WORD_SLOT) {
-            int slot = token.index() - WORD_SLOT;
-            return slot <= words.size() ? forDisplay(words.get(slot - 1)) : null;
-        }
-        if (token.index() > 0) {
-            return token.index() <= palette.size()
-                    ? forDisplay(palette.get(token.index() - 1)) : null;
-        }
-        String spec = token.text().substring(3, token.text().length() - 1).strip();
-        if (spec.startsWith("#")) {
-            try {
-                return base.withColor(TextColor.fromRgb(
-                        Integer.parseInt(spec.substring(1), 16)));
-            } catch (NumberFormatException e) {
-                return null;
-            }
-        }
-        ChatFormatting named = ChatFormatting.getByName(spec);
-        return named == null ? null : base.applyFormat(named);
-    }
-
-    private static final int NUMBERED_LENGTH = 4;
-
-    private static int numberedAt(String template, int at) {
-        if (at + NUMBERED_LENGTH > template.length()
-                || template.charAt(at) != '{' || template.charAt(at + 1) != '~'
-                || template.charAt(at + 3) != '}') {
-            return 0;
-        }
-        char digit = template.charAt(at + 2);
-        return digit >= '1' && digit <= '9' ? digit - '0' : 0;
-    }
-
-    private static List<Token> tokenize(String template) {
-        List<Token> out = new java.util.ArrayList<>();
-        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
-        String place = GlyphSplitter.PLACE_PLACEHOLDER;
-        String number = GlyphSplitter.NUMBER_PLACEHOLDER;
-        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
-        int i = 0;
-        StringBuilder text = new StringBuilder();
-
-        while (i < template.length()) {
-            if (template.startsWith(glyph, i)) {
-                flush(text, out);
-                out.add(new Token(Kind.GLYPH, glyph));
-                i += glyph.length();
-            } else if (template.startsWith(place, i)) {
-                flush(text, out);
-                out.add(new Token(Kind.PLACE, place));
-                i += place.length();
-            } else if (template.startsWith(number, i)) {
-                flush(text, out);
-                out.add(new Token(Kind.NUMBER, number));
-                i += number.length();
-            } else if (numberedAt(template, i) > 0) {
-                flush(text, out);
-                out.add(new Token(Kind.NUMBER, "", numberedAt(template, i)));
-                i += NUMBERED_LENGTH;
-            } else if (template.startsWith(user, i)) {
-                flush(text, out);
-                out.add(new Token(Kind.USER, user));
-                i += user.length();
-            } else if (colourToken(template, i) != null) {
-                Token colour = colourToken(template, i);
-                flush(text, out);
-                out.add(colour);
-                i += colour.text().length();
-            } else {
-                text.append(template.charAt(i++));
-            }
-        }
-        flush(text, out);
-        return out;
-    }
-
-    private static void flush(StringBuilder text, List<Token> out) {
-        if (!text.isEmpty()) {
-            out.add(new Token(Kind.TEXT, text.toString()));
-            text.setLength(0);
-        }
+        return DisplayStyles.unslantAll(line);
     }
 }

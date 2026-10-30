@@ -138,19 +138,19 @@ public final class NameRowWrapTest {
         java.util.function.ToIntFunction<String> m = s -> measure(Component.literal(s));
         String text = "耀光之微光醒 (" + SHINY + ")";
         int max = m.applyAsInt("耀光之微光醒 (Shiny Glimm");
-        String wrapped = LineTranslator.wrapToWidth(text, max, m);
+        String wrapped = TextWrapper.wrapToWidth(text, max, m);
         check("★ 折行不把左括號留在行尾（實際「" + wrapped.replace("\n", "⏎") + "」）",
               wrapped.equals("耀光之微光醒\n(" + SHINY + ")"));
-        String balanced = LineTranslator.wrapBalanced(text, max, 2, m);
+        String balanced = TextWrapper.wrapBalanced(text, max, 2, m);
         boolean clean = true;
         for (String row : balanced.split("\n", -1)) {
             clean &= !row.strip().endsWith("(") && !row.strip().startsWith(")");
         }
         check("★ 平均分配之後也一樣（實際「" + balanced.replace("\n", "⏎") + "」）", clean);
-        String closing = LineTranslator.wrapToWidth("微光醒的效果(三層)", m.applyAsInt("微光醒的效果(三層"), m);
+        String closing = TextWrapper.wrapToWidth("微光醒的效果(三層)", m.applyAsInt("微光醒的效果(三層"), m);
         check("右括號不從行首開始（實際「" + closing.replace("\n", "⏎") + "」）",
               !closing.contains("\n)"));
-        String spaced = LineTranslator.wrapToWidth("微光醒 (" + SHINY + ") 的效果",
+        String spaced = TextWrapper.wrapToWidth("微光醒 (" + SHINY + ") 的效果",
                 m.applyAsInt("微光醒 (Shiny Glimm"), m);
         check("括號後面還有字時也一樣（實際「" + spaced.replace("\n", "⏎") + "」）",
               !spaced.contains("(\n") && !spaced.contains("( \n"));
