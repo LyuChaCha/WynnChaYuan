@@ -1,18 +1,3 @@
-/**
- * wynnchayuan.com 的網頁：首頁、功能、披風一覽、帳號、管理、協作翻譯、回饋。中文與英文各一份。
- *
- * 五頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
- *
- * 語言：頁面的樣板用 %%鍵%% 標位置，render() 填進去。繁體中文與英文的字在下面的 TEXT
- * （這兩份是正本，改字先改這裡）；其他語言在 lang/<代碼>.json，由 build-site-text.mjs
- * 併成 site-text.js。用哪一種由 worker 決定（訪客選過的那個 cookie，沒選過就看瀏覽器的
- * 語言）；頁首右邊可以切換。加一種語言就是在 lang/ 加一份、在 LANG_NAMES 加一個名字。
- *
- * 登入：網站沒辦法自己確認 Minecraft 帳號，所以是<b>從遊戲裡開</b>——模組拿通行證換一條
- * 網址（#t=…），這裡把它收進 localStorage、從網址列上拿掉，之後每個 API 請求帶著它。
- *
- * 頁面裡的程式刻意不用樣板字串（反引號、錢字號加大括號）：整頁是包在樣板字串裡的。
- */
 
 import { MORE_TEXT } from './site-text.js';
 import { DEMO } from './demo-data.js';
@@ -25,17 +10,13 @@ const STYLE = String.raw`
     --ground: #0f1512; --panel: #161e19; --panel-2: #1c2620; --line: #2a382f;
     --ink: #e9efe9; --ink-2: #a3b3a7; --leaf: #7fd08a; --leaf-deep: #2f7d46;
     --gold: #d8b765; --cyan: #5bd8e8; --danger: #e08a8a;
-    /* 動作的節奏：進場用 --arrive（先快後慢），按壓與懸停用 --out；回饋 140ms、狀態 200ms */
     --out: cubic-bezier(0.23, 1, 0.32, 1); --arrive: cubic-bezier(0.16, 1, 0.3, 1); --move: cubic-bezier(0.77, 0, 0.175, 1);
     --fast: 140ms; --base: 200ms;
-    /* 收起來用的：起步慢、收尾快（打開用 --out）。頁首的選單打開 180–200ms、關掉 120ms */
     --exit: cubic-bezier(0.32, 0, 0.67, 0);
   }
   * { box-sizing: border-box; }
-  /* 用鍵盤的人：第一下 Tab 就能跳過頁首 */
   .skip { position: absolute; left: 12px; top: -60px; z-index: 20; padding: 8px 14px; border-radius: 9px; background: var(--leaf); color: #0c1a10; font-weight: 600; font-size: 14px; }
   .skip:focus { top: 10px; text-decoration: none; }
-  /* 整頁一層很淡的顆粒：大片的深色才不會平得像塑膠。不擋滑鼠 */
   body::after {
     content: ""; position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -43,10 +24,8 @@ const STYLE = String.raw`
   .lost { display: grid; justify-items: start; gap: 6px; padding: 8vh 0 6vh; }
   .lost .code { font-family: PxTC, ui-monospace, monospace; font-size: 80px; line-height: 1; color: var(--leaf); text-shadow: 5px 5px 0 #0a2413; }
   .lost h1 { margin-top: 18px; }
-  /* 換頁：內容淡過去，頁首留在原地不閃。很短——換頁是常做的事，動畫不該讓人等 */
   @view-transition { navigation: auto; }
   ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 150ms; animation-timing-function: ease; }
-  /* 披風一覽換排序、換篩選：每張卡滑到新的位置（在畫面上移動的東西用兩頭慢的曲線） */
   ::view-transition-group(*) { animation-duration: 320ms; animation-timing-function: var(--move); }
   ::view-transition-group(root), ::view-transition-group(top) { animation-duration: 150ms; }
   html { scroll-behavior: smooth; scroll-padding-top: 76px; scrollbar-color: #2f4236 var(--ground); accent-color: var(--leaf); }
@@ -65,9 +44,7 @@ const STYLE = String.raw`
     outline: 2px solid var(--leaf); outline-offset: 2px;
   }
   .top { border-bottom: 1px solid var(--line); background: #0f1512e6; position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); view-transition-name: top; }
-  /* 頁首永遠只有一列：標誌、選單（放不下的收進「更多」）、右邊一組工具。窄到手機就整排收進漢堡選單的面板 */
   .top .in { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: nowrap; align-items: center; gap: 18px; }
-  /* 頁首飄過的像素葉子（程式畫在這張小畫布上，一格像素放大成 2px）：在字的後面、不擋滑鼠 */
   .hn-leaves { position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 61px; pointer-events: none; image-rendering: pixelated; opacity: .72; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; flex: none; }
   .brand:hover { text-decoration: none; }
@@ -77,8 +54,6 @@ const STYLE = String.raw`
   nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; transition: color var(--fast) ease, background-color var(--fast) ease; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
-  /* 頁首的選單（hn-*）：寬度是標誌與工具剩下的那一段（flex-basis 0，不跟著內容變），程式量過才把放不下的收起來。
-     量好之前先藏住溢出的部分（沒有程式的時候也不會蓋到右邊的按鈕） */
   .hn { flex: 1 1 0; min-width: 0; overflow: hidden; display: block; }
   .hn.hn-live { overflow: visible; }
   .hn-list { display: flex; flex-wrap: nowrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
@@ -95,7 +70,6 @@ const STYLE = String.raw`
   .tools { margin-left: auto; display: flex; align-items: center; gap: 8px; flex: none; }
   .ico { width: 16px; height: 16px; flex: none; }
   .btn.small { padding: 5px 11px; font-size: 13px; border-radius: 8px; gap: 6px; }
-  /* 頁首右邊：贊助（只有圖示，滑過或用鍵盤停上去會浮出「贊助」）、下載、帳號（沒登入是「登入」加語言） */
   .hn-icon { display: inline-flex; align-items: center; justify-content: center; gap: 2px; min-width: 34px; height: 34px; padding: 0 8px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: var(--ink-2); font: inherit; cursor: pointer; transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, transform var(--fast) var(--out); }
   .hn-icon:hover { text-decoration: none; }
   .hn-icon > .ico { width: 18px; height: 18px; }
@@ -109,7 +83,6 @@ const STYLE = String.raw`
   }
   .hn-tip:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: 0ms; }
   .hn-tip[aria-expanded="true"]::after { opacity: 0 !important; transition-delay: 0ms !important; }
-  /* 下載鈕的光：滑上去時一道斜斜的亮光掃過一次（離開時瞬間歸位，下次滑上去再掃一次）。不循環 */
   .hn-sheen { position: relative; overflow: hidden; isolation: isolate; }
   .hn-sheen::after { content: ""; position: absolute; top: -40%; bottom: -40%; left: 0; width: 38%; pointer-events: none;
     background: linear-gradient(100deg, #fff0 0%, #ffffff8c 50%, #fff0 100%); transform: translateX(-190%) skewX(-18deg); }
@@ -140,7 +113,6 @@ const STYLE = String.raw`
   .hn-langs > a[aria-checked="true"], .hn-langs > a[aria-current="true"] { color: var(--leaf); }
   .hn-langs > a .ico { color: var(--leaf); }
   .hn-burger { display: none; }
-  /* 手機的面板：選單、下載、帳號、語言，從上往下 */
   .hn-panel { display: none; }
   .hn-pnav, .hn-psec { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: grid; gap: 2px; }
   .hn-psec { border-top: 1px solid var(--line); }
@@ -166,9 +138,7 @@ const STYLE = String.raw`
     opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.96); transform-origin: top right;
     transition: opacity 120ms var(--exit), transform 120ms var(--exit), visibility 0s linear 120ms;
   }
-  /* 打開：從按鈕那一角長出來（右邊的選單是右上角）。全部用 transition——開到一半又關，會從當下的位置接著收回去 */
   .menu.open { opacity: 1; visibility: visible; transform: none; transition: opacity 180ms var(--out), transform 200ms var(--out), visibility 0s; }
-  /* 裡面一項接一項淡進來（相隔 18ms，--i 是程式填的序號）；只在打開時。關掉時不動，等選單淡完才悄悄歸位 */
   .menu > *, .hn-panel > * { opacity: 0; transform: translateY(-3px); transition: opacity 0s linear 120ms, transform 0s linear 120ms, background-color 150ms ease; }
   .menu.open > *, .hn-panel.open > * { opacity: 1; transform: none;
     transition: opacity 180ms var(--out) calc(var(--i, 0) * 18ms), transform 220ms var(--out) calc(var(--i, 0) * 18ms), background-color 150ms ease; }
@@ -177,18 +147,15 @@ const STYLE = String.raw`
   .menu > a:hover, .menu .hn-langs > a:hover { text-decoration: none; }
   .menu > a .ico { color: var(--ink-2); }
   .menu > p:not(.hn-mhead) { margin: 6px 0 0; padding: 9px 10px 5px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 12px; line-height: 1.55; }
-  /* 功能頁預覽的語言下拉（以前頁首的語言選單也是它） */
   select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease; }
   select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
   select.pick { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; transition: border-color var(--fast) ease; }
   select.pick:hover { border-color: var(--leaf-deep); }
-  /* 同一個漢字在各語言的寫法不一樣：照頁面的語言挑字型，不要一律拿繁體中文的字型去畫 */
   :lang(zh-Hans) body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
   :lang(ja) body { font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Meiryo", system-ui, sans-serif; }
   :lang(ko) body { font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
   h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
-  /* 大段之間留寬一點、標題貼著自己的內容：寬與緊的差距才看得出哪幾塊是一組 */
   h2 { margin: 56px 0 14px; font-size: 19px; font-weight: 650; }
   .lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; text-wrap: pretty; }
   .policy { max-width: 72ch; line-height: 1.75; }
@@ -198,7 +165,6 @@ const STYLE = String.raw`
   .policy ul { margin: 8px 0; padding-left: 1.3em; display: grid; gap: 4px; }
   .policy b { color: var(--ink); font-weight: 600; }
   .panel { padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
-  /* 協作翻譯 */
   .tr-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 20px 0 6px; }
   .tr-bar label { margin: 0; }
   .tr-role a { color: var(--leaf); }
@@ -251,7 +217,6 @@ const STYLE = String.raw`
   .tr-text:focus { border-color: var(--leaf-deep); outline: none; }
   .tr-prop { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
   .tr-item { padding: 8px 10px; border-radius: 8px; background: var(--panel-2); }
-  /* 回饋（/feedback 與管理頁的回饋列表） */
   .fb-form { max-width: 720px; margin-top: 20px; }
   .fb-form > label { margin-top: 16px; }
   .fb-form > label:first-child { margin-top: 0; }
@@ -300,7 +265,7 @@ const STYLE = String.raw`
   .btn.danger { border-color: #5a2b2b; background: #2e1a1a; color: var(--danger); }
   .btn[disabled] { opacity: .6; cursor: progress; }
   .btn[disabled]:active { transform: none; }
-  /* 懸停只給真的有滑鼠的裝置：觸控螢幕點一下會卡在懸停的樣子 */
+  /* 懸停只給有滑鼠的裝置：觸控點一下會卡在懸停的樣子 */
   @media (hover: hover) and (pointer: fine) {
     .btn:hover { border-color: var(--leaf-deep); }
     .btn.primary:hover { background: #93dba0; border-color: #93dba0; }
@@ -363,7 +328,6 @@ const STYLE = String.raw`
   .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); gap: 48px; align-items: center; padding: 14px 0 8px; }
   .hero h1 { font-size: clamp(34px, 4.3vw, 50px); line-height: 1.14; letter-spacing: -.012em; text-wrap: balance; }
   .hero .lede { font-size: 16px; }
-  /* 右邊那一面：真的在跑的預覽（跟功能頁同一份），不是圖 */
   .hero-screen { min-width: 0; animation: settle 720ms var(--arrive) 80ms both; }
   .hero-screen .screen { display: block; aspect-ratio: 480 / 470; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 34px 70px -24px #000000e6, 0 0 0 6px #ffffff07; transition: border-color var(--base) ease, transform var(--base) var(--out); }
   .hero-cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin: 12px 4px 0; font-size: 13px; color: var(--ink-2); }
@@ -378,7 +342,6 @@ const STYLE = String.raw`
   @keyframes fade { from { opacity: 0; } }
   .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  /* 語言：按一個，右邊那一面就換成那種語言（平常自己輪著換） */
   .chip { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: 13px; color: var(--ink-2); background: var(--panel); cursor: pointer; transition: color var(--fast) ease, border-color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out); }
   .chip:active { transform: scale(.96); }
   .chip[aria-pressed="true"] { color: #0c1a10; background: var(--leaf); border-color: var(--leaf); }
@@ -389,7 +352,6 @@ const STYLE = String.raw`
   .more { margin: 14px 0 0; font-size: 14px; }
   .more a { display: inline-flex; align-items: center; gap: 6px; }
   .more .ico { transition: transform var(--fast) var(--out); }
-  /* 團隊：三個身分各一段，一個人一列（頭像、名字、遊戲 ID、葉子）；點下去是他在 Wynncraft 的頁面 */
   .team { margin-top: 20px; border-bottom: 1px solid var(--line); }
   .band { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 14px 28px; padding: 22px 0; border-top: 1px solid var(--line); }
   .band-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; align-content: start; }
@@ -420,14 +382,12 @@ const STYLE = String.raw`
   .who-tags { min-width: 0; font-size: 12px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .who-tags .tl { color: var(--leaf); }
   .team-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  /* 貢獻公會：比一個人大一號——旗幟、圖示、名字與標籤 */
   .lineup.guilds { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .guild { padding: 10px 14px 10px 12px; border-radius: 12px; }
   .guild img { opacity: 0; transition: opacity 240ms ease; }
   .g-banner { width: 28px; height: 56px; flex: none; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 4px 8px #0009); }
   .g-icon { width: 56px; height: 56px; flex: none; border-radius: 12px; object-fit: contain; background: #f4f8f6; }
   span.g-icon { display: grid; place-items: center; background: var(--panel-2); color: var(--ink-2); font-size: 13px; font-weight: 650; letter-spacing: .04em; }
-  /* 名字：標籤在前（[YCY] YuChaYuan），跟遊戲裡公會的寫法一樣 */
   .g-name { display: flex; align-items: baseline; gap: 7px; min-width: 0; flex: 1; }
   .g-name b { min-width: 0; font-size: 16px; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .g-name span { flex: none; font-size: 14px; font-weight: 600; color: var(--leaf); font-variant-numeric: tabular-nums; }
@@ -436,19 +396,16 @@ const STYLE = String.raw`
   .everyone svg { width: 20px; height: 20px; }
   .everyone b { margin-right: .7em; color: var(--ink); font-weight: 600; }
 
-  /* 功能頁：最上面是即時預覽——照遊戲裡設定畫面右邊那一塊做 */
   .play { margin-top: 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; }
   .play-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
   .play-lang { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 13px; color: var(--ink-2); }
   .seg { position: relative; display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--ground); }
-  /* 選到的那一顆底下的那一塊：換一顆就滑過去（程式放的，見 slide()）。沒有程式的時候照舊是按鈕自己的底色 */
   .seg .pill { position: absolute; left: 0; top: 0; border-radius: 7px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line); pointer-events: none; transition: transform 220ms var(--out), width 220ms var(--out), height 220ms var(--out), opacity var(--fast) ease; }
   .seg button { position: relative; }
   .seg.live button[aria-pressed="true"] { background: none; box-shadow: none; }
   .seg button { font: inherit; font-size: 13px; padding: 5px 12px; border: 0; border-radius: 7px; background: none; color: var(--ink-2); cursor: pointer; transition: color var(--fast) ease, background-color var(--fast) ease, transform var(--fast) var(--out); }
   .seg button:active { transform: scale(.97); }
   .seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
-  /* 即時預覽：上面一整面「遊戲畫面」是主角，下面幾列是真的選項，一動畫面就跟著變 */
   .play-body { display: grid; }
   .play-view { border-bottom: 1px solid var(--line); background: #0a0f0c; }
   .play-set { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; align-content: start; padding: 0 16px; overflow: hidden; }
@@ -463,9 +420,6 @@ const STYLE = String.raw`
   .range input { width: 150px; }
   .range output { min-width: 6ch; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
 
-  /* 遊戲畫面。.screen 是外面那一格（高度由比例決定），.scr 是固定邏輯大小、整塊縮放的那一面。
-     後面是實機截圖，前面每一塊是遊戲裡真的那張材質（網址在 --t-* 裡，見 TEX_CSS），
-     一格材質畫成兩格——所以下面的數字多半是「材質的格數 × 2」 */
   .screen { position: relative; display: block; width: 100%; overflow: hidden; background: #0a0f0c; aspect-ratio: 960 / 480; }
   .scr {
     position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; width: 960px; height: 480px;
@@ -484,23 +438,15 @@ const STYLE = String.raw`
   .scr.still .hud > * { animation: none; }
   .scr .dim { position: absolute; inset: 0; background: #0a0a0a99; }
   .c-y { color: #ffff55; } .c-g { color: #55ff55; } .c-gr { color: #aaaaaa; } .c-go { color: #ffaa00; } .c-m { color: #ff55ff; }
-  /* 說明裡的幾種字色，照實機截圖取的：次要的字、更淡的括號、加成、減損 */
   .scr .soft { color: #aaaaaa; } .scr .dimmer { color: #6a6a6a; } .scr .good { color: #acfac6; } .scr .worse { color: #faacac; }
-  /* 物品說明的框：遊戲的那一張貼圖用九宮格拉開（邊上下 12 格、左右 10 格）。
-     f-rare、f-normal、f-ingredient 是遊戲照稀有度給的框，沒寫的（ours）是我們另開的面板——遊戲平常的那種深色框 */
-  /* 字離框的外緣 12 格（遊戲畫說明框時，框比字的範圍四邊各大 3＋9 格；這裡一格是 .1em）。
-     框線在貼圖裡離外緣 2–5 格不等（素材那一張的側線最裡面），所以不能再少 */
   .tip { position: relative; isolation: isolate; padding: 1.2em 1.2em 1.1em; white-space: nowrap; }
   .tip::before { content: ""; position: absolute; inset: 0; z-index: -1; border: solid transparent; border-width: 1.2em 1em; border-image: var(--t-tip-plain) 12 10 fill / 1.2em 1em; }
   .tip.f-rare::before { border-image-source: var(--t-tip-rare); }
   .tip.f-normal::before { border-image-source: var(--t-tip-normal); }
   .tip.f-ingredient::before { border-image-source: var(--t-tip-ingredient); }
-  /* 物品那一面：背包在左、兩個框在右，框的字小一級（16）。框跟遊戲一樣照內容的寬度，但有上下限：最窄 15em、最寬 19.5em（再長才折行）。
-     兩個都到最寬時，左緣還在背包裡最右邊那一格物品的右邊 */
   .duo .tip { width: max-content; min-width: 15em; max-width: 19.5em; font-size: 16px; }
   .tip-head { display: flex; align-items: center; gap: .5em; margin-bottom: .2em; }
   .tip .emblem { width: 3.2em; height: 3.2em; flex: none; }
-  /* 名字與開頭那個數字的顏色跟著稀有度（t-rare、t-normal、t-ingredient） */
   .tip .tname { color: #ff55ff; white-space: normal; }
   .tip.t-normal .tname { color: #fff; } .tip.t-ingredient .tname { color: #20aa20; }
   .tip .pills { display: flex; gap: .2em; margin-top: .2em; }
@@ -513,7 +459,6 @@ const STYLE = String.raw`
   .tip.t-normal .lead b { color: #e0e0e0; } .tip.t-ingredient .lead b { color: #7dc97d; }
   .tip .jobs { display: flex; flex-wrap: wrap; gap: 0 .9em; margin-bottom: .35em; white-space: nowrap; }
   .tip .jobs .ico { margin-left: 0; }
-  /* 武器的說明有好幾頁：最底下一排圓點（遊戲裡是十字形的小點）與換頁的按鍵 */
   .tip .pager { display: flex; justify-content: center; align-items: center; gap: .55em; margin-top: .5em; }
   .tip .dot { width: .5em; height: .5em; background: #455449; clip-path: polygon(25% 0, 75% 0, 75% 25%, 100% 25%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0 75%, 0 25%, 25% 25%); }
   .tip .dot.on { background: #ffea80; }
@@ -527,11 +472,8 @@ const STYLE = String.raw`
   .tip u { display: inline-block; width: 1em; height: 1em; margin-right: .3em; vertical-align: -.12em; text-decoration: none; background: var(--t-mark) 0 0 / 3em 1em no-repeat; }
   .tip u.ok { background-position: -1em 0; } .tip u.no { background-position: -2em 0; }
   .tip .req u { margin: 0; }
-  /* 標籤在左、值靠右；放不下的時候值掉到下一行（還是靠右），標籤不拆字 */
   .tip .kv { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 .8em; }
   .tip .kv span:last-child { margin-left: auto; text-align: right; }
-  /* 背包：遊戲裡那一張木頭的。物品照格子的位置擺，滑鼠指著的那一格亮起來。
-     ghost 是沒穿裝備的格子裡那個淡淡的影子（slots.png 一條七個）；slot 是可以指的東西（按鈕），qty 是右下角的數量 */
   .inv { position: absolute; left: 5px; top: 56px; width: 374px; height: 350px; background: var(--t-inventory) 0 0 / 100% 100% no-repeat; }
   .scr .it { position: absolute; width: 32px; height: 32px; }
   .scr .it.smooth { image-rendering: auto; }
@@ -542,13 +484,9 @@ const STYLE = String.raw`
   .inv .slot img.smooth { image-rendering: auto; }
   .inv .slot:focus-visible { outline: 2px solid #fff; outline-offset: 0; }
   .inv .qty { position: absolute; right: -2px; bottom: -5px; font-size: 16px; line-height: 1; }
-  /* 訪客還沒指過任何一樣之前，另外幾樣輪流輕輕亮一下：這些可以指 */
   .inv:not(.used) .slot[aria-pressed="false"]::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: 0; animation: beckon 2.6s ease-in-out infinite; }
   .inv:not(.used) .slot[aria-pressed="false"] ~ .slot[aria-pressed="false"]::after { animation-delay: 1.3s; }
   @keyframes beckon { 0%, 55%, 100% { opacity: 0; } 28% { opacity: .3; } }
-  /* 背包裡的人：皮膚貼在方塊的六個面上，用 CSS 的 3D 轉（makeDoll）。大小與位置照遊戲的算法：
-     人物格是貼圖的 (33,16)–(82,86)，人站在正中間、頭頂到腳 56 格多一點；轉頭時超出格子的部分裁掉，
-     跟遊戲一樣。會看著滑鼠 */
   .dollclip { position: absolute; left: 66px; top: 32px; width: 98px; height: 140px; overflow: hidden; pointer-events: none; }
   .dollbox { position: absolute; left: 21px; top: 16px; width: 56px; height: 112px; }
   .doll, .doll div { position: absolute; transform-style: preserve-3d; }
@@ -559,32 +497,23 @@ const STYLE = String.raw`
   .duo { position: absolute; right: 5px; top: 34px; display: flex; align-items: flex-start; width: max-content; }
   .duo > * { flex: none; }
   .gapmark { position: relative; align-self: stretch; font-size: 16px; }
-  /* 兩個框之間留多寬：框的上面量一段，數字寫在它上面 */
   .gapmark::before { content: ""; position: absolute; left: calc(-1 * var(--frame-l, 0px)); right: calc(-1 * var(--frame-r, 0px)); top: -12px; height: 8px; border: solid var(--leaf); border-width: 0 2px; background: linear-gradient(var(--leaf), var(--leaf)) center / 100% 2px no-repeat; }
   .gapmark span { position: absolute; left: 50%; top: -30px; transform: translateX(-50%); color: var(--leaf); font-size: 14px; line-height: 1; white-space: nowrap; }
-  /* 底下那一排：快捷列、生命與魔力、等級是同一張圖（build-textures.py 照實機的位置疊好的），數字與物品另外放 */
   .hudbar { position: absolute; left: 50%; bottom: -6px; width: 464px; height: 110px; transform: translateX(-50%); background: var(--t-hud) 0 0 / 100% 100% no-repeat; }
   .hudbar .num { position: absolute; top: 14px; width: 144px; font-size: 16px; line-height: 1; text-align: center; white-space: nowrap; }
   .hudbar .hp { left: 30px; } .hudbar .mp { left: 288px; }
-  /* 等級：金色六角形上白色的數字，四邊描深色的邊（遊戲裡就是這樣） */
   .hudbar .lv { left: 208px; top: 25px; width: 48px; color: #fff; text-shadow: 2px 0 #3a2414, -2px 0 #3a2414, 0 2px #3a2414, 0 -2px #3a2414, 2px 2px #3a2414, -2px 2px #3a2414, 2px -2px #3a2414, -2px -2px #3a2414; }
   .held { position: absolute; left: 0; right: 0; bottom: 112px; text-align: center; white-space: nowrap; color: #ff55ff; }
-  /* Boss 血條、右上的任務追蹤、記分板 */
   .boss { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); text-align: center; white-space: nowrap; color: #ff5555; }
-  /* 怪物的等級：遊戲裡是名字後面一顆灰底的小方框 */
   .scr .mlv { display: inline-block; margin-left: .45em; padding: 0 .5em; border-radius: 4px; font-size: .7em; line-height: 1.45; letter-spacing: .1em; vertical-align: .14em; color: #fff; background: #555; box-shadow: 0 2px 0 #2c2c2c; text-shadow: none; }
   .boss i { display: block; width: 364px; height: 10px; margin: 4px auto 0; background: linear-gradient(90deg, #e0358f 62%, #4a1232 62%); box-shadow: 0 0 0 2px #000000b0; }
   .trk { position: absolute; top: 58px; right: 10px; display: grid; justify-items: end; gap: 8px; max-width: 46%; text-align: right; white-space: nowrap; }
   .trk .tip { text-align: left; }
   .board { position: absolute; right: 0; top: 172px; min-width: 210px; padding-bottom: 2px; background: #0000004d; color: #aaaaaa; white-space: nowrap; }
   .board.below { top: 206px; }
-  /* 畫面上其他幾個小框（對話的譯文、追蹤欄、注視時的名字）比物品說明小，邊留少一點 */
   .dlg-extra .tip, .trk .tip, .npc .look { padding: .8em 1em .7em; }
   .board div { padding: 0 12px 0 8px; }
   .board div:first-child { background: #00000066; color: #ffaa00; text-align: center; }
-  /* 街上那個人是截圖裡真的 NPC（Detlas 的隊伍尋找器）；.npc 釘在他頭頂上。
-     名牌兩行：名字、底下一行灰色的說明——截圖上原本那一塊拿掉了，換成這裡畫的，才能跟著語言換。
-     注視時的小框在他旁邊 */
   .npc { position: absolute; left: 468px; top: 198px; width: 0; height: 0; }
   .npc .plate { position: absolute; left: 0; bottom: 0; display: grid; justify-items: center; width: max-content; transform: translateX(-50%); text-align: center; white-space: nowrap; }
   .npc .plate b { color: #ff55ff; }
@@ -594,40 +523,32 @@ const STYLE = String.raw`
   .chat { position: absolute; left: 6px; bottom: 120px; max-width: 420px; }
   .chat div { padding: 0 6px; background: #00000080; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .chat .ours { color: #9be7a5; }
-  /* 對話：遊戲自己的對話框是一張疊好的圖（頭像、名牌、底下那一條），字放在量好的位置上。
-     另開小框的時候，譯文在它上面；選項是右上方那兩條 */
   .dlg { position: absolute; left: 50%; bottom: 96px; display: flex; flex-direction: column; gap: 6px; width: 574px; transform: translateX(-50%); }
   .dlg-extra { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding-left: 128px; }
   .dlg-extra .tip { white-space: normal; }
   .dlg-extra .right { margin-left: auto; }
   .options { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; margin-bottom: -2px; }
-  /* 那一條的貼圖只有上面 24 格是條子（底下是空的），字要對著條子的中間 */
   .option { position: relative; width: 288px; height: 32px; padding: 0 16px; line-height: 22px; white-space: nowrap; background: var(--t-choice) 0 0 / 288px 64px no-repeat; }
   .option.on { background-position: 0 -32px; }
   .option .pick { position: absolute; left: -30px; top: -4px; width: 32px; height: 32px; }
   .dlgbox { position: relative; height: 212px; background: var(--t-dialogue) 0 0 / 100% 100% no-repeat; }
   .dlgbox b { position: absolute; left: 128px; top: 6px; width: 224px; line-height: 28px; text-align: center; white-space: nowrap; }
-  /* 字放在深色那一塊裡面（貼圖的 64–278 × 20–80 格），四邊各留一點 */
   .dlgbox p { position: absolute; left: 142px; top: 48px; width: 404px; margin: 0; line-height: 24px; }
   .dlgbox .hint2 { position: absolute; left: 94px; top: 174px; display: flex; justify-content: center; align-items: center; gap: 8px; width: 448px; height: 36px; font-size: 16px; }
   .dlgbox kbd { padding: 0 6px; border-radius: 3px; background: #ece6dd; color: #3a2a22; line-height: 18px; box-shadow: 0 2px 0 #9a8f84; text-shadow: none; }
-  /* 窄的那一面（480×470）：手機，與首頁最上面那一塊 */
   .scr.narrow { height: 470px; }
   .scr.narrow .tip { font-size: 14px; }
-  /* 窄的那一面放不下並排：背包縮小放上面，兩個框在它下面（只壓到背包最底下那一條木框） */
   .scr.narrow .duo .tip, .scr.narrow .gapmark { font-size: 12px; }
   .scr.narrow .inv { left: 143px; top: 2px; transform: scale(.52); transform-origin: 0 0; }
   .scr.narrow .duo { left: 0; right: 0; top: 178px; width: auto; justify-content: center; }
   .scr.narrow .gapmark span { padding: 2px 5px; background: #000000b0; }
   .scr.narrow .boss i { width: 250px; }
   .scr.narrow .trk { top: 50px; right: 6px; max-width: none; }
-  /* 窄的那一面：追蹤欄另開的小框放在原本那兩行的左邊（疊在下面會壓到大標題） */
   .scr.narrow .trk { grid-auto-flow: column; align-items: start; }
   .scr.narrow .trk .tip { padding: .6em .8em .5em; }
-  /* 窄的那一面把街景往左挪，NPC 站在左邊三分之一：右邊留給記分板與注視時的小框 */
   .scr.narrow[data-tab="world"] .bg { background-position: -310px 0; background-size: auto 100%; }
   .scr.narrow .board { top: 138px; min-width: 0; font-size: 14px; }
-  .scr.narrow .board.below { top: 138px; }                 /* 窄的那一面小框在旁邊，記分板不必讓 */
+  .scr.narrow .board.below { top: 138px; }
   .scr.narrow .npc { left: 150px; top: 194px; }
   .scr.narrow .npc .plate { max-width: 236px; font-size: 16px; white-space: normal; }
   .scr.narrow .npc .look { left: 40px; right: auto; top: 14px; max-width: 250px; }
@@ -645,8 +566,6 @@ const STYLE = String.raw`
   .spec section + section { margin-top: 48px; }
   .spec h2 { margin: 0 0 12px; }
   .spec .note { margin: 14px 0 0; max-width: 68ch; }
-  /* 功能頁下半：每一項一張卡——前面一顆遊戲裡的圖示（glyphs.png，一格 16，放大兩倍、染成葉子的綠），
-     後面標題與說明；有的再附一句預覽裡的例子（原文在上、譯文在下，跟著預覽選的語言換） */
   .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .fcard {
@@ -658,7 +577,6 @@ const STYLE = String.raw`
   .fcard p { margin: 0; color: var(--ink-2); font-size: 14px; text-wrap: pretty; }
   .fcard code { font-size: 13px; }
   .glyph { position: relative; display: block; width: 40px; height: 40px; border-radius: 9px; background: #0c120f; box-shadow: inset 0 0 0 1px var(--line); color: var(--leaf); }
-  /* 往下捲時淡進來的那幾塊（revealOnScroll）。卡片進來時，前面那顆圖示晚一點彈出來 */
   .rv { opacity: 0; transform: translateY(22px); }
   .rv.rv-on { opacity: 1; transform: none; transition: opacity 560ms var(--arrive), transform 700ms var(--arrive); transition-delay: var(--d, 0ms); }
   .fcard.rv .glyph { opacity: 0; transform: scale(.6) rotate(-12deg); }
@@ -671,14 +589,12 @@ const STYLE = String.raw`
   .glyph.own { display: grid; place-items: center; }
   .glyph.own::after { content: none; }
   .glyph.own svg { width: 22px; height: 22px; }
-  /* 例句：遊戲的點陣字，上面原文、下面譯文 */
   .eg { display: grid; margin-top: 10px !important; padding: 6px 10px 5px; border-radius: 7px; background: #0a0f0c; box-shadow: inset 0 0 0 1px #ffffff0a; font-family: PxTC, ui-monospace, monospace; font-size: 20px !important; line-height: 1.15; color: #8d9a91 !important; }
   .eg span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .eg .tr { color: var(--leaf); }
   .eg :lang(zh-Hans) { font-family: PxSC, PxTC, monospace; }
   .eg :lang(ja) { font-family: PxJA, PxTC, monospace; }
   .eg :lang(ko) { font-family: PxKO, PxTC, monospace; }
-  /* 葉子的四種顏色、一件會動的披風：放在「葉子與披風」那兩張卡的最上面 */
   .fcard.tall { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .fcard .show { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 8px 12px; border-radius: 9px; background: #0c120f; box-shadow: inset 0 0 0 1px var(--line); }
   .fcard .show svg { width: 26px; height: 26px; }
@@ -686,7 +602,6 @@ const STYLE = String.raw`
   .capemini img { display: block; width: 220%; max-width: none; margin: -10% 0 0 -10%; image-rendering: pixelated; }
   .fcard.mod h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
   .fcard.mod .state { margin-left: 0; }
-  /* 披風範本：一塊明顯的下載區。左邊說明圖，右邊三句話與每一種尺寸的下載鈕 */
   .tpl { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 22px; align-items: center; padding: 18px; border: 1px solid var(--leaf-deep); border-radius: 14px; background: linear-gradient(180deg, #17241c, var(--panel) 70%); }
   .tpl .guide { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); }
   .tpl h2 { margin: 0 0 6px; }
@@ -696,7 +611,6 @@ const STYLE = String.raw`
   .tpl-sizes .btn { padding: 7px 12px; font-variant-numeric: tabular-nums; }
   .tpl-sizes small { font-size: 11px; opacity: .78; }
   .tpl .more-links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
-  /* 披風一覽最上面那一條：平常收著，按了展開範本那一塊 */
   .make { margin: 20px 0 4px; }
   .make > summary { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border: 1px solid var(--leaf-deep); border-radius: 12px; background: #17241c; cursor: pointer; list-style: none; transition: background-color var(--fast) ease, transform var(--fast) var(--out); }
   .make > summary::-webkit-details-marker { display: none; }
@@ -719,12 +633,10 @@ const STYLE = String.raw`
   .count { font-variant-numeric: tabular-nums; color: var(--ink-2); }
   .count b { color: var(--ink); font-weight: 600; }
   .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
-  /* 一張卡：整張是「點開來看」的按鈕，右上角另外一顆星星（加進我的最愛）——按鈕不能包按鈕，所以是兩顆並排在同一個框裡 */
   .card {
     position: relative; display: flex; flex-direction: column;
     background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
     transition: transform 180ms var(--out), border-color 180ms ease, box-shadow 180ms ease;
-    /* 一覽載進來的時候一張接一張出現；--i 是第幾張，最多排到第 10 張，後面的一起出來 */
     animation: rise 360ms var(--arrive) both; animation-delay: calc(var(--i, 0) * 35ms);
   }
   .card .open { display: flex; flex-direction: column; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
@@ -754,21 +666,17 @@ const STYLE = String.raw`
     .card:hover:has(.open:active) { transform: translateY(-1px) scale(.98); }
     .star:hover { color: var(--gold); background: #0b0f0dd9; }
   }
-  /* 還在跟伺服器要資料的時候：先放幾張同樣大小的空卡，版面不會跳 */
   .card.skel { cursor: default; animation: pulse 1.4s ease-in-out infinite; }
   .card.skel .stage { height: 190px; }
   .card.skel .meta { height: 43px; }
   @keyframes pulse { 50% { opacity: .55; } }
   .stage { position: relative; display: grid; place-items: center; padding: 20px 0 16px; background: linear-gradient(180deg, #1b2a21 0%, #131b16 100%); }
-  /* 標記（GIF、我穿的、不公開、待審核）疊在圖的左上角，右邊留給星星。原本排在底下那一列，
-     窄的卡片一擠就折成兩行（使用者 2026-10-13 的截圖） */
   .marks { position: absolute; top: 8px; left: 8px; right: 46px; display: flex; flex-wrap: wrap; gap: 4px; pointer-events: none; }
   .marks .tag { white-space: nowrap; box-shadow: 0 1px 5px #0009; }
   .marks .tag.off { background: #0b0f0dd9; color: var(--ink); }
   .face { width: 96px; aspect-ratio: 10 / 16; overflow: hidden; border-radius: 3px; box-shadow: 0 8px 18px #000a, 0 0 0 1px #0006; background: #0b0f0d; }
   .face img { display: block; width: 220%; max-width: none; margin: -10% 0 0 -10%; image-rendering: pixelated; opacity: 0; transition: opacity 240ms ease; }
   .face img.in { opacity: 1; }
-  /* 底下那一列只放兩樣：左邊幾個人在用（或幾天後移除），右邊幾顆星。一律不折行 */
   .meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 43px; padding: 10px 12px 12px; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
   .tag { padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--ground); background: var(--ink-2); }
   .tag.gif { background: var(--gold); }
@@ -822,7 +730,6 @@ const STYLE = String.raw`
   .wipe-box b { color: var(--ink); }
   .wipe-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-top: 8px; }
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
-  /* 新增管理員的搜尋：打幾個字，下面列出已註冊的人 */
   .finder { position: relative; }
   .finder input { padding-right: 32px; cursor: pointer; }
   .finder input:focus { cursor: text; }
@@ -839,7 +746,6 @@ const STYLE = String.raw`
   .finder-hits div { min-width: 0; }
   .finder-hits b { display: block; font-weight: 600; color: var(--ink); }
   .finder-hits small { display: block; color: var(--ink-2); font-size: 12px; overflow-wrap: anywhere; }
-  /* 上傳：可以把圖檔拖進來。拖到上面的時候框會亮起來 */
   .drop { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; transition: border-color var(--fast) ease, background-color var(--fast) ease; }
   .drop.over { border-color: var(--leaf); background: #7fd08a12; }
   .drop .hint { flex-basis: 100%; }
@@ -856,7 +762,6 @@ const STYLE = String.raw`
     .view { grid-template-columns: 1fr; }
     canvas.model { height: 320px; }
     .side { border-left: 0; border-top: 1px solid var(--line); }
-    /* 手機：頁首只留標誌、贊助與漢堡選單；選單、下載、帳號、語言都在面板裡 */
     .top .in { padding: 10px 16px; }
     .hn, .hn-desk { display: none !important; }
     .hn-burger { display: inline-flex; }
@@ -881,7 +786,6 @@ const STYLE = String.raw`
     .tpl { grid-template-columns: 1fr; }
     .make > summary .sub { display: none; }
   }
-  /* 不想看動來動去的人：位移與縮放都拿掉，只留淡入與顏色（回饋還是看得出來） */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .btn:active, .card:has(.open:active), .card:hover, .card:hover:has(.open:active), .star:active { transform: none; }
@@ -916,7 +820,6 @@ const CURSEFORGE = 'https://www.curseforge.com/minecraft/mc-mods/wynnchayuan';
 const RELEASES = REPO + '/releases/latest';
 const KOFI = 'https://ko-fi.com/lyuchacha';
 
-/** 小圖示：跟葉子同一種畫法（線條、圓頭、1.6 的粗細）。 */
 const stroke = (paths) => '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
   + 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
 const ICON = {
@@ -935,7 +838,6 @@ const ICON = {
   admin: stroke('<path d="M12 3.5 19 6v5.5c0 4.2-3 7.6-7 9-4-1.4-7-4.8-7-9V6z"/><path d="m9 12 2 2 4-4"/>'),
 };
 
-// ------------------------------------------------------------------ 字
 
 export const TEXT = {
   zh: {
@@ -1678,21 +1580,17 @@ export const TEXT = {
 
 Object.assign(TEXT, MORE_TEXT);
 
-/** 語言選單上每一種語言叫什麼（用它自己的話寫），也是選單的順序。 */
 const LANG_NAMES = {
   zh: '繁體中文', 'zh-cn': '简体中文', en: 'English', ja: '日本語', ko: '한국어',
   ru: 'Русский', es: 'Español', tr: 'Türkçe',
 };
 
-/** 有哪幾種語言：有名字、也真的有字的那幾種。 */
 export const LANGS = Object.keys(LANG_NAMES).filter((code) => Object.hasOwn(TEXT, code));
 
-/** 這個語言的頁面寫在 html 上的標籤（zh-Hant、ja…）。 */
 export function tagOf(lang) {
   return Object.hasOwn(TEXT, lang) && TEXT[lang].html ? TEXT[lang].html : 'en';
 }
 
-// ------------------------------------------------------------------ 每一頁都有的程式
 
 const COMMON = String.raw`
   var TOKEN_KEY = 'wcy.token';
@@ -1700,11 +1598,8 @@ const COMMON = String.raw`
     var found = location.hash.match(/t=([^&]+)/);
     if (!found) return;
     try { localStorage.setItem(TOKEN_KEY, found[1]); } catch (e) {}
-    history.replaceState(null, '', location.pathname);     /* 通行證不留在網址列上 */
+    history.replaceState(null, '', location.pathname);
   })();
-  /* 往下捲時，還沒進到畫面的那幾塊從下面淡進來；同一批進來的照順序一個接一個。
-     一開始就看得到的不動（不然一進頁面就閃一下）；動完把加上的東西拿掉，原本的滑過效果照舊。
-     不想看動畫的人（系統設定減少動態）、或瀏覽器沒有 IntersectionObserver：什麼都不做 */
   function revealOnScroll(selector) {
     if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var fold = window.innerHeight * 0.92;
@@ -1740,7 +1635,7 @@ const COMMON = String.raw`
     if (token()) options.headers.authorization = 'Bearer ' + token();
     return fetch('/api' + path, options);
   }
-  /* 玩家的頭像與全身圖。用 minotar：有些帳號在別家只畫得出預設的 Steve */
+  /* 用 minotar：有些帳號在別家只畫得出預設的 Steve */
   function head(name, size) { return 'https://minotar.net/helm/' + encodeURIComponent(name) + '/' + (size || 32) + '.png'; }
   function figure(name, width) { return 'https://minotar.net/armor/body/' + encodeURIComponent(name) + '/' + width + '.png'; }
   function el(tag, className, text) {
@@ -1749,20 +1644,17 @@ const COMMON = String.raw`
     if (text !== undefined) node.textContent = text;
     return node;
   }
-  /* 把 {n} 這種位置換成值。 */
   function fmt(text, values) {
     return text.replace(/\{(\w+)\}/g, function (all, key) { return key in values ? values[key] : all; });
   }
   function bytes(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* 訊息換了字：淡進來（順便浮上來一點），眼睛才知道這裡變了 */
   function flash(node) {
     if (!node.animate) return;
     node.animate(calm ? [{ opacity: 0 }, { opacity: 1 }]
       : [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
       { duration: 200, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
   }
-  /* 分段選項底下那一塊：滑到選到的那一顆底下。第一次直接放好，之後才用滑的 */
   function slide(seg) {
     var on = seg.querySelector('button[aria-pressed="true"]:not([hidden])');
     var pill = seg.querySelector('.pill');
@@ -1779,19 +1671,17 @@ const COMMON = String.raw`
     pill.style.height = on.offsetHeight + 'px';
     pill.style.transform = 'translate(' + on.offsetLeft + 'px, ' + on.offsetTop + 'px)';
     if (pill.style.transition === 'none') {
-      pill.getBoundingClientRect();        /* 先讓瀏覽器把位置算好，再把過場開回來，才不會從左上角滑進來 */
+      pill.getBoundingClientRect();        /* 先讓瀏覽器算好位置再開過場，不然會從左上角滑進來 */
       pill.style.transition = '';
     }
   }
   function slideAll() { Array.prototype.forEach.call(document.querySelectorAll('.seg'), slide); }
-  /* 按了哪一組就更新那一組（等那一顆自己的程式先把選到的換好）；視窗變寬變窄、字型載好也要重新量 */
   document.addEventListener('click', function (e) {
     var seg = e.target.closest && e.target.closest('.seg');
     if (seg) setTimeout(function () { slide(seg); }, 0);
   });
   window.addEventListener('resize', slideAll);
   window.addEventListener('load', slideAll);
-  /* 按鈕暫時換一個字（「已複製」），過一下換回來。寬度先定住，字換了按鈕不會縮 */
   function blip(button, text) {
     if (button.dataset.label) return;
     button.dataset.label = button.textContent;
@@ -1803,10 +1693,6 @@ const COMMON = String.raw`
       button.style.minWidth = '';
     }, 1400);
   }
-  /* ================= 頁首 =================
-     下拉選單（下載、語言、頭像、「更多」、群組）與手機的面板都用這一套：按鈕帶 aria-expanded，
-     一次只開一張；點外面、焦點離開、按 Esc 都會關（Esc 把焦點還給按鈕）。role="menu" 的那幾張可以用方向鍵：
-     按鈕上 ↓／↑ 打開並停在第一／最後一項，選單裡 ↑↓ 移動、Home／End 到頭尾。用鍵盤按開（Enter、空白鍵）也停在第一項 */
   var menus = (function () {
     var open = null;
     function entries(menu) {
@@ -1840,7 +1726,7 @@ const COMMON = String.raw`
       var listy = menu.getAttribute('role') === 'menu';
       if (listy) {
         Array.prototype.forEach.call(menu.querySelectorAll('a:not([role]), button:not([role])'), function (node) {
-          node.setAttribute('role', 'menuitem');          /* 說明裡的那個「安裝說明」連結也要按得到 */
+          node.setAttribute('role', 'menuitem');
         });
       }
       number(menu);
@@ -1864,14 +1750,13 @@ const COMMON = String.raw`
         list[(to + list.length) % list.length].focus();
       });
     }
-    /* 每一項的序號（--i）：打開時照這個順序一項接一項淡進來 */
     function number(menu) {
       Array.prototype.forEach.call(menu.children, function (child, i) { child.style.setProperty('--i', Math.min(i, 10)); });
     }
     function outside(target) { return open && !open.trigger.contains(target) && !open.menu.contains(target); }
     document.addEventListener('click', function (e) {
       if (outside(e.target)) close(false);
-      else if (open && open.menu.contains(e.target) && e.target.closest('a')) close(false);   /* 點了選單裡的連結（同一頁的 #） */
+      else if (open && open.menu.contains(e.target) && e.target.closest('a')) close(false);
     });
     document.addEventListener('focusin', function (e) { if (outside(e.target)) close(false); });
     document.addEventListener('keydown', function (e) {
@@ -1886,20 +1771,17 @@ const COMMON = String.raw`
       closeIn: function (box) { if (open && box.contains(open.trigger)) close(false); },
     };
   })();
-  /* 手機的面板：視窗拉寬回桌面的版面就收起來 */
   if (window.matchMedia) {
     var phone = window.matchMedia('(max-width: 720px)');
     var folded = function () { menus.close(false); };
     if (phone.addEventListener) phone.addEventListener('change', folded);
     else if (phone.addListener) phone.addListener(folded);
   }
-  /* 頭像選單裡的「語言」：就地展開八種語言 */
   document.getElementById('hn-lang-toggle').addEventListener('click', function () {
     var on = this.getAttribute('aria-expanded') !== 'true';
     this.setAttribute('aria-expanded', on ? 'true' : 'false');
     document.getElementById(this.getAttribute('aria-controls')).hidden = !on;
   });
-  /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。網址上的 ?lang= 比 cookie 優先，要拿掉 */
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('a[data-lang]');
     if (!link || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button) return;
@@ -1907,9 +1789,6 @@ const COMMON = String.raw`
     document.cookie = 'lang=' + link.dataset.lang + '; path=/; max-age=31536000; samesite=lax';
     location.replace(location.pathname);
   });
-  /* 選單放不下就收進「更多」（priority+）：每次都先全部攤開量，從 data-pri 小的開始收，直到放得下。
-     「更多」只有真的收了東西才出現；這一頁收在裡面的話，「更多」本身亮起來。
-     選單的寬度是標誌與工具剩下的那一段，所以視窗變寬變窄、登入後頭像換上來、字型載好都要重新量 */
   var fitNav = (function () {
     var nav = document.getElementById('hn');
     var list = nav.querySelector('.hn-list');
@@ -1972,20 +1851,16 @@ const COMMON = String.raw`
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fit(); });
     return fit;
   })();
-  /* 頁尾的 Discord 名稱：按一下複製（Discord 沒有「用名字開個人頁」的網址） */
+  /* Discord 沒有用名字開個人頁的網址：按一下複製名字 */
   document.getElementById('dc-copy').onclick = function () {
     var button = this;
     if (!navigator.clipboard) return;
     navigator.clipboard.writeText('LyuChaCha').then(function () { blip(button, L.copied); });
   };
-  /* 我是誰。沒登入、或通行證過期了，就是 null。 */
   var whoami = !token() ? Promise.resolve(null) : api('/me').then(function (r) {
     if (r.status === 401) { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} return null; }
     return r.ok ? r.json() : null;
   }).catch(function () { return null; });
-  /* 頁首的帳號那一塊：沒登入是「登入」＋語言；登入了是頭像（按了是帳號選單）。
-     有通行證就先換成頭像（還不知道是誰，先放一個人形），免得「登入」閃一下又不見。
-     data-need 的東西（管理…）照 /api/me 回的身分打開；沒登入一律藏著 */
   function headerAccount(me) {
     var on = Boolean(me);
     ['hn-guest', 'hn-p-guest'].forEach(function (id) { document.getElementById(id).hidden = on; });
@@ -2011,12 +1886,6 @@ const COMMON = String.raw`
   Array.prototype.forEach.call(document.querySelectorAll('[data-signout]'), function (button) { button.onclick = signOut; });
   if (token()) headerAccount(true);
   whoami.then(headerAccount);
-  /* ================= 頁首飄過的葉子 =================
-     跟 README 那張橫幅（discord-banner/leafart.py、animate4.py）同一套：手畫的小像素葉子（直立 5×7、斜放 6×6，
-     正面、半寬、側面三種寬度），轉向只用 90 度的倍數加鏡射，像素永遠方正。每隔幾秒來一陣風：風鋒從左邊掃過去，
-     帶進一兩片葉子；風鋒到了葉子才被吹快、翻得快，過了慢慢緩下來。
-     畫在 .top 底下一張小畫布上（一格像素放大成 2px），在字的後面、不擋滑鼠。畫面上沒有葉子也沒有風就不跑
-     requestAnimationFrame；分頁藏起來就停；系統設定「減少動態」就完全不出現 */
   (function () {
     var canvas = document.getElementById('hn-leaves');
     if (!canvas || !canvas.getContext) return;
@@ -2034,7 +1903,6 @@ const COMMON = String.raw`
       half: ['.....o', '....oo', '...oVo', '..oVo.', '.oVo..', 'so....'],
       edge: ['......', '....o.', '...o..', '..o...', '.o....', 's.....'],
     };
-    /* 顏色：橫幅那三組綠（其中一組換成網站自己的 --leaf），整體提亮——橫幅的底是天空，這裡是深綠的頁首，原本的外框會看不見 */
     var SETS = [
       { o: [62, 104, 40], G: [110, 166, 66], L: [160, 206, 96], V: [80, 130, 50], s: [112, 86, 54] },
       { o: [44, 110, 64], G: [79, 160, 96], L: [127, 208, 138], V: [52, 124, 72], s: [112, 86, 54] },
@@ -2044,8 +1912,6 @@ const COMMON = String.raw`
     var sprites = {};
     function rgb(c) { return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')'; }
     function dim(c) { return [Math.round(c[0] * 0.7), Math.round(c[1] * 0.7), Math.round(c[2] * 0.7)]; }
-    /* 一張葉子：idx 是 0–7（45 度一格）。偶數用直立那張、奇數用斜放那張，再順時針轉 90 度的倍數；
-       背面沒有亮面，沿著葉脈鏡射 */
     function sprite(set, shape, back, idx) {
       var key = set + shape + back + idx;
       if (sprites[key]) return sprites[key];
@@ -2080,7 +1946,7 @@ const COMMON = String.raw`
     var W = 0, H = 0, leaves = [], gusts = [], raf = 0, timer = 0, last = 0;
     function size() {
       var bar = canvas.parentNode.querySelector('.in');
-      /* 剛好整數倍（一格像素＝2px），不然放大會一列寬一列窄；寬度往下取整，免得多出 1px 撐出橫向捲動 */
+      /* 整數倍才不會一列寬一列窄；寬度往下取整，免得撐出橫向捲動 */
       W = Math.floor(canvas.parentNode.clientWidth / PX);
       H = Math.floor((bar ? bar.offsetHeight : 60) / PX);
       canvas.style.width = W * PX + 'px';
@@ -2088,7 +1954,6 @@ const COMMON = String.raw`
       canvas.width = W;
       canvas.height = H;
     }
-    /* 某個位置現在吹到多少風（0–1）：風鋒剛到最強，過了慢慢退 */
     function wind(x) {
       var total = 0;
       gusts.forEach(function (g) {
@@ -2110,7 +1975,6 @@ const COMMON = String.raw`
         o0: Math.floor(Math.random() * 8), off: Math.random(), flip: 0, g: 0,
       });
     }
-    /* 一陣風：風鋒從左邊外面掃到右邊外面，帶一兩片葉子進來（偶爾一片從上面落下） */
     function blow() {
       if (document.hidden || off() || !W) return;
       var k = rand(0.65, 1);
@@ -2134,7 +1998,6 @@ const COMMON = String.raw`
     }
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      /* 風痕：跟著風鋒走的一兩條淡淡的像素波浪，頭亮尾淡 */
       ctx.fillStyle = '#e8f8de';
       gusts.forEach(function (g) {
         var k = (g.x + 30) / (W + 160);
@@ -2213,42 +2076,22 @@ const COMMON = String.raw`
     if (window.ResizeObserver) new ResizeObserver(resized).observe(canvas.parentNode.querySelector('.in') || canvas.parentNode);
     else window.addEventListener('resize', resized);
     size();
-    canvas.hnBlow = blow;           /* 只給測試與錄影用：馬上吹一陣 */
+    canvas.hnBlow = blow;
     start(true);
   })();
 `;
 
-/**
- * 預覽畫面用的點陣字（demo-fonts.js，從模組附的 Fusion Pixel 裁出來的）。只宣告——
- * 瀏覽器等到頁面上真的有字用到才會去抓，沒有預覽的那幾頁不會多一個請求。
- */
 const FONT_CSS = Object.keys(FONTS).map((code) => '\n  @font-face { font-family: Px' + code.toUpperCase()
   + '; src: url(/font/px-' + code + '.ttf?v=' + FONTS[code].v + ') format("truetype"); font-display: swap; }').join('');
 
-/**
- * 預覽畫面用的材質（demo-textures.js：遊戲的介面貼圖、物品圖示、實機截圖當背景）。
- * 網址帶著內容的雜湊，所以可以長期快取。樣式用 --t-<檔名> 取，程式用 D.tex['<檔名>']。
- */
 const TEX_URL = Object.fromEntries(Object.keys(TEXTURES).map((name) =>
   [name, '/tex/' + name + '?v=' + TEXTURES[name].v]));
 const TEX_CSS = '\n  :root {' + Object.keys(TEX_URL).map((name) =>
   ' --t-' + name.replace(/\.\w+$/, '') + ': url(' + TEX_URL[name] + ');').join('') + ' }';
 
-/** 披風範本、說明圖與示範的網址（cape-templates.js），一樣帶著內容的雜湊。 */
 const TPL = (name) => '/template/' + name + '?v=' + CAPE_TEMPLATES[name].v;
 
-// ------------------------------------------------------------------ 頁首
 
-/**
- * 頁首的選單。加一頁＝在這裡加一行（README 的〈頁首〉有完整說明）。
- *
- *   key       代號（英文小寫，同一份清單裡不重複）
- *   href      網址
- *   label     字的鍵（TEXT 與 lang/*.json 裡的那一條；八種語言都要有）
- *   priority  寬度不夠時誰先收進「更多」：數字小的先收
- *   group     （可以不填）同一個 group 的幾頁收成一個下拉選單，名字與順位寫在 NAV_GROUPS
- *   role      （可以不填）要什麼身分才看得到：/api/me 回的欄位（staff、developer、member）。沒登入一律看不到
- */
 export const NAV_ITEMS = [
   { key: 'home', href: '/', label: 'nav.home', priority: 100 },
   { key: 'features', href: '/features', label: 'nav.features', priority: 80 },
@@ -2257,27 +2100,18 @@ export const NAV_ITEMS = [
   { key: 'feedback', href: '/feedback', label: 'nav.feedback', priority: 60 },
 ];
 
-/**
- * 選單裡的群組：{ <group>: { label, priority, role } }。label 是字的鍵；priority 不填就用組裡最大的那一個；
- * role 跟上面一樣（整組要什麼身分）。群組放在組裡第一頁原本的位置。現在還沒有要分組的，所以是空的；例如
- *   community: { label: 'nav.community', priority: 65 },
- * 再把協作翻譯與回饋那兩行加上 group: 'community'，頁首就多一個「社群 ▾」。
- */
 export const NAV_GROUPS = {};
 
-/** 頭像選單裡的連結（登入之後才有）。欄位跟 NAV_ITEMS 一樣；icon 是 ICON 的名字。 */
 export const ACCOUNT_ITEMS = [
   { key: 'account', href: '/account', label: 'top.myaccount', icon: 'account' },
   { key: 'admin', href: '/admin', label: 'nav.admin', icon: 'admin', role: 'staff' },
 ];
 
-/** 下載選單的幾個地方。 */
 const DOWNLOADS = [['GitHub Releases', RELEASES], ['CurseForge', CURSEFORGE]];
 
 const gate = (item) => (item && item.role ? ' data-need="' + item.role + '" hidden' : '');
 const here = (href, active) => (href === active ? ' aria-current="page"' : '');
 
-/** 一份選單照 group 排好：沒有 group 的一頁一格，有 group 的整組放在第一頁的位置。 */
 function navRows(items, groups) {
   const rows = [];
   const seen = new Set();
@@ -2299,10 +2133,6 @@ function navRows(items, groups) {
   return rows;
 }
 
-/**
- * 頁首（寬的畫面）的那一排：每一格帶著 data-pri，最後一格是「更多」（藏著，放不下的時候程式才打開它、
- * 把收起來的那幾格搬進去）。
- */
 export function navMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
   const cells = navRows(items, groups).map((row) => {
     if (row.item) {
@@ -2325,7 +2155,6 @@ export function navMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
   return '<ul class="hn-list">' + cells.join('') + '</ul>';
 }
 
-/** 手機面板裡的選單：同一份清單，群組變成一個小標題加底下的幾頁。 */
 export function panelNavMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
   const link = (item, sub) => '<a class="hn-plink' + (sub ? ' hn-sub' : '') + '" href="' + item.href + '"'
     + here(item.href, active) + gate(item) + '>%%' + item.label + '%%</a>';
@@ -2334,20 +2163,17 @@ export function panelNavMarkup(active, items = NAV_ITEMS, groups = NAV_GROUPS) {
       + row.members.map((m) => link(m, true)).join('') + '</div>')).join('') + '</nav>';
 }
 
-/** 八種語言的連結。在選單裡是 menuitemradio，在手機面板裡是一般的連結。沒有程式也點得動（?lang=）。 */
 export function langLinks(lang, menu) {
   return LANGS.map((code) => '<a href="?lang=' + code + '" hreflang="' + tagOf(code) + '" lang="' + tagOf(code) + '" data-lang="' + code + '"'
     + (menu ? ' role="menuitemradio" aria-checked="' + (code === lang) + '"' : (code === lang ? ' aria-current="true"' : ''))
     + '>' + LANG_NAMES[code] + (code === lang ? ICON.check : '') + '</a>').join('');
 }
 
-/** 頭像選單（或手機面板）裡的帳號連結。 */
 function accountLinks(active, menu) {
   return ACCOUNT_ITEMS.map((item) => '<a' + (menu ? ' role="menuitem" class="hn-mi"' : ' class="hn-plink"') + ' href="' + item.href + '"'
     + here(item.href, active) + gate(item) + '>' + (menu && item.icon ? ICON[item.icon] : '') + '<span>%%' + item.label + '%%</span></a>').join('');
 }
 
-/** 整個頁首。登入與否要等程式問過 /api/me：先畫沒登入的樣子，有通行證的話程式一開始就換成頭像。 */
 function header(lang, active) {
   const mine = ACCOUNT_ITEMS.some((item) => item.href === active);
   const avatar = '<img class="hn-ava" alt="" hidden><span class="hn-ava hn-ava-fb">' + ICON.user + '</span>';
@@ -2360,14 +2186,12 @@ function header(lang, active) {
     + '<div class="pop hn-desk"><button class="btn primary small hn-sheen" id="get" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="get-menu">'
     + ICON.get + '%%top.get%%' + ICON.down + '</button>'
     + '<div class="menu" id="get-menu" role="menu">' + downloads + '<p role="none">%%top.getnote%%</p></div></div>'
-    // 沒登入：登入＋語言（地球）
     + '<div class="hn-guest hn-desk" id="hn-guest">'
     + '<a class="btn small hn-signin" href="/account"' + here('/account', active) + '>%%top.signin%%</a>'
     + '<div class="pop"><button class="hn-icon hn-tip" id="hn-globe" type="button" aria-label="%%lang.label%%" data-tip="%%lang.label%%" aria-haspopup="true" aria-expanded="false" aria-controls="hn-globe-menu">'
     + ICON.globe + ICON.down + '</button>'
     + '<div class="menu hn-menu hn-narrow" id="hn-globe-menu" role="menu"><div class="hn-langs" role="group" aria-label="%%lang.label%%">'
     + langLinks(lang, true) + '</div></div></div></div>'
-    // 登入了：頭像，按了是帳號選單
     + '<div class="pop hn-user hn-desk" id="hn-user" hidden>'
     + '<button class="hn-avatar' + (mine ? ' hn-cur' : '') + '" id="hn-avatar" type="button" aria-label="%%top.account%%" data-label="%%top.account%%" aria-haspopup="true" aria-expanded="false" aria-controls="hn-acct-menu">'
     + avatar + ICON.down + '</button>'
@@ -2383,7 +2207,6 @@ function header(lang, active) {
     + '<button class="hn-icon hn-burger" id="hn-burger" type="button" aria-label="%%top.menu%%" aria-expanded="false" aria-controls="hn-panel">'
     + ICON.menu + '</button>'
     + '</div></div>'
-    // 手機的面板：選單、下載、帳號、語言
     + '<div class="hn-panel" id="hn-panel">'
     + panelNavMarkup(active)
     + '<div class="hn-psec"><p class="hn-phead">%%top.get%%</p>'
@@ -2441,31 +2264,18 @@ function layout(lang, title, active, body, script) {
     + '<script>var L = %%js%%;' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
 }
 
-// ------------------------------------------------------------------ 首頁
 
 const leaf = (colour) => '<span style="color:' + colour + ';display:flex">' + LEAF + '</span>';
 
-/** 預覽畫面裡的滑鼠游標（別的圖都是遊戲的材質）。有預覽的頁面各放一份。 */
 const STAGE_PARTS = '<template id="stage-parts">'
   + '<svg data-part="cursor" viewBox="0 0 14 18" aria-hidden="true"><path d="M1 1v13l3.5-3 2.4 5.2 2-.9L6.5 10H11z" fill="#fff" stroke="#000" stroke-width="1"/></svg>'
   + '</template>';
 
-/** 預覽畫面本身（makeStage）。見裡面開頭那一段說明。 */
 const STAGE_JS = String.raw`
-  /* ================= 遊戲畫面的預覽（功能頁的即時預覽、首頁最上面那一塊都用這一份） =================
-     照遊戲裡設定畫面右邊那一塊做（client/ui/Preview.java），但畫成一整面「遊戲畫面」：
-     後面是實機截圖，前面是遊戲裡真的那幾張介面材質（demo-textures.js）——物品說明的框、背包、
-     對話框與頭像、生命與魔力、快捷列；位置照實機截圖擺。字用遊戲裡同一套點陣字（demo-fonts.js）。
-
-     畫面有固定的邏輯大小（寬的 960×480、窄的 480×470），整塊照容器的寬度縮放——
-     裡面每一塊的位置都是照邏輯大小寫的，不必各自算。材質一格畫成兩格（遊戲的介面倍率 2）。 */
   var STAGE_TAGS = { zh_tw: 'zh-Hant', zh_cn: 'zh-Hans', ja_jp: 'ja', ko_kr: 'ko', ru_ru: 'ru', es_es: 'es', tr_tr: 'tr' };
   var STAGE_DEFAULTS = { tooltip: 0, names: 1, gap: 12, dialogue: 1, choices: 1, nametag: 1, chat: 1, tracker: 0,
     titles: true, bossbar: true, scoreboard: true, held: true };
 
-  /* ---- 背包裡的人：一個方塊人，皮膚（textures/skin.png，64×64）貼在每一塊的六個面上，用 CSS 的 3D 轉。
-          不用 WebGL、不載別人的程式。每一塊：[名字, 皮膚上的位置, 寬高深, 外層（帽子、外套）的位置, 在身上的位置]，
-          單位是皮膚的一格；unit 是一格畫成幾個像素 ---- */
   var DOLL_PARTS = [
     ['head', 0, 0, 8, 8, 8, 32, 0, 4, 0, .5],
     ['body', 16, 16, 8, 12, 4, 16, 32, 4, 8, .25],
@@ -2484,7 +2294,6 @@ const STAGE_JS = String.raw`
         + 'transform:' + how + ';' + (shade < 1 ? 'filter:brightness(' + shade + ');' : '');
       return one;
     }
-    /* 一個方塊的六個面。皮膚上的排法：上面一列是頂與底，下面一列是右、前、左、後 */
     function faces(into, u, v, w, h, d) {
       into.append(
         face(u + d, v + d, w, h, 'translateZ(' + (d * unit / 2) + 'px)', 1),
@@ -2499,15 +2308,14 @@ const STAGE_JS = String.raw`
       var part = el('div', '');
       part.style.cssText = 'left:' + (p[8] * unit) + 'px;top:' + (p[9] * unit) + 'px;width:' + (w * unit) + 'px;height:' + (h * unit) + 'px;';
       faces(part, p[1], p[2], w, h, d);
-      var over = el('div', 'over');                      /* 外層：同一個方塊，大一點點 */
+      var over = el('div', 'over');
       over.style.transform = 'scale3d(' + ((w + 2 * grow) / w) + ',' + ((h + 2 * grow) / h) + ',' + ((d + 2 * grow) / d) + ')';
       faces(over, p[6], p[7], w, h, d);
       part.append(over);
       doll.append(part);
       parts[p[0]] = part;
     });
-    parts.head.style.transformOrigin = '50% 100%';          /* 頭繞著脖子轉 */
-    /* yaw、pitch 是頭要轉到的角度。照遊戲裡背包那個人：身體只轉一半，整個人跟著上下微微傾 */
+    parts.head.style.transformOrigin = '50% 100%';
     function look(yaw, pitch) {
       doll.style.transform = 'rotateX(' + (pitch * .4).toFixed(2) + 'deg) rotateY(' + (yaw / 2).toFixed(2) + 'deg)';
       parts.head.style.transform = 'rotateY(' + (yaw / 2).toFixed(2) + 'deg) rotateX(' + (pitch * .6).toFixed(2) + 'deg)';
@@ -2516,10 +2324,6 @@ const STAGE_JS = String.raw`
     return { node: doll, look: look };
   }
 
-  /**
-   * 在 host 裡蓋一面畫面。回傳 { draw(tab, state, lang, typed), quiet(on) }。
-   * D 是 build-demo.py 產生的那一份（場景裡的譯文）加上材質的網址（D.tex）。
-   */
   function makeStage(host, D) {
     var scr = el('div', 'scr');
     var bg = el('div', 'bg');
@@ -2529,18 +2333,15 @@ const STAGE_JS = String.raw`
     var wide = true;
     var last = null;
     var turn = 0;
-    var first = true;                    /* 第一次畫：直接出現，不要一進頁面就淡入一次 */
+    var first = true;
     var hush = false;
     var lang = 'zh_tw';
-    /* 譯文裡的顏色記號（{c1}）是給遊戲看的，這裡拿掉 */
     function T(src) { return (D.text[lang][src] || src).replace(/\{c\d+\}/g, ''); }
-    /* 一塊字。translated 的那些標上語言：同一個漢字各語言的寫法不一樣，字型要跟著換 */
     function bit(tag, className, text, translated) {
       var node = el(tag, className, text);
       if (translated) node.lang = STAGE_TAGS[lang];
       return node;
     }
-    /* 把數字填回 {~}、{~2} 這種位置：譯文的語序不同時位置是有編號的 */
     function fill(template, values) {
       var next = 0;
       return template.replace(/\{~(\d*)\}/g, function (all, n) {
@@ -2548,7 +2349,6 @@ const STAGE_JS = String.raw`
         return at < values.length ? values[at] : '0';
       });
     }
-    /* 一張材質的圖（物品、圖示）。className 決定大小與位置 */
     function pic(name, className) {
       var img = el('img', className);
       img.alt = '';
@@ -2556,26 +2356,22 @@ const STAGE_JS = String.raw`
       img.src = D.tex[name];
       return img;
     }
-    /* 放在某一格裡的物品：x、y 是那一格左上角（邏輯像素） */
     function item(name, x, y) {
-      /* 官方的物品圖示是 64 格的大圖，縮小時要平滑；遊戲的貼圖是 16 格，放大時要保持銳利 */
       var img = pic('item-' + name + '.png', /^(bow|spear|wand|dagger|relik)$/.test(name) ? 'it smooth' : 'it');
       img.style.left = x + 'px';
       img.style.top = y + 'px';
       return img;
     }
-    /* 背包裡的人：只做一個，每次畫背包都放同一個回去（頭轉到哪裡也就留著）。
-       看著滑鼠——照遊戲的算法：離他 40 格（這裡是 80 像素）轉到一半，再遠也只到 40 度 */
     var doll = null;
     var dollBox = el('div', 'dollbox');
-    var dollClip = el('div', 'dollclip');          /* 人物格：人在裡面，超出去的裁掉 */
+    var dollClip = el('div', 'dollclip');
     dollClip.append(dollBox);
     var aimAt = null;
     function aim() {
       var at = aimAt;
       aimAt = null;
       if (!at || !doll || !dollClip.isConnected) return;
-      var box = dollClip.getBoundingClientRect();     /* 遊戲是拿人物格的正中間當基準 */
+      var box = dollClip.getBoundingClientRect();
       if (!box.width) return;
       var scale = box.width / 98;
       var dx = (at[0] - (box.left + box.width / 2)) / scale;
@@ -2587,7 +2383,6 @@ const STAGE_JS = String.raw`
       aimAt = [event.clientX, event.clientY];
       if (!waiting) requestAnimationFrame(aim);
     }, { passive: true });
-    /* 逐字打出來，跟遊戲裡的對話框一樣。中途又動了別的就停掉這一輪 */
     function type(node, text) {
       var mine = ++turn;
       var chars = Array.from(text);
@@ -2602,10 +2397,6 @@ const STAGE_JS = String.raw`
       })();
     }
 
-    /* ---- 背包裡的幾樣東西：滑鼠滑上去（或點一下、用鍵盤移過去）就換成它的說明，跟遊戲裡一樣。
-            數值是官方 API 查的，版面照實機截圖（武器：每秒傷害、攻速、傷害、需求、詞條、翻頁的圓點；
-            素材：製作等級、用在哪幾種配方、詞條）。每一行字用語料裡同一句的譯文。
-            slot 是背包的第幾欄、第幾列（第 3 列是快捷列）；needs 的最後一個是「人物符不符合」——人物 22 等 ---- */
     var ITEMS = {
       bony: { name: 'Bony Bow', icon: 'bow', slot: [0, 3], tier: 'rare', pills: [['RARE', 'p-rare'], ['BOW', '']],
         emblem: ['emblem-bow.png', 3.2], dps: '89', speed: ['{#} Fast ({~} hits/s)', '2.5'],
@@ -2623,15 +2414,13 @@ const STAGE_JS = String.raw`
         ids: [['Durability', '-17'], ['Main Attack Damage%', ['+2%', '+4%']]] }
     };
     var ITEM_ORDER = ['bony', 'oak', 'flesh'];
-    var picked = 'bony';                 /* 現在看的是哪一樣 */
-    var touched = false;                 /* 訪客自己指過了：示意的那支滑鼠就收起來 */
+    var picked = 'bony';
+    var touched = false;
 
-    /* 一樣東西的說明。frame 是框（f-rare、f-normal、f-ingredient 是遊戲照稀有度給的框，ours 是我們另開的面板） */
     function tipBox(frame, item, name, nameTranslated, translated) {
       var box = el('div', 'tip ' + frame + ' t-' + item.tier);
       function word(src) { return translated ? T(src) : src; }
       function line(className, text) { return bit('div', className, text, translated); }
-      /* 開頭那個數字比旁邊的字大一級（「89 DPS」「1 Crafting Level」）；數字在句子的哪裡各語言不一樣 */
       function lead(src, value) {
         var row = line('lead', '');
         var parts = word(src).replace('{#}', '').split(/\{~\d*\}/);
@@ -2646,7 +2435,7 @@ const STAGE_JS = String.raw`
       var title = el('div', '');
       title.append(bit('div', 'tname', name, nameTranslated));
       var pills = el('div', 'pills');
-      item.pills.forEach(function (pill) { pills.append(el('b', 'pill ' + pill[1], pill[0])); });   /* 這幾顆在遊戲裡是圖，不會被翻 */
+      item.pills.forEach(function (pill) { pills.append(el('b', 'pill ' + pill[1], pill[0])); });
       title.append(pills);
       head.append(title);
       box.append(head);
@@ -2676,7 +2465,6 @@ const STAGE_JS = String.raw`
       }
       box.append(el('i', 'divider'));
 
-      /* 五種屬性的需求：有要求的那一格亮起來 */
       if (item.skills) {
         var reqs = el('div', 'reqs');
         item.skills.forEach(function (need, i) {
@@ -2688,7 +2476,6 @@ const STAGE_JS = String.raw`
         });
         box.append(reqs);
       }
-      /* 「{#} 標籤{#}值」：前面一格是勾或叉，後面是靠右的值 */
       (item.needs || []).forEach(function (need) {
         var parts = word(need[0]).split('{#}');
         var row = el('div', 'kv');
@@ -2699,7 +2486,6 @@ const STAGE_JS = String.raw`
       });
       if (item.ids) {
         if (item.needs) box.append(el('i', 'divider'));
-        /* 詞條：標籤在左、值靠右。素材的值是一段範圍（「+2% to +4%」），中間那個字也查語料 */
         item.ids.forEach(function (id) {
           var row = el('div', 'kv');
           var label = bit('span', '', '', translated);
@@ -2716,7 +2502,6 @@ const STAGE_JS = String.raw`
           box.append(row);
         });
       }
-      /* 武器的說明有好幾頁（按 F 換頁），最底下一排圓點 */
       if (item.pages) {
         var pager = el('div', 'pager');
         for (var p = 0; p < item.pages; p++) pager.append(el('span', 'dot' + (p ? '' : ' on')));
@@ -2726,22 +2511,18 @@ const STAGE_JS = String.raw`
       return box;
     }
 
-    /* 物品：打開背包。左邊是人物與裝備格（沒穿的格子是淡淡的影子），右邊與下面是背包；
-       指著哪一樣，旁邊就是遊戲原本的說明，再旁邊是我們另開的面板 */
     var ITEM_EDGE = 361;
     var FRAME_INSET = { rare: 4, normal: 2, ingredient: 5, plain: 2 };
     var NARROW_INV_WIDTH = 374 * .52;
     function drawItems(state) {
       hud.append(el('div', 'dim'));
       var inv = el('div', touched ? 'inv used' : 'inv');
-      /* 格子的位置：背包那三列從 (15, 92) 起、快捷列在 150，一格 18（貼圖的格數；實機截圖量的） */
       function slot(column, row) { return [(15 + 18 * column) * 2, (row === 3 ? 150 : 92 + 18 * row) * 2]; }
       function put(node, at) {
         node.style.left = at[0] + 'px';
         node.style.top = at[1] + 'px';
         return node;
       }
-      /* 沒穿裝備的格子：左邊一直排是頭盔到靴子，背包第一列的前四格是戒指、戒指、手環、項鍊 */
       [[15, 16, 0], [15, 34, 1], [15, 52, 2], [15, 70, 3], [15, 92, 4], [33, 92, 4], [51, 92, 5], [69, 92, 6]].forEach(function (g) {
         var ghost = put(el('i', 'ghost'), [g[0] * 2, g[1] * 2]);
         ghost.style.backgroundPosition = (-g[2] * 32) + 'px 0';
@@ -2749,7 +2530,6 @@ const STAGE_JS = String.raw`
       });
       if (!doll) { doll = makeDoll(3.5); dollBox.append(doll.node); }
       inv.append(dollClip);
-      /* 本來就在那裡的兩樣：素材袋、內容書 */
       inv.append(put(pic('item-pouch.png', 'it'), slot(4, 0)), put(pic('item-book.png', 'it'), slot(8, 3)));
       var glow = el('i', 'hover');
       inv.append(glow);
@@ -2819,21 +2599,18 @@ const STAGE_JS = String.raw`
       if (document.fonts && document.fonts.status !== 'loaded') document.fonts.ready.then(zoomToFit);
     }
 
-    /* 底下那一排：快捷列、生命與魔力、等級。世界與對話兩張圖都有 */
     function drawBar(heldTranslated) {
       if (heldTranslated !== null) {
         hud.append(bit('div', 'held', heldTranslated ? T('Bony Bow') : 'Bony Bow', heldTranslated));
       }
       var bar = el('div', 'hudbar');
       bar.append(el('span', 'num hp', '420 / 436'), el('span', 'num lv', '22'), el('span', 'num mp', '62 / 62'));
-      /* 快捷列的格子：第一格在 (56, 66)，一格 40（邏輯像素） */
       [['bow', 0], ['heal', 1], ['mana', 2], ['book', 8]].forEach(function (one) {
         bar.append(item(one[0], 56 + 40 * one[1], 66));
       });
       hud.append(bar);
     }
 
-    /* 對話：遊戲自己的對話框（頭像、名牌、底下那一條都是它的），另開小框的時候譯文在它上面 */
     function drawDialogue(state, typed) {
       var LINE = 'Well, what are we waiting for?';
       var CHOICES = ['Yes', 'Goodbye.'];
@@ -2845,7 +2622,6 @@ const STAGE_JS = String.raw`
         CHOICES.forEach(function (choice) { choiceBox.append(bit('div', '', T(choice), true)); });
         extra.append(choiceBox);
       }
-      /* 選項：對話框右上方的兩條，第一條是選到的 */
       var options = el('div', 'options');
       CHOICES.forEach(function (choice, i) {
         var bar = bit('div', 'option' + (i === 0 ? ' on' : ''), state.choices === 1 ? T(choice) : choice, state.choices === 1);
@@ -2862,15 +2638,13 @@ const STAGE_JS = String.raw`
       box.append(hint);
       stack.append(extra, options, box);
       hud.append(stack);
-      drawBar(null);                     /* 快捷列、生命與魔力在對話框的下面那一排，不被蓋住 */
+      drawBar(null);
       if (state.dialogue === 1 && typed) type(line, T(LINE));
       else { turn++; line.textContent = state.dialogue === 1 ? T(LINE) : LINE; }
     }
 
-    /* 世界與聊天：怪物的名字與血條在頂端、任務追蹤在右上、記分板在右邊、街上那個 NPC 的名牌、聊天在左下。
-       等級都是這一帶的：背景是 Detlas 的街上，人物 22 等，怪物 13 等 */
     function drawWorld(state) {
-      var MOB = 'Zombie {#}{#}';                  /* 名字後面那兩個圖示就是等級的小方框 */
+      var MOB = 'Zombie {#}{#}';
       var boss = bit('div', 'boss', (state.bossbar ? T(MOB) : MOB).replace(/\s*\{#\}/g, ''), state.bossbar);
       boss.append(el('b', 'mlv', 'LV 13'), el('i'));
       hud.append(boss);
@@ -2889,14 +2663,13 @@ const STAGE_JS = String.raw`
       hud.append(track);
 
       var on = state.scoreboard;
-      var board = el('div', state.tracker === 1 ? 'board below' : 'board');     /* 追蹤欄另開小框時，記分板讓到它下面 */
+      var board = el('div', state.tracker === 1 ? 'board below' : 'board');
       board.append(bit('div', '', on ? T('Daily Objective:') : 'Daily Objective:', on));
       [['- Loot Chests T{~}+: {~}/{~}', ['2', '3', '5']], ['- Mobs slain: {~}/{~}', ['42', '100']]].forEach(function (row) {
         board.append(bit('div', '', fill(on ? T(row[0]) : row[0], row[1]), on));
       });
       hud.append(board);
 
-      /* 名牌在語料裡是一整段：圖示、名字、說明各一行 */
       var NPC = '{#}\nParty Finder\nFind a party of queue for a raid';
       function plateLines(translated) {
         var lines = (translated ? T(NPC) : NPC).split('\n');
@@ -2939,7 +2712,6 @@ const STAGE_JS = String.raw`
       else if (tab === 'dialogue') drawDialogue(state, typed);
       else drawWorld(state);
     }
-    /* 照容器的寬度縮放；寬窄一換，整張重畫（位置不一樣） */
     function fit() {
       var width = host.clientWidth;
       if (!width) return;
@@ -2950,7 +2722,7 @@ const STAGE_JS = String.raw`
       scr.style.width = W + 'px';
       scr.style.height = H + 'px';
       scr.style.transform = 'scale(' + (width / W) + ')';
-      host.style.aspectRatio = W + ' / ' + H;        /* 高度交給瀏覽器照比例算：自己寫高度的話，寬會反過來跟著高縮 */
+      host.style.aspectRatio = W + ' / ' + H;        /* 高度交給 aspect-ratio：自己寫高度的話寬會反過來跟著高縮 */
       if (nowWide !== wide) {
         wide = nowWide;
         if (last) {
@@ -2969,7 +2741,6 @@ const STAGE_JS = String.raw`
   }
 `;
 
-/** 往下捲時淡進來的是哪幾塊（見 COMMON 的 revealOnScroll）。最上面那一段本來就有自己的進場動畫，不算 */
 const REVEAL_HOME = '#main > h2, #main > .lede, .features > div, #main > .more, .split > *, .band, .everyone, #main > .panel, #main > .cta';
 const REVEAL_FEATURES = 'section[id] > h2, .cards > .fcard';
 
@@ -3056,12 +2827,7 @@ const HOME = String.raw`
   </div>
 `;
 
-/**
- * 首頁的團隊：名單跟 /api/team 要（倉庫裡那份 credits.json，加上管理頁登記的貢獻公會）。
- * 一個人一列，點下去是他在 Wynncraft 的頁面；公會那一段多了旗幟與圖示。
- */
 const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
-  /* 最上面那一面遊戲畫面：自己輪著換語言與場景。按了某個語言就停在那個語言，場景照樣換 */
   (function () {
     var host = document.getElementById('hero-stage');
     var screen = makeStage(host, D);
@@ -3089,7 +2855,6 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
     setInterval(function () {
       if (document.hidden) return;
       tick++;
-      /* 同一個場景看兩種語言再換下一個場景；挑了語言之後只換場景 */
       if (!picked) at = (at + 1) % order.length;
       if (picked || tick % 2 === 0) scene = (scene + 1) % scenes.length;
       show(true);
@@ -3176,7 +2941,7 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
             img.src = head(member.mc, 40);
             row.append(img);
           } else {
-            var blank = el('span', 'blank');        /* 沒登記遊戲 ID 的人：一片葉子佔著頭像的位置 */
+            var blank = el('span', 'blank');
             blank.append(shape.cloneNode(true));
             row.append(blank);
           }
@@ -3208,7 +2973,6 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
             row.append(txt);
           } else {
             row.append(el('b', '', member.name));
-            /* 名單上寫的名字跟遊戲 ID 不一樣，才把遊戲 ID 另外寫出來 */
             if (member.mc && member.mc !== member.name) row.append(el('span', 'mc', member.mc));
           }
           var leaf = shape.cloneNode(true);
@@ -3262,12 +3026,7 @@ const HOME_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
   })();
 ` + '</script>';
 
-// ------------------------------------------------------------------ 功能
 
-/**
- * 功能頁的一張卡。at 是 glyphs.png 上的 [列, 欄]（遊戲通用的那一張白色圖示）；
- * eg 是預覽裡的一句原文——頁面上會配上譯文，跟著預覽選的語言換。
- */
 const card = (key, at, eg) => '<article class="fcard"><i class="glyph" style="--r:' + at[0] + ';--c:' + at[1]
   + '" aria-hidden="true"></i><div><h3>%%feat.' + key + '%%</h3><p>%%feat.' + key + 'b%%</p>'
   + (eg ? '<p class="eg" data-eg="' + eg + '" aria-hidden="true"></p>' : '') + '</div></article>';
@@ -3275,10 +3034,6 @@ const mod = (name, slug, state, key) => '<article class="fcard mod"><i class="gl
   + '<div><h3><a href="https://modrinth.com/mod/' + slug + '">' + name + '</a>'
   + '<span class="state' + (state === 'required' ? ' need' : '') + '">%%feat.' + state + '%%</span></h3><p>%%feat.' + key + 'b%%</p></div></article>';
 
-/**
- * 披風範本那一塊：說明圖、三句話、每一種尺寸的下載鈕。披風一覽與帳號頁都放。
- * 使用者 2026-10-14：「披風範本希望可以更明顯一點，有使用者回饋找不太到」。
- */
 const TEMPLATE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
 const TEMPLATE_BLOCK = '<div class="tpl"><img class="guide" src="%%tpl.guide%%" alt="%%tpl.alt%%" width="776" height="502" loading="lazy">'
   + '<div><h2>%%tpl.h%%</h2><p>%%tpl.p%%</p><p class="label">%%tpl.pick%%</p><div class="tpl-sizes">'
@@ -3374,16 +3129,10 @@ const FEATURES = String.raw`
   </div>
 `;
 
-/**
- * 功能頁的即時預覽：照遊戲裡設定畫面右邊那一塊做（client/ui/Preview.java）。
- * 左邊幾個真的選項，右邊一張小場景，選項一動場景就跟著變。
- * 選項的名稱與說明、場景裡的譯文都在 D 裡——build-demo.py 從模組的語言檔與語料產生的。
- */
 const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
   (function () {
     var ui = D.ui;
     var TAGS = STAGE_TAGS;
-    /* 每一頁有哪幾列。options 是三段的選項（照遊戲裡的順序），toggle 是開關，range 是滑桿 */
     var PAGES = {
       items: [
         { key: 'tooltip', label: 'items.tooltip', options: ['mode.panel', 'mode.replace', 'mode.off'] },
@@ -3404,7 +3153,6 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
         { key: 'held', label: 'world.helditem', toggle: true }
       ]
     };
-    /* 跟模組的預設值一樣 */
     var state = { tooltip: 0, names: 2, gap: 12, dialogue: 1, choices: 1, nametag: 1, chat: 1, tracker: 0,
       titles: true, bossbar: true, scoreboard: true, held: true };
     var tab = 'items';
@@ -3415,13 +3163,11 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
     var stage = document.getElementById('play-stage');
     var hintNode = document.getElementById('play-hint');
     var updaters = [];
-    /* 一開始用這一頁的語言；英文版的頁面沒有對應的譯文，先給繁體中文 */
     Object.keys(TAGS).forEach(function (code) { if (TAGS[code] === document.documentElement.lang) lang = code; });
     picker.value = lang;
     document.getElementById('play-lang-name').textContent = ui['data.language'];
     tabs.forEach(function (button) { button.textContent = ui['tab.' + button.dataset.tab]; });
 
-    /* 畫面本身是 makeStage 畫的（首頁最上面那一塊也用同一份） */
     var screen = makeStage(stage, D);
     function draw(typed) { screen.draw(tab, state, lang, typed); }
     function explain(row) {
@@ -3430,14 +3176,12 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
       hintNode.textContent = text;
       flash(hintNode);
     }
-    /* quiet：拖滑桿的時候一路重畫，不要每畫一次就淡入一次 */
     function changed(row, typed, quiet) {
       updaters.forEach(function (update) { update(); });
       explain(row);
       screen.quiet(quiet);
       draw(typed);
     }
-    /* 這一頁的幾列。每一列自己記得怎麼照 state 更新外觀，按了不必整塊重畫（焦點才不會跑掉） */
     function build() {
       set.replaceChildren();
       updaters = [];
@@ -3477,7 +3221,6 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
           input.setAttribute('aria-label', ui[row.label]);
           var output = el('output', '', state[row.key] + ' px');
           input.oninput = function () { state[row.key] = Number(input.value); output.textContent = input.value + ' px'; changed(row, false, true); };
-          /* 間距只有「另開面板」的時候有東西可以調：別的模式這一列淡掉 */
           updaters.push(function () { line.classList.toggle('dim', state.tooltip !== 0); });
           wrap.append(input, output);
           line.append(wrap);
@@ -3496,7 +3239,6 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
         draw(true);
       };
     });
-    /* 下面那些卡片上的例句：原文在上，譯文在下，用預覽現在選的那一種語言 */
     function examples() {
       Array.prototype.forEach.call(document.querySelectorAll('[data-eg]'), function (node) {
         var src = node.dataset.eg;
@@ -3511,7 +3253,6 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
     draw(false);
     examples();
 
-    /* 左邊的目錄：捲到哪一段，哪一項就亮起來 */
     var links = Array.prototype.slice.call(document.querySelectorAll('.spec-nav a'));
     function idOf(link) { return link.getAttribute('href').slice(1); }
     if ('IntersectionObserver' in window) {
@@ -3533,11 +3274,8 @@ const FEATURES_JS = '<script>var D = %%demo%%;' + STAGE_JS + String.raw`
   })();
 ` + '</script>';
 
-// ------------------------------------------------------------------ 披風一覽
 
-/** 立體檢視：一個灰色的人偶穿著披風。披風一覽與帳號那一頁都用。 */
 const VIEWER = String.raw`
-  /* 人偶的皮膚：沒有臉的灰色木偶，免得跟披風搶戲。 */
   function mannequin() {
     var c = document.createElement('canvas');
     c.width = 64; c.height = 64;
@@ -3547,7 +3285,6 @@ const VIEWER = String.raw`
     g.fillStyle = '#7d8881'; g.fillRect(0, 16, 16, 16); g.fillRect(16, 48, 16, 16);
     return c;
   }
-  /* 範本（22×17 格）放回 Minecraft 披風貼圖（64×32 格）的左上角。 */
   function capeCanvas(source, width) {
     var k = Math.max(1, Math.round(width / 22));
     var c = document.createElement('canvas');
@@ -3557,8 +3294,6 @@ const VIEWER = String.raw`
     g.drawImage(source, 0, 0, 22 * k, 17 * k);
     return c;
   }
-  /* 人偶穿誰的外觀：預設是玩家自己的 skin（沒登入的人看 Green_teaTW），可以切回無外觀的灰木偶。
-     選擇只記在這個瀏覽器裡 */
   var SKIN_KEY = 'wcy-cape-skin';
   function skinMode() { try { return localStorage.getItem(SKIN_KEY) === 'plain' ? 'plain' : 'skin'; } catch (e) { return 'skin'; } }
   function setSkinMode(mode) { try { localStorage.setItem(SKIN_KEY, mode); } catch (e) {} }
@@ -3577,7 +3312,7 @@ const VIEWER = String.raw`
     viewer.controls.enablePan = false;
     viewer.fov = 36;
     viewer.zoom = 0.86;
-    /* 背對著，稍微側一點。要轉外面那一層：走路的動畫每一格都會把人本身轉回正面 */
+    /* 轉外面那一層：走路動畫每一格都把人本身轉回正面 */
     viewer.playerWrapper.rotation.y = Math.PI + 0.5;
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       viewer.animation = new skinview3d.WalkingAnimation();
@@ -3585,7 +3320,6 @@ const VIEWER = String.raw`
     }
     return viewer;
   }
-  /* 亮相：人偶從側面轉回背對著的位置，披風跟著甩進視線。每穿上一件新的做一次。 */
   var REST = Math.PI + 0.5;
   function reveal(viewer) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -3601,7 +3335,6 @@ const VIEWER = String.raw`
     }
     requestAnimationFrame(step);
   }
-  /* 把一件披風穿到人偶身上。GIF 一格一格換：瀏覽器有 ImageDecoder 就動，沒有就停在第一格。 */
   function wear(viewer, source, isGif) {
     var mine = ++playing;
     var image = new Image();
@@ -3732,26 +3465,22 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var current = null;
   var viewer = null;
   var developer = false;
-  var visitor = null;                    /* 登入的人（/api/me 回的那一份）；沒登入是 null */
-  var all = [];                          /* 伺服器回的那一份：一張圖一筆 */
-  var favs = {};                         /* 我的最愛：{雜湊: true} */
-  var past = [];                         /* 我用過的（新的在前） */
+  var visitor = null;
+  var all = [];
+  var favs = {};
+  var past = [];
   var sort = 'new';
-  var kind = 'all';                      /* 格式：all／png／gif */
-  var scope = 'all';                     /* 顯示哪些：all／fav／hist／hidden／pending；跟格式可以疊在一起 */
-  var keep = 7 * 86400000;               /* 沒有人穿的披風留多久（伺服器說了算，見 load） */
+  var kind = 'all';
+  var scope = 'all';
+  var keep = 7 * 86400000;
   var serverNow = Date.now();
   document.getElementById('count').textContent = L.loading;
   function member() { return Boolean(visitor && visitor.linked !== false); }
-  /* 圖的網址。平常拿「穿著它的某個人」那一件；我用過、但現在沒人穿的，照雜湊從自己的紀錄拿。
-     管理的人多帶雜湊：等審核的那幾件要它才拿得到 */
   function url(cape) {
-    /* 沒有人穿、還在倒數的：照雜湊拿，不必登入 */
     if (cape.idle) return '/api/idle/' + cape.h;
     if (!cape.ids.length) return '/api/cape/' + visitor.id + '?k=' + cape.h;
     return '/api/cape/' + cape.ids[0] + '?v=' + cape.v + (developer || cape.own ? '&k=' + cape.h : '');
   }
-  /* 還在載入：先放幾張空卡佔位置，資料到了整批換掉 */
   (function () {
     for (var i = 0; i < 10; i++) {
       var blank = el('div', 'card skel');
@@ -3778,14 +3507,11 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       });
   }
 
-  /* 沒有人穿的披風還剩幾天（不滿一天算一天） */
   function daysLeft(cape) { return Math.max(1, Math.ceil((cape.idle + keep - serverNow) / 86400000)); }
 
-  /* ---- 這一頁現在該列哪幾件：照篩選挑、照排序排 ---- */
   function listNow() {
     function format(cape) { return kind === 'all' || cape.t === kind; }
     if (scope === 'hist') {
-      /* 我用過的：照用的時間排。一覽上還有的拿一覽那一筆（才有人數與星星），沒有的自己拼一筆 */
       return past.map(function (one) {
         var found = all.filter(function (cape) { return cape.h === one.h; })[0];
         return found || { h: one.h, t: one.t, s: one.s, x: one.x, y: one.y, v: one.at, c: one.at, ids: [], stars: 0, gone: true };
@@ -3820,7 +3546,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       if (!answer.good) { if (dialog.open) tell(L.why[answer.why] || fmt(L.failed, { s: answer.status }), false); return; }
       if (answer.on) favs[cape.h] = true; else delete favs[cape.h];
       cape.stars = answer.stars;
-      /* 星星亮起來的時候彈一下 */
       if (button && button.animate && !calm && answer.on) {
         button.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.28)' }, { transform: 'scale(1)' }],
           { duration: 260, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
@@ -3830,7 +3555,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     }).catch(function () {});
   }
 
-  /* still：只是星星或人數變了，卡片不要重新一張一張進場 */
   function render(still) {
     var items = listNow();
     var count = document.getElementById('count');
@@ -3844,7 +3568,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       var card = el('div', 'card');
       if (still) card.style.animation = 'none';
       else card.style.setProperty('--i', Math.min(index, 10));
-      /* 每張卡有自己的名字：換排序的時候瀏覽器才知道哪一張移到哪裡。太多張就不取了（一次動太多反而亂） */
       if (items.length <= 60) card.style.viewTransitionName = 'c' + cape.h.slice(0, 16);
       var open = el('button', 'open');
       open.type = 'button';
@@ -3859,7 +3582,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       img.src = url(cape);
       face.append(img);
       stage.append(face);
-      /* 標記疊在圖上：會動的才標格式（PNG 是大多數，標了只是雜訊） */
       var chips = el('div', 'marks');
       if (cape.t === 'gif') chips.append(el('span', 'tag gif', 'GIF'));
       if (member() && visitor.cape && visitor.cape.h === cape.h) chips.append(el('span', 'tag mine', L.tagMine));
@@ -3881,7 +3603,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       open.append(stage, meta);
       open.onclick = function () { show(cape); };
       card.append(open);
-      /* 星星：登入並綁定的人才有；一覽上看不到的那些（我用過但已經沒人穿、不公開、待審核）不能加 */
       if (member() && !cape.gone && !cape.hidden) {
         var star = el('button', 'star');
         star.type = 'button';
@@ -3894,7 +3615,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     });
   }
 
-  /* ---- 點開一件 ---- */
   function favState() {
     var cape = current;
     var button = document.getElementById('fav');
@@ -3918,7 +3638,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var back = document.getElementById('unwear');
     back.hidden = !(on && mine.worn);
     back.textContent = mine && mine.back ? L.restoreOwn : L.takeOff;
-    /* 我用過、現在沒穿的那幾件可以從紀錄拿掉 */
     document.getElementById('forget').hidden = !(scope === 'hist' && !on);
   }
   function show(cape) {
@@ -3926,7 +3645,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     document.getElementById('flat').src = url(cape);
     document.getElementById('d-type').textContent = cape.t.toUpperCase();
     document.getElementById('d-size').textContent = bytes(cape.s);
-    /* 尺寸：有記的用記的；早期上傳的沒記，等那張圖載進來自己量 */
     var dim = document.getElementById('d-dim');
     dim.textContent = cape.x ? cape.x + '×' + cape.y : '';
     document.getElementById('flat').onload = function () {
@@ -3956,7 +3674,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         img.src = head(owner.name, 36);
         li.append(img);
       }
-      /* 管理的人看得到每個人的狀態：不公開、待審核、是套用來的（圖不是他傳的） */
       var marks = [owner.pending ? L.tagPending : '', owner.vis && owner.vis !== 'public' ? L.vis[owner.vis] : '', owner.worn ? L.tagWorn : '']
         .filter(function (mark) { return mark; });
       li.append(el('span', '', (owner.name || owner.uuid) + (marks.length ? ' (' + marks.join(', ') + ')' : '')));
@@ -3972,7 +3689,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     slideAll();
     wear(viewer, url(cape), cape.t === 'gif');
   }
-  /* 人偶穿誰：登入並綁定了帳號的穿自己的，其他人看 Green_teaTW */
   function wearer() { return member() && visitor.name ? visitor.name : 'Green_teaTW'; }
   var skinButtons = Array.prototype.slice.call(document.querySelectorAll('#skinpick button'));
   document.getElementById('skinpick').setAttribute('aria-label', L.skinPick);
@@ -3991,13 +3707,11 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   dialog.addEventListener('close', stopCape);
   dialog.addEventListener('click', function (e) { if (e.target === dialog) shut(); });
 
-  /* 穿上這一件／復原。能不能穿由伺服器決定（GIF 只有成員能穿、檔案上限、封禁），這裡只管畫面 */
   function wearCall(path, body, done) {
     var buttons = [document.getElementById('wear'), document.getElementById('unwear')];
     buttons.forEach(function (button) { button.disabled = true; });
     send(path, body).then(function (answer) {
       if (!answer.good) { tell(L.why[answer.why] || fmt(L.failed, { s: answer.status }), false); return null; }
-      /* 換了一件：重新問一次「我是誰」，再把一覽更新（人數、我用過的） */
       return api('/me').then(function (again) { return again.ok ? again.json() : visitor; }).then(function (me) {
         visitor = me;
         done(answer);
@@ -4047,7 +3761,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     }).catch(function () { tell(L.offline, false); });
   };
 
-  /* ---- 管理 ---- */
   function remove(ban) {
     var cape = current;
     if (!cape) return;
@@ -4080,11 +3793,8 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     });
   };
 
-  /* 從別處連過來找範本的（/capes#template）：那一塊直接打開 */
   if (location.hash === '#template') document.getElementById('template').open = true;
 
-  /* ---- 排序與篩選 ---- */
-  /* 換排序、換篩選：留下來的卡滑到新的位置，新來的淡進來。瀏覽器不支援、或不想看動來動去的人就直接換 */
   function reorder() {
     if (!document.startViewTransition || calm || document.visibilityState === 'hidden') { render(false); return; }
     document.startViewTransition(function () { render(true); });
@@ -4092,7 +3802,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   document.getElementById('kind').onchange = function () { kind = this.value; reorder(); };
   document.getElementById('scope').onchange = function () {
     scope = this.value;
-    /* 「我用過的」照用的時間排，排序在那裡沒有用 */
     document.getElementById('sort').disabled = scope === 'hist';
     reorder();
   };
@@ -4110,16 +3819,13 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         favs = {};
         got[1].favs.forEach(function (hash) { favs[hash] = true; });
         past = got[1].history;
-        /* 加了星號或用過的披風，滿七天沒有人穿被移除了：說一聲（伺服器只報這一次） */
         if (got[1].removed) {
           var gone = document.getElementById('gone');
           gone.textContent = fmt(L.removedNote, { n: got[1].removed });
           gone.hidden = false;
         }
       }
-      /* 自己那一件：在等審核、或不公開的時候一覽上沒有它，圖要帶著雜湊才拿得到 */
       all.forEach(function (cape) { if (member() && visitor.cape && visitor.cape.h === cape.h) cape.own = true; });
-      /* 點開著的那一件換成新的那一筆（人數、星星會變） */
       if (current) {
         var again = all.filter(function (cape) { return cape.h === current.h; })[0];
         if (again) { current = again; favState(); }
@@ -4128,9 +3834,9 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     });
   }
   whoami.then(function (me) {
-    developer = Boolean(me && me.staff);       /* 開發者或管理員：看得到全部（含不公開、待審核）與誰傳的，能刪除與封禁 */
+    developer = Boolean(me && me.staff);
     visitor = me;
-    /* 「顯示」只列這個人用得到的選項（option 的 hidden 有的瀏覽器不理，直接拿掉）；只剩「全部」就整個不出現 */
+    /* option 的 hidden 有的瀏覽器不理：直接拿掉 */
     var scopes = document.getElementById('scope');
     Array.prototype.slice.call(scopes.options).forEach(function (option) {
       var f = option.value;
@@ -4142,7 +3848,6 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
 
-// ------------------------------------------------------------------ 帳號
 
 const ACCOUNT = String.raw`
   <h1>%%account.h1%%</h1>
@@ -4258,7 +3963,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var msg = document.getElementById('msg');
   function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); flash(msg); }
   var viewer = null;
-  var myName = null;                       /* 人偶穿自己的 skin（披風一覽選了「無外觀」就照那個選擇） */
+  var myName = null;
   function ready(canvas) {
     if (!viewer) {
       viewer = makeViewer(canvas);
@@ -4266,8 +3971,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     }
     return viewer;
   }
-  var trying = null;                       /* 正在試穿的那張圖的網址（還沒上傳） */
-  /* 選了一張尺寸對的圖：先穿到人偶身上看看，不必傳了才知道長怎樣 */
+  var trying = null;
   function tryOn(file, w, h) {
     var canvas = document.getElementById('mine');
     var hint = document.getElementById('minehint');
@@ -4305,7 +4009,6 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     document.getElementById('pending').hidden = !(me.cape && me.cape.pending);
     document.getElementById('review').hidden = !me.review;
     document.getElementById('remove').hidden = !me.cape;
-    /* 這一件是從一覽套用的：多一顆「復原」，換回自己原本那一件（原本沒有的話就是脫下） */
     var worn = Boolean(me.cape && me.cape.worn);
     document.getElementById('worn').hidden = !worn;
     document.getElementById('restore').hidden = !worn;
@@ -4319,22 +4022,19 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     if (!ready(canvas)) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
     hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s),
       d: me.cape.x ? me.cape.x + '×' + me.cape.y + ' · ' : '' });
-    /* 帶著雜湊：等審核的那一件只有知道雜湊的人（本人、管理的人）拿得到 */
     wear(viewer, '/api/cape/' + me.id + '?v=' + me.cape.v + '&k=' + me.cape.h, me.cape.t === 'gif');
   }
   function refresh() {
     return api('/me').then(function (r) { return r.ok ? r.json() : null; }).then(function (me) { if (me) show(me); });
   }
 
-  /* 網站有沒有開 Discord 登入：有才把按鈕露出來 */
   var discordOn = fetch('/api/status').then(function (r) { return r.json(); })
     .then(function (status) { return Boolean(status.discord); }).catch(function () { return false; });
   var linkMsg = document.getElementById('linkmsg');
-  var limit = 20 * 1024 * 1024;          /* 檔案上限：登入之後換成這個人自己的（一般玩家 1 MB） */
+  var limit = 20 * 1024 * 1024;
   var SIZES_OK = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
   var watching = null;
 
-  /* 用 Discord 登入了、還沒綁：要一組綁定碼，然後等遊戲那邊把它送回來 */
   function linking(me) {
     document.getElementById('dc-name').textContent = fmt(L.discordAs, { n: (me.discord && me.discord.name) || '' });
     document.getElementById('getcode').onclick = function () {
@@ -4396,7 +4096,6 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       line.textContent = fmt(L.discordAs, { n: me.discord.name || '' });
       document.getElementById('unlink').hidden = false;
     } else {
-      /* 從遊戲開的：提醒可以另外用 Discord 註冊，之後不開遊戲也登得進來 */
       discordOn.then(function (on) {
         document.getElementById('dc-hint').hidden = !on;
         document.getElementById('discord2').hidden = !on;
@@ -4409,7 +4108,6 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     show(me);
   });
   document.getElementById('signout').onclick = signOut;
-  /* 一鍵綁定：這一頁已經是驗過的遊戲帳號，去 Discord 登入回來就綁好了 */
   document.getElementById('discord2').onclick = function () {
     api('/link/intent', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -4418,7 +4116,6 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         else say(L.bindFail, false);
       }).catch(function () { say(L.offline, false); });
   };
-  /* 選了圖就先說它多大：尺寸不對的話不必等傳完才知道 */
   document.getElementById('file').onchange = function () {
     var file = this.files[0];
     if (!file) return;
@@ -4436,7 +4133,6 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     probe.onerror = function () { URL.revokeObjectURL(address); say(L.why['bad format'], false); };
     probe.src = address;
   };
-  /* 把圖檔拖進上傳那一塊：框亮起來，放開就等於選了那個檔 */
   (function () {
     var drop = document.getElementById('drop');
     var input = document.getElementById('file');
@@ -4533,7 +4229,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     if (!file) { say(L.pickFirst, false); return; }
     if (file.size > limit) { say(L.why['too large'], false); return; }
     var button = this;
-    button.disabled = true;                 /* 傳的時候按鈕看得出來在忙，也不會被連按 */
+    button.disabled = true;
     button.setAttribute('aria-busy', 'true');
     function idle() { button.disabled = false; button.removeAttribute('aria-busy'); }
     say(L.uploading, true);
@@ -4549,11 +4245,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   };
 ` + '</script>';
 
-// ------------------------------------------------------------------ 管理
 
-/* ---------------------------------------------------------------- 回饋（/feedback）
-   使用者 2026-10-17：分類（譯文、內容、網站、功能、其他）、想說的話、可以不填的「在哪裡」；要用 Discord 登入，
-   一個人一小時幾則。譯文建議會自動在 GitHub 開 Issue（只放顯示名稱）。走 POST /api/feedback；機器人的 /回饋 進同一個地方。 */
 const FEEDBACK_CAT_OPTIONS = ['translation', 'content', 'website', 'feature', 'other']
   .map((c) => '<option value="' + c + '">%%fb.cat.' + c + '%%</option>').join('');
 
@@ -4607,10 +4299,8 @@ const FEEDBACK_JS = '<script>' + String.raw`
   });
   var pageLang = document.documentElement.lang.toLowerCase();
   langSel.value = SITE_TO[pageLang] || SITE_TO[pageLang.split('-')[0]] || (pageLang === 'zh-hans' ? 'zh_cn' : '');
-  /* 從別處連過來可以先選好分類：/feedback?cat=translation */
   var asked = new URLSearchParams(location.search).get('cat');
   if (asked && cat.querySelector('option[value="' + asked.replace(/[^a-z]/g, '') + '"]')) cat.value = asked;
-  /* 譯文建議：多問一個語言，「在哪裡」也特別請他填 */
   function shape() {
     var tr = cat.value === 'translation';
     langBox.hidden = !tr;
@@ -4865,7 +4555,6 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
-  /* 審核名單：名單上的人之後傳的披風要先通過 */
   function loadReviews() {
     return api('/admin/reviews').then(function (r) { return r.json(); }).then(function (data) {
       var body = document.getElementById('reviews');
@@ -4961,11 +4650,9 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
-  /* 貢獻公會：名字與標籤先加，圖示與旗幟各傳一張 */
   var gmsg = document.getElementById('g-msg');
   function gsay(text, good) { gmsg.className = 'msg ' + (good ? 'ok' : 'bad'); gmsg.textContent = text; flash(gmsg); }
-  var picking = null;                    /* 正在替哪個公會挑哪一張圖 */
-  /* 圖先縮到 max 以內再傳：標誌動不動就是一千多像素，網頁上只畫幾十像素 */
+  var picking = null;
   function shrink(file, max, done) {
     var probe = new Image();
     var address = URL.createObjectURL(file);
@@ -5066,7 +4753,6 @@ const ADMIN_JS = '<script>' + String.raw`
       }).catch(function () { gsay(L.offline, false); });
   };
 
-  /* 管理員名單：只有開發者看得到、動得了 */
   var KIND = { u: 'Minecraft UUID', n: 'Minecraft ID', d: 'Discord' };
   var staffKeys = {};
   function loadStaff() {
@@ -5105,10 +4791,6 @@ const ADMIN_JS = '<script>' + String.raw`
       });
     });
   }
-  /* 新增管理員：下拉選單列出已註冊的人（登入過網站或傳過披風的），打字是篩選。
-     名單在第一次展開時抓一次，之後都在這裡篩。
-     有綁遊戲帳號的記 UUID（用遊戲或 Discord 登入都認得），只有 Discord 的記 Discord ID。
-     沒選就照打的字加，跟以前一樣（還沒註冊的人）。 */
   var everyone = null;
   function dashedId(u) { return [u.slice(0, 8), u.slice(8, 12), u.slice(12, 16), u.slice(16, 20), u.slice(20)].join('-'); }
   function personName(p) { return p.mc || p.dname || p.discord; }
@@ -5118,7 +4800,6 @@ const ADMIN_JS = '<script>' + String.raw`
     if (p.uuid) lines.push((p.mc ? 'Minecraft ' + p.mc + ' · ' : '') + dashedId(p.uuid));
     return lines;
   }
-  /* 跟 Worker 的 personScore 同一套：完全相同 3、開頭相同 2、包含 1 */
   function personScore(p, q) {
     var best = 0, bare = q.replace(/-/g, '');
     [[p.dname, q], [p.mc, q], [p.discord, q], [p.uuid, bare]].forEach(function (pair) {
@@ -5137,8 +4818,6 @@ const ADMIN_JS = '<script>' + String.raw`
     }
     return everyone;
   }
-  /* 選成員的下拉選單：管理員名單與譯者名單共用。prefix 是那一組元素 id 的開頭（s-who、s-hits、s-pick），
-     taken(p) 說這個人是不是已經在名單上（標出來、不能選），takenLabel 是標在他底下的字。 */
   function memberPicker(prefix, taken, takenLabel, onPick) {
   var finder = document.getElementById(prefix + '-who');
   var hits = document.getElementById(prefix + '-hits');
@@ -5200,7 +4879,7 @@ const ADMIN_JS = '<script>' + String.raw`
       personLines(p).forEach(function (line) { text.append(el('small', '', line)); });
       if (personTaken(p)) text.append(el('small', '', takenLabel));
       li.append(img, text);
-      /* mousedown：搶在輸入框失去焦點、清單收起來之前 */
+      /* mousedown：搶在輸入框失焦、清單收起來之前 */
       li.addEventListener('mousedown', function (e) { e.preventDefault(); choose(p); });
       hits.append(li);
     });
@@ -5227,7 +4906,6 @@ const ADMIN_JS = '<script>' + String.raw`
   });
   finder.addEventListener('blur', closeHits);
   return {
-    /* 選了的人記 UUID（有綁遊戲帳號的）或 Discord ID；沒選就照打的字 */
     who: function () { return picked ? (picked.uuid || picked.discord) : finder.value.trim(); },
     clear: function () { finder.value = ''; picked = null; pickNote.textContent = ''; },
     set: function (text) { finder.value = text; picked = null; pickNote.textContent = ''; }
@@ -5257,7 +4935,6 @@ const ADMIN_JS = '<script>' + String.raw`
         });
       }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
-  /* 回饋：網站的回饋頁與 Discord 的 /回饋 送來的，新的在前。標已處理、重新開啟、刪除；譯文建議的 Issue 沒開成可以再開一次 */
   var FB = L.fb;
   function fbPost(path, body) {
     return api(path, { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
@@ -5350,7 +5027,6 @@ const ADMIN_JS = '<script>' + String.raw`
       loadBot();
     }
   });
-  /* Discord 機器人：設定齊了沒有、註冊指令、邀請連結（只有開發者） */
   function loadBot() {
     api('/admin/discord').then(function (r) { return r.ok ? r.json() : null; }).then(function (info) {
       if (!info) return;
@@ -5362,7 +5038,6 @@ const ADMIN_JS = '<script>' + String.raw`
       var end = el('li', '', 'Interactions Endpoint URL: ');
       end.append(el('code', '', info.endpoint));
       list.append(end);
-      // 直接問 Discord 的結果（只有設了 Bot Token 才有）
       var c = info.check;
       if (c && c.error) list.append(el('li', 'bad', '\u2717 Discord: ' + c.error));
       if (c && !c.error) {
@@ -5656,10 +5331,6 @@ const ADMIN_JS = '<script>' + String.raw`
   };
 ` + '</script>';
 
-/** 每一頁：標題的鍵、內容、程式。 */
-/* ---------------------------------------------------------------- 隱私政策與服務條款
-   使用者 2026-10-16：Discord 的應用程式驗證要這兩個連結，「用現有內容寫」。內容照 README 的
-   「披風、灰色葉子與會送出的資料」與 tools/presence/README.md 的「它記什麼」；那兩處改了這裡要跟。 */
 const legalPage = (name) => '<article class="policy"><h1>%%' + name + '.h1%%</h1>'
   + '<p class="policy-date">%%legal.updated%%</p>%%' + name + '.body%%</article>';
 
@@ -5677,9 +5348,6 @@ const LOST = String.raw`
 `;
 
 
-/* ---------------------------------------------------------------- 協作翻譯（/translate）
-   使用者 2026-10-16：像 Crowdin 一樣在網頁上提交、校稿；不同團隊意見不同就投票，管理員定案。
-   語料從 translate-index 分支的精簡索引讀（Worker 代讀），提案、投票、定案走 /api/tr/*。 */
 const TRANSLATE = String.raw`
   <h1>%%tr.h1%%</h1>
   <p class="lede">%%tr.lede%%</p>
@@ -5753,7 +5421,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
   function canWrite() { return state.me.decide || state.me.langs.indexOf(state.lang) >= 0; }
   function why(code) { return T.why[code] || fmt(T.failed, { s: code }); }
 
-  /* 跟 Worker 的 placeholderProblem 同一套 */
   function problem(src, text, base) {
     if (!text || !text.trim()) return 'empty';
     if (text.length > 2000) return 'too long';
@@ -5793,10 +5460,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
   }
   function chip(text, cls) { return el('span', 'tr-chip' + (cls ? ' ' + cls : ''), text); }
 
-  /* ---- 實機預覽 ----
-     使用者 2026-10-16：「希望可以瀏覽實機內容（例如 {~1} 模擬數值，防止翻譯團隊寫不對，或是幫忙編號）」。
-     原文的 {~} 依序是第 1、2、3… 個數字；譯文寫 {~N} 就是接原文第 N 個（沒編號的照出現順序）。
-     兩邊用同一組模擬值，數字旁邊標著它是第幾個，順序寫反一眼就看得出來。 */
   var SAMPLES = [[12, 3, 250, 45, 8, 1500, 7, 30, 2, 64], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1234, 56, 7, 890, 2, 33, 4, 5, 6, 9]];
   var sampleSet = 0;
   var SLOT_COLOURS = ['#ffaa00', '#55ffff', '#55ff55', '#ff55ff', '#ffff55', '#ff5555'];
@@ -5864,7 +5527,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
     area.selectionStart = area.selectionEnd = from + text.length;
   }
 
-  /* ---- 分頁 ---- */
   var tabs = ['browse', 'props', 'terms'];
   function show(name) {
     tabs.forEach(function (t) {
@@ -5876,7 +5538,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
   }
   tabs.forEach(function (t) { document.getElementById('tt-' + t).onclick = function () { show(t); }; });
 
-  /* ---- 我是誰 ---- */
   function drawRole() {
     var role = document.getElementById('tr-role');
     role.replaceChildren();
@@ -5890,7 +5551,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
     document.getElementById('tr-newpoll').hidden = !canWrite();
   }
 
-  /* ---- 語料 ---- */
   function loadIndex() {
     var status = document.getElementById('tr-status');
     status.textContent = T.loading;
@@ -5990,7 +5650,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
     var send = el('button', 'btn primary small', T.send);
     send.type = 'button';
     var pv = preview(entry.src, function () { return area.value; });
-    // 插入佔位符：原文有幾個數字就給幾顆 {~N}，加上它用到的 {p}、{u}、{#}
     var tools = el('div', 'tr-actions gv-tools');
     var count = numberCount(entry.src);
     var tokens = [];
@@ -6099,7 +5758,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
     return box;
   }
 
-  /* ---- 整句提案的列表 ---- */
   function loadProps() {
     return api('/tr/props?lang=' + state.lang).then(function (r) { return r.ok ? r.json() : { props: [] }; }).then(function (data) {
       state.props = data.props || [];
@@ -6142,7 +5800,6 @@ const TRANSLATE_JS = '<script>' + String.raw`
     });
   }
 
-  /* ---- 術語投票 ---- */
   function loadPolls() {
     return api('/tr/polls?lang=' + state.lang).then(function (r) { return r.ok ? r.json() : { polls: [] }; }).then(function (data) {
       state.polls = data.polls || [];
@@ -6279,19 +5936,10 @@ const PAGES = {
   '/terms': ['terms.title', legalPage('terms'), ''],
 };
 
-/** 網站有哪幾頁。 */
 export const PATHS = Object.keys(PAGES);
 
 const built = new Map();
 
-/**
- * 某一頁的 HTML。
- *
- * @param path 路徑
- * @param lang 語言（LANGS 之一；別的當成英文）
- * @returns 沒有這一頁回 null
- */
-/** 找不到這一頁：跟別的頁面同一個頁首與頁尾，給幾條回去的路。 */
 export function renderLost(lang) {
   const code = Object.hasOwn(TEXT, lang) ? lang : 'en';
   const key = code + ' 404';
@@ -6313,8 +5961,7 @@ export function render(path, lang, bare) {
   const key = code + ' ' + path + (bare ? ' bare' : '');
   if (!built.has(key)) {
     const text = { ...filled(code) };
-    // 連結預覽的介紹：首頁那一段開場白。bare 是「什麼語言都沒說」的訪客——多半是
-    // Discord、LINE 這類抓預覽的機器人——給它中文與英文各一句，兩邊的人貼出去都看得懂。
+    // 什麼語言都沒說的多半是抓連結預覽的機器人：給中英各一句
     text['meta.desc'] = attribute(bare ? plain(TEXT.zh['home.lede']) + ' ' + plain(TEXT.en['home.lede'])
       : plain(text['home.lede']));
     text['tpl.guide'] = TPL(code.startsWith('zh') ? 'guide.png' : 'guide.en.png');
@@ -6322,7 +5969,6 @@ export function render(path, lang, bare) {
     const html = layout(code, '%%' + title + '%%', path, body, script)
       .replace(/%%([\w.]+)%%/g, (all, name) => {
         if (name === 'js') return JSON.stringify(text.js).replace(/</g, '\\u003c');
-        // 功能頁的即時預覽：選項的名稱照這一頁的語言，場景裡的譯文七種都帶著（頁面上可以換）
         if (name === 'demo') return JSON.stringify({ ui: DEMO.ui[code], text: DEMO.text, tex: TEX_URL }).replace(/</g, '\\u003c');
         return Object.hasOwn(text, name) ? text[name] : all;
       });
@@ -6331,17 +5977,14 @@ export function render(path, lang, bare) {
   return built.get(key);
 }
 
-/** 拿掉標籤，只留字。 */
 function plain(html) {
   return String(html).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 }
 
-/** 可以放進屬性值裡的字。 */
 function attribute(text) {
   return text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
-/** 這個語言的字，缺的拿英文補：新加的字還沒翻到的語言不會冒出一個 %%鍵%%。 */
 function filled(code) {
   const own = TEXT[code];
   if (code === 'en') return own;
@@ -6363,10 +6006,8 @@ function filled(code) {
   return { ...base, ...own, js };
 }
 
-/** 瀏覽器說的語言標籤（已經轉小寫）對到我們有的哪一種；沒有回 null。 */
 function fromTag(tag) {
   if (tag === 'zh' || tag.startsWith('zh-')) {
-    // 簡體：zh-CN、zh-SG、zh-MY、zh-Hans…；其餘（台灣、香港、澳門、只寫 zh 的）給繁體
     const simplified = /^zh-(?:cn|sg|my|hans)\b/.test(tag) && LANGS.includes('zh-cn');
     return simplified ? 'zh-cn' : 'zh';
   }
@@ -6374,12 +6015,6 @@ function fromTag(tag) {
   return primary !== 'zh' && LANGS.includes(primary) ? primary : null;
 }
 
-/**
- * 訪客要看哪一種語言：選過的（cookie）優先，沒選過看瀏覽器的語言，再沒有就英文。
- *
- * @param cookie Cookie 標頭
- * @param accept Accept-Language 標頭
- */
 export function pickLang(cookie, accept) {
   const chosen = /(?:^|;\s*)lang=([a-z-]+)/.exec(cookie || '');
   if (chosen && LANGS.includes(chosen[1])) return chosen[1];

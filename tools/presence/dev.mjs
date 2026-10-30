@@ -1,15 +1,4 @@
-// 在本機開網站來看：node tools/presence/dev.mjs [埠號] [公會圖示.png] [公會旗幟.png]
-//
-// 用一個放在記憶體裡的假 KV 跑同一支 worker，先塞幾件 capes/templates 的示範披風與一筆封禁。
-// 只給改頁面的時候看樣子用——真的登入要連 Mojang，這裡沒有接，改成：
-//   /dev-login?as=dev    當成名單上的開發者登入（名字用 credits.json 的第一位開發者）
-//   /dev-login?as=user   當成一般玩家登入
-//   /dev-login?as=staff  當成管理員登入（不在名單上，但管理頁開得起來）
-//   /dev-login?as=discord  當成剛用 Discord 註冊、還沒綁遊戲 ID 的人登入
-//   /dev-link?code=XXXXXXXX  假裝遊戲裡打了 /wcy link（當成一般玩家 Steve 送的）
-//
-// 協作翻譯頁的語料索引：正式站從 translate-index 分支讀，這裡第一次用到時在本機跑
-// tools/build-translate-index.py 產生（要有 python）。Alex 是日文與繁中的譯者，已經有一個提案與一個術語投票。
+// node tools/presence/dev.mjs [埠號] [公會圖示.png] [公會旗幟.png]
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,7 +13,6 @@ const data = new Map();
 const kv = memoryKv(data);
 const env = { CORPUS: kv, DISCORD_CLIENT_ID: 'dev', DISCORD_CLIENT_SECRET: 'dev' };
 
-// 協作翻譯的語料索引：攔下 Worker 去 translate-index 分支讀的那一次，改從本機產生
 const realFetch = globalThis.fetch;
 let indexDir = null;
 globalThis.fetch = async (url, init) => {
