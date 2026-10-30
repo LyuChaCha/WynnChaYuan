@@ -148,6 +148,11 @@ data.set('staff:n:notch', { value: JSON.stringify({ n: '', t: Date.now() - 36000
 
 // 一位譯者（Alex：日文與繁中）、一個提案、一個術語投票
 data.set('tl:u:' + 'c'.repeat(32), { value: JSON.stringify({ langs: ['ja_jp', 'zh_tw'], n: '日文組', t: Date.now() - 7200000, by: developer, m: 'Alex' }), metadata: null });
+if (process.env.DEMO_TEAMS) {
+  data.set('tl:n:sakura_demo', { value: JSON.stringify({ langs: ['zh_tw', 'ja_jp'], n: '', t: Date.now() - 3600000, by: developer, m: 'Sakura_Demo' }), metadata: null });
+  data.set('tl:n:outsider_demo', { value: JSON.stringify({ langs: ['ko_kr'], n: '韓文組', t: Date.now() - 1800000, by: developer, m: 'Outsider_Demo' }), metadata: null });
+  data.set('tl:d:555555555555555555', { value: JSON.stringify({ langs: ['es_es'], n: '', t: Date.now() - 900000, by: developer, dn: 'lucia_dc' }), metadata: null });
+}
 {
   const prop = { lang: 'zh_tw', file: 'raid.json', key: null, src: 'Choose a buff or go to the exit', base: '選一個增益，或前往出口',
     items: [
