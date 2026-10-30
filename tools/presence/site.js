@@ -797,6 +797,17 @@ const STYLE = String.raw`
   .steps li { margin: 4px 0; } .steps b { color: var(--ink); font-weight: 600; }
   .linkcode { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0; }
   .linkcode code { font-size: 18px; color: var(--ink); background: #0f1512; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; user-select: all; }
+  .linkcode code.share-url { flex: 1 1 220px; min-width: 0; font-size: 12px; padding: 7px 10px; word-break: break-all; }
+  .vis-line { flex-direction: column; align-items: stretch; gap: 8px; }
+  .vis-line .seg { align-self: flex-start; }
+  .wipe-panel { margin-top: 28px; max-width: 720px; border-color: #5a2b2b; }
+  #wipe { width: min(92vw, 560px); }
+  .wipe-box { padding: 22px 24px; }
+  .wipe-box h2 { margin: 0 0 10px; font-size: 18px; }
+  .wipe-box p, .wipe-box li { color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+  .wipe-box ul { margin: 6px 0 12px; padding-left: 1.2em; }
+  .wipe-box b { color: var(--ink); }
+  .wipe-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-top: 8px; }
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
   /* 新增管理員的搜尋：打幾個字，下面列出已註冊的人 */
   .finder { position: relative; }
@@ -926,9 +937,9 @@ export const TEXT = {
     'foot.privacy': '隱私政策', 'foot.terms': '服務條款',
     'privacy.title': '隱私政策 - WynnChaYuan', 'privacy.h1': '隱私政策',
     'terms.title': '服務條款 - WynnChaYuan', 'terms.h1': '服務條款',
-    'legal.updated': '生效日期：2026 年 10 月 17 日',
-    'privacy.body': "<p>這份說明講的是 WynnChaYuan 的三樣東西會碰到哪些資料：Minecraft 模組 WynnChaYuan、這個網站 wynnchayuan.com，以及 Discord 機器人。WynnChaYuan 是玩家做的非官方專案，由 WynnChaYuan 團隊（聯絡人 LyuChaCha）維護。</p><h2>模組送出的資料</h2><p>披風與名字前的葉子需要連到 wynnchayuan.com。模組在你進 Wynncraft 時報到一次，送出：</p><ul><li>你的 Minecraft UUID，以及 Mojang 簽過的公開個人檔案（名字與外觀）</li><li>用來證明帳號是本人的公鑰與簽章（Mojang 發給每個正版帳號的那一對金鑰）</li><li>要不要穿披風、徽章的設定（葉子要不要彩色、展示哪幾個身分）</li><li>上傳披風時，你選的那張圖</li></ul><p><b>私鑰與登入憑證不會離開遊戲。</b>不送所在的世界、聊天或任何遊戲內容。報到沒有開關，裝了模組、進了 Wynncraft 就會送；不想讓別人看到披風，可以在 F6「功能」關掉「穿上我的披風」。</p><p>模組不會自動上傳遊戲裡的文字。「匯出未翻譯字串」產生的檔案留在你的電腦上，要不要交給我們由你決定。「直接更新」只有你按了才會從 GitHub Releases 下載新版。</p><h2>網站帳號</h2><p>網站帳號用 Discord 登入，只要 <code>identify</code> 權限：我們記下 Discord 的使用者代號與顯示名稱，不拿 email、不拿你加入的伺服器。Discord 給的存取憑證用完就丟。在遊戲裡打 <code>/wcy link</code> 綁定之後，帳號會多記遊戲的 UUID、名字與綁定時間。</p><h2>披風</h2><ul><li>上傳的圖檔、格式與大小、上傳時間，以及上傳的人是誰（管理的人要知道）</li><li>公開的披風一覽只顯示圖與從 UUID 雜湊出來的代碼，不顯示 UUID 與名字；誰傳了哪一件只有開發者看得到</li><li>你穿過的紀錄與加星號的最愛只有你自己看得到</li><li>設成不公開的披風不會出現在一覽上；等審核的披風在通過之前只有你和管理的人看得到</li><li>為了擋短時間大量上傳，會暫時記下最近幾次上傳的時間，最多十三個小時後自動消失</li><li>被封禁或列入審核名單時，記下 UUID、名字、時間與經手的管理員</li></ul><h2>協作翻譯</h2><p>在 /translate 提案、投票或開術語投票時，記下你的顯示名稱與代號、時間、你寫的內容。提案與投票其他人看得到。定案的譯文會寫進公開的 GitHub 倉庫（授權 CC BY-NC-SA 4.0），合併之後會留在倉庫的歷史裡。</p><h2>回饋</h2><p>在 /feedback 或用機器人的 /回饋 送出回饋時，記下你的 Discord 使用者代號與顯示名稱、分類、你寫的內容（含「在哪裡」與語言）、時間與送出的管道（網站或機器人）；為了擋濫發，也會暫時記下你最近一小時送出的時間。回饋只有開發者與管理員看得到。<b>分類是「譯文建議」的，會自動在公開的 GitHub 倉庫開一個 Issue</b>，內容包含你寫的字與你的 Discord 顯示名稱（不包含使用者代號），任何人都看得到，會留在 GitHub 上直到維護的人刪除。</p><h2>Discord 機器人</h2><p>機器人只收到你打的斜線指令：指令與選項、你的 Discord 使用者代號、所在伺服器與頻道的代號、介面語言（Discord 送來的固定欄位）。它讀不到任何聊天訊息；除了 /回饋 送出的回饋（見上面〈回饋〉）之外，也不保存指令內容。</p><h2>Cookie 與瀏覽器裡存的東西</h2><ul><li><code>lang</code>：記住你選的網站語言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：Discord 登入時的驗證，只在登入的那幾分鐘有用</li><li>瀏覽器的 <code>localStorage</code>：登入的通行證（一天有效）與畫面上的小設定</li></ul><p>沒有廣告，也沒有分析或追蹤用的 Cookie。</p><h2>不記的東西</h2><p>我們的程式不記 IP、所在的世界、聊天或任何遊戲內容。</p><h2>第三方服務</h2><ul><li><b>Cloudflare</b>：網站與資料放在 Cloudflare Workers 與 KV。Cloudflare 為了安全與網路運作會處理連線資訊（包含 IP），依它自己的隱私政策</li><li><b>Discord</b>：登入與機器人</li><li><b>GitHub</b>：原始碼、譯文、更新檔、協作翻譯的 PR，以及譯文建議的 Issue</li><li><b>minotar.net</b>：網頁上的玩家頭像由你的瀏覽器直接向它讀取；Discord 機器人的披風預覽則由網站向它讀取那位玩家的 skin</li><li><b>jsDelivr</b>：披風的 3D 預覽程式由你的瀏覽器直接向它讀取</li></ul><p>我們不賣、不出租任何資料，也不拿來投放廣告。</p><h2>保留多久</h2><ul><li>報到名單：十四天沒再報到就從名單上消失</li><li>沒有人穿的披風：留七天，期滿刪除</li><li>遊戲的通行證七天、網頁的一天，過期就失效</li><li>回饋：標成已處理之後留 180 天再自動刪除；還沒處理的留到處理或刪除為止；擋濫發用的送出時間一小時後消失</li><li>網站帳號、封禁與審核紀錄：留到你要求刪除，或管理的人解除為止</li></ul><h2>你可以做的事</h2><p>披風可以在帳號頁自己移除；不想再報到，移除模組即可。要查看或刪除帳號與相關資料，請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue（請不要在公開的 Issue 貼私人資料）。我們會在合理時間內處理。</p><h2>年齡</h2><p>使用這些服務需要符合 Minecraft 與 Discord 對年齡的要求。</p><h2>修改</h2><p>這份說明改了會更新這一頁與上面的日期；重大的改動會在 Discord 或更新日誌公告。</p>",
-    'terms.body': "<p>使用 WynnChaYuan 模組、wynnchayuan.com 網站或 Discord 機器人，就表示你同意以下條款。不同意的話請不要使用。</p><h2>非官方專案</h2><p>WynnChaYuan 是玩家做的非官方專案，跟 Wynncraft、Mojang、Microsoft、Discord 都沒有關係，也沒有得到它們的認可。網站上的遊戲材質與畫面屬於 Wynncraft 及各自的權利人。</p><h2>授權</h2><p>模組的程式碼以 AGPL-3.0 授權；譯文與語料以 CC BY-NC-SA 4.0 授權。詳見 GitHub 倉庫的 LICENSE 與 LICENSE-DATA。</p><h2>帳號</h2><ul><li>一個網站帳號綁一個遊戲帳號，綁定一定要從遊戲裡做</li><li>不可以冒用別人的帳號、繞過身分驗證，或把通行證交給別人使用</li><li>違反條款的帳號可能被停用</li></ul><h2>披風的規範</h2><p>披風會被其他玩家與網站訪客看到。上傳的圖不可以包含：</p><ul><li>政治宣傳</li><li>色情、猥褻或血腥的內容</li><li>違法的內容，或侵害他人著作權、商標的圖</li><li>種族歧視、仇恨或騷擾他人的內容</li><li>廣告（宣傳公會除外）</li></ul><p>管理的人可以審核、移除違規的披風，或封禁上傳的人，不另行通知。圖的權利仍是你的；上傳即表示你同意我們保存它，並展示給其他玩家與網站訪客。</p><h2>協作翻譯</h2><ul><li>提交的譯文必須是你有權提供的內容，並同意以 CC BY-NC-SA 4.0 授權</li><li>請照術語表與各語言團隊的決定翻譯；開發者與管理員有最後的決定權</li><li>不要灌水、刷票或提交無關的內容</li></ul><h2>禁止的行為</h2><ul><li>大量或自動化地呼叫網站的 API，或干擾服務運作</li><li>嘗試取得不屬於你的資料或權限</li><li>濫用 Discord 機器人</li></ul><h2>贊助</h2><p>透過 Ko-fi 的贊助是自願的支持。贊助者的回饋（例如 GIF 披風）可能隨專案調整。</p><h2>遊戲與第三方</h2><p>模組只改變你畫面上顯示的文字與外觀，不改變遊戲玩法。使用任何模組都請自行遵守 Wynncraft 與 Minecraft 的規則。</p><h2>不提供保證</h2><p>這些服務照現況提供，可能有錯誤、中斷或停止服務。在法律允許的範圍內，我們不對使用這些服務造成的損失負責。</p><h2>修改與終止</h2><p>我們可能修改這份條款，或停止部分甚至全部服務。修改後會更新這一頁與上面的日期；之後繼續使用，即表示同意新的條款。</p><h2>聯絡</h2><p>有問題請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue。</p>",
+    'legal.updated': "生效日期：2026 年 10 月 30 日",
+    'privacy.body': "<p>這份說明講的是 WynnChaYuan 的三個部分會碰到哪些資料：Minecraft 模組 WynnChaYuan、這個網站 wynnchayuan.com，以及 Discord 機器人。WynnChaYuan 是玩家做的非官方專案，由 WynnChaYuan 團隊（聯絡人 LyuChaCha）維護。</p><h2>重點</h2><ul><li>只記功能需要的東西，也只留到用不到為止。我們<b>絕不販賣</b>你的資料，也不拿去做廣告或行銷。</li><li>模組第一次啟動時會先問你同不同意連線。不同意的話，檢查更新與遊戲內更新、從 GitHub 同步譯文與貢獻者名單、報到、葉子與徽章、披風、網站登入與 /wcy link 都不會開；翻譯照樣能用（模組內附的譯文檔，以及之前同步過的檔案）。之後可以在 F6「功能」→「隱私與連線」的「連線功能」更改。</li><li>你隨時可以自己刪除資料：在<a href=\"/account\">帳號頁</a>，或在模組裡打開 F6「功能」→「隱私與連線」的「不上傳我的資料」（見下面〈刪除你的資料〉）。</li><li>我們的程式不記 IP、所在的世界、聊天或任何遊戲內容。</li></ul><h2>模組的每一項連線功能送出什麼</h2><ul><li><b>檢查更新</b>：從 GitHub（或它在 jsDelivr 的鏡像）下載 <code>version.json</code>，看有沒有新版。除了一般的網路請求，不送任何關於你的東西。「直接更新」只有你按了才會從 GitHub Releases 下載新版。</li><li><b>譯文同步</b>：從 GitHub（或 jsDelivr）下載較新的譯文檔與貢獻者名單。只下載，不送任何關於你的東西。</li><li><b>報到（葉子、徽章、誰有裝模組）</b>：你進 Wynncraft 時，向 wynnchayuan.com 送出你的 Minecraft UUID、Mojang 簽過的公開個人檔案（名字與外觀）、用來證明帳號是本人的公鑰與簽章、要不要顯示披風，以及徽章的設定（葉子要不要彩色、展示哪幾個身分）。私鑰與登入憑證不會離開遊戲。</li><li><b>披風</b>：上傳時把你選的圖送到 wynnchayuan.com。要顯示披風時，從 wynnchayuan.com 下載其他玩家的披風、從 GitHub（或 jsDelivr）下載團隊的披風；下載不送任何關於你的東西。</li><li><b>網站登入與綁定</b>：從 F6 開披風一覽時，模組拿它的通行證換一條一天有效的登入網址；<code>/wcy link</code> 送出網站給你的綁定碼。</li><li><b>不會自己送出</b>：遊戲裡的文字。「匯出未翻譯字串」產生的檔案留在你的電腦上，要不要交給我們由你決定。</li></ul><h2>網站帳號、協作翻譯、回饋與機器人</h2><ul><li><b>網站帳號</b>：Discord 登入只要 <code>identify</code> 權限。我們記下 Discord 的使用者代號與顯示名稱；不拿 email、不拿你加入的伺服器，Discord 給的存取憑證用完就丟。在遊戲裡打 <code>/wcy link</code> 綁定之後，帳號會多記遊戲的 UUID、名字與綁定時間。</li><li><b>協作翻譯</b>：提案、投票與術語投票會記下你的顯示名稱與代號、時間、你寫的內容，其他人看得到。定案的譯文會寫進公開的 GitHub 倉庫（CC BY-NC-SA 4.0），留在它的歷史裡。</li><li><b>回饋</b>：記下你的 Discord 使用者代號與顯示名稱、分類、你寫的內容（含「在哪裡」與語言）、時間，以及從網站還是機器人送的。只有開發者與管理員看得到。譯文建議另外會變成公開的 GitHub Issue，上面只有你的顯示名稱（不含使用者代號）。</li><li><b>Discord 機器人</b>：只收到你打的斜線指令，以及 Discord 一定會送的欄位（你的使用者代號、伺服器與頻道的代號、介面語言）。它讀不到聊天；除了用 /回饋 送出的回饋之外什麼都不留。</li></ul><h2>誰看得到你的披風</h2><ul><li><b>公開</b>：每個人都能在披風一覽看到。</li><li><b>不公開</b>：不在披風一覽上；只有你和拿到連結的人看得到，拿到連結的人也可以穿上它（這不會讓它出現在一覽上）。</li><li><b>私人</b>：網站上只有你自己看得到。</li><li>不管選哪一種，管理的人都看得到每一件披風；遊戲裡裝了模組的其他玩家也照樣看得到你穿著的披風。一覽上不會出現你的 UUID 或名字，只有從 UUID 雜湊出來的代碼；誰傳了哪一件只有管理的人看得到。你的使用紀錄與最愛只有你自己看得到。</li></ul><h2>存在哪裡</h2><p>伺服器記的東西都存在 Cloudflare Workers 的 KV。Cloudflare 為了安全與網路運作會處理連線資訊（包含 IP），依它自己的隱私政策；我們的程式不存這些。</p><h2>保留多久</h2><ul><li>報到紀錄：最後一次報到之後 14 天。</li><li>你的披風與它的設定：留到你移除或刪除資料為止。沒有人穿的披風留 7 天後刪除；管理的人移除的馬上刪。</li><li>使用紀錄（最多 8 件）與最愛：留到你拿掉、那件披風被刪除，或你刪除資料為止。</li><li>最近幾次上傳的時間（擋短時間大量上傳）：最多 13 小時。</li><li>通行證：遊戲的 7 天，從遊戲開的網頁 1 天，Discord 登入 30 天。綁定碼 10 分鐘。</li><li>網站帳號與綁定：留到你刪除資料或解除綁定為止。</li><li>回饋：標成已處理之後 180 天刪除；還沒處理的留到處理或刪除為止。擋濫發用的送出時間 1 小時。</li><li>替 Discord 機器人畫的「你的外觀穿著披風」預覽：3 天。</li><li>封禁與審核紀錄：留到管理的人解除為止。</li></ul><h2>刪除你的資料</h2><p>在<a href=\"/account\">帳號頁</a>按「刪除我的資料」，或在模組裡打開 F6「功能」→「隱私與連線」的「不上傳我的資料」。兩邊送的是同一個請求（<code>POST /api/me/delete</code>），馬上生效；模組那一邊還會停止報到、葉子與披風的連線，每次啟動都重送，直到伺服器回覆刪除成功，就算你沒有同意連線功能也照樣送出。</p><ul><li><b>會刪掉</b>：報到紀錄（馬上從玩家名單上消失）、你的披風與設定、只有你用的圖（馬上刪，不等 7 天）、使用紀錄與最愛、網站帳號與 Discord 綁定、你送過的回饋，以及用你的外觀畫的披風預覽。</li><li><b>會留著，以及原因</b>：封禁與審核紀錄、管理的人維護的名單（特別名單、管理員、譯者），刪資料不能拿來撤銷管理的決定；其他玩家還穿著的圖；最近幾次上傳的時間（最多 13 小時），刪資料不能拿來跳過上傳冷卻；你在協作翻譯的提案與投票，那是公開專案的一部分：上面的名字會改成「已刪除的使用者 #代碼」（代碼從你的帳號算出來，同一個人的紀錄才分得出來），你的遊戲 UUID 或 Discord 代號留在那些紀錄上、只有開發者與管理員看得到，用來記錄是誰貢獻的；已經定案寫進倉庫歷史的譯文不會改，GitHub 上的 Issue 也留著。</li><li>只在網站上刪除的話，模組下次進 Wynncraft 會再報到一次；不想要的話，在模組裡打開「不上傳我的資料」，或關掉「連線功能」。</li></ul><h2>Cookie 與瀏覽器裡存的東西</h2><ul><li><code>lang</code>：記住你選的網站語言</li><li><code>wcy_oauth</code>、<code>wcy_intent</code>：Discord 登入時的驗證，只在登入的那幾分鐘有用</li><li>瀏覽器的 <code>localStorage</code>：登入的通行證與畫面上的小設定</li></ul><p>沒有廣告，也沒有分析或追蹤用的 Cookie。</p><h2>第三方服務</h2><ul><li><b>Cloudflare</b>：放網站與資料</li><li><b>Discord</b>：登入與機器人</li><li><b>GitHub</b>：原始碼、譯文、更新檔、協作翻譯的 PR，以及譯文建議的 Issue</li><li><b>jsDelivr</b>：模組下載 GitHub 檔案時的鏡像，以及瀏覽器載入的披風 3D 預覽程式</li><li><b>minotar.net</b>：網頁上的玩家頭像由你的瀏覽器直接向它讀取；Discord 機器人的披風預覽由網站向它讀取那位玩家的外觀</li></ul><h2>年齡</h2><p>使用這些服務需要符合 Minecraft 與 Discord 對年齡的要求。</p><h2>修改</h2><p>這份說明改了會更新這一頁與上面的日期；重大的改動會在 Discord 或更新日誌公告。</p>",
+    'terms.body': "<p>使用 WynnChaYuan 模組、wynnchayuan.com 網站或 Discord 機器人，就表示你同意以下條款。不同意的話請不要使用。</p><h2>非官方專案</h2><p>WynnChaYuan 是玩家做的非官方專案，跟 Wynncraft、Mojang、Microsoft、Discord 都沒有關係，也沒有得到它們的認可。網站上的遊戲材質與畫面屬於 Wynncraft 及各自的權利人。</p><h2>授權</h2><p>模組的程式碼以 AGPL-3.0 授權；譯文與語料以 CC BY-NC-SA 4.0 授權。詳見 GitHub 倉庫的 LICENSE 與 LICENSE-DATA。</p><h2>帳號</h2><ul><li>一個網站帳號綁一個遊戲帳號，綁定一定要從遊戲裡做</li><li>不可以冒用別人的帳號、繞過身分驗證，或把通行證交給別人使用</li><li>違反條款的帳號可能被停用</li><li>你隨時可以在帳號頁刪除自己的帳號與資料；哪些會留著，見<a href=\"/privacy\">隱私政策</a></li></ul><h2>披風的規範</h2><p>披風會被遊戲裡的其他玩家看到；網站上誰看得到，照你選的公開、不公開或私人。上傳的圖不可以包含：</p><ul><li>政治宣傳</li><li>色情、猥褻或血腥的內容</li><li>違法的內容，或侵害他人著作權、商標的圖</li><li>種族歧視、仇恨或騷擾他人的內容</li><li>廣告（宣傳公會除外）</li></ul><p>管理的人可以審核、移除違規的披風，或封禁上傳的人，不另行通知。圖的權利仍是你的；上傳即表示你同意我們保存它、展示給遊戲裡的其他玩家，並照你選的公開程度展示給網站訪客。</p><h2>協作翻譯</h2><ul><li>提交的譯文必須是你有權提供的內容，並同意以 CC BY-NC-SA 4.0 授權</li><li>請照術語表與各語言團隊的決定翻譯；開發者與管理員有最後的決定權</li><li>不要灌水、刷票或提交無關的內容</li></ul><h2>禁止的行為</h2><ul><li>大量或自動化地呼叫網站的 API，或干擾服務運作</li><li>嘗試取得不屬於你的資料或權限</li><li>濫用 Discord 機器人</li></ul><h2>贊助</h2><p>透過 Ko-fi 的贊助是自願的支持。贊助者的回饋（例如 GIF 披風）可能隨專案調整。</p><h2>遊戲與第三方</h2><p>模組只改變你畫面上顯示的文字與外觀，不改變遊戲玩法。使用任何模組都請自行遵守 Wynncraft 與 Minecraft 的規則。</p><h2>不提供保證</h2><p>這些服務照現況提供，可能有錯誤、中斷或停止服務。在法律允許的範圍內，我們不對使用這些服務造成的損失負責。</p><h2>修改與終止</h2><p>我們可能修改這份條款，或停止部分甚至全部服務。修改後會更新這一頁與上面的日期；之後繼續使用，即表示同意新的條款。</p><h2>聯絡</h2><p>有問題請在 Discord 聯絡 <b>LyuChaCha</b>，或在 GitHub 開 Issue。</p>",
     'foot.get': '下載', 'foot.project': '專案', 'foot.support': '支持', 'foot.contact': '聯絡',
     'foot.changelog': '更新日誌', 'foot.license': '程式授權：AGPL-3.0', 'foot.datalicense': '譯文授權：CC BY-NC-SA 4.0',
     'foot.issues': '回報問題', 'foot.contribute': '怎麼參與', 'foot.team': '團隊', 'foot.sponsoring': '關於贊助',
@@ -975,7 +986,7 @@ export const TEXT = {
     'capes.mine': '上傳我的披風',
     'capes.sort': '排序', 'capes.filter': '篩選', 'capes.f.format': '格式', 'capes.f.show': '顯示',
     'capes.s.new': '最新上傳', 'capes.s.old': '最早上傳', 'capes.s.worn': '最多人使用', 'capes.s.stars': '人氣最高', 'capes.s.recent': '最近有人穿上',
-    'capes.f.all': '全部', 'capes.f.fav': '我的最愛', 'capes.f.hist': '我用過的', 'capes.f.hidden': '不公開', 'capes.f.pending': '待審核',
+    'capes.f.all': '全部', 'capes.f.fav': '我的最愛', 'capes.f.hist': '我用過的', 'capes.f.hidden': "不公開", 'capes.f.pending': '待審核', 'capes.f.private': "私人",
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容；廣告（商業宣傳、宣傳其他伺服器、真錢交易例如用現金買賣 LE、現實生活的聯絡方式；公會宣傳不算）；以及其他違反 Wynncraft 規章的內容。也不可以濫用上傳（例如短時間內大量上傳）。違規的披風會被移除，上傳的人可能不能再傳。',
     'capes.keep': '沒有人穿的披風會保留 7 天；期滿還是沒有人穿就會移除，加了星號的也一樣。',
     'skip': '跳到主要內容',
@@ -991,7 +1002,7 @@ export const TEXT = {
     'home.live': '遊戲裡實際的樣子：原文留著，譯文在旁邊。', 'home.try': '自己調調看',
     'view.title': '披風', 'view.flat': '披風的範本圖：左邊正面、右邊背面',
     'view.type': '格式', 'view.dim': '尺寸', 'view.size': '檔案大小', 'view.users': '使用', 'view.date': '上傳',
-    'view.stars': '加入最愛', 'view.approve': '通過審核', 'view.review': '上傳的人之後都要審核', 'view.forget': '從我的紀錄移除',
+    'view.stars': '加入最愛', 'view.approve': '通過審核', 'view.review': '上傳的人之後都要審核', 'view.forget': '從我的紀錄移除', 'view.share': "複製連結",
     'view.del': '刪除這件披風', 'view.ban': '刪除並封禁上傳的人', 'view.close': '關閉',
     'view.wear': '穿上這件披風', 'view.signin': '登入並綁定遊戲 ID 之後，就能穿上這一件。<a href="/account">前往帳號</a>',
 
@@ -1021,8 +1032,19 @@ export const TEXT = {
     'account.signout': '登出這個瀏覽器',
     'account.mine': '我的披風', 'account.none': '還沒有上傳。', 'account.remove': '移除我的披風',
     'account.worn': '這一件是從披風一覽套用的。',
-    'account.public': '公開在披風一覽',
-    'account.publichint': '關掉之後，別人在披風一覽上看不到你的披風，也不能穿上它；遊戲裡其他玩家照樣看得到你穿著。',
+    'account.vis': "誰看得到這件披風",
+    'account.vis.public': "公開",
+    'account.vis.unlisted': "不公開",
+    'account.vis.private': "私人",
+    'account.vis.game': "這只影響網站：遊戲裡裝了模組的其他玩家照樣看得到你穿著它。",
+    'account.share': "分享連結：拿到這條連結的人就看得到這件披風。",
+    'account.del.h': "刪除我的資料",
+    'account.del.p': "把你在伺服器上的資料全部刪掉：報到紀錄、披風、使用紀錄與最愛、網站帳號與綁定、送過的回饋。封禁與審核紀錄會留著，詳見<a href=\"/privacy\">隱私政策</a>。",
+    'account.del.btn': "刪除我的資料",
+    'account.del.list': "<p>確定要刪除嗎？刪了就不能復原。</p><ul><li><b>會刪掉</b>：報到紀錄、你的披風與設定、只有你用的圖、使用紀錄與最愛、網站帳號與 Discord 綁定、你送過的回饋。</li><li><b>會留著</b>：封禁與審核紀錄、其他玩家還穿著的圖、最近幾次上傳的時間（最多 13 小時）、協作翻譯的提案與投票（名字改成「已刪除的使用者 #代碼」，帳號代號只有管理的人看得到）。</li><li>模組下次進 Wynncraft 會再報到一次；不想要的話，在模組的 F6「功能」→「隱私與連線」打開「不上傳我的資料」。</li></ul>",
+    'account.del.cancel': "取消",
+    'account.del.go': "確定刪除",
+    'account.del.done': "你的資料已經刪除，這個瀏覽器也登出了。",
     'account.pending': '這件披風正在等審核，通過之前別人看不到。',
     'account.review': '你上傳的披風目前要先經過審核，通過之後別人才看得到。審核期間只能有一件上傳的披風（等審核的也算）；要換一件，先移除現在這件。',
     'account.upload': '上傳披風',
@@ -1140,7 +1162,7 @@ export const TEXT = {
       readFail: '讀不到清單，請重新整理。',
       roleDev: '開發者', roleMember: '名單上的成員', roleUser: '裝了模組的玩家',
       mineHint: '{t} · {d}{s} · 拖曳可以旋轉', mineNo3d: '立體檢視載不起來。',
-      discordAs: 'Discord：{n}', codeFail: '拿不到綁定碼，請再試一次', copied: '已複製',
+      discordAs: 'Discord：{n}', codeFail: '拿不到綁定碼，請再試一次', copied: '已複製', vis: { public: "公開", unlisted: "不公開", private: "私人" }, visHint: { public: "每個人都能在披風一覽看到它，也能穿上、加進最愛。", unlisted: "不會出現在披風一覽上，只有你和拿到連結的人看得到；拿到連結的人也能穿上，但不能加進最愛。", private: "網站上只有你自己看得到（管理的人除外）。" }, linkGone: "找不到這件披風：可能已經移除，或擁有者把它設成私人。", wipeFail: "沒有刪除成功，請稍後再試。",
       confirmUnlink: '解除這個遊戲 ID 與 Discord 的綁定？',
       confirmRemove: '移除你上傳的披風？', removed: '披風拿掉了', tryLater: '沒有成功，等一下再試',
       pickFirst: '先選一張圖', uploading: '上傳中…', uploaded: '披風上傳好了（{w}×{h}），別人幾分鐘內就會看到',
@@ -1168,7 +1190,7 @@ export const TEXT = {
       },
       favAdd: '加入我的最愛', favRemove: '從我的最愛移除',
       emptyFav: '還沒有加入最愛的披風。點披風右上角的星星就能加進來。', emptyHist: '還沒有使用紀錄。', emptyFilter: '沒有符合的披風。',
-      tagPrivate: '不公開', tagPending: '待審核', tagMine: '我穿的', tagWorn: '套用',
+      tagPending: '待審核', tagMine: '我穿的', tagWorn: '套用',
       idleLeft: '沒人穿・剩 {n} 天', idleLast: '沒人穿・最後一天',
       idleNote: '現在沒有人穿這一件。{n} 天內沒有人穿上的話，它就會被移除。',
       idleNoteLast: '現在沒有人穿這一件。今天之內沒有人穿上的話，它就會被移除。',
@@ -1205,6 +1227,7 @@ export const TEXT = {
         'bad note': '備註最多 60 個字',
       },
       tr: {
+        gone: "已刪除的使用者 #{id}",
         langs: { zh_tw: '繁體中文', zh_cn: '简体中文', ja_jp: '日本語', ko_kr: '한국어', ru_ru: 'Русский', es_es: 'Español', tr_tr: 'Türkçe' },
         st: { open: '投票中', accepted: '已採用', rejected: '已駁回' },
         signin: '登入後才能提案與投票', roleDecide: '管理員：可以定案', roleTranslator: '譯者：可以提案與投票',
@@ -1285,9 +1308,9 @@ export const TEXT = {
     'foot.privacy': 'Privacy policy', 'foot.terms': 'Terms of service',
     'privacy.title': 'Privacy policy - WynnChaYuan', 'privacy.h1': 'Privacy policy',
     'terms.title': 'Terms of service - WynnChaYuan', 'terms.h1': 'Terms of service',
-    'legal.updated': 'Effective 17 October 2026',
-    'privacy.body': "<p>This page explains what data WynnChaYuan handles across three things: the WynnChaYuan Minecraft mod, this website (wynnchayuan.com) and the Discord bot. WynnChaYuan is an unofficial fan project maintained by the WynnChaYuan team (contact: LyuChaCha).</p><h2>What the mod sends</h2><p>Capes and the leaf before your name need a connection to wynnchayuan.com. The mod checks in once when you join Wynncraft and sends:</p><ul><li>Your Minecraft UUID and your public profile as signed by Mojang (name and skin)</li><li>A public key and signature proving the account is yours (the key pair Mojang issues to every premium account)</li><li>Whether to wear your cape, and your badge settings (coloured leaf, which roles to show)</li><li>When you upload a cape, the image you chose</li></ul><p><b>Your private key and login credentials never leave the game.</b> The mod does not send the world you are in, chat, or any other game content. Checking in has no switch: it happens whenever the mod is installed and you join Wynncraft. To hide your cape from others, turn off \"Wear my cape\" under F6 → \"Features\".</p><p>The mod never uploads in-game text on its own. Files made by \"Export untranslated strings\" stay on your computer; sending them to us is up to you. \"Update now\" only downloads a new version from GitHub Releases when you press it.</p><h2>Website account</h2><p>Website accounts sign in with Discord using only the <code>identify</code> scope: we keep your Discord user ID and display name. We do not read your email or your server list, and the access token Discord gives us is thrown away after use. Once you link your game account with <code>/wcy link</code>, the account also stores your game UUID, name and the time you linked.</p><h2>Capes</h2><ul><li>The uploaded image, its format and size, when it was uploaded, and who uploaded it (moderators need to know)</li><li>The public gallery shows only the image and a code hashed from the UUID, never the UUID or name; only developers can see who uploaded which cape</li><li>Your history of worn capes and your starred favourites are visible only to you</li><li>Capes set to private stay out of the gallery; capes awaiting review are visible only to you and moderators until approved</li><li>To stop bursts of uploads, the times of your recent uploads are kept for at most thirteen hours</li><li>If you are banned or put on the review list, we store your UUID, name, the time and the moderator involved</li></ul><h2>Translate</h2><p>When you suggest a translation, vote, or open a term poll on /translate, we store your display name and ID, the time, and what you wrote. Suggestions and votes are visible to others. Accepted translations are written to the public GitHub repository (licensed CC BY-NC-SA 4.0) and stay in its history once merged.</p><h2>Feedback</h2><p>When you send feedback on /feedback or with the bot’s /feedback command, we store your Discord user ID and display name, the category, what you wrote (including “where” and the language), the time and whether it came from the website or the bot; to stop flooding we also briefly keep the times of what you sent in the last hour. Feedback is only visible to developers and moderators. <b>Feedback in the “Translation suggestion” category automatically opens an issue in the public GitHub repository</b> containing what you wrote and your Discord display name (not your user ID); anyone can see it, and it stays on GitHub until a maintainer removes it.</p><h2>Discord bot</h2><p>The bot only receives the slash commands you use: the command and its options, your Discord user ID, the server and channel IDs and your client language (fields Discord always sends). It cannot read any chat messages and, apart from feedback sent with /feedback (see “Feedback” above), does not keep what you sent.</p><h2>Cookies and browser storage</h2><ul><li><code>lang</code>: remembers the website language you chose</li><li><code>wcy_oauth</code>, <code>wcy_intent</code>: protect the Discord sign-in and only matter for the few minutes it takes</li><li>Browser <code>localStorage</code>: your sign-in pass (valid for one day) and small display preferences</li></ul><p>There are no ads and no analytics or tracking cookies.</p><h2>What we do not record</h2><p>Our code does not record IP addresses, the world you are in, chat or any other game content.</p><h2>Third-party services</h2><ul><li><b>Cloudflare</b>: the website and its data run on Cloudflare Workers and KV. Cloudflare processes connection data (including IP addresses) for security and network operation under its own privacy policy</li><li><b>Discord</b>: sign-in and the bot</li><li><b>GitHub</b>: source code, translations, release downloads, pull requests from Translate and issues from translation suggestions</li><li><b>minotar.net</b>: player heads on the website are loaded by your browser directly from it; for the Discord bot's cape preview, the website fetches that player's skin from it</li><li><b>jsDelivr</b>: the 3D cape viewer is loaded by your browser directly from it</li></ul><p>We do not sell or rent any data, and we do not use it for advertising.</p><h2>How long we keep it</h2><ul><li>Check-in list: you drop off after fourteen days without checking in</li><li>Capes nobody wears: kept for seven days, then deleted</li><li>Passes expire after seven days (game) or one day (website)</li><li>Feedback: deleted automatically 180 days after it is marked handled; open feedback stays until it is handled or deleted; the send times kept for rate limiting disappear after an hour</li><li>Website accounts, ban and review records: until you ask for deletion or a moderator lifts them</li></ul><h2>Your choices</h2><p>You can remove your cape yourself on the account page. To stop checking in, remove the mod. To see or delete your account and related data, contact <b>LyuChaCha</b> on Discord or open a GitHub issue (please do not post private details in a public issue). We will handle requests within a reasonable time.</p><h2>Age</h2><p>You need to meet the age requirements of Minecraft and Discord to use these services.</p><h2>Changes</h2><p>If this policy changes, we update this page and the date above. Significant changes are announced on Discord or in the changelog.</p>",
-    'terms.body': "<p>By using the WynnChaYuan mod, the wynnchayuan.com website or the Discord bot, you agree to these terms. If you do not agree, please do not use them.</p><h2>Unofficial project</h2><p>WynnChaYuan is an unofficial fan project. It is not affiliated with or endorsed by Wynncraft, Mojang, Microsoft or Discord. Game textures and screens on this website belong to Wynncraft and their respective owners.</p><h2>Licences</h2><p>The mod's code is licensed under AGPL-3.0; translations and corpus data under CC BY-NC-SA 4.0. See LICENSE and LICENSE-DATA in the GitHub repository.</p><h2>Accounts</h2><ul><li>One website account links to one game account, and linking must be done from inside the game</li><li>Do not use someone else's account, get around identity checks, or let others use your pass</li><li>Accounts that break these terms may be suspended</li></ul><h2>Cape rules</h2><p>Capes are seen by other players and website visitors. Uploaded images must not contain:</p><ul><li>Political propaganda</li><li>Sexual, obscene or gory content</li><li>Illegal content, or images that infringe copyrights or trademarks</li><li>Racist, hateful or harassing content</li><li>Advertising (promoting a guild is fine)</li></ul><p>Moderators may review or remove capes that break these rules, or ban the uploader, without notice. You keep the rights to your image; by uploading it you let us store it and show it to other players and website visitors.</p><h2>Translate</h2><ul><li>Only submit translations you have the right to provide, and agree to license them under CC BY-NC-SA 4.0</li><li>Follow the glossary and your language team's decisions; developers and admins have the final say</li><li>No spam, vote stuffing or unrelated content</li></ul><h2>Not allowed</h2><ul><li>Calling the website's API in bulk or automatically, or disrupting the service</li><li>Trying to access data or permissions that are not yours</li><li>Abusing the Discord bot</li></ul><h2>Sponsoring</h2><p>Sponsoring through Ko-fi is voluntary support. Sponsor perks (such as GIF capes) may change as the project evolves.</p><h2>The game and third parties</h2><p>The mod only changes the text and appearance shown on your own screen; it does not change gameplay. You are responsible for following the rules of Wynncraft and Minecraft when using any mod.</p><h2>No warranty</h2><p>These services are provided as is and may have errors, interruptions or be discontinued. To the extent permitted by law, we are not liable for any loss arising from using them.</p><h2>Changes and termination</h2><p>We may change these terms or stop some or all of the services. Changes are posted on this page with an updated date; continuing to use the services means you accept the new terms.</p><h2>Contact</h2><p>For questions, contact <b>LyuChaCha</b> on Discord or open a GitHub issue.</p>",
+    'legal.updated': "Effective 30 October 2026",
+    'privacy.body': "<p>This policy explains what data WynnChaYuan handles in its three parts: the WynnChaYuan Minecraft mod, this website (wynnchayuan.com) and the Discord bot. WynnChaYuan is an unofficial fan project maintained by the WynnChaYuan team (contact: LyuChaCha).</p><h2>In short</h2><ul><li>We only keep what a feature needs to work, and only for as long as it needs it. We <b>never sell</b> your data or share it for advertising or marketing.</li><li>The mod asks for your consent the first time it starts. Without consent, the update check and in-game update, translation sync from GitHub (and the contributor list), check-in, leaves and badges, capes, website sign-in and /wcy link all stay off; translation still works from the files bundled with the mod and any files synced before. You can change this later under F6 → \"Features\" → \"Privacy and online features\" → \"Online features\".</li><li>You can delete your data yourself at any time: on the <a href=\"/account\">account page</a> or by turning on \"Don't upload my data\" under F6 → \"Features\" → \"Privacy and online features\" in the mod (see \"Deleting your data\" below).</li><li>Our code does not record IP addresses, the world you are in, chat or any other game content.</li></ul><h2>What each online feature of the mod sends</h2><ul><li><b>Update check</b>: downloads <code>version.json</code> from GitHub (or its jsDelivr mirror) to see whether there is a new version. Nothing about you is sent beyond an ordinary web request. \"Update now\" downloads the new version from GitHub Releases only when you press it.</li><li><b>Translation sync</b>: downloads newer translation files and the contributor list from GitHub (or jsDelivr). It only downloads and sends nothing about you.</li><li><b>Check-in (leaves, badges and who has the mod)</b>: when you join Wynncraft, the mod sends wynnchayuan.com your Minecraft UUID, your public profile as signed by Mojang (name and skin), a public key and signature proving the account is yours, whether to show your cape, and your badge settings (coloured leaf, which roles to show). Your private key and login credentials never leave the game.</li><li><b>Capes</b>: uploading sends the image you chose to wynnchayuan.com. To show capes, the mod downloads other players' capes from wynnchayuan.com and the team capes from GitHub (or jsDelivr); downloading sends nothing about you.</li><li><b>Website sign-in and linking</b>: opening the cape gallery from F6 exchanges the mod's pass for a sign-in link valid for one day; <code>/wcy link</code> sends the link code the website gave you.</li><li><b>Never sent on its own</b>: in-game text. Files made by \"Export untranslated strings\" stay on your computer; sending them to us is up to you.</li></ul><h2>Website account, Translate, feedback and the bot</h2><ul><li><b>Website account</b>: Discord sign-in uses only the <code>identify</code> scope. We keep your Discord user ID and display name; we do not read your email or your server list, and the access token Discord gives us is thrown away after use. Once you link your game account with <code>/wcy link</code>, the account also stores your game UUID, name and the time you linked.</li><li><b>Translate</b>: suggestions, votes and term polls store your display name and ID, the time and what you wrote. Others can see them. Accepted translations are written to the public GitHub repository (CC BY-NC-SA 4.0) and stay in its history.</li><li><b>Feedback</b>: we store your Discord user ID and display name, the category, what you wrote (including \"where\" and the language), the time and whether it came from the website or the bot. Only developers and moderators can see it. Translation suggestions also become a public GitHub issue that shows your display name (never your user ID).</li><li><b>Discord bot</b>: it only receives the slash commands you use, plus fields Discord always sends (your user ID, the server and channel IDs and your client language). It cannot read chat, and keeps nothing except feedback sent with /feedback.</li></ul><h2>Who can see your cape</h2><ul><li><b>Public</b>: anyone can see it in the cape gallery.</li><li><b>Unlisted</b>: not in the gallery; only you and people you give its link to can see it, and they can wear it too (that does not put it in the gallery).</li><li><b>Private</b>: only you can see it on the website.</li><li>Whatever you choose, moderators can see every cape, and other players with the mod still see the cape you wear in game. The gallery never shows your UUID or name, only a code hashed from the UUID; only moderators can see who uploaded which cape. Your cape history and favourites are visible only to you.</li></ul><h2>Where it is stored</h2><p>Everything our server keeps is stored in Cloudflare Workers KV. Cloudflare processes connection data (including IP addresses) for security and network operation under its own privacy policy; our code does not store it.</p><h2>How long we keep it</h2><ul><li>Check-in record: 14 days after your last check-in.</li><li>Your cape and its settings: until you remove it or delete your data. A cape nobody wears any more is kept for 7 days, then deleted; capes removed by moderators are deleted at once.</li><li>Cape history (up to 8) and favourites: until you remove them, the cape is deleted, or you delete your data.</li><li>Times of your recent uploads (to stop bursts of uploads): at most 13 hours.</li><li>Passes: 7 days from the game, 1 day for the website opened from the game, 30 days for Discord sign-in. Link codes: 10 minutes.</li><li>Website account and link: until you delete your data or unlink.</li><li>Feedback: deleted 180 days after it is marked handled; open feedback stays until it is handled or deleted. Send times kept for rate limiting: 1 hour.</li><li>Previews of a cape on your skin, made for the Discord bot: 3 days.</li><li>Ban and review records: until a moderator lifts them.</li></ul><h2>Deleting your data</h2><p>Press \"Delete my data\" on the <a href=\"/account\">account page</a>, or turn on \"Don't upload my data\" under F6 → \"Features\" → \"Privacy and online features\" in the mod. Both send the same request (<code>POST /api/me/delete</code>) and take effect immediately. The mod also stops check-in, leaves and capes, and resends the request at every launch until the server confirms, even if you never agreed to online features.</p><ul><li><b>Deleted</b>: your check-in record (you drop off the player list at once), your cape and its settings, images only you used (straight away, not after 7 days), your cape history and favourites, your website account and Discord link, feedback you sent, and cape previews made with your skin.</li><li><b>Kept, and why</b>: ban and review records and the lists moderators manage (special perks, moderators, translators), so deleting cannot undo a moderation decision; images other players are still wearing; the times of your recent uploads (at most 13 hours), so deleting cannot skip the upload cooldown; and your Translate suggestions and votes, which are part of the public project: your name on them is replaced with \"Deleted user #code\" (a short code derived from your account, so entries by the same person stay distinguishable), and your game UUID or Discord ID stays on those entries, visible only to developers and moderators, as a record of who contributed. Translations already accepted into the repository history are not changed, and GitHub issues stay on GitHub.</li><li>If you delete only on the website, the mod checks in again the next time you join Wynncraft. To stop that, turn on \"Don't upload my data\" or turn off \"Online features\" in the mod.</li></ul><h2>Cookies and browser storage</h2><ul><li><code>lang</code>: remembers the website language you chose</li><li><code>wcy_oauth</code>, <code>wcy_intent</code>: protect the Discord sign-in and only matter for the few minutes it takes</li><li>Browser <code>localStorage</code>: your sign-in pass and small display preferences</li></ul><p>There are no ads and no analytics or tracking cookies.</p><h2>Third-party services</h2><ul><li><b>Cloudflare</b>: hosts the website and its data</li><li><b>Discord</b>: sign-in and the bot</li><li><b>GitHub</b>: source code, translations, update files, Translate pull requests and issues from translation suggestions</li><li><b>jsDelivr</b>: a mirror of the GitHub files the mod downloads, and the 3D cape viewer your browser loads</li><li><b>minotar.net</b>: player heads on the website are loaded by your browser directly from it; for the Discord bot's cape preview, the website fetches that player's skin from it</li></ul><h2>Age</h2><p>You need to meet the age requirements of Minecraft and Discord to use these services.</p><h2>Changes</h2><p>If this policy changes, we update this page and the date above. Significant changes are announced on Discord or in the changelog.</p>",
+    'terms.body': "<p>By using the WynnChaYuan mod, the wynnchayuan.com website or the Discord bot, you agree to these terms. If you do not agree, please do not use them.</p><h2>Unofficial project</h2><p>WynnChaYuan is an unofficial fan project. It is not affiliated with or endorsed by Wynncraft, Mojang, Microsoft or Discord. Game textures and screens on this website belong to Wynncraft and their respective owners.</p><h2>Licences</h2><p>The mod's code is licensed under AGPL-3.0; translations and corpus data under CC BY-NC-SA 4.0. See LICENSE and LICENSE-DATA in the GitHub repository.</p><h2>Accounts</h2><ul><li>One website account links to one game account, and linking must be done from inside the game</li><li>Do not use someone else's account, get around identity checks, or let others use your pass</li><li>Accounts that break these terms may be suspended</li><li>You can delete your account and data at any time on the account page; see the <a href=\"/privacy\">privacy policy</a> for what is kept</li></ul><h2>Cape rules</h2><p>Capes are seen by other players in game, and on the website by whoever the visibility you choose (public, unlisted or private) allows. Uploaded images must not contain:</p><ul><li>Political propaganda</li><li>Sexual, obscene or gory content</li><li>Illegal content, or images that infringe copyrights or trademarks</li><li>Racist, hateful or harassing content</li><li>Advertising (promoting a guild is fine)</li></ul><p>Moderators may review or remove capes that break these rules, or ban the uploader, without notice. You keep the rights to your image; by uploading it you let us store it, show it to other players in game, and show it to website visitors as your chosen visibility allows.</p><h2>Translate</h2><ul><li>Only submit translations you have the right to provide, and agree to license them under CC BY-NC-SA 4.0</li><li>Follow the glossary and your language team's decisions; developers and admins have the final say</li><li>No spam, vote stuffing or unrelated content</li></ul><h2>Not allowed</h2><ul><li>Calling the website's API in bulk or automatically, or disrupting the service</li><li>Trying to access data or permissions that are not yours</li><li>Abusing the Discord bot</li></ul><h2>Sponsoring</h2><p>Sponsoring through Ko-fi is voluntary support. Sponsor perks (such as GIF capes) may change as the project evolves.</p><h2>The game and third parties</h2><p>The mod only changes the text and appearance shown on your own screen; it does not change gameplay. You are responsible for following the rules of Wynncraft and Minecraft when using any mod.</p><h2>No warranty</h2><p>These services are provided as is and may have errors, interruptions or be discontinued. To the extent permitted by law, we are not liable for any loss arising from using them.</p><h2>Changes and termination</h2><p>We may change these terms or stop some or all of the services. Changes are posted on this page with an updated date; continuing to use the services means you accept the new terms.</p><h2>Contact</h2><p>For questions, contact <b>LyuChaCha</b> on Discord or open a GitHub issue.</p>",
     'foot.get': 'Download', 'foot.project': 'Project', 'foot.support': 'Support', 'foot.contact': 'Contact',
     'foot.changelog': 'Changelog', 'foot.license': 'Code licence: AGPL-3.0', 'foot.datalicense': 'Translation licence: CC BY-NC-SA 4.0',
     'foot.issues': 'Report a problem', 'foot.contribute': 'How to contribute', 'foot.team': 'The team', 'foot.sponsoring': 'About sponsoring',
@@ -1334,7 +1357,7 @@ export const TEXT = {
     'capes.mine': 'Upload my cape',
     'capes.sort': 'Sort by', 'capes.filter': 'Filter', 'capes.f.format': 'Format', 'capes.f.show': 'Show',
     'capes.s.new': 'Newest', 'capes.s.old': 'Oldest', 'capes.s.worn': 'Most worn', 'capes.s.stars': 'Most popular', 'capes.s.recent': 'Recently put on',
-    'capes.f.all': 'All', 'capes.f.fav': 'My favourites', 'capes.f.hist': 'Worn before', 'capes.f.hidden': 'Not public', 'capes.f.pending': 'Awaiting review',
+    'capes.f.all': 'All', 'capes.f.fav': 'My favourites', 'capes.f.hist': 'Worn before', 'capes.f.hidden': "Unlisted", 'capes.f.pending': 'Awaiting review', 'capes.f.private': "Private",
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content; advertising (commercial promotion, promoting other servers, real-money trading such as selling LE for cash, real-life contact details; guild promotion is fine); and anything else against Wynncraft’s rules. Do not abuse uploads either (for example, uploading many capes in a short time). Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'capes.keep': 'A cape nobody is wearing is kept for 7 days. If no one has put it on by then it is removed, starred or not.',
     'skip': 'Skip to content',
@@ -1350,7 +1373,7 @@ export const TEXT = {
     'home.live': 'How it looks in game: the original stays, the translation sits beside it.', 'home.try': 'Try the options',
     'view.title': 'Cape', 'view.flat': 'The cape template image: front on the left, back on the right',
     'view.type': 'Format', 'view.dim': 'Dimensions', 'view.size': 'File size', 'view.users': 'Players', 'view.date': 'Uploaded',
-    'view.stars': 'Favourited by', 'view.approve': 'Approve', 'view.review': 'Review the uploaders’ future capes', 'view.forget': 'Remove from my history',
+    'view.stars': 'Favourited by', 'view.approve': 'Approve', 'view.review': 'Review the uploaders’ future capes', 'view.forget': 'Remove from my history', 'view.share': "Copy link",
     'view.del': 'Delete this cape', 'view.ban': 'Delete and ban the uploaders', 'view.close': 'Close',
     'view.wear': 'Wear this cape', 'view.signin': 'Sign in and link your game ID to wear this one. <a href="/account">Go to Account</a>',
 
@@ -1380,8 +1403,19 @@ export const TEXT = {
     'account.signout': 'Sign out of this browser',
     'account.mine': 'My cape', 'account.none': 'Nothing uploaded yet.', 'account.remove': 'Remove my cape',
     'account.worn': 'This one was picked from the cape gallery.',
-    'account.public': 'Show in the cape gallery',
-    'account.publichint': 'When this is off, others cannot see your cape in the gallery or wear it; other players still see you wearing it in game.',
+    'account.vis': "Who can see this cape",
+    'account.vis.public': "Public",
+    'account.vis.unlisted': "Unlisted",
+    'account.vis.private': "Private",
+    'account.vis.game': "This only affects the website: other players with the mod still see you wearing it in game.",
+    'account.share': "Share link: anyone with this link can see this cape.",
+    'account.del.h': "Delete my data",
+    'account.del.p': "Removes all your data from our server: check-in record, cape, cape history and favourites, website account and link, and feedback you sent. Ban and review records are kept; see the <a href=\"/privacy\">privacy policy</a>.",
+    'account.del.btn': "Delete my data",
+    'account.del.list': "<p>Are you sure? This cannot be undone.</p><ul><li><b>Deleted</b>: your check-in record, your cape and its settings, images only you used, your cape history and favourites, your website account and Discord link, and feedback you sent.</li><li><b>Kept</b>: ban and review records, images other players are still wearing, the times of your recent uploads (at most 13 hours), and your Translate suggestions and votes (shown as \"Deleted user #code\"; your ID is visible only to moderators).</li><li>The mod checks in again the next time you join Wynncraft. To stop that, turn on \"Don't upload my data\" under F6 → \"Features\" → \"Privacy and online features\" in the mod.</li></ul>",
+    'account.del.cancel': "Cancel",
+    'account.del.go': "Delete everything",
+    'account.del.done': "Your data has been deleted and this browser is signed out.",
     'account.pending': 'This cape is awaiting review. Nobody else can see it until it is approved.',
     'account.review': 'Capes you upload are reviewed first for now; others see them once they are approved. While under review you can have only one uploaded cape, pending ones included; to change it, remove the current one first.',
     'account.upload': 'Upload a cape',
@@ -1499,7 +1533,7 @@ export const TEXT = {
       readFail: 'Could not load the list. Please refresh.',
       roleDev: 'Developer', roleMember: 'Listed member', roleUser: 'Player with the mod',
       mineHint: '{t} · {d}{s} · drag to rotate', mineNo3d: 'The 3D view could not load.',
-      discordAs: 'Discord: {n}', codeFail: 'Could not get a link code - please try again', copied: 'Copied',
+      discordAs: 'Discord: {n}', codeFail: 'Could not get a link code - please try again', copied: 'Copied', vis: { public: "Public", unlisted: "Unlisted", private: "Private" }, visHint: { public: "Everyone can see it in the cape gallery, wear it and add it to their favourites.", unlisted: "Not shown in the gallery; only you and people with the link can see it. People with the link can wear it, but not add it to favourites.", private: "Only you can see it on the website (apart from moderators)." }, linkGone: "This cape could not be found: it may have been removed, or its owner made it private.", wipeFail: "Could not delete your data - please try again later.",
       confirmUnlink: 'Unlink this game ID from Discord?',
       confirmRemove: 'Remove the cape you uploaded?', removed: 'Cape removed', tryLater: 'That did not work - try again later',
       pickFirst: 'Choose an image first', uploading: 'Uploading…', uploaded: 'Cape uploaded ({w}×{h}) - others will see it within a few minutes',
@@ -1527,7 +1561,7 @@ export const TEXT = {
       },
       favAdd: 'Add to my favourites', favRemove: 'Remove from my favourites',
       emptyFav: 'No favourites yet. Click the star on a cape to add it.', emptyHist: 'Nothing worn yet.', emptyFilter: 'No capes match.',
-      tagPrivate: 'Not public', tagPending: 'In review', tagMine: 'Wearing', tagWorn: 'picked',
+      tagPending: 'In review', tagMine: 'Wearing', tagWorn: 'picked',
       idleLeft: 'Unworn · {n} days left', idleLast: 'Unworn · last day',
       idleNote: 'Nobody is wearing this one right now. It will be removed unless someone puts it on within {n} days.',
       idleNoteLast: 'Nobody is wearing this one right now. It will be removed unless someone puts it on today.',
@@ -1563,6 +1597,7 @@ export const TEXT = {
         'bad note': 'The note can be 60 characters at most',
       },
       tr: {
+        gone: "Deleted user #{id}",
         langs: { zh_tw: 'Traditional Chinese', zh_cn: 'Simplified Chinese', ja_jp: 'Japanese', ko_kr: 'Korean', ru_ru: 'Russian', es_es: 'Spanish', tr_tr: 'Turkish' },
         st: { open: 'Voting', accepted: 'Accepted', rejected: 'Rejected' },
         signin: 'Sign in to suggest and vote', roleDecide: 'Moderator: can decide', roleTranslator: 'Translator: can suggest and vote',
@@ -3527,7 +3562,8 @@ const CAPES = String.raw`
         <option value="all">%%capes.f.all%%</option>
         <option value="fav">%%capes.f.fav%%</option>
         <option value="hist">%%capes.f.hist%%</option>
-        <option value="hidden">%%capes.f.hidden%%</option>
+        <option value="unlisted">%%capes.f.hidden%%</option>
+        <option value="private">%%capes.f.private%%</option>
         <option value="pending">%%capes.f.pending%%</option>
       </select>
     </label>
@@ -3575,6 +3611,7 @@ const CAPES = String.raw`
           <button class="btn" id="fav"></button>
           <button class="btn" id="forget" hidden>%%view.forget%%</button>
         </div>
+        <button class="btn" id="share" type="button" hidden>%%view.share%%</button>
         <p class="hint" id="wear-signin" hidden>%%view.signin%%</p>
         <p class="msg" id="wear-msg" role="status" style="margin:0"></p>
         <div class="spacer"></div>
@@ -3657,7 +3694,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var out = all.filter(function (cape) {
       if (!format(cape)) return false;
       if (scope === 'fav') return favs[cape.h];
-      if (scope === 'hidden') return cape.hidden && !cape.pending;
+      if (scope === 'unlisted' || scope === 'private') return cape.vis === scope && !cape.pending;
       if (scope === 'pending') return cape.pending;
       return true;
     });
@@ -3727,7 +3764,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       if (cape.t === 'gif') chips.append(el('span', 'tag gif', 'GIF'));
       if (member() && visitor.cape && visitor.cape.h === cape.h) chips.append(el('span', 'tag mine', L.tagMine));
       if (cape.pending) chips.append(el('span', 'tag wait', L.tagPending));
-      else if (cape.hidden) chips.append(el('span', 'tag off', L.tagPrivate));
+      else if (cape.hidden) chips.append(el('span', 'tag off', L.vis[cape.vis] || L.vis.unlisted));
       if (chips.firstChild) stage.append(chips);
       var meta = el('div', 'meta');
       if (cape.idle) {
@@ -3804,6 +3841,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     document.getElementById('ban').hidden = !developer || cape.gone;
     document.getElementById('review').hidden = !developer || cape.gone;
     document.getElementById('approve').hidden = !(developer && cape.pending);
+    document.getElementById('share').hidden = Boolean(cape.gone || cape.pending || cape.vis === 'private');
     tell('', true);
     wearState();
     favState();
@@ -3819,7 +3857,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
         li.append(img);
       }
       /* 管理的人看得到每個人的狀態：不公開、待審核、是套用來的（圖不是他傳的） */
-      var marks = [owner.pending ? L.tagPending : '', owner.private ? L.tagPrivate : '', owner.worn ? L.tagWorn : '']
+      var marks = [owner.pending ? L.tagPending : '', owner.vis && owner.vis !== 'public' ? L.vis[owner.vis] : '', owner.worn ? L.tagWorn : '']
         .filter(function (mark) { return mark; });
       li.append(el('span', '', (owner.name || owner.uuid) + (marks.length ? ' (' + marks.join(', ') + ')' : '')));
       owners.append(li);
@@ -3878,6 +3916,27 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     wearCall('/cape/restore', {}, function (answer) { tell(answer.cape ? L.restored : L.tookOff, true); });
   };
   document.getElementById('fav').onclick = function () { if (current) toggleStar(current, null); };
+  document.getElementById('share').onclick = function () {
+    var button = this;
+    if (!current || !navigator.clipboard) return;
+    navigator.clipboard.writeText(location.origin + '/capes?c=' + current.h)
+      .then(function () { blip(button, L.copied); }).catch(function () {});
+  };
+  function openLinked() {
+    var asked = new URLSearchParams(location.search).get('c') || '';
+    if (!/^[0-9a-f]{64}$/.test(asked)) return;
+    var found = all.filter(function (cape) { return cape.h === asked; })[0];
+    if (found) { show(found); return; }
+    api('/capes/' + asked).then(function (r) { return r.ok ? r.json() : null; }).then(function (got) {
+      if (!got || !got.cape) {
+        var gone = document.getElementById('gone');
+        gone.textContent = L.linkGone;
+        gone.hidden = false;
+        return;
+      }
+      show(got.cape);
+    }).catch(function () {});
+  }
   document.getElementById('forget').onclick = function () {
     var cape = current;
     if (!cape || !confirm(L.confirmForget)) return;
@@ -3975,11 +4034,11 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     var scopes = document.getElementById('scope');
     Array.prototype.slice.call(scopes.options).forEach(function (option) {
       var f = option.value;
-      if (((f === 'fav' || f === 'hist') && !member()) || ((f === 'hidden' || f === 'pending') && !developer)) option.remove();
+      if (((f === 'fav' || f === 'hist') && !member()) || ((f === 'unlisted' || f === 'private' || f === 'pending') && !developer)) option.remove();
     });
     document.getElementById('scope-box').hidden = scopes.options.length < 2;
     slideAll();
-    return load(false);
+    return load(false).then(openLinked);
   }).catch(function () { document.getElementById('count').textContent = L.readFail; });
 ` + '</script>';
 
@@ -3987,6 +4046,7 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
 
 const ACCOUNT = String.raw`
   <h1>%%account.h1%%</h1>
+  <p class="notice" id="wiped" role="status" hidden>%%account.del.done%%</p>
   <div id="out" hidden>
     <p class="lede">%%account.lede%%</p>
     <div class="split" style="margin-top:22px">
@@ -4044,9 +4104,18 @@ const ACCOUNT = String.raw`
         <p class="note" id="worn" hidden style="margin:10px 0 0">%%account.worn%%</p>
         <p class="note" id="pending" hidden style="margin:10px 0 0;color:var(--gold)">%%account.pending%%</p>
         <p class="note" id="review" hidden style="margin:10px 0 0">%%account.review%%</p>
-        <div class="set-line">
-          <span><b id="public-label">%%account.public%%</b><span class="hint">%%account.publichint%%</span></span>
-          <button class="switch" id="public" type="button" role="switch" aria-checked="true" aria-labelledby="public-label"></button>
+        <div class="set-line vis-line">
+          <span><b id="vis-label">%%account.vis%%</b><span class="hint" id="vis-hint"></span></span>
+          <div class="seg" id="vis" role="group" aria-labelledby="vis-label">
+            <button type="button" data-v="public" aria-pressed="true">%%account.vis.public%%</button>
+            <button type="button" data-v="unlisted" aria-pressed="false">%%account.vis.unlisted%%</button>
+            <button type="button" data-v="private" aria-pressed="false">%%account.vis.private%%</button>
+          </div>
+          <p class="hint" style="margin:0">%%account.vis.game%%</p>
+        </div>
+        <div id="sharebox" hidden>
+          <p class="note" style="margin:12px 0 0">%%account.share%%</p>
+          <div class="linkcode"><code class="share-url" id="share-url"></code><button class="btn" id="share-copy">%%account.link.copy%%</button></div>
         </div>
         <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">
           <button class="btn" id="restore" hidden></button>
@@ -4067,6 +4136,22 @@ const ACCOUNT = String.raw`
       <p class="msg" id="msg" role="status"></p>
     </div>
   </div>
+  <div class="panel wipe-panel" id="wipe-panel" hidden>
+    <b>%%account.del.h%%</b>
+    <p class="note" style="margin:8px 0 14px">%%account.del.p%%</p>
+    <button class="btn danger" id="wipe-open" type="button">%%account.del.btn%%</button>
+  </div>
+  <dialog id="wipe" aria-labelledby="wipe-title">
+    <div class="wipe-box">
+      <h2 id="wipe-title">%%account.del.h%%</h2>
+      %%account.del.list%%
+      <p class="msg" id="wipe-msg" role="status"></p>
+      <div class="wipe-actions">
+        <button class="btn" id="wipe-no" type="button">%%account.del.cancel%%</button>
+        <button class="btn danger" id="wipe-go" type="button">%%account.del.go%%</button>
+      </div>
+    </div>
+  </dialog>
 `;
 
 const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
@@ -4096,12 +4181,27 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     wear(viewer, trying, file.type === 'image/gif');
   }
 
-  var shared = true;                     /* 要不要出現在披風一覽。還沒有披風的時候先記在這裡，上傳時帶去 */
+  var vis = 'public';
+  var lastMe = null;
+  function setVis(value) {
+    vis = value;
+    Array.prototype.forEach.call(document.querySelectorAll('#vis button'), function (button) {
+      button.setAttribute('aria-pressed', button.dataset.v === value ? 'true' : 'false');
+    });
+    document.getElementById('vis-hint').textContent = L.visHint[value];
+    slide(document.getElementById('vis'));
+  }
+  function shareState(me) {
+    var open = Boolean(me && me.cape && !me.cape.pending && vis !== 'private');
+    document.getElementById('sharebox').hidden = !open;
+    if (open) document.getElementById('share-url').textContent = location.origin + '/capes?c=' + me.cape.h;
+  }
   function show(me) {
+    lastMe = me;
     if (me.name && me.name !== myName) { myName = me.name; if (viewer) dress(viewer, myName); }
     document.getElementById('nocape').hidden = Boolean(me.cape);
-    if (me.cape) shared = me.cape.public !== false;
-    document.getElementById('public').setAttribute('aria-checked', shared ? 'true' : 'false');
+    setVis(me.cape ? me.cape.vis || (me.cape.public === false ? 'unlisted' : 'public') : vis);
+    shareState(me);
     document.getElementById('pending').hidden = !(me.cape && me.cape.pending);
     document.getElementById('review').hidden = !me.review;
     document.getElementById('remove').hidden = !me.cape;
@@ -4167,6 +4267,11 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   whoami.then(function (me) {
     if (!me) {
       document.getElementById('out').hidden = false;
+      if (location.hash === '#wiped') {
+        document.getElementById('wiped').hidden = false;
+        history.replaceState(null, '', location.pathname + location.search);
+        window.scrollTo(0, 0);
+      }
       var oauthFail = /e=discord(?:&r=([a-z0-9_-]{1,60}))?$/.exec(location.hash);
       var oauthError = document.getElementById('oauth-error');
       oauthError.hidden = !oauthFail;
@@ -4177,6 +4282,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       });
       return;
     }
+    document.getElementById('wipe-panel').hidden = false;
     if (me.linked === false) {
       document.getElementById('link').hidden = false;
       linking(me);
@@ -4254,20 +4360,51 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
       .then(function () { location.reload(); });
   };
-  document.getElementById('public').onclick = function () {
+  Array.prototype.forEach.call(document.querySelectorAll('#vis button'), function (button) {
+    button.onclick = function () {
+      var before = vis;
+      var want = button.dataset.v;
+      if (want === before) return;
+      setVis(want);
+      if (!lastMe || !lastMe.cape) { shareState(lastMe); return; }
+      api('/cape/visibility', { method: 'POST', body: JSON.stringify({ vis: want }), headers: { 'content-type': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('vis');
+          lastMe.cape.vis = want;
+          shareState(lastMe);
+        }).catch(function () { setVis(before); shareState(lastMe); say(L.tryLater, false); });
+    };
+  });
+  document.getElementById('share-copy').onclick = function () {
     var button = this;
-    var want = button.getAttribute('aria-checked') !== 'true';
-    shared = want;
-    button.setAttribute('aria-checked', want ? 'true' : 'false');
-    /* 有披風就馬上改那一件；還沒有的話先記著，等上傳的時候一起送 */
-    api('/me').then(function (r) { return r.ok ? r.json() : null; }).then(function (me) {
-      if (!me || !me.cape) return;
-      return api('/cape/public', { method: 'POST', body: JSON.stringify({ on: want }), headers: { 'content-type': 'application/json' } })
-        .then(function (r) { if (!r.ok) throw new Error('public'); });
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(document.getElementById('share-url').textContent)
+        .then(function () { blip(button, L.copied); }).catch(function () {});
+    }
+  };
+  var wipe = document.getElementById('wipe');
+  document.getElementById('wipe-open').onclick = function () {
+    document.getElementById('wipe-msg').textContent = '';
+    wipe.showModal();
+  };
+  document.getElementById('wipe-no').onclick = function () { wipe.close(); };
+  wipe.addEventListener('click', function (e) { if (e.target === wipe) wipe.close(); });
+  document.getElementById('wipe-go').onclick = function () {
+    var button = this;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    api('/me/delete', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } }).then(function (r) {
+      if (!r.ok) throw new Error('delete');
+      try { localStorage.removeItem(TOKEN_KEY); } catch (e) {}
+      history.replaceState(null, '', '/account#wiped');
+      location.reload();
     }).catch(function () {
-      shared = !want;
-      button.setAttribute('aria-checked', !want ? 'true' : 'false');
-      say(L.tryLater, false);
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+      var out = document.getElementById('wipe-msg');
+      out.className = 'msg bad';
+      out.textContent = L.wipeFail;
+      flash(out);
     });
   };
   document.getElementById('restore').onclick = function () {
@@ -4293,7 +4430,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     button.setAttribute('aria-busy', 'true');
     function idle() { button.disabled = false; button.removeAttribute('aria-busy'); }
     say(L.uploading, true);
-    api('/cape?public=' + (shared ? '1' : '0'), { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
+    api('/cape?vis=' + vis, { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
       .then(function (r) {
         idle();
         return r.json().catch(function () { return {}; }).then(function (body) {
@@ -5641,7 +5778,7 @@ const TRANSLATE_JS = '<script>' + String.raw`
       var row = el('div', 'tr-item' + (prop.done && prop.done.item === it.id ? ' won' : ''));
       row.append(textBlock(it.text, 'tr-dst'));
       var foot = el('div', 'tr-foot');
-      foot.append(el('span', 'note', fmt(T.by, { who: it.name })));
+      foot.append(el('span', 'note', fmt(T.by, { who: whoOf(it, prop) })));
       var votes = el('span', 'tr-votes', fmt(T.votes, { n: it.votes.length }));
       foot.append(votes);
       if (prop.status === 'open' && canWrite()) {
@@ -5747,11 +5884,16 @@ const TRANSLATE_JS = '<script>' + String.raw`
       });
     });
   }
+  function whoOf(entry, record) {
+    if (!entry.gone) return entry.name;
+    var ids = record.ghosts && record.ghosts[entry.gone];
+    return fmt(T.gone, { id: entry.gone }) + (ids ? ' (' + ids.join(', ') + ')' : '');
+  }
   function pollCard(poll, id) {
     var card = el('article', 'tr-row tr-poll');
     var head = el('div', 'tr-head');
     head.append(chip(poll.status === 'decided' ? T.decided : T.st.open, poll.status === 'decided' ? 'leaf' : 'gold'));
-    head.append(el('span', 'note', fmt(T.by, { who: poll.name })));
+    head.append(el('span', 'note', fmt(T.by, { who: whoOf(poll, poll) })));
     card.append(head, el('h3', 'tr-term', poll.term));
     if (poll.note) card.append(textBlock(poll.note, 'note'));
     var total = poll.options.reduce(function (s, o) { return s + o.votes.length; }, 0);
