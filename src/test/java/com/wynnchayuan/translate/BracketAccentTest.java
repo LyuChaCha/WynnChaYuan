@@ -164,8 +164,8 @@ public final class BracketAccentTest {
             allRuns.addAll(part.runs());
         }
         List<LineParts.Piece> accents =
-                LineTranslator.bracketAccents(allRuns, flowed, colour(BODY));
-        List<Component> built = LineTranslator.rebuildAll(
+                StyledRebuilder.bracketAccents(allRuns, flowed, colour(BODY));
+        List<Component> built = TemplateRenderer.rebuildAll(
                 flowed, parts, accents, null, null,
                 corpus("Kanderstone Ingot", "Kanderstone 錠",
                        "Kanderstone Gem", "Kanderstone 寶石"));
@@ -198,7 +198,7 @@ public final class BracketAccentTest {
         Integer coords = null;
         Integer item = null;
         for (LineParts.Piece accent
-                : LineTranslator.bracketAccents(runs, translated, colour(BODY))) {
+                : StyledRebuilder.bracketAccents(runs, translated, colour(BODY))) {
             Integer rgb = accent.style().getColor() == null ? null
                     : accent.style().getColor().getValue();
             if (accent.text().startsWith("[{~2}")) {
@@ -214,15 +214,15 @@ public final class BracketAccentTest {
                 is(item, ITEM));
 
         check("［括號換位］種類順序一樣時不重排",
-                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                java.util.Arrays.equals(StyledRebuilder.pairBrackets(
                         List.of("4 Gold Chunks", "605, 80, -4920"),
                         List.of("[{~} 塊金塊]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
         check("［括號換位］個數對不上時不亂配",
-                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                java.util.Arrays.equals(StyledRebuilder.pairBrackets(
                         List.of("4 Gold Chunks", "605, 80, -4920"),
                         List.of("[{~}, {~}]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
         check("［括號換位］三組：同類的照順序配",
-                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                java.util.Arrays.equals(StyledRebuilder.pairBrackets(
                         List.of("Combat Lv. 88", "4 Hides", "1, 2, -3"),
                         List.of("[{~}, {~}, -{~}]", "[戰鬥等級 {~}]", "[{~} 張皮]")),
                         new int[] {2, 0, 1}));
@@ -252,7 +252,7 @@ public final class BracketAccentTest {
         };
         List<String> texts = new ArrayList<>();
         for (LineParts.Piece accent
-                : LineTranslator.bracketAccents(runs, translated, colour(BODY))) {
+                : StyledRebuilder.bracketAccents(runs, translated, colour(BODY))) {
             texts.add(accent.text());
         }
         System.out.println("［跨行括號］登記到的重點段：" + texts);
@@ -278,7 +278,7 @@ public final class BracketAccentTest {
                 piece(" Kanderstone 錠]", ITEM));
         List<String> texts = new ArrayList<>();
         for (LineParts.Piece half
-                : LineTranslator.halvesAcrossBreaks(flowed, accents)) {
+                : TemplateRenderer.halvesAcrossBreaks(flowed, accents)) {
             texts.add(half.text());
         }
         System.out.println("［詞被切開］補登記的兩半：" + texts);
@@ -307,7 +307,7 @@ public final class BracketAccentTest {
         };
         List<String> texts = new ArrayList<>();
         for (LineParts.Piece accent
-                : LineTranslator.bracketAccents(runs, flowed, colour(BODY))) {
+                : StyledRebuilder.bracketAccents(runs, flowed, colour(BODY))) {
             texts.add(accent.text());
         }
         System.out.println("［跨行的整組］登記到的重點段：" + texts);
@@ -320,7 +320,7 @@ public final class BracketAccentTest {
                   t.indexOf(NL) < 0);
         }
 
-        String[] moved = LineTranslator.keepAccentsWhole(
+        String[] moved = TemplateRenderer.keepAccentsWhole(
                 flowed, List.of(piece("[{~} 鮭魚肉]", ITEM)));
         check("★［跨行的整組］行尾那個 [ 被搬到下一行（拿到 「" + moved[0]
               + "」／「" + moved[1] + "」）",

@@ -172,14 +172,14 @@ public final class LootrunBoonTest {
         System.out.println("=== 搬詞時數值跟著圖示 ===");
         String[] split = {"本次 Lootrun 剩餘期間，", "每提供一個信標就 +{~1} {#}防",
                           "禦 (上限 x{~2})"};
-        String[] kept = LineTranslator.keepAccentsWhole(split, List.of(
+        String[] kept = TemplateRenderer.keepAccentsWhole(split, List.of(
                 new com.wynnchayuan.capture.LineParts.Piece("防禦", RED)));
         System.out.println("    搬完：" + String.join(" ⏎ ", kept));
         check("★ 數值、圖示、屬性名在同一行", kept[2].startsWith("+{~1} {#}防禦"));
         check("上一行留下的是句子", kept[1].strip().equals("每提供一個信標就"));
         check("字沒有變少", String.join("", kept).equals(String.join("", split)));
 
-        String[] word = LineTranslator.keepAccentsWhole(
+        String[] word = TemplateRenderer.keepAccentsWhole(
                 new String[] {"可透過 {#}物品升", "級師 將物品提升"},
                 List.of(new com.wynnchayuan.capture.LineParts.Piece("物品升級師", RED)));
         check("圖示前面是字時只搬圖示（實際 " + String.join(" ⏎ ", word) + "）",

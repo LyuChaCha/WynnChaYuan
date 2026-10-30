@@ -65,11 +65,11 @@ final class ChatTranslator {
             if (translated == null || translated.isBlank()) {
                 return null;
             }
-            glyphs = LineTranslator.unwrappedGlyphs(framed.template(), framed.glyphs());
+            glyphs = TemplateRenderer.unwrappedGlyphs(framed.template(), framed.glyphs());
         }
         Component rebuilt = glyphs == null
-                ? LineTranslator.rebuild(translated, framed, store)
-                : LineTranslator.rebuild(translated, framed, glyphs, store);
+                ? TemplateRenderer.rebuild(translated, framed, store)
+                : TemplateRenderer.rebuild(translated, framed, glyphs, store);
         if (rebuilt == null) {
             return null;
         }
@@ -98,7 +98,7 @@ final class ChatTranslator {
                 case 1 -> hit = ColumnTemplates.byColumn(parts.template(), store);
                 case 2 -> {
                     hit = store.lookupUnwrapped(parts.template());
-                    glyphs = LineTranslator.unwrappedGlyphs(parts.template(), parts.glyphs());
+                    glyphs = TemplateRenderer.unwrappedGlyphs(parts.template(), parts.glyphs());
                 }
                 case 3, 4 -> {
                     LineParts framed = com.wynnchayuan.capture.Broadcasts.find(message) == null
@@ -109,14 +109,14 @@ final class ChatTranslator {
                             hit = TemplateLookup.lookup(framed.template(), store);
                         } else {
                             hit = store.lookupUnwrapped(framed.template());
-                            glyphs = LineTranslator.unwrappedGlyphs(framed.template(), framed.glyphs());
+                            glyphs = TemplateRenderer.unwrappedGlyphs(framed.template(), framed.glyphs());
                         }
                     }
                 }
                 case 5 -> {
                     if (parts.template().indexOf('\n') >= 0) {
                         hit = TemplateLookup.eventFrame(TranslationStore.unwrap(parts.template()), store);
-                        glyphs = LineTranslator.unwrappedGlyphs(parts.template(), parts.glyphs());
+                        glyphs = TemplateRenderer.unwrappedGlyphs(parts.template(), parts.glyphs());
                     }
                 }
                 default -> hit = ColumnTemplates.welcomeBanner(parts.template(), store);
@@ -126,8 +126,8 @@ final class ChatTranslator {
             }
             tried = hit;
             rebuilt = glyphs == null
-                    ? LineTranslator.rebuild(hit, using, store)
-                    : LineTranslator.rebuild(hit, using, glyphs, store);
+                    ? TemplateRenderer.rebuild(hit, using, store)
+                    : TemplateRenderer.rebuild(hit, using, glyphs, store);
             if (rebuilt != null) {
                 parts = using;
             }
@@ -142,7 +142,7 @@ final class ChatTranslator {
             }
             return null;
         }
-        rebuilt = rowColours(message, rebuilt, LineTranslator.dominantStyle(List.of(parts)));
+        rebuilt = rowColours(message, rebuilt, BlockTranslator.dominantStyle(List.of(parts)));
         if (parts.template().startsWith(TemplateLookup.CHAT_COUNTER)) {
             rebuilt = npcChatColours(message, rebuilt);
         }
