@@ -14,6 +14,8 @@ import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import com.wynnchayuan.translate.ColumnAligner.Piece;
+import com.wynnchayuan.translate.SpaceRuns.Run;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -124,7 +126,7 @@ public final class LineTranslator {
         for (int i = 0; i < run.size(); i++) {
             Component row = built.get(i);
             out.add(DisplayStyles.unslant(rewrapped && hasInnerGap(row)
-                    ? row : realign(run.get(i), row, centered[i])));
+                    ? row : RowRealigner.realign(run.get(i), row, centered[i])));
         }
         return out;
     }
@@ -152,7 +154,7 @@ public final class LineTranslator {
     }
 
     private static Component centreOn(Component row, double centre) {
-        List<Run> parts = runs(row);
+        List<Run> parts = SpaceRuns.runs(row);
         int lead = 0;
         int first = 0;
         while (first < parts.size() && parts.get(first).space()) {
@@ -178,7 +180,7 @@ public final class LineTranslator {
 
     private static int leadingPx(Component line) {
         int px = 0;
-        for (Run r : runs(line)) {
+        for (Run r : SpaceRuns.runs(line)) {
             if (!r.space()) {
                 break;
             }
@@ -190,7 +192,7 @@ public final class LineTranslator {
     private static boolean hasInnerGap(Component row) {
         boolean textBefore = false;
         boolean gapPending = false;
-        for (Run r : mergeSpaces(splitGaps(runs(row)))) {
+        for (Run r : RowRealigner.mergeSpaces(SpaceRuns.splitGaps(SpaceRuns.runs(row)))) {
             if (r.space()) {
                 gapPending = textBefore;
             } else if (!r.text().isBlank()) {
@@ -330,7 +332,7 @@ public final class LineTranslator {
     }
 
     private static boolean endsWithColon(String text) {
-        return !text.isEmpty() && isTrailingColon(text.charAt(text.length() - 1));
+        return !text.isEmpty() && ColumnAligner.isTrailingColon(text.charAt(text.length() - 1));
     }
 
     private static Style dominantStyle(List<LineParts> parts) {
@@ -662,7 +664,7 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(translated, LineParts.of(line), store);
-        return rebuilt == null ? null : DisplayStyles.unslant(realign(line, rebuilt, true));
+        return rebuilt == null ? null : DisplayStyles.unslant(RowRealigner.realign(line, rebuilt, true));
     }
 
     private static Component translateSegments(StyledText line, TranslationStore store,
@@ -680,7 +682,7 @@ public final class LineTranslator {
             PartStyle ps = part.getPartStyle();
             Style style = ps == null ? Style.EMPTY : ps.getStyle();
 
-            if (isAdjustableSpace(style, raw)) {
+            if (SpaceRuns.isAdjustableSpace(style, raw)) {
                 pieces.add(Piece.space(SpaceOffset.decode(raw), style));
                 continue;
             }
@@ -691,7 +693,7 @@ public final class LineTranslator {
             String tail = SpaceOffset.trailingOffsets(raw);
             String body = raw.substring(0, raw.length() - tail.length());
             String lead = SpaceOffset.leadingOffsets(body);
-            if (lead.length() == body.length() || !isAdjustableSpace(style, lead)) {
+            if (lead.length() == body.length() || !SpaceRuns.isAdjustableSpace(style, lead)) {
                 lead = "";
             }
             body = body.substring(lead.length());
@@ -724,487 +726,35 @@ public final class LineTranslator {
         }
         translateConnectors(pieces, connectorAt, store);
 
-        int boundary = findAlignPoint(pieces);
+        int boundary = ColumnAligner.findAlignPoint(pieces);
         if (boundary >= 0 && !pieces.get(boundary).isSpace()
-                && hasColumnGap(pieces, boundary)) {
+                && ColumnAligner.hasColumnGap(pieces, boundary)) {
             pieces.add(boundary, Piece.space(0,
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
 
-        List<Piece> columns = alignColumns(pieces, leftAligned);
-        List<Piece> aligned = leftAligned ? columns : settle(columns, line);
+        List<Piece> columns = ColumnAligner.alignColumns(pieces, leftAligned);
+        List<Piece> aligned = leftAligned ? columns : ColumnAligner.settle(columns, line);
         LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
-                describe(pieces, aligned, line));
+                ColumnAligner.describe(pieces, aligned, line));
 
-        if (centered && textGroups(pieces).size() >= 2) {
-            return assemble(recenterColumns(pieces), -1, 0);
+        if (centered && ColumnAligner.textGroups(pieces).size() >= 2) {
+            return ColumnAligner.assemble(ColumnAligner.recenterColumns(pieces), -1, 0);
         }
 
-        int lead = centered ? leadingSpace(aligned) : -1;
+        int lead = centered ? ColumnAligner.leadingSpace(aligned) : -1;
         if (lead >= 0) {
-            int delta = widthOf(line) - widthOf(assemble(aligned, -1, 0));
-            return assemble(aligned, lead, delta / 2);
+            int delta = widthOf(line) - widthOf(ColumnAligner.assemble(aligned, -1, 0));
+            return ColumnAligner.assemble(aligned, lead, delta / 2);
         }
-        return assemble(aligned, -1, 0);
-    }
-
-    public static boolean columnsAreLeftAligned(List<StyledText> lines) {
-        if (lines == null || lines.size() < MIN_COLUMN_ROWS) {
-            return true;
-        }
-        List<Integer> starts = new ArrayList<>();
-        List<Integer> ends = new ArrayList<>();
-        for (StyledText line : lines) {
-            int[] both = secondColumn(line);
-            if (both != null) {
-                starts.add(both[0]);
-                ends.add(both[1]);
-            }
-        }
-        if (starts.size() < MIN_COLUMN_ROWS) {
-            return true;
-        }
-        return spread(starts) < spread(ends);
-    }
-
-    private static final int MIN_COLUMN_ROWS = 2;
-
-    // Wynncraft 欄距藏在標籤尾巴（先退回再跳），不能用像素門檻判斷
-    private static int[] secondColumn(StyledText line) {
-        int x = 0;
-        int start = -1;
-        boolean sawGap = false;
-        boolean sawText = false;
-        List<Run> rs = splitGaps(runs(line.getComponent()));
-        boolean[] gaps = tooltipGaps(rs);
-        for (int i = 0; i < rs.size(); i++) {
-            Run r = rs.get(i);
-            if (r.space()) {
-                if (gaps[i] && start < 0 && sawText) {
-                    sawGap = true;
-                }
-                x += r.px();
-                continue;
-            }
-            String raw = r.text();
-            if (raw == null || raw.isEmpty()) {
-                continue;
-            }
-            if (sawGap && start < 0 && !raw.isBlank()) {
-                start = x;
-            }
-            if (GlyphSplitter.hasLetter(raw)) {
-                sawText = true;
-            }
-            x += widthOf(DisplayStyles.literal(raw, r.style()));
-        }
-        return start < 0 ? null : new int[] {start, x};
-    }
-
-    static int spread(List<Integer> values) {
-        int low = Integer.MAX_VALUE;
-        int high = Integer.MIN_VALUE;
-        for (int v : values) {
-            low = Math.min(low, v);
-            high = Math.max(high, v);
-        }
-        return high - low;
-    }
-
-    static List<int[]> textGroups(List<Piece> pieces) {
-        List<int[]> groups = new ArrayList<>();
-        int start = -1;
-        for (int i = 0; i < pieces.size(); i++) {
-            if (pieces.get(i).isSpace()) {
-                if (start >= 0) {
-                    groups.add(new int[] {start, i});
-                    start = -1;
-                }
-            } else if (start < 0) {
-                start = i;
-            }
-        }
-        if (start >= 0) {
-            groups.add(new int[] {start, pieces.size()});
-        }
-        return groups;
-    }
-
-    static List<Piece> recenterColumns(List<Piece> pieces) {
-        List<int[]> groups = textGroups(pieces);
-        int[] wantStart = new int[groups.size()];
-        int[] newWidth = new int[groups.size()];
-
-        int x = 0;
-        int g = 0;
-        for (int i = 0; i < pieces.size(); i++) {
-            Piece p = pieces.get(i);
-            if (p.isSpace()) {
-                x += p.spacePx();
-                continue;
-            }
-            if (g < groups.size() && groups.get(g)[0] == i) {
-                int origWidth = 0;
-                int width = 0;
-                for (int k = groups.get(g)[0]; k < groups.get(g)[1]; k++) {
-                    origWidth += widthOf(pieces.get(k).orig());
-                    width += widthOf(pieces.get(k).rendered());
-                }
-                newWidth[g] = width;
-                wantStart[g] = x + (origWidth - width) / 2;
-                x += origWidth;
-                g++;
-            }
-        }
-
-        List<Piece> out = new ArrayList<>(pieces.size());
-        int cursor = 0;
-        g = 0;
-        for (int i = 0; i < pieces.size(); i++) {
-            Piece p = pieces.get(i);
-            if (!p.isSpace()) {
-                out.add(p);
-                if (g < groups.size() && groups.get(g)[1] == i + 1) {
-                    cursor += newWidth[g];
-                    g++;
-                }
-                continue;
-            }
-            boolean lastOfRun = i + 1 >= pieces.size() || !pieces.get(i + 1).isSpace();
-            if (!lastOfRun) {
-                out.add(Piece.space(0, p.style()));
-                continue;
-            }
-            if (g >= groups.size()) {
-                out.add(p);
-                continue;
-            }
-            int gap = Math.max(0, wantStart[g] - cursor);
-            out.add(Piece.space(gap, p.style()));
-            cursor += gap;
-        }
-        return out;
-    }
-
-    static List<Piece> alignColumns(List<Piece> pieces, boolean leftAligned) {
-        List<Piece> out = new ArrayList<>(pieces.size());
-        int drift = 0;
-        int lastAdjusted = -1;
-        for (int i = 0; i < pieces.size(); i++) {
-            Piece p = pieces.get(i);
-            if (!p.isSpace()) {
-                drift += widthOf(p.rendered()) - widthOf(p.orig());
-                out.add(p);
-                continue;
-            }
-            if (isAlignSpace(pieces, i) && !isBacktrack(p)) {
-                out.add(Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
-                lastAdjusted = i;
-                drift = 0;
-            } else {
-                out.add(p);
-            }
-        }
-
-        if (lastAdjusted >= 0 && drift != 0 && !leftAligned
-                && labelled(out, lastAdjusted)) {
-            Piece p = out.get(lastAdjusted);
-            out.set(lastAdjusted,
-                    Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
-        }
-        return out;
-    }
-
-    private static boolean isBacktrack(Piece space) {
-        return space.spacePx() < 0;
-    }
-
-    private static List<Piece> settle(List<Piece> pieces, StyledText original) {
-        int last = -1;
-        for (int i = 0; i < pieces.size(); i++) {
-            if (isAlignSpace(pieces, i) && !isBacktrack(pieces.get(i))
-                    && labelled(pieces, i)) {
-                last = i;
-            }
-        }
-        if (last < 0) {
-            return pieces;
-        }
-        int shortfall = widthOf(original.getComponent())
-                - widthOf(assemble(pieces, -1, 0));
-        if (shortfall == 0) {
-            return pieces;
-        }
-        List<Piece> out = new ArrayList<>(pieces);
-        Piece p = out.get(last);
-        out.set(last, Piece.space(narrowed(p.spacePx(), p.spacePx() + shortfall),
-                                  p.style()));
-        return out;
-    }
-
-    static boolean labelled(List<Piece> pieces, int index) {
-        for (int i = 0; i < index && i < pieces.size(); i++) {
-            Piece p = pieces.get(i);
-            if (p.isSpace()) {
-                continue;
-            }
-            String text = p.orig() == null ? null : p.orig().getString();
-            for (int k = 0; text != null && k < text.length(); k++) {
-                if (Character.isLetterOrDigit(text.charAt(k))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    static boolean isAlignSpace(List<Piece> pieces, int index) {
-        return pieces.get(index).isSpace()
-                && !isLeading(pieces, index)
-                && hasTextAfter(pieces, index);
-    }
-
-    private static int leadingSpace(List<Piece> pieces) {
-        for (int i = 0; i < pieces.size(); i++) {
-            if (pieces.get(i).isSpace() && isLeading(pieces, i)
-                    && hasTextAfter(pieces, i)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    static int findAlignPoint(List<Piece> pieces) {
-        int firstAlign = firstAlignSpace(pieces);
-        int valueStart = valueRegionStart(pieces);
-
-        if (firstAlign >= 0 && (valueStart < 0 || firstAlign <= valueStart)) {
-            return firstAlign;
-        }
-        if (valueStart >= 0) {
-            return valueStart;
-        }
-        return literalGapBoundary(pieces);
-    }
-
-    private static int literalGapBoundary(List<Piece> pieces) {
-        for (int i = pieces.size() - 2; i > 0; i--) {
-            String text = pieces.get(i).text();
-            if (text.isEmpty() || !text.isBlank() || text.length() < MIN_COLUMN_GAP) {
-                continue;
-            }
-            if (!isLeading(pieces, i) && hasTextAfter(pieces, i)) {
-                return i + 1;
-            }
-        }
-        return -1;
-    }
-
-    static int narrowed(int original, int adjusted) {
-        return original > 0 ? Math.max(Math.min(MIN_GAP, original), adjusted)
-                            : Math.max(original, adjusted);
-    }
-
-    static final int MIN_GAP = 6;
-
-    private static final int MIN_COLUMN_GAP = 2;
-
-    static boolean hasColumnGap(List<Piece> pieces, int boundary) {
-        int spaces = 0;
-        for (int i = boundary - 1; i >= 0; i--) {
-            String text = pieces.get(i).text();
-            if (text.isEmpty()) {
-                continue;
-            }
-            int n = 0;
-            while (n < text.length()
-                    && Character.isWhitespace(text.charAt(text.length() - 1 - n))) {
-                n++;
-            }
-            spaces += n;
-            if (n < text.length()) {
-                break;
-            }
-        }
-        for (int i = boundary; i < pieces.size(); i++) {
-            String text = pieces.get(i).text();
-            if (!text.isEmpty() && text.isBlank()) {
-                spaces += text.length();
-                continue;
-            }
-            break;
-        }
-        if (spaces >= MIN_COLUMN_GAP) {
-            return true;
-        }
-        return spaces >= 1 && startsWithSign(pieces, boundary)
-                && !labelEndsWithColon(pieces, boundary);
-    }
-
-    private static boolean labelEndsWithColon(List<Piece> pieces, int boundary) {
-        for (int i = boundary - 1; i >= 0; i--) {
-            String text = pieces.get(i).text().strip();
-            if (text.isEmpty()) {
-                continue;
-            }
-            return isTrailingColon(text.charAt(text.length() - 1));
-        }
-        return false;
-    }
-
-    private static boolean startsWithSign(List<Piece> pieces, int boundary) {
-        if (boundary >= pieces.size()) {
-            return false;
-        }
-        String text = pieces.get(boundary).text().strip();
-        return !text.isEmpty() && (text.charAt(0) == '+' || text.charAt(0) == '-');
-    }
-
-    private static String describe(List<Piece> before, List<Piece> after,
-                                   StyledText original) {
-        StringBuilder sb = new StringBuilder();
-        int want = widthOf(original.getComponent());
-        int got = widthOf(assemble(after, -1, 0));
-        sb.append(String.format("  整行寬度 %d -> %d%s%n", want, got,
-                want == got ? "  (守住)" : "  ← 差 " + (got - want) + " px"));
-        for (int i = 0; i < after.size(); i++) {
-            Piece b = i < before.size() ? before.get(i) : null;
-            Piece a = after.get(i);
-            if (a.isSpace()) {
-                sb.append(String.format("  [%d] 空白 %s px -> %s px%s%n", i,
-                        b == null ? "?" : String.valueOf(b.spacePx()),
-                        String.valueOf(a.spacePx()),
-                        isAlignSpace(after, i) ? "  (對齊欄)" : "  (不調整)"));
-            } else {
-                sb.append(String.format(
-                        "  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d  色 %s -> %s  字型 %s -> %s%n",
-                        i, a.text(), a.orig().getString(),
-                        widthOf(a.orig()), widthOf(a.rendered()),
-                        colourOf(a.orig()), colourOf(a.rendered()),
-                        fontOf(a.orig()), fontOf(a.rendered())));
-            }
-        }
-        return sb.toString();
-    }
-
-    private static String fontOf(Component component) {
-        if (component == null) {
-            return "-";
-        }
-        String[] found = {"-"};
-        component.visit((style, text) -> {
-            if (!text.isEmpty()) {
-                String name = com.wynnchayuan.render.PairedFont.nameOf(style);
-                int open = name.indexOf('=');
-                found[0] = open < 0 ? (name.isEmpty() ? "預設" : name)
-                        : name.substring(open + 1).replace("]", "");
-                return java.util.Optional.of(true);
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return found[0];
-    }
-
-    private static String colourOf(Component component) {
-        if (component == null) {
-            return "-";
-        }
-        String[] found = {"繼承"};
-        component.visit((style, text) -> {
-            if (!text.isEmpty() && style.getColor() != null) {
-                found[0] = style.getColor().serialize();
-                return java.util.Optional.of(true);
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return found[0];
-    }
-
-    private static int firstAlignSpace(List<Piece> pieces) {
-        for (int i = 0; i < pieces.size(); i++) {
-            if (isAlignSpace(pieces, i)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    private static int valueRegionStart(List<Piece> pieces) {
-        int i = pieces.size() - 1;
-        while (i >= 0 && looksLikeValue(pieces.get(i).text())) {
-            i--;
-        }
-        int valueStart = i + 1;
-        if (i < 0 || valueStart >= pieces.size()) {
-            return -1;
-        }
-        for (int j = valueStart; j < pieces.size(); j++) {
-            if (pieces.get(j).text().chars().anyMatch(Character::isDigit)) {
-                return valueStart;
-            }
-        }
-        return -1;
-    }
-
-    private static boolean hasTextAfter(List<Piece> pieces, int index) {
-        for (int i = index + 1; i < pieces.size(); i++) {
-            if (!pieces.get(i).isSpace() && !pieces.get(i).text().isBlank()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    static boolean isLeading(List<Piece> pieces, int index) {
-        for (int i = 0; i < index; i++) {
-            if (!pieces.get(i).isSpace() && !pieces.get(i).text().isBlank()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static boolean looksLikeValue(String text) {
-        String t = text.strip();
-        if (t.isEmpty()) {
-            return true;
-        }
-        char c = t.charAt(0);
-        if (c == '+' || c == '-' || c == '[' || c == '(') {
-            return true;
-        }
-        if (t.equalsIgnoreCase("to")) {
-            return true;
-        }
-        return t.chars().noneMatch(Character::isLetter);
-    }
-
-    private static Component assemble(List<Piece> pieces, int adjustIndex, int adjustPx) {
-        MutableComponent out = Component.empty();
-        for (int i = 0; i < pieces.size(); i++) {
-            Piece p = pieces.get(i);
-            if (!p.isSpace()) {
-                out.append(p.rendered());
-                continue;
-            }
-            int px = p.spacePx() + (i == adjustIndex ? adjustPx : 0);
-            String encoded = SpaceOffset.encode(px);
-            if (!encoded.isEmpty()) {
-                out.append(DisplayStyles.literal(encoded, p.style()));
-            }
-        }
-        return out;
-    }
-
-    private static boolean isTrailingColon(char c) {
-        return c == ':' || c == '：';
+        return ColumnAligner.assemble(aligned, -1, 0);
     }
 
     public static int width(Component component) {
         return widthOf(component);
     }
 
-    private static int widthOf(Component component) {
+    static int widthOf(Component component) {
         if (measureForTest != null) {
             return measureForTest.applyAsInt(component);
         }
@@ -1214,28 +764,8 @@ public final class LineTranslator {
 
     static ToIntFunction<Component> measureForTest;
 
-    private static int widthOf(StyledText line) {
+    static int widthOf(StyledText line) {
         return widthOf(line.getComponent());
-    }
-
-    record Piece(Component rendered, Component orig, Style style, int spacePx, boolean isSpace) {
-
-        static Piece text(String t, Style s) {
-            Component c = DisplayStyles.literal(t, s);
-            return new Piece(c, c, s, 0, false);
-        }
-
-        static Piece translated(Component rendered, Component orig) {
-            return new Piece(rendered, orig, Style.EMPTY, 0, false);
-        }
-
-        static Piece space(int px, Style s) {
-            return new Piece(null, null, s, px, true);
-        }
-
-        String text() {
-            return rendered == null ? "" : rendered.getString();
-        }
     }
 
     private static boolean hasPercentValue(StyledText line) {
@@ -1315,7 +845,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(line, rebuilt, centered, leftAligned);
+        Component result = RowRealigner.realign(line, rebuilt, centered, leftAligned);
         LineDebug.record(line, result);
         return result;
     }
@@ -1350,251 +880,9 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(line, rebuilt, centered);
+        Component result = RowRealigner.realign(line, rebuilt, centered);
         LineDebug.record(line, result);
         return result;
-    }
-
-    private static Component realign(StyledText original, Component rebuilt,
-                                     boolean centered) {
-        return realign(original, rebuilt, centered, true);
-    }
-
-    private static Component realign(StyledText original, Component rebuilt,
-                                     boolean centered, boolean leftAligned) {
-        List<Run> orig = splitGaps(runs(original.getComponent()));
-        List<Run> made = splitGaps(runs(rebuilt));
-        StringBuilder log = null;
-        if (rows(orig) > 1 || rows(made) > 1) {
-            log = new StringBuilder();
-            log.append("  原文行數：").append(rows(orig))
-               .append("  譯文行數：").append(rows(made))
-               .append("  置中：").append(centered)
-               .append(System.lineSeparator());
-            Component perRow = realignRows(orig, made, centered, log);
-            if (perRow != null) {
-                FlowedDebug.rows(original.getString(), log.toString());
-                return perRow;
-            }
-            log.append("  逐行重算：放棄；多行的不套整段那一路，原樣返回")
-               .append(System.lineSeparator());
-            FlowedDebug.rows(original.getString(), log.toString());
-            return rebuilt;
-        }
-        if (leftAligned) {
-            Component left = realignLeft(orig, made);
-            if (left != null) {
-                FlowedDebug.rows(original.getString(), "  靠左：每一欄的起點對回原文");
-                return left;
-            }
-        }
-        int spaces = countSpaces(made);
-        if (spaces == 0 || spaces != countSpaces(orig)) {
-            if (log != null) {
-                log.append("  整段：空白數 原文=").append(countSpaces(orig))
-                   .append(" 譯文=").append(spaces)
-                   .append("，對不上就原樣返回")
-                   .append(System.lineSeparator());
-                FlowedDebug.rows(original.getString(), log.toString());
-            }
-            return rebuilt;
-        }
-        List<Integer> origSeg = segmentWidths(orig);
-        List<Integer> madeSeg = segmentWidths(made);
-
-        int[] adjust = new int[spaces];
-        boolean leading = centered && origSeg.get(0) == 0 && madeSeg.get(0) == 0;
-
-        if (leading) {
-            int delta = sum(origSeg) - sum(madeSeg);
-            adjust[0] = delta / 2;
-        }
-        int drift = 0;
-        int lastAdjusted = -1;
-        int[] gapPx = gapPixels(made);
-        for (int k = leading ? 1 : 0; k < spaces; k++) {
-            drift += madeSeg.get(k) - origSeg.get(k);
-            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
-                    && !overlayGap(made, k, gapPx[k])) {
-                adjust[k] = -drift;
-                drift = 0;
-                lastAdjusted = k;
-            }
-        }
-
-        int tail = madeSeg.get(spaces) - origSeg.get(spaces);
-        if (!leftAligned && lastAdjusted >= 0 && tail != 0
-                && labelledRun(made, lastAdjusted)) {
-            adjust[lastAdjusted] -= tail;
-        }
-
-        if (log == null) {
-            log = new StringBuilder();
-        }
-        log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
-           .append("  右緣補正=").append(-tail)
-           .append(leftAligned ? "（靠左，不套用）" : "")
-           .append(System.lineSeparator());
-        FlowedDebug.rows(original.getString(), log.toString());
-        return apply(made, adjust);
-    }
-
-    private static Component realignLeft(List<Run> orig, List<Run> made) {
-        List<Run> o = mergeSpaces(orig);
-        List<Run> m = mergeSpaces(made);
-        int gaps = 0;
-        for (Run r : o) {
-            if (r.space()) {
-                gaps++;
-            }
-        }
-        int madeGaps = 0;
-        for (Run r : m) {
-            if (r.space()) {
-                madeGaps++;
-            }
-        }
-        if (gaps == 0 || gaps != madeGaps) {
-            return null;
-        }
-        int[] target = new int[gaps];
-        int x = 0;
-        int g = 0;
-        for (Run r : o) {
-            x += r.space() ? r.px() : widthOf(DisplayStyles.literal(r.text(), r.style()));
-            if (r.space()) {
-                target[g++] = x;
-            }
-        }
-        MutableComponent out = Component.empty();
-        x = 0;
-        g = 0;
-        boolean textBefore = false;
-        for (Run r : m) {
-            if (!r.space()) {
-                out.append(DisplayStyles.literal(r.text(), r.style()));
-                x += widthOf(DisplayStyles.literal(r.text(), r.style()));
-                textBefore = true;
-                continue;
-            }
-            int px = r.px();
-            if (textBefore && px >= 0) {
-                px = Math.max(Math.min(px, 1), target[g] - x);
-            }
-            g++;
-            String encoded = SpaceOffset.encode(px);
-            if (!encoded.isEmpty()) {
-                out.append(DisplayStyles.literal(encoded, r.style()));
-            }
-            x += px;
-        }
-        return out;
-    }
-
-    static List<Run> mergeSpaces(List<Run> runs) {
-        List<Run> out = new ArrayList<>(runs.size());
-        for (Run r : runs) {
-            if (r.space() && !out.isEmpty() && out.get(out.size() - 1).space()) {
-                Run prev = out.remove(out.size() - 1);
-                out.add(new Run(true, prev.px() + r.px(), prev.style(),
-                        prev.text() + r.text()));
-            } else {
-                out.add(r);
-            }
-        }
-        return out;
-    }
-
-    private static String describeRow(List<Integer> origSeg, List<Integer> madeSeg,
-                                      int[] adjust, boolean leading) {
-        return "前導=" + leading + " 原文段寬=" + origSeg + " 譯文段寬=" + madeSeg
-                + " 補正=" + java.util.Arrays.toString(adjust);
-    }
-
-    private static Component realignRows(List<Run> orig, List<Run> made,
-                                         boolean centered, StringBuilder log) {
-        List<List<Run>> origRows = splitRows(orig);
-        List<List<Run>> madeRows = splitRows(made);
-        int[] keepOrig = solidRows(origRows);
-        int[] keepMade = solidRows(madeRows);
-        if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
-            if (log != null) {
-                log.append("  去掉首尾空行之後：原文 ")
-                   .append(keepOrig[1] - keepOrig[0]).append(" 行、譯文 ")
-                   .append(keepMade[1] - keepMade[0]).append(" 行，還是對不上")
-                   .append(System.lineSeparator());
-            }
-            return null;
-        }
-        MutableComponent out = Component.empty();
-        for (int i = 0; i < madeRows.size(); i++) {
-            if (i > 0) {
-                out.append(Component.literal(NL));
-            }
-            if (i < keepMade[0] || i >= keepMade[1]) {
-                out.append(apply(madeRows.get(i), new int[0]));
-                continue;
-            }
-            if (log != null) {
-                log.append("  [").append(i).append("] ");
-            }
-            out.append(realignRow(origRows.get(keepOrig[0] + i - keepMade[0]),
-                                  madeRows.get(i), centered, log));
-        }
-        return out;
-    }
-
-    private static int[] solidRows(List<List<Run>> rows) {
-        int from = 0;
-        int to = rows.size();
-        while (from < to && blankRow(rows.get(from))) {
-            from++;
-        }
-        while (to > from && blankRow(rows.get(to - 1))) {
-            to--;
-        }
-        return new int[] {from, to};
-    }
-
-    private static boolean blankRow(List<Run> row) {
-        return rowText(row).isBlank();
-    }
-
-    private static Component realignRow(List<Run> orig, List<Run> made,
-                                        boolean centered, StringBuilder log) {
-        int spaces = countSpaces(made);
-        if (spaces == 0 || spaces != countSpaces(orig)) {
-            if (log != null) {
-                log.append("不動：空白數 原文=").append(countSpaces(orig))
-                   .append(" 譯文=").append(spaces)
-                   .append("  譯文=「").append(rowText(made)).append("」")
-                   .append(System.lineSeparator());
-            }
-            return apply(made, new int[0]);
-        }
-        List<Integer> origSeg = segmentWidths(orig);
-        List<Integer> madeSeg = segmentWidths(made);
-        int[] adjust = new int[spaces];
-        boolean leading = centered && origSeg.get(0) == 0 && madeSeg.get(0) == 0;
-        if (leading) {
-            adjust[0] = (sum(origSeg) - sum(madeSeg)) / 2;
-        }
-        int drift = 0;
-        int[] gapPx = gapPixels(made);
-        for (int k = leading ? 1 : 0; k < spaces; k++) {
-            drift += madeSeg.get(k) - origSeg.get(k);
-            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
-                    && !overlayGap(made, k, gapPx[k])) {
-                adjust[k] = -drift;
-                drift = 0;
-            }
-        }
-        if (log != null) {
-            log.append(describeRow(origSeg, madeSeg, adjust, leading))
-               .append("  譯文=「").append(rowText(made)).append("」")
-               .append(System.lineSeparator());
-        }
-        return apply(made, adjust);
     }
 
     public static Component translateChat(StyledText message, TranslationStore store) {
@@ -1654,7 +942,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        return DisplayStyles.unslant(realign(line, rebuilt, true, false));
+        return DisplayStyles.unslant(RowRealigner.realign(line, rebuilt, true, false));
     }
 
     public static Component translateChat(StyledText message, TranslationStore store,
@@ -1735,7 +1023,7 @@ public final class LineTranslator {
 
     static Component npcChatColours(StyledText message, Component rebuilt) {
         try {
-            List<Run> src = runs(message.getComponent());
+            List<Run> src = SpaceRuns.runs(message.getComponent());
             String srcText = joinedText(src);
             java.util.regex.Matcher s = CHAT_HEAD.matcher(srcText);
             if (!s.find()) {
@@ -1743,7 +1031,7 @@ public final class LineTranslator {
             }
             TextColor counter = uniformColour(src, s.start(1), s.end(1));
             TextColor speaker = uniformColour(src, s.start(3), s.end(3));
-            List<Run> made = runs(rebuilt);
+            List<Run> made = SpaceRuns.runs(rebuilt);
             java.util.regex.Matcher d = CHAT_HEAD.matcher(joinedText(made));
             if (!d.find() || (counter == null && speaker == null)) {
                 return rebuilt;
@@ -1816,10 +1104,10 @@ public final class LineTranslator {
 
     static Component rowColours(StyledText original, Component rebuilt, Style blockStyle) {
         TextColor block = blockStyle == null ? null : blockStyle.getColor();
-        List<List<Run>> origRows = splitRows(runs(original.getComponent()));
-        List<List<Run>> madeRows = splitRows(runs(rebuilt));
-        int[] keepOrig = solidRows(origRows);
-        int[] keepMade = solidRows(madeRows);
+        List<List<Run>> origRows = SpaceRuns.splitRows(SpaceRuns.runs(original.getComponent()));
+        List<List<Run>> madeRows = SpaceRuns.splitRows(SpaceRuns.runs(rebuilt));
+        int[] keepOrig = RowRealigner.solidRows(origRows);
+        int[] keepMade = RowRealigner.solidRows(madeRows);
         int count = keepOrig[1] - keepOrig[0];
         if (count < 2 || count != keepMade[1] - keepMade[0]) {
             return rebuilt;
@@ -2072,7 +1360,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(label, rebuilt, true, false);
+        Component result = RowRealigner.realign(label, rebuilt, true, false);
         LineDebug.record(label, result);
         return result;
     }
@@ -2619,7 +1907,7 @@ public final class LineTranslator {
         boolean[] centred = BlockLayout.centered(lines);
         List<List<Run>> runRows = new ArrayList<>(rows.size());
         for (StyledText row : rows) {
-            List<List<Run>> split = splitRows(runs(row.getComponent()));
+            List<List<Run>> split = SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()));
             if (split.size() != 1) {
                 return centred;
             }
@@ -2634,7 +1922,7 @@ public final class LineTranslator {
 
     public static boolean chatPanel(List<StyledText> rows) {
         for (StyledText row : rows) {
-            for (List<Run> line : splitRows(runs(row.getComponent()))) {
+            for (List<Run> line : SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()))) {
                 if (spacedColumns(line) >= 2) {
                     return true;
                 }
@@ -2644,7 +1932,7 @@ public final class LineTranslator {
     }
 
     public static boolean panelRow(StyledText row) {
-        for (List<Run> line : splitRows(runs(row.getComponent()))) {
+        for (List<Run> line : SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()))) {
             int columns = 0;
             boolean text = false;
             for (Run run : line) {
@@ -2744,7 +2032,7 @@ public final class LineTranslator {
         List<PanelRow> parsed = new ArrayList<>(n);
         int columns = 0;
         for (StyledText row : rows) {
-            PanelRow one = PanelRow.parse(runs(row.getComponent()));
+            PanelRow one = PanelRow.parse(SpaceRuns.runs(row.getComponent()));
             if (one == null) {
                 return out;
             }
@@ -2839,7 +2127,7 @@ public final class LineTranslator {
             if (hit == null) {
                 continue;
             }
-            List<Run> made = new ArrayList<>(runs(hit));
+            List<Run> made = new ArrayList<>(SpaceRuns.runs(hit));
             while (!made.isEmpty() && made.get(0).space()) {
                 made.remove(0);
             }
@@ -2960,10 +2248,10 @@ public final class LineTranslator {
 
     private static Component realignChat(StyledText original, Component rebuilt,
                                          Boolean centred, boolean inPanel) {
-        List<List<Run>> origRows = splitRows(runs(original.getComponent()));
-        List<List<Run>> madeRows = splitRows(runs(rebuilt));
-        int[] keepOrig = solidRows(origRows);
-        int[] keepMade = solidRows(madeRows);
+        List<List<Run>> origRows = SpaceRuns.splitRows(SpaceRuns.runs(original.getComponent()));
+        List<List<Run>> madeRows = SpaceRuns.splitRows(SpaceRuns.runs(rebuilt));
+        int[] keepOrig = RowRealigner.solidRows(origRows);
+        int[] keepMade = RowRealigner.solidRows(madeRows);
         if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
             FlowedDebug.chatRows(original.getString(),
                     "  去掉首尾空行之後：原文 " + (keepOrig[1] - keepOrig[0])
@@ -3000,7 +2288,7 @@ public final class LineTranslator {
             }
             List<Run> made = madeRows.get(i);
             if (i < keepMade[0] || i >= keepMade[1]) {
-                out.append(apply(made, new int[countSpaces(made)]));
+                out.append(SpaceRuns.apply(made, new int[SpaceRuns.countSpaces(made)]));
                 continue;
             }
             int at = keepOrig[0] + i - keepMade[0];
@@ -3241,7 +2529,7 @@ public final class LineTranslator {
         int only = -1;
         for (int i = 0; i < rows.size() && i < centre.length; i++) {
             List<Run> row = rows.get(i);
-            if (rowWidth(row) - leadWidth(row) <= 0) {
+            if (SpaceRuns.rowWidth(row) - SpaceRuns.leadWidth(row) <= 0) {
                 continue;
             }
             if (only >= 0) {
@@ -3253,10 +2541,10 @@ public final class LineTranslator {
             return;
         }
         List<Run> row = rows.get(only);
-        int lead = leadWidth(row);
-        int body = rowWidth(row) - lead;
+        int lead = SpaceRuns.leadWidth(row);
+        int body = SpaceRuns.rowWidth(row) - lead;
         if (lead < CHAT_CENTRE_MIN_LEAD
-                || columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+                || columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
             return;
         }
         if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
@@ -3273,12 +2561,12 @@ public final class LineTranslator {
         int maxLead = 0;
         for (int i = 0; i < rows.size(); i++) {
             List<Run> row = rows.get(i);
-            int lead = leadWidth(row);
-            int body = rowWidth(row) - lead;
+            int lead = SpaceRuns.leadWidth(row);
+            int body = SpaceRuns.rowWidth(row) - lead;
             if (lead <= 0 || body <= 0) {
                 continue;
             }
-            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+            if (columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
                 return;
             }
             idx.add(i);
@@ -3306,7 +2594,7 @@ public final class LineTranslator {
         for (int i = 0; i < rows.size(); i++) {
             List<Run> row = rows.get(i);
             if (plainSpaceLead(row) >= 5
-                    && columns(chatSegmentWidths(row, LineTranslator::runWidth)) < 2) {
+                    && columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) < 2) {
                 centre[i] = true;
             }
         }
@@ -3317,8 +2605,8 @@ public final class LineTranslator {
         int[] lead = new int[n];
         int[] body = new int[n];
         for (int i = 0; i < n; i++) {
-            lead[i] = leadWidth(rows.get(i));
-            body[i] = rowWidth(rows.get(i)) - lead[i];
+            lead[i] = SpaceRuns.leadWidth(rows.get(i));
+            body[i] = SpaceRuns.rowWidth(rows.get(i)) - lead[i];
         }
         boolean[] list = new boolean[n];
         for (int i = 0; i < n; i++) {
@@ -3361,14 +2649,14 @@ public final class LineTranslator {
     private static boolean[] centredRows(List<List<Run>> rows) {
         List<Component> lines = new ArrayList<>(rows.size());
         for (List<Run> row : rows) {
-            lines.add(apply(row, new int[countSpaces(row)]));
+            lines.add(SpaceRuns.apply(row, new int[SpaceRuns.countSpaces(row)]));
         }
         return BlockLayout.centered(lines);
     }
 
     private static boolean columnPanel(List<List<Run>> rows) {
         for (List<Run> row : rows) {
-            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+            if (columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
                 return true;
             }
         }
@@ -3378,11 +2666,11 @@ public final class LineTranslator {
     private static Component chatRow(List<Run> orig, List<Run> made,
                                      boolean centred, boolean panel,
                                      StringBuilder log) {
-        int leadOrig = leadWidth(orig);
-        int leadMade = leadWidth(made);
-        int bodyOrig = rowWidth(orig) - leadOrig;
-        int bodyMade = rowWidth(made) - leadMade;
-        boolean single = columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2;
+        int leadOrig = SpaceRuns.leadWidth(orig);
+        int leadMade = SpaceRuns.leadWidth(made);
+        int bodyOrig = SpaceRuns.rowWidth(orig) - leadOrig;
+        int bodyMade = SpaceRuns.rowWidth(made) - leadMade;
+        boolean single = columns(SpaceRuns.chatSegmentWidths(orig, SpaceRuns::runWidth)) < 2;
         boolean centre = single && leadOrig > 0 && (centred || panel);
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
@@ -3393,7 +2681,7 @@ public final class LineTranslator {
            .append("  譯文縮排=").append(leadMade).append(" 內容=").append(bodyMade)
            .append("  補=").append(pad)
            .append(fitted != pad ? "（收寬後 " + fitted + "）" : "")
-           .append("  譯文=").append(rowText(made))
+           .append("  譯文=").append(SpaceRuns.rowText(made))
            .append(System.lineSeparator());
         pad = fitted;
         MutableComponent row = Component.empty();
@@ -3409,12 +2697,12 @@ public final class LineTranslator {
                 break;
             }
         }
-        row.append(applyChat(made, columns));
+        row.append(SpaceRuns.applyChat(made, columns));
         return row;
     }
 
     private static int[] columnPad(List<Run> orig, List<Run> made) {
-        return chatColumnPad(orig, made, LineTranslator::runWidth);
+        return chatColumnPad(orig, made, SpaceRuns::runWidth);
     }
 
     private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
@@ -3422,19 +2710,19 @@ public final class LineTranslator {
     }
 
     static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns, int window) {
-        int limit = rowWidth(orig);
+        int limit = SpaceRuns.rowWidth(orig);
         if (window > limit
-                && columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2) {
+                && columns(SpaceRuns.chatSegmentWidths(orig, SpaceRuns::runWidth)) < 2) {
             limit = window;
         }
-        int over = rowWidth(made) + pad - limit;
+        int over = SpaceRuns.rowWidth(made) + pad - limit;
         for (int px : columns) {
             over += px;
         }
         if (over <= 0) {
             return pad;
         }
-        boolean[] gaps = chatGaps(made);
+        boolean[] gaps = SpaceRuns.chatGaps(made);
         int k = columns.length;
         for (int i = made.size() - 1; i >= 0 && over > 0; i--) {
             if (!gaps[i]) {
@@ -3480,9 +2768,9 @@ public final class LineTranslator {
     }
 
     static int[] chatColumnPad(List<Run> orig, List<Run> made, ToIntFunction<Run> width) {
-        boolean[] madeGaps = chatGaps(made);
-        int spaces = count(madeGaps);
-        if (count(chatGaps(orig)) != spaces) {
+        boolean[] madeGaps = SpaceRuns.chatGaps(made);
+        int spaces = SpaceRuns.count(madeGaps);
+        if (SpaceRuns.count(SpaceRuns.chatGaps(orig)) != spaces) {
             return new int[spaces];
         }
         int[] px = new int[spaces];
@@ -3492,7 +2780,7 @@ public final class LineTranslator {
                 px[index++] = made.get(i).px();
             }
         }
-        return columnDrift(chatSegmentWidths(orig, width), chatSegmentWidths(made, width), px);
+        return columnDrift(SpaceRuns.chatSegmentWidths(orig, width), SpaceRuns.chatSegmentWidths(made, width), px);
     }
 
     static int[] columnDrift(List<Integer> from, List<Integer> to, int[] spacePx) {
@@ -3532,433 +2820,6 @@ public final class LineTranslator {
             adjust[k] = (before + after) / 2;
         }
         return adjust;
-    }
-
-    static int leadWidth(List<Run> row) {
-        int px = 0;
-        for (Run run : row) {
-            if (run.space()) {
-                px += run.px();
-                continue;
-            }
-            String text = run.text();
-            int n = 0;
-            while (n < text.length() && Character.isWhitespace(text.charAt(n))) {
-                n++;
-            }
-            px += widthOf(DisplayStyles.literal(text.substring(0, n), run.style()));
-            if (n < text.length()) {
-                return px;
-            }
-        }
-        return px;
-    }
-
-    private static int rowWidth(List<Run> row) {
-        int px = 0;
-        for (Run run : row) {
-            px += run.space() ? run.px() : widthOf(DisplayStyles.literal(run.text(), run.style()));
-        }
-        return px;
-    }
-
-    private static String rowText(List<Run> runs) {
-        StringBuilder sb = new StringBuilder();
-        for (Run r : runs) {
-            if (!r.space()) {
-                sb.append(r.text());
-            }
-        }
-        return sb.toString();
-    }
-
-    private static List<List<Run>> splitRows(List<Run> runs) {
-        List<List<Run>> out = new ArrayList<>();
-        List<Run> row = new ArrayList<>();
-        for (Run r : runs) {
-            if (r.space() || r.text().indexOf('\n') < 0) {
-                row.add(r);
-                continue;
-            }
-            String[] parts = r.text().split(NL, -1);
-            for (int i = 0; i < parts.length; i++) {
-                if (i > 0) {
-                    out.add(row);
-                    row = new ArrayList<>();
-                }
-                if (!parts[i].isEmpty()) {
-                    row.add(new Run(false, 0, r.style(), parts[i]));
-                }
-            }
-        }
-        out.add(row);
-        return out;
-    }
-
-    private static int rows(List<Run> runs) {
-        return splitRows(runs).size();
-    }
-
-    record Run(boolean space, int px, Style style, String text) {}
-
-    private static List<Run> runs(Component component) {
-        List<Run> out = new ArrayList<>();
-        component.visit((style, text) -> {
-            if (!text.isEmpty()) {
-                out.add(isAdjustableSpace(style, text)
-                        ? new Run(true, SpaceOffset.decode(text), style, text)
-                        : new Run(false, 0, style, text));
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return out;
-    }
-
-    private static boolean isAdjustableSpace(Style style, String text) {
-        return isAdjustableSpace(style, text, widthOf(DisplayStyles.literal(text, style)));
-    }
-
-    // language/wynncraft 字型也收了偏移碼位，量寬等於解碼值才算
-    static boolean isAdjustableSpace(Style style, String text, int measured) {
-        if (!SpaceOffset.isOffsetRun(text)) {
-            return false;
-        }
-        return SpaceOffset.isSpaceFont(style) || measured == SpaceOffset.decode(text);
-    }
-
-    static boolean overlayGap(List<Run> runs, int gap, int px) {
-        return px < 0 && !textAfterGap(runs, gap);
-    }
-
-    static boolean textAfterGap(List<Run> runs, int gap) {
-        boolean[] gaps = tooltipGaps(runs);
-        int seen = 0;
-        boolean after = false;
-        for (int i = 0; i < runs.size(); i++) {
-            if (gaps[i]) {
-                if (after) {
-                    return false;
-                }
-                if (seen++ == gap) {
-                    after = true;
-                }
-                continue;
-            }
-            if (!after) {
-                continue;
-            }
-            String text = runs.get(i).text();
-            for (int k = 0; text != null && k < text.length(); k++) {
-                if (Character.isLetterOrDigit(text.charAt(k))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private static int[] gapPixels(List<Run> runs) {
-        boolean[] gaps = tooltipGaps(runs);
-        int[] out = new int[count(gaps)];
-        int n = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            if (gaps[i]) {
-                out[n++] = runs.get(i).px();
-            }
-        }
-        return out;
-    }
-
-    static boolean labelledRun(List<Run> runs, int gap) {
-        boolean[] gaps = tooltipGaps(runs);
-        int seen = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            if (gaps[i]) {
-                if (seen++ == gap) {
-                    return false;
-                }
-                continue;
-            }
-            String text = runs.get(i).text();
-            for (int k = 0; text != null && k < text.length(); k++) {
-                if (Character.isLetterOrDigit(text.charAt(k))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private static List<Run> splitGaps(List<Run> runs) {
-        return splitGaps(runs, LineTranslator::isAdjustableSpace);
-    }
-
-    static List<Run> splitGaps(List<Run> runs,
-                               java.util.function.BiPredicate<Style, String> isGap) {
-        List<Run> out = new ArrayList<>(runs.size() + 2);
-        boolean split = false;
-        for (Run r : runs) {
-            List<Run> pieces = r.space() ? null : splitOffsets(r, isGap);
-            if (pieces == null) {
-                out.add(r);
-                continue;
-            }
-            out.addAll(pieces);
-            split = true;
-        }
-        return split ? out : runs;
-    }
-
-    private static List<Run> splitOffsets(Run r,
-                                          java.util.function.BiPredicate<Style, String> isGap) {
-        String text = r.text();
-        List<Run> out = new ArrayList<>(3);
-        boolean any = false;
-        int from = 0;
-        int i = 0;
-        while (i < text.length()) {
-            int cp = text.codePointAt(i);
-            if (!SpaceOffset.isOffset(cp)) {
-                i += Character.charCount(cp);
-                continue;
-            }
-            int end = i;
-            while (end < text.length() && SpaceOffset.isOffset(text.codePointAt(end))) {
-                end += Character.charCount(text.codePointAt(end));
-            }
-            String gap = text.substring(i, end);
-            if (gap.length() < text.length() && isGap.test(r.style(), gap)) {
-                if (i > from) {
-                    out.add(new Run(false, 0, r.style(), text.substring(from, i)));
-                }
-                out.add(new Run(true, SpaceOffset.decode(gap), r.style(), gap));
-                from = end;
-                any = true;
-            }
-            i = end;
-        }
-        if (!any) {
-            return null;
-        }
-        if (from < text.length()) {
-            out.add(new Run(false, 0, r.style(), text.substring(from)));
-        }
-        return out;
-    }
-
-    static final int MIN_GAP_PX = 8;
-
-    static boolean isColumnGap(Run r) {
-        return r.space() && Math.abs(r.px()) >= MIN_GAP_PX;
-    }
-
-    static boolean[] chatGaps(List<Run> runs) {
-        boolean[] out = new boolean[runs.size()];
-        for (int i = 0; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (!r.space()) {
-                continue;
-            }
-            if (isColumnGap(r)) {
-                out[i] = true;
-                continue;
-            }
-            if (r.px() < 0) {
-                continue;
-            }
-            out[i] = textBefore(runs, i) && startsWithLetter(runs, i + 1);
-        }
-        return out;
-    }
-
-    private static boolean textBefore(List<Run> runs, int at) {
-        for (int i = at - 1; i >= 0; i--) {
-            Run r = runs.get(i);
-            if (!r.space()) {
-                return GlyphSplitter.hasLetter(r.text());
-            }
-        }
-        return true;
-    }
-
-    private static boolean startsWithValue(List<Run> runs, int from) {
-        String head = headAfter(runs, from);
-        if (head.isEmpty()) {
-            return false;
-        }
-        if (head.charAt(0) == '[') {
-            return signedNumber(head, 1);
-        }
-        int first = head.codePointAt(0);
-        if (Character.isLetterOrDigit(first)) {
-            return true;
-        }
-        return signedNumber(head, 0);
-    }
-
-    private static boolean signedNumber(String head, int at) {
-        if (head.length() <= at) {
-            return false;
-        }
-        char c = head.charAt(at);
-        if (Character.isDigit(c)) {
-            return true;
-        }
-        return (c == '+' || c == '-')
-                && head.length() > at + 1 && Character.isDigit(head.charAt(at + 1));
-    }
-
-    private static String headAfter(List<Run> runs, int from) {
-        final int want = 3;
-        StringBuilder head = new StringBuilder(want);
-        for (int i = from; i < runs.size() && head.length() < want; i++) {
-            Run r = runs.get(i);
-            if (r.space()) {
-                continue;
-            }
-            String text = head.isEmpty() ? r.text().stripLeading() : r.text();
-            if (text.isEmpty()) {
-                continue;
-            }
-            head.append(text, 0, Math.min(text.length(), want - head.length()));
-        }
-        return head.toString();
-    }
-
-    private static boolean startsWithLetter(List<Run> runs, int from) {
-        for (int i = from; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (r.space()) {
-                continue;
-            }
-            String text = r.text().stripLeading();
-            return !text.isEmpty() && Character.isLetter(text.codePointAt(0));
-        }
-        return false;
-    }
-
-    static boolean[] tooltipGaps(List<Run> runs) {
-        boolean[] out = new boolean[runs.size()];
-        for (int i = 0; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (!r.space()) {
-                continue;
-            }
-            if (isColumnGap(r)) {
-                out[i] = true;
-                continue;
-            }
-            if (r.px() <= 0) {
-                continue;
-            }
-            out[i] = wordBefore(runs, i) && startsWithValue(runs, i + 1);
-        }
-        return out;
-    }
-
-    private static boolean wordBefore(List<Run> runs, int at) {
-        for (int i = at - 1; i >= 0; i--) {
-            Run r = runs.get(i);
-            if (!r.space()) {
-                return GlyphSplitter.hasLetter(r.text());
-            }
-        }
-        return false;
-    }
-
-    private static int count(boolean[] flags) {
-        int n = 0;
-        for (boolean f : flags) {
-            if (f) {
-                n++;
-            }
-        }
-        return n;
-    }
-
-    static int runWidth(Run r) {
-        return widthOf(DisplayStyles.literal(r.text(), r.style()));
-    }
-
-    static List<Integer> chatSegmentWidths(List<Run> runs, ToIntFunction<Run> width) {
-        boolean[] gaps = chatGaps(runs);
-        List<Integer> out = new ArrayList<>();
-        int total = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            if (gaps[i]) {
-                out.add(total);
-                total = 0;
-            } else if (!runs.get(i).space()) {
-                total += width.applyAsInt(runs.get(i));
-            }
-        }
-        out.add(total);
-        return out;
-    }
-
-    private static Component applyChat(List<Run> runs, int[] adjust) {
-        boolean[] gaps = chatGaps(runs);
-        MutableComponent out = Component.empty();
-        int index = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (!gaps[i]) {
-                out.append(DisplayStyles.literal(r.text(), r.style()));
-                continue;
-            }
-            String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
-            if (!encoded.isEmpty()) {
-                out.append(DisplayStyles.literal(encoded, r.style()));
-            }
-        }
-        return out;
-    }
-
-    private static int countSpaces(List<Run> runs) {
-        return count(tooltipGaps(runs));
-    }
-
-    private static List<Integer> segmentWidths(List<Run> runs) {
-        boolean[] gaps = tooltipGaps(runs);
-        List<Integer> out = new ArrayList<>();
-        int width = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (gaps[i]) {
-                out.add(width);
-                width = 0;
-            } else {
-                width += widthOf(DisplayStyles.literal(r.text(), r.style()));
-            }
-        }
-        out.add(width);
-        return out;
-    }
-
-    private static int sum(List<Integer> values) {
-        int total = 0;
-        for (int v : values) {
-            total += v;
-        }
-        return total;
-    }
-
-    private static Component apply(List<Run> runs, int[] adjust) {
-        boolean[] gaps = tooltipGaps(runs);
-        MutableComponent out = Component.empty();
-        int index = 0;
-        for (int i = 0; i < runs.size(); i++) {
-            Run r = runs.get(i);
-            if (!gaps[i]) {
-                out.append(DisplayStyles.literal(r.text(), r.style()));
-                continue;
-            }
-            String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
-            if (!encoded.isEmpty()) {
-                out.append(DisplayStyles.literal(encoded, r.style()));
-            }
-        }
-        return out;
     }
 
     static String withoutSpacerRows(String template, TranslationStore store) {
@@ -4173,7 +3034,7 @@ public final class LineTranslator {
 
     private static boolean colonFirst(String tail) {
         String t = tail.stripLeading();
-        return !t.isEmpty() && isTrailingColon(t.charAt(0));
+        return !t.isEmpty() && ColumnAligner.isTrailingColon(t.charAt(0));
     }
 
     private static String itemAsLabel(String label, String tail, TranslationStore store) {
@@ -4423,7 +3284,7 @@ public final class LineTranslator {
             if (end >= start + glyph.length() && template.startsWith(glyph, end - glyph.length())) {
                 end -= glyph.length();
             } else if (Character.isWhitespace(template.charAt(end - 1))
-                    || (colons && isTrailingColon(template.charAt(end - 1)))) {
+                    || (colons && ColumnAligner.isTrailingColon(template.charAt(end - 1)))) {
                 end--;
             } else {
                 break;
@@ -4444,8 +3305,8 @@ public final class LineTranslator {
         if (suffix.isBlank()) {
             return isFullWidthPunctuation(last) ? "" : suffix;
         }
-        if (isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()
-                && isTrailingColon(last)) {
+        if (ColumnAligner.isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()
+                && ColumnAligner.isTrailingColon(last)) {
             return suffix.substring(1);
         }
         return suffix;
@@ -5442,7 +4303,7 @@ public final class LineTranslator {
 
     private record RowStyle(Style only, Style dominant) {}
 
-    private static final String NL = "\n";
+    static final String NL = "\n";
 
     private static final java.util.regex.Pattern PLACEHOLDER =
             java.util.regex.Pattern.compile("\\{[^}]*\\}");
@@ -6467,5 +5328,9 @@ public final class LineTranslator {
 
     public static Component unslantAll(Component line) {
         return DisplayStyles.unslantAll(line);
+    }
+
+    public static boolean columnsAreLeftAligned(List<StyledText> lines) {
+        return ColumnAligner.columnsAreLeftAligned(lines);
     }
 }
