@@ -1,8 +1,8 @@
 import { capePreview, figurePreview } from './cape-preview.js';
 import { moderator } from './admin.js';
-import { publicId, who } from './auth.js';
+import { publicId, requestUser } from './auth.js';
 import { credits } from './credits.js';
-import { HASH, ID, UUID, hex, json, no, readBounded, readJson } from './http.js';
+import { HASH, ID, UUID, hex, json, refuse, readBounded, readJson } from './http.js';
 import { OperationBudgetExhausted, claimSlot, listAll, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { remember } from './presence.js';
 import { ownerEntry } from './privacy.js';
@@ -125,14 +125,14 @@ export function burstNote(log, now) {
 }
 
 export async function handleUpload(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const bytes = await readBounded(request, MAX_CAPE_BYTES);
-  if (!bytes) return no('too large', 413);
+  if (!bytes) return refuse('too large', 413);
   const found = inspectCape(bytes);
-  if (found.why) return no(found.why, found.why === 'too large' ? 413 : 400);
+  if (found.why) return refuse(found.why, found.why === 'too large' ? 413 : 400);
   const refusal = await mayUpload(env, user, now, found.type);
-  if (refusal) return no(refusal, 403);
+  if (refusal) return refuse(refusal, 403);
   const log = parseRecord(await env.CORPUS.get('upl:' + user.uuid));
   const until = burstLock(log, now);
   if (until) return json({ ok: false, why: 'cooldown', until }, 429);
@@ -141,13 +141,13 @@ export async function handleUpload(request, env, now) {
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (have && have.metadata && now - have.metadata.v < UPLOAD_EVERY_MS) {
-    return no('slow down', 429);
+    return refuse('slow down', 429);
   }
   if (have && have.metadata && (!have.metadata.w || have.metadata.p) && await reviewOf(env, user.uuid)) {
-    return no('review one', 403);
+    return refuse('review one', 403);
   }
   const slot = await claimSlot(env.CORPUS, 'upl:claim:' + user.uuid + ':', { windowMs: UPLOAD_EVERY_MS, limit: 1 });
-  if (!slot.granted) return no('slow down', 429);
+  if (!slot.granted) return refuse('slow down', 429);
   try {
     return await storeUpload(request, env, now, { user, bytes, found, log, id, have });
   } finally {
@@ -258,22 +258,22 @@ export async function starMap(env) {
 }
 
 export async function handleStar(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const body = await readJson(request);
   const hash = body && typeof body.hash === 'string' ? body.hash : '';
-  if (!HASH.test(hash) || typeof body.on !== 'boolean') return no('bad request');
+  if (!HASH.test(hash) || typeof body.on !== 'boolean') return refuse('bad request');
   const capes = await allCapes(env);
   const idle = await idleMap(env);
   if (body.on && !capes.some((cape) => cape.h === hash && listed(cape)) && !(idle[hash] && !idle[hash].q)) {
-    return no('no such cape', 404);
+    return refuse('no such cape', 404);
   }
   const favs = await favsOf(env, user.uuid);
-  if (now - favs.t < 1000) return no('slow down', 429);
+  if (now - favs.t < 1000) return refuse('slow down', 429);
   const has = favs.h.includes(hash);
   const map = await starMap(env);
   if (body.on !== has) {
-    if (body.on && favs.h.length >= FAVS_MAX) return no('too many', 409);
+    if (body.on && favs.h.length >= FAVS_MAX) return refuse('too many', 409);
     const next = body.on ? [hash, ...favs.h] : favs.h.filter((h) => h !== hash);
     await env.CORPUS.put('fav:' + user.uuid, JSON.stringify({ t: now, h: next }));
     map[hash] = Math.max(0, (Number(map[hash]) || 0) + (body.on ? 1 : -1));
@@ -287,8 +287,8 @@ export async function handleStar(request, env, now) {
 }
 
 export async function handleMine(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const id = await publicId(user.uuid);
   const alive = new Set(Object.keys(await purge(env, now)));
   for (const cape of await allCapes(env)) {
@@ -315,30 +315,30 @@ export async function handleMine(request, env, now) {
 }
 
 export async function handleForget(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const body = await readJson(request);
   const hash = body && typeof body.hash === 'string' ? body.hash : '';
-  if (!HASH.test(hash)) return no('bad request');
+  if (!HASH.test(hash)) return refuse('bad request');
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (have && have.metadata && (have.metadata.h === hash || (have.metadata.p && have.metadata.p.h === hash))) {
-    return no('in use', 409);
+    return refuse('in use', 409);
   }
   await env.CORPUS.delete('hist:' + id + ':' + hash);
   return json({ ok: true });
 }
 
 export async function handlePublic(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const body = await readJson(request);
   const vis = !body ? null : VISIBILITY.includes(body.vis) ? body.vis
     : typeof body.on === 'boolean' ? (body.on ? 'public' : 'unlisted') : null;
-  if (!vis) return no('bad request');
+  if (!vis) return refuse('bad request');
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
-  if (!have || !have.metadata) return no('no cape', 404);
+  if (!have || !have.metadata) return refuse('no cape', 404);
   await env.CORPUS.put('cape:' + id, '', { metadata: withVisibility(have.metadata, vis) });
   return json({ ok: true, vis, public: vis === 'public' });
 }
@@ -346,11 +346,11 @@ export async function handlePublic(request, env, now) {
 const WEAR_EVERY_MS = 5 * 1000;
 
 export async function handleWear(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const body = await readJson(request);
   const hash = body && typeof body.hash === 'string' ? body.hash : '';
-  if (!/^[0-9a-f]{64}$/.test(hash)) return no('bad request');
+  if (!/^[0-9a-f]{64}$/.test(hash)) return refuse('bad request');
   const id = await publicId(user.uuid);
   const everyone = await allCapes(env);
   const idleNow = await idleMap(env);
@@ -372,15 +372,15 @@ export async function handleWear(request, env, now) {
     if (blob && blob.value && blob.value.cancel) blob.value.cancel();
     if (!blob || !blob.metadata) source = null;
   }
-  if (!source) return no('no such cape', 404);
+  if (!source) return refuse('no such cape', 404);
   const refusal = await mayUpload(env, user, now, source.t);
-  if (refusal) return no(refusal, 403);
+  if (refusal) return refuse(refusal, 403);
   const limit = await capeLimit(env, user, now);
   if ((source.s || 0) > limit) return json({ ok: false, why: 'too large', limit }, 413);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   const mine = have && have.metadata ? have.metadata : null;
   if (mine && mine.h === hash) return json({ ok: true, id, v: mine.v, same: true });
-  if (mine && now - mine.v < WEAR_EVERY_MS) return no('slow down', 429);
+  if (mine && now - mine.v < WEAR_EVERY_MS) return refuse('slow down', 429);
   const keep = !mine ? null : mine.w ? mine.p || null
     : { t: mine.t, s: mine.s, h: mine.h, x: mine.x || 0, y: mine.y || 0, c: mine.c || mine.v };
   const metadata = { t: source.t, v: now, c: source.c || source.v || source.at || now, s: source.s,
@@ -404,13 +404,13 @@ export async function handleWear(request, env, now) {
 }
 
 export async function handleRestore(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
-  if (await env.CORPUS.get('ban:' + user.uuid)) return no('banned', 403);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
+  if (await env.CORPUS.get('ban:' + user.uuid)) return refuse('banned', 403);
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   const mine = have && have.metadata ? have.metadata : null;
-  if (!mine || !mine.w) return no('nothing to restore', 409);
+  if (!mine || !mine.w) return refuse('nothing to restore', 409);
   const kept = mine.p && typeof mine.p.h === 'string' ? mine.p : null;
   const blob = kept ? await env.CORPUS.getWithMetadata('blob:' + kept.h, { type: 'stream' }) : null;
   if (blob && blob.value && blob.value.cancel) blob.value.cancel();
@@ -434,8 +434,8 @@ export async function handleRestore(request, env, now) {
 }
 
 export async function handleRemove(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const id = await publicId(user.uuid);
   await dropCape(env, id, now);
   return json({ ok: true });
@@ -451,7 +451,7 @@ export async function allCapes(env) {
   return out;
 }
 
-// idle 整筆覆寫，同時寫入會互蓋：tidy 每天把漏記的圖補回去
+// idle 整筆覆寫，同時寫入會互蓋：maintainCapes 每天把漏記的圖補回去
 
 export const IDLE_KEEP_MS = 7 * 24 * 3600 * 1000;
 
@@ -519,7 +519,7 @@ export async function purge(env, now) {
   return idle;
 }
 
-export async function tidy(env, now) {
+export async function maintainCapes(env, now) {
   const idle = await purge(env, now);
   const capes = await allCapes(env);
   let added = 0;
@@ -534,11 +534,11 @@ export async function tidy(env, now) {
 }
 
 export async function handleIdle(env, hash) {
-  if (!HASH.test(hash)) return no('not found', 404);
+  if (!HASH.test(hash)) return refuse('not found', 404);
   const one = (await idleMap(env))[hash];
-  if (!one) return no('not found', 404);
+  if (!one) return refuse('not found', 404);
   const have = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
-  if (!have || !have.value) return no('not found', 404);
+  if (!have || !have.value) return refuse('not found', 404);
   return new Response(have.value, {
     status: 200,
     headers: {
@@ -606,8 +606,8 @@ export async function handleCapes(env, now) {
 }
 
 export async function handleCapeLink(request, env, now, hash) {
-  if (!HASH.test(hash)) return no('not found', 404);
-  const user = await who(request, env, now);
+  if (!HASH.test(hash)) return refuse('not found', 404);
+  const user = await requestUser(request, env, now);
   const viewer = user ? await publicId(user.uuid) : null;
   const staff = Boolean(await moderator(request, env, now));
   const wearers = (await allCapes(env)).filter((cape) => cape.h === hash);
@@ -625,13 +625,13 @@ export async function handleCapeLink(request, env, now, hash) {
       group = { ...idleGroup(hash, one), vis: idleVisibility(one), pending: false, hidden: Boolean(one.q) };
     }
   }
-  if (!group) return no('not found', 404);
+  if (!group) return refuse('not found', 404);
   group.stars = Number((await starMap(env))[hash]) || 0;
   return json({ cape: group, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
 
 export async function handleCape(env, id, key) {
-  if (!ID.test(id)) return no('not found', 404);
+  if (!ID.test(id)) return refuse('not found', 404);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
   const now = cape && cape.metadata && cape.metadata.h ? cape.metadata : null;
   let hash = null;
@@ -646,9 +646,9 @@ export async function handleCape(env, id, key) {
       type = past.metadata.t;
     }
   }
-  if (!hash) return no('not found', 404);
+  if (!hash) return refuse('not found', 404);
   const have = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
-  if (!have || !have.value) return no('not found', 404);
+  if (!have || !have.value) return refuse('not found', 404);
   return new Response(have.value, {
     status: 200,
     headers: {
@@ -668,31 +668,31 @@ async function wearing(env, uuid, hash) {
 }
 
 export async function handleCapePreview(env, hash, uuid) {
-  if (!HASH.test(hash || '')) return no('not found', 404);
-  const who = UUID.test(uuid || '') ? uuid.replace(/-/g, '').toLowerCase() : null;
-  if (uuid && !await wearing(env, who, hash)) return no('not found', 404);
-  const key = 'prev:' + hash + (who ? ':' + who + ':' + FIGURE_STYLE : '');
+  if (!HASH.test(hash || '')) return refuse('not found', 404);
+  const wearer = UUID.test(uuid || '') ? uuid.replace(/-/g, '').toLowerCase() : null;
+  if (uuid && !await wearing(env, wearer, hash)) return refuse('not found', 404);
+  const key = 'prev:' + hash + (wearer ? ':' + wearer + ':' + FIGURE_STYLE : '');
   const headers = (type) => ({
     'content-type': type === 'gif' ? 'image/gif' : 'image/png',
-    'cache-control': who ? 'public, max-age=86400' : 'public, max-age=604800, immutable',
+    'cache-control': wearer ? 'public, max-age=86400' : 'public, max-age=604800, immutable',
     'x-content-type-options': 'nosniff',
   });
   const kept = await env.CORPUS.getWithMetadata(key, { type: 'arrayBuffer' });
   if (kept && kept.value) return new Response(kept.value, { headers: headers(kept.metadata && kept.metadata.t) });
   const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'arrayBuffer' });
-  if (!blob || !blob.value) return no('not found', 404);
+  if (!blob || !blob.value) return refuse('not found', 404);
   const type = blob.metadata && blob.metadata.t === 'gif' ? 'gif' : 'png';
   let made = null;
   try {
-    made = who ? await figurePreview(new Uint8Array(blob.value), type, await skinOf(who))
+    made = wearer ? await figurePreview(new Uint8Array(blob.value), type, await skinOf(wearer))
       : await capePreview(new Uint8Array(blob.value), type);
   } catch (e) {
     made = null;
   }
-  if (!made) return no('cannot preview', 422);
-  await env.CORPUS.put(key, made.bytes, who ? { metadata: { t: made.type }, expirationTtl: 3 * 86400 }
+  if (!made) return refuse('cannot preview', 422);
+  await env.CORPUS.put(key, made.bytes, wearer ? { metadata: { t: made.type }, expirationTtl: 3 * 86400 }
     : { metadata: { t: made.type } });
-  if (who) await env.CORPUS.put(ownerEntry('u:' + who, key), '', { expirationTtl: 3 * 86400 });
+  if (wearer) await env.CORPUS.put(ownerEntry('u:' + wearer, key), '', { expirationTtl: 3 * 86400 });
   return new Response(made.bytes, { headers: headers(made.type) });
 }
 

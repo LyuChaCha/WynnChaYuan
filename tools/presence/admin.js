@@ -1,7 +1,7 @@
-import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
+import { DISCORD_ID, account, discordSession, publicId, requestUser } from './auth.js';
 import { IDLE_KEEP_MS, allCapes, allHistory, discard, dropCape, groupCapes, groupVisibility, idleGroup, idleMap, idleVisibility, listed, purge, reviewOf, starMap, visibility } from './capes.js';
 import { isDeveloper } from './credits.js';
-import { HASH, ID, NAME, UUID, json, no, plainUuid, readJson, timingSafeEqual } from './http.js';
+import { HASH, ID, NAME, UUID, json, refuse, plainUuid, readJson, timingSafeEqual } from './http.js';
 import { listAll, parseRecord, quietPut } from './kv.js';
 import { remember } from './presence.js';
 
@@ -29,7 +29,7 @@ export async function isStaff(env, user) {
 export async function authority(request, env, now) {
   const header = request.headers.get('authorization') || '';
   if (env.ADMIN_TOKEN && timingSafeEqual('Bearer ' + env.ADMIN_TOKEN, header)) return { by: 'admin', developer: true };
-  const user = await who(request, env, now);
+  const user = await requestUser(request, env, now);
   if (user) {
     if (await isDeveloper(user, now)) return { by: user.name, developer: true };
     return await isStaff(env, user) ? { by: user.name, developer: false } : null;
@@ -44,7 +44,7 @@ export async function authority(request, env, now) {
 
 export async function handleStaff(request, env, now) {
   const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
+  if (!mine || !mine.developer) return refuse('forbidden', 403);
   const staff = [];
   for (const k of await listAll(env.CORPUS, 'staff:')) {
     const record = parseRecord(await env.CORPUS.get(k.name));
@@ -58,14 +58,14 @@ export async function handleStaff(request, env, now) {
 
 export async function handleStaffAdd(request, env, now) {
   const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
+  if (!mine || !mine.developer) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const key = staffKey(body.who);
-  if (!key) return no('bad who');
+  if (!key) return refuse('bad who');
   const note = body.note == null ? '' : body.note;
-  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
-  if (await env.CORPUS.get('staff:' + key)) return no('already', 409);
+  if (typeof note !== 'string' || note.trim().length > 60) return refuse('bad note');
+  if (await env.CORPUS.get('staff:' + key)) return refuse('already', 409);
   const record = { n: note.trim(), t: now, by: mine.by };
   if (key.startsWith('n:')) record.m = String(body.who).trim();
   const linked = key.startsWith('d:') ? key.slice(2)
@@ -98,7 +98,7 @@ export function personScore(person, q) {
 export const PEOPLE_MAX = 1000;
 
 export async function handlePeople(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const q = (new URL(request.url).searchParams.get('q') || '').trim().toLowerCase();
   if (q.length > 40) return json({ people: [] }, 200, { 'cache-control': 'no-store' });
   const byUuid = new Map();
@@ -133,16 +133,16 @@ export async function handlePeople(request, env, now) {
 
 export async function handleStaffRemove(request, env, now) {
   const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
+  if (!mine || !mine.developer) return refuse('forbidden', 403);
   const body = await readJson(request);
   const key = body && typeof body.key === 'string' ? body.key : '';
-  if (!/^(?:u:[0-9a-f]{32}|d:\d{17,20}|n:[a-z0-9_]{1,16})$/.test(key)) return no('bad request');
+  if (!/^(?:u:[0-9a-f]{32}|d:\d{17,20}|n:[a-z0-9_]{1,16})$/.test(key)) return refuse('bad request');
   await env.CORPUS.delete('staff:' + key);
   return json({ ok: true });
 }
 
 export async function handleReviews(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const reviews = [];
   for (const k of await listAll(env.CORPUS, 'review:')) {
     const record = parseRecord(await env.CORPUS.get(k.name));
@@ -155,11 +155,11 @@ export async function handleReviews(request, env, now) {
 
 export async function handleReviewAdd(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const note = body.note == null ? '' : body.note;
-  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
+  if (typeof note !== 'string' || note.trim().length > 60) return refuse('bad note');
   const people = [];
   if (typeof body.hash === 'string' && HASH.test(body.hash)) {
     for (const cape of await allCapes(env)) {
@@ -167,7 +167,7 @@ export async function handleReviewAdd(request, env, now) {
     }
   } else {
     const uuid = plainUuid(body.uuid);
-    if (!uuid) return no('bad uuid');
+    if (!uuid) return refuse('bad uuid');
     people.push({ uuid, name: null });
   }
   let added = 0;
@@ -176,7 +176,7 @@ export async function handleReviewAdd(request, env, now) {
     await env.CORPUS.put('review:' + person.uuid, JSON.stringify({ n: person.name, note: note.trim(), t: now, by, ok: [] }));
     added++;
   }
-  if (!added && people.length === 1 && !body.hash) return no('already', 409);
+  if (!added && people.length === 1 && !body.hash) return refuse('already', 409);
   return json({ ok: true, added });
 }
 
@@ -191,20 +191,20 @@ async function release(env, id, uuid, now) {
 }
 
 export async function handleReviewRemove(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
   const uuid = body ? plainUuid(body.uuid) : null;
-  if (!uuid) return no('bad request');
+  if (!uuid) return refuse('bad request');
   await env.CORPUS.delete('review:' + uuid);
   await release(env, await publicId(uuid), uuid, now);
   return json({ ok: true });
 }
 
 export async function handleApprove(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
   const hash = body && typeof body.hash === 'string' ? body.hash : '';
-  if (!HASH.test(hash)) return no('bad request');
+  if (!HASH.test(hash)) return refuse('bad request');
   let approved = 0;
   for (const cape of await allCapes(env)) {
     if (cape.h !== hash || !cape.r || !UUID.test(cape.u || '')) continue;
@@ -226,9 +226,9 @@ export async function moderator(request, env, now) {
 
 export async function handleAdminRemove(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   let targets;
   const capes = await allCapes(env);
   if (typeof body.id === 'string' && ID.test(body.id)) {
@@ -236,7 +236,7 @@ export async function handleAdminRemove(request, env, now) {
   } else if (typeof body.hash === 'string' && /^[0-9a-f]{64}$/.test(body.hash)) {
     targets = capes.filter((cape) => cape.h === body.hash);
   } else {
-    return no('bad request');
+    return refuse('bad request');
   }
   if (typeof body.hash === 'string') {
     for (const cape of capes) {
@@ -274,7 +274,7 @@ export async function handleAdminRemove(request, env, now) {
 }
 
 export async function handleAdminCapes(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const capes = await allCapes(env);
   const groups = groupCapes(capes);
   const stars = await starMap(env);
@@ -297,7 +297,7 @@ export async function handleAdminCapes(request, env, now) {
 }
 
 export async function handlePerks(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const perks = [];
   for (const k of await listAll(env.CORPUS, 'perk:')) {
     let record = {};
@@ -315,29 +315,29 @@ export async function handlePerks(request, env, now) {
 
 export async function handlePerkAdd(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const uuid = plainUuid(body.uuid);
-  if (!uuid) return no('bad uuid');
+  if (!uuid) return refuse('bad uuid');
   const note = body.note == null ? '' : body.note;
-  if (typeof note !== 'string' || note.trim().length > 60) return no('bad note');
-  if (await env.CORPUS.get('perk:' + uuid)) return no('already', 409);
+  if (typeof note !== 'string' || note.trim().length > 60) return refuse('bad note');
+  if (await env.CORPUS.get('perk:' + uuid)) return refuse('already', 409);
   await env.CORPUS.put('perk:' + uuid, JSON.stringify({ n: note.trim(), t: now, by }));
   return json({ ok: true, uuid });
 }
 
 export async function handlePerkRemove(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
   const uuid = body ? plainUuid(body.uuid) : null;
-  if (!uuid) return no('bad request');
+  if (!uuid) return refuse('bad request');
   await env.CORPUS.delete('perk:' + uuid);
   return json({ ok: true });
 }
 
 export async function handleBans(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const bans = [];
   for (const k of await listAll(env.CORPUS, 'ban:')) {
     let record = {};
@@ -354,9 +354,9 @@ export async function handleBans(request, env, now) {
 }
 
 export async function handleUnban(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body || typeof body.uuid !== 'string' || !UUID.test(body.uuid)) return no('bad request');
+  if (!body || typeof body.uuid !== 'string' || !UUID.test(body.uuid)) return refuse('bad request');
   await env.CORPUS.delete('ban:' + body.uuid);
   return json({ ok: true });
 }

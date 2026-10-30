@@ -1,8 +1,8 @@
 import { authority, moderator, staffKey } from './admin.js';
-import { account, discordSession, publicId, who } from './auth.js';
+import { account, discordSession, publicId, requestUser } from './auth.js';
 import { TEAM_AREAS, addMemberTeams, commitTeams, creditTeamsOf, credits, exactCodes, mergeLangTeam, setPersonTeams } from './credits.js';
 import { GitHubError, githubRepository, markdownText } from './github.js';
-import { NAME, UUID, hex, json, no, readJson } from './http.js';
+import { NAME, UUID, hex, json, refuse, readJson } from './http.js';
 import { listAll, parseRecord, parseStored } from './kv.js';
 import { noteParticipant } from './privacy.js';
 
@@ -83,7 +83,7 @@ export function replaceTranslation(text, key, src, value) {
 }
 
 async function trIdentity(request, env, now) {
-  const user = await who(request, env, now);
+  const user = await requestUser(request, env, now);
   if (user) {
     const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
     return { id: 'u:' + user.uuid, name: user.name, uuid: user.uuid, discord };
@@ -167,7 +167,7 @@ async function handleTrMe(request, env, now) {
 }
 
 export async function handleTrIndex(request, env, lang, ctx) {
-  if (!trLang(lang)) return no('bad lang', 404);
+  if (!trLang(lang)) return refuse('bad lang', 404);
   const cache = typeof caches !== 'undefined' ? caches.default : null;
   const cacheKey = new Request('https://wynnchayuan.com/tr-index/' + lang);
   if (cache) {
@@ -178,9 +178,9 @@ export async function handleTrIndex(request, env, lang, ctx) {
   try {
     upstream = await fetch(TR_INDEX + lang + '.json', { cf: { cacheTtl: 600 } });
   } catch (e) {
-    return no('index unreachable', 502);
+    return refuse('index unreachable', 502);
   }
-  if (upstream.status !== 200) return no('index ' + upstream.status, 502);
+  if (upstream.status !== 200) return refuse('index ' + upstream.status, 502);
   const response = new Response(upstream.body, {
     headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=600' },
   });
@@ -195,7 +195,7 @@ export async function handleTrIndex(request, env, lang, ctx) {
 async function handleTrProps(request, env) {
   const url = new URL(request.url);
   const lang = trLang(url.searchParams.get('lang'));
-  if (!lang) return no('bad lang');
+  if (!lang) return refuse('bad lang');
   return json({ props: await trList(env, 'tp:' + lang + ':') }, 200, { 'cache-control': 'no-store' });
 }
 
@@ -203,27 +203,27 @@ async function handleTrProp(request, env) {
   const url = new URL(request.url);
   const lang = trLang(url.searchParams.get('lang'));
   const id = url.searchParams.get('id') || '';
-  if (!lang || !TR_ID.test(id)) return no('bad request');
+  if (!lang || !TR_ID.test(id)) return refuse('bad request');
   const record = storedProposal(await env.CORPUS.get('tp:' + lang + ':' + id));
-  return record ? json(record, 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+  return record ? json(record, 200, { 'cache-control': 'no-store' }) : refuse('not found', 404);
 }
 
 async function handleTrPropose(request, env, now) {
   const me = await trWho(request, env, now);
-  if (!me) return no('login first', 401);
+  if (!me) return refuse('login first', 401);
   const body = await readJson(request, TR_BODY);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const lang = trLang(body.lang);
-  if (!lang) return no('bad lang');
-  if (!canWrite(me, lang)) return no('not a translator', 403);
+  if (!lang) return refuse('bad lang');
+  if (!canWrite(me, lang)) return refuse('not a translator', 403);
   const file = String(body.file || '');
   const key = body.key == null ? null : String(body.key);
   const src = String(body.src || '');
   const base = typeof body.base === 'string' ? body.base : '';
   const text = typeof body.text === 'string' ? body.text.replace(/\r\n/g, '\n') : '';
-  if (!TR_FILE.test(file) || !src || src.length > 4000 || (key != null && key.length > 200)) return no('bad request');
+  if (!TR_FILE.test(file) || !src || src.length > 4000 || (key != null && key.length > 200)) return refuse('bad request');
   const problem = placeholderProblem(src, text, base);
-  if (problem) return no(problem);
+  if (problem) return refuse(problem);
   const id = await trId(file + '\n' + (key == null ? src : key));
   const storeKey = 'tp:' + lang + ':' + id;
   const before = await env.CORPUS.get(storeKey);
@@ -238,7 +238,7 @@ async function handleTrPropose(request, env, now) {
   if (same) {
     same.votes.push(me.id);
   } else {
-    if (record.items.length >= 20) return no('too many');
+    if (record.items.length >= 20) return refuse('too many');
     record.items.push({ id: (await trId(text + now)).slice(0, 12), text, by: me.id, name: me.name, t: now, votes: [me.id] });
   }
   record.updated = now;
@@ -249,18 +249,18 @@ async function handleTrPropose(request, env, now) {
 
 async function handleTrVote(request, env, now) {
   const me = await trWho(request, env, now);
-  if (!me) return no('login first', 401);
+  if (!me) return refuse('login first', 401);
   const body = await readJson(request, TR_BODY);
   const lang = trLang(body && body.lang);
-  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
-  if (!canWrite(me, lang)) return no('not a translator', 403);
+  if (!lang || !TR_ID.test(String(body.id || ''))) return refuse('bad request');
+  if (!canWrite(me, lang)) return refuse('not a translator', 403);
   const storeKey = 'tp:' + lang + ':' + body.id;
   const raw = await env.CORPUS.get(storeKey);
   const record = storedProposal(raw);
-  if (!record) return no('not found', 404);
-  if (record.status !== 'open') return no('closed', 409);
+  if (!record) return refuse('not found', 404);
+  if (record.status !== 'open') return refuse('closed', 409);
   const target = record.items.find((it) => it.id === body.item);
-  if (!target) return no('not found', 404);
+  if (!target) return refuse('not found', 404);
   const had = target.votes.includes(me.id);
   for (const it of record.items) it.votes = it.votes.filter((v) => v !== me.id);
   if (!had) target.votes.push(me.id);
@@ -272,16 +272,16 @@ async function handleTrVote(request, env, now) {
 
 async function handleTrAccept(request, env, now) {
   const me = await trWho(request, env, now);
-  if (!me || !me.decide) return no('forbidden', 403);
-  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  if (!me || !me.decide) return refuse('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return refuse('github not configured', 503);
   const body = await readJson(request, TR_BODY);
   const lang = trLang(body && body.lang);
-  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
+  if (!lang || !TR_ID.test(String(body.id || ''))) return refuse('bad request');
   const storeKey = 'tp:' + lang + ':' + body.id;
   const record = storedProposal(await env.CORPUS.get(storeKey));
-  if (!record) return no('not found', 404);
+  if (!record) return refuse('not found', 404);
   const item = record.items.find((it) => it.id === body.item);
-  if (!item) return no('not found', 404);
+  if (!item) return refuse('not found', 404);
   const repo = githubRepository(env);
   let created = null;
   try {
@@ -305,7 +305,7 @@ async function handleTrAccept(request, env, now) {
       const changed = replaceTranslation(current.text, record.key, record.src, item.text);
       if (changed == null) {
         if (created) await repo.deleteBranch(created);
-        return no('line not found', 409);
+        return refuse('line not found', 409);
       }
       await repo.writeFile(root + name, { message: '譯文（' + lang + '）：' + short, text: changed, sha: current.sha, branch });
     }
@@ -317,7 +317,7 @@ async function handleTrAccept(request, env, now) {
           + '第一條由 ' + markdownText(me.by) + ' 定案。每一條的原文、提案人與票數記在網站上。',
       }) || '');
     }
-    if (!url) return no('github pull request missing', 502);
+    if (!url) return refuse('github pull request missing', 502);
     record.status = 'accepted';
     record.done = { item: item.id, by: me.by, t: now, pr: url };
     record.updated = now;
@@ -325,19 +325,19 @@ async function handleTrAccept(request, env, now) {
     return json({ ok: true, url, prop: record });
   } catch (e) {
     if (created) await repo.deleteBranch(created);
-    return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
+    return refuse(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
 
 async function handleTrReject(request, env, now) {
   const me = await trWho(request, env, now);
-  if (!me || !me.decide) return no('forbidden', 403);
+  if (!me || !me.decide) return refuse('forbidden', 403);
   const body = await readJson(request, TR_BODY);
   const lang = trLang(body && body.lang);
-  if (!lang || !TR_ID.test(String(body.id || ''))) return no('bad request');
+  if (!lang || !TR_ID.test(String(body.id || ''))) return refuse('bad request');
   const storeKey = 'tp:' + lang + ':' + body.id;
   const record = storedProposal(await env.CORPUS.get(storeKey));
-  if (!record) return no('not found', 404);
+  if (!record) return refuse('not found', 404);
   record.status = 'rejected';
   record.done = { by: me.by, t: now };
   record.updated = now;
@@ -347,7 +347,7 @@ async function handleTrReject(request, env, now) {
 
 async function handleTrPolls(request, env) {
   const lang = trLang(new URL(request.url).searchParams.get('lang'));
-  if (!lang) return no('bad lang');
+  if (!lang) return refuse('bad lang');
   return json({ polls: await trList(env, 'tq:' + lang + ':') }, 200, { 'cache-control': 'no-store' });
 }
 
@@ -355,25 +355,25 @@ async function handleTrPoll(request, env) {
   const url = new URL(request.url);
   const lang = trLang(url.searchParams.get('lang'));
   const id = url.searchParams.get('id') || '';
-  if (!lang || !TR_ID.test(id)) return no('bad request');
+  if (!lang || !TR_ID.test(id)) return refuse('bad request');
   const record = storedPoll(await env.CORPUS.get('tq:' + lang + ':' + id));
-  return record ? json(record, 200, { 'cache-control': 'no-store' }) : no('not found', 404);
+  return record ? json(record, 200, { 'cache-control': 'no-store' }) : refuse('not found', 404);
 }
 
 const cleanOption = (text) => (typeof text === 'string' ? text.trim().replace(/\s+/g, ' ') : '');
 
 async function handleTrPollOpen(request, env, now) {
   const me = await trWho(request, env, now);
-  if (!me) return no('login first', 401);
+  if (!me) return refuse('login first', 401);
   const body = await readJson(request, TR_BODY);
   const lang = trLang(body && body.lang);
-  if (!lang) return no('bad lang');
-  if (!canWrite(me, lang)) return no('not a translator', 403);
+  if (!lang) return refuse('bad lang');
+  if (!canWrite(me, lang)) return refuse('not a translator', 403);
   const term = cleanOption(body.term);
   const note = typeof body.note === 'string' ? body.note.trim().slice(0, 500) : '';
-  if (!term || term.length > 80) return no('bad term');
+  if (!term || term.length > 80) return refuse('bad term');
   const options = [...new Set((Array.isArray(body.options) ? body.options : []).map(cleanOption).filter(Boolean))];
-  if (options.some((o) => o.length > 80) || options.length > 10) return no('bad option');
+  if (options.some((o) => o.length > 80) || options.length > 10) return refuse('bad option');
   const id = (await trId(lang + term + now)).slice(0, 12);
   const record = { lang, term, note, by: me.id, name: me.name, t: now, status: 'open', options: [] };
   for (const text of options) {
@@ -386,15 +386,15 @@ async function handleTrPollOpen(request, env, now) {
 
 async function pollFor(request, env, now, needDecide) {
   const me = await trWho(request, env, now);
-  if (!me) return { error: no('login first', 401) };
+  if (!me) return { error: refuse('login first', 401) };
   const body = await readJson(request, TR_BODY);
   const lang = trLang(body && body.lang);
-  if (!lang || !TR_ID.test(String(body.id || ''))) return { error: no('bad request') };
-  if (needDecide ? !me.decide : !canWrite(me, lang)) return { error: no(needDecide ? 'forbidden' : 'not a translator', 403) };
+  if (!lang || !TR_ID.test(String(body.id || ''))) return { error: refuse('bad request') };
+  if (needDecide ? !me.decide : !canWrite(me, lang)) return { error: refuse(needDecide ? 'forbidden' : 'not a translator', 403) };
   const storeKey = 'tq:' + lang + ':' + body.id;
   const raw = await env.CORPUS.get(storeKey);
   const record = storedPoll(raw);
-  if (!record) return { error: no('not found', 404) };
+  if (!record) return { error: refuse('not found', 404) };
   return { me, body, storeKey, raw, record };
 }
 
@@ -407,14 +407,14 @@ async function savePoll(env, got, now) {
 async function handleTrPollOption(request, env, now) {
   const got = await pollFor(request, env, now, false);
   if (got.error) return got.error;
-  if (got.record.status !== 'open') return no('closed', 409);
+  if (got.record.status !== 'open') return refuse('closed', 409);
   const text = cleanOption(got.body.text);
-  if (!text || text.length > 80) return no('bad option');
+  if (!text || text.length > 80) return refuse('bad option');
   for (const o of got.record.options) o.votes = o.votes.filter((v) => v !== got.me.id);
   const same = got.record.options.find((o) => o.text === text);
   if (same) same.votes.push(got.me.id);
   else {
-    if (got.record.options.length >= 12) return no('too many');
+    if (got.record.options.length >= 12) return refuse('too many');
     got.record.options.push({ id: (await trId(text + now)).slice(0, 12), text, by: got.me.id, name: got.me.name, t: now,
       votes: [got.me.id] });
   }
@@ -425,9 +425,9 @@ async function handleTrPollOption(request, env, now) {
 async function handleTrPollVote(request, env, now) {
   const got = await pollFor(request, env, now, false);
   if (got.error) return got.error;
-  if (got.record.status !== 'open') return no('closed', 409);
+  if (got.record.status !== 'open') return refuse('closed', 409);
   const target = got.record.options.find((o) => o.id === got.body.option);
-  if (!target) return no('not found', 404);
+  if (!target) return refuse('not found', 404);
   const had = target.votes.includes(got.me.id);
   for (const o of got.record.options) o.votes = o.votes.filter((v) => v !== got.me.id);
   if (!had) target.votes.push(got.me.id);
@@ -439,7 +439,7 @@ async function handleTrPollDecide(request, env, now) {
   const got = await pollFor(request, env, now, true);
   if (got.error) return got.error;
   const target = got.record.options.find((o) => o.id === got.body.option);
-  if (!target) return no('not found', 404);
+  if (!target) return refuse('not found', 404);
   got.record.status = 'decided';
   got.record.decided = { option: target.id, text: target.text, by: got.me.by, t: now };
   return savePoll(env, got, now);
@@ -466,7 +466,7 @@ async function translatorList(env, list) {
 }
 
 export async function handleTranslators(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   return json({ translators: await translatorList(env, await credits(now)) }, 200, { 'cache-control': 'no-store' });
 }
 
@@ -488,15 +488,15 @@ async function translatorIdentity(env, key, who) {
 
 export async function handleTranslatorAdd(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request, TR_BODY);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const key = staffKey(body.who);
-  if (!key) return no('bad who');
+  if (!key) return refuse('bad who');
   const langs = [...new Set((Array.isArray(body.langs) ? body.langs : []).filter((l) => TR_LANGS.includes(l)))];
-  if (!langs.length) return no('bad langs');
+  if (!langs.length) return refuse('bad langs');
   const note = typeof body.note === 'string' ? body.note.trim() : '';
-  if (note.length > 60) return no('bad note');
+  if (note.length > 60) return refuse('bad note');
   const record = { langs, n: note, t: now, by, ...(await translatorIdentity(env, key, body.who)) };
   await env.CORPUS.put('tl:' + key, JSON.stringify(record));
   const listed = creditTeamsOf(await credits(now), record.m);
@@ -508,7 +508,7 @@ export async function handleTranslatorAdd(request, env, now) {
 }
 
 export async function handleLangTeam(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const list = await credits(now);
   const translators = await translatorList(env, list);
   return json({ people: mergeLangTeam(list ? list.team : [], translators), credits: Boolean(list) }, 200,
@@ -517,23 +517,23 @@ export async function handleLangTeam(request, env, now) {
 
 export async function handleLangTeamSet(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request, TR_BODY);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const key = staffKey(body.who);
-  if (!key) return no('bad who');
+  if (!key) return refuse('bad who');
   const langs = body.langs === undefined ? null : exactCodes(body.langs, TR_LANGS);
-  if (body.langs !== undefined && !langs) return no('bad team');
+  if (body.langs !== undefined && !langs) return refuse('bad team');
   const areas = body.areas === undefined ? null : exactCodes(body.areas, TEAM_AREAS);
-  if (body.areas !== undefined && !areas) return no('bad area');
-  if (!langs && !areas) return no('bad request');
+  if (body.areas !== undefined && !areas) return refuse('bad area');
+  if (!langs && !areas) return refuse('bad request');
   const note = typeof body.note === 'string' ? body.note.trim() : null;
-  if (note && note.length > 60) return no('bad note');
+  if (note && note.length > 60) return refuse('bad note');
   const identity = await translatorIdentity(env, key, body.who);
   const mc = identity.m || null;
   const list = await credits(now);
   const listed = Boolean(mc && list && list.names.has(mc.toLowerCase()));
-  if (areas && !listed) return no(list ? 'not listed' : 'try later', list ? 400 : 503);
+  if (areas && !listed) return refuse(list ? 'not listed' : 'try later', list ? 400 : 503);
   let rights = null;
   if (langs) {
     const matched = [];
@@ -564,10 +564,10 @@ export async function handleLangTeamSet(request, env, now) {
 }
 
 export async function handleTranslatorRemove(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
   const key = body && typeof body.key === 'string' ? 'tl:' + body.key : '';
-  if (!TR_KEY.test(key)) return no('bad request');
+  if (!TR_KEY.test(key)) return refuse('bad request');
   await env.CORPUS.delete(key);
   return json({ ok: true });
 }
@@ -587,7 +587,7 @@ export async function trRoute(route, request, env, now) {
   if (route === 'POST /tr/poll/vote') return handleTrPollVote(request, env, now);
   if (route === 'POST /tr/poll/decide') return handleTrPollDecide(request, env, now);
   if (route === 'POST /tr/poll/reopen') return handleTrPollReopen(request, env, now);
-  return no('not found', 404);
+  return refuse('not found', 404);
 }
 
 export async function scrubTr(request, env, now, answer) {

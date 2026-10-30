@@ -2,11 +2,11 @@ import { LANGS, PATHS, pickLang, render, renderLost } from './site.js';
 import { handleAdminCapes, handleAdminRemove, handleApprove, handleBans, handlePeople, handlePerkAdd, handlePerkRemove, handlePerks, handleReviewAdd, handleReviewRemove, handleReviews, handleStaff, handleStaffAdd, handleStaffRemove, handleUnban } from './admin.js';
 import { ICONS, font, icon, page, script, texture } from './assets.js';
 import { handleChallenge, handleDiscordCallback, handleDiscordStart, handleLink, handleLinkIntent, handleLinkStart, handleLogin, handleUnlink, handleWebLink } from './auth.js';
-import { handleCape, handleCapeLink, handleCapePreview, handleCapes, handleForget, handleIdle, handleMine, handlePublic, handleRemove, handleRestore, handleStar, handleUpload, handleWear, recountStars, tidy } from './capes.js';
+import { handleCape, handleCapeLink, handleCapePreview, handleCapes, handleForget, handleIdle, handleMine, handlePublic, handleRemove, handleRestore, handleStar, handleUpload, handleWear, recountStars, maintainCapes } from './capes.js';
 import { GUILD_SLUG, handleAddCredit, handleCreditTeams, handleGuildAdd, handleGuildImage, handleGuildPicture, handleGuildRemove, handleGuilds, handleTeam } from './credits.js';
 import { handleDiscordInfo, handleDiscordInteraction, handleDiscordRegister } from './discord-bot.js';
 import { handleFeedback, handleFeedbackDelete, handleFeedbackIssue, handleFeedbackList, handleFeedbackStatus } from './feedback.js';
-import { json, no } from './http.js';
+import { json, refuse } from './http.js';
 import { handleHello, handleList, handleMe, handleStatus } from './presence.js';
 import { handleDeleteMe, indexOwners } from './privacy.js';
 import { handleLangTeam, handleLangTeamSet, handleTrIndex, handleTranslatorAdd, handleTranslatorRemove, handleTranslators, scrubTr, trRoute } from './translate.js';
@@ -102,7 +102,7 @@ function routeApi(call) {
   for (const [prefix, handler] of API_PREFIXES) {
     if (call.route.startsWith(prefix)) return handler(call, call.route.slice(prefix.length));
   }
-  return no('not found', 404);
+  return refuse('not found', 404);
 }
 
 function languageOf(request, url) {
@@ -127,7 +127,7 @@ function routeSite(call) {
   if (get && path === '/auth/discord') return handleDiscordStart(request, env, now);
   if (get && path === '/auth/discord/callback') return handleDiscordCallback(request, env, now);
   if (get && path === '/gallery') return Response.redirect(url.origin + '/capes', 302);
-  if (!get) return no('not found', 404);
+  if (!get) return refuse('not found', 404);
   const lang = pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
   return page(renderLost(lang), lang, 404);
 }
@@ -152,7 +152,7 @@ function logFailure(event, detail, error) {
 
 const site = {
   async scheduled(event, env) {
-    for (const [task, run] of [['tidy', tidy], ['indexOwners', indexOwners], ['recountStars', recountStars]]) {
+    for (const [task, run] of [['maintainCapes', maintainCapes], ['indexOwners', indexOwners], ['recountStars', recountStars]]) {
       try {
         await run(env, Date.now());
       } catch (error) {
