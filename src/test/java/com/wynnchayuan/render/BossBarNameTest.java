@@ -25,7 +25,7 @@ public final class BossBarNameTest {
         bar.append(Component.literal("Bronchial - 113k❤ - ").withStyle(red));
         bar.append(Component.literal("Weak").withStyle(aqua));
 
-        Component out = WynntilsText.bossBarName(bar, store);
+        Component out = WynntilsBossBar.bossBarName(bar, store);
         String shown = out == null ? "(沒翻)" : out.getString();
         check("★ 名字換成名牌的譯名（實際 " + shown + "）",
               shown.startsWith("支氣管體 - 113k❤ - "));
@@ -44,7 +44,7 @@ public final class BossBarNameTest {
 
         MutableComponent grume = Component.empty();
         grume.append(Component.literal("Grume - 37.7k❤ - ").withStyle(red));
-        Component g = WynntilsText.bossBarName(grume, store);
+        Component g = WynntilsBossBar.bossBarName(grume, store);
         check("Grume → 凝塊（實際 " + (g == null ? "(沒翻)" : g.getString()) + "）",
               g != null && g.getString().startsWith("凝塊 - "));
 
@@ -52,16 +52,16 @@ public final class BossBarNameTest {
         status.append(Component.literal("Grume - 37.7k❤ - ").withStyle(red));
         status.append(Component.literal("Weak ").withStyle(aqua));
         status.append(Component.literal("Dam Def").withStyle(red));
-        Component w = WynntilsText.bossBarWords(status, store);
+        Component w = WynntilsBossBar.bossBarWords(status, store);
         String ws = w == null ? "(沒翻)" : w.getString();
         check("★ 屬性克制換成易傷／增傷／防護（實際 " + ws + "）",
               ws.equals("Grume - 37.7k❤ - 易傷 增傷 防護"));
         check("一般語料不受影響：Def 不會在別處變成防護",
               !"防護".equals(store.lookup("Def")));
         check("查不到的名字回 null",
-              WynntilsText.bossBarName(Component.literal("Zzqxv - 5❤"), store) == null);
+              WynntilsBossBar.bossBarName(Component.literal("Zzqxv - 5❤"), store) == null);
         check("沒有「 - 」的標題不動",
-              WynntilsText.bossBarName(Component.literal("Bronchial"), store) == null);
+              WynntilsBossBar.bossBarName(Component.literal("Bronchial"), store) == null);
 
         Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0xAA0000));
         Style shine = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFF55));
@@ -84,7 +84,7 @@ public final class BossBarNameTest {
                 frame.append(Component.literal(url.substring(i - 1, i)).withStyle(shine));
             }
             frame.append(Component.literal(url.substring(Math.max(0, i))).withStyle(dark));
-            Component t = WynntilsText.bossBar(frame, config, store);
+            Component t = WynntilsBossBar.bossBar(frame, config, store);
             String s = t.getString();
             if (sample == null || i == 5) {
                 sample = s;
@@ -100,7 +100,7 @@ public final class BossBarNameTest {
         check("★ 網址每個字都是原本那一幀的顏色，亮光照掃（第一個不對的幀 " + badFrame + "）",
               coloursKept);
         check("查不到的整句回 null",
-              WynntilsText.bossBarPlain(Component.literal("Zzqxv qwerty"), store) == null);
+              WynntilsBossBar.bossBarPlain(Component.literal("Zzqxv qwerty"), store) == null);
 
         System.out.println(failures == 0 ? "boss bar 怪物名：全部通過"
                                          : "boss bar 怪物名：" + failures + " 項失敗");

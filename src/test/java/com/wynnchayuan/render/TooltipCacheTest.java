@@ -23,8 +23,8 @@ public final class TooltipCacheTest {
                 Component.literal("Combat Level"),
                 Component.literal("Combat Level"));
 
-        List<Component> first = TooltipPanel.translateLinesCached(tooltip, store);
-        List<Component> second = TooltipPanel.translateLinesCached(tooltip, store);
+        List<Component> first = TooltipTranslator.translateLinesCached(tooltip, store);
+        List<Component> second = TooltipTranslator.translateLinesCached(tooltip, store);
         report("同一份內容兩次結果一樣（實際 " + text(second) + "）",
                 text(first).equals(text(second)));
         report("真的有翻到（不是兩次都空的）", !text(first).isBlank()
@@ -36,7 +36,7 @@ public final class TooltipCacheTest {
         } catch (UnsupportedOperationException e) {
             report("！命中時回傳的清單不可變——別的模組加行會炸在它自己身上", false);
         }
-        List<Component> third = TooltipPanel.translateLinesCached(tooltip, store);
+        List<Component> third = TooltipTranslator.translateLinesCached(tooltip, store);
         report("★ 改過回傳的清單之後，快取那一份沒被弄髒（實際 "
                 + third.size() + " 行）", third.size() == first.size());
 
@@ -44,23 +44,23 @@ public final class TooltipCacheTest {
                 Component.literal("Halcyon"),
                 Component.literal("Halcyon"),
                 banner());
-        String on = text(TooltipPanel.translateLinesCached(gear, store));
+        String on = text(TooltipTranslator.translateLinesCached(gear, store));
         store.setNameMode(CollectorConfig.ItemNames.OFF);
-        String off = text(TooltipPanel.translateLinesCached(gear, store));
+        String off = text(TooltipTranslator.translateLinesCached(gear, store));
         report("開著的時候裝備名是中文（實際 " + on.replace('\n', '/') + "）",
                 !on.contains("Halcyon") && !on.isBlank());
         report("★ 關掉「翻譯物品名稱」之後結果會變（開 " + on.replace('\n', '/')
                 + "，關 " + off.replace('\n', '/') + "）", !on.equals(off));
         store.setNameMode(CollectorConfig.ItemNames.ON);
         report("再開回來又回到原本那一份",
-                on.equals(text(TooltipPanel.translateLinesCached(gear, store))));
+                on.equals(text(TooltipTranslator.translateLinesCached(gear, store))));
 
         int before = store.generation();
         store.loadAll(List.of(root.resolve("zh_cn")));
         store.setNameMode(CollectorConfig.ItemNames.ON);
         report("重載之後 generation 有往前（" + before + " -> "
                 + store.generation() + "）", store.generation() != before);
-        String reloaded = text(TooltipPanel.translateLinesCached(tooltip, store));
+        String reloaded = text(TooltipTranslator.translateLinesCached(tooltip, store));
         report("★ 重載之後拿到的是新語料的答案（實際 "
                 + reloaded.replace('\n', '/') + "）",
                 !reloaded.isBlank() && !reloaded.contains("Combat Level"));

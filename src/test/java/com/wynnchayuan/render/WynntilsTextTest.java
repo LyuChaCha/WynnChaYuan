@@ -199,26 +199,26 @@ public final class WynntilsTextTest {
                         .withStyle(net.minecraft.ChatFormatting.GRAY))
                 .append(net.minecraft.network.chat.Component.literal("47❤")
                         .withStyle(net.minecraft.ChatFormatting.RED));
-        String shown = WynntilsText.bossBar(bar, config, store).getString();
+        String shown = WynntilsBossBar.bossBar(bar, config, store).getString();
         check("boss bar 的生物名翻得出來、血量留著（實際 " + shown + "）",
               shown.startsWith("馬") && shown.endsWith("47❤"));
-        check("同一條再畫一次拿到同一份", WynntilsText.bossBar(bar, config, store)
-                == WynntilsText.bossBar(bar, config, store));
+        check("同一條再畫一次拿到同一份", WynntilsBossBar.bossBar(bar, config, store)
+                == WynntilsBossBar.bossBar(bar, config, store));
         while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
         check("名牌關掉不會連坐 boss bar",
-                WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
+                WynntilsBossBar.bossBar(bar, config, store).getString().startsWith("馬"));
         while (config.nametagMode() == CollectorConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
 
         config.toggleBossBar();
         check("boss bar 自己的開關關掉時原樣回去",
-                WynntilsText.bossBar(bar, config, store) == bar);
+                WynntilsBossBar.bossBar(bar, config, store) == bar);
         config.toggleBossBar();
         check("再打開就照常翻",
-                WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
+                WynntilsBossBar.bossBar(bar, config, store).getString().startsWith("馬"));
     }
 
     private static void switched(CollectorConfig config) {
@@ -232,15 +232,15 @@ public final class WynntilsTextTest {
 
         store.loadAll(Path.of(corpus, "zh_tw"));
         check("先是繁中（實際 "
-                        + WynntilsText.entityName(altar, config, store).getString() + "）",
+                        + WynntilsNames.entityName(altar, config, store).getString() + "）",
                 "腐敗祭壇".equals(
-                        WynntilsText.entityName(altar, config, store).getString()));
+                        WynntilsNames.entityName(altar, config, store).getString()));
 
         store.loadAll(Path.of(corpus, "zh_cn"));
         check("換語言之後立刻跟著換（實際 "
-                        + WynntilsText.entityName(altar, config, store).getString() + "）",
+                        + WynntilsNames.entityName(altar, config, store).getString() + "）",
                 "腐化祭坛".equals(
-                        WynntilsText.entityName(altar, config, store).getString()));
+                        WynntilsNames.entityName(altar, config, store).getString()));
     }
 
     private static void entityName(CollectorConfig config, TranslationStore store) {
@@ -249,26 +249,26 @@ public final class WynntilsTextTest {
         }
         net.minecraft.network.chat.Component altar = net.minecraft.network.chat.Component
                 .literal("Corrupted Altar").withStyle(net.minecraft.ChatFormatting.LIGHT_PURPLE);
-        net.minecraft.network.chat.Component shown = WynntilsText.entityName(altar, config, store);
+        net.minecraft.network.chat.Component shown = WynntilsNames.entityName(altar, config, store);
         check("浮空字翻得出來（實際 " + shown.getString() + "）",
               shown.getString().equals("腐敗祭壇"));
         check("顏色照抄", shown.getStyle().getColor() != null
                 || shown.getSiblings().stream().anyMatch(s -> s.getStyle().getColor() != null));
         net.minecraft.network.chat.Component odd =
                 net.minecraft.network.chat.Component.literal("Qwertyuiop Zxcv");
-        check("翻不出來的原樣回去", WynntilsText.entityName(odd, config, store) == odd);
+        check("翻不出來的原樣回去", WynntilsNames.entityName(odd, config, store) == odd);
         CollectorConfig.NametagMode was = config.nametagMode();
         while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
         check("名牌那一列關掉時原樣回去",
-                WynntilsText.entityName(altar, config, store) == altar);
+                WynntilsNames.entityName(altar, config, store) == altar);
         config.cycleNametagMode();
         check("注視時顯示：原文不動（實際 "
-                        + WynntilsText.entityName(altar, config, store).getString() + "）",
-                WynntilsText.entityName(altar, config, store) == altar);
+                        + WynntilsNames.entityName(altar, config, store).getString() + "）",
+                WynntilsNames.entityName(altar, config, store) == altar);
         check("注視時顯示：翻不出來的也原樣回去",
-                WynntilsText.entityName(odd, config, store) == odd);
+                WynntilsNames.entityName(odd, config, store) == odd);
         while (config.nametagMode() != was) {
             config.cycleNametagMode();
         }
@@ -291,7 +291,7 @@ public final class WynntilsTextTest {
                 StyledText in = StyledText.fromString(row);
                 String plain = in.getStringWithoutFormatting();
                 String colour = plain.substring(0, plain.indexOf(':'));
-                String out = WynntilsText.screenText(in, config, store)
+                String out = WynntilsScreenText.screenText(in, config, store)
                         .getStringWithoutFormatting();
                 if ("zh_cn".equals(lang)) {
                     System.out.println("      " + plain + "  ->  " + out);
@@ -314,20 +314,20 @@ public final class WynntilsTextTest {
         for (String name : List.of("Halcyon", "Cumulonimbus")) {
             check("前提：" + name + " 是翻好的裝備名", store.lookup(name) != null);
             StyledText in = StyledText.fromString("\u00a7f" + name + ": 0/1");
-            StyledText out = WynntilsText.screenText(in, config, store);
+            StyledText out = WynntilsScreenText.screenText(in, config, store);
             check("★ 「" + name + ": 0/1」不是屬性列，原樣留著（實際 "
                     + out.getStringWithoutFormatting() + "）", out == in);
         }
     }
 
     private static void statusEffects(CollectorConfig config) throws Exception {
-        check("尾巴是倒數的時間：是狀態列", WynntilsText.statusRow("29% Resistance (00:27)")
-                && WynntilsText.statusRow("Tree Manipulation (**:**)")
-                && WynntilsText.statusRow("8% Strength (1:05:00) "));
+        check("尾巴是倒數的時間：是狀態列", WynntilsScreenText.statusRow("29% Resistance (00:27)")
+                && WynntilsScreenText.statusRow("Tree Manipulation (**:**)")
+                && WynntilsScreenText.statusRow("8% Strength (1:05:00) "));
         check("沒有時間的不是（物品名、一般的標籤、括號裡是別的東西）",
-                !WynntilsText.statusRow("Resistance") && !WynntilsText.statusRow("Loot Chests: 0/12")
-                        && !WynntilsText.statusRow("Oak Wood Dagger (Lv. 12)")
-                        && !WynntilsText.statusRow(null));
+                !WynntilsScreenText.statusRow("Resistance") && !WynntilsScreenText.statusRow("Loot Chests: 0/12")
+                        && !WynntilsScreenText.statusRow("Oak Wood Dagger (Lv. 12)")
+                        && !WynntilsScreenText.statusRow(null));
         for (String lang : List.of("zh_tw", "ja_jp")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
@@ -348,11 +348,11 @@ public final class WynntilsTextTest {
                 store.setNameMode(mode);
                 StyledText row = StyledText.fromString(
                         "\u00a7729% \u00a7f" + gear + " \u00a77(00:27)");
-                String out = WynntilsText.screenText(row, config, store).getStringWithoutFormatting();
+                String out = WynntilsScreenText.screenText(row, config, store).getStringWithoutFormatting();
                 check(lang + "／" + mode + "：★ 狀態列的「" + gear + "」不會變成裝備的譯名（實際 " + out + "）",
                         out.contains(gear) && !out.contains(worn));
                 StyledText endless = StyledText.fromString("\u00a7f" + gear + " \u00a77(**:**)");
-                out = WynntilsText.screenText(endless, config, store).getStringWithoutFormatting();
+                out = WynntilsScreenText.screenText(endless, config, store).getStringWithoutFormatting();
                 check(lang + "／" + mode + "：★ 沒有期限的那一種也一樣（實際 " + out + "）",
                         out.contains(gear) && !out.contains(worn));
             }
@@ -360,7 +360,7 @@ public final class WynntilsTextTest {
             String strength = store.lookup("Strength");
             if (strength != null && !strength.equals("Strength")) {
                 StyledText row = StyledText.fromString("\u00a778% \u00a7fStrength \u00a77(00:" + (30 + lang.charAt(0) % 20 + lang.charAt(3) % 7) + ")");
-                String out = WynntilsText.screenText(row, config, store).getStringWithoutFormatting();
+                String out = WynntilsScreenText.screenText(row, config, store).getStringWithoutFormatting();
                 check(lang + "：屬性也在用的字照舊翻（實際 " + out + "）", out.contains(strength));
             }
         }
@@ -410,7 +410,7 @@ public final class WynntilsTextTest {
         TranslationStore small = new TranslationStore();
         small.loadAll(dir);
         check("★ 整句查得到（折行之前就要換）", "整句譯文".equals(
-                WynntilsText.screenText(StyledText.fromString(BOOK_HINT), config, small)
+                WynntilsScreenText.screenText(StyledText.fromString(BOOK_HINT), config, small)
                         .getStringWithoutFormatting()));
     }
 
@@ -439,30 +439,30 @@ public final class WynntilsTextTest {
 
     private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
-        StyledText shown = WynntilsText.screenText(inProgress, config, store);
+        StyledText shown = WynntilsScreenText.screenText(inProgress, config, store);
         check("綜合頁面的狀態翻得出來（實際 " + shown.getString() + "）",
               "進行中".equals(shown.getString()));
 
         StyledText already = StyledText.fromString("進行中");
         check("已經是中文的原樣回去",
-              WynntilsText.screenText(already, config, store) == already);
+              WynntilsScreenText.screenText(already, config, store) == already);
 
         StyledText odd = StyledText.fromString("Qwertyuiop Zxcv");
-        check("查不到的原樣回去", WynntilsText.screenText(odd, config, store) == odd);
+        check("查不到的原樣回去", WynntilsScreenText.screenText(odd, config, store) == odd);
 
         config.toggleWynntilsUi();
         check("F6 關掉時完全不動",
-              WynntilsText.screenText(inProgress, config, store) == inProgress);
+              WynntilsScreenText.screenText(inProgress, config, store) == inProgress);
         config.toggleWynntilsUi();
         check("再打開就又換得到",
-              "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
+              "進行中".equals(WynntilsScreenText.screenText(inProgress, config, store).getString()));
 
         WynntilsText.holdRawText(true);
         check("★ 那一段裡的字原樣回去（公會名與簡稱都不是遊戲文案，撞名躲不完）",
-              WynntilsText.screenText(inProgress, config, store) == inProgress);
+              WynntilsScreenText.screenText(inProgress, config, store) == inProgress);
         WynntilsText.holdRawText(false);
         check("★ 出了那一段就恢復",
-              "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
+              "進行中".equals(WynntilsScreenText.screenText(inProgress, config, store).getString()));
 
         screenCache(config, store);
     }
@@ -470,16 +470,16 @@ public final class WynntilsTextTest {
     private static void screenCache(CollectorConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
 
-        String once = WynntilsText.screenText(inProgress, config, store).getString();
-        String twice = WynntilsText.screenText(inProgress, config, store).getString();
+        String once = WynntilsScreenText.screenText(inProgress, config, store).getString();
+        String twice = WynntilsScreenText.screenText(inProgress, config, store).getString();
         check("快取：同一個字串兩次結果一樣（實際 " + twice + "）", once.equals(twice));
 
         WynntilsText.holdRawText(true);
         check("★ 快取不可以繞過「這一段不翻」",
-              WynntilsText.screenText(inProgress, config, store) == inProgress);
+              WynntilsScreenText.screenText(inProgress, config, store) == inProgress);
         WynntilsText.holdRawText(false);
         check("出了那一段又拿得到翻譯",
-              once.equals(WynntilsText.screenText(inProgress, config, store).getString()));
+              once.equals(WynntilsScreenText.screenText(inProgress, config, store).getString()));
 
         int before = store.generation();
         store.loadAll(java.util.List.of(
@@ -487,7 +487,7 @@ public final class WynntilsTextTest {
                         "src/main/resources/assets/wynnchayuan/translations/zh_cn")));
         check("快取：重載之後 generation 有往前（" + before + " -> "
               + store.generation() + "）", store.generation() != before);
-        String after = WynntilsText.screenText(inProgress, config, store).getString();
+        String after = WynntilsScreenText.screenText(inProgress, config, store).getString();
         check("★ 快取：重載之後拿到的是新語料的答案（實際 " + after + "）",
               "进行中".equals(after));
     }
