@@ -23,7 +23,7 @@ public final class StatLabelProbe {
                 System.out.println("  " + line);
                 System.out.println("      整行查：" + show(store.lookup(line)));
                 System.out.println("      走完整條路：" + show(
-                        LineTranslator.lookup(line, store, false)));
+                        TemplateLookup.lookup(line, store, false)));
             }
         }
     }

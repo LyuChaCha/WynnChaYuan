@@ -2165,14 +2165,14 @@ final class TranslationIndex {
         if (looseSource(key) != null || looseSource(respell(key)) != null) {
             return true;
         }
-        if (LineTranslator.lookup(key, store, false) != null
-                || LineTranslator.lookup(key, store, true) != null) {
+        if (TemplateLookup.lookup(key, store, false) != null
+                || TemplateLookup.lookup(key, store, true) != null) {
             return true;
         }
-        if (key.indexOf('\n') >= 0 && LineTranslator.eventFrame(unwrap(key), store) != null) {
+        if (key.indexOf('\n') >= 0 && TemplateLookup.eventFrame(unwrap(key), store) != null) {
             return true;
         }
-        if (key.indexOf('\n') >= 0 && LineTranslator.countdownBoard(key, store) != null) {
+        if (key.indexOf('\n') >= 0 && TemplateLookup.countdownBoard(key, store) != null) {
             return true;
         }
         String other = respell(key);

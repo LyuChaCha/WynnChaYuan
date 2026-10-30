@@ -115,14 +115,14 @@ public final class NpcChatLineTest {
         check("台詞查不到：收集端照樣記成缺口",
               !store.hasTranslation("[{~}/{~}] Obsessor: This line is nowhere in the corpus."));
         check("沒有計數的不碰（證據裡沒有這種）",
-              LineTranslator.npcChatLine("Obsessor: You need to come with us!", store) == null);
-        check("說話者是空的不碰", LineTranslator.npcChatLine("[{~}/{~}] : You need to come with us!", store) == null);
+              TemplateLookup.npcChatLine("Obsessor: You need to come with us!", store) == null);
+        check("說話者是空的不碰", TemplateLookup.npcChatLine("[{~}/{~}] : You need to come with us!", store) == null);
         check("計數之後不是「名字: 台詞」的不碰",
-              LineTranslator.npcChatLine("[{~}/{~}] Crystals Destroyed", store) == null);
-        check("多行的不碰", LineTranslator.npcChatLine(
+              TemplateLookup.npcChatLine("[{~}/{~}] Crystals Destroyed", store) == null);
+        check("多行的不碰", TemplateLookup.npcChatLine(
                 "[{~}/{~}] Obsessor: You need to come with us!\nPress SHIFT to continue", store) == null);
-        check("沒有東西的不碰", LineTranslator.npcChatLine(null, store) == null
-                && LineTranslator.npcChatLine("", store) == null);
+        check("沒有東西的不碰", TemplateLookup.npcChatLine(null, store) == null
+                && TemplateLookup.npcChatLine("", store) == null);
     }
 
     private static void realCorpus() {
