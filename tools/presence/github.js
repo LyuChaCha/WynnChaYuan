@@ -53,6 +53,14 @@ export function githubRepository(env) {
         method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
       }), 201);
     },
+    async deleteBranch(branch) {
+      try {
+        const removed = await github('/git/refs/heads/' + branch, { method: 'DELETE' });
+        if (removed.status !== 204) console.error(JSON.stringify({ event: 'branch cleanup failed', branch, status: removed.status }));
+      } catch (error) {
+        console.error(JSON.stringify({ event: 'branch cleanup failed', branch, error: String(error?.message ?? error) }));
+      }
+    },
     async readFile(path, ref) {
       const file = await expectStatus(await github('/contents/' + path + '?ref=' + encodeURIComponent(ref)), 200);
       const current = await file.json();
