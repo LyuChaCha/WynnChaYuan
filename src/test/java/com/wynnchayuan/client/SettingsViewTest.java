@@ -113,6 +113,11 @@ public final class SettingsViewTest {
             privacyShot(out, lang, null, false, true);
         }
         tooltipAboveModel(out);
+        for (String lang : new String[] {"zh_tw", "en_us"}) {
+            for (int value : new int[] {0, 12, 40}) {
+                gapShot(out, lang, value);
+            }
+        }
 
         // 預覽的物品名：語料在「譯名加原文」時回來的已經帶著原文，預覽自己還會再接一次
         // （使用者 2026-10-09 回報畫成「骨弓 (Bony Bow) (Bony Bow)」）
@@ -283,6 +288,19 @@ public final class SettingsViewTest {
         public void raise() {
             events.add("raise");
         }
+    }
+
+    private static void gapShot(File out, String lang, int value) throws Exception {
+        String was = LANG;
+        LANG = lang;
+        Fake fake = new Fake(lang);
+        List<Row.Tab> tabs = fake.tabs();
+        fake.values.put("panel.gap", value);
+        SettingsView view = new SettingsView(tabs, fake, 1);
+        view.showTab(1);
+        AwtCanvas c = render(view, 640, 360, 2);
+        ImageIO.write(c.image, "png", new File(out, lang + "-panel-gap-" + value + ".png"));
+        LANG = was;
     }
 
     private static void tooltipAboveModel(File out) throws Exception {
@@ -686,7 +704,7 @@ public final class SettingsViewTest {
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),
                     segment("panel.side", 0, new Row.Tone[] {pl, pl, pl}, "mode.auto", "mode.right", "mode.left"),
-                    slider("panel.gap", 0, 200, 12, false));
+                    slider("panel.gap", 12, 200, 12, false));
             List<Row> look = List.of(colour("panel.theme"), colour("panel.colour"));
             List<Row> dialogue = List.of(
                     segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
@@ -886,6 +904,9 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
+            if (values.get("panel.gap") instanceof Integer gap) {
+                s.gap = gap;
+            }
             // 示意圖用真的譯文畫：俄文、西文比中文長一倍，疊不疊要看它們
             s.translate = text -> {
                 String hit = corpus.get(text);

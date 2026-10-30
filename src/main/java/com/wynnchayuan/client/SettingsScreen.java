@@ -516,7 +516,7 @@ public final class SettingsScreen extends Screen {
                         () -> cycleTo(cfg()::panelSide, cfg()::cyclePanelSide,
                                 CollectorConfig.PanelSide.AUTO)));
         rows.add(Row.slider("panel.gap", t("panel.gap"), t("panel.gap.hint"))
-                .range(0, 200)
+                .range(com.wynnchayuan.PanelGap.MIN, com.wynnchayuan.PanelGap.MAX)
                 .value(() -> cfg().panelGap())
                 .slide(v -> cfg().setPanelGapLive(v))
                 .format(v -> v + " px")

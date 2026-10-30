@@ -17,7 +17,7 @@ public final class CollectorConfig {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public static final int DEFAULT_PANEL_GAP = 4;
+    public static final int DEFAULT_PANEL_GAP = PanelGap.DEFAULT;
 
     private final Path file;
 
@@ -1186,7 +1186,7 @@ public final class CollectorConfig {
 
     /** 見 {@link #setThemeColorLive}。 */
     public void setPanelGapLive(int px) {
-        int v = Math.max(0, Math.min(px, 200));
+        int v = PanelGap.clamp(px);
         if (v != panelGap) {
             panelGap = v;
             dirty = true;
@@ -1446,7 +1446,7 @@ public final class CollectorConfig {
         if (px == null) {
             return false;
         }
-        panelGap = Math.max(0, Math.min(px, 200));
+        panelGap = PanelGap.clamp(px);
         save();
         return true;
     }
@@ -1761,7 +1761,7 @@ public final class CollectorConfig {
         }
         // 數字一律夾回設定畫面允許的範圍。手改或別的版本寫出的極端值會讓小框
         // 跑到畫面外、或一出現就消失，看起來就像翻譯壞了。
-        panelGap = clamp(integer(o, "panelGap", panelGap), 0, 200);
+        panelGap = PanelGap.clamp(integer(o, "panelGap", panelGap));
         String accent = str(o, "accentColor", accentColor);
         if (accent.matches("#[0-9a-fA-F]{6}")) {
             accentColor = accent;
