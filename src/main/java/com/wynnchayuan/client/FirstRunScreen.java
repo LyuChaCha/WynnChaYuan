@@ -4,6 +4,8 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.FirstRunView;
+import com.wynnchayuan.client.ui.Icons;
+import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Surface;
 import net.minecraft.client.Minecraft;
@@ -76,8 +78,19 @@ public final class FirstRunScreen extends CanvasScreen {
             }
 
             @Override
-            public List<Row.Group> custom() {
-                return groups();
+            public List<Row.Tab> custom() {
+                return tabs();
+            }
+
+            @Override
+            public int tone(Row.Tone tone) {
+                int accent = cfg().themeARGB();
+                return switch (tone) {
+                    case REPLACE -> ModeColours.replace(accent);
+                    case BOTH -> ModeColours.both(accent);
+                    case OFF -> 0x40FFFFFF;
+                    default -> accent;
+                };
             }
 
             @Override
@@ -126,9 +139,10 @@ public final class FirstRunScreen extends CanvasScreen {
     private static final Row.Tone[] BOX_REPLACE_OFF = {
         Row.Tone.ACCENT, Row.Tone.REPLACE, Row.Tone.OFF};
 
-    static List<Row.Group> groups() {
-        List<Row.Group> groups = new ArrayList<>();
-        groups.add(new Row.Group(t("tab.items"), false, List.of(
+    static List<Row.Tab> tabs() {
+        List<Row.Tab> tabs = new ArrayList<>();
+        tabs.add(new Row.Tab("items", t("tab.items"), t("tab.items.about"), Icons.Icon.BOW,
+                Preview.Scene.TOOLTIP, List.of(new Row.Group(t("group.items"), false, List.of(
                 mode("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().tooltipMode().ordinal(),
                         i -> cfg().setTooltipMode(CollectorConfig.TooltipMode.values()[i])),
@@ -137,20 +151,24 @@ public final class FirstRunScreen extends CanvasScreen {
                         () -> cfg().itemNames().ordinal(), i -> {
                             cfg().setItemNames(CollectorConfig.ItemNames.values()[i]);
                             applyNameModes();
-                        }),
+                        }))),
+                new Row.Group(t("group.mods"), false, List.of(
                 toggle("world.wynntils", () -> cfg().wynntilsUi(),
-                        on -> cfg().setWynntilsUi(on)))));
-        groups.add(new Row.Group(t("tab.dialogue"), false, List.of(
+                        on -> cfg().setWynntilsUi(on)))))));
+        tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
+                Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE, List.of(
+                new Row.Group(t("group.dialogue"), false, List.of(
                 mode("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().dialogueMode().ordinal(),
                         i -> cfg().setDialogueMode(CollectorConfig.DialogueMode.values()[i])),
                 mode("dialogue.choices", new String[] {"mode.box", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().choiceMode().ordinal(),
-                        i -> cfg().setChoiceMode(CollectorConfig.DialogueMode.values()[i])))));
+                        i -> cfg().setChoiceMode(CollectorConfig.DialogueMode.values()[i])))))));
         CollectorConfig.DialogueMode[] order = {
             CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
             CollectorConfig.DialogueMode.OFF};
-        groups.add(new Row.Group(t("tab.world"), false, List.of(
+        tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
+                Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, List.of(
                 mode("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().nametagMode().ordinal(),
                         i -> cfg().setNametagMode(CollectorConfig.NametagMode.values()[i])),
@@ -167,14 +185,14 @@ public final class FirstRunScreen extends CanvasScreen {
                 toggle("world.titles", () -> cfg().translateTitles(),
                         on -> cfg().setTranslateTitles(on)),
                 toggle("world.bossbar", () -> cfg().translateBossBar(),
-                        on -> cfg().setTranslateBossBar(on)))));
-        groups.add(new Row.Group(t("group.privacy"), false, List.of(
+                        on -> cfg().setTranslateBossBar(on)))))));
+        tabs.add(new Row.Tab("privacy", t("firstrun.privacy.short"), t("firstrun.privacy.about"),
+                Icons.Icon.LEAF, Preview.Scene.CAPE, List.of(
+                new Row.Group(t("group.privacy"), false, List.of(
                 toggle("privacy.online",
                         () -> cfg().consent() == CollectorConfig.Consent.AGREED,
-                        WynnChaYuan::setConsent),
-                toggle("privacy.optout", () -> cfg().dataOptOut(),
-                        on -> WynnChaYuan.setDataOptOut(on, null)))));
-        return groups;
+                        WynnChaYuan::setConsent))))));
+        return tabs;
     }
 
     public static void clientTick() {
