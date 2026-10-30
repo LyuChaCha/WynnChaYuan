@@ -60,6 +60,10 @@ public final class Presence {
     /** 登記站的 API，跟網站同一個地方。 */
     private static final String API = BASE + "/api";
 
+    public static final String PRIVACY_URL = BASE + "/privacy";
+
+    public static final String GALLERY_URL = BASE + "/capes";
+
     /** 名單多久抓一次。 */
     private static final long LIST_EVERY_MS = 5 * 60_000L;
 
@@ -358,7 +362,7 @@ public final class Presence {
      */
     public static void tick(boolean report, boolean cape, boolean rainbow,
                             java.util.List<String> show) {
-        if (busy) {
+        if (busy || !NetworkGate.registry()) {
             return;
         }
         long now = System.currentTimeMillis();
@@ -595,7 +599,7 @@ public final class Presence {
 
     /** 綁定的結果。 */
     public enum LinkResult {
-        DONE, BAD_CODE, UNKNOWN_CODE, LOGIN_FAILED, FAILED
+        DONE, BAD_CODE, UNKNOWN_CODE, LOGIN_FAILED, FAILED, OFF
     }
 
     /** 綁定碼的樣子：8 個字，沒有長得像的 0／O、1／I。跟 {@code worker.js} 的 LINK_CODE 同一條。 */
@@ -633,6 +637,10 @@ public final class Presence {
      * @param done  結果（在背景執行緒上叫）
      */
     public static void link(String typed, Consumer<LinkResult> done) {
+        if (!NetworkGate.registry()) {
+            done.accept(LinkResult.OFF);
+            return;
+        }
         String code = linkCode(typed);
         if (code == null) {
             done.accept(LinkResult.BAD_CODE);
@@ -665,7 +673,7 @@ public final class Presence {
     public enum Result {
         DONE, TOO_LARGE, BAD_SIZE, BAD_FORMAT, TOO_MANY_FRAMES, NOT_LISTED, GIF_MEMBERS_ONLY,
         BANNED, OFF,
-        SLOW_DOWN, LOGIN_FAILED, FAILED
+        SLOW_DOWN, LOGIN_FAILED, FAILED, PRIVACY
     }
 
     /** 登記站回的理由 → 結果。 */
@@ -696,6 +704,10 @@ public final class Presence {
 
     /** 拿掉自己上傳的披風。 */
     public static void remove(Consumer<Result> done) {
+        if (!NetworkGate.registry()) {
+            done.accept(Result.PRIVACY);
+            return;
+        }
         WORKER.execute(() -> done.accept(change(HttpRequest.newBuilder(
                 URI.create(API + "/cape")).DELETE())));
     }
@@ -745,7 +757,7 @@ public final class Presence {
     public static void site(String page, boolean signIn, Consumer<String> open) {
         WORKER.execute(() -> {
             String url = BASE + page;
-            if (signIn) {
+            if (signIn && NetworkGate.registry()) {
                 try {
                     if (login()) {
                         HttpResponse<byte[]> response = send(HttpRequest.newBuilder(
@@ -794,7 +806,7 @@ public final class Presence {
      * @return 圖檔；沒有、太大、或連不上回 {@code null}
      */
     public static byte[] capeBytes(String id, long version) {
-        if (!isId(id)) {
+        if (!isId(id) || !NetworkGate.registry()) {
             return null;
         }
         try {
@@ -805,5 +817,69 @@ public final class Presence {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public enum DeleteResult {
+        DONE, NOT_FOUND, LOGIN_FAILED, FAILED
+    }
+
+    static DeleteResult deleteResultOf(int status, String body) {
+        if (status == 404) {
+            return DeleteResult.NOT_FOUND;
+        }
+        if (status == 401) {
+            return DeleteResult.LOGIN_FAILED;
+        }
+        if (status != 200) {
+            return DeleteResult.FAILED;
+        }
+        try {
+            JsonObject root = JsonParser.parseString(body).getAsJsonObject();
+            return root.has("ok") && root.get("ok").isJsonPrimitive()
+                    && root.get("ok").getAsJsonPrimitive().isBoolean()
+                    && root.get("ok").getAsBoolean() ? DeleteResult.DONE : DeleteResult.FAILED;
+        } catch (Exception e) {
+            return DeleteResult.FAILED;
+        }
+    }
+
+    public static void deleteMyData(Consumer<DeleteResult> done) {
+        WORKER.execute(() -> {
+            DeleteResult result;
+            try {
+                boolean hadToken = token != null;
+                result = askToDelete();
+                if (result == DeleteResult.LOGIN_FAILED && hadToken) {
+                    result = askToDelete();
+                }
+            } catch (Throwable t) {
+                com.wynnchayuan.translate.ErrorDebug.note("presence.delete", null, t);
+                result = DeleteResult.FAILED;
+            }
+            if (result == DeleteResult.DONE) {
+                forget();
+            }
+            done.accept(result);
+        });
+    }
+
+    private static DeleteResult askToDelete() throws Exception {
+        if (!login()) {
+            return DeleteResult.LOGIN_FAILED;
+        }
+        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(API + "/me/delete"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{}", StandardCharsets.UTF_8)), true);
+        return deleteResultOf(response.statusCode(),
+                new String(response.body(), StandardCharsets.UTF_8));
+    }
+
+    public static void forget() {
+        token = null;
+        member = false;
+        lastHello = 0;
+        lastSaid = null;
+        lastList = 0;
+        roster = Roster.EMPTY;
     }
 }

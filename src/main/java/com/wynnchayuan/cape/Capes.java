@@ -162,7 +162,8 @@ public final class Capes {
      */
     public static Identifier textureFor(String account, java.util.UUID uuid, boolean self,
                                         CollectorConfig config, long now) {
-        if (account == null || config == null || !config.capes()) {
+        if (account == null || config == null || !config.capes()
+                || !com.wynnchayuan.NetworkGate.registry(config)) {
             return null;
         }
         if (self ? !config.ownCape() : Presence.capeHidden(uuid)) {
@@ -364,6 +365,41 @@ public final class Capes {
             }
         }
         return out;
+    }
+
+    public static int forgetSelf(java.util.UUID me) {
+        String id = Presence.idOf(me);
+        Path dir = folder();
+        if (id == null || dir == null) {
+            return 0;
+        }
+        for (String key : List.copyOf(STATE.keySet())) {
+            if (key.startsWith("up:" + id + ":")) {
+                release(STATE.remove(key));
+            }
+        }
+        return deleteUploaded(dir.resolve("cache"), id);
+    }
+
+    public static int deleteUploaded(Path cache, String id) {
+        int removed = 0;
+        if (!Files.isDirectory(cache)) {
+            return 0;
+        }
+        try (java.util.stream.Stream<Path> files = Files.list(cache)) {
+            for (Path file : files.toList()) {
+                String name = file.getFileName().toString();
+                if (name.startsWith("up-" + id + "-")) {
+                    try {
+                        Files.deleteIfExists(file);
+                        removed++;
+                    } catch (Exception ignored) {
+                    }
+                }
+            }
+        } catch (Exception ignored) {
+        }
+        return removed;
     }
 
     /** 在畫圖的執行緒上把每一格做成貼圖。 */
