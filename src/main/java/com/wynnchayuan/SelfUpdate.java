@@ -92,7 +92,7 @@ public final class SelfUpdate {
      * <p>開發環境裡模組是一個資料夾不是 jar，沒有東西可以換；那時候這個功能不出現。
      */
     public static boolean available() {
-        return ownJar() != null;
+        return NetworkGate.online() && ownJar() != null;
     }
 
     /**
@@ -194,6 +194,10 @@ public final class SelfUpdate {
     public static synchronized void start(String version) {
         trace("按下更新：要更新到 " + version + "，目前是 " + WynnChaYuan.version() + "，狀態 " + state);
         if (state == State.DOWNLOADING || state == State.READY) {
+            return;
+        }
+        if (!NetworkGate.online()) {
+            trace("連線功能沒有同意，不下載");
             return;
         }
         if (!plausibleVersion(version)) {
@@ -420,6 +424,10 @@ public final class SelfUpdate {
      * 不說的話看起來就是點了沒反應。
      */
     public static void startFromChat(net.minecraft.client.Minecraft client) {
+        if (!NetworkGate.online()) {
+            chat(client, com.wynnchayuan.client.T.c("chat.update.offline"));
+            return;
+        }
         String latest = Releases.newer();
         if (latest == null) {
             chat(client, com.wynnchayuan.client.T.c("chat.update.none"));
