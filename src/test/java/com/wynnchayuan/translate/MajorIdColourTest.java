@@ -577,24 +577,24 @@ public final class MajorIdColourTest {
     private static void stems() {
         System.out.println("\n  -- 複數與所有格的詞幹 --");
 
-        check("複數：Marks -> Mark", "Mark".equals(LineTranslator.stemOf("Marks")));
+        check("複數：Marks -> Mark", "Mark".equals(BlockTranslator.stemOf("Marks")));
         check("複數：Mirror Clones -> Mirror Clone",
-                "Mirror Clone".equals(LineTranslator.stemOf("Mirror Clones")));
+                "Mirror Clone".equals(BlockTranslator.stemOf("Mirror Clones")));
         check("所有格：Multihit's -> Multihit",
-                "Multihit".equals(LineTranslator.stemOf("Multihit's")));
+                "Multihit".equals(BlockTranslator.stemOf("Multihit's")));
         check("全形撇號也認得",
-                "Dash".equals(LineTranslator.stemOf("Dash’s")));
-        check("ss 結尾不當成複數（Progress）", LineTranslator.stemOf("Progress") == null);
-        check("太短的不剝（Was）", LineTranslator.stemOf("Was") == null);
-        check("沒有詞尾的回 null", LineTranslator.stemOf("Trick") == null);
+                "Dash".equals(BlockTranslator.stemOf("Dash’s")));
+        check("ss 結尾不當成複數（Progress）", BlockTranslator.stemOf("Progress") == null);
+        check("太短的不剝（Was）", BlockTranslator.stemOf("Was") == null);
+        check("沒有詞尾的回 null", BlockTranslator.stemOf("Trick") == null);
 
         check("譯文裡自成一個詞才算",
-                LineTranslator.standsAlone("擁有 2+ 層 Mark 的敵人", "Mark"));
+                BlockTranslator.standsAlone("擁有 2+ 層 Mark 的敵人", "Mark"));
         check("★ 卡在 Marked 裡面的不算",
-                !LineTranslator.standsAlone("前置技能: Marked", "Mark"));
-        check("句尾也算", LineTranslator.standsAlone("消耗所有 Mark", "Mark"));
-        check("被中文夾著也算", LineTranslator.standsAlone("引爆 Trick，造成傷害", "Trick"));
-        check("完全沒出現就不算", !LineTranslator.standsAlone("沒有這個詞", "Mark"));
+                !BlockTranslator.standsAlone("前置技能: Marked", "Mark"));
+        check("句尾也算", BlockTranslator.standsAlone("消耗所有 Mark", "Mark"));
+        check("被中文夾著也算", BlockTranslator.standsAlone("引爆 Trick，造成傷害", "Trick"));
+        check("完全沒出現就不算", !BlockTranslator.standsAlone("沒有這個詞", "Mark"));
     }
 
     private static void check(String what, boolean ok) {

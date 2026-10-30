@@ -137,13 +137,13 @@ public final class ChatUnwrapTest {
         String template = G + " starts in {~}m {~}s! ({~}\n"
                 + G + " blocks away) craft " + G + " Boots";
         java.util.List<com.wynnchayuan.capture.LineParts.Piece> kept =
-                LineTranslator.unwrappedGlyphs(template, all);
+                TemplateRenderer.unwrappedGlyphs(template, all);
         report("續行的圖示拿掉、其餘留著（實際："
                         + kept.stream().map(com.wynnchayuan.capture.LineParts.Piece::text).toList() + "）",
                 kept.size() == 2 && kept.get(0).text().equals("A")
                         && kept.get(1).text().equals("C"));
 
-        java.util.List<com.wynnchayuan.capture.LineParts.Piece> flat = LineTranslator.unwrappedGlyphs(
+        java.util.List<com.wynnchayuan.capture.LineParts.Piece> flat = TemplateRenderer.unwrappedGlyphs(
                 G + " starts in {~}m! craft " + G + " Boots",
                 java.util.List.of(all.get(0), all.get(2)));
         report("沒有換行時一個都不少", flat.size() == 2);

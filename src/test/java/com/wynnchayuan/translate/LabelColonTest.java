@@ -45,13 +45,13 @@ public final class LabelColonTest {
         for (String[] pair : new String[][] {
                 {"Range:", "施放範圍"}, {"Total Damage:", "總傷害"},
                 {"Duration:", "持續時間"}}) {
-            String got = LineTranslator.labelHead(glyph + " " + pair[0], store);
+            String got = BlockTranslator.labelHead(glyph + " " + pair[0], store);
             check("只收帶冒號版本的標籤也查得到：" + pair[0] + "（拿到：[" + got + "]）",
                     got != null && got.contains(pair[1]));
         }
         check("不認得的標籤還是 null",
-                LineTranslator.labelHead(glyph + " Nonexistent Label:", store) == null);
-        String head = LineTranslator.labelHead(glyph + " Range:", store);
+                BlockTranslator.labelHead(glyph + " Nonexistent Label:", store) == null);
+        String head = BlockTranslator.labelHead(glyph + " Range:", store);
         check("名稱自帶冒號（" + head + "）", head != null && head.endsWith(":"));
 
         String search = look("- Name Contains: a", store, false);

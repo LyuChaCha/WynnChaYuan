@@ -71,8 +71,8 @@ public final class GlyphHugTest {
     }
 
     private static void hugsStillWork(TranslationStore store) {
-        check("中括號仍算黏著", LineTranslator.hugs('['));
-        check("空白仍不算黏著", !LineTranslator.hugs(' '));
+        check("中括號仍算黏著", TemplateRenderer.hugs('['));
+        check("空白仍不算黏著", !TemplateRenderer.hugs(' '));
         check("語料裡的鍵沒被動到", store != null);
     }
 

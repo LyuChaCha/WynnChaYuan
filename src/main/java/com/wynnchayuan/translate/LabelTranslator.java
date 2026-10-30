@@ -59,9 +59,9 @@ final class LabelTranslator {
     private static Component rebuildLabel(StyledText label, String translated,
                                           LineParts parts, TranslationStore store) {
         String coloured = labelColours(label, parts, translated, store);
-        Component rebuilt = LineTranslator.rebuild(coloured, parts, store);
+        Component rebuilt = TemplateRenderer.rebuild(coloured, parts, store);
         if (rebuilt == null && !coloured.equals(translated)) {
-            rebuilt = LineTranslator.rebuild(translated, parts, store);
+            rebuilt = TemplateRenderer.rebuild(translated, parts, store);
         }
         return rebuilt;
     }

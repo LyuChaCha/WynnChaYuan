@@ -183,42 +183,42 @@ public final class ColumnCentreTest {
         List<LineParts.Piece> accents = List.of(new LineParts.Piece("地屬性", green));
 
         String[] split = {"並提高你能造成的 {#} 地", "屬性傷害"};
-        String[] fixed = LineTranslator.keepAccentsWhole(split, accents);
+        String[] fixed = TemplateRenderer.keepAccentsWhole(split, accents);
         check("被切開的重點詞會整個搬到下一行，圖示跟著走（實際 "
                         + fixed[0] + " ⏎ " + fixed[1] + "）",
                 fixed[0].equals("並提高你能造成的 ") && fixed[1].equals("{#} 地屬性傷害"));
 
         String[] whole = {"並提高你能造成的 {#} 地屬性", "傷害"};
         check("沒被切到就原樣不動",
-                LineTranslator.keepAccentsWhole(whole, accents)[0].endsWith("地屬性"));
+                TemplateRenderer.keepAccentsWhole(whole, accents)[0].endsWith("地屬性"));
 
         String[] withToken = {"造成的 {#}", "地屬性傷害"};
         List<LineParts.Piece> odd = List.of(new LineParts.Piece("{#} 地", green));
         check("含佔位符的片段不搬",
-                LineTranslator.keepAccentsWhole(withToken, odd)[0].endsWith("{#}"));
+                TemplateRenderer.keepAccentsWhole(withToken, odd)[0].endsWith("{#}"));
 
         check("只有一行時什麼都不做",
-                LineTranslator.keepAccentsWhole(new String[] {"地屬性傷害"}, accents).length == 1);
+                TemplateRenderer.keepAccentsWhole(new String[] {"地屬性傷害"}, accents).length == 1);
     }
 
     private static void huggingPunctuation() {
-        check("中括號緊貼數值，算黏著", LineTranslator.hugs('['));
-        check("斜線緊貼數值，算黏著", LineTranslator.hugs('/'));
-        check("減號緊貼數值，算黏著", LineTranslator.hugs('-'));
-        check("空白不算 —— 那是詞距不是黏著", !LineTranslator.hugs(' '));
-        check("方塊字不算", !LineTranslator.hugs('傷'));
-        check("英文字不算", !LineTranslator.hugs('A'));
-        check("數字不算", !LineTranslator.hugs('7'));
-        check("左圓括號不算 —— 那是註解的界線", !LineTranslator.hugs('('));
-        check("右圓括號不算", !LineTranslator.hugs(')'));
+        check("中括號緊貼數值，算黏著", TemplateRenderer.hugs('['));
+        check("斜線緊貼數值，算黏著", TemplateRenderer.hugs('/'));
+        check("減號緊貼數值，算黏著", TemplateRenderer.hugs('-'));
+        check("空白不算 —— 那是詞距不是黏著", !TemplateRenderer.hugs(' '));
+        check("方塊字不算", !TemplateRenderer.hugs('傷'));
+        check("英文字不算", !TemplateRenderer.hugs('A'));
+        check("數字不算", !TemplateRenderer.hugs('7'));
+        check("左圓括號不算 —— 那是註解的界線", !TemplateRenderer.hugs('('));
+        check("右圓括號不算", !TemplateRenderer.hugs(')'));
 
         Style next = Style.EMPTY;
         check("整段都是標點時跟後面那個佔位符走",
-                LineTranslator.leadTakesNext("/", 1, next));
+                TemplateRenderer.leadTakesNext("/", 1, next));
         check("後面沒有佔位符就留給前面",
-                !LineTranslator.leadTakesNext("/", 1, null));
+                !TemplateRenderer.leadTakesNext("/", 1, null));
         check("前面還有文字時開頭那截仍歸前一段",
-                !LineTranslator.leadTakesNext(" 抄寫 [", 1, next));
+                !TemplateRenderer.leadTakesNext(" 抄寫 [", 1, next));
 
         unitSuffix();
     }
@@ -226,25 +226,25 @@ public final class ColumnCentreTest {
     private static void unitSuffix() {
         int n = 8;
         check("s 緊貼數值時算單位",
-              LineTranslator.unitLength("s [37.8%]", true, 0, n) == 1);
+              TemplateRenderer.unitLength("s [37.8%]", true, 0, n) == 1);
         check("stx 也算（綠寶石的堆疊單位）",
-              LineTranslator.unitLength("stx", true, 0, 3) == 3);
+              TemplateRenderer.unitLength("stx", true, 0, 3) == 3);
         check("整段就是單位時也認得",
-              LineTranslator.unitLength("s", true, 0, 1) == 1);
+              TemplateRenderer.unitLength("s", true, 0, 1) == 1);
 
         check("前一個不是數值就不算",
-              LineTranslator.unitLength("s [37.8%]", false, 0, n) == 0);
+              TemplateRenderer.unitLength("s [37.8%]", false, 0, n) == 0);
         check("中間隔著標點就不算緊貼",
-              LineTranslator.unitLength("s [37.8%]", true, 1, n) == 0);
+              TemplateRenderer.unitLength("s [37.8%]", true, 1, n) == 0);
         check("後面還接著字母的是單字不是單位",
-              LineTranslator.unitLength("seconds", true, 0, 7) == 0);
+              TemplateRenderer.unitLength("seconds", true, 0, 7) == 0);
         check("超過三個字母不算",
-              LineTranslator.unitLength("abcd ", true, 0, 5) == 0);
-        check("大寫不算", LineTranslator.unitLength("S [1]", true, 0, n) == 0);
+              TemplateRenderer.unitLength("abcd ", true, 0, 5) == 0);
+        check("大寫不算", TemplateRenderer.unitLength("S [1]", true, 0, n) == 0);
         check("中文不算——「{~} 秒」這種寫法不受影響",
-              LineTranslator.unitLength(" 秒", true, 0, 2) == 0);
+              TemplateRenderer.unitLength(" 秒", true, 0, 2) == 0);
         check("空白開頭不算",
-              LineTranslator.unitLength(" x Doom Stone", true, 0, 13) == 0);
+              TemplateRenderer.unitLength(" x Doom Stone", true, 0, 13) == 0);
     }
 
     private static void sectionCodes() {

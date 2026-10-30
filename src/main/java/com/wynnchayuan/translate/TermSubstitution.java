@@ -149,7 +149,7 @@ final class TermSubstitution {
             if (core.isEmpty()) {
                 continue;
             }
-            LineTranslator.addStem(out, core, accent.style(), translated);
+            BlockTranslator.addStem(out, core, accent.style(), translated);
             String zh = store.lookup(core);
             if (zh == null || zh.isBlank()) {
                 zh = store.lookupTerm(core);
