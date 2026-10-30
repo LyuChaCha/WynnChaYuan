@@ -1,8 +1,8 @@
 import { moderator } from './admin.js';
-import { DISCORD_ID, account, discordSession, who } from './auth.js';
+import { DISCORD_ID, account, discordSession, requestUser } from './auth.js';
 import { LANG_LABEL } from './discord-bot.js';
 import { githubClient } from './github.js';
-import { clip, hex, json, no, readJson } from './http.js';
+import { clip, hex, json, refuse, readJson } from './http.js';
 import { claimSlot, parseRecord } from './kv.js';
 import { ownerEntry } from './privacy.js';
 import { TR_BODY, TR_LANGS, trList } from './translate.js';
@@ -29,11 +29,11 @@ export function feedbackCheck(input) {
   if (!input || typeof input !== 'object') return { why: 'bad request' };
   const cat = String(input.cat || '');
   if (!FEEDBACK_CATS.includes(cat)) return { why: 'bad category' };
-  const tidy = (s) => String(s).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '');
-  const msg = typeof input.msg === 'string' ? tidy(input.msg).trim() : '';
+  const maintainCapes = (s) => String(s).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '');
+  const msg = typeof input.msg === 'string' ? maintainCapes(input.msg).trim() : '';
   if (msg.length < FEEDBACK_MIN) return { why: 'too short' };
   if (msg.length > FEEDBACK_MAX) return { why: 'too long' };
-  const where = typeof input.where === 'string' ? tidy(input.where).replace(/\s+/g, ' ').trim() : '';
+  const where = typeof input.where === 'string' ? maintainCapes(input.where).replace(/\s+/g, ' ').trim() : '';
   if (where.length > FEEDBACK_WHERE_MAX) return { why: 'where too long' };
   const lang = TR_LANGS.includes(input.lang) ? input.lang : null;
   return { entry: { cat, msg, where, lang } };
@@ -42,7 +42,7 @@ export function feedbackCheck(input) {
 async function feedbackPerson(request, env, now) {
   const session = await discordSession(request, env, now);
   if (session) return { id: session.id, name: session.account.n || session.id };
-  const user = await who(request, env, now);
+  const user = await requestUser(request, env, now);
   if (!user) return null;
   const discord = user.discord || await env.CORPUS.get('l:' + user.uuid);
   const found = discord ? await account(env, discord) : null;
@@ -131,10 +131,10 @@ export async function submitFeedback(env, person, input, via, now) {
 
 export async function handleFeedback(request, env, now) {
   const person = await feedbackPerson(request, env, now);
-  if (!person) return no('login first', 401);
-  if (person.error) return no(person.error, 401);
+  if (!person) return refuse('login first', 401);
+  if (person.error) return refuse(person.error, 401);
   const body = await readJson(request, TR_BODY);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const got = await submitFeedback(env, person, body, 'web', now);
   if (got.why) return json({ ok: false, why: got.why, until: got.until }, got.status);
   const { record } = got;
@@ -143,7 +143,7 @@ export async function handleFeedback(request, env, now) {
 }
 
 export async function handleFeedbackList(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const url = new URL(request.url);
   const cat = url.searchParams.get('cat') || '';
   const st = url.searchParams.get('st') || '';
@@ -161,19 +161,19 @@ export async function handleFeedbackList(request, env, now) {
 
 async function feedbackFor(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return { error: no('forbidden', 403) };
+  if (!by) return { error: refuse('forbidden', 403) };
   const body = await readJson(request);
   const id = body ? String(body.id || '') : '';
-  if (!FEEDBACK_ID.test(id)) return { error: no('bad request') };
+  if (!FEEDBACK_ID.test(id)) return { error: refuse('bad request') };
   const raw = await env.CORPUS.get('fb:' + id);
-  if (!raw) return { error: no('not found', 404) };
+  if (!raw) return { error: refuse('not found', 404) };
   return { by, body, record: parseRecord(raw) };
 }
 
 export async function handleFeedbackStatus(request, env, now) {
   const got = await feedbackFor(request, env, now);
   if (got.error) return got.error;
-  if (!['open', 'done'].includes(got.body.st)) return no('bad request');
+  if (!['open', 'done'].includes(got.body.st)) return refuse('bad request');
   got.record.st = got.body.st;
   if (got.body.st === 'done') got.record.done = { by: got.by, t: now };
   else delete got.record.done;
@@ -192,7 +192,7 @@ export async function handleFeedbackDelete(request, env, now) {
 export async function handleFeedbackIssue(request, env, now) {
   const got = await feedbackFor(request, env, now);
   if (got.error) return got.error;
-  if (got.record.cat !== 'translation') return no('not a translation', 409);
+  if (got.record.cat !== 'translation') return refuse('not a translation', 409);
   if (got.record.issue) return json({ ok: true, item: got.record });
   await fileFeedbackIssue(env, got.record);
   return got.record.issue ? json({ ok: true, item: got.record })

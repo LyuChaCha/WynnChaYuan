@@ -1,6 +1,6 @@
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { isMember } from './capes.js';
-import { NAME, UUID, fromBase64, hex, json, no, readJson, redirect, timingSafeEqual } from './http.js';
+import { NAME, UUID, fromBase64, hex, json, refuse, readJson, redirect, timingSafeEqual } from './http.js';
 
 export const LOGIN_PREFIX = 'wynnchayuan.com login\n';
 
@@ -71,7 +71,7 @@ async function readWebToken(env, token, now) {
   return timingSafeEqual(expected, signature) ? { uuid, name, web: true } : null;
 }
 
-export async function who(request, env, now) {
+export async function requestUser(request, env, now) {
   const header = request.headers.get('authorization') || '';
   if (!header.startsWith('Bearer ')) return null;
   const token = header.slice(7);
@@ -173,10 +173,10 @@ async function bind(env, id, uuid, name, now) {
 }
 
 export async function handleLinkIntent(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
-  if (user.discord) return no('already linked', 409);
-  if (!discordOn(env)) return no('discord off', 503);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
+  if (user.discord) return refuse('already linked', 409);
+  if (!discordOn(env)) return refuse('discord off', 503);
   const id = hex(crypto.getRandomValues(new Uint8Array(16)));
   await env.CORPUS.put('intent:' + id, JSON.stringify({ u: user.uuid, m: user.name }),
     { expirationTtl: LINK_TTL_SECONDS });
@@ -269,7 +269,7 @@ export async function handleDiscordCallback(request, env, now) {
 
 export async function handleLinkStart(request, env, now) {
   const session = await discordSession(request, env, now);
-  if (!session) return no('login first', 401);
+  if (!session) return refuse('login first', 401);
   const bytes = crypto.getRandomValues(new Uint8Array(8));
   let code = '';
   for (const b of bytes) code += LINK_ALPHABET[b % LINK_ALPHABET.length];
@@ -278,15 +278,15 @@ export async function handleLinkStart(request, env, now) {
 }
 
 export async function handleLink(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
-  if (user.discord) return no('use the game', 403);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
+  if (user.discord) return refuse('use the game', 403);
   const body = await readJson(request);
-  if (body === undefined) return no('too large', 413);
+  if (body === undefined) return refuse('too large', 413);
   const code = body && typeof body.code === 'string' ? body.code.trim().toUpperCase() : '';
-  if (!LINK_CODE.test(code)) return no('bad code');
+  if (!LINK_CODE.test(code)) return refuse('bad code');
   const id = await env.CORPUS.get('link:' + code);
-  if (!id || !DISCORD_ID.test(id)) return no('unknown code', 404);
+  if (!id || !DISCORD_ID.test(id)) return refuse('unknown code', 404);
   const record = await bind(env, id, user.uuid, user.name, now);
   await env.CORPUS.delete('link:' + code);
   return json({ ok: true, discord: record.n || '' });
@@ -294,7 +294,7 @@ export async function handleLink(request, env, now) {
 
 export async function handleUnlink(request, env, now) {
   const session = await discordSession(request, env, now);
-  if (!session) return no('login first', 401);
+  if (!session) return refuse('login first', 401);
   const record = session.account;
   if (record.u) {
     await env.CORPUS.delete('l:' + record.u);
@@ -391,22 +391,22 @@ async function profileName(env, textures, uuid, now) {
 
 export async function handleLogin(request, env, now) {
   const body = await readJson(request, MAX_LOGIN_BODY);
-  if (body === undefined) return no('too large', 413);
+  if (body === undefined) return refuse('too large', 413);
   if (!body || typeof body.uuid !== 'string' || !UUID.test(body.uuid)
       || !Number.isSafeInteger(body.expiresAt) || body.expiresAt <= 0) {
-    return no('bad login');
+    return refuse('bad login');
   }
   const publicKey = fromBase64(body.publicKey, 1024);
   const keySignature = fromBase64(body.keySignature, 1024);
   const signature = fromBase64(body.signature, 1024);
   if (!publicKey || !keySignature || !signature || typeof body.challenge !== 'string') {
-    return no('bad login');
+    return refuse('bad login');
   }
-  if (!await challengeFresh(env, body.challenge, now)) return no('stale challenge', 403);
-  if (body.expiresAt <= now) return no('certificate expired', 403);
+  if (!await challengeFresh(env, body.challenge, now)) return refuse('stale challenge', 403);
+  if (body.expiresAt <= now) return refuse('certificate expired', 403);
   if (!await signedBy(mojangKeys(env, 'playerCertificateKeys'), 'SHA-1', keySignature,
     certificatePayload(body.uuid, body.expiresAt, publicKey))) {
-    return no('bad certificate', 403);
+    return refuse('bad certificate', 403);
   }
   let answered = false;
   try {
@@ -417,17 +417,17 @@ export async function handleLogin(request, env, now) {
   } catch (e) {
     answered = false;
   }
-  if (!answered) return no('bad signature', 403);
+  if (!answered) return refuse('bad signature', 403);
   const name = await profileName(env, body.textures, body.uuid, now);
-  if (!name) return no('bad profile', 403);
+  if (!name) return refuse('bad profile', 403);
   await refreshLinkedName(env, body.uuid, name);
   return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid),
     member: await isMember(env, { uuid: body.uuid, name }, now) });
 }
 
 export async function handleWebLink(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const token = await issueWebToken(env, user.uuid, user.name, now);
   return json({ ok: true, url: new URL(request.url).origin + '/capes#t=' + token });
 }

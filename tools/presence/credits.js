@@ -1,6 +1,6 @@
 import { moderator } from './admin.js';
 import { GitHubError, githubRepository, markdownText, withoutMentions } from './github.js';
-import { NAME, json, no, plainUuid, readBounded, readJson } from './http.js';
+import { NAME, json, refuse, plainUuid, readBounded, readJson } from './http.js';
 import { TR_LANGS } from './translate.js';
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
@@ -36,7 +36,7 @@ export function teamOf(sections) {
 
 export async function handleTeam(env, now) {
   const list = await credits(now);
-  if (!list) return no('try later', 503);
+  if (!list) return refuse('try later', 503);
   const guilds = (await guildList(env, now)).map((guild) => ({
     slug: guild.slug, name: guild.name, tag: guild.tag || '', icon: guild.i || 0, banner: guild.b || 0 }));
   return json({ team: list.team, guilds }, 200, { 'cache-control': 'public, max-age=300' });
@@ -94,36 +94,36 @@ async function freshGuilds(env, now) {
 }
 
 export async function handleGuilds(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   return json({ guilds: await freshGuilds(env, now) }, 200, { 'cache-control': 'no-store' });
 }
 
 export async function handleGuildAdd(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
+  if (!by) return refuse('forbidden', 403);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const slug = guildSlug(body.name);
-  if (!slug) return no('bad name');
+  if (!slug) return refuse('bad name');
   const tag = body.tag == null ? '' : String(body.tag).trim();
-  if (tag && !GUILD_TAG.test(tag)) return no('bad tag');
+  if (tag && !GUILD_TAG.test(tag)) return refuse('bad tag');
   const list = await freshGuilds(env, now);
-  if (list.some((guild) => guild.slug === slug)) return no('already', 409);
-  if (list.length >= MAX_GUILDS) return no('too many', 409);
+  if (list.some((guild) => guild.slug === slug)) return refuse('already', 409);
+  if (list.length >= MAX_GUILDS) return refuse('too many', 409);
   list.push({ slug, name: String(body.name).trim().replace(/\s+/g, ' '), tag, t: now, by, i: 0, b: 0 });
   await saveGuilds(env, list, now);
   return json({ ok: true, slug });
 }
 
 export async function handleGuildImage(request, env, now, slug, kind) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const bytes = await readBounded(request, MAX_GUILD_IMAGE);
-  if (!bytes) return no('too large', 413);
+  if (!bytes) return refuse('too large', 413);
   const type = imageType(bytes);
-  if (!type) return no('bad image');
+  if (!type) return refuse('bad image');
   const list = await freshGuilds(env, now);
   const guild = list.find((one) => one.slug === slug);
-  if (!guild) return no('no such guild', 404);
+  if (!guild) return refuse('no such guild', 404);
   await env.CORPUS.put('gimg:' + slug + ':' + kind, bytes, { metadata: { t: type } });
   guild[kind === 'icon' ? 'i' : 'b'] = now;
   await saveGuilds(env, list, now);
@@ -131,10 +131,10 @@ export async function handleGuildImage(request, env, now, slug, kind) {
 }
 
 export async function handleGuildRemove(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  if (!await moderator(request, env, now)) return refuse('forbidden', 403);
   const body = await readJson(request);
   const slug = body && typeof body.slug === 'string' ? body.slug : '';
-  if (!GUILD_SLUG.test(slug)) return no('bad request');
+  if (!GUILD_SLUG.test(slug)) return refuse('bad request');
   const list = await freshGuilds(env, now);
   await saveGuilds(env, list.filter((guild) => guild.slug !== slug), now);
   await env.CORPUS.delete('gimg:' + slug + ':icon');
@@ -144,7 +144,7 @@ export async function handleGuildRemove(request, env, now) {
 
 export async function handleGuildPicture(env, slug, kind) {
   const found = await env.CORPUS.getWithMetadata('gimg:' + slug + ':' + kind, { type: 'arrayBuffer' });
-  if (!found || !found.value || !found.metadata) return no('not found', 404);
+  if (!found || !found.value || !found.metadata) return refuse('not found', 404);
   return new Response(found.value, {
     headers: {
       'content-type': found.metadata.t,
@@ -281,16 +281,16 @@ export function addMember(text, entry) {
 
 export async function handleAddCredit(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
-  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  if (!by) return refuse('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return refuse('github not configured', 503);
   const entry = await readJson(request);
-  if (!entry) return no('bad request');
+  if (!entry) return refuse('bad request');
   const repo = githubRepository(env);
   let branch = null;
   try {
     const current = await repo.readFile(CREDITS_PATH, 'main');
     const changed = addMember(current.text, entry);
-    if (changed.why) return no(changed.why, changed.why === 'already listed' ? 409 : 400);
+    if (changed.why) return refuse(changed.why, changed.why === 'already listed' ? 409 : 400);
     const name = 'credits/add-' + entry.mc.toLowerCase() + '-' + now;
     await repo.createBranch(name);
     branch = name;
@@ -306,7 +306,7 @@ export async function handleAddCredit(request, env, now) {
     return json({ ok: true, url });
   } catch (e) {
     if (branch) await repo.deleteBranch(branch);
-    return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
+    return refuse(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
 
@@ -378,14 +378,14 @@ export async function commitTeams(env, by, now, change) {
 
 export async function handleCreditTeams(request, env, now) {
   const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
-  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  if (!by) return refuse('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return refuse('github not configured', 503);
   const body = await readJson(request);
-  if (!body) return no('bad request');
+  if (!body) return refuse('bad request');
   const input = teamsInput(body);
-  if (input.why) return no(input.why);
+  if (input.why) return refuse(input.why);
   const done = await commitTeams(env, by, now, (text) => setMemberTeams(text, input));
-  if (done.why) return no(done.why, done.status);
+  if (done.why) return refuse(done.why, done.status);
   return json({ ok: true, url: done.url, added: done.added });
 }
 

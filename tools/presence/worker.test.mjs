@@ -3248,7 +3248,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   } finally {
     console.error = realError;
   }
-  check('★ 每天的排程：一件失敗記下來，另一件照樣跑', cronLogs.some((line) => line.includes('scheduled failed') && line.includes('tidy')));
+  check('★ 每天的排程：一件失敗記下來，另一件照樣跑', cronLogs.some((line) => line.includes('scheduled failed') && line.includes('maintainCapes')));
 }
 
 {

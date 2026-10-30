@@ -2,7 +2,7 @@ import { authority } from './admin.js';
 import { DISCORD_ID } from './auth.js';
 import { FIGURE_STYLE, allCapes, handleCapePreview, listed } from './capes.js';
 import { FEEDBACK_MAX, FEEDBACK_MIN, FEEDBACK_PER_HOUR, FEEDBACK_WHERE_MAX, submitFeedback } from './feedback.js';
-import { NAME, UUID, botFmt, clip, json, no } from './http.js';
+import { NAME, UUID, botFmt, clip, json, refuse } from './http.js';
 import { storedList } from './presence.js';
 import { TR_LANGS, handleTrIndex, trList } from './translate.js';
 
@@ -320,7 +320,7 @@ export async function handleDiscordInteraction(request, env, ctx) {
   try {
     interaction = JSON.parse(body);
   } catch (e) {
-    return no('bad request');
+    return refuse('bad request');
   }
   if (interaction.type === 1) return json({ type: 1 });
   if (interaction.type !== 2) return json({ type: 4, data: { content: '…', flags: 64 } });
@@ -345,7 +345,7 @@ export async function handleDiscordInteraction(request, env, ctx) {
 
 export async function handleDiscordInfo(request, env, now) {
   const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
+  if (!mine || !mine.developer) return refuse('forbidden', 403);
   const id = env.DISCORD_CLIENT_ID || '';
   let check = null;
   if (env.DISCORD_BOT_TOKEN) {
@@ -382,18 +382,18 @@ export async function handleDiscordInfo(request, env, now) {
 
 export async function handleDiscordRegister(request, env, now) {
   const mine = await authority(request, env, now);
-  if (!mine || !mine.developer) return no('forbidden', 403);
-  if (!env.DISCORD_BOT_TOKEN || !env.DISCORD_CLIENT_ID) return no('discord bot not configured', 503);
+  if (!mine || !mine.developer) return refuse('forbidden', 403);
+  if (!env.DISCORD_BOT_TOKEN || !env.DISCORD_CLIENT_ID) return refuse('discord bot not configured', 503);
   try {
     const res = await fetch(DISCORD_V10 + '/applications/' + env.DISCORD_CLIENT_ID + '/commands', {
       method: 'PUT',
       headers: { authorization: 'Bot ' + env.DISCORD_BOT_TOKEN, 'content-type': 'application/json' },
       body: JSON.stringify(DISCORD_COMMANDS),
     });
-    if (res.status !== 200) return no('discord ' + res.status, 502);
+    if (res.status !== 200) return refuse('discord ' + res.status, 502);
     const list = await res.json();
     return json({ ok: true, commands: Array.isArray(list) ? list.map((c) => c.name) : [] });
   } catch (e) {
-    return no('discord unreachable', 502);
+    return refuse('discord unreachable', 502);
   }
 }

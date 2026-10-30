@@ -1,6 +1,6 @@
-import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
+import { DISCORD_ID, account, discordSession, publicId, requestUser } from './auth.js';
 import { allHistory, discard, favsOf, idleMap, starMap, sweep } from './capes.js';
-import { HASH, UUID, hex, json, no } from './http.js';
+import { HASH, UUID, hex, json, refuse } from './http.js';
 import { OperationBudgetExhausted, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { dropFromList, storedList } from './presence.js';
 import { pollMeta, trMeta } from './translate.js';
@@ -269,9 +269,9 @@ export async function eraseSubject(env, subject, now) {
 }
 
 export async function handleDeleteMe(request, env, now) {
-  const user = await who(request, env, now);
+  const user = await requestUser(request, env, now);
   const session = user ? null : await discordSession(request, env, now);
-  if (!user && !session) return no('login first', 401);
+  if (!user && !session) return refuse('login first', 401);
   const discord = user ? user.discord || await env.CORPUS.get('l:' + user.uuid) : session.id;
   const subject = { uuid: user ? user.uuid : null, discord: discord && DISCORD_ID.test(discord) ? discord : null };
   const outcome = await eraseSubject(env, subject, now);

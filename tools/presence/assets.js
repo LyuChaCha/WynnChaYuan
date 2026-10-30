@@ -3,7 +3,7 @@ import { FONTS } from './demo-fonts.js';
 import { TEXTURES } from './demo-textures.js';
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
-import { base64Bytes, no } from './http.js';
+import { base64Bytes, refuse } from './http.js';
 import { scriptSource } from './site-scripts.js';
 
 export const ICONS = {
@@ -45,7 +45,7 @@ export function page(html, lang, status = 200) {
 export function font(path) {
   const found = /^\/font\/px-([a-z]{2})\.ttf$/.exec(path);
   const one = found && Object.hasOwn(FONTS, found[1]) ? FONTS[found[1]] : null;
-  if (!one) return no('not found', 404);
+  if (!one) return refuse('not found', 404);
   return new Response(base64Bytes(one.data), {
     status: 200,
     headers: {
@@ -60,7 +60,7 @@ export function texture(path) {
   const from = path.startsWith('/template/') ? CAPE_TEMPLATES : TEXTURES;
   const name = path.slice(path.indexOf('/', 1) + 1);
   const one = Object.hasOwn(from, name) ? from[name] : null;
-  if (!one) return no('not found', 404);
+  if (!one) return refuse('not found', 404);
   return new Response(base64Bytes(one.data), {
     status: 200,
     headers: {
@@ -73,7 +73,7 @@ export function texture(path) {
 
 export function script(path) {
   const code = scriptSource(path.slice('/js/'.length));
-  if (code === null) return no('not found', 404);
+  if (code === null) return refuse('not found', 404);
   return new Response(code, {
     status: 200,
     headers: {
