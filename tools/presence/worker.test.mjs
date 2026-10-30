@@ -1350,7 +1350,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     return !/不上傳我的資料|不上传我的数据|Don't upload my data|自分のデータを送らない|내 데이터 보내지 않기|Не отправлять мои данные|No subir mis datos|Verilerimi gönderme/.test(text)
       && /恢復上傳|恢复上传|Resume uploads|アップロードを再開|업로드 다시 시작|Возобновить отправку|Reanudar la subida|Yüklemeyi sürdür/.test(text);
   }));
-  check('★ 服務條款講了第一次會顯示使用須知；功能頁講了同意連線功能才會報到', LANGS.every((lang) => /使用須知|使用须知|Before you play|ご利用にあたって|이용 안내|Перед игрой|Antes de jugar|Oynamadan önce/.test(TEXT[lang]['terms.body'])
+  check('★ 服務條款講了第一次設定會先顯示使用須知，不再說每次啟動都顯示；功能頁講了同意連線功能才會報到', LANGS.every((lang) => !/不再自動顯示|不再自动显示|show this again|次回から表示しない|다시 표시하지 않기|Больше не показывать|No volver a mostrar|Bunu bir daha gösterme/.test(TEXT[lang]['terms.body']) && /使用須知|使用须知|Before you play|ご利用にあたって|이용 안내|Перед игрой|Antes de jugar|Oynamadan önce/.test(TEXT[lang]['terms.body'])
     && /同意連線功能|同意联网功能|agree to online features|オンライン機能に同意|온라인 기능에 동의|согласились на сетевые функции|aceptes las funciones en línea|çevrimiçi özelliklere izin/.test(TEXT[lang]['feat.s3b'])));
 
   const embedded = (html) => JSON.parse((html.match(/<script type="application\/json" id="demo-data">(\{.*?\})<\/script>/s) || [])[1] || '{}');
