@@ -384,7 +384,7 @@ npx wrangler secret put MOJANG_KEYS
 - 照 Minecraft ID（名字）加的，那個人登入一次就改記成 UUID；名字之後改掉、被別人拿走也不會把權限帶走。
 - 照 Discord 使用者 ID 加的，那個人只用 Discord 登入、還沒綁遊戲 ID 也進得了管理頁。
 - 存在 KV 的 `staff:u:<UUID>`、`staff:n:<名字>`、`staff:d:<Discord ID>`；移除之後馬上沒有權限。
-- 回饋：`fb:<編號>`（16 個十六進位字元）→ `{id, cat, msg, where, lang, uid, name, via, t, st, done, issue, issueError}`，列表要看的放 metadata（`c` 分類、`st`、`t`、`n` 名字、`s` 摘要、`i` Issue 網址、`e` 失敗原因）；標成已處理時加上 180 天的 `expirationTtl`，重新開啟就拿掉。限流 `fbr:<Discord 代號>` → 最近一小時送出的時間（`expirationTtl` 一小時）。
+- 回饋：`fb:<編號>`（16 個十六進位字元）→ `{id, cat, msg, where, lang, uid, name, via, t, st, done, issue, issueError}`，列表要看的放 metadata（`c` 分類、`st`、`t`、`n` 名字、`s` 摘要、`i` Issue 網址、`e` 失敗原因）；標成已處理時加上 180 天的 `expirationTtl`，重新開啟就拿掉。限流 `fbr:<Discord 代號>:<時間>.<亂數>`：一次送出一個鍵（`expirationTtl` 一小時），先寫鍵再數，同時送出也不會超過上限。上傳的冷卻同樣有 `upl:claim:<UUID>:<時間>.<亂數>`，二十秒內只有最早的那一個會過。
 - 協作翻譯：譯者 `tl:<u:|d:|n:>…` → `{langs, n, t, by, m, dn}`；整句提案 `tp:<語言>:<編號>`、術語投票 `tq:<語言>:<編號>`，列表要看的放 metadata。
   語料索引不放 KV：`.github/workflows/translate-index.yml` 在語料有變動時跑 `tools/build-translate-index.py`，整個蓋掉 `translate-index` 分支。
   本機的 `dev.mjs` 第一次用到時自己跑那支產生器（要有 python）。
