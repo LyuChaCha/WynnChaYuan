@@ -1,7 +1,7 @@
 import { authority, moderator, staffKey } from './admin.js';
 import { account, discordSession, publicId, who } from './auth.js';
 import { TEAM_AREAS, addMemberTeams, commitTeams, creditTeamsOf, credits, exactCodes, mergeLangTeam, setPersonTeams } from './credits.js';
-import { GitHubError, githubRepository } from './github.js';
+import { GitHubError, githubRepository, markdownText } from './github.js';
 import { NAME, UUID, hex, json, no, readJson } from './http.js';
 import { listAll, parseRecord, parseStored } from './kv.js';
 import { noteParticipant } from './privacy.js';
@@ -314,7 +314,7 @@ async function handleTrAccept(request, env, now) {
         title: '協作翻譯：' + lang + '（' + day + '）',
         head: branch,
         body: '網站「協作翻譯」頁定案的譯文。同一個語言同一天定案的都會加進這個 PR。\n\n'
-          + '第一條由 ' + me.by + ' 定案。每一條的原文、提案人與票數記在網站上。',
+          + '第一條由 ' + markdownText(me.by) + ' 定案。每一條的原文、提案人與票數記在網站上。',
       }) || '');
     }
     if (!url) return no('github pull request missing', 502);
