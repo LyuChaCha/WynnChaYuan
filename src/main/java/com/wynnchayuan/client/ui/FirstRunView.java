@@ -22,7 +22,7 @@ public final class FirstRunView extends Surface {
 
         void settled();
 
-        List<Row> custom();
+        List<Row.Group> custom();
 
         void finish();
     }
@@ -42,7 +42,8 @@ public final class FirstRunView extends Surface {
     private final Host host;
     private final int steps;
     private Step step;
-    private List<Row> rows;
+    private List<Row.Group> groups;
+    private int category;
     private float scroll;
     private float scrollTarget;
     private float maxScroll;
@@ -110,11 +111,29 @@ public final class FirstRunView extends Surface {
         }
     }
 
-    private List<Row> rows() {
-        if (rows == null) {
-            rows = host.custom();
+    private List<Row.Group> groups() {
+        if (groups == null) {
+            groups = host.custom();
         }
-        return rows;
+        return groups;
+    }
+
+    private List<Row> rows() {
+        List<Row.Group> all = groups();
+        if (all.isEmpty()) {
+            return List.of();
+        }
+        return all.get(Math.max(0, Math.min(all.size() - 1, category))).rows();
+    }
+
+    public int category() {
+        return category;
+    }
+
+    private void pickCategory(int index) {
+        category = index;
+        scroll = 0;
+        scrollTarget = 0;
     }
 
     @Override
@@ -127,7 +146,8 @@ public final class FirstRunView extends Surface {
             case CUSTOM -> customHeight(inner);
         };
         float foot = step == Step.SETUP ? 10 : FOOT_H;
-        float h = Math.min(screenH - 12, HEAD_H + contentH + foot);
+        float fixed = step == Step.CUSTOM ? 15 + CTRL_H + 8 : 0;
+        float h = Math.min(screenH - 12, HEAD_H + fixed + contentH + foot);
         float x = Math.round((screenW - w) / 2f);
         float y = Math.max(6, Math.round((screenH - h) / 2f));
         window(x, y, w, h, shell.blurred());
@@ -135,7 +155,10 @@ public final class FirstRunView extends Surface {
 
         header(x, y, w);
 
-        float top = y + HEAD_H;
+        if (step == Step.CUSTOM) {
+            tabs(x + PAD, y + HEAD_H, inner);
+        }
+        float top = y + HEAD_H + fixed;
         float bottom = y + h - foot;
         float bodyH = bottom - top;
         maxScroll = Math.max(0, contentH - bodyH);
@@ -314,9 +337,6 @@ public final class FirstRunView extends Surface {
         }
     }
 
-    private static final float ROW_H = 22;
-    private static final float ROW_TALL = 34;
-
     private float controlWidth(Row row) {
         if (row.kind == Row.Kind.TOGGLE) {
             return 26;
@@ -328,44 +348,87 @@ public final class FirstRunView extends Surface {
         return total;
     }
 
-    private boolean tall(float inner) {
-        for (Row row : rows()) {
-            if (c.width(row.name.get()) + 10 + controlWidth(row) > inner) {
-                return true;
-            }
+    private boolean beside(Row row, float inner) {
+        return c.width(row.name.get()) + 10 + controlWidth(row) <= inner;
+    }
+
+    private List<String> hint(Row row, float inner) {
+        String text = row.hint == null ? null : row.hint.get();
+        return text == null || text.isBlank() ? List.of() : Ui.wrap(c, text, (int) inner);
+    }
+
+    private float rowHeight(Row row, float inner) {
+        float top = beside(row, inner) ? 21 : 37;
+        return top + hint(row, inner).size() * 10 + 6;
+    }
+
+    private String[] categoryLabels() {
+        List<Row.Group> all = groups();
+        String[] labels = new String[all.size()];
+        for (int i = 0; i < labels.length; i++) {
+            labels[i] = all.get(i).title().get();
         }
-        return false;
+        return labels;
+    }
+
+    private float tabsWidth(String[] labels) {
+        float total = 2;
+        for (String label : labels) {
+            total += c.width(label) + 12;
+        }
+        return total;
     }
 
     private float customHeight(float inner) {
-        float each = tall(inner) ? ROW_TALL : ROW_H;
-        return 15 + paragraphHeight(shell.tr("firstrun.custom.intro"), inner) + 4
-                + rows().size() * each;
+        float h = paragraphHeight(shell.tr("firstrun.custom.intro"), inner) + 4;
+        for (Row row : rows()) {
+            h += rowHeight(row, inner);
+        }
+        return h;
+    }
+
+    private void tabs(float left, float y, float inner) {
+        y = heading("firstrun.custom.title", left, y);
+        String[] labels = categoryLabels();
+        if (labels.length > 0 && tabsWidth(labels) > inner) {
+            int each = (int) ((inner - 2) / labels.length - 12);
+            for (int i = 0; i < labels.length; i++) {
+                labels[i] = Ui.fit(c, labels[i], each);
+            }
+        }
+        if (labels.length > 0) {
+            chips("cat", left + Math.min(inner, tabsWidth(labels)), y, labels,
+                  Math.max(0, Math.min(labels.length - 1, category)), this::pickCategory);
+        }
     }
 
     private void custom(float left, float y, float inner) {
-        y = heading("firstrun.custom.title", left, y);
         y = paragraph(shell.tr("firstrun.custom.intro"), left, y, inner, Ui.TEXT_2) + 4;
-        boolean tall = tall(inner);
         float right = left + inner;
         for (Row row : rows()) {
-            float rh = tall ? ROW_TALL : ROW_H;
+            float rh = rowHeight(row, inner);
             if (!visible(y, rh)) {
                 y += rh;
                 continue;
             }
             c.fill(left, y, right, y + c.px(), Ui.LINE);
             String name = Ui.fit(c, row.name.get(), (int) inner);
-            c.text(name, left, y + 7, Ui.TEXT_2);
-            float cy = tall ? y + 16 : y + 3;
+            c.text(name, left, y + 7, Ui.TEXT);
+            boolean side = beside(row, inner);
+            float cy = side ? y + 3 : y + 19;
             if (row.kind == Row.Kind.TOGGLE) {
                 toggle(row.id, right, cy, row.on.getAsBoolean(), null, row.flip);
             } else {
-                String[] labels = new String[row.options.size()];
-                for (int i = 0; i < labels.length; i++) {
-                    labels[i] = row.options.get(i).label();
+                String[] options = new String[row.options.size()];
+                for (int i = 0; i < options.length; i++) {
+                    options[i] = row.options.get(i).label();
                 }
-                chips(row.id, right, cy, labels, row.selected.getAsInt(), row.pick);
+                chips(row.id, right, cy, options, row.selected.getAsInt(), row.pick);
+            }
+            float hy = y + (side ? 21 : 37);
+            for (String line : hint(row, inner)) {
+                c.text(line, left, hy, Ui.HINT);
+                hy += 10;
             }
             y += rh;
         }

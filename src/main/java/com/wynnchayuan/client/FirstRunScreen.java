@@ -76,8 +76,8 @@ public final class FirstRunScreen extends CanvasScreen {
             }
 
             @Override
-            public List<Row> custom() {
-                return rows();
+            public List<Row.Group> custom() {
+                return groups();
             }
 
             @Override
@@ -113,59 +113,68 @@ public final class FirstRunScreen extends CanvasScreen {
                 .flip(() -> set.accept(!get.getAsBoolean()));
     }
 
-    static List<Row> rows() {
-        List<Row> rows = new ArrayList<>();
-        rows.add(Row.segment("dialogue.mode", t("dialogue.mode"), t("dialogue.mode.hint"))
-                .option(T.s("mode.box"), Row.Tone.ACCENT)
-                .option(T.s("mode.replace"), Row.Tone.REPLACE)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> cfg().dialogueMode().ordinal())
-                .pick(i -> cfg().setDialogueModes(CollectorConfig.DialogueMode.values()[i])));
-        rows.add(Row.segment("world.chat", t("world.chat"), t("world.chat.hint"))
-                .option(T.s("mode.replace"), Row.Tone.REPLACE)
-                .option(T.s("mode.both"), Row.Tone.BOTH)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> cfg().chatMode().ordinal())
-                .pick(i -> cfg().setChatMode(CollectorConfig.ChatMode.values()[i])));
-        rows.add(Row.segment("world.nametag", t("world.nametag"), t("world.nametag.hint"))
-                .option(T.s("mode.lookat"), Row.Tone.ACCENT)
-                .option(T.s("mode.replace"), Row.Tone.REPLACE)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> cfg().nametagMode().ordinal())
-                .pick(i -> cfg().setNametagMode(CollectorConfig.NametagMode.values()[i])));
-        rows.add(Row.segment("items.tooltip", t("items.tooltip"), t("items.tooltip.hint"))
-                .option(T.s("mode.panel"), Row.Tone.ACCENT)
-                .option(T.s("mode.replace"), Row.Tone.REPLACE)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> cfg().tooltipMode().ordinal())
-                .pick(i -> cfg().setTooltipMode(CollectorConfig.TooltipMode.values()[i])));
-        rows.add(Row.segment("items.names", t("items.names"), t("items.names.hint"))
-                .option(T.s("mode.on"), Row.Tone.ACCENT)
-                .option(T.s("items.names.both"), Row.Tone.BOTH)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> cfg().itemNames().ordinal())
-                .pick(i -> {
-                    cfg().setItemNames(CollectorConfig.ItemNames.values()[i]);
-                    applyNameModes();
-                }));
+    private static Row mode(String key, String[] labels, Row.Tone[] tones,
+                            java.util.function.IntSupplier get,
+                            java.util.function.IntConsumer set) {
+        Row row = Row.segment(key, t(key), t(key + ".hint"));
+        for (int i = 0; i < labels.length; i++) {
+            row.option(T.s(labels[i]), tones[i]);
+        }
+        return row.selected(get).pick(set);
+    }
+
+    private static final Row.Tone[] BOX_REPLACE_OFF = {
+        Row.Tone.ACCENT, Row.Tone.REPLACE, Row.Tone.OFF};
+
+    static List<Row.Group> groups() {
+        List<Row.Group> groups = new ArrayList<>();
+        groups.add(new Row.Group(t("tab.items"), false, List.of(
+                mode("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
+                        BOX_REPLACE_OFF, () -> cfg().tooltipMode().ordinal(),
+                        i -> cfg().setTooltipMode(CollectorConfig.TooltipMode.values()[i])),
+                mode("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
+                        new Row.Tone[] {Row.Tone.ACCENT, Row.Tone.BOTH, Row.Tone.OFF},
+                        () -> cfg().itemNames().ordinal(), i -> {
+                            cfg().setItemNames(CollectorConfig.ItemNames.values()[i]);
+                            applyNameModes();
+                        }),
+                toggle("world.wynntils", () -> cfg().wynntilsUi(),
+                        on -> cfg().setWynntilsUi(on)))));
+        groups.add(new Row.Group(t("tab.dialogue"), false, List.of(
+                mode("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
+                        BOX_REPLACE_OFF, () -> cfg().dialogueMode().ordinal(),
+                        i -> cfg().setDialogueMode(CollectorConfig.DialogueMode.values()[i])),
+                mode("dialogue.choices", new String[] {"mode.box", "mode.replace", "mode.off"},
+                        BOX_REPLACE_OFF, () -> cfg().choiceMode().ordinal(),
+                        i -> cfg().setChoiceMode(CollectorConfig.DialogueMode.values()[i])))));
         CollectorConfig.DialogueMode[] order = {
             CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
             CollectorConfig.DialogueMode.OFF};
-        rows.add(Row.segment("world.tracker", t("world.tracker"), t("world.tracker.hint"))
-                .option(T.s("mode.replace"), Row.Tone.REPLACE)
-                .option(T.s("mode.panel"), Row.Tone.ACCENT)
-                .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> java.util.Arrays.asList(order).indexOf(cfg().trackerMode()))
-                .pick(i -> cfg().setTrackerMode(order[i])));
-        rows.add(toggle("world.scoreboard", () -> cfg().translateScoreboard(),
-                on -> cfg().setTranslateScoreboard(on)));
-        rows.add(toggle("world.titles", () -> cfg().translateTitles(),
-                on -> cfg().setTranslateTitles(on)));
-        rows.add(toggle("world.bossbar", () -> cfg().translateBossBar(),
-                on -> cfg().setTranslateBossBar(on)));
-        rows.add(toggle("world.wynntils", () -> cfg().wynntilsUi(),
-                on -> cfg().setWynntilsUi(on)));
-        return rows;
+        groups.add(new Row.Group(t("tab.world"), false, List.of(
+                mode("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
+                        BOX_REPLACE_OFF, () -> cfg().nametagMode().ordinal(),
+                        i -> cfg().setNametagMode(CollectorConfig.NametagMode.values()[i])),
+                mode("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
+                        new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.BOTH, Row.Tone.OFF},
+                        () -> cfg().chatMode().ordinal(),
+                        i -> cfg().setChatMode(CollectorConfig.ChatMode.values()[i])),
+                mode("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
+                        new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.ACCENT, Row.Tone.OFF},
+                        () -> java.util.Arrays.asList(order).indexOf(cfg().trackerMode()),
+                        i -> cfg().setTrackerMode(order[i])),
+                toggle("world.scoreboard", () -> cfg().translateScoreboard(),
+                        on -> cfg().setTranslateScoreboard(on)),
+                toggle("world.titles", () -> cfg().translateTitles(),
+                        on -> cfg().setTranslateTitles(on)),
+                toggle("world.bossbar", () -> cfg().translateBossBar(),
+                        on -> cfg().setTranslateBossBar(on)))));
+        groups.add(new Row.Group(t("group.privacy"), false, List.of(
+                toggle("privacy.online",
+                        () -> cfg().consent() == CollectorConfig.Consent.AGREED,
+                        WynnChaYuan::setConsent),
+                toggle("privacy.optout", () -> cfg().dataOptOut(),
+                        on -> WynnChaYuan.setDataOptOut(on, null)))));
+        return groups;
     }
 
     public static void clientTick() {
