@@ -89,6 +89,20 @@ final class GuiCanvas implements Canvas {
         g.pose().popMatrix();
     }
 
+    void outside(Runnable draw) {
+        g.pose().popMatrix();
+        try {
+            draw.run();
+        } finally {
+            begin();
+        }
+    }
+
+    @Override
+    public void raise() {
+        g.nextStratum();
+    }
+
     private int p(float v) {
         return Math.round(v * scale);
     }

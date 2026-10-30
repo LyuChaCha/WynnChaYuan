@@ -28,6 +28,21 @@ public final class PanelLayoutTest {
         p = layout(null, 200, 0);
         check("框線碰到不算壓到", !p.overlaps());
 
+        for (int value : new int[] {0, 4, 12, 16, 24, 40, 100, 200, 500}) {
+            int shown = com.wynnchayuan.PanelGap.clamp(value);
+            p = TooltipPanel.layout(150, 200, 180, 260, null, 600, 150, 2000, 720,
+                    com.wynnchayuan.PanelGap.layout(value), PanelSide.AUTO);
+            int outer = (612 - FRAME) - (p.panelX() + 150 + FRAME);
+            int visible = com.wynnchayuan.PanelGap.visible(outer);
+            check("★ 設定 " + value + "：遊戲裡的間距 " + visible + " 等於滑桿上的 " + shown,
+                    visible == shown);
+            check("★ 設定 " + value + "：預覽畫的間距等於遊戲裡的 "
+                            + com.wynnchayuan.PanelGap.preview(shown, 1000),
+                    com.wynnchayuan.PanelGap.preview(shown, 1000) == visible);
+        }
+        check("最小 12、預設 12", com.wynnchayuan.PanelGap.MIN == 12
+                && com.wynnchayuan.PanelGap.DEFAULT == 12);
+
         if (failures > 0) {
             System.err.println(failures + " 項失敗");
             System.exit(1);

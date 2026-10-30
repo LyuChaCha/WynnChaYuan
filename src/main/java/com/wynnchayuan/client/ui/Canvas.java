@@ -33,4 +33,7 @@ public interface Canvas {
     void hueBar(float x, float y, float w, float h);
 
     float px();
+
+    default void raise() {
+    }
 }
