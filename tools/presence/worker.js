@@ -2194,74 +2194,6 @@ async function handleMe(request, env, now) {
   });
 }
 
-async function forgetPlayer(env, uuid, now) {
-  const id = await publicId(uuid);
-  await env.CORPUS.delete('u:' + uuid);
-  const list = await storedList(env);
-  const trimmed = list && dropFromList(list, id);
-  if (trimmed) await env.CORPUS.put('presence:list', JSON.stringify(trimmed));
-  const history = await allHistory(env, 'hist:' + id + ':');
-  for (const one of history) await env.CORPUS.delete(one.key);
-  const have = await env.CORPUS.getWithMetadata('cape:' + id);
-  const mine = have && have.metadata && typeof have.metadata.h === 'string' ? have.metadata : null;
-  const own = new Set();
-  if (mine) {
-    await env.CORPUS.delete('cape:' + id);
-    if (mine.w) await sweep(env, mine.h, mine, now);
-    else own.add(mine.h);
-    if (mine.p && HASH.test(mine.p.h || '')) own.add(mine.p.h);
-  }
-  const idle = await idleMap(env);
-  const others = new Set((await allHistory(env)).map((one) => one.h));
-  for (const one of history) {
-    if (idle[one.h] && !others.has(one.h)) own.add(one.h);
-  }
-  const gone = [];
-  for (const hash of own) {
-    if (await discard(env, hash)) gone.push(hash);
-  }
-  const favs = await favsOf(env, uuid);
-  await env.CORPUS.delete('fav:' + uuid);
-  const stars = await starMap(env);
-  let changed = false;
-  for (const hash of favs.h) {
-    if (!(hash in stars)) continue;
-    stars[hash] = Math.max(0, (Number(stars[hash]) || 0) - 1);
-    if (!stars[hash]) delete stars[hash];
-    changed = true;
-  }
-  for (const hash of gone) {
-    if (!(hash in stars)) continue;
-    delete stars[hash];
-    changed = true;
-  }
-  if (changed) await env.CORPUS.put('stars', JSON.stringify(stars));
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'prev:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      if (k.name.split(':')[2] === uuid) await env.CORPUS.delete(k.name);
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
-}
-
-async function forgetDiscord(env, id) {
-  const record = await account(env, id);
-  if (record && UUID.test(record.u || '') && await env.CORPUS.get('l:' + record.u) === id) {
-    await env.CORPUS.delete('l:' + record.u);
-  }
-  await env.CORPUS.delete('d:' + id);
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'fb:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      if (parseRecord(await env.CORPUS.get(k.name)).uid === id) await env.CORPUS.delete(k.name);
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
-}
-
 export async function goneCode(key) {
   return hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode('gone:' + key))).slice(0, 8);
 }
@@ -2290,20 +2222,262 @@ export function anonymise(record, ids, code) {
   return changed;
 }
 
-async function forgetTranslate(env, ids, code) {
-  for (const [prefix, meta] of [['tp:', trMeta], ['tq:', pollMeta]]) {
-    let cursor;
-    do {
-      const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
-      for (const k of page.keys) {
-        const record = parseRecord(await env.CORPUS.get(k.name));
-        if (anonymise(record, ids, code)) {
-          await env.CORPUS.put(k.name, JSON.stringify(record), { metadata: meta(record) });
-        }
-      }
-      cursor = page.list_complete ? undefined : page.cursor;
-    } while (cursor);
+export const ERASE_OPS_PER_REQUEST = 600;
+export const OWNER_INDEX_OPS_PER_RUN = 500;
+const ERASE_JOB_VERSION = 1;
+const ERASE_JOB_TTL_SECONDS = 30 * 86400;
+const ERASE_PAGE_SIZE = 200;
+export const OWNER_INDEX_READY = 'own-index:ready';
+const OWNER_INDEX_STATE = 'own-index:state';
+const OWNED_PREFIXES = ['tp:', 'tq:', 'fb:', 'prev:'];
+const PARTICIPANT = /^(?:u:[0-9a-f]{32}|d:\d{5,25})$/;
+
+class OperationBudgetExhausted extends Error {}
+
+function meteredStore(store, budget) {
+  const spend = () => {
+    if (budget.left <= 0) throw new OperationBudgetExhausted('kv operation budget exhausted');
+    budget.left -= 1;
+  };
+  return {
+    get: (...args) => { spend(); return store.get(...args); },
+    getWithMetadata: (...args) => { spend(); return store.getWithMetadata(...args); },
+    put: (...args) => { spend(); return store.put(...args); },
+    delete: (...args) => { spend(); return store.delete(...args); },
+    list: (...args) => { spend(); return store.list(...args); },
+  };
+}
+
+export const ownerEntry = (owner, key) => 'own:' + owner + ':' + key;
+
+async function noteParticipant(env, owner, key, before) {
+  if (!PARTICIPANT.test(owner || '')) return;
+  if (typeof before === 'string' && before.includes('"' + owner + '"')) return;
+  await env.CORPUS.put(ownerEntry(owner, key), '');
+}
+
+export function participantsOf(record) {
+  const found = new Set();
+  const add = (value) => {
+    if (typeof value === 'string' && PARTICIPANT.test(value)) found.add(value);
+  };
+  add(record.by);
+  for (const entry of [...(Array.isArray(record.items) ? record.items : []), ...(Array.isArray(record.options) ? record.options : [])]) {
+    if (!entry || typeof entry !== 'object') continue;
+    add(entry.by);
+    if (Array.isArray(entry.votes)) entry.votes.forEach(add);
   }
+  return found;
+}
+
+async function scanPrefix(store, state, prefix, visit) {
+  for (;;) {
+    const page = await store.list({ prefix, limit: ERASE_PAGE_SIZE, cursor: state.cursor || undefined });
+    for (const key of page.keys) {
+      if (state.after && key.name <= state.after) continue;
+      await visit(key);
+      state.after = key.name;
+    }
+    if (page.list_complete || !page.cursor) return;
+    state.cursor = page.cursor;
+  }
+}
+
+async function ownersOfStored(store, key) {
+  if (key.name.startsWith('prev:')) {
+    const parts = key.name.split(':');
+    return parts.length === 4 && UUID.test(parts[2]) ? ['u:' + parts[2]] : [];
+  }
+  const record = parseRecord(await store.get(key.name));
+  if (key.name.startsWith('fb:')) return DISCORD_ID.test(String(record.uid || '')) ? ['d:' + record.uid] : [];
+  return [...participantsOf(record)];
+}
+
+export async function indexOwners(env, now) {
+  if (await env.CORPUS.get(OWNER_INDEX_READY)) return { done: true };
+  const state = parseRecord(await env.CORPUS.get(OWNER_INDEX_STATE));
+  state.prefixAt = Number.isInteger(state.prefixAt) ? state.prefixAt : 0;
+  const store = meteredStore(env.CORPUS, { left: OWNER_INDEX_OPS_PER_RUN });
+  try {
+    while (state.prefixAt < OWNED_PREFIXES.length) {
+      await scanPrefix(store, state, OWNED_PREFIXES[state.prefixAt], async (key) => {
+        const options = key.expiration ? { expiration: key.expiration } : undefined;
+        for (const owner of await ownersOfStored(store, key)) await store.put(ownerEntry(owner, key.name), '', options);
+      });
+      state.prefixAt += 1;
+      state.cursor = null;
+      state.after = '';
+    }
+  } catch (e) {
+    if (!(e instanceof OperationBudgetExhausted)) throw e;
+    await env.CORPUS.put(OWNER_INDEX_STATE, JSON.stringify(state));
+    return { done: false };
+  }
+  await env.CORPUS.put(OWNER_INDEX_READY, String(now));
+  await env.CORPUS.delete(OWNER_INDEX_STATE);
+  return { done: true };
+}
+
+async function eraseOwned(store, key, job) {
+  if (key.startsWith('tp:') || key.startsWith('tq:')) {
+    const raw = await store.get(key);
+    if (!raw) return;
+    const record = parseRecord(raw);
+    if (anonymise(record, job.owners, job.code)) {
+      await store.put(key, JSON.stringify(record), { metadata: key.startsWith('tp:') ? trMeta(record) : pollMeta(record) });
+    }
+  } else if (key.startsWith('fb:')) {
+    if (job.discord && parseRecord(await store.get(key)).uid === job.discord) await store.delete(key);
+  } else if (key.startsWith('prev:')) {
+    if (job.uuid && key.split(':')[2] === job.uuid) await store.delete(key);
+  }
+}
+
+async function eraseIndexed(store, env, job) {
+  while (job.ownerAt < job.owners.length) {
+    const prefix = 'own:' + job.owners[job.ownerAt] + ':';
+    await scanPrefix(store, job.scan, prefix, async (key) => {
+      await eraseOwned(store, key.name.slice(prefix.length), job);
+      await store.delete(key.name);
+    });
+    job.ownerAt += 1;
+    job.scan = {};
+  }
+}
+
+async function eraseUnindexed(store, env, job) {
+  if (await env.CORPUS.get(OWNER_INDEX_READY)) return;
+  const prefixes = ['tp:', 'tq:', ...(job.discord ? ['fb:'] : []), ...(job.uuid ? ['prev:'] : [])];
+  while (job.prefixAt < prefixes.length) {
+    await scanPrefix(store, job.scan, prefixes[job.prefixAt], (key) => eraseOwned(store, key.name, job));
+    job.prefixAt += 1;
+    job.scan = {};
+  }
+}
+
+async function planPlayerErase(store, env, job) {
+  if (!job.uuid || job.plan) return;
+  const id = await publicId(job.uuid);
+  const history = await allHistory(env, 'hist:' + id + ':');
+  const have = await store.getWithMetadata('cape:' + id);
+  const mine = have?.metadata && typeof have.metadata.h === 'string' ? have.metadata : null;
+  const own = new Set();
+  if (mine && !mine.w) own.add(mine.h);
+  if (mine?.p && HASH.test(mine.p.h || '')) own.add(mine.p.h);
+  const idle = await idleMap(env);
+  const unshared = [...new Set(history.map((one) => one.h))].filter((hash) => idle[hash] && !own.has(hash));
+  job.plan = { id, history: history.map((one) => one.key), mine, own: [...own], unshared,
+    favs: (await favsOf(env, job.uuid)).h };
+}
+
+async function keepSharedImages(store, env, job) {
+  if (!job.plan || !job.plan.unshared.length) return;
+  const mine = 'hist:' + job.plan.id + ':';
+  await scanPrefix(store, job.scan, 'hist:', (key) => {
+    if (key.name.startsWith(mine)) return;
+    const parts = key.name.split(':');
+    if (parts.length === 3) job.plan.unshared = job.plan.unshared.filter((hash) => hash !== parts[2]);
+  });
+  job.scan = {};
+}
+
+async function erasePlayer(store, env, job, now, saveJob) {
+  const plan = job.plan;
+  if (!plan) return;
+  const done = new Set(job.done);
+  const finish = (part) => {
+    done.add(part);
+    job.done = [...done];
+  };
+  if (!done.has('presence')) {
+    await store.delete('u:' + job.uuid);
+    const list = await storedList(env);
+    const trimmed = list && dropFromList(list, plan.id);
+    if (trimmed) await store.put('presence:list', JSON.stringify(trimmed));
+    finish('presence');
+  }
+  if (!done.has('history')) {
+    for (const key of plan.history) await store.delete(key);
+    finish('history');
+  }
+  if (!done.has('cape')) {
+    if (plan.mine) {
+      await store.delete('cape:' + plan.id);
+      if (plan.mine.w) await sweep(env, plan.mine.h, plan.mine, now);
+    }
+    finish('cape');
+  }
+  for (const hash of [...plan.own, ...plan.unshared]) {
+    if (job.discarded.includes(hash)) continue;
+    if (await discard(env, hash)) job.gone.push(hash);
+    job.discarded.push(hash);
+  }
+  if (!done.has('stars')) {
+    const stars = await starMap(env);
+    let changed = false;
+    for (const hash of plan.favs) {
+      if (!(hash in stars)) continue;
+      stars[hash] = Math.max(0, (Number(stars[hash]) || 0) - 1);
+      if (!stars[hash]) delete stars[hash];
+      changed = true;
+    }
+    for (const hash of job.gone) {
+      if (!(hash in stars)) continue;
+      delete stars[hash];
+      changed = true;
+    }
+    if (changed) await store.put('stars', JSON.stringify(stars));
+    finish('stars');
+    await saveJob();
+  }
+  if (!done.has('favs')) {
+    await store.delete('fav:' + job.uuid);
+    finish('favs');
+  }
+}
+
+async function eraseAccounts(store, env, job) {
+  if (job.discord) {
+    const record = await account(env, job.discord);
+    if (record && UUID.test(record.u || '') && await store.get('l:' + record.u) === job.discord) {
+      await store.delete('l:' + record.u);
+    }
+  }
+  if (job.uuid) await store.delete('l:' + job.uuid);
+  if (job.discord) await store.delete('d:' + job.discord);
+}
+
+const ERASE_STEPS = [eraseIndexed, eraseUnindexed, planPlayerErase, keepSharedImages, erasePlayer, eraseAccounts];
+
+function eraseJob(stored, subject, code, now) {
+  const owners = [...(subject.uuid ? ['u:' + subject.uuid] : []), ...(subject.discord ? ['d:' + subject.discord] : [])];
+  const fresh = { v: ERASE_JOB_VERSION, owners, uuid: subject.uuid, discord: subject.discord, code, step: 0,
+    ownerAt: 0, prefixAt: 0, scan: {}, plan: null, done: [], discarded: [], gone: [], t: now };
+  if (stored.v !== ERASE_JOB_VERSION || stored.uuid !== subject.uuid) return fresh;
+  if (stored.discord === subject.discord) return stored;
+  return { ...fresh, plan: stored.plan, done: stored.done, discarded: stored.discarded, gone: stored.gone };
+}
+
+export async function eraseSubject(env, subject, now) {
+  const jobKey = 'erase:' + (subject.uuid ? 'u:' + subject.uuid : 'd:' + subject.discord);
+  const code = await goneCode(subject.uuid || subject.discord);
+  const job = eraseJob(parseRecord(await env.CORPUS.get(jobKey)), subject, code, now);
+  const store = meteredStore(env.CORPUS, { left: ERASE_OPS_PER_REQUEST });
+  const metered = { ...env, CORPUS: store };
+  const saveJob = () => env.CORPUS.put(jobKey, JSON.stringify(job), { expirationTtl: ERASE_JOB_TTL_SECONDS });
+  try {
+    while (job.step < ERASE_STEPS.length) {
+      await ERASE_STEPS[job.step](store, metered, job, now, saveJob);
+      job.step += 1;
+      job.scan = {};
+    }
+  } catch (e) {
+    await saveJob();
+    if (e instanceof OperationBudgetExhausted) return { done: false };
+    throw e;
+  }
+  await env.CORPUS.delete(jobKey);
+  return { done: true };
 }
 
 async function handleDeleteMe(request, env, now) {
@@ -2311,15 +2485,9 @@ async function handleDeleteMe(request, env, now) {
   const session = user ? null : await discordSession(request, env, now);
   if (!user && !session) return no('login first', 401);
   const discord = user ? user.discord || await env.CORPUS.get('l:' + user.uuid) : session.id;
-  const ids = [];
-  if (user) ids.push('u:' + user.uuid);
-  if (discord && DISCORD_ID.test(discord)) ids.push('d:' + discord);
-  await forgetTranslate(env, ids, await goneCode(user ? user.uuid : discord));
-  if (user) {
-    await forgetPlayer(env, user.uuid, now);
-    await env.CORPUS.delete('l:' + user.uuid);
-  }
-  if (discord && DISCORD_ID.test(discord)) await forgetDiscord(env, discord);
+  const subject = { uuid: user ? user.uuid : null, discord: discord && DISCORD_ID.test(discord) ? discord : null };
+  const outcome = await eraseSubject(env, subject, now);
+  if (!outcome.done) return json({ ok: false, pending: true }, 202, { 'cache-control': 'no-store' });
   return json({ ok: true }, 200, { 'cache-control': 'no-store' });
 }
 
@@ -3025,7 +3193,8 @@ async function handleTrPropose(request, env, now) {
   if (problem) return no(problem);
   const id = await trId(file + '\n' + (key == null ? src : key));
   const storeKey = 'tp:' + lang + ':' + id;
-  const record = parseRecord(await env.CORPUS.get(storeKey));
+  const before = await env.CORPUS.get(storeKey);
+  const record = parseRecord(before);
   if (!record.items) Object.assign(record, { lang, file, key, src, base, items: [], status: 'open', t: now });
   if (record.status !== 'open') {
     record.status = 'open';
@@ -3041,6 +3210,7 @@ async function handleTrPropose(request, env, now) {
   }
   record.updated = now;
   await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+  await noteParticipant(env, me.id, storeKey, before);
   return json({ ok: true, id, prop: record });
 }
 
@@ -3064,6 +3234,7 @@ async function handleTrVote(request, env, now) {
   if (!had) target.votes.push(me.id);
   record.updated = now;
   await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
+  await noteParticipant(env, me.id, storeKey, raw);
   return json({ ok: true, prop: record });
 }
 
@@ -3200,6 +3371,7 @@ async function handleTrPollOpen(request, env, now) {
     record.options.push({ id: (await trId(text + now)).slice(0, 12), text, by: me.id, name: me.name, t: now, votes: [] });
   }
   await env.CORPUS.put('tq:' + lang + ':' + id, JSON.stringify(record), { metadata: pollMeta(record) });
+  await noteParticipant(env, me.id, 'tq:' + lang + ':' + id, null);
   return json({ ok: true, id, poll: record });
 }
 
@@ -3213,7 +3385,7 @@ async function pollFor(request, env, now, needDecide) {
   const storeKey = 'tq:' + lang + ':' + body.id;
   const raw = await env.CORPUS.get(storeKey);
   if (!raw) return { error: no('not found', 404) };
-  return { me, body, storeKey, record: JSON.parse(raw) };
+  return { me, body, storeKey, raw, record: JSON.parse(raw) };
 }
 
 async function savePoll(env, got, now) {
@@ -3237,6 +3409,7 @@ async function handleTrPollOption(request, env, now) {
     got.record.options.push({ id: (await trId(text + now)).slice(0, 12), text, by: got.me.id, name: got.me.name, t: now,
       votes: [got.me.id] });
   }
+  await noteParticipant(env, got.me.id, got.storeKey, got.raw);
   return savePoll(env, got, now);
 }
 
@@ -3250,6 +3423,7 @@ async function handleTrPollVote(request, env, now) {
   const had = target.votes.includes(got.me.id);
   for (const o of got.record.options) o.votes = o.votes.filter((v) => v !== got.me.id);
   if (!had) target.votes.push(got.me.id);
+  await noteParticipant(env, got.me.id, got.storeKey, got.raw);
   return savePoll(env, got, now);
 }
 
@@ -3562,6 +3736,10 @@ async function saveFeedback(env, record) {
   const options = { metadata: feedbackMeta(record) };
   if (record.st === 'done') options.expirationTtl = FEEDBACK_KEEP_DAYS * 86400;
   await env.CORPUS.put('fb:' + record.id, JSON.stringify(record), options);
+  if (DISCORD_ID.test(String(record.uid || ''))) {
+    await env.CORPUS.put(ownerEntry('d:' + record.uid, 'fb:' + record.id), '',
+      options.expirationTtl ? { expirationTtl: options.expirationTtl } : undefined);
+  }
 }
 
 /** Markdown 的程式碼區塊：圍欄比內容裡最長的一串反引號多一個，使用者寫什麼都關不掉它（也不會 @ 到人）。 */
@@ -3684,6 +3862,7 @@ async function handleFeedbackDelete(request, env, now) {
   const got = await feedbackFor(request, env, now);
   if (got.error) return got.error;
   await env.CORPUS.delete('fb:' + got.record.id);
+  if (DISCORD_ID.test(String(got.record.uid || ''))) await env.CORPUS.delete(ownerEntry('d:' + got.record.uid, 'fb:' + got.record.id));
   return json({ ok: true });
 }
 
@@ -4026,6 +4205,7 @@ async function handleCapePreview(env, hash, uuid) {
   if (!made) return no('cannot preview', 422);
   await env.CORPUS.put(key, made.bytes, who ? { metadata: { t: made.type }, expirationTtl: 3 * 86400 }
     : { metadata: { t: made.type } });
+  if (who) await env.CORPUS.put(ownerEntry('u:' + who, key), '', { expirationTtl: 3 * 86400 });
   return new Response(made.bytes, { headers: headers(made.type) });
 }
 
@@ -4279,6 +4459,7 @@ const site = {
   /** 每天一次（wrangler.toml 的 crons）：沒有人穿滿七天的披風刪掉。 */
   async scheduled(event, env) {
     await tidy(env, Date.now());
+    await indexOwners(env, Date.now());
   },
   async fetch(request, env, ctx) {
     // HEAD：網頁、圖示、字型、材質跟 GET 一樣回，只是不帶內容。Discord 檢查應用程式的
