@@ -1,7 +1,7 @@
 import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
 import { allHistory, discard, favsOf, idleMap, starMap, sweep } from './capes.js';
 import { HASH, UUID, hex, json, no } from './http.js';
-import { parseRecord } from './kv.js';
+import { OperationBudgetExhausted, meteredStore, parseRecord, quietPut, scanPrefix } from './kv.js';
 import { dropFromList, storedList } from './presence.js';
 import { pollMeta, trMeta } from './translate.js';
 
@@ -41,8 +41,6 @@ const ERASE_JOB_VERSION = 1;
 
 const ERASE_JOB_TTL_SECONDS = 30 * 86400;
 
-const ERASE_PAGE_SIZE = 200;
-
 export const OWNER_INDEX_READY = 'own-index:ready';
 
 const OWNER_INDEX_STATE = 'own-index:state';
@@ -50,22 +48,6 @@ const OWNER_INDEX_STATE = 'own-index:state';
 const OWNED_PREFIXES = ['tp:', 'tq:', 'fb:', 'prev:'];
 
 const PARTICIPANT = /^(?:u:[0-9a-f]{32}|d:\d{5,25})$/;
-
-class OperationBudgetExhausted extends Error {}
-
-function meteredStore(store, budget) {
-  const spend = () => {
-    if (budget.left <= 0) throw new OperationBudgetExhausted('kv operation budget exhausted');
-    budget.left -= 1;
-  };
-  return {
-    get: (...args) => { spend(); return store.get(...args); },
-    getWithMetadata: (...args) => { spend(); return store.getWithMetadata(...args); },
-    put: (...args) => { spend(); return store.put(...args); },
-    delete: (...args) => { spend(); return store.delete(...args); },
-    list: (...args) => { spend(); return store.list(...args); },
-  };
-}
 
 export const ownerEntry = (owner, key) => 'own:' + owner + ':' + key;
 
@@ -87,19 +69,6 @@ export function participantsOf(record) {
     if (Array.isArray(entry.votes)) entry.votes.forEach(add);
   }
   return found;
-}
-
-async function scanPrefix(store, state, prefix, visit) {
-  for (;;) {
-    const page = await store.list({ prefix, limit: ERASE_PAGE_SIZE, cursor: state.cursor || undefined });
-    for (const key of page.keys) {
-      if (state.after && key.name <= state.after) continue;
-      await visit(key);
-      state.after = key.name;
-    }
-    if (page.list_complete || !page.cursor) return;
-    state.cursor = page.cursor;
-  }
 }
 
 async function ownersOfStored(store, key) {
@@ -212,7 +181,7 @@ async function erasePlayer(store, env, job, now, saveJob) {
     await store.delete('u:' + job.uuid);
     const list = await storedList(env);
     const trimmed = list && dropFromList(list, plan.id);
-    if (trimmed) await store.put('presence:list', JSON.stringify(trimmed));
+    if (trimmed) await quietPut(store, 'presence:list', JSON.stringify(trimmed));
     finish('presence');
   }
   if (!done.has('history')) {
@@ -245,7 +214,7 @@ async function erasePlayer(store, env, job, now, saveJob) {
       delete stars[hash];
       changed = true;
     }
-    if (changed) await store.put('stars', JSON.stringify(stars));
+    if (changed) await quietPut(store, 'stars', JSON.stringify(stars));
     finish('stars');
     await saveJob();
   }

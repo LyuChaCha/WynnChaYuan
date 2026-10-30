@@ -3228,6 +3228,55 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && !timingSafeEqual('abc', 'ab') && !timingSafeEqual(null, 'a') && base64Bytes('AQID').join() === '1,2,3');
 }
 
+{
+  const { recountStars } = await import('./capes.js');
+  const HOT = ['presence:list', 'idle', 'stars'];
+  const hot = { CORPUS: fakeKv() };
+  const realPut = hot.CORPUS.put.bind(hot.CORPUS);
+  let refuse = false;
+  hot.CORPUS.put = async (key, value, options) => {
+    if (refuse && HOT.includes(key)) throw new Error('KV PUT failed: 429 Too Many Requests');
+    return realPut(key, value, options);
+  };
+  const hash = 'ab'.repeat(32);
+  const PAM = { uuid: 'e1'.repeat(16), name: 'Pam' };
+  const pamGame = await issueToken(hot, PAM.uuid, PAM.name, NOW);
+  const pamWeb = await issueWebToken(hot, PAM.uuid, PAM.name, NOW);
+  hot.CORPUS.data.set('presence:list', { value: JSON.stringify({ t: Date.now() - 3600000, users: [], capes: {}, hidden: [], rainbow: [], show: {} }), metadata: null });
+  hot.CORPUS.data.set('idle', { value: JSON.stringify({ [hash]: { t: 'png', s: 10, at: Date.now() } }), metadata: null });
+  hot.CORPUS.data.set('blob:' + hash, { value: new Uint8Array([1]), metadata: { t: 'png', s: 1 } });
+  const logged = [];
+  const realError = console.error;
+  console.error = (...args) => logged.push(args.join(' '));
+  refuse = true;
+  const hello = await worker.fetch(post('/hello', { cape: true }, pamGame), hot);
+  const star = await worker.fetch(post('/cape/star', { hash, on: true }, pamWeb), hot);
+  const listed = await worker.fetch(get('/list'), hot);
+  refuse = false;
+  console.error = realError;
+  check('★ 名單、閒置清單、星星那幾個熱門的鍵寫不進去（429）：請求照樣成功，記在 log', hello.status === 200 && star.status === 200
+    && (await star.json()).on === true && listed.status === 200 && logged.some((line) => line.includes('kv write failed') && line.includes('presence:list'))
+    && logged.some((line) => line.includes('"stars"')));
+  check('★ 寫不進去也沒有弄丟真正的資料：報到紀錄與我的最愛都在', hot.CORPUS.data.has('u:' + PAM.uuid)
+    && JSON.parse(hot.CORPUS.data.get('fav:' + PAM.uuid).value).h.includes(hash));
+  await worker.scheduled({}, hot);
+  check('★ 每天的排程照最愛重算星星，修好沒寫進去或被蓋掉的人數', JSON.parse(hot.CORPUS.data.get('stars').value)[hash] === 1
+    && !hot.CORPUS.data.has('stars:recount'));
+  hot.CORPUS.data.set('stars', { value: JSON.stringify({ [hash]: 9, ['cd'.repeat(32)]: 2 }), metadata: null });
+  for (let n = 0; n < 700; n++) {
+    hot.CORPUS.data.set('fav:' + n.toString(16).padStart(32, '0'), { value: JSON.stringify({ t: 1, h: [hash, 'cd'.repeat(32)] }), metadata: null });
+  }
+  let rounds = 0;
+  let outcome;
+  do {
+    outcome = await recountStars(hot);
+    rounds++;
+  } while (!outcome.done && rounds < 10);
+  check('★ 最愛太多一次讀不完：分幾天接著算，算完才換掉人數；已經不在的圖不算', rounds > 1 && outcome.done
+    && JSON.parse(hot.CORPUS.data.get('stars').value)[hash] === 701 && !(('cd'.repeat(32)) in JSON.parse(hot.CORPUS.data.get('stars').value))
+    && !hot.CORPUS.data.has('stars:recount'));
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));

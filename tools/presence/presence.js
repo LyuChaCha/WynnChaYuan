@@ -3,9 +3,10 @@ import { discordOn, discordSession, publicId, who } from './auth.js';
 import { MAX_CAPE_BYTES, MAX_PLAIN_CAPE_BYTES, hasPerk, listed, visibility } from './capes.js';
 import { credits } from './credits.js';
 import { ID, day, json, no, readJson } from './http.js';
-import { listAll } from './kv.js';
+import { listAll, quietPut } from './kv.js';
 
 const TTL_SECONDS = 14 * 24 * 3600;
+const LIST_REBUILD_GAP_MS = 5 * 1000;
 
 const LIST_MAX_AGE_MS = 10 * 60 * 1000;
 
@@ -136,7 +137,7 @@ async function patchList(env, record) {
   const list = await storedList(env);
   if (!list) return;
   const patched = applyRecord(list, record);
-  if (patched) await env.CORPUS.put('presence:list', JSON.stringify(patched));
+  if (patched) await quietPut(env.CORPUS, 'presence:list', JSON.stringify(patched));
 }
 
 async function buildList(env, now) {
@@ -159,11 +160,14 @@ async function buildList(env, now) {
   return { t: now, users, capes, hidden, rainbow, show };
 }
 
-export async function handleList(env, now) {
+let lastRebuildAt = 0;
+
+export async function handleList(env, now, ctx) {
   let list = await storedList(env);
-  if (!list || now - list.t > LIST_MAX_AGE_MS) {
+  if (!list || (now - list.t > LIST_MAX_AGE_MS && now - lastRebuildAt >= LIST_REBUILD_GAP_MS)) {
+    lastRebuildAt = now;
     list = await buildList(env, now);
-    await env.CORPUS.put('presence:list', JSON.stringify(list));
+    await quietPut(env.CORPUS, 'presence:list', JSON.stringify(list), undefined, ctx);
   }
   return json(list, 200, { 'cache-control': 'public, max-age=60' });
 }
