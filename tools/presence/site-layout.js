@@ -2,6 +2,7 @@ import { CAPE_TEMPLATES } from './cape-templates.js';
 import { CURSEFORGE, ICON, ISSUES, KOFI, LEAF, RELEASES, REPO } from './site-constants.js';
 import { LANGS, LANG_NAMES, tagOf } from './site-strings.js';
 import { FONT_CSS, STYLE, TEX_CSS } from './site-styles.js';
+import { jsonData, readJsonData, scriptFile } from './site-scripts.js';
 
 const COMMON = String.raw`
   var TOKEN_KEY = 'wcy.token';
@@ -624,6 +625,8 @@ function header(lang, active) {
     + '</div></div>';
 }
 
+const COMMON_SCRIPT = scriptFile('common', 'var L = ' + readJsonData('site-text') + ';' + COMMON);
+
 export function layout(lang, title, active, body, script) {
   const column = (heading, links) => '<div><h2>%%' + heading + '%%</h2><ul>'
     + links.map((link) => '<li>' + link + '</li>').join('') + '</ul></div>';
@@ -664,7 +667,7 @@ export function layout(lang, title, active, body, script) {
     + '<span>%%foot.unofficial%% %%foot.assets%%</span>'
     + '<span>Designed by LyuChaCha</span></div>'
     + '</div></footer>\n'
-    + '<script>var L = %%js%%;' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
+    + jsonData('site-text', '%%js%%') + COMMON_SCRIPT + '\n' + (script || '') + '\n</body>\n</html>';
 }
 
 export const leaf = (colour) => '<span style="color:' + colour + ';display:flex">' + LEAF + '</span>';
