@@ -3459,6 +3459,31 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && (await worker.fetch(bearer('golden-secrex'), admin)).status === 403 && (await worker.fetch(bearer('short'), admin)).status === 403);
 }
 
+{
+  const store = { CORPUS: fakeKv() };
+  const NED = { uuid: 'e9'.repeat(16), name: 'Ned' };
+  const nedToken = await issueToken(store, NED.uuid, NED.name, NOW);
+  const CHUNK = 1024 * 1024;
+  let pulled = 0;
+  const endless = new ReadableStream({
+    pull(controller) {
+      pulled++;
+      if (pulled > 60) controller.close();
+      else controller.enqueue(new Uint8Array(CHUNK));
+    },
+  });
+  const upload = await worker.fetch(new Request('https://x.test/api/cape', { method: 'PUT', body: endless, duplex: 'half',
+    headers: { authorization: 'Bearer ' + nedToken } }), store);
+  check('★ 沒有 content-length 的上傳：超過上限就停止讀，不會整包收進記憶體', upload.status === 413 && pulled <= 30);
+  const { readBounded, readJson } = await import('./http.js');
+  const body = (text) => new Request('https://x.test/', { method: 'POST', body: text });
+  check('readBounded：剛好上限收，超過回 null', (await readBounded(body('abcd'), 4)).length === 4 && (await readBounded(body('abcde'), 4)) === null);
+  const chunked = (text) => new Request('https://x.test/', { method: 'POST', duplex: 'half', body: new ReadableStream({
+    start(controller) { controller.enqueue(new TextEncoder().encode(text)); controller.close(); } }) });
+  check('readJson：沒有 content-length 也照字數算；中文不會被當成超過', (await readJson(chunked('{"a":"' + '譯'.repeat(50) + '"}'), 60)).a.length === 50
+    && (await readJson(chunked('{"a":"' + 'x'.repeat(5000) + '"}'), 60)) === undefined);
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
