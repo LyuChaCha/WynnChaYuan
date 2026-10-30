@@ -9,24 +9,24 @@ public final class DialogueOffsetTest {
 
     public static void main(String[] args) {
         check("編碼 -116 再解回來還是 -116",
-                DialogueRewriter.offsetOf(DialogueRewriter.offset(-116)) == -116);
+                DialogueLayout.offsetOf(DialogueLayout.offset(-116)) == -116);
         check("正的也一樣",
-                DialogueRewriter.offsetOf(DialogueRewriter.offset(81)) == 81);
+                DialogueLayout.offsetOf(DialogueLayout.offset(81)) == 81);
         check("0 也是合法的位移",
-                DialogueRewriter.offsetOf(DialogueRewriter.offset(0)) == 0);
-        check("超出上限就編不出來", DialogueRewriter.offset(4097) == null);
-        check("超出下限也編不出來", DialogueRewriter.offset(-4097) == null);
-        check("剛好在邊界上還是可以", DialogueRewriter.offset(4096) != null);
-        check("負的邊界也可以", DialogueRewriter.offset(-4096) != null);
+                DialogueLayout.offsetOf(DialogueLayout.offset(0)) == 0);
+        check("超出上限就編不出來", DialogueLayout.offset(4097) == null);
+        check("超出下限也編不出來", DialogueLayout.offset(-4097) == null);
+        check("剛好在邊界上還是可以", DialogueLayout.offset(4096) != null);
+        check("負的邊界也可以", DialogueLayout.offset(-4096) != null);
         check("編得出來的一定解得回去",
-                DialogueRewriter.offsetOf(DialogueRewriter.offset(4096)) == 4096);
+                DialogueLayout.offsetOf(DialogueLayout.offset(4096)) == 4096);
 
         check("35px 的文字 → 尾隨 +81", -(-116) - 35 == 81);
         check("93px 的文字 → 尾隨 +23", -(-116) - 93 == 23);
         check("149px 的文字 → 尾隨 -33", -(-116) - 149 == -33);
 
-        check("The Cook 的前導是 -60", DialogueRewriter.nameLead(40) == -60);
-        check("Enzan 的前導是 -52", DialogueRewriter.nameLead(25) == -52);
+        check("The Cook 的前導是 -60", DialogueLayout.nameLead(40) == -60);
+        check("Enzan 的前導是 -52", DialogueLayout.nameLead(25) == -52);
 
         check("尾隨的位移字要拿掉",
                 Boxes.dropOffsets("Agh!" + new String(Character.toChars(0xD0063))).equals("Agh!"));
@@ -48,26 +48,26 @@ public final class DialogueOffsetTest {
 
         badgeLine();
 
-        check("英文不是位移", DialogueRewriter.offsetOf("A") == null);
-        check("中文不是位移", DialogueRewriter.offsetOf("廚") == null);
-        check("兩個字元不是位移", DialogueRewriter.offsetOf("AB") == null);
+        check("英文不是位移", DialogueLayout.offsetOf("A") == null);
+        check("中文不是位移", DialogueLayout.offsetOf("廚") == null);
+        check("兩個字元不是位移", DialogueLayout.offsetOf("AB") == null);
 
-        check("英文畫得出來", DialogueRewriter.drawable("Let's hope no more grooks"));
-        check("數字符號畫得出來", DialogueRewriter.drawable("+12% (3/5) [80.0%]"));
-        check("西班牙文畫得出來", DialogueRewriter.drawable("Aumenta el dano magico"));
-        check("法文重音畫得出來", DialogueRewriter.drawable("Augmente les degats"));
-        check("中文畫不出來", !DialogueRewriter.drawable("希望別再有"));
-        check("中英混排畫不出來", !DialogueRewriter.drawable("希望別再有 grook"));
-        check("日文畫不出來", !DialogueRewriter.drawable("グルック"));
-        check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
-        check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
-        check("ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için"));
+        check("英文畫得出來", DialogueFonts.drawable("Let's hope no more grooks"));
+        check("數字符號畫得出來", DialogueFonts.drawable("+12% (3/5) [80.0%]"));
+        check("西班牙文畫得出來", DialogueFonts.drawable("Aumenta el dano magico"));
+        check("法文重音畫得出來", DialogueFonts.drawable("Augmente les degats"));
+        check("中文畫不出來", !DialogueFonts.drawable("希望別再有"));
+        check("中英混排畫不出來", !DialogueFonts.drawable("希望別再有 grook"));
+        check("日文畫不出來", !DialogueFonts.drawable("グルック"));
+        check("諺文畫不出來", !DialogueFonts.drawable("계속하려면"));
+        check("西里爾畫不出來", !DialogueFonts.drawable("продолжить"));
+        check("ç 交給配對字型", !DialogueFonts.drawable("devam etmek için"));
         String control = "minecraft:hud/dialogue/text/control";
         String body = "minecraft:hud/dialogue/text/wynncraft/body_0";
-        check("提示列：é 交給配對字型", !DialogueRewriter.drawable("Muévete para continuar", control));
-        check("提示列：純 ASCII 留在原字型", DialogueRewriter.drawable("para continuar", control));
-        check("內文列：é 留在原字型", DialogueRewriter.drawable("Muévete para continuar", body));
-        check("內文列：ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için", body));
+        check("提示列：é 交給配對字型", !DialogueFonts.drawable("Muévete para continuar", control));
+        check("提示列：純 ASCII 留在原字型", DialogueFonts.drawable("para continuar", control));
+        check("內文列：é 留在原字型", DialogueFonts.drawable("Muévete para continuar", body));
+        check("內文列：ç 交給配對字型", !DialogueFonts.drawable("devam etmek için", body));
 
         check("接第一行不補空格",
                 DialogueRewriter.joinRow("", "Go on").equals("Go on"));
@@ -82,48 +82,48 @@ public final class DialogueOffsetTest {
                         .equals(" keeps"));
 
         check("打完就是全部",
-                DialogueRewriter.typedSoFar("希望別再有人闖進來", 20, 20)
+                DialogueTyping.typedSoFar("希望別再有人闖進來", 20, 20)
                         .equals("希望別再有人闖進來"));
         check("打一半就取一半",
-                DialogueRewriter.typedSoFar("希望別再有人闖進來", 10, 20)
+                DialogueTyping.typedSoFar("希望別再有人闖進來", 10, 20)
                         .equals("希望別再有"));
         check("一個字都還沒打就空的",
-                DialogueRewriter.typedSoFar("希望別再有人闖進來", 0, 20)
+                DialogueTyping.typedSoFar("希望別再有人闖進來", 0, 20)
                         .isEmpty());
         check("不切在佔位符中間",
-                DialogueRewriter.typedSoFar("你好 {~1} 位客人", 5, 10)
+                DialogueTyping.typedSoFar("你好 {~1} 位客人", 5, 10)
                         .equals("你好 "));
         check("佔位符整個進來了就留著",
-                DialogueRewriter.typedSoFar("你好 {~1} 位", 8, 10)
+                DialogueTyping.typedSoFar("你好 {~1} 位", 8, 10)
                         .equals("你好 {~1}"));
 
-        List<String> narrow = DialogueRewriter.wrap("abcdefgh", 2, null, 24);
+        List<String> narrow = DialogueLayout.wrap("abcdefgh", 2, null, 24);
         check("窄的時候一行只放得下四個字",
                 narrow != null && narrow.get(0).equals("abcd")
                         && narrow.get(1).equals("efgh"));
-        List<String> wide = DialogueRewriter.wrap("abcdefgh", 2, null, 48);
+        List<String> wide = DialogueLayout.wrap("abcdefgh", 2, null, 48);
         check("寬的時候一行就放得完",
                 wide != null && wide.get(0).equals("abcdefgh"));
 
-        List<String> id = DialogueRewriter.wrap("走吧！Tasim、Green_teaTW，來比", 2, null, 84);
+        List<String> id = DialogueLayout.wrap("走吧！Tasim、Green_teaTW，來比", 2, null, 84);
         check("玩家 ID 不從中間切（實際：" + id + "）",
                 id != null && id.get(0).equals("走吧！Tasim、")
                         && id.get(1).startsWith("Green_teaTW"));
 
         String says = "I don't suppose you've seen {u} around here?";
         check("整句還沒打完，是同一句",
-                DialogueRewriter.within(says, "I don't suppose you've"));
+                DialogueTyping.within(says, "I don't suppose you've"));
         check("名字打到一半，還是同一句",
-                DialogueRewriter.within(says, "I don't suppose you've seen Green_te"));
+                DialogueTyping.within(says, "I don't suppose you've seen Green_te"));
         check("名字打完收成佔位符，還是同一句",
-                DialogueRewriter.within(says, "I don't suppose you've seen {u} around"));
+                DialogueTyping.within(says, "I don't suppose you've seen {u} around"));
         check("開頭就不一樣的，不是同一句",
-                !DialogueRewriter.within(says, "Well met, traveller!"));
+                !DialogueTyping.within(says, "Well met, traveller!"));
         check("後面還接了別的東西，就不是同一句",
-                !DialogueRewriter.within("New Quest Started: King's Recruit",
+                !DialogueTyping.within("New Quest Started: King's Recruit",
                         "New Quest Started: King's Recruit [{~}/{~} ({~}%)]"));
         check("岔開之後長到離譜的，不算",
-                !DialogueRewriter.within(says,
+                !DialogueTyping.within(says,
                         "I don't suppose you've seen "
                                 + "abcdefghijklmnopqrstuvwxyz0123456789"
                                 + "abcdefghijklmnopqrstuvwxyz"));
@@ -131,29 +131,29 @@ public final class DialogueOffsetTest {
         String rival = "They've been at it for a while now. "
                 + "Which one do you think will beat the other tomorrow?";
         check("岔在句子中間的，是別句話（打到一半）",
-                !DialogueRewriter.within(rival,
+                !DialogueTyping.within(rival,
                         "They've been a symbol of our town for lon"));
         check("岔在句子中間的，是別句話（打完）",
-                !DialogueRewriter.within(rival,
+                !DialogueTyping.within(rival,
                         "They've been a symbol of our town for longer than anyone "
                                 + "can remember, their original use long forgotten."));
         check("岔在佔位符上的仍然算同一句",
-                DialogueRewriter.within("Nice to see you again, {u}! How goes it?",
+                DialogueTyping.within("Nice to see you again, {u}! How goes it?",
                         "Nice to see you again, Green_te"));
 
         check("字還在長就不算停下來",
-                !DialogueRewriter.settled("Bloc") && !DialogueRewriter.settled("Block"));
+                !DialogueTyping.settled("Bloc") && !DialogueTyping.settled("Block"));
         boolean early = false;
         for (int i = 0; i < 5; i++) {
-            early |= DialogueRewriter.settled("Block");
+            early |= DialogueTyping.settled("Block");
         }
         check("字與字之間的空檔不會被誤判成停下來", !early);
         boolean late = false;
         for (int i = 0; i < 4; i++) {
-            late |= DialogueRewriter.settled("Block");
+            late |= DialogueTyping.settled("Block");
         }
         check("停夠久就算停下來了", late);
-        check("字又長出來就重新計算", !DialogueRewriter.settled("Block t"));
+        check("字又長出來就重新計算", !DialogueTyping.settled("Block t"));
 
 
         System.out.println(failures == 0

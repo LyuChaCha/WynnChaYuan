@@ -8,20 +8,20 @@ public final class DialogueNewlineTest {
 
     public static void main(String[] args) {
         check("沒有換行就原樣",
-                DialogueRewriter.oneLine("Merhaba, {u}!").equals("Merhaba, {u}!"));
+                DialogueTyping.oneLine("Merhaba, {u}!").equals("Merhaba, {u}!"));
         check("拉丁字之間換成一個空白",
-                DialogueRewriter.oneLine("Bu çok uzun\nbir cümle.").equals("Bu çok uzun bir cümle."));
+                DialogueTyping.oneLine("Bu çok uzun\nbir cümle.").equals("Bu çok uzun bir cümle."));
         check("換行旁邊已經有空白就不再加",
-                DialogueRewriter.oneLine("Bu çok uzun \nbir cümle.").equals("Bu çok uzun bir cümle."));
+                DialogueTyping.oneLine("Bu çok uzun \nbir cümle.").equals("Bu çok uzun bir cümle."));
         check("中文字之間直接接上",
-                DialogueRewriter.oneLine("這句話很長\n所以換行了").equals("這句話很長所以換行了"));
+                DialogueTyping.oneLine("這句話很長\n所以換行了").equals("這句話很長所以換行了"));
         check("\\r\\n 也一樣",
-                DialogueRewriter.oneLine("один\r\nдва").equals("один два"));
+                DialogueTyping.oneLine("один\r\nдва").equals("один два"));
         check("連續兩個換行不會變成兩個空白",
-                DialogueRewriter.oneLine("A\n\nB").equals("A B"));
+                DialogueTyping.oneLine("A\n\nB").equals("A B"));
 
-        String flat = DialogueRewriter.oneLine("Bu çok uzun bir cümle\nve ikinci satır burada.");
-        List<String> rows = DialogueRewriter.wrap(flat, 2, null, 150);
+        String flat = DialogueTyping.oneLine("Bu çok uzun bir cümle\nve ikinci satır burada.");
+        List<String> rows = DialogueLayout.wrap(flat, 2, null, 150);
         check("攤平的譯文攤得進兩列",
                 rows != null && rows.stream().noneMatch(r -> r.indexOf('\n') >= 0));
         check("沒有漏字",

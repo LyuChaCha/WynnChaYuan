@@ -17,21 +17,21 @@ public final class DialogueKinsokuTest {
         String text = "把 [Abysso Galoshes] 帶來";
         int bracket = text.indexOf('[');
         check("★ 斷在 [ 後面時，[ 跟著下一行走",
-                DialogueRewriter.kinsoku(text, 0, bracket + 1) == bracket);
+                DialogueLayout.kinsoku(text, 0, bracket + 1) == bracket);
         check("★ 斷在 ] 前面時，把前一個字一起帶下去",
-                DialogueRewriter.kinsoku(text, 0, text.indexOf(']'))
+                DialogueLayout.kinsoku(text, 0, text.indexOf(']'))
                         == text.indexOf(']') - 1);
         check("沒有頭尾問題的斷點不動",
-                DialogueRewriter.kinsoku(text, 0, bracket) == bracket);
+                DialogueLayout.kinsoku(text, 0, bracket) == bracket);
         check("挪到整行變空時就不挪",
-                DialogueRewriter.kinsoku("[abc", 0, 1) == 1);
+                DialogueLayout.kinsoku("[abc", 0, 1) == 1);
         check("★ 最多只往前挪 3 個字元，不會為了避頭尾把整行搬空",
-                DialogueRewriter.kinsoku("中文字」』）】", 0, 6) == 3);
+                DialogueLayout.kinsoku("中文字」』）】", 0, 6) == 3);
 
         int bad = 0;
         int checked = 0;
         for (int limit = 60; limit <= 360; limit += 6) {
-            List<String> rows = DialogueRewriter.wrap(FERNDOR, 40, null, limit);
+            List<String> rows = DialogueLayout.wrap(FERNDOR, 40, null, limit);
             if (rows == null) {
                 continue;
             }
@@ -53,7 +53,7 @@ public final class DialogueKinsokuTest {
         check("掃過 " + checked + " 種寬度都有量到", checked > 30);
         check("★ 沒有一行的結尾是開括號、開頭是閉括號（" + bad + " 處）", bad == 0);
 
-        List<String> rows = DialogueRewriter.wrap(FERNDOR, 40, null, 120);
+        List<String> rows = DialogueLayout.wrap(FERNDOR, 40, null, 120);
         check("斷行沒有漏字",
                 rows != null && String.join("", rows).replace(" ", "")
                         .equals(FERNDOR.replace(" ", "")));

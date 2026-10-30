@@ -103,10 +103,10 @@ public final class DialogueTypingTest {
     private static void glyphs() {
         com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(
                 com.wynntils.core.text.StyledText.fromString("Agility, now"));
-        String out = DialogueRewriter.fill("{#} 敏捷嘛，那是給愛冒險的人的。", parts);
+        String out = DialogueTyping.fill("{#} 敏捷嘛，那是給愛冒險的人的。", parts);
         check("對話框不會印出「{#}」（實際 " + out + "）",
               !out.contains("{#}") && out.startsWith("敏捷"));
-        String middle = DialogueRewriter.fill("點 {#} 敏捷", parts);
+        String middle = DialogueTyping.fill("點 {#} 敏捷", parts);
         check("句中的圖示一樣拿掉（實際 " + middle + "）", !middle.contains("{#}"));
     }
 
@@ -238,7 +238,7 @@ public final class DialogueTypingTest {
     }
 
     private static List<String> typeOut(String src, TranslationStore store, int upto) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         List<String> frames = new ArrayList<>();
         int stop = Math.max(1, Math.min(upto, src.length()));
         for (int at = 1; at <= stop; at++) {
@@ -253,7 +253,7 @@ public final class DialogueTypingTest {
 
     private static String frame(String raw, TranslationStore store) {
         try {
-            String out = DialogueRewriter.line(raw, store, rowsFor(raw), null, WIDTH);
+            String out = DialogueTyping.line(raw, store, rowsFor(raw), null, WIDTH);
             return out == null || out.isEmpty() ? null : out;
         } catch (RuntimeException e) {
             return "！" + e;
@@ -389,7 +389,7 @@ public final class DialogueTypingTest {
 
     private static int rowsFor(String raw) {
         for (int n = 1; n <= 5; n++) {
-            if (DialogueRewriter.wrap(raw, n, null, WIDTH) != null) {
+            if (DialogueLayout.wrap(raw, n, null, WIDTH) != null) {
                 return n;
             }
         }

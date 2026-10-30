@@ -29,7 +29,7 @@ public final class DialogueWrapTest {
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
-        DialogueRewriter.widthForTest = DialogueWrapTest::realWidth;
+        DialogueLayout.widthForTest = DialogueWrapTest::realWidth;
 
         choiceAndPromptNewline();
         panelPunctuation();
@@ -95,7 +95,7 @@ public final class DialogueWrapTest {
 
     private static void panelPunctuation() {
         String text = "一二三四五六七八九，十甲乙丙丁戊己庚。辛壬癸子丑寅卯辰巳！午未申酉戌亥。";
-        List<Component> rows = DialogueOverlay.fold(Component.literal(text), 90);
+        List<Component> rows = DialoguePanelRenderer.fold(Component.literal(text), 90);
         boolean head = true;
         boolean fits = true;
         StringBuilder joined = new StringBuilder();
@@ -116,7 +116,7 @@ public final class DialogueWrapTest {
 
     private static void panelWords() {
         String text = "你要是能把那雙靴子帶回來，我就送你 Abysso Galoshes 當作謝禮，好嗎？";
-        List<Component> rows = DialogueOverlay.fold(Component.literal(text), 120);
+        List<Component> rows = DialoguePanelRenderer.fold(Component.literal(text), 120);
         boolean whole = true;
         for (Component row : rows) {
             String s = row.getString();
@@ -142,7 +142,7 @@ public final class DialogueWrapTest {
                 Style.EMPTY.withColor(ITEM)));
         line.append(Component.literal(" 帶回來，我可以給你報酬！").withStyle(
                 Style.EMPTY.withColor(BODY)));
-        List<Component> rows = DialogueOverlay.fold(line, 100);
+        List<Component> rows = DialoguePanelRenderer.fold(line, 100);
         boolean ok = true;
         StringBuilder name = new StringBuilder();
         for (Component row : rows) {
@@ -166,7 +166,7 @@ public final class DialogueWrapTest {
 
     private static void panelShortAndHard() {
         Component small = Component.literal("你好。");
-        List<Component> rows = DialogueOverlay.fold(small, 200);
+        List<Component> rows = DialoguePanelRenderer.fold(small, 200);
         check("放得下的一行原樣回傳", rows.size() == 1 && rows.get(0) == small);
         List<Component> lines = Boxes.toLines(Component.literal("第一句。\n第二句。"));
         check("譯文裡的 \\n 仍是硬換行（小框）", lines.size() == 2

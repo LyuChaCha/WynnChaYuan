@@ -80,7 +80,7 @@ public final class DialogueLeadAudit {
                 com.wynnchayuan.capture.DialogueProgress.settle(-1);
                 CurrentQuest.set(l.quest());
                 speak(null);
-                DialogueRewriter.forget();
+                DialogueTyping.forget();
                 DialogueForecast.forgetAll();
                 answer.put(l.raw(), last(typeOut(l.raw(), store)));
                 panelAnswer.put(l.raw(), last(panelFrames(l.raw(), store)));
@@ -101,10 +101,10 @@ public final class DialogueLeadAudit {
         for (Line l : flat) {
             CurrentQuest.set(null);
             speak(null);
-            DialogueRewriter.forget();
+            DialogueTyping.forget();
             DialogueForecast.forgetAll();
             String want = last(typeOut(l.raw(), store));
-            DialogueRewriter.forget();
+            DialogueTyping.forget();
             s.add(typeOut(l.raw(), store), l.raw().length(), want);
         }
         s.print();
@@ -121,13 +121,13 @@ public final class DialogueLeadAudit {
         }
         Map<String, Stats> byGroup = new LinkedHashMap<>();
         for (List<Line> story : stories.values()) {
-            DialogueRewriter.forget();
+            DialogueTyping.forget();
             DialogueForecast.forgetAll();
             panelCache = new String[3];
             for (int li = 0; li < story.size(); li++) {
                 Line l = story.get(li);
                 if (!chained) {
-                    DialogueRewriter.forget();
+                    DialogueTyping.forget();
                     DialogueForecast.forgetAll();
                     panelCache = new String[3];
                 }
@@ -137,7 +137,7 @@ public final class DialogueLeadAudit {
                         !chained ? -1 : lastOfTalk ? com.wynnchayuan.capture.DialogueProgress.FULL : 100);
                 CurrentQuest.set(tracked ? l.quest() : null);
                 speak(nameplate ? l.speaker() : null);
-                DialogueForecast f = DialogueRewriter.FORECAST;
+                DialogueForecast f = DialogueTyping.FORECAST;
                 String anchor = f.fresh() ? f.anchorQuest() : null;
                 int anchorAt = f.index();
                 List<String> frames = panel ? panelFrames(l.raw(), store) : typeOut(l.raw(), store);
@@ -159,7 +159,7 @@ public final class DialogueLeadAudit {
         int[][] leads = new int[2][story.size()];
         for (int mode = 0; mode < 2; mode++) {
             DialogueForecast.enabled = mode == 1;
-            DialogueRewriter.forget();
+            DialogueTyping.forget();
             DialogueForecast.forgetAll();
             for (int i = 0; i < story.size(); i++) {
                 Line l = story.get(i);
@@ -342,7 +342,7 @@ public final class DialogueLeadAudit {
                 String b = store.explainQuest(typed, quest);
                 String a = l.speaker() == null ? "沒有名牌"
                         : store.explainForecast(typed, quest, anchor != null ? anchorAt : -1,
-                                DialogueForecast.WINDOW, l.speaker(), DialogueRewriter::within);
+                                DialogueForecast.WINDOW, l.speaker(), DialogueTyping::within);
                 reason = "任務範圍：" + b + "／預測：" + a;
             }
             reasons.merge((released ? "[放英文] " : "[慢] ") + reason, 1, Integer::sum);
@@ -410,12 +410,12 @@ public final class DialogueLeadAudit {
 
     private static void tick() {
         fakeNow += MS_PER_CHAR;
-        DialogueRewriter.holdClock = () -> fakeNow;
+        DialogueTyping.holdClock = () -> fakeNow;
     }
 
     private static String frame(String raw, TranslationStore store) {
         try {
-            return DialogueRewriter.line(raw, store, rowsFor(raw), null, WIDTH);
+            return DialogueTyping.line(raw, store, rowsFor(raw), null, WIDTH);
         } catch (RuntimeException e) {
             return "！" + e;
         }
@@ -461,7 +461,7 @@ public final class DialogueLeadAudit {
 
     private static int rowsFor(String raw) {
         for (int n = 1; n <= 5; n++) {
-            if (DialogueRewriter.wrap(raw, n, null, WIDTH) != null) {
+            if (DialogueLayout.wrap(raw, n, null, WIDTH) != null) {
                 return n;
             }
         }

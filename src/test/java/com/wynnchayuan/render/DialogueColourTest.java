@@ -87,7 +87,7 @@ public final class DialogueColourTest {
         String wrong = null;
         for (int n = start + 1; n <= stop; n++) {
             String typed = full.substring(0, n);
-            List<LineParts.Piece> out = DialogueRewriter.paint(typed,
+            List<LineParts.Piece> out = DialogueAccents.paint(typed,
                     Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
             LineParts.Piece last = out.get(out.size() - 1);
             if (!ITEM.equals(last.style().getColor()) && white == null) {
@@ -100,7 +100,7 @@ public final class DialogueColourTest {
         check("打到名字的第一個字母就有顏色", null, white);
         check("上色的正好是名字打出來的那一截", null, wrong);
 
-        List<LineParts.Piece> before = DialogueRewriter.paint("你聽說過 ",
+        List<LineParts.Piece> before = DialogueAccents.paint("你聽說過 ",
                 Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
         check("名字還沒開始就整句都是底色", 1, before.size());
         check("而且是底色", BODY, before.get(0).style().getColor());
@@ -124,7 +124,7 @@ public final class DialogueColourTest {
             tint.add(new LineParts.Piece(name, Style.EMPTY.withColor(ITEM)));
 
             int inked = 0;
-            for (LineParts.Piece piece : DialogueRewriter.paint(typed,
+            for (LineParts.Piece piece : DialogueAccents.paint(typed,
                     Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()])) {
                 if (ITEM.equals(piece.style().getColor())) {
                     inked += piece.text().length();
@@ -186,25 +186,25 @@ public final class DialogueColourTest {
         List<Integer> body = List.of(0, 2);
         List<Integer> ends = List.of(1, 3);
 
-        TextColor tone = DialogueRewriter.tone(texts, styles, body, ends);
+        TextColor tone = DialogueAccents.tone(texts, styles, body, ends);
         List<LineParts.Piece> tint =
-                DialogueRewriter.accents(texts, styles, body, ends, tone);
+                DialogueAccents.accents(texts, styles, body, ends, tone);
         check("斷行吃掉的空白補回來了", "[Abysso Galoshes]", tint.get(0).text());
 
         List<String> rows = List.of(
                 "多年前被一個海盜從我們這裡偷走了！你要是能把 [",
                 "Abysso Galoshes] 帶來幫我們，我可以給你報酬！");
         int[] starts = new int[rows.size()];
-        List<LineParts.Piece> whole = DialogueRewriter.paint(
-                DialogueRewriter.flatten(rows, starts),
+        List<LineParts.Piece> whole = DialogueAccents.paint(
+                DialogueAccents.flatten(rows, starts),
                 Style.EMPTY.withColor(tone), tint, new boolean[tint.size()]);
 
-        List<LineParts.Piece> second = DialogueRewriter.cut(
+        List<LineParts.Piece> second = DialogueAccents.cut(
                 whole, starts[1], starts[1] + rows.get(1).length());
         check("名字的後半沒有自己變成一截", ITEM, colourAt(second, "Abysso Galoshes]"));
         check("後面的散文是底色", BODY, colourAt(second, " 帶來幫我們，我可以給你報酬！"));
 
-        List<LineParts.Piece> first = DialogueRewriter.cut(
+        List<LineParts.Piece> first = DialogueAccents.cut(
                 whole, starts[0], starts[0] + rows.get(0).length());
         check("第一行的中括號跟著名字上色", ITEM,
                 first.get(first.size() - 1).style().getColor());
@@ -327,11 +327,11 @@ public final class DialogueColourTest {
         }
 
         TextColor tone() {
-            return DialogueRewriter.tone(texts, styles, from(), to());
+            return DialogueAccents.tone(texts, styles, from(), to());
         }
 
         List<LineParts.Piece> accents() {
-            return DialogueRewriter.accents(texts, styles, from(), to(), tone());
+            return DialogueAccents.accents(texts, styles, from(), to(), tone());
         }
 
         List<LineParts.Piece> paint(String translated) {
@@ -340,13 +340,13 @@ public final class DialogueColourTest {
         }
 
         List<LineParts.Piece> paint(String translated, boolean[] used) {
-            return DialogueRewriter.paint(translated,
+            return DialogueAccents.paint(translated,
                     Style.EMPTY.withColor(tone()), accents(), used);
         }
 
         List<LineParts.Piece> paint(String translated, Style base) {
             List<LineParts.Piece> tint = accents();
-            return DialogueRewriter.paint(translated, base, tint,
+            return DialogueAccents.paint(translated, base, tint,
                     new boolean[tint.size()]);
         }
     }
