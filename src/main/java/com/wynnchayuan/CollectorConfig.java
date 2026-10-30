@@ -17,6 +17,8 @@ public final class CollectorConfig {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
+    public static final int DEFAULT_PANEL_GAP = 4;
+
     private final Path file;
 
     /**
@@ -485,7 +487,7 @@ public final class CollectorConfig {
     private String fallbackLanguage = "";
 
     /** 面板與原 tooltip 之間的間距（像素）。 */
-    private int panelGap = 12;
+    private int panelGap = DEFAULT_PANEL_GAP;
 
     /**
      * 所有小框的主題色（框線）。以 {@code #RRGGBB} 存，方便手改設定檔。
