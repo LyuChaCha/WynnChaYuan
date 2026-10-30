@@ -20,7 +20,7 @@ public final class MajorIdTest {
 
         check("語料本身讀得到名稱", "利他主義".equals(store.lookup("Altruism")));
 
-        String flowed = LineTranslator.lookupFlowed(AS_RENDERED, store);
+        String flowed = BlockTranslator.lookupFlowed(AS_RENDERED, store);
         check("整段（含 ✦ 與自動斷行）查得到", flowed != null);
         if (flowed != null) {
             check("名稱有翻到", flowed.contains("利他主義"));
@@ -28,7 +28,7 @@ public final class MajorIdTest {
             check("佔位符數量守住", numberSlots(flowed) == numberSlots(AS_RENDERED));
         }
 
-        String blinding = LineTranslator.lookupFlowed(BLINDING, store);
+        String blinding = BlockTranslator.lookupFlowed(BLINDING, store);
         check("帶兩個偏移字元的整段也查得到（實際：" + shorten(blinding) + "）",
                 blinding != null);
         if (blinding != null) {
@@ -36,7 +36,7 @@ public final class MajorIdTest {
         }
 
         check("不認得的名稱不會硬翻",
-                LineTranslator.lookupFlowed(
+                BlockTranslator.lookupFlowed(
                         "✦ Nonexistent: Allies within {~} blocks gain {~} of the "
                         + "health you gain from Health Regen and Life Steal.", store) == null);
 

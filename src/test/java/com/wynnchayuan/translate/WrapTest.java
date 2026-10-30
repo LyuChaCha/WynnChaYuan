@@ -343,7 +343,7 @@ public final class WrapTest {
                 java.util.List.of(new com.wynnchayuan.capture.LineParts.Piece(
                         "物品升級師", net.minecraft.network.chat.Style.EMPTY));
         String[] split = {"一件強大的神器，可透過 {#} 物品升級", "師 將物品提升至全新的境界。"};
-        String[] kept = LineTranslator.keepAccentsWhole(split, accents);
+        String[] kept = TemplateRenderer.keepAccentsWhole(split, accents);
         System.out.println("      搬完：" + String.join(" ⏎ ", kept));
         report("重點詞搬下去之後，圖示不會被留在行尾",
                !kept[0].stripTrailing().endsWith("{#}"));
