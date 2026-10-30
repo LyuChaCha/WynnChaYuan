@@ -241,6 +241,16 @@ public final class SettingsView extends Surface {
     }
 
     /** 給測試用：切到第幾個分類，不播動畫。 */
+    public float scrollPosition() {
+        return scrollTarget;
+    }
+
+    public void restoreScroll(float at) {
+        scroll = at;
+        scrollTarget = at;
+        maxScroll = Math.max(maxScroll, at);
+    }
+
     public void showTab(int index) {
         tab = Math.max(0, Math.min(tabs.size() - 1, index));
         search.clear();
@@ -705,8 +715,8 @@ public final class SettingsView extends Surface {
             float cardH = cardHeight(card);
             if (cy + cardH >= y && cy < y + h) {
                 Row.Group g = card.group();
-                card(x, cy, cardW, cardH, g.title().get(), String.valueOf(card.rows().size()),
-                     g.tool());
+                card(x, cy, cardW, cardH, g.title().get(),
+                     card.rows().size() > 1 ? String.valueOf(card.rows().size()) : null, g.tool());
                 float ry = cy + GROUP_HEAD + 1;
                 for (Row r : card.rows()) {
                     float rh = rowHeight(r);
@@ -1276,6 +1286,12 @@ public final class SettingsView extends Surface {
 
     private void action(Row r, float left, float right, float y) {
         String label = r.label.get();
+        if (r.danger != null) {
+            float w = Math.min(c.width(label) + 16, right - left);
+            dangerButton("a:" + r.id, right - w, y, w, CTRL_H, label, r.enabled.getAsBoolean(),
+                         r.danger.getAsBoolean(), r.run);
+            return;
+        }
         float w = Math.min(c.width(label) + 22, right - left);
         button("a:" + r.id, right - w, y, w, CTRL_H, label, r.enabled.getAsBoolean(), false,
                Icons.Icon.RIGHT, r.run);

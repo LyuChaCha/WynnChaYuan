@@ -376,6 +376,28 @@ public abstract class Surface {
         }).key = "b:" + key;
     }
 
+    protected void dangerButton(String key, float x, float y, float w, float h, String label,
+                                boolean enabled, boolean armed, Runnable go) {
+        boolean hot = enabled && over(x, y, w, h);
+        float g = glow("b:" + key, hot);
+        float pressed = animate("p:" + key, 0f, 70f);
+        float fill = animate("arm:" + key, armed ? 1f : 0f, 60f);
+        Ui.halo(c, x, y, w, h, Ui.R1, Ui.RED, g);
+        int base = Ui.mix(Ui.alpha(Ui.RED, 0x22), Ui.RED, fill);
+        Ui.pane(c, x, y, w, h, Ui.R1, Ui.mix(Ui.mix(base, 0x30FFFFFF, g * 0.4f), 0xFF000000,
+                pressed * 0.18f), enabled ? Ui.alpha(Ui.RED, 0xB0) : Ui.BORDER);
+        int ink = !enabled ? Ui.fade(Ui.FAINT, 0.7f) : Ui.mix(Ui.RED, Ui.ON_ACCENT, fill);
+        String text = Ui.fit(c, label, (int) (w - 10));
+        c.text(text, x + (w - c.width(text)) / 2f, y + (h - 8) / 2f, ink);
+        zone(x, y, w, h, (px, py, b) -> {
+            if (enabled) {
+                anim.put("p:" + key, 1f);
+                click();
+                go.run();
+            }
+        }).key = "b:" + key;
+    }
+
     protected void card(float x, float y, float w, float h, String title, String count,
                         boolean tool) {
         Ui.pane(c, x, y, w, h, Ui.R2, Ui.CARD, tool ? Ui.alpha(accent, 0x66) : Ui.LINE);
@@ -544,17 +566,26 @@ public abstract class Surface {
         if (t.text() == null || t.text().isEmpty()) {
             return;
         }
-        float maxW = Math.min(240, Math.max(80, winW - 24));
+        float side = winX + winW - 4 - (t.x() + t.w() + 6);
+        boolean beside = t.w() > 0 && side >= 120;
+        float maxW = beside ? Math.min(240, side) : Math.min(240, Math.max(80, winW - 24));
         List<String> lines = Ui.wrap(c, t.text(), (int) (maxW - 14));
         float w = 14;
         for (String line : lines) {
             w = Math.max(w, c.width(line) + 14);
         }
         float h = lines.size() * 10 + 9;
-        float x = Math.max(winX + 4, Math.min(winX + winW - w - 4, t.x() + 8));
-        float y = t.y() + t.h() + 4;
-        if (y + h > winY + winH - 4) {
-            y = t.y() - h - 4;                 // 底下放不下就翻到上面
+        float x;
+        float y;
+        if (beside) {
+            x = t.x() + t.w() + 6;
+            y = Math.max(winY + 4, Math.min(winY + winH - h - 4, t.y() + (t.h() - h) / 2f));
+        } else {
+            x = Math.max(winX + 4, Math.min(winX + winW - w - 4, t.x() + 8));
+            y = t.y() + t.h() + 4;
+            if (y + h > winY + winH - 4) {
+                y = t.y() - h - 4;
+            }
         }
         y = Math.max(2, Math.min(screenH - h - 2, y)) + (1f - alpha) * 3f;
         popPane(x, y, w, h, alpha);

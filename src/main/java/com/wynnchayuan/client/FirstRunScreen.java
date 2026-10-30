@@ -191,9 +191,7 @@ public final class FirstRunScreen extends CanvasScreen {
                 new Row.Group(t("group.privacy"), false, List.of(
                 toggle("privacy.online",
                         () -> cfg().consent() == CollectorConfig.Consent.AGREED,
-                        WynnChaYuan::setConsent),
-                toggle("privacy.optout", () -> cfg().dataOptOut(),
-                        on -> WynnChaYuan.setDataOptOut(on, null)))))));
+                        WynnChaYuan::setConsent))))));
         return tabs;
     }
 

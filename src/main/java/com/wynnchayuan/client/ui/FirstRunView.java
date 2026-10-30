@@ -596,7 +596,8 @@ public final class FirstRunView extends Surface {
         for (Row.Group g : t.groups()) {
             float gh = groupHeight(g, inner, wide);
             if (visible(y, gh)) {
-                card(left, y, inner, gh, g.title().get(), String.valueOf(g.rows().size()), false);
+                card(left, y, inner, gh, g.title().get(),
+                     g.rows().size() > 1 ? String.valueOf(g.rows().size()) : null, false);
             }
             float ry = y + SettingsView.GROUP_HEAD + 1;
             for (Row row : g.rows()) {

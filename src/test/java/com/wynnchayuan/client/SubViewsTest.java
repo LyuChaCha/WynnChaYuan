@@ -312,7 +312,6 @@ public final class SubViewsTest {
         int dialogue = 1;
         int choices = 1;
         boolean online = true;
-        boolean optout = false;
         int chat = 1;
         int nametag = 1;
         int tooltip = 2;
@@ -436,8 +435,7 @@ public final class SubViewsTest {
                             () -> shell.tr("firstrun.privacy.about"), Icons.Icon.LEAF,
                             Preview.Scene.CAPE, List.of(new Row.Group(() -> shell.tr("group.privacy"),
                             false, List.of(
-                            toggle("privacy.online", () -> online, () -> online = !online),
-                            toggle("privacy.optout", () -> optout, () -> optout = !optout))))));
+                            toggle("privacy.online", () -> online, () -> online = !online))))));
         }
     }
 
@@ -498,8 +496,8 @@ public final class SubViewsTest {
         must("自訂：這一類最後一項捲得到", last != null && last[3] > 0);
         press(view, "n:3");
         render(view, "zh_tw", 640, 360, 1, -100, -100);
-        press(view, "t:privacy.optout");
-        must("自訂：隱私那一類的開關點得動", host.optout);
+        press(view, "t:privacy.online");
+        must("自訂：隱私那一類的開關點得動", !host.online);
         press(view, "b:back");
         must("返回：回到推薦／自訂", view.step() == FirstRunView.Step.SETUP);
         render(view, "zh_tw", 640, 360, 1, -100, -100);
