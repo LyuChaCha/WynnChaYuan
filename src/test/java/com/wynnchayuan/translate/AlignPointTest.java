@@ -162,12 +162,12 @@ public final class AlignPointTest {
         check("前面有標籤，是欄位交界",
                 ColumnAligner.labelled(stat, 1));
 
-        check("純字母的 ID", LineTranslator.isName("Xikys"));
-        check("帶底線的 ID", LineTranslator.isName("Green_teaTW"));
-        check("數字被收成佔位符的 ID", LineTranslator.isName("{~}N{~}K{~}"));
-        check("整串都是數字的 ID", LineTranslator.isName("{~}"));
-        check("一句話不是 ID", !LineTranslator.isName("the legendary ice mage"));
-        check("空的不是 ID", !LineTranslator.isName(""));
+        check("純字母的 ID", TemplateLookup.isName("Xikys"));
+        check("帶底線的 ID", TemplateLookup.isName("Green_teaTW"));
+        check("數字被收成佔位符的 ID", TemplateLookup.isName("{~}N{~}K{~}"));
+        check("整串都是數字的 ID", TemplateLookup.isName("{~}"));
+        check("一句話不是 ID", !TemplateLookup.isName("the legendary ice mage"));
+        check("空的不是 ID", !TemplateLookup.isName(""));
 
         gearRequirements();
 

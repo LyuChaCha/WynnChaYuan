@@ -343,7 +343,7 @@ public final class FlowedDebug {
         sb.append("  -- 拆成「名稱：說明」之後 --").append(nl);
         sb.append("     名稱＝[").append(head).append(']').append(nl);
         sb.append("     名稱查表＝")
-          .append(LineTranslator.lookup(head, store, false)).append(nl);
+          .append(TemplateLookup.lookup(head, store, false)).append(nl);
         sb.append("     說明的鍵＝[").append(TranslationStore.normalise(rest))
           .append(']').append(nl);
         sb.append("     說明查表＝").append(store.lookupFlat(rest)).append(nl);

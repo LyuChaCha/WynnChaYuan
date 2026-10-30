@@ -80,14 +80,14 @@ public final class RewardRowTest {
         check("★ 沒帶圖示的鍵照樣優先（實際 " + (plain == null ? null : plain.getString()) + "）",
               plain != null && plain.getString().contains("測不帶圖示的綠寶石"));
         check("帶圖示那一條的譯文不是以圖示開頭：不動",
-              LineTranslator.iconlessReward("- +{~} Odd Thing", store) == null);
+              TemplateLookup.iconlessReward("- +{~} Odd Thing", store) == null);
         check("不是獎勵列：少一個圖示照樣查不到（一般查表沒有變鬆）",
               LineTranslator.translateChat(StyledText.fromString("Treasure Map"), store) == null
                       && !store.hasTranslation("Treasure Map"));
         check("查不到的獎勵：整列不動", LineTranslator.translateChat(row("1 Mystery Box"), store) == null);
-        check("多行的不碰", LineTranslator.iconlessReward("- +{~} Treasure Boots\n- +{~} Emeralds", store) == null);
-        check("沒有東西的不碰", LineTranslator.iconlessReward(null, store) == null
-                && LineTranslator.iconlessReward("", store) == null);
+        check("多行的不碰", TemplateLookup.iconlessReward("- +{~} Treasure Boots\n- +{~} Emeralds", store) == null);
+        check("沒有東西的不碰", TemplateLookup.iconlessReward(null, store) == null
+                && TemplateLookup.iconlessReward("", store) == null);
     }
 
     private static void realCorpus() {

@@ -73,12 +73,12 @@ public final class AbilityRowTest {
     }
 
     private static void row(TranslationStore store, String line, String want) {
-        String hit = LineTranslator.lookup(line, store, false);
+        String hit = TemplateLookup.lookup(line, store, false);
         report("「" + line + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     private static void nothing(TranslationStore store, String line) {
-        String hit = LineTranslator.lookup(line, store, false);
+        String hit = TemplateLookup.lookup(line, store, false);
         report("「" + line + "」不該被切開（實際：" + hit + "）", hit == null);
     }
 

@@ -49,7 +49,7 @@ public final class PartyPanelTest {
         }
 
         report("沒有逐行條目蓋掉整段",
-                LineTranslator.lookup("inventory to find a party", store, false) == null);
+                TemplateLookup.lookup("inventory to find a party", store, false) == null);
 
         lootrunBlocks(store);
 
@@ -132,7 +132,7 @@ public final class PartyPanelTest {
     }
 
     private static void row(TranslationStore store, String src, String want) {
-        String zh = LineTranslator.lookup(src, store, false);
+        String zh = TemplateLookup.lookup(src, store, false);
         report("「" + src + "」→「" + want + "」（實際 " + zh + "）",
                 zh != null && zh.contains(want));
     }

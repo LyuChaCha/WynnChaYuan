@@ -22,7 +22,7 @@ final class ColumnTemplates {
         int colours = 0;
         int values = 0;
         for (String part : parts) {
-            String hit = GlyphSplitter.hasLetter(part) ? LineTranslator.lookup(part, store) : null;
+            String hit = GlyphSplitter.hasLetter(part) ? TemplateLookup.lookup(part, store) : null;
             if (hit != null && !hit.isBlank()) {
                 String shifted = renumber(ColourTemplate.shiftColours(hit, colours), values);
                 if (shifted == null) {
@@ -78,7 +78,7 @@ final class ColumnTemplates {
                 }
                 String run = String.join(String.valueOf(LineTranslator.NEWLINE),
                                          java.util.Arrays.copyOfRange(lines, i, j));
-                String found = LineTranslator.lookup(run, store);
+                String found = TemplateLookup.lookup(run, store);
                 if (found != null && !found.isBlank()
                         && found.split(String.valueOf(LineTranslator.NEWLINE), -1).length == j - i) {
                     hit = found;

@@ -63,16 +63,16 @@ public final class BracketAccentTest {
 
         check("「[{~} Arcane Anomalies]」→ 奧祕異象（-ies 換回 -y）",
               "奧祕異象".equals(
-                      LineTranslator.lookupWordCore("[15 Arcane Anomalies]", store)));
+                      TermSubstitution.lookupWordCore("[15 Arcane Anomalies]", store)));
         check("「[{~} Dragonling Scales]」→ 龍崽鱗片（剝掉 -s）",
               "龍崽鱗片".equals(
-                      LineTranslator.lookupWordCore("[15 Dragonling Scales]", store)));
+                      TermSubstitution.lookupWordCore("[15 Dragonling Scales]", store)));
 
         TranslationStore ss = corpus("Glass", "玻璃", "Moss", "苔蘚");
         check("「-ss」結尾的不剝（Glass 不會變成 Glas）",
-              "玻璃".equals(LineTranslator.lookupWordCore("[3 Glass]", ss)));
+              "玻璃".equals(TermSubstitution.lookupWordCore("[3 Glass]", ss)));
         check("查不到的仍然回傳 null（不亂猜）",
-              LineTranslator.lookupWordCore("[3 Widgets]", ss) == null);
+              TermSubstitution.lookupWordCore("[3 Widgets]", ss) == null);
     }
 
     private static void card() throws Exception {
@@ -374,7 +374,7 @@ public final class BracketAccentTest {
     }
 
     private static void wraps(String core, String zh, String translated, String want) {
-        String got = LineTranslator.wrapLikeSource(core, zh, translated);
+        String got = TermSubstitution.wrapLikeSource(core, zh, translated);
         check("「" + core + "」＋「" + zh + "」→ " + (want == null ? "不擴" : want)
               + "（拿到 " + got + "）", java.util.Objects.equals(got, want));
     }
