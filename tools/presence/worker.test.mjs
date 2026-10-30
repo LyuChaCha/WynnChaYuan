@@ -6,6 +6,7 @@ import worker, {
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
   visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
+  indexOwners, ownerEntry, participantsOf, OWNER_INDEX_READY,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { decodePng, decodeGif, encodePng, encodeGif, layout } from './cape-preview.js';
@@ -40,11 +41,14 @@ function fakeKv() {
     async delete(key) {
       data.delete(key);
     },
-    async list({ prefix }) {
+    async list({ prefix = '', limit = 1000, cursor } = {}) {
       ops.list++;
-      const keys = [...data.keys()].filter((k) => k.startsWith(prefix)).sort()
-        .map((name) => ({ name, metadata: data.get(name).metadata }));
-      return { keys, list_complete: true };
+      const all = [...data.keys()].filter((k) => k.startsWith(prefix)).sort();
+      const start = cursor ? all.findIndex((k) => k > cursor) : 0;
+      const slice = start < 0 ? [] : all.slice(start, start + limit);
+      const keys = slice.map((name) => ({ name, metadata: data.get(name).metadata }));
+      const complete = start < 0 || start + limit >= all.length;
+      return complete ? { keys, list_complete: true } : { keys, list_complete: false, cursor: slice[slice.length - 1] };
     },
   };
 }
@@ -61,6 +65,7 @@ const githubCalls = [];
 let githubIssueStatus = 201;
 const githubBranches = new Set();
 let githubOpenPulls = [];         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
+let githubPullStatus = 201;
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -84,7 +89,10 @@ globalThis.fetch = async (url, init = {}) => {
         : answer({ message: 'nope' }, githubIssueStatus);
     }
     if (call.method === 'PUT') return answer({}, 200);
-    if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
+    if (path === '/pulls') {
+      if (githubPullStatus === 'no url') return answer({ number: 1 }, 201);
+      return githubPullStatus === 201 ? answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201) : answer({ message: 'nope' }, githubPullStatus);
+    }
     return answer({}, 404);
   }
   // 沒有 Mojang 這一支：Worker 連不到它（403），登入不可以再去問。問了就在下面丟例外。
@@ -2206,6 +2214,7 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const starsNow = () => JSON.parse((env.CORPUS.data.get('stars') || { value: '{}' }).value);
 
   check('沒登入不能刪', (await send('/me/delete', {})).status === 401);
+  env.CORPUS.data.delete('own-index:ready');
 
   forgetBursts();
   const R1 = mark(png(88, 68), 71);
@@ -2397,6 +2406,57 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   const puts = githubCalls.filter((c) => c.method === 'PUT').map((c) => c.path);
   check('★ 任務檔的句子連合併檔一起改（PR 的檢查才不會紅）', r.status === 200 && puts.length === 2
     && puts.some((p) => p.endsWith('/zh_tw/quest/q.json')) && puts.some((p) => p.endsWith('/zh_tw/quest-dialogue.json')));
+  {
+    const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    const dayBranch = 'translate/ja-jp-' + today;
+    const proposeJa = async (src) => {
+      githubFile = '{\n "' + src + '": ""\n}\n';
+      const made = await (await trPost('/tr/propose', { lang: 'ja_jp', file: 'npc.json', src, base: '', text: '訳' + src }, bobNow)).json();
+      return made;
+    };
+    const accept = (made) => trPost('/tr/accept', { lang: 'ja_jp', id: made.id, item: made.prop.items[0].id }, aliceWeb);
+    const stored = (made) => JSON.parse(env.CORPUS.data.get('tp:ja_jp:' + made.id).value);
+
+    githubBranches.add(dayBranch);
+    githubOpenPulls = [];
+    githubCalls.length = 0;
+    let made = await proposeJa('Merged already');
+    r = await accept(made);
+    let answer = await r.json();
+    const branchMade = githubCalls.find((c) => c.path === '/git/refs');
+    const pullMade = githubCalls.find((c) => c.method === 'POST' && c.path === '/pulls');
+    const putTo = githubCalls.find((c) => c.method === 'PUT');
+    check('★ 當天的分支已經合併或關掉：開新的分支與 PR，不提交到舊分支', r.status === 200
+      && branchMade && branchMade.body.ref.startsWith('refs/heads/' + dayBranch + '-')
+      && putTo && putTo.body.branch === pullMade.body.head && pullMade.body.head !== dayBranch
+      && answer.url.endsWith('/pull/9999') && stored(made).done.pr.endsWith('/pull/9999'));
+    check('查開著的 PR 用倉庫設定的擁有者', githubCalls.some((c) => c.path.startsWith('/pulls?head=' + encodeURIComponent('LyuChaCha:' + dayBranch))));
+
+    githubOpenPulls = [{ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/4242' }];
+    githubCalls.length = 0;
+    made = await proposeJa('Still open');
+    r = await accept(made);
+    answer = await r.json();
+    check('★ 當天的 PR 還開著：加進同一個分支，不另開 PR', r.status === 200 && answer.url.endsWith('/pull/4242')
+      && !githubCalls.some((c) => c.method === 'POST' && (c.path === '/pulls' || c.path === '/git/refs'))
+      && githubCalls.find((c) => c.method === 'PUT').body.branch === dayBranch);
+
+    githubOpenPulls = [];
+    githubPullStatus = 'no url';
+    made = await proposeJa('No link');
+    r = await accept(made);
+    check('★ 拿不到 PR 網址就不標成已定案', r.status === 502 && stored(made).status === 'open' && !stored(made).done);
+    githubPullStatus = 201;
+
+    githubBranches.delete(dayBranch);
+    githubOpenPulls = [];
+    githubPullStatus = 422;
+    made = await proposeJa('Pull fails');
+    r = await accept(made);
+    check('★ 開 PR 失敗就不標成已定案', r.status === 502 && stored(made).status === 'open');
+    githubPullStatus = 201;
+  }
+
   check('改過指派：重送一次就覆寫語言', JSON.parse(env.CORPUS.data.get('tl:u:' + BOB.id).value).langs.join() === 'ja_jp,zh_tw');
 
   r = await trPost('/tr/poll', { lang: 'ja_jp', term: 'Weaken Enemy', note: 'Lootrun の加持', options: ['敵弱体化', '敵を弱体化'] }, bobNow);
@@ -2981,6 +3041,123 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('fb:') || k.startsWith('fbr:')) env.CORPUS.data.delete(k);
   env.CORPUS.data.delete('d:' + FAY);
   env.GITHUB_TOKEN = hadToken;
+}
+
+{
+  const KV_LIMIT = 1000;
+  const limitedKv = () => {
+    const base = fakeKv();
+    let used = 0;
+    let peak = 0;
+    const spend = () => {
+      used += 1;
+      peak = Math.max(peak, used);
+      if (used > KV_LIMIT) throw new Error('Too many API requests by single Worker invocation.');
+    };
+    const store = { data: base.data, ops: base.ops, reset: () => { used = 0; }, peak: () => peak };
+    for (const name of ['get', 'getWithMetadata', 'put', 'delete', 'list']) {
+      store[name] = async (...args) => { spend(); return base[name](...args); };
+    }
+    return store;
+  };
+  const big = { CORPUS: limitedKv() };
+  const call = async (path, value, token) => {
+    big.CORPUS.reset();
+    try {
+      return await worker.fetch(post(path, value, token), big);
+    } catch (e) {
+      return new Response(JSON.stringify({ ok: false, threw: e.message }), { status: 500 });
+    }
+  };
+  const IVY = { uuid: 'e7'.repeat(16), name: 'Ivy' };
+  const IVY_DC = '499999999999999999';
+  const ivyGame = await issueToken(big, IVY.uuid, IVY.name, NOW);
+  const OTHER = 'u:' + 'e8'.repeat(16);
+  const PROPS = 1500;
+  const propKey = (n) => 'tp:zh_tw:' + n.toString(16).padStart(16, '0');
+  for (let n = 0; n < PROPS; n++) {
+    big.CORPUS.data.set(propKey(n), { value: JSON.stringify({ lang: 'zh_tw', file: 'npc.json', key: null, src: 'L' + n, base: '',
+      status: 'open', t: NOW, items: [{ id: 'i' + n, text: '譯' + n, by: n % 3 ? OTHER : 'u:' + IVY.uuid, name: n % 3 ? 'Other' : 'Ivy', t: NOW,
+        votes: n % 2 ? ['u:' + IVY.uuid, OTHER] : [OTHER] }] }), metadata: { st: 'open' } });
+  }
+  for (let n = 0; n < 300; n++) {
+    const id = n.toString(16).padStart(16, '0');
+    big.CORPUS.data.set('fb:' + id, { value: JSON.stringify({ id, uid: n % 2 ? IVY_DC : '400000000000000000', name: 'x', msg: 'm', cat: 'other', st: 'open' }),
+      metadata: { c: 'other' } });
+  }
+  big.CORPUS.data.set('d:' + IVY_DC, { value: JSON.stringify({ n: 'Ivy DC', u: IVY.uuid, m: IVY.name, t: NOW }), metadata: { n: 'Ivy DC' } });
+  big.CORPUS.data.set('l:' + IVY.uuid, { value: IVY_DC, metadata: null });
+  big.CORPUS.data.set('u:' + IVY.uuid, { value: '', metadata: { i: await publicId(IVY.uuid), c: 1, d: 1 } });
+  const ivyLeft = () => [...big.CORPUS.data.entries()].filter(([k, v]) => k.startsWith('tp:') && v.value.includes(IVY.uuid)
+    && !JSON.parse(v.value).ghosts).length;
+  const statuses = [];
+  let finished = null;
+  for (let round = 0; round < 40 && !finished; round++) {
+    const r = await call('/me/delete', {}, ivyGame);
+    const answer = await r.json();
+    statuses.push(r.status);
+    if (r.status === 200) finished = answer;
+    else if (!(r.status === 202 && answer.pending === true && answer.ok === false)) break;
+  }
+  check('★ 刪資料：資料多到一次刪不完時回 202 pending，分好幾次接著刪', statuses[0] === 202 && statuses.length > 1
+    && statuses.slice(0, -1).every((s) => s === 202));
+  check('★ 刪資料：每一次請求都在 Cloudflare 的 1,000 次 KV 操作之內', big.CORPUS.peak() <= KV_LIMIT);
+  check('★ 刪資料：全部刪完才回 {"ok":true}', Boolean(finished) && finished.ok === true && ivyLeft() === 0
+    && ![...big.CORPUS.data.keys()].some((k) => k.startsWith('fb:') && big.CORPUS.data.get(k).value.includes(IVY_DC))
+    && [...big.CORPUS.data.keys()].filter((k) => k.startsWith('fb:')).length === 150
+    && !big.CORPUS.data.has('d:' + IVY_DC) && !big.CORPUS.data.has('l:' + IVY.uuid) && !big.CORPUS.data.has('u:' + IVY.uuid)
+    && ![...big.CORPUS.data.keys()].some((k) => k.startsWith('erase:')));
+  check('★ 刪資料：別人的提案只拿掉她的票，內容不動', (() => {
+    const one = JSON.parse(big.CORPUS.data.get(propKey(1)).value);
+    const untouched = JSON.parse(big.CORPUS.data.get(propKey(2)).value);
+    return one.items[0].by === OTHER && one.items[0].votes.length === 2 && !one.items[0].votes.includes('u:' + IVY.uuid)
+      && !untouched.ghosts && untouched.items[0].votes.join() === OTHER;
+  })());
+
+  const fresh = { CORPUS: limitedKv() };
+  for (let n = 0; n < 40; n++) {
+    fresh.CORPUS.data.set(propKey(n), { value: JSON.stringify({ lang: 'zh_tw', items: [{ by: n % 2 ? OTHER : 'u:' + IVY.uuid, votes: ['d:' + IVY_DC] }] }),
+      metadata: null });
+  }
+  fresh.CORPUS.data.set('fb:' + 'a'.repeat(16), { value: JSON.stringify({ uid: IVY_DC }), metadata: null });
+  fresh.CORPUS.data.set('prev:' + 'c'.repeat(64) + ':' + IVY.uuid + ':angled', { value: '', metadata: null });
+  fresh.CORPUS.data.set('prev:' + 'c'.repeat(64), { value: '', metadata: null });
+  let runs = 0;
+  let indexed;
+  do {
+    fresh.CORPUS.reset();
+    indexed = await indexOwners(fresh, NOW);
+    runs++;
+  } while (!indexed.done && runs < 20);
+  check('★ 每天的排程替舊資料補上「誰參與了哪一筆」的索引，補完才標成可以只看索引', indexed.done
+    && fresh.CORPUS.data.has(OWNER_INDEX_READY) && fresh.CORPUS.data.has(ownerEntry('u:' + IVY.uuid, propKey(0)))
+    && !fresh.CORPUS.data.has(ownerEntry('u:' + IVY.uuid, propKey(1))) && fresh.CORPUS.data.has(ownerEntry('d:' + IVY_DC, propKey(1)))
+    && fresh.CORPUS.data.has(ownerEntry('d:' + IVY_DC, 'fb:' + 'a'.repeat(16)))
+    && fresh.CORPUS.data.has(ownerEntry('u:' + IVY.uuid, 'prev:' + 'c'.repeat(64) + ':' + IVY.uuid + ':angled'))
+    && [...fresh.CORPUS.data.keys()].filter((k) => k.startsWith('own:')).length === 40 * 2 + 1 + 1);
+  check('participantsOf：只收帳號格式的 by 與票', [...participantsOf({ by: 'u:' + 'a'.repeat(32), items: [{ by: 'x:1234', votes: ['d:123456', 'n:bob'] }],
+    options: [null] })].join() === 'u:' + 'a'.repeat(32) + ',d:123456');
+
+  const indexedEnv = { CORPUS: limitedKv() };
+  indexedEnv.CORPUS.data.set(OWNER_INDEX_READY, { value: String(NOW), metadata: null });
+  for (let n = 0; n < 3000; n++) indexedEnv.CORPUS.data.set(propKey(n), { value: '{"items":[]}', metadata: null });
+  const ivyDc = await issueDiscordToken(indexedEnv, IVY_DC, NOW);
+  indexedEnv.CORPUS.data.set('d:' + IVY_DC, { value: JSON.stringify({ n: 'Ivy DC' }), metadata: { n: 'Ivy DC' } });
+  indexedEnv.CORPUS.data.set('tl:d:' + IVY_DC, { value: JSON.stringify({ langs: ['zh_tw'] }), metadata: null });
+  indexedEnv.CORPUS.reset();
+  const proposed = await worker.fetch(post('/tr/propose', { lang: 'zh_tw', file: 'npc.json', src: 'Hello', text: '哈囉' }, ivyDc), indexedEnv);
+  const propId = (await proposed.json()).id;
+  check('★ 提案時記下「她參與了這一筆」', proposed.status === 200
+    && indexedEnv.CORPUS.data.has(ownerEntry('d:' + IVY_DC, 'tp:zh_tw:' + propId)));
+  indexedEnv.CORPUS.data.delete('tl:d:' + IVY_DC);
+  const listsBefore = indexedEnv.CORPUS.ops.list;
+  indexedEnv.CORPUS.reset();
+  const gone = await worker.fetch(post('/me/delete', {}, ivyDc), indexedEnv);
+  const prop = JSON.parse(indexedEnv.CORPUS.data.get('tp:zh_tw:' + propId).value);
+  check('★ 索引補完之後只照索引刪，不必掃整個協作翻譯', gone.status === 200 && (await gone.json()).ok === true
+    && prop.items[0].name === null && !indexedEnv.CORPUS.data.has('d:' + IVY_DC)
+    && !indexedEnv.CORPUS.data.has(ownerEntry('d:' + IVY_DC, 'tp:zh_tw:' + propId))
+    && indexedEnv.CORPUS.ops.list - listsBefore <= 3);
 }
 
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]

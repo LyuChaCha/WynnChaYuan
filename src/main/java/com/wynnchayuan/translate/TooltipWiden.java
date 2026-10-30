@@ -64,7 +64,7 @@ public final class TooltipWiden {
                 continue;
             }
             int[] was = lastColumnGap(segments(original.get(i), width));
-            if (was == null || was[2] < LineTranslator.MIN_GAP_PX) {
+            if (was == null || was[2] < SpaceRuns.MIN_GAP_PX) {
                 continue;
             }
             int[] now = lastColumnGap(rows.get(i));
@@ -84,7 +84,7 @@ public final class TooltipWiden {
                 gap[i] = null;
                 continue;
             }
-            int need = madeW[i] - gap[i][2] + LineTranslator.MIN_GAP;
+            int need = madeW[i] - gap[i][2] + ColumnAligner.MIN_GAP;
             columnsNeed = Math.max(columnsNeed, need);
             columnsOver |= madeW[i] > edge || need > edge;
         }

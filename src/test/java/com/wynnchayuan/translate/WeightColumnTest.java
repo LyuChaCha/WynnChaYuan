@@ -62,7 +62,7 @@ public final class WeightColumnTest {
             lines.add(row(r[0], gap, lead, r[1], split));
         }
         check(what + "：測資裡最窄的欄距低於門檻（" + tightest + "px）",
-              tightest > 0 && tightest < LineTranslator.MIN_GAP_PX);
+              tightest > 0 && tightest < SpaceRuns.MIN_GAP_PX);
         List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
         for (int i = 2; i < lines.size(); i++) {
             String[] r = ROWS[i - 2];
@@ -93,9 +93,9 @@ public final class WeightColumnTest {
                                                        run("[5%]")) == 0);
     }
 
-    private static int gaps(LineTranslator.Run... runs) {
+    private static int gaps(SpaceRuns.Run... runs) {
         int n = 0;
-        for (boolean b : LineTranslator.tooltipGaps(List.of(runs))) {
+        for (boolean b : SpaceRuns.tooltipGaps(List.of(runs))) {
             if (b) {
                 n++;
             }
@@ -103,12 +103,12 @@ public final class WeightColumnTest {
         return n;
     }
 
-    private static LineTranslator.Run run(String text) {
-        return new LineTranslator.Run(false, 0, WYNN, text);
+    private static SpaceRuns.Run run(String text) {
+        return new SpaceRuns.Run(false, 0, WYNN, text);
     }
 
-    private static LineTranslator.Run space(int px) {
-        return new LineTranslator.Run(true, px, SpaceOffset.styleFor(WYNN), SpaceOffset.encode(px));
+    private static SpaceRuns.Run space(int px) {
+        return new SpaceRuns.Run(true, px, SpaceOffset.styleFor(WYNN), SpaceOffset.encode(px));
     }
 
     private static int gapFor(String label, String value) {
