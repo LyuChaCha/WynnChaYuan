@@ -31,7 +31,7 @@ export async function authority(request, env, now) {
   if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return { by: 'admin', developer: true };
   const user = await who(request, env, now);
   if (user) {
-    if (await isDeveloper(user.name, now)) return { by: user.name, developer: true };
+    if (await isDeveloper(user, now)) return { by: user.name, developer: true };
     return await isStaff(env, user) ? { by: user.name, developer: false } : null;
   }
   const session = await discordSession(request, env, now);

@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import os from 'node:os';
 import worker from './worker.js';
 import { issueDiscordToken, issueToken, issueWebToken } from './worker-api.js';
-import { demoCredits, memoryKv, seedDemo } from './dev-data.mjs';
+import { DEVELOPER_UUID, demoCredits, memoryKv, seedDemo } from './dev-data.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const data = new Map();
@@ -55,7 +55,7 @@ http.createServer(async (req, res) => {
   if (url.pathname === '/dev-login') {
     const as = url.searchParams.get('as');
     const [uuid, name] = as === 'user' ? ['b'.repeat(32), 'Steve']
-      : as === 'staff' ? ['c'.repeat(32), 'Alex'] : ['a'.repeat(32), developer];
+      : as === 'staff' ? ['c'.repeat(32), 'Alex'] : [DEVELOPER_UUID, developer];
     const token = await issueWebToken(env, uuid, name, Date.now());
     const to = /^\/[a-z]*$/.test(url.searchParams.get('to') || '') ? url.searchParams.get('to') : '/account';
     res.writeHead(302, { location: to + '#t=' + token });
