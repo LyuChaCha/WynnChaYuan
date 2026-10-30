@@ -7,65 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * 譯文按語言分層：{@code translations/<lang>/…}。
- *
- * <h2>為什麼要分</h2>
- * 原本所有譯文都平放在 {@code translations/} 底下，等於整個專案只能有一種語言。
- * 要讓別人翻成日文、西班牙文，就得有地方放——而且<b>各語言的檔案必須彼此獨立</b>，
- * 否則兩個語言的譯者會在同一個檔案上撞在一起，每個 PR 都要解衝突。
- *
- * <h2>為什麼每個語言都自己帶一份原文</h2>
- * 另一種做法是原文只存一份、各語言只存「編號 → 譯文」。那樣省空間，
- * 但這個專案的譯者是<b>用 GitHub 網頁編輯器改檔的</b>（分支名 {@code *-patch-N}
- * 就是網頁編輯出來的）。一個打開來只有雜湊和中文、看不到英文原文的檔案，
- * 在網頁上根本沒辦法翻。所以原文跟著譯文一起放。
- *
- * <p>代價是 repo 每多一種語言就多一份原文。玩家端不受影響：
- * {@link RemoteSync} 只抓使用者選的那一種。
- *
- * <h2>舊版的扁平目錄</h2>
- * 已經裝過舊版的人，{@code translations/} 底下是平的。第一次跑到新版時
- * 把那些檔案搬進 {@code translations/zh_tw/}——直接無視的話，
- * 使用者自己翻的東西會突然全部失效，而且看不出原因。
- */
 public final class Languages {
 
-    /** 專案的主要語言，也是找不到對應語言時的退路。 */
     public static final String DEFAULT = "zh_tw";
 
-    /** jar 裡的資源前綴。 */
     private static final String ASSETS = "/assets/wynnchayuan/translations/";
 
     private Languages() {}
 
-    /** 這個語言的譯文資料夾。 */
     public static Path dir(Path configDir, String lang) {
         return configDir.resolve("translations").resolve(normalise(lang));
     }
 
-    /** 這個語言在 jar 裡的資源前綴，結尾帶斜線。 */
     public static String resource(String lang) {
         return ASSETS + normalise(lang) + "/";
     }
 
-    /** 這個語言的相對路徑，給 {@link RemoteSync} 組 URL 用。 */
     public static String path(String lang) {
         return normalise(lang) + "/";
     }
 
-    /**
-     * jar 裡打包了哪些語言。
-     *
-     * <p>讀 {@code translations/_languages.json}——那是一份純清單，
-     * 由 {@code tools/update-docs.py} 依實際資料夾產生，不必手動維護。
-     */
-    /**
-     * 語言代碼對它自己的名字。
-     *
-     * <p>用<b>母語</b>寫：日文玩家在清單裡要找的是「日本語」，不是「日文」。
-     * 認不出來的就只顯示代碼——寧可少一欄，也不要在別人的語言名字上瞎猜。
-     */
     private static final java.util.Map<String, String> NATIVE =
             java.util.Map.ofEntries(
                     java.util.Map.entry("zh_tw", "繁體中文"),
@@ -80,8 +41,6 @@ public final class Languages {
                     java.util.Map.entry("tr_tr", "Türkçe"),
                     java.util.Map.entry("en_us", "English"));
 
-    /** 顯示給人看的語言名字。認不出來就回傳代碼本身。 */
-    /** 這份表上有哪些語言代碼。見 {@link com.wynnchayuan.client.T#available}。 */
     public static java.util.List<String> known() {
         return NATIVE.keySet().stream().sorted().toList();
     }
@@ -110,15 +69,6 @@ public final class Languages {
         }
     }
 
-    /**
-     * 把舊版的扁平目錄搬進語言資料夾。
-     *
-     * <p>只在<b>語言資料夾還不存在、而扁平目錄有 .json</b> 時做一次。
-     * 搬而不是複製：留著兩份的話，使用者改了外面那份卻沒反應，
-     * 那是最難查的一種問題。
-     *
-     * @return 搬了幾個檔案；不需要搬時回傳 0
-     */
     public static int migrateFlat(Path configDir, String lang) {
         Path root = configDir.resolve("translations");
         Path target = dir(configDir, lang);
@@ -130,12 +80,6 @@ public final class Languages {
             try (Stream<Path> files = Files.walk(root)) {
                 files.filter(Files::isRegularFile)
                      .filter(p -> p.getFileName().toString().endsWith(".json"))
-                     // 別的語言的資料夾不是「舊版的扁平目錄」。
-                     //
-                     // 先前這裡整個 translations/ 往下掃：玩家把遊戲語言從繁中切到簡中，
-                     // zh_cn/ 還不存在，於是 zh_tw/ 底下整份快取被當成扁平檔，
-                     // 搬進 zh_cn/zh_tw/…——繁中那層憑空消失，簡中資料夾裡多了二十幾 MB
-                     // 永遠不會被讀的東西。舊版的扁平目錄只會有 ability/、quest/ 這種子資料夾。
                      .filter(p -> !inLanguageDir(root, p))
                      .forEach(loose::add);
             }
@@ -150,7 +94,6 @@ public final class Languages {
                 Files.move(from, to, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
                 moved++;
             }
-            // 搬完之後空掉的子資料夾（quest/、ability/）也一併清掉
             try (Stream<Path> rest = Files.walk(root)) {
                 rest.sorted(java.util.Comparator.reverseOrder())
                     .filter(p -> !p.equals(root) && Files.isDirectory(p))
@@ -161,7 +104,6 @@ public final class Languages {
                                 Files.delete(p);
                             }
                         } catch (Exception ignored) {
-                            // 刪不掉就留著，不影響功能
                         }
                     });
             }
@@ -174,30 +116,19 @@ public final class Languages {
         }
     }
 
-    /** 語言資料夾的名字：{@code zh_tw}、{@code ja_jp}、{@code pt_br}。 */
     private static final java.util.regex.Pattern LANGUAGE_DIR =
             java.util.regex.Pattern.compile("[a-z]{2,3}_[a-z0-9]{2,4}");
 
-    /** {@code translations/} 底下第一層就是語言資料夾。 */
     private static boolean isLanguageDir(Path root, Path p) {
         Path rel = root.relativize(p);
         return rel.getNameCount() == 1 && LANGUAGE_DIR.matcher(rel.toString()).matches();
     }
 
-    /** 這個檔或資料夾在某個語言資料夾<b>裡面</b>。 */
     private static boolean inLanguageDir(Path root, Path p) {
         Path rel = root.relativize(p);
         return rel.getNameCount() > 1 && LANGUAGE_DIR.matcher(rel.getName(0).toString()).matches();
     }
 
-    /**
-     * 設定裡沒指定時要用哪一種語言。
-     *
-     * <p>跟著<b>遊戲本身的語言</b>走，jar 裡沒有那一種就退回
-     * {@link #DEFAULT}——這樣日文玩家裝好就是日文，不必先去翻設定。
-     *
-     * @param configured 設定檔裡寫的；空字串表示「跟著遊戲走」
-     */
     public static String pick(String configured, String gameLanguage) {
         if (configured != null && !configured.isBlank()) {
             return normalise(configured);
@@ -206,22 +137,6 @@ public final class Languages {
         return bundled().contains(game) ? game : DEFAULT;
     }
 
-    /**
-     * 這個遊戲語言<b>問到了嗎</b>，而且是我們打包過的。
-     *
-     * <h2>為什麼要跟 {@link #pick} 分開</h2>
-     * {@code pick} 是純函式，手上沒資料就只能給 {@link #DEFAULT}——那沒有錯。
-     * 錯的是呼叫端把「還沒問到」當成「問到了，答案是繁體中文」。
-     *
-     * <p>實機回報：第一次安裝、遊戲語言是韓文、模組維持預設的「跟隨遊戲語言」，
-     * 出來卻是中文。語言是在 client entrypoint 裡決定的，而那跑在
-     * {@code Minecraft} 的建構式裡，那時候 {@code getLanguageManager()} 還是
-     * {@code null}，取不到就回傳空字串——然後 {@code normalise("")} 把空字串
-     * 變成 {@code zh_tw}，{@code bundled()} 當然有繁中，於是韓文玩家拿到中文。
-     *
-     * <p>三個步驟各自都合理，合起來就把「不知道」講成了一個明確的答案。
-     * 呼叫端要分得出這兩件事，才知道該不該等遊戲起來以後再問一次。
-     */
     public static boolean known(String gameLanguage) {
         if (gameLanguage == null || gameLanguage.isBlank()) {
             return false;
@@ -239,13 +154,11 @@ public final class Languages {
         return clean.equals(lang) ? null : clean;
     }
 
-    /** {@code zh-TW}、{@code ZH_TW} 都當成 {@code zh_tw}。 */
     private static String normalise(String lang) {
         if (lang == null || lang.isBlank()) {
             return DEFAULT;
         }
         String clean = lang.trim().toLowerCase(java.util.Locale.ROOT).replace('-', '_');
-        // 路徑安全：只准字母、數字與底線，擋掉 `../` 那種寫法
         return clean.matches("[a-z0-9_]+") ? clean : DEFAULT;
     }
 }

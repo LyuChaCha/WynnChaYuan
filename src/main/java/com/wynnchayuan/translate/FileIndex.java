@@ -13,27 +13,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 譯文檔的清單，來自 {@code translations/_index.json}。
- *
- * <h2>為什麼要有這個</h2>
- * 檔名原本寫死在兩個地方（{@link StarterFiles} 與 {@link RemoteSync}）。
- * 新增一個翻譯檔就得記得兩邊都改，漏掉其中一邊的後果很難察覺——
- * 例如檔案有被放出去卻不會同步，或反過來。
- *
- * <p>改成讀清單之後，加檔案只要動 {@code _index.json}，程式端完全不用改。
- * 這對「未來還會不斷新增翻譯領域」的專案是必要的。
- *
- * <p>清單讀不到時退回內建的最小集合，至少介面標籤還在。
- */
 public final class FileIndex {
 
-    /** 語言資料夾裡的清單。見 {@link Languages}。 */
     private static String resource(String lang) {
         return Languages.resource(lang) + "_index.json";
     }
 
-    /** 清單本身壞掉時的退路。 */
     private static final List<String> FALLBACK = List.of("ui-labels.json", "npc.json", "quest.json");
 
     private static final java.util.Map<String, List<String>> cached =
@@ -41,27 +26,14 @@ public final class FileIndex {
 
     private FileIndex() {}
 
-    /**
-     * 只在特定地方生效的譯文檔。<b>刻意不列進 _index.json</b>。
-     *
-     * <p>{@code scoped/label.json} 收的是只給漂浮字用的譯法：解謎地板上的
-     * 「Back」是「後」，而同一個字在介面上是「返回」。一般語料一個原文只能
-     * 有一種譯法（validate 會擋），所以另外放。
-     *
-     * <p>不進清單是為了舊版：舊版照清單把每個檔都當一般語料載入，
-     * 「Back」會被整個換成「後」，介面上的返回鍵就錯了。舊版不認得這個檔，
-     * 自然不會讀到它。
-     */
     public static final List<String> SCOPED = List.of("scoped/label.json", "scoped/bossbar.json",
             "scoped/name.json", "scoped/archetype.json", "scoped/gear.json",
             "scoped/wynnventory.json");
 
-    /** 打包在 jar 裡的清單。 */
     public static List<String> bundled() {
         return bundled(Languages.DEFAULT);
     }
 
-    /** 打包在 jar 裡的清單。各語言的清單是獨立的——收的檔案可以不一樣多。 */
     public static List<String> bundled(String lang) {
         List<String> hit = cached.get(lang);
         if (hit != null) {
@@ -72,11 +44,6 @@ public final class FileIndex {
         return found;
     }
 
-    /**
-     * 使用者 config 目錄裡的清單，讀不到就用內建的。
-     *
-     * <p>讓使用者能自己加檔案——例如額外翻某個伺服器活動的字串。
-     */
     public static List<String> forDirectory(Path dir) {
         Path local = dir.resolve("_index.json");
         if (Files.isRegularFile(local)) {
@@ -88,13 +55,6 @@ public final class FileIndex {
         return bundled();
     }
 
-    /**
-     * 只讀這個資料夾裡的清單，讀不到就回空清單。
-     *
-     * <p>與 {@link #forDirectory} 的差別在於<b>不套用任何退路</b>。
-     * {@link RemoteSync} 需要的是「遠端清單比內建清單多出哪些檔案」，
-     * 退回內建集合會讓它永遠看不到新增的譯文檔。
-     */
     public static List<String> inDirectory(Path dir) {
         Path local = dir.resolve("_index.json");
         if (!Files.isRegularFile(local)) {
@@ -117,9 +77,6 @@ public final class FileIndex {
             }
             for (JsonElement el : arr) {
                 String name = el.getAsString().strip();
-                // 線上清單的名字會拼進下載網址，也會直接拿來當快取的檔名。
-                // 帶 ..、反斜線、冒號或絕對路徑的一律不收：清單被動了手腳時，
-                // 下載不會跑出譯文資料夾，檔案也寫不出快取資料夾。
                 if (name.endsWith(".json") && !name.startsWith("_") && safeName(name)) {
                     names.add(name);
                 }
@@ -131,12 +88,6 @@ public final class FileIndex {
         return names.isEmpty() ? FALLBACK : List.copyOf(names);
     }
 
-    /**
-     * 清單裡的名字能不能拿來拼網址與檔名。
-     *
-     * <p>只收相對路徑，可以帶資料夾（{@code ability/mage.json}、{@code quest/…}），
-     * 但不能往上跳、不能是絕對路徑、不能帶網址的查詢或片段。
-     */
     static boolean safeName(String name) {
         return !name.isEmpty() && !name.startsWith("/") && !name.contains("..")
                 && !name.contains("\\") && !name.contains(":") && !name.contains("//")
