@@ -176,6 +176,8 @@ const env = { CORPUS: fakeKv() };
 /** 「過了很久」：上傳冷卻的紀錄一起清掉（測試裡同一個人常常連傳好幾件）。 */
 const forgetBursts = () => { for (const k of [...env.CORPUS.data.keys()]) if (k.startsWith('upl:')) env.CORPUS.data.delete(k); };
 const NOW = Date.now();
+const ENGLISH_NAMES = { zh_cn: ['Bony Bow', 'Flawless Oak Bow', 'Rotten Flesh', 'Zombie {#}{#}', 'Weapon Merchant', 'Trade Market'] };
+const englishOnPurpose = (code, src) => (ENGLISH_NAMES[code] || []).includes(src);
 
 // ---- 代碼與通行證 ----
 const aliceId = await publicId(ALICE.id);
@@ -1302,6 +1304,18 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
 // 功能頁的即時預覽：選項的名稱與場景裡的譯文都是從模組的語言檔與語料產生的（demo-data.js）
 {
   const { DEMO } = await import('./demo-data.js');
+  check('★ 面板間距：滑桿 12–200，預覽照遊戲比例（一格 .1em、量的是兩個框線之間），太寬就整張縮小', pages['/features'].includes('input.min = 12;')
+    && pages['/features'].includes("gap.style.width = Math.max(0, state.gap - insetLeft - FRAME_INSET.plain) / 10 + 'em'")
+    && pages['/features'].includes('function zoomToFit()') && !pages['/features'].includes('state.gap * (wide ? 0.25 : 0.06)')
+    && DEMO.ui.zh['panel.gap.hint'].includes('12–200'));
+  check('★ 八種語言的隱私政策與帳號頁都改成「刪除我的資料」按鈕與「恢復上傳」，不再提舊的開關', LANGS.every((lang) => {
+    const text = TEXT[lang]['privacy.body'] + TEXT[lang]['account.del.list'];
+    return !/不上傳我的資料|不上传我的数据|Don't upload my data|自分のデータを送らない|내 데이터 보내지 않기|Не отправлять мои данные|No subir mis datos|Verilerimi gönderme/.test(text)
+      && /恢復上傳|恢复上传|Resume uploads|アップロードを再開|업로드 다시 시작|Возобновить отправку|Reanudar la subida|Yüklemeyi sürdür/.test(text);
+  }));
+  check('★ 服務條款講了第一次會顯示使用須知；功能頁講了同意連線功能才會報到', LANGS.every((lang) => /使用須知|使用须知|Before you play|ご利用にあたって|이용 안내|Перед игрой|Antes de jugar|Oynamadan önce/.test(TEXT[lang]['terms.body'])
+    && /同意連線功能|同意联网功能|agree to online features|オンライン機能に同意|온라인 기능에 동의|согласились на сетевые функции|aceptes las funciones en línea|çevrimiçi özelliklere izin/.test(TEXT[lang]['feat.s3b'])));
+
   const embedded = (html) => JSON.parse((html.match(/<script>var D = (\{.*?\});\n/s) || [])[1] || '{}');
   const zh = embedded(pages['/features']);
   const en = embedded(english['/features']);
@@ -1312,8 +1326,9 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
   check('★ 預覽的選項名稱照這一頁的語言（就是遊戲裡設定畫面的字）', zh.ui['items.tooltip'] === '物品翻譯'
     && zh.ui['mode.replace'] === '就地取代' && en.ui['items.tooltip'] === 'Item translation'
     && en.ui['mode.replace'] === 'Replace in place');
-  check('★ 預覽裡的譯文七種語言都帶著，每一條都有字', Object.keys(zh.text).length === 7
-    && Object.values(zh.text).every((lang) => Object.keys(lang).length === 34 && Object.values(lang).every((v) => v.length > 0))
+  check('★ 預覽裡的譯文七種語言都帶著，每一條都有字（簡中刻意留英文的名稱除外）', Object.keys(zh.text).length === 7
+    && Object.entries(zh.text).every(([code, lang]) => Object.keys(lang).length === 34
+      && Object.entries(lang).every(([src, v]) => v.length > 0 || englishOnPurpose(code, src)))
     && zh.text.zh_tw['Weapon Merchant'] === '武器商人' && zh.text.ja_jp.Yes === 'はい');
   // 預覽是一整面「遊戲畫面」：功能頁與首頁最上面用同一份程式，字是遊戲裡那一套點陣字
   {
@@ -1392,7 +1407,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
       const also = ['{~} DPS', '{#}{~} Crafting Level', '{#}Can be used in recipes for', '{~} to {~}'];
       const missing = [];
       for (const src of [...used, ...also]) {
-        for (const [code, lang] of Object.entries(DEMO.text)) if (!lang[src]) missing.push(code + ':' + src);
+        for (const [code, lang] of Object.entries(DEMO.text)) if (!lang[src] && !englishOnPurpose(code, src)) missing.push(code + ':' + src);
       }
       check('★ 背包裡三樣東西可以指（滑鼠、點、鍵盤），每一行字七種語言都有' + (missing.length ? '（缺 ' + missing.join('、') + '）' : ''),
         missing.length === 0 && used.includes('Flawless Oak Bow') && used.includes('Rotten Flesh') && used.includes('Bony Bow')
@@ -1416,7 +1431,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
         return lines.length === 3 && lines[0] === '{#}' && lines[1] && lines[2];
       }));
     check('★ 怪物的等級是名字後面的小方框，跟人物的等級是同一帶的', pages['/features'].includes("el('b', 'mlv', 'LV 13')")
-      && !pages['/features'].includes('[Lv. 3]') && Object.values(DEMO.text).every((lang) => /\S \{#\}\{#\}$/.test(lang['Zombie {#}{#}'] || '')));
+      && !pages['/features'].includes('[Lv. 3]') && Object.entries(DEMO.text).every(([code, lang]) => /\S \{#\}\{#\}$/.test(lang['Zombie {#}{#}'] || '') || englishOnPurpose(code, 'Zombie {#}{#}')));
     {
       const js = pages['/features'];
       const dialogue = js.slice(js.indexOf('function drawDialogue'), js.indexOf('function drawWorld'));
@@ -1449,7 +1464,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
     // 功能頁下半：每一項一張卡，翻譯範圍那十張各有一句例子
     check('★ 功能頁的卡片：翻譯範圍十張都有例句，例句在預覽的資料裡找得到', (pages['/features'].match(/data-eg="/g) || []).length === 10
       && [...pages['/features'].matchAll(/data-eg="([^"]+)"/g)].every((m) => Object.hasOwn(DEMO.text.zh_tw, m[1])
-        && Object.values(DEMO.text).every((lang) => lang[m[1]])));
+        && Object.entries(DEMO.text).every(([code, lang]) => lang[m[1]] || englishOnPurpose(code, m[1]))));
   }
   // 找不到這一頁：一頁像樣的網頁，照訪客的語言
   {
