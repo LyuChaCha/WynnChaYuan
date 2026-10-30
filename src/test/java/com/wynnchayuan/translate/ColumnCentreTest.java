@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static com.wynnchayuan.translate.LineTranslator.Piece;
+import com.wynnchayuan.translate.ColumnAligner.Piece;
 
 public final class ColumnCentreTest {
 
@@ -47,10 +47,10 @@ public final class ColumnCentreTest {
                 (style, text) -> SpaceOffset.isOffsetRun(text);
         String gap = SpaceOffset.encode(60);
 
-        List<LineTranslator.Run> glued = List.of(
-                new LineTranslator.Run(false, 0, s, " Class Type" + gap),
-                new LineTranslator.Run(false, 0, s, "Mage/Dark Wizard"));
-        List<LineTranslator.Run> split = LineTranslator.splitGaps(glued, isGap);
+        List<SpaceRuns.Run> glued = List.of(
+                new SpaceRuns.Run(false, 0, s, " Class Type" + gap),
+                new SpaceRuns.Run(false, 0, s, "Mage/Dark Wizard"));
+        List<SpaceRuns.Run> split = SpaceRuns.splitGaps(glued, isGap);
         check("黏在一起的間隔拆得出來（實際 " + split.size() + " 段）",
               split.size() == 3);
         check("拆出來的中間那段是間隔", split.size() == 3 && split.get(1).space());
@@ -60,26 +60,26 @@ public final class ColumnCentreTest {
                       + (split.size() == 3 ? split.get(1).px() : -1) + "）",
               split.size() == 3 && split.get(1).px() == 60);
 
-        List<LineTranslator.Run> already = List.of(
-                new LineTranslator.Run(false, 0, s, "Class Type"),
-                new LineTranslator.Run(true, 60, s, gap));
+        List<SpaceRuns.Run> already = List.of(
+                new SpaceRuns.Run(false, 0, s, "Class Type"),
+                new SpaceRuns.Run(true, 60, s, gap));
         check("已經獨立的間隔不重複拆",
-              LineTranslator.splitGaps(already, isGap).size() == 2);
+              SpaceRuns.splitGaps(already, isGap).size() == 2);
 
         check("判準否決時不拆",
-              LineTranslator.splitGaps(glued, (style, text) -> false).size() == 2);
+              SpaceRuns.splitGaps(glued, (style, text) -> false).size() == 2);
 
-        List<LineTranslator.Run> pure = List.of(
-                new LineTranslator.Run(false, 0, s, gap));
+        List<SpaceRuns.Run> pure = List.of(
+                new SpaceRuns.Run(false, 0, s, gap));
         check("整段都是偏移時不拆",
-              LineTranslator.splitGaps(pure, isGap).size() == 1);
+              SpaceRuns.splitGaps(pure, isGap).size() == 1);
 
         String nudge = SpaceOffset.encode(3);
-        List<LineTranslator.Run> star = List.of(
-                new LineTranslator.Run(false, 0, s, "+16 Market Slots "),
-                new LineTranslator.Run(false, 0, s, gap + "★" + nudge),
-                new LineTranslator.Run(false, 0, s, "Super Priority Queue"));
-        List<LineTranslator.Run> starSplit = LineTranslator.splitGaps(star, isGap);
+        List<SpaceRuns.Run> star = List.of(
+                new SpaceRuns.Run(false, 0, s, "+16 Market Slots "),
+                new SpaceRuns.Run(false, 0, s, gap + "★" + nudge),
+                new SpaceRuns.Run(false, 0, s, "Super Priority Queue"));
+        List<SpaceRuns.Run> starSplit = SpaceRuns.splitGaps(star, isGap);
         check("開頭的間隔拆得出來（實際 " + starSplit.size() + " 段）",
               starSplit.size() == 5);
         check("★ 前面那段是 60px 的間隔",
@@ -89,11 +89,11 @@ public final class ColumnCentreTest {
               starSplit.size() == 5 && "★".equals(starSplit.get(2).text()));
         check("★ 後面的微調也獨立出來，但不算欄界",
               starSplit.size() == 5 && starSplit.get(3).space()
-                      && !LineTranslator.isColumnGap(starSplit.get(3)));
+                      && !SpaceRuns.isColumnGap(starSplit.get(3)));
 
-        List<LineTranslator.Run> inner = List.of(
-                new LineTranslator.Run(false, 0, s, "+10 Character Slots " + gap + "Beta Access"));
-        List<LineTranslator.Run> innerSplit = LineTranslator.splitGaps(inner, isGap);
+        List<SpaceRuns.Run> inner = List.of(
+                new SpaceRuns.Run(false, 0, s, "+10 Character Slots " + gap + "Beta Access"));
+        List<SpaceRuns.Run> innerSplit = SpaceRuns.splitGaps(inner, isGap);
         check("夾在中間的間隔拆得出來（實際 " + innerSplit.size() + " 段）",
               innerSplit.size() == 3 && innerSplit.get(1).space()
                       && "+10 Character Slots ".equals(innerSplit.get(0).text())
@@ -108,7 +108,7 @@ public final class ColumnCentreTest {
                 Piece.text("83 points", s),
                 Piece.space(15, s), Piece.space(30, s), Piece.space(15, s),
                 Piece.text("84 points", s));
-        List<int[]> g = LineTranslator.textGroups(row);
+        List<int[]> g = ColumnAligner.textGroups(row);
         check("連續的偏移算同一段間隔，兩欄就是兩組", g.size() == 2);
         check("第一欄落在文字上", g.get(0)[0] == 1 && g.get(0)[1] == 2);
         check("第二欄落在最後那段文字上", g.get(1)[0] == 5 && g.get(1)[1] == 6);
@@ -116,7 +116,7 @@ public final class ColumnCentreTest {
         List<Piece> single = List.of(
                 Piece.space(10, s),
                 Piece.text("* Modified by your gear (+23)", s));
-        check("只有前導空白的置中行是一欄", LineTranslator.textGroups(single).size() == 1);
+        check("只有前導空白的置中行是一欄", ColumnAligner.textGroups(single).size() == 1);
 
         List<Piece> mixed = List.of(
                 Piece.space(6, s),
@@ -124,10 +124,10 @@ public final class ColumnCentreTest {
                 Piece.space(40, s),
                 Piece.text("+12", s));
         check("同一欄裡的圖示與文字不會被拆成兩欄",
-                LineTranslator.textGroups(mixed).size() == 2);
+                ColumnAligner.textGroups(mixed).size() == 2);
 
         check("重排不會增減片段",
-                LineTranslator.recenterColumns(row).size() == row.size());
+                ColumnAligner.recenterColumns(row).size() == row.size());
     }
 
     private static void spacing() {
@@ -303,82 +303,82 @@ public final class ColumnCentreTest {
 
     private static void rightEdgeGuard() {
         Style s = Style.EMPTY;
-        LineTranslator.Run space =
-                new LineTranslator.Run(true, 20, s, SpaceOffset.encode(20));
+        SpaceRuns.Run space =
+                new SpaceRuns.Run(true, 20, s, SpaceOffset.encode(20));
 
-        List<LineTranslator.Run> stat = List.of(
-                new LineTranslator.Run(false, 0, s, "–"),
+        List<SpaceRuns.Run> stat = List.of(
+                new SpaceRuns.Run(false, 0, s, "–"),
                 space,
-                new LineTranslator.Run(false, 0, s, "✤"),
+                new SpaceRuns.Run(false, 0, s, "✤"),
                 space,
-                new LineTranslator.Run(false, 0, s, "力量: -70"));
+                new SpaceRuns.Run(false, 0, s, "力量: -70"));
         check("圖示後面那個間隔不算標籤欄（不補右緣）",
-              !LineTranslator.labelledRun(stat, 1));
-        check("破折號後面那個也不算", !LineTranslator.labelledRun(stat, 0));
+              !SpaceRuns.labelledRun(stat, 1));
+        check("破折號後面那個也不算", !SpaceRuns.labelledRun(stat, 0));
 
-        List<LineTranslator.Run> req = List.of(
-                new LineTranslator.Run(false, 0, s, "✔"),
-                new LineTranslator.Run(false, 0, s, " 職業類型"),
+        List<SpaceRuns.Run> req = List.of(
+                new SpaceRuns.Run(false, 0, s, "✔"),
+                new SpaceRuns.Run(false, 0, s, " 職業類型"),
                 space,
-                new LineTranslator.Run(false, 0, s, "法師/闇導士"));
-        check("標籤後面那個間隔要補右緣", LineTranslator.labelledRun(req, 0));
+                new SpaceRuns.Run(false, 0, s, "法師/闇導士"));
+        check("標籤後面那個間隔要補右緣", SpaceRuns.labelledRun(req, 0));
 
-        List<LineTranslator.Run> zh = List.of(
-                new LineTranslator.Run(false, 0, s, "生命回復"),
+        List<SpaceRuns.Run> zh = List.of(
+                new SpaceRuns.Run(false, 0, s, "生命回復"),
                 space,
-                new LineTranslator.Run(false, 0, s, "+13%"));
-        check("中文標籤也認得出來", LineTranslator.labelledRun(zh, 0));
+                new SpaceRuns.Run(false, 0, s, "+13%"));
+        check("中文標籤也認得出來", SpaceRuns.labelledRun(zh, 0));
 
-        List<LineTranslator.Run> num = List.of(
-                new LineTranslator.Run(false, 0, s, "125"),
+        List<SpaceRuns.Run> num = List.of(
+                new SpaceRuns.Run(false, 0, s, "125"),
                 space,
-                new LineTranslator.Run(false, 0, s, "126"));
-        check("數字也算", LineTranslator.labelledRun(num, 0));
+                new SpaceRuns.Run(false, 0, s, "126"));
+        check("數字也算", SpaceRuns.labelledRun(num, 0));
     }
     private static void overlayPill() {
         Style s = Style.EMPTY;
         String pill = String.valueOf(new char[] {0xE060, 0xE03B, 0xE062});
         String level = String.valueOf(new char[] {0xE00B, 0xE015, 0xE029});
 
-        List<LineTranslator.Run> plate = List.of(
-                new LineTranslator.Run(false, 0, s, "Kandon-Beda 新兵 "),
-                new LineTranslator.Run(false, 0, s, pill),
-                new LineTranslator.Run(true, -30, s, SpaceOffset.encode(-30)),
-                new LineTranslator.Run(false, 0, s, level),
-                new LineTranslator.Run(true, 2, s, SpaceOffset.encode(2)));
+        List<SpaceRuns.Run> plate = List.of(
+                new SpaceRuns.Run(false, 0, s, "Kandon-Beda 新兵 "),
+                new SpaceRuns.Run(false, 0, s, pill),
+                new SpaceRuns.Run(true, -30, s, SpaceOffset.encode(-30)),
+                new SpaceRuns.Run(false, 0, s, level),
+                new SpaceRuns.Run(true, 2, s, SpaceOffset.encode(2)));
         check("膠囊後面只有圖示，不算實字",
-              !LineTranslator.textAfterGap(plate, 0));
+              !SpaceRuns.textAfterGap(plate, 0));
         check("往回拉去疊圖示的負偏移不能當欄位交界",
-              LineTranslator.overlayGap(plate, 0, -30));
+              SpaceRuns.overlayGap(plate, 0, -30));
 
-        List<LineTranslator.Run> column = List.of(
-                new LineTranslator.Run(false, 0, s, " 職業類型"),
-                new LineTranslator.Run(true, 76, s, SpaceOffset.encode(76)),
-                new LineTranslator.Run(false, 0, s, "法師/闇導士"));
-        check("欄位交界後面有實字", LineTranslator.textAfterGap(column, 0));
+        List<SpaceRuns.Run> column = List.of(
+                new SpaceRuns.Run(false, 0, s, " 職業類型"),
+                new SpaceRuns.Run(true, 76, s, SpaceOffset.encode(76)),
+                new SpaceRuns.Run(false, 0, s, "法師/闇導士"));
+        check("欄位交界後面有實字", SpaceRuns.textAfterGap(column, 0));
         check("欄位交界不會被當成疊字",
-              !LineTranslator.overlayGap(column, 0, 76));
+              !SpaceRuns.overlayGap(column, 0, 76));
 
-        List<LineTranslator.Run> pulled = List.of(
-                new LineTranslator.Run(false, 0, s, "防禦"),
-                new LineTranslator.Run(true, -12, s, SpaceOffset.encode(-12)),
-                new LineTranslator.Run(false, 0, s, "+1 to +2"));
+        List<SpaceRuns.Run> pulled = List.of(
+                new SpaceRuns.Run(false, 0, s, "防禦"),
+                new SpaceRuns.Run(true, -12, s, SpaceOffset.encode(-12)),
+                new SpaceRuns.Run(false, 0, s, "+1 to +2"));
         check("負偏移後面有實字就不是疊字",
-              !LineTranslator.overlayGap(pulled, 0, -12));
+              !SpaceRuns.overlayGap(pulled, 0, -12));
 
         check("★ 對齊圖示的 2px 微調不是欄界",
-              !LineTranslator.isColumnGap(
-                      new LineTranslator.Run(true, 2, s, SpaceOffset.encode(2))));
+              !SpaceRuns.isColumnGap(
+                      new SpaceRuns.Run(true, 2, s, SpaceOffset.encode(2))));
         check("素材 tooltip 往回拉的 12px 是欄界",
-              LineTranslator.isColumnGap(
-                      new LineTranslator.Run(true, -12, s, SpaceOffset.encode(-12))));
+              SpaceRuns.isColumnGap(
+                      new SpaceRuns.Run(true, -12, s, SpaceOffset.encode(-12))));
         check("信標選單的 69px 是欄界",
-              LineTranslator.isColumnGap(
-                      new LineTranslator.Run(true, 76, s, SpaceOffset.encode(76))));
+              SpaceRuns.isColumnGap(
+                      new SpaceRuns.Run(true, 76, s, SpaceOffset.encode(76))));
         check("實字不是欄界",
-              !LineTranslator.isColumnGap(new LineTranslator.Run(false, 0, s, "法師")));
+              !SpaceRuns.isColumnGap(new SpaceRuns.Run(false, 0, s, "法師")));
 
-        check("只看緊接在後面那一段", !LineTranslator.textAfterGap(plate, 1));
+        check("只看緊接在後面那一段", !SpaceRuns.textAfterGap(plate, 1));
     }
 
     private static void check(String what, boolean ok) {
