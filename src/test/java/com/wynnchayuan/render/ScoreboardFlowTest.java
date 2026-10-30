@@ -233,23 +233,23 @@ public final class ScoreboardFlowTest {
         ScoreboardFlow.Plan plan = ScoreboardFlow.plan(List.of(row), store);
         WynntilsText.setScoreboard(Set.of("Raid:", "Hold the platform"), plan.rows());
         try {
-            StyledText shown = WynntilsText.screenText(row, on, store);
+            StyledText shown = WynntilsScreenText.screenText(row, on, store);
             check("★ 開著：記分板那一列換成譯文，而且沒有換行",
                     shown != row && shown.getString().indexOf('\n') < 0);
             check("★ 關掉：記分板那一列原樣回去",
-                    WynntilsText.screenText(row, off, store) == row);
+                    WynntilsScreenText.screenText(row, off, store) == row);
             check("關掉只管記分板：別的字照翻",
-                    WynntilsText.screenText(other, off, store) != other);
+                    WynntilsScreenText.screenText(other, off, store) != other);
 
             WynntilsText.setScoreboard(Set.of("Hold the platform"), Map.of());
-            StyledText plainPath = WynntilsText.screenText(row, on, store);
+            StyledText plainPath = WynntilsScreenText.screenText(row, on, store);
             check("★ 走一般那條路時譯文也沒有換行",
                     plainPath != row && plainPath.getString().indexOf('\n') < 0);
         } finally {
             WynntilsText.setScoreboard(Set.of(), Map.of());
         }
         check("不在記分板上的字，關掉也照翻",
-                WynntilsText.screenText(row, off, store) != row);
+                WynntilsScreenText.screenText(row, off, store) != row);
     }
 
     private static void partyMembers(TranslationStore store) throws Exception {
@@ -274,7 +274,7 @@ public final class ScoreboardFlowTest {
         WynntilsText.setScoreboard(shown, Map.of());
         try {
             check("前提：不標出來的話，General 那一列會被查表換掉",
-                    WynntilsText.screenText(general, on, store) != general);
+                    WynntilsScreenText.screenText(general, on, store) != general);
         } finally {
             WynntilsText.setScoreboard(Set.of(), Map.of());
         }
@@ -300,13 +300,13 @@ public final class ScoreboardFlowTest {
         WynntilsText.setScoreboard(shown, plan.rows(), kept);
         try {
             check("★ 就地取代：General 那一列原樣回去（不是譯文）",
-                    WynntilsText.screenText(general, on, store) == general);
+                    WynntilsScreenText.screenText(general, on, store) == general);
             for (StyledText row : rows) {
                 check("每一位隊友都原樣（" + ScoreboardFlow.key(row) + "）",
-                        WynntilsText.screenText(row, on, store) == row);
+                        WynntilsScreenText.screenText(row, on, store) == row);
             }
             check("標題照翻（隊伍：[Lv. 481]）",
-                    WynntilsText.screenText(header, on, store) != header);
+                    WynntilsScreenText.screenText(header, on, store) != header);
         } finally {
             WynntilsText.setScoreboard(Set.of(), Map.of());
         }

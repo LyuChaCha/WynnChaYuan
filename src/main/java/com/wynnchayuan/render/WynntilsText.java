@@ -4,7 +4,6 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
-import com.wynnchayuan.translate.LookupScope;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 
@@ -54,7 +53,7 @@ public final class WynntilsText {
         if (line == null || line.isEmpty()) {
             return line;
         }
-        Cached seen;
+        WynntilsScreenText.Cached seen;
         synchronized (TRACKER_CACHE) {
             seen = TRACKER_CACHE.get(line);
         }
@@ -63,7 +62,7 @@ public final class WynntilsText {
         }
         StyledText shown = line(line, store);
         synchronized (TRACKER_CACHE) {
-            TRACKER_CACHE.put(line, new Cached(store.generation(),
+            TRACKER_CACHE.put(line, new WynntilsScreenText.Cached(store.generation(),
                     store.namesWithOriginal(), store.translatesNames(),
                     store.peeksPlainNames(), store.pageNameMode(), false,
                     shown == line ? null : shown));
@@ -71,9 +70,9 @@ public final class WynntilsText {
         return shown;
     }
 
-    private static final java.util.Map<StyledText, Cached> TRACKER_CACHE = lru(64);
+    private static final java.util.Map<StyledText, WynntilsScreenText.Cached> TRACKER_CACHE = lru(64);
 
-    private static <K, V> java.util.Map<K, V> lru(int limit) {
+    static <K, V> java.util.Map<K, V> lru(int limit) {
         return new java.util.LinkedHashMap<>(16, 0.75f, true) {
             @Override
             protected boolean removeEldestEntry(java.util.Map.Entry<K, V> eldest) {
@@ -82,13 +81,13 @@ public final class WynntilsText {
         };
     }
 
-    private static boolean firstTime(java.util.Map<String, Boolean> noted, String key) {
+    static boolean firstTime(java.util.Map<String, Boolean> noted, String key) {
         synchronized (noted) {
             return noted.put(key, Boolean.TRUE) == null;
         }
     }
 
-    private static StyledText line(StyledText line, TranslationStore store) {
+    static StyledText line(StyledText line, TranslationStore store) {
         if (line == null || line.isEmpty()) {
             return line;
         }
@@ -99,7 +98,7 @@ public final class WynntilsText {
         return byPart(line, store);
     }
 
-    private static StyledText byPart(StyledText line, TranslationStore store) {
+    static StyledText byPart(StyledText line, TranslationStore store) {
         net.minecraft.network.chat.MutableComponent out =
                 net.minecraft.network.chat.Component.empty();
         boolean any = false;
@@ -166,7 +165,7 @@ public final class WynntilsText {
         return hit == null || hit.isBlank() ? null : text.substring(0, start) + hit;
     }
 
-    private static net.minecraft.network.chat.Style styleOf(StyledText one) {
+    static net.minecraft.network.chat.Style styleOf(StyledText one) {
         net.minecraft.network.chat.Style[] found = {net.minecraft.network.chat.Style.EMPTY};
         one.getComponent().visit((style, text) -> {
             if (!text.isEmpty()) {
@@ -271,169 +270,6 @@ public final class WynntilsText {
         return translated == null ? name : translated;
     }
 
-    public static net.minecraft.network.chat.Component bossBar(
-            net.minecraft.network.chat.Component name) {
-        try {
-            return bossBar(name, WynnChaYuan.config(), WynnChaYuan.translations());
-        } catch (Throwable t) {
-            ErrorDebug.note("WynntilsText#bossBar", null, t);
-            return name;
-        }
-    }
-
-    static net.minecraft.network.chat.Component bossBar(
-            net.minecraft.network.chat.Component name, CollectorConfig config,
-            TranslationStore store) {
-        if (name == null || store == null || config == null || !config.translateBossBar()) {
-            return name;
-        }
-        if (barAge != store.generation() || BARS.size() > 256) {
-            BARS.clear();
-            barAge = store.generation();
-        }
-        net.minecraft.network.chat.Component hit = BARS.get(name);
-        if (hit == null) {
-            StyledText text = StyledText.fromComponent(name);
-            hit = bossBarPlain(name, store);
-            if (hit == null) {
-                StyledText shown = line(text, store);
-                hit = shown == text ? name : shown.getComponent();
-            }
-            net.minecraft.network.chat.Component named = bossBarName(hit, store);
-            if (named != null) {
-                hit = named;
-            }
-            net.minecraft.network.chat.Component worded = bossBarWords(hit, store);
-            if (worded != null) {
-                hit = worded;
-            }
-            BARS.put(name, hit);
-            var captured = WynnChaYuan.store();
-            if (captured != null) {
-                captured.noteEvent(hit == name ? "bossbar.noMatch" : "bossbar.shown");
-            }
-            if (hit == name && config.collect()) {
-                collectName(text, "label/bossbar");
-            }
-        }
-        return hit;
-    }
-
-    static net.minecraft.network.chat.Component bossBarPlain(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
-        String raw = bar.getString();
-        String key = raw.strip();
-        if (key.isEmpty() || !key.equals(com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(key))) {
-            return null;
-        }
-        String dst = store.lookup(key);
-        if (dst == null || dst.isEmpty() || dst.contains("{")) {
-            return null;
-        }
-        int same = 0;
-        while (same < key.length() && same < dst.length()
-                && key.charAt(key.length() - 1 - same) == dst.charAt(dst.length() - 1 - same)) {
-            same++;
-        }
-        if (same == 0) {
-            return null;
-        }
-        int start = raw.indexOf(key);
-        int keep = start + key.length() - same;
-        String head = raw.substring(0, start) + dst.substring(0, dst.length() - same);
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
-        int[] at = {0};
-        boolean[] headDone = {false};
-        bar.visit((style, text) -> {
-            int from = at[0];
-            int to = from + text.length();
-            at[0] = to;
-            if (!headDone[0] && !text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(head).withStyle(style));
-                headDone[0] = true;
-            }
-            if (to > keep && !text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(
-                        text.substring(Math.max(0, keep - from))).withStyle(style));
-            }
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
-        return headDone[0] ? out : null;
-    }
-
-    static net.minecraft.network.chat.Component bossBarName(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
-        String plain = bar.getString();
-        int cut = plain.indexOf(" - ");
-        if (cut <= 0) {
-            return null;
-        }
-        String head = plain.substring(0, cut).strip();
-        if (head.isEmpty()) {
-            return null;
-        }
-        String dst = store.lookup(head);
-        if (dst == null) {
-            String plate = store.lookup(head + " {#}{#}");
-            if (plate != null && plate.endsWith("{#}{#}")) {
-                dst = plate.substring(0, plate.length() - "{#}{#}".length()).strip();
-            }
-        }
-        if (dst == null || dst.isEmpty() || dst.contains("{")) {
-            return null;
-        }
-        String translated = dst;
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
-        boolean[] done = {false};
-        bar.visit((style, text) -> {
-            int at = done[0] ? -1 : text.indexOf(head);
-            if (at >= 0) {
-                out.append(net.minecraft.network.chat.Component.literal(
-                        text.substring(0, at) + translated
-                                + text.substring(at + head.length())).withStyle(style));
-                done[0] = true;
-            } else if (!text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(text).withStyle(style));
-            }
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
-        return done[0] ? out : null;
-    }
-
-    static net.minecraft.network.chat.Component bossBarWords(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
-        boolean[] changed = {false};
-        bar.visit((style, text) -> {
-            if (text.isEmpty()) {
-                return java.util.Optional.empty();
-            }
-            java.util.regex.Matcher m = WORD.matcher(text);
-            StringBuilder sb = new StringBuilder();
-            while (m.find()) {
-                String dst = store.scopedLookup("bossbar", m.group());
-                m.appendReplacement(sb, java.util.regex.Matcher.quoteReplacement(
-                        dst != null ? dst : m.group()));
-                changed[0] |= dst != null;
-            }
-            m.appendTail(sb);
-            out.append(net.minecraft.network.chat.Component.literal(sb.toString())
-                    .withStyle(style));
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
-        return changed[0] ? out : null;
-    }
-
-    private static final java.util.regex.Pattern WORD =
-            java.util.regex.Pattern.compile("[A-Za-z]+");
-
-    private static final java.util.Map<net.minecraft.network.chat.Component,
-            net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
-    private static int barAge = -1;
-
     public static StyledText notification(StyledText text) {
         try {
             CollectorConfig config = WynnChaYuan.config();
@@ -458,110 +294,6 @@ public final class WynntilsText {
             return text;
         }
     }
-
-    public static net.minecraft.network.chat.Component entityName(
-            net.minecraft.network.chat.Component name,
-            net.minecraft.world.entity.Entity entity) {
-        try {
-            return entityName(name, entity, WynnChaYuan.config(), WynnChaYuan.translations());
-        } catch (Throwable t) {
-            ErrorDebug.note("WynntilsText#entityName", null, t);
-            return name;
-        }
-    }
-
-    static net.minecraft.network.chat.Component entityName(
-            net.minecraft.network.chat.Component name, CollectorConfig config,
-            TranslationStore store) {
-        return entityName(name, null, config, store);
-    }
-
-    // 盔甲座浮空字不是 TextDisplay，Wynntils 名牌事件收不到
-    static net.minecraft.network.chat.Component entityName(
-            net.minecraft.network.chat.Component name,
-            net.minecraft.world.entity.Entity entity, CollectorConfig config,
-            TranslationStore store) {
-        if (name == null || store == null || config == null
-                || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
-            return name;
-        }
-        if (nameAge != store.generation()) {
-            NAMES.clear();
-            INDICATORS.clear();
-            synchronized (NAMES_NOTED) {
-                NAMES_NOTED.clear();
-            }
-            nameAge = store.generation();
-        }
-        Name entry = NAMES.get(name);
-        if (entry == null) {
-            entry = INDICATORS.get(name);
-        }
-        if (entry == null) {
-            net.minecraft.network.chat.Component hit;
-            StyledText text = StyledText.fromComponent(name);
-            net.minecraft.network.chat.Component floating =
-                    LineTranslator.translateFloating(text, store);
-            com.wynnchayuan.translate.NameplateProbe.check("盔甲座名稱", text, floating, store);
-            StyledText shown = floating != null
-                    ? StyledText.fromComponent(floating)
-                    : byPart(text, store);
-            hit = shown == text ? name : shown.getComponent();
-            if (hit == name && config.collect()) {
-                collectName(text, "label/floating");
-            }
-            boolean indicator = com.wynnchayuan.capture.CombatText.isIndicator(text);
-            StyledText original = !name.getString().isBlank()
-                    && !com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
-                    && !indicator ? text : null;
-            entry = new Name(hit, original);
-            (indicator ? INDICATORS : NAMES).put(name, entry);
-        }
-        if (entity != null && entry.original() != null) {
-            LookAtTranslator.remember(entity, entry.original());
-        }
-        if (config.nametagMode() == CollectorConfig.NametagMode.LOOK_AT) {
-            return name;
-        }
-        return entry.shown();
-    }
-
-    private static void collectName(StyledText text, String ctx) {
-        if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
-                || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
-            return;
-        }
-        if (!firstTime(NAMES_NOTED, ctx + '\0' + text.getString())) {
-            return;
-        }
-        var captured = WynnChaYuan.store();
-        com.wynnchayuan.capture.LineParts owned =
-                LineTranslator.nameFramed(text, WynnChaYuan.translations());
-        if (owned != null) {
-            if (captured != null) {
-                captured.record(owned.template(), "name", "label", ctx);
-            }
-            return;
-        }
-        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
-        if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
-                || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
-                || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)
-                || com.wynnchayuan.capture.PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
-            return;
-        }
-        if (captured != null) {
-            captured.record(template, "name", "label", ctx);
-        }
-    }
-
-    private record Name(net.minecraft.network.chat.Component shown, StyledText original) {}
-
-    // 實測 60 個名牌全部重翻一幀要 4～9ms
-    private static final java.util.Map<net.minecraft.network.chat.Component, Name> NAMES = lru(512);
-    private static final java.util.Map<net.minecraft.network.chat.Component, Name> INDICATORS = lru(256);
-    private static final java.util.Map<String, Boolean> NAMES_NOTED = lru(1024);
-    private static int nameAge = -1;
 
     public static StyledText heldItemText(StyledText text) {
         try {
@@ -605,155 +337,6 @@ public final class WynntilsText {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());
     }
 
-    public static StyledText screenText(StyledText text) {
-        try {
-            return screenText(text, WynnChaYuan.config(), WynnChaYuan.translations());
-        } catch (Throwable t) {
-            ErrorDebug.note("WynntilsText#screenText", null, t);
-            return text;
-        }
-    }
-
-    private static volatile boolean rawText;
-
-    public static void holdRawText(boolean on) {
-        rawText = on;
-    }
-
-    private record Board(java.util.Set<String> shown,
-                         java.util.Map<String, StyledText> replaced,
-                         java.util.Set<String> kept) {}
-
-    private static volatile Board board =
-            new Board(java.util.Set.of(), java.util.Map.of(), java.util.Set.of());
-
-    public static void setScoreboard(java.util.Set<String> shown,
-                                     java.util.Map<String, StyledText> replaced) {
-        setScoreboard(shown, replaced, java.util.Set.of());
-    }
-
-    public static void setScoreboard(java.util.Set<String> shown,
-                                     java.util.Map<String, StyledText> replaced,
-                                     java.util.Set<String> kept) {
-        board = new Board(java.util.Set.copyOf(shown), java.util.Map.copyOf(replaced),
-                java.util.Set.copyOf(kept));
-    }
-
-    static StyledText screenText(StyledText text, CollectorConfig config,
-                                 TranslationStore store) {
-        if (text == null || text.isEmpty() || store == null
-                || config == null || !config.wynntilsUi()) {
-            return text;
-        }
-        if (rawText) {
-            return text;
-        }
-        Board now = board;
-        if (!now.shown().isEmpty()) {
-            String plain = text.getStringWithoutFormatting();
-            if (now.kept().contains(plain)) {
-                return text;
-            }
-            if (now.shown().contains(plain)) {
-                if (!config.translateScoreboard()) {
-                    return text;
-                }
-                StyledText whole = now.replaced().get(plain);
-                if (whole != null) {
-                    return whole;
-                }
-            }
-        }
-        boolean content = contentScreen.getAsBoolean();
-        Cached seen;
-        synchronized (SCREEN_CACHE) {
-            seen = SCREEN_CACHE.get(text);
-        }
-        if (seen != null && seen.fresh(store) && seen.content() == content) {
-            return seen.out() == null ? text : seen.out();
-        }
-        net.minecraft.network.chat.Component hit;
-        if (statusRow(text.getStringWithoutFormatting())) {
-            try (LookupScope scope = LookupScope.barItemNames(true)) {
-                hit = LineTranslator.translate(text, store);
-            }
-        } else {
-            hit = LineTranslator.translate(text, store);
-        }
-        if (hit != null && text.getString().indexOf('\n') < 0) {
-            hit = ScoreboardFlow.oneLine(hit);
-        }
-        if (content) {
-            String title = store.pageTitleName(text.getStringWithoutFormatting());
-            if (title != null && (hit == null || !hit.getString().equals(title))) {
-                hit = net.minecraft.network.chat.Component.literal(title).withStyle(
-                        styleOf(text).withFont(net.minecraft.network.chat.FontDescription.DEFAULT));
-            }
-        }
-        if (hit != null && store.pageNameMode() != CollectorConfig.ItemNames.ON
-                && store.isPageName(text.getStringWithoutFormatting())) {
-            hit = com.wynnchayuan.translate.PageNames.bare(
-                    text.getComponent(), hit, store.pageNameMode());
-        }
-        StyledText out = hit == null ? null : StyledText.fromComponent(hit);
-        synchronized (SCREEN_CACHE) {
-            SCREEN_CACHE.put(text, new Cached(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), store.pageNameMode(), content, out));
-        }
-        return out == null ? text : out;
-    }
-
-    // 以 Wynntils 套件名比對，它搬套件時會安靜失效
-    static java.util.function.BooleanSupplier contentScreen = WynntilsText::onContentScreen;
-
-    private static boolean onContentScreen() {
-        try {
-            net.minecraft.client.Minecraft client = net.minecraft.client.Minecraft.getInstance();
-            Object screen = client == null ? null : client.screen;
-            if (screen == null) {
-                return false;
-            }
-            String name = screen.getClass().getName();
-            return name.startsWith("com.wynntils.screens.activities.")
-                    || name.startsWith("com.wynntils.screens.maps.");
-        } catch (Throwable t) {
-            ErrorDebug.note("WynntilsText#onContentScreen", null, t);
-            return false;
-        }
-    }
-
-    static boolean statusRow(String plain) {
-        return plain != null && STATUS_TIMER.matcher(plain).find();
-    }
-
-    private static final java.util.regex.Pattern STATUS_TIMER = java.util.regex.Pattern.compile(
-            "\\((?:\\d{1,2}:)?(?:\\d{1,2}:\\d{2}|\\*\\*:\\*\\*)\\)\\s*$");
-
-    private static final int SCREEN_CACHE_LIMIT = 512;
-
-    private record Cached(int generation, boolean namesWithOriginal,
-                          boolean translateNames, boolean peekPlain,
-                          CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
-
-        boolean fresh(TranslationStore store) {
-            return generation == store.generation()
-                    && namesWithOriginal == store.namesWithOriginal()
-                    && translateNames == store.translatesNames()
-                    && peekPlain == store.peeksPlainNames()
-                    && pageNames == store.pageNameMode();
-        }
-    }
-
-    private static final java.util.Map<StyledText, Cached> SCREEN_CACHE =
-            new java.util.LinkedHashMap<>(128, 0.75f, true) {
-                @Override
-                protected boolean removeEldestEntry(
-                        java.util.Map.Entry<StyledText, Cached> eldest) {
-                    return size() > SCREEN_CACHE_LIMIT;
-                }
-            };
-
     public static java.util.List<net.minecraft.network.chat.Component> menuTooltip(
             java.util.List<net.minecraft.network.chat.Component> lines) {
         try {
@@ -772,5 +355,33 @@ public final class WynntilsText {
             ErrorDebug.note("WynntilsText#menuTooltip", null, t);
             return lines;
         }
+    }
+
+    public static net.minecraft.network.chat.Component bossBar(net.minecraft.network.chat.Component name) {
+        return WynntilsBossBar.bossBar(name);
+    }
+
+    public static net.minecraft.network.chat.Component entityName(net.minecraft.network.chat.Component name,
+                                                                  net.minecraft.world.entity.Entity entity) {
+        return WynntilsNames.entityName(name, entity);
+    }
+
+    public static StyledText screenText(StyledText text) {
+        return WynntilsScreenText.screenText(text);
+    }
+
+    public static void holdRawText(boolean on) {
+        WynntilsScreenText.holdRawText(on);
+    }
+
+    public static void setScoreboard(java.util.Set<String> shown,
+                                     java.util.Map<String, StyledText> replaced) {
+        WynntilsScreenText.setScoreboard(shown, replaced);
+    }
+
+    public static void setScoreboard(java.util.Set<String> shown,
+                                     java.util.Map<String, StyledText> replaced,
+                                     java.util.Set<String> kept) {
+        WynntilsScreenText.setScoreboard(shown, replaced, kept);
     }
 }

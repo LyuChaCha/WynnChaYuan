@@ -9,7 +9,7 @@ public final class PanelLayoutTest {
     private static final int FRAME = OriginalTooltipBox.FRAME;
 
     public static void main(String[] args) {
-        TooltipPanel.Place p = layout(null, 200, 12);
+        TooltipPlacement.Place p = layout(null, 200, 12);
         int gap = (212 - FRAME) - (p.panelX() + 150 + FRAME);
         check("★ 兩個框最外圈之間剛好是設定的 12px（實際 " + gap + "）", gap == 12);
         check("沒有壓到", !p.overlaps());
@@ -30,7 +30,7 @@ public final class PanelLayoutTest {
 
         for (int value : new int[] {0, 4, 12, 16, 24, 40, 100, 200, 500}) {
             int shown = com.wynnchayuan.PanelGap.clamp(value);
-            p = TooltipPanel.layout(150, 200, 180, 260, null, 600, 150, 2000, 720,
+            p = TooltipPlacement.layout(150, 200, 180, 260, null, 600, 150, 2000, 720,
                     com.wynnchayuan.PanelGap.layout(value), PanelSide.AUTO);
             int outer = (612 - FRAME) - (p.panelX() + 150 + FRAME);
             int visible = com.wynnchayuan.PanelGap.visible(outer);
@@ -50,8 +50,8 @@ public final class PanelLayoutTest {
         System.out.println("PanelLayoutTest 全部通過");
     }
 
-    private static TooltipPanel.Place layout(OriginalTooltipBox.Box drawn, int mouseX, int gap) {
-        return TooltipPanel.layout(150, 200, 180, 260, drawn, mouseX, 150, 640, 360, gap, PanelSide.AUTO);
+    private static TooltipPlacement.Place layout(OriginalTooltipBox.Box drawn, int mouseX, int gap) {
+        return TooltipPlacement.layout(150, 200, 180, 260, drawn, mouseX, 150, 640, 360, gap, PanelSide.AUTO);
     }
 
     private static void check(String what, boolean ok) {
