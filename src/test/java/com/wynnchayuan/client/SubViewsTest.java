@@ -80,7 +80,9 @@ public final class SubViewsTest {
                 views.put("nametag", nametag(lang));
                 views.put("firstrun-consent", new FirstRunView(shell, new FakeFirstRun(shell, true, true, false)));
                 views.put("firstrun-setup", new FirstRunView(shell, new FakeFirstRun(shell, false, true, true)));
-                views.put("firstrun-custom", customising(shell, lang, size));
+                for (int cat = 0; cat < 4; cat++) {
+                    views.put("firstrun-custom-" + (cat + 1), customising(shell, lang, size, cat));
+                }
                 for (var one : views.entrySet()) {
                     AwtCanvas c = render(one.getValue(), lang, size[0], size[1], 2, -100, -100);
                     String at = lang + " " + one.getKey() + " " + size[0] + "x" + size[1];
@@ -100,7 +102,7 @@ public final class SubViewsTest {
             must(lang + "：這幾張畫到的字，附的字型都有（缺「" + gone + "」，重跑 tools/build-ui-fonts.py）",
                     gone.length() == 0);
         }
-        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 9 張 × "
+        System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × 12 張 × "
                 + SIZES.length + " 種大小）");
 
         position(out);
@@ -308,6 +310,9 @@ public final class SubViewsTest {
         final boolean upgrading;
         final List<String> calls = new ArrayList<>();
         int dialogue = 1;
+        int choices = 1;
+        boolean online = true;
+        boolean optout = false;
         int chat = 1;
         int nametag = 1;
         int tooltip = 2;
@@ -384,31 +389,43 @@ public final class SubViewsTest {
         }
 
         @Override
-        public List<Row> custom() {
+        public List<Row.Group> custom() {
             return List.of(
-                    segment("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
-                            () -> dialogue, i -> dialogue = i),
-                    segment("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
-                            () -> chat, i -> chat = i),
-                    segment("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
-                            () -> nametag, i -> nametag = i),
-                    segment("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
-                            () -> tooltip, i -> tooltip = i),
-                    segment("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
-                            () -> names, i -> names = i),
-                    segment("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
-                            () -> tracker, i -> tracker = i),
-                    toggle("world.scoreboard", () -> scoreboard, () -> scoreboard = !scoreboard),
-                    toggle("world.titles", () -> titles, () -> titles = !titles),
-                    toggle("world.bossbar", () -> bossbar, () -> bossbar = !bossbar),
-                    toggle("world.wynntils", () -> wynntils, () -> wynntils = !wynntils));
+                    new Row.Group(() -> shell.tr("tab.items"), false, List.of(
+                            segment("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
+                                    () -> tooltip, i -> tooltip = i),
+                            segment("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
+                                    () -> names, i -> names = i),
+                            toggle("world.wynntils", () -> wynntils, () -> wynntils = !wynntils))),
+                    new Row.Group(() -> shell.tr("tab.dialogue"), false, List.of(
+                            segment("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
+                                    () -> dialogue, i -> dialogue = i),
+                            segment("dialogue.choices", new String[] {"mode.box", "mode.replace", "mode.off"},
+                                    () -> choices, i -> choices = i))),
+                    new Row.Group(() -> shell.tr("tab.world"), false, List.of(
+                            segment("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
+                                    () -> nametag, i -> nametag = i),
+                            segment("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
+                                    () -> chat, i -> chat = i),
+                            segment("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
+                                    () -> tracker, i -> tracker = i),
+                            toggle("world.scoreboard", () -> scoreboard, () -> scoreboard = !scoreboard),
+                            toggle("world.titles", () -> titles, () -> titles = !titles),
+                            toggle("world.bossbar", () -> bossbar, () -> bossbar = !bossbar))),
+                    new Row.Group(() -> shell.tr("group.privacy"), false, List.of(
+                            toggle("privacy.online", () -> online, () -> online = !online),
+                            toggle("privacy.optout", () -> optout, () -> optout = !optout))));
         }
     }
 
-    private static FirstRunView customising(FakeShell shell, String lang, int[] size) {
+    private static FirstRunView customising(FakeShell shell, String lang, int[] size, int category) {
         FirstRunView view = new FirstRunView(shell, new FakeFirstRun(shell, false, true, false));
         render(view, lang, size[0], size[1], 1, -100, -100);
         press(view, "b:custom");
+        if (category > 0) {
+            render(view, lang, size[0], size[1], 1, -100, -100);
+            press(view, "c:cat:" + category);
+        }
         return view;
     }
 
@@ -443,13 +460,23 @@ public final class SubViewsTest {
         press(view, "b:custom");
         must("按自訂：換到逐項選擇", view.step() == FirstRunView.Step.CUSTOM);
         render(view, "zh_tw", 640, 360, 1, -100, -100);
-        press(view, "c:world.chat:2");
-        must("自訂：點了就改（聊天 → 關閉）", host.chat == 2);
-        scrollTo(view, "t:world.wynntils");
-        float[] last = view.spot("t:world.wynntils");
-        must("自訂：十項都在（最後一項捲得到）", last != null && last[3] > 0);
+        must("自訂：先顯示第一類（物品）", view.category() == 0
+                && view.spot("c:items.tooltip:0") != null && view.spot("c:world.chat:0") == null);
         press(view, "t:world.wynntils");
         must("自訂：開關點得動（Wynntils 介面 → 關）", !host.wynntils);
+        press(view, "c:cat:2");
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        must("自訂：換到世界與聊天那一類", view.category() == 2
+                && view.spot("c:items.tooltip:0") == null);
+        press(view, "c:world.chat:2");
+        must("自訂：點了就改（聊天 → 關閉）", host.chat == 2);
+        scrollTo(view, "t:world.bossbar");
+        float[] last = view.spot("t:world.bossbar");
+        must("自訂：這一類最後一項捲得到", last != null && last[3] > 0);
+        press(view, "c:cat:3");
+        render(view, "zh_tw", 640, 360, 1, -100, -100);
+        press(view, "t:privacy.optout");
+        must("自訂：隱私那一類的開關點得動", host.optout);
         press(view, "b:back");
         must("返回：回到推薦／自訂", view.step() == FirstRunView.Step.SETUP);
         render(view, "zh_tw", 640, 360, 1, -100, -100);
