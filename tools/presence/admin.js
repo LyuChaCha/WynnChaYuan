@@ -1,7 +1,7 @@
 import { DISCORD_ID, account, discordSession, publicId, who } from './auth.js';
 import { IDLE_KEEP_MS, allCapes, allHistory, discard, dropCape, groupCapes, groupVisibility, idleGroup, idleMap, idleVisibility, listed, purge, reviewOf, starMap, visibility } from './capes.js';
 import { isDeveloper } from './credits.js';
-import { HASH, ID, NAME, UUID, json, no, plainUuid, readJson } from './http.js';
+import { HASH, ID, NAME, UUID, json, no, plainUuid, readJson, timingSafeEqual } from './http.js';
 import { listAll, parseRecord, quietPut } from './kv.js';
 import { remember } from './presence.js';
 
@@ -28,7 +28,7 @@ export async function isStaff(env, user) {
 
 export async function authority(request, env, now) {
   const header = request.headers.get('authorization') || '';
-  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return { by: 'admin', developer: true };
+  if (env.ADMIN_TOKEN && timingSafeEqual('Bearer ' + env.ADMIN_TOKEN, header)) return { by: 'admin', developer: true };
   const user = await who(request, env, now);
   if (user) {
     if (await isDeveloper(user, now)) return { by: user.name, developer: true };
