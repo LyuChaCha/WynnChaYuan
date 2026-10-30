@@ -19,7 +19,7 @@ public final class DialogueFitTest {
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations/zh_tw");
         List<String[]> rows = new ArrayList<>();
         collect(base.resolve("quest-dialogue.json"), rows);
-        DialogueRewriter.widthForTest = DialogueFitTest::realWidth;
+        DialogueLayout.widthForTest = DialogueFitTest::realWidth;
 
         check("語料讀得到（" + rows.size() + " 條）", rows.size() > 1000);
         System.out.printf("%n%8s %8s %10s %10s %8s%n",
@@ -47,9 +47,9 @@ public final class DialogueFitTest {
             }
             total++;
             int need = rowsFor(src);
-            boolean withK = DialogueRewriter.wrap(dst, need, null, width, true) != null;
-            boolean withoutK = DialogueRewriter.wrap(dst, need, null, width, false) != null;
-            boolean now = DialogueRewriter.wrap(dst, need, null, width) != null;
+            boolean withK = DialogueLayout.wrap(dst, need, null, width, true) != null;
+            boolean withoutK = DialogueLayout.wrap(dst, need, null, width, false) != null;
+            boolean now = DialogueLayout.wrap(dst, need, null, width) != null;
             if (!withK) {
                 strict++;
             }
@@ -81,7 +81,7 @@ public final class DialogueFitTest {
 
     private static int rowsFor(String raw) {
         for (int n = 1; n <= 5; n++) {
-            if (DialogueRewriter.wrap(raw, n, null, WIDTH) != null) {
+            if (DialogueLayout.wrap(raw, n, null, WIDTH) != null) {
                 return n;
             }
         }

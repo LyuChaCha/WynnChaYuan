@@ -19,7 +19,7 @@ public final class DialogueFitLangTest {
             {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr"};
 
     public static void main(String[] args) throws Exception {
-        DialogueRewriter.widthForTest = DialogueFitLangTest::realWidth;
+        DialogueLayout.widthForTest = DialogueFitLangTest::realWidth;
         System.out.printf("%-8s %8s %10s %10s%n",
                 "語言", "可比對", "232 塞不下", "208 塞不下");
         Map<String, int[]> table = new LinkedHashMap<>();
@@ -40,7 +40,7 @@ public final class DialogueFitLangTest {
                 counts[0]++;
                 int need = rowsFor(src);
                 for (int w = 0; w < WIDTHS.length; w++) {
-                    if (DialogueRewriter.wrap(dst, need, null, WIDTHS[w]) == null) {
+                    if (DialogueLayout.wrap(dst, need, null, WIDTHS[w]) == null) {
                         counts[w + 1]++;
                     }
                 }
@@ -56,7 +56,7 @@ public final class DialogueFitLangTest {
     }
 
     private static int rowsFor(String src) {
-        List<String> laid = DialogueRewriter.wrap(src, 5, null, 232);
+        List<String> laid = DialogueLayout.wrap(src, 5, null, 232);
         if (laid == null) {
             return 5;
         }

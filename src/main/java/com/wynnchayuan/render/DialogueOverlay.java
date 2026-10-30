@@ -5,40 +5,38 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.FormattedCharSequence;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public final class DialogueOverlay {
 
-    private static final int BOTTOM_MARGIN = 70;
+    static final int BOTTOM_MARGIN = 70;
 
-    private static final int PADDING = 4;
+    static final int PADDING = 4;
 
-    private static volatile List<Component> current = List.of();
+    static volatile List<Component> current = List.of();
 
-    private static volatile List<List<Component>> choices = List.of();
+    static volatile List<List<Component>> choices = List.of();
 
-    private static volatile int picked = 0;
+    static volatile int picked = 0;
 
     // 選項不在 Wynntils 對話事件裡，只在原始 action bar
-    private static volatile List<String> rawChoices = List.of();
+    static volatile List<String> rawChoices = List.of();
 
-    private static volatile String speaker = null;
+    static volatile String speaker = null;
 
-    private static volatile boolean needsShift = false;
+    static volatile boolean needsShift = false;
 
     private static volatile List<String> settledFor = List.of();
 
     private static volatile List<List<Component>> shown = List.of();
 
-    private static volatile long lastUpdate = 0;
+    static volatile long lastUpdate = 0;
 
-    private static final net.minecraft.network.chat.TextColor SPEAKER_COLOUR =
+    static final net.minecraft.network.chat.TextColor SPEAKER_COLOUR =
             net.minecraft.network.chat.TextColor.fromRgb(0xFFD966);
 
     private DialogueOverlay() {}
@@ -116,7 +114,7 @@ public final class DialogueOverlay {
         long now = System.currentTimeMillis();
         boolean sameLine = !lineText.isEmpty() && whole.startsWith(lineText);
         boolean skip = whole.length() - (sameLine ? lineText.length() : 0)
-                >= DialogueRewriter.SKIP_JUMP;
+                >= DialogueTyping.SKIP_JUMP;
         if (sameLine) {
             lineText = whole;
         } else if (!previousText.isEmpty() && previousText.equals(whole)) {
@@ -242,8 +240,8 @@ public final class DialogueOverlay {
     private static boolean covers(String[] raws, TranslationStore store, boolean steady, long now) {
         var config = WynnChaYuan.config();
         if ((config != null && !config.dialogueCover()) || steady || raws.length == 0
-                || now - lineStart > DialogueRewriter.HOLD_MS
-                || raws[raws.length - 1].strip().length() > DialogueRewriter.HOLD_CHARS) {
+                || now - lineStart > DialogueTyping.HOLD_MS
+                || raws[raws.length - 1].strip().length() > DialogueTyping.HOLD_CHARS) {
             return false;
         }
         StyledText line = DialogueIcons.line(raws[raws.length - 1], store);
@@ -290,7 +288,7 @@ public final class DialogueOverlay {
 
     static LineResult translateLine(StyledText line, String template, TranslationStore store,
                                     boolean steady) {
-        if (DialogueRewriter.learnName(line.getString(), store)) {
+        if (DialogueTyping.learnName(line.getString(), store)) {
             template = com.wynnchayuan.capture.LineParts.of(line).template();
         }
         com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
@@ -335,7 +333,7 @@ public final class DialogueOverlay {
         String typed = template == null ? "" : template.strip();
         return typed.length() < LOOKS_WHOLE
                 && store.hasLonger(typed)
-                && !DialogueRewriter.sentenceEnd(typed);
+                && !DialogueTyping.sentenceEnd(typed);
     }
 
     private static final int LOOKS_WHOLE = 12;
@@ -386,7 +384,7 @@ public final class DialogueOverlay {
 
     static boolean canReuse(String source, String template) {
         return source != null && template != null
-                && DialogueRewriter.within(source, template.strip());
+                && DialogueTyping.within(source, template.strip());
     }
 
     static List<List<Component>> translateChoices(TranslationStore store) {
@@ -443,321 +441,6 @@ public final class DialogueOverlay {
     }
 
     public static void render(GuiGraphics graphics) {
-        List<Component> lines = current;
-        List<List<Component>> options = choices;
-        if (lines.isEmpty() && options.isEmpty()) {
-            return;
-        }
-        float alpha = Fade.alphaFor(lastUpdate, WynnChaYuan.config().dialogueHoldMs());
-        if (alpha <= 0f) {
-            current = List.of();
-            choices = List.of();
-            rawChoices = List.of();
-            return;
-        }
-        Minecraft mc = Minecraft.getInstance();
-        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE
-                && !DialogueRewriter.bodyTooLong()) {
-            if (!options.isEmpty() && choicesInPanel()) {
-                drawChoices(graphics, mc, options, alpha);
-            }
-            return;
-        }
-        if (speaker != null && !lines.isEmpty()) {
-            List<Component> withName = new ArrayList<>(lines.size() + 1);
-            withName.add(speakerLine(speaker));
-            withName.addAll(lines);
-            lines = withName;
-        }
-        int lineHeight = mc.font.lineHeight + 1;
-        boolean sized = WynnChaYuan.config()
-                .hasOverlaySize(CollectorConfig.Overlay.DIALOGUE);
-        int cap = Math.min(MAX_BOX_W, graphics.guiWidth() - CHOICE_EDGE * 2);
-        int natural = sized ? 0 : widthOf(mc, lines);
-        boolean folded = !sized && natural > cap;
-        int boxW = sized ? dialogueWidth(0) : folded ? cap : natural;
-        int rowCount = folded ? wrapAll(mc, lines, boxW - PADDING * 2).size() : lines.size();
-        int boxH = lines.isEmpty() ? 0
-                : atLeastTall(rowCount * lineHeight + PADDING * 2);
-
-        int x = (graphics.guiWidth() - boxW) / 2;
-        int y = graphics.guiHeight() - BOTTOM_MARGIN - boxH;
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.DIALOGUE)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE) - boxW / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
-        }
-        int[] at = Boxes.intoScreen(x, y, boxW, boxH, graphics.guiWidth(), graphics.guiHeight());
-        x = at[0];
-        y = at[1];
-
-        if (!lines.isEmpty()) {
-            if (sized || folded) {
-                drawSized(graphics, mc, lines, x, y, boxW, alpha);
-            } else {
-                draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
-            }
-        }
-        if (!options.isEmpty() && choicesInPanel()) {
-            drawChoices(graphics, mc, options, alpha);
-        }
+        DialoguePanelRenderer.render(graphics);
     }
-
-    private static boolean choicesInPanel() {
-        return WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.PANEL;
-    }
-
-    private static void drawInPlace(GuiGraphics graphics, Minecraft mc,
-                                    List<Component> lines, List<Component> options,
-                                    float alpha) {
-        int boxW = dialogueWidth(Math.max(MIN_BOX_W, Math.min(MAX_BOX_W,
-                graphics.guiWidth() * 5 / 8)));
-        int inner = boxW - PADDING * 2 - 2;
-        int lineHeight = mc.font.lineHeight + 1;
-
-        List<FormattedCharSequence> body = wrapAll(mc, lines, inner);
-        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
-
-        int bodyH = body.isEmpty() ? 0
-                : atLeastTall(body.size() * lineHeight + PADDING * 2);
-        int x = (graphics.guiWidth() - boxW) / 2;
-        int y = graphics.guiHeight() - IN_PLACE_MARGIN - bodyH;
-
-        if (!body.isEmpty()) {
-            Boxes.draw(graphics, x, y, boxW, bodyH, alpha);
-            int textY = y + PADDING;
-            for (FormattedCharSequence line : body) {
-                graphics.drawString(mc.font, line, x + PADDING + 1, textY,
-                        Colors.fade(Colors.TEXT, alpha));
-                textY += lineHeight;
-            }
-            if (speaker != null) {
-                int nameW = mc.font.width(speaker) + PADDING * 2 + 2;
-                int nameH = mc.font.lineHeight + PADDING;
-                Boxes.draw(graphics, x, y - nameH + 1, nameW, nameH, alpha);
-                graphics.drawString(mc.font, speaker, x + PADDING + 1,
-                        y - nameH + PADDING / 2 + 2,
-                        Colors.fade(SPEAKER_COLOUR.getValue() | 0xFF000000, alpha));
-            }
-            if (needsShift) {
-                String hint = SHIFT_HINT.get();
-                int hintW = mc.font.width(hint);
-                graphics.drawString(mc.font, hint,
-                        x + (boxW - hintW) / 2, y + bodyH + 3,
-                        Colors.fade(Colors.TEXT, alpha * 0.75f));
-            }
-        }
-
-        if (!picks.isEmpty()) {
-            int pickH = picks.size() * lineHeight + PADDING * 2;
-            int pickY = y - pickH - CHOICE_GAP - (speaker == null ? 0 : mc.font.lineHeight);
-            Boxes.draw(graphics, x, pickY, boxW, pickH, alpha);
-            int textY = pickY + PADDING;
-            for (FormattedCharSequence line : picks) {
-                graphics.drawString(mc.font, line, x + PADDING + 1, textY,
-                        Colors.fade(Colors.TEXT, alpha));
-                textY += lineHeight;
-            }
-        }
-    }
-
-    private static void drawChoices(GuiGraphics graphics, Minecraft mc,
-                                    List<List<Component>> options, float alpha) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        int boxW = cfg.hasOverlaySize(CollectorConfig.Overlay.CHOICES)
-                ? cfg.overlayW(CollectorConfig.Overlay.CHOICES)
-                : Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
-                        graphics.guiWidth() / 4));
-        int inner = boxW - PADDING * 2 - MARKER_W - 2;
-        int lineHeight = mc.font.lineHeight + 1;
-
-        List<List<FormattedCharSequence>> rows = new ArrayList<>(options.size());
-        int textLines = 0;
-        for (List<Component> option : options) {
-            List<FormattedCharSequence> wrapped = wrapAll(mc, option, inner);
-            if (wrapped.isEmpty()) {
-                continue;
-            }
-            rows.add(wrapped);
-            textLines += wrapped.size();
-        }
-        if (rows.isEmpty()) {
-            return;
-        }
-        int boxH = textLines * lineHeight + PADDING * 2
-                + (rows.size() - 1) * (ROW_GAP * 2 + 1);
-
-        int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
-        int y = graphics.guiHeight() * 5 / 8;
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
-                    - boxW / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES);
-        }
-        x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
-        y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
-
-        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
-
-        int textY = y + PADDING;
-        for (int i = 0; i < rows.size(); i++) {
-            List<FormattedCharSequence> option = rows.get(i);
-            int rowH = option.size() * lineHeight;
-            boolean here = picked == i + 1;
-
-            if (here) {
-                graphics.fill(x + 1, textY - ROW_GAP + 1, x + boxW - 1,
-                              textY + rowH + ROW_GAP - 1,
-                              Colors.fade(SELECTED_BG, alpha));
-                graphics.drawString(mc.font, MARKER, x + PADDING,
-                        textY + (rowH - mc.font.lineHeight) / 2,
-                        Colors.fade(Colors.HIGHLIGHT, alpha));
-            }
-            int colour = here ? Colors.HIGHLIGHT : Colors.TEXT;
-            int lineY = textY;
-            for (FormattedCharSequence line : option) {
-                graphics.drawString(mc.font, line, x + PADDING + MARKER_W, lineY,
-                        Colors.fade(colour, alpha));
-                lineY += lineHeight;
-            }
-            textY += rowH;
-
-            if (i < rows.size() - 1) {
-                int sepY = textY + ROW_GAP;
-                for (int dx = x + PADDING; dx < x + boxW - PADDING;
-                        dx += DASH + DASH_GAP) {
-                    int end = Math.min(dx + DASH, x + boxW - PADDING);
-                    graphics.fill(dx, sepY, end, sepY + 1,
-                                  Colors.fade(Colors.FAINT, alpha));
-                }
-                textY += ROW_GAP * 2 + 1;
-            }
-        }
-    }
-
-    private static final int SELECTED_BG = 0x40FFD24A;
-
-    private static final String MARKER = "\u25B6";
-
-    private static final int MARKER_W = 8;
-
-    private static final int ROW_GAP = 2;
-
-    private static final int DASH = 3;
-
-    private static final int DASH_GAP = 2;
-
-    private static final int MIN_CHOICE_W = 120;
-
-    private static final int MAX_CHOICE_W = 260;
-
-    private static final int CHOICE_EDGE = 8;
-
-    // MC 的 font.split 只在空白斷行，中文標點會落到行首
-    private static List<FormattedCharSequence> wrapAll(Minecraft mc,
-                                                       List<Component> lines, int width) {
-        List<FormattedCharSequence> out = new ArrayList<>();
-        for (Component line : lines) {
-            for (Component row : fold(line, Math.max(16, width))) {
-                out.add(row.getVisualOrderText());
-            }
-        }
-        return out;
-    }
-
-    static List<Component> fold(Component line, int width) {
-        List<com.wynnchayuan.capture.LineParts.Piece> pieces = new ArrayList<>();
-        StringBuilder plain = new StringBuilder();
-        line.visit((style, text) -> {
-            pieces.add(new com.wynnchayuan.capture.LineParts.Piece(text, style));
-            plain.append(text);
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
-        List<int[]> rows = DialogueRewriter.flow(plain.toString(), null, width);
-        if (rows.size() <= 1) {
-            return List.of(line);
-        }
-        List<Component> out = new ArrayList<>(rows.size());
-        for (int[] row : rows) {
-            net.minecraft.network.chat.MutableComponent part = Component.empty();
-            for (var piece : DialogueRewriter.cut(pieces, row[0], row[1])) {
-                part.append(Component.literal(piece.text()).withStyle(piece.style()));
-            }
-            out.add(part);
-        }
-        return out;
-    }
-
-    private static Component speakerLine(String said) {
-        return Component.literal(com.wynnchayuan.client.T.s("dialogue.speaker", said)).withStyle(
-                net.minecraft.network.chat.Style.EMPTY
-                        .withColor(SPEAKER_COLOUR).withBold(true));
-    }
-
-    private static final int MIN_BOX_W = 240;
-
-    private static final int MAX_BOX_W = 420;
-
-    private static final java.util.function.Supplier<String> SHIFT_HINT =
-            () -> com.wynnchayuan.client.T.s("dialogue.shift_hint");
-
-    private static final int IN_PLACE_MARGIN = 55;
-
-    private static void draw(GuiGraphics graphics, Minecraft mc, List<Component> lines,
-                             int centerX, int y, float alpha, boolean withBox) {
-        int lineHeight = mc.font.lineHeight + 1;
-        int boxW = widthOf(mc, lines);
-        int boxH = lines.size() * lineHeight + PADDING * 2;
-        int x = centerX - boxW / 2;
-        if (withBox) {
-            Boxes.draw(graphics, x, y, boxW, boxH, alpha);
-        }
-        int textY = y + PADDING;
-        for (Component line : lines) {
-            int lineX = withBox
-                    ? x + PADDING
-                    : centerX - mc.font.width(line) / 2;
-            graphics.drawString(mc.font, line, lineX, textY,
-                    Colors.fade(Colors.TEXT, alpha));
-            textY += lineHeight;
-        }
-    }
-
-    private static int widthOf(Minecraft mc, List<Component> lines) {
-        int width = 0;
-        for (Component line : lines) {
-            width = Math.max(width, mc.font.width(line));
-        }
-        return width + PADDING * 2;
-    }
-
-    private static int dialogueWidth(int auto) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
-                ? cfg.overlayW(CollectorConfig.Overlay.DIALOGUE)
-                : auto;
-    }
-
-    private static int atLeastTall(int auto) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
-                ? Math.max(auto, cfg.overlayH(CollectorConfig.Overlay.DIALOGUE))
-                : auto;
-    }
-
-    private static void drawSized(GuiGraphics graphics, Minecraft mc,
-                                  List<Component> lines, int x, int y,
-                                  int boxW, float alpha) {
-        int lineHeight = mc.font.lineHeight + 1;
-        List<FormattedCharSequence> rows = wrapAll(mc, lines, boxW - PADDING * 2);
-        int boxH = atLeastTall(rows.size() * lineHeight + PADDING * 2);
-        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
-        int textY = y + PADDING;
-        for (FormattedCharSequence row : rows) {
-            graphics.drawString(mc.font, row, x + PADDING, textY,
-                    Colors.fade(Colors.TEXT, alpha));
-            textY += lineHeight;
-        }
-    }
-
-    private static final int CHOICE_GAP = 3;
 }

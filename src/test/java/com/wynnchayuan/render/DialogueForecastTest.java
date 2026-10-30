@@ -264,8 +264,8 @@ public final class DialogueForecastTest {
 
         begin();
         List<String> slow = DialogueLeadAudit.typeOut(LINES[0][1], store);
-        int cap = (int) (DialogueRewriter.HOLD_MS / DialogueLeadAudit.MS_PER_CHAR) + 1;
-        check("空白不超過 " + DialogueRewriter.HOLD_MS + " 毫秒（第 " + (cap + 1) + " 個字 "
+        int cap = (int) (DialogueTyping.HOLD_MS / DialogueLeadAudit.MS_PER_CHAR) + 1;
+        check("空白不超過 " + DialogueTyping.HOLD_MS + " 毫秒（第 " + (cap + 1) + " 個字 "
                         + quote(slow.get(cap)) + "）", slow.get(cap) == null);
         boolean noBlankAfter = true;
         for (int i = cap; i < slow.size(); i++) {
@@ -419,8 +419,8 @@ public final class DialogueForecastTest {
             }
             prev = len;
         }
-        check("中文一幀最多長 " + DialogueRewriter.MAX_STEP + " 個字（實際最多 " + worst + "）",
-              worst <= DialogueRewriter.MAX_STEP);
+        check("中文一幀最多長 " + DialogueTyping.MAX_STEP + " 個字（實際最多 " + worst + "）",
+              worst <= DialogueTyping.MAX_STEP);
         check("中文不倒退", !back);
         check("最後補成整句", "請幫我拿 12 袋穀子來，去河邊那座老磨坊就找得到，拜託你了。".equals(last(frames)));
     }
@@ -458,14 +458,14 @@ public final class DialogueForecastTest {
             begin();
             DialogueLeadAudit.speak(null);
             long[] clock = {5_000_000L};
-            DialogueRewriter.holdClock = () -> clock[0];
+            DialogueTyping.holdClock = () -> clock[0];
             String out = null;
             for (int i = 1; i <= typed; i++) {
                 clock[0] += 40;
-                DialogueRewriter.line(src.substring(0, i), store, 3, null, 232);
+                DialogueTyping.line(src.substring(0, i), store, 3, null, 232);
             }
             clock[0] += 40;
-            out = DialogueRewriter.line(src, store, 3, null, 232);
+            out = DialogueTyping.line(src, store, 3, null, 232);
             check("跳過（" + name + "）：就地取代那一則就是整句（實際 " + quote(out) + "）",
                   want.equals(out));
             begin();
@@ -478,7 +478,7 @@ public final class DialogueForecastTest {
             check("跳過（" + name + "）：小框那一則就是整句（實際 " + panel + "）",
                   panel.contains(want));
         }
-        DialogueRewriter.holdClock = System::currentTimeMillis;
+        DialogueTyping.holdClock = System::currentTimeMillis;
     }
 
     private static void panelEvent(String text, TranslationStore store) {
@@ -613,7 +613,7 @@ public final class DialogueForecastTest {
 
     private static void begin() {
         com.wynnchayuan.capture.DialogueProgress.settle(-1);
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueForecast.forgetAll();
         DialogueLeadAudit.resetPanel();
         CurrentQuest.set(null);

@@ -19,7 +19,7 @@ public final class DialogueGoldenFrames {
     private DialogueGoldenFrames() {}
 
     public static List<String> inPlace(String src, TranslationStore store) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         List<String> frames = new ArrayList<>(src.length() + STILL_FRAMES);
         for (int at = 1; at <= src.length(); at++) {
             frames.add(inPlaceFrame(src.substring(0, at), store));
@@ -45,7 +45,7 @@ public final class DialogueGoldenFrames {
 
     private static String inPlaceFrame(String raw, TranslationStore store) {
         try {
-            return DialogueRewriter.line(raw, store, rowsFor(raw), null, WIDTH);
+            return DialogueTyping.line(raw, store, rowsFor(raw), null, WIDTH);
         } catch (RuntimeException e) {
             return "!" + e.getClass().getSimpleName();
         }
@@ -74,7 +74,7 @@ public final class DialogueGoldenFrames {
 
     private static int rowsFor(String raw) {
         for (int rows = 1; rows <= MAX_ROWS; rows++) {
-            if (DialogueRewriter.wrap(raw, rows, null, WIDTH) != null) {
+            if (DialogueLayout.wrap(raw, rows, null, WIDTH) != null) {
                 return rows;
             }
         }

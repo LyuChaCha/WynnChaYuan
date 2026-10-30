@@ -28,8 +28,8 @@ public final class DialogueMarqueeTest {
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
-        DialogueRewriter.widthForTest = DialogueMarqueeTest::realWidth;
-        DialogueRewriter.clock = () -> now;
+        DialogueLayout.widthForTest = DialogueMarqueeTest::realWidth;
+        DialogueLayout.clock = () -> now;
 
         rhythm();
         typedThenScrolls();
@@ -125,9 +125,9 @@ public final class DialogueMarqueeTest {
         StringBuilder union = new StringBuilder();
         for (int tick = 0; tick < 200; tick++) {
             now += TICK;
-            String again = DialogueRewriter.line(src, store, 1, null, room);
-            DialogueRewriter.Layout laid = again == null ? null
-                    : DialogueRewriter.layout(again, 1, null, room, now);
+            String again = DialogueTyping.line(src, store, 1, null, room);
+            DialogueLayout.Layout laid = again == null ? null
+                    : DialogueLayout.layout(again, 1, null, room, now);
             if (laid == null) {
                 fits = false;
                 break;
@@ -161,7 +161,7 @@ public final class DialogueMarqueeTest {
         String prev = null;
         for (int tick = 0; tick < 200; tick++) {
             now += TICK;
-            DialogueRewriter.Layout laid = DialogueRewriter.layout(text, 2, null, room, now);
+            DialogueLayout.Layout laid = DialogueLayout.layout(text, 2, null, room, now);
             if (laid == null) {
                 check("兩列的框排得出來", false);
                 return;
@@ -191,16 +191,16 @@ public final class DialogueMarqueeTest {
         long t0 = now;
         for (long t = 0; t < 30_000; t += TICK) {
             now = t0 + t;
-            DialogueRewriter.Layout laid = DialogueRewriter.layout(text, 1, null, room, now);
+            DialogueLayout.Layout laid = DialogueLayout.layout(text, 1, null, room, now);
             if (laid == null) {
                 check("塞不下的那一句排得出跑馬燈", false);
                 return;
             }
             int[] starts = new int[laid.rows().size()];
-            List<LineParts.Piece> inked = DialogueRewriter.paint(
-                    DialogueRewriter.flatten(laid.rows(), starts),
+            List<LineParts.Piece> inked = DialogueAccents.paint(
+                    DialogueAccents.flatten(laid.rows(), starts),
                     Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
-            List<LineParts.Piece> row = DialogueRewriter.cutRow(laid, inked, starts, 0);
+            List<LineParts.Piece> row = DialogueLayout.cutRow(laid, inked, starts, 0);
             StringBuilder joined = new StringBuilder();
             for (LineParts.Piece piece : row) {
                 joined.append(piece.text());
@@ -228,9 +228,9 @@ public final class DialogueMarqueeTest {
 
     private static void fitsDoesNotScroll() {
         String text = "老燈塔看守人說暴風雨會過去。";
-        DialogueRewriter.Layout laid = DialogueRewriter.layout(text, 1, null, 232, now);
+        DialogueLayout.Layout laid = DialogueLayout.layout(text, 1, null, 232, now);
         check("塞得下就不捲", laid != null && !laid.scrolling()
-                && laid.shown(0).equals(DialogueRewriter.wrap(text, 1, null, 232).get(0)));
+                && laid.shown(0).equals(DialogueLayout.wrap(text, 1, null, 232).get(0)));
     }
 
     private static void newline() throws Exception {
@@ -245,9 +245,9 @@ public final class DialogueMarqueeTest {
         boolean fits = true;
         for (int tick = 0; tick < 200; tick++) {
             now += TICK;
-            String again = DialogueRewriter.line(src, store, 1, null, room);
-            DialogueRewriter.Layout laid = again == null ? null
-                    : DialogueRewriter.layout(again, 1, null, room, now);
+            String again = DialogueTyping.line(src, store, 1, null, room);
+            DialogueLayout.Layout laid = again == null ? null
+                    : DialogueLayout.layout(again, 1, null, room, now);
             if (laid == null) {
                 fits = false;
                 break;
@@ -267,10 +267,10 @@ public final class DialogueMarqueeTest {
         String b = "子丑寅卯辰巳午未申酉戌亥一二三四五六七八";
         for (int i = 0; i < 100; i++) {
             now += TICK;
-            DialogueRewriter.layout(a, 1, null, 100, now);
+            DialogueLayout.layout(a, 1, null, 100, now);
         }
         now += TICK;
-        DialogueRewriter.Layout laid = DialogueRewriter.layout(b, 1, null, 100, now);
+        DialogueLayout.Layout laid = DialogueLayout.layout(b, 1, null, 100, now);
         check("換一句就從開頭開始", laid != null && laid.offset(0) == 0);
     }
 
@@ -303,7 +303,7 @@ public final class DialogueMarqueeTest {
         if (pick == null) {
             return null;
         }
-        int[] cut = DialogueRewriter.choiceWindow(row, pick, realWidth(window),
+        int[] cut = DialogueLayout.choiceWindow(row, pick, realWidth(window),
                 DialogueMarqueeTest::realWidth, now);
         return pick.substring(cut[0], cut[1]);
     }
@@ -345,7 +345,7 @@ public final class DialogueMarqueeTest {
 
     private static void shortChoiceStays() {
         String pick = "……你在說什麼？";
-        int[] cut = DialogueRewriter.choiceWindow("choice_3", pick, realWidth("...What?"),
+        int[] cut = DialogueLayout.choiceWindow("choice_3", pick, realWidth("...What?"),
                 DialogueMarqueeTest::realWidth, now);
         check("短選項放得下就不捲", cut[0] == 0 && cut[1] == pick.length());
     }
@@ -360,8 +360,8 @@ public final class DialogueMarqueeTest {
         String lastChoice = null;
         for (int tick = 0; tick < 200; tick++) {
             now += TICK;
-            DialogueRewriter.Layout laid = DialogueRewriter.layout(body, 1, null, 100, now);
-            int[] cut = DialogueRewriter.choiceWindow("choice_0", pick, 160,
+            DialogueLayout.Layout laid = DialogueLayout.layout(body, 1, null, 100, now);
+            int[] cut = DialogueLayout.choiceWindow("choice_0", pick, 160,
                     DialogueMarqueeTest::realWidth, now);
             String b = laid.shown(0);
             String c = pick.substring(cut[0], cut[1]);
@@ -398,16 +398,16 @@ public final class DialogueMarqueeTest {
     }
 
     private static List<String> typeOut(String src, TranslationStore store, int rows, int room) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         Marquee.clear();
         List<String> frames = new ArrayList<>();
         for (int at = 1; at <= src.length(); at++) {
             now += TICK;
-            frames.add(DialogueRewriter.line(src.substring(0, at), store, rows, null, room));
+            frames.add(DialogueTyping.line(src.substring(0, at), store, rows, null, room));
         }
         for (int again = 0; again < STILL_FRAMES; again++) {
             now += TICK;
-            frames.add(DialogueRewriter.line(src, store, rows, null, room));
+            frames.add(DialogueTyping.line(src, store, rows, null, room));
         }
         return frames;
     }

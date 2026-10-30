@@ -36,7 +36,7 @@ public final class DialogueEffectColourTest {
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
-        DialogueRewriter.widthForTest = DialogueEffectColourTest::realWidth;
+        DialogueLayout.widthForTest = DialogueEffectColourTest::realWidth;
         setConfig(new CollectorConfig(Files.createTempDirectory("wynnchayuan-effect")
                 .resolve("config.json")));
 
@@ -64,17 +64,17 @@ public final class DialogueEffectColourTest {
     }
 
     private static void keys() {
-        check("晃動的色碼是特效鍵", DialogueRewriter.shaderKey(SHAKE));
-        check("淡出晃動的色碼是特效鍵", DialogueRewriter.shaderKey(FADED_SHAKE));
-        check("白色不是特效鍵", !DialogueRewriter.shaderKey(WHITE));
-        check("金色不是特效鍵", !DialogueRewriter.shaderKey(GOLD));
-        check("綠色 §a 不是特效鍵", !DialogueRewriter.shaderKey(TextColor.fromRgb(0x55FF55)));
-        check("沒設顏色不是特效鍵", !DialogueRewriter.shaderKey(null));
+        check("晃動的色碼是特效鍵", DialogueAccents.shaderKey(SHAKE));
+        check("淡出晃動的色碼是特效鍵", DialogueAccents.shaderKey(FADED_SHAKE));
+        check("白色不是特效鍵", !DialogueAccents.shaderKey(WHITE));
+        check("金色不是特效鍵", !DialogueAccents.shaderKey(GOLD));
+        check("綠色 §a 不是特效鍵", !DialogueAccents.shaderKey(TextColor.fromRgb(0x55FF55)));
+        check("沒設顏色不是特效鍵", !DialogueAccents.shaderKey(null));
     }
 
     private static void replaceWhole(TranslationStore store, String head, String tail,
                                      TextColor base, TextColor effect, String what) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         Component frame = message(head, tail, base, effect, head.length() + tail.length());
         Component out = null;
@@ -87,14 +87,14 @@ public final class DialogueEffectColourTest {
         }
         List<TextColor> seen = kanaColours(out);
         check(what + "：譯文沒有任何一個字是特效色（實際 " + seen + "）",
-                !seen.isEmpty() && seen.stream().noneMatch(DialogueRewriter::shaderKey));
+                !seen.isEmpty() && seen.stream().noneMatch(DialogueAccents::shaderKey));
         check(what + "：譯文是這一行的底色（實際 " + seen + "）",
                 seen.stream().allMatch(c -> java.util.Objects.equals(c, base)));
     }
 
     private static void replaceTyping(TranslationStore store, String head, String tail,
                                       TextColor effect) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         int total = head.length() + tail.length();
         boolean shown = false;
@@ -106,7 +106,7 @@ public final class DialogueEffectColourTest {
                 continue;
             }
             shown = true;
-            if (bad == null && kanaColours(out).stream().anyMatch(DialogueRewriter::shaderKey)) {
+            if (bad == null && kanaColours(out).stream().anyMatch(DialogueAccents::shaderKey)) {
                 bad = "第 " + at + " 幀";
             }
         }
@@ -116,7 +116,7 @@ public final class DialogueEffectColourTest {
     }
 
     private static void allEffect(TranslationStore store, String src) {
-        DialogueRewriter.forget();
+        DialogueTyping.forget();
         DialogueIcons.forget();
         Component frame = message("", src, null, SHAKE, src.length());
         Component out = null;
@@ -127,7 +127,7 @@ public final class DialogueEffectColourTest {
         if (out != null) {
             List<TextColor> seen = kanaColours(out);
             check("整句都是特效：譯文不畫成特效色（實際 " + seen + "）",
-                    seen.stream().noneMatch(DialogueRewriter::shaderKey));
+                    seen.stream().noneMatch(DialogueAccents::shaderKey));
         }
     }
 
@@ -135,18 +135,18 @@ public final class DialogueEffectColourTest {
         List<String> texts = new ArrayList<>(List.of("Find the ", "Pearl", " for me"));
         List<Style> styles = List.of(Style.EMPTY.withColor(WHITE),
                 Style.EMPTY.withColor(GOLD), Style.EMPTY.withColor(WHITE));
-        TextColor tone = DialogueRewriter.tone(texts, styles, List.of(0), List.of(2));
+        TextColor tone = DialogueAccents.tone(texts, styles, List.of(0), List.of(2));
         check("一般的強調色照舊：底色是散文那色", WHITE.equals(tone));
         check("一般的強調色照舊：Pearl 仍是強調",
-                DialogueRewriter.accents(texts, styles, List.of(0), List.of(2), tone)
+                DialogueAccents.accents(texts, styles, List.of(0), List.of(2), tone)
                         .stream().anyMatch(p -> p.text().equals("Pearl")
                                 && GOLD.equals(p.style().getColor())));
         List<String> shaking = new ArrayList<>(List.of("Run ", "RUN RUN RUN"));
         List<Style> shook = List.of(Style.EMPTY.withColor(WHITE), Style.EMPTY.withColor(SHAKE));
-        TextColor tone2 = DialogueRewriter.tone(shaking, shook, List.of(0), List.of(1));
+        TextColor tone2 = DialogueAccents.tone(shaking, shook, List.of(0), List.of(1));
         check("特效段比較長也不當底色", WHITE.equals(tone2));
         check("特效段不當強調色貼回譯文",
-                DialogueRewriter.accents(shaking, shook, List.of(0), List.of(1), tone2).isEmpty());
+                DialogueAccents.accents(shaking, shook, List.of(0), List.of(1), tone2).isEmpty());
     }
 
     private static void panel(TranslationStore store, String head, String tail,
@@ -162,7 +162,7 @@ public final class DialogueEffectColourTest {
         if (result != null) {
             List<TextColor> seen = kanaColours(result.translated());
             check("小框：譯文沒有特效色（實際 " + seen + "）",
-                    seen.stream().noneMatch(DialogueRewriter::shaderKey));
+                    seen.stream().noneMatch(DialogueAccents::shaderKey));
         }
     }
 
