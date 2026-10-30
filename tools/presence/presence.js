@@ -1,8 +1,9 @@
 import { isStaff } from './admin.js';
-import { discordSession, publicId, who } from './auth.js';
+import { discordOn, discordSession, publicId, who } from './auth.js';
 import { MAX_CAPE_BYTES, MAX_PLAIN_CAPE_BYTES, hasPerk, listed, visibility } from './capes.js';
 import { credits } from './credits.js';
 import { ID, day, json, no, readJson } from './http.js';
+import { listAll } from './kv.js';
 
 const TTL_SECONDS = 14 * 24 * 3600;
 
@@ -144,20 +145,17 @@ async function buildList(env, now) {
   const hidden = [];
   const rainbow = [];
   const show = {};
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'u:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const m = k.metadata;
-      if (!m || !ID.test(m.i)) continue;
-      users.push(m.i);
-      if (m.c !== 1) hidden.push(m.i);
-      else if (m.v > 0) capes[m.i] = m.v;
-      if (m.r === 1) rainbow.push(m.i);
-      if (typeof m.s === 'string') show[m.i] = m.s;
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor && users.length < MAX_USERS);
+  const listedUser = (k) => Boolean(k.metadata && ID.test(k.metadata.i));
+  const keys = await listAll(env.CORPUS, 'u:', { more: (seen) => seen.filter(listedUser).length < MAX_USERS });
+  for (const k of keys) {
+    const m = k.metadata;
+    if (!listedUser(k)) continue;
+    users.push(m.i);
+    if (m.c !== 1) hidden.push(m.i);
+    else if (m.v > 0) capes[m.i] = m.v;
+    if (m.r === 1) rainbow.push(m.i);
+    if (typeof m.s === 'string') show[m.i] = m.s;
+  }
   return { t: now, users, capes, hidden, rainbow, show };
 }
 
@@ -202,5 +200,16 @@ export async function handleMe(request, env, now) {
       public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata), listed: listed(cape.metadata),
       pending: Boolean(cape.metadata.r) } : null,
     review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
+  });
+}
+
+export async function handleStatus(env) {
+  const list = await storedList(env);
+  return json({
+    what: 'WynnChaYuan',
+    users: list ? list.users.length : 0,
+    capes: list ? Object.keys(list.capes).length : 0,
+    uploads: env.UPLOADS || 'tiered',
+    discord: discordOn(env),
   });
 }

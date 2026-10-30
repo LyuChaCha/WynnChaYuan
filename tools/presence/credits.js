@@ -1,5 +1,5 @@
 import { moderator } from './admin.js';
-import { REPO, base64ToUtf8, githubClient, utf8ToBase64 } from './github.js';
+import { GitHubError, githubRepository } from './github.js';
 import { NAME, json, no, readJson } from './http.js';
 import { TR_LANGS } from './translate.js';
 
@@ -286,50 +286,25 @@ export async function handleAddCredit(request, env, now) {
   } catch (e) {
     return no('bad request');
   }
-  const github = (path, init = {}) => fetch('https://api.github.com/repos/' + REPO + path, {
-    ...init,
-    headers: {
-      authorization: 'Bearer ' + env.GITHUB_TOKEN,
-      accept: 'application/vnd.github+json',
-      'user-agent': 'wynnchayuan-site',
-      'content-type': 'application/json',
-    },
-  });
+  const repo = githubRepository(env);
   try {
-    const file = await github('/contents/' + CREDITS_PATH + '?ref=main');
-    if (file.status !== 200) return no('github ' + file.status, 502);
-    const current = await file.json();
-    const changed = addMember(base64ToUtf8(current.content), entry);
+    const current = await repo.readFile(CREDITS_PATH, 'main');
+    const changed = addMember(current.text, entry);
     if (changed.why) return no(changed.why, changed.why === 'already listed' ? 409 : 400);
-    const head = await github('/git/ref/heads/main');
-    if (head.status !== 200) return no('github ' + head.status, 502);
     const branch = 'credits/add-' + entry.mc.toLowerCase() + '-' + now;
-    const made = await github('/git/refs', {
-      method: 'POST',
-      body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
-    });
-    if (made.status !== 201) return no('github ' + made.status, 502);
+    await repo.createBranch(branch);
     const title = '名單：' + SECTIONS[entry.section] + '加入 ' + entry.name.trim() + '（' + entry.mc + '）';
-    const commit = await github('/contents/' + CREDITS_PATH, {
-      method: 'PUT',
-      body: JSON.stringify({ message: title, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
+    await repo.writeFile(CREDITS_PATH, { message: title, text: changed.text, sha: current.sha, branch });
+    const url = await repo.openPull({
+      title,
+      head: branch,
+      body: '從網站的管理頁送出，送出的人：' + by + '。\n\n'
+        + '在 `credits.json` 的「' + SECTIONS[entry.section] + '」加一個成員。合併之後，名牌上的葉子與'
+        + '披風的資格會在玩家下次同步名單時生效。',
     });
-    if (commit.status !== 200 && commit.status !== 201) return no('github ' + commit.status, 502);
-    const pull = await github('/pulls', {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        head: branch,
-        base: 'main',
-        body: '從網站的管理頁送出，送出的人：' + by + '。\n\n'
-          + '在 `credits.json` 的「' + SECTIONS[entry.section] + '」加一個成員。合併之後，名牌上的葉子與'
-          + '披風的資格會在玩家下次同步名單時生效。',
-      }),
-    });
-    if (pull.status !== 201) return no('github ' + pull.status, 502);
-    return json({ ok: true, url: (await pull.json()).html_url });
+    return json({ ok: true, url });
   } catch (e) {
-    return no('github unreachable', 502);
+    return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
 
@@ -367,57 +342,30 @@ export function addMemberTeams(text, mc, langs) {
 
 export async function commitTeams(env, by, now, change) {
   if (!env.GITHUB_TOKEN) return { why: 'github not configured', status: 503 };
-  const github = githubClient(env);
+  const repo = githubRepository(env);
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
     let branch = 'credits/teams-' + day;
-    let url = '';
-    const ref = await github('/git/ref/heads/' + branch);
-    if (ref.status === 200) {
-      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
-      const list = open.status === 200 ? await open.json() : [];
-      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
-      else branch += '-' + now;
-    } else if (ref.status !== 404) {
-      return { why: 'github ' + ref.status, status: 502 };
-    }
+    const existing = await repo.openPullFor(branch);
+    let url = existing.url;
+    if (existing.exists && !url) branch += '-' + now;
     const reuse = Boolean(url);
-    const file = await github('/contents/' + CREDITS_PATH + '?ref=' + encodeURIComponent(reuse ? branch : 'main'));
-    if (file.status !== 200) return { why: 'github ' + file.status, status: 502 };
-    const current = await file.json();
-    const changed = change(base64ToUtf8(current.content));
+    const current = await repo.readFile(CREDITS_PATH, reuse ? branch : 'main');
+    const changed = change(current.text);
     if (changed.why) return { why: changed.why, status: TEAMS_WHY_STATUS[changed.why] || 400 };
+    if (!reuse) await repo.createBranch(branch);
+    await repo.writeFile(CREDITS_PATH, { message: '名單：' + changed.name + ' 的翻譯團隊與貢獻項目', text: changed.text, sha: current.sha, branch });
     if (!reuse) {
-      const head = await github('/git/ref/heads/main');
-      if (head.status !== 200) return { why: 'github ' + head.status, status: 502 };
-      const made = await github('/git/refs', {
-        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
-      });
-      if (made.status !== 201) return { why: 'github ' + made.status, status: 502 };
-    }
-    const message = '名單：' + changed.name + ' 的翻譯團隊與貢獻項目';
-    const put = await github('/contents/' + CREDITS_PATH, {
-      method: 'PUT',
-      body: JSON.stringify({ message, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
-    });
-    if (put.status !== 200 && put.status !== 201) return { why: 'github ' + put.status, status: 502 };
-    if (!reuse) {
-      const pull = await github('/pulls', {
-        method: 'POST',
-        body: JSON.stringify({
-          title: '名單：翻譯團隊與貢獻項目（' + day + '）',
-          head: branch,
-          base: 'main',
-          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
-            + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
-        }),
-      });
-      if (pull.status !== 201) return { why: 'github ' + pull.status, status: 502 };
-      url = String((await pull.json()).html_url || '');
+      url = String(await repo.openPull({
+        title: '名單：翻譯團隊與貢獻項目（' + day + '）',
+        head: branch,
+        body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
+          + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
+      }) || '');
     }
     return { url, added: reuse };
   } catch (e) {
-    return { why: 'github unreachable', status: 502 };
+    return { why: e instanceof GitHubError ? e.message : 'github unreachable', status: 502 };
   }
 }
 

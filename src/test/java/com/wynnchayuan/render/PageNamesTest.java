@@ -264,6 +264,60 @@ public final class PageNamesTest {
                     header != null && header.endsWith(" - " + cardName));
         }
         WynntilsText.contentScreen = () -> true;
+        {
+            String trial = null;
+            String trialLocal = null;
+            for (String key : misc.keySet()) {
+                String dst = misc.get(key).isJsonPrimitive() ? misc.get(key).getAsString() : "";
+                if (key.endsWith(" [Time Trial]") && key.indexOf('{') < 0 && dst.contains(" [")) {
+                    trial = key.substring(0, key.length() - " [Time Trial]".length());
+                    trialLocal = dst.substring(0, dst.lastIndexOf(" ["));
+                    break;
+                }
+            }
+            check("前提：語料有一張有譯名的計時賽卡（" + trial + "）", trial != null);
+            if (trial != null) {
+                check("★ 計時賽的卡片標題認得", trial.equals(PageNames.nameOfTitle(trial + " [Time Trial]")));
+                StyledText trialRow = StyledText.fromComponent(Component.literal(trial).withStyle(NAME));
+                StyledText hovered = StyledText.fromComponent(
+                        Component.literal(trial).withStyle(NAME.withBold(true)));
+                check("★ 計時賽的清單列跟卡片同一個名字（實際 "
+                                + plain(WynntilsText.screenText(trialRow, config, store)) + "）",
+                        trialLocal.equals(plain(WynntilsText.screenText(trialRow, config, store))));
+                check("★ 滑鼠停在上面（粗體）也一樣（實際 "
+                                + plain(WynntilsText.screenText(hovered, config, store)) + "）",
+                        trialLocal.equals(plain(WynntilsText.screenText(hovered, config, store))));
+                store.setPageNameMode(ItemNames.OFF);
+                check("★ 保留原文也管得到計時賽", WynntilsText.screenText(trialRow, config, store) == trialRow);
+                store.setPageNameMode(ItemNames.ON);
+            }
+        }
+        {
+            JsonObject quests = JsonParser.parseString(Files.readString(
+                    dir.resolve("quest-name.json"), StandardCharsets.UTF_8)).getAsJsonObject();
+            for (String listed : List.of("Heart of Llevigar", "Lexdale Witch Trials", "Tower of Ascension")) {
+                StyledText questRow = StyledText.fromComponent(Component.literal(listed).withStyle(NAME));
+                String questLocal = quests.get(listed).getAsString();
+                check("★ 名字含地名的任務，清單照任務名（" + listed + "，實際 "
+                                + plain(WynntilsText.screenText(questRow, config, store)) + "）",
+                        questLocal.equals(plain(WynntilsText.screenText(questRow, config, store))));
+                store.setPageNameMode(ItemNames.OFF);
+                check("★ 保留原文也管得到這種任務", WynntilsText.screenText(questRow, config, store) == questRow);
+                store.setPageNameMode(ItemNames.ON);
+            }
+            Path named = Files.createTempDirectory("wcy-questnames");
+            Files.writeString(named.resolve("misc.json"), "{\"Taproot [Quest]\": \"甲 [任務]\","
+                    + " \"Taproot [Cave]\": \"乙 [洞窟]\"}", StandardCharsets.UTF_8);
+            Files.writeString(named.resolve("quest-name.json"), "{\"_note\": \"說明\","
+                    + " \"Taproot\": \"甲\", \"Same Name\": \"Same Name\", \"Blank\": \"\","
+                    + " \"Elsewhere\": \"丁\"}", StandardCharsets.UTF_8);
+            TranslationStore small = new TranslationStore();
+            small.loadAll(named);
+            check("★ 兩種類型兩種譯名的，任務名單也不替它挑", small.pageTitleName("Taproot") == null);
+            check("★ 任務名單裡有譯名的照用", "丁".equals(small.pageTitleName("Elsewhere")));
+            check("任務名單裡留原文或空白的不算", small.pageTitleName("Same Name") == null
+                    && small.pageTitleName("Blank") == null && small.pageTitleName("_note") == null);
+        }
         check("本來就一致的名字照舊（實際 " + plain(WynntilsText.screenText(row, config, store)) + "）",
                 local.equals(plain(WynntilsText.screenText(row, config, store))));
         check("不是內容名稱的字照舊", otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
