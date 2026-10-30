@@ -3438,6 +3438,52 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   env.CORPUS.data.delete('staff:d:' + SLY);
 }
 
+{
+  const isolate = await import('./auth.js?secret-race');
+  const store = { CORPUS: fakeKv() };
+  const uuid = 'e6'.repeat(16);
+  const [one, two] = await Promise.all([isolate.issueToken(store, uuid, 'Ann', NOW), isolate.issueToken(store, uuid, 'Ann', NOW)]);
+  const readBack = [await isolate.readToken(store, one, NOW), await isolate.readToken(store, two, NOW)];
+  check('★ 密鑰第一次用到時同時來兩個請求：兩張通行證都認得', readBack.every((user) => user && user.uuid === uuid) && one === two);
+}
+
+{
+  const { readFileSync } = await import('node:fs');
+  const source = (name) => readFileSync(new URL('./' + name, import.meta.url), 'utf8');
+  check('★ 登入的 state 簽章與 ADMIN_TOKEN 都用固定時間比對', !source('auth.js').includes('expected !== parts[2]')
+    && source('auth.js').includes('timingSafeEqual(expected, parts[2])') && !source('admin.js').includes("header === 'Bearer '")
+    && source('admin.js').includes("timingSafeEqual('Bearer ' + env.ADMIN_TOKEN, header)"));
+  const admin = { CORPUS: env.CORPUS, ADMIN_TOKEN: 'golden-secret' };
+  const bearer = (token) => new Request('https://x.test/api/admin/perks', { headers: { authorization: 'Bearer ' + token } });
+  check('ADMIN_TOKEN 對的能進、錯的與長度不同的不能', (await worker.fetch(bearer('golden-secret'), admin)).status === 200
+    && (await worker.fetch(bearer('golden-secrex'), admin)).status === 403 && (await worker.fetch(bearer('short'), admin)).status === 403);
+}
+
+{
+  const store = { CORPUS: fakeKv() };
+  const NED = { uuid: 'e9'.repeat(16), name: 'Ned' };
+  const nedToken = await issueToken(store, NED.uuid, NED.name, NOW);
+  const CHUNK = 1024 * 1024;
+  let pulled = 0;
+  const endless = new ReadableStream({
+    pull(controller) {
+      pulled++;
+      if (pulled > 60) controller.close();
+      else controller.enqueue(new Uint8Array(CHUNK));
+    },
+  });
+  const upload = await worker.fetch(new Request('https://x.test/api/cape', { method: 'PUT', body: endless, duplex: 'half',
+    headers: { authorization: 'Bearer ' + nedToken } }), store);
+  check('★ 沒有 content-length 的上傳：超過上限就停止讀，不會整包收進記憶體', upload.status === 413 && pulled <= 30);
+  const { readBounded, readJson } = await import('./http.js');
+  const body = (text) => new Request('https://x.test/', { method: 'POST', body: text });
+  check('readBounded：剛好上限收，超過回 null', (await readBounded(body('abcd'), 4)).length === 4 && (await readBounded(body('abcde'), 4)) === null);
+  const chunked = (text) => new Request('https://x.test/', { method: 'POST', duplex: 'half', body: new ReadableStream({
+    start(controller) { controller.enqueue(new TextEncoder().encode(text)); controller.close(); } }) });
+  check('readJson：沒有 content-length 也照字數算；中文不會被當成超過', (await readJson(chunked('{"a":"' + '譯'.repeat(50) + '"}'), 60)).a.length === 50
+    && (await readJson(chunked('{"a":"' + 'x'.repeat(5000) + '"}'), 60)) === undefined);
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));

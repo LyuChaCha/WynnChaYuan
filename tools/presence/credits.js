@@ -1,6 +1,6 @@
 import { moderator } from './admin.js';
 import { GitHubError, githubRepository, markdownText, withoutMentions } from './github.js';
-import { NAME, json, no, plainUuid, readJson } from './http.js';
+import { NAME, json, no, plainUuid, readBounded, readJson } from './http.js';
 import { TR_LANGS } from './translate.js';
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
@@ -117,9 +117,8 @@ export async function handleGuildAdd(request, env, now) {
 
 export async function handleGuildImage(request, env, now, slug, kind) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
-  if (Number(request.headers.get('content-length') || 0) > MAX_GUILD_IMAGE) return no('too large', 413);
-  const bytes = new Uint8Array(await request.arrayBuffer());
-  if (bytes.length > MAX_GUILD_IMAGE) return no('too large', 413);
+  const bytes = await readBounded(request, MAX_GUILD_IMAGE);
+  if (!bytes) return no('too large', 413);
   const type = imageType(bytes);
   if (!type) return no('bad image');
   const list = await freshGuilds(env, now);

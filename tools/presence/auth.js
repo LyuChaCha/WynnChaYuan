@@ -23,8 +23,10 @@ async function secret(env) {
   if (cachedSecret) return cachedSecret;
   let value = await env.CORPUS.get('auth:secret');
   if (!value) {
-    value = hex(crypto.getRandomValues(new Uint8Array(32)));
-    await env.CORPUS.put('auth:secret', value);
+    const fresh = hex(crypto.getRandomValues(new Uint8Array(32)));
+    await env.CORPUS.put('auth:secret', fresh);
+    // 兩個請求同時第一次用到：讀回存進去的那一把，大家才會用同一把
+    value = (await env.CORPUS.get('auth:secret')) || fresh;
   }
   cachedSecret = value;
   return value;
@@ -218,7 +220,7 @@ export async function handleDiscordCallback(request, env, now) {
   if (parts.length !== 3 || !cookie || cookie[1] !== parts[1]) return failed('cookie');
   if (!/^\d{1,16}$/.test(parts[0]) || now - Number(parts[0]) > 600000 || Number(parts[0]) > now + 60000) return failed('expired');
   const expected = await sign(env, 'oauth.' + parts[0] + '.' + parts[1]);
-  if (expected !== parts[2]) return failed('state');
+  if (!timingSafeEqual(expected, parts[2])) return failed('state');
   let profile = null;
   try {
     const token = await fetch(DISCORD_API + '/oauth2/token', {
