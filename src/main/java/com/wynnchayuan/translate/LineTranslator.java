@@ -13,7 +13,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
 import com.wynnchayuan.translate.ColumnAligner.Piece;
 import com.wynnchayuan.translate.SpaceRuns.Run;
 
@@ -335,7 +334,7 @@ public final class LineTranslator {
         return !text.isEmpty() && ColumnAligner.isTrailingColon(text.charAt(text.length() - 1));
     }
 
-    private static Style dominantStyle(List<LineParts> parts) {
+    static Style dominantStyle(List<LineParts> parts) {
         Tally tally = new Tally();
         int[] depth = {0};
         for (LineParts part : parts) {
@@ -557,7 +556,7 @@ public final class LineTranslator {
         return TextWrapper.wrapToWidth(text, maxPx, piece -> widthOf(Component.literal(piece)));
     }
 
-    private static final char NEWLINE = '\n';
+    static final char NEWLINE = '\n';
 
     public static Component translate(StyledText line, TranslationStore store) {
         return translate(line, store, true);
@@ -834,7 +833,7 @@ public final class LineTranslator {
         }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
-            LineParts framed = framedOnMiss(line, parts, store);
+            LineParts framed = ChatTranslator.framedOnMiss(line, parts, store);
             translated = framed == null ? null : lookup(framed.template(), store);
             if (translated == null || translated.isBlank()) {
                 return null;
@@ -883,446 +882,6 @@ public final class LineTranslator {
         Component result = RowRealigner.realign(line, rebuilt, centered);
         LineDebug.record(line, result);
         return result;
-    }
-
-    public static Component translateChat(StyledText message, TranslationStore store) {
-        return translateChat(message, store, null);
-    }
-
-    private static LineParts framedOnMiss(StyledText line, LineParts plain,
-                                          TranslationStore store) {
-        if (line == null || plain == null || store == null) {
-            return null;
-        }
-        com.wynnchayuan.capture.Broadcasts.Spans spans =
-                store.nameFrames().find(line, plain.template());
-        return spans == null ? null : LineParts.of(line, spans);
-    }
-
-    public static LineParts nameFramed(StyledText line, TranslationStore store) {
-        if (line == null || store == null) {
-            return null;
-        }
-        com.wynnchayuan.capture.Broadcasts.Spans bomb = com.wynnchayuan.capture.Broadcasts.find(line);
-        if (bomb != null) {
-            return LineParts.of(line, bomb);
-        }
-        LineParts plain = LineParts.of(line);
-        String template = plain.template();
-        if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
-            return null;
-        }
-        String hit = lookup(template, store);
-        if (hit == null || hit.isBlank()) {
-            hit = store.lookupUnwrapped(template);
-        }
-        if (hit != null && !hit.isBlank()) {
-            return null;
-        }
-        return framedOnMiss(line, plain, store);
-    }
-
-    public static Component translateFramed(StyledText line, LineParts framed,
-                                            TranslationStore store) {
-        if (line == null || framed == null || store == null) {
-            return null;
-        }
-        String translated = lookup(framed.template(), store);
-        List<LineParts.Piece> glyphs = null;
-        if (translated == null || translated.isBlank()) {
-            translated = store.lookupUnwrapped(framed.template());
-            if (translated == null || translated.isBlank()) {
-                return null;
-            }
-            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
-        }
-        Component rebuilt = glyphs == null
-                ? rebuild(translated, framed, store)
-                : rebuild(translated, framed, glyphs, store);
-        if (rebuilt == null) {
-            return null;
-        }
-        return DisplayStyles.unslant(RowRealigner.realign(line, rebuilt, true, false));
-    }
-
-    public static Component translateChat(StyledText message, TranslationStore store,
-                                          Boolean centred) {
-        return translateChat(message, store, centred, false);
-    }
-
-    public static Component translateChat(StyledText message, TranslationStore store,
-                                          Boolean centred, boolean inPanel) {
-        LineParts parts = com.wynnchayuan.capture.Broadcasts.parts(message);
-        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
-            return null;
-        }
-        Component rebuilt = null;
-        String tried = null;
-        for (int step = 0; step < 7 && rebuilt == null; step++) {
-            LineParts using = parts;
-            List<LineParts.Piece> glyphs = null;
-            String hit = null;
-            switch (step) {
-                case 0 -> hit = lookup(parts.template(), store);
-                case 1 -> hit = byColumn(parts.template(), store);
-                case 2 -> {
-                    hit = store.lookupUnwrapped(parts.template());
-                    glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
-                }
-                case 3, 4 -> {
-                    LineParts framed = com.wynnchayuan.capture.Broadcasts.find(message) == null
-                            ? framedOnMiss(message, parts, store) : null;
-                    if (framed != null) {
-                        using = framed;
-                        if (step == 3) {
-                            hit = lookup(framed.template(), store);
-                        } else {
-                            hit = store.lookupUnwrapped(framed.template());
-                            glyphs = unwrappedGlyphs(framed.template(), framed.glyphs());
-                        }
-                    }
-                }
-                case 5 -> {
-                    if (parts.template().indexOf('\n') >= 0) {
-                        hit = eventFrame(TranslationStore.unwrap(parts.template()), store);
-                        glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
-                    }
-                }
-                default -> hit = welcomeBanner(parts.template(), store);
-            }
-            if (hit == null || hit.isBlank()) {
-                continue;
-            }
-            tried = hit;
-            rebuilt = glyphs == null
-                    ? rebuild(hit, using, store)
-                    : rebuild(hit, using, glyphs, store);
-            if (rebuilt != null) {
-                parts = using;
-            }
-        }
-        if (rebuilt == null) {
-            if (tried == null) {
-                FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
-                                     "語料裡查不到這一塊");
-            } else {
-                FlowedDebug.chatRows(message.getString(), "  譯文：" + tried,
-                                     "佔位符數量對不上，整塊放棄");
-            }
-            return null;
-        }
-        rebuilt = rowColours(message, rebuilt, dominantStyle(List.of(parts)));
-        if (parts.template().startsWith(CHAT_COUNTER)) {
-            rebuilt = npcChatColours(message, rebuilt);
-        }
-        return DisplayStyles.unslant(realignChat(message, rebuilt, centred, inPanel));
-    }
-
-    private static final java.util.regex.Pattern CHAT_HEAD =
-            java.util.regex.Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
-
-    static Component npcChatColours(StyledText message, Component rebuilt) {
-        try {
-            List<Run> src = SpaceRuns.runs(message.getComponent());
-            String srcText = joinedText(src);
-            java.util.regex.Matcher s = CHAT_HEAD.matcher(srcText);
-            if (!s.find()) {
-                return rebuilt;
-            }
-            TextColor counter = uniformColour(src, s.start(1), s.end(1));
-            TextColor speaker = uniformColour(src, s.start(3), s.end(3));
-            List<Run> made = SpaceRuns.runs(rebuilt);
-            java.util.regex.Matcher d = CHAT_HEAD.matcher(joinedText(made));
-            if (!d.find() || (counter == null && speaker == null)) {
-                return rebuilt;
-            }
-            int[] cuts = {d.start(1), d.end(1), d.start(3), d.end(3)};
-            MutableComponent out = Component.empty();
-            int at = 0;
-            for (Run run : made) {
-                String text = run.text();
-                int from = 0;
-                while (from < text.length()) {
-                    int next = text.length();
-                    for (int cut : cuts) {
-                        if (cut > at + from && cut < at + next) {
-                            next = cut - at;
-                        }
-                    }
-                    String piece = text.substring(from, next);
-                    int pos = at + from;
-                    Style style = run.style() == null ? Style.EMPTY : run.style();
-                    if (!run.space()) {
-                        if (counter != null && pos >= cuts[0] && pos < cuts[1]) {
-                            style = style.withColor(counter);
-                        } else if (speaker != null && pos >= cuts[2] && pos < cuts[3]) {
-                            style = style.withColor(speaker);
-                        }
-                    }
-                    out.append(Component.literal(piece).withStyle(style));
-                    from = next;
-                }
-                at += text.length();
-            }
-            return out;
-        } catch (Throwable t) {
-            return rebuilt;
-        }
-    }
-
-    private static String joinedText(List<Run> runs) {
-        StringBuilder out = new StringBuilder();
-        for (Run run : runs) {
-            out.append(run.text());
-        }
-        return out.toString();
-    }
-
-    private static TextColor uniformColour(List<Run> runs, int from, int to) {
-        TextColor found = null;
-        int at = 0;
-        for (Run run : runs) {
-            int start = at;
-            int end = at + run.text().length();
-            at = end;
-            if (end <= from || start >= to || run.space()) {
-                continue;
-            }
-            String inside = run.text().substring(Math.max(0, from - start),
-                                                 Math.min(run.text().length(), to - start));
-            if (inside.isBlank()) {
-                continue;
-            }
-            TextColor colour = run.style() == null ? null : run.style().getColor();
-            if (colour == null || found != null && !found.equals(colour)) {
-                return null;
-            }
-            found = colour;
-        }
-        return found;
-    }
-
-    static Component rowColours(StyledText original, Component rebuilt, Style blockStyle) {
-        TextColor block = blockStyle == null ? null : blockStyle.getColor();
-        List<List<Run>> origRows = SpaceRuns.splitRows(SpaceRuns.runs(original.getComponent()));
-        List<List<Run>> madeRows = SpaceRuns.splitRows(SpaceRuns.runs(rebuilt));
-        int[] keepOrig = RowRealigner.solidRows(origRows);
-        int[] keepMade = RowRealigner.solidRows(madeRows);
-        int count = keepOrig[1] - keepOrig[0];
-        if (count < 2 || count != keepMade[1] - keepMade[0]) {
-            return rebuilt;
-        }
-        TextColor[] rowColour = new TextColor[count];
-        boolean[] rowBold = new boolean[count];
-        boolean any = false;
-        for (int k = 0; k < count; k++) {
-            rowBold[k] = allBold(origRows.get(keepOrig[0] + k))
-                    && !allBold(madeRows.get(keepMade[0] + k));
-            any |= rowBold[k];
-            if (block == null) {
-                continue;
-            }
-            java.util.Map<TextColor, Integer> weight = new java.util.LinkedHashMap<>();
-            boolean usesBlock = false;
-            for (Run run : origRows.get(keepOrig[0] + k)) {
-                TextColor colour = run.style() == null ? null : run.style().getColor();
-                if (run.space() || colour == null || !hasContent(run.text())) {
-                    continue;
-                }
-                if (colour.equals(block)) {
-                    usesBlock = true;
-                    break;
-                }
-                weight.merge(colour, run.text().strip().length(), Integer::sum);
-            }
-            if (usesBlock || weight.isEmpty()) {
-                continue;
-            }
-            rowColour[k] = java.util.Collections.max(weight.entrySet(),
-                    java.util.Map.Entry.comparingByValue()).getKey();
-            any = true;
-        }
-        if (!any) {
-            return rebuilt;
-        }
-        MutableComponent out = Component.empty();
-        for (int r = 0; r < madeRows.size(); r++) {
-            if (r > 0) {
-                out.append(Component.literal("\n"));
-            }
-            int k = r - keepMade[0];
-            TextColor colour = k >= 0 && k < count ? rowColour[k] : null;
-            boolean bold = k >= 0 && k < count && rowBold[k];
-            for (Run run : madeRows.get(r)) {
-                Style style = run.style();
-                if (colour != null && !run.space() && style != null
-                        && block.equals(style.getColor())) {
-                    style = style.withColor(colour);
-                }
-                if (bold && !run.space() && style != null && hasContent(run.text())) {
-                    style = style.withBold(true);
-                }
-                out.append(Component.literal(run.text()).withStyle(style));
-            }
-        }
-        return out;
-    }
-
-    private static boolean allBold(List<Run> row) {
-        boolean any = false;
-        for (Run run : row) {
-            if (run.space() || !hasContent(run.text())) {
-                continue;
-            }
-            if (run.style() == null || !Boolean.TRUE.equals(run.style().isBold())) {
-                return false;
-            }
-            any = true;
-        }
-        return any;
-    }
-
-    private static String byColumn(String template, TranslationStore store) {
-        if (template.indexOf(NEWLINE) >= 0) {
-            return null;
-        }
-        List<String> parts = splitColumns(template);
-        if (parts.size() < 2) {
-            return null;
-        }
-        StringBuilder out = new StringBuilder();
-        int hits = 0;
-        int colours = 0;
-        int values = 0;
-        for (String part : parts) {
-            String hit = GlyphSplitter.hasLetter(part) ? lookup(part, store) : null;
-            if (hit != null && !hit.isBlank()) {
-                String shifted = renumber(ColourTemplate.shiftColours(hit, colours), values);
-                if (shifted == null) {
-                    return null;
-                }
-                colours += ColourTemplate.distinctColours(hit);
-                out.append(shifted);
-                hits++;
-            } else {
-                out.append(part);
-            }
-            values += countNumbers(part);
-        }
-        return hits > 0 ? out.toString() : null;
-    }
-
-    private static final String WELCOME_LINE =
-            GlyphSplitter.GLYPH_PLACEHOLDER + "Welcome to Wynncraft!" + NEWLINE;
-
-    static String welcomeBanner(String template, TranslationStore store) {
-        if (template == null || store == null) {
-            return null;
-        }
-        int start = 0;
-        while (start < template.length() && template.charAt(start) == NEWLINE) {
-            start++;
-        }
-        if (!template.startsWith(WELCOME_LINE, start)) {
-            return null;
-        }
-        String[] lines = template.split(String.valueOf(NEWLINE), -1);
-        StringBuilder out = new StringBuilder();
-        int values = 0;
-        int segments = 0;
-        boolean marked = false;
-        int i = 0;
-        while (i < lines.length) {
-            if (i > 0) {
-                out.append(NEWLINE);
-            }
-            if (!GlyphSplitter.hasLetter(lines[i])) {
-                out.append(lines[i]);
-                values += countNumbers(lines[i]);
-                i++;
-                continue;
-            }
-            String hit = null;
-            int end = -1;
-            for (int j = lines.length; j > i && hit == null; j--) {
-                if (!GlyphSplitter.hasLetter(lines[j - 1])
-                        || (i == 0 && j == lines.length)) {
-                    continue;
-                }
-                String run = String.join(String.valueOf(NEWLINE),
-                                         java.util.Arrays.copyOfRange(lines, i, j));
-                String found = lookup(run, store);
-                if (found != null && !found.isBlank()
-                        && found.split(String.valueOf(NEWLINE), -1).length == j - i) {
-                    hit = found;
-                    end = j;
-                }
-            }
-            if (hit == null) {
-                return null;
-            }
-            String shifted = renumber(hit, values);
-            if (shifted == null) {
-                return null;
-            }
-            marked |= ColourTemplate.distinctColours(hit) > 0 || hit.contains(ColourTemplate.COLOR_END);
-            segments++;
-            for (int k = i; k < end; k++) {
-                values += countNumbers(lines[k]);
-            }
-            out.append(shifted);
-            i = end;
-        }
-        return segments > 1 && marked ? ColourTemplate.stripColourTokens(out.toString()) : out.toString();
-    }
-
-    private static int countNumbers(String template) {
-        String mark = GlyphSplitter.NUMBER_PLACEHOLDER;
-        int n = 0;
-        for (int at = template.indexOf(mark); at >= 0;
-                at = template.indexOf(mark, at + mark.length())) {
-            n++;
-        }
-        return n;
-    }
-
-    private static final java.util.regex.Pattern NUMBER_ANY =
-            java.util.regex.Pattern.compile("\\{~([1-9])?}");
-
-    static String renumber(String text, int offset) {
-        if (offset == 0 || text == null || text.indexOf('{') < 0) {
-            return text;
-        }
-        java.util.regex.Matcher m = NUMBER_ANY.matcher(text);
-        StringBuilder out = new StringBuilder();
-        int at = 0;
-        int plain = 0;
-        while (m.find()) {
-            int want = m.group(1) != null
-                    ? offset + Integer.parseInt(m.group(1))
-                    : offset + ++plain;
-            if (want > 9) {
-                return null;
-            }
-            out.append(text, at, m.start()).append("{~").append(want).append('}');
-            at = m.end();
-        }
-        return at == 0 ? text : out.append(text.substring(at)).toString();
-    }
-
-    private static List<String> splitColumns(String template) {
-        String mark = GlyphSplitter.GLYPH_PLACEHOLDER;
-        List<String> out = new ArrayList<>();
-        int at = template.indexOf(mark);
-        if (at > 0) {
-            out.add(template.substring(0, at));
-        }
-        while (at >= 0) {
-            int next = template.indexOf(mark, at + mark.length());
-            out.add(next < 0 ? template.substring(at) : template.substring(at, next));
-            at = next;
-        }
-        return out;
     }
 
     public static Component translateFloating(StyledText label, TranslationStore store) {
@@ -1399,7 +958,7 @@ public final class LineTranslator {
             translated = lookup(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
-            LineParts framed = framedOnMiss(label, parts, store);
+            LineParts framed = ChatTranslator.framedOnMiss(label, parts, store);
             if (framed != null) {
                 translated = store.labelLookup(framed.template());
                 if (translated == null || translated.isBlank()) {
@@ -1899,929 +1458,6 @@ public final class LineTranslator {
                 <= nl;
     }
 
-    public static boolean[] chatCentred(List<StyledText> rows) {
-        List<Component> lines = new ArrayList<>(rows.size());
-        for (StyledText row : rows) {
-            lines.add(row.getComponent());
-        }
-        boolean[] centred = BlockLayout.centered(lines);
-        List<List<Run>> runRows = new ArrayList<>(rows.size());
-        for (StyledText row : rows) {
-            List<List<Run>> split = SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()));
-            if (split.size() != 1) {
-                return centred;
-            }
-            runRows.add(split.get(0));
-        }
-        sharedCentre(runRows, centred);
-        spacePadded(runRows, centred);
-        sameLeadList(runRows, centred);
-        onChatCentre(runRows, centred);
-        return centred;
-    }
-
-    public static boolean chatPanel(List<StyledText> rows) {
-        for (StyledText row : rows) {
-            for (List<Run> line : SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()))) {
-                if (spacedColumns(line) >= 2) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean panelRow(StyledText row) {
-        for (List<Run> line : SpaceRuns.splitRows(SpaceRuns.runs(row.getComponent()))) {
-            int columns = 0;
-            boolean text = false;
-            for (Run run : line) {
-                if (run.space()) {
-                    if (text && run.px() >= PANEL_GAP_MIN) {
-                        columns++;
-                        text = false;
-                    }
-                } else if (hasContent(run.text())) {
-                    text = true;
-                }
-            }
-            if ((text ? columns + 1 : columns) >= 2) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static final int PANEL_GAP_MIN = 16;
-
-    private static final int PANEL_RUN_MAX = 8;
-
-    private record PanelRow(List<Run> lead, List<List<Run>> cells, List<List<Run>> gaps) {
-
-        static PanelRow parse(List<Run> runs) {
-            List<Run> lead = new ArrayList<>();
-            List<List<Run>> cells = new ArrayList<>();
-            List<List<Run>> gaps = new ArrayList<>();
-            List<Run> cell = null;
-            List<Run> gap = null;
-            boolean text = false;
-            for (Run run : runs) {
-                if (!run.space() && run.text().indexOf('\n') >= 0) {
-                    return null;
-                }
-                if (run.space() && cell == null && gap == null) {
-                    lead.add(run);
-                } else if (run.space() && (gap != null || (text && run.px() > 0))) {
-                    if (gap == null) {
-                        gap = new ArrayList<>();
-                        cells.add(cell);
-                        gaps.add(gap);
-                        cell = null;
-                        text = false;
-                    }
-                    gap.add(run);
-                } else {
-                    if (cell == null) {
-                        cell = new ArrayList<>();
-                        gap = null;
-                    }
-                    cell.add(run);
-                    text |= !run.space() && hasContent(run.text());
-                }
-            }
-            if (cell != null) {
-                cells.add(cell);
-                gaps.add(new ArrayList<>());
-            }
-            return new PanelRow(lead, cells, gaps);
-        }
-
-        static Component text(List<Run> cell) {
-            MutableComponent out = Component.empty();
-            for (Run run : cell) {
-                out.append(Component.literal(run.text()).withStyle(run.style()));
-            }
-            return out;
-        }
-
-        static boolean hasText(List<Run> cell) {
-            for (Run run : cell) {
-                if (!run.space() && hasContent(run.text())) {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
-    // Lootrun 信標面板是伺服器折好行逐列送的，要接成整句查
-    public static Component[] flowPanel(List<StyledText> rows, TranslationStore store,
-                                        boolean[] centred) {
-        return flow(rows, store, centred, 2, true);
-    }
-
-    public static Component[] flowColumn(List<StyledText> rows, TranslationStore store,
-                                         boolean[] centred) {
-        return flow(rows, store, centred, 1, false);
-    }
-
-    private static Component[] flow(List<StyledText> rows, TranslationStore store,
-                                    boolean[] centred, int minColumns, boolean inPanel) {
-        int n = rows.size();
-        Component[] out = new Component[n];
-        List<PanelRow> parsed = new ArrayList<>(n);
-        int columns = 0;
-        for (StyledText row : rows) {
-            PanelRow one = PanelRow.parse(SpaceRuns.runs(row.getComponent()));
-            if (one == null) {
-                return out;
-            }
-            parsed.add(one);
-            columns = Math.max(columns, one.cells().size());
-        }
-        if (columns < minColumns) {
-            return out;
-        }
-        Component[][] made = new Component[n][];
-        for (int i = 0; i < n; i++) {
-            made[i] = new Component[parsed.get(i).cells().size()];
-        }
-        for (int col = 0; col < columns; col++) {
-            List<int[]> thread = new ArrayList<>();
-            for (int i = 0; i < n; i++) {
-                int count = parsed.get(i).cells().size();
-                int cell = count == columns ? col : (count == 1 ? 0 : -1);
-                if (cell >= 0 && PanelRow.hasText(parsed.get(i).cells().get(cell))) {
-                    thread.add(new int[] {i, cell});
-                }
-            }
-            int s = 0;
-            while (s < thread.size()) {
-                int took = 0;
-                for (int len = Math.min(PANEL_RUN_MAX, thread.size() - s); len >= 2; len--) {
-                    List<Component> lines = panelSentence(parsed, made, thread, s, len, store);
-                    if (lines != null) {
-                        for (int k = 0; k < len; k++) {
-                            int[] at = thread.get(s + k);
-                            made[at[0]][at[1]] = lines.get(k);
-                        }
-                        took = len;
-                        break;
-                    }
-                }
-                s += Math.max(1, took);
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            PanelRow row = parsed.get(i);
-            boolean any = false;
-            for (Component cell : made[i]) {
-                any |= cell != null;
-            }
-            if (!any) {
-                continue;
-            }
-            MutableComponent rebuilt = Component.empty();
-            rebuilt.append(PanelRow.text(row.lead()));
-            for (int c = 0; c < row.cells().size(); c++) {
-                Component cell = made[i][c];
-                if (cell == null) {
-                    Component original = PanelRow.text(row.cells().get(c));
-                    cell = translate(StyledText.fromComponent(original), store);
-                    if (cell == null) {
-                        cell = panelCell(row, c, store);
-                    }
-                    if (cell == null) {
-                        cell = original;
-                    }
-                }
-                rebuilt.append(cell);
-                rebuilt.append(PanelRow.text(row.gaps().get(c)));
-            }
-            out[i] = DisplayStyles.unslant(realignChat(rows.get(i), rebuilt,
-                    centred == null ? null : centred[i], inPanel));
-        }
-        return out;
-    }
-
-    private static Component panelCell(PanelRow row, int c, TranslationStore store) {
-        List<Run> before = c == 0 ? row.lead() : row.gaps().get(c - 1);
-        List<Run> after = row.gaps().get(c);
-        if (before.isEmpty() && after.isEmpty()) {
-            return null;
-        }
-        List<Run> cell = row.cells().get(c);
-        for (int shape = 0; shape < 3; shape++) {
-            List<Run> framed = new ArrayList<>();
-            if (shape != 2) {
-                framed.addAll(before);
-            }
-            framed.addAll(cell);
-            if (shape != 0) {
-                framed.addAll(after);
-            }
-            if (framed.size() == cell.size()) {
-                continue;
-            }
-            Component hit = translate(StyledText.fromComponent(PanelRow.text(framed)), store);
-            if (hit == null) {
-                continue;
-            }
-            List<Run> made = new ArrayList<>(SpaceRuns.runs(hit));
-            while (!made.isEmpty() && made.get(0).space()) {
-                made.remove(0);
-            }
-            while (!made.isEmpty() && made.get(made.size() - 1).space()) {
-                made.remove(made.size() - 1);
-            }
-            if (!made.isEmpty() && PanelRow.hasText(made)) {
-                return PanelRow.text(made);
-            }
-        }
-        return null;
-    }
-
-    private static List<Component> panelSentence(List<PanelRow> parsed, Component[][] made,
-                                                 List<int[]> thread, int s, int len,
-                                                 TranslationStore store) {
-        List<StyledText> cells = new ArrayList<>(len);
-        StringBuilder key = new StringBuilder();
-        List<List<Run>> picked = new ArrayList<>(len);
-        for (int k = 0; k < len; k++) {
-            int[] at = thread.get(s + k);
-            if (made[at[0]][at[1]] != null
-                    || (k > 0 && at[0] != thread.get(s + k - 1)[0] + 1)) {
-                return null;
-            }
-            picked.add(parsed.get(at[0]).cells().get(at[1]));
-        }
-        Style prose = proseColour(picked);
-        for (int k = 0; k < len; k++) {
-            StyledText cell = StyledText.fromComponent(
-                    PanelRow.text(withProse(picked.get(k), prose)));
-            cells.add(cell);
-            if (k > 0) {
-                key.append('\n');
-            }
-            key.append(GlyphSplitter.toTemplate(cell));
-        }
-        String template = key.toString();
-        if (store.lookup(template) == null && store.lookupFlat(template) == null
-                && store.lookupUnwrapped(template) == null) {
-            return null;
-        }
-        List<Component> lines = translateBlock(cells, store, new boolean[len]);
-        if (lines == null || lines.isEmpty()) {
-            return null;
-        }
-        if (lines.size() != len) {
-            lines = TextSplit.split(TextSplit.join(lines), len);
-        }
-        return lines;
-    }
-
-    private static Style proseColour(List<List<Run>> cells) {
-        boolean bare = false;
-        java.util.Map<TextColor, Integer> letters = new java.util.LinkedHashMap<>();
-        for (List<Run> cell : cells) {
-            for (Run run : cell) {
-                if (run.space() || !hasContent(run.text())) {
-                    continue;
-                }
-                TextColor colour = run.style().getColor();
-                if (colour == null) {
-                    bare = true;
-                    continue;
-                }
-                int count = (int) run.text().codePoints().filter(Character::isLetter).count();
-                if (count > 0) {
-                    letters.merge(colour, count, Integer::sum);
-                }
-            }
-        }
-        if (!bare) {
-            return null;
-        }
-        TextColor best = null;
-        int most = 0;
-        for (java.util.Map.Entry<TextColor, Integer> e : letters.entrySet()) {
-            if (e.getValue() > most) {
-                most = e.getValue();
-                best = e.getKey();
-            }
-        }
-        return best == null ? null : Style.EMPTY.withColor(best);
-    }
-
-    private static List<Run> withProse(List<Run> cell, Style prose) {
-        if (prose == null) {
-            return cell;
-        }
-        List<Run> out = new ArrayList<>(cell.size());
-        for (Run run : cell) {
-            out.add(run.space() || run.style().getColor() != null ? run
-                    : new Run(false, run.px(), run.style().withColor(prose.getColor()), run.text()));
-        }
-        return out;
-    }
-
-    private static int spacedColumns(List<Run> row) {
-        int columns = 0;
-        boolean text = false;
-        for (Run run : row) {
-            if (run.space()) {
-                if (text && run.px() > 0) {
-                    columns++;
-                    text = false;
-                }
-            } else if (hasContent(run.text())) {
-                text = true;
-            }
-        }
-        return text ? columns + 1 : columns;
-    }
-
-    private static Component realignChat(StyledText original, Component rebuilt,
-                                         Boolean centred) {
-        return realignChat(original, rebuilt, centred, false);
-    }
-
-    private static Component realignChat(StyledText original, Component rebuilt,
-                                         Boolean centred, boolean inPanel) {
-        List<List<Run>> origRows = SpaceRuns.splitRows(SpaceRuns.runs(original.getComponent()));
-        List<List<Run>> madeRows = SpaceRuns.splitRows(SpaceRuns.runs(rebuilt));
-        int[] keepOrig = RowRealigner.solidRows(origRows);
-        int[] keepMade = RowRealigner.solidRows(madeRows);
-        if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
-            FlowedDebug.chatRows(original.getString(),
-                    "  去掉首尾空行之後：原文 " + (keepOrig[1] - keepOrig[0])
-                    + " 行、譯文 " + (keepMade[1] - keepMade[0]) + " 行",
-                    "行數對不上，原樣返回不動排版");
-            return rebuilt;
-        }
-        boolean[] centre = centred == null ? centredRows(origRows) : null;
-        if (centre != null) {
-            sharedCentre(origRows, centre);
-            spacePadded(origRows, centre);
-            sameLeadList(origRows, centre);
-            onChatCentre(origRows, centre);
-        }
-        boolean panel = inPanel || columnPanel(origRows);
-        boolean anyCentre = Boolean.TRUE.equals(centred);
-        if (centre != null) {
-            for (boolean c : centre) {
-                anyCentre |= c;
-            }
-        }
-        if (!panel && !anyCentre) {
-            Component flowed = reflowCjk(origRows, madeRows);
-            if (flowed != null) {
-                FlowedDebug.chatRows(original.getString(), "  中日文重新斷行", null);
-                return flowed;
-            }
-        }
-        StringBuilder log = new StringBuilder();
-        MutableComponent out = Component.empty();
-        for (int i = 0; i < madeRows.size(); i++) {
-            if (i > 0) {
-                out.append(Component.literal(NL));
-            }
-            List<Run> made = madeRows.get(i);
-            if (i < keepMade[0] || i >= keepMade[1]) {
-                out.append(SpaceRuns.apply(made, new int[SpaceRuns.countSpaces(made)]));
-                continue;
-            }
-            int at = keepOrig[0] + i - keepMade[0];
-            out.append(chatRow(origRows.get(at), made,
-                               centred == null ? centre[at] : centred, panel, log));
-        }
-        FlowedDebug.chatRows(original.getString(), log.toString(), null);
-        return out;
-    }
-
-    static Component reflowCjk(List<List<Run>> origRows, List<List<Run>> madeRows) {
-        int n = madeRows.size();
-        if (n < 2 || origRows.size() != n) {
-            return null;
-        }
-        int[] origBody = new int[n];
-        int max = 0;
-        for (int i = 0; i < n; i++) {
-            List<Run> row = origRows.get(i);
-            int lead = prefixEnd(row);
-            if (lead < 0) {
-                return null;
-            }
-            origBody[i] = runsWidth(row.subList(lead, row.size()));
-            max = Math.max(max, origBody[i]);
-        }
-        if (max <= 0) {
-            return null;
-        }
-        for (int i = 0; i < n - 1; i++) {
-            if (origBody[i] * 10 < max * 6) {
-                return null;
-            }
-        }
-        List<List<Run>> prefixes = new ArrayList<>(n);
-        List<Run> body = new ArrayList<>();
-        boolean cjk = false;
-        for (int i = 0; i < n; i++) {
-            List<Run> row = madeRows.get(i);
-            int lead = prefixEnd(row);
-            if (lead < 0) {
-                return null;
-            }
-            prefixes.add(row.subList(0, lead));
-            List<Run> content = row.subList(lead, row.size());
-            for (Run r : content) {
-                if (r.space()) {
-                    return null;
-                }
-                cjk |= r.text().codePoints().anyMatch(LineTranslator::isCjkBreakable);
-            }
-            appendJoined(body, content);
-        }
-        if (!cjk || body.isEmpty()) {
-            return null;
-        }
-        List<List<Run>> lines = wrapRuns(body, max);
-        MutableComponent out = Component.empty();
-        for (int i = 0; i < lines.size(); i++) {
-            if (i > 0) {
-                out.append(Component.literal(NL));
-            }
-            List<Run> prefix = prefixes.get(Math.min(i, 1));
-            for (Run r : prefix) {
-                out.append(DisplayStyles.literal(r.space() ? SpaceOffset.encode(r.px()) : r.text(), r.style()));
-            }
-            for (Run r : lines.get(i)) {
-                out.append(DisplayStyles.literal(r.text(), r.style()));
-            }
-        }
-        return out;
-    }
-
-    private static int prefixEnd(List<Run> row) {
-        for (int i = 0; i < row.size(); i++) {
-            Run r = row.get(i);
-            if (r.space()) {
-                continue;
-            }
-            if (r.text().codePoints().anyMatch(cp -> Character.isLetterOrDigit(cp)
-                    && !GlyphSplitter.isGlyphCodePoint(cp))) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    private static int runsWidth(List<Run> runs) {
-        int w = 0;
-        for (Run r : runs) {
-            w += r.space() ? r.px() : widthOf(DisplayStyles.literal(r.text(), r.style()));
-        }
-        return w;
-    }
-
-    private static void appendJoined(List<Run> body, List<Run> content) {
-        List<Run> trimmed = new ArrayList<>(content);
-        while (!trimmed.isEmpty()) {
-            Run first = trimmed.get(0);
-            String t = first.text().stripLeading();
-            if (!t.isEmpty()) {
-                trimmed.set(0, new Run(false, 0, first.style(), t));
-                break;
-            }
-            trimmed.remove(0);
-        }
-        if (trimmed.isEmpty()) {
-            return;
-        }
-        if (!body.isEmpty()) {
-            Run last = body.get(body.size() - 1);
-            String t = last.text().stripTrailing();
-            body.set(body.size() - 1, new Run(false, 0, last.style(), t));
-            int a = t.isEmpty() ? ' ' : t.codePointBefore(t.length());
-            int b = trimmed.get(0).text().codePointAt(0);
-            if (isWordChar(a) && isWordChar(b)) {
-                body.add(new Run(false, 0, last.style(), " "));
-            }
-        }
-        body.addAll(trimmed);
-    }
-
-    private static boolean isWordChar(int cp) {
-        return (Character.isLetterOrDigit(cp) && !isCjkBreakable(cp))
-                || "%+-/.,".indexOf(cp) >= 0 && cp != ',';
-    }
-
-    static boolean isCjkBreakable(int cp) {
-        Character.UnicodeScript s = Character.UnicodeScript.of(cp);
-        return s == Character.UnicodeScript.HAN || s == Character.UnicodeScript.HIRAGANA
-                || s == Character.UnicodeScript.KATAKANA;
-    }
-
-    private static final String BREAK_AFTER = "，。！？；：、）」』…,.!?;:";
-    private static final String NO_LINE_START = "，。！？；：、）」』…ー,.!?;:%）)";
-
-    private static List<List<Run>> wrapRuns(List<Run> body, int max) {
-        List<int[]> cps = new ArrayList<>();
-        for (int k = 0; k < body.size(); k++) {
-            int kk = k;
-            body.get(k).text().codePoints().forEach(cp -> cps.add(new int[] {cp, kk}));
-        }
-        int[] w = new int[cps.size()];
-        for (int i = 0; i < cps.size(); i++) {
-            w[i] = widthOf(DisplayStyles.literal(new String(Character.toChars(cps.get(i)[0])),
-                    body.get(cps.get(i)[1]).style()));
-        }
-        List<int[]> ranges = new ArrayList<>();
-        int start = 0;
-        while (start < cps.size()) {
-            int x = 0;
-            int end = start;
-            while (end < cps.size() && x + w[end] <= max) {
-                x += w[end];
-                end++;
-            }
-            if (end >= cps.size()) {
-                ranges.add(new int[] {start, cps.size()});
-                break;
-            }
-            int cut = -1;
-            int acc = x;
-            for (int i = end; i > start; i--) {
-                if (canBreakBefore(cps, i) && BREAK_AFTER.indexOf(cps.get(i - 1)[0]) >= 0
-                        && acc * 2 >= max) {
-                    cut = i;
-                    break;
-                }
-                acc -= w[i - 1];
-            }
-            if (cut < 0) {
-                for (int i = end; i > start; i--) {
-                    if (canBreakBefore(cps, i)) {
-                        cut = i;
-                        break;
-                    }
-                }
-            }
-            if (cut <= start) {
-                cut = Math.max(end, start + 1);
-            }
-            ranges.add(new int[] {start, cut});
-            start = cut;
-            while (start < cps.size() && cps.get(start)[0] == ' ') {
-                start++;
-            }
-        }
-        List<List<Run>> out = new ArrayList<>();
-        for (int[] r : ranges) {
-            List<Run> line = new ArrayList<>();
-            StringBuilder sb = new StringBuilder();
-            int run = -1;
-            for (int i = r[0]; i < r[1]; i++) {
-                int ri = cps.get(i)[1];
-                if (ri != run && sb.length() > 0) {
-                    line.add(new Run(false, 0, body.get(run).style(), sb.toString()));
-                    sb.setLength(0);
-                }
-                run = ri;
-                sb.appendCodePoint(cps.get(i)[0]);
-            }
-            if (sb.length() > 0) {
-                String t = sb.toString().stripTrailing();
-                if (!t.isEmpty()) {
-                    line.add(new Run(false, 0, body.get(run).style(), t));
-                }
-            }
-            out.add(line);
-        }
-        return out;
-    }
-
-    private static boolean canBreakBefore(List<int[]> cps, int i) {
-        int a = cps.get(i - 1)[0];
-        int b = cps.get(i)[0];
-        if (NO_LINE_START.indexOf(b) >= 0) {
-            return false;
-        }
-        if (a == ' ' || b == ' ') {
-            return true;
-        }
-        if (BREAK_AFTER.indexOf(a) >= 0 && !isWordChar(b)) {
-            return true;
-        }
-        if (BREAK_AFTER.indexOf(a) >= 0 && (a > 0x2FFF)) {
-            return true;
-        }
-        return isCjkBreakable(a) || isCjkBreakable(b)
-                ? !(isWordChar(a) && isWordChar(b)) : false;
-    }
-
-    // Wynncraft 聊天置中線在 154.5px（乘二存）
-    private static final int CHAT_CENTRE_X2 = 309;
-
-    private static final int CHAT_CENTRE_SLACK_X2 = 14;
-
-    private static void onChatCentre(List<List<Run>> rows, boolean[] centre) {
-        int only = -1;
-        for (int i = 0; i < rows.size() && i < centre.length; i++) {
-            List<Run> row = rows.get(i);
-            if (SpaceRuns.rowWidth(row) - SpaceRuns.leadWidth(row) <= 0) {
-                continue;
-            }
-            if (only >= 0) {
-                return;
-            }
-            only = i;
-        }
-        if (only < 0 || centre[only]) {
-            return;
-        }
-        List<Run> row = rows.get(only);
-        int lead = SpaceRuns.leadWidth(row);
-        int body = SpaceRuns.rowWidth(row) - lead;
-        if (lead < CHAT_CENTRE_MIN_LEAD
-                || columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
-            return;
-        }
-        if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
-            centre[only] = true;
-        }
-    }
-
-    private static final int CHAT_CENTRE_MIN_LEAD = 16;
-
-    private static void sharedCentre(List<List<Run>> rows, boolean[] centre) {
-        List<Integer> idx = new ArrayList<>();
-        List<Integer> mids = new ArrayList<>();
-        int minLead = Integer.MAX_VALUE;
-        int maxLead = 0;
-        for (int i = 0; i < rows.size(); i++) {
-            List<Run> row = rows.get(i);
-            int lead = SpaceRuns.leadWidth(row);
-            int body = SpaceRuns.rowWidth(row) - lead;
-            if (lead <= 0 || body <= 0) {
-                continue;
-            }
-            if (columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
-                return;
-            }
-            idx.add(i);
-            mids.add(lead + body / 2);
-            minLead = Math.min(minLead, lead);
-            maxLead = Math.max(maxLead, lead);
-        }
-        if (idx.size() < 2 || maxLead - minLead <= 8) {
-            return;
-        }
-        List<Integer> sorted = new ArrayList<>(mids);
-        java.util.Collections.sort(sorted);
-        int median = sorted.get(sorted.size() / 2);
-        for (int m : mids) {
-            if (Math.abs(m - median) > 16) {
-                return;
-            }
-        }
-        for (int i : idx) {
-            centre[i] = true;
-        }
-    }
-
-    static void spacePadded(List<List<Run>> rows, boolean[] centre) {
-        for (int i = 0; i < rows.size(); i++) {
-            List<Run> row = rows.get(i);
-            if (plainSpaceLead(row) >= 5
-                    && columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) < 2) {
-                centre[i] = true;
-            }
-        }
-    }
-
-    static void sameLeadList(List<List<Run>> rows, boolean[] centre) {
-        int n = rows.size();
-        int[] lead = new int[n];
-        int[] body = new int[n];
-        for (int i = 0; i < n; i++) {
-            lead[i] = SpaceRuns.leadWidth(rows.get(i));
-            body[i] = SpaceRuns.rowWidth(rows.get(i)) - lead[i];
-        }
-        boolean[] list = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            if (lead[i] <= 0 || body[i] <= 0) {
-                continue;
-            }
-            for (int j = i + 1; j < n; j++) {
-                if (body[j] > 0 && Math.abs(lead[i] - lead[j]) <= 1
-                        && Math.abs(body[i] - body[j]) > 6) {
-                    list[i] = true;
-                    list[j] = true;
-                }
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (list[i]) {
-                centre[i] = false;
-            }
-        }
-    }
-
-    private static int plainSpaceLead(List<Run> row) {
-        int n = 0;
-        for (Run run : row) {
-            if (run.space()) {
-                return n == 0 ? 0 : n;
-            }
-            String text = run.text();
-            for (int k = 0; k < text.length(); k++) {
-                char c = text.charAt(k);
-                if (c != ' ') {
-                    return n;
-                }
-                n++;
-            }
-        }
-        return 0;
-    }
-
-    private static boolean[] centredRows(List<List<Run>> rows) {
-        List<Component> lines = new ArrayList<>(rows.size());
-        for (List<Run> row : rows) {
-            lines.add(SpaceRuns.apply(row, new int[SpaceRuns.countSpaces(row)]));
-        }
-        return BlockLayout.centered(lines);
-    }
-
-    private static boolean columnPanel(List<List<Run>> rows) {
-        for (List<Run> row : rows) {
-            if (columns(SpaceRuns.chatSegmentWidths(row, SpaceRuns::runWidth)) >= 2) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static Component chatRow(List<Run> orig, List<Run> made,
-                                     boolean centred, boolean panel,
-                                     StringBuilder log) {
-        int leadOrig = SpaceRuns.leadWidth(orig);
-        int leadMade = SpaceRuns.leadWidth(made);
-        int bodyOrig = SpaceRuns.rowWidth(orig) - leadOrig;
-        int bodyMade = SpaceRuns.rowWidth(made) - leadMade;
-        boolean single = columns(SpaceRuns.chatSegmentWidths(orig, SpaceRuns::runWidth)) < 2;
-        boolean centre = single && leadOrig > 0 && (centred || panel);
-        int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
-        int pad = target - leadMade;
-        int[] columns = columnPad(orig, made);
-        int fitted = fitWidth(orig, made, pad, columns);
-        log.append("  ").append(centre ? "置中" : "靠左")
-           .append(" 原文縮排=").append(leadOrig).append(" 內容=").append(bodyOrig)
-           .append("  譯文縮排=").append(leadMade).append(" 內容=").append(bodyMade)
-           .append("  補=").append(pad)
-           .append(fitted != pad ? "（收寬後 " + fitted + "）" : "")
-           .append("  譯文=").append(SpaceRuns.rowText(made))
-           .append(System.lineSeparator());
-        pad = fitted;
-        MutableComponent row = Component.empty();
-        String encoded = SpaceOffset.encode(pad);
-        if (!encoded.isEmpty()) {
-            row.append(DisplayStyles.literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
-        }
-        for (int px : columns) {
-            if (px != 0) {
-                log.append("        欄距補正=")
-                   .append(java.util.Arrays.toString(columns))
-                   .append(System.lineSeparator());
-                break;
-            }
-        }
-        row.append(SpaceRuns.applyChat(made, columns));
-        return row;
-    }
-
-    private static int[] columnPad(List<Run> orig, List<Run> made) {
-        return chatColumnPad(orig, made, SpaceRuns::runWidth);
-    }
-
-    private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
-        return fitWidth(orig, made, pad, columns, chatWidth());
-    }
-
-    static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns, int window) {
-        int limit = SpaceRuns.rowWidth(orig);
-        if (window > limit
-                && columns(SpaceRuns.chatSegmentWidths(orig, SpaceRuns::runWidth)) < 2) {
-            limit = window;
-        }
-        int over = SpaceRuns.rowWidth(made) + pad - limit;
-        for (int px : columns) {
-            over += px;
-        }
-        if (over <= 0) {
-            return pad;
-        }
-        boolean[] gaps = SpaceRuns.chatGaps(made);
-        int k = columns.length;
-        for (int i = made.size() - 1; i >= 0 && over > 0; i--) {
-            if (!gaps[i]) {
-                continue;
-            }
-            k--;
-            if (k < 0) {
-                break;
-            }
-            int floor = contentBefore(made, i) ? MIN_CELL_GAP : 0;
-            int room = made.get(i).px() + columns[k] - floor;
-            if (room <= 0) {
-                continue;
-            }
-            int take = Math.min(room, over);
-            columns[k] -= take;
-            over -= take;
-        }
-        if (over > 0 && pad > 0) {
-            pad -= Math.min(pad, over);
-        }
-        return pad;
-    }
-
-    private static int chatWidth() {
-        try {
-            return net.minecraft.client.gui.components.ChatComponent.getWidth(
-                    net.minecraft.client.Minecraft.getInstance().options.chatWidth().get());
-        } catch (Throwable t) {
-            return 0;
-        }
-    }
-
-    private static final int MIN_CELL_GAP = 4;
-
-    private static boolean contentBefore(List<Run> runs, int at) {
-        for (int i = at - 1; i >= 0; i--) {
-            if (!runs.get(i).space() && hasContent(runs.get(i).text())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    static int[] chatColumnPad(List<Run> orig, List<Run> made, ToIntFunction<Run> width) {
-        boolean[] madeGaps = SpaceRuns.chatGaps(made);
-        int spaces = SpaceRuns.count(madeGaps);
-        if (SpaceRuns.count(SpaceRuns.chatGaps(orig)) != spaces) {
-            return new int[spaces];
-        }
-        int[] px = new int[spaces];
-        int index = 0;
-        for (int i = 0; i < made.size(); i++) {
-            if (madeGaps[i]) {
-                px[index++] = made.get(i).px();
-            }
-        }
-        return columnDrift(SpaceRuns.chatSegmentWidths(orig, width), SpaceRuns.chatSegmentWidths(made, width), px);
-    }
-
-    static int[] columnDrift(List<Integer> from, List<Integer> to, int[] spacePx) {
-        int[] adjust = new int[spacePx.length];
-        if (columns(from) >= 2) {
-            return centreColumns(from, to, spacePx);
-        }
-        int drift = 0;
-        for (int i = 1; i < spacePx.length; i++) {
-            drift += to.get(i) - from.get(i);
-            if (spacePx[i] >= 0) {
-                adjust[i] = -drift;
-                drift = 0;
-            }
-        }
-        return adjust;
-    }
-
-    private static int columns(List<Integer> widths) {
-        int n = 0;
-        for (int w : widths) {
-            if (w > 0) {
-                n++;
-            }
-        }
-        return n;
-    }
-
-    private static int[] centreColumns(List<Integer> from, List<Integer> to, int[] spacePx) {
-        int[] adjust = new int[spacePx.length];
-        for (int k = 0; k < spacePx.length; k++) {
-            if (spacePx[k] < 0) {
-                continue;
-            }
-            int before = from.get(k) - to.get(k);
-            int after = k + 1 < from.size() ? from.get(k + 1) - to.get(k + 1) : 0;
-            adjust[k] = (before + after) / 2;
-        }
-        return adjust;
-    }
-
     static String withoutSpacerRows(String template, TranslationStore store) {
         if (template == null) {
             return null;
@@ -2841,7 +1477,7 @@ public final class LineTranslator {
     private static final java.util.regex.Pattern SPACER_ROWS = java.util.regex.Pattern.compile(
             "(?s)(.*\\S)((?:\n[ \t]*À[ \tÀ]*)+)");
 
-    private static String lookup(String template, TranslationStore store) {
+    static String lookup(String template, TranslationStore store) {
         return lookupTrimmed(template, store, false);
     }
 
@@ -3384,15 +2020,15 @@ public final class LineTranslator {
         }
         said = oneLine(said.strip());
         String name = speakerName(speaker, store);
-        String numberedName = renumber(name, 2);
-        String numberedLine = renumber(said, 2 + countNumbers(speaker));
+        String numberedName = ColumnTemplates.renumber(name, 2);
+        String numberedLine = ColumnTemplates.renumber(said, 2 + ColumnTemplates.countNumbers(speaker));
         if (numberedName == null || numberedLine == null) {
             return null;
         }
         return "[{~1}/{~2}] " + numberedName + ": " + numberedLine;
     }
 
-    private static final String CHAT_COUNTER = "[{~}/{~}] ";
+    static final String CHAT_COUNTER = "[{~}/{~}] ";
 
     private static String speakerName(String speaker, TranslationStore store) {
         String learned = store.chatSpeaker(speaker);
@@ -3407,7 +2043,7 @@ public final class LineTranslator {
     }
 
     private static boolean samePlaceholders(String a, String b) {
-        return countNumbers(a) == countNumbers(ColourTemplate.stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
+        return ColumnTemplates.countNumbers(a) == ColumnTemplates.countNumbers(ColourTemplate.stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
                 && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
                 && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
                 && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
@@ -3481,11 +2117,11 @@ public final class LineTranslator {
                     return null;
                 }
             }
-            String shifted = renumber(ColourTemplate.stripColourTokens(hit), values);
+            String shifted = ColumnTemplates.renumber(ColourTemplate.stripColourTokens(hit), values);
             if (shifted == null) {
                 return null;
             }
-            values += countNumbers(row);
+            values += ColumnTemplates.countNumbers(row);
             out.append(shifted);
         }
         return out.toString();
@@ -3667,7 +2303,7 @@ public final class LineTranslator {
         return out;
     }
 
-    private static Component rebuild(String translated, LineParts parts,
+    static Component rebuild(String translated, LineParts parts,
                                      TranslationStore store) {
         List<Component> one = rebuildAll(new String[] {translated}, List.of(parts), List.of(), store);
         return one == null ? null : one.get(0);
@@ -3697,7 +2333,7 @@ public final class LineTranslator {
         }
     }
 
-    private static Component rebuild(String translated, LineParts parts,
+    static Component rebuild(String translated, LineParts parts,
                                      List<LineParts.Piece> glyphs, TranslationStore store) {
         List<Component> one = rebuildAll(new String[] {translated}, List.of(parts),
                                          List.of(), glyphs, null, store);
@@ -5332,5 +3968,46 @@ public final class LineTranslator {
 
     public static boolean columnsAreLeftAligned(List<StyledText> lines) {
         return ColumnAligner.columnsAreLeftAligned(lines);
+    }
+
+    public static Component translateChat(StyledText message, TranslationStore store) {
+        return ChatTranslator.translateChat(message, store);
+    }
+
+    public static Component translateChat(StyledText message, TranslationStore store, Boolean centred) {
+        return ChatTranslator.translateChat(message, store, centred);
+    }
+
+    public static Component translateChat(StyledText message, TranslationStore store, Boolean centred,
+                                          boolean inPanel) {
+        return ChatTranslator.translateChat(message, store, centred, inPanel);
+    }
+
+    public static LineParts nameFramed(StyledText line, TranslationStore store) {
+        return ChatTranslator.nameFramed(line, store);
+    }
+
+    public static Component translateFramed(StyledText line, LineParts framed, TranslationStore store) {
+        return ChatTranslator.translateFramed(line, framed, store);
+    }
+
+    public static boolean[] chatCentred(List<StyledText> rows) {
+        return ChatRealigner.chatCentred(rows);
+    }
+
+    public static boolean chatPanel(List<StyledText> rows) {
+        return ChatPanelFlow.chatPanel(rows);
+    }
+
+    public static boolean panelRow(StyledText row) {
+        return ChatPanelFlow.panelRow(row);
+    }
+
+    public static Component[] flowPanel(List<StyledText> rows, TranslationStore store, boolean[] centred) {
+        return ChatPanelFlow.flowPanel(rows, store, centred);
+    }
+
+    public static Component[] flowColumn(List<StyledText> rows, TranslationStore store, boolean[] centred) {
+        return ChatPanelFlow.flowColumn(rows, store, centred);
     }
 }
