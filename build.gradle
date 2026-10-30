@@ -1772,3 +1772,12 @@ tasks.register('goldenDump', JavaExec) {
     def samples = providers.gradleProperty('golden.samples').orElse('').get()
     args([out, corpus] + samples.tokenize(File.pathSeparator))
 }
+
+// Wynnventory 價格框與收藏通知的物品名照名稱列的規則：F6 物品名稱、裝備與素材分開。
+tasks.register('runWynnventoryGearNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WynnventoryGearNameTest'
+}
+tasks.named('check') { dependsOn 'runWynnventoryGearNameChecks' }
