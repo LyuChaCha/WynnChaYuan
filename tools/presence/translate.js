@@ -283,6 +283,7 @@ async function handleTrAccept(request, env, now) {
   const item = record.items.find((it) => it.id === body.item);
   if (!item) return no('not found', 404);
   const repo = githubRepository(env);
+  let created = null;
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
     let branch = 'translate/' + lang.replace('_', '-') + '-' + day;
@@ -290,7 +291,10 @@ async function handleTrAccept(request, env, now) {
     let url = existing.url;
     if (existing.exists && !url) branch += '-' + now;
     const reuse = Boolean(url);
-    if (!reuse) await repo.createBranch(branch);
+    if (!reuse) {
+      await repo.createBranch(branch);
+      created = branch;
+    }
     const root = 'src/main/resources/assets/wynnchayuan/translations/' + lang + '/';
     const targets = [record.file];
     if (record.key != null && record.file.startsWith('quest/')) targets.push('quest-dialogue.json');
@@ -299,7 +303,10 @@ async function handleTrAccept(request, env, now) {
     for (const name of targets) {
       const current = await repo.readFile(root + name, branch);
       const changed = replaceTranslation(current.text, record.key, record.src, item.text);
-      if (changed == null) return no('line not found', 409);
+      if (changed == null) {
+        if (created) await repo.deleteBranch(created);
+        return no('line not found', 409);
+      }
       await repo.writeFile(root + name, { message: '譯文（' + lang + '）：' + short, text: changed, sha: current.sha, branch });
     }
     if (!reuse) {
@@ -317,6 +324,7 @@ async function handleTrAccept(request, env, now) {
     await env.CORPUS.put(storeKey, JSON.stringify(record), { metadata: trMeta(record) });
     return json({ ok: true, url, prop: record });
   } catch (e) {
+    if (created) await repo.deleteBranch(created);
     return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
