@@ -2,7 +2,7 @@
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, plainUuid, inspectCape, gifFrames, groupCapes,
   teamOf, staffKey, guildSlug, imageType, MAX_GUILD_IMAGE,
-  addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
+  addMember, setMemberTeams, teamsInput, TEAM_AREAS, TR_LANGS, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES, burstLock, burstNote, BURST_LOCK_MS, BURST_WINDOW_MS, personScore, placeholderProblem, replaceTranslation,
   feedbackCheck, feedbackIssue, FEEDBACK_PER_HOUR, FEEDBACK_KEEP_DAYS, DISCORD_COMMANDS,
   visibility, askedVisibility, VISIBILITY, dropFromList, goneCode, anonymise,
@@ -58,7 +58,9 @@ let discordAppKey = '';
 let fakeSkin = null;
 let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
-let githubIssueStatus = 201;         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
+let githubIssueStatus = 201;
+const githubBranches = new Set();
+let githubOpenPulls = [];         // 回饋開 Issue 時 GitHub 回什麼（測失敗用）
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
   if (u.hostname === 'api.github.com') {
@@ -71,6 +73,10 @@ globalThis.fetch = async (url, init = {}) => {
       return answer({ content: Buffer.from(githubFile, 'utf8').toString('base64'), sha: 'filesha' });
     }
     if (path === '/git/ref/heads/main') return answer({ object: { sha: 'mainsha' } });
+    if (path.startsWith('/git/ref/heads/') && githubBranches.has(path.slice('/git/ref/heads/'.length))) {
+      return answer({ object: { sha: 'branchsha' } });
+    }
+    if (call.method === 'GET' && path.startsWith('/pulls?')) return answer(githubOpenPulls);
     if (path === '/git/refs') return answer({}, 201);
     if (path === '/issues' && call.method === 'POST') {
       return githubIssueStatus === 201
@@ -121,7 +127,7 @@ globalThis.fetch = async (url, init = {}) => {
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
-        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev' }, { name: 'data' }] },
+        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev', teams: ['ja_jp', 'zh_tw', 'xx_xx'], areas: ['code', 'bogus'] }, { name: 'data' }] },
         { role: 'sponsor', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] }],
     }), { status: 200 });
   }
@@ -917,6 +923,84 @@ r = await worker.fetch(post('/admin/credits', { section: 'developers', name: 'A'
   { CORPUS: env.CORPUS, GITHUB_TOKEN: 't' });
 check('已經在名單上：409', r.status === 409 && (await r.json()).why === 'already listed');
 
+const TEAMED = JSON.stringify({
+  _note: 'x',
+  sections: [
+    { role: '開發者', key: 'credits.role.developers', color: '#FFD24A', members: [{ name: 'A', mc: 'Alice_Dev', cape: 'a.gif' }] },
+    { role: '貢獻者', key: 'credits.role.contributors', color: '#5BD86F', members: [{ name: '小明', mc: 'Ming_01' }, { name: '沒有 ID' }] },
+  ],
+}, null, 2) + '\n';
+let teamed = setMemberTeams(TEAMED, { section: 'contributors', who: 'ming_01', teams: ['ja_jp', 'zh_tw', 'ja_jp'], areas: ['testing', 'translation'] });
+doc = JSON.parse(teamed.text);
+check('★ teams／areas 寫進那個人（遊戲 ID 不分大小寫），照固定順序、去掉重複', JSON.stringify(doc.sections[1].members[0])
+  === JSON.stringify({ name: '小明', mc: 'Ming_01', teams: ['zh_tw', 'ja_jp'], areas: ['translation', 'testing'] }) && teamed.name === '小明');
+check('★ 別人一個字都沒動；全部取消勾選就把兩欄拿掉，檔案回到原樣',
+  JSON.stringify(doc.sections[0]) === JSON.stringify(JSON.parse(TEAMED).sections[0])
+  && setMemberTeams(teamed.text, { section: 'contributors', who: 'Ming_01', teams: [], areas: [] }).text === TEAMED);
+check('只改其中一欄，另一欄不會多出空陣列', !('teams' in JSON.parse(setMemberTeams(TEAMED,
+  { section: 'contributors', who: 'Ming_01', teams: [], areas: ['code'] }).text).sections[1].members[0]));
+check('沒有遊戲 ID 的成員照名字找', JSON.parse(setMemberTeams(TEAMED,
+  { section: 'contributors', who: '沒有 ID', teams: ['ko_kr'], areas: [] }).text).sections[1].members[1].teams.join() === 'ko_kr');
+const whyTeams = (entry) => setMemberTeams(TEAMED, { section: 'contributors', who: 'Ming_01', teams: [], areas: [], ...entry }).why;
+check('★ 不認得的語言、項目、區、人都擋，什麼都沒改也擋', whyTeams({ teams: ['xx_xx'] }) === 'bad team'
+  && whyTeams({ teams: 'zh_tw' }) === 'bad team' && whyTeams({ teams: [1] }) === 'bad team'
+  && whyTeams({ areas: ['hack'] }) === 'bad area' && whyTeams({ areas: null }) === 'bad area'
+  && whyTeams({ section: 'sources' }) === 'bad section' && whyTeams({ who: '  ' }) === 'bad who'
+  && whyTeams({ who: 'x'.repeat(41) }) === 'bad who' && whyTeams({ who: 'Nobody', areas: ['code'] }) === 'not found'
+  && whyTeams({}) === 'unchanged' && setMemberTeams('{', { section: 'contributors', who: 'a', teams: [], areas: [] }).why === 'bad credits');
+check('同一個人要在那一區才找得到', whyTeams({ section: 'developers', teams: ['zh_tw'] }) === 'not found');
+check('語言就是協作翻譯那七種，項目八種', TR_LANGS.length === 7 && TEAM_AREAS.length === 8
+  && teamsInput({ section: 'sponsors', who: 'x', teams: TR_LANGS, areas: TEAM_AREAS }).teams.length === 7);
+
+const teamEntry = { section: 'contributors', who: 'Ming_01', teams: ['zh_tw'], areas: ['translation'] };
+const teamPost = (entry, token, extra = {}) => worker.fetch(post('/admin/credits/teams', entry, token), { CORPUS: env.CORPUS, ...extra });
+check('★ 一般玩家不能改團隊', (await teamPost(teamEntry, bobWeb, { GITHUB_TOKEN: 't' })).status === 403
+  && (await teamPost(teamEntry, undefined, { GITHUB_TOKEN: 't' })).status === 403);
+r = await teamPost(teamEntry, aliceWeb);
+check('沒設 GITHUB_TOKEN：說清楚是沒設定', r.status === 503 && (await r.json()).why === 'github not configured');
+githubCalls.length = 0;
+r = await teamPost({ ...teamEntry, teams: ['en_us'] }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('★ 送來的東西不對：還沒碰 GitHub 就擋掉', r.status === 400 && (await r.json()).why === 'bad team' && githubCalls.length === 0);
+githubFile = TEAMED;
+r = await teamPost(teamEntry, aliceWeb, { GITHUB_TOKEN: 'secret-token' });
+body = await r.json();
+const teamBranch = githubCalls.find((c) => c.method === 'PUT').body.branch;
+check('★ 開發者送出：開好當天的分支與 PR', r.status === 200 && body.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999'
+  && body.added === false && /^credits\/teams-\d{8}$/.test(teamBranch));
+check('★ 照順序：查當天的分支、從 main 讀檔、讀 main、開分支、寫檔、開 PR（實際 ' + githubCalls.map((c) => c.method + ' ' + c.path.split('?')[0]).join('、') + '）',
+  githubCalls.length === 6 && githubCalls[0].path === '/git/ref/heads/' + teamBranch
+  && githubCalls[1].path.endsWith('?ref=main') && githubCalls[2].path === '/git/ref/heads/main'
+  && githubCalls[3].method === 'POST' && githubCalls[3].body.ref === 'refs/heads/' + teamBranch
+  && githubCalls[4].method === 'PUT' && githubCalls[5].path === '/pulls' && githubCalls.every((c) => c.auth === 'Bearer secret-token'));
+const teamWritten = JSON.parse(Buffer.from(githubCalls[4].body.content, 'base64').toString('utf8'));
+check('★ 寫回去的檔：那個人多了 teams 與 areas，其他人照舊', JSON.stringify(teamWritten.sections[1].members[0])
+  === JSON.stringify({ name: '小明', mc: 'Ming_01', teams: ['zh_tw'], areas: ['translation'] })
+  && teamWritten.sections[0].members[0].cape === 'a.gif' && githubCalls[4].body.message.includes('小明'));
+check('PR 開到 main，說明寫了是誰送的，沒有多餘的署名行', githubCalls[5].body.base === 'main' && githubCalls[5].body.head === teamBranch
+  && githubCalls[5].body.body.includes('Alice_Dev') && !/Generated with|Co-Authored-By/.test(githubCalls[5].body.body));
+githubBranches.add(teamBranch);
+githubOpenPulls = [{ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/42' }];
+githubCalls.length = 0;
+r = await teamPost({ ...teamEntry, who: '沒有 ID', teams: ['ja_jp'] }, aliceWeb, { GITHUB_TOKEN: 't' });
+body = await r.json();
+check('★ 同一天第二筆：加進同一個分支與 PR，不再開新的', r.status === 200 && body.added === true
+  && body.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/42'
+  && githubCalls.some((c) => c.path.startsWith('/contents/') && c.path.endsWith('?ref=' + encodeURIComponent(teamBranch)))
+  && githubCalls.find((c) => c.method === 'PUT').body.branch === teamBranch
+  && !githubCalls.some((c) => c.method === 'POST'));
+githubOpenPulls = [];
+githubCalls.length = 0;
+r = await teamPost(teamEntry, aliceWeb, { GITHUB_TOKEN: 't' });
+body = await r.json();
+const lateBranch = (githubCalls.find((c) => c.method === 'PUT') || { body: {} }).body.branch || '';
+check('★ 當天的 PR 已經合併或關掉：另開一個分支與 PR，不寫進舊分支', r.status === 200 && body.added === false
+  && lateBranch.startsWith(teamBranch + '-') && githubCalls.some((c) => c.path === '/pulls' && c.method === 'POST'));
+githubBranches.clear();
+r = await teamPost({ ...teamEntry, teams: [], areas: [] }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('沒有要改的：409，不開分支', r.status === 409 && (await r.json()).why === 'unchanged');
+r = await teamPost({ ...teamEntry, who: 'Nobody' }, aliceWeb, { GITHUB_TOKEN: 't' });
+check('名單上沒有這個人：404', r.status === 404 && (await r.json()).why === 'not found');
+
 // ---- 自己拿掉 ----
 pushBack(bobId);
 await worker.fetch(put('/cape', png(22, 17), bobToken), env);
@@ -1407,6 +1491,12 @@ body = await r.json();
 check('★ /api/team：公開、可以快取，照名單回開發者與贊助者', r.status === 200
   && /max-age=\d+/.test(r.headers.get('cache-control')) && body.team.map((s) => s.role).join() === 'developers,sponsors'
   && body.team[0].members.some((m) => m.mc === 'Alice_Dev') && body.team[1].members[0].mc === 'Carol');
+check('★ /api/team 帶著翻譯團隊與貢獻項目：只留認得的，照固定順序',
+  JSON.stringify(body.team[0].members[0].teams) === '["zh_tw","ja_jp"]' && JSON.stringify(body.team[0].members[0].areas) === '["code"]'
+  && !('teams' in body.team[1].members[0]) && !('areas' in body.team[1].members[0]));
+check('★ teamOf：teams 與 areas 不是陣列或是空的就不帶這兩欄', JSON.stringify(teamOf([{ key: 'credits.role.contributors', members: [
+  { name: 'P', teams: ['ja_jp', 'zh_tw', 'xx', 3, 'ja_jp'], areas: 'code' }, { name: 'Q', teams: [], areas: ['testing', 'nope'] }] }]))
+  === JSON.stringify([{ role: 'contributors', color: null, members: [{ name: 'P', teams: ['zh_tw', 'ja_jp'] }, { name: 'Q', areas: ['testing'] }] }]));
 
 // ---- ★ 管理員：開發者加的，做得到網站上的管理，但不在名單上、也動不了管理員名單 ----
 check('staffKey：UUID、Discord 代號、遊戲名字分得出來', staffKey(dashed(BOB.id).toUpperCase()) === 'u:' + BOB.id
@@ -1444,6 +1534,10 @@ check('★ 另一個帳號改成同一個名字：不是管理員',
 check('★ 管理員進得了管理：披風、封禁、特別名單', (await worker.fetch(get('/admin/capes', bobNow), env)).status === 200
   && (await worker.fetch(get('/admin/bans', bobNow), env)).status === 200
   && (await worker.fetch(get('/admin/perks', bobNow), env)).status === 200);
+githubFile = TEAMED;
+r = await worker.fetch(post('/admin/credits/teams', { section: 'contributors', who: 'Ming_01', teams: ['ko_kr'], areas: [] }, bobNow),
+  { ...env, GITHUB_TOKEN: 't' });
+check('★ 管理員也能改翻譯團隊與貢獻項目（跟新增成員一樣）', r.status === 200 && (await r.json()).ok === true);
 r = await staffPost('/admin/perk', { uuid: 'f'.repeat(32), note: '管理員加的' }, bobNow);
 check('管理員加的特別名單，紀錄上寫的是他', r.status === 200
   && JSON.parse(env.CORPUS.data.get('perk:' + 'f'.repeat(32)).value).by === BOB.name);
@@ -2720,6 +2814,14 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁有譯者名單', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="translators"') && pages['/admin'].includes("'/admin/translator'")
   && pages['/'].includes('href="/translate"'));
+check('★ 首頁有照翻譯團隊篩選的那一排；管理頁有翻譯團隊與貢獻項目', pages['/'].includes('id="team-pick"')
+  && pages['/'].includes('who-tags') && pages['/'].includes("get('team')") && pages['/admin'].includes('id="mteams"')
+  && pages['/admin'].includes("'/admin/credits/teams'") && english['/admin'].includes('Translation teams and contributions'));
+check('★ 八種語言都有八個貢獻項目的名字、「全部」與錯誤訊息', LANGS.every((code) => TEXT[code] && TEXT[code].js.teamAreas
+  && TEAM_AREAS.every((area) => TEXT[code].js.teamAreas[area]) && TEXT[code].js.teamAll && TEXT[code].js.teamFix.unchanged
+  && TEXT[code]['admin.teams'] && TEXT[code]['home.teampick']));
+check('★ 首頁與管理頁的程式都是合法的 JavaScript', ['/', '/admin'].every((path) => [...pages[path].matchAll(/<script>([\s\S]*?)<\/script>/g)]
+  .every((m) => { try { new Function(m[1]); return true; } catch (e) { console.log(path, e.message); return false; } })));
 for (const path of ['/privacy', '/terms', '/', '/favicon.png']) {
   r = await worker.fetch(new Request('https://x.test' + path, { method: 'HEAD' }), env);
   check('★ HEAD ' + path + ' 跟 GET 一樣是 200、不帶內容（Discord 檢查網址用 HEAD）', r.status === 200 && (await r.text()) === '');

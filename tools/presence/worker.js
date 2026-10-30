@@ -954,6 +954,10 @@ export function teamOf(sections) {
       const entry = { name: member.name.trim().slice(0, 40) };
       if (typeof member.mc === 'string' && NAME.test(member.mc)) entry.mc = member.mc;
       if (typeof member.color === 'string' && COLOUR.test(member.color)) entry.color = member.color;
+      const teams = knownCodes(member.teams, TR_LANGS);
+      if (teams.length) entry.teams = teams;
+      const areas = knownCodes(member.areas, TEAM_AREAS);
+      if (areas.length) entry.areas = areas;
       members.push(entry);
     }
     team.push({ role: found[1], color: COLOUR.test(section.color || '') ? section.color : null, members });
@@ -2495,6 +2499,57 @@ const CREDITS_PATH = 'src/main/resources/assets/wynnchayuan/credits.json';
 /** 可以加到哪幾區。鍵是 credits.json 裡那一區 key 的最後一段。 */
 const SECTIONS = { developers: '開發者', sponsors: '贊助者', contributors: '貢獻者' };
 
+export const TEAM_AREAS = ['translation', 'proofreading', 'capture', 'testing', 'code', 'design', 'website', 'community'];
+
+function knownCodes(value, allowed) {
+  return Array.isArray(value) ? allowed.filter((code) => value.includes(code)) : [];
+}
+
+function exactCodes(value, allowed) {
+  if (!Array.isArray(value) || value.length > allowed.length * 2) return null;
+  if (!value.every((code) => typeof code === 'string' && allowed.includes(code))) return null;
+  return knownCodes(value, allowed);
+}
+
+export function teamsInput(entry) {
+  if (!entry || typeof entry !== 'object') return { why: 'bad request' };
+  if (!Object.hasOwn(SECTIONS, entry.section)) return { why: 'bad section' };
+  const who = typeof entry.who === 'string' ? entry.who.trim() : '';
+  if (!who || who.length > 40) return { why: 'bad who' };
+  const teams = exactCodes(entry.teams, TR_LANGS);
+  if (!teams) return { why: 'bad team' };
+  const areas = exactCodes(entry.areas, TEAM_AREAS);
+  if (!areas) return { why: 'bad area' };
+  return { section: entry.section, who, teams, areas };
+}
+
+export function setMemberTeams(text, entry) {
+  const input = teamsInput(entry);
+  if (input.why) return input;
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const target = (Array.isArray(doc.sections) ? doc.sections : []).find((item) => item && typeof item.key === 'string'
+    && item.key.endsWith('.' + input.section));
+  if (!target || !Array.isArray(target.members)) return { why: 'bad credits' };
+  const lower = input.who.toLowerCase();
+  const member = target.members.find((one) => one && typeof one.mc === 'string' && one.mc.toLowerCase() === lower)
+    || target.members.find((one) => one && !one.mc && one.name === input.who);
+  if (!member) return { why: 'not found' };
+  const held = (field) => JSON.stringify(field in member ? member[field] : []);
+  if (held('teams') === JSON.stringify(input.teams) && held('areas') === JSON.stringify(input.areas)) {
+    return { why: 'unchanged' };
+  }
+  if (input.teams.length) member.teams = input.teams;
+  else delete member.teams;
+  if (input.areas.length) member.areas = input.areas;
+  else delete member.areas;
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(member.name || input.who) };
+}
+
 /**
  * 加一個成員之後的 credits.json。純函式，測試直接餵。
  *
@@ -2599,6 +2654,70 @@ async function handleAddCredit(request, env, now) {
     });
     if (pull.status !== 201) return no('github ' + pull.status, 502);
     return json({ ok: true, url: (await pull.json()).html_url });
+  } catch (e) {
+    return no('github unreachable', 502);
+  }
+}
+
+const TEAMS_WHY_STATUS = { unchanged: 409, 'not found': 404 };
+
+async function handleCreditTeams(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const input = teamsInput(body);
+  if (input.why) return no(input.why);
+  const github = githubClient(env);
+  try {
+    const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
+    let branch = 'credits/teams-' + day;
+    let url = '';
+    const ref = await github('/git/ref/heads/' + branch);
+    if (ref.status === 200) {
+      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
+      const list = open.status === 200 ? await open.json() : [];
+      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
+      else branch += '-' + now;
+    } else if (ref.status !== 404) {
+      return no('github ' + ref.status, 502);
+    }
+    const reuse = Boolean(url);
+    const file = await github('/contents/' + CREDITS_PATH + '?ref=' + encodeURIComponent(reuse ? branch : 'main'));
+    if (file.status !== 200) return no('github ' + file.status, 502);
+    const current = await file.json();
+    const changed = setMemberTeams(base64ToUtf8(current.content), input);
+    if (changed.why) return no(changed.why, TEAMS_WHY_STATUS[changed.why] || 400);
+    if (!reuse) {
+      const head = await github('/git/ref/heads/main');
+      if (head.status !== 200) return no('github ' + head.status, 502);
+      const made = await github('/git/refs', {
+        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
+      });
+      if (made.status !== 201) return no('github ' + made.status, 502);
+    }
+    const message = '名單：' + changed.name + ' 的翻譯團隊與貢獻項目';
+    const put = await github('/contents/' + CREDITS_PATH, {
+      method: 'PUT',
+      body: JSON.stringify({ message, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
+    });
+    if (put.status !== 200 && put.status !== 201) return no('github ' + put.status, 502);
+    if (!reuse) {
+      const pull = await github('/pulls', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: '名單：翻譯團隊與貢獻項目（' + day + '）',
+          head: branch,
+          base: 'main',
+          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目都會加進這個 PR。\n\n'
+            + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
+        }),
+      });
+      if (pull.status !== 201) return no('github ' + pull.status, 502);
+      url = String((await pull.json()).html_url || '');
+    }
+    return json({ ok: true, url, added: reuse });
   } catch (e) {
     return no('github unreachable', 502);
   }
@@ -4019,6 +4138,7 @@ const site = {
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (route === 'POST /admin/credits/teams') return handleCreditTeams(request, env, now);
     if (route === 'GET /admin/staff') return handleStaff(request, env, now);
     if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
     if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
