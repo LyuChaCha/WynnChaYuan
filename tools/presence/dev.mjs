@@ -17,7 +17,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import os from 'node:os';
-import worker, { issueDiscordToken, issueToken, issueWebToken } from './worker.js';
+import worker, { issueDiscordToken, issueToken, issueWebToken, publicId } from './worker.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(here, '..', '..');
@@ -86,6 +86,17 @@ for (const file of fs.readdirSync(templates).filter((f) => /^(example|template)-
   const alone = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 1);
   if (alone[0]) alone[0].q = 1;
   if (alone[1]) alone[1].r = 1;
+  const pairs = seeded.filter((cape) => seeded.filter((other) => other.h === cape.h).length === 2);
+  if (pairs[0]) pairs.filter((cape) => cape.h === pairs[0].h).forEach((cape) => { cape.vis = 'private'; });
+  const steve = alone.pop();
+  if (steve && alone.length >= 3) {
+    steve.vis = 'unlisted';
+    steve.u = 'b'.repeat(32);
+    steve.n = 'Steve';
+    const was = [...data.keys()].find((k) => k.startsWith('cape:') && data.get(k).metadata === steve);
+    data.set('cape:' + await publicId('b'.repeat(32)), data.get(was));
+    data.delete(was);
+  }
   data.set('stars', { value: JSON.stringify(stars), metadata: null });
   // 沒有人穿的披風留七天：兩件已經沒有人穿，一件還剩四天、一件是最後一天
   const idle = {};

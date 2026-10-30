@@ -789,6 +789,27 @@ export function applyRecord(list, record) {
   };
 }
 
+export function dropFromList(list, id) {
+  const rainbows = list.rainbow || [];
+  const roles = list.show || {};
+  if (!list.users.includes(id) && !(id in list.capes) && !list.hidden.includes(id)
+      && !rainbows.includes(id) && !(id in roles)) {
+    return null;
+  }
+  const capes = { ...list.capes };
+  delete capes[id];
+  const show = { ...roles };
+  delete show[id];
+  return {
+    ...list,
+    users: list.users.filter((one) => one !== id),
+    capes,
+    hidden: list.hidden.filter((one) => one !== id),
+    rainbow: rainbows.filter((one) => one !== id),
+    show,
+  };
+}
+
 function validList(list) {
   return list && typeof list.t === 'number' && Array.isArray(list.users)
     && list.capes && typeof list.capes === 'object' && Array.isArray(list.hidden);
@@ -1406,8 +1427,9 @@ async function handleUpload(request, env, now) {
   const metadata = { t: found.type, v: now, c: now, s: bytes.length, u: user.uuid, n: user.name, h: hash,
     x: found.width, y: found.height };
   // 要不要出現在一覽：這一次有說（?public=0／1）就照這一次，沒說（從遊戲裡傳的）照原本的
-  const asked = new URL(request.url).searchParams.get('public');
-  if (asked === '0' || (asked !== '1' && have && have.metadata && have.metadata.q)) metadata.q = 1;
+  const vis = askedVisibility(new URL(request.url).searchParams)
+    || (have && have.metadata ? visibility(have.metadata) : 'public');
+  if (vis !== 'public') metadata.vis = vis;
   // 在審核名單上的人：這張圖沒通過過，就先不給別人看
   const pending = await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
@@ -1419,7 +1441,7 @@ async function handleUpload(request, env, now) {
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h, have.metadata, now);
   // 自己傳了新的：先前從一覽套用時收著的那一件就不必留了
   if (have && have.metadata && have.metadata.p && have.metadata.p.h !== hash) {
-    await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
+    await sweep(env, have.metadata.p.h, { ...have.metadata.p, vis: visibility(have.metadata) }, now);
   }
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
@@ -1453,8 +1475,39 @@ const HISTORY_MAX = 8;
 /** 我的最愛最多幾件。 */
 const FAVS_MAX = 200;
 
+export const VISIBILITY = ['public', 'unlisted', 'private'];
+
+export function visibility(meta) {
+  if (!meta) return 'public';
+  if (meta.vis === 'unlisted' || meta.vis === 'private') return meta.vis;
+  return meta.q ? 'unlisted' : 'public';
+}
+
+export function askedVisibility(params) {
+  const vis = params.get('vis');
+  if (VISIBILITY.includes(vis)) return vis;
+  const pub = params.get('public');
+  return pub === '0' ? 'unlisted' : pub === '1' ? 'public' : null;
+}
+
+function withVisibility(meta, vis) {
+  const { q, vis: old, ...rest } = meta;
+  if (vis !== 'public') rest.vis = vis;
+  return rest;
+}
+
+export function groupVisibility(wearers) {
+  if (wearers.some((cape) => !cape.r && visibility(cape) === 'public')) return 'public';
+  if (wearers.some((cape) => visibility(cape) !== 'private')) return 'unlisted';
+  return 'private';
+}
+
+const idleVisibility = (one) => (!one.q ? 'public' : one.vis === 'private' ? 'private' : 'unlisted');
+
+const linkable = (one) => !one.q || one.vis === 'unlisted';
+
 /** 一覽上看得到的：公開，而且不是等審核的。 */
-const listed = (cape) => !cape.q && !cape.r;
+const listed = (cape) => visibility(cape) === 'public' && !cape.r;
 
 /** 所有人的使用紀錄（只有鍵：誰、哪張圖）。sweep 與管理的人照圖刪除的時候用。 */
 async function allHistory(env, prefix = 'hist:') {
@@ -1588,14 +1641,14 @@ async function handlePublic(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
   const body = await readJson(request);
-  if (!body || typeof body.on !== 'boolean') return no('bad request');
+  const vis = !body ? null : VISIBILITY.includes(body.vis) ? body.vis
+    : typeof body.on === 'boolean' ? (body.on ? 'public' : 'unlisted') : null;
+  if (!vis) return no('bad request');
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (!have || !have.metadata) return no('no cape', 404);
-  const { q: before, ...rest } = have.metadata;
-  if (!body.on) rest.q = 1;
-  await env.CORPUS.put('cape:' + id, '', { metadata: rest });
-  return json({ ok: true, public: body.on });
+  await env.CORPUS.put('cape:' + id, '', { metadata: withVisibility(have.metadata, vis) });
+  return json({ ok: true, vis, public: vis === 'public' });
 }
 
 /** 審核名單。 */
@@ -1743,7 +1796,7 @@ async function handleWear(request, env, now) {
     metadata.y = source.y;
   }
   if (keep) metadata.p = keep;
-  if (mine && mine.q) metadata.q = 1;                        // 公開與否照他原本的
+  if (mine && visibility(mine) !== 'public') metadata.vis = visibility(mine);
   // 一覽上看得到的本來就給大家看了；從自己的紀錄穿回去的，在審核名單上的人照樣要審
   const pending = !onShow && await needsReview(env, user.uuid, hash);
   if (pending) metadata.r = 1;
@@ -1777,7 +1830,7 @@ async function handleRestore(request, env, now) {
     metadata.x = kept.x;
     metadata.y = kept.y;
   }
-  if (mine.q) metadata.q = 1;
+  if (visibility(mine) !== 'public') metadata.vis = visibility(mine);
   if (await needsReview(env, user.uuid, kept.h)) metadata.r = 1;
   await env.CORPUS.put('cape:' + id, '', { metadata });
   await noteHistory(env, id, metadata, now);
@@ -1859,7 +1912,9 @@ async function sweep(env, hash, from, now) {
     entry.y = from.y;
   }
   if (from && (from.c || from.v)) entry.c = from.c || from.v;
-  if (!from || from.q || from.r) entry.q = 1;
+  const vis = from ? visibility(from) : 'private';
+  if (!from || vis !== 'public' || from.r) entry.q = 1;
+  if (from && !from.r && vis !== 'public') entry.vis = vis;
   idle[hash] = entry;
   await env.CORPUS.put('idle', JSON.stringify(idle));
 }
@@ -1874,10 +1929,11 @@ async function revive(env, hash) {
 
 /** 馬上刪掉這張圖（管理的人移除的）。還有人在用就不動。 */
 async function discard(env, hash) {
-  if (!hash || inUse(await allCapes(env), hash)) return;
+  if (!hash || inUse(await allCapes(env), hash)) return false;
   await env.CORPUS.delete('blob:' + hash);
   await dropPreviews(env, hash);
   await revive(env, hash);
+  return true;
 }
 
 /** 期滿的刪掉。回傳整理過的閒置清單。 */
@@ -1952,7 +2008,7 @@ async function dropCape(env, id, now) {
   if (!have || !have.metadata) return null;
   await env.CORPUS.delete('cape:' + id);
   await sweep(env, have.metadata.h, have.metadata, now);
-  if (have.metadata.p) await sweep(env, have.metadata.p.h, { ...have.metadata.p, q: have.metadata.q }, now);
+  if (have.metadata.p) await sweep(env, have.metadata.p.h, { ...have.metadata.p, vis: visibility(have.metadata) }, now);
   const uuid = have.metadata.u;
   if (uuid && UUID.test(uuid)) {
     const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
@@ -2011,6 +2067,31 @@ async function handleCapes(env, now) {
   const stars = await starMap(env);
   for (const group of groups) group.stars = Number(stars[group.h]) || 0;
   return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleCapeLink(request, env, now, hash) {
+  if (!HASH.test(hash)) return no('not found', 404);
+  const user = await who(request, env, now);
+  const viewer = user ? await publicId(user.uuid) : null;
+  const staff = Boolean(await moderator(request, env, now));
+  const wearers = (await allCapes(env)).filter((cape) => cape.h === hash);
+  const shown = staff ? wearers
+    : wearers.filter((cape) => cape.id === viewer || (!cape.r && visibility(cape) !== 'private'));
+  let group = groupCapes(shown)[0] || null;
+  if (group) {
+    group.vis = groupVisibility(shown);
+    group.pending = shown.some((cape) => cape.r);
+    group.hidden = !shown.some(listed);
+    if (shown.some((cape) => cape.id === viewer)) group.own = true;
+  } else {
+    const one = (await purge(env, now))[hash];
+    if (one && (staff || linkable(one))) {
+      group = { ...idleGroup(hash, one), vis: idleVisibility(one), pending: false, hidden: Boolean(one.q) };
+    }
+  }
+  if (!group) return no('not found', 404);
+  group.stars = Number((await starMap(env))[hash]) || 0;
+  return json({ cape: group, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
 
 /**
@@ -2093,10 +2174,92 @@ async function handleMe(request, env, now) {
       x: cape.metadata.x || 0, y: cape.metadata.y || 0, h: cape.metadata.h,
       worn: Boolean(cape.metadata.w), back: Boolean(cape.metadata.w && cape.metadata.p),
       // public：出現在披風一覽上；pending：在等審核，通過之前別人看不到
-      public: !cape.metadata.q, pending: Boolean(cape.metadata.r) } : null,
+      public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata),
+      pending: Boolean(cape.metadata.r) } : null,
     // 在審核名單上：之後上傳的披風要先通過
     review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
   });
+}
+
+async function forgetPlayer(env, uuid, now) {
+  const id = await publicId(uuid);
+  await env.CORPUS.delete('u:' + uuid);
+  const list = await storedList(env);
+  const trimmed = list && dropFromList(list, id);
+  if (trimmed) await env.CORPUS.put('presence:list', JSON.stringify(trimmed));
+  const history = await allHistory(env, 'hist:' + id + ':');
+  for (const one of history) await env.CORPUS.delete(one.key);
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  const mine = have && have.metadata && typeof have.metadata.h === 'string' ? have.metadata : null;
+  const own = new Set();
+  if (mine) {
+    await env.CORPUS.delete('cape:' + id);
+    if (mine.w) await sweep(env, mine.h, mine, now);
+    else own.add(mine.h);
+    if (mine.p && HASH.test(mine.p.h || '')) own.add(mine.p.h);
+  }
+  const idle = await idleMap(env);
+  const others = new Set((await allHistory(env)).map((one) => one.h));
+  for (const one of history) {
+    if (idle[one.h] && !others.has(one.h)) own.add(one.h);
+  }
+  const gone = [];
+  for (const hash of own) {
+    if (await discard(env, hash)) gone.push(hash);
+  }
+  const favs = await favsOf(env, uuid);
+  await env.CORPUS.delete('fav:' + uuid);
+  const stars = await starMap(env);
+  let changed = false;
+  for (const hash of favs.h) {
+    if (!(hash in stars)) continue;
+    stars[hash] = Math.max(0, (Number(stars[hash]) || 0) - 1);
+    if (!stars[hash]) delete stars[hash];
+    changed = true;
+  }
+  for (const hash of gone) {
+    if (!(hash in stars)) continue;
+    delete stars[hash];
+    changed = true;
+  }
+  if (changed) await env.CORPUS.put('stars', JSON.stringify(stars));
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'prev:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      if (k.name.split(':')[2] === uuid) await env.CORPUS.delete(k.name);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+}
+
+async function forgetDiscord(env, id) {
+  const record = await account(env, id);
+  if (record && UUID.test(record.u || '') && await env.CORPUS.get('l:' + record.u) === id) {
+    await env.CORPUS.delete('l:' + record.u);
+  }
+  await env.CORPUS.delete('d:' + id);
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'fb:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      if (parseRecord(await env.CORPUS.get(k.name)).uid === id) await env.CORPUS.delete(k.name);
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+}
+
+async function handleDeleteMe(request, env, now) {
+  const user = await who(request, env, now);
+  const session = user ? null : await discordSession(request, env, now);
+  if (!user && !session) return no('login first', 401);
+  const discord = user ? user.discord || await env.CORPUS.get('l:' + user.uuid) : session.id;
+  if (user) {
+    await forgetPlayer(env, user.uuid, now);
+    await env.CORPUS.delete('l:' + user.uuid);
+  }
+  if (discord && DISCORD_ID.test(discord)) await forgetDiscord(env, discord);
+  return json({ ok: true }, 200, { 'cache-control': 'no-store' });
 }
 
 /**
@@ -2173,10 +2336,11 @@ async function handleAdminCapes(request, env, now) {
   for (const group of groups) {
     const wearers = capes.filter((cape) => cape.h === group.h);
     group.owners = wearers.map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v,
-      private: Boolean(cape.q), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
+      vis: visibility(cape), pending: Boolean(cape.r), worn: Boolean(cape.w) }));
     group.stars = Number(stars[group.h]) || 0;
     // 管理的人看得到全部：沒有人公開的標「不公開」，有人在等審核的標「待審核」
-    group.hidden = wearers.every((cape) => cape.q || cape.r);
+    group.hidden = wearers.every((cape) => !listed(cape));
+    group.vis = groupVisibility(wearers);
     group.pending = wearers.some((cape) => cape.r);
   }
   // 沒有人穿、還在倒數的：管理的人全部看得到（原本不公開的也是），要刪可以馬上刪
@@ -2184,7 +2348,7 @@ async function handleAdminCapes(request, env, now) {
   for (const hash of Object.keys(idle)) {
     if (capes.some((cape) => cape.h === hash)) continue;
     groups.push({ ...idleGroup(hash, idle[hash]), owners: [], stars: Number(stars[hash]) || 0,
-      hidden: Boolean(idle[hash].q), pending: false });
+      hidden: Boolean(idle[hash].q), vis: idleVisibility(idle[hash]), pending: false });
   }
   return json({ capes: groups, keep: IDLE_KEEP_MS, now }, 200, { 'cache-control': 'no-store' });
 }
@@ -3515,7 +3679,7 @@ async function botCape(env, text, name) {
   const mine = capes.find((c) => String(c.n || '').toLowerCase() === name.toLowerCase());
   if (!mine) return { content: botFmt(text.noCape, { name }) };
   if (mine.r) return { content: botFmt(text.pendingCape, { name: mine.n }) };
-  if (mine.q) return { content: botFmt(text.privateCape, { name: mine.n }) };
+  if (visibility(mine) !== 'public') return { content: botFmt(text.privateCape, { name: mine.n }) };
   return {
     embeds: [{
       title: botFmt(text.capeOf, { name: mine.n }), url: SITE + '/capes', color: 0x7fd08a,
@@ -3748,6 +3912,7 @@ const site = {
     if (route === 'POST /link') return handleLink(request, env, now);
     if (route === 'POST /unlink') return handleUnlink(request, env, now);
     if (route === 'GET /me') return handleMe(request, env, now);
+    if (route === 'POST /me/delete') return handleDeleteMe(request, env, now);
     if (route === 'POST /hello') return handleHello(request, env, now);
     if (route === 'GET /list') return handleList(env, now);
     if (route === 'PUT /cape') return handleUpload(request, env, now);
@@ -3795,9 +3960,10 @@ const site = {
     if (route === 'POST /cape/wear') return handleWear(request, env, now);
     if (route === 'POST /cape/restore') return handleRestore(request, env, now);
     if (route === 'POST /cape/star') return handleStar(request, env, now);
-    if (route === 'POST /cape/public') return handlePublic(request, env, now);
+    if (route === 'POST /cape/public' || route === 'POST /cape/visibility') return handlePublic(request, env, now);
     if (route === 'POST /cape/forget') return handleForget(request, env, now);
     if (route === 'GET /capes/mine') return handleMine(request, env, now);
+    if (route.startsWith('GET /capes/')) return handleCapeLink(request, env, now, route.slice('GET /capes/'.length));
     if (route === 'GET /admin/reviews') return handleReviews(request, env, now);
     if (route === 'POST /admin/review') return handleReviewAdd(request, env, now);
     if (route === 'POST /admin/unreview') return handleReviewRemove(request, env, now);
