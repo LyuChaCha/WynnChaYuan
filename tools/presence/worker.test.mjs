@@ -3161,6 +3161,37 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
     && indexedEnv.CORPUS.ops.list - listsBefore <= 3);
 }
 
+{
+  const broken = { CORPUS: { ...fakeKv(), list: async () => { throw new Error('KV list exploded: secret detail'); },
+    get: async () => null, getWithMetadata: async () => ({ value: null, metadata: null }) } };
+  const logged = [];
+  const realError = console.error;
+  console.error = (...args) => logged.push(args.join(' '));
+  let answer;
+  try {
+    answer = await worker.fetch(new Request('https://x.test/api/list'), broken);
+  } catch (e) {
+    answer = null;
+  } finally {
+    console.error = realError;
+  }
+  const text = answer ? await answer.text() : '';
+  check('★ 沒接住的錯誤回 JSON 500，不是 Cloudflare 的錯誤頁', answer && answer.status === 500
+    && answer.headers.get('content-type').startsWith('application/json') && JSON.parse(text).why === 'server error');
+  check('★ 錯誤內容不外洩，但記在 log（含路徑）', !text.includes('exploded') && logged.length === 1
+    && logged[0].includes('request failed') && logged[0].includes('/api/list') && logged[0].includes('KV list exploded'));
+  const page = await worker.fetch(new Request('https://x.test/', { headers: { 'accept-language': 'en' } }), broken);
+  check('網頁本身不靠 KV，照樣出得來', page.status === 200);
+  const cronLogs = [];
+  console.error = (...args) => cronLogs.push(args.join(' '));
+  try {
+    await worker.scheduled({}, broken);
+  } finally {
+    console.error = realError;
+  }
+  check('★ 每天的排程：一件失敗記下來，另一件照樣跑', cronLogs.some((line) => line.includes('scheduled failed') && line.includes('tidy')));
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));

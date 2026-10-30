@@ -1,5 +1,5 @@
 import { isStaff } from './admin.js';
-import { discordSession, publicId, who } from './auth.js';
+import { discordOn, discordSession, publicId, who } from './auth.js';
 import { MAX_CAPE_BYTES, MAX_PLAIN_CAPE_BYTES, hasPerk, listed, visibility } from './capes.js';
 import { credits } from './credits.js';
 import { ID, day, json, no, readJson } from './http.js';
@@ -202,5 +202,16 @@ export async function handleMe(request, env, now) {
       public: visibility(cape.metadata) === 'public', vis: visibility(cape.metadata), listed: listed(cape.metadata),
       pending: Boolean(cape.metadata.r) } : null,
     review: Boolean(await env.CORPUS.get('review:' + user.uuid)),
+  });
+}
+
+export async function handleStatus(env) {
+  const list = await storedList(env);
+  return json({
+    what: 'WynnChaYuan',
+    users: list ? list.users.length : 0,
+    capes: list ? Object.keys(list.capes).length : 0,
+    uploads: env.UPLOADS || 'tiered',
+    discord: discordOn(env),
   });
 }
