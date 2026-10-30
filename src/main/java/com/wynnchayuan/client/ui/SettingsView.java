@@ -705,17 +705,8 @@ public final class SettingsView extends Surface {
             float cardH = cardHeight(card);
             if (cy + cardH >= y && cy < y + h) {
                 Row.Group g = card.group();
-                Ui.pane(c, x, cy, cardW, cardH, Ui.R2, Ui.CARD,
-                        g.tool() ? Ui.alpha(accent, 0x66) : Ui.LINE);
-                String count = String.valueOf(card.rows().size());
-                String title = Ui.fit(c, g.title().get(), (int) (cardW - 34));
-                c.text(title, x + 9, cy + 6, g.tool() ? accent : Ui.TEXT_3);
-                float lineL = x + 9 + c.width(title) + 6;
-                float lineR = x + cardW - 12 - c.width(count);
-                if (lineR > lineL) {
-                    c.fill(lineL, cy + 9.5f, lineR, cy + 9.5f + c.px(), Ui.LINE);
-                }
-                c.text(count, x + cardW - 8 - c.width(count), cy + 6, Ui.FAINT);
+                card(x, cy, cardW, cardH, g.title().get(), String.valueOf(card.rows().size()),
+                     g.tool());
                 float ry = cy + GROUP_HEAD + 1;
                 for (Row r : card.rows()) {
                     float rh = rowHeight(r);
@@ -939,26 +930,9 @@ public final class SettingsView extends Surface {
 
     private void toggle(Row r, float right, float y) {
         boolean on = r.on.getAsBoolean();
-        float t = animate("t:" + r.id, on ? 1f : 0f, 55f);
-        float w = 26;
-        float h = 14;
-        float x = right - w;
-        float ty = y + 1;
-        boolean hot = over(x - 2, y - 2, w + 4, CTRL_H + 4);
-        float g = glow("tg:" + r.id, hot);
-        Ui.halo(c, x, ty, w, h, h / 2f, accent, g);
-        c.round(x, ty, w, h, h / 2f, Ui.mix(Ui.FIELD, Ui.alpha(accent, 0x66), t));
-        c.ring(x, ty, w, h, h / 2f, c.px(), Ui.mix(Ui.TRACK_OFF, accent, t));
-        float knob = 10;
-        float kx = x + 2 + (w - 4 - knob) * t;
-        c.round(kx, ty + 2, knob, knob, knob / 2f, Ui.mix(Ui.KNOB_OFF, accent, t));
-        zone(x - 2, y - 2, w + 4, CTRL_H + 4, (px, py, b) -> {
-            host.click();
-            r.flip.run();
-        });
         String text = on ? (r.onText != null ? r.onText.get() : host.tr("mode.on"))
                          : host.tr("mode.off");
-        c.text(text, x - 5 - c.width(text), y + 4, Ui.mix(Ui.HINT, accent, t));
+        toggle(r.id, right, y, on, text, r.flip);
     }
 
     // ---- 分段
@@ -971,54 +945,7 @@ public final class SettingsView extends Surface {
             button("x:" + r.id, end - bw, y, bw, CTRL_H, label, true, false, null, r.extra);
             end -= bw + 5;
         }
-        int n = Math.max(1, r.options.size());
-        float w = end - left;
-        float inner = w - 2;
-        float[] cellX = new float[n + 1];
-        float widest = 0;
-        float sum = 0;
-        for (Row.Option o : r.options) {
-            widest = Math.max(widest, c.width(o.label()));
-            sum += c.width(o.label()) + 12;
-        }
-        // 等寬排得下就等寬；排不下改成照字數分，長的那一格多拿一點
-        boolean even = widest + 6 <= inner / n;
-        cellX[0] = left + 1;
-        for (int i = 0; i < n; i++) {
-            float cw = even || r.options.isEmpty() ? inner / n
-                    : inner * (c.width(r.options.get(i).label()) + 12) / Math.max(1f, sum);
-            cellX[i + 1] = cellX[i] + cw;
-        }
-        int at = Math.max(0, Math.min(n - 1, r.selected.getAsInt()));
-        boolean hotAny = over(left, y, w, CTRL_H);
-        float g = glow("sg:" + r.id, hotAny);
-        Ui.halo(c, left, y, w, CTRL_H, Ui.R1, accent, g * 0.6f);
-        Ui.pane(c, left, y, w, CTRL_H, Ui.R1, Ui.FIELD,
-                Ui.mix(Ui.BORDER, Ui.alpha(accent, 0x70), g));
-        Row.Tone tone = r.options.isEmpty() ? Row.Tone.PLAIN : r.options.get(at).tone();
-        // 滑塊：位置與寬度各自往選到的那一格靠過去
-        float tx = animate("sx:" + r.id, cellX[at] - left, 60f);
-        float tw = animate("sw:" + r.id, cellX[at + 1] - cellX[at], 60f);
-        c.round(left + tx, y + 1.5f, tw, CTRL_H - 3, Ui.R1 - 1.5f,
-                colourTo("sc:" + r.id, host.tone(tone)));
-        for (int i = 0; i < r.options.size(); i++) {
-            Row.Option o = r.options.get(i);
-            float cx = cellX[i];
-            float cw = cellX[i + 1] - cellX[i];
-            boolean on = i == at;
-            boolean hot = !on && over(cx, y, cw, CTRL_H);
-            String text = Ui.fit(c, o.label(), (int) (cw - 4));
-            int ink = on ? (tone == Row.Tone.OFF ? Ui.TEXT : Ui.ON_ACCENT)
-                         : (hot ? Ui.TEXT : Ui.TEXT_3);
-            c.text(text, cx + (cw - c.width(text)) / 2f, y + 4, ink);
-            int index = i;
-            zone(cx, y, cw, CTRL_H, (px, py, b) -> {
-                if (index != r.selected.getAsInt()) {
-                    host.click();
-                    r.pick.accept(index);
-                }
-            });
-        }
+        segmented(r.id, left, end, y, r.options, r.selected, r.pick, host::tone);
     }
 
     // ---- 滑桿

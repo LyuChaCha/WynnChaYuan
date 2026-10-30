@@ -89,7 +89,7 @@ public final class SubViewsTest {
                     inside(at, one.getValue(), size[0], size[1]);
                     apart(at, one.getValue());
                     frames++;
-                    if (size[0] == 640 || (size[0] == 427 && lang.equals("ru_ru"))) {
+                    if (size[0] == 640 || (size[0] == 427 && (lang.equals("ru_ru") || one.getKey().startsWith("firstrun")))) {
                         ImageIO.write(c.image, "png", new File(out,
                                 lang + "-" + one.getKey() + (size[0] == 640 ? "" : "-small") + ".png"));
                     }
@@ -379,7 +379,12 @@ public final class SubViewsTest {
                             java.util.function.IntConsumer set) {
             Row row = Row.segment(key, () -> shell.tr(key), () -> shell.tr(key + ".hint"));
             for (String mode : modes) {
-                row.option(shell.tr(mode), Row.Tone.ACCENT);
+                row.option(shell.tr(mode), switch (mode) {
+                    case "mode.replace" -> Row.Tone.REPLACE;
+                    case "mode.both", "items.names.both" -> Row.Tone.BOTH;
+                    case "mode.off" -> Row.Tone.OFF;
+                    default -> Row.Tone.ACCENT;
+                });
             }
             return row.selected(get).pick(set);
         }
@@ -389,20 +394,35 @@ public final class SubViewsTest {
         }
 
         @Override
-        public List<Row.Group> custom() {
+        public int tone(Row.Tone tone) {
+            return switch (tone) {
+                case REPLACE -> ModeColours.replace(0xFF6FA8D8);
+                case BOTH -> ModeColours.both(0xFF6FA8D8);
+                case OFF -> 0x40FFFFFF;
+                default -> 0xFF6FA8D8;
+            };
+        }
+
+        private Row.Tab tab(String key, String name, Icons.Icon icon, List<Row> rows) {
+            return new Row.Tab(key, () -> shell.tr(name), () -> shell.tr(name + ".about"), icon,
+                    Preview.Scene.WORLD, List.of(new Row.Group(() -> shell.tr(name), false, rows)));
+        }
+
+        @Override
+        public List<Row.Tab> custom() {
             return List.of(
-                    new Row.Group(() -> shell.tr("tab.items"), false, List.of(
+                    tab("items", "tab.items", Icons.Icon.BOW, List.of(
                             segment("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
                                     () -> tooltip, i -> tooltip = i),
                             segment("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
                                     () -> names, i -> names = i),
                             toggle("world.wynntils", () -> wynntils, () -> wynntils = !wynntils))),
-                    new Row.Group(() -> shell.tr("tab.dialogue"), false, List.of(
+                    tab("dialogue", "tab.dialogue", Icons.Icon.BUBBLE, List.of(
                             segment("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
                                     () -> dialogue, i -> dialogue = i),
                             segment("dialogue.choices", new String[] {"mode.box", "mode.replace", "mode.off"},
                                     () -> choices, i -> choices = i))),
-                    new Row.Group(() -> shell.tr("tab.world"), false, List.of(
+                    tab("world", "tab.world", Icons.Icon.COMPASS, List.of(
                             segment("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
                                     () -> nametag, i -> nametag = i),
                             segment("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
@@ -412,9 +432,12 @@ public final class SubViewsTest {
                             toggle("world.scoreboard", () -> scoreboard, () -> scoreboard = !scoreboard),
                             toggle("world.titles", () -> titles, () -> titles = !titles),
                             toggle("world.bossbar", () -> bossbar, () -> bossbar = !bossbar))),
-                    new Row.Group(() -> shell.tr("group.privacy"), false, List.of(
+                    new Row.Tab("privacy", () -> shell.tr("firstrun.privacy.short"),
+                            () -> shell.tr("firstrun.privacy.about"), Icons.Icon.LEAF,
+                            Preview.Scene.CAPE, List.of(new Row.Group(() -> shell.tr("group.privacy"),
+                            false, List.of(
                             toggle("privacy.online", () -> online, () -> online = !online),
-                            toggle("privacy.optout", () -> optout, () -> optout = !optout))));
+                            toggle("privacy.optout", () -> optout, () -> optout = !optout))))));
         }
     }
 
@@ -424,7 +447,7 @@ public final class SubViewsTest {
         press(view, "b:custom");
         if (category > 0) {
             render(view, lang, size[0], size[1], 1, -100, -100);
-            press(view, "c:cat:" + category);
+            press(view, "n:" + category);
         }
         return view;
     }
@@ -464,7 +487,7 @@ public final class SubViewsTest {
                 && view.spot("c:items.tooltip:0") != null && view.spot("c:world.chat:0") == null);
         press(view, "t:world.wynntils");
         must("自訂：開關點得動（Wynntils 介面 → 關）", !host.wynntils);
-        press(view, "c:cat:2");
+        press(view, "n:2");
         render(view, "zh_tw", 640, 360, 1, -100, -100);
         must("自訂：換到世界與聊天那一類", view.category() == 2
                 && view.spot("c:items.tooltip:0") == null);
@@ -473,7 +496,7 @@ public final class SubViewsTest {
         scrollTo(view, "t:world.bossbar");
         float[] last = view.spot("t:world.bossbar");
         must("自訂：這一類最後一項捲得到", last != null && last[3] > 0);
-        press(view, "c:cat:3");
+        press(view, "n:3");
         render(view, "zh_tw", 640, 360, 1, -100, -100);
         press(view, "t:privacy.optout");
         must("自訂：隱私那一類的開關點得動", host.optout);

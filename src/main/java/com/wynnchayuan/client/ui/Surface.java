@@ -349,11 +349,13 @@ public abstract class Surface {
                           boolean enabled, boolean primary, Icons.Icon icon, Runnable go) {
         boolean hot = enabled && over(x, y, w, h);
         float g = glow("b:" + key, hot);
+        float pressed = animate("p:" + key, 0f, 70f);
         Ui.halo(c, x, y, w, h, Ui.R1, accent, g);
         if (primary && enabled) {
-            c.round(x, y, w, h, Ui.R1, Ui.mix(accent, 0xFFFFFFFF, g * 0.14f));
+            c.round(x, y, w, h, Ui.R1, Ui.mix(Ui.mix(accent, 0xFFFFFFFF, g * 0.14f),
+                    0xFF000000, pressed * 0.18f));
         } else {
-            Ui.pane(c, x, y, w, h, Ui.R1, Ui.RAISED, edge(g));
+            Ui.pane(c, x, y, w, h, Ui.R1, Ui.mix(Ui.RAISED, 0x30FFFFFF, pressed), edge(g));
         }
         int ink = !enabled ? Ui.fade(Ui.FAINT, 0.7f)
                 : primary ? Ui.ON_ACCENT : Ui.mix(Ui.TEXT_2, Ui.TEXT, g);
@@ -367,10 +369,78 @@ public abstract class Surface {
         }
         zone(x, y, w, h, (px, py, b) -> {
             if (enabled) {
+                anim.put("p:" + key, 1f);
                 click();
                 go.run();
             }
         }).key = "b:" + key;
+    }
+
+    protected void card(float x, float y, float w, float h, String title, String count,
+                        boolean tool) {
+        Ui.pane(c, x, y, w, h, Ui.R2, Ui.CARD, tool ? Ui.alpha(accent, 0x66) : Ui.LINE);
+        String shown = Ui.fit(c, title, (int) (w - 34));
+        c.text(shown, x + 9, y + 6, tool ? accent : Ui.TEXT_3);
+        float lineL = x + 9 + c.width(shown) + 6;
+        float lineR = x + w - 12 - (count == null ? 0 : c.width(count));
+        if (lineR > lineL) {
+            c.fill(lineL, y + 9.5f, lineR, y + 9.5f + c.px(), Ui.LINE);
+        }
+        if (count != null) {
+            c.text(count, x + w - 8 - c.width(count), y + 6, Ui.FAINT);
+        }
+    }
+
+    protected void segmented(String key, float left, float right, float y,
+                             List<Row.Option> options, java.util.function.IntSupplier selected,
+                             java.util.function.IntConsumer pick,
+                             java.util.function.ToIntFunction<Row.Tone> tones) {
+        int n = Math.max(1, options.size());
+        float w = right - left;
+        float inner = w - 2;
+        float[] cellX = new float[n + 1];
+        float widest = 0;
+        float sum = 0;
+        for (Row.Option o : options) {
+            widest = Math.max(widest, c.width(o.label()));
+            sum += c.width(o.label()) + 12;
+        }
+        boolean even = widest + 6 <= inner / n;
+        cellX[0] = left + 1;
+        for (int i = 0; i < n; i++) {
+            float cw = even || options.isEmpty() ? inner / n
+                    : inner * (c.width(options.get(i).label()) + 12) / Math.max(1f, sum);
+            cellX[i + 1] = cellX[i] + cw;
+        }
+        int at = Math.max(0, Math.min(n - 1, selected.getAsInt()));
+        boolean hotAny = over(left, y, w, CTRL_H);
+        float g = glow("sg:" + key, hotAny);
+        Ui.halo(c, left, y, w, CTRL_H, Ui.R1, accent, g * 0.6f);
+        Ui.pane(c, left, y, w, CTRL_H, Ui.R1, Ui.FIELD,
+                Ui.mix(Ui.BORDER, Ui.alpha(accent, 0x70), g));
+        Row.Tone tone = options.isEmpty() ? Row.Tone.PLAIN : options.get(at).tone();
+        float tx = animate("sx:" + key, cellX[at] - left, 60f);
+        float tw = animate("sw:" + key, cellX[at + 1] - cellX[at], 60f);
+        c.round(left + tx, y + 1.5f, tw, CTRL_H - 3, Ui.R1 - 1.5f,
+                colourTo("sc:" + key, tones.applyAsInt(tone)));
+        for (int i = 0; i < options.size(); i++) {
+            Row.Option o = options.get(i);
+            float cx = cellX[i];
+            float cw = cellX[i + 1] - cellX[i];
+            boolean on = i == at;
+            boolean hot = !on && over(cx, y, cw, CTRL_H);
+            String text = Ui.fit(c, o.label(), (int) (cw - 4));
+            int ink = on ? (tone == Row.Tone.OFF ? Ui.TEXT : Ui.ON_ACCENT)
+                         : (hot ? Ui.TEXT : Ui.TEXT_3);
+            c.text(text, cx + (cw - c.width(text)) / 2f, y + 4, ink);
+            int index = i;
+            zone(cx, y, cw, CTRL_H, (px, py, b) -> {
+                if (index != selected.getAsInt()) {
+                    click();
+                    pick.accept(index);
+                }
+            }).key = "c:" + key + ":" + i;
+        }
     }
 
     /** 按鈕照自己的字要多寬。 */
