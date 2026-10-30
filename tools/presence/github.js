@@ -12,6 +12,17 @@ export function base64ToUtf8(base64) {
   return new TextDecoder().decode(base64Bytes(base64.replace(/\s/g, '')));
 }
 
+const CONTROL_CHARS = new RegExp('[' + String.fromCharCode(0) + '-' + String.fromCharCode(31) + String.fromCharCode(127) + ']+', 'g');
+const ZERO_WIDTH_SPACE = String.fromCharCode(0x200b);
+
+export const withoutMentions = (text) => String(text).replace(CONTROL_CHARS, ' ').trim().replace(/@/g, '@' + ZERO_WIDTH_SPACE);
+
+const WORD_CHAR = /[\p{L}\p{N}]/u;
+
+export const markdownText = (text) => withoutMentions(String(text)
+  .replace(/[\\`*{}[\]()<>#+!|~]/g, '\\$&')
+  .replace(/_/g, (mark, at, all) => (WORD_CHAR.test(all[at - 1] ?? '') && WORD_CHAR.test(all[at + 1] ?? '') ? mark : '\\_')));
+
 export function githubClient(env) {
   return (path, init = {}) => fetch('https://api.github.com/repos/' + REPO + path, {
     ...init,
