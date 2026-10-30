@@ -1,7 +1,7 @@
 import { isStaff } from './admin.js';
 import { discordOn, discordSession, publicId, who } from './auth.js';
 import { MAX_CAPE_BYTES, MAX_PLAIN_CAPE_BYTES, hasPerk, listed, visibility } from './capes.js';
-import { credits } from './credits.js';
+import { credits, isDeveloper } from './credits.js';
 import { ID, day, json, no, readJson } from './http.js';
 import { listAll, quietPut } from './kv.js';
 
@@ -185,7 +185,7 @@ export async function handleMe(request, env, now) {
   const list = await credits(now);
   const name = user.name.toLowerCase();
   const member = Boolean(list && list.names.has(name)) || await hasPerk(env, user.uuid);
-  const developer = Boolean(list && list.developers.has(name));
+  const developer = await isDeveloper(user, now);
   return json({
     ok: true,
     linked: true,

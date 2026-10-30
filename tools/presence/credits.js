@@ -1,6 +1,6 @@
 import { moderator } from './admin.js';
 import { GitHubError, githubRepository } from './github.js';
-import { NAME, json, no, readJson } from './http.js';
+import { NAME, json, no, plainUuid, readJson } from './http.js';
 import { TR_LANGS } from './translate.js';
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
@@ -163,25 +163,29 @@ export async function credits(now) {
     if (answer.status === 200) {
       const names = new Set();
       const developers = new Set();
+      const developerUuids = new Set();
       const sections = (await answer.json()).sections || [];
       for (const section of sections) {
         const dev = typeof section.key === 'string' && section.key.endsWith('.developers');
         for (const member of section.members || []) {
           if (typeof member.mc !== 'string' || !member.mc) continue;
           names.add(member.mc.toLowerCase());
-          if (dev) developers.add(member.mc.toLowerCase());
+          if (!dev) continue;
+          const uuid = plainUuid(member.uuid);
+          if (uuid) developerUuids.add(uuid);
+          else developers.add(member.mc.toLowerCase());
         }
       }
-      cachedCredits = { t: now, names, developers, team: teamOf(sections) };
+      cachedCredits = { t: now, names, developers, developerUuids, team: teamOf(sections) };
     }
   } catch (e) {
   }
   return cachedCredits;
 }
 
-export async function isDeveloper(name, now) {
+export async function isDeveloper(user, now) {
   const list = await credits(now);
-  return Boolean(list && list.developers.has(name.toLowerCase()));
+  return Boolean(list && (list.developerUuids.has(user.uuid) || list.developers.has(user.name.toLowerCase())));
 }
 
 const CREDITS_PATH = 'src/main/resources/assets/wynnchayuan/credits.json';
