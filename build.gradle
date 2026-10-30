@@ -1774,6 +1774,14 @@ tasks.register('runErrorDebugChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runErrorDebugChecks' }
 
+tasks.register('runConfigRoundTripChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.ConfigRoundTripTest'
+}
+tasks.named('check') { dependsOn 'runConfigRoundTripChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
