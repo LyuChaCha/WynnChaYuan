@@ -284,19 +284,17 @@ export async function handleAddCredit(request, env, now) {
   const by = await moderator(request, env, now);
   if (!by) return no('forbidden', 403);
   if (!env.GITHUB_TOKEN) return no('github not configured', 503);
-  let entry;
-  try {
-    entry = JSON.parse(await request.text());
-  } catch (e) {
-    return no('bad request');
-  }
+  const entry = await readJson(request);
+  if (!entry) return no('bad request');
   const repo = githubRepository(env);
+  let branch = null;
   try {
     const current = await repo.readFile(CREDITS_PATH, 'main');
     const changed = addMember(current.text, entry);
     if (changed.why) return no(changed.why, changed.why === 'already listed' ? 409 : 400);
-    const branch = 'credits/add-' + entry.mc.toLowerCase() + '-' + now;
-    await repo.createBranch(branch);
+    const name = 'credits/add-' + entry.mc.toLowerCase() + '-' + now;
+    await repo.createBranch(name);
+    branch = name;
     const title = '名單：' + SECTIONS[entry.section] + '加入 ' + entry.name.trim() + '（' + entry.mc + '）';
     await repo.writeFile(CREDITS_PATH, { message: title, text: changed.text, sha: current.sha, branch });
     const url = await repo.openPull({
@@ -308,6 +306,7 @@ export async function handleAddCredit(request, env, now) {
     });
     return json({ ok: true, url });
   } catch (e) {
+    if (branch) await repo.deleteBranch(branch);
     return no(e instanceof GitHubError ? e.message : 'github unreachable', 502);
   }
 }
@@ -347,6 +346,7 @@ export function addMemberTeams(text, mc, langs) {
 export async function commitTeams(env, by, now, change) {
   if (!env.GITHUB_TOKEN) return { why: 'github not configured', status: 503 };
   const repo = githubRepository(env);
+  let created = null;
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
     let branch = 'credits/teams-' + day;
@@ -357,7 +357,10 @@ export async function commitTeams(env, by, now, change) {
     const current = await repo.readFile(CREDITS_PATH, reuse ? branch : 'main');
     const changed = change(current.text);
     if (changed.why) return { why: changed.why, status: TEAMS_WHY_STATUS[changed.why] || 400 };
-    if (!reuse) await repo.createBranch(branch);
+    if (!reuse) {
+      await repo.createBranch(branch);
+      created = branch;
+    }
     await repo.writeFile(CREDITS_PATH, { message: '名單：' + changed.name + ' 的翻譯團隊與貢獻項目', text: changed.text, sha: current.sha, branch });
     if (!reuse) {
       url = String(await repo.openPull({
@@ -369,6 +372,7 @@ export async function commitTeams(env, by, now, change) {
     }
     return { url, added: reuse };
   } catch (e) {
+    if (created) await repo.deleteBranch(created);
     return { why: e instanceof GitHubError ? e.message : 'github unreachable', status: 502 };
   }
 }
