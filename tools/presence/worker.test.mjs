@@ -603,10 +603,24 @@ const { LANGS, PATHS, TEXT, pickLang, render } = await import('./site.js');
 const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
 const english = {};
+const served = {};
+const withScripts = async (html) => {
+  let out = html;
+  for (const m of [...html.matchAll(/<script src="(\/js\/[^"]+)"><\/script>/g)]) {
+    if (!served[m[1]]) {
+      const answer = await worker.fetch(new Request('https://x.test' + m[1]), env);
+      served[m[1]] = { answer, code: await answer.text() };
+    }
+    out = out.replace(m[0], () => '<script>' + served[m[1]].code + '</script>');
+  }
+  return out;
+};
+const rawPages = {};
 for (const path of ['/', '/features', '/capes', '/account', '/admin', '/translate', '/feedback', '/privacy', '/terms']) {
-  english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
+  english[path] = await withScripts(await (await inLang(path, { cookie: 'lang=en' })).text());
   r = await inLang(path, { cookie: 'lang=zh' });
-  pages[path] = await r.text();
+  rawPages[path] = await r.text();
+  pages[path] = await withScripts(rawPages[path]);
   check(path + ' 兩種語言都填滿了，沒有漏掉的 %%鍵%%',
     !/%%[\w.]+%%/.test(pages[path]) && !/%%[\w.]+%%/.test(english[path]));
   check(path + ' 的 lang 屬性跟著語言走', pages[path].includes('<html lang="zh-Hant">')
@@ -710,7 +724,7 @@ const cjk = /[㐀-鿿＀-￯　-〿]/;
 for (const path of PATHS) {
   const left = visible(english[path]).match(cjk);
   check('★ 英文版的 ' + path + ' 看得到的字裡沒有中文' + (left ? '（' + left[0] + '）' : ''), !left);
-  const strings = (english[path].match(/var L = (.*);$/m) || [])[1] || '';
+  const strings = (english[path].match(/<script type="application\/json" id="site-text">(.*?)<\/script>/s) || [])[1] || '';
   check('英文版的 ' + path + ' 程式用的字也沒有中文', strings.length > 100 && !cjk.test(strings));
   check('中文版的 ' + path + ' 真的是中文', cjk.test(visible(pages[path])));
 }
@@ -764,8 +778,16 @@ check('首頁有下載的連結：主要按鈕是 GitHub Releases、其次 Curse
 check('★ 沒有任何一頁連到我們在 Modrinth 的專案頁（2026-10 起不在 Modrinth 上架）',
   PATHS.every((path) => !pages[path].includes('modrinth.com/mod/wynnchayuan') && !english[path].includes('modrinth.com/mod/wynnchayuan')));
 check('帳號頁講了怎麼從遊戲裡登入', pages['/account'].includes('F6') && pages['/account'].includes('披風一覽'));
-check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視',
-  (r.headers.get('content-security-policy') || '').includes("script-src 'unsafe-inline' https://cdn.jsdelivr.net"));
+check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視：不准頁面裡的內嵌程式',
+  (r.headers.get('content-security-policy') || '').includes("script-src 'self' https://cdn.jsdelivr.net;")
+  && !/script-src[^;]*unsafe-inline/.test(r.headers.get('content-security-policy') || ''));
+check('★ 每一頁都沒有內嵌程式：只有外部檔案與 JSON 資料', Object.values(rawPages).every((html) =>
+  [...html.matchAll(/<script([^>]*)>/g)].every((m) => / src="/.test(m[1]) || / type="application\/json"/.test(m[1]))));
+check('★ 外部程式檔：JavaScript、可以長期快取、網址帶內容的雜湊', Object.entries(served).length >= 9
+  && Object.entries(served).every(([path, { answer }]) => answer.status === 200 && /^\/js\/[a-z-]+\.[0-9a-f]{16}\.js$/.test(path)
+    && answer.headers.get('content-type').startsWith('text/javascript') && answer.headers.get('cache-control').includes('immutable')
+    && answer.headers.get('x-content-type-options') === 'nosniff'));
+check('不認得的程式檔 404', (await worker.fetch(new Request('https://x.test/js/nope.0000000000000000.js'), env)).status === 404);
 r = await worker.fetch(new Request('https://x.test/gallery', { redirect: 'manual' }), env);
 check('舊的 /gallery 轉到 /capes', r.status === 302 && r.headers.get('location').endsWith('/capes'));
 check('沒有 /api 的舊路徑不在了', (await worker.fetch(new Request('https://x.test/list'), env)).status === 404
@@ -1325,7 +1347,7 @@ check('★ 團隊的每個人、每個公會都連到 Wynncraft 上他自己的�
   check('★ 服務條款講了第一次會顯示使用須知；功能頁講了同意連線功能才會報到', LANGS.every((lang) => /使用須知|使用须知|Before you play|ご利用にあたって|이용 안내|Перед игрой|Antes de jugar|Oynamadan önce/.test(TEXT[lang]['terms.body'])
     && /同意連線功能|同意联网功能|agree to online features|オンライン機能に同意|온라인 기능에 동의|согласились на сетевые функции|aceptes las funciones en línea|çevrimiçi özelliklere izin/.test(TEXT[lang]['feat.s3b'])));
 
-  const embedded = (html) => JSON.parse((html.match(/<script>var D = (\{.*?\});\n/s) || [])[1] || '{}');
+  const embedded = (html) => JSON.parse((html.match(/<script type="application\/json" id="demo-data">(\{.*?\})<\/script>/s) || [])[1] || '{}');
   const zh = embedded(pages['/features']);
   const en = embedded(english['/features']);
   check('★ 功能頁有即時預覽：三個分頁、七種譯文語言，分四段', ['items', 'dialogue', 'world']

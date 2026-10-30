@@ -1,6 +1,6 @@
 import { LANGS, PATHS, pickLang, render, renderLost } from './site.js';
 import { handleAdminCapes, handleAdminRemove, handleApprove, handleBans, handlePeople, handlePerkAdd, handlePerkRemove, handlePerks, handleReviewAdd, handleReviewRemove, handleReviews, handleStaff, handleStaffAdd, handleStaffRemove, handleUnban } from './admin.js';
-import { ICONS, font, icon, page, texture } from './assets.js';
+import { ICONS, font, icon, page, script, texture } from './assets.js';
 import { handleChallenge, handleDiscordCallback, handleDiscordStart, handleLink, handleLinkIntent, handleLinkStart, handleLogin, handleUnlink, handleWebLink } from './auth.js';
 import { handleCape, handleCapeLink, handleCapePreview, handleCapes, handleForget, handleIdle, handleMine, handlePublic, handleRemove, handleRestore, handleStar, handleUpload, handleWear, tidy } from './capes.js';
 import { GUILD_SLUG, handleAddCredit, handleCreditTeams, handleGuildAdd, handleGuildImage, handleGuildPicture, handleGuildRemove, handleGuilds, handleTeam } from './credits.js';
@@ -122,6 +122,7 @@ function routeSite(call) {
   }
   if (get && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
   if (get && path.startsWith('/font/')) return font(path);
+  if (get && path.startsWith('/js/')) return script(path);
   if (get && (path.startsWith('/tex/') || path.startsWith('/template/'))) return texture(path);
   if (get && path === '/auth/discord') return handleDiscordStart(request, env, now);
   if (get && path === '/auth/discord/callback') return handleDiscordCallback(request, env, now);

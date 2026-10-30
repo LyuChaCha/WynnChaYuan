@@ -32,6 +32,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `site-layout.js` | 頁首、頁尾、整頁骨架、每一頁都有的程式 |
 | `site-stage.js` | 遊戲畫面的預覽（首頁與功能頁共用） |
 | `site-pages.js` | 每一頁的內容與程式、`render` |
+| `site-scripts.js` | 頁面的程式是外部檔案（`/js/<名字>.<雜湊>.js`，內容的雜湊在網址上，可以長期快取）；CSP 的 `script-src` 不准內嵌程式，頁面要給程式的資料放在 `<script type="application/json">` |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `demo-data.js` | 功能頁即時預覽用的字：選項的名稱與說明（模組設定畫面的語言檔）、場景裡的譯文（語料）。`python tools/presence/build-demo.py` 產生，`--check` 比對；那幾條語料或語言檔改了要重跑 |

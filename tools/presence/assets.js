@@ -4,6 +4,7 @@ import { TEXTURES } from './demo-textures.js';
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
 import { base64Bytes, no } from './http.js';
+import { scriptSource } from './site-scripts.js';
 
 export const ICONS = {
   '/favicon.ico': FAVICON,
@@ -35,7 +36,7 @@ export function page(html, lang, status = 200) {
       'x-frame-options': 'DENY',
       'content-security-policy': "default-src 'self'; "
         + "img-src 'self' data: blob: https://raw.githubusercontent.com https://minotar.net; "
-        + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
+        + "style-src 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; "
         + "connect-src 'self'; base-uri 'none'; form-action 'none'",
     },
   });
@@ -64,6 +65,19 @@ export function texture(path) {
     status: 200,
     headers: {
       'content-type': one.type,
+      'cache-control': 'public, max-age=31536000, immutable',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
+export function script(path) {
+  const code = scriptSource(path.slice('/js/'.length));
+  if (code === null) return no('not found', 404);
+  return new Response(code, {
+    status: 200,
+    headers: {
+      'content-type': 'text/javascript; charset=utf-8',
       'cache-control': 'public, max-age=31536000, immutable',
       'x-content-type-options': 'nosniff',
     },
