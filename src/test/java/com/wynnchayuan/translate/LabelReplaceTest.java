@@ -10,27 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 漂浮名牌是<b>就地替換</b>的，所以絕對不能動到遊戲自己排好的版面。
- *
- * <h2>先前壞在哪</h2>
- * 名牌走的是一般的 {@code translate}：查不到整行就退到逐片段替換，然後跑
- * {@code alignColumns}、{@code recenterColumns}、前導置中補償。那一整套是為
- * <b>tooltip</b> 寫的——tooltip 是「標籤 + 數值」的兩欄表格，欄要對齊。
- *
- * <p>漂浮名牌不是表格，它浮在 3D 世界裡，裡面的偏移是 Wynncraft 自己排的。
- * 更糟的是只要<b>任何一個</b>片段查得到（哪怕只是句子裡的一個詞），
- * 那條路就回傳非 null，於是連幾乎沒翻到的名牌也被重排一次。
- *
- * <p>使用者回報「翻譯讓原始 Wynncraft UI 錯位」：職業選擇的三個<b>全英文</b>
- * 標籤互相疊在一起、蓋住圖示。那些字我們根本沒翻，卻被排版邏輯動過。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>整塊查不到就回傳 {@code null}——原文一個位元都不動</li>
- *   <li>查得到時，遊戲自己的排版偏移<b>原封不動</b>填回去</li>
- * </ol>
- */
 public final class LabelReplaceTest {
 
     private static int failures = 0;
@@ -38,7 +17,6 @@ public final class LabelReplaceTest {
     private static final int WHITE = 0xFFFFFF;
     private static final int GREY = 0xAAAAAA;
 
-    /** Wynncraft 排好的兩行標籤：偏移 + 名稱 ⏎ 偏移 + 標語。 */
     private static StyledText label(String name, String tagline) {
         MutableComponent all = Component.empty();
         all.append(offset(48));
@@ -63,8 +41,6 @@ public final class LabelReplaceTest {
         Path dir = Files.createTempDirectory("wynnchayuan-label");
         FlowedDebug.init(dir);
 
-        // 語料裡只有「Trickster」這個詞，整塊的鍵沒有。
-        // 一般那條路會靠這個詞回傳「翻到一點點」，然後把整塊重排。
         com.google.gson.JsonObject root = new com.google.gson.JsonObject();
         root.addProperty("Trickster", "詭術師");
         root.addProperty("{#}Royal Guard\n{#}Loyal to the crown", "{#}皇家守衛\n{#}效忠王室");
@@ -73,18 +49,15 @@ public final class LabelReplaceTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        // 1. 整塊查不到 —— 一個位元都不能動
         StyledText partial = label("Trickster", "Confuse with clones");
         Component hit = LineTranslator.translateLabel(partial, store);
         check("整塊查不到就回傳 null（實際："
                       + (hit == null ? "null" : hit.getString().replace("\n", " ⏎ ")) + "）",
               hit == null);
 
-        // 一般那條路確實會動它 —— 這就是先前壞掉的原因，順便釘住這個對照
         Component loose = LineTranslator.translate(partial, store);
         check("對照：一般那條路的確會回傳東西（所以先前才會被重排）", loose != null);
 
-        // 2. 整塊查得到 —— 遊戲自己的偏移原封不動
         StyledText whole = label("Royal Guard", "Loyal to the crown");
         Component done = LineTranslator.translateLabel(whole, store);
         check("整塊查得到就翻得出來", done != null);
@@ -102,11 +75,6 @@ public final class LabelReplaceTest {
                   made.length > 1 && made[1] == 16);
         }
 
-        // 3. 狀態圖示那一行變了，名字不能跟著跳回英文。
-        //
-        // 怪物名牌是「名字 + 血條」一行、「狀態圖示」一行，而第二行會隨身上的
-        // 狀態增減。實機回報：給 NPC 一個緩速，牠的名字就變回原文——因為整塊
-        // 的鍵變了。為每種狀態組合各建一個鍵是排列組合，不可能。
         com.google.gson.JsonObject plates = new com.google.gson.JsonObject();
         plates.addProperty("Frosted Guard", "霜衛");
         plates.addProperty("Distorted", "扭曲");
@@ -124,16 +92,10 @@ public final class LabelReplaceTest {
                   out != null && out.getString().contains("霜衛"));
         }
 
-        // ★ 反方向：有字的那一行查不到時仍然整塊放棄，不能半中半英。
         StyledText half = label("Frosted Guard", "Unknown Status");
         check("有一行有字卻查不到就整塊不動",
               LineTranslator.translateLabel(half, store) == null);
 
-        // ★ 狀態列裡的單位字母不算「字」。
-        //
-        // 名牌的狀態列長 「⬤ 12s」「✦ 3 ❄ 5 ⬤ 1s」這樣——那個 s 是秒的單位。
-        // 用「有沒有字母」判斷會把整列當成要翻的文字，查不到就整塊放棄，
-        // 於是 NPC 一中緩速、名字就跳回英文。實機回報的正是這個。
         for (String status : new String[] {
                 "⬤ 12s", "✦ 3 ❄ 5 ⬤ 1s", "❄ 5 ✦ 12", "⬤ 1s"}) {
             StyledText plate = label("Frosted Guard", status);
@@ -144,10 +106,6 @@ public final class LabelReplaceTest {
                   out != null && out.getString().contains("霜衛"));
         }
 
-        // ★ 狀態列寫著狀態詞（湮滅一帶的 Distorted）：名字照翻，狀態詞換成譯文。
-        //
-        // 使用者 2026-10-14 的 captured.json：Annihilation 名牌的狀態列有 Distorted 12s，
-        // 那是一個真的詞，逐行退路查不到就整塊放棄，名字跟著變回英文。
         for (String status : new String[] {"Distorted 12s", "✦ 3 Distorted 5s", "⬤ 1s Distorted 9s"}) {
             StyledText plate = label("Frosted Guard", status);
             Component out = LineTranslator.translateLabel(plate, store);
@@ -156,7 +114,6 @@ public final class LabelReplaceTest {
                   out != null && shown.contains("霜衛") && shown.contains("扭曲")
                           && !shown.contains("Distorted"));
         }
-        // 反方向：Distorted 後面還有別的字，就不是狀態列，查不到仍然整塊放棄
         check("Distorted 後面還有字就不算狀態列",
               LineTranslator.translateLabel(label("Frosted Guard", "Distorted Memories"), store) == null);
 
@@ -167,7 +124,6 @@ public final class LabelReplaceTest {
         return (int) line.getString().chars().filter(c -> c == '\n').count() + 1;
     }
 
-    /** 每一行開頭那段偏移字元解出來的寬度。 */
     private static int[] leads(Component line) {
         java.util.List<Integer> out = new java.util.ArrayList<>();
         int px = 0;

@@ -11,25 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * 任務獎勵列少了行首的圖示（見 {@link LineTranslator#iconlessReward}）。
- *
- * <h2>先前是什麼樣子</h2>
- * 聊天現在送的是 {@code &d            - &7+1 Treasure Boots}，語料收的是帶圖示的
- * {@code {#}- +{~} Treasure Boots}——差一個圖示，整列英文。capture 一次收了七十八列，
- * 每一列帶圖示的那一條都在。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>少了圖示的獎勵列照帶圖示那一條翻，縮排與顏色照舊；</li>
- *   <li>沒帶圖示的鍵照樣優先；帶圖示那一條的譯文不是以圖示開頭就不動；</li>
- *   <li>只認獎勵列——別的行少一個圖示照樣查不到（一般的查表沒有變鬆）；</li>
- *   <li>收集端問「翻了沒」時這種列算翻了；</li>
- *   <li>七個語言的實際語料：capture 裡的那幾列都翻得出來。</li>
- * </ol>
- *
- * <p>語料是測試自己寫的，措辭跟實際語料無關。
- */
 public final class RewardRowTest {
 
     private static int failures = 0;
@@ -69,7 +50,6 @@ public final class RewardRowTest {
         return Component.literal(text).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
 
-    /** 照 log 的分段：粉紅的縮排與破折號、灰色的獎勵。 */
     private static StyledText row(String reward) {
         return StyledText.fromComponent(Component.empty()
                 .append(lit("            - ", PINK))
@@ -110,7 +90,6 @@ public final class RewardRowTest {
                 && LineTranslator.iconlessReward("", store) == null);
     }
 
-    /** 七個語言：capture 裡的那幾列（quest-ui、dungeon、misc 三個檔各挑幾列）。 */
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");

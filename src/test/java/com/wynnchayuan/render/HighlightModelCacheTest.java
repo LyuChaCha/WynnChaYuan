@@ -4,12 +4,6 @@ import net.minecraft.world.item.component.CustomModelData;
 
 import java.util.List;
 
-/**
- * Wynntils 物品高亮的快取（{@link HighlightModelCache}）：算出來的要跟 Wynntils 原本的規則一樣。
- * 規則抄自 Wynntils 4.2.8 的 {@code ItemHighlightFeature.onGetModelData}：前綴是
- * item_tier／profession_ingredient／profession_material／store_tier 的字串換成空字串，
- * 選了「隱藏專業星等」再加上 profession_tier；位置不變，其餘欄位原樣。
- */
 public final class HighlightModelCacheTest {
 
     private static int failures = 0;

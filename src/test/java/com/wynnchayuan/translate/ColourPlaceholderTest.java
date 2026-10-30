@@ -14,51 +14,24 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 譯文可以自己指定顏色：{@code {c1}}、{@code {c:#FF55FF}}、{@code {/}}。
- *
- * <h2>為什麼要有這個功能</h2>
- * 顏色本來是<b>猜</b>出來的：拿原文帶特殊樣式的片段，到譯文裡找同樣的字面。
- * 英文原樣留著的詞找得到，翻成中文的就找不到，那一段只好掉回底色。
- * 整行同色的還能靠位置補救，一行裡混了兩三種顏色的就沒辦法——
- * 實機那張「[Cave Completed] … - Rewards: … +1 Unidentified Helmet」
- * 每一行的顏色都不一樣，譯文出來卻是一片灰。
- *
- * <p>猜不到的時候，唯一知道答案的是譯者。所以讓他直接寫出來。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>{@code {cN}} 真的把原文第 N 個顏色搬過去，粗體之類的裝飾一起搬</li>
- *   <li>同一行裡兩個佔位符各管各的，不會互相污染</li>
- *   <li>{@code {/}} 之後回到底色</li>
- *   <li>編號超出範圍時<b>當作沒寫</b>——顏色不對可以忍，整句變回英文不行</li>
- *   <li>佔位符本身<b>絕對不能</b>漏到畫面上</li>
- * </ol>
- */
 public final class ColourPlaceholderTest {
 
     private static int failures = 0;
 
-    private static final int GREEN = 0x55FF55;    // [Cave Completed]
-    private static final int WHITE = 0xFFFFFF;    // 洞窟名稱
-    private static final int PINK  = 0xFF55FF;    // - Rewards:
-    private static final int GREY  = 0xAAAAAA;    // 內文
-    private static final int GOLD  = 0xFFAA00;    // 譯者自己指定的顏色
+    private static final int GREEN = 0x55FF55;
+    private static final int WHITE = 0xFFFFFF;
+    private static final int PINK  = 0xFF55FF;
+    private static final int GREY  = 0xAAAAAA;
+    private static final int GOLD  = 0xFFAA00;
 
-    /**
-     * 實機「洞穴完成」那一塊的骨架：一則訊息、四行、每一行各有自己的顏色。
-     *
-     * <p>顏色出現的順序就是 {@code {c1}} {@code {c2}} {@code {c3}} 的編號順序，
-     * 見 {@code LineTranslator#palette}。
-     */
     private static StyledText cave() {
         MutableComponent all = Component.empty();
-        all.append(lit("[Cave Completed]", GREEN, false));    // {c1}
+        all.append(lit("[Cave Completed]", GREEN, false));
         all.append(lit("\n", GREY, false));
-        all.append(lit("Grook's Nest", WHITE, true));         // {c2}
+        all.append(lit("Grook's Nest", WHITE, true));
         all.append(lit("\n", GREY, false));
-        all.append(lit("- ", PINK, false));                   // {c3}
-        all.append(lit("Rewards:", GREY, false));             // {c4}
+        all.append(lit("- ", PINK, false));
+        all.append(lit("Rewards:", GREY, false));
         all.append(lit("\n", GREY, false));
         all.append(lit("- ", PINK, false));
         all.append(lit("Sealed Helmet", GREY, false));
@@ -74,7 +47,6 @@ public final class ColourPlaceholderTest {
         Path dir = Files.createTempDirectory("wynnchayuan-colour");
         FlowedDebug.init(dir);
 
-        // 模板就是原文本身：這一塊沒有數值也沒有地名，所以鍵跟畫面上一樣。
         String src = "[Cave Completed]\nGrook's Nest\n- Rewards:\n- Sealed Helmet";
         String dst = "{c1}[洞穴完成]{/}\n{c2}Grook 巢穴{/}\n{c3}- {c4}獎勵：{/}\n"
                    + "{c3}- {c:#FFAA00}封印的頭盔{/}";
@@ -93,11 +65,9 @@ public final class ColourPlaceholderTest {
         String shown = hit.getString();
         System.out.println("      輸出：" + shown.replace("\n", " ⏎ "));
 
-        // 1. 佔位符不能漏到畫面上。這是最要命的一種壞法：玩家會直接看到 {c1}。
         check("畫面上沒有 {c 佔位符（實際：" + shown.replace("\n", " ⏎ ") + "）",
               !shown.contains("{c") && !shown.contains("{/}"));
 
-        // 2. 每一行各自拿到原文那一行的顏色
         Integer title = colourOf(hit, "洞穴完成");
         check("標題套上原文的綠色（拿到 " + hex(title) + "）",
               title != null && title == GREEN);
@@ -107,19 +77,16 @@ public final class ColourPlaceholderTest {
               name != null && name == WHITE);
         check("洞窟名稱連粗體一起搬過來", Boolean.TRUE.equals(boldOf(hit, "巢穴")));
 
-        // 3. 同一行裡兩個佔位符各管各的
         Integer dash = colourOf(hit, "-");
         check("行首的破折號是粉紅（拿到 " + hex(dash) + "）", dash != null && dash == PINK);
         Integer label = colourOf(hit, "獎勵");
         check("同一行的「獎勵」不被粉紅波及（拿到 " + hex(label) + "）",
               label != null && label == GREY);
 
-        // 4. {c:#RRGGBB} 自己指定的顏色
         Integer own = colourOf(hit, "封印的頭盔");
         check("{c:#FFAA00} 指定的金色套得上（拿到 " + hex(own) + "）",
               own != null && own == GOLD);
 
-        // 5. 編號超出範圍時當作沒寫，整句仍然翻得出來
         Path spare = Files.createTempDirectory("wynnchayuan-colour-bad");
         write(spare.resolve("cave.json"), src,
               "{c9}[洞穴完成]{/}\nGrook 巢穴\n- 獎勵：\n- 封印的頭盔");
@@ -138,27 +105,8 @@ public final class ColourPlaceholderTest {
         report();
     }
 
-    /**
-     * 色段可以跨行，直到 {@code {/}} 或下一個 {@code {cN}} 為止。
-     *
-     * <h2>先前壞在哪</h2>
-     * 色段原本<b>每一行都會收掉</b>，理由是「忘了寫 {@code {/}} 只影響那一行」。
-     * 但翻譯團隊第一次用就踩到：一句話被 tooltip 切成兩行，在第一行開色段、
-     * 想一路染到第二行，結果第二行整個掉回底色，而寫在第二行的 {@code {/}}
-     * 也變成空操作——warrior.json 有三條譯文都是這樣壞的。
-     *
-     * <p>跨行才是譯者預期的行為，也跟註解（{@code inNote}）的處理一致：
-     * 註解同樣會被 tooltip 切成兩行，那個狀態本來就是跨行帶著走的。
-     *
-     * <h2>這裡釘住什麼</h2>
-     * <ol>
-     *   <li>第一行開的色段，會延伸到第二行</li>
-     *   <li>寫在第二行的 {@code {/}} 真的會把它收掉，不是空操作</li>
-     * </ol>
-     */
     private static void crossesLines(String src) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-colour-cross");
-        // 第 1 行開 {c1}（原文的綠色），一路染到第 2 行中間才用 {/} 收掉。
         write(dir.resolve("cave.json"), src,
               "{c1}[洞穴完成]\n延續的字{/}沒染色\n- 獎勵：\n- 封印的頭盔");
         TranslationStore store = new TranslationStore();
@@ -194,10 +142,6 @@ public final class ColourPlaceholderTest {
         return colour == null ? "null" : String.format("#%06X", colour);
     }
 
-    /**
-     * 只看<b>葉節點</b>：上層節點的 getString() 含了所有子節點的字，
-     * 拿它去比對一定第一個就中，量到的卻是空的根樣式。
-     */
     private static Integer colourOf(Component line, String needle) {
         for (Component part : flatten(line)) {
             if (part.getSiblings().isEmpty() && part.getString().contains(needle)) {
@@ -226,20 +170,6 @@ public final class ColourPlaceholderTest {
         return out;
     }
 
-    /**
-     * {@code {wN}} 只數<b>有字母</b>的片段，所以進度變了編號也不會挪位。
-     *
-     * <h2>為什麼需要它</h2>
-     * 意象的層級進度長這樣，綠箭頭的數量隨進度變動：
-     *
-     * <pre>
-     *   Tier I  &gt;&gt;&gt;&gt;&gt;  &gt;&gt;&gt;&gt;&gt;  Tier II  [2/4]
-     *   灰      綠        暗灰     洋紅     白
-     * </pre>
-     *
-     * 進度 0 或滿的時候箭頭只有一段，{@code {cN}} 的編號就整個往前挪一格，
-     * 寫死的號碼有一半的時候會落空——落空當作沒寫，畫面上整行變灰。
-     */
     private static void wordPalette() {
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
         Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55));
@@ -247,14 +177,12 @@ public final class ColourPlaceholderTest {
         Style rare = Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF));
         Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
 
-        // 進度做到一半：綠箭頭與暗箭頭各一段
         List<LineParts.Piece> half = List.of(
                 new LineParts.Piece("Tier I ", grey),
                 new LineParts.Piece(">>>>>", green),
                 new LineParts.Piece(">>>>>", dark),
                 new LineParts.Piece(" Tier II ", rare),
                 new LineParts.Piece("[2/4]", white));
-        // 進度是 0：只有一段暗箭頭
         List<LineParts.Piece> none = List.of(
                 new LineParts.Piece("Tier I ", grey),
                 new LineParts.Piece(">>>>>>>>>>", dark),
@@ -268,22 +196,10 @@ public final class ColourPlaceholderTest {
             check("{w2} 是下一層級的稀有度色", words.size() >= 2 && rare.equals(words.get(1)));
         }
 
-        // 對照：舊的 palette 會因為箭頭段數不同而挪位，這正是要避開的
         check("舊編號確實會挪位",
                 LineTranslator.palette(half).size() != LineTranslator.palette(none).size());
     }
 
-    /**
-     * 進度條連同<b>每一格的顏色</b>搬回來。
-     *
-     * <h2>為什麼 {@code {wN}} 不夠</h2>
-     * {@code {wN}} 解決的是「下一層級那一段是第幾個顏色」，那是一段一個顏色。
-     * 但箭頭本身是<b>一格一個顏色</b>——九綠五灰就是進度 9/14。譯文裡那條箭頭
-     * 是一整段文字，怎麼標顏色都只會是同一個色，進度就沒了。使用者回報畫面上
-     * 那條該是灰的卻整條變亮。
-     *
-     * <p>所以改成照抄：譯文那條跟原文同一個符號、同樣長，就一格一格把顏色搬回來。
-     */
     private static void progressBar() {
         Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
         Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55));
@@ -310,7 +226,6 @@ public final class ColourPlaceholderTest {
                     bar.styles().subList(5, 10).stream().allMatch(dark::equals));
         }
 
-        // 進度 0：整條都是暗灰，格數不變——譯文那條照樣對得上
         List<LineParts.Piece> none = List.of(
                 new LineParts.Piece("Tier I ", grey),
                 new LineParts.Piece(">>>>>>>>>>", dark),
@@ -320,37 +235,17 @@ public final class ColourPlaceholderTest {
         check("進度 0 也是一條十格",
                 flat.size() == 1 && flat.get(0).styles().size() == 10);
 
-        // 譯文那一段裡找得到那條，兩頭的空白不算進去
         int[] span = LineTranslator.barSpan(" >>>>>>>>>> ");
         check("找得到譯文裡的那條（實際 " + java.util.Arrays.toString(span) + "）",
                 span != null && span[0] == 1 && span[1] == 11);
 
-        // 反面：這些都不是進度條
         check("中文不是進度條", LineTranslator.barSpan("第 I 層") == null);
         check("兩格的重複符號不算", LineTranslator.barSpan("看!! 這樣") == null);
         check("[2/4] 不算", LineTranslator.barSpan("[2/4]") == null);
         check("空白不算", LineTranslator.barSpan("第 I 層     第 II 層") == null);
     }
 
-    /**
-     * 層級那一行的 {@code [2/4]}，括號要留在底色。
-     *
-     * <h2>畫面上是什麼樣子</h2>
-     * <pre>
-     *   原文  Tier I  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Tier II  [2/4]
-     *         灰      綠／暗灰            洋紅     <b>灰</b>
-     * </pre>
-     *
-     * 譯文原本把色段一路開到行尾（{@code {w2}第 II 層 [{~1}/{~2}]{/}}），
-     * 於是中括號與斜線跟著吃到層級的顏色——畫面上整串
-     * 「第 II 層 [2/4]」都是洋紅的，而原文只有「Tier II」是。使用者回報的正是這個。
-     *
-     * <p>數字本身不受影響：它們是 {@code {~}}，連同原本的樣式填回去。
-     * 會走色的只有譯文自己打的那三個字元。所以 {@code {/}} 要收在層級後面。
-     */
     private static void tierBrackets() throws Exception {
-        // 這一條要拿<b>真的語料</b>跑：盯的是 raid.json 裡那三條的寫法，
-        // 而這支測試其餘部分用的是暫用語料。
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
@@ -360,7 +255,6 @@ public final class ColourPlaceholderTest {
         Style tier = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
 
         MutableComponent line = Component.empty();
-        // 行首那個看不見的位移符號。語料的鍵是「{#}Tier I …」，少了它整行查不到。
         line.append(Component.literal(new String(Character.toChars(0xD0012)))
                 .withStyle(Style.EMPTY.withFont(
                         new net.minecraft.network.chat.FontDescription.Resource(

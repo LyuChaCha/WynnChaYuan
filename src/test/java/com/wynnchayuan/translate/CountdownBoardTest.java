@@ -13,25 +13,6 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/**
- * 商店的倒數看板一列一列組（見 {@link LineTranslator#countdownBoard}）。
- *
- * <h2>先前是什麼樣子</h2>
- * 寶箱、股份、階級、炸彈的優惠牌子，倒數格式隨剩餘時間變（天時分秒的任意組合），
- * 附加的幾列隨活動變。語料一種組合一條整塊的鍵，capture 一次又收了三十六種沒見過的。
- * 就地取代那一支會退到逐行，可是倒數列原樣留英文；注視時才顯示的小框那一支整塊放棄。
- *
- * <h2>這裡釘住什麼</h2>
- * <ol>
- *   <li>沒收過的組合：每一列照自己的鍵翻，倒數列照漂浮字專用的時間格式，數值各就各位；</li>
- *   <li>兩支都認得（就地取代、注視時的小框），每一列的顏色照原文那一列；</li>
- *   <li>整塊的鍵照樣優先；有一列查不到就整塊不動；沒有倒數列的牌子不碰；</li>
- *   <li>收集端問「翻了沒」時這種組合算翻了；</li>
- *   <li>七個語言的實際語料：capture 裡那幾種組合都翻得出來，不剩英文。</li>
- * </ol>
- *
- * <p>語料是測試自己寫的，措辭跟實際語料無關；實際語料那一段只看結構（沒有英文、數值都在）。
- */
 public final class CountdownBoardTest {
 
     private static int failures = 0;
@@ -66,7 +47,6 @@ public final class CountdownBoardTest {
         misc.addProperty("Get VIP Rank FREE", "測送 VIP");
         misc.addProperty("Bomb Offer", "測炸彈特惠");
         misc.addProperty("{~} OFF Bombs", "測炸彈打 {~} 折");
-        // 整塊的舊鍵：照樣優先
         misc.addProperty("Bomb Offer\n{~}h {~}m\n\n{~} OFF Bombs", "整塊舊鍵\n{~1} 小時 {~2} 分\n\n炸彈 {~3}");
         Files.writeString(dir.resolve("misc.json"), misc.toString(), StandardCharsets.UTF_8);
         JsonObject label = new JsonObject();
@@ -84,7 +64,6 @@ public final class CountdownBoardTest {
         return Component.literal(text).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
 
-    /** 實機的樣子：每一列一種顏色，列與列之間是換行。 */
     private static StyledText board(String[] rows, int[] colours) {
         MutableComponent all = Component.empty();
         for (int i = 0; i < rows.length; i++) {
@@ -122,21 +101,18 @@ public final class CountdownBoardTest {
             check(name + "：括號列是灰色", out != null && colourOf(out, "普通起") == GREY);
             check(name + "：贈品列是黃色", out != null && colourOf(out, "測送") == YELLOW);
         }
-        // 另一種倒數：只剩天與秒（capture 看過 59 次）
         Component days = LineTranslator.translateLabel(board(
                 new String[] {"Bomb Offer", "2d 9s", "", "15% OFF Bombs"},
                 new int[] {GOLD, WHITE, WHITE, GREEN}), store);
         String got = days == null ? null : days.getString().replace("\n", "⏎");
         check("★ 天與秒的倒數（實際 " + got + "）",
               "測炸彈特惠⏎2 日 9 秒⏎⏎測炸彈打 15% 折".equals(got));
-        // 倒數那一列是空的
         Component empty = LineTranslator.translateLabel(board(
                 new String[] {"Bomb Offer", "", "", "15% OFF Bombs"},
                 new int[] {GOLD, WHITE, WHITE, GREEN}), store);
         check("倒數列是空的：沒有倒數就不算看板，交給逐行那條路（實際 "
                       + (empty == null ? null : empty.getString().replace("\n", "⏎")) + "）",
               empty != null && empty.getString().equals("測炸彈特惠\n\n\n測炸彈打 15% 折"));
-        // 收集端
         check("★ 收集端：這種組合算翻了", store.hasTranslation(
                 "Crate Offer\n{~}h {~}m {~}s\n\n{~} OFF Crates\n({~}x Regular and higher)\n\nExtra Bonus:\nGet VIP Rank FREE"));
     }
@@ -164,7 +140,6 @@ public final class CountdownBoardTest {
               store.lookup("{~}h {~}m {~}s") == null);
     }
 
-    /** 七個語言：capture 裡收到、而語料沒有整塊鍵的那幾種組合。 */
     private static void realCorpus() {
         System.out.println("=== 實際語料 ===");
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");

@@ -12,32 +12,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 就地取代時塞不下的那一句：最後一列跑馬燈，不再讓原文冒出來。
- *
- * <h2>先前</h2>
- * 譯文比原文多一列時，{@link DialogueRewriter#line} 打完那一幀回 {@code null}，
- * 畫面在講完的那一刻變回英文（後來改成讓小框接手，原文仍然留在框裡）。
- *
- * <h2>這支釘住什麼</h2>
- * <ul>
- *   <li>逐字打完、字停下來之後，每一幀都還是譯文，旗標不會讓小框接手。</li>
- *   <li>跑馬燈的節奏：停在開頭 → 一次最多移一個字往左捲 → 停在結尾 → 跳回開頭。</li>
- *   <li>每一幀畫出去的那一段都放得進框寬；捲完一輪每個字都出現過。</li>
- *   <li>前面幾列不動，只有最後一列在捲。</li>
- *   <li>名字捲到一半、只剩半截在框裡，那半截照樣是強調色。</li>
- *   <li>塞得下的句子不捲（只在真的放不下時才用）。</li>
- *   <li>譯文帶 \n（#1298／#1301 攤平之後）照樣捲，列裡不會出現 \n。</li>
- * </ul>
- */
 public final class DialogueMarqueeTest {
 
     private static int failures = 0;
 
-    /** 模擬一幀的間隔：action bar 每 tick 送一次。 */
     private static final long TICK = 50;
 
-    /** 字停下來之後再收幾幀同樣的 action bar。要比 SETTLE_FRAMES 多。 */
     private static final int STILL_FRAMES = 12;
 
     private static final TextColor BODY = TextColor.fromRgb(0xe0d4c0);
@@ -59,7 +39,6 @@ public final class DialogueMarqueeTest {
         newline();
         restartsPerLine();
 
-        // 原文太長、遊戲自己在捲的那種（對話選項）
         choiceFollowsGameScroll();
         shortChoiceStays();
         bodyAndChoiceTogether();
@@ -70,11 +49,8 @@ public final class DialogueMarqueeTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    // ------------------------------------------------------------------
-
-    /** 一輪的節奏，直接問 {@link Marquee#window}。 */
     private static void rhythm() {
-        String row = "一二三四五六七八九十甲乙丙丁戊己庚辛壬癸";   // 20 字 = 200px
+        String row = "一二三四五六七八九十甲乙丙丁戊己庚辛壬癸";
         int room = 100;
         int over = realWidth(row) - room;
         long scroll = over * 1000L / Marquee.SPEED;
@@ -93,7 +69,7 @@ public final class DialogueMarqueeTest {
         for (long t = 0; t < cycle; t += TICK) {
             int[] w = Marquee.window(row, room, DialogueMarqueeTest::realWidth, t);
             if (w[0] < last || w[0] - last > 1) {
-                smooth = false;            // 往回跳，或一幀跳了不只一個字
+                smooth = false;
             }
             last = w[0];
             if (realWidth(row.substring(w[0], w[1])) > room) {
@@ -121,12 +97,6 @@ public final class DialogueMarqueeTest {
         check("一輪之後跳回開頭重來", again[0] == 0);
     }
 
-    /**
-     * 逐字打一句塞不下的台詞，再收幾幀停住的 action bar——每一幀都要是譯文。
-     *
-     * <p>這一條在改之前會紅：打完那一幀 {@code line} 回 {@code null}（原文冒出來），
-     * 而且旗標立起來讓小框接手。
-     */
     private static void typedThenScrolls() throws Exception {
         String src = "The old lighthouse keeper told me the storm would pass by morning.";
         String dst = "老燈塔看守人跟我說，這場暴風雨到了早上就會過去，叫我別擔心船的事。";
@@ -147,7 +117,6 @@ public final class DialogueMarqueeTest {
         check("講完之後是整句譯文", dst.equals(frames.get(frames.size() - 1)));
         check("★ 小框不接手（譯文留在對話框裡）", !DialogueRewriter.bodyTooLong());
 
-        // 字停下來之後再放幾秒，看那一列有沒有在框裡捲
         String full = dst;
         boolean fits = true;
         boolean newline = false;
@@ -182,7 +151,6 @@ public final class DialogueMarqueeTest {
         check("列裡沒有換行字元", !newline);
     }
 
-    /** 兩列的框：第一列照常、不動，只有第二列在捲。 */
     private static void firstRowsStay() {
         String text = "老燈塔看守人跟我說，這場暴風雨到了早上就會過去，叫我別擔心船的事，"
                 + "也別急著出海，等天亮了再說。";
@@ -211,7 +179,6 @@ public final class DialogueMarqueeTest {
         check("第二列在捲", distinct > 5);
     }
 
-    /** 名字捲到一半：框裡那半截照樣是強調色。 */
     private static void accentInWindow() {
         String text = "你要是能把那雙被海盜偷走的靴子帶回來，我就給你 [Abysso Galoshes] 當謝禮！";
         int room = 100;
@@ -239,7 +206,6 @@ public final class DialogueMarqueeTest {
                 joined.append(piece.text());
             }
             text_ok &= joined.toString().equals(laid.shown(0));
-            // 視窗裡屬於名字的那幾個字都要是青色
             int nameAt = text.indexOf(name) - laid.offset(0);
             int at = 0;
             for (LineParts.Piece piece : row) {
@@ -252,7 +218,7 @@ public final class DialogueMarqueeTest {
             }
             String shown = laid.shown(0);
             if (!shown.contains(name) && (shown.contains("Galoshes]") || shown.contains("[Abysso"))) {
-                half = true;               // 確實測到了「只剩半截」的那幾幀
+                half = true;
             }
         }
         check("畫出去的幾截接起來就是那一幀的視窗", text_ok);
@@ -260,7 +226,6 @@ public final class DialogueMarqueeTest {
         check("★ 名字捲到一半，框裡那半截仍是強調色", coloured);
     }
 
-    /** 塞得下的句子不捲，跟先前一模一樣。 */
     private static void fitsDoesNotScroll() {
         String text = "老燈塔看守人說暴風雨會過去。";
         DialogueRewriter.Layout laid = DialogueRewriter.layout(text, 1, null, 232, now);
@@ -268,7 +233,6 @@ public final class DialogueMarqueeTest {
                 && laid.shown(0).equals(DialogueRewriter.wrap(text, 1, null, 232).get(0)));
     }
 
-    /** 譯文帶 \n：攤平（#1301）之後太長的照樣捲，列裡沒有 \n。 */
     private static void newline() throws Exception {
         String src = "Keep your lantern lit and your boots dry, the marsh does not forgive.";
         String dst = "把你的燈籠點著，靴子保持乾燥。\n這片沼澤可不會原諒任何一個粗心的旅人。";
@@ -298,7 +262,6 @@ public final class DialogueMarqueeTest {
         check("帶 \\n 的譯文也不讓小框接手", !DialogueRewriter.bodyTooLong());
     }
 
-    /** 換了一句就從開頭重來，不接著上一句的進度。 */
     private static void restartsPerLine() {
         String a = "一二三四五六七八九十甲乙丙丁戊己庚辛壬癸";
         String b = "子丑寅卯辰巳午未申酉戌亥一二三四五六七八";
@@ -311,18 +274,9 @@ public final class DialogueMarqueeTest {
         check("換一句就從開頭開始", laid != null && laid.offset(0) == 0);
     }
 
-    // ------------------------------------------------------------------
-    // 原文太長：遊戲自己讓選項跑馬燈，每個 tick 只送 28 個字元的一格
-    // ------------------------------------------------------------------
-
-    /** 實機回報（2026-09-18）的那一個選項，與遊戲一格的字數。 */
     private static final String LONG_CHOICE = "Do you remember anything from before you joined?";
     private static final int WINDOW = 28;
 
-    /**
-     * 遊戲送來的格子：停在第一格幾個 tick、一個 tick 往左一格、捲到底停一下、
-     * 跳回第一格再來一輪。照 {@code MarqueeTest} 的切法（頭尾的空白會被 strip）。
-     */
     private static List<String> gameWindows(String full, int rounds) {
         List<String> out = new ArrayList<>();
         for (int round = 0; round < rounds; round++) {
@@ -339,12 +293,6 @@ public final class DialogueMarqueeTest {
         return out;
     }
 
-    /**
-     * 照 {@code DialogueRewriter#rewrite} 選項那一段的做法跑一格：先查表，
-     * 查不到就問 {@link Marquee#follow}，再決定這一幀畫譯文的哪一段。
-     *
-     * @return 這一幀選項列畫出來的字；留英文時回 {@code null}
-     */
     private static String choiceFrame(String row, String window, TranslationStore store) {
         String pick = store.lookup(window);
         if (pick != null && !pick.isBlank()) {
@@ -360,11 +308,6 @@ public final class DialogueMarqueeTest {
         return pick.substring(cut[0], cut[1]);
     }
 
-    /**
-     * 原文在捲，譯文也要在框裡捲：每一格都是譯文、每一格都放得進框、整句都看得到。
-     *
-     * <p>先前選項列貼的是<b>整句</b>譯文，不管它比框寬多少——中文一長就穿出選項框。
-     */
     private static void choiceFollowsGameScroll() throws Exception {
         String first = LONG_CHOICE.substring(0, WINDOW).strip();
         String dst = "你還記得自己加入我們之前發生過的任何事情嗎？一點點也好。";
@@ -400,7 +343,6 @@ public final class DialogueMarqueeTest {
         check("捲過之後整句選項譯文都看得到", every);
     }
 
-    /** 原文很短的選項：譯文比原文長一點但放得進框，不捲。 */
     private static void shortChoiceStays() {
         String pick = "……你在說什麼？";
         int[] cut = DialogueRewriter.choiceWindow("choice_3", pick, realWidth("...What?"),
@@ -408,11 +350,6 @@ public final class DialogueMarqueeTest {
         check("短選項放得下就不捲", cut[0] == 0 && cut[1] == pick.length());
     }
 
-    /**
-     * 內文最後一列與選項同時在捲：兩邊各有各的時鐘。
-     *
-     * <p>共用一個時鐘的話，每一幀都會被另一列當成「換了一列」歸零，誰都捲不動。
-     */
     private static void bodyAndChoiceTogether() {
         Marquee.clear();
         String body = "一二三四五六七八九十甲乙丙丁戊己庚辛壬癸";
@@ -437,12 +374,6 @@ public final class DialogueMarqueeTest {
         check("內文與選項同時捲：選項有在動（" + choiceMoved + "）", choiceMoved > 5);
     }
 
-    /**
-     * 小框那條路：捲到大寫開頭的那一格不能被當成一組新選項重翻。
-     *
-     * <p>{@code DialogueOverlay#scrolling} 只認小寫開頭；「Peloros work hard…」那種
-     * 大寫開頭的中段視窗會漏過去，查不到就把那一列換成英文，下一格又變回中文。
-     */
     private static void panelHoldsMidScroll() {
         String full = "Aren't you scared of what Peloros work hard to keep out there?";
         List<String> windows = gameWindows(full, 1);
@@ -466,9 +397,6 @@ public final class DialogueMarqueeTest {
                       List.of("Tell me about Ragni", "Goodbye")));
     }
 
-    // ------------------------------------------------------------------
-
-    /** 一個字一個字餵進 {@link DialogueRewriter#line}，打完再收幾幀停住的。 */
     private static List<String> typeOut(String src, TranslationStore store, int rows, int room) {
         DialogueRewriter.forget();
         Marquee.clear();
@@ -497,7 +425,6 @@ public final class DialogueMarqueeTest {
         return "\"" + s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\"";
     }
 
-    /** 中日韓一個字 10px，其餘照 Wynncraft 的對話字型算 6px。 */
     private static int realWidth(String text) {
         int w = 0;
         for (int i = 0; i < text.length(); i++) {

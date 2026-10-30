@@ -5,43 +5,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 讀 GIF：每一格都合成好（上一格留著、清掉、還原都照檔案說的做），附上那一格要停多久。
- *
- * <h2>為什麼自己讀</h2>
- * 披風要「直接丟一個 GIF 就能用」（使用者 2026-10-12）。現成的兩條路都不合用：
- * <ul>
- *   <li>{@code javax.imageio} 要碰 AWT，在 macOS 的遊戲環境裡有卡住的前科，而且拿到的是
- *       一格一格的<b>差異</b>，合成還是得自己來；</li>
- *   <li>LWJGL 的 stb 一次把所有格解進同一塊記憶體——格數與尺寸在解之前都擋不住，
- *       一個幾 MB 的檔可以要走幾百 MB。</li>
- * </ul>
- * 自己讀就可以先數格數、超過上限的不解，而且不碰 Minecraft，離線測得到。
- *
- * <p>格式只有這幾樣：檔頭、調色盤、圖形控制（停多久、哪一色透明、畫完怎麼處置）、
- * 影像區塊（LZW 壓的色號）。其餘的擴充區塊一律跳過。
- */
+// javax.imageio 碰 AWT 在 macOS 會卡住；stb 會一次解全部格
 public final class Gif {
 
     private Gif() {}
 
-    /** 畫布一邊最多幾個像素：最大的範本是 1056×816。 */
     public static final int MAX_SIDE = 1056;
 
-    /** 一格一格收：畫布是解碼器自己那一張，下一格就會被改掉，要留就自己複製或當場用掉。 */
     public interface Sink {
         void frame(int[] canvas, int width, int height, int delayMs);
     }
 
-    /**
-     * 一格一格解，解一格交一格，不把每一格都留在記憶體裡。
-     *
-     * <p>大張的動畫要這樣讀：1056×816 的 120 格全留著是四百多 MB，一格一格交出去
-     * （接的人當場縮成披風貼圖）就只有一張畫布。
-     *
-     * @return 交出去幾格
-     * @throws IOException 不是 GIF、尺寸離譜、或檔案是壞的
-     */
     public static int each(byte[] data, int maxFrames, Sink sink) throws IOException {
         int count = walk(data, maxFrames, true, sink).frames().size();
         if (count == 0) {
@@ -50,14 +24,11 @@ public final class Gif {
         return count;
     }
 
-    /** 停留時間寫 0 或太短的，照瀏覽器的慣例當成十分之一秒。 */
     private static final int DEFAULT_DELAY_MS = 100;
     private static final int MIN_DELAY_MS = 20;
 
-    /** @param argb 整張畫布，一列接一列；沒畫到的地方是 0（全透明） */
     public record Frame(int[] argb, int delayMs) {}
 
-    /** @param complete 有讀到檔尾（沒有的話是下載到一半、或被截斷的檔） */
     public record Image(int width, int height, List<Frame> frames, boolean complete) {}
 
     public static boolean looksLikeGif(byte[] data) {
@@ -66,11 +37,6 @@ public final class Gif {
                 && data[5] == 'a';
     }
 
-    /**
-     * 這個檔有幾格。只走區塊、不解壓——用來在真的解之前決定要不要解、要解多大。
-     *
-     * @return 格數；檔案壞掉時回到壞掉之前數到的
-     */
     public static int countFrames(byte[] data) {
         try {
             return walk(data, Integer.MAX_VALUE, false, null).frames().size();
@@ -79,7 +45,6 @@ public final class Gif {
         }
     }
 
-    /** 這個檔從頭到尾是完整的嗎：每個區塊都走得完，而且有檔尾。 */
     public static boolean complete(byte[] data) {
         try {
             return walk(data, Integer.MAX_VALUE, false, null).complete();
@@ -88,12 +53,6 @@ public final class Gif {
         }
     }
 
-    /**
-     * 解出每一格。
-     *
-     * @param maxFrames 最多解幾格，後面的不要了
-     * @throws IOException 不是 GIF、尺寸離譜、或檔案是壞的
-     */
     public static Image decode(byte[] data, int maxFrames) throws IOException {
         Image image = walk(data, maxFrames, true, null);
         if (image.frames().isEmpty()) {
@@ -130,7 +89,7 @@ public final class Gif {
             while (pos < data.length && frames.size() < maxFrames) {
                 int block = data[pos++] & 0xFF;
                 if (block == 0x3B) {
-                    complete = true;                   // 檔尾
+                    complete = true;
                     break;
                 }
                 if (block == 0x21) {
@@ -210,7 +169,6 @@ public final class Gif {
         return out;
     }
 
-    /** 跳過一串子區塊（長度、內容、長度、內容……到長度是 0 為止）。 */
     private static int skipSubBlocks(byte[] data, int pos) {
         while (true) {
             int size = data[pos++] & 0xFF;
@@ -235,7 +193,6 @@ public final class Gif {
         }
     }
 
-    /** LZW 解壓：位元流裡是長度會變的碼，每個碼代表一串色號。 */
     private static void unpack(byte[] packed, int minCode, byte[] out) {
         int clear = 1 << minCode;
         int end = clear + 1;
@@ -259,7 +216,7 @@ public final class Gif {
             if (top == 0) {
                 if (bits < codeSize) {
                     if (at >= packed.length) {
-                        break;                         // 資料用完了，剩下的留透明色號 0
+                        break;
                     }
                     datum |= (packed[at++] & 0xFF) << bits;
                     bits += 8;
@@ -310,7 +267,6 @@ public final class Gif {
         }
     }
 
-    /** 交錯排列的四輪：從第幾列開始、每次跳幾列。 */
     private static final int[][] INTERLACE = {{0, 8}, {4, 8}, {2, 4}, {1, 2}};
 
     private static void draw(int[] canvas, int width, int height, byte[] indices,

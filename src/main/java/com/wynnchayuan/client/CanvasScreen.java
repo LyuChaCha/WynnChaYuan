@@ -14,12 +14,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Util;
 
-/**
- * 用 {@link Surface} 畫的畫面共用的那一層：把遊戲的滑鼠鍵盤事件轉過去，
- * 把畫布接上，關掉時回到上一個畫面。
- *
- * <p>畫面本身長什麼樣、點哪裡會怎樣，全部在各自的 {@code *View}，那邊不認得遊戲。
- */
 abstract class CanvasScreen extends Screen {
 
     protected final Screen parent;
@@ -29,7 +23,6 @@ abstract class CanvasScreen extends Screen {
         this.parent = parent;
     }
 
-    /** 這個畫面要畫的東西。 */
     protected abstract Surface view();
 
     @Override
@@ -38,7 +31,6 @@ abstract class CanvasScreen extends Screen {
         GuiCanvas canvas = new GuiCanvas(g, this.font, mc.getWindow().getGuiScale());
         canvas.begin();
         try {
-            // 滑鼠座標給的是整數的 GUI 像素；問視窗可以拿到小數，拖東西才不會一格一格跳
             double mx = mc.mouseHandler.xpos() * mc.getWindow().getGuiScaledWidth()
                     / Math.max(1, mc.getWindow().getScreenWidth());
             double my = mc.mouseHandler.ypos() * mc.getWindow().getGuiScaledHeight()
@@ -71,7 +63,7 @@ abstract class CanvasScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyEvent event) {
-        // GLFW 的修飾鍵位元：2 是 Ctrl、8 是 Super（mac 的 Cmd）
+        // GLFW 修飾鍵位元：2 是 Ctrl、8 是 Super（mac 的 Cmd）
         boolean ctrl = (event.modifiers() & (2 | 8)) != 0;
         if (view().key(event.key(), ctrl)) {
             return true;
@@ -94,7 +86,6 @@ abstract class CanvasScreen extends Screen {
         return false;
     }
 
-    /** 每個畫面都要跟遊戲問的那幾件事。 */
     static final Shell SHELL = new Shell() {
         @Override
         public int accent() {

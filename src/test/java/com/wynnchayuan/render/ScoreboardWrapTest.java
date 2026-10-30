@@ -9,12 +9,6 @@ import net.minecraft.network.chat.TextColor;
 
 import java.util.List;
 
-/**
- * 記分板疊層的折行（{@link ScoreboardWrap#wrap}）。
- *
- * <p>實機回報（2026-10-19）：「獻祭儀式 (Sacrificial Ritual)」超出記分板的框。
- * 寬度用固定字寬的斷行器模擬：英文與空白 6 px，中文 9 px。
- */
 public final class ScoreboardWrapTest {
 
     private static int failures = 0;
@@ -27,7 +21,7 @@ public final class ScoreboardWrapTest {
         Style orange = Style.EMPTY.withColor(TextColor.fromRgb(gold));
         StyledText trial = StyledText.fromComponent(
                 Component.literal("獻祭儀式 (Sacrificial Ritual)").withStyle(orange));
-        float box = 6f * "play.wynncraft.com!!".length();   // 標題撐出來的框（120 px）
+        float box = 6f * "play.wynncraft.com!!".length();
 
         List<StyledText> rows = ScoreboardWrap.wrap(trial, box, SPLITTER);
         check("★ 比框寬的那一列折成兩列（實際 " + rows.size() + " 列）", rows.size() == 2);

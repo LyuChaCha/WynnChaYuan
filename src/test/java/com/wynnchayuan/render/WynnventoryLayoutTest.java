@@ -5,18 +5,11 @@ import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPosition
 import org.joml.Vector2i;
 import org.joml.Vector2ic;
 
-/**
- * Wynnventory 側邊框的擺法與物品說明的讓位（{@link WynnventoryLayout}）。
- *
- * <p>實機回報（2026-10-19，兩張截圖）：價格框先是疊在物品說明上（使用者開著它的「固定在左側」），
- * 接手之後又被 Wynntils 的縮放搬到右上、上半截出了畫面。畫面 556×492（GUI 座標）。
- */
 public final class WynnventoryLayoutTest {
 
     private static int failures = 0;
 
     public static void main(String[] args) {
-        // ★ 固定在左側、清單很長（49 列）：貼左邊、整個塞進畫面
         int ph = 49 * 10;
         float[] anchor = WynnventoryLayout.anchoredSpot(492, 170, ph);
         float s = anchor[2];
@@ -26,7 +19,6 @@ public final class WynnventoryLayoutTest {
         check("★ 整個框在畫面裡（上 " + top + "、下 " + bottom + "）", top >= 0 && bottom <= 492);
         check("太高就縮（實際 " + s + "）", s < 1f);
 
-        // ★ 物品說明蓋到左邊的框：往右挪到框的右邊
         int[] box = {4, 10, 180, 470};
         float[] moved = WynnventoryLayout.moved(50, 190, 310, 220, box, 556, 1f);
         check("★ 說明框挪到價格框右邊（實際 " + (moved == null ? "null" : moved[0]) + "）",
@@ -34,7 +26,6 @@ public final class WynnventoryLayoutTest {
         check("沒蓋到就不挪", WynnventoryLayout.moved(300, 190, 200, 100, box, 556, 1f) == null);
         check("挪了會出畫面就不挪", WynnventoryLayout.moved(50, 190, 400, 100, box, 556, 1f) == null);
 
-        // 沒固定：照實際寬度擺，右邊優先
         float[] spot = WynnventoryLayout.place(1100, 984, 105, 380, 620, 310, 900);
         check("照實際寬度擺得下（實際 " + (spot == null ? "null" : "x=" + spot[0]) + "）", spot != null);
         if (spot != null) {

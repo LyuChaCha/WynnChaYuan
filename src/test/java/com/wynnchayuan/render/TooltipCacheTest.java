@@ -8,19 +8,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * tooltip 的翻譯結果快取，什麼時候可以用上一次的、什麼時候一定要重算。
- *
- * <h2>為什麼要有這支</h2>
- * 快取壞掉的樣子不是「當掉」，是<b>畫面上出現上一次的答案</b>——切了語言
- * 還是舊語言、Shift 放開了名稱還停在原文。那種錯看起來像翻譯漏了，
- * 不像快取有問題，查起來會繞很遠。
- *
- * <p>而且這一份結果會交給 Wynntils 的事件（{@code event.setTooltips}），
- * 後面還有別的模組的 listener 會跑。往 tooltip 清單後面加行是模組最常做的事，
- * 加到的如果是快取裡那一份，同一件物品會愈看愈長。所以「交出去的必須是複本」
- * 也釘在這裡。
- */
 public final class TooltipCacheTest {
 
     private static int failures = 0;
@@ -43,11 +30,7 @@ public final class TooltipCacheTest {
         report("真的有翻到（不是兩次都空的）", !text(first).isBlank()
                 && !text(first).equals("Combat Level\nCombat Level"));
 
-        // ★ 交出去的是複本：呼叫端亂改也不能弄髒快取
         report("兩次拿到的不是同一個 list 物件", first != second);
-        // 要改<b>命中那一次</b>拿到的，不是第一次。第一次是 miss，走的是
-        // 「翻完再包一份出去」那條路；會把快取裡那一份直接交出去的是 hit。
-        // 先前這裡改的是 first，於是把 hit 改成回傳快取原件也照樣通過。
         try {
             second.add(Component.literal("別的模組加的一行"));
         } catch (UnsupportedOperationException e) {
@@ -57,13 +40,6 @@ public final class TooltipCacheTest {
         report("★ 改過回傳的清單之後，快取那一份沒被弄髒（實際 "
                 + third.size() + " 行）", third.size() == first.size());
 
-        // ★ 名稱模式換了要重算：Shift 暫看原文走的就是這條。
-        //
-        // 這裡一定要拿<b>裝備名</b>來問。先前用的是「Combat Level」，那是介面
-        // 標籤，不吃「翻譯物品名稱」那個開關——於是開關切過去結果一樣，
-        // 而測試把「一樣」當成了快取沒失效。Halcyon 是繁中少數翻了名字的
-        // mythic（孤星），關掉開關就會退回英文。
-        // 第三列是稀有度橫幅：名字只套在長得像物品的說明上（見 TooltipPanel#itemShaped）。
         List<Component> gear = List.of(
                 Component.literal("Halcyon"),
                 Component.literal("Halcyon"),
@@ -79,7 +55,6 @@ public final class TooltipCacheTest {
         report("再開回來又回到原本那一份",
                 on.equals(text(TooltipPanel.translateLinesCached(gear, store))));
 
-        // ★ 語料重載要重算：換語言走的就是這條（generation 會往前一格）
         int before = store.generation();
         store.loadAll(List.of(root.resolve("zh_cn")));
         store.setNameMode(CollectorConfig.ItemNames.ON);
@@ -95,7 +70,6 @@ public final class TooltipCacheTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /** 稀有度橫幅：整列都是圖示（三段，各自一個顏色才不會被併成一段）。 */
     private static Component banner() {
         net.minecraft.network.chat.MutableComponent row = Component.empty();
         int[] colours = {0xAA00AA, 0x000000, 0xE0B3E6};

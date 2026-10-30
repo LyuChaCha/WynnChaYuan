@@ -22,18 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * 句中夾著元素圖示的對話（PR #1435，Detlas 士兵）兩條路都翻得出來、圖示在對的位置、
- * 顏色跟著對應的詞。見 {@link DialogueIcons}。
- *
- * <pre>
- *   The elements are ✹ Fire, ❋ Air, ❉ Water, ✤ Earth, and ✦ Thunder.
- *                    紅紅紅紅  白白白   青青青青   綠綠綠綠       黃黃黃黃黃
- * </pre>
- *
- * <p>照 memory 的教訓，兩條路都<b>逐字</b>模擬：打字途中每一幀都會跑一次，
- * 只拿整句測抓不到「打到圖示那一幀掉回英文」這一類。
- */
 public final class DialogueInlineIconTest {
 
     private static int failures = 0;
@@ -52,7 +40,6 @@ public final class DialogueInlineIconTest {
     private static final String JA =
             "属性は {#}火{/}、{#}風{/}、{#}水{/}、{#}土{/}、{#}雷{/}があります。";
 
-    /** Wynntils 給小框與收集端的純文字：圖示是對話字型的私用區字元，列與列之間一個空白。 */
     private static final String WYNNTILS =
             "The elements are  Fire,  Air,  Water,  Earth , and  Thunder.";
 
@@ -83,8 +70,6 @@ public final class DialogueInlineIconTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    // ------------------------------------------------------------------ 模板
-
     private static void templates() {
         DialogueIcons.forget();
         check("句中圖示收成 {#}（實際 " + DialogueIcons.parts(WYNNTILS, null).template() + "）",
@@ -94,7 +79,6 @@ public final class DialogueInlineIconTest {
         check("{#} 依序對到五個圖示",
                 DialogueIcons.parts(WYNNTILS, null).glyphs().size() == 5
                 && "".equals(DialogueIcons.parts(WYNNTILS, null).glyphs().get(4).text()));
-        // 頭尾的圖示本來就收成 {#}，新舊算法要一樣，既有的鍵才不會變
         String head = " Fire is strong against Air.";
         check("開頭的圖示新舊一樣",
                 DialogueIcons.parts(head, null).template().equals(
@@ -102,14 +86,12 @@ public final class DialogueInlineIconTest {
         String plain = "Hey, recruit! You want a refresher on Elements?";
         check("沒有圖示的句子不受影響",
                 DialogueIcons.parts(plain, null).template().equals(plain));
-        // 第 13 平面的排版位移（打字游標）不收：那是頭尾規則的事
         String cursor = "The elements are" + new String(Character.toChars(0xD0010));
         check("打字游標不算句中圖示",
                 DialogueIcons.parts(cursor, null).template().equals(
                         LineParts.of(StyledText.fromString(cursor)).template()));
     }
 
-    /** 收集端逐字餵進緩衝區，送出來的鍵要跟語料寫的一樣（不然玩家收到的鍵對不上）。 */
     private static void capture() {
         DialogueBuffer buffer = new DialogueBuffer();
         for (int at = 1; at <= WYNNTILS.length(); at++) {
@@ -133,9 +115,6 @@ public final class DialogueInlineIconTest {
                 "{#}火{#}{c:#FFFFFF}風{/}".equals(DialogueIcons.spans("{#}火{#}風{/}", glyphs)));
     }
 
-    // ------------------------------------------------------------------ 就地取代
-
-    /** 一段文字與它的樣式。 */
     private record Seg(String text, Style style) {}
 
     private static Style body(int row) {
@@ -146,7 +125,6 @@ public final class DialogueInlineIconTest {
         return font("hud/dialogue/text/common/body_" + row);
     }
 
-    /** 實機的兩列：第一列到 Earth 為止，「, and」被折到第二列。 */
     private static List<List<Seg>> rows() {
         List<Seg> first = List.of(
                 new Seg("The elements are ", body(0).withColor(BODY)),
@@ -178,7 +156,6 @@ public final class DialogueInlineIconTest {
         return n;
     }
 
-    /** 打到第 {@code typed} 個字元那一幀的 action bar：[前導][列][位移][列][尾隨]。 */
     private static Component message(int typed) {
         return message(rows(), typed);
     }
@@ -244,9 +221,6 @@ public final class DialogueInlineIconTest {
         check("{/} 之後回到底色", BODY.equals(colourAt(out, "があります")));
     }
 
-    /**
-     * 逐字打出來：出過中文之後不准變回英文、不准畫出佔位符、圖示永遠用 common 字型。
-     */
     private static void replaceTyping(TranslationStore store) {
         DialogueRewriter.forget();
         DialogueIcons.forget();
@@ -293,8 +267,6 @@ public final class DialogueInlineIconTest {
                         "雷"));
     }
 
-    // ------------------------------------------------------------------ 小框
-
     private static void panelWhole(TranslationStore store) {
         DialogueIcons.forget();
         DialogueIcons.note(message(length(rows())));
@@ -322,7 +294,6 @@ public final class DialogueInlineIconTest {
                 !THUNDER.equals(colourAt(out, "があります")));
     }
 
-    /** 小框也逐字：跟 DialogueOverlay#setCurrent 一樣先問快取，問不到才重算。 */
     private static void panelTyping(TranslationStore store) {
         DialogueIcons.forget();
         DialogueIcons.note(message(length(rows())));
@@ -362,9 +333,6 @@ public final class DialogueInlineIconTest {
                 last != null && order(last, "✹火", "❋風", "❉水", "✤土", "✦雷"));
     }
 
-    // ------------------------------------------------------------------ 舊格式
-
-    /** 語料只有舊格式（兩個空格）的句子：照舊翻得出來，只是沒有圖示。 */
     private static void legacy() throws Exception {
         TranslationStore old = store("\"" + LEGACY + "\": \"元素有火、風、水、地、雷。\"");
         check("舊格式的鍵退回舊模板",
@@ -383,18 +351,14 @@ public final class DialogueInlineIconTest {
                 line, GlyphSplitter.toTemplate(line), old, true);
         check("舊格式：小框照舊翻得出來",
                 result != null && result.translated().getString().contains("元素有火"));
-        // 收集端：語料認得舊格式就記舊格式，不另外生一條新格式的鍵
         check("舊格式：收集端記的也是舊鍵", LEGACY.equals(GlyphSplitter.toTemplate(
                 DialogueIcons.line(WYNNTILS, old))));
     }
-
-    // ------------------------------------------------------------------ 顏色標記（PR #1436）
 
     private static final TextColor GREEN = TextColor.fromRgb(0x55FF55);
     private static final TextColor BLUE = TextColor.fromRgb(0x5555FF);
     private static final TextColor RED = TextColor.fromRgb(0xFF5555);
 
-    /** The Great Sap Siphon 的警告：nine／six／three 各自一個顏色，折成三列。 */
     private static List<List<Seg>> sapRows() {
         return List.of(
                 List.of(new Seg("\"WARNING: Do NOT, under any circumstances, fill the",
@@ -411,7 +375,6 @@ public final class DialogueInlineIconTest {
     private static final String SAP = "\"WARNING: Do NOT, under any circumstances, fill the "
             + "tubes with sap doses of nine, six, and three respectively.\"";
 
-    /** {c1} 是底色、{c2}～{c4} 是三個數字的顏色；{c:gold} 是自己指定的；{w1} 照字母段數。 */
     private static final String SAP_JA = "「警告：いかなる状況においても、チューブにそれぞれ"
             + "{c2}9{/}、{c3}6{/}、{c4}3{/}の量の樹液を{c:gold}絶対に{/}注入して{w1}はなりません。」";
 
@@ -449,7 +412,6 @@ public final class DialogueInlineIconTest {
         check("標記：{/} 之後回到底色", BODY.equals(colourAt(out, "の量の樹液を")));
     }
 
-    /** 逐字打：任何一幀都不准畫出標記；出過中文不准掉回英文；顏色打到哪有到哪。 */
     private static void markersReplaceTyping() throws Exception {
         TranslationStore store = sapStore();
         DialogueRewriter.forget();
@@ -503,10 +465,6 @@ public final class DialogueInlineIconTest {
                         .equals(colourAt(out, "絶対に")));
     }
 
-    /**
-     * 小框逐字：顏色跟著 action bar 一格一格冒出來（{c4} 要等 three 打出來才有對象），
-     * 跟 DialogueOverlay#setCurrent 一樣先問快取，記下來的顏色變了就照同一條原文重新上色。
-     */
     private static void markersPanelTyping() throws Exception {
         TranslationStore store = sapStore();
         DialogueIcons.forget();
@@ -559,7 +517,6 @@ public final class DialogueInlineIconTest {
                 && RED.equals(colourAt(last, "3")) && GREEN.equals(colourAt(last, "9")));
     }
 
-    /** 攤平的原文打到第 typed 個字（不含列間空白）時，前面已經有幾個列間空白。 */
     private static int rowsBefore(List<List<Seg>> rows, int typed) {
         int seen = 0;
         int gaps = 0;
@@ -576,10 +533,6 @@ public final class DialogueInlineIconTest {
         return gaps;
     }
 
-    /**
-     * 原文這一句還沒有那個顏色（編號超出範圍）、寫錯的名稱、孤零零的 {/}：
-     * 就地取代一律吃掉，不畫出來。
-     */
     private static void markersNeverDrawn() throws Exception {
         String src = "Hello there, traveller.";
         TranslationStore store = store(json(src) + ": "
@@ -595,7 +548,6 @@ public final class DialogueInlineIconTest {
         check("標記：對不到的標記也吃掉（實際 " + text + "）",
                 out != null && text.contains("你好，旅人。") && !text.contains("{"));
 
-        // 選項列：不上色，但標記同樣不准畫出來
         TranslationStore choices = store(json("Who are you?") + ": " + json("{c2}你{/}是誰？"));
         Style choice = font("hud/dialogue/text/wynncraft/choice_1");
         MutableComponent message = Component.empty();
@@ -608,8 +560,6 @@ public final class DialogueInlineIconTest {
                 row.contains("你是誰？") && !row.contains("{"));
     }
 
-    // ------------------------------------------------------------------
-
     private static TranslationStore store(String entry) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-icon-store");
         Files.writeString(dir.resolve("npc.json"), "{\n " + entry + "\n}\n",
@@ -619,7 +569,6 @@ public final class DialogueInlineIconTest {
         return store;
     }
 
-    /** 對話內文那幾段（body／common 字型）的字，位移與其他東西不算。 */
     private static String bodyText(Component out) {
         StringBuilder text = new StringBuilder();
         out.visit((style, piece) -> {
@@ -673,7 +622,7 @@ public final class DialogueInlineIconTest {
         StringBuilder out = new StringBuilder();
         text.codePoints().forEach(cp -> {
             if (cp >= 0xCF000) {
-                return;                            // 位移字元不印
+                return;
             }
             out.append(DialogueIcons.isIcon(cp) ? String.format("<%04X>", cp)
                     : new String(Character.toChars(cp)));
@@ -696,7 +645,6 @@ public final class DialogueInlineIconTest {
         field.set(null, config);
     }
 
-    /** 中日韓一個字 10px，其餘 6px（圖示也算 10px，跟實機的 9px 差不多）。 */
     private static int realWidth(String text) {
         int w = 0;
         for (int i = 0; i < text.length(); i++) {

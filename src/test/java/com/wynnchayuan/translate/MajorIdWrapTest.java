@@ -18,49 +18,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.ToIntFunction;
 
-/**
- * 每一條 Major ID，照遊戲的樣子斷行之後，<b>說明</b>都要翻得出來。
- *
- * <h2>為什麼要整份語料跑一遍</h2>
- * 使用者回報神話弓 Air In A Can 的底部是
- *
- * <pre>
- *   ◆ 自由跑者: When your sprint
- *   bar is under 30% full,
- *   increase your sprint speed by
- *   +150%.
- * </pre>
- *
- * 名稱翻了、說明整段英文，而 {@code major-id.json} 裡那一句的原文一字不差。
- * 先前那次同樣症狀是語料過期；這次不是——Fabled 物品的說明<b>續行開頭多了
- * 一串 {@code À}</b>（Wynncraft 的縮排字元，讓續行對齊在「◆ 」後面），疊出兩個破口：
- *
- * <ol>
- *   <li>跨行查表只剝得掉行首的<b>圖示</b>，剝不掉以文字形式出現的縮排，
- *       攤平的鍵夾著「ÀÀ」，永遠對不上語料。</li>
- *   <li>「同一段不能翻一半」那道守門沒擋住：續行開頭是 À 不是小寫，認不出是同一句；
- *       而且只有縮排的片段會查到語料裡的「ÀÀ」，續行被算成「翻好了」。</li>
- * </ol>
- *
- * <p>之前的測試都是一條一條手捏的，捏的人沒想到的形狀就測不到。所以這裡拿
- * 語料裡<b>每一條</b>說明，照 Wynncraft 的寬度自己斷行、兩種排版
- * （一般的、帶縮排的）、兩種量法（無字型、有字型會重新折行）各走一次真正的
- * {@code TooltipPanel#translateLines}。
- *
- * <h2>Wynncraft 的斷行寬度</h2>
- * 伺服器端斷行，跟玩家的字型無關，所以按<b>字數</b>算。從實機錄到的斷行反推
- * （Transcendence、Efflorescence、Blinding Lights、Wavebreak、Freerunner）：
- * 一行最多 29 個字，名稱與冒號算在內、行首的圖示不算；句尾的標點可以超出
- * （{@code gains 3 less mana from Meteor.} 是 30 個字仍在同一行，而
- * {@code Damage of Swan Dive, Serpent's} 同樣 30 個字卻被折開）。
- */
 public final class MajorIdWrapTest {
 
     private static int failures = 0;
 
     private static PrintStream out;
 
-    /** 見類別說明「Wynncraft 的斷行寬度」。 */
     private static final int WYNN_ROW_CHARS = 29;
 
     private static final Style PINK = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
@@ -69,19 +32,12 @@ public final class MajorIdWrapTest {
             new net.minecraft.network.chat.FontDescription.Resource(
                     net.minecraft.resources.Identifier.withDefaultNamespace("common")));
 
-    /** Fabled 物品續行開頭的縮排。在 Wynncraft 的字型裡 À 是一格固定寬度的空白。 */
     static final String INDENT = "ÀÀ";
 
-    /** 名稱前面那顆項目符號（材質包圖示）。 */
     private static final String BULLET = "";
 
-    /** 說明裡的圖示（元素、資源符號）。 */
     private static final String ICON_CHAR = "";
 
-    /**
-     * 目前已知會失敗、而且<b>原因不在程式</b>的說明，以語料的鍵列出。每一條都要寫明原因。
-     * 空的最好——要加的時候就是希望有人看一眼的時候。
-     */
     private static final Set<String> KNOWN = Set.of();
 
     private static final Path MAJOR_ID = Path.of(
@@ -107,7 +63,6 @@ public final class MajorIdWrapTest {
         }
     }
 
-    /** 使用者回報的那一份，一行一行照抄。 */
     private static void airInACan(TranslationStore store) {
         say("-- Air In A Can / Freerunner --");
         String[] rows = {"When your sprint", "bar is under 30% full,",
@@ -121,28 +76,18 @@ public final class MajorIdWrapTest {
             check(label + "：沒有留下英文說明", !all.contains("When your sprint")
                     && !all.contains("bar is under") && !all.contains("increase your sprint"));
             check(label + "：數值填回去了", all.contains("30%") && all.contains("+150%"));
-            // 會重新折行的量法：行數不能比原文多
             String wrapped = render(tip, store, MajorIdWrapTest::width);
             check(label + "（重新折行）：說明翻了（實際：" + oneLine(wrapped) + "）",
                     wrapped.contains("衝刺條") && !wrapped.contains("When your sprint"));
             check(label + "（重新折行）：行數沒有比原文多",
                     rowsOf(tip, store, MajorIdWrapTest::width) <= tip.size());
         }
-        // 只剩縮排的片段不算翻譯。語料裡有整行只剩「À」的條目，查得到「ÀÀ」——
-        // 那樣整行會被算成翻好了，譯文卻跟原文一模一樣。
         Component indented = majorIdRows("Freerunner", rows, INDENT).get(1);
         check("只有縮排的片段不會被當成翻好了",
                 LineTranslator.translate(StyledText.fromComponent(indented), store, false, false)
                         == null);
     }
 
-    /**
-     * 反面：說明<b>查不到</b>時，整段要留英文，不能只剩名稱是中文。
-     *
-     * <p>「同一段不能一半中文一半英文」是靠「下一行小寫開頭就是同一句」認段落的。
-     * 續行開頭是 {@code À} 的話它不是小寫，段落就斷成一行一段——使用者看到的
-     * 「自由跑者: When your sprint」正是這樣漏過去的。
-     */
     private static void halfParagraphStaysEnglish(TranslationStore store) {
         say("-- 查不到的說明整段留英文 --");
         String[] rows = {"When your sprint", "bar is under 30% empty,",
@@ -151,11 +96,6 @@ public final class MajorIdWrapTest {
         check("不會只把名稱換成中文（實際：" + oneLine(all) + "）", !all.contains("自由跑者"));
     }
 
-    /**
-     * @param key    說明在語料裡的鍵
-     * @param src    說明的原文（模板）
-     * @param sample 填好數值與圖示、畫面上會出現的那一句
-     */
     private record Pair(String name, String nameDst, String key, String src,
                         String sample, String descDst) {}
 
@@ -179,10 +119,6 @@ public final class MajorIdWrapTest {
                 descKeys.add(key);
             }
         }
-        // 語料裡名稱與說明是兩串，<b>沒有</b>記誰配誰（說明的鍵被重新編號過，
-        // 名稱比說明多一條）。這裡照順序輪流借一個名稱來組第一行——名稱只影響
-        // 第一行有多長，查表時名稱與說明本來就是各自查的，配錯不影響結果。
-        // 真正的一對（Freerunner）由上面的 airInACan 另外驗。
         for (int i = 0; i < descs.size(); i++) {
             JsonObject e = descs.get(i);
             String[] name = names.get(i % names.size());
@@ -230,13 +166,6 @@ public final class MajorIdWrapTest {
         }
     }
 
-    /**
-     * 畫面上會出現的那一句。
-     *
-     * <p>有 {@code _raw} 就用它，數值才是真的——但 {@code _raw} 不一定可靠：
-     * 有的把圖示寫成字面的「{#}」，有的整個漏掉圖示。所以換好圖示之後模板化一次，
-     * 跟語料的 src 對不上就退回拿 src 自己填。
-     */
     static String sample(String raw, String src) {
         if (raw != null) {
             String filled = raw.replace("{#}", ICON_CHAR);
@@ -247,9 +176,7 @@ public final class MajorIdWrapTest {
         return src.replace("{~}", "12").replace("{#}", ICON_CHAR);
     }
 
-    /** @return 失敗的原因；翻好了回傳 {@code null} */
     private static String verdict(Pair p, List<String> rows, String all, TranslationStore store) {
-        // 重新折行會把一串方塊字切在兩行之間，比對前先把換行拿掉
         String joined = all.replace("\n", "");
         String longest = longestHan(strip(p.descDst()));
         boolean nameOk = joined.contains(strip(p.nameDst()));
@@ -270,23 +197,15 @@ public final class MajorIdWrapTest {
                 + (english ? "留著英文續行 " : "") + "— " + reason + "｜輸出：" + oneLine(all);
     }
 
-    /** 模板化，跟語料的 src 同一個形狀。 */
     static String template(String text) {
         return com.wynnchayuan.capture.LineParts.of(StyledText.fromComponent(parts(text, GREY)))
                 .template();
     }
 
-    // ------------------------------------------------------------------ 組 tooltip
-
-    /**
-     * 照 Wynncraft 的寬度把「名稱: 說明」斷行。
-     *
-     * @return 每一行的文字；第一行<b>不含</b>名稱，名稱由 {@link #majorIdRows} 接上
-     */
     static List<String> wrap(String name, String desc) {
         List<String> rows = new ArrayList<>();
         StringBuilder row = new StringBuilder();
-        int prefix = name.length() + 2;               // 「Name: 」
+        int prefix = name.length() + 2;
         for (String word : desc.split(" ")) {
             if (word.isEmpty()) {
                 continue;
@@ -306,16 +225,11 @@ public final class MajorIdWrapTest {
         return rows;
     }
 
-    /** 算字數：圖示不算，句尾的標點可以超出。 */
     private static int counted(String row) {
         String core = row.replaceAll("[.,]+$", "");
         return (int) core.codePoints().filter(cp -> !GlyphSplitter.isGlyphCodePoint(cp)).count();
     }
 
-    /**
-     * 遊戲送來的 Major ID 那幾行：第一行是「圖示＋偏移＋粉紅的名稱＋灰色的說明」，
-     * 續行是灰色的說明，Fabled 物品的續行前面多一串 {@code À}。
-     */
     static List<Component> majorIdRows(String name, String[] rows, String indent) {
         List<Component> out = new ArrayList<>();
         MutableComponent first = Component.empty();
@@ -335,7 +249,6 @@ public final class MajorIdWrapTest {
         return out;
     }
 
-    /** 文字切成片段：私用區字元當圖示（自訂字型），其餘是文字。 */
     private static MutableComponent parts(String text, Style style) {
         MutableComponent line = Component.empty();
         StringBuilder run = new StringBuilder();
@@ -355,7 +268,6 @@ public final class MajorIdWrapTest {
         return line;
     }
 
-    /** Major ID 放進一份物品 tooltip 裡：前後有別的行、中間隔著空行。 */
     static List<Component> tooltip(List<Component> majorId) {
         List<Component> tip = new ArrayList<>();
         tip.add(Component.literal("Sample Bow").withStyle(PINK));
@@ -366,15 +278,13 @@ public final class MajorIdWrapTest {
         return tip;
     }
 
-    // ------------------------------------------------------------------ 跑一次
-
     static String render(List<Component> tip, TranslationStore store,
                                  ToIntFunction<Component> measure) {
         LineTranslator.measureForTest = measure;
         try {
             List<Component> got = com.wynnchayuan.render.TooltipPanel.translateLines(tip, store);
             if (got.isEmpty()) {
-                got = tip;                             // 一行都沒翻 = 整份原文
+                got = tip;
             }
             StringBuilder sb = new StringBuilder();
             for (Component c : got) {
@@ -397,7 +307,6 @@ public final class MajorIdWrapTest {
         }
     }
 
-    /** 粗略的 Minecraft 字寬：空白 4、方塊字 12、其他 6；À 縮排算一格空白。 */
     static int width(Component c) {
         int px = 0;
         for (int cp : c.getString().codePoints().toArray()) {
@@ -406,14 +315,10 @@ public final class MajorIdWrapTest {
         return px;
     }
 
-    // ------------------------------------------------------------------ 小工具
-
-    /** 拿掉 {~1}、{c1}、{/} 那些記號。 */
     private static String strip(String text) {
         return text.replaceAll("\\{[^}]*\\}", "");
     }
 
-    /** 最長的一串方塊字。拿它當「說明有翻到」的標記，不必釘特定用詞。 */
     private static String longestHan(String text) {
         String best = "";
         StringBuilder run = new StringBuilder();

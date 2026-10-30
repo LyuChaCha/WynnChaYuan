@@ -3,32 +3,13 @@ package com.wynnchayuan.client.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 調整面板位置：五個小框同時擺在畫面上，拖到想要的地方。
- *
- * <h2>為什麼全部一起顯示</h2>
- * 一次只調一個的話，調完才發現對話框蓋到任務追蹤。全部擺出來，會不會互相擋到
- * 一眼就看得到。
- *
- * <h2>操作</h2>
- * 拖框搬位置，拉右下角改大小（只有對話、選項、任務追蹤能改）。靠近畫面中線會吸過去，
- * 吸住的時候那條中線會亮起來。底列可以只重置選到的那一個，或全部重置。
- * 按「儲存」才寫進設定；直接關掉等於取消。
- */
 public final class PositionView extends Surface {
 
-    /** 框裡的一行示意文字。 */
     public record Line(String text, int colour) {}
 
-    /**
-     * 一個可以擺的框。
-     *
-     * @param centred 設定檔裡記的是不是「中心的 x」（對話、選項、名牌是；它們會依內容變寬）
-     */
     public record Spec(String id, String label, int defW, int defH, boolean resizable,
                        int minW, int maxW, boolean centred, List<Line> lines) {}
 
-    /** 設定檔裡現在記的值。沒記過位置或大小就是 {@code null}。 */
     public record Saved(Integer x, Integer y, Integer w, Integer h) {}
 
     public interface Host {
@@ -36,13 +17,10 @@ public final class PositionView extends Surface {
 
         Saved saved(String id);
 
-        /** 沒存過位置的時候放哪裡：{@code {x, y}}。 */
         int[] defaultPosition(String id, int w, int h, int screenW, int screenH);
 
-        /** @param w 沒改過大小時是 {@code null}，設定檔裡那一筆要清掉 */
         void store(String id, int x, int y, Integer w, Integer h);
 
-        /** 全部寫進磁碟。 */
         void commit();
 
         void close();
@@ -66,9 +44,7 @@ public final class PositionView extends Surface {
     private static final int MIN_H = 24;
     private static final int MAX_H = 320;
     private static final int SNAP = 5;
-    /** 頂列與每個框上面那條名稱要留的高度。 */
     private static final int TOP = 56;
-    /** 底列要留的高度。 */
     private static final int FOOT = 40;
 
     private final Shell shell;
@@ -100,7 +76,6 @@ public final class PositionView extends Surface {
         shell.click();
     }
 
-    /** 第一次畫、或視窗大小變了：從設定檔把每個框擺好。 */
     private void layout() {
         if (laidOutW == screenW && laidOutH == screenH) {
             return;
@@ -181,7 +156,6 @@ public final class PositionView extends Surface {
         winH = screenH;
         int frame = 0xFF000000 | (shell.frame() & 0xFFFFFF);
 
-        // 拖的時候畫出兩條中線；吸住的那一條亮起來
         if (active != null && !resizing) {
             c.fill(screenW / 2f, TOP - 14, screenW / 2f + c.px(), screenH - FOOT,
                    snapX ? accent : 0x30FFFFFF);
@@ -209,7 +183,6 @@ public final class PositionView extends Surface {
     private void box(Box box, int frame, boolean lit) {
         boolean on = box == selected;
         float g = glow("box:" + box.spec.id(), lit);
-        // 名稱與大小：一條貼在框上面的小標籤
         String size = box.w + " × " + box.h;
         String label = box.spec.label();
         float lw = Math.min(box.w, c.width(label) + c.width(size) + 18);
@@ -238,7 +211,6 @@ public final class PositionView extends Surface {
             resizing = false;
             grabX = px - box.x;
             grabY = py - box.y;
-            // 抓到的那一個移到最上層
             boxes.remove(box);
             boxes.add(box);
         });
@@ -256,9 +228,7 @@ public final class PositionView extends Surface {
         body.release = this::drop;
         body.key = "box:" + box.spec.id();
 
-        // 拉大小的那一角要後登記：後登記的在上面，不然整個框那一塊會先接到點擊
         if (box.spec.resizable()) {
-            // 右下角三條斜線：這個框可以拉大小
             int ink = lit || on ? accent : Ui.alpha(frame, 0x90);
             float rx = box.x + box.w - 3;
             float by = box.y + box.h - 3;
@@ -307,7 +277,6 @@ public final class PositionView extends Surface {
         c.logo(x + 6, y + 5, 20);
         float right = x + w - 8;
 
-        // 五個框的名字：框疊在一起、點不到底下那個的時候，從這裡選
         float chipsLeft = right;
         if (screenW >= 520) {
             for (int i = boxes.size() - 1; i >= 0; i--) {
@@ -334,7 +303,6 @@ public final class PositionView extends Surface {
         c.text(Ui.fit(c, shell.tr("pos.hint"), (int) room), x + 32, y + 16, Ui.TEXT_3);
     }
 
-    /** 頂列的名字照固定順序排（設定檔的順序），不跟著「誰在最上層」跳來跳去。 */
     private Box sorted(int index) {
         Spec spec = host.boxes().get(index);
         for (Box box : boxes) {
@@ -346,7 +314,6 @@ public final class PositionView extends Surface {
     }
 
     private void toolbar(Box under, boolean underGrip) {
-        // 寬度照字算：俄文與西班牙文的按鈕長，固定寬度會把左邊那句提示擠到只剩幾個字
         float need = 9 + 9 + c.width(shell.tr("pos.idle")) + 12
                 + buttonWidth(shell.tr("pos.save")) + 12 + 4
                 + buttonWidth(shell.tr("pos.cancel")) + 10

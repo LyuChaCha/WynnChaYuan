@@ -19,17 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-/**
- * 兩處查表加速，結果必須跟改之前<b>逐字相同</b>。
- *
- * <ul>
- *   <li>{@link PlaceNames#matcher}：先用首字元索引篩掉沒有地名的字，有才跑比對式。
- *       這裡照原本的寫法另外編一份比對式當對照，拿整份語料（所有原文與譯文）
- *       加上每個地名的各種擺法逐一比對，每一個比對到的位置都要一樣。</li>
- *   <li>{@link TranslationStore#respell}：開頭大寫的那一份改成預先算好。照原本
- *       「迴圈裡現組」的寫法算一次當對照，語料全部加上每個英式拼法的各種大小寫都要一樣。</li>
- * </ul>
- */
 public final class RespellPlacesTest {
 
     private static int failures = 0;
@@ -46,8 +35,6 @@ public final class RespellPlacesTest {
                 : "\n地名與拼法加速：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
     }
-
-    // ------------------------------------------------------------------ 地名
 
     private static void places(Path root, Set<String> corpus) throws IOException {
         List<String> names = new ArrayList<>();
@@ -67,8 +54,8 @@ public final class RespellPlacesTest {
             inputs.add("[You are now entering " + name + "]");
             inputs.add(name + " Citizen");
             inputs.add("Go to " + name + ".");
-            inputs.add(name + "s");                       // 後面接字母：邊界擋掉
-            inputs.add("x" + name);                       // 前面接字母：邊界擋掉
+            inputs.add(name + "s");
+            inputs.add("x" + name);
             inputs.add(name.toLowerCase(java.util.Locale.ROOT) + " road");
             inputs.add(name + name);
             inputs.add("12" + name + "34");
@@ -98,7 +85,6 @@ public final class RespellPlacesTest {
                 + (firstDiff == null ? "" : "，例如 " + firstDiff) + "）", differ == 0);
     }
 
-    /** 照 {@code PlaceNames#compile} 原本的寫法：長的優先、前後要是詞界。 */
     private static Pattern oldPattern(List<String> names) {
         List<String> sorted = new ArrayList<>(names);
         sorted.sort(Comparator.comparingInt(String::length).reversed());
@@ -122,8 +108,6 @@ public final class RespellPlacesTest {
         }
         return out;
     }
-
-    // ------------------------------------------------------------------ 拼法
 
     private static void respell(Set<String> corpus) throws Exception {
         var field = TranslationStore.class.getDeclaredField("SPELLING");
@@ -160,7 +144,6 @@ public final class RespellPlacesTest {
                 + (firstDiff == null ? "" : "，例如 " + firstDiff) + "）", differ == 0);
     }
 
-    /** 原本的寫法：開頭大寫的那一份在迴圈裡現組。 */
     private static String oldRespell(String text, String[][] spelling) {
         String out = text;
         for (String[] pair : spelling) {
@@ -174,9 +157,6 @@ public final class RespellPlacesTest {
         return Character.toUpperCase(word.charAt(0)) + word.substring(1);
     }
 
-    // ------------------------------------------------------------------ 語料
-
-    /** 所有語言檔裡的鍵與字串值（原文與譯文都收；quest/ 是合併檔的來源，略過免得重複）。 */
     static Set<String> corpus(Path dir) throws IOException {
         Set<String> out = new LinkedHashSet<>();
         try (Stream<Path> files = Files.walk(dir)) {
@@ -188,7 +168,6 @@ public final class RespellPlacesTest {
                 try {
                     walk(JsonParser.parseString(Files.readString(file, StandardCharsets.UTF_8)), out);
                 } catch (RuntimeException e) {
-                    // 不是語料格式的檔（索引之類）略過
                 }
             }
         }

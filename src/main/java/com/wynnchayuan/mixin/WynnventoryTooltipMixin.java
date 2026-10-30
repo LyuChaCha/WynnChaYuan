@@ -14,15 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
-/**
- * Wynnventory 的價格框與意象清單：畫之前把寫死的字（物品名、數值名…）換成譯文。
- *
- * <p>它所有的側邊框都走 {@code RenderUtils.drawTooltip(graphics, x, y, 原本的 tooltip, 它的那幾行)}，
- * 這裡換的是最後那個參數——寬度、位置它自己照換過的字算。
- *
- * <p>{@link Pseudo}：沒裝那個模組就整個跳過；它改版、方法對不上的話這一項自己失效
- * （{@code require = 0}），標籤那一半（語言那一層）不受影響。
- */
 @Pseudo
 @Mixin(targets = "com.wynnventory.util.RenderUtils", remap = false)
 public abstract class WynnventoryTooltipMixin {
@@ -33,11 +24,6 @@ public abstract class WynnventoryTooltipMixin {
         return WynnventoryBridge.lines(customLines);
     }
 
-    /**
-     * 放的位置與大小由我們接手：照實際畫出來的說明框寬度挑邊，兩邊都放不下就縮小，
-     * 不再整個壓在說明上。見 {@link com.wynnchayuan.render.WynnventoryLayout}；
-     * 接不了（縮太小、出事）就交回它原本的方法。
-     */
     @Inject(method = "drawTooltip", at = @At("HEAD"), cancellable = true, remap = false,
             require = 0)
     private static void wynnchayuan$layout(net.minecraft.client.gui.GuiGraphics graphics,
@@ -49,10 +35,6 @@ public abstract class WynnventoryTooltipMixin {
         }
     }
 
-    /**
-     * 它算好價格框放哪裡了：記下來，我們「另開面板」的譯文面板才讓得開。
-     * 見 {@link WynnventoryBox}。
-     */
     @Inject(method = "calculateTooltipCoords", at = @At("RETURN"), remap = false, require = 0)
     private static void wynnchayuan$where(int mouseX, int mouseY,
                                           List<ClientTooltipComponent> vanillaComponents,

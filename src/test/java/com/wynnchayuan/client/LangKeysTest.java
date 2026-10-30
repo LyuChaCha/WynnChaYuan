@@ -13,20 +13,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-/**
- * 介面文字的語言檔對得起程式嗎。
- *
- * <h2>為什麼需要</h2>
- * {@code Component.translatable} 查不到鍵的時候<b>不會失敗</b>——它把鍵名原樣
- * 畫在畫面上。所以打錯一個字的後果是使用者看到 {@code wynnchayuan.data.sorce}，
- * 而開發這邊什麼事都沒有。
- *
- * <p>{@code %s} 的個數對不上更糟：那會在執行期丟例外，而丟例外的時機是
- * 「某個人剛好切到那個語言、剛好開到那一頁」。
- *
- * <p>這一條掃程式碼裡所有 {@code T.c("…")} / {@code T.s("…")} 的鍵，跟三份
- * 語言檔對照。
- */
 public final class LangKeysTest {
 
     private static int failures = 0;
@@ -35,15 +21,9 @@ public final class LangKeysTest {
     private static final Path LANG =
             Path.of("src/main/resources/assets/wynnchayuan/lang");
 
-    /**
-     * {@code T.c("key"} 或 {@code T.s("key"}，以及畫面那一層的 {@code shell.tr("key"}、
-     * {@code host.tr("key"}——{@code client.ui} 底下的畫面不認得 {@code T}，
-     * 字串是透過外殼問來的。
-     */
     private static final Pattern USED =
             Pattern.compile("(?:\\bT\\.[cs]|\\.tr)\\(\\s*\"([^\"]+)\"");
 
-    /** {@code cycle("key", …)} 那一路：名稱與說明是同一個鍵推出來的。 */
     private static final Pattern ROW = Pattern.compile(
             "\\b(?:cycle|cycleWith)\\(\\s*\"([a-z][a-z.]+)\",\\s*$",
             Pattern.MULTILINE);
@@ -53,11 +33,6 @@ public final class LangKeysTest {
     public static void main(String[] args) throws Exception {
         JsonObject en = load("en_us");
 
-        // 資料夾裡有幾種就檢查幾種。
-        //
-        // 先前寫死 zh_tw 與 zh_cn 兩行。日文與韓文加進來的那一版，
-        // 這裡<b>一條都沒檢查到</b>——而語言檔的錯誤（鍵打錯、%s 個數不對）
-        // 全部是安靜的：前者永遠用不到，後者在畫面上丟例外。
         java.util.Map<String, JsonObject> others = new java.util.LinkedHashMap<>();
         for (String code : codes()) {
             if (!code.equals("en_us")) {
@@ -73,14 +48,10 @@ public final class LangKeysTest {
                     one.getValue().size() > 0);
         }
 
-        // ---- 程式用到的鍵，en_us 一定要有 ----
         Set<String> used = usedKeys();
         check("掃到程式裡用了 " + used.size() + " 個鍵", used.size() > 50);
         List<String> missing = new ArrayList<>();
         for (String key : used) {
-            // 以點結尾的是<b>前綴</b>——鍵是拼出來的
-            // （{@code T.s("tracker.heading." + type)}）。那種要求的是
-            // 「這個前綴底下至少有東西」，不是「有這一條」。
             if (key.endsWith(".")) {
                 boolean any = en.keySet().stream()
                         .anyMatch(k -> k.startsWith("wynnchayuan." + key));
@@ -97,9 +68,6 @@ public final class LangKeysTest {
                         + (missing.isEmpty() ? "" : "（少了 " + missing + "）"),
                 missing.isEmpty());
 
-        // ---- 三份語言檔的鍵要一致 ----
-        // en_us 是回退的底，所以它一定要最齊；其他語言少了哪一條只是顯示英文，
-        // 但<b>多</b>了哪一條就表示鍵名打錯了——那一條永遠不會被用到。
         for (var entry : others.entrySet()) {
             String name = entry.getKey();
             JsonObject one = entry.getValue();
@@ -123,7 +91,6 @@ public final class LangKeysTest {
                     absent.isEmpty());
         }
 
-        // ---- %s 的個數要一致 ----
         List<String> mismatched = new ArrayList<>();
         for (String key : en.keySet()) {
             int want = count(en.get(key).getAsString());
@@ -138,20 +105,11 @@ public final class LangKeysTest {
                         + (mismatched.isEmpty() ? "" : "：" + mismatched),
                 mismatched.isEmpty());
 
-        // ---- 沒有用到的鍵 ----
-        //
-        // 這裡用<b>寬鬆</b>的掃法：程式碼裡任何長得像鍵的字面都算數，
-        // 因為鍵常常寫在三元或 switch 裡（{@code T.s(on ? "mode.on" : "mode.off")}），
-        // 嚴格的正規式抓不到。寧可把沒用到的當成有用到，也不要指控一條
-        // 其實有在用的鍵——那會逼人把好好的檢查關掉。
         Set<String> mentioned = mentionedKeys();
         List<String> prefixes = mentioned.stream()
                 .filter(k -> k.endsWith(".")).toList();
         List<String> unused = new ArrayList<>();
         for (String key : en.keySet()) {
-            // key.* 是<b>Minecraft 自己</b>要查的，不走 T。它從模組的語言檔查
-            // 按鍵的名字與分類名（見 registerKeyBind），底下另外有一條檢查
-            // 釘住「程式裡註冊了哪幾個，語言檔就要有哪幾個」。
             if (key.startsWith("key.")) {
                 continue;
             }
@@ -165,13 +123,8 @@ public final class LangKeysTest {
         check("語言檔裡沒有用不到的鍵"
                         + (unused.isEmpty() ? "" : "：" + unused), unused.isEmpty());
 
-        // ---- 按鍵的名字 ----
-        //
-        // 這幾條漏掉不會有任何錯誤訊息：原版的按鍵設定畫面直接把鍵名印出來
-        // （`key.wynnchayuan.openSettings`），看起來像壞掉但什麼都沒壞。
-        // 實機就這樣過了好幾版。
         List<String> binds = new ArrayList<>(keyBindings());
-        binds.add("key.category.wynnchayuan.main");      // 分類名是拼出來的
+        binds.add("key.category.wynnchayuan.main");
         check("掃到程式裡註冊了 " + (binds.size() - 1) + " 個按鍵", binds.size() > 1);
         List<String> noName = new ArrayList<>();
         for (String key : binds) {
@@ -194,7 +147,6 @@ public final class LangKeysTest {
         return n;
     }
 
-    /** {@code lang/} 底下有哪幾種語言。 */
     private static List<String> codes() throws Exception {
         try (Stream<Path> files = Files.list(LANG)) {
             return files.map(p -> p.getFileName().toString())
@@ -210,11 +162,8 @@ public final class LangKeysTest {
                 Files.readString(LANG.resolve(code + ".json"))).getAsJsonObject();
     }
 
-    /** 程式裡 {@code new KeyMapping("…")} 註冊了哪幾個按鍵。 */
     private static Set<String> keyBindings() throws Exception {
         Set<String> out = new LinkedHashSet<>();
-        // 至少兩個點才算：註解裡有個 "key.category"，那是用來<b>拼</b>分類鍵的
-        // 前綴，不是語言檔裡的一條。
         Pattern bind = Pattern.compile("\"(key\\.[A-Za-z0-9_]+\\.[A-Za-z0-9_.]+)\"");
         try (Stream<Path> files = Files.walk(SRC)) {
             for (Path file : files.filter(p -> p.toString().endsWith(".java")).toList()) {
@@ -237,20 +186,16 @@ public final class LangKeysTest {
                 }
             }
         }
-        // 貢獻者頁的分區標題寫在 credits.json 的 "key"，不在程式碼裡。
         Matcher credit = Pattern.compile("\"key\"\\s*:\\s*\"([^\"]+)\"").matcher(
                 Files.readString(Path.of("src/main/resources/assets/wynnchayuan/credits.json")));
         while (credit.find()) {
             out.add(credit.group(1));
         }
-        // 分類名是照 TAB_KEYS 拼出來的，掃不到。
         for (String key : new String[] {"tab.items", "tab.panel", "tab.dialogue",
                                         "tab.world", "tab.data"}) {
             out.add(key);
             out.add(key + ".about");
         }
-        // cycle("x", …) 這一路的名稱與說明是從同一個鍵推出來的（x 與 x.hint），
-        // 所以 x.hint 在程式碼裡根本不會以字面出現。
         try (Stream<Path> files = Files.walk(SRC)) {
             for (Path file : files.filter(p -> p.toString().endsWith(".java")).toList()) {
                 Matcher m = ROW.matcher(Files.readString(file));
@@ -263,7 +208,6 @@ public final class LangKeysTest {
         return out;
     }
 
-    /** 程式碼裡任何長得像鍵的字面。見上面那段說明。 */
     private static Set<String> mentionedKeys() throws Exception {
         Set<String> out = new LinkedHashSet<>(usedKeys());
         Pattern any = Pattern.compile("\"([a-z][a-z0-9]*(?:\\.[a-z][a-z0-9]*)+)\"");

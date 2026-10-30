@@ -9,10 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * 同一幀裡同一件物品讀同一種資料只算一次，見 {@link ComponentMemo}。
- * 擋在開頭：命中時連 Wynntils 在結尾發的事件都不必再發。
- */
 @Mixin(DataComponentHolder.class)
 public interface ComponentMemoMixin {
 

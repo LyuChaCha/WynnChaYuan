@@ -13,13 +13,6 @@ import net.minecraft.client.gui.screens.Screen;
 
 import java.util.List;
 
-/**
- * 名牌的進階設定：怎麼顯示，以及什麼情況下才算「你在看它」。
- *
- * <p>從設定畫面「世界與聊天 → 名牌與漂浮字」旁邊的「進階…」進來。內容只有四列，
- * 用的是跟設定畫面同一套列（{@link SettingsView} 的小視窗模式）——分段、滑桿、
- * 逐項重置、滑過的說明都一樣，不另外做一套。
- */
 public final class NametagScreen extends CanvasScreen {
 
     private final SettingsView view;

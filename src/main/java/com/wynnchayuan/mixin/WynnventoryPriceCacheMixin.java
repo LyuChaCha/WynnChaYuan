@@ -11,10 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
-/**
- * Wynnventory 的價格框每一幀都把指著的物品重新解析一次；同一件物品一秒內算一次就好。
- * 見 {@link WynnventoryPriceCache}。沒裝或改版就整個跳過。
- */
 @Pseudo
 @Mixin(targets = "com.wynnventory.feature.tooltip.price.PriceTooltipFactory", remap = false)
 public abstract class WynnventoryPriceCacheMixin {

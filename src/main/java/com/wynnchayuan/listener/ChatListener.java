@@ -16,41 +16,12 @@ import net.neoforged.bus.api.SubscribeEvent;
 import java.util.EnumSet;
 import java.util.Set;
 
-/**
- * 聊天視窗裡的伺服器訊息。
- *
- * <h2>為什麼聊天要另外接一支</h2>
- * 任務完成的獎勵清單、進出區域的提示、商店與活動公告，這些都走<b>聊天</b>
- * 而不是對話框。先前 {@link CaptureListener} 只把它們<b>收錄</b>進語料，
- * 沒有任何地方把譯文畫回去——語料裡明明有「[任務完成]」「獎勵:」
- * 「- +{~} 經驗值」，玩家看到的還是英文。
- *
- * <h2>只碰伺服器發的</h2>
- * 聊天視窗同時混著<b>其他玩家打的字</b>。那是真人寫的內容，翻它既沒意義也不禮貌，
- * 而且夾帶人名。白名單跟收錄那一關用同一份：只有 {@code INFO} 與
- * {@code GAME_MESSAGE}，其餘（世界、公會、隊伍、私訊、寵物、喊話）一律不動。
- *
- * <p>再過一次 {@link PlayerDataFilter}：伺服器訊息裡也有夾帶玩家名的
- * （好友上線、交易邀請），那些原樣放過。
- */
 public final class ChatListener {
 
-    /** 跟收錄那一關同一份白名單。見 {@link CaptureListener#onChat}。 */
     private static final Set<RecipientType> SERVER_MESSAGES =
             EnumSet.of(RecipientType.INFO, RecipientType.GAME_MESSAGE);
 
-    /**
-     * 就地取代模式：多欄的面板整塊攔下來，等它跳完再一起翻。見 {@link ChatBlock#hold}。
-     *
-     * <p>掛在 {@code Match}，因為只有這一支能讓原文不顯示（{@code cancelChat}）；
-     * 被攔下來的訊息不會再有 {@code Edit}。優先權放最低：別的模組（Wynntils 自己的
-     * Lootrun 模型）照常先讀到原文。
-     *
-     * <p>從<b>第一個多欄的列</b>開始攔，之後跟著來的伺服器訊息（單欄的接續列、
-     * 空行、重抽那兩列）一起攔到安靜下來為止——只攔多欄那幾列的話，夾在中間的
-     * 單欄列會先顯示，整塊的順序就亂了。面板前面的標題列（「選擇一個信標！」）
-     * 在第一個多欄列之前就到了，照舊當場換掉。
-     */
+    // 只有 Match 能 cancelChat；最低優先權讓 Wynntils 先讀原文
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onMatch(ChatMessageEvent.Match event) {
         if (event.isChatCanceled()
@@ -66,10 +37,9 @@ public final class ChatListener {
         try {
             panel = ChatBlock.holding() || LineTranslator.panelRow(message);
         } catch (Throwable t) {
-            panel = false;               // 判斷出事就當成一般訊息，照舊當場處理
+            panel = false;
         }
         if (panel) {
-            // 跟 Edit 那一關同一道守門：夾著別人名字的、別的模組要讀的，攔下來也不翻
             boolean keep;
             try {
                 keep = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
@@ -77,8 +47,6 @@ public final class ChatListener {
                         || (com.wynnchayuan.capture.Broadcasts.find(message) == null
                             && PlayerDataFilter.carriesPlayerData(
                                     GlyphSplitter.toTemplate(message))
-                            // 認得句型而且整句翻得出來的才放行：放行的列翻不出來時
-                            // 會退到逐片段那條路，名字那一段就會被拿去查表
                             && (LineTranslator.nameFramed(message, WynnChaYuan.translations()) == null
                                 || LineTranslator.translateChat(
                                         message, WynnChaYuan.translations()) == null));
@@ -87,29 +55,19 @@ public final class ChatListener {
             }
             event.cancelChat();
             ChatBlock.hold(message, keep);
-            // 被攔下來的訊息不會再有 Edit，「複製聊天」那份緩衝區要在這裡記
             if (WynnChaYuan.config().chatCopy()) {
                 ChatLog.add(message.getComponent(), null);
             }
         }
     }
 
-    /**
-     * 用 {@code Edit} 而不是 {@code Match}——只有 {@code Edit} 收得到
-     * {@code setMessage}，那是 Wynntils 專門留給「改寫聊天內容」的那一支。
-     *
-     * <p>優先權放最低：讓其他模組先改完，我們拿到的才是最後真正要畫的樣子。
-     */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onChat(ChatMessageEvent.Edit event) {
         StyledText message = event.getMessage();
         if (message == null || GlyphSplitter.isGlyphOnly(message)) {
             return;
         }
-        // 我們自己送出去的譯文會再觸發一次這個事件。再翻一次是白費力氣，
-        // 而且它會跟後面真正的新訊息攢成同一塊。見 ChatBlock#isOurs。
         if (ChatBlock.isOurs(message)) {
-            // 其他功能（Wynntils 的提及高亮）在前面改過它的話放回原樣。見 ChatBlock#sendingNow。
             Component ours = ChatBlock.sendingNow();
             if (ours != null) {
                 StyledText original = StyledText.fromComponent(ours);
@@ -121,21 +79,6 @@ public final class ChatListener {
         }
         CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
         boolean serverSide = SERVER_MESSAGES.contains(event.getRecipientType());
-        // 查譯文。玩家發言、夾帶玩家名的伺服器訊息不查——
-        // 那是真人寫的內容，翻它既沒意義也不禮貌。
-        //
-        // 原文＋譯文那個模式走的是聊天專用的那一支：它只認整條訊息的鍵，
-        // 不會退到逐片段替換。退到逐片段的結果幾乎一定是「翻到一點點」，
-        // 而那份半吊子會把整塊佔住（見 ChatBlock#asBlock）。
-        //
-        // 順便省掉一次重複翻譯：先前這裡翻一次，ChatBlock 送出前又翻一次，
-        // 兩份都會寫進診斷檔，於是逐行對齊的額度被灌爆——回報回來的檔案裡
-        // 常常連想看的那一塊都排不進去。
-        //
-        // 例外是<b>句型固定的伺服器廣播</b>（某某人丟了炸彈）：句子是伺服器的文案，
-        // 只有主詞是別人的名字。那個名字被收成佔位符原樣填回，不會拿去查表。
-        // 只走聊天專用那一支——它只認整條訊息的鍵，查不到就整句不動，
-        // 不會退到逐片段去碰名字那一段。見 Broadcasts。
         boolean reserved = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
                 message.getStringWithoutFormatting());
         boolean carries = serverSide
@@ -143,15 +86,12 @@ public final class ChatListener {
         Component hit;
         if (serverSide && !reserved
                 && (com.wynnchayuan.capture.Broadcasts.find(message) != null
-                    // 語料裡帶 {u} 的句型（隊友給的增益、死亡快訊…），名字照位置收成 {u}。
-                    // 同樣只走聊天專用那一支。見 NameFrames。
                     || (carries && LineTranslator.nameFramed(
                             message, WynnChaYuan.translations()) != null))) {
             hit = LineTranslator.translateChat(message, WynnChaYuan.translations());
         } else {
             hit = serverSide
                     && !carries
-                    // 別的模組從聊天解遊戲狀態，那幾條留英文。見 ThirdPartyLiterals。
                     && !reserved
                     ? (mode == CollectorConfig.ChatMode.BOTH
                             ? LineTranslator.translateChat(message, WynnChaYuan.translations())
@@ -159,51 +99,23 @@ public final class ChatListener {
                     : null;
         }
 
-        // 先記進複製用的緩衝區，再考慮要不要改畫面。
-        //
-        // 兩件事是分開的：就算使用者把聊天翻譯關掉，「複製聊天」也要能用；
-        // 而且他可能想複製別人講的話，那些我們從來不翻。
-        // 緩衝區只留在本機，不進語料。見 {@link ChatLog}。
         if (WynnChaYuan.config().chatCopy()) {
             ChatLog.add(message.getComponent(), hit);
         }
 
         if (mode == CollectorConfig.ChatMode.OFF || !serverSide) {
-            return;                      // 關掉了，或不是伺服器發的
+            return;
         }
         if (mode == CollectorConfig.ChatMode.BOTH) {
-            // 譯文不當場接上去，先攢著。
-            //
-            // 任務完成的獎勵清單是<b>一行一則</b>訊息送過來的，當場接的話
-            // 畫面上會變成中英交錯，而原文那一塊是照英文寬度排好版的，
-            // 中間插進中文就整塊散了。見 {@link ChatBlock}。
-            //
-            // 查不到譯文的那幾行也要攢——它們是這一塊的一部分，
-            // 少了它們整塊就接不回去、也就查不到整塊的那一條。
             ChatBlock.queue(message, hit);
             return;
         }
         if (hit == null) {
-            return;                      // 查不到就別動，原文比半吊子好
+            return;
         }
         event.setMessage(StyledText.fromComponent(hit));
     }
 
-    /**
-     * 就地取代模式的譯文。
-     *
-     * <p>先走聊天專用的那一支，查不到才退回通用的 {@link LineTranslator#translate}。
-     *
-     * <p>先前這個模式直接用通用的那一支，Lootrun 的信標面板因此壞了兩處：
-     * <ul>
-     *   <li>那一支的對齊是給 tooltip 用的，遇到「兩欄各自置中」的行會把縮水量
-     *       補兩次，譯文比原文還寬，被原版聊天從字中間折到下一行最左邊
-     *       （「橘色信｜標」）。聊天專用的對齊每欄對自己的中心，只會變窄。</li>
-     *   <li>它沒有「一欄一欄查」：整行查不到就直接退到逐片段，於是
-     *       「Empower next Beacon」留英文、右欄只翻到「詛咒」一個詞。</li>
-     * </ul>
-     * 退回通用那一支是為了不讓先前翻得出來的單則訊息變回英文。
-     */
     private static Component replaceInPlace(StyledText message) {
         Component chat = LineTranslator.translateChat(message, WynnChaYuan.translations());
         return chat != null ? chat : LineTranslator.translate(message, WynnChaYuan.translations());

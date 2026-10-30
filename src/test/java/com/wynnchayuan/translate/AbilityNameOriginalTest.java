@@ -14,21 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * F6「技能名稱附原文」：技能名稱與 Major ID 名稱後面括號附原文，跟物品名稱的
- * 「譯名加原文」同一個畫法。
- *
- * <p>用真正的語料跑（技能樹與 Major ID 的檔），但<b>不寫死譯名</b>——術語統一的 PR
- * 會改它。拿開關關著時查到的譯名當基準，開著時就該是「基準 (原文)」。
- * 另外疊一層自己的技能檔，放一個譯名跟原文一模一樣的名字。
- */
 public final class AbilityNameOriginalTest {
 
     private static int failures = 0;
 
     private static final String ABILITY = "Arrow Bomb";
     private static final String MAJOR_ID = "Altruism";
-    /** 疊上去的技能檔裡那一個「譯名就是原文」的名字。 */
     private static final String SAME = "Zzyzx Strike";
 
     private static final int NAME_COLOUR = 0xFF55FF;
@@ -74,7 +65,6 @@ public final class AbilityNameOriginalTest {
         finish();
     }
 
-    /** 預設關著（跟物品名稱一樣不附原文），設定檔讀得回來。 */
     private static void defaults() throws Exception {
         Path dir = Files.createTempDirectory("wcy-ability-original-cfg");
         CollectorConfig fresh = new CollectorConfig(dir.resolve("fresh.json"));
@@ -87,7 +77,6 @@ public final class AbilityNameOriginalTest {
         check("查詢表的預設也是關著", !new TranslationStore().abilityNamesWithOriginal());
     }
 
-    /** 查表那一層：開著附原文，關著不附，譯名就是原文的不重複。 */
     private static void lookups(TranslationStore store, String ability, String majorId) {
         try {
             store.setAbilityNamesWithOriginal(true);
@@ -106,14 +95,12 @@ public final class AbilityNameOriginalTest {
         check("★ 關著：技能名只有譯名", ability.equals(store.lookup(ABILITY)));
         check("★ 關著：Major ID 名只有譯名", majorId.equals(store.lookup(MAJOR_ID)));
 
-        // 切換要讓繪製端的快取作廢
         int before = store.generation();
         store.setAbilityNamesWithOriginal(true);
         check("切換時世代往前推（快取跟著作廢）", store.generation() != before);
         store.setAbilityNamesWithOriginal(false);
     }
 
-    /** 技能樹節點的標題那一列：整列翻出來，原文跟著譯名同一個顏色。 */
     private static void abilityRow(TranslationStore store) {
         StyledText row = StyledText.fromComponent(Component.literal(ABILITY).withStyle(
                 Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF)).withBold(true)));
@@ -132,10 +119,6 @@ public final class AbilityNameOriginalTest {
         }
     }
 
-    /**
-     * 裝備說明裡的 Major ID：「✦ Altruism: 說明…」名稱與說明各有顏色、依寬度斷行。
-     * 走 tooltip 那一條路（第三行以後，物品名稱的「附原文」在那裡是擋住的）。
-     */
     private static void majorIdLine(TranslationStore store, String name, String[][] rows) {
         List<StyledText> block = majorIdBlock(rows);
         List<Component> off = LineTranslator.translateBlock(block, store, new boolean[block.size()]);
@@ -144,7 +127,7 @@ public final class AbilityNameOriginalTest {
         check("★ 關著：Major ID 那一列沒有附原文", !offText.contains(name));
 
         store.setAbilityNamesWithOriginal(true);
-        TranslationStore.holdAppendedOriginal(true);   // 物品說明第三行以後的樣子
+        TranslationStore.holdAppendedOriginal(true);
         try {
             List<Component> on = LineTranslator.translateBlock(block, store,
                     new boolean[block.size()]);
@@ -293,7 +276,6 @@ public final class AbilityNameOriginalTest {
         return out;
     }
 
-    /** 含 {@code needle} 開頭那個字的片段是什麼顏色。 */
     private static Integer colourOf(Component line, String needle) {
         return colourOf(line == null ? List.of() : List.of(line), needle);
     }

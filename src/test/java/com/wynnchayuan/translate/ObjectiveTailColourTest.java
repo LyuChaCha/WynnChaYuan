@@ -10,36 +10,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 譯文把句尾的座標搬到句中之後，座標<b>後面</b>那段字不可以繼承座標的顏色。
- *
- * <h2>實機回報（內容書「The Missing Piece」任務卡）</h2>
- * 原文兩行、兩個顏色：
- *
- * <pre>
- *   §7Pick up your post in the Post
- *   §7Office at §f[-2156, 30, -944]
- * </pre>
- *
- * 譯文把座標搬到句子中間：「到 [-{~}, {~}, -{~}] 的郵局領取你的郵件。」，
- * 折回兩行之後第二行是「的郵局領取你的郵件。」——整句<b>灰</b>的那一半。
- * 畫面上它卻是白的。
- *
- * <h2>怎麼壞的</h2>
- * 原文第二行混了兩個顏色，{@code wholeLineAccents} 退而求其次拿「多數色」貼上
- * 譯文的同一行。多數色是照實字數算的：灰的 {@code Office at} 9 個字，
- * 白的 {@code [-2156, 30, -944]} 15 個字——白贏。
- *
- * <p>但那 15 個字裡有 9 個是<b>數值本身</b>，而數值是抽出去另外保管、會自己帶著
- * 白色填回來的；它在譯文裡搬到哪一行都可以，不該由它決定整行的字是什麼顏色。
- * 見 {@code perPartStyles}。
- */
 public final class ObjectiveTailColourTest {
 
     private static int failures = 0;
 
-    private static final int BODY = 0xAAAAAA;   // 灰：說明
-    private static final int COORD = 0xFFFFFF;  // 白：座標
+    private static final int BODY = 0xAAAAAA;
+    private static final int COORD = 0xFFFFFF;
 
     private static final String LINE_ONE = "Pick up your post in the Post";
     private static final String LINE_TWO_TEXT = "Office at ";
@@ -54,7 +30,6 @@ public final class ObjectiveTailColourTest {
         return out;
     }
 
-    /** 遊戲送來的樣子：句尾的座標自成一個白色的段，其餘是灰的。 */
     private static List<StyledText> block() {
         return List.of(
                 StyledText.fromComponent(line(LINE_ONE, BODY)),
@@ -70,10 +45,6 @@ public final class ObjectiveTailColourTest {
         report();
     }
 
-    /**
-     * 譯文一行就講完（測試環境量不到字寬，不會折行）——這是原本就對的那一半，
-     * 釘住它才看得出修正沒有把它弄壞。
-     */
     private static void oneLine() throws Exception {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
@@ -88,12 +59,6 @@ public final class ObjectiveTailColourTest {
         verify("［一行］", built);
     }
 
-    /**
-     * 譯文折成兩行——實機就是這樣（原文寬度只容得下這麼多）。
-     *
-     * <p>測試環境量不到字寬，{@code wrapToBlock} 折不出東西來，所以直接餵一條
-     * <b>本來就兩行</b>的譯文：行數與原文相同，走的是同一段程式。
-     */
     private static void twoLines() throws Exception {
         Path dir = java.nio.file.Files.createTempDirectory("objective-tail");
         String src = LINE_ONE + "\\n" + LINE_TWO_TEXT.strip() + " [-{~}, {~}, -{~}]";
@@ -157,7 +122,6 @@ public final class ObjectiveTailColourTest {
         }
     }
 
-    /** 含有 {@code needle} 的那一段的顏色。 */
     private static Integer colourOf(List<Component> built, String needle) {
         List<Integer> found = new ArrayList<>();
         for (Component c : built) {

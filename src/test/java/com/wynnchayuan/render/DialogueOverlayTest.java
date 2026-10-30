@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/** 驗證 Dialogue 逐字輸入時的 prefix 翻譯不會洩漏未還原的佔位符。 */
 public final class DialogueOverlayTest {
 
     private static int failures = 0;
@@ -53,15 +52,9 @@ public final class DialogueOverlayTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    /**
-     * 原文還在畫面上的時候，小框不可以自己先淡掉（issue #1081）。
-     *
-     * <p>停留秒數從譯文最後一次更新起算，而一句話打完之後就不再更新。等玩家按
-     * shift 的對話原文會一直留著，小框卻在六秒後淡掉、內容也跟著丟了。
-     */
     private static void checkKeepAlive() {
         long now = System.currentTimeMillis();
-        long old = now - 60_000;               // 一分鐘前打完的一句話
+        long old = now - 60_000;
         int hold = 6000;
         check("前提：一分鐘前更新的小框，照停留秒數早就淡完了",
                 Fade.alphaFor(old, hold) == 0f);
@@ -75,13 +68,6 @@ public final class DialogueOverlayTest {
                 DialogueOverlay.keptAlive(old, now, false, true, true) == old);
     }
 
-    /**
-     * 存的位置在畫面外時，小框要被拉回來（issue #1081）。
-     *
-     * <p>回報的人平常用 1920×1009 的視窗（GUI 960×504）把對話小框擺在下方，
-     * 錄影時把視窗縮成 1280×720（GUI 640×360）——存的 y 比整個畫面還高，
-     * 小框照樣畫，只是畫在看不到的地方。
-     */
     private static void checkIntoScreen() {
         int[] at = Boxes.intoScreen(380, 430, 200, 42, 640, 360);
         check("★ 存在畫面外的小框被拉回來（實際 " + at[0] + "," + at[1] + "）",
@@ -109,7 +95,6 @@ public final class DialogueOverlayTest {
                         : expectedSource.equals(actualSource));
     }
 
-    /** prefix 顯示後，後續逐字輸入與完整句都應沿用同一筆快取。 */
     private static void checkCacheReuse(TranslationStore store) {
         StyledText partial = StyledText.fromString("Please travel from Troms to Detlas");
         String partialTemplate = GlyphSplitter.toTemplate(partial);

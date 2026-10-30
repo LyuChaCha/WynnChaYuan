@@ -10,25 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 裝備 tooltip 的詞條列：數值欄要落回原文的位置。
- *
- * <h2>實機回報</h2>
- * 摩羯座之靴的四條詞條，只有「魔力回復」那一行的數值往左縮了 22px：
- *
- * <pre>
- *   魔力回復   +15/5s [91.6%]      ← 歪掉
- *   魔力竊取      +5/3s [100.0%]
- *   移動速度        +19% [77.7%]
- *   法術傷害百分比  +17% [80.0%]
- * </pre>
- *
- * <p>這一份 tooltip 每一行的右緣都對齊，所以英文標籤越長、欄距就越窄。
- * {@code Mana Regen} 是四個裡面最長的，欄距只剩 4px——低於
- * {@link LineTranslator#MIN_GAP_PX}，要靠 {@code tooltipGaps} 的放寬才數得到，
- * 而那道放寬原本只認「後面是字母」。數值欄一律是 {@code +15/5s} 這種以正負號
- * 開頭的字串，於是整個欄界被漏掉，中文標籤短掉的 22px 沒人補。
- */
 public final class StatValueColumnTest {
 
     private static int failures = 0;
@@ -39,10 +20,8 @@ public final class StatValueColumnTest {
     private static final Style VALUE = WYNN.withColor(TextColor.fromRgb(0xACFAC6));
     private static final Style PCT = WYNN.withColor(TextColor.fromRgb(0x55FF71));
 
-    /** 實機量到的整行寬度：這一份 tooltip 每一行都排到這裡。 */
     private static final int LINE_WIDTH = 140;
 
-    /** 另一種排法：數值的右緣對齊，欄距寬鬆。 */
     private static final int COLUMN = 130;
 
     private static final String[][] ROWS = {
@@ -92,13 +71,11 @@ public final class StatValueColumnTest {
         }
     }
 
-    /** 整行排到同一個右緣：標籤越長，欄距越窄。{@code Mana Regen} 只剩 4px。 */
     private static Component endRow(String label, String value, String pct) {
         return row(label, value, pct,
                    LINE_WIDTH - measure(Component.literal(label + value + pct)));
     }
 
-    /** 數值的右緣對齊：欄距寬鬆，本來就數得到。 */
     private static Component valueColumnRow(String label, String value, String pct) {
         return row(label, value, pct,
                    COLUMN - measure(Component.literal(label + value)));
@@ -114,7 +91,6 @@ public final class StatValueColumnTest {
         return c;
     }
 
-    /** 第一個正負號畫在第幾個像素。 */
     private static int valueX(Component c) {
         int[] x = {0};
         int[] found = {Integer.MIN_VALUE};
@@ -136,7 +112,7 @@ public final class StatValueColumnTest {
 
     private static int advance(int cp) {
         if (cp >= 0xCF000 && cp <= 0xD0400) {
-            return cp - 0xD0000;               // 排版偏移
+            return cp - 0xD0000;
         }
         if (cp >= 0x2E80) {
             return 9;
