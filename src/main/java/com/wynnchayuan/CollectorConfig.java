@@ -634,6 +634,19 @@ public final class CollectorConfig {
         save();
     }
 
+    public void setDialogueMode(DialogueMode mode) {
+        dialogueMode = mode;
+        if (mode == DialogueMode.PANEL) {
+            showOverlays = true;
+        }
+        save();
+    }
+
+    public void setChoiceMode(DialogueMode mode) {
+        choiceMode = mode;
+        save();
+    }
+
     public void setChatMode(ChatMode mode) {
         chatMode = mode;
         save();
