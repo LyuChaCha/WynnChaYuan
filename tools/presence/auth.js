@@ -1,6 +1,6 @@
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { isMember } from './capes.js';
-import { NAME, UUID, fromBase64, hex, json, no, readJson, redirect } from './http.js';
+import { NAME, UUID, fromBase64, hex, json, no, readJson, redirect, timingSafeEqual } from './http.js';
 
 export const LOGIN_PREFIX = 'wynnchayuan.com login\n';
 
@@ -49,10 +49,7 @@ export async function readToken(env, token, now) {
   if (!UUID.test(uuid) || !NAME.test(name) || !/^\d{1,16}$/.test(expires)) return null;
   if (Number(expires) < now) return null;
   const expected = await sign(env, uuid + '.' + name + '.' + expires);
-  if (expected.length !== signature.length) return null;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
-  return diff === 0 ? { uuid, name } : null;
+  return timingSafeEqual(expected, signature) ? { uuid, name } : null;
 }
 
 const WEB_TTL_MS = 24 * 3600 * 1000;
@@ -69,10 +66,7 @@ async function readWebToken(env, token, now) {
   if (!UUID.test(uuid) || !NAME.test(name) || !/^\d{1,16}$/.test(expires)) return null;
   if (Number(expires) < now) return null;
   const expected = await sign(env, 'web.' + uuid + '.' + name + '.' + expires);
-  if (expected.length !== signature.length) return null;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
-  return diff === 0 ? { uuid, name, web: true } : null;
+  return timingSafeEqual(expected, signature) ? { uuid, name, web: true } : null;
 }
 
 export async function who(request, env, now) {
@@ -116,10 +110,7 @@ async function readDiscordToken(env, token, now) {
   const [, id, expires, signature] = parts;
   if (!DISCORD_ID.test(id) || !/^\d{1,16}$/.test(expires) || Number(expires) < now) return null;
   const expected = await sign(env, 'dc.' + id + '.' + expires);
-  if (expected.length !== signature.length) return null;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
-  return diff === 0 ? id : null;
+  return timingSafeEqual(expected, signature) ? id : null;
 }
 
 async function saveAccount(env, id, record) {
@@ -369,10 +360,7 @@ async function challengeFresh(env, challenge, now) {
   const issued = Number(parts[0]);
   if (issued > now + 60000 || now - issued > CHALLENGE_TTL_MS) return false;
   const expected = await sign(env, 'challenge.' + parts[0] + '.' + parts[1]);
-  if (expected.length !== parts[2].length) return false;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ parts[2].charCodeAt(i);
-  return diff === 0;
+  return timingSafeEqual(expected, parts[2]);
 }
 
 export async function handleChallenge(env, now) {

@@ -3,7 +3,7 @@ import { FONTS } from './demo-fonts.js';
 import { TEXTURES } from './demo-textures.js';
 import { CAPE_TEMPLATES } from './cape-templates.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
-import { no } from './http.js';
+import { base64Bytes, no } from './http.js';
 
 export const ICONS = {
   '/favicon.ico': FAVICON,
@@ -13,10 +13,7 @@ export const ICONS = {
 };
 
 export function icon(base64) {
-  const raw = atob(base64);
-  const bytes = new Uint8Array(raw.length);
-  for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
-  return new Response(bytes, {
+  return new Response(base64Bytes(base64), {
     headers: {
       'content-type': 'image/png',
       'cache-control': 'public, max-age=86400',
@@ -48,8 +45,7 @@ export function font(path) {
   const found = /^\/font\/px-([a-z]{2})\.ttf$/.exec(path);
   const one = found && Object.hasOwn(FONTS, found[1]) ? FONTS[found[1]] : null;
   if (!one) return no('not found', 404);
-  const bytes = Uint8Array.from(atob(one.data), (c) => c.charCodeAt(0));
-  return new Response(bytes, {
+  return new Response(base64Bytes(one.data), {
     status: 200,
     headers: {
       'content-type': 'font/ttf',
@@ -64,8 +60,7 @@ export function texture(path) {
   const name = path.slice(path.indexOf('/', 1) + 1);
   const one = Object.hasOwn(from, name) ? from[name] : null;
   if (!one) return no('not found', 404);
-  const bytes = Uint8Array.from(atob(one.data), (c) => c.charCodeAt(0));
-  return new Response(bytes, {
+  return new Response(base64Bytes(one.data), {
     status: 200,
     headers: {
       'content-type': one.type,

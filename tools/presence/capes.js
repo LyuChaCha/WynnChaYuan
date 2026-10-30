@@ -3,7 +3,7 @@ import { moderator } from './admin.js';
 import { publicId, who } from './auth.js';
 import { credits } from './credits.js';
 import { HASH, ID, UUID, hex, json, no, readJson } from './http.js';
-import { parseRecord } from './kv.js';
+import { listAll, parseRecord } from './kv.js';
 import { remember } from './presence.js';
 import { ownerEntry } from './privacy.js';
 
@@ -214,15 +214,10 @@ export const listed = (cape) => visibility(cape) === 'public' && !cape.r && !cap
 
 export async function allHistory(env, prefix = 'hist:') {
   const out = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix, limit: 1000, cursor });
-    for (const k of page.keys) {
-      const parts = k.name.split(':');
-      if (parts.length === 3 && HASH.test(parts[2])) out.push({ key: k.name, id: parts[1], h: parts[2], ...(k.metadata || {}) });
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, prefix)) {
+    const parts = k.name.split(':');
+    if (parts.length === 3 && HASH.test(parts[2])) out.push({ key: k.name, id: parts[1], h: parts[2], ...(k.metadata || {}) });
+  }
   return out;
 }
 
@@ -440,16 +435,11 @@ export async function handleRemove(request, env, now) {
 
 export async function allCapes(env) {
   const out = [];
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'cape:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      if (k.metadata && typeof k.metadata.h === 'string') {
-        out.push({ id: k.name.slice(5), ...k.metadata });
-      }
+  for (const k of await listAll(env.CORPUS, 'cape:')) {
+    if (k.metadata && typeof k.metadata.h === 'string') {
+      out.push({ id: k.name.slice(5), ...k.metadata });
     }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  }
   return out;
 }
 
@@ -525,17 +515,12 @@ export async function tidy(env, now) {
   const idle = await purge(env, now);
   const capes = await allCapes(env);
   let added = 0;
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'blob:', limit: 1000, cursor });
-    for (const k of page.keys) {
-      const hash = k.name.slice(5);
-      if (!HASH.test(hash) || idle[hash] || inUse(capes, hash)) continue;
-      idle[hash] = { t: (k.metadata && k.metadata.t) || 'png', s: (k.metadata && k.metadata.s) || 0, at: now, q: 1 };
-      added++;
-    }
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, 'blob:')) {
+    const hash = k.name.slice(5);
+    if (!HASH.test(hash) || idle[hash] || inUse(capes, hash)) continue;
+    idle[hash] = { t: (k.metadata && k.metadata.t) || 'png', s: (k.metadata && k.metadata.s) || 0, at: now, q: 1 };
+    added++;
+  }
   if (added) await env.CORPUS.put('idle', JSON.stringify(idle));
   return { idle: Object.keys(idle).length, added };
 }
@@ -707,10 +692,5 @@ async function skinOf(uuid) {
 
 async function dropPreviews(env, hash) {
   await env.CORPUS.delete('prev:' + hash);
-  let cursor;
-  do {
-    const page = await env.CORPUS.list({ prefix: 'prev:' + hash + ':', cursor });
-    for (const k of page.keys) await env.CORPUS.delete(k.name);
-    cursor = page.list_complete ? undefined : page.cursor;
-  } while (cursor);
+  for (const k of await listAll(env.CORPUS, 'prev:' + hash + ':')) await env.CORPUS.delete(k.name);
 }
