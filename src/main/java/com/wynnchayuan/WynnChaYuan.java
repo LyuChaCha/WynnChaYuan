@@ -100,6 +100,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
+        NetworkGate.use(config);
         // 滑過卡片時，把模組<b>實際查表用的整段鍵</b>另外記一份。
         //
         // 不跟著 debugDumps 走：這不是診斷檔，是要交出去的語料稿。它自己看
@@ -220,7 +221,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 而同步要抓哪一個語言的檔得先知道語言是哪一個，所以接在它後面。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
             settleAutoLanguage();
-            startBackgroundSync();
+            startNetworked();
         });
 
         // 按鍵綁定壞掉不該把整個遊戲擋在門外。1.99.2 就是在這裡丟了一個
@@ -749,6 +750,62 @@ public final class WynnChaYuan implements ClientModInitializer {
         sync.start();
     }
 
+    public static void startNetworked() {
+        NetworkGate.start(config, new NetworkGate.Services() {
+            @Override
+            public void updateCheck() {
+                Releases.fetchLatest();
+            }
+
+            @Override
+            public void translationSync() {
+                startBackgroundSync();
+            }
+
+            @Override
+            public void deleteData() {
+                deleteServerData(null);
+            }
+        });
+    }
+
+    public static void setConsent(boolean agreed) {
+        config.setConsent(agreed ? CollectorConfig.Consent.AGREED : CollectorConfig.Consent.DECLINED);
+        if (agreed) {
+            startNetworked();
+        } else {
+            Presence.forget();
+        }
+    }
+
+    public static void setDataOptOut(boolean on,
+                                     java.util.function.Consumer<Presence.DeleteResult> done) {
+        config.setDataOptOut(on);
+        if (!on) {
+            return;
+        }
+        Presence.forget();
+        try {
+            com.wynnchayuan.cape.Capes.forgetSelf(
+                    net.minecraft.client.Minecraft.getInstance().getUser().getProfileId());
+        } catch (Throwable t) {
+            com.wynnchayuan.translate.ErrorDebug.note("privacy.capes", null, t);
+        }
+        deleteServerData(done);
+    }
+
+    private static void deleteServerData(java.util.function.Consumer<Presence.DeleteResult> done) {
+        Presence.deleteMyData(result -> {
+            if (result == Presence.DeleteResult.DONE && config.dataOptOut()) {
+                config.dataDeleted();
+            }
+            System.out.println("[" + MOD_NAME + "] data deletion: " + result);
+            if (done != null) {
+                net.minecraft.client.Minecraft.getInstance().execute(() -> done.accept(result));
+            }
+        });
+    }
+
     /**
      * 遊戲起來之後再問一次語言，跟錯的那一次對不上就改過來。
      *
@@ -891,6 +948,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 診斷：每秒的 FPS 與當時的畫面，見 FpsLog（沒開診斷檔時 init 沒跑，這裡什麼都不做）
         ClientTickEvents.END_CLIENT_TICK.register(com.wynnchayuan.render.FpsLog::tick);
 
+        ClientTickEvents.END_CLIENT_TICK.register(
+                client -> com.wynnchayuan.client.FirstRunScreen.clientTick());
         // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> com.wynnchayuan.client.NoticeScreen.clientTick());
@@ -1049,6 +1108,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             case UNKNOWN_CODE -> "chat.link.unknown";
             case LOGIN_FAILED -> "chat.link.login";
             case FAILED -> "chat.link.failed";
+            case OFF -> "chat.link.off";
         })));
     }
 

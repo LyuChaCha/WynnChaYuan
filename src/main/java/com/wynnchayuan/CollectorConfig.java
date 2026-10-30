@@ -22,11 +22,11 @@ public final class CollectorConfig {
     /**
      * 物品 tooltip 的翻譯呈現方式。
      *
-     * <p>{@code PANEL} 在旁邊另開一塊，原文完全不動——預設值，最保險。
+     * <p>{@code PANEL} 在旁邊另開一塊，原文完全不動。
      * {@code REPLACE} 直接把原文換成譯文，畫面乾淨但看不到英文原名。
      * 兩者用的是同一套逐片段替換，格式保真程度一樣。
      */
-    private TooltipMode tooltipMode = TooltipMode.PANEL;
+    private TooltipMode tooltipMode = TooltipMode.OFF;
 
     /** PANEL 另開面板；REPLACE 就地取代；OFF 不翻譯物品。 */
     // 每一種模式的列舉都照同一個順序排：另開（面板／小框）→ 就地取代 →
@@ -546,9 +546,144 @@ public final class CollectorConfig {
     /** 可以自由擺位的四個框。 */
     public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG, CHOICES }
 
+    private final boolean existed;
+
     public CollectorConfig(Path file) {
         this.file = file;
+        this.existed = java.nio.file.Files.exists(file);
         load();
+    }
+
+    public boolean existedBefore() {
+        return existed;
+    }
+
+    public enum Consent { UNKNOWN, AGREED, DECLINED }
+
+    private Consent consent = Consent.UNKNOWN;
+    private boolean setupDone = false;
+    private boolean dataOptOut = false;
+    private boolean dataDeletePending = false;
+
+    public Consent consent() {
+        return consent;
+    }
+
+    public void setConsent(Consent value) {
+        consent = value == null ? Consent.UNKNOWN : value;
+        save();
+    }
+
+    public boolean setupDone() {
+        return setupDone;
+    }
+
+    public void markSetupDone() {
+        setupDone = true;
+        save();
+    }
+
+    public boolean needsFirstRun() {
+        return consent == Consent.UNKNOWN || !setupDone;
+    }
+
+    public boolean dataOptOut() {
+        return dataOptOut;
+    }
+
+    public boolean dataDeletePending() {
+        return dataDeletePending;
+    }
+
+    public void setDataOptOut(boolean on) {
+        dataOptOut = on;
+        dataDeletePending = on;
+        save();
+    }
+
+    public void dataDeleted() {
+        dataDeletePending = false;
+        save();
+    }
+
+    public void applyRecommended() {
+        translationsEnabled = true;
+        dialogueMode = DialogueMode.REPLACE;
+        choiceMode = DialogueMode.REPLACE;
+        chatMode = ChatMode.BOTH;
+        nametagMode = NametagMode.REPLACE;
+        tooltipMode = TooltipMode.OFF;
+        itemNames = ItemNames.OFF;
+        pageNames = ItemNames.ON;
+        trackerMode = DialogueMode.REPLACE;
+        translateScoreboard = true;
+        translateObjectives = true;
+        translateTitles = true;
+        translateBossBar = true;
+        translateHeldItem = true;
+        wynntilsUi = true;
+        showOverlays = true;
+        save();
+    }
+
+    public void setDialogueModes(DialogueMode mode) {
+        dialogueMode = mode;
+        choiceMode = mode;
+        if (mode == DialogueMode.PANEL) {
+            showOverlays = true;
+        }
+        save();
+    }
+
+    public void setChatMode(ChatMode mode) {
+        chatMode = mode;
+        save();
+    }
+
+    public void setNametagMode(NametagMode mode) {
+        nametagMode = mode;
+        if (mode == NametagMode.LOOK_AT) {
+            showOverlays = true;
+        }
+        save();
+    }
+
+    public void setTooltipMode(TooltipMode mode) {
+        tooltipMode = mode;
+        save();
+    }
+
+    public void setItemNames(ItemNames mode) {
+        itemNames = mode;
+        save();
+    }
+
+    public void setTrackerMode(DialogueMode mode) {
+        trackerMode = mode;
+        if (mode == DialogueMode.PANEL) {
+            showOverlays = true;
+        }
+        save();
+    }
+
+    public void setTranslateScoreboard(boolean on) {
+        translateScoreboard = on;
+        save();
+    }
+
+    public void setTranslateTitles(boolean on) {
+        translateTitles = on;
+        save();
+    }
+
+    public void setTranslateBossBar(boolean on) {
+        translateBossBar = on;
+        save();
+    }
+
+    public void setWynntilsUi(boolean on) {
+        wynntilsUi = on;
+        save();
     }
 
     public TooltipMode tooltipMode() {
@@ -1599,6 +1734,10 @@ public final class CollectorConfig {
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
         oldKeysReleased = bool(o, "oldKeysReleased", oldKeysReleased);
+        consent = enumOr(o, "privacyConsent", Consent.class, consent);
+        setupDone = bool(o, "setupDone", setupDone);
+        dataOptOut = bool(o, "dataOptOut", dataOptOut);
+        dataDeletePending = dataOptOut && bool(o, "dataDeletePending", dataDeletePending);
         // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
         pageNames = enumOr(o, "pageNames", ItemNames.class, pageNames);
         if (o.has("itemNames")) {
@@ -1817,6 +1956,10 @@ public final class CollectorConfig {
             o.addProperty("pageNames", pageNames.name());
             o.addProperty("noticeDismissed", noticeDismissed);
             o.addProperty("oldKeysReleased", oldKeysReleased);
+            o.addProperty("privacyConsent", consent.name());
+            o.addProperty("setupDone", setupDone);
+            o.addProperty("dataOptOut", dataOptOut);
+            o.addProperty("dataDeletePending", dataDeletePending);
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
             o.addProperty("themeColor", themeColor);
