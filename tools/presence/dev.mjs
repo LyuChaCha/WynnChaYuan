@@ -5,7 +5,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import os from 'node:os';
-import worker, { issueDiscordToken, issueToken, issueWebToken } from './worker.js';
+import worker from './worker.js';
+import { issueDiscordToken, issueToken, issueWebToken } from './worker-api.js';
 import { demoCredits, memoryKv, seedDemo } from './dev-data.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));

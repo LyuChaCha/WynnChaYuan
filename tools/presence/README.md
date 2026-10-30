@@ -11,7 +11,20 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 | 檔案 | |
 |---|---|
-| `worker.js` | API 與路由 |
+| `worker.js` | Worker 的入口：只匯出處理請求的那一個（入口不能匯出別的值，新版 workerd 不收） |
+| `worker-api.js` | 測試與工具要用的函式都從這裡拿 |
+| `router.js` | 路由、最外層的錯誤處理、每天的排程 |
+| `http.js`、`kv.js` | 回應、讀 JSON、base64、KV 紀錄 |
+| `auth.js` | 通行證、Mojang 登入、Discord 帳號與綁定 |
+| `presence.js` | 報到、名單、`/api/me`、`/api/status` |
+| `capes.js` | 披風：上傳、一覽、最愛、紀錄、閒置清單、預覽 |
+| `credits.js`、`github.js` | 名單與貢獻公會、開 PR |
+| `admin.js` | 管理員、封禁、特別名單、審核 |
+| `translate.js` | 協作翻譯與譯者名單 |
+| `feedback.js` | 回饋 |
+| `privacy.js` | 刪除我的資料 |
+| `discord-bot.js` | Discord 機器人 |
+| `assets.js` | 網頁回應、圖示、字型、材質 |
 | `site.js` | 五張網頁與「找不到這一頁」（共用樣式、頁首、頁尾），中文與英文 |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |

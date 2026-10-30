@@ -54,9 +54,8 @@ const discordKey = nodeCrypto.createPrivateKey({
 const DISCORD_PUBLIC_KEY = nodeCrypto.createPublicKey(discordKey).export({ format: 'der', type: 'spki' }).subarray(-32).toString('hex');
 
 const { ROOT, DEVELOPER, demoCredits, memoryKv, seedDemo } = await import('./dev-data.mjs');
-const workerModule = await import(workerUrl);
-const worker = workerModule.default;
-const { issueToken, issueWebToken, issueDiscordToken, publicId } = workerModule;
+const worker = (await import(workerUrl)).default;
+const { issueToken, issueWebToken, issueDiscordToken, publicId } = await import('./worker-api.js');
 const { LANGS, PATHS } = await import('./site.js');
 const { capePreview, figurePreview } = await import('./cape-preview.js');
 
