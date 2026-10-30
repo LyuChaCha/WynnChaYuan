@@ -1,8 +1,8 @@
 import { isStaff } from './admin.js';
-import { discordOn, discordSession, publicId, who } from './auth.js';
+import { discordOn, discordSession, publicId, requestUser } from './auth.js';
 import { MAX_CAPE_BYTES, MAX_PLAIN_CAPE_BYTES, hasPerk, listed, visibility } from './capes.js';
 import { credits, isDeveloper } from './credits.js';
-import { ID, day, json, no, readJson } from './http.js';
+import { ID, day, json, refuse, readJson } from './http.js';
 import { listAll, quietPut } from './kv.js';
 
 const TTL_SECONDS = 14 * 24 * 3600;
@@ -33,13 +33,13 @@ export function badgePrefs(body) {
 }
 
 export async function handleHello(request, env, now) {
-  const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  const user = await requestUser(request, env, now);
+  if (!user) return refuse('login first', 401);
   const body = await readJson(request);
-  if (body === undefined) return no('too large', 413);
-  if (!body || ('cape' in body && typeof body.cape !== 'boolean')) return no('bad hello');
+  if (body === undefined) return refuse('too large', 413);
+  if (!body || ('cape' in body && typeof body.cape !== 'boolean')) return refuse('bad hello');
   const prefs = badgePrefs(body);
-  if (prefs === null) return no('bad hello');
+  if (prefs === null) return refuse('bad hello');
   const record = await remember(env, user.uuid, body.cape !== false, now, prefs);
   return json({ ok: true, id: record.i, cape: record.v > 0 });
 }
@@ -173,10 +173,10 @@ export async function handleList(env, now, ctx) {
 }
 
 export async function handleMe(request, env, now) {
-  const user = await who(request, env, now);
+  const user = await requestUser(request, env, now);
   if (!user) {
     const session = await discordSession(request, env, now);
-    if (!session) return no('login first', 401);
+    if (!session) return refuse('login first', 401);
     return json({ ok: true, linked: false, discord: { name: session.account.n || '' },
       staff: Boolean(await env.CORPUS.get('staff:d:' + session.id)) });
   }

@@ -14,7 +14,7 @@ export function json(body, status = 200, extra = {}) {
   return new Response(JSON.stringify(body), { status, headers: { ...JSON_HEADERS, ...extra } });
 }
 
-export function no(why, status = 400) {
+export function refuse(why, status = 400) {
   return json({ ok: false, why }, status);
 }
 
