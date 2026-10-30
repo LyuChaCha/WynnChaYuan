@@ -954,6 +954,10 @@ export function teamOf(sections) {
       const entry = { name: member.name.trim().slice(0, 40) };
       if (typeof member.mc === 'string' && NAME.test(member.mc)) entry.mc = member.mc;
       if (typeof member.color === 'string' && COLOUR.test(member.color)) entry.color = member.color;
+      const teams = knownCodes(member.teams, TR_LANGS);
+      if (teams.length) entry.teams = teams;
+      const areas = knownCodes(member.areas, TEAM_AREAS);
+      if (areas.length) entry.areas = areas;
       members.push(entry);
     }
     team.push({ role: found[1], color: COLOUR.test(section.color || '') ? section.color : null, members });
@@ -2495,6 +2499,57 @@ const CREDITS_PATH = 'src/main/resources/assets/wynnchayuan/credits.json';
 /** 可以加到哪幾區。鍵是 credits.json 裡那一區 key 的最後一段。 */
 const SECTIONS = { developers: '開發者', sponsors: '贊助者', contributors: '貢獻者' };
 
+export const TEAM_AREAS = ['translation', 'proofreading', 'capture', 'testing', 'code', 'design', 'website', 'community'];
+
+function knownCodes(value, allowed) {
+  return Array.isArray(value) ? allowed.filter((code) => value.includes(code)) : [];
+}
+
+function exactCodes(value, allowed) {
+  if (!Array.isArray(value) || value.length > allowed.length * 2) return null;
+  if (!value.every((code) => typeof code === 'string' && allowed.includes(code))) return null;
+  return knownCodes(value, allowed);
+}
+
+export function teamsInput(entry) {
+  if (!entry || typeof entry !== 'object') return { why: 'bad request' };
+  if (!Object.hasOwn(SECTIONS, entry.section)) return { why: 'bad section' };
+  const who = typeof entry.who === 'string' ? entry.who.trim() : '';
+  if (!who || who.length > 40) return { why: 'bad who' };
+  const teams = exactCodes(entry.teams, TR_LANGS);
+  if (!teams) return { why: 'bad team' };
+  const areas = exactCodes(entry.areas, TEAM_AREAS);
+  if (!areas) return { why: 'bad area' };
+  return { section: entry.section, who, teams, areas };
+}
+
+export function setMemberTeams(text, entry) {
+  const input = teamsInput(entry);
+  if (input.why) return input;
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const target = (Array.isArray(doc.sections) ? doc.sections : []).find((item) => item && typeof item.key === 'string'
+    && item.key.endsWith('.' + input.section));
+  if (!target || !Array.isArray(target.members)) return { why: 'bad credits' };
+  const lower = input.who.toLowerCase();
+  const member = target.members.find((one) => one && typeof one.mc === 'string' && one.mc.toLowerCase() === lower)
+    || target.members.find((one) => one && !one.mc && one.name === input.who);
+  if (!member) return { why: 'not found' };
+  const held = (field) => JSON.stringify(field in member ? member[field] : []);
+  if (held('teams') === JSON.stringify(input.teams) && held('areas') === JSON.stringify(input.areas)) {
+    return { why: 'unchanged' };
+  }
+  if (input.teams.length) member.teams = input.teams;
+  else delete member.teams;
+  if (input.areas.length) member.areas = input.areas;
+  else delete member.areas;
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(member.name || input.who) };
+}
+
 /**
  * 加一個成員之後的 credits.json。純函式，測試直接餵。
  *
@@ -2526,6 +2581,12 @@ export function addMember(text, entry) {
   }
   const member = { name: name.trim(), mc };
   if (color) member.color = color.toUpperCase();
+  const teams = entry.teams === undefined ? [] : exactCodes(entry.teams, TR_LANGS);
+  if (!teams) return { why: 'bad team' };
+  const areas = entry.areas === undefined ? [] : exactCodes(entry.areas, TEAM_AREAS);
+  if (!areas) return { why: 'bad area' };
+  if (teams.length) member.teams = teams;
+  if (areas.length) member.areas = areas;
   target.members.push(member);
   // 倉庫裡那一份就是兩格縮排、結尾一個換行；照這樣寫回去，diff 只有新增的那幾行
   return { text: JSON.stringify(doc, null, 2) + '\n' };
@@ -2602,6 +2663,122 @@ async function handleAddCredit(request, env, now) {
   } catch (e) {
     return no('github unreachable', 502);
   }
+}
+
+const TEAMS_WHY_STATUS = { unchanged: 409, 'not found': 404 };
+
+export function addMemberTeams(text, mc, langs) {
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad who' };
+  const adding = knownCodes(langs, TR_LANGS);
+  if (!adding.length) return { why: 'bad team' };
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const lower = mc.toLowerCase();
+  let found = null;
+  let changed = false;
+  for (const section of Array.isArray(doc.sections) ? doc.sections : []) {
+    if (!section || !/\.(developers|sponsors|contributors)$/.test(String(section.key)) || !Array.isArray(section.members)) continue;
+    for (const member of section.members) {
+      if (!member || typeof member.mc !== 'string' || member.mc.toLowerCase() !== lower) continue;
+      found = found || member;
+      const had = Array.isArray(member.teams) ? member.teams : [];
+      const next = knownCodes([...had, ...adding], TR_LANGS);
+      if (JSON.stringify(next) === JSON.stringify(had)) continue;
+      member.teams = next;
+      changed = true;
+    }
+  }
+  if (!found) return { why: 'not found' };
+  if (!changed) return { why: 'unchanged' };
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(found.name || mc) };
+}
+
+async function commitTeams(env, by, now, change) {
+  if (!env.GITHUB_TOKEN) return { why: 'github not configured', status: 503 };
+  const github = githubClient(env);
+  try {
+    const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
+    let branch = 'credits/teams-' + day;
+    let url = '';
+    const ref = await github('/git/ref/heads/' + branch);
+    if (ref.status === 200) {
+      const open = await github('/pulls?head=' + encodeURIComponent(REPO.split('/')[0] + ':' + branch) + '&state=open');
+      const list = open.status === 200 ? await open.json() : [];
+      if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
+      else branch += '-' + now;
+    } else if (ref.status !== 404) {
+      return { why: 'github ' + ref.status, status: 502 };
+    }
+    const reuse = Boolean(url);
+    const file = await github('/contents/' + CREDITS_PATH + '?ref=' + encodeURIComponent(reuse ? branch : 'main'));
+    if (file.status !== 200) return { why: 'github ' + file.status, status: 502 };
+    const current = await file.json();
+    const changed = change(base64ToUtf8(current.content));
+    if (changed.why) return { why: changed.why, status: TEAMS_WHY_STATUS[changed.why] || 400 };
+    if (!reuse) {
+      const head = await github('/git/ref/heads/main');
+      if (head.status !== 200) return { why: 'github ' + head.status, status: 502 };
+      const made = await github('/git/refs', {
+        method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
+      });
+      if (made.status !== 201) return { why: 'github ' + made.status, status: 502 };
+    }
+    const message = '名單：' + changed.name + ' 的翻譯團隊與貢獻項目';
+    const put = await github('/contents/' + CREDITS_PATH, {
+      method: 'PUT',
+      body: JSON.stringify({ message, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
+    });
+    if (put.status !== 200 && put.status !== 201) return { why: 'github ' + put.status, status: 502 };
+    if (!reuse) {
+      const pull = await github('/pulls', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: '名單：翻譯團隊與貢獻項目（' + day + '）',
+          head: branch,
+          base: 'main',
+          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
+            + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
+        }),
+      });
+      if (pull.status !== 201) return { why: 'github ' + pull.status, status: 502 };
+      url = String((await pull.json()).html_url || '');
+    }
+    return { url, added: reuse };
+  } catch (e) {
+    return { why: 'github unreachable', status: 502 };
+  }
+}
+
+async function handleCreditTeams(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const input = teamsInput(body);
+  if (input.why) return no(input.why);
+  const done = await commitTeams(env, by, now, (text) => setMemberTeams(text, input));
+  if (done.why) return no(done.why, done.status);
+  return json({ ok: true, url: done.url, added: done.added });
+}
+
+function creditTeamsOf(list, mc) {
+  if (!list || typeof mc !== 'string' || !mc) return null;
+  const lower = mc.toLowerCase();
+  let hit = false;
+  const teams = new Set();
+  for (const section of list.team) {
+    for (const member of section.members) {
+      if (!member.mc || member.mc.toLowerCase() !== lower) continue;
+      hit = true;
+      for (const code of member.teams || []) teams.add(code);
+    }
+  }
+  return hit ? TR_LANGS.filter((code) => teams.has(code)) : null;
 }
 
 // ---------------------------------------------------------------- 協作翻譯
@@ -3097,8 +3274,7 @@ async function handleTrPollReopen(request, env, now) {
 
 // ---- 譯者名單（管理頁）
 
-async function handleTranslators(request, env, now) {
-  if (!await moderator(request, env, now)) return no('forbidden', 403);
+async function translatorList(env, list) {
   const out = [];
   let cursor;
   do {
@@ -3107,15 +3283,35 @@ async function handleTranslators(request, env, now) {
       const record = parseRecord(await env.CORPUS.get(k.name));
       const key = k.name.slice(3);
       out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
+        team: creditTeamsOf(list, record.m),
         discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
     }
     cursor = page.list_complete ? undefined : page.cursor;
   } while (cursor);
-  out.sort((a, b) => (b.t || 0) - (a.t || 0));
-  return json({ translators: out }, 200, { 'cache-control': 'no-store' });
+  return out.sort((a, b) => (b.t || 0) - (a.t || 0));
 }
 
-/** 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）。 */
+async function handleTranslators(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  return json({ translators: await translatorList(env, await credits(now)) }, 200, { 'cache-control': 'no-store' });
+}
+
+async function translatorIdentity(env, key, who) {
+  const found = {};
+  if (key.startsWith('n:')) found.m = String(who).trim();
+  const linked = key.startsWith('d:') ? key.slice(2) : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
+  const known = linked ? await account(env, linked) : null;
+  if (known) {
+    if (known.n) found.dn = known.n;
+    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) found.m = known.m;
+  }
+  if (key.startsWith('u:') && !found.m) {
+    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
+    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) found.m = cape.metadata.n;
+  }
+  return found;
+}
+
 async function handleTranslatorAdd(request, env, now) {
   const by = await moderator(request, env, now);
   if (!by) return no('forbidden', 403);
@@ -3127,20 +3323,144 @@ async function handleTranslatorAdd(request, env, now) {
   if (!langs.length) return no('bad langs');
   const note = typeof body.note === 'string' ? body.note.trim() : '';
   if (note.length > 60) return no('bad note');
-  const record = { langs, n: note, t: now, by };
-  if (key.startsWith('n:')) record.m = String(body.who).trim();
-  const linked = key.startsWith('d:') ? key.slice(2) : key.startsWith('u:') ? await env.CORPUS.get('l:' + key.slice(2)) : null;
-  const known = linked ? await account(env, linked) : null;
-  if (known) {
-    if (known.n) record.dn = known.n;
-    if (known.m && (key.startsWith('d:') || known.u === key.slice(2))) record.m = known.m;
-  }
-  if (key.startsWith('u:') && !record.m) {
-    const cape = await env.CORPUS.getWithMetadata('cape:' + await publicId(key.slice(2)));
-    if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) record.m = cape.metadata.n;
-  }
+  const record = { langs, n: note, t: now, by, ...(await translatorIdentity(env, key, body.who)) };
   await env.CORPUS.put('tl:' + key, JSON.stringify(record));
-  return json({ ok: true, key });
+  const listed = creditTeamsOf(await credits(now), record.m);
+  if (!listed) return json({ ok: true, key, team: null });
+  if (langs.every((code) => listed.includes(code))) return json({ ok: true, key, team: { teams: listed } });
+  const done = await commitTeams(env, by, now, (text) => addMemberTeams(text, record.m, langs));
+  if (done.why && done.why !== 'unchanged') return json({ ok: true, key, team: { why: done.why } });
+  return json({ ok: true, key, team: done.why ? { teams: listed } : { url: done.url, added: done.added } });
+}
+
+export function mergeLangTeam(team, translators) {
+  const people = [];
+  const byMc = new Map();
+  const union = (a, b, all) => all.filter((code) => a.includes(code) || (Array.isArray(b) && b.includes(code)));
+  for (const section of Array.isArray(team) ? team : []) {
+    for (const member of Array.isArray(section.members) ? section.members : []) {
+      const mc = typeof member.mc === 'string' && member.mc ? member.mc.toLowerCase() : null;
+      let person = mc ? byMc.get(mc) : null;
+      if (!person) {
+        person = { name: member.name, mc: member.mc || null, roles: [], listed: true, teams: [], areas: [], rights: null };
+        people.push(person);
+        if (mc) byMc.set(mc, person);
+      }
+      person.roles.push(section.role);
+      person.teams = union(person.teams, member.teams, TR_LANGS);
+      person.areas = union(person.areas, member.areas, TEAM_AREAS);
+    }
+  }
+  for (const one of Array.isArray(translators) ? translators : []) {
+    const mc = typeof one.name === 'string' && one.name ? one.name.toLowerCase() : null;
+    let person = mc ? byMc.get(mc) : null;
+    if (!person) {
+      person = { name: one.name || one.discord || one.id, mc: one.name || null, roles: [], listed: false, teams: [], areas: [], rights: null };
+      people.push(person);
+      if (mc) byMc.set(mc, person);
+    }
+    const rights = person.rights || { keys: [], langs: [], note: '', discord: null, t: null, by: null };
+    rights.keys.push(one.key);
+    rights.langs = union(rights.langs, one.langs, TR_LANGS);
+    if (!rights.note && one.note) rights.note = one.note;
+    if (!rights.discord && one.discord) rights.discord = one.discord;
+    if ((one.t || 0) > (rights.t || 0)) {
+      rights.t = one.t;
+      rights.by = one.by || null;
+    }
+    person.rights = rights;
+  }
+  for (const person of people) {
+    person.mismatch = Boolean(person.listed && person.rights && person.rights.langs.join() !== person.teams.join());
+  }
+  return people;
+}
+
+export function setPersonTeams(text, mc, teams, areas) {
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad who' };
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const before = JSON.stringify(doc);
+  const lower = mc.toLowerCase();
+  let found = null;
+  for (const section of Array.isArray(doc.sections) ? doc.sections : []) {
+    if (!section || !/\.(developers|sponsors|contributors)$/.test(String(section.key)) || !Array.isArray(section.members)) continue;
+    for (const member of section.members) {
+      if (!member || typeof member.mc !== 'string' || member.mc.toLowerCase() !== lower) continue;
+      found = found || member;
+      if (Array.isArray(teams)) {
+        if (teams.length) member.teams = teams;
+        else delete member.teams;
+      }
+      if (Array.isArray(areas)) {
+        if (areas.length) member.areas = areas;
+        else delete member.areas;
+      }
+    }
+  }
+  if (!found) return { why: 'not found' };
+  if (JSON.stringify(doc) === before) return { why: 'unchanged' };
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(found.name || mc) };
+}
+
+async function handleLangTeam(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const list = await credits(now);
+  const translators = await translatorList(env, list);
+  return json({ people: mergeLangTeam(list ? list.team : [], translators), credits: Boolean(list) }, 200,
+    { 'cache-control': 'no-store' });
+}
+
+async function handleLangTeamSet(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  const body = await readJson(request, TR_BODY);
+  if (!body) return no('bad request');
+  const key = staffKey(body.who);
+  if (!key) return no('bad who');
+  const langs = body.langs === undefined ? null : exactCodes(body.langs, TR_LANGS);
+  if (body.langs !== undefined && !langs) return no('bad team');
+  const areas = body.areas === undefined ? null : exactCodes(body.areas, TEAM_AREAS);
+  if (body.areas !== undefined && !areas) return no('bad area');
+  if (!langs && !areas) return no('bad request');
+  const note = typeof body.note === 'string' ? body.note.trim() : null;
+  if (note && note.length > 60) return no('bad note');
+  const identity = await translatorIdentity(env, key, body.who);
+  const mc = identity.m || null;
+  const list = await credits(now);
+  const listed = Boolean(mc && list && list.names.has(mc.toLowerCase()));
+  if (areas && !listed) return no(list ? 'not listed' : 'try later', list ? 400 : 503);
+  let rights = null;
+  if (langs) {
+    const matched = [];
+    for (const one of await translatorList(env, null)) {
+      if (one.key === key || (mc && one.name && one.name.toLowerCase() === mc.toLowerCase())) matched.push(one.key);
+    }
+    if (!langs.length) {
+      for (const k of matched) await env.CORPUS.delete('tl:' + k);
+    } else {
+      const keys = matched.length ? matched : [key];
+      for (const k of keys) {
+        const old = parseRecord(await env.CORPUS.get('tl:' + k));
+        const record = { ...old, ...identity, ...(old.m ? { m: old.m } : {}), langs, t: now, by };
+        record.n = note === null ? (old.n || '') : note;
+        await env.CORPUS.put('tl:' + k, JSON.stringify(record));
+      }
+      rights = { keys, langs };
+    }
+  }
+  let team = null;
+  if (listed) {
+    const done = await commitTeams(env, by, now, (text) => setPersonTeams(text, mc, langs, areas));
+    team = done.why === 'unchanged' ? { unchanged: true } : done.why ? { why: done.why } : { url: done.url, added: done.added };
+  } else if (langs && mc && !list) {
+    team = { why: 'try later' };
+  }
+  return json({ ok: true, mc, listed, rights, team });
 }
 
 async function handleTranslatorRemove(request, env, now) {
@@ -4019,6 +4339,7 @@ const site = {
     if (route === 'GET /admin/bans') return handleBans(request, env, now);
     if (route === 'POST /admin/unban') return handleUnban(request, env, now);
     if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (route === 'POST /admin/credits/teams') return handleCreditTeams(request, env, now);
     if (route === 'GET /admin/staff') return handleStaff(request, env, now);
     if (route === 'POST /admin/staff') return handleStaffAdd(request, env, now);
     if (route === 'POST /admin/unstaff') return handleStaffRemove(request, env, now);
@@ -4026,6 +4347,8 @@ const site = {
     if (route === 'GET /admin/translators') return handleTranslators(request, env, now);
     if (route === 'POST /admin/translator') return handleTranslatorAdd(request, env, now);
     if (route === 'POST /admin/untranslator') return handleTranslatorRemove(request, env, now);
+    if (route === 'GET /admin/langteam') return handleLangTeam(request, env, now);
+    if (route === 'POST /admin/langteam') return handleLangTeamSet(request, env, now);
     if (route.startsWith('GET /tr/index/')) return handleTrIndex(request, env, route.slice('GET /tr/index/'.length), ctx);
     if (route.startsWith('GET /tr/') || route.startsWith('POST /tr/')) {
       return scrubTr(request, env, now, await trRoute(route, request, env, now));

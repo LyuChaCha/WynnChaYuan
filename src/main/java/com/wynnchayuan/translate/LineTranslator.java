@@ -1635,6 +1635,9 @@ public final class LineTranslator {
         while (at > lineStart + 1 && at < text.length() && cannotStartLine(text.charAt(at))) {
             at--;
         }
+        while (at < cut && at > lineStart + 1 && breaksWord(text, at)) {
+            at--;
+        }
         at = keepGlyphWithWord(text, at, lineStart);
         at = keepValueWithGlyph(text, at, lineStart);
         int outside = outsidePlaceholder(text, at, lineStart);

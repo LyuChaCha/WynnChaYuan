@@ -2111,6 +2111,9 @@ public final class DialogueRewriter {
         Map<TextColor, Integer> chars = new java.util.LinkedHashMap<>();
         for (int n = 0; n < body.size(); n++) {
             for (int i = body.get(n); i <= ends.get(n); i++) {
+                if (shaderKey(styles.get(i).getColor())) {
+                    continue;
+                }
                 chars.merge(styles.get(i).getColor(), texts.get(i).length(),
                         Integer::sum);
             }
@@ -2150,7 +2153,8 @@ public final class DialogueRewriter {
         for (int n = 0; n < body.size(); n++) {
             for (int i = body.get(n); i <= ends.get(n); i++) {
                 Style style = styles.get(i);
-                if (java.util.Objects.equals(style.getColor(), tone)) {
+                if (java.util.Objects.equals(style.getColor(), tone)
+                        || shaderKey(style.getColor())) {
                     paint = flush(out, run, parts, paint);
                     continue;
                 }
@@ -2197,6 +2201,19 @@ public final class DialogueRewriter {
         run.setLength(0);
         parts.clear();
         return null;
+    }
+
+    static boolean shaderKey(TextColor colour) {
+        if (colour == null) {
+            return false;
+        }
+        int rgb = colour.getValue();
+        int r = rgb >> 16 & 0xFF;
+        int g = rgb >> 8 & 0xFF;
+        int b = rgb & 0xFF;
+        boolean movement = g == 235 && b % 4 == 0 && b <= 72;
+        boolean effect = r < 4 && g >= 240 && g < 244 && b < 40;
+        return movement || effect;
     }
 
     /** 見 {@link #accents}：短到會亂中的、沒有半個字母數字的，都不收。 */

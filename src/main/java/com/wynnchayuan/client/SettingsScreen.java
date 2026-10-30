@@ -252,6 +252,29 @@ public final class SettingsScreen extends Screen {
         return rows;
     }
 
+    private static final long ARM_MS = 6000;
+
+    private long armedAt;
+    private boolean deleting;
+
+    private boolean armed() {
+        return System.currentTimeMillis() - armedAt < ARM_MS;
+    }
+
+    private void rebuild() {
+        float at = view.scrollPosition();
+        lastTab = view.tab();
+        view = new SettingsView(buildTabs(), new Host(), lastTab);
+        view.restoreScroll(at);
+    }
+
+    private void requestDelete() {
+        deleting = true;
+        WynnChaYuan.setDataOptOut(true, this::deleted);
+        say(T.s("privacy.deleting"), Ui.TEXT_3);
+        rebuild();
+    }
+
     private List<Row> privacy() {
         List<Row> rows = new ArrayList<>();
         rows.add(Row.toggle("privacy.online", t("privacy.online"), t("privacy.online.hint"))
@@ -260,32 +283,51 @@ public final class SettingsScreen extends Screen {
                     boolean agree = cfg().consent() != CollectorConfig.Consent.AGREED;
                     WynnChaYuan.setConsent(agree);
                     say(T.s(agree ? "privacy.online.on" : "privacy.online.off"), Ui.GREEN);
+                    rebuild();
                 }));
         rows.add(Row.action("privacy.policy", t("privacy.policy"), t("privacy.policy.hint"))
                 .label(t("fun.gallery.button"))
                 .run(() -> ConfirmLinkScreen.confirmLinkNow(this,
                         com.wynnchayuan.Presence.PRIVACY_URL)));
-        rows.add(Row.toggle("privacy.optout", t("privacy.optout"), t("privacy.optout.hint"))
-                .on(() -> cfg().dataOptOut())
-                .flip(() -> {
-                    boolean on = !cfg().dataOptOut();
-                    WynnChaYuan.setDataOptOut(on, this::deleted);
-                    if (on) {
-                        fetching = true;
-                        say(T.s("privacy.deleting"), Ui.TEXT_3);
-                    } else {
-                        say(T.s("privacy.optout.off"), Ui.GREEN);
+        if (!cfg().dataOptOut()) {
+            rows.add(Row.action("privacy.delete", t("privacy.delete"), t("privacy.delete.hint"))
+                    .label(() -> T.s(armed() ? "privacy.delete.confirm" : "privacy.delete.button"))
+                    .danger(this::armed)
+                    .run(() -> {
+                        if (armed()) {
+                            armedAt = 0;
+                            requestDelete();
+                        } else {
+                            armedAt = System.currentTimeMillis();
+                            say(T.s("privacy.delete.armed"), Ui.RED);
+                        }
+                    }));
+            return rows;
+        }
+        rows.add(Row.status("privacy.delete", t("privacy.delete"), t("privacy.delete.hint"))
+                .label(() -> T.s(deleting ? "privacy.delete.state.working"
+                        : cfg().dataDeletePending() ? "privacy.delete.state.retry"
+                        : "privacy.delete.state.done"))
+                .labelColour(() -> deleting ? Ui.TEXT_3
+                        : cfg().dataDeletePending() ? Ui.AMBER : Ui.GREEN)
+                .run(() -> {
+                    if (!deleting && cfg().dataDeletePending()) {
+                        requestDelete();
                     }
                 }));
-        if (cfg().dataDeletePending()) {
-            rows.add(Row.status("privacy.pending", t("privacy.pending"), t("privacy.pending.hint"))
-                    .label(t("privacy.pending.label")));
-        }
+        rows.add(Row.action("privacy.resume", t("privacy.resume"), t("privacy.resume.hint"))
+                .label(t("privacy.resume.button"))
+                .enabled(() -> !deleting)
+                .run(() -> {
+                    WynnChaYuan.setDataOptOut(false, null);
+                    say(T.s("privacy.resumed"), Ui.GREEN);
+                    rebuild();
+                }));
         return rows;
     }
 
     private void deleted(com.wynnchayuan.Presence.DeleteResult result) {
-        fetching = false;
+        deleting = false;
         if (result == com.wynnchayuan.Presence.DeleteResult.DONE) {
             say(T.s("privacy.deleted"), Ui.GREEN);
         } else {
@@ -479,8 +521,8 @@ public final class SettingsScreen extends Screen {
                 .slide(v -> cfg().setPanelGapLive(v))
                 .format(v -> v + " px")
                 .commit(cfg()::saveIfDirty)
-                .reset(() -> cfg().panelGap() == 12, () -> {
-                    cfg().setPanelGapLive(12);
+                .reset(() -> cfg().panelGap() == CollectorConfig.DEFAULT_PANEL_GAP, () -> {
+                    cfg().setPanelGapLive(CollectorConfig.DEFAULT_PANEL_GAP);
                     cfg().saveIfDirty();
                 }));
         return rows;

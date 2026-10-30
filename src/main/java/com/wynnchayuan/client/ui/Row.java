@@ -85,6 +85,7 @@ public final class Row {
     // 動作與狀態
     Supplier<String> label = () -> "";
     IntSupplier labelColour;
+    BooleanSupplier danger;
     Runnable run = () -> { };
     BooleanSupplier enabled = () -> true;
 
@@ -243,6 +244,11 @@ public final class Row {
 
     public Row labelColour(IntSupplier argb) {
         this.labelColour = argb;
+        return this;
+    }
+
+    public Row danger(BooleanSupplier armed) {
+        this.danger = armed;
         return this;
     }
 

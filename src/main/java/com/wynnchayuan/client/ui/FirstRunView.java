@@ -22,7 +22,9 @@ public final class FirstRunView extends Surface {
 
         void settled();
 
-        List<Row> custom();
+        List<Row.Tab> custom();
+
+        int tone(Row.Tone tone);
 
         void finish();
     }
@@ -33,19 +35,22 @@ public final class FirstRunView extends Surface {
         "firstrun.privacy.update", "firstrun.privacy.sync", "firstrun.privacy.checkin",
         "firstrun.privacy.capes", "firstrun.privacy.login"};
 
-    private static final float PAD = 14;
-    private static final float HEAD_H = 38;
-    private static final float FOOT_H = 34;
-    private static final float LINE = 11;
+    private static final Icons.Icon[] FEATURE_ICONS = {
+        Icons.Icon.DOWN, Icons.Icon.BOOK, Icons.Icon.LEAF, Icons.Icon.CAPE, Icons.Icon.QUEST};
+
+    private static final float LINE = 10;
 
     private final Shell shell;
     private final Host host;
     private final int steps;
     private Step step;
-    private List<Row> rows;
+    private List<Row.Tab> tabs;
+    private int category;
     private float scroll;
     private float scrollTarget;
     private float maxScroll;
+    private float bodyT = 1f;
+    private float railW;
     private float bodyTop;
     private float bodyBottom;
 
@@ -58,6 +63,10 @@ public final class FirstRunView extends Surface {
 
     public Step step() {
         return step;
+    }
+
+    public int category() {
+        return category;
     }
 
     @Override
@@ -84,6 +93,10 @@ public final class FirstRunView extends Surface {
             case KEY_PAGE_DOWN -> scroll(-5);
             case KEY_PAGE_UP -> scroll(5);
             default -> {
+                if (step == Step.CUSTOM && !ctrl && key >= '1' && key < '1' + tabs().size()) {
+                    pickCategory(key - '1');
+                    return true;
+                }
                 return false;
             }
         }
@@ -92,9 +105,23 @@ public final class FirstRunView extends Surface {
 
     private void go(Step next) {
         step = next;
+        restart();
+    }
+
+    private void restart() {
         scroll = 0;
         scrollTarget = 0;
         maxScroll = 0;
+        bodyT = 0f;
+    }
+
+    private void pickCategory(int index) {
+        if (index == category) {
+            return;
+        }
+        category = index;
+        restart();
+        click();
     }
 
     private void answered(boolean agreed) {
@@ -110,93 +137,226 @@ public final class FirstRunView extends Surface {
         }
     }
 
-    private List<Row> rows() {
-        if (rows == null) {
-            rows = host.custom();
+    private List<Row.Tab> tabs() {
+        if (tabs == null) {
+            tabs = host.custom();
         }
-        return rows;
+        return tabs;
+    }
+
+    private Row.Tab currentTab() {
+        List<Row.Tab> all = tabs();
+        return all.isEmpty() ? null : all.get(Math.max(0, Math.min(all.size() - 1, category)));
     }
 
     @Override
     protected void draw() {
-        float w = Math.min(380, screenW - 24);
-        float inner = w - PAD * 2;
-        float contentH = switch (step) {
-            case CONSENT -> consentHeight(inner);
-            case SETUP -> setupHeight(inner);
-            case CUSTOM -> customHeight(inner);
-        };
-        float foot = step == Step.SETUP ? 10 : FOOT_H;
-        float h = Math.min(screenH - 12, HEAD_H + contentH + foot);
-        float x = Math.round((screenW - w) / 2f);
-        float y = Math.max(6, Math.round((screenH - h) / 2f));
-        window(x, y, w, h, shell.blurred());
+        float w = Math.min(screenW - 12, SettingsView.MAX_W);
+        float h = Math.min(screenH - 14, SettingsView.MAX_H);
+        window(Math.round((screenW - w) / 2f), Math.round((screenH - h) / 2f), w, h,
+               shell.blurred());
+        railW = winW >= 430 ? SettingsView.RAIL_W : SettingsView.RAIL_SLIM;
         zone(0, 0, screenW, screenH, (px, py, b) -> { });
 
-        header(x, y, w);
+        rail();
+        float headBottom = header();
+        body(headBottom);
+        footer();
 
-        float top = y + HEAD_H;
-        float bottom = y + h - foot;
-        float bodyH = bottom - top;
-        maxScroll = Math.max(0, contentH - bodyH);
-        scrollTarget = Math.max(0, Math.min(maxScroll, scrollTarget));
-        scroll = Ui.ease(Math.max(0, Math.min(maxScroll, scroll)), scrollTarget, dt, 55f);
+        bodyT = Ui.ease(bodyT, 1f, dt, 70f);
+        scroll = Ui.ease(scroll, scrollTarget, dt, 55f);
+    }
 
-        bodyTop = top;
-        bodyBottom = bottom;
-        clip(x + 1, top, x + w - 1, bottom);
-        float left = x + PAD;
-        float cy = top - scroll;
-        switch (step) {
-            case CONSENT -> consent(left, cy, inner);
-            case SETUP -> setup(left, cy, inner);
-            case CUSTOM -> custom(left, cy, inner);
+    private record Nav(Icons.Icon icon, String name, String trailing, boolean done) {}
+
+    private List<Nav> navs() {
+        List<Nav> out = new ArrayList<>();
+        if (step == Step.CUSTOM) {
+            for (Row.Tab t : tabs()) {
+                int n = 0;
+                for (Row.Group g : t.groups()) {
+                    n += g.rows().size();
+                }
+                out.add(new Nav(t.icon(), t.name().get(), String.valueOf(n), false));
+            }
+            return out;
         }
+        int number = 1;
+        if (host.askConsent()) {
+            out.add(new Nav(Icons.Icon.LEAF, shell.tr("firstrun.privacy.short"),
+                    String.valueOf(number++), step != Step.CONSENT));
+        }
+        if (host.askSetup()) {
+            out.add(new Nav(Icons.Icon.BOOK, shell.tr("firstrun.setup.title"),
+                    String.valueOf(number), false));
+        }
+        return out;
+    }
+
+    private int navIndex() {
+        if (step == Step.CUSTOM) {
+            return category;
+        }
+        return step == Step.CONSENT || !host.askConsent() ? 0 : 1;
+    }
+
+    private void rail() {
+        float x = winX;
+        float y = winY;
+        boolean slim = railW < SettingsView.RAIL_W;
+        clip(x, y, x + railW, y + winH);
+        c.round(x, y, railW + Ui.R3 * 2, winH, Ui.R3, Ui.RAIL);
         unclip();
-        scrollbar(x + w - 6, top, bodyH, contentH, scroll, maxScroll);
+        c.fill(x + railW - c.px(), y + 1, x + railW, y + winH - 1, Ui.LINE);
 
-        if (step != Step.SETUP) {
-            footer(x, y + h - FOOT_H, w);
+        float cy;
+        if (slim) {
+            c.logo(x + (railW - 20) / 2f, y + 8, 20);
+            cy = y + 36;
+        } else {
+            c.logo(x + 7, y + 8, 26);
+            String title = "WynnChaYuan";
+            float room = railW - 38 - 6;
+            float big = c.scale(1.25f);
+            float s = c.width(title) * big <= room ? big : 1f;
+            c.text(title, x + 38, y + 21 - 4 * s, accent, s);
+            c.text(title, x + 38 + c.px(), y + 21 - 4 * s, accent, s);
+            cy = y + 40;
+            for (String line : Ui.wrap(c, shell.tr("header.tagline"), (int) (railW - 16))) {
+                c.text(line, x + 8, cy, Ui.TEXT_2);
+                cy += 10;
+            }
+            cy += 8;
+        }
+
+        List<Nav> navs = navs();
+        int current = navIndex();
+        float navH = SettingsView.NAV_H;
+        float[] tops = new float[navs.size()];
+        float[] heights = new float[navs.size()];
+        List<List<String>> labels = new ArrayList<>();
+        float ny = cy;
+        for (int i = 0; i < navs.size(); i++) {
+            Nav nav = navs.get(i);
+            float trailW = nav.done() ? 9 : c.width(nav.trailing());
+            int room = (int) (railW - 12 - 22 - trailW - 12);
+            List<String> lines = slim ? List.of(nav.name()) : Ui.wrap(c, nav.name(), room);
+            if (lines.size() > 2) {
+                lines = List.of(lines.get(0), Ui.fit(c, String.join(" ", lines.subList(1, lines.size())), room));
+            }
+            labels.add(lines);
+            tops[i] = ny;
+            heights[i] = navH + (lines.size() - 1) * LINE;
+            ny += heights[i] + 2;
+        }
+        float pillY = animate(step == Step.CUSTOM ? "nav:c" : "nav:s", tops[current], 55f);
+        float pillH = animate(step == Step.CUSTOM ? "navh:c" : "navh:s", heights[current], 55f);
+        c.round(x + 6, pillY, railW - 12, pillH, Ui.R1, Ui.alpha(accent, 0x33));
+        for (int i = 0; i < navs.size(); i++) {
+            Nav nav = navs.get(i);
+            float top = tops[i];
+            float h = heights[i];
+            boolean on = i == current;
+            boolean clickable = step == Step.CUSTOM;
+            boolean hot = clickable && over(x + 6, top, railW - 12, h);
+            float g = glow("nav" + i, hot && !on);
+            if (g > 0.01f) {
+                c.round(x + 6, top, railW - 12, h, Ui.R1, Ui.fade(0x12FFFFFF, g));
+            }
+            int ink = on ? accent : (hot || nav.done() ? Ui.TEXT : Ui.TEXT_2);
+            if (slim) {
+                c.icon(nav.done() ? Icons.Icon.CHECK : nav.icon(), x + (railW - 12) / 2f,
+                       top + 4.5f, 12, nav.done() ? Ui.GREEN : ink);
+                if (over(x + 6, top, railW - 12, h)) {
+                    tip = new Tip(nav.name(), x + railW, top - 4, 0, h);
+                    hoverRow = "#nav" + i;
+                }
+            } else {
+                c.icon(nav.icon(), x + 12, top + 5, 11, ink);
+                float ly = top + 6.5f;
+                for (String line : labels.get(i)) {
+                    c.text(line, x + 28, ly, ink);
+                    ly += LINE;
+                }
+                if (nav.done()) {
+                    c.icon(Icons.Icon.CHECK, x + railW - 12 - 9, top + 6, 9, Ui.GREEN);
+                } else {
+                    c.text(nav.trailing(), x + railW - 12 - c.width(nav.trailing()), top + 6.5f,
+                           on ? accent : Ui.FAINT);
+                }
+            }
+            if (clickable) {
+                int index = i;
+                zone(x + 6, top, railW - 12, h, (px, py, b) -> pickCategory(index)).key = "n:" + i;
+            }
         }
     }
 
-    private void header(float x, float y, float w) {
-        float left = x + PAD;
-        c.logo(left, y + 11, 16);
-        float s = c.scale(1.25f);
-        String title = shell.tr("firstrun.title");
-        String count = steps > 1 ? (step == Step.CONSENT ? 1 : 2) + " / " + steps : "";
-        float countW = count.isEmpty() ? 0 : c.width(count) + 8;
-        c.text(Ui.fit(c, title, (int) ((w - PAD * 2 - 22 - countW) / s)), left + 22,
-               y + 19 - 4 * s, Ui.TEXT, s);
+    private float header() {
+        float x = winX + railW + 12;
+        float right = winX + winW - 12;
+        float y = winY;
+        String title;
+        String about;
+        if (step == Step.CUSTOM) {
+            Row.Tab t = currentTab();
+            title = t == null ? shell.tr("firstrun.custom.title") : t.name().get();
+            about = t == null ? "" : t.about().get();
+        } else {
+            title = shell.tr(step == Step.CONSENT ? "firstrun.privacy.title" : "firstrun.setup.title");
+            about = shell.tr("firstrun.title");
+        }
+        String count = step == Step.CUSTOM ? shell.tr("firstrun.custom.title")
+                : (steps > 1 ? (step == Step.CONSENT ? 1 : 2) + " / " + steps : "");
+        float countW = 0;
         if (!count.isEmpty()) {
-            c.text(count, x + w - PAD - c.width(count), y + 15, Ui.HINT);
+            float cw = c.width(count) + 12;
+            Ui.pane(c, right - cw, y + 11, cw, CTRL_H, Ui.R1, Ui.FIELD, Ui.BORDER);
+            c.text(count, right - cw + 6, y + 15, Ui.HINT);
+            countW = cw + 10;
         }
-        c.fill(x + 1, y + HEAD_H - 6, x + w - 1, y + HEAD_H - 6 + c.px(), Ui.LINE);
+        float textRoom = right - countW - x;
+        float s = c.scale(1.5f);
+        if (c.width(title) * s > textRoom) {
+            s = 1f;
+        }
+        c.text(Ui.fit(c, title, (int) (textRoom / s)), x, y + 8, Ui.TEXT, s);
+        float ay = y + 8 + 8 * s + 4;
+        for (String line : Ui.wrap(c, about, (int) textRoom)) {
+            c.text(line, x, ay, Ui.TEXT_3);
+            ay += LINE;
+        }
+        return Math.max(y + SettingsView.HEAD_H, ay + 4);
     }
 
-    private void footer(float x, float y, float w) {
-        c.fill(x + 1, y, x + w - 1, y + c.px(), Ui.LINE);
-        float by = y + 8;
-        float right = x + w - PAD;
+    private void footer() {
+        float y = winY + winH - SettingsView.FOOT_H;
+        float left = winX + railW + 12;
+        float right = winX + winW - 12;
+        c.fill(winX + railW, y, winX + winW - 1, y + c.px(), Ui.LINE);
+        float h = 18;
+        float by = y + (SettingsView.FOOT_H - h) / 2f;
         if (step == Step.CONSENT) {
             String yes = shell.tr("firstrun.agree");
             String no = shell.tr("firstrun.disagree");
-            float yw = Math.max(70, buttonWidth(yes) + 10);
-            float nw = Math.max(70, buttonWidth(no) + 10);
-            button("agree", right - yw, by, yw, 18, yes, true, true, null, () -> answered(true));
-            button("disagree", right - yw - 6 - nw, by, nw, 18, no, true, false, null,
+            float yw = Math.max(64, c.width(yes) + 28);
+            float nw = Math.max(64, c.width(no) + 16);
+            button("agree", right - yw, by, yw, h, yes, true, true, null, () -> answered(true));
+            button("disagree", right - yw - 5 - nw, by, nw, h, no, true, false, null,
                    () -> answered(false));
-        } else {
+        } else if (step == Step.CUSTOM) {
             String done = shell.tr("button.done");
             String back = shell.tr("button.back");
-            float dw = Math.max(70, buttonWidth(done) + 10);
-            float bw = Math.max(60, buttonWidth(back) + 10);
-            button("done", right - dw, by, dw, 18, done, true, true, null, () -> {
+            float dw = Math.max(64, c.width(done) + 28);
+            float bw = Math.max(56, c.width(back) + 16);
+            button("done", right - dw, by, dw, h, done, true, true, null, () -> {
                 host.settled();
                 host.finish();
             });
-            button("back", x + PAD, by, bw, 18, back, true, false, null, () -> go(Step.SETUP));
+            button("back", left, by, bw, h, back, true, false, null, () -> go(Step.SETUP));
+        } else {
+            String hint = Ui.fit(c, shell.tr("firstrun.setup.intro"), (int) (right - left));
+            c.text(hint, left, by + 5, Ui.FAINT);
         }
     }
 
@@ -204,9 +364,40 @@ public final class FirstRunView extends Surface {
         return y + h > bodyTop && y < bodyBottom;
     }
 
-    private float heading(String key, float left, float y) {
-        c.text(shell.tr(key), left, y, Ui.mix(accent, Ui.TEXT, 0.35f));
-        return y + 15;
+    private void body(float top) {
+        float bottom = winY + winH - SettingsView.FOOT_H - 8;
+        float left = winX + railW + 12;
+        float w = winX + winW - 12 - left;
+        float inner = w - 6;
+        float contentH = switch (step) {
+            case CONSENT -> consentHeight(inner);
+            case SETUP -> setupHeight(inner);
+            case CUSTOM -> customHeight(inner);
+        };
+        float h = bottom - top;
+        maxScroll = Math.max(0, contentH - h);
+        scrollTarget = Math.max(0, Math.min(maxScroll, scrollTarget));
+        scroll = Math.max(0, Math.min(maxScroll, scroll));
+        bodyTop = top;
+        bodyBottom = bottom;
+        clip(left, top, left + w, bottom);
+        float cy = top - scroll + (1f - bodyT) * 7f;
+        switch (step) {
+            case CONSENT -> consent(left, cy, inner);
+            case SETUP -> setup(left, cy, inner);
+            case CUSTOM -> custom(left, cy, inner);
+        }
+        unclip();
+        if (bodyT < 0.99f) {
+            c.fill(left, top, left + w, bottom, Ui.fade(0xC8181F2A, 1f - bodyT));
+        }
+        if (maxScroll > 0) {
+            float trackX = left + w - 3;
+            c.round(trackX, top, 2.5f, h, 1.25f, Ui.LINE);
+            float thumbH = Math.max(14, h * h / Math.max(1f, contentH));
+            float thumbY = top + (h - thumbH) * (scroll / maxScroll);
+            c.round(trackX, thumbY, 2.5f, thumbH, 1.25f, Ui.alpha(accent, 0xC8));
+        }
     }
 
     private float paragraph(String text, float left, float y, float width, int colour) {
@@ -221,30 +412,52 @@ public final class FirstRunView extends Surface {
         return Ui.wrap(c, text, (int) width).size() * LINE;
     }
 
+    private float featureHeight(String key, float inner) {
+        return Math.max(1, Ui.wrap(c, shell.tr(key), (int) (inner - 34)).size()) * LINE + 8;
+    }
+
     private float consentHeight(float inner) {
-        float h = 15 + paragraphHeight(shell.tr("firstrun.privacy.intro"), inner) + 4;
+        float h = paragraphHeight(shell.tr("firstrun.privacy.intro"), inner) + 6;
+        h += SettingsView.GROUP_HEAD + 4;
         for (String key : FEATURES) {
-            h += paragraphHeight(shell.tr(key), inner - 10) + 2;
+            h += featureHeight(key, inner);
         }
         h += 6 + paragraphHeight(shell.tr("firstrun.privacy.decline"), inner) + 6;
-        return h + 14 + 4;
+        return h + 14 + 2;
     }
 
     private void consent(float left, float y, float inner) {
-        y = heading("firstrun.privacy.title", left, y);
-        y = paragraph(shell.tr("firstrun.privacy.intro"), left, y, inner, Ui.TEXT) + 4;
+        y = paragraph(shell.tr("firstrun.privacy.intro"), left, y, inner, Ui.TEXT_2) + 6;
+        float cardH = SettingsView.GROUP_HEAD + 4;
         for (String key : FEATURES) {
-            c.text("·", left + 2, y, accent);
-            y = paragraph(shell.tr(key), left + 10, y, inner - 10, Ui.TEXT_2) + 2;
+            cardH += featureHeight(key, inner);
         }
-        y = paragraph(shell.tr("firstrun.privacy.decline"), left, y + 6, inner, Ui.TEXT_3) + 6;
-        String link = shell.tr("firstrun.privacy.policy");
-        float lw = Math.min(inner, c.width(link) + 4);
+        card(left, y, inner, cardH, shell.tr("privacy.online"), String.valueOf(FEATURES.length),
+             false);
+        float ry = y + SettingsView.GROUP_HEAD + 1;
+        for (int i = 0; i < FEATURES.length; i++) {
+            float rh = featureHeight(FEATURES[i], inner);
+            boolean hot = over(left + 2, ry, inner - 4, rh);
+            float g = glow("feat" + i, hot);
+            if (g > 0.01f) {
+                c.round(left + 2, ry, inner - 4, rh, Ui.R1, Ui.fade(0x0EFFFFFF, g));
+            }
+            c.icon(FEATURE_ICONS[i], left + 9, ry + 4, 10, accent);
+            paragraph(shell.tr(FEATURES[i]), left + 25, ry + 5, inner - 34,
+                      Ui.mix(Ui.TEXT_2, Ui.TEXT, g));
+            ry += rh;
+        }
+        y += cardH + 6;
+        y = paragraph(shell.tr("firstrun.privacy.decline"), left, y, inner, Ui.TEXT_3) + 6;
+        String link = Ui.fit(c, shell.tr("firstrun.privacy.policy"), (int) inner - 14);
+        float lw = c.width(link) + 14;
         boolean hot = over(left, y, lw, 14);
-        int ink = hot ? Ui.TEXT : Ui.mix(accent, Ui.TEXT, 0.25f);
-        String shown = Ui.fit(c, link, (int) inner);
-        c.text(shown, left, y + 3, ink);
-        c.fill(left, y + 12, left + c.width(shown), y + 12 + c.px(), Ui.alpha(ink, hot ? 0xFF : 0x80));
+        float g = glow("policy", hot);
+        int ink = Ui.mix(Ui.mix(accent, Ui.TEXT, 0.25f), Ui.TEXT, g);
+        c.icon(Icons.Icon.RIGHT, left, y + 4, 7, ink);
+        c.text(link, left + 11, y + 3, ink);
+        c.fill(left + 11, y + 12, left + 11 + c.width(link), y + 12 + c.px(),
+               Ui.alpha(ink, 0x80 + (int) (0x7F * g)));
         if (visible(y, 14)) {
             zone(left, y, lw, 14, (px, py, b) -> {
                 click();
@@ -253,20 +466,20 @@ public final class FirstRunView extends Surface {
         }
     }
 
-    private record Card(String key, String title, String desc, boolean primary, Runnable go) {}
+    private record Choice(String key, String title, String desc, boolean primary, Runnable go) {}
 
-    private List<Card> cards() {
-        List<Card> out = new ArrayList<>();
-        out.add(new Card("recommended", shell.tr("firstrun.recommended"),
+    private List<Choice> choices() {
+        List<Choice> out = new ArrayList<>();
+        out.add(new Choice("recommended", shell.tr("firstrun.recommended"),
                 shell.tr("firstrun.recommended.desc"), true, () -> {
                     host.recommended();
                     host.settled();
                     host.finish();
                 }));
-        out.add(new Card("custom", shell.tr("firstrun.custom"), shell.tr("firstrun.custom.desc"),
+        out.add(new Choice("custom", shell.tr("firstrun.custom"), shell.tr("firstrun.custom.desc"),
                 false, () -> go(Step.CUSTOM)));
         if (host.upgrading()) {
-            out.add(new Card("keep", shell.tr("firstrun.keep"), shell.tr("firstrun.keep.desc"),
+            out.add(new Choice("keep", shell.tr("firstrun.keep"), shell.tr("firstrun.keep.desc"),
                     false, () -> {
                         host.settled();
                         host.finish();
@@ -275,99 +488,161 @@ public final class FirstRunView extends Surface {
         return out;
     }
 
-    private float cardHeight(Card card, float inner) {
-        return 8 + 12 + paragraphHeight(card.desc(), inner - 16) + 6;
+    private float choiceHeight(Choice choice, float inner) {
+        return 7 + 11 + paragraphHeight(choice.desc(), inner - 34) + 7;
     }
 
     private float setupHeight(float inner) {
-        float h = 15 + paragraphHeight(shell.tr("firstrun.setup.intro"), inner) + 6;
-        for (Card card : cards()) {
-            h += cardHeight(card, inner) + 6;
+        float h = 0;
+        for (Choice choice : choices()) {
+            h += choiceHeight(choice, inner) + 6;
         }
-        return h;
+        return Math.max(0, h - 6);
     }
 
     private void setup(float left, float y, float inner) {
-        y = heading("firstrun.setup.title", left, y);
-        y = paragraph(shell.tr("firstrun.setup.intro"), left, y, inner, Ui.TEXT_2) + 6;
-        for (Card card : cards()) {
-            float ch = cardHeight(card, inner);
+        for (Choice choice : choices()) {
+            float ch = choiceHeight(choice, inner);
             boolean hot = over(left, y, inner, ch);
-            float g = glow("card:" + card.key(), hot);
+            float g = glow("choice:" + choice.key(), hot);
             Ui.halo(c, left, y, inner, ch, Ui.R2, accent, g);
-            int fill = card.primary() ? Ui.mix(Ui.RAISED, Ui.alpha(accent, 0x30), 0.6f) : Ui.RAISED;
-            int edge = card.primary() ? Ui.mix(Ui.alpha(accent, 0x8C), accent, g) : edge(g);
-            Ui.pane(c, left, y, inner, ch, Ui.R2, fill, edge);
-            float tx = left + 8;
-            String title = Ui.fit(c, card.title(), (int) (inner - 30));
-            c.text(title, tx, y + 8, card.primary() ? Ui.mix(accent, Ui.TEXT, 0.3f) : Ui.TEXT);
-            c.icon(Icons.Icon.RIGHT, left + inner - 16, y + 8, 7, hot ? Ui.TEXT : Ui.TEXT_3);
-            paragraph(card.desc(), tx, y + 20, inner - 16, Ui.TEXT_3);
-            Runnable go = card.go();
+            int edge = choice.primary() ? Ui.mix(Ui.alpha(accent, 0x8C), accent, g) : edge(g);
+            int fill = choice.primary() ? Ui.mix(Ui.CARD, Ui.alpha(accent, 0x26), 0.7f) : Ui.CARD;
+            Ui.pane(c, left, y, inner, ch, Ui.R2, Ui.mix(fill, 0x16FFFFFF, g * 0.6f), edge);
+            int titleInk = choice.primary() ? accent : Ui.TEXT;
+            c.text(Ui.fit(c, choice.title(), (int) (inner - 34)), left + 9, y + 7,
+                   Ui.mix(titleInk, Ui.TEXT, g * 0.4f));
+            float arrow = animate("arrow:" + choice.key(), hot ? 3f : 0f, 45f);
+            c.icon(Icons.Icon.RIGHT, left + inner - 17 + arrow, y + ch / 2f - 3.5f, 7,
+                   Ui.mix(Ui.TEXT_3, accent, g));
+            paragraph(choice.desc(), left + 9, y + 19, inner - 34, Ui.TEXT_3);
+            Runnable go = choice.go();
             if (visible(y, ch)) {
                 zone(left, y, inner, ch, (px, py, b) -> {
                     click();
                     go.run();
-                }).key = "b:" + card.key();
+                }).key = "b:" + choice.key();
             }
             y += ch + 6;
         }
     }
 
-    private static final float ROW_H = 22;
-    private static final float ROW_TALL = 34;
-
     private float controlWidth(Row row) {
         if (row.kind == Row.Kind.TOGGLE) {
-            return 26;
+            String on = row.onText != null ? row.onText.get() : shell.tr("mode.on");
+            return 26 + 5 + Math.max(c.width(on), c.width(shell.tr("mode.off")));
         }
-        float total = 2;
+        float widest = 0;
         for (Row.Option option : row.options) {
-            total += c.width(option.label()) + 12;
+            widest = Math.max(widest, c.width(option.label()));
         }
-        return total;
+        return Math.max(1, row.options.size()) * (widest + 10) + 2;
     }
 
-    private boolean tall(float inner) {
-        for (Row row : rows()) {
-            if (c.width(row.name.get()) + 10 + controlWidth(row) > inner) {
-                return true;
+    private boolean wide(float inner) {
+        Row.Tab t = currentTab();
+        if (t == null) {
+            return false;
+        }
+        for (Row.Group g : t.groups()) {
+            for (Row row : g.rows()) {
+                if (row.kind == Row.Kind.SEGMENT
+                        && c.width(row.name.get()) + 8 + 10 + controlWidth(row) > inner - 18) {
+                    return true;
+                }
             }
         }
         return false;
     }
 
+    private List<String> hint(Row row, float width) {
+        String text = row.hint == null ? null : row.hint.get();
+        return text == null || text.isBlank() ? List.of() : Ui.wrap(c, text, (int) width);
+    }
+
+    private float rowHeight(Row row, float inner, boolean wide) {
+        boolean two = wide && row.kind == Row.Kind.SEGMENT;
+        return (two ? 38 : 21) + hint(row, inner - 18).size() * LINE + 5;
+    }
+
+    private float groupHeight(Row.Group g, float inner, boolean wide) {
+        float h = SettingsView.GROUP_HEAD + 4;
+        for (Row row : g.rows()) {
+            h += rowHeight(row, inner, wide);
+        }
+        return h;
+    }
+
     private float customHeight(float inner) {
-        float each = tall(inner) ? ROW_TALL : ROW_H;
-        return 15 + paragraphHeight(shell.tr("firstrun.custom.intro"), inner) + 4
-                + rows().size() * each;
+        Row.Tab t = currentTab();
+        float h = paragraphHeight(shell.tr("firstrun.custom.intro"), inner) + 6;
+        if (t == null) {
+            return h;
+        }
+        boolean wide = wide(inner);
+        for (Row.Group g : t.groups()) {
+            h += groupHeight(g, inner, wide) + 6;
+        }
+        return h - 6;
     }
 
     private void custom(float left, float y, float inner) {
-        y = heading("firstrun.custom.title", left, y);
-        y = paragraph(shell.tr("firstrun.custom.intro"), left, y, inner, Ui.TEXT_2) + 4;
-        boolean tall = tall(inner);
-        float right = left + inner;
-        for (Row row : rows()) {
-            float rh = tall ? ROW_TALL : ROW_H;
-            if (!visible(y, rh)) {
-                y += rh;
-                continue;
+        y = paragraph(shell.tr("firstrun.custom.intro"), left, y, inner, Ui.TEXT_3) + 6;
+        Row.Tab t = currentTab();
+        if (t == null) {
+            return;
+        }
+        boolean wide = wide(inner);
+        for (Row.Group g : t.groups()) {
+            float gh = groupHeight(g, inner, wide);
+            if (visible(y, gh)) {
+                card(left, y, inner, gh, g.title().get(),
+                     g.rows().size() > 1 ? String.valueOf(g.rows().size()) : null, false);
             }
-            c.fill(left, y, right, y + c.px(), Ui.LINE);
-            String name = Ui.fit(c, row.name.get(), (int) inner);
-            c.text(name, left, y + 7, Ui.TEXT_2);
-            float cy = tall ? y + 16 : y + 3;
-            if (row.kind == Row.Kind.TOGGLE) {
-                toggle(row.id, right, cy, row.on.getAsBoolean(), null, row.flip);
-            } else {
-                String[] labels = new String[row.options.size()];
-                for (int i = 0; i < labels.length; i++) {
-                    labels[i] = row.options.get(i).label();
+            float ry = y + SettingsView.GROUP_HEAD + 1;
+            for (Row row : g.rows()) {
+                float rh = rowHeight(row, inner, wide);
+                if (visible(ry, rh)) {
+                    row(row, left + 2, ry, inner - 4, rh, wide);
                 }
-                chips(row.id, right, cy, labels, row.selected.getAsInt(), row.pick);
+                ry += rh;
             }
-            y += rh;
+            y += gh + 6;
+        }
+    }
+
+    private void row(Row row, float x, float y, float w, float h, boolean wide) {
+        boolean hot = over(x, y, w, h);
+        float g = glow("row:" + row.id, hot);
+        if (g > 0.01f) {
+            c.round(x, y, w, h, Ui.R1, Ui.fade(0x0EFFFFFF, g));
+        }
+        float labelX = x + 7;
+        float right = x + w - 7;
+        boolean two = wide && row.kind == Row.Kind.SEGMENT;
+        float ctrlY = two ? y + 19 : y + (21 - CTRL_H) / 2f + 1;
+        float labelRoom;
+        if (row.kind == Row.Kind.TOGGLE) {
+            boolean on = row.on.getAsBoolean();
+            String text = on ? (row.onText != null ? row.onText.get() : shell.tr("mode.on"))
+                             : shell.tr("mode.off");
+            labelRoom = toggle(row.id, right, ctrlY, on, text, row.flip) - 8 - labelX;
+        } else if (two) {
+            segmented(row.id, labelX, right, ctrlY, row.options, row.selected, row.pick,
+                      host::tone);
+            labelRoom = right - labelX;
+        } else {
+            float ctrlLeft = right - controlWidth(row);
+            segmented(row.id, ctrlLeft, right, ctrlY, row.options, row.selected, row.pick,
+                      host::tone);
+            labelRoom = ctrlLeft - 8 - labelX;
+        }
+        c.text(Ui.fit(c, row.name.get(), (int) labelRoom), labelX, y + 7,
+               Ui.mix(Ui.TEXT_2, Ui.TEXT, g));
+        float hy = y + (two ? 38 : 21);
+        for (String line : hint(row, w - 14)) {
+            c.text(line, labelX, hy, Ui.HINT);
+            hy += LINE;
         }
     }
 }

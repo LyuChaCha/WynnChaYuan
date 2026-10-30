@@ -54,7 +54,7 @@ public final class SettingsViewTest {
     }
 
     private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "en_us"};
-    private static final String[] TABS = {"items", "panel", "dialogue", "world", "data"};
+    private static final String[] TABS = {"items", "panel", "dialogue", "world", "data", "badge"};
 
     public static void main(String[] args) throws Exception {
         File out = new File("build/ui-preview");
@@ -105,6 +105,12 @@ public final class SettingsViewTest {
         LANG = "zh_tw";
 
         interactions(out);
+        for (String lang : new String[] {"zh_tw", "en_us"}) {
+            privacyShot(out, lang, null);
+            privacyShot(out, lang, PRIVACY_HOVER);
+            privacyShot(out, lang, null, true, false);
+            privacyShot(out, lang, null, false, true);
+        }
 
         // 預覽的物品名：語料在「譯名加原文」時回來的已經帶著原文，預覽自己還會再接一次
         // （使用者 2026-10-09 回報畫成「骨弓 (Bony Bow) (Bony Bow)」）
@@ -187,6 +193,53 @@ public final class SettingsViewTest {
     private static long CLOCK = 1000;
 
     /** 連畫幾幀：第一幀量出捲動範圍與動畫的起點，後面幾幀讓彈出層淡入、滑塊滑到定位。 */
+    static String PRIVACY_HOVER = "privacy.delete";
+
+    private static void privacyShot(File out, String lang, String hover) throws Exception {
+        privacyShot(out, lang, hover, false, false);
+    }
+
+    private static void privacyShot(File out, String lang, String hover, boolean armed,
+                                    boolean deleted) throws Exception {
+        String was = LANG;
+        LANG = lang;
+        Fake fake = new Fake(lang);
+        fake.armed = armed;
+        fake.deleted = deleted;
+        List<Row.Tab> tabs = fake.tabs();
+        SettingsView view = new SettingsView(tabs, fake, tabs.size() - 1);
+        view.showTab(tabs.size() - 1);
+        render(view, 640, 360, 2);
+        for (int i = 0; i < 30; i++) {
+            view.scroll(-1);
+        }
+        render(view, 640, 360, 2);
+        double mx = -100;
+        double my = -100;
+        if (hover != null) {
+            for (SettingsView.Placed p : view.placed()) {
+                if (p.id().equals(hover)) {
+                    mx = p.x() + 20;
+                    my = p.y() + p.h() / 2;
+                }
+            }
+        }
+        AwtCanvas c = null;
+        for (int i = 0; i < 10; i++) {
+            c = new AwtCanvas(640, 360, 2, lang);
+            c.backdrop();
+            view.render(c, 640, 360, mx, my, CLOCK += 90);
+            c.done();
+        }
+        ImageIO.write(c.image, "png", new File(out, lang + "-badge-privacy"
+                + (hover == null ? "" : "-hover") + (armed ? "-armed" : "")
+                + (deleted ? "-deleted" : "") + ".png"));
+        for (SettingsView.Placed p : view.placed()) {
+            must(lang + " " + p.id() + "：在視窗裡", p.x() + p.w() <= view.window()[0] + view.window()[2]);
+        }
+        LANG = was;
+    }
+
     private static AwtCanvas render(SettingsView view, int w, int h, int scale) {
         AwtCanvas c = null;
         for (int i = 0; i < 8; i++) {
@@ -523,7 +576,45 @@ public final class SettingsViewTest {
             tabs.add(tab("world", Icons.Icon.COMPASS, Preview.Scene.WORLD, group("group.world", false, world)));
             tabs.add(tab("data", Icons.Icon.BOOK, Preview.Scene.DATA,
                     group("group.lang", false, langs), group("group.tools", true, tools)));
+            tabs.add(badgeTab());
             return tabs;
+        }
+
+        boolean deleted;
+        boolean armed;
+
+        Row.Tab badgeTab() {
+            List<Row> badge = List.of(
+                    Row.status("badge.none", () -> tr("badge.none"), () -> tr("badge.none.hint"))
+                            .label(() -> tr("badge.none.label")),
+                    action("badge.contribute", "badge.contribute.button"),
+                    action("badge.sponsor", "badge.sponsor.button"));
+            List<Row> cape = List.of(
+                    toggle("fun.capes", true, null),
+                    Row.status("fun.nocape", () -> tr("fun.nocape"), () -> tr("fun.nocape.hint"))
+                            .label(() -> tr("fun.nocape.label")),
+                    action("fun.upload", "fun.upload.button"),
+                    action("fun.remove", "fun.remove.button"),
+                    action("fun.gallery", "fun.gallery.button"));
+            List<Row> privacy = new ArrayList<>();
+            privacy.add(Row.toggle("privacy.online", () -> tr("privacy.online"),
+                    () -> tr("privacy.online.hint")).on(() -> true));
+            privacy.add(action("privacy.policy", "fun.gallery.button"));
+            if (deleted) {
+                privacy.add(Row.status("privacy.delete", () -> tr("privacy.delete"),
+                                () -> tr("privacy.delete.hint"))
+                        .label(() -> tr("privacy.delete.state.done")).labelColour(() -> Ui.GREEN));
+                privacy.add(action("privacy.resume", "privacy.resume.button"));
+            } else {
+                privacy.add(Row.action("privacy.delete", () -> tr("privacy.delete"),
+                                () -> tr("privacy.delete.hint"))
+                        .label(() -> tr(armed ? "privacy.delete.confirm" : "privacy.delete.button"))
+                        .danger(() -> armed).run(() -> armed = true));
+            }
+            List<Row> perf = List.of(toggle("perf.highlight", true, null));
+            return tab("badge", Icons.Icon.LEAF, Preview.Scene.CAPE,
+                    group("group.badge", false, badge), group("group.cape", false, cape),
+                    group("group.privacy", false, privacy), group("group.perf", false, perf));
         }
 
         private Row.Group group(String key, boolean tool, List<Row> rows) {
