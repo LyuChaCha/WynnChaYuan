@@ -2661,14 +2661,38 @@ async function handleAddCredit(request, env, now) {
 
 const TEAMS_WHY_STATUS = { unchanged: 409, 'not found': 404 };
 
-async function handleCreditTeams(request, env, now) {
-  const by = await moderator(request, env, now);
-  if (!by) return no('forbidden', 403);
-  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
-  const body = await readJson(request);
-  if (!body) return no('bad request');
-  const input = teamsInput(body);
-  if (input.why) return no(input.why);
+export function addMemberTeams(text, mc, langs) {
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad who' };
+  const adding = knownCodes(langs, TR_LANGS);
+  if (!adding.length) return { why: 'bad team' };
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const lower = mc.toLowerCase();
+  let found = null;
+  let changed = false;
+  for (const section of Array.isArray(doc.sections) ? doc.sections : []) {
+    if (!section || !/\.(developers|sponsors|contributors)$/.test(String(section.key)) || !Array.isArray(section.members)) continue;
+    for (const member of section.members) {
+      if (!member || typeof member.mc !== 'string' || member.mc.toLowerCase() !== lower) continue;
+      found = found || member;
+      const had = Array.isArray(member.teams) ? member.teams : [];
+      const next = knownCodes([...had, ...adding], TR_LANGS);
+      if (JSON.stringify(next) === JSON.stringify(had)) continue;
+      member.teams = next;
+      changed = true;
+    }
+  }
+  if (!found) return { why: 'not found' };
+  if (!changed) return { why: 'unchanged' };
+  return { text: JSON.stringify(doc, null, 2) + '\n', name: String(found.name || mc) };
+}
+
+async function commitTeams(env, by, now, change) {
+  if (!env.GITHUB_TOKEN) return { why: 'github not configured', status: 503 };
   const github = githubClient(env);
   try {
     const day = new Date(now).toISOString().slice(0, 10).replace(/-/g, '');
@@ -2681,28 +2705,28 @@ async function handleCreditTeams(request, env, now) {
       if (Array.isArray(list) && list[0]) url = String(list[0].html_url || '');
       else branch += '-' + now;
     } else if (ref.status !== 404) {
-      return no('github ' + ref.status, 502);
+      return { why: 'github ' + ref.status, status: 502 };
     }
     const reuse = Boolean(url);
     const file = await github('/contents/' + CREDITS_PATH + '?ref=' + encodeURIComponent(reuse ? branch : 'main'));
-    if (file.status !== 200) return no('github ' + file.status, 502);
+    if (file.status !== 200) return { why: 'github ' + file.status, status: 502 };
     const current = await file.json();
-    const changed = setMemberTeams(base64ToUtf8(current.content), input);
-    if (changed.why) return no(changed.why, TEAMS_WHY_STATUS[changed.why] || 400);
+    const changed = change(base64ToUtf8(current.content));
+    if (changed.why) return { why: changed.why, status: TEAMS_WHY_STATUS[changed.why] || 400 };
     if (!reuse) {
       const head = await github('/git/ref/heads/main');
-      if (head.status !== 200) return no('github ' + head.status, 502);
+      if (head.status !== 200) return { why: 'github ' + head.status, status: 502 };
       const made = await github('/git/refs', {
         method: 'POST', body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
       });
-      if (made.status !== 201) return no('github ' + made.status, 502);
+      if (made.status !== 201) return { why: 'github ' + made.status, status: 502 };
     }
     const message = '名單：' + changed.name + ' 的翻譯團隊與貢獻項目';
     const put = await github('/contents/' + CREDITS_PATH, {
       method: 'PUT',
       body: JSON.stringify({ message, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
     });
-    if (put.status !== 200 && put.status !== 201) return no('github ' + put.status, 502);
+    if (put.status !== 200 && put.status !== 201) return { why: 'github ' + put.status, status: 502 };
     if (!reuse) {
       const pull = await github('/pulls', {
         method: 'POST',
@@ -2710,17 +2734,45 @@ async function handleCreditTeams(request, env, now) {
           title: '名單：翻譯團隊與貢獻項目（' + day + '）',
           head: branch,
           base: 'main',
-          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目都會加進這個 PR。\n\n'
+          body: '從網站的管理頁送出，第一筆由 ' + by + ' 送出。同一天在管理頁改的翻譯團隊與貢獻項目（包括指派譯者時一併加上的團隊）都會加進這個 PR。\n\n'
             + '改的是 `credits.json` 成員的 `teams` 與 `areas` 兩欄。合併之後，首頁的團隊名冊最多十分鐘內跟著更新。',
         }),
       });
-      if (pull.status !== 201) return no('github ' + pull.status, 502);
+      if (pull.status !== 201) return { why: 'github ' + pull.status, status: 502 };
       url = String((await pull.json()).html_url || '');
     }
-    return json({ ok: true, url, added: reuse });
+    return { url, added: reuse };
   } catch (e) {
-    return no('github unreachable', 502);
+    return { why: 'github unreachable', status: 502 };
   }
+}
+
+async function handleCreditTeams(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  const body = await readJson(request);
+  if (!body) return no('bad request');
+  const input = teamsInput(body);
+  if (input.why) return no(input.why);
+  const done = await commitTeams(env, by, now, (text) => setMemberTeams(text, input));
+  if (done.why) return no(done.why, done.status);
+  return json({ ok: true, url: done.url, added: done.added });
+}
+
+function creditTeamsOf(list, mc) {
+  if (!list || typeof mc !== 'string' || !mc) return null;
+  const lower = mc.toLowerCase();
+  let hit = false;
+  const teams = new Set();
+  for (const section of list.team) {
+    for (const member of section.members) {
+      if (!member.mc || member.mc.toLowerCase() !== lower) continue;
+      hit = true;
+      for (const code of member.teams || []) teams.add(code);
+    }
+  }
+  return hit ? TR_LANGS.filter((code) => teams.has(code)) : null;
 }
 
 // ---------------------------------------------------------------- 協作翻譯
@@ -3218,6 +3270,7 @@ async function handleTrPollReopen(request, env, now) {
 
 async function handleTranslators(request, env, now) {
   if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const list = await credits(now);
   const out = [];
   let cursor;
   do {
@@ -3226,6 +3279,7 @@ async function handleTranslators(request, env, now) {
       const record = parseRecord(await env.CORPUS.get(k.name));
       const key = k.name.slice(3);
       out.push({ key, kind: key[0], id: key.slice(2), langs: record.langs || [], name: record.m || null,
+        team: creditTeamsOf(list, record.m),
         discord: record.dn || null, note: record.n || '', t: record.t || null, by: record.by || null });
     }
     cursor = page.list_complete ? undefined : page.cursor;
@@ -3259,7 +3313,12 @@ async function handleTranslatorAdd(request, env, now) {
     if (cape && cape.metadata && NAME.test(cape.metadata.n || '')) record.m = cape.metadata.n;
   }
   await env.CORPUS.put('tl:' + key, JSON.stringify(record));
-  return json({ ok: true, key });
+  const listed = creditTeamsOf(await credits(now), record.m);
+  if (!listed) return json({ ok: true, key, team: null });
+  if (langs.every((code) => listed.includes(code))) return json({ ok: true, key, team: { teams: listed } });
+  const done = await commitTeams(env, by, now, (text) => addMemberTeams(text, record.m, langs));
+  if (done.why && done.why !== 'unchanged') return json({ ok: true, key, team: { why: done.why } });
+  return json({ ok: true, key, team: done.why ? { teams: listed } : { url: done.url, added: done.added } });
 }
 
 async function handleTranslatorRemove(request, env, now) {

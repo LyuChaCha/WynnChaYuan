@@ -240,8 +240,8 @@ Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模
 | `POST /api/admin/staff` | `{who, note?}` | 加一個管理員：`who` 是 Minecraft ID、Minecraft UUID 或 Discord 使用者 ID（**只有開發者**） |
 | `POST /api/admin/unstaff` | `{key}` | 移除一個管理員（**只有開發者**） |
 | `GET /api/admin/people?q=` | | 已註冊的人（網站帳號 `d:*` 與傳過披風的人）；沒帶 `q` 回全部，帶了照 Discord 名稱、Minecraft ID、UUID、Discord 使用者 ID 篩；管理頁選人的下拉選單用（開發者與管理員） |
-| `GET /api/admin/translators` | | 譯者名單（開發者與管理員） |
-| `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr） |
+| `GET /api/admin/translators` | | 譯者名單（開發者與管理員）；每位多一個 `team`：他在名冊上的翻譯團隊，不在名冊上是 `null` |
+| `POST /api/admin/translator` | `{who, langs, note?}` | 加一位譯者，或改他負責的語言（同一個人再送一次就是覆寫）；`langs` 是語料的語言代號（zh_tw…tr_tr）。名冊上有這個人就把語言加進他的翻譯團隊（當天的 PR），回應的 `team` 是 `{url, added}`、`{teams}`（本來就有）、`{why}`（沒改成，譯者照樣加好）或 `null`（不在名冊上） |
 | `POST /api/admin/untranslator` | `{key}` | 移除一位譯者 |
 | `GET /api/cape-preview/<雜湊>[?u=<UUID>]` | | 披風的預覽圖（PNG 或 GIF）。沒帶 `u`：只露出披風背面（跟一覽的卡片一樣），存在 KV 的 `prev:<雜湊>`；帶了 `u`：那個人的 skin 穿著披風、從背後斜看，存 `prev:<雜湊>:<UUID>:<畫法>` 三天（skin 會換；換了畫法鍵跟著換，Discord 的圖片網址也帶 `&v=<畫法>`）。圖被刪掉時全部一起刪；雜湊就是鑰匙 |
 | `POST /api/feedback` | `{cat, msg, where?, lang?}` | 送一則回饋（要用 Discord 登入，或從遊戲開、綁了 Discord 的網頁；沒登入 401 `login first`、沒綁 401 `discord first`）。`cat` 是 `translation`／`content`／`website`／`feature`／`other`；`lang` 是語料的語言代號，可以不帶。一小時滿 5 則回 429 `slow down` 與 `until`。回 `{id, issue, issueFailed}` |
@@ -383,7 +383,7 @@ npx wrangler secret put MOJANG_KEYS
 
   用 fine-grained token，只給這個倉庫，權限 **Contents: Read and write**、**Pull requests: Read and write** 與 **Issues: Read and write**（回饋的譯文建議開 Issue 用；少了這一項 Issue 會開不成，回饋照樣存著，管理頁標出 `github 403`）。沒設的話表單會說還沒設定，其他功能不受影響。
 
-- **翻譯團隊與貢獻項目**（使用者 2026-10-30：「貢獻者部分要開始區分團隊了」）：`/admin` 選一位成員，勾他在哪幾個語言的翻譯團隊（協作翻譯那七種）與做過哪些事（翻譯、校對、資料收集、測試、程式、美術設計、網站、社群管理）。存在 `credits.json` 成員的 `teams`、`areas`（代碼：`zh_tw`…、`translation`、`proofreading`、`capture`、`testing`、`code`、`design`、`website`、`community`；都沒勾就拿掉那一欄），跟新增成員一樣開 PR，但同一天的修改都加進同一個 PR；那個 PR 已經合併或關掉就另開一個。模組讀名單時不認得的欄位會略過。合併之後首頁最多十分鐘內跟著變。
+- **翻譯團隊與貢獻項目**（使用者 2026-10-30：「貢獻者部分要開始區分團隊了」）：`/admin` 選一位成員，勾他在哪幾個語言的翻譯團隊（協作翻譯那七種）與做過哪些事（翻譯、校對、資料收集、測試、程式、美術設計、網站、社群管理）。存在 `credits.json` 成員的 `teams`、`areas`（代碼：`zh_tw`…、`translation`、`proofreading`、`capture`、`testing`、`code`、`design`、`website`、`community`；都沒勾就拿掉那一欄），跟新增成員一樣開 PR，但同一天的修改都加進同一個 PR；那個 PR 已經合併或關掉就另開一個。模組讀名單時不認得的欄位會略過。合併之後首頁最多十分鐘內跟著變。指派譯者時，名冊上有那個人（照遊戲 ID 比對）就把他負責的語言一併加進他的 `teams`，放進當天同一個 PR；移除譯者或拿掉語言不會動到 `teams`。管理頁的譯者名單在語言底下列出他在名冊上的翻譯團隊。
 
 不在遊戲裡的時候可以另外設一個密語，用 `curl` 管理（沒設就沒有這條路）：
 

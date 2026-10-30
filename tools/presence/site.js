@@ -1067,7 +1067,7 @@ export const TEXT = {
     'tr.st.open': '投票中', 'tr.st.accepted': '已採用', 'tr.st.rejected': '已駁回',
     'tr.np.term': '英文術語', 'tr.np.opts': '候選譯法（用逗號分開）', 'tr.np.note': '說明（可以不填）：出現在哪裡、為什麼有不同意見', 'tr.np.send': '開始投票',
     'admin.translators': '譯者',
-    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。',
+    'admin.translatorsnote': '譯者可以在「協作翻譯」頁替負責的語言提案與投票。選一位成員，勾他負責的語言（可以多選）；同一個人再送一次就是改他的語言。名冊（<code>credits.json</code>）上有這個人的話，他負責的語言也會加進他的翻譯團隊（放進當天那個 PR）；移除譯者或拿掉語言不會動到翻譯團隊，要到上面的「翻譯團隊與貢獻項目」自己取消。',
     'admin.trlangs': '負責的語言', 'admin.notranslators': '還沒有譯者。',
     'admin.h1': '管理',
     'admin.gate': '這一頁只有開發者與管理員能用，請先登入。',
@@ -1209,6 +1209,7 @@ export const TEXT = {
       wornPending: '穿上了，但要等審核通過別人才會看到。',
       confirmUnreview: '把 {who} 從審核名單移除？等審核的披風會直接放行。',
       onWynn: '在 Wynncraft 看 {n} 的資料',
+      trTeamOf: '名冊的團隊', trTeamDone: '也把語言加進他的翻譯團隊', trTeamFail: '翻譯團隊沒改成（{s}）',
       teamAll: '全部', teamEdit: '編輯', teamWait: '已送出，等 PR 合併', teamAreas: { translation: '翻譯', proofreading: '校對', capture: '資料收集', testing: '測試', code: '程式', design: '美術設計', website: '網站', community: '社群管理' }, teamFix: { pick: '先選一位成員', added: '已加進今天的 PR', unchanged: '跟名單上現在的一樣，沒有要改的', 'not found': '名單上找不到這個人（可能剛改過名或被移除），請重新整理', 'bad team': '翻譯團隊不對', 'bad area': '貢獻項目不對', 'bad who': '先選一位成員', forbidden: '登入過期了，或你沒有管理權限' },
       wearingThis: '你正在穿這一件。', restoreOwn: '復原成我原本的披風', takeOff: '脫下這件披風',
       wornOk: '穿上了，其他玩家幾分鐘內就會看到。', wornKept: '穿上了，其他玩家幾分鐘內就會看到。你原本那一件還留著，隨時可以復原。',
@@ -1441,7 +1442,7 @@ export const TEXT = {
     'tr.st.open': 'Voting', 'tr.st.accepted': 'Accepted', 'tr.st.rejected': 'Rejected',
     'tr.np.term': 'English term', 'tr.np.opts': 'Candidate translations (comma-separated)', 'tr.np.note': 'Note (optional): where it appears and what the disagreement is', 'tr.np.send': 'Start the vote',
     'admin.translators': 'Translators',
-    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages.',
+    'admin.translatorsnote': 'Translators can suggest and vote on the Translate page for their languages. Choose a member and tick their languages (more than one is fine); sending the same person again changes their languages. If the person is on the credits list (<code>credits.json</code>), their languages are also added to their translation teams (in that day’s pull request). Removing a translator or a language does not touch their teams; untick those yourself under “Translation teams and contributions” above.',
     'admin.trlangs': 'Languages', 'admin.notranslators': 'No translators yet.',
     'admin.h1': 'Admin',
     'admin.gate': 'This page is for developers and moderators only. Please sign in first.',
@@ -1583,6 +1584,7 @@ export const TEXT = {
       wornPending: 'You are wearing it now, but others will only see it once it has been approved.',
       confirmUnreview: 'Remove {who} from the review list? A cape awaiting review will be let through.',
       onWynn: 'See {n} on Wynncraft',
+      trTeamOf: 'Teams on the credits', trTeamDone: 'their languages were also added to their translation teams', trTeamFail: 'the translation teams were not updated ({s})',
       teamAll: 'All', teamEdit: 'Edit', teamWait: 'sent, waiting for the pull request to be merged', teamAreas: { translation: 'Translation', proofreading: 'Proofreading', capture: 'Data collection', testing: 'Testing', code: 'Code', design: 'Art and design', website: 'Website', community: 'Community' }, teamFix: { pick: 'Choose a member first', added: 'Added to today’s pull request', unchanged: 'Nothing to change: the list already says this', 'not found': 'This person is not on the list any more (renamed or removed?). Please refresh.', 'bad team': 'Unknown translation team', 'bad area': 'Unknown contribution', 'bad who': 'Choose a member first', forbidden: 'Your sign-in expired, or you cannot manage this site' },
       wearingThis: 'You are wearing this one.', restoreOwn: 'Switch back to my own cape', takeOff: 'Take this cape off',
       wornOk: 'You are wearing it now. Other players will see it within a few minutes.', wornKept: 'You are wearing it now. Other players will see it within a few minutes. Your own cape is kept, and you can switch back any time.',
@@ -5286,7 +5288,11 @@ const ADMIN_JS = '<script>' + String.raw`
         };
         var action = el('td');
         action.append(drop);
-        row.append(who, el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、')),
+        var langCell = el('td', '', one.langs.map(function (c) { return L.tr.langs[c] || c; }).join('、'));
+        if (one.team) {
+          langCell.append(el('br'), el('small', 'hint', L.trTeamOf + '：' + (one.team.map(function (c) { return L.tr.langs[c] || c; }).join('、') || '—')));
+        }
+        row.append(who, langCell,
           el('td', '', one.note || '—'), el('td', '', one.t ? new Date(one.t).toLocaleString() : '—'),
           el('td', '', one.by || '—'), action);
         body.append(row);
@@ -5305,6 +5311,18 @@ const ADMIN_JS = '<script>' + String.raw`
           if (r.ok) {
             msg.className = 'msg ok';
             msg.textContent = L.perkDone;
+            if (body.team && body.team.why) {
+              msg.append(' · ' + fmt(L.trTeamFail, { s: L.credit[body.team.why] || body.team.why }));
+            } else if (body.team && body.team.url) {
+              msg.append(' · ' + L.trTeamDone + ': ');
+              if (String(body.team.url).indexOf('https://github.com/') === 0) {
+                var prLink = el('a', '', body.team.url);
+                prLink.href = body.team.url;
+                prLink.rel = 'noopener';
+                msg.append(prLink);
+              }
+            }
+            if (body.team && (body.team.url || body.team.teams)) loadTeams();
             trPick.clear();
             document.getElementById('t-note').value = '';
             TR_CODES.forEach(function (code) { document.getElementById('t-lang-' + code).checked = false; });
