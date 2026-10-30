@@ -3447,6 +3447,18 @@ check('管理頁：管理員那一塊預設藏著，開發者才打開', pages['
   check('★ 密鑰第一次用到時同時來兩個請求：兩張通行證都認得', readBack.every((user) => user && user.uuid === uuid) && one === two);
 }
 
+{
+  const { readFileSync } = await import('node:fs');
+  const source = (name) => readFileSync(new URL('./' + name, import.meta.url), 'utf8');
+  check('★ 登入的 state 簽章與 ADMIN_TOKEN 都用固定時間比對', !source('auth.js').includes('expected !== parts[2]')
+    && source('auth.js').includes('timingSafeEqual(expected, parts[2])') && !source('admin.js').includes("header === 'Bearer '")
+    && source('admin.js').includes("timingSafeEqual('Bearer ' + env.ADMIN_TOKEN, header)"));
+  const admin = { CORPUS: env.CORPUS, ADMIN_TOKEN: 'golden-secret' };
+  const bearer = (token) => new Request('https://x.test/api/admin/perks', { headers: { authorization: 'Bearer ' + token } });
+  check('ADMIN_TOKEN 對的能進、錯的與長度不同的不能', (await worker.fetch(bearer('golden-secret'), admin)).status === 200
+    && (await worker.fetch(bearer('golden-secrex'), admin)).status === 403 && (await worker.fetch(bearer('short'), admin)).status === 403);
+}
+
 check('★ 協作翻譯頁：搜尋、提案、投票、術語；管理頁的翻譯團隊管譯者權限', ['id="tr-q"', 'id="tr-file"', 'id="tr-blank"', 'id="tp-props"', 'id="tp-terms"', "'/tr/propose'", "'/tr/vote'", "'/tr/poll/vote'"]
   .every((w) => pages['/translate'].includes(w)) && pages['/admin'].includes('id="langteam-rows"') && pages['/admin'].includes("'/admin/langteam'")
   && pages['/'].includes('href="/translate"'));
