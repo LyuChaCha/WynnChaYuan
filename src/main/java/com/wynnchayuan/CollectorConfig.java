@@ -83,15 +83,15 @@ public final class CollectorConfig {
 
     boolean showOverlays = true;
 
-    boolean collect = true;
+    volatile boolean collect = true;
 
     String notifiedVersion = "";
 
-    String syncedTranslations = "";
+    volatile String syncedTranslations = "";
 
-    String syncedTranslationsDate = "";
+    volatile String syncedTranslationsDate = "";
 
-    boolean autoUpdateTranslations = false;
+    volatile boolean autoUpdateTranslations = false;
 
     boolean debugDumps = false;
 
@@ -137,11 +137,11 @@ public final class CollectorConfig {
         save();
     }
 
-    String language = "";
+    volatile String language = "";
 
-    String uiLanguage = "";
+    volatile String uiLanguage = "";
 
-    String fallbackLanguage = "";
+    volatile String fallbackLanguage = "";
 
     int panelGap = DEFAULT_PANEL_GAP;
 
