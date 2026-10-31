@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Shrouded in Mist",
-  "count": 309,
-  "translated": 309,
+  "count": 316,
+  "translated": 316,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -221,7 +221,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#021": {
-   "src": "There's nothing we can do! We're stuck in unfamiliar territory, all lone, our family and friends all captured, or- or worse-",
+   "src": "There's nothing we can do! We're stuck in unfamiliar territory, all alone, our family and friends all captured, or- or worse-",
    "dst": "我們什麼都做不了！我們困在陌生的地方，孤零零的，我們的家人朋友全被抓了，或者——或者更糟——",
    "role": "desc",
    "kind": "dialogue",
@@ -551,7 +551,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#054": {
-   "src": "Ah- but! But but but, see- trust is a currency here in the {p}. I can't just spill all my secrets at once, can I?",
+   "src": "Ah- but! But but but, see - trust is a currency here in the {p}. I can't just spill all my secrets at once, can I?",
    "dst": "啊——但是！但是但是但是，聽好——在 {p} 這裡，信任是一種貨幣。我總不能一口氣把祕密全倒出來吧？",
    "role": "desc",
    "kind": "dialogue",
@@ -1851,8 +1851,8 @@
    "source": "wiki"
   },
   "Shrouded in Mist#184": {
-   "src": "...well. ...sorry. Nisen... I. I do know. I shouldn't be telling you, but I do know. Please don't hurt me.",
-   "dst": "……好吧。……抱歉。Nisen……我。我確實知道。我不該告訴你的，但我確實知道。拜託別傷害我。",
+   "src": "...well. ...sorry, Nisen... I. I do know. I shouldn't be telling you, but I do know. Please don't hurt me.",
+   "dst": "……好吧。……抱歉，Nisen……我。我確實知道。我不該告訴你的，但我確實知道。拜託別傷害我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -2201,7 +2201,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#219": {
-   "src": "But... we don't have much of a choice. Let's camp outside the southern gate and wait...",
+   "src": "But... we don't have much of a choice. Let's camp out outside the southern gate and wait...",
    "dst": "但是……我們沒什麼選擇。我們去南門外面守著等吧……",
    "role": "desc",
    "kind": "dialogue",
@@ -2471,7 +2471,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#246": {
-   "src": "I'll be bringing you two to the Canopy! But, ah, one little precaution- I'll have to blindfold you till we arrive, Just a security measure!",
+   "src": "I'll be bringing you two to the Canopy! But, ah, one little precaution- I'll have to blindfold you till we arrive. Just a security measure!",
    "dst": "我會帶你們兩位去樹冠！不過，啊，有個小小的預防措施——在抵達之前我得把你們的眼睛蒙起來，只是個保安措施！",
    "role": "desc",
    "kind": "dialogue",
@@ -3099,6 +3099,76 @@
    "stage": "Stage 14",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "Shrouded in Mist#309": {
+   "src": "It looks like someone's diary. The latest entries are dated {~} IA.",
+   "dst": "看起來是某人的日記。最新的記事日期是 {~} IA。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#310": {
+   "src": "- Entry {~}: Mother came by today. She is taking their separation quite poorly.",
+   "dst": "- 第 {~} 則: 媽媽今天來了。她對他們分開這件事很難釋懷。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#311": {
+   "src": "- Entry {~}: Father tried to bring me fresh produce today. I asked him about mother, and he left.",
+   "dst": "- 第 {~} 則: 爸爸今天想拿新鮮蔬果給我。我問起媽媽，他就走了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#312": {
+   "src": "- Entry {~}: I stopped talking to Father. Mother came by my work at the market. We went for food after.",
+   "dst": "- 第 {~} 則: 我不跟爸爸說話了。媽媽來市場找我。之後我們一起去吃飯。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#313": {
+   "src": "There's a note with information slipped between the pages: Parents divorced. Working at market.",
+   "dst": "書頁間夾著一張寫著資訊的字條: 父母離異。在市場工作。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#314": {
+   "src": "Seems like no one has slept here in a while.",
+   "dst": "這裡似乎有一陣子沒人睡過了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shrouded in Mist#315": {
+   "src": "- Entry {~}: I had a normal day today. Helped my friend carry some food to their house.",
+   "dst": "- 第 {~} 則: 今天過得很平常。幫朋友把一些食物搬回他們家。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

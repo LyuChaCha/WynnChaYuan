@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24390,
-  "translated": 24387,
+  "count": 24397,
+  "translated": 24394,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -153675,23 +153675,25 @@
   },
   "Shrouded in Mist#007": {
    "src": "The monitor is keeping the machine running.",
-   "dst": "モニターが機械を動かし続けている。",
+   "dst": "{c1}モニターが機械を動かし続けている。{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}The monitor is keeping the machine running.{/}"
   },
   "Shrouded in Mist#008": {
    "src": "Maybe something sharp can break it...",
-   "dst": "鋭い物なら壊せるかも…",
+   "dst": "{c2}鋭い物{c1}なら壊せるかも…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}Maybe something {c2}sharp {c1}can break it..."
   },
   "Shrouded in Mist#009": {
    "src": "- Entry {~}: Stayed in and slept all day. Was very tired.",
@@ -153745,13 +153747,14 @@
   },
   "Shrouded in Mist#014": {
    "src": "This must be where Nisen lives...",
-   "dst": "ここが Nisen の家に違いない…",
+   "dst": "{c1}ここが Nisen の家に違いない…{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "",
    "speaker": "",
-   "source": "captured"
+   "source": "captured",
+   "note": "{c1}This must be where Nisen lives...{/}"
   },
   "Shrouded in Mist#015": {
    "src": "Group up with the remaining members at [-{~}, {~}, -{~}].",
@@ -153801,7 +153804,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "what , possiblyは斜体"
   },
   "Shrouded in Mist#020": {
    "src": "I don't know, Yusanu! Maybe about what to do next? How we can- h-how we-",
@@ -153811,17 +153815,18 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "knowは斜体"
   },
   "Shrouded in Mist#021": {
-   "src": "There's nothing we can do! We're stuck in unfamiliar territory, all lone, our family and friends all captured, or- or worse-",
+   "src": "There's nothing we can do! We're stuck in unfamiliar territory, all alone, our family and friends all captured, or- or worse-",
    "dst": "何もできやしない！知らない土地で孤立して、家族も仲間もみんな捕まったか、それか― もっと悪い―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "captured"
   },
   "Shrouded in Mist#022": {
    "src": "Don't. Don't say that.",
@@ -153831,7 +153836,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Don'tは斜体"
   },
   "Shrouded in Mist#023": {
    "src": "Urgh! I can't believe I let her convince me stealing this... this thing was worth it! If I hadn't, then... then our agreement wouldn't have fallen through, and none of this would have-",
@@ -153841,7 +153847,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thingは斜体"
   },
   "Shrouded in Mist#024": {
    "src": "Don't you dare pin this on Rex. You heard what that Sovereign said, they- th-they knew what we were planning for ages!",
@@ -153851,7 +153858,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "dareは斜体"
   },
   "Shrouded in Mist#025": {
    "src": "...then maybe it'd have been best if you left us out of it.",
@@ -153871,7 +153879,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 1",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Youは斜体"
   },
   "Shrouded in Mist#027": {
    "src": "Intruders! Owls, to arms!",
@@ -153961,7 +153970,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "valuableは斜体"
   },
   "Shrouded in Mist#036": {
    "src": "Besides! We know how to... ah, deal with spies, as it were. Risk factor is minimal!",
@@ -153971,11 +153981,12 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "dealは斜体"
   },
   "Shrouded in Mist#037": {
    "src": "So... what, are you also resisting-",
-   "dst": "で…何だ、あんたらも抵抗―",
+   "dst": "で…何だ、あんたらもレジスタ―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -153991,7 +154002,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "We'llは斜体"
   },
   "Shrouded in Mist#039": {
    "src": "Seems you're the only one who hasn't spoken yet! Well now, don't be shy. Tell me - where are you lot from?",
@@ -154031,7 +154043,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Really , very, very←こっちだけ , verrrryは斜体"
   },
   "Shrouded in Mist#043": {
    "src": "H... hey! Listen! I don't know who, or, or what you guys are, but--",
@@ -154041,7 +154054,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whatは斜体"
   },
   "Shrouded in Mist#044": {
    "src": "How many times must I repeat myself? I said no que-",
@@ -154051,7 +154065,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "repeatは斜体"
   },
   "Shrouded in Mist#045": {
    "src": "Shut UP! We just BARELY escaped {p} after we- after we tried to KILL the Queen! The rest of our friends are... captured, or d- dead!",
@@ -154061,7 +154076,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Shut UP!は太字"
   },
   "Shrouded in Mist#046": {
    "src": "So- so either leave us alone, or I'll- I'll make sure you never see your loved ones a- again!",
@@ -154121,7 +154137,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "justは斜体"
   },
   "Shrouded in Mist#052": {
    "src": "I may have information regarding your allies.",
@@ -154144,14 +154161,15 @@
    "source": "wiki"
   },
   "Shrouded in Mist#054": {
-   "src": "Ah- but! But but but, see- trust is a currency here in the {p}. I can't just spill all my secrets at once, can I?",
+   "src": "Ah- but! But but but, see - trust is a currency here in the {p}. I can't just spill all my secrets at once, can I?",
    "dst": "ああ― でも！でもでもでもね― ここ {p} では信頼は通貨なんだ。秘密を一度に全部こぼすわけにはいかないだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "trustは斜体"
   },
   "Shrouded in Mist#055": {
    "src": "And if you'd like to earn our trust... I'll need you to, ah, deal with some things for me.",
@@ -154161,7 +154179,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "deal withは斜体"
   },
   "Shrouded in Mist#056": {
    "src": "What kinds of things?",
@@ -154181,7 +154200,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "too , money... you←(ここだけ)斜体"
   },
   "Shrouded in Mist#058": {
    "src": "M- me?!",
@@ -154231,7 +154251,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "meは斜体"
   },
   "Shrouded in Mist#063": {
    "src": "...okay. We accept your terms, Rurie.",
@@ -154245,23 +154266,25 @@
   },
   "Shrouded in Mist#064": {
    "src": "Ah-mazing! I'm glad you chose to be reasonable. In that case - I'll need the remaining two of you to go and sabotage three military structures.",
-   "dst": "すん―ばらしい！聞き分けが良くて嬉しいよ。では― 残りの二人には、軍の施設を三つ破壊してきてもらう。",
+   "dst": "すん―ばらしい！聞き分けが良くて嬉しいよ。では― 残りの二人には、{c2}軍の施設を三つ{/}破壊してきてもらう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "reasonableは斜体、　{c2}three military structures{/}"
   },
   "Shrouded in Mist#065": {
    "src": "Now, go and say your goodbyes, then come grab the list from me!",
-   "dst": "さあ、お別れを済ませたら、僕のところにリストを取りに来て！",
+   "dst": "さあ、お別れを済ませたら、僕のところに{c2}リスト{/}を取りに来て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 3",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}list{/}"
   },
   "Shrouded in Mist#066": {
    "src": "Talk to Rurie before heading out at [-{~}, {~}, -{~}].",
@@ -154281,7 +154304,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "I'llは斜体"
   },
   "Shrouded in Mist#068": {
    "src": "I think we can trust them for now, at least. Not like we have an alternative...",
@@ -154331,7 +154355,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "generousは斜体"
   },
   "Shrouded in Mist#073": {
    "src": "Don't worry about your little friend over there! He'll be safe and sound amongst our Canopy.",
@@ -154361,7 +154386,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "can'tは斜体"
   },
   "Shrouded in Mist#076": {
    "src": "Well, newbies! You've a list of the structures I need you to sabotage, so it really should be a simple task.",
@@ -154371,7 +154397,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "reallyは斜体"
   },
   "Shrouded in Mist#077": {
    "src": "Just find a way to... disable them! However you manage it, I can't say I really care - so long as it gets done!",
@@ -154381,7 +154408,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "reallyは斜体"
   },
   "Shrouded in Mist#078": {
    "src": "Why are you getting us to do",
@@ -154411,7 +154439,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "youは斜体"
   },
   "Shrouded in Mist#081": {
    "src": "So why not? It's less work for me to do, so I'm not complaining!",
@@ -154421,7 +154450,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "I'mは斜体"
   },
   "Shrouded in Mist#082": {
    "src": "Newbies! That's what you are, isn't it? New to the woods, new to the world...",
@@ -154461,7 +154491,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 4",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "boredは斜体"
   },
   "Shrouded in Mist#086": {
    "src": "Ta ta, newbies! Good luck out there! And just a word of advice - stay on your guard. You never know what the mists may be hiding.",
@@ -154485,13 +154516,14 @@
   },
   "Shrouded in Mist#088": {
    "src": "Still a bit lost? Just use your taskbook to find the things I need broken!",
-   "dst": "まだ迷ってる？クエストブックで壊してほしい物を探せばいいよ！",
+   "dst": "まだ迷ってる？{c2}クエストブック{/}で壊してほしい物を探せばいいよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}taskbook{/}"
   },
   "Shrouded in Mist#089": {
    "src": "Head to the watchtower at [-{~}, {~}, -{~}] and sabotage it using a spell.",
@@ -154515,13 +154547,14 @@
   },
   "Shrouded in Mist#091": {
    "src": "Those supports look rather unstable, don't they? I wonder...",
-   "dst": "あの支柱、かなりぐらついて見えるよね？もしかして…",
+   "dst": "あの{c2}支柱{/}、かなりぐらついて見えるよね？もしかして…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}supports{/}"
   },
   "Shrouded in Mist#092": {
    "src": "C-can you deal with them, please?",
@@ -154565,13 +154598,14 @@
   },
   "Shrouded in Mist#096": {
    "src": "Check the book, where should we go next?",
-   "dst": "本を見て、次はどこに行けばいい？",
+   "dst": "{c2}本{/}を見て、次はどこに行けばいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}book{/}"
   },
   "Shrouded in Mist#097": {
    "src": "[?]",
@@ -154605,13 +154639,14 @@
   },
   "Shrouded in Mist#100": {
    "src": "I think we can work together for this one. Go, um, blast some weak spots on the structure, and I'll... see if I can reverse the water flow.",
-   "dst": "これは協力できそう。あなたは、えっと、構造の弱い所を撃ち抜いて。私は…水の流れを逆にできないか試してみる。",
+   "dst": "これは協力できそう。あなたは、えっと、構造の{c2}弱い所{/}を撃ち抜いて。私は…水の流れを逆にできないか試してみる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}weak spots{/}"
   },
   "Shrouded in Mist#101": {
    "src": "Let's just... get rid of this hunk of junk.",
@@ -154645,13 +154680,14 @@
   },
   "Shrouded in Mist#104": {
    "src": "Good, then it's... time for my part, I guess. Um, come talk to me when you're ready.",
-   "dst": "よし、じゃあ…私の番、かな。えっと、準備ができたら声をかけて。",
+   "dst": "よし、じゃあ…私の番、かな。えっと、準備ができたら{c2}声をかけて{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}come talk{/}"
   },
   "Shrouded in Mist#105": {
    "src": "Talk to Sui at [-{~}, {~}, -{~}].",
@@ -154691,7 +154727,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "anythingは斜体"
   },
   "Shrouded in Mist#109": {
    "src": "And the last thing we did before was... argue! And now, he's... he's safe, probably, but... I don't know. I wish we hadn't.",
@@ -154825,13 +154862,14 @@
   },
   "Shrouded in Mist#122": {
    "src": "Just... check the book, what's our next stop?",
-   "dst": "とにかく…本を見て、次の目的地は？",
+   "dst": "とにかく…{c2}本{/}を見て、次の目的地は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}book{/}"
   },
   "Shrouded in Mist#123": {
    "src": "I... I think that was the last one. Let's go tell Rurie that it's, um, done.",
@@ -154865,13 +154903,14 @@
   },
   "Shrouded in Mist#126": {
    "src": "It looks... durable. Like, um, it'll be hard to just... break. We need to find another way...",
-   "dst": "頑丈…そう。えっと、そう簡単には…壊せなさそう。別の方法を探さなきゃ…",
+   "dst": "頑丈…そう。えっと、そう簡単には…{c2}壊せなさそう{/}。別の方法を探さなきゃ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}break{/}"
   },
   "Shrouded in Mist#127": {
    "src": "There- there isn't any water nearby. So, so if any soldiers show up... please, can you deal with them?",
@@ -154915,13 +154954,14 @@
   },
   "Shrouded in Mist#131": {
    "src": "Was that the last one? Let's head back to Rurie and... and tell him it's done.",
-   "dst": "今ので最後？Rurie の所に戻って…終わったって伝えよう。",
+   "dst": "今ので最後？{c2}Rurie{/} の所に戻って…終わったって伝えよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Rurie{/}"
   },
   "Shrouded in Mist#132": {
    "src": "Return to Rurie at [-{~}, {~}, -{~}] and discuss the next step.",
@@ -154971,7 +155011,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 6",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "kiddingは斜体"
   },
   "Shrouded in Mist#137": {
    "src": "Deadly serious, I fear! That, dear friends, was but the first part of your task.",
@@ -154981,7 +155022,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 6",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "firstは斜体"
   },
   "Shrouded in Mist#138": {
    "src": "Oh, but on the contrary! I received word immediately once you had done the deed.",
@@ -155011,7 +155053,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 6",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "canは斜体"
   },
   "Shrouded in Mist#141": {
    "src": "... Fine. What do you want?",
@@ -155031,7 +155074,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 6",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "transportは斜体"
   },
   "Shrouded in Mist#143": {
    "src": "Are... are they expecting us?",
@@ -155115,13 +155159,14 @@
   },
   "Shrouded in Mist#151": {
    "src": "Ahaha, apologies, my mistake! You'll be looking for the man named Nisen. Bring him here, but don't take too long!",
-   "dst": "あはは、失敬、僕のミスだ！探すのは Nisen という男だよ。ここへ連れてきて、でも長くかけないでね！",
+   "dst": "あはは、失敬、僕のミスだ！探すのは {c2}Nisen{/} という男だよ。ここへ連れてきて、でも長くかけないでね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 6",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Nisen{/}"
   },
   "Shrouded in Mist#152": {
    "src": "Nisen. Fine. {u}, let's... talk about this outside the cave.",
@@ -155181,7 +155226,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 7",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "noticeは斜体"
   },
   "Shrouded in Mist#158": {
    "src": "I'm... sick and tired of following that clown's orders. But you're right...",
@@ -155205,7 +155251,7 @@
   },
   "Shrouded in Mist#160": {
    "src": "Even if Rurie's out of his mind... I don't see him just- just killing an innocent person. Especially if they're, um, a resistance group.",
-   "dst": "Rurie がいくらイカれてても…罪のない人をあっさり― あっさり殺すとは思えない。まして、えっと、抵抗組織なんだし。",
+   "dst": "Rurie がいくらイカれてても…罪のない人をあっさり― あっさり殺すとは思えない。まして、えっと、レジスタンスなんだし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
@@ -155225,13 +155271,14 @@
   },
   "Shrouded in Mist#162": {
    "src": "Let's head to {p}.",
-   "dst": "{p} へ行こう。",
+   "dst": "{c2}{p}{/} へ行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 7",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}{p}{/}"
   },
   "Shrouded in Mist#163": {
    "src": "Head to {p} at [-{~}, {~}, -{~}] and locate Nisen.",
@@ -155444,24 +155491,25 @@
    "source": "wiki"
   },
   "Shrouded in Mist#184": {
-   "src": "...well. ...sorry. Nisen... I. I do know. I shouldn't be telling you, but I do know. Please don't hurt me.",
-   "dst": "…その。…ごめん。Nisen…僕。知ってるよ。言っちゃいけないけど、知ってる。お願い、痛いことしないで。",
+   "src": "...well. ...sorry, Nisen... I. I do know. I shouldn't be telling you, but I do know. Please don't hurt me.",
+   "dst": "…その。…ごめん、Nisen…僕。知ってるよ。言っちゃいけないけど、知ってる。お願い、痛いことしないで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 8",
    "speaker": "Jamie",
-   "source": "wiki"
+   "source": "captured"
   },
   "Shrouded in Mist#185": {
    "src": "You need to take the zipline north-west. Not the one that goes upwards, though.",
-   "dst": "北西へ行くジップラインに乗って。でも上に行く方じゃないよ。",
+   "dst": "{c2}北西へ行くジップライン{/}に乗って。でも上に行く方じゃないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 8",
    "speaker": "Jamie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}zipline north-west{/}"
   },
   "Shrouded in Mist#186": {
    "src": "You seem tense.",
@@ -155794,14 +155842,15 @@
    "source": "wiki"
   },
   "Shrouded in Mist#219": {
-   "src": "But... we don't have much of a choice. Let's camp outside the southern gate and wait...",
-   "dst": "でも…選択肢はほとんどない。南門の外で待ち伏せしよう…",
+   "src": "But... we don't have much of a choice. Let's camp out outside the southern gate and wait...",
+   "dst": "でも…選択肢はほとんどない。{c2}南門{/}の外で待ち伏せしよう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 11",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}southern gate{/}"
   },
   "Shrouded in Mist#220": {
    "src": "Prepare to kidnap Nisen at [-{~}, {~}, -{~}].",
@@ -155815,13 +155864,14 @@
   },
   "Shrouded in Mist#221": {
    "src": "Hey! Up here!",
-   "dst": "おーい！こっち、上！",
+   "dst": "おーい！{c2}こっち、上！{/}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 12",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Up here!{/}"
   },
   "Shrouded in Mist#222": {
    "src": "Guess we'll just have to wait...",
@@ -156011,7 +156061,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "what?!は斜体"
   },
   "Shrouded in Mist#241": {
    "src": "Kidding! Kidding, kidding- goodness, the looks on your faces! What's a little practical joke between friends, eh?",
@@ -156061,10 +156112,11 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "willは斜体"
   },
   "Shrouded in Mist#246": {
-   "src": "I'll be bringing you two to the Canopy! But, ah, one little precaution- I'll have to blindfold you till we arrive, Just a security measure!",
+   "src": "I'll be bringing you two to the Canopy! But, ah, one little precaution- I'll have to blindfold you till we arrive. Just a security measure!",
    "dst": "二人を樹冠へ案内しよう！ただ、ああ、ちょっとした用心で― 着くまで目隠しさせてもらうよ、安全対策さ！",
    "role": "desc",
    "kind": "dialogue",
@@ -156141,7 +156193,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "knowは斜体"
   },
   "Shrouded in Mist#254": {
    "src": "The... ah, the paperwork was real? I always thought it was something you were making up for the fun of it.",
@@ -156201,7 +156254,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Cileon!は斜体"
   },
   "Shrouded in Mist#260": {
    "src": "And of course, we need to torture any necessary information out of them first - I have heard this a dozen times over.",
@@ -156251,17 +156305,19 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "supposeは斜体"
   },
   "Shrouded in Mist#265": {
    "src": "Hey hey, friends! I'm a bit thirsty, so I'll be leaving you now! Think you'll manage to find Azael yourselves?",
-   "dst": "やあやあ、友よ！ちょっと喉が渇いたから、ここで失礼するよ！Azael は自分たちで探せるよね？",
+   "dst": "やあやあ、友よ！ちょっと喉が渇いたから、ここで失礼するよ！{c2}Azael は自分たちで探せる{/}よね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 13",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}find Azael{/}"
   },
   "Shrouded in Mist#266": {
    "src": "Find the leader inside the Canopy at [-{~}, {~}, -{~}].",
@@ -156591,7 +156647,8 @@
    "quest": "Shrouded in Mist",
    "stage": "Stage 14",
    "speaker": "Azael",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "longerは斜体"
   },
   "Shrouded in Mist#299": {
    "src": "The {p} have been plagued for years by these masterful creatures of disguise. Whenever one is recognized, we capture them and hold them for questioning.",
@@ -156692,6 +156749,76 @@
    "stage": "Stage 14",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "Shrouded in Mist#309": {
+   "src": "It looks like someone's diary. The latest entries are dated {~} IA.",
+   "dst": "誰かの日記のようだ。最新の書き込みは{~} IAの日付になっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#310": {
+   "src": "- Entry {~}: Mother came by today. She is taking their separation quite poorly.",
+   "dst": "- 記録{~}：今日、母が立ち寄った。二人の別離をかなり辛く受け止めているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#311": {
+   "src": "- Entry {~}: Father tried to bring me fresh produce today. I asked him about mother, and he left.",
+   "dst": "- 記録{~}：今日、父が新鮮な野菜や果物を持ってきてくれた。母の近況を尋ねたら、父は帰ってしまった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#312": {
+   "src": "- Entry {~}: I stopped talking to Father. Mother came by my work at the market. We went for food after.",
+   "dst": "- 記録{~}：父とは口をきかなくなった。母が市場で働いている私のところへやって来た。その後、一緒に食事に出かけた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#313": {
+   "src": "There's a note with information slipped between the pages: Parents divorced. Working at market.",
+   "dst": "ページの間に、次のような情報が書かれたメモが挟まっていた。「両親は離婚した。市場で働いている。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Shrouded in Mist#314": {
+   "src": "Seems like no one has slept here in a while.",
+   "dst": "ここにはしばらく誰も寝ていないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shrouded in Mist#315": {
+   "src": "- Entry {~}: I had a normal day today. Helped my friend carry some food to their house.",
+   "dst": "- 記録{~}：今日はいつも通りの一日だった。友達が家まで食べ物を運ぶのを手伝った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
   },
   "Solidarity of Steel#000": {
    "src": "I hope the brothers weren't too much of a nuisance. Yuman, especially... he's a good lad, but his enthusiasm gets the best of him sometimes.",
@@ -238245,7 +238372,7 @@
   },
   "Tunnel Trouble#001": {
    "src": "Halt! You cannot go down this cave, it is blocked.",
-   "dst": "止まれ！この洞窟へは下りられない、ふさがれているのだ。",
+   "dst": "止まれ！この洞窟には入れない！中で塞がれている！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238255,7 +238382,7 @@
   },
   "Tunnel Trouble#002": {
    "src": "Now, here's where you come in- I need you to clear out that cave route so we can use it once more! Good luck, soldier!",
-   "dst": "そこで君の出番だ。洞窟の道を片付けて、再び使えるようにしてくれ！健闘を祈る、兵士よ！",
+   "dst": "そこであんたの出番だ。洞窟の道を片付けて、再び使えるようにしてくれ！健闘を祈る、兵士よ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238265,7 +238392,7 @@
   },
   "Tunnel Trouble#003": {
    "src": "I can see the other side! Just a little bit more...",
-   "dst": "向こう側が見えた！あと少し…",
+   "dst": "向こう側が見えたぞ！あと少し…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238275,7 +238402,7 @@
   },
   "Tunnel Trouble#004": {
    "src": "[!] Right-Click the gates of the cow pens to open them and free the cows!",
-   "dst": "[!] 牛囲いの門を右クリックして開け、牛を解き放て！",
+   "dst": "[!] 牛舎の門を右クリックして開け、牛を解放せよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238285,7 +238412,7 @@
   },
   "Tunnel Trouble#005": {
    "src": "Go free those cows from the farmers before they're taken to the slaughterhouse! Oh man, the slaughterhouse...",
-   "dst": "屠殺場に連れて行かれる前に、農夫たちから牛を解放して！ああ、屠殺場なんて…",
+   "dst": "屠殺場に連れて行かれる前に、農夫から牛たちを解放してくれ！ああ、屠殺場なんて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238295,7 +238422,7 @@
   },
   "Tunnel Trouble#006": {
    "src": "Looks like you freed the cows successfully! You should return to Drale, before-",
-   "dst": "牛をうまく解き放てたようだ！Drale のところへ戻るべきだ、その前に――",
+   "dst": "牛を解放できたようだ！Drale のところへ戻ろう。その前に―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238305,7 +238432,7 @@
   },
   "Tunnel Trouble#007": {
    "src": "An intruder! What are you doing with my cows!? Guard golem! Attack!",
-   "dst": "侵入者だ！俺の牛に何してる！？衛兵ゴーレム、かかれ！",
+   "dst": "侵入者だ！俺の牛に何をしている！？衛兵ゴーレム！かかれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238315,7 +238442,7 @@
   },
   "Tunnel Trouble#008": {
    "src": "You've defeated Bylvis' Guard Golem! You're in the clear now, and the cows are saved! You should return to Drale.",
-   "dst": "Bylvis の衛兵ゴーレムを倒した！もう危険はなく、牛も救われた！Drale のところへ戻るべきだ。",
+   "dst": "Bylvis の衛兵ゴーレムを倒した！もう危険はない！牛も無事だ！Drale のところへ戻ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238335,7 +238462,7 @@
   },
   "Tunnel Trouble#010": {
    "src": "You can... go on ahead. Tell whoever's on the other end that we succeeded. And while you do that, I'll be searching for a better career.",
-   "dst": "あんたは…先に行ってくれ。向こう側の誰かに、成功したって伝えてくれ。その間に俺はもっといい仕事を探すよ。",
+   "dst": "あんたは…先に行ってくれ。トンネルの出口にいる誰かに成功したって伝えてくれ。その間に俺はもっといい仕事を探すよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238355,7 +238482,7 @@
   },
   "Tunnel Trouble#012": {
    "src": "Ah! You must be a new recruit! Well, I've got a mission for you.",
-   "dst": "おお！新兵だな！よし、任務を与えよう。",
+   "dst": "おお！あんたが新兵だな！よし、あんたに任務があるんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238375,7 +238502,7 @@
   },
   "Tunnel Trouble#014": {
    "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
-   "dst": "{p} と {p} を素早く行き来するのに使っていたが、何年も放置されている。",
+   "dst": "{p} と {p} を素早く行き来するのに使われていたが、もう何年も放置されている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238385,7 +238512,7 @@
   },
   "Tunnel Trouble#015": {
    "src": "This cave could prove to be very useful for future recruits who need to travel between {p} and {p}.",
-   "dst": "今後 {p} と {p} を行き来する新兵にとって、この洞窟は大いに役立つはずだ。",
+   "dst": "この洞窟は、今後 {p} と {p} を行き来する多くの新兵の役に立つだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238405,7 +238532,7 @@
   },
   "Tunnel Trouble#017": {
    "src": "...Oh! Shoot, is it time to get to work already?",
-   "dst": "…おっと！やべ、もう仕事の時間か？",
+   "dst": "…おっと、やべ！もう仕事の時間か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238415,7 +238542,7 @@
   },
   "Tunnel Trouble#018": {
    "src": "Guess you're the soldier, then?",
-   "dst": "で、あんたが例の兵士か？",
+   "dst": "で、あんたが例の兵士だな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238425,7 +238552,7 @@
   },
   "Tunnel Trouble#019": {
    "src": "Uh... well, to start, we'll need to clear that debris. Just... give it a shove, or something. That'll probably do it.",
-   "dst": "えーと…まずはこの瓦礫をどかさないとな。ちょっと押すとか…それでたぶんいける。",
+   "dst": "えーと…まずはこの瓦礫をどかさないとな。軽く押せば崩れるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238445,7 +238572,7 @@
   },
   "Tunnel Trouble#021": {
    "src": "Pretty easy, huh? Hey, maybe you can just go on ahead, and do the rest yourself?",
-   "dst": "楽勝だろ？なあ、いっそあんたが先に行って、残りも片付けてくれない？",
+   "dst": "楽勝だろ？なあ、いっそあんたが先に行って、残りも片付けてくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238455,7 +238582,7 @@
   },
   "Tunnel Trouble#022": {
    "src": "...Yeah, no, I should probably do my job. Let me grab my pickaxe, and we can keep going forward.",
-   "dst": "…いや、ダメだな、仕事はしなきゃ。ツルハシを取ってくるから、先へ進もう。",
+   "dst": "…いや、だめだな。これは俺の仕事だ。ツルハシを取ってくるよ。先へ進もう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238475,7 +238602,7 @@
   },
   "Tunnel Trouble#024": {
    "src": "Oh, come on... Hey, soldier, do your job! Get rid of those monsters, would you?",
-   "dst": "おいおい…兵士さん、仕事してくれ！あの魔物どもを片付けてくれよ。",
+   "dst": "おいおい…兵士さん、仕事だ！あの魔物どもを片付けてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238495,7 +238622,7 @@
   },
   "Tunnel Trouble#026": {
    "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
-   "dst": "落盤？マジかよ？また仕事が増えた…道を掘るから、腐敗した奴らと戦っててくれ！",
+   "dst": "崩落か？また仕事が増えた。俺が道を掘るから、腐敗した奴らと戦っててくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238505,7 +238632,7 @@
   },
   "Tunnel Trouble#027": {
    "src": "Halfway there... Ugh, I knew I should have brought explosives...",
-   "dst": "半分まで来た…はあ、爆薬を持ってくりゃよかった…",
+   "dst": "やっと半分だ。はあ、爆薬を持ってくりゃよかったよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238525,7 +238652,7 @@
   },
   "Tunnel Trouble#029": {
    "src": "...Oh, come on. You've got to be kidding me. Another cave-in? Really?",
-   "dst": "…おいおい。冗談だろ。また落盤？マジで？",
+   "dst": "…おいおい。冗談だろ。また崩落かよ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238535,7 +238662,7 @@
   },
   "Tunnel Trouble#030": {
    "src": "And of course it's bigger than the last one. What's my pickaxe going to do against this thing?!",
-   "dst": "しかも当然、前のよりデカい。ツルハシでこれをどうしろってんだ？！",
+   "dst": "しかも案の定、さっきのよりデカい。ツルハシでこれをどうしろってんだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238545,7 +238672,7 @@
   },
   "Tunnel Trouble#031": {
    "src": "Really should have thought to bring explosives. Well, soldier, we tried our best! Nobody'll blame us if we give up now.",
-   "dst": "爆薬を持ってくるべきだった。まあ兵士さん、俺たちは全力を尽くした！今やめても誰も責めないさ。",
+   "dst": "本当に爆薬を持ってくるべきだったな。兵士さん、俺たちは最善を尽くした！ここでやめても誰も何とも言わないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238555,7 +238682,7 @@
   },
   "Tunnel Trouble#032": {
    "src": "...What? Don't look at me like that. Fine, we can- huh? Do you hear that? Over there, to the right.",
-   "dst": "…何だよ？そんな目で見るなって。わかった、じゃあ―ん？聞こえるか？あっちだ、右の方。",
+   "dst": "…何だよ？そんな目で見るなって。わかったよ。何だ？聞こえるか？あっちだ、右の方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238565,7 +238692,7 @@
   },
   "Tunnel Trouble#033": {
    "src": "Oh, uh... Hi... Well, this is a little awkward... I'll just... Go.",
-   "dst": "あ、えっと…どうも…ちょっと気まずいな…僕はその…行きます。",
+   "dst": "あ、えっと…どうも…これはちょっと気まずいね…それじゃあ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238575,7 +238702,7 @@
   },
   "Tunnel Trouble#034": {
    "src": "...You know what? I'm not going to ask. As far as I'm concerned, that didn't happen.",
-   "dst": "…なあ？俺は聞かないことにする。俺の中では、今のは起きなかった。",
+   "dst": "…いや、もういい。俺は聞きに行かない。何も起こらなかったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238585,7 +238712,7 @@
   },
   "Tunnel Trouble#035": {
    "src": "Right, of course you want to check it out. Fine! Go ahead. I'll just... sit here and twiddle my thumbs 'till you're back.",
-   "dst": "そりゃ見に行きたいよな。いいさ！行ってこい。俺は…ここで暇つぶしして待ってるよ。",
+   "dst": "そりゃ見に行きたいよな。いいさ！行ってこい。俺は…ここで暇つぶしして待っておくよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238605,7 +238732,7 @@
   },
   "Tunnel Trouble#037": {
    "src": "Oh... Didn't expect you to follow me... Well, um... Hi! This will sound mad but...",
-   "dst": "あ…ついてくるとは思わなかった…えっと…こんにちは！変に聞こえるだろうけど…",
+   "dst": "あ…ついてくるとは思わなかったよ…えっと…こんにちは！変に聞こえるだろうけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238615,7 +238742,7 @@
   },
   "Tunnel Trouble#038": {
    "src": "I'm Drale, and I'm on a mission to free these cows from the enslavement of {p}.",
-   "dst": "僕は Drale。{p} に奴隷にされた牛たちを解放する使命を帯びているんだ。",
+   "dst": "僕は Drale。{p} で奴隷にされている牛たちを解放するために活動しているんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238625,7 +238752,7 @@
   },
   "Tunnel Trouble#039": {
    "src": "Those farmers stole those cows. They are sacred animals. Now they're about to turn them into steak! If you were to help me, maybe I could help you...",
-   "dst": "農夫たちが牛を盗んだんだ。牛は神聖な動物なのに、ステーキにされようとしてる！手伝ってくれたら、僕も君を手伝えるかも…",
+   "dst": "農夫たちが牛たちを盗んだんだ。牛は神聖な動物なのに、ステーキにされようとしてるよ！手伝ってくれたら、きっと何かお返しするよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238665,7 +238792,7 @@
   },
   "Tunnel Trouble#043": {
    "src": "Ah, good to see my cows are all in tip-top shape! Welp, time to- gah!",
-   "dst": "おお、牛たちはみんな元気いっぱいだな！さて、そろそろ―うわっ！",
+   "dst": "おお、牛たちはみんな元気いっぱいだね！さて、そろそろ―うわっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238685,7 +238812,7 @@
   },
   "Tunnel Trouble#045": {
    "src": "Golem! No! That cost me thousands of emeralds!",
-   "dst": "ゴーレム！そんな！何千エメラルドもしたのに！",
+   "dst": "私のゴーレムが！そんな！何千エメラルドもしたのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238705,7 +238832,7 @@
   },
   "Tunnel Trouble#047": {
    "src": "Thank you so much, but we're not done yet. We need to get these cows out the province.",
-   "dst": "本当にありがとう、でもまだ終わりじゃない。この牛たちを地方の外へ連れ出さないと。",
+   "dst": "本当にありがとう、でもまだ終わりじゃない。この牛たちをこの地方から連れ出すよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238735,7 +238862,7 @@
   },
   "Tunnel Trouble#050": {
    "src": "There's the raft! Help me push it for the cows!",
-   "dst": "いかだがあった！牛たちのために押すのを手伝って！",
+   "dst": "あれがそのいかだ！牛たちのために押すのを手伝って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238745,7 +238872,7 @@
   },
   "Tunnel Trouble#051": {
    "src": "And, that should do it! Be free, my friends! A new life awaits!",
-   "dst": "よし、これでいい！自由になれ、友よ！新しい人生が待ってる！",
+   "dst": "よし、これでいい！自由になれ、友よ！新しい人生が待ってるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238755,7 +238882,7 @@
   },
   "Tunnel Trouble#052": {
    "src": "Again, thank you so much for what you have done this day. These cows deserve a better life than being farm animals.",
-   "dst": "改めて、今日は本当にありがとう。この牛たちには家畜より良い暮らしがふさわしい。",
+   "dst": "改めて、今日は本当にありがとう。あの牛たちには家畜より良い暮らしがふさわしいよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238785,7 +238912,7 @@
   },
   "Tunnel Trouble#055": {
    "src": "Oh, good, you're back. It's been, like, an hour! What were you even doing for that long!",
-   "dst": "おお、戻ったか。もう一時間くらい経ったぞ！そんなに長く何してたんだよ！",
+   "dst": "おお、戻ったか。もう一時間くらい経ったぞ！そんなに長く何してたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238795,7 +238922,7 @@
   },
   "Tunnel Trouble#056": {
    "src": "...You helped some crazy cow-obsessed lunatic steal some cows? I don't think you're allowed to do that. There's a law against that, or something.",
-   "dst": "…牛にとりつかれた変人の牛泥棒を手伝った？それってダメなんじゃないか。たしか法律で禁止されてるとか。",
+   "dst": "…牛にとりつかれた変人の牛泥棒を手伝った？それって法律かなんかで禁止されてるんじゃねえのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238805,7 +238932,7 @@
   },
   "Tunnel Trouble#057": {
    "src": "Eh. Not that I really care, either way. I've certainly done worse.",
-   "dst": "まあ、どっちでもいいけどな。俺ももっとひどいことをしてきた。",
+   "dst": "まあ、どっちでもいいけどな。俺からしたら大したことじゃねえよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238815,7 +238942,7 @@
   },
   "Tunnel Trouble#058": {
    "src": "Well then! Ready to call it quits? We're definitely not going to make any progress, so we might as we-",
-   "dst": "さてと！もうやめにするか？どうせこれ以上進めないんだし、いっそ―",
+   "dst": "さてと！もうやめにするか。どうせこれ以上進めねえし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238825,7 +238952,7 @@
   },
   "Tunnel Trouble#059": {
    "src": "Wh- huh?!",
-   "dst": "な―えっ？！",
+   "dst": "何、えっ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238835,7 +238962,7 @@
   },
   "Tunnel Trouble#060": {
    "src": "Since you helped me with my problem, I thought I should repay that favor by helping you!",
-   "dst": "僕の問題を解決してくれたから、今度は僕が恩返しに手伝おうと思って！",
+   "dst": "さっき手伝ってくれたから、今度は僕が恩返しに手伝おうと思って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238855,7 +238982,7 @@
   },
   "Tunnel Trouble#062": {
    "src": "...I- huh. You saw that too, right? I didn't just imagine that?",
-   "dst": "…お、俺―はあ。あんたも見たよな？俺の幻覚じゃないよな？",
+   "dst": "…お、俺、はあ。あんたも見たよな？俺の幻覚じゃないよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238865,7 +238992,7 @@
   },
   "Tunnel Trouble#063": {
    "src": "You know what? I think I quit. I think this has finally pushed me to my limit! I didn't know that I had one, but apparently I do!",
-   "dst": "なあ？俺、辞めるわ。今度こそ限界だ！限界なんてないと思ってたけど、あったらしい！",
+   "dst": "やっぱり俺はやめるよ。今度こそ限界だ！限界なんてないと思ってたけど、あったらしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238895,7 +239022,7 @@
   },
   "Tunnel Trouble#066": {
    "src": "Recruit, Captain Fenor told me to meet you here, said if you came out on this side of that tunnel then you completed your mission!",
-   "dst": "新兵、Fenor 隊長からここで待つよう言われた。トンネルのこちら側から出てきたら任務完了だとな！",
+   "dst": "おい、新兵！Fenor 隊長からここで待つように言われてる。トンネルからあんたが出てきたら任務は終わりだと伝えろともな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
@@ -238905,7 +239032,7 @@
   },
   "Tunnel Trouble#067": {
    "src": "You did a great deed today, soldier! We can now use this cave to travel easily between {p} and {p}! Great job!",
-   "dst": "今日は大手柄だ、兵士！これで {p} と {p} をこの洞窟で楽に行き来できる！よくやった！",
+   "dst": "今日は大手柄だ、新兵！これで {p} と {p} の間を楽に行き来できるぞ！よくやった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
