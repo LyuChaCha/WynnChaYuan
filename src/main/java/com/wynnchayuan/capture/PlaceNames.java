@@ -90,10 +90,6 @@ public final class PlaceNames {
         };
     }
 
-    public static boolean isPlace(String text) {
-        return text != null && NAMES.contains(text.strip());
-    }
-
     public static boolean anyStartsWith(String partial) {
         if (partial == null || partial.isEmpty()) {
             return true;

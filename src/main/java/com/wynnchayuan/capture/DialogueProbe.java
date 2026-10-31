@@ -158,14 +158,6 @@ public final class DialogueProbe {
         dumpPlain(message, "actionbar-probe-");
     }
 
-    public static void plainColumns(Component message) {
-        columns(message, null, null);
-    }
-
-    public static void columnsHit(Component before, Component after) {
-        columns(before, after, null);
-    }
-
     public static void columns(Component before, Component after, String note) {
         if (dir == null || before == null || !WynnChaYuan.config().debugDumps()) {
             return;

@@ -129,7 +129,6 @@ public final class SelfNames {
         return current().all();
     }
 
-    // 每一段文字都要查一次，顯示名稱不能每次現算；換角色會換 LocalPlayer
     private static Names current() {
         Names cached = names;
         int player = System.identityHashCode(localPlayer());

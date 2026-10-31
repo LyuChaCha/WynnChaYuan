@@ -84,60 +84,6 @@ final class DialoguePanelRenderer {
         return WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.PANEL;
     }
 
-    private static void drawInPlace(GuiGraphics graphics, Minecraft mc,
-                                    List<Component> lines, List<Component> options,
-                                    float alpha) {
-        int boxW = dialogueWidth(Math.max(MIN_BOX_W, Math.min(MAX_BOX_W,
-                graphics.guiWidth() * 5 / 8)));
-        int inner = boxW - DialogueOverlay.PADDING * 2 - 2;
-        int lineHeight = mc.font.lineHeight + 1;
-
-        List<FormattedCharSequence> body = wrapAll(mc, lines, inner);
-        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
-
-        int bodyH = body.isEmpty() ? 0
-                : atLeastTall(body.size() * lineHeight + DialogueOverlay.PADDING * 2);
-        int x = (graphics.guiWidth() - boxW) / 2;
-        int y = graphics.guiHeight() - IN_PLACE_MARGIN - bodyH;
-
-        if (!body.isEmpty()) {
-            Boxes.draw(graphics, x, y, boxW, bodyH, alpha);
-            int textY = y + DialogueOverlay.PADDING;
-            for (FormattedCharSequence line : body) {
-                graphics.drawString(mc.font, line, x + DialogueOverlay.PADDING + 1, textY,
-                        Colors.fade(Colors.TEXT, alpha));
-                textY += lineHeight;
-            }
-            if (DialogueOverlay.speaker != null) {
-                int nameW = mc.font.width(DialogueOverlay.speaker) + DialogueOverlay.PADDING * 2 + 2;
-                int nameH = mc.font.lineHeight + DialogueOverlay.PADDING;
-                Boxes.draw(graphics, x, y - nameH + 1, nameW, nameH, alpha);
-                graphics.drawString(mc.font, DialogueOverlay.speaker, x + DialogueOverlay.PADDING + 1,
-                        y - nameH + DialogueOverlay.PADDING / 2 + 2,
-                        Colors.fade(DialogueOverlay.SPEAKER_COLOUR.getValue() | 0xFF000000, alpha));
-            }
-            if (DialogueOverlay.needsShift) {
-                String hint = SHIFT_HINT.get();
-                int hintW = mc.font.width(hint);
-                graphics.drawString(mc.font, hint,
-                        x + (boxW - hintW) / 2, y + bodyH + 3,
-                        Colors.fade(Colors.TEXT, alpha * 0.75f));
-            }
-        }
-
-        if (!picks.isEmpty()) {
-            int pickH = picks.size() * lineHeight + DialogueOverlay.PADDING * 2;
-            int pickY = y - pickH - CHOICE_GAP - (DialogueOverlay.speaker == null ? 0 : mc.font.lineHeight);
-            Boxes.draw(graphics, x, pickY, boxW, pickH, alpha);
-            int textY = pickY + DialogueOverlay.PADDING;
-            for (FormattedCharSequence line : picks) {
-                graphics.drawString(mc.font, line, x + DialogueOverlay.PADDING + 1, textY,
-                        Colors.fade(Colors.TEXT, alpha));
-                textY += lineHeight;
-            }
-        }
-    }
-
     private static void drawChoices(GuiGraphics graphics, Minecraft mc,
                                     List<List<Component>> options, float alpha) {
         CollectorConfig cfg = WynnChaYuan.config();
@@ -270,13 +216,7 @@ final class DialoguePanelRenderer {
                         .withColor(DialogueOverlay.SPEAKER_COLOUR).withBold(true));
     }
 
-    private static final int MIN_BOX_W = 240;
-
     private static final int MAX_BOX_W = 420;
-
-    private static final Supplier<String> SHIFT_HINT = () -> T.s("dialogue.shift_hint");
-
-    private static final int IN_PLACE_MARGIN = 55;
 
     private static void draw(GuiGraphics graphics, Minecraft mc, List<Component> lines,
                              int centerX, int y, float alpha, boolean withBox) {
@@ -335,5 +275,4 @@ final class DialoguePanelRenderer {
         }
     }
 
-    private static final int CHOICE_GAP = 3;
 }

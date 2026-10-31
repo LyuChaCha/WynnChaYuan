@@ -126,27 +126,6 @@ public final class GlyphSplitter {
         return out == null ? s : out.toString();
     }
 
-    public static List<String> extractGlyphs(StyledText text) {
-        List<String> glyphs = new ArrayList<>();
-        StringBuilder run = new StringBuilder();
-        for (StyledTextPart part : text) {
-            String raw = part.getString(null, StyleType.NONE);
-            if (raw.isEmpty()) {
-                continue;
-            }
-            if (isGlyphPart(part)) {
-                run.append(raw);
-            } else if (run.length() > 0) {
-                glyphs.add(run.toString());
-                run.setLength(0);
-            }
-        }
-        if (run.length() > 0) {
-            glyphs.add(run.toString());
-        }
-        return glyphs;
-    }
-
     // Wynncraft 對話游標用 U+D0000–U+D0074（第 13 平面）
     public static boolean isGlyphCodePoint(int cp) {
         int type = Character.getType(cp);

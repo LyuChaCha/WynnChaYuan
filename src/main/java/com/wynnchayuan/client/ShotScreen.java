@@ -143,7 +143,7 @@ public final class ShotScreen extends Screen {
                     + LocalDateTime.now().format(STAMP) + ".png");
             shot.writeToFile(file);
             note = PanelShot.saved(file);
-            PanelShot.announce(note);
+            PanelShot.tell(note);
         } catch (Exception e) {
             note = T.c("shot.failed", e.getMessage())
                     .withStyle(ChatFormatting.RED);

@@ -25,7 +25,6 @@ public final class LineDebug {
 
     private static final String HELD = "(守住)";
 
-    private static final int LAYOUT_LIMIT = 8;
     private static StringBuilder buffer = new StringBuilder();
 
     private static final Set<String> seen = new HashSet<>();

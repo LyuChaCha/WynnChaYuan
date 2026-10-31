@@ -60,17 +60,6 @@ public final class OwnOutputs {
         ModLog.info("收集時會略過我們自己的譯文：" + sorted.length + " 行");
     }
 
-    static void addForTest(JsonObject root) {
-        List<Long> out = new ArrayList<>();
-        collect(root, out);
-        long[] merged = Arrays.copyOf(translations, translations.length + out.size());
-        for (int i = 0; i < out.size(); i++) {
-            merged[translations.length + i] = out.get(i);
-        }
-        Arrays.sort(merged);
-        translations = merged;
-    }
-
     private static void collect(JsonObject root, List<Long> out) {
         if (root.has("entries") && root.get("entries").isJsonObject()) {
             for (Map.Entry<String, JsonElement> e : root.getAsJsonObject("entries").entrySet()) {

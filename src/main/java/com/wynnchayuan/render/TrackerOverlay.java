@@ -22,7 +22,6 @@ public final class TrackerOverlay {
     private static final int LEFT_MARGIN = 6;
     private static final int TOP_OFFSET = 90;
     private static final int PADDING = 3;
-    private static final int BACKGROUND = 0xB0100010;
     private static final int BORDER = 0xFF3A1E5C;
 
     private static volatile List<Component> current = List.of();

@@ -1,5 +1,7 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.LanguageLayers;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -39,18 +41,18 @@ public final class AutoLanguageTest {
     }
 
     private static void fetchedLanguages() throws Exception {
-        FetchedLanguages.reset();
-        check("第一次切到某個語言要對", FetchedLanguages.firstTime("zh_tw"));
-        check("★ 同一個語言第二次不再對", !FetchedLanguages.firstTime("zh_tw"));
-        check("換一個語言又是第一次", FetchedLanguages.firstTime("tr_tr"));
+        LanguageLayers.forgetFetched();
+        check("第一次切到某個語言要對", LanguageLayers.firstFetch("zh_tw"));
+        check("★ 同一個語言第二次不再對", !LanguageLayers.firstFetch("zh_tw"));
+        check("換一個語言又是第一次", LanguageLayers.firstFetch("tr_tr"));
 
-        FetchedLanguages.reset();
-        FetchedLanguages.mark("zh_cn");
-        check("★ 啟動時背景同步抓過的語言，切過去不再對", !FetchedLanguages.firstTime("zh_cn"));
+        LanguageLayers.forgetFetched();
+        LanguageLayers.markFetched("zh_cn");
+        check("★ 啟動時背景同步抓過的語言，切過去不再對", !LanguageLayers.firstFetch("zh_cn"));
 
-        check("空的語言代碼不算", !FetchedLanguages.firstTime("") && !FetchedLanguages.firstTime(null));
+        check("空的語言代碼不算", !LanguageLayers.firstFetch("") && !LanguageLayers.firstFetch(null));
 
-        FetchedLanguages.reset();
+        LanguageLayers.forgetFetched();
         AtomicInteger winners = new AtomicInteger();
         CountDownLatch go = new CountDownLatch(1);
         Thread[] threads = new Thread[8];
@@ -61,7 +63,7 @@ public final class AutoLanguageTest {
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                if (FetchedLanguages.firstTime("ja_jp")) {
+                if (LanguageLayers.firstFetch("ja_jp")) {
                     winners.incrementAndGet();
                 }
             });

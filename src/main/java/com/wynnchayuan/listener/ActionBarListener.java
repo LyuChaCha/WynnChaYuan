@@ -430,7 +430,7 @@ public final class ActionBarListener {
 
     // bottom_middle 的 ascent 是 -48，shift_y = 7 − ascent = 55
     private static Component refont(Component translated, Style original) {
-        String name = pairedFont(fontOf(original));
+        String name = PairedFont.slot(fontOf(original));
         if (name == null) {
             return translated;
         }
@@ -448,10 +448,6 @@ public final class ActionBarListener {
             return Optional.empty();
         }, Style.EMPTY);
         return out;
-    }
-
-    private static String pairedFont(String font) {
-        return PairedFont.slot(font);
     }
 
     private static boolean fontShipped(String lang, String name) {
