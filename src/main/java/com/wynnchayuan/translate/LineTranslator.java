@@ -264,7 +264,7 @@ public final class LineTranslator {
 
     public static Component translateChunk(String raw, Style style,
                                            TranslationStore store) {
-        return translateOneSegment(raw, style, store, false);
+        return DisplayStyles.unslant(translateOneSegment(raw, style, store, false));
     }
 
     private static Component translateOneSegment(String raw, Style style,
