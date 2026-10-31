@@ -1782,6 +1782,14 @@ tasks.register('runConfigRoundTripChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runConfigRoundTripChecks' }
 
+tasks.register('runCrossThreadFieldChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.CrossThreadFieldsTest'
+}
+tasks.named('check') { dependsOn 'runCrossThreadFieldChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
