@@ -48,6 +48,7 @@ public final class TranslationGoldenDump {
 
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
+        GoldenWidth.install();
 
         long started = System.nanoTime();
         Files.createDirectories(output.toAbsolutePath().getParent());

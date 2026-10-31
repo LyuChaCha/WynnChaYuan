@@ -1837,3 +1837,20 @@ tasks.register('runWynnventoryGearNameChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.WynnventoryGearNameTest'
 }
 tasks.named('check') { dependsOn 'runWynnventoryGearNameChecks' }
+
+tasks.register('hotPathBench', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    description = '離線量翻譯熱路徑的 ns/op 與配置量（不在 check 裡）'
+    mainClass = 'com.wynnchayuan.golden.HotPathBench'
+    maxHeapSize = '4g'
+    def corpus = providers.gradleProperty('bench.corpus')
+            .orElse(file('src/main/resources/assets/wynnchayuan/translations').path).get()
+    def samples = providers.gradleProperty('bench.samples').orElse('').get()
+    def jfr = providers.gradleProperty('bench.jfr').orElse('').get()
+    if (!jfr.isEmpty()) {
+        jvmArgs "-XX:StartFlightRecording=filename=${jfr},settings=profile"
+    }
+    args([corpus] + samples.tokenize(File.pathSeparator))
+}
