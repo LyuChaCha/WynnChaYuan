@@ -33,12 +33,22 @@ public final class NameFrames {
 
     private final int size;
 
+    private final int[] tailLengths;
+
+    private final int[] headLengths;
+
     private final Map<String, Pattern> patterns = new ConcurrentHashMap<>();
 
     private NameFrames(Map<String, List<Frame>> byTail, Map<String, List<Frame>> byHead, int size) {
         this.byTail = byTail;
         this.byHead = byHead;
         this.size = size;
+        this.tailLengths = lengths(byTail);
+        this.headLengths = lengths(byHead);
+    }
+
+    private static int[] lengths(Map<String, List<Frame>> frames) {
+        return frames.keySet().stream().mapToInt(String::length).distinct().sorted().toArray();
     }
 
     public int size() {
@@ -116,8 +126,9 @@ public final class NameFrames {
         if (core.isEmpty() || core.length() > MAX_TEMPLATE) {
             return out;
         }
-        for (int cut = 1; cut < core.length(); cut++) {
-            List<Frame> frames = byTail.get(core.substring(cut));
+        for (int i = tailLengths.length - 1; i >= 0; i--) {
+            int cut = core.length() - tailLengths[i];
+            List<Frame> frames = cut < 1 || cut >= core.length() ? null : byTail.get(core.substring(cut));
             if (frames == null) {
                 continue;
             }
@@ -128,8 +139,8 @@ public final class NameFrames {
                 }
             }
         }
-        for (int cut = 1; cut < core.length(); cut++) {
-            List<Frame> frames = byHead.get(core.substring(0, cut));
+        for (int cut : headLengths) {
+            List<Frame> frames = cut < 1 || cut >= core.length() ? null : byHead.get(core.substring(0, cut));
             if (frames == null) {
                 continue;
             }
@@ -258,12 +269,14 @@ public final class NameFrames {
         if (shown.isEmpty() || (account != null && (account.isEmpty() || account.contains(" ")))) {
             return false;
         }
-        String[] words = shown.split(" +");
+        String[] words = SPACES.split(shown);
         if (words.length > MAX_WORDS) {
             return false;
         }
         return slash >= 0 || !NOT_A_NAME.contains(words[0].toLowerCase(Locale.ROOT));
     }
+
+    private static final Pattern SPACES = Pattern.compile(" +");
 
     private static final Pattern NAME_CHARS =
             Pattern.compile("[\\p{L}\\p{N}_](?:[\\p{L}\\p{N}_ /\\-]*[\\p{L}\\p{N}_])?");

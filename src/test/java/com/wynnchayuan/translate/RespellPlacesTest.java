@@ -69,7 +69,7 @@ public final class RespellPlacesTest {
         String firstDiff = null;
         for (String text : inputs) {
             List<String> want = matches(old.matcher(text));
-            List<String> got = matches(PlaceNames.matcher(text));
+            List<String> got = scanned(text);
             if (!want.isEmpty()) {
                 withPlaces++;
             }
@@ -96,6 +96,18 @@ public final class RespellPlacesTest {
             sb.append(Pattern.quote(name));
         }
         return Pattern.compile("(?<![\\p{L}\\p{N}])(?:" + sb + ")(?![\\p{L}\\p{N}])");
+    }
+
+    private static List<String> scanned(String text) {
+        List<String> out = new ArrayList<>();
+        int from = 0;
+        for (PlaceNames.Span place = PlaceNames.next(text, 0); place != null;
+                place = PlaceNames.next(text, from)) {
+            out.add(place.start() + ":" + place.end() + ":"
+                    + text.substring(place.start(), place.end()));
+            from = place.end();
+        }
+        return out;
     }
 
     private static List<String> matches(Matcher m) {
