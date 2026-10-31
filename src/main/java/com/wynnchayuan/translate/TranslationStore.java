@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.NameFrames;
 import com.wynnchayuan.capture.PlaceNames;
@@ -60,24 +60,24 @@ public final class TranslationStore {
         return translateNames;
     }
 
-    public void setNameMode(CollectorConfig.ItemNames mode) {
-        this.translateNames = mode != CollectorConfig.ItemNames.OFF;
-        this.namesWithOriginal = mode == CollectorConfig.ItemNames.BOTH;
+    public void setNameMode(ModConfig.ItemNames mode) {
+        this.translateNames = mode != ModConfig.ItemNames.OFF;
+        this.namesWithOriginal = mode == ModConfig.ItemNames.BOTH;
     }
 
-    public void setPageNameMode(CollectorConfig.ItemNames mode) {
-        CollectorConfig.ItemNames next = mode == null ? CollectorConfig.ItemNames.ON : mode;
+    public void setPageNameMode(ModConfig.ItemNames mode) {
+        ModConfig.ItemNames next = mode == null ? ModConfig.ItemNames.ON : mode;
         if (next != pageNameMode) {
             generation++;
         }
         this.pageNameMode = next;
     }
 
-    public CollectorConfig.ItemNames pageNameMode() {
+    public ModConfig.ItemNames pageNameMode() {
         return pageNameMode;
     }
 
-    private volatile CollectorConfig.ItemNames pageNameMode = CollectorConfig.ItemNames.ON;
+    private volatile ModConfig.ItemNames pageNameMode = ModConfig.ItemNames.ON;
 
     private volatile boolean namesWithOriginal = false;
 

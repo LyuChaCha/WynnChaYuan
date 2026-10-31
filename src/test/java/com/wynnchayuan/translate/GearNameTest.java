@@ -79,7 +79,7 @@ public final class GearNameTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
         check("關：只屬於裝備的名字不翻（實際 " + store.lookup("Smithy") + "）",
               store.lookup("Smithy") == null);
         check("★ 關：撞名的技能譯名照常查得到（實際 " + store.lookup("Diffraction") + "）",
@@ -87,13 +87,13 @@ public final class GearNameTest {
         check("★ 關：名稱那一行的守門認得翻好的裝備名", store.isBareGearName("Diffraction")
               && store.isBareGearName("Smithy"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
         check("開：裝備名照翻（實際 " + store.lookup("Smithy") + "）",
               "鐵匠鋪".equals(store.lookup("Smithy")));
         check("開：守門不擋翻好的裝備名", !store.isBareGearName("Diffraction")
               && !store.isBareGearName("Smithy"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
         check("譯名加原文（實際 " + store.lookup("Smithy") + "）",
               "鐵匠鋪 (Smithy)".equals(store.lookup("Smithy")));
         check("撞名的技能標題不加原文（實際 " + store.lookup("Diffraction") + "）",
@@ -117,7 +117,7 @@ public final class GearNameTest {
                 "{\"Guild Badge\": \"公會徽章\"}", StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
 
         String body = joined(store, "Guild Badge", "",
                              "Unlocks the Guild Badge", "Snowflake");
@@ -147,7 +147,7 @@ public final class GearNameTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
 
         for (String[] pair : new String[][] {
                 {"Diffraction", "晶化蔓延"}, {"Gleam", "耀光"}, {"Paradox", "悖論"},

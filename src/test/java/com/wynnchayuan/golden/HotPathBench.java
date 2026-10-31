@@ -1,7 +1,7 @@
 package com.wynnchayuan.golden;
 
 import com.sun.management.ThreadMXBean;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
@@ -43,7 +43,7 @@ public final class HotPathBench {
     private record Result(String name, double nanos, double bytes) {}
 
     private final TranslationStore store;
-    private final CollectorConfig config;
+    private final ModConfig config;
     private final List<Result> results = new ArrayList<>();
     private boolean warming;
 
@@ -53,7 +53,7 @@ public final class HotPathBench {
     private List<List<Component>> tooltips;
     private List<GoldenCorpus.DialogueLine> dialogue;
 
-    private HotPathBench(TranslationStore store, CollectorConfig config) {
+    private HotPathBench(TranslationStore store, ModConfig config) {
         this.store = store;
         this.config = config;
     }
@@ -77,7 +77,7 @@ public final class HotPathBench {
         Path dir = root.resolve(LANG);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        CollectorConfig config = new CollectorConfig(
+        ModConfig config = new ModConfig(
                 Files.createTempDirectory("wcy-bench").resolve("config.json"));
 
         HotPathBench bench = new HotPathBench(store, config);

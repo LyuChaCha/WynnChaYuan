@@ -1,6 +1,6 @@
 package com.wynnchayuan.listener;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.ChoiceScroll;
 import com.wynnchayuan.capture.CurrentQuest;
@@ -168,8 +168,8 @@ public final class ActionBarListener {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onGameInfoRewrite(SystemMessageEvent.GameInfoReceivedEvent event) {
-        if (WynnChaYuan.config().dialogueMode() != CollectorConfig.DialogueMode.REPLACE
-                && WynnChaYuan.config().choiceMode() != CollectorConfig.DialogueMode.REPLACE) {
+        if (WynnChaYuan.config().dialogueMode() != ModConfig.DialogueMode.REPLACE
+                && WynnChaYuan.config().choiceMode() != ModConfig.DialogueMode.REPLACE) {
             return;
         }
         try {

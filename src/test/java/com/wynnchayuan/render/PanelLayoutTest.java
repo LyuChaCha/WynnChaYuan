@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig.PanelSide;
+import com.wynnchayuan.ModConfig.PanelSide;
 
 import static com.wynnchayuan.Check.check;
 import static com.wynnchayuan.Check.failures;

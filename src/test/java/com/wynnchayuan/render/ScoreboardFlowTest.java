@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -222,11 +222,11 @@ public final class ScoreboardFlowTest {
 
     private static void toggle(TranslationStore store) throws Exception {
         Path dir = Files.createTempDirectory("wcy-board-cfg");
-        CollectorConfig on = new CollectorConfig(dir.resolve("on.json"));
+        ModConfig on = new ModConfig(dir.resolve("on.json"));
         check("預設開著", on.translateScoreboard());
         Path offFile = dir.resolve("off.json");
         Files.writeString(offFile, "{\"translateScoreboard\": false}");
-        CollectorConfig off = new CollectorConfig(offFile);
+        ModConfig off = new ModConfig(offFile);
         check("關掉之後讀得到 false", !off.translateScoreboard());
 
         StyledText row = StyledText.fromString("Hold the platform");
@@ -271,7 +271,7 @@ public final class ScoreboardFlowTest {
         Set<String> shown = new java.util.HashSet<>(all);
         shown.add(ScoreboardFlow.key(header));
         Path dir = Files.createTempDirectory("wcy-board-party");
-        CollectorConfig on = new CollectorConfig(dir.resolve("on.json"));
+        ModConfig on = new ModConfig(dir.resolve("on.json"));
         WynntilsText.setScoreboard(shown, Map.of());
         try {
             check("前提：不標出來的話，General 那一列會被查表換掉",

@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.Releases;
 import com.wynnchayuan.WynnChaYuan;
@@ -72,7 +72,7 @@ public final class SettingsScreen extends Screen {
         return this.minecraft;
     }
 
-    static CollectorConfig cfg() {
+    static ModConfig cfg() {
         return WynnChaYuan.config();
     }
 
@@ -261,10 +261,10 @@ public final class SettingsScreen extends Screen {
 
     private Preview.State previewState() {
         Preview.State s = previewState;
-        CollectorConfig c = cfg();
+        ModConfig c = cfg();
         s.tooltipMode = c.tooltipMode().ordinal();
         s.names = c.itemNames().ordinal();
-        s.anchorFixed = c.panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
+        s.anchorFixed = c.panelAnchor() == ModConfig.PanelAnchor.FIXED;
         s.side = c.panelSide().ordinal();
         s.gap = c.panelGap();
         s.dialogueMode = c.dialogueMode().ordinal();

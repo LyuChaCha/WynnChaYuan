@@ -1,6 +1,6 @@
 package com.wynnchayuan.listener;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.Broadcasts;
 import com.wynnchayuan.capture.ChatLog;
@@ -28,7 +28,7 @@ public final class ChatListener {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onMatch(ChatMessageEvent.Match event) {
         if (event.isChatCanceled()
-                || WynnChaYuan.config().chatMode() != CollectorConfig.ChatMode.REPLACE
+                || WynnChaYuan.config().chatMode() != ModConfig.ChatMode.REPLACE
                 || !SERVER_MESSAGES.contains(event.getRecipientType())) {
             return;
         }
@@ -81,7 +81,7 @@ public final class ChatListener {
             }
             return;
         }
-        CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
+        ModConfig.ChatMode mode = WynnChaYuan.config().chatMode();
         boolean serverSide = SERVER_MESSAGES.contains(event.getRecipientType());
         boolean reserved = ThirdPartyLiterals.reserved(message.getStringWithoutFormatting());
         boolean carries = serverSide
@@ -96,7 +96,7 @@ public final class ChatListener {
             hit = serverSide
                     && !carries
                     && !reserved
-                    ? (mode == CollectorConfig.ChatMode.BOTH
+                    ? (mode == ModConfig.ChatMode.BOTH
                             ? LineTranslator.translateChat(message, WynnChaYuan.translations())
                             : replaceInPlace(message))
                     : null;
@@ -106,10 +106,10 @@ public final class ChatListener {
             ChatLog.add(message.getComponent(), hit);
         }
 
-        if (mode == CollectorConfig.ChatMode.OFF || !serverSide) {
+        if (mode == ModConfig.ChatMode.OFF || !serverSide) {
             return;
         }
-        if (mode == CollectorConfig.ChatMode.BOTH) {
+        if (mode == ModConfig.ChatMode.BOTH) {
             ChatBlock.queue(message, hit);
             return;
         }

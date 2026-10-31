@@ -14,9 +14,9 @@ import java.util.Set;
 
 final class ConfigFile {
 
-    private final CollectorConfig config;
+    private final ModConfig config;
 
-    ConfigFile(CollectorConfig config) {
+    ConfigFile(ModConfig config) {
         this.config = config;
     }
 
@@ -32,18 +32,18 @@ final class ConfigFile {
             return;
         }
         Boolean showPanel = boolOrNull(o, "showPanel");
-        CollectorConfig.TooltipMode tooltip = enumOf(o, "tooltipMode", CollectorConfig.TooltipMode.class);
+        ModConfig.TooltipMode tooltip = enumOf(o, "tooltipMode", ModConfig.TooltipMode.class);
         if (tooltip != null) {
             config.tooltipMode = tooltip;
         } else if (showPanel != null) {
-            config.tooltipMode = showPanel ? CollectorConfig.TooltipMode.PANEL : CollectorConfig.TooltipMode.OFF;
+            config.tooltipMode = showPanel ? ModConfig.TooltipMode.PANEL : ModConfig.TooltipMode.OFF;
         }
-        config.shotMode = enumOr(o, "shotMode", CollectorConfig.ShotMode.class, config.shotMode);
-        CollectorConfig.DialogueMode dialogue = enumOf(o, "dialogueMode", CollectorConfig.DialogueMode.class);
+        config.shotMode = enumOr(o, "shotMode", ModConfig.ShotMode.class, config.shotMode);
+        ModConfig.DialogueMode dialogue = enumOf(o, "dialogueMode", ModConfig.DialogueMode.class);
         if (dialogue != null) {
             config.dialogueMode = dialogue;
         }
-        CollectorConfig.DialogueMode choice = enumOf(o, "choiceMode", CollectorConfig.DialogueMode.class);
+        ModConfig.DialogueMode choice = enumOf(o, "choiceMode", ModConfig.DialogueMode.class);
         if (choice != null) {
             config.choiceMode = choice;
         } else if (dialogue != null) {
@@ -57,11 +57,11 @@ final class ConfigFile {
         config.dialogueCover = bool(o, "dialogueCover", config.dialogueCover);
         config.translateTitles = bool(o, "translateTitles", config.translateTitles);
         config.translationsEnabled = bool(o, "translationsEnabled", config.translationsEnabled);
-        CollectorConfig.DialogueMode tracker = enumOf(o, "trackerMode", CollectorConfig.DialogueMode.class);
+        ModConfig.DialogueMode tracker = enumOf(o, "trackerMode", ModConfig.DialogueMode.class);
         if (tracker != null) {
             config.trackerMode = tracker;
         } else if (Boolean.FALSE.equals(boolOrNull(o, "showScoreboard"))) {
-            config.trackerMode = CollectorConfig.DialogueMode.OFF;
+            config.trackerMode = ModConfig.DialogueMode.OFF;
         }
         config.translateObjectives = bool(o, "translateObjectives", config.translateObjectives);
         config.translateScoreboard = bool(o, "translateScoreboard", config.translateScoreboard);
@@ -72,7 +72,7 @@ final class ConfigFile {
         config.wynnMarketSearch = bool(o, "wynnMarketSearch", config.wynnMarketSearch);
         config.shiftPeekNames = bool(o, "shiftPeekNames", config.shiftPeekNames);
         config.abilityNamesOriginal = bool(o, "abilityNamesOriginal", config.abilityNamesOriginal);
-        config.chatMode = enumOr(o, "chatMode", CollectorConfig.ChatMode.class, config.chatMode);
+        config.chatMode = enumOr(o, "chatMode", ModConfig.ChatMode.class, config.chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
             config.showOverlays = overlays;
@@ -90,21 +90,21 @@ final class ConfigFile {
         config.uiLanguage = str(o, "uiLanguage", config.uiLanguage).trim();
         config.debugDumps = bool(o, "debugDumps", config.debugDumps);
         config.collectGuiText = bool(o, "collectGuiText", config.collectGuiText);
-        config.source = enumOr(o, "source", CollectorConfig.Source.class, config.source);
+        config.source = enumOr(o, "source", ModConfig.Source.class, config.source);
         config.translateBossBar = bool(o, "translateBossBar", config.translateBossBar);
-        config.nametagMode = enumOr(o, "nametagMode", CollectorConfig.NametagMode.class, config.nametagMode);
-        config.panelSide = enumOr(o, "panelSide", CollectorConfig.PanelSide.class, config.panelSide);
+        config.nametagMode = enumOr(o, "nametagMode", ModConfig.NametagMode.class, config.nametagMode);
+        config.panelSide = enumOr(o, "panelSide", ModConfig.PanelSide.class, config.panelSide);
         config.noticeDismissed = bool(o, "noticeDismissed", config.noticeDismissed);
         config.oldKeysReleased = bool(o, "oldKeysReleased", config.oldKeysReleased);
-        config.consent = enumOr(o, "privacyConsent", CollectorConfig.Consent.class, config.consent);
+        config.consent = enumOr(o, "privacyConsent", ModConfig.Consent.class, config.consent);
         config.setupDone = bool(o, "setupDone", config.setupDone);
         config.dataOptOut = bool(o, "dataOptOut", config.dataOptOut);
         config.dataDeletePending = config.dataOptOut && bool(o, "dataDeletePending", config.dataDeletePending);
-        config.pageNames = enumOr(o, "pageNames", CollectorConfig.ItemNames.class, config.pageNames);
+        config.pageNames = enumOr(o, "pageNames", ModConfig.ItemNames.class, config.pageNames);
         if (o.has("itemNames")) {
-            config.itemNames = enumOr(o, "itemNames", CollectorConfig.ItemNames.class, config.itemNames);
+            config.itemNames = enumOr(o, "itemNames", ModConfig.ItemNames.class, config.itemNames);
         } else if (bool(o, "translateItemNames", false)) {
-            config.itemNames = CollectorConfig.ItemNames.ON;
+            config.itemNames = ModConfig.ItemNames.ON;
         }
         config.panelGap = PanelGap.clamp(integer(o, "panelGap", config.panelGap));
         String accent = str(o, "accentColor", config.accentColor);
@@ -117,8 +117,8 @@ final class ConfigFile {
         }
         int hold = integer(o, "dialogueHoldMs", config.dialogueHoldMs);
         config.dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
-        config.nametagHoldMs = CollectorConfig.clamp(integer(o, "nametagHoldMs", config.nametagHoldMs), 0, 60_000);
-        config.panelAnchor = enumOr(o, "panelAnchor", CollectorConfig.PanelAnchor.class, config.panelAnchor);
+        config.nametagHoldMs = ModConfig.clamp(integer(o, "nametagHoldMs", config.nametagHoldMs), 0, 60_000);
+        config.panelAnchor = enumOr(o, "panelAnchor", ModConfig.PanelAnchor.class, config.panelAnchor);
         readPairs(o, "overlayPos", config.overlayPos);
         readPairs(o, "overlaySize", config.overlaySize);
         config.badgeRoles.clear();
@@ -138,7 +138,7 @@ final class ConfigFile {
             for (Map.Entry<String, JsonElement> e
                     : o.getAsJsonObject("badgeColours").entrySet()) {
                 try {
-                    String hex = CollectorConfig.normalHex(e.getValue().getAsString());
+                    String hex = ModConfig.normalHex(e.getValue().getAsString());
                     if (hex != null) {
                         config.badgeColours.put(e.getKey(), hex);
                     }
@@ -147,8 +147,8 @@ final class ConfigFile {
                 }
             }
         }
-        config.nametagRange = CollectorConfig.clamp(number(o, "nametagRange", config.nametagRange), 2.0, 64.0);
-        config.nametagAngle = CollectorConfig.clamp(number(o, "nametagAngle", config.nametagAngle), 1.0, 45.0);
+        config.nametagRange = ModConfig.clamp(number(o, "nametagRange", config.nametagRange), 2.0, 64.0);
+        config.nametagAngle = ModConfig.clamp(number(o, "nametagAngle", config.nametagAngle), 1.0, 45.0);
         config.fixedX = integer(o, "fixedX", config.fixedX);
         config.fixedY = integer(o, "fixedY", config.fixedY);
 
@@ -231,13 +231,13 @@ final class ConfigFile {
         return v == null ? fallback : v;
     }
 
-    private static void readPairs(JsonObject o, String name, EnumMap<CollectorConfig.Overlay, int[]> into) {
+    private static void readPairs(JsonObject o, String name, EnumMap<ModConfig.Overlay, int[]> into) {
         JsonElement el = o.get(name);
         if (el == null || !el.isJsonObject()) {
             return;
         }
         JsonObject all = el.getAsJsonObject();
-        for (CollectorConfig.Overlay which : CollectorConfig.Overlay.values()) {
+        for (ModConfig.Overlay which : ModConfig.Overlay.values()) {
             JsonElement pair = all.get(which.name());
             if (pair == null || !pair.isJsonArray() || pair.getAsJsonArray().size() != 2) {
                 continue;

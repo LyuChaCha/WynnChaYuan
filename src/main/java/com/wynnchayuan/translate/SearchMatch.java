@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public final class SearchMatch {
     }
 
     static boolean alsoMatches(String content, String query,
-                               CollectorConfig config, TranslationStore store) {
+                               ModConfig config, TranslationStore store) {
         if (content == null || query == null || query.isEmpty()
                 || config == null || store == null) {
             return false;

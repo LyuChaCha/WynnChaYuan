@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -29,7 +29,7 @@ final class WynntilsBossBar {
         }
     }
 
-    static Component bossBar(Component name, CollectorConfig config, TranslationStore store) {
+    static Component bossBar(Component name, ModConfig config, TranslationStore store) {
         if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }

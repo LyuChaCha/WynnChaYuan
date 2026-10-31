@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.ConversationPartner;
@@ -30,7 +30,7 @@ public final class WorldResetTest {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
         Path dir = Files.createTempDirectory("wynnchayuan-world-reset");
-        set(WynnChaYuan.class, "config", new CollectorConfig(dir.resolve("config.json")));
+        set(WynnChaYuan.class, "config", new ModConfig(dir.resolve("config.json")));
         set(WynnChaYuan.class, "store", new CaptureStore(dir.resolve("captured.json")));
         TranslationStore store = store(dir);
 

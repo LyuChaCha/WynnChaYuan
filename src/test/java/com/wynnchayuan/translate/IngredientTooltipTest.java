@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -39,7 +39,7 @@ public final class IngredientTooltipTest {
             List<Path> dirs = new ArrayList<>();
             dirs.add(root.resolve("zh_tw"));
             store.loadAll(dirs);
-            store.setNameMode(CollectorConfig.ItemNames.OFF);
+            store.setNameMode(ModConfig.ItemNames.OFF);
             run(store);
         } finally {
             LineTranslator.measureForTest = null;

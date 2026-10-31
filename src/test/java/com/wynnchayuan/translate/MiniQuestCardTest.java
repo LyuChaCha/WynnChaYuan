@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -30,7 +30,7 @@ public final class MiniQuestCardTest {
         List<Path> dirs = new ArrayList<>();
         dirs.add(root.resolve("zh_tw"));
         store.loadAll(dirs);
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         LineTranslator.measureForTest = MiniQuestCardTest::measure;
         try {
             run(store);

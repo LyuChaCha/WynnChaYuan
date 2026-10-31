@@ -24,7 +24,7 @@ public final class NameOriginalTermTest {
 
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
 
         String shown = store.lookup("Mask of Courage");
         check("查表先附上原文（實際 " + shown + "）",
@@ -90,7 +90,7 @@ public final class NameOriginalTermTest {
                 "{\"Trick\": \"戊己\", \"Thrill\": \"庚辛\"}", StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setPageNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
 
         String board = store.lookup("Jester's Trick:");
         check("記分板那一格附上原文（實際 " + board + "）",
@@ -110,7 +110,7 @@ public final class NameOriginalTermTest {
         String body = drawn("Thrill grants speed.", store);
         check("一般內文照樣換詞（實際 " + body + "）", body != null && body.contains("庚辛"));
 
-        store.setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setPageNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
         String off = drawn("Thrill Seeker", store);
         check("★ 只顯示原文時整格是英文名，不被換掉（實際 " + off + "）",
               off == null || (off.contains("Thrill Seeker") && !off.contains("庚辛")));

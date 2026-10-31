@@ -14,7 +14,7 @@ public final class CrossThreadFieldsTest {
 
     public static void main(String[] args) throws Exception {
         for (String field : CONFIG_FIELDS) {
-            check("CollectorConfig." + field, CollectorConfig.class, field);
+            check("ModConfig." + field, ModConfig.class, field);
         }
         check("WynnChaYuan.listener", WynnChaYuan.class, "listener");
         check("WynnChaYuan.language", WynnChaYuan.class, "language");

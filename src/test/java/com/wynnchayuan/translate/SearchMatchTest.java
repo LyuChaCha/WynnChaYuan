@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +16,7 @@ public final class SearchMatchTest {
 
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_tw"));
-        CollectorConfig config = new CollectorConfig(
+        ModConfig config = new ModConfig(
                 Files.createTempDirectory("wcy-search").resolve("config.json"));
         while (!config.wynntilsUi()) {
             config.toggleWynntilsUi();
@@ -44,7 +44,7 @@ public final class SearchMatchTest {
         check("中文順序不對就不中", !SearchMatch.partialMatch("毀滅前奏", "奏毀"));
     }
 
-    private static void realCorpus(CollectorConfig config, TranslationStore store) {
+    private static void realCorpus(ModConfig config, TranslationStore store) {
         String[][] cases = {
             {"Prelude to Annihilation", "毀滅"},
             {"Prelude to Annihilation", "前奏"},
@@ -59,7 +59,7 @@ public final class SearchMatchTest {
                 !SearchMatch.alsoMatches("Prelude to Annihilation", "zzzz", config, store));
     }
 
-    private static void guards(CollectorConfig config, TranslationStore store) {
+    private static void guards(ModConfig config, TranslationStore store) {
         while (config.wynntilsUi()) {
             config.toggleWynntilsUi();
         }

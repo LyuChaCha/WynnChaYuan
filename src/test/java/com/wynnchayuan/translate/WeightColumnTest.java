@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -37,7 +37,7 @@ public final class WeightColumnTest {
             for (String lang : new String[] {"zh_tw", "zh_cn"}) {
                 TranslationStore store = new TranslationStore();
                 store.loadAll(List.of(root.resolve(lang)));
-                store.setNameMode(CollectorConfig.ItemNames.OFF);
+                store.setNameMode(ModConfig.ItemNames.OFF);
                 System.out.println("== " + lang);
                 run(lang + "／[xx%] 一段", store, "", false);
                 run(lang + "／ [xx%] 一段", store, " ", false);

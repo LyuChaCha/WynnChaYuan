@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -25,7 +25,7 @@ public final class LootrunMissionTest {
         check("語料有那頂同名的頭盔（實際 " + gearName + "）", gearName != null);
 
         System.out.println("=== 譯名（預設）===");
-        store.setPageNameMode(CollectorConfig.ItemNames.ON);
+        store.setPageNameMode(ModConfig.ItemNames.ON);
         String cell = store.lookup("{#}Equilibrium");
         check("使命那一格有自己的譯名（實際 " + cell + "）", cell != null && !cell.contains("Equilibrium"));
         check("★ 不是頭盔的名字", cell != null && gearName != null && !cell.contains(gearName));
@@ -37,7 +37,7 @@ public final class LootrunMissionTest {
         check("記分板那一行查得到（實際 " + colon + "）", colon != null && !colon.contains("Equilibrium"));
 
         System.out.println("=== 中英對照 ===");
-        store.setPageNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setPageNameMode(ModConfig.ItemNames.BOTH);
         String ritual = store.lookup("Sacrificial Ritual:");
         check("★ 記分板：「譯名 (原文):」（實際 " + ritual + "）",
               ritual != null && ritual.endsWith(" (Sacrificial Ritual):"));
@@ -55,12 +55,12 @@ public final class LootrunMissionTest {
         check("中英對照也不是頭盔", panel != null && gearName != null && !panel.contains(gearName));
 
         System.out.println("=== 關閉 ===");
-        store.setPageNameMode(CollectorConfig.ItemNames.OFF);
+        store.setPageNameMode(ModConfig.ItemNames.OFF);
         String off = store.lookup("Sacrificial Ritual:");
         check("關閉時是原文（實際 " + off + "）", "Sacrificial Ritual:".equals(off));
 
         System.out.println("=== 不該動的 ===");
-        CollectorConfig.ItemNames both = CollectorConfig.ItemNames.BOTH;
+        ModConfig.ItemNames both = ModConfig.ItemNames.BOTH;
         check("句子裡提到使命名不動",
               "譯文".equals(LootrunNames.apply("Finish Sacrificial Ritual now", "譯文", both)));
         check("物品名稱那條路附過的不再附",

@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -59,8 +59,8 @@ public final class GearNameOnGearTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        for (CollectorConfig.ItemNames mode : List.of(CollectorConfig.ItemNames.ON,
-                CollectorConfig.ItemNames.BOTH)) {
+        for (ModConfig.ItemNames mode : List.of(ModConfig.ItemNames.ON,
+                ModConfig.ItemNames.BOTH)) {
             store.setNameMode(mode);
             String ring = store.lookup("Return");
             check("[造] " + mode + "：前提——查表答得出戒指（實際 " + ring + "）",
@@ -84,7 +84,7 @@ public final class GearNameOnGearTest {
             check("[造] " + mode + "：使命卡的標題照舊是使命名（實際 " + mission.get(0) + "）",
                     mission.get(0).contains("MISSION-REDEMPTION"));
         }
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
     }
 
     private static void shippedCorpus() throws Exception {
@@ -97,7 +97,7 @@ public final class GearNameOnGearTest {
                 continue;
             }
             rs.loadAll(real);
-            rs.setNameMode(CollectorConfig.ItemNames.BOTH);
+            rs.setNameMode(ModConfig.ItemNames.BOTH);
             String desc = rs.lookupExact(DESC_1 + " " + DESC_2);
             List<String> notes = shown(button("Return"), rs);
             String rest = String.join(" ", notes.subList(1, notes.size()));

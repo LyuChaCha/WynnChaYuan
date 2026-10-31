@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.LineTranslator;
@@ -103,7 +103,7 @@ public final class LookAtTranslator {
     public static void render(GuiGraphics graphics) {
         if (WynnChaYuan.config() == null
                 || WynnChaYuan.config().nametagMode()
-                        != CollectorConfig.NametagMode.LOOK_AT) {
+                        != ModConfig.NametagMode.LOOK_AT) {
             return;
         }
         Minecraft mc = Minecraft.getInstance();
@@ -373,9 +373,9 @@ public final class LookAtTranslator {
 
         int x = (graphics.guiWidth() - total) / 2;
         int y = defaultY(graphics);
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.NAMETAG)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - total / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
+        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.NAMETAG)) {
+            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.NAMETAG) - total / 2;
+            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.NAMETAG);
         }
         int[] at = Boxes.intoScreen(x, y, total, tallest, graphics.guiWidth(), graphics.guiHeight());
         x = at[0];

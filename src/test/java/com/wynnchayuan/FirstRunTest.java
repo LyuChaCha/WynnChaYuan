@@ -30,27 +30,27 @@ public final class FirstRunTest {
         System.out.println("首次啟動：全部通過");
     }
 
-    private static CollectorConfig fresh() throws Exception {
-        return new CollectorConfig(Files.createTempDirectory("wcy-first").resolve("config.json"));
+    private static ModConfig fresh() throws Exception {
+        return new ModConfig(Files.createTempDirectory("wcy-first").resolve("config.json"));
     }
 
-    private static CollectorConfig withConsent(CollectorConfig.Consent consent) throws Exception {
-        CollectorConfig c = fresh();
+    private static ModConfig withConsent(ModConfig.Consent consent) throws Exception {
+        ModConfig c = fresh();
         c.setConsent(consent);
         return c;
     }
 
     private static void freshInstall() throws Exception {
-        CollectorConfig c = fresh();
-        check("新安裝：物品翻譯預設關閉", c.tooltipMode() == CollectorConfig.TooltipMode.OFF);
-        check("新安裝：物品名稱維持原文", c.itemNames() == CollectorConfig.ItemNames.OFF);
+        ModConfig c = fresh();
+        check("新安裝：物品翻譯預設關閉", c.tooltipMode() == ModConfig.TooltipMode.OFF);
+        check("新安裝：物品名稱維持原文", c.itemNames() == ModConfig.ItemNames.OFF);
         check("新安裝：還沒回答同意、還沒選設定，首次啟動畫面要跳",
-                c.consent() == CollectorConfig.Consent.UNKNOWN && !c.setupDone()
+                c.consent() == ModConfig.Consent.UNKNOWN && !c.setupDone()
                         && c.needsFirstRun() && !c.existedBefore());
         check("新安裝：連線一律關著", !NetworkGate.online(c) && !NetworkGate.registry(c));
     }
 
-    private static String display(CollectorConfig c) {
+    private static String display(ModConfig c) {
         return String.join(",", List.of(
                 String.valueOf(c.translationsEnabled()), c.dialogueMode().name(),
                 c.choiceMode().name(), c.chatMode().name(), c.nametagMode().name(),
@@ -70,45 +70,45 @@ public final class FirstRunTest {
                  "trackerMode": "OFF", "translateScoreboard": false, "translateTitles": false,
                  "translateBossBar": false, "wynntilsUi": false, "translationsEnabled": false,
                  "showOverlays": false, "pageNames": "OFF", "panelGap": 40}""");
-        CollectorConfig c = new CollectorConfig(file);
+        ModConfig c = new ModConfig(file);
         c.applyRecommended();
         check("推薦設定：對話與選項就地取代",
-                c.dialogueMode() == CollectorConfig.DialogueMode.REPLACE
-                        && c.choiceMode() == CollectorConfig.DialogueMode.REPLACE);
-        check("推薦設定：聊天原文加譯文", c.chatMode() == CollectorConfig.ChatMode.BOTH);
-        check("推薦設定：名牌就地取代", c.nametagMode() == CollectorConfig.NametagMode.REPLACE);
+                c.dialogueMode() == ModConfig.DialogueMode.REPLACE
+                        && c.choiceMode() == ModConfig.DialogueMode.REPLACE);
+        check("推薦設定：聊天原文加譯文", c.chatMode() == ModConfig.ChatMode.BOTH);
+        check("推薦設定：名牌就地取代", c.nametagMode() == ModConfig.NametagMode.REPLACE);
         check("推薦設定：物品翻譯關閉、物品名稱原文",
-                c.tooltipMode() == CollectorConfig.TooltipMode.OFF
-                        && c.itemNames() == CollectorConfig.ItemNames.OFF);
+                c.tooltipMode() == ModConfig.TooltipMode.OFF
+                        && c.itemNames() == ModConfig.ItemNames.OFF);
         check("推薦設定：追蹤欄就地取代、記分板與目標翻譯",
-                c.trackerMode() == CollectorConfig.DialogueMode.REPLACE
+                c.trackerMode() == ModConfig.DialogueMode.REPLACE
                         && c.translateScoreboard() && c.translateObjectives());
         check("推薦設定：大字、Boss 血條、Wynntils 介面、總開關都開",
                 c.translateTitles() && c.translateBossBar() && c.wynntilsUi()
                         && c.translationsEnabled() && c.showOverlays());
         check("推薦設定不碰版面設定", c.panelGap() == 40);
         check("推薦設定就是新安裝的預設值", display(c).equals(display(fresh())));
-        check("推薦設定寫進檔案", display(new CollectorConfig(file)).equals(display(c)));
+        check("推薦設定寫進檔案", display(new ModConfig(file)).equals(display(c)));
 
-        CollectorConfig custom = fresh();
-        custom.setDialogueModes(CollectorConfig.DialogueMode.PANEL);
-        custom.setChatMode(CollectorConfig.ChatMode.OFF);
-        custom.setNametagMode(CollectorConfig.NametagMode.LOOK_AT);
-        custom.setTooltipMode(CollectorConfig.TooltipMode.REPLACE);
-        custom.setItemNames(CollectorConfig.ItemNames.BOTH);
-        custom.setTrackerMode(CollectorConfig.DialogueMode.OFF);
+        ModConfig custom = fresh();
+        custom.setDialogueModes(ModConfig.DialogueMode.PANEL);
+        custom.setChatMode(ModConfig.ChatMode.OFF);
+        custom.setNametagMode(ModConfig.NametagMode.LOOK_AT);
+        custom.setTooltipMode(ModConfig.TooltipMode.REPLACE);
+        custom.setItemNames(ModConfig.ItemNames.BOTH);
+        custom.setTrackerMode(ModConfig.DialogueMode.OFF);
         custom.setTranslateScoreboard(false);
         custom.setTranslateTitles(false);
         custom.setTranslateBossBar(false);
         custom.setWynntilsUi(false);
         check("自訂：每一項都照選的",
-                custom.dialogueMode() == CollectorConfig.DialogueMode.PANEL
-                        && custom.choiceMode() == CollectorConfig.DialogueMode.PANEL
-                        && custom.chatMode() == CollectorConfig.ChatMode.OFF
-                        && custom.nametagMode() == CollectorConfig.NametagMode.LOOK_AT
-                        && custom.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
-                        && custom.itemNames() == CollectorConfig.ItemNames.BOTH
-                        && custom.trackerMode() == CollectorConfig.DialogueMode.OFF
+                custom.dialogueMode() == ModConfig.DialogueMode.PANEL
+                        && custom.choiceMode() == ModConfig.DialogueMode.PANEL
+                        && custom.chatMode() == ModConfig.ChatMode.OFF
+                        && custom.nametagMode() == ModConfig.NametagMode.LOOK_AT
+                        && custom.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && custom.itemNames() == ModConfig.ItemNames.BOTH
+                        && custom.trackerMode() == ModConfig.DialogueMode.OFF
                         && !custom.translateScoreboard() && !custom.translateTitles()
                         && !custom.translateBossBar() && !custom.wynntilsUi());
     }
@@ -119,23 +119,23 @@ public final class FirstRunTest {
         Files.writeString(file, """
                 {"tooltipMode": "REPLACE", "itemNames": "ON", "chatMode": "OFF",
                  "notifiedVersion": "1.0.4", "oldKeysReleased": true}""");
-        CollectorConfig old = new CollectorConfig(file);
+        ModConfig old = new ModConfig(file);
         check("★ 升級上來（沒有同意欄位）：畫面要跳", old.needsFirstRun() && old.existedBefore());
         check("★ 升級上來：原本的翻譯設定一個都沒變",
-                old.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
-                        && old.itemNames() == CollectorConfig.ItemNames.ON
-                        && old.chatMode() == CollectorConfig.ChatMode.OFF);
-        old.setConsent(CollectorConfig.Consent.DECLINED);
+                old.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && old.itemNames() == ModConfig.ItemNames.ON
+                        && old.chatMode() == ModConfig.ChatMode.OFF);
+        old.setConsent(ModConfig.Consent.DECLINED);
         check("只回答了同意、還沒選設定（按 Esc 關掉）：下次還要跳",
-                new CollectorConfig(file).needsFirstRun());
+                new ModConfig(file).needsFirstRun());
         old.markSetupDone();
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("★ 回答過、選過「保留目前的設定」：之後不再跳",
-                !again.needsFirstRun() && again.consent() == CollectorConfig.Consent.DECLINED);
+                !again.needsFirstRun() && again.consent() == ModConfig.Consent.DECLINED);
         check("★ 保留目前的設定：設定照舊",
-                again.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
-                        && again.itemNames() == CollectorConfig.ItemNames.ON
-                        && again.chatMode() == CollectorConfig.ChatMode.OFF);
+                again.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && again.itemNames() == ModConfig.ItemNames.ON
+                        && again.chatMode() == ModConfig.ChatMode.OFF);
     }
 
     private static final class Recorder implements NetworkGate.Services {
@@ -160,19 +160,19 @@ public final class FirstRunTest {
     private static void consentGatesServices() throws Exception {
         NetworkGate.reset();
         Recorder unknown = new Recorder();
-        NetworkGate.start(withConsent(CollectorConfig.Consent.UNKNOWN), unknown);
+        NetworkGate.start(withConsent(ModConfig.Consent.UNKNOWN), unknown);
         check("★ 還沒回答同意：更新檢查、譯文同步都不開始", unknown.calls.isEmpty());
 
         NetworkGate.reset();
         Recorder declined = new Recorder();
-        NetworkGate.start(withConsent(CollectorConfig.Consent.DECLINED), declined);
+        NetworkGate.start(withConsent(ModConfig.Consent.DECLINED), declined);
         check("★ 不同意：更新檢查、譯文同步都不開始", declined.calls.isEmpty());
         check("不同意：報到、披風、葉子也不連",
-                !NetworkGate.registry(withConsent(CollectorConfig.Consent.DECLINED)));
+                !NetworkGate.registry(withConsent(ModConfig.Consent.DECLINED)));
 
         NetworkGate.reset();
         Recorder agreed = new Recorder();
-        CollectorConfig yes = withConsent(CollectorConfig.Consent.AGREED);
+        ModConfig yes = withConsent(ModConfig.Consent.AGREED);
         NetworkGate.start(yes, agreed);
         check("★ 同意：更新檢查與譯文同步都開始（實際 " + agreed.calls + "）",
                 agreed.calls.equals(List.of(NetworkGate.UPDATE_CHECK, NetworkGate.TRANSLATION_SYNC)));
@@ -183,16 +183,16 @@ public final class FirstRunTest {
 
         NetworkGate.reset();
         Recorder later = new Recorder();
-        CollectorConfig changing = withConsent(CollectorConfig.Consent.UNKNOWN);
+        ModConfig changing = withConsent(ModConfig.Consent.UNKNOWN);
         NetworkGate.start(changing, later);
-        changing.setConsent(CollectorConfig.Consent.AGREED);
+        changing.setConsent(ModConfig.Consent.AGREED);
         NetworkGate.start(changing, later);
         check("★ 啟動時還沒回答、之後在畫面上按同意：當下開始",
                 later.calls.equals(List.of(NetworkGate.UPDATE_CHECK, NetworkGate.TRANSLATION_SYNC)));
 
         NetworkGate.reset();
         Recorder local = new Recorder();
-        CollectorConfig offline = withConsent(CollectorConfig.Consent.AGREED);
+        ModConfig offline = withConsent(ModConfig.Consent.AGREED);
         offline.toggleSource();
         NetworkGate.start(offline, local);
         check("同意但譯文來源是本機：只檢查更新", local.calls.equals(List.of(NetworkGate.UPDATE_CHECK)));
@@ -200,8 +200,8 @@ public final class FirstRunTest {
     }
 
     private static void servicesRefuseWithoutConsent() throws Exception {
-        CollectorConfig before = null;
-        NetworkGate.use(withConsent(CollectorConfig.Consent.UNKNOWN));
+        ModConfig before = null;
+        NetworkGate.use(withConsent(ModConfig.Consent.UNKNOWN));
         try {
             Path cache = Files.createTempDirectory("wcy-gate").resolve("translations/zh_tw");
             long t0 = System.nanoTime();
@@ -223,8 +223,8 @@ public final class FirstRunTest {
             check("★ 沒同意：移除披風不送", removed[0] == PresenceAccount.Result.PRIVACY);
             check("★ 沒同意：不畫（也不下載）任何披風",
                     com.wynnchayuan.cape.Capes.textureFor("Someone", UUID.randomUUID(), false,
-                            withConsent(CollectorConfig.Consent.DECLINED), 0) == null);
-            CollectorConfig optedOut = withConsent(CollectorConfig.Consent.AGREED);
+                            withConsent(ModConfig.Consent.DECLINED), 0) == null);
+            ModConfig optedOut = withConsent(ModConfig.Consent.AGREED);
             optedOut.setDataOptOut(true);
             check("★ 選了不上傳資料：也不畫（不下載）披風",
                     com.wynnchayuan.cape.Capes.textureFor("Someone", UUID.randomUUID(), false,
@@ -240,10 +240,10 @@ public final class FirstRunTest {
 
     private static void optOut() throws Exception {
         Path file = Files.createTempDirectory("wcy-optout").resolve("config.json");
-        CollectorConfig c = new CollectorConfig(file);
-        c.setConsent(CollectorConfig.Consent.AGREED);
+        ModConfig c = new ModConfig(file);
+        c.setConsent(ModConfig.Consent.AGREED);
         c.setDataOptOut(true);
-        CollectorConfig reopened = new CollectorConfig(file);
+        ModConfig reopened = new ModConfig(file);
         check("打開「不上傳我的資料」：記住開關，刪除請求等著送",
                 reopened.dataOptOut() && reopened.dataDeletePending());
         check("打開之後報到、披風、葉子都不連，其他連線照常",
@@ -261,22 +261,22 @@ public final class FirstRunTest {
         reopened.dataDeleted();
         NetworkGate.reset();
         Recorder done = new Recorder();
-        NetworkGate.start(new CollectorConfig(file), done);
+        NetworkGate.start(new ModConfig(file), done);
         check("★ 刪除成功之後不再送，開關維持開著",
-                !done.calls.contains(NetworkGate.DELETE_DATA) && new CollectorConfig(file).dataOptOut());
+                !done.calls.contains(NetworkGate.DELETE_DATA) && new ModConfig(file).dataOptOut());
 
         reopened.setDataOptOut(false);
-        CollectorConfig off = new CollectorConfig(file);
+        ModConfig off = new ModConfig(file);
         check("關掉開關：不再有待送的刪除，報到恢復",
                 !off.dataOptOut() && !off.dataDeletePending() && NetworkGate.registry(off));
 
         Files.writeString(file, "{\"privacyConsent\": \"AGREED\", \"setupDone\": true,"
                 + " \"dataDeletePending\": true}");
-        check("手改的設定檔：沒開開關的待刪除不算", !new CollectorConfig(file).dataDeletePending());
+        check("手改的設定檔：沒開開關的待刪除不算", !new ModConfig(file).dataDeletePending());
 
         Path declinedFile = Files.createTempDirectory("wcy-optout2").resolve("config.json");
-        CollectorConfig declined = new CollectorConfig(declinedFile);
-        declined.setConsent(CollectorConfig.Consent.DECLINED);
+        ModConfig declined = new ModConfig(declinedFile);
+        declined.setConsent(ModConfig.Consent.DECLINED);
         declined.setDataOptOut(true);
         NetworkGate.reset();
         Recorder privacy = new Recorder();

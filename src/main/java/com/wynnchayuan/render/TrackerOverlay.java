@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -81,14 +81,14 @@ public final class TrackerOverlay {
         extras = lines == null ? List.of() : List.copyOf(lines);
     }
 
-    public static boolean showsExtras(CollectorConfig config) {
+    public static boolean showsExtras(ModConfig config) {
         return config != null && !config.wynntilsUi();
     }
 
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
         boolean panel = WynnChaYuan.config().trackerMode()
-                == CollectorConfig.DialogueMode.PANEL;
+                == ModConfig.DialogueMode.PANEL;
         if (!panel) {
             return;
         }
@@ -113,13 +113,13 @@ public final class TrackerOverlay {
         int lineHeight = mc.font.lineHeight + 1;
         int x = LEFT_MARGIN;
         int y = TOP_OFFSET;
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.TRACKER)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.TRACKER);
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.TRACKER);
+        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.TRACKER)) {
+            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.TRACKER);
+            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.TRACKER);
         }
-        CollectorConfig cfg = WynnChaYuan.config();
-        boolean sized = cfg.hasOverlaySize(CollectorConfig.Overlay.TRACKER);
-        int fixedW = sized ? cfg.overlayW(CollectorConfig.Overlay.TRACKER) : 0;
+        ModConfig cfg = WynnChaYuan.config();
+        boolean sized = cfg.hasOverlaySize(ModConfig.Overlay.TRACKER);
+        int fixedW = sized ? cfg.overlayW(ModConfig.Overlay.TRACKER) : 0;
         int wrapAt = sized
                 ? Math.max(MIN_WRAP, fixedW - PADDING * 2)
                 : wrapWidth(x, graphics.guiWidth());
@@ -147,7 +147,7 @@ public final class TrackerOverlay {
         boxW += PADDING * 2;
         if (sized) {
             boxW = Math.max(boxW, fixedW);
-            boxH = Math.max(boxH, cfg.overlayH(CollectorConfig.Overlay.TRACKER));
+            boxH = Math.max(boxH, cfg.overlayH(ModConfig.Overlay.TRACKER));
         }
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));

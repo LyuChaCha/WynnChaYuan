@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -101,9 +101,9 @@ public final class WynnModTooltip {
             return text;
         }
         try {
-            CollectorConfig config = WynnChaYuan.config();
+            ModConfig config = WynnChaYuan.config();
             if (config == null || !config.wynnmodTooltip()
-                    || config.tooltipMode() != CollectorConfig.TooltipMode.REPLACE) {
+                    || config.tooltipMode() != ModConfig.TooltipMode.REPLACE) {
                 return text;
             }
             List<Component> out = RenderListener.translateForeign(joinSameStyle(text));

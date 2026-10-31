@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.WynnChaYuan;
@@ -96,7 +96,7 @@ public final class CardDump {
     }
 
     private static boolean configSaysYes() {
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         return config != null && config.collect() && config.collectGuiText();
     }
 

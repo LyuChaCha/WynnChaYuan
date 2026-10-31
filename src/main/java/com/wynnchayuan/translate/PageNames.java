@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -31,7 +31,7 @@ public final class PageNames {
     }
 
     public static List<Component> titles(List<Component> original, List<Component> translated,
-                                         CollectorConfig.ItemNames mode) {
+                                         ModConfig.ItemNames mode) {
         if (original == null || original.isEmpty()
                 || translated == null || translated.isEmpty()) {
             return translated;
@@ -42,10 +42,10 @@ public final class PageNames {
             return translated;
         }
         if (mode == null) {
-            mode = CollectorConfig.ItemNames.ON;
+            mode = ModConfig.ItemNames.ON;
         }
         Component changed = title(first, translated.get(0), name, mode);
-        boolean below = mode == CollectorConfig.ItemNames.BOTH && changed != null
+        boolean below = mode == ModConfig.ItemNames.BOTH && changed != null
                 && !titleName(changed.getString()).equals(name);
         if (changed == translated.get(0) && !below) {
             return translated;
@@ -66,7 +66,7 @@ public final class PageNames {
     }
 
     static Component title(Component original, Component translated, String name,
-                           CollectorConfig.ItemNames mode) {
+                           ModConfig.ItemNames mode) {
         if (translated == null) {
             return null;
         }
@@ -80,7 +80,7 @@ public final class PageNames {
             return translated;
         }
         MutableComponent out = Component.empty();
-        if (mode == CollectorConfig.ItemNames.OFF) {
+        if (mode == ModConfig.ItemNames.OFF) {
             copy(out, original, 0, name.length());
         } else {
             TextColor colour = nameColour(original, name.length());
@@ -144,11 +144,11 @@ public final class PageNames {
     }
 
     public static Component bare(Component original, Component translated,
-                                 CollectorConfig.ItemNames mode) {
-        if (translated == null || mode == null || mode == CollectorConfig.ItemNames.ON) {
+                                 ModConfig.ItemNames mode) {
+        if (translated == null || mode == null || mode == ModConfig.ItemNames.ON) {
             return translated;
         }
-        if (mode == CollectorConfig.ItemNames.OFF) {
+        if (mode == ModConfig.ItemNames.OFF) {
             return null;
         }
         String name = original.getString();

@@ -42,7 +42,7 @@ public final class ModNetwork {
     }
 
     private static void startBackgroundSync() {
-        if (WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB) {
+        if (WynnChaYuan.config.source() != ModConfig.Source.GITHUB) {
             return;
         }
         Thread sync = new Thread(() -> {
@@ -86,7 +86,7 @@ public final class ModNetwork {
     }
 
     public static void setConsent(boolean agreed) {
-        WynnChaYuan.config.setConsent(agreed ? CollectorConfig.Consent.AGREED : CollectorConfig.Consent.DECLINED);
+        WynnChaYuan.config.setConsent(agreed ? ModConfig.Consent.AGREED : ModConfig.Consent.DECLINED);
         if (agreed) {
             startNetworked();
         } else {

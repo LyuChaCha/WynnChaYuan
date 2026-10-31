@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.render.Colors;
@@ -152,10 +152,10 @@ public final class ChatCopyScreen extends Screen {
         if (index < 0 || index >= entries.size() || this.minecraft == null) {
             return;
         }
-        CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
+        ModConfig.ChatMode mode = WynnChaYuan.config().chatMode();
         this.minecraft.keyboardHandler.setClipboard(entries.get(index).forMode(
-                mode == CollectorConfig.ChatMode.REPLACE,
-                mode == CollectorConfig.ChatMode.BOTH));
+                mode == ModConfig.ChatMode.REPLACE,
+                mode == ModConfig.ChatMode.BOTH));
         copiedAt = System.currentTimeMillis();
     }
 

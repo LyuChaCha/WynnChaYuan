@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -84,7 +84,7 @@ public final class FpsLog {
     }
 
     private static boolean boostOn() {
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         return config == null || config.wynntilsFps();
     }
 

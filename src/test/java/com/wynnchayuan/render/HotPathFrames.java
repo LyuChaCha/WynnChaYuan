@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ public final class HotPathFrames {
         return TooltipTranslator.translateLinesCached(lines, store);
     }
 
-    public static StyledText screenText(StyledText text, CollectorConfig config,
+    public static StyledText screenText(StyledText text, ModConfig config,
                                         TranslationStore store) {
         return WynntilsScreenText.screenText(text, config, store);
     }
@@ -35,7 +35,7 @@ public final class HotPathFrames {
         WynntilsScreenText.setScoreboard(plain, Map.of());
     }
 
-    public static Component nameplate(Component name, CollectorConfig config,
+    public static Component nameplate(Component name, ModConfig config,
                                       TranslationStore store) {
         return WynntilsNames.entityName(name, config, store);
     }

@@ -35,16 +35,16 @@ public final class ScoreboardMirrorTest {
     private static void extras() {
         try {
             java.nio.file.Path dir = java.nio.file.Files.createTempDirectory("wcy-extras");
-            com.wynnchayuan.CollectorConfig on =
-                    new com.wynnchayuan.CollectorConfig(dir.resolve("on.json"));
+            com.wynnchayuan.ModConfig on =
+                    new com.wynnchayuan.ModConfig(dir.resolve("on.json"));
             check("預設就是開著 Wynntils 介面", on.wynntilsUi());
             check("★ 開著時不補那幾段（不然隊伍清單會出現兩次）",
                   !com.wynnchayuan.render.TrackerOverlay.showsExtras(on));
 
             java.nio.file.Path off = dir.resolve("off.json");
             java.nio.file.Files.writeString(off, "{\"wynntilsUi\": false}");
-            com.wynnchayuan.CollectorConfig closed =
-                    new com.wynnchayuan.CollectorConfig(off);
+            com.wynnchayuan.ModConfig closed =
+                    new com.wynnchayuan.ModConfig(off);
             check("關掉之後讀得到 false", !closed.wynntilsUi());
             check("★ 關掉時照補（沒有別人會翻那一欄）",
                   com.wynnchayuan.render.TrackerOverlay.showsExtras(closed));

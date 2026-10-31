@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.capture.LineParts;
@@ -52,7 +52,7 @@ public final class DialogueRewriter {
         findBody(frame);
         List<Integer> body = frame.body;
         List<Style> styles = frame.styles;
-        var mode = CollectorConfig.DialogueMode.REPLACE;
+        var mode = ModConfig.DialogueMode.REPLACE;
         boolean doBody = WynnChaYuan.config().dialogueMode() == mode;
         boolean doChoice = WynnChaYuan.config().choiceMode() == mode;
         int room = rowWidth(frame.texts, body);

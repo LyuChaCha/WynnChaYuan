@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -67,7 +67,7 @@ public final class DialogueOverlay {
         }
         rawChoices = incoming;
         choices = incoming.isEmpty()
-                || WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.OFF
+                || WynnChaYuan.config().choiceMode() == ModConfig.DialogueMode.OFF
                 ? List.of()
                 : translateChoices(WynnChaYuan.translations());
     }
@@ -108,9 +108,9 @@ public final class DialogueOverlay {
             FlowedDebug.noteChoices(dialogue.getString());
         }
         boolean bodyOff = WynnChaYuan.config().dialogueMode()
-                == CollectorConfig.DialogueMode.OFF;
+                == ModConfig.DialogueMode.OFF;
         boolean choiceOff = WynnChaYuan.config().choiceMode()
-                == CollectorConfig.DialogueMode.OFF;
+                == ModConfig.DialogueMode.OFF;
         if (dialogue == null || (bodyOff && choiceOff)) {
             clear();
             return;
@@ -435,7 +435,7 @@ public final class DialogueOverlay {
 
     public static void stillOnScreen() {
         boolean inPlace = WynnChaYuan.config().dialogueMode()
-                == CollectorConfig.DialogueMode.REPLACE;
+                == ModConfig.DialogueMode.REPLACE;
         lastUpdate = keptAlive(lastUpdate, System.currentTimeMillis(), hasContent(),
                 needsShift, inPlace);
     }

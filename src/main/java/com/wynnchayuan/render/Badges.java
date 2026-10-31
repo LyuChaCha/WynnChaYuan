@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
@@ -86,11 +86,11 @@ public final class Badges {
         return roles == null ? List.of() : roles;
     }
 
-    public static List<Role> shown(String account, String self, CollectorConfig config) {
+    public static List<Role> shown(String account, String self, ModConfig config) {
         return shown(account, self, config, Presence.BadgeChoice.NONE);
     }
 
-    public static List<Role> shown(String account, String self, CollectorConfig config,
+    public static List<Role> shown(String account, String self, ModConfig config,
                                    Presence.BadgeChoice theirs) {
         boolean mine = account != null && account.equalsIgnoreCase(self);
         List<Role> all = new ArrayList<>();
@@ -113,7 +113,7 @@ public final class Badges {
         return out;
     }
 
-    private static int ownColour(CollectorConfig config, Role role) {
+    private static int ownColour(ModConfig config, Role role) {
         String hex = config.badgeColour(role.id());
         if (hex != null) {
             try {
@@ -124,7 +124,7 @@ public final class Badges {
         return role.color();
     }
 
-    public static boolean ownRainbow(CollectorConfig config) {
+    public static boolean ownRainbow(ModConfig config) {
         for (Role role : registered(selfName())) {
             if (rainbowAllowed(role) && config.badgeRainbow(role.rainbow())) {
                 return true;
@@ -133,7 +133,7 @@ public final class Badges {
         return false;
     }
 
-    public static List<String> ownShown(CollectorConfig config) {
+    public static List<String> ownShown(ModConfig config) {
         List<Role> mine = registered(selfName());
         if (mine.isEmpty()) {
             return null;
@@ -165,18 +165,18 @@ public final class Badges {
     }
 
     static Component decorate(Component nameTag, String account, String self,
-                              CollectorConfig config, long now) {
+                              ModConfig config, long now) {
         return decorate(nameTag, account, self, config, now, false);
     }
 
     static Component decorate(Component nameTag, String account, String self,
-                              CollectorConfig config, long now, boolean onRoster) {
+                              ModConfig config, long now, boolean onRoster) {
         return decorate(nameTag, account, self, config, now, onRoster,
                 Presence.BadgeChoice.NONE);
     }
 
     static Component decorate(Component nameTag, String account, String self,
-                              CollectorConfig config, long now, boolean onRoster,
+                              ModConfig config, long now, boolean onRoster,
                               Presence.BadgeChoice theirs) {
         if (nameTag == null || startsWithIcon(nameTag)) {
             return null;

@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
@@ -36,10 +36,10 @@ final class DisplayTabs {
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> SettingsScreen.cfg().tooltipMode().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::tooltipMode, SettingsScreen.cfg()::cycleTooltipMode,
-                        CollectorConfig.TooltipMode.values()[i]))
-                .reset(() -> SettingsScreen.cfg().tooltipMode() == CollectorConfig.TooltipMode.PANEL,
+                        ModConfig.TooltipMode.values()[i]))
+                .reset(() -> SettingsScreen.cfg().tooltipMode() == ModConfig.TooltipMode.PANEL,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::tooltipMode, SettingsScreen.cfg()::cycleTooltipMode,
-                                CollectorConfig.TooltipMode.PANEL)));
+                                ModConfig.TooltipMode.PANEL)));
         Runnable nextName = () ->
                 WynnChaYuan.translations().setNameMode(SettingsScreen.cfg().cycleItemNames(1));
         rows.add(Row.segment("items.names", SettingsScreen.t("items.names"), SettingsScreen.t("items.names.hint"))
@@ -48,9 +48,9 @@ final class DisplayTabs {
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> SettingsScreen.cfg().itemNames().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::itemNames, nextName,
-                        CollectorConfig.ItemNames.values()[i]))
-                .reset(() -> SettingsScreen.cfg().itemNames() == CollectorConfig.ItemNames.OFF,
-                        () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::itemNames, nextName, CollectorConfig.ItemNames.OFF)));
+                        ModConfig.ItemNames.values()[i]))
+                .reset(() -> SettingsScreen.cfg().itemNames() == ModConfig.ItemNames.OFF,
+                        () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::itemNames, nextName, ModConfig.ItemNames.OFF)));
         rows.add(SettingsScreen.toggle("items.abilitynames", false, SettingsScreen.cfg()::abilityNamesOriginal, () ->
                 WynnChaYuan.translations().setAbilityNamesWithOriginal(
                         SettingsScreen.cfg().toggleAbilityNamesOriginal())));
@@ -64,9 +64,9 @@ final class DisplayTabs {
                 .option(T.s("items.pages.off"), Row.Tone.OFF)
                 .selected(() -> SettingsScreen.cfg().pageNames().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::pageNames, nextPage,
-                        CollectorConfig.ItemNames.values()[i]))
-                .reset(() -> SettingsScreen.cfg().pageNames() == CollectorConfig.ItemNames.ON,
-                        () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::pageNames, nextPage, CollectorConfig.ItemNames.ON)));
+                        ModConfig.ItemNames.values()[i]))
+                .reset(() -> SettingsScreen.cfg().pageNames() == ModConfig.ItemNames.ON,
+                        () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::pageNames, nextPage, ModConfig.ItemNames.ON)));
         rows.add(SettingsScreen.toggle("items.market", true, SettingsScreen.cfg()::marketSearch, SettingsScreen.cfg()::toggleMarketSearch));
         rows.add(Row.segment("items.shot", SettingsScreen.t("items.shot"), () -> {
                     String clash = PanelShot.conflict();
@@ -80,12 +80,12 @@ final class DisplayTabs {
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> SettingsScreen.cfg().shotMode().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::shotMode, SettingsScreen.cfg()::cycleShotMode,
-                        CollectorConfig.ShotMode.values()[i]))
+                        ModConfig.ShotMode.values()[i]))
                 .extra(SettingsScreen.t("button.keybinds"), () -> screen.client().setScreen(
                         new KeyBindsScreen(screen, screen.client().options)))
-                .reset(() -> SettingsScreen.cfg().shotMode() == CollectorConfig.ShotMode.KEY,
+                .reset(() -> SettingsScreen.cfg().shotMode() == ModConfig.ShotMode.KEY,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::shotMode, SettingsScreen.cfg()::cycleShotMode,
-                                CollectorConfig.ShotMode.KEY)));
+                                ModConfig.ShotMode.KEY)));
         return rows;
     }
 
@@ -96,10 +96,10 @@ final class DisplayTabs {
                 .option(T.s("mode.pinned"), Row.Tone.PLAIN)
                 .selected(() -> SettingsScreen.cfg().panelAnchor().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::panelAnchor, SettingsScreen.cfg()::togglePanelAnchor,
-                        CollectorConfig.PanelAnchor.values()[i]))
-                .reset(() -> SettingsScreen.cfg().panelAnchor() == CollectorConfig.PanelAnchor.FOLLOW,
+                        ModConfig.PanelAnchor.values()[i]))
+                .reset(() -> SettingsScreen.cfg().panelAnchor() == ModConfig.PanelAnchor.FOLLOW,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::panelAnchor, SettingsScreen.cfg()::togglePanelAnchor,
-                                CollectorConfig.PanelAnchor.FOLLOW)));
+                                ModConfig.PanelAnchor.FOLLOW)));
         rows.add(Row.action("panel.place", SettingsScreen.t("panel.place"), SettingsScreen.t("panel.place.hint"))
                 .label(SettingsScreen.t("button.adjust"))
                 .run(() -> screen.client().setScreen(new PositionScreen(screen))));
@@ -109,17 +109,17 @@ final class DisplayTabs {
                 .option(T.s("mode.left"), Row.Tone.PLAIN)
                 .selected(() -> SettingsScreen.cfg().panelSide().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::panelSide, SettingsScreen.cfg()::cyclePanelSide,
-                        CollectorConfig.PanelSide.values()[i]))
-                .reset(() -> SettingsScreen.cfg().panelSide() == CollectorConfig.PanelSide.AUTO,
+                        ModConfig.PanelSide.values()[i]))
+                .reset(() -> SettingsScreen.cfg().panelSide() == ModConfig.PanelSide.AUTO,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::panelSide, SettingsScreen.cfg()::cyclePanelSide,
-                                CollectorConfig.PanelSide.AUTO)));
+                                ModConfig.PanelSide.AUTO)));
         rows.add(Row.slider("panel.gap", SettingsScreen.t("panel.gap"), SettingsScreen.t("panel.gap.hint"))
                 .range(PanelGap.MIN, PanelGap.MAX).value(() -> SettingsScreen.cfg().panelGap())
                 .slide(v -> SettingsScreen.cfg().setPanelGapLive(v))
                 .format(v -> v + " px")
                 .commit(SettingsScreen.cfg()::saveIfDirty)
-                .reset(() -> SettingsScreen.cfg().panelGap() == CollectorConfig.DEFAULT_PANEL_GAP, () -> {
-                    SettingsScreen.cfg().setPanelGapLive(CollectorConfig.DEFAULT_PANEL_GAP);
+                .reset(() -> SettingsScreen.cfg().panelGap() == ModConfig.DEFAULT_PANEL_GAP, () -> {
+                    SettingsScreen.cfg().setPanelGapLive(ModConfig.DEFAULT_PANEL_GAP);
                     SettingsScreen.cfg().saveIfDirty();
                 }));
         return rows;
@@ -144,7 +144,7 @@ final class DisplayTabs {
         return rows;
     }
 
-    private Row dialogueMode(String key, Supplier<CollectorConfig.DialogueMode> get,
+    private Row dialogueMode(String key, Supplier<ModConfig.DialogueMode> get,
                              Runnable next) {
         return Row.segment(key, SettingsScreen.t(key), SettingsScreen.t(key + ".hint"))
                 .option(T.s("mode.box"), Row.Tone.ACCENT)
@@ -152,12 +152,12 @@ final class DisplayTabs {
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> get.get().ordinal())
                 .pick(i -> {
-                    SettingsScreen.cycleTo(get, next, CollectorConfig.DialogueMode.values()[i]);
+                    SettingsScreen.cycleTo(get, next, ModConfig.DialogueMode.values()[i]);
                     needBoxes("dialogue.mode".equals(key)
-                            && get.get() == CollectorConfig.DialogueMode.PANEL);
+                            && get.get() == ModConfig.DialogueMode.PANEL);
                 })
-                .reset(() -> get.get() == CollectorConfig.DialogueMode.REPLACE,
-                        () -> SettingsScreen.cycleTo(get, next, CollectorConfig.DialogueMode.REPLACE));
+                .reset(() -> get.get() == ModConfig.DialogueMode.REPLACE,
+                        () -> SettingsScreen.cycleTo(get, next, ModConfig.DialogueMode.REPLACE));
     }
 
     private static void needBoxes(boolean box) {
@@ -199,30 +199,30 @@ final class DisplayTabs {
                 .selected(() -> SettingsScreen.cfg().nametagMode().ordinal())
                 .pick(i -> {
                     SettingsScreen.cycleTo(SettingsScreen.cfg()::nametagMode, SettingsScreen.cfg()::cycleNametagMode,
-                            CollectorConfig.NametagMode.values()[i]);
-                    needBoxes(SettingsScreen.cfg().nametagMode() == CollectorConfig.NametagMode.LOOK_AT);
+                            ModConfig.NametagMode.values()[i]);
+                    needBoxes(SettingsScreen.cfg().nametagMode() == ModConfig.NametagMode.LOOK_AT);
                 })
                 .extra(SettingsScreen.t("button.advanced"), () -> screen.client().setScreen(new NametagScreen(screen)))
-                .reset(() -> SettingsScreen.cfg().nametagMode() == CollectorConfig.NametagMode.REPLACE,
+                .reset(() -> SettingsScreen.cfg().nametagMode() == ModConfig.NametagMode.REPLACE,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::nametagMode, SettingsScreen.cfg()::cycleNametagMode,
-                                CollectorConfig.NametagMode.REPLACE)));
+                                ModConfig.NametagMode.REPLACE)));
         rows.add(Row.segment("world.chat", SettingsScreen.t("world.chat"), SettingsScreen.t("world.chat.hint"))
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
                 .option(T.s("mode.both"), Row.Tone.BOTH)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> SettingsScreen.cfg().chatMode().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::chatMode, SettingsScreen.cfg()::cycleChatMode,
-                        CollectorConfig.ChatMode.values()[i]))
-                .reset(() -> SettingsScreen.cfg().chatMode() == CollectorConfig.ChatMode.BOTH,
+                        ModConfig.ChatMode.values()[i]))
+                .reset(() -> SettingsScreen.cfg().chatMode() == ModConfig.ChatMode.BOTH,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::chatMode, SettingsScreen.cfg()::cycleChatMode,
-                                CollectorConfig.ChatMode.BOTH)));
+                                ModConfig.ChatMode.BOTH)));
         rows.add(SettingsScreen.toggle("world.titles", true, SettingsScreen.cfg()::translateTitles, SettingsScreen.cfg()::toggleTitles)
                 .onText(SettingsScreen.t("mode.replace")));
         rows.add(SettingsScreen.toggle("world.bossbar", true, SettingsScreen.cfg()::translateBossBar, SettingsScreen.cfg()::toggleBossBar)
                 .onText(SettingsScreen.t("mode.replace")));
-        CollectorConfig.DialogueMode[] order = {
-            CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
-            CollectorConfig.DialogueMode.OFF};
+        ModConfig.DialogueMode[] order = {
+            ModConfig.DialogueMode.REPLACE, ModConfig.DialogueMode.PANEL,
+            ModConfig.DialogueMode.OFF};
         rows.add(Row.segment("world.tracker", SettingsScreen.t("world.tracker"), SettingsScreen.t("world.tracker.hint"))
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
                 .option(T.s("mode.panel"), Row.Tone.ACCENT)
@@ -230,11 +230,11 @@ final class DisplayTabs {
                 .selected(() -> Arrays.asList(order).indexOf(SettingsScreen.cfg().trackerMode()))
                 .pick(i -> {
                     SettingsScreen.cycleTo(SettingsScreen.cfg()::trackerMode, SettingsScreen.cfg()::cycleTrackerMode, order[i]);
-                    needBoxes(SettingsScreen.cfg().trackerMode() == CollectorConfig.DialogueMode.PANEL);
+                    needBoxes(SettingsScreen.cfg().trackerMode() == ModConfig.DialogueMode.PANEL);
                 })
-                .reset(() -> SettingsScreen.cfg().trackerMode() == CollectorConfig.DialogueMode.REPLACE,
+                .reset(() -> SettingsScreen.cfg().trackerMode() == ModConfig.DialogueMode.REPLACE,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::trackerMode, SettingsScreen.cfg()::cycleTrackerMode,
-                                CollectorConfig.DialogueMode.REPLACE)));
+                                ModConfig.DialogueMode.REPLACE)));
         rows.add(SettingsScreen.toggle("world.objectives", true, SettingsScreen.cfg()::translateObjectives,
                 SettingsScreen.cfg()::toggleObjectives).onText(SettingsScreen.t("mode.replace")));
         rows.add(SettingsScreen.toggle("world.scoreboard", true, SettingsScreen.cfg()::translateScoreboard,

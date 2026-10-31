@@ -1,7 +1,7 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
-import com.wynnchayuan.CollectorConfig.Overlay;
+import com.wynnchayuan.ModConfig;
+import com.wynnchayuan.ModConfig.Overlay;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.PositionView;
 import com.wynnchayuan.client.ui.Surface;
@@ -25,7 +25,7 @@ public final class PositionScreen extends CanvasScreen {
 
             @Override
             public PositionView.Saved saved(String id) {
-                CollectorConfig cfg = WynnChaYuan.config();
+                ModConfig cfg = WynnChaYuan.config();
                 Overlay which = Overlay.valueOf(id);
                 boolean pos = cfg.hasOverlayPos(which);
                 boolean size = cfg.hasOverlaySize(which);
@@ -47,7 +47,7 @@ public final class PositionScreen extends CanvasScreen {
 
             @Override
             public void store(String id, int x, int y, Integer w, Integer h) {
-                CollectorConfig cfg = WynnChaYuan.config();
+                ModConfig cfg = WynnChaYuan.config();
                 Overlay which = Overlay.valueOf(id);
                 cfg.setOverlayPos(which, x, y);
                 if (w != null && h != null) {

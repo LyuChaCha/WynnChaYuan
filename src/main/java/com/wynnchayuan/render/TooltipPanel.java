@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.TranslationStore;
@@ -49,7 +49,7 @@ public final class TooltipPanel {
         int panelH = panelBox[1] + 8;
 
         TooltipPlacement.Place spot;
-        if (WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED) {
+        if (WynnChaYuan.config().panelAnchor() == ModConfig.PanelAnchor.FIXED) {
             spot = new TooltipPlacement.Place(WynnChaYuan.config().fixedX(), WynnChaYuan.config().fixedY(),
                     0, 0, false, 0, 0);
         } else {
@@ -57,7 +57,7 @@ public final class TooltipPanel {
         }
         int x = Math.max(0, Math.min(spot.panelX(), Math.max(0, screenW - panelW)));
         int y = Math.max(0, Math.min(spot.panelY(), Math.max(0, screenH - panelH)));
-        if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
+        if (WynnChaYuan.config().panelAnchor() != ModConfig.PanelAnchor.FIXED) {
             x = WynnventoryBox.place(x, y, panelW, panelH,
                     spot.leftSide(), spot.rightSide(), screenW, gap);
         }

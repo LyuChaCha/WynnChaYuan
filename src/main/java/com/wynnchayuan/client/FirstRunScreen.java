@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.Presence;
@@ -32,9 +32,9 @@ public final class FirstRunScreen extends CanvasScreen {
 
     public FirstRunScreen(Screen parent) {
         super(T.c("firstrun.title"), parent);
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         boolean askNotice = !config.noticeDismissed();
-        boolean askConsent = config.consent() == CollectorConfig.Consent.UNKNOWN;
+        boolean askConsent = config.consent() == ModConfig.Consent.UNKNOWN;
         boolean askSetup = !config.setupDone();
         boolean upgrading = config.existedBefore();
         this.view = new FirstRunView(SHELL, new FirstRunView.Host() {
@@ -125,7 +125,7 @@ public final class FirstRunScreen extends CanvasScreen {
         return view;
     }
 
-    private static CollectorConfig cfg() {
+    private static ModConfig cfg() {
         return WynnChaYuan.config();
     }
 
@@ -163,11 +163,11 @@ public final class FirstRunScreen extends CanvasScreen {
                 Preview.Scene.TOOLTIP, List.of(new Row.Group(t("group.items"), false, List.of(
                 mode("items.tooltip", new String[] {"mode.panel", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().tooltipMode().ordinal(),
-                        i -> cfg().setTooltipMode(CollectorConfig.TooltipMode.values()[i])),
+                        i -> cfg().setTooltipMode(ModConfig.TooltipMode.values()[i])),
                 mode("items.names", new String[] {"mode.on", "items.names.both", "mode.off"},
                         new Row.Tone[] {Row.Tone.ACCENT, Row.Tone.BOTH, Row.Tone.OFF},
                         () -> cfg().itemNames().ordinal(), i -> {
-                            cfg().setItemNames(CollectorConfig.ItemNames.values()[i]);
+                            cfg().setItemNames(ModConfig.ItemNames.values()[i]);
                             applyNameModes();
                         }))),
                 new Row.Group(t("group.mods"), false, List.of(
@@ -178,22 +178,22 @@ public final class FirstRunScreen extends CanvasScreen {
                 new Row.Group(t("group.dialogue"), false, List.of(
                 mode("dialogue.mode", new String[] {"mode.box", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().dialogueMode().ordinal(),
-                        i -> cfg().setDialogueMode(CollectorConfig.DialogueMode.values()[i])),
+                        i -> cfg().setDialogueMode(ModConfig.DialogueMode.values()[i])),
                 mode("dialogue.choices", new String[] {"mode.box", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().choiceMode().ordinal(),
-                        i -> cfg().setChoiceMode(CollectorConfig.DialogueMode.values()[i])))))));
-        CollectorConfig.DialogueMode[] order = {
-            CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
-            CollectorConfig.DialogueMode.OFF};
+                        i -> cfg().setChoiceMode(ModConfig.DialogueMode.values()[i])))))));
+        ModConfig.DialogueMode[] order = {
+            ModConfig.DialogueMode.REPLACE, ModConfig.DialogueMode.PANEL,
+            ModConfig.DialogueMode.OFF};
         tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
                 Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, List.of(
                 mode("world.nametag", new String[] {"mode.lookat", "mode.replace", "mode.off"},
                         BOX_REPLACE_OFF, () -> cfg().nametagMode().ordinal(),
-                        i -> cfg().setNametagMode(CollectorConfig.NametagMode.values()[i])),
+                        i -> cfg().setNametagMode(ModConfig.NametagMode.values()[i])),
                 mode("world.chat", new String[] {"mode.replace", "mode.both", "mode.off"},
                         new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.BOTH, Row.Tone.OFF},
                         () -> cfg().chatMode().ordinal(),
-                        i -> cfg().setChatMode(CollectorConfig.ChatMode.values()[i])),
+                        i -> cfg().setChatMode(ModConfig.ChatMode.values()[i])),
                 mode("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
                         new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.ACCENT, Row.Tone.OFF},
                         () -> Arrays.asList(order).indexOf(cfg().trackerMode()),
@@ -208,13 +208,13 @@ public final class FirstRunScreen extends CanvasScreen {
                 Icons.Icon.LEAF, Preview.Scene.CAPE, List.of(
                 new Row.Group(t("group.privacy"), false, List.of(
                 toggle("privacy.online",
-                        () -> cfg().consent() == CollectorConfig.Consent.AGREED,
+                        () -> cfg().consent() == ModConfig.Consent.AGREED,
                         ModNetwork::setConsent))))));
         return tabs;
     }
 
     public static void clientTick() {
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         if (shownThisSession || config == null || !config.needsFirstRun()) {
             return;
         }

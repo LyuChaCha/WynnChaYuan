@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -54,14 +54,14 @@ public final class ItemGuessListTest {
         store.loadAll(dir);
         LineTranslator.measureForTest = AbilityTooltipRenderTest::measure;
         try {
-            store.setNameMode(CollectorConfig.ItemNames.BOTH);
+            store.setNameMode(ModConfig.ItemNames.BOTH);
             oneNamePerRow(store);
             twoNamesPerRow(store);
             bareGearStaysEnglish(store);
             notAList(store);
-            store.setNameMode(CollectorConfig.ItemNames.ON);
+            store.setNameMode(ModConfig.ItemNames.ON);
             translationOnly(store);
-            store.setNameMode(CollectorConfig.ItemNames.OFF);
+            store.setNameMode(ModConfig.ItemNames.OFF);
             namesOff(store);
         } finally {
             LineTranslator.measureForTest = null;

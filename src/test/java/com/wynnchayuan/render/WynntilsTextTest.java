@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -36,7 +36,7 @@ public final class WynntilsTextTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                 Languages.DEFAULT));
-        CollectorConfig config = new CollectorConfig(
+        ModConfig config = new ModConfig(
                 Files.createTempDirectory("wcy-overlay").resolve("config.json"));
 
         tracker(config, store);
@@ -56,14 +56,14 @@ public final class WynntilsTextTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void tracker(CollectorConfig config, TranslationStore store) {
+    private static void tracker(ModConfig config, TranslationStore store) {
         StyledText[] lines = {
             StyledText.fromString("Quest"),
             StyledText.fromString("Find the meteor's crash site."),
         };
         Object tracker = new ContentTrackerOverlay();
 
-        while (config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+        while (config.trackerMode() != ModConfig.DialogueMode.REPLACE) {
             config.cycleTrackerMode();
         }
         StyledText[] out = WynntilsText.lines(tracker, lines, config, store);
@@ -112,13 +112,13 @@ public final class WynntilsTextTest {
         StyledText[] other = WynntilsText.lines(new InfoBoxOverlay(), lines, config, store);
         check("別的疊層原樣不動", other == lines);
 
-        while (config.trackerMode() != CollectorConfig.DialogueMode.PANEL) {
+        while (config.trackerMode() != ModConfig.DialogueMode.PANEL) {
             config.cycleTrackerMode();
         }
         check("面板模式下不動 Wynntils 的字",
               WynntilsText.lines(tracker, lines, config, store) == lines);
 
-        while (config.trackerMode() != CollectorConfig.DialogueMode.OFF) {
+        while (config.trackerMode() != ModConfig.DialogueMode.OFF) {
             config.cycleTrackerMode();
         }
         check("關掉時不動 Wynntils 的字",
@@ -129,7 +129,7 @@ public final class WynntilsTextTest {
                       && WynntilsText.lines(tracker, lines, config, null) == lines);
     }
 
-    private static void objectives(CollectorConfig config, TranslationStore store) {
+    private static void objectives(ModConfig config, TranslationStore store) {
         if (!config.translateObjectives()) {
             config.toggleObjectives();
         }
@@ -163,25 +163,25 @@ public final class WynntilsTextTest {
                 Languages.DEFAULT));
     }
 
-    private static void markers(CollectorConfig config, TranslationStore store) {
-        while (config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+    private static void markers(ModConfig config, TranslationStore store) {
+        while (config.trackerMode() != ModConfig.DialogueMode.REPLACE) {
             config.cycleTrackerMode();
         }
         String name = WynntilsText.marker("Cook Assistant", config, store);
         check("任務指引的任務名翻得出來（實際 " + name + "）", name.contains("廚師助理"));
         String odd = "Qwertyuiop Zxcv";
         check("翻不出來的標記原樣回去", WynntilsText.marker(odd, config, store).equals(odd));
-        while (config.trackerMode() != CollectorConfig.DialogueMode.OFF) {
+        while (config.trackerMode() != ModConfig.DialogueMode.OFF) {
             config.cycleTrackerMode();
         }
         check("追蹤欄關掉時指引也照原文",
               WynntilsText.marker("Cook Assistant", config, store).equals("Cook Assistant"));
-        while (config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+        while (config.trackerMode() != ModConfig.DialogueMode.REPLACE) {
             config.cycleTrackerMode();
         }
     }
 
-    private static void heldItem(CollectorConfig config, TranslationStore store) {
+    private static void heldItem(ModConfig config, TranslationStore store) {
         net.minecraft.network.chat.Component scroll =
                 net.minecraft.network.chat.Component.literal("Ragni Teleportation Scroll [3/3]");
         check("手持物品名稱預設打開", config.translateHeldItem());
@@ -193,7 +193,7 @@ public final class WynntilsTextTest {
         config.toggleHeldItem();
     }
 
-    private static void bossBar(CollectorConfig config, TranslationStore store) {
+    private static void bossBar(ModConfig config, TranslationStore store) {
         net.minecraft.network.chat.Component bar = net.minecraft.network.chat.Component.literal("Horse")
                 .withStyle(net.minecraft.ChatFormatting.GREEN)
                 .append(net.minecraft.network.chat.Component.literal(" - ")
@@ -205,12 +205,12 @@ public final class WynntilsTextTest {
               shown.startsWith("馬") && shown.endsWith("47❤"));
         check("同一條再畫一次拿到同一份", WynntilsBossBar.bossBar(bar, config, store)
                 == WynntilsBossBar.bossBar(bar, config, store));
-        while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
+        while (config.nametagMode() != ModConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
         check("名牌關掉不會連坐 boss bar",
                 WynntilsBossBar.bossBar(bar, config, store).getString().startsWith("馬"));
-        while (config.nametagMode() == CollectorConfig.NametagMode.OFF) {
+        while (config.nametagMode() == ModConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
 
@@ -222,8 +222,8 @@ public final class WynntilsTextTest {
                 WynntilsBossBar.bossBar(bar, config, store).getString().startsWith("馬"));
     }
 
-    private static void switched(CollectorConfig config) {
-        while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
+    private static void switched(ModConfig config) {
+        while (config.nametagMode() != ModConfig.NametagMode.REPLACE) {
             config.cycleNametagMode();
         }
         String corpus = "src/main/resources/assets/wynnchayuan/translations";
@@ -244,8 +244,8 @@ public final class WynntilsTextTest {
                         WynntilsNames.entityName(altar, config, store).getString()));
     }
 
-    private static void entityName(CollectorConfig config, TranslationStore store) {
-        while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
+    private static void entityName(ModConfig config, TranslationStore store) {
+        while (config.nametagMode() != ModConfig.NametagMode.REPLACE) {
             config.cycleNametagMode();
         }
         net.minecraft.network.chat.Component altar = net.minecraft.network.chat.Component
@@ -258,8 +258,8 @@ public final class WynntilsTextTest {
         net.minecraft.network.chat.Component odd =
                 net.minecraft.network.chat.Component.literal("Qwertyuiop Zxcv");
         check("翻不出來的原樣回去", WynntilsNames.entityName(odd, config, store) == odd);
-        CollectorConfig.NametagMode was = config.nametagMode();
-        while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
+        ModConfig.NametagMode was = config.nametagMode();
+        while (config.nametagMode() != ModConfig.NametagMode.OFF) {
             config.cycleNametagMode();
         }
         check("名牌那一列關掉時原樣回去",
@@ -275,7 +275,7 @@ public final class WynntilsTextTest {
         }
     }
 
-    private static void beaconCount(CollectorConfig config) {
+    private static void beaconCount(ModConfig config) {
         System.out.println("=== 信標計數 ===");
         List<String> rows = List.of("\u00a7eYellow: 0", "\u00a79Blue: 0", "\u00a75Purple: 0",
                 "\u00a77Gray: 0/3", "\u00a76Orange: 0 (+1) (5)", "\u00a7bAqua: 0",
@@ -285,7 +285,7 @@ public final class WynntilsTextTest {
         for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
-            store.setNameMode(CollectorConfig.ItemNames.BOTH);
+            store.setNameMode(ModConfig.ItemNames.BOTH);
             StringBuilder left = new StringBuilder();
             StringBuilder gear = new StringBuilder();
             for (String row : rows) {
@@ -311,7 +311,7 @@ public final class WynntilsTextTest {
         }
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_tw"));
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
         for (String name : List.of("Halcyon", "Cumulonimbus")) {
             check("前提：" + name + " 是翻好的裝備名", store.lookup(name) != null);
             StyledText in = StyledText.fromString("\u00a7f" + name + ": 0/1");
@@ -321,7 +321,7 @@ public final class WynntilsTextTest {
         }
     }
 
-    private static void statusEffects(CollectorConfig config) throws Exception {
+    private static void statusEffects(ModConfig config) throws Exception {
         check("尾巴是倒數的時間：是狀態列", WynntilsScreenText.statusRow("29% Resistance (00:27)")
                 && WynntilsScreenText.statusRow("Tree Manipulation (**:**)")
                 && WynntilsScreenText.statusRow("8% Strength (1:05:00) "));
@@ -344,8 +344,8 @@ public final class WynntilsTextTest {
                 continue;
             }
             String worn = store.lookup(gear);
-            for (CollectorConfig.ItemNames mode : List.of(CollectorConfig.ItemNames.ON,
-                    CollectorConfig.ItemNames.BOTH)) {
+            for (ModConfig.ItemNames mode : List.of(ModConfig.ItemNames.ON,
+                    ModConfig.ItemNames.BOTH)) {
                 store.setNameMode(mode);
                 StyledText row = StyledText.fromString(
                         "\u00a7729% \u00a7f" + gear + " \u00a77(00:27)");
@@ -357,7 +357,7 @@ public final class WynntilsTextTest {
                 check(lang + "／" + mode + "：★ 沒有期限的那一種也一樣（實際 " + out + "）",
                         out.contains(gear) && !out.contains(worn));
             }
-            store.setNameMode(CollectorConfig.ItemNames.ON);
+            store.setNameMode(ModConfig.ItemNames.ON);
             String strength = store.lookup("Strength");
             if (strength != null && !strength.equals("Strength")) {
                 StyledText row = StyledText.fromString("\u00a778% \u00a7fStrength \u00a77(00:" + (30 + lang.charAt(0) % 20 + lang.charAt(3) % 7) + ")");
@@ -371,7 +371,7 @@ public final class WynntilsTextTest {
     private static final String BOOK_HINT =
             "Filter and sort using the buttons at the top and select content to track from the list!";
 
-    private static void bookHint(CollectorConfig config) throws Exception {
+    private static void bookHint(ModConfig config) throws Exception {
         ClassNode book = classNode("com/wynntils/screens/activities/WynntilsContentBookScreen");
         String drawn = null;
         boolean seen = false;
@@ -438,7 +438,7 @@ public final class WynntilsTextTest {
         }
     }
 
-    private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
+    private static void wynntilsScreens(ModConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
         StyledText shown = WynntilsScreenText.screenText(inProgress, config, store);
         check("綜合頁面的狀態翻得出來（實際 " + shown.getString() + "）",
@@ -468,7 +468,7 @@ public final class WynntilsTextTest {
         screenCache(config, store);
     }
 
-    private static void screenCache(CollectorConfig config, TranslationStore store) {
+    private static void screenCache(ModConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
 
         String once = WynntilsScreenText.screenText(inProgress, config, store).getString();

@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.PresenceAccount;
@@ -41,9 +41,9 @@ final class PrivacyTab {
     List<Row> privacy() {
         List<Row> rows = new ArrayList<>();
         rows.add(Row.toggle("privacy.online", SettingsScreen.t("privacy.online"), SettingsScreen.t("privacy.online.hint"))
-                .on(() -> SettingsScreen.cfg().consent() == CollectorConfig.Consent.AGREED)
+                .on(() -> SettingsScreen.cfg().consent() == ModConfig.Consent.AGREED)
                 .flip(() -> {
-                    boolean agree = SettingsScreen.cfg().consent() != CollectorConfig.Consent.AGREED;
+                    boolean agree = SettingsScreen.cfg().consent() != ModConfig.Consent.AGREED;
                     ModNetwork.setConsent(agree);
                     screen.say(T.s(agree ? "privacy.online.on" : "privacy.online.off"), Ui.GREEN);
                     screen.rebuild();

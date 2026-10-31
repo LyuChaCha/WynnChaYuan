@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,30 +38,30 @@ public final class LanguagePickTest {
 
         Path dir = Files.createTempDirectory("wynnchayuan-lang");
         Path file = dir.resolve("config.json");
-        CollectorConfig first = new CollectorConfig(file);
+        ModConfig first = new ModConfig(file);
         check("預設是空的（跟著遊戲走）", first.language().isEmpty());
         first.setLanguage("zh_cn");
         check("設完就讀得到", "zh_cn".equals(first.language()));
 
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("★ 重開之後還在（這一條本來是壞的）",
                 "zh_cn".equals(again.language()));
 
         again.setLanguage("");
         check("清回空字串也存得住",
-                new CollectorConfig(file).language().isEmpty());
+                new ModConfig(file).language().isEmpty());
 
         check("輔助語言預設是自動（空字串）",
                 again.fallbackLanguage().isEmpty());
         again.setFallbackLanguage("off");
         check("★ 選了『顯示原文』之後存得住",
-                "off".equals(new CollectorConfig(file).fallbackLanguage()));
+                "off".equals(new ModConfig(file).fallbackLanguage()));
         again.setFallbackLanguage("zh_tw");
         check("指名一種語言也存得住",
-                "zh_tw".equals(new CollectorConfig(file).fallbackLanguage()));
+                "zh_tw".equals(new ModConfig(file).fallbackLanguage()));
         again.setFallbackLanguage("");
         check("清回自動也存得住",
-                new CollectorConfig(file).fallbackLanguage().isEmpty());
+                new ModConfig(file).fallbackLanguage().isEmpty());
 
         report();
     }
