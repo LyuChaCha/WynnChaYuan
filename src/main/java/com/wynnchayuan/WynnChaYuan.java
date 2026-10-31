@@ -8,6 +8,7 @@ import com.wynnchayuan.listener.MarketListener;
 import com.wynnchayuan.listener.TitleListener;
 import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.RenderListener;
+import com.wynnchayuan.listener.WorldReset;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.listener.ScoreboardListener;
 import com.wynnchayuan.listener.TrackerListener;
@@ -20,6 +21,7 @@ import net.fabricmc.api.ClientModInitializer;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -167,6 +169,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         } catch (Throwable t) {
             ModLog.info("點擊監聽註冊失敗，說話者只看名牌：" + t);
         }
+
+        ClientPlayConnectionEvents.DISCONNECT.register(
+                (handler, client) -> client.execute(WorldReset::reset));
 
         ScreenEvents.AFTER_INIT.register((client, screen, w, h) -> {
             ScreenEvents.afterRender(screen).register(

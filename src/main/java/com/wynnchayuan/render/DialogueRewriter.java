@@ -27,6 +27,12 @@ public final class DialogueRewriter {
 
     static boolean tooLong;
 
+    public static void forget() {
+        tooLong = false;
+        DialogueTyping.forget();
+        DialogueForecast.forgetAll();
+    }
+
     public static boolean bodyTooLong() {
         return tooLong;
     }

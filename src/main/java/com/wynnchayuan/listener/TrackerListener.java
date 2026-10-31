@@ -51,8 +51,7 @@ public final class TrackerListener {
 
     @SubscribeEvent
     public void onWorldState(WorldStateEvent event) {
-        TrackerOverlay.clear();
-        com.wynnchayuan.render.DialogueOverlay.clear();
+        WorldReset.reset();
         var state = event.getNewState();
         if (state == com.wynntils.models.worlds.type.WorldState.CHARACTER_SELECTION
                 || state == com.wynntils.models.worlds.type.WorldState.WORLD) {
