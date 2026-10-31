@@ -320,8 +320,10 @@ public final class TranslationStore {
     public record Guess(String name, String source) {}
 
     public static String normalise(String text) {
-        return text == null ? "" : text.strip().replaceAll("\\s+", " ");
+        return text == null ? "" : WHITESPACE.matcher(text.strip()).replaceAll(" ");
     }
+
+    private static final java.util.regex.Pattern WHITESPACE = java.util.regex.Pattern.compile("\\s+");
 
     public static String unwrap(String text) {
         if (text == null) {
@@ -488,8 +490,10 @@ public final class TranslationStore {
 
     static String bareName(String key) {
         return key.indexOf(ICON) < 0 ? key
-                : key.replace(ICON, " ").strip().replaceAll(" {2,}", " ");
+                : DOUBLE_SPACE.matcher(key.replace(ICON, " ").strip()).replaceAll(" ");
     }
+
+    private static final java.util.regex.Pattern DOUBLE_SPACE = java.util.regex.Pattern.compile(" {2,}");
 
     static final ThreadLocal<Boolean> HOLD_APPENDED =
             ThreadLocal.withInitial(() -> Boolean.FALSE);
@@ -535,6 +539,10 @@ public final class TranslationStore {
     }
 
     static String respell(String text) {
+        if (!(text.contains("our") || text.contains("tre") || text.contains("bre")
+                || text.contains("ence") || text.contains("ell") || text.contains("ise"))) {
+            return text;
+        }
         String out = text;
         for (int i = 0; i < SPELLING.length; i++) {
             out = out.replace(SPELLING[i][0], SPELLING[i][1]);

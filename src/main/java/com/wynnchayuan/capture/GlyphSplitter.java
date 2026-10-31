@@ -55,8 +55,14 @@ public final class GlyphSplitter {
     }
 
     private static boolean hasReadable(String s) {
-        return s.codePoints().anyMatch(cp ->
-                !isGlyphCodePoint(cp) && (Character.isLetter(cp) || Character.isDigit(cp)));
+        for (int at = 0; at < s.length(); ) {
+            int cp = s.codePointAt(at);
+            at += Character.charCount(cp);
+            if (!isGlyphCodePoint(cp) && (Character.isLetter(cp) || Character.isDigit(cp))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // 1.21.11 一般文字帶非 null 的 FontDescription.DEFAULT
@@ -92,15 +98,31 @@ public final class GlyphSplitter {
         return NUMBERS.matcher(s);
     }
 
-    public static String stripGlyphChars(String s) {
-        if (s.codePoints().noneMatch(GlyphSplitter::isGlyphCodePoint)) {
-            return s;
+    public static boolean hasDigit(String s) {
+        for (int at = 0; at < s.length(); at++) {
+            char c = s.charAt(at);
+            if (c >= '0' && c <= '9') {
+                return true;
+            }
         }
-        StringBuilder out = new StringBuilder(s.length());
-        s.codePoints()
-         .filter(cp -> !isGlyphCodePoint(cp))
-         .forEach(out::appendCodePoint);
-        return out.toString();
+        return false;
+    }
+
+    public static String stripGlyphChars(String s) {
+        StringBuilder out = null;
+        for (int at = 0; at < s.length(); ) {
+            int cp = s.codePointAt(at);
+            int next = at + Character.charCount(cp);
+            if (isGlyphCodePoint(cp)) {
+                if (out == null) {
+                    out = new StringBuilder(s.length()).append(s, 0, at);
+                }
+            } else if (out != null) {
+                out.append(s, at, next);
+            }
+            at = next;
+        }
+        return out == null ? s : out.toString();
     }
 
     public static List<String> extractGlyphs(StyledText text) {
@@ -139,13 +161,25 @@ public final class GlyphSplitter {
         if (s.isBlank()) {
             return false;
         }
-        return s.codePoints()
-                .filter(cp -> !Character.isWhitespace(cp))
-                .allMatch(GlyphSplitter::isGlyphCodePoint);
+        for (int at = 0; at < s.length(); ) {
+            int cp = s.codePointAt(at);
+            at += Character.charCount(cp);
+            if (!Character.isWhitespace(cp) && !isGlyphCodePoint(cp)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean hasLetter(String s) {
-        return s.codePoints().anyMatch(cp -> Character.isLetter(cp) && !isGlyphCodePoint(cp));
+        for (int at = 0; at < s.length(); ) {
+            int cp = s.codePointAt(at);
+            at += Character.charCount(cp);
+            if (Character.isLetter(cp) && !isGlyphCodePoint(cp)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static final java.util.List<String> STATUS_WORDS = java.util.List.of("Distorted");

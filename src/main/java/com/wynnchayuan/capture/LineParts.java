@@ -281,21 +281,23 @@ public record LineParts(
                 return;
             }
         }
-        Matcher place = PlaceNames.matcher(text);
         int from = 0;
-        if (place != null) {
-            while (place.find()) {
-                appendNumbers(text.substring(from, place.start()), style, tmpl, numbers);
-                tmpl.append(GlyphSplitter.PLACE_PLACEHOLDER);
-                places.add(new Piece(place.group(), style));
-                from = place.end();
-            }
+        for (PlaceNames.Span place = PlaceNames.next(text, 0); place != null;
+                place = PlaceNames.next(text, from)) {
+            appendNumbers(text.substring(from, place.start()), style, tmpl, numbers);
+            tmpl.append(GlyphSplitter.PLACE_PLACEHOLDER);
+            places.add(new Piece(text.substring(place.start(), place.end()), style));
+            from = place.end();
         }
         appendNumbers(text.substring(from), style, tmpl, numbers);
     }
 
     private static void appendNumbers(String text, Style style,
                                       StringBuilder tmpl, List<Piece> numbers) {
+        if (!GlyphSplitter.hasDigit(text)) {
+            tmpl.append(text);
+            return;
+        }
         Matcher m = GlyphSplitter.numberMatcher(text);
         int from = 0;
         while (m.find()) {

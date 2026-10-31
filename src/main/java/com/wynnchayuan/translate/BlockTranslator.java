@@ -246,23 +246,21 @@ final class BlockTranslator {
         String text = joined.toString();
         List<LineParts.Piece> merged = new ArrayList<>();
         boolean crossed = false;
-        java.util.regex.Matcher place = PlaceNames.matcher(text);
-        if (place != null) {
-            StringBuilder out = new StringBuilder();
-            int from = 0;
-            int taken = 0;
-            while (place.find()) {
-                taken = carry(text, from, place.start(), named, taken, merged);
-                out.append(text, from, place.start())
-                   .append(GlyphSplitter.PLACE_PLACEHOLDER);
-                merged.add(new LineParts.Piece(place.group(), style));
-                crossed = true;
-                from = place.end();
-            }
-            if (crossed) {
-                carry(text, from, text.length(), named, taken, merged);
-                text = out.append(text.substring(from)).toString();
-            }
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        int taken = 0;
+        for (PlaceNames.Span place = PlaceNames.next(text, 0); place != null;
+                place = PlaceNames.next(text, from)) {
+            taken = carry(text, from, place.start(), named, taken, merged);
+            out.append(text, from, place.start())
+               .append(GlyphSplitter.PLACE_PLACEHOLDER);
+            merged.add(new LineParts.Piece(text.substring(place.start(), place.end()), style));
+            crossed = true;
+            from = place.end();
+        }
+        if (crossed) {
+            carry(text, from, text.length(), named, taken, merged);
+            text = out.append(text.substring(from)).toString();
         }
         if (!crossed) {
             merged = named;

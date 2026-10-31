@@ -404,13 +404,15 @@ final class TranslationIndex {
         if (hit == null) {
             hit = indented(key, topOnly);
         }
-        if (hit == null) {
-            String other = respell(key);
-            if (!other.equals(key)) {
-                hit = exact(other, topOnly);
-                if (hit == null) {
-                    hit = indented(other, topOnly);
-                }
+        if (hit != null) {
+            return hit;
+        }
+        String other = respell(key);
+        boolean respelled = !other.equals(key);
+        if (respelled) {
+            hit = exact(other, topOnly);
+            if (hit == null) {
+                hit = indented(other, topOnly);
             }
         }
         if (hit == null && (!topOnly || fromTop("marked", LooseMatcher.sameMarks(key)))) {
@@ -419,11 +421,8 @@ final class TranslationIndex {
         if (hit == null) {
             hit = loose(key, topOnly);
         }
-        if (hit == null) {
-            String other = respell(key);
-            if (!other.equals(key)) {
-                hit = loose(other, topOnly);
-            }
+        if (hit == null && respelled) {
+            hit = loose(other, topOnly);
         }
         return hit;
     }

@@ -136,8 +136,10 @@ public final class OwnOutputs {
         String t = MARKUP.matcher(s).replaceAll("");
         t = NUMBERED.matcher(t).replaceAll("{~}");
         t = CONTINUATION.matcher(t).replaceAll(" ");
-        return t.strip().replaceAll("\\s+", " ");
+        return WHITESPACE.matcher(t.strip()).replaceAll(" ");
     }
+
+    private static final Pattern WHITESPACE = Pattern.compile("\\s+");
 
     static long hash(String s) {
         long h = 0xcbf29ce484222325L;

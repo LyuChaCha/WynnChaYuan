@@ -89,6 +89,7 @@ final class ChatTranslator {
         }
         Component rebuilt = null;
         String tried = null;
+        LineParts framed = null;
         for (int step = 0; step < 7 && rebuilt == null; step++) {
             LineParts using = parts;
             List<LineParts.Piece> glyphs = null;
@@ -101,8 +102,9 @@ final class ChatTranslator {
                     glyphs = TemplateRenderer.unwrappedGlyphs(parts.template(), parts.glyphs());
                 }
                 case 3, 4 -> {
-                    LineParts framed = com.wynnchayuan.capture.Broadcasts.find(message) == null
-                            ? framedOnMiss(message, parts, store) : null;
+                    if (step == 3 && com.wynnchayuan.capture.Broadcasts.find(message) == null) {
+                        framed = framedOnMiss(message, parts, store);
+                    }
                     if (framed != null) {
                         using = framed;
                         if (step == 3) {

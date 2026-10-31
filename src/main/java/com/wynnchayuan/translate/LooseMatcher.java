@@ -145,13 +145,18 @@ final class LooseMatcher {
                 out.append(c);
             }
         }
-        String flat = out.toString().replaceAll("\\.{2,}", "...");
+        String flat = out.toString();
+        if (flat.contains("..")) {
+            flat = DOT_RUN.matcher(flat).replaceAll("...");
+        }
         int end = flat.length();
         while (end > 0 && ".!?~".indexOf(flat.charAt(end - 1)) >= 0) {
             end--;
         }
         return flat.substring(0, end).strip().toLowerCase(java.util.Locale.ROOT);
     }
+
+    private static final java.util.regex.Pattern DOT_RUN = java.util.regex.Pattern.compile("\\.{2,}");
 
     private static final int MIN_LOOSE_LENGTH = 12;
 
