@@ -2,13 +2,20 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.translate.FlowedDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.SpaceOffset;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public final class DialogueOverlay {
@@ -36,8 +43,7 @@ public final class DialogueOverlay {
 
     static volatile long lastUpdate = 0;
 
-    static final net.minecraft.network.chat.TextColor SPEAKER_COLOUR =
-            net.minecraft.network.chat.TextColor.fromRgb(0xFFD966);
+    static final TextColor SPEAKER_COLOUR = TextColor.fromRgb(0xFFD966);
 
     private DialogueOverlay() {}
 
@@ -99,7 +105,7 @@ public final class DialogueOverlay {
     public static void setCurrent(StyledText dialogue, TranslationStore store,
                                   boolean hasChoices) {
         if (hasChoices && dialogue != null) {
-            com.wynnchayuan.translate.FlowedDebug.noteChoices(dialogue.getString());
+            FlowedDebug.noteChoices(dialogue.getString());
         }
         boolean bodyOff = WynnChaYuan.config().dialogueMode()
                 == CollectorConfig.DialogueMode.OFF;
@@ -140,7 +146,7 @@ public final class DialogueOverlay {
         List<List<Component>> rendered = new ArrayList<>(raws.length);
         for (int i = 0; i < raws.length; i++) {
             StyledText line = DialogueIcons.line(raws[i], store);
-            String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+            String template = GlyphSplitter.toTemplate(line);
             List<Component> target = lines;
 
             String settled = skip ? null : settledSource(i, raws[i], template);
@@ -183,8 +189,8 @@ public final class DialogueOverlay {
                 target.addAll(Boxes.toLines(LineTranslator.untranslated(line)));
             }
         }
-        settledFor = java.util.Collections.unmodifiableList(new ArrayList<>(sources));
-        settledRaws = java.util.Collections.unmodifiableList(seenRaws);
+        settledFor = Collections.unmodifiableList(new ArrayList<>(sources));
+        settledRaws = Collections.unmodifiableList(seenRaws);
         shown = List.copyOf(rendered);
         shownGeneration = DialogueIcons.generation();
         speaker = said != null && !said.isBlank() ? said : null;
@@ -225,8 +231,7 @@ public final class DialogueOverlay {
         }
         StringBuilder out = new StringBuilder(text.length());
         text.codePoints()
-                .filter(cp -> !com.wynnchayuan.translate.SpaceOffset.isOffset(cp))
-                .forEach(out::appendCodePoint);
+                .filter(cp -> !SpaceOffset.isOffset(cp)).forEach(out::appendCodePoint);
         return out.toString().strip();
     }
 
@@ -245,7 +250,7 @@ public final class DialogueOverlay {
             return false;
         }
         StyledText line = DialogueIcons.line(raws[raws.length - 1], store);
-        return store.couldStillMatch(com.wynnchayuan.capture.GlyphSplitter.toTemplate(line));
+        return store.couldStillMatch(GlyphSplitter.toTemplate(line));
     }
 
     static List<Component> blankLike(List<Component> shown) {
@@ -273,7 +278,7 @@ public final class DialogueOverlay {
 
     static Component recolour(StyledText line, String source, TranslationStore store) {
         String dst = store.lookup(source);
-        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
+        LineParts parts = LineParts.of(line);
         if (dst == null || dst.isBlank()
                 || !(DialogueIcons.iconic(parts) || DialogueIcons.hasColourMarks(dst))) {
             return null;
@@ -289,9 +294,9 @@ public final class DialogueOverlay {
     static LineResult translateLine(StyledText line, String template, TranslationStore store,
                                     boolean steady) {
         if (DialogueTyping.learnName(line.getString(), store)) {
-            template = com.wynnchayuan.capture.LineParts.of(line).template();
+            template = LineParts.of(line).template();
         }
-        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(line);
+        LineParts parts = LineParts.of(line);
         boolean iconic = DialogueIcons.iconic(parts);
         String exact = store.lookup(template.strip());
         Component translated;
@@ -309,10 +314,10 @@ public final class DialogueOverlay {
         }
         if (translated == null) {
             source = store.matchPrefix(template, template.strip().length(),
-                                       com.wynnchayuan.capture.CurrentQuest.get());
+                                       CurrentQuest.get());
             if (source == null) {
                 source = store.nearQuestLine(template,
-                                             com.wynnchayuan.capture.CurrentQuest.get());
+                                             CurrentQuest.get());
             }
             if (source == null) {
                 source = FORECAST.guess(store, template.strip());

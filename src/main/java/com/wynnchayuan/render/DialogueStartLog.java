@@ -1,5 +1,10 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.DialogueSpeaker;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.SelfNames;
+import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
@@ -7,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalTime;
 import java.util.Optional;
 
 public final class DialogueStartLog {
@@ -105,8 +111,8 @@ public final class DialogueStartLog {
             start = t;
             frames = 0;
             firstProgress = progress[0];
-            speaker = com.wynnchayuan.capture.DialogueSpeaker.current();
-            quest = com.wynnchayuan.capture.CurrentQuest.get();
+            speaker = DialogueSpeaker.current();
+            quest = CurrentQuest.get();
             style = look[0];
             portrait = look[1];
             outcome = "";
@@ -136,12 +142,12 @@ public final class DialogueStartLog {
         long span = Math.max(0, lastFrame - start);
         String rate = span <= 0 ? "?" : String.format("%.1f", text.length() * 1000.0 / span);
         String shown = text;
-        String self = com.wynnchayuan.capture.SelfNames.find(shown);
+        String self = SelfNames.find(shown);
         if (self != null) {
             shown = shown.replace(self, "{u}");
         }
         String line = String.join(" | ",
-                java.time.LocalTime.now().withNano(0).toString(),
+                LocalTime.now().withNano(0).toString(),
                 hex(firstProgress) + "→" + hex(lastProgress),
                 String.valueOf(speaker), String.valueOf(quest),
                 String.valueOf(style), String.valueOf(portrait),
@@ -163,9 +169,8 @@ public final class DialogueStartLog {
 
     private static String letters(String raw) {
         StringBuilder out = new StringBuilder();
-        raw.codePoints().filter(cp -> !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)
-                        && !com.wynnchayuan.translate.SpaceOffset.isOffset(cp))
-                .forEach(out::appendCodePoint);
+        raw.codePoints().filter(cp -> !GlyphSplitter.isGlyphCodePoint(cp)
+                        && !SpaceOffset.isOffset(cp)).forEach(out::appendCodePoint);
         return out.toString().strip();
     }
 

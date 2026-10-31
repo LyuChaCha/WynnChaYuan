@@ -1,19 +1,36 @@
 package com.wynnchayuan.render;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.NativeImage;
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ConfigFolder;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.client.ShotScreen;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
+import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
+import net.minecraft.client.gui.components.toasts.SystemToast;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.sounds.SoundEvents;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -40,15 +57,12 @@ public final class PanelShot {
 
     private static void log(String stage) {
         try {
-            java.nio.file.Path dir = com.wynnchayuan.ConfigFolder.debugDir(
-                    net.fabricmc.loader.api.FabricLoader.getInstance()
+            Path dir = ConfigFolder.debugDir(FabricLoader.getInstance()
                             .getConfigDir().resolve(WynnChaYuan.MOD_ID));
-            java.nio.file.Files.writeString(dir.resolve("shot-debug.txt"),
-                    java.time.LocalTime.now().withNano(0) + "  " + stage
+            Files.writeString(dir.resolve("shot-debug.txt"),
+                    LocalTime.now().withNano(0) + "  " + stage
                             + System.lineSeparator(),
-                    java.nio.charset.StandardCharsets.UTF_8,
-                    java.nio.file.StandardOpenOption.CREATE,
-                    java.nio.file.StandardOpenOption.APPEND);
+                    StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (Throwable t) {
             ErrorDebug.note("PanelShot#log", null, t);
         }
@@ -58,8 +72,7 @@ public final class PanelShot {
         bound = mapping;
         String where = "?";
         try {
-            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                    .getBoundKeyOf(mapping);
+            var key = KeyBindingHelper.getBoundKeyOf(mapping);
             if (key != null) {
                 where = key.getName();
             }
@@ -74,10 +87,9 @@ public final class PanelShot {
             return false;
         }
         try {
-            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                    .getBoundKeyOf(bound);
+            var key = KeyBindingHelper.getBoundKeyOf(bound);
             return key != null
-                    && key.getValue() != com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue();
+                    && key.getValue() != InputConstants.UNKNOWN.getValue();
         } catch (Throwable t) {
             ErrorDebug.note("PanelShot#hasKey", null, t);
             return false;
@@ -89,9 +101,8 @@ public final class PanelShot {
             return "未設定";
         }
         try {
-            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                    .getBoundKeyOf(bound);
-            if (key == null || key.getValue() == com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue()) {
+            var key = KeyBindingHelper.getBoundKeyOf(bound);
+            if (key == null || key.getValue() == InputConstants.UNKNOWN.getValue()) {
                 return "未設定";
             }
             return bound.getTranslatedKeyMessage().getString();
@@ -106,13 +117,12 @@ public final class PanelShot {
             return null;
         }
         try {
-            var mine = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                    .getBoundKeyOf(bound);
+            var mine = KeyBindingHelper.getBoundKeyOf(bound);
             if (mine == null
-                    || mine.getValue() == com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue()) {
+                    || mine.getValue() == InputConstants.UNKNOWN.getValue()) {
                 return null;
             }
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             if (mc == null || mc.options == null) {
                 return null;
             }
@@ -120,11 +130,9 @@ public final class PanelShot {
                 if (other == bound) {
                     continue;
                 }
-                var theirs = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                        .getBoundKeyOf(other);
+                var theirs = KeyBindingHelper.getBoundKeyOf(other);
                 if (theirs != null && theirs.getValue() == mine.getValue()) {
-                    return net.minecraft.network.chat.Component
-                            .translatable(other.getName()).getString();
+                    return Component.translatable(other.getName()).getString();
                 }
             }
         } catch (Throwable t) {
@@ -134,24 +142,21 @@ public final class PanelShot {
     }
 
     public static void request() {
-        if (WynnChaYuan.config().shotMode() == com.wynnchayuan.CollectorConfig
-                .ShotMode.OFF) {
+        if (WynnChaYuan.config().shotMode() == CollectorConfig.ShotMode.OFF) {
             return;
         }
         pending = true;
         log("request：收到，準備拍");
-        tell(Component.literal(com.wynnchayuan.client.T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
+        tell(Component.literal(T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
     }
 
     // MC 1.21.5 起 GUI 延後繪製，改在 tick 讀 framebuffer
     private static boolean wasDown = false;
 
     public static void listen() {
-        net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT.register(
-                (client, screen, width, height) -> {
+        ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
                     // afterKeyPress 只在畫面沒吃鍵時跑，背包與 Wynntils 會吃鍵
-                    net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
-                            .beforeKeyPress(screen).register((s, keyEvent) -> {
+                    ScreenKeyboardEvents.beforeKeyPress(screen).register((s, keyEvent) -> {
                                 if (bound != null && bound.matches(keyEvent)) {
                                     log("畫面鍵盤事件（前置）：收到截圖鍵（"
                                             + screen.getClass().getSimpleName() + "）");
@@ -160,8 +165,7 @@ public final class PanelShot {
                                     noteOtherKey(screen, keyEvent);
                                 }
                             });
-                    net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
-                            .afterKeyPress(screen).register((s, keyEvent) -> {
+                    ScreenKeyboardEvents.afterKeyPress(screen).register((s, keyEvent) -> {
                                 if (bound != null && bound.matches(keyEvent)) {
                                     log("畫面鍵盤事件（後置）：收到截圖鍵（"
                                             + screen.getClass().getSimpleName() + "）");
@@ -172,8 +176,7 @@ public final class PanelShot {
         log("listen：已掛上畫面鍵盤事件（前置與後置）");
     }
 
-    private static void noteOtherKey(net.minecraft.client.gui.screens.Screen screen,
-                                     Object keyEvent) {
+    private static void noteOtherKey(Screen screen, Object keyEvent) {
         if (keyLogged >= KEY_LOG_LIMIT) {
             return;
         }
@@ -196,12 +199,11 @@ public final class PanelShot {
             capture();
             return;
         }
-        if (!com.wynnchayuan.render.DialogueOverlay.hasContent()) {
+        if (!DialogueOverlay.hasContent()) {
             log("tick：畫面上沒有任何譯文（w=" + lastW + " h=" + lastH
                     + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame)
                     + "ms），不拍");
-            tell(com.wynnchayuan.client.T.c("shot.nothing")
-                    .withStyle(ChatFormatting.YELLOW));
+            tell(T.c("shot.nothing").withStyle(ChatFormatting.YELLOW));
             return;
         }
         log("tick：沒有可裁的框但對話框有譯文（距上次繪製="
@@ -252,19 +254,16 @@ public final class PanelShot {
             try (NativeImage image = full) {
                 cropped = crop(image, px, py, pw, ph);
             } catch (Exception e) {
-                tell(Component.literal(com.wynnchayuan.client.T.s("shot.capture_failed", e.getMessage()))
+                tell(Component.literal(T.s("shot.capture_failed", e.getMessage()))
                         .withStyle(ChatFormatting.RED));
                 return;
             }
             mc.execute(() -> {
                 try {
-                    mc.setScreen(new com.wynnchayuan.client.ShotScreen(
-                            cropped, name, mc.screen));
+                    mc.setScreen(new ShotScreen(cropped, name, mc.screen));
                 } catch (Throwable t) {
-                    com.wynnchayuan.translate.ErrorDebug.note(
-                            "shot.screen", name, t);
-                    tell(Component.literal(com.wynnchayuan.client.T.s("shot.panel_failed",
-                            t.getClass().getSimpleName()))
+                    ErrorDebug.note("shot.screen", name, t);
+                    tell(Component.literal(T.s("shot.panel_failed", t.getClass().getSimpleName()))
                             .withStyle(ChatFormatting.YELLOW));
                     save(cropped, name);
                 }
@@ -298,7 +297,7 @@ public final class PanelShot {
             shot.writeToFile(file);
             tell(saved(file));
         } catch (Exception e) {
-            tell(Component.literal(com.wynnchayuan.client.T.s("shot.save_failed", e.getMessage()))
+            tell(Component.literal(T.s("shot.save_failed", e.getMessage()))
                     .withStyle(ChatFormatting.RED));
         }
     }
@@ -306,24 +305,20 @@ public final class PanelShot {
     public static Component saved(Path file) {
         Path abs = file.toAbsolutePath();
         Path dir = abs.getParent();
-        return Component.literal(com.wynnchayuan.client.T.s("shot.saved"))
-                .withStyle(ChatFormatting.GREEN)
+        return Component.literal(T.s("shot.saved")).withStyle(ChatFormatting.GREEN)
                 .append(Component.literal(shown(abs))
                         .withStyle(Style.EMPTY
                                 .withColor(ChatFormatting.WHITE)
                                 .withUnderlined(true)
                                 .withClickEvent(new ClickEvent.OpenFile(abs.toString()))
-                                .withHoverEvent(new net.minecraft.network.chat.HoverEvent
-                                        .ShowText(Component.literal(
-                                                com.wynnchayuan.client.T.s("shot.click_open") + System.lineSeparator()
+                                .withHoverEvent(new HoverEvent.ShowText(Component.literal(
+                                                T.s("shot.click_open") + System.lineSeparator()
                                                 + abs)))))
-                .append(Component.literal("  " + com.wynnchayuan.client.T.s("shot.open_folder"))
-                        .withStyle(Style.EMPTY
+                .append(Component.literal("  " + T.s("shot.open_folder")).withStyle(Style.EMPTY
                                 .withColor(ChatFormatting.GOLD)
                                 .withClickEvent(new ClickEvent.OpenFile(
                                         dir == null ? abs.toString() : dir.toString()))
-                                .withHoverEvent(new net.minecraft.network.chat.HoverEvent
-                                        .ShowText(Component.literal(
+                                .withHoverEvent(new HoverEvent.ShowText(Component.literal(
                                                 dir == null ? abs.toString()
                                                             : dir.toString())))));
     }
@@ -373,9 +368,7 @@ public final class PanelShot {
 
     private static void toast(Minecraft mc, Component message) {
         try {
-            net.minecraft.client.gui.components.toasts.SystemToast.addOrUpdate(
-                    mc.getToastManager(),
-                    net.minecraft.client.gui.components.toasts.SystemToast
+            SystemToast.addOrUpdate(mc.getToastManager(), SystemToast
                             .SystemToastId.PERIODIC_NOTIFICATION,
                     Component.literal(WynnChaYuan.MOD_NAME),
                     message);
@@ -393,10 +386,10 @@ public final class PanelShot {
                     .append(Component.literal("] ")
                             .withStyle(ChatFormatting.DARK_GRAY))
                     .append(message);
-            com.wynnchayuan.capture.OwnOutputs.note(line);
+            OwnOutputs.note(line);
             mc.player.displayClientMessage(line, false);
             mc.player.playSound(
-                    net.minecraft.sounds.SoundEvents.UI_BUTTON_CLICK.value(), 1f, 1f);
+                    SoundEvents.UI_BUTTON_CLICK.value(), 1f, 1f);
         }
     }
 }

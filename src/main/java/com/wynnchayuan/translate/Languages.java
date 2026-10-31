@@ -1,11 +1,21 @@
 package com.wynnchayuan.translate;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.wynnchayuan.ModLog;
+
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public final class Languages {
@@ -28,21 +38,14 @@ public final class Languages {
         return normalise(lang) + "/";
     }
 
-    private static final java.util.Map<String, String> NATIVE =
-            java.util.Map.ofEntries(
-                    java.util.Map.entry("zh_tw", "繁體中文"),
-                    java.util.Map.entry("zh_cn", "简体中文"),
-                    java.util.Map.entry("ja_jp", "日本語"),
-                    java.util.Map.entry("ko_kr", "한국어"),
-                    java.util.Map.entry("ru_ru", "Русский"),
-                    java.util.Map.entry("de_de", "Deutsch"),
-                    java.util.Map.entry("fr_fr", "Français"),
-                    java.util.Map.entry("es_es", "Español"),
-                    java.util.Map.entry("pt_br", "Português"),
-                    java.util.Map.entry("tr_tr", "Türkçe"),
-                    java.util.Map.entry("en_us", "English"));
+    private static final Map<String, String> NATIVE = Map.ofEntries(Map.entry("zh_tw", "繁體中文"),
+                    Map.entry("zh_cn", "简体中文"), Map.entry("ja_jp", "日本語"),
+                    Map.entry("ko_kr", "한국어"), Map.entry("ru_ru", "Русский"),
+                    Map.entry("de_de", "Deutsch"), Map.entry("fr_fr", "Français"),
+                    Map.entry("es_es", "Español"), Map.entry("pt_br", "Português"),
+                    Map.entry("tr_tr", "Türkçe"), Map.entry("en_us", "English"));
 
-    public static java.util.List<String> known() {
+    public static List<String> known() {
         return NATIVE.keySet().stream().sorted().toList();
     }
 
@@ -57,10 +60,10 @@ public final class Languages {
             if (in == null) {
                 return List.of(DEFAULT);
             }
-            com.google.gson.JsonElement root = com.google.gson.JsonParser.parseReader(
-                    new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8));
+            JsonElement root = JsonParser.parseReader(
+                    new InputStreamReader(in, StandardCharsets.UTF_8));
             List<String> out = new ArrayList<>();
-            for (com.google.gson.JsonElement el
+            for (JsonElement el
                     : root.getAsJsonObject().getAsJsonArray("languages")) {
                 out.add(el.getAsString());
             }
@@ -93,11 +96,11 @@ public final class Languages {
             for (Path from : loose) {
                 Path to = target.resolve(root.relativize(from));
                 Files.createDirectories(to.getParent());
-                Files.move(from, to, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                Files.move(from, to, StandardCopyOption.REPLACE_EXISTING);
                 moved++;
             }
             try (Stream<Path> rest = Files.walk(root)) {
-                rest.sorted(java.util.Comparator.reverseOrder())
+                rest.sorted(Comparator.reverseOrder())
                     .filter(p -> !p.equals(root) && Files.isDirectory(p))
                     .filter(p -> !inLanguageDir(root, p) && !isLanguageDir(root, p))
                     .forEach(p -> {
@@ -119,8 +122,7 @@ public final class Languages {
         }
     }
 
-    private static final java.util.regex.Pattern LANGUAGE_DIR =
-            java.util.regex.Pattern.compile("[a-z]{2,3}_[a-z0-9]{2,4}");
+    private static final Pattern LANGUAGE_DIR = Pattern.compile("[a-z]{2,3}_[a-z0-9]{2,4}");
 
     private static boolean isLanguageDir(Path root, Path p) {
         Path rel = root.relativize(p);
@@ -161,7 +163,7 @@ public final class Languages {
         if (lang == null || lang.isBlank()) {
             return DEFAULT;
         }
-        String clean = lang.trim().toLowerCase(java.util.Locale.ROOT).replace('-', '_');
+        String clean = lang.trim().toLowerCase(Locale.ROOT).replace('-', '_');
         return clean.matches("[a-z0-9_]+") ? clean : DEFAULT;
     }
 }

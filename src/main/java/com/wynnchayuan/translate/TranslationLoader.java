@@ -1,17 +1,27 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.ModLog;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.ModLog;
+import com.wynnchayuan.capture.DialogueSpeaker;
+import com.wynnchayuan.capture.NameFrames;
+import com.wynnchayuan.client.T;
 
 import java.io.Reader;
+import java.nio.charset.CharacterCodingException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static com.wynnchayuan.translate.TranslationStore.normalise;
@@ -31,17 +41,16 @@ final class TranslationLoader {
         }
         layer = translations.topLayer;
         translations.nameRules.gearNameKeys.removeAll(translations.nameRules.nameKeys);
-        translations.nameFrames = com.wynnchayuan.capture.NameFrames.of(translations.seenSources);
+        translations.nameFrames = NameFrames.of(translations.seenSources);
         translations.chatSpeakers = TranslationIndex.learnChatSpeakers(translations.entries);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
 
     int layer = 0;
 
-    final java.util.Set<String> thisLayer = new java.util.HashSet<>();
+    final Set<String> thisLayer = new HashSet<>();
 
-    void layered(java.util.Map<String, String> index, String tag,
-                         String key, String value) {
+    void layered(Map<String, String> index, String tag, String key, String value) {
         if (thisLayer.add(tag + '\u0000' + key)) {
             index.put(key, value);
             translations.indexLayer.put(tag + '\0' + key, layer);
@@ -54,10 +63,10 @@ final class TranslationLoader {
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
-                translations.lastResult = com.wynnchayuan.client.T.s("status.folder_created");
+                translations.lastResult = T.s("status.folder_created");
                 ModLog.info("譯文資料夾不存在，已建立：" + dir);
             } catch (Exception e) {
-                translations.lastResult = com.wynnchayuan.client.T.s("status.folder_failed", e.getMessage());
+                translations.lastResult = T.s("status.folder_failed", e.getMessage());
                 ModLog.warn("建立譯文資料夾失敗 " + dir + ": " + e.getMessage());
             }
             return;
@@ -65,7 +74,7 @@ final class TranslationLoader {
 
         try {
             List<String> order = FileIndex.forDirectory(dir);
-            java.util.LinkedHashSet<Path> wanted = new java.util.LinkedHashSet<>();
+            LinkedHashSet<Path> wanted = new LinkedHashSet<>();
             for (String name : order) {
                 if (name.startsWith("_") || !name.endsWith(".json")) {
                     continue;
@@ -84,7 +93,7 @@ final class TranslationLoader {
             wanted.forEach(this::load);
             loadScoped(dir);
         } catch (Exception e) {
-            translations.lastResult = com.wynnchayuan.client.T.s("status.read_failed", e.getMessage());
+            translations.lastResult = T.s("status.read_failed", e.getMessage());
             ModLog.warn("讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
         }
     }
@@ -103,7 +112,7 @@ final class TranslationLoader {
                 }
                 JsonObject obj = root.getAsJsonObject();
                 Map<String, String> into =
-                        translations.scopedOnly.computeIfAbsent(scope, k -> new java.util.HashMap<>());
+                        translations.scopedOnly.computeIfAbsent(scope, k -> new HashMap<>());
                 for (String key : obj.keySet()) {
                     JsonElement v = obj.get(key);
                     if (!key.startsWith("_") && v.isJsonPrimitive()
@@ -123,13 +132,13 @@ final class TranslationLoader {
             return;
         }
         if (translations.loadedFiles == 0) {
-            translations.lastResult = com.wynnchayuan.client.T.s("status.no_json");
+            translations.lastResult = T.s("status.no_json");
             ModLog.info(dir + " 裡沒有譯文檔");
         } else if (translations.entries.isEmpty()) {
-            translations.lastResult = com.wynnchayuan.client.T.s("status.no_dst", translations.loadedFiles);
+            translations.lastResult = T.s("status.no_dst", translations.loadedFiles);
             ModLog.info("讀了 " + translations.loadedFiles + " 個檔案，但沒有任何已填寫的 dst");
         } else {
-            translations.lastResult = com.wynnchayuan.client.T.s("status.loaded", translations.entries.size(), translations.loadedFiles);
+            translations.lastResult = T.s("status.loaded", translations.entries.size(), translations.loadedFiles);
             ModLog.info("已載入 " + translations.entries.size() + " 條譯文（" + translations.loadedFiles + " 個檔案）");
         }
     }
@@ -191,9 +200,9 @@ final class TranslationLoader {
             translations.loadedFiles++;
             ModLog.info("載入譯文 " + file.getFileName()
                     + "：+" + (translations.entries.size() - before) + " 條");
-        } catch (com.google.gson.JsonParseException e) {
-            if (!(e instanceof com.google.gson.JsonIOException)
-                    || e.getCause() instanceof java.nio.charset.CharacterCodingException) {
+        } catch (JsonParseException e) {
+            if (!(e instanceof JsonIOException)
+                    || e.getCause() instanceof CharacterCodingException) {
                 translations.broken.add(file);
             }
             ModLog.warn("略過 " + file.getFileName() + "：" + e.getMessage());
@@ -294,7 +303,7 @@ final class TranslationLoader {
                 String quest = QuestDialogueIndex.questName(optString(e, "quest"));
                 if (quest != null && !quest.isBlank()) {
                     translations.questIndex.byQuest.computeIfAbsent(quest.strip(),
-                            q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
+                            q -> new TreeMap<>()).put(srcKey, dst.strip());
                 }
                 if (quest != null && !quest.isBlank()) {
                     translations.questIndex.questOfLine.put(srcKey, quest.strip());
@@ -305,7 +314,7 @@ final class TranslationLoader {
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
                     translations.questIndex.speakers.put(srcKey, who.strip());
-                    String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(who);
+                    String name = DialogueSpeaker.cleanName(who);
                     if (quest != null && !quest.isBlank() && name != null) {
                         translations.questIndex.questCast.computeIfAbsent(quest.strip(),
                                 q -> ConcurrentHashMap.newKeySet()).add(name);

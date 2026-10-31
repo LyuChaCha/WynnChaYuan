@@ -2,16 +2,46 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.ChoiceScroll;
+import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.DialogueChoices;
 import com.wynnchayuan.capture.DialogueProbe;
+import com.wynnchayuan.capture.DialogueProgress;
+import com.wynnchayuan.capture.DialogueSpeaker;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.render.DialogueIcons;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.DialogueRewriter;
+import com.wynnchayuan.render.DialogueStartLog;
+import com.wynnchayuan.render.PairedFont;
+import com.wynnchayuan.render.SelectorRealign;
+import com.wynnchayuan.render.ThirdPartyLiterals;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.SpaceOffset;
+import com.wynnchayuan.translate.TranslationStore;
+import com.wynntils.core.text.PartStyle;
+import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.StyledTextPart;
+import com.wynntils.core.text.type.StyleType;
 import com.wynntils.handlers.actionbar.ActionBarSegment;
 import com.wynntils.handlers.actionbar.event.ActionBarRenderEvent;
 import com.wynntils.mc.event.SystemMessageEvent;
 import com.wynntils.models.dialogue.actionbar.segments.DialogueSegment;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public final class ActionBarListener {
 
@@ -25,20 +55,19 @@ public final class ActionBarListener {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onGameInfo(SystemMessageEvent.GameInfoReceivedEvent event) {
-        com.wynnchayuan.capture.DialogueSpeaker.noteRaw(event.getMessage());
-        com.wynnchayuan.capture.DialogueProgress.noteRaw(event.getMessage());
-        com.wynnchayuan.render.DialogueStartLog.frame(event.getMessage());
+        DialogueSpeaker.noteRaw(event.getMessage());
+        DialogueProgress.noteRaw(event.getMessage());
+        DialogueStartLog.frame(event.getMessage());
         DialogueProbe.record(event.getMessage());
         DialogueProbe.recordChoices(event.getMessage());
-        java.util.List<String> picks =
-                com.wynnchayuan.capture.DialogueChoices.of(event.getMessage());
+        List<String> picks = DialogueChoices.of(event.getMessage());
         DialogueOverlay.noteChoices(picks,
-                com.wynnchayuan.capture.DialogueChoices.selected(event.getMessage()));
+                DialogueChoices.selected(event.getMessage()));
         if (picks.isEmpty()) {
-            com.wynnchayuan.capture.ChoiceScroll.reset();
+            ChoiceScroll.reset();
         } else {
             for (int i = 0; i < picks.size(); i++) {
-                String stitched = com.wynnchayuan.capture.ChoiceScroll.feed(i, picks.get(i));
+                String stitched = ChoiceScroll.feed(i, picks.get(i));
                 if (stitched != null) {
                     noteFull(i, stitched);
                 }
@@ -47,15 +76,15 @@ public final class ActionBarListener {
         collect(picks);
     }
 
-    private java.util.List<String> lastPicks = java.util.List.of();
-    private java.util.List<String> settling = java.util.List.of();
+    private List<String> lastPicks = List.of();
+    private List<String> settling = List.of();
     private long settlingSince;
 
     private static final long SETTLE_MS = 700;
 
-    private void collect(java.util.List<String> picks) {
+    private void collect(List<String> picks) {
         if (picks.isEmpty() || !WynnChaYuan.config().collect()) {
-            settling = java.util.List.of();
+            settling = List.of();
             return;
         }
         if (!picks.equals(settling)) {
@@ -70,7 +99,7 @@ public final class ActionBarListener {
         lastPicks = picks;
         for (int i = 0; i < picks.size(); i++) {
             String pick = picks.get(i);
-            if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
+            if (PlayerDataFilter.carriesPlayerData(pick)) {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
                 continue;
             }
@@ -78,11 +107,11 @@ public final class ActionBarListener {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.clipped");
                 continue;
             }
-            if (!pick.equals(com.wynnchayuan.capture.ChoiceScroll.first(i))) {
+            if (!pick.equals(ChoiceScroll.first(i))) {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.midScroll");
                 continue;
             }
-            record(pick, com.wynnchayuan.capture.ChoiceScroll.full(i));
+            record(pick, ChoiceScroll.full(i));
         }
     }
 
@@ -90,7 +119,7 @@ public final class ActionBarListener {
         if (!WynnChaYuan.config().collect()) {
             return;
         }
-        String firstWindow = com.wynnchayuan.capture.ChoiceScroll.first(row);
+        String firstWindow = ChoiceScroll.first(row);
         if (firstWindow == null || looksClipped(firstWindow)) {
             return;
         }
@@ -98,25 +127,21 @@ public final class ActionBarListener {
     }
 
     private void record(String pick, String full) {
-        if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
+        if (PlayerDataFilter.carriesPlayerData(pick)) {
             WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
             return;
         }
         if (full != null
-                && com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(full)) {
+                && PlayerDataFilter.carriesPlayerData(full)) {
             WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
             full = null;
         }
-        com.wynntils.core.text.StyledText line =
-                com.wynntils.core.text.StyledText.fromString(pick);
+        StyledText line = StyledText.fromString(pick);
         String template = full == null ? null
-                : com.wynnchayuan.capture.GlyphSplitter.toTemplate(
-                        com.wynntils.core.text.StyledText.fromString(full));
+                : GlyphSplitter.toTemplate(StyledText.fromString(full));
         WynnChaYuan.store().record(
-                com.wynnchayuan.capture.GlyphSplitter.toTemplate(line),
-                "desc", "quest",
-                com.wynnchayuan.capture.CurrentQuest.tag("dialogue/choice", null),
-                template);
+                GlyphSplitter.toTemplate(line), "desc", "quest",
+                CurrentQuest.tag("dialogue/choice", null), template);
     }
 
     static boolean looksClipped(String pick) {
@@ -135,7 +160,7 @@ public final class ActionBarListener {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onGameInfoIcons(SystemMessageEvent.GameInfoReceivedEvent event) {
         try {
-            com.wynnchayuan.render.DialogueIcons.note(event.getMessage());
+            DialogueIcons.note(event.getMessage());
         } catch (Throwable t) {
             ErrorDebug.note("ActionBarListener#onGameInfoIcons", null, t);
         }
@@ -176,7 +201,7 @@ public final class ActionBarListener {
         inDialogue = present;
         if (!present) {
             if (missing + 1 >= CONVERSATION_GAP) {
-                com.wynnchayuan.capture.DialogueProgress.endConversation();
+                DialogueProgress.endConversation();
             }
             if (++missing >= GRACE && DialogueOverlay.hasContent()) {
                 DialogueOverlay.clear();
@@ -193,8 +218,7 @@ public final class ActionBarListener {
             return;
         }
         try {
-            net.minecraft.network.chat.Component swapped =
-                    plainSwap(event.getMessage());
+            Component swapped = plainSwap(event.getMessage());
             if (swapped != null) {
                 event.setMessage(swapped);
             }
@@ -204,40 +228,34 @@ public final class ActionBarListener {
         }
     }
 
-    private static net.minecraft.network.chat.Component plainSwap(
-            net.minecraft.network.chat.Component original) {
+    private static Component plainSwap(Component original) {
         if (original == null) {
             return null;
         }
-        com.wynntils.core.text.StyledText line =
-                com.wynntils.core.text.StyledText.fromComponent(original);
+        StyledText line = StyledText.fromComponent(original);
         if (line.isEmpty()
-                || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(line)) {
+                || GlyphSplitter.isGlyphOnly(line)) {
             return null;
         }
-        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(
-                line.getStringWithoutFormatting())) {
+        if (ThirdPartyLiterals.reserved(line.getStringWithoutFormatting())) {
             return null;
         }
         String template =
-                com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
-        if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
+                GlyphSplitter.toTemplate(line);
+        if (PlayerDataFilter.carriesPlayerData(template)) {
             return null;
         }
-        net.minecraft.network.chat.Component hit;
+        Component hit;
         if (hasSelectorSlot(line)) {
             hit = columnSwap(line, WynnChaYuan.translations());
         } else {
-            hit = com.wynnchayuan.translate.LineTranslator.translate(
-                    line, WynnChaYuan.translations());
+            hit = LineTranslator.translate(line, WynnChaYuan.translations());
             if (hit == null) {
                 hit = columnSwap(line, WynnChaYuan.translations());
             }
         }
-        com.wynnchayuan.render.SelectorRealign.Result fixed =
-                com.wynnchayuan.render.SelectorRealign.apply(hit != null ? hit : original);
-        net.minecraft.network.chat.Component out =
-                hit != null || fixed.changed() ? fixed.out() : null;
+        SelectorRealign.Result fixed = SelectorRealign.apply(hit != null ? hit : original);
+        Component out = hit != null || fixed.changed() ? fixed.out() : null;
         DialogueProbe.columns(original, out, fixed.report());
         if (hit != null) {
             leftovers(line, hit);
@@ -249,49 +267,42 @@ public final class ActionBarListener {
         return out;
     }
 
-    private static final java.util.regex.Pattern COLUMN_GAP =
-            java.util.regex.Pattern.compile("(?<=\\S) {2,}(?=\\S)");
+    private static final Pattern COLUMN_GAP = Pattern.compile("(?<=\\S) {2,}(?=\\S)");
 
-    static net.minecraft.network.chat.Component columnSwap(
-            com.wynntils.core.text.StyledText line,
-            com.wynnchayuan.translate.TranslationStore store) {
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+    static Component columnSwap(StyledText line, TranslationStore store) {
+        MutableComponent out = Component.empty();
         boolean any = false;
-        for (com.wynntils.core.text.StyledTextPart part : line) {
-            String raw = part.getString(null, com.wynntils.core.text.type.StyleType.NONE);
+        for (StyledTextPart part : line) {
+            String raw = part.getString(null, StyleType.NONE);
             if (raw.isEmpty()) {
                 continue;
             }
-            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
-            net.minecraft.network.chat.Style style =
-                    ps == null ? net.minecraft.network.chat.Style.EMPTY : ps.getStyle();
-            net.minecraft.network.chat.FontDescription ours =
-                    com.wynnchayuan.render.PairedFont.forStyle(style);
+            PartStyle ps = part.getPartStyle();
+            Style style = ps == null ? Style.EMPTY : ps.getStyle();
+            FontDescription ours = PairedFont.forStyle(style);
             if (ours != null) {
-                com.wynnchayuan.render.PairedFont.warm(ours);
+                PairedFont.warm(ours);
             }
-            if (ours != null && com.wynnchayuan.render.PairedFont.MARKER.equals(raw)) {
+            if (ours != null && PairedFont.MARKER.equals(raw)) {
                 // 名字前的 U+0001 是 shader 定位標記，要用我們的字型畫
                 out.append(literal(raw, style.withFont(ours)));
                 continue;
             }
-            if (com.wynnchayuan.capture.GlyphSplitter.isGlyphPart(part)
+            if (GlyphSplitter.isGlyphPart(part)
                     || raw.isBlank()) {
                 out.append(literal(raw, style));
                 continue;
             }
             if (!COLUMN_GAP.matcher(raw).find()) {
-                if (ours != null && com.wynnchayuan.capture.GlyphSplitter.hasLetter(raw)) {
+                if (ours != null && GlyphSplitter.hasLetter(raw)) {
                     any |= column(out, raw, style, store);
                 } else {
                     out.append(literal(raw, style));
                 }
                 continue;
             }
-            net.minecraft.network.chat.MutableComponent rebuilt =
-                    net.minecraft.network.chat.Component.empty();
-            java.util.regex.Matcher m = COLUMN_GAP.matcher(raw);
+            MutableComponent rebuilt = Component.empty();
+            Matcher m = COLUMN_GAP.matcher(raw);
             boolean swapped = false;
             int at = 0;
             while (m.find()) {
@@ -310,11 +321,8 @@ public final class ActionBarListener {
         return any ? out : null;
     }
 
-    private static net.minecraft.network.chat.Component archetypeName(
-            String chunk,
-            net.minecraft.network.chat.Style style,
-            com.wynnchayuan.translate.TranslationStore store) {
-        String slot = com.wynnchayuan.render.PairedFont.slot(fontOf(style));
+    private static Component archetypeName(String chunk, Style style, TranslationStore store) {
+        String slot = PairedFont.slot(fontOf(style));
         if (slot == null || !slot.startsWith("selector_name_")) {
             return null;
         }
@@ -323,74 +331,66 @@ public final class ActionBarListener {
             return null;
         }
         return literal(dst, style.withFont(
-                net.minecraft.network.chat.FontDescription.DEFAULT));
+                FontDescription.DEFAULT));
     }
 
-    private static boolean hasSelectorSlot(com.wynntils.core.text.StyledText line) {
-        for (com.wynntils.core.text.StyledTextPart part : line) {
-            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
-            if (ps != null && com.wynnchayuan.render.PairedFont.isHudScreen(ps.getStyle())) {
+    private static boolean hasSelectorSlot(StyledText line) {
+        for (StyledTextPart part : line) {
+            PartStyle ps = part.getPartStyle();
+            if (ps != null && PairedFont.isHudScreen(ps.getStyle())) {
                 return true;
             }
         }
         return false;
     }
 
-    private static boolean column(net.minecraft.network.chat.MutableComponent out,
-                                  String chunk,
-                                  net.minecraft.network.chat.Style style,
-                                  com.wynnchayuan.translate.TranslationStore store) {
-        net.minecraft.network.chat.Component done = archetypeName(chunk, style, store);
+    private static boolean column(MutableComponent out, String chunk, Style style,
+                                  TranslationStore store) {
+        Component done = archetypeName(chunk, style, store);
         if (done == null) {
-            done = com.wynnchayuan.translate.LineTranslator.translateChunk(
-                    chunk, style, store);
+            done = LineTranslator.translateChunk(chunk, style, store);
         }
         if (done == null) {
             out.append(literal(chunk, style));
             collect(chunk);
             return false;
         }
-        if (!com.wynnchayuan.render.DialogueRewriter.renderable(done.getString())) {
+        if (!DialogueRewriter.renderable(done.getString())) {
             out.append(literal(chunk, style));
             return false;
         }
-        net.minecraft.network.chat.Component swapped = refont(done, style);
-        if (chunk.startsWith(com.wynnchayuan.render.PairedFont.MARKER)
-                && !swapped.getString().startsWith(com.wynnchayuan.render.PairedFont.MARKER)) {
-            net.minecraft.network.chat.FontDescription ours =
-                    com.wynnchayuan.render.PairedFont.forStyle(style);
+        Component swapped = refont(done, style);
+        if (chunk.startsWith(PairedFont.MARKER)
+                && !swapped.getString().startsWith(PairedFont.MARKER)) {
+            FontDescription ours = PairedFont.forStyle(style);
             if (ours != null) {
-                swapped = net.minecraft.network.chat.Component.empty()
-                        .append(literal(com.wynnchayuan.render.PairedFont.MARKER,
-                                        style.withFont(ours)))
+                swapped = Component.empty().append(literal(PairedFont.MARKER, style.withFont(ours)))
                         .append(swapped);
             }
         }
         out.append(swapped);
         int gap = owed(chunk, style, swapped);
         if (gap != 0) {
-            String fill = com.wynnchayuan.translate.SpaceOffset.encode(gap);
+            String fill = SpaceOffset.encode(gap);
             if (!fill.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(fill)
-                        .setStyle(com.wynnchayuan.translate.SpaceOffset.styleFor(style)));
+                out.append(Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
             }
         }
         return true;
     }
 
-    private static void leftovers(com.wynntils.core.text.StyledText line,
-                                  net.minecraft.network.chat.Component hit) {
+    private static void leftovers(StyledText line, Component hit) {
         try {
             if (!WynnChaYuan.config().collect() || hit == null) {
                 return;
             }
             String after = hit.getString();
-            for (com.wynntils.core.text.StyledTextPart part : line) {
-                if (com.wynnchayuan.capture.GlyphSplitter.isGlyphPart(part)) {
+            for (StyledTextPart part : line) {
+                if (GlyphSplitter.isGlyphPart(part)) {
                     continue;
                 }
                 String raw = part.getString(
-                        null, com.wynntils.core.text.type.StyleType.NONE);
+                        null, StyleType.NONE);
                 if (raw == null || raw.strip().length() < MIN_LEFTOVER
                         || !after.contains(raw)) {
                     continue;
@@ -409,12 +409,11 @@ public final class ActionBarListener {
             if (!WynnChaYuan.config().collect() || chunk == null || chunk.isBlank()) {
                 return;
             }
-            String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(
-                    com.wynntils.core.text.StyledText.fromString(chunk.strip()));
+            String template = GlyphSplitter.toTemplate(StyledText.fromString(chunk.strip()));
             if (template.isBlank()
-                    || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
-                    || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
-                    || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)) {
+                    || !GlyphSplitter.hasLetter(template)
+                    || PlayerDataFilter.carriesPlayerData(template)
+                    || PlayerDataFilter.looksPlayerNamed(template)) {
                 return;
             }
             WynnChaYuan.store().record(template, "name", "actionbar", "actionbar/column");
@@ -424,10 +423,9 @@ public final class ActionBarListener {
     }
 
     private static int owed(String chunk,
-                            net.minecraft.network.chat.Style style,
-                            net.minecraft.network.chat.Component swapped) {
+                            Style style, Component swapped) {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             if (mc == null || mc.font == null) {
                 return 0;
             }
@@ -444,9 +442,7 @@ public final class ActionBarListener {
     }
 
     // bottom_middle 的 ascent 是 -48，shift_y = 7 − ascent = 55
-    private static net.minecraft.network.chat.Component refont(
-            net.minecraft.network.chat.Component translated,
-            net.minecraft.network.chat.Style original) {
+    private static Component refont(Component translated, Style original) {
         String name = pairedFont(fontOf(original));
         if (name == null) {
             return translated;
@@ -455,37 +451,32 @@ public final class ActionBarListener {
         if (!fontShipped(lang, name)) {
             return translated;
         }
-        net.minecraft.network.chat.FontDescription ours =
-                new net.minecraft.network.chat.FontDescription.Resource(
-                        net.minecraft.resources.Identifier.fromNamespaceAndPath(
+        FontDescription ours = new FontDescription.Resource(Identifier.fromNamespaceAndPath(
                                 WynnChaYuan.MOD_ID, "actionbar/" + lang + "/" + name));
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+        MutableComponent out = Component.empty();
         translated.visit((style, text) -> {
-            net.minecraft.network.chat.Style use =
-                    com.wynnchayuan.capture.GlyphSplitter.isCustomFont(style.getFont())
+            Style use = GlyphSplitter.isCustomFont(style.getFont())
                             ? style : style.withFont(ours);
-            out.append(net.minecraft.network.chat.Component.literal(text).setStyle(use));
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            out.append(Component.literal(text).setStyle(use));
+            return Optional.empty();
+        }, Style.EMPTY);
         return out;
     }
 
     private static String pairedFont(String font) {
-        return com.wynnchayuan.render.PairedFont.slot(font);
+        return PairedFont.slot(font);
     }
 
     private static boolean fontShipped(String lang, String name) {
-        return com.wynnchayuan.render.PairedFont.shipped(lang, name);
+        return PairedFont.shipped(lang, name);
     }
 
-    private static String fontOf(net.minecraft.network.chat.Style style) {
+    private static String fontOf(Style style) {
         return style == null || style.getFont() == null
                 ? "" : String.valueOf(style.getFont());
     }
 
-    private static net.minecraft.network.chat.Component literal(
-            String text, net.minecraft.network.chat.Style style) {
-        return net.minecraft.network.chat.Component.literal(text).setStyle(style);
+    private static Component literal(String text, Style style) {
+        return Component.literal(text).setStyle(style);
     }
 }

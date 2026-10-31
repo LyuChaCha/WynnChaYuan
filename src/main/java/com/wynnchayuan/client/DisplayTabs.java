@@ -1,13 +1,16 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.LanguageLayers;
+import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.render.PanelShot;
+import net.minecraft.client.gui.screens.options.controls.KeyBindsScreen;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -79,8 +82,7 @@ final class DisplayTabs {
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::shotMode, SettingsScreen.cfg()::cycleShotMode,
                         CollectorConfig.ShotMode.values()[i]))
                 .extra(SettingsScreen.t("button.keybinds"), () -> screen.client().setScreen(
-                        new net.minecraft.client.gui.screens.options.controls.KeyBindsScreen(
-                                screen, screen.client().options)))
+                        new KeyBindsScreen(screen, screen.client().options)))
                 .reset(() -> SettingsScreen.cfg().shotMode() == CollectorConfig.ShotMode.KEY,
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::shotMode, SettingsScreen.cfg()::cycleShotMode,
                                 CollectorConfig.ShotMode.KEY)));
@@ -112,8 +114,7 @@ final class DisplayTabs {
                         () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::panelSide, SettingsScreen.cfg()::cyclePanelSide,
                                 CollectorConfig.PanelSide.AUTO)));
         rows.add(Row.slider("panel.gap", SettingsScreen.t("panel.gap"), SettingsScreen.t("panel.gap.hint"))
-                .range(com.wynnchayuan.PanelGap.MIN, com.wynnchayuan.PanelGap.MAX)
-                .value(() -> SettingsScreen.cfg().panelGap())
+                .range(PanelGap.MIN, PanelGap.MAX).value(() -> SettingsScreen.cfg().panelGap())
                 .slide(v -> SettingsScreen.cfg().setPanelGapLive(v))
                 .format(v -> v + " px")
                 .commit(SettingsScreen.cfg()::saveIfDirty)
@@ -226,7 +227,7 @@ final class DisplayTabs {
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
                 .option(T.s("mode.panel"), Row.Tone.ACCENT)
                 .option(T.s("mode.off"), Row.Tone.OFF)
-                .selected(() -> java.util.Arrays.asList(order).indexOf(SettingsScreen.cfg().trackerMode()))
+                .selected(() -> Arrays.asList(order).indexOf(SettingsScreen.cfg().trackerMode()))
                 .pick(i -> {
                     SettingsScreen.cycleTo(SettingsScreen.cfg()::trackerMode, SettingsScreen.cfg()::cycleTrackerMode, order[i]);
                     needBoxes(SettingsScreen.cfg().trackerMode() == CollectorConfig.DialogueMode.PANEL);

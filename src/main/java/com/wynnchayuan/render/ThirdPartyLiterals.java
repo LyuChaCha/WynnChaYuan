@@ -14,6 +14,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 // WynnMod RaidState.onTitle 靠 Raid Completed／Failed 判勝負
 public final class ThirdPartyLiterals {
@@ -35,8 +36,8 @@ public final class ThirdPartyLiterals {
 
     // 新版 WynnMod 在封包層先讀聊天；標題它讀在後，要留英文
     public static List<List<String>> groups(JsonObject root,
-                                            java.util.function.Predicate<String> modLoaded,
-                                            java.util.function.Predicate<String> classPresent) {
+                                            Predicate<String> modLoaded,
+                                            Predicate<String> classPresent) {
         List<List<String>> out = new ArrayList<>();
         if (root != null) {
             for (Map.Entry<String, JsonElement> mod : root.entrySet()) {

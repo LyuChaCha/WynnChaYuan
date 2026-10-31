@@ -2,16 +2,25 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class WynntilsBossBar {
 
     private WynntilsBossBar() {}
 
-    static net.minecraft.network.chat.Component bossBar(
-            net.minecraft.network.chat.Component name) {
+    static Component bossBar(Component name) {
         try {
             return bossBar(name, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
@@ -20,9 +29,7 @@ final class WynntilsBossBar {
         }
     }
 
-    static net.minecraft.network.chat.Component bossBar(
-            net.minecraft.network.chat.Component name, CollectorConfig config,
-            TranslationStore store) {
+    static Component bossBar(Component name, CollectorConfig config, TranslationStore store) {
         if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }
@@ -30,7 +37,7 @@ final class WynntilsBossBar {
             BARS.clear();
             barAge = store.cacheAge();
         }
-        net.minecraft.network.chat.Component hit = BARS.get(name);
+        Component hit = BARS.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
             hit = bossBarPlain(name, store);
@@ -38,11 +45,11 @@ final class WynntilsBossBar {
                 StyledText shown = WynntilsText.line(text, store);
                 hit = shown == text ? name : shown.getComponent();
             }
-            net.minecraft.network.chat.Component named = bossBarName(hit, store);
+            Component named = bossBarName(hit, store);
             if (named != null) {
                 hit = named;
             }
-            net.minecraft.network.chat.Component worded = bossBarWords(hit, store);
+            Component worded = bossBarWords(hit, store);
             if (worded != null) {
                 hit = worded;
             }
@@ -58,11 +65,10 @@ final class WynntilsBossBar {
         return hit;
     }
 
-    static net.minecraft.network.chat.Component bossBarPlain(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
+    static Component bossBarPlain(Component bar, TranslationStore store) {
         String raw = bar.getString();
         String key = raw.strip();
-        if (key.isEmpty() || !key.equals(com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(key))) {
+        if (key.isEmpty() || !key.equals(GlyphSplitter.stripGlyphChars(key))) {
             return null;
         }
         String dst = store.lookup(key);
@@ -80,8 +86,7 @@ final class WynntilsBossBar {
         int start = raw.indexOf(key);
         int keep = start + key.length() - same;
         String head = raw.substring(0, start) + dst.substring(0, dst.length() - same);
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+        MutableComponent out = Component.empty();
         int[] at = {0};
         boolean[] headDone = {false};
         bar.visit((style, text) -> {
@@ -89,20 +94,19 @@ final class WynntilsBossBar {
             int to = from + text.length();
             at[0] = to;
             if (!headDone[0] && !text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(head).withStyle(style));
+                out.append(Component.literal(head).withStyle(style));
                 headDone[0] = true;
             }
             if (to > keep && !text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(
+                out.append(Component.literal(
                         text.substring(Math.max(0, keep - from))).withStyle(style));
             }
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            return Optional.empty();
+        }, Style.EMPTY);
         return headDone[0] ? out : null;
     }
 
-    static net.minecraft.network.chat.Component bossBarName(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
+    static Component bossBarName(Component bar, TranslationStore store) {
         String plain = bar.getString();
         int cut = plain.indexOf(" - ");
         if (cut <= 0) {
@@ -123,54 +127,46 @@ final class WynntilsBossBar {
             return null;
         }
         String translated = dst;
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+        MutableComponent out = Component.empty();
         boolean[] done = {false};
         bar.visit((style, text) -> {
             int at = done[0] ? -1 : text.indexOf(head);
             if (at >= 0) {
-                out.append(net.minecraft.network.chat.Component.literal(
-                        text.substring(0, at) + translated
+                out.append(Component.literal(text.substring(0, at) + translated
                                 + text.substring(at + head.length())).withStyle(style));
                 done[0] = true;
             } else if (!text.isEmpty()) {
-                out.append(net.minecraft.network.chat.Component.literal(text).withStyle(style));
+                out.append(Component.literal(text).withStyle(style));
             }
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            return Optional.empty();
+        }, Style.EMPTY);
         return done[0] ? out : null;
     }
 
-    static net.minecraft.network.chat.Component bossBarWords(
-            net.minecraft.network.chat.Component bar, TranslationStore store) {
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+    static Component bossBarWords(Component bar, TranslationStore store) {
+        MutableComponent out = Component.empty();
         boolean[] changed = {false};
         bar.visit((style, text) -> {
             if (text.isEmpty()) {
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
-            java.util.regex.Matcher m = WORD.matcher(text);
+            Matcher m = WORD.matcher(text);
             StringBuilder sb = new StringBuilder();
             while (m.find()) {
                 String dst = store.scopedLookup("bossbar", m.group());
-                m.appendReplacement(sb, java.util.regex.Matcher.quoteReplacement(
-                        dst != null ? dst : m.group()));
+                m.appendReplacement(sb, Matcher.quoteReplacement(dst != null ? dst : m.group()));
                 changed[0] |= dst != null;
             }
             m.appendTail(sb);
-            out.append(net.minecraft.network.chat.Component.literal(sb.toString())
-                    .withStyle(style));
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            out.append(Component.literal(sb.toString()).withStyle(style));
+            return Optional.empty();
+        }, Style.EMPTY);
         return changed[0] ? out : null;
     }
 
-    private static final java.util.regex.Pattern WORD =
-            java.util.regex.Pattern.compile("[A-Za-z]+");
+    private static final Pattern WORD = Pattern.compile("[A-Za-z]+");
 
-    private static final java.util.Map<net.minecraft.network.chat.Component,
-            net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
+    private static final Map<Component, Component> BARS = new HashMap<>();
 
     private static long barAge = -1;
 }

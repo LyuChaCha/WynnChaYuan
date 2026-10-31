@@ -1,6 +1,7 @@
 package com.wynnchayuan.mixin;
 
 import com.wynnchayuan.render.WynntilsText;
+import com.wynntils.screens.base.TooltipProvider;
 import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,7 +20,7 @@ public abstract class WynntilsBookTooltipMixin {
                             + "getTooltipLines()Ljava/util/List;"),
             remap = false)
     private List<Component> wynnchayuan$translate(
-            com.wynntils.screens.base.TooltipProvider provider) {
+            TooltipProvider provider) {
         return WynntilsText.menuTooltip(provider.getTooltipLines());
     }
 }

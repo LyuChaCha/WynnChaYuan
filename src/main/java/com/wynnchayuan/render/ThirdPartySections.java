@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 public final class ThirdPartySections {
@@ -75,7 +76,7 @@ public final class ThirdPartySections {
     }
 
     private static boolean isBadge(Component line) {
-        return badges.contains(readable(line).toLowerCase(java.util.Locale.ROOT));
+        return badges.contains(readable(line).toLowerCase(Locale.ROOT));
     }
 
     private static String readable(Component line) {
@@ -104,7 +105,7 @@ public final class ThirdPartySections {
                 return;
             }
             for (JsonElement el : arr) {
-                String name = el.getAsString().strip().toLowerCase(java.util.Locale.ROOT);
+                String name = el.getAsString().strip().toLowerCase(Locale.ROOT);
                 if (!name.isEmpty()) {
                     into.add(name);
                 }

@@ -4,6 +4,7 @@ import com.wynnchayuan.capture.GlyphSplitter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.ToIntFunction;
@@ -98,7 +99,7 @@ public final class BlockLayout {
             return;
         }
         if (isCentredBlock(lead, content, start, end, blockWidth)) {
-            java.util.Arrays.fill(result, start, end, true);
+            Arrays.fill(result, start, end, true);
             return;
         }
         int bestFrom = -1;
@@ -113,7 +114,7 @@ public final class BlockLayout {
             }
         }
         if (bestFrom >= 0) {
-            java.util.Arrays.fill(result, bestFrom, bestFrom + bestLen, true);
+            Arrays.fill(result, bestFrom, bestFrom + bestLen, true);
         }
     }
 

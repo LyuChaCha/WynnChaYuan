@@ -1,14 +1,25 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynntils.core.text.PartStyle;
+import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.StyledTextPart;
+import com.wynntils.core.text.type.StyleType;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.function.ToIntFunction;
 
 public final class LayoutDebug {
 
@@ -77,8 +88,7 @@ public final class LayoutDebug {
         }
         try {
             Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
-                    java.nio.file.StandardOpenOption.CREATE,
-                    java.nio.file.StandardOpenOption.APPEND);
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (Throwable t) {
             failures++;
         }
@@ -93,7 +103,7 @@ public final class LayoutDebug {
     private static final Set<String> drawnSeen = new HashSet<>();
 
     public static void drawn(String stage, List<Component> original, List<Component> made,
-                             java.util.function.ToIntFunction<Component> width) {
+                             ToIntFunction<Component> width) {
         if (file == null || original == null || made == null || width == null
                 || original.isEmpty()) {
             return;
@@ -112,8 +122,7 @@ public final class LayoutDebug {
                             + "：" + Math.min(original.size(), made.size())
                             + " 行都跟原文對得上" + System.lineSeparator(),
                             StandardCharsets.UTF_8,
-                            java.nio.file.StandardOpenOption.CREATE,
-                            java.nio.file.StandardOpenOption.APPEND);
+                            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
                 }
                 return;
             }
@@ -122,8 +131,7 @@ public final class LayoutDebug {
             }
             drawnWritten++;
             Files.writeString(file, text, StandardCharsets.UTF_8,
-                    java.nio.file.StandardOpenOption.CREATE,
-                    java.nio.file.StandardOpenOption.APPEND);
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (Throwable t) {
             failures++;
         }
@@ -131,7 +139,7 @@ public final class LayoutDebug {
 
     private static String compareLeads(String stage, List<Component> original,
                                        List<Component> made,
-                                       java.util.function.ToIntFunction<Component> width) {
+                                       ToIntFunction<Component> width) {
         StringBuilder sb = new StringBuilder();
         boolean any = false;
         int n = Math.min(original.size(), made.size());
@@ -160,23 +168,23 @@ public final class LayoutDebug {
     }
 
     private static int leadOf(Component line,
-                              java.util.function.ToIntFunction<Component> width) {
+                              ToIntFunction<Component> width) {
         int[] x = {0};
         int[] found = {Integer.MIN_VALUE};
         line.visit((style, text) -> {
             if (found[0] != Integer.MIN_VALUE) {
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
             boolean glyphOnly = !text.isBlank() && text.codePoints().allMatch(
-                    cp -> com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp));
+                    cp -> GlyphSplitter.isGlyphCodePoint(cp));
             if (text.isBlank() || glyphOnly) {
                 x[0] += width.applyAsInt(
-                        net.minecraft.network.chat.Component.literal(text).setStyle(style));
-                return java.util.Optional.empty();
+                        Component.literal(text).setStyle(style));
+                return Optional.empty();
             }
             found[0] = x[0];
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            return Optional.empty();
+        }, Style.EMPTY);
         return found[0];
     }
 
@@ -191,8 +199,7 @@ public final class LayoutDebug {
 
     private static final int FLOWED_LIMIT = 12;
 
-    public static void flowed(java.util.List<com.wynntils.core.text.StyledText> run,
-                              String label, net.minecraft.network.chat.Style chosen) {
+    public static void flowed(List<StyledText> run, String label, Style chosen) {
         if (file == null || run == null || run.isEmpty() || flowedSeen >= FLOWED_LIMIT) {
             return;
         }
@@ -204,9 +211,8 @@ public final class LayoutDebug {
         }
     }
 
-    private static void writeFlowed(java.util.List<com.wynntils.core.text.StyledText> run,
-                                    String label, net.minecraft.network.chat.Style chosen)
-            throws java.io.IOException {
+    private static void writeFlowed(List<StyledText> run, String label, Style chosen)
+            throws IOException {
         StringBuilder sb = new StringBuilder();
         sb.append("=== 跨行查表 ===").append(System.lineSeparator());
         sb.append("  譯名：").append(label == null ? "（整段命中，沒有拆名稱）" : label)
@@ -214,27 +220,26 @@ public final class LayoutDebug {
         sb.append("  挑中的樣式：").append(describe(chosen)).append(System.lineSeparator());
         sb.append("  原文第一行的色段：").append(System.lineSeparator());
         int i = 0;
-        for (com.wynntils.core.text.StyledTextPart part : run.get(0)) {
-            String raw = part.getString(null, com.wynntils.core.text.type.StyleType.NONE);
-            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+        for (StyledTextPart part : run.get(0)) {
+            String raw = part.getString(null, StyleType.NONE);
+            PartStyle ps = part.getPartStyle();
             sb.append("    [").append(i++).append("] ")
               .append(describe(ps == null ? null : ps.getStyle()))
               .append("  「").append(raw).append("」").append(System.lineSeparator());
         }
-        for (com.wynntils.core.text.StyledText line : run) {
+        for (StyledText line : run) {
             sb.append("  原文：").append(line.getString()).append(System.lineSeparator());
         }
         ModLog.info("跨行查表" + System.lineSeparator() + sb);
         Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
-                java.nio.file.StandardOpenOption.CREATE,
-                java.nio.file.StandardOpenOption.APPEND);
+                StandardOpenOption.CREATE, StandardOpenOption.APPEND);
     }
 
-    private static String describe(net.minecraft.network.chat.Style style) {
+    private static String describe(Style style) {
         if (style == null) {
             return "（無）";
         }
-        net.minecraft.network.chat.TextColor colour = style.getColor();
+        TextColor colour = style.getColor();
         return colour == null ? "繼承"
                 : String.format("#%06X", colour.getValue() & 0xFFFFFF);
     }

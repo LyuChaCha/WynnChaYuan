@@ -11,10 +11,14 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -224,14 +228,10 @@ public final class LookAtTranslator {
         if (mc.level == null) {
             return false;
         }
-        net.minecraft.world.level.ClipContext context =
-                new net.minecraft.world.level.ClipContext(
-                        eye, head,
-                        net.minecraft.world.level.ClipContext.Block.VISUAL,
-                        net.minecraft.world.level.ClipContext.Fluid.NONE,
-                        mc.player);
+        ClipContext context = new ClipContext(eye, head, ClipContext.Block.VISUAL,
+                        ClipContext.Fluid.NONE, mc.player);
         return mc.level.clip(context).getType()
-                != net.minecraft.world.phys.HitResult.Type.MISS;
+                != HitResult.Type.MISS;
     }
 
     private static List<Entity> nearbyLabels(Minecraft mc, Entity aimed) {
@@ -240,7 +240,7 @@ public final class LookAtTranslator {
         Vec3 look = mc.player.getLookAngle();
 
         List<Entity> found = new ArrayList<>();
-        Map<Entity, Double> offAxis = new java.util.HashMap<>();
+        Map<Entity, Double> offAxis = new HashMap<>();
         for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
             Entity entity = e.getKey();
             if (entity == null || !entity.isAlive() || entity == aimed) {
@@ -265,7 +265,7 @@ public final class LookAtTranslator {
             found.add(entity);
             offAxis.put(entity, delta.subtract(look.scale(along)).length());
         }
-        found.sort(java.util.Comparator.comparingDouble(offAxis::get));
+        found.sort(Comparator.comparingDouble(offAxis::get));
         if (aimed != null) {
             found.add(0, aimed);
         }

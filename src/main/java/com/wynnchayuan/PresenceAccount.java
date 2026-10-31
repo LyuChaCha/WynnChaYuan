@@ -8,7 +8,9 @@ import java.net.URI;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 import java.util.function.Consumer;
+import java.util.regex.Pattern;
 
 public final class PresenceAccount {
 
@@ -18,14 +20,13 @@ public final class PresenceAccount {
         DONE, BAD_CODE, UNKNOWN_CODE, LOGIN_FAILED, FAILED, OFF
     }
 
-    private static final java.util.regex.Pattern LINK_CODE =
-            java.util.regex.Pattern.compile("[A-HJ-NP-Z2-9]{8}");
+    private static final Pattern LINK_CODE = Pattern.compile("[A-HJ-NP-Z2-9]{8}");
 
     static String linkCode(String typed) {
         if (typed == null) {
             return null;
         }
-        String code = typed.strip().toUpperCase(java.util.Locale.ROOT);
+        String code = typed.strip().toUpperCase(Locale.ROOT);
         return LINK_CODE.matcher(code).matches() ? code : null;
     }
 
@@ -63,7 +64,7 @@ public final class PresenceAccount {
                     result = linkResultOf(response.statusCode());
                 }
             } catch (Throwable t) {
-                com.wynnchayuan.translate.ErrorDebug.note("presence.link", null, t);
+                ErrorDebug.note("presence.link", null, t);
                 result = LinkResult.FAILED;
             }
             done.accept(result);
@@ -123,7 +124,7 @@ public final class PresenceAccount {
             }
             return result;
         } catch (Throwable t) {
-            com.wynnchayuan.translate.ErrorDebug.note("presence.cape", null, t);
+            ErrorDebug.note("presence.cape", null, t);
             return Result.FAILED;
         }
     }
@@ -149,7 +150,7 @@ public final class PresenceAccount {
                         }
                     }
                 } catch (Throwable t) {
-                    com.wynnchayuan.translate.ErrorDebug.note("presence.gallery", null, t);
+                    ErrorDebug.note("presence.gallery", null, t);
                 }
             }
             open.accept(url);
@@ -227,7 +228,7 @@ public final class PresenceAccount {
                     result = askToDelete();
                 }
             } catch (Throwable t) {
-                com.wynnchayuan.translate.ErrorDebug.note("presence.delete", null, t);
+                ErrorDebug.note("presence.delete", null, t);
                 result = DeleteResult.FAILED;
             }
             if (result == DeleteResult.DONE) {

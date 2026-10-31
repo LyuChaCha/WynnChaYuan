@@ -1,5 +1,7 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.SpaceOffset;
+
 public final class CurrentQuest {
 
     private static final String SEPARATORS = "/#";
@@ -57,7 +59,7 @@ public final class CurrentQuest {
 
     private static boolean isPlateJunk(int cp) {
         return GlyphSplitter.isGlyphCodePoint(cp)
-                || com.wynnchayuan.translate.SpaceOffset.isOffset(cp);
+                || SpaceOffset.isOffset(cp);
     }
 
     private static String sanitise(String value) {

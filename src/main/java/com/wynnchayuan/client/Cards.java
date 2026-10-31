@@ -2,9 +2,11 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.Colors;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 
 public final class Cards {
 
@@ -44,8 +46,7 @@ public final class Cards {
         g.drawString(font, Component.literal(text), x, y, Colors.HINT);
     }
 
-    private static final net.minecraft.resources.Identifier ICON =
-            net.minecraft.resources.Identifier.fromNamespaceAndPath(
+    private static final Identifier ICON = Identifier.fromNamespaceAndPath(
                     "wynnchayuan", "textures/gui/icon.png");
 
     private static final int ICON_SIZE = 22;
@@ -58,7 +59,7 @@ public final class Cards {
         int gap = 6;
         int total = ICON_SIZE + gap + font.width(title);
         int x = (screenW - total) / 2;
-        g.blit(net.minecraft.client.renderer.RenderPipelines.GUI_TEXTURED, ICON,
+        g.blit(RenderPipelines.GUI_TEXTURED, ICON,
                 x, 3, 0f, 0f, ICON_SIZE, ICON_SIZE, 256, 256, 256, 256);
         g.drawString(font, Component.literal(title),
                 x + ICON_SIZE + gap, 10, accent);

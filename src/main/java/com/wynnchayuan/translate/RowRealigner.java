@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 final class RowRealigner {
@@ -165,7 +166,7 @@ final class RowRealigner {
     private static String describeRow(List<Integer> origSeg, List<Integer> madeSeg,
                                       int[] adjust, boolean leading) {
         return "前導=" + leading + " 原文段寬=" + origSeg + " 譯文段寬=" + madeSeg
-                + " 補正=" + java.util.Arrays.toString(adjust);
+                + " 補正=" + Arrays.toString(adjust);
     }
 
     private static Component realignRows(List<Run> orig, List<Run> made,

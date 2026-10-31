@@ -2,11 +2,12 @@ package com.wynnchayuan.capture;
 
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -259,8 +260,7 @@ public final class SelfNames {
             }
             plain(out, mc.player.getDisplayName());
             if (mc.getConnection() != null) {
-                net.minecraft.client.multiplayer.PlayerInfo info =
-                        mc.getConnection().getPlayerInfo(mc.player.getUUID());
+                PlayerInfo info = mc.getConnection().getPlayerInfo(mc.player.getUUID());
                 if (info != null) {
                     plain(out, info.getTabListDisplayName());
                 }

@@ -1,17 +1,24 @@
 package com.wynnchayuan.listener;
 
-import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.capture.DialogueBuffer;
-import com.wynnchayuan.capture.DialogueSpeaker;
-import com.wynnchayuan.capture.CombatText;
-import com.wynnchayuan.capture.CurrentQuest;
-import com.wynnchayuan.capture.GlyphSplitter;
-import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CombatText;
+import com.wynnchayuan.capture.ConversationPartner;
+import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.DialogueBuffer;
+import com.wynnchayuan.capture.DialogueProbe;
+import com.wynnchayuan.capture.DialogueSpeaker;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.capture.QuestGuess;
+import com.wynnchayuan.render.DialogueIcons;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.LookAtTranslator;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.NameplateProbe;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.handlers.chat.type.RecipientType;
@@ -22,8 +29,10 @@ import net.minecraft.network.chat.Component;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public final class CaptureListener {
 
@@ -69,16 +78,16 @@ public final class CaptureListener {
             return;
         }
         lastHadChoices = event.hasChoices();
-        com.wynnchayuan.capture.DialogueProbe.noteHasChoices(lastHadChoices);
+        DialogueProbe.noteHasChoices(lastHadChoices);
         DialogueOverlay.setShiftPrompt(event.requiresShift());
         DialogueOverlay.setCurrent(styled, WynnChaYuan.translations(), lastHadChoices);
         String speaker = DialogueSpeaker.of(styled);
         if (speaker == null) {
             speaker = DialogueSpeaker.currentFor(styled.getString());
         }
-        String partner = com.wynnchayuan.capture.ConversationPartner.forLine();
+        String partner = ConversationPartner.forLine();
         String done = buffer.offer(styled.getString(), GlyphSplitter.toTemplate(
-                com.wynnchayuan.render.DialogueIcons.line(text, WynnChaYuan.translations())));
+                DialogueIcons.line(text, WynnChaYuan.translations())));
         if (done != null) {
             record(done, lineSpeaker, lineHadChoices);
             lineSpeaker = speaker != null ? speaker : partner;
@@ -103,12 +112,12 @@ public final class CaptureListener {
 
     private static void auditSpeaker(String template, String speaker) {
         try {
-            String known = com.wynnchayuan.capture.DialogueSpeaker.cleanName(
+            String known = DialogueSpeaker.cleanName(
                     WynnChaYuan.translations().speakerOf(template));
             if (known == null) {
                 return;
             }
-            String got = com.wynnchayuan.capture.DialogueSpeaker.cleanName(speaker);
+            String got = DialogueSpeaker.cleanName(speaker);
             if (got == null) {
                 WynnChaYuan.store().noteEvent("speaker.audit.none");
             } else if (got.equalsIgnoreCase(known)) {
@@ -128,10 +137,9 @@ public final class CaptureListener {
         String speaker = nameplate;
         auditSpeaker(completed, speaker);
         String quest = CurrentQuest.get();
-        boolean withQuest = com.wynnchayuan.capture.QuestGuess.withQuest(
-                quest, speaker,
+        boolean withQuest = QuestGuess.withQuest(quest, speaker,
                 WynnChaYuan.translations().inCast(quest, speaker),
-                com.wynnchayuan.capture.ConversationPartner.fromBlock());
+                ConversationPartner.fromBlock());
         auditQuest(completed, quest, withQuest);
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
@@ -148,7 +156,7 @@ public final class CaptureListener {
             if (known == null) {
                 return;
             }
-            String tracked = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip();
+            String tracked = GlyphSplitter.stripGlyphChars(quest).strip();
             boolean same = tracked.equalsIgnoreCase(known.strip());
             String verdict = withQuest ? (same ? "match" : "mismatch")
                                        : (same ? "missed" : "avoided");
@@ -179,12 +187,12 @@ public final class CaptureListener {
                 template, "chat/" + event.getRecipientType(), System.currentTimeMillis());
     }
 
-    static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped) {
+    static String chatTemplate(StyledText message, Consumer<String> skipped) {
         return chatTemplate(message, skipped, null);
     }
 
-    static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped,
-                               com.wynnchayuan.translate.TranslationStore store) {
+    static String chatTemplate(StyledText message, Consumer<String> skipped,
+                               TranslationStore store) {
         if (message == null || GlyphSplitter.isGlyphOnly(message)) {
             return null;
         }
@@ -192,7 +200,7 @@ public final class CaptureListener {
             skipped.accept("chat.skipped.ownOutput");
             return null;
         }
-        com.wynnchayuan.capture.LineParts framed = LineTranslator.nameFramed(message, store);
+        LineParts framed = LineTranslator.nameFramed(message, store);
         if (framed != null) {
             skipped.accept("chat.framed.playerName");
             return framed.template();
@@ -225,7 +233,7 @@ public final class CaptureListener {
              });
 
         StyledText full = event.getText();
-        com.wynnchayuan.capture.LineParts owned = full == null || GlyphSplitter.isGlyphOnly(full)
+        LineParts owned = full == null || GlyphSplitter.isGlyphOnly(full)
                 ? null : LineTranslator.nameFramed(full, WynnChaYuan.translations());
         if (owned != null) {
             WynnChaYuan.store().record(trimStatusLines(owned.template()), "name", "label",
@@ -257,7 +265,7 @@ public final class CaptureListener {
             keep--;
         }
         return keep == lines.length ? template
-                : String.join("\n", java.util.Arrays.copyOf(lines, keep));
+                : String.join("\n", Arrays.copyOf(lines, keep));
     }
 
     private void translateNametag(TextDisplayChangedEvent.Text event) {
@@ -280,8 +288,7 @@ public final class CaptureListener {
             }
             Component translated =
                     LineTranslator.translateLabel(original, WynnChaYuan.translations());
-            com.wynnchayuan.translate.NameplateProbe.check(
-                    "TextDisplay", original, translated, WynnChaYuan.translations());
+            NameplateProbe.check("TextDisplay", original, translated, WynnChaYuan.translations());
             if (translated != null) {
                 event.setText(StyledText.fromComponent(translated));
             }

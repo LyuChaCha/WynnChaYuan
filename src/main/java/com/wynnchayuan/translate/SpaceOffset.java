@@ -3,6 +3,7 @@ package com.wynnchayuan.translate;
 import com.wynntils.core.text.PartStyle;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.Identifier;
 
 public final class SpaceOffset {
 
@@ -38,7 +39,7 @@ public final class SpaceOffset {
     public static Style styleFor(Style base) {
         return (base == null ? Style.EMPTY : base)
                 .withFont(new FontDescription.Resource(
-                        net.minecraft.resources.Identifier.withDefaultNamespace("space")));
+                        Identifier.withDefaultNamespace("space")));
     }
 
     public static boolean isOffsetRun(String text) {

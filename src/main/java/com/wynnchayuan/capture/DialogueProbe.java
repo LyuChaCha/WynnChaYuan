@@ -1,14 +1,16 @@
 package com.wynnchayuan.capture;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.Identifier;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -218,7 +220,7 @@ public final class DialogueProbe {
           .append(System.lineSeparator());
         int[] index = {0};
         int[] cursor = {start};
-        java.util.List<String> offscreen = new java.util.ArrayList<>();
+        List<String> offscreen = new ArrayList<>();
         message.visit((style, text) -> {
             int at = cursor[0];
             int w = advance(Component.literal(text).setStyle(style));
@@ -227,9 +229,9 @@ public final class DialogueProbe {
                     index[0], at == Integer.MIN_VALUE ? "?" : String.valueOf(at),
                     w == Integer.MIN_VALUE ? "?" : String.valueOf(w), fontOf(style),
                     style.getColor() == null ? "-" : style.getColor().serialize(),
-                    com.wynnchayuan.translate.SpaceOffset.isSpaceFont(style)
+                    SpaceOffset.isSpaceFont(style)
                             ? String.valueOf(
-                                    com.wynnchayuan.translate.SpaceOffset.decode(text))
+                                    SpaceOffset.decode(text))
                             : "-",
                     describe(text)));
             if (at != Integer.MIN_VALUE && at < 0 && !text.isBlank()) {
@@ -257,7 +259,7 @@ public final class DialogueProbe {
 
     private static int advance(Component message) {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             return mc == null || mc.font == null
                     ? Integer.MIN_VALUE : mc.font.width(message);
         } catch (Throwable t) {
@@ -267,7 +269,7 @@ public final class DialogueProbe {
 
     private static int guiWidth() {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             return mc == null || mc.getWindow() == null
                     ? -1 : mc.getWindow().getGuiScaledWidth();
         } catch (Throwable t) {
@@ -277,7 +279,7 @@ public final class DialogueProbe {
 
     private static int widthOf(Component message) {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             return mc == null || mc.font == null ? -1 : mc.font.width(message);
         } catch (Throwable t) {
             return -1;
@@ -532,7 +534,7 @@ public final class DialogueProbe {
         try {
             Files.writeString(dir.resolve("dialogue-probe-" + written + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8,
-                    java.nio.file.StandardOpenOption.APPEND);
+                    StandardOpenOption.APPEND);
         } catch (Exception e) {
         }
     }

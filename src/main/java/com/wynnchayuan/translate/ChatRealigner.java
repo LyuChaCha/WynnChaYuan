@@ -4,11 +4,14 @@ import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.SpaceRuns.Run;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.ChatComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
@@ -375,7 +378,7 @@ final class ChatRealigner {
             return;
         }
         List<Integer> sorted = new ArrayList<>(mids);
-        java.util.Collections.sort(sorted);
+        Collections.sort(sorted);
         int median = sorted.get(sorted.size() / 2);
         for (int m : mids) {
             if (Math.abs(m - median) > 16) {
@@ -489,8 +492,7 @@ final class ChatRealigner {
         for (int px : columns) {
             if (px != 0) {
                 log.append("        欄距補正=")
-                   .append(java.util.Arrays.toString(columns))
-                   .append(System.lineSeparator());
+                   .append(Arrays.toString(columns)).append(System.lineSeparator());
                 break;
             }
         }
@@ -546,8 +548,7 @@ final class ChatRealigner {
 
     private static int chatWidth() {
         try {
-            return net.minecraft.client.gui.components.ChatComponent.getWidth(
-                    net.minecraft.client.Minecraft.getInstance().options.chatWidth().get());
+            return ChatComponent.getWidth(Minecraft.getInstance().options.chatWidth().get());
         } catch (Throwable t) {
             ErrorDebug.note("ChatRealigner#chatWidth", null, t);
             return 0;

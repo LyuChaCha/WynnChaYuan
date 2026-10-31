@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.client.Minecraft;
@@ -9,7 +10,9 @@ import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import net.minecraft.network.chat.Component;
 import org.joml.Vector2i;
+import org.joml.Vector2ic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class TooltipPanel {
@@ -39,7 +42,7 @@ public final class TooltipPanel {
         Minecraft mc = Minecraft.getInstance();
         int screenW = graphics.guiWidth();
         int screenH = graphics.guiHeight();
-        int gap = com.wynnchayuan.PanelGap.layout(WynnChaYuan.config().panelGap());
+        int gap = PanelGap.layout(WynnChaYuan.config().panelGap());
 
         int[] panelBox = TooltipPlacement.box(mc, lines);
         int panelW = panelBox[0] + 8;
@@ -63,7 +66,7 @@ public final class TooltipPanel {
             TooltipPlacement.drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
         }
 
-        List<ClientTooltipComponent> components = new java.util.ArrayList<>(lines.size());
+        List<ClientTooltipComponent> components = new ArrayList<>(lines.size());
         for (Component line : lines) {
             components.add(ClientTooltipComponent.create(line.getVisualOrderText()));
         }
@@ -94,7 +97,7 @@ public final class TooltipPanel {
         int w = shotBox[0];
         int h = shotBox[1];
 
-        org.joml.Vector2ic at = net.minecraft.client.gui.screens.inventory.tooltip
+        Vector2ic at = net.minecraft.client.gui.screens.inventory.tooltip
                 .DefaultTooltipPositioner.INSTANCE.positionTooltip(
                         graphics.guiWidth(), graphics.guiHeight(), mouseX, mouseY, w, h);
         int x = at.x();

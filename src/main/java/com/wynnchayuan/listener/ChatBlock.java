@@ -3,12 +3,20 @@ package com.wynnchayuan.listener;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 public final class ChatBlock {
 
@@ -92,12 +100,10 @@ public final class ChatBlock {
         sentAt.clear();
     }
 
-    private static final java.util.Set<String> mine =
-            java.util.Collections.newSetFromMap(
-                    new java.util.LinkedHashMap<>() {
+    private static final Set<String> mine = Collections.newSetFromMap(new LinkedHashMap<>() {
                         @Override
                         protected boolean removeEldestEntry(
-                                java.util.Map.Entry<String, Boolean> eldest) {
+                                Map.Entry<String, Boolean> eldest) {
                             return size() > MINE_MEMORY;
                         }
                     });
@@ -116,7 +122,7 @@ public final class ChatBlock {
 
     private static final long MINE_TTL_MS = 5_000;
 
-    private static final java.util.Map<String, Long> sentAt = new java.util.HashMap<>();
+    private static final Map<String, Long> sentAt = new HashMap<>();
 
     public static synchronized boolean isOurs(StyledText message) {
         if (message == null) {
@@ -141,8 +147,8 @@ public final class ChatBlock {
         return text.indexOf('\u00a7') < 0 ? text : STYLE_CODE.matcher(text).replaceAll("");
     }
 
-    private static final java.util.regex.Pattern STYLE_CODE =
-            java.util.regex.Pattern.compile("\u00a7(?:#[0-9a-fA-F]{8}|\\{[^}]*}|\\[[^\\]]*]|.)");
+    private static final Pattern STYLE_CODE =
+            Pattern.compile("\u00a7(?:#[0-9a-fA-F]{8}|\\{[^}]*}|\\[[^\\]]*]|.)");
 
     static synchronized void remember(Component sent) {
         String key = bare(sent.getString());
@@ -175,7 +181,7 @@ public final class ChatBlock {
     }
 
     static Component compose(List<Row> rows, boolean wasHeld,
-                             com.wynnchayuan.translate.TranslationStore store) {
+                             TranslationStore store) {
         Component whole = rows.size() > 1 ? asBlock(rows, store) : null;
         if (whole == null) {
             whole = stacked(rows, wasHeld, store);
@@ -183,14 +189,14 @@ public final class ChatBlock {
         return whole;
     }
 
-    static synchronized Component preview(com.wynnchayuan.translate.TranslationStore store) {
+    static synchronized Component preview(TranslationStore store) {
         return compose(new ArrayList<>(pending), held, store);
     }
 
     private static Component asBlock(List<Row> rows,
-                                     com.wynnchayuan.translate.TranslationStore store) {
+                                     TranslationStore store) {
         try {
-            net.minecraft.network.chat.MutableComponent joined = Component.empty();
+            MutableComponent joined = Component.empty();
             for (int i = 0; i < rows.size(); i++) {
                 if (i > 0) {
                     joined.append(Component.literal("\n"));
@@ -206,7 +212,7 @@ public final class ChatBlock {
     }
 
     private static Component stacked(List<Row> rows, boolean wasHeld,
-                                     com.wynnchayuan.translate.TranslationStore store) {
+                                     TranslationStore store) {
         boolean[] centred = null;
         boolean panel = false;
         if (rows.size() > 1) {
@@ -285,7 +291,7 @@ public final class ChatBlock {
             lines[i] = line;
         }
         boolean[] carry = wasHeld ? null : carried(multiLine(rows), hit);
-        net.minecraft.network.chat.MutableComponent out = Component.empty();
+        MutableComponent out = Component.empty();
         boolean any = false;
         boolean translated = false;
         for (int i = 0; i < rows.size(); i++) {

@@ -1,10 +1,18 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.NameFrames;
+import com.wynnchayuan.capture.PlaceNames;
+import com.wynnchayuan.capture.SelfNames;
 
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
+import java.util.function.BiPredicate;
+import java.util.regex.Pattern;
 
 public final class TranslationStore {
 
@@ -52,26 +60,24 @@ public final class TranslationStore {
         return translateNames;
     }
 
-    public void setNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
-        this.translateNames = mode != com.wynnchayuan.CollectorConfig.ItemNames.OFF;
-        this.namesWithOriginal = mode == com.wynnchayuan.CollectorConfig.ItemNames.BOTH;
+    public void setNameMode(CollectorConfig.ItemNames mode) {
+        this.translateNames = mode != CollectorConfig.ItemNames.OFF;
+        this.namesWithOriginal = mode == CollectorConfig.ItemNames.BOTH;
     }
 
-    public void setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
-        com.wynnchayuan.CollectorConfig.ItemNames next =
-                mode == null ? com.wynnchayuan.CollectorConfig.ItemNames.ON : mode;
+    public void setPageNameMode(CollectorConfig.ItemNames mode) {
+        CollectorConfig.ItemNames next = mode == null ? CollectorConfig.ItemNames.ON : mode;
         if (next != pageNameMode) {
             generation++;
         }
         this.pageNameMode = next;
     }
 
-    public com.wynnchayuan.CollectorConfig.ItemNames pageNameMode() {
+    public CollectorConfig.ItemNames pageNameMode() {
         return pageNameMode;
     }
 
-    private volatile com.wynnchayuan.CollectorConfig.ItemNames pageNameMode =
-            com.wynnchayuan.CollectorConfig.ItemNames.ON;
+    private volatile CollectorConfig.ItemNames pageNameMode = CollectorConfig.ItemNames.ON;
 
     private volatile boolean namesWithOriginal = false;
 
@@ -108,7 +114,7 @@ public final class TranslationStore {
         return index.chatSpeaker(speaker);
     }
 
-    public com.wynnchayuan.capture.NameFrames nameFrames() {
+    public NameFrames nameFrames() {
         return index.nameFrames();
     }
 
@@ -132,7 +138,7 @@ public final class TranslationStore {
         return index.completeUiLabel(prefix);
     }
 
-    java.util.Set<String> keys() {
+    Set<String> keys() {
         return index.keys();
     }
 
@@ -156,7 +162,7 @@ public final class TranslationStore {
         return index.termIndex.lookupTerm(text);
     }
 
-    java.util.Set<String> termNames() {
+    Set<String> termNames() {
         return index.termIndex.termNames();
     }
 
@@ -213,22 +219,22 @@ public final class TranslationStore {
     }
 
     public String forecast(String typed, String quest, int after, int window, String speaker, int floor,
-                           java.util.function.BiPredicate<String, String> fits) {
+                           BiPredicate<String, String> fits) {
         return index.questIndex.forecast(typed, quest, after, window, speaker, floor, fits);
     }
 
     public String forecastBySpeaker(String typed, String quest, String speaker, int floor,
-                                    java.util.function.BiPredicate<String, String> fits) {
+                                    BiPredicate<String, String> fits) {
         return index.questIndex.forecastBySpeaker(typed, quest, speaker, floor, fits);
     }
 
     public String forecastNext(String typed, String quest, int after, int window, String speaker, int floor,
-                               java.util.function.BiPredicate<String, String> fits) {
+                               BiPredicate<String, String> fits) {
         return index.questIndex.forecastNext(typed, quest, after, window, speaker, floor, fits);
     }
 
     public String explainForecast(String typed, String quest, int after, int window, String speaker,
-                                  java.util.function.BiPredicate<String, String> fits) {
+                                  BiPredicate<String, String> fits) {
         return index.questIndex.explainForecast(typed, quest, after, window, speaker, fits);
     }
 
@@ -292,7 +298,7 @@ public final class TranslationStore {
         return index.nameRules.appendedOriginalSpan(text);
     }
 
-    public java.util.Set<String> sourceKeys() {
+    public Set<String> sourceKeys() {
         return index.sourceKeys();
     }
 
@@ -312,14 +318,14 @@ public final class TranslationStore {
         return index.loadedFiles();
     }
 
-    private static final java.util.regex.Pattern TOOL_NAME = java.util.regex.Pattern.compile(
+    private static final Pattern TOOL_NAME = Pattern.compile(
             "^(?:\\{#})*[A-Z][a-z]+ (?:Pickaxe|Axe|Scythe|Rod) T\\{~}(?:\\{#})*$");
 
     static boolean isToolName(String key) {
         return key != null && TOOL_NAME.matcher(key).matches();
     }
 
-    static final java.util.regex.Pattern CHAT_LINE = java.util.regex.Pattern.compile(
+    static final Pattern CHAT_LINE = Pattern.compile(
             "\\[\\{~}/\\{~}] (?<speaker>[^:\\n\\[\\]]+?): (?<line>[^\\n]+)");
 
     public record Guess(String name, String source) {}
@@ -328,13 +334,13 @@ public final class TranslationStore {
         return text == null ? "" : WHITESPACE.matcher(text.strip()).replaceAll(" ");
     }
 
-    private static final java.util.regex.Pattern WHITESPACE = java.util.regex.Pattern.compile("\\s+");
+    private static final Pattern WHITESPACE = Pattern.compile("\\s+");
 
     public static String unwrap(String text) {
         if (text == null) {
             return "";
         }
-        String glyph = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         StringBuilder out = new StringBuilder(text.length());
         int at = 0;
         while (at < text.length()) {
@@ -396,7 +402,7 @@ public final class TranslationStore {
                     return false;
                 }
             }
-            List<String> names = com.wynnchayuan.capture.SelfNames.all();
+            List<String> names = SelfNames.all();
             if (names.isEmpty()) {
                 return true;
             }
@@ -409,7 +415,7 @@ public final class TranslationStore {
             return false;
         }
         if (slot.equals("{p}")) {
-            return com.wynnchayuan.capture.PlaceNames.anyStartsWith(partial);
+            return PlaceNames.anyStartsWith(partial);
         }
         if (slot.equals("{#}")) {
             return GlyphSplitter.isGlyphCodePoint(partial.codePointAt(0));
@@ -428,8 +434,8 @@ public final class TranslationStore {
     private static final int FORECAST_NAME_ROOM = 24;
 
     static boolean sameLine(String a, String b) {
-        java.util.Set<String> left = words(a);
-        java.util.Set<String> right = words(b);
+        Set<String> left = words(a);
+        Set<String> right = words(b);
         if (left.isEmpty() || right.isEmpty()) {
             return false;
         }
@@ -443,8 +449,8 @@ public final class TranslationStore {
         return both * 100 >= union * SAME_LINE_PERCENT;
     }
 
-    static java.util.Set<String> words(String text) {
-        java.util.Set<String> out = new java.util.HashSet<>();
+    static Set<String> words(String text) {
+        Set<String> out = new HashSet<>();
         StringBuilder word = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
             char c = Character.toLowerCase(text.charAt(i));
@@ -498,7 +504,7 @@ public final class TranslationStore {
                 : DOUBLE_SPACE.matcher(key.replace(ICON, " ").strip()).replaceAll(" ");
     }
 
-    private static final java.util.regex.Pattern DOUBLE_SPACE = java.util.regex.Pattern.compile(" {2,}");
+    private static final Pattern DOUBLE_SPACE = Pattern.compile(" {2,}");
 
     static final ThreadLocal<Boolean> HOLD_APPENDED =
             ThreadLocal.withInitial(() -> Boolean.FALSE);

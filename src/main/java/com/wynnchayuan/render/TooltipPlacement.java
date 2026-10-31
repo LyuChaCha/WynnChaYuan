@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.TranslationStore;
@@ -130,7 +131,7 @@ final class TooltipPlacement {
             }
             return place(mc, lines, stripped, mouseX, mouseY,
                     mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
-                    com.wynnchayuan.PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
+                    PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
         } catch (Throwable t) {
             ErrorDebug.note("TooltipPlacement#wouldPush", null, t);
             return false;

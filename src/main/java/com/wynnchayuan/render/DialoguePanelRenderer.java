@@ -2,13 +2,19 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.client.T;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
 import net.minecraft.util.FormattedCharSequence;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
 
 final class DialoguePanelRenderer {
 
@@ -237,20 +243,20 @@ final class DialoguePanelRenderer {
     }
 
     static List<Component> fold(Component line, int width) {
-        List<com.wynnchayuan.capture.LineParts.Piece> pieces = new ArrayList<>();
+        List<LineParts.Piece> pieces = new ArrayList<>();
         StringBuilder plain = new StringBuilder();
         line.visit((style, text) -> {
-            pieces.add(new com.wynnchayuan.capture.LineParts.Piece(text, style));
+            pieces.add(new LineParts.Piece(text, style));
             plain.append(text);
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            return Optional.empty();
+        }, Style.EMPTY);
         List<int[]> rows = DialogueLayout.flow(plain.toString(), null, width);
         if (rows.size() <= 1) {
             return List.of(line);
         }
         List<Component> out = new ArrayList<>(rows.size());
         for (int[] row : rows) {
-            net.minecraft.network.chat.MutableComponent part = Component.empty();
+            MutableComponent part = Component.empty();
             for (var piece : DialogueAccents.cut(pieces, row[0], row[1])) {
                 part.append(Component.literal(piece.text()).withStyle(piece.style()));
             }
@@ -260,8 +266,7 @@ final class DialoguePanelRenderer {
     }
 
     private static Component speakerLine(String said) {
-        return Component.literal(com.wynnchayuan.client.T.s("dialogue.speaker", said)).withStyle(
-                net.minecraft.network.chat.Style.EMPTY
+        return Component.literal(T.s("dialogue.speaker", said)).withStyle(Style.EMPTY
                         .withColor(DialogueOverlay.SPEAKER_COLOUR).withBold(true));
     }
 
@@ -269,8 +274,7 @@ final class DialoguePanelRenderer {
 
     private static final int MAX_BOX_W = 420;
 
-    private static final java.util.function.Supplier<String> SHIFT_HINT =
-            () -> com.wynnchayuan.client.T.s("dialogue.shift_hint");
+    private static final Supplier<String> SHIFT_HINT = () -> T.s("dialogue.shift_hint");
 
     private static final int IN_PLACE_MARGIN = 55;
 

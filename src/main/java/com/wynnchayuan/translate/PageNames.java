@@ -4,9 +4,12 @@ import com.wynnchayuan.CollectorConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -80,7 +83,7 @@ public final class PageNames {
         if (mode == CollectorConfig.ItemNames.OFF) {
             copy(out, original, 0, name.length());
         } else {
-            net.minecraft.network.chat.TextColor colour = nameColour(original, name.length());
+            TextColor colour = nameColour(original, name.length());
             int[] at = {0};
             boolean[] same = {true};
             translated.visit((style, part) -> {
@@ -101,8 +104,8 @@ public final class PageNames {
         return out;
     }
 
-    private static net.minecraft.network.chat.TextColor nameColour(Component line, int length) {
-        java.util.Map<net.minecraft.network.chat.TextColor, Integer> votes = new java.util.LinkedHashMap<>();
+    private static TextColor nameColour(Component line, int length) {
+        Map<TextColor, Integer> votes = new LinkedHashMap<>();
         int[] at = {0};
         line.visit((style, part) -> {
             for (int i = 0; i < part.length() && at[0] + i < length; i++) {
@@ -115,9 +118,9 @@ public final class PageNames {
             at[0] += part.length();
             return Optional.empty();
         }, Style.EMPTY);
-        net.minecraft.network.chat.TextColor best = null;
+        TextColor best = null;
         int most = 0;
-        for (java.util.Map.Entry<net.minecraft.network.chat.TextColor, Integer> e : votes.entrySet()) {
+        for (Map.Entry<TextColor, Integer> e : votes.entrySet()) {
             if (e.getValue() > most) {
                 most = e.getValue();
                 best = e.getKey();

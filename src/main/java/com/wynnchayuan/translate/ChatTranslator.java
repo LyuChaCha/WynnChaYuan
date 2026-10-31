@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.Broadcasts;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.ColumnAligner.Piece;
@@ -10,7 +11,12 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class ChatTranslator {
 
@@ -25,8 +31,7 @@ final class ChatTranslator {
         if (line == null || plain == null || store == null) {
             return null;
         }
-        com.wynnchayuan.capture.Broadcasts.Spans spans =
-                store.nameFrames().find(line, plain.template());
+        Broadcasts.Spans spans = store.nameFrames().find(line, plain.template());
         return spans == null ? null : LineParts.of(line, spans);
     }
 
@@ -34,7 +39,7 @@ final class ChatTranslator {
         if (line == null || store == null) {
             return null;
         }
-        com.wynnchayuan.capture.Broadcasts.Spans bomb = com.wynnchayuan.capture.Broadcasts.find(line);
+        Broadcasts.Spans bomb = Broadcasts.find(line);
         if (bomb != null) {
             return LineParts.of(line, bomb);
         }
@@ -83,7 +88,7 @@ final class ChatTranslator {
 
     static Component translateChat(StyledText message, TranslationStore store,
                                    Boolean centred, boolean inPanel) {
-        LineParts parts = com.wynnchayuan.capture.Broadcasts.parts(message);
+        LineParts parts = Broadcasts.parts(message);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
@@ -102,7 +107,7 @@ final class ChatTranslator {
                     glyphs = TemplateRenderer.unwrappedGlyphs(parts.template(), parts.glyphs());
                 }
                 case 3, 4 -> {
-                    if (step == 3 && com.wynnchayuan.capture.Broadcasts.find(message) == null) {
+                    if (step == 3 && Broadcasts.find(message) == null) {
                         framed = framedOnMiss(message, parts, store);
                     }
                     if (framed != null) {
@@ -151,21 +156,20 @@ final class ChatTranslator {
         return DisplayStyles.unslant(ChatRealigner.realignChat(message, rebuilt, centred, inPanel));
     }
 
-    private static final java.util.regex.Pattern CHAT_HEAD =
-            java.util.regex.Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
+    private static final Pattern CHAT_HEAD = Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
 
     static Component npcChatColours(StyledText message, Component rebuilt) {
         try {
             List<Run> src = SpaceRuns.runs(message.getComponent());
             String srcText = joinedText(src);
-            java.util.regex.Matcher s = CHAT_HEAD.matcher(srcText);
+            Matcher s = CHAT_HEAD.matcher(srcText);
             if (!s.find()) {
                 return rebuilt;
             }
             TextColor counter = uniformColour(src, s.start(1), s.end(1));
             TextColor speaker = uniformColour(src, s.start(3), s.end(3));
             List<Run> made = SpaceRuns.runs(rebuilt);
-            java.util.regex.Matcher d = CHAT_HEAD.matcher(joinedText(made));
+            Matcher d = CHAT_HEAD.matcher(joinedText(made));
             if (!d.find() || (counter == null && speaker == null)) {
                 return rebuilt;
             }
@@ -256,7 +260,7 @@ final class ChatTranslator {
             if (block == null) {
                 continue;
             }
-            java.util.Map<TextColor, Integer> weight = new java.util.LinkedHashMap<>();
+            Map<TextColor, Integer> weight = new LinkedHashMap<>();
             boolean usesBlock = false;
             for (Run run : origRows.get(keepOrig[0] + k)) {
                 TextColor colour = run.style() == null ? null : run.style().getColor();
@@ -272,8 +276,8 @@ final class ChatTranslator {
             if (usesBlock || weight.isEmpty()) {
                 continue;
             }
-            rowColour[k] = java.util.Collections.max(weight.entrySet(),
-                    java.util.Map.Entry.comparingByValue()).getKey();
+            rowColour[k] = Collections.max(weight.entrySet(),
+                    Map.Entry.comparingByValue()).getKey();
             any = true;
         }
         if (!any) {

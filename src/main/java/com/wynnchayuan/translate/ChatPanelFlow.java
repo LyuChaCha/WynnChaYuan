@@ -9,7 +9,9 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 final class ChatPanelFlow {
 
@@ -277,7 +279,7 @@ final class ChatPanelFlow {
 
     private static Style proseColour(List<List<Run>> cells) {
         boolean bare = false;
-        java.util.Map<TextColor, Integer> letters = new java.util.LinkedHashMap<>();
+        Map<TextColor, Integer> letters = new LinkedHashMap<>();
         for (List<Run> cell : cells) {
             for (Run run : cell) {
                 if (run.space() || !LineTranslator.hasContent(run.text())) {
@@ -299,7 +301,7 @@ final class ChatPanelFlow {
         }
         TextColor best = null;
         int most = 0;
-        for (java.util.Map.Entry<TextColor, Integer> e : letters.entrySet()) {
+        for (Map.Entry<TextColor, Integer> e : letters.entrySet()) {
             if (e.getValue() > most) {
                 most = e.getValue();
                 best = e.getKey();

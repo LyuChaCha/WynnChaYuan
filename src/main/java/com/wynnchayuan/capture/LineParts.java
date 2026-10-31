@@ -8,7 +8,9 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public record LineParts(
         String template,
@@ -44,8 +46,7 @@ public record LineParts(
                              named, accents, textStyle, runs);
     }
 
-    private static final java.util.regex.Pattern LITERAL_PLAYER =
-            java.util.regex.Pattern.compile("\\bPlayer\\b");
+    private static final Pattern LITERAL_PLAYER = Pattern.compile("\\bPlayer\\b");
 
     private static final String LITERAL_NAME = "Player";
 
@@ -99,7 +100,7 @@ public record LineParts(
             Style style = ps == null ? Style.EMPTY : ps.getStyle();
 
             if (GlyphSplitter.isGlyphPart(part)) {
-                if (!glyphRun.isEmpty() && !java.util.Objects.equals(glyphRunStyle, style)) {
+                if (!glyphRun.isEmpty() && !Objects.equals(glyphRunStyle, style)) {
                     glyphs.add(new Piece(glyphRun.toString(), glyphRunStyle));
                     glyphRun.setLength(0);
                 }
@@ -221,7 +222,7 @@ public record LineParts(
         for (Piece candidate : runs) {
             int len = 0;
             for (Piece other : runs) {
-                if (java.util.Objects.equals(candidate.style(), other.style())) {
+                if (Objects.equals(candidate.style(), other.style())) {
                     len += other.text().length();
                 }
             }
@@ -237,7 +238,7 @@ public record LineParts(
         List<Piece> out = new ArrayList<>();
         for (Piece run : runs) {
             String text = run.text().strip();
-            if (java.util.Objects.equals(run.style(), textStyle) || text.isEmpty()) {
+            if (Objects.equals(run.style(), textStyle) || text.isEmpty()) {
                 continue;
             }
             boolean word = text.length() >= MIN_ACCENT_LENGTH && GlyphSplitter.hasLetter(text);

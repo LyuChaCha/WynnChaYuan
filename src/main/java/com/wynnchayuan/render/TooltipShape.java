@@ -1,9 +1,20 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.TranslationStore;
+import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.StyledTextPart;
+import com.wynntils.core.text.type.StyleType;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.Style;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class TooltipShape {
 
@@ -43,32 +54,32 @@ final class TooltipShape {
         return line != null && ADDRESS.matcher(line.strip()).matches();
     }
 
-    private static final java.util.regex.Pattern ADDRESS = java.util.regex.Pattern.compile(
+    private static final Pattern ADDRESS = Pattern.compile(
             "(?:https?://)?[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+(?:/\\S*)?");
 
     static boolean nothingToTranslate(String line) {
         return line != null
-                && !com.wynnchayuan.capture.GlyphSplitter.hasLetter(line);
+                && !GlyphSplitter.hasLetter(line);
     }
 
     static String visibleText(StyledText line) {
         StringBuilder out = new StringBuilder();
-        for (com.wynntils.core.text.StyledTextPart part : line) {
-            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+        for (StyledTextPart part : line) {
+            PartStyle ps = part.getPartStyle();
             if (ps != null && isInvisibleFont(ps.getStyle())) {
                 continue;
             }
-            out.append(part.getString(null, com.wynntils.core.text.type.StyleType.NONE));
+            out.append(part.getString(null, StyleType.NONE));
         }
         return out.toString();
     }
 
-    private static boolean isInvisibleFont(net.minecraft.network.chat.Style style) {
+    private static boolean isInvisibleFont(Style style) {
         if (style == null) {
             return false;
         }
-        net.minecraft.network.chat.FontDescription font = style.getFont();
-        return font instanceof net.minecraft.network.chat.FontDescription.Resource resource
+        FontDescription font = style.getFont();
+        return font instanceof FontDescription.Resource resource
                 && resource.id() != null && "invisible".equals(resource.id().getPath());
     }
 
@@ -120,10 +131,10 @@ final class TooltipShape {
         if (space <= 0) {
             return false;
         }
-        return LINK_WORDS.contains(prev.substring(space + 1).toLowerCase(java.util.Locale.ROOT));
+        return LINK_WORDS.contains(prev.substring(space + 1).toLowerCase(Locale.ROOT));
     }
 
-    private static final java.util.Set<String> LINK_WORDS = java.util.Set.of(
+    private static final Set<String> LINK_WORDS = Set.of(
             "a", "an", "the", "of", "to", "at", "for", "with", "from", "into",
             "by", "in", "on", "and", "or", "your");
 
@@ -170,7 +181,7 @@ final class TooltipShape {
     };
 
     static boolean blockedGearName(StyledText line, TranslationStore store) {
-        String bare = bareName(com.wynnchayuan.capture.LineParts.of(line).template());
+        String bare = bareName(LineParts.of(line).template());
         int at = 0;
         while (at < bare.length() && BULLETS.indexOf(bare.charAt(at)) >= 0) {
             at++;
@@ -180,13 +191,13 @@ final class TooltipShape {
     }
 
     static boolean guessList(String plain, TranslationStore store) {
-        String text = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(plain).strip();
+        String text = GlyphSplitter.stripGlyphChars(plain).strip();
         int at = 0;
         while (at < text.length() && (BULLETS.indexOf(text.charAt(at)) >= 0
                 || Character.isWhitespace(text.charAt(at)))) {
             at++;
         }
-        java.util.regex.Matcher row = GUESS_ROW.matcher(text.substring(at));
+        Matcher row = GUESS_ROW.matcher(text.substring(at));
         if (!row.matches()) {
             return false;
         }
@@ -198,13 +209,12 @@ final class TooltipShape {
         return false;
     }
 
-    private static final java.util.regex.Pattern GUESS_ROW = java.util.regex.Pattern.compile(
+    private static final Pattern GUESS_ROW = Pattern.compile(
             "[^\\d:\\[\\]]{1,16} \\d+(?: \\[[^\\]]*\\])?: (.+)");
 
     private static final String BULLETS = "-–—•*";
 
-    private static final java.util.regex.Pattern CRAFTED_BY =
-            java.util.regex.Pattern.compile("(?:^|[^A-Za-z])Crafted by \\S");
+    private static final Pattern CRAFTED_BY = Pattern.compile("(?:^|[^A-Za-z])Crafted by \\S");
 
     static boolean crafted(List<StyledText> lines) {
         for (StyledText line : lines) {
@@ -221,11 +231,11 @@ final class TooltipShape {
             return false;
         }
         if (TranslationStore.nameRowInner(
-                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null) {
+                LineParts.of(styled.get(0)).template()) != null) {
             return true;
         }
         for (int k = 1; k < Math.min(n, BANNER_ROWS + 1); k++) {
-            String t = com.wynnchayuan.capture.LineParts.of(styled.get(k)).template();
+            String t = LineParts.of(styled.get(k)).template();
             if (bannerRow(t)) {
                 return true;
             }
@@ -241,7 +251,7 @@ final class TooltipShape {
     private static final int BANNER_ROWS = 4;
 
     static boolean bannerRow(String template) {
-        String icon = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
+        String icon = GlyphSplitter.GLYPH_PLACEHOLDER;
         String rest = template.replace(icon, "");
         if (!rest.isBlank()) {
             return false;
@@ -250,14 +260,13 @@ final class TooltipShape {
         return icons >= 3;
     }
 
-    private static final java.util.regex.Pattern ITEM_ROW = java.util.regex.Pattern.compile(
+    private static final Pattern ITEM_ROW = Pattern.compile(
             "Combat Level|Combat Lv\\. Min|Class Type|Class Req|\\d DPS\\b"
                     + "|(?:^|[^A-Za-z])Crafted by \\S");
 
     static String bareName(String template) {
         String s = template
-                .replace(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, "")
-                .strip();
+                .replace(GlyphSplitter.GLYPH_PLACEHOLDER, "").strip();
         while (s.endsWith("]")) {
             int open = s.lastIndexOf('[');
             if (open <= 0) {

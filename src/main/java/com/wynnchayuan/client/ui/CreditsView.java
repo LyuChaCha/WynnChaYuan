@@ -1,5 +1,6 @@
 package com.wynnchayuan.client.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class CreditsView extends Surface {
@@ -71,7 +72,7 @@ public final class CreditsView extends Surface {
         String sub = "v" + host.version() + "  ·  " + shell.tr("credits.tagline");
         c.text(Ui.fit(c, sub, (int) (right - left - 31)), left + 31, y + 9 + 8 * s + 3, Ui.TEXT_3);
 
-        List<String> notes = new java.util.ArrayList<>();
+        List<String> notes = new ArrayList<>();
         notes.addAll(Ui.wrap(c, shell.tr("credits.note1"), (int) (right - left)));
         notes.addAll(Ui.wrap(c, shell.tr("credits.note2"), (int) (right - left)));
         float footY = y + h - 28;

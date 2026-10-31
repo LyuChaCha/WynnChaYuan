@@ -1,14 +1,18 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CardDump;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public final class GuiTextCapture {
 
@@ -33,7 +37,7 @@ public final class GuiTextCapture {
 
         boolean skipTitle = stack != null && stack.is(Items.PLAYER_HEAD);
 
-        List<String> templates = new java.util.ArrayList<>(tooltip.size());
+        List<String> templates = new ArrayList<>(tooltip.size());
         for (Component line : tooltip) {
             StyledText styled = StyledText.fromComponent(line);
             if (GlyphSplitter.isGlyphOnly(styled)) {
@@ -43,8 +47,7 @@ public final class GuiTextCapture {
             templates.add(GlyphSplitter.toTemplate(styled));
         }
         skipTitle = skipTitle || PlayerDataFilter.isPartyCard(templates);
-        com.wynnchayuan.capture.CardDump.fromPlayerHead(
-                stack != null && stack.is(Items.PLAYER_HEAD));
+        CardDump.fromPlayerHead(stack != null && stack.is(Items.PLAYER_HEAD));
         boolean[] covered = covered(templates, GuiTextCapture::whole);
 
         int titleAt = -1;
@@ -83,9 +86,8 @@ public final class GuiTextCapture {
     }
 
     static List<String[]> rows(List<String> templates, boolean[] covered, int from,
-                               java.util.function.Predicate<String> translated,
-                               java.util.function.Predicate<String> personal) {
-        List<String[]> out = new java.util.ArrayList<>();
+                               Predicate<String> translated, Predicate<String> personal) {
+        List<String[]> out = new ArrayList<>();
         int i = from;
         while (i < templates.size()) {
             String line = templates.get(i);
@@ -105,14 +107,13 @@ public final class GuiTextCapture {
     }
 
     private static void paragraph(List<String> lines, boolean covered,
-                                  java.util.function.Predicate<String> translated,
-                                  java.util.function.Predicate<String> personal,
+                                  Predicate<String> translated, Predicate<String> personal,
                                   List<String[]> out) {
         if (covered) {
             out.add(new String[] {"gui.skipped.inBlock", null});
             return;
         }
-        List<String> words = new java.util.ArrayList<>();
+        List<String> words = new ArrayList<>();
         boolean listy = false;
         for (String line : lines) {
             if (!GlyphSplitter.hasLetter(line)) {
@@ -138,7 +139,7 @@ public final class GuiTextCapture {
     }
 
     static boolean[] covered(List<String> templates,
-                             java.util.function.Predicate<List<String>> known) {
+                             Predicate<List<String>> known) {
         boolean[] out = new boolean[templates.size()];
         int from = 0;
         while (from < templates.size()) {
@@ -166,7 +167,7 @@ public final class GuiTextCapture {
         return whole(lines, WynnChaYuan.translations());
     }
 
-    static boolean whole(List<String> lines, com.wynnchayuan.translate.TranslationStore store) {
+    static boolean whole(List<String> lines, TranslationStore store) {
         if (store == null) {
             return false;
         }
@@ -174,7 +175,7 @@ public final class GuiTextCapture {
                 || store.hasTranslation(String.join("\n", lines))) {
             return true;
         }
-        List<String> bare = new java.util.ArrayList<>(lines.size());
+        List<String> bare = new ArrayList<>(lines.size());
         for (String line : lines) {
             String cut = line;
             while (cut.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {

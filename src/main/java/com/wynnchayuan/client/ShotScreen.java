@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.PanelShot;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -15,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
+import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.image.BufferedImage;
@@ -121,7 +123,7 @@ public final class ShotScreen extends Screen {
     private void copy() {
         try {
             BufferedImage image = toBuffered(shot);
-            java.awt.Toolkit.getDefaultToolkit().getSystemClipboard()
+            Toolkit.getDefaultToolkit().getSystemClipboard()
                     .setContents(new ImageClip(image), null);
             note = T.c("shot.copied")
                     .withStyle(ChatFormatting.GREEN);
@@ -140,8 +142,8 @@ public final class ShotScreen extends Screen {
             Path file = dir.resolve(name + "_"
                     + LocalDateTime.now().format(STAMP) + ".png");
             shot.writeToFile(file);
-            note = com.wynnchayuan.render.PanelShot.saved(file);
-            com.wynnchayuan.render.PanelShot.announce(note);
+            note = PanelShot.saved(file);
+            PanelShot.announce(note);
         } catch (Exception e) {
             note = T.c("shot.failed", e.getMessage())
                     .withStyle(ChatFormatting.RED);

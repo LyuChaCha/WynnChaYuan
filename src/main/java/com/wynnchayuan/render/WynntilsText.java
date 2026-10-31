@@ -3,10 +3,26 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.ThirdPartyField;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.listener.GuiTextCapture;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.StyledTextPart;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.Entity;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 // 跑在 Wynntils 算繪流程裡，丟例外會讓疊層畫不出來
 public final class WynntilsText {
@@ -69,18 +85,18 @@ public final class WynntilsText {
         return shown;
     }
 
-    private static final java.util.Map<StyledText, WynntilsScreenText.Cached> TRACKER_CACHE = lru(64);
+    private static final Map<StyledText, WynntilsScreenText.Cached> TRACKER_CACHE = lru(64);
 
-    static <K, V> java.util.Map<K, V> lru(int limit) {
-        return new java.util.LinkedHashMap<>(16, 0.75f, true) {
+    static <K, V> Map<K, V> lru(int limit) {
+        return new LinkedHashMap<>(16, 0.75f, true) {
             @Override
-            protected boolean removeEldestEntry(java.util.Map.Entry<K, V> eldest) {
+            protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
                 return size() > limit;
             }
         };
     }
 
-    static boolean firstTime(java.util.Map<String, Boolean> noted, String key) {
+    static boolean firstTime(Map<String, Boolean> noted, String key) {
         synchronized (noted) {
             return noted.put(key, Boolean.TRUE) == null;
         }
@@ -98,25 +114,23 @@ public final class WynntilsText {
     }
 
     static StyledText byPart(StyledText line, TranslationStore store) {
-        net.minecraft.network.chat.MutableComponent out =
-                net.minecraft.network.chat.Component.empty();
+        MutableComponent out = Component.empty();
         boolean any = false;
         int parts = 0;
-        for (com.wynntils.core.text.StyledTextPart part : line) {
+        for (StyledTextPart part : line) {
             StyledText one = StyledText.fromPart(part);
             parts++;
             if (one.isBlank()) {
                 out.append(one.getComponent());
                 continue;
             }
-            net.minecraft.network.chat.Component done = LineTranslator.translate(one, store);
+            Component done = LineTranslator.translate(one, store);
             if (done == null) {
                 String split = splitHeader(one.getStringWithoutFormatting(), store);
                 if (split != null) {
                     // Wynntils 標題樣板包成 language/wynncraft，沒有中文字
-                    done = net.minecraft.network.chat.Component.literal(split)
-                            .withStyle(styleOf(one).withFont(
-                                    net.minecraft.network.chat.FontDescription.DEFAULT));
+                    done = Component.literal(split).withStyle(styleOf(one).withFont(
+                                    FontDescription.DEFAULT));
                 }
             }
             any |= done != null;
@@ -149,8 +163,7 @@ public final class WynntilsText {
         int start = 0;
         while (start < text.length()
                 && (Character.isWhitespace(text.charAt(start))
-                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(
-                            text.codePointAt(start)))) {
+                    || GlyphSplitter.isGlyphCodePoint(text.codePointAt(start)))) {
             start += Character.charCount(text.codePointAt(start));
         }
         String core = text.substring(start).strip();
@@ -164,15 +177,15 @@ public final class WynntilsText {
         return hit == null || hit.isBlank() ? null : text.substring(0, start) + hit;
     }
 
-    static net.minecraft.network.chat.Style styleOf(StyledText one) {
-        net.minecraft.network.chat.Style[] found = {net.minecraft.network.chat.Style.EMPTY};
+    static Style styleOf(StyledText one) {
+        Style[] found = {Style.EMPTY};
         one.getComponent().visit((style, text) -> {
             if (!text.isEmpty()) {
                 found[0] = style;
-                return java.util.Optional.of(Boolean.TRUE);
+                return Optional.of(Boolean.TRUE);
             }
-            return java.util.Optional.empty();
-        }, net.minecraft.network.chat.Style.EMPTY);
+            return Optional.empty();
+        }, Style.EMPTY);
         return found[0];
     }
 
@@ -211,7 +224,7 @@ public final class WynntilsText {
         }
     }
 
-    private static final java.util.Map<String, String> OBJECTIVES = new java.util.HashMap<>();
+    private static final Map<String, String> OBJECTIVES = new HashMap<>();
     private static long objectiveAge = -1;
 
     public static String marker(String text) {
@@ -246,11 +259,10 @@ public final class WynntilsText {
         }
     }
 
-    private static final java.util.Map<String, String> MARKERS = new java.util.HashMap<>();
+    private static final Map<String, String> MARKERS = new HashMap<>();
     private static long markerAge = -1;
 
-    public static net.minecraft.network.chat.Component heldItemName(
-            net.minecraft.network.chat.Component name) {
+    public static Component heldItemName(Component name) {
         try {
             return heldItemName(name, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
@@ -259,9 +271,7 @@ public final class WynntilsText {
         }
     }
 
-    static net.minecraft.network.chat.Component heldItemName(
-            net.minecraft.network.chat.Component name, CollectorConfig config,
-            TranslationStore store) {
+    static Component heldItemName(Component name, CollectorConfig config, TranslationStore store) {
         if (name == null || store == null || config == null || !config.translateHeldItem()) {
             return name;
         }
@@ -279,11 +289,11 @@ public final class WynntilsText {
             }
             StyledText shown = line(text, store);
             if (shown == text && config.collect()
-                    && !com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)) {
-                String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
+                    && !GlyphSplitter.isGlyphOnly(text)) {
+                String template = GlyphSplitter.toTemplate(text);
                 var captured = WynnChaYuan.store();
                 if (captured != null && !template.isBlank()
-                        && !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
+                        && !PlayerDataFilter.carriesPlayerData(template)) {
                     captured.record(template, "desc", "chat", "chat/notification");
                 }
             }
@@ -307,7 +317,7 @@ public final class WynntilsText {
             if (text == null || text.isEmpty()) {
                 return text;
             }
-            net.minecraft.network.chat.Component shown = heldItemName(text.getComponent(),
+            Component shown = heldItemName(text.getComponent(),
                     WynnChaYuan.config(), WynnChaYuan.translations());
             return shown == text.getComponent() ? text : StyledText.fromComponent(shown);
         } catch (Throwable t) {
@@ -324,12 +334,11 @@ public final class WynntilsText {
         if (!firstTime(TRACKER_NOTED, line.getString())) {
             return;
         }
-        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+        String template = GlyphSplitter.toTemplate(line);
         if (template.isBlank()
-                || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
-                || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
-                || com.wynnchayuan.capture.PlayerDataFilter
-                        .mentionsOnlinePlayerLoose(template)) {
+                || !GlyphSplitter.hasLetter(template)
+                || PlayerDataFilter.carriesPlayerData(template)
+                || PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             return;
         }
         var captured = WynnChaYuan.store();
@@ -338,22 +347,20 @@ public final class WynntilsText {
         }
     }
 
-    private static final java.util.Map<String, Boolean> TRACKER_NOTED = lru(256);
+    private static final Map<String, Boolean> TRACKER_NOTED = lru(256);
 
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());
     }
 
-    public static java.util.List<net.minecraft.network.chat.Component> menuTooltip(
-            java.util.List<net.minecraft.network.chat.Component> lines) {
+    public static List<Component> menuTooltip(List<Component> lines) {
         try {
             CollectorConfig config = WynnChaYuan.config();
             if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
                 return lines;
             }
-            com.wynnchayuan.listener.GuiTextCapture.record(lines);
-            java.util.List<net.minecraft.network.chat.Component> out =
-                    TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
+            GuiTextCapture.record(lines);
+            List<Component> out = TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
             if (out == null || out.isEmpty()) {
                 return lines;
             }
@@ -364,12 +371,11 @@ public final class WynntilsText {
         }
     }
 
-    public static net.minecraft.network.chat.Component bossBar(net.minecraft.network.chat.Component name) {
+    public static Component bossBar(Component name) {
         return WynntilsBossBar.bossBar(name);
     }
 
-    public static net.minecraft.network.chat.Component entityName(net.minecraft.network.chat.Component name,
-                                                                  net.minecraft.world.entity.Entity entity) {
+    public static Component entityName(Component name, Entity entity) {
         return WynntilsNames.entityName(name, entity);
     }
 
@@ -381,14 +387,12 @@ public final class WynntilsText {
         WynntilsScreenText.holdRawText(on);
     }
 
-    public static void setScoreboard(java.util.Set<String> shown,
-                                     java.util.Map<String, StyledText> replaced) {
+    public static void setScoreboard(Set<String> shown, Map<String, StyledText> replaced) {
         WynntilsScreenText.setScoreboard(shown, replaced);
     }
 
-    public static void setScoreboard(java.util.Set<String> shown,
-                                     java.util.Map<String, StyledText> replaced,
-                                     java.util.Set<String> kept) {
+    public static void setScoreboard(Set<String> shown, Map<String, StyledText> replaced,
+                                     Set<String> kept) {
         WynntilsScreenText.setScoreboard(shown, replaced, kept);
     }
 }

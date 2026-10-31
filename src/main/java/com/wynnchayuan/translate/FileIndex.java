@@ -4,8 +4,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import com.wynnchayuan.ModLog;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class FileIndex {
 
@@ -22,8 +24,7 @@ public final class FileIndex {
 
     private static final List<String> FALLBACK = List.of("ui-labels.json", "npc.json", "quest.json");
 
-    private static final java.util.Map<String, List<String>> cached =
-            new java.util.concurrent.ConcurrentHashMap<>();
+    private static final Map<String, List<String>> cached = new ConcurrentHashMap<>();
 
     private FileIndex() {}
 

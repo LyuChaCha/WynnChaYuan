@@ -2,16 +2,20 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
+import com.wynntils.core.components.Models;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.FormattedCharSequence;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public final class TrackerOverlay {
 
@@ -64,7 +68,7 @@ public final class TrackerOverlay {
 
     private static boolean stillTracking() {
         try {
-            String name = com.wynntils.core.components.Models.Activity.getTrackedName();
+            String name = Models.Activity.getTrackedName();
             return name != null && !name.isBlank();
         } catch (Throwable t) {
             ErrorDebug.note("TrackerOverlay#stillTracking", null, t);
@@ -120,13 +124,11 @@ public final class TrackerOverlay {
         int wrapAt = sized
                 ? Math.max(MIN_WRAP, fixedW - PADDING * 2)
                 : wrapWidth(x, graphics.guiWidth());
-        List<net.minecraft.util.FormattedCharSequence> wrapped =
-                new ArrayList<>();
+        List<FormattedCharSequence> wrapped = new ArrayList<>();
         int firstRows = 0;
         for (int i = 0; i < lines.size(); i++) {
             int room = i == 0 ? Math.round(wrapAt / NAME_SCALE) : wrapAt;
-            List<net.minecraft.util.FormattedCharSequence> parts =
-                    mc.font.split(lines.get(i), room);
+            List<FormattedCharSequence> parts = mc.font.split(lines.get(i), room);
             if (parts.isEmpty()) {
                 parts = List.of(lines.get(i).getVisualOrderText());
             }
@@ -178,10 +180,10 @@ public final class TrackerOverlay {
     private static String heading(Object type) {
         String key = type == null ? null : String.valueOf(type);
         String suffix = key == null ? "default"
-                : key.toLowerCase(java.util.Locale.ROOT);
-        String text = com.wynnchayuan.client.T.s("tracker.heading." + suffix);
+                : key.toLowerCase(Locale.ROOT);
+        String text = T.s("tracker.heading." + suffix);
         if (text.startsWith("wynnchayuan.")) {
-            text = com.wynnchayuan.client.T.s("tracker.heading.default");
+            text = T.s("tracker.heading.default");
         }
         return text + " - ";
     }

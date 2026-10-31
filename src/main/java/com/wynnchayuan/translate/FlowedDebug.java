@@ -1,8 +1,9 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.ModLog;
-import com.wynntils.core.text.PartStyle;
+import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
+import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
@@ -14,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class FlowedDebug {
 
@@ -24,8 +27,7 @@ public final class FlowedDebug {
     private static Path file;
     private static int seen = 0;
 
-    private static final java.util.Set<String> already =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
+    private static final Set<String> already = ConcurrentHashMap.newKeySet();
 
     private FlowedDebug() {}
 
@@ -285,8 +287,8 @@ public final class FlowedDebug {
     private static final int ROW_LIMIT = 40;
 
     private static boolean isOffset(int cp) {
-        return com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)
-                && !com.wynnchayuan.capture.GlyphSplitter.isPrivateUse(cp);
+        return GlyphSplitter.isGlyphCodePoint(cp)
+                && !GlyphSplitter.isPrivateUse(cp);
     }
 
     private static final int GLYPH_LIMIT = 12;

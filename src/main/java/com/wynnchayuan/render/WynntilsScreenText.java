@@ -5,8 +5,18 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.LookupScope;
+import com.wynnchayuan.translate.PageNames;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.BooleanSupplier;
+import java.util.regex.Pattern;
 
 final class WynntilsScreenText {
 
@@ -27,23 +37,18 @@ final class WynntilsScreenText {
         rawText = on;
     }
 
-    private record Board(java.util.Set<String> shown,
-                         java.util.Map<String, StyledText> replaced,
-                         java.util.Set<String> kept) {}
+    private record Board(Set<String> shown, Map<String, StyledText> replaced, Set<String> kept) {}
 
     private static volatile Board board =
-            new Board(java.util.Set.of(), java.util.Map.of(), java.util.Set.of());
+            new Board(Set.of(), Map.of(), Set.of());
 
-    static void setScoreboard(java.util.Set<String> shown,
-                              java.util.Map<String, StyledText> replaced) {
-        setScoreboard(shown, replaced, java.util.Set.of());
+    static void setScoreboard(Set<String> shown, Map<String, StyledText> replaced) {
+        setScoreboard(shown, replaced, Set.of());
     }
 
-    static void setScoreboard(java.util.Set<String> shown,
-                              java.util.Map<String, StyledText> replaced,
-                              java.util.Set<String> kept) {
-        board = new Board(java.util.Set.copyOf(shown), java.util.Map.copyOf(replaced),
-                java.util.Set.copyOf(kept));
+    static void setScoreboard(Set<String> shown, Map<String, StyledText> replaced,
+                              Set<String> kept) {
+        board = new Board(Set.copyOf(shown), Map.copyOf(replaced), Set.copyOf(kept));
     }
 
     static StyledText screenText(StyledText text, CollectorConfig config,
@@ -79,7 +84,7 @@ final class WynntilsScreenText {
         if (seen != null && seen.fresh(store) && seen.content() == content) {
             return seen.out() == null ? text : seen.out();
         }
-        net.minecraft.network.chat.Component hit;
+        Component hit;
         if (statusRow(text.getStringWithoutFormatting())) {
             try (LookupScope scope = LookupScope.barItemNames(true)) {
                 hit = LineTranslator.translate(text, store);
@@ -93,14 +98,13 @@ final class WynntilsScreenText {
         if (content) {
             String title = store.pageTitleName(text.getStringWithoutFormatting());
             if (title != null && (hit == null || !hit.getString().equals(title))) {
-                hit = net.minecraft.network.chat.Component.literal(title).withStyle(
-                        WynntilsText.styleOf(text).withFont(net.minecraft.network.chat.FontDescription.DEFAULT));
+                hit = Component.literal(title).withStyle(
+                        WynntilsText.styleOf(text).withFont(FontDescription.DEFAULT));
             }
         }
         if (hit != null && store.pageNameMode() != CollectorConfig.ItemNames.ON
                 && store.isPageName(text.getStringWithoutFormatting())) {
-            hit = com.wynnchayuan.translate.PageNames.bare(
-                    text.getComponent(), hit, store.pageNameMode());
+            hit = PageNames.bare(text.getComponent(), hit, store.pageNameMode());
         }
         StyledText out = hit == null ? null : StyledText.fromComponent(hit);
         synchronized (SCREEN_CACHE) {
@@ -110,11 +114,11 @@ final class WynntilsScreenText {
     }
 
     // 以 Wynntils 套件名比對，它搬套件時會安靜失效
-    static java.util.function.BooleanSupplier contentScreen = WynntilsScreenText::onContentScreen;
+    static BooleanSupplier contentScreen = WynntilsScreenText::onContentScreen;
 
     private static boolean onContentScreen() {
         try {
-            net.minecraft.client.Minecraft client = net.minecraft.client.Minecraft.getInstance();
+            Minecraft client = Minecraft.getInstance();
             Object screen = client == null ? null : client.screen;
             if (screen == null) {
                 return false;
@@ -132,7 +136,7 @@ final class WynntilsScreenText {
         return plain != null && STATUS_TIMER.matcher(plain).find();
     }
 
-    private static final java.util.regex.Pattern STATUS_TIMER = java.util.regex.Pattern.compile(
+    private static final Pattern STATUS_TIMER = Pattern.compile(
             "\\((?:\\d{1,2}:)?(?:\\d{1,2}:\\d{2}|\\*\\*:\\*\\*)\\)\\s*$");
 
     private static final int SCREEN_CACHE_LIMIT = 512;
@@ -144,11 +148,10 @@ final class WynntilsScreenText {
         }
     }
 
-    static final java.util.Map<StyledText, Cached> SCREEN_CACHE =
-            new java.util.LinkedHashMap<>(128, 0.75f, true) {
+    static final Map<StyledText, Cached> SCREEN_CACHE = new LinkedHashMap<>(128, 0.75f, true) {
                 @Override
                 protected boolean removeEldestEntry(
-                        java.util.Map.Entry<StyledText, Cached> eldest) {
+                        Map.Entry<StyledText, Cached> eldest) {
                     return size() > SCREEN_CACHE_LIMIT;
                 }
             };

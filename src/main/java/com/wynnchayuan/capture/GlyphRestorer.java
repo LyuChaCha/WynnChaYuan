@@ -4,6 +4,7 @@ import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
+import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public final class GlyphRestorer {
 
     private static StyledTextPart makePart(String text, PartStyle style) {
         return style == null
-                ? new StyledTextPart(text, net.minecraft.network.chat.Style.EMPTY, null, null)
+                ? new StyledTextPart(text, Style.EMPTY, null, null)
                 : new StyledTextPart(text, style.getStyle(), null, null);
     }
 

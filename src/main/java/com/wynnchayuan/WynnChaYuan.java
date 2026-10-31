@@ -1,33 +1,59 @@
 package com.wynnchayuan;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.wynnchayuan.capture.CaptureStore;
+import com.wynnchayuan.capture.CardDump;
+import com.wynnchayuan.capture.ConversationPartner;
+import com.wynnchayuan.capture.DialogueProbe;
+import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.capture.PlaceNames;
+import com.wynnchayuan.capture.Whereabouts;
+import com.wynnchayuan.client.MarketPicker;
+import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.listener.ActionBarListener;
 import com.wynnchayuan.listener.BadgeListener;
+import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.ChatListener;
 import com.wynnchayuan.listener.MarketListener;
-import com.wynnchayuan.listener.TitleListener;
-import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.RenderListener;
-import com.wynnchayuan.listener.WorldReset;
-import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.listener.ScoreboardListener;
+import com.wynnchayuan.listener.TitleListener;
 import com.wynnchayuan.listener.TrackerListener;
+import com.wynnchayuan.listener.WorldReset;
+import com.wynnchayuan.render.Boxes;
+import com.wynnchayuan.render.DialogueStartLog;
+import com.wynnchayuan.render.DialogueTint;
+import com.wynnchayuan.render.FpsLog;
+import com.wynnchayuan.render.ThirdPartyLiterals;
+import com.wynnchayuan.render.ThirdPartySections;
+import com.wynnchayuan.render.TooltipDebug;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.FlowedDebug;
+import com.wynnchayuan.translate.Languages;
+import com.wynnchayuan.translate.LayoutDebug;
+import com.wynnchayuan.translate.LineDebug;
+import com.wynnchayuan.translate.NameplateProbe;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
+import com.wynnchayuan.translate.TranslationCache;
 import com.wynnchayuan.translate.TranslationStore;
+import com.wynnchayuan.translate.TranslationUpdate;
 import com.wynntils.core.WynntilsMod;
 import net.fabricmc.api.ClientModInitializer;
-import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.network.chat.Component;
-import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.InteractionResult;
 
 import java.nio.file.Path;
 import java.util.concurrent.Executors;
@@ -57,7 +83,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     static KeyMapping copyChatKey;
     static Path configDir;
 
-    static volatile String language = com.wynnchayuan.translate.Languages.DEFAULT;
+    static volatile String language = Languages.DEFAULT;
 
     public static CaptureStore store() {
         return store;
@@ -80,43 +106,38 @@ public final class WynnChaYuan implements ClientModInitializer {
         Path dir = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID);
         configDir = dir;
         ConfigFolder.tidy(dir);
-        com.wynnchayuan.translate.TranslationCache.modVersion = version();
+        TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
         NetworkGate.use(config);
-        com.wynnchayuan.capture.CardDump.init(dir.resolve(
-                com.wynnchayuan.capture.CardDump.FILE));
-        com.wynnchayuan.render.DialogueTint.init(dir.resolve(
-                com.wynnchayuan.render.DialogueTint.FILE), language);
-        com.wynnchayuan.render.ThirdPartySections.load(dir);
-        com.wynnchayuan.translate.TranslationUpdate.registerCommand();
-        com.wynnchayuan.render.ThirdPartyLiterals.load(dir);
+        CardDump.init(dir.resolve(CardDump.FILE));
+        DialogueTint.init(dir.resolve(DialogueTint.FILE), language);
+        ThirdPartySections.load(dir);
+        TranslationUpdate.registerCommand();
+        ThirdPartyLiterals.load(dir);
         if (config.debugDumps()) {
             Path debug = ConfigFolder.debugDir(dir);
-            com.wynnchayuan.render.TooltipDebug.init(debug.resolve("tooltip-debug.json"));
-            com.wynnchayuan.render.Boxes.init(debug.resolve("overlay-debug.txt"));
-            com.wynnchayuan.translate.LineDebug.init(debug.resolve("line-debug.txt"));
-            com.wynnchayuan.translate.NameplateProbe.init(debug);
-            com.wynnchayuan.translate.LayoutDebug.init(debug.resolve("layout-debug.txt"));
-            com.wynnchayuan.translate.FlowedDebug.init(debug);
-            com.wynnchayuan.capture.DialogueProbe.init(debug);
-            com.wynnchayuan.render.DialogueStartLog.init(debug);
-            com.wynnchayuan.render.FpsLog.init(debug);
+            TooltipDebug.init(debug.resolve("tooltip-debug.json"));
+            Boxes.init(debug.resolve("overlay-debug.txt"));
+            LineDebug.init(debug.resolve("line-debug.txt"));
+            NameplateProbe.init(debug);
+            LayoutDebug.init(debug.resolve("layout-debug.txt"));
+            FlowedDebug.init(debug);
+            DialogueProbe.init(debug);
+            DialogueStartLog.init(debug);
+            FpsLog.init(debug);
         }
-        com.wynnchayuan.translate.ErrorDebug.into(dir);
+        ErrorDebug.into(dir);
         Releases.init();
 
-        language = com.wynnchayuan.translate.Languages.pick(
-                config.language(), LanguageLayers.gameLanguage());
-        com.wynnchayuan.translate.Languages.migrateFlat(dir, language);
-        Path trDir = com.wynnchayuan.translate.Languages.dir(dir, language);
-        com.wynnchayuan.translate.TranslationCache.syncsFromGitHub =
-                config.source() == CollectorConfig.Source.GITHUB;
-        com.wynnchayuan.translate.TranslationCache.prepare(trDir, language);
+        language = Languages.pick(config.language(), LanguageLayers.gameLanguage());
+        Languages.migrateFlat(dir, language);
+        Path trDir = Languages.dir(dir, language);
+        TranslationCache.syncsFromGitHub = config.source() == CollectorConfig.Source.GITHUB;
+        TranslationCache.prepare(trDir, language);
         String underneath = LanguageLayers.fallbackLanguage();
         if (underneath != null) {
-            com.wynnchayuan.translate.TranslationCache.prepare(
-                    com.wynnchayuan.translate.Languages.dir(dir, underneath), underneath);
+            TranslationCache.prepare(Languages.dir(dir, underneath), underneath);
         }
         translations = new TranslationStore();
         translations.setNameMode(config.itemNames());
@@ -124,9 +145,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         translations.setAbilityNamesWithOriginal(config.abilityNamesOriginal());
         store.knowsTranslations(LanguageLayers::alreadyTranslated);
         store.knowsSources(LanguageLayers::alreadyCollected);
-        store.knowsWhere(com.wynnchayuan.capture.Whereabouts::now);
+        store.knowsWhere(Whereabouts::now);
         store.knowsLonger(t -> translations.hasLonger(t));
-        com.wynnchayuan.capture.OwnOutputs.buildAsync();
+        OwnOutputs.buildAsync();
         LanguageLayers.loadLayers();
 
         // CLIENT_STARTED 之前，跟隨遊戲語言的玩家語言還沒定
@@ -152,19 +173,17 @@ public final class WynnChaYuan implements ClientModInitializer {
             ModLog.info("指令註冊失敗，其餘功能照常：" + t);
         }
         try {
-            net.fabricmc.fabric.api.event.player.UseEntityCallback.EVENT.register(
-                    (player, world, hand, entity, hit) -> {
+            UseEntityCallback.EVENT.register((player, world, hand, entity, hit) -> {
                         if (world.isClientSide()) {
-                            com.wynnchayuan.capture.ConversationPartner.clicked(entity);
+                            ConversationPartner.clicked(entity);
                         }
-                        return net.minecraft.world.InteractionResult.PASS;
+                        return InteractionResult.PASS;
                     });
-            net.fabricmc.fabric.api.event.player.UseBlockCallback.EVENT.register(
-                    (player, world, hand, hit) -> {
+            UseBlockCallback.EVENT.register((player, world, hand, hit) -> {
                         if (world.isClientSide()) {
-                            com.wynnchayuan.capture.ConversationPartner.blockClicked();
+                            ConversationPartner.blockClicked();
                         }
-                        return net.minecraft.world.InteractionResult.PASS;
+                        return InteractionResult.PASS;
                     });
         } catch (Throwable t) {
             ModLog.info("點擊監聽註冊失敗，說話者只看名牌：" + t);
@@ -180,7 +199,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             // KeyMapping.consumeClick() 只在沒有畫面時有事件
         });
         HudElementRegistry.addLast(
-                net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "dialogue"),
+                Identifier.fromNamespaceAndPath(MOD_ID, "dialogue"),
                 (graphics, tickCounter) -> RenderListener.renderHud(graphics));
 
         flusher = Executors.newSingleThreadScheduledExecutor(r -> {
@@ -201,7 +220,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         ModLog.info("譯文 " + translations.size() + " 條（"
                 + translations.loadedFiles() + " 個檔案），/wcy 開啟設定");
         ModLog.info("地名清單 "
-                + com.wynnchayuan.capture.PlaceNames.size() + " 筆（不翻譯，原樣保留）");
+                + PlaceNames.size() + " 筆（不翻譯，原樣保留）");
     }
 
     private static void flushQuietly() {
@@ -211,16 +230,16 @@ public final class WynnChaYuan implements ClientModInitializer {
             ModLog.warn("captured.json 寫入失敗: " + t);
         }
         try {
-            com.wynnchayuan.capture.CardDump.flush();
+            CardDump.flush();
         } catch (Throwable t) {
             ModLog.warn(""
-                    + com.wynnchayuan.capture.CardDump.FILE + " 寫入失敗: " + t);
+                    + CardDump.FILE + " 寫入失敗: " + t);
         }
         try {
-            com.wynnchayuan.render.DialogueTint.flush();
+            DialogueTint.flush();
         } catch (Throwable t) {
             ModLog.warn(""
-                    + com.wynnchayuan.render.DialogueTint.FILE + " 寫入失敗: " + t);
+                    + DialogueTint.FILE + " 寫入失敗: " + t);
         }
     }
 
@@ -255,9 +274,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             WynntilsMod.registerEventListener(new ChatListener());
             WynntilsMod.registerEventListener(new TitleListener());
             WynntilsMod.registerEventListener(new MarketListener());
-            net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents
-                    .MODIFY_CHAT.register(MarketListener::rewrite);
-            com.wynnchayuan.client.MarketPicker.register();
+            ClientSendMessageEvents.MODIFY_CHAT.register(MarketListener::rewrite);
+            MarketPicker.register();
             ModLog.info("已掛上 Wynntils 事件，開始收集");
         } catch (Throwable t) {
             ModLog.warn("掛載失敗，停用收集功能: " + t);

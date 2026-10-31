@@ -3,7 +3,10 @@ package com.wynnchayuan.translate;
 import com.wynnchayuan.capture.GlyphSplitter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class ColumnTemplates {
 
@@ -77,7 +80,7 @@ final class ColumnTemplates {
                     continue;
                 }
                 String run = String.join(String.valueOf(LineTranslator.NEWLINE),
-                                         java.util.Arrays.copyOfRange(lines, i, j));
+                                         Arrays.copyOfRange(lines, i, j));
                 String found = TemplateLookup.lookup(run, store);
                 if (found != null && !found.isBlank()
                         && found.split(String.valueOf(LineTranslator.NEWLINE), -1).length == j - i) {
@@ -113,14 +116,13 @@ final class ColumnTemplates {
         return n;
     }
 
-    private static final java.util.regex.Pattern NUMBER_ANY =
-            java.util.regex.Pattern.compile("\\{~([1-9])?}");
+    private static final Pattern NUMBER_ANY = Pattern.compile("\\{~([1-9])?}");
 
     static String renumber(String text, int offset) {
         if (offset == 0 || text == null || text.indexOf('{') < 0) {
             return text;
         }
-        java.util.regex.Matcher m = NUMBER_ANY.matcher(text);
+        Matcher m = NUMBER_ANY.matcher(text);
         StringBuilder out = new StringBuilder();
         int at = 0;
         int plain = 0;

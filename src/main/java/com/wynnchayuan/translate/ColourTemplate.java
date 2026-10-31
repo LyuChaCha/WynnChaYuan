@@ -8,7 +8,11 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class ColourTemplate {
 
@@ -18,7 +22,7 @@ final class ColourTemplate {
         if (offset == 0) {
             return text;
         }
-        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
+        Matcher m = COLOUR_TOKEN.matcher(text);
         StringBuilder out = new StringBuilder();
         int at = 0;
         while (m.find()) {
@@ -30,16 +34,15 @@ final class ColourTemplate {
     }
 
     static int distinctColours(String text) {
-        java.util.Set<String> seen = new java.util.HashSet<>();
-        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
+        Set<String> seen = new HashSet<>();
+        Matcher m = COLOUR_TOKEN.matcher(text);
         while (m.find()) {
             seen.add(m.group(1));
         }
         return seen.size();
     }
 
-    private static final java.util.regex.Pattern COLOUR_TOKEN =
-            java.util.regex.Pattern.compile("\\{c(\\d+)}");
+    private static final Pattern COLOUR_TOKEN = Pattern.compile("\\{c(\\d+)}");
 
     static String stripColourTokens(String text) {
         if (text == null || text.indexOf('{') < 0) {
@@ -52,8 +55,7 @@ final class ColourTemplate {
         return COLOUR_ANY.matcher(out).replaceAll("");
     }
 
-    private static final java.util.regex.Pattern COLOUR_ANY =
-            java.util.regex.Pattern.compile("\\{c[^}]*}");
+    private static final Pattern COLOUR_ANY = Pattern.compile("\\{c[^}]*}");
 
     enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER, COLOR }
 
@@ -245,7 +247,7 @@ final class ColourTemplate {
     }
 
     static List<Token> tokenize(String template) {
-        List<Token> out = new java.util.ArrayList<>();
+        List<Token> out = new ArrayList<>();
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         String place = GlyphSplitter.PLACE_PLACEHOLDER;
         String number = GlyphSplitter.NUMBER_PLACEHOLDER;

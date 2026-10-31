@@ -1,5 +1,8 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.capture.CurrentQuest;
+import com.wynnchayuan.capture.DialogueProgress;
+import com.wynnchayuan.capture.DialogueSpeaker;
 import com.wynnchayuan.translate.TranslationStore;
 
 import java.util.function.LongSupplier;
@@ -63,7 +66,7 @@ final class DialogueForecast {
     }
 
     String guess(TranslationStore store, String typed) {
-        String speaker = com.wynnchayuan.capture.DialogueSpeaker.current();
+        String speaker = DialogueSpeaker.current();
         if (!enabled || store == null || typed == null) {
             return null;
         }
@@ -71,14 +74,14 @@ final class DialogueForecast {
             return null;
         }
         boolean fresh = quest != null && clock.getAsLong() - seen <= FRESH_MS;
-        String tracked = com.wynnchayuan.capture.CurrentQuest.get();
+        String tracked = CurrentQuest.get();
         String where = fresh ? quest : tracked;
         if (where == null) {
             return null;
         }
         boolean midway = fresh && progress > 0
-                && progress < com.wynnchayuan.capture.DialogueProgress.FULL - 2
-                && talk == com.wynnchayuan.capture.DialogueProgress.conversation();
+                && progress < DialogueProgress.FULL - 2
+                && talk == DialogueProgress.conversation();
         Query ask = new Query(typed, where, fresh ? index : -1, speaker, tracked,
                 store.generation(), midway);
         if (ask.equals(asked)) {
@@ -118,15 +121,15 @@ final class DialogueForecast {
         long now = clock.getAsLong();
         if (heard.equals(source)) {
             seen = now;
-            int bar = com.wynnchayuan.capture.DialogueProgress.settled();
+            int bar = DialogueProgress.settled();
             if (bar >= 0) {
                 progress = bar;
-                talk = com.wynnchayuan.capture.DialogueProgress.conversation();
+                talk = DialogueProgress.conversation();
             }
             return;
         }
         String q = store.sequenceQuestOf(heard, quest,
-                com.wynnchayuan.capture.CurrentQuest.get());
+                CurrentQuest.get());
         int at = q == null ? -1 : store.sequenceIndex(q, heard, q.equals(quest) ? index : -1);
         if (at < 0) {
             return;

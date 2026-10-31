@@ -2,7 +2,9 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.Badges;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynntils.mc.event.PlayerNametagRenderEvent;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.network.chat.Component;
 import net.neoforged.bus.api.EventPriority;
@@ -12,7 +14,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 public final class BadgeListener {
 
     private static int entityIdOf(EntityRenderState state) {
-        return state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar
+        return state instanceof AvatarRenderState avatar
                 ? avatar.id : -1;
     }
 
@@ -26,7 +28,7 @@ public final class BadgeListener {
             }
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.badgeError");
-            com.wynnchayuan.translate.ErrorDebug.note("nametag.badge", null, t);
+            ErrorDebug.note("nametag.badge", null, t);
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -37,7 +39,7 @@ public final class WynnventoryPriceCache {
     }
 
     private static boolean enabled() {
-        com.wynnchayuan.CollectorConfig config = com.wynnchayuan.WynnChaYuan.config();
+        CollectorConfig config = WynnChaYuan.config();
         return config != null && config.wynntilsFps();
     }
 }

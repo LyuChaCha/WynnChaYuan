@@ -13,6 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 public final class ColourAudit {
@@ -27,7 +28,7 @@ public final class ColourAudit {
 
     private static final Map<String, Row> ROWS = new LinkedHashMap<>();
 
-    private static final Set<String> SEEN = java.util.concurrent.ConcurrentHashMap.newKeySet();
+    private static final Set<String> SEEN = ConcurrentHashMap.newKeySet();
     private static final int SEEN_LIMIT = 4096;
     private static volatile boolean dirty;
 

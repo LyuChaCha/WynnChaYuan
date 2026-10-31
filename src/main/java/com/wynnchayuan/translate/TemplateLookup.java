@@ -6,6 +6,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class TemplateLookup {
 
@@ -15,7 +19,7 @@ final class TemplateLookup {
         if (template == null) {
             return null;
         }
-        java.util.regex.Matcher m = SPACER_ROWS.matcher(template);
+        Matcher m = SPACER_ROWS.matcher(template);
         if (!m.matches()) {
             return null;
         }
@@ -27,7 +31,7 @@ final class TemplateLookup {
         return hit == null || hit.isBlank() ? null : hit + m.group(2);
     }
 
-    private static final java.util.regex.Pattern SPACER_ROWS = java.util.regex.Pattern.compile(
+    private static final Pattern SPACER_ROWS = Pattern.compile(
             "(?s)(.*\\S)((?:\n[ \t]*À[ \tÀ]*)+)");
 
     static String lookup(String template, TranslationStore store) {
@@ -85,13 +89,11 @@ final class TemplateLookup {
         return zh == null || zh.isBlank() ? null : head + zh;
     }
 
-    private static final java.util.Set<String> NAME_LABELS = java.util.Set.of(
-            "Required Ability:", "Unlocked Ability:",
+    private static final Set<String> NAME_LABELS = Set.of("Required Ability:", "Unlocked Ability:",
             "Cave:",
             "Name Contains:");
 
-    private static final java.util.Set<String> TYPED_LABELS = java.util.Set.of(
-            "Name Contains:");
+    private static final Set<String> TYPED_LABELS = Set.of("Name Contains:");
 
     private static int bulletEnd(String template, int at) {
         if (at >= template.length()) {
@@ -320,11 +322,10 @@ final class TemplateLookup {
                 || "+-±%/[](){}<>,.:~*★⇧⇩⇨❤✦✤✹✽✧'\"".indexOf(c) >= 0;
     }
 
-    private static final java.util.Map<String, String> CONNECTOR_KEYS = java.util.Map.of(
+    private static final Map<String, String> CONNECTOR_KEYS = Map.of(
             "to", "{~} to {~}", "tier", "{~} tier", "tiers", "{~} tier");
 
-    private static final java.util.regex.Pattern CONNECTOR_SLOT =
-            java.util.regex.Pattern.compile("\\{~\\d*}");
+    private static final Pattern CONNECTOR_SLOT = Pattern.compile("\\{~\\d*}");
 
     static String connector(String word, TranslationStore store) {
         String key = CONNECTOR_KEYS.get(word);
@@ -552,7 +553,7 @@ final class TemplateLookup {
         if (template == null || store == null || !template.startsWith(CHAT_COUNTER)) {
             return null;
         }
-        java.util.regex.Matcher m = TranslationStore.CHAT_LINE.matcher(template.strip());
+        Matcher m = TranslationStore.CHAT_LINE.matcher(template.strip());
         if (!m.matches()) {
             return null;
         }
@@ -590,7 +591,7 @@ final class TemplateLookup {
         return learned.strip();
     }
 
-    private static final java.util.regex.Pattern NUMBERED_SLOT = java.util.regex.Pattern.compile("\\{~\\d}");
+    private static final Pattern NUMBERED_SLOT = Pattern.compile("\\{~\\d}");
 
     private static boolean samePlaceholders(String a, String b) {
         return ColumnTemplates.countNumbers(a) == ColumnTemplates.countNumbers(
@@ -678,15 +679,14 @@ final class TemplateLookup {
         return out.toString();
     }
 
-    private static final java.util.regex.Pattern TIMER_ROW =
-            java.util.regex.Pattern.compile("\\{~}[dhms](?: \\{~}[dhms])*");
+    private static final Pattern TIMER_ROW = Pattern.compile("\\{~}[dhms](?: \\{~}[dhms])*");
 
     static String eventFrame(String template, TranslationStore store) {
         if (template == null || store == null || template.indexOf('\n') >= 0
                 || !template.contains(EVENT_MARK)) {
             return null;
         }
-        java.util.regex.Matcher m = EVENT_LINE.matcher(template.strip());
+        Matcher m = EVENT_LINE.matcher(template.strip());
         if (!m.matches()) {
             return null;
         }
@@ -739,10 +739,10 @@ final class TemplateLookup {
 
     private static final String EVENT_SUFFIX = " [World Event]";
 
-    private static final java.util.regex.Pattern TRAILING_BRACKET =
-            java.util.regex.Pattern.compile("\\s*[\\[［][^\\[\\]［］]*[\\]］]$");
+    private static final Pattern TRAILING_BRACKET =
+            Pattern.compile("\\s*[\\[［][^\\[\\]［］]*[\\]］]$");
 
-    private static final java.util.regex.Pattern EVENT_LINE = java.util.regex.Pattern.compile(
+    private static final Pattern EVENT_LINE = Pattern.compile(
             "(?<lead>(?:\\{#}\\s*)*)The (?<name>.+?) World Event starts in "
                     + "(?<timer>\\{~}m\\s*\\{~}s|\\{~}s)!\\s*\\(\\{~} blocks away\\)\\s*Click to track");
 
@@ -821,7 +821,7 @@ final class TemplateLookup {
         return true;
     }
 
-    private static final java.util.regex.Pattern ANY_SLOT = java.util.regex.Pattern.compile("\\{[^}]*\\}");
+    private static final Pattern ANY_SLOT = Pattern.compile("\\{[^}]*\\}");
 
     private static final int NAME_ROOM = 40;
 

@@ -1,7 +1,9 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.ColourAudit;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.capture.UnappliedAudit;
 import com.wynnchayuan.translate.ColumnAligner.Piece;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -33,12 +35,12 @@ final class TemplateRenderer {
                 src.append(part.template());
             }
             String key = src.toString().strip();
-            if (com.wynnchayuan.capture.UnappliedAudit.asked(key)) {
+            if (UnappliedAudit.asked(key)) {
                 return;
             }
             String corpus = store.lookup(key);
             if (corpus != null && !corpus.isBlank()) {
-                com.wynnchayuan.capture.UnappliedAudit.note(key, corpus);
+                UnappliedAudit.note(key, corpus);
             }
         } catch (Throwable t) {
             ErrorDebug.note("TemplateRenderer#noteUnapplied", null, t);
@@ -290,8 +292,7 @@ final class TemplateRenderer {
         for (LineParts part : parts) {
             templates.add(part.template());
         }
-        com.wynnchayuan.capture.ColourAudit.note(templates, flowed, allRuns, accents,
-                usedAccent, blockStyle);
+        ColourAudit.note(templates, flowed, allRuns, accents, usedAccent, blockStyle);
         FlowedDebug.glyphs(glyphs, flowed);
         return out;
     }

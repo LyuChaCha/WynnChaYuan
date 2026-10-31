@@ -4,12 +4,15 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.SpaceOffset;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public final class WynnModTooltip {
@@ -23,7 +26,7 @@ public final class WynnModTooltip {
         if (known == null) {
             boolean found;
             try {
-                found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wynnmod");
+                found = FabricLoader.getInstance().isModLoaded("wynnmod");
             } catch (Throwable t) {
                 ErrorDebug.note("WynnModTooltip#installed", null, t);
                 found = false;
@@ -80,10 +83,10 @@ public final class WynnModTooltip {
                 && a.isUnderlined() == b.isUnderlined()
                 && a.isStrikethrough() == b.isStrikethrough()
                 && a.isObfuscated() == b.isObfuscated()
-                && java.util.Objects.equals(a.getShadowColor(), b.getShadowColor())
-                && java.util.Objects.equals(a.getClickEvent(), b.getClickEvent())
-                && java.util.Objects.equals(a.getHoverEvent(), b.getHoverEvent())
-                && java.util.Objects.equals(a.getInsertion(), b.getInsertion());
+                && Objects.equals(a.getShadowColor(), b.getShadowColor())
+                && Objects.equals(a.getClickEvent(), b.getClickEvent())
+                && Objects.equals(a.getHoverEvent(), b.getHoverEvent())
+                && Objects.equals(a.getInsertion(), b.getInsertion());
     }
 
     private static boolean cutMark(String text) {
@@ -97,7 +100,7 @@ public final class WynnModTooltip {
     private static boolean plain(CharSequence text) {
         return text.codePoints().noneMatch(cp ->
                 (cp >= 0xE000 && cp <= 0xF8FF) || cp >= 0xF0000
-                        || com.wynnchayuan.translate.SpaceOffset.isOffset(cp));
+                        || SpaceOffset.isOffset(cp));
     }
 
     public static List<Component> lines(List<Component> text) {
@@ -121,8 +124,7 @@ public final class WynnModTooltip {
         } catch (Throwable t) {
             try {
                 WynnChaYuan.store().noteEvent("render.wynnmodError");
-                com.wynnchayuan.translate.ErrorDebug.note("tooltip.wynnmod",
-                        text.get(0).getString(), t);
+                ErrorDebug.note("tooltip.wynnmod", text.get(0).getString(), t);
             } catch (Throwable failure) {
                 ErrorDebug.note("WynnModTooltip#lines", null, failure);
             }

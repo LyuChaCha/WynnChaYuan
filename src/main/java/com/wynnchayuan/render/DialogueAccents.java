@@ -5,8 +5,10 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 final class DialogueAccents {
 
@@ -44,7 +46,7 @@ final class DialogueAccents {
             int from = 0;
             for (int k = 1; k <= text.length(); k++) {
                 boolean cut = k == text.length()
-                        || !java.util.Objects.equals(at[pos + k], at[pos + from]);
+                        || !Objects.equals(at[pos + k], at[pos + from]);
                 if (cut) {
                     TextColor colour = at[pos + from];
                     Style style = colour == null ? piece.style()
@@ -70,7 +72,7 @@ final class DialogueAccents {
 
     static TextColor tone(List<String> texts, List<Style> styles,
                           List<Integer> body, List<Integer> ends) {
-        Map<TextColor, Integer> chars = new java.util.LinkedHashMap<>();
+        Map<TextColor, Integer> chars = new LinkedHashMap<>();
         for (int n = 0; n < body.size(); n++) {
             for (int i = body.get(n); i <= ends.get(n); i++) {
                 if (shaderKey(styles.get(i).getColor())) {
@@ -102,13 +104,12 @@ final class DialogueAccents {
         for (int n = 0; n < body.size(); n++) {
             for (int i = body.get(n); i <= ends.get(n); i++) {
                 Style style = styles.get(i);
-                if (java.util.Objects.equals(style.getColor(), tone)
+                if (Objects.equals(style.getColor(), tone)
                         || shaderKey(style.getColor())) {
                     paint = flush(out, run, parts, paint);
                     continue;
                 }
-                if (paint == null || !java.util.Objects.equals(
-                        style.getColor(), paint.getColor())) {
+                if (paint == null || !Objects.equals(style.getColor(), paint.getColor())) {
                     flush(out, run, parts, paint);
                     paint = style;
                 } else if (wrapped && run.length() > 0

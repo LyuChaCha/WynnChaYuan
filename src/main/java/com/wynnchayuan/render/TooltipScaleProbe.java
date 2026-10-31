@@ -1,5 +1,7 @@
 package com.wynnchayuan.render;
 
+import com.wynntils.core.components.Managers;
+import com.wynntils.features.tooltips.TooltipFittingFeature;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 
 import java.lang.reflect.Field;
@@ -32,8 +34,7 @@ public final class TooltipScaleProbe {
 
     public static boolean fittingEnabled() {
         try {
-            return com.wynntils.core.components.Managers.Feature.getFeatureInstance(
-                    com.wynntils.features.tooltips.TooltipFittingFeature.class).isEnabled();
+            return Managers.Feature.getFeatureInstance(TooltipFittingFeature.class).isEnabled();
         } catch (Throwable t) {
             return true;
         }

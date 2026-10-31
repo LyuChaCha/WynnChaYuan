@@ -1,6 +1,8 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Component;
@@ -9,8 +11,10 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 // 換字後要重算尾隨偏移，否則名牌與外框整個位移
@@ -48,9 +52,9 @@ public final class DialogueRewriter {
         findBody(frame);
         List<Integer> body = frame.body;
         List<Style> styles = frame.styles;
-        var mode = com.wynnchayuan.CollectorConfig.DialogueMode.REPLACE;
-        boolean doBody = com.wynnchayuan.WynnChaYuan.config().dialogueMode() == mode;
-        boolean doChoice = com.wynnchayuan.WynnChaYuan.config().choiceMode() == mode;
+        var mode = CollectorConfig.DialogueMode.REPLACE;
+        boolean doBody = WynnChaYuan.config().dialogueMode() == mode;
+        boolean doChoice = WynnChaYuan.config().choiceMode() == mode;
         int room = rowWidth(frame.texts, body);
         String hit = body.isEmpty() || !doBody ? null
                 : DialogueTyping.line(joinedBody(frame), store, body.size(),
@@ -83,8 +87,8 @@ public final class DialogueRewriter {
         final List<String> texts = new ArrayList<>();
         final List<Integer> body = new ArrayList<>();
         final List<Integer> ends = new ArrayList<>();
-        final Map<Integer, String> keep = new java.util.HashMap<>();
-        final Map<Integer, List<LineParts.Piece>> painted = new java.util.HashMap<>();
+        final Map<Integer, String> keep = new HashMap<>();
+        final Map<Integer, List<LineParts.Piece>> painted = new HashMap<>();
         boolean[] swapped;
         boolean changed;
 
@@ -269,7 +273,7 @@ public final class DialogueRewriter {
         List<LineParts.Piece> learned = new ArrayList<>();
         for (int n = 0; n < inked.size() - 1; n++) {
             LineParts.Piece piece = inked.get(n);
-            if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
+            if (!Objects.equals(piece.style().getColor(), colour)) {
                 learned.add(new LineParts.Piece(piece.text(),
                         Style.EMPTY.withColor(piece.style().getColor())));
             }
@@ -352,7 +356,7 @@ public final class DialogueRewriter {
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
         if (tofu != null) {
-            com.wynnchayuan.capture.DialogueProbe.tofu(message, out, tofu);
+            DialogueProbe.tofu(message, out, tofu);
             return null;
         }
         return out;

@@ -4,11 +4,15 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.client.NoticeScreen;
+import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.TrackerOverlay;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.models.activities.event.ActivityTrackerUpdatedEvent;
 import com.wynntils.models.character.event.CharacterUpdateEvent;
 import com.wynntils.models.worlds.event.WorldStateEvent;
+import com.wynntils.models.worlds.type.WorldState;
+import net.minecraft.client.Minecraft;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 
@@ -53,16 +57,15 @@ public final class TrackerListener {
     public void onWorldState(WorldStateEvent event) {
         WorldReset.reset();
         var state = event.getNewState();
-        if (state == com.wynntils.models.worlds.type.WorldState.CHARACTER_SELECTION
-                || state == com.wynntils.models.worlds.type.WorldState.WORLD) {
-            net.minecraft.client.Minecraft.getInstance().execute(
-                    com.wynnchayuan.client.NoticeScreen::maybeShowOnJoin);
+        if (state == WorldState.CHARACTER_SELECTION
+                || state == WorldState.WORLD) {
+            Minecraft.getInstance().execute(NoticeScreen::maybeShowOnJoin);
         }
     }
 
     @SubscribeEvent
     public void onCharacterUpdate(CharacterUpdateEvent event) {
         TrackerOverlay.clear();
-        com.wynnchayuan.render.DialogueOverlay.clear();
+        DialogueOverlay.clear();
     }
 }

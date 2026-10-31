@@ -1,13 +1,29 @@
 package com.wynnchayuan;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.client.ChatCopyScreen;
+import com.wynnchayuan.client.FirstRunScreen;
+import com.wynnchayuan.client.NoticeScreen;
 import com.wynnchayuan.client.SettingsScreen;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.listener.RenderListener;
+import com.wynnchayuan.render.Badges;
+import com.wynnchayuan.render.FpsLog;
+import com.wynnchayuan.render.PanelShot;
 import com.wynnchayuan.translate.TranslationStore;
+import com.wynnchayuan.translate.TranslationUpdate;
+import com.wynnchayuan.translate.WynnventoryBridge;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import org.lwjgl.glfw.GLFW;
+
+import java.util.Locale;
 
 final class ModKeys {
 
@@ -15,55 +31,50 @@ final class ModKeys {
 
     private static final KeyMapping.Category KEY_CATEGORY =
             KeyMapping.Category.register(
-                    net.minecraft.resources.Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID, "main"));
+                    Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID, "main"));
 
     static void registerKeyBind() {
         WynnChaYuan.openSettingsKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.openSettings",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
-                KEY_CATEGORY));
+                GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         WynnChaYuan.screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
-                KEY_CATEGORY));
+                GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         WynnChaYuan.copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.copyChat",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
-                KEY_CATEGORY));
-        com.wynnchayuan.render.PanelShot.bind(WynnChaYuan.screenshotKey);
-        com.wynnchayuan.render.PanelShot.listen();
+                GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
+        PanelShot.bind(WynnChaYuan.screenshotKey);
+        PanelShot.listen();
 
-        if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
+        if (WynnventoryBridge.installed()) {
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
                 CollectorConfig c = WynnChaYuan.config();
                 TranslationStore store = WynnChaYuan.translations();
                 if (c == null || store == null) {
                     return;
                 }
-                com.wynnchayuan.translate.WynnventoryBridge.tick(c.wynnventory(),
-                        c.shiftPeekNames() && com.wynnchayuan.listener.RenderListener.shiftHeld(),
-                        store.generation());
+                WynnventoryBridge.tick(c.wynnventory(),
+                        c.shiftPeekNames() && RenderListener.shiftHeld(), store.generation());
             });
         }
 
-        ClientTickEvents.END_CLIENT_TICK.register(com.wynnchayuan.render.FpsLog::tick);
+        ClientTickEvents.END_CLIENT_TICK.register(FpsLog::tick);
 
         ClientTickEvents.END_CLIENT_TICK.register(
-                client -> com.wynnchayuan.client.FirstRunScreen.clientTick());
+                client -> FirstRunScreen.clientTick());
         ClientTickEvents.END_CLIENT_TICK.register(
-                client -> com.wynnchayuan.client.NoticeScreen.clientTick());
+                client -> NoticeScreen.clientTick());
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (WynnChaYuan.openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
             }
             if (tellKeysReleased && client.player != null) {
                 tellKeysReleased = false;
-                Component line = com.wynnchayuan.client.T.c("chat.keys.released")
-                        .withStyle(net.minecraft.ChatFormatting.AQUA);
-                com.wynnchayuan.capture.OwnOutputs.note(line);
+                Component line = T.c("chat.keys.released").withStyle(ChatFormatting.AQUA);
+                OwnOutputs.note(line);
                 client.player.displayClientMessage(line, false);
             }
             if (ModCommands.openSettingsNextTick) {
@@ -71,37 +82,36 @@ final class ModKeys {
                 client.setScreen(new SettingsScreen());
             }
             while (WynnChaYuan.copyChatKey.consumeClick()) {
-                client.setScreen(new com.wynnchayuan.client.ChatCopyScreen());
+                client.setScreen(new ChatCopyScreen());
             }
             while (WynnChaYuan.screenshotKey.consumeClick()) {
-                com.wynnchayuan.render.PanelShot.request();
+                PanelShot.request();
             }
-            com.wynnchayuan.render.PanelShot.tick();
+            PanelShot.tick();
             Releases.tellOnce(client);
             if (client.player != null && client.getCurrentServer() != null
-                    && client.getCurrentServer().ip.toLowerCase(java.util.Locale.ROOT)
+                    && client.getCurrentServer().ip.toLowerCase(Locale.ROOT)
                             .contains("wynncraft")) {
                 Presence.tick(true, WynnChaYuan.config.ownCape(),
-                        com.wynnchayuan.render.Badges.ownRainbow(WynnChaYuan.config),
-                        com.wynnchayuan.render.Badges.ownShown(WynnChaYuan.config));
+                        Badges.ownRainbow(WynnChaYuan.config), Badges.ownShown(WynnChaYuan.config));
             }
             SelfUpdate.tellLeftover(client);
             SelfUpdate.announceProgress(client);
-            com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
+            TranslationUpdate.tellOnce(client);
         });
     }
 
     private static volatile boolean tellKeysReleased = false;
 
-    static void releaseOldDefaultKeys(net.minecraft.client.Minecraft client) {
+    static void releaseOldDefaultKeys(Minecraft client) {
         try {
             if (WynnChaYuan.config == null || WynnChaYuan.config.oldKeysReleased() || WynnChaYuan.openSettingsKey == null
                     || WynnChaYuan.screenshotKey == null) {
                 return;
             }
-            boolean cleared = unbindIf(WynnChaYuan.openSettingsKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F6);
-            cleared |= unbindIf(WynnChaYuan.screenshotKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F9);
-            cleared |= unbindIf(WynnChaYuan.screenshotKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F8);
+            boolean cleared = unbindIf(WynnChaYuan.openSettingsKey, GLFW.GLFW_KEY_F6);
+            cleared |= unbindIf(WynnChaYuan.screenshotKey, GLFW.GLFW_KEY_F9);
+            cleared |= unbindIf(WynnChaYuan.screenshotKey, GLFW.GLFW_KEY_F8);
             if (cleared) {
                 KeyMapping.resetMapping();
                 client.options.save();

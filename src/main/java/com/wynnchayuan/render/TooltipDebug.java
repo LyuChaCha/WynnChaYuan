@@ -7,17 +7,22 @@ import com.google.gson.JsonObject;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.translate.SpaceOffset;
 import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 public final class TooltipDebug {
 
@@ -32,7 +37,7 @@ public final class TooltipDebug {
     private static int written = 0;
     private static int partial = 0;
 
-    private static final java.util.Set<String> seen = new java.util.HashSet<>();
+    private static final Set<String> seen = new HashSet<>();
 
     private TooltipDebug() {}
 
@@ -119,8 +124,8 @@ public final class TooltipDebug {
                     each.addProperty("text", text);
                     each.addProperty("style", String.valueOf(style));
                     raw.add(each);
-                    return java.util.Optional.empty();
-                }, net.minecraft.network.chat.Style.EMPTY);
+                    return Optional.empty();
+                }, Style.EMPTY);
                 o.add("rawStyles", raw);
             }
             if (hit != null && at < hit.length) {
@@ -175,7 +180,7 @@ public final class TooltipDebug {
             if (ps != null && ps.isBold()) {
                 seg.addProperty("bold", true);
             }
-            int px = com.wynnchayuan.translate.SpaceOffset.decode(raw);
+            int px = SpaceOffset.decode(raw);
             if (px != 0) {
                 seg.addProperty("spacePx", px);
             }

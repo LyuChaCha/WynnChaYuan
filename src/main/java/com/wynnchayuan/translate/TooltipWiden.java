@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.ToIntFunction;
 
 public final class TooltipWiden {
@@ -348,11 +349,11 @@ public final class TooltipWiden {
         List<Seg> out = new ArrayList<>();
         line.visit((style, text) -> {
             if (text.isEmpty()) {
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
             if (isGap(style, text, width)) {
                 out.add(new Seg(text, style, true, SpaceOffset.decode(text)));
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
             String tail = SpaceOffset.trailingOffsets(text);
             if (!tail.isEmpty() && tail.length() < text.length() && isGap(style, tail, width)) {
@@ -361,7 +362,7 @@ public final class TooltipWiden {
             } else {
                 out.add(new Seg(text, style, false, 0));
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return out;
     }
