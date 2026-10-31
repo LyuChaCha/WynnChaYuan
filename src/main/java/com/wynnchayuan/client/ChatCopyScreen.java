@@ -8,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 
@@ -138,8 +139,7 @@ public final class ChatCopyScreen extends Screen {
     }
 
     @Override
-    public boolean mouseClicked(net.minecraft.client.input.MouseButtonEvent event,
-                                boolean doubleClick) {
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
         int at = entryAt(event.x(), event.y());
         if (at >= 0) {
             copy(at);

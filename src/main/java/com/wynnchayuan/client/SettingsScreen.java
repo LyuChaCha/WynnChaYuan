@@ -1,13 +1,15 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.LanguageLayers;
+import com.wynnchayuan.Releases;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.SettingsView;
 import com.wynnchayuan.client.ui.Ui;
+import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.Languages;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,13 +17,20 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.CharacterEvent;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Util;
+import net.minecraft.world.entity.LivingEntity;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 public final class SettingsScreen extends Screen {
@@ -78,7 +87,7 @@ public final class SettingsScreen extends Screen {
     }
 
     static Row toggle(String key, boolean byDefault,
-                              java.util.function.BooleanSupplier get, Runnable flip) {
+                              BooleanSupplier get, Runnable flip) {
         return Row.toggle(key, t(key), t(key + ".hint")).on(get).flip(flip)
                 .reset(() -> get.getAsBoolean() == byDefault, () -> {
                     if (get.getAsBoolean() != byDefault) {
@@ -187,7 +196,7 @@ public final class SettingsScreen extends Screen {
 
         @Override
         public boolean hasUpdate() {
-            return com.wynnchayuan.Releases.newer() != null;
+            return Releases.newer() != null;
         }
 
         @Override
@@ -318,7 +327,7 @@ public final class SettingsScreen extends Screen {
                     try {
                         drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
                     } catch (Throwable t) {
-                        com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
+                        ErrorDebug.note("settings.model", null, t);
                     }
                 });
             }
@@ -337,7 +346,7 @@ public final class SettingsScreen extends Screen {
 
     private static void drawPlayer(GuiGraphics g, Minecraft mc, float[] box, float yaw,
                                    float pitch) {
-        net.minecraft.world.entity.LivingEntity player = mc.player;
+        LivingEntity player = mc.player;
         int x1 = Math.round(box[0]);
         int y1 = Math.round(box[1]);
         int x2 = Math.round(box[0] + box[2]);
@@ -345,13 +354,13 @@ public final class SettingsScreen extends Screen {
         if (x2 - x1 < 20 || y2 - y1 < 30) {
             return;
         }
-        net.minecraft.client.renderer.entity.state.EntityRenderState state =
+        EntityRenderState state =
                 mc.getEntityRenderDispatcher().getRenderer(player).createRenderState(player, 1.0f);
         state.lightCoords = 15728880;
         state.shadowPieces.clear();
         state.outlineColor = 0;
         state.nameTag = null;
-        if (state instanceof net.minecraft.client.renderer.entity.state.LivingEntityRenderState
+        if (state instanceof LivingEntityRenderState
                 living) {
             living.bodyRot = 180.0f + yaw;
             living.yRot = 0;
@@ -360,17 +369,16 @@ public final class SettingsScreen extends Screen {
             living.boundingBoxHeight /= living.scale;
             living.scale = 1.0f;
         }
-        if (state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar) {
+        if (state instanceof AvatarRenderState avatar) {
             avatar.capeFlap = 0;
             avatar.capeLean = 6;
             avatar.capeLean2 = 0;
         }
-        org.joml.Quaternionf pose = new org.joml.Quaternionf().rotateZ((float) Math.PI);
-        org.joml.Quaternionf camera = new org.joml.Quaternionf()
-                .rotateX(pitch * (float) (Math.PI / 180.0));
+        Quaternionf pose = new Quaternionf().rotateZ((float) Math.PI);
+        Quaternionf camera = new Quaternionf().rotateX(pitch * (float) (Math.PI / 180.0));
         pose.mul(camera);
         float size = Math.min((y2 - y1) / 2.3f, (x2 - x1) / 1.5f);
-        org.joml.Vector3f lift = new org.joml.Vector3f(0, state.boundingBoxHeight / 2.0f, 0);
+        Vector3f lift = new Vector3f(0, state.boundingBoxHeight / 2.0f, 0);
         g.submitEntityRenderState(state, size, lift, pose, camera, x1, y1, x2, y2);
     }
 

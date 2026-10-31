@@ -2,7 +2,12 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.TranslationStore;
+import com.wynnchayuan.translate.WynnventoryBridge;
+import com.wynntils.core.components.Managers;
+import com.wynntils.features.tooltips.TooltipFittingFeature;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -13,8 +18,10 @@ import net.minecraft.network.chat.Component;
 import org.joml.Vector2i;
 import org.joml.Vector2ic;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class WynnventoryLayout {
 
@@ -47,7 +54,7 @@ public final class WynnventoryLayout {
             Font font = mc.font;
             Prepared prepared = lastPrice != null && lastPrice.same(custom) ? lastPrice
                     : (lastPrice = prepare(custom,
-                            com.wynnchayuan.translate.WynnventoryBridge.lines(custom), font));
+                            WynnventoryBridge.lines(custom), font));
             List<ClientTooltipComponent> price = prepared.comps();
             int screenW = mc.getWindow().getGuiScaledWidth();
             int screenH = mc.getWindow().getGuiScaledHeight();
@@ -180,9 +187,9 @@ public final class WynnventoryLayout {
         }
     }
 
-    private static java.lang.reflect.Method configGet;
-    private static java.lang.reflect.Method settingsGet;
-    private static java.lang.reflect.Method anchorGet;
+    private static Method configGet;
+    private static Method settingsGet;
+    private static Method anchorGet;
 
     private record Prepared(List<Component> key, int stamp, List<ClientTooltipComponent> comps,
                             int w, int h) {
@@ -208,11 +215,11 @@ public final class WynnventoryLayout {
     }
 
     private static int drawnStamp() {
-        com.wynnchayuan.translate.TranslationStore store = WynnChaYuan.translations();
+        TranslationStore store = WynnChaYuan.translations();
         CollectorConfig config = WynnChaYuan.config();
-        return java.util.Objects.hash(store == null ? 0 : store.generation(),
+        return Objects.hash(store == null ? 0 : store.generation(),
                 config == null ? null : config.itemNames(), config == null ? null : config.tooltipMode(),
-                com.wynnchayuan.listener.RenderListener.shiftHeld());
+                RenderListener.shiftHeld());
     }
 
     private static List<Component> shown(List<Component> vanilla) {
@@ -220,7 +227,7 @@ public final class WynnventoryLayout {
         if (config == null || config.tooltipMode() != CollectorConfig.TooltipMode.REPLACE) {
             return vanilla;
         }
-        return com.wynnchayuan.listener.RenderListener.inPlaceLines(vanilla);
+        return RenderListener.inPlaceLines(vanilla);
     }
 
     private static List<ClientTooltipComponent> components(List<Component> lines) {
@@ -255,8 +262,7 @@ public final class WynnventoryLayout {
 
     private static float wynntilsScale() {
         try {
-            var feature = com.wynntils.core.components.Managers.Feature.getFeatureInstance(
-                    com.wynntils.features.tooltips.TooltipFittingFeature.class);
+            var feature = Managers.Feature.getFeatureInstance(TooltipFittingFeature.class);
             return feature.isEnabled() ? feature.universalScale.get() : 1f;
         } catch (Throwable t) {
             ErrorDebug.note("WynnventoryLayout#wynntilsScale", null, t);

@@ -2,11 +2,20 @@ package com.wynnchayuan.translate;
 
 
 
+import com.wynnchayuan.capture.NameFrames;
+import com.wynnchayuan.client.T;
+
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.wynnchayuan.translate.TranslationStore.BAR_ITEMS;
 import static com.wynnchayuan.translate.TranslationStore.CHAT_LINE;
@@ -38,8 +47,7 @@ final class TranslationIndex {
 
     final Map<String, String> entries = new ConcurrentHashMap<>();
 
-    final java.util.Set<String> seenSources =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
+    final Set<String> seenSources = ConcurrentHashMap.newKeySet();
 
     private volatile int maxBlockLines = 1;
 
@@ -53,7 +61,7 @@ final class TranslationIndex {
 
     volatile int loadedFiles = 0;
 
-    final List<Path> broken = new java.util.concurrent.CopyOnWriteArrayList<>();
+    final List<Path> broken = new CopyOnWriteArrayList<>();
 
     public List<Path> brokenFiles() {
         return List.copyOf(broken);
@@ -67,25 +75,25 @@ final class TranslationIndex {
 
     volatile Map<String, String> chatSpeakers = Map.of();
 
-    private static final java.util.regex.Pattern CHAT_LINE_DST = java.util.regex.Pattern.compile(
+    private static final Pattern CHAT_LINE_DST = Pattern.compile(
             "\\[\\{~[12]?}/\\{~[12]?}] (?<speaker>[^:：\\n]+?)(?:: |：)(?<line>[^\\n]+)");
 
     static Map<String, String> learnChatSpeakers(Map<String, String> entries) {
-        Map<String, Map<String, Integer>> votes = new java.util.HashMap<>();
+        Map<String, Map<String, Integer>> votes = new HashMap<>();
         for (Map.Entry<String, String> e : entries.entrySet()) {
             String key = e.getKey();
             if (!key.startsWith("[{~}/{~}] ")) {
                 continue;
             }
-            java.util.regex.Matcher src = CHAT_LINE.matcher(key);
-            java.util.regex.Matcher dst = CHAT_LINE_DST.matcher(e.getValue());
+            Matcher src = CHAT_LINE.matcher(key);
+            Matcher dst = CHAT_LINE_DST.matcher(e.getValue());
             if (!src.matches() || !dst.matches()) {
                 continue;
             }
-            votes.computeIfAbsent(src.group("speaker").strip(), k -> new java.util.HashMap<>())
+            votes.computeIfAbsent(src.group("speaker").strip(), k -> new HashMap<>())
                  .merge(dst.group("speaker").strip(), 1, Integer::sum);
         }
-        Map<String, String> out = new java.util.HashMap<>();
+        Map<String, String> out = new HashMap<>();
         for (Map.Entry<String, Map<String, Integer>> e : votes.entrySet()) {
             String best = null;
             int top = 0;
@@ -106,12 +114,11 @@ final class TranslationIndex {
         return Map.copyOf(out);
     }
 
-    public com.wynnchayuan.capture.NameFrames nameFrames() {
+    public NameFrames nameFrames() {
         return nameFrames;
     }
 
-    volatile com.wynnchayuan.capture.NameFrames nameFrames =
-            com.wynnchayuan.capture.NameFrames.EMPTY;
+    volatile NameFrames nameFrames = NameFrames.EMPTY;
 
     int topLayer = 0;
 
@@ -124,7 +131,7 @@ final class TranslationIndex {
         return at == null ? -1 : at;
     }
 
-    final Map<String, Map<String, String>> scopedOnly = new java.util.HashMap<>();
+    final Map<String, Map<String, String>> scopedOnly = new HashMap<>();
 
     public String labelLookup(String template) {
         return scopedLookup("label", template);
@@ -136,10 +143,10 @@ final class TranslationIndex {
     }
 
     public String lastResult() {
-        return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.not_loaded");
+        return lastResult != null ? lastResult : T.s("status.not_loaded");
     }
 
-    final java.util.Set<String> uiLabels = new java.util.HashSet<>();
+    final Set<String> uiLabels = new HashSet<>();
 
     public boolean isUiLabel(String key) {
         return key != null && uiLabels.contains(key.strip());
@@ -179,8 +186,8 @@ final class TranslationIndex {
         return key;
     }
 
-    java.util.Set<String> keys() {
-        return java.util.Collections.unmodifiableSet(entries.keySet());
+    Set<String> keys() {
+        return Collections.unmodifiableSet(entries.keySet());
     }
 
     private final Map<String, String> unwrapped = new ConcurrentHashMap<>();
@@ -202,7 +209,7 @@ final class TranslationIndex {
         loader.layered(unwrapped, "unwrapped", joined, value);
     }
 
-    final java.util.Set<String> unwrappedFromWrapped = new java.util.HashSet<>();
+    final Set<String> unwrappedFromWrapped = new HashSet<>();
 
     public String lookupUnwrapped(String text) {
         if (text == null || text.length() < MIN_FLAT_LENGTH) {
@@ -240,7 +247,7 @@ final class TranslationIndex {
         }
     }
 
-    final java.util.Set<String> pageNames = new java.util.HashSet<>();
+    final Set<String> pageNames = new HashSet<>();
 
     public boolean isPageName(String text) {
         return text != null && pageNames.contains(text.strip());
@@ -255,11 +262,11 @@ final class TranslationIndex {
         return title != null || pageTitleSplit.contains(name) ? title : questNames.get(name);
     }
 
-    private final Map<String, String> pageTitleNames = new java.util.HashMap<>();
+    private final Map<String, String> pageTitleNames = new HashMap<>();
 
-    private final java.util.Set<String> pageTitleSplit = new java.util.HashSet<>();
+    private final Set<String> pageTitleSplit = new HashSet<>();
 
-    private final Map<String, String> questNames = new java.util.HashMap<>();
+    private final Map<String, String> questNames = new HashMap<>();
 
     // 名字含地名的任務，卡片的鍵是 {p} 版本，名字只能從這裡拿
     void noteQuestName(String name, String translated) {
@@ -366,8 +373,7 @@ final class TranslationIndex {
         return holdAppended ? hit : LootrunNames.apply(template, hit, store.pageNameMode());
     }
 
-    static final java.util.regex.Pattern NUMBERED =
-            java.util.regex.Pattern.compile("\\{~\\d+}");
+    static final Pattern NUMBERED = Pattern.compile("\\{~\\d+}");
 
     private boolean isNameRow(String key) {
         String inner = nameRowInner(key);
@@ -453,8 +459,8 @@ final class TranslationIndex {
         return at != null && at == topLayer;
     }
 
-    public java.util.Set<String> sourceKeys() {
-        return java.util.Set.copyOf(seenSources);
+    public Set<String> sourceKeys() {
+        return Set.copyOf(seenSources);
     }
 
     public boolean hasTranslation(String template) {

@@ -7,6 +7,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.TranslationStore;
@@ -18,11 +19,15 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BooleanSupplier;
 
 public final class CardDump {
 
@@ -37,7 +42,7 @@ public final class CardDump {
 
     private static volatile Path file;
 
-    private static volatile java.util.function.BooleanSupplier enabled = CardDump::configSaysYes;
+    private static volatile BooleanSupplier enabled = CardDump::configSaysYes;
 
     private static final Map<String, Card> cards = new ConcurrentHashMap<>();
     private static final Map<String, AtomicInteger> blocked = new ConcurrentHashMap<>();
@@ -46,8 +51,7 @@ public final class CardDump {
 
     private static volatile List<Component> lastTooltip = List.of();
 
-    private static final java.util.Set<String> thisHover =
-            ConcurrentHashMap.newKeySet();
+    private static final Set<String> thisHover = ConcurrentHashMap.newKeySet();
 
     private CardDump() {}
 
@@ -268,7 +272,7 @@ public final class CardDump {
             try (Writer w = Files.newBufferedWriter(tmp, StandardCharsets.UTF_8)) {
                 GSON.toJson(root, w);
             }
-            com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
+            SafeFiles.moveAtomically(tmp, target);
         } catch (Throwable t) {
             dirty.set(true);
             ModLog.warn("寫入失敗 " + target + ": " + t);
@@ -278,9 +282,8 @@ public final class CardDump {
     private static JsonObject rowsJson() {
         JsonObject rows = new JsonObject();
         List<Card> ordered = cards.values().stream()
-                .sorted(java.util.Comparator.comparingInt(c -> c.seq))
-                .toList();
-        java.util.Set<String> used = new java.util.HashSet<>();
+                .sorted(Comparator.comparingInt(c -> c.seq)).toList();
+        Set<String> used = new HashSet<>();
         int n = 0;
         for (Card c : ordered) {
             String base = c.card == null || c.card.isBlank() ? "?" : c.card;
@@ -313,7 +316,7 @@ public final class CardDump {
         if (target == null) {
             return;
         }
-        JsonObject root = com.wynnchayuan.SafeFiles.readObject(target, MAX_BYTES);
+        JsonObject root = SafeFiles.readObject(target, MAX_BYTES);
         if (root == null) {
             return;
         }

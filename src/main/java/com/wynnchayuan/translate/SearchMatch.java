@@ -3,6 +3,9 @@ package com.wynnchayuan.translate;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 
+import java.util.List;
+import java.util.Locale;
+
 // 照抄 Wynntils StringUtils.partialMatch（子序列）
 public final class SearchMatch {
 
@@ -51,8 +54,8 @@ public final class SearchMatch {
 
     // 跟 Wynntils 一樣用 Locale.ROOT，土耳其語會把 I 折成 ı
     static boolean partialMatch(String content, String query) {
-        String needle = query.toLowerCase(java.util.Locale.ROOT);
-        String haystack = content.toLowerCase(java.util.Locale.ROOT);
+        String needle = query.toLowerCase(Locale.ROOT);
+        String haystack = content.toLowerCase(Locale.ROOT);
         int from = 0;
         for (int i = 0; i < needle.length(); i++) {
             int at = haystack.indexOf(needle.charAt(i), from);
@@ -64,7 +67,7 @@ public final class SearchMatch {
         return true;
     }
 
-    public static boolean nameAlsoMatches(String itemName, java.util.List<String> tokens) {
+    public static boolean nameAlsoMatches(String itemName, List<String> tokens) {
         try {
             noteHook();
             return nameAlsoMatches(itemName, tokens, WynnChaYuan.translations());
@@ -74,8 +77,7 @@ public final class SearchMatch {
         }
     }
 
-    static boolean nameAlsoMatches(String itemName, java.util.List<String> tokens,
-                                   TranslationStore store) {
+    static boolean nameAlsoMatches(String itemName, List<String> tokens, TranslationStore store) {
         if (itemName == null || tokens == null || tokens.isEmpty() || store == null) {
             return false;
         }
@@ -87,7 +89,6 @@ public final class SearchMatch {
         if (translated == null || translated.isBlank() || translated.equals(itemName)) {
             return false;
         }
-        return translated.toLowerCase(java.util.Locale.ROOT)
-                .contains(needle.toLowerCase(java.util.Locale.ROOT));
+        return translated.toLowerCase(Locale.ROOT).contains(needle.toLowerCase(Locale.ROOT));
     }
 }

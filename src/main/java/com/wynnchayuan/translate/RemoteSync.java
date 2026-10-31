@@ -1,5 +1,13 @@
 package com.wynnchayuan.translate;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.wynnchayuan.NetworkGate;
+import com.wynnchayuan.SafeFiles;
+import com.wynnchayuan.client.Credits;
+import com.wynnchayuan.client.T;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -10,7 +18,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public final class RemoteSync {
 
@@ -23,8 +34,7 @@ public final class RemoteSync {
     private static final String INDEX = "_index.json";
 
     private static List<String> files(Path cacheDir, String lang) {
-        java.util.LinkedHashSet<String> names =
-                new java.util.LinkedHashSet<>(FileIndex.bundled(lang));
+        LinkedHashSet<String> names = new LinkedHashSet<>(FileIndex.bundled(lang));
         names.addAll(FileIndex.inDirectory(cacheDir));
         names.addAll(FileIndex.SCOPED);
         return List.copyOf(names);
@@ -36,7 +46,7 @@ public final class RemoteSync {
     private static volatile boolean blocked;
 
     private static boolean allowed() {
-        blocked = !com.wynnchayuan.NetworkGate.online();
+        blocked = !NetworkGate.online();
         return !blocked;
     }
 
@@ -71,7 +81,7 @@ public final class RemoteSync {
                 try (InputStream in = response.body()) {
                     Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                 }
-                if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
+                if (!SafeFiles.parsesAsObject(tmp)) {
                     Files.deleteIfExists(tmp);
                     continue;
                 }
@@ -79,7 +89,7 @@ public final class RemoteSync {
                     Files.deleteIfExists(tmp);
                     return SAME;
                 }
-                com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
+                SafeFiles.moveAtomically(tmp, target);
                 return CHANGED;
             } catch (Exception e) {
                 ErrorDebug.note("RemoteSync#fetchOne", null, e);
@@ -95,9 +105,9 @@ public final class RemoteSync {
 
     public static String lastResult() {
         if (blocked) {
-            return com.wynnchayuan.client.T.s("status.sync_blocked");
+            return T.s("status.sync_blocked");
         }
-        return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.sync_none");
+        return lastResult != null ? lastResult : T.s("status.sync_none");
     }
 
     public static String remoteVersion() {
@@ -121,14 +131,12 @@ public final class RemoteSync {
             if (response.statusCode() != 200) {
                 return null;
             }
-            com.google.gson.JsonElement root =
-                    com.google.gson.JsonParser.parseString(response.body());
+            JsonElement root = JsonParser.parseString(response.body());
             if (!root.isJsonArray() || root.getAsJsonArray().isEmpty()) {
                 return null;
             }
-            com.google.gson.JsonObject commit =
-                    root.getAsJsonArray().get(0).getAsJsonObject();
-            com.google.gson.JsonElement sha = commit.get("sha");
+            JsonObject commit = root.getAsJsonArray().get(0).getAsJsonObject();
+            JsonElement sha = commit.get("sha");
             if (sha == null || !sha.isJsonPrimitive()) {
                 return null;
             }
@@ -140,7 +148,7 @@ public final class RemoteSync {
         }
     }
 
-    private static String dateOf(com.google.gson.JsonObject commit) {
+    private static String dateOf(JsonObject commit) {
         try {
             String date = commit.getAsJsonObject("commit")
                     .getAsJsonObject("committer").get("date").getAsString();
@@ -176,8 +184,8 @@ public final class RemoteSync {
         if (!allowed()) {
             return false;
         }
-        Path target = configDir.resolve(com.wynnchayuan.client.Credits.FILE);
-        Path tmp = configDir.resolve(com.wynnchayuan.client.Credits.FILE + ".tmp");
+        Path target = configDir.resolve(Credits.FILE);
+        Path tmp = configDir.resolve(Credits.FILE + ".tmp");
         try (HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(TIMEOUT)
                 .followRedirects(HttpClient.Redirect.NORMAL)
@@ -199,7 +207,7 @@ public final class RemoteSync {
                     try (InputStream in = response.body()) {
                         Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                     }
-                    if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
+                    if (!SafeFiles.parsesAsObject(tmp)) {
                         Files.deleteIfExists(tmp);
                         continue;
                     }
@@ -207,7 +215,7 @@ public final class RemoteSync {
                         Files.deleteIfExists(tmp);
                         return false;
                     }
-                    com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
+                    SafeFiles.moveAtomically(tmp, target);
                     return true;
                 } catch (Exception e) {
                     ErrorDebug.note("RemoteSync#fetchCredits", null, e);
@@ -239,7 +247,7 @@ public final class RemoteSync {
         try {
             Files.createDirectories(cacheDir);
         } catch (Exception e) {
-            lastResult = com.wynnchayuan.client.T.s("status.sync_cache_failed", e.getMessage());
+            lastResult = T.s("status.sync_cache_failed", e.getMessage());
             return 0;
         }
 
@@ -254,7 +262,7 @@ public final class RemoteSync {
             }
 
             List<String> names = files(cacheDir, lang);
-            java.util.Set<String> fetched = new java.util.HashSet<>();
+            Set<String> fetched = new HashSet<>();
             if (progress != null) {
                 progress.at(0, names.size());
             }
@@ -275,13 +283,13 @@ public final class RemoteSync {
             }
             changed += TranslationCache.record(cacheDir, fetched, names, index != FAILED);
         } catch (Exception e) {
-            lastResult = com.wynnchayuan.client.T.s("status.sync_offline", e.getMessage());
+            lastResult = T.s("status.sync_offline", e.getMessage());
             return changed;
         }
 
         lastResult = failed == 0
-                ? com.wynnchayuan.client.T.s("status.sync_ok", ok, changed)
-                : com.wynnchayuan.client.T.s("status.sync_partial", ok, failed);
+                ? T.s("status.sync_ok", ok, changed)
+                : T.s("status.sync_partial", ok, failed);
         return changed;
     }
 }

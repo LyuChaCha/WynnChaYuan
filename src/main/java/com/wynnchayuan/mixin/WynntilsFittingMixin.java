@@ -1,5 +1,6 @@
 package com.wynnchayuan.mixin;
 
+import com.wynnchayuan.render.TooltipScaleProbe;
 import com.wynnchayuan.render.WynnventoryLayout;
 import com.wynntils.mc.event.TooltipRenderEvent;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
@@ -23,7 +24,7 @@ public abstract class WynntilsFittingMixin {
     private void wynnchayuan$makeRoom(TooltipRenderEvent.Position event, CallbackInfo ci) {
         ClientTooltipPositioner current = event.getPositioner();
         ClientTooltipPositioner moved = WynnventoryLayout.shift(current,
-                com.wynnchayuan.render.TooltipScaleProbe.scaleOf(current));
+                TooltipScaleProbe.scaleOf(current));
         if (moved != null) {
             event.setPositioner(moved);
         }

@@ -2,7 +2,9 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.render.ThirdPartyLiterals;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.mc.event.SubtitleSetTextEvent;
@@ -54,13 +56,11 @@ public final class TitleListener {
         if (line.isEmpty() || GlyphSplitter.isGlyphOnly(line)) {
             return null;
         }
-        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(
-                line.getStringWithoutFormatting())) {
+        if (ThirdPartyLiterals.reserved(line.getStringWithoutFormatting())) {
             return null;
         }
         String template = GlyphSplitter.toTemplate(line);
-        com.wynnchayuan.capture.LineParts framed =
-                LineTranslator.nameFramed(line, WynnChaYuan.translations());
+        LineParts framed = LineTranslator.nameFramed(line, WynnChaYuan.translations());
         if (framed != null) {
             if (WynnChaYuan.config().collect()) {
                 WynnChaYuan.store().record(framed.template(), "desc", "title", "title");

@@ -10,6 +10,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -168,9 +169,9 @@ public final class ScoreboardWrap {
         return out;
     }
 
-    private static java.lang.reflect.Method sizeGetter;
+    private static Method sizeGetter;
     private static Field scaleField;
-    private static java.lang.reflect.Method scaleGet;
+    private static Method scaleGet;
 
     private static float roomOf(Object overlay) {
         try {

@@ -1,9 +1,11 @@
 package com.wynnchayuan;
 
 import com.wynnchayuan.translate.ErrorDebug;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public final class ConfigFolder {
@@ -12,8 +14,7 @@ public final class ConfigFolder {
 
     public static final String DEBUG = "debug";
 
-    static final java.util.regex.Pattern OLD_DEBUG = java.util.regex.Pattern.compile(
-            "(?:actionbar-(?:columns|probe)-\\d+\\.txt"
+    static final Pattern OLD_DEBUG = Pattern.compile("(?:actionbar-(?:columns|probe)-\\d+\\.txt"
                     + "|dialogue-(?:probe|miss|choice-probe|tofu)-\\d+\\.txt"
                     + "|font-dump\\.txt"
                     + "|(?:layout|line|majorid|shot)-debug\\.txt"

@@ -2,8 +2,12 @@ package com.wynnchayuan.client.ui;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.IntConsumer;
+import java.util.function.IntSupplier;
+import java.util.function.ToIntFunction;
 
 public abstract class Surface {
 
@@ -226,8 +230,8 @@ public abstract class Surface {
         return null;
     }
 
-    public java.util.Map<String, float[]> spots() {
-        java.util.Map<String, float[]> out = new java.util.LinkedHashMap<>();
+    public Map<String, float[]> spots() {
+        Map<String, float[]> out = new LinkedHashMap<>();
         for (Zone z : zones) {
             if (z.key != null) {
                 out.put(z.key, new float[] {z.x, z.y, z.w, z.h});
@@ -365,9 +369,8 @@ public abstract class Surface {
     }
 
     protected void segmented(String key, float left, float right, float y,
-                             List<Row.Option> options, java.util.function.IntSupplier selected,
-                             java.util.function.IntConsumer pick,
-                             java.util.function.ToIntFunction<Row.Tone> tones) {
+                             List<Row.Option> options, IntSupplier selected, IntConsumer pick,
+                             ToIntFunction<Row.Tone> tones) {
         int n = Math.max(1, options.size());
         float w = right - left;
         float inner = w - 2;
@@ -447,7 +450,7 @@ public abstract class Surface {
     }
 
     protected float chips(String key, float right, float y, String[] labels, int selected,
-                          java.util.function.IntConsumer pick) {
+                          IntConsumer pick) {
         float total = 2;
         float[] widths = new float[labels.length];
         for (int i = 0; i < labels.length; i++) {

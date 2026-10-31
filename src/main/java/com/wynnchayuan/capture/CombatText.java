@@ -2,6 +2,7 @@ package com.wynnchayuan.capture;
 
 import com.wynntils.core.text.StyledText;
 
+import java.util.Locale;
 import java.util.Set;
 
 public final class CombatText {
@@ -24,7 +25,7 @@ public final class CombatText {
         if (core.isEmpty()) {
             return false;
         }
-        if (WORDS.contains(core.toLowerCase(java.util.Locale.ROOT))) {
+        if (WORDS.contains(core.toLowerCase(Locale.ROOT))) {
             return true;
         }
         return isNumericOnly(core);

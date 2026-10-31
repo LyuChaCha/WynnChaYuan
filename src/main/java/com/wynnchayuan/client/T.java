@@ -2,12 +2,17 @@ package com.wynnchayuan.client;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.Languages;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -45,9 +50,9 @@ public final class T {
 
     public static String pinnedLanguage() {
         try {
-            String lang = com.wynnchayuan.WynnChaYuan.config().uiLanguage();
+            String lang = WynnChaYuan.config().uiLanguage();
             if (lang == null || lang.isBlank()) {
-                lang = com.wynnchayuan.WynnChaYuan.config().language();
+                lang = WynnChaYuan.config().language();
             }
             return lang == null || lang.isBlank() ? null : lang;
         } catch (Exception e) {
@@ -60,9 +65,9 @@ public final class T {
         return LOADED.computeIfAbsent(lang, T::read);
     }
 
-    public static java.util.List<String> available() {
-        java.util.List<String> out = new java.util.ArrayList<>();
-        for (String lang : com.wynnchayuan.translate.Languages.known()) {
+    public static List<String> available() {
+        List<String> out = new ArrayList<>();
+        for (String lang : Languages.known()) {
             if (!load(lang).isEmpty()) {
                 out.add(lang);
             }
@@ -78,7 +83,7 @@ public final class T {
             JsonObject root = JsonParser.parseString(
                     new String(in.readAllBytes(), StandardCharsets.UTF_8))
                     .getAsJsonObject();
-            Map<String, String> out = new java.util.HashMap<>();
+            Map<String, String> out = new HashMap<>();
             for (String key : root.keySet()) {
                 out.put(key, root.get(key).getAsString());
             }

@@ -1,12 +1,20 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.DialogueSpeaker;
 import com.wynnchayuan.capture.GlyphSplitter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.BiPredicate;
+import java.util.regex.Pattern;
 
 import static com.wynnchayuan.translate.TranslationStore.respell;
 import static com.wynnchayuan.translate.TranslationStore.sameLine;
@@ -32,8 +40,7 @@ final class QuestDialogueIndex {
         if (quest == null || speaker == null || speaker.isBlank()) {
             return null;
         }
-        java.util.Set<String> cast = questCast.get(
-                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        Set<String> cast = questCast.get(GlyphSplitter.stripGlyphChars(quest).strip());
         if (cast == null || cast.isEmpty()) {
             return null;
         }
@@ -52,7 +59,7 @@ final class QuestDialogueIndex {
         return template == null ? null : questOfLine.get(template.strip());
     }
 
-    final Map<String, java.util.Set<String>> questCast = new ConcurrentHashMap<>();
+    final Map<String, Set<String>> questCast = new ConcurrentHashMap<>();
 
     final Map<String, String> questOfLine = new ConcurrentHashMap<>();
 
@@ -83,8 +90,8 @@ final class QuestDialogueIndex {
             return null;
         }
         if (quest != null && !quest.isBlank() && key.length() >= MIN_QUEST_PREFIX) {
-            java.util.TreeMap<String, String> scoped = byQuest.get(
-                    com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+            TreeMap<String, String> scoped = byQuest.get(
+                    GlyphSplitter.stripGlyphChars(quest).strip());
             if (scoped != null) {
                 String hit = unique(scoped, key);
                 if (hit != null) {
@@ -106,8 +113,7 @@ final class QuestDialogueIndex {
         if (typed == null || quest == null || quest.isBlank()) {
             return null;
         }
-        java.util.TreeMap<String, String> scoped = byQuest.get(
-                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        TreeMap<String, String> scoped = byQuest.get(GlyphSplitter.stripGlyphChars(quest).strip());
         if (scoped == null) {
             return null;
         }
@@ -120,7 +126,7 @@ final class QuestDialogueIndex {
         return result;
     }
 
-    private String nearQuestLineUncached(String typed, java.util.TreeMap<String, String> scoped) {
+    private String nearQuestLineUncached(String typed, TreeMap<String, String> scoped) {
         String[] said = nearWords(typed);
         if (said.length < NEAR_MIN_WORDS) {
             return null;
@@ -181,16 +187,15 @@ final class QuestDialogueIndex {
             return;
         }
         List<SeqLine> seq = questSeq.computeIfAbsent(q,
-                k -> new java.util.concurrent.CopyOnWriteArrayList<>());
+                k -> new CopyOnWriteArrayList<>());
         questSeqAt.computeIfAbsent(q, k -> new ConcurrentHashMap<>())
-                .computeIfAbsent(src, k -> new java.util.concurrent.CopyOnWriteArrayList<>())
-                .add(seq.size());
+                .computeIfAbsent(src, k -> new CopyOnWriteArrayList<>()).add(seq.size());
         seq.add(new SeqLine(src, who, wiki));
         seqQuestOf.computeIfAbsent(src, k -> ConcurrentHashMap.newKeySet()).add(q);
     }
 
     static String speakerKey(String raw) {
-        String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(raw);
+        String name = DialogueSpeaker.cleanName(raw);
         if (name == null) {
             return "";
         }
@@ -242,7 +247,7 @@ final class QuestDialogueIndex {
     }
 
     String forecast(String typed, String quest, int after, int window, String speaker,
-                           int floor, java.util.function.BiPredicate<String, String> fits) {
+                           int floor, BiPredicate<String, String> fits) {
         if (typed == null || quest == null || speaker == null) {
             return null;
         }
@@ -256,7 +261,7 @@ final class QuestDialogueIndex {
     }
 
     String forecastBySpeaker(String typed, String quest, String speaker, int floor,
-                                    java.util.function.BiPredicate<String, String> fits) {
+                                    BiPredicate<String, String> fits) {
         if (typed == null || quest == null || speaker == null) {
             return null;
         }
@@ -270,7 +275,7 @@ final class QuestDialogueIndex {
     }
 
     String forecastNext(String typed, String quest, int after, int window, String speaker,
-                               int floor, java.util.function.BiPredicate<String, String> fits) {
+                               int floor, BiPredicate<String, String> fits) {
         if (typed == null || quest == null || after < 0) {
             return null;
         }
@@ -283,7 +288,7 @@ final class QuestDialogueIndex {
             return null;
         }
         String who = speaker == null ? "" : speakerKey(speaker);
-        List<SeqLine> group = new java.util.ArrayList<>();
+        List<SeqLine> group = new ArrayList<>();
         for (int i = after + 1; i < Math.min(seq.size(), after + 1 + window); i++) {
             SeqLine line = seq.get(i);
             if (!who.isEmpty() && !line.speaker().isEmpty() && !line.speaker().equals(who)) {
@@ -312,15 +317,14 @@ final class QuestDialogueIndex {
     }
 
     private String forecastUncached(String key, String quest, int after, int window, String who,
-                                    java.util.function.BiPredicate<String, String> fits,
-                                    boolean elsewhere) {
+                                    BiPredicate<String, String> fits, boolean elsewhere) {
         List<SeqLine> seq = questSeq.get(quest);
         if (seq == null) {
             return null;
         }
         int from = after >= 0 ? after + 1 : 0;
         int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
-        List<SeqLine> group = new java.util.ArrayList<>();
+        List<SeqLine> group = new ArrayList<>();
         for (int i = from; i < to; i++) {
             SeqLine line = seq.get(i);
             if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
@@ -384,7 +388,7 @@ final class QuestDialogueIndex {
     }
 
     String explainForecast(String typed, String quest, int after, int window,
-                                  String speaker, java.util.function.BiPredicate<String, String> fits) {
+                                  String speaker, BiPredicate<String, String> fits) {
         String who = speakerKey(speaker);
         if (who.isEmpty()) {
             return "沒有名牌";
@@ -396,7 +400,7 @@ final class QuestDialogueIndex {
         }
         int from = after >= 0 ? after + 1 : 0;
         int to = after >= 0 ? Math.min(seq.size(), from + window) : seq.size();
-        List<SeqLine> group = new java.util.ArrayList<>();
+        List<SeqLine> group = new ArrayList<>();
         for (int i = from; i < to; i++) {
             SeqLine line = seq.get(i);
             if (!line.speaker().isEmpty() && !line.speaker().equals(who)) {
@@ -460,7 +464,7 @@ final class QuestDialogueIndex {
         if (key.length() < MIN_QUEST_PREFIX) {
             return "不到4字";
         }
-        java.util.TreeMap<String, String> scoped = byQuest.get(q);
+        TreeMap<String, String> scoped = byQuest.get(q);
         if (scoped == null) {
             return "沒有任務";
         }
@@ -519,18 +523,18 @@ final class QuestDialogueIndex {
     private volatile NearQuery lastNear;
 
     private final Map<String, String[]> nearWordCache =
-            new java.util.concurrent.ConcurrentHashMap<>();
+            new ConcurrentHashMap<>();
 
-    private static final java.util.regex.Pattern NEAR_SPACE = java.util.regex.Pattern.compile("\\s+");
+    private static final Pattern NEAR_SPACE = Pattern.compile("\\s+");
 
-    private static final java.util.regex.Pattern NEAR_EDGES =
-            java.util.regex.Pattern.compile("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$");
+    private static final Pattern NEAR_EDGES =
+            Pattern.compile("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$");
 
     private static String[] nearWords(String text) {
         String[] raw = NEAR_SPACE.split(text.strip());
-        List<String> out = new java.util.ArrayList<>(raw.length);
+        List<String> out = new ArrayList<>(raw.length);
         for (String w : raw) {
-            String t = NEAR_EDGES.matcher(w.toLowerCase(java.util.Locale.ROOT)).replaceAll("");
+            String t = NEAR_EDGES.matcher(w.toLowerCase(Locale.ROOT)).replaceAll("");
             if (!t.isEmpty()) {
                 out.add(t);
             }
@@ -557,7 +561,7 @@ final class QuestDialogueIndex {
         return prev[take];
     }
 
-    private String unique(java.util.TreeMap<String, String> index, String key) {
+    private String unique(TreeMap<String, String> index, String key) {
         Map.Entry<String, String> first = index.ceilingEntry(key);
         if (first == null || !first.getKey().startsWith(key)) {
             String other = respell(key);
@@ -577,7 +581,7 @@ final class QuestDialogueIndex {
         return first.getKey();
     }
 
-    private String settle(java.util.TreeMap<String, String> index, String key, String first) {
+    private String settle(TreeMap<String, String> index, String key, String first) {
         String curated = null;
         int scanned = 0;
         int best = -1;
@@ -638,8 +642,7 @@ final class QuestDialogueIndex {
 
     private static final int RIVAL_SCAN = 16;
 
-    final java.util.Set<String> fromWiki =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
+    final Set<String> fromWiki = ConcurrentHashMap.newKeySet();
 
     boolean hasLonger(String key) {
         if (key == null) {
@@ -693,11 +696,9 @@ final class QuestDialogueIndex {
         return next != null && next.startsWith(key);
     }
 
-    final java.util.concurrent.ConcurrentSkipListSet<String> ordered =
-            new java.util.concurrent.ConcurrentSkipListSet<>();
+    final ConcurrentSkipListSet<String> ordered = new ConcurrentSkipListSet<>();
 
-    final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();
+    final TreeMap<String, String> prefixIndex = new TreeMap<>();
 
-    final Map<String, java.util.TreeMap<String, String>> byQuest =
-            new java.util.HashMap<>();
+    final Map<String, TreeMap<String, String>> byQuest = new HashMap<>();
 }

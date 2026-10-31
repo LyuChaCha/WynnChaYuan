@@ -1,22 +1,29 @@
 package com.wynnchayuan.listener;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.DialogueOverlay;
+import com.wynnchayuan.render.LookAtTranslator;
+import com.wynnchayuan.render.PendingTooltip;
+import com.wynnchayuan.render.TooltipPanel;
+import com.wynnchayuan.render.TooltipScaleProbe;
+import com.wynnchayuan.render.TrackerOverlay;
+import com.wynnchayuan.render.WynnventoryLayout;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
-import com.wynnchayuan.render.DialogueOverlay;
-import com.wynnchayuan.render.PendingTooltip;
-import com.wynnchayuan.render.TooltipPanel;
-import com.wynnchayuan.render.LookAtTranslator;
-import com.wynnchayuan.render.TrackerOverlay;
 import com.wynntils.mc.event.ItemTooltipRenderEvent;
+import com.wynntils.mc.event.TooltipRenderEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-
-import java.util.List;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
+import org.lwjgl.glfw.GLFW;
+
+import java.util.List;
+import java.util.function.Supplier;
 
 public final class RenderListener {
 
@@ -53,14 +60,12 @@ public final class RenderListener {
 
 
     public static boolean shiftHeld() {
-        net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+        Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.getWindow() == null) {
             return false;
         }
-        return com.mojang.blaze3d.platform.InputConstants.isKeyDown(
-                        mc.getWindow(), org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT_SHIFT)
-                || com.mojang.blaze3d.platform.InputConstants.isKeyDown(
-                        mc.getWindow(), org.lwjgl.glfw.GLFW.GLFW_KEY_RIGHT_SHIFT);
+        return InputConstants.isKeyDown(mc.getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT)
+                || InputConstants.isKeyDown(mc.getWindow(), GLFW.GLFW_KEY_RIGHT_SHIFT);
     }
 
     private static CollectorConfig.ItemNames peeked(CollectorConfig config) {
@@ -82,7 +87,7 @@ public final class RenderListener {
         });
     }
 
-    private static <T> T withPeek(java.util.function.Supplier<T> body) {
+    private static <T> T withPeek(Supplier<T> body) {
         CollectorConfig config = WynnChaYuan.config();
         WynnChaYuan.translations().setNameMode(peeked(config));
         WynnChaYuan.translations().setPeekPlainNames(
@@ -96,8 +101,7 @@ public final class RenderListener {
     }
 
     public static List<Component> translateForeign(List<Component> lines) {
-        return withPeek(() -> com.wynnchayuan.render.TooltipPanel
-                .translateInPlace(lines, WynnChaYuan.translations()));
+        return withPeek(() -> TooltipPanel.translateInPlace(lines, WynnChaYuan.translations()));
     }
 
     private void replaceInPlace(ItemTooltipRenderEvent.Pre event) {
@@ -106,7 +110,7 @@ public final class RenderListener {
             if (original == null || original.isEmpty()) {
                 return;
             }
-            List<Component> out = withPeek(() -> com.wynnchayuan.render.TooltipPanel
+            List<Component> out = withPeek(() -> TooltipPanel
                     .translateInPlace(original, WynnChaYuan.translations()));
             if (!out.isEmpty()) {
                 event.setTooltips(out);
@@ -115,13 +119,13 @@ public final class RenderListener {
             }
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.replaceError");
-            com.wynnchayuan.translate.ErrorDebug.note("tooltip.replace", firstLine(event), t);
+            ErrorDebug.note("tooltip.replace", firstLine(event), t);
         }
     }
 
     public static List<Component> inPlaceLines(List<Component> original) {
         try {
-            List<Component> out = withPeek(() -> com.wynnchayuan.render.TooltipPanel
+            List<Component> out = withPeek(() -> TooltipPanel
                     .translateInPlace(original, WynnChaYuan.translations()));
             return out == null || out.isEmpty() ? original : out;
         } catch (Throwable t) {
@@ -131,12 +135,12 @@ public final class RenderListener {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public void onTooltipPosition(com.wynntils.mc.event.TooltipRenderEvent.Position event) {
+    public void onTooltipPosition(TooltipRenderEvent.Position event) {
         try {
-            if (com.wynnchayuan.render.TooltipScaleProbe.fittingEnabled()) {
+            if (TooltipScaleProbe.fittingEnabled()) {
                 return;
             }
-            var moved = com.wynnchayuan.render.WynnventoryLayout.shift(event.getPositioner(), 1f);
+            var moved = WynnventoryLayout.shift(event.getPositioner(), 1f);
             if (moved != null) {
                 event.setPositioner(moved);
             }
@@ -175,13 +179,13 @@ public final class RenderListener {
                     WynnChaYuan.translations()));
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.tooltipError");
-            com.wynnchayuan.translate.ErrorDebug.note("tooltip.panel",
+            ErrorDebug.note("tooltip.panel",
                     tooltip.isEmpty() ? null : tooltip.get(0).getString(), t);
         }
     }
 
     public static void renderHud(GuiGraphics graphics) {
-        com.wynnchayuan.listener.ChatBlock.tick();
+        ChatBlock.tick();
         boolean inPlace = WynnChaYuan.config().dialogueMode()
                         == CollectorConfig.DialogueMode.REPLACE
                 || WynnChaYuan.config().choiceMode()

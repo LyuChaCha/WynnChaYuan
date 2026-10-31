@@ -3,9 +3,15 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 // Wynncraft shader 依字型圖集 (0,0) 的標記像素搬頂點
 public final class PairedFont {
@@ -19,21 +25,18 @@ public final class PairedFont {
         try {
             Minecraft mc = Minecraft.getInstance();
             if (mc != null && mc.font != null) {
-                mc.font.width(net.minecraft.network.chat.Component.literal(MARKER)
-                        .setStyle(Style.EMPTY.withFont(ours)));
+                mc.font.width(Component.literal(MARKER).setStyle(Style.EMPTY.withFont(ours)));
             }
         } catch (Throwable t) {
             ErrorDebug.note("PairedFont#warm", null, t);
         }
     }
 
-    private static final java.util.regex.Pattern SELECTOR_SLOT =
-            java.util.regex.Pattern.compile(
+    private static final Pattern SELECTOR_SLOT = Pattern.compile(
                     "hud/selector/default/center_left/([0-2])/"
                             + "(display_name|description)\\b");
 
-    private static final java.util.regex.Pattern BOTTOM_SLOT =
-            java.util.regex.Pattern.compile(
+    private static final Pattern BOTTOM_SLOT = Pattern.compile(
                     "hud/(selector|wardrobe|emote)/default/bottom_middle\\b");
 
     public static String slot(String font) {
@@ -46,7 +49,7 @@ public final class PairedFont {
         if (font.contains("hud/wardrobe/default/top_middle")) {
             return "wardrobe_top";
         }
-        java.util.regex.Matcher m = SELECTOR_SLOT.matcher(font);
+        Matcher m = SELECTOR_SLOT.matcher(font);
         if (!m.find()) {
             return null;
         }
@@ -54,8 +57,7 @@ public final class PairedFont {
                                                   : "selector_desc_") + m.group(1);
     }
 
-    private static final java.util.Map<String, Boolean> FONTS =
-            new java.util.concurrent.ConcurrentHashMap<>();
+    private static final Map<String, Boolean> FONTS = new ConcurrentHashMap<>();
 
     public static boolean shipped(String lang, String name) {
         return FONTS.computeIfAbsent(lang + "/" + name, key -> {
@@ -99,8 +101,8 @@ public final class PairedFont {
         return HUD_SCREEN.matcher(nameOf(style)).find();
     }
 
-    private static final java.util.regex.Pattern HUD_SCREEN =
-            java.util.regex.Pattern.compile("hud/(selector|wardrobe|emote)/default/");
+    private static final Pattern HUD_SCREEN =
+            Pattern.compile("hud/(selector|wardrobe|emote)/default/");
 
     public static boolean isOurs(Style style) {
         return nameOf(style).contains(WynnChaYuan.MOD_ID + ":actionbar/");

@@ -1,21 +1,27 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.cape.Capes;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.RemoteSync;
+import com.wynnchayuan.translate.TranslationUpdate;
+import net.minecraft.client.Minecraft;
+
+import java.util.function.Consumer;
 
 public final class ModNetwork {
 
     private ModNetwork() {}
 
-    public static void resyncTranslations(java.util.function.Consumer<String> done) {
+    public static void resyncTranslations(Consumer<String> done) {
         Thread worker = new Thread(() -> {
             String remote = RemoteSync.remoteVersion();
             LanguageLayers.fetchCurrentLanguages();
             String result = RemoteSync.lastResult();
-            com.wynnchayuan.translate.TranslationUpdate.done(remote);
-            net.minecraft.client.Minecraft.getInstance().execute(() -> {
+            TranslationUpdate.done(remote);
+            Minecraft.getInstance().execute(() -> {
                 LanguageLayers.reloadTranslations();
-                done.accept(com.wynnchayuan.client.T.s("status.sync_total", result, WynnChaYuan.translations.size()));
+                done.accept(T.s("status.sync_total", result, WynnChaYuan.translations.size()));
             });
         }, WynnChaYuan.MOD_ID + "-resync");
         worker.setDaemon(true);
@@ -25,11 +31,11 @@ public final class ModNetwork {
     public static void recheckTranslationVersion(Runnable done) {
         Thread worker = new Thread(() -> {
             String remote = RemoteSync.remoteVersion();
-            com.wynnchayuan.translate.TranslationUpdate.checked(remote);
+            TranslationUpdate.checked(remote);
             if (remote != null && !remote.equals(WynnChaYuan.config.syncedTranslations())) {
-                com.wynnchayuan.translate.TranslationUpdate.found(remote);
+                TranslationUpdate.found(remote);
             }
-            net.minecraft.client.Minecraft.getInstance().execute(done);
+            Minecraft.getInstance().execute(done);
         }, WynnChaYuan.MOD_ID + "-version");
         worker.setDaemon(true);
         worker.start();
@@ -41,16 +47,16 @@ public final class ModNetwork {
         }
         Thread sync = new Thread(() -> {
             String remote = RemoteSync.remoteVersion();
-            com.wynnchayuan.translate.TranslationUpdate.checked(remote);
+            TranslationUpdate.checked(remote);
             boolean first = WynnChaYuan.config.syncedTranslations().isBlank();
             if (!first && !WynnChaYuan.config.autoUpdateTranslations()) {
                 if (remote != null && !remote.equals(WynnChaYuan.config.syncedTranslations())) {
-                    com.wynnchayuan.translate.TranslationUpdate.found(remote);
+                    TranslationUpdate.found(remote);
                 }
                 return;
             }
             int changed = LanguageLayers.fetchCurrentLanguages();
-            com.wynnchayuan.translate.TranslationUpdate.done(remote);
+            TranslationUpdate.done(remote);
             if (changed > 0) {
                 LanguageLayers.reloadOnMainThread();
             }
@@ -89,29 +95,28 @@ public final class ModNetwork {
     }
 
     public static void setDataOptOut(boolean on,
-                                     java.util.function.Consumer<PresenceAccount.DeleteResult> done) {
+                                     Consumer<PresenceAccount.DeleteResult> done) {
         WynnChaYuan.config.setDataOptOut(on);
         if (!on) {
             return;
         }
         PresenceAccount.forget();
         try {
-            com.wynnchayuan.cape.Capes.forgetSelf(
-                    net.minecraft.client.Minecraft.getInstance().getUser().getProfileId());
+            Capes.forgetSelf(Minecraft.getInstance().getUser().getProfileId());
         } catch (Throwable t) {
-            com.wynnchayuan.translate.ErrorDebug.note("privacy.capes", null, t);
+            ErrorDebug.note("privacy.capes", null, t);
         }
         deleteServerData(done);
     }
 
-    private static void deleteServerData(java.util.function.Consumer<PresenceAccount.DeleteResult> done) {
+    private static void deleteServerData(Consumer<PresenceAccount.DeleteResult> done) {
         PresenceAccount.deleteMyData(result -> {
             if (result == PresenceAccount.DeleteResult.DONE && WynnChaYuan.config.dataOptOut()) {
                 WynnChaYuan.config.dataDeleted();
             }
             ModLog.info("data deletion: " + result);
             if (done != null) {
-                net.minecraft.client.Minecraft.getInstance().execute(() -> done.accept(result));
+                Minecraft.getInstance().execute(() -> done.accept(result));
             }
         });
     }

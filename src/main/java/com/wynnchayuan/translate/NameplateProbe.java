@@ -9,7 +9,9 @@ import net.minecraft.network.chat.Style;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 public final class NameplateProbe {
 
@@ -21,7 +23,7 @@ public final class NameplateProbe {
 
     private static Path file;
     private static int written;
-    private static final java.util.Set<String> seen = new java.util.HashSet<>();
+    private static final Set<String> seen = new HashSet<>();
     private static final StringBuilder buffer = new StringBuilder();
 
     private NameplateProbe() {}

@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 final class LanguageTab {
 
@@ -33,7 +34,7 @@ final class LanguageTab {
             case "zh_cn" -> "简";
             case "ja_jp" -> "日";
             case "ko_kr" -> "한";
-            default -> lang.length() >= 2 ? lang.substring(0, 2).toUpperCase(java.util.Locale.ROOT) : lang;
+            default -> lang.length() >= 2 ? lang.substring(0, 2).toUpperCase(Locale.ROOT) : lang;
         };
     }
 

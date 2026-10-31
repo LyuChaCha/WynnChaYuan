@@ -1,9 +1,11 @@
 package com.wynnchayuan.cape;
 
-import com.wynnchayuan.PresenceAccount;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.NetworkGate;
 import com.wynnchayuan.Presence;
+import com.wynnchayuan.PresenceAccount;
+import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -29,10 +31,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public final class Capes {
 
@@ -112,19 +116,19 @@ public final class Capes {
         return dir == null ? null : dir.resolve("capes");
     }
 
-    public static boolean hasCape(String account, java.util.UUID uuid) {
+    public static boolean hasCape(String account, UUID uuid) {
         return registered(account) != null || Presence.capeVersion(uuid) > 0;
     }
 
-    private static String uploadedKey(java.util.UUID uuid) {
+    private static String uploadedKey(UUID uuid) {
         long version = Presence.capeVersion(uuid);
         return version > 0 ? "up:" + Presence.idOf(uuid) + ":" + version : null;
     }
 
-    public static Identifier textureFor(String account, java.util.UUID uuid, boolean self,
+    public static Identifier textureFor(String account, UUID uuid, boolean self,
                                         CollectorConfig config, long now) {
         if (account == null || config == null || !config.capes()
-                || !com.wynnchayuan.NetworkGate.registry(config)) {
+                || !NetworkGate.registry(config)) {
             return null;
         }
         if (self ? !config.ownCape() : Presence.capeHidden(uuid)) {
@@ -212,7 +216,7 @@ public final class Capes {
             }
             Minecraft.getInstance().execute(() -> register(key, frames));
         } catch (Throwable t) {
-            com.wynnchayuan.translate.ErrorDebug.note("cape.load", key, t);
+            ErrorDebug.note("cape.load", key, t);
             STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));
         }
     }
@@ -228,7 +232,7 @@ public final class Capes {
             Files.createDirectories(cache.getParent());
             Path tmp = cache.resolveSibling(cache.getFileName() + ".tmp");
             Files.write(tmp, fresh);
-            com.wynnchayuan.SafeFiles.moveAtomically(tmp, cache);
+            SafeFiles.moveAtomically(tmp, cache);
         }
         return fresh;
     }
@@ -248,7 +252,7 @@ public final class Capes {
             Files.createDirectories(cache.getParent());
             Path tmp = cache.resolveSibling(file + ".tmp");
             Files.write(tmp, fresh);
-            com.wynnchayuan.SafeFiles.moveAtomically(tmp, cache);
+            SafeFiles.moveAtomically(tmp, cache);
             return fresh;
         }
         return have ? Files.readAllBytes(cache) : null;
@@ -314,7 +318,7 @@ public final class Capes {
         return out;
     }
 
-    public static int forgetSelf(java.util.UUID me) {
+    public static int forgetSelf(UUID me) {
         String id = Presence.idOf(me);
         Path dir = folder();
         if (id == null || dir == null) {
@@ -333,7 +337,7 @@ public final class Capes {
         if (!Files.isDirectory(cache)) {
             return 0;
         }
-        try (java.util.stream.Stream<Path> files = Files.list(cache)) {
+        try (Stream<Path> files = Files.list(cache)) {
             for (Path file : files.toList()) {
                 String name = file.getFileName().toString();
                 if (name.startsWith("up-" + id + "-")) {
@@ -378,7 +382,7 @@ public final class Capes {
             Object old = STATE.put(key, new Loaded(textures, ends));
             release(old);
         } catch (Throwable t) {
-            com.wynnchayuan.translate.ErrorDebug.note("cape.register", key, t);
+            ErrorDebug.note("cape.register", key, t);
             STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));
         }
     }

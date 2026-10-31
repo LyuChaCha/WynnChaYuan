@@ -1,10 +1,12 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -58,7 +60,7 @@ public final class NameFrames {
     public static NameFrames of(Collection<String> keys) {
         Map<String, List<Frame>> tails = new HashMap<>();
         Map<String, List<Frame>> heads = new HashMap<>();
-        Set<String> seen = new java.util.HashSet<>();
+        Set<String> seen = new HashSet<>();
         int count = 0;
         for (String key : keys) {
             if (key == null) {
@@ -157,7 +159,7 @@ public final class NameFrames {
     private static final int MAX_TEMPLATE = 400;
 
     static String core(String text) {
-        String s = com.wynnchayuan.translate.TranslationStore.unwrap(text);
+        String s = TranslationStore.unwrap(text);
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         int at = 0;
         while (at < s.length()) {

@@ -1,7 +1,9 @@
 package com.wynnchayuan.mixin;
 
 import com.wynnchayuan.render.WynnventoryBox;
+import com.wynnchayuan.render.WynnventoryLayout;
 import com.wynnchayuan.translate.WynnventoryBridge;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.network.chat.Component;
 import org.joml.Vector2i;
@@ -10,6 +12,7 @@ import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
@@ -26,11 +29,11 @@ public abstract class WynnventoryTooltipMixin {
 
     @Inject(method = "drawTooltip", at = @At("HEAD"), cancellable = true, remap = false,
             require = 0)
-    private static void wynnchayuan$layout(net.minecraft.client.gui.GuiGraphics graphics,
+    private static void wynnchayuan$layout(GuiGraphics graphics,
                                            int mouseX, int mouseY, List<Component> vanilla,
                                            List<Component> custom,
-                                           org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci) {
-        if (com.wynnchayuan.render.WynnventoryLayout.draw(graphics, mouseX, mouseY, vanilla, custom)) {
+                                           CallbackInfo ci) {
+        if (WynnventoryLayout.draw(graphics, mouseX, mouseY, vanilla, custom)) {
             ci.cancel();
         }
     }

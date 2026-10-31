@@ -1,8 +1,12 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.Arrays;
 
 // Wynntils DataComponentHolderMixin 每次讀都發事件
 public final class ComponentMemo {
@@ -23,7 +27,7 @@ public final class ComponentMemo {
     private static boolean filling;
 
     public static void forget() {
-        java.util.Arrays.fill(TABLE, null);
+        Arrays.fill(TABLE, null);
     }
 
     public static void nextFrame() {
@@ -60,7 +64,7 @@ public final class ComponentMemo {
     }
 
     private static boolean enabled() {
-        com.wynnchayuan.CollectorConfig config = com.wynnchayuan.WynnChaYuan.config();
+        CollectorConfig config = WynnChaYuan.config();
         return config != null && config.wynntilsFps();
     }
 }

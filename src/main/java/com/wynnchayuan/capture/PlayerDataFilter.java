@@ -2,8 +2,11 @@ package com.wynnchayuan.capture;
 
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.PlayerInfo;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class PlayerDataFilter {
@@ -125,7 +128,7 @@ public final class PlayerDataFilter {
                     + "\\[(?!(?:Cave|Raid)])[A-Za-z0-9]{2,4}]\\s*$",
             Pattern.MULTILINE);
 
-    public static boolean isPartyCard(java.util.List<String> templates) {
+    public static boolean isPartyCard(List<String> templates) {
         if (templates == null) {
             return false;
         }
@@ -211,7 +214,7 @@ public final class PlayerDataFilter {
             if (mc == null || mc.getConnection() == null) {
                 return false;
             }
-            for (net.minecraft.client.multiplayer.PlayerInfo info
+            for (PlayerInfo info
                     : mc.getConnection().getOnlinePlayers()) {
                 String name = info.getProfile().name();
                 if (name != null && name.length() >= MIN_ONLINE_NAME
@@ -261,11 +264,11 @@ public final class PlayerDataFilter {
         if (template == null || template.isBlank()) {
             return false;
         }
-        java.util.List<String> names = onlineNames();
+        List<String> names = onlineNames();
         if (names.isEmpty()) {
             return false;
         }
-        java.util.regex.Matcher m = WORDS.matcher(template);
+        Matcher m = WORDS.matcher(template);
         while (m.find()) {
             String token = m.group();
             if (token.length() < MIN_NAME_MATCH) {
@@ -283,13 +286,13 @@ public final class PlayerDataFilter {
         return false;
     }
 
-    private static java.util.List<String> onlineNames() {
+    private static List<String> onlineNames() {
         try {
             Minecraft mc = Minecraft.getInstance();
             if (mc == null || mc.getConnection() == null) {
                 return List.of();
             }
-            java.util.List<String> out = new java.util.ArrayList<>();
+            List<String> out = new ArrayList<>();
             for (var entry : mc.getConnection().getListedOnlinePlayers()) {
                 String name = entry.getProfile().name();
                 if (name != null && !name.isBlank()) {

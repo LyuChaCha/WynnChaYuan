@@ -1,17 +1,22 @@
 package com.wynnchayuan.translate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public final class MarketSearch {
 
     private final Map<String, Set<String>> index = new TreeMap<>();
 
-    private final Map<String, String> shown = new java.util.HashMap<>();
+    private final Map<String, String> shown = new HashMap<>();
 
     private static final int MIN_NAME = 2;
 
@@ -44,16 +49,16 @@ public final class MarketSearch {
         }
         Map<String, String> map = reverse;
         if (map == null) {
-            map = new java.util.HashMap<>();
+            map = new HashMap<>();
             for (Map.Entry<String, Set<String>> e : index.entrySet()) {
                 String zh = shown.getOrDefault(e.getKey(), e.getKey());
                 for (String en : e.getValue()) {
-                    map.putIfAbsent(singular(en).toLowerCase(java.util.Locale.ROOT), zh);
+                    map.putIfAbsent(singular(en).toLowerCase(Locale.ROOT), zh);
                 }
             }
             reverse = map;
         }
-        return map.get(singular(english.strip()).toLowerCase(java.util.Locale.ROOT));
+        return map.get(singular(english.strip()).toLowerCase(Locale.ROOT));
     }
 
     public void addListed(String english, String chinese) {
@@ -66,7 +71,7 @@ public final class MarketSearch {
         add(english, chinese);
     }
 
-    private static final java.util.regex.Pattern LISTED = java.util.regex.Pattern.compile(
+    private static final Pattern LISTED = Pattern.compile(
             "^(?!(?:Remove|Upgrade|Trade|Get|Buy|Sell|Only|Incompatible|Untradable|Tradable"
                     + "|Available|Converts)\\b)"
                     + "(?:[A-Z][A-Za-z'-]* )*"
@@ -74,12 +79,12 @@ public final class MarketSearch {
                     + "(?: [IVX]+)?$");
 
     static String quantityName(String text) {
-        java.util.regex.Matcher m = QUANTITY.matcher(text.strip());
+        Matcher m = QUANTITY.matcher(text.strip());
         return m.matches() ? m.group(1).strip() : null;
     }
 
-    private static final java.util.regex.Pattern QUANTITY =
-            java.util.regex.Pattern.compile("^\\{~\\} ?[x×] (.+?)(?: *(?:\\{#\\})+)?$");
+    private static final Pattern QUANTITY =
+            Pattern.compile("^\\{~\\} ?[x×] (.+?)(?: *(?:\\{#\\})+)?$");
 
     public String exact(String typed) {
         if (typed == null) {
@@ -149,11 +154,11 @@ public final class MarketSearch {
             }
             return Integer.compare(a.length(), b.length());
         });
-        Set<String> seen = new java.util.HashSet<>();
+        Set<String> seen = new HashSet<>();
         for (String k : keys) {
             for (String en : index.get(k)) {
                 String name = singular(en);
-                if (seen.add(name.toLowerCase(java.util.Locale.ROOT))) {
+                if (seen.add(name.toLowerCase(Locale.ROOT))) {
                     out.add(new Suggestion(shown.getOrDefault(k, k), name));
                 }
             }
@@ -237,11 +242,11 @@ public final class MarketSearch {
     private static List<String> covered(List<String> names) {
         List<String> out = new ArrayList<>(names.size());
         for (String name : names) {
-            String lower = name.toLowerCase(java.util.Locale.ROOT);
+            String lower = name.toLowerCase(Locale.ROOT);
             boolean redundant = false;
             for (String other : names) {
                 if (other.length() < name.length()
-                        && lower.contains(other.toLowerCase(java.util.Locale.ROOT))) {
+                        && lower.contains(other.toLowerCase(Locale.ROOT))) {
                     redundant = true;
                     break;
                 }

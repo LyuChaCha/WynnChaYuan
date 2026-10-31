@@ -1,5 +1,7 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -8,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -29,7 +32,7 @@ public final class FpsLog {
 
     public static void init(Path debugDir) {
         file = debugDir.resolve("fps.txt");
-        append("=== 開遊戲 " + java.time.LocalDateTime.now().withNano(0) + " ===");
+        append("=== 開遊戲 " + LocalDateTime.now().withNano(0) + " ===");
     }
 
     public static void tick(Minecraft mc) {
@@ -81,7 +84,7 @@ public final class FpsLog {
     }
 
     private static boolean boostOn() {
-        com.wynnchayuan.CollectorConfig config = com.wynnchayuan.WynnChaYuan.config();
+        CollectorConfig config = WynnChaYuan.config();
         return config == null || config.wynntilsFps();
     }
 

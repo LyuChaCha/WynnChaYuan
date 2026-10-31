@@ -3,6 +3,7 @@ package com.wynnchayuan.translate;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.TranslationStore.Guess;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -22,7 +23,7 @@ final class PlayerNameGuesser {
 
     private static final int MAX_PLAYER_NAME = 24;
 
-    private final List<String[]> playerKeys = new java.util.ArrayList<>();
+    private final List<String[]> playerKeys = new ArrayList<>();
 
     void notePlayerKey(String key) {
         int at = key.indexOf(GlyphSplitter.PLAYER_PLACEHOLDER);

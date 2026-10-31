@@ -3,6 +3,7 @@ package com.wynnchayuan.capture;
 import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public final class ChatLog {
@@ -44,7 +45,7 @@ public final class ChatLog {
 
     public static synchronized List<Entry> recent() {
         List<Entry> out = new ArrayList<>(entries);
-        java.util.Collections.reverse(out);
+        Collections.reverse(out);
         return out;
     }
 

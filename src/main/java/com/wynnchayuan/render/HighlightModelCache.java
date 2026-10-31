@@ -1,11 +1,14 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.component.CustomModelData;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public final class HighlightModelCache {
     private static List<String> highlightKeys;
     private static String starKey;
     private static Field hideStarField;
-    private static java.lang.reflect.Method configGet;
+    private static Method configGet;
     private static Class<?> guideScreen;
 
     public static CustomModelData lookup(Object feature, CustomModelData original) {
@@ -86,7 +89,7 @@ public final class HighlightModelCache {
     }
 
     private static boolean enabled() {
-        com.wynnchayuan.CollectorConfig config = com.wynnchayuan.WynnChaYuan.config();
+        CollectorConfig config = WynnChaYuan.config();
         return config == null || config.wynntilsFps();
     }
 

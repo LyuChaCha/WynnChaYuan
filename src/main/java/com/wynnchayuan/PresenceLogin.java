@@ -2,13 +2,25 @@ package com.wynnchayuan;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import com.mojang.authlib.yggdrasil.ProfileResult;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.player.ProfileKeyPair;
+import net.minecraft.world.entity.player.ProfilePublicKey;
 
 import java.net.URI;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
+import java.security.PrivateKey;
+import java.security.Signature;
+import java.util.Base64;
+import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 final class PresenceLogin {
 
@@ -20,9 +32,9 @@ final class PresenceLogin {
         return (LOGIN_PREFIX + challenge + "\n" + uuid).getBytes(StandardCharsets.UTF_8);
     }
 
-    static byte[] signLogin(java.security.PrivateKey key, String challenge, String uuid)
-            throws java.security.GeneralSecurityException {
-        java.security.Signature signer = java.security.Signature.getInstance("SHA256withRSA");
+    static byte[] signLogin(PrivateKey key, String challenge, String uuid)
+            throws GeneralSecurityException {
+        Signature signer = Signature.getInstance("SHA256withRSA");
         signer.initSign(key);
         signer.update(loginMessage(challenge, uuid));
         return signer.sign();
@@ -31,7 +43,7 @@ final class PresenceLogin {
     static String loginBody(String uuid, long expiresAt, byte[] publicKey, byte[] keySignature,
                             String challenge, byte[] signature,
                             String texturesValue, String texturesSignature) {
-        java.util.Base64.Encoder b64 = java.util.Base64.getEncoder();
+        Base64.Encoder b64 = Base64.getEncoder();
         JsonObject o = new JsonObject();
         o.addProperty("uuid", uuid);
         o.addProperty("expiresAt", expiresAt);
@@ -55,7 +67,7 @@ final class PresenceLogin {
         try {
             problem = proveAccount();
         } catch (Exception e) {
-            com.wynnchayuan.translate.ErrorDebug.note("presence.login", null, e);
+            ErrorDebug.note("presence.login", null, e);
             problem = e.toString();
         }
         if (problem == null) {
@@ -74,20 +86,18 @@ final class PresenceLogin {
     private static final long KEY_WAIT_SECONDS = 20;
 
     private static String proveAccount() throws Exception {
-        net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+        Minecraft mc = Minecraft.getInstance();
         UUID id = mc.getUser().getProfileId();
         if (id == null) {
             return "沒有 UUID";
         }
-        java.util.Optional<net.minecraft.world.entity.player.ProfileKeyPair> pair =
-                mc.getProfileKeyPairManager().prepareKeyPair()
-                        .get(KEY_WAIT_SECONDS, java.util.concurrent.TimeUnit.SECONDS);
+        Optional<ProfileKeyPair> pair = mc.getProfileKeyPairManager().prepareKeyPair()
+                        .get(KEY_WAIT_SECONDS, TimeUnit.SECONDS);
         if (pair == null || pair.isEmpty()) {
             return "拿不到 Mojang 發的玩家金鑰（離線帳號，或是 Mojang 暫時連不上）";
         }
-        net.minecraft.world.entity.player.ProfilePublicKey.Data certificate =
-                pair.get().publicKey().data();
-        com.mojang.authlib.properties.Property textures = signedTextures(mc, id);
+        ProfilePublicKey.Data certificate = pair.get().publicKey().data();
+        Property textures = signedTextures(mc, id);
         if (textures == null) {
             return "拿不到 Mojang 簽過的個人檔案";
         }
@@ -118,23 +128,20 @@ final class PresenceLogin {
         return null;
     }
 
-    private static com.mojang.authlib.properties.Property signedTextures(
-            net.minecraft.client.Minecraft mc, UUID id) {
-        com.mojang.authlib.properties.Property found = signedTextures(mc.getGameProfile());
+    private static Property signedTextures(Minecraft mc, UUID id) {
+        Property found = signedTextures(mc.getGameProfile());
         if (found == null) {
-            com.mojang.authlib.yggdrasil.ProfileResult fetched =
-                    mc.services().sessionService().fetchProfile(id, true);
+            ProfileResult fetched = mc.services().sessionService().fetchProfile(id, true);
             found = fetched == null ? null : signedTextures(fetched.profile());
         }
         return found;
     }
 
-    private static com.mojang.authlib.properties.Property signedTextures(
-            com.mojang.authlib.GameProfile profile) {
+    private static Property signedTextures(GameProfile profile) {
         if (profile == null || profile.properties() == null) {
             return null;
         }
-        for (com.mojang.authlib.properties.Property property : profile.properties().get("textures")) {
+        for (Property property : profile.properties().get("textures")) {
             if (property.hasSignature() && property.value() != null) {
                 return property;
             }

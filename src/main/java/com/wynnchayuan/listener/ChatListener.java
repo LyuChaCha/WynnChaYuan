@@ -2,9 +2,11 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.Broadcasts;
 import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.render.ThirdPartyLiterals;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
@@ -44,9 +46,8 @@ public final class ChatListener {
         if (panel) {
             boolean keep;
             try {
-                keep = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
-                               message.getStringWithoutFormatting())
-                        || (com.wynnchayuan.capture.Broadcasts.find(message) == null
+                keep = ThirdPartyLiterals.reserved(message.getStringWithoutFormatting())
+                        || (Broadcasts.find(message) == null
                             && PlayerDataFilter.carriesPlayerData(
                                     GlyphSplitter.toTemplate(message))
                             && (LineTranslator.nameFramed(message, WynnChaYuan.translations()) == null
@@ -82,13 +83,12 @@ public final class ChatListener {
         }
         CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
         boolean serverSide = SERVER_MESSAGES.contains(event.getRecipientType());
-        boolean reserved = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
-                message.getStringWithoutFormatting());
+        boolean reserved = ThirdPartyLiterals.reserved(message.getStringWithoutFormatting());
         boolean carries = serverSide
                 && PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message));
         Component hit;
         if (serverSide && !reserved
-                && (com.wynnchayuan.capture.Broadcasts.find(message) != null
+                && (Broadcasts.find(message) != null
                     || (carries && LineTranslator.nameFramed(
                             message, WynnChaYuan.translations()) != null))) {
             hit = LineTranslator.translateChat(message, WynnChaYuan.translations());

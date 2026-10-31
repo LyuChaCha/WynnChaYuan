@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Style;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiPredicate;
 import java.util.function.ToIntFunction;
 
 final class SpaceRuns {
@@ -89,7 +90,7 @@ final class SpaceRuns {
                         ? new Run(true, SpaceOffset.decode(text), style, text)
                         : new Run(false, 0, style, text));
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return out;
     }
@@ -174,7 +175,7 @@ final class SpaceRuns {
     }
 
     static List<Run> splitGaps(List<Run> runs,
-                               java.util.function.BiPredicate<Style, String> isGap) {
+                               BiPredicate<Style, String> isGap) {
         List<Run> out = new ArrayList<>(runs.size() + 2);
         boolean split = false;
         for (Run r : runs) {
@@ -190,7 +191,7 @@ final class SpaceRuns {
     }
 
     private static List<Run> splitOffsets(Run r,
-                                          java.util.function.BiPredicate<Style, String> isGap) {
+                                          BiPredicate<Style, String> isGap) {
         String text = r.text();
         List<Run> out = new ArrayList<>(3);
         boolean any = false;

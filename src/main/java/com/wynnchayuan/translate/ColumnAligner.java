@@ -1,6 +1,7 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.render.PairedFont;
 import com.wynnchayuan.translate.SpaceRuns.Run;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -361,13 +362,13 @@ final class ColumnAligner {
         String[] found = {"-"};
         component.visit((style, text) -> {
             if (!text.isEmpty()) {
-                String name = com.wynnchayuan.render.PairedFont.nameOf(style);
+                String name = PairedFont.nameOf(style);
                 int open = name.indexOf('=');
                 found[0] = open < 0 ? (name.isEmpty() ? "預設" : name)
                         : name.substring(open + 1).replace("]", "");
-                return java.util.Optional.of(true);
+                return Optional.of(true);
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return found[0];
     }
@@ -380,9 +381,9 @@ final class ColumnAligner {
         component.visit((style, text) -> {
             if (!text.isEmpty() && style.getColor() != null) {
                 found[0] = style.getColor().serialize();
-                return java.util.Optional.of(true);
+                return Optional.of(true);
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return found[0];
     }

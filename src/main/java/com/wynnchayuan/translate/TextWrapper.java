@@ -3,8 +3,11 @@ package com.wynnchayuan.translate;
 import com.wynnchayuan.capture.GlyphSplitter;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.ToIntFunction;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class TextWrapper {
 
@@ -448,7 +451,7 @@ final class TextWrapper {
     }
 
     private static List<int[]> merged(List<int[]> spans) {
-        spans.sort(java.util.Comparator.comparingInt(s -> s[0]));
+        spans.sort(Comparator.comparingInt(s -> s[0]));
         List<int[]> out = new ArrayList<>();
         for (int[] span : spans) {
             int[] last = out.isEmpty() ? null : out.get(out.size() - 1);
@@ -480,7 +483,7 @@ final class TextWrapper {
         if (cut <= lineStart || cut >= text.length()) {
             return cut;
         }
-        java.util.regex.Matcher m = NUMBER_RANGE.matcher(text);
+        Matcher m = NUMBER_RANGE.matcher(text);
         while (m.find()) {
             if (m.start() >= cut) {
                 break;
@@ -493,9 +496,9 @@ final class TextWrapper {
         return cut;
     }
 
-    private static final java.util.regex.Pattern NUMBER_SLOT = java.util.regex.Pattern.compile("\\{~\\d*\\}");
+    private static final Pattern NUMBER_SLOT = Pattern.compile("\\{~\\d*\\}");
 
-    private static final java.util.regex.Pattern NUMBER_RANGE = java.util.regex.Pattern.compile(
+    private static final Pattern NUMBER_RANGE = Pattern.compile(
             "[+\\-−]?(?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?"
             + "(?:[\\-+–−](?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?)+");
 

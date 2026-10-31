@@ -15,6 +15,7 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 final class BlockTranslator {
 
@@ -29,7 +30,7 @@ final class BlockTranslator {
     static List<Component> translateBlock(List<StyledText> run,
                                           TranslationStore store,
                                           boolean[] centered,
-                                          java.util.function.Function<StyledText, LineParts> partsOf) {
+                                          Function<StyledText, LineParts> partsOf) {
         if (run.size() < 2) {
             return null;
         }
@@ -363,7 +364,7 @@ final class BlockTranslator {
                 depth[0]--;
             }
             if (Character.isWhitespace(cp)
-                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                    || GlyphSplitter.isGlyphCodePoint(cp)) {
                 continue;
             }
             seen++;
@@ -396,7 +397,7 @@ final class BlockTranslator {
                 continue;
             }
             if (depth[0] > 0 || Character.isWhitespace(cp)
-                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                    || GlyphSplitter.isGlyphCodePoint(cp)) {
                 continue;
             }
             solid++;

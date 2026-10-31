@@ -43,7 +43,7 @@ final class GuiCanvas implements Canvas {
     }
 
     private static final int[] DOTS = {2, 3, 4, 6};
-    private static final java.util.Map<String, Style> STYLES = new HashMap<>();
+    private static final Map<String, Style> STYLES = new HashMap<>();
 
     private static String family(String code) {
         if (code == null) {

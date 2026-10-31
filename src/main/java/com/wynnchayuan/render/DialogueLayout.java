@@ -8,6 +8,8 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.LongSupplier;
+import java.util.function.ToIntFunction;
 
 final class DialogueLayout {
 
@@ -112,12 +114,12 @@ final class DialogueLayout {
     }
 
     static int[] choiceWindow(String row, String pick, int was,
-                              java.util.function.ToIntFunction<String> measure, long now) {
+                              ToIntFunction<String> measure, long now) {
         int room = Marquee.choiceRoom(was, measure);
         return Marquee.scroll(row + '\u0000' + pick, pick, room, measure, now);
     }
 
-    static java.util.function.LongSupplier clock = System::currentTimeMillis;
+    static LongSupplier clock = System::currentTimeMillis;
 
     private static int pour(String text, int rows, Style style, int limit, boolean kinsoku,
                             List<String> out) {
@@ -275,7 +277,7 @@ final class DialogueLayout {
                         : original.withFont(pair)));
     }
 
-    static java.util.function.ToIntFunction<String> widthForTest;
+    static ToIntFunction<String> widthForTest;
 
     static int width(String text) {
         Minecraft mc = Minecraft.getInstance();

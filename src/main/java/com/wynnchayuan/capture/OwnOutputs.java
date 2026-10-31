@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.Languages;
 import net.minecraft.network.chat.Component;
 
 import java.io.InputStream;
@@ -42,7 +43,7 @@ public final class OwnOutputs {
 
     static void build() {
         List<Long> out = new ArrayList<>(1 << 18);
-        for (String lang : com.wynnchayuan.translate.Languages.bundled()) {
+        for (String lang : Languages.bundled()) {
             for (String file : files(lang)) {
                 JsonElement root = read(ASSETS + lang + "/" + file);
                 if (root != null && root.isJsonObject()) {

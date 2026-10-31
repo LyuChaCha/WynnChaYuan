@@ -1,8 +1,12 @@
 package com.wynnchayuan.capture;
 
+import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.LookAtTranslator;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+
+import java.util.Locale;
 
 public final class ConversationPartner {
 
@@ -18,7 +22,7 @@ public final class ConversationPartner {
     private ConversationPartner() {}
 
     public static void clicked(Entity entity) {
-        String raw = com.wynnchayuan.render.LookAtTranslator.labelAbove(entity);
+        String raw = LookAtTranslator.labelAbove(entity);
         String found = DialogueSpeaker.cleanName(raw);
         if (found != null && isRealPlayer(entity, found)) {
             note("partner.reject.player");
@@ -79,7 +83,7 @@ public final class ConversationPartner {
 
     private static void note(String event) {
         try {
-            com.wynnchayuan.WynnChaYuan.store().noteEvent(event);
+            WynnChaYuan.store().noteEvent(event);
         } catch (Throwable failure) {
             ErrorDebug.note("ConversationPartner#note", null, failure);
         }
@@ -95,8 +99,8 @@ public final class ConversationPartner {
             if (account == null || account.isBlank()) {
                 return false;
             }
-            String a = account.strip().toLowerCase(java.util.Locale.ROOT);
-            String l = label.toLowerCase(java.util.Locale.ROOT);
+            String a = account.strip().toLowerCase(Locale.ROOT);
+            String l = label.toLowerCase(Locale.ROOT);
             return l.equals(a) || (a.length() >= 3 && l.contains(a));
         } catch (Throwable t) {
             ErrorDebug.note("ConversationPartner#isRealPlayer", null, t);

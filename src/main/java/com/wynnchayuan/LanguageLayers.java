@@ -1,11 +1,23 @@
 package com.wynnchayuan;
 
+import com.wynnchayuan.capture.UnappliedAudit;
+import com.wynnchayuan.client.Credits;
+import com.wynnchayuan.client.T;
+import com.wynnchayuan.render.DialogueTint;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.FetchedLanguages;
+import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
+import com.wynnchayuan.translate.TranslationCache;
 import com.wynnchayuan.translate.TranslationStore;
+import net.minecraft.client.Minecraft;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
 
 public final class LanguageLayers {
 
@@ -19,7 +31,7 @@ public final class LanguageLayers {
         if (alreadyTranslated(template)) {
             return true;
         }
-        java.util.Set<String> keys = referenceKeys;
+        Set<String> keys = referenceKeys;
         return keys != null && template != null && keys.contains(template.strip());
     }
 
@@ -27,11 +39,11 @@ public final class LanguageLayers {
         return WynnChaYuan.translations.hasTranslation(template);
     }
 
-    private static volatile java.util.Set<String> referenceKeys;
+    private static volatile Set<String> referenceKeys;
 
-    private static void loadReferenceKeys(java.util.List<Path> layers) {
-        String reference = com.wynnchayuan.translate.Languages.DEFAULT;
-        Path dir = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, reference);
+    private static void loadReferenceKeys(List<Path> layers) {
+        String reference = Languages.DEFAULT;
+        Path dir = Languages.dir(WynnChaYuan.configDir, reference);
         if (layers.contains(dir)) {
             referenceKeys = WynnChaYuan.translations.sourceKeys();
             ModLog.info("收集的判準用畫面上這幾層的 "
@@ -39,8 +51,7 @@ public final class LanguageLayers {
             return;
         }
         try {
-            com.wynnchayuan.translate.TranslationStore probe =
-                    new com.wynnchayuan.translate.TranslationStore();
+            TranslationStore probe = new TranslationStore();
             probe.loadAll(dir);
             referenceKeys = probe.sourceKeys();
             ModLog.info("收集的判準用 " + reference
@@ -56,38 +67,38 @@ public final class LanguageLayers {
         WynnChaYuan.translations.setPageNameMode(WynnChaYuan.config.pageNames());
         WynnChaYuan.translations.setAbilityNamesWithOriginal(WynnChaYuan.config.abilityNamesOriginal());
         if (!WynnChaYuan.config.translationsEnabled()) {
-            WynnChaYuan.translations.loadAll(java.util.List.of());
-            com.wynnchayuan.capture.UnappliedAudit.clear();
+            WynnChaYuan.translations.loadAll(List.of());
+            UnappliedAudit.clear();
             return;
         }
-        java.util.List<Path> layers = new java.util.ArrayList<>();
+        List<Path> layers = new ArrayList<>();
         String under = fallbackLanguage();
         if (under != null) {
-            Path fallback = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, under);
+            Path fallback = Languages.dir(WynnChaYuan.configDir, under);
             StarterFiles.installIfEmpty(fallback, under);
             layers.add(fallback);
         }
-        Path dir = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
+        Path dir = Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
         StarterFiles.installIfEmpty(dir, WynnChaYuan.language);
         layers.add(dir);
-        com.wynnchayuan.translate.TranslationCache.loadRepairing(WynnChaYuan.translations, layers);
+        TranslationCache.loadRepairing(WynnChaYuan.translations, layers);
         loadReferenceKeys(layers);
-        com.wynnchayuan.capture.UnappliedAudit.clear();
+        UnappliedAudit.clear();
     }
 
     static int fetchCurrentLanguages() {
         String lang = WynnChaYuan.language;
-        com.wynnchayuan.translate.FetchedLanguages.mark(lang);
+        FetchedLanguages.mark(lang);
         int changed = RemoteSync.fetchInto(
-                com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, lang), lang);
-        String under = com.wynnchayuan.translate.Languages.underlay(WynnChaYuan.config.fallbackLanguage(), lang);
+                Languages.dir(WynnChaYuan.configDir, lang), lang);
+        String under = Languages.underlay(WynnChaYuan.config.fallbackLanguage(), lang);
         if (under != null) {
-            com.wynnchayuan.translate.FetchedLanguages.mark(under);
+            FetchedLanguages.mark(under);
             changed += RemoteSync.fetchInto(
-                    com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, under), under);
+                    Languages.dir(WynnChaYuan.configDir, under), under);
         }
         if (RemoteSync.fetchCredits(WynnChaYuan.configDir)) {
-            com.wynnchayuan.client.Credits.reload();
+            Credits.reload();
         }
         return changed;
     }
@@ -95,10 +106,10 @@ public final class LanguageLayers {
     private static void refreshOncePerSession(String lang) {
         if (WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB
                 || !WynnChaYuan.config.autoUpdateTranslations()
-                || !com.wynnchayuan.translate.FetchedLanguages.firstTime(lang)) {
+                || !FetchedLanguages.firstTime(lang)) {
             return;
         }
-        Path dir = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, lang);
+        Path dir = Languages.dir(WynnChaYuan.configDir, lang);
         Thread worker = new Thread(() -> {
             int changed = RemoteSync.fetchInto(dir, lang);
             ModLog.info("切到 " + lang + "：" + RemoteSync.lastResult());
@@ -112,77 +123,69 @@ public final class LanguageLayers {
 
     static void reloadOnMainThread() {
         try {
-            net.minecraft.client.Minecraft.getInstance().execute(LanguageLayers::loadLayers);
+            Minecraft.getInstance().execute(LanguageLayers::loadLayers);
         } catch (Throwable t) {
             ModLog.warn("同步完排不進主執行緒，下次啟動才會套用：" + t);
         }
     }
 
     public static String fallbackLanguage() {
-        return com.wynnchayuan.translate.Languages.underlay(WynnChaYuan.config.fallbackLanguage(), WynnChaYuan.language);
+        return Languages.underlay(WynnChaYuan.config.fallbackLanguage(), WynnChaYuan.language);
     }
 
     public static void switchFallback(String lang,
-                                      java.util.function.Consumer<String> done) {
+                                      Consumer<String> done) {
         switchFallback(lang, done, null);
     }
 
     public static void switchFallback(String lang,
-                                      java.util.function.Consumer<String> done,
-                                      RemoteSync.Progress progress) {
+                                      Consumer<String> done, RemoteSync.Progress progress) {
         WynnChaYuan.config.setFallbackLanguage(lang);
         String wanted = fallbackLanguage();
         if (wanted != null) {
-            com.wynnchayuan.translate.TranslationCache.prepare(
-                    com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, wanted), wanted);
+            TranslationCache.prepare(Languages.dir(WynnChaYuan.configDir, wanted), wanted);
         }
         loadLayers();
         String under = fallbackLanguage();
         if (under == null || WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB) {
-            done.accept(com.wynnchayuan.client.T.s("data.fallback.done",
-                    WynnChaYuan.translations.size()));
+            done.accept(T.s("data.fallback.done", WynnChaYuan.translations.size()));
             return;
         }
-        Path dir = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, under);
-        com.wynnchayuan.translate.FetchedLanguages.mark(under);
+        Path dir = Languages.dir(WynnChaYuan.configDir, under);
+        FetchedLanguages.mark(under);
         Thread worker = new Thread(() -> {
             RemoteSync.fetchInto(dir, under, progress);
-            net.minecraft.client.Minecraft.getInstance().execute(() -> {
+            Minecraft.getInstance().execute(() -> {
                 loadLayers();
-                done.accept(com.wynnchayuan.client.T.s("data.fallback.done",
-                        WynnChaYuan.translations.size()));
+                done.accept(T.s("data.fallback.done", WynnChaYuan.translations.size()));
             });
         }, WynnChaYuan.MOD_ID + "-fallback");
         worker.setDaemon(true);
         worker.start();
     }
 
-    public static final String OFF = com.wynnchayuan.translate.Languages.OFF;
+    public static final String OFF = Languages.OFF;
 
     public static void switchLanguage(String lang,
-                                      java.util.function.Consumer<String> done) {
+                                      Consumer<String> done) {
         switchLanguage(lang, done, null);
     }
 
     public static void switchLanguage(String lang,
-                                      java.util.function.Consumer<String> done,
-                                      RemoteSync.Progress progress) {
+                                      Consumer<String> done, RemoteSync.Progress progress) {
         WynnChaYuan.config.setLanguage(lang);
-        WynnChaYuan.language = com.wynnchayuan.translate.Languages.pick(
-                WynnChaYuan.config.language(), gameLanguage());
-        com.wynnchayuan.render.DialogueTint.init(WynnChaYuan.configDir.resolve(
-                com.wynnchayuan.render.DialogueTint.FILE), WynnChaYuan.language);
-        Path chosen = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
-        com.wynnchayuan.translate.TranslationCache.prepare(chosen, WynnChaYuan.language);
+        WynnChaYuan.language = Languages.pick(WynnChaYuan.config.language(), gameLanguage());
+        DialogueTint.init(WynnChaYuan.configDir.resolve(DialogueTint.FILE), WynnChaYuan.language);
+        Path chosen = Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
+        TranslationCache.prepare(chosen, WynnChaYuan.language);
         loadLayers();
         refreshOncePerSession(WynnChaYuan.language);
-        done.accept(com.wynnchayuan.client.T.s("data.language.done",
-                com.wynnchayuan.translate.Languages.nativeName(WynnChaYuan.language),
+        done.accept(T.s("data.language.done", Languages.nativeName(WynnChaYuan.language),
                 WynnChaYuan.translations.size()));
     }
 
     public static String autoLanguage() {
-        return com.wynnchayuan.translate.Languages.pick("", gameLanguage());
+        return Languages.pick("", gameLanguage());
     }
 
     static void settleAutoLanguage() {
@@ -190,33 +193,30 @@ public final class LanguageLayers {
             return;
         }
         String game = gameLanguage();
-        if (!com.wynnchayuan.translate.Languages.known(game)) {
+        if (!Languages.known(game)) {
             return;
         }
-        String want = com.wynnchayuan.translate.Languages.pick("", game);
+        String want = Languages.pick("", game);
         if (want.equals(WynnChaYuan.language)) {
             return;
         }
         WynnChaYuan.language = want;
-        Path dir = com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
-        com.wynnchayuan.translate.TranslationCache.prepare(dir, WynnChaYuan.language);
+        Path dir = Languages.dir(WynnChaYuan.configDir, WynnChaYuan.language);
+        TranslationCache.prepare(dir, WynnChaYuan.language);
         String underneath = fallbackLanguage();
         if (underneath != null) {
-            com.wynnchayuan.translate.TranslationCache.prepare(
-                    com.wynnchayuan.translate.Languages.dir(WynnChaYuan.configDir, underneath),
-                    underneath);
+            TranslationCache.prepare(Languages.dir(WynnChaYuan.configDir, underneath), underneath);
         }
-        com.wynnchayuan.render.DialogueTint.init(
-                WynnChaYuan.configDir.resolve(com.wynnchayuan.render.DialogueTint.FILE), WynnChaYuan.language);
+        DialogueTint.init(WynnChaYuan.configDir.resolve(DialogueTint.FILE), WynnChaYuan.language);
         loadLayers();
         ModLog.info("跟隨遊戲語言：改用 " + WynnChaYuan.language
-                + "（開機時問不到，先用了 " + com.wynnchayuan.translate.Languages.DEFAULT
+                + "（開機時問不到，先用了 " + Languages.DEFAULT
                 + "）");
     }
 
     static String gameLanguage() {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             return mc == null || mc.getLanguageManager() == null
                     ? "" : mc.getLanguageManager().getSelected();
         } catch (Throwable t) {

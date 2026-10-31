@@ -4,6 +4,7 @@ import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -12,9 +13,11 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 // 對話句中元素圖示是 body_N 字型的私用區 U+E000–E00A
@@ -72,8 +75,8 @@ public final class DialogueIcons {
             changed = true;
         }
         if (body[0] && (!colours.equals(palette) || !words.equals(wordPalette))) {
-            palette = java.util.Collections.unmodifiableList(colours);
-            wordPalette = java.util.Collections.unmodifiableList(words);
+            palette = Collections.unmodifiableList(colours);
+            wordPalette = Collections.unmodifiableList(words);
             changed = true;
         }
         if (changed) {
@@ -146,7 +149,7 @@ public final class DialogueIcons {
                 return null;
             }
         }
-        net.minecraft.ChatFormatting named = net.minecraft.ChatFormatting.getByName(spec);
+        ChatFormatting named = ChatFormatting.getByName(spec);
         return named == null || named.getColor() == null ? null : TextColor.fromLegacyFormat(named);
     }
 
@@ -281,7 +284,7 @@ public final class DialogueIcons {
             int cp = raw.codePointAt(i);
             boolean icon = isIcon(cp);
             if (icon != icons || (icon && !run.isEmpty()
-                    && !java.util.Objects.equals(styleOf(run.codePointAt(0)), styleOf(cp)))) {
+                    && !Objects.equals(styleOf(run.codePointAt(0)), styleOf(cp)))) {
                 emit(out, run, icons);
                 icons = icon;
             }

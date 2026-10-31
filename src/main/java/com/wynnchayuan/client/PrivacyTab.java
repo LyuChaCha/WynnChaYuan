@@ -1,7 +1,9 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModNetwork;
+import com.wynnchayuan.Presence;
+import com.wynnchayuan.PresenceAccount;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
 import net.minecraft.client.Minecraft;
@@ -9,6 +11,7 @@ import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 final class PrivacyTab {
 
@@ -48,7 +51,7 @@ final class PrivacyTab {
         rows.add(Row.action("privacy.policy", SettingsScreen.t("privacy.policy"), SettingsScreen.t("privacy.policy.hint"))
                 .label(SettingsScreen.t("fun.gallery.button"))
                 .run(() -> ConfirmLinkScreen.confirmLinkNow(screen,
-                        com.wynnchayuan.Presence.PRIVACY_URL)));
+                        Presence.PRIVACY_URL)));
         if (!SettingsScreen.cfg().dataOptOut()) {
             rows.add(Row.action("privacy.delete", SettingsScreen.t("privacy.delete"), SettingsScreen.t("privacy.delete.hint"))
                     .label(() -> T.s(armed() ? "privacy.delete.confirm" : "privacy.delete.button"))
@@ -86,21 +89,21 @@ final class PrivacyTab {
         return rows;
     }
 
-    private void deleted(com.wynnchayuan.PresenceAccount.DeleteResult result) {
+    private void deleted(PresenceAccount.DeleteResult result) {
         deleting = false;
-        if (result == com.wynnchayuan.PresenceAccount.DeleteResult.DONE) {
+        if (result == PresenceAccount.DeleteResult.DONE) {
             screen.say(T.s("privacy.deleted"), Ui.GREEN);
         } else {
             screen.say(T.s("privacy.delete.later"), Ui.AMBER);
         }
     }
 
-    void removed(com.wynnchayuan.PresenceAccount.Result result) {
-        net.minecraft.client.Minecraft.getInstance().execute(() -> {
-            if (result == com.wynnchayuan.PresenceAccount.Result.DONE) {
+    void removed(PresenceAccount.Result result) {
+        Minecraft.getInstance().execute(() -> {
+            if (result == PresenceAccount.Result.DONE) {
                 screen.say(T.s("fun.remove.done"), Ui.GREEN);
             } else {
-                screen.say(T.s("fun.upload." + result.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+                screen.say(T.s("fun.upload." + result.name().toLowerCase(Locale.ROOT)), Ui.RED);
             }
         });
     }

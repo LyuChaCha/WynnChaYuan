@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class StarterFiles {
@@ -15,7 +16,7 @@ public final class StarterFiles {
     private static final String INDEX = "_index.json";
 
     private static List<String> bundled(String lang) {
-        List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
+        List<String> names = new ArrayList<>(FileIndex.bundled(lang));
         names.addAll(FileIndex.SCOPED);
         names.add(INDEX);
         return names;

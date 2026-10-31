@@ -208,8 +208,7 @@ final class TermSubstitution {
         if (lead.isBlank()) {
             return false;
         }
-        String bare = lead.replace(com.wynnchayuan.capture.GlyphSplitter.NUMBER_PLACEHOLDER, "")
-                          .replace(" ", "");
+        String bare = lead.replace(GlyphSplitter.NUMBER_PLACEHOLDER, "").replace(" ", "");
         for (int i = 0; i < bare.length(); i++) {
             if (!Character.isDigit(bare.charAt(i))) {
                 return false;
@@ -262,7 +261,7 @@ final class TermSubstitution {
             return null;
         }
         String rest = core.substring(at + 1).strip();
-        if (rest.isEmpty() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(rest)) {
+        if (rest.isEmpty() || !GlyphSplitter.hasLetter(rest)) {
             return null;
         }
         String zh = store.lookup(rest);

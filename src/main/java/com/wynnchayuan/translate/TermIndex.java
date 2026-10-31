@@ -2,6 +2,7 @@ package com.wynnchayuan.translate;
 
 import com.wynnchayuan.translate.TranslationStore.Term;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -94,8 +95,8 @@ final class TermIndex {
         return hit;
     }
 
-    java.util.Set<String> termNames() {
-        return java.util.Collections.unmodifiableSet(terms.keySet());
+    Set<String> termNames() {
+        return Collections.unmodifiableSet(terms.keySet());
     }
 
     private static boolean startsWord(String text, int at) {

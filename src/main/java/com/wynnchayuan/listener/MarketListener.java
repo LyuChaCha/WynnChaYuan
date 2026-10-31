@@ -2,6 +2,7 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.MarketSearch;
@@ -10,16 +11,14 @@ import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.models.trademarket.event.TradeMarketStateEvent;
 import com.wynntils.models.trademarket.type.TradeMarketState;
-
-import net.neoforged.bus.api.EventPriority;
-
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public final class MarketListener {
 
@@ -50,12 +49,10 @@ public final class MarketListener {
         }
     }
 
-    private static final java.util.regex.Pattern PROMPT =
-            java.util.regex.Pattern.compile(
+    private static final Pattern PROMPT = Pattern.compile(
                     "Type the item name or type 'cancel' to cancel:|輸入物品名稱|输入物品名称");
 
-    private static final java.util.regex.Pattern CANCELLED =
-            java.util.regex.Pattern.compile(
+    private static final Pattern CANCELLED = Pattern.compile(
                     "chat input was canceled|聊天輸入已取消|聊天输入已取消");
 
     static final String PROMPT_KEY =
@@ -165,7 +162,7 @@ public final class MarketListener {
     private static void say(Component text) {
         Minecraft mc = Minecraft.getInstance();
         if (mc != null && mc.player != null) {
-            com.wynnchayuan.capture.OwnOutputs.note(text);
+            OwnOutputs.note(text);
             mc.player.displayClientMessage(text, false);
         }
     }

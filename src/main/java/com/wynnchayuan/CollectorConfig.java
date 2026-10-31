@@ -1,8 +1,16 @@
 package com.wynnchayuan;
 
 
+import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.TranslationCache;
+
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.EnumMap;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public final class CollectorConfig {
 
@@ -160,9 +168,9 @@ public final class CollectorConfig {
     int fixedX = 20;
     int fixedY = 20;
 
-    final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
+    final EnumMap<Overlay, int[]> overlayPos = new EnumMap<>(Overlay.class);
 
-    final java.util.EnumMap<Overlay, int[]> overlaySize = new java.util.EnumMap<>(Overlay.class);
+    final EnumMap<Overlay, int[]> overlaySize = new EnumMap<>(Overlay.class);
 
     public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG, CHOICES }
 
@@ -170,7 +178,7 @@ public final class CollectorConfig {
 
     public CollectorConfig(Path file) {
         this.file = file;
-        this.existed = java.nio.file.Files.exists(file);
+        this.existed = Files.exists(file);
         load();
     }
 
@@ -517,7 +525,7 @@ public final class CollectorConfig {
     public boolean toggleChatCopy() {
         chatCopy = !chatCopy;
         if (!chatCopy) {
-            com.wynnchayuan.capture.ChatLog.clear();
+            ChatLog.clear();
         }
         save();
         return chatCopy;
@@ -705,7 +713,7 @@ public final class CollectorConfig {
         if (!v.matches("#[0-9a-fA-F]{6}")) {
             return false;
         }
-        accentColor = v.toUpperCase(java.util.Locale.ROOT);
+        accentColor = v.toUpperCase(Locale.ROOT);
         save();
         return true;
     }
@@ -774,7 +782,7 @@ public final class CollectorConfig {
         if (!v.startsWith("#")) {
             v = "#" + v;
         }
-        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase(java.util.Locale.ROOT) : null;
+        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase(Locale.ROOT) : null;
     }
 
     private static int parseHex(String hex) {
@@ -803,11 +811,11 @@ public final class CollectorConfig {
 
     double nametagAngle = 6.0;
 
-    final java.util.Map<String, Boolean> badgeRoles = new java.util.LinkedHashMap<>();
+    final Map<String, Boolean> badgeRoles = new LinkedHashMap<>();
 
     Boolean badgeRainbow;
 
-    final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
+    final Map<String, String> badgeColours = new LinkedHashMap<>();
 
     public String badgeColour(String role) {
         return badgeColours.get(role);
@@ -1117,7 +1125,7 @@ public final class CollectorConfig {
 
     public Source toggleSource() {
         source = source == Source.GITHUB ? Source.LOCAL : Source.GITHUB;
-        com.wynnchayuan.translate.TranslationCache.syncsFromGitHub = source == Source.GITHUB;
+        TranslationCache.syncsFromGitHub = source == Source.GITHUB;
         save();
         return source;
     }

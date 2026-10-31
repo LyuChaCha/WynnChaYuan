@@ -1,10 +1,11 @@
 package com.wynnchayuan;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import com.wynnchayuan.translate.ErrorDebug;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,8 +13,10 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -49,7 +52,7 @@ public final class Presence {
     static final int MAX_CAPE_BYTES = 21 * 1024 * 1024;
 
     public record Roster(Set<String> users, Map<String, Long> capes, Set<String> hidden,
-                         Set<String> rainbow, Map<String, java.util.List<String>> shown) {
+                         Set<String> rainbow, Map<String, List<String>> shown) {
         public static final Roster EMPTY = new Roster(Set.of(), Map.of(), Set.of());
 
         public Roster(Set<String> users, Map<String, Long> capes, Set<String> hidden) {
@@ -57,7 +60,7 @@ public final class Presence {
         }
     }
 
-    public record BadgeChoice(boolean rainbow, java.util.List<String> shown) {
+    public record BadgeChoice(boolean rainbow, List<String> shown) {
         public static final BadgeChoice NONE = new BadgeChoice(false, null);
     }
 
@@ -68,7 +71,7 @@ public final class Presence {
             return BadgeChoice.NONE;
         }
         boolean rainbow = now.rainbow().contains(id);
-        java.util.List<String> shown = now.shown().get(id);
+        List<String> shown = now.shown().get(id);
         return rainbow || shown != null ? new BadgeChoice(rainbow, shown) : BadgeChoice.NONE;
     }
 
@@ -178,19 +181,19 @@ public final class Presence {
                     }
                 }
             }
-            Map<String, java.util.List<String>> shown = new HashMap<>();
+            Map<String, List<String>> shown = new HashMap<>();
             if (root.has("show")) {
                 for (Map.Entry<String, JsonElement> e : root.getAsJsonObject("show").entrySet()) {
                     if (!users.contains(e.getKey())) {
                         continue;
                     }
-                    java.util.List<String> roles = new java.util.ArrayList<>();
+                    List<String> roles = new ArrayList<>();
                     for (String role : e.getValue().getAsString().split(",")) {
                         if (role.matches("[a-z]{1,24}")) {
                             roles.add(role);
                         }
                     }
-                    shown.put(e.getKey(), java.util.List.copyOf(roles));
+                    shown.put(e.getKey(), List.copyOf(roles));
                 }
             }
             return new Roster(Set.copyOf(users), Map.copyOf(capes), Set.copyOf(hidden),
@@ -215,12 +218,12 @@ public final class Presence {
         return o.toString();
     }
 
-    static String helloBody(boolean cape, boolean rainbow, java.util.List<String> show) {
+    static String helloBody(boolean cape, boolean rainbow, List<String> show) {
         JsonObject o = new JsonObject();
         o.addProperty("cape", cape);
         o.addProperty("rainbow", rainbow);
         if (show != null) {
-            com.google.gson.JsonArray roles = new com.google.gson.JsonArray();
+            JsonArray roles = new JsonArray();
             for (String role : show) {
                 roles.add(role);
             }
@@ -230,7 +233,7 @@ public final class Presence {
     }
 
     public static void tick(boolean report, boolean cape, boolean rainbow,
-                            java.util.List<String> show) {
+                            List<String> show) {
         if (busy || !NetworkGate.registry()) {
             return;
         }
@@ -258,7 +261,7 @@ public final class Presence {
                     refresh();
                 }
             } catch (Throwable t) {
-                com.wynnchayuan.translate.ErrorDebug.note("presence", null, t);
+                ErrorDebug.note("presence", null, t);
             } finally {
                 busy = false;
             }
@@ -296,7 +299,7 @@ public final class Presence {
         }
     }
 
-    private static boolean hello(boolean cape, boolean rainbow, java.util.List<String> show)
+    private static boolean hello(boolean cape, boolean rainbow, List<String> show)
             throws Exception {
         if (!PresenceLogin.login()) {
             return false;

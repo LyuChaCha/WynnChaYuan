@@ -1,9 +1,11 @@
 package com.wynnchayuan.capture;
 
 import com.wynntils.core.text.StyledText;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public final class DialogueSpeaker {
 
@@ -16,7 +18,7 @@ public final class DialogueSpeaker {
     }
 
     // Wynntils getDialogueText() 沒有名牌，只在原始 action bar
-    public static void noteRaw(net.minecraft.network.chat.Component message) {
+    public static void noteRaw(Component message) {
         if (message == null) {
             current = null;
             currentText = "";
@@ -63,7 +65,7 @@ public final class DialogueSpeaker {
     private static volatile String current;
     private static volatile String currentText = "";
 
-    private static String of(net.minecraft.network.chat.Component component) {
+    private static String of(Component component) {
         StringBuilder name = new StringBuilder();
         component.visit((style, part) -> {
             if (isNameplate(style)) {
@@ -74,8 +76,7 @@ public final class DialogueSpeaker {
         return named(GlyphSplitter.stripGlyphChars(name.toString()).strip());
     }
 
-    private static final java.util.regex.Pattern MYSTERY =
-            java.util.regex.Pattern.compile("[?\\p{M}\\s]*\\?[?\\p{M}\\s]*");
+    private static final Pattern MYSTERY = Pattern.compile("[?\\p{M}\\s]*\\?[?\\p{M}\\s]*");
 
     private static String named(String text) {
         if (text == null) {

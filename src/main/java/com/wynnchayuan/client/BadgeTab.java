@@ -1,10 +1,13 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.client.ui.Row;
+import com.wynnchayuan.render.Badges;
+import com.wynnchayuan.render.Colors;
 import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 final class BadgeTab {
 
@@ -16,14 +19,12 @@ final class BadgeTab {
 
     List<Row> badge() {
         List<Row> rows = new ArrayList<>();
-        String self = com.wynnchayuan.render.Badges.selfName();
-        List<com.wynnchayuan.render.Badges.Role> mine =
-                com.wynnchayuan.render.Badges.registered(self);
+        String self = Badges.selfName();
+        List<Badges.Role> mine = Badges.registered(self);
         if (mine.isEmpty()) {
             rows.add(Row.status("badge.none", SettingsScreen.t("badge.none"), SettingsScreen.t("badge.none.hint"))
                     .label(SettingsScreen.t("badge.none.label"))
-                    .labelColour(() -> com.wynnchayuan.render.Colors.opaque(
-                            com.wynnchayuan.render.Badges.INSTALLED)));
+                    .labelColour(() -> Colors.opaque(Badges.INSTALLED)));
             rows.add(Row.action("badge.contribute", SettingsScreen.t("badge.contribute"), SettingsScreen.t("badge.contribute.hint"))
                     .label(SettingsScreen.t("badge.contribute.button"))
                     .run(() -> ConfirmLinkScreen.confirmLinkNow(screen, ModsTab.CONTRIBUTE_URL)));
@@ -32,9 +33,9 @@ final class BadgeTab {
                     .run(() -> ConfirmLinkScreen.confirmLinkNow(screen, ModsTab.SPONSOR_URL)));
             return rows;
         }
-        for (com.wynnchayuan.render.Badges.Role role : mine) {
+        for (Badges.Role role : mine) {
             if (mine.size() > 1) {
-                java.util.function.BooleanSupplier shown =
+                BooleanSupplier shown =
                         () -> SettingsScreen.cfg().badgeRoleShown(role.id(), !role.hidden());
                 rows.add(Row.toggle("badge.role." + role.id(),
                                 () -> T.s("badge.role", role.name()), SettingsScreen.t("badge.role.hint"))
@@ -58,9 +59,8 @@ final class BadgeTab {
                     .commit(SettingsScreen.cfg()::saveIfDirty)
                     .reset(() -> SettingsScreen.cfg().badgeColour(role.id()) == null,
                             () -> SettingsScreen.cfg().clearBadgeColour(role.id())));
-            if (com.wynnchayuan.render.Badges.rainbowAllowed(role)) {
-                java.util.function.BooleanSupplier rainbow =
-                        () -> SettingsScreen.cfg().badgeRainbow(role.rainbow());
+            if (Badges.rainbowAllowed(role)) {
+                BooleanSupplier rainbow = () -> SettingsScreen.cfg().badgeRainbow(role.rainbow());
                 rows.add(Row.toggle("badge.rainbow", SettingsScreen.t("badge.rainbow"), SettingsScreen.t("badge.rainbow.hint"))
                         .on(rainbow)
                         .flip(() -> SettingsScreen.cfg().setBadgeRainbow(!rainbow.getAsBoolean()))
@@ -71,9 +71,9 @@ final class BadgeTab {
         return rows;
     }
 
-    private int badgesShown(List<com.wynnchayuan.render.Badges.Role> mine) {
+    private int badgesShown(List<Badges.Role> mine) {
         int n = 0;
-        for (com.wynnchayuan.render.Badges.Role role : mine) {
+        for (Badges.Role role : mine) {
             if (SettingsScreen.cfg().badgeRoleShown(role.id(), !role.hidden())) {
                 n++;
             }

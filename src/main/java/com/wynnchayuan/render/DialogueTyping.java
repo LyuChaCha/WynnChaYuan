@@ -1,13 +1,18 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.capture.OverflowAudit;
+import com.wynnchayuan.capture.SelfNames;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.LongSupplier;
+import java.util.regex.Pattern;
 
 final class DialogueTyping {
 
@@ -248,7 +253,7 @@ final class DialogueTyping {
         return (agreed >= AGREED && agreed < source.length()
                 && source.charAt(agreed) == '{'
                 && typed.length() <= source.length() + NAME_ROOM)
-                || com.wynnchayuan.translate.TranslationStore.slotFits(source, typed);
+                || TranslationStore.slotFits(source, typed);
     }
 
     private static final int AGREED = 12;
@@ -257,7 +262,7 @@ final class DialogueTyping {
 
     private static final int PARTS = 4;
 
-    private static final java.util.regex.Pattern ANY_SLOT = java.util.regex.Pattern.compile("\\{[^}]*\\}");
+    private static final Pattern ANY_SLOT = Pattern.compile("\\{[^}]*\\}");
 
     private static boolean plain(String text) {
         String bare = ANY_SLOT.matcher(text).replaceAll("");
@@ -275,15 +280,15 @@ final class DialogueTyping {
     }
 
     static boolean learnName(String raw, TranslationStore store) {
-        if (raw == null || com.wynnchayuan.capture.SelfNames.find(raw) != null) {
+        if (raw == null || SelfNames.find(raw) != null) {
             return false;
         }
         TranslationStore.Guess guess = store.playerNameIn(raw.strip());
         if (guess == null) {
             return false;
         }
-        com.wynnchayuan.capture.SelfNames.propose(guess.name(), guess.source());
-        return com.wynnchayuan.capture.SelfNames.find(raw) != null;
+        SelfNames.propose(guess.name(), guess.source());
+        return SelfNames.find(raw) != null;
     }
 
     static String line(String text, TranslationStore store, int rows,
@@ -346,14 +351,14 @@ final class DialogueTyping {
         return out;
     }
 
-    static java.util.function.LongSupplier holdClock = System::currentTimeMillis;
+    static LongSupplier holdClock = System::currentTimeMillis;
 
     private static long lineStart;
 
     private static boolean released;
 
     private static boolean holds(String raw, TranslationStore store, long now) {
-        var config = com.wynnchayuan.WynnChaYuan.config();
+        var config = WynnChaYuan.config();
         if ((config != null && !config.dialogueCover())
                 || lineShown || DialogueRewriter.tooLong || raw.isEmpty() || raw.length() > HOLD_CHARS
                 || now - lineStart > HOLD_MS || still >= SETTLE_FRAMES || store == null) {
@@ -397,13 +402,13 @@ final class DialogueTyping {
         }
         if (hit == null) {
             source = store.matchPrefix(typed, raw.length(),
-                                       com.wynnchayuan.capture.CurrentQuest.get());
+                                       CurrentQuest.get());
             hit = source == null ? null : store.lookup(source);
         }
         boolean near = false;
         if (hit == null) {
             String close = store.nearQuestLine(typed,
-                                               com.wynnchayuan.capture.CurrentQuest.get());
+                                               CurrentQuest.get());
             if (close != null) {
                 source = close;
                 hit = store.lookup(close);
@@ -462,15 +467,13 @@ final class DialogueTyping {
                        <= Math.max(12, source.length() / 8));
         if (done) {
             if (DialogueLayout.wrap(hit, rows, style, width) != null) {
-                com.wynnchayuan.capture.OverflowAudit.note(
-                        com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
-                        rows, rows, com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
+                OverflowAudit.note(OverflowAudit.DIALOGUE, source, hit,
+                        rows, rows, OverflowAudit.ROWS_UNIT);
                 return show(raw, hit, null);
             }
-            com.wynnchayuan.capture.OverflowAudit.note(
-                    com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
+            OverflowAudit.note(OverflowAudit.DIALOGUE, source, hit,
                     rows, DialogueLayout.rowsNeeded(hit, rows, style, width),
-                    com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
+                    OverflowAudit.ROWS_UNIT);
             if (DialogueLayout.overflow(hit, rows, style, width) != null) {
                 return show(raw, hit, null);
             }

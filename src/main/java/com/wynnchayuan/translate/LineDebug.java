@@ -1,14 +1,16 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import com.wynntils.core.text.StyledText;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 public final class LineDebug {
 
@@ -26,7 +28,7 @@ public final class LineDebug {
     private static final int LAYOUT_LIMIT = 8;
     private static StringBuilder buffer = new StringBuilder();
 
-    private static final java.util.Set<String> seen = new java.util.HashSet<>();
+    private static final Set<String> seen = new HashSet<>();
 
     private LineDebug() {}
 

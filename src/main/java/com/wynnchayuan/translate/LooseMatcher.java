@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
 
 import static com.wynnchayuan.translate.TranslationStore.indentOf;
 
@@ -153,10 +154,10 @@ final class LooseMatcher {
         while (end > 0 && ".!?~".indexOf(flat.charAt(end - 1)) >= 0) {
             end--;
         }
-        return flat.substring(0, end).strip().toLowerCase(java.util.Locale.ROOT);
+        return flat.substring(0, end).strip().toLowerCase(Locale.ROOT);
     }
 
-    private static final java.util.regex.Pattern DOT_RUN = java.util.regex.Pattern.compile("\\.{2,}");
+    private static final Pattern DOT_RUN = Pattern.compile("\\.{2,}");
 
     private static final int MIN_LOOSE_LENGTH = 12;
 
@@ -164,7 +165,7 @@ final class LooseMatcher {
 
     private final Map<String, String> looseDst = new ConcurrentHashMap<>();
 
-    private final java.util.Set<String> looseClash = ConcurrentHashMap.newKeySet();
+    private final Set<String> looseClash = ConcurrentHashMap.newKeySet();
 
     private final Map<String, String> unindented = new ConcurrentHashMap<>();
 

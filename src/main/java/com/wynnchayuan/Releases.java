@@ -3,8 +3,15 @@ package com.wynnchayuan;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
+import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.HoverEvent;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -109,7 +116,7 @@ public final class Releases {
         return DOWNLOAD;
     }
 
-    public static void tellOnce(net.minecraft.client.Minecraft client) {
+    public static void tellOnce(Minecraft client) {
         if (told || client == null || client.player == null) {
             return;
         }
@@ -126,45 +133,32 @@ public final class Releases {
 
         String url = downloadUrl();
         tell(client, 
-                com.wynnchayuan.client.T.c("chat.update.line1",
-                                latest, WynnChaYuan.version())
-                        .withStyle(net.minecraft.ChatFormatting.AQUA), false);
+                T.c("chat.update.line1", latest, WynnChaYuan.version())
+                        .withStyle(ChatFormatting.AQUA), false);
         Notes notes = notesFor(latest);
         if (notes != null && !notes.headline().isBlank()) {
-            tell(client, net.minecraft.network.chat.Component.literal(
-                    "  " + notes.headline())
-                    .withStyle(net.minecraft.ChatFormatting.GRAY), false);
+            tell(client, Component.literal("  " + notes.headline())
+                    .withStyle(ChatFormatting.GRAY), false);
         }
         if (SelfUpdate.available()) {
             tell(client,
-                    com.wynnchayuan.client.T.c("chat.update.direct")
-                    .withStyle(style -> style
-                            .withColor(net.minecraft.ChatFormatting.GREEN)
-                            .withUnderlined(true)
-                            .withClickEvent(new net.minecraft.network.chat.ClickEvent.RunCommand(
-                                    "/wcy update"))
-                            .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
-                                    com.wynnchayuan.client.T.c("chat.update.direct.hover")))),
-                    false);
+                    T.c("chat.update.direct").withStyle(style -> style
+                            .withColor(ChatFormatting.GREEN).withUnderlined(true)
+                            .withClickEvent(new ClickEvent.RunCommand("/wcy update"))
+                            .withHoverEvent(new HoverEvent.ShowText(
+                                    T.c("chat.update.direct.hover")))), false);
         }
         tell(client, 
-                com.wynnchayuan.client.T.c("chat.update.link")
-                .withStyle(style -> style
-                        .withColor(net.minecraft.ChatFormatting.YELLOW)
+                T.c("chat.update.link").withStyle(style -> style.withColor(ChatFormatting.YELLOW)
                         .withUnderlined(true)
-                        .withClickEvent(new net.minecraft.network.chat.ClickEvent.OpenUrl(
-                                URI.create(url)))
-                        .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
-                                net.minecraft.network.chat.Component.literal(url)))),
-                false);
+                        .withClickEvent(new ClickEvent.OpenUrl(URI.create(url)))
+                        .withHoverEvent(new HoverEvent.ShowText(Component.literal(url)))), false);
         tell(client, 
-                com.wynnchayuan.client.T.c("chat.update.where")
-                        .withStyle(net.minecraft.ChatFormatting.DARK_GRAY), false);
+                T.c("chat.update.where").withStyle(ChatFormatting.DARK_GRAY), false);
     }
 
-    private static void tell(net.minecraft.client.Minecraft client,
-                             net.minecraft.network.chat.Component line, boolean overlay) {
-        com.wynnchayuan.capture.OwnOutputs.note(line);
+    private static void tell(Minecraft client, Component line, boolean overlay) {
+        OwnOutputs.note(line);
         client.player.displayClientMessage(line, overlay);
     }
 
@@ -175,11 +169,10 @@ public final class Releases {
     }
 
     private static JsonObject localised(JsonObject one) {
-        String lang = com.wynnchayuan.client.T.pinnedLanguage();
+        String lang = T.pinnedLanguage();
         if (lang == null) {
             try {
-                lang = net.minecraft.client.Minecraft.getInstance()
-                        .getLanguageManager().getSelected();
+                lang = Minecraft.getInstance().getLanguageManager().getSelected();
             } catch (Exception e) {
                 ErrorDebug.note("Releases#localised", null, e);
                 return one;

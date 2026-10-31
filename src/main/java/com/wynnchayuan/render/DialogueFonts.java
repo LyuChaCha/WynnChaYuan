@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,9 +29,9 @@ final class DialogueFonts {
         return fontShipped(lang, "body_0");
     }
 
-    private static final Map<String, int[]> COVERAGE = new java.util.HashMap<>();
+    private static final Map<String, int[]> COVERAGE = new HashMap<>();
 
-    private static final Map<String, Boolean> FONTS = new java.util.HashMap<>();
+    private static final Map<String, Boolean> FONTS = new HashMap<>();
 
     static String unpaintable(String text, Style style) {
         String font = fontOf(style);

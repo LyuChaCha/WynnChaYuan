@@ -1,11 +1,15 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.capture.GlyphSplitter;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
 
 import static com.wynnchayuan.translate.TranslationStore.ICON;
 import static com.wynnchayuan.translate.TranslationStore.bareName;
@@ -20,13 +24,11 @@ final class ItemNameRules {
         this.translations = translations;
     }
 
-    final java.util.Set<String> gearNameKeys = new java.util.HashSet<>();
+    final Set<String> gearNameKeys = new HashSet<>();
 
-    final java.util.Set<String> nameKeys =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
+    final Set<String> nameKeys = ConcurrentHashMap.newKeySet();
 
-    final java.util.Set<String> plainNameKeys =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
+    final Set<String> plainNameKeys = ConcurrentHashMap.newKeySet();
 
     boolean peeked(String key) {
         return translations.store.peeksPlainNames() && (plainNameKeys.contains(key) || isToolName(key));
@@ -36,13 +38,13 @@ final class ItemNameRules {
         return key != null && plainNameKeys.contains(key.strip());
     }
 
-    final java.util.Set<String> otherOwners = new java.util.HashSet<>();
+    final Set<String> otherOwners = new HashSet<>();
 
-    final java.util.Set<String> nonItemOwners = new java.util.HashSet<>();
+    final Set<String> nonItemOwners = new HashSet<>();
 
-    final Map<String, java.util.Set<String>> itemNameDsts = new ConcurrentHashMap<>();
+    final Map<String, Set<String>> itemNameDsts = new ConcurrentHashMap<>();
 
-    final Map<String, java.util.Set<String>> abilityNameDsts = new ConcurrentHashMap<>();
+    final Map<String, Set<String>> abilityNameDsts = new ConcurrentHashMap<>();
 
     void noteBareName(String key) {
         if (key.indexOf(ICON) >= 0) {
@@ -51,7 +53,7 @@ final class ItemNameRules {
     }
 
     boolean ownAbilityName(String key, String hit) {
-        java.util.Set<String> own = abilityNameDsts.get(key);
+        Set<String> own = abilityNameDsts.get(key);
         return own != null && hit != null && !hit.strip().equals(key) && own.contains(hit);
     }
 
@@ -76,7 +78,7 @@ final class ItemNameRules {
     }
 
     boolean ownItemName(String key, String hit) {
-        java.util.Set<String> own = itemNameDsts.get(key);
+        Set<String> own = itemNameDsts.get(key);
         return own != null && hit != null && own.contains(hit);
     }
 
@@ -150,7 +152,7 @@ final class ItemNameRules {
     }
 
     List<int[]> keptOriginals(String text) {
-        List<int[]> out = new java.util.ArrayList<>();
+        List<int[]> out = new ArrayList<>();
         if (text == null) {
             return out;
         }
@@ -158,7 +160,7 @@ final class ItemNameRules {
         if (at >= 0) {
             out.add(new int[] {at, text.length()});
         }
-        if (translations.store.pageNameMode() != com.wynnchayuan.CollectorConfig.ItemNames.ON) {
+        if (translations.store.pageNameMode() != CollectorConfig.ItemNames.ON) {
             out.addAll(LootrunNames.spans(text));
         }
         out.addAll(abilityOriginalSpans(text));
@@ -169,14 +171,14 @@ final class ItemNameRules {
         if (!translations.store.abilityNamesWithOriginal() || text == null || text.indexOf('(') < 0) {
             return List.of();
         }
-        List<int[]> out = new java.util.ArrayList<>();
+        List<int[]> out = new ArrayList<>();
         int open = text.indexOf('(');
         while (open >= 0) {
             int close = text.indexOf(')', open + 1);
             if (close < 0) {
                 break;
             }
-            java.util.Set<String> own = abilityNameDsts.get(text.substring(open + 1, close));
+            Set<String> own = abilityNameDsts.get(text.substring(open + 1, close));
             boolean spaced = open > 0 && text.charAt(open - 1) == ' ';
             int start = spaced ? open - 1 : open;
             if (own != null && follows(text.substring(0, start), own, spaced)) {
@@ -187,7 +189,7 @@ final class ItemNameRules {
         return out;
     }
 
-    private static boolean follows(String before, java.util.Set<String> own, boolean spaced) {
+    private static boolean follows(String before, Set<String> own, boolean spaced) {
         if (before.isBlank()) {
             return true;
         }
@@ -232,7 +234,7 @@ final class ItemNameRules {
         if (own != null) {
             return before.endsWith(own);
         }
-        java.util.Set<String> item = itemNameDsts.get(inner);
+        Set<String> item = itemNameDsts.get(inner);
         if (item != null) {
             for (String dst : item) {
                 if (before.endsWith(dst)) {
@@ -248,7 +250,7 @@ final class ItemNameRules {
             return true;
         }
         String templated = inner.indexOf('{') >= 0
-                ? TranslationIndex.NUMBERED.matcher(inner).replaceAll(java.util.regex.Matcher.quoteReplacement(
+                ? TranslationIndex.NUMBERED.matcher(inner).replaceAll(Matcher.quoteReplacement(
                         GlyphSplitter.NUMBER_PLACEHOLDER))
                 : GlyphSplitter.parametrizeNumbers(inner);
         if (!templated.equals(inner) && getsOriginal(templated)) {

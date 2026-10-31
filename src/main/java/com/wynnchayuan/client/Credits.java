@@ -5,12 +5,17 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.Badges;
 import com.wynnchayuan.render.Colors;
-
 import com.wynnchayuan.translate.ErrorDebug;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,18 +71,17 @@ public final class Credits {
 
     public static void reload() {
         cached = null;
-        com.wynnchayuan.render.Badges.reload();
+        Badges.reload();
     }
 
     private static List<Section> fromSynced() {
         try {
-            java.nio.file.Path dir = com.wynnchayuan.WynnChaYuan.configDir();
-            java.nio.file.Path file = dir == null ? null : dir.resolve(FILE);
-            if (file == null || !java.nio.file.Files.isRegularFile(file)) {
+            Path dir = WynnChaYuan.configDir();
+            Path file = dir == null ? null : dir.resolve(FILE);
+            if (file == null || !Files.isRegularFile(file)) {
                 return List.of();
             }
-            try (java.io.Reader in = java.nio.file.Files.newBufferedReader(
-                    file, StandardCharsets.UTF_8)) {
+            try (Reader in = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
                 return read(in);
             }
         } catch (Throwable t) {
@@ -86,7 +90,7 @@ public final class Credits {
         }
     }
 
-    public static List<Section> read(java.io.Reader in) {
+    public static List<Section> read(Reader in) {
         List<Section> out = new ArrayList<>();
         JsonObject root = JsonParser.parseReader(in).getAsJsonObject();
         JsonArray sections = root.getAsJsonArray("sections");

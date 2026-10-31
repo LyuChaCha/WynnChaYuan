@@ -9,6 +9,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -170,17 +173,16 @@ public final class Boxes {
                     i, line.getString().length(), line.getString()));
         }
         try {
-            java.nio.file.Files.writeString(
-                    debugFile.resolveSibling("overlay-debug-" + dumped + ".txt"),
-                    sb.toString(), java.nio.charset.StandardCharsets.UTF_8);
+            Files.writeString(debugFile.resolveSibling("overlay-debug-" + dumped + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             ErrorDebug.note("Boxes#dump", null, e);
         }
     }
 
-    private static java.nio.file.Path debugFile;
+    private static Path debugFile;
 
-    public static void init(java.nio.file.Path path) {
+    public static void init(Path path) {
         debugFile = path;
     }
 }

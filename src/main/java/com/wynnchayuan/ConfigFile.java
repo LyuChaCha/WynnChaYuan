@@ -2,9 +2,15 @@ package com.wynnchayuan;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.wynnchayuan.translate.ErrorDebug;
+
+import java.util.EnumMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 final class ConfigFile {
 
@@ -16,7 +22,7 @@ final class ConfigFile {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    static final java.util.Set<String> RETIRED = java.util.Set.of("shareCaptures", "showPanel");
+    static final Set<String> RETIRED = Set.of("shareCaptures", "showPanel");
 
     private static final long MAX_BYTES = 1L << 20;
 
@@ -117,7 +123,7 @@ final class ConfigFile {
         readPairs(o, "overlaySize", config.overlaySize);
         config.badgeRoles.clear();
         if (o.has("badgeRoles") && o.get("badgeRoles").isJsonObject()) {
-            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+            for (Map.Entry<String, JsonElement> e
                     : o.getAsJsonObject("badgeRoles").entrySet()) {
                 try {
                     config.badgeRoles.put(e.getKey(), e.getValue().getAsBoolean());
@@ -129,7 +135,7 @@ final class ConfigFile {
         config.badgeRainbow = o.has("badgeRainbow") ? (Boolean) bool(o, "badgeRainbow", false) : null;
         config.badgeColours.clear();
         if (o.has("badgeColours") && o.get("badgeColours").isJsonObject()) {
-            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+            for (Map.Entry<String, JsonElement> e
                     : o.getAsJsonObject("badgeColours").entrySet()) {
                 try {
                     String hex = CollectorConfig.normalHex(e.getValue().getAsString());
@@ -213,7 +219,7 @@ final class ConfigFile {
             return null;
         }
         try {
-            return Enum.valueOf(type, el.getAsString().trim().toUpperCase(java.util.Locale.ROOT));
+            return Enum.valueOf(type, el.getAsString().trim().toUpperCase(Locale.ROOT));
         } catch (IllegalArgumentException e) {
             ModLog.warn("設定 " + name + " 的值 " + el + " 這一版不認得，用預設值");
             return null;
@@ -225,7 +231,7 @@ final class ConfigFile {
         return v == null ? fallback : v;
     }
 
-    private static void readPairs(JsonObject o, String name, java.util.EnumMap<CollectorConfig.Overlay, int[]> into) {
+    private static void readPairs(JsonObject o, String name, EnumMap<CollectorConfig.Overlay, int[]> into) {
         JsonElement el = o.get(name);
         if (el == null || !el.isJsonObject()) {
             return;
@@ -303,17 +309,17 @@ final class ConfigFile {
             o.addProperty("shotMode", config.shotMode.name());
             o.addProperty("nametagHoldMs", config.nametagHoldMs);
             o.addProperty("panelAnchor", config.panelAnchor.name());
-            com.google.gson.JsonObject positions = new com.google.gson.JsonObject();
+            JsonObject positions = new JsonObject();
             config.overlayPos.forEach((which, xy) -> {
-                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
+                JsonArray arr = new JsonArray();
                 arr.add(xy[0]);
                 arr.add(xy[1]);
                 positions.add(which.name(), arr);
             });
             o.add("overlayPos", positions);
-            com.google.gson.JsonObject sizes = new com.google.gson.JsonObject();
+            JsonObject sizes = new JsonObject();
             config.overlaySize.forEach((which, wh) -> {
-                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
+                JsonArray arr = new JsonArray();
                 arr.add(wh[0]);
                 arr.add(wh[1]);
                 sizes.add(which.name(), arr);

@@ -1,8 +1,8 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.ModNetwork;
-import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.FirstRunView;
@@ -16,7 +16,12 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.BooleanSupplier;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
+import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 public final class FirstRunScreen extends CanvasScreen {
@@ -135,15 +140,13 @@ public final class FirstRunScreen extends CanvasScreen {
         }
     }
 
-    private static Row toggle(String key, java.util.function.BooleanSupplier get,
-                              java.util.function.Consumer<Boolean> set) {
+    private static Row toggle(String key, BooleanSupplier get, Consumer<Boolean> set) {
         return Row.toggle(key, t(key), t(key + ".hint")).on(get)
                 .flip(() -> set.accept(!get.getAsBoolean()));
     }
 
     private static Row mode(String key, String[] labels, Row.Tone[] tones,
-                            java.util.function.IntSupplier get,
-                            java.util.function.IntConsumer set) {
+                            IntSupplier get, IntConsumer set) {
         Row row = Row.segment(key, t(key), t(key + ".hint"));
         for (int i = 0; i < labels.length; i++) {
             row.option(T.s(labels[i]), tones[i]);
@@ -193,7 +196,7 @@ public final class FirstRunScreen extends CanvasScreen {
                         i -> cfg().setChatMode(CollectorConfig.ChatMode.values()[i])),
                 mode("world.tracker", new String[] {"mode.replace", "mode.panel", "mode.off"},
                         new Row.Tone[] {Row.Tone.REPLACE, Row.Tone.ACCENT, Row.Tone.OFF},
-                        () -> java.util.Arrays.asList(order).indexOf(cfg().trackerMode()),
+                        () -> Arrays.asList(order).indexOf(cfg().trackerMode()),
                         i -> cfg().setTrackerMode(order[i])),
                 toggle("world.scoreboard", () -> cfg().translateScoreboard(),
                         on -> cfg().setTranslateScoreboard(on)),
@@ -206,7 +209,7 @@ public final class FirstRunScreen extends CanvasScreen {
                 new Row.Group(t("group.privacy"), false, List.of(
                 toggle("privacy.online",
                         () -> cfg().consent() == CollectorConfig.Consent.AGREED,
-                        com.wynnchayuan.ModNetwork::setConsent))))));
+                        ModNetwork::setConsent))))));
         return tabs;
     }
 

@@ -3,11 +3,14 @@ package com.wynnchayuan.capture;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.SafeFiles;
+import com.wynnchayuan.render.ThirdPartyLiterals;
 import com.wynnchayuan.translate.ErrorDebug;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -17,10 +20,19 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.HexFormat;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public final class CaptureStore {
 
@@ -33,11 +45,9 @@ public final class CaptureStore {
     private final Map<String, Captured> entries = new ConcurrentHashMap<>();
     private final AtomicBoolean dirty = new AtomicBoolean(false);
 
-    private final java.util.concurrent.atomic.AtomicInteger nextSeq =
-            new java.util.concurrent.atomic.AtomicInteger();
+    private final AtomicInteger nextSeq = new AtomicInteger();
 
-    private final Map<String, java.util.concurrent.atomic.AtomicInteger> eventCounts =
-            new ConcurrentHashMap<>();
+    private final Map<String, AtomicInteger> eventCounts = new ConcurrentHashMap<>();
 
     public CaptureStore(Path file) {
         this.file = file;
@@ -69,21 +79,21 @@ public final class CaptureStore {
         }
     }
 
-    private volatile java.util.function.Predicate<String> translated = t -> false;
+    private volatile Predicate<String> translated = t -> false;
 
-    public void knowsTranslations(java.util.function.Predicate<String> lookup) {
+    public void knowsTranslations(Predicate<String> lookup) {
         translated = lookup == null ? t -> false : lookup;
     }
 
-    private volatile java.util.function.Predicate<String> known = t -> false;
+    private volatile Predicate<String> known = t -> false;
 
-    public void knowsSources(java.util.function.Predicate<String> lookup) {
+    public void knowsSources(Predicate<String> lookup) {
         known = lookup == null ? t -> false : lookup;
     }
 
-    private volatile java.util.function.Predicate<String> longer = t -> false;
+    private volatile Predicate<String> longer = t -> false;
 
-    public void knowsLonger(java.util.function.Predicate<String> lookup) {
+    public void knowsLonger(Predicate<String> lookup) {
         longer = lookup == null ? t -> false : lookup;
     }
 
@@ -111,9 +121,9 @@ public final class CaptureStore {
         return template != null && translated.test(template);
     }
 
-    private volatile java.util.function.Supplier<String> where = () -> null;
+    private volatile Supplier<String> where = () -> null;
 
-    public void knowsWhere(java.util.function.Supplier<String> where) {
+    public void knowsWhere(Supplier<String> where) {
         this.where = where == null ? () -> null : where;
     }
 
@@ -135,7 +145,7 @@ public final class CaptureStore {
         recordChatRows(chatRows.settle(now));
     }
 
-    private void recordChatRows(java.util.List<ChatRows.Row> rows) {
+    private void recordChatRows(List<ChatRows.Row> rows) {
         for (ChatRows.Row row : rows) {
             record(row.template(), "desc", "chat", row.ctx(), null, true, null);
         }
@@ -158,7 +168,7 @@ public final class CaptureStore {
             noteEvent("skipped.translated");
             return false;
         }
-        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(template)) {
+        if (ThirdPartyLiterals.reserved(template)) {
             noteEvent("skipped.thirdParty");
             return false;
         }
@@ -227,7 +237,7 @@ public final class CaptureStore {
 
     public void noteEvent(String name) {
         eventCounts.computeIfAbsent(name,
-                k -> new java.util.concurrent.atomic.AtomicInteger()).incrementAndGet();
+                k -> new AtomicInteger()).incrementAndGet();
         dirty.set(true);
     }
 
@@ -235,14 +245,12 @@ public final class CaptureStore {
         return entries.containsKey(hash(template));
     }
 
-    synchronized JsonObject rowsJson(java.util.function.Predicate<Captured> keep) {
+    synchronized JsonObject rowsJson(Predicate<Captured> keep) {
         JsonObject rows = new JsonObject();
-        java.util.List<Captured> ordered = entries.values().stream()
-                .filter(keep)
-                .sorted(java.util.Comparator.comparingInt(c -> c.seq))
-                .toList();
-        Map<String, Integer> nth = new java.util.HashMap<>();
-        java.util.Set<String> used = new java.util.HashSet<>();
+        List<Captured> ordered = entries.values().stream().filter(keep)
+                .sorted(Comparator.comparingInt(c -> c.seq)).toList();
+        Map<String, Integer> nth = new HashMap<>();
+        Set<String> used = new HashSet<>();
         for (Captured c : ordered) {
             String key = readableKey(c, nth);
             String unique = key;
@@ -275,7 +283,7 @@ public final class CaptureStore {
         int gone = before - entries.size();
         if (gone > 0) {
             eventCounts.computeIfAbsent("skipped.translated",
-                    k -> new java.util.concurrent.atomic.AtomicInteger()).addAndGet(gone);
+                    k -> new AtomicInteger()).addAndGet(gone);
         }
         boolean moved = false;
         for (var it = entries.entrySet().iterator(); it.hasNext(); ) {
@@ -358,7 +366,7 @@ public final class CaptureStore {
         }
         meta.add("selfNames", selves);
         JsonObject groups = new JsonObject();
-        Map<String, Integer> tally = new java.util.TreeMap<>();
+        Map<String, Integer> tally = new TreeMap<>();
         for (Captured c : entries.values()) {
             tally.merge(groupOf(c), 1, Integer::sum);
         }
@@ -369,7 +377,7 @@ public final class CaptureStore {
         if (!untranslated.isEmpty()) {
             JsonArray pending = new JsonArray();
             untranslated.values().stream()
-                    .sorted(java.util.Comparator.comparingInt((Captured c) -> c.seen).reversed())
+                    .sorted(Comparator.comparingInt((Captured c) -> c.seen).reversed())
                     .forEach(c -> {
                         JsonObject row = new JsonObject();
                         row.addProperty("src", c.src);
@@ -403,7 +411,7 @@ public final class CaptureStore {
             try (Writer w = Files.newBufferedWriter(tmp, StandardCharsets.UTF_8)) {
                 GSON.toJson(root, w);
             }
-            com.wynnchayuan.SafeFiles.moveAtomically(tmp, file);
+            SafeFiles.moveAtomically(tmp, file);
         } catch (IOException e) {
             dirty.set(true);
             ModLog.warn("寫入失敗 " + file + ": " + e.getMessage());
@@ -413,13 +421,13 @@ public final class CaptureStore {
     static final long MAX_BYTES = 32L << 20;
 
     private void load() {
-        JsonObject root = com.wynnchayuan.SafeFiles.readObject(file, MAX_BYTES);
+        JsonObject root = SafeFiles.readObject(file, MAX_BYTES);
         if (root == null) {
             return;
         }
         ColourAudit.load(root.get("colours"));
         OverflowAudit.load(root.get("overflow"));
-        com.google.gson.JsonElement pending = root.get("untranslated");
+        JsonElement pending = root.get("untranslated");
         if (pending != null && pending.isJsonArray()) {
             for (var row : pending.getAsJsonArray()) {
                 Captured c = row(row);
@@ -428,7 +436,7 @@ public final class CaptureStore {
                 }
             }
         }
-        com.google.gson.JsonElement saved = root.get("entries");
+        JsonElement saved = root.get("entries");
         if (saved == null || !saved.isJsonObject()) {
             return;
         }
@@ -443,7 +451,7 @@ public final class CaptureStore {
         }
     }
 
-    private static Captured row(com.google.gson.JsonElement el) {
+    private static Captured row(JsonElement el) {
         if (el == null || !el.isJsonObject()) {
             return null;
         }

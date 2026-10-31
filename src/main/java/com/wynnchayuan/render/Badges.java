@@ -1,15 +1,19 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -17,6 +21,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public final class Badges {
@@ -83,11 +88,11 @@ public final class Badges {
     }
 
     public static List<Role> shown(String account, String self, CollectorConfig config) {
-        return shown(account, self, config, com.wynnchayuan.Presence.BadgeChoice.NONE);
+        return shown(account, self, config, Presence.BadgeChoice.NONE);
     }
 
     public static List<Role> shown(String account, String self, CollectorConfig config,
-                                   com.wynnchayuan.Presence.BadgeChoice theirs) {
+                                   Presence.BadgeChoice theirs) {
         boolean mine = account != null && account.equalsIgnoreCase(self);
         List<Role> all = new ArrayList<>();
         List<Role> out = new ArrayList<>();
@@ -155,10 +160,9 @@ public final class Badges {
     }
 
     public static Component decorate(Component nameTag, int entityId) {
-        java.util.UUID uuid = uuidOf(entityId);
+        UUID uuid = uuidOf(entityId);
         return decorate(nameTag, accountName(entityId), selfName(), WynnChaYuan.config(),
-                System.currentTimeMillis(), com.wynnchayuan.Presence.installed(uuid),
-                com.wynnchayuan.Presence.badgeChoice(uuid));
+                System.currentTimeMillis(), Presence.installed(uuid), Presence.badgeChoice(uuid));
     }
 
     static Component decorate(Component nameTag, String account, String self,
@@ -169,12 +173,12 @@ public final class Badges {
     static Component decorate(Component nameTag, String account, String self,
                               CollectorConfig config, long now, boolean onRoster) {
         return decorate(nameTag, account, self, config, now, onRoster,
-                com.wynnchayuan.Presence.BadgeChoice.NONE);
+                Presence.BadgeChoice.NONE);
     }
 
     static Component decorate(Component nameTag, String account, String self,
                               CollectorConfig config, long now, boolean onRoster,
-                              com.wynnchayuan.Presence.BadgeChoice theirs) {
+                              Presence.BadgeChoice theirs) {
         if (nameTag == null || startsWithIcon(nameTag)) {
             return null;
         }
@@ -222,7 +226,7 @@ public final class Badges {
 
     public static String selfName() {
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             return mc == null ? null : mc.getUser().getName();
         } catch (Throwable t) {
             ErrorDebug.note("Badges#selfName", null, t);
@@ -230,15 +234,14 @@ public final class Badges {
         }
     }
 
-    private static java.util.UUID uuidOf(int entityId) {
+    private static UUID uuidOf(int entityId) {
         if (entityId < 0) {
             return null;
         }
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
-            net.minecraft.world.entity.Entity entity =
-                    mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
-            return entity instanceof net.minecraft.world.entity.player.Player player
+            Minecraft mc = Minecraft.getInstance();
+            Entity entity = mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
+            return entity instanceof Player player
                     ? player.getUUID() : null;
         } catch (Throwable t) {
             ErrorDebug.note("Badges#uuidOf", null, t);
@@ -251,12 +254,12 @@ public final class Badges {
             return null;
         }
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            Minecraft mc = Minecraft.getInstance();
             if (mc == null || mc.level == null) {
                 return null;
             }
-            net.minecraft.world.entity.Entity entity = mc.level.getEntity(entityId);
-            return entity instanceof net.minecraft.world.entity.player.Player player
+            Entity entity = mc.level.getEntity(entityId);
+            return entity instanceof Player player
                     ? player.getGameProfile().name() : null;
         } catch (Throwable t) {
             ErrorDebug.note("Badges#accountName", null, t);

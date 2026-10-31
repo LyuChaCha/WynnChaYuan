@@ -1,11 +1,12 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.ModNetwork;
-import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CorpusExport;
+import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.RemoteSync;
@@ -16,8 +17,10 @@ import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Util;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 final class ToolsTab {
 
@@ -75,8 +78,7 @@ final class ToolsTab {
                 SettingsScreen.cfg().syncedTranslations(), TranslationUpdate.seen());
     }
 
-    static final java.util.Map<TranslationUpdate.State, String> VERSION_KEY =
-            java.util.Map.of(
+    static final Map<TranslationUpdate.State, String> VERSION_KEY = Map.of(
                     TranslationUpdate.State.LOCAL, "data.version.local",
                     TranslationUpdate.State.CHECKING, "data.version.checking",
                     TranslationUpdate.State.LATEST, "data.version.latest",
@@ -134,14 +136,14 @@ final class ToolsTab {
         if (screen.client() != null && screen.client().player != null) {
             Component line = Component.literal("[WynnChaYuan] " + result)
                     .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED);
-            com.wynnchayuan.capture.OwnOutputs.note(line);
+            OwnOutputs.note(line);
             screen.client().player.displayClientMessage(line, false);
         }
     }
 
     private void exportCorpus() {
         CaptureStore store = WynnChaYuan.store();
-        java.nio.file.Path dir = WynnChaYuan.configDir();
+        Path dir = WynnChaYuan.configDir();
         if (store == null || dir == null) {
             return;
         }

@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.render.PairedFont;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -8,6 +9,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 final class DisplayStyles {
 
@@ -16,12 +18,11 @@ final class DisplayStyles {
     // /class 畫面的高度烘進字型 ascent，換 default 會整段移位
     static Style forDisplay(Style style) {
         Style base = style == null ? Style.EMPTY : style;
-        FontDescription paired = com.wynnchayuan.render.PairedFont.forStyle(base);
+        FontDescription paired = PairedFont.forStyle(base);
         return base.withFont(paired == null ? FontDescription.DEFAULT : paired);
     }
 
-    private static final java.util.regex.Pattern WIDE_SCRIPT =
-            java.util.regex.Pattern.compile(
+    private static final Pattern WIDE_SCRIPT = Pattern.compile(
                     "[\\u0400-\\u04ff\\u3040-\\u30ff\\u3400-\\u4dbf"
                             + "\\u4e00-\\u9fff\\uac00-\\ud7af\\uff00-\\uffef]");
 
@@ -38,7 +39,7 @@ final class DisplayStyles {
     static Component literal(String text, Style style) {
         text = ColourTemplate.stripColourTokens(text);
         text = deIcon(text);
-        if (style != null && com.wynnchayuan.render.PairedFont.isOurs(style)
+        if (style != null && PairedFont.isOurs(style)
                 && !WIDE_SCRIPT.matcher(text).find()) {
             style = style.withFont(FontDescription.DEFAULT);
         }
@@ -116,15 +117,14 @@ final class DisplayStyles {
                 out.append(Component.literal(text).withStyle(
                         upright ? plain.withItalic(false) : plain));
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return out;
     }
 
     private static boolean hasShaderSlant(Component line) {
         return line.visit((style, text) -> plainOfShaderSlant(style.getColor()) == NO_SHADER_SLANT
-                ? java.util.Optional.<Boolean>empty() : java.util.Optional.of(true),
-                Style.EMPTY).isPresent();
+                ? Optional.<Boolean>empty() : Optional.of(true), Style.EMPTY).isPresent();
     }
 
     private static Style withoutShaderSlant(Style style) {

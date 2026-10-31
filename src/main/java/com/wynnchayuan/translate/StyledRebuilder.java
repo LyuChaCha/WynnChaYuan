@@ -6,7 +6,16 @@ import com.wynnchayuan.translate.ColumnAligner.Piece;
 import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 final class StyledRebuilder {
 
@@ -170,7 +179,7 @@ final class StyledRebuilder {
             if (only == null) {
                 only = fallback(source.get(i).dominant(), known, dst[i]);
             }
-            if (only == null || java.util.Objects.equals(only, blockStyle)
+            if (only == null || Objects.equals(only, blockStyle)
                     || covered(known, text, only)) {
                 continue;
             }
@@ -277,7 +286,7 @@ final class StyledRebuilder {
         List<String> names = new ArrayList<>();
         names.add(source);
         for (LineParts.Piece piece : known) {
-            if (java.util.Objects.equals(piece.style(), style)) {
+            if (Objects.equals(piece.style(), style)) {
                 names.add(piece.text().strip());
             }
         }
@@ -293,11 +302,11 @@ final class StyledRebuilder {
 
     private record Segment(String text, String anchor) {}
 
-    private static final java.util.regex.Pattern NUMBER_TOKEN = java.util.regex.Pattern.compile("\\{~\\d+\\}");
+    private static final Pattern NUMBER_TOKEN = Pattern.compile("\\{~\\d+\\}");
 
     private static List<Segment> segments(String line) {
         List<Segment> out = new ArrayList<>();
-        java.util.regex.Matcher m = PLACEHOLDER.matcher(line);
+        Matcher m = PLACEHOLDER.matcher(line);
         int from = 0;
         int plainNumbers = 0;
         int nextIndex = 1;
@@ -336,7 +345,7 @@ final class StyledRebuilder {
             return false;
         }
         for (int k = 0; k < source.size(); k++) {
-            if (!java.util.Objects.equals(source.get(k).anchor(), target.get(k).anchor())
+            if (!Objects.equals(source.get(k).anchor(), target.get(k).anchor())
                     || LineTranslator.hasContent(source.get(k).text()) != LineTranslator.hasContent(target.get(k).text())) {
                 return false;
             }
@@ -373,7 +382,7 @@ final class StyledRebuilder {
                 char ch = plain.charAt(c);
                 if (!Character.isWhitespace(ch)) {
                     Style style = styleAt.get(c);
-                    if (current != null && !java.util.Objects.equals(current, style)) {
+                    if (current != null && !Objects.equals(current, style)) {
                         pieces.add(new LineParts.Piece(text.toString().strip(), current));
                         text.setLength(0);
                     }
@@ -390,7 +399,7 @@ final class StyledRebuilder {
 
     private static int usableStyles(List<Segment> source, List<Segment> target,
                                     List<List<LineParts.Piece>> styles) {
-        java.util.Set<Style> distinct = new java.util.HashSet<>();
+        Set<Style> distinct = new HashSet<>();
         for (int k = 0; k < target.size(); k++) {
             for (LineParts.Piece piece : assign(source.get(k).text().strip(), styles.get(k),
                                                 target.get(k).text().strip())) {
@@ -425,7 +434,7 @@ final class StyledRebuilder {
             if (found < 0) {
                 return List.of();
             }
-            java.util.Arrays.fill(at, found, found + run.text().length(), run.style());
+            Arrays.fill(at, found, found + run.text().length(), run.style());
             cursor = found + run.text().length();
         }
         List<int[]> ours = punctuationSpans(source);
@@ -478,7 +487,7 @@ final class StyledRebuilder {
         while (from < span[1]) {
             Style style = at[from];
             int to = from + 1;
-            while (to < span[1] && java.util.Objects.equals(at[to], style)) {
+            while (to < span[1] && Objects.equals(at[to], style)) {
                 to++;
             }
             if (style == null) {
@@ -545,7 +554,7 @@ final class StyledRebuilder {
             if (Character.isWhitespace(text.charAt(c))) {
                 continue;
             }
-            if (at[c] == null || (only != null && !java.util.Objects.equals(only, at[c]))) {
+            if (at[c] == null || (only != null && !Objects.equals(only, at[c]))) {
                 return null;
             }
             only = at[c];
@@ -556,7 +565,7 @@ final class StyledRebuilder {
     private static void add(List<LineParts.Piece> out, String text, Style style,
                             Style blockStyle, List<LineParts.Piece> known) {
         String bare = PLACEHOLDER.matcher(text).replaceAll("").strip();
-        if (!LineTranslator.hasContent(bare) || java.util.Objects.equals(style, blockStyle)
+        if (!LineTranslator.hasContent(bare) || Objects.equals(style, blockStyle)
                 || covered(known, bare, style)) {
             return;
         }
@@ -577,8 +586,7 @@ final class StyledRebuilder {
 
     private record RowStyle(Style only, Style dominant) {}
 
-    private static final java.util.regex.Pattern PLACEHOLDER =
-            java.util.regex.Pattern.compile("\\{[^}]*\\}");
+    private static final Pattern PLACEHOLDER = Pattern.compile("\\{[^}]*\\}");
 
     private static List<RowStyle> uniformStyles(List<LineParts.Piece> runs, String template) {
         List<RowStyle> out = new ArrayList<>();
@@ -602,7 +610,7 @@ final class StyledRebuilder {
                 if (!seen) {
                     only = run.style();
                     seen = true;
-                } else if (!java.util.Objects.equals(only, run.style())) {
+                } else if (!Objects.equals(only, run.style())) {
                     mixed = true;
                 }
                 int take = Math.min(have, need);
@@ -623,8 +631,8 @@ final class StyledRebuilder {
     }
 
     static final class Tally {
-        private final java.util.Map<Style, Integer> counts = new java.util.LinkedHashMap<>();
-        private final java.util.Map<Style, Style> shown = new java.util.HashMap<>();
+        private final Map<Style, Integer> counts = new LinkedHashMap<>();
+        private final Map<Style, Style> shown = new HashMap<>();
 
         void add(Style style, int solid) {
             if (style != null && solid > 0) {
@@ -657,7 +665,7 @@ final class StyledRebuilder {
         Style top() {
             Style best = null;
             int most = 0;
-            for (java.util.Map.Entry<Style, Integer> e : counts.entrySet()) {
+            for (Map.Entry<Style, Integer> e : counts.entrySet()) {
                 if (e.getValue() > most) {
                     most = e.getValue();
                     best = e.getKey();
@@ -674,7 +682,7 @@ final class StyledRebuilder {
 
     static int solidCount(String text) {
         return (int) text.codePoints().filter(cp -> !Character.isWhitespace(cp)
-                && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)).count();
+                && !GlyphSplitter.isGlyphCodePoint(cp)).count();
     }
 
     private static List<RowStyle> perPartStyles(List<LineParts> parts) {
@@ -692,7 +700,7 @@ final class StyledRebuilder {
                 if (!seen) {
                     only = run.style();
                     seen = true;
-                } else if (!java.util.Objects.equals(only, run.style())) {
+                } else if (!Objects.equals(only, run.style())) {
                     mixed = true;
                 }
             }
@@ -710,7 +718,7 @@ final class StyledRebuilder {
     private static boolean covered(List<LineParts.Piece> known, String text, Style style) {
         for (LineParts.Piece piece : known) {
             if (piece.text().equals(text)
-                    && java.util.Objects.equals(piece.style(), style)) {
+                    && Objects.equals(piece.style(), style)) {
                 return true;
             }
         }

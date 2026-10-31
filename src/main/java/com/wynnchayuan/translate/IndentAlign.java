@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.ToIntFunction;
 
 // 續行縮排是空白加 À（Wynncraft 字型裡 1px 寬）湊的
@@ -68,7 +69,7 @@ public final class IndentAlign {
                 out.add(new Bit(text.substring(i, i + len), style));
                 i += len;
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return out;
     }
@@ -152,7 +153,7 @@ public final class IndentAlign {
             if (!text.isEmpty()) {
                 out.append(Component.literal(text).withStyle(style));
             }
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return out;
     }

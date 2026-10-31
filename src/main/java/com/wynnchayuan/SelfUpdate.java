@@ -2,8 +2,16 @@ package com.wynnchayuan;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
+import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -17,6 +25,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -64,7 +75,7 @@ public final class SelfUpdate {
     }
 
     static void trace(String message) {
-        String line = java.time.LocalDateTime.now().withNano(0) + " " + message;
+        String line = LocalDateTime.now().withNano(0) + " " + message;
         ModLog.info("更新：" + message);
         Path dir = WynnChaYuan.configDir();
         if (dir == null) {
@@ -72,9 +83,9 @@ public final class SelfUpdate {
         }
         try {
             Path file = dir.resolve(LOG);
-            java.util.List<String> lines = Files.isRegularFile(file)
-                    ? new java.util.ArrayList<>(Files.readAllLines(file, StandardCharsets.UTF_8))
-                    : new java.util.ArrayList<>();
+            List<String> lines = Files.isRegularFile(file)
+                    ? new ArrayList<>(Files.readAllLines(file, StandardCharsets.UTF_8))
+                    : new ArrayList<>();
             lines.add(line);
             if (lines.size() > LOG_LINES) {
                 lines = lines.subList(lines.size() - LOG_LINES, lines.size());
@@ -102,9 +113,7 @@ public final class SelfUpdate {
 
     private static String originOf() {
         try {
-            return net.fabricmc.loader.api.FabricLoader.getInstance()
-                    .getModContainer(WynnChaYuan.MOD_ID)
-                    .map(mod -> {
+            return FabricLoader.getInstance().getModContainer(WynnChaYuan.MOD_ID).map(mod -> {
                         var origin = mod.getOrigin();
                         String paths;
                         try {
@@ -122,8 +131,7 @@ public final class SelfUpdate {
 
     static Path ownJar() {
         try {
-            return net.fabricmc.loader.api.FabricLoader.getInstance()
-                    .getModContainer(WynnChaYuan.MOD_ID)
+            return FabricLoader.getInstance().getModContainer(WynnChaYuan.MOD_ID)
                     .map(mod -> mod.getOrigin().getPaths())
                     .filter(paths -> paths.size() == 1)
                     .map(paths -> paths.get(0))
@@ -176,7 +184,7 @@ public final class SelfUpdate {
             trace("開始下載 " + assetUrl(version));
             download(assetUrl(version), part);
             if (!isRelease(part, version)) {
-                throw new java.io.IOException("下載回來的不是 " + version + " 的 jar");
+                throw new IOException("下載回來的不是 " + version + " 的 jar");
             }
             SafeFiles.moveAtomically(part, fresh);
             pending = new Pending(fresh, old);
@@ -190,7 +198,7 @@ public final class SelfUpdate {
             } catch (Exception failure) {
                 ErrorDebug.note("SelfUpdate#run", null, failure);
             }
-            com.wynnchayuan.translate.ErrorDebug.note("update.download", version, t);
+            ErrorDebug.note("update.download", version, t);
             state = State.FAILED;
         }
     }
@@ -208,11 +216,11 @@ public final class SelfUpdate {
             HttpResponse<InputStream> response =
                     client.send(request, HttpResponse.BodyHandlers.ofInputStream());
             if (response.statusCode() != 200) {
-                throw new java.io.IOException("HTTP " + response.statusCode());
+                throw new IOException("HTTP " + response.statusCode());
             }
             long total = response.headers().firstValueAsLong("Content-Length").orElse(-1L);
             if (total > MAX_BYTES) {
-                throw new java.io.IOException("檔案大得不合理：" + total);
+                throw new IOException("檔案大得不合理：" + total);
             }
             long done = 0;
             try (InputStream in = response.body();
@@ -224,7 +232,7 @@ public final class SelfUpdate {
                     out.write(buffer, 0, n);
                     done += n;
                     if (done > MAX_BYTES) {
-                        throw new java.io.IOException("檔案大得不合理");
+                        throw new IOException("檔案大得不合理");
                     }
                     if (total > 0) {
                         percent = (int) Math.min(99, done * 100 / total);
@@ -232,7 +240,7 @@ public final class SelfUpdate {
                 }
             }
             if (total > 0 && done != total) {
-                throw new java.io.IOException("只下載到 " + done + " / " + total);
+                throw new IOException("只下載到 " + done + " / " + total);
             }
         }
     }
@@ -314,7 +322,7 @@ public final class SelfUpdate {
 
     private static volatile boolean leftoverTold;
 
-    public static void tellLeftover(net.minecraft.client.Minecraft client) {
+    public static void tellLeftover(Minecraft client) {
         if (leftoverTold || client == null || client.player == null) {
             return;
         }
@@ -327,62 +335,60 @@ public final class SelfUpdate {
         if (file == null) {
             return;
         }
-        net.minecraft.network.chat.Component line = com.wynnchayuan.client.T.c(
-                "chat.update.leftover", file.getFileName().toString())
-                .withStyle(net.minecraft.ChatFormatting.YELLOW);
-        com.wynnchayuan.capture.OwnOutputs.note(line);
+        Component line = T.c("chat.update.leftover", file.getFileName().toString())
+                .withStyle(ChatFormatting.YELLOW);
+        OwnOutputs.note(line);
         client.player.displayClientMessage(line, false);
     }
 
-    public static void startFromChat(net.minecraft.client.Minecraft client) {
+    public static void startFromChat(Minecraft client) {
         if (!NetworkGate.online()) {
-            chat(client, com.wynnchayuan.client.T.c("chat.update.offline"));
+            chat(client, T.c("chat.update.offline"));
             return;
         }
         String latest = Releases.newer();
         if (latest == null) {
-            chat(client, com.wynnchayuan.client.T.c("chat.update.none"));
+            chat(client, T.c("chat.update.none"));
             return;
         }
         if (!available()) {
-            chat(client, com.wynnchayuan.client.T.c("chat.update.unavailable"));
+            chat(client, T.c("chat.update.unavailable"));
             return;
         }
         if (state == State.READY) {
-            chat(client, com.wynnchayuan.client.T.c("chat.update.ready", latest));
+            chat(client, T.c("chat.update.ready", latest));
             return;
         }
         start(latest);
         if (state == State.FAILED) {
-            chat(client, com.wynnchayuan.client.T.c("chat.update.failed"));
+            chat(client, T.c("chat.update.failed"));
             return;
         }
         announce = true;
-        chat(client, com.wynnchayuan.client.T.c("chat.update.started", latest));
+        chat(client, T.c("chat.update.started", latest));
     }
 
-    public static void announceProgress(net.minecraft.client.Minecraft client) {
+    public static void announceProgress(Minecraft client) {
         if (!announce || client == null || client.player == null) {
             return;
         }
         if (state == State.READY) {
             announce = false;
-            chat(client, com.wynnchayuan.client.T.c("chat.update.ready", target));
+            chat(client, T.c("chat.update.ready", target));
         } else if (state == State.FAILED) {
             announce = false;
-            chat(client, com.wynnchayuan.client.T.c("chat.update.failed"));
+            chat(client, T.c("chat.update.failed"));
         }
     }
 
     private static volatile boolean announce;
 
-    private static void chat(net.minecraft.client.Minecraft client,
-                             net.minecraft.network.chat.MutableComponent line) {
+    private static void chat(Minecraft client, MutableComponent line) {
         if (client == null || client.player == null) {
             return;
         }
-        net.minecraft.network.chat.Component shown = line.withStyle(net.minecraft.ChatFormatting.AQUA);
-        com.wynnchayuan.capture.OwnOutputs.note(shown);
+        Component shown = line.withStyle(ChatFormatting.AQUA);
+        OwnOutputs.note(shown);
         client.player.displayClientMessage(shown, false);
     }
 
@@ -393,7 +399,7 @@ public final class SelfUpdate {
         pending = null;
     }
 
-    static void copy(Path from, Path to) throws java.io.IOException {
+    static void copy(Path from, Path to) throws IOException {
         Files.createDirectories(to.getParent());
         Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
     }

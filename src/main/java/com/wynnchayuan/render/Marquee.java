@@ -1,7 +1,9 @@
 package com.wynnchayuan.render;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.ToIntFunction;
 
 final class Marquee {
 
@@ -49,7 +51,7 @@ final class Marquee {
 
     static final int SPEED = 40;
 
-    private static final Map<String, long[]> scrolls = new java.util.HashMap<>();
+    private static final Map<String, long[]> scrolls = new HashMap<>();
 
     private static final long FORGET_AFTER = 1000;
 
@@ -62,20 +64,19 @@ final class Marquee {
 
     static final String CHOICE_SAMPLE = "Do you remember anything fro";
 
-    static int choiceRoom(int was, java.util.function.ToIntFunction<String> measure) {
+    static int choiceRoom(int was, ToIntFunction<String> measure) {
         return Math.max(was, measure.applyAsInt(CHOICE_SAMPLE));
     }
 
     static int[] scroll(String key, String text, int room,
-                        java.util.function.ToIntFunction<String> measure, long now) {
+                        ToIntFunction<String> measure, long now) {
         if (measure.applyAsInt(text) <= room) {
             return new int[] {0, text.length()};
         }
         return window(text, room, measure, since(key, now));
     }
 
-    static int[] window(String row, int room, java.util.function.ToIntFunction<String> measure,
-                        long elapsed) {
+    static int[] window(String row, int room, ToIntFunction<String> measure, long elapsed) {
         int length = row.length();
         int total = measure.applyAsInt(row);
         if (total <= room || length == 0) {

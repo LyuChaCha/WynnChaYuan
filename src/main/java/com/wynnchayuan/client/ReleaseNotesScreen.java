@@ -1,6 +1,7 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.Releases;
+import com.wynnchayuan.SelfUpdate;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.NotesView;
 import com.wynnchayuan.client.ui.Surface;
@@ -19,7 +20,7 @@ public final class ReleaseNotesScreen extends CanvasScreen {
 
     public ReleaseNotesScreen(Screen parent) {
         super(T.c("notes.title"), parent);
-        com.wynnchayuan.SelfUpdate.noteScreenOpened();
+        SelfUpdate.noteScreenOpened();
         this.view = new NotesView(SHELL, new NotesView.Host() {
             @Override
             public List<String> versions() {
@@ -64,13 +65,13 @@ public final class ReleaseNotesScreen extends CanvasScreen {
 
             @Override
             public String updateLabel() {
-                if (!com.wynnchayuan.SelfUpdate.available()) {
+                if (!SelfUpdate.available()) {
                     return null;
                 }
-                return switch (com.wynnchayuan.SelfUpdate.state()) {
-                    case DOWNLOADING -> com.wynnchayuan.SelfUpdate.percent() < 0
+                return switch (SelfUpdate.state()) {
+                    case DOWNLOADING -> SelfUpdate.percent() < 0
                             ? T.s("notes.update.downloading")
-                            : T.s("notes.update.progress", com.wynnchayuan.SelfUpdate.percent() + "%");
+                            : T.s("notes.update.progress", SelfUpdate.percent() + "%");
                     case READY -> T.s("notes.update.ready");
                     case FAILED -> T.s("notes.update.failed");
                     default -> T.s("notes.update");
@@ -81,7 +82,7 @@ public final class ReleaseNotesScreen extends CanvasScreen {
             public void update() {
                 String latest = Releases.newer();
                 if (latest != null) {
-                    com.wynnchayuan.SelfUpdate.start(latest);
+                    SelfUpdate.start(latest);
                 }
             }
 

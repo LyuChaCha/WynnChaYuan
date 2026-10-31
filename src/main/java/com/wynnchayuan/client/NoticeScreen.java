@@ -3,6 +3,7 @@ package com.wynnchayuan.client;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.NoticeView;
 import com.wynnchayuan.client.ui.Surface;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 
 public final class NoticeScreen extends CanvasScreen {
@@ -38,7 +39,7 @@ public final class NoticeScreen extends CanvasScreen {
         if (!pending) {
             return;
         }
-        var mc = net.minecraft.client.Minecraft.getInstance();
+        var mc = Minecraft.getInstance();
         if (mc == null || mc.player == null || mc.level == null || mc.screen != null) {
             return;
         }

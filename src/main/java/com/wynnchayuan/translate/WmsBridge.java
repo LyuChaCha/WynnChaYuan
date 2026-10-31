@@ -1,6 +1,8 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.ThirdPartyField;
+import com.wynnchayuan.WynnChaYuan;
+import net.fabricmc.loader.api.FabricLoader;
 
 import java.util.HashSet;
 import java.util.Locale;
@@ -13,9 +15,9 @@ public final class WmsBridge {
     private WmsBridge() {}
 
     static Supplier<MarketSearch> source = () ->
-            com.wynnchayuan.WynnChaYuan.translations().market();
+            WynnChaYuan.translations().market();
     static BooleanSupplier enabled = () ->
-            com.wynnchayuan.WynnChaYuan.config().wynnMarketSearch();
+            WynnChaYuan.config().wynnMarketSearch();
 
     private static volatile Boolean installed;
 
@@ -24,7 +26,7 @@ public final class WmsBridge {
         if (known == null) {
             boolean found;
             try {
-                found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wms");
+                found = FabricLoader.getInstance().isModLoaded("wms");
             } catch (Throwable t) {
                 ErrorDebug.note("WmsBridge#installed", null, t);
                 found = false;

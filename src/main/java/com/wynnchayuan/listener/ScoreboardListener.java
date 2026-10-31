@@ -9,6 +9,7 @@ import com.wynnchayuan.render.WynntilsText;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
+import com.wynntils.core.components.Models;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.scoreboard.ScoreboardSegment;
 import com.wynntils.handlers.scoreboard.event.ScoreboardUpdatedEvent;
@@ -107,7 +108,7 @@ public final class ScoreboardListener {
             }
         }
         try {
-            names.addAll(com.wynntils.core.components.Models.Party.getPartyMembers());
+            names.addAll(Models.Party.getPartyMembers());
         } catch (Throwable t) {
             ErrorDebug.note("ScoreboardListener#memberNames", null, t);
         }

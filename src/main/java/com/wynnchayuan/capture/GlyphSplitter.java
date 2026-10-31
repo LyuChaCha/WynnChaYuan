@@ -9,6 +9,8 @@ import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public final class GlyphSplitter {
 
@@ -20,8 +22,7 @@ public final class GlyphSplitter {
 
     public static final String PLAYER_PLACEHOLDER = "{u}";
 
-    private static final java.util.regex.Pattern NUMBERS =
-            java.util.regex.Pattern.compile("\\d+(?:[.,]\\d+)*%?");
+    private static final Pattern NUMBERS = Pattern.compile("\\d+(?:[.,]\\d+)*%?");
 
     private static final Identifier DEFAULT_FONT = Identifier.withDefaultNamespace("default");
 
@@ -94,7 +95,7 @@ public final class GlyphSplitter {
         return s.isEmpty() ? s : NUMBERS.matcher(s).replaceAll(NUMBER_PLACEHOLDER);
     }
 
-    public static java.util.regex.Matcher numberMatcher(String s) {
+    public static Matcher numberMatcher(String s) {
         return NUMBERS.matcher(s);
     }
 
@@ -182,9 +183,9 @@ public final class GlyphSplitter {
         return false;
     }
 
-    public static final java.util.List<String> STATUS_WORDS = java.util.List.of("Distorted");
+    public static final List<String> STATUS_WORDS = List.of("Distorted");
 
-    private static final java.util.regex.Pattern STATUS_WORD = java.util.regex.Pattern.compile(
+    private static final Pattern STATUS_WORD = Pattern.compile(
             "\\b(?:" + String.join("|", STATUS_WORDS) + ")\\b");
 
     public static boolean hasWordBesidesStatus(String s) {

@@ -1,5 +1,8 @@
 package com.wynnchayuan.client.ui;
 
+import com.wynnchayuan.PanelGap;
+
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 public final class Preview {
@@ -102,7 +105,7 @@ public final class Preview {
         boolean replace = s.tooltipMode == 1 && !forcePanel;
         boolean panel = s.tooltipMode == 0 || forcePanel;
         if (forcePanel && s.tooltipMode != 0 && !s.panelOffNote.isEmpty()) {
-            java.util.List<String> note = Ui.wrap(c, s.panelOffNote, w - 16);
+            List<String> note = Ui.wrap(c, s.panelOffNote, w - 16);
             int ny = y + h - 6 - note.size() * 10;
             c.fill(x + 2, ny - 5, x + w - 2, y + h - 2, 0xC0101822);
             for (String line : note) {
@@ -137,7 +140,7 @@ public final class Preview {
             return;
         }
         int budget = Math.max(0, room - tipW - sideW);
-        int gap = panel ? com.wynnchayuan.PanelGap.preview(gapShown, budget) : 0;
+        int gap = panel ? PanelGap.preview(gapShown, budget) : 0;
         int total = tipW + (panel ? gap + sideW : 0);
         int left = x + (w - total) / 2;
         boolean leftSide = s.side == 2;

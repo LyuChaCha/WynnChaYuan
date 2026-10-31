@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.Broadcasts;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.PartStyle;
@@ -10,7 +11,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 final class LabelTranslator {
 
@@ -170,8 +177,7 @@ final class LabelTranslator {
         return out.toString();
     }
 
-    private static final java.util.regex.Pattern LABEL_COLOUR_TOKEN =
-            java.util.regex.Pattern.compile("\\{(?:c[^}]*|w\\d|/)}");
+    private static final Pattern LABEL_COLOUR_TOKEN = Pattern.compile("\\{(?:c[^}]*|w\\d|/)}");
 
     private record LabelRun(String text, Style style) {}
 
@@ -197,7 +203,7 @@ final class LabelTranslator {
                 }
                 LabelRun last = row.isEmpty() ? null : row.get(row.size() - 1);
                 if (last != null && (!LineTranslator.hasContent(text)
-                        || java.util.Objects.equals(last.style(), style))) {
+                        || Objects.equals(last.style(), style))) {
                     row.set(row.size() - 1, new LabelRun(last.text() + text, last.style()));
                 } else if (LineTranslator.hasContent(text)) {
                     row.add(new LabelRun(text, style));
@@ -209,7 +215,7 @@ final class LabelTranslator {
     }
 
     private static int distinctStyles(List<LabelRun> row) {
-        java.util.Set<Style> seen = new java.util.HashSet<>();
+        Set<Style> seen = new HashSet<>();
         for (LabelRun run : row) {
             seen.add(run.style());
         }
@@ -422,7 +428,7 @@ final class LabelTranslator {
         for (int i = 0; i < order.length; i++) {
             order[i] = i;
         }
-        java.util.Arrays.sort(order, java.util.Comparator.comparingInt(i -> regions.get(i)[0]));
+        Arrays.sort(order, Comparator.comparingInt(i -> regions.get(i)[0]));
         StringBuilder out = new StringBuilder(row.length() + 16);
         int at = 0;
         int current = 0;
@@ -509,7 +515,7 @@ final class LabelTranslator {
                 any = true;
                 continue;
             }
-            if (i >= status || !com.wynnchayuan.capture.GlyphSplitter.hasWordBesidesStatus(row)) {
+            if (i >= status || !GlyphSplitter.hasWordBesidesStatus(row)) {
                 out[i] = statusRow(row, store);
                 continue;
             }
@@ -533,7 +539,7 @@ final class LabelTranslator {
         if (row == null || !LineParts.of(row).template().equals(template)) {
             return null;
         }
-        com.wynnchayuan.capture.Broadcasts.Spans spans = store.nameFrames().find(row, template);
+        Broadcasts.Spans spans = store.nameFrames().find(row, template);
         if (spans == null) {
             return null;
         }
@@ -552,7 +558,7 @@ final class LabelTranslator {
 
     private static String statusRow(String row, TranslationStore store) {
         String out = row;
-        for (String word : com.wynnchayuan.capture.GlyphSplitter.STATUS_WORDS) {
+        for (String word : GlyphSplitter.STATUS_WORDS) {
             if (!out.contains(word)) {
                 continue;
             }
@@ -572,21 +578,20 @@ final class LabelTranslator {
         int bar = name + 1;
         if (bar + 1 >= rows.length || !MOB_NAME_ROW.matcher(rows[name]).matches()
                 || hasWord(rows[bar])
-                || !rows[bar].contains(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                || !rows[bar].contains(GlyphSplitter.GLYPH_PLACEHOLDER)) {
             return rows.length;
         }
         return bar + 1;
     }
 
-    private static final java.util.regex.Pattern MOB_NAME_ROW =
-            java.util.regex.Pattern.compile(".*\\S\\s+(?:\\{#\\}){2,}");
+    private static final Pattern MOB_NAME_ROW = Pattern.compile(".*\\S\\s+(?:\\{#\\}){2,}");
 
     static boolean trimsWholeRows(String template) {
         int nl = template.lastIndexOf(LineTranslator.NEWLINE);
         if (nl < 0) {
             return false;
         }
-        return TemplateLookup.trimEnd(template, 0, com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, true)
+        return TemplateLookup.trimEnd(template, 0, GlyphSplitter.GLYPH_PLACEHOLDER, true)
                 <= nl;
     }
 }

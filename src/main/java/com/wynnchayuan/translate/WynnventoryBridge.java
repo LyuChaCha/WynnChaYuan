@@ -1,6 +1,7 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.WynnChaYuan;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -11,6 +12,8 @@ import net.minecraft.util.FormattedCharSequence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 // Wynnventory 只附英文語言檔，所以包一層 Language
 public final class WynnventoryBridge {
@@ -31,7 +34,7 @@ public final class WynnventoryBridge {
         if (known == null) {
             boolean found;
             try {
-                found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wynnventory");
+                found = FabricLoader.getInstance().isModLoaded("wynnventory");
             } catch (Throwable t) {
                 ErrorDebug.note("WynnventoryBridge#installed", null, t);
                 found = false;
@@ -169,10 +172,9 @@ public final class WynnventoryBridge {
         }
     }
 
-    private static final java.util.regex.Pattern TOAST_FOUND = java.util.regex.Pattern.compile(
+    private static final Pattern TOAST_FOUND = Pattern.compile(
             "^((?:\u00a7.)*)(.+?)((?:\u00a7.)*) in (.+)$");
-    private static final java.util.regex.Pattern TOAST_MORE = java.util.regex.Pattern.compile(
-            "^(\\d+) more\\.\\.\\.$");
+    private static final Pattern TOAST_MORE = Pattern.compile("^(\\d+) more\\.\\.\\.$");
 
     public static Component toast(Component description) {
         if (!active || description == null) {
@@ -192,12 +194,12 @@ public final class WynnventoryBridge {
         if (store == null || line == null) {
             return null;
         }
-        java.util.regex.Matcher more = TOAST_MORE.matcher(line);
+        Matcher more = TOAST_MORE.matcher(line);
         if (more.matches()) {
             String frame = text(store, "%s more...");
             return frame == null ? null : frame.replace("%s", more.group(1));
         }
-        java.util.regex.Matcher found = TOAST_FOUND.matcher(line);
+        Matcher found = TOAST_FOUND.matcher(line);
         if (!found.matches()) {
             return null;
         }

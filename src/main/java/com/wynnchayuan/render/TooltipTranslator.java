@@ -1,17 +1,32 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.capture.CardDump;
+import com.wynnchayuan.capture.GlyphSplitter;
+import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.capture.OverflowAudit;
+import com.wynnchayuan.capture.SelfNames;
 import com.wynnchayuan.translate.BlockLayout;
 import com.wynnchayuan.translate.ErrorDebug;
+import com.wynnchayuan.translate.GuessListRow;
+import com.wynnchayuan.translate.IndentAlign;
+import com.wynnchayuan.translate.LayoutDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.LookupScope;
+import com.wynnchayuan.translate.LootrunNames;
+import com.wynnchayuan.translate.NameWrap;
+import com.wynnchayuan.translate.PageNames;
+import com.wynnchayuan.translate.TooltipWiden;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 final class TooltipTranslator {
 
@@ -54,7 +69,7 @@ final class TooltipTranslator {
         if (lines.isEmpty()) {
             return lines;
         }
-        return com.wynnchayuan.translate.PageNames.titles(tooltip, lines, store.pageNameMode());
+        return PageNames.titles(tooltip, lines, store.pageNameMode());
     }
 
     static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
@@ -72,14 +87,13 @@ final class TooltipTranslator {
         List<StyledText> styled = new ArrayList<>(n);
         for (Component line : tooltip) {
             styled.add(StyledText.fromComponent(line));
-            com.wynnchayuan.capture.SelfNames.learn(line.getString());
+            SelfNames.learn(line.getString());
         }
 
-        java.util.IdentityHashMap<StyledText, com.wynnchayuan.capture.LineParts> parts =
-                new java.util.IdentityHashMap<>();
-        java.util.function.Function<StyledText, com.wynnchayuan.capture.LineParts> partsOf =
-                reuseParts ? line -> parts.computeIfAbsent(line, com.wynnchayuan.capture.LineParts::of)
-                           : com.wynnchayuan.capture.LineParts::of;
+        IdentityHashMap<StyledText, LineParts> parts = new IdentityHashMap<>();
+        Function<StyledText, LineParts> partsOf =
+                reuseParts ? line -> parts.computeIfAbsent(line, LineParts::of)
+                           : LineParts::of;
 
         boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
 
@@ -143,7 +157,7 @@ final class TooltipTranslator {
         boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
                 partsOf.apply(styled.get(0)).template()) != null;
         boolean lootrunTitle = n > 0 && TooltipShape.isLootrunCard(styled)
-                && com.wynnchayuan.translate.LootrunNames.isName(TooltipShape.bareName(
+                && LootrunNames.isName(TooltipShape.bareName(
                         partsOf.apply(styled.get(0)).template()));
         try (LookupScope holdScope = LookupScope.holdAppendedOriginal(false);
              LookupScope nameScope = LookupScope.nameLine(false);
@@ -152,8 +166,8 @@ final class TooltipTranslator {
                 holdScope.set(i >= 2);
                 nameScope.set(itemRows && i < 2);
                 titleScope.set(lootrunTitle && i == 0);
-                com.wynnchayuan.translate.GuessListRow.Row listRow = abilityPanel ? null
-                        : com.wynnchayuan.translate.GuessListRow.of(styled.get(i), store);
+                GuessListRow.Row listRow = abilityPanel ? null
+                        : GuessListRow.of(styled.get(i), store);
                 if (listRow != null) {
                     nameList[i] = true;
                     spans.add(new int[] {i, i + 1, out.size(), out.size() + 1});
@@ -201,9 +215,9 @@ final class TooltipTranslator {
                 }
                 if (paragraphStart) {
                     try {
-                        String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
+                        String para = CardDump.paragraphKey(styled, i);
                         if (para != null) {
-                            com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
+                            CardDump.note(tooltip, styled, para, store);
                         }
                     } catch (Throwable failure) {
                         ErrorDebug.note("TooltipTranslator#translateLines", null, failure);
@@ -228,13 +242,13 @@ final class TooltipTranslator {
         }
         try {
             int[] rowOf = new int[n];
-            java.util.Arrays.fill(rowOf, -1);
+            Arrays.fill(rowOf, -1);
             for (int[] span : spans) {
                 if (span[1] - span[0] == 1 && span[3] - span[2] == 1) {
                     rowOf[span[0]] = span[2];
                 }
             }
-            com.wynnchayuan.translate.IndentAlign.apply(
+            IndentAlign.apply(
                     styled, out, rowOf, hit, centered, abilityPanel, TooltipTranslator::measure);
         } catch (RuntimeException e) {
             ErrorDebug.note("TooltipTranslator#translateLines", null, e);
@@ -245,7 +259,7 @@ final class TooltipTranslator {
                 plain.add("");
                 continue;
             }
-            String text = com.wynnchayuan.capture.GlyphSplitter
+            String text = GlyphSplitter
                     .stripGlyphChars(TooltipShape.visibleText(styled.get(k))).strip();
             plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
@@ -263,15 +277,13 @@ final class TooltipTranslator {
             TooltipDebug.dumpPartial(tooltip, out, hit);
         }
         out.replaceAll(LineTranslator::unslantAll);
-        com.wynnchayuan.translate.NameWrap.Split split =
-                com.wynnchayuan.translate.NameWrap.split(
+        NameWrap.Split split = NameWrap.split(
                         tooltip, out, centered, store, TooltipTranslator::measure);
-        com.wynnchayuan.translate.LayoutDebug.drawn(
-                "\u7ffb\u5b8c", tooltip, out, TooltipTranslator::measure);
-        List<Component> fitted = com.wynnchayuan.translate.TooltipWiden.fit(
+        LayoutDebug.drawn("\u7ffb\u5b8c", tooltip, out, TooltipTranslator::measure);
+        List<Component> fitted = TooltipWiden.fit(
                 split.original(), split.translated(), split.centered(),
                 leftAligned, TooltipTranslator::measure);
-        com.wynnchayuan.translate.LayoutDebug.drawn(
+        LayoutDebug.drawn(
                 "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipTranslator::measure);
         noteWidened(split.original(), fitted);
         if (abilityPanel) {
@@ -299,26 +311,23 @@ final class TooltipTranslator {
             if (at < 0 || frame <= 0) {
                 return;
             }
-            if (widest <= frame && com.wynnchayuan.capture.OverflowAudit.size() == 0) {
+            if (widest <= frame && OverflowAudit.size() == 0) {
                 return;
             }
-            String src = com.wynnchayuan.capture.LineParts.of(
-                    com.wynntils.core.text.StyledText.fromComponent(original.get(at))).template();
-            String dst = com.wynnchayuan.capture.LineParts.of(
-                    com.wynntils.core.text.StyledText.fromComponent(fitted.get(at))).template();
+            String src = LineParts.of(StyledText.fromComponent(original.get(at))).template();
+            String dst = LineParts.of(StyledText.fromComponent(fitted.get(at))).template();
             if (src.equals(dst)) {
                 return;
             }
-            com.wynnchayuan.capture.OverflowAudit.note(
-                    com.wynnchayuan.capture.OverflowAudit.TOOLTIP, src, dst, frame, widest,
-                    com.wynnchayuan.capture.OverflowAudit.PX_UNIT);
+            OverflowAudit.note(OverflowAudit.TOOLTIP, src, dst, frame, widest,
+                    OverflowAudit.PX_UNIT);
         } catch (Throwable t) {
             ErrorDebug.note("TooltipTranslator#noteWidened", null, t);
         }
     }
 
     private static int measure(Component line) {
-        return com.wynnchayuan.translate.LineTranslator.width(line);
+        return LineTranslator.width(line);
     }
 
     private static boolean anyMissed(List<StyledText> styled, boolean[] hit,
@@ -327,8 +336,7 @@ final class TooltipTranslator {
             if (hit[k]) {
                 continue;
             }
-            String template = com.wynnchayuan.capture.LineParts
-                    .of(styled.get(k)).template();
+            String template = LineParts.of(styled.get(k)).template();
             if (!template.isBlank() && store.hasTranslation(template)) {
                 return true;
             }
@@ -343,8 +351,7 @@ final class TooltipTranslator {
             return translated.isEmpty() ? List.of() : translated;
         } catch (RuntimeException e) {
             Component first = tooltip == null || tooltip.isEmpty() ? null : tooltip.get(0);
-            com.wynnchayuan.translate.ErrorDebug.note("tooltip.inPlace",
-                    first == null ? null : first.getString(), e);
+            ErrorDebug.note("tooltip.inPlace", first == null ? null : first.getString(), e);
             return List.of();
         }
     }

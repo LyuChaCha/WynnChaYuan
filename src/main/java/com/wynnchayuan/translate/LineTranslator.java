@@ -2,22 +2,25 @@ package com.wynnchayuan.translate;
 
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
-import net.minecraft.client.Minecraft;
+import com.wynnchayuan.render.PairedFont;
+import com.wynnchayuan.translate.ColumnAligner.Piece;
 import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
-import com.wynnchayuan.translate.ColumnAligner.Piece;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.function.ToIntFunction;
+import java.util.regex.Pattern;
 
 public final class LineTranslator {
 
@@ -67,7 +70,7 @@ public final class LineTranslator {
     }
 
     private static ClickEvent soleClick(Component line) {
-        java.util.List<ClickEvent> found = new java.util.ArrayList<>();
+        List<ClickEvent> found = new ArrayList<>();
         line.visit((style, text) -> {
             ClickEvent click = style.getClickEvent();
             if (click != null && !found.contains(click)) {
@@ -99,17 +102,17 @@ public final class LineTranslator {
         MutableComponent out = Component.empty();
         line.visit((style, text) -> {
             if (text.isEmpty()) {
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
             if (!seenText[0] && text.isBlank() && iconFont(style)) {
                 dropped[0] = true;
-                return java.util.Optional.empty();
+                return Optional.empty();
             }
             if (hasLetterOrDigit(text) && !SpaceOffset.isSpaceFont(style) && !iconFont(style)) {
                 seenText[0] = true;
             }
             out.append(Component.literal(text).withStyle(style));
-            return java.util.Optional.empty();
+            return Optional.empty();
         }, Style.EMPTY);
         return dropped[0] ? out : line;
     }
@@ -126,7 +129,7 @@ public final class LineTranslator {
     }
 
     private static boolean iconFont(Style style) {
-        if (!(style.getFont() instanceof net.minecraft.network.chat.FontDescription.Resource r)
+        if (!(style.getFont() instanceof FontDescription.Resource r)
                 || r.id() == null) {
             return false;
         }
@@ -190,7 +193,7 @@ public final class LineTranslator {
             any = true;
             Component orig = DisplayStyles.literal(body, style);
             pieces.add(Piece.translated(
-                    com.wynnchayuan.render.PairedFont.absolutelyPositioned(style)
+                    PairedFont.absolutelyPositioned(style)
                             ? TemplateLookup.padSlot(replaced, orig, style) : replaced,
                     orig));
             if (!tail.isEmpty()) {
@@ -258,8 +261,7 @@ public final class LineTranslator {
         return false;
     }
 
-    private static final java.util.regex.Pattern VALUE =
-            java.util.regex.Pattern.compile(
+    private static final Pattern VALUE = Pattern.compile(
                     "[+-]?\\d[\\d,.]*%?(?:\\s+to\\s+[+-]?\\d[\\d,.]*%?)?");
 
     public static Component translateChunk(String raw, Style style,
@@ -449,7 +451,7 @@ public final class LineTranslator {
     }
 
     public static List<Component> translateBlock(List<StyledText> run, TranslationStore store, boolean[] centered,
-                                                 java.util.function.Function<StyledText, LineParts> partsOf) {
+                                                 Function<StyledText, LineParts> partsOf) {
         return BlockTranslator.translateBlock(run, store, centered, partsOf);
     }
 
