@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -29,6 +30,10 @@ public final class LookAtTranslator {
     private static final double LINE_HEIGHT = 0.28;
 
     private static final Map<Entity, StyledText> LABELS = new WeakHashMap<>();
+
+    private static final Map<StyledText, Component> FLOATING = WynntilsText.lru(64);
+
+    private static long floatingAge = -1;
 
     private static volatile Component lastShown = null;
     private static volatile long lastSeen = 0;
@@ -124,6 +129,7 @@ public final class LookAtTranslator {
 
     public static void clear() {
         LABELS.clear();
+        FLOATING.clear();
         lastShown = null;
         lastSource = null;
         lastTemplate = null;
@@ -152,7 +158,7 @@ public final class LookAtTranslator {
         Entity aimed = findAimedLabel(mc);
         StyledText target = aimed == null ? null : LABELS.get(aimed);
         if (target != null) {
-            Component translated = LineTranslator.translateFloating(target, WynnChaYuan.translations());
+            Component translated = floating(target);
             if (translated == null) {
                 noteOnce("nametag.noMatch");
                 if (lastShown != null && (aimed == lastSource || sameContent(target))) {
@@ -177,8 +183,7 @@ public final class LookAtTranslator {
                     continue;
                 }
                 StyledText label = LABELS.get(other);
-                Component near = label == null ? null
-                        : LineTranslator.translateFloating(label, WynnChaYuan.translations());
+                Component near = label == null ? null : floating(label);
                 if (near != null) {
                     row.add(near);
                 }
@@ -199,6 +204,20 @@ public final class LookAtTranslator {
                 drawRow(graphics, mc, List.of(lastShown), alpha);
             }
         }
+    }
+
+    private static Component floating(StyledText label) {
+        TranslationStore store = WynnChaYuan.translations();
+        if (floatingAge != store.cacheAge()) {
+            FLOATING.clear();
+            floatingAge = store.cacheAge();
+        }
+        Component known = FLOATING.get(label);
+        if (known == null && !FLOATING.containsKey(label)) {
+            known = LineTranslator.translateFloating(label, store);
+            FLOATING.put(label, known);
+        }
+        return known;
     }
 
     private static boolean blocked(Minecraft mc, Vec3 eye, Vec3 head) {

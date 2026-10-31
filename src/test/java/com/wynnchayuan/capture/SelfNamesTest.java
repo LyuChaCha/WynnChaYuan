@@ -3,6 +3,7 @@ package com.wynnchayuan.capture;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public final class SelfNamesTest {
@@ -70,6 +71,26 @@ public final class SelfNamesTest {
         report("★ 常用字當不了名字", !SelfNames.usable("what")
                 && !SelfNames.usable("They") && !SelfNames.usable("the"));
         report("正常的名字照收", SelfNames.usable("Arcla") && SelfNames.usable("Watari"));
+
+        Thread guesses = new Thread(() -> {
+            for (int i = 0; i < 2000; i++) {
+                SelfNames.propose("Guess" + i, "test");
+            }
+        });
+        guesses.start();
+        boolean clean = true;
+        try {
+            while (guesses.isAlive()) {
+                SelfNames.find("Hey, Nobody Here!");
+                SelfNames.describe();
+            }
+            guesses.join();
+        } catch (ConcurrentModificationException | InterruptedException e) {
+            clean = false;
+        }
+        report("★ 別的執行緒一邊學名字，這邊查表不出事", clean);
+        report("★ 學來的名字有上限（實際 " + SelfNames.all().size() + "）",
+                SelfNames.all().size() <= 256);
 
         System.out.println(failures == 0
                 ? "暱稱：全部通過" : "暱稱：" + failures + " 項失敗");

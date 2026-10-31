@@ -25,6 +25,11 @@ public final class TranslationStore {
         return generation;
     }
 
+    public long cacheAge() {
+        return ((long) generation << 3) | (translateNames ? 1 : 0) | (namesWithOriginal ? 2 : 0)
+                | (peekPlainNames ? 4 : 0);
+    }
+
     private volatile int generation;
 
     private volatile boolean peekPlainNames = false;

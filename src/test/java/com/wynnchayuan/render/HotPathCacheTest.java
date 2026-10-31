@@ -52,6 +52,7 @@ public final class HotPathCacheTest {
         tooltips(store);
         tracker(config, store, captured);
         nameplates(config, store, captured);
+        nameSetting(config, store);
 
         System.out.println(failures == 0 ? "\n算繪端加速：全部通過"
                 : "\n算繪端加速：" + failures + " 項失敗");
@@ -266,6 +267,33 @@ public final class HotPathCacheTest {
         int[] seen = seen(captured, GlyphSplitter.toTemplate(english[0]));
         report("★ 沒譯文的追蹤欄行收進語料，而且只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
                 seen[0] == 1 && seen[1] == 1);
+    }
+
+    private static void nameSetting(CollectorConfig config, TranslationStore store) throws Exception {
+        int gearNames = 0;
+        boolean followed = true;
+        for (var e : JsonParser.parseString(Files.readString(
+                ROOT.resolve(Languages.DEFAULT).resolve("gear-weapon.json"), StandardCharsets.UTF_8))
+                .getAsJsonObject().getAsJsonObject("entries").entrySet()) {
+            var entry = e.getValue().getAsJsonObject();
+            String name = entry.get("src").getAsString();
+            if (!"name".equals(entry.get("role").getAsString()) || name.contains("{")
+                    || gearNames >= 50) {
+                continue;
+            }
+            Component plate = Component.literal(name);
+            String on = WynntilsNames.entityName(plate, config, store).getString();
+            store.setTranslateNames(false);
+            String off = WynntilsNames.entityName(plate, config, store).getString();
+            store.setTranslateNames(true);
+            if (!on.equals(name)) {
+                gearNames++;
+                followed &= off.equals(name)
+                        && WynntilsNames.entityName(plate, config, store).getString().equals(on);
+            }
+        }
+        report("★ 切換物品名翻譯，名牌馬上跟著變（" + gearNames + " 個裝備名）",
+                gearNames > 0 && followed);
     }
 
     private static void nameplates(CollectorConfig config, TranslationStore store,

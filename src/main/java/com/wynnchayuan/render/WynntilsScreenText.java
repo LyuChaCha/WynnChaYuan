@@ -104,9 +104,7 @@ final class WynntilsScreenText {
         }
         StyledText out = hit == null ? null : StyledText.fromComponent(hit);
         synchronized (SCREEN_CACHE) {
-            SCREEN_CACHE.put(text, new Cached(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), store.pageNameMode(), content, out));
+            SCREEN_CACHE.put(text, new Cached(store.cacheAge(), store.pageNameMode(), content, out));
         }
         return out == null ? text : out;
     }
@@ -139,16 +137,10 @@ final class WynntilsScreenText {
 
     private static final int SCREEN_CACHE_LIMIT = 512;
 
-    record Cached(int generation, boolean namesWithOriginal,
-                          boolean translateNames, boolean peekPlain,
-                          CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
+    record Cached(long age, CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
 
         boolean fresh(TranslationStore store) {
-            return generation == store.generation()
-                    && namesWithOriginal == store.namesWithOriginal()
-                    && translateNames == store.translatesNames()
-                    && peekPlain == store.peeksPlainNames()
-                    && pageNames == store.pageNameMode();
+            return age == store.cacheAge() && pageNames == store.pageNameMode();
         }
     }
 

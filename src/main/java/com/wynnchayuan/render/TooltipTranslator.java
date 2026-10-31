@@ -28,9 +28,7 @@ final class TooltipTranslator {
                 }
             };
 
-    private record CachedLines(int generation, boolean namesWithOriginal,
-                               boolean translateNames, boolean peekPlain,
-                               List<Component> lines) {}
+    private record CachedLines(long age, List<Component> lines) {}
 
     static List<Component> translateLinesCached(List<Component> tooltip,
                                                 TranslationStore store) {
@@ -40,18 +38,13 @@ final class TooltipTranslator {
         List<Component> key = List.copyOf(tooltip);
         synchronized (LINES_CACHE) {
             CachedLines hit = LINES_CACHE.get(key);
-            if (hit != null && hit.generation() == store.generation()
-                    && hit.namesWithOriginal() == store.namesWithOriginal()
-                    && hit.translateNames() == store.translatesNames()
-                    && hit.peekPlain() == store.peeksPlainNames()) {
+            if (hit != null && hit.age() == store.cacheAge()) {
                 return pageTitle(key, new ArrayList<>(hit.lines()), store);
             }
         }
         List<Component> out = List.copyOf(translateLines(tooltip, store));
         synchronized (LINES_CACHE) {
-            LINES_CACHE.put(key, new CachedLines(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), out));
+            LINES_CACHE.put(key, new CachedLines(store.cacheAge(), out));
         }
         return pageTitle(key, new ArrayList<>(out), store);
     }

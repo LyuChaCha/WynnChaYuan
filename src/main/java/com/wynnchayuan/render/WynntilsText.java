@@ -63,10 +63,8 @@ public final class WynntilsText {
         }
         StyledText shown = line(line, store);
         synchronized (TRACKER_CACHE) {
-            TRACKER_CACHE.put(line, new WynntilsScreenText.Cached(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(),
-                    store.peeksPlainNames(), store.pageNameMode(), false,
-                    shown == line ? null : shown));
+            TRACKER_CACHE.put(line, new WynntilsScreenText.Cached(store.cacheAge(),
+                    store.pageNameMode(), false, shown == line ? null : shown));
         }
         return shown;
     }
@@ -196,9 +194,9 @@ public final class WynntilsText {
             return text;
         }
         synchronized (OBJECTIVES) {
-            if (objectiveAge != store.generation()) {
+            if (objectiveAge != store.cacheAge()) {
                 OBJECTIVES.clear();
-                objectiveAge = store.generation();
+                objectiveAge = store.cacheAge();
             }
             String hit = OBJECTIVES.get(text);
             if (hit == null) {
@@ -214,7 +212,7 @@ public final class WynntilsText {
     }
 
     private static final java.util.Map<String, String> OBJECTIVES = new java.util.HashMap<>();
-    private static int objectiveAge = -1;
+    private static long objectiveAge = -1;
 
     public static String marker(String text) {
         try {
@@ -231,9 +229,9 @@ public final class WynntilsText {
             return text;
         }
         synchronized (MARKERS) {
-            if (markerAge != store.generation()) {
+            if (markerAge != store.cacheAge()) {
                 MARKERS.clear();
-                markerAge = store.generation();
+                markerAge = store.cacheAge();
             }
             String hit = MARKERS.get(text);
             if (hit == null) {
@@ -249,7 +247,7 @@ public final class WynntilsText {
     }
 
     private static final java.util.Map<String, String> MARKERS = new java.util.HashMap<>();
-    private static int markerAge = -1;
+    private static long markerAge = -1;
 
     public static net.minecraft.network.chat.Component heldItemName(
             net.minecraft.network.chat.Component name) {
