@@ -24,14 +24,7 @@ public final class WmsBridge {
     public static boolean installed() {
         Boolean known = installed;
         if (known == null) {
-            boolean found;
-            try {
-                found = FabricLoader.getInstance().isModLoaded("wms");
-            } catch (Throwable t) {
-                ErrorDebug.note("WmsBridge#installed", null, t);
-                found = false;
-            }
-            installed = known = found;
+            installed = known = FabricLoader.getInstance().isModLoaded("wms");
         }
         return known;
     }

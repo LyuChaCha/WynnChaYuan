@@ -380,65 +380,52 @@ public final class ActionBarListener {
     }
 
     private static void leftovers(StyledText line, Component hit) {
-        try {
-            if (!WynnChaYuan.config().collect() || hit == null) {
-                return;
+        if (!WynnChaYuan.config().collect() || hit == null) {
+            return;
+        }
+        String after = hit.getString();
+        for (StyledTextPart part : line) {
+            if (GlyphSplitter.isGlyphPart(part)) {
+                continue;
             }
-            String after = hit.getString();
-            for (StyledTextPart part : line) {
-                if (GlyphSplitter.isGlyphPart(part)) {
-                    continue;
-                }
-                String raw = part.getString(
-                        null, StyleType.NONE);
-                if (raw == null || raw.strip().length() < MIN_LEFTOVER
-                        || !after.contains(raw)) {
-                    continue;
-                }
-                collect(raw);
+            String raw = part.getString(
+                    null, StyleType.NONE);
+            if (raw == null || raw.strip().length() < MIN_LEFTOVER
+                    || !after.contains(raw)) {
+                continue;
             }
-        } catch (Throwable t) {
-            ErrorDebug.note("ActionBarListener#leftovers", null, t);
+            collect(raw);
         }
     }
 
     private static final int MIN_LEFTOVER = 6;
 
     private static void collect(String chunk) {
-        try {
-            if (!WynnChaYuan.config().collect() || chunk == null || chunk.isBlank()) {
-                return;
-            }
-            String template = GlyphSplitter.toTemplate(StyledText.fromString(chunk.strip()));
-            if (template.isBlank()
-                    || !GlyphSplitter.hasLetter(template)
-                    || PlayerDataFilter.carriesPlayerData(template)
-                    || PlayerDataFilter.looksPlayerNamed(template)) {
-                return;
-            }
-            WynnChaYuan.store().record(template, "name", "actionbar", "actionbar/column");
-        } catch (Throwable t) {
-            ErrorDebug.note("ActionBarListener#collect", null, t);
+        if (!WynnChaYuan.config().collect() || chunk == null || chunk.isBlank()) {
+            return;
         }
+        String template = GlyphSplitter.toTemplate(StyledText.fromString(chunk.strip()));
+        if (template.isBlank()
+                || !GlyphSplitter.hasLetter(template)
+                || PlayerDataFilter.carriesPlayerData(template)
+                || PlayerDataFilter.looksPlayerNamed(template)) {
+            return;
+        }
+        WynnChaYuan.store().record(template, "name", "actionbar", "actionbar/column");
     }
 
     private static int owed(String chunk,
                             Style style, Component swapped) {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.font == null) {
-                return 0;
-            }
-            int was = mc.font.width(literal(chunk, style));
-            int now = mc.font.width(swapped);
-            if (was <= 0 || now <= 0) {
-                return 0;
-            }
-            return was - now;
-        } catch (Throwable t) {
-            ErrorDebug.note("ActionBarListener#owed", null, t);
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.font == null) {
             return 0;
         }
+        int was = mc.font.width(literal(chunk, style));
+        int now = mc.font.width(swapped);
+        if (was <= 0 || now <= 0) {
+            return 0;
+        }
+        return was - now;
     }
 
     // bottom_middle 的 ascent 是 -48，shift_y = 7 − ascent = 55

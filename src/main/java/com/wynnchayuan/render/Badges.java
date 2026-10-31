@@ -4,7 +4,6 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
-import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -225,46 +224,31 @@ public final class Badges {
     }
 
     public static String selfName() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            return mc == null ? null : mc.getUser().getName();
-        } catch (Throwable t) {
-            ErrorDebug.note("Badges#selfName", null, t);
-            return null;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null ? null : mc.getUser().getName();
     }
 
     private static UUID uuidOf(int entityId) {
         if (entityId < 0) {
             return null;
         }
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            Entity entity = mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
-            return entity instanceof Player player
-                    ? player.getUUID() : null;
-        } catch (Throwable t) {
-            ErrorDebug.note("Badges#uuidOf", null, t);
-            return null;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        Entity entity = mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
+        return entity instanceof Player player
+                ? player.getUUID() : null;
     }
 
     private static String accountName(int entityId) {
         if (entityId < 0) {
             return null;
         }
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.level == null) {
-                return null;
-            }
-            Entity entity = mc.level.getEntity(entityId);
-            return entity instanceof Player player
-                    ? player.getGameProfile().name() : null;
-        } catch (Throwable t) {
-            ErrorDebug.note("Badges#accountName", null, t);
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.level == null) {
             return null;
         }
+        Entity entity = mc.level.getEntity(entityId);
+        return entity instanceof Player player
+                ? player.getGameProfile().name() : null;
     }
 
     private static int hsv(float h, float s, float v) {

@@ -1,5 +1,8 @@
 package com.wynnchayuan.listener;
 
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -28,6 +31,14 @@ public final class ActionBarColumnTest {
     }
 
     public static void main(String[] args) throws Exception {
+        Path tmp = Files.createTempDirectory("wcy-column");
+        for (var field : java.util.Map.of(
+                "config", (Object) new CollectorConfig(tmp.resolve("config.json")),
+                "store", new CaptureStore(tmp.resolve("captured.json"))).entrySet()) {
+            java.lang.reflect.Field held = WynnChaYuan.class.getDeclaredField(field.getKey());
+            held.setAccessible(true);
+            held.set(null, field.getValue());
+        }
         Path dir = Files.createTempDirectory("wynnchayuan-actionbar");
         com.google.gson.JsonObject root = new com.google.gson.JsonObject();
         root.addProperty("Left-Click to play", "左鍵點擊遊玩");

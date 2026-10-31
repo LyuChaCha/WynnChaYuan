@@ -29,11 +29,7 @@ public final class SearchMatch {
             return;
         }
         noted = true;
-        try {
-            WynnChaYuan.store().noteEvent("search.hook");
-        } catch (Throwable failure) {
-            ErrorDebug.note("SearchMatch#noteHook", null, failure);
-        }
+        WynnChaYuan.store().noteEvent("search.hook");
     }
 
     static boolean alsoMatches(String content, String query,

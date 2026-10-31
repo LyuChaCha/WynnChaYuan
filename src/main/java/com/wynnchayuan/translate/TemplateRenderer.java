@@ -23,27 +23,23 @@ final class TemplateRenderer {
     }
 
     private static void noteUnapplied(List<LineParts> parts, TranslationStore store) {
-        try {
-            if (store == null || parts.isEmpty()) {
-                return;
+        if (store == null || parts.isEmpty()) {
+            return;
+        }
+        StringBuilder src = new StringBuilder();
+        for (LineParts part : parts) {
+            if (src.length() > 0) {
+                src.append(LineTranslator.NEWLINE);
             }
-            StringBuilder src = new StringBuilder();
-            for (LineParts part : parts) {
-                if (src.length() > 0) {
-                    src.append(LineTranslator.NEWLINE);
-                }
-                src.append(part.template());
-            }
-            String key = src.toString().strip();
-            if (UnappliedAudit.asked(key)) {
-                return;
-            }
-            String corpus = store.lookup(key);
-            if (corpus != null && !corpus.isBlank()) {
-                UnappliedAudit.note(key, corpus);
-            }
-        } catch (Throwable t) {
-            ErrorDebug.note("TemplateRenderer#noteUnapplied", null, t);
+            src.append(part.template());
+        }
+        String key = src.toString().strip();
+        if (UnappliedAudit.asked(key)) {
+            return;
+        }
+        String corpus = store.lookup(key);
+        if (corpus != null && !corpus.isBlank()) {
+            UnappliedAudit.note(key, corpus);
         }
     }
 

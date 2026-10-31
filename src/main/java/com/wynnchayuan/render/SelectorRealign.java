@@ -1,6 +1,5 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -164,12 +163,7 @@ public final class SelectorRealign {
     }
 
     private static int advance(Component piece) {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            return mc == null || mc.font == null ? Integer.MIN_VALUE : mc.font.width(piece);
-        } catch (Throwable t) {
-            ErrorDebug.note("SelectorRealign#advance", null, t);
-            return Integer.MIN_VALUE;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null || mc.font == null ? Integer.MIN_VALUE : mc.font.width(piece);
     }
 }

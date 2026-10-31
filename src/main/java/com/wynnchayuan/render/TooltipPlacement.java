@@ -3,7 +3,6 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -114,28 +113,23 @@ final class TooltipPlacement {
 
     static boolean wouldPush(List<Component> tooltip, int mouseX, int mouseY,
                              TranslationStore store) {
-        try {
-            if (WynnChaYuan.config() == null
-                    || WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED
-                    || tooltip == null || tooltip.isEmpty()) {
-                return false;
-            }
-            List<Component> stripped = ThirdPartySections.strip(tooltip);
-            List<Component> lines = TooltipTranslator.translateLinesCached(stripped, store);
-            if (lines.isEmpty()) {
-                return false;
-            }
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.getWindow() == null) {
-                return false;
-            }
-            return place(mc, lines, stripped, mouseX, mouseY,
-                    mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
-                    PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
-        } catch (Throwable t) {
-            ErrorDebug.note("TooltipPlacement#wouldPush", null, t);
+        if (WynnChaYuan.config() == null
+                || WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED
+                || tooltip == null || tooltip.isEmpty()) {
             return false;
         }
+        List<Component> stripped = ThirdPartySections.strip(tooltip);
+        List<Component> lines = TooltipTranslator.translateLinesCached(stripped, store);
+        if (lines.isEmpty()) {
+            return false;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.getWindow() == null) {
+            return false;
+        }
+        return place(mc, lines, stripped, mouseX, mouseY,
+                mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(),
+                PanelGap.layout(WynnChaYuan.config().panelGap())).overlaps();
     }
 
     static void drawAt(GuiGraphics graphics, Minecraft mc,

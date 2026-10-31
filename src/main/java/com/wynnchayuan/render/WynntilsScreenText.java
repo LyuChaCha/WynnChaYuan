@@ -117,19 +117,14 @@ final class WynntilsScreenText {
     static BooleanSupplier contentScreen = WynntilsScreenText::onContentScreen;
 
     private static boolean onContentScreen() {
-        try {
-            Minecraft client = Minecraft.getInstance();
-            Object screen = client == null ? null : client.screen;
-            if (screen == null) {
-                return false;
-            }
-            String name = screen.getClass().getName();
-            return name.startsWith("com.wynntils.screens.activities.")
-                    || name.startsWith("com.wynntils.screens.maps.");
-        } catch (Throwable t) {
-            ErrorDebug.note("WynntilsScreenText#onContentScreen", null, t);
+        Minecraft client = Minecraft.getInstance();
+        Object screen = client == null ? null : client.screen;
+        if (screen == null) {
             return false;
         }
+        String name = screen.getClass().getName();
+        return name.startsWith("com.wynntils.screens.activities.")
+                || name.startsWith("com.wynntils.screens.maps.");
     }
 
     static boolean statusRow(String plain) {

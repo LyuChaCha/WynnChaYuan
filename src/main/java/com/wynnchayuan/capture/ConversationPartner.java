@@ -2,7 +2,6 @@ package com.wynnchayuan.capture;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.LookAtTranslator;
-import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
@@ -82,11 +81,7 @@ public final class ConversationPartner {
     }
 
     private static void note(String event) {
-        try {
-            WynnChaYuan.store().noteEvent(event);
-        } catch (Throwable failure) {
-            ErrorDebug.note("ConversationPartner#note", null, failure);
-        }
+        WynnChaYuan.store().noteEvent(event);
     }
 
     // Wynncraft 的 NPC 也是玩家實體，tab 名單也有假條目
@@ -94,17 +89,12 @@ public final class ConversationPartner {
         if (!(entity instanceof Player player)) {
             return false;
         }
-        try {
-            String account = player.getGameProfile().name();
-            if (account == null || account.isBlank()) {
-                return false;
-            }
-            String a = account.strip().toLowerCase(Locale.ROOT);
-            String l = label.toLowerCase(Locale.ROOT);
-            return l.equals(a) || (a.length() >= 3 && l.contains(a));
-        } catch (Throwable t) {
-            ErrorDebug.note("ConversationPartner#isRealPlayer", null, t);
-            return true;
+        String account = player.getGameProfile().name();
+        if (account == null || account.isBlank()) {
+            return false;
         }
+        String a = account.strip().toLowerCase(Locale.ROOT);
+        String l = label.toLowerCase(Locale.ROOT);
+        return l.equals(a) || (a.length() >= 3 && l.contains(a));
     }
 }

@@ -86,57 +86,43 @@ public final class PanelShot {
         if (bound == null) {
             return false;
         }
-        try {
-            var key = KeyBindingHelper.getBoundKeyOf(bound);
-            return key != null
-                    && key.getValue() != InputConstants.UNKNOWN.getValue();
-        } catch (Throwable t) {
-            ErrorDebug.note("PanelShot#hasKey", null, t);
-            return false;
-        }
+        var key = KeyBindingHelper.getBoundKeyOf(bound);
+        return key != null
+                && key.getValue() != InputConstants.UNKNOWN.getValue();
     }
 
     public static String keyName() {
         if (bound == null) {
             return "未設定";
         }
-        try {
-            var key = KeyBindingHelper.getBoundKeyOf(bound);
-            if (key == null || key.getValue() == InputConstants.UNKNOWN.getValue()) {
-                return "未設定";
-            }
-            return bound.getTranslatedKeyMessage().getString();
-        } catch (Throwable t) {
-            ErrorDebug.note("PanelShot#keyName", null, t);
+        var key = KeyBindingHelper.getBoundKeyOf(bound);
+        if (key == null || key.getValue() == InputConstants.UNKNOWN.getValue()) {
             return "未設定";
         }
+        return bound.getTranslatedKeyMessage().getString();
     }
 
     public static String conflict() {
         if (bound == null) {
             return null;
         }
-        try {
-            var mine = KeyBindingHelper.getBoundKeyOf(bound);
-            if (mine == null
-                    || mine.getValue() == InputConstants.UNKNOWN.getValue()) {
-                return null;
+        var mine = KeyBindingHelper.getBoundKeyOf(bound);
+        if (mine == null
+                || mine.getValue() == InputConstants.UNKNOWN.getValue()) {
+            return null;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.options == null) {
+            return null;
+        }
+        for (KeyMapping other : mc.options.keyMappings) {
+            if (other == bound) {
+                continue;
             }
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.options == null) {
-                return null;
+            var theirs = KeyBindingHelper.getBoundKeyOf(other);
+            if (theirs != null && theirs.getValue() == mine.getValue()) {
+                return Component.translatable(other.getName()).getString();
             }
-            for (KeyMapping other : mc.options.keyMappings) {
-                if (other == bound) {
-                    continue;
-                }
-                var theirs = KeyBindingHelper.getBoundKeyOf(other);
-                if (theirs != null && theirs.getValue() == mine.getValue()) {
-                    return Component.translatable(other.getName()).getString();
-                }
-            }
-        } catch (Throwable t) {
-            ErrorDebug.note("PanelShot#conflict", null, t);
         }
         return null;
     }

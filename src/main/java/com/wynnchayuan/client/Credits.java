@@ -148,7 +148,7 @@ public final class Credits {
     private static int parseHex(String hex) {
         try {
             return Integer.parseInt(hex.replace("#", "").strip(), 16);
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             ErrorDebug.note("Credits#parseHex", null, e);
             return 0xFFFFFF;
         }

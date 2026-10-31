@@ -32,14 +32,7 @@ public final class WynnventoryBridge {
     public static boolean installed() {
         Boolean known = installed;
         if (known == null) {
-            boolean found;
-            try {
-                found = FabricLoader.getInstance().isModLoaded("wynnventory");
-            } catch (Throwable t) {
-                ErrorDebug.note("WynnventoryBridge#installed", null, t);
-                found = false;
-            }
-            installed = known = found;
+            installed = known = FabricLoader.getInstance().isModLoaded("wynnventory");
         }
         return known;
     }

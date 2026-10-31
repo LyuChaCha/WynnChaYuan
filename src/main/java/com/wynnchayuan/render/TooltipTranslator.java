@@ -214,13 +214,9 @@ final class TooltipTranslator {
                     LineTranslator.noteBlockMiss(key.toString(), store);
                 }
                 if (paragraphStart) {
-                    try {
-                        String para = CardDump.paragraphKey(styled, i);
-                        if (para != null) {
-                            CardDump.note(tooltip, styled, para, store);
-                        }
-                    } catch (Throwable failure) {
-                        ErrorDebug.note("TooltipTranslator#translateLines", null, failure);
+                    String para = CardDump.paragraphKey(styled, i);
+                    if (para != null) {
+                        CardDump.note(tooltip, styled, para, store);
                     }
                 }
                 Component translated =

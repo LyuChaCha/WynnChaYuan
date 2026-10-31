@@ -277,7 +277,7 @@ public final class TranslationCache {
     private static int intOf(JsonElement el) {
         try {
             return el != null && el.isJsonPrimitive() ? el.getAsInt() : -1;
-        } catch (RuntimeException e) {
+        } catch (NumberFormatException e) {
             ErrorDebug.note("TranslationCache#intOf", null, e);
             return -1;
         }

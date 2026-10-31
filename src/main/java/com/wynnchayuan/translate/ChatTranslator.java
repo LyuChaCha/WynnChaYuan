@@ -159,53 +159,48 @@ final class ChatTranslator {
     private static final Pattern CHAT_HEAD = Pattern.compile("^(\\[\\d+/\\d+])( )([^:：\\n]+?[:：])");
 
     static Component npcChatColours(StyledText message, Component rebuilt) {
-        try {
-            List<Run> src = SpaceRuns.runs(message.getComponent());
-            String srcText = joinedText(src);
-            Matcher s = CHAT_HEAD.matcher(srcText);
-            if (!s.find()) {
-                return rebuilt;
-            }
-            TextColor counter = uniformColour(src, s.start(1), s.end(1));
-            TextColor speaker = uniformColour(src, s.start(3), s.end(3));
-            List<Run> made = SpaceRuns.runs(rebuilt);
-            Matcher d = CHAT_HEAD.matcher(joinedText(made));
-            if (!d.find() || (counter == null && speaker == null)) {
-                return rebuilt;
-            }
-            int[] cuts = {d.start(1), d.end(1), d.start(3), d.end(3)};
-            MutableComponent out = Component.empty();
-            int at = 0;
-            for (Run run : made) {
-                String text = run.text();
-                int from = 0;
-                while (from < text.length()) {
-                    int next = text.length();
-                    for (int cut : cuts) {
-                        if (cut > at + from && cut < at + next) {
-                            next = cut - at;
-                        }
-                    }
-                    String piece = text.substring(from, next);
-                    int pos = at + from;
-                    Style style = run.style() == null ? Style.EMPTY : run.style();
-                    if (!run.space()) {
-                        if (counter != null && pos >= cuts[0] && pos < cuts[1]) {
-                            style = style.withColor(counter);
-                        } else if (speaker != null && pos >= cuts[2] && pos < cuts[3]) {
-                            style = style.withColor(speaker);
-                        }
-                    }
-                    out.append(Component.literal(piece).withStyle(style));
-                    from = next;
-                }
-                at += text.length();
-            }
-            return out;
-        } catch (Throwable t) {
-            ErrorDebug.note("ChatTranslator#npcChatColours", null, t);
+        List<Run> src = SpaceRuns.runs(message.getComponent());
+        String srcText = joinedText(src);
+        Matcher s = CHAT_HEAD.matcher(srcText);
+        if (!s.find()) {
             return rebuilt;
         }
+        TextColor counter = uniformColour(src, s.start(1), s.end(1));
+        TextColor speaker = uniformColour(src, s.start(3), s.end(3));
+        List<Run> made = SpaceRuns.runs(rebuilt);
+        Matcher d = CHAT_HEAD.matcher(joinedText(made));
+        if (!d.find() || (counter == null && speaker == null)) {
+            return rebuilt;
+        }
+        int[] cuts = {d.start(1), d.end(1), d.start(3), d.end(3)};
+        MutableComponent out = Component.empty();
+        int at = 0;
+        for (Run run : made) {
+            String text = run.text();
+            int from = 0;
+            while (from < text.length()) {
+                int next = text.length();
+                for (int cut : cuts) {
+                    if (cut > at + from && cut < at + next) {
+                        next = cut - at;
+                    }
+                }
+                String piece = text.substring(from, next);
+                int pos = at + from;
+                Style style = run.style() == null ? Style.EMPTY : run.style();
+                if (!run.space()) {
+                    if (counter != null && pos >= cuts[0] && pos < cuts[1]) {
+                        style = style.withColor(counter);
+                    } else if (speaker != null && pos >= cuts[2] && pos < cuts[3]) {
+                        style = style.withColor(speaker);
+                    }
+                }
+                out.append(Component.literal(piece).withStyle(style));
+                from = next;
+            }
+            at += text.length();
+        }
+        return out;
     }
 
     private static String joinedText(List<Run> runs) {

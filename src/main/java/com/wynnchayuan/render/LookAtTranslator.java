@@ -3,7 +3,6 @@ package com.wynnchayuan.render;
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
-import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -54,37 +53,32 @@ public final class LookAtTranslator {
 
     // Wynntils NpcDialogueEvent 不帶說話者，最近名牌只是猜測
     public static String nearestLabel() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.player == null || LABELS.isEmpty()) {
-                return null;
-            }
-            Vec3 eye = mc.player.getEyePosition();
-            Vec3 look = mc.player.getLookAngle();
-            StyledText best = null;
-            double bestPerp = Double.MAX_VALUE;
-            for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
-                Entity entity = e.getKey();
-                if (entity == null || !entity.isAlive()) {
-                    continue;
-                }
-                Vec3 delta = entity.position().subtract(eye);
-                double along = delta.dot(look);
-                if (along <= 0 || along > SPEAKER_RANGE) {
-                    continue;
-                }
-                double perpendicular = delta.subtract(look.scale(along)).length();
-                if (perpendicular < bestPerp) {
-                    bestPerp = perpendicular;
-                    best = e.getValue();
-                }
-            }
-            return best == null || bestPerp > SPEAKER_RADIUS
-                    ? null : best.getStringWithoutFormatting().strip();
-        } catch (Throwable t) {
-            ErrorDebug.note("LookAtTranslator#nearestLabel", null, t);
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.player == null || LABELS.isEmpty()) {
             return null;
         }
+        Vec3 eye = mc.player.getEyePosition();
+        Vec3 look = mc.player.getLookAngle();
+        StyledText best = null;
+        double bestPerp = Double.MAX_VALUE;
+        for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
+            Entity entity = e.getKey();
+            if (entity == null || !entity.isAlive()) {
+                continue;
+            }
+            Vec3 delta = entity.position().subtract(eye);
+            double along = delta.dot(look);
+            if (along <= 0 || along > SPEAKER_RANGE) {
+                continue;
+            }
+            double perpendicular = delta.subtract(look.scale(along)).length();
+            if (perpendicular < bestPerp) {
+                bestPerp = perpendicular;
+                best = e.getValue();
+            }
+        }
+        return best == null || bestPerp > SPEAKER_RADIUS
+                ? null : best.getStringWithoutFormatting().strip();
     }
 
     private static final double SPEAKER_RANGE = 8.0;
@@ -95,30 +89,25 @@ public final class LookAtTranslator {
         if (target == null) {
             return null;
         }
-        try {
-            Vec3 base = target.position();
-            String best = null;
-            double bestHorizontal = Double.MAX_VALUE;
-            for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
-                Entity label = e.getKey();
-                if (label == null || !label.isAlive() || e.getValue() == null) {
-                    continue;
-                }
-                Vec3 d = label.position().subtract(base);
-                double horizontal = Math.sqrt(d.x * d.x + d.z * d.z);
-                if (d.y < 0 || d.y > ABOVE_HEIGHT || horizontal > ABOVE_RADIUS) {
-                    continue;
-                }
-                if (horizontal < bestHorizontal) {
-                    bestHorizontal = horizontal;
-                    best = e.getValue().getStringWithoutFormatting().strip();
-                }
+        Vec3 base = target.position();
+        String best = null;
+        double bestHorizontal = Double.MAX_VALUE;
+        for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
+            Entity label = e.getKey();
+            if (label == null || !label.isAlive() || e.getValue() == null) {
+                continue;
             }
-            return best;
-        } catch (Throwable t) {
-            ErrorDebug.note("LookAtTranslator#labelAbove", null, t);
-            return null;
+            Vec3 d = label.position().subtract(base);
+            double horizontal = Math.sqrt(d.x * d.x + d.z * d.z);
+            if (d.y < 0 || d.y > ABOVE_HEIGHT || horizontal > ABOVE_RADIUS) {
+                continue;
+            }
+            if (horizontal < bestHorizontal) {
+                bestHorizontal = horizontal;
+                best = e.getValue().getStringWithoutFormatting().strip();
+            }
         }
+        return best;
     }
 
     private static final double ABOVE_HEIGHT = 3.5;
