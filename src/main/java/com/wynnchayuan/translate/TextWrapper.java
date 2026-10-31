@@ -402,7 +402,7 @@ final class TextWrapper {
             return cut;
         }
         int open = text.lastIndexOf('{', back - 1);
-        if (open < lineStart || !text.substring(open, back).matches("\\{~\\d*\\}")) {
+        if (open < lineStart || !NUMBER_SLOT.matcher(text.substring(open, back)).matches()) {
             return cut;
         }
         if (open > lineStart && (text.charAt(open - 1) == '+' || text.charAt(open - 1) == '-')) {
@@ -492,6 +492,8 @@ final class TextWrapper {
         }
         return cut;
     }
+
+    private static final java.util.regex.Pattern NUMBER_SLOT = java.util.regex.Pattern.compile("\\{~\\d*\\}");
 
     private static final java.util.regex.Pattern NUMBER_RANGE = java.util.regex.Pattern.compile(
             "[+\\-−]?(?:\\{~\\d*}|\\d+(?:[.,]\\d+)*)%?"

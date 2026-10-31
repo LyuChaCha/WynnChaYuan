@@ -590,8 +590,11 @@ final class TemplateLookup {
         return learned.strip();
     }
 
+    private static final java.util.regex.Pattern NUMBERED_SLOT = java.util.regex.Pattern.compile("\\{~\\d}");
+
     private static boolean samePlaceholders(String a, String b) {
-        return ColumnTemplates.countNumbers(a) == ColumnTemplates.countNumbers(ColourTemplate.stripColourTokens(b).replaceAll("\\{~\\d}", "{~}"))
+        return ColumnTemplates.countNumbers(a) == ColumnTemplates.countNumbers(
+                        NUMBERED_SLOT.matcher(ColourTemplate.stripColourTokens(b)).replaceAll("{~}"))
                 && count(a, GlyphSplitter.PLACE_PLACEHOLDER) == count(b, GlyphSplitter.PLACE_PLACEHOLDER)
                 && count(a, GlyphSplitter.PLAYER_PLACEHOLDER) == count(b, GlyphSplitter.PLAYER_PLACEHOLDER)
                 && count(a, GlyphSplitter.GLYPH_PLACEHOLDER) == count(b, GlyphSplitter.GLYPH_PLACEHOLDER);
@@ -807,11 +810,18 @@ final class TemplateLookup {
         if (text.isEmpty() || text.length() > NAME_ROOM) {
             return false;
         }
-        String bare = text.replaceAll("\\{[^}]*\\}", "");
-        return bare.chars().allMatch(c ->
-                (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
-                        || (c >= '0' && c <= '9') || c == '_');
+        String bare = ANY_SLOT.matcher(text).replaceAll("");
+        for (int at = 0; at < bare.length(); at++) {
+            char c = bare.charAt(at);
+            if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+                    || (c >= '0' && c <= '9') || c == '_')) {
+                return false;
+            }
+        }
+        return true;
     }
+
+    private static final java.util.regex.Pattern ANY_SLOT = java.util.regex.Pattern.compile("\\{[^}]*\\}");
 
     private static final int NAME_ROOM = 40;
 

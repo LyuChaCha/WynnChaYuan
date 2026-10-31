@@ -32,7 +32,7 @@ public final class Broadcasts {
     }
 
     public static Spans spans(String flat) {
-        if (flat == null || flat.isBlank()) {
+        if (flat == null || flat.isBlank() || !mayMatch(flat)) {
             return null;
         }
         for (Pattern frame : FRAMES) {
@@ -54,6 +54,11 @@ public final class Broadcasts {
             return new Spans(from, to, worldFrom, worldTo);
         }
         return null;
+    }
+
+    private static boolean mayMatch(String flat) {
+        return flat.contains(" has thrown a") || flat.contains(" Bomb has expired!")
+                || flat.contains("Thank ");
     }
 
     public static LineParts parts(StyledText message) {

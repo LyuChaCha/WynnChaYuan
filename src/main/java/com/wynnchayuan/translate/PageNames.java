@@ -20,7 +20,7 @@ public final class PageNames {
                     + "|Territorial Discovery|Boss Altar|Lootrun Camp|Dungeon|Raid|World Event|Time Trial)]$");
 
     public static String nameOfTitle(String text) {
-        if (text == null || text.indexOf('\n') >= 0) {
+        if (text == null || !text.endsWith("]") || text.indexOf('\n') >= 0) {
             return null;
         }
         Matcher m = TITLE.matcher(text);

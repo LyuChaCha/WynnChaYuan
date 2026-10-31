@@ -257,8 +257,10 @@ final class DialogueTyping {
 
     private static final int PARTS = 4;
 
+    private static final java.util.regex.Pattern ANY_SLOT = java.util.regex.Pattern.compile("\\{[^}]*\\}");
+
     private static boolean plain(String text) {
-        String bare = text.replaceAll("\\{[^}]*\\}", "");
+        String bare = ANY_SLOT.matcher(text).replaceAll("");
         for (int i = 0; i < bare.length(); i++) {
             char c = bare.charAt(i);
             if (Character.isLetter(c)) {

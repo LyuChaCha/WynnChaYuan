@@ -36,11 +36,12 @@ public final class LineTranslator {
 
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered, boolean leftAligned) {
-        Component whole = translateWholeLine(line, store, centered, leftAligned);
+        LineParts parts = LineParts.of(line);
+        Component whole = translateWholeLine(line, parts, store, centered, leftAligned);
         if (whole != null) {
             return sameTextKeepsStyle(line, keepClick(line, DisplayStyles.unslant(dropIconSpaces(whole))));
         }
-        Component perLine = translatePerLine(line, store, centered);
+        Component perLine = translatePerLine(line, parts, store, centered);
         return sameTextKeepsStyle(line, keepClick(line, DisplayStyles.unslant(dropIconSpaces(
                 perLine != null ? perLine
                         : translateSegments(line, store, centered, leftAligned)))));
@@ -104,14 +105,24 @@ public final class LineTranslator {
                 dropped[0] = true;
                 return java.util.Optional.empty();
             }
-            if (text.codePoints().anyMatch(Character::isLetterOrDigit)
-                    && !SpaceOffset.isSpaceFont(style) && !iconFont(style)) {
+            if (hasLetterOrDigit(text) && !SpaceOffset.isSpaceFont(style) && !iconFont(style)) {
                 seenText[0] = true;
             }
             out.append(Component.literal(text).withStyle(style));
             return java.util.Optional.empty();
         }, Style.EMPTY);
         return dropped[0] ? out : line;
+    }
+
+    private static boolean hasLetterOrDigit(String text) {
+        for (int at = 0; at < text.length(); ) {
+            int cp = text.codePointAt(at);
+            at += Character.charCount(cp);
+            if (Character.isLetterOrDigit(cp)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean iconFont(Style style) {
@@ -292,9 +303,9 @@ public final class LineTranslator {
         return out;
     }
 
-    private static Component translateWholeLine(StyledText line, TranslationStore store,
+    private static Component translateWholeLine(StyledText line, LineParts plain, TranslationStore store,
                                                 boolean centered, boolean leftAligned) {
-        LineParts parts = LineParts.of(line);
+        LineParts parts = plain;
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
@@ -316,9 +327,8 @@ public final class LineTranslator {
         return result;
     }
 
-    private static Component translatePerLine(StyledText line, TranslationStore store,
+    private static Component translatePerLine(StyledText line, LineParts parts, TranslationStore store,
                                               boolean centered) {
-        LineParts parts = LineParts.of(line);
         String template = parts.template();
         if (template.indexOf(NEWLINE) < 0) {
             return null;
@@ -367,8 +377,14 @@ public final class LineTranslator {
     static final String NL = "\n";
 
     static boolean hasContent(String text) {
-        return text.codePoints().anyMatch(cp -> !Character.isWhitespace(cp)
-                && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp));
+        for (int at = 0; at < text.length(); ) {
+            int cp = text.codePointAt(at);
+            at += Character.charCount(cp);
+            if (!Character.isWhitespace(cp) && !GlyphSplitter.isGlyphCodePoint(cp)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static Component unslantAll(Component line) {

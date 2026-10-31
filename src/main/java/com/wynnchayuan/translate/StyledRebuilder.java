@@ -293,6 +293,8 @@ final class StyledRebuilder {
 
     private record Segment(String text, String anchor) {}
 
+    private static final java.util.regex.Pattern NUMBER_TOKEN = java.util.regex.Pattern.compile("\\{~\\d+\\}");
+
     private static List<Segment> segments(String line) {
         List<Segment> out = new ArrayList<>();
         java.util.regex.Matcher m = PLACEHOLDER.matcher(line);
@@ -311,7 +313,7 @@ final class StyledRebuilder {
             } else if (token.equals("{~}")) {
                 anchor = "~";
                 plainNumbers++;
-            } else if (token.matches("\\{~\\d+\\}")) {
+            } else if (NUMBER_TOKEN.matcher(token).matches()) {
                 if (Integer.parseInt(token.substring(2, token.length() - 1)) != nextIndex++) {
                     return null;
                 }

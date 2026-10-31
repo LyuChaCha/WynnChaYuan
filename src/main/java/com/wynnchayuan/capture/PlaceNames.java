@@ -12,28 +12,30 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public final class PlaceNames {
 
-    private static final Pattern PATTERN;
+    public record Span(int start, int end) {}
 
     private static final List<String> NAMES;
 
-    private static final java.util.Map<Character, String[]> BY_FIRST;
+    private static final String[][] BY_FIRST = new String[256][];
 
     static {
         List<String> names = load();
         NAMES = List.copyOf(names);
-        PATTERN = names.isEmpty() ? null : compile(names);
-        java.util.Map<Character, List<String>> grouped = new java.util.HashMap<>();
-        for (String name : NAMES) {
-            grouped.computeIfAbsent(name.charAt(0), k -> new ArrayList<>()).add(name);
+        List<String> longestFirst = new ArrayList<>(names);
+        longestFirst.sort(Comparator.comparingInt(String::length).reversed());
+        List<List<String>> buckets = new ArrayList<>();
+        for (int i = 0; i < BY_FIRST.length; i++) {
+            buckets.add(new ArrayList<>());
         }
-        java.util.Map<Character, String[]> index = new java.util.HashMap<>();
-        grouped.forEach((first, list) -> index.put(first, list.toArray(new String[0])));
-        BY_FIRST = java.util.Map.copyOf(index);
+        for (String name : longestFirst) {
+            buckets.get(name.charAt(0) & 0xFF).add(name);
+        }
+        for (int i = 0; i < BY_FIRST.length; i++) {
+            BY_FIRST[i] = buckets.get(i).isEmpty() ? null : buckets.get(i).toArray(new String[0]);
+        }
     }
 
     private PlaceNames() {}
@@ -60,40 +62,32 @@ public final class PlaceNames {
         return names;
     }
 
-    private static Pattern compile(List<String> names) {
-        List<String> sorted = new ArrayList<>(names);
-        sorted.sort(Comparator.comparingInt(String::length).reversed());
-
-        StringBuilder sb = new StringBuilder();
-        for (String name : sorted) {
-            if (!sb.isEmpty()) {
-                sb.append('|');
-            }
-            sb.append(Pattern.quote(name));
-        }
-        return Pattern.compile("(?<![\\p{L}\\p{N}])(?:" + sb + ")(?![\\p{L}\\p{N}])");
-    }
-
-    public static Matcher matcher(String text) {
-        if (PATTERN == null) {
-            return null;
-        }
-        return PATTERN.matcher(text == null || mayContain(text) ? text : "");
-    }
-
-    static boolean mayContain(String text) {
-        for (int i = 0; i < text.length(); i++) {
-            String[] names = BY_FIRST.get(text.charAt(i));
-            if (names == null) {
+    public static Span next(String text, int from) {
+        int length = text.length();
+        for (int at = from; at < length; at++) {
+            String[] names = BY_FIRST[text.charAt(at) & 0xFF];
+            if (names == null || (at > 0 && inWord(text.charAt(at - 1)))) {
                 continue;
             }
             for (String name : names) {
-                if (text.startsWith(name, i)) {
-                    return true;
+                int end = at + name.length();
+                if (text.startsWith(name, at)
+                        && (end == length || !inWord(text.codePointAt(end)))) {
+                    return new Span(at, end);
                 }
             }
         }
-        return false;
+        return null;
+    }
+
+    private static boolean inWord(int cp) {
+        return switch (Character.getType(cp)) {
+            case Character.UPPERCASE_LETTER, Character.LOWERCASE_LETTER, Character.TITLECASE_LETTER,
+                 Character.MODIFIER_LETTER, Character.OTHER_LETTER,
+                 Character.DECIMAL_DIGIT_NUMBER, Character.LETTER_NUMBER,
+                 Character.OTHER_NUMBER -> true;
+            default -> false;
+        };
     }
 
     public static boolean isPlace(String text) {

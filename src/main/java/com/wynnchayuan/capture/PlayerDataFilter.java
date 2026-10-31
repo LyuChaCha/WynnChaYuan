@@ -161,9 +161,10 @@ public final class PlayerDataFilter {
         if (text == null || text.isBlank()) {
             return false;
         }
-        String unwrapped = UNWRAP.matcher(text).replaceAll(" ");
+        String unwrapped = text.indexOf('\n') < 0 ? text : UNWRAP.matcher(text).replaceAll(" ");
+        boolean wrapped = !unwrapped.equals(text);
         for (String marker : MARKERS) {
-            if (text.contains(marker) || unwrapped.contains(marker)) {
+            if (text.contains(marker) || (wrapped && unwrapped.contains(marker))) {
                 return true;
             }
         }
@@ -186,6 +187,20 @@ public final class PlayerDataFilter {
             return true;
         }
         return mentionsOnlinePlayer(text);
+    }
+
+    private static final Pattern SLOT = Pattern.compile("\\{[#~pu]\\d?}");
+
+    private static final Pattern BRACKETED = Pattern.compile("\\[[^\\]]*\\]?");
+
+    private static final Pattern SPACES = Pattern.compile("\\s+");
+
+    private static final Pattern DIGITS = Pattern.compile("\\d+");
+
+    private static String firstRowName(String template) {
+        int row = template.indexOf('\n');
+        String first = row < 0 ? template : template.substring(0, row);
+        return SLOT.matcher(first).replaceAll(" ").trim();
     }
 
     private static final int MIN_ONLINE_NAME = 4;
@@ -215,9 +230,7 @@ public final class PlayerDataFilter {
         if (template == null || template.isBlank()) {
             return false;
         }
-        String name = template.split("\\n", 2)[0]
-                .replaceAll("\\{[#~pu]\\d?}", " ")
-                .trim();
+        String name = firstRowName(template);
         if (name.length() < MIN_PLATE_NAME) {
             return false;
         }
@@ -225,7 +238,7 @@ public final class PlayerDataFilter {
         if (tail == '.' || tail == '!' || tail == '?' || tail == ',' || tail == ':') {
             return false;
         }
-        String[] words = name.replaceAll("\\[[^\\]]*\\]?", " ").trim().split("\\s+");
+        String[] words = SPACES.split(BRACKETED.matcher(name).replaceAll(" ").trim());
         if (words.length > MAX_PLATE_WORDS) {
             return false;
         }
@@ -280,7 +293,7 @@ public final class PlayerDataFilter {
             for (var entry : mc.getConnection().getListedOnlinePlayers()) {
                 String name = entry.getProfile().name();
                 if (name != null && !name.isBlank()) {
-                    out.add(name.replaceAll("\\d+", ""));
+                    out.add(DIGITS.matcher(name).replaceAll(""));
                 }
             }
             return out;
@@ -298,17 +311,15 @@ public final class PlayerDataFilter {
         if (template == null || template.isBlank()) {
             return false;
         }
-        String name = template.split("\\n", 2)[0]
-                .replaceAll("\\{[#~pu]\\d?}", " ")
-                .trim();
+        String name = firstRowName(template);
         if (name.length() < MIN_PLATE_NAME) {
             return false;
         }
-        String bare = name.replaceAll("\\[[^\\]]*\\]?", " ").trim();
+        String bare = BRACKETED.matcher(name).replaceAll(" ").trim();
         char last = name.charAt(name.length() - 1);
-        boolean plateShaped = bare.split("\\s+").length <= MAX_PLATE_WORDS_HARD
+        boolean plateShaped = SPACES.split(bare).length <= MAX_PLATE_WORDS_HARD
                 && last != '.' && last != '!' && last != '?';
-        for (String word : name.split("\\s+")) {
+        for (String word : SPACES.split(name)) {
             if (word.isEmpty()) {
                 continue;
             }
@@ -334,7 +345,7 @@ public final class PlayerDataFilter {
         if (tail == '.' || tail == '!' || tail == '?' || tail == ',' || tail == ':') {
             return false;
         }
-        String[] words = name.replaceAll("\\[[^\\]]*\\]?", " ").trim().split("\\s+");
+        String[] words = SPACES.split(BRACKETED.matcher(name).replaceAll(" ").trim());
         boolean real = false;
         for (String word : words) {
             if (word.length() >= 2) {
