@@ -6,9 +6,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class PartyPanelTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class PartyPanelTest {
 
     public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
@@ -32,7 +33,7 @@ public final class PartyPanelTest {
         }
         List<Component> out = com.wynnchayuan.render.TooltipPanel
                 .translateLines(lines, store);
-        report("整份都有翻到（實際 " + out.size() + " 行）", !out.isEmpty());
+        check("整份都有翻到（實際 " + out.size() + " 行）", !out.isEmpty());
 
         StringBuilder all = new StringBuilder();
         for (Component c : out) {
@@ -45,10 +46,10 @@ public final class PartyPanelTest {
                                             "Region:", "Time estimate:",
                                             "keep", "inventory", "faster",
                                             "Click to leave the queue"}) {
-            report("「" + english + "」不該再出現", !zh.contains(english));
+            check("「" + english + "」不該再出現", !zh.contains(english));
         }
 
-        report("沒有逐行條目蓋掉整段",
+        check("沒有逐行條目蓋掉整段",
                 TemplateLookup.lookup("inventory to find a party", store, false) == null);
 
         lootrunBlocks(store);
@@ -67,7 +68,7 @@ public final class PartyPanelTest {
                 "everytime you get a Curse"}, "傷害");
         String beacon = "Once you have been offered a\nBlue or Purple Beacon more\n"
                 + "than {~} times this Lootrun,\ngain +{~} {#}Defence";
-        report("信標加防：模板查得到（實際 " + store.lookup(beacon) + "）",
+        check("信標加防：模板查得到（實際 " + store.lookup(beacon) + "）",
                 store.lookup(beacon) != null && store.lookup(beacon).contains("信標"));
         block(store, "寶箱寶物品質", new String[] {
                 "For the rest of this Lootrun,",
@@ -133,7 +134,7 @@ public final class PartyPanelTest {
 
     private static void row(TranslationStore store, String src, String want) {
         String zh = TemplateLookup.lookup(src, store, false);
-        report("「" + src + "」→「" + want + "」（實際 " + zh + "）",
+        check("「" + src + "」→「" + want + "」（實際 " + zh + "）",
                 zh != null && zh.contains(want));
     }
 
@@ -149,13 +150,7 @@ public final class PartyPanelTest {
         }
         String out = zh.toString();
         boolean ok = out.contains(want) && !out.contains(lines[0]);
-        report(what + "：整段翻出來（實際 " + out.replace('\n', '/').stripTrailing() + "）", ok);
+        check(what + "：整段翻出來（實際 " + out.replace('\n', '/').stripTrailing() + "）", ok);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

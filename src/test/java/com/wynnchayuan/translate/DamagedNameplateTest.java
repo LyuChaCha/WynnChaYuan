@@ -16,9 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class DamagedNameplateTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DamagedNameplateTest {
 
     private static final int RED = 0xFF5555;
     private static final int GREY = 0xAAAAAA;
@@ -286,10 +287,4 @@ public final class DamagedNameplateTest {
         return c == null ? "null" : c.getString().replace("\n", "⏎");
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -3,9 +3,10 @@ package com.wynnchayuan.translate;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public final class AbilityRowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AbilityRowTest {
 
     public static void main(String[] args) throws IOException {
         TranslationStore store = new TranslationStore();
@@ -74,18 +75,12 @@ public final class AbilityRowTest {
 
     private static void row(TranslationStore store, String line, String want) {
         String hit = TemplateLookup.lookup(line, store, false);
-        report("「" + line + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
+        check("「" + line + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     private static void nothing(TranslationStore store, String line) {
         String hit = TemplateLookup.lookup(line, store, false);
-        report("「" + line + "」不該被切開（實際：" + hit + "）", hit == null);
+        check("「" + line + "」不該被切開（實際：" + hit + "）", hit == null);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

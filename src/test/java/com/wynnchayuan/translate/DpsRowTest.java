@@ -10,9 +10,10 @@ import net.minecraft.resources.Identifier;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class DpsRowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DpsRowTest {
 
     static final Style NUMBER = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFF55))
             .withFont(new FontDescription.Resource(
@@ -86,10 +87,4 @@ public final class DpsRowTest {
               sign[0] != null && NUMBER.getFont().equals(sign[0].getFont()));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

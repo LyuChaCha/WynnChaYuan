@@ -11,9 +11,10 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-public final class GlyphNameOriginalTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class GlyphNameOriginalTest {
 
     private static final String ICON = String.valueOf((char) 0xE000);
 
@@ -252,10 +253,4 @@ public final class GlyphNameOriginalTest {
         check(what + "（實際 " + plain(got) + "）", java.util.Objects.equals(want, got));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

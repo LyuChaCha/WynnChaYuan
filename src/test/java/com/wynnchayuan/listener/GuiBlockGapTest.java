@@ -2,9 +2,10 @@ package com.wynnchayuan.listener;
 
 import java.util.List;
 
-public final class GuiBlockGapTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class GuiBlockGapTest {
 
     private static boolean known(List<String> lines) {
         String joined = String.join(" ", lines);
@@ -23,9 +24,9 @@ public final class GuiBlockGapTest {
                 null,
                 "Rare Item");
         boolean[] out = GuiTextCapture.covered(bag, GuiBlockGapTest::known);
-        report("標題不算在段落裡", !out[0]);
-        report("整段翻好的三行都不列成缺口", out[2] && out[3] && out[4]);
-        report("後面那行不受影響", !out[6]);
+        check("標題不算在段落裡", !out[0]);
+        check("整段翻好的三行都不列成缺口", out[2] && out[3] && out[4]);
+        check("後面那行不受影響", !out[6]);
 
         List<String> node = java.util.Arrays.asList(
                 "Divination",
@@ -34,16 +35,16 @@ public final class GuiBlockGapTest {
                 "from Ophanim by +{~} and",
                 "reduces their damage.");
         boolean[] two = GuiTextCapture.covered(node, GuiBlockGapTest::known);
-        report("換行接法也認得", two[2] && two[3] && two[4]);
-        report("技能名還是要收", !two[0]);
+        check("換行接法也認得", two[2] && two[3] && two[4]);
+        check("技能名還是要收", !two[0]);
 
         List<String> unknown = java.util.Arrays.asList(
                 "Quickly find parties", "for raids and others!");
         boolean[] none = GuiTextCapture.covered(unknown, GuiBlockGapTest::known);
-        report("整段查不到就照舊列成缺口", !none[0] && !none[1]);
+        check("整段查不到就照舊列成缺口", !none[0] && !none[1]);
 
         List<String> single = java.util.Arrays.asList("Contains one of several");
-        report("單行段落不處理",
+        check("單行段落不處理",
                 !GuiTextCapture.covered(single, GuiBlockGapTest::known)[0]);
 
         mountFood();
@@ -73,23 +74,23 @@ public final class GuiBlockGapTest {
         java.util.function.Predicate<String> personal = t -> t.startsWith("Owner:");
         List<String[]> rows = GuiTextCapture.rows(totem, none, 1, listItems, personal);
 
-        report("折成三行的一句收成一條 gui/block，照畫面換行",
+        check("折成三行的一句收成一條 gui/block，照畫面換行",
                 rows.stream().anyMatch(r -> "gui/block".equals(r[1]) && r[0].equals(
                         "Summons a totem that\nrestores {~} Mana to all\nnearby players every {~}s.")));
-        report("半句不再各自一條", rows.stream().noneMatch(r -> "restores {~} Mana to all".equals(r[0])));
-        report("條列裡有一項自己就有譯文：整段照舊逐行收",
+        check("半句不再各自一條", rows.stream().noneMatch(r -> "restores {~} Mana to all".equals(r[0])));
+        check("條列裡有一項自己就有譯文：整段照舊逐行收",
                 rows.stream().anyMatch(r -> "- {~}x Mydium".equals(r[0]) && "gui/line".equals(r[1]))
                         && rows.stream().noneMatch(r -> r[0].contains("Mydium\n")));
-        report("帶玩家資料的那一段整段不收，只記次數",
+        check("帶玩家資料的那一段整段不收，只記次數",
                 rows.stream().noneMatch(r -> r[0].contains("Steve_123"))
                         && rows.stream().anyMatch(r -> "gui.blocked.playerData".equals(r[0]) && r[1] == null));
-        report("標題不在這裡收（從標題下一行開始）",
+        check("標題不在這裡收（從標題下一行開始）",
                 rows.stream().noneMatch(r -> "Mana Totem".equals(r[0])));
 
         boolean[] done = new boolean[totem.size()];
         done[2] = done[3] = done[4] = true;
         List<String[]> covered = GuiTextCapture.rows(totem, done, 1, listItems, personal);
-        report("整段翻好了：不收，只記次數",
+        check("整段翻好了：不收，只記次數",
                 covered.stream().noneMatch(r -> r[0].contains("Summons"))
                         && covered.stream().anyMatch(r -> "gui.skipped.inBlock".equals(r[0])));
     }
@@ -119,20 +120,14 @@ public final class GuiBlockGapTest {
                 "{#}Housing, or to craft {#} Spears, {#}",
                 "{#}Daggers, {#} Bows, {#} Reliks & {#} Wands");
         boolean[] out = GuiTextCapture.covered(food, lines -> GuiTextCapture.whole(lines, store));
-        report("★ 行首掛著偏移、斷行又不同的整段，每一行都不列成缺口",
+        check("★ 行首掛著偏移、斷行又不同的整段，每一行都不列成缺口",
                 out[2] && out[3] && out[4] && out[5] && out[6]);
-        report("標題照舊要收", !out[0]);
+        check("標題照舊要收", !out[0]);
 
         List<String> other = java.util.Arrays.asList(
                 "{#}Feed to your Mount to upgrade", "{#}something nobody translated");
         boolean[] none = GuiTextCapture.covered(other, lines -> GuiTextCapture.whole(lines, store));
-        report("剝掉偏移也查不到的照舊列成缺口", !none[0] && !none[1]);
+        check("剝掉偏移也查不到的照舊列成缺口", !none[0] && !none[1]);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

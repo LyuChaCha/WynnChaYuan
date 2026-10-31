@@ -2,9 +2,10 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.capture.GlyphSplitter;
 
-public final class NametagTrimTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class NametagTrimTest {
 
     public static void main(String[] args) {
         System.out.println("=== 名牌狀態列 ===");
@@ -61,10 +62,4 @@ public final class NametagTrimTest {
         same(what, input, input);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

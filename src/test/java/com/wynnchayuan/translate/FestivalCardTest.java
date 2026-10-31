@@ -9,9 +9,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class FestivalCardTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class FestivalCardTest {
 
     private static final Style GREY = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
 
@@ -132,10 +133,4 @@ public final class FestivalCardTest {
         }
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

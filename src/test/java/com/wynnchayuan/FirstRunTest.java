@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public final class FirstRunTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class FirstRunTest {
 
     public static void main(String[] args) throws Exception {
         freshInstall();
@@ -315,10 +316,4 @@ public final class FirstRunTest {
                         && Files.exists(cache.resolve("dev.png")));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

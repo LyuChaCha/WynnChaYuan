@@ -11,9 +11,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class StatusColourTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class StatusColourTest {
 
     public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
@@ -36,7 +37,7 @@ public final class StatusColourTest {
 
     private static void agrees(TranslationStore store, String english, String want) {
         String zh = store.lookup(english);
-        report("詞表的「" + english + "」是「" + want + "」（實際：" + zh + "）",
+        check("詞表的「" + english + "」是「" + want + "」（實際：" + zh + "）",
                 want.equals(zh));
     }
 
@@ -64,10 +65,10 @@ public final class StatusColourTest {
             return;
         }
         String all = built.getString();
-        report("畫出來有「標記」（實際：" + all + "）", all.contains("標記"));
+        check("畫出來有「標記」（實際：" + all + "）", all.contains("標記"));
 
         Integer got = colourOf(built, "標記");
-        report("「標記」拿到原文的青色（實際："
+        check("「標記」拿到原文的青色（實際："
                         + (got == null ? "沒有顏色" : String.format("#%06X", got)) + "）",
                 got != null && got == cyan);
     }
@@ -106,10 +107,4 @@ public final class StatusColourTest {
         return out;
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

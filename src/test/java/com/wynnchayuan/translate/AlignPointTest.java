@@ -9,9 +9,10 @@ import java.util.List;
 
 import com.wynnchayuan.translate.ColumnAligner.Piece;
 
-public final class AlignPointTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AlignPointTest {
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();
@@ -176,13 +177,6 @@ public final class AlignPointTest {
                 : "AlignPoint: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
-        }
-    }
-
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
         }
     }
 

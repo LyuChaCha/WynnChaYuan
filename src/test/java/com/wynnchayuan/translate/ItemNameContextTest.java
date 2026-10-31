@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public final class ItemNameContextTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ItemNameContextTest {
 
     private static final String ROOT = "src/main/resources/assets/wynnchayuan/translations";
 
@@ -162,10 +163,4 @@ public final class ItemNameContextTest {
         check(lang + "：★ 跑完之後物品名照舊翻", store.lookup(name) != null);
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

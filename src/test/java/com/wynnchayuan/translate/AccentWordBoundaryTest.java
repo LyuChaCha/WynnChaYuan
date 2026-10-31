@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class AccentWordBoundaryTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AccentWordBoundaryTest {
 
     private static final int BODY = 0xAAAAAA;
     private static final int VALUE = 0xFFFFFF;
@@ -41,12 +42,12 @@ public final class AccentWordBoundaryTest {
 
         StyledText styled = line("Lootrun, gain ", BODY, "+20%", VALUE,
                                  " ", BODY, "Loot", STAT);
-        report("★ 模板就是語料的鍵（實際："
+        check("★ 模板就是語料的鍵（實際："
                + com.wynnchayuan.capture.LineParts.of(styled).template() + "）",
                key.equals(com.wynnchayuan.capture.LineParts.of(styled).template()));
 
         Component built = LineTranslator.translate(styled, store);
-        report("翻得出來", built != null);
+        check("翻得出來", built != null);
         if (built == null) {
             return;
         }
@@ -59,9 +60,9 @@ public final class AccentWordBoundaryTest {
                 whole = true;
             }
         }
-        report("★ Lootrun 七個字母在同一段裡，沒有被切成 Loot + run（分段："
+        check("★ Lootrun 七個字母在同一段裡，沒有被切成 Loot + run（分段："
                + parts + "）", whole);
-        report("整句畫出來還是完整的（實際：" + built.getString() + "）",
+        check("整句畫出來還是完整的（實際：" + built.getString() + "）",
                built.getString().contains("Lootrun"));
     }
 
@@ -70,12 +71,12 @@ public final class AccentWordBoundaryTest {
         StyledText styled = line("Gain ", BODY, "+20%", VALUE,
                                  " Loot now", STAT);
         Component built = LineTranslator.translate(styled, store);
-        report("［中文重點段］翻得出來", built != null);
+        check("［中文重點段］翻得出來", built != null);
         if (built == null) {
             return;
         }
         System.out.println("  畫出去的分段：" + pieces(built));
-        report("★［中文重點段］「寶物加成」還是拿得到橘色（實際："
+        check("★［中文重點段］「寶物加成」還是拿得到橘色（實際："
                + show(colourOf(built, "寶物加成")) + "）",
                Integer.valueOf(STAT).equals(colourOf(built, "寶物加成")));
     }
@@ -84,12 +85,12 @@ public final class AccentWordBoundaryTest {
         TranslationStore store = corpus("Reduce the cost of Bash", "降低 Bash 的消耗");
         StyledText styled = line("Reduce the cost of ", BODY, "Bash", STAT);
         Component built = LineTranslator.translate(styled, store);
-        report("［獨立英文詞］翻得出來", built != null);
+        check("［獨立英文詞］翻得出來", built != null);
         if (built == null) {
             return;
         }
         System.out.println("  畫出去的分段：" + pieces(built));
-        report("★［獨立英文詞］Bash 還是拿得到橘色（實際："
+        check("★［獨立英文詞］Bash 還是拿得到橘色（實際："
                + show(colourOf(built, "Bash")) + "）",
                Integer.valueOf(STAT).equals(colourOf(built, "Bash")));
     }
@@ -136,10 +137,4 @@ public final class AccentWordBoundaryTest {
         return rgb == null ? "沒拿到（多半是被拆成兩段）" : String.format("#%06X", rgb);
     }
 
-    private static void report(String name, boolean ok) {
-        System.out.println((ok ? "  [通過] " : "  [失敗] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

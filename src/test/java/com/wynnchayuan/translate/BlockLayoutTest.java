@@ -10,6 +10,9 @@ import net.minecraft.server.Bootstrap;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class BlockLayoutTest {
 
     private static final Style SPACE = Style.EMPTY.withFont(
@@ -25,8 +28,6 @@ public final class BlockLayoutTest {
         }
         return px;
     };
-
-    private static int failures = 0;
 
     private static Component line(int px, String text) {
         if (px == 0) {
@@ -239,10 +240,4 @@ public final class BlockLayoutTest {
         return true;
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

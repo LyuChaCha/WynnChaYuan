@@ -13,9 +13,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public final class ScoreboardFlowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ScoreboardFlowTest {
 
     private static final String SENTENCE =
             "Slay the Knightmare by destroying its shields atop the statue.";
@@ -331,10 +332,4 @@ public final class ScoreboardFlowTest {
         return s.codePoints().anyMatch(cp -> cp >= 0x4E00 && cp <= 0x9FFF);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -8,9 +8,11 @@ import net.minecraft.network.chat.Style;
 
 import java.nio.file.Path;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class LootrunMissionTest {
 
-    private static int failures = 0;
     private static final String CORPUS = "src/main/resources/assets/wynnchayuan/translations";
     private static final String BLOCK = "Collect your rewards!" + (char) 10
             + "- Time Left: {~}:{~}" + (char) 10 + "- Challenges: {~}/{~}" + (char) 10
@@ -89,10 +91,4 @@ public final class LootrunMissionTest {
                 .setStyle(SpaceOffset.styleFor(Style.EMPTY));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -5,9 +5,10 @@ import com.wynnchayuan.translate.TranslationStore;
 
 import java.nio.file.Path;
 
-public final class DialogueTooLongTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueTooLongTest {
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -60,10 +61,4 @@ public final class DialogueTooLongTest {
         return w;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

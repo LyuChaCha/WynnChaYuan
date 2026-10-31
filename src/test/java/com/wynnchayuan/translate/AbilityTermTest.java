@@ -11,9 +11,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class AbilityTermTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AbilityTermTest {
 
     private static final int NAME_COLOUR = 0xAAAAAA;
 
@@ -51,7 +52,7 @@ public final class AbilityTermTest {
     private static void swaps(TranslationStore store, String name, String rest,
                               String want) {
         String term = store.lookup(name);
-        report("詞表裡有「" + name + "」（實際：" + term + "）", want.equals(term));
+        check("詞表裡有「" + name + "」（實際：" + term + "）", want.equals(term));
 
         Component built = LineTranslator.translate(block(name, rest).get(0), store);
         if (built == null) {
@@ -59,15 +60,15 @@ public final class AbilityTermTest {
             return;
         }
         String all = built.getString();
-        report("畫面上是「" + want + "」（實際：" + all + "）", all.contains(want));
-        report("畫面上沒有留著英文的「" + name + "」（實際：" + all + "）", !all.contains(name));
+        check("畫面上是「" + want + "」（實際：" + all + "）", all.contains(want));
+        check("畫面上沒有留著英文的「" + name + "」（實際：" + all + "）", !all.contains(name));
     }
 
     private static final int TERM_COLOUR = 0x55FFFF;
 
     private static void insideAccent(TranslationStore store) {
         String key = "Ophanim also applies +{~} Crystallized {#}.";
-        report("★ 語料收著這一句（實際：" + store.lookup(key) + "）", store.lookup(key) != null);
+        check("★ 語料收著這一句（實際：" + store.lookup(key) + "）", store.lookup(key) != null);
 
         MutableComponent line = Component.empty();
         Object[] parts = {"Ophanim also applies ", 0xAAAAAA, "+2", 0xFFFFFF, " ", 0xAAAAAA,
@@ -79,15 +80,15 @@ public final class AbilityTermTest {
         }
         StyledText styled = StyledText.fromComponent(line);
         String template = com.wynnchayuan.capture.LineParts.of(styled).template();
-        report("★ 模板就是語料的鍵，走的是整行命中（實際：" + template + "）",
+        check("★ 模板就是語料的鍵，走的是整行命中（實際：" + template + "）",
                key.equals(template));
 
         Component built = LineTranslator.translate(styled, store);
         String all = built == null ? "" : built.getString();
-        report("整行翻得出來（實際：" + all + "）", built != null);
-        report("★ 水藍色那段裡的名稱換成「結晶化」（實際：" + all + "）",
+        check("整行翻得出來（實際：" + all + "）", built != null);
+        check("★ 水藍色那段裡的名稱換成「結晶化」（實際：" + all + "）",
                all.contains("結晶化") && !all.contains("Crystallized"));
-        report("前面的技能名照舊換掉（實際：" + all + "）",
+        check("前面的技能名照舊換掉（實際：" + all + "）",
                all.contains("奧法尼姆") && !all.contains("Ophanim"));
         boolean[] coloured = {false};
         if (built != null) {
@@ -99,9 +100,9 @@ public final class AbilityTermTest {
                 return java.util.Optional.empty();
             }, Style.EMPTY);
         }
-        report("換上去的名稱保留水藍色", coloured[0]);
+        check("換上去的名稱保留水藍色", coloured[0]);
         Integer layer = colourAt(built, "層");
-        report("★ 譯者加的「層」是正文的灰色，不是名稱的水藍色（實際 "
+        check("★ 譯者加的「層」是正文的灰色，不是名稱的水藍色（實際 "
                         + (layer == null ? "null" : String.format("#%06X", layer)) + "）",
                layer != null && layer == 0xAAAAAA);
     }
@@ -133,7 +134,7 @@ public final class AbilityTermTest {
         } finally {
             LineTranslator.measureForTest = null;
         }
-        report("整段查得到", out != null && !out.isEmpty());
+        check("整段查得到", out != null && !out.isEmpty());
         if (out == null || out.isEmpty()) {
             return;
         }
@@ -145,11 +146,11 @@ public final class AbilityTermTest {
             }, Style.EMPTY);
             System.out.println(sb);
         }
-        report("「治療」有底線", underlined(out, "治療") == Boolean.TRUE);
-        report("「祕法回流」有底線", underlined(out, "祕法回流") == Boolean.TRUE);
-        report("「和」沒有底線", underlined(out, "和") == Boolean.FALSE);
-        report("★ 名稱後面的「額外獲得」沒有底線", underlined(out, "額外獲得") == Boolean.FALSE);
-        report("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
+        check("「治療」有底線", underlined(out, "治療") == Boolean.TRUE);
+        check("「祕法回流」有底線", underlined(out, "祕法回流") == Boolean.TRUE);
+        check("「和」沒有底線", underlined(out, "和") == Boolean.FALSE);
+        check("★ 名稱後面的「額外獲得」沒有底線", underlined(out, "額外獲得") == Boolean.FALSE);
+        check("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
     }
 
     private static Boolean underlined(List<Component> rows, String needle) {
@@ -188,29 +189,29 @@ public final class AbilityTermTest {
                 "Reduces ", grey, "Fetch Hound's", name, " cooldown by ", grey,
                 "-2s", value, ".", grey)), fixture);
         String a = hound == null ? "" : hound.getString();
-        report("翻得出來（實際：" + a + "）", hound != null && a.contains("冷卻"));
-        report("★ 色段裡的名稱換成譯名（實際：" + a + "）",
+        check("翻得出來（實際：" + a + "）", hound != null && a.contains("冷卻"));
+        check("★ 色段裡的名稱換成譯名（實際：" + a + "）",
                a.contains("尋獵犬") && !a.contains("Fetch Hound"));
-        report("★ 色段外面那個空格照一般內文的規則拿掉（實際：" + a + "）",
+        check("★ 色段外面那個空格照一般內文的規則拿掉（實際：" + a + "）",
                a.contains("尋獵犬的冷卻"));
         Integer houndColour = colourAt(hound, "尋獵犬");
-        report("譯名保住譯者指定的顏色（實際 " + hex(houndColour) + "）",
+        check("譯名保住譯者指定的顏色（實際 " + hex(houndColour) + "）",
                houndColour != null && houndColour == name);
 
         Component sapped = LineTranslator.translate(StyledText.fromComponent(row(
                 "Hit a ", grey, "Sapped", name, " foe to gain ", grey, "3", value, " ", grey,
                 "Overguard", name, ".", grey)), fixture);
         String b = sapped == null ? "" : sapped.getString();
-        report("★ 一行兩個色段都換（實際：" + b + "）",
+        check("★ 一行兩個色段都換（實際：" + b + "）",
                b.contains("枯竭") && b.contains("溢盾")
                        && !b.contains("Sapped") && !b.contains("Overguard"));
-        report("★ 色段前面那個空格也照規則拿掉（實際：" + b + "）", b.contains("攻擊枯竭的敵人"));
-        report("數值後面的空格留著（實際：" + b + "）", b.contains("3 溢盾"));
+        check("★ 色段前面那個空格也照規則拿掉（實際：" + b + "）", b.contains("攻擊枯竭的敵人"));
+        check("數值後面的空格留著（實際：" + b + "）", b.contains("3 溢盾"));
 
         Component plain = LineTranslator.translate(StyledText.fromComponent(row(
                 "Fetch Hound grants Overguard to you.", grey)), fixture);
         String c = plain == null ? "" : plain.getString();
-        report("對照組：一般內文照舊換（實際：" + c + "）",
+        check("對照組：一般內文照舊換（實際：" + c + "）",
                c.contains("尋獵犬") && c.contains("溢盾"));
     }
 
@@ -241,10 +242,4 @@ public final class AbilityTermTest {
         return found[0];
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -10,9 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class BeaconPanelTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class BeaconPanelTest {
 
     public static void main(String[] args) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-beacon");
@@ -25,7 +26,7 @@ public final class BeaconPanelTest {
 
         for (boolean inPanel : new boolean[] {false, true}) {
             int lead = leadOf(LineTranslator.translateChat(line, store, null, inPanel));
-            report("面板旗標 " + inPanel + " 時翻得出來、縮排不亂跑（實際 "
+            check("面板旗標 " + inPanel + " 時翻得出來、縮排不亂跑（實際 "
                             + lead + "px）", lead == 180);
         }
 
@@ -45,12 +46,12 @@ public final class BeaconPanelTest {
         List<StyledText> beacon = List.of(
                 StyledText.fromComponent(two),
                 indented(180, "no Time Bonus for"));
-        report("★ 有多欄的行 -> 整塊算面板", LineTranslator.chatPanel(beacon));
+        check("★ 有多欄的行 -> 整塊算面板", LineTranslator.chatPanel(beacon));
 
         List<StyledText> normal = List.of(
                 indented(89, "Welcome to Wynncraft!"),
                 indented(59, "play.wynncraft.com"));
-        report("一般聊天不算面板（只有行首縮排不算欄）",
+        check("一般聊天不算面板（只有行首縮排不算欄）",
                 !LineTranslator.chatPanel(normal));
     }
 
@@ -85,10 +86,4 @@ public final class BeaconPanelTest {
         return px[0];
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -13,9 +13,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class DialogueForecastTest {
 
-    private static int failures = 0;
     private static final int WIDTH = 232;
 
     private static final String QUEST = "Harbour Tale";
@@ -659,10 +661,4 @@ public final class DialogueForecastTest {
         return frames.isEmpty() ? null : frames.get(frames.size() - 1);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

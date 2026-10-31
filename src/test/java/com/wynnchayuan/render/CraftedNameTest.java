@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class CraftedNameTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class CraftedNameTest {
 
     private static final Style WHITE = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
     private static final Style GREY = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
@@ -81,13 +82,6 @@ public final class CraftedNameTest {
 
     private static String first(List<Component> lines, String original) {
         return lines.isEmpty() ? original : lines.get(0).getString();
-    }
-
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
     }
 
     private static void done() {

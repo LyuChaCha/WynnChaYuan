@@ -3,9 +3,10 @@ package com.wynnchayuan.listener;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 
-public final class ChatBlockTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ChatBlockTest {
 
     private static StyledText line(String text) {
         return StyledText.fromComponent(Component.literal(text));
@@ -114,10 +115,4 @@ public final class ChatBlockTest {
               !carry[0] && carry[1] && carry[2] && !carry[3]);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

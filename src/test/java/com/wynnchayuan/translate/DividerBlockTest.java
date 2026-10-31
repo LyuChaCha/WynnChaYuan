@@ -11,9 +11,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class DividerBlockTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DividerBlockTest {
 
     private static final String SPACE = "space";
     private static final String DIVIDER_FONT = "tooltip/divider";
@@ -145,10 +146,4 @@ public final class DividerBlockTest {
                       && out.get(5).getString().contains("目標獎勵"));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

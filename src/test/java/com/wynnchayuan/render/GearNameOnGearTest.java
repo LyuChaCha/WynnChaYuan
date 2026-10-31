@@ -14,9 +14,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class GearNameOnGearTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class GearNameOnGearTest {
 
     private static final List<String> UI_WORDS = List.of(
             "Return", "Withdrawal", "Crystal", "Shield", "Torch", "Quill", "Remembrance",
@@ -229,10 +230,4 @@ public final class GearNameOnGearTest {
         return text;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

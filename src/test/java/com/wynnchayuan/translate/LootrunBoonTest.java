@@ -12,9 +12,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class LootrunBoonTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LootrunBoonTest {
 
     private static final Style GREY = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
     private static final Style AQUA = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
@@ -526,10 +527,4 @@ public final class LootrunBoonTest {
         return out;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

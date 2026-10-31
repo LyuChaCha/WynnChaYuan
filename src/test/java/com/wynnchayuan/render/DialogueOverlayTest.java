@@ -10,9 +10,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class DialogueOverlayTest {
 
-    private static int failures = 0;
     private static final String SOURCE = "Please travel from {p} to {p} tomorrow.";
 
     public static void main(String[] args) throws Exception {
@@ -114,10 +116,4 @@ public final class DialogueOverlayTest {
                         result.source(), "Please return to {p} immediately."));
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  OK  " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

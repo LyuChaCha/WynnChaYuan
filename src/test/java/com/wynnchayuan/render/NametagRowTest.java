@@ -1,8 +1,9 @@
 package com.wynnchayuan.render;
 
-public final class NametagRowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class NametagRowTest {
 
     private static final int LINE = 10;
 
@@ -36,10 +37,4 @@ public final class NametagRowTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

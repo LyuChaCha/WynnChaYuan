@@ -2,9 +2,10 @@ package com.wynnchayuan.render;
 
 import java.util.List;
 
-public final class EvenParagraphTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class EvenParagraphTest {
 
     public static void main(String[] args) {
         System.out.println("=== 整段一致 ===");
@@ -74,7 +75,6 @@ public final class EvenParagraphTest {
         same("單字的標籤不算停在介系詞上",
              List.of("To", "Health +120"),
              new boolean[] {true, false});
-
 
         mixed("散文折行時下一行大寫也是同一段",
               List.of("Most people don't think",
@@ -334,10 +334,4 @@ public final class EvenParagraphTest {
         return sb.toString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

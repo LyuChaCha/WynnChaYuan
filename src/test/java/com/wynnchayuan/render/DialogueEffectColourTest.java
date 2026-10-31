@@ -22,9 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class DialogueEffectColourTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueEffectColourTest {
 
     private static final TextColor SHAKE = TextColor.fromRgb(0x0AEB28);
     private static final TextColor FADED_SHAKE = TextColor.fromRgb(0x00F018);
@@ -252,10 +253,4 @@ public final class DialogueEffectColourTest {
         return w;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

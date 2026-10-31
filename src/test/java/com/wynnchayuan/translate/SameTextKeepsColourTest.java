@@ -10,9 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class SameTextKeepsColourTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class SameTextKeepsColourTest {
 
     public static void main(String[] args) throws Exception {
         SharedConstants.tryDetectVersion();
@@ -67,10 +68,4 @@ public final class SameTextKeepsColourTest {
         return out.toString();
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

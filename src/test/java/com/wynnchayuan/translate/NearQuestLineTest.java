@@ -4,9 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class NearQuestLineTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class NearQuestLineTest {
 
     private static final String PUFFER = "You're searching for a [Mythic Everlasting Pufferfish]? "
             + "Hmm I heard that name before, my friend, Strato, told me about it years ago. "
@@ -57,10 +58,4 @@ public final class NearQuestLineTest {
         entries.add(key, e);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

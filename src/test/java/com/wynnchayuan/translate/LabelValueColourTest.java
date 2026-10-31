@@ -9,9 +9,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class LabelValueColourTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LabelValueColourTest {
 
     private static final int LABEL = 0x00AAAA;
     private static final int VALUE = 0x55FFFF;
@@ -107,7 +108,7 @@ public final class LabelValueColourTest {
                 line(new String[] {"Walk Speed", "+2%"}, new int[] {LABEL, GREEN}),
                 line(new String[] {"Zorblax Frobnication", "+2%", " to ", "+9%"},
                      new int[] {LABEL, GREEN, GREY, GREEN})), text, got);
-        report("標籤查不到的行，to 留英文（實際 " + text + "）",
+        check("標籤查不到的行，to 留英文（實際 " + text + "）",
                 text.contains(" to ") && text.stream().noneMatch(t -> t.contains("到")));
 
         TranslationStore bare = new TranslationStore();
@@ -130,7 +131,7 @@ public final class LabelValueColourTest {
         for (int c : wantColours) {
             want.add(c);
         }
-        report(what + "：" + java.util.Arrays.toString(wantText) + " "
+        check(what + "：" + java.util.Arrays.toString(wantText) + " "
                         + hex(want) + "（實際 " + text + " " + hex(got) + "）",
                 text.equals(List.of(wantText)) && got.equals(want));
     }
@@ -144,7 +145,7 @@ public final class LabelValueColourTest {
         for (int c : got) {
             ok &= c == want;
         }
-        report(what + "：整行都是 #" + Integer.toHexString(want).toUpperCase()
+        check(what + "：整行都是 #" + Integer.toHexString(want).toUpperCase()
                         + "（實際 " + text + " " + hex(got) + "）", ok);
     }
 
@@ -198,7 +199,7 @@ public final class LabelValueColourTest {
             seen.append(probes[i]).append('=')
                 .append(found < 0 ? "（找不到）" : String.format("#%06X", found)).append(' ');
         }
-        report(what + "（實際 " + text + " " + seen.toString().strip() + "）", ok);
+        check(what + "（實際 " + text + " " + seen.toString().strip() + "）", ok);
     }
 
     private static String hex(List<Integer> colours) {
@@ -209,10 +210,4 @@ public final class LabelValueColourTest {
         return out.toString();
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

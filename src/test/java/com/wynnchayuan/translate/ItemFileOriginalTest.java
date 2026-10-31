@@ -11,9 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class ItemFileOriginalTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ItemFileOriginalTest {
 
     private static final String ICON = String.valueOf((char) 0xE000);
 
@@ -179,10 +180,4 @@ public final class ItemFileOriginalTest {
         check(what + "（實際 " + got + "）", java.util.Objects.equals(want, got));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

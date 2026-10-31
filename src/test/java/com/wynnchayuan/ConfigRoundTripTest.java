@@ -5,13 +5,14 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class ConfigRoundTripTest {
 
     private static final Path FIXTURES = Path.of("src/test/resources/config-golden");
     private static final String IN = ".in.json";
     private static final String OUT = ".out.json";
-
-    private static int failures = 0;
 
     public static void main(String[] args) throws Exception {
         boolean bless = args.length > 0 && args[0].equals("--bless");
@@ -43,10 +44,4 @@ public final class ConfigRoundTripTest {
         return Files.readString(file);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

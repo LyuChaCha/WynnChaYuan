@@ -5,9 +5,10 @@ import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.Bootstrap;
 
-public final class UpdateButtonTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class UpdateButtonTest {
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();
@@ -41,10 +42,4 @@ public final class UpdateButtonTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

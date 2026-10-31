@@ -24,9 +24,10 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class HotPathCacheTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class HotPathCacheTest {
 
     // 類別簡名要跟 WynntilsText.TRACKER 一樣
     private static final class ContentTrackerOverlay { }
@@ -89,7 +90,7 @@ public final class HotPathCacheTest {
                 }
             }
         }
-        report("組 tooltip 的材料（整段 " + blocks.size() + "、單行 " + singles.size() + "）",
+        check("組 tooltip 的材料（整段 " + blocks.size() + "、單行 " + singles.size() + "）",
                 blocks.size() > 500 && singles.size() > 500);
 
         int total = 0;
@@ -129,8 +130,8 @@ public final class HotPathCacheTest {
             }
         }
         store.setNameMode(CollectorConfig.ItemNames.OFF);
-        report("真的有翻到東西（" + translated + "/" + total + " 份）", translated > total / 3);
-        report("★ tooltip 每行只切一次，跟每次重切的結果逐行相同（" + total + " 份，不同 " + differ
+        check("真的有翻到東西（" + translated + "/" + total + " 份）", translated > total / 3);
+        check("★ tooltip 每行只切一次，跟每次重切的結果逐行相同（" + total + " 份，不同 " + differ
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
     }
 
@@ -251,10 +252,10 @@ public final class HotPathCacheTest {
                 }
             }
         }
-        report("追蹤欄真的有翻到（" + translated + " 行次）", translated > 100);
+        check("追蹤欄真的有翻到（" + translated + " 行次）", translated > 100);
         long changing = perPanel.values().stream().filter(v -> v.size() > 1).count();
-        report("換設定之後確實有幾行會換結果（測試有在測東西：" + changing + " 組）", changing > 0);
-        report("★ 追蹤欄每一幀、每次換設定之後，都跟當場重翻逐行相同（" + compared + " 行次，不同 "
+        check("換設定之後確實有幾行會換結果（測試有在測東西：" + changing + " 組）", changing > 0);
+        check("★ 追蹤欄每一幀、每次換設定之後，都跟當場重翻逐行相同（" + compared + " 行次，不同 "
                 + differ + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
 
         StyledText[] english = {
@@ -265,7 +266,7 @@ public final class HotPathCacheTest {
             WynntilsText.lines(overlay, english);
         }
         int[] seen = seen(captured, GlyphSplitter.toTemplate(english[0]));
-        report("★ 沒譯文的追蹤欄行收進語料，而且只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
+        check("★ 沒譯文的追蹤欄行收進語料，而且只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
                 seen[0] == 1 && seen[1] == 1);
     }
 
@@ -292,7 +293,7 @@ public final class HotPathCacheTest {
                         && WynntilsNames.entityName(plate, config, store).getString().equals(on);
             }
         }
-        report("★ 切換物品名翻譯，名牌馬上跟著變（" + gearNames + " 個裝備名）",
+        check("★ 切換物品名翻譯，名牌馬上跟著變（" + gearNames + " 個裝備名）",
                 gearNames > 0 && followed);
     }
 
@@ -358,9 +359,9 @@ public final class HotPathCacheTest {
                         kept++;
                     }
                 }
-                report("★ 打了兩百幀（四千個傷害數字、一千個路人）之後，畫面上的 60 個名牌一個都沒被擠掉（剩 "
+                check("★ 打了兩百幀（四千個傷害數字、一千個路人）之後，畫面上的 60 個名牌一個都沒被擠掉（剩 "
                         + kept + "）", kept == 60);
-                report("傷害數字有上限，沒有無限長大（" + indicators.size() + "）", indicators.size() <= 256);
+                check("傷害數字有上限，沒有無限長大（" + indicators.size() + "）", indicators.size() <= 256);
             }
             if (phase == 3) {
                 store.loadAll(List.of(ROOT.resolve("zh_cn")));
@@ -385,17 +386,17 @@ public final class HotPathCacheTest {
                 }
             }
         }
-        report("名牌真的有翻到（" + translated + " 次）", translated > 50);
-        report("★ 名牌跟原本的算法逐條相同（" + compared + " 次，不同 " + differ
+        check("名牌真的有翻到（" + translated + " 次）", translated > 50);
+        check("★ 名牌跟原本的算法逐條相同（" + compared + " 次，不同 " + differ
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
 
         Component normal = visible.get(0);
         WynntilsNames.entityName(normal, config, store);
-        report("一般名牌要登記，登記的就是它的原文",
+        check("一般名牌要登記，登記的就是它的原文",
                 StyledText.fromComponent(normal).equals(original(names, indicators, normal)));
         for (Component skip : visible.subList(visible.size() - 4, visible.size())) {
             WynntilsNames.entityName(skip, config, store);
-            report("戰鬥數字、純圖示、空白不登記（" + skip.getString().strip() + "）",
+            check("戰鬥數字、純圖示、空白不登記（" + skip.getString().strip() + "）",
                     original(names, indicators, skip) == null);
         }
 
@@ -403,7 +404,7 @@ public final class HotPathCacheTest {
         mode.setAccessible(true);
         Object was = mode.get(config);
         mode.set(config, CollectorConfig.NametagMode.LOOK_AT);
-        report("注視小框模式下原樣回傳", WynntilsNames.entityName(normal, config, store) == normal);
+        check("注視小框模式下原樣回傳", WynntilsNames.entityName(normal, config, store) == normal);
         mode.set(config, was);
 
         Component stranger = Component.literal("Totally Unknown Wanderer Of The Mists");
@@ -412,7 +413,7 @@ public final class HotPathCacheTest {
         indicators.clear();
         WynntilsNames.entityName(stranger, config, store);
         int[] seen = seen(captured, "Totally Unknown Wanderer Of The Mists");
-        report("★ 沒譯文的名牌只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
+        check("★ 沒譯文的名牌只收一次（收到 " + seen[0] + " 條，seen=" + seen[1] + "）",
                 seen[0] == 1 && seen[1] == 1);
     }
 
@@ -465,10 +466,4 @@ public final class HotPathCacheTest {
         f.set(null, value);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

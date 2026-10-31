@@ -9,9 +9,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class DialogueFitLangTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueFitLangTest {
 
     private static final int[] WIDTHS = {232, 208};
 
@@ -125,10 +126,4 @@ public final class DialogueFitLangTest {
         return out.toString();
     }
 
-    private static void check(String what, boolean ok) {
-        if (!ok) {
-            System.out.println("  [FAIL] " + what);
-            failures++;
-        }
-    }
 }

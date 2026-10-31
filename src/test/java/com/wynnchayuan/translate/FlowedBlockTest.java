@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class FlowedBlockTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class FlowedBlockTest {
 
     private static final String NL = System.lineSeparator();
 
@@ -569,10 +570,4 @@ public final class FlowedBlockTest {
         return flat.length() <= 34 ? flat : flat.substring(0, 34) + "…";
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -5,9 +5,10 @@ import net.minecraft.network.chat.Style;
 
 import java.util.List;
 
-public final class ColourAuditTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ColourAuditTest {
 
     private static final Style GREY = Style.EMPTY.withColor(0xAAAAAA);
     private static final Style WHITE = Style.EMPTY.withColor(0xFFFFFF);
@@ -106,10 +107,4 @@ public final class ColourAuditTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

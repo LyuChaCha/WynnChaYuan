@@ -17,9 +17,10 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
-public final class DialogueWrapTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueWrapTest {
 
     private static final TextColor BODY = TextColor.fromRgb(0xe0d4c0);
     private static final TextColor ITEM = TextColor.fromRgb(0x55ffff);
@@ -182,10 +183,4 @@ public final class DialogueWrapTest {
         return w;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

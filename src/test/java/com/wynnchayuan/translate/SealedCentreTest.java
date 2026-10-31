@@ -15,9 +15,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class SealedCentreTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class SealedCentreTest {
 
     private static final Style SPACE = Style.EMPTY.withFont(
             new FontDescription.Resource(Identifier.withDefaultNamespace("space")));
@@ -211,10 +212,4 @@ public final class SealedCentreTest {
         check(what + "（實際 |" + got + "|）", java.util.Objects.equals(want, got));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

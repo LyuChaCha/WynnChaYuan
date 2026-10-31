@@ -15,9 +15,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class WynnModRowsTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class WynnModRowsTest {
 
     private static final Style WYNN = font("language/wynncraft").withColor(TextColor.fromRgb(0xFFFFFF));
     private static final Style PLAIN = font("default").withColor(TextColor.fromRgb(0xFFFFFF));
@@ -129,13 +130,6 @@ public final class WynnModRowsTest {
                 .append(Component.literal(SpaceOffset.encode(-1)).withStyle(SPACE));
         check("相鄰的排版偏移不併",
                 WynnModTooltip.joinSameStyle(List.of((Component) offsets)).get(0) == offsets);
-    }
-
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
     }
 
     private static List<String> labels(List<Component> lines) {

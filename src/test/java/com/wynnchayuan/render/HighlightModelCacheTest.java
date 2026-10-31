@@ -4,9 +4,10 @@ import net.minecraft.world.item.component.CustomModelData;
 
 import java.util.List;
 
-public final class HighlightModelCacheTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class HighlightModelCacheTest {
 
     public static void main(String[] args) {
         HighlightModelCache.useKeys(
@@ -36,12 +37,4 @@ public final class HighlightModelCacheTest {
         System.out.println("物品高亮快取：全部通過");
     }
 
-    private static void check(String what, boolean ok) {
-        if (ok) {
-            System.out.println("  [ok] " + what);
-        } else {
-            System.out.println("  [FAIL] " + what);
-            failures++;
-        }
-    }
 }

@@ -15,9 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public final class LootrunCardTitleTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LootrunCardTitleTest {
 
     private static final Set<String> TRIALS = Set.of(
             "Adrenaline Junkie", "Dying Light", "Monochromokopia", "Chronotrigger", "All In",
@@ -256,10 +257,4 @@ public final class LootrunCardTitleTest {
         return text;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

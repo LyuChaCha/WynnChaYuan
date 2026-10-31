@@ -15,13 +15,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class DialogueNumberTest {
 
     private static final int STILL_EVENTS = 12;
     private static final int WIDTH = 232;
     private static final int ROWS = 3;
-
-    private static int failures = 0;
 
     public static void main(String[] args) throws Exception {
         SharedConstants.tryDetectVersion();
@@ -119,10 +120,4 @@ public final class DialogueNumberTest {
         f.set(null, value);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

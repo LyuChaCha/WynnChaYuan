@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class WeightColumnTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class WeightColumnTest {
 
     private static final Style WYNN = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF))
             .withFont(new net.minecraft.network.chat.FontDescription.Resource(
@@ -175,10 +176,4 @@ public final class WeightColumnTest {
         return w[0];
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

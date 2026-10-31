@@ -10,9 +10,10 @@ import net.minecraft.network.chat.TextColor;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class BossBarNameTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class BossBarNameTest {
 
     public static void main(String[] args) {
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -119,10 +120,4 @@ public final class BossBarNameTest {
         return perChar.subList(from, perChar.size());
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class StatRowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class StatRowTest {
 
     private static final java.util.regex.Pattern STAT_LABEL =
             java.util.regex.Pattern.compile("[A-Z][A-Za-z]*(?: [A-Za-z]+)*%?");
@@ -100,14 +101,14 @@ public final class StatRowTest {
         owner(store, "PoorChaCha's Gathering Totem", "PoorChaCha 的採集石碑");
         owner(store, "PoorChaCha’s Mob Totem", "PoorChaCha 的怪物石碑");
 
-        report("後半不認得就不翻（實際："
+        check("後半不認得就不翻（實際："
                         + TemplateLookup.lookup("Someone's Unknown Thingy", store, false) + "）",
                 TemplateLookup.lookup("Someone's Unknown Thingy", store, false) == null);
     }
 
     private static void owner(TranslationStore store, String row, String want) {
         String hit = TemplateLookup.lookup(row, store, false);
-        report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）",
+        check("「" + row + "」-> 「" + want + "」（實際：" + hit + "）",
                 want.equals(hit));
     }
 
@@ -122,7 +123,7 @@ public final class StatRowTest {
                 }
             }
         }
-        report("每一條標籤配上數值都接得回來（掃了 " + checked + " 種，漏掉 "
+        check("每一條標籤配上數值都接得回來（掃了 " + checked + " 種，漏掉 "
                 + (missed.size() > 6 ? missed.subList(0, 6) + "…" : missed) + "）",
                 missed.isEmpty());
     }
@@ -134,9 +135,9 @@ public final class StatRowTest {
                 "Health Regen {#}-{~} [{~}]",
                 "Water Spell Damage{#}-{~} to -{~}",
                 "Attack Speed {#}+{~} tier"}) {
-            report("「" + row + "」不會被記成缺口", store.hasTranslation(row));
+            check("「" + row + "」不會被記成缺口", store.hasTranslation(row));
         }
-        report("真的沒翻的還是缺口",
+        check("真的沒翻的還是缺口",
                 !store.hasTranslation("Grants extra courage to everyone nearby by +{~}."));
     }
 
@@ -151,21 +152,21 @@ public final class StatRowTest {
         };
         for (String[] r : rows) {
             String hit = TemplateLookup.lookup(r[0], store, false);
-            report("數值在前：「" + r[0] + "」-> 含「" + r[1] + "」（實際：" + hit + "）",
+            check("數值在前：「" + r[0] + "」-> 含「" + r[1] + "」（實際：" + hit + "）",
                     hit != null && hit.contains(r[1]));
-            report("數值在前：「" + r[0] + "」數值原樣在前、括號原樣在後（實際：" + hit + "）",
+            check("數值在前：「" + r[0] + "」數值原樣在前、括號原樣在後（實際：" + hit + "）",
                     hit != null && hit.startsWith("{~} ") && hit.endsWith("{#} [{~}]"));
-            report("數值在前：「" + r[0] + "」不會被記成缺口", store.hasTranslation(r[0]));
+            check("數值在前：「" + r[0] + "」不會被記成缺口", store.hasTranslation(r[0]));
         }
         starts(store, true, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害百分比");
         starts(store, false, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害值");
 
         String seg = TemplateLookup.lookup("{~} Walk Speed", store, false);
-        report("只有「數值 + 標籤」的片段也翻得出來（實際：" + seg + "）",
+        check("只有「數值 + 標籤」的片段也翻得出來（實際：" + seg + "）",
                 seg != null && seg.contains("移動速度"));
 
         String gear = TemplateLookup.lookup("{~} Guardian", store, false);
-        report("數字 + 不是介面標籤的詞不拼（實際：" + gear + "）", gear == null);
+        check("數字 + 不是介面標籤的詞不拼（實際：" + gear + "）", gear == null);
         nothing(store, "{~} blocks away from the nearest city {#} [{~}]");
 
         net.minecraft.network.chat.MutableComponent line =
@@ -181,17 +182,17 @@ public final class StatRowTest {
                 com.wynntils.core.text.StyledText.fromComponent(line);
         net.minecraft.network.chat.Component built = LineTranslator.translate(styled, store);
         String all = built == null ? "" : built.getString();
-        report("畫出來標籤是中文（模板 " + com.wynnchayuan.capture.LineParts.of(styled).template()
+        check("畫出來標籤是中文（模板 " + com.wynnchayuan.capture.LineParts.of(styled).template()
                         + "，實際：" + all + "）",
                 all.contains("普攻傷害") && !all.contains("Main Attack"));
-        report("畫出來數值與括號原樣（實際：" + all + "）",
+        check("畫出來數值與括號原樣（實際：" + all + "）",
                 all.startsWith("+22 ") && all.endsWith("[45%]"));
     }
 
     private static void truncated(TranslationStore store) {
         String raw = TemplateLookup.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, false);
         String pct = TemplateLookup.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, true);
-        report("前提：完整的標籤查得到，實數與百分比是兩種譯法（實際：" + raw + "／" + pct + "）",
+        check("前提：完整的標籤查得到，實數與百分比是兩種譯法（實際：" + raw + "／" + pct + "）",
                 raw != null && pct != null && !raw.equals(pct));
         String rawLabel = raw == null ? "" : raw.substring(0, raw.indexOf(" {#}"));
         String pctLabel = pct == null ? "" : pct.substring(0, pct.indexOf(" {#}"));
@@ -213,7 +214,7 @@ public final class StatRowTest {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-        report("前提：Elemental 開頭的標籤不只一個（實際：" + bases + "）", bases.size() > 1);
+        check("前提：Elemental 開頭的標籤不只一個（實際：" + bases + "）", bases.size() > 1);
         nothing(store, "Elemental ..{#}+{~} [{~}]");
         nothing(store, "Elem..{#}+{~} [{~}]");
         nothing(store, "Elemental Spell Da..{#}");
@@ -222,7 +223,7 @@ public final class StatRowTest {
 
         String plainRaw = TemplateLookup.lookup("Elemental Spell Damage", store, false);
         String plainPct = TemplateLookup.lookup("Elemental Spell Damage", store, true);
-        report("前提：單獨一段的完整標籤查得到（實際：" + plainRaw + "／" + plainPct + "）",
+        check("前提：單獨一段的完整標籤查得到（實際：" + plainRaw + "／" + plainPct + "）",
                 plainRaw != null && plainPct != null);
         equals(store, false, "Elemental Spell Da..", plainRaw);
         equals(store, true, "Elemental Spell Da..", plainPct);
@@ -231,39 +232,39 @@ public final class StatRowTest {
 
     private static void equals(TranslationStore store, boolean percent, String row, String want) {
         String hit = TemplateLookup.lookup(row, store, percent);
-        report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
+        check("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
                 + "-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     private static void starts(TranslationStore store, boolean percent,
                                String row, String head) {
         String hit = TemplateLookup.lookup(row, store, percent);
-        report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
+        check("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
                 + "換成「" + head + "」（實際：" + hit + "）",
                 hit != null && hit.startsWith(head));
     }
 
     private static void starts(TranslationStore store, String row, String head) {
         String hit = TemplateLookup.lookup(row, store, false);
-        report("「" + row + "」的標籤換成「" + head + "」（實際：" + hit + "）",
+        check("「" + row + "」的標籤換成「" + head + "」（實際：" + hit + "）",
                 hit != null && hit.startsWith(head));
     }
 
     private static void keeps(TranslationStore store, String row, String tail) {
         String hit = TemplateLookup.lookup(row, store, false);
-        report("「" + row + "」的數值原樣留著（實際：" + hit + "）",
+        check("「" + row + "」的數值原樣留著（實際：" + hit + "）",
                 hit != null && hit.endsWith(tail));
     }
 
     private static void contains(TranslationStore store, String row, String want) {
         String hit = TemplateLookup.lookup(row, store, false);
-        report("「" + row + "」裡有「" + want + "」（實際：" + hit + "）",
+        check("「" + row + "」裡有「" + want + "」（實際：" + hit + "）",
                 hit != null && hit.contains(want));
     }
 
     private static void equals(TranslationStore store, String row, String want) {
         String hit = TemplateLookup.lookup(row, store, false);
-        report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
+        check("「" + row + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     static Path corpus(String name, String... pairs) throws IOException {
@@ -278,13 +279,7 @@ public final class StatRowTest {
 
     private static void nothing(TranslationStore store, String sentence) {
         String hit = TemplateLookup.lookup(sentence, store, false);
-        report("句子不會被當成屬性列：" + sentence + "（實際：" + hit + "）", hit == null);
+        check("句子不會被當成屬性列：" + sentence + "（實際：" + hit + "）", hit == null);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

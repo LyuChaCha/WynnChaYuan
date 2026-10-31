@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-public final class TooltipWidenTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class TooltipWidenTest {
 
     private static final int CHAR = 6;
 
@@ -66,7 +67,7 @@ public final class TooltipWidenTest {
         made.add(parts("Звёзды", -18, ""));
 
         boolean[] centred = new boolean[orig.size()];
-        report("前提：生命回復那行逐行對齊之後凸出右緣（實際 "
+        check("前提：生命回復那行逐行對齊之後凸出右緣（實際 "
                         + WIDTH.applyAsInt(made.get(2)) + "px，右緣 " + EDGE + "px）",
                 WIDTH.applyAsInt(made.get(2)) > EDGE);
 
@@ -78,20 +79,20 @@ public final class TooltipWidenTest {
         for (int i = 2; i <= 5; i++) {
             ends.add(WIDTH.applyAsInt(out.get(i)));
         }
-        report("★ 靠右的四行收在同一個右緣 " + want + "px（實際 " + ends + "）",
+        check("★ 靠右的四行收在同一個右緣 " + want + "px（實際 " + ends + "）",
                 ends.equals(List.of(want, want, want, want)));
-        report("放不下的那行間隔不小於最小間隔（實際 " + gapOf(out.get(2)) + "px）",
+        check("放不下的那行間隔不小於最小間隔（實際 " + gapOf(out.get(2)) + "px）",
                 gapOf(out.get(2)) >= ColumnAligner.MIN_GAP);
-        report("數值還在（實際「" + out.get(3).getString().replaceAll("[\\x{C0000}-\\x{DFFFF}]", "")
+        check("數值還在（實際「" + out.get(3).getString().replaceAll("[\\x{C0000}-\\x{DFFFF}]", "")
                         + "」）",
                 out.get(3).getString().contains("Регенерация маны")
                         && out.get(3).getString().endsWith("+5/5s"));
-        report("名稱、分隔線、圖示列、疊字列都沒動",
+        check("名稱、分隔線、圖示列、疊字列都沒動",
                 out.get(0) == made.get(0) && out.get(1) == made.get(1)
                         && out.get(6) == made.get(6) && out.get(7) == made.get(7));
 
         List<Component> left = TooltipWiden.fit(orig, made, centred, true, WIDTH);
-        report("第二欄靠左時一行都不動", left == made);
+        check("第二欄靠左時一行都不動", left == made);
     }
 
     private static void centredBlock() {
@@ -118,7 +119,7 @@ public final class TooltipWidenTest {
         }
         boolean[] centred = {false, false, true, true, true};
 
-        report("前提：中間那行逐行對齊之後縮排是負的（實際 " + leadOf(made.get(3)) + "px）",
+        check("前提：中間那行逐行對齊之後縮排是負的（實際 " + leadOf(made.get(3)) + "px）",
                 leadOf(made.get(3)) < 0);
 
         List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
@@ -136,13 +137,13 @@ public final class TooltipWidenTest {
             ok &= lead >= 0 && lead == (wide - content) / 2;
             seen.append(lead).append('/').append(content).append(' ');
         }
-        report("★ 三行照新寬度 " + wide + "px 重新置中、縮排不為負（縮排/內容 "
+        check("★ 三行照新寬度 " + wide + "px 重新置中、縮排不為負（縮排/內容 "
                 + seen.toString().strip() + "）", ok);
-        report("最寬那行的縮排是 0（實際 " + leadOf(out.get(3)) + "px）", leadOf(out.get(3)) == 0);
-        report("頂著外框的屬性行跟著收到 " + wide + "px（實際 "
+        check("最寬那行的縮排是 0（實際 " + leadOf(out.get(3)) + "px）", leadOf(out.get(3)) == 0);
+        check("頂著外框的屬性行跟著收到 " + wide + "px（實際 "
                         + WIDTH.applyAsInt(out.get(1)) + "px）",
                 WIDTH.applyAsInt(out.get(1)) == wide);
-        report("名稱沒動", out.get(0) == made.get(0));
+        check("名稱沒動", out.get(0) == made.get(0));
     }
 
     private static void shorterLanguage() {
@@ -176,7 +177,7 @@ public final class TooltipWidenTest {
         for (int i = 0; i < made.size() && same; i++) {
             same = out.get(i) == made.get(i);
         }
-        report("★ 中文每行都放得下：整份原封不動（同一份清單、同一批物件）", same);
+        check("★ 中文每行都放得下：整份原封不動（同一份清單、同一批物件）", same);
     }
 
     private static void shrunkBox() {
@@ -196,10 +197,10 @@ public final class TooltipWidenTest {
         List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
         int box = CHAR * zh[1].length();
         int want = (box - zhW) / 2;
-        report("★ 框縮到 " + box + "px 時置中行照新寬度置中（縮排 "
+        check("★ 框縮到 " + box + "px 時置中行照新寬度置中（縮排 "
                         + leadOf(made.get(0)) + " -> " + leadOf(out.get(0)) + "，應為 " + want + "）",
                 leadOf(out.get(0)) == want);
-        report("靠左的行沒動", out.get(1) == made.get(1));
+        check("靠左的行沒動", out.get(1) == made.get(1));
     }
 
     private static void skillPoints() {
@@ -223,13 +224,13 @@ public final class TooltipWidenTest {
 
         int[] head = centres(out.get(0), 3);
         int[] pts = centres(out.get(2), 2);
-        report("★ 「目前」與「60 點」照原文的中心 " + left + " 擺（實際 "
+        check("★ 「目前」與「60 點」照原文的中心 " + left + " 擺（實際 "
                         + head[0] + "、" + pts[0] + "）",
                 Math.abs(head[0] - left) <= 1 && Math.abs(pts[0] - left) <= 1);
-        report("★ 「下一級」與「61 點」照原文的中心 " + right + " 擺（實際 "
+        check("★ 「下一級」與「61 點」照原文的中心 " + right + " 擺（實際 "
                         + head[2] + "、" + pts[1] + "）",
                 Math.abs(head[2] - right) <= 1 && Math.abs(pts[1] - right) <= 1);
-        report("沒翻的百分比那一行沒動", out.get(1) == made.get(1));
+        check("沒翻的百分比那一行沒動", out.get(1) == made.get(1));
 
         List<Component> origLong = new ArrayList<>(orig);
         origLong.add(line("Each point in this skill will"));
@@ -241,10 +242,10 @@ public final class TooltipWidenTest {
         List<Component> out2 = TooltipWiden.fit(origLong, madeShort,
                 new boolean[origLong.size()], false, WIDTH);
         int[] pts2 = centres(out2.get(2), 2);
-        report("★ 說明少一行時，「60 點」「61 點」照樣擺回中心（實際 "
+        check("★ 說明少一行時，「60 點」「61 點」照樣擺回中心（實際 "
                         + pts2[0] + "、" + pts2[1] + "）",
                 Math.abs(pts2[0] - left) <= 1 && Math.abs(pts2[1] - right) <= 1);
-        report("說明那兩行沒動", out2.get(3) == madeShort.get(3) && out2.get(4) == madeShort.get(4));
+        check("說明那兩行沒動", out2.get(3) == madeShort.get(3) && out2.get(4) == madeShort.get(4));
     }
 
     private static Component centredRow(String[] texts, int[] centre, boolean unused) {
@@ -328,7 +329,7 @@ public final class TooltipWidenTest {
     private static void noFont() {
         List<Component> orig = List.of(row("Health Regen", "+20%"));
         List<Component> made = List.of(shrunk("Health Regen", "Регенерация здоровья", "+20%"));
-        report("量不到寬度時原封不動",
+        check("量不到寬度時原封不動",
                 TooltipWiden.fit(orig, made, new boolean[1], false, c -> 0) == made);
     }
 
@@ -395,10 +396,4 @@ public final class TooltipWidenTest {
         return px[0];
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }
