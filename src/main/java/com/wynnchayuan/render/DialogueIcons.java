@@ -218,12 +218,6 @@ public final class DialogueIcons {
         return false;
     }
 
-    static void noteForTest(int cp, Style style) {
-        Map<Integer, Style> next = new HashMap<>(seen);
-        next.put(cp, style);
-        seen = Map.copyOf(next);
-    }
-
     static void forget() {
         seen = Map.of();
         palette = List.of();

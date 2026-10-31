@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-// gradle --no-daemon hotPathBench [-Pbench.samples=latest.log;line-debug.txt]
 public final class HotPathBench {
 
     private static final String LANG = "zh_tw";

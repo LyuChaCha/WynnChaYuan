@@ -114,7 +114,7 @@ public final class ModNetwork {
             if (result == PresenceAccount.DeleteResult.DONE && WynnChaYuan.config.dataOptOut()) {
                 WynnChaYuan.config.dataDeleted();
             }
-            ModLog.info("data deletion: " + result);
+            ModLog.info("刪資料：" + result);
             if (done != null) {
                 Minecraft.getInstance().execute(() -> done.accept(result));
             }

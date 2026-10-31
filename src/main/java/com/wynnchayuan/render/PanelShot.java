@@ -136,9 +136,6 @@ public final class PanelShot {
         tell(Component.literal(T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
     }
 
-    // MC 1.21.5 起 GUI 延後繪製，改在 tick 讀 framebuffer
-    private static boolean wasDown = false;
-
     public static void listen() {
         ScreenEvents.AFTER_INIT.register((client, screen, width, height) -> {
                     // afterKeyPress 只在畫面沒吃鍵時跑，背包與 Wynntils 會吃鍵
@@ -322,10 +319,6 @@ public final class PanelShot {
         return abs.toString();
     }
 
-    public static void announce(Component message) {
-        tell(message);
-    }
-
     private static String safe(String name) {
         StringBuilder out = new StringBuilder();
         name.codePoints().forEach(cp -> {
@@ -345,7 +338,7 @@ public final class PanelShot {
     }
 
     // 截圖回呼在算繪執行緒，displayClientMessage 不會顯示
-    private static void tell(Component message) {
+    public static void tell(Component message) {
         Minecraft mc = Minecraft.getInstance();
         if (mc != null) {
             mc.execute(() -> say(mc, message));

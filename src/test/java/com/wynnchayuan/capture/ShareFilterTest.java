@@ -43,11 +43,11 @@ public final class ShareFilterTest {
     }
 
     private static void yes(String what, String src, String ctx) {
-        check("可以交出去：" + what, ShareFilter.shareable(one(src, ctx)));
+        check("可以交出去：" + what, CorpusExport.shareable(one(src, ctx)));
     }
 
     private static void no(String what, String src, String ctx) {
-        check("★ 不可交出去：" + what, !ShareFilter.shareable(one(src, ctx)));
+        check("★ 不可交出去：" + what, !CorpusExport.shareable(one(src, ctx)));
     }
 
     private static void check(String what, boolean ok) {

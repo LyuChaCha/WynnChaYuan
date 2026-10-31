@@ -5,7 +5,6 @@ import com.wynnchayuan.client.Credits;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.render.DialogueTint;
 import com.wynnchayuan.translate.ErrorDebug;
-import com.wynnchayuan.translate.FetchedLanguages;
 import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
@@ -17,6 +16,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
 public final class LanguageLayers {
@@ -88,12 +88,12 @@ public final class LanguageLayers {
 
     static int fetchCurrentLanguages() {
         String lang = WynnChaYuan.language;
-        FetchedLanguages.mark(lang);
+        markFetched(lang);
         int changed = RemoteSync.fetchInto(
                 Languages.dir(WynnChaYuan.configDir, lang), lang);
         String under = Languages.underlay(WynnChaYuan.config.fallbackLanguage(), lang);
         if (under != null) {
-            FetchedLanguages.mark(under);
+            markFetched(under);
             changed += RemoteSync.fetchInto(
                     Languages.dir(WynnChaYuan.configDir, under), under);
         }
@@ -106,7 +106,7 @@ public final class LanguageLayers {
     private static void refreshOncePerSession(String lang) {
         if (WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB
                 || !WynnChaYuan.config.autoUpdateTranslations()
-                || !FetchedLanguages.firstTime(lang)) {
+                || !firstFetch(lang)) {
             return;
         }
         Path dir = Languages.dir(WynnChaYuan.configDir, lang);
@@ -152,7 +152,7 @@ public final class LanguageLayers {
             return;
         }
         Path dir = Languages.dir(WynnChaYuan.configDir, under);
-        FetchedLanguages.mark(under);
+        markFetched(under);
         Thread worker = new Thread(() -> {
             RemoteSync.fetchInto(dir, under, progress);
             Minecraft.getInstance().execute(() -> {
@@ -223,5 +223,21 @@ public final class LanguageLayers {
             ErrorDebug.note("LanguageLayers#gameLanguage", null, t);
             return "";
         }
+    }
+
+    private static final Set<String> FETCHED = ConcurrentHashMap.newKeySet();
+
+    public static void markFetched(String lang) {
+        if (lang != null && !lang.isBlank()) {
+            FETCHED.add(lang);
+        }
+    }
+
+    public static boolean firstFetch(String lang) {
+        return lang != null && !lang.isBlank() && FETCHED.add(lang);
+    }
+
+    public static void forgetFetched() {
+        FETCHED.clear();
     }
 }

@@ -797,16 +797,6 @@ public final class CollectorConfig {
         return dialogueHoldMs;
     }
 
-    public boolean setDialogueHoldSeconds(String value) {
-        Integer sec = parseSeconds(value);
-        if (sec == null) {
-            return false;
-        }
-        dialogueHoldMs = sec <= 0 ? Integer.MAX_VALUE : Math.min(sec, 600) * 1000;
-        save();
-        return true;
-    }
-
     double nametagRange = 6.0;
 
     double nametagAngle = 6.0;
@@ -866,26 +856,6 @@ public final class CollectorConfig {
         return nametagAngle;
     }
 
-    public boolean setNametagRange(String value) {
-        Double v = parseNumber(value);
-        if (v == null) {
-            return false;
-        }
-        nametagRange = Math.max(2.0, Math.min(v, 64.0));
-        save();
-        return true;
-    }
-
-    public boolean setNametagAngle(String value) {
-        Double v = parseNumber(value);
-        if (v == null) {
-            return false;
-        }
-        nametagAngle = Math.max(1.0, Math.min(v, 45.0));
-        save();
-        return true;
-    }
-
     public void setNametagRangeLive(double value) {
         double v = Math.max(2.0, Math.min(value, 64.0));
         if (v != nametagRange) {
@@ -919,39 +889,7 @@ public final class CollectorConfig {
         }
     }
 
-    public boolean setNametagHoldSeconds(String value) {
-        Integer sec = parseSeconds(value);
-        if (sec == null) {
-            return false;
-        }
-        nametagHoldMs = Math.max(0, Math.min(sec, 60)) * 1000;
-        save();
-        return true;
-    }
-
-    private static Integer parseSeconds(String value) {
-        try {
-            return Integer.parseInt(value.strip());
-        } catch (NumberFormatException e) {
-            return null;
-        }
-    }
-
-    public int cycleDialogueHold() {
-        int[] steps = {3000, 6000, 10000, 15000, Integer.MAX_VALUE};
-        dialogueHoldMs = next(steps, dialogueHoldMs);
-        save();
-        return dialogueHoldMs;
-    }
-
     public int nametagHoldMs() {
-        return nametagHoldMs;
-    }
-
-    public int cycleNametagHold() {
-        int[] steps = {0, 1500, 3000, 5000};
-        nametagHoldMs = next(steps, nametagHoldMs);
-        save();
         return nametagHoldMs;
     }
 
@@ -962,16 +900,6 @@ public final class CollectorConfig {
             }
         }
         return steps[0];
-    }
-
-    public boolean setPanelGap(String value) {
-        Integer px = parseSeconds(value);
-        if (px == null) {
-            return false;
-        }
-        panelGap = PanelGap.clamp(px);
-        save();
-        return true;
     }
 
     public PanelAnchor panelAnchor() {
@@ -1043,16 +971,6 @@ public final class CollectorConfig {
 
     public void clearOverlaySize(Overlay which) {
         if (overlaySize.remove(which) != null) {
-            save();
-        }
-    }
-
-    public void clearOverlayPos(Overlay which) {
-        if (which == Overlay.TOOLTIP) {
-            setFixedPos(20, 20);
-            return;
-        }
-        if (overlayPos.remove(which) != null) {
             save();
         }
     }

@@ -51,40 +51,6 @@ public final class LookAtTranslator {
 
     private LookAtTranslator() {}
 
-    // Wynntils NpcDialogueEvent 不帶說話者，最近名牌只是猜測
-    public static String nearestLabel() {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc == null || mc.player == null || LABELS.isEmpty()) {
-            return null;
-        }
-        Vec3 eye = mc.player.getEyePosition();
-        Vec3 look = mc.player.getLookAngle();
-        StyledText best = null;
-        double bestPerp = Double.MAX_VALUE;
-        for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
-            Entity entity = e.getKey();
-            if (entity == null || !entity.isAlive()) {
-                continue;
-            }
-            Vec3 delta = entity.position().subtract(eye);
-            double along = delta.dot(look);
-            if (along <= 0 || along > SPEAKER_RANGE) {
-                continue;
-            }
-            double perpendicular = delta.subtract(look.scale(along)).length();
-            if (perpendicular < bestPerp) {
-                bestPerp = perpendicular;
-                best = e.getValue();
-            }
-        }
-        return best == null || bestPerp > SPEAKER_RADIUS
-                ? null : best.getStringWithoutFormatting().strip();
-    }
-
-    private static final double SPEAKER_RANGE = 8.0;
-
-    private static final double SPEAKER_RADIUS = 2.5;
-
     public static String labelAbove(Entity target) {
         if (target == null) {
             return null;
