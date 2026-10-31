@@ -1782,6 +1782,30 @@ tasks.register('runConfigRoundTripChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runConfigRoundTripChecks' }
 
+tasks.register('runDialogueNumberChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueNumberTest'
+}
+tasks.named('check') { dependsOn 'runDialogueNumberChecks' }
+
+tasks.register('runWorldResetChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WorldResetTest'
+}
+tasks.named('check') { dependsOn 'runWorldResetChecks' }
+
+tasks.register('runThirdPartyFieldChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ThirdPartyFieldTest'
+}
+tasks.named('check') { dependsOn 'runThirdPartyFieldChecks' }
+
 tasks.register('runCrossThreadFieldChecks', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
