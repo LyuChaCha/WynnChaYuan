@@ -1,11 +1,68 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.5",
+ "latest": "1.0.6",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.6": {
+   "headline": "1.0.6: fixes, faster lookups and a big code cleanup",
+   "items": [
+    "Added: the usage notice is now the first step of the first-run screen.",
+    "Changed: the side panel gap goes from 12 to 200 and defaults to 12, and the number is the distance you see. The preview matches the game.",
+    "Changed: text that has no translation is looked up about 2 to 3 times faster, with less memory churn in chat and tooltips.",
+    "Changed: internal code cleanup. Translation output is unchanged.",
+    "Fixed: italic text in menus no longer scatters and runs out of the box, such as the dialogue history in the content book.",
+    "Fixed: nameplates, boss bars, objectives and map markers update right away when you change the F6 item name setting.",
+    "Fixed: the small dialogue panel no longer stops on a half-typed number (2 instead of 22).",
+    "Fixed: Wynnventory no longer shows a gear item under a material's name.",
+    "Fixed: F6 descriptions are no longer hidden behind the player preview.",
+    "Fixed: content book rows for Time Trials and quests named after places are translated, along with the tracking hint.",
+    "Fixed: check marks no longer carry over after switching language.",
+    "Fixed: reloading translations swaps everything at once, so no half-loaded text shows.",
+    "Fixed: per-world state is cleared on disconnect as well as on world change.",
+    "Translations: Echoes of Change in all seven languages; riddle clues restored in Pirate's Trove, Hollow Serenity and WynnExcavation Site A; Japanese contributions (thanks yool141 and rink914), with the new lines added to the other languages."
+   ],
+   "zh_tw": {
+    "headline": "1.0.6：修正、查表加速與程式整理",
+    "items": [
+     "新增：使用須知併入第一次進遊戲的畫面，成為第一步。",
+     "變更：另開面板間距改為 12 到 200，預設 12，數字就是看到的距離，預覽與遊戲一致。",
+     "變更：沒有譯文的文字查表快約 2 到 3 倍，聊天與說明框的記憶體配置也變少。",
+     "變更：內部程式整理，翻譯結果不變。",
+     "修正：選單裡的斜體文字不再散開、衝出框外，例如內容書的對話紀錄。",
+     "修正：切換 F6 物品名稱設定時，名牌、Boss 血條、任務目標與地圖標記會馬上更新。",
+     "修正：對話小框的數字不再停在打到一半的值（2 而不是 22）。",
+     "修正：Wynnventory 不再把裝備顯示成素材名稱。",
+     "修正：F6 的說明框不再被人物預覽擋住。",
+     "修正：內容書的 Time Trial、以地名命名的任務列與追蹤提示會翻譯。",
+     "修正：切換語言後，完成記號不再殘留。",
+     "修正：重新載入譯文時一次換好，不會顯示載入到一半的內容。",
+     "修正：斷線時也會清除世界相關的狀態。",
+     "譯文：Echoes of Change 七種語言；補回 Pirate's Trove、Hollow Serenity、WynnExcavation Site A 的謎題線索；日文社群貢獻（感謝 yool141、rink914），新增內容也補到其他語言。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.6：修复、查表提速与代码整理",
+    "items": [
+     "新增：使用须知并入首次进入游戏的画面，成为第一步。",
+     "变更：独立面板间距改为 12 到 200，默认 12，数字就是看到的距离，预览与游戏一致。",
+     "变更：没有译文的文字查表快约 2 到 3 倍，聊天和提示框的内存分配也更少。",
+     "变更：内部代码整理，翻译结果不变。",
+     "修复：菜单里的斜体文字不再散开、冲出框外，例如内容书的对话记录。",
+     "修复：切换 F6 物品名称设置时，名牌、Boss 血条、任务目标和地图标记会立刻更新。",
+     "修复：对话小框的数字不再停在打到一半的值（2 而不是 22）。",
+     "修复：Wynnventory 不再把装备显示成素材名称。",
+     "修复：F6 的说明框不再被人物预览挡住。",
+     "修复：内容书的 Time Trial、以地名命名的任务行与追踪提示会翻译。",
+     "修复：切换语言后，完成标记不再残留。",
+     "修复：重新加载译文时一次换好，不会显示加载到一半的内容。",
+     "修复：断线时也会清除世界相关的状态。",
+     "译文：Echoes of Change 七种语言；补回 Pirate's Trove、Hollow Serenity、WynnExcavation Site A 的谜题线索；日文社区贡献（感谢 yool141、rink914），新增内容也补到其他语言。"
+    ]
+   }
+  },
   "1.0.5": {
    "headline": "1.0.5: first-run setup and privacy controls",
    "items": [
