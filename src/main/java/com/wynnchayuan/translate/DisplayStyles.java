@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.Optional;
 
@@ -91,42 +92,79 @@ final class DisplayStyles {
 
     private static Style upright(String text, Style style) {
         Style base = style == null ? Style.EMPTY : style;
-        return base.withItalic(base.isItalic() && !hasHan(text));
+        return base.withItalic(base.isItalic() && !hasCjk(text));
     }
 
     // MC 對自訂名稱物品自動加斜體，Wynncraft 沒關
     static Component unslantAll(Component line) {
-        if (line == null) {
-            return null;
-        }
-        MutableComponent out = Component.empty();
-        line.visit((style, text) -> {
-            if (!text.isEmpty()) {
-                out.append(Component.literal(text).withStyle(style.withItalic(false)));
-            }
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
-        return out;
+        return line == null ? null : rebuilt(line, true);
     }
 
     static Component unslant(Component line) {
-        if (line == null || !hasHan(line.getString())) {
-            return line;
+        if (line == null) {
+            return null;
         }
+        boolean cjk = hasCjk(line.getString());
+        return cjk || hasShaderSlant(line) ? rebuilt(line, cjk) : line;
+    }
+
+    private static Component rebuilt(Component line, boolean upright) {
         MutableComponent out = Component.empty();
         line.visit((style, text) -> {
             if (!text.isEmpty()) {
-                out.append(Component.literal(text).withStyle(style.withItalic(false)));
+                Style plain = withoutShaderSlant(style);
+                out.append(Component.literal(text).withStyle(
+                        upright ? plain.withItalic(false) : plain));
             }
             return java.util.Optional.empty();
         }, Style.EMPTY);
         return out;
     }
 
-    private static boolean hasHan(String text) {
+    private static boolean hasShaderSlant(Component line) {
+        return line.visit((style, text) -> plainOfShaderSlant(style.getColor()) == NO_SHADER_SLANT
+                ? java.util.Optional.<Boolean>empty() : java.util.Optional.of(true),
+                Style.EMPTY).isPresent();
+    }
+
+    private static Style withoutShaderSlant(Style style) {
+        int plain = plainOfShaderSlant(style.getColor());
+        return plain == NO_SHADER_SLANT ? style : style.withColor(plain).withItalic(true);
+    }
+
+    private static final int NO_SHADER_SLANT = -1;
+
+    // Wynncraft 的斜體是這幾個顏色叫 shader 把字左移「圖集 v 座標 × 64」，非第一列的字會散開
+    private static int plainOfShaderSlant(TextColor colour) {
+        if (colour == null) {
+            return NO_SHADER_SLANT;
+        }
+        int rgb = colour.getValue();
+        int r = rgb >> 16 & 0xFF;
+        int g = rgb >> 8 & 0xFF;
+        int b = rgb & 0xFF;
+        if (g == 235 && b == 52) {
+            return 0xFFFFFF;
+        }
+        if (r < 4 && g >= 240 && g < 244) {
+            if (b >= 28 && b < 32) {
+                return 0x55FFFF;
+            }
+            if (b >= 32 && b < 36) {
+                return 0xC6C6C6;
+            }
+        }
+        return NO_SHADER_SLANT;
+    }
+
+    private static boolean hasCjk(String text) {
         for (int i = 0; i < text.length(); ) {
             int cp = text.codePointAt(i);
-            if (Character.UnicodeScript.of(cp) == Character.UnicodeScript.HAN) {
+            Character.UnicodeScript script = Character.UnicodeScript.of(cp);
+            if (script == Character.UnicodeScript.HAN
+                    || script == Character.UnicodeScript.HIRAGANA
+                    || script == Character.UnicodeScript.KATAKANA
+                    || script == Character.UnicodeScript.HANGUL) {
                 return true;
             }
             i += Character.charCount(cp);
