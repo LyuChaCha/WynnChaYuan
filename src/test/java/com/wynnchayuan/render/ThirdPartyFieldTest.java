@@ -9,9 +9,10 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Stream;
 
-public final class ThirdPartyFieldTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ThirdPartyFieldTest {
 
     private static class Base {
         protected int x = 7;
@@ -95,10 +96,4 @@ public final class ThirdPartyFieldTest {
         }
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -9,9 +9,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class ThirdPartySectionsTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ThirdPartySectionsTest {
 
     public static void main(String[] args) throws Exception {
         SharedConstants.tryDetectVersion();
@@ -81,10 +82,4 @@ public final class ThirdPartySectionsTest {
                 .map(Component::getString).toList();
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

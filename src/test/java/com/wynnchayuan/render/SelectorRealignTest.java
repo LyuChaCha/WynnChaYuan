@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class SelectorRealignTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class SelectorRealignTest {
 
     private static final String ARCH0 = "hud/selector/default/center_left/0/archetype";
     private static final String ARCH1 = "hud/selector/default/center_left/1/archetype";
@@ -151,10 +152,4 @@ public final class SelectorRealignTest {
         return count[0];
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ✓ " : "  ✗ ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

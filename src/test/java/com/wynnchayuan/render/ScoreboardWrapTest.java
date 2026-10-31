@@ -9,9 +9,10 @@ import net.minecraft.network.chat.TextColor;
 
 import java.util.List;
 
-public final class ScoreboardWrapTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ScoreboardWrapTest {
 
     private static final StringSplitter SPLITTER = new StringSplitter(
             (codePoint, style) -> codePoint >= 0x2E80 ? 9f : 6f);
@@ -64,12 +65,4 @@ public final class ScoreboardWrapTest {
         return found[0];
     }
 
-    private static void check(String what, boolean ok) {
-        if (ok) {
-            System.out.println("  [ok] " + what);
-        } else {
-            System.out.println("  [FAIL] " + what);
-            failures++;
-        }
-    }
 }

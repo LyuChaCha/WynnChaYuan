@@ -8,9 +8,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class TooltipCacheTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class TooltipCacheTest {
 
     public static void main(String[] args) {
         Path root = Path.of(args.length > 0 ? args[0]
@@ -25,19 +26,19 @@ public final class TooltipCacheTest {
 
         List<Component> first = TooltipTranslator.translateLinesCached(tooltip, store);
         List<Component> second = TooltipTranslator.translateLinesCached(tooltip, store);
-        report("同一份內容兩次結果一樣（實際 " + text(second) + "）",
+        check("同一份內容兩次結果一樣（實際 " + text(second) + "）",
                 text(first).equals(text(second)));
-        report("真的有翻到（不是兩次都空的）", !text(first).isBlank()
+        check("真的有翻到（不是兩次都空的）", !text(first).isBlank()
                 && !text(first).equals("Combat Level\nCombat Level"));
 
-        report("兩次拿到的不是同一個 list 物件", first != second);
+        check("兩次拿到的不是同一個 list 物件", first != second);
         try {
             second.add(Component.literal("別的模組加的一行"));
         } catch (UnsupportedOperationException e) {
-            report("！命中時回傳的清單不可變——別的模組加行會炸在它自己身上", false);
+            check("！命中時回傳的清單不可變——別的模組加行會炸在它自己身上", false);
         }
         List<Component> third = TooltipTranslator.translateLinesCached(tooltip, store);
-        report("★ 改過回傳的清單之後，快取那一份沒被弄髒（實際 "
+        check("★ 改過回傳的清單之後，快取那一份沒被弄髒（實際 "
                 + third.size() + " 行）", third.size() == first.size());
 
         List<Component> gear = List.of(
@@ -47,21 +48,21 @@ public final class TooltipCacheTest {
         String on = text(TooltipTranslator.translateLinesCached(gear, store));
         store.setNameMode(CollectorConfig.ItemNames.OFF);
         String off = text(TooltipTranslator.translateLinesCached(gear, store));
-        report("開著的時候裝備名是中文（實際 " + on.replace('\n', '/') + "）",
+        check("開著的時候裝備名是中文（實際 " + on.replace('\n', '/') + "）",
                 !on.contains("Halcyon") && !on.isBlank());
-        report("★ 關掉「翻譯物品名稱」之後結果會變（開 " + on.replace('\n', '/')
+        check("★ 關掉「翻譯物品名稱」之後結果會變（開 " + on.replace('\n', '/')
                 + "，關 " + off.replace('\n', '/') + "）", !on.equals(off));
         store.setNameMode(CollectorConfig.ItemNames.ON);
-        report("再開回來又回到原本那一份",
+        check("再開回來又回到原本那一份",
                 on.equals(text(TooltipTranslator.translateLinesCached(gear, store))));
 
         int before = store.generation();
         store.loadAll(List.of(root.resolve("zh_cn")));
         store.setNameMode(CollectorConfig.ItemNames.ON);
-        report("重載之後 generation 有往前（" + before + " -> "
+        check("重載之後 generation 有往前（" + before + " -> "
                 + store.generation() + "）", store.generation() != before);
         String reloaded = text(TooltipTranslator.translateLinesCached(tooltip, store));
-        report("★ 重載之後拿到的是新語料的答案（實際 "
+        check("★ 重載之後拿到的是新語料的答案（實際 "
                 + reloaded.replace('\n', '/') + "）",
                 !reloaded.isBlank() && !reloaded.contains("Combat Level"));
 
@@ -93,10 +94,4 @@ public final class TooltipCacheTest {
         return sb.toString();
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

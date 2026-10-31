@@ -6,9 +6,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class GambitBlockTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class GambitBlockTest {
 
     public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
@@ -56,7 +57,7 @@ public final class GambitBlockTest {
                 "Every hit you take will deal", "health as damage",
                 "temporarily lock your", "equipment and potions",
                 "After being airborne for {~}s"}) {
-            report("★ 逐行條目沒有譯文：「" + line + "」",
+            check("★ 逐行條目沒有譯文：「" + line + "」",
                    TemplateLookup.lookup(line, store, false) == null);
         }
 
@@ -79,17 +80,11 @@ public final class GambitBlockTest {
             zh.append(c.getString());
         }
         String all = zh.toString();
-        report(what + "：整段翻出來（實際「" + all + "」）",
+        check(what + "：整段翻出來（實際「" + all + "」）",
                all.contains(want) && !all.contains(lines[0]));
-        report(what + "：沒有照英文的斷點硬斷（原文 " + lines.length
+        check(what + "：沒有照英文的斷點硬斷（原文 " + lines.length
                         + " 行，譯文 " + out.size() + " 行）",
                !out.isEmpty() && out.size() < lines.length);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -19,9 +19,10 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public final class CaptureNoiseTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class CaptureNoiseTest {
 
     public static void main(String[] args) throws Exception {
         speakerIsNameOnly();
@@ -334,10 +335,4 @@ public final class CaptureNoiseTest {
         return sb.toString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

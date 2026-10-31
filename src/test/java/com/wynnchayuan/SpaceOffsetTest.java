@@ -2,11 +2,12 @@ package com.wynnchayuan;
 
 import com.wynnchayuan.translate.SpaceOffset;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class SpaceOffsetTest {
 
     private static final int ZERO = 0xD0000;
-
-    private static int failures = 0;
 
     private static String cp(int offset) {
         return new String(Character.toChars(ZERO + offset));
@@ -43,10 +44,4 @@ public final class SpaceOffsetTest {
         }
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

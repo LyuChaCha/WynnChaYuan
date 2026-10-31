@@ -5,9 +5,10 @@ import com.wynnchayuan.CollectorConfig;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class LayeredGearNameTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LayeredGearNameTest {
 
     public static void main(String[] args) {
         Path root = Path.of(args.length > 0 ? args[0]
@@ -74,10 +75,4 @@ public final class LayeredGearNameTest {
         return row;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

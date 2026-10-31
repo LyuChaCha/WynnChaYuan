@@ -8,9 +8,10 @@ import java.util.Arrays;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public final class SelfUpdateTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class SelfUpdateTest {
 
     public static void main(String[] args) throws Exception {
         Path tmp = Files.createTempDirectory("wcy-selfupdate");
@@ -115,10 +116,4 @@ public final class SelfUpdateTest {
         }
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ✓ " : "  ✗ ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

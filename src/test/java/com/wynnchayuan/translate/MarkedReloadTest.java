@@ -4,12 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class MarkedReloadTest {
 
     private static final String MET = "✔ Class Req: Mage/Dark Wizard";
     private static final String UNMET = "✖ Class Req: Mage/Dark Wizard";
-
-    private static int failures;
 
     public static void main(String[] args) throws Exception {
         Path tw = Files.createTempDirectory("marked-tw");
@@ -40,10 +41,4 @@ public final class MarkedReloadTest {
         }
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

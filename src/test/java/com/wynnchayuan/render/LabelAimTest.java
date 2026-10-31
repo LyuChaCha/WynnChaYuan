@@ -6,9 +6,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-public final class LabelAimTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LabelAimTest {
 
     public static void main(String[] args) {
         Vec3 at = new Vec3(100, 70, 200);
@@ -56,10 +57,4 @@ public final class LabelAimTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

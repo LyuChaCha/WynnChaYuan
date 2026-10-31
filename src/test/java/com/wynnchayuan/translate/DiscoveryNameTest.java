@@ -10,13 +10,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class DiscoveryNameTest {
 
     private static final Path FILE = Path.of(
             "src/main/resources/assets/wynnchayuan/translations",
             Languages.DEFAULT, "discovery-name.json");
-
-    private static int failures = 0;
 
     public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
@@ -46,15 +47,15 @@ public final class DiscoveryNameTest {
                 viaTemplate++;
             }
             String zh = TemplateLookup.lookup(template, store, false);
-            report("「" + name + "」查得到（模板 " + template + " → " + zh + "）",
+            check("「" + name + "」查得到（模板 " + template + " → " + zh + "）",
                    zh != null && !zh.isBlank());
         }
 
-        report("★ 檢查了 124 個名稱（實際 " + checked + "）", checked == 124);
-        report("★ 其中有 17 個是靠地名／數字模板命中的（實際 " + viaTemplate + "）",
+        check("★ 檢查了 124 個名稱（實際 " + checked + "）", checked == 124);
+        check("★ 其中有 17 個是靠地名／數字模板命中的（實際 " + viaTemplate + "）",
                viaTemplate == 17);
 
-        report("★ 也收了「名稱 [類型]」的整行條目（實際 " + titles + " 條）",
+        check("★ 也收了「名稱 [類型]」的整行條目（實際 " + titles + " 條）",
                titles >= 100);
 
         for (String[] pair : new String[][] {
@@ -64,7 +65,7 @@ public final class DiscoveryNameTest {
             String template = com.wynnchayuan.capture.LineParts
                     .of(StyledText.fromComponent(Component.literal(pair[0]))).template();
             String zh = TemplateLookup.lookup(template, store, false);
-            report("「" + pair[0] + "」譯文含「" + pair[1] + "」（實際 " + zh + "）",
+            check("「" + pair[0] + "」譯文含「" + pair[1] + "」（實際 " + zh + "）",
                    zh != null && zh.contains(pair[1]));
         }
 
@@ -93,17 +94,11 @@ public final class DiscoveryNameTest {
                     .of(StyledText.fromComponent(Component.literal(key))).template();
             if (TemplateLookup.lookup(template, store, false) == null) {
                 dead++;
-                report("敘述查不到：" + template.substring(0, Math.min(90, template.length())),
+                check("敘述查不到：" + template.substring(0, Math.min(90, template.length())),
                        false);
             }
         }
-        report("★ 沒有查不到的敘述（實際 " + dead + " 條）", dead == 0);
+        check("★ 沒有查不到的敘述（實際 " + dead + " 條）", dead == 0);
     }
 
-    private static void report(String what, boolean ok) {
-        if (!ok) {
-            failures++;
-            System.out.println("  [FAIL] " + what);
-        }
-    }
 }

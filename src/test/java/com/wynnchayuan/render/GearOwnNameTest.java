@@ -13,9 +13,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class GearOwnNameTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class GearOwnNameTest {
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -226,10 +227,4 @@ public final class GearOwnNameTest {
         return text;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

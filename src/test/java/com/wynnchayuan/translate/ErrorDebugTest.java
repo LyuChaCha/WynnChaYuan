@@ -4,9 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class ErrorDebugTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ErrorDebugTest {
 
     public static void main(String[] args) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-error-debug");
@@ -35,10 +36,4 @@ public final class ErrorDebugTest {
         return n;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

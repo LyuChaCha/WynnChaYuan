@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class StatLabelIndentTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class StatLabelIndentTest {
 
     private static final Style WHITE = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
     private static final Style GREEN = Style.EMPTY.withColor(TextColor.fromRgb(0xACFAC6));
@@ -242,10 +243,4 @@ public final class StatLabelIndentTest {
         return w[0];
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

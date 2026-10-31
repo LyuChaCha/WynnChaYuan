@@ -14,9 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class AbilityNameOriginalTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AbilityNameOriginalTest {
 
     private static final String ABILITY = "Arrow Bomb";
     private static final String MAJOR_ID = "Altruism";
@@ -326,10 +327,4 @@ public final class AbilityNameOriginalTest {
         System.exit(failures == 0 ? 0 : 1);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

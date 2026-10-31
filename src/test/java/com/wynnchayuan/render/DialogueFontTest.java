@@ -7,6 +7,9 @@ import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class DialogueFontTest {
 
     private static final int DEFAULT_ASCENT = 7;
@@ -47,8 +50,6 @@ public final class DialogueFontTest {
 
     private static final Path ROOT = Path.of(
             "src/main/resources/assets/wynnchayuan/font");
-
-    private static int failures = 0;
 
     private DialogueFontTest() {}
 
@@ -119,10 +120,4 @@ public final class DialogueFontTest {
 
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

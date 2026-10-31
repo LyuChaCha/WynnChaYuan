@@ -1,8 +1,9 @@
 package com.wynnchayuan.client;
 
-public final class ModeColoursTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ModeColoursTest {
 
     public static void main(String[] args) {
         System.out.println("=== F6 模式顏色 ===");
@@ -60,10 +61,4 @@ public final class ModeColoursTest {
                 && Math.abs(blue(a) - blue(b)) <= 1;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

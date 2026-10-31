@@ -3,9 +3,10 @@ package com.wynnchayuan.capture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public final class OverflowAuditTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class OverflowAuditTest {
 
     private static final String D = OverflowAudit.DIALOGUE;
     private static final String T = OverflowAudit.TOOLTIP;
@@ -100,10 +101,4 @@ public final class OverflowAuditTest {
         System.exit(0);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

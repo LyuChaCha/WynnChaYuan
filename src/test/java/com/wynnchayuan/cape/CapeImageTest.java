@@ -10,9 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public final class CapeImageTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class CapeImageTest {
 
     private static final int[] PAL = {0xFFDC2828, 0xFF28C850, 0xFF325AE6, 0xFFF0DC3C};
     private static final int W = 20;
@@ -316,10 +317,4 @@ public final class CapeImageTest {
                 && !Capes.FILE.matcher(".png").matches());
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

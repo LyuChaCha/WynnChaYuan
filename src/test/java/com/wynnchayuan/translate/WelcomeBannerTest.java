@@ -14,9 +14,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class WelcomeBannerTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class WelcomeBannerTest {
 
     private static final int GOLD = 0xFFAA00;
     private static final int WHITE = 0xFFFFFF;
@@ -370,10 +371,4 @@ public final class WelcomeBannerTest {
         };
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

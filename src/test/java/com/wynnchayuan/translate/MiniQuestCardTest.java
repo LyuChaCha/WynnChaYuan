@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class MiniQuestCardTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class MiniQuestCardTest {
 
     private static final int GREY = 0xAAAAAA;
     private static final int AQUA = 0x00AAAA;
@@ -153,10 +154,4 @@ public final class MiniQuestCardTest {
         return sb.toString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

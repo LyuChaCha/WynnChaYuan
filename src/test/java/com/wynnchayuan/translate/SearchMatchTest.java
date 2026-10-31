@@ -5,9 +5,10 @@ import com.wynnchayuan.CollectorConfig;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class SearchMatchTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class SearchMatchTest {
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -111,10 +112,4 @@ public final class SearchMatchTest {
                                 java.util.List.of("深淵"), null));
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

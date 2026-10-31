@@ -20,9 +20,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class PageNamesTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class PageNamesTest {
 
     private static final Style NAME = Style.EMPTY
             .withFont(new FontDescription.Resource(
@@ -380,13 +381,6 @@ public final class PageNamesTest {
     private static int colourAt(Component line, int index) {
         Style style = styleAt(line, index);
         return style == null || style.getColor() == null ? -1 : style.getColor().getValue();
-    }
-
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
     }
 
     private static void done() {

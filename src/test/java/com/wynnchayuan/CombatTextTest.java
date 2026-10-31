@@ -4,9 +4,10 @@ import com.wynnchayuan.capture.CombatText;
 import net.minecraft.SharedConstants;
 import net.minecraft.server.Bootstrap;
 
-public final class CombatTextTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class CombatTextTest {
 
     public static void main(String[] args) {
         SharedConstants.tryDetectVersion();
@@ -43,10 +44,4 @@ public final class CombatTextTest {
         }
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

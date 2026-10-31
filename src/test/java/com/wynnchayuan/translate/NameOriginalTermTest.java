@@ -4,9 +4,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class NameOriginalTermTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class NameOriginalTermTest {
 
     public static void main(String[] args) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-name-original");
@@ -122,10 +123,4 @@ public final class NameOriginalTermTest {
         return out == null ? null : out.getString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

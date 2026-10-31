@@ -11,9 +11,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.ToIntFunction;
 
-public final class NameWrapTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class NameWrapTest {
 
     private static final ToIntFunction<Component> WIDTH = c -> {
         int[] w = {0};
@@ -262,10 +263,4 @@ public final class NameWrapTest {
                 .translated() == later);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

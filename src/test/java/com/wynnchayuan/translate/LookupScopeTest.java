@@ -1,8 +1,9 @@
 package com.wynnchayuan.translate;
 
-public final class LookupScopeTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LookupScopeTest {
 
     public static void main(String[] args) throws Exception {
         nesting();
@@ -51,10 +52,4 @@ public final class LookupScopeTest {
         }
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

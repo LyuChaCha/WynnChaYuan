@@ -11,9 +11,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class LootChestColourTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class LootChestColourTest {
 
     private static final int GREY = 0xAAAAAA;
     private static final int WHITE = 0xFFFFFF;
@@ -265,10 +266,4 @@ public final class LootChestColourTest {
                 .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)).withBold(true));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

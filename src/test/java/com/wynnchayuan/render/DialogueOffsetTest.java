@@ -2,10 +2,11 @@ package com.wynnchayuan.render;
 
 import java.util.List;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 // 實機錄下：文字 35px 尾隨 +81、93px +23、149px -33
 public final class DialogueOffsetTest {
-
-    private static int failures = 0;
 
     public static void main(String[] args) {
         check("編碼 -116 再解回來還是 -116",
@@ -155,7 +156,6 @@ public final class DialogueOffsetTest {
         check("停夠久就算停下來了", late);
         check("字又長出來就重新計算", !DialogueTyping.settled("Block t"));
 
-
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");
@@ -219,10 +219,4 @@ public final class DialogueOffsetTest {
         return new String(Character.toChars(value));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -6,9 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class ChatUnwrapTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ChatUnwrapTest {
 
     private static final String G = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
 
@@ -35,13 +36,13 @@ public final class ChatUnwrapTest {
         };
         for (String w : wrapped) {
             String got = TranslationStore.unwrap(w);
-            report("三種斷法併出同一句（實際：" + got + "）", want.equals(got));
+            check("三種斷法併出同一句（實際：" + got + "）", want.equals(got));
         }
-        report("沒斷行的原樣（只壓空白）",
+        check("沒斷行的原樣（只壓空白）",
                 want.equals(TranslationStore.unwrap(want)));
 
         String middle = "Can be used to craft " + G + " Boots and " + G + " Leggings";
-        report("句子中間的圖示留著（實際：" + TranslationStore.unwrap(middle) + "）",
+        check("句子中間的圖示留著（實際：" + TranslationStore.unwrap(middle) + "）",
                 middle.equals(TranslationStore.unwrap(middle)));
     }
 
@@ -65,7 +66,7 @@ public final class ChatUnwrapTest {
             Object hit = LineTranslator.translateChat(StyledText.fromString(w), store);
             String zh = hit == null ? null
                     : ((net.minecraft.network.chat.Component) hit).getString();
-            report("斷在第 " + w.indexOf('\n') + " 個字也翻得出來（實際："
+            check("斷在第 " + w.indexOf('\n') + " 個字也翻得出來（實際："
                             + (zh == null ? "查不到" : zh.replace("\n", " / ")) + "）",
                     zh != null && zh.contains("過勞工會") && zh.contains("點擊追蹤"));
         }
@@ -73,7 +74,7 @@ public final class ChatUnwrapTest {
         Object none = LineTranslator.translateChat(
                 StyledText.fromString("Some completely different message\nthat is not in the corpus"),
                 store);
-        report("語料裡沒有的照樣查不到", none == null);
+        check("語料裡沒有的照樣查不到", none == null);
 
         glyphPool();
         colours();
@@ -95,7 +96,7 @@ public final class ChatUnwrapTest {
                         + "§7blocks away) §d§nClick to track");
         Object hit = LineTranslator.translateChat(line, store);
         if (hit == null) {
-            report("有顏色的也翻得出來", false);
+            check("有顏色的也翻得出來", false);
             return;
         }
         java.util.List<String> text = new java.util.ArrayList<>();
@@ -108,7 +109,7 @@ public final class ChatUnwrapTest {
         }, net.minecraft.network.chat.Style.EMPTY);
 
         String joined = String.join("", text);
-        report("整句翻出來了（實際：" + joined + "）", joined.contains("點擊追蹤"));
+        check("整句翻出來了（實際：" + joined + "）", joined.contains("點擊追蹤"));
 
         String click = null;
         for (int i = 0; i < text.size(); i++) {
@@ -116,7 +117,7 @@ public final class ChatUnwrapTest {
                 click = style.get(i);
             }
         }
-        report("「點擊追蹤」是粉紅加底線（實際：" + click + "）",
+        check("「點擊追蹤」是粉紅加底線（實際：" + click + "）",
                 click != null && click.contains("底線") && !click.startsWith("-"));
 
         String head = null;
@@ -125,7 +126,7 @@ public final class ChatUnwrapTest {
                 head = style.get(i);
             }
         }
-        report("主句沒有被上成粉紅（實際：" + head + "）",
+        check("主句沒有被上成粉紅（實際：" + head + "）",
                 head != null && !head.equals(click));
     }
 
@@ -138,7 +139,7 @@ public final class ChatUnwrapTest {
                 + G + " blocks away) craft " + G + " Boots";
         java.util.List<com.wynnchayuan.capture.LineParts.Piece> kept =
                 TemplateRenderer.unwrappedGlyphs(template, all);
-        report("續行的圖示拿掉、其餘留著（實際："
+        check("續行的圖示拿掉、其餘留著（實際："
                         + kept.stream().map(com.wynnchayuan.capture.LineParts.Piece::text).toList() + "）",
                 kept.size() == 2 && kept.get(0).text().equals("A")
                         && kept.get(1).text().equals("C"));
@@ -146,13 +147,7 @@ public final class ChatUnwrapTest {
         java.util.List<com.wynnchayuan.capture.LineParts.Piece> flat = TemplateRenderer.unwrappedGlyphs(
                 G + " starts in {~}m! craft " + G + " Boots",
                 java.util.List.of(all.get(0), all.get(2)));
-        report("沒有換行時一個都不少", flat.size() == 2);
+        check("沒有換行時一個都不少", flat.size() == 2);
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

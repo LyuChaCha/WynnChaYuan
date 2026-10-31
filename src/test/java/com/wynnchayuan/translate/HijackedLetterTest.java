@@ -11,9 +11,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class HijackedLetterTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class HijackedLetterTest {
 
     private static TranslationStore STORE;
 
@@ -74,10 +75,4 @@ public final class HijackedLetterTest {
         return out == null ? "" : out.getString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -13,9 +13,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class AbilityTooltipRenderTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class AbilityTooltipRenderTest {
 
     private static final Style COMMON = Style.EMPTY.withFont(new FontDescription.Resource(
             Identifier.withDefaultNamespace("common")));
@@ -271,10 +272,4 @@ public final class AbilityTooltipRenderTest {
         return w[0];
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

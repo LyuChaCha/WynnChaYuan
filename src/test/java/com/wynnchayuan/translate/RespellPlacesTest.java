@@ -19,14 +19,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public final class RespellPlacesTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class RespellPlacesTest {
 
     public static void main(String[] args) throws Exception {
         Path root = Path.of("src/main/resources/assets/wynnchayuan");
         Set<String> corpus = corpus(root.resolve("translations"));
-        report("語料讀得到（" + corpus.size() + " 條字串）", corpus.size() > 100_000);
+        check("語料讀得到（" + corpus.size() + " 條字串）", corpus.size() > 100_000);
 
         places(root, corpus);
         respell(corpus);
@@ -80,8 +81,8 @@ public final class RespellPlacesTest {
                 }
             }
         }
-        report("對照組裡真的有地名（" + withPlaces + " 條）", withPlaces > 1000);
-        report("★ 地名比對跟原本的比對式逐條相同（" + inputs.size() + " 條，不同 " + differ + " 條"
+        check("對照組裡真的有地名（" + withPlaces + " 條）", withPlaces > 1000);
+        check("★ 地名比對跟原本的比對式逐條相同（" + inputs.size() + " 條，不同 " + differ + " 條"
                 + (firstDiff == null ? "" : "，例如 " + firstDiff) + "）", differ == 0);
     }
 
@@ -151,8 +152,8 @@ public final class RespellPlacesTest {
                 }
             }
         }
-        report("對照組裡真的有英式拼法（" + changed + " 條）", changed > 100);
-        report("★ 拼法換算跟原本逐條相同（" + inputs.size() + " 條，不同 " + differ + " 條"
+        check("對照組裡真的有英式拼法（" + changed + " 條）", changed > 100);
+        check("★ 拼法換算跟原本逐條相同（" + inputs.size() + " 條，不同 " + differ + " 條"
                 + (firstDiff == null ? "" : "，例如 " + firstDiff) + "）", differ == 0);
     }
 
@@ -202,10 +203,4 @@ public final class RespellPlacesTest {
         }
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

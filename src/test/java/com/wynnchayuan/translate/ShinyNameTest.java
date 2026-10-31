@@ -5,9 +5,10 @@ import com.wynnchayuan.CollectorConfig;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class ShinyNameTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ShinyNameTest {
 
     public static void main(String[] args) throws Exception {
         Path root = Path.of("src/main/resources/assets/wynnchayuan/translations");
@@ -106,10 +107,4 @@ public final class ShinyNameTest {
               want == null ? got == null : want.equals(got));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

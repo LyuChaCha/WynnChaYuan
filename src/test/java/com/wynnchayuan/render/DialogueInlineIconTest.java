@@ -22,9 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class DialogueInlineIconTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueInlineIconTest {
 
     private static final TextColor BODY = TextColor.fromRgb(0xE0D4C0);
     private static final TextColor FIRE = TextColor.fromRgb(0xFF5555);
@@ -654,10 +655,4 @@ public final class DialogueInlineIconTest {
         return w;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

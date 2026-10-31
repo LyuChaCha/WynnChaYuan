@@ -14,9 +14,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class ChatHoldTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ChatHoldTest {
 
     private static Component offset(int px) {
         return Component.literal(SpaceOffset.encode(px))
@@ -252,10 +253,4 @@ public final class ChatHoldTest {
         return com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(row).strip();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

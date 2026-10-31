@@ -10,9 +10,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class BlockedByTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class BlockedByTest {
 
     private static final int RED = 0xFF5555;
     private static final int GREY = 0xAAAAAA;
@@ -99,10 +100,4 @@ public final class BlockedByTest {
                 .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(colour)));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

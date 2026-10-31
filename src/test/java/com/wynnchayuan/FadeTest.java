@@ -3,9 +3,10 @@ package com.wynnchayuan;
 import com.wynnchayuan.render.Colors;
 import com.wynnchayuan.render.Fade;
 
-public final class FadeTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class FadeTest {
 
     public static void main(String[] args) {
         long now = System.currentTimeMillis();
@@ -39,10 +40,4 @@ public final class FadeTest {
         }
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

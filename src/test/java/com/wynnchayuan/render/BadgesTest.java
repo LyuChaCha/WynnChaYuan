@@ -18,9 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public final class BadgesTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class BadgesTest {
 
     private static final int GOLD = 0xFFD24A;
     private static final int CYAN = 0x5BD8E8;
@@ -271,13 +272,6 @@ public final class BadgesTest {
             return Optional.empty();
         }, Style.EMPTY);
         return out;
-    }
-
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
     }
 
     private static void done() {

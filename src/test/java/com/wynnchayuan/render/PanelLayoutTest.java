@@ -2,9 +2,10 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig.PanelSide;
 
-public final class PanelLayoutTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class PanelLayoutTest {
 
     private static final int FRAME = OriginalTooltipBox.FRAME;
 
@@ -54,10 +55,4 @@ public final class PanelLayoutTest {
         return TooltipPlacement.layout(150, 200, 180, 260, drawn, mouseX, 150, 640, 360, gap, PanelSide.AUTO);
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

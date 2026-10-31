@@ -7,15 +7,18 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class DialogueFitTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueFitTest {
 
     private static final int WIDTH = 232;
 
     private static final int[] WIDTHS = {232, 220, 200, 180, 160};
 
     public static void main(String[] args) throws Exception {
+        dialogueNewline();
+        dialogueKinsoku();
         Path base = Path.of("src/main/resources/assets/wynnchayuan/translations/zh_tw");
         List<String[]> rows = new ArrayList<>();
         collect(base.resolve("quest-dialogue.json"), rows);
@@ -114,10 +117,78 @@ public final class DialogueFitTest {
                 .replace("\\n", "\n").replace("\\\"", "\"").replace("\\\\", "\\");
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
+    private static void dialogueNewline() throws Exception {
+        check("沒有換行就原樣",
+                DialogueTyping.oneLine("Merhaba, {u}!").equals("Merhaba, {u}!"));
+        check("拉丁字之間換成一個空白",
+                DialogueTyping.oneLine("Bu çok uzun\nbir cümle.").equals("Bu çok uzun bir cümle."));
+        check("換行旁邊已經有空白就不再加",
+                DialogueTyping.oneLine("Bu çok uzun \nbir cümle.").equals("Bu çok uzun bir cümle."));
+        check("中文字之間直接接上",
+                DialogueTyping.oneLine("這句話很長\n所以換行了").equals("這句話很長所以換行了"));
+        check("\\r\\n 也一樣",
+                DialogueTyping.oneLine("один\r\nдва").equals("один два"));
+        check("連續兩個換行不會變成兩個空白",
+                DialogueTyping.oneLine("A\n\nB").equals("A B"));
+
+        String flat = DialogueTyping.oneLine("Bu çok uzun bir cümle\nve ikinci satır burada.");
+        List<String> rows = DialogueLayout.wrap(flat, 2, null, 150);
+        check("攤平的譯文攤得進兩列",
+                rows != null && rows.stream().noneMatch(r -> r.indexOf('\n') >= 0));
+        check("沒有漏字",
+                rows != null && String.join(" ", rows).replace("  ", " ").strip().equals(flat));
     }
+
+    private static void dialogueKinsoku() throws Exception {
+        String text = "把 [Abysso Galoshes] 帶來";
+        int bracket = text.indexOf('[');
+        check("★ 斷在 [ 後面時，[ 跟著下一行走",
+                DialogueLayout.kinsoku(text, 0, bracket + 1) == bracket);
+        check("★ 斷在 ] 前面時，把前一個字一起帶下去",
+                DialogueLayout.kinsoku(text, 0, text.indexOf(']'))
+                        == text.indexOf(']') - 1);
+        check("沒有頭尾問題的斷點不動",
+                DialogueLayout.kinsoku(text, 0, bracket) == bracket);
+        check("挪到整行變空時就不挪",
+                DialogueLayout.kinsoku("[abc", 0, 1) == 1);
+        check("★ 最多只往前挪 3 個字元，不會為了避頭尾把整行搬空",
+                DialogueLayout.kinsoku("中文字」』）】", 0, 6) == 3);
+
+        int bad = 0;
+        int checked = 0;
+        for (int limit = 60; limit <= 360; limit += 6) {
+            List<String> rows = DialogueLayout.wrap(FERNDOR, 40, null, limit);
+            if (rows == null) {
+                continue;
+            }
+            checked++;
+            for (String row : rows) {
+                if (row.isEmpty()) {
+                    continue;
+                }
+                if (OPENING.indexOf(row.charAt(row.length() - 1)) >= 0) {
+                    bad++;
+                    System.out.println("    行尾留了開括號：" + row);
+                }
+                if (CLOSING.indexOf(row.charAt(0)) >= 0) {
+                    bad++;
+                    System.out.println("    行首是閉括號或標點：" + row);
+                }
+            }
+        }
+        check("掃過 " + checked + " 種寬度都有量到", checked > 30);
+        check("★ 沒有一行的結尾是開括號、開頭是閉括號（" + bad + " 處）", bad == 0);
+
+        List<String> rows = DialogueLayout.wrap(FERNDOR, 40, null, 120);
+        check("斷行沒有漏字",
+                rows != null && String.join("", rows).replace(" ", "")
+                        .equals(FERNDOR.replace(" ", "")));
+    }
+
+    private static final String FERNDOR =
+            "多年前被一個海盜從我們這裡偷走了！你要是能把 [Abysso Galoshes] 帶來幫我們，我可以給你報酬！";
+
+    private static final String OPENING = "([{<「『【《（";
+
+    private static final String CLOSING = ")]}>」』】》），。、；：！？";
 }

@@ -10,9 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class ShopSignTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ShopSignTest {
 
     private static final int AQUA = 0x55FFFF;
     private static final int WHITE = 0xFFFFFF;
@@ -70,10 +71,4 @@ public final class ShopSignTest {
         return c == null ? null : c.getString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

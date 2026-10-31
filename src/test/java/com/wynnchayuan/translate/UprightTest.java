@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class UprightTest {
 
     private static final int SLANT_WHITE = 0x00EB34;
@@ -42,8 +45,6 @@ public final class UprightTest {
             "ru_ru", "Иду по руинам",
             "es_es", "Cruzo las ruinas",
             "tr_tr", "Harabelerden geçiyorum");
-
-    private static int failures = 0;
 
     public static void main(String[] args) throws IOException {
         TranslationStore store = new TranslationStore();
@@ -201,10 +202,4 @@ public final class UprightTest {
         return out;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

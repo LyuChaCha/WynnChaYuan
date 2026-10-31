@@ -19,9 +19,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public final class WynntilsTextTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class WynntilsTextTest {
 
     // 類別簡名要跟 WynntilsText.TRACKER 一樣
     private static final class ContentTrackerOverlay { }
@@ -492,10 +493,4 @@ public final class WynntilsTextTest {
               "进行中".equals(after));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

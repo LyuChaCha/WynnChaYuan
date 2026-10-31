@@ -1,8 +1,9 @@
 package com.wynnchayuan.listener;
 
-public final class DialogueChoiceTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class DialogueChoiceTest {
 
     public static void main(String[] args) {
         for (String real : new String[] {
@@ -48,10 +49,4 @@ public final class DialogueChoiceTest {
         System.out.println("對話選項：全部通過");
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

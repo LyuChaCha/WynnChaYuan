@@ -13,9 +13,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class OwnNameChatTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class OwnNameChatTest {
 
     private static final String NAME = "yool141";
     private static final String TAIL = " for all the help they brought us."
@@ -120,10 +121,4 @@ public final class OwnNameChatTest {
         return store;
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

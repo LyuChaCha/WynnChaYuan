@@ -5,9 +5,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class TranslationStoreTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class TranslationStoreTest {
 
     public static void main(String[] args) throws IOException {
         Path dir = Files.createTempDirectory("wynnchayuan-store");
@@ -428,10 +429,4 @@ public final class TranslationStoreTest {
         }
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -12,9 +12,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class PanelFlowTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class PanelFlowTest {
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -379,13 +380,6 @@ public final class PanelFlowTest {
 
     private static boolean hasCjk(String s) {
         return s.codePoints().anyMatch(cp -> cp >= 0x4E00 && cp <= 0x9FFF);
-    }
-
-    private static void check(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
     }
 
     private static void finish() {

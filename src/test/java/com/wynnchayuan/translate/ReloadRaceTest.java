@@ -11,6 +11,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
+
 public final class ReloadRaceTest {
 
     private static final int FILLER = 4000;
@@ -23,8 +26,6 @@ public final class ReloadRaceTest {
     private static final String MARKED = "✔ Combat Lv. Min: 105";
     private static final String MARKED_SHOWN = "✖ Combat Lv. Min: 105";
     private static final String PREFIX = "The harbourmaster keeps a ledger of every ship that docks at Selchar.";
-
-    private static int failures;
 
     public static void main(String[] args) throws Exception {
         Path tw = language("race-tw", "甲");
@@ -121,10 +122,4 @@ public final class ReloadRaceTest {
         return new com.google.gson.JsonPrimitive(text).toString();
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -4,9 +4,10 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public final class OwnOutputsTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class OwnOutputsTest {
 
     private static final List<String> OURS = List.of(
             "{#} Мировое событие «Пепельная яма Maar» начнётся через {~} мин {~} с! (в {~} бл.\n{#} отсюда) Нажмите, чтобы отслеживать",
@@ -37,24 +38,24 @@ public final class OwnOutputsTest {
                 System.out.println("    沒認出來：" + line.replace("\n", "⏎"));
             }
         }
-        report("★ 實機收進來的俄文、西文譯文都認得出是我們的（" + hit + "/" + OURS.size() + "）",
+        check("★ 實機收進來的俄文、西文譯文都認得出是我們的（" + hit + "/" + OURS.size() + "）",
                hit == OURS.size());
 
         for (String line : GAME) {
-            report("遊戲原文照樣收：「" + line + "」", !OwnOutputs.isOwn(line));
+            check("遊戲原文照樣收：「" + line + "」", !OwnOutputs.isOwn(line));
         }
 
         OwnOutputs.note(Component.literal(
                 "[WynnChaYuan] Ya está la versión 0.2.0_8 (tienes la 0.2.0_6)"));
         OwnOutputs.note(Component.literal("▸ Haz clic aquí para descargarla de GitHub"));
         OwnOutputs.note(Component.literal("Notas completas en F6 → Novedades"));
-        report("★ 更新通知第一行",
+        check("★ 更新通知第一行",
                OwnOutputs.isOwn("[WynnChaYuan] Ya está la versión {~}_{~} (tienes la {~}_{~})"));
-        report("★ 更新通知的連結那一行",
+        check("★ 更新通知的連結那一行",
                OwnOutputs.isOwn("▸ Haz clic aquí para descargarla de GitHub"));
-        report("★ 更新通知最後一行", OwnOutputs.isOwn("Notas completas en F{~} → Novedades"));
+        check("★ 更新通知最後一行", OwnOutputs.isOwn("Notas completas en F{~} → Novedades"));
 
-        report("同一句換個折行位置照樣認得",
+        check("同一句換個折行位置照樣認得",
                OwnOutputs.canon("a b\n{#} c d").equals(OwnOutputs.canon("a b c\n{#} d")));
 
         System.out.println(failures == 0
@@ -65,10 +66,4 @@ public final class OwnOutputsTest {
         }
     }
 
-    private static void report(String what, boolean ok) {
-        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

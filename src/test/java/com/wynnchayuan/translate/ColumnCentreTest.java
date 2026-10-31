@@ -15,9 +15,10 @@ import java.util.List;
 
 import com.wynnchayuan.translate.ColumnAligner.Piece;
 
-public final class ColumnCentreTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class ColumnCentreTest {
 
     public static void main(String[] args) throws IOException {
         SharedConstants.tryDetectVersion();
@@ -381,10 +382,4 @@ public final class ColumnCentreTest {
         check("只看緊接在後面那一段", !SpaceRuns.textAfterGap(plate, 1));
     }
 
-    private static void check(String what, boolean ok) {
-        System.out.println((ok ? "  OK  " : "  失敗 ") + what);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -19,9 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public final class WynnventoryBridgeTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class WynnventoryBridgeTest {
 
     private static final Path THEIR_LANG = Path.of("src/test/resources/wynnventory-en_us.json");
 
@@ -290,12 +291,4 @@ public final class WynnventoryBridgeTest {
         }
     }
 
-    private static void check(String what, boolean ok) {
-        if (!ok || !what.startsWith("它的鍵都認得出來")) {
-            System.out.println((ok ? "  ok   " : "  FAIL ") + what);
-        }
-        if (!ok) {
-            failures++;
-        }
-    }
 }

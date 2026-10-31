@@ -8,9 +8,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public final class PlainNamePeekTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class PlainNamePeekTest {
 
     public static void main(String[] args) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-peek");
@@ -197,10 +198,4 @@ public final class PlainNamePeekTest {
         return at < out.size() && out.get(at) != null ? out.get(at).getString() : null;
     }
 
-    private static void check(String name, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }

@@ -9,9 +9,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class MarketAmountTooltipTest {
+import static com.wynnchayuan.Check.check;
+import static com.wynnchayuan.Check.failures;
 
-    private static int failures = 0;
+public final class MarketAmountTooltipTest {
 
     public static void main(String[] args) {
         System.out.println("=== 市場數量按鈕 ===");
@@ -38,7 +39,7 @@ public final class MarketAmountTooltipTest {
                 all.append(c.getString()).append(" / ");
             }
             System.out.println("  整份 " + all);
-            report("★ " + verb + "：說明兩行都換成中文",
+            check("★ " + verb + "：說明兩行都換成中文",
                    !all.toString().contains("amount of this item")
                    && !all.toString().contains("you plan to buy"));
         }
@@ -65,7 +66,7 @@ public final class MarketAmountTooltipTest {
         Component built = LineTranslator.translate(
                 StyledText.fromComponent(line), store);
         System.out.println("  譯文 " + (built == null ? "（查不到）" : describe(built)));
-        report("★ 標題那一行的字是金的，不是符號那一段的青色",
+        check("★ 標題那一行的字是金的，不是符號那一段的青色",
                built != null && describe(built).contains("價格 #FFAA00"));
     }
 
@@ -91,18 +92,18 @@ public final class MarketAmountTooltipTest {
         Component built = LineTranslator.translate(
                 StyledText.fromComponent(line), store);
         System.out.println("  譯文 " + (built == null ? "（查不到）" : describe(built)));
-        report("［綠寶石］整行查得到譯文", built != null);
+        check("［綠寶石］整行查得到譯文", built != null);
         if (built == null) {
             return;
         }
         String shown = describe(built);
-        report("★［綠寶石］第一顆 ² 是灰的，不是數字的白",
+        check("★［綠寶石］第一顆 ² 是灰的，不是數字的白",
                shown.contains("[² " + hex(GREY) + "]"));
-        report("★［綠寶石］第二顆 ² 是暗青的，不是亮青",
+        check("★［綠寶石］第二顆 ² 是暗青的，不是亮青",
                shown.contains("[² " + hex(AQUA) + "]"));
-        report("★［綠寶石］星號跟著右邊的數字走，是青的不是底色",
+        check("★［綠寶石］星號跟著右邊的數字走，是青的不是底色",
                shown.contains("[✮  " + hex(CYAN) + "]"));
-        report("［綠寶石］「每個」仍是金的（語料自己指定的 {c:#FFAA00}）",
+        check("［綠寶石］「每個」仍是金的（語料自己指定的 {c:#FFAA00}）",
                shown.contains("每個 " + hex(GOLD)));
     }
 
@@ -126,10 +127,4 @@ public final class MarketAmountTooltipTest {
         return out.toString();
     }
 
-    private static void report(String name, boolean ok) {
-        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + name);
-        if (!ok) {
-            failures++;
-        }
-    }
 }
