@@ -1798,6 +1798,14 @@ tasks.register('runWorldResetChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runWorldResetChecks' }
 
+tasks.register('runThirdPartyFieldChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ThirdPartyFieldTest'
+}
+tasks.named('check') { dependsOn 'runThirdPartyFieldChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'

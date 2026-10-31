@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.ModLog;
+import com.wynnchayuan.ThirdPartyField;
 import com.wynnchayuan.translate.WmsBridge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -17,15 +18,29 @@ public final class WmsRows {
     private static Method getName;
     private static boolean broken;
 
+    private static final ThirdPartyField X = new ThirdPartyField("x");
+    private static final ThirdPartyField Y = new ThirdPartyField("y");
+    private static final ThirdPartyField WIDTH = new ThirdPartyField("width");
+    private static final ThirdPartyField HEIGHT = new ThirdPartyField("height");
+
     private static final int INK = 0xFFA9B5C3;
     private static final int STAR_ROOM = 20;
     private static final int NAME_X = 24;
 
-    public static void draw(GuiGraphics g, Object widget, int x, int y, int width, int height) {
+    public static void draw(GuiGraphics g, Object widget) {
         if (broken || widget == null) {
             return;
         }
+        if (!WIDTH.available(widget) || !HEIGHT.available(widget)
+                || !X.available(widget) || !Y.available(widget)) {
+            broken = true;
+            return;
+        }
         try {
+            int x = X.getInt(widget, 0);
+            int y = Y.getInt(widget, 0);
+            int width = WIDTH.getInt(widget, 0);
+            int height = HEIGHT.getInt(widget, 0);
             String english = name(widget);
             String shown = WmsBridge.translatedName(english);
             if (shown == null || shown.equalsIgnoreCase(english)) {
