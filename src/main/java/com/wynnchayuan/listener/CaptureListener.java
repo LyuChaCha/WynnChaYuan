@@ -111,22 +111,18 @@ public final class CaptureListener {
     }
 
     private static void auditSpeaker(String template, String speaker) {
-        try {
-            String known = DialogueSpeaker.cleanName(
-                    WynnChaYuan.translations().speakerOf(template));
-            if (known == null) {
-                return;
-            }
-            String got = DialogueSpeaker.cleanName(speaker);
-            if (got == null) {
-                WynnChaYuan.store().noteEvent("speaker.audit.none");
-            } else if (got.equalsIgnoreCase(known)) {
-                WynnChaYuan.store().noteEvent("speaker.audit.match");
-            } else {
-                WynnChaYuan.store().noteEvent("speaker.audit.mismatch");
-            }
-        } catch (Throwable failure) {
-            ErrorDebug.note("CaptureListener#auditSpeaker", null, failure);
+        String known = DialogueSpeaker.cleanName(
+                WynnChaYuan.translations().speakerOf(template));
+        if (known == null) {
+            return;
+        }
+        String got = DialogueSpeaker.cleanName(speaker);
+        if (got == null) {
+            WynnChaYuan.store().noteEvent("speaker.audit.none");
+        } else if (got.equalsIgnoreCase(known)) {
+            WynnChaYuan.store().noteEvent("speaker.audit.match");
+        } else {
+            WynnChaYuan.store().noteEvent("speaker.audit.mismatch");
         }
     }
 
@@ -148,22 +144,18 @@ public final class CaptureListener {
     }
 
     private static void auditQuest(String template, String quest, boolean withQuest) {
-        try {
-            if (quest == null) {
-                return;
-            }
-            String known = WynnChaYuan.translations().questOf(template);
-            if (known == null) {
-                return;
-            }
-            String tracked = GlyphSplitter.stripGlyphChars(quest).strip();
-            boolean same = tracked.equalsIgnoreCase(known.strip());
-            String verdict = withQuest ? (same ? "match" : "mismatch")
-                                       : (same ? "missed" : "avoided");
-            WynnChaYuan.store().noteEvent("quest.audit." + verdict);
-        } catch (Throwable failure) {
-            ErrorDebug.note("CaptureListener#auditQuest", null, failure);
+        if (quest == null) {
+            return;
         }
+        String known = WynnChaYuan.translations().questOf(template);
+        if (known == null) {
+            return;
+        }
+        String tracked = GlyphSplitter.stripGlyphChars(quest).strip();
+        boolean same = tracked.equalsIgnoreCase(known.strip());
+        String verdict = withQuest ? (same ? "match" : "mismatch")
+                                   : (same ? "missed" : "avoided");
+        WynnChaYuan.store().noteEvent("quest.audit." + verdict);
     }
 
     private static final Set<RecipientType> SERVER_MESSAGES =

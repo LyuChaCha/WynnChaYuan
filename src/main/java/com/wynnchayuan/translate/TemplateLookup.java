@@ -386,22 +386,17 @@ final class TemplateLookup {
     }
 
     static Component padSlot(Component translated, Component original, Style style) {
-        try {
-            int want = LineTranslator.widthOf(original);
-            int got = LineTranslator.widthOf(translated);
-            if (want <= 0 || got <= 0 || want == got) {
-                return translated;
-            }
-            String fill = SpaceOffset.encode(want - got);
-            if (fill.isEmpty()) {
-                return translated;
-            }
-            return Component.empty().append(translated).append(
-                    Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
-        } catch (Throwable t) {
-            ErrorDebug.note("TemplateLookup#padSlot", null, t);
+        int want = LineTranslator.widthOf(original);
+        int got = LineTranslator.widthOf(translated);
+        if (want <= 0 || got <= 0 || want == got) {
             return translated;
         }
+        String fill = SpaceOffset.encode(want - got);
+        if (fill.isEmpty()) {
+            return translated;
+        }
+        return Component.empty().append(translated).append(
+                Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
     }
 
     private static String lookupTrimmed(String template, TranslationStore store,

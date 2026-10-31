@@ -366,12 +366,7 @@ public final class PlayerDataFilter {
     private static final int MAX_PLATE_WORDS_HARD = 6;
 
     private static String localPlayerName() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            return mc == null || mc.getUser() == null ? null : mc.getUser().getName();
-        } catch (Throwable t) {
-            ErrorDebug.note("PlayerDataFilter#localPlayerName", null, t);
-            return null;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null || mc.getUser() == null ? null : mc.getUser().getName();
     }
 }

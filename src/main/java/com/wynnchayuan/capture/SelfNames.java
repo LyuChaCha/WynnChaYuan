@@ -161,13 +161,8 @@ public final class SelfNames {
     }
 
     private static Object localPlayer() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            return mc == null ? null : mc.player;
-        } catch (Throwable t) {
-            ErrorDebug.note("SelfNames#localPlayer", null, t);
-            return null;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null ? null : mc.player;
     }
 
     public static String find(String text) {
@@ -241,14 +236,9 @@ public final class SelfNames {
     }
 
     private static String accountName() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
-            return name == null || name.isBlank() ? null : name;
-        } catch (Throwable t) {
-            ErrorDebug.note("SelfNames#accountName", null, t);
-            return null;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
+        return name == null || name.isBlank() ? null : name;
     }
 
     private static List<String> displayNames() {

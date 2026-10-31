@@ -547,12 +547,8 @@ final class ChatRealigner {
     }
 
     private static int chatWidth() {
-        try {
-            return ChatComponent.getWidth(Minecraft.getInstance().options.chatWidth().get());
-        } catch (Throwable t) {
-            ErrorDebug.note("ChatRealigner#chatWidth", null, t);
-            return 0;
-        }
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null ? 0 : ChatComponent.getWidth(mc.options.chatWidth().get());
     }
 
     private static final int MIN_CELL_GAP = 4;

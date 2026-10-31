@@ -82,13 +82,8 @@ public final class ThirdPartyLiterals {
     }
 
     private static boolean classPresent(String name) {
-        try {
-            return ThirdPartyLiterals.class.getClassLoader()
-                    .getResource(name.replace('.', '/') + ".class") != null;
-        } catch (Throwable t) {
-            ErrorDebug.note("ThirdPartyLiterals#classPresent", null, t);
-            return false;
-        }
+        return ThirdPartyLiterals.class.getClassLoader()
+                .getResource(name.replace('.', '/') + ".class") != null;
     }
 
     public static boolean reserved(String text) {

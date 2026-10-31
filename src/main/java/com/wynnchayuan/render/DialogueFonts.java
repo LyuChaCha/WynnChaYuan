@@ -7,6 +7,7 @@ import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,6 +102,9 @@ final class DialogueFonts {
         }
         List<Integer> flat = new ArrayList<>();
         Minecraft mc = Minecraft.getInstance();
+        if (mc == null) {
+            return new int[0];
+        }
         try {
             var id = Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID,
                     "font/dialogue/" + lang + "/coverage.txt");
@@ -117,7 +121,7 @@ final class DialogueFonts {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException | RuntimeException e) {
             ErrorDebug.note("DialogueFonts#coverage", null, e);
         }
         int[] out = new int[flat.size()];
