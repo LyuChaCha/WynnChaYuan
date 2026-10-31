@@ -46,7 +46,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
     private static CaptureStore store;
-    private static CaptureListener listener;
+    private static volatile CaptureListener listener;
     private static ScheduledExecutorService flusher;
     static CollectorConfig config;
     static TranslationStore translations;
