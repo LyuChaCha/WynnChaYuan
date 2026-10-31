@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ThirdPartyField;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
@@ -292,6 +293,14 @@ public final class WynntilsText {
         } catch (Throwable t) {
             ErrorDebug.note("WynntilsText#notification", null, t);
             return text;
+        }
+    }
+
+    private static final ThirdPartyField HELD_ITEM_TEXT = new ThirdPartyField("itemText");
+
+    public static void translateHeldItem(Object overlay) {
+        if (HELD_ITEM_TEXT.get(overlay) instanceof StyledText text) {
+            HELD_ITEM_TEXT.set(overlay, heldItemText(text));
         }
     }
 

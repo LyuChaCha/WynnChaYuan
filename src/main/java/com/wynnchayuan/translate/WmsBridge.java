@@ -1,5 +1,7 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.ThirdPartyField;
+
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -35,6 +37,12 @@ public final class WmsBridge {
     private record Answer(String query, int indexSize, Set<String> english) {}
 
     private static volatile Answer last;
+
+    private static final ThirdPartyField ITEM_NAME = new ThirdPartyField("name");
+
+    public static boolean matchesItem(Object item, String query) {
+        return ITEM_NAME.get(item) instanceof String english && matches(english, query);
+    }
 
     public static boolean matches(String english, String query) {
         if (english == null || query == null) {
