@@ -33,7 +33,7 @@ public final class DialogueGoldenFrames {
     public static List<String> panel(String src, TranslationStore store,
                                      Function<Component, String> flatten) {
         List<String> frames = new ArrayList<>(src.length() + STILL_FRAMES);
-        String[] cache = new String[2];
+        String[] cache = new String[3];
         for (int at = 1; at <= src.length(); at++) {
             frames.add(panelFrame(src.substring(0, at), store, cache, false, flatten));
         }
@@ -56,7 +56,9 @@ public final class DialogueGoldenFrames {
         try {
             StyledText line = DialogueIcons.line(raw, store);
             String template = GlyphSplitter.toTemplate(line);
-            if (DialogueOverlay.canReuse(cache[0], template)) {
+            String before = cache[2];
+            cache[2] = raw;
+            if (DialogueOverlay.canReuse(cache[0], template, before, raw)) {
                 return cache[1];
             }
             DialogueOverlay.LineResult result =

@@ -64,6 +64,12 @@ public final class ChatBlock {
         }
     }
 
+    public static synchronized void flushPending() {
+        if (!pending.isEmpty()) {
+            flush();
+        }
+    }
+
     static synchronized boolean ready(long now) {
         if (pending.isEmpty()) {
             return false;
