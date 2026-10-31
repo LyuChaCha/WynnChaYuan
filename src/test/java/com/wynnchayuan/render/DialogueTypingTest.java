@@ -328,7 +328,7 @@ public final class DialogueTypingTest {
 
     private static List<String> panelFrames(String src, TranslationStore store) {
         List<String> frames = new ArrayList<>();
-        String[] cache = new String[2];
+        String[] cache = new String[3];
         for (int at = 1; at <= src.length(); at++) {
             frames.add(panelFrame(src.substring(0, at), store, cache, false));
         }
@@ -342,7 +342,9 @@ public final class DialogueTypingTest {
                                      String[] cache, boolean steady) {
         com.wynntils.core.text.StyledText line = DialogueIcons.line(raw, store);
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
-        if (DialogueOverlay.canReuse(cache[0], template)) {
+        String before = cache[2];
+        cache[2] = raw;
+        if (DialogueOverlay.canReuse(cache[0], template, before, raw)) {
             return cache[1];
         }
         DialogueOverlay.LineResult result =
