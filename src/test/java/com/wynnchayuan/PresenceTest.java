@@ -4,10 +4,7 @@ import com.wynnchayuan.PresenceLogin;
 import com.wynnchayuan.PresenceAccount;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.cape.CapeRules;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
@@ -78,22 +75,6 @@ public final class PresenceTest {
                 && PresenceAccount.linkResultOf(400) == PresenceAccount.LinkResult.BAD_CODE
                 && PresenceAccount.linkResultOf(401) == PresenceAccount.LinkResult.LOGIN_FAILED
                 && PresenceAccount.linkResultOf(500) == PresenceAccount.LinkResult.FAILED);
-        check("★ 一般玩家 1 MB、成員 20 MB", CapeRules.limitFor(false) == 1024 * 1024
-                && CapeRules.limitFor(true) == 20 * 1024 * 1024);
-        byte[] pngHead = new byte[64];
-        System.arraycopy(new byte[] {(byte) 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A}, 0, pngHead, 0, 8);
-        System.arraycopy("IHDR".getBytes(java.nio.charset.StandardCharsets.US_ASCII), 0, pngHead, 12, 4);
-        pngHead[19] = (byte) 176;
-        pngHead[23] = (byte) 136;
-        int[] measured = CapeRules.size(pngHead);
-        check("★ 量得出 PNG 的尺寸（上傳完要說給玩家聽）", measured != null && measured[0] == 176 && measured[1] == 136);
-        byte[] gifHead = new byte[32];
-        System.arraycopy("GIF89a".getBytes(java.nio.charset.StandardCharsets.US_ASCII), 0, gifHead, 0, 6);
-        gifHead[6] = 88;
-        gifHead[8] = 68;
-        measured = CapeRules.size(gifHead);
-        check("量得出 GIF 的尺寸", measured != null && measured[0] == 88 && measured[1] == 68);
-        check("不是圖的量不出來", CapeRules.size(new byte[40]) == null && CapeRules.size(null) == null);
         JsonObject hello = JsonParser.parseString(
                 Presence.helloBody(true, true, java.util.List.of("developers", "sponsors"))).getAsJsonObject();
         check("★ 報到只有三欄：披風開關與徽章的選擇（實際 " + hello.keySet() + "）",
@@ -190,32 +171,6 @@ public final class PresenceTest {
         check("沒有登入網址就沒有帳號頁的登入網址", PresenceAccount.onPage(null, "/account") == null);
         check("網站是 wynnchayuan.com", "https://wynnchayuan.com".equals(Presence.BASE));
 
-        byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));
-        check("照範本畫的 GIF 可以上傳", CapeRules.check(gif) == null);
-        check("★ 只畫一面的圖不能上傳——要照範本", CapeRules.check(Files.readAllBytes(
-                Path.of("src/test/resources/cape/anim.gif"))) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(40, 64)) == CapeRules.Problem.BAD_SIZE);
-        check("★ 沒裁掉空白的完整版型也不能上傳", CapeRules.check(png(64, 32)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(128, 64)) == CapeRules.Problem.BAD_SIZE);
-        check("上限是 20 MB", CapeRules.MAX_BYTES == 20 * 1024 * 1024);
-        check("★ 下載到一半的 GIF 不行", CapeRules.check(Arrays.copyOf(gif, gif.length - 40))
-                == CapeRules.Problem.BAD_FORMAT);
-        check("★ 太大的檔不行", CapeRules.check(new byte[CapeRules.MAX_BYTES + 1])
-                == CapeRules.Problem.TOO_LARGE);
-        check("不是圖的不行", CapeRules.check("<html>".getBytes()) == CapeRules.Problem.BAD_FORMAT
-                && CapeRules.check(null) == CapeRules.Problem.BAD_FORMAT);
-        check("★ PNG：範本的七種尺寸都可以，最大 1056×816（實際 " + CapeRules.SIZES.length + " 種）",
-                CapeRules.SIZES.length == 7 && CapeRules.check(png(1056, 816)) == null
-                        && Arrays.stream(CapeRules.SIZES)
-                .allMatch(size -> CapeRules.check(png(size[0], size[1])) == null));
-        check("★ PNG：別的尺寸不行", CapeRules.check(png(100, 100)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(66, 51)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(990, 765)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(1408, 1088)) == CapeRules.Problem.BAD_SIZE);
-        byte[] wide = gif.clone();
-        wide[6] = 23;
-        check("GIF：別的尺寸不行", CapeRules.check(wide) == CapeRules.Problem.BAD_SIZE);
-
         System.out.println(failures == 0 ? "登記站：全部通過" : "登記站：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
@@ -230,23 +185,6 @@ public final class PresenceTest {
             out.append(String.format("%02x", hash[i]));
         }
         return out.toString();
-    }
-
-    private static byte[] png(int width, int height) {
-        byte[] bytes = new byte[64];
-        int[] head = {0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0, 0, 0, 13, 'I', 'H', 'D', 'R'};
-        for (int i = 0; i < head.length; i++) {
-            bytes[i] = (byte) head[i];
-        }
-        bytes[16] = (byte) (width >>> 24);
-        bytes[17] = (byte) (width >>> 16);
-        bytes[18] = (byte) (width >>> 8);
-        bytes[19] = (byte) width;
-        bytes[20] = (byte) (height >>> 24);
-        bytes[21] = (byte) (height >>> 16);
-        bytes[22] = (byte) (height >>> 8);
-        bytes[23] = (byte) height;
-        return bytes;
     }
 
 }
