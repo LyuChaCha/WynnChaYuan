@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -89,7 +89,7 @@ public final class HighlightModelCache {
     }
 
     private static boolean enabled() {
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         return config == null || config.wynntilsFps();
     }
 

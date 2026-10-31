@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ThirdPartyField;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -51,10 +51,10 @@ public final class WynntilsText {
     }
 
     static StyledText[] lines(Object overlay, StyledText[] lines,
-                              CollectorConfig config, TranslationStore store) {
+                              ModConfig config, TranslationStore store) {
         if (lines == null || lines.length == 0 || store == null || config == null
                 || !tracker(overlay)
-                || config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+                || config.trackerMode() != ModConfig.DialogueMode.REPLACE) {
             return lines;
         }
         StyledText[] out = new StyledText[lines.length];
@@ -201,7 +201,7 @@ public final class WynntilsText {
         }
     }
 
-    static String objective(String text, CollectorConfig config, TranslationStore store) {
+    static String objective(String text, ModConfig config, TranslationStore store) {
         if (text == null || text.isBlank() || store == null || config == null
                 || !config.translateObjectives()) {
             return text;
@@ -236,9 +236,9 @@ public final class WynntilsText {
         }
     }
 
-    static String marker(String text, CollectorConfig config, TranslationStore store) {
+    static String marker(String text, ModConfig config, TranslationStore store) {
         if (text == null || text.isBlank() || store == null || config == null
-                || config.trackerMode() == CollectorConfig.DialogueMode.OFF) {
+                || config.trackerMode() == ModConfig.DialogueMode.OFF) {
             return text;
         }
         synchronized (MARKERS) {
@@ -271,7 +271,7 @@ public final class WynntilsText {
         }
     }
 
-    static Component heldItemName(Component name, CollectorConfig config, TranslationStore store) {
+    static Component heldItemName(Component name, ModConfig config, TranslationStore store) {
         if (name == null || store == null || config == null || !config.translateHeldItem()) {
             return name;
         }
@@ -281,10 +281,10 @@ public final class WynntilsText {
 
     public static StyledText notification(StyledText text) {
         try {
-            CollectorConfig config = WynnChaYuan.config();
+            ModConfig config = WynnChaYuan.config();
             TranslationStore store = WynnChaYuan.translations();
             if (text == null || text.isEmpty() || config == null || store == null
-                    || config.chatMode() == CollectorConfig.ChatMode.OFF) {
+                    || config.chatMode() == ModConfig.ChatMode.OFF) {
                 return text;
             }
             StyledText shown = line(text, store);
@@ -355,7 +355,7 @@ public final class WynntilsText {
 
     public static List<Component> menuTooltip(List<Component> lines) {
         try {
-            CollectorConfig config = WynnChaYuan.config();
+            ModConfig config = WynnChaYuan.config();
             if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
                 return lines;
             }

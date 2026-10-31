@@ -74,7 +74,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static CaptureStore store;
     private static volatile CaptureListener listener;
     private static ScheduledExecutorService flusher;
-    static CollectorConfig config;
+    static ModConfig config;
     static TranslationStore translations;
     static KeyMapping openSettingsKey;
 
@@ -93,7 +93,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         return configDir;
     }
 
-    public static CollectorConfig config() {
+    public static ModConfig config() {
         return config;
     }
 
@@ -108,7 +108,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         ConfigFolder.tidy(dir);
         TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
-        config = new CollectorConfig(dir.resolve("config.json"));
+        config = new ModConfig(dir.resolve("config.json"));
         NetworkGate.use(config);
         CardDump.init(dir.resolve(CardDump.FILE));
         DialogueTint.init(dir.resolve(DialogueTint.FILE), language);
@@ -133,7 +133,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         language = Languages.pick(config.language(), LanguageLayers.gameLanguage());
         Languages.migrateFlat(dir, language);
         Path trDir = Languages.dir(dir, language);
-        TranslationCache.syncsFromGitHub = config.source() == CollectorConfig.Source.GITHUB;
+        TranslationCache.syncsFromGitHub = config.source() == ModConfig.Source.GITHUB;
         TranslationCache.prepare(trDir, language);
         String underneath = LanguageLayers.fallbackLanguage();
         if (underneath != null) {

@@ -2,7 +2,7 @@ package com.wynnchayuan.render;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.client.Credits;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -50,7 +50,7 @@ public final class BadgesTest {
 
         Path file = Files.createTempFile("wcy-badges", ".json");
         Files.deleteIfExists(file);
-        CollectorConfig config = new CollectorConfig(file);
+        ModConfig config = new ModConfig(file);
 
         Credits.Member sponsor = sections.get(1).members().get(0);
         Credits.Member hidden = sections.get(2).members().get(0);
@@ -164,13 +164,13 @@ public final class BadgesTest {
         check("名單上唯一的身分登記成不展示：別人還是看得到那一片", icons(Badges.decorate(
                 Component.literal("Shy_One"), "Shy_One", "Someone", config, 0)).equals(List.of(GREEN)));
 
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("本機的選擇存檔再讀回來還在", !again.badgeRoleShown("sponsors", true)
                 && !again.badgeRoleShown("developers", true) && again.badgeRainbow(false)
                 && "#ABCDEF".equalsIgnoreCase(again.badgeColour("sponsors")));
         Path fresh = Files.createTempFile("wcy-badges-fresh", ".json");
         Files.deleteIfExists(fresh);
-        CollectorConfig untouched = new CollectorConfig(fresh);
+        ModConfig untouched = new ModConfig(fresh);
         untouched.toggleWynntilsUi();
         untouched.toggleWynntilsUi();
         JsonObject saved = JsonParser.parseString(

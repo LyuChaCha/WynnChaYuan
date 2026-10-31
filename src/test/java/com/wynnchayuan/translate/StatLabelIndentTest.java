@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -30,7 +30,7 @@ public final class StatLabelIndentTest {
                     dirs.add(root.resolve(l));
                 }
                 store.loadAll(dirs);
-                store.setNameMode(CollectorConfig.ItemNames.OFF);
+                store.setNameMode(ModConfig.ItemNames.OFF);
                 run(String.join("+", langs), store);
             }
         } finally {

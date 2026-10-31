@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public final class CollectorConfig {
+public final class ModConfig {
 
     public static final int DEFAULT_PANEL_GAP = PanelGap.DEFAULT;
 
@@ -176,7 +176,7 @@ public final class CollectorConfig {
 
     private final boolean existed;
 
-    public CollectorConfig(Path file) {
+    public ModConfig(Path file) {
         this.file = file;
         this.existed = Files.exists(file);
         load();
@@ -884,7 +884,7 @@ public final class CollectorConfig {
         try {
             return Double.parseDouble(value.strip());
         } catch (Exception e) {
-            ErrorDebug.note("CollectorConfig#parseNumber", null, e);
+            ErrorDebug.note("ModConfig#parseNumber", null, e);
             return null;
         }
     }

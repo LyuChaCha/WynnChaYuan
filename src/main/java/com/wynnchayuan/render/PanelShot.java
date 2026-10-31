@@ -2,7 +2,7 @@ package com.wynnchayuan.render;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.NativeImage;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ConfigFolder;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.OwnOutputs;
@@ -128,7 +128,7 @@ public final class PanelShot {
     }
 
     public static void request() {
-        if (WynnChaYuan.config().shotMode() == CollectorConfig.ShotMode.OFF) {
+        if (WynnChaYuan.config().shotMode() == ModConfig.ShotMode.OFF) {
             return;
         }
         pending = true;

@@ -279,7 +279,7 @@ public final class DialogueForecastTest {
     private static void holdOnScreen(TranslationStore store) throws Exception {
         var field = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
         field.setAccessible(true);
-        field.set(null, new com.wynnchayuan.CollectorConfig(
+        field.set(null, new com.wynnchayuan.ModConfig(
                 Files.createTempDirectory("wynnchayuan-forecast-cfg").resolve("config.json")));
         begin();
         net.minecraft.network.chat.Style body = net.minecraft.network.chat.Style.EMPTY.withFont(
@@ -340,7 +340,7 @@ public final class DialogueForecastTest {
         var cfg = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("config");
         cfg.setAccessible(true);
         Path tmp = Files.createTempDirectory("wynnchayuan-forecast-panel");
-        cfg.set(null, new com.wynnchayuan.CollectorConfig(tmp.resolve("config.json")));
+        cfg.set(null, new com.wynnchayuan.ModConfig(tmp.resolve("config.json")));
         var st = com.wynnchayuan.WynnChaYuan.class.getDeclaredField("store");
         st.setAccessible(true);
         st.set(null, new com.wynnchayuan.capture.CaptureStore(tmp.resolve("captured.json")));

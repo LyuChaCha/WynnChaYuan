@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +36,9 @@ public final class LootrunNames {
     private static final char NEWLINE = (char) 10;
     private static final String COLOUR_END = "{/}";
 
-    public static String apply(String template, String hit, CollectorConfig.ItemNames mode) {
+    public static String apply(String template, String hit, ModConfig.ItemNames mode) {
         if (template == null || hit == null || mode == null
-                || mode == CollectorConfig.ItemNames.ON || !mentionsName(template)) {
+                || mode == ModConfig.ItemNames.ON || !mentionsName(template)) {
             return hit;
         }
         List<String> src = split(template);
@@ -107,7 +107,7 @@ public final class LootrunNames {
         return NAMES.contains(core) ? core : null;
     }
 
-    private static String rewrite(String cell, String name, CollectorConfig.ItemNames mode) {
+    private static String rewrite(String cell, String name, ModConfig.ItemNames mode) {
         String core = cell.strip();
         if (core.isEmpty() || core.contains("(" + name + ")")) {
             return null;
@@ -129,7 +129,7 @@ public final class LootrunNames {
             return null;
         }
         String shown;
-        if (mode == CollectorConfig.ItemNames.OFF) {
+        if (mode == ModConfig.ItemNames.OFF) {
             int text = 0;
             while (core.startsWith("{c", text)) {
                 int end = core.indexOf('}', text);

@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
@@ -51,7 +51,7 @@ final class WynntilsScreenText {
         board = new Board(Set.copyOf(shown), Map.copyOf(replaced), Set.copyOf(kept));
     }
 
-    static StyledText screenText(StyledText text, CollectorConfig config,
+    static StyledText screenText(StyledText text, ModConfig config,
                                  TranslationStore store) {
         if (text == null || text.isEmpty() || store == null
                 || config == null || !config.wynntilsUi()) {
@@ -102,7 +102,7 @@ final class WynntilsScreenText {
                         WynntilsText.styleOf(text).withFont(FontDescription.DEFAULT));
             }
         }
-        if (hit != null && store.pageNameMode() != CollectorConfig.ItemNames.ON
+        if (hit != null && store.pageNameMode() != ModConfig.ItemNames.ON
                 && store.isPageName(text.getStringWithoutFormatting())) {
             hit = PageNames.bare(text.getComponent(), hit, store.pageNameMode());
         }
@@ -136,7 +136,7 @@ final class WynntilsScreenText {
 
     private static final int SCREEN_CACHE_LIMIT = 512;
 
-    record Cached(long age, CollectorConfig.ItemNames pageNames, boolean content, StyledText out) {
+    record Cached(long age, ModConfig.ItemNames pageNames, boolean content, StyledText out) {
 
         boolean fresh(TranslationStore store) {
             return age == store.cacheAge() && pageNames == store.pageNameMode();

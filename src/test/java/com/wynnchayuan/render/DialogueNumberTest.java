@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CurrentQuest;
@@ -28,7 +28,7 @@ public final class DialogueNumberTest {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
         Path dir = Files.createTempDirectory("wynnchayuan-dialogue-number");
-        set("config", new CollectorConfig(dir.resolve("config.json")));
+        set("config", new ModConfig(dir.resolve("config.json")));
         set("store", new CaptureStore(dir.resolve("captured.json")));
         TranslationStore store = store(dir);
         CurrentQuest.set(null);

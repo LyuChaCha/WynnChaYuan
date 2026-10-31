@@ -41,7 +41,7 @@ public final class NameWrapTest {
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
 
         tooLong(store);
         shortEnough(store);

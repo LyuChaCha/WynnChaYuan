@@ -19,11 +19,11 @@ public final class NetworkGate {
     public static final String TRANSLATION_SYNC = "translation-sync";
     public static final String DELETE_DATA = "delete-data";
 
-    private static volatile CollectorConfig config;
+    private static volatile ModConfig config;
     private static boolean started;
     private static boolean deleteTried;
 
-    public static void use(CollectorConfig c) {
+    public static void use(ModConfig c) {
         config = c;
     }
 
@@ -31,29 +31,29 @@ public final class NetworkGate {
         return online(config);
     }
 
-    public static boolean online(CollectorConfig c) {
-        return c != null && c.consent() == CollectorConfig.Consent.AGREED;
+    public static boolean online(ModConfig c) {
+        return c != null && c.consent() == ModConfig.Consent.AGREED;
     }
 
     public static boolean registry() {
         return registry(config);
     }
 
-    public static boolean registry(CollectorConfig c) {
+    public static boolean registry(ModConfig c) {
         return online(c) && !c.dataOptOut();
     }
 
-    public static boolean deletionPending(CollectorConfig c) {
+    public static boolean deletionPending(ModConfig c) {
         return c != null && c.dataOptOut() && c.dataDeletePending();
     }
 
-    public static synchronized List<String> start(CollectorConfig c, Services services) {
+    public static synchronized List<String> start(ModConfig c, Services services) {
         List<String> ran = new ArrayList<>();
         if (online(c) && !started) {
             started = true;
             services.updateCheck();
             ran.add(UPDATE_CHECK);
-            if (c.source() == CollectorConfig.Source.GITHUB) {
+            if (c.source() == ModConfig.Source.GITHUB) {
                 services.translationSync();
                 ran.add(TRANSLATION_SYNC);
             }

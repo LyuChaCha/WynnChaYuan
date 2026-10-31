@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.LootrunNames;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Component;
@@ -25,9 +25,9 @@ public final class LootrunCardTitleTest {
             "Gambling Beast", "Hubris", "Lights Out", "Side Hustle", "Treasury Bill",
             "Ultimate Sacrifice", "Warmth Devourer", "Imperitia");
 
-    private static final CollectorConfig.ItemNames ON = CollectorConfig.ItemNames.ON;
-    private static final CollectorConfig.ItemNames BOTH = CollectorConfig.ItemNames.BOTH;
-    private static final CollectorConfig.ItemNames OFF = CollectorConfig.ItemNames.OFF;
+    private static final ModConfig.ItemNames ON = ModConfig.ItemNames.ON;
+    private static final ModConfig.ItemNames BOTH = ModConfig.ItemNames.BOTH;
+    private static final ModConfig.ItemNames OFF = ModConfig.ItemNames.OFF;
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -117,7 +117,7 @@ public final class LootrunCardTitleTest {
     }
 
     private static void expect(List<String> wrong, TranslationStore rs, String lang, String name,
-                               List<Component> card, CollectorConfig.ItemNames mode, String want) {
+                               List<Component> card, ModConfig.ItemNames mode, String want) {
         rs.setPageNameMode(mode);
         String title = shown(card, rs).get(0).strip();
         if (!title.equals(want)) {

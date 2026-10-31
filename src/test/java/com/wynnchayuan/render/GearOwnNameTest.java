@@ -66,7 +66,7 @@ public final class GearOwnNameTest {
         check("裝備專用的名字讀得到", "狂躁之矛".equals(store.gearOwnName("Frenzy")));
         check("沒有另外取名的回 null", store.gearOwnName("Oak Wood Dagger") == null);
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
         List<String> item = shown(item("Frenzy"), store);
         check("★ 看得見的那一行是裝備自己的名字（實際 " + item.get(1) + "）",
                 item.get(1).contains("狂躁之矛") && !item.get(1).contains("得寸進尺"));
@@ -77,7 +77,7 @@ public final class GearOwnNameTest {
         check("★ 名稱列畫完之後直接查表，拿到的是技能名（實際 " + store.lookup("Frenzy") + "）",
                 "得寸進尺".equals(store.lookup("Frenzy")));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
         List<String> both = shown(item("Frenzy"), store);
         check("★ 譯名加原文：附的是英文原名（實際 " + both.get(1) + "）",
                 both.get(1).contains("狂躁之矛 (Frenzy)"));
@@ -89,12 +89,12 @@ public final class GearOwnNameTest {
         check("沒撞名的裝備照舊附原文",
                 shown(item("Oak Wood Dagger"), store).get(1).contains("橡木匕首 (Oak Wood Dagger)"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
         List<String> off = shown(item("Frenzy"), store);
         check("★ 關掉物品名稱時留原文（實際 " + off.get(1) + "）",
                 off.get(1).contains("Frenzy") && !off.get(1).contains("狂躁之矛")
                         && !off.get(1).contains("得寸進尺"));
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
 
         List<String> chief = shown(item("Chief"), store);
         check("★ 跟介面詞同名的裝備：用裝備的名字，不是介面那個詞（實際 " + chief.get(1) + "）",
@@ -117,7 +117,7 @@ public final class GearOwnNameTest {
                 continue;
             }
             rs.loadAll(real);
-            rs.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+            rs.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
             com.google.gson.JsonObject own = com.google.gson.JsonParser.parseString(
                     Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
             int total = 0;

@@ -1,7 +1,7 @@
 package com.wynnchayuan.listener;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.LookAtTranslator;
@@ -35,11 +35,11 @@ public final class RenderListener {
             ErrorDebug.note("RenderListener#onTooltip", null, t);
             WynnChaYuan.store().noteEvent("capture.guiError");
         }
-        CollectorConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
-        if (mode == CollectorConfig.TooltipMode.OFF) {
+        ModConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
+        if (mode == ModConfig.TooltipMode.OFF) {
             return;
         }
-        if (mode == CollectorConfig.TooltipMode.REPLACE) {
+        if (mode == ModConfig.TooltipMode.REPLACE) {
             replaceInPlace(event);
             return;
         }
@@ -68,16 +68,16 @@ public final class RenderListener {
                 || InputConstants.isKeyDown(mc.getWindow(), GLFW.GLFW_KEY_RIGHT_SHIFT);
     }
 
-    private static CollectorConfig.ItemNames peeked(CollectorConfig config) {
-        CollectorConfig.ItemNames mode = config.itemNames();
+    private static ModConfig.ItemNames peeked(ModConfig config) {
+        ModConfig.ItemNames mode = config.itemNames();
         if (!config.shiftPeekNames()
-                || mode == CollectorConfig.ItemNames.BOTH
+                || mode == ModConfig.ItemNames.BOTH
                 || !shiftHeld()) {
             return mode;
         }
-        return mode == CollectorConfig.ItemNames.ON
-                ? CollectorConfig.ItemNames.OFF
-                : CollectorConfig.ItemNames.ON;
+        return mode == ModConfig.ItemNames.ON
+                ? ModConfig.ItemNames.OFF
+                : ModConfig.ItemNames.ON;
     }
 
     private static void withPeek(Runnable body) {
@@ -88,7 +88,7 @@ public final class RenderListener {
     }
 
     private static <T> T withPeek(Supplier<T> body) {
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         WynnChaYuan.translations().setNameMode(peeked(config));
         WynnChaYuan.translations().setPeekPlainNames(
                 config.shiftPeekNames() && shiftHeld());
@@ -155,8 +155,8 @@ public final class RenderListener {
     }
 
     public static void renderAfterScreen(GuiGraphics graphics, int mouseX, int mouseY) {
-        CollectorConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
-        if (mode == CollectorConfig.TooltipMode.REPLACE) {
+        ModConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
+        if (mode == ModConfig.TooltipMode.REPLACE) {
             List<Component> replaced = PendingTooltip.take();
             if (!replaced.isEmpty()) {
                 TooltipPanel.noteShot(graphics, replaced,
@@ -164,7 +164,7 @@ public final class RenderListener {
             }
             return;
         }
-        if (mode != CollectorConfig.TooltipMode.PANEL) {
+        if (mode != ModConfig.TooltipMode.PANEL) {
             PendingTooltip.take();
             return;
         }
@@ -187,9 +187,9 @@ public final class RenderListener {
     public static void renderHud(GuiGraphics graphics) {
         ChatBlock.tick();
         boolean inPlace = WynnChaYuan.config().dialogueMode()
-                        == CollectorConfig.DialogueMode.REPLACE
+                        == ModConfig.DialogueMode.REPLACE
                 || WynnChaYuan.config().choiceMode()
-                        == CollectorConfig.DialogueMode.PANEL;
+                        == ModConfig.DialogueMode.PANEL;
         if (!WynnChaYuan.config().showOverlays() && !inPlace) {
             return;
         }

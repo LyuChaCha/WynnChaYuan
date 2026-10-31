@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -216,15 +216,15 @@ public final class WynnventoryLayout {
 
     private static int drawnStamp() {
         TranslationStore store = WynnChaYuan.translations();
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         return Objects.hash(store == null ? 0 : store.generation(),
                 config == null ? null : config.itemNames(), config == null ? null : config.tooltipMode(),
                 RenderListener.shiftHeld());
     }
 
     private static List<Component> shown(List<Component> vanilla) {
-        CollectorConfig config = WynnChaYuan.config();
-        if (config == null || config.tooltipMode() != CollectorConfig.TooltipMode.REPLACE) {
+        ModConfig config = WynnChaYuan.config();
+        if (config == null || config.tooltipMode() != ModConfig.TooltipMode.REPLACE) {
             return vanilla;
         }
         return RenderListener.inPlaceLines(vanilla);

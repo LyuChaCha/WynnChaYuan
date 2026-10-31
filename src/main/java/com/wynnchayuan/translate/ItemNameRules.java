@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.capture.GlyphSplitter;
 
 import java.util.ArrayList;
@@ -160,7 +160,7 @@ final class ItemNameRules {
         if (at >= 0) {
             out.add(new int[] {at, text.length()});
         }
-        if (translations.store.pageNameMode() != CollectorConfig.ItemNames.ON) {
+        if (translations.store.pageNameMode() != ModConfig.ItemNames.ON) {
             out.addAll(LootrunNames.spans(text));
         }
         out.addAll(abilityOriginalSpans(text));

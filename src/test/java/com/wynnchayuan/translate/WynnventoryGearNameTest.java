@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig.ItemNames;
+import com.wynnchayuan.ModConfig.ItemNames;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 

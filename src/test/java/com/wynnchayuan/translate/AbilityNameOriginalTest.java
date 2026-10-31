@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -68,13 +68,13 @@ public final class AbilityNameOriginalTest {
 
     private static void defaults() throws Exception {
         Path dir = Files.createTempDirectory("wcy-ability-original-cfg");
-        CollectorConfig fresh = new CollectorConfig(dir.resolve("fresh.json"));
+        ModConfig fresh = new ModConfig(dir.resolve("fresh.json"));
         check("★ 預設關著", !fresh.abilityNamesOriginal());
         check("物品名稱的預設也是不附原文（OFF）",
-                fresh.itemNames() == CollectorConfig.ItemNames.OFF);
+                fresh.itemNames() == ModConfig.ItemNames.OFF);
         Path on = dir.resolve("on.json");
         Files.writeString(on, "{\"abilityNamesOriginal\": true}");
-        check("設定檔寫 true 讀得回來", new CollectorConfig(on).abilityNamesOriginal());
+        check("設定檔寫 true 讀得回來", new ModConfig(on).abilityNamesOriginal());
         check("查詢表的預設也是關著", !new TranslationStore().abilityNamesWithOriginal());
     }
 

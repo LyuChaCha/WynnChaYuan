@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueBuffer;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -48,7 +48,7 @@ public final class DialogueInlineIconTest {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
         DialogueLayout.widthForTest = DialogueInlineIconTest::realWidth;
-        setConfig(new CollectorConfig(Files.createTempDirectory("wynnchayuan-icon")
+        setConfig(new ModConfig(Files.createTempDirectory("wynnchayuan-icon")
                 .resolve("config.json")));
 
         templates();
@@ -640,7 +640,7 @@ public final class DialogueInlineIconTest {
                 Identifier.withDefaultNamespace(path)));
     }
 
-    private static void setConfig(CollectorConfig config) throws Exception {
+    private static void setConfig(ModConfig config) throws Exception {
         var field = WynnChaYuan.class.getDeclaredField("config");
         field.setAccessible(true);
         field.set(null, config);

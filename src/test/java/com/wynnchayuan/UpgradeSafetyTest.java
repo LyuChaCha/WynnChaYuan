@@ -88,10 +88,10 @@ public final class UpgradeSafetyTest {
         String bad = "{\n  \"tooltipMode\": \"REPLACE\",\n  \"collect\": fal";
         Files.writeString(file, bad);
 
-        CollectorConfig c = new CollectorConfig(file);
+        ModConfig c = new ModConfig(file);
         check("半截的 config.json：建得起來，全部用預設值",
-                c.tooltipMode() == CollectorConfig.TooltipMode.OFF && c.collect()
-                        && c.source() == CollectorConfig.Source.GITHUB);
+                c.tooltipMode() == ModConfig.TooltipMode.OFF && c.collect()
+                        && c.source() == ModConfig.Source.GITHUB);
         List<Path> aside = brokenCopies(dir, "config.json");
         check("半截的 config.json 改名放旁邊，原位空出來",
                 aside.size() == 1 && !Files.exists(file));
@@ -99,7 +99,7 @@ public final class UpgradeSafetyTest {
                 aside.size() == 1 && Files.readString(aside.get(0)).equals(bad));
 
         c.toggleCollect();
-        check("之後存得出一份讀得懂的設定檔", !new CollectorConfig(file).collect()
+        check("之後存得出一份讀得懂的設定檔", !new ModConfig(file).collect()
                 && brokenCopies(dir, "config.json").size() == 1);
         check("存檔沒有留下 config.json.tmp", !Files.exists(dir.resolve("config.json.tmp")));
     }
@@ -108,18 +108,18 @@ public final class UpgradeSafetyTest {
         Path dir = Files.createTempDirectory("wcy-up-cfg0");
         Path file = dir.resolve("config.json");
         Files.writeString(file, "");
-        CollectorConfig empty = new CollectorConfig(file);
+        ModConfig empty = new ModConfig(file);
         check("空的 config.json：預設值、改名放旁邊",
-                empty.tooltipMode() == CollectorConfig.TooltipMode.OFF
+                empty.tooltipMode() == ModConfig.TooltipMode.OFF
                         && brokenCopies(dir, "config.json").size() == 1);
 
         Files.write(file, new byte[64]);
-        new CollectorConfig(file);
+        new ModConfig(file);
         check("整份是 0 位元組的 config.json：一樣改名放旁邊",
                 brokenCopies(dir, "config.json").size() == 2 && !Files.exists(file));
 
         Files.write(file, "{\"language\": \"繁中\"}".getBytes("Big5"));
-        new CollectorConfig(file);
+        new ModConfig(file);
         check("不是 UTF-8 的 config.json：一樣改名放旁邊",
                 brokenCopies(dir, "config.json").size() == 3);
     }
@@ -133,29 +133,29 @@ public final class UpgradeSafetyTest {
                  "nametagRange": 1e9, "dialogueHoldMs": -5, "chatMode": "both",
                  "overlayPos": {"DIALOGUE": [1, "x"], "TRACKER": [5, 6], "NAMETAG": "oops"},
                  "overlaySize": [], "badgeStyle": 3, "fixedX": 40, "debugDumps": "true"}""");
-        CollectorConfig c = new CollectorConfig(file);
+        ModConfig c = new ModConfig(file);
         check("型別不對的欄位不會連累後面的欄位（collect=false、fixedX=40 都讀到）",
                 !c.collect() && c.fixedX() == 40);
         check("不認得的 tooltipMode 退回舊欄位 showPanel=false 的換算（OFF）",
-                c.tooltipMode() == CollectorConfig.TooltipMode.OFF && !c.showOverlays());
+                c.tooltipMode() == ModConfig.TooltipMode.OFF && !c.showOverlays());
         check("\"wide\" 的 panelGap、null 的 language 用預設（已經拿掉的 badgeStyle 不礙事）",
                 c.panelGap() == 12 && c.language().isEmpty());
         check("極端數值夾回範圍（名牌距離 64、對話停留 = 持續顯示）",
                 c.nametagRange() == 64.0 && c.dialogueHoldMs() == Integer.MAX_VALUE);
-        check("小寫的列舉值、字串的布林值也認得", c.chatMode() == CollectorConfig.ChatMode.BOTH
+        check("小寫的列舉值、字串的布林值也認得", c.chatMode() == ModConfig.ChatMode.BOTH
                 && c.debugDumps());
         check("小框位置：讀得懂的留著、讀不懂的那一個用預設",
-                c.hasOverlayPos(CollectorConfig.Overlay.TRACKER)
-                        && c.overlayX(CollectorConfig.Overlay.TRACKER) == 5
-                        && !c.hasOverlayPos(CollectorConfig.Overlay.DIALOGUE)
-                        && !c.hasOverlayPos(CollectorConfig.Overlay.NAMETAG));
+                c.hasOverlayPos(ModConfig.Overlay.TRACKER)
+                        && c.overlayX(ModConfig.Overlay.TRACKER) == 5
+                        && !c.hasOverlayPos(ModConfig.Overlay.DIALOGUE)
+                        && !c.hasOverlayPos(ModConfig.Overlay.NAMETAG));
         check("JSON 本身是好的，不改名放旁邊", brokenCopies(dir, "config.json").isEmpty());
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("讀完就重寫：shareCaptures、showPanel 從檔案裡消失",
                 !rewritten.has("shareCaptures") && !rewritten.has("showPanel"));
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("重寫後的設定再讀一次，值沒有跑掉",
-                !again.collect() && again.tooltipMode() == CollectorConfig.TooltipMode.OFF
+                !again.collect() && again.tooltipMode() == ModConfig.TooltipMode.OFF
                         && again.fixedX() == 40);
     }
 
@@ -163,15 +163,15 @@ public final class UpgradeSafetyTest {
         Path dir = Files.createTempDirectory("wcy-up-cfgplayer");
         Path file = dir.resolve("config.json");
         Files.writeString(file, PLAYER_CONFIG);
-        CollectorConfig c = new CollectorConfig(file);
-        check("玩家那份設定照樣讀得懂", c.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
+        ModConfig c = new ModConfig(file);
+        check("玩家那份設定照樣讀得懂", c.tooltipMode() == ModConfig.TooltipMode.REPLACE
                 && c.debugDumps() && c.collectGuiText()
-                && c.itemNames() == CollectorConfig.ItemNames.ON
-                && c.source() == CollectorConfig.Source.GITHUB);
+                && c.itemNames() == ModConfig.ItemNames.ON
+                && c.source() == ModConfig.Source.GITHUB);
         check("存過 12 px 間距的舊設定照舊是 12，不跟著新預設改", c.panelGap() == 12);
         Path small = Files.createTempDirectory("wcy-up-gap").resolve("config.json");
         Files.writeString(small, "{\"panelGap\": 4}");
-        check("★ 存過 12 px 以下的間距：讀進來夾到 12", new CollectorConfig(small).panelGap() == 12);
+        check("★ 存過 12 px 以下的間距：讀進來夾到 12", new ModConfig(small).panelGap() == 12);
         JsonObject expected = JsonParser.parseString(PLAYER_CONFIG).getAsJsonObject();
         expected.remove("shareCaptures");
         expected.addProperty("uiLanguage", "");
@@ -213,25 +213,25 @@ public final class UpgradeSafetyTest {
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("★ 舊設定檔沒有同意欄位：首次啟動畫面要跳一次，設定照舊",
                 again.needsFirstRun() && again.existedBefore()
-                        && again.consent() == CollectorConfig.Consent.UNKNOWN
-                        && again.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
-                        && again.itemNames() == CollectorConfig.ItemNames.ON);
+                        && again.consent() == ModConfig.Consent.UNKNOWN
+                        && again.tooltipMode() == ModConfig.TooltipMode.REPLACE
+                        && again.itemNames() == ModConfig.ItemNames.ON);
     }
 
     private static void themeColourFollowsOldBorder() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-theme");
         Path file = dir.resolve("config.json");
         Files.writeString(file, "{ \"accentColor\": \"#C0FFEE\" }");
-        CollectorConfig old = new CollectorConfig(file);
+        ModConfig old = new ModConfig(file);
         check("★ 舊設定檔只有框線顏色：主題色沿用它", "#C0FFEE".equals(old.themeColor()));
         check("改主題色不動框線", old.setThemeColor("#112233")
                 && "#C0FFEE".equals(old.accentColor()));
         check("改框線不動主題色", old.setAccentColor("#445566")
                 && "#112233".equals(old.themeColor()));
-        CollectorConfig again = new CollectorConfig(file);
+        ModConfig again = new ModConfig(file);
         check("重開之後兩個顏色各自還在", "#112233".equals(again.themeColor())
                 && "#445566".equals(again.accentColor()));
         check("拖色盤時的寫法不合格式就不收", !again.setThemeColorLive("藍色")
@@ -241,23 +241,23 @@ public final class UpgradeSafetyTest {
     private static void settingsThatUsedToReset() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-keep");
         Path file = dir.resolve("config.json");
-        CollectorConfig first = new CollectorConfig(file);
+        ModConfig first = new ModConfig(file);
         first.setUiLanguage("ja_jp");
         boolean market = first.toggleMarketSearch();
         check("市集搜尋預設是開的，切過之後是關的", !market);
 
-        CollectorConfig reopened = new CollectorConfig(file);
+        ModConfig reopened = new ModConfig(file);
         check("★ 重開之後介面語言還是 ja_jp（先前會變回跟著譯文語言）",
                 "ja_jp".equals(reopened.uiLanguage()));
         check("★ 重開之後市集搜尋還是關的（先前會變回開啟）", !reopened.marketSearch());
 
         Files.writeString(file, "{\"uiLanguage\": \" ko_kr \", \"marketSearch\": false}");
-        CollectorConfig handWritten = new CollectorConfig(file);
+        ModConfig handWritten = new ModConfig(file);
         check("手寫的設定檔讀得到這兩欄，前後空白照樣去掉",
                 "ko_kr".equals(handWritten.uiLanguage()) && !handWritten.marketSearch());
 
         Files.writeString(file, "{\"uiLanguage\": 5, \"marketSearch\": \"nope\", \"collect\": false}");
-        CollectorConfig wrongTypes = new CollectorConfig(file);
+        ModConfig wrongTypes = new ModConfig(file);
         check("型別不對的那兩欄用預設，別的欄位照讀",
                 wrongTypes.uiLanguage().isEmpty() && wrongTypes.marketSearch()
                         && !wrongTypes.collect());
@@ -606,14 +606,14 @@ public final class UpgradeSafetyTest {
         }
     }
 
-    private record Started(CollectorConfig config, CaptureStore store,
+    private record Started(ModConfig config, CaptureStore store,
                            TranslationStore translations, int broken, long millis) {}
 
     private static Started startUp(Path dir) {
         long t0 = System.nanoTime();
         ConfigFolder.tidy(dir);
         CaptureStore store = new CaptureStore(dir.resolve("captured.json"));
-        CollectorConfig config = new CollectorConfig(dir.resolve("config.json"));
+        ModConfig config = new ModConfig(dir.resolve("config.json"));
         String lang = Languages.pick(config.language(), "");
         Languages.migrateFlat(dir, lang);
         Path trDir = Languages.dir(dir, lang);
@@ -656,7 +656,7 @@ public final class UpgradeSafetyTest {
             System.out.println("  （舊版資料夾啟動讀檔 " + s.millis() + " ms，譯文 "
                     + s.translations().size() + " 條）");
             check("舊版資料夾：設定照讀、收集照讀", s.config().debugDumps()
-                    && s.config().source() == CollectorConfig.Source.GITHUB && s.store().size() == 1);
+                    && s.config().source() == ModConfig.Source.GITHUB && s.store().size() == 1);
             check("舊版資料夾：shared.json 與暫存檔清掉，診斷檔留著（搬進 debug/）",
                     !Files.exists(dir.resolve("shared.json"))
                             && !Files.exists(dir.resolve("captured.json.tmp"))
@@ -694,7 +694,7 @@ public final class UpgradeSafetyTest {
             check("玩家資料夾：譯文照常載入", s.translations().size() > 10000);
             check("玩家資料夾：設定讀得懂、沒有被改名放旁邊",
                     brokenCopies(dir, "config.json").isEmpty()
-                            && s.config().source() == CollectorConfig.Source.GITHUB);
+                            && s.config().source() == ModConfig.Source.GITHUB);
             check("玩家資料夾：captured.json 讀得懂、沒有被改名放旁邊",
                     brokenCopies(dir, "captured.json").isEmpty()
                             && SafeFiles.parsesAsObject(dir.resolve("captured.json")));

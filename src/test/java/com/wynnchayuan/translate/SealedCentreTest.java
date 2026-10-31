@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
@@ -45,12 +45,12 @@ public final class SealedCentreTest {
         LineTranslator.measureForTest = AbilityTooltipRenderTest::measure;
         try {
             TranslationStore shortStore = store(SHORT);
-            shortStore.setNameMode(CollectorConfig.ItemNames.BOTH);
+            shortStore.setNameMode(ModConfig.ItemNames.BOTH);
             fewerRows(shortStore);
             leftAlignedStaysLeft(shortStore);
             guessListUntouched(shortStore);
             TranslationStore longStore = store(LONG);
-            longStore.setNameMode(CollectorConfig.ItemNames.BOTH);
+            longStore.setNameMode(ModConfig.ItemNames.BOTH);
             sameRows(longStore);
         } finally {
             LineTranslator.measureForTest = null;

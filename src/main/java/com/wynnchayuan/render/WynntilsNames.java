@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CombatText;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -29,15 +29,15 @@ final class WynntilsNames {
         }
     }
 
-    static Component entityName(Component name, CollectorConfig config, TranslationStore store) {
+    static Component entityName(Component name, ModConfig config, TranslationStore store) {
         return entityName(name, null, config, store);
     }
 
     // 盔甲座浮空字不是 TextDisplay，Wynntils 名牌事件收不到
-    static Component entityName(Component name, Entity entity, CollectorConfig config,
+    static Component entityName(Component name, Entity entity, ModConfig config,
             TranslationStore store) {
         if (name == null || store == null || config == null
-                || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
+                || config.nametagMode() == ModConfig.NametagMode.OFF) {
             return name;
         }
         if (nameAge != store.cacheAge()) {
@@ -74,7 +74,7 @@ final class WynntilsNames {
         if (entity != null && entry.original() != null) {
             LookAtTranslator.remember(entity, entry.original());
         }
-        if (config.nametagMode() == CollectorConfig.NametagMode.LOOK_AT) {
+        if (config.nametagMode() == ModConfig.NametagMode.LOOK_AT) {
             return name;
         }
         return entry.shown();

@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.OwnOutputs;
@@ -39,7 +39,7 @@ public final class TranslationUpdate {
         if (remote == null || remote.isBlank()) {
             return;
         }
-        CollectorConfig config = WynnChaYuan.config();
+        ModConfig config = WynnChaYuan.config();
         if (!config.syncedTranslationsDate().isBlank()
                 || !remote.equals(config.syncedTranslations())) {
             return;

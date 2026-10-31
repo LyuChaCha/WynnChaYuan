@@ -1,7 +1,7 @@
 package com.wynnchayuan.cape;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.NetworkGate;
 import com.wynnchayuan.Presence;
 import com.wynnchayuan.PresenceAccount;
@@ -126,7 +126,7 @@ public final class Capes {
     }
 
     public static Identifier textureFor(String account, UUID uuid, boolean self,
-                                        CollectorConfig config, long now) {
+                                        ModConfig config, long now) {
         if (account == null || config == null || !config.capes()
                 || !NetworkGate.registry(config)) {
             return null;

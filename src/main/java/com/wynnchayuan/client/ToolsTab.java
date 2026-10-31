@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
@@ -35,7 +35,7 @@ final class ToolsTab {
     private boolean checkingVersion;
 
     static boolean github() {
-        return SettingsScreen.cfg().source() == CollectorConfig.Source.GITHUB;
+        return SettingsScreen.cfg().source() == ModConfig.Source.GITHUB;
     }
 
     List<Row> tools() {
@@ -45,9 +45,9 @@ final class ToolsTab {
                 .option(T.s("data.source.local"), Row.Tone.PLAIN)
                 .selected(() -> SettingsScreen.cfg().source().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(SettingsScreen.cfg()::source, SettingsScreen.cfg()::toggleSource,
-                        CollectorConfig.Source.values()[i]))
+                        ModConfig.Source.values()[i]))
                 .reset(ToolsTab::github, () -> SettingsScreen.cycleTo(SettingsScreen.cfg()::source, SettingsScreen.cfg()::toggleSource,
-                        CollectorConfig.Source.GITHUB)));
+                        ModConfig.Source.GITHUB)));
         rows.add(SettingsScreen.toggle("data.autoupdate", false, SettingsScreen.cfg()::autoUpdateTranslations,
                 SettingsScreen.cfg()::toggleAutoUpdateTranslations));
         rows.add(Row.action("data.reload", SettingsScreen.t("data.reload"),

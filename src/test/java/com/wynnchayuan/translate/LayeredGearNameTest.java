@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -18,10 +18,10 @@ public final class LayeredGearNameTest {
 
         TranslationStore cnOnly = new TranslationStore();
         cnOnly.loadAll(List.of(root.resolve("zh_tw")));
-        cnOnly.setNameMode(CollectorConfig.ItemNames.ON);
+        cnOnly.setNameMode(ModConfig.ItemNames.ON);
         String want = cnOnly.lookup("Abhorrence");
 
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         check("上層本來就有 Abhorrence 的譯名（實際 " + want + "）",
               want != null && !want.equals("Abhorrence"));
         check("開：查得到上層的裝備名（實際 " + store.lookup("Abhorrence") + "）",
@@ -49,11 +49,11 @@ public final class LayeredGearNameTest {
         check("★ 上層 Mythic 的名稱行畫成中文（實際 " + mythShown + "）",
               mythName != null && mythName.equals(mythShown));
 
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
         check("譯名加原文（實際 " + store.lookup("Abhorrence") + "）",
               want != null && (want + " (Abhorrence)").equals(store.lookup("Abhorrence")));
 
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         check("關：留原文（實際 " + store.lookup("Abhorrence") + "）",
               store.lookup("Abhorrence") == null);
 

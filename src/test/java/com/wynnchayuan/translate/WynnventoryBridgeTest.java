@@ -57,7 +57,7 @@ public final class WynnventoryBridgeTest {
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
 
         check("標籤：尾巴那個空白接回去（實際 [" + WynnventoryBridge.text(store, "Lowest: ") + "]）",
                 "最低: ".equals(WynnventoryBridge.text(store, "Lowest: ")));
@@ -111,7 +111,7 @@ public final class WynnventoryBridgeTest {
                 WynnventoryBridge.piece(store, "12 Lowest:") == null);
         check("已經是譯文的不查", WynnventoryBridge.piece(store, "最低: ") == null);
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
         List<Component> both = WynnventoryBridge.lines(store, box);
         check("★ 譯名加原文：意象那一行拆成兩行、物品名那一行也是（實際 " + both.size() + " 行）",
                 both.size() == box.size() + 2);
@@ -134,14 +134,14 @@ public final class WynnventoryBridgeTest {
         check("★ 行裡本來就有的括號不拆（實際 " + both.get(4).getString() + "）",
                 both.get(4).getString().endsWith("(+3 EB)"));
         check("沒附原文的行照舊是同一個物件", both.get(3) == box.get(2));
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
         check("只顯示譯名時行數不變", WynnventoryBridge.lines(store, box).size() == box.size());
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
         check("★ F6 關掉物品名稱時，價格框的物品名留原文（實際 "
                         + WynnventoryBridge.lines(store, box).get(1).getString() + "）",
                 "Oak Wood Dagger".equals(WynnventoryBridge.lines(store, box).get(1).getString()));
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
 
         Map<String, String> english = new HashMap<>();
         english.put("feature.wynnventory.tooltip.lowest", "Lowest: ");

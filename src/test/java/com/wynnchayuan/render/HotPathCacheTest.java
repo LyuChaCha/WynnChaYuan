@@ -2,7 +2,7 @@ package com.wynnchayuan.render;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -39,7 +39,7 @@ public final class HotPathCacheTest {
         net.minecraft.server.Bootstrap.bootStrap();
 
         Path tmp = Files.createTempDirectory("wcy-hotpath");
-        CollectorConfig config = new CollectorConfig(tmp.resolve("config.json"));
+        ModConfig config = new ModConfig(tmp.resolve("config.json"));
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(ROOT.resolve(Languages.DEFAULT)));
         CaptureStore captured = new CaptureStore(tmp.resolve("captured.json"));
@@ -97,8 +97,8 @@ public final class HotPathCacheTest {
         int translated = 0;
         int differ = 0;
         String example = null;
-        CollectorConfig.ItemNames[] modes = {CollectorConfig.ItemNames.OFF,
-                CollectorConfig.ItemNames.ON, CollectorConfig.ItemNames.BOTH};
+        ModConfig.ItemNames[] modes = {ModConfig.ItemNames.OFF,
+                ModConfig.ItemNames.ON, ModConfig.ItemNames.BOTH};
         int b = 0;
         int s = 0;
         while (b < blocks.size() && total < 900) {
@@ -129,7 +129,7 @@ public final class HotPathCacheTest {
                 }
             }
         }
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         check("真的有翻到東西（" + translated + "/" + total + " 份）", translated > total / 3);
         check("★ tooltip 每行只切一次，跟每次重切的結果逐行相同（" + total + " 份，不同 " + differ
                 + (example == null ? "" : "，例如 " + example) + "）", differ == 0);
@@ -162,7 +162,7 @@ public final class HotPathCacheTest {
         return sb.toString();
     }
 
-    private static void tracker(CollectorConfig config, TranslationStore store,
+    private static void tracker(ModConfig config, TranslationStore store,
                                 CaptureStore captured) throws Exception {
         Method line = WynntilsText.class.getDeclaredMethod("line", StyledText.class,
                 TranslationStore.class);
@@ -194,8 +194,8 @@ public final class HotPathCacheTest {
             panels.add(new StyledText[] {StyledText.fromString(plain)});
         }
 
-        CollectorConfig.ItemNames[] pageModes = {CollectorConfig.ItemNames.ON,
-                CollectorConfig.ItemNames.BOTH, CollectorConfig.ItemNames.OFF};
+        ModConfig.ItemNames[] pageModes = {ModConfig.ItemNames.ON,
+                ModConfig.ItemNames.BOTH, ModConfig.ItemNames.OFF};
         int compared = 0;
         int differ = 0;
         int translated = 0;
@@ -207,11 +207,11 @@ public final class HotPathCacheTest {
         small.addAll(panels.subList(panels.size() - 12, panels.size()));
         for (int phase = 0; phase < phases.length; phase++) {
             switch (phase) {
-                case 2 -> store.setNameMode(CollectorConfig.ItemNames.BOTH);
+                case 2 -> store.setNameMode(ModConfig.ItemNames.BOTH);
                 case 3 -> store.setPeekPlainNames(true);
                 case 4 -> {
                     store.setPeekPlainNames(false);
-                    store.setNameMode(CollectorConfig.ItemNames.OFF);
+                    store.setNameMode(ModConfig.ItemNames.OFF);
                 }
                 case 5 -> store.setPageNameMode(pageModes[1]);
                 case 6 -> store.setPageNameMode(pageModes[2]);
@@ -270,7 +270,7 @@ public final class HotPathCacheTest {
                 seen[0] == 1 && seen[1] == 1);
     }
 
-    private static void nameSetting(CollectorConfig config, TranslationStore store) throws Exception {
+    private static void nameSetting(ModConfig config, TranslationStore store) throws Exception {
         int gearNames = 0;
         boolean followed = true;
         for (var e : JsonParser.parseString(Files.readString(
@@ -297,7 +297,7 @@ public final class HotPathCacheTest {
                 gearNames > 0 && followed);
     }
 
-    private static void nameplates(CollectorConfig config, TranslationStore store,
+    private static void nameplates(ModConfig config, TranslationStore store,
                                    CaptureStore captured) throws Exception {
         Method byPart = WynntilsText.class.getDeclaredMethod("byPart", StyledText.class,
                 TranslationStore.class);
@@ -400,10 +400,10 @@ public final class HotPathCacheTest {
                     original(names, indicators, skip) == null);
         }
 
-        var mode = CollectorConfig.class.getDeclaredField("nametagMode");
+        var mode = ModConfig.class.getDeclaredField("nametagMode");
         mode.setAccessible(true);
         Object was = mode.get(config);
-        mode.set(config, CollectorConfig.NametagMode.LOOK_AT);
+        mode.set(config, ModConfig.NametagMode.LOOK_AT);
         check("注視小框模式下原樣回傳", WynntilsNames.entityName(normal, config, store) == normal);
         mode.set(config, was);
 

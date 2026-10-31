@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -83,7 +83,7 @@ public final class NameRowTest {
         same("裡面還有佔位符的不是", null, TranslationStore.nameRowInner("{#}{#}{#}Lv. {~}{#}"));
         same("只有圖示的不是", null, TranslationStore.nameRowInner("{#}{#}{#}{#}"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
         String warp0 = row(ICON, "Warp", TAIL, store);
         same("測試列的模板跟實機語料的鍵同形", "{#}Warp{#}", lastTemplate);
         check("★ 第 0 行附原文（實際 " + plain(warp0) + "）", warp0.contains("越相杖 (Warp)"));
@@ -97,7 +97,7 @@ public final class NameRowTest {
         check("原文只附一次（實際 " + plain(warp1) + "）",
                 warp1.indexOf("(Warp)") == warp1.lastIndexOf("(Warp)"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
         String withdrawal = row(ICON.repeat(3), "Withdrawal", TAIL, store);
         same("三個圖示那一列也同形", "{#}{#}{#}Withdrawal{#}", lastTemplate);
         check("★ 整列條目留英文時，譯名照樣出來（實際 " + plain(withdrawal) + "）",
@@ -106,11 +106,11 @@ public final class NameRowTest {
         check("只給譯名的模式不附原文（實際 " + plain(warpOn) + "）",
                 warpOn.contains("越相杖") && !warpOn.contains("(Warp)"));
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.OFF);
         String off = rolled("Warp", store);
         check("★ 關掉物品名稱時留原文（實際 " + plain(off) + "）",
                 off.contains("Warp") && !off.contains("越相杖"));
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
 
         String purse = row(ICON.repeat(5), "Filched Purse", "", store);
         same("素材那一列也同形", "{#}{#}{#}{#}{#}Filched Purse", lastTemplate);
@@ -121,7 +121,7 @@ public final class NameRowTest {
                 peeked.contains("Filched Purse"));
         store.setPeekPlainNames(false);
 
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.BOTH);
         String purseBoth = row(ICON.repeat(5), "Filched Purse", "", store);
         check("★ 譯名加原文：素材的名稱列附原文（實際 " + plain(purseBoth) + "）",
                 purseBoth.contains("扒來的錢包 (Filched Purse)"));
@@ -132,7 +132,7 @@ public final class NameRowTest {
         check("★ 譯名加原文＋按住 Shift：只剩原文（實際 " + plain(purseBothPeek) + "）",
                 purseBothPeek.contains("Filched Purse") && !purseBothPeek.contains("扒來的錢包"));
         store.setPeekPlainNames(false);
-        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        store.setNameMode(com.wynnchayuan.ModConfig.ItemNames.ON);
 
         String tool = row(ICON.repeat(5), "Dernic Pickaxe T12", "", store);
         same("工具那一列的模板", "{#}{#}{#}{#}{#}Dernic Pickaxe T{~}", lastTemplate);
@@ -239,7 +239,7 @@ public final class NameRowTest {
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
 
         blockKeyIsNotAName(store);
         LineTranslator.measureForTest = NameRowTest::measure;

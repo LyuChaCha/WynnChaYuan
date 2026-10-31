@@ -2,7 +2,7 @@ package com.wynnchayuan.render;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.TranslationStore;
@@ -38,7 +38,7 @@ public final class DialogueEffectColourTest {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
         DialogueLayout.widthForTest = DialogueEffectColourTest::realWidth;
-        setConfig(new CollectorConfig(Files.createTempDirectory("wynnchayuan-effect")
+        setConfig(new ModConfig(Files.createTempDirectory("wynnchayuan-effect")
                 .resolve("config.json")));
 
         String[] line = corpusLine("ja_jp");
@@ -238,7 +238,7 @@ public final class DialogueEffectColourTest {
                 Identifier.withDefaultNamespace(path)));
     }
 
-    private static void setConfig(CollectorConfig config) throws Exception {
+    private static void setConfig(ModConfig config) throws Exception {
         var field = WynnChaYuan.class.getDeclaredField("config");
         field.setAccessible(true);
         field.set(null, config);

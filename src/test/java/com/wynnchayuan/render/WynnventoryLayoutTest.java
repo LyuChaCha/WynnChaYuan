@@ -62,7 +62,7 @@ public final class WynnventoryLayoutTest {
         int screenH = 508;
         OriginalTooltipBox.Box drawn = new OriginalTooltipBox.Box(420, 120, 170, 202, 1f, 170, 202);
         TooltipPlacement.Place p = TooltipPlacement.layout(160, 212, 170, 202, drawn, 400, 132,
-                screenW, screenH, 12, com.wynnchayuan.CollectorConfig.PanelSide.AUTO);
+                screenW, screenH, 12, com.wynnchayuan.ModConfig.PanelSide.AUTO);
         WynnventoryBox.note(4, 150, 150, 200, System.nanoTime());
         try {
             OriginalTooltipBox.beginOwn();

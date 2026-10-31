@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -40,7 +40,7 @@ public final class StatValueColumnTest {
             for (String lang : new String[] {"zh_tw", "zh_cn"}) {
                 TranslationStore store = new TranslationStore();
                 store.loadAll(List.of(root.resolve(lang)));
-                store.setNameMode(CollectorConfig.ItemNames.OFF);
+                store.setNameMode(ModConfig.ItemNames.OFF);
                 System.out.println("== " + lang);
                 run(lang + "／整行等寬", store, true);
                 run(lang + "／數值靠右", store, false);

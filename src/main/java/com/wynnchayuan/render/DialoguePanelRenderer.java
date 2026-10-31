@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.client.T;
@@ -34,7 +34,7 @@ final class DialoguePanelRenderer {
             return;
         }
         Minecraft mc = Minecraft.getInstance();
-        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE
+        if (WynnChaYuan.config().dialogueMode() == ModConfig.DialogueMode.REPLACE
                 && !DialogueRewriter.bodyTooLong()) {
             if (!options.isEmpty() && choicesInPanel()) {
                 drawChoices(graphics, mc, options, alpha);
@@ -49,7 +49,7 @@ final class DialoguePanelRenderer {
         }
         int lineHeight = mc.font.lineHeight + 1;
         boolean sized = WynnChaYuan.config()
-                .hasOverlaySize(CollectorConfig.Overlay.DIALOGUE);
+                .hasOverlaySize(ModConfig.Overlay.DIALOGUE);
         int cap = Math.min(MAX_BOX_W, graphics.guiWidth() - CHOICE_EDGE * 2);
         int natural = sized ? 0 : widthOf(mc, lines);
         boolean folded = !sized && natural > cap;
@@ -60,9 +60,9 @@ final class DialoguePanelRenderer {
 
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - DialogueOverlay.BOTTOM_MARGIN - boxH;
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.DIALOGUE)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE) - boxW / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
+        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.DIALOGUE)) {
+            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.DIALOGUE) - boxW / 2;
+            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.DIALOGUE);
         }
         int[] at = Boxes.intoScreen(x, y, boxW, boxH, graphics.guiWidth(), graphics.guiHeight());
         x = at[0];
@@ -81,14 +81,14 @@ final class DialoguePanelRenderer {
     }
 
     private static boolean choicesInPanel() {
-        return WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.PANEL;
+        return WynnChaYuan.config().choiceMode() == ModConfig.DialogueMode.PANEL;
     }
 
     private static void drawChoices(GuiGraphics graphics, Minecraft mc,
                                     List<List<Component>> options, float alpha) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        int boxW = cfg.hasOverlaySize(CollectorConfig.Overlay.CHOICES)
-                ? cfg.overlayW(CollectorConfig.Overlay.CHOICES)
+        ModConfig cfg = WynnChaYuan.config();
+        int boxW = cfg.hasOverlaySize(ModConfig.Overlay.CHOICES)
+                ? cfg.overlayW(ModConfig.Overlay.CHOICES)
                 : Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
                         graphics.guiWidth() / 4));
         int inner = boxW - DialogueOverlay.PADDING * 2 - MARKER_W - 2;
@@ -112,10 +112,10 @@ final class DialoguePanelRenderer {
 
         int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
         int y = graphics.guiHeight() * 5 / 8;
-        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
+        if (WynnChaYuan.config().hasOverlayPos(ModConfig.Overlay.CHOICES)) {
+            x = WynnChaYuan.config().overlayX(ModConfig.Overlay.CHOICES)
                     - boxW / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES);
+            y = WynnChaYuan.config().overlayY(ModConfig.Overlay.CHOICES);
         }
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
@@ -247,16 +247,16 @@ final class DialoguePanelRenderer {
     }
 
     private static int dialogueWidth(int auto) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
-                ? cfg.overlayW(CollectorConfig.Overlay.DIALOGUE)
+        ModConfig cfg = WynnChaYuan.config();
+        return cfg.hasOverlaySize(ModConfig.Overlay.DIALOGUE)
+                ? cfg.overlayW(ModConfig.Overlay.DIALOGUE)
                 : auto;
     }
 
     private static int atLeastTall(int auto) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
-                ? Math.max(auto, cfg.overlayH(CollectorConfig.Overlay.DIALOGUE))
+        ModConfig cfg = WynnChaYuan.config();
+        return cfg.hasOverlaySize(ModConfig.Overlay.DIALOGUE)
+                ? Math.max(auto, cfg.overlayH(ModConfig.Overlay.DIALOGUE))
                 : auto;
     }
 

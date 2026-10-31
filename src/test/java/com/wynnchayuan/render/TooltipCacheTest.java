@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Component;
 
@@ -18,7 +18,7 @@ public final class TooltipCacheTest {
                 : "src/main/resources/assets/wynnchayuan/translations");
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(root.resolve("zh_tw")));
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
 
         List<Component> tooltip = List.of(
                 Component.literal("Combat Level"),
@@ -46,19 +46,19 @@ public final class TooltipCacheTest {
                 Component.literal("Halcyon"),
                 banner());
         String on = text(TooltipTranslator.translateLinesCached(gear, store));
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         String off = text(TooltipTranslator.translateLinesCached(gear, store));
         check("開著的時候裝備名是中文（實際 " + on.replace('\n', '/') + "）",
                 !on.contains("Halcyon") && !on.isBlank());
         check("★ 關掉「翻譯物品名稱」之後結果會變（開 " + on.replace('\n', '/')
                 + "，關 " + off.replace('\n', '/') + "）", !on.equals(off));
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         check("再開回來又回到原本那一份",
                 on.equals(text(TooltipTranslator.translateLinesCached(gear, store))));
 
         int before = store.generation();
         store.loadAll(List.of(root.resolve("zh_cn")));
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         check("重載之後 generation 有往前（" + before + " -> "
                 + store.generation() + "）", store.generation() != before);
         String reloaded = text(TooltipTranslator.translateLinesCached(tooltip, store));

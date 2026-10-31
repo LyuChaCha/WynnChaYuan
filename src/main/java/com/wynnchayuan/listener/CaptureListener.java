@@ -1,6 +1,6 @@
 package com.wynnchayuan.listener;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CombatText;
 import com.wynnchayuan.capture.ConversationPartner;
@@ -261,7 +261,7 @@ public final class CaptureListener {
     }
 
     private void translateNametag(TextDisplayChangedEvent.Text event) {
-        CollectorConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
+        ModConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
         try {
             StyledText original = event.getText();
             if (original == null || GlyphSplitter.isGlyphOnly(original)) {
@@ -272,10 +272,10 @@ public final class CaptureListener {
             }
             LookAtTranslator.remember(event.getTextDisplay(), original);
             if (!WynnChaYuan.config().showOverlays()
-                    || mode == CollectorConfig.NametagMode.OFF) {
+                    || mode == ModConfig.NametagMode.OFF) {
                 return;
             }
-            if (mode == CollectorConfig.NametagMode.LOOK_AT) {
+            if (mode == ModConfig.NametagMode.LOOK_AT) {
                 return;
             }
             Component translated =

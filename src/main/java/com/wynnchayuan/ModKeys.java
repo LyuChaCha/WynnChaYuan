@@ -51,7 +51,7 @@ final class ModKeys {
 
         if (WynnventoryBridge.installed()) {
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
-                CollectorConfig c = WynnChaYuan.config();
+                ModConfig c = WynnChaYuan.config();
                 TranslationStore store = WynnChaYuan.translations();
                 if (c == null || store == null) {
                     return;

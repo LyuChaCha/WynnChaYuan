@@ -1,6 +1,6 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.Icons;
 import com.wynnchayuan.client.ui.Preview;
@@ -31,7 +31,7 @@ public final class NametagScreen extends CanvasScreen {
         return view;
     }
 
-    private static CollectorConfig cfg() {
+    private static ModConfig cfg() {
         return WynnChaYuan.config();
     }
 
@@ -58,10 +58,10 @@ public final class NametagScreen extends CanvasScreen {
                                 next.run();
                             }
                         })
-                        .reset(() -> cfg().nametagMode() == CollectorConfig.NametagMode.REPLACE,
+                        .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.REPLACE,
                                 () -> {
                                     for (int n = 0; n < 3 && cfg().nametagMode()
-                                            != CollectorConfig.NametagMode.REPLACE; n++) {
+                                            != ModConfig.NametagMode.REPLACE; n++) {
                                         next.run();
                                     }
                                 }),
@@ -197,7 +197,7 @@ public final class NametagScreen extends CanvasScreen {
 
         @Override
         public Preview.State preview() {
-            CollectorConfig c = cfg();
+            ModConfig c = cfg();
             preview.nametag = c.nametagMode().ordinal();
             preview.chat = c.chatMode().ordinal();
             preview.titles = c.translateTitles();

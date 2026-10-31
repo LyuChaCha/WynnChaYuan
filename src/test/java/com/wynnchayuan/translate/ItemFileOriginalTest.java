@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.render.TooltipPanel;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -62,7 +62,7 @@ public final class ItemFileOriginalTest {
         same("第 0 行的模板", "{#}Void Shard{#}", template(hidden("Void Shard")));
         same("第 1 行的模板", "{#}{#}{#}{#}{#}Void Shard", template(shown("Void Shard")));
 
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
 
         List<String> control = tooltip(store, "Acid Magma");
         check("對照組：第 1 行附原文（實際 " + plain(control.get(1)) + "）",
@@ -99,19 +99,19 @@ public final class ItemFileOriginalTest {
                         + plain(hero.get(1)) + "）",
                 hero.get(1).contains(mask + " (Hero's Mask)"));
 
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         List<String> hikerOn = tooltip(store, "Hiker's Journal");
         check("★ 只給譯名的模式：所有格的素材也是它自己的譯名（實際 " + plain(hikerOn.get(1)) + "）",
                 hikerOn.get(1).contains(journal) && !hikerOn.get(1).contains("Hiker"));
         List<String> shardOn = tooltip(store, "Void Shard");
         check("只給譯名的模式不附原文（實際 " + plain(shardOn.get(1)) + "）",
                 shardOn.get(1).contains(shard) && !shardOn.get(1).contains("(Void Shard)"));
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         List<String> heroOff = tooltip(store, "Hero's Mask");
         check("關掉物品名稱時所有格的裝備留原文，不拼成「某人的東西」（實際 "
                         + plain(heroOff.get(1)) + "）",
                 heroOff.get(1).contains("Hero's Mask"));
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
 
         String owner = translate(row("", "PoorChaCha's Journal", ""), store);
         check("玩家的東西照舊翻（實際 " + plain(owner) + "）",

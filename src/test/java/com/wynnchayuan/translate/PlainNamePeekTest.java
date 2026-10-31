@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -52,11 +52,11 @@ public final class PlainNamePeekTest {
         check("裝備名與敘述不算在內",
               !store.isPlainName("Idol") && !store.isPlainName("Used to craft weapons"));
 
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         check("★ F6 關掉裝備名稱時素材照常翻（實際 " + store.lookup("Acid Magma") + "）",
               "酸性岩漿".equals(store.lookup("Acid Magma")));
         check("而裝備名確實留了原文", store.lookup("Idol") == null);
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
 
         store.setPeekPlainNames(true);
         check("★ 按住時素材看到原文（實際 " + store.lookup("Acid Magma") + "）",
@@ -69,14 +69,14 @@ public final class PlainNamePeekTest {
         check("按住時裝備名不受這個旗標影響（它走名稱模式那條路）",
               "神像".equals(store.lookup("Idol")));
 
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
         check("「譯名加原文」模式下按住，素材也看到原文",
               store.lookup("Acid Magma") == null);
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
 
         store.setPeekPlainNames(false);
 
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
         check("★ 譯名加原文：素材附原文（實際 " + store.lookup("Acid Magma") + "）",
               "酸性岩漿 (Acid Magma)".equals(store.lookup("Acid Magma")));
         check("★ 譯名加原文：材料附原文（實際 " + store.lookup("Copper Ingot") + "）",
@@ -93,10 +93,10 @@ public final class PlainNamePeekTest {
             check("★ 不是名稱那一行（敘述裡提到同一個名字）不附",
                   "酸性岩漿".equals(store.lookup("Acid Magma")));
         }
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         check("★ 關掉物品名稱：素材照舊是譯名，不附原文（實際 " + store.lookup("Acid Magma") + "）",
               "酸性岩漿".equals(store.lookup("Acid Magma")));
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         check("只給譯名的模式不附", "酸性岩漿".equals(store.lookup("Acid Magma")));
         check("★ 放開之後馬上回到譯名", "酸性岩漿".equals(store.lookup("Acid Magma")));
 

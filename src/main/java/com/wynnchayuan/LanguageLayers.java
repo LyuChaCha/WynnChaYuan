@@ -104,7 +104,7 @@ public final class LanguageLayers {
     }
 
     private static void refreshOncePerSession(String lang) {
-        if (WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB
+        if (WynnChaYuan.config.source() != ModConfig.Source.GITHUB
                 || !WynnChaYuan.config.autoUpdateTranslations()
                 || !firstFetch(lang)) {
             return;
@@ -147,7 +147,7 @@ public final class LanguageLayers {
         }
         loadLayers();
         String under = fallbackLanguage();
-        if (under == null || WynnChaYuan.config.source() != CollectorConfig.Source.GITHUB) {
+        if (under == null || WynnChaYuan.config.source() != ModConfig.Source.GITHUB) {
             done.accept(T.s("data.fallback.done", WynnChaYuan.translations.size()));
             return;
         }

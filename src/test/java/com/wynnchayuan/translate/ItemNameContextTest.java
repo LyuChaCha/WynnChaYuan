@@ -3,7 +3,7 @@ package com.wynnchayuan.translate;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -23,7 +23,7 @@ public final class ItemNameContextTest {
         for (String lang : List.of("zh_tw", "ja_jp")) {
             TranslationStore store = new TranslationStore();
             store.loadAll(Path.of(ROOT, lang));
-            store.setNameMode(CollectorConfig.ItemNames.BOTH);
+            store.setNameMode(ModConfig.ItemNames.BOTH);
             List<String> names = pick(store, lang);
             check(lang + "：挑得到夠多只有物品在用的名字（" + names.size() + "）", names.size() >= 20);
 

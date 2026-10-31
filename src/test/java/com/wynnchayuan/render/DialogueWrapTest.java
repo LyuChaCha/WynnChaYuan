@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.TranslationStore;
 
@@ -45,7 +45,7 @@ public final class DialogueWrapTest {
 
     private static void choiceAndPromptNewline() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-wrap");
-        setConfig(new CollectorConfig(dir.resolve("config.json")));
+        setConfig(new ModConfig(dir.resolve("config.json")));
         Files.writeString(dir.resolve("misc.json"), """
                 {
                   "Who are you?": "你是\\n誰？",
@@ -88,7 +88,7 @@ public final class DialogueWrapTest {
                 Identifier.withDefaultNamespace(path)));
     }
 
-    private static void setConfig(CollectorConfig config) throws Exception {
+    private static void setConfig(ModConfig config) throws Exception {
         var field = WynnChaYuan.class.getDeclaredField("config");
         field.setAccessible(true);
         field.set(null, config);

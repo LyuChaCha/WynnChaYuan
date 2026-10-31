@@ -2,8 +2,8 @@ package com.wynnchayuan.render;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.CollectorConfig;
-import com.wynnchayuan.CollectorConfig.ItemNames;
+import com.wynnchayuan.ModConfig;
+import com.wynnchayuan.ModConfig.ItemNames;
 import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.PageNames;
 import com.wynnchayuan.translate.TranslationStore;
@@ -199,7 +199,7 @@ public final class PageNamesTest {
         check("前提：清單認得這個名字", store.isPageName(name));
         check("不相干的字不算", !store.isPageName("Can be explored"));
         Path cfgFile = Files.createTempDirectory("wcy-pagenames").resolve("config.json");
-        CollectorConfig config = new CollectorConfig(cfgFile);
+        ModConfig config = new ModConfig(cfgFile);
         StyledText row = StyledText.fromComponent(Component.literal(name).withStyle(NAME));
 
         store.setPageNameMode(ItemNames.ON);
@@ -342,7 +342,7 @@ public final class PageNamesTest {
         check("預設是譯名", config.pageNames() == ItemNames.ON);
         config.cyclePageNames(1);
         check("輪到下一格是譯名加原文", config.pageNames() == ItemNames.BOTH);
-        check("重讀設定檔還在", new CollectorConfig(cfgFile).pageNames() == ItemNames.BOTH);
+        check("重讀設定檔還在", new ModConfig(cfgFile).pageNames() == ItemNames.BOTH);
 
         done();
     }

@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.capture.UnappliedAudit;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
@@ -51,7 +51,7 @@ public final class GlyphNameOriginalTest {
 
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
         UnappliedAudit.clear();
 
         String shown = store.lookup(WRAPPED);
@@ -99,11 +99,11 @@ public final class GlyphNameOriginalTest {
             }
         }
 
-        store.setNameMode(CollectorConfig.ItemNames.ON);
+        store.setNameMode(ModConfig.ItemNames.ON);
         same("只給譯名：不附原文", ICON + "戀火效忠書卷" + TAIL, text(ICON, TOME, TAIL, store));
-        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        store.setNameMode(ModConfig.ItemNames.OFF);
         same("關掉物品名稱：留原文", ICON + TOME + TAIL, text(ICON, TOME, TAIL, store));
-        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        store.setNameMode(ModConfig.ItemNames.BOTH);
 
         same("一般的名字照舊", "潮湧戰鬥精通書卷 II (Abyssal Tome of Combat Mastery II)",
                 store.lookup("Abyssal Tome of Combat Mastery II"));
@@ -159,7 +159,7 @@ public final class GlyphNameOriginalTest {
                 TranslationStore store = new TranslationStore();
                 store.loadAll(dir);
                 for (String tome : tomes) {
-                    store.setNameMode(CollectorConfig.ItemNames.ON);
+                    store.setNameMode(ModConfig.ItemNames.ON);
                     String name = store.lookup(tome);
                     if (name == null && untranslated(lang.resolve("tome.json"), tome)) {
                         continue;
@@ -167,7 +167,7 @@ public final class GlyphNameOriginalTest {
                     String who = lang.getFileName() + " " + tome;
                     check(who + "：鍵是裸名（實際 " + name + "）",
                             name != null && !name.equals(tome) && name.indexOf('{') < 0);
-                    store.setNameMode(CollectorConfig.ItemNames.BOTH);
+                    store.setNameMode(ModConfig.ItemNames.BOTH);
                     String want = name + " (" + tome + ")";
                     String hidden = text(ICON, tome, TAIL, store);
                     check(who + "：第 0 行（實際 " + plain(hidden) + "）", hidden.contains(want));

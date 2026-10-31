@@ -1,6 +1,6 @@
 package com.wynnchayuan.translate;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 
 import java.nio.file.Path;
 import java.util.List;
@@ -15,7 +15,7 @@ public final class ShinyNameTest {
 
         TranslationStore tw = new TranslationStore();
         tw.loadAll(List.of(root.resolve("zh_tw")));
-        tw.setNameMode(CollectorConfig.ItemNames.ON);
+        tw.setNameMode(ModConfig.ItemNames.ON);
         String twShiny = prefix(root.resolve("zh_tw"));
         check("繁中有 Shiny 的前綴（實際 " + twShiny + "）", !twShiny.isEmpty());
         String sunstarTw = tw.lookup("Sunstar");
@@ -50,7 +50,7 @@ public final class ShinyNameTest {
 
         TranslationStore cn = new TranslationStore();
         cn.loadAll(List.of(root.resolve("zh_cn")));
-        cn.setNameMode(CollectorConfig.ItemNames.ON);
+        cn.setNameMode(ModConfig.ItemNames.ON);
         if (cn.lookup("Sunstar") == null || pattern(root.resolve("zh_cn")).isEmpty()) {
             check("簡中沒有 Sunstar 或 Shiny 的譯名時留原文（實際 " + cn.lookup("Shiny Sunstar") + "）",
                   cn.lookup("Shiny Sunstar") == null);
@@ -66,9 +66,9 @@ public final class ShinyNameTest {
         check("簡中 Shiny Masterwork 也照裝備譯名（實際 " + mw + "）",
               mw != null && mw.startsWith(cnShiny) && !mw.contains("Apocalypse"));
 
-        cn.setNameMode(CollectorConfig.ItemNames.BOTH);
+        cn.setNameMode(ModConfig.ItemNames.BOTH);
         is(cn, "Shiny Sunstar", cnShiny + sunstar + " (Shiny Sunstar)");
-        cn.setNameMode(CollectorConfig.ItemNames.OFF);
+        cn.setNameMode(ModConfig.ItemNames.OFF);
         is(cn, "Shiny Sunstar", null);
 
         System.out.println(failures == 0 ? "Shiny 名稱：全部通過" : "Shiny 名稱：" + failures + " 項失敗");

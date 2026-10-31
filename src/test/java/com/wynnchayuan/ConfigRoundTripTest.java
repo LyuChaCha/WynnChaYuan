@@ -38,7 +38,7 @@ public final class ConfigRoundTripTest {
         Path dir = Files.createTempDirectory("wynnchayuan-config");
         Path file = dir.resolve("config.json");
         Files.copy(input, file);
-        CollectorConfig config = new CollectorConfig(file);
+        ModConfig config = new ModConfig(file);
         config.toggleDebugDumps();
         config.toggleDebugDumps();
         return Files.readString(file);

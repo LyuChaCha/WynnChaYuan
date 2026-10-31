@@ -1,6 +1,6 @@
 package com.wynnchayuan.render;
 
-import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -67,9 +67,9 @@ public final class BossBarNameTest {
         Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0xAA0000));
         Style shine = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFF55));
         String url = "PLAY.WYNNCRAFT.COM";
-        CollectorConfig config;
+        ModConfig config;
         try {
-            config = new CollectorConfig(java.nio.file.Files.createTempFile("bossbar", ".json"));
+            config = new ModConfig(java.nio.file.Files.createTempFile("bossbar", ".json"));
         } catch (java.io.IOException e) {
             throw new RuntimeException(e);
         }
