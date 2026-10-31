@@ -361,7 +361,7 @@ public final class DialogueOverlay {
             return null;
         }
         String source = sources.get(index);
-        return continues(raws.get(index), raw) && canReuse(source, template) ? source : null;
+        return canReuse(source, template, raws.get(index), raw) ? source : null;
     }
 
     static boolean continues(String before, String now) {
@@ -385,6 +385,23 @@ public final class DialogueOverlay {
     static boolean canReuse(String source, String template) {
         return source != null && template != null
                 && DialogueTyping.within(source, template.strip());
+    }
+
+    static boolean canReuse(String source, String template, String before, String now) {
+        return continues(before, now) && canReuse(source, template)
+                && !numberStillGrowing(before, now);
+    }
+
+    static boolean numberStillGrowing(String before, String now) {
+        return !now.equals(before) && endsInNumber(before);
+    }
+
+    private static boolean endsInNumber(String text) {
+        int last = text.length() - 1;
+        if (last > 0 && (text.charAt(last) == '.' || text.charAt(last) == ',')) {
+            last--;
+        }
+        return last >= 0 && Character.isDigit(text.charAt(last));
     }
 
     static List<List<Component>> translateChoices(TranslationStore store) {

@@ -1782,6 +1782,14 @@ tasks.register('runConfigRoundTripChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runConfigRoundTripChecks' }
 
+tasks.register('runDialogueNumberChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueNumberTest'
+}
+tasks.named('check') { dependsOn 'runDialogueNumberChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
