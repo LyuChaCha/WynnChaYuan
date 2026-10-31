@@ -1790,6 +1790,14 @@ tasks.register('runDialogueNumberChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueNumberChecks' }
 
+tasks.register('runWorldResetChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WorldResetTest'
+}
+tasks.named('check') { dependsOn 'runWorldResetChecks' }
+
 tasks.register('goldenDump', JavaExec) {
     group = 'verification'
     dependsOn 'testClasses'
