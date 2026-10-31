@@ -12,7 +12,7 @@ public final class ComponentMemo {
 
     private static final int SIZE = 4096;
 
-    private record Entry(ItemStack stack, DataComponentType<?> type, long frame, Object value) { }
+    private record Entry(ItemStack stack, DataComponentType<?> type, long frame, Hit hit) { }
 
     public record Hit(Object value) { }
 
@@ -21,6 +21,10 @@ public final class ComponentMemo {
     private static long frame;
     private static Thread renderThread;
     private static boolean filling;
+
+    public static void forget() {
+        java.util.Arrays.fill(TABLE, null);
+    }
 
     public static void nextFrame() {
         frame++;
@@ -34,7 +38,7 @@ public final class ComponentMemo {
         int slot = (System.identityHashCode(stack) * 31 + System.identityHashCode(type)) & (SIZE - 1);
         Entry hit = TABLE[slot];
         if (hit != null && hit.frame() == frame && hit.stack() == stack && hit.type() == type) {
-            return new Hit(hit.value());
+            return hit.hit();
         }
         Object value;
         filling = true;
@@ -43,8 +47,9 @@ public final class ComponentMemo {
         } finally {
             filling = false;
         }
-        TABLE[slot] = new Entry(stack, type, frame, value);
-        return new Hit(value);
+        Hit fresh = new Hit(value);
+        TABLE[slot] = new Entry(stack, type, frame, fresh);
+        return fresh;
     }
 
     private static boolean tracked(DataComponentType<?> type) {

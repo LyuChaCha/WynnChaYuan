@@ -16,6 +16,10 @@ public final class WynnventoryPriceCache {
 
     private static volatile Entry last;
 
+    public static void forget() {
+        last = null;
+    }
+
     public static List<Component> get(ItemStack stack) {
         Entry hit = last;
         if (hit == null || hit.stack() != stack || !enabled()

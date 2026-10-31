@@ -19,7 +19,17 @@ public final class SelfNames {
 
     private static final int MAX_PREFIX_WORDS = 3;
 
+    private static final int MAX_LEARNED = 256;
+
+    private static final long NAMES_MAX_AGE_NANOS = 1_000_000_000L;
+
     private static final Set<String> learned = new LinkedHashSet<>();
+
+    private record Names(int player, int version, long at, List<String> all, List<String> usable) {}
+
+    private static volatile Names names;
+
+    private static volatile int version;
 
     private static final Set<String> UNSET =
             Set.of("not defined", "none", "n/a", "unset", "not set", "-");
@@ -62,9 +72,16 @@ public final class SelfNames {
         if (name == null || source == null) {
             return;
         }
-        Set<String> keys = proposals.computeIfAbsent(name, n -> new LinkedHashSet<>());
-        keys.add(source);
-        if (keys.size() >= MIN_EVIDENCE) {
+        boolean enough;
+        synchronized (learned) {
+            Set<String> keys = proposals.computeIfAbsent(name, n -> new LinkedHashSet<>());
+            keys.add(source);
+            enough = keys.size() >= MIN_EVIDENCE;
+            if (proposals.size() > MAX_LEARNED) {
+                proposals.remove(proposals.keySet().iterator().next());
+            }
+        }
+        if (enough) {
             remember(name);
         }
     }
@@ -74,16 +91,26 @@ public final class SelfNames {
             return;
         }
         String bare = name.strip();
-        if (bare.length() >= MIN_NAME && !UNSET.contains(bare.toLowerCase(Locale.ROOT))) {
-            learned.add(bare);
+        if (bare.length() < MIN_NAME || UNSET.contains(bare.toLowerCase(Locale.ROOT))) {
+            return;
+        }
+        synchronized (learned) {
+            if (learned.add(bare)) {
+                if (learned.size() > MAX_LEARNED) {
+                    learned.remove(learned.iterator().next());
+                }
+                version++;
+            }
         }
     }
 
     public static List<String> describe() {
         List<String> out = new ArrayList<>();
-        for (String name : learned) {
-            out.add((proposals.containsKey(name) ? "語料反推 " : "角色選單 ")
-                    + name.length() + " 個字元");
+        synchronized (learned) {
+            for (String name : learned) {
+                out.add((proposals.containsKey(name) ? "語料反推 " : "角色選單 ")
+                        + name.length() + " 個字元");
+            }
         }
         String account = accountName();
         if (account != null && account.length() >= MIN_NAME) {
@@ -98,24 +125,55 @@ public final class SelfNames {
     }
 
     public static List<String> all() {
-        Set<String> out = new LinkedHashSet<>(learned);
+        return current().all();
+    }
+
+    // 每一段文字都要查一次，顯示名稱不能每次現算；換角色會換 LocalPlayer
+    private static Names current() {
+        Names cached = names;
+        int player = System.identityHashCode(localPlayer());
+        int seen = version;
+        long now = System.nanoTime();
+        if (cached != null && cached.player() == player && cached.version() == seen
+                && now - cached.at() < NAMES_MAX_AGE_NANOS) {
+            return cached;
+        }
+        Set<String> out;
+        synchronized (learned) {
+            out = new LinkedHashSet<>(learned);
+        }
         addName(out, accountName());
         for (String shown : displayNames()) {
             out.addAll(suffixes(shown));
         }
         List<String> sorted = new ArrayList<>(out);
         sorted.sort((a, b) -> b.length() - a.length());
-        return sorted;
+        List<String> usable = new ArrayList<>(sorted.size());
+        for (String name : sorted) {
+            if (usable(name)) {
+                usable.add(name);
+            }
+        }
+        Names fresh = new Names(player, seen, now, List.copyOf(sorted), List.copyOf(usable));
+        names = fresh;
+        return fresh;
+    }
+
+    private static Object localPlayer() {
+        try {
+            Minecraft mc = Minecraft.getInstance();
+            return mc == null ? null : mc.player;
+        } catch (Throwable t) {
+            ErrorDebug.note("SelfNames#localPlayer", null, t);
+            return null;
+        }
     }
 
     public static String find(String text) {
         if (text == null || text.isEmpty()) {
             return null;
         }
-        for (String name : all()) {
-            if (!usable(name)) {
-                continue;
-            }
+        for (String name : current().usable()) {
             int at = indexOfWord(text, name);
             if (at >= 0) {
                 return text.substring(at, at + name.length());
@@ -134,8 +192,10 @@ public final class SelfNames {
 
     private static int indexOfWord(String text, String name) {
         int last = text.length() - name.length();
+        char first = folded(name.charAt(0));
         for (int at = 0; at <= last; at++) {
-            if (!text.regionMatches(true, at, name, 0, name.length())) {
+            if (folded(text.charAt(at)) != first
+                    || !text.regionMatches(true, at, name, 0, name.length())) {
                 continue;
             }
             if (at > 0 && Character.isLetterOrDigit(text.charAt(at - 1))) {
@@ -148,6 +208,10 @@ public final class SelfNames {
             return at;
         }
         return -1;
+    }
+
+    private static char folded(char c) {
+        return Character.toLowerCase(Character.toUpperCase(c));
     }
 
     static List<String> suffixes(String shown) {

@@ -26,9 +26,9 @@ final class WynntilsBossBar {
         if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }
-        if (barAge != store.generation() || BARS.size() > 256) {
+        if (barAge != store.cacheAge() || BARS.size() > 256) {
             BARS.clear();
-            barAge = store.generation();
+            barAge = store.cacheAge();
         }
         net.minecraft.network.chat.Component hit = BARS.get(name);
         if (hit == null) {
@@ -172,5 +172,5 @@ final class WynntilsBossBar {
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
 
-    private static int barAge = -1;
+    private static long barAge = -1;
 }

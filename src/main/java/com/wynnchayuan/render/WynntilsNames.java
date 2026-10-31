@@ -37,13 +37,13 @@ final class WynntilsNames {
                 || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
             return name;
         }
-        if (nameAge != store.generation()) {
+        if (nameAge != store.cacheAge()) {
             NAMES.clear();
             INDICATORS.clear();
             synchronized (NAMES_NOTED) {
                 NAMES_NOTED.clear();
             }
-            nameAge = store.generation();
+            nameAge = store.cacheAge();
         }
         Name entry = NAMES.get(name);
         if (entry == null) {
@@ -116,5 +116,5 @@ final class WynntilsNames {
 
     private static final java.util.Map<String, Boolean> NAMES_NOTED = WynntilsText.lru(1024);
 
-    private static int nameAge = -1;
+    private static long nameAge = -1;
 }

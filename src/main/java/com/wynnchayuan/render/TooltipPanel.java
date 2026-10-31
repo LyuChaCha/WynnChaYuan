@@ -63,10 +63,10 @@ public final class TooltipPanel {
             TooltipPlacement.drawAt(graphics, mc, tooltip, spot.originalX(), spot.originalY());
         }
 
-        List<ClientTooltipComponent> components = lines.stream()
-                .map(Component::getVisualOrderText)
-                .map(ClientTooltipComponent::create)
-                .toList();
+        List<ClientTooltipComponent> components = new java.util.ArrayList<>(lines.size());
+        for (Component line : lines) {
+            components.add(ClientTooltipComponent.create(line.getVisualOrderText()));
+        }
 
         OriginalTooltipBox.beginOwn();
         try {
