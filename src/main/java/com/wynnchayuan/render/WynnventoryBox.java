@@ -14,7 +14,9 @@ public final class WynnventoryBox {
 
     private static final long FRESH_NANOS = 120_000_000L;
 
-    private static final int PAD = 4;
+    private static final int PAD = OriginalTooltipBox.FRAME;
+
+    private static final int PANEL_EXTRA = 8;
 
     private static int[] box;
     private static long notedAt;
@@ -62,12 +64,12 @@ public final class WynnventoryBox {
         if (b == null || now - notedAt > FRESH_NANOS || !hits(b, x, y, w, h)) {
             return x;
         }
-        int tipLeft = leftSide + w + gap;
-        int tipRight = rightSide - gap;
+        int tipLeft = leftSide + (w - PANEL_EXTRA) + gap + PAD;
+        int tipRight = rightSide - gap - PAD;
         boolean wasRight = Math.abs(x - rightSide) <= Math.abs(x - leftSide);
         int other = wasRight ? leftSide : rightSide;
-        int beyond = b[0] >= tipRight ? b[0] + b[2] + gap
-                : b[0] + b[2] <= tipLeft ? b[0] - gap - w
+        int beyond = b[0] >= tipRight ? b[0] + b[2] + gap + PAD
+                : b[0] + b[2] <= tipLeft ? b[0] - gap - PAD - (w - PANEL_EXTRA)
                 : Integer.MIN_VALUE;
         for (int candidate : new int[] {other, beyond}) {
             if (candidate >= 0 && candidate + w <= screenW && !hits(b, candidate, y, w, h)) {
@@ -83,6 +85,8 @@ public final class WynnventoryBox {
     }
 
     private static boolean hits(int[] b, int x, int y, int w, int h) {
-        return x < b[0] + b[2] && b[0] < x + w && y < b[1] + b[3] && b[1] < y + h;
+        int right = x + w - PANEL_EXTRA + PAD;
+        int bottom = y + h - PANEL_EXTRA + PAD;
+        return x - PAD < b[0] + b[2] && b[0] < right && y - PAD < b[1] + b[3] && b[1] < bottom;
     }
 }

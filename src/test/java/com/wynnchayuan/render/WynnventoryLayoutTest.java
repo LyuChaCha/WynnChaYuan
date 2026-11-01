@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.ModConfig;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
 import org.joml.Vector2i;
@@ -15,9 +16,14 @@ public final class WynnventoryLayoutTest {
         int ph = 49 * 10;
         float[] anchor = WynnventoryLayout.anchoredSpot(492, 170, ph);
         float s = anchor[2];
-        float top = anchor[1] - 4 * s;
-        float bottom = anchor[1] + (ph + 6) * s;
-        check("★ 固定在左側：貼左邊（實際 x=" + anchor[0] + "）", anchor[0] < 12);
+        float top = anchor[1] - FRAME * s;
+        float bottom = anchor[1] + (ph + 2 + FRAME) * s;
+        check("★ 固定在左側：貼左邊（實際 x=" + anchor[0] + "）", anchor[0] - FRAME * s < 12);
+        check("★ 固定在左側：框線不出畫面左邊（實際 " + (anchor[0] - FRAME * s) + "）",
+                anchor[0] - FRAME * s >= 0);
+        float[] small = WynnventoryLayout.anchoredSpot(270, 155, 66);
+        check("★ 皇家蛋糕那種小框：框線不出畫面左邊（實際 " + (small[0] - FRAME) + "）",
+                small[2] == 1f && small[0] - FRAME >= 0);
         check("★ 整個框在畫面裡（上 " + top + "、下 " + bottom + "）", top >= 0 && bottom <= 492);
         check("太高就縮（實際 " + s + "）", s < 1f);
 
@@ -31,24 +37,31 @@ public final class WynnventoryLayoutTest {
         float[] spot = WynnventoryLayout.place(1100, 984, 105, 380, 620, 310, 900);
         check("照實際寬度擺得下（實際 " + (spot == null ? "null" : "x=" + spot[0]) + "）", spot != null);
         if (spot != null) {
-            check("不壓在說明框上", spot[0] - 4 * spot[2] >= 725);
+            check("★ 框線不壓在說明框的框線上（實際 " + (spot[0] - FRAME * spot[2]) + "）",
+                    spot[0] - FRAME * spot[2] >= 725 + FRAME);
         }
         float[] squeezed = WynnventoryLayout.place(1000, 984, 105, 380, 620, 310, 400);
         check("兩邊都放不下時縮小（實際 " + (squeezed == null ? "null" : squeezed[2]) + "）",
-              squeezed != null && squeezed[2] < 1f && squeezed[0] - 4 * squeezed[2] >= 725
-                      && squeezed[0] + (310 + 4) * squeezed[2] <= 1000);
+              squeezed != null && squeezed[2] < 1f && squeezed[0] - FRAME * squeezed[2] >= 725
+                      && squeezed[0] + (310 + FRAME) * squeezed[2] <= 1000);
         float[] roomy = WynnventoryLayout.place(1000, 600, 100, 50, 300, 200, 200);
         check("右邊放得下就放右邊、原尺寸（實際 x=" + roomy[0] + " 縮放 " + roomy[2] + "）",
-              roomy[0] == 100 + 300 + 18 + 4 && roomy[2] == 1f);
+              roomy[0] == 100 + 300 + 18 + FRAME && roomy[2] == 1f);
         float[] lefty = WynnventoryLayout.place(1000, 600, 500, 50, 400, 200, 200);
-        check("右邊放不下就放左邊（實際 x=" + lefty[0] + "）", lefty[0] + 200 + 4 <= 500 - 18 + 0.01f);
+        check("右邊放不下就放左邊（實際 x=" + lefty[0] + "）",
+                lefty[0] + 200 + FRAME <= 500 - 18 + 0.01f);
+        float[] tight = WynnventoryLayout.place(600, 600, 240, 50, 340, 200, 200);
+        check("★ 左邊剛好放得下：框線不出畫面左邊（實際 " + (tight[0] - FRAME * tight[2]) + "）",
+                tight[0] - FRAME * tight[2] >= 0);
         float[] tall = WynnventoryLayout.place(1000, 300, 100, 50, 300, 200, 600);
         check("太高就縮，整個框在畫面裡",
-              tall[2] < 1f && tall[1] - 4 * tall[2] >= 0 && tall[1] + 606 * tall[2] <= 300.01f);
+              tall[2] < 1f && tall[1] - FRAME * tall[2] >= 0
+                      && tall[1] + (600 + 2 + FRAME) * tall[2] <= 300.01f);
         check("空間太小就交回它原本的方法",
               WynnventoryLayout.place(400, 600, 30, 50, 340, 300, 100) == null);
 
         ownPanelKeepsItsSpot();
+        itemTooltipClearsTheFrame();
 
         if (failures > 0) {
             System.out.println("Wynnventory 側邊框：" + failures + " 項失敗");
@@ -62,7 +75,7 @@ public final class WynnventoryLayoutTest {
         int screenH = 508;
         OriginalTooltipBox.Box drawn = new OriginalTooltipBox.Box(420, 120, 170, 202, 1f, 170, 202);
         TooltipPlacement.Place p = TooltipPlacement.layout(160, 212, 170, 202, drawn, 400, 132,
-                screenW, screenH, 12, com.wynnchayuan.ModConfig.PanelSide.AUTO);
+                screenW, screenH, 12, ModConfig.PanelSide.AUTO);
         WynnventoryBox.note(4, 150, 150, 200, System.nanoTime());
         try {
             OriginalTooltipBox.beginOwn();
@@ -84,6 +97,43 @@ public final class WynnventoryLayoutTest {
         } finally {
             WynnventoryBox.forget();
         }
+    }
+
+    private static void itemTooltipClearsTheFrame() {
+        float[] anchor = WynnventoryLayout.anchoredSpot(270, 155, 66);
+        int boxX = Math.round(anchor[0] - FRAME);
+        int boxW = 155 + FRAME * 2;
+        int[] box = {boxX, 90, boxW, 92};
+        float[] moved = WynnventoryLayout.moved(100, 100, 150, 80, box, 480, 1f);
+        check("★ 物品說明挪開後框線不疊到價格框（實際 "
+                        + (moved == null ? "null" : String.valueOf(moved[0] - FRAME)) + "）",
+                moved != null && moved[0] - FRAME >= boxX + boxW);
+
+        long now = 1_000_000_000L;
+        int gap = 8;
+        int tipX = Math.round(moved[0]);
+        OriginalTooltipBox.Box drawn = new OriginalTooltipBox.Box(tipX, 100, 150, 80, 1f, 150, 80);
+        TooltipPlacement.Place p = TooltipPlacement.layout(90, 52, 150, 80, drawn, 150, 110,
+                480, 270, gap, ModConfig.PanelSide.AUTO);
+        WynnventoryBox.note(boxX, 90, boxW, 92, now);
+        int anchored = WynnventoryBox.place(p.panelX(), p.panelY(), 98, 60,
+                p.leftSide(), p.rightSide(), 480, gap, now);
+        check("★ 固定在左側：面板讓到物品說明另一邊（實際 " + anchored + "）",
+                anchored == p.rightSide());
+        check("★ 面板與物品說明的框線之間是 F6 的間距（實際 "
+                        + (anchored - FRAME - (tipX + 150 + FRAME)) + "）",
+                anchored - FRAME - (tipX + 150 + FRAME) == gap);
+
+        int vx = 20;
+        int priceX = vx + 150 + 18;
+        WynnventoryBox.note(priceX, 90, boxW, 92, now);
+        int rightSide = vx + 150 + FRAME + gap + FRAME;
+        int leftSide = vx - FRAME - gap - FRAME - 90;
+        int beside = WynnventoryBox.place(rightSide, 100, 98, 60, leftSide, rightSide, 640, gap, now);
+        check("★ 面板移到價格框右邊時，兩邊框線之間是 F6 的間距（實際 "
+                        + (beside - FRAME - (priceX + boxW)) + "）",
+                beside - FRAME - (priceX + boxW) == gap);
+        WynnventoryBox.forget();
     }
 
     private static int[] drawnAt(int x, int y, int screenW, int screenH, int w, int h) {
@@ -111,7 +161,8 @@ public final class WynnventoryLayoutTest {
 
         WynnventoryBox.note(118, 96, 80, 70, now);
         int beyond = WynnventoryBox.place(112, Y, W, H, -102, 112, SCREEN, GAP, now);
-        check("★ 左邊放不下：改放價格框的右邊（實際 " + beyond + "）", beyond == 118 + 80 + GAP);
+        check("★ 左邊放不下：改放價格框的右邊（實際 " + beyond + "）",
+                beyond == 118 + 80 + GAP + FRAME);
 
         WynnventoryBox.note(118, 96, 80, 70, now);
         int stuck = WynnventoryBox.place(112, Y, W, H, -102, 112, 260, GAP, now);
@@ -121,7 +172,8 @@ public final class WynnventoryLayoutTest {
         check("★ 價格框在左邊、面板也在左邊：改放右邊（實際 " + place(LEFT, now) + "）",
                 place(LEFT, now) == RIGHT);
         int further = WynnventoryBox.place(LEFT, Y, W, H, LEFT, RIGHT, 380, GAP, now);
-        check("★ 右邊放不下：放到價格框的左邊（實際 " + further + "）", further == 110 - GAP - W);
+        check("★ 右邊放不下：放到價格框的左邊（實際 " + further + "）",
+                further + (W - 8) + FRAME == 110 - GAP);
 
         WynnventoryBox.note(290, 96, 80, 70, now);
         check("價格框跨在物品說明上：只試另一邊（實際 " + place(RIGHT, now) + "）",
@@ -131,6 +183,7 @@ public final class WynnventoryLayoutTest {
         System.out.println("WynnventoryBoxTest 全部通過");
     }
 
+    private static final int FRAME = OriginalTooltipBox.FRAME;
     private static final int LEFT = 98;
     private static final int RIGHT = 312;
     private static final int W = 90;
