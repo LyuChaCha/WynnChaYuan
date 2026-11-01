@@ -107,7 +107,11 @@ public final class Releases {
             return null;
         }
         String latest = o.get("latest").getAsString();
-        return latest.equals(WynnChaYuan.version()) ? null : latest;
+        return isNewer(latest, WynnChaYuan.version()) ? latest : null;
+    }
+
+    static boolean isNewer(String latest, String current) {
+        return compare(latest, current) > 0;
     }
 
     static final String DOWNLOAD = "https://github.com/LyuChaCha/WynnChaYuan/releases/latest";

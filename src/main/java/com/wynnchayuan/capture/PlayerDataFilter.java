@@ -1,7 +1,7 @@
 package com.wynnchayuan.capture;
 
-import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.PlayerInfo;
 
 import java.util.ArrayList;
@@ -208,22 +208,57 @@ public final class PlayerDataFilter {
 
     private static final int MIN_ONLINE_NAME = 4;
 
+    private static final int ONLINE_EVERY_TICKS = 20;
+
+    private static int onlineTicks;
+
+    // 玩家清單是 HashMap，背景整理與匯出不能直接走訪，只讀這兩份
+    private static volatile List<String> online = List.of();
+    private static volatile List<String> listedStems = List.of();
+
+    public static void tick(Minecraft client) {
+        if (++onlineTicks < ONLINE_EVERY_TICKS) {
+            return;
+        }
+        onlineTicks = 0;
+        ClientPacketListener connection = client.getConnection();
+        if (connection == null) {
+            remember(List.of(), List.of());
+            return;
+        }
+        List<String> names = new ArrayList<>();
+        for (PlayerInfo info : connection.getOnlinePlayers()) {
+            names.add(info.getProfile().name());
+        }
+        List<String> listed = new ArrayList<>();
+        for (PlayerInfo info : connection.getListedOnlinePlayers()) {
+            listed.add(info.getProfile().name());
+        }
+        remember(names, listed);
+    }
+
+    static void remember(List<String> names, List<String> listed) {
+        List<String> full = new ArrayList<>();
+        for (String name : names) {
+            if (name != null && name.length() >= MIN_ONLINE_NAME) {
+                full.add(name);
+            }
+        }
+        List<String> stems = new ArrayList<>();
+        for (String name : listed) {
+            if (name != null && !name.isBlank()) {
+                stems.add(DIGITS.matcher(name).replaceAll(""));
+            }
+        }
+        online = List.copyOf(full);
+        listedStems = List.copyOf(stems);
+    }
+
     private static boolean mentionsOnlinePlayer(String text) {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.getConnection() == null) {
-                return false;
+        for (String name : online) {
+            if (text.contains(name)) {
+                return true;
             }
-            for (PlayerInfo info
-                    : mc.getConnection().getOnlinePlayers()) {
-                String name = info.getProfile().name();
-                if (name != null && name.length() >= MIN_ONLINE_NAME
-                        && text.contains(name)) {
-                    return true;
-                }
-            }
-        } catch (Throwable t) {
-            ErrorDebug.note("PlayerDataFilter#mentionsOnlinePlayer", null, t);
         }
         return false;
     }
@@ -264,7 +299,7 @@ public final class PlayerDataFilter {
         if (template == null || template.isBlank()) {
             return false;
         }
-        List<String> names = onlineNames();
+        List<String> names = listedStems;
         if (names.isEmpty()) {
             return false;
         }
@@ -284,26 +319,6 @@ public final class PlayerDataFilter {
             }
         }
         return false;
-    }
-
-    private static List<String> onlineNames() {
-        try {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc == null || mc.getConnection() == null) {
-                return List.of();
-            }
-            List<String> out = new ArrayList<>();
-            for (var entry : mc.getConnection().getListedOnlinePlayers()) {
-                String name = entry.getProfile().name();
-                if (name != null && !name.isBlank()) {
-                    out.add(DIGITS.matcher(name).replaceAll(""));
-                }
-            }
-            return out;
-        } catch (Throwable t) {
-            ErrorDebug.note("PlayerDataFilter#onlineNames", null, t);
-            return List.of();
-        }
     }
 
     private static final int MIN_NAME_MATCH = 4;

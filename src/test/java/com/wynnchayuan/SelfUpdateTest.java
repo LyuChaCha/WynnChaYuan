@@ -16,6 +16,11 @@ public final class SelfUpdateTest {
     public static void main(String[] args) throws Exception {
         Path tmp = Files.createTempDirectory("wcy-selfupdate");
 
+        check("★ 比目前新才算有更新", Releases.isNewer("1.0.6", "1.0.5")
+                && Releases.isNewer("1.0.5_1", "1.0.5") && Releases.isNewer("1.1.0", "1.0.9"));
+        check("★ 舊版或同版不算更新，不會降版", !Releases.isNewer("1.0.5", "1.0.6")
+                && !Releases.isNewer("1.0.6", "1.0.6") && !Releases.isNewer("1.0.5", "1.0.5_1"));
+
         String url = SelfUpdate.assetUrl("1.0.1_1");
         check("網址是這個倉庫的 Releases（實際 " + url + "）",
                 url.equals("https://github.com/LyuChaCha/WynnChaYuan/releases/download/"
