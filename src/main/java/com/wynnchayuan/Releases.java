@@ -3,6 +3,7 @@ package com.wynnchayuan;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.client.ChatButtons;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.minecraft.ChatFormatting;
@@ -131,27 +132,26 @@ public final class Releases {
         WynnChaYuan.config().notifiedVersion(latest);
 
         String url = downloadUrl();
-        ModChat.say(client, T.c("chat.update.line1", latest, WynnChaYuan.version())
-                .withStyle(ChatFormatting.AQUA));
+        List<Component> rows = new ArrayList<>();
         Notes notes = notesFor(latest);
         if (notes != null && !notes.headline().isBlank()) {
-            ModChat.more(client, Component.literal("  " + notes.headline())
-                    .withStyle(ChatFormatting.GRAY));
+            rows.add(Component.literal(notes.headline()).withStyle(ChatFormatting.GRAY));
         }
+        List<Component> buttons = new ArrayList<>();
         if (SelfUpdate.available()) {
-            ModChat.more(client,
-                    T.c("chat.update.direct").withStyle(style -> style
-                            .withColor(ChatFormatting.GREEN).withUnderlined(true)
-                            .withClickEvent(new ClickEvent.RunCommand("/wcy update"))
-                            .withHoverEvent(new HoverEvent.ShowText(
-                                    T.c("chat.update.direct.hover")))));
+            buttons.add(ChatButtons.button(T.c("chat.update.direct")).withStyle(style -> style
+                    .withColor(ChatFormatting.GREEN)
+                    .withClickEvent(new ClickEvent.RunCommand("/wcy update"))
+                    .withHoverEvent(new HoverEvent.ShowText(T.c("chat.update.direct.hover")))));
         }
-        ModChat.more(client,
-                T.c("chat.update.link").withStyle(style -> style.withColor(ChatFormatting.YELLOW)
-                        .withUnderlined(true)
-                        .withClickEvent(new ClickEvent.OpenUrl(URI.create(url)))
-                        .withHoverEvent(new HoverEvent.ShowText(Component.literal(url)))));
-        ModChat.more(client, T.c("chat.update.where").withStyle(ChatFormatting.DARK_GRAY));
+        buttons.add(ChatButtons.button(T.c("chat.update.link")).withStyle(style -> style
+                .withColor(ChatFormatting.YELLOW)
+                .withClickEvent(new ClickEvent.OpenUrl(URI.create(url)))
+                .withHoverEvent(new HoverEvent.ShowText(Component.literal(url)))));
+        rows.addAll(ChatButtons.rows(client, buttons));
+        rows.add(T.c("chat.update.where").withStyle(ChatFormatting.DARK_GRAY));
+        ModChat.panel(client, T.c("chat.update.line1", latest, WynnChaYuan.version())
+                .withStyle(ChatFormatting.AQUA), rows);
     }
 
     private static volatile boolean told;

@@ -6,7 +6,11 @@ import com.wynnchayuan.listener.ChatBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
+import java.util.List;
+
 public final class ModChat {
+
+    public static final String INDENT = "  ";
 
     private ModChat() {}
 
@@ -18,6 +22,15 @@ public final class ModChat {
 
     public static void more(Minecraft client, Component line) {
         send(client, line, line);
+    }
+
+    public static void panel(Minecraft client, Component head, List<Component> rows) {
+        more(client, Component.empty());
+        say(client, head);
+        for (Component row : rows) {
+            more(client, Component.literal(INDENT).append(row));
+        }
+        more(client, Component.empty());
     }
 
     private static void send(Minecraft client, Component shown, Component bare) {

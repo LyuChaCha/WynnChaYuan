@@ -30,8 +30,8 @@ public final class UpdateButtonTest {
                     run.command().equals("/" + TranslationUpdate.COMMAND));
         }
 
-        check("有底線 —— 聊天室裡那是唯一看得出「可以按」的提示",
-                button.getStyle().isUnderlined());
+        check("有方括號 —— 聊天室裡那是唯一看得出「可以按」的提示",
+                button.getString().startsWith("[ ") && button.getString().endsWith(" ]"));
         check("滑過去有說明", button.getStyle().getHoverEvent() != null);
 
         // Fabric 客戶端指令名不能有空白
