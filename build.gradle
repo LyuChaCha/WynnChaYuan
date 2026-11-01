@@ -117,6 +117,10 @@ processResources {
         into 'assets/wynnchayuan'
     }
 
+    // quest-dialogue.json 已經合併過，工作檔不用再打一份。
+    exclude 'assets/wynnchayuan/translations/*/quest/**'
+    exclude 'assets/wynnchayuan/translations/*/secret/**'
+
     // 沒有任何字型檔引用的字型不打進 jar。
     //
     // font/ 底下放著日文與韓文兩份點陣字型，但目前沒有任何 font JSON 引用
