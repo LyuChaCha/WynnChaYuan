@@ -37,8 +37,11 @@ public final class ScoreboardListener {
         return !part.contains(ACTIVITY_PART) && !part.contains(LOOTRUN_PART);
     }
 
+    private static ScoreboardUpdatedEvent last;
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onScoreboardUpdated(ScoreboardUpdatedEvent event) {
+        last = event;
         try {
             update(event);
         } catch (Throwable t) {
@@ -47,7 +50,13 @@ public final class ScoreboardListener {
         }
     }
 
-    private void update(ScoreboardUpdatedEvent event) {
+    static void retranslate() {
+        if (last != null) {
+            update(last);
+        }
+    }
+
+    private static void update(ScoreboardUpdatedEvent event) {
         TranslationStore store = WynnChaYuan.translations();
         List<Component> lines = new ArrayList<>();
         Set<String> shown = new HashSet<>();
@@ -115,7 +124,7 @@ public final class ScoreboardListener {
         return names;
     }
 
-    private boolean header(List<Component> lines, StyledText row, TranslationStore store) {
+    private static boolean header(List<Component> lines, StyledText row, TranslationStore store) {
         if (!capture(row, "name")) {
             return false;
         }
@@ -127,7 +136,7 @@ public final class ScoreboardListener {
         return translated != null;
     }
 
-    private boolean capture(StyledText row, String role) {
+    private static boolean capture(StyledText row, String role) {
         if (row == null || GlyphSplitter.isGlyphOnly(row)) {
             return false;
         }
@@ -144,7 +153,7 @@ public final class ScoreboardListener {
         return true;
     }
 
-    private void captureBlock(List<StyledText> content) {
+    private static void captureBlock(List<StyledText> content) {
         List<String> rows = new ArrayList<>();
         for (StyledText row : content) {
             if (row == null || GlyphSplitter.isGlyphOnly(row)) {

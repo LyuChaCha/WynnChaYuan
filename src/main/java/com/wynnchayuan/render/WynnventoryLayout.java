@@ -32,7 +32,7 @@ public final class WynnventoryLayout {
 
     private static final int EDGE = 4;
 
-    private static final int PAD = 4;
+    private static final int PAD = OriginalTooltipBox.FRAME;
 
     private static final int EXTRA_H = 2 + PAD * 2;
 
