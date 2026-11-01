@@ -1,237 +1,78 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-banner-animated-680x240.gif" width="680" alt="WynnChaYuan">
-</p>
-
 # WynnChaYuan
 
-**A multi-language translation mod for Wynncraft.** The original text is kept; the translation is shown beside it or written in its place.
+Translation mod for Wynncraft. Original text stays. The translation goes beside it or in its place.
 
-**Wynncraft 多語言翻譯模組。** 原文保留，譯文顯示在旁邊，或直接寫進原本的位置。
+Traditional Chinese, Simplified Chinese, Japanese, Korean, Russian, Spanish, Turkish.
 
-**[GitHub](https://github.com/LyuChaCha/WynnChaYuan)** · **[Report a line / 回報](https://github.com/LyuChaCha/WynnChaYuan/issues)** · **[Changelog / 更新日誌](https://github.com/LyuChaCha/WynnChaYuan/blob/main/CHANGELOG.md)** · **[Ko-fi](https://ko-fi.com/lyuchacha)** · Discord: **LyuChaCha**
+[GitHub](https://github.com/LyuChaCha/WynnChaYuan) · [Report a line](https://github.com/LyuChaCha/WynnChaYuan/issues) · [Changelog](https://github.com/LyuChaCha/WynnChaYuan/blob/main/CHANGELOG.md) · [Progress](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md) · [Website](https://wynnchayuan.com) · [Ko-fi](https://ko-fi.com/lyuchacha)
 
----
+## Translated
 
-## English
+- Quest dialogue and choices, in Wynncraft's own dialogue box or a separate one
+- Item tooltips: gear, ingredients, materials, tools
+- Ability trees for all five classes
+- NPC nameplates and floating text
+- Server chat, world events, broadcasts
+- Scoreboard, quest tracker, titles
+- Menus: trade market, guild, store
+- Lootruns, raids, dungeons, discoveries
 
-> **About the translations.** Some translations are written by hand and then rendered by AI, a smaller part is translated by AI directly, and most of the core content has been proofread by a person. The other languages are AI-translated from the Traditional Chinese, so expect mistranslations and inconsistent terms.
+Player chat and the Tab list are left alone. Gear names stay in English unless you turn them on. Simplified Chinese keeps item, mob, NPC and place names in English.
 
-### What it translates
+A line in English means it isn't in the corpus yet. Export it from Settings > Data and open an issue.
 
-| Content | What is translated, and how it is shown |
-|---|---|
-| Item tooltips | Gear, ingredients, materials and gathering tools: lore, stats, Major IDs; a panel beside the tooltip, or written into the tooltip itself; the possible items list of an unidentified item shows the original names |
-| Ability trees | All five classes: nodes, descriptions, archetypes |
-| Quest dialogue, choices | Inside **Wynncraft's own dialogue box** (frame, nameplate and portrait kept), typed out in step with the original, with lines too long for the box scrolling like a marquee; or a separate box |
-| Quest tracker | Its own box; the heading says what is tracked |
-| NPC nameplates, floating text | A box while you look at one, or replaced in place; shop countdown boards included |
-| Chat messages | Server messages; column layouts such as the Lootrun summary and beacons stay aligned; world event start notices, NPC lines in chat and the login welcome banner (colours kept); broadcasts that name another player, such as party buffs, death messages and bombs, with the name left as it is (player chat and the Tab player list are never translated) |
-| Scoreboard | The sidebar on the right: raid objectives, lootruns, party, guild war; rows too wide for it wrap |
-| Menus and interfaces | Trade market, guild, store and other screens |
-| Lootruns, raids, dungeons | Missions, boons, beacons, aspects, gambits, loot panels, dungeon names |
-| Discoveries | Names, descriptions, secret discovery stories |
-| Title text | The big text in the middle of the screen |
+## Also
 
-Gear names stay in English by default; they can be turned on in the settings.
+- New translations sync from GitHub without a mod update
+- Search the trade market by translated name
+- Hold Shift to see original ingredient, material and tool names
+- Copy recent chat lines
+- Screenshot the translation panel
+- Faster Wynntils item rendering in containers
+- Update in game with `/wcy update`
 
-### More
+Open settings with `/wcy` or Mod Menu.
 
-| Feature | What it does |
-|---|---|
-| Translations update themselves | New translations come from GitHub without a mod update; each launch checks, and chat shows a line where "Click here to update" applies them (turn on "Auto-update translations" under Settings → Data to skip the question) |
-| Market search | Type the translated name in the trade market; the English one is sent |
-| Hold Shift to see the original | Names of ingredients, materials and gathering tools switch back to English while Shift is held |
-| Copy chat | Copy recent chat lines for a report |
-| Screenshot | Captures the translation panel to the clipboard or a file (no key by default; bind one under Controls) |
-| Speed up Wynntils item rendering | Smoother inventory, bank and market (F6 > Features, on by default) |
-| Settings | Open from Mod Menu, with `/wcy`, or with a key you bind yourself. A mode for each kind of text; translation, fallback and interface language; draggable, resizable boxes |
-| In-game update | When a new version is out, chat says so once; click "Click here to update now" (or `/wcy update`) and it is downloaded from GitHub Releases and swapped in when you close the game |
+## Install
 
-Client-side only. The server does not need it.
+Minecraft 1.21.11, Fabric, Fabric API, Wynntils 4.2+. Client-side only.
 
-### Capes, the grey leaf, and what the mod sends
+Works with Mod Menu, WynnMarketSearch, Wynnventory and WynnMod.
 
-- **Capes**: wear your own WynnChaYuan cape, visible to other players who have this mod. Upload and browse capes at <https://wynnchayuan.com> (F6 > Features > Cape gallery opens it signed in). Anyone can upload a PNG (up to 1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Draw it on a template from [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates).
-- **Leaves**: every player who has this mod gets a leaf before their name (grey if you have no role), visible to each other. A developer's rainbow mode and the roles you chose to show look the same to others as they do to you.
-- **These two features talk to our server (wynnchayuan.com).** The mod checks in once when you join Wynncraft and sends: your Minecraft UUID, your Mojang-signed public profile (name and skin), a public key and signature that prove the account is yours, whether to show your cape, and your badge settings (rainbow leaf, which roles to show). Uploading a cape also sends the image you chose. **Your private key and login credentials never leave the game; the mod does not send your world, chat or any game content, and the server does not store IP addresses.** The public list holds hashed codes only, not UUIDs or names.
-- **There is no switch for this**: the mod checks in whenever it is installed and you join Wynncraft, so every user has a leaf. If you do not want others to see your cape, turn off "Wear my cape" under F6 > Features.
-- **Site account** (optional): register at wynnchayuan.com with Discord, then type `/wcy link <code>` in game to link your game ID. We only read your Discord account ID and display name.
-- **Update button**: the release notes screen has an Update button. Only when you press it does the mod download the new version from GitHub Releases, and it is swapped in when you close the game.
+## Online features
 
-### Languages
+Off until you agree on the first-run screen. Without them, the translations in the jar still work.
 
-| Language | Coverage |
-|---|---|
-| Traditional Chinese | Main language, everything |
-| Simplified Chinese | Everything, quest dialogue included |
-| Japanese | Everything, quest dialogue included |
-| Russian | Everything, quest dialogue included |
-| Korean | Everything, quest dialogue included |
-| Spanish | Everything, quest dialogue included |
-| Turkish | Everything, quest dialogue included |
+| Feature | Connects to | Sends |
+|---|---|---|
+| Update check, in-game update | GitHub, jsDelivr | Normal download request |
+| Translation sync | GitHub, jsDelivr | Normal download request |
+| Leaves and capes | wynnchayuan.com, GitHub, jsDelivr | Check-in when you join Wynncraft: Minecraft UUID, Mojang-signed public profile (name and skin), public key and signature, cape and badge settings |
+| Cape upload | wynnchayuan.com | The image you pick |
+| Website account | wynnchayuan.com, Discord | Discord ID and display name |
 
-Switch under Settings → Data, without changing the game's language.
+Your private key and login details stay on your computer. Chat and game text are never sent automatically. The server doesn't store IP addresses.
 
-### Progress
+Turn everything off or delete your server data under Settings > Features > Privacy and online features. [Privacy policy](https://wynnchayuan.com/privacy).
 
-<!-- 進度:開始 -->
-更新於 2026-11-01 / Updated 2026-11-01
+## Leaves and capes
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+Everyone with the mod gets a leaf before their name. Only players with the mod see leaves and capes.
 
-**大概翻到哪**：7 種語言目前都在 **75% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
+Upload capes at [wynnchayuan.com](https://wynnchayuan.com). PNG up to 1 MB for everyone. GIF and the 20 MB limit are for developers, sponsors and contributors.
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+## AI
 
-**Roughly how far**: every language is past **75%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
+Most of the code is AI-generated. I decide what it does and test it in game.
 
-每一種語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
-<!-- 進度:結束 -->
+Some translations are written by hand and run through AI. Some are direct AI translations. Most of the core text has been proofread. The other languages are mostly AI translations of the Traditional Chinese, so expect wrong lines and mixed terms. Community translators fix them over time.
 
-### Install
+## Sponsoring
 
-| Requirement | Version |
-|---|---|
-| Minecraft | 1.21.11 |
-| Loader | Fabric |
-| Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+, [Fabric API](https://modrinth.com/mod/fabric-api) |
-| Works with | [Mod Menu](https://modrinth.com/mod/modmenu) (settings button), [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) (search by translated name), [Wynnventory](https://modrinth.com/mod/wynnventory) (its price box and screens are translated; the price box is placed by the tooltip that is actually shown), [WynnMod](https://modrinth.com/mod/wynnmod) |
+Translations are free. Sponsors ([Ko-fi](https://ko-fi.com/lyuchacha), 20 USD once or 2 USD a month) get a cyan leaf, GIF capes, the bigger upload limit and priority on feedback.
 
-Put the jar in `mods/`. In game, open the settings from Mod Menu or by typing `/wcy`.
+## Licence
 
-### A line switches back to English halfway?
+Code: [AGPL-3.0-or-later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE). Translations and data: [CC BY-NC-SA 4.0](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE-DATA). Dialogue font: [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font) (SIL OFL 1.1).
 
-**That is normal.** The sentence is not in the corpus yet, so the original is shown. Export it and send it to us as described below; once it is added, everyone gets it on their next launch.
-
-### How to help
-
-Open **Settings → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**Settings → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
-
-The mod never sends game text by itself. (What the mod does send for capes and leaves is listed under "Capes, the grey leaf, and what the mod sends" above.) The export already leaves out player names and guild, party, shout and private chat.
-
-### Sponsoring
-
-**The translations are free and will stay free** - all of them are provided by the team at no cost, and nothing is locked behind payment. Sponsoring is entirely voluntary: not sponsoring never lowers translation quality; sponsors only get fun extras (the leaf, animated capes and a larger upload limit) and priority for their feedback. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
-
-### Roles and badges
-
-People on the credits list get a leaf before their name, visible to players running the mod: **developers** (gold) help develop and maintain the code; **sponsors** (cyan) give a one-off 20 USD or 2 USD/month; **contributors** (green) add translations for their own language, send correct fixes, or give real help with the code.
-
-### Licence
-
-Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE). Translations and data: [CC BY-NC-SA 4.0](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE-DATA). Item and ability data come from the public CDN used by Wynntils. Dialogue-box glyphs use [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font) (SIL OFL 1.1).
-
-**Not affiliated with Wynncraft or the Wynntils team.** A community translation project.
-
----
-
-## 繁體中文
-
-> **關於譯文。** 部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容都經過人工校稿。其他語言目前基本上都是圍繞著繁體中文再做 AI 翻譯，可能會有錯譯與用詞不一致。
-
-### 翻譯範圍
-
-| 內容 | 翻了什麼、怎麼顯示 |
-|---|---|
-| 物品 tooltip | 裝備、素材、材料與採集工具的敘述、屬性、Major ID；旁邊另開面板，或寫進原本的 tooltip；未鑑定物品的可能性清單附原文 |
-| 技能樹 | 五個職業的節點、說明與流派 |
-| 任務對話、選項 | 寫進 **Wynncraft 自己的對話框**（框、名牌、頭像不動），逐字打出的節奏跟原文同步，太長塞不下的句子改用跑馬燈捲動；也可另開小框 |
-| 任務追蹤 | 獨立小框，抬頭照實際追蹤的東西顯示 |
-| NPC 名牌、漂浮字 | 注視時跳小框，或就地取代；含商店倒數看板 |
-| 聊天訊息 | 伺服器訊息；Lootrun 結算、信標這類分欄訊息保持對齊；世界事件開始公告、聊天欄的 NPC 台詞、登入歡迎訊息（保留顏色）；隊友給的增益、死亡訊息、丟炸彈這類帶別人名字的公告也翻，名字原樣保留（玩家發言與 Tab 玩家清單不翻） |
-| 記分板 | 畫面右邊那一欄：討伐戰目標、Lootrun、隊伍、公會戰；太寬的譯文會換行 |
-| 選單與介面 | 交易市場、公會、商城等畫面 |
-| Lootrun、討伐戰、地城 | 使命、加持、信標、Aspect、Gambit、戰利品面板、地城名稱 |
-| 探索點 | 名稱、說明、祕密發現的故事 |
-| 畫面中央大字 | 標題與副標題 |
-
-裝備名稱預設保留原文，在設定裡可以打開。
-
-### 其他功能
-
-| 功能 | 說明 |
-|---|---|
-| 譯文自動更新 | 新的翻譯從 GitHub 下載，不必更新模組；每次開遊戲都會檢查，有新譯文就在聊天室提示一行，點「按這裡更新」馬上生效（到設定「資料」打開「自動更新翻譯」就不再詢問） |
-| 市集搜尋 | 在交易市集打譯名，送出前自動換回英文原名 |
-| 按住 Shift 看原文 | 素材、材料與採集工具的名稱，按住 Shift 時變回英文 |
-| 複製聊天 | 複製最近的聊天訊息，方便回報 |
-| 截圖 | 把譯文面板複製到剪貼簿或存成檔案（按鍵預設不綁，到「按鍵設定」自己綁） |
-| 加速 Wynntils 物品繪製 | 開背包、銀行、市集時更順（F6「功能」，預設開啟） |
-| 設定 | 從 Mod Menu、`/wcy` 或自己綁的按鍵打開。每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小 |
-| 遊戲內更新 | 有新版時在聊天室提示一次，點「點這裡直接更新」（或輸入 `/wcy update`）就從 GitHub Releases 下載，關遊戲時換上 |
-
-純客戶端，伺服器不需要裝。
-
-### 披風、灰色葉子與會送出的資料
-
-- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。到 <https://wynnchayuan.com> 上傳與瀏覽（F6「功能」→「披風一覽」會順便替你登入）。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫。
-- **葉子**：裝了本模組的玩家，名字前面都有一片葉子（沒有身分的是灰色），彼此看得到。開發者的彩色模式、要展示哪幾個身分的葉子，別人看到的跟你設的一樣。
-- **這兩項需要連到我們的伺服器（wynnchayuan.com）**。模組在你進 Wynncraft 時報到一次，送出的是：你的 Minecraft UUID、Mojang 簽過的公開個人檔案（名字與外觀）、用來證明帳號是本人的公鑰與簽章、要不要顯示披風，以及徽章的設定（葉子要不要彩色、要展示哪幾個身分）。上傳披風時另外送出你選的那張圖。**私鑰與登入憑證不會離開遊戲；不送所在的世界、聊天或任何遊戲內容，伺服器也不記 IP。** 公開的名單上只有雜湊過的代碼，沒有 UUID 與名字。
-- **這一項沒有開關**：只要裝了模組、進了 Wynncraft 就會報到，所以每個使用者都有葉子。不想讓別人看到自己的披風，可以在 F6「功能」關掉「穿上我的披風」。
-- **網站帳號**（選用）：在 wynnchayuan.com 用 Discord 註冊後，在遊戲裡輸入 `/wcy link 綁定碼` 把遊戲 ID 綁上去。我們只讀 Discord 的帳號代號與顯示名稱。
-- **直接更新**：更新說明的畫面有一顆「直接更新」，只有你按了才會從 GitHub Releases 下載新版，關遊戲時換上。
-
-### 支援語言
-
-| 語言 | 內容 |
-|---|---|
-| 繁體中文 | 主要語言，所有內容 |
-| 簡體中文 | 所有內容，含任務對話 |
-| 日文 | 所有內容，含任務對話 |
-| 俄文 | 所有內容，含任務對話 |
-| 韓文 | 所有內容，含任務對話 |
-| 西班牙文 | 所有內容，含任務對話 |
-| 土耳其文 | 所有內容，含任務對話 |
-
-在設定 →「資料」切換，不必改遊戲語言。
-
-### 翻譯進度
-
-<!-- 進度:開始 -->
-更新於 2026-11-01 / Updated 2026-11-01
-
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
-
-**大概翻到哪**：7 種語言目前都在 **75% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
-
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
-
-**Roughly how far**: every language is past **75%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
-
-每一種語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
-<!-- 進度:結束 -->
-
-### 安裝
-
-| 需求 | 版本 |
-|---|---|
-| Minecraft | 1.21.11 |
-| 載入器 | Fabric |
-| 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、[Fabric API](https://modrinth.com/mod/fabric-api) |
-| 一起用 | [Mod Menu](https://modrinth.com/mod/modmenu)（設定按鈕）、[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)（用譯名搜尋）、[Wynnventory](https://modrinth.com/mod/wynnventory)（價格框與畫面也翻；價格框照實際顯示的物品說明擺放）、[WynnMod](https://modrinth.com/mod/wynnmod) |
-
-jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設定。
-
-### 翻到一半變回英文？
-
-**這是正常的**，代表那一句還不在語料裡，所以顯示原文。照下面的方式匯出交給我們，補好之後所有人下次進遊戲就看得到。
-
-### 怎麼幫忙
-
-打開 **設定 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**設定 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
-
-模組不會自動送出遊戲裡的文字（披風與葉子會送出什麼，見上面「披風、灰色葉子與會送出的資料」。）匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
-
-### 贊助
-
-**翻譯免費，也會一直免費**——所有譯文都由團隊無償提供，不存在付費才有翻譯的問題。贊助完全出於自願：不贊助翻譯品質也不會打折，贊助者多的只有趣味性的功能（葉子、動態披風與比較大的上傳上限），以及意見優先採納。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
-
-### 身分與徽章
-
-名單上的人名字前面會有一片葉子，裝了本模組的人看得到：**開發者**（金色）協助程式的開發與維護；**贊助者**（青藍色）單次 20 USD 或每月 2 USD 以上；**貢獻者**（綠色）為自己的語言貢獻譯文、提出正確的修正，或在程式上提供實質協助。
-
-### 授權
-
-程式碼：[GNU AGPLv3 或之後的版本](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE)；翻譯與資料：[CC BY-NC-SA 4.0](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE-DATA)。物品與技能資料取自 Wynntils 使用的公開 CDN；對話框字形使用 [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1）。
-
-與 Wynncraft 官方及 Wynntils 團隊**無隸屬關係**，是社群自發的翻譯專案。
+Not affiliated with Wynncraft or Wynntils.
