@@ -1,6 +1,5 @@
 package com.wynnchayuan.listener;
 
-import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CombatText;
 import com.wynnchayuan.capture.ConversationPartner;
@@ -15,6 +14,7 @@ import com.wynnchayuan.capture.QuestGuess;
 import com.wynnchayuan.render.DialogueIcons;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.LookAtTranslator;
+import com.wynnchayuan.render.TextDisplayLabels;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.NameplateProbe;
@@ -208,6 +208,7 @@ public final class CaptureListener {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLabel(TextDisplayChangedEvent.Text event) {
         if (CombatText.isIndicator(event.getText())) {
+            TextDisplayLabels.forget(event.getTextDisplay());
             return;
         }
         event.getLabelInfo()
@@ -261,21 +262,15 @@ public final class CaptureListener {
     }
 
     private void translateNametag(TextDisplayChangedEvent.Text event) {
-        ModConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
         try {
             StyledText original = event.getText();
             if (original == null || GlyphSplitter.isGlyphOnly(original)) {
-                return;
-            }
-            if (CombatText.isIndicator(original)) {
+                TextDisplayLabels.forget(event.getTextDisplay());
                 return;
             }
             LookAtTranslator.remember(event.getTextDisplay(), original);
-            if (!WynnChaYuan.config().showOverlays()
-                    || mode == ModConfig.NametagMode.OFF) {
-                return;
-            }
-            if (mode == ModConfig.NametagMode.LOOK_AT) {
+            TextDisplayLabels.remember(event.getTextDisplay(), original);
+            if (!TextDisplayLabels.replaces(WynnChaYuan.config())) {
                 return;
             }
             Component translated =
