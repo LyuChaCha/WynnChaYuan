@@ -41,6 +41,8 @@ public final class CaptureListener {
     private final DialogueBuffer buffer = new DialogueBuffer();
     private volatile boolean lastHadChoices = false;
 
+    private final DiscoveryRows discoveryRows = new DiscoveryRows();
+
     private volatile String lineSpeaker = null;
     private volatile boolean lineHadChoices = false;
 
@@ -106,7 +108,9 @@ public final class CaptureListener {
             lineSpeaker = null;
         }
         if (WynnChaYuan.config().collect()) {
-            WynnChaYuan.store().settleChat(System.currentTimeMillis());
+            long now = System.currentTimeMillis();
+            discoveryRows.settle(now, WynnChaYuan.store(), WynnChaYuan.translations());
+            WynnChaYuan.store().settleChat(now);
         }
     }
 
@@ -170,13 +174,18 @@ public final class CaptureListener {
         if (!SERVER_MESSAGES.contains(event.getRecipientType())) {
             return;
         }
+        String ctx = "chat/" + event.getRecipientType();
+        long now = System.currentTimeMillis();
+        if (discoveryRows.offer(event.getMessage(), ctx, now,
+                                WynnChaYuan.store(), WynnChaYuan.translations())) {
+            return;
+        }
         String template = chatTemplate(event.getMessage(), WynnChaYuan.store()::noteEvent,
                                        WynnChaYuan.translations());
         if (template == null) {
             return;
         }
-        WynnChaYuan.store().recordChat(
-                template, "chat/" + event.getRecipientType(), System.currentTimeMillis());
+        WynnChaYuan.store().recordChat(template, ctx, now);
     }
 
     static String chatTemplate(StyledText message, Consumer<String> skipped) {

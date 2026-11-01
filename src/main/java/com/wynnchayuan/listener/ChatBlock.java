@@ -1,6 +1,7 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.DiscoveryBlock;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
@@ -26,7 +27,12 @@ public final class ChatBlock {
 
     private static final int MAX_ROWS = 24;
 
-    private record Row(StyledText original, Component translated, boolean keep) {}
+    private record Row(StyledText original, Component translated, boolean keep, boolean centre) {
+
+        Row(StyledText original, Component translated, boolean keep) {
+            this(original, translated, keep, false);
+        }
+    }
 
     private static final List<Row> pending = new ArrayList<>();
     private static long last;
@@ -186,11 +192,55 @@ public final class ChatBlock {
 
     static Component compose(List<Row> rows, boolean wasHeld,
                              TranslationStore store) {
-        Component whole = rows.size() > 1 ? asBlock(rows, store) : null;
+        List<Row> flowed = discovery(rows, store);
+        Component whole = flowed == rows && rows.size() > 1 ? asBlock(rows, store) : null;
         if (whole == null) {
-            whole = stacked(rows, wasHeld, store);
+            whole = stacked(flowed, wasHeld, store);
         }
         return whole;
+    }
+
+    private static List<Row> discovery(List<Row> rows, TranslationStore store) {
+        try {
+            List<StyledText> originals = new ArrayList<>(rows.size());
+            for (Row row : rows) {
+                originals.add(row.original());
+            }
+            List<DiscoveryBlock.Block> blocks = DiscoveryBlock.blocks(originals);
+            if (blocks.isEmpty()) {
+                return rows;
+            }
+            List<Row> out = new ArrayList<>(rows);
+            for (int b = blocks.size() - 1; b >= 0; b--) {
+                DiscoveryBlock.Block block = blocks.get(b);
+                centre(out, block.head());
+                centre(out, block.title());
+                if (!block.hasProse()) {
+                    continue;
+                }
+                Component prose = DiscoveryBlock.prose(originals, block, store);
+                for (int i = block.to() - 1; i >= block.from(); i--) {
+                    if (prose == null) {
+                        out.set(i, new Row(rows.get(i).original(), null, true));
+                    } else if (i > block.from()) {
+                        out.remove(i);
+                    } else {
+                        out.set(i, new Row(rows.get(i).original(), prose, true));
+                    }
+                }
+            }
+            return out;
+        } catch (Throwable t) {
+            ErrorDebug.note("ChatBlock#discovery", null, t);
+            return rows;
+        }
+    }
+
+    private static void centre(List<Row> rows, int at) {
+        if (at >= 0) {
+            Row row = rows.get(at);
+            rows.set(at, new Row(row.original(), row.translated(), row.keep(), true));
+        }
     }
 
     static synchronized Component preview(TranslationStore store) {
@@ -279,7 +329,7 @@ public final class ChatBlock {
             if (line == null) {
                 line = rows.get(i).translated();
             }
-            if (line == null && wasHeld && !keep) {
+            if (line == null && (wasHeld || rows.get(i).centre()) && !keep) {
                 try {
                     line = LineTranslator.translate(rows.get(i).original(), store);
                 } catch (Throwable t) {
@@ -292,7 +342,7 @@ public final class ChatBlock {
             } else {
                 hit[i] = true;
             }
-            lines[i] = line;
+            lines[i] = rows.get(i).centre() ? DiscoveryBlock.centred(line) : line;
         }
         boolean[] carry = wasHeld ? null : carried(multiLine(rows), hit);
         MutableComponent out = Component.empty();

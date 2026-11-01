@@ -145,6 +145,10 @@ public final class CaptureStore {
         recordChatRows(chatRows.settle(now));
     }
 
+    public void recordChatSentence(String template, String ctx, String in) {
+        record(template, "desc", "chat", ctx, null, true, in);
+    }
+
     private void recordChatRows(List<ChatRows.Row> rows) {
         for (ChatRows.Row row : rows) {
             record(row.template(), "desc", "chat", row.ctx(), null, true, null);
