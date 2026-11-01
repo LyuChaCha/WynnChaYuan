@@ -1,6 +1,7 @@
 package com.wynnchayuan;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.client.ChatCopyScreen;
 import com.wynnchayuan.client.FirstRunScreen;
 import com.wynnchayuan.client.NoticeScreen;
@@ -61,6 +62,8 @@ final class ModKeys {
         }
 
         ClientTickEvents.END_CLIENT_TICK.register(FpsLog::tick);
+
+        ClientTickEvents.END_CLIENT_TICK.register(PlayerDataFilter::tick);
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> LiveRefresh.tick());
 
