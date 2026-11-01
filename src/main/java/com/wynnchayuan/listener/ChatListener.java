@@ -7,6 +7,7 @@ import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.render.ThirdPartyLiterals;
+import com.wynnchayuan.translate.DiscoveryBlock;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
@@ -38,7 +39,7 @@ public final class ChatListener {
         }
         boolean panel;
         try {
-            panel = ChatBlock.holding() || LineTranslator.panelRow(message);
+            panel = ChatBlock.holding() || opensHold(message);
         } catch (Throwable t) {
             ErrorDebug.note("ChatListener#onMatch", null, t);
             panel = false;
@@ -63,6 +64,10 @@ public final class ChatListener {
                 ChatLog.add(message.getComponent(), null);
             }
         }
+    }
+
+    static boolean opensHold(StyledText message) {
+        return LineTranslator.panelRow(message) || DiscoveryBlock.isHead(message);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)

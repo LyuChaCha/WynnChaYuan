@@ -183,17 +183,22 @@ final class ChatRealigner {
         return w;
     }
 
-    private static void appendJoined(List<Run> body, List<Run> content) {
+    private static List<Run> withoutLead(List<Run> content) {
         List<Run> trimmed = new ArrayList<>(content);
         while (!trimmed.isEmpty()) {
             Run first = trimmed.get(0);
-            String t = first.text().stripLeading();
+            String t = first.space() ? "" : first.text().stripLeading();
             if (!t.isEmpty()) {
                 trimmed.set(0, new Run(false, 0, first.style(), t));
                 break;
             }
             trimmed.remove(0);
         }
+        return trimmed;
+    }
+
+    private static void appendJoined(List<Run> body, List<Run> content) {
+        List<Run> trimmed = withoutLead(content);
         if (trimmed.isEmpty()) {
             return;
         }
@@ -324,6 +329,38 @@ final class ChatRealigner {
     private static final int CHAT_CENTRE_X2 = 309;
 
     private static final int CHAT_CENTRE_SLACK_X2 = 14;
+
+    private static final int CHAT_PROSE_WIDTH = 300;
+
+    static Component centredProse(Component text) {
+        int window = chatWidth();
+        int width = window > 0 ? Math.min(CHAT_PROSE_WIDTH, window) : CHAT_PROSE_WIDTH;
+        MutableComponent out = Component.empty();
+        List<List<Run>> rows = wrapRuns(SpaceRuns.runs(text), width);
+        for (int i = 0; i < rows.size(); i++) {
+            if (i > 0) {
+                out.append(Component.literal(LineTranslator.NL));
+            }
+            out.append(centredRow(rows.get(i)));
+        }
+        return out;
+    }
+
+    static Component onCentreLine(Component row) {
+        return centredRow(withoutLead(SpaceRuns.runs(row)));
+    }
+
+    private static Component centredRow(List<Run> row) {
+        MutableComponent out = Component.empty();
+        String pad = SpaceOffset.encode(Math.max(0, (CHAT_CENTRE_X2 - runsWidth(row)) / 2));
+        if (!pad.isEmpty()) {
+            out.append(DisplayStyles.literal(pad, SpaceOffset.styleFor(Style.EMPTY)));
+        }
+        for (Run r : row) {
+            out.append(DisplayStyles.literal(r.text(), r.style()));
+        }
+        return out;
+    }
 
     private static void onChatCentre(List<List<Run>> rows, boolean[] centre) {
         int only = -1;
