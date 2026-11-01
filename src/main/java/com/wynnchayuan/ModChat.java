@@ -20,7 +20,7 @@ public final class ModChat {
         }
     }
 
-    public static void more(Minecraft client, Component line) {
+    private static void more(Minecraft client, Component line) {
         send(client, line, line);
     }
 
