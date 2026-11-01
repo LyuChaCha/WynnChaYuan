@@ -110,6 +110,7 @@ public final class LookAtTranslator {
         if (mc == null || mc.player == null || LABELS.isEmpty()) {
             return;
         }
+        dropStale(WynnChaYuan.translations());
         if (lastShown != null && System.currentTimeMillis() - shownAt < MIN_SHOW_MS) {
             drawRow(graphics, mc, List.of(lastShown), 1.0f);
             return;
@@ -165,15 +166,21 @@ public final class LookAtTranslator {
         }
     }
 
-    private static Component floating(StyledText label) {
-        TranslationStore store = WynnChaYuan.translations();
+    static void dropStale(TranslationStore store) {
         if (floatingAge != store.cacheAge()) {
             FLOATING.clear();
+            lastShown = null;
+            lastSource = null;
+            lastTemplate = null;
+            shownAt = 0;
             floatingAge = store.cacheAge();
         }
+    }
+
+    private static Component floating(StyledText label) {
         Component known = FLOATING.get(label);
         if (known == null && !FLOATING.containsKey(label)) {
-            known = LineTranslator.translateFloating(label, store);
+            known = LineTranslator.translateFloating(label, WynnChaYuan.translations());
             FLOATING.put(label, known);
         }
         return known;
