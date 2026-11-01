@@ -2,13 +2,11 @@ package com.wynnchayuan;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
 import java.io.IOException;
@@ -335,37 +333,35 @@ public final class SelfUpdate {
         if (file == null) {
             return;
         }
-        Component line = T.c("chat.update.leftover", file.getFileName().toString())
-                .withStyle(ChatFormatting.YELLOW);
-        OwnOutputs.note(line);
-        client.player.displayClientMessage(line, false);
+        ModChat.say(client, T.c("chat.update.leftover", file.getFileName().toString())
+                .withStyle(ChatFormatting.YELLOW));
     }
 
     public static void startFromChat(Minecraft client) {
         if (!NetworkGate.online()) {
-            chat(client, T.c("chat.update.offline"));
+            chat(client, T.c("chat.update.offline"), ChatFormatting.YELLOW);
             return;
         }
         String latest = Releases.newer();
         if (latest == null) {
-            chat(client, T.c("chat.update.none"));
+            chat(client, T.c("chat.update.none"), ChatFormatting.AQUA);
             return;
         }
         if (!available()) {
-            chat(client, T.c("chat.update.unavailable"));
+            chat(client, T.c("chat.update.unavailable"), ChatFormatting.YELLOW);
             return;
         }
         if (state == State.READY) {
-            chat(client, T.c("chat.update.ready", latest));
+            chat(client, T.c("chat.update.ready", latest), ChatFormatting.GREEN);
             return;
         }
         start(latest);
         if (state == State.FAILED) {
-            chat(client, T.c("chat.update.failed"));
+            chat(client, T.c("chat.update.failed"), ChatFormatting.RED);
             return;
         }
         announce = true;
-        chat(client, T.c("chat.update.started", latest));
+        chat(client, T.c("chat.update.started", latest), ChatFormatting.AQUA);
     }
 
     public static void announceProgress(Minecraft client) {
@@ -374,22 +370,17 @@ public final class SelfUpdate {
         }
         if (state == State.READY) {
             announce = false;
-            chat(client, T.c("chat.update.ready", target));
+            chat(client, T.c("chat.update.ready", target), ChatFormatting.GREEN);
         } else if (state == State.FAILED) {
             announce = false;
-            chat(client, T.c("chat.update.failed"));
+            chat(client, T.c("chat.update.failed"), ChatFormatting.RED);
         }
     }
 
     private static volatile boolean announce;
 
-    private static void chat(Minecraft client, MutableComponent line) {
-        if (client == null || client.player == null) {
-            return;
-        }
-        Component shown = line.withStyle(ChatFormatting.AQUA);
-        OwnOutputs.note(shown);
-        client.player.displayClientMessage(shown, false);
+    private static void chat(Minecraft client, MutableComponent line, ChatFormatting colour) {
+        ModChat.say(client, line.withStyle(colour));
     }
 
     static void reset() {

@@ -1,9 +1,10 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.ModConfig;
+import com.wynnchayuan.ModChat;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.capture.OwnOutputs;
+import com.wynnchayuan.client.ChatButtons;
 import com.wynnchayuan.client.T;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
@@ -12,6 +13,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class TranslationUpdate {
 
@@ -126,11 +130,12 @@ public final class TranslationUpdate {
             return;
         }
         fetching = true;
-        tell(client, T.c("status.fetching").withStyle(ChatFormatting.GRAY));
+        ModChat.say(client, T.c("status.fetching").withStyle(ChatFormatting.GRAY));
         ModNetwork.resyncTranslations(result -> {
             fetching = false;
             if (client.player != null) {
-                tell(client, T.c("chat.translations.done", result).withStyle(ChatFormatting.GREEN));
+                ModChat.say(client, T.c("chat.translations.done", result)
+                        .withStyle(ChatFormatting.GREEN));
             }
         });
     }
@@ -141,22 +146,16 @@ public final class TranslationUpdate {
             return;
         }
         told = true;
-        tell(client, T.c("chat.translations.line1").withStyle(ChatFormatting.AQUA));
-        tell(client, button());
-        tell(client, T.c("chat.translations.where").withStyle(ChatFormatting.DARK_GRAY));
+        List<Component> rows = new ArrayList<>(ChatButtons.rows(client, List.of(button())));
+        rows.add(T.c("chat.translations.where").withStyle(ChatFormatting.DARK_GRAY));
+        ModChat.panel(client, T.c("chat.translations.line1").withStyle(ChatFormatting.AQUA), rows);
     }
 
     static Component button() {
-        return T.c("chat.translations.button").withStyle(style -> style
+        return ChatButtons.button(T.c("chat.translations.button")).withStyle(style -> style
                         .withColor(ChatFormatting.AQUA)
-                        .withUnderlined(true)
                         .withClickEvent(new ClickEvent.RunCommand("/" + COMMAND))
                         .withHoverEvent(new HoverEvent.ShowText(
                                 T.c("chat.translations.button.hover"))));
-    }
-
-    private static void tell(Minecraft client, Component line) {
-        OwnOutputs.note(line);
-        client.player.displayClientMessage(line, false);
     }
 }

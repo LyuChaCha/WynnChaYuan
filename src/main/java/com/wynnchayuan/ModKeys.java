@@ -1,7 +1,6 @@
 package com.wynnchayuan;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.ChatCopyScreen;
 import com.wynnchayuan.client.FirstRunScreen;
 import com.wynnchayuan.client.NoticeScreen;
@@ -20,7 +19,6 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
@@ -76,9 +74,7 @@ final class ModKeys {
             }
             if (tellKeysReleased && client.player != null) {
                 tellKeysReleased = false;
-                Component line = T.c("chat.keys.released").withStyle(ChatFormatting.AQUA);
-                OwnOutputs.note(line);
-                client.player.displayClientMessage(line, false);
+                ModChat.say(client, T.c("chat.keys.released").withStyle(ChatFormatting.AQUA));
             }
             if (ModCommands.openSettingsNextTick) {
                 ModCommands.openSettingsNextTick = false;

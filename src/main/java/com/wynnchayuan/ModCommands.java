@@ -1,11 +1,9 @@
 package com.wynnchayuan;
 
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.T;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 
 final class ModCommands {
 
@@ -57,12 +55,6 @@ final class ModCommands {
     }
 
     private static void say(String key) {
-        Minecraft client = Minecraft.getInstance();
-        if (client.player == null) {
-            return;
-        }
-        Component line = T.c(key);
-        OwnOutputs.note(line);
-        client.player.displayClientMessage(line, false);
+        ModChat.say(Minecraft.getInstance(), T.c(key));
     }
 }

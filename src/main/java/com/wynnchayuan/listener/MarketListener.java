@@ -1,8 +1,8 @@
 package com.wynnchayuan.listener;
 
+import com.wynnchayuan.ModChat;
 import com.wynnchayuan.ModLog;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
 import com.wynnchayuan.translate.MarketSearch;
@@ -160,11 +160,7 @@ public final class MarketListener {
     }
 
     private static void say(Component text) {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc != null && mc.player != null) {
-            OwnOutputs.note(text);
-            mc.player.displayClientMessage(text, false);
-        }
+        ModChat.say(Minecraft.getInstance(), text);
     }
 
     public static boolean active() {
