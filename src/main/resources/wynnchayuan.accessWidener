@@ -9,3 +9,6 @@ accessWidener	v2	named
 accessible	field	net/minecraft/client/gui/screens/ChatScreen	input	Lnet/minecraft/client/gui/components/EditBox;
 
 accessible	method	net/minecraft/network/chat/Style	<init>	(Lnet/minecraft/network/chat/TextColor;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lnet/minecraft/network/chat/ClickEvent;Lnet/minecraft/network/chat/HoverEvent;Ljava/lang/String;Lnet/minecraft/network/chat/FontDescription;)V
+
+# 換設定時名牌要自己寫回實體，伺服器不會重送沒變的文字。
+accessible	method	net/minecraft/world/entity/Display$TextDisplay	setText	(Lnet/minecraft/network/chat/Component;)V

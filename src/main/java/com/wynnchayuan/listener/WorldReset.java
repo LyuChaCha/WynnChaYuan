@@ -7,6 +7,7 @@ import com.wynnchayuan.render.ComponentMemo;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynnchayuan.render.DialogueRewriter;
 import com.wynnchayuan.render.LookAtTranslator;
+import com.wynnchayuan.render.TextDisplayLabels;
 import com.wynnchayuan.render.TrackerOverlay;
 import com.wynnchayuan.render.WynnventoryPriceCache;
 
@@ -19,6 +20,7 @@ public final class WorldReset {
         DialogueOverlay.clear();
         DialogueRewriter.forget();
         LookAtTranslator.clear();
+        TextDisplayLabels.clear();
         ComponentMemo.forget();
         WynnventoryPriceCache.forget();
         ChatBlock.flushPending();

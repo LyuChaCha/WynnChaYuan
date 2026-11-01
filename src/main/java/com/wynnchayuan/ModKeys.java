@@ -7,6 +7,7 @@ import com.wynnchayuan.client.FirstRunScreen;
 import com.wynnchayuan.client.NoticeScreen;
 import com.wynnchayuan.client.SettingsScreen;
 import com.wynnchayuan.client.T;
+import com.wynnchayuan.listener.LiveRefresh;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.render.Badges;
 import com.wynnchayuan.render.FpsLog;
@@ -62,6 +63,8 @@ final class ModKeys {
         }
 
         ClientTickEvents.END_CLIENT_TICK.register(FpsLog::tick);
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> LiveRefresh.tick());
 
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> FirstRunScreen.clientTick());
