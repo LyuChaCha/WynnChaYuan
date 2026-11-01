@@ -1,9 +1,9 @@
 package com.wynnchayuan.translate;
 
 import com.wynnchayuan.ModConfig;
+import com.wynnchayuan.ModChat;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.T;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
@@ -126,11 +126,12 @@ public final class TranslationUpdate {
             return;
         }
         fetching = true;
-        tell(client, T.c("status.fetching").withStyle(ChatFormatting.GRAY));
+        ModChat.say(client, T.c("status.fetching").withStyle(ChatFormatting.GRAY));
         ModNetwork.resyncTranslations(result -> {
             fetching = false;
             if (client.player != null) {
-                tell(client, T.c("chat.translations.done", result).withStyle(ChatFormatting.GREEN));
+                ModChat.say(client, T.c("chat.translations.done", result)
+                        .withStyle(ChatFormatting.GREEN));
             }
         });
     }
@@ -141,9 +142,9 @@ public final class TranslationUpdate {
             return;
         }
         told = true;
-        tell(client, T.c("chat.translations.line1").withStyle(ChatFormatting.AQUA));
-        tell(client, button());
-        tell(client, T.c("chat.translations.where").withStyle(ChatFormatting.DARK_GRAY));
+        ModChat.say(client, T.c("chat.translations.line1").withStyle(ChatFormatting.AQUA));
+        ModChat.more(client, button());
+        ModChat.more(client, T.c("chat.translations.where").withStyle(ChatFormatting.DARK_GRAY));
     }
 
     static Component button() {
@@ -153,10 +154,5 @@ public final class TranslationUpdate {
                         .withClickEvent(new ClickEvent.RunCommand("/" + COMMAND))
                         .withHoverEvent(new HoverEvent.ShowText(
                                 T.c("chat.translations.button.hover"))));
-    }
-
-    private static void tell(Minecraft client, Component line) {
-        OwnOutputs.note(line);
-        client.player.displayClientMessage(line, false);
     }
 }

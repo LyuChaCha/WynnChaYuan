@@ -4,8 +4,8 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.ConfigFolder;
+import com.wynnchayuan.ModChat;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.ShotScreen;
 import com.wynnchayuan.client.T;
 import com.wynnchayuan.translate.ErrorDebug;
@@ -359,14 +359,7 @@ public final class PanelShot {
     private static void say(Minecraft mc, Component message) {
         toast(mc, message);
         if (mc.player != null) {
-            Component line = Component.literal("[").withStyle(ChatFormatting.DARK_GRAY)
-                    .append(Component.literal(WynnChaYuan.MOD_NAME)
-                            .withStyle(ChatFormatting.AQUA))
-                    .append(Component.literal("] ")
-                            .withStyle(ChatFormatting.DARK_GRAY))
-                    .append(message);
-            OwnOutputs.note(line);
-            mc.player.displayClientMessage(line, false);
+            ModChat.say(mc, message);
             mc.player.playSound(
                     SoundEvents.UI_BUTTON_CLICK.value(), 1f, 1f);
         }

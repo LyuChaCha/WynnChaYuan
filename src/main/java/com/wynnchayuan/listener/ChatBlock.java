@@ -157,6 +157,17 @@ public final class ChatBlock {
         sentAt.keySet().retainAll(mine);
     }
 
+    public static void sendOurs(Component whole, Runnable send) {
+        sending = true;
+        sendingWhole = whole;
+        try {
+            send.run();
+        } finally {
+            sending = false;
+            sendingWhole = null;
+        }
+    }
+
     private static void flush() {
         List<Row> rows = new ArrayList<>(pending);
         boolean wasHeld = held;
@@ -169,14 +180,7 @@ public final class ChatBlock {
         Component whole = compose(rows, wasHeld, WynnChaYuan.translations());
         if (whole != null) {
             remember(whole);
-            sending = true;
-            sendingWhole = whole;
-            try {
-                mc.player.displayClientMessage(whole, false);
-            } finally {
-                sending = false;
-                sendingWhole = null;
-            }
+            sendOurs(whole, () -> mc.player.displayClientMessage(whole, false));
         }
     }
 

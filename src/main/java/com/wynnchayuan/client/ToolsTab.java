@@ -2,11 +2,11 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
+import com.wynnchayuan.ModChat;
 import com.wynnchayuan.ModNetwork;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CorpusExport;
-import com.wynnchayuan.capture.OwnOutputs;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.translate.RemoteSync;
@@ -134,10 +134,8 @@ final class ToolsTab {
     private void report(String result, boolean ok) {
         screen.say((ok ? "✔ " : "✘ ") + result, ok ? Ui.GREEN : Ui.RED);
         if (screen.client() != null && screen.client().player != null) {
-            Component line = Component.literal("[WynnChaYuan] " + result)
-                    .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED);
-            OwnOutputs.note(line);
-            screen.client().player.displayClientMessage(line, false);
+            ModChat.say(screen.client(), Component.literal(result)
+                    .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED));
         }
     }
 
