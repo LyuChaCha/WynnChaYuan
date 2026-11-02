@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.ToIntFunction;
 
@@ -9,9 +10,9 @@ final class Marquee {
 
     private static final Map<String, String[]> last = new ConcurrentHashMap<>();
 
-    private static final int MAX_STEP = 3;
+    private static final Set<String> lost = ConcurrentHashMap.newKeySet();
 
-    private static final int MIN_OVERLAP = 8;
+    private static final int MIN_OVERLAP = 12;
 
     private Marquee() {}
 
@@ -26,7 +27,13 @@ final class Marquee {
             return null;
         }
         String[] before = last.get(row);
-        if (before == null || !continues(before[0], raw)) {
+        if (before == null) {
+            return null;
+        }
+        if (!continues(before[0], raw)) {
+            if (lost.add(row + '\u0000' + raw)) {
+                DialogueStartLog.choiceLost(row, before[0], raw);
+            }
             return null;
         }
         last.put(row, new String[] {raw, before[1]});
@@ -36,13 +43,20 @@ final class Marquee {
     static boolean continues(String prev, String next) {
         String p = prev.replace(" ", "");
         String n = next.replace(" ", "");
-        for (int d = 0; d <= MAX_STEP && d < p.length(); d++) {
-            String tail = p.substring(d);
-            if (tail.length() >= MIN_OVERLAP && n.startsWith(tail)) {
+        return slides(p, n) || slides(n, p) || inside(p, n) || inside(n, p);
+    }
+
+    private static boolean slides(String from, String to) {
+        for (int d = 0; from.length() - d >= MIN_OVERLAP; d++) {
+            if (from.regionMatches(d, to, 0, from.length() - d)) {
                 return true;
             }
         }
         return false;
+    }
+
+    private static boolean inside(String longer, String shorter) {
+        return shorter.length() >= MIN_OVERLAP && longer.contains(shorter);
     }
 
     static final long HOLD_START = 2000;
@@ -114,6 +128,7 @@ final class Marquee {
 
     static synchronized void clear() {
         last.clear();
+        lost.clear();
         scrolls.clear();
     }
 }
