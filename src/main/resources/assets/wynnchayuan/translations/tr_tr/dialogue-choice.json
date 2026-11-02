@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 296,
-  "translated": 296,
+  "count": 299,
+  "translated": 299,
   "review": {
    "translator": "claude",
    "proofread": false
@@ -3177,6 +3177,36 @@
    "speaker": "",
    "source": "captured",
    "full": ""
+  },
+  "choice#npc00": {
+   "src": "Where've you been?",
+   "dst": "Neredeydin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
+  },
+  "choice#npc01": {
+   "src": "You're boring. Bye.",
+   "dst": "Sıkıcısın. Hoşça kal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
+  },
+  "choice#npc02": {
+   "src": "...Oh! Right. Social interaction. I can do that.",
+   "dst": "...Ah! Doğru. Sosyal etkileşim. Bunu yapabilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
   }
  }
 }

@@ -282,6 +282,10 @@ public final class TranslationStore {
         return index.lookup(template);
     }
 
+    public String lookupChoice(String row) {
+        return index.lookupChoice(row);
+    }
+
     public int appendedOriginalAt(String text) {
         return index.nameRules.appendedOriginalAt(text);
     }

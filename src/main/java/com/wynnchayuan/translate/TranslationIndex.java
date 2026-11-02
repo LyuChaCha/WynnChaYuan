@@ -328,6 +328,24 @@ final class TranslationIndex {
         return null;
     }
 
+    final Map<String, String> choiceLines = new ConcurrentHashMap<>();
+
+    public String lookupChoice(String row) {
+        if (row == null) {
+            return null;
+        }
+        String key = row.strip();
+        String hit = choiceLines.get(key);
+        if (hit == null) {
+            hit = choiceLines.get(respell(key));
+        }
+        if (hit == null) {
+            String loose = looseMatcher.looseSource(key);
+            hit = loose == null ? null : choiceLines.get(loose);
+        }
+        return hit;
+    }
+
     public String lookup(String template) {
         if (BAR_ITEMS.get() && template != null && nameRules.getsOriginal(template.strip())) {
             return null;

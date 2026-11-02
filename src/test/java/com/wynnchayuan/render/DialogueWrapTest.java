@@ -46,10 +46,14 @@ public final class DialogueWrapTest {
     private static void choiceAndPromptNewline() throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-wrap");
         setConfig(new ModConfig(dir.resolve("config.json")));
-        Files.writeString(dir.resolve("misc.json"), """
+        Files.writeString(dir.resolve("quest.json"), """
                 {
                   "Who are you?": "你是\\n誰？",
-                  "Have we met before?": "Nos hemos\\nvisto antes?",
+                  "Have we met before?": "Nos hemos\\nvisto antes?"
+                }
+                """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("misc.json"), """
+                {
                   "to continue": "繼續\\n下去"
                 }
                 """, StandardCharsets.UTF_8);

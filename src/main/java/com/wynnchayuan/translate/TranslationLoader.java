@@ -168,6 +168,10 @@ final class TranslationLoader {
                     for (String key : obj.keySet()) {
                         if (!key.startsWith("_") && !key.isBlank()) {
                             translations.questIndex.unplacedLines.add(key.strip());
+                            String line = translations.entries.get(key.strip());
+                            if (line != null) {
+                                translations.choiceLines.put(key.strip(), line);
+                            }
                         }
                     }
                 }
@@ -278,6 +282,9 @@ final class TranslationLoader {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 translations.entries.put(srcKey, dst.strip());
+                if ("dialogue".equals(optString(e, "kind"))) {
+                    translations.choiceLines.put(srcKey, dst.strip());
+                }
                 if (!(itemNames && gearNames && "name".equals(optString(e, "role")))) {
                     translations.nameRules.otherOwners.add(srcKey);
                 }

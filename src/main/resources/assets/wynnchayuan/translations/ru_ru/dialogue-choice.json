@@ -1,8 +1,8 @@
 {
  "_meta": {
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 296,
-  "translated": 296
+  "count": 299,
+  "translated": 299
  },
  "entries": {
   "choice#c000": {
@@ -3172,6 +3172,36 @@
    "speaker": "",
    "source": "captured",
    "full": ""
+  },
+  "choice#npc00": {
+   "src": "Where've you been?",
+   "dst": "Где ты пропадал?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
+  },
+  "choice#npc01": {
+   "src": "You're boring. Bye.",
+   "dst": "С тобой скучно. Пока.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
+  },
+  "choice#npc02": {
+   "src": "...Oh! Right. Social interaction. I can do that.",
+   "dst": "...А! Точно. Общение с людьми. Это я умею.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "npc.json"
   }
  }
 }
