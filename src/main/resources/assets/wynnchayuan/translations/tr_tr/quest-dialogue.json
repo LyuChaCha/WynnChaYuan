@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 24324,
-  "translated": 24322,
+  "count": 24505,
+  "translated": 24503,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -61041,7 +61041,7 @@
    "source": "wiki"
   },
   "Echoes of Change#081": {
-   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office. Let's get looking!",
+   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office . Let's get looking!",
    "dst": "Yulie'den duyduğuma göre komutan çizelgeleri genelde en üstteki ofiste tutuyormuş. Hadi aramaya başlayalım!",
    "role": "desc",
    "kind": "dialogue",
@@ -65141,7 +65141,7 @@
    "source": "wiki"
   },
   "Echoes of Change#491": {
-   "src": "I... never told her what I really was. I thought it would be safe, for both of us... ha. And how did that turn out...?",
+   "src": "I... never told her what I really was. I thought it would be safer, for both of us... ha. And how did that turn out...?",
    "dst": "Ona... aslında ne olduğumu hiç söylemedim. İkimiz için de güvenli olacağını düşünmüştüm... ha. Peki nasıl sonuçlandı...?",
    "role": "desc",
    "kind": "dialogue",
@@ -66001,7 +66001,7 @@
    "source": "wiki"
   },
   "Echoes of Change#577": {
-   "src": "You being here, it's... making things harder things harder than they need to be.",
+   "src": "You being here, it's... making things harder than they need to be.",
    "dst": "Burada olman... işleri olması gerekenden daha da zorlaştırıyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -66021,7 +66021,7 @@
    "source": "wiki"
   },
   "Echoes of Change#579": {
-   "src": "I...I don't have time for this right now. {u}, you have to-",
+   "src": "I... I don't have time for this right now. {u}, you have to-",
    "dst": "Ben... şu an buna vaktim yok. {u}, senin-",
    "role": "desc",
    "kind": "dialogue",
@@ -67849,6 +67849,16 @@
    "stage": "Stage 25",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Echoes of Change#762": {
+   "src": "[+{~} Guard Uniform]",
+   "dst": "[+{~} Muhafız Üniforması]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
@@ -113938,8 +113948,8 @@
    "source": "wiki"
   },
   "Off the Rails#018": {
-   "src": "Say, buddy, could you do your friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
-   "dst": "Bak dostum, arkadaşına bir iyilik yapar mısın? Birazdan Auburn'de bir toplantım var, bu trene binmem lazım.",
+   "src": "Say, buddy, could you do your new friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
+   "dst": "Bak dostum, yeni arkadaşına bir iyilik yapar mısın? Birazdan Auburn'de bir toplantım var, bu trene binmem lazım.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114658,7 +114668,7 @@
    "source": "wiki"
   },
   "Off the Rails#090": {
-   "src": "On the way here, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
+   "src": "On the way to the station, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
    "dst": "Buraya gelirken bir adam yanıma gelip tişörtünü alayım diye diz çöküp yalvardı. Hayır demek zordu... İçim el vermedi...",
    "role": "desc",
    "kind": "dialogue",
@@ -114678,7 +114688,7 @@
    "source": "wiki"
   },
   "Off the Rails#092": {
-   "src": "In fact, this shirt doesn't even hold any value to me as a souvenier. I don't want to remember this trip.",
+   "src": "In fact, this shirt doesn't even hold any value to me as a souvenir. I don't want to remember this trip.",
    "dst": "Hatta bu tişörtün hatıra olarak bile değeri yok benim için. Bu geziyi hatırlamak istemiyorum.",
    "role": "desc",
    "kind": "dialogue",
@@ -117748,7 +117758,7 @@
    "source": "wiki"
   },
   "Off the Rails#416": {
-   "src": "Concerned, I followed the two of them, to find that they has found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
+   "src": "Concerned, I followed the two of them, to find that they had found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
    "dst": "Endişelenip ikisinin peşinden gittim, Levi'nin cesedini bulmuşlardı. Bir şey soramadan bağıra bağıra trenin içinde koşmaya başladılar.",
    "role": "desc",
    "kind": "dialogue",
@@ -117778,7 +117788,7 @@
    "source": "wiki"
   },
   "Off the Rails#419": {
-   "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
+   "src": "...W-Whuh? Where is it? I always keep it in my pocket! Perhaps I dropped it somewhere?",
    "dst": "...N-Ne? Nerede? Hep cebimde bir yerde tutarım! Bir yere mi düşürdüm acaba?",
    "role": "desc",
    "kind": "dialogue",
@@ -118538,7 +118548,7 @@
    "source": "wiki"
   },
   "Off the Rails#504": {
-   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you. huh.",
+   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you, huh.",
    "dst": "...Ah, pardon. Davada yardım ederim dedim biliyorum ama düşününce sana yardımı dokunacak pek bir şey görmedim. Hıh.",
    "role": "desc",
    "kind": "dialogue",
@@ -119678,7 +119688,7 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about?",
+   "src": "...Anything else to talk about?",
    "dst": "Konuşacak başka bir şey var mı?",
    "role": "desc",
    "kind": "dialogue",
@@ -121738,7 +121748,7 @@
    "source": "captured.json"
   },
   "Off the Rails#837": {
-   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival both here AND there, and now I'll miss both... Oh well...",
    "dst": "Sadece bu geziyi düzgün planlamadığım için yazık oldu... Kraliçe Festivali'ni iki yerde görebilirdim, şimdi ikisini de kaçıracağım... Neyse...",
    "role": "desc",
    "kind": "dialogue",
@@ -122966,6 +122976,136 @@
    "stage": "Stage 8",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Off the Rails#964": {
+   "src": "Hey... Could you stop that, please?",
+   "dst": "Hey... Bunu keser misin, lütfen?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Ticket Collector",
+   "source": "captured"
+  },
+  "Off the Rails#965": {
+   "src": "Ah, alright. Well, do come back if you do want to talk about anything.",
+   "dst": "Ah, peki. Konuşmak istediğin bir şey olursa yine gel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Malic",
+   "source": "captured"
+  },
+  "Off the Rails#966": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Demma\"",
+   "dst": "Bu dolaba aceleyle karalanmış bir not yapıştırılmış, üzerinde \"Demma\" yazıyor",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#967": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Cemor\"",
+   "dst": "Bu dolaba aceleyle karalanmış bir not yapıştırılmış, üzerinde \"Cemor\" yazıyor",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#968": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Flinn\"",
+   "dst": "Bu dolaba aceleyle karalanmış bir not yapıştırılmış, üzerinde \"Flinn\" yazıyor",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#969": {
+   "src": "Bye...",
+   "dst": "Hoşça kal...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Flinn",
+   "source": "captured"
+  },
+  "Off the Rails#970": {
+   "src": "[+{~} Harvin's Notebook]",
+   "dst": "[+{~} Harvin'in Not Defteri]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#971": {
+   "src": "[New Notes Added]",
+   "dst": "[Yeni Notlar Eklendi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#972": {
+   "src": "[New \"Evidence\" Gained]",
+   "dst": "[Yeni \"Kanıt\" Elde Edildi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#973": {
+   "src": "Oh, alright then. Good luck catching that murderer.",
+   "dst": "Ah, peki o zaman. Katili yakalamada bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Telati",
+   "source": "captured"
+  },
+  "Off the Rails#974": {
+   "src": "[Strong Evidence Gained]",
+   "dst": "[Sağlam Kanıt Elde Edildi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#975": {
+   "src": "Thank you for the chat, it's helped me take my mind off things. Good luck figuring out the murder!",
+   "dst": "Sohbet için teşekkürler, kafamı dağıtmama yardımcı oldu. Cinayeti çözmede bol şans!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Maddison",
+   "source": "captured"
+  },
+  "Off the Rails#976": {
+   "src": "...Nice.",
+   "dst": "...Güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
@@ -125350,7 +125490,7 @@
    "source": "wiki"
   },
   "Overture to Despair#049": {
-   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to say, too?",
+   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to stay, too?",
    "dst": "Ve... ihtiyacımız olan bilgiyi bulmamızın... ne kadar süreceğini bilmiyoruz. Yani... kalacak bir yer de mi?",
    "role": "desc",
    "kind": "dialogue",
@@ -125830,8 +125970,8 @@
    "source": "wiki"
   },
   "Overture to Despair#097": {
-   "src": "Here, the cheapest I have available. In total, that will cost you... {~} .",
-   "dst": "Buyurun, elimdeki en ucuzu bu. Toplamda tutarı... {~} .",
+   "src": "Here, the cheapest I have available. In total, that will cost you... {~} {#}.",
+   "dst": "Buyurun, elimdeki en ucuzu bu. Toplamda tutarı... {~} {#}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -125890,8 +126030,8 @@
    "source": "wiki"
   },
   "Overture to Despair#103": {
-   "src": "Ah, you're back. As I said, the clothes will cost you {~} EB.",
-   "dst": "Ah, geri döndünüz. Dediğim gibi, kıyafetler {~} EB tutuyor.",
+   "src": "Ah, you're back. As I said, the clothes will cost you {~} {#}.",
+   "dst": "Ah, geri döndünüz. Dediğim gibi, kıyafetler {~} {#} tutuyor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -126220,7 +126360,7 @@
    "source": "wiki"
   },
   "Overture to Despair#136": {
-   "src": "The {p} are known for thier very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
+   "src": "The {p} are known for their very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
    "dst": "{p} çok manzaralı yürüyüş ve doğa yollarıyla bilinir! Göllerin etrafında yürümenizi ya da dağlara tırmanmanızı öneririm.",
    "role": "desc",
    "kind": "dialogue",
@@ -126330,8 +126470,8 @@
    "source": "wiki"
   },
   "Overture to Despair#147": {
-   "src": "* - No noise after {~} PM.",
-   "dst": "* - Akşam saat {~} sonrası gürültü yok.",
+   "src": "- No noise after {~} PM.",
+   "dst": "- Akşam saat {~} sonrası gürültü yok.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -127502,7 +127642,7 @@
    "source": "wiki"
   },
   "Overture to Despair#264": {
-   "src": "And here we are with your orders! You fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
+   "src": "And here we are with your orders! Your fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
    "dst": "Ve işte siparişleriniz! Balık takonuz, genç hanım: ekşi lahana, pirinç sirkesi, çıtır deniz yosunu ve keskin umami sosuyla doldurulmuş mersin balığı başı.",
    "role": "desc",
    "kind": "dialogue",
@@ -129022,7 +129162,7 @@
    "source": "wiki"
   },
   "Overture to Despair#416": {
-   "src": "Oh, get to the point, would you? I have more important things to attend to then this frivolous attempt at information gathering.",
+   "src": "Oh, get to the point, would you? I have more important things to attend to than this frivolous attempt at information gathering.",
    "dst": "Ah, sadede gel, olur mu? Bu boş bilgi toplama girişiminden daha önemli işlerim var.",
    "role": "desc",
    "kind": "dialogue",
@@ -129412,8 +129552,8 @@
    "source": "wiki"
   },
   "Overture to Despair#455": {
-   "src": "War, Chaos, Hate... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
-   "dst": "Savaş, Kaos, Nefret... adına ne dersen de. Daha küçüktü, kendisinden doğduğu ikizlere göre kendi üzerinde daha az kontrolü vardı.",
+   "src": "War, Chaos, Hate, Corruption... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
+   "dst": "Savaş, Kaos, Nefret, Yozlaşma... adına ne dersen de. Daha küçüktü, kendisinden doğduğu ikizlere göre kendi üzerinde daha az kontrolü vardı.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -130012,7 +130152,7 @@
    "source": "wiki"
   },
   "Overture to Despair#515": {
-   "src": "Oh, het over yourself! I was there too, idiot!",
+   "src": "Oh, get over yourself! I was there too, idiot!",
    "dst": "Ah, kendine gel! Ben de oradaydım, salak!",
    "role": "desc",
    "kind": "dialogue",
@@ -130693,8 +130833,8 @@
    "source": "wiki"
   },
   "Overture to Despair#583": {
-   "src": "I really... can't stop thinking about it. If only he could have been here with us. What would he have done? Which side would he have taken?",
-   "dst": "Gerçekten... bunu düşünmeden duramıyorum. Keşke burada bizimle olabilseydi. Ne yapardı? Hangi tarafı seçerdi?",
+   "src": "Sigh. I can't stop thinking about it. What if he could have been here with us? What would he have done? Which side would he have taken?",
+   "dst": "Of. Bunu düşünmeden duramıyorum. Ya burada bizimle olabilseydi? Ne yapardı? Hangi tarafı seçerdi?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -131023,6 +131163,726 @@
    "speaker": "",
    "source": "captured",
    "full": "We're looking for some hip new fashion."
+  },
+  "Overture to Despair#616": {
+   "src": "Which cover would you like to take a closer look at?",
+   "dst": "Hangi kapağa daha yakından bakmak istersin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#617": {
+   "src": "There's a drawing of the Queen completing a puzzle. Next to it, there's a red circle that seems to contain some sort of rant in very small print so as to fit into the shape. It's barely legible.",
+   "dst": "Kraliçe'nin bir bulmaca çözdüğü bir çizim var. Yanında, şekle sığsın diye çok küçük harflerle yazılmış bir tür isyan içeren kırmızı bir daire var. Zar zor okunuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#618": {
+   "src": "\"TO ALL THE COMPLAINERS: SURELY YOU MUST HAVE SOME IDEA OF HOW HARD IT IS TO COME UP WITH NEW PUZZLES EVERY DAY????\"",
+   "dst": "\"TÜM ŞİKÂYETÇİLERE: HER GÜN YENİ BULMACA BULMANIN NE KADAR ZOR OLDUĞUNU BİRAZCIK OLSUN BİLİYORSUNUZDUR HERHÂLDE????\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#619": {
+   "src": "\"NEW CROSSWORDS, NEW WORD SEARCHES, NEW SPOT THE DIFFERENCES, ETC ETC, EVERY DAY, AND THEY HAVE TO BE TOPICAL????\"",
+   "dst": "\"YENİ BULMACALAR, YENİ KELİME AVLARI, YENİ FARK BULMACALARI, VESAİRE VESAİRE, HER GÜN, ÜSTELİK GÜNDEME UYGUN OLACAK????\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#620": {
+   "src": "Inside, there are some cute illustrations of Her Majesty next to every puzzle. It's very cozy.",
+   "dst": "İçeride her bulmacanın yanında Majestelerinin sevimli çizimleri var. Çok sıcak bir havası var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#621": {
+   "src": "All the wording is very optimistic, an impressive feat given its mention that this is his {~}th year single.",
+   "dst": "Bütün ifadeler çok iyimser; bunun {~}. bekârlık yılı olduğu düşünülürse etkileyici bir başarı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#622": {
+   "src": "A catch like him???",
+   "dst": "Onun gibi bir cevher???",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#623": {
+   "src": "HER MAJESTY IS NOT WORRIED ABOUT A REVOLUTION",
+   "dst": "MAJESTELERİ DEVRİMDEN ENDİŞELİ DEĞİL",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#624": {
+   "src": "According to an expert, Her Majesty has been seen strolling the streets of Aelumia, which is a clear signal that unrest elsewhere in Fruma has not unsettled the Crown.",
+   "dst": "Bir uzmana göre Majesteleri Aelumia sokaklarında gezerken görüldü; bu, Fruma'nın başka yerlerindeki huzursuzluğun Taç'ı sarsmadığının açık bir işareti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#625": {
+   "src": "\"Her composure is a sign for the continued success of Fruma!\" said the expert in an interview. (Expert prefers to be left anonymous)",
+   "dst": "\"Soğukkanlılığı, Fruma'nın başarısının süreceğinin bir işareti!\" dedi uzman bir röportajda. (Uzman adının gizli kalmasını tercih ediyor)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#626": {
+   "src": "Today's weather: Heavy fog from the south, rising tensions, and low chance of thunder this evening.",
+   "dst": "Bugünün hava durumu: Güneyden yoğun sis, yükselen gerginlikler ve bu akşam düşük gök gürültüsü ihtimali.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#627": {
+   "src": "The... experts of Fruma are very well informed it appears.",
+   "dst": "Görünüşe göre Fruma'nın... uzmanları gayet bilgili.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#628": {
+   "src": "\"Is This The New Fashion Craze? Frumans Seen Sporting New Look.\"",
+   "dst": "\"Yeni Moda Çılgınlığı Bu Mu? Frumalılar Yeni Tarzla Görüldü.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#629": {
+   "src": "Curious, you take a further look.",
+   "dst": "Merakla biraz daha bakıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#630": {
+   "src": "Gold boots, dark grey pants, white T-shirt, blue hat...??? Who is coming up with these trends???",
+   "dst": "Altın çizme, koyu gri pantolon, beyaz tişört, mavi şapka...??? Bu modaları kim uyduruyor???",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#631": {
+   "src": "Rules of The Crown Jewel",
+   "dst": "Crown Jewel Kuralları",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#632": {
+   "src": "- No entering other guests' rooms.",
+   "dst": "- Başka misafirlerin odasına girilmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#633": {
+   "src": "- No vandalizing the property.",
+   "dst": "- Mülke zarar verilmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#634": {
+   "src": "There's a sign on the elevator door.",
+   "dst": "Asansör kapısında bir tabela var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#635": {
+   "src": "\"The elevator is currently out of order. We apologize for the inconvenience.\" Signed, The Crown Jewel Management Team",
+   "dst": "\"Asansör şu anda hizmet dışıdır. Verdiğimiz rahatsızlıktan dolayı özür dileriz.\" İmza: Crown Jewel Yönetim Ekibi",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#636": {
+   "src": "There's a note attached...",
+   "dst": "Bir not iliştirilmiş...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#637": {
+   "src": "\"ATTENTION CUSTOMERS: No, despite the beer-like design of this vending machine, it does not serve alcoholic beverages! Please go to the bar for those! And stop asking us about it!\"",
+   "dst": "\"MÜŞTERİLERİMİZİN DİKKATİNE: Hayır, bira görünümlü tasarımına rağmen bu otomat alkollü içecek satmıyor! Onlar için lütfen bara gidin! Ve bunu bize sormayı bırakın!\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#638": {
+   "src": "Now playing: Bullfrog's Bellow ({p})...",
+   "dst": "Şimdi çalıyor: Bullfrog's Bellow ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#639": {
+   "src": "Now playing: Whisper (Auburn)...",
+   "dst": "Şimdi çalıyor: Whisper (Auburn)...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#640": {
+   "src": "Now playing: Day In, Day Out ({p})...",
+   "dst": "Şimdi çalıyor: Day In, Day Out ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#641": {
+   "src": "Now playing: Ballad of the Trees (Savanna)...",
+   "dst": "Şimdi çalıyor: Ballad of the Trees (Savanna)...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#642": {
+   "src": "Now playing: Ignorance is Bliss ({p})...",
+   "dst": "Şimdi çalıyor: Ignorance is Bliss ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#643": {
+   "src": "It appears to be out of order.",
+   "dst": "Bozuk görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#644": {
+   "src": "Listen! Listen! Do you hear that?",
+   "dst": "Dinle! Dinle! Duyuyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#645": {
+   "src": "There! A very slight rumble. And it's not the trains; I can tell the difference!",
+   "dst": "İşte! Çok hafif bir gümbürtü. Ve trenler değil; farkı anlayabiliyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#646": {
+   "src": "The Mk V Mule-class Royal Freight Engine has a distinct uneven rhythm due to its weighted frontal bogie, whereas the Circuit-class Master Passenger Locomotive {~}-{~} makes a low rumble from harmonic oscillations in its long boiler.",
+   "dst": "Mk V Mule sınıfı Kraliyet Yük Lokomotifi, ağırlıklı ön bojisi yüzünden kendine özgü düzensiz bir ritme sahiptir; Circuit sınıfı Usta Yolcu Lokomotifi {~}-{~} ise uzun kazanındaki harmonik salınımlarla alçak bir gümbürtü çıkarır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#647": {
+   "src": "This is neither! It must be something happening in the Saltpetre mine that lies below {p}. But what! No normal pickaxe-based excavation could make this sort of tone... unless...",
+   "dst": "Bu ikisi de değil! {p} altındaki Güherçile Madeni'nde bir şey oluyor olmalı. Ama ne! Sıradan kazmalı kazı böyle bir ses çıkaramaz... meğer ki...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#648": {
+   "src": "The rumours of the Mk VI are true!",
+   "dst": "Mk VI söylentileri doğruymuş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#649": {
+   "src": "I must dwell on this. Good day!",
+   "dst": "Bunu iyice düşünmeliyim. İyi günler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#650": {
+   "src": "\"May we unearth the truth long buried and bring forth change.\"",
+   "dst": "\"Uzun zamandır gömülü gerçeği gün yüzüne çıkaralım ve değişimi getirelim.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#651": {
+   "src": "Maybe you could ask the merchant inside about the wind chime?",
+   "dst": "Belki içerideki tüccara rüzgâr çanını sorabilirsin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#652": {
+   "src": "May we unearth the truth long buried and bring forth change. Never forget that.",
+   "dst": "Uzun zamandır gömülü gerçeği gün yüzüne çıkaralım ve değişimi getirelim. Bunu asla unutma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Newspaper Merchant",
+   "source": "captured"
+  },
+  "Overture to Despair#653": {
+   "src": "...seems like they're occupied. You should follow Sui and see what's going on.",
+   "dst": "...meşgul görünüyorlar. Sui'yi takip edip neler olduğuna bakmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#654": {
+   "src": "The Art of the New Age",
+   "dst": "Yeni Çağ Sanatı",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#655": {
+   "src": "A comprehensive archive of artwork created during the New Age, arranged chronologically.",
+   "dst": "Yeni Çağ'da yapılmış sanat eserlerinin kronolojik olarak düzenlenmiş kapsamlı bir arşivi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#656": {
+   "src": "The painting shows a flooded landscape with a Maple tree coming out of the dark waters. There is a single windchime hanging from a branch of the tree.",
+   "dst": "Tablo, karanlık suların içinden bir Akçaağacın yükseldiği sular altında bir manzarayı gösteriyor. Ağacın bir dalından tek bir rüzgâr çanı sarkıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#657": {
+   "src": "Twilight Skies",
+   "dst": "Alacakaranlık Gökleri",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#658": {
+   "src": "Painted in {~}NA by Yuu Higu. This artwork seems to utilise water paints as the base with coloured glass shards glued on. This is the first record of this technique.",
+   "dst": "{~}NA yılında Yuu Higu tarafından yapıldı. Bu eserde taban olarak sulu boya kullanılmış, üzerine renkli cam kırıkları yapıştırılmış gibi görünüyor. Bu tekniğin ilk kaydı budur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#659": {
+   "src": "The painting seems to represents the differences in the {p} and Auburn. The ruined Auburn after the great flood juxtaposed to the idyllic highlands. This is clearly shown in the colours.",
+   "dst": "Tablo, {p} ile Auburn arasındaki farkları temsil ediyor gibi görünüyor. Büyük selden sonraki harap Auburn, pastoral yaylalarla yan yana duruyor. Bu, renklerde açıkça görülüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#660": {
+   "src": "The painting has two sides with different colouring styles. One half features the ruined Auburn in gray and muted colours. The other half shows the {p} in bright colouring. The two sides are split by the dam.",
+   "dst": "Tablonun farklı renk üsluplarına sahip iki yarısı var. Bir yarısında harap Auburn gri ve soluk renklerle yer alıyor. Diğer yarısı {p} bölgesini parlak renklerle gösteriyor. İki yarıyı baraj ayırıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#661": {
+   "src": "The Khuia Haiku Collection:",
+   "dst": "Khuia Haiku Derlemesi:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#662": {
+   "src": "Written by the poet Khuia in KA{~}",
+   "dst": "Şair Khuia, KA{~} yılında yazdı",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#663": {
+   "src": "Power, glory, flame",
+   "dst": "Güç, şan, alev",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#664": {
+   "src": "You open another page at random...",
+   "dst": "Rastgele başka bir sayfa açıyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#665": {
+   "src": "Thunder strikes, earth impairs",
+   "dst": "Yıldırım çarpar, yer yarılır",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#666": {
+   "src": "Break beyond, stars shine",
+   "dst": "Ötesini aş, yıldızlar parlar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#667": {
+   "src": "What do you want to grow?",
+   "dst": "Ne yetiştirmek istiyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#668": {
+   "src": "The heather plant requires a lot of sunlight.",
+   "dst": "Funda bitkisi bol güneş ister.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#669": {
+   "src": "The Death Penalty - The Good and the Bad",
+   "dst": "Ölüm Cezası - İyi ve Kötü Yanları",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#670": {
+   "src": "The death penalty remains an effective tool for maintaining order, mainly through its value as a deterrent. When people know there is a real risk of execution,",
+   "dst": "Ölüm cezası, esas olarak caydırıcılığı sayesinde düzeni korumanın etkili bir aracı olmayı sürdürüyor. İnsanlar gerçek bir idam riski olduğunu bildiklerinde,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#671": {
+   "src": "they are far less likely to break the law. That said, if it is used too often, it can start to backfire and reduce the number of people available for forced",
+   "dst": "yasayı çiğneme olasılıkları çok daha düşüktür. Yine de çok sık kullanılırsa ters tepmeye başlayabilir, Wynn Savaşı'na zorla",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#672": {
+   "src": "conscription in the Wynnic War and cutting into the labor supply for the work camps.",
+   "dst": "askere alınabilecek insan sayısını azaltıp çalışma kamplarının iş gücü arzını kısabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#673": {
+   "src": "such judgments would help maintain the right balance between fear and function.",
+   "dst": "korku ile işlev arasındaki doğru dengeyi korumaya yardımcı olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#674": {
+   "src": "Magical Observations: The Instable Cosmos",
+   "dst": "Büyüsel Gözlemler: Kararsız Evren",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#675": {
+   "src": "Utilising my blessing of cosmic manipulation I have noticed how volatile my spells have become.",
+   "dst": "Kozmik manipülasyon kutsamamı kullanırken büyülerimin ne kadar değişken hâle geldiğini fark ettim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#676": {
+   "src": "This power is addicting. The risk of casting such magic urges me to use it more, and more, and more.",
+   "dst": "Bu güç bağımlılık yapıyor. Böyle bir büyü yapmanın riski beni onu daha çok, daha çok, daha çok kullanmaya itiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#677": {
+   "src": "The Queen has strictly advised against frequent magic use... Luckily my sword skills tend to suffice in duels.",
+   "dst": "Kraliçe sık büyü kullanımına karşı kesinlikle uyardı... Neyse ki düellolarda kılıç becerilerim genelde yetiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#678": {
+   "src": "Ever since my ascension and the blessing of the stars that followed, I have little use of my previous elemental magics.",
+   "dst": "Yükselişimden ve ardından gelen yıldızların kutsamasından beri eski element büyülerime pek ihtiyacım kalmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#679": {
+   "src": "Teaching myself the elements were fun. Magic is simply easy. Everyone should've been able to realise the nature of our world and the elements that make it up.",
+   "dst": "Elementleri kendi kendime öğrenmek eğlenceliydi. Büyü düpedüz kolay. Herkes dünyamızın doğasını ve onu oluşturan elementleri kavrayabilmeliydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#680": {
+   "src": "After my first discovery of thunder magic the rest came easier and easier. All elements are, the same, but also completely different.",
+   "dst": "Yıldırım büyüsünü ilk keşfimden sonra gerisi giderek daha kolay geldi. Bütün elementler aynı, ama aynı zamanda tamamen farklı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#681": {
+   "src": "You tell her about remaking the connections. About the monoliths, deactivated with intent, their light fading.",
+   "dst": "Ona bağlantıları yeniden kurmayı anlatıyorsun. Bilerek kapatılan, ışıkları sönen monolitleri.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#682": {
+   "src": "You tell her about crossing the bridge. About your encounter with the Scourge of Wynn. About his battle with Lari, from start to end.",
+   "dst": "Ona köprüyü geçişini anlatıyorsun. Wynn'in Belası ile karşılaşmanı. Onun Lari ile baştan sona savaşını.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#683": {
+   "src": "You tell her about Orphion. About the Parasite latched on, eating through his radiance. About the struggle to remove it.",
+   "dst": "Ona Orphion'u anlatıyorsun. Ona yapışıp ışıltısını kemiren Parazit'i. Onu söküp atma mücadelesini.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#684": {
+   "src": "Of course you would... well then, are we finished here? Might we finally dismiss our little guest and return to important matters.",
+   "dst": "Elbette öyle yaparsın... peki o hâlde, işimiz bitti mi? Artık şu küçük misafirimizi gönderip önemli meselelere dönsek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Majin",
+   "source": "captured"
+  },
+  "Overture to Despair#685": {
+   "src": "I wish... he could have been here with us. There was so much waiting for him in Fruma. So many people. Just a few weeks later, and...",
+   "dst": "Keşke... burada bizimle olabilseydi. Fruma'da onu bekleyen o kadar çok şey vardı. O kadar çok insan. Sadece birkaç hafta sonra, ve...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#686": {
+   "src": "...ha. What a difference, a few weeks would've made. If only. If only.",
+   "dst": "...ha. Birkaç hafta neleri değiştirirdi. Keşke. Keşke.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#687": {
+   "src": "...ha. Maybe.",
+   "dst": "...ha. Belki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
   },
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
@@ -156378,7 +157238,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#305": {
-   "src": "It... it finally feels like we have a second to breath.",
+   "src": "It... it finally feels like we have a second to breathe.",
    "dst": "Sonunda... sonunda bir nefes alacak vaktimiz var gibi.",
    "role": "desc",
    "kind": "dialogue",
@@ -156408,7 +157268,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#308": {
-   "src": "It must have be worth stealing it... somehow.",
+   "src": "It must have been worth stealing it... somehow.",
    "dst": "Çalmaya değmiş olmalı... bir şekilde.",
    "role": "desc",
    "kind": "dialogue",
@@ -156484,6 +157344,26 @@
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shrouded in Mist#316": {
+   "src": "Find a way to destroy the drill, fast.",
+   "dst": "Matkabı yok etmenin yolunu bul, çabuk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "Shrouded in Mist#317": {
+   "src": "[-{~} Rake]",
+   "dst": "[-{~} Tırmık]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -158298,8 +159178,8 @@
    "source": "captured"
   },
   "Solidarity of Steel#181": {
-   "src": "Yeah, yeah! Come on, what are you waiting for? Go {u}, and find out what they're talking about.",
-   "dst": "Evet, evet! Hadi, ne bekliyorsun? Git, {u}, ne konuştuklarını öğren.",
+   "src": "Yeah, yeah! Come on, what are you waiting for? Go interrupt Syndra and Quill, and find out what they're talking about.",
+   "dst": "Evet, evet! Hadi, ne bekliyorsun? Git Syndra ile Quill'in lafını böl, ne konuştuklarını öğren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -161638,7 +162518,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#515": {
-   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equatio- nnh.",
+   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equati- nnh.",
    "dst": "Senin progra- Oru'dan ders mi alıyorsun? Bu eyalet çapındaki acil durumun değeri senin tüzüğünden çok daha büyük, Hükümdar, o yüzden denkleme topla- nnh.",
    "role": "desc",
    "kind": "dialogue",
@@ -162016,6 +162896,86 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Solidarity of Steel#553": {
+   "src": "New Chapter Started: The Steel Feather",
+   "dst": "Yeni Bölüm Başladı: Çelik Tüy",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#554": {
+   "src": "Wait for Zeph!",
+   "dst": "Zeph'i bekle!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#555": {
+   "src": "You- you didn't find any clothing? I can't leave with- with only one set of clothes! I know I have a shirt somewhere...",
+   "dst": "Si- siz hiç kıyafet bulamadınız mı? Ben- ben tek kat kıyafetle gidemem! Bir yerlerde bir gömleğim olduğunu biliyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#556": {
+   "src": "There's... nothing to sleep with in- in here. You couldn't f-find a pillow or blanket? I'd e-even take a mattress...",
+   "dst": "Burada... uyumak için hiçbir- hiçbir şey yok. Yastık ya da battaniye b-bulamadınız mı? Ş-şilteye bile razıyım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#557": {
+   "src": "Oh... n-nothing to pass the time... I know I had a book and a deck of cards, I know I did...",
+   "dst": "Ah... v-vakit geçirecek hiçbir şey yok... Bir kitabım ve bir deste kâğıdım vardı, biliyorum, vardı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#558": {
+   "src": "...As much as this little place is- is run down, it's... it's home. I can't just leave- I can't. I can't go without... without something to remember it by. Please, please, find my ring or my photograph. Please.",
+   "dst": "...Bu küçük yer ne kadar- ne kadar köhne olsa da, burası... burası benim evim. Öylece gidemem- gidemem. Hatırlayacak... hatırlayacak bir şey olmadan gidemem. Lütfen, lütfen, yüzüğümü ya da fotoğrafımı bulun. Lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#559": {
+   "src": "Well, there's no rush to be here. Quill's going to be a while still. Why don't you go talk to Sui and grab some food?",
+   "dst": "Eh, acele etmene gerek yok. Quill'in işi daha sürecek. Neden Sui ile konuşup bir şeyler yemiyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "Solidarity of Steel#560": {
+   "src": "[+{~} Roughworks Food]",
+   "dst": "[+{~} Roughworks Yiyeceği]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Stable Story#000": {
    "src": "Hey! Get out of here! Scram! Shoo!",
@@ -208952,7 +209912,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#201": {
-   "src": "Is it! I suppose it is, haha! I am glad to have had the oppurtunity to learn to use it.",
+   "src": "Is it! I suppose it is, haha! I am glad to have had the opportunity to learn to use it.",
    "dst": "Öyle mi! Sanırım öyle, haha! Onu kullanmayı öğrenme fırsatı bulduğuma seviniyorum.",
    "role": "desc",
    "kind": "dialogue",
@@ -212192,7 +213152,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#525": {
-   "src": "So. So, so,so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
+   "src": "So. So, so, so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
    "dst": "Şey. Şey, şey, şey... Tacın... tacın bizi burada rahat bırakmasının sebebi Hükümdar Soosu ile çalışıyor olmam.",
    "role": "desc",
    "kind": "dialogue",
@@ -214761,6 +215721,36 @@
    "speaker": "Yusanu",
    "source": "captured.json"
   },
+  "The Price of Ingenuity#792": {
+   "src": "It wouldn't be a good idea to go back down there.",
+   "dst": "Oraya geri inmek iyi bir fikir olmaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#793": {
+   "src": "[+{~} Resonance Weaver]",
+   "dst": "[+{~} Resonance Weaver]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#794": {
+   "src": "You'll get us found out!",
+   "dst": "Bizi ele vereceksin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "Yusanu",
+   "source": "captured"
+  },
   "The Qira Hive (Quest)#000": {
    "src": "I see another lost soul has found their way to The {p}!",
    "dst": "Görüyorum ki kayıp bir ruh daha {p} kapısına varmış!",
@@ -217102,8 +218092,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "Tamam, daha var! Umarım sen bitirene kadar ben de burada işimi bitirmiş olurum, sonra devam ederiz!",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "Tamam, daha {~} tane var! Umarım sen bitirene kadar ben de burada işimi bitirmiş olurum, sonra devam ederiz!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217212,8 +218202,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "Marseled'in çayevi kuzeybatıda, sırtın üstünde. Tam yeri lazımsa görev kitabına bak!",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "Marseled'in çayevi kuzeybatıda, sırtın üstünde. Tam yeri lazımsa içerik kitabına bak!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217562,8 +218552,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "Haberi yaydın mı? İnsanların genelde nerede olduğunu görmek için notlara bak ve haberi duyur! Sen de büyük yeniden açılışa davetlisin, elbette.",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "Haberi yaydın mı? İnsanların genelde nerede olduğunu görmek için notlarıma bak ve haberi duyur! Sen de büyük yeniden açılışa davetlisin, elbette.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217582,7 +218572,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "Tamam, bir saniye... ve... işte! Nereye gideceğin için notlara bakmayı unutma!",
    "role": "desc",
    "kind": "dialogue",
@@ -217592,8 +218582,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "Yazdığım bütün yerler {u}, ama zorlanırsan istediğinde sana yeni bir liste yazarım!",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "Yazdığım bütün yerler {p} civarında, ama zorlanırsan istediğinde sana yeni bir liste yazarım!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217802,7 +218792,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "Ve- ve- ve Hükümdar, o, ona bitirdiğimi söyleyebileceğim ve onu alacağım ve... Aman yıldızlar, bitirdim ama bittikten sonra öncesinden bile daha gerginim, aaah-",
    "role": "desc",
    "kind": "dialogue",
@@ -218490,6 +219480,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "Gölgede keyif yapıyor. Bir şeyden memnun görünüyor ama ne olduğundan emin değilsin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "Henüz tam uyumamış. Sanki... heyecandan titriyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "Maripe'nin çalışmasını büyük bir merakla izliyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "Burada yazan herkes muhtemelen zaten kaplıcalarda keyif yapıyordur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "Hafif hafif uyuyor, her an uyanabilirmiş gibi. Kaplıcalara göz kulak oluyor sanki... ya da eserini süzen gururlu bir ebeveyn gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "Deliksiz uyuyor. Nefesleri öyle yumuşak ki yeterince dinlersen seni de uyutabilir... seni yatağına yatıran gururlu bir ebeveyn gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "Uykusunda çok rahat görünüyor. Maripe altına bir havlu sermeyi akıl etmiş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "Ziyaretçileri izlemekten hoşlanıyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "Yavaş yavaş uyukluyor. Sanki... bu anın tadını çıkarıyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "Gölgede keyif yapıyor. Etraftaki onca insana rağmen hâlinden memnun görünüyor... belki de onca insan yüzünden?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Sewers of Ragni#000": {
    "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
@@ -233472,7 +234562,7 @@
    "source": "wiki"
   },
   "True Colours#134": {
-   "src": "{u}. You've been busy haven't you?",
+   "src": "{u}. You've been busy, haven't you?",
    "dst": "{u}. Epey meşguldün, değil mi?",
    "role": "desc",
    "kind": "dialogue",
@@ -233492,7 +234582,7 @@
    "source": "wiki"
   },
   "True Colours#136": {
-   "src": "Imagine my surprise when I found you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
+   "src": "Imagine my surprise when I found out you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
    "dst": "Bütün bu kargaşanın sorumlusunun sen olduğunu öğrendiğimde ne kadar şaşırdığımı düşün. Hatta Fruma'da olduğunu bile!",
    "role": "desc",
    "kind": "dialogue",
@@ -233502,7 +234592,7 @@
    "source": "wiki"
   },
   "True Colours#137": {
-   "src": "Sigh... look. They thought you might try the prison even though it isn't really an option. Especially not from this side- there are guards everywhere.",
+   "src": "Sigh... look. They thought you might try the prison, even though it isn't really an option. Especially not from this side- there are guards everywhere.",
    "dst": "Of... bak. Gerçekten bir seçenek olmasa da hapishaneyi deneyebileceğini düşündüler. Hele bu taraftan hiç olmaz, her yer muhafız dolu.",
    "role": "desc",
    "kind": "dialogue",
@@ -233522,7 +234612,7 @@
    "source": "wiki"
   },
   "True Colours#139": {
-   "src": "Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
+   "src": "Well. Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
    "dst": "Normalde en azından. Baş başa konuşabilelim diye onları geçici olarak uzaklaştırdım.",
    "role": "desc",
    "kind": "dialogue",
@@ -233552,8 +234642,8 @@
    "source": "wiki"
   },
   "True Colours#142": {
-   "src": "Sigh... she mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
-   "dst": "Of... sana da bahsetti, değil mi? Gücümüzün ötesindeki kuvvetlerin dünyamız üzerinde yürüttüğü o bitmeyen savaştan?",
+   "src": "She mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
+   "dst": "Sana da bahsetti, değil mi? Gücümüzün ötesindeki kuvvetlerin dünyamız üzerinde yürüttüğü o bitmeyen savaştan?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -233688,8 +234778,8 @@
    "source": "wiki"
   },
   "True Colours#155": {
-   "src": "...I am. I'm not sure how to feel about it still, honestly.",
-   "dst": "...öyleyim. Dürüst olmak gerekirse buna ne hissedeceğimi hâlâ bilmiyorum.",
+   "src": "...I am. I'm not sure how to feel about it still, honestly. There's... two parts to it.",
+   "dst": "...öyleyim. Açıkçası ne hissedeceğimi hâlâ bilmiyorum. Bunun... iki yanı var.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -233868,7 +234958,7 @@
    "source": "wiki"
   },
   "True Colours#174": {
-   "src": "To some extent, it's a relief - but more than that it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
+   "src": "To some extent, it's a relief - but more than that, it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
    "dst": "Bir yere kadar rahatlatıcı ama daha çok beni öfkelendiriyor. Bu yük o kadar uzun zamandır üstümdeydi ki, sonunda... hiçbir anlamı olmaması mı?",
    "role": "desc",
    "kind": "dialogue",
@@ -233888,7 +234978,7 @@
    "source": "wiki"
   },
   "True Colours#176": {
-   "src": "...you being here is only making it harder for me to do anything about it of course.",
+   "src": "...you being here is only making it harder for me to do anything about it, of course.",
    "dst": "...senin burada olman da bu konuda bir şey yapmamı zorlaştırıyor tabii.",
    "role": "desc",
    "kind": "dialogue",
@@ -233998,7 +235088,7 @@
    "source": "wiki"
   },
   "True Colours#187": {
-   "src": "Nobody will listen to anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
+   "src": "Nobody will listen about anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
    "dst": "Kimse seninle ilgisi olmayan hiçbir şeyi dinlemiyor... hem de haklı olarak! Bir kale dolusu askeri katlettin, Hükümdar Zhiraok'u şimdiden iki kez öldürdün...",
    "role": "desc",
    "kind": "dialogue",
@@ -234038,7 +235128,7 @@
    "source": "wiki"
   },
   "True Colours#191": {
-   "src": "I...ugh. I wish it hadn't gone the way it did.",
+   "src": "I... ugh. I wish it hadn't gone the way it did.",
    "dst": "Ben... of. Keşke böyle olmasaydı.",
    "role": "desc",
    "kind": "dialogue",
@@ -234048,7 +235138,7 @@
    "source": "wiki"
   },
   "True Colours#192": {
-   "src": "I know. I know. I tried to warn you, to get you to call it off, but...sigh. It doesn't matter now. It's already done.",
+   "src": "I know. I know. I tried to warn you, to get you to call it off, but... sigh. It doesn't matter now. It's already done.",
    "dst": "Biliyorum. Biliyorum. Seni uyarmaya, vazgeçirmeye çalıştım ama... of. Artık önemi yok. Olan oldu.",
    "role": "desc",
    "kind": "dialogue",
@@ -234078,7 +235168,7 @@
    "source": "wiki"
   },
   "True Colours#195": {
-   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to...explain things.",
+   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to... explain things.",
    "dst": "Taç seni aramaları için asker gönderdi. Majesteleri seninle konuşmak, sana... bazı şeyleri açıklamak istiyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -234108,7 +235198,7 @@
    "source": "wiki"
   },
   "True Colours#198": {
-   "src": "…I think you should hear her out, but that’s your choice to make. I just thought you should know.",
+   "src": "...I think you should hear her out, but... that's your choice to make. I just thought you should know.",
    "dst": "…bence onu dinlemelisin, ama karar senin. Sadece bilmen gerektiğini düşündüm.",
    "role": "desc",
    "kind": "dialogue",
@@ -234148,7 +235238,7 @@
    "source": "wiki"
   },
   "True Colours#202": {
-   "src": "…who else?",
+   "src": "...who else?",
    "dst": "…başka kim?",
    "role": "desc",
    "kind": "dialogue",
@@ -234218,7 +235308,7 @@
    "source": "wiki"
   },
   "True Colours#209": {
-   "src": "Eugh. He’s... frustrating. I mean we both saw him during that tournament, right? He really thinks he’s better than everyone else around him.",
+   "src": "Eugh. He's... frustrating. I mean, we both saw him during that tournament, right? He really thinks he's better than everyone else around him.",
    "dst": "Iyy. O... sinir bozucu. Yani ikimiz de o turnuvada gördük onu, değil mi? Etrafındaki herkesten üstün olduğunu cidden düşünüyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -234298,7 +235388,7 @@
    "source": "wiki"
   },
   "True Colours#217": {
-   "src": "…luckily he stays at Gravity’s Monolith for the most part. He won’t be a problem if you just… stay away.",
+   "src": "...luckily, he stays at Gravity's Monolith for the most part. He won't be a problem if you just... stay away.",
    "dst": "…neyse ki çoğunlukla Gravity's Monolith'te kalıyor. Sadece… uzak durursan sorun olmaz.",
    "role": "desc",
    "kind": "dialogue",
@@ -234418,7 +235508,7 @@
    "source": "wiki"
   },
   "True Colours#229": {
-   "src": "…it’s rare to find someone who understands, you know? Of course, I’ve had you, and… and Aledar, but it’s isolating. Even others from Fruma, they just… don’t get it.",
+   "src": "...it's rare to find someone who understands, you know? Of course, I've had you, and... and Aledar, but... it's isolating. Even others from Fruma, they just... don't get it.",
    "dst": "…anlayan birini bulmak çok zor, biliyor musun? Tabii, sen vardın, bir de… Aledar, ama yine de insanı yalnızlaştırıyor. Frumalı olanlar bile… anlamıyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -235708,7 +236798,7 @@
    "source": "wiki"
   },
   "True Colours#358": {
-   "src": "Oho! Impressive stuff. Simple pieces of paper in appearance... but they pack a punch. Rather useful!",
+   "src": "Oho! Impressive stuff. Simple pieces of paper, in appearance... but they pack a punch. Rather useful!",
    "dst": "Oho! Etkileyici. Görünüşte basit kâğıt parçaları... ama sağlam vuruyorlar. Epey kullanışlı!",
    "role": "desc",
    "kind": "dialogue",
@@ -237068,7 +238158,7 @@
    "source": "wiki"
   },
   "True Colours#494": {
-   "src": "Take. Some Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
+   "src": "Take. Some. Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
    "dst": "Zaman. Tanımak mı? Hayır. Hayır, zaman tanımaktan bıktım. Ağlamaktan bıktım, endişelenmekten bıktım! O kadar... o kadar... öfkeliyim ki! Taç'a, kendime ve- ve Mora'ya!!!!",
    "role": "desc",
    "kind": "dialogue",
@@ -237356,6 +238446,726 @@
    "stage": "Stage 19",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "True Colours#523": {
+   "src": "...of course. Of course. That makes sense, I should have- I should have put that together, shouldn't I?",
+   "dst": "...tabii. Tabii ya. Mantıklı, bunu- bunu anlamam gerekirdi, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#524": {
+   "src": "He always was trying to help others... to his own detriment.",
+   "dst": "Hep başkalarına yardım etmeye çalışırdı... kendi zararına da olsa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#525": {
+   "src": "...it should have been him here. Not me. He had something to come back to. People to reunite with.",
+   "dst": "...burada olması gereken oydu. Ben değil. Dönecek bir şeyi vardı. Kavuşacağı insanlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#526": {
+   "src": "Instead, he's...",
+   "dst": "Oysa o...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#527": {
+   "src": "...the other Leaves. Your friends. They... probably aren't dead yet. There's still hope for them, if you can find them.",
+   "dst": "...diğer Leaves üyeleri. Arkadaşların. Onlar... muhtemelen henüz ölmediler. Onları bulabilirsen hâlâ umut var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#528": {
+   "src": "...what a mess. All of this- it's just... a mess.",
+   "dst": "...ne büyük bir karmaşa. Bütün bunlar- hepsi... tam bir karmaşa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#529": {
+   "src": "Um... I... I have no idea know what that means.",
+   "dst": "Şey... ben... ben bunun ne demek olduğunu hiç bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "True Colours#530": {
+   "src": "The Training Facility is locked.",
+   "dst": "Eğitim Tesisi kilitli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#531": {
+   "src": "Changeling Biology:",
+   "dst": "Biçim Değiştiren Biyolojisi:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#532": {
+   "src": "Training a Changeling is a challenging, but worthwhile investment. They require active conditioning from the moment they emerge.",
+   "dst": "Bir Biçim Değiştireni eğitmek zorlu ama değerli bir yatırımdır. Ortaya çıktıkları andan itibaren etkin koşullandırma gerektirirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#533": {
+   "src": "They have a tendency to change into the first form they encounter, they are also the most receptive to learning at that time.",
+   "dst": "Karşılaştıkları ilk forma dönüşme eğilimindedirler; öğrenmeye en açık oldukları zaman da budur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#534": {
+   "src": "During their first month they require constant stimulus otherwise they easily adapt to the form that fits into the current setting.",
+   "dst": "İlk aylarında sürekli uyarana ihtiyaç duyarlar; aksi hâlde bulundukları ortama uyan forma kolayca geçerler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#535": {
+   "src": "There are various other pages...",
+   "dst": "Başka çeşitli sayfalar da var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#536": {
+   "src": "Subject {~}:",
+   "dst": "Denek {~}:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#537": {
+   "src": "- Forms: Human, Fox, Owl",
+   "dst": "- Formlar: İnsan, Tilki, Baykuş",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#538": {
+   "src": "- Strength Index: {~}",
+   "dst": "- Güç Endeksi: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#539": {
+   "src": "- Number of Strikes: {~}",
+   "dst": "- İhtar Sayısı: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#540": {
+   "src": "Schedule:",
+   "dst": "Program:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#541": {
+   "src": "{~}:{~} - Wake-up call.",
+   "dst": "{~}:{~} - Uyandırma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#542": {
+   "src": "{~}:{~} - First class of the day.",
+   "dst": "{~}:{~} - Günün ilk dersi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#543": {
+   "src": "{~}:{~} - Fourth class of the day.",
+   "dst": "{~}:{~} - Günün dördüncü dersi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#544": {
+   "src": "{~}:{~} - Fifth class of the day.",
+   "dst": "{~}:{~} - Günün beşinci dersi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#545": {
+   "src": "{~}:{~} - Sleep.",
+   "dst": "{~}:{~} - Uyku.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#546": {
+   "src": "The Bunker door is locked. A worker must have an employee key...",
+   "dst": "Sığınak kapısı kilitli. Bir çalışanda personel anahtarı olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#547": {
+   "src": "- First meal: Apples and carrots.",
+   "dst": "- İlk öğün: Elma ve havuç.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#548": {
+   "src": "- Second meal: Mystery stew.",
+   "dst": "- İkinci öğün: Gizemli yahni.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#549": {
+   "src": "- Third meal: Mystery stew.",
+   "dst": "- Üçüncü öğün: Gizemli yahni.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#550": {
+   "src": "Do you want to leave?",
+   "dst": "Ayrılmak istiyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#551": {
+   "src": "[+{~} Training Facility Key]",
+   "dst": "[+{~} Eğitim Tesisi Anahtarı]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#552": {
+   "src": "The storage door opened.",
+   "dst": "Depo kapısı açıldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#553": {
+   "src": "[+{~} Officer's Quarters Key]",
+   "dst": "[+{~} Subay Odaları Anahtarı]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#554": {
+   "src": "The Officer's Quarters are locked.",
+   "dst": "Subay Odaları kilitli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#555": {
+   "src": "Current Research: Soldier Superfood",
+   "dst": "Güncel Araştırma: Asker Süper Besini",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#556": {
+   "src": "Create a food that provides all necessary nutrients without the need for taste or texture.",
+   "dst": "Tat ya da doku gerektirmeden gerekli tüm besinleri sağlayan bir gıda üretmek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#557": {
+   "src": "The hole appears empty...",
+   "dst": "Delik boş görünüyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#558": {
+   "src": "[+{~} Cabinet Key]",
+   "dst": "[+{~} Kayıt Dolabı Anahtarı]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#559": {
+   "src": "You unlock the records cabinet... Inside, you find dozens of file folders.",
+   "dst": "Kayıt dolabının kilidini açıyorsun... İçinde onlarca dosya buluyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#560": {
+   "src": "Project Hallowground, est. {~} IA.",
+   "dst": "Hallowground Projesi, kuruluş {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#561": {
+   "src": "Research Lead: Sovereign Selium.",
+   "dst": "Araştırma Lideri: Hükümdar Selium.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#562": {
+   "src": "Our Polymorph supplies are dwindling. With each new specimen we extract from the wastes, the span between emergences grows wider and wider.",
+   "dst": "Polymorph stoklarımız azalıyor. Çorak topraklardan çıkardığımız her yeni numuneyle ortaya çıkışlar arasındaki süre giderek uzuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#563": {
+   "src": "If this trend continues, within the next century, we will lose our access to Changeling spies.",
+   "dst": "Bu eğilim sürerse önümüzdeki yüzyıl içinde Biçim Değiştiren casuslara erişimimizi kaybedeceğiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#564": {
+   "src": "Sovereign Oru suggests we drill deeper to uncover new sources, but I disagree. The fault lies with the well. It is drying up.",
+   "dst": "Hükümdar Oru yeni kaynaklar için daha derine inmemizi öneriyor, ama katılmıyorum. Sorun kuyuda. Kuruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#565": {
+   "src": "If we can no longer rely on the natural, we must imbue that spark of life ourselves.",
+   "dst": "Artık doğala güvenemiyorsak, o yaşam kıvılcımını kendimiz aşılamalıyız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#566": {
+   "src": "There's more. Will you continue reading?",
+   "dst": "Devamı var. Okumaya devam edecek misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#567": {
+   "src": "Construction Report, {~} IA.",
+   "dst": "İnşaat Raporu, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#568": {
+   "src": "The old research site has been refurbished and modernized to suit our needs. The facility grounds have been greatly expanded.",
+   "dst": "Eski araştırma sahası yenilenip ihtiyaçlarımıza göre modernleştirildi. Tesis arazisi büyük ölçüde genişletildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#569": {
+   "src": "Construction broke through the earth and uncovered a large undisturbed reservoir. Sovereign Oru suggests we stop here. I disagree.",
+   "dst": "İnşaat toprağı delip el değmemiş büyük bir hazne ortaya çıkardı. Hükümdar Oru burada durmamızı öneriyor. Katılmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#570": {
+   "src": "The reservoir will serve as a solid base for our research and experiments.",
+   "dst": "Hazne, araştırmalarımız ve deneylerimiz için sağlam bir temel olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#571": {
+   "src": "Incident Report, {~} IA.",
+   "dst": "Olay Raporu, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#572": {
+   "src": "Southward underground expansion has unearthed a massive cave system lurking deep below the surface.",
+   "dst": "Güneye doğru yeraltı genişlemesi, yüzeyin çok altında uzanan dev bir mağara sistemini ortaya çıkardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#573": {
+   "src": "Construction was paused. Three workers disobeyed orders and delved further into the caverns. Only one returned.",
+   "dst": "İnşaat durduruldu. Üç işçi emirlere uymayıp mağaraların derinlerine indi. Yalnızca biri döndü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#574": {
+   "src": "Multiple sentences have been redacted...",
+   "dst": "Birçok cümle karalanarak silinmiş...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#575": {
+   "src": "Contacted the Spymaster, Inquisitors were called in to handle the situation.",
+   "dst": "Casus Şef ile temas kuruldu, durumu halletmek için Engizisyoncular çağrıldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#576": {
+   "src": "The cavern is to be sealed immediately, and all workers in contact are to have their memories removed.",
+   "dst": "Mağara derhâl mühürlenecek ve temas eden tüm işçilerin anıları silinecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#577": {
+   "src": "Observation Log, {~} IA.",
+   "dst": "Gözlem Günlüğü, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#578": {
+   "src": "Formless, mindless... they come from the earth, charged with its primordial life.",
+   "dst": "Biçimsiz, akılsız... topraktan çıkıyorlar, onun ilksel yaşamıyla yüklü olarak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#579": {
+   "src": "But how? How do they come to be? What ignites that spark?",
+   "dst": "Ama nasıl? Nasıl var oluyorlar? O kıvılcımı ne ateşliyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#580": {
+   "src": "My blessing grants me a limited understanding, but not nearly enough. What is the source? I do not know.",
+   "dst": "Kutsamam bana sınırlı bir anlayış veriyor, ama yeterli olmaktan çok uzak. Kaynak nedir? Bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#581": {
+   "src": "I have asked Sovereign Gikyo for their insight. They laughed me out of the room. I suspect I will glean nothing from these attempts.",
+   "dst": "Hükümdar Gikyo'dan görüşünü istedim. Gülerek beni odadan kovdu. Bu girişimlerden bir şey elde edemeyeceğimi sanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#582": {
+   "src": "...perhaps I should ask the earth itself.",
+   "dst": "...belki de toprağın kendisine sormalıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#583": {
+   "src": "We have come so close... so close, yet so far. I have heard its echoes, surfacing from the depths below. A broken, fractured thing...",
+   "dst": "Çok yaklaştık... o kadar yakın, ama yine de o kadar uzak. Aşağıdaki derinliklerden yükselen yankılarını duydum. Kırık, parçalanmış bir şey...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#584": {
+   "src": "The spark... I have lit it once more. That which animates the dark pools of essence into beings we control...",
+   "dst": "Kıvılcım... onu bir kez daha yaktım. Karanlık öz havuzlarını denetimimizdeki varlıklara dönüştüren o şeyi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#585": {
+   "src": "But the vessels, they are not mindless... not in the same way. Being drawn forth from unlife into being instills a madness in them that I cannot resolve.",
+   "dst": "Ama kaplar, onlar akılsız değil... aynı şekilde değil. Yaşamsızlıktan varlığa çekilmek içlerine çözemediğim bir delilik aşılıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#586": {
+   "src": "The Spymaster has a suggestion. An external Scientist, one who has studied the inner workings of a similar madness.",
+   "dst": "Casus Şef'in bir önerisi var. Harici bir Bilim İnsanı, benzer bir deliliğin iç işleyişini incelemiş biri.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#587": {
+   "src": "Ten years. Ten years here, he has spent on his studies, and not a single step of progress. And this is the best option we have...?",
+   "dst": "On yıl. Burada on yılını çalışmalarına harcadı, ama tek bir adım ilerleme yok. Elimizdeki en iyi seçenek bu mu...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#588": {
+   "src": "This is the best option we have. It will be done. It will be over soon.",
+   "dst": "Elimizdeki en iyi seçenek bu. Yapılacak. Yakında bitecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#589": {
+   "src": "Warden's Log, {~} IA.",
+   "dst": "Gardiyanbaşı'nın Günlüğü, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#590": {
+   "src": "The inner workings of the Hallowground Facility fell apart at {~}:{~} PM.",
+   "dst": "Hallowground Tesisi'nin iç işleyişi saat {~}:{~} PM'de dağıldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#591": {
+   "src": "Schedule interrupted. But urgency demands a response.",
+   "dst": "Program aksadı. Ama aciliyet yanıt gerektiriyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#592": {
+   "src": "Spymaster suggests ceasing mining operations in the west. Order approved.",
+   "dst": "Casus Şef batıdaki madencilik faaliyetlerinin durdurulmasını öneriyor. Emir onaylandı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#593": {
+   "src": "Quotas will fall short. Prisoner work hours will be increased until the situation is resolved.",
+   "dst": "Kotalar karşılanamayacak. Durum çözülene kadar mahkûmların çalışma saatleri artırılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#594": {
+   "src": "No sign of Sovereign Selium. Presumed dead.",
+   "dst": "Hükümdar Selium'dan iz yok. Öldüğü varsayılıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Tunnel Trouble#000": {
    "src": "You shouldn't go in here just yet.",

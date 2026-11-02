@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Scarred Springs",
-  "count": 169,
-  "translated": 169,
+  "count": 179,
+  "translated": 179,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -307,8 +307,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "좋아요, 남았어요! 그걸 끝내실 때쯤 저도 여기 다 끝냈으면 좋겠네요. 그다음 계속해요!",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "좋아요, {~}개 남았어요! 그걸 끝내실 때쯤 저도 여기 다 끝냈으면 좋겠네요. 그다음 계속해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -417,8 +417,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "Marseled의 찻집은 북서쪽 능선 위에 있어요. 정확한 위치가 필요하면 확인해 보세요!",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "Marseled의 찻집은 북서쪽 능선 위에 있어요. 정확한 위치가 필요하면 콘텐츠 북을 확인해 보세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -767,8 +767,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "소문은 내셨어요? 사람들이 보통 어디 있는지 확인해서 소식을 전해 주세요! 물론 당신도 성대한 재개장에 초대됐어요.",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "소문은 내셨어요? 제 메모에서 사람들이 보통 어디 있는지 확인해서 소식을 전해 주세요! 물론 당신도 성대한 재개장에 초대됐어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -787,7 +787,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "좋아요, 잠깐만요... 그리고... 여기요! 어디로 갈지 확인하는 거 잊지 마세요!",
    "role": "desc",
    "kind": "dialogue",
@@ -797,8 +797,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "제가 적은 곳은 전부 {u}예요. 그래도 어려우시면 말씀하세요, 새로 적어 드릴게요!",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "제가 적은 곳은 전부 {p} 바로 근처예요. 그래도 어려우시면 말씀하세요, 새로 적어 드릴게요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1007,7 +1007,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "그리고, 그리고, 그리고, 그, 그 군주님께, 끝났다고 말씀드릴 수 있고, 그럼 그걸 받고... 세상에, 끝났는데 끝나고 나니까 전보다 더 떨려요, 으아-",
    "role": "desc",
    "kind": "dialogue",
@@ -1695,6 +1695,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "그늘에서 쉬고 있다. 무언가에 흡족해 보이지만, 무엇 때문인지는 알 수 없다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "아직 다 잠들지 않았다. 몸을 떨고 있는데... 기대감 때문일까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "Maripe가 일하는 모습을 호기심 가득히 지켜보는 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "여기 적힌 사람들은 이미 다들 온천을 즐기고 있을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "언제든 깰 것처럼 얕게 잠들어 있다. 온천을 지켜보는 듯하다... 아니면 아이의 작품을 살피는 뿌듯한 부모 같기도 하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "곤히 잠들어 있다. 숨소리가 부드러워서, 오래 듣다 보면 잠들 것만 같다... 뿌듯한 부모가 이불을 덮어 주듯이.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "아주 편안하게 자고 있다. Maripe가 세심하게 밑에 수건을 깔아 준 모양이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "손님들을 구경하는 게 즐거운 모양이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "천천히 졸고 있다. 이 순간을... 음미하는 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "그늘에서 쉬고 있다. 주변에 사람이 많은데도 만족스러워 보인다... 아니면 사람이 많아서일까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

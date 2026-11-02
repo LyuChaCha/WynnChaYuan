@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24324,
-  "translated": 24321,
+  "count": 24505,
+  "translated": 24502,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -61041,7 +61041,7 @@
    "source": "wiki"
   },
   "Echoes of Change#081": {
-   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office. Let's get looking!",
+   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office . Let's get looking!",
    "dst": "Yulie한테 듣기론, 지휘관이 보통 근무표를 맨 위 사무실에 둔대. 찾아보자!",
    "role": "desc",
    "kind": "dialogue",
@@ -65141,7 +65141,7 @@
    "source": "wiki"
   },
   "Echoes of Change#491": {
-   "src": "I... never told her what I really was. I thought it would be safe, for both of us... ha. And how did that turn out...?",
+   "src": "I... never told her what I really was. I thought it would be safer, for both of us... ha. And how did that turn out...?",
    "dst": "난... 내 정체를 끝내 말하지 않았어. 그게 둘 다에게 안전할 거라 생각했는데... 하. 결과가 어땠는지 봐...",
    "role": "desc",
    "kind": "dialogue",
@@ -66001,8 +66001,8 @@
    "source": "wiki"
   },
   "Echoes of Change#577": {
-   "src": "You being here, it's... making things harder things harder than they need to be.",
-   "dst": "네가 여기 있으니까... 일이 필요 이상으로 더 어려워지고 있어.",
+   "src": "You being here, it's... making things harder than they need to be.",
+   "dst": "네가 여기 있으니까... 일이 필요 이상으로 어려워지고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -66021,7 +66021,7 @@
    "source": "wiki"
   },
   "Echoes of Change#579": {
-   "src": "I...I don't have time for this right now. {u}, you have to-",
+   "src": "I... I don't have time for this right now. {u}, you have to-",
    "dst": "난... 난 지금 이럴 시간 없어. {u}, 넌 반드시",
    "role": "desc",
    "kind": "dialogue",
@@ -67849,6 +67849,16 @@
    "stage": "Stage 25",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Echoes of Change#762": {
+   "src": "[+{~} Guard Uniform]",
+   "dst": "[+{~} 경비병 제복]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
@@ -113938,8 +113948,8 @@
    "source": "wiki"
   },
   "Off the Rails#018": {
-   "src": "Say, buddy, could you do your friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
-   "dst": "이봐 친구, 친구 좋다는 게 뭐야, 부탁 하나만 들어줄래? 곧 Auburn에서 회의가 있어서 이 열차를 꼭 타야 하거든.",
+   "src": "Say, buddy, could you do your new friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
+   "dst": "이봐 친구, 새 친구 좋다는 게 뭐야, 부탁 하나만 들어줄래? 곧 Auburn에서 회의가 있어서 이 열차를 꼭 타야 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114658,7 +114668,7 @@
    "source": "wiki"
   },
   "Off the Rails#090": {
-   "src": "On the way here, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
+   "src": "On the way to the station, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
    "dst": "오는 길에 웬 남자가 무릎 꿇고 자기 셔츠를 사 달라고 빌더라. 거절하기 힘들었어... 마음이 안 좋아서...",
    "role": "desc",
    "kind": "dialogue",
@@ -114678,7 +114688,7 @@
    "source": "wiki"
   },
   "Off the Rails#092": {
-   "src": "In fact, this shirt doesn't even hold any value to me as a souvenier. I don't want to remember this trip.",
+   "src": "In fact, this shirt doesn't even hold any value to me as a souvenir. I don't want to remember this trip.",
    "dst": "사실 이 셔츠는 기념품으로서의 가치도 없어. 이번 여행은 기억하고 싶지 않거든.",
    "role": "desc",
    "kind": "dialogue",
@@ -117748,7 +117758,7 @@
    "source": "wiki"
   },
   "Off the Rails#416": {
-   "src": "Concerned, I followed the two of them, to find that they has found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
+   "src": "Concerned, I followed the two of them, to find that they had found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
    "dst": "걱정돼서 두 사람을 따라갔더니 Levi 장군님 시신을 발견한 거였어요. 제가 뭘 묻기도 전에 소리치며 열차를 뛰어다니더라고요.",
    "role": "desc",
    "kind": "dialogue",
@@ -117778,7 +117788,7 @@
    "source": "wiki"
   },
   "Off the Rails#419": {
-   "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
+   "src": "...W-Whuh? Where is it? I always keep it in my pocket! Perhaps I dropped it somewhere?",
    "dst": "...어, 어? 어디 갔지? 늘 주머니 어딘가에 넣어 두는데! 어디 떨어뜨렸나?",
    "role": "desc",
    "kind": "dialogue",
@@ -118538,7 +118548,7 @@
    "source": "wiki"
   },
   "Off the Rails#504": {
-   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you. huh.",
+   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you, huh.",
    "dst": "...아, 미안. 사건을 돕겠다고 해 놓고, 생각해 보니 도움 될 만한 걸 거의 못 봤네. 흠.",
    "role": "desc",
    "kind": "dialogue",
@@ -119678,7 +119688,7 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about?",
+   "src": "...Anything else to talk about?",
    "dst": "또 할 얘기 있으세요?",
    "role": "desc",
    "kind": "dialogue",
@@ -121738,7 +121748,7 @@
    "source": "captured.json"
   },
   "Off the Rails#837": {
-   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival both here AND there, and now I'll miss both... Oh well...",
    "dst": "여행 일정을 제대로 안 짠 게 아쉬울 뿐이에요... 여왕 축제를 두 군데서 볼 수 있었는데, 이제 둘 다 놓치게 생겼어요... 뭐, 어쩔 수 없죠...",
    "role": "desc",
    "kind": "dialogue",
@@ -122966,6 +122976,136 @@
    "stage": "Stage 8",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Off the Rails#964": {
+   "src": "Hey... Could you stop that, please?",
+   "dst": "저기요... 그것 좀 그만해 주실래요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Ticket Collector",
+   "source": "captured"
+  },
+  "Off the Rails#965": {
+   "src": "Ah, alright. Well, do come back if you do want to talk about anything.",
+   "dst": "아, 그래요. 뭐, 하고 싶은 얘기 있으면 또 오세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Malic",
+   "source": "captured"
+  },
+  "Off the Rails#966": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Demma\"",
+   "dst": "이 사물함엔 \"Demma\"라고 휘갈겨 쓴 쪽지가 붙어 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#967": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Cemor\"",
+   "dst": "이 사물함엔 \"Cemor\"라고 휘갈겨 쓴 쪽지가 붙어 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#968": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Flinn\"",
+   "dst": "이 사물함엔 \"Flinn\"이라고 휘갈겨 쓴 쪽지가 붙어 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#969": {
+   "src": "Bye...",
+   "dst": "잘 가...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Flinn",
+   "source": "captured"
+  },
+  "Off the Rails#970": {
+   "src": "[+{~} Harvin's Notebook]",
+   "dst": "[+{~} Harvin의 수첩]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#971": {
+   "src": "[New Notes Added]",
+   "dst": "[새 메모 추가됨]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#972": {
+   "src": "[New \"Evidence\" Gained]",
+   "dst": "[새 \"증거\" 획득]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#973": {
+   "src": "Oh, alright then. Good luck catching that murderer.",
+   "dst": "아, 그러시군요. 살인범 꼭 잡으시길 바랄게요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Telati",
+   "source": "captured"
+  },
+  "Off the Rails#974": {
+   "src": "[Strong Evidence Gained]",
+   "dst": "[강력한 증거 획득]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#975": {
+   "src": "Thank you for the chat, it's helped me take my mind off things. Good luck figuring out the murder!",
+   "dst": "얘기 고마웠어요, 덕분에 기분이 좀 풀렸어요. 살인 사건 꼭 풀길 바랄게요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Maddison",
+   "source": "captured"
+  },
+  "Off the Rails#976": {
+   "src": "...Nice.",
+   "dst": "...좋아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
@@ -125350,7 +125490,7 @@
    "source": "wiki"
   },
   "Overture to Despair#049": {
-   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to say, too?",
+   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to stay, too?",
    "dst": "그리고... 필요한 정보를 찾기까지... 얼마나 걸릴지 몰라. 그러니까... 묵을 곳도?",
    "role": "desc",
    "kind": "dialogue",
@@ -125830,8 +125970,8 @@
    "source": "wiki"
   },
   "Overture to Despair#097": {
-   "src": "Here, the cheapest I have available. In total, that will cost you... {~} .",
-   "dst": "여기, 제가 가진 것 중 가장 싼 겁니다. 전부 합쳐서... {~}.",
+   "src": "Here, the cheapest I have available. In total, that will cost you... {~} {#}.",
+   "dst": "여기, 제가 가진 것 중 가장 싼 겁니다. 전부 합쳐서... {~} {#}입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -125890,8 +126030,8 @@
    "source": "wiki"
   },
   "Overture to Despair#103": {
-   "src": "Ah, you're back. As I said, the clothes will cost you {~} EB.",
-   "dst": "아, 다시 오셨네요. 말씀드렸듯이 옷값은 {~} EB예요.",
+   "src": "Ah, you're back. As I said, the clothes will cost you {~} {#}.",
+   "dst": "아, 다시 오셨네요. 말씀드렸듯이 옷값은 {~} {#}예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -126220,7 +126360,7 @@
    "source": "wiki"
   },
   "Overture to Despair#136": {
-   "src": "The {p} are known for thier very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
+   "src": "The {p} are known for their very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
    "dst": "{p}은(는) 경치 좋은 산책로와 등산로로 유명해요! 호수 주변을 걷거나 산에 오르는 걸 추천드려요.",
    "role": "desc",
    "kind": "dialogue",
@@ -126330,8 +126470,8 @@
    "source": "wiki"
   },
   "Overture to Despair#147": {
-   "src": "* - No noise after {~} PM.",
-   "dst": "* - 오후 {~}시 이후 소음 금지.",
+   "src": "- No noise after {~} PM.",
+   "dst": "- 오후 {~}시 이후 소음 금지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -127502,7 +127642,7 @@
    "source": "wiki"
   },
   "Overture to Despair#264": {
-   "src": "And here we are with your orders! You fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
+   "src": "And here we are with your orders! Your fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
    "dst": "주문하신 요리 나왔습니다! 아가씨는 생선 타코 - 새콤한 양배추를 채운 철갑상어 머리에 쌀식초, 바삭한 김, 진한 감칠맛 소스를 버무렸어요.",
    "role": "desc",
    "kind": "dialogue",
@@ -129022,7 +129162,7 @@
    "source": "wiki"
   },
   "Overture to Despair#416": {
-   "src": "Oh, get to the point, would you? I have more important things to attend to then this frivolous attempt at information gathering.",
+   "src": "Oh, get to the point, would you? I have more important things to attend to than this frivolous attempt at information gathering.",
    "dst": "오, 요점만 말하지 그래? 이런 하찮은 정보 수집보다 더 중요한 일이 있어서 말이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -129412,8 +129552,8 @@
    "source": "wiki"
   },
   "Overture to Despair#455": {
-   "src": "War, Chaos, Hate... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
-   "dst": "전쟁, 혼돈, 증오... 뭐라 부르든 상관없다. 그것은 열등했다. 자신을 낳은 쌍둥이보다 스스로를 다스리는 힘이 약했지.",
+   "src": "War, Chaos, Hate, Corruption... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
+   "dst": "전쟁, 혼돈, 증오, 타락... 뭐라 부르든 상관없다. 그것은 열등했다. 자신을 낳은 쌍둥이보다 스스로를 다스리는 힘이 약했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -130012,7 +130152,7 @@
    "source": "wiki"
   },
   "Overture to Despair#515": {
-   "src": "Oh, het over yourself! I was there too, idiot!",
+   "src": "Oh, get over yourself! I was there too, idiot!",
    "dst": "아, 좀 작작 해! 나도 거기 있었거든, 바보야!",
    "role": "desc",
    "kind": "dialogue",
@@ -130693,8 +130833,8 @@
    "source": "wiki"
   },
   "Overture to Despair#583": {
-   "src": "I really... can't stop thinking about it. If only he could have been here with us. What would he have done? Which side would he have taken?",
-   "dst": "정말... 생각을 멈출 수가 없어. 그가 우리랑 같이 있었다면. 그라면 어떻게 했을까? 어느 편에 섰을까?",
+   "src": "Sigh. I can't stop thinking about it. What if he could have been here with us? What would he have done? Which side would he have taken?",
+   "dst": "하아. 생각을 멈출 수가 없어. 그가 우리랑 같이 있었다면 어땠을까? 그라면 어떻게 했을까? 어느 편에 섰을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -131023,6 +131163,726 @@
    "speaker": "",
    "source": "captured",
    "full": "We're looking for some hip new fashion."
+  },
+  "Overture to Despair#616": {
+   "src": "Which cover would you like to take a closer look at?",
+   "dst": "어떤 표지를 자세히 보시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#617": {
+   "src": "There's a drawing of the Queen completing a puzzle. Next to it, there's a red circle that seems to contain some sort of rant in very small print so as to fit into the shape. It's barely legible.",
+   "dst": "여왕이 퍼즐을 푸는 그림이 있다. 옆의 빨간 동그라미 안에는 어떤 불평이 아주 작은 글씨로 빼곡히 적혀 있다. 거의 읽을 수 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#618": {
+   "src": "\"TO ALL THE COMPLAINERS: SURELY YOU MUST HAVE SOME IDEA OF HOW HARD IT IS TO COME UP WITH NEW PUZZLES EVERY DAY????\"",
+   "dst": "\"불평꾼 여러분께: 매일 새 퍼즐을 만드는 게 얼마나 힘든지 설마 모르시진 않겠죠????\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#619": {
+   "src": "\"NEW CROSSWORDS, NEW WORD SEARCHES, NEW SPOT THE DIFFERENCES, ETC ETC, EVERY DAY, AND THEY HAVE TO BE TOPICAL????\"",
+   "dst": "\"새 십자말풀이, 새 낱말 찾기, 새 틀린 그림 찾기, 기타 등등, 매일, 그것도 시사 주제로????\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#620": {
+   "src": "Inside, there are some cute illustrations of Her Majesty next to every puzzle. It's very cozy.",
+   "dst": "안에는 퍼즐마다 여왕 폐하의 귀여운 삽화가 곁들여 있다. 아주 포근한 느낌이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#621": {
+   "src": "All the wording is very optimistic, an impressive feat given its mention that this is his {~}th year single.",
+   "dst": "문구는 모두 아주 낙관적이다. 솔로 {~}년째라는 언급을 감안하면 대단한 일이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#622": {
+   "src": "A catch like him???",
+   "dst": "저런 일등 신랑감이???",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#623": {
+   "src": "HER MAJESTY IS NOT WORRIED ABOUT A REVOLUTION",
+   "dst": "여왕 폐하는 혁명을 걱정하지 않으신다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#624": {
+   "src": "According to an expert, Her Majesty has been seen strolling the streets of Aelumia, which is a clear signal that unrest elsewhere in Fruma has not unsettled the Crown.",
+   "dst": "한 전문가에 따르면 여왕 폐하께서 Aelumia 거리를 산책하시는 모습이 목격되었으며, 이는 Fruma 각지의 소요에도 왕실이 동요하지 않는다는 분명한 신호다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#625": {
+   "src": "\"Her composure is a sign for the continued success of Fruma!\" said the expert in an interview. (Expert prefers to be left anonymous)",
+   "dst": "\"폐하의 침착함은 Fruma가 계속 번영할 징조입니다!\" 전문가는 인터뷰에서 이렇게 말했다. (전문가는 익명을 요청함)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#626": {
+   "src": "Today's weather: Heavy fog from the south, rising tensions, and low chance of thunder this evening.",
+   "dst": "오늘의 날씨: 남쪽에서 짙은 안개, 긴장 고조, 저녁에 낮은 확률로 천둥.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#627": {
+   "src": "The... experts of Fruma are very well informed it appears.",
+   "dst": "Fruma의... 전문가들은 아주 정통한 모양이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#628": {
+   "src": "\"Is This The New Fashion Craze? Frumans Seen Sporting New Look.\"",
+   "dst": "\"새로운 패션 열풍인가? 새 스타일로 나타난 Fruma인들.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#629": {
+   "src": "Curious, you take a further look.",
+   "dst": "궁금해서 좀 더 살펴본다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#630": {
+   "src": "Gold boots, dark grey pants, white T-shirt, blue hat...??? Who is coming up with these trends???",
+   "dst": "금색 부츠, 짙은 회색 바지, 흰 티셔츠, 파란 모자...??? 대체 누가 이런 유행을 만드는 거야???",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#631": {
+   "src": "Rules of The Crown Jewel",
+   "dst": "왕관의 보석 이용 규칙",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#632": {
+   "src": "- No entering other guests' rooms.",
+   "dst": "- 다른 투숙객의 객실 출입 금지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#633": {
+   "src": "- No vandalizing the property.",
+   "dst": "- 기물 파손 금지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#634": {
+   "src": "There's a sign on the elevator door.",
+   "dst": "엘리베이터 문에 안내문이 붙어 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#635": {
+   "src": "\"The elevator is currently out of order. We apologize for the inconvenience.\" Signed, The Crown Jewel Management Team",
+   "dst": "\"엘리베이터가 현재 고장 났습니다. 불편을 드려 죄송합니다.\" 왕관의 보석 관리팀 드림",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#636": {
+   "src": "There's a note attached...",
+   "dst": "쪽지가 붙어 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#637": {
+   "src": "\"ATTENTION CUSTOMERS: No, despite the beer-like design of this vending machine, it does not serve alcoholic beverages! Please go to the bar for those! And stop asking us about it!\"",
+   "dst": "\"고객 여러분께: 맥주처럼 생겼지만 이 자판기에서 술은 팔지 않습니다! 술은 바에서 드세요! 그리고 제발 그만 좀 물어보세요!\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#638": {
+   "src": "Now playing: Bullfrog's Bellow ({p})...",
+   "dst": "재생 중: Bullfrog's Bellow ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#639": {
+   "src": "Now playing: Whisper (Auburn)...",
+   "dst": "재생 중: Whisper (Auburn)...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#640": {
+   "src": "Now playing: Day In, Day Out ({p})...",
+   "dst": "재생 중: Day In, Day Out ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#641": {
+   "src": "Now playing: Ballad of the Trees (Savanna)...",
+   "dst": "재생 중: Ballad of the Trees (Savanna)...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#642": {
+   "src": "Now playing: Ignorance is Bliss ({p})...",
+   "dst": "재생 중: Ignorance is Bliss ({p})...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#643": {
+   "src": "It appears to be out of order.",
+   "dst": "고장 난 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#644": {
+   "src": "Listen! Listen! Do you hear that?",
+   "dst": "들어 봐요! 들어 봐요! 저 소리 들려요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#645": {
+   "src": "There! A very slight rumble. And it's not the trains; I can tell the difference!",
+   "dst": "저거요! 아주 희미한 우르릉 소리. 열차는 아니에요. 전 구별할 수 있다고요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#646": {
+   "src": "The Mk V Mule-class Royal Freight Engine has a distinct uneven rhythm due to its weighted frontal bogie, whereas the Circuit-class Master Passenger Locomotive {~}-{~} makes a low rumble from harmonic oscillations in its long boiler.",
+   "dst": "Mk V 뮬급 왕실 화물 기관차는 무거운 전방 대차 때문에 리듬이 독특하게 불규칙하고, 서킷급 마스터 여객 기관차 {~}-{~}은 긴 보일러의 조화 진동으로 낮게 우르릉거려요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#647": {
+   "src": "This is neither! It must be something happening in the Saltpetre mine that lies below {p}. But what! No normal pickaxe-based excavation could make this sort of tone... unless...",
+   "dst": "이건 둘 다 아니에요! {p} 아래 초석 광산에서 뭔가 벌어지는 게 틀림없어요. 하지만 뭘까요! 평범한 곡괭이 채굴로는 이런 소리가 안 나요... 설마...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#648": {
+   "src": "The rumours of the Mk VI are true!",
+   "dst": "Mk VI 소문이 사실이었어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#649": {
+   "src": "I must dwell on this. Good day!",
+   "dst": "곱씹어 봐야겠어요. 그럼 이만!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#650": {
+   "src": "\"May we unearth the truth long buried and bring forth change.\"",
+   "dst": "\"오래 묻힌 진실을 파내어 변화를 일으키기를.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#651": {
+   "src": "Maybe you could ask the merchant inside about the wind chime?",
+   "dst": "안에 있는 상인에게 풍경종에 대해 물어보면 어떨까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#652": {
+   "src": "May we unearth the truth long buried and bring forth change. Never forget that.",
+   "dst": "오래 묻힌 진실을 파내어 변화를 일으키기를. 결코 잊지 마세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Newspaper Merchant",
+   "source": "captured"
+  },
+  "Overture to Despair#653": {
+   "src": "...seems like they're occupied. You should follow Sui and see what's going on.",
+   "dst": "...바쁜 것 같다. Sui를 따라가서 무슨 일인지 확인해 봐야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#654": {
+   "src": "The Art of the New Age",
+   "dst": "새 시대의 예술",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#655": {
+   "src": "A comprehensive archive of artwork created during the New Age, arranged chronologically.",
+   "dst": "새 시대에 창작된 예술품을 연대순으로 정리한 종합 자료집.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#656": {
+   "src": "The painting shows a flooded landscape with a Maple tree coming out of the dark waters. There is a single windchime hanging from a branch of the tree.",
+   "dst": "그림에는 물에 잠긴 풍경과 어두운 물속에서 솟은 단풍나무가 그려져 있다. 나뭇가지에는 풍경종 하나가 매달려 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#657": {
+   "src": "Twilight Skies",
+   "dst": "황혼의 하늘",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#658": {
+   "src": "Painted in {~}NA by Yuu Higu. This artwork seems to utilise water paints as the base with coloured glass shards glued on. This is the first record of this technique.",
+   "dst": "Yuu Higu가 {~}NA에 그림. 수채 물감을 바탕으로 색유리 조각을 붙인 작품으로 보인다. 이 기법의 첫 기록이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#659": {
+   "src": "The painting seems to represents the differences in the {p} and Auburn. The ruined Auburn after the great flood juxtaposed to the idyllic highlands. This is clearly shown in the colours.",
+   "dst": "이 그림은 {p}과(와) Auburn의 차이를 나타내는 듯하다. 대홍수 뒤 폐허가 된 Auburn과 목가적인 고원이 나란히 놓여 있다. 색채에 이 점이 뚜렷이 드러난다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#660": {
+   "src": "The painting has two sides with different colouring styles. One half features the ruined Auburn in gray and muted colours. The other half shows the {p} in bright colouring. The two sides are split by the dam.",
+   "dst": "그림은 채색이 다른 두 면으로 나뉜다. 한쪽은 폐허가 된 Auburn을 회색과 탁한 색으로, 다른 쪽은 {p}을(를) 밝은 색으로 그렸다. 두 면은 댐으로 갈린다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#661": {
+   "src": "The Khuia Haiku Collection:",
+   "dst": "Khuia 하이쿠 모음집:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#662": {
+   "src": "Written by the poet Khuia in KA{~}",
+   "dst": "시인 Khuia가 KA{~}에 씀",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#663": {
+   "src": "Power, glory, flame",
+   "dst": "힘, 영광, 불꽃",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#664": {
+   "src": "You open another page at random...",
+   "dst": "또 아무 페이지나 펼친다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#665": {
+   "src": "Thunder strikes, earth impairs",
+   "dst": "천둥이 치고, 대지가 상한다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#666": {
+   "src": "Break beyond, stars shine",
+   "dst": "경계를 부수면 별이 빛난다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#667": {
+   "src": "What do you want to grow?",
+   "dst": "무엇을 기르시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#668": {
+   "src": "The heather plant requires a lot of sunlight.",
+   "dst": "헤더는 햇빛이 많이 필요하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#669": {
+   "src": "The Death Penalty - The Good and the Bad",
+   "dst": "사형 제도 - 장점과 단점",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#670": {
+   "src": "The death penalty remains an effective tool for maintaining order, mainly through its value as a deterrent. When people know there is a real risk of execution,",
+   "dst": "사형은 주로 억지력 덕분에 여전히 질서 유지에 효과적인 수단이다. 처형될 위험이 실재한다는 것을 알면",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#671": {
+   "src": "they are far less likely to break the law. That said, if it is used too often, it can start to backfire and reduce the number of people available for forced",
+   "dst": "사람들은 법을 어길 가능성이 훨씬 낮아진다. 다만 너무 자주 쓰면 역효과가 나서 강제",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#672": {
+   "src": "conscription in the Wynnic War and cutting into the labor supply for the work camps.",
+   "dst": "징집으로 Wynn 전쟁에 보낼 인원이 줄고, 노동 수용소의 노동력 공급까지 깎일 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#673": {
+   "src": "such judgments would help maintain the right balance between fear and function.",
+   "dst": "면 공포와 효용 사이의 적절한 균형을 유지하는 데 도움이 될 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#674": {
+   "src": "Magical Observations: The Instable Cosmos",
+   "dst": "마법 관찰 기록: 불안정한 우주",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#675": {
+   "src": "Utilising my blessing of cosmic manipulation I have noticed how volatile my spells have become.",
+   "dst": "우주를 다루는 축복을 쓰면서 내 주문이 얼마나 불안정해졌는지 깨달았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#676": {
+   "src": "This power is addicting. The risk of casting such magic urges me to use it more, and more, and more.",
+   "dst": "이 힘은 중독적이야. 이런 마법을 쓰는 위험이 나를 더, 더, 더 쓰게 부추겨.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#677": {
+   "src": "The Queen has strictly advised against frequent magic use... Luckily my sword skills tend to suffice in duels.",
+   "dst": "여왕 폐하께서는 마법을 자주 쓰지 말라고 엄히 이르셨어... 다행히 결투에선 검술만으로 대개 충분해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#678": {
+   "src": "Ever since my ascension and the blessing of the stars that followed, I have little use of my previous elemental magics.",
+   "dst": "승천과 뒤이은 별의 축복 이후로, 예전의 원소 마법은 쓸 일이 거의 없어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#679": {
+   "src": "Teaching myself the elements were fun. Magic is simply easy. Everyone should've been able to realise the nature of our world and the elements that make it up.",
+   "dst": "원소를 독학하는 건 즐거웠어. 마법은 그저 쉬워. 누구나 이 세계의 본질과 그걸 이루는 원소를 깨달을 수 있었을 텐데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#680": {
+   "src": "After my first discovery of thunder magic the rest came easier and easier. All elements are, the same, but also completely different.",
+   "dst": "천둥 마법을 처음 깨친 뒤로 나머지는 점점 쉬워졌어. 모든 원소는 같으면서도, 완전히 달라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#681": {
+   "src": "You tell her about remaking the connections. About the monoliths, deactivated with intent, their light fading.",
+   "dst": "연결을 다시 잇던 일을 그녀에게 말한다. 의도적으로 꺼진 모놀리스들과, 사그라드는 그 빛을.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#682": {
+   "src": "You tell her about crossing the bridge. About your encounter with the Scourge of Wynn. About his battle with Lari, from start to end.",
+   "dst": "다리를 건넌 일을 그녀에게 말한다. Wynn의 재앙과 마주친 일을. 그와 Lari의 전투를 처음부터 끝까지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#683": {
+   "src": "You tell her about Orphion. About the Parasite latched on, eating through his radiance. About the struggle to remove it.",
+   "dst": "Orphion에 대해 그녀에게 말한다. 달라붙어 그의 광휘를 파먹던 기생체를. 그것을 떼어 내려던 사투를.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#684": {
+   "src": "Of course you would... well then, are we finished here? Might we finally dismiss our little guest and return to important matters.",
+   "dst": "그렇겠지... 그럼, 여기 볼일은 끝났나? 이제 우리 작은 손님을 내보내고 중요한 일로 돌아가도 되겠지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Majin",
+   "source": "captured"
+  },
+  "Overture to Despair#685": {
+   "src": "I wish... he could have been here with us. There was so much waiting for him in Fruma. So many people. Just a few weeks later, and...",
+   "dst": "그가... 우리랑 같이 있었으면 좋았을 텐데. Fruma엔 그를 기다리는 게 정말 많았어. 사람들도 정말 많았고. 몇 주만 더 있었으면...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#686": {
+   "src": "...ha. What a difference, a few weeks would've made. If only. If only.",
+   "dst": "...하. 몇 주면 모든 게 달라졌을 텐데. 그랬다면. 그랬다면.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#687": {
+   "src": "...ha. Maybe.",
+   "dst": "...하. 그럴지도.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
   },
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
@@ -156378,7 +157238,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#305": {
-   "src": "It... it finally feels like we have a second to breath.",
+   "src": "It... it finally feels like we have a second to breathe.",
    "dst": "이제... 이제야 겨우 숨 돌릴 틈이 생긴 것 같아.",
    "role": "desc",
    "kind": "dialogue",
@@ -156408,7 +157268,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#308": {
-   "src": "It must have be worth stealing it... somehow.",
+   "src": "It must have been worth stealing it... somehow.",
    "dst": "훔칠 만한 가치가 있었겠지... 어떻게든.",
    "role": "desc",
    "kind": "dialogue",
@@ -156484,6 +157344,26 @@
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shrouded in Mist#316": {
+   "src": "Find a way to destroy the drill, fast.",
+   "dst": "드릴을 부술 방법을 찾아, 빨리.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "Shrouded in Mist#317": {
+   "src": "[-{~} Rake]",
+   "dst": "[-{~} 갈퀴]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -158298,8 +159178,8 @@
    "source": "captured"
   },
   "Solidarity of Steel#181": {
-   "src": "Yeah, yeah! Come on, what are you waiting for? Go {u}, and find out what they're talking about.",
-   "dst": "그래, 그래! 자, 뭘 기다려? 가라, {u}, 둘이 무슨 얘기 하는지 알아내!",
+   "src": "Yeah, yeah! Come on, what are you waiting for? Go interrupt Syndra and Quill, and find out what they're talking about.",
+   "dst": "그래, 그래! 자, 뭘 기다려? 가서 Syndra랑 Quill 말 끊고, 둘이 무슨 얘기 하는지 알아내!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -161638,7 +162518,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#515": {
-   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equatio- nnh.",
+   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equati- nnh.",
    "dst": "네 일정- Oru한테 과외라도 받나? 이 지방 비상사태는 네 헌장보다 값이 훨씬 커, 군주. 그러니 방정식에 더하겠- 읏.",
    "role": "desc",
    "kind": "dialogue",
@@ -162016,6 +162896,86 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Solidarity of Steel#553": {
+   "src": "New Chapter Started: The Steel Feather",
+   "dst": "새 챕터 시작: 강철 깃털",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#554": {
+   "src": "Wait for Zeph!",
+   "dst": "Zeph를 기다리세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#555": {
+   "src": "You- you didn't find any clothing? I can't leave with- with only one set of clothes! I know I have a shirt somewhere...",
+   "dst": "오, 옷을- 옷을 못 찾았어요? 옷 한- 한 벌만으로는 못 떠나요! 어딘가에 셔츠가 있을 텐데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#556": {
+   "src": "There's... nothing to sleep with in- in here. You couldn't f-find a pillow or blanket? I'd e-even take a mattress...",
+   "dst": "여긴... 잘 때 쓸 게- 쓸 게 없어요. 베개나 담요를 모, 못 찾았어요? 매트리스라도 괘, 괜찮은데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#557": {
+   "src": "Oh... n-nothing to pass the time... I know I had a book and a deck of cards, I know I did...",
+   "dst": "아... 시, 시간 보낼 게 없네요... 책이랑 카드 한 벌이 있었는데, 분명 있었는데...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#558": {
+   "src": "...As much as this little place is- is run down, it's... it's home. I can't just leave- I can't. I can't go without... without something to remember it by. Please, please, find my ring or my photograph. Please.",
+   "dst": "...이 작은 곳이 아무리- 아무리 낡았어도, 여긴... 여긴 집이에요. 그냥 못 떠나요- 못 해요. 이곳을 기억할... 기억할 것도 없이는 못 가요. 제발, 제발, 제 반지나 사진을 찾아 주세요. 제발요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#559": {
+   "src": "Well, there's no rush to be here. Quill's going to be a while still. Why don't you go talk to Sui and grab some food?",
+   "dst": "뭐, 여기 서두를 필요 없어. Quill은 아직 한참 걸릴 거야. Sui한테 가서 밥이라도 챙겨 먹지 그래?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "Solidarity of Steel#560": {
+   "src": "[+{~} Roughworks Food]",
+   "dst": "[+{~} Roughworks 식량]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Stable Story#000": {
    "src": "Hey! Get out of here! Scram! Shoo!",
@@ -208952,7 +209912,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#201": {
-   "src": "Is it! I suppose it is, haha! I am glad to have had the oppurtunity to learn to use it.",
+   "src": "Is it! I suppose it is, haha! I am glad to have had the opportunity to learn to use it.",
    "dst": "그런가요! 그런 것 같네요, 하하! 쓰는 법을 배울 기회가 있어서 다행이에요.",
    "role": "desc",
    "kind": "dialogue",
@@ -212192,7 +213152,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#525": {
-   "src": "So. So, so,so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
+   "src": "So. So, so, so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
    "dst": "그러니까. 그러니까, 그러니까... 왕실이 여기 아래 우릴 내버려 둔 이유는... 내가 Soosu 군주와 일해 왔기 때문이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -214761,6 +215721,36 @@
    "speaker": "Yusanu",
    "source": "captured.json"
   },
+  "The Price of Ingenuity#792": {
+   "src": "It wouldn't be a good idea to go back down there.",
+   "dst": "다시 내려가는 건 좋은 생각이 아니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#793": {
+   "src": "[+{~} Resonance Weaver]",
+   "dst": "[+{~} 공명 직조기]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#794": {
+   "src": "You'll get us found out!",
+   "dst": "너 때문에 들키겠어!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "Yusanu",
+   "source": "captured"
+  },
   "The Qira Hive (Quest)#000": {
    "src": "I see another lost soul has found their way to The {p}!",
    "dst": "길 잃은 영혼이 또 {p}에 찾아왔군!",
@@ -217102,8 +218092,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "좋아요, 남았어요! 그걸 끝내실 때쯤 저도 여기 다 끝냈으면 좋겠네요. 그다음 계속해요!",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "좋아요, {~}개 남았어요! 그걸 끝내실 때쯤 저도 여기 다 끝냈으면 좋겠네요. 그다음 계속해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217212,8 +218202,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "Marseled의 찻집은 북서쪽 능선 위에 있어요. 정확한 위치가 필요하면 확인해 보세요!",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "Marseled의 찻집은 북서쪽 능선 위에 있어요. 정확한 위치가 필요하면 콘텐츠 북을 확인해 보세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217562,8 +218552,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "소문은 내셨어요? 사람들이 보통 어디 있는지 확인해서 소식을 전해 주세요! 물론 당신도 성대한 재개장에 초대됐어요.",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "소문은 내셨어요? 제 메모에서 사람들이 보통 어디 있는지 확인해서 소식을 전해 주세요! 물론 당신도 성대한 재개장에 초대됐어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217582,7 +218572,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "좋아요, 잠깐만요... 그리고... 여기요! 어디로 갈지 확인하는 거 잊지 마세요!",
    "role": "desc",
    "kind": "dialogue",
@@ -217592,8 +218582,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "제가 적은 곳은 전부 {u}예요. 그래도 어려우시면 말씀하세요, 새로 적어 드릴게요!",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "제가 적은 곳은 전부 {p} 바로 근처예요. 그래도 어려우시면 말씀하세요, 새로 적어 드릴게요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -217802,7 +218792,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "그리고, 그리고, 그리고, 그, 그 군주님께, 끝났다고 말씀드릴 수 있고, 그럼 그걸 받고... 세상에, 끝났는데 끝나고 나니까 전보다 더 떨려요, 으아-",
    "role": "desc",
    "kind": "dialogue",
@@ -218490,6 +219480,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "그늘에서 쉬고 있다. 무언가에 흡족해 보이지만, 무엇 때문인지는 알 수 없다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "아직 다 잠들지 않았다. 몸을 떨고 있는데... 기대감 때문일까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "Maripe가 일하는 모습을 호기심 가득히 지켜보는 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "여기 적힌 사람들은 이미 다들 온천을 즐기고 있을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "언제든 깰 것처럼 얕게 잠들어 있다. 온천을 지켜보는 듯하다... 아니면 아이의 작품을 살피는 뿌듯한 부모 같기도 하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "곤히 잠들어 있다. 숨소리가 부드러워서, 오래 듣다 보면 잠들 것만 같다... 뿌듯한 부모가 이불을 덮어 주듯이.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "아주 편안하게 자고 있다. Maripe가 세심하게 밑에 수건을 깔아 준 모양이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "손님들을 구경하는 게 즐거운 모양이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "천천히 졸고 있다. 이 순간을... 음미하는 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "그늘에서 쉬고 있다. 주변에 사람이 많은데도 만족스러워 보인다... 아니면 사람이 많아서일까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Sewers of Ragni#000": {
    "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
@@ -233472,7 +234562,7 @@
    "source": "wiki"
   },
   "True Colours#134": {
-   "src": "{u}. You've been busy haven't you?",
+   "src": "{u}. You've been busy, haven't you?",
    "dst": "{u}. 꽤 바빴나 보네?",
    "role": "desc",
    "kind": "dialogue",
@@ -233492,7 +234582,7 @@
    "source": "wiki"
   },
   "True Colours#136": {
-   "src": "Imagine my surprise when I found you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
+   "src": "Imagine my surprise when I found out you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
    "dst": "이 모든 소동의 장본인이 너라는 걸 알았을 때 얼마나 놀랐는지 상상해 봐. 애초에 네가 Fruma에 있다는 것부터!",
    "role": "desc",
    "kind": "dialogue",
@@ -233502,7 +234592,7 @@
    "source": "wiki"
   },
   "True Colours#137": {
-   "src": "Sigh... look. They thought you might try the prison even though it isn't really an option. Especially not from this side- there are guards everywhere.",
+   "src": "Sigh... look. They thought you might try the prison, even though it isn't really an option. Especially not from this side- there are guards everywhere.",
    "dst": "하아... 봐. 감옥은 사실 방법이 못 되는데도 네가 올지도 모른다고 예상하더라. 특히 이쪽은 사방에 경비병이 있어.",
    "role": "desc",
    "kind": "dialogue",
@@ -233522,7 +234612,7 @@
    "source": "wiki"
   },
   "True Colours#139": {
-   "src": "Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
+   "src": "Well. Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
    "dst": "적어도 평소엔. 둘이서만 얘기하려고 잠깐 치워 뒀어.",
    "role": "desc",
    "kind": "dialogue",
@@ -233552,8 +234642,8 @@
    "source": "wiki"
   },
   "True Colours#142": {
-   "src": "Sigh... she mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
-   "dst": "하아... 그분이 너한테도 말했지? 우리 힘을 넘어선 세력들이 벌이는, 이 세계를 둘러싼 끝없는 전쟁?",
+   "src": "She mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
+   "dst": "그분이 너한테도 말했지? 우리 힘을 넘어선 세력들이 벌이는, 이 세계를 둘러싼 끝없는 전쟁?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -233688,8 +234778,8 @@
    "source": "wiki"
   },
   "True Colours#155": {
-   "src": "...I am. I'm not sure how to feel about it still, honestly.",
-   "dst": "...맞아. 솔직히 아직도 어떻게 받아들여야 할지 모르겠어.",
+   "src": "...I am. I'm not sure how to feel about it still, honestly. There's... two parts to it.",
+   "dst": "...맞아. 솔직히 아직도 잘 모르겠어. 여기엔... 두 가지 면이 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -233868,7 +234958,7 @@
    "source": "wiki"
   },
   "True Colours#174": {
-   "src": "To some extent, it's a relief - but more than that it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
+   "src": "To some extent, it's a relief - but more than that, it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
    "dst": "어느 정도는 안심이 되지만 그보다 화가 나. 그렇게 오랫동안 날 짓눌렀는데, 결국... 아무 의미도 없었다고?",
    "role": "desc",
    "kind": "dialogue",
@@ -233888,7 +234978,7 @@
    "source": "wiki"
   },
   "True Colours#176": {
-   "src": "...you being here is only making it harder for me to do anything about it of course.",
+   "src": "...you being here is only making it harder for me to do anything about it, of course.",
    "dst": "...물론 네가 여기 있으면 그걸 바꾸기가 더 어려워질 뿐이지만.",
    "role": "desc",
    "kind": "dialogue",
@@ -233998,7 +235088,7 @@
    "source": "wiki"
   },
   "True Colours#187": {
-   "src": "Nobody will listen to anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
+   "src": "Nobody will listen about anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
    "dst": "다들 너 말고는 아무 얘기도 안 들으려 해... 그럴 만도 하지! 요새 하나를 통째로 몰살하고, Zhiraok 군주를 벌써 두 번이나 죽였잖아...",
    "role": "desc",
    "kind": "dialogue",
@@ -234038,7 +235128,7 @@
    "source": "wiki"
   },
   "True Colours#191": {
-   "src": "I...ugh. I wish it hadn't gone the way it did.",
+   "src": "I... ugh. I wish it hadn't gone the way it did.",
    "dst": "난... 으. 일이 그렇게 되지 않았으면 좋았을 텐데.",
    "role": "desc",
    "kind": "dialogue",
@@ -234048,7 +235138,7 @@
    "source": "wiki"
   },
   "True Colours#192": {
-   "src": "I know. I know. I tried to warn you, to get you to call it off, but...sigh. It doesn't matter now. It's already done.",
+   "src": "I know. I know. I tried to warn you, to get you to call it off, but... sigh. It doesn't matter now. It's already done.",
    "dst": "알아. 안다고. 경고해서 그만두게 하려 했는데... 하아. 이제 상관없어. 이미 끝난 일이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -234078,7 +235168,7 @@
    "source": "wiki"
   },
   "True Colours#195": {
-   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to...explain things.",
+   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to... explain things.",
    "dst": "왕실이 널 찾으려고 병사를 풀었어. 여왕 폐하께서 너와 이야기하고 싶어 하셔. 사정을... 설명하려고.",
    "role": "desc",
    "kind": "dialogue",
@@ -234108,7 +235198,7 @@
    "source": "wiki"
   },
   "True Colours#198": {
-   "src": "…I think you should hear her out, but that’s your choice to make. I just thought you should know.",
+   "src": "...I think you should hear her out, but... that's your choice to make. I just thought you should know.",
    "dst": "...그분 얘기를 들어 봤으면 하지만, 선택은 네 몫이야. 그냥 알아 둬야 할 것 같았어.",
    "role": "desc",
    "kind": "dialogue",
@@ -234148,7 +235238,7 @@
    "source": "wiki"
   },
   "True Colours#202": {
-   "src": "…who else?",
+   "src": "...who else?",
    "dst": "...또 누구?",
    "role": "desc",
    "kind": "dialogue",
@@ -234218,7 +235308,7 @@
    "source": "wiki"
   },
   "True Colours#209": {
-   "src": "Eugh. He’s... frustrating. I mean we both saw him during that tournament, right? He really thinks he’s better than everyone else around him.",
+   "src": "Eugh. He's... frustrating. I mean, we both saw him during that tournament, right? He really thinks he's better than everyone else around him.",
    "dst": "으. 그는... 짜증 나. 그 대회에서 우리 둘 다 봤잖아, 그렇지? 자기가 주변 누구보다 잘났다고 진심으로 믿어.",
    "role": "desc",
    "kind": "dialogue",
@@ -234298,7 +235388,7 @@
    "source": "wiki"
   },
   "True Colours#217": {
-   "src": "…luckily he stays at Gravity’s Monolith for the most part. He won’t be a problem if you just… stay away.",
+   "src": "...luckily, he stays at Gravity's Monolith for the most part. He won't be a problem if you just... stay away.",
    "dst": "...다행히 대부분 중력의 모놀리스에 있어. 그냥... 멀리하면 문제 될 일은 없어.",
    "role": "desc",
    "kind": "dialogue",
@@ -234418,7 +235508,7 @@
    "source": "wiki"
   },
   "True Colours#229": {
-   "src": "…it’s rare to find someone who understands, you know? Of course, I’ve had you, and… and Aledar, but it’s isolating. Even others from Fruma, they just… don’t get it.",
+   "src": "...it's rare to find someone who understands, you know? Of course, I've had you, and... and Aledar, but... it's isolating. Even others from Fruma, they just... don't get it.",
    "dst": "...이해해 주는 사람을 만나기는 드물어, 알아? 물론 너도 있고... Aledar도 있었지만, 외로워. Fruma 출신들조차... 이해를 못 해.",
    "role": "desc",
    "kind": "dialogue",
@@ -235708,7 +236798,7 @@
    "source": "wiki"
   },
   "True Colours#358": {
-   "src": "Oho! Impressive stuff. Simple pieces of paper in appearance... but they pack a punch. Rather useful!",
+   "src": "Oho! Impressive stuff. Simple pieces of paper, in appearance... but they pack a punch. Rather useful!",
    "dst": "오호! 훌륭하네요. 겉보기엔 그냥 종잇조각인데... 위력이 상당해요. 꽤 쓸 만하군요!",
    "role": "desc",
    "kind": "dialogue",
@@ -237068,7 +238158,7 @@
    "source": "wiki"
   },
   "True Colours#494": {
-   "src": "Take. Some Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
+   "src": "Take. Some. Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
    "dst": "시간을. 갖자고요? 아뇨. 시간 갖는 건 이제 끝이에요. 우는 것도, 걱정하는 것도 끝! 난 너무... 너무... 화가 나요! 왕실한테, 나 자신한테, 그, 그리고 Mora한테!!!!",
    "role": "desc",
    "kind": "dialogue",
@@ -237356,6 +238446,726 @@
    "stage": "Stage 19",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "True Colours#523": {
+   "src": "...of course. Of course. That makes sense, I should have- I should have put that together, shouldn't I?",
+   "dst": "...그렇겠지. 그렇겠지. 말이 되네, 내가- 내가 눈치챘어야 했는데, 그렇지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#524": {
+   "src": "He always was trying to help others... to his own detriment.",
+   "dst": "그는 늘 남을 도우려 했어... 자기가 다치는 줄도 모르고.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#525": {
+   "src": "...it should have been him here. Not me. He had something to come back to. People to reunite with.",
+   "dst": "...여기 있어야 할 건 그였어. 내가 아니라. 그에겐 돌아올 곳이 있었어. 다시 만날 사람들이.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#526": {
+   "src": "Instead, he's...",
+   "dst": "그런데 그는...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#527": {
+   "src": "...the other Leaves. Your friends. They... probably aren't dead yet. There's still hope for them, if you can find them.",
+   "dst": "...나머지 잎새들. 네 친구들. 그들은... 아직 안 죽었을 거야. 찾을 수만 있다면 아직 희망이 있어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#528": {
+   "src": "...what a mess. All of this- it's just... a mess.",
+   "dst": "...엉망이야. 이 모든 게- 그냥... 엉망이야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#529": {
+   "src": "Um... I... I have no idea know what that means.",
+   "dst": "음... 나... 그게 무슨 뜻인지 전혀 모르겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "True Colours#530": {
+   "src": "The Training Facility is locked.",
+   "dst": "훈련 시설이 잠겨 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#531": {
+   "src": "Changeling Biology:",
+   "dst": "변신자 생물학:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#532": {
+   "src": "Training a Changeling is a challenging, but worthwhile investment. They require active conditioning from the moment they emerge.",
+   "dst": "변신자 훈련은 어렵지만 가치 있는 투자다. 출현한 순간부터 적극적인 조건화가 필요하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#533": {
+   "src": "They have a tendency to change into the first form they encounter, they are also the most receptive to learning at that time.",
+   "dst": "처음 마주친 형태로 변하는 경향이 있으며, 학습 수용력도 이때 가장 높다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#534": {
+   "src": "During their first month they require constant stimulus otherwise they easily adapt to the form that fits into the current setting.",
+   "dst": "첫 달에는 끊임없는 자극이 필요하다. 그러지 않으면 현재 환경에 맞는 형태로 쉽게 적응해 버린다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#535": {
+   "src": "There are various other pages...",
+   "dst": "다른 페이지도 여럿 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#536": {
+   "src": "Subject {~}:",
+   "dst": "피험체 {~}:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#537": {
+   "src": "- Forms: Human, Fox, Owl",
+   "dst": "- 형태: 인간, 여우, 올빼미",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#538": {
+   "src": "- Strength Index: {~}",
+   "dst": "- 근력 지수: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#539": {
+   "src": "- Number of Strikes: {~}",
+   "dst": "- 경고 횟수: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#540": {
+   "src": "Schedule:",
+   "dst": "일과표:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#541": {
+   "src": "{~}:{~} - Wake-up call.",
+   "dst": "{~}:{~} - 기상.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#542": {
+   "src": "{~}:{~} - First class of the day.",
+   "dst": "{~}:{~} - 오늘의 첫 번째 수업.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#543": {
+   "src": "{~}:{~} - Fourth class of the day.",
+   "dst": "{~}:{~} - 오늘의 네 번째 수업.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#544": {
+   "src": "{~}:{~} - Fifth class of the day.",
+   "dst": "{~}:{~} - 오늘의 다섯 번째 수업.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#545": {
+   "src": "{~}:{~} - Sleep.",
+   "dst": "{~}:{~} - 취침.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#546": {
+   "src": "The Bunker door is locked. A worker must have an employee key...",
+   "dst": "벙커 문이 잠겨 있다. 직원용 열쇠를 가진 작업자가 있을 것이다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#547": {
+   "src": "- First meal: Apples and carrots.",
+   "dst": "- 첫 번째 식사: 사과와 당근.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#548": {
+   "src": "- Second meal: Mystery stew.",
+   "dst": "- 두 번째 식사: 정체불명의 스튜.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#549": {
+   "src": "- Third meal: Mystery stew.",
+   "dst": "- 세 번째 식사: 정체불명의 스튜.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#550": {
+   "src": "Do you want to leave?",
+   "dst": "나가시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#551": {
+   "src": "[+{~} Training Facility Key]",
+   "dst": "[+{~} 훈련 시설 열쇠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#552": {
+   "src": "The storage door opened.",
+   "dst": "창고 문이 열렸다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#553": {
+   "src": "[+{~} Officer's Quarters Key]",
+   "dst": "[+{~} 장교 숙소 열쇠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#554": {
+   "src": "The Officer's Quarters are locked.",
+   "dst": "장교 숙소가 잠겨 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#555": {
+   "src": "Current Research: Soldier Superfood",
+   "dst": "현재 연구: 병사용 슈퍼푸드",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#556": {
+   "src": "Create a food that provides all necessary nutrients without the need for taste or texture.",
+   "dst": "맛이나 식감 없이 필요한 영양소를 모두 공급하는 식품을 개발할 것.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#557": {
+   "src": "The hole appears empty...",
+   "dst": "구멍은 비어 있는 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#558": {
+   "src": "[+{~} Cabinet Key]",
+   "dst": "[+{~} 기록 보관함 열쇠]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#559": {
+   "src": "You unlock the records cabinet... Inside, you find dozens of file folders.",
+   "dst": "기록 보관함을 연다... 안에는 서류철 수십 개가 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#560": {
+   "src": "Project Hallowground, est. {~} IA.",
+   "dst": "Hallowground 계획, {~} IA 수립.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#561": {
+   "src": "Research Lead: Sovereign Selium.",
+   "dst": "연구 책임자: Selium 군주.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#562": {
+   "src": "Our Polymorph supplies are dwindling. With each new specimen we extract from the wastes, the span between emergences grows wider and wider.",
+   "dst": "Polymorph 공급량이 줄고 있다. 황무지에서 새 표본을 뽑아낼 때마다 출현 간격이 점점 더 벌어진다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#563": {
+   "src": "If this trend continues, within the next century, we will lose our access to Changeling spies.",
+   "dst": "이 추세라면 다음 세기 안에 변신자 첩자를 더는 쓸 수 없게 된다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#564": {
+   "src": "Sovereign Oru suggests we drill deeper to uncover new sources, but I disagree. The fault lies with the well. It is drying up.",
+   "dst": "Oru 군주는 더 깊이 뚫어 새 공급원을 찾자고 하지만, 나는 동의하지 않는다. 문제는 우물에 있다. 말라 가고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#565": {
+   "src": "If we can no longer rely on the natural, we must imbue that spark of life ourselves.",
+   "dst": "자연에 더는 기댈 수 없다면, 그 생명의 불꽃을 우리가 직접 불어넣어야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#566": {
+   "src": "There's more. Will you continue reading?",
+   "dst": "더 있다. 계속 읽으시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#567": {
+   "src": "Construction Report, {~} IA.",
+   "dst": "건설 보고서, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#568": {
+   "src": "The old research site has been refurbished and modernized to suit our needs. The facility grounds have been greatly expanded.",
+   "dst": "옛 연구 부지를 필요에 맞게 개보수하고 현대화했다. 시설 부지도 크게 확장했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#569": {
+   "src": "Construction broke through the earth and uncovered a large undisturbed reservoir. Sovereign Oru suggests we stop here. I disagree.",
+   "dst": "공사 중 지반이 뚫리며 손대지 않은 거대한 저수지가 드러났다. Oru 군주는 여기서 멈추자고 한다. 나는 동의하지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#570": {
+   "src": "The reservoir will serve as a solid base for our research and experiments.",
+   "dst": "저수지는 우리 연구와 실험의 든든한 기반이 될 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#571": {
+   "src": "Incident Report, {~} IA.",
+   "dst": "사고 보고서, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#572": {
+   "src": "Southward underground expansion has unearthed a massive cave system lurking deep below the surface.",
+   "dst": "남쪽 지하 확장 중 지표 깊숙이 숨어 있던 거대한 동굴망이 드러났다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#573": {
+   "src": "Construction was paused. Three workers disobeyed orders and delved further into the caverns. Only one returned.",
+   "dst": "공사를 중단했다. 작업자 셋이 명령을 어기고 동굴 깊숙이 들어갔다. 돌아온 것은 한 명뿐이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#574": {
+   "src": "Multiple sentences have been redacted...",
+   "dst": "여러 문장이 검게 지워져 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#575": {
+   "src": "Contacted the Spymaster, Inquisitors were called in to handle the situation.",
+   "dst": "첩보대장에게 연락했고, 사태 수습을 위해 심문관들이 파견되었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#576": {
+   "src": "The cavern is to be sealed immediately, and all workers in contact are to have their memories removed.",
+   "dst": "동굴은 즉시 봉쇄하고, 접촉한 작업자는 전원 기억을 제거할 것.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#577": {
+   "src": "Observation Log, {~} IA.",
+   "dst": "관찰 일지, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#578": {
+   "src": "Formless, mindless... they come from the earth, charged with its primordial life.",
+   "dst": "형체도, 정신도 없는 것들... 땅에서 나와 그 태고의 생명을 품고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#579": {
+   "src": "But how? How do they come to be? What ignites that spark?",
+   "dst": "하지만 어떻게? 어떻게 생겨나는가? 무엇이 그 불꽃을 당기는가?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#580": {
+   "src": "My blessing grants me a limited understanding, but not nearly enough. What is the source? I do not know.",
+   "dst": "내 축복은 제한된 이해를 주지만 턱없이 부족하다. 근원은 무엇인가? 나는 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#581": {
+   "src": "I have asked Sovereign Gikyo for their insight. They laughed me out of the room. I suspect I will glean nothing from these attempts.",
+   "dst": "Gikyo 군주에게 의견을 구했다. 비웃음만 사고 쫓겨났다. 이런 시도로는 아무것도 얻지 못할 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#582": {
+   "src": "...perhaps I should ask the earth itself.",
+   "dst": "...어쩌면 땅 자체에 물어야 할지도 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#583": {
+   "src": "We have come so close... so close, yet so far. I have heard its echoes, surfacing from the depths below. A broken, fractured thing...",
+   "dst": "그토록 가까이 왔건만... 가까우면서도 멀다. 저 깊은 곳에서 떠오르는 그 메아리를 들었다. 부서지고 금이 간 무언가를...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#584": {
+   "src": "The spark... I have lit it once more. That which animates the dark pools of essence into beings we control...",
+   "dst": "불꽃을... 다시 한번 밝혔다. 어두운 정수의 웅덩이를 우리가 부리는 존재로 움직이게 하는 그것을...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#585": {
+   "src": "But the vessels, they are not mindless... not in the same way. Being drawn forth from unlife into being instills a madness in them that I cannot resolve.",
+   "dst": "그러나 그릇들은 정신이 없는 게 아니다... 같은 의미로는. 생명 없는 상태에서 존재로 끌려 나오며, 내가 풀 수 없는 광기가 깃든다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#586": {
+   "src": "The Spymaster has a suggestion. An external Scientist, one who has studied the inner workings of a similar madness.",
+   "dst": "첩보대장이 제안했다. 비슷한 광기의 내막을 연구한 외부 과학자다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#587": {
+   "src": "Ten years. Ten years here, he has spent on his studies, and not a single step of progress. And this is the best option we have...?",
+   "dst": "10년. 이곳에서 10년을 연구에 쏟고도 한 걸음의 진전도 없다. 그런데 이게 우리의 최선이라고...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#588": {
+   "src": "This is the best option we have. It will be done. It will be over soon.",
+   "dst": "이게 우리의 최선이다. 그렇게 하겠다. 곧 끝날 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#589": {
+   "src": "Warden's Log, {~} IA.",
+   "dst": "교도소장 일지, {~} IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#590": {
+   "src": "The inner workings of the Hallowground Facility fell apart at {~}:{~} PM.",
+   "dst": "오후 {~}:{~}, Hallowground 시설의 내부 운영이 붕괴.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#591": {
+   "src": "Schedule interrupted. But urgency demands a response.",
+   "dst": "일정 중단. 그러나 사태가 급하니 대응이 필요함.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#592": {
+   "src": "Spymaster suggests ceasing mining operations in the west. Order approved.",
+   "dst": "첩보대장이 서부 채굴 중단을 제안. 명령 승인.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#593": {
+   "src": "Quotas will fall short. Prisoner work hours will be increased until the situation is resolved.",
+   "dst": "할당량 미달 예상. 사태 해결 시까지 죄수 노동 시간 연장.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#594": {
+   "src": "No sign of Sovereign Selium. Presumed dead.",
+   "dst": "Selium 군주의 흔적 없음. 사망으로 추정.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Tunnel Trouble#000": {
    "src": "You shouldn't go in here just yet.",

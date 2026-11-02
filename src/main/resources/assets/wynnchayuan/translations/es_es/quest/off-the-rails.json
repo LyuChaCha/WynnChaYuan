@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Off the Rails",
-  "count": 921,
-  "translated": 921,
+  "count": 934,
+  "translated": 934,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -187,8 +187,8 @@
    "source": "wiki"
   },
   "Off the Rails#018": {
-   "src": "Say, buddy, could you do your friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
-   "dst": "Oye, colega, ¿le harías un favor a tu amigo? Tengo una reunión en Auburn, necesito subir a este tren.",
+   "src": "Say, buddy, could you do your new friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
+   "dst": "Oye, colega, ¿le harías un favor a tu nuevo amigo? Tengo una reunión en Auburn, necesito subir a este tren.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -907,7 +907,7 @@
    "source": "wiki"
   },
   "Off the Rails#090": {
-   "src": "On the way here, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
+   "src": "On the way to the station, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
    "dst": "De camino aquí, un tío se me acercó y me suplicó de rodillas que le comprara su camisa. Costaba decir que no... Me dio pena...",
    "role": "desc",
    "kind": "dialogue",
@@ -927,7 +927,7 @@
    "source": "wiki"
   },
   "Off the Rails#092": {
-   "src": "In fact, this shirt doesn't even hold any value to me as a souvenier. I don't want to remember this trip.",
+   "src": "In fact, this shirt doesn't even hold any value to me as a souvenir. I don't want to remember this trip.",
    "dst": "De hecho, esta camisa ni siquiera vale como recuerdo. No quiero acordarme de este viaje.",
    "role": "desc",
    "kind": "dialogue",
@@ -3997,7 +3997,7 @@
    "source": "wiki"
   },
   "Off the Rails#416": {
-   "src": "Concerned, I followed the two of them, to find that they has found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
+   "src": "Concerned, I followed the two of them, to find that they had found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
    "dst": "Preocupado, los seguí a los dos y resultó que habían encontrado el cadáver de Levi. Antes de que pudiera preguntar nada, salieron corriendo por el tren a gritos.",
    "role": "desc",
    "kind": "dialogue",
@@ -4027,7 +4027,7 @@
    "source": "wiki"
   },
   "Off the Rails#419": {
-   "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
+   "src": "...W-Whuh? Where is it? I always keep it in my pocket! Perhaps I dropped it somewhere?",
    "dst": "...¿Q-qué? ¿Dónde está? ¡Siempre la llevo en el bolsillo! ¿La habré dejado caer en algún sitio?",
    "role": "desc",
    "kind": "dialogue",
@@ -4787,7 +4787,7 @@
    "source": "wiki"
   },
   "Off the Rails#504": {
-   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you. huh.",
+   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you, huh.",
    "dst": "...Vaya, lo siento. Sé que dije que ayudaría con el caso, pero, pensándolo, no he visto gran cosa que te sirva. ya ves.",
    "role": "desc",
    "kind": "dialogue",
@@ -5927,7 +5927,7 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about?",
+   "src": "...Anything else to talk about?",
    "dst": "¿Algo más de lo que hablar?",
    "role": "desc",
    "kind": "dialogue",
@@ -7987,7 +7987,7 @@
    "source": "captured.json"
   },
   "Off the Rails#837": {
-   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival both here AND there, and now I'll miss both... Oh well...",
    "dst": "Es una pena que no planeara bien este viaje... Podría haber visto el Festival de la Reina en dos sitios, y ahora me perderé los dos... En fin...",
    "role": "desc",
    "kind": "dialogue",
@@ -9215,6 +9215,136 @@
    "stage": "Stage 8",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Off the Rails#964": {
+   "src": "Hey... Could you stop that, please?",
+   "dst": "Oye... ¿Puedes parar, por favor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Ticket Collector",
+   "source": "captured"
+  },
+  "Off the Rails#965": {
+   "src": "Ah, alright. Well, do come back if you do want to talk about anything.",
+   "dst": "Ah, vale. Bueno, vuelve si quieres hablar de algo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Malic",
+   "source": "captured"
+  },
+  "Off the Rails#966": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Demma\"",
+   "dst": "Hay una nota garabateada a toda prisa pegada a esta taquilla que dice \"Demma\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#967": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Cemor\"",
+   "dst": "Hay una nota garabateada a toda prisa pegada a esta taquilla que dice \"Cemor\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#968": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Flinn\"",
+   "dst": "Hay una nota garabateada a toda prisa pegada a esta taquilla que dice \"Flinn\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#969": {
+   "src": "Bye...",
+   "dst": "Adiós...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Flinn",
+   "source": "captured"
+  },
+  "Off the Rails#970": {
+   "src": "[+{~} Harvin's Notebook]",
+   "dst": "[+{~} Cuaderno de Harvin]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#971": {
+   "src": "[New Notes Added]",
+   "dst": "[Nuevas notas añadidas]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#972": {
+   "src": "[New \"Evidence\" Gained]",
+   "dst": "[Nueva \"prueba\" obtenida]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#973": {
+   "src": "Oh, alright then. Good luck catching that murderer.",
+   "dst": "Ah, muy bien. Suerte atrapando a ese asesino.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Telati",
+   "source": "captured"
+  },
+  "Off the Rails#974": {
+   "src": "[Strong Evidence Gained]",
+   "dst": "[Prueba sólida obtenida]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#975": {
+   "src": "Thank you for the chat, it's helped me take my mind off things. Good luck figuring out the murder!",
+   "dst": "Gracias por la charla, me ha ayudado a distraerme. ¡Suerte resolviendo el asesinato!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Maddison",
+   "source": "captured"
+  },
+  "Off the Rails#976": {
+   "src": "...Nice.",
+   "dst": "...Genial.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

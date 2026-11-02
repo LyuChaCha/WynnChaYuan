@@ -2,8 +2,8 @@
  "_meta": {
   "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
   "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。",
-  "count": 299,
-  "translated": 299
+  "count": 420,
+  "translated": 420
  },
  "entries": {
   "choice#c000": {
@@ -3203,6 +3203,1247 @@
    "stage": "",
    "speaker": "",
    "source": "npc.json"
+  },
+  "choice#c091": {
+   "src": "A new copy please?",
+   "dst": "¿Otra copia, por favor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c092": {
+   "src": "I'll be fine.",
+   "dst": "Estaré bien.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c093": {
+   "src": "Pishlas poster",
+   "dst": "Cartel de Pishlas",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c094": {
+   "src": "I haven't.",
+   "dst": "Aún no.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c095": {
+   "src": "I was fast asleep... I didn'",
+   "dst": "Dormía profundamente... No oí nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I was fast asleep... I didn't hear a thing.",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c096": {
+   "src": "I thought we were under atta",
+   "dst": "¡Creía que nos atacaban!",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I thought we were under attack!",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c097": {
+   "src": "Anyway, Quill's coming over.",
+   "dst": "En fin, ya viene Quill.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c098": {
+   "src": "Good... luck?",
+   "dst": "¿Buena... suerte?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c099": {
+   "src": "Let's go.",
+   "dst": "Vamos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c100": {
+   "src": "Soda",
+   "dst": "Refresco",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c101": {
+   "src": "[{~} {~}] Zhirao Sleep Solut",
+   "dst": "[{~} {~}] Zhirao Sleep Solution",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] Zhirao Sleep Soluti",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c102": {
+   "src": "[{~} {~}] Majin PEACOCK POWE",
+   "dst": "[{~} {~}] Majin PEACOCK POWER Refined Energy Boost",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] Majin PEACOCK POWER Refined Energy Boo",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c103": {
+   "src": "[{~} {~}] Red Butterfly",
+   "dst": "[{~} {~}] Red Butterfly",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c104": {
+   "src": "Cemor?",
+   "dst": "¿Cemor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c105": {
+   "src": "I found your key",
+   "dst": "He encontrado tu llave",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c106": {
+   "src": "Crossword",
+   "dst": "Crucigrama",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c107": {
+   "src": "I have purchased the Haunted",
+   "dst": "He comprado la Máscara embrujada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I have purchased the Haunted Mask.",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c108": {
+   "src": "We'll be back for you, Yusan",
+   "dst": "Volveremos a por ti, Yusanu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "We'll be back for you, Yusanu.",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c109": {
+   "src": "Fine... get us that list.",
+   "dst": "Está bien... consíguenos esa lista.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c110": {
+   "src": "We have to keep moving.",
+   "dst": "Tenemos que seguir adelante.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c111": {
+   "src": "We can't give up hope.",
+   "dst": "No podemos perder la esperanza.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c112": {
+   "src": "Do you not believe we did it",
+   "dst": "¿No crees que lo hicimos?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you not believe we did it?",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c113": {
+   "src": "We don't know where he is.",
+   "dst": "No sabemos dónde está.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c114": {
+   "src": "We just... need to do what h",
+   "dst": "Solo... tenemos que hacer lo que dice.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "We just... need to do what he says.",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c115": {
+   "src": "Do you know of anyone named",
+   "dst": "¿Conoces a alguien llamado Nisen?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you know of anyone named Nisen?",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c116": {
+   "src": "Haven't got one...what?",
+   "dst": "No tengo uno... ¿qué?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c117": {
+   "src": "We've entered a parallel uni",
+   "dst": "¡Hemos entrado en un universo paralelo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "We've entered a parallel universe!",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c118": {
+   "src": "Where's Azael?",
+   "dst": "¿Dónde está Azael?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c119": {
+   "src": "Is Rurie always like this?",
+   "dst": "¿Rurie siempre es así?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c120": {
+   "src": "Where is Azael?",
+   "dst": "¿Dónde está Azael?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c121": {
+   "src": "Deraj?",
+   "dst": "¿Deraj?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c122": {
+   "src": "At least they're alive.",
+   "dst": "Al menos están vivos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c123": {
+   "src": "Syndra's... gone?",
+   "dst": "¿Syndra... se ha ido?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c124": {
+   "src": "Executed...?",
+   "dst": "¿Ejecutada...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c125": {
+   "src": "We'll break them out.",
+   "dst": "Los sacaremos de allí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c126": {
+   "src": "So have you.",
+   "dst": "Tú también.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c127": {
+   "src": "Why are you here, Tasim?",
+   "dst": "¿Qué haces aquí, Tasim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c128": {
+   "src": "So... you're a Sovereign now",
+   "dst": "Así que... ahora eres Soberano.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "So... you're a Sovereign now.",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c129": {
+   "src": "And the other part?",
+   "dst": "¿Y la otra parte?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c130": {
+   "src": "Your \"curse?\"",
+   "dst": "¿Tu \"maldición\"?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c131": {
+   "src": "Once.",
+   "dst": "Una vez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c132": {
+   "src": "She killed Syndra, Tasim.",
+   "dst": "Mató a Syndra, Tasim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c133": {
+   "src": "Aledar was with the Leaves,",
+   "dst": "Aledar estaba con las Hojas, ¿sabes?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Aledar was with the Leaves, you know.",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c134": {
+   "src": "Now she wants to talk?",
+   "dst": "¿Ahora quiere hablar?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c135": {
+   "src": "Zhiraok.",
+   "dst": "Zhiraok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c136": {
+   "src": "Majin.",
+   "dst": "Majin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c137": {
+   "src": "The Ranger.",
+   "dst": "El Montaraz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c138": {
+   "src": "The Warden.",
+   "dst": "El alcaide.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c139": {
+   "src": "The Spymaster.",
+   "dst": "La Jefa de Espías.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c140": {
+   "src": "Project?",
+   "dst": "¿Proyecto?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c141": {
+   "src": "The canopy has been compromi",
+   "dst": "Han descubierto el Dosel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The canopy has been compromised.",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c142": {
+   "src": "There was a change of plans.",
+   "dst": "Ha habido un cambio de planes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c143": {
+   "src": "The hideout has been comprom",
+   "dst": "Han descubierto el escondite.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "The hideout has been compromised.",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c144": {
+   "src": "Ahem. The news?",
+   "dst": "Ejem. ¿Las noticias?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c145": {
+   "src": "Did you forget already?",
+   "dst": "¿Ya se te ha olvidado?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c146": {
+   "src": "Who... who are you?",
+   "dst": "¿Quién... quién eres?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c147": {
+   "src": "C'mon. Let's get out of here",
+   "dst": "Vamos. Salgamos de aquí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "C'mon. Let's get out of here.",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c148": {
+   "src": "And you're just going to fig",
+   "dst": "¿Y vas a enfrentarte a Majin, sin más?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "And you're just going to fight Majin?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c149": {
+   "src": "Okay. Let's go then.",
+   "dst": "Vale. Vamos entonces.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c150": {
+   "src": "Let's get clothes to blend i",
+   "dst": "Busquemos ropa para pasar desapercibidos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Let's get clothes to blend in.",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c151": {
+   "src": "Offer to pay {~}LE.",
+   "dst": "Ofrecer pagar {~}LE.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c152": {
+   "src": "Well.... I wish you good luc",
+   "dst": "Bueno.... ¡Mucha suerte!",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Well.... I wish you good luck!",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c153": {
+   "src": "Daily Butterfly",
+   "dst": "Mariposa Diaria",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c154": {
+   "src": "Aelumia Times",
+   "dst": "Aelumia Times",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c155": {
+   "src": "Fab Fashion",
+   "dst": "Moda Fabulosa",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c156": {
+   "src": "We need some clothes.",
+   "dst": "Necesitamos ropa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c157": {
+   "src": "I... don't have that.",
+   "dst": "Yo... no tengo eso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c158": {
+   "src": "We're expecting company.",
+   "dst": "Esperamos compañía.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c159": {
+   "src": "You don't want to look aroun",
+   "dst": "¿No quieres echar un vistazo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You don't want to look around?",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c160": {
+   "src": "Let's get some food or drink",
+   "dst": "Vamos a por algo de comer o beber.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Let's get some food or drinks.",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c161": {
+   "src": "Any tourist recommendations",
+   "dst": "¿Alguna recomendación turística por aquí?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Any tourist recommendations in {p}?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c162": {
+   "src": "Do you host any events here",
+   "dst": "¿Organizan algún evento aquí en el hotel?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Do you host any events here at the hotel?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c163": {
+   "src": "I want to make a complaint.",
+   "dst": "Quiero poner una queja.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c164": {
+   "src": "Bye!",
+   "dst": "¡Adiós!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c165": {
+   "src": "The beds are uncomfortable.",
+   "dst": "Las camas son incómodas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c166": {
+   "src": "The room is dirty.",
+   "dst": "La habitación está sucia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c167": {
+   "src": "It is too expensive!",
+   "dst": "¡Es demasiado caro!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c168": {
+   "src": "[{~} {~}] Highland Spring Wa",
+   "dst": "[{~} {~}] Agua de manantial Highland",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] Highland Spring Water",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c169": {
+   "src": "[{~} {~}] Tall Maple Cream So",
+   "dst": "[{~} {~}] Refresco de crema Tall Maple",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] Tall Maple Cream Soda",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c170": {
+   "src": "[{~} {~}] Red Bark Barrel Sa",
+   "dst": "[{~} {~}] Zarzaparrilla Red Bark Barrel",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "[{~} {~}] Red Bark Barrel Sarsap",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c171": {
+   "src": "Bullfrog's Bellow",
+   "dst": "Bullfrog's Bellow",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c172": {
+   "src": "Day In, Day Out",
+   "dst": "Day In, Day Out",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c173": {
+   "src": "Ballad of the Trees",
+   "dst": "Ballad of the Trees",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c174": {
+   "src": "Ignorance is Bliss",
+   "dst": "Ignorance is Bliss",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c175": {
+   "src": "Leave and stop music",
+   "dst": "Salir y parar la música",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c176": {
+   "src": "Get ice.",
+   "dst": "Coger hielo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c177": {
+   "src": "Okay. What do we do?",
+   "dst": "Vale. ¿Qué hacemos?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c178": {
+   "src": "Are you doing alright?",
+   "dst": "¿Estás bien?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c179": {
+   "src": "Uh... no.",
+   "dst": "Eh... no.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c180": {
+   "src": "Where regions meet...",
+   "dst": "Donde las regiones se encuentran...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c181": {
+   "src": "The {p}, actually.",
+   "dst": "{p}, en realidad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c182": {
+   "src": "I... spawned in. From nothin",
+   "dst": "Yo... aparecí. De la nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "I... spawned in. From nothing.",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c183": {
+   "src": "What she said!",
+   "dst": "¡Lo que ha dicho ella!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c184": {
+   "src": "May we...",
+   "dst": "Que desenterremos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c185": {
+   "src": "Let's get some rest",
+   "dst": "Vamos a descansar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c186": {
+   "src": "Tell me about Syndra.",
+   "dst": "Háblame de Syndra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c187": {
+   "src": "Let's just wait.",
+   "dst": "Mejor esperemos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c188": {
+   "src": "What was it about?",
+   "dst": "¿De qué iba?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c189": {
+   "src": "She knew.",
+   "dst": "Ella lo sabía.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c190": {
+   "src": "Our stove is on?",
+   "dst": "¿Que tenemos el fuego encendido?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c191": {
+   "src": "I'm here for my friends.",
+   "dst": "He venido por mis amigos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c192": {
+   "src": "Are you here to fight?",
+   "dst": "¿Has venido a luchar?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c193": {
+   "src": "I'm... leaving.",
+   "dst": "Yo... me voy.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c194": {
+   "src": "Magic?",
+   "dst": "¿Magia?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c195": {
+   "src": "Psionics?",
+   "dst": "¿Psiónica?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c196": {
+   "src": "You sure like to talk...",
+   "dst": "Sí que te gusta hablar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c197": {
+   "src": "Who are you, really?",
+   "dst": "¿Quién eres en realidad?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c198": {
+   "src": "Why do you care?",
+   "dst": "¿Por qué te importa?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c199": {
+   "src": "Why is this a blind spot?",
+   "dst": "¿Por qué es esto un punto ciego?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c200": {
+   "src": "We do.",
+   "dst": "Nosotros sí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c201": {
+   "src": "Fruma seems so... detached f",
+   "dst": "Fruma parece tan... ajena a todo eso.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Fruma seems so... detached from it.",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c202": {
+   "src": "So I'm free to leave?",
+   "dst": "¿Entonces soy libre de irme?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c203": {
+   "src": "Are you two alright?",
+   "dst": "¿Estáis bien los dos?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c204": {
+   "src": "I'm glad you're safe.",
+   "dst": "Me alegro de que estéis a salvo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c205": {
+   "src": "How was your time imprisoned",
+   "dst": "¿Cómo fue el cautiverio?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "How was your time imprisoned?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c206": {
+   "src": "Thoughts on the Blossom of B",
+   "dst": "¿Qué opinas de la Flor de Cuchillas?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "Thoughts on the Blossom of Blades?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c207": {
+   "src": "So, what're your plans?",
+   "dst": "Entonces, ¿qué planes tienes?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c208": {
+   "src": "Gonna get going.",
+   "dst": "Me voy yendo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c209": {
+   "src": "I think you know.",
+   "dst": "Creo que lo sabes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c210": {
+   "src": "It's not too late to switch",
+   "dst": "Aún estás a tiempo de cambiar de bando.",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "It's not too late to switch sides.",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c211": {
+   "src": "You're sticking with the Cro",
+   "dst": "¿Sigues con la Corona?",
+   "role": "desc",
+   "kind": "dialogue",
+   "full": "You're sticking with the Crown?",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24397,
-  "translated": 24394,
+  "count": 24578,
+  "translated": 24575,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -61052,7 +61052,7 @@
    "source": "wiki"
   },
   "Echoes of Change#081": {
-   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office. Let's get looking!",
+   "src": "From what I heard from Yulie, the commander usually keeps the schedules in the top office . Let's get looking!",
    "dst": "Yulie から聞いた話だと、指揮官は勤務表をいつも{c2}最上階の部屋{/}に置いてるらしい。探そうぜ！",
    "role": "desc",
    "kind": "dialogue",
@@ -65189,7 +65189,7 @@
    "source": "wiki"
   },
   "Echoes of Change#491": {
-   "src": "I... never told her what I really was. I thought it would be safe, for both of us... ha. And how did that turn out...?",
+   "src": "I... never told her what I really was. I thought it would be safer, for both of us... ha. And how did that turn out...?",
    "dst": "私は…自分の正体を彼女に話さなかった。その方が二人とも安全だと思った…はは。それでどうなった…？",
    "role": "desc",
    "kind": "dialogue",
@@ -66056,8 +66056,8 @@
    "source": "wiki"
   },
   "Echoes of Change#577": {
-   "src": "You being here, it's... making things harder things harder than they need to be.",
-   "dst": "君がここにいると…事が必要以上に厄介に、厄介になる。",
+   "src": "You being here, it's... making things harder than they need to be.",
+   "dst": "君がここにいると…事が必要以上に厄介になる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Echoes of Change",
@@ -66076,7 +66076,7 @@
    "source": "wiki"
   },
   "Echoes of Change#579": {
-   "src": "I...I don't have time for this right now. {u}, you have to-",
+   "src": "I... I don't have time for this right now. {u}, you have to-",
    "dst": "僕は…僕は今こんなことしてる時間はないんだ。{u}、君は",
    "role": "desc",
    "kind": "dialogue",
@@ -67944,6 +67944,16 @@
    "stage": "Stage 25",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Echoes of Change#762": {
+   "src": "[+{~} Guard Uniform]",
+   "dst": "[+{~} 衛兵の制服]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Echoes of Change",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
@@ -114034,8 +114044,8 @@
    "source": "wiki"
   },
   "Off the Rails#018": {
-   "src": "Say, buddy, could you do your friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
-   "dst": "なあ君、友人のために一肌脱いでくれないか？もうすぐ Auburn で会議があって、この列車に乗らねばならんのだ。",
+   "src": "Say, buddy, could you do your new friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
+   "dst": "なあ君、新しい友人のために一肌脱いでくれないか？もうすぐ Auburn で会議があって、この列車に乗らねばならんのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -114756,7 +114766,7 @@
    "source": "wiki"
   },
   "Off the Rails#090": {
-   "src": "On the way here, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
+   "src": "On the way to the station, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
    "dst": "ここに来る途中、ある男が寄ってきて、シャツを買ってくれって土下座で頼まれたんだ。断りづらくて…気の毒でさ…",
    "role": "desc",
    "kind": "dialogue",
@@ -114776,7 +114786,7 @@
    "source": "wiki"
   },
   "Off the Rails#092": {
-   "src": "In fact, this shirt doesn't even hold any value to me as a souvenier. I don't want to remember this trip.",
+   "src": "In fact, this shirt doesn't even hold any value to me as a souvenir. I don't want to remember this trip.",
    "dst": "それに、このシャツには記念品としての価値すらない。この旅のことは忘れたいんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -117864,7 +117874,7 @@
    "source": "wiki"
   },
   "Off the Rails#416": {
-   "src": "Concerned, I followed the two of them, to find that they has found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
+   "src": "Concerned, I followed the two of them, to find that they had found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
    "dst": "心配になって二人についていくと、Levi 将軍の遺体を見つけていました。質問する間もなく、二人は叫びながら列車を駆け抜けていきました。",
    "role": "desc",
    "kind": "dialogue",
@@ -117895,7 +117905,7 @@
    "note": "{c2}I do have a master key for all rooms{/}"
   },
   "Off the Rails#419": {
-   "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
+   "src": "...W-Whuh? Where is it? I always keep it in my pocket! Perhaps I dropped it somewhere?",
    "dst": "…え、ええ？どこに？いつもポケットに入れているのに！どこかで落としたのかな？",
    "role": "desc",
    "kind": "dialogue",
@@ -118669,7 +118679,7 @@
    "source": "wiki"
   },
   "Off the Rails#504": {
-   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you. huh.",
+   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you, huh.",
    "dst": "…ああ、ごめん。事件を手伝うって言ったけど、考えてみたら役に立ちそうなものは何も見てないや。はは。",
    "role": "desc",
    "kind": "dialogue",
@@ -119826,7 +119836,7 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about?",
+   "src": "...Anything else to talk about?",
    "dst": "他に話すことは？",
    "role": "desc",
    "kind": "dialogue",
@@ -121908,7 +121918,7 @@
    "source": "captured.json"
   },
   "Off the Rails#837": {
-   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival both here AND there, and now I'll miss both... Oh well...",
    "dst": "この旅行のスケジュールをちゃんと組んでおけばよかったのに……そうすれば、2か所で開催される女王の祭りを見られたのに、今は両方とも見逃しちゃう……まあ、仕方ないか……",
    "role": "desc",
    "kind": "dialogue",
@@ -123175,6 +123185,136 @@
    "stage": "Stage 8",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Off the Rails#964": {
+   "src": "Hey... Could you stop that, please?",
+   "dst": "あの…やめてもらえます？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Ticket Collector",
+   "source": "captured"
+  },
+  "Off the Rails#965": {
+   "src": "Ah, alright. Well, do come back if you do want to talk about anything.",
+   "dst": "ああ、そっか。まあ、話したいことがあったらまた来てくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Malic",
+   "source": "captured"
+  },
+  "Off the Rails#966": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Demma\"",
+   "dst": "このロッカーには、「Demma」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#967": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Cemor\"",
+   "dst": "このロッカーには、「Cemor」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#968": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Flinn\"",
+   "dst": "このロッカーには、「Flinn」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#969": {
+   "src": "Bye...",
+   "dst": "じゃあね…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Flinn",
+   "source": "captured"
+  },
+  "Off the Rails#970": {
+   "src": "[+{~} Harvin's Notebook]",
+   "dst": "[+{~} Harvin の手帳]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#971": {
+   "src": "[New Notes Added]",
+   "dst": "[新しいメモを追加]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#972": {
+   "src": "[New \"Evidence\" Gained]",
+   "dst": "[新たな「証拠」を入手]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#973": {
+   "src": "Oh, alright then. Good luck catching that murderer.",
+   "dst": "そうですか。殺人犯の捜索、頑張ってください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Telati",
+   "source": "captured"
+  },
+  "Off the Rails#974": {
+   "src": "[Strong Evidence Gained]",
+   "dst": "[有力な証拠を入手]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#975": {
+   "src": "Thank you for the chat, it's helped me take my mind off things. Good luck figuring out the murder!",
+   "dst": "話せてよかった、気が紛れたよ。事件の解決、頑張ってね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Maddison",
+   "source": "captured"
+  },
+  "Off the Rails#976": {
+   "src": "...Nice.",
+   "dst": "…いいね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
@@ -125559,7 +125699,7 @@
    "source": "wiki"
   },
   "Overture to Despair#049": {
-   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to say, too?",
+   "src": "And... we don't know how long it'll be until we... find the information we need. So... a place to stay, too?",
    "dst": "それに… 必要な情報が見つかるまで、どれくらいかかるか分からない。だから… 泊まる場所も？",
    "role": "desc",
    "kind": "dialogue",
@@ -126039,8 +126179,8 @@
    "source": "wiki"
   },
   "Overture to Despair#097": {
-   "src": "Here, the cheapest I have available. In total, that will cost you... {~} .",
-   "dst": "どうぞ、うちで一番安いものです。合計で…{~} です。",
+   "src": "Here, the cheapest I have available. In total, that will cost you... {~} {#}.",
+   "dst": "どうぞ、うちで一番安いものです。合計で…{~} {#} です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -126099,8 +126239,8 @@
    "source": "wiki"
   },
   "Overture to Despair#103": {
-   "src": "Ah, you're back. As I said, the clothes will cost you {~} EB.",
-   "dst": "ああ、戻られましたか。申した通り、服は {~} EB です。",
+   "src": "Ah, you're back. As I said, the clothes will cost you {~} {#}.",
+   "dst": "ああ、戻られましたか。申した通り、服は {~} {#} です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -126429,7 +126569,7 @@
    "source": "wiki"
   },
   "Overture to Despair#136": {
-   "src": "The {p} are known for thier very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
+   "src": "The {p} are known for their very scenic walks and hikes! I would recommend walking around the lakes or hiking up to the mountains.",
    "dst": "{p} は景色の良い散歩道やハイキングで有名です！湖の周りの散歩や、山へのハイキングがおすすめですよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -126539,8 +126679,8 @@
    "source": "wiki"
   },
   "Overture to Despair#147": {
-   "src": "* - No noise after {~} PM.",
-   "dst": "* - 午後 {~} 時以降は静粛に。",
+   "src": "- No noise after {~} PM.",
+   "dst": "- 午後 {~} 時以降は静粛に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -127711,7 +127851,7 @@
    "source": "wiki"
   },
   "Overture to Despair#264": {
-   "src": "And here we are with your orders! You fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
+   "src": "And here we are with your orders! Your fish tacos, young lady - sturgeon head packed with tangy cabbage, tossed in rice vinegar, crispy seaweed, and punchy umami sauce.",
    "dst": "お待たせしました！お嬢さんには魚のタコス― チョウザメの頭に酸味のキャベツ、米酢、パリパリの海苔、旨味たっぷりのソース！",
    "role": "desc",
    "kind": "dialogue",
@@ -129231,7 +129371,7 @@
    "source": "wiki"
   },
   "Overture to Despair#416": {
-   "src": "Oh, get to the point, would you? I have more important things to attend to then this frivolous attempt at information gathering.",
+   "src": "Oh, get to the point, would you? I have more important things to attend to than this frivolous attempt at information gathering.",
    "dst": "おい、要点を言ってくれんかね？こんな軽薄な情報収集ごっこより大事な用があるのだよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -129621,8 +129761,8 @@
    "source": "wiki"
   },
   "Overture to Despair#455": {
-   "src": "War, Chaos, Hate... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
-   "dst": "戦、混沌、憎悪… 呼び名は何でもいい。それは劣った存在で、生みの親の双子ほど自らを制御できなかった。",
+   "src": "War, Chaos, Hate, Corruption... call it what you will. It was lesser, holding less control over itself than the twins from which it was birthed.",
+   "dst": "戦、混沌、憎悪、腐敗… 呼び名は何でもいい。それは劣った存在で、生みの親の双子ほど自らを制御できなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -130221,7 +130361,7 @@
    "source": "wiki"
   },
   "Overture to Despair#515": {
-   "src": "Oh, het over yourself! I was there too, idiot!",
+   "src": "Oh, get over yourself! I was there too, idiot!",
    "dst": "は、何言ってんの！あたしもそこにいたでしょ、バカ！",
    "role": "desc",
    "kind": "dialogue",
@@ -130902,8 +131042,8 @@
    "source": "wiki"
   },
   "Overture to Despair#583": {
-   "src": "I really... can't stop thinking about it. If only he could have been here with us. What would he have done? Which side would he have taken?",
-   "dst": "本当に… 考えずにいられない。彼がここに一緒にいられたら。彼ならどうした？どっちの側についた？",
+   "src": "Sigh. I can't stop thinking about it. What if he could have been here with us? What would he have done? Which side would he have taken?",
+   "dst": "はあ。考えずにいられない。彼がここに一緒にいられたら？彼ならどうした？どっちの側についた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -131232,6 +131372,726 @@
    "speaker": "",
    "source": "captured",
    "full": "We're looking for some hip new fashion."
+  },
+  "Overture to Despair#616": {
+   "src": "Which cover would you like to take a closer look at?",
+   "dst": "どの表紙を詳しく見る？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#617": {
+   "src": "There's a drawing of the Queen completing a puzzle. Next to it, there's a red circle that seems to contain some sort of rant in very small print so as to fit into the shape. It's barely legible.",
+   "dst": "女王がパズルを解く絵がある。隣の赤い丸の中には、形に収まるようごく小さな字で何やら愚痴が書かれている。ほとんど読めない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#618": {
+   "src": "\"TO ALL THE COMPLAINERS: SURELY YOU MUST HAVE SOME IDEA OF HOW HARD IT IS TO COME UP WITH NEW PUZZLES EVERY DAY????\"",
+   "dst": "「文句を言う皆様へ: 毎日新しいパズルを作るのがどれだけ大変か、少しはおわかりですよね？？？？」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#619": {
+   "src": "\"NEW CROSSWORDS, NEW WORD SEARCHES, NEW SPOT THE DIFFERENCES, ETC ETC, EVERY DAY, AND THEY HAVE TO BE TOPICAL????\"",
+   "dst": "「新しいクロスワード、新しい単語探し、新しい間違い探し、などなど、毎日、しかも時事ネタで？？？？」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#620": {
+   "src": "Inside, there are some cute illustrations of Her Majesty next to every puzzle. It's very cozy.",
+   "dst": "どのパズルの横にも女王陛下の可愛らしいイラストがある。とても和む。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#621": {
+   "src": "All the wording is very optimistic, an impressive feat given its mention that this is his {~}th year single.",
+   "dst": "どの文面もとても前向きだ。独身 {~} 年目という記述を考えると見事なものだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#622": {
+   "src": "A catch like him???",
+   "dst": "こんな優良物件が？？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#623": {
+   "src": "HER MAJESTY IS NOT WORRIED ABOUT A REVOLUTION",
+   "dst": "女王陛下、革命を懸念せず",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#624": {
+   "src": "According to an expert, Her Majesty has been seen strolling the streets of Aelumia, which is a clear signal that unrest elsewhere in Fruma has not unsettled the Crown.",
+   "dst": "専門家によると、女王陛下は Aelumia の街を散策する姿が目撃されており、Fruma 各地の不穏が王家を動揺させていない明白な証だという。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#625": {
+   "src": "\"Her composure is a sign for the continued success of Fruma!\" said the expert in an interview. (Expert prefers to be left anonymous)",
+   "dst": "「陛下の落ち着きは Fruma の今後の繁栄の証です！」と専門家は取材に語った。(専門家は匿名を希望)",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#626": {
+   "src": "Today's weather: Heavy fog from the south, rising tensions, and low chance of thunder this evening.",
+   "dst": "本日の天気: 南から濃霧、緊張の高まり、今夜は雷の確率低し。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#627": {
+   "src": "The... experts of Fruma are very well informed it appears.",
+   "dst": "Fruma の… 専門家は、実に情報通のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#628": {
+   "src": "\"Is This The New Fashion Craze? Frumans Seen Sporting New Look.\"",
+   "dst": "「これが新たな流行？ 新スタイルの Fruma 人が続々」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#629": {
+   "src": "Curious, you take a further look.",
+   "dst": "気になって、さらに読んでみる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#630": {
+   "src": "Gold boots, dark grey pants, white T-shirt, blue hat...??? Who is coming up with these trends???",
+   "dst": "金のブーツ、ダークグレーのズボン、白いTシャツ、青い帽子…？？？ こんな流行、誰が考えてるんだ？？？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#631": {
+   "src": "Rules of The Crown Jewel",
+   "dst": "王冠の宝石の規則",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#632": {
+   "src": "- No entering other guests' rooms.",
+   "dst": "- 他のお客様の部屋への立ち入り禁止。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#633": {
+   "src": "- No vandalizing the property.",
+   "dst": "- 施設の破損行為の禁止。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#634": {
+   "src": "There's a sign on the elevator door.",
+   "dst": "エレベーターの扉に貼り紙がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#635": {
+   "src": "\"The elevator is currently out of order. We apologize for the inconvenience.\" Signed, The Crown Jewel Management Team",
+   "dst": "「エレベーターは現在故障中です。ご不便をおかけし申し訳ございません」王冠の宝石 運営チーム",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#636": {
+   "src": "There's a note attached...",
+   "dst": "メモが貼ってある…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#637": {
+   "src": "\"ATTENTION CUSTOMERS: No, despite the beer-like design of this vending machine, it does not serve alcoholic beverages! Please go to the bar for those! And stop asking us about it!\"",
+   "dst": "「お客様へ: この自販機はビールのようなデザインですが、お酒は売っていません！お酒はバーでどうぞ！もう聞かないでください！」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#638": {
+   "src": "Now playing: Bullfrog's Bellow ({p})...",
+   "dst": "再生中: Bullfrog's Bellow ({p})…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#639": {
+   "src": "Now playing: Whisper (Auburn)...",
+   "dst": "再生中: Whisper (Auburn)…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#640": {
+   "src": "Now playing: Day In, Day Out ({p})...",
+   "dst": "再生中: Day In, Day Out ({p})…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#641": {
+   "src": "Now playing: Ballad of the Trees (Savanna)...",
+   "dst": "再生中: Ballad of the Trees (Savanna)…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#642": {
+   "src": "Now playing: Ignorance is Bliss ({p})...",
+   "dst": "再生中: Ignorance is Bliss ({p})…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#643": {
+   "src": "It appears to be out of order.",
+   "dst": "故障しているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#644": {
+   "src": "Listen! Listen! Do you hear that?",
+   "dst": "聞いて！聞いてください！聞こえますか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#645": {
+   "src": "There! A very slight rumble. And it's not the trains; I can tell the difference!",
+   "dst": "ほら！ごくかすかな地鳴りが。列車ではありません、違いはわかるのです！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#646": {
+   "src": "The Mk V Mule-class Royal Freight Engine has a distinct uneven rhythm due to its weighted frontal bogie, whereas the Circuit-class Master Passenger Locomotive {~}-{~} makes a low rumble from harmonic oscillations in its long boiler.",
+   "dst": "Mk V ミュール級王室貨物機関車は前部台車の重みで独特の不均一なリズムを刻みますが、サーキット級旅客機関車 {~}-{~} は長いボイラーの調和振動で低く唸るのです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#647": {
+   "src": "This is neither! It must be something happening in the Saltpetre mine that lies below {p}. But what! No normal pickaxe-based excavation could make this sort of tone... unless...",
+   "dst": "これはどちらでもない！{p} の地下の硝石鉱山で何かが起きているに違いありません。でも何が！普通のつるはし掘りでこんな音は… まさか…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#648": {
+   "src": "The rumours of the Mk VI are true!",
+   "dst": "Mk VI の噂は本当だったのです！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#649": {
+   "src": "I must dwell on this. Good day!",
+   "dst": "これは熟考せねば。では、ごきげんよう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Hyloch Citizen",
+   "source": "captured"
+  },
+  "Overture to Despair#650": {
+   "src": "\"May we unearth the truth long buried and bring forth change.\"",
+   "dst": "「長く埋もれた真実を掘り起こし、変革をもたらさんことを。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#651": {
+   "src": "Maybe you could ask the merchant inside about the wind chime?",
+   "dst": "中の商人に風鈴のことを聞いてみるといいかも？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#652": {
+   "src": "May we unearth the truth long buried and bring forth change. Never forget that.",
+   "dst": "長く埋もれた真実を掘り起こし、変革をもたらさんことを。お忘れなきよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Newspaper Merchant",
+   "source": "captured"
+  },
+  "Overture to Despair#653": {
+   "src": "...seems like they're occupied. You should follow Sui and see what's going on.",
+   "dst": "…取り込み中のようだ。Sui についていって様子を見よう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#654": {
+   "src": "The Art of the New Age",
+   "dst": "新時代の美術",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#655": {
+   "src": "A comprehensive archive of artwork created during the New Age, arranged chronologically.",
+   "dst": "新時代に制作された美術作品を年代順に収めた総合資料。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#656": {
+   "src": "The painting shows a flooded landscape with a Maple tree coming out of the dark waters. There is a single windchime hanging from a branch of the tree.",
+   "dst": "絵には水没した風景と、暗い水から伸びるカエデの木が描かれている。枝には風鈴が一つ掛かっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#657": {
+   "src": "Twilight Skies",
+   "dst": "黄昏の空",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#658": {
+   "src": "Painted in {~}NA by Yuu Higu. This artwork seems to utilise water paints as the base with coloured glass shards glued on. This is the first record of this technique.",
+   "dst": "{~}NA に Yuu Higu が制作。水彩絵の具を下地に色ガラスの破片を貼り付けた作品らしい。この技法の最初の記録である。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#659": {
+   "src": "The painting seems to represents the differences in the {p} and Auburn. The ruined Auburn after the great flood juxtaposed to the idyllic highlands. This is clearly shown in the colours.",
+   "dst": "この絵は {p} と Auburn の違いを表しているようだ。大洪水後の荒廃した Auburn と牧歌的な高地の対比が色彩にはっきり表れている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#660": {
+   "src": "The painting has two sides with different colouring styles. One half features the ruined Auburn in gray and muted colours. The other half shows the {p} in bright colouring. The two sides are split by the dam.",
+   "dst": "絵は色使いの異なる二面からなる。半分は荒廃した Auburn を灰色のくすんだ色で、もう半分は {p} を明るい色彩で描く。二面はダムで分かたれている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#661": {
+   "src": "The Khuia Haiku Collection:",
+   "dst": "Khuia 俳句集:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#662": {
+   "src": "Written by the poet Khuia in KA{~}",
+   "dst": "詩人 Khuia 作、KA{~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#663": {
+   "src": "Power, glory, flame",
+   "dst": "力、栄光、炎",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#664": {
+   "src": "You open another page at random...",
+   "dst": "別のページを適当に開いてみる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#665": {
+   "src": "Thunder strikes, earth impairs",
+   "dst": "雷落ち、大地傷む",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#666": {
+   "src": "Break beyond, stars shine",
+   "dst": "彼方へ、星は輝く",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#667": {
+   "src": "What do you want to grow?",
+   "dst": "何を育てる？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#668": {
+   "src": "The heather plant requires a lot of sunlight.",
+   "dst": "ヘザーはたくさんの日光を必要とする。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#669": {
+   "src": "The Death Penalty - The Good and the Bad",
+   "dst": "死刑 - その功罪",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#670": {
+   "src": "The death penalty remains an effective tool for maintaining order, mainly through its value as a deterrent. When people know there is a real risk of execution,",
+   "dst": "死刑は主に抑止力として、秩序維持に有効な手段であり続けている。処刑の現実的な危険を知れば、",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#671": {
+   "src": "they are far less likely to break the law. That said, if it is used too often, it can start to backfire and reduce the number of people available for forced",
+   "dst": "人々が法を破る可能性は大きく下がる。とはいえ多用しすぎれば逆効果となり、強制",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#672": {
+   "src": "conscription in the Wynnic War and cutting into the labor supply for the work camps.",
+   "dst": "徴兵で Wynn 戦争へ送る人員を減らし、労働収容所の労働力をも削ぐことになる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#673": {
+   "src": "such judgments would help maintain the right balance between fear and function.",
+   "dst": "こうした判決は、恐怖と実用の適切な均衡を保つ助けとなるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#674": {
+   "src": "Magical Observations: The Instable Cosmos",
+   "dst": "魔法の考察: 不安定な宇宙",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#675": {
+   "src": "Utilising my blessing of cosmic manipulation I have noticed how volatile my spells have become.",
+   "dst": "宇宙を操る祝福を用いるうち、私の呪文がひどく不安定になったことに気づいた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#676": {
+   "src": "This power is addicting. The risk of casting such magic urges me to use it more, and more, and more.",
+   "dst": "この力には中毒性がある。これほどの魔法を放つ危険が、もっと、もっと、もっと使えと駆り立てる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#677": {
+   "src": "The Queen has strictly advised against frequent magic use... Luckily my sword skills tend to suffice in duels.",
+   "dst": "女王には魔法の多用を固く戒められた… 幸い、決闘は大抵剣の腕で事足りる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#678": {
+   "src": "Ever since my ascension and the blessing of the stars that followed, I have little use of my previous elemental magics.",
+   "dst": "昇華と、それに続く星の祝福を得て以来、以前の属性魔法はほとんど不要になった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#679": {
+   "src": "Teaching myself the elements were fun. Magic is simply easy. Everyone should've been able to realise the nature of our world and the elements that make it up.",
+   "dst": "属性の独学は楽しかった。魔法は単純で簡単だ。誰もが世界の本質とそれを成す属性に気づけたはずなのだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#680": {
+   "src": "After my first discovery of thunder magic the rest came easier and easier. All elements are, the same, but also completely different.",
+   "dst": "雷魔法を初めて発見すると、残りはどんどん容易になった。属性はみな同じで、かつ全く異なる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#681": {
+   "src": "You tell her about remaking the connections. About the monoliths, deactivated with intent, their light fading.",
+   "dst": "つながりを作り直したことを話す。意図的に停止され、光が消えゆくモノリスのことを。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#682": {
+   "src": "You tell her about crossing the bridge. About your encounter with the Scourge of Wynn. About his battle with Lari, from start to end.",
+   "dst": "橋を渡ったことを話す。Wynn の災厄との遭遇を。彼と Lari の戦いを、始めから終わりまで。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#683": {
+   "src": "You tell her about Orphion. About the Parasite latched on, eating through his radiance. About the struggle to remove it.",
+   "dst": "Orphion のことを話す。取り付いて彼の光輝を喰らう寄生体のことを。それを取り除くための戦いを。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#684": {
+   "src": "Of course you would... well then, are we finished here? Might we finally dismiss our little guest and return to important matters.",
+   "dst": "君ならそう言うだろうな… では、これで終わりかね？そろそろ小さな客人にはお帰りいただき、重要な案件に戻ろうではないか。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Majin",
+   "source": "captured"
+  },
+  "Overture to Despair#685": {
+   "src": "I wish... he could have been here with us. There was so much waiting for him in Fruma. So many people. Just a few weeks later, and...",
+   "dst": "彼も… ここにいられたらよかったのに。Fruma ではたくさんのものが待ってた。たくさんの人が。あと数週間あれば…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#686": {
+   "src": "...ha. What a difference, a few weeks would've made. If only. If only.",
+   "dst": "…はは。数週間で全然違ったのに。もしも。もしも、ね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "Overture to Despair#687": {
+   "src": "...ha. Maybe.",
+   "dst": "…はは。かもね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
   },
   "Pirate's Trove#000": {
    "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
@@ -156714,7 +157574,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#305": {
-   "src": "It... it finally feels like we have a second to breath.",
+   "src": "It... it finally feels like we have a second to breathe.",
    "dst": "やっと…やっと一息つける気がする。",
    "role": "desc",
    "kind": "dialogue",
@@ -156744,7 +157604,7 @@
    "source": "wiki"
   },
   "Shrouded in Mist#308": {
-   "src": "It must have be worth stealing it... somehow.",
+   "src": "It must have been worth stealing it... somehow.",
    "dst": "盗む価値はあったはず…きっと、何かしら。",
    "role": "desc",
    "kind": "dialogue",
@@ -156820,6 +157680,26 @@
    "kind": "dialogue",
    "quest": "Shrouded in Mist",
    "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shrouded in Mist#316": {
+   "src": "Find a way to destroy the drill, fast.",
+   "dst": "急いで、ドリルを壊す方法を見つけて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "Shrouded in Mist#317": {
+   "src": "[-{~} Rake]",
+   "dst": "[-{~} 熊手]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shrouded in Mist",
+   "stage": "",
    "speaker": "",
    "source": "captured"
   },
@@ -158634,8 +159514,8 @@
    "source": "captured"
   },
   "Solidarity of Steel#181": {
-   "src": "Yeah, yeah! Come on, what are you waiting for? Go {u}, and find out what they're talking about.",
-   "dst": "そうそう！ほら、何を待ってる？行け {u}、何を話してるか探ってこい。",
+   "src": "Yeah, yeah! Come on, what are you waiting for? Go interrupt Syndra and Quill, and find out what they're talking about.",
+   "dst": "そうそう！ほら、何を待ってる？Syndra と Quill の話に割り込んで、何を話してるか探ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -161974,7 +162854,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#515": {
-   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equatio- nnh.",
+   "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equati- nnh.",
    "dst": "君の予定―Oru に習っているのか？この地方の緊急事態は君の憲章よりはるかに大きな値だ、君主、だから方程式に加算を―んっ。",
    "role": "desc",
    "kind": "dialogue",
@@ -162352,6 +163232,86 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Solidarity of Steel#553": {
+   "src": "New Chapter Started: The Steel Feather",
+   "dst": "新章開始: 鋼の羽根",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#554": {
+   "src": "Wait for Zeph!",
+   "dst": "Zeph を待とう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Solidarity of Steel#555": {
+   "src": "You- you didn't find any clothing? I can't leave with- with only one set of clothes! I know I have a shirt somewhere...",
+   "dst": "ふ、服は…見つからなかったんですか？い、一着だけじゃ…出ていけません！シャツがどこかにあるはずなのに…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#556": {
+   "src": "There's... nothing to sleep with in- in here. You couldn't f-find a pillow or blanket? I'd e-even take a mattress...",
+   "dst": "ね…寝るものが、こ、ここにありません。ま、枕か毛布は見つかりませんでした？ま、マットレスでもいいのに…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#557": {
+   "src": "Oh... n-nothing to pass the time... I know I had a book and a deck of cards, I know I did...",
+   "dst": "ああ…ひ、暇つぶしの物がない…本とトランプがあったはず、絶対あったのに…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#558": {
+   "src": "...As much as this little place is- is run down, it's... it's home. I can't just leave- I can't. I can't go without... without something to remember it by. Please, please, find my ring or my photograph. Please.",
+   "dst": "…こんなにボロボロの場所でも…ここは、か、家なんです。ただ出ていくなんて―できない。何か…何か思い出の品がないと。お願い、お願いです、指輪か写真を見つけてください。お願いします。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Aihan",
+   "source": "captured"
+  },
+  "Solidarity of Steel#559": {
+   "src": "Well, there's no rush to be here. Quill's going to be a while still. Why don't you go talk to Sui and grab some food?",
+   "dst": "なら、急がなくていいわ。Quill はまだしばらくかかるから。Sui のところで何か食べてきたら？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "Solidarity of Steel#560": {
+   "src": "[+{~} Roughworks Food]",
+   "dst": "[+{~} Roughworks の食料]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Solidarity of Steel",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Stable Story#000": {
    "src": "Hey! Get out of here! Scram! Shoo!",
@@ -209958,7 +210918,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#201": {
-   "src": "Is it! I suppose it is, haha! I am glad to have had the oppurtunity to learn to use it.",
+   "src": "Is it! I suppose it is, haha! I am glad to have had the opportunity to learn to use it.",
    "dst": "そうですか！確かにそうかもしれませんね、はは！使い方を学ぶ機会を得られて良かった。",
    "role": "desc",
    "kind": "dialogue",
@@ -213198,7 +214158,7 @@
    "source": "wiki"
   },
   "The Price of Ingenuity#525": {
-   "src": "So. So, so,so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
+   "src": "So. So, so, so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
    "dst": "つまり。その、その… 王家が僕らをここで放っておいたのは、僕が君主 Soosu の下で働いてたからなんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -215767,6 +216727,36 @@
    "speaker": "Yusanu",
    "source": "captured.json"
   },
+  "The Price of Ingenuity#792": {
+   "src": "It wouldn't be a good idea to go back down there.",
+   "dst": "あそこに戻るのはやめたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#793": {
+   "src": "[+{~} Resonance Weaver]",
+   "dst": "[+{~} 共鳴の織機]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#794": {
+   "src": "You'll get us found out!",
+   "dst": "見つかっちゃうよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "Yusanu",
+   "source": "captured"
+  },
   "The Qira Hive (Quest)#000": {
    "src": "I see another lost soul has found their way to The {p}!",
    "dst": "また迷える魂が {p} に辿り着いたか！",
@@ -218108,8 +219098,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "よし、あと残ってるね！それが終わる頃には僕もこっちを終わらせて、そこから進めよう！",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "よし、あと {~} つだね！それが終わる頃には僕もこっちを終わらせて、そこから進めよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -218218,8 +219208,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "Marseled の茶屋は北西の尾根の上だよ。正確な場所が知りたければ、クエストブックを見て！",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "Marseled の茶屋は北西の尾根の上だよ。正確な場所が知りたければ、コンテンツブックを見て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -218568,8 +219558,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "もう宣伝してくれた？みんながいつもどこにいるか確認して、知らせてきて！もちろん君も盛大な再開に招待してるよ。",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "もう宣伝してくれた？僕のメモでみんながいつもどこにいるか確認して、知らせてきて！もちろん君も盛大な再開に招待してるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -218588,7 +219578,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "よし、ちょっと待って…はい、どうぞ！行き先は確認してね！",
    "role": "desc",
    "kind": "dialogue",
@@ -218598,8 +219588,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "僕が挙げた場所はどれも {u} だけど、困ってたら言ってね、新しく書くよ！",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "僕が挙げた場所はどれも {p} のすぐ近くだけど、困ってたら言ってね、新しく書くよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -218808,7 +219798,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "それで、それで、それで、あの、君主様が、僕が終わったって伝えられて、あれがもらえて、それで…ああもう、終わったのに前より緊張してる、ああああ―",
    "role": "desc",
    "kind": "dialogue",
@@ -219496,6 +220486,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "日陰でくつろいでいる。何かに満足げだが、何に対してかはわからない…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "まだ眠りきっていない。震えているようだ…期待で？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "Maripe の仕事ぶりを興味深そうに見ているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "ここに載っている人たちは、もう温泉を満喫している頃だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "今にも目覚めそうな浅い眠りだ。温泉を見守っているよう…あるいは子の仕事ぶりを誇らしげに眺める親のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "ぐっすり眠っている。柔らかな寝息は聞き続けると眠ってしまいそうだ…子を寝かしつける誇らしげな親のように。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "とても気持ちよさそうに眠っている。Maripe が気を利かせて下にタオルを敷いたのだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "訪れた客を眺めて楽しんでいるようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "ゆっくりとまどろんでいる。この時間を…味わっているのだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "日陰でくつろいでいる。周りに大勢いても満足そうだ…いや、大勢いるからこそだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Sewers of Ragni#000": {
    "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
@@ -234478,7 +235568,7 @@
    "source": "wiki"
   },
   "True Colours#134": {
-   "src": "{u}. You've been busy haven't you?",
+   "src": "{u}. You've been busy, haven't you?",
    "dst": "{u}。ずいぶん忙しかったみたいだね？",
    "role": "desc",
    "kind": "dialogue",
@@ -234498,7 +235588,7 @@
    "source": "wiki"
   },
   "True Colours#136": {
-   "src": "Imagine my surprise when I found you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
+   "src": "Imagine my surprise when I found out you were the one responsible for all the commotion. That you were even in Fruma in the first place!",
    "dst": "騒ぎの張本人が君だと知ったときは驚いたよ。そもそも君が Fruma にいたなんて！",
    "role": "desc",
    "kind": "dialogue",
@@ -234508,7 +235598,7 @@
    "source": "wiki"
   },
   "True Colours#137": {
-   "src": "Sigh... look. They thought you might try the prison even though it isn't really an option. Especially not from this side- there are guards everywhere.",
+   "src": "Sigh... look. They thought you might try the prison, even though it isn't really an option. Especially not from this side- there are guards everywhere.",
    "dst": "はあ…ねえ。監獄は無理なのに、君が挑むかもって読まれてた。特にこっち側は衛兵だらけだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -234528,7 +235618,7 @@
    "source": "wiki"
   },
   "True Colours#139": {
-   "src": "Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
+   "src": "Well. Usually, at least. I've cleared them out temporarily, so that we could have some privacy.",
    "dst": "普段はね。一時的に退かせたんだ、二人きりで話せるように。",
    "role": "desc",
    "kind": "dialogue",
@@ -234558,8 +235648,8 @@
    "source": "wiki"
   },
   "True Colours#142": {
-   "src": "Sigh... she mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
-   "dst": "はあ… 君にも話したんだろう？僕らの力の及ばない者たちが、この世界で繰り広げる終わりなき戦争のこと。",
+   "src": "She mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
+   "dst": "君にも話したんだろう？僕らの力の及ばない者たちが、この世界で繰り広げる終わりなき戦争のこと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -234694,8 +235784,8 @@
    "source": "wiki"
   },
   "True Colours#155": {
-   "src": "...I am. I'm not sure how to feel about it still, honestly.",
-   "dst": "…うん。正直、まだどう受け止めていいかわからない。",
+   "src": "...I am. I'm not sure how to feel about it still, honestly. There's... two parts to it.",
+   "dst": "…うん。正直、まだどう受け止めていいかわからない。二つの面があって…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -234874,7 +235964,7 @@
    "source": "wiki"
   },
   "True Colours#174": {
-   "src": "To some extent, it's a relief - but more than that it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
+   "src": "To some extent, it's a relief - but more than that, it makes me angry. This was weighing on me for so long, and for it to mean... nothing, in the end?",
    "dst": "ある意味ほっとしたけど、それ以上に腹が立つ。ずっと重荷だったのに、結局…何の意味もなかったなんて？",
    "role": "desc",
    "kind": "dialogue",
@@ -234894,7 +235984,7 @@
    "source": "wiki"
   },
   "True Colours#176": {
-   "src": "...you being here is only making it harder for me to do anything about it of course.",
+   "src": "...you being here is only making it harder for me to do anything about it, of course.",
    "dst": "…もちろん、君がここにいるせいで、それもますます難しくなってるけど。",
    "role": "desc",
    "kind": "dialogue",
@@ -235004,7 +236094,7 @@
    "source": "wiki"
   },
   "True Colours#187": {
-   "src": "Nobody will listen to anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
+   "src": "Nobody will listen about anything not related to you... and for good reason! You massacred a fort of soldiers, you've killed Sovereign Zhiraok twice now...",
    "dst": "君に関係ない話は誰も聞かない…当然だよ！砦の兵を皆殺しにして、君主 Zhiraokをもう二度も倒して…",
    "role": "desc",
    "kind": "dialogue",
@@ -235044,7 +236134,7 @@
    "source": "wiki"
   },
   "True Colours#191": {
-   "src": "I...ugh. I wish it hadn't gone the way it did.",
+   "src": "I... ugh. I wish it hadn't gone the way it did.",
    "dst": "僕…ああ。ああならなければよかったのに。",
    "role": "desc",
    "kind": "dialogue",
@@ -235054,7 +236144,7 @@
    "source": "wiki"
   },
   "True Colours#192": {
-   "src": "I know. I know. I tried to warn you, to get you to call it off, but...sigh. It doesn't matter now. It's already done.",
+   "src": "I know. I know. I tried to warn you, to get you to call it off, but... sigh. It doesn't matter now. It's already done.",
    "dst": "わかってる。わかってる。警告して、やめさせようとしたけど…はあ。今さらどうにもならない。もう済んだことだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -235084,7 +236174,7 @@
    "source": "wiki"
   },
   "True Colours#195": {
-   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to...explain things.",
+   "src": "The crown has soldiers out looking for you. Her Majesty wants to speak with you, to... explain things.",
    "dst": "王家が兵を出して君を探してる。女王陛下が君と話したがってるんだ…事情を説明したいって。",
    "role": "desc",
    "kind": "dialogue",
@@ -235114,7 +236204,7 @@
    "source": "wiki"
   },
   "True Colours#198": {
-   "src": "…I think you should hear her out, but that’s your choice to make. I just thought you should know.",
+   "src": "...I think you should hear her out, but... that's your choice to make. I just thought you should know.",
    "dst": "…彼女の話を聞くべきだと思う、でも決めるのは君だ。知っておくべきだと思っただけ。",
    "role": "desc",
    "kind": "dialogue",
@@ -235154,7 +236244,7 @@
    "source": "wiki"
   },
   "True Colours#202": {
-   "src": "…who else?",
+   "src": "...who else?",
    "dst": "…他には？",
    "role": "desc",
    "kind": "dialogue",
@@ -235224,7 +236314,7 @@
    "source": "wiki"
   },
   "True Colours#209": {
-   "src": "Eugh. He’s... frustrating. I mean we both saw him during that tournament, right? He really thinks he’s better than everyone else around him.",
+   "src": "Eugh. He's... frustrating. I mean, we both saw him during that tournament, right? He really thinks he's better than everyone else around him.",
    "dst": "うう。あいつは…腹が立つ。大会で二人とも見ただろ？周りの誰より自分が上だって本気で思ってるんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -235304,7 +236394,7 @@
    "source": "wiki"
   },
   "True Colours#217": {
-   "src": "…luckily he stays at Gravity’s Monolith for the most part. He won’t be a problem if you just… stay away.",
+   "src": "...luckily, he stays at Gravity's Monolith for the most part. He won't be a problem if you just... stay away.",
    "dst": "…幸い、ほとんど重力のモノリスにいる。近づかなければ…問題にはならない。",
    "role": "desc",
    "kind": "dialogue",
@@ -235424,7 +236514,7 @@
    "source": "wiki"
   },
   "True Colours#229": {
-   "src": "…it’s rare to find someone who understands, you know? Of course, I’ve had you, and… and Aledar, but it’s isolating. Even others from Fruma, they just… don’t get it.",
+   "src": "...it's rare to find someone who understands, you know? Of course, I've had you, and... and Aledar, but... it's isolating. Even others from Fruma, they just... don't get it.",
    "dst": "…わかってくれる人に出会えるのは稀なんだ。もちろん君や…Aledar がいた、でも孤独だった。Fruma 出身の人ですら…わかってくれない。",
    "role": "desc",
    "kind": "dialogue",
@@ -236714,7 +237804,7 @@
    "source": "wiki"
   },
   "True Colours#358": {
-   "src": "Oho! Impressive stuff. Simple pieces of paper in appearance... but they pack a punch. Rather useful!",
+   "src": "Oho! Impressive stuff. Simple pieces of paper, in appearance... but they pack a punch. Rather useful!",
    "dst": "おほっ！見事なものです。見た目はただの紙切れなのに…威力は抜群。とても役に立ちますね！",
    "role": "desc",
    "kind": "dialogue",
@@ -238074,7 +239164,7 @@
    "source": "wiki"
   },
   "True Colours#494": {
-   "src": "Take. Some Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
+   "src": "Take. Some. Time? No. No, I'm done taking time. I'm done crying, I'm done worrying! I'm so... so... angry! At the Crown, at myself, at- at Mora!!!!",
    "dst": "時間を。置く？いや。いや、時間を置くのはもうたくさん。泣くのも、心配するのももうたくさん！私…すごく…怒ってる！王家に、自分に、M―Mora に！！！！",
    "role": "desc",
    "kind": "dialogue",
@@ -238362,6 +239452,726 @@
    "stage": "Stage 19",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "True Colours#523": {
+   "src": "...of course. Of course. That makes sense, I should have- I should have put that together, shouldn't I?",
+   "dst": "…そうか。そうだよな。それなら納得だ、僕は―僕は気づくべきだった、そうだろ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#524": {
+   "src": "He always was trying to help others... to his own detriment.",
+   "dst": "あいつはいつも人を助けようとしてた…自分を犠牲にしてまで。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#525": {
+   "src": "...it should have been him here. Not me. He had something to come back to. People to reunite with.",
+   "dst": "…ここにいるべきはあいつだった。僕じゃない。あいつには帰る場所があった。再会する人たちが。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#526": {
+   "src": "Instead, he's...",
+   "dst": "なのに、あいつは…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#527": {
+   "src": "...the other Leaves. Your friends. They... probably aren't dead yet. There's still hope for them, if you can find them.",
+   "dst": "…他の風の葉の仲間。君の友達。たぶん…まだ死んでない。見つけられれば、まだ希望はある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#528": {
+   "src": "...what a mess. All of this- it's just... a mess.",
+   "dst": "…ひどい有様だ。何もかも―本当に…ひどい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sovereign Tasim",
+   "source": "captured"
+  },
+  "True Colours#529": {
+   "src": "Um... I... I have no idea know what that means.",
+   "dst": "えっと…わ、私…何のことか全然わからない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "Sui",
+   "source": "captured"
+  },
+  "True Colours#530": {
+   "src": "The Training Facility is locked.",
+   "dst": "訓練施設には鍵がかかっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#531": {
+   "src": "Changeling Biology:",
+   "dst": "チェンジリング生態学:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#532": {
+   "src": "Training a Changeling is a challenging, but worthwhile investment. They require active conditioning from the moment they emerge.",
+   "dst": "チェンジリングの訓練は困難だが価値ある投資である。出現の瞬間から能動的な調教を要する。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#533": {
+   "src": "They have a tendency to change into the first form they encounter, they are also the most receptive to learning at that time.",
+   "dst": "最初に遭遇した姿に変化する傾向があり、学習への受容性もその時期が最も高い。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#534": {
+   "src": "During their first month they require constant stimulus otherwise they easily adapt to the form that fits into the current setting.",
+   "dst": "最初の一か月は絶えず刺激を与える必要がある。さもなければ現環境に適した姿へ容易に順応してしまう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#535": {
+   "src": "There are various other pages...",
+   "dst": "他にも色々なページがある…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#536": {
+   "src": "Subject {~}:",
+   "dst": "被験体 {~}:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#537": {
+   "src": "- Forms: Human, Fox, Owl",
+   "dst": "- 姿: 人間、狐、梟",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#538": {
+   "src": "- Strength Index: {~}",
+   "dst": "- 筋力指数: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#539": {
+   "src": "- Number of Strikes: {~}",
+   "dst": "- 違反回数: {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#540": {
+   "src": "Schedule:",
+   "dst": "日課:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#541": {
+   "src": "{~}:{~} - Wake-up call.",
+   "dst": "{~}:{~} - 起床の合図。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#542": {
+   "src": "{~}:{~} - First class of the day.",
+   "dst": "{~}:{~} - 本日一つ目の授業。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#543": {
+   "src": "{~}:{~} - Fourth class of the day.",
+   "dst": "{~}:{~} - 本日四つ目の授業。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#544": {
+   "src": "{~}:{~} - Fifth class of the day.",
+   "dst": "{~}:{~} - 本日五つ目の授業。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#545": {
+   "src": "{~}:{~} - Sleep.",
+   "dst": "{~}:{~} - 就寝。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#546": {
+   "src": "The Bunker door is locked. A worker must have an employee key...",
+   "dst": "掩蔽壕の扉には鍵がかかっている。作業員なら職員用の鍵を持っているはず…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#547": {
+   "src": "- First meal: Apples and carrots.",
+   "dst": "- 一食目: リンゴとニンジン。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#548": {
+   "src": "- Second meal: Mystery stew.",
+   "dst": "- 二食目: 謎のシチュー。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#549": {
+   "src": "- Third meal: Mystery stew.",
+   "dst": "- 三食目: 謎のシチュー。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#550": {
+   "src": "Do you want to leave?",
+   "dst": "立ち去る？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#551": {
+   "src": "[+{~} Training Facility Key]",
+   "dst": "[+{~} 訓練施設の鍵]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#552": {
+   "src": "The storage door opened.",
+   "dst": "倉庫の扉が開いた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#553": {
+   "src": "[+{~} Officer's Quarters Key]",
+   "dst": "[+{~} 士官宿舎の鍵]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#554": {
+   "src": "The Officer's Quarters are locked.",
+   "dst": "士官宿舎には鍵がかかっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#555": {
+   "src": "Current Research: Soldier Superfood",
+   "dst": "現在の研究: 兵士用スーパーフード",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#556": {
+   "src": "Create a food that provides all necessary nutrients without the need for taste or texture.",
+   "dst": "味や食感を度外視し、必要な栄養素をすべて備えた食品を作ること。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#557": {
+   "src": "The hole appears empty...",
+   "dst": "穴の中は空のようだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#558": {
+   "src": "[+{~} Cabinet Key]",
+   "dst": "[+{~} 記録棚の鍵]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#559": {
+   "src": "You unlock the records cabinet... Inside, you find dozens of file folders.",
+   "dst": "記録棚の鍵を開けた…中には何十もの書類フォルダが入っている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#560": {
+   "src": "Project Hallowground, est. {~} IA.",
+   "dst": "Hallowground 計画、{~} IA 発足。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#561": {
+   "src": "Research Lead: Sovereign Selium.",
+   "dst": "研究責任者: 君主 Selium。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#562": {
+   "src": "Our Polymorph supplies are dwindling. With each new specimen we extract from the wastes, the span between emergences grows wider and wider.",
+   "dst": "Polymorph の供給が減っている。荒野から新たな個体を採取するたび、出現の間隔は広がる一方だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#563": {
+   "src": "If this trend continues, within the next century, we will lose our access to Changeling spies.",
+   "dst": "この傾向が続けば、次の百年のうちにチェンジリングの密偵を失うことになる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#564": {
+   "src": "Sovereign Oru suggests we drill deeper to uncover new sources, but I disagree. The fault lies with the well. It is drying up.",
+   "dst": "君主 Oru は新たな供給源のため更に掘削せよと言うが、私は反対だ。問題は井戸にある。枯れかけているのだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#565": {
+   "src": "If we can no longer rely on the natural, we must imbue that spark of life ourselves.",
+   "dst": "自然に頼れないのなら、生命の火花は我々の手で吹き込まねばならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#566": {
+   "src": "There's more. Will you continue reading?",
+   "dst": "続きがある。読み続ける？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#567": {
+   "src": "Construction Report, {~} IA.",
+   "dst": "建設報告、{~} IA。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#568": {
+   "src": "The old research site has been refurbished and modernized to suit our needs. The facility grounds have been greatly expanded.",
+   "dst": "旧研究施設は我々の用途に合わせて改修・近代化された。施設の敷地も大幅に拡張された。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#569": {
+   "src": "Construction broke through the earth and uncovered a large undisturbed reservoir. Sovereign Oru suggests we stop here. I disagree.",
+   "dst": "工事で地面を貫いたところ、手つかずの大きな貯留池が見つかった。君主 Oru は中止を勧めたが、私は反対だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#570": {
+   "src": "The reservoir will serve as a solid base for our research and experiments.",
+   "dst": "この貯留池は我々の研究と実験の確かな基盤となるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#571": {
+   "src": "Incident Report, {~} IA.",
+   "dst": "事故報告、{~} IA。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#572": {
+   "src": "Southward underground expansion has unearthed a massive cave system lurking deep below the surface.",
+   "dst": "南方への地下拡張により、地表の遥か下に潜む巨大な洞窟網が発見された。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#573": {
+   "src": "Construction was paused. Three workers disobeyed orders and delved further into the caverns. Only one returned.",
+   "dst": "工事は中断された。作業員三名が命令に背いて洞窟の奥へ進み、戻ったのは一名のみ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#574": {
+   "src": "Multiple sentences have been redacted...",
+   "dst": "複数の文が黒塗りにされている…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#575": {
+   "src": "Contacted the Spymaster, Inquisitors were called in to handle the situation.",
+   "dst": "密偵長に連絡し、事態の処理に審問官が招集された。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#576": {
+   "src": "The cavern is to be sealed immediately, and all workers in contact are to have their memories removed.",
+   "dst": "洞窟は直ちに封鎖し、接触した作業員は全員、記憶を消去すること。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#577": {
+   "src": "Observation Log, {~} IA.",
+   "dst": "観察日誌、{~} IA。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#578": {
+   "src": "Formless, mindless... they come from the earth, charged with its primordial life.",
+   "dst": "形なく、心なく…彼らは大地より来る。その原初の生命を帯びて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#579": {
+   "src": "But how? How do they come to be? What ignites that spark?",
+   "dst": "だが、いかにして？いかにして生じる？何がその火花を灯すのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#580": {
+   "src": "My blessing grants me a limited understanding, but not nearly enough. What is the source? I do not know.",
+   "dst": "我が祝福は限られた理解をもたらすが、到底足りない。源は何か？わからない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#581": {
+   "src": "I have asked Sovereign Gikyo for their insight. They laughed me out of the room. I suspect I will glean nothing from these attempts.",
+   "dst": "君主 Gikyo に見解を求めた。笑って部屋から追い出された。この試みから得るものはないだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#582": {
+   "src": "...perhaps I should ask the earth itself.",
+   "dst": "…大地そのものに尋ねるべきかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#583": {
+   "src": "We have come so close... so close, yet so far. I have heard its echoes, surfacing from the depths below. A broken, fractured thing...",
+   "dst": "ここまで近づいた…こんなに近いのに、まだ遠い。深みから浮かび上がる残響を聞いた。壊れ、砕けた何か…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#584": {
+   "src": "The spark... I have lit it once more. That which animates the dark pools of essence into beings we control...",
+   "dst": "火花…再び灯した。闇の精髄の池に命を与え、我らの操る存在へと変えるものを…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#585": {
+   "src": "But the vessels, they are not mindless... not in the same way. Being drawn forth from unlife into being instills a madness in them that I cannot resolve.",
+   "dst": "だが器たちは心なきものではない…同じ意味では。非生命から存在へ引き出されることで、私には解消できない狂気が宿る。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#586": {
+   "src": "The Spymaster has a suggestion. An external Scientist, one who has studied the inner workings of a similar madness.",
+   "dst": "密偵長に提案がある。同様の狂気の内実を研究した外部の科学者だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#587": {
+   "src": "Ten years. Ten years here, he has spent on his studies, and not a single step of progress. And this is the best option we have...?",
+   "dst": "十年。ここで十年も研究に費やし、一歩も進展がない。それが我々の最善の選択肢だと…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#588": {
+   "src": "This is the best option we have. It will be done. It will be over soon.",
+   "dst": "これが我々の最善の選択肢だ。やるしかない。すぐに終わる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#589": {
+   "src": "Warden's Log, {~} IA.",
+   "dst": "看守長の日誌、{~} IA。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#590": {
+   "src": "The inner workings of the Hallowground Facility fell apart at {~}:{~} PM.",
+   "dst": "Hallowground 施設の内部機能は午後 {~}:{~} に崩壊した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#591": {
+   "src": "Schedule interrupted. But urgency demands a response.",
+   "dst": "予定は中断。だが事態は緊急の対応を要する。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#592": {
+   "src": "Spymaster suggests ceasing mining operations in the west. Order approved.",
+   "dst": "密偵長より西部の採掘作業の停止を提案。命令を承認。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#593": {
+   "src": "Quotas will fall short. Prisoner work hours will be increased until the situation is resolved.",
+   "dst": "割当量は未達となる。事態解決まで囚人の作業時間を延長する。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "True Colours#594": {
+   "src": "No sign of Sovereign Selium. Presumed dead.",
+   "dst": "君主 Selium の消息なし。死亡と推定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "True Colours",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Tunnel Trouble#000": {
    "src": "You shouldn't go in here just yet.",
