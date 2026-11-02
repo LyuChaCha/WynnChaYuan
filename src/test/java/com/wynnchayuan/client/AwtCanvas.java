@@ -332,6 +332,71 @@ final class AwtCanvas implements Canvas {
         g.setPaint(was);
     }
 
+    private static final Map<String, BufferedImage> IMAGES = new HashMap<>();
+    private static final BufferedImage NONE = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+
+    // 資源包的材質不進倉庫；-Dwcy.pack=<解出來的資料夾> 才拿得到，平常走畫的那一套
+    private static BufferedImage picture(String id) {
+        return IMAGES.computeIfAbsent(id, key -> {
+            int colon = key.indexOf(':');
+            String space = colon < 0 ? "minecraft" : key.substring(0, colon);
+            String file = colon < 0 ? key : key.substring(colon + 1);
+            try (InputStream in = AwtCanvas.class.getResourceAsStream("/assets/" + space + "/" + file)) {
+                if (in != null) {
+                    return javax.imageio.ImageIO.read(in);
+                }
+            } catch (Exception e) {
+                return NONE;
+            }
+            String pack = System.getProperty("wcy.pack");
+            if (pack != null) {
+                java.io.File f = new java.io.File(pack, space + "/" + file);
+                try {
+                    if (f.isFile()) {
+                        return javax.imageio.ImageIO.read(f);
+                    }
+                } catch (Exception e) {
+                    return NONE;
+                }
+            }
+            return NONE;
+        });
+    }
+
+    @Override
+    public int textureWidth(String id) {
+        BufferedImage img = picture(id);
+        return img == NONE ? 0 : img.getWidth();
+    }
+
+    @Override
+    public int textureHeight(String id) {
+        BufferedImage img = picture(id);
+        return img == NONE ? 0 : img.getHeight();
+    }
+
+    @Override
+    public void image(String id, float x, float y, float w, float h, float u, float v, float uw,
+                      float vh, int argb) {
+        BufferedImage img = picture(id);
+        if (img == NONE || w <= 0 || h <= 0) {
+            return;
+        }
+        int dx0 = Math.round(p(x));
+        int dy0 = Math.round(p(y));
+        int dx1 = Math.round(p(x + w));
+        int dy1 = Math.round(p(y + h));
+        java.awt.Composite was = g.getComposite();
+        int a = argb >>> 24;
+        if (a < 255) {
+            g.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, a / 255f));
+        }
+        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+        g.drawImage(img, dx0, dy0, dx1, dy1, Math.round(u), Math.round(v), Math.round(u + uw),
+                    Math.round(v + vh), null);
+        g.setComposite(was);
+    }
+
     void done() {
         g.dispose();
     }

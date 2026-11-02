@@ -38,6 +38,18 @@ public interface Canvas {
         fill(x, y, x + w, y + h, Ui.fade(argb, (from + to) / 2f));
     }
 
+    default int textureWidth(String id) {
+        return 0;
+    }
+
+    default int textureHeight(String id) {
+        return 0;
+    }
+
+    default void image(String id, float x, float y, float w, float h, float u, float v, float uw,
+                       float vh, int argb) {
+    }
+
     default void raise() {
     }
 }

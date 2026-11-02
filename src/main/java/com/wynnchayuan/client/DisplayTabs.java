@@ -4,6 +4,7 @@ import com.wynnchayuan.ModConfig;
 import com.wynnchayuan.LanguageLayers;
 import com.wynnchayuan.PanelGap;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.client.ui.Preview;
 import com.wynnchayuan.client.ui.Row;
 import com.wynnchayuan.client.ui.Ui;
 import com.wynnchayuan.render.PanelShot;
@@ -57,6 +58,7 @@ final class DisplayTabs {
                 .reset(() -> cfg().tooltipMode() == ModConfig.TooltipMode.REPLACE,
                         () -> SettingsScreen.cycleTo(cfg()::tooltipMode, cfg()::cycleTooltipMode,
                                 ModConfig.TooltipMode.REPLACE))
+                .spot(Preview.Spot.TOOLTIP)
                 .details(List.of(SettingsScreen.toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                         cfg()::toggleShiftPeekNames))));
         rows.add(SettingsScreen.toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
@@ -91,7 +93,8 @@ final class DisplayTabs {
                 .pick(i -> SettingsScreen.cycleTo(cfg()::itemNames, nextName,
                         ModConfig.ItemNames.values()[i]))
                 .reset(() -> cfg().itemNames() == ModConfig.ItemNames.OFF,
-                        () -> SettingsScreen.cycleTo(cfg()::itemNames, nextName, ModConfig.ItemNames.OFF)));
+                        () -> SettingsScreen.cycleTo(cfg()::itemNames, nextName, ModConfig.ItemNames.OFF))
+                .near(Preview.Spot.TOOLTIP));
         Runnable nextPage = () ->
                 WynnChaYuan.translations().setPageNameMode(cfg().cyclePageNames(1));
         rows.add(modes(Row.segment("items.pages", SettingsScreen.t("items.pages"), SettingsScreen.t("items.pages.hint")),
@@ -158,6 +161,7 @@ final class DisplayTabs {
                 .commit(cfg()::saveIfDirty)
                 .reset(() -> DEFAULT_COLOUR.equalsIgnoreCase(cfg().themeColor()),
                         () -> cfg().setThemeColor(DEFAULT_COLOUR)));
+        rows.add(SettingsScreen.toggle("look.leaves", true, cfg()::settingsLeaves, cfg()::toggleSettingsLeaves));
         return rows;
     }
 
@@ -189,6 +193,7 @@ final class DisplayTabs {
     List<Row> dialogue() {
         List<Row> rows = new ArrayList<>();
         rows.add(dialogueMode("dialogue.mode", cfg()::dialogueMode, cfg()::cycleDialogueMode)
+                .spot(Preview.Spot.DIALOGUE)
                 .details(List.of(
                         SettingsScreen.toggle("dialogue.cover", true, cfg()::dialogueCover, cfg()::toggleDialogueCover),
                         Row.slider("dialogue.hold", SettingsScreen.t("dialogue.hold"), SettingsScreen.t("dialogue.hold.hint"))
@@ -201,7 +206,8 @@ final class DisplayTabs {
                                     cfg().setDialogueHoldSecondsLive(6);
                                     cfg().saveIfDirty();
                                 }))));
-        rows.add(dialogueMode("dialogue.choices", cfg()::choiceMode, cfg()::cycleChoiceMode));
+        rows.add(dialogueMode("dialogue.choices", cfg()::choiceMode, cfg()::cycleChoiceMode)
+                .spot(Preview.Spot.CHOICES));
         return rows;
     }
 
@@ -218,22 +224,23 @@ final class DisplayTabs {
                 .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.LOOK_AT,
                         () -> SettingsScreen.cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
                                 ModConfig.NametagMode.LOOK_AT))
+                .spot(Preview.Spot.NAMEPLATE)
                 .details(List.of(Row.action("world.nametag.advanced",
                                 SettingsScreen.t("world.nametag.advanced"),
                                 SettingsScreen.t("world.nametag.advanced.hint"))
                         .label(SettingsScreen.t("button.adjust"))
                         .run(() -> screen.client().setScreen(new NametagScreen(screen))))));
         rows.add(SettingsScreen.toggle("world.helditem", true, cfg()::translateHeldItem, cfg()::toggleHeldItem)
-                .tone(Row.Tone.REPLACE));
+                .tone(Row.Tone.REPLACE).spot(Preview.Spot.HELD));
         rows.add(SettingsScreen.toggle("world.titles", true, cfg()::translateTitles, cfg()::toggleTitles)
-                .onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE));
+                .onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE).spot(Preview.Spot.TITLE));
         return rows;
     }
 
     List<Row> hud() {
         List<Row> rows = new ArrayList<>();
         rows.add(SettingsScreen.toggle("world.bossbar", true, cfg()::translateBossBar, cfg()::toggleBossBar)
-                .onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE));
+                .onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE).spot(Preview.Spot.BOSS));
         ModConfig.DialogueMode[] order = {
             ModConfig.DialogueMode.REPLACE, ModConfig.DialogueMode.PANEL,
             ModConfig.DialogueMode.OFF};
@@ -246,11 +253,13 @@ final class DisplayTabs {
                 })
                 .reset(() -> cfg().trackerMode() == ModConfig.DialogueMode.REPLACE,
                         () -> SettingsScreen.cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode,
-                                ModConfig.DialogueMode.REPLACE)));
+                                ModConfig.DialogueMode.REPLACE))
+                .spot(Preview.Spot.TRACKER));
         rows.add(SettingsScreen.toggle("world.objectives", true, cfg()::translateObjectives,
-                cfg()::toggleObjectives).onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE));
+                cfg()::toggleObjectives).onText(SettingsScreen.t("mode.replace")).tone(Row.Tone.REPLACE)
+                .near(Preview.Spot.BOARD));
         rows.add(SettingsScreen.toggle("world.scoreboard", true, cfg()::translateScoreboard,
-                cfg()::toggleScoreboard).tone(Row.Tone.REPLACE));
+                cfg()::toggleScoreboard).tone(Row.Tone.REPLACE).spot(Preview.Spot.BOARD));
         return rows;
     }
 
@@ -263,6 +272,7 @@ final class DisplayTabs {
                 .reset(() -> cfg().chatMode() == ModConfig.ChatMode.BOTH,
                         () -> SettingsScreen.cycleTo(cfg()::chatMode, cfg()::cycleChatMode,
                                 ModConfig.ChatMode.BOTH))
+                .spot(Preview.Spot.CHAT)
                 .details(List.of(SettingsScreen.toggle("world.chatcopy", true, cfg()::chatCopy,
                         cfg()::toggleChatCopy))));
     }

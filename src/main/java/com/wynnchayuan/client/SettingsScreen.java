@@ -63,6 +63,7 @@ public final class SettingsScreen extends Screen {
 
     @Override
     protected void init() {
+        GuiCanvas.forgetTextures();
         if (view == null) {
             view = new SettingsView(buildTabs(), new Host(), lastTab);
         }
@@ -180,6 +181,11 @@ public final class SettingsScreen extends Screen {
                 case OFF -> ModeColours.OFF_DEEP;
                 case PLAIN -> Ui.deep(accent);
             };
+        }
+
+        @Override
+        public boolean leaves() {
+            return cfg().settingsLeaves();
         }
 
         @Override

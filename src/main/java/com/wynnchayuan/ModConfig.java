@@ -56,6 +56,8 @@ public final class ModConfig {
 
     boolean wynntilsFps = true;
 
+    boolean settingsLeaves = true;
+
     boolean dialogueCover = true;
 
     boolean marketSearch = true;
@@ -425,6 +427,16 @@ public final class ModConfig {
 
     public boolean wynntilsFps() {
         return wynntilsFps;
+    }
+
+    public boolean settingsLeaves() {
+        return settingsLeaves;
+    }
+
+    public boolean toggleSettingsLeaves() {
+        settingsLeaves = !settingsLeaves;
+        save();
+        return settingsLeaves;
     }
 
     public boolean dialogueCover() {

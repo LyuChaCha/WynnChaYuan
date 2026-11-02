@@ -14,6 +14,20 @@ public final class Preview {
         CAPE
     }
 
+    public enum Spot {
+        TOOLTIP(Scene.TOOLTIP), DIALOGUE(Scene.DIALOGUE), CHOICES(Scene.DIALOGUE),
+        NAMEPLATE(Scene.WORLD), HELD(Scene.WORLD), TITLE(Scene.WORLD), BOSS(Scene.WORLD),
+        TRACKER(Scene.WORLD), BOARD(Scene.WORLD), CHAT(Scene.WORLD);
+
+        public final Scene scene;
+
+        Spot(Scene scene) {
+            this.scene = scene;
+        }
+    }
+
+    public static final Spot[] SPOTS = Spot.values();
+
     public static final class State {
         public int tooltipMode;
         public int names = 2;
@@ -40,6 +54,27 @@ public final class Preview {
         public String panelOffNote = "";
 
         public UnaryOperator<String> translate = s -> s;
+
+        public final float[][] spots = new float[SPOTS.length][4];
+        public final boolean[] shown = new boolean[SPOTS.length];
+
+        void mark(Spot spot, float x, float y, float w, float h) {
+            float[] box = spots[spot.ordinal()];
+            if (!shown[spot.ordinal()]) {
+                box[0] = x;
+                box[1] = y;
+                box[2] = w;
+                box[3] = h;
+                shown[spot.ordinal()] = true;
+                return;
+            }
+            float x1 = Math.max(box[0] + box[2], x + w);
+            float y1 = Math.max(box[1] + box[3], y + h);
+            box[0] = Math.min(box[0], x);
+            box[1] = Math.min(box[1], y);
+            box[2] = x1 - box[0];
+            box[3] = y1 - box[1];
+        }
     }
 
     private static final String ITEM = "Bony Bow";
@@ -47,6 +82,7 @@ public final class Preview {
     private static final String SPEAKER = "Aledar";
     private static final String LINE = "Well, what are we waiting for?";
     private static final String[] CHOICES = {"Yes", "Goodbye."};
+    private static final String CONTINUE = "to continue";
     private static final String BOSS = "Zombie";
     private static final String NPC = "Weapon Merchant";
     private static final String TITLE = "Level Up!";
@@ -58,32 +94,118 @@ public final class Preview {
         "- Loot Chests T{~}+: {~}/{~}", "- Mobs slain: {~}/{~}"};
     private static final String[][] SCORE_VALUES = {{"2", "3", "5"}, {"42", "100"}};
 
+    static final String BG_STREET = "wynnchayuan:textures/gui/preview/street.png";
+    static final String BG_WORLD = "wynnchayuan:textures/gui/preview/world.png";
+    private static final String DIALOGUE_STYLE = "minecraft:textures/font/hud/dialogue/style/default/";
+    private static final String DLG_BOX = DIALOGUE_STYLE + "box.png";
+    private static final String DLG_FRAME = DIALOGUE_STYLE + "frame.png";
+    private static final String DLG_PLATE = DIALOGUE_STYLE + "nameplate.png";
+    private static final String DLG_FOOTER = DIALOGUE_STYLE + "footer.png";
+    private static final String DLG_CHOICE = DIALOGUE_STYLE + "choice.png";
+    private static final String DLG_FACE = "minecraft:textures/font/hud/dialogue/portrait/wynn/main/aledar.png";
+    private static final String HOTBAR = "minecraft:textures/gui/sprites/hud/hotbar.png";
+    private static final String HOTBAR_PICK = "minecraft:textures/gui/sprites/hud/hotbar_selection.png";
+    private static final String BOSS_BACK = "minecraft:textures/gui/sprites/boss_bar/red_background.png";
+    private static final String BOSS_FILL = "minecraft:textures/gui/sprites/boss_bar/red_progress.png";
+    private static final String TIP_BACK = "minecraft:textures/gui/sprites/tooltip/rare_background.png";
+    private static final String TIP_FRAME = "minecraft:textures/gui/sprites/tooltip/rare_frame.png";
+
     private static final int TIP_BG = 0xF0160A22;
     private static final int TIP_EDGE = 0xFF4B2A8A;
     private static final int BOX_BG = 0xF00A1018;
     private static final int DLG_BG = 0xF022180E;
     private static final int DLG_EDGE = 0xFF7A5C2E;
     private static final int DLG_TEXT = 0xFFF1E3C4;
+    private static final int SCENE_EDGE = 0xFF3F6B4C;
+    private static final int SHADE = 0x40000000;
 
     public static void draw(Canvas c, int x, int y, int w, int h, Scene scene, State s,
                             int frame, int accent, float gapShown) {
-        Ui.pane(c, x, y, w, h, Ui.R2, Ui.SCENE, Ui.BORDER);
-        c.clip(x + 2, y + 2, x + w - 2, y + h - 2);
+        for (int i = 0; i < s.shown.length; i++) {
+            s.shown[i] = false;
+        }
+        Ui.pane(c, x, y, w, h, Ui.R2, Ui.SCENE, SCENE_EDGE);
+        c.clip(x + 1, y + 1, x + w - 1, y + h - 1);
+        String bg = switch (scene) {
+            case WORLD -> BG_STREET;
+            case TOOLTIP, PANEL, DIALOGUE -> BG_WORLD;
+            default -> null;
+        };
+        boolean scenery = bg != null && backdrop(c, x + 1, y + 1, w - 2, h - 2, bg);
+        if (!scenery) {
+            grid(c, x, y, w, h);
+        }
+        switch (scene) {
+            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown, false);
+            case PANEL -> tooltip(c, x, y, w, h, s, frame, gapShown, true);
+            case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
+            case WORLD -> world(c, x, y, w, h, s, frame, scenery);
+            case CAPE -> { }
+            default -> data(c, x, y, w, h, s, accent);
+        }
+        c.unclip();
+    }
+
+    private static void grid(Canvas c, int x, int y, int w, int h) {
         for (int gx = x + 16; gx < x + w - 1; gx += 16) {
             c.fill(gx, y + 1, gx + 1, y + h - 1, 0x09FFFFFF);
         }
         for (int gy = y + 16; gy < y + h - 1; gy += 16) {
             c.fill(x + 1, gy, x + w - 1, gy + 1, 0x09FFFFFF);
         }
-        switch (scene) {
-            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown, false);
-            case PANEL -> tooltip(c, x, y, w, h, s, frame, gapShown, true);
-            case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
-            case WORLD -> world(c, x, y, w, h, s, frame);
-            case CAPE -> { }
-            default -> data(c, x, y, w, h, s, accent);
+    }
+
+    private static boolean backdrop(Canvas c, float x, float y, float w, float h, String id) {
+        int tw = c.textureWidth(id);
+        int th = c.textureHeight(id);
+        if (tw <= 0 || th <= 0) {
+            return false;
         }
-        c.unclip();
+        float k = Math.max(w / tw, h / th);
+        float uw = w / k;
+        float vh = h / k;
+        c.image(id, x, y, w, h, (tw - uw) / 2f, (th - vh) / 2f, uw, vh, 0xFFFFFFFF);
+        c.fill(x, y, x + w, y + h, SHADE);
+        return true;
+    }
+
+    private static boolean has(Canvas c, String id) {
+        return c.textureWidth(id) > 0;
+    }
+
+    private static float edge(int i, float start, float near, float size, float far) {
+        return switch (i) {
+            case 0 -> start;
+            case 1 -> start + near;
+            case 2 -> start + size - far;
+            default -> start + size;
+        };
+    }
+
+    private static void nine(Canvas c, String id, float x, float y, float w, float h, int side,
+                             int top) {
+        int tw = c.textureWidth(id);
+        int th = c.textureHeight(id);
+        for (int i = 0; i < 3; i++) {
+            float x0 = edge(i, x, side, w, side);
+            float x1 = edge(i + 1, x, side, w, side);
+            float u0 = edge(i, 0, side, tw, side);
+            float u1 = edge(i + 1, 0, side, tw, side);
+            for (int j = 0; j < 3; j++) {
+                float y0 = edge(j, y, top, h, top);
+                float y1 = edge(j + 1, y, top, h, top);
+                float v0 = edge(j, 0, top, th, top);
+                float v1 = edge(j + 1, 0, top, th, top);
+                if (x1 > x0 && y1 > y0) {
+                    c.image(id, x0, y0, x1 - x0, y1 - y0, u0, v0, u1 - u0, v1 - v0, 0xFFFFFFFF);
+                }
+            }
+        }
+    }
+
+    private static void shadowed(Canvas c, String text, float x, float y, int argb) {
+        c.text(text, x + 1, y + 1, Ui.alpha(0xFF000000, (argb >>> 24) * 5 / 8));
+        c.text(text, x, y, argb);
     }
 
     public static String bareName(String translated, String original, int appendedAt) {
@@ -99,6 +221,7 @@ public final class Preview {
 
     private static void tooltip(Canvas c, int x, int y, int w, int h, State s,
                                 int accent, float gapShown, boolean forcePanel) {
+        c.fill(x, y, x + w, y + h, 0x50000000);
         String zhName = s.translate.apply(ITEM);
         String name = s.names == 0 ? zhName
                 : s.names == 1 ? zhName + " (" + ITEM + ")" : ITEM;
@@ -124,47 +247,68 @@ public final class Preview {
             side[i + 1] = zh;
         }
         int[] tipColours = {0xFFFFFFFF, 0xFFB8C0CC, 0xFFF08A8A, 0xFF7FC8E8};
+        boolean framed = has(c, TIP_BACK) && has(c, TIP_FRAME);
+        int pad = framed ? 9 : 0;
 
-        int room = w - 12;
+        int room = w - 12 - pad * 2;
         int tipW = Math.min(widest(c, tip) + 10, panel ? room * 42 / 100 : room);
         int sideW = panel ? Math.min(widest(c, side) + 10, room * 42 / 100) : 0;
         int boxH = tip.length * 10 + 7;
-        int top = y + Math.max(20, (h - boxH) / 2 - 4);
+        int top = y + Math.max(24, (h - boxH) / 2 - 4);
 
         if (panel && s.anchorFixed) {
             int tx = x + (w - tipW) / 2 + 12;
-            lines(c, tx, top + 14, tipW, tip, tipColours, TIP_BG, TIP_EDGE);
+            gameTip(c, tx, top + 14, tipW, tip, tipColours, framed);
             lines(c, x + 6, y + 6, sideW, side, tipColours, BOX_BG, accent);
             Ui.glyph(c, x + sideW - 2, y + 2, Ui.ICON_PIN, Ui.GOLD);
-            cursor(c, tx - 6, top + 10);
+            cursor(c, tx - 6 - pad, top + 10 - pad);
+            s.mark(Spot.TOOLTIP, tx - pad, top + 14 - pad, tipW + pad * 2, boxH + pad * 2);
+            s.mark(Spot.TOOLTIP, x + 6, y + 6, sideW, boxH);
             return;
         }
         int budget = Math.max(0, room - tipW - sideW);
         int gap = panel ? PanelGap.preview(gapShown, budget) : 0;
-        int total = tipW + (panel ? gap + sideW : 0);
+        int total = tipW + (panel ? gap + sideW + pad : 0);
         int left = x + (w - total) / 2;
         boolean leftSide = s.side == 2;
-        int tipX = panel && leftSide ? left + sideW + gap : left;
-        int sideX = leftSide ? left : left + tipW + gap;
+        int tipX = panel && leftSide ? left + sideW + gap + pad : left;
+        int sideX = leftSide ? left : left + tipW + gap + pad;
 
-        lines(c, tipX, top, tipW, tip, tipColours, TIP_BG, TIP_EDGE);
-        cursor(c, tipX - 5, top - 5);
+        gameTip(c, tipX, top, tipW, tip, tipColours, framed);
+        cursor(c, tipX - 5 - pad, top - 5 - pad);
+        s.mark(Spot.TOOLTIP, tipX - pad, top - pad, tipW + pad * 2, boxH + pad * 2);
         if (!panel) {
             return;
         }
         lines(c, sideX, top, sideW, side, tipColours, BOX_BG, accent);
         Ui.glow(c, sideX, top, sideW, boxH, Ui.alpha(accent, 0x40));
+        s.mark(Spot.TOOLTIP, sideX, top, sideW, boxH);
 
-        int a = Math.min(tipX + tipW, sideX + sideW);
-        int b = Math.max(tipX, sideX);
-        int ry = top - 8;
+        int a = Math.min(tipX + tipW + (leftSide ? 0 : pad), sideX + sideW);
+        int b = Math.max(tipX - (leftSide ? pad : 0), sideX);
+        int ry = top - 8 - pad;
         c.fill(a, ry, a + 1, ry + 5, accent);
         c.fill(Math.max(a, b - 1), ry, Math.max(a + 1, b), ry + 5, accent);
         if (b - a > 2) {
             c.fill(a + 1, ry + 2, b - 1, ry + 3, accent);
         }
         String label = Math.round(gapShown) + " px";
-        c.text(label, (a + b - c.width(label)) / 2, ry - 10, accent);
+        shadowed(c, label, (a + b - c.width(label)) / 2f, ry - 10, accent);
+    }
+
+    private static void gameTip(Canvas c, int x, int y, int w, String[] text, int[] colours,
+                                boolean framed) {
+        if (!framed) {
+            lines(c, x, y, w, text, colours, TIP_BG, TIP_EDGE);
+            return;
+        }
+        int h = text.length * 10 + 7;
+        nine(c, TIP_BACK, x - 9, y - 9, w + 18, h + 18, 10, 12);
+        nine(c, TIP_FRAME, x - 9, y - 9, w + 18, h + 18, 10, 12);
+        for (int i = 0; i < text.length; i++) {
+            shadowed(c, Ui.fit(c, text[i], w - 8), x + 4, y + 4 + i * 10,
+                     colours[Math.min(i, colours.length - 1)]);
+        }
     }
 
     private static void lines(Canvas c, int x, int y, int w, String[] text, int[] colours,
@@ -191,38 +335,104 @@ public final class Preview {
         Ui.glyph(c, x, y, arrow, 0xFFFFFFFF);
     }
 
+    private static float hotbar(Canvas c, int x, int y, int w, int h) {
+        float k = Math.min(1f, (w - 12) / 182f);
+        float bw = 182 * k;
+        float bh = 22 * k;
+        float bx = x + (w - bw) / 2f;
+        float by = y + h - bh - 4;
+        if (has(c, HOTBAR)) {
+            c.image(HOTBAR, bx, by, bw, bh, 0, 0, 182, 22, 0xFFFFFFFF);
+            if (has(c, HOTBAR_PICK)) {
+                c.image(HOTBAR_PICK, bx - k, by - k, 24 * k, 23 * k, 0, 0, 24, 23, 0xFFFFFFFF);
+            }
+        } else {
+            c.fill(bx, by, bx + bw, by + bh, 0x90000000);
+            float cell = bw / 9f;
+            for (int i = 0; i < 9; i++) {
+                Ui.box(c, Math.round(bx + i * cell + 1), Math.round(by + 1), Math.round(cell - 2),
+                       Math.round(bh - 2), 0, i == 0 ? 0xFFE6EDF5 : 0x6055606A);
+            }
+        }
+        float cell = bw / 9f;
+        float ix = bx + (cell - 9) / 2f;
+        float iy = by + (bh - 9) / 2f;
+        c.fill(ix + 2, iy, ix + 3, iy + 9, 0xFFB98A5E);
+        c.fill(ix + 3, iy + 1, ix + 5, iy + 2, 0xFFB98A5E);
+        c.fill(ix + 3, iy + 7, ix + 5, iy + 8, 0xFFB98A5E);
+        c.fill(ix + 5, iy + 2, ix + 6, iy + 7, 0xFFE6E6E6);
+        return by;
+    }
+
     private static void dialogue(Canvas c, int x, int y, int w, int h, State s, int accent) {
         String zhLine = s.translate.apply(LINE);
         boolean lineZh = s.dialogueMode == 1;
         boolean choiceZh = s.choiceMode == 1;
-        int bx = x + 8;
-        int bw = w - 16;
-        int dlgH = 12 + 10 + CHOICES.length * 10 + 6;
-        int dlgY = y + h - dlgH - 8;
+        float barTop = hotbar(c, x, y, w, h);
 
-        Ui.box(c, bx, dlgY, bw, dlgH, DLG_BG, DLG_EDGE);
-        c.text(SPEAKER, bx + 5, dlgY + 4, Ui.GOLD);
-        c.text(Ui.fit(c, lineZh ? zhLine : LINE, bw - 10), bx + 5, dlgY + 14, DLG_TEXT);
-        for (int i = 0; i < CHOICES.length; i++) {
-            String text = "[" + (i + 1) + "] "
-                    + (choiceZh ? s.translate.apply(CHOICES[i]) : CHOICES[i]);
-            c.text(Ui.fit(c, text, bw - 10), bx + 5, dlgY + 26 + i * 10, 0xFFC9B38A);
+        float k = Math.min(1f, (w - 10) / 287f);
+        float dw = 287 * k;
+        float dh = 106 * k;
+        float dx = x + (w - dw) / 2f;
+        float dy = barTop - 4 - dh;
+        boolean textured = has(c, DLG_BOX) && has(c, DLG_FRAME);
+        if (textured) {
+            if (has(c, DLG_FOOTER)) {
+                c.image(DLG_FOOTER, dx + 47 * k, dy + 87 * k, 224 * k, 18 * k, 0, 0, 224, 18, 0xFFFFFFFF);
+            }
+            c.image(DLG_BOX, dx + 31 * k, dy + 9 * k, 256 * k, 80 * k, 0, 0, 256, 80, 0xFFFFFFFF);
+            c.image(DLG_FRAME, dx, dy, 64 * k, 80 * k, 0, 0, 64, 80, 0xFFFFFFFF);
+            if (has(c, DLG_FACE)) {
+                c.image(DLG_FACE, dx + 8 * k, dy + 8 * k, 48 * k, 64 * k, 0, 0, 48, 64, 0xFFFFFFFF);
+            }
+            if (has(c, DLG_PLATE)) {
+                c.image(DLG_PLATE, dx + 64 * k, dy, 112 * k, 20 * k, 0, 0, 112, 20, 0xFFFFFFFF);
+            }
+        } else {
+            c.fill(dx + 47 * k, dy + 87 * k, dx + 271 * k, dy + 103 * k, 0xC0120D08);
+            Ui.box(c, Math.round(dx + 31 * k), Math.round(dy + 9 * k), Math.round(256 * k),
+                   Math.round(80 * k), DLG_BG, DLG_EDGE);
+            Ui.box(c, Math.round(dx), Math.round(dy), Math.round(64 * k), Math.round(80 * k),
+                   0xF0302010, DLG_EDGE);
+            c.fill(dx + 12 * k, dy + 12 * k, dx + 52 * k, dy + 68 * k, 0xFF8A6A4A);
+            Ui.box(c, Math.round(dx + 64 * k), Math.round(dy), Math.round(112 * k),
+                   Math.round(20 * k), 0xF0302010, DLG_EDGE);
         }
+        c.text(Ui.fit(c, SPEAKER, Math.round(100 * k)), dx + 72 * k, dy + 10 * k - 4, Ui.GOLD);
+        int textW = Math.round((287 - 80) * k);
+        List<String> rows = Ui.wrap(c, lineZh ? zhLine : LINE, textW);
+        float ly = dy + 26 * k;
+        for (int i = 0; i < Math.min(3, rows.size()); i++) {
+            c.text(rows.get(i), dx + 72 * k, ly + i * 10, DLG_TEXT);
+        }
+        String hint = "SHIFT " + (lineZh ? s.translate.apply(CONTINUE) : CONTINUE);
+        c.text(Ui.fit(c, hint, Math.round(200 * k)), dx + 60 * k, dy + 91 * k, 0xFFB5A27A);
+        s.mark(Spot.DIALOGUE, dx, dy, dw, dh);
 
-        int above = dlgY - 6;
-        if (s.dialogueMode == 0 && s.overlays) {
-            int tw = Math.min(bw - 30, c.width(zhLine) + 10);
-            int th = 26;
-            int ty = above - th;
-            Ui.box(c, bx, ty, tw, th, BOX_BG, accent);
-            c.text(Ui.fit(c, zhLine, tw - 8), bx + 4, ty + 4, Ui.TEXT);
-            int barW = tw - 8;
-            int lit = s.holdSeconds <= 0 ? barW
-                    : Math.max(2, Math.min(barW, barW * s.holdSeconds / 30));
-            c.fill(bx + 4, ty + 17, bx + 4 + barW, ty + 18, Ui.LINE);
-            c.fill(bx + 4, ty + 17, bx + 4 + lit, ty + 18, accent);
-            above = ty - 4;
+        float cw = 144 * k;
+        float ch = Math.max(12, 12 * k);
+        float cx = dx + dw - cw;
+        float cy = dy - 4;
+        boolean bars = has(c, DLG_CHOICE);
+        for (int i = CHOICES.length - 1; i >= 0; i--) {
+            cy -= ch + 3;
+            boolean on = i == 0;
+            if (bars) {
+                c.image(DLG_CHOICE, cx, cy, cw, ch, on ? 144 : 0, 0, 144, 12, 0xFFFFFFFF);
+            } else {
+                Ui.box(c, Math.round(cx), Math.round(cy), Math.round(cw), Math.round(ch),
+                       on ? 0xF03A2A14 : 0xE0201810, on ? 0xFFC9A257 : DLG_EDGE);
+            }
+            String text = choiceZh ? s.translate.apply(CHOICES[i]) : CHOICES[i];
+            c.text(Ui.fit(c, text, Math.round(cw - 22)), cx + 16, cy + (ch - 8) / 2f,
+                   on ? 0xFFFFF2C8 : 0xFFD8C8A0);
+            if (on) {
+                c.text(">", cx + 6, cy + (ch - 8) / 2f, 0xFFFFE08A);
+            }
         }
+        s.mark(Spot.CHOICES, cx, cy, cw, dy - 4 - cy);
+
+        float above = cy - 6;
         if (s.choiceMode == 0 && s.overlays) {
             String[] zh = new String[CHOICES.length];
             int tw = 0;
@@ -230,14 +440,32 @@ public final class Preview {
                 zh[i] = "[" + (i + 1) + "] " + s.translate.apply(CHOICES[i]);
                 tw = Math.max(tw, c.width(zh[i]));
             }
-            tw = Math.min(bw - 20, tw + 10);
+            tw = Math.min(w - 20, tw + 10);
             int th = zh.length * 10 + 7;
-            int tx = bx + bw - tw;
-            int ty = above - th;
+            int tx = Math.round(dx + dw - tw);
+            int ty = Math.round(above - th);
             Ui.box(c, tx, ty, tw, th, BOX_BG, accent);
             for (int i = 0; i < zh.length; i++) {
                 c.text(Ui.fit(c, zh[i], tw - 8), tx + 4, ty + 4 + i * 10, Ui.TEXT);
             }
+            s.mark(Spot.CHOICES, tx, ty, tw, th);
+        }
+        if (s.dialogueMode == 0 && s.overlays) {
+            int tw = Math.min(Math.round(dw * 0.62f), c.width(zhLine) + 10);
+            List<String> say = Ui.wrap(c, zhLine, tw - 8);
+            int th = Math.min(2, say.size()) * 10 + 11;
+            int tx = Math.round(dx);
+            int ty = Math.round(above - th);
+            Ui.box(c, tx, ty, tw, th, BOX_BG, accent);
+            for (int i = 0; i < Math.min(2, say.size()); i++) {
+                c.text(say.get(i), tx + 4, ty + 4 + i * 10, Ui.TEXT);
+            }
+            int barW = tw - 8;
+            int lit = s.holdSeconds <= 0 ? barW
+                    : Math.max(2, Math.min(barW, barW * s.holdSeconds / 30));
+            c.fill(tx + 4, ty + th - 4, tx + 4 + barW, ty + th - 3, Ui.LINE);
+            c.fill(tx + 4, ty + th - 4, tx + 4 + lit, ty + th - 3, accent);
+            s.mark(Spot.DIALOGUE, tx, ty, tw, th);
         }
     }
 
@@ -269,61 +497,43 @@ public final class Preview {
         return out.toString();
     }
 
-    private static void world(Canvas c, int x, int y, int w, int h, State s, int accent) {
+    private static void world(Canvas c, int x, int y, int w, int h, State s, int accent,
+                              boolean scenery) {
         UnaryOperator<String> zh = s.translate;
 
         String boss = s.bossbar ? zh.apply(BOSS) : BOSS;
-        int barW = Math.min(90, w - 40);
+        int barW = Math.min(182, w - 60);
         int bx = x + (w - barW) / 2;
-        c.text(boss, x + (w - c.width(boss)) / 2, y + 5, 0xFFF0A0A0);
-        c.fill(bx, y + 15, bx + barW, y + 18, 0xFF3A1414);
-        c.fill(bx, y + 15, bx + barW * 62 / 100, y + 18, 0xFFC0392B);
+        int nameX = x + (w - c.width(boss)) / 2;
+        shadowed(c, boss, nameX, y + 6, 0xFFF0A0A0);
+        if (has(c, BOSS_BACK) && has(c, BOSS_FILL)) {
+            c.image(BOSS_BACK, bx, y + 16, barW, 5, 0, 0, 182, 5, 0xFFFFFFFF);
+            c.image(BOSS_FILL, bx, y + 16, barW * 0.62f, 5, 0, 0, 182 * 0.62f, 5, 0xFFFFFFFF);
+        } else {
+            c.fill(bx, y + 16, bx + barW, y + 21, 0xFF3A1414);
+            c.fill(bx, y + 16, bx + barW * 62 / 100, y + 21, 0xFFC0392B);
+        }
+        s.mark(Spot.BOSS, Math.min(bx, nameX), y + 5, Math.max(barW, c.width(boss)), 17);
 
         String t1 = s.tracker == 0 ? zh.apply(TRACK_1) : TRACK_1;
         String t2 = s.tracker == 0 ? zh.apply(TRACK_2) : TRACK_2;
-        int tw = Math.min(w / 2 - 4, Math.max(c.width(t1), c.width(t2)) + 8);
-        int tx = x + w - tw - 5;
-        int ty = y + 26;
-        Ui.box(c, tx, ty, tw, 26, 0xB0080C12, s.tracker == 1 ? accent : 0x20FFFFFF);
-        c.text(Ui.fit(c, t1, tw - 6), tx + 3, ty + 4, 0xFFF5C56B);
-        c.text(Ui.fit(c, t2, tw - 6), tx + 3, ty + 14, s.objectives ? 0xFF8FD694 : 0xFFB8C0CC);
+        int tw = Math.min(w / 2 - 6, Math.max(c.width(t1), c.width(t2)) + 8);
+        int tx = x + w - tw - 6;
+        int ty = y + 30;
+        c.fill(tx, ty, tx + tw, ty + 24, 0x70000000);
+        shadowed(c, Ui.fit(c, t1, tw - 6), tx + 3, ty + 3, 0xFFF5C56B);
+        shadowed(c, Ui.fit(c, t2, tw - 6), tx + 3, ty + 13, s.objectives ? 0xFF8FD694 : 0xFFB8C0CC);
+        s.mark(Spot.TRACKER, tx, ty, tw, 24);
+        int below = ty + 28;
         if (s.tracker == 1) {
             String p1 = zh.apply(TRACK_1);
-            int pw = Math.min(w / 2 - 4, c.width(p1) + 8);
-            Ui.box(c, tx + tw - pw, ty + 28, pw, 14, BOX_BG, accent);
-            c.text(Ui.fit(c, p1, pw - 6), tx + tw - pw + 3, ty + 31, Ui.TEXT);
-        }
-
-        String tag = s.nametag == 1 ? zh.apply(NPC) : NPC;
-        int nx = x + 10;
-        int ny = y + 74;
-        int tagW = c.width(tag) + 6;
-        c.fill(nx, ny, nx + tagW, ny + 11, 0x70000000);
-        c.text(tag, nx + 3, ny + 2, 0xFFFFFFFF);
-        int px = nx + Math.max(0, (tagW - 14) / 2);
-        c.fill(px, ny + 14, px + 14, ny + 28, 0xFFB98B5E);
-        c.fill(px + 2, ny + 28, px + 12, ny + 44, 0xFF4C6A8C);
-        if (s.nametag == 0) {
-            String z = zh.apply(NPC);
-            int zw = c.width(z) + 8;
-            Ui.box(c, nx + tagW + 3, ny - 2, zw, 14, BOX_BG, accent);
-            c.text(z, nx + tagW + 7, ny + 1, Ui.TEXT);
-        }
-
-        String title = s.titles ? zh.apply(TITLE) : TITLE;
-        int cx = x + (w - c.width(title)) / 2;
-        int cy = Math.max(ny + 52, y + h / 2 + 14);
-        c.text(title, cx + 1, cy + 1, 0xA0000000);
-        c.text(title, cx, cy, 0xFFF5C56B);
-
-        String chatZh = zh.apply(CHAT);
-        int cw = Math.min(w - 16, 150);
-        int rows = s.chat == 1 ? 2 : 1;
-        int chatY = y + h - 30 - rows * 10;
-        c.fill(x + 4, chatY - 2, x + 4 + cw, chatY + rows * 10, 0x60000000);
-        c.text(Ui.fit(c, s.chat == 0 ? chatZh : CHAT, cw - 6), x + 7, chatY, 0xFFB8C0CC);
-        if (s.chat == 1) {
-            c.text(Ui.fit(c, chatZh, cw - 6), x + 7, chatY + 10, accent);
+            String p2 = zh.apply(TRACK_2);
+            int pw = Math.min(w / 2 - 6, Math.max(c.width(p1), c.width(p2)) + 8);
+            Ui.box(c, tx + tw - pw, below, pw, 25, BOX_BG, accent);
+            c.text(Ui.fit(c, p1, pw - 6), tx + tw - pw + 3, below + 4, 0xFFF5C56B);
+            c.text(Ui.fit(c, p2, pw - 6), tx + tw - pw + 3, below + 14, Ui.TEXT);
+            s.mark(Spot.TRACKER, tx + tw - pw, below, pw, 25);
+            below += 29;
         }
 
         String[] board = new String[1 + SCORE_LINES.length];
@@ -334,28 +544,65 @@ public final class Preview {
             board[i + 1] = fill(line, SCORE_VALUES[i]);
             boardW = Math.max(boardW, c.width(board[i + 1]));
         }
-        int boardH = 3 + board.length * 9;
-        int sy = cy + 13;
-        int room = w - 10;
-        if (sy + boardH > chatY - 4) {
-            sy = ny + 15;
-            room = x + w - 5 - (px + 14 + 4);
-        }
-        boardW = Math.min(room, boardW + 6);
-        int sx = x + w - boardW - 5;
+        boardW = Math.min(w / 2 + 10, boardW + 6);
+        int boardH = 3 + board.length * 10;
+        int sx = x + w - boardW - 6;
+        int sy = below + 4;
         c.fill(sx, sy, sx + boardW, sy + boardH, 0x60000000);
         for (int i = 0; i < board.length; i++) {
-            c.text(Ui.fit(c, board[i], boardW - 6), sx + 3, sy + 2 + i * 9,
-                    i == 0 ? 0xFFF5C56B : 0xFFB8C0CC);
+            shadowed(c, Ui.fit(c, board[i], boardW - 6), sx + 3, sy + 2 + i * 10,
+                     i == 0 ? 0xFFF5C56B : 0xFFE0E4EA);
+        }
+        s.mark(Spot.BOARD, sx, sy, boardW, boardH);
+
+        String tag = s.nametag == 1 ? zh.apply(NPC) : NPC;
+        int tagW = c.width(tag) + 6;
+        int nx = scenery ? x + (w - tagW) / 2 : x + 14;
+        int ny = scenery ? y + h * 41 / 100 - 18 : y + Math.max(64, h / 4);
+        c.fill(nx, ny, nx + tagW, ny + 11, SHADE);
+        c.text(tag, nx + 3, ny + 2, 0xFFFFFFFF);
+        if (!scenery) {
+            int px = nx + Math.max(0, (tagW - 16) / 2);
+            c.fill(px + 2, ny + 15, px + 14, ny + 27, 0xFFB98B5E);
+            c.fill(px, ny + 27, px + 16, ny + 45, 0xFF5A3A28);
+            c.fill(px + 2, ny + 45, px + 14, ny + 60, 0xFF3C4E6C);
+        }
+        s.mark(Spot.NAMEPLATE, nx, ny, tagW, 11);
+        if (s.nametag == 0) {
+            String z = zh.apply(NPC);
+            int zw = c.width(z) + 8;
+            Ui.box(c, nx + tagW + 4, ny + 14, zw, 14, BOX_BG, accent);
+            c.text(z, nx + tagW + 8, ny + 17, Ui.TEXT);
+            s.mark(Spot.NAMEPLATE, nx + tagW + 4, ny + 14, zw, 14);
         }
 
+        float barTop = hotbar(c, x, y, w, h);
         String held = s.heldItem ? zh.apply(ITEM) : ITEM;
-        int hx = x + (w - 4 * 12) / 2;
-        int hy = y + h - 14;
-        c.text(held, x + (w - c.width(held)) / 2, hy - 11, 0xFFFFFFFF);
-        for (int i = 0; i < 4; i++) {
-            Ui.box(c, hx + i * 12, hy, 11, 11, 0x80000000, i == 0 ? 0xFFE6EDF5 : 0xFF55606A);
+        int hx = x + (w - c.width(held)) / 2;
+        int hy = Math.round(barTop) - 13;
+        shadowed(c, held, hx, hy, 0xFFFFFFFF);
+        s.mark(Spot.HELD, hx, hy - 1, c.width(held), 10);
+
+        String chatZh = zh.apply(CHAT);
+        int cw = Math.min(w - 16, Math.max(150, w * 6 / 10));
+        int rows = s.chat == 1 ? 2 : 1;
+        int chatY = hy - 8 - rows * 10;
+        c.fill(x + 4, chatY - 2, x + 4 + cw, chatY + rows * 10, 0x60000000);
+        shadowed(c, Ui.fit(c, s.chat == 0 ? chatZh : CHAT, cw - 6), x + 7, chatY, 0xFFE0E4EA);
+        if (s.chat == 1) {
+            shadowed(c, Ui.fit(c, chatZh, cw - 6), x + 7, chatY + 10, accent);
         }
+        s.mark(Spot.CHAT, x + 4, chatY - 2, cw, rows * 10 + 2);
+
+        String title = s.titles ? zh.apply(TITLE) : TITLE;
+        float big = c.scale(2f);
+        float scale = c.width(title) * big <= w - 24 ? big : 1f;
+        float titleW = c.width(title) * scale;
+        float titleX = x + (w - titleW) / 2f;
+        float titleY = Math.min(chatY - 14 - 8 * scale, y + h * 0.56f);
+        c.text(title, titleX + 1, titleY + 1, 0xA0000000, scale);
+        c.text(title, titleX, titleY, 0xFFF5C56B, scale);
+        s.mark(Spot.TITLE, titleX, titleY - 1, titleW, 8 * scale + 2);
     }
 
     private static void data(Canvas c, int x, int y, int w, int h, State s, int accent) {

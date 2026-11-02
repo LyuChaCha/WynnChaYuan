@@ -17,6 +17,10 @@ public final class SettingsView extends Surface {
             return Ui.deep(tone(tone));
         }
 
+        default boolean leaves() {
+            return false;
+        }
+
         String tr(String key, Object... args);
 
         String title();
@@ -52,8 +56,8 @@ public final class SettingsView extends Surface {
 
     public record Status(String text, int colour) {}
 
-    static final float MAX_W = 628;
-    static final float MAX_H = 334;
+    static final float MAX_W = 760;
+    static final float MAX_H = 400;
     static final float RAIL_W = 126;
     static final float RAIL_SLIM = 32;
     static final float HEAD_H = 38;
@@ -61,7 +65,7 @@ public final class SettingsView extends Surface {
     static final float ROW_H = 22;
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float PREVIEW_W = 152;
+    static final float PREVIEW_W = 380;
     static final float NAV_H = 21;
 
     final List<Row.Tab> tabs;
@@ -88,6 +92,7 @@ public final class SettingsView extends Surface {
     private float gapShown = -1;
 
     float railW;
+    private final Leaves leaves = new Leaves();
     private boolean pageWide;
 
     public record Placed(String id, float x, float y, float w, float h, float labelRight,
@@ -146,7 +151,10 @@ public final class SettingsView extends Surface {
         float h = Math.min(screenH - 14, sheet ? (sheetH > 0 ? sheetH : 236) : MAX_H);
         window(Math.round((screenW - w) / 2f), Math.round((screenH - h) / 2f), w, h,
                host.blurred());
-        railW = sheet ? 0 : (winW >= 430 ? RAIL_W : RAIL_SLIM);
+        railW = sheet ? 0 : RAIL_SLIM;
+        if (!sheet && host.leaves()) {
+            leaves.draw(c, winX, winY, winW, winH, dt);
+        }
 
         zone(0, 0, screenW, screenH, (x, y, b) -> {
             closePopovers();
@@ -358,14 +366,15 @@ public final class SettingsView extends Surface {
         float h = bottom - top;
         float left = winX + railW + 12;
         float full = winX + winW - 12 - left;
-        float previewW = full >= 380 ? PREVIEW_W : (full >= 320 ? 130 : 0);
-        if (h < 190 || sheet) {
-            previewW = 0;
+        float previewW = 0;
+        if (!sheet && h >= 150) {
+            previewW = full >= 500 ? Math.min(PREVIEW_W, full * 0.47f)
+                    : (full >= 340 ? full * 0.4f : 0);
         }
-        float listW = previewW > 0 ? full - previewW - 8 : full;
+        float listW = previewW > 0 ? full - previewW - 10 : full;
         list(left, top, listW, h);
         if (previewW > 0) {
-            preview(left + listW + 8, top, previewW, h);
+            preview(left + listW + 10, top, previewW, h);
         }
     }
 
@@ -429,6 +438,15 @@ public final class SettingsView extends Surface {
         float cardW = w - 6;
         float rowW = cardW - 4;
         pageWide = measure(cards, rowW - 14, searching);
+        if (revealRow != null) {
+            float at = offsetOf(cards, revealRow);
+            if (at >= 0) {
+                scrollTarget = at - 40;
+            }
+            if (now > revealUntil) {
+                revealRow = null;
+            }
+        }
         float contentH = 0;
         for (Card card : cards) {
             contentH += cardHeight(card) + 6;
@@ -472,6 +490,21 @@ public final class SettingsView extends Surface {
             float thumbY = y + (h - thumbH) * (scroll / maxScroll);
             c.round(trackX, thumbY, 2.5f, thumbH, 1.25f, Ui.alpha(Ui.TITLE_FROM, 0xC8));
         }
+    }
+
+    private float offsetOf(List<Card> cards, String id) {
+        float cy = 0;
+        for (Card card : cards) {
+            float ry = cy + head(card) + 1;
+            for (Row r : card.rows()) {
+                if (r.id.equals(id)) {
+                    return ry;
+                }
+                ry += rowHeight(r);
+            }
+            cy += cardHeight(card) + 6;
+        }
+        return -1;
     }
 
     static boolean matches(Row r, String query) {
@@ -620,6 +653,13 @@ public final class SettingsView extends Surface {
         float g = glow("row:" + r.id, hot);
         if (g > 0.01f) {
             c.round(x, y, w, h, Ui.R1, Ui.fade(0x1A9FD0A6, g));
+        }
+        if (anim.containsKey("fl:" + r.id)) {
+            float flash = animate("fl:" + r.id, 0f, 200f);
+            if (flash < 0.01f) {
+                anim.remove("fl:" + r.id);
+            }
+            Ui.fadePane(c, x, y, w, h, Ui.R1, Ui.fade(0xAA2F7D46, flash), 1f, 0f);
         }
         float labelX = x + 7;
         float right = x + w - 7;
@@ -788,27 +828,204 @@ public final class SettingsView extends Surface {
         unclip();
     }
 
+    private static final Preview.Scene[] MAP_SCENES = {
+        Preview.Scene.TOOLTIP, Preview.Scene.DIALOGUE, Preview.Scene.WORLD};
+    private static final String[] MAP_KEYS = {
+        "preview.scene.items", "preview.scene.dialogue", "preview.scene.world"};
+
+    Preview.Scene mapScene = Preview.Scene.WORLD;
+    String selectedRow;
+    private String revealRow;
+    private long revealUntil;
+
     private void preview(float x, float y, float w, float h) {
         Row.Tab t = tabs.get(searching() ? 0 : tab);
+        boolean map = t.legend() && !searching();
+        Preview.Scene scene = map ? mapScene : t.scene();
         String title = host.tr("preview.title");
         float pulse = 0.55f + 0.45f * (float) Math.sin(now / 420.0);
         c.round(x, y + 2, 4, 4, 2, Ui.fade(accent, pulse));
-        String shown = Ui.fit(c, title, (int) (w - 10));
+        float right = map ? sceneTabs(x, y - 3, w) - 6 : x + w;
+        String shown = Ui.fit(c, title, (int) (right - x - 10));
         c.text(shown, x + 8, y, Ui.TEXT_3);
         float lineL = x + 8 + c.width(shown) + 6;
-        if (x + w > lineL) {
-            c.fill(lineL, y + 3.5f, x + w, y + 3.5f + c.px(), Ui.LINE);
+        if (right > lineL) {
+            c.fill(lineL, y + 3.5f, right, y + 3.5f + c.px(), Ui.LINE);
         }
         Preview.State state = host.preview();
         if (gapShown < 0) {
             gapShown = state.gap;
         }
         gapShown = Ui.ease(gapShown, state.gap, dt, 45f);
-        Preview.draw(c, Math.round(x), Math.round(y + 13), Math.round(w), Math.round(h - 13),
-                     t.scene(), state, 0xFF000000 | (host.frame() & 0xFFFFFF), accent, gapShown);
-        if (t.scene() == Preview.Scene.CAPE) {
+        int px = Math.round(x);
+        int py = Math.round(y + 13);
+        int pw = Math.round(w);
+        int ph = Math.round(h - 13);
+        Preview.draw(c, px, py, pw, ph, scene, state, 0xFF000000 | (host.frame() & 0xFFFFFF),
+                     accent, gapShown);
+        if (map) {
+            spots(state, scene, px, py, pw, ph);
+        }
+        if (scene == Preview.Scene.CAPE) {
             modelPreview(x, y + 13, w, h - 13);
         }
+    }
+
+    private float sceneTabs(float x, float y, float w) {
+        float total = 4;
+        for (String key : MAP_KEYS) {
+            total += c.width(host.tr(key)) + 14;
+        }
+        float left = x + w - total;
+        Ui.pane(c, left, y, total, 14, Ui.R1, Ui.FIELD, 0);
+        float at = left + 2;
+        for (int i = 0; i < MAP_KEYS.length; i++) {
+            String label = host.tr(MAP_KEYS[i]);
+            float cw = c.width(label) + 14;
+            boolean on = MAP_SCENES[i] == mapScene;
+            boolean hot = !on && over(at, y + 1, cw, 12);
+            if (on) {
+                Ui.sweep(c, at, y + 1.5f, cw / 2f, 11, 3.5f, Ui.LEAF_STOPS[0], Ui.LEAF_STOPS[1]);
+                c.clip(at + cw / 2f, y, at + cw, y + 14);
+                Ui.sweep(c, at + cw / 2f - 4, y + 1.5f, cw / 2f + 4, 11, 3.5f, Ui.LEAF_STOPS[1],
+                         Ui.LEAF_STOPS[2]);
+                c.unclip();
+            } else if (hot) {
+                c.round(at, y + 1.5f, cw, 11, 3.5f, Ui.RAISED);
+            }
+            c.text(label, at + 7, y + 3, on ? Ui.ON_ACCENT : (hot ? Ui.TEXT : Ui.TEXT_2));
+            Preview.Scene next = MAP_SCENES[i];
+            zone(at, y, cw, 14, (qx, qy, b) -> {
+                if (mapScene != next) {
+                    click();
+                    mapScene = next;
+                }
+            }).key = "scene:" + next.name();
+            at += cw;
+        }
+        return left;
+    }
+
+    private void spots(Preview.State state, Preview.Scene scene, int x, int y, int w, int h) {
+        clip(x + 1, y + 1, x + w - 1, y + h - 1);
+        Row hovered = rowById(hoverRow);
+        Row picked = rowById(selectedRow);
+        for (Preview.Spot spot : Preview.SPOTS) {
+            int i = spot.ordinal();
+            if (!state.shown[i] || spot.scene != scene) {
+                continue;
+            }
+            float[] box = state.spots[i];
+            Row target = aimedAt(spot);
+            boolean hot = over(box[0], box[1], box[2], box[3]);
+            if (picked != null && picked.spot == spot) {
+                c.ring(box[0] - 3, box[1] - 3, box[2] + 6, box[3] + 6, 2.5f, 1f,
+                       colourTo("sel", rowColour(picked)));
+            } else if (hot || (hovered != null && hovered.spot == spot)) {
+                dashed(box[0] - 3, box[1] - 3, box[2] + 6, box[3] + 6, 0xA6FFFFFF);
+            }
+            if (target == null) {
+                continue;
+            }
+            if (hot && tip == null) {
+                tip = new Tip(target.name.get(), box[0], box[1], box[2], box[3]);
+                hoverRow = "#spot:" + spot.name();
+            }
+            zone(box[0] - 2, box[1] - 2, box[2] + 4, box[3] + 4, (qx, qy, b) -> reveal(target))
+                    .key = "spot:" + spot.name();
+        }
+        unclip();
+    }
+
+    private void dashed(float x, float y, float w, float h, int argb) {
+        float t = c.px() < 0.5f ? 1f : c.px();
+        for (float at = x; at < x + w; at += 6) {
+            float end = Math.min(x + w, at + 3.5f);
+            c.fill(at, y, end, y + t, argb);
+            c.fill(at, y + h - t, end, y + h, argb);
+        }
+        for (float at = y; at < y + h; at += 6) {
+            float end = Math.min(y + h, at + 3.5f);
+            c.fill(x, at, x + t, end, argb);
+            c.fill(x + w - t, at, x + w, end, argb);
+        }
+    }
+
+    private int rowColour(Row r) {
+        if (r.kind == Row.Kind.SEGMENT && !r.options.isEmpty()) {
+            int at = Math.max(0, Math.min(r.options.size() - 1, r.selected.getAsInt()));
+            return modeColour(r.options.get(at).tone());
+        }
+        if (r.kind == Row.Kind.TOGGLE) {
+            return r.on.getAsBoolean() ? modeColour(r.tone) : Ui.MODE_OFF;
+        }
+        return accent;
+    }
+
+    private Row rowById(String id) {
+        if (id == null) {
+            return null;
+        }
+        for (Row.Tab t : tabs) {
+            for (Row.Group g : t.groups()) {
+                for (Row r : g.rows()) {
+                    if (r.id.equals(id)) {
+                        return r;
+                    }
+                    for (Row d : r.details) {
+                        if (d.id.equals(id)) {
+                            return d;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private Row aimedAt(Preview.Spot spot) {
+        Row fallback = null;
+        for (Row.Group g : tabs.get(tab).groups()) {
+            for (Row r : g.rows()) {
+                if (r.spot == spot) {
+                    if (r.aims) {
+                        return r;
+                    }
+                    fallback = fallback == null ? r : fallback;
+                }
+            }
+        }
+        return fallback;
+    }
+
+    private void reveal(Row r) {
+        click();
+        selectedRow = r.id;
+        if (r.folds()) {
+            openRow = r.id;
+        } else {
+            openRow = null;
+            anim.put("fl:" + r.id, 1f);
+        }
+        revealRow = r.id;
+        revealUntil = now + 450;
+    }
+
+    @Override
+    public boolean mouseDown(double x, double y, int button) {
+        if (!popoverOpen()) {
+            for (Placed p : placed) {
+                if (Ui.in(x, y, p.x(), p.y(), p.w(), p.h())) {
+                    Row r = rowById(p.id());
+                    if (r != null && r.spot != null) {
+                        selectedRow = r.id;
+                        mapScene = r.spot.scene;
+                    }
+                    break;
+                }
+            }
+        }
+        return super.mouseDown(x, y, button);
     }
 
     private float modelYaw = 205;

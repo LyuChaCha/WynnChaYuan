@@ -42,6 +42,73 @@ final class GuiCanvas implements Canvas {
                 : Minecraft.getInstance().getLanguageManager().getSelected());
     }
 
+    private static final Map<String, int[]> TEXTURES = new HashMap<>();
+    private static final Map<String, Identifier> FOUND = new HashMap<>();
+
+    static void forgetTextures() {
+        TEXTURES.clear();
+        FOUND.clear();
+    }
+
+    private static int[] texture(String id) {
+        int[] known = TEXTURES.get(id);
+        if (known != null) {
+            return known;
+        }
+        int[] size = {0, 0};
+        Identifier at = Identifier.tryParse(id);
+        if (at != null) {
+            try (InputStream in = Minecraft.getInstance().getResourceManager().open(at)) {
+                byte[] head = in.readNBytes(24);
+                if (head.length == 24 && head[12] == 'I' && head[13] == 'H' && head[14] == 'D'
+                        && head[15] == 'R') {
+                    size[0] = readInt(head, 16);
+                    size[1] = readInt(head, 20);
+                    FOUND.put(id, at);
+                }
+            } catch (Exception missing) {
+                size[0] = 0;
+                size[1] = 0;
+            }
+        }
+        TEXTURES.put(id, size);
+        return size;
+    }
+
+    private static int readInt(byte[] b, int at) {
+        return ((b[at] & 0xFF) << 24) | ((b[at + 1] & 0xFF) << 16) | ((b[at + 2] & 0xFF) << 8)
+                | (b[at + 3] & 0xFF);
+    }
+
+    @Override
+    public int textureWidth(String id) {
+        return texture(id)[0];
+    }
+
+    @Override
+    public int textureHeight(String id) {
+        return texture(id)[1];
+    }
+
+    @Override
+    public void image(String id, float x, float y, float w, float h, float u, float v, float uw,
+                      float vh, int argb) {
+        int[] size = texture(id);
+        Identifier at = FOUND.get(id);
+        if (at == null || size[0] <= 0 || size[1] <= 0) {
+            return;
+        }
+        int ax = p(x);
+        int ay = p(y);
+        int pw = p(x + w) - ax;
+        int ph = p(y + h) - ay;
+        if (pw <= 0 || ph <= 0) {
+            return;
+        }
+        g.blit(RenderPipelines.GUI_TEXTURED, at, ax, ay, u, v, pw, ph,
+               Math.round(uw), Math.round(vh), size[0], size[1], argb);
+    }
+
     private static final int[] DOTS = {2, 3, 4, 6};
     private static final Map<String, Style> STYLES = new HashMap<>();
 

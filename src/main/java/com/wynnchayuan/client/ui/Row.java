@@ -30,6 +30,8 @@ public final class Row {
     Supplier<String> onText;
     Tone tone = Tone.ACCENT;
     List<Row> details = List.of();
+    Preview.Spot spot;
+    boolean aims;
 
     final List<Option> options = new ArrayList<>();
     IntSupplier selected = () -> 0;
@@ -131,6 +133,18 @@ public final class Row {
 
     public Row details(List<Row> under) {
         this.details = under;
+        return this;
+    }
+
+    public Row spot(Preview.Spot at) {
+        this.spot = at;
+        this.aims = true;
+        return this;
+    }
+
+    public Row near(Preview.Spot at) {
+        this.spot = at;
+        this.aims = false;
         return this;
     }
 

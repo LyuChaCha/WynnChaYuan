@@ -536,7 +536,51 @@ public final class SettingsViewTest {
             ImageIO.write(c.image, "png", new File(out, "small-" + size[0] + "x" + size[1] + ".png"));
             check("zh_tw overview " + size[0] + "x" + size[1], small);
         }
+        map(out);
         System.out.println("  [PASS] 點、拖、彈出層、搜尋都走過一遍");
+    }
+
+    private static void map(File out) throws Exception {
+        for (String lang : new String[] {"zh_tw", "en_us", "ru_ru", "es_es"}) {
+            LANG = lang;
+            Fake fake = new Fake(lang);
+            SettingsView view = new SettingsView(fake.tabs(), fake, 0);
+            render(view, 960, 540, 2);
+            float[] chat = view.spot("spot:CHAT");
+            must(lang + "：世界畫面上點得到聊天", chat != null);
+            if (chat == null) {
+                continue;
+            }
+            view.mouseDown(chat[0] + chat[2] / 2, chat[1] + chat[3] / 2, 0);
+            AwtCanvas c = render(view, 960, 540, 2);
+            must(lang + "：點畫面上的聊天，聊天那一列展開", view.spot("c:world.chat:0") != null);
+            ImageIO.write(c.image, "png", new File(out, lang + "-map-world.png"));
+            float[] off = view.spot("c:world.chat:2");
+            if (off != null) {
+                view.mouseDown(off[0] + 10, off[1] + off[3] / 2, 0);
+            }
+            must(lang + "：從展開的那一列改成關閉", fake.index("world.chat") == 2);
+            for (String scene : new String[] {"DIALOGUE", "TOOLTIP"}) {
+                float[] tab = view.spot("scene:" + scene);
+                must(lang + "：預覽上方有 " + scene + " 分頁", tab != null);
+                if (tab != null) {
+                    view.mouseDown(tab[0] + 3, tab[1] + 3, 0);
+                    c = render(view, 960, 540, 2);
+                    ImageIO.write(c.image, "png", new File(out, lang + "-map-"
+                            + scene.toLowerCase(java.util.Locale.ROOT) + ".png"));
+                }
+            }
+            must(lang + "：物品畫面上點得到說明框", view.spot("spot:TOOLTIP") != null);
+        }
+        LANG = "zh_tw";
+        Fake fake = new Fake("zh_tw");
+        SettingsView view = new SettingsView(fake.tabs(), fake, 0);
+        for (int i = 0; i < 400; i++) {
+            AwtCanvas c = new AwtCanvas(640, 360, 1, "zh_tw");
+            view.render(c, 640, 360, -100, -100, CLOCK += 50);
+            c.done();
+        }
+        must("葉子飄了二十秒（含好幾陣風）也沒出錯", true);
     }
 
     private static SettingsView.Placed find(SettingsView view, String id) {
@@ -668,30 +712,37 @@ public final class SettingsViewTest {
             List<Row> master = List.of(toggle("translations.enabled", true, null));
             List<Row> items = List.of(
                     segment("items.tooltip", 1, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.TOOLTIP)
                             .details(List.of(toggle("items.shiftpeek", true, null))),
                     toggle("items.market", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));
             List<Row> dialogue = List.of(
                     segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.DIALOGUE)
                             .details(List.of(toggle("dialogue.cover", true, null),
                                     slider("dialogue.hold", 0, 30, 6, true))),
-                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"));
+                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.CHOICES));
             List<Row> world = List.of(
                     segment("world.nametag", 0, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
+                            .spot(Preview.Spot.NAMEPLATE)
                             .details(List.of(action("world.nametag.advanced", "button.adjust"))),
-                    toggle("world.helditem", true, null).tone(rp),
-                    toggle("world.titles", true, "mode.replace").tone(rp));
+                    toggle("world.helditem", true, null).tone(rp).spot(Preview.Spot.HELD),
+                    toggle("world.titles", true, "mode.replace").tone(rp).spot(Preview.Spot.TITLE));
             List<Row> hud = List.of(
-                    toggle("world.bossbar", true, "mode.replace").tone(rp),
-                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
-                    toggle("world.objectives", true, "mode.replace").tone(rp),
-                    toggle("world.scoreboard", true, null).tone(rp));
+                    toggle("world.bossbar", true, "mode.replace").tone(rp).spot(Preview.Spot.BOSS),
+                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off")
+                            .spot(Preview.Spot.TRACKER),
+                    toggle("world.objectives", true, "mode.replace").tone(rp).near(Preview.Spot.BOARD),
+                    toggle("world.scoreboard", true, null).tone(rp).spot(Preview.Spot.BOARD));
             List<Row> chat = List.of(
                     segment("world.chat", 1, new Row.Tone[] {rp, bo, off}, "mode.replace", "mode.both", "mode.off")
+                            .spot(Preview.Spot.CHAT)
                             .details(List.of(toggle("world.chatcopy", true, null))));
             List<Row> names = List.of(
-                    segment("items.names", 2, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
+                    segment("items.names", 2, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off")
+                            .near(Preview.Spot.TOOLTIP),
                     segment("items.pages", 0, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     toggle("items.abilitynames", true, null).tone(bo));
             List<Row> place = List.of(
@@ -700,7 +751,8 @@ public final class SettingsViewTest {
                     segment("panel.side", 0, new Row.Tone[] {pl, pl, pl}, "mode.auto", "mode.right", "mode.left"),
                     slider("panel.gap", 12, 200, 12, false),
                     toggle("dialogue.overlays", true, null));
-            List<Row> look = List.of(colour("panel.colour"), colour("panel.theme"));
+            List<Row> look = List.of(colour("panel.colour"), colour("panel.theme"),
+                    toggle("look.leaves", true, null));
             List<Row> langs = List.of(
                     select("data.language", true, "data.language.auto"),
                     select("data.fallback", true, "data.fallback.auto"),
@@ -858,6 +910,15 @@ public final class SettingsViewTest {
         }
 
         @Override
+        public boolean leaves() {
+            return flagOr("look.leaves", true);
+        }
+
+        private boolean flagOr(String id, boolean fallback) {
+            return values.get(id) instanceof Boolean on ? on : fallback;
+        }
+
+        @Override
         public void openNotice() { }
 
         @Override
@@ -893,6 +954,17 @@ public final class SettingsViewTest {
             if (values.get("panel.gap") instanceof Integer gap) {
                 s.gap = gap;
             }
+            s.tooltipMode = values.get("items.tooltip") instanceof Integer i ? i : 0;
+            s.dialogueMode = values.get("dialogue.mode") instanceof Integer i ? i : 1;
+            s.choiceMode = values.get("dialogue.choices") instanceof Integer i ? i : 1;
+            s.nametag = values.get("world.nametag") instanceof Integer i ? i : 1;
+            s.chat = values.get("world.chat") instanceof Integer i ? i : 1;
+            s.tracker = values.get("world.tracker") instanceof Integer i ? i : 0;
+            s.names = values.get("items.names") instanceof Integer i ? i : 2;
+            s.titles = flagOr("world.titles", true);
+            s.bossbar = flagOr("world.bossbar", true);
+            s.scoreboard = flagOr("world.scoreboard", true);
+            s.heldItem = flagOr("world.helditem", true);
             s.translate = text -> {
                 String hit = corpus.get(text);
                 return hit == null || hit.isBlank() ? text : hit;

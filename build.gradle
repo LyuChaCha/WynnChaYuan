@@ -253,6 +253,13 @@ tasks.named('UpgradeSafetyTest') {
     }
 }
 
+// -Ppack=<資料夾>：設定畫面的預覽改用解出來的 Wynncraft 材質（<資料夾>/minecraft/textures/…），不給就走畫的那一套
+tasks.named('SettingsViewTest') {
+    if (project.hasProperty('pack')) {
+        systemProperty 'wcy.pack', project.property('pack')
+    }
+}
+
 // 排查時可以用 -PquestScope=0 模擬「沒在追蹤任務」那條路
 tasks.named('DialogueTypingTest') {
     systemProperty 'wcy.questScope', findProperty('questScope') ?: '1'
