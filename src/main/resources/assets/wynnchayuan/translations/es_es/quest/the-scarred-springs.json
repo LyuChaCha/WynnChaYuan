@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Scarred Springs",
-  "count": 169,
-  "translated": 169,
+  "count": 179,
+  "translated": 179,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -311,8 +311,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "¡Vale, aún te quedan! Espero acabar aquí para cuando termines, ¡y seguimos desde ahí!",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "¡Vale, aún te quedan {~}! Espero acabar aquí para cuando termines, ¡y seguimos desde ahí!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -421,8 +421,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "La casa de té de Marseled está al noroeste, en la loma. ¿Necesitas el punto exacto? ¡Míralo!",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "La casa de té de Marseled está al noroeste, en la loma. ¿Necesitas el punto exacto? ¡Míralo en tu libro de contenido!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -771,8 +771,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "¿Ya has corrido la voz? Mira dónde suele estar la gente y ¡lleva la noticia! Tú también estás invitado a la gran reapertura, claro.",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "¿Ya has corrido la voz? Mira en mis notas dónde suele estar la gente y ¡lleva la noticia! Tú también estás invitado a la gran reapertura, claro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -791,7 +791,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "Vale, un segundo... y... ¡toma! ¡No olvides mirar adónde ir!",
    "role": "desc",
    "kind": "dialogue",
@@ -801,8 +801,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "Todos los sitios que anoté son {u}, pero si te cuesta, ¡pídemelo y te escribo otra lista!",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "Todos los sitios que anoté están cerca de {p}, pero si te cuesta, ¡pídemelo y te escribo otra lista!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1011,7 +1011,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "Y, y, y, el, el Soberano, él, podré decirle que he terminado, y me darán eso, y... Ay, madre, he terminado pero ahora estoy más nervioso que antes, aaah-",
    "role": "desc",
    "kind": "dialogue",
@@ -1699,6 +1699,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "Descansa a la sombra. Parece complacido por algo, pero no sabes qué...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "Aún no está dormido del todo. Parece temblar de... ¿expectación?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "Parece observar a Maripe trabajando con gran curiosidad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "Seguramente todos los de la lista ya estén disfrutando de las termas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "Duerme con sueño ligero, como si fuera a despertar en cualquier momento. Parece vigilar las termas... o un padre orgulloso contemplando la obra de su hijo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "Duerme profundamente. Respira tan suave que podría arrullarte si lo escucharas lo bastante... como un padre orgulloso arropándote en la cama.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "Se le ve muy cómodo durmiendo. Maripe debe de haber tenido el detalle de ponerle una toalla debajo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "Parece disfrutar mirando a los visitantes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "Se va quedando dormido poco a poco. Parece... ¿saborear el momento?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "Descansa a la sombra. Incluso con tanta gente alrededor parece contento... ¿o quizá sea precisamente por tanta gente alrededor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

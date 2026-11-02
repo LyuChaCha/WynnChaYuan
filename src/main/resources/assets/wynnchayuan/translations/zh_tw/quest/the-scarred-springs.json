@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Scarred Springs",
-  "count": 169,
-  "translated": 169,
+  "count": 179,
+  "translated": 179,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -311,8 +311,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#030": {
-   "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "好，你還剩下幾片！希望等你弄完，我這邊也全部好了，我們再從那邊繼續！",
+   "src": "Okay, you got {~} left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
+   "dst": "好，你還剩下 {~} 片！希望等你弄完，我這邊也全部好了，我們再從那邊繼續！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -421,8 +421,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#041": {
-   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "Marseled 的茶屋在西北邊的山脊上。需要確切位置的話，看你的手冊！",
+   "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your content book!",
+   "dst": "Marseled 的茶屋在西北邊的山脊上。需要確切位置的話，看你的綜合手冊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -771,8 +771,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#076": {
-   "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "消息傳出去了嗎？查一下大家平常都在哪裡，把消息帶到！當然，你也在盛大重新開幕的邀請名單上。",
+   "src": "Have you spread the word yet? Check my notes to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
+   "dst": "消息傳出去了嗎？查一下我的筆記，看大家平常都在哪裡，把消息帶到！當然，你也在盛大重新開幕的邀請名單上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -791,7 +791,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#078": {
-   "src": "Okay, one sec...and...here! Remember to for where to go!",
+   "src": "Okay, one sec...and...here! Remember to check them for where to go!",
    "dst": "好，等我一下……然後……給你！記得查一下該往哪裡走！",
    "role": "desc",
    "kind": "dialogue",
@@ -801,8 +801,8 @@
    "source": "wiki"
   },
   "The Scarred Springs#079": {
-   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "我列出來的那些地點都是 {u}，不過你要是遇到困難，開口我就再寫一份給你！",
+   "src": "All the spots I listed are right around {p}, but if you're having trouble, I'll write you up a new set if you ask!",
+   "dst": "我列出來的那些地點都在 {p} 附近，不過你要是遇到困難，開口我就再寫一份給你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1011,7 +1011,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#100": {
-   "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
+   "src": "And, and, and, the, the Sovereign, he'll, I'll get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
    "dst": "然後、然後、然後，那個、那個統領，他會，我可以告訴他我完成了，然後我就能拿到那個，然後……喔我的天啊我完成了，可是完成之後我居然比之前還要焦慮，啊啊——",
    "role": "desc",
    "kind": "dialogue",
@@ -1699,6 +1699,106 @@
    "stage": "",
    "speaker": "Maripe",
    "source": "captured.json"
+  },
+  "The Scarred Springs#169": {
+   "src": "It's basking in the shade. It looks pleased with something, but you're not sure what...",
+   "dst": "他趴在陰涼處乘涼。他看起來對什麼事很滿意，但你說不上來是什麼……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#170": {
+   "src": "It's not quite asleep yet. It appears to be shivering in... anticipation?",
+   "dst": "他還沒完全睡著。他似乎在顫抖，是因為……期待？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#171": {
+   "src": "It looks to be observing Maripe at work with great curiosity.",
+   "dst": "他似乎正滿懷好奇地看著 Maripe 工作。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#172": {
+   "src": "Everyone listed here is already likely to be enjoying themselves at the hot springs.",
+   "dst": "這上面列的人大概都已經在溫泉享受了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#173": {
+   "src": "It's sleeping lightly, as if it could wake up at any moment. Feels like it's keeping an eye on the springs...or like a proud parent surveying their child's work.",
+   "dst": "他睡得很淺，彷彿隨時會醒。感覺像是在看顧這座溫泉……又像驕傲的父母在欣賞孩子的成果。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#174": {
+   "src": "It's sleeping soundly. Its breaths are soft, like they could lull you to sleep if you listened for long enough...like a proud parent tucking you into bed.",
+   "dst": "他睡得很熟。呼吸輕柔，聽久了彷彿也會被哄睡……就像驕傲的父母在為你蓋好被子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#175": {
+   "src": "It looks very comfortable in its sleep. Maripe must have been mindful enough to lay a towel below it.",
+   "dst": "他睡得很舒服。Maripe 一定很貼心，在他身下墊了條毛巾。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#176": {
+   "src": "It seems to enjoy watching the visistors.",
+   "dst": "他似乎很喜歡看著來訪的客人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#177": {
+   "src": "It's slowly dozing off. It appears to be... savoring the moment?",
+   "dst": "他慢慢打起瞌睡。他似乎在……品味這一刻？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Scarred Springs#178": {
+   "src": "It's basking in the shade. Even despite all the people around, it seems content...or maybe, it's because of all the people around?",
+   "dst": "他趴在陰涼處乘涼。儘管周圍這麼多人，他仍一臉滿足……或者，正是因為周圍這麼多人？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Scarred Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

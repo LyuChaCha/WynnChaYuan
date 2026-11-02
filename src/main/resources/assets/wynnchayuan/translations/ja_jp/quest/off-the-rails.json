@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Off the Rails",
-  "count": 921,
-  "translated": 921,
+  "count": 934,
+  "translated": 934,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -188,8 +188,8 @@
    "source": "wiki"
   },
   "Off the Rails#018": {
-   "src": "Say, buddy, could you do your friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
-   "dst": "なあ君、友人のために一肌脱いでくれないか？もうすぐ Auburn で会議があって、この列車に乗らねばならんのだ。",
+   "src": "Say, buddy, could you do your new friend a favor? I've got a meeting in Auburn soon, I need to get on this train.",
+   "dst": "なあ君、新しい友人のために一肌脱いでくれないか？もうすぐ Auburn で会議があって、この列車に乗らねばならんのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Off the Rails",
@@ -910,7 +910,7 @@
    "source": "wiki"
   },
   "Off the Rails#090": {
-   "src": "On the way here, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
+   "src": "On the way to the station, some guy came up to me and begged on his knees for me to buy his shirt. It was hard to refuse... I felt bad...",
    "dst": "ここに来る途中、ある男が寄ってきて、シャツを買ってくれって土下座で頼まれたんだ。断りづらくて…気の毒でさ…",
    "role": "desc",
    "kind": "dialogue",
@@ -930,7 +930,7 @@
    "source": "wiki"
   },
   "Off the Rails#092": {
-   "src": "In fact, this shirt doesn't even hold any value to me as a souvenier. I don't want to remember this trip.",
+   "src": "In fact, this shirt doesn't even hold any value to me as a souvenir. I don't want to remember this trip.",
    "dst": "それに、このシャツには記念品としての価値すらない。この旅のことは忘れたいんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -4018,7 +4018,7 @@
    "source": "wiki"
   },
   "Off the Rails#416": {
-   "src": "Concerned, I followed the two of them, to find that they has found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
+   "src": "Concerned, I followed the two of them, to find that they had found Levi's corpse. Before I could ask questions, they were off running through the train yelling.",
    "dst": "心配になって二人についていくと、Levi 将軍の遺体を見つけていました。質問する間もなく、二人は叫びながら列車を駆け抜けていきました。",
    "role": "desc",
    "kind": "dialogue",
@@ -4049,7 +4049,7 @@
    "note": "{c2}I do have a master key for all rooms{/}"
   },
   "Off the Rails#419": {
-   "src": "...W-Whuh? Where is it? I always keep it somewhere in my pocket! Perhaps I dropped it somewhere?",
+   "src": "...W-Whuh? Where is it? I always keep it in my pocket! Perhaps I dropped it somewhere?",
    "dst": "…え、ええ？どこに？いつもポケットに入れているのに！どこかで落としたのかな？",
    "role": "desc",
    "kind": "dialogue",
@@ -4823,7 +4823,7 @@
    "source": "wiki"
   },
   "Off the Rails#504": {
-   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you. huh.",
+   "src": "...Gosh, sorry. I know I said I'd help with the case, but, thinking on it, I've not actually seen much that could help you, huh.",
    "dst": "…ああ、ごめん。事件を手伝うって言ったけど、考えてみたら役に立ちそうなものは何も見てないや。はは。",
    "role": "desc",
    "kind": "dialogue",
@@ -5980,7 +5980,7 @@
    "source": "wiki"
   },
   "Off the Rails#620": {
-   "src": "Anything else to talk about?",
+   "src": "...Anything else to talk about?",
    "dst": "他に話すことは？",
    "role": "desc",
    "kind": "dialogue",
@@ -8062,7 +8062,7 @@
    "source": "captured.json"
   },
   "Off the Rails#837": {
-   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival in two places, and now I'll miss both... Oh well...",
+   "src": "It's just a shame I didn't schedule this trip properly... I could have seen the Queen's Festival both here AND there, and now I'll miss both... Oh well...",
    "dst": "この旅行のスケジュールをちゃんと組んでおけばよかったのに……そうすれば、2か所で開催される女王の祭りを見られたのに、今は両方とも見逃しちゃう……まあ、仕方ないか……",
    "role": "desc",
    "kind": "dialogue",
@@ -9329,6 +9329,136 @@
    "stage": "Stage 8",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Off the Rails#964": {
+   "src": "Hey... Could you stop that, please?",
+   "dst": "あの…やめてもらえます？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Ticket Collector",
+   "source": "captured"
+  },
+  "Off the Rails#965": {
+   "src": "Ah, alright. Well, do come back if you do want to talk about anything.",
+   "dst": "ああ、そっか。まあ、話したいことがあったらまた来てくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Malic",
+   "source": "captured"
+  },
+  "Off the Rails#966": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Demma\"",
+   "dst": "このロッカーには、「Demma」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#967": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Cemor\"",
+   "dst": "このロッカーには、「Cemor」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#968": {
+   "src": "There's a hastily-scrawn note stuck to this locker, saying \"Flinn\"",
+   "dst": "このロッカーには、「Flinn」と書かれた、手書きで雑に書かれたメモが貼ってある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#969": {
+   "src": "Bye...",
+   "dst": "じゃあね…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Flinn",
+   "source": "captured"
+  },
+  "Off the Rails#970": {
+   "src": "[+{~} Harvin's Notebook]",
+   "dst": "[+{~} Harvin の手帳]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#971": {
+   "src": "[New Notes Added]",
+   "dst": "[新しいメモを追加]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#972": {
+   "src": "[New \"Evidence\" Gained]",
+   "dst": "[新たな「証拠」を入手]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#973": {
+   "src": "Oh, alright then. Good luck catching that murderer.",
+   "dst": "そうですか。殺人犯の捜索、頑張ってください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Telati",
+   "source": "captured"
+  },
+  "Off the Rails#974": {
+   "src": "[Strong Evidence Gained]",
+   "dst": "[有力な証拠を入手]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Off the Rails#975": {
+   "src": "Thank you for the chat, it's helped me take my mind off things. Good luck figuring out the murder!",
+   "dst": "話せてよかった、気が紛れたよ。事件の解決、頑張ってね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "Maddison",
+   "source": "captured"
+  },
+  "Off the Rails#976": {
+   "src": "...Nice.",
+   "dst": "…いいね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Off the Rails",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
