@@ -205,7 +205,7 @@ public final class DialogueRewriter {
             }
             Integer trail = DialogueLayout.offsetOf(texts.get(end + 1));
             String row = rowText(texts, i, end);
-            String pick = store.lookup(row.strip());
+            String pick = store.lookupChoice(row);
             String rowFont = DialogueFonts.fontOf(styles.get(i));
             if (pick != null && !pick.isBlank()) {
                 Marquee.remember(rowFont, row.strip(), pick);

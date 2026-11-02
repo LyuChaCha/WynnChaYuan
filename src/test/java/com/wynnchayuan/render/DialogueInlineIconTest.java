@@ -563,7 +563,7 @@ public final class DialogueInlineIconTest {
 
     private static TranslationStore store(String entry) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-icon-store");
-        Files.writeString(dir.resolve("npc.json"), "{\n " + entry + "\n}\n",
+        Files.writeString(dir.resolve("quest.json"), "{\n " + entry + "\n}\n",
                 StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);

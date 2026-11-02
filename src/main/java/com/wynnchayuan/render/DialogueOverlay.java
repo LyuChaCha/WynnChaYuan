@@ -417,7 +417,8 @@ public final class DialogueOverlay {
         List<List<Component>> out = new ArrayList<>(raw.size());
         for (String each : raw) {
             StyledText line = StyledText.fromString(each);
-            Component hit = LineTranslator.translate(line, store);
+            String known = store.lookupChoice(LineParts.of(line).template());
+            Component hit = LineTranslator.translateKnown(line, known, store);
             out.add(List.copyOf(Boxes.toLines(
                     hit != null ? hit : LineTranslator.untranslated(line))));
         }

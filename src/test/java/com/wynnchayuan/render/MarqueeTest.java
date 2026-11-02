@@ -334,7 +334,7 @@ public final class MarqueeTest {
     }
 
     private static String choiceFrame(String row, String window, TranslationStore store) {
-        String pick = store.lookup(window);
+        String pick = store.lookupChoice(window);
         if (pick != null && !pick.isBlank()) {
             Marquee.remember(row, window, pick);
         } else {
@@ -455,7 +455,7 @@ public final class MarqueeTest {
     private static TranslationStore miniStore(String src, String dst) throws Exception {
         Path dir = Files.createTempDirectory("wynnchayuan-marquee");
         String json = "{\n  " + quote(src) + ": " + quote(dst) + "\n}\n";
-        Files.writeString(dir.resolve("misc.json"), json, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("quest.json"), json, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return store;
