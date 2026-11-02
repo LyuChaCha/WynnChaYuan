@@ -97,6 +97,11 @@ final class LanguageTab {
                     SettingsScreen.lastTab = screen.view.tab();
                     screen.view = new SettingsView(screen.buildTabs(), screen.new Host(), SettingsScreen.lastTab);
                 }));
+        return rows;
+    }
+
+    List<Row> collection() {
+        List<Row> rows = new ArrayList<>();
         rows.add(SettingsScreen.toggle("data.collect", true, SettingsScreen.cfg()::collect, SettingsScreen.cfg()::toggleCollect));
         rows.add(SettingsScreen.toggle("data.collectgui", false, SettingsScreen.cfg()::collectGuiText,
                 SettingsScreen.cfg()::toggleCollectGuiText));

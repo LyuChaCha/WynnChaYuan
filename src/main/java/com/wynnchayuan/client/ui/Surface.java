@@ -453,6 +453,11 @@ public abstract class Surface {
 
     protected float toggle(String key, float right, float y, boolean on, String text,
                            Runnable flip) {
+        return toggle(key, right, y, on, text, flip, accent);
+    }
+
+    protected float toggle(String key, float right, float y, boolean on, String text,
+                           Runnable flip, int accent) {
         float t = animate("t:" + key, on ? 1f : 0f, 55f);
         float w = 26;
         float h = 14;

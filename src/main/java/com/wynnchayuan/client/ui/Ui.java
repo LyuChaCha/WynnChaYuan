@@ -40,6 +40,10 @@ public final class Ui {
     public static final int TITLE_TO = 0xFFA2DF86;
     public static final int[] LEAF_STOPS = {0xFF3A9F4C, 0xFF5FC063, 0xFFA2DF86};
 
+    public static final int MODE_OFF = 0xFF8A9A8E;
+    public static final int OPTION_BOX = 0xE6111A15;
+    public static final int RADIO = 0xFF5F7065;
+
     public static final int GOLD = 0xFFE0BC6E;
     public static final int GREEN = 0xFF7BC47F;
     public static final int AMBER = 0xFFE0B354;
@@ -106,6 +110,48 @@ public final class Ui {
             float b = x + rr + span * (i + 1) / steps;
             c.fill(a, y, b, y + h, mix(left, right, (i + 0.5f) / steps));
         }
+    }
+
+    public static void triangle(Canvas c, float cx, float cy, float size, float degrees,
+                                int argb) {
+        double a = Math.toRadians(degrees);
+        float cos = (float) Math.cos(a);
+        float sin = (float) Math.sin(a);
+        float x0 = cx + (-0.55f * size) * cos - (-size) * sin;
+        float y0 = cy + (-0.55f * size) * sin + (-size) * cos;
+        float x1 = cx + (-0.55f * size) * cos - size * sin;
+        float y1 = cy + (-0.55f * size) * sin + size * cos;
+        float x2 = cx + 0.9f * size * cos;
+        float y2 = cy + 0.9f * size * sin;
+        float top = Math.min(y0, Math.min(y1, y2));
+        float bottom = Math.max(y0, Math.max(y1, y2));
+        float step = Math.max(c.px(), 0.25f);
+        for (float y = top; y < bottom; y += step) {
+            float mid = y + step / 2f;
+            float a1 = cross(x0, y0, x1, y1, mid);
+            float a2 = cross(x1, y1, x2, y2, mid);
+            float a3 = cross(x2, y2, x0, y0, mid);
+            float lo = Math.min(nanHigh(a1), Math.min(nanHigh(a2), nanHigh(a3)));
+            float hi = Math.max(nanLow(a1), Math.max(nanLow(a2), nanLow(a3)));
+            if (hi > lo) {
+                c.fill(lo, y, hi, y + step, argb);
+            }
+        }
+    }
+
+    private static float nanHigh(float v) {
+        return Float.isNaN(v) ? Float.MAX_VALUE : v;
+    }
+
+    private static float nanLow(float v) {
+        return Float.isNaN(v) ? -Float.MAX_VALUE : v;
+    }
+
+    private static float cross(float ax, float ay, float bx, float by, float y) {
+        if ((y < ay && y < by) || (y > ay && y > by) || ay == by) {
+            return Float.NaN;
+        }
+        return ax + (bx - ax) * (y - ay) / (by - ay);
     }
 
     public static void glowSpot(Canvas c, float cx, float cy, float rx, float ry, float x0,

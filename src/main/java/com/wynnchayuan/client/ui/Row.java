@@ -16,7 +16,7 @@ public final class Row {
 
     public enum Tone { ACCENT, REPLACE, BOTH, OFF, PLAIN }
 
-    public record Option(String label, Tone tone) {}
+    public record Option(String label, Tone tone, String about) {}
 
     public record Choice(String id, String label, String badge, boolean auto) {}
 
@@ -28,6 +28,8 @@ public final class Row {
     BooleanSupplier on = () -> false;
     Runnable flip = () -> { };
     Supplier<String> onText;
+    Tone tone = Tone.ACCENT;
+    List<Row> details = List.of();
 
     final List<Option> options = new ArrayList<>();
     IntSupplier selected = () -> 0;
@@ -114,8 +116,26 @@ public final class Row {
     }
 
     public Row option(String text, Tone tone) {
-        options.add(new Option(text, tone));
+        return option(text, tone, null);
+    }
+
+    public Row option(String text, Tone tone, String about) {
+        options.add(new Option(text, tone, about));
         return this;
+    }
+
+    public Row tone(Tone onTone) {
+        this.tone = onTone;
+        return this;
+    }
+
+    public Row details(List<Row> under) {
+        this.details = under;
+        return this;
+    }
+
+    public boolean folds() {
+        return kind == Kind.SEGMENT && options.size() >= 3;
     }
 
     public Row selected(IntSupplier index) {
@@ -239,5 +259,11 @@ public final class Row {
     public record Group(Supplier<String> title, boolean tool, List<Row> rows) {}
 
     public record Tab(String key, Supplier<String> name, Supplier<String> about,
-                      Icons.Icon icon, Preview.Scene scene, List<Group> groups) {}
+                      Icons.Icon icon, Preview.Scene scene, List<Group> groups, boolean legend) {
+
+        public Tab(String key, Supplier<String> name, Supplier<String> about, Icons.Icon icon,
+                   Preview.Scene scene, List<Group> groups) {
+            this(key, name, about, icon, scene, groups, false);
+        }
+    }
 }
