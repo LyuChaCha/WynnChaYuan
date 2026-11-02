@@ -41,7 +41,7 @@ public final class Row {
     IntConsumer slide = v -> { };
     IntFunction<String> format = String::valueOf;
 
-    Supplier<String> hex = () -> "#6FA8D8";
+    Supplier<String> hex = () -> "#7FD08A";
     Predicate<String> setHex = s -> false;
 
     Runnable commit = () -> { };

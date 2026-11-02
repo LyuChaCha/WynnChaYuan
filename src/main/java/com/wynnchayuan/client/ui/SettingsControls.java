@@ -136,7 +136,7 @@ final class SettingsControls {
     }
 
     private static final String[] PRESETS = {
-        "#6FA8D8", "#8FD694", "#E0BC6E", "#E0706B", "#B48EDE", "#5FC8C0", "#F0A35E", "#C5CFDA"};
+        "#7FD08A", "#6FA8D8", "#E0BC6E", "#E0706B", "#B48EDE", "#5FC8C0", "#F0A35E", "#C5CFDA"};
 
     private void picker(Row r, float anchorRight, float below, float above) {
         float w = 156;

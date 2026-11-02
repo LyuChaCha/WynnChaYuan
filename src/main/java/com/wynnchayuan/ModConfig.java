@@ -153,9 +153,13 @@ public final class ModConfig {
 
     int panelGap = DEFAULT_PANEL_GAP;
 
-    String accentColor = "#6FA8D8";
+    public static final String DEFAULT_COLOUR = "#7FD08A";
 
-    String themeColor = "#6FA8D8";
+    static final String OLD_DEFAULT_COLOUR = "#6FA8D8";
+
+    String accentColor = DEFAULT_COLOUR;
+
+    String themeColor = DEFAULT_COLOUR;
 
     int dialogueHoldMs = 6000;
 
@@ -789,7 +793,7 @@ public final class ModConfig {
         try {
             return Integer.parseInt(hex.replace("#", ""), 16);
         } catch (NumberFormatException e) {
-            return 0x6FA8D8;
+            return 0x7FD08A;
         }
     }
 

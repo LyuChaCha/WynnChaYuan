@@ -13,6 +13,10 @@ public final class SettingsView extends Surface {
 
         int tone(Row.Tone tone);
 
+        default int toneDeep(Row.Tone tone) {
+            return Ui.deep(tone(tone));
+        }
+
         String tr(String key, Object... args);
 
         String title();
@@ -420,7 +424,7 @@ public final class SettingsView extends Surface {
             float cardH = cardHeight(card);
             if (cy + cardH >= y && cy < y + h) {
                 Row.Group g = card.group();
-                card(x, cy, cardW, cardH, g.title().get(),
+                group(x, cy, cardW, cardH, g.title().get(),
                      card.rows().size() > 1 ? String.valueOf(card.rows().size()) : null, g.tool());
                 float ry = cy + GROUP_HEAD + 1;
                 for (Row r : card.rows()) {
@@ -436,7 +440,7 @@ public final class SettingsView extends Surface {
         unclip();
 
         if (bodyT < 0.99f) {
-            c.fill(x, y, x + w, y + h, Ui.fade(0xC8181F2A, 1f - bodyT));
+            c.fill(x, y, x + w, y + h, Ui.fade(Ui.VEIL, 1f - bodyT));
         }
         if (maxScroll > 0) {
             float trackX = x + w - 3;

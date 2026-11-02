@@ -297,7 +297,12 @@ public abstract class Surface {
             float g = i * 1.6f;
             c.round(x - g, y - g + 2, w + g * 2, h + g * 2, Ui.R3 + g, 0x12000000);
         }
-        Ui.pane(c, x, y, w, h, Ui.R3, blurred ? Ui.WINDOW : Ui.WINDOW_SOLID, Ui.WIN_EDGE);
+        Ui.pane(c, x, y, w, h, Ui.R3, blurred ? Ui.WINDOW : Ui.WINDOW_SOLID, 0);
+        Ui.glowSpot(c, x + w * 0.12f, y - h * 0.08f, w * 0.68f, h * 0.74f, x, y, x + w, y + h,
+                    Ui.R3, Ui.GLOW_TOP);
+        Ui.glowSpot(c, x + w, y + h * 1.08f, w * 0.55f, h * 0.7f, x, y, x + w, y + h, Ui.R3,
+                    Ui.GLOW_BOTTOM);
+        c.ring(x, y, w, h, Ui.R3, c.px(), Ui.WIN_EDGE);
     }
 
     protected void button(String key, float x, float y, float w, float h, String label,
@@ -365,6 +370,29 @@ public abstract class Surface {
         }
         if (count != null) {
             c.text(count, x + w - 8 - c.width(count), y + 6, Ui.FAINT);
+        }
+    }
+
+    protected void group(float x, float y, float w, float h, String title, String count,
+                        boolean tool) {
+        if (tool) {
+            Ui.pane(c, x, y, w, h, Ui.R2, Ui.CARD, Ui.alpha(accent, 0x55));
+        }
+        if (title == null || title.isEmpty()) {
+            return;
+        }
+        String shown = Ui.fit(c, title, (int) (w - 34));
+        c.text(shown, x + 6, y + 5, tool ? accent : Ui.GROUP);
+        float lineL = x + 4;
+        float lineR = x + w - 8 - (count == null ? 0 : c.width(count) + 4);
+        float ruleY = y + 14;
+        if (lineR > lineL) {
+            Ui.sweep(c, lineL, ruleY, (lineR - lineL) * 0.6f, c.px(), 0, Ui.GROUP_RULE, Ui.LINE);
+            c.fill(lineL + (lineR - lineL) * 0.6f, ruleY, lineR, ruleY + c.px(),
+                   Ui.fade(Ui.LINE, 0.5f));
+        }
+        if (count != null) {
+            c.text(count, x + w - 8 - c.width(count), y + 5, Ui.FAINT);
         }
     }
 
