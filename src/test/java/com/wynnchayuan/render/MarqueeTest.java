@@ -1,15 +1,23 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.ModConfig;
+import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.LineParts;
 import com.wynnchayuan.translate.TranslationStore;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.Identifier;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.wynnchayuan.Check.check;
 import static com.wynnchayuan.Check.failures;
@@ -74,6 +82,8 @@ public final class MarqueeTest {
         restartsPerLine();
 
         choiceFollowsGameScroll();
+        choiceSurvivesAnyScroll();
+        cutChoicesReadToTheEnd();
         shortChoiceStays();
         bodyAndChoiceTogether();
         panelHoldsMidScroll();
@@ -381,6 +391,128 @@ public final class MarqueeTest {
             every &= union.indexOf(String.valueOf(c)) >= 0;
         }
         check("捲過之後整句選項譯文都看得到", every);
+    }
+
+    private static List<String> backAndForth(String full) {
+        List<String> out = gameWindows(full, 1);
+        List<String> back = new ArrayList<>(out);
+        java.util.Collections.reverse(back);
+        out.addAll(back);
+        return out;
+    }
+
+    private static List<String> skipping(String full, int step) {
+        List<String> out = new ArrayList<>();
+        for (int s = 0; s + WINDOW <= full.length(); s += step) {
+            out.add(full.substring(s, s + WINDOW).strip());
+        }
+        return out;
+    }
+
+    private static List<String> uneven(String full) {
+        List<String> out = new ArrayList<>();
+        for (int s = 0; s + WINDOW <= full.length(); s++) {
+            int end = s + WINDOW - (s % 2);
+            out.add(full.substring(s, end).strip());
+        }
+        return out;
+    }
+
+    private static void choiceSurvivesAnyScroll() throws Exception {
+        String first = LONG_CHOICE.substring(0, WINDOW).strip();
+        String dst = "你還記得自己加入我們之前發生過的任何事情嗎？一點點也好。";
+        TranslationStore store = miniStore(first, dst);
+        setConfig();
+        Map<String, List<String>> models = new LinkedHashMap<>();
+        models.put("捲到底跳回開頭", gameWindows(LONG_CHOICE, 2));
+        models.put("捲到底再捲回來", backAndForth(LONG_CHOICE));
+        models.put("一次跳五個字", skipping(LONG_CHOICE, 5));
+        models.put("右邊界忽長忽短", uneven(LONG_CHOICE));
+        for (Map.Entry<String, List<String>> model : models.entrySet()) {
+            Marquee.clear();
+            int english = 0;
+            for (String window : model.getValue()) {
+                now += TICK;
+                String shown = rewritten(window, store);
+                if (shown == null || shown.chars().anyMatch(c -> c < 0x80 && Character.isLetter(c))) {
+                    english++;
+                }
+            }
+            check("★ " + model.getKey() + "：就地取代沒有一格掉回英文（掉 " + english + " 格）",
+                    english == 0);
+            boolean held = true;
+            List<String> windows = model.getValue();
+            for (int i = 1; i < windows.size(); i++) {
+                String was = windows.get(i - 1);
+                String is = windows.get(i);
+                held &= was.equals(is) || is.equals(first)
+                        || DialogueOverlay.sameScroll(List.of(was), List.of(is));
+            }
+            check("★ " + model.getKey() + "：小框沿用同一組選項", held);
+        }
+        check("換一句接不上的話不沿用",
+                !Marquee.continues("Do you remember anything fro", "Tell me about the Wynn Province"));
+    }
+
+    private static void cutChoicesReadToTheEnd() throws Exception {
+        String root = "src/main/resources/assets/wynnchayuan/translations/";
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr")) {
+            TranslationStore store = new TranslationStore();
+            store.loadAll(Path.of(root + lang));
+            for (String full : List.of("What'll you do when it's all over?",
+                    "I think the whole city heard you.",
+                    "I was trying to find the right time.")) {
+                Marquee.clear();
+                String dst = store.lookupChoice(full.substring(0, WINDOW).strip());
+                check(lang + "：「" + full + "」有譯文", dst != null);
+                if (dst == null) {
+                    continue;
+                }
+                check(lang + "：譯文是整句（" + dst + "）",
+                        ".?!。？！".indexOf(dst.charAt(dst.length() - 1)) >= 0);
+                boolean english = false;
+                StringBuilder union = new StringBuilder();
+                for (String window : gameWindows(full, 3)) {
+                    now += TICK;
+                    String shown = choiceFrame("choice_1", window, store);
+                    english |= shown == null;
+                    union.append(shown);
+                }
+                boolean every = true;
+                for (char c : dst.toCharArray()) {
+                    every &= union.indexOf(String.valueOf(c)) >= 0;
+                }
+                check(lang + "：★ 每一格都是譯文、捲完看得到整句", !english && every);
+            }
+        }
+    }
+
+    private static final Style CHOICE = Style.EMPTY.withFont(new FontDescription.Resource(
+            Identifier.withDefaultNamespace("hud/dialogue/text/wynncraft/choice_1")));
+
+    private static String rewritten(String window, TranslationStore store) {
+        MutableComponent message = Component.empty();
+        message.append(Component.literal(offset(42)).withStyle(CHOICE));
+        message.append(Component.literal(window).withStyle(CHOICE));
+        message.append(Component.literal(offset(-164)).withStyle(CHOICE));
+        Component out = DialogueRewriter.rewrite(message, store);
+        if (out == null) {
+            return null;
+        }
+        StringBuilder shown = new StringBuilder();
+        out.getString().codePoints().filter(cp -> cp < 0xE000).forEach(shown::appendCodePoint);
+        return shown.toString();
+    }
+
+    private static String offset(int px) {
+        return new String(Character.toChars(0xD0000 + px));
+    }
+
+    private static void setConfig() throws Exception {
+        var field = WynnChaYuan.class.getDeclaredField("config");
+        field.setAccessible(true);
+        field.set(null, new ModConfig(Files.createTempDirectory("wynnchayuan-marquee-config")
+                .resolve("config.json")));
     }
 
     private static void shortChoiceStays() {

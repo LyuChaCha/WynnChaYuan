@@ -64,6 +64,10 @@ public final class DialogueStartLog {
         frameRow("小框 | " + raw + " | " + chars + " | " + rows);
     }
 
+    static void choiceLost(String row, String was, String now) {
+        frameRow("選項跟丟 | " + row + " | " + was + " → " + now);
+    }
+
     private static void frameRow(String row) {
         if (framesFile == null || frameLines >= FRAME_LIMIT || row.equals(lastRow)) {
             return;
