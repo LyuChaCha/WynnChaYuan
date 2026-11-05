@@ -105,6 +105,11 @@ final class GuiCanvas implements Canvas {
         if (pw <= 0 || ph <= 0) {
             return;
         }
+        if (argb == 0xFFFFFFFF) {
+            g.blit(at, ax, ay, ax + pw, ay + ph, u / size[0], (u + uw) / size[0], v / size[1],
+                   (v + vh) / size[1]);
+            return;
+        }
         g.blit(RenderPipelines.GUI_TEXTURED, at, ax, ay, u, v, pw, ph,
                Math.round(uw), Math.round(vh), size[0], size[1], argb);
     }

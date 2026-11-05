@@ -21,6 +21,16 @@ public final class SettingsView extends Surface {
             return false;
         }
 
+        default int previewWidth() {
+            return 0;
+        }
+
+        default void setPreviewWidth(int width) {
+        }
+
+        default void savePreviewWidth() {
+        }
+
         String tr(String key, Object... args);
 
         String title();
@@ -65,7 +75,9 @@ public final class SettingsView extends Surface {
     static final float ROW_H = 22;
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float PREVIEW_W = 380;
+    static final float PREVIEW_W = 240;
+    static final float PREVIEW_MIN = 150;
+    static final float LIST_MIN = 230;
     static final float NAV_H = 21;
 
     final List<Row.Tab> tabs;
@@ -151,7 +163,7 @@ public final class SettingsView extends Surface {
         float h = Math.min(screenH - 14, sheet ? (sheetH > 0 ? sheetH : 236) : MAX_H);
         window(Math.round((screenW - w) / 2f), Math.round((screenH - h) / 2f), w, h,
                host.blurred());
-        railW = sheet ? 0 : RAIL_SLIM;
+        railW = sheet ? 0 : (winW >= 520 ? RAIL_W : RAIL_SLIM);
         if (!sheet && host.leaves()) {
             leaves.draw(c, winX, winY, winW, winH, dt);
         }
@@ -367,15 +379,48 @@ public final class SettingsView extends Surface {
         float left = winX + railW + 12;
         float full = winX + winW - 12 - left;
         float previewW = 0;
-        if (!sheet && h >= 150) {
-            previewW = full >= 500 ? Math.min(PREVIEW_W, full * 0.47f)
-                    : (full >= 340 ? full * 0.4f : 0);
+        if (!sheet && h >= 150 && full - LIST_MIN - 10 >= PREVIEW_MIN) {
+            int saved = host.previewWidth();
+            float want = saved > 0 ? saved : Math.min(PREVIEW_W, full * 0.42f);
+            previewW = Math.round(Math.max(PREVIEW_MIN, Math.min(full - LIST_MIN - 10, want)));
         }
         float listW = previewW > 0 ? full - previewW - 10 : full;
         list(left, top, listW, h);
         if (previewW > 0) {
+            divider(left + listW, top, h, left + LIST_MIN, winX + winW - 12 - PREVIEW_MIN - 10);
             preview(left + listW + 10, top, previewW, h);
         }
+    }
+
+    private long dividerPressed;
+
+    private void divider(float x, float y, float h, float lo, float hi) {
+        boolean dragged = dragging != null && "divider".equals(draggingKey);
+        boolean hot = over(x + 1, y, 8, h) || dragged;
+        float g = glow("divider", hot);
+        float mid = y + h / 2f;
+        c.fill(x + 4.5f, y + 8, x + 4.5f + c.px(), y + h - 8, Ui.fade(Ui.LINE, 0.6f + g * 0.4f));
+        c.round(x + 3, mid - 10, 4, 20, 2, Ui.mix(Ui.BORDER, Ui.alpha(Ui.TITLE_FROM, 0xE0), g));
+        if (hot && tip == null && !dragged) {
+            tip = new Tip(host.tr("preview.resize"), x + 1, mid - 10, 8, 20);
+            hoverRow = "#divider";
+        }
+        float right = winX + winW - 12;
+        Zone z = zone(x + 1, y, 8, h, (px, py, b) -> {
+            if (now - dividerPressed < 350) {
+                host.setPreviewWidth(0);
+                host.savePreviewWidth();
+                dividerPressed = 0;
+                return;
+            }
+            dividerPressed = now;
+        });
+        z.key = "divider";
+        z.drag = (px, py, b) -> {
+            float edge = (float) Math.max(lo, Math.min(hi, px - 5));
+            host.setPreviewWidth(Math.round(right - edge - 10));
+        };
+        z.release = host::savePreviewWidth;
     }
 
     private record Card(Row.Group group, List<Row> rows, String tabName) {}
@@ -844,13 +889,15 @@ public final class SettingsView extends Surface {
         Preview.Scene scene = map ? mapScene : t.scene();
         String title = host.tr("preview.title");
         float pulse = 0.55f + 0.45f * (float) Math.sin(now / 420.0);
-        c.round(x, y + 2, 4, 4, 2, Ui.fade(accent, pulse));
-        float right = map ? sceneTabs(x, y - 3, w) - 6 : x + w;
+        float top = map ? 19 : 13;
+        float textY = map ? y + 4 : y;
+        c.round(x, textY + 2, 4, 4, 2, Ui.fade(accent, pulse));
+        float right = map ? sceneTabs(x, y, w) - 6 : x + w;
         String shown = Ui.fit(c, title, (int) (right - x - 10));
-        c.text(shown, x + 8, y, Ui.TEXT_3);
+        c.text(shown, x + 8, textY, Ui.TEXT_3);
         float lineL = x + 8 + c.width(shown) + 6;
         if (right > lineL) {
-            c.fill(lineL, y + 3.5f, right, y + 3.5f + c.px(), Ui.LINE);
+            c.fill(lineL, textY + 3.5f, right, textY + 3.5f + c.px(), Ui.LINE);
         }
         Preview.State state = host.preview();
         if (gapShown < 0) {
@@ -858,9 +905,9 @@ public final class SettingsView extends Surface {
         }
         gapShown = Ui.ease(gapShown, state.gap, dt, 45f);
         int px = Math.round(x);
-        int py = Math.round(y + 13);
+        int py = Math.round(y + top);
         int pw = Math.round(w);
-        int ph = Math.round(h - 13);
+        int ph = Math.round(h - top);
         Preview.draw(c, px, py, pw, ph, scene, state, 0xFF000000 | (host.frame() & 0xFFFFFF),
                      accent, gapShown);
         if (map) {
@@ -876,8 +923,8 @@ public final class SettingsView extends Surface {
         for (String key : MAP_KEYS) {
             total += c.width(host.tr(key)) + 14;
         }
-        float left = x + w - total;
-        Ui.pane(c, left, y, total, 14, Ui.R1, Ui.FIELD, 0);
+        float left = Math.round(x + w - total);
+        Ui.pane(c, left, y, total, 16, Ui.R1, Ui.FIELD, Ui.LINE);
         float at = left + 2;
         for (int i = 0; i < MAP_KEYS.length; i++) {
             String label = host.tr(MAP_KEYS[i]);
@@ -885,17 +932,13 @@ public final class SettingsView extends Surface {
             boolean on = MAP_SCENES[i] == mapScene;
             boolean hot = !on && over(at, y + 1, cw, 12);
             if (on) {
-                Ui.sweep(c, at, y + 1.5f, cw / 2f, 11, 3.5f, Ui.LEAF_STOPS[0], Ui.LEAF_STOPS[1]);
-                c.clip(at + cw / 2f, y, at + cw, y + 14);
-                Ui.sweep(c, at + cw / 2f - 4, y + 1.5f, cw / 2f + 4, 11, 3.5f, Ui.LEAF_STOPS[1],
-                         Ui.LEAF_STOPS[2]);
-                c.unclip();
+                c.round(at, y + 2, cw, 12, 3, Ui.LEAF_STOPS[1]);
             } else if (hot) {
-                c.round(at, y + 1.5f, cw, 11, 3.5f, Ui.RAISED);
+                c.round(at, y + 2, cw, 12, 3, Ui.RAISED);
             }
-            c.text(label, at + 7, y + 3, on ? Ui.ON_ACCENT : (hot ? Ui.TEXT : Ui.TEXT_2));
+            c.text(label, at + (cw - c.width(label)) / 2f, y + 4, on ? Ui.ON_ACCENT : (hot ? Ui.TEXT : Ui.TEXT_2));
             Preview.Scene next = MAP_SCENES[i];
-            zone(at, y, cw, 14, (qx, qy, b) -> {
+            zone(at, y, cw, 16, (qx, qy, b) -> {
                 if (mapScene != next) {
                     click();
                     mapScene = next;

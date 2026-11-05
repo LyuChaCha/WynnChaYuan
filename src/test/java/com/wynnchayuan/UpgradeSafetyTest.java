@@ -203,6 +203,7 @@ public final class UpgradeSafetyTest {
         expected.addProperty("pageNames", "ON");
         expected.addProperty("wynntilsFps", true);
         expected.addProperty("settingsLeaves", true);
+        expected.addProperty("previewWidth", 0);
         expected.addProperty("dialogueCover", true);
         expected.addProperty("translationsEnabled", true);
         expected.addProperty("abilityNamesOriginal", false);

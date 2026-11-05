@@ -13,56 +13,104 @@ final class SettingsNavigation {
     void rail() {
         float x = view.winX;
         float y = view.winY;
+        boolean slim = view.railW < SettingsView.RAIL_W;
         view.clip(x, y, x + view.railW, y + view.winH);
         view.c.round(x, y, view.railW + Ui.R3 * 2, view.winH, Ui.R3, Ui.RAIL);
         view.unclip();
         view.c.fill(x + view.railW - view.c.px(), y + 1, x + view.railW, y + view.winH - 1, Ui.LINE);
 
-        view.c.logo(x + (view.railW - 20) / 2f, y + 8, 20);
-        float cy = y + 36;
+        float cy;
+        if (slim) {
+            view.c.logo(x + (view.railW - 20) / 2f, y + 8, 20);
+            cy = y + 36;
+        } else {
+            view.c.logo(x + 7, y + 8, 26);
+            String title = view.host.title();
+            float room = view.railW - 38 - 6;
+            float big = view.c.scale(1.25f);
+            float s = view.c.width(title) * big <= room ? big : 1f;
+            view.c.text(title, x + 38, y + 21 - 4 * s, view.accent, s);
+            view.c.text(title, x + 38 + view.c.px(), y + 21 - 4 * s, view.accent, s);
+            cy = y + 40;
+            for (String line : Ui.wrap(view.c, view.host.tagline(), (int) (view.railW - 16))) {
+                view.c.text(line, x + 8, cy, Ui.TEXT_2);
+                cy += 10;
+            }
+            view.c.text(view.host.version(), x + 8, cy, Ui.FAINT);
+            cy += 15;
+            cy = searchField(x + 7, cy, view.railW - 14) + 7;
+        }
 
         boolean searching = view.searching();
         float pillY = view.animate("nav", cy + view.tab * (SettingsView.NAV_H + 2), 55f);
         if (!searching) {
-            Ui.pane(view.c, x + 5, pillY, view.railW - 10, SettingsView.NAV_H, Ui.R1, Ui.RAIL_ON,
+            Ui.pane(view.c, x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.RAIL_ON,
                     Ui.RAIL_ON_EDGE);
         }
         for (int i = 0; i < view.tabs.size(); i++) {
             Row.Tab t = view.tabs.get(i);
             float ny = cy + i * (SettingsView.NAV_H + 2);
             boolean on = i == view.tab && !searching;
-            boolean hot = view.over(x + 5, ny, view.railW - 10, SettingsView.NAV_H);
+            boolean hot = view.over(x + 6, ny, view.railW - 12, SettingsView.NAV_H);
             float g = view.glow("nav" + i, hot && !on);
             if (g > 0.01f) {
-                view.c.round(x + 5, ny, view.railW - 10, SettingsView.NAV_H, Ui.R1, Ui.fade(0x12FFFFFF, g));
+                view.c.round(x + 6, ny, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.fade(0x12FFFFFF, g));
             }
             int ink = on ? Ui.RAIL_ON_INK : (hot ? Ui.TEXT : Ui.TEXT_2);
-            view.c.icon(t.icon(), x + (view.railW - 12) / 2f, ny + 4.5f, 12, ink);
-            if (hot) {
-                view.tip = new Surface.Tip(t.name().get(), x + view.railW, ny - 4, 0, SettingsView.NAV_H);
-                view.hoverRow = "#nav" + i;
+            String name = t.name().get();
+            if (slim) {
+                view.c.icon(t.icon(), x + (view.railW - 12) / 2f, ny + 4.5f, 12, ink);
+                if (hot) {
+                    view.tip = new Surface.Tip(name, x + view.railW, ny - 4, 0, SettingsView.NAV_H);
+                    view.hoverRow = "#nav" + i;
+                }
+            } else {
+                view.c.icon(t.icon(), x + 12, ny + 5, 11, ink);
+                String count = String.valueOf(rowCount(t));
+                float countW = view.c.width(count);
+                String shown = Ui.fit(view.c, name, (int) (view.railW - 12 - 22 - countW - 12));
+                view.c.text(shown, x + 28, ny + 6.5f, ink);
+                view.c.text(count, x + view.railW - 12 - countW, ny + 6.5f, on ? Ui.RAIL_ON_INK : Ui.FAINT);
+                if (hot && !shown.equals(name)) {
+                    view.tip = new Surface.Tip(name, x + view.railW, ny - 4, 0, SettingsView.NAV_H);
+                    view.hoverRow = "#nav" + i;
+                }
             }
             int index = i;
-            view.zone(x + 5, ny, view.railW - 10, SettingsView.NAV_H, (px, py, b) -> view.switchTab(index));
+            view.zone(x + 6, ny, view.railW - 12, SettingsView.NAV_H, (px, py, b) -> view.switchTab(index));
         }
 
         float nh = 18;
         float ny = y + view.winH - 8 - nh;
-        float nw = view.railW - 10;
-        float nx = x + 5;
+        float nw = view.railW - 14;
+        float nx = x + 7;
         boolean hot = view.over(nx, ny, nw, nh);
         float g = view.glow("notice", hot);
         Ui.halo(view.c, nx, ny, nw, nh, Ui.R1, view.accent, g);
         Ui.pane(view.c, nx, ny, nw, nh, Ui.R1, Ui.RAISED, view.edge(g));
-        view.c.icon(Icons.Icon.QUEST, nx + (nw - 11) / 2f, ny + 3.5f, 11, Ui.GOLD);
-        if (hot) {
-            view.tip = new Surface.Tip(view.host.tr("notice.button"), x + view.railW, ny - 4, 0, nh);
-            view.hoverRow = "#notice";
+        String notice = view.host.tr("notice.button");
+        if (slim) {
+            view.c.icon(Icons.Icon.QUEST, nx + (nw - 11) / 2f, ny + 3.5f, 11, Ui.GOLD);
+            if (hot) {
+                view.tip = new Surface.Tip(notice, x + view.railW, ny - 4, 0, nh);
+                view.hoverRow = "#notice";
+            }
+        } else {
+            view.c.icon(Icons.Icon.QUEST, nx + 6, ny + 3.5f, 11, Ui.GOLD);
+            view.c.text(Ui.fit(view.c, notice, (int) (nw - 26)), nx + 21, ny + 5, Ui.GOLD);
         }
         view.zone(nx, ny, nw, nh, (px, py, b) -> {
             view.host.click();
             view.host.openNotice();
         });
+    }
+
+    private static int rowCount(Row.Tab t) {
+        int n = 0;
+        for (Row.Group g : t.groups()) {
+            n += g.rows().size();
+        }
+        return n;
     }
 
     private float searchField(float x, float y, float w) {
@@ -153,7 +201,7 @@ final class SettingsNavigation {
         });
 
         float textRoom = rx - 10 - x;
-        if (!view.sheet) {
+        if (!view.sheet && view.railW < SettingsView.RAIL_W) {
             float sw = Math.min(150, Math.max(70, room * 0.3f));
             searchField(rx - 6 - sw, ry - 1, sw);
             textRoom = rx - 6 - sw - 10 - x;

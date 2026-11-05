@@ -58,6 +58,8 @@ public final class ModConfig {
 
     boolean settingsLeaves = true;
 
+    int previewWidth;
+
     boolean dialogueCover = true;
 
     boolean marketSearch = true;
@@ -431,6 +433,18 @@ public final class ModConfig {
 
     public boolean settingsLeaves() {
         return settingsLeaves;
+    }
+
+    public int previewWidth() {
+        return previewWidth;
+    }
+
+    public void setPreviewWidthLive(int width) {
+        int v = width <= 0 ? 0 : clamp(width, 100, 800);
+        if (v != previewWidth) {
+            previewWidth = v;
+            dirty = true;
+        }
     }
 
     public boolean toggleSettingsLeaves() {

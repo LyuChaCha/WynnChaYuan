@@ -103,8 +103,6 @@ public final class Preview {
     private static final String DLG_FOOTER = DIALOGUE_STYLE + "footer.png";
     private static final String DLG_CHOICE = DIALOGUE_STYLE + "choice.png";
     private static final String DLG_FACE = "minecraft:textures/font/hud/dialogue/portrait/wynn/main/aledar.png";
-    private static final String HOTBAR = "minecraft:textures/gui/sprites/hud/hotbar.png";
-    private static final String HOTBAR_PICK = "minecraft:textures/gui/sprites/hud/hotbar_selection.png";
     private static final String BOSS_BACK = "minecraft:textures/gui/sprites/boss_bar/red_background.png";
     private static final String BOSS_FILL = "minecraft:textures/gui/sprites/boss_bar/red_progress.png";
     private static final String TIP_BACK = "minecraft:textures/gui/sprites/tooltip/rare_background.png";
@@ -124,14 +122,14 @@ public final class Preview {
         for (int i = 0; i < s.shown.length; i++) {
             s.shown[i] = false;
         }
-        Ui.pane(c, x, y, w, h, Ui.R2, Ui.SCENE, SCENE_EDGE);
+        c.round(x, y, w, h, Ui.R2, Ui.SCENE);
         c.clip(x + 1, y + 1, x + w - 1, y + h - 1);
         String bg = switch (scene) {
             case WORLD -> BG_STREET;
             case TOOLTIP, PANEL, DIALOGUE -> BG_WORLD;
             default -> null;
         };
-        boolean scenery = bg != null && backdrop(c, x + 1, y + 1, w - 2, h - 2, bg);
+        boolean scenery = bg != null && backdrop(c, x + 1, y + 1, w - 2, h - 2, Ui.R2 - 1, bg);
         if (!scenery) {
             grid(c, x, y, w, h);
         }
@@ -144,6 +142,15 @@ public final class Preview {
             default -> data(c, x, y, w, h, s, accent);
         }
         c.unclip();
+        c.ring(x, y, w, h, Ui.R2, c.px(), SCENE_EDGE);
+    }
+
+    static float snap(Canvas c, float want) {
+        float px = c.px();
+        if (want < px) {
+            return want;
+        }
+        return (float) Math.floor(want / px + 0.001f) * px;
     }
 
     private static void grid(Canvas c, int x, int y, int w, int h) {
@@ -155,18 +162,44 @@ public final class Preview {
         }
     }
 
-    private static boolean backdrop(Canvas c, float x, float y, float w, float h, String id) {
+    private static boolean backdrop(Canvas c, float x, float y, float w, float h, float r,
+                                    String id) {
         int tw = c.textureWidth(id);
         int th = c.textureHeight(id);
         if (tw <= 0 || th <= 0) {
             return false;
         }
-        float k = Math.max(w / tw, h / th);
-        float uw = w / k;
-        float vh = h / k;
-        c.image(id, x, y, w, h, (tw - uw) / 2f, (th - vh) / 2f, uw, vh, 0xFFFFFFFF);
-        c.fill(x, y, x + w, y + h, SHADE);
+        float px = c.px();
+        float k = (float) Math.ceil(Math.max(w / tw, h / th) / px - 0.001f) * px;
+        float u0 = (tw - w / k) / 2f;
+        float v0 = (th - h / k) / 2f;
+        float step = Math.max(px, 0.25f);
+        float top = Math.min(r, h / 2f);
+        for (float dy = 0; dy < top; dy += step) {
+            float in = inset(r, dy + step / 2f);
+            band(c, id, x, y, w, k, u0, v0, in, dy, step);
+            band(c, id, x, y, w, k, u0, v0, in, h - dy - step, step);
+        }
+        if (h > top * 2) {
+            c.image(id, x, y + top, w, h - top * 2, u0, v0 + top / k, w / k, (h - top * 2) / k,
+                    0xFFFFFFFF);
+        }
+        c.round(x, y, w, h, r, SHADE);
         return true;
+    }
+
+    private static float inset(float r, float dy) {
+        float d = r - dy;
+        return r - (float) Math.sqrt(Math.max(0f, r * r - d * d));
+    }
+
+    private static void band(Canvas c, String id, float x, float y, float w, float k, float u0,
+                             float v0, float in, float dy, float step) {
+        float bw = w - in * 2;
+        if (bw > 0) {
+            c.image(id, x + in, y + dy, bw, step, u0 + in / k, v0 + dy / k, bw / k, step / k,
+                    0xFFFFFFFF);
+        }
     }
 
     private static boolean has(Canvas c, String id) {
@@ -336,27 +369,20 @@ public final class Preview {
     }
 
     private static float hotbar(Canvas c, int x, int y, int w, int h) {
-        float k = Math.min(1f, (w - 12) / 182f);
-        float bw = 182 * k;
-        float bh = 22 * k;
-        float bx = x + (w - bw) / 2f;
-        float by = y + h - bh - 4;
-        if (has(c, HOTBAR)) {
-            c.image(HOTBAR, bx, by, bw, bh, 0, 0, 182, 22, 0xFFFFFFFF);
-            if (has(c, HOTBAR_PICK)) {
-                c.image(HOTBAR_PICK, bx - k, by - k, 24 * k, 23 * k, 0, 0, 24, 23, 0xFFFFFFFF);
-            }
-        } else {
-            c.fill(bx, by, bx + bw, by + bh, 0x90000000);
-            float cell = bw / 9f;
-            for (int i = 0; i < 9; i++) {
-                Ui.box(c, Math.round(bx + i * cell + 1), Math.round(by + 1), Math.round(cell - 2),
-                       Math.round(bh - 2), 0, i == 0 ? 0xFFE6EDF5 : 0x6055606A);
-            }
+        float cell = Math.max(10, snap(c, Math.min(20, (w - 14) / 9f)));
+        float bw = cell * 9 + 2;
+        float bh = cell + 2;
+        float bx = Math.round(x + (w - bw) / 2f);
+        float by = Math.round(y + h - bh - 4);
+        c.fill(bx, by, bx + bw, by + bh, 0xB0000000);
+        for (int i = 0; i < 9; i++) {
+            float cx = bx + 1 + i * cell;
+            c.fill(cx + 1, by + 2, cx + cell - 1, by + bh - 2, 0x8C3A3A3A);
+            c.fill(cx + 1, by + 2, cx + cell - 1, by + 3, 0x50FFFFFF);
         }
-        float cell = bw / 9f;
-        float ix = bx + (cell - 9) / 2f;
-        float iy = by + (bh - 9) / 2f;
+        c.ring(bx - 1, by - 1, cell + 4, bh + 2, 1, 1, 0xFFE8E8E8);
+        float ix = bx + 1 + (cell - 9) / 2f;
+        float iy = by + 1 + (cell - 9) / 2f;
         c.fill(ix + 2, iy, ix + 3, iy + 9, 0xFFB98A5E);
         c.fill(ix + 3, iy + 1, ix + 5, iy + 2, 0xFFB98A5E);
         c.fill(ix + 3, iy + 7, ix + 5, iy + 8, 0xFFB98A5E);
@@ -370,10 +396,10 @@ public final class Preview {
         boolean choiceZh = s.choiceMode == 1;
         float barTop = hotbar(c, x, y, w, h);
 
-        float k = Math.min(1f, (w - 10) / 287f);
+        float k = snap(c, Math.min(1f, (w - 10) / 287f));
         float dw = 287 * k;
         float dh = 106 * k;
-        float dx = x + (w - dw) / 2f;
+        float dx = Math.round(x + (w - dw) / 2f);
         float dy = barTop - 4 - dh;
         boolean textured = has(c, DLG_BOX) && has(c, DLG_FRAME);
         if (textured) {
@@ -570,10 +596,14 @@ public final class Preview {
         s.mark(Spot.NAMEPLATE, nx, ny, tagW, 11);
         if (s.nametag == 0) {
             String z = zh.apply(NPC);
-            int zw = c.width(z) + 8;
-            Ui.box(c, nx + tagW + 4, ny + 14, zw, 14, BOX_BG, accent);
-            c.text(z, nx + tagW + 8, ny + 17, Ui.TEXT);
-            s.mark(Spot.NAMEPLATE, nx + tagW + 4, ny + 14, zw, 14);
+            int zw = Math.min(w - 8, c.width(z) + 8);
+            int zx = nx + tagW + 4;
+            if (zx + zw > x + w - 4) {
+                zx = Math.max(x + 4, Math.min(x + w - 4 - zw, nx + (tagW - zw) / 2));
+            }
+            Ui.box(c, zx, ny + 14, zw, 14, BOX_BG, accent);
+            c.text(Ui.fit(c, z, zw - 8), zx + 4, ny + 17, Ui.TEXT);
+            s.mark(Spot.NAMEPLATE, zx, ny + 14, zw, 14);
         }
 
         float barTop = hotbar(c, x, y, w, h);

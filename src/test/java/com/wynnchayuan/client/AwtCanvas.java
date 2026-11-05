@@ -386,14 +386,31 @@ final class AwtCanvas implements Canvas {
         int dy0 = Math.round(p(y));
         int dx1 = Math.round(p(x + w));
         int dy1 = Math.round(p(y + h));
+        if (dx1 <= dx0 || dy1 <= dy0 || uw <= 0 || vh <= 0) {
+            return;
+        }
+        int sx0 = Math.max(0, (int) Math.floor(u));
+        int sy0 = Math.max(0, (int) Math.floor(v));
+        int sx1 = Math.min(img.getWidth(), (int) Math.ceil(u + uw));
+        int sy1 = Math.min(img.getHeight(), (int) Math.ceil(v + vh));
+        if (sx1 <= sx0 || sy1 <= sy0) {
+            return;
+        }
         java.awt.Composite was = g.getComposite();
         int a = argb >>> 24;
         if (a < 255) {
             g.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, a / 255f));
         }
+        Shape clipWas = g.getClip();
+        g.clipRect(dx0, dy0, dx1 - dx0, dy1 - dy0);
+        double kx = (dx1 - dx0) / (double) uw;
+        double ky = (dy1 - dy0) / (double) vh;
+        java.awt.geom.AffineTransform at = new java.awt.geom.AffineTransform();
+        at.translate(dx0 + (sx0 - u) * kx, dy0 + (sy0 - v) * ky);
+        at.scale(kx, ky);
         g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
-        g.drawImage(img, dx0, dy0, dx1, dy1, Math.round(u), Math.round(v), Math.round(u + uw),
-                    Math.round(v + vh), null);
+        g.drawImage(img.getSubimage(sx0, sy0, sx1 - sx0, sy1 - sy0), at, null);
+        g.setClip(clipWas);
         g.setComposite(was);
     }
 

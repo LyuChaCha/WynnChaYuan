@@ -189,6 +189,21 @@ public final class SettingsScreen extends Screen {
         }
 
         @Override
+        public int previewWidth() {
+            return cfg().previewWidth();
+        }
+
+        @Override
+        public void setPreviewWidth(int width) {
+            cfg().setPreviewWidthLive(width);
+        }
+
+        @Override
+        public void savePreviewWidth() {
+            cfg().saveIfDirty();
+        }
+
+        @Override
         public String tr(String key, Object... args) {
             return T.s(key, args);
         }

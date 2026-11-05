@@ -57,6 +57,7 @@ final class ConfigFile {
         config.wynntilsUi = bool(o, "wynntilsUi", config.wynntilsUi);
         config.wynntilsFps = bool(o, "wynntilsFps", config.wynntilsFps);
         config.settingsLeaves = bool(o, "settingsLeaves", config.settingsLeaves);
+        config.previewWidth = Math.max(0, ModConfig.clamp(integer(o, "previewWidth", 0), 0, 800));
         config.dialogueCover = bool(o, "dialogueCover", config.dialogueCover);
         config.translateTitles = bool(o, "translateTitles", config.translateTitles);
         config.translationsEnabled = bool(o, "translationsEnabled", config.translationsEnabled);
@@ -316,6 +317,7 @@ final class ConfigFile {
             o.addProperty("wynntilsUi", config.wynntilsUi);
             o.addProperty("wynntilsFps", config.wynntilsFps);
             o.addProperty("settingsLeaves", config.settingsLeaves);
+            o.addProperty("previewWidth", config.previewWidth);
             o.addProperty("dialogueCover", config.dialogueCover);
             o.addProperty("marketSearch", config.marketSearch);
             o.addProperty("shiftPeekNames", config.shiftPeekNames);

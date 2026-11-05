@@ -575,6 +575,30 @@ public final class SettingsViewTest {
         LANG = "zh_tw";
         Fake fake = new Fake("zh_tw");
         SettingsView view = new SettingsView(fake.tabs(), fake, 0);
+        render(view, 960, 540, 2);
+        float[] bar = view.spot("divider");
+        must("表格與預覽之間有可以拖的分隔線", bar != null);
+        if (bar != null) {
+            float before = bar[0];
+            view.mouseDown(bar[0] + 3, bar[1] + 40, 0);
+            view.mouseDrag(bar[0] + 120, bar[1] + 40);
+            view.mouseUp();
+            render(view, 960, 540, 2);
+            must("往右拖，預覽變窄、寬度記下來（" + fake.previewWidth + "）",
+                    fake.previewWidth > 0 && view.spot("divider")[0] > before);
+            must("拖到底也不會窄過下限", fake.previewWidth >= 150);
+            ImageIO.write(render(view, 960, 540, 2).image, "png", new File(out, "zh_tw-map-narrow.png"));
+            float[] again = view.spot("divider");
+            CLOCK += 2000;
+            view.render(new AwtCanvas(960, 540, 1, "zh_tw"), 960, 540, -100, -100, CLOCK);
+            view.mouseDown(again[0] + 3, again[1] + 40, 0);
+            view.mouseUp();
+            CLOCK += 100;
+            view.render(new AwtCanvas(960, 540, 1, "zh_tw"), 960, 540, -100, -100, CLOCK);
+            view.mouseDown(again[0] + 3, again[1] + 40, 0);
+            view.mouseUp();
+            must("按兩下回到預設寬度", fake.previewWidth == 0);
+        }
         for (int i = 0; i < 400; i++) {
             AwtCanvas c = new AwtCanvas(640, 360, 1, "zh_tw");
             view.render(c, 640, 360, -100, -100, CLOCK += 50);
@@ -912,6 +936,18 @@ public final class SettingsViewTest {
         @Override
         public boolean leaves() {
             return flagOr("look.leaves", true);
+        }
+
+        int previewWidth;
+
+        @Override
+        public int previewWidth() {
+            return previewWidth;
+        }
+
+        @Override
+        public void setPreviewWidth(int width) {
+            previewWidth = width;
         }
 
         private boolean flagOr(String id, boolean fallback) {
