@@ -69,7 +69,10 @@ public final class AbilityNameOriginalTest {
     private static void defaults() throws Exception {
         Path dir = Files.createTempDirectory("wcy-ability-original-cfg");
         ModConfig fresh = new ModConfig(dir.resolve("fresh.json"));
-        check("★ 預設關著", !fresh.abilityNamesOriginal());
+        check("★ 新安裝預設開著", fresh.abilityNamesOriginal());
+        Path old = dir.resolve("old.json");
+        Files.writeString(old, "{\"tooltipMode\": \"OFF\"}");
+        check("★ 舊設定檔沒有這一欄：維持舊版的關著", !new ModConfig(old).abilityNamesOriginal());
         check("物品名稱的預設也是不附原文（OFF）",
                 fresh.itemNames() == ModConfig.ItemNames.OFF);
         Path on = dir.resolve("on.json");

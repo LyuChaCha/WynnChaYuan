@@ -90,7 +90,7 @@ public final class UpgradeSafetyTest {
 
         ModConfig c = new ModConfig(file);
         check("半截的 config.json：建得起來，全部用預設值",
-                c.tooltipMode() == ModConfig.TooltipMode.OFF && c.collect()
+                c.tooltipMode() == ModConfig.TooltipMode.REPLACE && c.collect()
                         && c.source() == ModConfig.Source.GITHUB);
         List<Path> aside = brokenCopies(dir, "config.json");
         check("半截的 config.json 改名放旁邊，原位空出來",
@@ -110,7 +110,7 @@ public final class UpgradeSafetyTest {
         Files.writeString(file, "");
         ModConfig empty = new ModConfig(file);
         check("空的 config.json：預設值、改名放旁邊",
-                empty.tooltipMode() == ModConfig.TooltipMode.OFF
+                empty.tooltipMode() == ModConfig.TooltipMode.REPLACE
                         && brokenCopies(dir, "config.json").size() == 1);
 
         Files.write(file, new byte[64]);

@@ -54,9 +54,9 @@ final class DisplayTabs {
                 .selected(() -> cfg().tooltipMode().ordinal())
                 .pick(i -> SettingsScreen.cycleTo(cfg()::tooltipMode, cfg()::cycleTooltipMode,
                         ModConfig.TooltipMode.values()[i]))
-                .reset(() -> cfg().tooltipMode() == ModConfig.TooltipMode.PANEL,
+                .reset(() -> cfg().tooltipMode() == ModConfig.TooltipMode.REPLACE,
                         () -> SettingsScreen.cycleTo(cfg()::tooltipMode, cfg()::cycleTooltipMode,
-                                ModConfig.TooltipMode.PANEL))
+                                ModConfig.TooltipMode.REPLACE))
                 .details(List.of(SettingsScreen.toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                         cfg()::toggleShiftPeekNames))));
         rows.add(SettingsScreen.toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
@@ -101,7 +101,7 @@ final class DisplayTabs {
                         ModConfig.ItemNames.values()[i]))
                 .reset(() -> cfg().pageNames() == ModConfig.ItemNames.ON,
                         () -> SettingsScreen.cycleTo(cfg()::pageNames, nextPage, ModConfig.ItemNames.ON)));
-        rows.add(SettingsScreen.toggle("items.abilitynames", false, cfg()::abilityNamesOriginal, () ->
+        rows.add(SettingsScreen.toggle("items.abilitynames", true, cfg()::abilityNamesOriginal, () ->
                 WynnChaYuan.translations().setAbilityNamesWithOriginal(
                         cfg().toggleAbilityNamesOriginal())).tone(Row.Tone.BOTH));
         return rows;
@@ -215,9 +215,9 @@ final class DisplayTabs {
                             ModConfig.NametagMode.values()[i]);
                     needBoxes(cfg().nametagMode() == ModConfig.NametagMode.LOOK_AT);
                 })
-                .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.REPLACE,
+                .reset(() -> cfg().nametagMode() == ModConfig.NametagMode.LOOK_AT,
                         () -> SettingsScreen.cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
-                                ModConfig.NametagMode.REPLACE))
+                                ModConfig.NametagMode.LOOK_AT))
                 .details(List.of(Row.action("world.nametag.advanced",
                                 SettingsScreen.t("world.nametag.advanced"),
                                 SettingsScreen.t("world.nametag.advanced.hint"))

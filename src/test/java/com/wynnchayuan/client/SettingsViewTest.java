@@ -459,14 +459,14 @@ public final class SettingsViewTest {
         must("三個選項以上的列收起來時沒有選項可點", view.spot("c:items.tooltip:1") == null);
         view.mouseDown(tooltip.ctrlLeft() - 20, tooltip.y() + tooltip.h() / 2, 0);
         render(view, 640, 360, 1);
-        float[] replace = view.spot("c:items.tooltip:1");
+        float[] replace = view.spot("c:items.tooltip:0");
         must("點那一列會展開，選項一個一列", replace != null);
         must("展開後底下的細項也畫出來", view.placed().stream()
                 .anyMatch(p -> p.id().equals("items.shiftpeek")));
         AwtCanvas open = render(view, 640, 360, 3);
         ImageIO.write(open.image, "png", new File(out, "zh_tw-overview-open.png"));
         view.mouseDown(replace[0] + 10, replace[1] + replace[3] / 2, 0);
-        must("點展開後的選項會選到它", zh.index("items.tooltip") == 1);
+        must("點展開後的選項會選到它", zh.index("items.tooltip") == 0);
         render(view, 640, 360, 1);
         must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.tooltip"));
         float[] talk = view.spot("f:dialogue.mode");
@@ -667,7 +667,7 @@ public final class SettingsViewTest {
             Row.Tone pl = Row.Tone.PLAIN;
             List<Row> master = List.of(toggle("translations.enabled", true, null));
             List<Row> items = List.of(
-                    segment("items.tooltip", 0, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off")
+                    segment("items.tooltip", 1, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off")
                             .details(List.of(toggle("items.shiftpeek", true, null))),
                     toggle("items.market", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
@@ -678,7 +678,7 @@ public final class SettingsViewTest {
                                     slider("dialogue.hold", 0, 30, 6, true))),
                     segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"));
             List<Row> world = List.of(
-                    segment("world.nametag", 1, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
+                    segment("world.nametag", 0, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
                             .details(List.of(action("world.nametag.advanced", "button.adjust"))),
                     toggle("world.helditem", true, null).tone(rp),
                     toggle("world.titles", true, "mode.replace").tone(rp));
@@ -693,7 +693,7 @@ public final class SettingsViewTest {
             List<Row> names = List.of(
                     segment("items.names", 2, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     segment("items.pages", 0, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
-                    toggle("items.abilitynames", false, null).tone(bo));
+                    toggle("items.abilitynames", true, null).tone(bo));
             List<Row> place = List.of(
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),

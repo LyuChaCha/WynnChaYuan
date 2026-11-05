@@ -470,7 +470,7 @@ public final class SettingsView extends Surface {
             c.round(trackX, y, 2.5f, h, 1.25f, Ui.LINE);
             float thumbH = Math.max(14, h * h / Math.max(1f, contentH));
             float thumbY = y + (h - thumbH) * (scroll / maxScroll);
-            Ui.sweep(c, trackX, thumbY, 2.5f, thumbH, 1.25f, Ui.TITLE_FROM, Ui.RAIL_ON);
+            c.round(trackX, thumbY, 2.5f, thumbH, 1.25f, Ui.alpha(Ui.TITLE_FROM, 0xC8));
         }
     }
 
@@ -619,7 +619,7 @@ public final class SettingsView extends Surface {
         boolean hot = over(x, y, w, h);
         float g = glow("row:" + r.id, hot);
         if (g > 0.01f) {
-            Ui.sweep(c, x, y, w, h, Ui.R1, Ui.fade(0x2E9FD0A6, g), Ui.fade(0x009FD0A6, g));
+            c.round(x, y, w, h, Ui.R1, Ui.fade(0x1A9FD0A6, g));
         }
         float labelX = x + 7;
         float right = x + w - 7;
@@ -634,7 +634,7 @@ public final class SettingsView extends Surface {
                 click();
                 openRow = r.id.equals(openRow) ? null : r.id;
             }).key = "f:" + r.id;
-            ctrlLeft = foldChip(r, right, y + (ROW_H - 13) / 2f);
+            ctrlLeft = foldChip(r, right, y + (ROW_H - CHIP_H) / 2f);
             labelRoom = ctrlLeft - 8 - labelX;
         } else if (wide) {
             ctrlLeft = labelX;
@@ -695,8 +695,11 @@ public final class SettingsView extends Surface {
         return tone == Row.Tone.OFF ? Ui.MODE_OFF : host.tone(tone);
     }
 
+    static final float CHIP_H = 14;
+    static final float CHIP_R = 4;
+
     private float chipWidth(String label) {
-        return 5 + 7 + 4 + c.width(label) + 6;
+        return 14 + c.width(label) + 7;
     }
 
     private float foldChip(Row r, float right, float y) {
@@ -705,23 +708,22 @@ public final class SettingsView extends Surface {
         int m = colourTo("chip:" + r.id, modeColour(o.tone()));
         int deep = colourTo("chipd:" + r.id, host.toneDeep(o.tone()));
         float turn = anim.getOrDefault("tri:" + r.id, 0f);
-        Ui.triangle(c, right - 3, y + 6.5f, 3.2f, turn * 90f,
+        Ui.triangle(c, right - 3, y + CHIP_H / 2f, 3.2f, turn * 90f,
                     Ui.mix(Ui.TEXT_3, m, 0.5f + turn * 0.5f));
         String label = Ui.fit(c, o.label(), 120);
-        float w = chipWidth(label);
-        float x = right - 11 - w;
-        Ui.sweep(c, x, y, w, 13, 3.5f, Ui.alpha(deep, 0x6B), Ui.alpha(deep, 0x1A));
-        c.ring(x, y, w, 13, 3.5f, c.px(), Ui.alpha(m, 0x42));
-        dot(x + 5, y + 3, 7, o.tone(), m, deep);
-        c.text(label, x + 16, y + 2.5f, m);
+        float x = Math.round(right - 11 - chipWidth(label));
+        float w = Math.round(chipWidth(label));
+        Ui.pane(c, x, y, w, CHIP_H, CHIP_R, Ui.alpha(deep, 0x52), Ui.alpha(m, 0x5C));
+        dot(x + 5, y + (CHIP_H - 6) / 2f, 6, o.tone(), m);
+        c.text(label, x + 14, y + (CHIP_H - 8) / 2f, m);
         return x;
     }
 
-    private void dot(float x, float y, float size, Row.Tone tone, int light, int deep) {
+    private void dot(float x, float y, float size, Row.Tone tone, int light) {
         if (tone == Row.Tone.OFF) {
             c.ring(x, y, size, size, size / 2f, c.px(), light);
         } else {
-            Ui.sweep(c, x, y, size, size, size / 2f, light, deep);
+            c.round(x, y, size, size, size / 2f, light);
         }
     }
 
@@ -746,15 +748,15 @@ public final class SettingsView extends Surface {
             int m = modeColour(o.tone());
             int deep = host.toneDeep(o.tone());
             if (on) {
-                Ui.sweep(c, bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.alpha(deep, 0x57),
-                         Ui.alpha(deep, 0));
+                Ui.pane(c, bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.alpha(deep, 0x38),
+                        Ui.alpha(m, 0x38));
             } else if (hot) {
                 c.round(bx + 3, oy, bw - 6, OPTION_H - OPTION_GAP, 5, Ui.RAISED);
             }
             float rx = bx + 8;
             if (on) {
-                dot(rx, oy + 5.5f, 9, o.tone(), m, deep);
                 c.ring(rx, oy + 5.5f, 9, 9, 4.5f, c.px(), m);
+                c.round(rx + 2, oy + 7.5f, 5, 5, 2.5f, m);
             } else {
                 c.ring(rx, oy + 5.5f, 9, 9, 4.5f, c.px(), Ui.RADIO);
             }

@@ -237,7 +237,7 @@ final class SettingsNavigation {
             if (tone == Row.Tone.OFF) {
                 view.c.ring(at, y + 1, 7, 7, 3.5f, view.c.px(), light);
             } else {
-                Ui.sweep(view.c, at, y + 1, 7, 7, 3.5f, light, view.host.toneDeep(tone));
+                view.c.round(at, y + 1, 7, 7, 3.5f, light);
             }
             view.c.text(label, at + 10, y, Ui.TEXT_2);
             at += w + 10;

@@ -37,6 +37,8 @@ final class ConfigFile {
             config.tooltipMode = tooltip;
         } else if (showPanel != null) {
             config.tooltipMode = showPanel ? ModConfig.TooltipMode.PANEL : ModConfig.TooltipMode.OFF;
+        } else {
+            config.tooltipMode = ModConfig.TooltipMode.OFF;
         }
         config.shotMode = enumOr(o, "shotMode", ModConfig.ShotMode.class, config.shotMode);
         ModConfig.DialogueMode dialogue = enumOf(o, "dialogueMode", ModConfig.DialogueMode.class);
@@ -71,7 +73,7 @@ final class ConfigFile {
         config.wynnmodTooltip = bool(o, "wynnmodTooltip", config.wynnmodTooltip);
         config.wynnMarketSearch = bool(o, "wynnMarketSearch", config.wynnMarketSearch);
         config.shiftPeekNames = bool(o, "shiftPeekNames", config.shiftPeekNames);
-        config.abilityNamesOriginal = bool(o, "abilityNamesOriginal", config.abilityNamesOriginal);
+        config.abilityNamesOriginal = bool(o, "abilityNamesOriginal", false);
         config.chatMode = enumOr(o, "chatMode", ModConfig.ChatMode.class, config.chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
@@ -92,7 +94,8 @@ final class ConfigFile {
         config.collectGuiText = bool(o, "collectGuiText", config.collectGuiText);
         config.source = enumOr(o, "source", ModConfig.Source.class, config.source);
         config.translateBossBar = bool(o, "translateBossBar", config.translateBossBar);
-        config.nametagMode = enumOr(o, "nametagMode", ModConfig.NametagMode.class, config.nametagMode);
+        config.nametagMode = enumOr(o, "nametagMode", ModConfig.NametagMode.class,
+                ModConfig.NametagMode.REPLACE);
         config.panelSide = enumOr(o, "panelSide", ModConfig.PanelSide.class, config.panelSide);
         config.noticeDismissed = bool(o, "noticeDismissed", config.noticeDismissed);
         config.oldKeysReleased = bool(o, "oldKeysReleased", config.oldKeysReleased);
