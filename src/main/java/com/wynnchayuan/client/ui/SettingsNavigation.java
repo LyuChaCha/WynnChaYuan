@@ -44,10 +44,8 @@ final class SettingsNavigation {
         boolean searching = view.searching();
         float pillY = view.animate("nav", cy + view.tab * (SettingsView.NAV_H + 2), 55f);
         if (!searching) {
-            Ui.sweep(view.c, x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1,
-                     Ui.RAIL_ON, Ui.RAIL_ON_DEEP);
-            view.c.ring(x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, view.c.px(),
-                        Ui.RAIL_ON_EDGE);
+            Ui.pane(view.c, x + 6, pillY, view.railW - 12, SettingsView.NAV_H, Ui.R1, Ui.RAIL_ON,
+                    Ui.RAIL_ON_EDGE);
         }
         for (int i = 0; i < view.tabs.size(); i++) {
             Row.Tab t = view.tabs.get(i);

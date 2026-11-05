@@ -14,8 +14,7 @@ public final class Ui {
     public static final int GLOW_BOTTOM = 0xFF17352C;
     public static final int VEIL = 0xC8161E19;
     public static final int RAIL = 0x5522372A;
-    public static final int RAIL_ON = 0xFF2F7D46;
-    public static final int RAIL_ON_DEEP = 0xFF24503A;
+    public static final int RAIL_ON = 0xFF2A6A42;
     public static final int RAIL_ON_EDGE = 0xFF4A9A60;
     public static final int RAIL_ON_INK = 0xFFD9F5DD;
     public static final int CARD = 0x0AFFFFFF;
