@@ -6,6 +6,8 @@ public final class CurrentQuest {
 
     private static final String SEPARATORS = "/#";
 
+    public static final String PLAYER = "Player";
+
     private static volatile String name;
 
     private CurrentQuest() {}
@@ -55,6 +57,11 @@ public final class CurrentQuest {
         }
         String name = raw.substring(at, end).strip();
         return name.isEmpty() ? null : name;
+    }
+
+    public static boolean isSelf(String speaker) {
+        String who = speakerName(speaker);
+        return who != null && SelfNames.find(who) != null;
     }
 
     private static boolean isPlateJunk(int cp) {

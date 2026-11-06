@@ -13,6 +13,9 @@ public final class ShareFilterTest {
         yes("介面文字", "Available Points", "gui/line");
         yes("物品說明", "This item's power has been sealed.", "tooltip/lore");
         yes("伺服器公告", "{#} Found a bug? Use /bug to report it!", "chat/INFO");
+        yes("任務外的 NPC 對話", "The festival starts at sundown.", "dialogue#Festival Guard");
+        yes("沒有任務也沒有名字的對話框", "The door creaks open on its own.", "dialogue");
+        no("不是對話的 ctx", "Something", "dialoguex");
         yes("NPC 名牌", "Otium", "label/floating");
         yes("NPC 名牌帶地名", "{p}'s King", "label/floating");
 
