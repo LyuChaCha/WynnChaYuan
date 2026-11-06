@@ -181,11 +181,19 @@ public final class Preview {
     static final float DIALOGUE_W = 287;
     static final float DIALOGUE_STACK_H = 252;
 
+    static final float READABLE = 0.6f;
+
     static float fit(Canvas c, float want) {
-        float k = Math.max(0.25f, Math.min(1f, want));
         float px = c.px();
-        float crisp = (float) Math.floor(k / px + 0.03f) * px;
-        return crisp >= k * 0.88f && crisp > 0 ? Math.min(1f, crisp) : k;
+        float k = Math.max(0.25f, Math.min(1f, want));
+        float steps = (float) Math.floor(k / px + 0.03f);
+        return steps >= 1 ? Math.min(1f, steps * px) : k;
+    }
+
+    public static float snugWidth(Canvas c) {
+        float px = c.px();
+        float k = Math.min(1f, (float) Math.ceil(READABLE / px - 0.001f) * px);
+        return (float) Math.ceil(DIALOGUE_W * k + SCENE_PAD * 2);
     }
 
     static float dialogueScale(Canvas c, int w, int h) {

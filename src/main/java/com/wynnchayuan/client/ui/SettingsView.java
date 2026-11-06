@@ -75,11 +75,11 @@ public final class SettingsView extends Surface {
     static final float ROW_H = 22;
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float PREVIEW_W = 298;
+    static final float PREVIEW_W = 300;
     static final float PREVIEW_MIN = 150;
-    static final float PREVIEW_SNUG = 204;
     static final float LIST_MIN = 230;
-    static final float LIST_ROOMY = 312;
+    static final float LIST_ROOMY = 310;
+    static final float LIST_COMFY = 264;
     static final float NAV_H = 21;
 
     final List<Row.Tab> tabs;
@@ -382,7 +382,8 @@ public final class SettingsView extends Surface {
         float full = winX + winW - 12 - left;
         float previewW = 0;
         float room = full - LIST_MIN - 10;
-        float floor = Math.max(PREVIEW_MIN, Math.min(PREVIEW_SNUG, room));
+        float floor = Math.max(PREVIEW_MIN,
+                Math.min(Preview.snugWidth(c), Math.min(room, full - LIST_COMFY - 10)));
         if (!sheet && h >= 150 && room >= PREVIEW_MIN) {
             int saved = host.previewWidth();
             float want = saved > 0 ? saved
