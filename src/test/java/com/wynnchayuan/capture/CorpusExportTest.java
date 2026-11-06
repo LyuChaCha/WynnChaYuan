@@ -21,6 +21,7 @@ public final class CorpusExportTest {
     public static void main(String[] args) throws Exception {
         where();
         filtered();
+        dialogueOutsideQuest();
         issueForm();
         noUpload();
         report();
@@ -78,6 +79,48 @@ public final class CorpusExportTest {
                         && srcs(parse(local).getAsJsonObject("entries")).contains(guild));
         check("沒留下暫存檔",
                 !Files.exists(result.file().resolveSibling("captured.json.tmp")));
+    }
+
+    private static void dialogueOutsideQuest() throws Exception {
+        SelfNames.remember("Rinkatest");
+        Path dir = Files.createTempDirectory("wcy-export-self");
+        CaptureStore store = new CaptureStore(dir.resolve("captured.json"));
+        String own = "Where do you get your green tea?";
+        String npc = "The festival starts at sundown.";
+        String secret = "The door creaks open on its own.";
+        String quested = "I will find out who did this.";
+        store.record(own, "desc", "quest", "dialogue#Rinkatest");
+        store.record(npc, "desc", "quest", "dialogue#Festival Guard");
+        store.record(secret, "desc", "quest", "dialogue");
+        store.record(quested, "desc", "quest", "dialogue/Celebrations in Smoke#Rinkatest");
+
+        Path out = CorpusExport.write(dir, store, "1.0.6", "ja_jp").file();
+        String text = Files.readString(out, StandardCharsets.UTF_8);
+        JsonObject entries = parse(out).getAsJsonObject("entries");
+        List<String> srcs = srcs(entries);
+        check("自己說的話（沒有任務）有匯出", srcs.contains(own));
+        check("任務外的 NPC 對話有匯出", srcs.contains(npc));
+        check("沒有任務也沒有名字的對話框有匯出", srcs.contains(secret));
+        check("任務裡自己說的話有匯出", srcs.contains(quested));
+        check("★ 匯出檔裡沒有自己的名字", !text.toLowerCase(java.util.Locale.ROOT).contains("rinkatest"));
+        boolean player = false;
+        boolean questKept = false;
+        for (var e : entries.entrySet()) {
+            JsonObject row = e.getValue().getAsJsonObject();
+            String src = row.get("src").getAsString();
+            if (src.equals(own) || src.equals(quested)) {
+                player |= row.has("speaker") && row.get("speaker").getAsString().equals("Player")
+                        && row.get("ctx").getAsString().endsWith("#Player");
+            }
+            if (src.equals(quested)) {
+                questKept = row.has("quest")
+                        && row.get("quest").getAsString().equals("Celebrations in Smoke");
+            }
+        }
+        check("自己說的話 speaker 換成 Player", player);
+        check("任務名還在", questKept);
+        check("名字判斷認得出自己", CurrentQuest.isSelf("Rinkatest"));
+        check("NPC 不會被當成自己", !CurrentQuest.isSelf("Festival Guard"));
     }
 
     private static void issueForm() {

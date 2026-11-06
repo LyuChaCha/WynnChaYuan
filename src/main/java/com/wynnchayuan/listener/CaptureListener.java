@@ -134,11 +134,12 @@ public final class CaptureListener {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
-        String speaker = nameplate;
+        boolean self = CurrentQuest.isSelf(nameplate);
+        String speaker = self ? CurrentQuest.PLAYER : nameplate;
         auditSpeaker(completed, speaker);
         String quest = CurrentQuest.get();
         boolean withQuest = QuestGuess.withQuest(quest, speaker,
-                WynnChaYuan.translations().inCast(quest, speaker),
+                self ? null : WynnChaYuan.translations().inCast(quest, speaker),
                 ConversationPartner.fromBlock());
         auditQuest(completed, quest, withQuest);
         WynnChaYuan.store().record(
