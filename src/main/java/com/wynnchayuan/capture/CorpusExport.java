@@ -2,6 +2,7 @@ package com.wynnchayuan.capture;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
@@ -37,6 +38,11 @@ public final class CorpusExport {
                                String version, String language) throws IOException {
         store.flush();
         JsonObject rows = store.rowsJson(CorpusExport::shareable);
+        for (var e : rows.entrySet()) {
+            if (e.getValue().isJsonObject()) {
+                scrubSelf(e.getValue().getAsJsonObject());
+            }
+        }
 
         JsonObject meta = new JsonObject();
         meta.addProperty("count", rows.size());
@@ -74,6 +80,24 @@ public final class CorpusExport {
 
     static final int MAX_LEN = 600;
 
+    static boolean isDialogue(String ctx) {
+        return ctx.equals("dialogue") || ctx.startsWith("dialogue/") || ctx.startsWith("dialogue#");
+    }
+
+    static void scrubSelf(JsonObject row) {
+        JsonElement who = row.get("speaker");
+        if (who == null || !who.isJsonPrimitive() || !CurrentQuest.isSelf(who.getAsString())) {
+            return;
+        }
+        row.addProperty("speaker", CurrentQuest.PLAYER);
+        JsonElement ctx = row.get("ctx");
+        if (ctx != null && ctx.isJsonPrimitive()) {
+            String raw = ctx.getAsString();
+            int at = raw.indexOf('#');
+            row.addProperty("ctx", (at < 0 ? raw : raw.substring(0, at)) + "#" + CurrentQuest.PLAYER);
+        }
+    }
+
     public static boolean shareable(CaptureStore.Captured c) {
         if (c == null || c.src == null || c.src.isBlank() || c.src.length() > MAX_LEN) {
             return false;
@@ -82,7 +106,7 @@ public final class CorpusExport {
             return false;
         }
         String ctx = c.ctx == null ? "" : c.ctx;
-        boolean ok = ctx.startsWith("dialogue/") || ctx.startsWith("gui/")
+        boolean ok = isDialogue(ctx) || ctx.startsWith("gui/")
                 || ctx.startsWith("tooltip/") || ctx.startsWith("npc/")
                 || ctx.startsWith("label/") || ctx.equals("chat/INFO");
         if (!ok) {
