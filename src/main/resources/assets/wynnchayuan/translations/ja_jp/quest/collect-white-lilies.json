@@ -1,0 +1,109 @@
+{
+ "_meta": {
+  "quest": "A Grave Mistake",
+  "count": 19,
+  "translated": 19,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Collect White Lilies #001": {
+   "src": "Request from Jayba: Someone, please! I planned on giving my partner a bouquet of lilies for our anniversary, but I simply forgot!",
+   "dst": "Jayba からのリクエスト：どなたか、お願いです！記念日にパートナーにユリの花束を贈るつもりだったのに、すっかり忘れてしまいました！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"Request from Jayba:は太字"
+  },
+  "Collect White Lilies #002": {
+   "src": "With the festival coming up, they're all sold out! I'd rather not muddy my clothes to get some; especially with the nasty rumors regarding enemies of the state.",
+   "dst": "祭りが近づいてきたせいで、もう全部売り切れてしまった！ それを手に入れるために服を泥まみれにしたくはないな。特に、国家の敵に関する不穏な噂が流れている今ならなおさらだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":""
+  },
+  "Collect White Lilies #003": {
+   "src": "{~} White Lilies should do the trick. These lone flowers can be found in grassy areas, usually near blossom trees. Do keep an eye out, they're quite small.",
+   "dst": "{c1}白ユリ{c2}が{c1}{~}個{c2}あれば大丈夫でしょう。この一輪の花は、草むら、たいていは{c3}花咲く木の近く{c2}で見つけることができます。かなり小さいので、よく探してみてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c1}{~} White Lilies{c2}should do the trick. These lone flowers can be found in grassy areas, usually{c3}near blossom trees{c2}. Do keep an eye out, they're quite small."
+  },
+  "Collect White Lilies #004": {
+   "src": "If you stick to the roads, you should be able to come across a few. Careful to not get disturbed whilst picking them though! You may want to clear the area beforehand, especially with all the Moorbadgers around...",
+   "dst": "道に沿って進めば、いくつか見つかるはずです。ただし、採集中に邪魔されないよう気をつけてください！特に、Moorbadgers がたくさんいるので、あらかじめ周囲を安全にしておいたほうがいいかもしれません……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":""
+  },
+  "Collect White Lilies #005": {
+   "src": "Unfortunately, all lilies close to town have been picked already. Do bring back the flowers to this post once you're done. Thank you!",
+   "dst": "残念ながら、町の近くにあるユリはすでにすべて摘まれてしまいました。作業が終わったら、{c2}その花をこのポストまで持ってきて{/}ください。よろしくお願いします！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c2}bring back the flowers to this post{/}"
+  },
+  "Collect White Lilies #006": {
+   "src": "Bring [{~} White Lilies] near Blossom trees in the {p} to the Slaying Post at [-{~}, {~}, -{~}]",
+   "dst": "{p}にある花の木のそばにある{c2}[{~} 白ユリ]{/}を、{c3}[-{~}, {~}, -{~}]{/}にある討伐掲示板に持っていく",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c2}[{~} White Lilies]{/}{c3}[-{~}, {~}, -{~}]{/}"
+  },
+  "Collect White Lilies #007": {
+   "src": "As you pick up this lonely flower, you feel light on your feet!",
+   "dst": "この一輪の花を手に取ると、足取りが軽くなるような気分になる！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":""
+  },
+  "Collect White Lilies #008": {
+   "src": "The board mentioned the flowers are really small and sparse. Make sure to look around patches of blossom trees...",
+   "dst": "掲示板には、花が本当に小さくてまばらだと書かれていた。{c2}花咲いている木々{/}の周辺をよく見て回ってみよう……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c2}blossom trees{/}"
+  },
+  "Collect White Lilies #009": {
+   "src": "You've gathered enough White Lilies. You should return to the Slaying Post to collect your reward.",
+   "dst": "白ユリを十分に集めた。報酬を受け取るために、{c2}討伐掲示板に戻ろう{/}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note":"{c2}return to the Slaying Post{/}"
+  }
+ }
+}
