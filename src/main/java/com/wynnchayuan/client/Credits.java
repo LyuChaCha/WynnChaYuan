@@ -22,7 +22,8 @@ import java.util.List;
 public final class Credits {
 
     public record Member(String label, String key, String mc,
-                         int colour, boolean rainbow, boolean hidden, String cape) {
+                         int colour, boolean rainbow, boolean hidden, String cape,
+                         List<String> teams, List<String> areas) {
         public boolean hasHead() {
             return mc != null && !mc.isBlank();
         }
@@ -129,11 +130,28 @@ public final class Credits {
                         m.has("color") ? Colors.opaque(parseHex(m.get("color").getAsString())) : 0,
                         flag(m, "rainbow"), flag(m, "hide"),
                         m.has("cape") && m.get("cape").isJsonPrimitive()
-                                ? m.get("cape").getAsString() : null));
+                                ? m.get("cape").getAsString() : null,
+                        codes(m, "teams"), codes(m, "areas")));
             }
         }
         return new Section(role, obj.has("key") ? obj.get("key").getAsString() : null,
                 color, List.copyOf(members));
+    }
+
+    private static List<String> codes(JsonObject m, String name) {
+        if (!m.has(name) || !m.get(name).isJsonArray()) {
+            return List.of();
+        }
+        List<String> out = new ArrayList<>();
+        for (JsonElement el : m.getAsJsonArray(name)) {
+            if (el.isJsonPrimitive()) {
+                String code = el.getAsString().strip();
+                if (code.matches("[a-z_]{2,16}") && !out.contains(code)) {
+                    out.add(code);
+                }
+            }
+        }
+        return List.copyOf(out);
     }
 
     private static boolean flag(JsonObject m, String name) {

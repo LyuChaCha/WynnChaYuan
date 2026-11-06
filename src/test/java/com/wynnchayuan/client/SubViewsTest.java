@@ -556,6 +556,26 @@ public final class SubViewsTest {
         render(view, "zh_tw", 640, 360, 1, -100, -100);
         press(view, "b:back");
         must("返回會關掉畫面", host.closes == 1);
+
+        File out = new File("build/ui-preview");
+        CreditsView fresh = new CreditsView(shell, host);
+        ImageIO.write(render(fresh, "zh_tw", 640, 360, 3, -100, -100).image, "png",
+                new File(out, "zh_tw-credits-all.png"));
+        must("名單上方有「全部」與各翻譯團隊", fresh.spot("team:all") != null
+                && fresh.spot("team:zh_tw") != null && fresh.spot("team:ja_jp") != null);
+        must("沒有人的團隊不出現", fresh.spot("team:ko_kr") == null);
+        press(fresh, "team:ja_jp");
+        must("點團隊就只看那一隊", "ja_jp".equals(fresh.team()));
+        ImageIO.write(render(fresh, "zh_tw", 640, 360, 3, -100, -100).image, "png",
+                new File(out, "zh_tw-credits-ja.png"));
+        press(fresh, "team:all");
+        must("點全部回到整份名單", fresh.team().isEmpty());
+        CreditsView narrow = new CreditsView(shell, host);
+        ImageIO.write(render(narrow, "zh_tw", 427, 240, 3, -100, -100).image, "png",
+                new File(out, "zh_tw-credits-narrow.png"));
+        FakeShell en = new FakeShell("en_us");
+        ImageIO.write(render(new CreditsView(en, new FakeCredits(en)), "en_us", 640, 360, 3,
+                -100, -100).image, "png", new File(out, "en_us-credits-all.png"));
     }
 
     private static SettingsView nametag(String lang) throws Exception {
@@ -766,19 +786,41 @@ public final class SubViewsTest {
                     String name = member.has("key") ? shell.tr(member.get("key").getAsString())
                             : member.get("name").getAsString();
                     members.add(new CreditsView.Member(name,
-                            member.has("mc") ? member.get("mc").getAsString() : null));
+                            member.has("mc") ? member.get("mc").getAsString() : null,
+                            member.has("color") ? 0xFF000000 | Integer.parseInt(
+                                    member.get("color").getAsString().substring(1), 16) : 0,
+                            codes(member, "teams"), codes(member, "areas")));
                 }
                 String role = section.has("key") ? shell.tr(section.get("key").getAsString())
                         : section.get("role").getAsString();
                 int colour = 0xFF000000 | Integer.parseInt(
                         section.get("color").getAsString().substring(1), 16);
-                sections.add(new CreditsView.Section(role, colour, members));
+                String key = section.has("key") ? section.get("key").getAsString() : "";
+                String id = key.substring(key.lastIndexOf('.') + 1);
+                boolean band = List.of("developers", "sponsors", "contributors").contains(id);
+                sections.add(new CreditsView.Section(role,
+                        band ? shell.tr("credits.about." + id) : null, colour, band, members));
             }
+        }
+
+        private static List<String> codes(JsonObject member, String name) {
+            List<String> out = new ArrayList<>();
+            if (member.has(name)) {
+                for (JsonElement el : member.getAsJsonArray(name)) {
+                    out.add(el.getAsString());
+                }
+            }
+            return out;
         }
 
         @Override
         public List<CreditsView.Section> sections() {
             return sections;
+        }
+
+        @Override
+        public String teamName(String code) {
+            return com.wynnchayuan.translate.Languages.nativeName(code);
         }
 
         @Override
