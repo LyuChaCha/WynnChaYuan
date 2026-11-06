@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Strong Survive",
-  "count": 643,
-  "translated": 643,
+  "count": 740,
+  "translated": 740,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -2042,7 +2042,7 @@
   },
   "The Strong Survive#203": {
    "src": "Good job {u}! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
-   "dst": "Aferin ! Birimizin iyi iş çıkarabildiğine sevindim. Nasıl yaptığını sonra öğrenmek isterim.",
+   "dst": "Aferin {u}! Birimizin iyi iş çıkarabildiğine sevindim. Nasıl yaptığını sonra öğrenmek isterim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2062,7 +2062,7 @@
   },
   "The Strong Survive#205": {
    "src": "Good job {u}! I am glad that you managed to finish. We should talk more about it later.",
-   "dst": "Aferin ! Bitirebildiğine sevindim. Bunu sonra daha çok konuşalım.",
+   "dst": "Aferin {u}! Bitirebildiğine sevindim. Bunu sonra daha çok konuşalım.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -3352,7 +3352,7 @@
   },
   "The Strong Survive#334": {
    "src": "Hey {u}. It feels like it's been a while since we've last seen each other.",
-   "dst": "Selam . Son görüşmemizin üzerinden epey zaman geçmiş gibi geliyor.",
+   "dst": "Selam {u}. Son görüşmemizin üzerinden epey zaman geçmiş gibi geliyor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -3432,7 +3432,7 @@
   },
   "The Strong Survive#342": {
    "src": "There's something I want to tell you in a more private area {u}. Before you go to bed, talk to me in the barracks.",
-   "dst": "Sana daha özel bir yerde söylemek istediğim bir şey var . Yatmadan önce koğuşta benimle konuş.",
+   "dst": "{u}, sana daha özel bir yerde söylemek istediğim bir şey var. Yatmadan önce koğuşta benimle konuş.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -3582,7 +3582,7 @@
   },
   "The Strong Survive#357": {
    "src": "I want to apologize to you {u}. Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
-   "dst": "Senden özür dilemek istiyorum . Bugün sana asker olmak isteme sebebimi anlatırken yalan söyledim.",
+   "dst": "{u}, senden özür dilemek istiyorum. Bugün sana asker olmak isteme sebebimi anlatırken yalan söyledim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4722,7 +4722,7 @@
   },
   "The Strong Survive#471": {
    "src": "{u} and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
-   "dst": "ile ben dünkü düellonun senin için nasıl geçtiğini merak ediyorduk. Biz şey... İkimiz de kötü yaptık ve seninkini nasıl kazandığını öğrenmek istedik, dövüş sırasında ne olduğunu anlatsana.",
+   "dst": "{u} ile ben dünkü düellonun senin için nasıl geçtiğini merak ediyorduk. Biz şey... İkimiz de kötü yaptık ve seninkini nasıl kazandığını öğrenmek istedik, dövüş sırasında ne olduğunu anlatsana.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4812,7 +4812,7 @@
   },
   "The Strong Survive#480": {
    "src": "No true soldier would ever intentionally injure an ally... Let's go, {u} this conversation is over.",
-   "dst": "Hiçbir gerçek asker bir müttefikini kasten yaralamaz... Gidelim, bu konuşma bitti.",
+   "dst": "Hiçbir gerçek asker bir müttefikini kasten yaralamaz... Gidelim {u}, bu konuşma bitti.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -5212,7 +5212,7 @@
   },
   "The Strong Survive#520": {
    "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with {u} in private.",
-   "dst": "Umutsuz bir vakaya dönüşüyorsun, Arnol. Şimdi git, baş başa konuşmak istediğim bir şey var.",
+   "dst": "Umutsuz bir vakaya dönüşüyorsun, Arnol. Şimdi git, {u} ile baş başa konuşmak istediğim bir şey var.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -6439,6 +6439,976 @@
    "stage": "Stage 32",
    "speaker": "Effal",
    "source": "wiki"
+  },
+  "The Strong Survive#643": {
+   "src": "Type and send your name in chat.",
+   "dst": "Adını sohbete yaz ve gönder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#644": {
+   "src": "You put the uniform on over your armor.",
+   "dst": "Üniformayı zırhının üstüne giydin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#645": {
+   "src": "Quickly now, head into the large door and join the rest of the recruits!",
+   "dst": "Çabuk, büyük kapıdan gir ve diğer acemilere katıl!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#646": {
+   "src": "Commander Ferreo\nThe speech may now begin.",
+   "dst": "Commander Ferreo\nKonuşma artık başlayabilir.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#647": {
+   "src": "Wilton\nWhat an incredible speech!",
+   "dst": "Wilton\nNe muhteşem bir konuşma!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Wilton",
+   "source": "captured.json"
+  },
+  "The Strong Survive#648": {
+   "src": "Saldin\nAmazing!",
+   "dst": "Saldin\nHarika!",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Saldin",
+   "source": "captured.json"
+  },
+  "The Strong Survive#649": {
+   "src": "You should be standing in the right position, marked with stone, before starting the turret.",
+   "dst": "Tareti başlatmadan önce taşla işaretlenmiş doğru konumda durmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#650": {
+   "src": "You must face the turret in order to block the arrow coming from it.",
+   "dst": "Taretten gelen oku engellemek için yüzünü tarete dönmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#652": {
+   "src": "The statue engraving reads: \"Honour is not given\"",
+   "dst": "Heykelin üzerindeki yazıtta şöyle yazıyor: \"Onur bahşedilmez\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#653": {
+   "src": "Military Guard\nKatze, you must come with me.",
+   "dst": "Military Guard\nKatze, benimle gelmelisin.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#654": {
+   "src": "Katze\nUhm... Ok...",
+   "dst": "Katze\nŞey... Tamam...",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Katze",
+   "source": "captured.json"
+  },
+  "The Strong Survive#655": {
+   "src": "Recruiter Effal\n\nHead down to the dueling room,\nI will meet you there.",
+   "dst": "Recruiter Effal\n\nDüello odasına in,\norada buluşuruz.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#656": {
+   "src": "Priscilla\nAlright.",
+   "dst": "Priscilla\nPeki.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Priscilla",
+   "source": "captured.json"
+  },
+  "The Strong Survive#657": {
+   "src": "Dogi\nOn it.",
+   "dst": "Dogi\nHemen.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Dogi",
+   "source": "captured.json"
+  },
+  "The Strong Survive#658": {
+   "src": "{#} Left-Click to attack, {#} Hold Right-Click to block.",
+   "dst": "{#} Sol Tıklayarak saldır, {#} Sağ Tıkı basılı tutarak engelle.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#659": {
+   "src": "{u} is the victor.",
+   "dst": "{u} galip geldi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#660": {
+   "src": "You should look at the ranking board now.",
+   "dst": "Şimdi sıralama tahtasına bakmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#661": {
+   "src": "I hope things go differently tomorrow. I want to be done with bringing shame to my house.",
+   "dst": "Umarım yarın işler farklı gider. Haneme utanç getirmekten bıktım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 14",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#662": {
+   "src": "You should search the barracks for any information useful to the resistance.",
+   "dst": "Koğuşta direniş için işe yarayacak bilgiler aramalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#663": {
+   "src": "My first day at Tericen went amazingly well! I didn't stutter when introducing myself to the Commander, did great in the training exercises, and was able to befriend a fellow {p} recruit!",
+   "dst": "Tericen'deki ilk günüm inanılmaz iyi geçti! Komutana kendimi tanıtırken kekelemedim, eğitim alıştırmalarında harikaydım ve {p} kökenli bir acemi arkadaşla dost olabildim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#664": {
+   "src": "Her name is Darea, and we ate lunch together. I spent most of that time talking to her about Commander Ferreo. She seemed somewhat freaked out with how much I knew about him.",
+   "dst": "Adı Darea, birlikte öğle yemeği yedik. O sürenin çoğunu ona Komutan Ferreo'dan bahsederek geçirdim. Onun hakkında bu kadar çok şey bilmeme biraz ürkmüş gibiydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#665": {
+   "src": "Tomorrow we will have dueling and shield training. The instructor for dueling training will be Commander Ferreo himself!",
+   "dst": "Yarın düello ve kalkan eğitimimiz var. Düello eğitiminin eğitmeni bizzat Komutan Ferreo olacak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#666": {
+   "src": "Oh dear Queen... Please give me the courage to ask him how he managed to reach that level...",
+   "dst": "Ah, sevgili Kraliçem... Lütfen bana, o seviyeye nasıl ulaşmayı başardığını ona soracak cesareti ver...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#667": {
+   "src": "You are entering the guard barracks, stay sneaking while moving so as to not alert the sleeping guards.",
+   "dst": "Muhafız koğuşuna giriyorsun; uyuyan muhafızlara fark ettirmemek için hareket ederken eğilmeye devam et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#668": {
+   "src": "You must stay sneaking while moving to avoid waking the guards.",
+   "dst": "Muhafızları uyandırmamak için hareket ederken eğilmeye devam etmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#669": {
+   "src": "You rummage through the trash bin...",
+   "dst": "Çöp kutusunu karıştırıyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#670": {
+   "src": "Dear Sovereign Majin, it has been a while since I last wrote to you, or spoken to you, face to face. Coincidentally, I am writing this letter about the last conversation we had.",
+   "dst": "Sevgili Hükümdar Majin, size en son yazmamın ya da sizinle yüz yüze konuşmamın üzerinden epey zaman geçti. Tesadüf eseri, bu mektubu yaptığımız son konuşma hakkında yazıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#671": {
+   "src": "I had asked you about potentially becoming a field Commander again. You were hesitant to grant my request, given my age, but would consider it if I showed my value as head of the recruitment program.",
+   "dst": "Size yeniden saha Komutanı olma ihtimalimi sormuştum. Yaşımı göz önünde bulundurarak isteğimi kabul etmekte tereddüt ettiniz, ama acemi alım programının başı olarak değerimi gösterirsem bunu düşüneceğinizi söylediniz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#672": {
+   "src": "I have heard troubling rumours coming from outside the {p}, namely of the growing strength of a hidden resistance group in the {p}.",
+   "dst": "{p} dışından endişe verici söylentiler duydum; özellikle de {p} içindeki gizli bir direniş grubunun giderek güçlendiğine dair.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#673": {
+   "src": "As a Wings commander, it is my duty to defend Fruma with my life. I believe I can be of far greater use out there rather than in-",
+   "dst": "Bir Wings komutanı olarak Fruma'yı canım pahasına korumak benim görevim. İnanıyorum ki dışarıda, buradakinden çok daha faydalı olabilirim; bu-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#674": {
+   "src": "The letter ends there.",
+   "dst": "Mektup burada bitiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#675": {
+   "src": "It's a list of average scores from the last {~} batches of recruits.",
+   "dst": "Son {~} acemi döneminin ortalama puanlarını gösteren bir liste.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#676": {
+   "src": "Recruit Batch {~}: Score {~}",
+   "dst": "Acemi Dönemi {~}: Puan {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#677": {
+   "src": "Recruit Batch {~}: In Progress",
+   "dst": "Acemi Dönemi {~}: {c2}Devam Ediyor{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#678": {
+   "src": "\"From Adders to Lammergeier: The Beasts of the {p}\"",
+   "dst": "\"Adder'lardan Lammergeier'lere: {p} Bölgesinin Canavarları\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#679": {
+   "src": "An index of dangerous animals native to the {p} region.",
+   "dst": "{p} bölgesine özgü tehlikeli hayvanların bir dizini.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#680": {
+   "src": "A history of Tericen and the famous military leaders to come out of it.",
+   "dst": "Tericen'in ve oradan yetişmiş ünlü askeri liderlerin tarihi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#681": {
+   "src": "\"Tericen: Where Legends are Born\"",
+   "dst": "\"Tericen: Efsanelerin Doğduğu Yer\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#682": {
+   "src": "\"The Great Leaps of Military Prestige\"",
+   "dst": "\"Askeri İtibarın Büyük Sıçrayışları\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#683": {
+   "src": "A book detailing what it takes to increase your rank within the Fruman military.",
+   "dst": "Fruma ordusunda rütbeni yükseltmek için neler gerektiğini ayrıntılı anlatan bir kitap.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#684": {
+   "src": "\"The Cursed Ones\"",
+   "dst": "\"Lanetliler\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#685": {
+   "src": "A tale about people with inherent magical abilities being defeated by the Fruman military.",
+   "dst": "Doğuştan büyü yeteneklerine sahip insanların Fruma ordusu tarafından yenilgiye uğratılmasını anlatan bir hikâye.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#686": {
+   "src": "\"Resilience: The Secret to Success in The Fruman Military\"",
+   "dst": "\"Dayanıklılık: Fruma Ordusunda Başarının Sırrı\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#687": {
+   "src": "An autobiography from an old military commander known for their skill with a shield.",
+   "dst": "Kalkan kullanmadaki ustalığıyla tanınan eski bir askeri komutanın otobiyografisi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#688": {
+   "src": "The chef might catch you if you get too close.",
+   "dst": "Fazla yaklaşırsan aşçı seni yakalayabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#689": {
+   "src": "Today I will start my training to become a recruit at {p}. It's hard to believe after all this time, my dreams are finally coming true!",
+   "dst": "Bugün {p} kampında acemi olmak için eğitimime başlayacağım. Bunca zamandan sonra inanması zor, hayallerim sonunda gerçek oluyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#690": {
+   "src": "Soon, recruiter Rosei will come to my house and escort me to the barracks. I am shaking with excitement and nervousness even while writing this.",
+   "dst": "Birazdan Toplayıcı Rosei evime gelip beni koğuşa götürecek. Bunu yazarken bile heyecan ve gerginlikten titriyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#691": {
+   "src": "I hope I can appear presentable when I meet Commander Ferreo.",
+   "dst": "Umarım Komutan Ferreo ile tanıştığımda düzgün görünebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#692": {
+   "src": "There is a strange message at the bottom of the page.",
+   "dst": "Sayfanın altında tuhaf bir mesaj var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#693": {
+   "src": "There is still valuable information to be learned here.",
+   "dst": "Burada hâlâ öğrenilecek değerli bilgiler var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#694": {
+   "src": "The guards might catch you if you get too close.",
+   "dst": "Fazla yaklaşırsan muhafızlar seni yakalayabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#695": {
+   "src": "I still couldn't do it... I can't just ask him a question like that outright, I need to show that I am \"worthy\" first. I've done well in the challenges but I still can't make it into the top three on the ranking.",
+   "dst": "Yine yapamadım... Ona böyle bir soruyu doğrudan soramam, önce \"layık\" olduğumu göstermem lazım. Mücadelelerde iyiydim ama sıralamada hâlâ ilk üçe giremiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#696": {
+   "src": "Those Wings recruits are just too good, compared to the rest of us. It sometimes scares me how strong they are. If I want any chance of reaching that level, I need to start taking risks.",
+   "dst": "Şu Wings acemileri, geri kalanımıza kıyasla fazla iyi. Ne kadar güçlü oldukları bazen beni korkutuyor. O seviyeye ulaşma şansım olsun istiyorsam risk almaya başlamalıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#697": {
+   "src": "With that credit behind me, I may finally get the courage to ask Commander Ferreo about his biggest secret.",
+   "dst": "Bu başarıyı arkama alırsam belki sonunda Komutan Ferreo'ya en büyük sırrını soracak cesareti bulurum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#698": {
+   "src": "How a vagabond was able to become one of the most famed military commanders, and even receive an incredibly powerful blessing.",
+   "dst": "Bir serserinin nasıl en ünlü askeri komutanlardan biri olabildiğini, hatta inanılmaz güçlü bir kutsama bile alabildiğini.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#699": {
+   "src": "You can overhear Commander Ferreo talking to someone in the room ahead.",
+   "dst": "Komutan Ferreo'nun ilerideki odada biriyle konuştuğunu duyabiliyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#700": {
+   "src": "Tomorrow I graduate from {p} and become a soldier. The days seem so similar to me, I've been forgetting to write these diary entries.",
+   "dst": "Yarın {p} kampından mezun olup asker oluyorum. Günler bana o kadar birbirine benziyor ki bu günlük sayfalarını yazmayı unutup duruyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#701": {
+   "src": "In the past I may have been considered for promotion to captain, now, all of that has slipped away. My rankings have been steadily decreasing over the days, becoming lower than ever before.",
+   "dst": "Geçmişte kaptanlığa terfi için düşünülmüş olabilirdim, şimdiyse bunların hepsi elimden kayıp gitti. Sıralamam günler geçtikçe istikrarlı bir şekilde düştü, hiç olmadığı kadar aşağıda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#702": {
+   "src": "I spend most of my time thinking about what could have been, it feels like I am detached from reality.",
+   "dst": "Zamanımın çoğunu neler olabileceğini düşünerek geçiriyorum, sanki gerçeklikten kopmuş gibiyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#703": {
+   "src": "Yet, even still, the thought manages to appear in my head. Was Commander Ferreo right?",
+   "dst": "Yine de, buna rağmen o düşünce kafamda belirmeyi başarıyor. Komutan Ferreo haklı mıydı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#704": {
+   "src": "Quickly run back to your bed before Commander Ferreo Catches you!",
+   "dst": "Komutan Ferreo seni yakalamadan çabucak yatağına koş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#705": {
+   "src": "You tell Arnol what you saw last night.",
+   "dst": "Arnol'a dün gece gördüklerini anlatıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#706": {
+   "src": "And Adder was the one to do this? I did see that he got the highest ranking in the challenges yesterday...",
+   "dst": "Ve bunu yapan Adder miydi? Dün mücadelelerde en yüksek sıralamayı onun aldığını görmüştüm gerçi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#707": {
+   "src": "Recruiter Effal\nHead down to the dueling room.",
+   "dst": "Recruiter Effal\nDüello odasına in.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#708": {
+   "src": "Military Guard\nMatilda, come with me.",
+   "dst": "Military Guard\nMatilda, benimle gel.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#709": {
+   "src": "Recruiter Effal\nGo to the dueling room.",
+   "dst": "Recruiter Effal\nDüello odasına git.",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#710": {
+   "src": "Alright, that's enough, the duel is over.",
+   "dst": "Pekâlâ, bu kadar yeter, düello bitti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#711": {
+   "src": "{u} is the winner, clearly.",
+   "dst": "Kazanan açıkça {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#712": {
+   "src": "Both of you wait there. I want to discuss something with you two, face to face.",
+   "dst": "İkiniz de orada bekleyin. Sizinle yüz yüze bir şey konuşmak istiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#713": {
+   "src": "You should search the barracks for information on Commander Ferreo's plans.",
+   "dst": "Komutan Ferreo'nun planları hakkında bilgi bulmak için koğuşu aramalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#714": {
+   "src": "The doctor might catch you if you get too close.",
+   "dst": "Fazla yaklaşırsan doktor seni yakalayabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#715": {
+   "src": "I am crushed... After defeating my opponent in the dueling training. I mustered my courage and asked Commander Ferreo how he went from being at the bottom of the totem pole, to reaching the top of it.",
+   "dst": "Yıkıldım... Düello eğitiminde rakibimi yendikten sonra cesaretimi toplayıp Komutan Ferreo'ya en alttan en tepeye nasıl çıktığını sordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#716": {
+   "src": "He paused for a second before asking what my business was knowing that.",
+   "dst": "Bunu bilmenin bana ne faydası olacağını sormadan önce bir an durdu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#717": {
+   "src": "I fumbled up a response, saying that I've seen him as an inspiration for all of my life, and have always wondered how he managed to claw his way up to the top.",
+   "dst": "Kekeleyerek bir cevap uydurdum; hayatım boyunca onu bir ilham kaynağı olarak gördüğümü ve tepeye kadar nasıl tırmanmayı başardığını hep merak ettiğimi söyledim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#718": {
+   "src": "He told me that those who set out to achieve a goal out of envy will never be able to reach it.",
+   "dst": "Bana, bir hedefe kıskançlıktan yola çıkanların ona asla ulaşamayacağını söyledi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#719": {
+   "src": "No matter how hard I tried, I would never be able to become a commander, nor receive the accolades that he has. Although he may be right... That wasn't what I wanted to hear...",
+   "dst": "Ne kadar çabalarsam çabalayayım asla komutan olamayacak, onun aldığı övgüleri de alamayacakmışım. Haklı olabilir... Ama duymak istediğim bu değildi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#720": {
+   "src": "I feel like such an idiot.",
+   "dst": "Kendimi tam bir aptal gibi hissediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#721": {
+   "src": "It's a screwdriver missing a handle.",
+   "dst": "Sapı eksik bir tornavida.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#722": {
+   "src": "It's a knife handle, missing its blade.",
+   "dst": "Ağzı eksik bir bıçak sapı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#723": {
+   "src": "You socket the broken screwdriver into the knife handle.",
+   "dst": "Kırık tornavidayı bıçak sapına takıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#724": {
+   "src": "You have assembled a repaired screwdriver!",
+   "dst": "{c1}Onarılmış bir tornavida birleştirdin!{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#725": {
+   "src": "You have found all of the diary entries!",
+   "dst": "{c1}Bütün günlük sayfalarını buldun!{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#726": {
+   "src": "Choose which diary entry to read:",
+   "dst": "Hangi günlük sayfasını okuyacağını seç:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#727": {
+   "src": "Finally, I've done it! I've managed to rank first in training! The Commander has surely noticed my gradual ascent in strength.",
+   "dst": "Sonunda başardım! Eğitimde birinci olmayı başardım! Komutan, gücümdeki kademeli yükselişi kesin fark etmiştir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#728": {
+   "src": "In the back of my mind I'm still unsure about going through with it... But I've put too much effort into this, I can't abandon everything now! I will speak to Commander Ferreo tomorrow, after dueling training.",
+   "dst": "İçimden bir ses hâlâ bunu sonuna kadar götürmekten emin değil... Ama buna çok emek verdim, şimdi her şeyi bırakamam! Yarın düello eğitiminden sonra Komutan Ferreo ile konuşacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#729": {
+   "src": "I'm certain, whatever his answer is, it will have an immense impact on me.",
+   "dst": "Cevabı ne olursa olsun, üzerimde muazzam bir etki bırakacağından eminim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#730": {
+   "src": "A large wooden door stands before you.",
+   "dst": "Önünde büyük, ahşap bir kapı duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#731": {
+   "src": "Who is there? State your name!",
+   "dst": "Kim var orada? Adını söyle!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#732": {
+   "src": "Type and send an answer in chat.",
+   "dst": "Sohbete bir cevap yaz ve gönder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#733": {
+   "src": "Hmmm, I must be imagining things...",
+   "dst": "Hımmm, hayal görüyor olmalıyım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#734": {
+   "src": "Go back to bed recruit, you'll need rest for your training tomorrow.",
+   "dst": "Yatağına dön, acemi, yarınki eğitimin için dinlenmen gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#735": {
+   "src": "Do you have them all?",
+   "dst": "Hepsi sende mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#736": {
+   "src": "I hope you're not expecting a medal for finding my diary entries. I can answer some questions that you may have about them though.",
+   "dst": "Günlük sayfalarımı bulduğun için madalya beklemiyorsundur umarım. Ama onlar hakkındaki bazı sorularını cevaplayabilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "Niren",
+   "source": "captured.json"
+  },
+  "The Strong Survive#737": {
+   "src": "Use your screwdriver to escape the vent, then quickly wake up Arnol to escape Tericen together!",
+   "dst": "Tornavidanla havalandırmadan çık, sonra Tericen'den birlikte kaçmak için hemen Arnol'u uyandır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#738": {
+   "src": "You tell Arnol that Commander Ferreo plans for him to face off against Adder in the duel tomorrow.",
+   "dst": "Arnol'a, Komutan Ferreo'nun yarınki düelloda onu Adder ile karşı karşıya getirmeyi planladığını anlatıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#739": {
+   "src": "Behind you, {u}...",
+   "dst": "Arkanda, {u}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 31",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#740": {
+   "src": "I'll make you beg for mercy!",
+   "dst": "Sana merhamet için yalvartacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
   }
  }
 }
