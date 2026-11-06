@@ -198,7 +198,7 @@
   },
   "The Strong Survive#019": {
    "src": "You don't want to miss the opening speech from the famed Sovereign Majin!",
-   "dst": "名高き 君主 Majinの開会演説を聞き逃したくはないだろう！",
+   "dst": "名高き君主 Majinの開会演説を聞き逃したくはないだろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -534,7 +534,8 @@
    "quest": "The Strong Survive",
    "stage": "Stage 4",
    "speaker": "Uniform Tailor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"realは斜体"
   },
   "The Strong Survive#053": {
    "src": "Alright, this will only take a second or two.",
@@ -1097,14 +1098,14 @@
    "source": "wiki"
   },
   "The Strong Survive#109": {
-   "src": "We are thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
+   "src": "We are very thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
    "dst": "ご多忙の中、開会演説をしてくださった 君主 Majinに感謝申し上げる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 5",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#110": {
    "src": "Now we will be bringing you to your first training session of the day, I hope you all are ready.",
@@ -1187,7 +1188,7 @@
    "source": "wiki"
   },
   "The Strong Survive#118": {
-   "src": "I'm Arnol, I come from the nobel {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
+   "src": "I'm Arnol, I come from the noble {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
    "dst": "僕は Arnol、{p} の名家 Tasa 家の出なんだ。Fruma には恩があるから、力になりたいんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -1217,7 +1218,7 @@
    "source": "wiki"
   },
   "The Strong Survive#121": {
-   "src": "My family tells me that recruits often end up very... competitive...",
+   "src": "My family tells me that recruits often end up becoming very... competitive...",
    "dst": "家族が言うには、新兵同士ってすごく…張り合うらしくて…",
    "role": "desc",
    "kind": "dialogue",
@@ -1797,7 +1798,7 @@
    "source": "wiki"
   },
   "The Strong Survive#179": {
-   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have many weights embedded into them.",
+   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have weights embedded into them.",
    "dst": "発射台は撃つ直前に合図を出す。ただし、支給する盾には重りがたくさん埋め込まれている。",
    "role": "desc",
    "kind": "dialogue",
@@ -1828,13 +1829,14 @@
   },
   "The Strong Survive#182": {
    "src": "Simply stand where I am now, then click the button behind me. Face the turret and hold up your shield when, or just before, it fires an arrow.",
-   "dst": "今私がいる場所に立ち、後ろのボタンを押せ。発射台に向き、矢を放つ瞬間か直前に盾を構えろ。",
+   "dst": "{c1}今私がいる場所に立ち、後ろのボタンを押せ。{c2}発射台に向き、矢を放つ瞬間か直前に盾を構えろ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 6",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Face the turret and hold up your shield when, or just before, it fires an arrow{/}"
   },
   "The Strong Survive#183": {
    "src": "Good luck recruits, I will be judging you from an overlook point. If you haven't already, take a shield from the shield rack next to Recruiter Effal.",
@@ -1908,7 +1910,7 @@
   },
   "The Strong Survive#190": {
    "src": "These shields are really heavy, it feels like I can only hold them up for around half a second...",
-   "dst": "この盾、本当に重いね、半秒くらいしか構えていられない気がする…",
+   "dst": "この盾、本当に重いね、0.5秒くらいしか構えていられない気がする…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2037,8 +2039,8 @@
    "source": "wiki"
   },
   "The Strong Survive#203": {
-   "src": "Good job ! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
-   "dst": "すごいよ！少なくとも一人はうまくいってよかった。あとでどうやったのか教えてほしいな。",
+   "src": "Good job {u}! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
+   "dst": "すごいよ、{u}！少なくとも一人はうまくいってよかった。あとでどうやったのか教えてほしいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2048,7 +2050,7 @@
   },
   "The Strong Survive#204": {
    "src": "I'd like to learn about Beac",
-   "dst": "ビーコンについて知りたい",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2057,8 +2059,8 @@
    "source": "captured"
   },
   "The Strong Survive#205": {
-   "src": "Good job ! I am glad that you managed to finish. We should talk more about it later.",
-   "dst": "すごいよ！やり遂げられてよかった。あとでもっとその話をしよう。",
+   "src": "Good job {u}! I am glad that you managed to finish. We should talk more about it later.",
+   "dst": "すごいよ！、{u}！やり遂げられてよかった。あとでもっとその話をしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2087,7 +2089,7 @@
    "source": "wiki"
   },
   "The Strong Survive#208": {
-   "src": "Listen to the challenge instructions then enter the next room and complete the second challenge.",
+   "src": "Listen to the challenge instructions, then enter the next room and complete the second challenge.",
    "dst": "試練の説明を聞き、次の部屋に入って二つ目の試練を完了する。",
    "role": "desc",
    "kind": "objective",
@@ -2538,7 +2540,7 @@
   },
   "The Strong Survive#253": {
    "src": "I hear he was offered a blessing early on in his service, back when he was still in the {p} division. He was very famous back then, everyone in {p} and Aelumia knew him!",
-   "dst": "聞いた話じゃ、まだ {p} 部隊にいた軍歴の初期に祝福を持ちかけられたんだって。当時はすごく有名で、{p} でも Aelumia でも知らない人はいなかった！",
+   "dst": "聞いた話じゃ、まだ {p} 部隊にいた軍歴の初期に祝福を授かったんだって。当時はすごく有名で、{p} でも Aelumia でも知らない人はいなかった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2698,7 +2700,7 @@
   },
   "The Strong Survive#269": {
    "src": "You are Arnol, yes? You must come with me.",
-   "dst": "お前が Arnol だな？一緒に来てもらう。",
+   "dst": "お前が Arnol だな？一緒に来てくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2777,7 +2779,7 @@
    "source": "wiki"
   },
   "The Strong Survive#277": {
-   "src": "Go to the challenge room and receive instructions for the final challenge of the day at [-{~}, {~}, {~}].",
+   "src": "Go to the challenge room and recieve instructions for the final challenge of the day at [-{~}, {~}, {~}]",
    "dst": "[-{~}, {~}, {~}] の試練の間へ行き、今日最後の試練の説明を受ける。",
    "role": "desc",
    "kind": "objective",
@@ -2848,13 +2850,14 @@
   },
   "The Strong Survive#284": {
    "src": "Use your agility to avoid attacks, but if you find yourself unable to dodge, you must stand on guard and block incoming attacks.",
-   "dst": "俊敏さで攻撃をかわせ。かわせないなら、構えて攻撃を受け止めねばならん。",
+   "dst": "俊敏さで攻撃をかわせ。かわせないなら、{c2}構えて攻撃を受け止めねばならん{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 11",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}you must stand on guard and block incoming attacks{/}"
   },
   "The Strong Survive#285": {
    "src": "Blocking precisely as your opponent strikes may catch them off guard, allowing you an opportunity to retaliate.",
@@ -2864,7 +2867,8 @@
    "quest": "The Strong Survive",
    "stage": "Stage 11",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c1}Blocking precisely as your opponent strikes may catch them off guard, allowing you an opportunity to retaliate.{/}"
   },
   "The Strong Survive#286": {
    "src": "You weapon is a wooden training estoc. The edges are dulled, so you will not need to hold back your strength.",
@@ -3347,8 +3351,8 @@
    "source": "wiki"
   },
   "The Strong Survive#334": {
-   "src": "Hey . It feels like it's been a while since we've last seen each other.",
-   "dst": "やあ。最後に会ってから、ずいぶん経った気がするよ。",
+   "src": "Hey {u}. It feels like it's been a while since we've last seen each other.",
+   "dst": "やあ、{u}。最後に会ってから、ずいぶん経った気がするよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -3377,7 +3381,7 @@
    "source": "wiki"
   },
   "The Strong Survive#337": {
-   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard's barracks.",
+   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard barracks.",
    "dst": "食堂でのことだけど、僕ともう一人の新兵は衛兵の宿舎に連れていかれたんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -3427,14 +3431,14 @@
    "source": "wiki"
   },
   "The Strong Survive#342": {
-   "src": "There's something I want to tell you in a more private area . Before you go to bed, talk to me in the barracks.",
-   "dst": "もっと人目のない所で話したいことがあるんだ。寝る前に、宿舎で声をかけて。",
+   "src": "There's something I want to tell you in a more private area {u}. Before you go to bed, talk to me in the barracks.",
+   "dst": "{u}、もっと人目のない所で話したいことがあるんだ。寝る前に、宿舎で声をかけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 13",
    "speaker": "Arnol",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#343": {
    "src": "Speak to Arnol in the barracks, then go to sleep at [-{~}, {~}, {~}].",
@@ -3547,7 +3551,7 @@
    "source": "wiki"
   },
   "The Strong Survive#354": {
-   "src": "I'll make you and everyone else who mocked me east their words!",
+   "src": "I'll make you and everyone else who mocked me eat their words!",
    "dst": "あんたも、私を笑った連中も、みんな前言撤回させてやる！",
    "role": "desc",
    "kind": "dialogue",
@@ -3577,8 +3581,8 @@
    "source": "wiki"
   },
   "The Strong Survive#357": {
-   "src": "I want to apologize to you . Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
-   "dst": "君に謝りたいんだ。今日、兵士になりたい理由を話したとき、僕は嘘をついた。",
+   "src": "I want to apologize to you {u}. Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
+   "dst": "{u}、君に謝りたいんだ。今日、兵士になりたい理由を話したとき、僕は嘘をついた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4097,7 +4101,7 @@
    "source": "wiki"
   },
   "The Strong Survive#409": {
-   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks>",
+   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks?",
    "dst": "はあ…失望した。何度も機会を与えてやったのに、その恩返しがこれか。",
    "role": "desc",
    "kind": "dialogue",
@@ -4117,14 +4121,14 @@
    "source": "wiki"
   },
   "The Strong Survive#411": {
-   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
+   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made good time.",
    "dst": "やあ {u}、試練はうまくいったと思う。少なくともやり遂げたよ、タイムがよかったかは分からないけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Arnol",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#412": {
    "src": "I couldn't help but feel off about what the instructor said when I started the course... \"Good luck Arnol... Not that it would matter...\".",
@@ -4137,7 +4141,7 @@
    "source": "wiki"
   },
   "The Strong Survive#413": {
-   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us to do better in the training.",
+   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us do better in the training.",
    "dst": "どういう意味だろう？教官って僕らを励まして、訓練で上達させるものだと思ってた。",
    "role": "desc",
    "kind": "dialogue",
@@ -4188,23 +4192,25 @@
   },
   "The Strong Survive#418": {
    "src": "On top of that, the three central turrets have been elevated. You'll have to aim your shield higher to block arrows coming from them.",
-   "dst": "さらに、中央の三基は高い位置に上げてある。そこからの矢を防ぐには盾を高く構える必要がある。",
+   "dst": "さらに、中央の三基は高い位置に上げてある。{c2}そこからの矢を防ぐには盾を高く構える必要がある{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}You'll have to aim your shield higher to block arrows coming from them{/}"
   },
   "The Strong Survive#419": {
    "src": "I've also adjusted the turret timings a little. Two turrets are now able to fire at you in quick succession, you must be ready to block the arrows from both of them.",
-   "dst": "発射台のタイミングも少し変えた。二基が立て続けに撃てるようになったから、両方の矢を防ぐ準備をしておけ。",
+   "dst": "発射台のタイミングも少し変えた。{c2}二基が立て続けに撃てるようになったから、両方の矢を防ぐ準備をしておけ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note":"{c2}Two turrets are now able to fire at you in quick succession, you must be ready to block the arrows from both of them{/}"
   },
   "The Strong Survive#420": {
    "src": "I noticed that some of you struggled with lifting the shield on the first day...",
@@ -4247,7 +4253,7 @@
    "source": "wiki"
   },
   "The Strong Survive#424": {
-   "src": "With that being said, I wish all of you lulck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
+   "src": "With that being said, I wish all of you luck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
    "dst": "というわけで、皆の健闘を祈る！まだなら、Ezero 募兵官の横の盾掛けから盾を取れ。",
    "role": "desc",
    "kind": "dialogue",
@@ -4387,14 +4393,14 @@
    "source": "wiki"
   },
   "The Strong Survive#438": {
-   "src": "It was a lot different back then, yet it seeks that it's reputation hasn't changed much. Funny little coincidence I suppose.",
+   "src": "It was a lot different back then, yet it seems that it's reputation hasn't changed much. Funny little coincidence I suppose.",
    "dst": "当時とはずいぶん違うが、評判はあまり変わらんらしい。ちょっとした面白い偶然だな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 21",
    "speaker": "Recruiter Ezero",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#439": {
    "src": "Alright, {u}, stand on that plate in front of you to start the test.",
@@ -4597,7 +4603,7 @@
    "source": "wiki"
   },
   "The Strong Survive#459": {
-   "src": "I've seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
+   "src": "I have seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
    "dst": "君はよく Arnol と一緒にいるな。彼のどこがいいのか分からない。家名のためか？",
    "role": "desc",
    "kind": "dialogue",
@@ -4717,8 +4723,8 @@
    "source": "wiki"
   },
   "The Strong Survive#471": {
-   "src": "and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
-   "dst": "と僕で、昨日の君の決闘がどうだったか気になってて。僕らえっと…二人ともうまくいかなくて、君がどう勝ったのか知りたいんだ、戦いで何があったか教えてよ。",
+   "src": "{u} and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
+   "dst": "{u} と僕で、昨日の君の決闘がどうだったか気になってて。僕らえっと…二人ともうまくいかなくて、君がどう勝ったのか知りたいんだ、戦いで何があったか教えてよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4737,14 +4743,14 @@
    "source": "wiki"
   },
   "The Strong Survive#473": {
-   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farse, I brutally retaliated...",
+   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farce, I brutally retaliated...",
    "dst": "何度も隙を見せてやったのに、相手は一撃すら当てられなかった。その茶番に飽きたところで、容赦なく反撃した…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 22",
    "speaker": "Adder",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#474": {
    "src": "Even after he was yelling for me to stop, yelling \"I yield!\" at the top of his lungs, I continued. People like that should not become soldiers.",
@@ -4807,8 +4813,8 @@
    "source": "wiki"
   },
   "The Strong Survive#480": {
-   "src": "No true soldier would ever intentionally injure an ally... Let's go, this conversation is over.",
-   "dst": "本物の兵士なら、仲間をわざと傷つけたりしない…行こう、話は終わりだ。",
+   "src": "No true soldier would ever intentionally injure an ally... Let's go, {u} this conversation is over.",
+   "dst": "本物の兵士なら、仲間をわざと傷つけたりしない…話は終わりだ、行こう、{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -5017,7 +5023,7 @@
    "source": "wiki"
   },
   "The Strong Survive#501": {
-   "src": "I will be unable to oversee your challenges today as there is somthing I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
+   "src": "I will be unable to oversee your challenges today as there is something I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
    "dst": "本日は所用があり、試練を監督できない。別の教官に頼んである、決闘の間で待っている。",
    "role": "desc",
    "kind": "dialogue",
@@ -5207,8 +5213,8 @@
    "source": "wiki"
   },
   "The Strong Survive#520": {
-   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with in private.",
-   "dst": "もう見込みがなくなりつつあるぞ、Arnol。行け、内密に話したいことがある。",
+   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with {u} in private.",
+   "dst": "もう見込みがなくなりつつあるぞ、Arnol。行け、{u}に内密に話したいことがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -5287,7 +5293,7 @@
    "source": "wiki"
   },
   "The Strong Survive#528": {
-   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know must be constantly trying to improve!",
+   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know I must constantly be trying to improve!",
    "dst": "最初の順位の恥を原動力に、今日の試練をもっと頑張ったの。最初に失敗してよかった、常に上達を目指さなきゃいけないって分かったから！",
    "role": "desc",
    "kind": "dialogue",
@@ -5567,14 +5573,14 @@
    "source": "wiki"
   },
   "The Strong Survive#556": {
-   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in {p}.",
-   "dst": "Ferreo 司令官の最後の侮辱さ。だから私はここ、{p} で衛兵をやっている。",
+   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in Tericen.",
+   "dst": "Ferreo 司令官の最後の侮辱さ。だから私はここ、Tericen で衛兵をやっている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#557": {
    "src": "After I graduated from the recruit program, my average rankings were seen as too low to join a field Captain or Commander's service.",
@@ -5617,14 +5623,14 @@
    "source": "wiki"
   },
   "The Strong Survive#561": {
-   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have though after reading them...",
+   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have thought after reading them...",
    "dst": "心の底では…Ferreo 司令官にあの記録を見つけてほしかったのかもな。読んだら何を思っただろうか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#562": {
    "src": "I had a feeling you'd ask me that. And surprisingly, yes, I did discover the truth about Commander Ferreo's success. There is no secret. He did it all through a fierce determination to become greater.",
@@ -5707,14 +5713,14 @@
    "source": "wiki"
   },
   "The Strong Survive#570": {
-   "src": "We can only speculate at what the discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
+   "src": "We can only speculate at what they discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
    "dst": "何が話されたかは推測するしかないが、その会談の直後、Majin は Ferreo 司令官を {p} の長に任じた。私の推測では、野心の罰だったんだろう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#571": {
    "src": "Good luck on your training recruit. I recommend you take it more seriously than I did.",
@@ -6435,6 +6441,979 @@
    "stage": "Stage 32",
    "speaker": "Effal",
    "source": "wiki"
+  },
+  "The Strong Survive#643": {
+   "src": "Type and send your name in chat.",
+   "dst": "チャットに自分の名前を入力しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#644": {
+   "src": "You put the uniform on over your armor.",
+   "dst": "鎧の上からその制服を着た。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#645": {
+   "src": "Quickly now, head into the large door and join the rest of the recruits!",
+   "dst": "さあ、急いであの大きな扉の中へ入って、他の新兵たちのもとへ合流しよう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#646": {
+   "src": "Commander Ferreo\nThe speech may now begin.",
+   "dst": "Commander Ferreo\nそれでは、演説を始めよう。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#647": {
+   "src": "Wilton\nWhat an incredible speech!",
+   "dst": "Wilton\nなんて素晴らしい演説でしょう！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Wilton",
+   "source": "captured.json"
+  },
+  "The Strong Survive#648": {
+   "src": "Saldin\nAmazing!",
+   "dst": "Saldin\nすごい！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Saldin",
+   "source": "captured.json"
+  },
+  "The Strong Survive#649": {
+   "src": "You should be standing in the right position, marked with stone, before starting the turret.",
+   "dst": "砲塔の操作を始める前に、石で印が付けられた正しい位置に立つようにしてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#650": {
+   "src": "You must face the turret in order to block the arrow coming from it.",
+   "dst": "砲塔から飛んでくる矢を防ぐには、砲塔の方を向く必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#652": {
+   "src": "The statue engraving reads: \"Honour is not given\"",
+   "dst": "像には、「名誉は与えられるものではない」という文字が刻まれている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#653": {
+   "src": "Military Guard\nKatze, you must come with me.",
+   "dst": "Military Guard\nKatze 、一緒に来てくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#654": {
+   "src": "Katze\nUhm... Ok...",
+   "dst": "Katze\nえっと… うん…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Katze",
+   "source": "captured.json"
+  },
+  "The Strong Survive#655": {
+   "src": "Recruiter Effal\n\nHead down to the dueling room,\nI will meet you there.",
+   "dst": "Recruiter Effal\n\n決闘の間へ行ってくれ、\nそこで待ってる。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#656": {
+   "src": "Priscilla\nAlright.",
+   "dst": "Priscilla\nわかった。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Priscilla",
+   "source": "captured.json"
+  },
+  "The Strong Survive#657": {
+   "src": "Dogi\nOn it.",
+   "dst": "Priscilla\nわかりました。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Dogi",
+   "source": "captured.json"
+  },
+  "The Strong Survive#658": {
+   "src": "{#} Left-Click to attack, {#} Hold Right-Click to block.",
+   "dst": "{#} 左クリックで攻撃、{#} 右クリックを長押しで防御",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#659": {
+   "src": "{u} is the victor.",
+   "dst": "{u} が勝者だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#660": {
+   "src": "You should look at the ranking board now.",
+   "dst": "今すぐランキングボードを見てみよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#661": {
+   "src": "I hope things go differently tomorrow. I want to be done with bringing shame to my house.",
+   "dst": "明日は状況が違えばいいのに。もう、家に恥をかかせるようなことはやめたい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 14",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#662": {
+   "src": "You should search the barracks for any information useful to the resistance.",
+   "dst": "兵舎をくまなく捜索し、レジスタンスに役立つ情報を探そう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#663": {
+   "src": "My first day at Tericen went amazingly well! I didn't stutter when introducing myself to the Commander, did great in the training exercises, and was able to befriend a fellow {p} recruit!",
+   "dst": "Tericen での初日は、驚くほど順調でした！司令官に自己紹介をする時もどもることなく、訓練も順調に進み、同じ{p}の新入隊員とも仲良くなれました！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#664": {
+   "src": "Her name is Darea, and we ate lunch together. I spent most of that time talking to her about Commander Ferreo. She seemed somewhat freaked out with how much I knew about him.",
+   "dst": "彼女の名前は Darea で、私たちは一緒に昼食をとった。その時間のほとんどを、Ferreo 司令官について彼女と話すことに費やした。私が彼についてあれほど詳しく知っていることに、彼女は少し動揺しているようだった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#665": {
+   "src": "Tomorrow we will have dueling and shield training. The instructor for dueling training will be Commander Ferreo himself!",
+   "dst": "明日は決闘の訓練と盾の訓練が行われます。決闘の訓練の指導は、Ferreo 司令官ご本人が担当されます！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#666": {
+   "src": "Oh dear Queen... Please give me the courage to ask him how he managed to reach that level...",
+   "dst": "ああ、女王様……どうか、彼にどうやってそのレベルに到達できたのか尋ねる勇気をください……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#667": {
+   "src": "You are entering the guard barracks, stay sneaking while moving so as to not alert the sleeping guards.",
+   "dst": "衛兵の兵舎に入ろうとしている。眠っている警備兵に気づかれないよう、スニーク状態で移動しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#668": {
+   "src": "You must stay sneaking while moving to avoid waking the guards.",
+   "dst": "衛兵を起こさないように、スニーク状態で移動しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#669": {
+   "src": "You rummage through the trash bin...",
+   "dst": "ゴミ箱を漁る……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#670": {
+   "src": "Dear Sovereign Majin, it has been a while since I last wrote to you, or spoken to you, face to face. Coincidentally, I am writing this letter about the last conversation we had.",
+   "dst": "親愛なる君主 Majin へ、前回お手紙を差し上げたり直接お話ししたりしてから、ずいぶん時間が経ってしまいました。偶然にも、この手紙は私たちが最後に交わした会話について書いているのです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#671": {
+   "src": "I had asked you about potentially becoming a field Commander again. You were hesitant to grant my request, given my age, but would consider it if I showed my value as head of the recruitment program.",
+   "dst": "以前、再び現場指揮官に就任できないかとお尋ねしました。私の年齢を考慮して、その要請を快く受け入れてはくれなかったものの、採用プログラムの責任者として自分の価値を証明できれば、検討してくれるとのことでした。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#672": {
+   "src": "I have heard troubling rumours coming from outside the {p}, namely of the growing strength of a hidden resistance group in the {p}.",
+   "dst": "{p}の外から、{p}内に潜むあるレジスタンスの勢力が拡大しているという、気掛かりな噂を耳にしました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#673": {
+   "src": "As a Wings commander, it is my duty to defend Fruma with my life. I believe I can be of far greater use out there rather than in-",
+   "dst": "Wings の指揮官として、Fruma を命をかけて守ることは私の義務です。私は、ここにいるよりも、外の世界でこそ、はるかに大きな力になれると信じ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#674": {
+   "src": "The letter ends there.",
+   "dst": "手紙はそこで終わっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#675": {
+   "src": "It's a list of average scores from the last {~} batches of recruits.",
+   "dst": "これは、直近の{~}バッチの新兵の平均スコアの一覧だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#676": {
+   "src": "Recruit Batch {~}: Score {~}",
+   "dst": "採用バッチ {~}：スコア {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#677": {
+   "src": "Recruit Batch {~}: In Progress",
+   "dst": "採用バッチ {~}：{c2}進行中{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c2}In Progress{/},In Progressは太字"
+  },
+  "The Strong Survive#678": {
+   "src": "\"From Adders to Lammergeier: The Beasts of the {p}\"",
+   "dst": "「Adders から Lammergeier まで：{p}の獣たち」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#679": {
+   "src": "An index of dangerous animals native to the {p} region.",
+   "dst": "{p}地域に生息する危険な動物の一覧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#680": {
+   "src": "A history of Tericen and the famous military leaders to come out of it.",
+   "dst": "Tericen の歴史と、そこから輩出された著名な軍事指導者たち。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#681": {
+   "src": "\"Tericen: Where Legends are Born\"",
+   "dst": "「Tericen：伝説が生まれる地」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#682": {
+   "src": "\"The Great Leaps of Military Prestige\"",
+   "dst": "『軍事的威信の飛躍』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#683": {
+   "src": "A book detailing what it takes to increase your rank within the Fruman military.",
+   "dst": "Fruma 軍内で階級を上げるために必要なことを詳述した本。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#684": {
+   "src": "\"The Cursed Ones\"",
+   "dst": "『呪われた者たち』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#685": {
+   "src": "A tale about people with inherent magical abilities being defeated by the Fruman military.",
+   "dst": "生まれつき魔法の能力を持つ人々が、Fruma 軍に打ち負かされる物語。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#686": {
+   "src": "\"Resilience: The Secret to Success in The Fruman Military\"",
+   "dst": "『レジリエンス：Fruma 軍における成功の秘訣』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#687": {
+   "src": "An autobiography from an old military commander known for their skill with a shield.",
+   "dst": "盾の扱いに長けたことで知られる、ある元軍司令官による自伝。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#688": {
+   "src": "The chef might catch you if you get too close.",
+   "dst": "近づきすぎるとシェフに捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#689": {
+   "src": "Today I will start my training to become a recruit at {p}. It's hard to believe after all this time, my dreams are finally coming true!",
+   "dst": "今日から、{p}の新入社員になるための研修が始まります。長い時間が経ちましたが、ついに夢が叶うなんて、まだ信じられません！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#690": {
+   "src": "Soon, recruiter Rosei will come to my house and escort me to the barracks. I am shaking with excitement and nervousness even while writing this.",
+   "dst": "まもなく、採用担当の Rosei が私の家に来て、私を兵舎まで連れて行ってくれる。これを書いている今も、ワクワクと緊張で体が震えている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#691": {
+   "src": "I hope I can appear presentable when I meet Commander Ferreo.",
+   "dst": "Ferreo 司令官にお目にかかる時、きちんとした身だしなみでいられるといいな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#692": {
+   "src": "There is a strange message at the bottom of the page.",
+   "dst": "ページの下部に奇妙なメッセージが表示されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#693": {
+   "src": "There is still valuable information to be learned here.",
+   "dst": "ここには、まだ知っておくべき重要な情報が残されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#694": {
+   "src": "The guards might catch you if you get too close.",
+   "dst": "近づきすぎると衛兵に捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#695": {
+   "src": "I still couldn't do it... I can't just ask him a question like that outright, I need to show that I am \"worthy\" first. I've done well in the challenges but I still can't make it into the top three on the ranking.",
+   "dst": "やっぱりできなかった……あのような質問をいきなり彼に投げかけるわけにはいかない。まずは自分が「その価値がある」ことを証明しなきゃ。試練では好成績を収めているけど、ランキングのトップ3にはまだ入れないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#696": {
+   "src": "Those Wings recruits are just too good, compared to the rest of us. It sometimes scares me how strong they are. If I want any chance of reaching that level, I need to start taking risks.",
+   "dst": "Wings の新入生たちは、私たち他のメンバーと比べると、本当に実力が桁違いだ。彼らの強さには、時々怖くなるほどだ。もしあのレベルに到達するチャンスを少しでも掴みたいなら、もっとリスクを冒し始めなければならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#697": {
+   "src": "With that credit behind me, I may finally get the courage to ask Commander Ferreo about his biggest secret.",
+   "dst": "その実績を糧に、ようやく Ferreo 司令官に彼の最大の秘密について尋ねる勇気が出るかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#698": {
+   "src": "How a vagabond was able to become one of the most famed military commanders, and even receive an incredibly powerful blessing.",
+   "dst": "ある放浪者が、いかにして最も名高い軍指揮官の一人となり、さらには信じがたいほど強力な祝福さえも授かることができたのか。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#699": {
+   "src": "You can overhear Commander Ferreo talking to someone in the room ahead.",
+   "dst": "前方の部屋で、Ferreo 司令官が誰かと話しているのが聞こえてくる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#700": {
+   "src": "Tomorrow I graduate from {p} and become a soldier. The days seem so similar to me, I've been forgetting to write these diary entries.",
+   "dst": "明日、私は{p}を卒業して兵士になります。毎日がどれも同じように感じられるので、日記を書くのを忘れてしまっていました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#701": {
+   "src": "In the past I may have been considered for promotion to captain, now, all of that has slipped away. My rankings have been steadily decreasing over the days, becoming lower than ever before.",
+   "dst": "以前は、キャプテンへの昇進候補と見なされていたかもしれないが、今ではその可能性はすっかり消え失せてしまった。私の順位は日ごとに着実に下がり続け、かつてないほど低くなってしまった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#702": {
+   "src": "I spend most of my time thinking about what could have been, it feels like I am detached from reality.",
+   "dst": "私はほとんどの時間を、「もしあの時こうだったら」と想像することに費やしていて、まるで現実から切り離されているような気分になる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#703": {
+   "src": "Yet, even still, the thought manages to appear in my head. Was Commander Ferreo right?",
+   "dst": "それでもなお、その考えが頭の中に浮かんでしまう。Ferreo 司令官の言うことは正しかったのだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#704": {
+   "src": "Quickly run back to your bed before Commander Ferreo Catches you!",
+   "dst": "Ferreo 司令官に見つかる前に、急いでベッドに戻ろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#705": {
+   "src": "You tell Arnol what you saw last night.",
+   "dst": "昨夜見たことを Arnol に話した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#706": {
+   "src": "And Adder was the one to do this? I did see that he got the highest ranking in the challenges yesterday...",
+   "dst": "それって Adder がやったの？　確かに、昨日の試練では彼がトップの成績を収めていたのは見たけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#707": {
+   "src": "Recruiter Effal\nHead down to the dueling room.",
+   "dst": "Recruiter Effal\n決闘の間に行ってみてくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#708": {
+   "src": "Military Guard\nMatilda, come with me.",
+   "dst": "Military Guard\nMatilda, 一緒に来てくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#709": {
+   "src": "Recruiter Effal\nGo to the dueling room.",
+   "dst": "Recruiter Effal\n決闘の間に行ってくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#710": {
+   "src": "Alright, that's enough, the duel is over.",
+   "dst": "よし、もういい。決闘は終わりだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#711": {
+   "src": "{u} is the winner, clearly.",
+   "dst": "明らかに勝者は{u}だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#712": {
+   "src": "Both of you wait there. I want to discuss something with you two, face to face.",
+   "dst": "二人とも、そこで待ってろ。二人と直接、話したいことがあるんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#713": {
+   "src": "You should search the barracks for information on Commander Ferreo's plans.",
+   "dst": "Ferreo 司令官の計画に関する情報を得るために、兵舎を捜索すべきだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#714": {
+   "src": "The doctor might catch you if you get too close.",
+   "dst": "近づきすぎるとドクターに捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#715": {
+   "src": "I am crushed... After defeating my opponent in the dueling training. I mustered my courage and asked Commander Ferreo how he went from being at the bottom of the totem pole, to reaching the top of it.",
+   "dst": "打ちのめされてしまいました……。決闘の訓練で相手を倒した後、私は勇気を振り絞って、Ferreo 司令官に、どうやって最下位から頂点に上り詰めたのか尋ねてみました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#716": {
+   "src": "He paused for a second before asking what my business was knowing that.",
+   "dst": "彼は一瞬ためらってから、私がなぜそれを知っているのかと尋ねてきた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#717": {
+   "src": "I fumbled up a response, saying that I've seen him as an inspiration for all of my life, and have always wondered how he managed to claw his way up to the top.",
+   "dst": "私はたどたどしく返事をし、彼をずっと人生の憧れの存在として見てきたこと、そして彼がどうやって這い上がって頂点にたどり着いたのか、ずっと不思議に思っていたと伝えた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#718": {
+   "src": "He told me that those who set out to achieve a goal out of envy will never be able to reach it.",
+   "dst": "彼は、嫉妬心から目標を達成しようと試みる者は、決してその目標に到達することはできない、と私に言った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#719": {
+   "src": "No matter how hard I tried, I would never be able to become a commander, nor receive the accolades that he has. Although he may be right... That wasn't what I wanted to hear...",
+   "dst": "どんなに頑張っても、私は決して指揮官にはなれないし、彼が受けたような称賛も得られないだろう。彼の言うことは正しいのかもしれないが……それは私が聞きたかった言葉ではなかった……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#720": {
+   "src": "I feel like such an idiot.",
+   "dst": "なんてバカなことをしたんだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#721": {
+   "src": "It's a screwdriver missing a handle.",
+   "dst": "柄がないドライバーだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#722": {
+   "src": "It's a knife handle, missing its blade.",
+   "dst": "刃が欠けているナイフの柄だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#723": {
+   "src": "You socket the broken screwdriver into the knife handle.",
+   "dst": "壊れたドライバーをナイフの柄にはめ込んだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#724": {
+   "src": "You have assembled a repaired screwdriver!",
+   "dst": "{c1}これで、修理したドライバーの組み立てが完了した！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c1}You have assembled a repaired screwdriver!{/}"
+  },
+  "The Strong Survive#725": {
+   "src": "You have found all of the diary entries!",
+   "dst": "{c1}日記のメモを全て見つけた！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json",
+   "note":"{c1}You have found all of the diary entries!{/}"
+  },
+  "The Strong Survive#726": {
+   "src": "Choose which diary entry to read:",
+   "dst": "どの日記を読むか選ぼう：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#727": {
+   "src": "Finally, I've done it! I've managed to rank first in training! The Commander has surely noticed my gradual ascent in strength.",
+   "dst": "ついに、やり遂げた！　訓練で1位になることができた！　司令官も、私の実力が着実に伸びていることにきっと気づいているはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#728": {
+   "src": "In the back of my mind I'm still unsure about going through with it... But I've put too much effort into this, I can't abandon everything now! I will speak to Commander Ferreo tomorrow, after dueling training.",
+   "dst": "心のどこかで、本当にこれをやり通していいものかまだ迷っている……でも、ここまで力を注いできたんだから、今さらすべてを投げ出すわけにはいかない！　明日は決闘の練習が終わったら、 Ferreo 司令官と話をしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#729": {
+   "src": "I'm certain, whatever his answer is, it will have an immense impact on me.",
+   "dst": "彼の答えがどうであれ、それが私に多大な影響を与えることは間違いない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#730": {
+   "src": "A large wooden door stands before you.",
+   "dst": "目の前に大きな木製の扉が立っている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#731": {
+   "src": "Who is there? State your name!",
+   "dst": "誰だ？　名前を言え！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#732": {
+   "src": "Type and send an answer in chat.",
+   "dst": "チャットに回答を入力しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#733": {
+   "src": "Hmmm, I must be imagining things...",
+   "dst": "うーん、きっと気のせいなんだろうな……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#734": {
+   "src": "Go back to bed recruit, you'll need rest for your training tomorrow.",
+   "dst": "ベッドに戻れ、新兵。明日の訓練のために休んでおく必要があるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#735": {
+   "src": "Do you have them all?",
+   "dst": "全部揃ってるか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#736": {
+   "src": "I hope you're not expecting a medal for finding my diary entries. I can answer some questions that you may have about them though.",
+   "dst": "私の日記を見つけたからといって、勲章を期待するなよ。でも、それについてお前が抱いているかもしれない疑問には、いくつか答える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "Niren",
+   "source": "captured.json"
+  },
+  "The Strong Survive#737": {
+   "src": "Use your screwdriver to escape the vent, then quickly wake up Arnol to escape Tericen together!",
+   "dst": "ドライバーを使って通気口から脱出したら、すぐに Arnol を起こして、一緒に Tericen から逃げ出そう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#738": {
+   "src": "You tell Arnol that Commander Ferreo plans for him to face off against Adder in the duel tomorrow.",
+   "dst": "Arnol に、 Ferreo 司令官が明日の決闘で Arnolと Adder で決闘させるつもりだと伝えだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#739": {
+   "src": "Behind you, {u}...",
+   "dst": "{u}、後ろ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 31",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#740": {
+   "src": "I'll make you beg for mercy!",
+   "dst": "命乞いをしろ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
   }
  }
 }
