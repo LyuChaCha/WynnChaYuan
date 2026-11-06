@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24685,
-  "translated": 24682,
+  "count": 24690,
+  "translated": 24687,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -6063,7 +6063,7 @@
   },
   "A Journey Beyond#077": {
    "src": "Earth...",
-   "dst": "土…",
+   "dst": "地…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -69019,7 +69019,7 @@
   },
   "Elemental Exercise#000": {
    "src": "Hm... So if I attack this one, I'll deal more  Air and less  Earth...",
-   "dst": "うーん…じゃあこいつを攻撃すれば、  風ダメージが増えて  土ダメージが減るのか…",
+   "dst": "うーん…じゃあこいつを攻撃すれば、  風ダメージが増えて  地ダメージが減るのか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -69119,7 +69119,7 @@
   },
   "Elemental Exercise#010": {
    "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "…あっ！じゃあ武器が水属性だけでも、バッシュは土属性ダメージになるんですね？",
+   "dst": "…あっ！じゃあ武器が水属性だけでも、バッシュは地属性ダメージになるんですね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -69309,7 +69309,7 @@
   },
   "Elemental Exercise#029": {
    "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "知ってます！属性は…火、風、土、雷、それと…水？",
+   "dst": "知ってます！属性は…火、風、地、雷、それと…水？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -69319,7 +69319,7 @@
   },
   "Elemental Exercise#030": {
    "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "その通り。そして大抵はその順に有利を取る。火は風に、風は土に強い、という具合だ。",
+   "dst": "その通り。そして大抵はその順に有利を取る。火は風に、風は地に強い、という具合だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -102271,14 +102271,14 @@
    "source": "wiki"
   },
   "King's Recruit#088": {
-   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "アイテムはアイテム鑑定士に鑑定してもらうんだ。鑑定士は世界中の町にいる。便利なようにここにも連れてきてるんだ。",
+   "src": "You can identify items at {#} Item Identifiers. They're found in towns across the whole world, but we have one here for recruits such as yourselves.",
+   "dst": "アイテムは {#} アイテム鑑定士に鑑定してもらうんだ。世界中の町にいるが、お前たち新兵のためにここにも一人いる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#089": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
@@ -102291,8 +102291,8 @@
    "source": "wiki"
   },
   "King's Recruit#090": {
-   "src": "Identify your helmet at the  Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "アイテム鑑定士にヘルメットを鑑定してもらって、装備してから戻ってこい。そうしたら通してやる。",
+   "src": "Identify your helmet at the {#} Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "{#} アイテム鑑定士にヘルメットを鑑定してもらって、装備してから戻ってこい。そうしたら通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102331,8 +102331,8 @@
    "source": "wiki"
   },
   "King's Recruit#094": {
-   "src": "Good luck in there, recruits! Even with your armour it won't be so easy!",
-   "dst": "気をつけろよ、新兵ども！ 防具があっても楽じゃないぞ！",
+   "src": "Good luck in there, recruits! Even with your new armour, it's not going to be so easy!",
+   "dst": "気をつけろよ、新兵ども！ 新しい防具があっても楽じゃないぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -102951,14 +102951,14 @@
    "source": "wiki"
   },
   "King's Recruit#156": {
-   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "また行っちゃったよ… まあ、またすぐ会えるさ。今は Wynn がどんな所か見てみよう。",
+   "src": "And he's gone again... Well, I'm sure we'll be seeing more of him soon enough.",
+   "dst": "また行っちゃったよ… まあ、すぐにまた会えるさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#157": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
@@ -102991,14 +102991,14 @@
    "source": "wiki"
   },
   "King's Recruit#160": {
-   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "src": "Here, why don't you try it out? Use your Content Book and click on the highlighted quest.",
    "dst": "ほら、試してみたら？コンテンツブックを開いて、強調されたクエストをクリックして。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "capture"
   },
   "King's Recruit#161": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
@@ -103045,13 +103045,63 @@
    "source": "capture"
   },
   "King's Recruit#166": {
-   "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "中では幸運を祈るぞ、新兵ども！必要になるだろうからな…",
+   "src": "Good luck in there, recruits. You're gonna need it...",
+   "dst": "中では幸運を祈るぞ、新兵ども。必要になるだろうからな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#167": {
+   "src": "We did it! Let's continue through the underpass.",
+   "dst": "やった！地下道を進もう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#168": {
+   "src": "Well? Let's go see what this province is really like.",
+   "dst": "さあ、この地方が本当はどんな所か見に行こう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#169": {
+   "src": "It's beautiful... It's pretty exciting to finally be here, don't you think?",
+   "dst": "美しい… やっとここに来られて、わくわくするね。そう思わない？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "capture"
+  },
+  "King's Recruit#170": {
+   "src": "There's no use standing around here waiting for adventure to come to us! I'm getting out there and helping some people!",
+   "dst": "ここで冒険が来るのを待ってても仕方ない！俺は外に出て人助けをしてくるぜ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "capture"
+  },
+  "King's Recruit#171": {
+   "src": "Oh! I almost forgot to tell you, {u}. There's this handy item we were given, the Content Book. It displays most things you can do in this world and lets you track them, creating beacons for you to follow.",
+   "dst": "あっ！言い忘れるところだった、{u}。もらった便利なアイテム、コンテンツブックがあるんだ。この世界でできることのほとんどが載ってて、追跡するとビーコンで教えてくれるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "capture"
   },
   "Kingdom of Sand#000": {
@@ -207909,7 +207959,7 @@
   },
   "The Order of the Grook#102": {
    "src": "Earth is an element of great power. Versatile and everpresent, nearly as the air.",
-   "dst": "土は大いなる力の元素だ。万能で遍在し、空気にも劣らぬほどだ。",
+   "dst": "地は大いなる力の元素だ。万能で遍在し、空気にも劣らぬほどだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -207919,7 +207969,7 @@
   },
   "The Order of the Grook#103": {
    "src": "Thunder provides force... Earth provides sheer power. The difference... Force choose its own path. Power is force, directed.",
-   "dst": "雷は勢いを与え…土は純粋な力を与える。違いは…勢いは己の道を選ぶ。力とは、導かれた勢いだ。",
+   "dst": "雷は勢いを与え…地は純粋な力を与える。違いは…勢いは己の道を選ぶ。力とは、導かれた勢いだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -207929,7 +207979,7 @@
   },
   "The Order of the Grook#104": {
    "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
-   "dst": "土とは大地そのものでもある。石、金属、木、土壌。木は風に揺れても折れぬ。山は崩れぬ。",
+   "dst": "地とは大地そのものでもある。石、金属、木、土壌。木は風に揺れても折れぬ。山は崩れぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
