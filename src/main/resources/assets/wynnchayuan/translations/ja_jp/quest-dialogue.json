@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24690,
-  "translated": 24687,
+  "count": 24831,
+  "translated": 24827,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -50794,6 +50794,105 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
+  "Collect White Lilies#001": {
+   "src": "Request from Jayba: Someone, please! I planned on giving my partner a bouquet of lilies for our anniversary, but I simply forgot!",
+   "dst": "Jayba からのリクエスト：どなたか、お願いです！記念日にパートナーにユリの花束を贈るつもりだったのに、すっかり忘れてしまいました！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "Request from Jayba:は太字"
+  },
+  "Collect White Lilies#002": {
+   "src": "With the festival coming up, they're all sold out! I'd rather not muddy my clothes to get some; especially with the nasty rumors regarding enemies of the state.",
+   "dst": "祭りが近づいてきたせいで、もう全部売り切れてしまった！ それを手に入れるために服を泥まみれにしたくはないな。特に、国家の敵に関する不穏な噂が流れている今ならなおさらだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  },
+  "Collect White Lilies#003": {
+   "src": "{~} White Lilies should do the trick. These lone flowers can be found in grassy areas, usually near blossom trees. Do keep an eye out, they're quite small.",
+   "dst": "{c1}白ユリ{c2}が{c1}{~}個{c2}あれば大丈夫でしょう。この一輪の花は、草むら、たいていは{c3}花咲く木の近く{c2}で見つけることができます。かなり小さいので、よく探してみてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c1}{~} White Lilies{c2}should do the trick. These lone flowers can be found in grassy areas, usually{c3}near blossom trees{c2}. Do keep an eye out, they're quite small."
+  },
+  "Collect White Lilies#004": {
+   "src": "If you stick to the roads, you should be able to come across a few. Careful to not get disturbed whilst picking them though! You may want to clear the area beforehand, especially with all the Moorbadgers around...",
+   "dst": "道に沿って進めば、いくつか見つかるはずです。ただし、採集中に邪魔されないよう気をつけてください！特に、Moorbadgers がたくさんいるので、あらかじめ周囲を安全にしておいたほうがいいかもしれません……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  },
+  "Collect White Lilies#005": {
+   "src": "Unfortunately, all lilies close to town have been picked already. Do bring back the flowers to this post once you're done. Thank you!",
+   "dst": "残念ながら、町の近くにあるユリはすでにすべて摘まれてしまいました。作業が終わったら、{c2}その花をこのポストまで持ってきて{/}ください。よろしくお願いします！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}bring back the flowers to this post{/}"
+  },
+  "Collect White Lilies#006": {
+   "src": "Bring [{~} White Lilies] near Blossom trees in the {p} to the Slaying Post at [-{~}, {~}, -{~}]",
+   "dst": "{p}にある花の木のそばにある{c2}[{~} 白ユリ]{/}を、{c3}[-{~}, {~}, -{~}]{/}にある討伐掲示板に持っていく",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}[{~} White Lilies]{/}{c3}[-{~}, {~}, -{~}]{/}"
+  },
+  "Collect White Lilies#007": {
+   "src": "As you pick up this lonely flower, you feel light on your feet!",
+   "dst": "この一輪の花を手に取ると、足取りが軽くなるような気分になる！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  },
+  "Collect White Lilies#008": {
+   "src": "The board mentioned the flowers are really small and sparse. Make sure to look around patches of blossom trees...",
+   "dst": "掲示板には、花が本当に小さくてまばらだと書かれていた。{c2}花咲いている木々{/}の周辺をよく見て回ってみよう……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}blossom trees{/}"
+  },
+  "Collect White Lilies#009": {
+   "src": "You've gathered enough White Lilies. You should return to the Slaying Post to collect your reward.",
+   "dst": "白ユリを十分に集めた。報酬を受け取るために、{c2}討伐掲示板に戻ろう{/}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Collect White Lilies",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}return to the Slaying Post{/}"
+  },
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
    "dst": "{p} の [-{~}, {~}, -{~}] にいる料理人と話す。",
@@ -69955,7 +70054,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Rexは斜体"
   },
   "Ensemble of Hope#013": {
    "src": "Right, okay, I'll get to it. These past few days, I have been plotting. I have something... serviceable, I think.",
@@ -69965,7 +70065,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "plottingは斜体"
   },
   "Ensemble of Hope#014": {
    "src": "So, to start with, let's lay out our goal - the destruction of the Crown, the Queen and her Sovereigns included.",
@@ -69985,7 +70086,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "definitelyは斜体"
   },
   "Ensemble of Hope#016": {
    "src": "Sui and {u}, you two worked with the Canopy while you were in the {p}. Do you think they have the people and resources to help us?",
@@ -70075,7 +70177,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Perfect.←この単語だけ斜体 Perfect, perfect"
   },
   "Ensemble of Hope#026": {
    "src": "Okay, curb the enthusiasm a little. Let me explain why, first.",
@@ -70085,7 +70188,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "littleは斜体"
   },
   "Ensemble of Hope#027": {
    "src": "Ev- ever the optimist... R- Rex, why do you w...want to take the e- el-... the elevator?",
@@ -70115,7 +70219,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rightは斜体"
   },
   "Ensemble of Hope#030": {
    "src": "So what happens when we do? They'll start thinking. Why are we doing it? What do we have to gain?",
@@ -70125,7 +70230,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "doは斜体"
   },
   "Ensemble of Hope#031": {
    "src": "They'll start to pay attention to that elevator. And, if we're lucky, less attention on what we're actually doing.",
@@ -70135,7 +70241,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lucky , actuallyは斜体"
   },
   "Ensemble of Hope#032": {
    "src": "...and, well, maybe if we're fast, we could bring some friends up from Auburn to us. We could use all the help we can get.",
@@ -70198,24 +70305,26 @@
    "source": "wiki"
   },
   "Ensemble of Hope#039": {
-   "src": "{u}, after we've don that, I'll need you to take me to the Canopy. I want to familiarize myself with their leadership, and start working on an actual plan.",
+   "src": "{u}, after we've done that, I'll need you to take me to the Canopy. I want to familiarize myself with their leadership, and start working on an actual plan.",
    "dst": "{u}、それが済んだら樹冠まで案内してほしい。向こうの指導者たちと顔を合わせて、ちゃんとした計画を立て始めたいんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "actualは斜体"
   },
   "Ensemble of Hope#040": {
    "src": "Okay! I think that's everything. Let's all get ready, then head to that elevator on the southern side of the dam!",
-   "dst": "よし！これで全部だと思う。準備して、ダムの南側のエレベーターへ向かおう！",
+   "dst": "よし！これで全部だと思う。準備して、ダムの{c2}南側{/}のエレベーターへ向かおう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 1",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}southern side{/}"
   },
   "Ensemble of Hope#041": {
    "src": "Locate the {p} elevator at [-{~}, {~}, -{~}].",
@@ -70435,7 +70544,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "real foodは斜体"
   },
   "Ensemble of Hope#066": {
    "src": "It's... hm. I've tried to not really... think about it too much. I'll have time for that when we're not still in danger.",
@@ -70445,7 +70555,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "when we're not still←この単語だけ斜体"
   },
   "Ensemble of Hope#067": {
    "src": "But, Zeph... he's been isolating himself. Him and Sui both!",
@@ -70465,7 +70576,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "triesは斜体"
   },
   "Ensemble of Hope#069": {
    "src": "I don't know. Obviously things have changed - I don't think you get out of - ha, what was it, weeks? - of imprisonment unaffected.",
@@ -70475,7 +70587,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Obviously , weeksは斜体"
   },
   "Ensemble of Hope#070": {
    "src": "...he's resilient. Sui too. We'll be able to work past this. It's just... going to take time.",
@@ -70565,7 +70678,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Never anyone this←この単語だけ斜体"
   },
   "Ensemble of Hope#079": {
    "src": "I want to help her get through this, but... she's closing herself off. And... we're still not home free just yet.",
@@ -70745,7 +70859,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "fightは斜体"
   },
   "Ensemble of Hope#097": {
    "src": "Sui. We can't just-",
@@ -70755,7 +70870,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Suiは斜体"
   },
   "Ensemble of Hope#098": {
    "src": "What? We can't rush this? The longer we wait, the more suspicious they'll get.",
@@ -70765,7 +70881,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 2",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rushは斜体"
   },
   "Ensemble of Hope#099": {
    "src": "...fine. Is everyone ready?",
@@ -70855,7 +70972,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 3",
    "speaker": "???",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て太字"
   },
   "Ensemble of Hope#108": {
    "src": "You're the insurgents everyone is on the lookout for! MEN, TO ARMS! CAPTURE THEM!",
@@ -70865,7 +70983,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 3",
    "speaker": "Wings Commander Kaezu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "You'reは斜体"
   },
   "Ensemble of Hope#109": {
    "src": "Talk to the group again at [-{~}, {~}, -{~}].",
@@ -70925,7 +71044,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sui , INSANEは斜体"
   },
   "Ensemble of Hope#115": {
    "src": "I... didn't see him.",
@@ -70945,7 +71065,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "turned your back , thinkは斜体"
   },
   "Ensemble of Hope#118": {
    "src": "Shot. If you were lucky, somewhere that wouldn't have killed - but after what they saw, would they have really taken that risk?!",
@@ -70955,7 +71076,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "lucky , killedは斜体"
   },
   "Ensemble of Hope#120": {
    "src": "Sui, stop being so reckless. You're... you're strong, I get that, but... that doesn't mean you're invincible.",
@@ -70965,17 +71087,18 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "reckless , strongは斜体"
   },
   "Ensemble of Hope#121": {
-   "src": "S...Sui, we don't w- want to l- lo- lose you too...",
+   "src": "S...Sui, we dont w- want to l- lo- lose you too...",
    "dst": "S…Sui、き、君まで、う、失いたくないよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Zeph",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#122": {
    "src": "But if I'm not good enough, if I'm not f-fast enough, then- then- then I'll lose you, and- and I can't, I can't do that again, I-",
@@ -70985,7 +71108,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "good , I'll , you , can'tは斜体"
   },
   "Ensemble of Hope#123": {
    "src": "Sui! Breathe!",
@@ -71005,7 +71129,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "alwaysは斜体"
   },
   "Ensemble of Hope#126": {
    "src": "Whatever that- that Sovereign said to you, to make you think everything's that's happened to us is your fault? It's not true!",
@@ -71015,7 +71140,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sovereign , yourは斜体"
   },
   "Ensemble of Hope#127": {
    "src": "Sui. Sui. Mora's death is not your fault!! We can blame the crown, blame the Sovereigns- hell, blame me for leaving him there!!!",
@@ -71025,7 +71151,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sui.←この単語だけ斜体 Sui. , your fault , meは斜体"
   },
   "Ensemble of Hope#128": {
    "src": "But it wasn't your responsibility to protect him. To protect us. We're a team - a family, and... and I don't want to see you burn yourself to ash like Syndra did.",
@@ -71035,7 +71162,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "us , familyは斜体"
   },
   "Ensemble of Hope#130": {
    "src": "R...Rex is r- right, Sui. We can... f- fi- fight together, sh...shore up each o- oth... each other's w...weaknesses.",
@@ -71089,13 +71217,14 @@
   },
   "Ensemble of Hope#135": {
    "src": "Y... yeah. You're right, we should go too. Come on, let's meet at the Canopy's cave.",
-   "dst": "あ…ああ。そうだな、私たちも行こう。樹冠の洞窟で落ち合おう。",
+   "dst": "あ…ああ。そうだな、私たちも行こう。{c2}樹冠の洞窟{/}で落ち合おう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 4",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}the Canopy's cave{/}"
   },
   "Ensemble of Hope#136": {
    "src": "A little. But... I don't know how else to get through to her.",
@@ -71185,7 +71314,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Canopy Fox",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Ensemble of Hope#145": {
    "src": "Oh, good grief. Look more closely, foxes - these are familiar faces! Or rather, familiar face, I should say - welcome back to the Canopy, {u}! And who might this be?",
@@ -71195,7 +71325,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "grief , faceは斜体"
   },
   "Ensemble of Hope#146": {
    "src": "...you're Captain Rurie, right? Sui told us about you.",
@@ -71215,7 +71346,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you , Rex斜体"
   },
   "Ensemble of Hope#148": {
    "src": "Hm... now, I would bring you in, but then Fuhue might have my head for not following her many numerous protocols... and we certainly can't have that...",
@@ -71225,7 +71357,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "then斜体"
   },
   "Ensemble of Hope#149": {
    "src": "Ugh, just let them in, Rurie. We've been breaking initiation protocols left and right already, I can't be bothered enforcing them anymore.",
@@ -71305,7 +71438,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Rurie , successfully斜体"
   },
   "Ensemble of Hope#157": {
    "src": "Ah, it wasn't so tough once we had the plans of their inner workings! Floorplans, guard rotations... the works.",
@@ -71418,14 +71552,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#170": {
-   "src": "I should talk to the Canopy's leader, get started on some planning. Come by when you're done talking with everyone, okay?",
+   "src": "I should go talk to the Canopy's leader, get started on some planning. Come by when you're done talking with everyone, okay?",
    "dst": "樹冠のリーダーと話して、計画を始めないと。みんなと話し終わったら来てくれ、いいな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#171": {
    "src": "{u}. Welcome to the Canopy.",
@@ -71505,7 +71639,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "believe , allは斜体"
   },
   "Ensemble of Hope#179": {
    "src": "Yulie, let's not speak ill of the dead. We cannot change the past. We can only move forward.",
@@ -71535,7 +71670,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "ahhは斜体"
   },
   "Ensemble of Hope#182": {
    "src": "Quill, you need to rest. Sit down for a while, please.",
@@ -71545,7 +71681,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "pleaseは斜体"
   },
   "Ensemble of Hope#183": {
    "src": "No, no... I'm fine, Yulie. We have work to do, after all.",
@@ -71558,14 +71695,15 @@
    "source": "wiki"
   },
   "Ensemble of Hope#184": {
-   "src": "Well, the guards at the prison didn't really care much about who was physically fit to work or not. They just... work you 'tll you're dead, I guess!",
+   "src": "Well, the guards at the prison didn't really care much about who was physically fit to work or not. They just... work you 'till you're dead, I guess!",
    "dst": "監獄の看守どもは、働ける体かどうかなんて気にしちゃいなかった。死ぬまで…働かせるだけさ、たぶんな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "careは斜体"
   },
   "Ensemble of Hope#185": {
    "src": "Harsh treatment, certainly... but I suppose it is no different than the Roughworks, at its core. Only... less obscured.",
@@ -71645,7 +71783,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "twiceは斜体"
   },
   "Ensemble of Hope#194": {
    "src": "-and it'll destabilize, right. Thanks for double checking my work, Fuhue.",
@@ -71655,7 +71794,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "rightは斜体"
   },
   "Ensemble of Hope#195": {
    "src": "...oh, {u}??? I- I completely didn't... notice you were here...",
@@ -71675,7 +71815,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Anyoneは斜体"
   },
   "Ensemble of Hope#197": {
    "src": "Ugh, yeah, yeah, you keep telling me- if you're not going to be helpful, stop hovering!",
@@ -71745,7 +71886,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "somethingは斜体"
   },
   "Ensemble of Hope#204": {
    "src": "Maybe... if we could find it, we could use the Weaver to... to visualize it. Bind it in place, so we can see it...",
@@ -71755,7 +71897,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "findは斜体"
   },
   "Ensemble of Hope#205": {
    "src": "...yeah, none of that made any sense to me. Explain it with easier words?",
@@ -71775,7 +71918,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "justは斜体"
   },
   "Ensemble of Hope#207": {
    "src": "Oh! Why didn't ya start with that!",
@@ -71815,7 +71959,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Thanksは斜体"
   },
   "Ensemble of Hope#211": {
    "src": "Here we go...",
@@ -71845,7 +71990,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "isは斜体"
   },
   "Ensemble of Hope#214": {
    "src": "I... I don't know, but... I think it's working! Fuhue, we did it!",
@@ -71895,7 +72041,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "isは斜体"
   },
   "Ensemble of Hope#220": {
    "src": "M... maybe. I'll have to do some thinking. But for now, it'd probably be best to... get rid of it. If I hit all five at once, it should...",
@@ -71915,7 +72062,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whyは斜体"
   },
   "Ensemble of Hope#222": {
    "src": "...yeah, sure, why not. Later. I guess I've got to clean up here anyway.",
@@ -71925,7 +72073,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Laterは斜体"
   },
   "Ensemble of Hope#223": {
    "src": "Seeing as... is that Rex over there? Oh, good. Well, seeing as she's plotting with Azael, I should get ready for that.",
@@ -72205,7 +72354,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "not , needは斜体"
   },
   "Ensemble of Hope#252": {
    "src": "The caverns and catacombs beneath the Citadel are quite expansive. Captain Rurie has-",
@@ -72228,14 +72378,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#254": {
-   "src": "It's quite an extensive network, really... the owls and I have spent years mapping each and every inch of it - and we still haven't seen it all! It's very interesting - and that's not to mention-",
+   "src": "It's quite an extensive network, really... the owls and I have spent years mapping each and every inch of it - and we still haven't seen it all! It's all very interesting - and that's not to mention-",
    "dst": "実に広大な網でね…梟たちと何年もかけて隅々まで地図にしたが―まだ全部は見ていない！とても興味深くて―それに言うまでもなく―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#255": {
    "src": "Get to the point already, Rurie. They want to reach the Citadel through the tunnels. Is that possible?",
@@ -72275,7 +72425,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "ahhは斜体"
   },
   "Ensemble of Hope#259": {
    "src": "It is closed off, and only lightly guarded in comparison to the rest of the Citadel... or, at least, it was in my time.",
@@ -72465,7 +72616,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thinkは斜体"
   },
   "Ensemble of Hope#278": {
    "src": "Clever, indeed... I suppose we could spare some of our best fighters for such a task. Cileon, perhaps you might be interested?",
@@ -72525,7 +72677,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Kaio",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "reallyは斜体"
   },
   "Ensemble of Hope#284": {
    "src": "Sovereigns turnin', public exe-... sigh. Public executions. The people ain't happy. Wouldn't take much to... push 'em over the edge.",
@@ -72535,7 +72688,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Kaio",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "sighは斜体"
   },
   "Ensemble of Hope#285": {
    "src": "Now, the crown's got the tools to deal with violence. What it don't got is the tools to deal with civil unrest, 'least not quickly. So it might do well to give that a go as well.",
@@ -72575,7 +72729,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "What , anythingは斜体"
   },
   "Ensemble of Hope#289": {
    "src": "No, it won't. Because it'll work. {u} and I, we can talk to them, we can... we can work something out.",
@@ -72585,7 +72740,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "workは斜体"
   },
   "Ensemble of Hope#290": {
    "src": "...fine. If you want to try, fine. But when it doesn't work - which it won't - remember that I told you so.",
@@ -72595,7 +72751,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "want to try, fine←この単語だけ斜体、 which it won'tは斜体"
   },
   "Ensemble of Hope#291": {
    "src": "Okay. So you've got two distractions. But you're forgetting the most important problem - there is a GOD to worry about. If she catches on, you're done for.",
@@ -72605,7 +72762,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "GODは斜体"
   },
   "Ensemble of Hope#292": {
    "src": "Y...yeah... We- we need a way t...to make sure she d- does- doesn't show up...",
@@ -72675,7 +72833,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "ahhは斜体"
   },
   "Ensemble of Hope#299": {
    "src": "Indeed. Though, before we dismiss this strategy meeting... Yusanu, you have been hard at work on that stolen device, yes?",
@@ -72705,7 +72864,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "everywhereは斜体"
   },
   "Ensemble of Hope#302": {
    "src": "I don't know why the Queen needed this device. But {u} said they might have an idea, and that they'd tell everyone here.",
@@ -72735,7 +72895,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "alreadyは斜体"
   },
   "Ensemble of Hope#305": {
    "src": "Y...yeah... It's a l- li... a little scary, h- hearing about... a- all that... but we can w...worry about it later, r- ri- right?",
@@ -72755,7 +72916,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 5",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whatは斜体"
   },
   "Ensemble of Hope#307": {
    "src": "It's good information to have. It'll help us formulate the specifics of our plans better. Master Azael, could I have a word with you?",
@@ -72815,7 +72977,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whyは斜体"
   },
   "Ensemble of Hope#314": {
    "src": "We're making big plans to... storm the Citadel, take down the Crown, kill- kill an actual, living God!",
@@ -72825,7 +72988,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "actual, livingは斜体"
   },
   "Ensemble of Hope#315": {
    "src": "And... I don't know. It's too much. It's too risky. What are we going to do if it all fails?",
@@ -72835,7 +72999,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "riskyは斜体"
   },
   "Ensemble of Hope#316": {
    "src": "Quill and I, we used to be the ones who considered that. Considered the safety of everyone in the Steel Feather.",
@@ -72855,7 +73020,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "sucks , reallyは斜体"
   },
   "Ensemble of Hope#318": {
    "src": "And there's real stuff to feel guilty about. Of course there is. But there's nothing he can really do about it now. So that guilt isn't really serving a purpose anymore.",
@@ -72925,7 +73091,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "upset , helpfulは斜体"
   },
   "Ensemble of Hope#326": {
    "src": "So. It's alright. Water- ha- under the bridge, right?",
@@ -72975,7 +73142,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "figuring it outは斜体"
   },
   "Ensemble of Hope#332": {
    "src": "...that's good. I guess at least something came of it.",
@@ -72985,7 +73153,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "somethingは斜体"
   },
   "Ensemble of Hope#333": {
    "src": "Could you, uh, show us the... thing? The- what did you call it, {u}? \"Corruption?\"",
@@ -72995,7 +73164,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thingは斜体"
   },
   "Ensemble of Hope#334": {
    "src": "I can, just... one second. And don't touch it!!",
@@ -73005,7 +73175,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": " don'tは斜体"
   },
   "Ensemble of Hope#335": {
    "src": "Hm... weird. And you're saying this is invisible everywhere?",
@@ -73015,7 +73186,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": " invisibleは斜体"
   },
   "Ensemble of Hope#336": {
    "src": "I think so. That's kind of what Soosu was implying. Strands of it tied up in everything...",
@@ -73045,7 +73217,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Oh. Oh.←この単語だけ斜体"
   },
   "Ensemble of Hope#339": {
    "src": "The strands. I've been- I've been seeing them for a while, I just... didn't bring it up, because, ha, we had, um, more important, things, going on-",
@@ -73065,7 +73238,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "unaffectedは斜体"
   },
   "Ensemble of Hope#341": {
    "src": "Sui, calm down. You're talking too fast.",
@@ -73095,7 +73269,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "justは斜体"
   },
   "Ensemble of Hope#344": {
    "src": "...and it's that. Right there. That's the s-something, and- and you're saying it's... the Queen?",
@@ -73155,7 +73330,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "wrongは斜体"
   },
   "Ensemble of Hope#350": {
    "src": "Maybe. I... need to go think.",
@@ -73725,7 +73901,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Azael",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Operation Godslayerは太字"
   },
   "Ensemble of Hope#409": {
    "src": "We're splitting up into four groups, each with their own goals.",
@@ -73755,7 +73932,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "stillは斜体"
   },
   "Ensemble of Hope#412": {
    "src": "I'll be leading the group, and I'm taking Sui, Zeph, and Cileon with me.",
@@ -73768,7 +73946,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#413": {
-   "src": "My turn, then? Gourp {~}, we're taking the citadel's {p} by force! Through those neverending tunnels within the plateau, we'll strike where they least expect it!",
+   "src": "My turn, then? Group {~}, we're taking the citadel's {p} by force! Through those neverending tunnels within the plateau, we'll strike where they least expect it!",
    "dst": "次は私かな？第 {~} 組、城塞の {p} を力ずくで奪う！台地の中の果てしないトンネルを抜け、奴らの最も予期せぬ場所を突く！",
    "role": "desc",
    "kind": "dialogue",
@@ -73965,7 +74143,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "waitは斜体"
   },
   "Ensemble of Hope#433": {
    "src": "Ugh, can't tomorrow be here already? I'm sick of waiting around!",
@@ -74005,7 +74184,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "I'm very←この単語だけ斜体"
   },
   "Ensemble of Hope#437": {
    "src": "But best of luck to you regardless! Find a good way to sneak Cileon in, eh?",
@@ -74055,7 +74235,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "ahhは斜体"
   },
   "Ensemble of Hope#442": {
    "src": "...well. We will forever be in your debt, if all goes to plan. I pray your mission will succeed.",
@@ -74105,7 +74286,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "timeは斜体"
   },
   "Ensemble of Hope#447": {
    "src": "-nothing to do with the news, I just wanted to ask if I could change my codename? Turns out my aunt just had a daughter named Heather, and-",
@@ -74118,7 +74300,7 @@
    "source": "wiki"
   },
   "Ensemble of Hope#448": {
-   "src": "Ah, put a pin that for a second? You two, latecomers? Water Grass, Shadow Bush, we have guidelines for these meetings-",
+   "src": "Ah, put a pin in that for a second? You two, latecomers? Water Grass, Shadow Bush, we have guidelines for these meetings-",
    "dst": "ああ、それはちょっと置いといて？そこの二人、遅刻？水草、影の茂み、この会合には決まりが―",
    "role": "desc",
    "kind": "dialogue",
@@ -74135,7 +74317,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Dusk Garden",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you , twoは斜体"
   },
   "Ensemble of Hope#450": {
    "src": "Wait, banned?! For what reason?",
@@ -74195,7 +74378,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Wilted Camellia",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Hush!! Hush, you're already on thin iceは斜体"
   },
   "Ensemble of Hope#456": {
    "src": "What operations, exactly?",
@@ -74225,7 +74409,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "heardは斜体"
   },
   "Ensemble of Hope#459": {
    "src": "We were planning on asking you for help... but I guess that's out the window!",
@@ -74245,7 +74430,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 7",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "complainは斜体"
   },
   "Ensemble of Hope#461": {
    "src": "*scandalized gasping*",
@@ -74385,7 +74571,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "maybeは斜体"
   },
   "Ensemble of Hope#477": {
    "src": "Whatever. Rex was right, after all. They're not worth-",
@@ -74509,13 +74696,14 @@
   },
   "Ensemble of Hope#489": {
    "src": "I want to do something, for people who aren't so lucky, but- But- I'm aware, that's all I am! I, I'm not smart, I'm not strong, I'm not sneaky, or, or anything!",
-   "dst": "恵まれない人たちのために何かしたい、でも―でも―知ってるだけ、私はそれだけなの！頭もよくない、強くない、隠密もできない、何も！",
+   "dst": "恵まれない人たちのために何かしたい、でも―でも―自覚してるの、私はそれだけ！頭もよくない、強くない、隠密もできない、何も！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Bleeding Rose",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "aware , smart , strong , sneakyは斜体"
   },
   "Ensemble of Hope#490": {
    "src": "I thought that, that maybe, the Blossom would give me some kind of...direction. Teach me, point me at something I could do, or handle, but-",
@@ -74549,13 +74737,14 @@
   },
   "Ensemble of Hope#494": {
    "src": "If you interrupt I'm not gonna be able to keep talking please shut up til I'm done.",
-   "dst": "話を遮られたら続けられなくなるから終わるまでお願い黙ってて。",
+   "dst": "話を遮られたら続けられなくなるから終わるまでお願いだから黙ってて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Bleeding Rose",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Ensemble of Hope#495": {
    "src": "All I've got is showing up. Being here. But that's not enough, that's not...anything! It's more than most people do, sure, but what does that matter to, to, to...",
@@ -74585,7 +74774,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Bleeding Rose",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "I've got to do something or else I'll go crazy!は斜体"
   },
   "Ensemble of Hope#498": {
    "src": "So...please. Tell me...tell me what I can do. Let me be useful, for once in my stupid freaking life, instead of sitting here like a depressed lump in the lap of luxury.",
@@ -74655,7 +74845,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Bleeding Rose",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "realは斜体"
   },
   "Ensemble of Hope#506": {
    "src": "So- so we need you to spread the word. Do whatever you can to make it big news, and... and get everyone here in an uproar about it at the festival tomorrow.",
@@ -74665,7 +74856,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 8",
    "speaker": "Sui",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "everyoneは斜体"
   },
   "Ensemble of Hope#507": {
    "src": "We, um. We need that distraction to pull it off. So... are you up for it?",
@@ -74828,14 +75020,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#525": {
-   "src": "Soldiers! Don't let down you guard.",
+   "src": "Soldiers! Don't let down your guard.",
    "dst": "兵士たち！油断するな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Capital Soldier",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#526": {
    "src": "...what. That was... easy...",
@@ -74895,7 +75087,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "whyは斜体"
   },
   "Ensemble of Hope#532": {
    "src": "Don't even start, Thalas. In fact, let me begin the summation! The simplest form of the problem is that we don't have our full numbers devoted to a solution!",
@@ -74905,7 +75098,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "startは斜体"
   },
   "Ensemble of Hope#533": {
    "src": "I fought the Cursed nearly to a standstill, and my power's only increased since then! I can divide them out if you plug me into the equation again.",
@@ -74925,7 +75119,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "you'reは斜体"
   },
   "Ensemble of Hope#535": {
    "src": "You mindless monomial- If you want me to ennumerate on your flaws, I'll factor that in right away! Let's look at the tally!",
@@ -74935,7 +75130,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "You mindless monomialは斜体"
   },
   "Ensemble of Hope#536": {
    "src": "Soosu messed up my calculations and let them escape, and still won't say why! And Sovereign Gikyo was divided by {~} degrees after they tried to apprehend the Cursed!",
@@ -74945,7 +75141,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "stillは斜体"
   },
   "Ensemble of Hope#537": {
    "src": "As if that's a loss to be mourned. Good riddance.",
@@ -74955,7 +75152,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Tasim",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "that'sは斜体"
   },
   "Ensemble of Hope#538": {
    "src": "Now now, settle down. Yes, perhaps our ranger had their... mmm, psychotic tendencies? I certainly wouldn't have wanted to cross them on a bad day!",
@@ -74965,11 +75163,12 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "perhaps , psychotic , Iは斜体"
   },
   "Ensemble of Hope#539": {
    "src": "But still, they proved a valuable asset! Who will train our changeling spies now? And how long might it take to train a replacement? Years? Dec-",
-   "dst": "それでも貴重な戦力でした！これから誰がチェンジリングの密偵を鍛えるのです？後任の育成にどれほどかかるか？数年？数十―",
+   "dst": "それでも貴重な戦力だった！これから誰がチェンジリングの密偵を鍛えるのです？後任の育成にどれほどかかるか？数年？数十―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -74978,14 +75177,15 @@
    "source": "wiki"
   },
   "Ensemble of Hope#540": {
-   "src": "And YOU, Thalas! A TOUR! All this power and mastery you can't drop your decibels over and you use NONE of it, you factoring fraud?!",
-   "dst": "そして貴様だ、Thalas！観光案内だと！デシベルを落とせぬほどの力と技を持ちながら、何一つ使わんとは、この因数詐欺師め？！",
+   "src": "And YOU, Thalas! A TOUR?! All this power and mastery you can't drop your decibels over and you use NONE of it, you factoring fraud?!",
+   "dst": "そして貴様だ、Thalas！観光案内だと？！デシベルを落とせぬほどの力と技を持ちながら、何一つ使わんとは、この因数詐欺師め？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "And YOU, Thalas! , factoring fraudは斜体"
   },
   "Ensemble of Hope#541": {
    "src": "It seemed unlikely they would give up their information if met with aggression. It was the preferable outcome.",
@@ -75005,7 +75205,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "elsewhereは斜体"
   },
   "Ensemble of Hope#543": {
    "src": "Instead of wasting the lives of our soldiers- our people- You could've gotten the info, and then used some of that \"phenomenal cosmic power\" while their back was turned!",
@@ -75015,7 +75216,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "wasting , our peopleは斜体"
   },
   "Ensemble of Hope#545": {
    "src": "And Sovereign Tasim, I'm sorry to say, your prior intersections with the Cursed equal out to a conflict of interest. You've let that rogue integer go how many times now?",
@@ -75045,17 +75247,19 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "At least your←この単語だけ斜体"
   },
   "Ensemble of Hope#548": {
    "src": "And has anyone else got an excuse for being so obtuse? I'm not hearing any yet!",
-   "dst": "他に、ここまで鈍角であることの言い訳がある者は？まだ一つも聞こえんぞ！",
+   "dst": "他にこれほど鈍角な言い訳がある者は？まだ一つも聞こえんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "elseは斜体"
   },
   "Ensemble of Hope#549": {
    "src": "Apologies for the disruption, Sovereigns, Your Majesty. The Spymaster requested she be alerted regarding certain events.",
@@ -75085,7 +75289,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "problem. Remains. Unsolved!は斜体"
   },
   "Ensemble of Hope#552": {
    "src": "That is enough, Sovereign Nasin! Your frustration is understandable, but-",
@@ -75095,7 +75300,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "That is enoughは太字"
   },
   "Ensemble of Hope#553": {
    "src": "With all due respect, Your Majesty, we are exponentially far past frustration! A killer at large, and the objectively most well-suited person to solve the problem is...benched?!",
@@ -75105,7 +75311,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "exponentiallyは斜体"
   },
   "Ensemble of Hope#554": {
    "src": "I've only grown stronger since my failures, and only interference stopped me the second time! No one else is suited for this, the plan is obvious-",
@@ -75125,7 +75332,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Goodnessは斜体"
   },
   "Ensemble of Hope#556": {
    "src": "Your Majesty, if the Sovereign Nasin has finally concluded his needless tirade, may I take the floor?",
@@ -75145,7 +75353,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て斜体"
   },
   "Ensemble of Hope#558": {
    "src": "You may, Sovereign Thalas.",
@@ -75195,7 +75404,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Theyは斜体"
   },
   "Ensemble of Hope#563": {
    "src": "We must carve them out in one fell swoop. To that end - our dear Spymaster had placed a tracking spell on their two lovely rescued companions.",
@@ -75235,7 +75445,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "oneは斜体"
   },
   "Ensemble of Hope#567": {
    "src": "Had that brat, Soosu, not thrown her tantrum, perhaps it would have been manageable. But the people are beginning to talk. And we cannot allow such unrest.",
@@ -75245,7 +75456,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "perhaps , cannotは斜体"
   },
   "Ensemble of Hope#568": {
    "src": "We will execute the remaining dissidents at the festival, and finally rid ourselves of this lasting annoyance.",
@@ -75258,14 +75470,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#569": {
-   "src": "Is that really necessary? If you can take them all captive, you've already solved the problem. It just seems-",
+   "src": "Why is that necessary? If you can take them all captive, you've already solved the problem. It doesn't really-",
    "dst": "本当に必要ですか？全員捕らえられるなら、問題はもう解決しています。ただそれは―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Tasim",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#570": {
    "src": "It's simply a matter of sending a message, Sovereign. Show the public what happens to those who turn against the crown, and it dissuades them from following in those footsteps!",
@@ -75275,7 +75487,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Sovereignは斜体"
   },
   "Ensemble of Hope#571": {
    "src": "Really, I understand you're new around here, but catch up, would you? The rest of us don't have the time or patience to wait around while you... ah, get with the program.",
@@ -75285,7 +75498,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 10",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Really , get with the programは斜体"
   },
   "Ensemble of Hope#574": {
    "src": "Explore your cell. To return go to [-{~}, {~}, -{~}].",
@@ -75355,17 +75569,19 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "sureは斜体"
   },
   "Ensemble of Hope#582": {
-   "src": "It's not like I've already DONE THAT a million times already! It's not like SHE'S the one who taught me that method of stress relief in the FIRST PLACE, noooom no no no, now it's special!!",
+   "src": "It's not like I've already DONE THAT a million times already! It's not like SHE'S the one who taught me that method of stress relief in the FIRST PLACE, noooo, no no no, now it's special !!",
    "dst": "あたしがとっくに百万回もやってないみたいに！そもそもそのストレス発散法を教えたのが「あいつ」じゃないみたいに、いやいやいや、今さら特別扱い！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Soosu",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "specialは斜体"
   },
   "Ensemble of Hope#583": {
    "src": "And so what if it is!!! SO WHAT if I had to watch Flowers fall apart BIT by little BIT!!! SO WHAT if she'll keep me STUCK here forever and ever and ever and EVER!!!",
@@ -75385,7 +75601,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "same , thisは斜体"
   },
   "Ensemble of Hope#585": {
    "src": "So who cares. Really, who cares? Z'll run my district better than I ever did. That's all anyone cares about, anyway.",
@@ -75395,7 +75612,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Soosu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Reallyは斜体"
   },
   "Ensemble of Hope#587": {
    "src": "Once more we meet, {u}. Though this time, it seems you have played the first hand.",
@@ -75405,7 +75623,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "youは斜体"
   },
   "Ensemble of Hope#588": {
    "src": "So, this is the path you wish to take? A risk, certainly... you cannot guarantee a favorable result.",
@@ -75415,7 +75634,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 11",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thisは斜体"
   },
   "Ensemble of Hope#589": {
    "src": "Will it pay off, I wonder? Or have you thrown your life away for nothing?",
@@ -75545,7 +75765,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "meaningは斜体"
   },
   "Ensemble of Hope#604": {
    "src": "They had requested an audience with Her Majesty. A possibility which had been communicated to them prior.",
@@ -75565,7 +75786,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "What is this miscalculation?! , all togetherは斜体"
   },
   "Ensemble of Hope#606": {
    "src": "Sovereign Nasin, I have just about had enough of your interruptions today. I will permit them this audience.",
@@ -75575,7 +75797,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "enoughは斜体"
   },
   "Ensemble of Hope#607": {
    "src": "You have been a thorn in my side ever since you first arrived in my province, it would seem. Quite the annoyance.",
@@ -75585,7 +75808,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Quiteは斜体"
   },
   "Ensemble of Hope#608": {
    "src": "And it would seem it is indeed your presence which has galvanized each assorted group of petulant children into action!",
@@ -75595,7 +75819,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "your , petulantは斜体"
   },
   "Ensemble of Hope#609": {
    "src": "So perhaps my dear Sovereign is right. Why should I grant you this allowance? I would be well within my right to execute you alongside your companions.",
@@ -75605,7 +75830,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "shouldは斜体"
   },
   "Ensemble of Hope#610": {
    "src": "And yet, certainly, you would prove a valuable ally in the coming days. You've proven your value in maintaining Their balance.",
@@ -75615,7 +75841,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "Theirは斜体"
   },
   "Ensemble of Hope#611": {
    "src": "But in the end, it falls on you to prove whether or not you are worth the effort. You have come here willingly, which is the first step. Now, take the second.",
@@ -75625,7 +75852,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "falls on you←この単語だけ斜体"
   },
   "Ensemble of Hope#612": {
    "src": "Oh, I suppose it makes no difference if you know or not. Either you are aligned with us, or you are out of the picture entirely.",
@@ -75649,13 +75877,14 @@
   },
   "Ensemble of Hope#614": {
    "src": "It has acquired power beyond its means, and if it is not dealt with, that little parasite you killed will prove only the beginning of its conquest.",
-   "dst": "闇は分不相応な力を得た。放置すれば、そなたが殺したあの小さな寄生体は、その征服の始まりにすぎなくなる。",
+   "dst": "闇は分不相応な力を得た。放置すれば、そなたが殺したあの小さな寄生虫は、その征服の始まりにすぎなくなる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "dealt with , beginningは斜体"
   },
   "Ensemble of Hope#615": {
    "src": "Therein lies the reason for the tournament, all those weeks ago. To select a candidate for the task. Powerful, knowledgeable, loyal.",
@@ -75665,7 +75894,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "loyal斜体"
   },
   "Ensemble of Hope#616": {
    "src": "And so, for one final time, I will give this opportunity to you. Show me whether you may be considered an asset, or if you are nothing more than the nuisance you have shown yourself to be.",
@@ -75675,7 +75905,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "nuisanceは斜体"
   },
   "Ensemble of Hope#617": {
    "src": "How, indeed... you have cost me two of my Sovereigns thus far, have disrupted the yearly Festival rotation, and have killed dozens of my soldiers.",
@@ -75685,7 +75916,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "dozensは斜体"
   },
   "Ensemble of Hope#618": {
    "src": "It is no simple task, making up for such acts. And I would require significant assurance that it will not happen again.",
@@ -75695,17 +75927,19 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "wouldは斜体"
   },
   "Ensemble of Hope#619": {
-   "src": "Perhaps, the truth of the matter is that you cannot. You have cause me far, far too many problems to simply-",
+   "src": "Perhaps, the truth of the matter is that you cannot. You have caused me far, far too many problems to simply-",
    "dst": "あるいは、実のところ償うことなどできぬのかもしれぬ。そなたはあまりに多くの問題を―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "cannot と , far, far←この単語だけ斜体"
   },
   "Ensemble of Hope#620": {
    "src": "They are very simple. Denounce your allies, and allow this little rebellion to be washed away once more, as it has many times before.",
@@ -75795,7 +76029,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thatは斜体"
   },
   "Ensemble of Hope#629": {
    "src": "Oh, shut it, Nasin.",
@@ -75855,7 +76090,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Her Majesty",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "forgotten , reminderは斜体"
   },
   "Ensemble of Hope#635": {
    "src": "Sovereign Zhiraok, Sovereign Tasim. I expect the two of you to join me for the festival.",
@@ -75965,7 +76201,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "why?は斜体"
   },
   "Ensemble of Hope#648": {
    "src": "Then I am left with only one option. It is unfavorable... but I suppose it will have to do.",
@@ -75985,7 +76222,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 12",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "proveは斜体"
   },
   "Ensemble of Hope#650": {
    "src": "Enter Two's mirror. To return go to [-{~}, {~}, -{~}].",
@@ -76015,7 +76253,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 13",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "thisは斜体"
   },
   "Ensemble of Hope#654": {
    "src": "How very troubling. But for now... it will do nicely. Perhaps you will finally come to understand.",
@@ -76075,7 +76314,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 14",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "hateは斜体"
   },
   "Ensemble of Hope#660": {
    "src": "Do you expect it to hold back? Its nature is to take, consume, repurpose. And it finally holds the means.",
@@ -76205,17 +76445,18 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "youは斜体"
   },
   "Ensemble of Hope#675": {
-   "src": "...How long has it been, now? Years and years and years... all of it erased, destroyed, and still I remain.",
+   "src": "... How long has it been, now? Years and years and years... all of it erased, destroyed, and still I remain.",
    "dst": "…もうどれほど経った？何年も、何年も…すべて消され、壊され、それでも私は残っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#676": {
    "src": "It was the only choice I could have made, then. Anyone else would have done the same.",
@@ -76248,14 +76489,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#679": {
-   "src": "...ah. I see now my error. Very clever, traversing the shards and reaching though the fractured web into my own past.",
+   "src": "...ah. I see now my error. Very clever, traversing the shards and reaching through the fractured web into my own past.",
    "dst": "…ああ。私の誤りがわかった。見事だ、欠片を渡り、砕けた網を越えて私の過去にまで手を伸ばすとは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#680": {
    "src": "But you are not entitled to this intrusion. And you will receive nothing more.",
@@ -76265,7 +76506,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "entitled は斜体"
   },
   "Ensemble of Hope#681": {
    "src": "Emerge.",
@@ -76275,7 +76517,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "全て太字"
   },
   "Ensemble of Hope#683": {
    "src": "A satisfactory showing. Perhaps you will manage to surprise me, after all.",
@@ -76305,7 +76548,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 16",
    "speaker": "Sovereign Two",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "prove は斜体"
   },
   "Ensemble of Hope#686": {
    "src": "Escape from Her Majesty's royal palace. To return go to [-{~}, {~}, -{~}].",
@@ -76339,13 +76583,14 @@
   },
   "Ensemble of Hope#689": {
    "src": "No time to stay and chat! Come with me.",
-   "dst": "話してる暇はない！ついておいで。",
+   "dst": "話してる暇はない！{c2}ついておいで{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 18",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Come with me{/}"
   },
   "Ensemble of Hope#690": {
    "src": "Follow Rurie to the safe zone at [-{~}, {~}, -{~}].",
@@ -76365,7 +76610,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 19",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "breathe は斜体"
   },
   "Ensemble of Hope#692": {
    "src": "Ah... goodness. We're used to battling regional guards, or constables - perhaps a wing at most, rarely? But they simply do not compare to these gendarme.",
@@ -76388,14 +76634,15 @@
    "source": "wiki"
   },
   "Ensemble of Hope#694": {
-   "src": "Preparations are in order for burial rights, but we are still deep in the operation! No time to grieve just yet.",
+   "src": "Preparations are in order for burial rites, but we are still deep in the operation! No time to grieve just yet.",
    "dst": "埋葬の準備は進めているが、作戦はまだ真っ最中だ！悲しむ暇はまだない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 19",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "just は斜体"
   },
   "Ensemble of Hope#695": {
    "src": "They knew the risks, as do we all. Joining the Canopy - properly, mind you, not like you did - comes with a willingness to die for the cause, if necessary.",
@@ -76405,7 +76652,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 19",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "properly は斜体"
   },
   "Ensemble of Hope#696": {
    "src": "...but enough about that! You live! Standing before me, in one piece and not entirely disintegrated! I take it all went well on your end?",
@@ -76605,7 +76853,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "dirty , difference は斜体"
   },
   "Ensemble of Hope#717": {
    "src": "...I don't think I'd have had the courage for it, if it wasn't for Zeph.",
@@ -76628,14 +76877,14 @@
    "source": "wiki"
   },
   "Ensemble of Hope#719": {
-   "src": "And... I want to be like that, y'know! Confident enough to do that sorta thing.",
-   "dst": "で…俺もああなりたいんだよ！ああいうことができる自信がほしい。",
+   "src": "And... I want to be like that, y'know? Confident enough to do that sorta thing.",
+   "dst": "で…俺もああなりたいんだよ。ああいうことができる自信がほしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "Ensemble of Hope#720": {
    "src": "...don't, uh, tell him I said all that though!! Ha. It's a little embarrassing to actually say out loud.",
@@ -76645,7 +76894,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Yuman",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "say は斜体"
   },
   "Ensemble of Hope#721": {
    "src": "You're gonna head over to him and the others soon though, right? Tell him... uh... something. That I hope he's okay? I dunno, I'll come up with something.",
@@ -76685,7 +76935,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "somehow は斜体"
   },
   "Ensemble of Hope#725": {
    "src": "I've been trying to help Fuhue keep the owl units on schedule... but, DAMN!",
@@ -76705,7 +76956,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Yulie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "exactly , needs は斜体"
   },
   "Ensemble of Hope#727": {
    "src": "...have you talked to Azael and Quill yet? I think they were waiting for news about you, in the bank.",
@@ -76725,7 +76977,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "now は斜体"
   },
   "Ensemble of Hope#729": {
    "src": "Oh. It's you.",
@@ -76768,14 +77021,15 @@
    "source": "wiki"
   },
   "Ensemble of Hope#733": {
-   "src": "Either way. I had the deers bring rations and quipment with us, but in the chaos it seems they have not followed my established sorting system! Everything is a mess.",
+   "src": "Either way. I had the deers bring rations and equipment with us, but in the chaos it seems they have not followed my established sorting system! Everything is a mess.",
    "dst": "とにかく。鹿たちに配給と装備を運ばせたけど、混乱の中で私の決めた分類方式を守らなかったみたい！何もかもめちゃくちゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "captured.json",
+   "note": "chaos は斜体"
   },
   "Ensemble of Hope#734": {
    "src": "And now not only do I need to maintain schedules for the foxes and owls, because Rurie is a mess, but I also have to find where our supplies are!",
@@ -76785,11 +77039,12 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 20",
    "speaker": "Fuhue",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "now , also は斜体"
   },
   "Ensemble of Hope#735": {
    "src": "At least Yulie has offered to help keep track of the owls' movements. That's one less thing to worry about.",
-   "dst": "せめて Yulie が梟の動きの管理を手伝うと言ってくれた。心配事が一つ減った。",
+   "dst": "少なくとも Yulie が梟の動きの管理を手伝うと言ってくれた。心配事が一つ減った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ensemble of Hope",
@@ -76915,7 +77170,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 21",
    "speaker": "Quill",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "should は斜体"
   },
   "Ensemble of Hope#748": {
    "src": "I'm starting to worry... I know we don't have instant communication, but even still, it's been a while...",
@@ -76925,7 +77181,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 21",
    "speaker": "Yusanu",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "still は斜体"
   },
   "Ensemble of Hope#749": {
    "src": "Hmm. Military activity has increased drastically ever since we took control. We know the owls are struggling to move from here to {p}.",
@@ -76935,7 +77192,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 21",
    "speaker": "Azael",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "has は斜体"
   },
   "Ensemble of Hope#750": {
    "src": "It could be something, or it could very well be nothing. There is little we can do but wait.",
@@ -77015,7 +77273,8 @@
    "quest": "Ensemble of Hope",
    "stage": "Stage 21",
    "speaker": "Rurie",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "must , but I←この単語のみ 斜体"
   },
   "Ensemble of Hope#758": {
    "src": "Ah! Yes, that will do. Come, I'll show you the way out of the citadel.",
@@ -77086,6 +77345,300 @@
    "stage": "Stage 22",
    "speaker": "",
    "source": "wiki"
+  },
+  "Ensemble of Hope#765": {
+   "src": "...you don't scare me.",
+   "dst": "…お前なんか怖くない。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#766": {
+   "src": "W-wh-what...",
+   "dst": "え、えっ、えっ……",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#767": {
+   "src": "CHARGE!",
+   "dst": "突撃！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#768": {
+   "src": "You tell them about the Corruption you've seen in Wynn. About what it does to the land and the people.",
+   "dst": "Wynn で目にした「腐敗」について、それが土地や人々にどのような影響を与えているかについて彼らに話した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#769": {
+   "src": "You... don't tell them why you think it's here. About the Queen. It'd be best to tell everyone at the same time.",
+   "dst": "……なぜそれがここにあると思うのか、その理由を彼らには言わないでおこう。女王のことについてはね。みんなに同時に伝えるのが一番いいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#770": {
+   "src": "You suddenly remember. Tasim told you the Queen wanted to speak to you. Maybe you could get an audience...?",
+   "dst": "ふと、あることを思い出した。Tasim が、女王が自分に話がある言っていた。もしかすると、謁見できるかもしれない……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#771": {
+   "src": "You tell them about the War of the Realms. Of Light and Dark and War.",
+   "dst": "「領域戦争」について、光と闇、そして戦争について彼らに伝えた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#772": {
+   "src": "You tell them about Corruption. About how it has affected Wynn, and how the recruits Fruma sends help keep it at bay.",
+   "dst": "彼らに「腐敗」によって Wynn にどのような影響を与えているか、そして Fruma が送り込む新兵たちが、いかにしてその腐敗を食い止めているかについて伝えた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#773": {
+   "src": "You tell them about the Queen. About what she is, what she was. That killing her won't be as easy as-",
+   "dst": "彼らに女王が今どうなっているか、かつてどうだったか。彼女を殺すのは、それほど簡単ではないと伝え――",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#774": {
+   "src": "Everyone has dispersed into various groups... you can talk to them, or go rest right now.",
+   "dst": "みんなはそれぞれのグループに分かれていった……彼らと話をすることもできるし、今すぐ休むこともできる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#775": {
+   "src": "You probably shouldn't interrupt their reunion.",
+   "dst": "彼らの再会にちょっかいを出さない方がいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#776": {
+   "src": "Right-Click to sleep",
+   "dst": "右クリックで寝る",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#777": {
+   "src": "It looks like everyone else has already gone out. It's just you, now.",
+   "dst": "他のみんなはもう出かけてしまったみたいだ。今は自分だけのようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#778": {
+   "src": "Let's hope I'm not stuck here forever...",
+   "dst": "ここで永遠に閉じ込められないことを祈るばかりだ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Ensemble of Hope#779": {
+   "src": "Imprisonment Guidelines",
+   "dst": "懲役刑の量刑指針",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "全て太字"
+  },
+  "Ensemble of Hope#780": {
+   "src": "- Provide minimum necessary food and water. If work is completed, increase ration allotments.",
+   "dst": "- 必要最低限の食料と水を支給する。作業が完了した場合は、配給量を増やす。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#781": {
+   "src": "- Provide Eternal Wellspring water each year to maintain longevity.",
+   "dst": "- 長寿を維持するために、毎年「Eternal Wellspring」の水を供給する。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#782": {
+   "src": "- No sources of entertainment are permitted beyond assigned projects.",
+   "dst": "- 割り当てられた課題以外の娯楽は一切認められない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#783": {
+   "src": "- Under NO circumstances must the curse-proof gate be opened. High escape risk.",
+   "dst": "- いかなる状況においても、呪い防止ゲートを開けてはならない。脱走の危険性が高いためです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#784": {
+   "src": "Speak to Two in the palace's throne room. To return go to [-{~}, {~}, -{~}].",
+   "dst": "宮殿の玉座の間で Two に話しかける。戻るには、[-{~}, {~}, -{~}] に行く。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#785": {
+   "src": "This is it, we stand at the precipice of change...",
+   "dst": "いよいよだ。僕たちは変革の瀬戸際に立っている……",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Arnol",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#786": {
+   "src": "With your help, the resistance can create a better future for Fruma, and put an end to this madness!",
+   "dst": "皆さんのご協力があれば、レジスタンスは Fruma のためにより良い未来を切り開き、この狂気を終わらせることができるんだ！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Arnol",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#787": {
+   "src": "...As if it wasn't already enough that I missed that train and had to buy ANOTHER ticket...",
+   "dst": "…あの電車に乗り遅れて、さらに別の切符を買わなきゃいけなかっただけでも十分なのに……",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json",
+   "note": "全て斜体"
+  },
+  "Ensemble of Hope#788": {
+   "src": "...I get home and an insurgency has taken over the damn place??? What is going on???",
+   "dst": "…家に帰ったら、あのクソみたいな場所が反乱軍に占拠されてたなんて？？？ 一体何が起きてるんだ？？？",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json",
+   "note": "全て斜体"
+  },
+  "Ensemble of Hope#789": {
+   "src": "OH, OH, AND JUST AS I THOUGHT IT COULDN'T GET WORSE, LOOK WHO SHOWS UP TO ADD INSULT TO INJURY. YOU.",
+   "dst": "ああ、ああ、これ以上悪くなることはないと思っていた矢先、まさに「傷口に塩を塗る」ように現れたのは誰だ？　お前だ。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json",
+   "note": "YOU は斜体"
+  },
+  "Ensemble of Hope#790": {
+   "src": "SO, WHAT, HUH? WHAT'S GOING ON? IS THIS ALL SOME SORT OF... DIVINE PUNISHMENT FOR THE WAY I SPOKE TO YOU BACK OUTSIDE THE SUBWAY??? I'M SORRY, I'M SORRY, OKAY??? PLEASE... MAKE IT END!!!",
+   "dst": "えっ、どういうことだ？　一体何が起きている？　これって、もしかして…… さっき地下鉄の外で、君にそんな口調で話したことへの…神からの罰なのか？？？ごめん、ごめん、わかった？？？お願い…もう終わらせてくれ！！！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json",
+   "note": "PLEASE... MAKE IT END!!! は太字"
+  },
+  "Ensemble of Hope#791": {
+   "src": "GAAAAHH!!! FINE!!! LEAVE ME IN MY MISERY THEN!!!",
+   "dst": "ガアアアッ！！！　わかったよ！！！　それなら、この惨めなままにしておいてくれ！！！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 20",
+   "speaker": "Businessman",
+   "source": "captured.json",
+   "note": ""
+  },
+  "Ensemble of Hope#792": {
+   "src": "Take care out there, {u}.",
+   "dst": "気をつけて、{u}。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ensemble of Hope",
+   "stage": "Stage 22",
+   "speaker": "Rurie",
+   "source": "captured.json",
+   "note": ""
   },
   "Enter the Dojo#000": {
    "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
@@ -100163,6 +100716,83 @@
    "stage": "Stage 11",
    "speaker": "Winie",
    "source": "wiki"
+  },
+  "Hunt Woolly Rhinos#001": {
+   "src": "Request from the Customs Clerk: To whomever it may concern, there has recently been an increase in damaged goods from outside the Capital. When questioned, various artisans admit having been attacked by ferocious beasts.",
+   "dst": "税関係員からの依頼：関係各位へ。最近、首都圏外からの破損品が増加しています。事情を聴いたところ、複数の職人が猛獣に襲われたことを認めています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "Request from the Customs Clerk:は太字"
+  },
+  "Hunt Woolly Rhinos#002": {
+   "src": "Woolly Rhinos seem to match the description, and they are indeed creatures not to be tempered with. I am unsure what causes them such unrest. Perhaps they feel a change in the environment, but it matters not.",
+   "dst": "Woolly Rhino は、その特徴に合致しているようだが、確かに手を出してはならない生き物だ。何が彼らをそれほど落ち着かない状態にさせているのかは分からない。おそらく環境の変化を感じ取っているのだろうが、それはどうでもいいことだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
+  },
+  "Hunt Woolly Rhinos#003": {
+   "src": "What matters is that more and more goods are being damaged, causing delays in the monitoring of what goes in and out of the Capital. If someone could hunt at least {~} Woolly Rhinos, it would be of assistance to us all.",
+   "dst": "重要なのは、破損する品物が増え続けており、それによって首都への出入りの監視に遅れが生じているという点です。もし誰かが少なくとも{c2}{~}頭{/}の{c2} Woolly Rhino {/}を狩ってくれれば、私たち全員にとって大きな助けとなるでしょう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}{~} Woolly Rhinos{/}"
+  },
+  "Hunt Woolly Rhinos#004": {
+   "src": "There are reports of two of them having been spotted nearby House Thalas and House Nasin. I have set up a carriage next to this board if you wish to go there.",
+   "dst": "{c2}Thalas 邸と Nasin 邸{/}の近くで、そのうちの2体が目撃されたという報告があります。そこへ行きたい方は、この掲示板の隣に{c2}馬車{/}を用意しておきましたので、ご利用ください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}House Thalas and House Nasin{/}, {c2}carriage{/}"
+  },
+  "Hunt Woolly Rhinos#005": {
+   "src": "Additionally, a friend of mine has also seen one to the north of {p}, quite close to the town itself. Please return to this post once you are done. As mentioned, they are very resilient. Be sure to brace yourself.",
+   "dst": "さらに、私の友人も{c2}{p}の北側{/}、町からかなり近い場所で1匹を目撃しています。作業が終わったら、この{c2}掲示板に戻ってきて{/}ください。前述の通り、彼らは非常にタフです。しっかり身構えておいてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}north of {p}{/}, {c2}return to this post{/}"
+  },
+  "Hunt Woolly Rhinos#006": {
+   "src": "You've hunted enough of those beasts. You should return to the Slaying Post to collect your reward.",
+   "dst": "もう十分あの獣を狩った。{c2}討伐掲示板に戻って{/}報酬を受け取ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": "{c2}return to the Slaying Post{/}"
+  },
+  "Hunt Woolly Rhinos#007": {
+   "src": "Return to the Slaying Post at [-{~}, {~}, -{~}] to collect your reward.",
+   "dst": "[-{~}, {~}, -{~}]の討伐掲示板に戻って報酬を受け取る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Hunt Woolly Rhinos",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "note": ""
   },
   "Ice Nations#000": {
    "src": "Thank you again for bringing peace upon our islands.",
@@ -130754,7 +131384,7 @@
   },
   "Overture to Despair#443": {
    "src": "Why does she care about all",
-   "dst": "どうして彼女はそこまで",
+   "dst": "なぜ彼女はこんなことまで気にするんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -223177,7 +223807,7 @@
   },
   "The Strong Survive#019": {
    "src": "You don't want to miss the opening speech from the famed Sovereign Majin!",
-   "dst": "名高き 君主 Majinの開会演説を聞き逃したくはないだろう！",
+   "dst": "名高き君主 Majinの開会演説を聞き逃したくはないだろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -223513,7 +224143,8 @@
    "quest": "The Strong Survive",
    "stage": "Stage 4",
    "speaker": "Uniform Tailor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "realは斜体"
   },
   "The Strong Survive#053": {
    "src": "Alright, this will only take a second or two.",
@@ -224076,14 +224707,14 @@
    "source": "wiki"
   },
   "The Strong Survive#109": {
-   "src": "We are thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
+   "src": "We are very thankful to Sovereign Majin for taking time out of his responsibilities to deliver the opening speech.",
    "dst": "ご多忙の中、開会演説をしてくださった 君主 Majinに感謝申し上げる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 5",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#110": {
    "src": "Now we will be bringing you to your first training session of the day, I hope you all are ready.",
@@ -224166,7 +224797,7 @@
    "source": "wiki"
   },
   "The Strong Survive#118": {
-   "src": "I'm Arnol, I come from the nobel {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
+   "src": "I'm Arnol, I come from the noble {p} Tasa family, Fruma has done so much for us, so I am ready to help her.",
    "dst": "僕は Arnol、{p} の名家 Tasa 家の出なんだ。Fruma には恩があるから、力になりたいんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -224196,7 +224827,7 @@
    "source": "wiki"
   },
   "The Strong Survive#121": {
-   "src": "My family tells me that recruits often end up very... competitive...",
+   "src": "My family tells me that recruits often end up becoming very... competitive...",
    "dst": "家族が言うには、新兵同士ってすごく…張り合うらしくて…",
    "role": "desc",
    "kind": "dialogue",
@@ -224776,7 +225407,7 @@
    "source": "wiki"
   },
   "The Strong Survive#179": {
-   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have many weights embedded into them.",
+   "src": "The turrets will give an indication of when they are about to fire, however, the shields provided to you have weights embedded into them.",
    "dst": "発射台は撃つ直前に合図を出す。ただし、支給する盾には重りがたくさん埋め込まれている。",
    "role": "desc",
    "kind": "dialogue",
@@ -224807,13 +225438,14 @@
   },
   "The Strong Survive#182": {
    "src": "Simply stand where I am now, then click the button behind me. Face the turret and hold up your shield when, or just before, it fires an arrow.",
-   "dst": "今私がいる場所に立ち、後ろのボタンを押せ。発射台に向き、矢を放つ瞬間か直前に盾を構えろ。",
+   "dst": "{c1}今私がいる場所に立ち、後ろのボタンを押せ。{c2}発射台に向き、矢を放つ瞬間か直前に盾を構えろ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 6",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Face the turret and hold up your shield when, or just before, it fires an arrow{/}"
   },
   "The Strong Survive#183": {
    "src": "Good luck recruits, I will be judging you from an overlook point. If you haven't already, take a shield from the shield rack next to Recruiter Effal.",
@@ -224887,7 +225519,7 @@
   },
   "The Strong Survive#190": {
    "src": "These shields are really heavy, it feels like I can only hold them up for around half a second...",
-   "dst": "この盾、本当に重いね、半秒くらいしか構えていられない気がする…",
+   "dst": "この盾、本当に重いね、0.5秒くらいしか構えていられない気がする…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225016,8 +225648,8 @@
    "source": "wiki"
   },
   "The Strong Survive#203": {
-   "src": "Good job ! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
-   "dst": "すごいよ！少なくとも一人はうまくいってよかった。あとでどうやったのか教えてほしいな。",
+   "src": "Good job {u}! I am glad that one of us was able to do well. I'd like to learn about how you did it later.",
+   "dst": "すごいよ、{u}！少なくとも一人はうまくいってよかった。あとでどうやったのか教えてほしいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225027,7 +225659,7 @@
   },
   "The Strong Survive#204": {
    "src": "I'd like to learn about Beac",
-   "dst": "ビーコンについて知りたい",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225036,8 +225668,8 @@
    "source": "captured"
   },
   "The Strong Survive#205": {
-   "src": "Good job ! I am glad that you managed to finish. We should talk more about it later.",
-   "dst": "すごいよ！やり遂げられてよかった。あとでもっとその話をしよう。",
+   "src": "Good job {u}! I am glad that you managed to finish. We should talk more about it later.",
+   "dst": "すごいよ！、{u}！やり遂げられてよかった。あとでもっとその話をしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225066,7 +225698,7 @@
    "source": "wiki"
   },
   "The Strong Survive#208": {
-   "src": "Listen to the challenge instructions then enter the next room and complete the second challenge.",
+   "src": "Listen to the challenge instructions, then enter the next room and complete the second challenge.",
    "dst": "試練の説明を聞き、次の部屋に入って二つ目の試練を完了する。",
    "role": "desc",
    "kind": "objective",
@@ -225517,7 +226149,7 @@
   },
   "The Strong Survive#253": {
    "src": "I hear he was offered a blessing early on in his service, back when he was still in the {p} division. He was very famous back then, everyone in {p} and Aelumia knew him!",
-   "dst": "聞いた話じゃ、まだ {p} 部隊にいた軍歴の初期に祝福を持ちかけられたんだって。当時はすごく有名で、{p} でも Aelumia でも知らない人はいなかった！",
+   "dst": "聞いた話じゃ、まだ {p} 部隊にいた軍歴の初期に祝福を授かったんだって。当時はすごく有名で、{p} でも Aelumia でも知らない人はいなかった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225677,7 +226309,7 @@
   },
   "The Strong Survive#269": {
    "src": "You are Arnol, yes? You must come with me.",
-   "dst": "お前が Arnol だな？一緒に来てもらう。",
+   "dst": "お前が Arnol だな？一緒に来てくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -225756,7 +226388,7 @@
    "source": "wiki"
   },
   "The Strong Survive#277": {
-   "src": "Go to the challenge room and receive instructions for the final challenge of the day at [-{~}, {~}, {~}].",
+   "src": "Go to the challenge room and recieve instructions for the final challenge of the day at [-{~}, {~}, {~}]",
    "dst": "[-{~}, {~}, {~}] の試練の間へ行き、今日最後の試練の説明を受ける。",
    "role": "desc",
    "kind": "objective",
@@ -225827,13 +226459,14 @@
   },
   "The Strong Survive#284": {
    "src": "Use your agility to avoid attacks, but if you find yourself unable to dodge, you must stand on guard and block incoming attacks.",
-   "dst": "俊敏さで攻撃をかわせ。かわせないなら、構えて攻撃を受け止めねばならん。",
+   "dst": "俊敏さで攻撃をかわせ。かわせないなら、{c2}構えて攻撃を受け止めねばならん{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 11",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}you must stand on guard and block incoming attacks{/}"
   },
   "The Strong Survive#285": {
    "src": "Blocking precisely as your opponent strikes may catch them off guard, allowing you an opportunity to retaliate.",
@@ -225843,7 +226476,8 @@
    "quest": "The Strong Survive",
    "stage": "Stage 11",
    "speaker": "Commander Ferreo",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c1}Blocking precisely as your opponent strikes may catch them off guard, allowing you an opportunity to retaliate.{/}"
   },
   "The Strong Survive#286": {
    "src": "You weapon is a wooden training estoc. The edges are dulled, so you will not need to hold back your strength.",
@@ -226326,8 +226960,8 @@
    "source": "wiki"
   },
   "The Strong Survive#334": {
-   "src": "Hey . It feels like it's been a while since we've last seen each other.",
-   "dst": "やあ。最後に会ってから、ずいぶん経った気がするよ。",
+   "src": "Hey {u}. It feels like it's been a while since we've last seen each other.",
+   "dst": "やあ、{u}。最後に会ってから、ずいぶん経った気がするよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -226356,7 +226990,7 @@
    "source": "wiki"
   },
   "The Strong Survive#337": {
-   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard's barracks.",
+   "src": "Regarding what happened in the cafeteria, another recruit and I were taken to the guard barracks.",
    "dst": "食堂でのことだけど、僕ともう一人の新兵は衛兵の宿舎に連れていかれたんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -226406,14 +227040,14 @@
    "source": "wiki"
   },
   "The Strong Survive#342": {
-   "src": "There's something I want to tell you in a more private area . Before you go to bed, talk to me in the barracks.",
-   "dst": "もっと人目のない所で話したいことがあるんだ。寝る前に、宿舎で声をかけて。",
+   "src": "There's something I want to tell you in a more private area {u}. Before you go to bed, talk to me in the barracks.",
+   "dst": "{u}、もっと人目のない所で話したいことがあるんだ。寝る前に、宿舎で声をかけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 13",
    "speaker": "Arnol",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#343": {
    "src": "Speak to Arnol in the barracks, then go to sleep at [-{~}, {~}, {~}].",
@@ -226526,7 +227160,7 @@
    "source": "wiki"
   },
   "The Strong Survive#354": {
-   "src": "I'll make you and everyone else who mocked me east their words!",
+   "src": "I'll make you and everyone else who mocked me eat their words!",
    "dst": "あんたも、私を笑った連中も、みんな前言撤回させてやる！",
    "role": "desc",
    "kind": "dialogue",
@@ -226556,8 +227190,8 @@
    "source": "wiki"
   },
   "The Strong Survive#357": {
-   "src": "I want to apologize to you . Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
-   "dst": "君に謝りたいんだ。今日、兵士になりたい理由を話したとき、僕は嘘をついた。",
+   "src": "I want to apologize to you {u}. Earlier today, when I told you my reason for wanting to become a soldier, I lied.",
+   "dst": "{u}、君に謝りたいんだ。今日、兵士になりたい理由を話したとき、僕は嘘をついた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -227076,7 +227710,7 @@
    "source": "wiki"
   },
   "The Strong Survive#409": {
-   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks>",
+   "src": "Well... That was a disappointment. You've been given many second chances and this is what you do to give thanks?",
    "dst": "はあ…失望した。何度も機会を与えてやったのに、その恩返しがこれか。",
    "role": "desc",
    "kind": "dialogue",
@@ -227096,14 +227730,14 @@
    "source": "wiki"
   },
   "The Strong Survive#411": {
-   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
+   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made good time.",
    "dst": "やあ {u}、試練はうまくいったと思う。少なくともやり遂げたよ、タイムがよかったかは分からないけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Arnol",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#412": {
    "src": "I couldn't help but feel off about what the instructor said when I started the course... \"Good luck Arnol... Not that it would matter...\".",
@@ -227116,7 +227750,7 @@
    "source": "wiki"
   },
   "The Strong Survive#413": {
-   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us to do better in the training.",
+   "src": "What is that supposed to mean? I thought instructors were supposed to encourage us, helping us do better in the training.",
    "dst": "どういう意味だろう？教官って僕らを励まして、訓練で上達させるものだと思ってた。",
    "role": "desc",
    "kind": "dialogue",
@@ -227167,23 +227801,25 @@
   },
   "The Strong Survive#418": {
    "src": "On top of that, the three central turrets have been elevated. You'll have to aim your shield higher to block arrows coming from them.",
-   "dst": "さらに、中央の三基は高い位置に上げてある。そこからの矢を防ぐには盾を高く構える必要がある。",
+   "dst": "さらに、中央の三基は高い位置に上げてある。{c2}そこからの矢を防ぐには盾を高く構える必要がある{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}You'll have to aim your shield higher to block arrows coming from them{/}"
   },
   "The Strong Survive#419": {
    "src": "I've also adjusted the turret timings a little. Two turrets are now able to fire at you in quick succession, you must be ready to block the arrows from both of them.",
-   "dst": "発射台のタイミングも少し変えた。二基が立て続けに撃てるようになったから、両方の矢を防ぐ準備をしておけ。",
+   "dst": "発射台のタイミングも少し変えた。{c2}二基が立て続けに撃てるようになったから、両方の矢を防ぐ準備をしておけ{/}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 20",
    "speaker": "Military Instructor",
-   "source": "wiki"
+   "source": "wiki",
+   "note": "{c2}Two turrets are now able to fire at you in quick succession, you must be ready to block the arrows from both of them{/}"
   },
   "The Strong Survive#420": {
    "src": "I noticed that some of you struggled with lifting the shield on the first day...",
@@ -227226,7 +227862,7 @@
    "source": "wiki"
   },
   "The Strong Survive#424": {
-   "src": "With that being said, I wish all of you lulck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
+   "src": "With that being said, I wish all of you luck on the challenge! Pick up a shield on the rack next to Recruiter Ezero if you haven't.",
    "dst": "というわけで、皆の健闘を祈る！まだなら、Ezero 募兵官の横の盾掛けから盾を取れ。",
    "role": "desc",
    "kind": "dialogue",
@@ -227366,14 +228002,14 @@
    "source": "wiki"
   },
   "The Strong Survive#438": {
-   "src": "It was a lot different back then, yet it seeks that it's reputation hasn't changed much. Funny little coincidence I suppose.",
+   "src": "It was a lot different back then, yet it seems that it's reputation hasn't changed much. Funny little coincidence I suppose.",
    "dst": "当時とはずいぶん違うが、評判はあまり変わらんらしい。ちょっとした面白い偶然だな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 21",
    "speaker": "Recruiter Ezero",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#439": {
    "src": "Alright, {u}, stand on that plate in front of you to start the test.",
@@ -227576,7 +228212,7 @@
    "source": "wiki"
   },
   "The Strong Survive#459": {
-   "src": "I've seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
+   "src": "I have seen you and Arnol together a lot. I am confused with what you see in him. Is it because of his family name?",
    "dst": "君はよく Arnol と一緒にいるな。彼のどこがいいのか分からない。家名のためか？",
    "role": "desc",
    "kind": "dialogue",
@@ -227696,8 +228332,8 @@
    "source": "wiki"
   },
   "The Strong Survive#471": {
-   "src": "and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
-   "dst": "と僕で、昨日の君の決闘がどうだったか気になってて。僕らえっと…二人ともうまくいかなくて、君がどう勝ったのか知りたいんだ、戦いで何があったか教えてよ。",
+   "src": "{u} and I were wondering how the duel went for you yesterday. We erm... Both did poorly on it and wanted to know how you won yours, just tell us what happened during the fight.",
+   "dst": "{u} と僕で、昨日の君の決闘がどうだったか気になってて。僕らえっと…二人ともうまくいかなくて、君がどう勝ったのか知りたいんだ、戦いで何があったか教えてよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -227716,14 +228352,14 @@
    "source": "wiki"
   },
   "The Strong Survive#473": {
-   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farse, I brutally retaliated...",
+   "src": "Despite leaving myself open for attack many times, my opponent couldn't even land a single hit on me. When I grew tired of that farce, I brutally retaliated...",
    "dst": "何度も隙を見せてやったのに、相手は一撃すら当てられなかった。その茶番に飽きたところで、容赦なく反撃した…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 22",
    "speaker": "Adder",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#474": {
    "src": "Even after he was yelling for me to stop, yelling \"I yield!\" at the top of his lungs, I continued. People like that should not become soldiers.",
@@ -227786,8 +228422,8 @@
    "source": "wiki"
   },
   "The Strong Survive#480": {
-   "src": "No true soldier would ever intentionally injure an ally... Let's go, this conversation is over.",
-   "dst": "本物の兵士なら、仲間をわざと傷つけたりしない…行こう、話は終わりだ。",
+   "src": "No true soldier would ever intentionally injure an ally... Let's go, {u} this conversation is over.",
+   "dst": "本物の兵士なら、仲間をわざと傷つけたりしない…話は終わりだ、行こう、{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -227996,7 +228632,7 @@
    "source": "wiki"
   },
   "The Strong Survive#501": {
-   "src": "I will be unable to oversee your challenges today as there is somthing I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
+   "src": "I will be unable to oversee your challenges today as there is something I must attend to. I have asked another instructor to do so, they are waiting in the dueling rooms.",
    "dst": "本日は所用があり、試練を監督できない。別の教官に頼んである、決闘の間で待っている。",
    "role": "desc",
    "kind": "dialogue",
@@ -228186,8 +228822,8 @@
    "source": "wiki"
   },
   "The Strong Survive#520": {
-   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with in private.",
-   "dst": "もう見込みがなくなりつつあるぞ、Arnol。行け、内密に話したいことがある。",
+   "src": "You're becoming a lost cause, Arnol. Now go, there is something I would like to discuss with {u} in private.",
+   "dst": "もう見込みがなくなりつつあるぞ、Arnol。行け、{u}に内密に話したいことがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -228266,7 +228902,7 @@
    "source": "wiki"
   },
   "The Strong Survive#528": {
-   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know must be constantly trying to improve!",
+   "src": "I used my shame from my first ranking as a driver to try harder on today's challenges. I am happy that I did poorly initially, because now I know I must constantly be trying to improve!",
    "dst": "最初の順位の恥を原動力に、今日の試練をもっと頑張ったの。最初に失敗してよかった、常に上達を目指さなきゃいけないって分かったから！",
    "role": "desc",
    "kind": "dialogue",
@@ -228546,14 +229182,14 @@
    "source": "wiki"
   },
   "The Strong Survive#556": {
-   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in {p}.",
-   "dst": "Ferreo 司令官の最後の侮辱さ。だから私はここ、{p} で衛兵をやっている。",
+   "src": "It was Commander Ferreo's final insult. That's the reason I am here, as a guard in Tericen.",
+   "dst": "Ferreo 司令官の最後の侮辱さ。だから私はここ、Tericen で衛兵をやっている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#557": {
    "src": "After I graduated from the recruit program, my average rankings were seen as too low to join a field Captain or Commander's service.",
@@ -228596,14 +229232,14 @@
    "source": "wiki"
   },
   "The Strong Survive#561": {
-   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have though after reading them...",
+   "src": "Deep down... Maybe I wanted Commander Ferreo to find those notes. I wonder what he would have thought after reading them...",
    "dst": "心の底では…Ferreo 司令官にあの記録を見つけてほしかったのかもな。読んだら何を思っただろうか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#562": {
    "src": "I had a feeling you'd ask me that. And surprisingly, yes, I did discover the truth about Commander Ferreo's success. There is no secret. He did it all through a fierce determination to become greater.",
@@ -228686,14 +229322,14 @@
    "source": "wiki"
   },
   "The Strong Survive#570": {
-   "src": "We can only speculate at what the discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
+   "src": "We can only speculate at what they discussed, but quickly after said meeting, Majin appointed Commander Ferreo as head of {p}. My guess is that he was punished for his ambition...",
    "dst": "何が話されたかは推測するしかないが、その会談の直後、Majin は Ferreo 司令官を {p} の長に任じた。私の推測では、野心の罰だったんだろう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
    "stage": "Stage 27",
    "speaker": "Niren",
-   "source": "wiki"
+   "source": "captured.json"
   },
   "The Strong Survive#571": {
    "src": "Good luck on your training recruit. I recommend you take it more seriously than I did.",
@@ -229414,6 +230050,979 @@
    "stage": "Stage 32",
    "speaker": "Effal",
    "source": "wiki"
+  },
+  "The Strong Survive#643": {
+   "src": "Type and send your name in chat.",
+   "dst": "チャットに自分の名前を入力しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#644": {
+   "src": "You put the uniform on over your armor.",
+   "dst": "鎧の上からその制服を着た。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#645": {
+   "src": "Quickly now, head into the large door and join the rest of the recruits!",
+   "dst": "さあ、急いであの大きな扉の中へ入って、他の新兵たちのもとへ合流しよう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#646": {
+   "src": "Commander Ferreo\nThe speech may now begin.",
+   "dst": "Commander Ferreo\nそれでは、演説を始めよう。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#647": {
+   "src": "Wilton\nWhat an incredible speech!",
+   "dst": "Wilton\nなんて素晴らしい演説でしょう！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Wilton",
+   "source": "captured.json"
+  },
+  "The Strong Survive#648": {
+   "src": "Saldin\nAmazing!",
+   "dst": "Saldin\nすごい！",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 4",
+   "speaker": "Saldin",
+   "source": "captured.json"
+  },
+  "The Strong Survive#649": {
+   "src": "You should be standing in the right position, marked with stone, before starting the turret.",
+   "dst": "砲塔の操作を始める前に、石で印が付けられた正しい位置に立つようにしてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#650": {
+   "src": "You must face the turret in order to block the arrow coming from it.",
+   "dst": "砲塔から飛んでくる矢を防ぐには、砲塔の方を向く必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#652": {
+   "src": "The statue engraving reads: \"Honour is not given\"",
+   "dst": "像には、「名誉は与えられるものではない」という文字が刻まれている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#653": {
+   "src": "Military Guard\nKatze, you must come with me.",
+   "dst": "Military Guard\nKatze 、一緒に来てくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#654": {
+   "src": "Katze\nUhm... Ok...",
+   "dst": "Katze\nえっと… うん…",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Katze",
+   "source": "captured.json"
+  },
+  "The Strong Survive#655": {
+   "src": "Recruiter Effal\n\nHead down to the dueling room,\nI will meet you there.",
+   "dst": "Recruiter Effal\n\n決闘の間へ行ってくれ、\nそこで待ってる。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#656": {
+   "src": "Priscilla\nAlright.",
+   "dst": "Priscilla\nわかった。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Priscilla",
+   "source": "captured.json"
+  },
+  "The Strong Survive#657": {
+   "src": "Dogi\nOn it.",
+   "dst": "Dogi\nわかりました。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 9",
+   "speaker": "Dogi",
+   "source": "captured.json"
+  },
+  "The Strong Survive#658": {
+   "src": "{#} Left-Click to attack, {#} Hold Right-Click to block.",
+   "dst": "{#} 左クリックで攻撃、{#} 右クリックを長押しで防御",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#659": {
+   "src": "{u} is the victor.",
+   "dst": "{u} が勝者だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 12",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
+  },
+  "The Strong Survive#660": {
+   "src": "You should look at the ranking board now.",
+   "dst": "今すぐランキングボードを見てみよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#661": {
+   "src": "I hope things go differently tomorrow. I want to be done with bringing shame to my house.",
+   "dst": "明日は状況が違えばいいのに。もう、家に恥をかかせるようなことはやめたい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 14",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#662": {
+   "src": "You should search the barracks for any information useful to the resistance.",
+   "dst": "兵舎をくまなく捜索し、レジスタンスに役立つ情報を探そう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#663": {
+   "src": "My first day at Tericen went amazingly well! I didn't stutter when introducing myself to the Commander, did great in the training exercises, and was able to befriend a fellow {p} recruit!",
+   "dst": "Tericen での初日は、驚くほど順調でした！司令官に自己紹介をする時もどもることなく、訓練も順調に進み、同じ{p}の新入隊員とも仲良くなれました！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#664": {
+   "src": "Her name is Darea, and we ate lunch together. I spent most of that time talking to her about Commander Ferreo. She seemed somewhat freaked out with how much I knew about him.",
+   "dst": "彼女の名前は Darea で、私たちは一緒に昼食をとった。その時間のほとんどを、Ferreo 司令官について彼女と話すことに費やした。私が彼についてあれほど詳しく知っていることに、彼女は少し動揺しているようだった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#665": {
+   "src": "Tomorrow we will have dueling and shield training. The instructor for dueling training will be Commander Ferreo himself!",
+   "dst": "明日は決闘の訓練と盾の訓練が行われます。決闘の訓練の指導は、Ferreo 司令官ご本人が担当されます！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#666": {
+   "src": "Oh dear Queen... Please give me the courage to ask him how he managed to reach that level...",
+   "dst": "ああ、女王様……どうか、彼にどうやってそのレベルに到達できたのか尋ねる勇気をください……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#667": {
+   "src": "You are entering the guard barracks, stay sneaking while moving so as to not alert the sleeping guards.",
+   "dst": "衛兵の兵舎に入ろうとしている。眠っている警備兵に気づかれないよう、スニーク状態で移動しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#668": {
+   "src": "You must stay sneaking while moving to avoid waking the guards.",
+   "dst": "衛兵を起こさないように、スニーク状態で移動しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#669": {
+   "src": "You rummage through the trash bin...",
+   "dst": "ゴミ箱を漁る……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#670": {
+   "src": "Dear Sovereign Majin, it has been a while since I last wrote to you, or spoken to you, face to face. Coincidentally, I am writing this letter about the last conversation we had.",
+   "dst": "親愛なる君主 Majin へ、前回お手紙を差し上げたり直接お話ししたりしてから、ずいぶん時間が経ってしまいました。偶然にも、この手紙は私たちが最後に交わした会話について書いているのです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#671": {
+   "src": "I had asked you about potentially becoming a field Commander again. You were hesitant to grant my request, given my age, but would consider it if I showed my value as head of the recruitment program.",
+   "dst": "以前、再び現場指揮官に就任できないかとお尋ねしました。私の年齢を考慮して、その要請を快く受け入れてはくれなかったものの、採用プログラムの責任者として自分の価値を証明できれば、検討してくれるとのことでした。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#672": {
+   "src": "I have heard troubling rumours coming from outside the {p}, namely of the growing strength of a hidden resistance group in the {p}.",
+   "dst": "{p}の外から、{p}内に潜むあるレジスタンスの勢力が拡大しているという、気掛かりな噂を耳にしました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#673": {
+   "src": "As a Wings commander, it is my duty to defend Fruma with my life. I believe I can be of far greater use out there rather than in-",
+   "dst": "Wings の指揮官として、Fruma を命をかけて守ることは私の義務です。私は、ここにいるよりも、外の世界でこそ、はるかに大きな力になれると信じ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#674": {
+   "src": "The letter ends there.",
+   "dst": "手紙はそこで終わっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#675": {
+   "src": "It's a list of average scores from the last {~} batches of recruits.",
+   "dst": "これは、直近の{~}バッチの新兵の平均スコアの一覧だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#676": {
+   "src": "Recruit Batch {~}: Score {~}",
+   "dst": "採用バッチ {~}：スコア {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#677": {
+   "src": "Recruit Batch {~}: In Progress",
+   "dst": "採用バッチ {~}：{c2}進行中{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c2}In Progress{/},In Progressは太字"
+  },
+  "The Strong Survive#678": {
+   "src": "\"From Adders to Lammergeier: The Beasts of the {p}\"",
+   "dst": "「Adders から Lammergeier まで：{p}の獣たち」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#679": {
+   "src": "An index of dangerous animals native to the {p} region.",
+   "dst": "{p}地域に生息する危険な動物の一覧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#680": {
+   "src": "A history of Tericen and the famous military leaders to come out of it.",
+   "dst": "Tericen の歴史と、そこから輩出された著名な軍事指導者たち。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#681": {
+   "src": "\"Tericen: Where Legends are Born\"",
+   "dst": "「Tericen：伝説が生まれる地」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#682": {
+   "src": "\"The Great Leaps of Military Prestige\"",
+   "dst": "『軍事的威信の飛躍』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#683": {
+   "src": "A book detailing what it takes to increase your rank within the Fruman military.",
+   "dst": "Fruma 軍内で階級を上げるために必要なことを詳述した本。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#684": {
+   "src": "\"The Cursed Ones\"",
+   "dst": "『呪われた者たち』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#685": {
+   "src": "A tale about people with inherent magical abilities being defeated by the Fruman military.",
+   "dst": "生まれつき魔法の能力を持つ人々が、Fruma 軍に打ち負かされる物語。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#686": {
+   "src": "\"Resilience: The Secret to Success in The Fruman Military\"",
+   "dst": "『レジリエンス：Fruma 軍における成功の秘訣』",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#687": {
+   "src": "An autobiography from an old military commander known for their skill with a shield.",
+   "dst": "盾の扱いに長けたことで知られる、ある元軍司令官による自伝。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#688": {
+   "src": "The chef might catch you if you get too close.",
+   "dst": "近づきすぎるとシェフに捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#689": {
+   "src": "Today I will start my training to become a recruit at {p}. It's hard to believe after all this time, my dreams are finally coming true!",
+   "dst": "今日から、{p}の新入社員になるための研修が始まります。長い時間が経ちましたが、ついに夢が叶うなんて、まだ信じられません！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#690": {
+   "src": "Soon, recruiter Rosei will come to my house and escort me to the barracks. I am shaking with excitement and nervousness even while writing this.",
+   "dst": "まもなく、採用担当の Rosei が私の家に来て、私を兵舎まで連れて行ってくれる。これを書いている今も、ワクワクと緊張で体が震えている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#691": {
+   "src": "I hope I can appear presentable when I meet Commander Ferreo.",
+   "dst": "Ferreo 司令官にお目にかかる時、きちんとした身だしなみでいられるといいな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#692": {
+   "src": "There is a strange message at the bottom of the page.",
+   "dst": "ページの下部に奇妙なメッセージが表示されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#693": {
+   "src": "There is still valuable information to be learned here.",
+   "dst": "ここには、まだ知っておくべき重要な情報が残されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#694": {
+   "src": "The guards might catch you if you get too close.",
+   "dst": "近づきすぎると衛兵に捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#695": {
+   "src": "I still couldn't do it... I can't just ask him a question like that outright, I need to show that I am \"worthy\" first. I've done well in the challenges but I still can't make it into the top three on the ranking.",
+   "dst": "やっぱりできなかった……あのような質問をいきなり彼に投げかけるわけにはいかない。まずは自分が「その価値がある」ことを証明しなきゃ。試練では好成績を収めているけど、ランキングのトップ3にはまだ入れないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#696": {
+   "src": "Those Wings recruits are just too good, compared to the rest of us. It sometimes scares me how strong they are. If I want any chance of reaching that level, I need to start taking risks.",
+   "dst": "Wings の新入生たちは、私たち他のメンバーと比べると、本当に実力が桁違いだ。彼らの強さには、時々怖くなるほどだ。もしあのレベルに到達するチャンスを少しでも掴みたいなら、もっとリスクを冒し始めなければならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#697": {
+   "src": "With that credit behind me, I may finally get the courage to ask Commander Ferreo about his biggest secret.",
+   "dst": "その実績を糧に、ようやく Ferreo 司令官に彼の最大の秘密について尋ねる勇気が出るかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#698": {
+   "src": "How a vagabond was able to become one of the most famed military commanders, and even receive an incredibly powerful blessing.",
+   "dst": "ある放浪者が、いかにして最も名高い軍指揮官の一人となり、さらには信じがたいほど強力な祝福さえも授かることができたのか。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#699": {
+   "src": "You can overhear Commander Ferreo talking to someone in the room ahead.",
+   "dst": "前方の部屋で、Ferreo 司令官が誰かと話しているのが聞こえてくる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#700": {
+   "src": "Tomorrow I graduate from {p} and become a soldier. The days seem so similar to me, I've been forgetting to write these diary entries.",
+   "dst": "明日、私は{p}を卒業して兵士になります。毎日がどれも同じように感じられるので、日記を書くのを忘れてしまっていました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#701": {
+   "src": "In the past I may have been considered for promotion to captain, now, all of that has slipped away. My rankings have been steadily decreasing over the days, becoming lower than ever before.",
+   "dst": "以前は、キャプテンへの昇進候補と見なされていたかもしれないが、今ではその可能性はすっかり消え失せてしまった。私の順位は日ごとに着実に下がり続け、かつてないほど低くなってしまった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#702": {
+   "src": "I spend most of my time thinking about what could have been, it feels like I am detached from reality.",
+   "dst": "私はほとんどの時間を、「もしあの時こうだったら」と想像することに費やしていて、まるで現実から切り離されているような気分になる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#703": {
+   "src": "Yet, even still, the thought manages to appear in my head. Was Commander Ferreo right?",
+   "dst": "それでもなお、その考えが頭の中に浮かんでしまう。Ferreo 司令官の言うことは正しかったのだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#704": {
+   "src": "Quickly run back to your bed before Commander Ferreo Catches you!",
+   "dst": "Ferreo 司令官に見つかる前に、急いでベッドに戻ろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#705": {
+   "src": "You tell Arnol what you saw last night.",
+   "dst": "昨夜見たことを Arnol に話した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#706": {
+   "src": "And Adder was the one to do this? I did see that he got the highest ranking in the challenges yesterday...",
+   "dst": "それって Adder がやったの？　確かに、昨日の試練では彼がトップの成績を収めていたのは見たけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#707": {
+   "src": "Recruiter Effal\nHead down to the dueling room.",
+   "dst": "Recruiter Effal\n決闘の間に行ってみてくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Recruiter Effal",
+   "source": "captured.json"
+  },
+  "The Strong Survive#708": {
+   "src": "Military Guard\nMatilda, come with me.",
+   "dst": "Military Guard\nMatilda, 一緒に来てくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 23",
+   "speaker": "Military Guard",
+   "source": "captured.json"
+  },
+  "The Strong Survive#709": {
+   "src": "Recruiter Effal\nGo to the dueling room.",
+   "dst": "Recruiter Effal\n決闘の間に行ってくれ。",
+   "role": "desc",
+   "kind": "Floating Text",
+   "quest": "The Strong Survive",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#710": {
+   "src": "Alright, that's enough, the duel is over.",
+   "dst": "よし、もういい。決闘は終わりだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#711": {
+   "src": "{u} is the winner, clearly.",
+   "dst": "明らかに勝者は{u}だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#712": {
+   "src": "Both of you wait there. I want to discuss something with you two, face to face.",
+   "dst": "二人とも、そこで待ってろ。二人と直接、話したいことがあるんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 25",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#713": {
+   "src": "You should search the barracks for information on Commander Ferreo's plans.",
+   "dst": "Ferreo 司令官の計画に関する情報を得るために、兵舎を捜索すべきだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#714": {
+   "src": "The doctor might catch you if you get too close.",
+   "dst": "近づきすぎるとドクターに捕まるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#715": {
+   "src": "I am crushed... After defeating my opponent in the dueling training. I mustered my courage and asked Commander Ferreo how he went from being at the bottom of the totem pole, to reaching the top of it.",
+   "dst": "打ちのめされてしまいました……。決闘の訓練で相手を倒した後、私は勇気を振り絞って、Ferreo 司令官に、どうやって最下位から頂点に上り詰めたのか尋ねてみました。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#716": {
+   "src": "He paused for a second before asking what my business was knowing that.",
+   "dst": "彼は一瞬ためらってから、私がなぜそれを知っているのかと尋ねてきた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#717": {
+   "src": "I fumbled up a response, saying that I've seen him as an inspiration for all of my life, and have always wondered how he managed to claw his way up to the top.",
+   "dst": "私はたどたどしく返事をし、彼をずっと人生の憧れの存在として見てきたこと、そして彼がどうやって這い上がって頂点にたどり着いたのか、ずっと不思議に思っていたと伝えた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#718": {
+   "src": "He told me that those who set out to achieve a goal out of envy will never be able to reach it.",
+   "dst": "彼は、嫉妬心から目標を達成しようと試みる者は、決してその目標に到達することはできない、と私に言った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#719": {
+   "src": "No matter how hard I tried, I would never be able to become a commander, nor receive the accolades that he has. Although he may be right... That wasn't what I wanted to hear...",
+   "dst": "どんなに頑張っても、私は決して指揮官にはなれないし、彼が受けたような称賛も得られないだろう。彼の言うことは正しいのかもしれないが……それは私が聞きたかった言葉ではなかった……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#720": {
+   "src": "I feel like such an idiot.",
+   "dst": "なんてバカなことをしたんだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#721": {
+   "src": "It's a screwdriver missing a handle.",
+   "dst": "柄がないドライバーだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#722": {
+   "src": "It's a knife handle, missing its blade.",
+   "dst": "刃が欠けているナイフの柄だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#723": {
+   "src": "You socket the broken screwdriver into the knife handle.",
+   "dst": "壊れたドライバーをナイフの柄にはめ込んだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#724": {
+   "src": "You have assembled a repaired screwdriver!",
+   "dst": "{c1}これで、修理したドライバーの組み立てが完了した！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}You have assembled a repaired screwdriver!{/}"
+  },
+  "The Strong Survive#725": {
+   "src": "You have found all of the diary entries!",
+   "dst": "{c1}日記のメモを全て見つけた！{/}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json",
+   "note": "{c1}You have found all of the diary entries!{/}"
+  },
+  "The Strong Survive#726": {
+   "src": "Choose which diary entry to read:",
+   "dst": "どの日記を読むか選ぼう：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#727": {
+   "src": "Finally, I've done it! I've managed to rank first in training! The Commander has surely noticed my gradual ascent in strength.",
+   "dst": "ついに、やり遂げた！　訓練で1位になることができた！　司令官も、私の実力が着実に伸びていることにきっと気づいているはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#728": {
+   "src": "In the back of my mind I'm still unsure about going through with it... But I've put too much effort into this, I can't abandon everything now! I will speak to Commander Ferreo tomorrow, after dueling training.",
+   "dst": "心のどこかで、本当にこれをやり通していいものかまだ迷っている……でも、ここまで力を注いできたんだから、今さらすべてを投げ出すわけにはいかない！　明日は決闘の練習が終わったら、 Ferreo 司令官と話をしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#729": {
+   "src": "I'm certain, whatever his answer is, it will have an immense impact on me.",
+   "dst": "彼の答えがどうであれ、それが私に多大な影響を与えることは間違いない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#730": {
+   "src": "A large wooden door stands before you.",
+   "dst": "目の前に大きな木製の扉が立っている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#731": {
+   "src": "Who is there? State your name!",
+   "dst": "誰だ？　名前を言え！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#732": {
+   "src": "Type and send an answer in chat.",
+   "dst": "チャットに回答を入力しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#733": {
+   "src": "Hmmm, I must be imagining things...",
+   "dst": "うーん、きっと気のせいなんだろうな……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#734": {
+   "src": "Go back to bed recruit, you'll need rest for your training tomorrow.",
+   "dst": "ベッドに戻れ、新兵。明日の訓練のために休んでおく必要があるだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#735": {
+   "src": "Do you have them all?",
+   "dst": "全部揃ってるか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#736": {
+   "src": "I hope you're not expecting a medal for finding my diary entries. I can answer some questions that you may have about them though.",
+   "dst": "私の日記を見つけたからといって、勲章を期待するなよ。でも、それについてお前が抱いているかもしれない疑問には、いくつか答える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 27",
+   "speaker": "Niren",
+   "source": "captured.json"
+  },
+  "The Strong Survive#737": {
+   "src": "Use your screwdriver to escape the vent, then quickly wake up Arnol to escape Tericen together!",
+   "dst": "ドライバーを使って通気口から脱出したら、すぐに Arnol を起こして、一緒に Tericen から逃げ出そう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#738": {
+   "src": "You tell Arnol that Commander Ferreo plans for him to face off against Adder in the duel tomorrow.",
+   "dst": "Arnol に、 Ferreo 司令官が明日の決闘で Arnol と Adder で決闘させるつもりだと伝えた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 29",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Strong Survive#739": {
+   "src": "Behind you, {u}...",
+   "dst": "{u}、後ろ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "Stage 31",
+   "speaker": "Arnol",
+   "source": "captured.json"
+  },
+  "The Strong Survive#740": {
+   "src": "I'll make you beg for mercy!",
+   "dst": "命乞いをしろ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Strong Survive",
+   "stage": "",
+   "speaker": "Commander Ferreo",
+   "source": "captured.json"
   },
   "The Thanos Depository#000": {
    "src": "Thank you again...soldier. For helping us make peace...",
