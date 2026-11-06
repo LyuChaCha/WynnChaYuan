@@ -29,6 +29,10 @@ public final class MarketIdFilterTest {
                     "Must have the Elemental Main Attack Damage", "identification"},
             {"\uE001Strength Identification Only", "Must have the \uE001Strength", "identification"},
             {"3rd Spell Cost Identification Only", "Must have the {sp3} Cost", "identification"},
+            {"Ⓙ Farming Skill Only", "Only display items related", "to Ⓙ Farming"},
+            {"Ⓖ Weaponsmithing Skill Only", "Only display items related", "to Ⓖ Weaponsmithing"},
+            {"Ⓗ Armouring Skill Only", "Only display items related to", "Ⓗ Armouring"},
+            {"Set Amount", "Sets the amount of this item", "you plan to buy"},
     };
 
     public static void main(String[] args) {
@@ -54,6 +58,11 @@ public final class MarketIdFilterTest {
                 check(lang + "：" + String.join(" / ", row).substring(row[0].length() + 3) + " 沒有留英文",
                         !shown.contains("Must have") && !shown.contains("identification")
                         && !shown.contains("Identification"));
+                boolean english = false;
+                for (String line : row) {
+                    english |= shown.contains(line);
+                }
+                check(lang + "：" + row[0] + " 標題與說明都換掉了", !english);
                 check(lang + "：數字照原文填回", !row[1].contains("{sp3}") || shown.contains("3"));
             }
         }
