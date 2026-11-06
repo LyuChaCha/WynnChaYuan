@@ -34,6 +34,10 @@ public interface Canvas {
 
     float px();
 
+    default void fade(float x, float y, float w, float h, int argb, float from, float to) {
+        fill(x, y, x + w, y + h, Ui.fade(argb, (from + to) / 2f));
+    }
+
     default void raise() {
     }
 }

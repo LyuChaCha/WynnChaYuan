@@ -387,9 +387,8 @@ public abstract class Surface {
         float lineR = x + w - 8 - (count == null ? 0 : c.width(count) + 4);
         float ruleY = y + 14;
         if (lineR > lineL) {
-            Ui.sweep(c, lineL, ruleY, (lineR - lineL) * 0.6f, c.px(), 0, Ui.GROUP_RULE, Ui.LINE);
-            c.fill(lineL + (lineR - lineL) * 0.6f, ruleY, lineR, ruleY + c.px(),
-                   Ui.fade(Ui.LINE, 0.5f));
+            c.fade(lineL, ruleY, lineR - lineL, c.px(), Ui.LINE, 1f, 0.5f);
+            c.fade(lineL, ruleY, (lineR - lineL) * 0.6f, c.px(), Ui.GROUP_RULE, 1f, 0f);
         }
         if (count != null) {
             c.text(count, x + w - 8 - c.width(count), y + 5, Ui.FAINT);
@@ -453,6 +452,11 @@ public abstract class Surface {
 
     protected float toggle(String key, float right, float y, boolean on, String text,
                            Runnable flip) {
+        return toggle(key, right, y, on, text, flip, accent);
+    }
+
+    protected float toggle(String key, float right, float y, boolean on, String text,
+                           Runnable flip, int accent) {
         float t = animate("t:" + key, on ? 1f : 0f, 55f);
         float w = 26;
         float h = 14;

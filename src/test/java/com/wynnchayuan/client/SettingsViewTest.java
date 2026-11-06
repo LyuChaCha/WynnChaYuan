@@ -31,7 +31,7 @@ public final class SettingsViewTest {
     }
 
     private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "en_us"};
-    private static final String[] TABS = {"items", "panel", "dialogue", "world", "data", "badge"};
+    private static final String[] TABS = {"overview", "look", "lang", "data", "badge"};
 
     public static void main(String[] args) throws Exception {
         File out = new File("build/ui-preview");
@@ -57,8 +57,8 @@ public final class SettingsViewTest {
                 }
             }
             SettingsView low = new SettingsView(fake.tabs(), fake, 0);
-            low.showTab(3);
-            ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-world-short.png"));
+            low.showTab(0);
+            ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-overview-short.png"));
         }
         LANG = "zh_tw";
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × "
@@ -73,9 +73,16 @@ public final class SettingsViewTest {
         }
         LANG = "ru_ru";
         Fake ru = new Fake("ru_ru");
-        view = new SettingsView(ru.tabs(), ru, 3);
-        render(view, 640, 360, 1);
-        must("ru_ru world：選項太長，整頁換成兩列", view.pageWide());
+        view = new SettingsView(ru.tabs(), ru, 0);
+        List<String> wide = new ArrayList<>();
+        for (int tab = 0; tab < TABS.length; tab++) {
+            view.showTab(tab);
+            render(view, 640, 360, 1);
+            if (view.pageWide()) {
+                wide.add(TABS[tab]);
+            }
+        }
+        must("ru_ru：選項太長的頁整頁換成兩列（" + wide + "）", !wide.isEmpty());
         LANG = "zh_tw";
 
         interactions(out);
@@ -435,9 +442,8 @@ public final class SettingsViewTest {
     }
 
     private static final java.util.Set<String> STRETCHY = java.util.Set.of(
-            "items.tooltip", "items.names", "items.pages", "items.shot", "panel.anchor", "panel.side", "panel.gap",
-            "dialogue.mode", "dialogue.choices", "dialogue.hold", "world.nametag", "world.chat",
-            "world.tracker", "data.language", "data.fallback", "data.ui", "data.source");
+            "items.shot", "panel.anchor", "panel.gap", "dialogue.hold", "data.language",
+            "data.fallback", "data.ui", "data.source");
 
     private static void interactions(File out) throws Exception {
         Fake zh = new Fake("zh_tw");
@@ -449,11 +455,32 @@ public final class SettingsViewTest {
         view.mouseDown(market.ctrlRight() - 8, market.y() + market.h() / 2, 0);
         must("點開關會翻過去", zh.flag("items.market") != before);
 
-        SettingsView.Placed names = find(view, "items.names");
-        view.mouseDown(names.ctrlLeft() + 6, names.y() + names.h() / 2, 0);
-        must("點分段的第一格會選到它", zh.index("items.names") == 0);
+        SettingsView.Placed tooltip = find(view, "items.tooltip");
+        must("三個選項以上的列收起來時沒有選項可點", view.spot("c:items.tooltip:1") == null);
+        view.mouseDown(tooltip.ctrlLeft() - 20, tooltip.y() + tooltip.h() / 2, 0);
         render(view, 640, 360, 1);
-        must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.names"));
+        float[] replace = view.spot("c:items.tooltip:0");
+        must("點那一列會展開，選項一個一列", replace != null);
+        must("展開後底下的細項也畫出來", view.placed().stream()
+                .anyMatch(p -> p.id().equals("items.shiftpeek")));
+        AwtCanvas open = render(view, 640, 360, 3);
+        ImageIO.write(open.image, "png", new File(out, "zh_tw-overview-open.png"));
+        view.mouseDown(replace[0] + 10, replace[1] + replace[3] / 2, 0);
+        must("點展開後的選項會選到它", zh.index("items.tooltip") == 0);
+        render(view, 640, 360, 1);
+        must("改過之後這一頁可以重置（有東西不是預設值）", zh.dirty("items.tooltip"));
+        float[] talk = view.spot("f:dialogue.mode");
+        for (int i = 0; i < 12 && (talk == null || talk[3] < 10); i++) {
+            view.scroll(-1);
+            render(view, 640, 360, 1);
+            talk = view.spot("f:dialogue.mode");
+        }
+        must("對話那一列在畫面上", talk != null);
+        view.mouseDown(talk[0] + 10, talk[1] + talk[3] / 2, 0);
+        render(view, 640, 360, 1);
+        must("一次只開一列：開了對話，物品說明框那一列收起來", view.spot("c:items.tooltip:1") == null);
+        view.key(SettingsView.KEY_HOME, false);
+        render(view, 640, 360, 1);
 
         view.showTab(1);
         render(view, 640, 360, 1);
@@ -473,7 +500,7 @@ public final class SettingsViewTest {
         view.key(SettingsView.KEY_ESC, false);
         must("Esc 先收色盤，不是關掉整個畫面", !view.popoverOpen());
 
-        view.showTab(4);
+        view.showTab(2);
         render(view, 640, 360, 1);
         SettingsView.Placed language = find(view, "data.language");
         view.mouseDown(language.ctrlLeft() + 20, language.y() + language.h() / 2, 0);
@@ -495,7 +522,7 @@ public final class SettingsViewTest {
             LANG = lang;
             Fake fake = new Fake(lang);
             SettingsView big = new SettingsView(fake.tabs(), fake, 0);
-            for (int tab : new int[] {0, 3}) {
+            for (int tab : new int[] {0, 1}) {
                 big.showTab(tab);
                 c = render(big, 640, 360, 3);
                 ImageIO.write(c.image, "png", new File(out, "big-" + lang + "-" + TABS[tab] + ".png"));
@@ -504,10 +531,10 @@ public final class SettingsViewTest {
         LANG = "zh_tw";
         for (int[] size : new int[][] {{480, 270}, {427, 240}, {320, 240}}) {
             Fake fake = new Fake("zh_tw");
-            SettingsView small = new SettingsView(fake.tabs(), fake, 3);
+            SettingsView small = new SettingsView(fake.tabs(), fake, 0);
             c = render(small, size[0], size[1], 3);
             ImageIO.write(c.image, "png", new File(out, "small-" + size[0] + "x" + size[1] + ".png"));
-            check("zh_tw world " + size[0] + "x" + size[1], small);
+            check("zh_tw overview " + size[0] + "x" + size[1], small);
         }
         System.out.println("  [PASS] 點、拖、彈出層、搜尋都走過一遍");
     }
@@ -579,7 +606,9 @@ public final class SettingsViewTest {
                     ? id + ".hint" : id + ".unbound";
             Row r = Row.segment(id, () -> tr(id), () -> tr(hintKey));
             for (int i = 0; i < keys.length; i++) {
-                r.option(keys[i].startsWith("=") ? keys[i].substring(1) : tr(keys[i]), tones[i]);
+                String about = english.containsKey("wynnchayuan." + keys[i] + ".hint")
+                        ? tr(keys[i] + ".hint") : null;
+                r.option(keys[i].startsWith("=") ? keys[i].substring(1) : tr(keys[i]), tones[i], about);
             }
             return r.selected(() -> index(id)).pick(i -> values.put(id, i))
                     .reset(() -> !dirty(id), () -> values.put(id, defaults.get(id)));
@@ -636,50 +665,57 @@ public final class SettingsViewTest {
             Row.Tone bo = Row.Tone.BOTH;
             Row.Tone off = Row.Tone.OFF;
             Row.Tone pl = Row.Tone.PLAIN;
+            List<Row> master = List.of(toggle("translations.enabled", true, null));
             List<Row> items = List.of(
-                    segment("items.tooltip", 0, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off"),
-                    segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
-                    toggle("items.shiftpeek", true, null),
-                    segment("items.pages", 0, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "items.pages.off"),
+                    segment("items.tooltip", 1, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off")
+                            .details(List.of(toggle("items.shiftpeek", true, null))),
                     toggle("items.market", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));
+            List<Row> dialogue = List.of(
+                    segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off")
+                            .details(List.of(toggle("dialogue.cover", true, null),
+                                    slider("dialogue.hold", 0, 30, 6, true))),
+                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"));
+            List<Row> world = List.of(
+                    segment("world.nametag", 0, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
+                            .details(List.of(action("world.nametag.advanced", "button.adjust"))),
+                    toggle("world.helditem", true, null).tone(rp),
+                    toggle("world.titles", true, "mode.replace").tone(rp));
+            List<Row> hud = List.of(
+                    toggle("world.bossbar", true, "mode.replace").tone(rp),
+                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
+                    toggle("world.objectives", true, "mode.replace").tone(rp),
+                    toggle("world.scoreboard", true, null).tone(rp));
+            List<Row> chat = List.of(
+                    segment("world.chat", 1, new Row.Tone[] {rp, bo, off}, "mode.replace", "mode.both", "mode.off")
+                            .details(List.of(toggle("world.chatcopy", true, null))));
+            List<Row> names = List.of(
+                    segment("items.names", 2, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
+                    segment("items.pages", 0, new Row.Tone[] {rp, bo, off}, "mode.on", "items.names.both", "mode.off"),
+                    toggle("items.abilitynames", true, null).tone(bo));
             List<Row> place = List.of(
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),
                     segment("panel.side", 0, new Row.Tone[] {pl, pl, pl}, "mode.auto", "mode.right", "mode.left"),
-                    slider("panel.gap", 12, 200, 12, false));
-            List<Row> look = List.of(colour("panel.theme"), colour("panel.colour"));
-            List<Row> dialogue = List.of(
-                    segment("dialogue.mode", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
-                    segment("dialogue.choices", 1, new Row.Tone[] {a, rp, off}, "mode.box", "mode.replace", "mode.off"),
-                    slider("dialogue.hold", 0, 30, 6, true),
+                    slider("panel.gap", 12, 200, 12, false),
                     toggle("dialogue.overlays", true, null));
-            List<Row> world = List.of(
-                    segment("world.nametag", 1, new Row.Tone[] {a, rp, off}, "mode.lookat", "mode.replace", "mode.off")
-                            .extra(() -> tr("button.advanced"), () -> { }),
-                    segment("world.chat", 1, new Row.Tone[] {rp, bo, off}, "mode.replace", "mode.both", "mode.off"),
-                    toggle("world.titles", true, "mode.replace"),
-                    toggle("world.bossbar", true, "mode.replace"),
-                    segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
-                    toggle("world.objectives", true, "mode.replace"),
-                    toggle("world.scoreboard", true, null),
-                    toggle("world.helditem", true, null),
-                    toggle("world.chatcopy", true, null));
+            List<Row> look = List.of(colour("panel.colour"), colour("panel.theme"));
             List<Row> langs = List.of(
                     select("data.language", true, "data.language.auto"),
                     select("data.fallback", true, "data.fallback.auto"),
-                    select("data.ui", false, "data.ui.auto"),
-                    toggle("data.collect", true, null),
-                    toggle("data.collectgui", false, null),
-                    toggle("data.debug", false, null));
+                    select("data.ui", false, "data.ui.auto"));
             List<Row> tools = List.of(
                     segment("data.source", 0, new Row.Tone[] {pl, pl}, "data.source.github", "data.source.local"),
                     toggle("data.autoupdate", false, null),
                     Row.action("data.reload", () -> tr("data.reload"), () -> tr("data.reload.github"))
                             .label(() -> tr("data.reload.fetch")),
                     Row.status("data.version", () -> tr("data.version"), () -> tr("data.version.hint"))
-                            .label(() -> tr("data.version.latest")).labelColour(() -> Ui.GREEN),
+                            .label(() -> tr("data.version.latest")).labelColour(() -> Ui.GREEN));
+            List<Row> collect = List.of(
+                    toggle("data.collect", true, null),
+                    toggle("data.collectgui", false, null),
+                    toggle("data.debug", false, null),
                     action("data.export", "data.export.button"),
                     action("data.submit", "data.submit.button"));
             List<Row.Tab> tabs = new ArrayList<>();
@@ -688,14 +724,21 @@ public final class SettingsViewTest {
                     toggle("items.wms", true, null),
                     toggle("items.wynnventory", true, null),
                     toggle("items.wynnmod", true, null));
-            tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP,
-                    group("group.items", false, items), group("group.mods", false, mods)));
-            tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.PANEL,
+            tabs.add(new Row.Tab("overview", () -> tr("tab.overview"), () -> tr("tab.overview.about"),
+                    Icons.Icon.BUBBLE, Preview.Scene.WORLD, List.of(
+                    new Row.Group(() -> "", false, master),
+                    group("group.overview.items", false, items),
+                    group("group.overview.dialogue", false, dialogue),
+                    group("group.overview.world", false, world),
+                    group("group.overview.hud", false, hud),
+                    group("group.overview.chat", false, chat),
+                    group("group.overview.names", false, names),
+                    group("group.mods", false, mods)), true));
+            tabs.add(tab("look", Icons.Icon.SCROLL, Preview.Scene.PANEL,
                     group("group.place", false, place), group("group.look", false, look)));
-            tabs.add(tab("dialogue", Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE, group("group.dialogue", false, dialogue)));
-            tabs.add(tab("world", Icons.Icon.COMPASS, Preview.Scene.WORLD, group("group.world", false, world)));
+            tabs.add(tab("lang", Icons.Icon.GLOBE, Preview.Scene.DATA, group("group.lang", false, langs)));
             tabs.add(tab("data", Icons.Icon.BOOK, Preview.Scene.DATA,
-                    group("group.lang", false, langs), group("group.tools", true, tools)));
+                    group("group.tools", true, tools), group("group.collect", false, collect)));
             tabs.add(badgeTab());
             return tabs;
         }

@@ -26,7 +26,7 @@ final class SettingsControls {
         boolean on = r.on.getAsBoolean();
         String text = on ? (r.onText != null ? r.onText.get() : view.host.tr("mode.on"))
                          : view.host.tr("mode.off");
-        view.toggle(r.id, right, y, on, text, r.flip);
+        view.toggle(r.id, right, y, on, text, r.flip, view.host.tone(r.tone));
     }
 
     private void segment(Row r, float left, float right, float y) {

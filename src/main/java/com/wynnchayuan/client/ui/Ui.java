@@ -40,6 +40,10 @@ public final class Ui {
     public static final int TITLE_TO = 0xFFA2DF86;
     public static final int[] LEAF_STOPS = {0xFF3A9F4C, 0xFF5FC063, 0xFFA2DF86};
 
+    public static final int MODE_OFF = 0xFF8A9A8E;
+    public static final int OPTION_BOX = 0xE6111A15;
+    public static final int RADIO = 0xFF5F7065;
+
     public static final int GOLD = 0xFFE0BC6E;
     public static final int GREEN = 0xFF7BC47F;
     public static final int AMBER = 0xFFE0B354;
@@ -81,31 +85,67 @@ public final class Ui {
                 hsv[2] * 0.76f) & 0xFFFFFF);
     }
 
-    public static void sweep(Canvas c, float x, float y, float w, float h, float r, int left,
-                             int right) {
+    public static void fadePane(Canvas c, float x, float y, float w, float h, float r, int argb,
+                                float from, float to) {
         if (w <= 0 || h <= 0) {
             return;
         }
         float rr = Math.max(0, Math.min(r, Math.min(w, h) / 2f));
-        if (left == right || w <= rr * 2 + 1) {
-            c.round(x, y, w, h, rr, left);
-            return;
+        float step = Math.max(c.px(), 0.25f);
+        for (float dy = 0; dy < rr; dy += step) {
+            float d = rr - dy - step / 2f;
+            float in = rr - (float) Math.sqrt(Math.max(0f, rr * rr - d * d));
+            float a = from + (to - from) * in / w;
+            float b = from + (to - from) * (w - in) / w;
+            float band = Math.min(step, rr - dy);
+            c.fade(x + in, y + dy, w - in * 2, band, argb, a, b);
+            c.fade(x + in, y + h - dy - band, w - in * 2, band, argb, a, b);
         }
-        if (rr > 0) {
-            c.clip(x, y, x + rr, y + h);
-            c.round(x, y, rr * 2, h, rr, left);
-            c.unclip();
-            c.clip(x + w - rr, y, x + w, y + h);
-            c.round(x + w - rr * 2, y, rr * 2, h, rr, right);
-            c.unclip();
+        if (h > rr * 2) {
+            c.fade(x, y + rr, w, h - rr * 2, argb, from, to);
         }
-        float span = w - rr * 2;
-        int steps = Math.max(1, Math.min(24, Math.round(span / 3f)));
-        for (int i = 0; i < steps; i++) {
-            float a = x + rr + span * i / steps;
-            float b = x + rr + span * (i + 1) / steps;
-            c.fill(a, y, b, y + h, mix(left, right, (i + 0.5f) / steps));
+    }
+
+    public static void triangle(Canvas c, float cx, float cy, float size, float degrees,
+                                int argb) {
+        double a = Math.toRadians(degrees);
+        float cos = (float) Math.cos(a);
+        float sin = (float) Math.sin(a);
+        float x0 = cx + (-0.55f * size) * cos - (-size) * sin;
+        float y0 = cy + (-0.55f * size) * sin + (-size) * cos;
+        float x1 = cx + (-0.55f * size) * cos - size * sin;
+        float y1 = cy + (-0.55f * size) * sin + size * cos;
+        float x2 = cx + 0.9f * size * cos;
+        float y2 = cy + 0.9f * size * sin;
+        float top = Math.min(y0, Math.min(y1, y2));
+        float bottom = Math.max(y0, Math.max(y1, y2));
+        float step = Math.max(c.px(), 0.25f);
+        for (float y = top; y < bottom; y += step) {
+            float mid = y + step / 2f;
+            float a1 = cross(x0, y0, x1, y1, mid);
+            float a2 = cross(x1, y1, x2, y2, mid);
+            float a3 = cross(x2, y2, x0, y0, mid);
+            float lo = Math.min(nanHigh(a1), Math.min(nanHigh(a2), nanHigh(a3)));
+            float hi = Math.max(nanLow(a1), Math.max(nanLow(a2), nanLow(a3)));
+            if (hi > lo) {
+                c.fill(lo, y, hi, y + step, argb);
+            }
         }
+    }
+
+    private static float nanHigh(float v) {
+        return Float.isNaN(v) ? Float.MAX_VALUE : v;
+    }
+
+    private static float nanLow(float v) {
+        return Float.isNaN(v) ? -Float.MAX_VALUE : v;
+    }
+
+    private static float cross(float ax, float ay, float bx, float by, float y) {
+        if ((y < ay && y < by) || (y > ay && y > by) || ay == by) {
+            return Float.NaN;
+        }
+        return ax + (bx - ax) * (y - ay) / (by - ay);
     }
 
     public static void glowSpot(Canvas c, float cx, float cy, float rx, float ry, float x0,

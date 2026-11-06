@@ -155,8 +155,9 @@ final class SettingsNavigation {
         int dirty = 0;
         for (Row.Group g : view.tabs.get(view.tab).groups()) {
             for (Row r : g.rows()) {
-                if (r.resettable() && !r.isDefault.getAsBoolean()) {
-                    dirty++;
+                dirty += changed(r) ? 1 : 0;
+                for (Row d : r.details) {
+                    dirty += changed(d) ? 1 : 0;
                 }
             }
         }
@@ -185,8 +186,13 @@ final class SettingsNavigation {
             view.closePopovers();
             for (Row.Group grp : view.tabs.get(view.tab).groups()) {
                 for (Row r : grp.rows()) {
-                    if (r.resettable() && !r.isDefault.getAsBoolean()) {
+                    if (changed(r)) {
                         r.reset.run();
+                    }
+                    for (Row d : r.details) {
+                        if (changed(d)) {
+                            d.reset.run();
+                        }
                     }
                 }
             }
@@ -202,10 +208,44 @@ final class SettingsNavigation {
         }
         Ui.gradientText(view.c, Ui.fit(view.c, title, (int) (textRoom / s)), x, y + 8, s,
                         Ui.TITLE_FROM, Ui.TITLE_TO);
+        float aboutY = y + 8 + 8 * s + 4;
+        if (!searching && view.tabs.get(view.tab).legend()) {
+            legend(x, aboutY, x + textRoom);
+            return;
+        }
         String about = searching
                 ? view.host.tr("search.count", shownCount())
                 : view.tabs.get(view.tab).about().get();
-        view.c.text(Ui.fit(view.c, about, (int) textRoom), x, y + 8 + 8 * s + 4, Ui.TEXT_3);
+        view.c.text(Ui.fit(view.c, about, (int) textRoom), x, aboutY, Ui.TEXT_3);
+    }
+
+    private static final Row.Tone[] LEGEND = {
+        Row.Tone.ACCENT, Row.Tone.REPLACE, Row.Tone.BOTH, Row.Tone.OFF};
+    private static final String[] LEGEND_KEYS = {
+        "legend.box", "legend.replace", "legend.both", "legend.off"};
+
+    private void legend(float x, float y, float right) {
+        float at = x;
+        for (int i = 0; i < LEGEND.length; i++) {
+            String label = view.host.tr(LEGEND_KEYS[i]);
+            float w = 11 + view.c.width(label);
+            if (at + w > right) {
+                return;
+            }
+            Row.Tone tone = LEGEND[i];
+            int light = tone == Row.Tone.OFF ? Ui.MODE_OFF : view.host.tone(tone);
+            if (tone == Row.Tone.OFF) {
+                view.c.ring(at, y + 1, 7, 7, 3.5f, view.c.px(), light);
+            } else {
+                view.c.round(at, y + 1, 7, 7, 3.5f, light);
+            }
+            view.c.text(label, at + 10, y, Ui.TEXT_2);
+            at += w + 10;
+        }
+    }
+
+    private static boolean changed(Row r) {
+        return r.resettable() && !r.isDefault.getAsBoolean();
     }
 
     private int shownCount() {
@@ -216,6 +256,9 @@ final class SettingsNavigation {
                 for (Row r : g.rows()) {
                     if (SettingsView.matches(r, query)) {
                         n++;
+                    }
+                    for (Row d : r.details) {
+                        n += SettingsView.matches(d, query) ? 1 : 0;
                     }
                 }
             }
